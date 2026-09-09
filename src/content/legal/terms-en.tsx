@@ -116,7 +116,7 @@ export function TermsEnBody() {
 
       <h2>7b. Third-party services</h2>
       <p>
-        Sign-in with Google (Google Account terms), the store you downloaded the app from (Google Play Terms of Service{hasIos() ? <>, Apple Media Services Terms</> : null} and the relevant refund policies) and your device&apos;s speech recognition service are subject to their own providers&apos; terms. The AI and speech recognition providers are listed in the Privacy
+        Sign-in with Google (Google Account terms){hasIos() ? <>, Sign in with Apple (Apple Account terms)</> : null}, the store you downloaded the app from (Google Play Terms of Service{hasIos() ? <>, Apple Media Services Terms</> : null} and the relevant refund policies) and your device&apos;s speech recognition service are subject to their own providers&apos; terms. The AI and speech recognition providers are listed in the Privacy
         Policy; they are our sub-processors and do not enter into a contract with you directly.
       </p>
 

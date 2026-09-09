@@ -126,8 +126,8 @@ export default function TermsPage() {
 
       <h2>7b. Üçüncü taraf hizmetler</h2>
       <p>
-        Google ile giriş (Google Hesap şartları), uygulamayı indirdiğin mağaza (Google Play Hizmet Şartları{hasIos() ? <>, Apple Media
-        Services Şartları</> : null} ve ilgili iade politikaları) ve cihazının konuşma tanıma servisi kendi sağlayıcılarının şartlarına
+        Google ile giriş (Google Hesap şartları){hasIos() ? <>, Apple ile giriş (Apple Hesabı şartları)</> : null}, uygulamayı indirdiğin
+        mağaza (Google Play Hizmet Şartları{hasIos() ? <>, Apple Media Services Şartları</> : null} ve ilgili iade politikaları) ve cihazının konuşma tanıma servisi kendi sağlayıcılarının şartlarına
         tabidir. Yapay zekâ ve konuşma tanıma sağlayıcıları Gizlilik Politikası&apos;nda listelenir; bunlar
         bizim alt işleyicilerimizdir ve seninle doğrudan sözleşme kurmazlar.
       </p>

@@ -53,6 +53,13 @@ jobs:
       # Bu sınıfın tamamı ancak gerçek para akarken fark edilirdi.
       - name: Premium kuralları
         run: npm run test:premium
+      # Hukuki metinlerin kapısı. Buradaki hata sınıfı derlemeyi kırmıyor,
+      # yayımlanmış metni okuyan biri fark ediyor: elle iki yerde artırılan
+      # sürüm numarası, bir dile eklenip ötekine eklenmeyen kayıt maddesi,
+      # tabloda boş kalan hücre, sayfası olmayan yol (biri App Store'un
+      # Support URL alanına giriyor).
+      - name: Hukuki metinler
+        run: npm run test:legal
       # Yetki katmanının veritabanı testi — 32 doğrulama. Buradaki hata sınıfı
       # sessiz: yanlış hesaplanmış bir bitiş tarihi ya da iki kez uygulanmış bir
       # ödeme olayı kullanıcı şikâyet edene kadar görünmez, sonra da parayla

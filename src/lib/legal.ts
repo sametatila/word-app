@@ -53,9 +53,16 @@
  * DEĞİŞTİRİYOR, yani yama basamağı (1.2.2) onları hafife alırdı — okuyucu sürüm
  * listesinde esaslı değişikliği terim düzeltmesinden ayırt edebilmeli. iOS kaydı
  * bir sürüm kaydırıldı; yordamı aynı, yalnız numarası "1.4".
+ *
+ * "1.3.1" YAMA basamağında, çünkü kimsenin hakkı ya da yükümlülüğü değişmedi:
+ * alıcılar tablosundan hiç kullanılmamış iki sağlayıcı düştü, bir sağlayıcı
+ * adıyla yazıldı ve bölgesi düzeltildi, bir de destek sayfası eklendi. Yine de
+ * sürüm ARTTI — metnin kendisi §14'te "değiştiğinde tarih ve sürüm güncellenir"
+ * diye söz veriyor; alıcılar tablosu metnin parçası, dolayısıyla sessizce
+ * değiştirmek o sözü bozardı.
  */
-export const LEGAL_EFFECTIVE_DATE = "2026-09-08";
-export const LEGAL_VERSION = "1.3";
+export const LEGAL_EFFECTIVE_DATE = "2026-09-09";
+export const LEGAL_VERSION = "1.3.1";
 
 export const LEGAL_ENTITY = {
   /** Veri sorumlusu: amaç ve araçlara karar veren gerçek kişi (AB'de yerleşik). */
@@ -200,6 +207,33 @@ export const LEGAL_PATHS = {
  *   - Cihazda doğrulama: arka planda ses, hesap silme akışı ve giriş yolları
  *     gerçek bir iPhone'da koşulmadı.
  */
+/**
+ * Metinlerin KAPSADIĞI platformlar. `ios` bugün KAPALI ve bu bir karar.
+ *
+ * Bayrak açılınca üç şey oluyor: kapsam cümlesi "Android ve iOS uygulamalarını"
+ * diyor, şartlardaki Apple maddeleri (satın alma, iptal, iade, Apple ile giriş,
+ * App Store ek koşulları) basılıyor, ve alıcılar tablosuna iki Apple satırı
+ * giriyor.
+ *
+ * NEDEN AÇIK DEĞİL — sebep "erteleme" değil, son maddesi ölçülebilir bir liste:
+ * bayrak açılınca tablo "Apple (Sign-In)" satırını basar, oysa `APPLE_BUNDLE_ID`
+ * üç env dosyasında da BOŞ; boşken sağlayıcı kurulmuyor, `/api/config`
+ * `apple:false` diyor ve düğme hiç çizilmiyor. Yani bugün açmak, veri
+ * alması İMKÂNSIZ bir alıcıyı beyan etmek olurdu — Google Gemini ve
+ * OpenRouter'ı tablodan tam olarak bu sebeple çıkardık (bkz. PROCESSORS notu).
+ *
+ * AÇILMA KAPILARI (`docs/plan/ios-parity.md` §6 ile aynı liste):
+ *   1. Apple Developer hesabı + gerçek bundle kimliği → `APPLE_BUNDLE_ID` dolu
+ *   2. Apple ile Giriş cihazda çalışıyor
+ *   3. Uygulama içi hesap silme iOS'ta doğrulandı
+ *   4. Gizlilik manifesti ile App Store Connect etiketleri örtüşüyor
+ *   5. Uygulama ikonu ve açılış ekranı markalı
+ *   6. Cihaz sınama listesi koşuldu
+ *   7. `LEGAL_VERSION` → "1.4", `LEGAL_EFFECTIVE_DATE` → o gün, kayıt düşüldü
+ *
+ * Metin tarafında yarım iş KALMADI: şartların 7b maddesi (üç dilde) Apple ile
+ * girişi zaten `hasIos()` arkasında sayıyor. Bayrak tek satır.
+ */
 export const LEGAL_PLATFORMS = { android: true, ios: false } as const;
 
 /** Metinlerde platformların sayıldığı yer — tek kaynak, üç dil. */
@@ -235,16 +269,14 @@ export type LegalChangelogEntry = {
  *
  * O GÜN YAPILACAKLAR — üçü de bu dosyada, hepsi tek satır:
  *   1. `LEGAL_PLATFORMS.ios` → `true`
- *   2. `LEGAL_VERSION` → `"1.3"`
+ *   2. `LEGAL_VERSION` → `"1.4"`   (kaydın kendi `version` alanıyla aynı)
  *   3. `LEGAL_EFFECTIVE_DATE` → yayın günü
  *
- * ÖNCE bitmesi gerekenler `docs/plan/ios-parity.md` §6'daki kapılar; ayrıca bu
- * dosyanın DIŞINDA kalan tek metin işi: şartların "üçüncü taraf hizmetleri"
- * maddesi (`src/app/terms/page.tsx` ve `src/content/legal/terms-{en,de}.tsx`)
- * giriş sağlayıcısı olarak yalnız Google'ı sayıyor; iOS'ta Apple ile Giriş de
- * sunulduğu için oraya `hasIos()` koşullu bir "Apple ile Giriş" eklenmeli.
- * Alıcılar tablosundaki Apple (Sign-In) satırı bu dosyada zaten hazır ve aynı
- * bayrağın arkasında duruyor.
+ * ÖNCE bitmesi gerekenler `docs/plan/ios-parity.md` §6'daki kapılar. Metin
+ * tarafında iş KALMADI: şartların "üçüncü taraf hizmetleri" maddesi (7b) giriş
+ * sağlayıcısı olarak yalnız Google'ı sayıyordu, 2026-09-09'da üç dilde birden
+ * `hasIos()` koşullu "Apple ile giriş" eklendi. Alıcılar tablosundaki iki Apple
+ * satırı da bu dosyada hazır ve aynı bayrağın arkasında.
  */
 const IOS_LAUNCH_ENTRY: LegalChangelogEntry = {
   version: "1.4",
@@ -277,6 +309,27 @@ const IOS_LAUNCH_ENTRY: LegalChangelogEntry = {
 export const LEGAL_CHANGELOG: readonly LegalChangelogEntry[] = [
   // Bayrak kapalıyken bu kayıt listede YOK; açıldığı gün kendiliğinden başa gelir.
   ...(LEGAL_PLATFORMS.ios ? [IOS_LAUNCH_ENTRY] : []),
+  {
+    version: "1.3.1",
+    date: "2026-09-09",
+    changes: {
+      tr: [
+        "Alıcılar tablosundan iki sağlayıcı çıkarıldı: Google Gemini ve OpenRouter. İkisi de bugüne kadar hiç kullanılmamıştı — erişim anahtarları hiçbir sunucu yapılandırmasında yoktu — ve kullanılmayacaklar. Tablo, verinin gitmediği yerleri sayıyordu; artık yalnız gerçekten veri alan tarafları sayıyor.",
+        "E-posta sağlayıcısı adıyla yazıldı (Resend) ve bölgesi düzeltildi: eskiden \"AB (yeterlilik)\" deniyordu, oysa kullanılan uç sağlayıcının küresel ucu; doğru beyan \"ABD, standart sözleşme hükümleri\". Gönderilen veri değişmedi, yalnız beyan gerçeğe getirildi.",
+        "Destek ve iletişim sayfası eklendi (/support): destek adresi, yanıt süresi, hangi konu için hangi kanalın kullanılacağı ve uygulama içindeki bildirme ile engelleme yolları tek sayfada. Adres bugüne kadar yalnız bu metinlerin içinde geçiyordu.",
+      ],
+      en: [
+        "Two providers were removed from the table of recipients: Google Gemini and OpenRouter. Neither had ever been used — their access keys were in no server configuration — and neither will be. The table was listing places the data does not go; it now lists only parties that actually receive it.",
+        "The e-mail provider is now named (Resend) and its region corrected: it previously said \"within the EU (adequacy)\", but the endpoint in use is the provider's global one, so the correct statement is \"USA, standard contractual clauses\". What is sent did not change; only the statement was brought in line with reality.",
+        "A support and contact page was added (/support): the support address, the response time, which channel to use for which topic, and the in-app reporting and blocking paths, all in one place. Until now the address appeared only inside these texts.",
+      ],
+      de: [
+        "Zwei Anbieter wurden aus der Empfängertabelle entfernt: Google Gemini und OpenRouter. Beide wurden nie genutzt — ihre Zugangsschlüssel standen in keiner Serverkonfiguration — und werden es auch nicht. Die Tabelle nannte Stellen, an die die Daten gar nicht gehen; jetzt nennt sie nur noch Parteien, die tatsächlich Daten erhalten.",
+        "Der E-Mail-Anbieter wird jetzt namentlich genannt (Resend), und seine Region wurde korrigiert: Bisher stand dort \"innerhalb der EU (Angemessenheit)\", genutzt wird jedoch der globale Endpunkt des Anbieters; korrekt ist \"USA, Standardvertragsklauseln\". Am Versand selbst hat sich nichts geändert, nur die Angabe wurde richtiggestellt.",
+        "Eine Seite für Support und Kontakt wurde ergänzt (/support): Support-Adresse, Antwortzeit, welcher Kanal für welches Thema und die Melde- und Blockierwege in der App — alles an einem Ort. Bisher stand die Adresse nur innerhalb dieser Texte.",
+      ],
+    },
+  },
   {
     version: "1.3",
     date: "2026-09-08",
@@ -399,7 +452,7 @@ export function legalPath(doc: LegalDoc, locale: LegalLocale = LEGAL_DEFAULT_LOC
 type Trio = { tr: string; en: string; de: string };
 
 const PROCESSOR_NAMES = {
-  smtp: { tr: "E-posta sağlayıcısı (SMTP)", en: "E-mail provider (SMTP)", de: "E-Mail-Anbieter (SMTP)" },
+  smtp: { tr: "Resend (e-posta, SMTP ile)", en: "Resend (e-mail, over SMTP)", de: "Resend (E-Mail, über SMTP)" },
 } as const satisfies Record<string, Trio>;
 
 const PURPOSES = {
@@ -409,7 +462,6 @@ const PURPOSES = {
   stt: { tr: "Konuşma tanıma", en: "Speech recognition", de: "Spracherkennung" },
   sttLlm: { tr: "Konuşma tanıma ve dil modeli", en: "Speech recognition and language model", de: "Spracherkennung und Sprachmodell" },
   llm: { tr: "Dil modeli", en: "Language model", de: "Sprachmodell" },
-  llmRouting: { tr: "Dil modeli yönlendirme", en: "Language model routing", de: "Weiterleitung an Sprachmodelle" },
   googleSignIn: { tr: "Google ile giriş", en: "Sign-in with Google", de: "Anmeldung mit Google" },
   appleSignIn: { tr: "Apple ile giriş", en: "Sign-in with Apple", de: "Anmeldung mit Apple" },
   distribution: { tr: "Uygulama dağıtımı ve abonelik ödemeleri", en: "App distribution and subscription payments", de: "App-Vertrieb und Abonnementzahlungen" },
@@ -481,6 +533,37 @@ export type Processor = {
 };
 
 /** Verinin ulaştığı hizmet sağlayıcılar (KVKK "aktarım", GDPR "işleyici", Play "paylaşım"). */
+/**
+ * Yalnız iOS yayındayken basılan satırlar.
+ *
+ * Ayrı bir sabit olmalarının iki sebebi var. Birincisi beyan: yayımlanmamış bir
+ * mağazayı ve yalnız iOS uygulamasında bulunan bir giriş yolunu alıcı diye
+ * listelemek, olmayan bir aktarımı beyan etmek olurdu. Apple ile Giriş satırı
+ * Google (Sign-In) satırının simetriği — aynı şey oluyor, sağlayıcı farklı.
+ *
+ * İkincisi sınanabilirlik: satırlar `PROCESSORS`ın içine gömülü olsaydı bayrak
+ * kapalıyken var olmazlardı ve kapı (`scripts/test-legal.ts`) onlara ait
+ * sözlük anahtarlarını "ölü" sanardı. Ayrı durunca bayraktan bağımsız
+ * sınanıyorlar: yayın günü ilk kez basıldıklarında hücreleri boş çıkmaz.
+ */
+const IOS_PROCESSORS: Processor[] = [
+  { name: "Apple (Sign-In)", purpose: "appleSignIn", data: "appleIdentity", region: "us", safeguard: "scc", when: "appleSignInChosen" },
+  { name: "Apple (App Store)", purpose: "distribution", data: "purchase", region: "us", safeguard: "scc", when: "iosAndSubscription" },
+];
+
+/**
+ * ALICILAR — kullanıcının verisinin gerçekten ulaştığı üçüncü taraflar.
+ *
+ * Liste `lib/chat-providers.ts` kataloğuyla ve `docs/play/data-safety.md`
+ * beyanıyla AYNI kümeyi anlatmak zorunda; üçü birlikte değişir.
+ *
+ * Google Gemini ve OpenRouter 2026-09-09'da çıkarıldı: katalogda duruyorlardı
+ * ama anahtarları hiçbir env dosyasında yoktu, yani hiç kullanılmamışlardı.
+ * Fazla beyan bir ihlal değil — ama bu tablonun işi kullanıcıya verisinin
+ * NEREYE gittiğini söylemek, ve gitmediği bir yeri saymak o işi yapmıyor.
+ * Katalogdan da silindiler, çünkü tabloyu doğru tutmanın tek yapısal yolu
+ * kullanılmayacak sağlayıcıyı kullanılabilir bırakmamak.
+ */
 export const PROCESSORS: Processor[] = [
   { name: "Microsoft Azure Speech", purpose: "sttTts", data: "audioAndTtsText", region: "eu", safeguard: "euAdequacy", when: "walkAndTts" },
   { name: "Groq", purpose: "sttWhisperLlm", data: "audioAndTexts", region: "us", safeguard: "scc" },
@@ -489,23 +572,43 @@ export const PROCESSORS: Processor[] = [
   { name: "Deepgram", purpose: "stt", data: "audio", region: "us", safeguard: "scc" },
   { name: "Mistral AI", purpose: "sttLlm", data: "audioAndTexts", region: "eu", safeguard: "euAdequacy" },
   { name: "Cerebras", purpose: "llm", data: "texts", region: "us", safeguard: "scc" },
-  { name: "Google Gemini", purpose: "llm", data: "texts", region: "us", safeguard: "scc" },
-  { name: "OpenRouter", purpose: "llmRouting", data: "texts", region: "us", safeguard: "scc" },
   { name: "Google (Sign-In)", purpose: "googleSignIn", data: "googleIdentity", region: "us", safeguard: "scc", when: "googleSignInChosen" },
   { name: "Google Play", purpose: "distribution", data: "purchase", region: "us", safeguard: "scc", when: "androidAndSubscription" },
-  // Iki Apple satiri da yalnizca iOS yayindayken basiliyor: yayimlanmamis bir
-  // magazayi ve yalnizca iOS uygulamasinda bulunan bir giris yolunu alici olarak
-  // listelemek, olmayan bir aktarimi beyan etmek olurdu. Apple ile Giris satiri
-  // Google (Sign-In) satirinin simetrigi -- ayni sey oluyor, saglayici farkli.
-  ...(LEGAL_PLATFORMS.ios
-    ? [
-        { name: "Apple (Sign-In)", purpose: "appleSignIn", data: "appleIdentity", region: "us", safeguard: "scc", when: "appleSignInChosen" } as Processor,
-        { name: "Apple (App Store)", purpose: "distribution", data: "purchase", region: "us", safeguard: "scc", when: "iosAndSubscription" } as Processor,
-      ]
-    : []),
+  ...(LEGAL_PLATFORMS.ios ? IOS_PROCESSORS : []),
   { name: "RevenueCat", purpose: "subscriptionState", data: "userAndPurchase", region: "us", safeguard: "scc", when: "premiumEnabled" },
-  { name: "smtp", purpose: "transactionalMail", data: "email", region: "eu", safeguard: "euAdequacy" },
+  /*
+    Sağlayıcı ADIYLA yazılıyor: tablonun işi alıcıyı tanınabilir kılmak ve öteki
+    on satırın hepsi adını veriyor. Bölge "ABD": kullanılan uç `smtp.resend.com`,
+    yani Resend'in küresel ucu; AB veri ikametgâhı ayrı bir uç ve seçilmedi.
+    Eskiden burada "AB (yeterlilik)" yazıyordu ve bu, aktarımı olduğundan
+    güvenli gösteren bir beyandı.
+  */
+  { name: "smtp", purpose: "transactionalMail", data: "email", region: "us", safeguard: "scc" },
 ];
+
+/**
+ * Bayraktan BAĞIMSIZ tam küme — yalnız denetim için, hiçbir sayfa bunu basmaz.
+ * Sözlükte ölü anahtar aramak ancak tam küme üzerinden anlamlı.
+ */
+export const ALL_PROCESSORS: Processor[] = LEGAL_PLATFORMS.ios
+  ? PROCESSORS
+  : [...PROCESSORS, ...IOS_PROCESSORS];
+
+/**
+ * Sözlüklerin anahtar kümeleri — `scripts/test-legal.ts` kapısı için.
+ *
+ * Bir sağlayıcı tablodan çıkınca yalnız ona ait olan amaç/veri/bölge anahtarı
+ * ÖLÜ kalıyor ve bunu kimse fark etmiyor: `llmRouting` tam olarak öyle oldu,
+ * OpenRouter'dan başka kullanan yoktu ve satır silinince arkada kaldı. Kapı
+ * artık kullanılmayan anahtarı sayıyor.
+ */
+export const LEGAL_VOCAB = {
+  purposes: Object.keys(PURPOSES),
+  dataKinds: Object.keys(DATA_KINDS),
+  regions: Object.keys(REGIONS),
+  safeguards: Object.keys(SAFEGUARDS),
+  occasions: Object.keys(OCCASIONS),
+} as const;
 
 /** Tablonun bir satırı, istenen dilde. */
 export function processorRow(p: Processor, locale: LegalLocale): {

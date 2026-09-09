@@ -123,7 +123,7 @@ export function TermsDeBody() {
 
       <h2>7b. Dienste Dritter</h2>
       <p>
-        Die Anmeldung mit Google (Google-Konto-Bedingungen), der Store, aus dem du die App geladen hast (Google Play-Nutzungsbedingungen{hasIos() ? <>, Apple-Media-Services-Bedingungen</> : null} und die jeweiligen Rückerstattungsrichtlinien) und der Spracherkennungsdienst deines Geräts unterliegen den Bedingungen ihrer jeweiligen Anbieter. Die KI- und Spracherkennungsanbieter
+        Die Anmeldung mit Google (Google-Konto-Bedingungen){hasIos() ? <>, die Anmeldung mit Apple (Apple-Account-Bedingungen)</> : null}, der Store, aus dem du die App geladen hast (Google Play-Nutzungsbedingungen{hasIos() ? <>, Apple-Media-Services-Bedingungen</> : null} und die jeweiligen Rückerstattungsrichtlinien) und der Spracherkennungsdienst deines Geräts unterliegen den Bedingungen ihrer jeweiligen Anbieter. Die KI- und Spracherkennungsanbieter
         sind in der Datenschutzerklärung aufgeführt; sie sind unsere Unterauftragsverarbeiter und schließen keinen Vertrag direkt mit dir.
       </p>
 

@@ -29,7 +29,7 @@ Sütunlar Console'daki sırayla: toplanıyor / paylaşılıyor / geçici işleme
 | Kişisel bilgi › Kullanıcı kimlikleri | Evet | Evet (RevenueCat, premium açılınca) | Hayır | Zorunlu | Hesap yönetimi, satın alma eşleme |
 | Kişisel bilgi › Diğer bilgi (IP adresi, tarayıcı/cihaz tanımı — oturum kaydı) | Evet | Hayır | Hayır | Zorunlu | Dolandırıcılık önleme, güvenlik, hız sınırı |
 | Ses › Ses kayıtları | Evet | Evet (Microsoft Azure, Groq, Cloudflare, Speechmatics, Deepgram, Mistral) | Evet (saklanmaz) | İsteğe bağlı (yürüyüş modu, açık rıza) | Uygulama işlevi (konuşma tanıma) |
-| Mesajlar › Diğer uygulama içi mesajlar (yazılan ve söylenen metinler: yazma görevleri, konuşma pratiği, sınav cevapları) | Evet | Evet (Groq, Mistral, Cerebras, Google Gemini, OpenRouter) | Hayır | İsteğe bağlı | Uygulama işlevi (değerlendirme ve geri bildirim) |
+| Mesajlar › Diğer uygulama içi mesajlar (yazılan ve söylenen metinler: yazma görevleri, konuşma pratiği, sınav cevapları) | Evet | Evet (Groq, Mistral, Cerebras) | Hayır | İsteğe bağlı | Uygulama işlevi (değerlendirme ve geri bildirim) |
 | Uygulama etkinliği › Uygulama içi etkileşimler (ilerleme, seri, XP, ekran görüntüleme olayları) | Evet | Hayır | Hayır | Zorunlu (ilerleme) / isteğe bağlı (olaylar, kapatılabilir) | Uygulama işlevi, analitik, kişiselleştirme |
 | Uygulama etkinliği › Diğer kullanıcı içeriği (görünen ad, kullanıcı adı, biyografi, içerik ve kullanıcı bildirimleri) | Evet | Hayır | Hayır | Zorunlu (ad) / isteğe bağlı (biyografi) | Uygulama işlevi, kişiselleştirme (sıralama, sosyal profil), güvenlik (moderasyon) |
 | Uygulama etkinliği › Diğer eylemler (arkadaşlık istekleri, tepkiler, dürtmeler, ortak görevler, engellemeler) | Evet | Hayır | Hayır | İsteğe bağlı | Uygulama işlevi (sosyal özellikler) |

@@ -23,18 +23,29 @@ import "server-only";
  * ilk bayt tutarlı biçimde 25-29 saniye sürdü ve çoğu istek
  * "Worker local total request limit reached" ile döndü — sohbet için kullanılamaz.
  *
- * Anahtarı olmayan sağlayıcı listeye hiç girmez; birini kullanmak için tek
- * yapılacak şey anahtarını tanımlamak. Zincir uzadıkça toplam dakikalık
- * kapasite toplanır — 20 kullanıcı hedefi tek sağlayıcıyla tutmuyor.
+ * Anahtarı olmayan sağlayıcı listeye hiç girmez. Zincir uzadıkça toplam
+ * dakikalık kapasite toplanır — 20 kullanıcı hedefi tek sağlayıcıyla tutmuyor.
+ *
+ * KATALOĞA SAĞLAYICI EKLEMEK ENV İŞİ DEĞİL, BEYAN İŞİ. Buraya giren her
+ * sağlayıcı, kullanıcının yazdığı ve söylediği metni alan bir ALICIDIR ve
+ * gizlilik politikasının alıcılar tablosunda (`lib/legal.ts` PROCESSORS) adıyla
+ * yazılı olmak zorunda; Play Veri Güvenliği beyanı da (`docs/play/data-safety.md`)
+ * aynı listeyi sayıyor. Üçü birlikte değişir.
+ *
+ * Google Gemini ve OpenRouter tam olarak bu yüzden ÇIKARILDI (2026-09-09):
+ * katalogda duruyorlardı, anahtarları hiçbir env dosyasında yoktu, ama alıcılar
+ * tablosunda alıcı olarak sayılıyorlardı. Fazla beyan ihlal değil ama tablo
+ * gerçeği anlatmıyordu; ikisi de kullanılmayacak (sahibin kararı). Katalogda
+ * bırakmak, bir gün `GEMINI_API_KEY` tanımlanınca beyanın kendiliğinden
+ * doğrulanacağı anlamına gelirdi — yani yanlışın hangi yönde olduğu şansa
+ * kalırdı.
  */
 
 export type ChatMessage = { role: "user" | "assistant"; content: string };
 export type ProviderName =
   | "mistral"
   | "groq"
-  | "cerebras"
-  | "gemini"
-  | "openrouter";
+  | "cerebras";
 
 type ProviderConfig = {
   baseUrl: string;
@@ -63,9 +74,9 @@ type ProviderConfig = {
   /**
    * Konuşmayı yazıya çeviren uç ve modeli.
    *
-   * Yalnızca iki sağlayıcıda var. OpenAI uyumlu biçim aynı: çok parçalı gövde
-   * (`file` + `model`), `{baseUrl}/audio/transcriptions` adresi. Diğer üçünde
-   * bu uç olmadığı için alan boş kalıyor ve zincir onları atlıyor.
+   * Üçün ikisinde var (Mistral, Groq). OpenAI uyumlu biçim aynı: çok parçalı
+   * gövde (`file` + `model`), `{baseUrl}/audio/transcriptions` adresi.
+   * Cerebras'ta bu uç olmadığı için alan boş kalıyor ve zincir onu atlıyor.
    */
   sttModel?: string;
   sttEnvModel?: string;
@@ -113,27 +124,10 @@ const CATALOG: Record<ProviderName, ProviderConfig> = {
     freeTier: "5 istek/dk · 1M token/gün",
     reasoningEffort: "low",
   },
-  gemini: {
-    // Google'ın OpenAI uyumlu ucu — katalogda özel dal gerekmiyor.
-    baseUrl: "https://generativelanguage.googleapis.com/v1beta/openai",
-    envKey: "GEMINI_API_KEY",
-    envModel: "GEMINI_MODEL",
-    defaultModel: "gemini-2.0-flash",
-    freeTier: "istek/gün tabanlı (token değil)",
-  },
-  openrouter: {
-    // Toplayıcı. Ücretsiz katmanı günde 50 istekle sınırlı olduğu için zincirin
-    // en sonunda: ancak diğer dördü aynı anda tükendiğinde işe yarar.
-    baseUrl: "https://openrouter.ai/api/v1",
-    envKey: "OPENROUTER_API_KEY",
-    envModel: "OPENROUTER_MODEL",
-    defaultModel: "google/gemma-4-31b-it:free",
-    freeTier: "50 istek/gün",
-  },
 };
 
 /** Dakikalık hakkı geniş olanlar önce, günlük kotayla sınırlı olan en sonda. */
-const ORDER: ProviderName[] = ["mistral", "groq", "cerebras", "gemini", "openrouter"];
+const ORDER: ProviderName[] = ["mistral", "groq", "cerebras"];
 
 /**
  * Bir çağrının sonucu — muhasebe için.
