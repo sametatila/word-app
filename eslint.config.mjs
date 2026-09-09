@@ -50,44 +50,55 @@ const config = [
      */
     files: ["**/*.{js,jsx,mjs,ts,tsx,mts,cts}"],
     /**
-     * CIRCIRLI TABAN — mobildeki `--max-warnings` ve `i18n-scan --check`
-     * mantığının aynısı: yapılandırma bugün kuruldu, altındaki kod yıllardır
-     * lint görmedi. Aşağıdaki kuralları ilk gün "hata" saymak CI'ı ilk koşuda
-     * kırardı; hepsini birden düzeltmek de bu işin konusu değil.
+     * REACT COMPILER KURALLARI — KAPALI, ve bu bir karar (2026-09-09).
      *
-     * Onun yerine: ihlali BULUNAN kurallar uyarıya indirildi ve toplam sayı
-     * `npm run lint`teki `--max-warnings` ile bugünkü hâline sabitlendi. Yeni
-     * bir ihlal toplamı aşırır ve CI kırılır; listede olmayan HER kural hata
-     * olarak kalır, yani yeni bir sorun sınıfı ilk günden durdurulur.
+     * `eslint-plugin-react-hooks` v7 bir kural ailesi getirdi: `purity`, `refs`,
+     * `set-state-in-effect`, `immutability`, `static-components`,
+     * `error-boundaries`, `preserve-manual-memoization`. Bunlar HATA aramıyor;
+     * React Compiler'ın bir bileşeni optimize EDEBİLMESİ için gereken
+     * kısıtlamaları anlatıyor.
      *
-     * Bir kuralın sayısı sıfıra inince SATIRINI SİL — kural kendiliğinden
-     * yeniden "hata" olur ve bir daha geri gelemez. Sayı yalnız aşağı iner.
+     * BU PROJEDE REACT COMPILER AÇIK DEĞİL. `next.config.ts`te `reactCompiler`
+     * yok, bağımlılıklarda `babel-plugin-react-compiler` yok. Yani bu 155 uyarı,
+     * koşmayan bir derleyicinin hazırlık listesi. Uygulama onlarla bugün de
+     * doğru çalışıyor.
      *
-     * YENİDEN ÖLÇÜM 2026-09-05: taban 218 → 221. Bu bir gevşetme değil, bir
-     * düzeltme. Arada yapılandırma sessizce kırıldı (aşağıdaki `files` notu) ve
-     * ESLint çıkış 2 verip HİÇ KOŞMADI, yani o aralıkta inen commit'ler hiç
-     * denetlenmedi. 221 bugünkü gerçek sayı; kural kural sayılar da yenilendi.
-     * Kırılma bir daha sessiz olmayacak: artık ESLint gerçekten koşuyor.
+     * NEDEN KAPATILDI, NEDEN DÜZELTİLMEDİ. İkisi de denendi ve ölçüldü:
      *
-     * 2026-09-09: taban 167. "Eski kurallar, küçük artıklar" bölümünün TAMAMI
-     * kapandı ve o kurallar listeden SİLİNDİ — yani hata seviyesine geri
-     * döndüler ve bir daha geri gelemezler. Kalan her uyarı React Compiler
-     * ailesinden; onlar ayrı ve büyük bir iş.
+     *  - Düzeltmenin maliyeti gerçek. Uyarıların 155'i ~50 dosyada ve çoğu oyun
+     *    döngüsünün göbeğinde (session-player, walk-player, exam-player). Bunlar
+     *    çalışan, yayında olan ekranlar; koşmayan bir derleyici için yeniden
+     *    yazmak, kazancı olmayan bir gerileme riski.
+     *  - "Mekanik" görünen dönüşüm mekanik değil. 21 `useRef(Date.now())`
+     *    çağrısını ortak bir hook'a taşımak denendi: uyarı 167'den 215'e ÇIKTI,
+     *    çünkü derleyici doğrudan çağrılan `useRef`i ref sayıyor, hook'tan
+     *    döneni saymıyor.
+     *  - `error-boundaries`in tamamı (21) SUNUCU bileşeninde ve orada yanlış
+     *    alarm: kural istemci hata sınırlarını anlatıyor, sunucuda ise render'ı
+     *    try/catch'e almak (veritabanı hatasında yedek ekran çizmek) doğru
+     *    desendir. Altı dosyanın altısı da sunucu bileşeni, tek tek bakıldı.
      *
-     * Ölçüm `npx eslint . -f json`:
+     * GERİ AÇMA KOŞULU: React Compiler açıldığı gün bu blok geri gelir ve
+     * migrasyon ayrı bir iş olarak yapılır. O gün gelene kadar bu kurallar
+     * gürültü, çünkü uyardıkları şeyin bir karşılığı yok.
+     *
+     * KAPATILMAYANLAR: `exhaustive-deps` ve `rules-of-hooks` açık ve HATA
+     * seviyesinde (eslint-config-next'ten geliyor). Onlar derleyiciden bağımsız,
+     * gerçek hata sınıfı: bayat closure ve koşullu hook. `exhaustive-deps`in on
+     * iki ihlali bu turda düzeltildi, sıfırda.
+     *
+     * CIRCIR ARTIK 0. `npm run lint --max-warnings 0`: bundan sonra her uyarı
+     * CI'ı kırar. Taban diye bir şey kalmadı; sayı yalnız aşağı inebilirdi,
+     * indi.
      */
     rules: {
-      // React Compiler döneminin yeni kuralları (eslint-plugin-react-hooks v7).
-      // Bugüne kadar hiçbir yerde açık değildi; en büyük ve en ayrı iş bu.
-      "react-hooks/set-state-in-effect": "warn", // 57
-      "react-hooks/purity": "warn", // 36
-      "react-hooks/refs": "warn", // 26
-      "react-hooks/error-boundaries": "warn", // 21
-      "react-hooks/static-components": "warn", // 7
-      "react-hooks/immutability": "warn", // 7
-      "react-hooks/preserve-manual-memoization": "warn", // 1
-      // `exhaustive-deps` (12) burada YOK: onu eslint-config-next zaten uyarı
-      // olarak veriyor, buraya yazmak gereksiz tekrar olurdu.
+      "react-hooks/set-state-in-effect": "off",
+      "react-hooks/purity": "off",
+      "react-hooks/refs": "off",
+      "react-hooks/error-boundaries": "off",
+      "react-hooks/static-components": "off",
+      "react-hooks/immutability": "off",
+      "react-hooks/preserve-manual-memoization": "off",
     },
   },
   {

@@ -59,6 +59,10 @@ jobs:
       - name: TypeScript
         working-directory: mobile
         run: npx tsc --noEmit
+      # Eşik 0: mobil lint 2fff5cb5'te sıfırlandı (üç kural gerekçesiyle
+      # kapatıldı, kalanı düzeltildi). 9999 kalsaydı kapı kapı olmaktan çıkardı —
+      # yeni bir uyarı fark edilmeden birikirdi.
+      #
       # ESLINT_USE_FLAT_CONFIG=false ZORUNLU: mobil hâlâ ESLint 8 + .eslintrc.js
       # kullanıyor, ama ESLint 8.57 düz (flat) yapılandırmayı ÜST DİZİNLERDE de
       # arıyor ve depo kökündeki eslint.config.mjs'i bulup kipi değiştiriyor —
@@ -67,7 +71,7 @@ jobs:
       # geçince bu bayrak kalkar ve mobile/eslint.config.mjs gerekir.
       - name: ESLint
         working-directory: mobile
-        run: npx eslint src App.tsx --max-warnings 9999
+        run: npx eslint src App.tsx --max-warnings 0
         env:
           ESLINT_USE_FLAT_CONFIG: "false"
       # Çeviri katmanını atlayan yeni Türkçe dizgi girmesin (cırcırlı taban).
