@@ -1144,6 +1144,7 @@ export const enWeb: Record<string, string> = {
   "immw.grammar_exercise": "Grammar exercise",
   "profw.load_failed": "Couldn't load the profile",
   "bossw.exam_link": "Module exam (25 min, seven parts) →",
+  "bossw.title": "Module exam",
   "certw.this_document": "This certificate is",
   "certw.awarded_to": "awarded for passing the exam with {pct}.",
   "certw.sections": "SECTIONS",

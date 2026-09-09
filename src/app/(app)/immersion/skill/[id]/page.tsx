@@ -10,6 +10,7 @@ import { WritingPlayer } from "@/components/skills/writing-player";
 import { SpeakingPlayer } from "@/components/skills/speaking-player";
 import { MonologuePlayer } from "@/components/skills/monologue-player";
 import { GrammarPlayer } from "@/components/skills/grammar-player";
+import { titleMeta } from "@/lib/page-meta";
 
 export const dynamic = "force-dynamic";
 
@@ -31,6 +32,8 @@ const DONE_PCT = 70;
  * kütüphane egzersizi: öğrenci bitirdiği anda ne yapacağını görür, hub'a dönüp
  * aramaz. Patika'dan gelindiğinde sıradakini Patika'nın kendisi söyler.
  */
+export const generateMetadata = titleMeta("skills.skills");
+
 export default async function ImmersionSkillPage({
   params,
   searchParams,

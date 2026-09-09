@@ -6,6 +6,7 @@ import { deriveQuiz } from "@/lib/immersion/quiz";
 import { unitQuestions } from "@/lib/immersion/content";
 import type { CefrLevel, SkillQuestion } from "@/lib/skills/types";
 import { ImmersionQuizPlayer } from "@/components/immersion/quiz-player";
+import { titleMeta } from "@/lib/page-meta";
 
 export const dynamic = "force-dynamic";
 
@@ -18,6 +19,8 @@ const LEVELS = ["A1", "A2", "B1", "B2", "C1"];
  * onu, yoksa ünitenin brief'inden TÜRETİLEN soruları render eder. mode=checkpoint
  * daha uzun/kapsamlı sınav (bitiş sınavı). Kurs tireli olabilir (gsw-zh).
  */
+export const generateMetadata = titleMeta("unitkind.quiz");
+
 export default async function ImmersionQuizPage({
   params,
   searchParams,

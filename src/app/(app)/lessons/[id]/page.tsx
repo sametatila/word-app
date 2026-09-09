@@ -7,8 +7,11 @@ import { ensureProfile } from "@/lib/session";
 import { nextLesson } from "@/lib/lessons/progress";
 import { candoForLesson } from "@/lib/cando-map";
 import { candoById } from "@/lib/cando";
+import { titleMeta } from "@/lib/page-meta";
 
 export const dynamic = "force-dynamic";
+
+export const generateMetadata = titleMeta("unitkind.lesson");
 
 export default async function LessonPage({ params }: { params: Promise<{ id: string }> }) {
   const userId = await getUserId();

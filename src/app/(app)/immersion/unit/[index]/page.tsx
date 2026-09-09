@@ -9,6 +9,7 @@ import { PageBack } from "@/components/page-back";
 import { UnitPane } from "@/components/immersion/unit-pane";
 import { buildHubUnits } from "@/lib/immersion/hub";
 import type { CefrLevel } from "@/lib/skills/types";
+import { titleMeta } from "@/lib/page-meta";
 
 export const dynamic = "force-dynamic";
 
@@ -25,6 +26,8 @@ const LEVELS: CefrLevel[] = ["A1", "A2", "B1", "B2", "C1"];
  * Geniş ekranda Patika aynı gövdeyi kendi sağ panelinde çiziyor; burası
  * telefon ve doğrudan açılan adres için.
  */
+export const generateMetadata = titleMeta("nav.path");
+
 export default async function UnitPage({ params }: { params: Promise<{ index: string }> }) {
   const t = await getT();
   const user = await getUserInfo();

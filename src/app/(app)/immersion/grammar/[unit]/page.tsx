@@ -6,6 +6,7 @@ import { deriveGrammar } from "@/lib/immersion/grammar";
 import { lessonsFor } from "@/lib/lessons/index";
 import type { CefrLevel } from "@/lib/skills/types";
 import { ImmersionQuizPlayer } from "@/components/immersion/quiz-player";
+import { titleMeta } from "@/lib/page-meta";
 
 export const dynamic = "force-dynamic";
 
@@ -22,6 +23,8 @@ const LEVELS = ["A1", "A2", "B1", "B2", "C1"];
  * Oysa ders katmanı gereken malzemeyi taşıyor — hüküm adımları (gerekçesiyle)
  * ve üretim hedefleri. Türetme onları kullanıyor, hiçbir şey uydurmuyor.
  */
+export const generateMetadata = titleMeta("unitkind.grammar");
+
 export default async function ImmersionGrammarPage({ params }: { params: Promise<{ unit: string }> }) {
   const t = await getT();
   const { unit } = await params;

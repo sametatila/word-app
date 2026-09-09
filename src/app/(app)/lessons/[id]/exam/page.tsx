@@ -4,10 +4,13 @@ import { findLesson } from "@/lib/lessons";
 import { candoForLesson } from "@/lib/cando-map";
 import { candoById } from "@/lib/cando";
 import { RoleplayExam } from "@/components/lessons/roleplay-exam";
+import { titleMeta } from "@/lib/page-meta";
 
 export const dynamic = "force-dynamic";
 
 /** Dersin rol yapma sahnesi sınav olarak (WP-22): /lessons/[id]/exam. */
+export const generateMetadata = titleMeta("rpexam.title");
+
 export default async function LessonExamPage({ params }: { params: Promise<{ id: string }> }) {
   const userId = await getUserId();
   if (!userId) redirect("/login");

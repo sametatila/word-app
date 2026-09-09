@@ -3,6 +3,7 @@ import { getT } from "@/lib/i18n/server";
 import { notFound, redirect } from "next/navigation";
 import { getUserId } from "@/lib/auth/server";
 import { BossPlayer } from "@/components/boss-player";
+import { titleMeta } from "@/lib/page-meta";
 
 export const dynamic = "force-dynamic";
 
@@ -15,6 +16,8 @@ const LEVELS = ["A1", "A2", "B1", "B2", "C1"];
  * ve paylaşılabilir: "A1 üçüncü modül sınavı" bir bağlantıyla açılabiliyor.
  * Sınavın kendisi istemcide kuruluyor çünkü süre ve akış oradan yönetiliyor.
  */
+export const generateMetadata = titleMeta("bossw.title");
+
 export default async function BossPage({
   params,
 }: {
