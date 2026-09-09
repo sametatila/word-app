@@ -97,14 +97,14 @@ export const VOICES: Voice[] = [
     id: "de-DE-KatjaNeural",
     label: "Katja",
     gender: "female",
-    noteKey: "voice.de_de_katjaneural.note",
+    noteKey: "voices.katja_note",
     course: "de",
   },
   {
     id: "de-DE-ConradNeural",
     label: "Conrad",
     gender: "male",
-    noteKey: "voice.de_de_conradneural.note",
+    noteKey: "voices.conrad_note",
     course: "de",
   },
   {
@@ -113,7 +113,7 @@ export const VOICES: Voice[] = [
     gender: "female",
     // Zürih kursunun asıl kazancı bu ses: Dieth yazımı fonetik olduğu için
     // gerçekten İsviçre Almancası konuşan bir ses lehçe metnini doğru okuyor.
-    noteKey: "voice.de_ch_lenineural.note",
+    noteKey: "voices.leni_note",
     course: "gsw-zh",
   },
   {
@@ -122,21 +122,21 @@ export const VOICES: Voice[] = [
     gender: "male",
     // Dürüst olmak gerekiyor: Jan İsviçre aksanlı Hochdeutsch konuşuyor,
     // Leni kadar lehçeye yakın değil. Erkek sesi isteyen için var.
-    noteKey: "voice.de_ch_janneural.note",
+    noteKey: "voices.jan_note",
     course: "gsw-zh",
   },
   {
     id: "en-US-JennyNeural",
     label: "Jenny",
     gender: "female",
-    noteKey: "voice.en_us_jennyneural.note",
+    noteKey: "voices.jenny_note",
     course: "en",
   },
   {
     id: "en-US-GuyNeural",
     label: "Guy",
     gender: "male",
-    noteKey: "voice.en_us_guyneural.note",
+    noteKey: "voices.guy_note",
     course: "en",
   },
 ];

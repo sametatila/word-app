@@ -170,12 +170,6 @@ export const enWeb: Record<string, string> = {
   "level.b2_desc": "I understand work and public language",
   "level.c1_desc": "I handle academic and abstract language",
   "settings.only_you_change_level": "Only you change your level.",
-  "voice.de_de_katjaneural.note": "Clear and easy to follow; the fastest female voice",
-  "voice.de_de_conradneural.note": "Full and calm; the fastest male voice",
-  "voice.de_ch_lenineural.note": "Really speaks Swiss German",
-  "voice.de_ch_janneural.note": "Swiss accent; not as close to the dialect as Leni",
-  "voice.en_us_jennyneural.note": "Clear, natural American accent",
-  "voice.en_us_guyneural.note": "Calm, full American accent",
   "settings.srs_note": "Review timing is worked out from how fast and how accurately you answer.",
   "settings.course_switch_note": "Your words and review queue move to the new course. The other course is not deleted.",
   /* Kelime turu — bkz. tr.ts notu. */

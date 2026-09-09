@@ -170,12 +170,6 @@ export const deWeb: Record<string, string> = {
   "level.b2_desc": "Ich verstehe Berufs- und Öffentlichkeitssprache",
   "level.c1_desc": "Ich beherrsche akademische und abstrakte Sprache",
   "settings.only_you_change_level": "Deine Stufe änderst nur du.",
-  "voice.de_de_katjaneural.note": "Klar und gut verständlich; die schnellste weibliche Stimme",
-  "voice.de_de_conradneural.note": "Voll und ruhig; die schnellste männliche Stimme",
-  "voice.de_ch_lenineural.note": "Spricht wirklich Schweizerdeutsch",
-  "voice.de_ch_janneural.note": "Schweizer Akzent; dem Dialekt nicht so nah wie Leni",
-  "voice.en_us_jennyneural.note": "Klarer, natürlicher amerikanischer Akzent",
-  "voice.en_us_guyneural.note": "Ruhiger, voller amerikanischer Akzent",
   "settings.srs_note": "Die Wiederholungszeiten ergeben sich daraus, wie schnell und wie richtig du antwortest.",
   "settings.course_switch_note": "Deine Wörter und die Wiederholungsliste wechseln in den neuen Kurs. Der andere Kurs wird nicht gelöscht.",
   /* Kelime turu — bkz. tr.ts notu. */

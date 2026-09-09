@@ -193,12 +193,6 @@ export const trWeb: Record<string, string> = {
   "level.b2_desc": "İş ve toplum dilini anlarım",
   "level.c1_desc": "Akademik ve soyut dile hâkimim",
   "settings.only_you_change_level": "Seviyeni yalnızca sen değiştirirsin.",
-  "voice.de_de_katjaneural.note": "Net ve anlaşılır; en hızlı gelen kadın ses",
-  "voice.de_de_conradneural.note": "Tok ve sakin; en hızlı gelen erkek ses",
-  "voice.de_ch_lenineural.note": "Gerçekten İsviçre Almancası konuşur",
-  "voice.de_ch_janneural.note": "İsviçre aksanlı; Leni kadar lehçeye yakın değil",
-  "voice.en_us_jennyneural.note": "Net ve doğal Amerikan aksanı",
-  "voice.en_us_guyneural.note": "Sakin ve tok Amerikan aksanı",
   "settings.srs_note": "Tekrar zamanları cevabının hızına ve doğruluğuna göre kendiliğinden hesaplanır.",
   "settings.course_switch_note": "Kelimeler ve tekrar kuyruğun yeni kursa geçer. Diğer kurs silinmez.",
   /* Kelime turu — etap, bahis ve özet ekranları. Mobil `GameScreen` daha
