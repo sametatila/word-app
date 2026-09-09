@@ -5,10 +5,10 @@ apply plugin: "com.facebook.react"
 // Release imzası: keystore.properties'ten (repoda DEĞİL — gitignore).
 //
 // Anahtar yoksa release yapısı ÜRETİLMEZ. Eskiden sessizce debug anahtarına
-// düşüyordu ve iki şey aynı anda oluyordu: Play böyle bir yüklemeyi reddediyor,
-// ama daha kötüsü aynı dosya fark edilmeden GitHub sürümüne çıkabiliyordu — yan
-// dağıtımda imza anahtarı DEĞİŞTİRİLEMEZ, yani yanlış anahtarla çıkan bir sürüm
-// o kullanıcıların bir daha güncelleme alamaması demek.
+// düşüyordu: Play böyle bir yüklemeyi reddeder, ama asıl sorun dosyanın kendini
+// ele vermemesiydi. Kapıdan önce üretilmiş bir AAB tam bunu yaptı — adı
+// `app-release.aab`, sürümü `1.0.11`, sertifikası `CN=Android Debug`; gerçek bir
+// yayın yapısından ayırt edilemiyordu ve yayın denetiminde bulunup silindi.
 //
 // Geliştirme için kapı elle açılabiliyor (aşağıdaki allowDebugSigning); o zaman
 // da yapı `-devkey` sürüm ekiyle işaretleniyor ki elde kalan dosya ne olduğunu
@@ -39,8 +39,7 @@ if (!hasReleaseKeystore && !allowDebugSigning) {
 Yayın anahtarı yok: android/keystore.properties bulunamadı (${offending.path}).
 
 Release yapısı debug anahtarıyla imzalanmasın diye derleme burada durduruldu.
-Play böyle bir yüklemeyi reddeder; yan dağıtımda ise imza anahtarı bir daha
-DEĞİŞTİRİLEMEZ.
+Play böyle bir yüklemeyi reddeder ve çıkan dosya bunu kendisi söylemez.
 
   Yayın için:      bash mobile/scripts/gen-release-keystore.sh
                    sonra: npm run release:android
@@ -51,7 +50,7 @@ DEĞİŞTİRİLEMEZ.
     }
 }
 if (!hasReleaseKeystore && allowDebugSigning) {
-    logger.warn("UYARI: release DEBUG anahtarıyla imzalanacak (-PallowDebugSigning). Sürüm eki: -devkey. Bu yapı mağazaya da yan dağıtıma da gidemez.")
+    logger.warn("UYARI: release DEBUG anahtarıyla imzalanacak (-PallowDebugSigning). Sürüm eki: -devkey. Bu yapı mağazaya gidemez.")
 }
 
 /**
@@ -162,7 +161,7 @@ android {
         release {
             // Buraya anahtarsız gelmenin tek yolu -PallowDebugSigning; kapı
             // yukarıda. Sürüm eki o yapıyı elde kaldığında tanınır kılıyor:
-            // "1.0.11-devkey" mağazaya da yan dağıtıma da gidemez.
+            // "1.0.0-devkey" mağazaya gidemez.
             if (!hasReleaseKeystore) {
                 versionNameSuffix "-devkey"
             }
