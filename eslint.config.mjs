@@ -69,23 +69,25 @@ const config = [
      * denetlenmedi. 221 bugünkü gerçek sayı; kural kural sayılar da yenilendi.
      * Kırılma bir daha sessiz olmayacak: artık ESLint gerçekten koşuyor.
      *
+     * 2026-09-09: taban 167. "Eski kurallar, küçük artıklar" bölümünün TAMAMI
+     * kapandı ve o kurallar listeden SİLİNDİ — yani hata seviyesine geri
+     * döndüler ve bir daha geri gelemezler. Kalan her uyarı React Compiler
+     * ailesinden; onlar ayrı ve büyük bir iş.
+     *
      * Ölçüm `npx eslint . -f json`:
      */
     rules: {
       // React Compiler döneminin yeni kuralları (eslint-plugin-react-hooks v7).
       // Bugüne kadar hiçbir yerde açık değildi; en büyük ve en ayrı iş bu.
-      "react-hooks/set-state-in-effect": "warn", // 52
-      "react-hooks/error-boundaries": "warn", // 37
+      "react-hooks/set-state-in-effect": "warn", // 57
       "react-hooks/purity": "warn", // 36
       "react-hooks/refs": "warn", // 26
+      "react-hooks/error-boundaries": "warn", // 21
       "react-hooks/static-components": "warn", // 7
-      "react-hooks/immutability": "warn", // 4
+      "react-hooks/immutability": "warn", // 7
       "react-hooks/preserve-manual-memoization": "warn", // 1
-      // Eski kurallar, küçük artıklar — bunlar önce bitecek olanlar.
-      "react/no-unescaped-entities": "warn", // 13
-      "@typescript-eslint/no-require-imports": "warn", // 2
-      "@typescript-eslint/no-explicit-any": "warn", // 4
-      "@next/next/no-assign-module-variable": "warn", // 1
+      // `exhaustive-deps` (12) burada YOK: onu eslint-config-next zaten uyarı
+      // olarak veriyor, buraya yazmak gereksiz tekrar olurdu.
     },
   },
   {
