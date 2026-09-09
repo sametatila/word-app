@@ -277,6 +277,15 @@
   --hairline: #f1eae0;
   --text: #241a12;
   --text-muted: #7c6c5d;
+  /*
+   * Yumuşak marka dolgusu — mobil `primarySoft` (`colors.ts`).
+   *
+   * Web bunu `color-mix(brand-500 %14)` ile üretiyordu ve beyaz üstünde
+   * #feecde veriyor; mobilin açık teması ise düz `orange[100]` (#ffe3c4)
+   * kullanıyor. Fark seçili sekme hapında gözle görülüyordu: web soluk,
+   * Android dolgun. Değer artık mobilinkiyle birebir.
+   */
+  --brand-soft: var(--color-brand-100);
 
   --shadow-soft-sm: 0 4px 10px -2px rgb(90 52 24 / 0.14); /* mobil elevation 6 */
   --shadow-soft: 0 7px 16px -4px rgb(90 52 24 / 0.16); /* mobil elevation 10 */
@@ -313,6 +322,8 @@
   --hairline: #2b221a;
   --text: #f6efe6;
   --text-muted: #a9998a;
+  /* Koyu temada mobil `primarySoft` bir ALFA: rgba(248,118,18,0.16). */
+  --brand-soft: color-mix(in srgb, var(--color-brand-500) 16%, transparent);
 
   /* Koyu zeminde sıcak kahve gölge görünmüyor; orada gölge siyaha dönüyor ve
      derinleşiyor — Android'in `elevation`'ı da koyu temada aynı şeyi yapar. */

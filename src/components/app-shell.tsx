@@ -427,14 +427,14 @@ export function AppShell({
                     key={item.href}
                     href={item.href}
                     aria-current={active ? "page" : undefined}
-                    className="pressable relative flex flex-1 flex-col items-center gap-[3px] rounded-panel py-2.5 text-micro"
+                    className="pressable relative flex flex-1 flex-col items-center gap-[3px] rounded-panel py-[9px] text-micro"
                     style={{ color: active ? "var(--color-brand)" : "var(--text-muted)" }}
                   >
                     {active && (
                       <motion.span
                         layoutId="tab-active"
                         className="absolute inset-0 rounded-panel"
-                        style={{ background: "color-mix(in srgb, var(--color-brand-500) 14%, transparent)" }}
+                        style={{ background: "var(--brand-soft)" }}
                         transition={{ type: "spring", stiffness: 400, damping: 32 }}
                       />
                     )}
