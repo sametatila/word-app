@@ -32,8 +32,10 @@ for (const level of LEVELS) {
   const lessons = all
     .filter((l) => l.level === level)
     .map((l) => {
-      const rp = l.roleplay as Record<string, unknown>;
-      const { script, ...roleplay } = rp;
+      // `script` mobil pakete GİRMİYOR (yalnız web oynatıcısı kullanıyor ve
+      // paketi gereksiz büyütüyor); kalan alanlar aynen taşınıyor.
+      const { script: _omitScript, ...roleplay } = l.roleplay as Record<string, unknown>;
+      void _omitScript;
       return {
         id: l.id, level: l.level, course: l.course, icon: l.icon,
         title: l.title, titleTr: l.titleTr, summary: l.summary, minutes: l.minutes,

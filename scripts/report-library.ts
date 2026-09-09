@@ -17,6 +17,7 @@ import { BUNDLED_EXERCISES } from "../src/lib/skills/bundled";
 import { itemCount } from "../src/lib/skills/meta";
 import { candoForExercise } from "../src/lib/cando-map";
 import type { CefrLevel, SkillExercise, SkillId } from "../src/lib/skills/types";
+import fs from "node:fs";
 
 const LEVELS: CefrLevel[] = ["A1", "A2", "B1", "B2", "C1"];
 const SKILLS: SkillId[] = ["reading", "listening", "writing", "speaking", "grammar"];
@@ -282,7 +283,6 @@ for (const course of courses) {
   }
   console.log(`Kütüphane içi kopya: ${ic.length ? `${ic.length} çift` : "yok"}`);
   for (const d of ic.slice(0, 8)) console.log(d);
-  const fs = require("node:fs") as typeof import("node:fs");
   for (const f of ["de-a1", "de-a2", "de-b1", "de-b2", "de-c1", "en-a1", "en-a2"]) {
     const path = `mobile/src/data/lessons/${f}.json`;
     if (fs.existsSync(path)) others.push(fs.readFileSync(path, "utf8"));
