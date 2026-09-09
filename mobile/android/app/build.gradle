@@ -2,6 +2,18 @@ apply plugin: "com.android.application"
 apply plugin: "org.jetbrains.kotlin.android"
 apply plugin: "com.facebook.react"
 
+// Firebase yapılandırması KOŞULLU.
+//
+// google-services.json bir sırdır ve repoda değil (gitignore). Eklenti
+// koşulsuz uygulansaydı dosyası olmayan herkeste yapı "File google-services.json
+// is missing" diye çökerdi — yani anahtarları elinde olmayan bir geliştirici
+// uygulamayı hiç derleyemezdi. Dosya varsa uzak bildirim açılıyor, yoksa
+// uygulama aynen derleniyor ve JS tarafı push'u sessizce kapalı sayıyor
+// (bkz. src/lib/pushDevice.ts).
+if (file("google-services.json").exists()) {
+    apply plugin: "com.google.gms.google-services"
+}
+
 // Release imzası: keystore.properties'ten (repoda DEĞİL — gitignore).
 //
 // Anahtar yoksa release yapısı ÜRETİLMEZ. Eskiden sessizce debug anahtarına

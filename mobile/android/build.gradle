@@ -15,6 +15,11 @@ buildscript {
         classpath("com.android.tools.build:gradle")
         classpath("com.facebook.react:react-native-gradle-plugin")
         classpath("org.jetbrains.kotlin:kotlin-gradle-plugin")
+        // Firebase Cloud Messaging (uzak bildirim). Eklenti YALNIZ
+        // app/google-services.json varsa uygulanıyor (bkz. app/build.gradle):
+        // dosya olmadan uygulanırsa yapı çöker ve anahtarları olmayan bir
+        // geliştirici hiçbir şey derleyemez.
+        classpath("com.google.gms:google-services:4.4.2")
     }
 }
 

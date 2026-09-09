@@ -75,6 +75,8 @@
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>audio</string>
+		<!-- Uzak bildirim: sessiz/veri taşıyan push uygulamayı kısa süreliğine uyandırır. -->
+		<string>remote-notification</string>
 	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>

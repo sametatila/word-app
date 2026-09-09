@@ -13,6 +13,8 @@ import { loadVoicePref } from "./src/lib/tts";
 import { TtsBridge } from "./src/lib/ttsBridge";
 import { track, loadAnalyticsPref } from "./src/lib/track";
 import { loadLang, useLang } from "./src/lib/i18n";
+import { attachPushListeners } from "./src/lib/pushDevice";
+import { navigationRef } from "./src/lib/pushRoute";
 
 function Nav() {
   const { colors, isDark } = useTheme();
@@ -21,6 +23,14 @@ function Nav() {
   // Arayüz dili: değiştiğinde tüm ağaç yeniden render edilsin diye tepede
   // dinleniyor (t() modül düzeyinde okuduğu için tek başına tetiklemez).
   useLang();
+
+  /*
+    Uzak bildirim dinleyicileri (FCM): jeton yenileme, ön planda gelen bildirimi
+    kendimiz çizme, dokunuşta doğru ekrana gitme. Firebase yapılandırması yoksa
+    kurulum sessizce boş döner. Jeton KAYDI burada değil AuthContext'te: jeton
+    bir hesaba yazılıyor ve o hesap giriş yapılana kadar belli değil.
+  */
+  useEffect(() => attachPushListeners(), []);
 
   // İlk açılış akışı bir kez gösterilir; görüldüğü yerelde tutulur.
   useEffect(() => {
@@ -57,7 +67,9 @@ function Nav() {
   const initialRoute = user ? "Tabs" : !onboarded ? "Onboarding" : "Auth";
 
   return (
-    <NavigationContainer theme={navTheme}>
+    /* Gezgin başvurusu bileşen ağacının dışından gezinmek için: bildirime
+       dokunuş bir React olayı değil, sistemden gelen bir çağrı. */
+    <NavigationContainer ref={navigationRef} theme={navTheme}>
       <StatusBar barStyle={isDark ? "light-content" : "dark-content"} />
       <TtsBridge />
       {/* Zemin TAM GENİŞLİK; okunabilir sütun ekran başına uygulanıyor

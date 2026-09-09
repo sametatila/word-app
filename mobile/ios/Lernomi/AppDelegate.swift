@@ -2,6 +2,7 @@ import UIKit
 import React
 import React_RCTAppDelegate
 import ReactAppDependencyProvider
+import FirebaseCore
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -14,6 +15,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     _ application: UIApplication,
     didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]? = nil
   ) -> Bool {
+    // Uzak bildirim (FCM) — YAPILANDIRMA VARSA.
+    //
+    // GoogleService-Info.plist bir sırdır ve repoda değil. `FirebaseApp.configure()`
+    // dosya yokken uygulamayı açılışta ÇÖKERTİR, o yüzden önce varlığına bakılıyor:
+    // dosya varsa push açık, yoksa uygulama push'suz ama sağlam çalışıyor
+    // (JS tarafı da aynı şekilde sessizce kapanıyor, bkz. src/lib/pushDevice.ts).
+    if Bundle.main.path(forResource: "GoogleService-Info", ofType: "plist") != nil {
+      FirebaseApp.configure()
+    }
+
     let delegate = ReactNativeDelegate()
     let factory = RCTReactNativeFactory(delegate: delegate)
     delegate.dependencyProvider = RCTAppDependencyProvider()

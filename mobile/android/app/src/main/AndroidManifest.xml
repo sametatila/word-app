@@ -59,6 +59,22 @@
         android:foregroundServiceType="microphone"
         android:exported="false" />
 
+      <!-- FCM'in arka planda KENDİ çizdiği bildirim için varsayılanlar.
+           Android 8+ kanalsız bildirimi sessizce düşürür: kanal kimliği hem
+           sunucu gövdesinde hem burada yazılı ki hangi yoldan gelirse gelsin
+           bildirim "reminder" kanalına düşsün. Simge de yerel hatırlatmalarla
+           aynı — iki kaynaktan gelen bildirim aynı görünmeli. -->
+      <!-- tools:replace ZORUNLU: react-native-firebase_messaging aynı meta-data'yı
+           BOŞ değerle beyan ediyor, birleştirici iki farklı değeri kendi başına
+           seçemiyor ve yapı "Manifest merger failed" ile duruyor. -->
+      <meta-data
+        android:name="com.google.firebase.messaging.default_notification_channel_id"
+        android:value="reminder"
+        tools:replace="android:value" />
+      <meta-data
+        android:name="com.google.firebase.messaging.default_notification_icon"
+        android:resource="@drawable/ic_notification" />
+
       <!-- notifee kendi ön plan servisini (shortService) manifest'e ekliyor; biz onu hiç
            başlatmıyoruz (yalnız kanal + tetikleyici bildirim kullanıyoruz). Kullanılmayan
            bir FGS bileşeni Play tarafında gereksiz beyan ve inceleme sorusu demek. -->

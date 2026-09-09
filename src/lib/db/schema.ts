@@ -1417,3 +1417,30 @@ export const leagueMembers = pgTable(
     index("league_members_user_idx").on(t.userId, t.weekStart),
   ],
 );
+
+/**
+ * Mobil cihaz jetonları — native uygulamanın uzak bildirim adresi (0048).
+ *
+ * Web Push (`push_subscriptions`) tarayıcıya ait ve native uygulamada
+ * çalışmıyor. Bu tablo FCM tarafı: Android jetonu doğrudan, iOS jetonu APNs
+ * üzerinden yine FCM'den geliyor. İkisi de aynı gönderici koddan geçiyor.
+ *
+ * Jeton CİHAZA ait: aynı hesap iki telefonda iki satır. Birincil anahtar
+ * jetonun kendisi çünkü bir cihaz aynı anda tek hesaba bildirim almalı —
+ * hesap değişince satır el değiştirir, kopyalanmaz.
+ */
+export const deviceTokens = pgTable(
+  "device_tokens",
+  {
+    token: text("token").primaryKey(),
+    userId: text("user_id").notNull(),
+    /** ios | android */
+    platform: text("platform").notNull(),
+    /** Web Push'taki ile aynı: kalıcı hata sayılır, ısrar ederse jeton düşer. */
+    failures: integer("failures").notNull().default(0),
+    createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
+    /** Uygulama en son ne zaman bu jetonu bildirdi — ölü cihazları ayıklamak için. */
+    seenAt: timestamp("seen_at", { withTimezone: true }).notNull().defaultNow(),
+  },
+  (t) => [index("device_tokens_user_idx").on(t.userId)],
+);

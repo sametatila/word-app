@@ -6,6 +6,7 @@ import { dailyStats, leagueMembers, profiles, pushSubscriptions, userWords } fro
 import { weekStart } from "@/lib/session";
 import { shiftDay } from "@/lib/award";
 import { track } from "@/lib/events";
+import { fcmEnabled, sendFcm } from "@/lib/fcm";
 import { DEFAULT_NATIVE, formatNumber, isNativeLang, translate, type NativeLang } from "@/lib/i18n/dict";
 
 /**
@@ -180,15 +181,27 @@ async function deliver(sub: typeof pushSubscriptions.$inferSelect, payload: Push
 }
 
 /** Bir kullanıcının bütün cihazlarına gönderir; kaçının ulaştığını döner. */
+/**
+ * Kullanıcının BÜTÜN kanallarına gönderir: tarayıcı abonelikleri (Web Push) ve
+ * mobil cihaz jetonları (FCM). İkisi bağımsız — biri kapalıysa diğeri çalışır,
+ * ikisi de açıksa aynı kişi hem tarayıcıda hem telefonda görebilir. Aynı
+ * `tag` iki kanalda da toplama anahtarı olduğu için yığılma olmuyor.
+ */
 export async function sendToUser(userId: string, payload: PushPayload) {
-  if (!pushEnabled) return 0;
-  const subs = await db
-    .select()
-    .from(pushSubscriptions)
-    .where(eq(pushSubscriptions.userId, userId));
-  if (!subs.length) return 0;
-  const results = await Promise.all(subs.map((s) => deliver(s, payload)));
-  return results.filter(Boolean).length;
+  const [web, mobile] = await Promise.all([
+    (async () => {
+      if (!pushEnabled) return 0;
+      const subs = await db.select().from(pushSubscriptions).where(eq(pushSubscriptions.userId, userId));
+      if (!subs.length) return 0;
+      const results = await Promise.all(subs.map((s) => deliver(s, payload)));
+      return results.filter(Boolean).length;
+    })(),
+    sendFcm(userId, payload).catch((err) => {
+      console.error("[push:fcm]", err);
+      return 0;
+    }),
+  ]);
+  return web + mobile;
 }
 
 export type ReminderTarget = {
@@ -366,7 +379,7 @@ export async function weeklyRivals(
 }
 
 export async function runReminders() {
-  if (!pushEnabled) return { targets: 0, sent: 0 };
+  if (!pushEnabled && !fcmEnabled) return { targets: 0, sent: 0 };
 
   const targets = await findReminderTargets();
   if (!targets.length) return { targets: 0, sent: 0 };
@@ -430,7 +443,7 @@ export async function runReminders() {
  * hatırlatma almamış olan seri sahibi akşam bunu alıyor; almış olan almıyor.
  */
 export async function runStreakAlerts(limit = 500) {
-  if (!pushEnabled) return { targets: 0, sent: 0 };
+  if (!pushEnabled && !fcmEnabled) return { targets: 0, sent: 0 };
 
   const localDay = sql`(now() at time zone ${profiles.timezone})::date`;
   const localHour = sql`extract(hour from (now() at time zone ${profiles.timezone}))`;
@@ -468,7 +481,7 @@ export async function runStreakAlerts(limit = 500) {
  * gününde iki bildirim göndermek, kapatılan izinlerin en ucuz sebebi.
  */
 export async function runWeeklyReminders(limit = 500) {
-  if (!pushEnabled) return { targets: 0, sent: 0 };
+  if (!pushEnabled && !fcmEnabled) return { targets: 0, sent: 0 };
 
   const localDay = sql`(now() at time zone ${profiles.timezone})::date`;
   const localHour = sql`extract(hour from (now() at time zone ${profiles.timezone}))`;
