@@ -1,0 +1,177 @@
+[
+ {
+  "lesson": "de-b1-bewerbung",
+  "sceneEn": "You are at a job interview at a company. Say why you applied with 'weil' and how long you have been working or studying with 'seit'; talk about your strengths.",
+  "partnerEn": "an HR specialist, professional but warm",
+  "openingEn": "Good afternoon, glad you could come! Tell me: why are you applying to us?",
+  "goalEn": "Why you applied, your experience and your strengths have been described, and the interviewer has said how the process goes on."
+ },
+ {
+  "lesson": "de-b1-lebenslauf",
+  "sceneEn": "You are at a job interview and the interviewer wants you to talk through your CV. Say where you worked, when you moved on and what you were responsible for, in order.",
+  "partnerEn": "an HR specialist taking notes and asking for detail",
+  "openingEn": "Please tell us briefly about your career. Where did you start?",
+  "goalEn": "The places you worked, when you moved on and your responsibilities have been described in order."
+ },
+ {
+  "lesson": "de-b1-staerken",
+  "sceneEn": "At the interview you are asked about your strengths and weaknesses. Give a strength, describe a weakness with a reservation, and add that you are working on it.",
+  "partnerEn": "an interviewer who asks directly but without prejudice",
+  "openingEn": "Let's come to a classic question: what are your strengths and weaknesses?",
+  "goalEn": "Your strength, your weakness and what you are doing about that weakness have been described."
+ },
+ {
+  "lesson": "de-b1-anschreiben",
+  "sceneEn": "At the interview you are asked why you want this job. Describe why you applied, what your goal is and what draws you to it, in clauses of purpose.",
+  "partnerEn": "a department head who wants to hear reasons and is open to being convinced",
+  "openingEn": "Why are you applying to us in particular? What is your motivation?",
+  "goalEn": "Why you applied, your goal and what draws you to this job have been described."
+ },
+ {
+  "lesson": "de-b1-probearbeit",
+  "sceneEn": "It is your first day at work and a colleague is helping you. Ask what you do not know with the embedded question pattern, and find out who to turn to.",
+  "partnerEn": "a patient colleague ready to show you anything",
+  "openingEn": "Welcome to the team! Do you have any questions about how things work?",
+  "goalEn": "What you did not know has been asked and you have found out who to turn to."
+ },
+ {
+  "lesson": "de-b1-arbeitszeiten",
+  "sceneEn": "You are discussing the working hours in your new job. Ask how flexitime works, find out what counts as overtime, and describe your own preference in conditional clauses.",
+  "partnerEn": "a team leader who explains the system in detail",
+  "openingEn": "We have flexitime here. Do you know how that works?",
+  "goalEn": "How flexitime works and what overtime is have been found out, and your own preference has been given."
+ },
+ {
+  "lesson": "de-b1-gehalt",
+  "sceneEn": "At the interview you are asked what salary you expect. Give your figure in polite forms, ask whether there is room to negotiate, and say you find it reasonable.",
+  "partnerEn": "an employer with a fixed budget but some flexibility",
+  "openingEn": "Let's talk about salary. What did you have in mind?",
+  "goalEn": "Your salary expectation has been given, the room to negotiate has been asked about and a range has been agreed."
+ },
+ {
+  "lesson": "de-b1-absage-bewerbung",
+  "sceneEn": "A friend is asking about the outcome of your application, and it was a rejection. Describe how the process went in order, say how you felt and say what you will do next.",
+  "partnerEn": "a close friend trying to keep your spirits up",
+  "openingEn": "And? Have you had an answer to your application yet?",
+  "goalEn": "How the process went has been described, how you felt has been said and your next step has been given."
+ },
+ {
+  "lesson": "de-b1-kuendigung",
+  "sceneEn": "You are telling your manager that you are resigning. Explain your reasons, say when you are leaving and ask for a written reference.",
+  "partnerEn": "a manager who does not want you to go but understands",
+  "openingEn": "You wanted to speak to me? What is it about?",
+  "goalEn": "Your reasons for resigning have been explained, a leaving date has been settled and a written reference has been asked for."
+ },
+ {
+  "lesson": "de-b1-networking",
+  "sceneEn": "You are at a company stand at a careers fair. Introduce yourself, ask politely what the company does and whether they are recruiting, and share your contact details at the end.",
+  "partnerEn": "an energetic stand attendant who talks to a hundred people a day",
+  "openingEn": "Hello! Are you interested in our company?",
+  "goalEn": "What the company does and whether they are recruiting have been found out, and contact details have been shared."
+ },
+ {
+  "lesson": "de-b1-wohnung",
+  "sceneEn": "You are on the phone to a landlord about a flat advertisement. Ask about the flat with the patterns 'Ich würde gern …' and 'Könnten Sie …?', find out the rent and arrange a viewing.",
+  "partnerEn": "a slightly formal but helpful landlord",
+  "openingEn": "Good afternoon! You're interested in the flat, is that right?",
+  "goalEn": "The state of the flat and the rent have been found out and a viewing has been arranged."
+ },
+ {
+  "lesson": "de-b1-besichtigung",
+  "sceneEn": "You have come to view a flat and the landlord is showing you round. Find out about the service charges, the deposit and when you could move in, using polite question forms.",
+  "partnerEn": "a landlord seeing many applicants and weighing them up",
+  "openingEn": "Do come in! What would you like to know about the flat?",
+  "goalEn": "The service charges, the deposit and when you could move in have all been found out."
+ },
+ {
+  "lesson": "de-b1-mietvertrag",
+  "sceneEn": "You are going through the tenancy agreement with the landlord. Ask about the clauses you do not understand, find out about the deposit and the notice period, and make clear what you are liable for.",
+  "partnerEn": "a landlord who knows the agreement and explains it clause by clause",
+  "openingEn": "Here is the tenancy agreement. Do you have questions about any of the points?",
+  "goalEn": "The clauses you did not understand have been explained and the deposit and the notice period have been made clear."
+ },
+ {
+  "lesson": "de-b1-nachbarn-streit",
+  "sceneEn": "Your upstairs neighbour makes a lot of noise at night and you have knocked on their door. Describe the trouble in polite forms, say it without blame, and suggest a solution together.",
+  "partnerEn": "a neighbour who is defensive at first but comes round",
+  "openingEn": "Yes? Has something happened?",
+  "goalEn": "The trouble has been described without blame and a solution both sides accept has been found."
+ },
+ {
+  "lesson": "de-b1-wg",
+  "sceneEn": "You have gone to see a house share as a candidate. Say what matters to you, ask about the rules of living together and suggest a compromise on the chores.",
+  "partnerEn": "a warm but selective flatmate",
+  "openingEn": "Good to have you here! Tell me: what matters to you about living together?",
+  "goalEn": "What matters to you has been said, the house rules have been found out and a compromise on the chores has been reached."
+ },
+ {
+  "lesson": "de-b1-reparatur-vermieter",
+  "sceneEn": "Something at home has broken and you have rung the landlord. Describe what is broken, say in formal language that it has to be repaired and ask for a deadline.",
+  "partnerEn": "a landlord inclined to put things off but open to being persuaded",
+  "openingEn": "Hello, Meier speaking. You called — what's the matter?",
+  "goalEn": "The fault has been reported in formal language and a deadline has been agreed."
+ },
+ {
+  "lesson": "de-b1-nebenkosten",
+  "sceneEn": "The service charge statement has come and the extra payment looks very high. Ask how it was worked out, say you find it too much and exercise your right to object.",
+  "partnerEn": "a landlord who defends the figures but is willing to show the paperwork",
+  "openingEn": "You've had the statement. Is there a problem with it?",
+  "goalEn": "How the statement was arrived at has been found out, your objection has been put and it has been said how things go on."
+ },
+ {
+  "lesson": "de-b1-einrichtung-stil",
+  "sceneEn": "A friend is furnishing their new place and asking about your taste. Say which style you like, describe the rooms with adjectives and make a suggestion.",
+  "partnerEn": "a friend who trusts your taste and is asking your advice",
+  "openingEn": "I'm just redecorating. Which style do you actually like?",
+  "goalEn": "The style you like has been described, the rooms have been described and a concrete suggestion has been made to your friend."
+ },
+ {
+  "lesson": "de-b1-umzugshelfer",
+  "sceneEn": "It is moving day and a friend has come to help. Split the jobs by time: what happens before you start, what they do while you do something, and what comes afterwards.",
+  "partnerEn": "a friend who likes organising and takes responsibility",
+  "openingEn": "Right, I'm here! What do we do first?",
+  "goalEn": "The jobs have been shared out in time order and it has been settled what happens at the end of the day."
+ },
+ {
+  "lesson": "de-b1-untermiete",
+  "sceneEn": "You are looking for a furnished room for a year and talking to the tenant. Say how long you are staying, give your verdict on the room and make the terms clear.",
+  "partnerEn": "a tenant letting their room while they go abroad for a year",
+  "openingEn": "Hello! So you're looking for a room for a while — how long for, then?",
+  "goalEn": "How long you are staying, the state of the room and the terms have all been made clear."
+ },
+ {
+  "lesson": "de-b1-damit",
+  "sceneEn": "You are talking to a friend about your plans for next year: saving money, a course, a holiday. Give the aim of each plan with 'damit'; your friend will ask you 'warum?' each time.",
+  "partnerEn": "a curious and supportive friend",
+  "openingEn": "Hey! You said you had big plans for next year. Tell me — what are you going to do, and why?",
+  "goalEn": "The aim of each plan has been given and your friend has said which one they are most curious about."
+ },
+ {
+  "lesson": "de-b1-um-zu",
+  "sceneEn": "A goals meeting with an adviser at a language course: say why you are learning German and why you are taking the exam with 'um … zu'; the adviser questions your plan.",
+  "partnerEn": "a course adviser whose questions are clear and encouraging",
+  "openingEn": "Good afternoon! Glad you could come. First tell me: what are you actually learning German for?",
+  "goalEn": "Your aim in learning German and in taking the exam has been described and the adviser has assessed your plan."
+ },
+ {
+  "lesson": "de-b1-obwohl",
+  "sceneEn": "Your friend is questioning your decision to resign from a well-paid job. Defend your decision with 'obwohl' and 'trotzdem': you are not happy, you are tired, you want something new.",
+  "partnerEn": "a worried but well-meaning friend",
+  "openingEn": "What? You really want to resign? But the salary is great. Why, then?",
+  "goalEn": "Your decision to resign has been defended in clauses of contrast and your friend has understood it."
+ },
+ {
+  "lesson": "de-b1-als-wenn",
+  "sceneEn": "A new acquaintance is asking about your childhood. Tell one-off memories with 'als' and repeated habits with 'immer wenn'.",
+  "partnerEn": "an acquaintance who listens with interest and asks questions",
+  "openingEn": "So you grew up in Izmir? What was your childhood like there? Tell me about those days.",
+  "goalEn": "Your one-off memories and your repeated habits have each been told separately."
+ },
+ {
+  "lesson": "de-b1-nachdem",
+  "sceneEn": "Someone you met at an integration course is asking how you came to Germany. Tell the events in order: 'Nachdem … hatte, …', 'Zuerst …, danach …'.",
+  "partnerEn": "a curious fellow student who shares their own story too",
+  "openingEn": "I came two years ago. And you — how was it for you? What did you do first, after you had arrived?",
+  "goalEn": "The story of how you came here has been told event by event, in the right order."
+ }
+]
