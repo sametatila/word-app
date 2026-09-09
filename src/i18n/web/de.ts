@@ -1120,4 +1120,13 @@ export const deWeb: Record<string, string> = {
   "growth.p_top_error": "häufigster Fehler: {label}",
   "progp.n_weeks": "{n} Wochen",
   "inv.copied": "Kopiert",
+  "socialw.friends_load_failed": "Freunde konnten nicht geladen werden",
+  "socialw.try_in_a_moment": "Versuch es in ein paar Sekunden noch einmal.",
+  "boss.not_ready": "Der Test ist noch nicht bereit",
+  "boss.not_ready_sub": "Der Test entsteht aus den Wörtern der Gespräche in diesem Modul, und hier passten nicht genug davon.",
+  "cando.loading": "Was du kannst wird geladen",
+  "prof.name_required": "Der Anzeigename darf nicht leer sein.",
+  "prof.session_expired": "Deine Sitzung ist abgelaufen — melde dich neu an.",
+  "prof.save_failed": "Konnte nicht gespeichert werden. Versuch es in ein paar Sekunden noch einmal.",
+  "settingsw.load_failed": "Einstellungen konnten nicht geladen werden",
 };

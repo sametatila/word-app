@@ -1145,4 +1145,13 @@ export const trWeb: Record<string, string> = {
   "growth.p_top_error": "en çok hata: {label}",
   "progp.n_weeks": "{n} hafta",
   "inv.copied": "Kopyalandı",
+  "socialw.friends_load_failed": "Arkadaşlar yüklenemedi",
+  "socialw.try_in_a_moment": "Birkaç saniye sonra tekrar dene.",
+  "boss.not_ready": "Sınav henüz hazır değil",
+  "boss.not_ready_sub": "Sınav modülün konuşmalarındaki kelimelerden kuruluyor ve bu modülde yeterli kelime eşleşmedi.",
+  "cando.loading": "Neler yapabilirim yükleniyor",
+  "prof.name_required": "Görünen ad boş bırakılamaz.",
+  "prof.session_expired": "Oturumun düşmüş — tekrar giriş yap.",
+  "prof.save_failed": "Kaydedilemedi. Birkaç saniye sonra tekrar dene.",
+  "settingsw.load_failed": "Ayarlar yüklenemedi",
 };

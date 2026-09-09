@@ -112,15 +112,31 @@ export function FriendsHub({ me, initialTab }: { me: SocialMeView; initialTab: H
           >
             {t("friends.count_friends", { n: me.counts.friends })}
           </span>
-          <Link
-            href="/profile/settings#social"
-            prefetch={false}
-            aria-label={t("friends.social_settings")}
-            className="pressable flex items-center gap-1.5 rounded-full px-3 py-1.5 text-caption"
-            style={{ background: "var(--surface-2)", color: "var(--text-muted)" }}
-          >
-            <WrenchIcon size={14} /> {t("socialw.settings")}
-          </Link>
+          {/* Bekleyen istek ve okunmamış rozetleri mobilde de burada; web'de
+              hiç çizilmiyordu ve "3 istek var" bilgisi yalnız sekme
+              rozetinde kalıyordu. */}
+          {me.counts.incoming > 0 ? (
+            <span
+              className="rounded-full px-3 py-1.5 text-caption"
+              style={{
+                background: "color-mix(in srgb, var(--color-flame-500) 16%, transparent)",
+                color: "var(--color-flame)",
+              }}
+            >
+              {t("friends.count_requests", { n: me.counts.incoming })}
+            </span>
+          ) : null}
+          {me.counts.unread > 0 ? (
+            <span
+              className="rounded-full px-3 py-1.5 text-caption"
+              style={{
+                background: "color-mix(in srgb, var(--color-brand-500) 16%, transparent)",
+                color: "var(--color-brand)",
+              }}
+            >
+              {t("friends.count_new", { n: me.counts.unread })}
+            </span>
+          ) : null}
         </div>
       </section>
 

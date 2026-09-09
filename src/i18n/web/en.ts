@@ -1120,4 +1120,13 @@ export const enWeb: Record<string, string> = {
   "growth.p_top_error": "most common error: {label}",
   "progp.n_weeks": "{n} weeks",
   "inv.copied": "Copied",
+  "socialw.friends_load_failed": "Couldn't load friends",
+  "socialw.try_in_a_moment": "Try again in a few seconds.",
+  "boss.not_ready": "The test isn't ready yet",
+  "boss.not_ready_sub": "The test is built from the words in this module's conversations, and not enough of them matched here.",
+  "cando.loading": "Loading what you can do",
+  "prof.name_required": "Display name can't be empty.",
+  "prof.session_expired": "Your session expired — sign in again.",
+  "prof.save_failed": "Couldn't save. Try again in a few seconds.",
+  "settingsw.load_failed": "Couldn't load settings",
 };

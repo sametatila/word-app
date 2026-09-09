@@ -239,10 +239,7 @@ export function BossPlayer({
     return (
       <Frame>
         <h2 className="text-lg font-bold">{t("boss.not_ready")}</h2>
-        <p className="muted mt-2 text-sm">
-          Sınav modülün konuşmalarındaki kelimelerden kuruluyor ve bu modülde yeterli kelime
-          eşleşmedi.
-        </p>
+        <p className="muted mt-2 text-sm">{t("boss.not_ready_sub")}</p>
         <button onClick={onExit} className="btn btn-ghost mt-5 w-full px-5 py-3">{t("common.go_back")}</button>
       </Frame>
     );

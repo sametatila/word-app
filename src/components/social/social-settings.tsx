@@ -20,7 +20,12 @@ const VIS: { key: Visibility; label: string; sub: string }[] = [
  * listesi burada — engellediğini görmenin tek yeri, çünkü engellenen
  * profilde artık görünmüyor.
  */
-export function SocialSettings({ initial, course = "de" }: { initial: SocialMeView; course?: string }) {
+/**
+ * `bare`: kendi adresinde çizilirken başlık şeridi çizilmiyor — sayfanın h1'i
+ * zaten "Sosyal ve gizlilik" diyor, kartın içindeki ikinci başlık onu
+ * tekrarlardı.
+ */
+export function SocialSettings({ initial, course = "de", bare = false }: { initial: SocialMeView; course?: string; bare?: boolean }) {
   const t = useT();
   const lang = useLang();
   const [me, setMe] = useState(initial);
@@ -56,11 +61,13 @@ export function SocialSettings({ initial, course = "de" }: { initial: SocialMeVi
   const dirtyBio = (bio.trim() || "") !== (me.bio ?? "");
 
   return (
-    <section id="social" className="card mt-4 overflow-hidden">
-      <div className="border-b px-4 py-3" style={{ borderColor: "var(--border)" }}>
-        <h2 className="font-bold">{t("socialsettings.social_and_privacy")}</h2>
-        <p className="muted text-xs">{t("socialw.settings_sub")}</p>
-      </div>
+    <section id="social" className={`card overflow-hidden ${bare ? "" : "mt-4"}`}>
+      {bare ? null : (
+        <div className="border-b px-4 py-3" style={{ borderColor: "var(--border)" }}>
+          <h2 className="font-bold">{t("socialsettings.social_and_privacy")}</h2>
+          <p className="muted text-xs">{t("socialw.settings_sub")}</p>
+        </div>
+      )}
 
       <div className="border-b px-4 py-3" style={{ borderColor: "var(--border)" }}>
         <label className="text-sm font-bold" htmlFor="username">{t("socialw.username")}</label>

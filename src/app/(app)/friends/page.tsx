@@ -1,4 +1,6 @@
+import Link from "next/link";
 import { getUserId } from "@/lib/auth/server";
+import { WrenchIcon } from "@/components/icons";
 import { socialMe } from "@/lib/social/profile";
 import { BackButton } from "@/components/page-back";
 import { FriendsHub, type HubTab } from "@/components/social/friends-hub";
@@ -19,9 +21,21 @@ export default async function FriendsPage({ searchParams }: { searchParams: Prom
     const me = await socialMe(userId);
     return (
       <div className="mx-auto w-full max-w-md">
+        {/* Ayarlar başlığın SAĞ ÜSTÜNDE — mobil `ScreenHeader`in `right`
+            yuvası. Kimlik kartının içinde bir çipti; kart kimliği söylüyor,
+            ayarlar ise ekranın kendi eylemi. */}
         <div className="mb-4 flex items-center gap-3">
           <BackButton fallback="/profile" />
-          <h1 className="text-h2">{t("friends.friends")}</h1>
+          <h1 className="min-w-0 flex-1 truncate text-h2">{t("friends.friends")}</h1>
+          <Link
+            href="/friends/settings"
+            prefetch={false}
+            aria-label={t("friends.social_settings")}
+            className="pressable flex h-11 w-11 shrink-0 items-center justify-center rounded-tile"
+            style={{ background: "var(--surface-2)" }}
+          >
+            <WrenchIcon size={20} />
+          </Link>
         </div>
         <FriendsHub me={me} initialTab={initialTab} />
       </div>

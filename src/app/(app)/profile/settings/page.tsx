@@ -1,7 +1,7 @@
 import { getUserInfo, authEnabled, googleConfigured } from "@/lib/auth/server";
+import { getT } from "@/lib/i18n/server";
 import { ensureProfile } from "@/lib/session";
 import { ProfileForm } from "@/components/profile-form";
-import { SocialSettings } from "@/components/social/social-settings";
 import { LinkedAccounts } from "@/components/account/linked-accounts";
 import { APP_VERSION } from "@/lib/version";
 import { socialMe } from "@/lib/social/profile";
@@ -11,6 +11,7 @@ export const metadata = { title: "Ayarlar" };
 
 /** Ayarlar: öğrenme, uygulama ve hesap. Profilden tek dokunuşla açılıyor. */
 export default async function SettingsPage() {
+  const t = await getT();
   const user = await getUserInfo();
   if (!user) return null;
 
@@ -42,8 +43,8 @@ export default async function SettingsPage() {
   if (!veri) {
     return (
       <div className="card mx-auto w-full max-w-md p-6 text-center">
-        <h2 className="text-lg font-bold">Ayarlar yüklenemedi</h2>
-        <p className="muted mt-2 text-sm">Birkaç saniye sonra tekrar dene.</p>
+        <h2 className="text-lg font-bold">{t("settingsw.load_failed")}</h2>
+        <p className="muted mt-2 text-sm">{t("socialw.try_in_a_moment")}</p>
       </div>
     );
   }
@@ -71,11 +72,9 @@ export default async function SettingsPage() {
            çünkü yeri HESAP'ın hemen altı — mobildeki sıra. */
         linkedAccounts={<LinkedAccounts googleEnabled={googleConfigured} />}
       />
-      {me ? (
-        <div className="mx-auto w-full max-w-md">
-          <SocialSettings initial={me} course={profile.course} />
-        </div>
-      ) : null}
+      {/* SOSYAL VE GİZLİLİK BURADA DEĞİL. Kullanıcı adı, görünürlük ve engel
+          listesi Arkadaşlar'a ait; mobilin ayarlar ekranında da böyle bir
+          bölüm yok. Kendi adresine taşındı: /friends/settings. */}
       {/* Sürüm en altta — mobilde de ayarların dibinde. Destek isteyen
           kullanıcının söyleyebileceği tek şey bu, aramak zorunda kalmasın. */}
       <p className="muted mx-auto w-full max-w-3xl pb-2 pt-1 text-center text-caption">
