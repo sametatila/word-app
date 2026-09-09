@@ -35,6 +35,47 @@ const TURKISH_LETTERS = /[çğışöüÇĞİŞÖÜ]/;
 /** ASCII yazılmış Türkçe metnin işaretçileri; yalnız uyarı üretir. */
 const TURKISH_ASCII = /(?:^|\s)(?:ve|ile|bir|bu|daha|sonra|kadar|gibi|ama|var|yok|devam|tamam|evet|hayir|kayit|giris)(?:\s|$)/i;
 
+/**
+ * ASCII yazılmış Türkçe için İKİNCİ ve KESİN kural.
+ *
+ * Üstteki `TURKISH_ASCII` sabit bir durak sözcük listesine bakıyor ve boşluk
+ * şart koşuyor; tek sözcüklük düğmeleri göremiyor. Ölçüldü: "Kaydedildi",
+ * "SAAT", "tekrar", "yeni", "bitti" bu yüzden yıllardır sayılmıyordu ve
+ * hepsi kullanıcının gördüğü yüzeydeydi.
+ *
+ * Sinyal SÖZLÜĞÜN KENDİSİ: adayın her sözcüğü Türkçe sözlükte geçiyorsa ve
+ * hiçbiri İngilizce/Almanca sözlükte geçmiyorsa o metin çevrilmemiştir.
+ * Sabit liste tutmaya gerek yok — sözlük zaten ürünün Türkçesi.
+ * (Web tarafında aynı kural `scripts/i18n-hardcoded.mjs` içinde.)
+ */
+const CODEY = /[(){}\[\]<>=;\/\\|&$*+"'`~^%@#]/;
+
+/**
+ * İkinci kuraldan MUAF dosyalar — ikisinde de Türkçe olması DOĞRU:
+ *   - `data/firstWords.ts` — öğretilen kelimelerin Türkçe karşılıkları, içeriğin kendisi.
+ *   - `lib/courses.ts` — dil adlarının dile göre haritası; Türkçe satırı Türkçe.
+ */
+const SKIP_ASCII = ["data/firstWords.ts", "lib/courses.ts"].map((p) => path.join(SRC, ...p.split("/")));
+
+function dictTokens(lang) {
+  const f = path.join(SRC, "i18n", `${lang}.ts`);
+  const set = new Set();
+  if (!fs.existsSync(f)) return set;
+  for (const m of fs.readFileSync(f, "utf8").matchAll(/^\s*"[^"]+":\s*"((?:[^"\\]|\\.)*)",?\s*$/gm)) {
+    for (const w of m[1].toLocaleLowerCase("tr").match(/[a-zçğıöşü]+/g) ?? []) if (w.length > 2) set.add(w);
+  }
+  return set;
+}
+const TR_WORDS = dictTokens("tr");
+const FOREIGN_WORDS = new Set([...dictTokens("en"), ...dictTokens("de")]);
+
+function asciiTurkish(text) {
+  if (CODEY.test(text)) return false;
+  const words = (text.toLocaleLowerCase("tr").match(/[a-zçğıöşü]+/g) ?? []).filter((w) => w.length > 2);
+  if (!words.length) return false;
+  return words.every((w) => TR_WORDS.has(w) && !FOREIGN_WORDS.has(w));
+}
+
 function walk(dir, out = []) {
   for (const entry of fs.readdirSync(dir)) {
     const p = path.join(dir, entry);
@@ -120,8 +161,11 @@ function scan() {
       const wasInside = inTemplate;
       if (ticks % 2 === 1) inTemplate = !inTemplate;
       if (wasInside) return;
+      const asciiSkipped = SKIP_ASCII.some((x) => file === x);
       for (const text of candidates(line)) {
         if (TURKISH_LETTERS.test(text)) {
+          (hard[rel] ??= []).push({ line: i + 1, text });
+        } else if (!asciiSkipped && asciiTurkish(text)) {
           (hard[rel] ??= []).push({ line: i + 1, text });
         } else if (text.includes(" ") && TURKISH_ASCII.test(text)) {
           soft.push({ file: rel, line: i + 1, text });
