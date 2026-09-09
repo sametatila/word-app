@@ -3,7 +3,8 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { Avatar } from "@/components/avatar";
-import { FlameIcon, HandshakeIcon, TargetIcon, TrophyIcon } from "@/components/icons";
+import { FlameIcon, HandshakeIcon, LockIcon, TargetIcon, TrophyIcon } from "@/components/icons";
+import { EmptyCard } from "@/components/empty-card";
 import { errorText, social, type PublicProfileView } from "@/lib/social/client";
 import type { Relation } from "@/lib/social/types";
 import { FeedCard } from "./feed";
@@ -139,9 +140,16 @@ export function PublicProfile({ data, me }: { data: PublicProfileView; me: strin
           <Stat label={t("socialw.stat_last_active")} text={data.stats.lastActiveDay ? new Date(`${data.stats.lastActiveDay}T00:00:00`).toLocaleDateString(localeOf(lang), { day: "numeric", month: "short" }) : "—"} tone="var(--text-muted)" />
         </section>
       ) : (
-        <section className="card p-4 text-center">
-          <p className="muted text-sm">{t(data.visibility === "friends" ? "user.friends_see_stats" : "user.private_profile")}</p>
-        </section>
+        /* Başlık ve gövde ROLLERİ karışmıştı: web `user.private_profile`i
+           ("Gizli profil" — bir başlık) tek satırlık gövde olarak yazıyor,
+           `user.no_stats_shared`i hiç kullanmıyordu. Android burada kilit
+           ikonlu boş kart gösteriyor ve iki metni de yerli yerinde kullanıyor. */
+        <EmptyCard
+          icon={LockIcon}
+          tint="var(--text-muted)"
+          title={t(data.visibility === "friends" ? "user.visible_friends" : "user.private_profile")}
+          text={t(data.visibility === "friends" ? "user.friends_see_stats" : "user.no_stats_shared")}
+        />
       )}
 
       {data.recent.length ? (

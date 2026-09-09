@@ -78,9 +78,19 @@ export function LeagueBoard() {
         </div>
 
         {view.rows.length < 2 ? (
-          <div className="p-6 text-center">
-            <p className="text-h3">{t("league.alone")}</p>
-            <p className="muted mt-1 text-body">{t("league.alone_sub")}</p>
+          /* Android burada ikonlu boş kart gösteriyor. Web'de yalnız iki satır
+             metin vardı; tablo başlığı (lig adı, kalan gün) üstte duruyor ve
+             altındaki boşluk yükleniyormuş gibi görünüyordu. Kart kendi
+             başlığını koruduğu için yalnız karo eklendi. */
+          <div className="flex flex-col items-center gap-2 p-6 text-center">
+            <span
+              className="flex items-center justify-center rounded-tile text-white"
+              style={{ width: 52, height: 52, background: "var(--color-sky)" }}
+            >
+              <PodiumIcon size={26} />
+            </span>
+            <p className="mt-1 text-h3">{t("league.alone")}</p>
+            <p className="muted text-body">{t("league.alone_sub")}</p>
           </div>
         ) : (
           <ol>
