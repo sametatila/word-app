@@ -6,6 +6,7 @@ import { AuthNotice, AuthShell } from "@/components/auth-shell";
 import { authApi } from "@/lib/auth/api";
 import { translateAuthError } from "@/lib/auth/errors";
 import { InfoIcon } from "@/components/icons";
+import { useT, useLang } from "@/lib/i18n/client";
 
 const RESEND_COOLDOWN = 60;
 
@@ -16,6 +17,8 @@ export function VerifyEmailNotice({
   email: string | null;
   reason?: "new" | "blocked";
 }) {
+  const t = useT();
+  const lang = useLang();
   const [busy, setBusy] = useState(false);
   const [sent, setSent] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -39,7 +42,7 @@ export function VerifyEmailNotice({
     });
     setBusy(false);
     if (!res.ok) {
-      setError(translateAuthError(res));
+      setError(translateAuthError(res, lang));
       return;
     }
     setSent(true);
@@ -48,19 +51,19 @@ export function VerifyEmailNotice({
 
   return (
     <AuthShell
-      title={reason === "blocked" ? "Önce e-postanı doğrula" : "E-postanı doğrula"}
+      title={t(reason === "blocked" ? "verify.title_blocked" : "verify.title")}
       subtitle={
         reason === "blocked"
           ? email
-            ? `${email} hesabı henüz doğrulanmadı. Giriş yapabilmek için gelen kutundaki bağlantıya tıklaman gerekiyor.`
-            : "Hesabın henüz doğrulanmadı. Giriş yapabilmek için gelen kutundaki bağlantıya tıklaman gerekiyor."
+            ? t("verify.blocked_with_email", { email })
+            : t("verify.blocked")
           : email
-            ? `${email} adresine bir doğrulama bağlantısı gönderdik.`
-            : "Kayıt sırasında verdiğin adrese bir doğrulama bağlantısı gönderdik."
+            ? t("verify.sent_with_email", { email })
+            : t("verify.sent")
       }
       footer={
         <Link href="/login" className="underline-offset-4 hover:underline">
-          Girişe dön
+          {t("auth.back_to_sign_in")}
         </Link>
       }
     >
@@ -73,14 +76,14 @@ export function VerifyEmailNotice({
             <InfoIcon size={16} />
           </span>
           <div className="muted space-y-1">
-            <p>E-posta birkaç dakika içinde gelmezse:</p>
-            <p>· <strong>Spam / Gereksiz</strong> klasörünü kontrol et</p>
-            <p>· Gönderen adresini kişilerine ekle, sonraki e-postalar doğrudan gelsin</p>
-            <p>· Adresi yanlış yazdıysan yeni bir hesapla kaydolabilirsin</p>
+            <p>{t("verify.tips_title")}</p>
+            <p>· {t("verify.tip_spam")}</p>
+            <p>· {t("verify.tip_contacts")}</p>
+            <p>· {t("verify.tip_wrong_address")}</p>
           </div>
         </div>
 
-        {sent ? <AuthNotice tone="success">Doğrulama e-postası yeniden gönderildi.</AuthNotice> : null}
+        {sent ? <AuthNotice tone="success">{t("verify.resent")}</AuthNotice> : null}
         {error ? <AuthNotice tone="error">{error}</AuthNotice> : null}
 
         {email ? (
@@ -90,15 +93,15 @@ export function VerifyEmailNotice({
             className="btn btn-ghost w-full px-5 py-3 disabled:opacity-60"
           >
             {busy
-              ? "Gönderiliyor…"
+              ? t("authw.sending")
               : cooldown > 0
-                ? `Tekrar gönder (${cooldown} sn)`
-                : "Tekrar gönder"}
+                ? t("verify.resend_in", { n: cooldown })
+                : t("verify.resend")}
           </button>
         ) : null}
 
         <Link href="/login" className="btn btn-primary w-full px-5 py-3.5">
-          Doğruladım, giriş yap
+          {t("verify.verified_sign_in")}
         </Link>
       </div>
     </AuthShell>

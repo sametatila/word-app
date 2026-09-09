@@ -6,10 +6,13 @@ import { useRouter, useSearchParams } from "next/navigation";
 import { AuthNotice, AuthShell, authInputClass } from "@/components/auth-shell";
 import { authApi, type SignUpResponse } from "@/lib/auth/api";
 import { isEmailNotVerified, translateAuthError } from "@/lib/auth/errors";
+import { useT, useLang } from "@/lib/i18n/client";
 
 type Mode = "signin" | "signup";
 
 export function AuthForm() {
+  const t = useT();
+  const lang = useLang();
   const router = useRouter();
   // Girişten sonra dönülecek yer (ör. /account/delete). Yalnız site içi yol kabul edilir.
   const params = useSearchParams();
@@ -42,7 +45,7 @@ export function AuthForm() {
             router.push(`/verify-email?email=${encodeURIComponent(email)}&status=unverified`);
             return;
           }
-          setError(translateAuthError(res));
+          setError(translateAuthError(res, lang));
           return;
         }
         router.push(next);
@@ -56,7 +59,7 @@ export function AuthForm() {
         name: name.trim() || email.split("@")[0],
       });
       if (!res.ok) {
-        setError(translateAuthError(res));
+        setError(translateAuthError(res, lang));
         return;
       }
 
@@ -89,9 +92,9 @@ export function AuthForm() {
         window.location.href = j.url;
         return;
       }
-      setError("Sosyal giriş şu an kullanılamıyor. E-posta ile devam edebilirsin.");
+      setError(t("authw.social_unavailable"));
     } catch {
-      setError("Bağlantı kurulamadı. İnternetini kontrol et.");
+      setError(t("authw.no_connection"));
     } finally {
       setBusy(false);
     }
@@ -99,21 +102,28 @@ export function AuthForm() {
 
   return (
     <AuthShell
-      title={mode === "signin" ? "Tekrar hoş geldin" : "Hesap oluştur"}
+      title={t(mode === "signin" ? "auth.welcome_back" : "auth.create_account")}
       subtitle={
         mode === "signin"
-          ? "Serini kaldığın yerden sürdür."
-          : "Birkaç saniye sürer, ilk kelimen hazır."
+          ? t("auth.pick_your_streak_up_where_you")
+          : t("authw.signup_sub")
       }
       footer={
         <>
+          {/* Mobildeki gibi: önce tek satır giriş, sonra iki bağlantı. Cümlenin
+              içine bağlantı gömmek çeviride ek uyumuna takılıyordu. */}
+          <p className="mb-1 text-xs leading-relaxed">{t("auth.legal_notice")}</p>
           <p className="mb-3 text-xs leading-relaxed">
-            Devam ederek{" "}
-            <Link href="/terms" prefetch={false} className="underline underline-offset-4">Kullanım Şartları</Link>&apos;nı ve{" "}
-            <Link href="/privacy" prefetch={false} className="underline underline-offset-4">Gizlilik Politikası</Link>&apos;nı kabul etmiş olursun.
+            <Link href="/terms" prefetch={false} className="underline underline-offset-4">
+              {t("auth.terms_of_use")}
+            </Link>{" "}
+            ·{" "}
+            <Link href="/privacy" prefetch={false} className="underline underline-offset-4">
+              {t("auth.privacy_policy")}
+            </Link>
           </p>
           <Link href="/" className="underline-offset-4 hover:underline">
-            Ana sayfaya dön
+            {t("authw.back_home")}
           </Link>
         </>
       }
@@ -131,11 +141,11 @@ export function AuthForm() {
           <path fill="#FBBC05" d="M11.69 28.18C11.25 26.86 11 25.45 11 24s.25-2.86.69-4.18v-5.7H4.34C2.85 17.09 2 20.45 2 24s.85 6.91 2.34 9.88l7.35-5.7z" />
           <path fill="#EA4335" d="M24 10.75c3.23 0 6.13 1.11 8.41 3.29l6.31-6.31C34.91 4.18 29.93 2 24 2 15.4 2 7.96 6.93 4.34 14.12l7.35 5.7c1.73-5.2 6.58-9.07 12.31-9.07z" />
         </svg>
-        Google ile devam et
+        {t("auth.continue_with", { provider: "Google" })}
       </button>
       <div className="my-4 flex items-center gap-3">
         <div className="h-px flex-1" style={{ background: "var(--border)" }} />
-        <span className="muted text-xs font-semibold">ya da e-posta ile</span>
+        <span className="muted text-xs font-semibold">{t("authw.or_with_email")}</span>
         <div className="h-px flex-1" style={{ background: "var(--border)" }} />
       </div>
 
@@ -144,7 +154,7 @@ export function AuthForm() {
           <input
             value={name}
             onChange={(e) => setName(e.target.value)}
-            placeholder="Adın (isteğe bağlı)"
+            placeholder={t("auth.your_name_optional")}
             autoComplete="name"
             className={authInputClass}
           />
@@ -154,7 +164,7 @@ export function AuthForm() {
           onChange={(e) => setEmail(e.target.value)}
           type="email"
           required
-          placeholder="E-posta"
+          placeholder={t("auth.email")}
           autoComplete="email"
           className={authInputClass}
         />
@@ -164,7 +174,7 @@ export function AuthForm() {
           type="password"
           required
           minLength={8}
-          placeholder="Parola (en az 8 karakter)"
+          placeholder={t("auth.password_at_least_8_characters")}
           autoComplete={mode === "signin" ? "current-password" : "new-password"}
           className={authInputClass}
         />
@@ -176,7 +186,7 @@ export function AuthForm() {
           disabled={busy}
           className="btn btn-primary w-full px-5 py-3.5 disabled:opacity-60"
         >
-          {busy ? "Bekle…" : mode === "signin" ? "Giriş yap" : "Kayıt ol"}
+          {busy ? t("authw.wait") : t(mode === "signin" ? "auth.sign_in" : "auth.sign_up")}
         </button>
       </form>
 
@@ -185,7 +195,7 @@ export function AuthForm() {
           href="/forgot-password"
           className="muted mt-3 block text-center text-sm underline-offset-4 hover:underline"
         >
-          Şifremi unuttum
+          {t("auth.forgot_your_password")}
         </Link>
       ) : null}
 
@@ -196,7 +206,9 @@ export function AuthForm() {
         }}
         className="muted mt-4 w-full text-center text-sm underline-offset-4 hover:underline"
       >
-        {mode === "signin" ? "Hesabın yok mu? Kayıt ol" : "Zaten hesabın var mı? Giriş yap"}
+        {mode === "signin"
+          ? `${t("auth.no_account_yet")}${t("auth.sign_up")}`
+          : `${t("auth.already_have_account")}${t("auth.sign_in")}`}
       </button>
     </AuthShell>
   );

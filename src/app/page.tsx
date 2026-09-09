@@ -17,58 +17,36 @@ import {
   BookIcon,
   CheckIcon,
 } from "@/components/icons";
+import { getT, getLang } from "@/lib/i18n/server";
+import { courseName } from "@/lib/courses";
 
+/* Adlar oyunların kendi anahtarlarından: tanıtım sayfası ile turun içi aynı
+   sözcüğü kullanmalı, yoksa ziyaretçi gördüğü oyunu uygulamada tanımıyor. */
 const GAMES = [
-  { Icon: LinkIcon, name: "Eşleştirme", desc: "Almanca–Türkçe çiftleri hızlıca eşle" },
-  { Icon: TargetIcon, name: "Doğru Anlam", desc: "Dört şık arasından doğru karşılığı seç" },
-  { Icon: TagIcon, name: "Artikel Yarışı", desc: "der / die / das refleksini geliştir" },
-  { Icon: PuzzleIcon, name: "Harf Bulmacası", desc: "Karışık harflerden kelimeyi kur" },
-  { Icon: PenIcon, name: "Cümleyi Tamamla", desc: "Gerçek örnek cümledeki boşluğu doldur" },
-  { Icon: KeyboardIcon, name: "Yazarak Hatırla", desc: "Kelimeyi sıfırdan yazarak pekiştir" },
-  { Icon: HeadphonesIcon, name: "Kulaktan Tanı", desc: "Sesli okunan kelimeyi duyarak bul" },
-  { Icon: ListIcon, name: "Cümleyi Diz", desc: "Karışık kelimelerden cümleyi kur" },
-  { Icon: BookIcon, name: "Çoğul Bilmece", desc: "İsmin çoğul biçimini hatırla" },
-  { Icon: CheckIcon, name: "Doğru mu Yanlış mı", desc: "Verilen karşılık doğru mu, hızlıca karar ver" },
+  { Icon: LinkIcon, name: "games.match", desc: "land.game_match" },
+  { Icon: TargetIcon, name: "games.choice", desc: "land.game_choice" },
+  { Icon: TagIcon, name: "games.article_race", desc: "land.game_artikel" },
+  { Icon: PuzzleIcon, name: "games.scramble", desc: "land.game_scramble" },
+  { Icon: PenIcon, name: "games.cloze", desc: "land.game_cloze" },
+  { Icon: KeyboardIcon, name: "games.typing", desc: "land.game_typing" },
+  { Icon: HeadphonesIcon, name: "games.listen", desc: "land.game_listen" },
+  { Icon: ListIcon, name: "games.order", desc: "land.game_order" },
+  { Icon: BookIcon, name: "games.plural", desc: "land.game_plural" },
+  { Icon: CheckIcon, name: "games.truefalse", desc: "land.game_truefalse" },
 ];
 
 const COURSES = [
-  {
-    name: "Almanca",
-    sub: "Hochdeutsch",
-    body: "CEFR A1–C1 için alan bazlı hazırlanmış 7.392 kelime; her biri artikel, çoğul, örnek cümle ve cümlenin Türkçe çevirisiyle.",
-  },
-  {
-    name: "Zürih Almancası",
-    sub: "Züritüütsch",
-    body: "Listenin tamamının Zürih lehçesindeki karşılığı: 7.392 madde, de/d/s artikelleri, Zürihçe örnek cümleler ve her kelimede Hochdeutsch köprüsü. İsviçre'de yaşayanın günlük duyduğu dil.",
-  },
+  { id: "de", body: "land.course_de" },
+  { id: "gsw-zh", body: "land.course_gsw" },
 ];
 
 const FEATURES = [
-  {
-    title: "Tekrarı sen planlamıyorsun",
-    body: "Ayrı bir “tekrar” bölümü yok. Her cevabın hızı ve doğruluğu ölçülür; kelime tam unutulmadan önce oyunun içinde tekrar karşına çıkar.",
-  },
-  {
-    title: "Okuma, dinleme, yazma",
-    body: "Kelimenin yanında beceri bölümü: her kursta A1–C1 için mesajdan köşe yazısına, anonstan panele uzanan alıştırmalar. Yazmada önce cümle kurar, sonra kendi metnini yazarsın.",
-  },
-  {
-    title: "Seviyeni sen seçersin",
-    body: "CEFR seviyeni profilden belirlersin ve orada kalırsın — sistem seni sınayıp yukarı taşımaz, aşağı da indirmez. Gösterilen tek ölçü, o seviyenin kaç kelimesini pekiştirdiğin.",
-  },
-  {
-    title: "Sıkılmadan devam",
-    body: "Oyun türü kelimenin ne kadar oturduğuna göre değişir. Yeni kelimede tanıma, pekişende yazma — aynı ekran arka arkaya gelmez.",
-  },
-  {
-    title: "Hayatta kalma turu",
-    body: "Tur sonunda süreye karşı oynarsın: 40 saniyeyle başlar, her doğru sana süre kazandırır, her yanlış yakar. Üst üste doğrular puanı üç katına çıkarır, sorular üç dalgada sertleşir.",
-  },
-  {
-    title: "İki kurs, tek ilerleme",
-    body: "Kursu istediğin zaman değiştirirsin; diğerindeki ilerlemen silinmez, beklemeye geçer. Geri döndüğünde kaldığın yerden devam edersin.",
-  },
+  { title: "land.f_srs_title", body: "land.f_srs_body" },
+  { title: "land.f_skills_title", body: "land.f_skills_body" },
+  { title: "land.f_level_title", body: "land.f_level_body" },
+  { title: "land.f_variety_title", body: "land.f_variety_body" },
+  { title: "land.f_survival_title", body: "land.f_survival_body" },
+  { title: "land.f_courses_title", body: "land.f_courses_body" },
 ];
 
 export default async function Home() {
@@ -80,6 +58,8 @@ export default async function Home() {
     Mobilde ilk açılış onboarding'e gider, oradan beş kelimelik ısınmaya, hesap
     en sona kalır. Web de öyle oldu.
   */
+  const t = await getT();
+  const lang = await getLang();
   const signedIn = Boolean(await getUserId());
   const startHref = signedIn ? "/learn" : "/setup";
 
@@ -99,7 +79,7 @@ export default async function Home() {
         <div className="flex items-center gap-2">
           <ThemeToggle />
           <Link href={startHref} className="btn btn-primary px-4 py-2.5 text-sm">
-            Başla
+            {t("common.start")}
           </Link>
         </div>
       </header>
@@ -108,7 +88,7 @@ export default async function Home() {
         <section className="py-14 text-center sm:py-20">
           <Reveal>
             <span className="muted inline-block rounded-full border px-3 py-1 text-xs font-semibold" style={{ borderColor: "var(--border)" }}>
-              2 kurs · A1 → C1 · 14.784 kelime · 10 oyun
+              {t("land.badge")}
             </span>
           </Reveal>
           {/* Erdi başlığın üstünde ve büyük. Karakter uygulamanın her kapanış
@@ -120,7 +100,9 @@ export default async function Home() {
           </Reveal>
           <Reveal delay={0.06}>
             <h1 className="mt-2 text-4xl font-black leading-tight sm:text-6xl">
-              Almanca kelimeleri <span className="brand-text">oynayarak</span> öğren
+              {t("land.h1_before")}
+              <span className="brand-text">{t("land.h1_accent")}</span>
+              {t("land.h1_after")}
             </h1>
           </Reveal>
           <Reveal delay={0.12}>
@@ -129,17 +111,16 @@ export default async function Home() {
                 başlığın hemen altında sistemin çalışma mantığını anlatmak,
                 daha ne olduğu söylenmeden nasıl çalıştığını anlatmak oluyor. */}
             <p className="muted mx-auto mt-5 max-w-xl text-base sm:text-lg">
-              Hochdeutsch ya da Zürih Almancası — kursunu seç, on kelime oyunu ve beceri
-              alıştırmaları tek akışta gelsin.
+              {t("land.hero_sub")}
             </p>
           </Reveal>
           <Reveal delay={0.18}>
             <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
               <Link href={startHref} className="btn btn-primary w-full px-7 py-4 text-base sm:w-auto">
-                Hemen başla — ücretsiz
+                {t("land.cta_free")}
               </Link>
               <Link href="/immersion" className="btn btn-ghost w-full px-7 py-4 text-base sm:w-auto">
-                Okuma · Dinleme · Yazma
+                {t("land.cta_skills")}
               </Link>
             </div>
           </Reveal>
@@ -147,15 +128,15 @@ export default async function Home() {
 
         <section className="mb-12 grid gap-4 sm:grid-cols-2">
           {COURSES.map((c, i) => (
-            <Reveal key={c.name} delay={i * 0.08}>
+            <Reveal key={c.id} delay={i * 0.08}>
               <div className="card h-full p-6">
                 <div className="flex items-baseline gap-2">
-                  <h3 className="text-lg font-bold">{c.name}</h3>
+                  <h3 className="text-lg font-bold">{courseName(c.id, lang)}</h3>
                   <span className="text-xs font-semibold text-[color:var(--color-brand)]">
-                    {c.sub}
+                    {c.id === "de" ? "Hochdeutsch" : "Züritüütsch"}
                   </span>
                 </div>
-                <p className="muted mt-2 text-sm leading-relaxed">{c.body}</p>
+                <p className="muted mt-2 text-sm leading-relaxed">{t(c.body)}</p>
               </div>
             </Reveal>
           ))}
@@ -166,8 +147,8 @@ export default async function Home() {
             <Reveal key={f.title} delay={i * 0.08}>
               <div className="card h-full p-6">
                 <div className="brand-gradient mb-4 h-1.5 w-10 rounded-full" />
-                <h3 className="font-bold">{f.title}</h3>
-                <p className="muted mt-2 text-sm leading-relaxed">{f.body}</p>
+                <h3 className="font-bold">{t(f.title)}</h3>
+                <p className="muted mt-2 text-sm leading-relaxed">{t(f.body)}</p>
               </div>
             </Reveal>
           ))}
@@ -175,9 +156,9 @@ export default async function Home() {
 
         <section className="mt-20">
           <Reveal>
-            <h2 className="text-center text-2xl font-bold sm:text-3xl">On oyun, tek akış</h2>
+            <h2 className="text-center text-2xl font-bold sm:text-3xl">{t("land.games_title")}</h2>
             <p className="muted mx-auto mt-3 max-w-lg text-center text-sm">
-              Kelimenin ne kadar oturduğuna göre oyun otomatik seçilir.
+              {t("land.games_sub")}
             </p>
           </Reveal>
           <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -188,8 +169,8 @@ export default async function Home() {
                     <g.Icon size={22} />
                   </span>
                   <div>
-                    <h3 className="font-semibold">{g.name}</h3>
-                    <p className="muted mt-1 text-sm">{g.desc}</p>
+                    <h3 className="font-semibold">{t(g.name)}</h3>
+                    <p className="muted mt-1 text-sm">{t(g.desc)}</p>
                   </div>
                 </div>
               </Reveal>
@@ -203,9 +184,9 @@ export default async function Home() {
             hesap açması gerekmemeli. */}
         <section className="mt-20">
           <Reveal>
-            <h2 className="text-center text-2xl font-bold sm:text-3xl">Telefonuna kur</h2>
+            <h2 className="text-center text-2xl font-bold sm:text-3xl">{t("land.install_title")}</h2>
             <p className="muted mx-auto mt-3 max-w-lg text-center text-sm">
-              Tarayıcından ana ekrana ekle — mağazaya da kuruluma da gerek yok.
+              {t("land.install_sub")}
             </p>
           </Reveal>
           <Reveal delay={0.06}>
@@ -218,15 +199,15 @@ export default async function Home() {
         <section className="mt-20">
           <Reveal>
             <div className="card brand-gradient-deep p-8 text-center text-white sm:p-12">
-              <h2 className="text-2xl font-bold sm:text-3xl">Bugün 5 dakika ayır</h2>
+              <h2 className="text-2xl font-bold sm:text-3xl">{t("land.cta_title")}</h2>
               <p className="mx-auto mt-3 max-w-md text-sm opacity-90">
-  Serini başlat, ilk kelimelerini öğren. Neyi ne zaman tekrar edeceğini uygulama takip ediyor.
+                {t("land.cta_body")}
               </p>
               <Link
                 href={startHref}
                 className="btn mt-6 bg-white px-7 py-3.5 text-base text-[color:var(--color-brand-600)]"
               >
-                Öğrenmeye başla
+                {t("land.cta_button")}
               </Link>
             </div>
           </Reveal>
@@ -234,13 +215,13 @@ export default async function Home() {
       </main>
 
       <footer className="muted border-t px-5 py-8 text-center text-xs" style={{ borderColor: "var(--border)" }}>
-        Kelime kaynağı: CEFR A1–C1 için konu bazlı hazırlanmış set.
+        {t("land.footer_source")}
         <br />
-        Zürih kursu, aynı listenin Züritüütsch karşılığıdır (Dieth temelli sadeleştirilmiş yazım).
+        {t("land.footer_gsw")}
         <div className="mt-4 flex flex-wrap justify-center gap-x-4 gap-y-1">
-          <Link href="/privacy" prefetch={false} className="underline-offset-4 hover:underline">Gizlilik politikası</Link>
-          <Link href="/terms" prefetch={false} className="underline-offset-4 hover:underline">Kullanım şartları</Link>
-          <Link href="/account/delete" prefetch={false} className="underline-offset-4 hover:underline">Hesabını sil</Link>
+          <Link href="/privacy" prefetch={false} className="underline-offset-4 hover:underline">{t("auth.privacy_policy")}</Link>
+          <Link href="/terms" prefetch={false} className="underline-offset-4 hover:underline">{t("auth.terms_of_use")}</Link>
+          <Link href="/account/delete" prefetch={false} className="underline-offset-4 hover:underline">{t("land.delete_account")}</Link>
         </div>
       </footer>
     </div>

@@ -6,8 +6,11 @@ import { useRouter } from "next/navigation";
 import { AuthNotice, AuthShell, authInputClass } from "@/components/auth-shell";
 import { authApi } from "@/lib/auth/api";
 import { translateAuthError } from "@/lib/auth/errors";
+import { useT, useLang } from "@/lib/i18n/client";
 
 export function ResetPasswordForm({ token }: { token: string | null }) {
+  const t = useT();
+  const lang = useLang();
   const router = useRouter();
   const [password, setPassword] = useState("");
   const [confirm, setConfirm] = useState("");
@@ -19,7 +22,7 @@ export function ResetPasswordForm({ token }: { token: string | null }) {
     e.preventDefault();
     if (busy || !token) return;
     if (password !== confirm) {
-      setError("Parolalar eşleşmiyor.");
+      setError(t("authw.passwords_dont_match"));
       return;
     }
     setBusy(true);
@@ -27,7 +30,7 @@ export function ResetPasswordForm({ token }: { token: string | null }) {
     const res = await authApi("reset-password", { newPassword: password, token });
     setBusy(false);
     if (!res.ok) {
-      setError(translateAuthError(res));
+      setError(translateAuthError(res, lang));
       return;
     }
     setDone(true);
@@ -37,16 +40,16 @@ export function ResetPasswordForm({ token }: { token: string | null }) {
   if (!token) {
     return (
       <AuthShell
-        title="Bağlantı geçersiz"
-        subtitle="Sıfırlama bağlantısı eksik ya da süresi dolmuş."
+        title={t("authw.link_invalid")}
+        subtitle={t("authw.link_invalid_sub")}
         footer={
           <Link href="/login" className="underline-offset-4 hover:underline">
-            Girişe dön
+            {t("auth.back_to_sign_in")}
           </Link>
         }
       >
         <Link href="/forgot-password" className="btn btn-primary w-full px-5 py-3.5">
-          Yeni bağlantı iste
+          {t("authw.request_new_link")}
         </Link>
       </AuthShell>
     );
@@ -54,17 +57,17 @@ export function ResetPasswordForm({ token }: { token: string | null }) {
 
   return (
     <AuthShell
-      title="Yeni parola belirle"
-      subtitle={done ? undefined : "En az 8 karakter olsun."}
+      title={t("authw.set_new_password")}
+      subtitle={done ? undefined : t("authw.at_least_8")}
       footer={
         <Link href="/login" className="underline-offset-4 hover:underline">
-          Girişe dön
+          {t("auth.back_to_sign_in")}
         </Link>
       }
     >
       {done ? (
         <AuthNotice tone="success">
-          Parolan güncellendi. Giriş ekranına yönlendiriliyorsun…
+          {t("authw.password_updated")}
         </AuthNotice>
       ) : (
         <form onSubmit={submit} className="space-y-3">
@@ -74,7 +77,7 @@ export function ResetPasswordForm({ token }: { token: string | null }) {
             type="password"
             required
             minLength={8}
-            placeholder="Yeni parola"
+            placeholder={t("authw.new_password")}
             autoComplete="new-password"
             autoFocus
             className={authInputClass}
@@ -85,7 +88,7 @@ export function ResetPasswordForm({ token }: { token: string | null }) {
             type="password"
             required
             minLength={8}
-            placeholder="Yeni parola (tekrar)"
+            placeholder={t("authw.new_password_again")}
             autoComplete="new-password"
             className={authInputClass}
           />
@@ -95,7 +98,7 @@ export function ResetPasswordForm({ token }: { token: string | null }) {
             disabled={busy}
             className="btn btn-primary w-full px-5 py-3.5 disabled:opacity-60"
           >
-            {busy ? "Kaydediliyor…" : "Parolayı güncelle"}
+            {t(busy ? "rounds.saving" : "authw.update_password")}
           </button>
         </form>
       )}

@@ -1,3 +1,4 @@
+import { translate, DEFAULT_NATIVE, type NativeLang } from "@/lib/i18n/dict";
 /**
  * Neon Auth (Better Auth) hataları iki biçimde gelebilir:
  *  - metodun döndürdüğü `{ error }` nesnesi
@@ -59,16 +60,17 @@ function extractAuthError(input: unknown): AuthErrorInfo {
 }
 
 /** Kullanıcıya gösterilecek Türkçe metin. */
-export function translateAuthError(input: unknown): string {
+export function translateAuthError(input: unknown, lang: NativeLang = DEFAULT_NATIVE): string {
   const { code, message, status } = extractAuthError(input);
   const msg = message.toLowerCase();
+  const t = (key: string) => translate(lang, key);
 
   if (code === "EMAIL_NOT_VERIFIED" || msg.includes("email not verified"))
-    return "E-posta adresin henüz doğrulanmadı. Gelen kutundaki doğrulama bağlantısına tıkla.";
+    return t("autherror.your_email_address_is_not");
   if (code.includes("INVALID_EMAIL_OR_PASSWORD") || msg.includes("invalid email or password"))
-    return "E-posta veya parola hatalı.";
+    return t("autherror.email_or_password_is_wrong");
   if (code.includes("USER_ALREADY_EXISTS") || msg.includes("already exists"))
-    return "Bu e-posta zaten kayıtlı. Giriş yapmayı dene.";
+    return t("autherror.this_email_is_already_registered");
   /*
     Sosyal giriş, aynı e-postalı mevcut hesaba bağlanamadı: sağlayıcı e-postayı
     DOĞRULANMIŞ olarak bildirmedi (bkz. auth/server accountLinking). Genel
@@ -76,26 +78,26 @@ export function translateAuthError(input: unknown): string {
     durup ne yapacağını bilemiyor. Çıkış yolu söyleniyor.
   */
   if (code.includes("ACCOUNT_NOT_LINKED") || msg.includes("account not linked"))
-    return "Bu e-postayla zaten bir hesabın var. Önce her zamanki yönteminle gir, sonra Ayarlar'dan bu hesabı bağla.";
+    return t("autherrorw.account_not_linked");
   if (code.includes("USER_NOT_FOUND") || msg.includes("user not found"))
-    return "Bu e-postayla kayıtlı bir hesap bulunamadı.";
+    return t("autherror.no_account_was_found_for_this");
   if (
     code.includes("PASSWORD_TOO_SHORT") ||
     msg.includes("password is too short") ||
     msg.includes("at least 8")
   )
-    return "Parola en az 8 karakter olmalı.";
+    return t("autherror.password_must_be_at_least_8");
   if (code.includes("INVALID_TOKEN") || code.includes("TOKEN_EXPIRED") || msg.includes("token"))
-    return "Bağlantının süresi dolmuş ya da geçersiz. Yeni bir bağlantı iste.";
+    return t("autherrorw.token_expired");
   if (status === 429 || code.includes("TOO_MANY") || msg.includes("rate limit"))
-    return "Çok fazla deneme yapıldı. Birkaç dakika sonra tekrar dene.";
+    return t("autherrorw.too_many");
   if (status === 403 || code.includes("FORBIDDEN"))
-    return "Bu işlem için yetkin yok. Adres listesi (Domains) ayarını kontrol et.";
+    return t("autherrorw.forbidden");
   if (msg.includes("failed to fetch") || msg.includes("networkerror") || msg.includes("load failed"))
-    return "İnternet bağlantısı kurulamadı. Bağlantını kontrol edip tekrar dene.";
-  if (msg.includes("email")) return "Geçerli bir e-posta adresi gir.";
+    return t("autherrorw.network");
+  if (msg.includes("email")) return t("autherror.enter_valid_email_address");
 
-  return message || "Beklenmeyen bir hata oluştu. Tekrar dene.";
+  return message || t("autherror.something_went_wrong_try_again");
 }
 
 /** Giriş sırasında doğrulama bekleyen hesabı ayırt etmek için. */
