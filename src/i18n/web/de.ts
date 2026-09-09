@@ -957,7 +957,6 @@ export const deWeb: Record<string, string> = {
   "writp.exact": "Richtig!",
   "writp.spelling_only": "Richtig — kleine Abweichung in der Schreibung",
   "writp.order_only": "Richtige Wörter, falsche Reihenfolge",
-  "skillsp.mock_sub": "Eigenständige Prüfungsbögen für A1–C1. Jeder Teil wird für sich bearbeitet, die Zeit läuft pro Aufgabe.",
   "skillsp.empty_level": "Auf dieser Stufe gibt es noch keine Bibliotheksübung. Wähl eine andere Stufe oder schau bei den Probeprüfungen.",
   "skillsp.exams": "Prüfungen",
   "skillsp.level_exam_sub": "45 Min · fünf Teile",

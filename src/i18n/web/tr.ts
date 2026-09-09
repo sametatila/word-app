@@ -982,7 +982,6 @@ export const trWeb: Record<string, string> = {
   "writp.exact": "Doğru!",
   "writp.spelling_only": "Doğru — yazımda küçük sapma",
   "writp.order_only": "Kelimeler doğru, sıra yanlış",
-  "skillsp.mock_sub": "A1–C1 için kendi başına duran sınav kâğıtları. Her bölüm ayrı çözülür, süre görev başına işler.",
   "skillsp.empty_level": "Bu seviyede henüz kütüphane egzersizi yok. Başka bir seviye seç ya da deneme sınavlarına bak.",
   "skillsp.exams": "Sınavlar",
   "skillsp.level_exam_sub": "45 dk · beş bölüm",

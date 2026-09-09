@@ -104,28 +104,21 @@ export default async function SkillsPage({
       <AppHeader title={t("skills.skills")} subtitle={t("skills.aciklama")} />
 
       {/*
-        Deneme sınavlarının web kapısı burası. Alt gezinme bilerek üç sekmede
-        tutuluyor (bkz. app-shell), ve bu sayfa zaten "patikanın dışındaki
-        serbest çalışma ve sınavlar" için: elle yazılmış deneme kâğıtları da
-        oraya ait.
-      */}
-      <Link href="/mock-exams" className="card mb-4 flex items-center justify-between gap-3 p-4">
-        <span>
-          <span className="block text-sm font-bold">{t("mockexams.title")}</span>
-          <span className="muted block text-sm">
-            {t("skillsp.mock_sub")}
-          </span>
-        </span>
-        <ChevronRightIcon className="size-4 shrink-0" />
-      </Link>
-
-      {/*
         Seviye seçici — mobildeki gibi EŞİT GENİŞLİKTE BEŞ sekme. Beş yerine
         yalnız içeriği olan seviyeleri çizmek, seviyenin bir ÖLÇEK olduğunu
         gizliyordu; tek bir şey söylenmesi gerekiyor: hangisi seçili.
       */}
-      <p className="muted mb-2 ml-1 text-caption tracking-wide">{t("mockexams.level")}</p>
-      <nav className="mb-4 flex gap-2" aria-label={t("mockexams.level")}>
+      {/* Etiket ve sayaç TEK satırda, çiplerin üstünde — mobildeki
+          `SkillsScreen` düzeni. Sayaç önce çiplerin ALTINDA ayrı bir satırdı
+          ve seviyeyi bir kez daha yazıyordu ("A1 · 0/5 tamamlandı"); seçili
+          çip zaten hangi seviye olduğunu söylüyor. */}
+      <div className="mb-2 ml-1 flex items-center justify-between">
+        <p className="muted text-caption tracking-wide">{t("skills.level")}</p>
+        {atLevel.length ? (
+          <p className="muted text-caption">{t("skills.done_of", { done: doneCount, total: atLevel.length })}</p>
+        ) : null}
+      </div>
+      <nav className="mb-4 flex gap-2" aria-label={t("skills.level")}>
         {LEVELS.map((lv) => {
           const active = lv === level;
           return (
@@ -147,12 +140,6 @@ export default async function SkillsPage({
           );
         })}
       </nav>
-
-      {atLevel.length ? (
-        <p className="muted mb-3 text-xs font-semibold">
-          {level} · {t("skills.done_of", { done: doneCount, total: atLevel.length })}
-        </p>
-      ) : null}
 
       {/* Tek öneri: en geride kalan becerinin sıradaki egzersizi; hepsi
           bittiyse bir üst seviye. Öğrenci "ne çalışsam" diye listeyi taramasın. */}

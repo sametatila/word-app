@@ -957,7 +957,6 @@ export const enWeb: Record<string, string> = {
   "writp.exact": "Correct!",
   "writp.spelling_only": "Correct — a small spelling slip",
   "writp.order_only": "Right words, wrong order",
-  "skillsp.mock_sub": "Standalone exam papers for A1–C1. Each section is taken on its own and the clock runs per task.",
   "skillsp.empty_level": "There's no library exercise at this level yet. Pick another level or take a look at the mock exams.",
   "skillsp.exams": "Exams",
   "skillsp.level_exam_sub": "45 min · five sections",
