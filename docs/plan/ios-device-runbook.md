@@ -131,7 +131,8 @@ işaretli mi (0.2). Yetki portalda yoksa profil onu taşımaz ve imza hata verir
 `bash mobile/scripts/ios-archive.sh`'ın ilk adımını gör (arşiv almadan da sürüm
 karşılaştırmasını yapıyor).
 **Geçti:** `MARKETING_VERSION` / `CURRENT_PROJECT_VERSION` ile `mobile/src/version.ts`
-aynı (bugün 1.0.11 / 13); üçüncü kaynak `android/app/build.gradle` de aynı.
+aynı; üçüncü kaynak `android/app/build.gradle` de aynı. Beklenen sayıyı buraya yazma —
+`npm run ios:check` üçünü okuyup bastığı için burada tutulan bir kopya yalnız eskir.
 **Geçmezse:** üçü elle eşitlenir — `mobile/src/version.ts` docblock'u kuralı yazıyor.
 Ayrışmış sürümle TestFlight'a çıkmak geri alınamayan bir build numarası harcar.
 

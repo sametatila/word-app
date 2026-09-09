@@ -5,7 +5,7 @@ sunucusu yok: bütün istekler `https://www.lernomi.app`'e gider (`src/api/clien
 oturum Better Auth çerezidir. Yani `mobile/` bir istemcidir; iş kuralları, içerik ve
 veritabanı depo kökündeki Next.js uygulamasında.
 
-- Android: `com.lernomi.learn` — **yayında**
+- Android: `com.lernomi.learn` — **yayında değil**, ilk yükleme hazırlanıyor (`docs/play/`)
 - iOS: `app.lernomi.ios` — **yayında değil**, bkz. `docs/appstore/README.md`
 
 ## Kurulum
@@ -114,9 +114,9 @@ npm run release:android                # AAB + APK üretir ve ürettiğini doğr
 bash scripts/ios-archive.sh            # iOS arşiv + App Store yüklemesi (yalnız macOS)
 ```
 
-Android anahtarı kaybolursa Play'de uygulama **güncellenemez**. iOS tarafında imza
-kimliği ve takım kimliği Xcode/Keychain'den gelir, `project.pbxproj`'da yalnız yer
-tutucu var.
+Android anahtarı bir **yükleme** anahtarıdır; kaybı Google'dan sıfırlatılabilir ama
+süreç günler alır (ayrıntı aşağıda). iOS tarafında imza kimliği ve takım kimliği
+Xcode/Keychain'den gelir, `project.pbxproj`'da yalnız yer tutucu var.
 
 ### Yayın imzası: anahtarsız release yapısı üretilmiyor
 
@@ -137,9 +137,8 @@ Deneme amaçlı bir release paketi gerekiyorsa kapı elle açılıyor:
 ./gradlew assembleRelease -PallowDebugSigning   # ya da LERNOMI_ALLOW_DEBUG_SIGNING=1
 ```
 
-Çıkan yapı debug anahtarıyla imzalanıyor **ve** `-devkey` sürüm ekiyle işaretleniyor
-(`1.0.11-devkey`), yani elde kaldığında ne olduğunu kendisi söylüyor. O dosya
-mağazaya gidemez.
+Çıkan yapı debug anahtarıyla imzalanıyor **ve** sürüm adının sonuna `-devkey` ekleniyor,
+yani elde kaldığında ne olduğunu kendisi söylüyor. O dosya mağazaya gidemez.
 
 ### JDK nereden geliyor
 

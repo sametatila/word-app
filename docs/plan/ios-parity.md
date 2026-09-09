@@ -1,6 +1,6 @@
 # iOS paritesi — envanter ve çalışma planı (2026-09-04)
 
-Android tarafı yayına hazır (`com.lernomi.learn`, versionName 1.0.11 / versionCode 13);
+Android tarafı yayına hazır (`com.lernomi.learn`; sürümün tek kaynağı `M/src/version.ts`);
 iOS tarafı React Native şablonundan büyük ölçüde çıkmamış durumda. Bu belge iki şeyi
 yapar: **(1)** Android'de olup iOS'ta olmayan her şeyin envanterini kanıtıyla çıkarır,
 **(2)** işi birbirine çarpmayan şeritlere böler ki birden fazla agent aynı anda
@@ -157,7 +157,7 @@ Diğer her şey buna dayanır; **paralel değil, ilk sırada koşar.**
   1. `LernomiSpeech.swift` + `.m`'yi gruba ve Sources fazına ekle (P1).
   2. `tr/en/de.lproj/InfoPlist.strings`'i hedefe bağla; `knownRegions` + `CFBundleLocalizations = [tr, en, de]` (P3). Android karşılığı `res/xml/locales_config.xml`.
   3. Bundle kimliği `app.lernomi.ios` (docs/appstore önerisi), `PRODUCT_NAME` sabit (P4).
-  4. `MARKETING_VERSION 1.0.11` / `CURRENT_PROJECT_VERSION 13` — Android ve `M/src/version.ts` ile aynı (P5). Üç kaynağın elle eşitlendiğini `version.ts` yorumuna ekle.
+  4. `MARKETING_VERSION` / `CURRENT_PROJECT_VERSION` — Android ve `M/src/version.ts` ile AYNI değer (P5). Sayı buraya yazılmaz: yazılırsa ilk sürüm artışında bu satır yanlış talimata dönüşür. Üç kaynağın elle eşitlendiğini `version.ts` yorumuna ekle.
   5. `CODE_SIGN_STYLE`, `DEVELOPMENT_TEAM` yer tutucusu; gerçek takım kimliği repoya girmez (P6).
   6. Scheme'deki `NomiTests.xctest` referansını kaldır (P7).
   7. `ITSAppUsesNonExemptEncryption = false` (C2) — HTTPS dışında şifreleme yok.
