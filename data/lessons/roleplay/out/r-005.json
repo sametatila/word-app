@@ -1,0 +1,177 @@
+[
+ {
+  "lesson": "de-a2-urlaub",
+  "sceneEn": "You are having a coffee with a friend who is asking about your last holiday. Say where you went with verbs of movement, and what you did there with the other auxiliary.",
+  "partnerEn": "a friend who loves holiday stories",
+  "openingEn": "Hello! You were away, of course. Where did you travel to?",
+  "goalEn": "Where you went on holiday, when, and what you did there have been described, and your friend has said something about their own holiday."
+ },
+ {
+  "lesson": "de-a2-perfekt-unregel",
+  "sceneEn": "You are talking about last night with a friend. You lost something, and then something unexpected happened. Use today's irregular participles as you tell it.",
+  "partnerEn": "a friend who listens with interest",
+  "openingEn": "And? What did you do last night?",
+  "goalEn": "Two things that happened last night have been told with irregular participles, and your friend has said something about their own evening."
+ },
+ {
+  "lesson": "de-a2-perfekt-trennbar",
+  "sceneEn": "You are doing the last check with your flatmate before going away. They ask, and you say what you have sorted out, using the participle of separable verbs.",
+  "partnerEn": "a flatmate who asks everything twice",
+  "openingEn": "We're setting off in a minute. Have you got everything ready?",
+  "goalEn": "The door, the appliances and the preparations have been gone through one by one, and you have both decided you are ready to leave."
+ },
+ {
+  "lesson": "de-a2-gestern-abend",
+  "sceneEn": "You have run into a friend on the way home from work and they are asking about last night. Tell at least three things in order: what you did first, what happened next, what you did last.",
+  "partnerEn": "a friend who is always out in the evenings",
+  "openingEn": "Tell me, what did you do last night?",
+  "goalEn": "At least three things from last night have been told in the right order, and your friend has put their own evening in order too."
+ },
+ {
+  "lesson": "de-a2-montagmorgen",
+  "sceneEn": "You are half an hour late for work on a Monday morning. A colleague meets you at the door and asks what happened. Tell the mishaps of your morning in order.",
+  "partnerEn": "a colleague who meets you at the door",
+  "openingEn": "There you are at last! What on earth happened?",
+  "goalEn": "At least two reasons for being late have been given, and your colleague has mentioned a similar morning of their own."
+ },
+ {
+  "lesson": "de-a2-kindheit-foto",
+  "sceneEn": "You are showing a friend a childhood photo on your phone. They ask what you were like back then; describe how you looked and what you were like, in the past tense.",
+  "partnerEn": "a friend who studies the photo and asks questions",
+  "openingEn": "Oh, is that you? How old were you back then?",
+  "goalEn": "How the child in the photo looked and what they were like have been described, and your friend has said something about their own childhood."
+ },
+ {
+  "lesson": "de-a2-fruher",
+  "sceneEn": "Your neighbour is much older than you and is talking about the old days. You describe the old days in your own country. Compare what there was, what there was not and what was different.",
+  "partnerEn": "an elderly neighbour who misses the old days",
+  "openingEn": "You know, everything here used to be quite different. Was it like that where you are from too?",
+  "goalEn": "Then and now have been compared on at least three points, and both of you have said something about which was better."
+ },
+ {
+  "lesson": "de-a2-erste-mal",
+  "sceneEn": "You are sitting with a friend and they ask about something you did for the first time in your life. Tell what happened in order and say how you felt at the time.",
+  "partnerEn": "a friend who loves listening to a story",
+  "openingEn": "Tell me: what do you still remember when you think of your first time?",
+  "goalEn": "A first experience has been told with both the events and the feeling, and your friend has spoken about their own first time."
+ },
+ {
+  "lesson": "de-a2-wochenbericht",
+  "sceneEn": "It is Monday morning and you are having a coffee with a colleague, summing up last week. Say what you got done, which event took place and what you did not manage.",
+  "partnerEn": "a colleague whose week was as busy as yours",
+  "openingEn": "Good morning! How was your week last week?",
+  "goalEn": "At least three of the week's jobs have been summed up, one has been marked as unfinished, and your colleague has described their own week."
+ },
+ {
+  "lesson": "de-a2-tolle-nachricht",
+  "sceneEn": "You are ringing a friend and you have good news for them. Build up the suspense first, get them guessing, then tell the news and say how it came about.",
+  "partnerEn": "a close friend who picks up straight away",
+  "openingEn": "Hey! You sound excited. What's going on?",
+  "goalEn": "The news has been guessed at first and then told outright, and your friend has given their reaction."
+ },
+ {
+  "lesson": "de-a2-lebensweg",
+  "sceneEn": "Someone you have just met at the language course is asking how you came to be here. Say where you came from, what was hard at first and how things are today.",
+  "partnerEn": "someone you have just met on the course who has also just arrived",
+  "openingEn": "And you? How long have you been here?",
+  "goalEn": "Your arrival, the early difficulty and how things are today have been told in order, and the other person has spoken about their own story."
+ },
+ {
+  "lesson": "de-a2-wollte-konnte",
+  "sceneEn": "You are talking about your childhood dreams with a friend. Say what you wanted to be, why you could not, and what you had to do instead.",
+  "partnerEn": "a friend who wants to tell you their childhood dream too",
+  "openingEn": "Tell me, what did you want to be when you were a child?",
+  "goalEn": "The childhood dream, the reason it did not happen and how things stand today have been described, and your friend has told you their own dream."
+ },
+ {
+  "lesson": "de-a2-schulzeit",
+  "sceneEn": "You are comparing your school years with a friend. Say what was forbidden and what was compulsory at your school, and what your teachers were like.",
+  "partnerEn": "a friend who remembers their own school quite differently",
+  "openingEn": "Was your school strict, then?",
+  "goalEn": "At least one ban and one obligation have been described, the two schools have been compared and you have decided which was stricter."
+ },
+ {
+  "lesson": "de-a2-umzug-geschichte",
+  "sceneEn": "You have moved into your new place and a friend is ringing you. Talk about the flat hunt, moving day and the new place.",
+  "partnerEn": "a friend who is curious about your new place",
+  "openingEn": "And? How did the move go?",
+  "goalEn": "The flat hunt, moving day and the state of the new place have been described, and your friend has been invited round to see it."
+ },
+ {
+  "lesson": "de-a2-kennenlernen",
+  "sceneEn": "At a dinner someone asks how you and your closest friend met. Say where you met, what your first impression was and how things are between you today.",
+  "partnerEn": "a curious table companion you have just met",
+  "openingEn": "You two have known each other a long time, haven't you? How did you meet?",
+  "goalEn": "Where you met, the first impression and the friendship today have been described, and the other person has told their own how-we-met story."
+ },
+ {
+  "lesson": "de-a2-drei-jahre",
+  "sceneEn": "A neighbour is asking how long you have been in this city. Say when you arrived and how long you have been living here in separate sentences, then say how long you have been working.",
+  "partnerEn": "a newly arrived neighbour who wonders how long you have been here",
+  "openingEn": "Have you been living here long?",
+  "goalEn": "Both the point of arrival and the state that is still going on have been said in separate sentences, and the same question has been put back to the neighbour."
+ },
+ {
+  "lesson": "de-a2-veraenderung",
+  "sceneEn": "You have met a friend you have not seen for a long time. Say what has changed in your life in recent years, what you changed on purpose and what changed by itself.",
+  "partnerEn": "an old friend who is seeing you after years",
+  "openingEn": "Goodness, it's been so long! What's changed with you?",
+  "goalEn": "At least two changes have been described, one marked as deliberate and one as having happened by itself, and your friend has told you their own change."
+ },
+ {
+  "lesson": "de-a2-grosseltern",
+  "sceneEn": "You are talking about childhood memories with a friend. Describe your grandparents' house: what there was, what sort of people they were and what you liked doing there.",
+  "partnerEn": "a friend who describes their own grandmother's house too",
+  "openingEn": "Did you often stay with your grandparents as a child?",
+  "goalEn": "What was in the house, what the people were like and something you did there have been described, and your friend has told a memory of their own."
+ },
+ {
+  "lesson": "de-a2-peinlich",
+  "sceneEn": "You are sitting laughing with a friend and they ask about the most embarrassing thing that has happened to you. Tell what happened in order and say how you felt at that moment.",
+  "partnerEn": "a friend who is ready to tell their own embarrassing memory",
+  "openingEn": "Go on, what really embarrassed you?",
+  "goalEn": "The event has been told in order, the feeling at the time has been given, and your friend has shared a memory of their own."
+ },
+ {
+  "lesson": "de-a2-erfolg",
+  "sceneEn": "You are preparing for a job interview and a friend is doing a practice run with you. They ask what you are proud of; describe something you achieved, the work behind it and the difficulty.",
+  "partnerEn": "a friend doing a practice interview with you",
+  "openingEn": "Right, first question: what are you proud of in your life?",
+  "goalEn": "An achievement, the work behind it and the difficulty faced have been described, and your friend has judged the answer and made a suggestion."
+ },
+ {
+  "lesson": "de-a2-arzt",
+  "sceneEn": "You have had a cough for a week and you have gone to the doctor. Describe your symptoms, say how long it has been going on, and ask what you should do.",
+  "partnerEn": "a GP who asks questions calmly",
+  "openingEn": "Good afternoon, do sit down. What's the trouble?",
+  "goalEn": "The symptoms and how long they have lasted have been described, the doctor has named a treatment and the patient has repeated it in their own words."
+ },
+ {
+  "lesson": "de-a2-symptome",
+  "sceneEn": "You are not feeling well and a colleague has noticed. Describe your symptoms one by one and say how it started.",
+  "partnerEn": "a colleague who has noticed and is worried",
+  "openingEn": "You look pale. Aren't you feeling well?",
+  "goalEn": "At least two symptoms have been described with the right pattern, and your colleague has made a suggestion."
+ },
+ {
+  "lesson": "de-a2-duerfen",
+  "sceneEn": "You have come for a check-up after an operation and you want to know what you are allowed to do. Ask one by one about sport, food and work.",
+  "partnerEn": "a doctor who speaks plainly and answers briefly",
+  "openingEn": "The wound looks good. Do you have any questions?",
+  "goalEn": "Permission has been asked about at least three things, the doctor has allowed or forbidden each one, and the patient has repeated the bans in their own words."
+ },
+ {
+  "lesson": "de-a2-hausmittel",
+  "sceneEn": "A friend has caught a cold and is ringing you. Suggest at least two home remedies, say how to make them and say what each is good for.",
+  "partnerEn": "a friend with a cold who has lost their voice",
+  "openingEn": "I've got a terrible cold. Have you got any tips for me?",
+  "goalEn": "At least two remedies have been suggested, one described with how it is made, and your friend has said which they will try."
+ },
+ {
+  "lesson": "de-a2-apotheke-beratung",
+  "sceneEn": "You are at the pharmacy and you want something for your cough. Ask whether you need a prescription, how often you take it and how to use it.",
+  "partnerEn": "a pharmacist who explains patiently",
+  "openingEn": "Good afternoon! How can I help you?",
+  "goalEn": "The product has been bought, the dose and the way to take it have been learnt, and the customer has repeated the instructions in their own words."
+ }
+]
