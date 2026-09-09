@@ -111,16 +111,16 @@ export const profiles = pgTable("profiles", {
   /**
    * Hatırlatmanın gönderilebileceği **en erken** yerel saat.
    *
-   * Kesin gönderim saati değil, bir alt sınır. Sebebi Vercel'in cron
-   * davranışı: Hobby planında günde birden sık tetikleme deploy'da reddediliyor,
-   * yani tur günde bir kez ve herkes için aynı UTC anında çalışıyor. Bu tek
-   * anda "yerel saat tam 20:00 olsun" diye beklemek, saat dilimi batıda kalan
-   * kullanıcıya hiç bildirim göndermemek anlamına gelirdi — kapı her gün
-   * kapalı kalırdı. Varsayılan bu yüzden öğlen: turun çalıştığı anda
-   * Türkiye'de akşam, Orta Avrupa'da akşamüstü oluyor ve ikisi de kapıdan
-   * geçiyor.
+   * Kesin gönderim saati değil, bir alt sınır. Sebebi turun kendisi: hatırlatma
+   * günde bir kez ve herkes için aynı UTC anında çalışıyor
+   * (`lernomi-cron-reminders.timer`, 18:00 UTC). Bu tek anda "yerel saat tam
+   * 20:00 olsun" diye beklemek, saat dilimi batıda kalan kullanıcıya hiç
+   * bildirim göndermemek anlamına gelirdi — kapı her gün kapalı kalırdı.
+   * Varsayılan bu yüzden öğlen: turun çalıştığı anda Türkiye'de akşam, Orta
+   * Avrupa'da akşamüstü oluyor ve ikisi de kapıdan geçiyor.
    *
-   * Cron saatlik çalışacak şekilde yükseltilirse (Pro planı) alan gerçek
+   * Günde bir kez olması artık bir plan sınırı değil, bir seçim: systemd
+   * timer'ı istendiği sıklıkta çalışabilir. Tur saatlik çağrılırsa alan gerçek
    * anlamını kazanıyor ve kullanıcı kendi saatini seçebiliyor; kod tarafında
    * değişiklik gerekmiyor.
    *

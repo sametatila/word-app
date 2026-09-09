@@ -12,27 +12,30 @@ import { TURKISH_VOICE, VOICES, type VoiceId } from "@/lib/tts/voices";
  * orada: aynı kelime dönüp duruyor (tekrar algoritmasının doğası bu), yani her
  * parça ömründe bir kez sentezlenip sonsuza kadar önbellekten dönebilir.
  *
- * Üç katman var:
+ * PAYLAŞIMLI KATMAN ŞU AN YOK. Vercel bırakılınca (bkz. AGENTS.md) aradaki CDN
+ * de gitti ve Netcup'taki nginx hiçbir şeyi önbelleğe almıyor — yapılandırmada
+ * `proxy_cache` bölgesi tanımlı değil. Yani bugün iki katman çalışıyor:
  *   1. Tarayıcı önbelleği — aynı cihazda ikinci dinleme hiç ağa çıkmıyor.
- *   2. Vercel CDN — bir kelimeyi ilk dinleyen kişi onu herkes için ısıtıyor;
- *      isabet hâlinde bu fonksiyon hiç çalışmıyor.
- *   3. Sentez zinciri (Edge → Azure) — yalnızca gerçek ıskalamada.
+ *   2. Sentez zinciri (Edge → Azure) — tarayıcıda olmayan her parça için.
  *
- * Bunun çalışması için Vercel'in kuralları harfiyen uygulanıyor, aksi hâlde
- * önbellek **sessizce hiç devreye girmez**:
+ * Bunun bedeli, bir kelimeyi ilk kez dinleyen HER kullanıcının onu yeniden
+ * sentezlemesi: eskiden ilk dinleyen herkes için ısıtıyordu. Önbelleğe uygun
+ * cevap biçimi yine de korunuyor (GET, 200, `immutable`, `CDN-Cache-Control`),
+ * çünkü öne bir önbellek konduğu gün — nginx `proxy_cache` ya da bir CDN —
+ * kod tarafında değişiklik gerekmeden devreye girmesi isteniyor:
  *
- *   - GET olmak zorunda. POST cevapları CDN'de hiç saklanmıyor.
- *   - `Cache-Control` tek başına yetmiyor: Vercel `s-maxage`'i tarayıcıya
- *     göndermeden siliyor, bu yüzden `CDN-Cache-Control` ayrıca veriliyor.
+ *   - GET olmak zorunda. POST cevapları paylaşımlı önbelleklerde saklanmıyor.
+ *   - `Cache-Control` tek başına yetmez, çünkü ara katmanların bir kısmı
+ *     `s-maxage`'i tarayıcıya iletmiyor; `CDN-Cache-Control` ayrıca veriliyor.
  *   - Durum kodu 200 olmalı; hata cevapları bilerek önbelleklenmiyor
  *     (geçici bir kesinti kalıcı bir sessizliğe dönüşmesin).
  *
- * Kimlik doğrulaması bilerek **yok**: `Authorization` başlığı taşıyan istekler
- * Vercel'de önbelleğe alınmıyor ve oturum okumak cevabı kullanıcıya özel hâle
- * getirip paylaşımı bozardı. Okunan içerik zaten gizli değil — sözlükteki
- * Almanca kelimeler. Karşılığında `sameOrigin` denetimi var; bu, başka bir
- * siteden doğrudan bağlanmayı engelliyor ama kararlı birini durdurmaz.
- * Kötüye kullanım görülürse doğru çözüm imzalı URL, oturum değil.
+ * Kimlik doğrulaması bilerek **yok**: oturum okumak cevabı kullanıcıya özel
+ * hâle getirip paylaşımı bozardı ve `Authorization` taşıyan istekler zaten
+ * paylaşımlı önbelleğe girmez. Okunan içerik gizli değil — sözlükteki Almanca
+ * kelimeler. Karşılığında `sameOrigin` denetimi var; bu, başka bir siteden
+ * doğrudan bağlanmayı engelliyor ama kararlı birini durdurmaz. Kötüye kullanım
+ * görülürse doğru çözüm imzalı URL, oturum değil.
  */
 
 export const dynamic = "force-dynamic";
@@ -105,9 +108,9 @@ export async function GET(req: Request) {
         // Tarayıcı için: `immutable` sayesinde sayfa yenilense bile yeniden
         // doğrulama isteği bile gitmiyor.
         "cache-control": `public, max-age=${MAX_AGE}, immutable`,
-        // CDN için ayrı başlık: yukarıdakinin s-maxage'i buraya ulaşmıyor.
+        // Paylaşımlı önbellek için ayrı başlık: yukarıdakinin s-maxage'i her
+        // ara katmana ulaşmıyor. Bugün önde önbellek yok, başlık ileriye dönük.
         "cdn-cache-control": `public, s-maxage=${MAX_AGE}, immutable`,
-        "vercel-cdn-cache-control": `public, s-maxage=${MAX_AGE}, immutable`,
       },
     });
   } catch (err) {

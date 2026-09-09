@@ -3,8 +3,8 @@
  *
  * Koddaki tablo/sütun tanımlarını canlı veritabanıyla karşılaştırır.
  *
- * Neden gerekli: bu projede göçler elle uygulanıyor ve kod Vercel'de ayrı bir
- * hızda ilerliyor. İki taraf ayrışınca Drizzle sütunları açıkça seçtiği için
+ * Neden gerekli: bu projede göçler elle uygulanıyor ve kod kendi hızında
+ * dağıtılıyor. İki taraf ayrışınca Drizzle sütunları açıkça seçtiği için
  * uygulama sessizce değil, 500 ile patlıyor — üstelik yalnızca o sütuna dokunan
  * uçta. Bu betik ayrışmayı deploy'dan önce görünür kılar.
  */

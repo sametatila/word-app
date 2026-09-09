@@ -9,12 +9,13 @@ export const runtime = "nodejs"; // web-push Node API'lerine dayanıyor
 export const maxDuration = 60;
 
 /**
- * Günlük hatırlatma turu — Vercel Cron tetikler (bkz. vercel.json).
+ * Günlük hatırlatma turu — sunucudaki `lernomi-cron-reminders.timer` tetikler
+ * (her gün 18:00 UTC, `/opt/lernomi/cron-call.sh` üzerinden; bkz. AGENTS.md).
  *
  * Uç herkese açık bir adreste duruyor, bu yüzden sırla korunuyor: aksi hâlde
  * adresi bilen biri turu istediği kadar tetikleyip kullanıcılara bildirim
- * yağdırabilirdi. Vercel, `CRON_SECRET` tanımlıysa isteğe `Authorization`
- * başlığını kendiliğinden ekliyor.
+ * yağdırabilirdi. `cron-call.sh` isteği `CRON_SECRET` taşıyan bir Bearer
+ * başlığıyla atıyor.
  *
  * Kimin bildirim alacağına `runReminders` karar veriyor; burada yalnızca
  * yetki ve raporlama var.

@@ -65,8 +65,8 @@ const VERSION_MARGIN = 3;
 
 function browserVersion(): number {
   const override = Number(process.env.EDGE_TTS_BROWSER_VERSION);
-  // Ortam değişkeni son çare: ölçüm yanılırsa Vercel'de tek değer değiştirip
-  // redeploy etmek yetsin, yeni kod beklemeye gerek kalmasın.
+  // Ortam değişkeni son çare: ölçüm yanılırsa `/opt/lernomi/.env` içinde tek
+  // değer değiştirip yeniden başlatmak yetsin, yeni kod beklemeye gerek kalmasın.
   if (Number.isFinite(override) && override > 0) return Math.floor(override);
   const elapsed = Math.max(0, Date.now() - BASE_DATE);
   return BASE_VERSION + Math.floor(elapsed / (RELEASE_DAYS * 86_400_000)) + VERSION_MARGIN;

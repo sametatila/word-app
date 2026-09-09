@@ -192,9 +192,10 @@ const ERROR_COOLDOWN_MS = 15_000;
  * da o gecikmeyi bekliyor. Soğumayla dolan sağlayıcı sıradan çıkıyor ve süre
  * dolunca kendiliğinden geri geliyor.
  *
- * Bu bellek süreç başına: Vercel'de her örnek kendi tablosunu tutar, yani
- * paylaşımlı bir sayaç değil. Yine de işe yarıyor — art arda gelen istekler
- * çoğunlukla aynı örneğe düşüyor — ve ücretsiz kalmanın bedeli bu.
+ * Bu bellek süreç başına: aktif renkte üç Node örneği çalışıyor ve her biri
+ * kendi tablosunu tutuyor, yani paylaşımlı bir sayaç değil. Yine de işe
+ * yarıyor — art arda gelen istekler çoğunlukla aynı örneğe düşüyor — ve
+ * paylaşımlı bir sayaç (Redis) kurmamanın bedeli bu.
  */
 const cooldownUntil = new Map<ProviderName, number>();
 
