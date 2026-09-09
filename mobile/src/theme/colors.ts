@@ -3,6 +3,11 @@
  * yumuşak/modern (fitness örneği) doku. Semantik renkler WEB paletiyle hizalı
  * (mint=doğru/A1, rose=yanlış/C1, sky=A2, violet=B1, flame=seri) ki iki uygulama
  * tutarlı olsun. Light + dark; dolu zeminde okunur tonlar sabit.
+ *
+ * `textMuted` açık temada #8a7866 idi ve beyaz kart üstünde 4.23 veriyordu —
+ * AA eşiği 4.5. #7c6c5d 5.05 veriyor ve iki ton yan yana ayırt edilemiyor,
+ * yani okunabilirlik kazanılırken görünümden bir şey kaybedilmiyor. Web de
+ * aynı değerde; iki uygulamanın sönük metni artık BİREBİR aynı.
  */
 export const orange = {
   50: "#fff4e9", 100: "#ffe3c4", 200: "#ffc98d", 300: "#ffab54", 400: "#fb8f2a",
@@ -23,7 +28,7 @@ export const light: Palette = {
   primary: orange[500], primaryStrong: orange[600], primarySoft: orange[100], onPrimary: "#ffffff",
   bg: "#fbf7f2", surface: "#ffffff", surface2: "#f5efe8", surfaceGlass: "rgba(255,255,255,0.72)", elevated: "#ffffff",
   border: "#ece3d8", hairline: "#f1eae0",
-  text: "#241a12", textMuted: "#8a7866", textFaint: "#b7a695",
+  text: "#241a12", textMuted: "#7c6c5d", textFaint: "#b7a695",
   success: "#2f9a61", danger: "#dc3f55", streak: "#b8940f", info: "#1b93ac", accent: "#9256bc",
   successSoft: "#e2f2e9", dangerSoft: "#fde6ea",
   gradientA: ["#fb8f2a", "#f87612"], gradientB: ["#ffab54", "#db5f08"],
