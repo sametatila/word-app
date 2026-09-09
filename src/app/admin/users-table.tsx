@@ -1,11 +1,39 @@
 "use client";
-import { useMemo, useState } from "react";
+import { useCallback, useMemo, useState } from "react";
 import type { AdminData } from "@/lib/admin";
 
 type U = AdminData["users"][number];
 type SortKey = "name" | "level" | "streak" | "xp" | "words" | "lastActive" | "joined";
 
 /** Admin kullanıcı tablosu — istemci tarafı arama + sütun sıralama. */
+/**
+ * Sıralanabilir başlık hücresi.
+ *
+ * MODÜL DÜZEYİNDE, bilerek: bileşenin İÇİNDE tanımlıyken her çizimde yeni bir
+ * bileşen tipi doğuyordu ve React eskisini söküp yenisini takıyordu (React
+ * Compiler kuralı `static-components` tam bunu söylüyor). Tabloda somut
+ * sonucu, her tuşa basışta başlık hücrelerinin sıfırdan kurulmasıydı.
+ */
+function Th({
+  k,
+  label,
+  sort,
+  dir,
+  onSort,
+}: {
+  k: SortKey;
+  label: string;
+  sort: SortKey;
+  dir: 1 | -1;
+  onSort: (k: SortKey) => void;
+}) {
+  return (
+    <th className="cursor-pointer select-none py-1 pr-3" onClick={() => onSort(k)}>
+      {label}{sort === k ? (dir === 1 ? " ↑" : " ↓") : ""}
+    </th>
+  );
+}
+
 export function UsersTable({ users }: { users: U[] }) {
   const [q, setQ] = useState("");
   const [sort, setSort] = useState<SortKey>("lastActive");
@@ -23,13 +51,14 @@ export function UsersTable({ users }: { users: U[] }) {
     });
   }, [users, q, sort, dir]);
 
-  function Th({ k, label }: { k: SortKey; label: string }) {
-    return (
-      <th className="cursor-pointer select-none py-1 pr-3" onClick={() => (sort === k ? setDir((x) => (x === 1 ? -1 : 1)) : (setSort(k), setDir(-1)))}>
-        {label}{sort === k ? (dir === 1 ? " ↑" : " ↓") : ""}
-      </th>
-    );
-  }
+
+  const onSort = useCallback((k: SortKey) => {
+    setSort((cur) => {
+      if (cur === k) setDir((x) => (x === 1 ? -1 : 1));
+      else setDir(-1);
+      return k;
+    });
+  }, []);
 
   return (
     <div>
@@ -44,14 +73,14 @@ export function UsersTable({ users }: { users: U[] }) {
         <table className="w-full text-left text-sm">
           <thead style={{ color: "var(--text-muted)" }}>
             <tr>
-              <Th k="name" label="Ad" />
-              <Th k="level" label="Seviye" />
+              <Th k="name" label="Ad" sort={sort} dir={dir} onSort={onSort} />
+              <Th k="level" label="Seviye" sort={sort} dir={dir} onSort={onSort} />
               <th className="pr-3">Kurs</th>
-              <Th k="streak" label="Seri" />
-              <Th k="xp" label="XP" />
-              <Th k="words" label="Kelime" />
-              <Th k="lastActive" label="Son aktif" />
-              <Th k="joined" label="Katıldı" />
+              <Th k="streak" label="Seri" sort={sort} dir={dir} onSort={onSort} />
+              <Th k="xp" label="XP" sort={sort} dir={dir} onSort={onSort} />
+              <Th k="words" label="Kelime" sort={sort} dir={dir} onSort={onSort} />
+              <Th k="lastActive" label="Son aktif" sort={sort} dir={dir} onSort={onSort} />
+              <Th k="joined" label="Katıldı" sort={sort} dir={dir} onSort={onSort} />
             </tr>
           </thead>
           <tbody>
