@@ -1,4 +1,5 @@
 import React from "react";
+import { kindIcon, kindTint } from "../ui/unitKind";
 import { t } from "../lib/i18n";
 import { View, ScrollView } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
@@ -8,18 +9,10 @@ import type { RootStackParams } from "../navigation/RootStack";
 import { Text } from "../ui/Text";
 import { Card } from "../ui/Card";
 import { PressableScale } from "../ui/PressableScale";
-import { ArrowBackIcon, ChevronRightIcon, CheckIcon, LearnIcon, ReadIcon, ListenIcon, WriteIcon, MicIcon, GrammarIcon, QuizIcon, LockIcon } from "../ui/icons";
+import { ArrowBackIcon, ChevronRightIcon, CheckIcon, LockIcon } from "../ui/icons";
 import { KIND_KEY, type ItemKind } from "../data/unit";
-import { useTheme, spacing, radii, softShadow, type Palette } from "../theme";
+import { useTheme, spacing, radii, softShadow } from "../theme";
 
-const KIND_ICON: Record<ItemKind, (p: { color: string; size: number }) => React.ReactElement> = {
-  lesson: (p) => <LearnIcon {...p} />, read: (p) => <ReadIcon {...p} />, listen: (p) => <ListenIcon {...p} />,
-  write: (p) => <WriteIcon {...p} />, speak: (p) => <MicIcon {...p} />, grammar: (p) => <GrammarIcon {...p} />, quiz: (p) => <QuizIcon {...p} />,
-  checkpoint: (p) => <CheckIcon {...p} />,
-};
-const KIND_TINT: Record<ItemKind, keyof Palette> = {
-  lesson: "primary", read: "info", listen: "accent", write: "success", speak: "primary", grammar: "streak", quiz: "primary", checkpoint: "danger",
-};
 
 /**
  * Ünite gövdesi — hem kendi ekranı hem de Patika'nın yatay tablette açtığı
@@ -110,8 +103,8 @@ export function UnitPane({ index, level, theme, items: gelenItems, embedded = fa
 
         <View style={{ gap: spacing.md }}>
           {items.map((it) => {
-            const tint = colors[(KIND_TINT[it.kind] ?? "primary")] as string;
-            const Icon = KIND_ICON[it.kind] ?? KIND_ICON.lesson;
+            const tint = colors[kindTint(it.kind)] as string;
+            const Icon = kindIcon(it.kind) ?? kindIcon("lesson")!;
             return (
               <PressableScale key={it.id} onPress={() => openItem(it)}>
                 <Card padded style={{ opacity: it.open ? 1 : 0.55, flexDirection: "row", alignItems: "center", gap: spacing.md, borderWidth: it.current ? 2 : 1, borderColor: it.current ? colors.primary : colors.hairline }}>

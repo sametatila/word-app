@@ -1,4 +1,5 @@
 import React, { useRef, useState } from "react";
+import { kindIcon, kindTint } from "../ui/unitKind";
 import { t } from "../lib/i18n";
 import { View, ScrollView } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
@@ -8,7 +9,7 @@ import { Card } from "../ui/Card";
 import { PressableScale } from "../ui/PressableScale";
 import { Mascot } from "../ui/Mascot";
 import { Celebrate } from "../ui/Celebrate";
-import { XIcon, ReadIcon, ListenIcon, WriteIcon, MicIcon, SpeakerIcon, GrammarIcon } from "../ui/icons";
+import { XIcon, SpeakerIcon } from "../ui/icons";
 import { KIND_KEY, type ItemKind } from "../data/unit";
 import { getExercise, type ListeningSegment } from "../data/skills";
 import { QuestionList, GlossPanel, WritingList, type WritingTask } from "../game/skillQuiz";
@@ -22,11 +23,7 @@ import type { RootStackParams } from "../navigation/RootStack";
 import { useTheme, spacing, radii, softShadow, type Palette } from "../theme";
 import { sfx } from "../lib/sfx";
 
-const KIND_ICON: Record<string, (p: { color: string; size: number }) => React.ReactElement> = {
-  read: (p) => <ReadIcon {...p} />, listen: (p) => <ListenIcon {...p} />, write: (p) => <WriteIcon {...p} />,
-  speak: (p) => <MicIcon {...p} />, grammar: (p) => <GrammarIcon {...p} />,
-};
-const KIND_TINT: Record<string, keyof Palette> = { read: "info", listen: "accent", write: "success", speak: "primary", grammar: "streak" };
+
 
 /** Okuma metni — paragraflar \n\n ile ayrılır (web reading-player gibi). */
 function ReadingText({ text, colors }: { text: string; colors: Palette }) {
@@ -91,8 +88,8 @@ export function ItemScreen() {
   const [round, setRound] = useState(0);
 
   const kind = params.kind as ItemKind;
-  const tint = colors[(KIND_TINT[kind] ?? "primary")] as string;
-  const Icon = KIND_ICON[kind];
+  const tint = colors[kindTint(kind)] as string;
+  const Icon = kindIcon(kind);
 
   /** `score`: monologda rubrik puanı (0–100); verilmezse sunucu doğru/toplam oranını yazar. */
   async function recordAndFinish(c: number, score?: number) {
