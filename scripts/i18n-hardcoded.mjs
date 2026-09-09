@@ -83,7 +83,7 @@ const TURKISH_LETTERS = /[çğışöüÇĞİŞÖÜ]/;
  * Sabit sözcük listesi tutmaya gerek yok — sözlük zaten ürünün Türkçesi.
  *
  * Kod parçaları eleniyor: içinde kod noktalaması olan aday metin değildir
- * (`{r.isMe ?`, `/ilk-kelimeler`, `if (--kalan === 0)` gibi ayrıştırma artıkları).
+ * (`{r.isMe ?`, `/first-words`, `if (--kalan === 0)` gibi ayrıştırma artıkları).
  */
 const CODEY = /[(){}\[\]<>=;\/\\|&$*+"'`~^%@#]/;
 

@@ -43,7 +43,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     {
       // Kelime listesi vitrinin içerik tarafı: herkese açık ve aramadan gelen
       // kullanıcının ilk karşılaştığı sayfa olabilir.
-      url: abs("/ilk-kelimeler"),
+      url: abs("/first-words"),
       changeFrequency: "monthly",
       priority: 0.7,
     },

@@ -208,7 +208,7 @@ export function CourseOnboarding({
       atlanıyor ve doğrudan hesap açılıyor.
     */
     if (!signedIn) {
-      router.push(hasFirstWords("tr", course) ? "/ilk-kelimeler" : "/login?mode=signup");
+      router.push(hasFirstWords("tr", course) ? "/first-words" : "/login?mode=signup");
       return;
     }
     setStep(4);

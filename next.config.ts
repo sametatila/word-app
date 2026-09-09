@@ -89,6 +89,7 @@ const nextConfig: NextConfig = {
       { source: "/lessons/sinav/:level/:module", destination: "/lessons/boss/:level/:module", permanent: true },
       { source: "/profile/ayarlar", destination: "/profile/settings", permanent: true },
       { source: "/profile/yazilarim", destination: "/profile/writings", permanent: true },
+      { source: "/ilk-kelimeler", destination: "/first-words", permanent: true },
       // Hukuki sayfalar: Türkçe kısa adresler (mağaza listesi, e-posta imzası).
       { source: "/gizlilik", destination: "/privacy", permanent: true },
       { source: "/kullanim-sartlari", destination: "/terms", permanent: true },
