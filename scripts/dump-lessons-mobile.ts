@@ -43,6 +43,14 @@ for (const level of LEVELS) {
         lecture: l.lecture, roleplay,
       };
     });
+  // Dersi olmayan seviye için dosya YAZILMIYOR: mobil yükleyici paketleri tek
+  // tek import ediyor (`mobile/src/data/lessons/index.ts`) ve boş bir dosyayı
+  // hiçbir şey import etmez — yazmak yalnız depoya ölü dosya bırakırdı.
+  // İngilizce kursta bugün yalnız A1 ve A2 var; kalan üç seviye böyle eleniyor.
+  if (!lessons.length) {
+    console.log(level.padEnd(3), "   —  ders yok, dosya yazılmadı");
+    continue;
+  }
   const file = join(out, `${course}-${level.toLowerCase()}.json`);
   writeFileSync(file, JSON.stringify(lessons));
   total += lessons.length;
