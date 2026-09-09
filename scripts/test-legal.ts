@@ -76,7 +76,12 @@ for (const p of ALL_PROCESSORS) {
 }
 
 console.log("\nSözlükte ölü anahtar");
-const used = {
+/*
+  `Set<string>` OLARAK yazılı: alanların eleman tipleri farklı olduğu için
+  `used[group]` bir Set BİRLEŞİMİ oluyor ve `has()`in parametresi `never`e
+  daralıyordu (tsc: "Argument of type 'string' is not assignable to 'never'").
+*/
+const used: Record<string, Set<string>> = {
   purposes: new Set(ALL_PROCESSORS.map((p) => p.purpose)),
   dataKinds: new Set(ALL_PROCESSORS.map((p) => p.data)),
   regions: new Set(ALL_PROCESSORS.map((p) => p.region)),

@@ -44,7 +44,9 @@ const SKIP = [
   "content",
   "app/privacy",
   "app/terms",
-  "lib/legal.ts",
+  // Dosya ya da DİZİN olabilir: hukuki metinler bir kez tek dosyaydı, sonra
+  // `lib/legal/` dizinine bölündü. Yol öneki eşleşmesi ikisini de kapsıyor.
+  "lib/legal",
   "components/legal-shell.tsx",
   "lib/lessons",
   "lib/skills/content",
