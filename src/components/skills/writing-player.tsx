@@ -14,6 +14,7 @@ import { seededShuffle } from "@/lib/shuffle";
 import { matchSentence, type SentenceMatch } from "@/lib/sentence-match";
 import { TokenDiff, TypedTokens } from "@/components/feedback/diff-text";
 import { levenshtein } from "@/lib/errors";
+import { useT } from "@/lib/i18n/client";
 
 type BuildTaskData = Extract<WritingTask, { kind: "build" }>;
 type FreeTaskData = Extract<WritingTask, { kind: "free" }>;
@@ -28,21 +29,28 @@ type SummaryTaskData = Extract<WritingTask, { kind: "summary" }>;
  * görevinde uyaran gelen mesaj, özet görevinde kaynak metin. Ayrı oynatıcı
  * yazmak aynı ekranı üç kez yazmak olurdu.
  */
-function asFree(task: FreeTaskData | ReplyTaskData | SummaryTaskData): FreeTaskData & { title: string } {
+function asFree(
+  task: FreeTaskData | ReplyTaskData | SummaryTaskData,
+  t: (key: string, vars?: Record<string, string | number>) => string,
+): FreeTaskData & { title: string } {
   if (task.kind === "summary") {
     return {
       kind: "free",
-      title: "Özetle",
+      title: t("writp.summarise"),
       prompt: task.prompt,
       stimulus: task.source,
-      checklist: [`En çok ${task.maxSentences} cümle`, "Ana fikir var, ayrıntı yok", "Kendi kelimelerinle"],
+      checklist: [
+        t("writp.at_most_n_sentences", { n: task.maxSentences }),
+        t("writp.main_idea_only"),
+        t("writp.own_words"),
+      ],
       minWords: 10,
       phrases: [],
       sample: task.sample,
     };
   }
-  if (task.kind === "reply") return { ...task, kind: "free", title: "Cevap yaz" };
-  return { ...task, title: "Serbest yazma" };
+  if (task.kind === "reply") return { ...task, kind: "free", title: t("writp.write_reply") };
+  return { ...task, title: t("writp.free_writing") };
 }
 type SentenceTaskData = Extract<WritingTask, { kind: "sentence" }>;
 
@@ -51,6 +59,7 @@ type SentenceTaskData = Extract<WritingTask, { kind: "sentence" }>;
  * sonra kontrol listesiyle serbest yazma. Görevler sırayla açılır.
  */
 export function WritingPlayer({ exercise, backHref }: { exercise: WritingExercise; backHref?: string }) {
+  const t = useT();
   const total = exercise.tasks.length;
   const { finish, state, reset } = useSkillFinish(exercise, total);
   const [step, setStep] = useState(0);
@@ -109,7 +118,7 @@ export function WritingPlayer({ exercise, backHref }: { exercise: WritingExercis
         ) : (
           <FreeTask
             key={`${round}-${step}`}
-            task={asFree(active)}
+            task={asFree(active, t)}
             level={exercise.level}
             exerciseId={exercise.id}
             draftKey={`lernomi-draft-${exercise.id}-${step}`}
@@ -121,7 +130,7 @@ export function WritingPlayer({ exercise, backHref }: { exercise: WritingExercis
       <ResultCard
         correct={correctCount}
         total={total}
-        noun="görev"
+        noun="task"
         state={state}
         onRetry={() => {
           reset();
@@ -155,6 +164,7 @@ function BuildTask({
   seed: string;
   onDone: (ok: boolean) => void;
 }) {
+  const t = useT();
   const lang = useTargetLang();
   /**
    * Diziliş tohumlu, çünkü bu hesap render sırasında yapılıyor:
@@ -198,11 +208,11 @@ function BuildTask({
   return (
     <section className="card mt-4 p-5">
       <p className="text-xs font-bold uppercase tracking-wide text-[color:var(--color-brand)]">
-        Cümleyi kur
+        {t("writp.build_sentence")}
       </p>
       <p className="mt-1.5 font-semibold">{task.tr}</p>
       {fails > 0 && task.hint && phase === "editing" ? (
-        <p className="muted mt-1.5 text-xs">İpucu: {task.hint}</p>
+        <p className="muted mt-1.5 text-xs">{t("rounds.hint")}: {task.hint}</p>
       ) : null}
 
       <div
@@ -211,7 +221,7 @@ function BuildTask({
         } ${phase === "correct" ? "option-correct" : ""} ${phase === "revealed" ? "option-wrong" : ""}`}
       >
         {chosen.length === 0 ? (
-          <span className="muted text-sm">Parçalara dokunarak cümleyi kur…</span>
+          <span className="muted text-sm">{t("exam.tap_chunks")}</span>
         ) : (
           chosen.map((ti, pos) => (
             <button
@@ -253,7 +263,7 @@ function BuildTask({
       ) : null}
       {phase === "revealed" ? (
         <p className="mt-3 text-sm">
-          <span className="muted">Doğrusu:</span>{" "}
+          <span className="muted">{t("rounds.answer_is")}</span>{" "}
           <strong lang={lang}>{task.answer}</strong>
         </p>
       ) : null}
@@ -309,6 +319,7 @@ function FreeTask({
   exerciseId: string;
   onDone: (ok: boolean, score?: number) => void;
 }) {
+  const t = useT();
   const lang = useTargetLang();
   // Taslak cihazda saklanır: sayfadan çıkıp dönen öğrenci yazdığını kaybetmez.
   // localStorage yalnızca istemcide var; hidrasyon uyuşmazlığı olmasın diye
@@ -441,7 +452,7 @@ function FreeTask({
       {task.phrases.length ? (
         <div className="mt-3">
           <p className="muted mb-1.5 text-xs font-semibold">
-            İşine yarayacak kalıplar — dokununca metnine eklenir:
+            {t("writp.useful_phrases")}
           </p>
           <div className="flex flex-wrap gap-1.5">
             {task.phrases.map((p) => (
@@ -519,7 +530,7 @@ function FreeTask({
           onClick={() => setShowSample((v) => !v)}
           className="muted text-xs font-semibold underline-offset-2 hover:underline"
         >
-          {showSample ? "Örnek cevabı gizle" : "Örnek cevabı göster"}
+          {t(showSample ? "writp.hide_sample" : "mockexam.show_model")}
         </button>
         {showSample ? (
           <div lang={lang} className="mt-2 rounded-xl px-3.5 py-3 text-sm leading-relaxed surface-2">
@@ -536,16 +547,16 @@ function FreeTask({
         <div className="mt-4 flex flex-col gap-3">
           <AssessmentCard answer={text.trim()} result={result} failure={failure} example={task.sample} />
           {queued ? (
-            <p className="muted text-xs">Metnin kaydedildi; servis açılınca puanlanacak ve bildirim alacaksın.</p>
+            <p className="muted text-xs">{t("writp.queued")}</p>
           ) : null}
           {aiScore !== null && aiScore < 60 ? (
             <p className="text-xs" style={{ color: "var(--color-flame)" }}>
-              {aiScore >= 40 ? "Geliştir: düzeltmelere bakıp bir daha dene." : "Bir daha denemeni öneririm — zorlama yok, devam da edebilirsin."}
+              {t(aiScore >= 40 ? "writp.improve" : "writp.retry_suggest")}
             </p>
           ) : null}
           <div className="flex items-center gap-3">
             <button type="button" onClick={() => done(ok, aiScore ?? undefined)} className="btn btn-primary px-6 py-2.5">
-              Devam
+              {t("common.continue")}
             </button>
             <button
               type="button"
@@ -556,7 +567,7 @@ function FreeTask({
               }}
               className="btn btn-ghost px-4 py-2.5 text-sm"
             >
-              Bir daha dene
+              {t("writp.try_once_more")}
             </button>
           </div>
         </div>
@@ -564,15 +575,15 @@ function FreeTask({
         <>
           <div className="mt-4 flex items-center gap-3">
             <button type="button" disabled={busy || words < 5} onClick={() => void evaluate()} className="btn btn-primary px-6 py-2.5 disabled:opacity-50">
-              {busy ? "Değerlendiriliyor…" : "Değerlendir"}
+              {t(busy ? "exam.evaluating" : "mockexam.evaluate")}
             </button>
             <button type="button" onClick={() => done(false)} className="btn btn-ghost px-4 py-2.5 text-sm">
-              Bu görevi atla
+              {t("writp.skip_task")}
             </button>
           </div>
           {!enough ? (
             <p className="muted mt-2 text-xs">
-              En az {task.minWords} kelime ({words}) — değerlendirme yine yapılır, görev "tamamlandı" sayılmaz.
+              {t("writp.min_words_note", { min: task.minWords, n: words })}
             </p>
           ) : null}
         </>
@@ -587,6 +598,7 @@ function FreeTask({
  * görev "tamam" sayılması için genel puan ≥ 70 (yedekte: kelimeler geçti).
  */
 function SentenceTask({ task, level, onDone }: { task: SentenceTaskData; level: string; onDone: (ok: boolean) => void }) {
+  const t = useT();
   const lang = useTargetLang();
   const [text, setText] = useState("");
   const [busy, setBusy] = useState(false);
@@ -634,8 +646,8 @@ function SentenceTask({ task, level, onDone }: { task: SentenceTaskData; level: 
 
   return (
     <section className="card mt-4 p-5">
-      <p className="text-xs font-bold uppercase tracking-wide text-[color:var(--color-brand)]">Cümle kur</p>
-      <p className="mt-1.5 text-sm font-semibold leading-relaxed">{task.prompt ?? "Bu kelimelerle bir cümle kur:"}</p>
+      <p className="text-xs font-bold uppercase tracking-wide text-[color:var(--color-brand)]">{t("games.free_sentence")}</p>
+      <p className="mt-1.5 text-sm font-semibold leading-relaxed">{task.prompt ?? t("rounds.build_sentence")}</p>
       <div className="mt-2 flex flex-wrap gap-2">
         {task.words.map((w) => (
           <button key={w.de} type="button" onClick={() => insert((text && !text.endsWith(" ") ? " " : "") + w.de + " ")} disabled={Boolean(result)} className="chip px-3 py-1.5 text-sm" title={w.tr}>
@@ -648,7 +660,7 @@ function SentenceTask({ task, level, onDone }: { task: SentenceTaskData; level: 
         <div className="mt-3 flex flex-col gap-3">
           <AssessmentCard answer={text.trim()} result={result} failure={failure} example={task.sample ?? null} />
           <button type="button" onClick={() => onDone(ok)} className="btn btn-primary min-h-12 px-4 text-sm">
-            Devam
+            {t("common.continue")}
           </button>
         </div>
       ) : (
@@ -660,7 +672,7 @@ function SentenceTask({ task, level, onDone }: { task: SentenceTaskData; level: 
             rows={3}
             lang={lang}
             spellCheck={false}
-            placeholder="Almanca bir cümle yaz…"
+            placeholder={t("rounds.write_a_sentence_ph")}
             className="card mt-3 min-h-20 w-full resize-none px-4 py-3 text-base outline-none"
           />
           <div className="mt-2 flex flex-wrap gap-2">
@@ -671,7 +683,7 @@ function SentenceTask({ task, level, onDone }: { task: SentenceTaskData; level: 
             ))}
           </div>
           <button type="button" onClick={() => void evaluate()} disabled={busy || text.trim().split(/\s+/).length < 2} className="btn btn-primary mt-3 min-h-12 w-full px-4 text-sm">
-            {busy ? "Değerlendiriliyor…" : "Değerlendir"}
+            {t(busy ? "exam.evaluating" : "mockexam.evaluate")}
           </button>
         </>
       )}
@@ -700,6 +712,7 @@ function fieldOk(typed: string, answer: string, accept: string[] = []): boolean 
  * yere koymak. Alanların ≥ %70'i doğruysa görev tamam.
  */
 function FormTask({ task, onDone }: { task: FormTaskData; onDone: (ok: boolean) => void }) {
+  const t = useT();
   const lang = useTargetLang();
   const [values, setValues] = useState<string[]>(() => task.fields.map(() => ""));
   const [checked, setChecked] = useState(false);
@@ -731,7 +744,7 @@ function FormTask({ task, onDone }: { task: FormTaskData; onDone: (ok: boolean) 
                   <CheckIcon size={16} className="shrink-0 text-[color:var(--color-mint)]" />
                 ) : (
                   <span className="shrink-0 text-xs" lang={lang}>
-                    <span className="muted">doğrusu: </span>
+                    <span className="muted">{t("rounds.answer_is")}</span>
                     <strong>{f.answer}</strong>
                   </span>
                 )
@@ -766,13 +779,14 @@ function FormTask({ task, onDone }: { task: FormTaskData; onDone: (ok: boolean) 
  * yanlış biçim geçmez; fark vurgusu + gerekçe drill'le aynı dilde.
  */
 function RewriteTask({ task, onDone }: { task: RewriteTaskData; onDone: (ok: boolean) => void }) {
+  const t = useT();
   const lang = useTargetLang();
   const [text, setText] = useState("");
   const [match, setMatch] = useState<SentenceMatch | null>(null);
   const ok = match ? match.verdict === "exact" || match.verdict === "spelling" : false;
   return (
     <section className="card mt-4 p-5">
-      <p className="text-xs font-bold uppercase tracking-wide text-[color:var(--color-brand)]">Yeniden yaz</p>
+      <p className="text-xs font-bold uppercase tracking-wide text-[color:var(--color-brand)]">{t("writp.rewrite")}</p>
       <p className="mt-1.5 text-sm font-semibold leading-relaxed">{task.prompt}</p>
       <p className="mt-2 rounded-xl px-3 py-2 text-base font-semibold surface-2" lang={lang}>
         {task.source}
@@ -780,19 +794,19 @@ function RewriteTask({ task, onDone }: { task: RewriteTaskData; onDone: (ok: boo
       {match ? (
         <div className="mt-3 space-y-2">
           <p className="text-sm font-bold" style={{ color: ok ? "var(--color-mint)" : "var(--color-rose)" }}>
-            {match.verdict === "exact" ? "Doğru!" : match.verdict === "spelling" ? "Doğru — yazımda küçük sapma" : match.verdict === "order" ? "Kelimeler doğru, sıra yanlış" : "Olmadı"}
+            {t(match.verdict === "exact" ? "writp.exact" : match.verdict === "spelling" ? "writp.spelling_only" : match.verdict === "order" ? "writp.order_only" : "lessonp.not_quite")}
           </p>
           {match.verdict !== "exact" ? (
             <div className="rounded-xl px-3 py-2 text-sm surface-2">
-              <p className="muted text-[11px]">Senin yazdığın</p>
+              <p className="muted text-[11px]">{t("mockexam.your_answer")}</p>
               <TypedTokens tokens={match.typed} />
-              <p className="muted mt-1.5 text-[11px]">Doğrusu</p>
+              <p className="muted mt-1.5 text-[11px]">{t("mockexam.correct_answer")}</p>
               <TokenDiff tokens={match.target} />
             </div>
           ) : null}
           {task.why ? <p className="muted text-xs leading-relaxed">{task.why}</p> : null}
           <button type="button" onClick={() => onDone(ok)} className="btn btn-primary min-h-12 w-full px-4 text-sm">
-            Devam
+            {t("common.continue")}
           </button>
         </div>
       ) : (
@@ -809,7 +823,7 @@ function RewriteTask({ task, onDone }: { task: RewriteTaskData; onDone: (ok: boo
             rows={2}
             lang={lang}
             spellCheck={false}
-            placeholder="Cümleyi yeni biçimiyle yaz…"
+            placeholder={t("writp.rewrite_ph")}
             className="card mt-3 min-h-16 w-full resize-none px-4 py-3 text-base outline-none"
           />
           <button

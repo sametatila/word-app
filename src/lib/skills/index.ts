@@ -6,7 +6,7 @@ import { isLibraryExercise, type CefrLevel, type SkillExercise, type SkillId } f
 import { itemCount } from "./meta";
 import { BUNDLED_EXERCISES } from "./bundled";
 
-export { SKILL_LABELS, SKILL_ORDER, LEVEL_ORDER, itemCount, xpFor } from "./meta";
+export { SKILL_LABEL_KEYS, SKILL_ORDER, LEVEL_ORDER, itemCount, xpFor } from "./meta";
 
 /**
  * Repoda yazılan içerik: `npm run db:seed:skills` bunun tamamını Neon'daki

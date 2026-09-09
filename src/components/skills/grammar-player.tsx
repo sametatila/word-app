@@ -7,6 +7,7 @@ import { GlossPanel, QuestionList } from "./quiz";
 import { useTargetLang } from "./player-context";
 import { speakGerman } from "@/components/speak-button";
 import { SpeakerIcon } from "@/components/icons";
+import { useT } from "@/lib/i18n/client";
 
 /**
  * Dil bilgisi egzersizi: önce kural anlatımı (Türkçe, hedef dilde örnekler),
@@ -22,6 +23,7 @@ import { SpeakerIcon } from "@/components/icons";
  * amacını boşa çıkarır.
  */
 export function GrammarPlayer({ exercise, backHref }: { exercise: GrammarExercise; backHref?: string }) {
+  const t = useT();
   const lang = useTargetLang();
   const { finish, state, reset } = useSkillFinish(exercise, exercise.questions.length);
   const [correct, setCorrect] = useState(0);
@@ -49,7 +51,7 @@ export function GrammarPlayer({ exercise, backHref }: { exercise: GrammarExercis
                       type="button"
                       onClick={() => speakGerman(x.de)}
                       className="flex w-full items-start gap-2 text-left"
-                      title="Örneği dinle"
+                      title={t("item.listen_example")}
                     >
                       <SpeakerIcon size={16} className="mt-0.5 shrink-0" style={{ color: "var(--color-brand)" }} />
                       <span className="min-w-0">

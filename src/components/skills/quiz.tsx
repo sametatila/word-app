@@ -8,6 +8,7 @@ import { GlossEntry } from "./gloss-entry";
 import { speakGerman } from "@/components/speak-button";
 import { CheckIcon, InfoIcon, SpeakerIcon, XIcon } from "@/components/icons";
 import { levenshtein } from "@/lib/errors";
+import { useT } from "@/lib/i18n/client";
 
 /**
  * Anlama soruları — sınav kâğıdı gibi hepsi alt alta. Şık seçilince kilitlenir,
@@ -154,6 +155,7 @@ function WrittenInput({
   done: boolean;
   onSettle: (ok: boolean) => void;
 }) {
+  const t = useT();
   const lang = useTargetLang();
   const [typed, setTyped] = useState("");
   const accept = q.accept ?? [];
@@ -187,19 +189,19 @@ function WrittenInput({
           disabled={done}
           lang={lang}
           spellCheck={false}
-          placeholder={kind === "dictation" ? "Duyduğun cümleyi yaz…" : kind === "gapfill" ? "Boşluğa gelen kelime…" : "Kısa cevap (1–5 kelime)…"}
+          placeholder={t(kind === "dictation" ? "skillquiz.ph_dictation" : kind === "gapfill" ? "skillquiz.ph_gapfill" : "skillquiz.ph_short")}
           className="input flex-1 py-2 text-sm"
           style={done ? { borderColor: ok ? "var(--color-mint)" : "var(--color-rose)" } : undefined}
         />
         {!done ? (
           <button type="button" onClick={check} disabled={!typed.trim()} className="btn btn-primary px-3.5 py-2 text-sm">
-            Kontrol
+            {t("skillquiz.check")}
           </button>
         ) : null}
       </div>
       {done && !ok ? (
         <p className="mt-2 text-xs">
-          <span className="muted">Doğrusu: </span>
+          <span className="muted">{t("rounds.answer_is")}</span>
           <strong lang={lang}>{accept[0]}</strong>
         </p>
       ) : null}
@@ -210,6 +212,7 @@ function WrittenInput({
 /* ───────────── sıralama ───────────── */
 
 function OrderInput({ q, done, onSettle }: { q: SkillQuestion; done: boolean; onSettle: (ok: boolean) => void }) {
+  const t = useT();
   const lang = useTargetLang();
   const items = q.items ?? [];
   // Sabit karışıklık (dizin tersine + orta çevirme): sunucu ve istemci aynı sırayı üretsin.
@@ -232,7 +235,7 @@ function OrderInput({ q, done, onSettle }: { q: SkillQuestion; done: boolean; on
 
   return (
     <div className="mt-3">
-      <p className="muted text-xs">Doğru sıraya koy: iki maddeye dokununca yer değiştirir.</p>
+      <p className="muted text-xs">{t("skillquiz.put_these_in_right_order_tap_two")}</p>
       <ol className="mt-2 space-y-1.5">
         {order.map((v, pos) => (
           <li key={v}>
@@ -250,7 +253,7 @@ function OrderInput({ q, done, onSettle }: { q: SkillQuestion; done: boolean; on
       </ol>
       {!done ? (
         <button type="button" onClick={() => onSettle(correct)} className="btn btn-primary mt-2 px-3.5 py-2 text-sm">
-          Kontrol
+          {t("skillquiz.check")}
         </button>
       ) : null}
     </div>
@@ -259,6 +262,7 @@ function OrderInput({ q, done, onSettle }: { q: SkillQuestion; done: boolean; on
 
 /** Egzersize özel mini sözlükçe — kapalı başlar, tek dokunuşla açılır. */
 export function GlossPanel({ gloss }: { gloss: Gloss[] }) {
+  const t = useT();
   const [open, setOpen] = useState(false);
   if (!gloss.length) return null;
   return (
@@ -270,10 +274,10 @@ export function GlossPanel({ gloss }: { gloss: Gloss[] }) {
       >
         <span className="flex items-center gap-2 text-sm font-bold">
           <InfoIcon size={16} className="text-[color:var(--color-brand)]" />
-          Sözlükçe
-          <span className="muted font-semibold">({gloss.length} kelime)</span>
+          {t("skillquiz.glossary")}
+          <span className="muted font-semibold">{t("skillquiz.word_count", { n: gloss.length })}</span>
         </span>
-        <span className="muted text-xs font-semibold">{open ? "Gizle" : "Göster"}</span>
+        <span className="muted text-xs font-semibold">{t(open ? "skillq.hide" : "common.show")}</span>
       </button>
       {open ? (
         <>
@@ -283,14 +287,14 @@ export function GlossPanel({ gloss }: { gloss: Gloss[] }) {
                 key={g.de}
                 type="button"
                 onClick={() => speakGerman(g.de)}
-                title="Telaffuzu dinle"
+                title={t("common.listen_pronunciation")}
                 className="chip px-3 py-1.5 text-xs"
               >
                 <GlossEntry g={g} />
               </button>
             ))}
           </div>
-          <p className="muted mt-2 text-[11px]">Kelimeye dokununca telaffuzunu duyarsın.</p>
+          <p className="muted mt-2 text-[11px]">{t("skillq.tap_word_hint")}</p>
         </>
       ) : null}
     </section>

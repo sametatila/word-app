@@ -24,6 +24,7 @@ export type PlayerFrameValue = {
   lang: TargetLang;
   /** Geri bağlantısı ve bitiş kartındaki ana düğmenin etiketi. */
   backHref: string;
+  /** Etiketin SÖZLÜK ANAHTARI — metin gösterildiği yerde çevriliyor. */
   backLabel: string;
   /** Aynı seviye ve beceride sıradaki bitmemiş kütüphane egzersizi (varsa). */
   next?: { href: string; title: string } | null;
@@ -32,7 +33,7 @@ export type PlayerFrameValue = {
 const PlayerFrameContext = createContext<PlayerFrameValue>({
   lang: "de",
   backHref: "/immersion",
-  backLabel: "Patika'ya dön",
+  backLabel: "lesson.back_to_path",
   next: null,
 });
 

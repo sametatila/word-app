@@ -11,6 +11,7 @@ import { AssessmentCard } from "@/components/feedback/assessment-card";
 import { recognitionCtor, requestMicrophone, type Recognition } from "@/components/microphone";
 import { CheckIcon, MicIcon } from "@/components/icons";
 import { Mascot } from "@/components/mascot";
+import { useT } from "@/lib/i18n/client";
 
 type Phase = "prep" | "record" | "review" | "scoring" | "result";
 
@@ -35,6 +36,7 @@ const PREP_SECONDS = 30;
  * sınav değil alıştırma.
  */
 export function MonologuePlayer({ exercise, backHref }: { exercise: SpeakingMonologueExercise; backHref?: string }) {
+  const t = useT();
   const lang = useTargetLang();
   const mono = exercise.monologue;
   const { finish, state, reset } = useSkillFinish(exercise, 1);
@@ -220,7 +222,7 @@ export function MonologuePlayer({ exercise, backHref }: { exercise: SpeakingMono
       {phase === "prep" ? (
         <section className="card mt-3 p-5">
           <div className="flex items-center justify-between">
-            <p className="text-xs font-bold uppercase tracking-wide text-[color:var(--color-brand)]">Hazırlık</p>
+            <p className="text-xs font-bold uppercase tracking-wide text-[color:var(--color-brand)]">{t("item.mono_prep")}</p>
             <span className="tabular-nums text-sm font-bold">{mm(Math.max(0, prepLeft))}</span>
           </div>
           <p className="mt-2 text-sm font-semibold leading-relaxed">{mono.promptTr}</p>
@@ -242,8 +244,8 @@ export function MonologuePlayer({ exercise, backHref }: { exercise: SpeakingMono
           <p className="muted mt-3 text-xs">
             {mono.minSeconds}–{mono.maxSeconds} saniye konuş.{" "}
             {asr === false
-              ? "Bu tarayıcıda konuşma tanıma yok: kaydını dinleyip kendin değerlendireceksin."
-              : "Söylediklerin metne dökülüp puanlanacak."}
+              ? t("item.mono_no_stt")
+              : t("item.mono_will_score")}
           </p>
           <button
             type="button"
@@ -272,7 +274,7 @@ export function MonologuePlayer({ exercise, backHref }: { exercise: SpeakingMono
           </ul>
           <p className="mt-3 min-h-12 rounded-xl px-3 py-2 text-sm surface-2" lang={lang} aria-live="polite">
             {transcript} <span className="muted">{interim}</span>
-            {!transcript && !interim ? <span className="muted">{asr ? "Dinliyorum…" : "Kayıt sürüyor…"}</span> : null}
+            {!transcript && !interim ? <span className="muted">{asr ? "Dinliyorum…" : t("item.mono_recording")}</span> : null}
           </p>
           <button
             type="button"
@@ -296,7 +298,7 @@ export function MonologuePlayer({ exercise, backHref }: { exercise: SpeakingMono
           ) : null}
           {asr ? (
             <>
-              <p className="muted mt-3 text-xs">Transkript — tanıyıcının kaçırdığını düzelt, sonra puanlat.</p>
+              <p className="muted mt-3 text-xs">{t("item.mono_transcript_hint")}</p>
               <textarea
                 value={transcript}
                 onChange={(e) => setTranscript(e.target.value)}
@@ -329,7 +331,7 @@ export function MonologuePlayer({ exercise, backHref }: { exercise: SpeakingMono
             </>
           ) : (
             <>
-              <p className="muted mt-3 text-xs">Kaydını dinle ve işaretle — yedek değerlendirme, puan kaydedilmez.</p>
+              <p className="muted mt-3 text-xs">{t("item.mono_self")}</p>
               <ul className="mt-2 space-y-1.5">
                 {mono.bulletsTr.map((b, i) => (
                   <li key={b}>
@@ -355,7 +357,7 @@ export function MonologuePlayer({ exercise, backHref }: { exercise: SpeakingMono
       {phase === "scoring" ? (
         <section className="card mt-3 p-5 text-center" aria-busy>
           <Mascot mood="think" size={72} className="mx-auto" />
-          <p className="mt-2 text-sm font-semibold">Puanlanıyor…</p>
+          <p className="mt-2 text-sm font-semibold">{t("item.mono_scoring")}</p>
         </section>
       ) : null}
 
@@ -388,7 +390,7 @@ export function MonologuePlayer({ exercise, backHref }: { exercise: SpeakingMono
             onClick={() => setShowSample((v) => !v)}
             className="muted mt-3 text-xs font-semibold underline-offset-2 hover:underline"
           >
-            {showSample ? "Örneği gizle" : "Örnek monoloğu göster"}
+            {showSample ? t("item.mono_hide_sample") : t("item.mono_sample")}
           </button>
           {showSample ? (
             <p className="mt-2 rounded-xl px-3 py-2 text-sm leading-relaxed surface-2" lang={lang}>
@@ -401,7 +403,7 @@ export function MonologuePlayer({ exercise, backHref }: { exercise: SpeakingMono
       <ResultCard
         correct={passed ? 1 : 0}
         total={1}
-        noun="görev"
+        noun="task"
         state={state}
         onRetry={() => {
           reset();

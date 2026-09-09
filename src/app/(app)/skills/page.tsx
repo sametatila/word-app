@@ -1,17 +1,18 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { AppHeader } from "@/components/app-header";
-import { getT } from "@/lib/i18n/server";
+import { getT, getLang } from "@/lib/i18n/server";
 import { getUserInfo } from "@/lib/auth/server";
 import { ensureProfile } from "@/lib/session";
 import { libraryMetas, listExerciseMeta, type SkillMeta } from "@/lib/skills";
 import { listSkillStatus, type SkillStatus } from "@/lib/skills/record";
-import { SKILL_LABELS, SKILL_ORDER } from "@/lib/skills/meta";
+import { SKILL_LABEL_KEYS, SKILL_ORDER } from "@/lib/skills/meta";
 import { SKILL_ICON, SKILL_TINT } from "@/components/skills/theme";
 import { CardGrid } from "@/components/layout";
 import { CheckIcon, ChevronRightIcon } from "@/components/icons";
 import { moduleExamPlan } from "@/lib/lessons/module-exam";
 import type { CefrLevel, SkillId } from "@/lib/skills/types";
+import { localeOf } from "@/lib/i18n/dict";
 
 export const metadata: Metadata = { title: "Beceriler" };
 export const dynamic = "force-dynamic";
@@ -110,9 +111,9 @@ export default async function SkillsPage({
       */}
       <Link href="/mock-exams" className="card mb-4 flex items-center justify-between gap-3 p-4">
         <span>
-          <span className="block text-sm font-bold">Deneme Sınavları</span>
+          <span className="block text-sm font-bold">{t("mockexams.title")}</span>
           <span className="muted block text-sm">
-            A1–C1 için kendi başına duran sınav kâğıtları. Her bölüm ayrı çözülür, süre görev başına işler.
+            {t("skillsp.mock_sub")}
           </span>
         </span>
         <ChevronRightIcon className="size-4 shrink-0" />
@@ -123,8 +124,8 @@ export default async function SkillsPage({
         yalnız içeriği olan seviyeleri çizmek, seviyenin bir ÖLÇEK olduğunu
         gizliyordu; tek bir şey söylenmesi gerekiyor: hangisi seçili.
       */}
-      <p className="muted mb-2 ml-1 text-caption tracking-wide">Seviye</p>
-      <nav className="mb-4 flex gap-2" aria-label="Seviye">
+      <p className="muted mb-2 ml-1 text-caption tracking-wide">{t("mockexams.level")}</p>
+      <nav className="mb-4 flex gap-2" aria-label={t("mockexams.level")}>
         {LEVELS.map((lv) => {
           const active = lv === level;
           return (
@@ -149,7 +150,7 @@ export default async function SkillsPage({
 
       {atLevel.length ? (
         <p className="muted mb-3 text-xs font-semibold">
-          {level} · {doneCount}/{atLevel.length} tamamlandı
+          {level} · {t("skills.done_of", { done: doneCount, total: atLevel.length })}
         </p>
       ) : null}
 
@@ -161,18 +162,20 @@ export default async function SkillsPage({
           meta={suggestion.next}
           reason={
             suggestion.ratio === 0
-              ? `${SKILL_LABELS[suggestion.skill]} bölümüne henüz başlamadın.`
-              : `${SKILL_LABELS[suggestion.skill]} bölümü en geride: ${Math.round(suggestion.ratio * 100)}% tamam.`
+              ? t("skills.next_start", { skill: t(SKILL_LABEL_KEYS[suggestion.skill]) })
+              : t("skills.next_behind", {
+                  skill: t(SKILL_LABEL_KEYS[suggestion.skill]),
+                  pct: Math.round(suggestion.ratio * 100),
+                })
           }
         />
       ) : allDone && nextLevel ? (
         <Link href={`/skills?level=${nextLevel}`} className="card mb-4 flex items-center justify-between gap-3 p-4">
           <span>
             <span className="block text-[11px] font-bold uppercase tracking-wide" style={{ color: "var(--color-mint)" }}>
-              Seviye tamam
+              {t("skills.level_done")}
             </span>
-            <span className="block text-sm font-bold">{level} kütüphanesindeki her şeyi bitirdin.</span>
-            <span className="muted block text-sm">Sıradaki adım {nextLevel}: oradaki egzersizlere geç.</span>
+            <span className="block text-sm font-bold">{t("skills.level_done_body", { level, next: nextLevel })}</span>
           </span>
           <ChevronRightIcon className="size-4 shrink-0" />
         </Link>
@@ -191,7 +194,7 @@ export default async function SkillsPage({
             <section key={skill} className="mb-5">
               <h2 className="mb-2 ml-1 flex items-center gap-2 text-h3">
                 <Icon size={18} style={{ color: tint }} />
-                {SKILL_LABELS[skill]}
+                {t(SKILL_LABEL_KEYS[skill])}
                 <span className="muted text-caption">
                   {finished}/{list.length}
                 </span>
@@ -210,7 +213,7 @@ export default async function SkillsPage({
 
       {!atLevel.length ? (
         <p className="card p-5 text-body" style={{ color: "var(--text-muted)" }}>
-          Bu seviyede henüz kütüphane egzersizi yok. Başka bir seviye seç ya da deneme sınavlarına bak.
+          {t("skillsp.empty_level")}
         </p>
       ) : null}
 
@@ -219,7 +222,8 @@ export default async function SkillsPage({
   );
 }
 
-function SuggestionCard({ skill, meta, reason }: { skill: SkillId; meta: SkillMeta; reason: string }) {
+async function SuggestionCard({ skill, meta, reason }: { skill: SkillId; meta: SkillMeta; reason: string }) {
+  const t = await getT();
   const Icon = SKILL_ICON[skill];
   const tint = SKILL_TINT[skill];
   return (
@@ -232,11 +236,11 @@ function SuggestionCard({ skill, meta, reason }: { skill: SkillId; meta: SkillMe
       </span>
       <span className="min-w-0 flex-1">
         <span className="block text-[11px] font-bold uppercase tracking-wide" style={{ color: tint }}>
-          Sıradaki · {SKILL_LABELS[skill]}
+          {t("skills.next")} · {t(SKILL_LABEL_KEYS[skill])}
         </span>
         <span className="block truncate text-sm font-bold">{meta.title}</span>
         <span className="muted block truncate text-caption">
-          {reason} {meta.genre} · {meta.minutes} dk
+          {reason} {meta.genre} · {t("skills.dk", { n: meta.minutes })}
         </span>
       </span>
       <ChevronRightIcon className="size-4 shrink-0" />
@@ -244,7 +248,7 @@ function SuggestionCard({ skill, meta, reason }: { skill: SkillId; meta: SkillMe
   );
 }
 
-function Row({
+async function Row({
   meta,
   done,
   score,
@@ -257,6 +261,8 @@ function Row({
   isNext: boolean;
   tint: string;
 }) {
+  const t = await getT();
+  const lang = await getLang();
   return (
     <Link href={`/immersion/skill/${meta.id}?from=skills`} className="pressable flex items-center gap-3 py-3">
       {/* Nokta: biten yosun, bitmeyen becerinin kendi rengi. Mobilde de öyle —
@@ -269,11 +275,11 @@ function Row({
       <span className="min-w-0 flex-1">
         <span className="block truncate text-strong">{meta.title}</span>
         <span className="muted block text-caption">
-          {meta.genre} · {meta.minutes} dk · {meta.items} madde
+          {meta.genre} · {t("skills.dk", { n: meta.minutes })} · {t("mockexams.n_items_short", { n: meta.items })}
           {isNext ? (
             <>
               {" · "}
-              <span style={{ color: tint }}>sıradaki</span>
+              <span style={{ color: tint }}>{t("skills.next").toLocaleLowerCase(localeOf(lang))}</span>
             </>
           ) : null}
         </span>
@@ -319,7 +325,8 @@ function Row({
  * Kapıyı burada da kapatmak, hazır olup olmadığını merak eden öğrenciyi
  * bilgisiz bırakırdı; motor zaten dürüst davranıyor.
  */
-function ExamSection({ level }: { level: CefrLevel }) {
+async function ExamSection({ level }: { level: CefrLevel }) {
+  const t = await getT();
   const modules = [...Array(21).keys()]
     .map((i) => ({ index: i, plan: moduleExamPlan(level, i) }))
     .filter((m): m is { index: number; plan: NonNullable<ReturnType<typeof moduleExamPlan>> } => Boolean(m.plan));
@@ -327,13 +334,13 @@ function ExamSection({ level }: { level: CefrLevel }) {
 
   return (
     <section className="mb-5">
-      <h2 className="mb-2 px-1 text-sm font-bold">Sınavlar</h2>
+      <h2 className="mb-2 px-1 text-sm font-bold">{t("skillsp.exams")}</h2>
       <ul className="card divide-y" style={{ borderColor: "var(--border)" }}>
         <li>
           <Link href={`/exam/${level}`} className="flex items-center gap-3 px-4 py-3">
             <span className="min-w-0 flex-1">
-              <span className="block truncate font-semibold">{level} seviye sınavı</span>
-              <span className="muted block text-xs">45 dk · beş bölüm</span>
+              <span className="block truncate font-semibold">{t("exam.level_exam", { level })}</span>
+              <span className="muted block text-xs">{t("skillsp.level_exam_sub")}</span>
             </span>
             <ChevronRightIcon size={18} className="shrink-0" style={{ color: "var(--text-faint)" }} />
           </Link>

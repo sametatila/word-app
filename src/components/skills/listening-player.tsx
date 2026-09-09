@@ -8,6 +8,7 @@ import type { CefrLevel, ListeningExercise } from "@/lib/skills/types";
 import { PlayerShell, ResultCard, useSkillFinish } from "./player-shell";
 import { GlossPanel, QuestionList } from "./quiz";
 import { SpeakerIcon, XIcon } from "@/components/icons";
+import { useT } from "@/lib/i18n/client";
 
 /** Seviye yükseldikçe konuşma doğal hıza yaklaşır. */
 const BASE_RATE: Record<CefrLevel, number> = {
@@ -27,6 +28,7 @@ const PITCHES = [1, 1.16, 0.88, 1.3];
  * ayrışır; istenirse yavaş mod ve (önce dinlemeyi teşvik eden) metin açma vardır.
  */
 export function ListeningPlayer({ exercise, backHref }: { exercise: ListeningExercise; backHref?: string }) {
+  const t = useT();
   const lang = useTargetLang();
   const { finish, state, reset } = useSkillFinish(exercise, exercise.questions.length);
   const [correct, setCorrect] = useState(0);
@@ -210,15 +212,11 @@ export function ListeningPlayer({ exercise, backHref }: { exercise: ListeningExe
           <div className="min-w-0 flex-1">
             <p className="text-sm font-bold">
               {playing
-                ? `Bölüm ${segIdx + 1} / ${exercise.segments.length} çalıyor…`
-                : playCount > 0
-                  ? "Bitti — istersen tekrar dinle."
-                  : "Dinlemeye başla"}
+                ? t("listenp.playing", { n: segIdx + 1, total: exercise.segments.length })
+                : t(playCount > 0 ? "listenp.done" : "listenp.start")}
             </p>
             <p className="muted mt-0.5 text-xs">
-              {hasAudio
-                ? "Gerçek lehçe kaydı — istediğin kadar tekrar dinle."
-                : "İstediğin kadar tekrar dinleyebilirsin. Sınavda iki kez dinlersin."}
+              {t(hasAudio ? "listenp.real_audio" : "listenp.replay_note")}
             </p>
             <div className="mt-2 flex items-center gap-1.5">
               {exercise.segments.map((_, i) => (
@@ -241,17 +239,17 @@ export function ListeningPlayer({ exercise, backHref }: { exercise: ListeningExe
             onClick={toggleSlow}
             className={`chip px-3 py-1.5 text-xs ${slow ? "chip-active" : ""}`}
           >
-            Yavaş mod
+            {t("listenp.slow")}
           </button>
           <button
             type="button"
             onClick={() => setShowText((v) => !v)}
             className={`chip px-3 py-1.5 text-xs ${showText ? "chip-active" : ""}`}
           >
-            {showText ? "Metni gizle" : "Metni göster"}
+            {t(showText ? "listenp.hide_text" : "listenp.show_text")}
           </button>
           {!showText ? (
-            <span className="muted text-xs">İpucu: önce yalnızca dinleyerek dene.</span>
+            <span className="muted text-xs">{t("listenp.hint_listen_first")}</span>
           ) : null}
         </div>
 
@@ -263,7 +261,7 @@ export function ListeningPlayer({ exercise, backHref }: { exercise: ListeningExe
               color: "var(--color-flame)",
             }}
           >
-            Bu tarayıcıda konuşma sentezi yok; egzersizi metni okuyarak çözebilirsin.
+            {t("listenp.no_tts")}
           </p>
         ) : null}
       </section>
@@ -271,7 +269,7 @@ export function ListeningPlayer({ exercise, backHref }: { exercise: ListeningExe
       {showText ? (
         <section className="card mt-4 select-text p-5">
           {available ? (
-            <p className="muted mb-2 text-[11px]">Bir satıra dokununca yalnızca o bölüm çalar.</p>
+            <p className="muted mb-2 text-[11px]">{t("listenp.tap_line")}</p>
           ) : null}
           <div className="space-y-2.5">
             {exercise.segments.map((seg, i) => (

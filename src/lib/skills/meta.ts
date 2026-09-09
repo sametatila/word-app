@@ -7,12 +7,13 @@ import { xpForSkill } from "@/lib/xp";
  * metni istemci paketine sızmaz. Tam içerik yalnızca sunucuda (index.ts) açılır.
  */
 
-export const SKILL_LABELS: Record<SkillId, string> = {
-  reading: "Okuma",
-  listening: "Dinleme",
-  writing: "Yazma",
-  speaking: "Konuşma",
-  grammar: "Dil bilgisi",
+/** Beceri adları ANAHTAR olarak — mobilin `skills.*` kümesiyle aynı. */
+export const SKILL_LABEL_KEYS: Record<SkillId, string> = {
+  reading: "skills.reading",
+  listening: "skills.listening",
+  writing: "skills.writing",
+  speaking: "skills.speaking",
+  grammar: "skills.grammar",
 };
 
 /**

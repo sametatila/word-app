@@ -4,13 +4,14 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { MascotFx } from "@/components/mascot-fx";
 import { useCallback, useEffect, useRef, useState, type ReactNode } from "react";
-import { SKILL_LABELS } from "@/lib/skills/meta";
+import { SKILL_LABEL_KEYS } from "@/lib/skills/meta";
 import type { SkillExercise } from "@/lib/skills/types";
 import { recordSkillResult } from "@/lib/skills/progress";
 import { ArrowLeftIcon, FlameIcon, SparkIcon } from "@/components/icons";
 import { Mascot } from "@/components/mascot";
 import { LEVEL_TONE } from "./theme";
 import { usePlayerFrame } from "./player-context";
+import { useT } from "@/lib/i18n/client";
 
 /** Cihazın yerel gününü verir — istatistikler kullanıcının gününe yazılır. */
 function localDay() {
@@ -105,13 +106,14 @@ export function PlayerShell({
   /** Nereye dönülecek. Verilmezse çerçeve bağlamından (rota sayfası) gelir. */
   backHref?: string;
 }) {
+  const t = useT();
   const frame = usePlayerFrame();
   const back = backHref ?? frame.backHref;
   return (
     <div className="mx-auto w-full max-w-2xl">
       <MascotFx />
       <div className="mb-5 flex items-center gap-3">
-        <Link href={back} aria-label="Geri dön" className="btn btn-ghost h-9 w-9 shrink-0">
+        <Link href={back} aria-label={t("common.go_back")} className="btn btn-ghost h-9 w-9 shrink-0">
           <ArrowLeftIcon size={18} />
         </Link>
         <div className="min-w-0">
@@ -123,7 +125,7 @@ export function PlayerShell({
               {exercise.level}
             </span>
             <span className="muted text-xs font-semibold">
-              {SKILL_LABELS[exercise.skill]} · {exercise.genre} · {exercise.minutes} dk
+              {t(SKILL_LABEL_KEYS[exercise.skill])} · {exercise.genre} · {t("skills.dk", { n: exercise.minutes })}
             </span>
           </div>
           <h1 className="truncate text-lg font-bold">{exercise.title}</h1>
@@ -139,15 +141,17 @@ export function ResultCard({
   correct,
   total,
   state,
-  noun = "soru",
+  noun = "question",
   onRetry,
 }: {
   correct: number;
   total: number;
   state: FinishState;
-  noun?: "soru" | "görev";
+  /** Sayılan şey: soru mu görev mi — çoğul ve ek dile göre sözlükten. */
+  noun?: "question" | "task";
   onRetry?: () => void;
 }) {
+  const t = useT();
   const ref = useRef<HTMLElement>(null);
   const frame = usePlayerFrame();
   const visible = state.phase !== "idle";
@@ -173,8 +177,8 @@ export function ResultCard({
       <Mascot mood={perfect ? "cheer" : "happy"} size={84} className="mx-auto" />
       <h2 className="mt-1 text-lg font-bold">
         {perfect
-          ? "Kusursuz! Hepsi doğru."
-          : `${total} ${noun === "görev" ? "görevden" : "sorudan"} ${correct} doğru`}
+          ? t("skillp.perfect")
+          : t(noun === "task" ? "skillp.n_of_tasks" : "skillp.n_of_questions", { correct, total })}
       </h2>
       {state.phase === "saved" ? (
         <>
@@ -188,16 +192,16 @@ export function ResultCard({
           </p>
           {state.repeat && state.xpGained === 0 ? (
             <p className="muted mt-1.5 text-xs">
-              Bu egzersizi daha önce tamamlamıştın — XP yalnızca en iyi skorunu geçince eklenir.
+              {t("skillp.repeat_note")}
             </p>
           ) : null}
         </>
       ) : state.phase === "offline" ? (
         <p className="muted mt-2 text-sm">
-          Sonuç bu cihaza kaydedildi; internete bağlanınca XP&#39;n işlenecek.
+          {t("skillp.saved_offline")}
         </p>
       ) : (
-        <p className="muted mt-2 text-sm">Kaydediliyor…</p>
+        <p className="muted mt-2 text-sm">{t("rounds.saving")}</p>
       )}
       {/* Sıradaki: Beceriler kütüphanesinden gelindiyse aynı seviye ve
           becerideki bitmemiş bir sonraki egzersiz. Öğrenci hub'a dönüp
@@ -208,7 +212,7 @@ export function ResultCard({
           className="mt-4 flex items-center justify-between gap-3 rounded-xl px-4 py-3 text-left surface-2"
         >
           <span className="min-w-0">
-            <span className="muted block text-[11px] font-bold uppercase tracking-wide">Sıradaki</span>
+            <span className="muted block text-[11px] font-bold uppercase tracking-wide">{t("skills.next")}</span>
             <span className="block truncate text-sm font-semibold">{frame.next.title}</span>
           </span>
           <span className="shrink-0 text-lg" aria-hidden>
@@ -218,11 +222,11 @@ export function ResultCard({
       ) : null}
       <div className="mt-4 flex items-center justify-center gap-3">
         <Link href={frame.backHref} className="btn btn-primary px-6 py-3">
-          {frame.backLabel}
+          {t(frame.backLabel)}
         </Link>
         {onRetry && !perfect ? (
           <button type="button" onClick={onRetry} className="btn btn-ghost px-5 py-3">
-            Tekrar dene
+            {t("common.try_again")}
           </button>
         ) : null}
       </div>

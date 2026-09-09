@@ -9,6 +9,7 @@ import { GlossPanel } from "./quiz";
 import { useTargetLang } from "./player-context";
 import { CheckIcon, XIcon, SpeakerIcon } from "@/components/icons";
 import { speakGerman } from "@/components/speak-button";
+import { useT } from "@/lib/i18n/client";
 
 /** Tek kayıt için üst sınır; sınav oynatıcısıyla aynı. */
 const MAX_MS = 8000;
@@ -34,6 +35,7 @@ type Durum = "idle" | "rec" | "scoring" | "done" | "failed";
  * Dil çerçeveden: İngilizce kursta tanıyıcı ve örnek ses İngilizce.
  */
 export function SpeakingPlayer({ exercise, backHref }: { exercise: SkillExercise; backHref?: string }) {
+  const t = useT();
   const lang = useTargetLang();
   const tasks: SpeakingTask[] = "tasks" in exercise ? (exercise.tasks as SpeakingTask[]) : [];
   const { finish, state, reset } = useSkillFinish(exercise, tasks.length);
@@ -54,7 +56,7 @@ export function SpeakingPlayer({ exercise, backHref }: { exercise: SkillExercise
     setReason(null);
     const cap = await captureClip(MAX_MS);
     if (!cap) {
-      setReason("Mikrofona ulaşılamadı. Tarayıcı izni kapalı olabilir.");
+      setReason(t("speakp.no_mic"));
       return setPhase("failed");
     }
     capture.current = cap;
@@ -78,10 +80,10 @@ export function SpeakingPlayer({ exercise, backHref }: { exercise: SkillExercise
     } else {
       setReason(
         res.reason === "not_configured"
-          ? "Telaffuz puanlaması bu kurulumda kapalı."
+          ? t("speakp.scoring_off")
           : res.reason === "rate_limited" || res.reason === "quota"
-            ? "Şimdilik sınıra ulaşıldı, biraz sonra dene."
-            : "Kayıt gönderilemedi. Tekrar dener misin?",
+            ? t("speakp.rate_limited")
+            : t("speakp.send_failed"),
       );
       setPhase("failed");
     }
@@ -115,7 +117,7 @@ export function SpeakingPlayer({ exercise, backHref }: { exercise: SkillExercise
   if (!tasks.length)
     return (
       <PlayerShell exercise={exercise} backHref={backHref}>
-        <p className="muted p-4">Bu çalışmada cümle yok.</p>
+        <p className="muted p-4">{t("speakp.no_sentences")}</p>
       </PlayerShell>
     );
 
@@ -135,7 +137,7 @@ export function SpeakingPlayer({ exercise, backHref }: { exercise: SkillExercise
           </p>
           <button
             type="button"
-            aria-label="Cümleyi dinle"
+            aria-label={t("skillquiz.listen_to_sentence")}
             className="btn btn-ghost h-9 w-9 shrink-0"
             onClick={() => void speakGerman(task.de)}
           >
@@ -150,22 +152,22 @@ export function SpeakingPlayer({ exercise, backHref }: { exercise: SkillExercise
 
         {phase === "idle" || phase === "failed" ? (
           <button type="button" className="btn btn-primary mt-4 w-full" onClick={() => void startRec()}>
-            {phase === "failed" ? "Tekrar dene" : "Kaydet ve oku"}
+            {t(phase === "failed" ? "common.try_again" : "speakp.record_and_read")}
           </button>
         ) : null}
         {phase === "rec" ? (
           <button type="button" className="btn btn-primary mt-4 w-full" onClick={() => void stopRec()}>
-            Bitir
+            {t("common.finish")}
           </button>
         ) : null}
-        {phase === "scoring" ? <p className="muted mt-4 text-sm">Değerlendiriliyor…</p> : null}
+        {phase === "scoring" ? <p className="muted mt-4 text-sm">{t("exam.evaluating")}</p> : null}
         {reason ? (
           <>
             <p className="mt-3 text-sm" style={{ color: "var(--color-rose)" }}>
               {reason}
             </p>
             <button type="button" className="btn btn-ghost mt-2 w-full" onClick={skip}>
-              {isLast ? "Puansız bitir" : "Puansız geç"}
+              {t(isLast ? "item.skip_unscored_finish" : "item.skip_unscored")}
             </button>
           </>
         ) : null}
@@ -233,10 +235,10 @@ export function SpeakingPlayer({ exercise, backHref }: { exercise: SkillExercise
 
             <div className="mt-4 flex gap-2">
               <button type="button" className="btn btn-ghost flex-1" onClick={() => void startRec()}>
-                Tekrar oku
+                {t("speakp.read_again")}
               </button>
               <button type="button" className="btn btn-primary flex-1" onClick={advance}>
-                {isLast ? "Bitir" : "Sonraki"}
+                {t(isLast ? "common.finish" : "common.next")}
               </button>
             </div>
           </div>
