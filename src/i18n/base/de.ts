@@ -1126,7 +1126,6 @@ export const deBase: Record<string, string> = {
   "league.tier_gold": "Gold-Liga",
   "league.tier_sapphire": "Saphir-Liga",
   "league.tier_diamond": "Diamant-Liga",
-  "league.league": "Liga",
   "league.promote_zone": "Aufstiegszone",
   "league.demote_zone": "Abstiegszone",
   "league.explain_up": "Die ersten {n} steigen auf",

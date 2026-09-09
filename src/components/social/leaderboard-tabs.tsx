@@ -23,7 +23,7 @@ export function LeaderboardTabs() {
             aria-current={tab === k ? "page" : undefined}
             onClick={() => setTab(k)}
           >
-            {t(k === "league" ? "league.league" : "social.tab_friends")}
+            {t(k === "league" ? "leaderboard.league" : "social.tab_friends")}
           </button>
         ))}
       </nav>

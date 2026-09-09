@@ -3,7 +3,8 @@
 import Link from "next/link";
 import { useCallback, useEffect, useState } from "react";
 import { Avatar } from "@/components/avatar";
-import { FlameIcon, TrophyIcon } from "@/components/icons";
+import { FlameIcon, PodiumIcon, TrophyIcon } from "@/components/icons";
+import { EmptyCard } from "@/components/empty-card";
 import { RowSkeleton } from "@/components/skeleton";
 import { social, tierKey, type LeagueRowView, type LeagueView } from "@/lib/social/client";
 import { useT, useLang } from "@/lib/i18n/client";
@@ -47,7 +48,18 @@ export function LeagueBoard() {
     });
   }, []);
 
-  if (err) return <p className="card p-5 text-body" style={{ color: "var(--text-muted)" }}>{t("lbw.load_failed")}</p>;
+  /* Hata durumu Android'de ikonlu boş kart; web'de yalnız sönük bir cümleydi
+     ve sayfa boşmuş gibi duruyordu. Arkadaş tablosu zaten bu kartı kullanıyor,
+     iki sekme aynı görünüyor. */
+  if (err)
+    return (
+      <EmptyCard
+        icon={PodiumIcon}
+        tint="var(--color-sky)"
+        title={t("leaderboard.couldn_t_load_leaderboard")}
+        text={t("social.err_offline")}
+      />
+    );
   if (!view) return <RowSkeleton rows={6} height={48} />;
 
   return (

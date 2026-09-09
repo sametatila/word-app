@@ -1145,7 +1145,6 @@ export const deWeb: Record<string, string> = {
   "immw.review": "Wiederholung",
   "immw.grammar_exercise": "Grammatikübung",
   "profw.load_failed": "Profil konnte nicht geladen werden",
-  "lbw.load_failed": "Die Rangliste ist gerade nicht abrufbar. Versuch es in ein paar Sekunden noch einmal.",
   "bossw.exam_link": "Modulprüfung (25 Min., sieben Teile) →",
   "certw.this_document": "Diese Urkunde",
   "certw.awarded_to": "wird verliehen für das Bestehen der Prüfung mit {pct}.",

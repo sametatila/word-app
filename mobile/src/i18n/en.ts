@@ -1124,7 +1124,6 @@ export const en: Record<string, string> = {
   "league.tier_gold": "Gold League",
   "league.tier_sapphire": "Sapphire League",
   "league.tier_diamond": "Diamond League",
-  "league.league": "League",
   "league.promote_zone": "Promotion zone",
   "league.demote_zone": "Relegation zone",
   "league.explain_up": "Top {n} move up a league",

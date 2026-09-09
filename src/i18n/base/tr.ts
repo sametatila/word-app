@@ -1126,7 +1126,6 @@ export const trBase: Record<string, string> = {
   "league.tier_gold": "Altın Lig",
   "league.tier_sapphire": "Safir Lig",
   "league.tier_diamond": "Elmas Lig",
-  "league.league": "Lig",
   "league.promote_zone": "Yükselme kuşağı",
   "league.demote_zone": "Düşme kuşağı",
   "league.explain_up": "İlk {n} kişi bir üst lige çıkar",

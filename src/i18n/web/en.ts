@@ -1145,7 +1145,6 @@ export const enWeb: Record<string, string> = {
   "immw.review": "Review",
   "immw.grammar_exercise": "Grammar exercise",
   "profw.load_failed": "Couldn't load the profile",
-  "lbw.load_failed": "The leaderboard couldn't be read right now. Try again in a few seconds.",
   "bossw.exam_link": "Module exam (25 min, seven parts) →",
   "certw.this_document": "This certificate is",
   "certw.awarded_to": "awarded for passing the exam with {pct}.",
