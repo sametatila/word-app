@@ -42,7 +42,7 @@ export function IntroGame({ round, onDone }: GameProps<IntroRound>) {
       clearTimeout(t);
       clearTimeout(s);
     };
-  }, [round.id]);
+  }, [round.id, round.word]);
 
   return (
     <GameShell

@@ -271,6 +271,29 @@ export function LessonPlayer({
   const expect = step?.expect;
 
   /**
+   * Sağlayıcı var mı? Yoksa daha ilk cümlede 503 yemek yerine baştan
+   * senaryolu konuşmaya geç. Açılış iki yolda da aynı metin (senaryonun ilk
+   * turu açılışla birebir), o yüzden cevap beklenmeden gösteriliyor. Kayıttan
+   * dönüşte de soruluyor: yarım kalmış konuşma, servis o arada kapandıysa
+   * senaryoyla sürer.
+   */
+  // `useCallback`: kayıttan dönüş effect'i buna bağımlı ve DÜZ bir fonksiyon her
+  // render'da yeni kimlik alırdı — bağımlılığa eklenince effect her render'da
+  // yeniden koşardı. Kimlik artık yalnız ders değişince değişiyor.
+  const probeRoleplayService = useCallback(() => {
+    void fetch("/api/roleplay", { cache: "no-store" })
+      .then((r) => (r.ok ? (r.json() as Promise<{ configured: boolean }>) : null))
+      .then((s) => {
+        if (s && !s.configured && !offlineRef.current) {
+          const start = offlineStart(lesson);
+          setOffline(start.state);
+          setHint(start.hint);
+        }
+      })
+      .catch(() => {});
+  }, [lesson]);
+
+  /**
    * İlk çizimde kayıt okunmuyor: sunucu ile tarayıcının farklı şey çizmesi
    * hidrasyonu bozar. Kayıt yüklenene kadar akış başlamıyor.
    */
@@ -285,7 +308,7 @@ export function LessonPlayer({
     setPhase(v.phase);
     setResumed(true);
     if (v.phase === "roleplay") probeRoleplayService();
-  }, [lesson]);
+  }, [lesson, probeRoleplayService]);
 
   useEffect(() => {
     if (!ready) return;
@@ -367,7 +390,7 @@ export function LessonPlayer({
       }
     }
     prefetchGerman(lesson.roleplay.opening);
-  }, [lesson, stepIndex]);
+  }, [lesson, stepIndex, nar]);
 
   // ─────────────────────────── anlatım motoru ───────────────────────────
 
@@ -493,7 +516,7 @@ export function LessonPlayer({
         setListening(false);
       }
     },
-    [],
+    [t],
   );
 
   /**
@@ -723,7 +746,7 @@ export function LessonPlayer({
         );
       }
     },
-    [interject, lesson, reopen],
+    [interject, lesson, reopen, lang, nar],
   );
   const evaluateRef = useRef(evaluate);
   useEffect(() => {
@@ -759,26 +782,6 @@ export function LessonPlayer({
   }
 
   // ─────────────────────────── konuşma pratiği ───────────────────────────
-
-  /**
-   * Sağlayıcı var mı? Yoksa daha ilk cümlede 503 yemek yerine baştan
-   * senaryolu konuşmaya geç. Açılış iki yolda da aynı metin (senaryonun ilk
-   * turu açılışla birebir), o yüzden cevap beklenmeden gösteriliyor. Kayıttan
-   * dönüşte de soruluyor: yarım kalmış konuşma, servis o arada kapandıysa
-   * senaryoyla sürer.
-   */
-  function probeRoleplayService() {
-    void fetch("/api/roleplay", { cache: "no-store" })
-      .then((r) => (r.ok ? (r.json() as Promise<{ configured: boolean }>) : null))
-      .then((s) => {
-        if (s && !s.configured && !offlineRef.current) {
-          const start = offlineStart(lesson);
-          setOffline(start.state);
-          setHint(start.hint);
-        }
-      })
-      .catch(() => {});
-  }
 
   function startRoleplay() {
     recognition.current?.abort();

@@ -576,7 +576,7 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
       hearCtl.current.abort();
     }
     return true;
-  }, [note]);
+  }, [note, t]);
 
   /** Cepte kipinden çıkar: mikrofon bırakılır, döngü susar, tanıyıcıya dönülür. */
   const disarm = useCallback(
@@ -790,7 +790,7 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
 
       return [];
     },
-    [cue, disarm, listen, note, say, waitForHidden],
+    [cue, disarm, listen, note, say, waitForHidden, lang, t],
   );
   /** Kendine dönmesi gereken tek yer (silahsızlanınca ekran yolu) — ref üzerinden. */
   const hearOnceRef = useRef(hearOnce);
@@ -1000,7 +1000,7 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
         setAsking(false);
       }
     },
-    [hear, say],
+    [hear, say, lang, t],
   );
 
   // ── Turun kendisi ──────────────────────────────────────────────────
@@ -1283,7 +1283,7 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
       play("start");
       }
     },
-    [askContinue, fetchSession, flush, hear, release, say],
+    [askContinue, fetchSession, flush, hear, release, say, lang, t],
   );
 
   async function start(from: number) {
@@ -1497,7 +1497,7 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
     };
     document.addEventListener("visibilitychange", onChange);
     return () => document.removeEventListener("visibilitychange", onChange);
-  }, [status, stopAll, release, note, disarm]);
+  }, [status, stopAll, release, note, disarm, lang, t]);
 
   // ── Görünüm ────────────────────────────────────────────────────────
 

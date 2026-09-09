@@ -47,7 +47,7 @@ export function PluralGame({ round, onDone }: GameProps<PluralRound>) {
     // Seçimden sonra okunacak doğru çoğul da önden iniyor.
     prefetchGerman(`die ${answer}`);
     return () => clearTimeout(s);
-  }, [round.id, answer]);
+  }, [round.id, answer, round.word]);
 
   function choose(option: string) {
     if (picked) return;

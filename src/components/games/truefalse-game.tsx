@@ -46,7 +46,7 @@ export function TrueFalseGame({ round, onDone }: GameProps<TrueFalseRound>) {
     // eşleştirmeyi kolaylaştırıyor ve düğmeye basma adımını ortadan kaldırıyor.
     const s = setTimeout(() => speakGerman(withArtikel(round.word)), 350);
     return () => clearTimeout(s);
-  }, [round.id]);
+  }, [round.id, round.word]);
 
   function decide(said: boolean) {
     if (answered !== null) return;
