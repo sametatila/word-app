@@ -42,7 +42,14 @@ async function main() {
   const db = drizzle(new Pool({ connectionString: process.env.DATABASE_URL }));
 
   const file = path.join(process.cwd(), "data", "app", "words-en.json");
-  const rows = JSON.parse(readFileSync(file, "utf8")) as Row[];
+  // Dosya JSONL: satır başına bir kayıt, sarmalayan dizi yok. Böyle okunuyor
+  // çünkü havuza kelime eklerken tek satır ekleniyor ve diff tek satır kalıyor;
+  // dizi biçiminde son kaydın virgülü de değişir ve her ekleme iki satır oynar.
+  // Kapı (vocab-gate-en.cjs) ve kütüphane denetimi de dosyayı böyle okuyor.
+  const rows = readFileSync(file, "utf8")
+    .split("\n")
+    .filter((l) => l.trim())
+    .map((l) => JSON.parse(l) as Row);
   console.log(`${rows.length} İngilizce kelime okundu.`);
 
   const values = rows.map((r) => ({
