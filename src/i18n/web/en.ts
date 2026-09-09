@@ -1141,4 +1141,8 @@ export const enWeb: Record<string, string> = {
   "push.rem_idle_title": "Five minutes today?",
   "push.rem_idle_body": "New words at level {level} are waiting for you.",
   "push.rem_idle_body_named": "{name}, new words at level {level} are waiting for you.",
+  "push.rem_weekly_title": "Your weekly test is ready",
+  "push.rem_weekly_body": "What did you learn at level {level} this week? Ten questions will tell you.",
+  "push.rem_weekly_body_named": "{name}, what did you learn at level {level} this week? Ten questions will tell you.",
+  "notifw.hour": "HOUR",
 };

@@ -26,7 +26,20 @@ import { useT } from "@/lib/i18n/client";
 
 type State = "loading" | "off" | "on" | "busy" | "unsupported" | "ios" | "denied";
 
-export function PushSettings({ bare = false }: { bare?: boolean } = {}) {
+export function PushSettings({
+  bare = false,
+  onState,
+}: {
+  bare?: boolean;
+  /**
+   * İzin durumu değiştiğinde haber verir.
+   *
+   * Bildirimler ekranındaki üç hatırlatma anahtarı buna bakıyor: izin yokken
+   * onları göstermek, çevrildiğinde hiçbir şey yapmayan bir düğme göstermek
+   * olurdu.
+   */
+  onState?: (on: boolean) => void;
+} = {}) {
   const t = useT();
   const [state, setState] = useState<State>("loading");
   const [error, setError] = useState<string | null>(null);
@@ -38,6 +51,11 @@ export function PushSettings({ bare = false }: { bare?: boolean } = {}) {
     if (permissionDenied()) return setState("denied");
     void currentSubscription().then((sub) => setState(sub ? "on" : "off"));
   }, []);
+
+  useEffect(() => {
+    if (state === "loading" || state === "busy") return;
+    onState?.(state === "on");
+  }, [state, onState]);
 
   async function toggle() {
     const wasOn = state === "on";

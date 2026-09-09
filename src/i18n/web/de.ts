@@ -1141,4 +1141,8 @@ export const deWeb: Record<string, string> = {
   "push.rem_idle_title": "Heute fünf Minuten?",
   "push.rem_idle_body": "Auf Niveau {level} warten neue Wörter auf dich.",
   "push.rem_idle_body_named": "{name}, auf Niveau {level} warten neue Wörter auf dich.",
+  "push.rem_weekly_title": "Dein Wochentest ist bereit",
+  "push.rem_weekly_body": "Was hast du diese Woche auf Niveau {level} gelernt? Zehn Fragen sagen es dir.",
+  "push.rem_weekly_body_named": "{name}, was hast du diese Woche auf Niveau {level} gelernt? Zehn Fragen sagen es dir.",
+  "notifw.hour": "UHRZEIT",
 };

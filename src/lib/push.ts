@@ -397,3 +397,135 @@ export async function runReminders() {
   await Promise.all(logs);
   return { targets: targets.length, sent: results.filter(Boolean).length };
 }
+
+/**
+ * SERİ KORUMA — akşam turu (mobil `NotificationsScreen`in ikinci anahtarı).
+ *
+ * Günlük hatırlatmadan farkı hedef kitlesi: burada YALNIZCA serisi bugün
+ * kaybedilecek olanlar var. "Bugün çalışmadın" demek herkese söylenebilir,
+ * "dokuz günlük serin bu gece bitiyor" ise yalnızca dokuz günü olana.
+ *
+ * GÜNLÜK BÜTÇEYİ PAYLAŞIYOR (`last_reminder_day`). Akşam turu ayrı bir sayaç
+ * tutsaydı, öğlen hatırlatma alan biri akşam bir tane daha alırdı — ve bu
+ * dosyanın en başındaki kural tek: günde en fazla bir bildirim. Öğleden sonra
+ * hatırlatma almamış olan seri sahibi akşam bunu alıyor; almış olan almıyor.
+ */
+export async function runStreakAlerts(limit = 500) {
+  if (!pushEnabled) return { targets: 0, sent: 0 };
+
+  const localDay = sql`(now() at time zone ${profiles.timezone})::date`;
+  const localHour = sql`extract(hour from (now() at time zone ${profiles.timezone}))`;
+
+  const targets = await db
+    .select({
+      userId: profiles.userId,
+      displayName: profiles.displayName,
+      level: profiles.level,
+      lang: profiles.nativeLang,
+      liveStreak: profiles.currentStreak,
+    })
+    .from(profiles)
+    .where(
+      and(
+        eq(profiles.streakAlert, true),
+        // Akşam: mobilde 20:30, burada kullanıcının kendi saatiyle 20'den sonra.
+        sql`${localHour} >= 20`,
+        sql`${profiles.currentStreak} > 0`,
+        // Seri ancak DÜN çalışılmışsa bugün kaybedilebilir.
+        sql`${profiles.lastActiveDay} = ${localDay} - 1`,
+        sql`(${profiles.lastReminderDay} is null or ${profiles.lastReminderDay} < ${localDay})`,
+        sql`exists (select 1 from ${pushSubscriptions} s where s.user_id = ${profiles.userId})`,
+      ),
+    )
+    .limit(limit);
+
+  return deliverRound(targets, "streak");
+}
+
+/**
+ * HAFTALIK SINAV ÇAĞRISI — mobildeki üçüncü anahtar.
+ *
+ * Haftada bir, pazar akşamı. Günlük bütçeyi o da paylaşıyor: haftanın bir
+ * gününde iki bildirim göndermek, kapatılan izinlerin en ucuz sebebi.
+ */
+export async function runWeeklyReminders(limit = 500) {
+  if (!pushEnabled) return { targets: 0, sent: 0 };
+
+  const localDay = sql`(now() at time zone ${profiles.timezone})::date`;
+  const localHour = sql`extract(hour from (now() at time zone ${profiles.timezone}))`;
+
+  const targets = await db
+    .select({
+      userId: profiles.userId,
+      displayName: profiles.displayName,
+      level: profiles.level,
+      lang: profiles.nativeLang,
+      liveStreak: profiles.currentStreak,
+    })
+    .from(profiles)
+    .where(
+      and(
+        eq(profiles.weeklyReminder, true),
+        sql`extract(dow from ${localDay}) = 0`, // pazar
+        sql`${localHour} >= 18`,
+        sql`(${profiles.lastReminderDay} is null or ${profiles.lastReminderDay} < ${localDay})`,
+        sql`exists (select 1 from ${pushSubscriptions} s where s.user_id = ${profiles.userId})`,
+      ),
+    )
+    .limit(limit);
+
+  return deliverRound(targets, "weekly");
+}
+
+/** İki akşam turunun ortak gövdesi: bütçeyi işaretle, abonelere gönder, say. */
+async function deliverRound(
+  targets: { userId: string; displayName: string | null; level: string; lang: string | null; liveStreak: number }[],
+  kind: "streak" | "weekly",
+) {
+  if (!targets.length) return { targets: 0, sent: 0 };
+  const userIds = targets.map((t) => t.userId);
+
+  await db
+    .update(profiles)
+    .set({ lastReminderDay: sql`(now() at time zone ${profiles.timezone})::date` })
+    .where(inArray(profiles.userId, userIds));
+
+  const today = new Date().toISOString().slice(0, 10);
+  const subs = await db.select().from(pushSubscriptions).where(inArray(pushSubscriptions.userId, userIds));
+  const byUser = new Map<string, (typeof subs)[number][]>();
+  for (const s of subs) {
+    const list = byUser.get(s.userId);
+    if (list) list.push(s);
+    else byUser.set(s.userId, [s]);
+  }
+
+  const jobs: Promise<boolean>[] = [];
+  const logs: Promise<void>[] = [];
+  for (const t of targets) {
+    const list = byUser.get(t.userId);
+    if (!list?.length) continue;
+    const lang = isNativeLang(t.lang ?? "") ? (t.lang as NativeLang) : DEFAULT_NATIVE;
+    const first = t.displayName?.trim().split(/\s+/)[0];
+    const named = (base: string) => (first ? `${base}_named` : base);
+    const payload: PushPayload =
+      kind === "streak"
+        ? {
+            title: translate(lang, "push.rem_streak_title", { n: t.liveStreak }),
+            body: translate(lang, named("push.rem_streak_idle"), { name: first ?? "" }),
+            url: "/learn",
+            tag: "reminder",
+          }
+        : {
+            title: translate(lang, "push.rem_weekly_title"),
+            body: translate(lang, named("push.rem_weekly_body"), { name: first ?? "", level: t.level }),
+            url: "/learn/weekly",
+            tag: "reminder",
+          };
+    for (const sub of list) jobs.push(deliver(sub, payload));
+    logs.push(track(t.userId, "push_sent", today, 0, kind));
+  }
+
+  const results = await Promise.all(jobs);
+  await Promise.all(logs);
+  return { targets: targets.length, sent: results.filter(Boolean).length };
+}

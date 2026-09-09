@@ -1166,4 +1166,8 @@ export const trWeb: Record<string, string> = {
   "push.rem_idle_title": "Bugün 5 dakika?",
   "push.rem_idle_body": "{level} seviyesinde yeni kelimeler seni bekliyor.",
   "push.rem_idle_body_named": "{name}, {level} seviyesinde yeni kelimeler seni bekliyor.",
+  "push.rem_weekly_title": "Haftalık sınav hazır",
+  "push.rem_weekly_body": "{level} seviyesinde bu hafta ne öğrendin? On soruda ölç.",
+  "push.rem_weekly_body_named": "{name}, {level} seviyesinde bu hafta ne öğrendin? On soruda ölç.",
+  "notifw.hour": "SAAT",
 };
