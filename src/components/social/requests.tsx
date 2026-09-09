@@ -86,7 +86,7 @@ function RequestRow({ r, incoming, onChanged }: { r: PendingView; incoming: bool
         </div>
       ) : (
         <button className="btn btn-ghost h-8 px-3 text-xs" disabled={busy} onClick={() => void act(() => social.remove(r.user.userId))}>
-          İptal
+          {t("common.discard")}
         </button>
       )}
     </li>

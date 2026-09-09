@@ -242,7 +242,7 @@ export function MonologuePlayer({ exercise, backHref }: { exercise: SpeakingMono
             ))}
           </div>
           <p className="muted mt-3 text-xs">
-            {mono.minSeconds}–{mono.maxSeconds} saniye konuş.{" "}
+            {t("monow.speak_range", { min: mono.minSeconds, max: mono.maxSeconds })}{" "}
             {asr === false
               ? t("item.mono_no_stt")
               : t("item.mono_will_score")}
@@ -289,8 +289,8 @@ export function MonologuePlayer({ exercise, backHref }: { exercise: SpeakingMono
 
       {phase === "review" ? (
         <section className="card mt-3 p-5">
-          <p className="text-xs font-bold uppercase tracking-wide text-[color:var(--color-brand)]">Kontrol</p>
-          <p className="muted mt-1 text-xs">{mm(seconds)} konuştun.</p>
+          <p className="text-xs font-bold uppercase tracking-wide text-[color:var(--color-brand)]">{t("monow.check")}</p>
+          <p className="muted mt-1 text-xs">{t("monow.you_spoke", { time: mm(seconds) })}</p>
           {audioUrl ? (
             <audio controls src={audioUrl} className="mt-2 w-full">
               <track kind="captions" />
@@ -367,7 +367,7 @@ export function MonologuePlayer({ exercise, backHref }: { exercise: SpeakingMono
             <AssessmentCard answer={transcript.trim()} result={result} failure={failure} example={null} />
           ) : (
             <p className="text-sm">
-              {checks.filter(Boolean).length} / {checks.length} madde işaretlendi.
+              {t("monow.items_checked", { n: checks.filter(Boolean).length, total: checks.length })}
             </p>
           )}
           {result ? (

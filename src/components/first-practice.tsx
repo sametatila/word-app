@@ -100,7 +100,7 @@ export function FirstPractice() {
 
       <div className="flex flex-1 flex-col items-center justify-center gap-4 text-center">
         <p className="text-caption uppercase tracking-widest" style={{ color: "var(--color-brand)" }}>
-          İlk kelimelerin
+          {t("firstw.title")}
         </p>
         <p className="text-display">{withArtikel(w)}</p>
 
@@ -136,9 +136,7 @@ export function FirstPractice() {
         {seen && last ? <CheckIcon size={20} /> : null}
         {label}
       </button>
-      <p className="muted mt-3 text-center text-caption">
-        Öğrendiklerini kaydetmek için birazdan hesabını açacaksın.
-      </p>
+      <p className="muted mt-3 text-center text-caption">{t("firstw.account_soon")}</p>
     </main>
   );
 }

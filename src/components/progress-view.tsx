@@ -67,7 +67,7 @@ export function WordProgress({
                 <div className="mb-1.5 flex items-baseline justify-between text-sm">
                   <span className="font-semibold">{l.niveau}</span>
                   <span className="muted text-xs">
-                    {l.seen} / {l.total} kelime · {l.mastered} pekişmiş
+                    {t("progw.seen_of_total", { seen: l.seen, total: l.total, mastered: l.mastered })}
                   </span>
                 </div>
                 <div className="relative h-3 w-full overflow-hidden rounded-full surface-2">
@@ -100,15 +100,10 @@ export function WordProgress({
           <div className="flex items-center gap-4">
             <Donut value={dueNow} total={Math.max(1, dueNow + upcoming)} />
             <div className="text-sm">
-              <p>
-                <strong className="text-[color:var(--color-flame)]">{dueNow}</strong> kelime şu an
-                hazır
-              </p>
-              <p className="muted mt-1">{upcoming} kelime ileri tarihe planlandı</p>
+              <p>{t("progw.due_now", { n: dueNow })}</p>
+              <p className="muted mt-1">{t("progw.upcoming", { n: upcoming })}</p>
               {leeches > 0 ? (
-                <p className="mt-1 text-[color:var(--color-rose)]">
-                  {leeches} kelimede zorlanıyorsun — sık sık geri gelecekler
-                </p>
+                <p className="mt-1 text-[color:var(--color-rose)]">{t("progw.leeches", { n: leeches })}</p>
               ) : null}
             </div>
           </div>

@@ -282,7 +282,7 @@ export function BossPlayer({
           {t(best !== null ? "boss.beat_record" : "boss.enter")}
         </button>
         <button onClick={onExit} className="btn btn-ghost mt-2 w-full px-5 py-3">
-          Yola dön
+          {t("bossw.back_to_path")}
         </button>
       </Frame>
     );
@@ -306,24 +306,22 @@ export function BossPlayer({
         <h2 className="text-2xl font-black">{t(won ? "boss.passed" : "boss.time_up")}</h2>
         <p className="muted mt-1 text-sm">
           {won
-            ? `${secondsLeft} saniye kala · ${tally.correct}/${tally.total} doğru`
-            : `${tally.correct}/${tally.total} doğru — bu sefer yetmedi.`}
+            ? t("bossw.won_sub", { sec: secondsLeft, correct: tally.correct, total: tally.total })
+            : t("bossw.lost_sub", { correct: tally.correct, total: tally.total })}
         </p>
         {won && isRecord ? (
           <p className="mt-1 text-sm font-bold" style={{ color: "var(--color-mint)" }}>
-            Yeni rekor: <CountUp value={secondsLeft} /> sn kalan
+            {t("bossw.record_prefix")} <CountUp value={secondsLeft} /> {t("bossw.record_suffix")}
           </p>
         ) : null}
         {!won ? (
-          <p className="muted mt-3 text-sm">
-            Cevapların yine de sayıldı: tekrar planın ve günlük hedefin güncellendi.
-          </p>
+          <p className="muted mt-3 text-sm">{t("bossw.still_counted")}</p>
         ) : null}
         <button onClick={start} className="btn btn-primary mt-5 w-full px-5 py-3.5">
-          {won ? "Yeniden dene" : "Tekrar dene"}
+          {t(won ? "bossw.play_again" : "common.try_again")}
         </button>
         <button onClick={onExit} className="btn btn-ghost mt-2 w-full px-5 py-3">
-          Yola dön
+          {t("bossw.back_to_path")}
         </button>
       </Frame>
     );

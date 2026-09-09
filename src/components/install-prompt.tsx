@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { XIcon, LogoMark } from "@/components/icons";
 import { track } from "@/lib/track";
+import { useT } from "@/lib/i18n/client";
 
 type InstallEvent = Event & {
   prompt: () => Promise<void>;
@@ -29,6 +30,7 @@ const DISMISS_DAYS = 21;
  * açılmışsa ya da kullanıcı kapattıysa görünmez.
  */
 export function InstallPrompt() {
+  const t = useT();
   const [deferred, setDeferred] = useState<InstallEvent | null>(null);
   const [iosHint, setIosHint] = useState(false);
   const [visible, setVisible] = useState(false);
@@ -101,24 +103,20 @@ export function InstallPrompt() {
           <div className="card flex items-start gap-3 p-3.5 shadow-lg">
             <LogoMark size={40} className="shrink-0" />
             <div className="min-w-0 flex-1">
-              <p className="text-sm font-bold">Ana ekrana ekle</p>
+              <p className="text-sm font-bold">{t("settings.add_to_home")}</p>
               <p className="muted mt-0.5 text-xs">
-                {iosHint
-                  ? "Paylaş düğmesine dokun, ardından “Ana Ekrana Ekle”yi seç."
-                  : "Uygulama gibi tam ekran açılır, tek dokunuşla girersin."}
+                {t(iosHint ? "instw.ios_hint" : "instw.why")}
               </p>
-              <p className="muted mt-1 text-[11px]">
-                Adımların tamamı Profil → “Uygulama olarak kur” altında duruyor.
-              </p>
+              <p className="muted mt-1 text-[11px]">{t("instw.full_steps")}</p>
               {!iosHint ? (
                 <button onClick={() => void install()} className="btn btn-primary mt-2.5 px-4 py-2 text-xs">
-                  Ekle
+                  {t("common.add")}
                 </button>
               ) : null}
             </div>
             <button
               onClick={close}
-              aria-label="Kapat"
+              aria-label={t("common.close")}
               className="muted shrink-0 rounded-lg p-1 hover:text-[color:var(--text)]"
             >
               <XIcon size={16} />

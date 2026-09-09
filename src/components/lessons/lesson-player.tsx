@@ -1330,7 +1330,7 @@ export function LessonPlayer({
               ) : null}
               <div className="mt-2 flex items-center justify-between gap-2">
                 <span className="muted text-xs tabular-nums">
-                  {userTurns} / {lesson.roleplay.minTurns} tur
+                  {t("lessonw.turns", { n: userTurns, total: lesson.roleplay.minTurns })}
                 </span>
                 {ttsAvailable || asrAvailable ? (
                   <button

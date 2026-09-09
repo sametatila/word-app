@@ -87,7 +87,7 @@ export function WritingPlayer({ exercise, backHref }: { exercise: WritingExercis
 
       <div className="mt-3 px-1">
         <div className="mb-1.5 flex justify-between text-xs font-semibold">
-          <span className="muted">Görev {Math.min(step + 1, total)} / {total}</span>
+          <span className="muted">{t("writew.task_n", { n: Math.min(step + 1, total), total })}</span>
           <span className="text-[color:var(--color-brand)]">
             {correctCount} tamam
           </span>
@@ -275,7 +275,7 @@ function BuildTask({
             onClick={() => onDone(phase === "correct")}
             className="btn btn-primary px-6 py-2.5"
           >
-            Devam
+            {t("common.continue")}
           </button>
         ) : (
           <>
@@ -496,7 +496,7 @@ function FreeTask({
           className="text-xs font-bold"
           style={{ color: enough ? "var(--color-mint)" : "var(--text-muted)" }}
         >
-          {words} / {task.minWords} kelime
+          {t("writew.n_words", { n: words, min: task.minWords })}
         </span>
       </div>
 
@@ -756,10 +756,10 @@ function FormTask({ task, onDone }: { task: FormTaskData; onDone: (ok: boolean) 
       {checked ? (
         <div className="mt-3 flex items-center justify-between gap-3">
           <p className="text-sm font-semibold" style={{ color: ok ? "var(--color-mint)" : "var(--color-rose)" }}>
-            {okCount} / {task.fields.length} alan doğru
+            {t("writew.fields_ok", { n: okCount, total: task.fields.length })}
           </p>
           <button type="button" onClick={() => onDone(ok)} className="btn btn-primary min-h-11 px-4 text-sm">
-            Devam
+            {t("common.continue")}
           </button>
         </div>
       ) : (

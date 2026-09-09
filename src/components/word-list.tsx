@@ -327,15 +327,15 @@ export function WordList({
             disabled={page === 0}
             className="btn btn-ghost px-4 py-2 text-sm disabled:opacity-40"
           >
-            ← Önceki
+            {tx("wordsw.prev")}
           </button>
-          <span className="muted text-xs">sayfa {page + 1}</span>
+          <span className="muted text-xs">{tx("wordsw.page", { n: page + 1 })}</span>
           <button
             onClick={() => goPage(page + 1)}
             disabled={!hasMore}
             className="btn btn-ghost px-4 py-2 text-sm disabled:opacity-40"
           >
-            Sonraki →
+            {tx("wordsw.next")}
           </button>
         </div>
       )}
