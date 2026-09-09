@@ -38,6 +38,20 @@ const US = [
   [/\bvacations?\b/gi, "holiday"],
   [/\btrash\b|\bgarbage\b/gi, "rubbish"],
   [/\bsidewalks?\b/gi, "pavement"],
+  // Günlük hayat sözcükleri: rol yapma sahneleri dükkân, ulaşım ve ev
+  // dolu, bu grup 580 sahnede kaçınılmaz. Yalnız İngiliz karşılığı
+  // TARTIŞMASIZ olanlar; `pants` (İngilizcede iç çamaşırı), `line`,
+  // `cookie` (tarayıcı çerezi) bilerek DIŞARIDA.
+  [/\belevators?\b/gi, "lift"],
+  [/\brestrooms?\b/gi, "toilet"],
+  [/\bgas stations?\b/gi, "petrol station"],
+  [/\bparking lots?\b/gi, "car park"],
+  [/\bcell ?phones?\b/gi, "mobile"],
+  [/\bdrugstores?\b/gi, "chemist"],
+  [/\bfaucets?\b/gi, "tap"],
+  [/\bdiapers?\b/gi, "nappy"],
+  [/\bflashlights?\b/gi, "torch"],
+  [/\bcash registers?\b/gi, "till"],
   [/\bcenters?\b/gi, "centre"],
   [/\btheaters?\b/gi, "theatre"],
   [/\bmeters?\b/gi, "metre"],

@@ -1,0 +1,177 @@
+[
+ {
+  "lesson": "de-a1-supermarkt",
+  "sceneEn": "You are shopping in a supermarket but you cannot find a few of the things you are after. Say what you need, ask where the products are, and ask about something they do not have.",
+  "partnerEn": "a helpful but hurried shop assistant",
+  "openingEn": "Good afternoon! Are you looking for something?",
+  "goalEn": "You have found out where the products you wanted are, and been offered another solution for the one they did not have."
+ },
+ {
+  "lesson": "de-a1-mengen",
+  "sceneEn": "You are shopping at a greengrocer's. Say what you want along with the quantity, add a few more things, and ask the price.",
+  "partnerEn": "a chatty greengrocer who is proud of the stall",
+  "openingEn": "The tomatoes are fresh today. How much would you like?",
+  "goalEn": "What you asked for has been weighed out by the quantity you gave, and the total has been said."
+ },
+ {
+  "lesson": "de-a1-kochen",
+  "sceneEn": "You are making dinner with a friend in their kitchen. Talk about what you will make: say what you are chopping, ask them to do something, and ask about a missing ingredient.",
+  "partnerEn": "a messy friend who talks a lot in the kitchen",
+  "openingEn": "I've got tomatoes and onions. What are we cooking today?",
+  "goalEn": "Who is doing what has been shared out, and a solution has been found for the missing ingredient."
+ },
+ {
+  "lesson": "de-a1-allergie",
+  "sceneEn": "You are queueing in the staff canteen and today's dish may contain something you cannot eat. Say what you do not eat, explain your allergy, and ask whether there is an option without that ingredient.",
+  "partnerEn": "a patient cook who likes describing the food",
+  "openingEn": "Today there's soup and sausage. What would you like?",
+  "goalEn": "You have said what you cannot eat and an option that suits you has been found."
+ },
+ {
+  "lesson": "de-a1-einladung-essen",
+  "sceneEn": "You are invited to dinner at a German friend's home and you have just sat down at the table. Accept or politely decline what you are offered, praise the food, and offer your host something too.",
+  "partnerEn": "an insistent host who will not let a guest leave hungry",
+  "openingEn": "Welcome! Would you like some soup first?",
+  "goalEn": "What was offered has been discussed, the food has been praised and thanks have been given as you leave the table."
+ },
+ {
+  "lesson": "de-a1-mein-tag",
+  "sceneEn": "You are new in your job and chatting with a colleague on your lunch break. Describe how your day goes: what time it starts, when you work, what you do in the evening.",
+  "partnerEn": "a friendly colleague who enjoys a chat",
+  "openingEn": "Tell me, when does your day start? Do you get up early?",
+  "goalEn": "The start of your day, your working hours and your evening have been described, and your colleague has said something about their own day."
+ },
+ {
+  "lesson": "de-a1-uhrzeit",
+  "sceneEn": "Someone asks you the time while you are waiting at a stop. Say the time, then ask them what time the train comes. Try to use the half hours.",
+  "partnerEn": "a polite passenger who is in a hurry",
+  "openingEn": "Excuse me, what time is it, please?",
+  "goalEn": "The time has been given and you have found out when the train arrives."
+ },
+ {
+  "lesson": "de-a1-trennbar",
+  "sceneEn": "You are planning tomorrow with a friend. Say what time you will get up and when you will go shopping, and invite them to come with you. Use separable verbs.",
+  "partnerEn": "a friend who leaves everything to the last minute",
+  "openingEn": "Hello! Are you getting up early tomorrow or having a lie-in?",
+  "goalEn": "What time you are getting up and when you are going shopping have been settled, and your friend has said whether they are coming."
+ },
+ {
+  "lesson": "de-a1-wochentage",
+  "sceneEn": "You are signing up at a gym and discussing with the assistant which day and time you will come. Give the days and times with the right prepositions.",
+  "partnerEn": "a gym assistant who is trying to be helpful",
+  "openingEn": "Good afternoon! Which days would you like to come?",
+  "goalEn": "Which day and time you are coming has been agreed and the assistant has noted it down."
+ },
+ {
+  "lesson": "de-a1-v2",
+  "sceneEn": "You are at a language course and your teacher is asking when you study. Begin your answers with 'today', 'tomorrow' and 'at the weekend' — that is exactly where the rule has to be used.",
+  "partnerEn": "a curious and encouraging language teacher",
+  "openingEn": "Good to have you here! When do you most like studying German?",
+  "goalEn": "You have said what you will do today, tomorrow and at the weekend, and the teacher has approved your study plan."
+ },
+ {
+  "lesson": "de-a1-morgenroutine",
+  "sceneEn": "Your flatmate is asking why you leave so late in the mornings. Describe your morning routine step by step: what you do first, then what, and after that.",
+  "partnerEn": "a flatmate who gets up very early",
+  "openingEn": "You're late again! What takes you so long in the mornings?",
+  "goalEn": "Your morning routine has been described from start to finish and the reason you leave late has been found."
+ },
+ {
+  "lesson": "de-a1-arbeitstag",
+  "sceneEn": "A colleague who has just joined the office is asking about the working hours. Say what time work starts, what time it ends and when you take your breaks.",
+  "partnerEn": "a slightly shy colleague who has just started",
+  "openingEn": "Sorry, when does work actually start here?",
+  "goalEn": "Your working hours and your breaks have been described, and your new colleague has told you their own hours."
+ },
+ {
+  "lesson": "de-a1-feierabend",
+  "sceneEn": "At the end of a tiring day at work a friend is asking you out for the evening. Say what you would rather do and explain your reasons.",
+  "partnerEn": "an energetic friend, determined to get you out of the house",
+  "openingEn": "Finally, home time! Are you coming along or staying in?",
+  "goalEn": "You have decided what to do in the evening, or politely let it go."
+ },
+ {
+  "lesson": "de-a1-wochenende-plan",
+  "sceneEn": "It is Friday evening and you are talking about the weekend with a friend. Say what you are doing on each day, and use the word for 'maybe' for the plans that are not fixed.",
+  "partnerEn": "a friend who loves making weekend plans",
+  "openingEn": "Have you got any plans for the weekend yet?",
+  "goalEn": "Your Saturday and Sunday plans have been given and you have decided to do one thing together."
+ },
+ {
+  "lesson": "de-a1-zeit-haben",
+  "sceneEn": "A friend is ringing you and wants to meet this week. Say which day and time suit you, and say no politely to a day that does not.",
+  "partnerEn": "a friend who is not pushy but wants to settle it soon",
+  "openingEn": "Hello! Have you got time for a coffee this week?",
+  "goalEn": "The day and time of the meeting have been fixed and the day that did not suit has been ruled out politely."
+ },
+ {
+  "lesson": "de-a1-kleidung",
+  "sceneEn": "You are in a clothes shop and the assistant has come over. Say what you are looking for, choose one of the things they show you, and ask where the till is at the end.",
+  "partnerEn": "a slightly chatty assistant who enjoys the job",
+  "openingEn": "Good afternoon! Are you looking for anything in particular?",
+  "goalEn": "The item you wanted has been found, one has been chosen and you know where the till is."
+ },
+ {
+  "lesson": "de-a1-groesse",
+  "sceneEn": "You want to try on a jacket you like in a shop. Say your size, ask to try it on, ask where the fitting room is, and say at the end whether it fits.",
+  "partnerEn": "a hurried sales assistant who still tries to help",
+  "openingEn": "The jacket has only just come in. What size are you?",
+  "goalEn": "Your size has been found, the jacket has been tried on in the fitting room and you have said whether it fits."
+ },
+ {
+  "lesson": "de-a1-farben",
+  "sceneEn": "In a small boutique you like the shirt in the window but you want it in another colour. Ask about the colours, say which one you like, and reply to the colour the assistant suggests.",
+  "partnerEn": "a boutique owner with strong opinions about colour",
+  "openingEn": "This shirt comes in four colours. Which colour are you looking for?",
+  "goalEn": "You have asked for the colour you wanted and settled whether you are buying it."
+ },
+ {
+  "lesson": "de-a1-preis",
+  "sceneEn": "You want to know the price of a pair of shoes you like in a shoe shop. Ask the price, say you find them expensive, and find out whether anything else is in the sale.",
+  "partnerEn": "a persuasive assistant who knows every offer by heart",
+  "openingEn": "These shoes are on special offer at the moment. Would you like to try them on?",
+  "goalEn": "The price has been found out and another option in the sale has been discussed."
+ },
+ {
+  "lesson": "de-a1-gefallen",
+  "sceneEn": "You are out shopping with a friend who cannot decide between two jackets. Say which one you like, explain why you find it nicer, and ask for their opinion too.",
+  "partnerEn": "an indecisive but jokey friend",
+  "openingEn": "I just can't decide. What do you think of the black jacket?",
+  "goalEn": "The two jackets have been compared and your friend has decided which one to buy."
+ },
+ {
+  "lesson": "de-a1-umtausch",
+  "sceneEn": "You are at the returns desk of a shop to exchange the trousers you bought yesterday. Say what you want, explain why, answer the question about the receipt, and discuss what you will take instead.",
+  "partnerEn": "a till assistant who sticks to the rules but tries to help",
+  "openingEn": "Good afternoon! What can I do for you?",
+  "goalEn": "It is clear whether the exchange can be made and what you are taking instead has been settled."
+ },
+ {
+  "lesson": "de-a1-geschenk",
+  "sceneEn": "You are in a gift shop looking for a present for your mother. Say who it is for, reply to the assistant's suggestions, make one of your own, and ask for it to be gift-wrapped at the end.",
+  "partnerEn": "a friendly assistant who loves making suggestions",
+  "openingEn": "Welcome! Are you looking for a present for someone?",
+  "goalEn": "The present has been chosen and you have asked for it to be gift-wrapped."
+ },
+ {
+  "lesson": "de-a1-markt",
+  "sceneEn": "You are standing in front of a fruit stall at the Saturday market. Ask the price, say how much you want, adjust the quantity, and find out the total at the end.",
+  "partnerEn": "a loud, jokey stallholder",
+  "openingEn": "All fresh from this morning! What can I get you?",
+  "goalEn": "What you asked for has been weighed out by the quantity you gave and the amount to pay has been said."
+ },
+ {
+  "lesson": "de-a1-apotheke-kauf",
+  "sceneEn": "You are in a health and beauty shop with a few things on your list. Say what you need, ask where a product you cannot find is, and ask a member of staff for something you cannot see on the shelf.",
+  "partnerEn": "a calm shop worker who never leaves the shelves",
+  "openingEn": "You must be looking for something. Can I help you?",
+  "goalEn": "The things on your list have been found, or an alternative has been suggested."
+ },
+ {
+  "lesson": "de-a1-online",
+  "sceneEn": "The order you placed online still has not arrived and you have rung customer service. Say what you ordered, ask how long the delivery should take, and find out where the parcel is.",
+  "partnerEn": "a calm agent who is used to apologising",
+  "openingEn": "Customer service, good afternoon! How can I help you?",
+  "goalEn": "You have found out where your order is and been told when it will arrive."
+ }
+]
