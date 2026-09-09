@@ -1,0 +1,177 @@
+[
+ {
+  "lesson": "de-a1-weg",
+  "sceneEn": "You are out in the street in a strange city and looking for the railway station. Ask a passer-by politely, listen to the directions, and ask again about the part you did not follow.",
+  "partnerEn": "an elderly man in no hurry who enjoys giving directions",
+  "openingEn": "You look lost. Can I help you?",
+  "goalEn": "The way to the station has been described and the part you missed has been repeated until it was clear."
+ },
+ {
+  "lesson": "de-a1-bus-bahn",
+  "sceneEn": "You are at a bus stop and you want to get to the station. Ask the person beside you which line goes there, find out how many stops it is, and say how you will get there.",
+  "partnerEn": "a helpful passenger who takes the same line every day",
+  "openingEn": "Are you waiting for the number three as well?",
+  "goalEn": "You have found out which line goes there and after how many stops you get off."
+ },
+ {
+  "lesson": "de-a1-ticket",
+  "sceneEn": "You are at the ticket office of the railway station and you want to go to Berlin today. Ask for the ticket, say whether it is a return, find out the price and ask about the platform.",
+  "partnerEn": "a fast-talking but polite ticket clerk",
+  "openingEn": "Next, please! Where would you like to travel to?",
+  "goalEn": "The ticket has been bought, the price has been given and you know the platform number."
+ },
+ {
+  "lesson": "de-a1-verspaetung",
+  "sceneEn": "You are waiting on the platform and the train still has not come. Ask the passenger beside you what is going on, talk about how long the delay is, and say what you are going to do.",
+  "partnerEn": "a mildly sarcastic passenger who is used to delays",
+  "openingEn": "Ten minutes late again. Are you waiting for the train to Cologne too?",
+  "goalEn": "You have found out how long the delay is and settled whether you are going to wait."
+ },
+ {
+  "lesson": "de-a1-taxi",
+  "sceneEn": "You have got into a taxi and you need to go to the airport. Say where you are going, ask how long it will take, make a little conversation on the way, and settle the payment as you get out.",
+  "partnerEn": "a chatty taxi driver who knows the city inside out",
+  "openingEn": "Good evening! Where can I take you?",
+  "goalEn": "The destination and the journey time have been discussed and the fare has been paid on arrival."
+ },
+ {
+  "lesson": "de-a1-stadtplan",
+  "sceneEn": "You are at the hotel reception with a map of the city in your hand. Say where you want to go, ask whether it is far, find out how many minutes it takes on foot, and get the location described.",
+  "partnerEn": "a receptionist who likes marking the map with a pen",
+  "openingEn": "Good morning! Where would you like to go today?",
+  "goalEn": "How far away your destination is and how to get there have both been made clear."
+ },
+ {
+  "lesson": "de-a1-sehenswuerdig",
+  "sceneEn": "You are at the city tourist office and you have a free day tomorrow. Ask what there is to see, give your opinion on the suggestions, and explain your own choice with your reasons.",
+  "partnerEn": "an enthusiastic tourist officer who loves the city",
+  "openingEn": "Welcome to our city! How long are you staying here?",
+  "goalEn": "A plan for tomorrow has been chosen and you have settled where to start."
+ },
+ {
+  "lesson": "de-a1-verlaufen",
+  "sceneEn": "You have realised you are lost and gone into a shop to ask for help. Explain your situation, say where you want to go, listen to the directions and repeat them to be sure.",
+  "partnerEn": "a patient shopkeeper who gives directions calmly",
+  "openingEn": "You look puzzled. Are you looking for a particular street?",
+  "goalEn": "The right way has been described and you have confirmed you understood it by repeating it back."
+ },
+ {
+  "lesson": "de-a1-fahrrad",
+  "sceneEn": "You are in a bike hire shop and you want to see the city by bike. Ask for a bike, say how many hours it is for, ask the price and find out about the cycle path.",
+  "partnerEn": "a shop owner who loves the bikes like their own children",
+  "openingEn": "Hello! Would you like to hire a bike for today?",
+  "goalEn": "How many hours the bike is for and what it costs have been settled, and the cycle path has been described."
+ },
+ {
+  "lesson": "de-a1-bahnhof-info",
+  "sceneEn": "You are at the information desk of the station and you want to go to Hamburg today. Ask when the train leaves, find out whether you have to change, ask about the platform and talk about how long the journey takes.",
+  "partnerEn": "an information clerk who loves the job and has an answer to everything",
+  "openingEn": "Good afternoon! Do you need any information?",
+  "goalEn": "The departure time, the platform and whether you have to change have all been found out."
+ },
+ {
+  "lesson": "de-a1-wohnung-zeigen",
+  "sceneEn": "You have moved into a new place and a friend is asking about it. Say how many rooms it has, describe what sort of place it is, and say what there is.",
+  "partnerEn": "a friend who cannot wait to see your new place",
+  "openingEn": "So, how's the new flat? How many rooms has it got?",
+  "goalEn": "How many rooms the flat has and what sort of place it is have been described, and your friend has promised to come and see it."
+ },
+ {
+  "lesson": "de-a1-zimmer",
+  "sceneEn": "A friend has come to your home for the first time and you are showing them round. Point out the rooms one by one and give each name with the right article.",
+  "partnerEn": "a curious friend who likes everything",
+  "openingEn": "Wow, it's lovely here! What sort of room is this?",
+  "goalEn": "All the rooms have been shown and your friend has understood the layout of the flat."
+ },
+ {
+  "lesson": "de-a1-moebel",
+  "sceneEn": "A friend is arranging the furniture in their new flat and asking for your opinion. Say where each piece should go, and choose the right position verbs.",
+  "partnerEn": "an indecisive but entertaining friend",
+  "openingEn": "Tell me, where shall I put the sofa? In the corner?",
+  "goalEn": "It has been settled where every piece of furniture is going."
+ },
+ {
+  "lesson": "de-a1-nachbarn",
+  "sceneEn": "You have just moved in and knocked on your neighbour's door. Introduce yourself, say you have just moved in, and have a short conversation.",
+  "partnerEn": "a warm neighbour who has lived in the building for years",
+  "openingEn": "Good afternoon! You must be the new neighbours, aren't you?",
+  "goalEn": "You have introduced yourselves to each other and closed your first short chat with a goodbye."
+ },
+ {
+  "lesson": "de-a1-hausordnung",
+  "sceneEn": "You have just moved into the building and the manager is going through the house rules with you. Ask about anything you do not follow and repeat the rules in your own words.",
+  "partnerEn": "a building manager who cares about the rules but is helpful",
+  "openingEn": "Welcome to the building! Do you know the house rules yet?",
+  "goalEn": "All the rules have been understood and confirmed by you repeating them back."
+ },
+ {
+  "lesson": "de-a1-miete-zahlen",
+  "sceneEn": "You have gone to view a flat and you are talking to the landlord. Ask about the rent, find out whether the service charge is included, and make sure you have the price right.",
+  "partnerEn": "a straight-talking landlord who knows the business",
+  "openingEn": "Well, how do you like the flat?",
+  "goalEn": "The rent, the service charge and the total have been made clear, and you have said whether you will think it over."
+ },
+ {
+  "lesson": "de-a1-putzen",
+  "sceneEn": "You are dividing up the weekend cleaning with your flatmate. Say which job you are taking on and say what you want them to do.",
+  "partnerEn": "a flatmate who is not keen on housework",
+  "openingEn": "So, who's tidying the kitchen today?",
+  "goalEn": "The cleaning jobs have been shared out and it is settled who does what and when."
+ },
+ {
+  "lesson": "de-a1-umzug",
+  "sceneEn": "It is moving day and a friend has come to help. Say what you are carrying where, ask them for help, and warn them about the heavy things.",
+  "partnerEn": "a friend who rushes in to help but is a bit hasty",
+  "openingEn": "Right, I'm here! What shall I carry first?",
+  "goalEn": "It has been settled what goes where and help has been arranged for the heavy things."
+ },
+ {
+  "lesson": "de-a1-garten",
+  "sceneEn": "Your neighbour has seen you on the balcony and started chatting. Say what you have on your balcony, talk about your flowers, and say whether you like sitting out there.",
+  "partnerEn": "a neighbour who is keen on growing flowers",
+  "openingEn": "Your flowers look really lovely! Do you water them every day?",
+  "goalEn": "Everything on your balcony has been described and you have promised your neighbour a coffee."
+ },
+ {
+  "lesson": "de-a1-kaputt",
+  "sceneEn": "Something at home has broken and you have rung the caretaker. Say what is broken, say how long it has been like that, and ask them to come.",
+  "partnerEn": "a caretaker who is rushed off their feet but finds a solution",
+  "openingEn": "Caretaker Berger speaking, good afternoon. What can I do for you?",
+  "goalEn": "The fault has been described and it has been settled when the caretaker is coming."
+ },
+ {
+  "lesson": "de-a1-hobbys",
+  "sceneEn": "You are on a break at a language course and have started chatting with the person next to you. Talk about your hobbies, say what you do in your free time, and ask about theirs.",
+  "partnerEn": "a curious fellow student who asks a lot of questions",
+  "openingEn": "A break at last! What do you actually do in your free time?",
+  "goalEn": "You have both talked about your hobbies and found a shared interest."
+ },
+ {
+  "lesson": "de-a1-koennen",
+  "sceneEn": "You have come to sign up for a sports course and the instructor is asking what you can do. Say what you can do, say what you are not good at, and ask them a question too.",
+  "partnerEn": "an energetic sports instructor who likes to encourage",
+  "openingEn": "Glad you're here! Can you swim already?",
+  "goalEn": "What you can do has been established and a course time that suits you has been suggested."
+ },
+ {
+  "lesson": "de-a1-sport",
+  "sceneEn": "You have come to look round a gym and the person at the desk is asking questions. Say what sort of sport you do and how often, and ask about the gym's opening hours.",
+  "partnerEn": "a gym adviser who is trying to sell a membership but is sincere",
+  "openingEn": "Welcome! Are you doing any sport regularly at the moment?",
+  "goalEn": "What sport you do has been discussed and the opening hours and the membership have been made clear."
+ },
+ {
+  "lesson": "de-a1-musik",
+  "sceneEn": "You have started chatting with a stranger on the way out of a concert. Say what you thought of the concert, talk about the music you like, and ask about their taste.",
+  "partnerEn": "an eager music fan who goes to every concert",
+  "openingEn": "That was a great concert, wasn't it? Do you often listen to music like that?",
+  "goalEn": "You have shared your thoughts on the concert and compared your taste in music."
+ },
+ {
+  "lesson": "de-a1-kino",
+  "sceneEn": "You are ringing a friend to invite them to the cinema this evening. Make your suggestion, talk about which film you will see, and settle the time and the meeting place.",
+  "partnerEn": "an eager friend who is up for any film",
+  "openingEn": "Hey, good to hear from you! What's up?",
+  "goalEn": "The film, the time and the meeting place have all been fixed."
+ }
+]
