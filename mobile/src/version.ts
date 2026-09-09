@@ -6,5 +6,5 @@
  *                    ↔ ios/Lernomi.xcodeproj CURRENT_PROJECT_VERSION
  * Native modül (device-info) eklememek için sabit.
  */
-export const APP_VERSION = "1.0.11";
-export const APP_VERSION_CODE = 13;
+export const APP_VERSION = "1.0.0";
+export const APP_VERSION_CODE = 1;
