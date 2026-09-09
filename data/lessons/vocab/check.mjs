@@ -32,10 +32,19 @@ if (existsSync(`${DIR}/out`))
       if (written.has(key)) H("aynı madde iki pakette");
       const en = String(r.en ?? "").trim();
       if (!en) H("karşılık boş");
-      // Almanca başlığın aynısı bir karşılık değil, kopyadır. gsw hattında
-      // %26,6'sı böyleydi ve kart hiçbir şey öğretmiyordu; burada baştan
-      // engelleniyor.
-      else if (en.toLowerCase() === r.de.toLowerCase()) H("karşılık Almancanın aynısı");
+      /*
+        Almanca başlığın aynısı olan karşılık: gsw hattında bu bir kusurdu
+        (başlıkların %26,6'sı Almanca kaynağının aynısıydı ve kart hiçbir şey
+        öğretmiyordu) ama BURADA DEĞİL — HATA olarak yazmıştım, kapı ilk
+        gerçek örnekte «regional» → "regional"ı reddetti ve yanlış reddetti.
+
+        Fark öğrencide: gsw'de öğrenci Almancayı zaten biliyordu, burada
+        bilmiyor. Almanca `regional` ile İngilizce "regional"ın aynı olması
+        öğretilecek bir bilgi — akraba kelime. Kural uyarıya indi; gerçek
+        kopya (kelimenin hiç çevrilmemiş olması) yine göze çarpar ama doğru
+        bir karşılığı engellemez.
+      */
+      else if (en.toLowerCase() === r.de.toLowerCase()) U("karşılık Almancanın aynısı (akraba kelime olabilir)");
       else if (/^[a-z]$/i.test(en)) H(`karşılık tek harf: «${en}»`);
       else if (en.length > 60) U(`karşılık uzun (${en.length})`);
       written.set(key, en);
