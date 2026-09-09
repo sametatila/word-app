@@ -160,22 +160,21 @@ export function PaywallScreen() {
     );
   }
 
-  // Mağaza bağlı değil ya da paket gelmedi: satın alma vaadi yok, dürüst durum.
-  if (!live || (pkgs && pkgs.length === 0)) {
-    return (
-      <View style={{ flex: 1, backgroundColor: colors.bg }}>
-        {close}
-        <View style={{ flex: 1, alignItems: "center", justifyContent: "center", padding: spacing.xl, gap: spacing.md }}>
-          <View style={{ width: 72, height: 72, borderRadius: radii.xl, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
-            <CrownIcon color={colors.textFaint} size={36} />
-          </View>
-          <Text variant="h2" style={{ textAlign: "center" }}>{t("paywall.premium_isn_t_on_sale_right_now")}</Text>
-          <Text variant="body" color={colors.textMuted} style={{ textAlign: "center", lineHeight: 22 }}>{t("paywall.all_features_are_free_to_use_for")}</Text>
-        </View>
-      </View>
-    );
-  }
-
+  /*
+   * MAĞAZA KAPALIYKEN DE TAM SAYFA.
+   *
+   * Burada eskiden erken bir dönüş vardı: "Premium satışta değil · tüm
+   * özellikler şimdilik ücretsiz". İki sorunu vardı. Birincisi YANLIŞTI —
+   * ekran kapalı yürüyüş ücretsiz katmanda kapalı (`free.pocketWalksPerDay: 0`),
+   * yani uygulama her şeyin ücretsiz olduğunu söylerken sunucu o yolu
+   * reddediyordu. İkincisi çıkmaz sokaktı: promo kodu kutusu da davet kutusu da
+   * o dalın arkasında kalıyordu, oysa ikisi mağazadan BAĞIMSIZ çalışıyor ve
+   * bugün premium olmanın tek yolu onlar.
+   *
+   * Artık sayfa her zaman tam: kapsam, sınırlar, davet ve promo kodu görünüyor.
+   * Koşullu olan yalnız SATIN ALMA bloğu — mağaza bağlanınca planlar ve düğme
+   * kendiliğinden geliyor, başka hiçbir yere dokunmak gerekmiyor.
+   */
   return (
     <View style={{ flex: 1, backgroundColor: colors.bg }}>
       {close}
@@ -227,7 +226,12 @@ export function PaywallScreen() {
           </Text>
         </View>
 
-        {pkgs === null ? (
+        {!live ? (
+          <View style={{ borderRadius: radii.lg, backgroundColor: colors.surface2, padding: spacing.lg, gap: 6 }}>
+            <Text variant="bodyStrong">{t("paywall.store_not_open")}</Text>
+            <Text variant="caption" color={colors.textMuted} style={{ lineHeight: 19 }}>{t("paywall.store_not_open_sub")}</Text>
+          </View>
+        ) : pkgs === null ? (
           // Plan satırları gelene dek aynı boyda iskelet: liste dolunca kaydırma
           // konumu ve alttaki düğme yerinden oynamıyor.
           <View style={{ gap: spacing.md }}>
@@ -267,6 +271,15 @@ export function PaywallScreen() {
         {status?.referral ? <ReferralBox colors={colors} referral={status.referral} /> : null}
       </ScrollView>
 
+      {!live ? (
+        // Mağaza kapalı: satın alma çubuğu yok ama şartlar bağlantısı kalıyor —
+        // sayfanın hukuki metne açılan tek kapısı orası.
+        <View style={{ paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.md, paddingTop: spacing.sm, alignItems: "center" }}>
+          <PressableScale onPress={() => openLegal("terms")} hitSlop={6} accessibilityRole="link" style={{ paddingVertical: spacing.sm }}>
+            <Text variant="caption" color={colors.textMuted} style={{ textDecorationLine: "underline" }}>{t("auth.terms_of_use")}</Text>
+          </PressableScale>
+        </View>
+      ) : (
       <View style={{ paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.md, paddingTop: spacing.sm }}>
         {error ? <Text variant="caption" color={colors.danger} style={{ textAlign: "center", marginBottom: spacing.sm }}>{error}</Text> : null}
         <PressableScale onPress={start} disabled={busy || !pkg} accessibilityRole="button" accessibilityLabel={trial ? t("paywall.start_free_trial") : t("paywall.subscribe")} style={[{ borderRadius: radii.lg, backgroundColor: pkg ? colors.primary : colors.surface2, paddingVertical: 17, alignItems: "center" }, pkg ? softShadow(colors.primary, 12) : {}]}>
@@ -290,6 +303,7 @@ export function PaywallScreen() {
           </PressableScale>
         </View>
       </View>
+      )}
     </View>
   );
 }

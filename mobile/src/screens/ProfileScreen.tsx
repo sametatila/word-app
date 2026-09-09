@@ -16,7 +16,6 @@ import { useAuth } from "../lib/AuthContext";
 import { shareInvite } from "../lib/share";
 import { useMe, formatXp } from "../lib/useMe";
 import { usePremiumStatus } from "../lib/premium";
-import { billingAvailable } from "../lib/billing";
 import { useTheme, spacing, radii, softShadow, type Palette } from "../theme";
 import { ConfirmDialog } from "../ui/ConfirmDialog";
 import { useLayout } from "../lib/useLayout";
@@ -114,8 +113,21 @@ export function ProfileScreen() {
           </View>
         )}
 
-        {/* premium: yalnız mağaza entegrasyonu canlıyken (satın alınamayan şey vaat edilmez) */}
-        {!billingAvailable() ? null : premium ? (
+        {/*
+          Premium bandı MAĞAZADAN BAĞIMSIZ görünüyor.
+
+          Eskiden `billingAvailable()` arkasındaydı ve gerekçesi "satın
+          alınamayan şey vaat edilmez"di. Doğru bir kural ama yanlış yere
+          uygulanmıştı: bant satın almaya değil, PAYWALL SAYFASINA götürüyor ve o
+          sayfada mağazadan bağımsız çalışan iki şey var — promo kodu ve davet
+          ödülü. İkisi de bugün premium olmanın gerçek yolu. Bant gizliyken o
+          yollara hiçbir yerden ulaşılamıyordu; kullanıcı kazandığı ödülü
+          bozduramıyordu.
+
+          Vaat kuralı yerinde duruyor: satın alma DÜĞMESİ hâlâ yalnız mağaza
+          canlıyken çiziliyor (PaywallScreen).
+        */}
+        {premium ? (
           <View style={{ borderRadius: radii.xl, backgroundColor: colors.successSoft, padding: spacing.lg, flexDirection: "row", alignItems: "center", gap: spacing.md, marginBottom: spacing.lg }}>
             <View style={{ width: 46, height: 46, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.success }}>
               <CrownIcon color="#fff" size={26} />
