@@ -5,11 +5,11 @@
  */
 import { and, desc, eq, inArray, isNotNull, sql } from "drizzle-orm";
 import { db, pool } from "./test-db";
-import { dailyStats, profiles, reviews, sessionState, userLessons, userSkills, userWords, words } from "../src/lib/db/schema";
+import { dailyStats, leagueMembers, profiles, reviews, sessionState, userLessons, userSkills, userWords, words } from "../src/lib/db/schema";
+import { joinLeague, leagueBoard } from "../src/lib/social/leagues";
 import {
   buildChallenge,
   buildSession,
-  getLeaderboard,
   weekStart,
   clearSessionState,
   loadSession,
@@ -129,6 +129,9 @@ async function reset() {
   await db.delete(reviews).where(eq(reviews.userId, USER));
   await db.delete(userWords).where(eq(userWords.userId, USER));
   await db.delete(dailyStats).where(eq(dailyStats.userId, USER));
+  // Lig üyeliği de kalıcı: temizlenmezse ikinci koşu önceki haftanın grubuna
+  // ve tier'ına düşer, "terfi/düşme yok" ölçümü sessizce başka bir şey ölçer.
+  await db.delete(leagueMembers).where(eq(leagueMembers.userId, USER));
   await db.delete(sessionState).where(eq(sessionState.userId, USER));
   await db.delete(userSkills).where(eq(userSkills.userId, USER));
   await db.delete(userLessons).where(eq(userLessons.userId, USER));
@@ -1331,7 +1334,7 @@ async function main() {
   });
   check("kazanılan bahis puana ekleniyor", won.wagerXp === 50 && won.xpGained > 50);
 
-  console.log("\n16) Haftalık sıralama — pazartesi sıfırlanır");
+  console.log("\n16) Haftalık lig — pazartesi sıfırlanır");
   check("pazartesi kendi haftasının başı", weekStart("2025-04-07") === "2025-04-07");
   check("salı bir gün geriye bakıyor", weekStart("2025-04-08") === "2025-04-07");
   check("pazar aynı haftada kalıyor", weekStart("2025-04-13") === "2025-04-07");
@@ -1358,16 +1361,24 @@ async function main() {
     seconds: 0,
   });
 
-  const board = await getLeaderboard(USER, sunday);
+  // Genel sıralamanın yerini haftalık lig aldı: tablo artık herkesi değil,
+  // aynı gruba düşenleri gösteriyor. Haftalık kural aynı kaldığı için ölçüm de
+  // aynı — değişen tek şey rakibin gruba KATILMIŞ olması gerektiği. Üretimde
+  // katılım XP kazanılınca oluyor; burada günlük satırlar doğrudan yazıldığı
+  // için elle çağrılıyor.
+  await joinLeague("e2e-rival", sunday);
+
+  const board = await leagueBoard(USER, sunday);
   const mine = board.rows.find((r) => r.isMe);
-  check("hafta başı pazartesi", board.start === monday, `(${board.start})`);
+  check("hafta başı pazartesi", board.weekStart === monday, `(${board.weekStart})`);
   check("pazar günü son gün", board.daysLeft === 1, `(${board.daysLeft})`);
   check("yalnızca bu haftanın XP'si sayılıyor", mine?.xp === 200, `(${mine?.xp})`);
   check("önceki haftanın 9.000 XP'si taşınmıyor", (mine?.xp ?? 0) < 9000);
   check("rakip önde sıralanıyor", board.rows[0]?.userId === "e2e-rival");
   check("kendi satırı her hâlükârda var", Boolean(mine));
+  check("iki kişilik grupta terfi/düşme yok", board.promote === 0 && board.demote === 0);
 
-  const emptyWeek = await getLeaderboard(USER, "2025-05-05");
+  const emptyWeek = await leagueBoard(USER, "2025-05-05");
   check(
     "hiç çalışılmamış haftada kendi satırı 1. sırada",
     emptyWeek.rows.length === 1 && emptyWeek.rows[0].isMe && emptyWeek.rows[0].xp === 0,
