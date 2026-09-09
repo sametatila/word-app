@@ -49,12 +49,37 @@ if (existsSync(`${DIR}out`))
       else if (!/[.!?]$/.test(s)) H("özet noktalama ile bitmiyor");
       else if (s.length < 20) H(`özet çok kısa (${s.length})`);
       for (const h of usSpelling(`${t} ${s}`)) U(`Amerikan yazımı ${h}`);
-      written.set(r.lesson, true);
+      written.set(r.lesson, t);
     }
   }
 
 for (const lesson of written.keys())
   if (!german.has(lesson)) errors.push(`  [pakete ait değil] ${lesson}`);
+
+/*
+  Aynı İngilizce başlığın iki derse düşmesi tek başına kusur DEĞİL: kaynakta
+  7 Türkçe başlık 14 derste tekrar ediyor ("Kuaförde" hem A2'de hem B1'de,
+  "Havalimanında", "Emeklilik"…). Orada tekrar bilgidir — aynı konu daha
+  ileri seviyede yeniden ele alınıyor ve İngilizcesinin de tekrar etmesi
+  gerekir.
+
+  Kusur, Türkçeleri FARKLIYKEN İngilizcelerinin aynı olması: iki ayrı konu
+  tek ada düşmüş demektir. weil/denn'de kaçınılan şeyin aynısı — ayıran
+  bilgi başlıkta görünmez oluyor.
+*/
+const byTitle = new Map();
+for (const [lesson, t] of written) {
+  const k = t.toLowerCase();
+  (byTitle.get(k) ?? byTitle.set(k, []).get(k)).push(lesson);
+}
+for (const group of byTitle.values()) {
+  if (group.length < 2) continue;
+  const trs = new Set(group.map((l) => turkish.get(l)));
+  if (trs.size > 1)
+    warnings.push(
+      `  [aynı başlık] ${group.join(", ")} — «${written.get(group[0])}» ama Türkçeleri ayrı: ${[...trs].join(" / ")}`,
+    );
+}
 
 let coverage = null;
 if (ARG === "all") {
