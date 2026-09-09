@@ -677,6 +677,25 @@ export async function loadSession(
 ): Promise<SessionPayload> {
   const profile = await ensureProfile(userId);
 
+  /*
+    TEK OYUNLU PRATİK DURUM TUTMAZ — yürüyüş turundaki kararın aynısı
+    (bkz. buildWalk).
+
+    Pratik ile günün karışık turu `session_state`'in AYNI satırını
+    paylaşıyordu (satır kullanıcı başına tek). Sonucu iki yönlü bir sızıntı:
+    pratik başlayınca karışık turun yarım kalan kuyruğu siliniyor, ve
+    karışık tur sonra açıldığında pratiğin kuyruğunu "kaldığın yerden"
+    diye devralıyordu — Öğren'deki günlük tur kartı, kullanıcının bir kez
+    seçtiği tek oyunda takılı kalıyordu.
+
+    Pratik artık her seferinde taze kuruluyor ve hiçbir şey yazmıyor:
+    öğrenme cevaplarla gidiyor (`/api/answers` → SRS/XP), turun nerede
+    kaldığı yalnız istemcide duruyor. Yarım bırakılan bir pratik geri
+    getirilmiyor; mobilde de kural bu (`GameScreen`: pratik `fresh`
+    başlar, `resume` okunmaz).
+  */
+  if (only) return buildSession(userId, today, extra, false, only, skip);
+
   // "Yeni kelimelerle devam et" bilerek yeni bir tur ister; kayıtlıyı ezer.
   if (!extra) {
     const [saved] = await db
@@ -702,21 +721,23 @@ export async function loadSession(
         return true;
       });
     /**
-     * Kayıtlı tur, istenen oyun moduna ait mi?
+     * Kayıtlı tur gerçekten KARIŞIK turun turu mu?
      *
-     * Tek oyun seçiliyken yarım kalmış KARIŞIK turu vermek seçimi görmezden
-     * gelmek olurdu; bu yüzden eskiden `only` verildiğinde kayıtlı tur her
-     * hâlükârda atılıyordu. Ama artık oyun seçimi kalıcı: kullanıcı seçtiği
-     * modda kalıyor ve uygulamayı her açışında tur baştan kurulsaydı, tek
-     * oyun modunda "kaldığın yerden devam" diye bir şey kalmazdı. Ayrım
-     * kayıtlı turun kendisinden okunuyor — turların hepsi o oyundansa o tur
-     * zaten bu seçimin turudur.
+     * Pratik artık bu satıra hiç dokunmuyor (yukarı), ama düzeltmeden önce
+     * dokunuyordu: sahada kalmış satırların bir kısmı tek oyunluk bir
+     * pratiğin kuyruğu ve karışık tur onu "kaldığın yerden" diye devralır.
+     * Turların hepsi tek oyundansa kayıt atılıyor ve tur baştan kuruluyor —
+     * eski satırlar böyle kendiliğinden temizleniyor.
+     *
+     * Alt sınır üç tur: karışık bir tur teoride tek oyuna düşebilir ama
+     * bu ancak bir-iki turluk kuyruklarda mümkün, orada da yeniden kurmanın
+     * bedeli yok.
      */
-    const matchesMode =
-      !only || (Array.isArray(rounds) && rounds.length > 0 && rounds.every((r) => r.game === only));
+    const leftoverPractice =
+      Array.isArray(rounds) && rounds.length > 2 && new Set(rounds.map((r) => r.game)).size === 1;
     if (
       saved &&
-      matchesMode &&
+      !leftoverPractice &&
       currentShape &&
       saved.day === today &&
       saved.course === profile.course &&
@@ -738,7 +759,7 @@ export async function loadSession(
     }
   }
 
-  const built = await buildSession(userId, today, extra, false, only, skip);
+  const built = await buildSession(userId, today, extra, false, undefined, skip);
   await db
     .insert(sessionState)
     .values({

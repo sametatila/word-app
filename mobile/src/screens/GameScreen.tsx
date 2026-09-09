@@ -66,8 +66,17 @@ export function GameScreen() {
   // ama kullanıcı yanlışlıkla çıkıp turu bölmesin.
   const back = useBackConfirm(phase === "play");
 
-  /** Şu ana kadarki ilerleme — cevaplarla gidip sunucu index'ini ilerletir. */
-  function progressNow(): SessionProgress {
+  /**
+   * Şu ana kadarki ilerleme — cevaplarla gidip sunucu index'ini ilerletir.
+   *
+   * PRATİKTE GÖNDERİLMİYOR. `session_state` satırı kullanıcı başına tek:
+   * pratikte gönderilen ilerleme karışık turun nerede kaldığını eziyor ve
+   * Günlük tur kaldığı yerden değil pratiğin bıraktığı yerden açılıyordu.
+   * Pratik zaten "kaldığın yerden" diye bir şey vaat etmiyor — cevaplar
+   * (SRS/XP) normal yolundan gidiyor.
+   */
+  function progressNow(): SessionProgress | undefined {
+    if (onlyGame) return undefined;
     return {
       index: idxRef.current,
       correct: resumeBase.current.correct + roundsRight.current,
@@ -79,8 +88,16 @@ export function GameScreen() {
   async function load() {
     setPhase("loading");
     try {
-      // Tek-oyun pratiği hep taze başlar; karışık Günlük tur normal yüklenir.
-      let p = await fetchSession(day.current, onlyGame ? { game: onlyGame, fresh: true } : undefined);
+      /*
+        Tek-oyun pratiği hep taze başlar; karışık Günlük tur normal yüklenir.
+
+        `fresh` KALDIRILDI: o bayrak isteğin önüne `DELETE /api/session`
+        koyuyordu, yani bir pratik açmak kullanıcının yarım kalan Günlük
+        turunu siliyordu. Pratik zaten sunucuda durum tutmuyor (bkz.
+        lib/session `loadSession`) — `game` verildiğinde her istek taze bir
+        kuyruk kuruyor ve kayıtlı satıra hiç dokunmuyor.
+      */
+      let p = await fetchSession(day.current, onlyGame ? { game: onlyGame } : undefined);
       let list = p.rounds ?? [];
       // Karışık tur açılırken slotta tek-oyun pratiği kalıntısı varsa (tüm turlar
       // tek tür — paylaşılan session_state) onu atla, taze karışık tur getir.

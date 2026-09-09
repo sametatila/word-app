@@ -61,31 +61,18 @@ type Status = "loading" | "ready" | "playing" | "stage" | "done" | "empty" | "er
 const STAGE_SIZE = 5;
 
 /**
- * Seçilen oyun modunun cihazdaki yeri.
+ * Tek oyunlu tur YALNIZ adresten gelir: `?game=…`.
  *
- * Seçim önce yalnızca bileşenin belleğindeydi ve uygulamayı kapatmak (ya da
- * başka bir sekmeye geçip dönmek) onu siliyordu: kullanıcı "Artikel Yarışı"
- * seçiyor, ertesi açılışta kendini karışık turda buluyordu. Oyun modu bir
- * tercih — kullanıcı değiştirene kadar geçerli kalmalı.
- */
-const GAME_MODE_KEY = "lernomi-game-mode";
-
-function readGameMode(): PlayableGame | null {
-  try {
-    const raw = localStorage.getItem(GAME_MODE_KEY);
-    return raw && (PLAYABLE_GAMES as readonly string[]).includes(raw)
-      ? (raw as PlayableGame)
-      : null;
-  } catch {
-    return null;
-  }
-}
-
-/**
- * `/learn?game=…` — zayıf nokta kartı ve plan kartının hedefli tur bağlantısı
- * (WP-51/60). Adres yalnız açılışta okunur; sonra cihaz tercihine yazılır ki
- * tur bitince "yeni tur" aynı oyunda kalsın. Bu parametre önceden hiç
- * okunmuyordu: bağlantı karışık tura düşüyordu.
+ * Seçim bir süre cihazda saklanıyordu ("oyun modu bir tercih, kullanıcı
+ * değiştirene kadar geçerli kalmalı") ve o karar Öğren merkezindeki günlük
+ * tur kartını bozuyordu: bir kez Pratik'ten Artikel Yarışı açan kullanıcı,
+ * sonra kartın kendisine bastığında yine artikel turuna düşüyor ve karışık
+ * tura dönmenin bir yolu kalmıyordu. Pratik bağımsız bir ekran (`/learn/practice`)
+ * olduğundan beri seçimi saklamanın bir karşılığı da yok — kullanıcı hangi
+ * pratiği istiyorsa oradan seçiyor.
+ *
+ * Mobilde kural baştan böyle: `GameScreen` oyunu yalnız yönlendirme
+ * parametresinden okuyor, hiçbir yere yazmıyor.
  */
 function readGameParam(): PlayableGame | null {
   try {
@@ -93,15 +80,6 @@ function readGameParam(): PlayableGame | null {
     return raw && (PLAYABLE_GAMES as readonly string[]).includes(raw) ? (raw as PlayableGame) : null;
   } catch {
     return null;
-  }
-}
-
-function writeGameMode(game: PlayableGame | null) {
-  try {
-    if (game) localStorage.setItem(GAME_MODE_KEY, game);
-    else localStorage.removeItem(GAME_MODE_KEY);
-  } catch {
-    /* depolama kapalıysa seçim yalnızca bu oturum boyunca geçerli olur */
   }
 }
 
@@ -271,7 +249,6 @@ export function SessionPlayer() {
     const game = opts.game === undefined ? onlyGameRef.current : opts.game;
     onlyGameRef.current = game;
     setOnlyGame(game);
-    writeGameMode(game);
     try {
       // "Yeni tura başla" önce kayıtlı turu atar, sonra yenisini ister.
       if (opts.fresh) await fetch("/api/session", { method: "DELETE" });
@@ -314,8 +291,9 @@ export function SessionPlayer() {
       );
       // Bir sonraki açılış bu kartı anında çizsin. Yalnızca AÇILIŞ turu
       // saklanıyor: ek tur ve "yeni tur" istekleri o anın sonucu, yarının
-      // başlangıç kartı değil.
-      if (!opts.extra && !opts.fresh) writeCache(sessionKey(game), data);
+      // başlangıç kartı değil. Pratik de saklanmıyor — o her açılışta taze
+      // kuruluyor, saklanan kuyruk bir daha hiç okunmazdı.
+      if (!opts.extra && !opts.fresh && !game) writeCache(sessionKey(game), data);
       fresh.current = true;
       return data;
     } catch {
@@ -331,13 +309,10 @@ export function SessionPlayer() {
   );
 
   useEffect(() => {
-    // Açılışta cihazdaki tercih geri yükleniyor: kullanıcı hangi modda
-    // bıraktıysa orada devam ediyor.
-    // Adresteki hedefli oyun cihaz tercihini ezer; tur "zayıf nokta çalışması"
-    // sayılır ve özet ekranında Erdi ona göre konuşur (WP-66).
-    const fromUrl = readGameParam();
-    if (fromUrl) targeted.current = true;
-    const game = fromUrl ?? readGameMode();
+    // Adresteki hedefli oyun turu tek oyuna kilitler; tur "zayıf nokta
+    // çalışması" sayılır ve özet ekranında Erdi ona göre konuşur (WP-66).
+    const game = readGameParam();
+    if (game) targeted.current = true;
 
     /*
       ÖNCE ÖNBELLEK, SONRA TAZELEME (bkz. lib/use-cached).
@@ -354,7 +329,9 @@ export function SessionPlayer() {
       (bkz. startFresh). Pratikte fark edilmiyor — istek karta bakma süresinden
       kısa — ama yanlış kuyrukla tur başlaması imkânsız.
     */
-    const cached = readCache<SessionPayload>(sessionKey(game));
+    // Pratik her açılışta taze kuruluyor (sunucu da onu saklamıyor), yani
+    // saklanacak bir başlangıç kartı yok: önbellek yalnız karışık turun.
+    const cached = game ? null : readCache<SessionPayload>(sessionKey(game));
     if (cached?.rounds?.length) {
       setSession(cached);
       setResumable(cached.resume);
@@ -626,7 +603,16 @@ export function SessionPlayer() {
       const nextIndex = isLast ? rounds : index + 1;
       // Bittiğinde `index` tur sayısına eşitlenir: sunucu bunu "bu tur kapandı"
       // diye okur ve bir sonraki istekte yeni kuyruk kurar.
-      const progress: SessionProgress = { ...next, index: nextIndex, missed: missed.current };
+      /*
+        İlerleme yalnız karışık turda gönderiliyor. `session_state` satırı
+        kullanıcı başına tek: pratikte gönderilen ilerleme, karışık turun
+        nerede kaldığını eziyor ve günlük tur kaldığı yerden değil pratiğin
+        bıraktığı yerden açılıyordu. Pratik zaten "kaldığın yerden" diye bir
+        şey vaat etmiyor — cevaplar (SRS/XP) normal yolundan gidiyor.
+      */
+      const progress: SessionProgress | null = onlyGameRef.current
+        ? null
+        : { ...next, index: nextIndex, missed: missed.current };
 
       // Bahisli etap kapandı mı? Pay, o etapta kazanılan puanın istemci
       // tahmini (doğru 10, yanlış 3). Sunucu ayrıca tavanlıyor; buradaki
@@ -738,7 +724,11 @@ export function SessionPlayer() {
           meta={session?.meta}
           onlyGame={onlyGame}
           onExtra={() => void load({ extra: true })}
-          onMixed={() => void load({ game: null, fresh: true })}
+          onMixed={() => {
+            // Adresteki `?game=` kalırsa sayfa tazelenince yine pratiğe düşer.
+            router.replace("/learn/game");
+            void load({ game: null, fresh: true });
+          }}
         />
       </Screen>
     );
