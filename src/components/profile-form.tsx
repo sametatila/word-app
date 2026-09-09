@@ -3,7 +3,7 @@
 import { useState, type ReactNode } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { AlertIcon, CheckIcon } from "@/components/icons";
+import { AlertIcon, CheckIcon, ChevronRightIcon } from "@/components/icons";
 import { VoicePicker } from "@/components/voice-picker";
 import { InstallGuide } from "@/components/install-guide";
 import { AnalyticsSettings } from "@/components/analytics-settings";
@@ -154,6 +154,7 @@ export function ProfileForm({
         etiket, altında yalnız o kavramın kartı. Etiket zaten ne olduğunu
         söylediği için kartın içindeki tekrar eden başlıklar da kalktı.
       */}
+      <Group title={t("settings.group_account")} />
       <Section title={t("settings.account")}>
         <label className="block">
           <input
@@ -174,6 +175,7 @@ export function ProfileForm({
           hesabın yanında değil sonundaydı. */}
       {linkedAccounts}
 
+      <Group title={t("settings.group_learning")} />
       <Section title={t("settings.language_to_learn")}>
         <div>
           {/* İki kurs telefonda da yan yana. `sm:grid-cols-2` dar ekranda tek
@@ -317,6 +319,7 @@ export function ProfileForm({
           Tema seçimi de üst başlıktan buraya indi: orada her ekranda duran
           ama günde bir kez bile dokunulmayan bir düğmeydi. Ayarın evi
           ayarlar. */}
+      <Group title={t("settings.group_app")} />
       <Section title={t("settings.app_language")} bare>
         <LangSetting bare />
       </Section>
@@ -346,6 +349,26 @@ export function ProfileForm({
       </Section>
 
       {/* Gizlilik: analitik anahtarı ve hukuki metinler (Play: politika uygulama içinden erişilebilir olmalı). */}
+      {/*
+        BİLDİRİMLER PROFİLDEN BURAYA. İçeriği zaten ayardı (hatırlatmalar, seri
+        koruma, haftalık test) ama profil menüsünde duruyordu ve "Gelen kutusu"
+        satırının hemen altında neredeyse aynı adla görünüyordu.
+      */}
+      <Section title={t("notifications.notifications")} bare>
+        <Link
+          href="/notifications"
+          prefetch={false}
+          className="pressable flex items-center gap-3 py-1"
+        >
+          <span className="min-w-0 flex-1">
+            <span className="block text-strong">{t("notifications.reminders")}</span>
+            <span className="muted block text-caption">{t("settings.notifications_sub")}</span>
+          </span>
+          <ChevronRightIcon size={18} style={{ color: "var(--text-faint)" }} />
+        </Link>
+      </Section>
+
+      <Group title={t("settings.group_privacy_about")} />
       <Section title={t("settings.privacy")} bare>
         <AnalyticsSettings bare />
         <SettingRow title={t("settings.privacy_and_terms")} sub={t("settings.privacy_and_terms_sub")}>
@@ -382,6 +405,18 @@ export function ProfileForm({
  *
  * `bare`: kartın kendi dolgusu yok (satırlar kendi dolgusunu taşıyor).
  */
+/**
+ * Grup başlığı — dokuz düz bölüm dört mantıksal gruba alındı (mobil ayarlarla
+ * aynı bölünme). Eskiden kurs/seviye/hedef (öğrenme) ile arayüz dili/görünüm
+ * (uygulama) ve hesap/gizlilik aynı düzlemdeydi; kullanıcı aradığı ayarı
+ * grubun adından değil, satır satır okuyarak buluyordu.
+ */
+function Group({ title }: { title: string }) {
+  return (
+    <h2 className="mx-auto mt-8 w-full max-w-3xl text-h3 first:mt-0">{title}</h2>
+  );
+}
+
 function Section({
   title,
   bare,

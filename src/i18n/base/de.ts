@@ -712,6 +712,7 @@ export const deBase: Record<string, string> = {
   "progress.time_total": "Gesamtzeit",
   "progress.progress": "Fortschritt",
   "progress.day_streak": "Tage Serie",
+  "progress.longest_streak": "Längste {n} Tage",
   "progress.word_mastery": "Wortbeherrschung",
   "progress.words_learned": "Gelernte Wörter",
   "progress.level": "Niveau",
@@ -1113,4 +1114,9 @@ export const deBase: Record<string, string> = {
   "placement.continue_with": "Mit {level} weitermachen",
   "placement.pick_and_continue": "{level} wählen und weitermachen",
   "placement.section_n": "Abschnitt {n}",
+  "settings.group_account": "Konto",
+  "settings.group_learning": "Lernen",
+  "settings.group_app": "App",
+  "settings.group_privacy_about": "Datenschutz und Info",
+  "settings.notifications_sub": "Erinnerungen, Serienschutz, Wochentest",
 };
