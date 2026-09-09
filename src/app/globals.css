@@ -297,6 +297,20 @@
    * süs öğelerinde (şevron gibi), metinde değil.
    */
   --text-faint: #b7a695;
+  /*
+   * SEMANTİK renk adları — mobil paletinde `success` / `danger` var, web'de
+   * yalnız görsel adlar (`mint` / `rose`) vardı. Deneme sınavı ekranları
+   * semantik adla yazılmış ama karşılıkları TANIMLI DEĞİLDİ: yirmi altı yerde
+   * renk hiç uygulanmıyor, metin ve şeritler üst rengi miras alıyordu.
+   *
+   * Tonu görsel adlardan alıyorlar, yani ölçülmüş değerler değişmiyor.
+   * Yumuşak varyantlar mobilin `successSoft` / `dangerSoft`una denk geliyor
+   * (beyaz üstünde #e2f1e9 ve #fae4e7; mobilde #e2f2e9 ve #fde6ea).
+   */
+  --color-success: var(--color-mint);
+  --color-danger: var(--color-rose);
+  --color-success-soft: color-mix(in srgb, var(--color-mint-500) 14%, var(--surface));
+  --color-danger-soft: color-mix(in srgb, var(--color-rose-500) 14%, var(--surface));
 
   --shadow-soft-sm: 0 4px 10px -2px rgb(90 52 24 / 0.14); /* mobil elevation 6 */
   --shadow-soft: 0 7px 16px -4px rgb(90 52 24 / 0.16); /* mobil elevation 10 */
@@ -338,6 +352,9 @@
   /* Koyu temada zemin alfa: marka 400 orada 5.93 veriyor, ton değişmiyor. */
   --on-brand-soft: var(--color-brand-400);
   --text-faint: #7c6c5d;
+  /* Koyu temada mobil de alfa kullanıyor: rgba(…,0.16). */
+  --color-success-soft: color-mix(in srgb, var(--color-mint-300) 16%, transparent);
+  --color-danger-soft: color-mix(in srgb, var(--color-rose-300) 16%, transparent);
 
   /* Koyu zeminde sıcak kahve gölge görünmüyor; orada gölge siyaha dönüyor ve
      derinleşiyor — Android'in `elevation`'ı da koyu temada aynı şeyi yapar. */

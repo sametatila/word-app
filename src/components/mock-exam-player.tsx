@@ -460,7 +460,7 @@ function Item({ course, item, task, value, onAnswer }: { course: MockCourse; ite
       type="button"
       onClick={onClick}
       className="rounded-xl px-3 py-2 text-left text-sm"
-      style={{ background: active ? "var(--color-brand-soft)" : "var(--surface-2)", border: `1px solid ${active ? "var(--color-brand)" : "transparent"}` }}
+      style={{ background: active ? "var(--brand-soft)" : "var(--surface-2)", border: `1px solid ${active ? "var(--color-brand)" : "transparent"}` }}
     >
       {label}
     </button>
