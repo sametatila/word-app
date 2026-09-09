@@ -179,7 +179,7 @@ export function UnitPane({
                   {t("unit.now")}
                 </span>
               ) : openable ? (
-                <ChevronRightIcon size={20} className="muted shrink-0" />
+                <ChevronRightIcon size={20} className="faint shrink-0" />
               ) : (
                 <LockIcon size={18} className="muted shrink-0" />
               )}

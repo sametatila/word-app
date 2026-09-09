@@ -289,6 +289,14 @@
   /* `--brand-soft` zemin üstünde okunan yazı — mobil `onPrimarySoft`.
      Marka 500'ü orada 2.24 veriyor (eşik 4.5); 800'ü 6.13. */
   --on-brand-soft: var(--color-brand-800);
+  /*
+   * En sönük metin katmanı — mobil `textFaint`.
+   *
+   * Web'de yoktu ve `.muted` onun yerine kullanılıyordu; menü satırlarının
+   * şevronu mobildekinden koyu çıkıyordu. Taşıyıcı DEĞİL: yalnız yön gösteren
+   * süs öğelerinde (şevron gibi), metinde değil.
+   */
+  --text-faint: #b7a695;
 
   --shadow-soft-sm: 0 4px 10px -2px rgb(90 52 24 / 0.14); /* mobil elevation 6 */
   --shadow-soft: 0 7px 16px -4px rgb(90 52 24 / 0.16); /* mobil elevation 10 */
@@ -329,6 +337,7 @@
   --brand-soft: color-mix(in srgb, var(--color-brand-500) 16%, transparent);
   /* Koyu temada zemin alfa: marka 400 orada 5.93 veriyor, ton değişmiyor. */
   --on-brand-soft: var(--color-brand-400);
+  --text-faint: #7c6c5d;
 
   /* Koyu zeminde sıcak kahve gölge görünmüyor; orada gölge siyaha dönüyor ve
      derinleşiyor — Android'in `elevation`'ı da koyu temada aynı şeyi yapar. */
@@ -420,6 +429,9 @@
   }
   .muted {
     color: var(--text-muted);
+  }
+  .faint {
+    color: var(--text-faint);
   }
   /*
    * Marka gradyanı — mobilin `gradientA`sı (`colors.ts`): açık turuncudan

@@ -262,14 +262,16 @@ function Row({
       className="pressable flex items-center gap-3 py-3"
       style={last ? undefined : { borderBottom: "1px solid var(--hairline)" }}
     >
+      {/* Karo ve şevron mobil `ui/MenuRow.tsx` ile aynı: 38 px karo, tonun
+          %13'ü (mobilde `tint + "22"`) ve en sönük katmandaki şevron. */}
       <span
-        className="flex h-10 w-10 shrink-0 items-center justify-center rounded-tile"
-        style={{ background: `color-mix(in srgb, ${tone} 16%, transparent)`, color: tone }}
+        className="flex shrink-0 items-center justify-center rounded-tile"
+        style={{ width: 38, height: 38, background: `color-mix(in srgb, ${tone} 13%, transparent)`, color: tone }}
       >
         {icon}
       </span>
       <span className="flex-1 text-strong">{label}</span>
-      <ChevronRightIcon size={20} className="muted shrink-0" />
+      <ChevronRightIcon size={20} className="faint shrink-0" />
     </Link>
   );
 }

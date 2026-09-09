@@ -236,7 +236,7 @@ export function ActivityProgress({
           <TrophyIcon size={20} />
         </span>
         <span className="flex-1 text-strong">{t("progress.achievements")}</span>
-        <ChevronRightIcon size={20} className="muted shrink-0" />
+        <ChevronRightIcon size={20} className="faint shrink-0" />
       </Link>
 
       <ActivityStrip byDay={byDay} today={today} />
