@@ -384,6 +384,40 @@
   .surface-2 {
     background: var(--surface-2);
   }
+  /*
+   * Metin alanı — mobil giriş kutusunun karşılığı (`M/src/game/rounds.tsx`
+   * yazma turu, `WordsScreen` arama kutusu).
+   *
+   * SINIF KULLANILIYORDU AMA TANIMLI DEĞİLDİ: beş dosyada `className="input"`
+   * yazılı ve hiçbir kural yoktu, yani alanlar tarayıcı varsayılanına
+   * düşüyordu — köşeli kenar, işletim sisteminin gri çerçevesi, paletin
+   * dışında bir zemin. Koyu temada `color-scheme` sayesinde okunuyordu ama
+   * uygulamanın değil tarayıcının kutusu gibi duruyordu.
+   *
+   * Ölçüler mobilden: yarıçap `panel` (20 = `radii.lg`), 1,5 px kenarlık,
+   * yüzey zemin, gövde punto. Dolguyu kullanan yer daraltabiliyor
+   * (`py-2` gibi yardımcı sınıflar bu katmandan sonra geliyor).
+   */
+  .input {
+    background: var(--surface);
+    color: var(--text);
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius-panel);
+    padding: 0.75rem 1rem;
+    font-size: var(--text-body);
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  }
+  .input::placeholder {
+    color: var(--text-muted);
+  }
+  .input:focus-visible {
+    outline: none;
+    border-color: var(--color-brand-500);
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-brand) 18%, transparent);
+  }
+  .input:disabled {
+    opacity: 0.6;
+  }
   .muted {
     color: var(--text-muted);
   }
