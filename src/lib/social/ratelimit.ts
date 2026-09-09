@@ -37,6 +37,18 @@ export async function claimOnce(key: string, windowSec: number): Promise<boolean
   return r.count === 1;
 }
 
+/**
+ * Kilidi geri bırakır — iş YARIM KALDIYSA.
+ *
+ * `claimOnce` kilidi işten ÖNCE alıyor. İş patlarsa kilit pencere boyunca
+ * duruyor ve kimse yeniden denemiyor: hafta kapanışı için bu, o haftanın
+ * bütün lig sonuçlarının sessizce kaybolması demek. Hata yolunda bu çağrı,
+ * bir sonraki okumanın işi baştan almasını sağlıyor (kapanış idempotent).
+ */
+export async function releaseClaim(key: string): Promise<void> {
+  await db.execute(sql`delete from rate_limits where key = ${key}`);
+}
+
 const DAY = 86_400;
 const MIN = 60;
 

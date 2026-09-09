@@ -233,7 +233,11 @@ export async function closeLeagueWeek(lastWeek: string): Promise<void> {
     });
 
     const values = sql.join(
-      rows.map((r) => sql`(${r.userId}, ${r.xp}::int, ${r.rank}::int, ${r.outcome}::text)`),
+      // Her sütun açıkça tipli. Postgres user_id'yi aşağıdaki karşılaştırmadan
+      // da çözebiliyor (sunucuda PREPARE ile denendi), ama tip çıkarımına
+      // bırakılan bir VALUES listesi sorgunun geri kalanı değişince sessizce
+      // ayrışmayı bırakır; kapanış hatayı yutan bir try içinde çalışıyor.
+      rows.map((r) => sql`(${r.userId}::text, ${r.xp}::int, ${r.rank}::int, ${r.outcome}::text)`),
       sql`, `,
     );
     await db.execute(sql`

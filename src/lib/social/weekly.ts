@@ -5,7 +5,7 @@ import { emitActivity } from "./activity";
 import { shiftDay, weekStart } from "./dates";
 import { closeLeagueWeek } from "./leagues";
 import { finalizeExpiredQuests } from "./quests";
-import { claimOnce } from "./ratelimit";
+import { claimOnce, releaseClaim } from "./ratelimit";
 
 /**
  * Hafta kapanışı — cron YOK (sunucuda zamanlayıcı kurulu değil), o yüzden
@@ -22,8 +22,17 @@ export async function closeWeekIfNeeded(today: string): Promise<void> {
   try {
     await finalizeExpiredQuests(today);
     await closeLeagueWeek(lastWeek);
-    // Süresi bir günden fazla geçmiş hız-sınırı sayaçları: tablo sonsuza dek büyümesin.
-    await db.execute(sql`delete from rate_limits where reset_at < now() - interval '1 day' and key not like 'weekly_close:%'`);
+    // Süresi bir günden fazla geçmiş hız-sınırı sayaçları: tablo sonsuza dek
+    // büyümesin. Hafta kilitleri (weekly_close/weekly_top) süpürgenin dışında.
+    await db.execute(sql`delete from rate_limits where reset_at < now() - interval '1 day' and key not like 'weekly\_%'`);
+    /*
+      HAFTANIN İLK ÜÇÜ AYRI KİLİTTE. Bu adım idempotent DEĞİL: iki kez
+      çalışırsa aynı kişiye iki "haftanın ilk üçü" olayı yazar. Dış kilit
+      hata yolunda geri bırakılıyor (aşağıya bak) ve yeniden deneme bu adımı
+      da tekrar çağırırdı. Kendi kilidi olduğu için tekrar çalışmıyor;
+      ligler ve görevler ise zaten yalnız kapanmamış satırlara dokunuyor.
+    */
+    if (!(await claimOnce(`weekly_top:${lastWeek}`, 60 * 86_400))) return;
     const top = await db
       .select({ userId: dailyStats.userId, xp: sql<number>`sum(${dailyStats.xp})::int` })
       .from(dailyStats)
@@ -39,5 +48,10 @@ export async function closeWeekIfNeeded(today: string): Promise<void> {
     }
   } catch (err) {
     console.error("[social:weekly]", err);
+    // Kilit işten ÖNCE alınıyor: yarım kalan iş kilitli kalırsa o haftanın lig
+    // sonuçları bir daha hesaplanmaz — kimse terfi etmez, kimse düşmez, sonuç
+    // ekranı hiç çıkmaz. Bırakılıyor ki bir sonraki okuma baştan alsın; tekrar
+    // çalışması güvenli, çünkü tekrarlanamayacak tek adımın kendi kilidi var.
+    await releaseClaim(`weekly_close:${lastWeek}`).catch(() => {});
   }
 }

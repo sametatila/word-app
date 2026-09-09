@@ -137,7 +137,7 @@ export async function sendFcmRows(rows: DeviceRow[], payload: FcmPayload): Promi
 
   const dead: string[] = [];
   const failed: string[] = [];
-  let sent = 0;
+  const ok: string[] = [];
   await Promise.all(
     rows.map(async (row) => {
       const message = {
@@ -159,7 +159,7 @@ export async function sendFcmRows(rows: DeviceRow[], payload: FcmPayload): Promi
           body: JSON.stringify(message),
         });
         if (res.ok) {
-          sent++;
+          ok.push(row.token);
           return;
         }
         // 404 ve 403 jetonun artık geçersiz olduğunu söyler: cihaz silinmiş,
@@ -181,8 +181,12 @@ export async function sendFcmRows(rows: DeviceRow[], payload: FcmPayload): Promi
     // Geçici hata silmeyi hak etmiyor ama ısrar ederse jeton ölmüştür.
     await db.delete(deviceTokens).where(and(inArray(deviceTokens.token, failed), sql`${deviceTokens.failures} >= ${MAX_FAILURES}`));
   }
-  if (sent) await db.update(deviceTokens).set({ failures: 0 }).where(inArray(deviceTokens.token, rows.map((r) => r.token)));
-  return sent;
+  // Sayaç YALNIZ başarılı jetonlarda sıfırlanıyor. Önce kullanıcının bütün
+  // jetonları sıfırlanıyordu: iki cihazdan biri sürekli hata verse bile sayaç
+  // her turda siliniyor, jeton eşiğe hiç ulaşmıyor ve ölü cihaz sonsuza dek
+  // tabloda kalıyordu.
+  if (ok.length) await db.update(deviceTokens).set({ failures: 0 }).where(inArray(deviceTokens.token, ok));
+  return ok.length;
 }
 
 /** Cihaz jetonunu kaydeder ya da tazeler. Jeton başka hesaptaysa el değiştirir. */
