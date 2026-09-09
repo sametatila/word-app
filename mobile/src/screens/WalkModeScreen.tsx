@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { t as tx } from "../lib/i18n";
-import { View, Animated, Easing, Pressable } from "react-native";
+import { View, Animated, Easing } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { useNavigation } from "@react-navigation/native";
 import { Text } from "../ui/Text";
@@ -83,10 +83,7 @@ export function WalkModeScreen() {
   const [tally, setTally] = useState({ correct: 0, total: 0 });
   const [noMore, setNoMore] = useState(false);
   const [bgUnavailable, setBgUnavailable] = useState(false);
-  const [pocket, setPocket] = useState(false); // "cebe koy": ekran siyah ama AÇIK (tanıyıcı çalışsın)
   const [greeting, setGreeting] = useState(false); // Başla sonrası kısa TTS karşılama
-  const pocketRef = useRef(false);
-  const setPocketMode = (on: boolean) => { pocketRef.current = on; setPocket(on); };
   const screenOffRef = useRef(false); // ücretsiz yol güvenilmez → Azure (adı Android'den; aşağıdaki nota bak)
   const nativeListeningRef = useRef(false); // şu an native dinliyor mu (kesinti gelince hızlı kesmek için)
   const listenCut = useRef(false); // dinlemeyi BİZ kestik mi — boş sonuç kullanıcının sessizliği sayılmasın
@@ -261,9 +258,9 @@ export function WalkModeScreen() {
     await gap(150); // TTS kuyruğu kısaca otursun (mic kendi sesimizi kapmasın)
     if (!alive()) return "ok";
     setPhase("listening");
-    // Kaynak: cebe koy YA DA ücretsiz yol güvenilmez (Android: ekran kapalı · iOS: uygulama
-    // arka planda — yukarıdaki uzun nota bak) → sunucu (Azure) STT, paralı. Yoksa native.
-    const useAzure = pocketRef.current || screenOffRef.current;
+    // Kaynak: ücretsiz yol güvenilmez (Android: ekran kapalı · iOS: uygulama arka planda —
+    // yukarıdaki uzun nota bak) → sunucu (Azure) STT, paralı. Yoksa native.
+    const useAzure = screenOffRef.current;
     let res: { k: "v"; heard: string[] } | { k: "m" };
     if (useAzure) {
       // Azure: micon HEMEN (setTimeout arka planda durur); micoff kayıt biter bitmez (upload'dan
@@ -322,7 +319,7 @@ export function WalkModeScreen() {
       if (unheardWin.current.filter(Boolean).length >= UNHEARD_LIMIT) {
         setVerdict("unheard"); setPhase("judging");
         await sayNative(tx("walk.mic_silent"));
-        setKeepAwake(false); stopWalkService(); setPocketMode(false);
+        setKeepAwake(false); stopWalkService();
         if (alive()) setPhase("stopped");
         return "stopped";
       }
@@ -391,8 +388,8 @@ export function WalkModeScreen() {
     if (!alive()) return;
     flush(true); // tur bitti — SRS'e yaz
     sfx("finish"); // tamamlanma sesi
-    // Cepte YA DA güç tuşuyla ekran kapalı (eller serbest) → sesli "Devam edelim mi?"; ekran açık → görsel özet + butonlar.
-    if (pocketRef.current || screenOffRef.current) { await askContinue(alive); return; }
+    // Güç tuşuyla ekran kapalı (eller serbest) → sesli "Devam edelim mi?"; ekran açık → görsel özet + butonlar.
+    if (screenOffRef.current) { await askContinue(alive); return; }
     setKeepAwake(false); stopWalkService();
     setPhase("done");
     void sayNative(tx("walk.tour_done", { total: tallyRef.current.total, correct: tallyRef.current.correct }));
@@ -438,15 +435,15 @@ export function WalkModeScreen() {
     } catch { setPhase("done"); }
   }
 
-  function finishDone() { setKeepAwake(false); stopWalkService(); setPocketMode(false); setPhase("done"); }
+  function finishDone() { setKeepAwake(false); stopWalkService(); setPhase("done"); }
 
-  /** Cepte tur sonu: mikrofonu bir kez açıp evet/hayır dinle (parseConfirm). */
+  /** Ekran kapalı tur sonu: mikrofonu bir kez açıp evet/hayır dinle (parseConfirm). */
   async function listenConfirm(alive: () => boolean): Promise<boolean | null> {
     setPhase("continue");
     sfx("micon");
-    // Cepte/ekran-kapalı → Azure (Türkçe evet/hayır); ekran açık → native.
+    // Ekran kapalı → Azure (Türkçe evet/hayır); ekran açık → native.
     let yanit: string[] | null;
-    if (pocketRef.current || screenOffRef.current) {
+    if (screenOffRef.current) {
       yanit = await azureListenOnce("", 4000, () => sfx("micoff"), "tr");
     } else {
       yanit = await listenOnce(currentTargetLocale(), 7000);
@@ -461,7 +458,7 @@ export function WalkModeScreen() {
   async function continueTour(alive: () => boolean) {
     try {
       let payload: { rounds?: Round[] } | null;
-      if (pocketRef.current || screenOffRef.current) {
+      if (screenOffRef.current) {
         // ekran-kapalı: native GET (RN fetch arka planda takılıyor)
         const skip = Array.from(askedIds.current).slice(-200).join(",");
         const url = `${API_BASE}/api/session?day=${day.current}&walk=1${skip ? `&skip=${skip}` : ""}`;
@@ -679,7 +676,7 @@ export function WalkModeScreen() {
               </View>
             </View>
 
-            {/* alt: Atla + Cebe koy */}
+            {/* alt: Atla */}
             <View style={{ alignItems: "center", gap: spacing.xs }}>
               {phase === "listening" ? (
                 <PressableScale onPress={skipNow} style={{ flexDirection: "row", alignItems: "center", justifyContent: "center", gap: 6, paddingVertical: spacing.sm }}>
@@ -688,23 +685,11 @@ export function WalkModeScreen() {
               ) : (
                 <View style={{ height: 40 }} />
               )}
-              {/* Cebe koy: ekran siyah ama AÇIK kalır (tanıyıcı çalışsın); eller serbest, tur sonunda sesli devam. */}
-              <PressableScale onPress={() => setPocketMode(true)} style={{ paddingVertical: spacing.sm }}>
-                <Text variant="caption" color={colors.textMuted}>{tx("walkmode.pocket_it_dim_screen")}</Text>
-              </PressableScale>
             </View>
           </View>
         </>
       )}
 
-      {/* Cepte kipi: tam ekran siyah katman. Ekran teknik olarak AÇIK kalır (tanıyıcı
-          susmaz); dokununca uyanır. Web'in "ekranı karart" yaklaşımının birebiri. */}
-      {pocket ? (
-        <Pressable onPress={() => setPocketMode(false)} style={{ position: "absolute", top: 0, left: 0, right: 0, bottom: 0, backgroundColor: "#000", alignItems: "center", justifyContent: "center" }}>
-          <MicIcon color="#1c1c1c" size={44} />
-          <Text variant="caption" color="#2a2a2a" style={{ marginTop: 14 }}>{tx("walkmode.listening_tap_to_wake")}</Text>
-        </Pressable>
-      ) : null}
       <ConfirmDialog
         visible={back.visible}
         title={tx("walkmode.end_walk")}
