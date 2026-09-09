@@ -56,6 +56,7 @@ const SKIP = [
   "lib/confusables.ts",
   "lib/cando.ts",
   "lib/first-words.ts",
+  "lib/placement-demo.ts",
   "lib/why-rules.ts",
   "lib/assess-prompts.ts",
   "lib/german-numbers.ts",

@@ -192,10 +192,15 @@ export function CourseOnboarding({
   async function finishFromPace() {
     if (levelMode === "measure") {
       // Profil önce kaydedilir (isim/kurs/hedef); seviye testin sonunda yazılır.
-      // Misafirde seviye testi hesap ister: yerleştirme sunucuda puanlanıyor.
       if (await save({ level: "A1" })) {
         track("nav", 0, "onboarding:placement");
-        router.push(signedIn ? "/placement" : "/login?mode=signup&next=/placement");
+        /* MİSAFİR DE TESTE GİDİYOR. Gerçek yerleştirme sunucuda puanlanıyor ve
+           hesap istiyor; eskiden misafir bu yüzden doğrudan giriş duvarına
+           gönderiliyordu, yani seviyesini bilmediği için testi isteyen kişi
+           ölçülmeden kaydolmak zorundaydı. `/level-test` Android'deki kısa
+           örnek turu oynatıyor, sonucu yerel tercihlere yazıyor ve hesap
+           açılınca seviye profile taşınıyor. */
+        router.push(signedIn ? "/placement" : "/level-test");
       }
       return;
     }

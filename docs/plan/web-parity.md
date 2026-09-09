@@ -853,32 +853,32 @@ kademe zemini (ikon eşiği 3.0):
 Gümüş ve altın iki tarafta da geçmiyor; birini ötekine çekmek sorunu taşımak
 olurdu. Dört kademenin de geçtiği bir set seçmek ayrı bir ürün kararı.
 
-### 11.5 Açık kalan tek ürün farkı: misafir yerleştirme testi
+### 11.5 Misafir yerleştirme testi — kapandı
 
-Android'de sıra şu: misafir onboarding'de "Seviyemi öğrenmek istiyorum" der,
-**testi çözer**, sonra hesap açar. Kod bunu açıkça yazıyor
-(`OnboardingScreen`: "Testle belirle → Placement → hesap") ve test verisi
-uygulamanın içinde (`data/demoPlacement.ts`, on soru, kurs+anadil çiftine
-göre).
+Android'de sıra şuydu: misafir onboarding'de "Seviyemi öğrenmek istiyorum"
+der, **testi çözer**, sonra hesap açar. Web'de aynı seçenek
+`/login?mode=signup&next=/placement`e gidiyordu: önce hesap, sonra test —
+yani seviyesini bilmediği için testi isteyen kişi ölçülmeden kaydolmak
+zorundaydı.
 
-Web'de aynı seçenek `/login?mode=signup&next=/placement`e gidiyor: önce
-hesap, sonra test. `/placement` sayfası da misafiri doğrudan `/login`a
-yönlendiriyor.
+Dört parça da yapıldı:
 
-Bu, `11bbbe34`te ilk kelimeler için verilen kararın aynısını istiyor — "akış
-mobildeki sıraya geçti: önce ısınma, sonra hesap". Ama maliyeti ondan büyük:
-web'in yerleştirme bileşeni baştan sona sunucu güdümlü (`/api/placement`
-start/finish/accept). Misafir demosu için gerekenler:
+1. `src/lib/placement-demo.ts` — mobil `data/demoPlacement.ts` ile birebir
+   soru seti (sekiz soru, `<anadil>-<kurs>` çiftine göre, aynı hedef dili
+   paylaşan kursa düşer).
+2. `/level-test` — misafire çizilen sayfa. `(app)` grubunun DIŞINDA, çünkü o
+   grubun düzeni oturum yoksa `/login`a yönlendiriyor; `/first-words` ile aynı
+   sınıftan bir sayfa. Oturum açıksa gerçek teste (`/placement`) yönlendirir.
+3. `src/components/placement/demo-placement.tsx` — yerel puanlama, ilerleme
+   çubuklu başlık, "Seviye testi · örnek" eki ve sonuç ekranı. Misafir
+   varyantı `placement.understood` ile kapanıyor (`placement.set_level`
+   oturum açık yolun metni ve orada duruyor).
+4. Seçilen seviye `saveOnboardingPrefs({ level })` ile cihazda duruyor;
+   hesap açılınca `onboarding-adopt` onu profile taşıyor.
 
-1. `demoPlacement.ts`nin web karşılığı (on soru, aynı içerik).
-2. `/placement`in misafire çizilmesi (bugün yönlendiriyor).
-3. Bileşende yerel puanlama yolu ve sonuç ekranının misafir varyantı
-   ("Anladım" / "Seviyemi ayarla" ayrımı mobilde `placement.understood` ve
-   `placement.set_level` ile yapılıyor).
-4. Seçilen seviyenin hesaba taşınması — onboarding'in mevcut devretme
-   mekanizması (`onboarding-adopt`) bunu zaten yapıyor.
-
-Tahmini: tek oturumluk iş değil, gözle doğrulama ister. Karar Samet'te.
+Onboarding'in "Testle belirle" dalı artık misafiri `/level-test`e gönderiyor.
+Soru metinleri öğrenme içeriği olduğu için `placement-demo.ts` ham metin
+tarayıcısının içerik listesinde (`first-words.ts` gibi).
 
 ### 11.6 Yan bulgular
 
