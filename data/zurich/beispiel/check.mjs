@@ -46,10 +46,22 @@ const flat = (t) =>
 const flatKey = (t) => flat(t).replace(/[^a-z]/g, "");
 
 /** Züritüütsch'te çekimde kökten kopabilen ön ekler. */
+/*
+  AYRILABİLİR ÖN EKLER — düzleştirilmiş biçimde (umlaut düz, uzun ünlü tek).
+
+  A2 cümlelerini yazarken sekiz tanesinin eksik olduğu çıktı ve hepsi doğru
+  Zürihçe cümlelerde reddedilmeye yol açıyordu: "zrugg" listede "zrug" diye
+  duruyordu ama düzleştirme çift ÜNSÜZÜ yutmuyor ("zrugg" olduğu gibi kalıyor);
+  "nach" yerine yalnız "na" vardı ve `nachhälfe` yanlışlıkla "na|chhalfe" diye
+  bölünüyordu; "häre", "dure", "draa", "füre", "hinder", "wider" hiç yoktu.
+
+  Sıra artık önemli değil — `splits()` geçerli bölmelerin HEPSİNİ deniyor.
+*/
 const SEPARABLE_PREFIXES = [
-  "abe", "ufe", "ine", "use", "witer", "zame", "vora", "zrug", "verbi", "fascht",
-  "furt", "unter", "uber", "vor", "zue", "na", "dur", "mit", "los", "fri", "wag",
-  "har", "us", "uf", "ab", "um", "bi", "hi", "a",
+  "abe", "ufe", "ine", "use", "witer", "zame", "vora", "verbi", "fascht",
+  "furt", "unter", "uber", "vor", "zue", "na", "nach", "dur", "dure", "mit",
+  "los", "fri", "wag", "har", "hare", "us", "uf", "ab", "um", "bi", "hi", "a",
+  "zrug", "zrugg", "dra", "draa", "fure", "hinder", "wider", "zwuse",
 ];
 const SEPARABLE = new RegExp(`^(${SEPARABLE_PREFIXES.join("|")})(.{2,})$`);
 
@@ -108,6 +120,21 @@ const IRREGULAR = {
   // 3. tekil şahıs kökten kopuyor: ligge → er liit/ligt. Kök karşılaştırması
   // dört harf istiyor ("lige") ve "ligt" yalnız üçünü paylaşıyor.
   ligge: ["liit", "ligt", "gläge"],
+  /*
+    ABLAUTLU BİÇİMLER. Gövde ünlüsü çekimde değişiyor ve kök karşılaştırması
+    bunu yakalayamıyor: hälfe → hilft, laufe → gloffe, träffe → troffe,
+    schlaafe → gschlaafe, bringe → brocht, zieh → zoge. Hepsi A2 cümlelerinde
+    doğru kullanılmışken reddedildi.
+  */
+  halfe: ["hilft", "hilfsch", "gholfe", "hilf"],
+  laufe: ["lauft", "loffe", "gloffe"],
+  traffe: ["trifft", "triffsch", "troffe"],
+  schlafe: ["schlaft", "gschlafe"],
+  bringe: ["bringt", "brocht", "broocht", "bringsch"],
+  zieh: ["zieht", "zoge", "ziet"],
+  // `grosszieh` ön eki ayrılmıyor ve Perfekt'te gövde ablauta giriyor; "gross"
+  // ayrılabilir ön ek listesine girecek bir edat değil, kelimenin parçası.
+  grosszieh: ["grosszoge", "zieht gross"],
 };
 
 // Anahtarlar düzleştirilmiş biçimle aranıyor; "gaa" ile "gää" aynı harflere
@@ -162,7 +189,12 @@ function roots(part) {
   // "aahaa" → "aaghaa", "uffale" → "ufgfale", "ablehne" → "abglehnt".
   // Ön ek ayrı bir kelime olarak aranınca bu biçimler hiç bulunamıyordu.
   const sep = bare.match(SEPARABLE);
-  if (sep) out.add(`${sep[1]}g${sep[2]}`);
+  if (sep) {
+    out.add(`${sep[1]}g${sep[2]}`);
+    // zu-mastarında ön ekle gövde arasına "z" giriyor: `abmälde` → `abzmälde`,
+    // `mitchoo` → `mitzchoo`. Ayrık aranınca bu biçim hiç bulunamıyordu.
+    out.add(`${sep[1]}z${sep[2]}`);
+  }
   return [...out].filter(Boolean);
 }
 
@@ -202,7 +234,29 @@ function contains(sentence, headword) {
       gerçekten "ii" ile başlıyorsa ekleniyor: iischtiige, iikaufe, iilade.
     */
     const extra = /^ii/i.test(part) ? [["i", bare.slice(1)]] : [];
-    for (const [prefix, stem] of [...splits(bare), ...extra]) {
+    const allSplits = [...splits(bare), ...extra];
+
+    /*
+      ÖN EK YAPIŞIK KALDIĞINDA. Perfekt'te ayrılabilir fiilin ön eki kopmuyor ve
+      gövde de ablauta giriyor: `iischlaafe` → "iigschlaafe", `wäglaufe` →
+      "wäggloffe", `biibringe` → "biibrocht", `iiträffe` → "iitroffe". Yani
+      cümlede ne ön ek ayrı duruyor ne de gövde tanıdık — ikisi birleşik ve
+      gövde başka bir kelimeye benziyor.
+
+      Bu yüzden ön ek + (boş|g|z) + gövdenin DÜZENSİZ biçimi de bir kök olarak
+      aranıyor. Altı doğru cümle bu kural olmadan reddediliyordu.
+    */
+    for (const [prefix, stem] of allSplits) {
+      for (const form of IRREGULAR[stem] ?? []) {
+        const f = flatKey(form);
+        for (const glue of ["", "g", "z"]) {
+          const joined = `${prefix}${glue}${f}`;
+          if (search(joined, joined.length)) return true;
+        }
+      }
+    }
+
+    for (const [prefix, stem] of allSplits) {
       if (!hasWord(prefix)) continue;
       if (roots(stem).some((r) => search(r, stem.length))) return true;
       const irrSep = IRREGULAR[stem];
