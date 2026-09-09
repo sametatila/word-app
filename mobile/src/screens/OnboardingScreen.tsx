@@ -90,10 +90,17 @@ function steps(course: string): Step[] {
       key: "goal", icon: CheckIcon,
       title: t("onboarding.what_s_your_daily_goal"),
       subtitle: t("onboarding.istedigin_zaman_degistirebilirsin"),
+      /*
+        HEDEFİN BİRİMİ TEKRAR, DAKİKA DEĞİL. Seçilen sayı doğrudan
+        `dailyGoal`e yazılıyor ve ayarlarda "tekrar / gün" diye okunuyor.
+        Ekran "5 dk / gün" derken 5 tekrar hedefi kuruyordu — kullanıcının
+        seçtiği şeyle uygulanan şey aynı değildi. Değerler ayarlardaki
+        ölçekle aynı (10/20/30/50).
+      */
       options: [
-        { key: "5", label: t("onboarding.easy"), sub: t("onboarding.min_day", { n: 5 }) },
-        { key: "10", label: t("onboarding.steady"), sub: t("onboarding.min_day", { n: 10 }) },
-        { key: "20", label: t("onboarding.serious"), sub: t("onboarding.min_day", { n: 20 }) },
+        { key: "10", label: t("onboarding.easy"), sub: t("onboarding.reviews_day", { n: 10 }) },
+        { key: "20", label: t("onboarding.steady"), sub: t("onboarding.reviews_day", { n: 20 }) },
+        { key: "50", label: t("onboarding.serious"), sub: t("onboarding.reviews_day", { n: 50 }) },
       ],
     },
   ];

@@ -38,9 +38,18 @@ const GOALS = [
  * ve iki tarafta birden yapılmalı (bkz. docs/plan/web-parity.md, Şerit O).
  */
 const PACES = [
-  { goal: 5, minutes: 5, title: "onboarding.easy" },
-  { goal: 10, minutes: 10, title: "onboarding.steady" },
-  { goal: 20, minutes: 20, title: "onboarding.serious" },
+  /*
+    HEDEFİN BİRİMİ TEKRAR, DAKİKA DEĞİL. Buradaki sayı doğrudan
+    `profiles.daily_goal`e yazılıyor ve uygulamanın her yerinde "gün başına
+    tekrar" olarak okunuyor (ayarlar, günlük tur, seri). Eskiden ekran "5 dk /
+    gün" diyip 5'i hedef olarak yazıyordu: kullanıcı dakika seçtiğini sanıyor,
+    hedef ise tekrar cinsinden ve olduğundan çok küçük kuruluyordu.
+
+    Değerler ayarlardaki ölçekle aynı (10/20/30/50); varsayılan 20 ortadaki.
+  */
+  { goal: 10, title: "onboarding.easy" },
+  { goal: 20, title: "onboarding.steady" },
+  { goal: 50, title: "onboarding.serious" },
 ];
 
 /* Seviye açıklamaları ayar ekranıyla AYNI anahtarlardan: iki yerde iki ayrı
@@ -388,7 +397,7 @@ export function CourseOnboarding({
                     className={`option p-4 text-left ${pace === p.goal ? "option-picked" : ""}`}
                   >
                     <p className="text-h3">{t(p.title)}</p>
-                    <p className="muted mt-0.5 text-caption">{t("onboarding.min_day", { n: p.minutes })}</p>
+                    <p className="muted mt-0.5 text-caption">{t("onboarding.reviews_day", { n: p.goal })}</p>
                   </button>
                 ))}
               </div>
