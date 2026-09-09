@@ -27,8 +27,8 @@ export function FriendsBoard() {
   if (board.rows.length < 2) {
     return (
       <div className="card p-5 text-center">
-        <p className="font-bold">{t("socialw.board_empty")}</p>
-        <p className="muted mt-1 text-sm">{t("socialw.board_empty_sub")}</p>
+        <p className="font-bold">{t("friendsboard.no_one_to_compete_with_yet")}</p>
+        <p className="muted mt-1 text-sm">{t("friendsboard.add_friends_to_see_each_other_in")}</p>
       </div>
     );
   }
@@ -38,7 +38,7 @@ export function FriendsBoard() {
   return (
     <section className="card overflow-hidden">
       <div className="flex items-baseline justify-between border-b px-5 py-3" style={{ borderColor: "var(--border)" }}>
-        <h2 className="text-sm font-bold">{t("socialw.board_title")}</h2>
+        <h2 className="text-sm font-bold">{t("friendsboard.among_friends_this_week")}</h2>
         <span className="muted text-xs">{board.daysLeft === 1 ? t("social.last_day") : t("social.days_left", { n: board.daysLeft })}</span>
       </div>
       <ol>
@@ -70,7 +70,7 @@ export function FriendsBoard() {
       </ol>
       {me && gap > 0 ? (
         <p className="border-t px-5 py-2.5 text-center text-xs font-semibold" style={{ borderColor: "var(--border)", color: "var(--color-brand)" }}>
-          {t("socialw.gap_to_above", { name: above?.name?.split(" ")[0] ?? t("socialw.the_one_above"), xp: formatNumber(gap, lang) })}
+          {t("friendsboard.gap", { name: above?.name?.split(" ")[0] ?? t("friendsboard.the_one_above"), xp: formatNumber(gap, lang) })}
         </p>
       ) : null}
     </section>
