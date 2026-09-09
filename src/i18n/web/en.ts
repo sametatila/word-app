@@ -1002,6 +1002,8 @@ export const enWeb: Record<string, string> = {
   "plc.intro": "Four short stages — vocabulary, grammar, reading, listening — 15 minutes at most. At the end you get a level suggestion and a skills profile; you still choose the level yourself.",
   "plc.suggested": "suggested",
   "plc.skip_stage": "Skip this stage",
+  "plc.dont_know": "I don't know",
+  "plc.text_of": "Text {n} / {total}",
   "push.friend_request_title": "New friend request",
   "push.friend_accepted_title": "You're friends now",
   "push.quest_started_title": "The quest has started",

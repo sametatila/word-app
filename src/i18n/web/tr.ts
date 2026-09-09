@@ -1027,6 +1027,8 @@ export const trWeb: Record<string, string> = {
   "plc.intro": "Dört kısa aşama — kelime, dilbilgisi, okuma, dinleme — en çok 15 dakika. Sonunda bir seviye önerisi ve beceri profili alırsın; seviyeyi yine sen seçersin.",
   "plc.suggested": "öneri",
   "plc.skip_stage": "Bu aşamayı atla",
+  "plc.dont_know": "Bilmiyorum",
+  "plc.text_of": "Metin {n} / {total}",
   "push.friend_request_title": "Yeni arkadaşlık isteği",
   "push.friend_accepted_title": "Artık arkadaşsınız",
   "push.quest_started_title": "Görev başladı",

@@ -1002,6 +1002,8 @@ export const deWeb: Record<string, string> = {
   "plc.intro": "Vier kurze Abschnitte — Wortschatz, Grammatik, Lesen, Hören — höchstens 15 Minuten. Am Ende bekommst du eine Niveauempfehlung und ein Fertigkeitsprofil; die Stufe wählst weiterhin du.",
   "plc.suggested": "empfohlen",
   "plc.skip_stage": "Diesen Abschnitt überspringen",
+  "plc.dont_know": "Weiß ich nicht",
+  "plc.text_of": "Text {n} / {total}",
   "push.friend_request_title": "Neue Freundschaftsanfrage",
   "push.friend_accepted_title": "Ihr seid jetzt Freunde",
   "push.quest_started_title": "Die Quest ist gestartet",

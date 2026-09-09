@@ -245,7 +245,7 @@ export function MockExamPlayer({ paper, part }: { paper: MockPaper; part: MockPa
     const points = part.tasks.reduce((a, x) => a + (isOpenTask(x) ? 0 : x.items.length), 0);
     return (
       <section className="card mx-auto w-full max-w-2xl p-5">
-        <p className="muted text-xs font-bold tracking-wide">{paper.level} · Deneme {paper.no}</p>
+        <p className="muted text-xs font-bold tracking-wide">{paper.level} · {t("mockexams.paper", { n: paper.no })}</p>
         <h1 className="mt-1 text-2xl font-bold" lang={paper.course}>{mockSkillLabel(paper.course, part.skill)}</h1>
         <p className="muted mt-1 text-sm">{paper.theme} — {paper.themeTr}</p>
 
@@ -586,7 +586,7 @@ function SpeakingTask({
   onOpenScore: (id: string, v: OpenScore) => void;
 }) {
   const t = useT();
-  const [step, setStep] = useState<"bekleme" | "hazirlik" | "konusma" | "bitti">("bekleme");
+  const [step, setStep] = useState<"waiting" | "prep" | "speaking" | "done">("waiting");
   const [turn, setTurn] = useState(0);
   const [count, setCount] = useState(0);
   const [busy, setBusy] = useState(false);
@@ -598,7 +598,7 @@ function SpeakingTask({
   const prep = task.prepSeconds ?? 60;
 
   useEffect(() => {
-    if (step !== "hazirlik" && step !== "konusma") return;
+    if (step !== "prep" && step !== "speaking") return;
     if (count <= 0) return;
     const id = setTimeout(() => setCount((c) => c - 1), 1000);
     return () => clearTimeout(id);
@@ -640,7 +640,7 @@ function SpeakingTask({
   }
 
   async function run() {
-    setStep("konusma");
+    setStep("speaking");
     const said: string[] = [];
     if (!exchange.length) {
       const got = await listen(task.speakSeconds ?? 120);
@@ -660,13 +660,13 @@ function SpeakingTask({
     }
     if (!alive.current) return;
     onOpen(task.id, said.join("\n"));
-    setStep("bitti");
+    setStep("done");
   }
 
   // Hazırlık bitince kendiliğinden konuşmaya geçer — dijital oturumda fazlar
   // otomatik akar.
   useEffect(() => {
-    if (step === "hazirlik" && count === 0) void run();
+    if (step === "prep" && count === 0) void run();
   }, [step, count]); // eslint-disable-line react-hooks/exhaustive-deps
 
   async function evaluate() {
@@ -693,27 +693,27 @@ function SpeakingTask({
         </div>
       ))}
 
-      {step === "bekleme" ? (
+      {step === "waiting" ? (
         <>
           <p className="muted mt-4 text-sm leading-relaxed">
             {exchange.length
               ? t("mockexam.exchange_intro", { n: exchange.filter((x) => x.who === "you").length, prep })
               : t("mockexam.solo_intro", { prep, speak: task.speakSeconds ?? 120 })}
           </p>
-          <button type="button" className="btn btn-ghost mt-3 px-4 py-2 text-sm" onClick={() => { setCount(prep); setStep("hazirlik"); }}>
+          <button type="button" className="btn btn-ghost mt-3 px-4 py-2 text-sm" onClick={() => { setCount(prep); setStep("prep"); }}>
             <MicIcon className="size-4" /> {t("mockexam.speak_start")}
           </button>
-          <button type="button" className="btn btn-ghost ml-2 mt-3 px-4 py-2 text-sm" onClick={() => setStep("bitti")}>
+          <button type="button" className="btn btn-ghost ml-2 mt-3 px-4 py-2 text-sm" onClick={() => setStep("done")}>
             {t("mockexam.write_without_mic")}
           </button>
         </>
-      ) : step === "hazirlik" ? (
+      ) : step === "prep" ? (
         <div className="mt-4 text-center">
           <p className="muted text-xs font-bold tracking-wide">{t("mockexam.prep")}</p>
           <p className="text-3xl font-bold tabular-nums" style={{ color: "var(--color-brand)" }}>{mmss(count)}</p>
           <p className="muted mt-1 text-sm">{t("mockexam.prep_hint")}</p>
         </div>
-      ) : step === "konusma" ? (
+      ) : step === "speaking" ? (
         <div className="mt-4">
           {current?.who === "partner" ? (
             <>

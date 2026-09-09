@@ -15,7 +15,8 @@ import { formatPercent } from "@/lib/i18n/dict";
 
 type Phase = "intro" | "loading" | "vocab" | "grammar" | "reading" | "listening" | "finishing" | "result" | "error";
 
-const STAGE_TITLE: Record<PlacementStage, string> = { vocab: "Kelime", grammar: "Dilbilgisi", reading: "Okuma", listening: "Dinleme" };
+/** Aşama başlıkları sınav bölüm adlarıyla aynı — ikinci bir metin yazılmadı. */
+const STAGE_TITLE_KEYS: Record<PlacementStage, string> = { vocab: "exam.sec_vocab", grammar: "exam.sec_grammar", reading: "exam.sec_reading", listening: "exam.sec_listening" };
 const STAGE_HINT: Record<PlacementStage, string> = {
   vocab: "plc.vocab",
   grammar: "plc.grammar",
@@ -232,7 +233,7 @@ export function PlacementTest({ initialLast, canRetake, retakeDays }: { initialL
   const header = (
     <div className="mb-3 flex items-center justify-between text-xs font-semibold">
       <span>
-        {STAGE_TITLE[stage]} · <span className="muted">{stage === "vocab" || stage === "grammar" ? level : ""}</span>
+        {t(STAGE_TITLE_KEYS[stage])} · <span className="muted">{stage === "vocab" || stage === "grammar" ? level : ""}</span>
       </span>
       <button type="button" onClick={() => leaveStage(stage)} className="muted underline-offset-2 hover:underline">
         {t("plc.skip_stage")}
@@ -241,7 +242,7 @@ export function PlacementTest({ initialLast, canRetake, retakeDays }: { initialL
   );
   const dontKnow = (onPick: () => void) => (
     <button type="button" onClick={onPick} className="btn btn-ghost mt-2 w-full px-4 py-2.5 text-sm">
-      Bilmiyorum
+      {t("plc.dont_know")}
     </button>
   );
   const options = (opts: string[], answer: number, onPick: (correct: boolean) => void) => (
@@ -328,7 +329,8 @@ export function PlacementTest({ initialLast, canRetake, retakeDays }: { initialL
       {options(q.options, q.answer, (c) => answerText(stage, item, qIndex, c))}
       {dontKnow(() => answerText(stage, item, qIndex, false))}
       <p className="muted mt-3 text-center text-xs">
-        Metin {textIndex + 1} / {list.length} · Soru {qIndex + 1} / {item.questions.length}
+        {t("plc.text_of", { n: textIndex + 1, total: list.length })} ·{" "}
+        {t("exam.question_of", { n: qIndex + 1, total: item.questions.length })}
       </p>
     </section>
   );
