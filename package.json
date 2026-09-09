@@ -87,7 +87,8 @@
     "check:libvocab": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/check-library-vocab.ts",
     "report:library": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/report-library.ts",
     "prep:library": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/prep-library-inputs.ts",
-    "check:examvocab": "tsx scripts/check-exam-vocab.ts"
+    "check:examvocab": "tsx scripts/check-exam-vocab.ts",
+    "check:lessons-vocab": "node data/lessons/vocab/check.mjs"
   },
   "dependencies": {
     "better-auth": "^1.7.3",
