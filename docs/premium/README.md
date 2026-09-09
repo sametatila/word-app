@@ -379,7 +379,36 @@ kilit gösterip satın alma yolu sunmamak kullanıcıyı çıkmaza sokardı.
 
 ---
 
-## 6. Sınanacaklar (mağaza hesapları gerektirir)
+## 6. Yerelde testi koşturmak
+
+Yetki katmanının 32 doğrulaması **gerçek** Postgres istiyor; sınadıklarının
+yarısı veritabanının kendi davranışı (benzersiz kısıtın çakışması, kayıp
+güncelleme, `now()`un cümle içinde değerlendirilmesi). CI bunu bir servis
+kabıyla koşuyor; yerelde bir kap yetiyor:
+
+```bash
+docker run -d --name lernomi-pgtest --network host \
+  -e POSTGRES_PASSWORD=test -e POSTGRES_DB=lernomi \
+  -e PGPORT=55432 postgres:17-alpine
+
+export DATABASE_URL=postgres://postgres:test@127.0.0.1:55432/lernomi
+export TEST_DATABASE_URL=$DATABASE_URL
+npx tsx scripts/migrate-all.ts     # 45 migration, sıra _journal.json'dan
+npx tsx scripts/schema-check.ts    # şema ile veritabanı uyumlu mu
+npm run test:entitlement           # 32 doğrulama
+```
+
+`--network host` tercih değil zorunluluk: bu makinede docker'ın köprü ağı
+(`veth` çifti) desteklenmiyor, varsayılan ağla kap ayağa kalkmıyor. Port
+5432 yerine 55432 seçilmesinin sebebi de bu — host ağında yerel Postgres ile
+çakışmasın.
+
+`migrate-all.ts` adres localhost değilse **baştan reddediyor**; test de aynı
+şekilde. Üretim veritabanına yanlışlıkla bağlanmak bu iki kapının arkasında.
+
+---
+
+## 7. Sınanacaklar (mağaza hesapları gerektirir)
 
 - [ ] Sandbox satın alma → `premium_grants`'e `store` satırı düşüyor mu
 - [ ] Deneme başlangıcı → yetki açılıyor, `store_paid_at` **boş** kalıyor
