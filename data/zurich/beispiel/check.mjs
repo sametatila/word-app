@@ -14,6 +14,8 @@
  *     ölçülebilen kısmı sayılar ve özel isimlerin örtüşmesi.
  */
 import { readFileSync, readdirSync, existsSync } from "node:fs";
+import { fileURLToPath } from "node:url";
+import { resolve } from "node:path";
 
 const ROOT = new URL("../../..", import.meta.url).pathname;
 const ARG = (process.argv[2] || "all").toLowerCase();
@@ -177,8 +179,9 @@ function contains(sentence, headword) {
   return forms(headword).some((form) => form.split(/\s+/).every(partPresent));
 }
 
-const words_ = (s) => s.trim().split(/\s+/).filter(Boolean).length;
-const numbers = (s) => (s.match(/\d+/g) ?? []).sort().join(",");
+export { contains, flat, flatKey };
+export const words_ = (s) => s.trim().split(/\s+/).filter(Boolean).length;
+export const numbers = (s) => (s.match(/\d+/g) ?? []).sort().join(",");
 
 function inspect(packet) {
   const src = JSON.parse(readFileSync(`${IN}/${packet}.json`, "utf8"));
@@ -229,6 +232,15 @@ function inspect(packet) {
   return { packet, errors, warnings, items: out.length, kept };
 }
 
+/*
+  Kurallar dışarı açıldı (`contains`, `words_`, `numbers`): `triage.mjs` aynı
+  denetimi mevcut cümlelere uygulayıp "korunabilir mi" sorusunu yanıtlıyor.
+  Kuralı kopyalamak, iki denetleyicinin zamanla ayrışması demekti.
+
+  Bu yüzden ana gövde yalnızca dosya DOĞRUDAN çalıştırıldığında koşuyor;
+  içe aktarıldığında yalnız işlevler geliyor.
+*/
+if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
 const all = readdirSync(IN)
   .filter((f) => f.endsWith(".json"))
   .map((f) => f.replace(/\.json$/, ""))
@@ -268,3 +280,4 @@ console.log(
   `\nözet: ${selected.length - pending}/${selected.length} paket üretilmiş, ${items} madde (${kept} korundu) · ${errorCount} hata · ${warningCount} uyarı`,
 );
 process.exit(errorCount ? 1 : 0);
+}

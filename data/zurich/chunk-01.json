@@ -112,7 +112,7 @@
 { "id": 111, "gsw": "Durscht", "artikel": "de", "beispiel": "Häsch öppis zum Trinke? Ich ha en riisige Durscht." },
 { "id": 112, "gsw": "dusche", "artikel": null, "beispiel": "Zerscht dusche ich, dänn gits Zmorge." },
 { "id": 113, "gsw": "Äi", "artikel": "s", "beispiel": "Möchtisch es Äi zum Zmorge?" },
-{ "id": 114, "gsw": "en", "artikel": null, "beispiel": "Häsch du en Brueder?" },
+{ "id": 114, "gsw": "en/e/es", "artikel": null, "beispiel": "Häsch du en Brueder?" },
 { "id": 115, "gsw": "äifach", "artikel": null, "beispiel": "Du chasch en äifach fraage. D Üebig isch ganz äifach." },
 { "id": 116, "gsw": "poschte", "artikel": null, "beispiel": "Wer poschtet bi öich?" },
 { "id": 117, "gsw": "iilade", "artikel": null, "beispiel": "Darf ich Si zumene Kaffi iilade?" },

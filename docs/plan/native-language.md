@@ -82,12 +82,44 @@ Bu fazda ayrıca:
 - Ayar başlığı "Uygulama dili" → **"Ana dilim"**, alt metni de ne yaptığını
   söylüyor: arayüz + anlatım + kelime anlamları + kurs listesi.
 
-## Faz 3 — veri (sıradaki)
+## Faz 3 — veri (başladı)
 
 Bir pariteyi açmak = `check:pairs` onu "!" ile işaretlemesi + `PAIR_READY`ye
-eklenmesi. Sıra, en az veriyle en çok pariteyi açacak biçimde:
+eklenmesi.
 
-1. `words` · gsw örnek çevirileri (8.266 + 351) → **en→gsw** kelime katmanı
+### 1. gsw örnek cümleleri — 8.266 çeviri DEĞİL, 1.183 cümle
+
+İlk ölçümde bu kalem "8.266 İngilizce çeviri" görünüyordu. Yanlıştı.
+`seed-zurich.ts` zaten şunu yapıyor: lehçe cümlesi Almanca cümlenin karşılığı
+olarak yeniden yazılmışsa Türkçe VE İngilizce çeviri Almanca satırdan
+**koşulsuz devralınıyor**. Yani çeviri yazılmıyor, cümle hizalanıyor.
+
+O iş `data/zurich/beispiel/SPEC.md`'de tanımlıydı ama hiç koşulmamıştı
+(`out/` dizini yoktu) — ve tam olarak bu yüzden gsw'de İngilizce örnek
+çevirisi 0/8.266, Türkçe 7.915/8.266.
+
+Triyaj (`triage.mjs`, denetleyicinin KENDİ kurallarıyla) gerçek boyutu verdi:
+
+```
+8.267 madde · 7.084 korunabilir · 1.183 yazılacak
+   877  çok cümleli        334  sayı uyuşmazlığı     285  soru uyuşmazlığı
+   ~300 uzunluk             72  kelime cümlede yok    35  çok seçenekli (/)
+```
+
+Hat: `make-packets` → `fix/<paket>.json` (yalnız yeniden yazılanlar) →
+`apply.mjs` (korunanları otomatik ekler) → `check.mjs`. `fix/` sayesinde bir
+paketin diff'i "neyi elle yazdım"ı gösteriyor, elli maddelik kopyayı değil.
+
+**a1-001 bitti**: 50 madde, 29 korundu, 21 yazıldı, denetim temiz. Bu ilk paket
+kalite ölçütü — kalan 166 paket aynı yordamla.
+
+Yolda bir kaynak hatası çıktı: id 114 (`ein`) lehçe başlığı yalnız `en`
+yazılıydı, oysa Zürihçede belirsiz artikelin üç biçimi var ve nötr isimde `es`
+oluyor ("es Velo"). Cümle ya yanlış cinsiyet ya yanlış anlam taşımak zorunda
+kalıyordu; başlık `en/e/es` yapıldı — id 692 (`ere/em/en`) zaten bu desende.
+
+### 2–4. sırada
+
 2. `words` · Almanca karşılık + örnek (7.175 + 7.175) → **de→en** kelime katmanı
 3. `skill_exercises` · intro/gloss/açıklama
 4. `lessons` · anlatım metni

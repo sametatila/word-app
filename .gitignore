@@ -19,6 +19,11 @@ dist/
 # repoda durmazlarsa ilk `db:seed` hepsini siler.
 !data/meanings/out/
 !data/zurich/beispiel/out/
+# Paketler ve triyaj listesi ÜRETİLİYOR (`make-packets.mjs`, `triage.mjs`) ve
+# kaynaktan her an yeniden kurulabiliyor; repoda durmaları yalnız gürültü.
+# `fix/` ise elle yazılan cümleler — o commit'lenir, `out/` da ondan kuruluyor.
+data/zurich/beispiel/in/
+data/zurich/beispiel/todo.json
 *.tsbuildinfo
 next-env.d.ts
 
