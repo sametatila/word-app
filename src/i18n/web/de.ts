@@ -1250,4 +1250,29 @@ export const deWeb: Record<string, string> = {
   "email.reset.cta": "Passwort zurücksetzen",
   "email.reset.text": "Lernomi Passwort zurücksetzen\n\nZum Zurücksetzen deines Passworts: {url}\n\nWenn du das nicht angefragt hast, ignoriere es.",
   "email.fallback_link": "Wenn der Button nicht funktioniert: {url}",
+
+  /*
+    WEB'E ÖZEL, BASE'DEN DÜŞTÜ. Bu on altı anahtar `src/i18n/base/` içinde elle
+    duruyordu ama orası ÜRETİLİYOR (`scripts/i18n-pull.mjs`, kaynak mobil
+    sözlük) ve mobilde bu ekranların hiçbiri yok: ilk yenilemede sözlükten
+    silindiler, çağıran kod yerinde kaldı. Doğru yerleri burası — seviye
+    belirleme, tur özeti, çevrimdışı yazma geri bildirimi ve değerlendirme
+    bildirimi yalnız webde.
+  */
+  "game.exit_message_practice": "Deine Antworten werden gespeichert; die Übung wird nicht fortgesetzt.",
+  "session.wager_won": "Einsatz in der letzten Etappe aufgegangen · +{xp} XP",
+  "session.wager_lost": "Einsatz in der letzten Etappe verloren · {xp} XP",
+  "session.goal_reached": "Tagesziel geschafft",
+  "placement.last_taken": "Zuletzt: {date} · Vorschlag",
+  "placement.you_chose": "· deine Wahl {level}",
+  "placement.continue_with": "Mit {level} weitermachen",
+  "placement.pick_and_continue": "{level} wählen und weitermachen",
+  "placement.section_n": "Abschnitt {n}",
+  "assessfb.length_ok": "Du hast die geforderte Länge erreicht.",
+  "assessfb.length_short": "Du hast angefangen; etwas länger und die Aufgabe ist vollständig.",
+  "assessfb.try_phrase": "Versuch auch diese Wendung: {phrase}",
+  "assessfb.turkish_chars": "Im Text stehen türkische Buchstaben; wechsle zur Tastatur der Zielsprache.",
+  "assessfb.retry_when_ai": "Sobald die KI wieder da ist, kannst du denselben Text erneut bewerten lassen.",
+  "push.assess_title": "Dein Text wurde bewertet",
+  "push.assess_body": "Punktzahl {score}/100 — sieh dir die Korrekturen an.",
 };

@@ -1275,4 +1275,29 @@ export const trWeb: Record<string, string> = {
   "email.reset.cta": "Parolamı sıfırla",
   "email.reset.text": "Lernomi parola sıfırlama\n\nParolanı sıfırlamak için: {url}\n\nİstemediysen yok say.",
   "email.fallback_link": "Düğme çalışmazsa: {url}",
+
+  /*
+    WEB'E ÖZEL, BASE'DEN DÜŞTÜ. Bu on altı anahtar `src/i18n/base/` içinde elle
+    duruyordu ama orası ÜRETİLİYOR (`scripts/i18n-pull.mjs`, kaynak mobil
+    sözlük) ve mobilde bu ekranların hiçbiri yok: ilk yenilemede sözlükten
+    silindiler, çağıran kod yerinde kaldı. Doğru yerleri burası — seviye
+    belirleme, tur özeti, çevrimdışı yazma geri bildirimi ve değerlendirme
+    bildirimi yalnız webde.
+  */
+  "game.exit_message_practice": "Cevapladıkların kaydedilir; pratik kaldığı yerden sürmez.",
+  "session.wager_won": "Son etapta bahis tuttu · +{xp} XP",
+  "session.wager_lost": "Son etapta bahis yandı · {xp} XP",
+  "session.goal_reached": "Günlük hedefi tamamladın",
+  "placement.last_taken": "Son alma: {date} · öneri",
+  "placement.you_chose": "· seçtiğin {level}",
+  "placement.continue_with": "{level} ile devam et",
+  "placement.pick_and_continue": "{level} seç ve devam et",
+  "placement.section_n": "Bölüm {n}",
+  "assessfb.length_ok": "Görevin uzunluğunu tutturdun.",
+  "assessfb.length_short": "Başladın; biraz daha uzatınca görev tamamlanır.",
+  "assessfb.try_phrase": "Şu kalıbı da kullanmayı dene: {phrase}",
+  "assessfb.turkish_chars": "Metinde Türkçe harf var; hedef dilin klavye düzenine geç.",
+  "assessfb.retry_when_ai": "AI açıldığında aynı metni tekrar değerlendirebilirsin.",
+  "push.assess_title": "Yazın değerlendirildi",
+  "push.assess_body": "Puan {score}/100 — düzeltmelere bak.",
 };
