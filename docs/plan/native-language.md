@@ -225,8 +225,7 @@ de() segment       8.486   ← hedef dil, çevrilmez
 titleTr + summary  1.160   ← BİTTİ, bkz. aşağısı
 vocab girdisi      4.640   ← havuzda karşılığı olan 4.621, ama bkz. aşağısı
 patterns girdisi   1.292   ← %0,3 · kalıp cümleler havuzda yok, elle
-roleplay scene       580   ← İngilizcesi 0
-goal                 580   ← İngilizcesi 0
+roleplay (4 alan)  2.320   ← İngilizcesi 0 · bkz. aşağısı
 ```
 
 Elle yazılacak: **en az 21.000 dize**. Bunun %83'ü tek bir alan: `lecture`.
@@ -364,6 +363,36 @@ gerçekten yanlış karşılık verirdi, %61'inde gereksiz yere okundu. Ama
 tersini yapmanın maliyeti çok daha yüksekti — 258 yanlış karşılık sessizce
 yüklenirdi ve hiçbir kapı görmezdi. `data/meanings/contains.mjs` notundaki
 ilkeyle aynı: yanlış ret yanlış kabulden ucuz.
+
+**roleplay SAYILDI: 1.160 değil 2.320 dize.** Bu belge kalemi
+"scene + goal" diye yazmıştı; blok açılınca DÖRT Türkçe alan çıktı:
+
+```
+scene      580   ort. 150 karakter   öğrenciye verilen görev
+partner    580   ort.  51            karşıdakinin kim olduğu — ÖBEK, cümle değil
+openingTr  580   ort.  62            Almanca `opening`in çevirisi
+goal       580   ort.  93            başarı koşulu
+```
+
+(`opening` Almanca, çevrilmez; `minTurns` sayı.) Dördü aynı pakette
+duruyor çünkü birbirine bağlı: `goal` sahnede verilen görevin tamamlanmış
+hâli, `openingTr` partnerin ağzından çıkan ilk cümle. Ayrı paketlense biri
+ötekine bakmadan yazılırdı.
+
+Hat `data/lessons/roleplay/` kuruldu (24 paket × 25 ders × 4 alan), r-001
+yazıldı. Kapının iki kuralı bu alana özgü ve ikisi de negatif test edildi:
+
+- **`openingEn` kaynakla noktalama ve SAYI denkliği.** Almanca "Wie heißen
+  Sie?" soruysa İngilizcesi de sorudur; "Zimmer zwölf" sayıyı harfle
+  yazıyorsa çeviri de yazar. r-001'de 25 açılışın 25'i soru.
+- **`partner` nokta ile bitmemeli** — öbek olmalı, cümle değil. meta
+  hattındaki başlık/özet ayrımının aynısı.
+
+Bir de İngilizcenin taşıyamadığı bir ayrım çıktı: açılışların bir kısmı
+`Sie`, bir kısmı `du` kullanıyor, İngilizce "you" ikisini de karşılıyor.
+`de-a1-du-oder-sie` dersinin KONUSU tam olarak bu ayrım, o yüzden görev
+metnine Almancası yazıldı: "Use the polite form (Sie) throughout". C1'deki
+"The art of switching to du" ile aynı karar.
 
 **başlık ve özet BİTTİ (580/580 ders · 1.160 dize).** Hat
 `data/lessons/meta/`: `make` → elle `out/m-NNN.json` → `check`

@@ -1,0 +1,177 @@
+[
+ {
+  "lesson": "de-a1-hallo",
+  "sceneEn": "You have just moved into your block and you meet a neighbour on the stairs. Introduce yourself: say your name, where you are from and where you live.",
+  "partnerEn": "a curious but polite neighbour",
+  "openingEn": "Hello! You're new here, aren't you? What's your name?",
+  "goalEn": "Your neighbour has learnt your name, where you are from and which floor you live on, and you have both said you are pleased to meet."
+ },
+ {
+  "lesson": "de-a1-wie-gehts",
+  "sceneEn": "You meet a colleague at the door of your workplace. Ask how they are, say how you are, and be sure to put the question back to them.",
+  "partnerEn": "a cheerful and talkative colleague",
+  "openingEn": "Good morning! How are you today?",
+  "goalEn": "You have both asked and answered how the other is, and made a short remark about how the day will go."
+ },
+ {
+  "lesson": "de-a1-du-oder-sie",
+  "sceneEn": "It is your first day at work and you are meeting your new boss. Use the polite form (Sie) throughout: ask their name, introduce yourself and say where you live.",
+  "partnerEn": "a serious but warm boss",
+  "openingEn": "Good afternoon! Are you new here on the team?",
+  "goalEn": "You have learnt your boss's name and where they live, and they have told you your first task."
+ },
+ {
+  "lesson": "de-a1-woher",
+  "sceneEn": "It is the first day of a German course and you are getting to know the person next to you. Ask where they are from and where they live, and talk about yourself too.",
+  "partnerEn": "a shy but friendly fellow student",
+  "openingEn": "Hello! I'm new here too. Where are you from?",
+  "goalEn": "You have both learnt where the other is from and where they live, and decided to sit next to each other in the course."
+ },
+ {
+  "lesson": "de-a1-sprachen",
+  "sceneEn": "Someone at the next table in a café has struck up a conversation with you. Ask which languages they speak and talk about your own.",
+  "partnerEn": "a curious and patient student",
+  "openingEn": "Excuse me, do you speak German?",
+  "goalEn": "You have each learnt which languages the other speaks and decided which language to carry on in."
+ },
+ {
+  "lesson": "de-a1-zahlen",
+  "sceneEn": "You are joining a gym and you are at the reception desk. Give your phone number, then ask how much the monthly fee is.",
+  "partnerEn": "a fast-talking but helpful member of staff",
+  "openingEn": "Good afternoon! You'd like to become a member? What's your phone number?",
+  "goalEn": "Your phone number has been taken down, and you have been told the monthly fee and when the membership starts."
+ },
+ {
+  "lesson": "de-a1-alphabet",
+  "sceneEn": "You are getting a library card. The assistant will ask for your first name and surname: say them, spell them, and ask how a word is written when you need to.",
+  "partnerEn": "a calm and meticulous librarian",
+  "openingEn": "Good afternoon! I need your first name and your surname. Can you spell that?",
+  "goalEn": "Your first name and surname have been written down letter by letter, and you have been told when the card will be ready."
+ },
+ {
+  "lesson": "de-a1-beruf",
+  "sceneEn": "You are at a party at a neighbour's flat and someone you have just met asks what you do. Say your job, what work it involves and where you work.",
+  "partnerEn": "a sociable, slightly nosy guest",
+  "openingEn": "Good evening! And what do you do for a living?",
+  "goalEn": "The other person has learnt your job and where you work, and has told you about their own."
+ },
+ {
+  "lesson": "de-a1-alter",
+  "sceneEn": "You are at a friend's birthday party and you have just met someone new there. Ask how old they are, and say your own age and where you were born.",
+  "partnerEn": "a jokey, easy-going party guest",
+  "openingEn": "Hello, I'm Lena and today I'm thirty. How old are you?",
+  "goalEn": "You have both given your age and where you were born, and found one small thing you have in common."
+ },
+ {
+  "lesson": "de-a1-formular",
+  "sceneEn": "You are registering your address at the town hall and the clerk is filling in the form for you. Give your name, your address, your postcode and the town you live in.",
+  "partnerEn": "a formal but helpful clerk",
+  "openingEn": "Good afternoon! What's your name, please?",
+  "goalEn": "Every field on the form has been filled in and the clerk has told you the registration is complete."
+ },
+ {
+  "lesson": "de-a1-familie",
+  "sceneEn": "You are at a work dinner and someone at the table has asked you to talk about your family. Introduce your mother, your father and your children, and give their names.",
+  "partnerEn": "a polite table companion who is genuinely interested",
+  "openingEn": "Do tell me about your family. Do you have children?",
+  "goalEn": "The person at the table has learnt who your family is made up of, and has told you something about their own."
+ },
+ {
+  "lesson": "de-a1-geschwister",
+  "sceneEn": "You are on a coffee break at work and talking about your families with a colleague. Talk about your brothers and sisters, and ask about theirs.",
+  "partnerEn": "a chatty colleague from a large family",
+  "openingEn": "I have three sisters. And you, do you have any brothers or sisters?",
+  "goalEn": "You have both learnt how many brothers and sisters the other has and who lives where."
+ },
+ {
+  "lesson": "de-a1-kein",
+  "sceneEn": "A friend is inviting you out to eat this evening, but you have neither the time nor the money. Say no politely and explain why.",
+  "partnerEn": "a persistent friend who understands in the end",
+  "openingEn": "We're going out to eat this evening. Are you coming along?",
+  "goalEn": "The invitation has been turned down politely, the reason has been given and another day has been promised."
+ },
+ {
+  "lesson": "de-a1-haustiere",
+  "sceneEn": "You are sitting on a bench in the park and someone with a dog has sat down beside you. Talk about your own pet, give its name and age, and ask about theirs.",
+  "partnerEn": "a talkative park regular who dotes on animals",
+  "openingEn": "My dog is called Rocky. Do you have a pet too?",
+  "goalEn": "Both animals' names, ages and characters have been talked about, and you have promised to meet again in the park."
+ },
+ {
+  "lesson": "de-a1-fotos",
+  "sceneEn": "You are showing a friend your family photo album. Say who the people in the photos are and answer your friend's questions.",
+  "partnerEn": "a curious friend who asks about every single face",
+  "openingEn": "Lovely photo! Who's that next to you?",
+  "goalEn": "Everyone in the photos has been introduced and your friend has worked out who is who."
+ },
+ {
+  "lesson": "de-a1-plural",
+  "sceneEn": "You are at a second-hand book stall and the seller is asking how many books you are taking. Say so with numbers and plural words.",
+  "partnerEn": "a chatty stallholder who enjoys haggling",
+  "openingEn": "Good afternoon! How many books are you taking?",
+  "goalEn": "How many books you are taking and the total price have been settled, and the purchase is done."
+ },
+ {
+  "lesson": "de-a1-aussehen",
+  "sceneEn": "A friend is talking about someone they have just met and you want to know what they look like. Ask about their height, their hair and whether they wear glasses.",
+  "partnerEn": "a friend who loves telling a story and exaggerates a little",
+  "openingEn": "I have a new friend, he's very tall. What does your best friend look like?",
+  "goalEn": "The person's height, hair and glasses have been described, well enough for you to pick them out in a crowd."
+ },
+ {
+  "lesson": "de-a1-freunde",
+  "sceneEn": "Someone you have just met is curious about the friend whose name you mention so often. Say where they live, what they do and how often you meet.",
+  "partnerEn": "a new acquaintance who likes to listen and asks question after question",
+  "openingEn": "You talk about Murat so often. Who is that?",
+  "goalEn": "Where your friend lives, what they do and how often you meet have all been described."
+ },
+ {
+  "lesson": "de-a1-nicht",
+  "sceneEn": "A member of staff at an office is giving you directions very fast and you are missing half of it. Say that you have not understood, ask them to slow down, and correct something they have got wrong.",
+  "partnerEn": "a hurried but well-meaning member of staff",
+  "openingEn": "You need form A and then room twelve, all right?",
+  "goalEn": "The part you missed has been repeated, the wrong information has been put right and it is clear what you have to do."
+ },
+ {
+  "lesson": "de-a1-familienfest",
+  "sceneEn": "You are planning Saturday's family gathering with your cousin. Talk about who is coming and decide who is bringing what.",
+  "partnerEn": "a cousin who lists everything and loves planning",
+  "openingEn": "On Saturday we're celebrating together. Who's all coming?",
+  "goalEn": "Who is coming, who is bringing what and what time you are meeting have all been settled."
+ },
+ {
+  "lesson": "de-a1-cafe",
+  "sceneEn": "You are sitting in a café and the waiter has come to take your order. Order something with the pattern 'Ich möchte …', make small talk, and ask for the bill at the end.",
+  "partnerEn": "a friendly waiter",
+  "openingEn": "Good afternoon! What would you like to order?",
+  "goalEn": "The order has been placed, it has arrived at the table and the bill has been asked for."
+ },
+ {
+  "lesson": "de-a1-fruehstueck",
+  "sceneEn": "You are at the breakfast table with your flatmate. Say what you want to eat and drink, ask what else is on the table, and say what you like at breakfast.",
+  "partnerEn": "a flatmate who is cheerful in the mornings and talks a lot",
+  "openingEn": "Good morning! What do you eat for breakfast?",
+  "goalEn": "You have both said what you will eat and drink, and found something missing from the table."
+ },
+ {
+  "lesson": "de-a1-imbiss",
+  "sceneEn": "You are at a snack bar on your lunch break and there is a queue behind you. Give your order in short sentences, ask the price, and say whether you are eating in or taking it away.",
+  "partnerEn": "a quick-handed, jokey snack bar owner",
+  "openingEn": "Hello! Would you like sausage or chips?",
+  "goalEn": "The order has been given, the price has been said and it is settled whether you eat in or take it away."
+ },
+ {
+  "lesson": "de-a1-restaurant",
+  "sceneEn": "You have sat down at a table in a restaurant and the waiter has come to take your order. Ask for the menu, choose a starter, say your main course and ask to pay at the end.",
+  "partnerEn": "a calm waiter who knows exactly what to recommend",
+  "openingEn": "Good evening! Would you like to order now?",
+  "goalEn": "A starter and a main course have been chosen, and the bill has been asked for at the end."
+ },
+ {
+  "lesson": "de-a1-lieblingsessen",
+  "sceneEn": "You are talking with a colleague on your lunch break about where to go to eat. Say what you like eating, state your preference between two options, and ask what they like.",
+  "partnerEn": "a colleague who is very keen on food",
+  "openingEn": "I like eating vegetables. And what do you like eating?",
+  "goalEn": "What you both like eating has been talked about and you have decided where to go at lunchtime."
+ }
+]

@@ -90,7 +90,8 @@
     "check:examvocab": "tsx scripts/check-exam-vocab.ts",
     "check:lessons-vocab": "node data/lessons/vocab/check.mjs",
     "check:lessons-patterns": "node data/lessons/patterns/check.mjs",
-    "check:lessons-meta": "node data/lessons/meta/check.mjs"
+    "check:lessons-meta": "node data/lessons/meta/check.mjs",
+    "check:lessons-roleplay": "node data/lessons/roleplay/check.mjs"
   },
   "dependencies": {
     "better-auth": "^1.7.3",
