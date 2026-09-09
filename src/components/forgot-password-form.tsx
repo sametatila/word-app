@@ -49,7 +49,7 @@ export function ForgotPasswordForm() {
       {sent ? (
         <div className="space-y-3">
           <AuthNotice tone="success">
-            {t("authw.reset_sent", { email })}
+            {t("auth.we_sent_reset_link_to_if_that", { email })}
           </AuthNotice>
           <p className="muted text-sm">
             {t("authw.reset_sent_note")}

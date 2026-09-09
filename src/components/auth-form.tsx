@@ -95,7 +95,7 @@ export function AuthForm() {
       }
       setError(t("authw.social_unavailable"));
     } catch {
-      setError(t("authw.no_connection"));
+      setError(t("autherror.could_not_connect_check_your"));
     } finally {
       setBusy(false);
     }

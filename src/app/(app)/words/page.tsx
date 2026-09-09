@@ -155,7 +155,7 @@ export default async function WordsPage({
     console.error("[words]", err);
     return (
       <div className="card mx-auto w-full max-w-md p-6 text-center">
-        <h2 className="text-lg font-bold">{t("wordsw.load_failed")}</h2>
+        <h2 className="text-lg font-bold">{t("words.couldn_t_load_your_words")}</h2>
         <p className="muted mt-2 text-sm">
           Veritabanı bağlantısını kontrol et: <code>npm run db:push</code>.
         </p>
