@@ -228,6 +228,23 @@ export const UserIcon = (p: IconProps) => (
   </Svg>
 );
 
+/** Arkadaş ekle — mobil `ui/icons.tsx` `UserPlusIcon` ile aynı çizim. */
+export const UserPlusIcon = (p: IconProps) => (
+  <Svg {...p}>
+    <circle cx="10" cy="8" r="4" />
+    <path d="M3 20c0-3.5 3-6 7-6s7 2.5 7 6" />
+    <path d="M19 8v6M16 11h6" />
+  </Svg>
+);
+
+/** Gelen kutusu — mobil `ui/icons.tsx` `InboxIcon` ile aynı çizim. */
+export const InboxIcon = (p: IconProps) => (
+  <Svg {...p}>
+    <path d="M4 13l2-8h12l2 8v6H4v-6z" />
+    <path d="M4 13h5a3 3 0 006 0h5" />
+  </Svg>
+);
+
 /** Eşleştirme oyunu — bağlantı halkaları */
 export const LinkIcon = (p: IconProps) => (
   <Svg {...p}>

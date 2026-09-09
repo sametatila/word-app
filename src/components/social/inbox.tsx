@@ -1,6 +1,8 @@
 "use client";
 
 import Link from "next/link";
+import { EmptyCard } from "@/components/empty-card";
+import { InboxIcon } from "@/components/icons";
 import { useEffect, useState } from "react";
 import { Avatar } from "@/components/avatar";
 import { RowSkeleton } from "@/components/skeleton";
@@ -64,11 +66,14 @@ export function Inbox() {
   if (items === null) return <RowSkeleton rows={5} height={60} />;
   if (!items.length) {
     return (
-      <div className="card p-6 text-center">
-        <p className="font-bold">{t("inbox.no_notifications")}</p>
-        <p className="muted mt-1 text-sm">{t("inbox.friend_requests_reactions_nudges")}</p>
-        {err ? <p className="mt-2 text-xs" style={{ color: "var(--color-rose)" }}>{err}</p> : null}
-      </div>
+      <>
+        <EmptyCard
+          icon={InboxIcon}
+          title={t("inbox.no_notifications")}
+          text={t("inbox.friend_requests_reactions_nudges")}
+        />
+        {err ? <p className="mt-2 text-center text-xs" style={{ color: "var(--color-rose)" }}>{err}</p> : null}
+      </>
     );
   }
   return (

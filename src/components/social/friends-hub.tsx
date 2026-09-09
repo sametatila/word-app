@@ -1,6 +1,8 @@
 "use client";
 
 import { useCallback, useEffect, useState } from "react";
+import { EmptyCard } from "@/components/empty-card";
+import { UserPlusIcon } from "@/components/icons";
 import { Avatar } from "@/components/avatar";
 import { HandshakeIcon } from "@/components/icons";
 import { RowSkeleton } from "@/components/skeleton";
@@ -206,13 +208,17 @@ export function FriendsHub({ me, initialTab }: { me: SocialMeView; initialTab: H
               {data.friends.length ? (
                 <FriendList friends={data.friends} nudgedToday={data.nudgedToday} onChanged={() => void reload()} />
               ) : (
-                <div className="card p-6 text-center">
-                  <p className="text-h3">{t("friends.no_friends_yet")}</p>
-                  <p className="muted mt-1 text-body">{t("friends.search_by_username_or_send_your")}</p>
-                  <button className="btn btn-primary mt-4 px-4 py-2.5" onClick={() => go("find")}>
-                    {t("friends.find_friends")}
-                  </button>
-                </div>
+                <EmptyCard
+                  icon={UserPlusIcon}
+                  tint="var(--color-mint)"
+                  title={t("friends.no_friends_yet")}
+                  text={t("friends.search_by_username_or_send_your")}
+                  action={
+                    <button className="btn btn-primary px-4 py-2.5" onClick={() => go("find")}>
+                      {t("friends.find_friends")}
+                    </button>
+                  }
+                />
               )}
               <FriendsBoard />
             </div>
