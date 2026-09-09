@@ -130,6 +130,8 @@ export const deB1P4: SkillExercise[] = [
       { speaker: "Mitarbeiterin", text: "Im Gegenteil. Essen Sie normal und trinken Sie vorher mindestens einen halben Liter Wasser. Auf keinen Fall mit leerem Magen kommen." },
       { speaker: "Anrufer", text: "Und danach? Ich habe abends Training." },
       { speaker: "Mitarbeiterin", text: "Das würde ich verschieben. Sport wird am Spendetag nicht empfohlen, auch langes Stehen in der Sonne nicht." },
+      { speaker: "Anrufer", text: "Gut zu wissen. Und wie oft darf man überhaupt spenden?" },
+      { speaker: "Mitarbeiterin", text: "Männer bis zu sechsmal im Jahr, Frauen viermal, mit mindestens acht Wochen Abstand dazwischen." },
       { speaker: "Anrufer", text: "Verstanden. Brauche ich einen Termin?" },
       { speaker: "Mitarbeiterin", text: "Beim ersten Mal ja, und bringen Sie bitte einen Ausweis mit. Ich hätte Donnerstag um halb fünf frei." },
       { speaker: "Anrufer", text: "Den nehme ich. Vielen Dank für die Auskunft." },
