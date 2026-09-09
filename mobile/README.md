@@ -154,8 +154,10 @@ imzalanırken ortaya çıkar), var olan dosyaların üzerine yazmaz, `keystore.p
 0600 bırakır ve sonunda **SHA-1/SHA-256 parmak izlerini basar** — Google ile Giriş'in
 Android OAuth istemcisi paket adı + SHA-1 eşleşmesiyle çalışıyor.
 
-Play tarafında bu bir **yükleme anahtarı**: Play App Signing devrede olduğu için kaybı
-Google'dan sıfırlatılabilir. Yan dağıtımda öyle değil — asıl yedekleme sebebi o.
+Bu bir **yükleme anahtarı**, dağıtım anahtarı değil: Play App Signing yeni uygulamalarda
+zorunlu olduğu için telefona inen APK'yı Google imzalıyor. Kaybı sıfırlatılabilir ama
+süreç günler alır ve o günlerde yeni sürüm çıkamaz — anahtar ve parola yine ayrı iki
+yerde yedeklenir.
 
 `release:android` aynı kapıyı gradle'ı hiç başlatmadan, okunur bir mesajla söylüyor;
 sonrasında da ürettiğini denetliyor:

@@ -2,18 +2,18 @@
 # Lernomi Android yayın (upload) imza anahtarını üretir. Anahtar ve parolalar
 # repoda TUTULMAZ: hem release.keystore hem keystore.properties gitignore'da.
 #
-# ANAHTAR İKİ İŞ YAPIYOR ve ikisinin kayıp sonucu farklı:
+# BU BİR YÜKLEME (upload) ANAHTARI, dağıtım anahtarı DEĞİL. Play App Signing yeni
+# uygulamalarda zorunlu: kullanıcının telefonuna inen APK'yı Google kendi
+# anahtarıyla imzalıyor, buradaki anahtar yalnız "yüklemeyi yapan benim" demeye
+# yarıyor.
 #
-#   Play (AAB)          Play App Signing devrede: bu anahtar YÜKLEME anahtarıdır.
-#                       Kaybolursa Google'dan sıfırlama istenebilir — can sıkıcı,
-#                       ama kurtarılabilir.
-#   Yan dağıtım (APK)   GitHub sürümünden inen APK'yı imzalayan da bu. Orada
-#                       kurtarma YOK: anahtar değişirse o kullanıcılar bir daha
-#                       güncelleme alamaz, uygulamayı silip yeniden kurmaları
-#                       gerekir (ve verileri gider).
+# Kaybı bu yüzden onarılabilir: Google'dan yükleme anahtarı sıfırlaması istenir.
+# Ama süreç günler alıyor ve o günlerde yeni sürüm çıkamıyor. Anahtarı ve
+# parolasını yine de birbirinden AYRI iki yerde sakla.
 #
-# Yani asıl yedekleme sebebi ikincisi. Anahtarı ve parolasını, birbirinden ayrı
-# iki yerde sakla.
+# (Burada eskiden bir de "yan dağıtım" gerekçesi vardı — GitHub sürümünden inen
+# APK'da imza anahtarı değiştirilemez, orada kurtarma yoktur. O dağıtım kanalı
+# 96a8d266 ile bırakıldı; gerekçe de onunla düştü.)
 #
 # Kullanım: bash mobile/scripts/gen-release-keystore.sh
 set -euo pipefail
