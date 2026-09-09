@@ -242,7 +242,7 @@ export function MonologuePlayer({ exercise, backHref }: { exercise: SpeakingMono
             ))}
           </div>
           <p className="muted mt-3 text-xs">
-            {t("monow.speak_range", { min: mono.minSeconds, max: mono.maxSeconds })}{" "}
+            {t("item.mono_duration", { min: mono.minSeconds, max: mono.maxSeconds })}{" "}
             {asr === false
               ? t("item.mono_no_stt")
               : t("item.mono_will_score")}
@@ -289,8 +289,8 @@ export function MonologuePlayer({ exercise, backHref }: { exercise: SpeakingMono
 
       {phase === "review" ? (
         <section className="card mt-3 p-5">
-          <p className="text-xs font-bold uppercase tracking-wide text-[color:var(--color-brand)]">{t("monow.check")}</p>
-          <p className="muted mt-1 text-xs">{t("monow.you_spoke", { time: mm(seconds) })}</p>
+          <p className="text-xs font-bold uppercase tracking-wide text-[color:var(--color-brand)]">{t("item.mono_review")}</p>
+          <p className="muted mt-1 text-xs">{t("item.mono_spoke", { time: mm(seconds) })}</p>
           {audioUrl ? (
             <audio controls src={audioUrl} className="mt-2 w-full">
               <track kind="captions" />
@@ -367,7 +367,7 @@ export function MonologuePlayer({ exercise, backHref }: { exercise: SpeakingMono
             <AssessmentCard answer={transcript.trim()} result={result} failure={failure} example={null} />
           ) : (
             <p className="text-sm">
-              {t("monow.items_checked", { n: checks.filter(Boolean).length, total: checks.length })}
+              {t("item.mono_self_done", { n: checks.filter(Boolean).length, total: checks.length })}
             </p>
           )}
           {result ? (
