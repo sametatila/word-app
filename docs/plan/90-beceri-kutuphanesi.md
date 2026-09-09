@@ -86,11 +86,37 @@ buldu; üçü de formül cümle ("Guten Tag, was kann ich für Sie tun?",
 Konu seçimi Patika derslerinin, ünite egzersizlerinin ve deneme kâğıtlarının
 dışından yapıldı (`scratchpad/avoid/*` listeleriyle karşılaştırılarak).
 
+## Sınavların yeri (2026-09-09)
+
+Kütüphane gelince Beceriler'in kimliği netleşti ve altındaki sınav listesinin
+oraya ait olmadığı görüldü. O liste bir tasarım kararı değildi: `/exam/*`
+rotaları çalışıyordu, web'de onlara giden hiçbir bağlantı yoktu ve alt gezinme
+bilerek üç sekmede tutuluyor — kapı en yakın boş duvara açılmıştı.
+
+| Sekme | İçindekiler |
+|---|---|
+| Öğren | deneme sınavları · haftalık sınav · **seviye sınavı** |
+| Patika | dersler · ünite quizi · kontrol noktası · **modül sınavları** |
+| Beceriler | yalnız serbest çalışma kütüphanesi |
+
+Modül sınavı Patika'da çünkü kâğıdı modülün kendi derslerinden üretiliyor ve
+dersleri geçilmemişse motor kâğıdı "deneme" sayıyor; ön koşulu orada olan bir
+şeyin girişi başka sekmede duruyordu. Seviye sınavı beş bölüm ve 45 dakika,
+yani ünite ölçeğinde değil.
+
+Mobilde ikisi de **hiçbir yerden açılmıyordu**: `ExamScreen` aylardır kayıtlı
+ama çağıran yoktu. Artık iki platform da aynı yerden açıyor. Mobilin modül
+listesi için `/api/exam`'e `?level=…` ucu eklendi (web listeyi sunucu
+bileşeninde doğrudan plandan kuruyor).
+
 ## Açık noktalar
 
-- **Üretim tohumu.** Web içeriği veritabanından okuyor; push sonrası sunucuda
-  `npm run db:seed:skills` koşulmadan yeni egzersizler web'de görünmez (mobil
-  paket derlemeye gömülü, etkilenmez). Üretim DB'sine yazma sahibin işi.
+- **Üretim tohumu — YAPILDI (2026-09-09).** `db:seed:skills` sunucuda koşuldu;
+  canlıda 984 egzersiz (50 kütüphane, 89 İngilizce) ve `db:verify` kaynakla
+  birebir. Sıra önemli: önce deploy, sonra tohum. Ters yapılırsa eski kod
+  dil bilgisi ve konuşma egzersizlerini listeler ama açamaz.
+- **Mobil sürüm.** Mobil içerik derlemeye gömülü; kütüphane telefonlara ancak
+  yeni bir uygulama sürümüyle iner. Web'de bugünden görünüyor.
 - **Uyarı bütçesi.** Mobilden taşınan 64 İngilizce egzersiz doğrulayıcının
   "çoktan seçmeli olmayan soru < 2" etiketini 42 → 48'e çıkardı; `--baseline`
   ile bilinçli kabul edildi (o içerik daha önce doğrulayıcının dışındaydı).
