@@ -6,7 +6,8 @@ import { miss } from "@/lib/errors";
 import { motion } from "framer-motion";
 import { GameShell } from "./game-shell";
 import { useRoundExit } from "./use-round-exit";
-import { withArtikel, type GameProps, type GameResult , meaningOf } from "./types";
+import { withArtikel, targetName, type GameProps, type GameResult , meaningOf } from "./types";
+import { nativeLangName } from "@/lib/i18n/dict";
 import type { Option, Round } from "@/lib/types";
 import { MeaningText } from "@/components/meaning-text";
 import { vibrate } from "@/lib/fx";
@@ -75,7 +76,7 @@ export function ChoiceGame({ round, onDone }: GameProps<ChoiceRound>) {
     // "Türkçe karşılığını seç" gibi bir alt bilgi yok: oyun başlığı + şıkların
     // dili zaten görevi anlatıyor, fazladan metin ekranı yorar.
     <GameShell
-      label={tx("games.choice")}
+      label={deSide ? tx("rounds.ask_native", { nativeLang: nativeLangName(lang) }) : tx("rounds.ask_target", { target: targetName(lang) })}
       /* Bu oyunda çekme koreografisi hiç yok — karışık turda da tek oyun modunda da. */
       pull={false}
       verdict={picked == null ? null : picked === answer ? "correct" : "wrong"}

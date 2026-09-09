@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { GameShell } from "./game-shell";
 import { useNoHints } from "./no-hints";
 import { useRoundExit } from "./use-round-exit";
-import { withArtikel, type GameProps, type GameResult } from "./types";
+import { targetName, withArtikel, type GameProps, type GameResult } from "./types";
 import type { Round } from "@/lib/types";
 import { vibrate } from "@/lib/fx";
 import { prefetchGerman } from "@/components/speak-button";
@@ -151,7 +151,7 @@ export function TranslateGame({ round, onDone }: GameProps<TranslateRound>) {
 
   return (
     <GameShell
-      label={tx("games.translate")}
+      label={tx("rounds.translate_into", { lang: targetName(lang) })}
       verdict={status === "idle" || status === "checking" ? null : status}
       onContinue={pending ? () => onDone([pending]) : undefined}
       why={why}

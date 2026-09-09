@@ -6,7 +6,7 @@ import { classifyTyping, miss } from "@/lib/errors";
 import { GameShell } from "./game-shell";
 import { useNoHints } from "./no-hints";
 import { useRoundExit } from "./use-round-exit";
-import { matchesAnswer, withArtikel, type GameProps, typLabel, type GameResult , meaningOf } from "./types";
+import { targetName, matchesAnswer, withArtikel, type GameProps, typLabel, type GameResult , meaningOf } from "./types";
 import type { Round } from "@/lib/types";
 import { vibrate } from "@/lib/fx";
 import { prefetchGerman } from "@/components/speak-button";
@@ -140,7 +140,7 @@ export function TypingGame({ round, onDone }: GameProps<TypingRound>) {
 
   return (
     <GameShell
-      label={tx("games.typing")}
+      label={tx("rounds.write_equivalent", { lang: targetName(lang) })}
       verdict={status === "idle" ? null : status}
       onContinue={pending ? () => onDone([pending]) : undefined}
       why={

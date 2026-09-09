@@ -1,4 +1,6 @@
 import type { Round, RoundWord } from "@/lib/types";
+import { courseName } from "@/lib/courses";
+import { COURSE_KEY, readLocal } from "@/components/speak-button";
 import { glossFor, type GlossWord } from "@/lib/option-label";
 import type { ErrorType } from "@/lib/errors";
 import { umlautStem } from "@/lib/german";
@@ -29,6 +31,19 @@ export type GameProps<R extends Round = Round> = {
 };
 
 export type { RoundWord };
+
+/**
+ * Kursun adı, arayüz dilinde — mobil `targetLangName()` karşılığı.
+ *
+ * Tur yönergelerinin üçü hedef dilin adını taşıyor ("İngilizce karşılığını
+ * yaz"). Kurs oyunlara prop olarak akmıyor; kabuk onu `localStorage`e
+ * yazıyor ve seslendirme de oradan okuyor (`speak-button`). Oyunlar ancak
+ * `/api/session` cevabı geldikten SONRA çiziliyor, yani bu okuma sunucu
+ * çiziminde hiç çalışmıyor ve hidrasyon uyuşmazlığı üretmiyor.
+ */
+export function targetName(lang: NativeLang): string {
+  return courseName(readLocal(COURSE_KEY) ?? "de", lang);
+}
 
 // Artikelli gösterim ortak kaynakta: şık üreticisi (lib/session, lib/daily) ile
 // oyun ekranının doğru cevabı kurma biçimi AYNI fonksiyondan gelmeli — ayrıldığı
