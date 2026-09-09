@@ -206,7 +206,13 @@ async function main() {
    * yalnız sözlükçe yüzeyi geziliyor. İsteğe bağlı alanlarla tarif etmek,
    * yanlış yazılmış bir alan adını derlemede yakalıyor.
    */
-  type LoadedTask = { kind?: string; phrases?: Field[] };
+  /*
+    Konuşma görevi sözlükçe alanının KENDİSİ (de/tr taşır) ve doğrudan
+    `allFields`e giriyor; yazma görevi ise sözlükçeyi `phrases` içinde
+    taşıyor. Tip bu yüzden Field'ı genişletiyor — `Field[]`e eklenen bir
+    görev, alanları eksik bir nesne olamaz.
+  */
+  type LoadedTask = Partial<Field> & { kind?: string; phrases?: Field[] };
   type LoadedExercise = {
     id?: string;
     skill?: string;
@@ -222,7 +228,7 @@ async function main() {
       ...(e.targets ?? []),
       // Konuşma görevlerinin `de` alanı var; yazma görevlerinin yok, onların
       // sözlükçesi `phrases` içinde duruyor.
-      ...(e.skill === "speaking" ? (e.tasks ?? []) : []),
+      ...(e.skill === "speaking" ? ((e.tasks ?? []) as Field[]) : []),
       ...(e.skill === "writing"
         ? (e.tasks ?? []).flatMap((t: LoadedTask) =>
             t.kind === "free" ? (t.phrases ?? []) : [],

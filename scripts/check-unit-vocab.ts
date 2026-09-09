@@ -27,6 +27,7 @@ const { olc, ozet, türkçeMi } = require("./lib/vocab-gate.cjs") as {
  * özgürlüğü koruyup yanlış alan adını yakalama yeteneğini geri kazandırıyor:
  * `e.txet` artık derlemede patlıyor.
  */
+type Gloss = { de?: string; tr?: string };
 type LooseTask = {
   de?: string;
   answer?: string;
@@ -34,13 +35,19 @@ type LooseTask = {
   sample?: string;
   stimulus?: string;
   kind?: string;
-  phrases?: unknown[];
+  /** Yazma görevinde kalıp sözlükçesi; bazı pakette `words` adıyla. */
+  phrases?: Gloss[];
+  words?: Gloss[];
   fields?: { answer?: string }[];
 };
 type LooseExercise = {
   id: string;
   skill?: string;
   text?: string;
+  /** Egzersizin kendi sözlükçesi — kapı dışı sayılmaz. */
+  gloss?: Gloss[];
+  /** Patika ünitesi (varsa): kapı seviyesi buna göre seçiliyor. */
+  unit?: number;
   segments?: { text?: string }[];
   questions?: { text?: string; accept?: string[] }[];
   tasks?: LooseTask[];
@@ -78,10 +85,12 @@ console.log(`${seviye.toUpperCase()} · ünite hizalı egzersiz: ${hedef.length}
 const genelDisi = new Map();
 for (const e of hedef) {
   // egzersizin kendi sözlükçesi ve yazma görevlerinin kalıpları serbest
-  const ek = [];
-  for (const g of e.gloss || []) ek.push(g.de);
-  for (const t of e.tasks || []) for (const g of t.phrases || t.words || []) ek.push(g.de);
-  const { tok, disi } = olc(almanca(e), e.unit, ek, seviye);
+  const ek: string[] = [];
+  for (const g of e.gloss || []) if (g.de) ek.push(g.de);
+  for (const t of e.tasks || []) for (const g of t.phrases || t.words || []) if (g.de) ek.push(g.de);
+  // Ünitesiz egzersiz (Beceriler kütüphanesi) kapıya 0 ile giriyor: kapı o
+  // durumda seviye tabanını kullanıyor, ünite penceresi açmıyor.
+  const { tok, disi } = olc(almanca(e), e.unit ?? 0, ek, seviye);
   const oran = tok.length ? (disi.length / tok.length * 100).toFixed(1) : "0";
   if (disi.length) {
     console.log(`  ${e.id.padEnd(12)} %${oran.padStart(4)} dışı (${disi.length}/${tok.length}): ${ozet(disi).slice(0, 8).join(", ")}`);
