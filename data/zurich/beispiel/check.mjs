@@ -76,10 +76,46 @@ const SEPARABLE_PREFIXES = [
   // ("du machsch alles kaputt"), Perfekt'te yapışıp araya "g" alıyor
   // ("kaputtgmacht"). `grosszieh` gibi ama o hiç ayrılmıyordu.
   "zracht", "kaputt",
+  // `freischtelle` → "freigschtellt", `freischpräche` → "freigschproche".
+  // Listede "fri" vardı ama kaynak bileşiklerde "frei" yazıyor.
+  "frei",
+  // C1 katmanı dört ön ek daha getirdi: `hervorheebe`, `niderschlaa`,
+  // `hoochrächne`, `gägeschtüüre`. Hepsi cümlede gerçekten ayrılıyor.
+  "hervor", "nider", "hoch", "gage", "bereit", "entgage",
 ];
 // Ayrılmaz ön ekler: cümlede ASLA kopmuyorlar, o yüzden ayrı bir listedeler —
 // yalnız "gövde ablauta girmiş mi" sorusu için kullanılıyorlar.
 const INSEPARABLE_PREFIXES = ["be", "ver", "er", "ent", "emp", "zer", "ge"];
+
+/*
+  FİİL+EDAT BAŞLIKLARINDA EDAT CÜMLEDE KAYNAŞIYOR.
+
+  «liide a», «biiträge zu», «schiitere a», «näige zu» gibi 26 başlık var ve
+  hepsinde edat tek başına duran bir kelime olarak aranıyordu. Oysa Zürihçede
+  o edat neredeyse hiç yalın durmuyor: artikelle kaynaşıyor ("a"+"em" → "am"),
+  ya da zamirli biçime giriyor ("zu" → "dezue"). Yani doğru cümle —
+  "Si liidet a ere sältene Chrankheit" — reddediliyordu, çünkü "a" cümlede
+  "an"/"am" olarak geçiyor.
+
+  Kısa edatlar için kök karşılaştırması yapılamıyor (iki harf), o yüzden
+  biçimler açıkça sayılıyor.
+*/
+const PARTICLE_FORMS = {};
+for (const [k, v] of Object.entries({
+  a: ["a", "am", "an", "ane", "draa", "dra"],
+  uf: ["uf", "ufem", "ufere", "ufe", "druf"],
+  zu: ["zu", "zum", "zur", "zue", "dezue", "drzue"],
+  us: ["us", "usem", "usere", "use", "druus"],
+  mit: ["mit", "mitem", "mitere", "demit", "drmit"],
+  für: ["für", "fürs", "defür", "drfür"],
+  um: ["um", "ums", "drum", "worum"],
+  nach: ["nach", "nachem", "denach", "drnach"],
+  über: ["über", "übers", "überem", "drüber"],
+  vo: ["vo", "vom", "vonere", "devoo", "drvo"],
+  i: ["i", "im", "is", "ine", "dinne", "drin"],
+  ane: ["ane", "aneme", "draa"],
+})) PARTICLE_FORMS[flatKey(k)] = v.map(flatKey);
+
 const SEPARABLE = new RegExp(`^(${SEPARABLE_PREFIXES.join("|")})(.{2,})$`);
 
 /**
@@ -154,7 +190,7 @@ const IRREGULAR = {
   laufe: ["lauft", "loffe", "gloffe"],
   traffe: ["trifft", "triffsch", "troffe", "triff"],
   schlafe: ["schlaft", "gschlafe"],
-  bringe: ["bringt", "brocht", "broocht", "bringsch"],
+  bringe: ["bringt", "brocht", "broocht", "bringsch", "bracht", "braacht"],
   zieh: ["zieht", "zoge", "ziet"],
   // Kaynaktaki başlık `zie` (id 3151) ve ayrılabilir bölme de gövdeyi `zie`
   // olarak veriyor (`uszie` → "us"+"zie"); `zieh` anahtarı ikisiyle de
@@ -189,11 +225,26 @@ const IRREGULAR = {
   zwinge: ["zwingt", "zwunge"],
   schpringe: ["schpringt", "gschprunge", "schprunge"],
   binde: ["bindet", "bunde"],
+  chlinge: ["chlingt", "chlunge"],
+  // ie/üü → o: dritte ablaut ailesi. `erschliesse` → "erschlosse",
+  // `giesse` → "gosse", `flüüge` → "gfloge", `verliere` → "verloore".
+  schliesse: ["schlüüst", "gschlosse", "schlosse"],
+  schlüüsse: ["schlüüst", "gschlosse", "schlosse"],
+  giesse: ["giesst", "ggosse", "gosse"],
+  schiesse: ["schüsst", "gschosse", "schosse"],
+  flüüge: ["flüügt", "gfloge", "floge"],
+  verliere: ["verlüürt", "verloore", "verlore"],
+  schiebe: ["schiebt", "gschobe", "schobe"],
   // Bileşikte kaynak gövdeyi Almanca yazımıyla taşıyor (`bewerbe`, `verwerfe`)
   // ve düzleştirme ä ile e'yi eşitlemiyor; anahtar iki yazımla da duruyor.
   werbe: ["wirbt", "worbe", "gworbe"],
+  werfe: ["wirft", "worfe", "gworfe"],
+  // Ortaçta araya "h" giriyor: wiie → "gwiiht".
+  wiie: ["gwiiht", "wiiht"],
   // `wärde` hiç yoktu: edilgen çatının yardımcı fiili ve ortacı "worde".
   wärde: ["wird", "wirsch", "worde", "wärded", "wurd"],
+  // Kaynak aynı fiili iki yazımla taşıyor («gsund werde», «wärde»).
+  werde: ["wird", "wirsch", "worde", "wärded"],
   schpreche: ["schpricht", "schproche", "gschproche"],
   // `grosszieh` ön eki ayrılmıyor ve Perfekt'te gövde ablauta giriyor; "gross"
   // ayrılabilir ön ek listesine girecek bir edat değil, kelimenin parçası.
@@ -252,6 +303,13 @@ function roots(part) {
   // Çoğulda gövde ünlüsü a → e oluyor ve lehçede ä ile değil e ile yazılıyor
   // (Gascht → Gescht, Schtadt → Schtedt); düzleştirme bunu yakalamıyor.
   for (const r of [...out]) if (r.includes("a")) out.add(r.replace(/a([^a]*)$/, "e$1"));
+  /*
+    st → scht. Kaynak bazı başlıkları Almanca yazımıyla taşıyor
+    («Aggregatzuestand») ama cümle Zürihçe yazıyor ("Aggregatzueschtänd") ve
+    düzleştirme bu ikisini eşitlemiyor — "unter"/"under" ile aynı aile. Kök
+    UZUYOR, kısalmıyor: yanlış kabul riski yok.
+  */
+  for (const r of [...out]) if (/(?<!sch)st/.test(r)) out.add(r.replace(/(?<!sch)st/g, "scht"));
   // Perfekt'te ayrılabilir fiilin ön eki kopmaz, araya "g" girer:
   // "aahaa" → "aaghaa", "uffale" → "ufgfale", "ablehne" → "abglehnt".
   // Ön ek ayrı bir kelime olarak aranınca bu biçimler hiç bulunamıyordu.
@@ -298,6 +356,19 @@ function contains(sentence, headword) {
       cümlede bulunamıyordu — oysa "unfründlich" tam da aranan şey.
     */
     if (/-\s*$/.test(part)) return hasStart(bare);
+
+    // Edat: kaynaşmış biçimlerinden biri geçiyorsa var sayılır.
+    const particle = PARTICLE_FORMS[bare];
+    if (particle) return particle.some((f) => hasWord(f));
+
+    /*
+      RAKAM VE TİRE. `flatKey` başlıktan harf olmayanı atıyor («CO2-Usstoss» →
+      "cousstoss") ama saman yığını rakamı ve tireyi koruyor ("co2-usstoss"),
+      yani kelime kendi cümlesinde bulunamıyordu. Yalnız bu iki işaret
+      düşürülmüş bir yığın ayrıca deneniyor; boşluklar korunuyor ki iki ayrı
+      kelime birbirine yapışmasın.
+    */
+    if (/[\d-]/.test(part) && hay.replace(/[-\d.]/g, "").includes(bare)) return true;
     const headLen = part.replace(/[^\p{L}]/gu, "").length;
     if (roots(part).some((r) => search(r, headLen))) return true;
 
