@@ -4,7 +4,17 @@ import { useEffect, useState } from "react";
 import { SettingRow } from "@/components/setting-row";
 import { useT } from "@/lib/i18n/client";
 
-type Account = { id: string; provider: string; accountId: string };
+/**
+ * better-auth `/list-accounts` yanıtı. Alan adı `providerId` — `provider` DEĞİL.
+ *
+ * Burada `provider` yazıyordu ve `r.json() as Promise<Account[]>` denetimsiz
+ * bir tip ATAMASI olduğu için TypeScript hiçbir şey söylemiyordu: alan her
+ * satırda undefined dönüyordu. Ekranda görünen sonucu şuydu — e-posta/parola
+ * satırı ETİKETSİZ çiziliyor ve yanında "Kaldır" duruyor, Google ile giriş
+ * yapmış kullanıcıya ise "Bağlı değil · Bağla" deniyordu. Mobil tarafta aynı
+ * hata bugün düzeltildi (lib/accountLinks.ts), web'de kalmıştı.
+ */
+type Account = { id: string; providerId: string; accountId: string };
 
 const ETIKET: Record<string, { ad: string; alt: string }> = {
   credential: { ad: "links.credential", alt: "linked.credential_sub" },
@@ -35,7 +45,10 @@ export function LinkedAccounts({ googleEnabled }: { googleEnabled: boolean }) {
   /** Bağlı hesapları getirir. Hata sessiz: liste boş görünür, sayfa çalışır. */
   const getir = (): Promise<Account[]> =>
     fetch("/api/auth/list-accounts", { headers: { accept: "application/json" } })
-      .then((r) => (r.ok ? (r.json() as Promise<Account[]>) : []))
+      .then((r) => (r.ok ? (r.json() as Promise<Partial<Account>[]>) : []))
+      // Süzgeç şart: yukarıdaki `as` doğrulama değil, ATAMA. Alan adı bir kez
+      // değişti ve fark edilmedi; artık biçimi tutmayan satır listeye girmiyor.
+      .then((rows) => (Array.isArray(rows) ? rows : []).filter((a): a is Account => typeof a?.providerId === "string"))
       .catch(() => []);
 
   useEffect(() => {
@@ -98,9 +111,9 @@ export function LinkedAccounts({ googleEnabled }: { googleEnabled: boolean }) {
 
   if (!accounts) return null;
 
-  const bagliMi = (p: string) => accounts.some((a) => a.provider === p);
+  const bagliMi = (p: string) => accounts.some((a) => a.providerId === p);
   const sonYontem = accounts.length <= 1;
-  const satirlar = [...new Set([...accounts.map((a) => a.provider), ...(googleEnabled ? ["google"] : [])])];
+  const satirlar = [...new Set([...accounts.map((a) => a.providerId), ...(googleEnabled ? ["google"] : [])])];
 
   return (
     /* Ayarların diğer bölümleriyle AYNI kalıp: üstte küçük etiket, altında
