@@ -97,7 +97,7 @@ const COPY: Record<LegalLocale, Copy> = {
     description:
       "Lernomi'ye nasıl ulaşacağın: destek adresi, yanıt süresi, hangi konu için hangi kanal, ve uygulama içindeki bildirme ve engelleme yolları.",
     intro:
-      "Bir sorun mu var, bir şey mi soracaksın? Buradan bize ulaşabilirsin. Gelen her mesaba bir insan bakıyor; otomatik yanıt kullanmıyoruz.",
+      "Bir sorun mu var, bir şey mi soracaksın? Buradan bize ulaşabilirsin. Gelen her mesaja bir insan bakıyor; otomatik yanıt kullanmıyoruz.",
     contactLabel: "Destek e-postası",
     responseNote:
       "Yanıt süresi: en geç {n} iş günü. Veri koruma başvuruları bunun dışında ve süresi kanunla belirli — aşağıdaki satıra bak.",
