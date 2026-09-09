@@ -19,6 +19,26 @@ jest.mock('@react-native-async-storage/async-storage', () =>
 );
 jest.mock('@notifee/react-native', () => require('@notifee/react-native/jest-mock'));
 
+// Firebase (uzak bildirim). `getApps()` BOŞ dizi dönüyor: üründe de yapılandırma
+// dosyası yoksa durum bu ve lib/pushDevice.ts o zaman hiçbir şey yapmıyor. Yani
+// testler push'suz bir cihazın gerçek davranışını görüyor. Mesajlaşma tarafı
+// yine de tam arayüzle karşılanıyor — abone olan işlevler bir sökücü döndürmek
+// zorunda, `undefined` dönerse çağıran yerde temizlik çöker.
+jest.mock('@react-native-firebase/app', () => ({
+  getApps: jest.fn(() => []),
+  getApp: jest.fn(() => null),
+}));
+jest.mock('@react-native-firebase/messaging', () => ({
+  AuthorizationStatus: {NOT_DETERMINED: -1, DENIED: 0, AUTHORIZED: 1, PROVISIONAL: 2},
+  getMessaging: jest.fn(() => ({})),
+  getToken: jest.fn(async () => ''),
+  requestPermission: jest.fn(async () => 1),
+  onMessage: jest.fn(() => () => {}),
+  onTokenRefresh: jest.fn(() => () => {}),
+  onNotificationOpenedApp: jest.fn(() => () => {}),
+  getInitialNotification: jest.fn(async () => null),
+}));
+
 jest.mock('react-native-purchases', () => ({
   __esModule: true,
   default: {
