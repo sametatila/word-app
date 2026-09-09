@@ -983,8 +983,6 @@ export const trWeb: Record<string, string> = {
   "writp.spelling_only": "Doğru — yazımda küçük sapma",
   "writp.order_only": "Kelimeler doğru, sıra yanlış",
   "skillsp.empty_level": "Bu seviyede henüz kütüphane egzersizi yok. Başka bir seviye seç ya da deneme sınavlarına bak.",
-  "skillsp.exams": "Sınavlar",
-  "skillsp.level_exam_sub": "45 dk · beş bölüm",
   "mockexams.n_items_short": "{n} madde",
   "coach.plan_morning_1": "Günaydın, {name}! Kahveden önce birkaç kelime, gün böyle başlar.",
   "coach.plan_morning_2": "Sabah sabah buradasın, {name} — en iyi hafıza saati bu.",
