@@ -6,6 +6,7 @@ import { MyAvatar } from "@/components/my-avatar";
 import { GLASSES, HAT_COLORS, HATS, MUSTACHES } from "@/components/avatar-parts";
 import { getAvatar, saveAvatar, DEFAULT_AVATAR, type AvatarConfig } from "@/lib/avatar";
 import { PageBack } from "@/components/page-back";
+import { useT } from "@/lib/i18n/client";
 
 /**
  * Avatar düzenleme — Erdi'ye şapka (renkli), gözlük, bıyık.
@@ -19,6 +20,7 @@ import { PageBack } from "@/components/page-back";
  * söylemiyor; kırk piksellik önizleme söylüyor.
  */
 export function AvatarEditor() {
+  const t = useT();
   const router = useRouter();
   const [cfg, setCfg] = useState<AvatarConfig>(DEFAULT_AVATAR);
 
@@ -40,14 +42,14 @@ export function AvatarEditor() {
 
   return (
     <div className="mx-auto w-full max-w-2xl">
-      <PageBack fallback="/profile" title="Avatarın" />
+      <PageBack fallback="/profile" title={t("avatar.your_avatar")} />
 
       <div className="my-5 flex justify-center">
         <MyAvatar size={140} config={cfg} className="shadow-soft-lg" />
       </div>
 
-      <Group title="ŞAPKA">
-        <Opt preview={only({ hat: null })} selected={cfg.hat === null} label="Şapkasız" onPick={() => setCfg((c) => ({ ...c, hat: null }))} />
+      <Group title={t("avatar.hat")}>
+        <Opt preview={only({ hat: null })} selected={cfg.hat === null} label={t("avatarw.no_hat")} onPick={() => setCfg((c) => ({ ...c, hat: null }))} />
         {HATS.map((h) => (
           <Opt
             key={h}
@@ -61,7 +63,7 @@ export function AvatarEditor() {
 
       {cfg.hat ? (
         <div className="mt-4">
-          <p className="muted mb-2 ml-1 text-caption">ŞAPKA RENGİ</p>
+          <p className="muted mb-2 ml-1 text-caption">{t("avatar.hat_color")}</p>
           <div className="flex flex-wrap gap-2">
             {HAT_COLORS.map((col) => (
               <button
@@ -81,8 +83,8 @@ export function AvatarEditor() {
         </div>
       ) : null}
 
-      <Group title="GÖZLÜK">
-        <Opt preview={only({ glasses: null })} selected={cfg.glasses === null} label="Gözlüksüz" onPick={() => setCfg((c) => ({ ...c, glasses: null }))} />
+      <Group title={t("avatar.glasses")}>
+        <Opt preview={only({ glasses: null })} selected={cfg.glasses === null} label={t("avatarw.no_glasses")} onPick={() => setCfg((c) => ({ ...c, glasses: null }))} />
         {GLASSES.map((g) => (
           <Opt
             key={g}
@@ -94,8 +96,8 @@ export function AvatarEditor() {
         ))}
       </Group>
 
-      <Group title="BIYIK">
-        <Opt preview={only({ mustache: null })} selected={cfg.mustache === null} label="Bıyıksız" onPick={() => setCfg((c) => ({ ...c, mustache: null }))} />
+      <Group title={t("avatarw.mustache")}>
+        <Opt preview={only({ mustache: null })} selected={cfg.mustache === null} label={t("avatarw.no_mustache")} onPick={() => setCfg((c) => ({ ...c, mustache: null }))} />
         {MUSTACHES.map((m) => (
           <Opt
             key={m}

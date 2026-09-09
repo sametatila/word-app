@@ -6,6 +6,7 @@ import { Mascot, type Mood } from "@/components/mascot";
 import { useStill } from "@/lib/use-still";
 import { pickCoachLine, type CoachMoment, type CoachVars } from "@/lib/coach-lines";
 import { track } from "@/lib/track";
+import { useLang } from "@/lib/i18n/client";
 
 /**
  * Koç balonu (WP-66): Erdi'nin yanında tek cümlelik Türkçe metin.
@@ -45,12 +46,13 @@ export function CoachBubble({
   /** Koyu zeminde (sonuç başlığı) balon açık kalır, metin koyu. */
   tone?: "card" | "dark";
 }) {
+  const lang = useLang();
   const still = useStill();
   const [line, setLine] = useState<string | null>(null);
   const [open, setOpen] = useState(true);
 
   useEffect(() => {
-    setLine(text ?? pickCoachLine(moment, vars));
+    setLine(text ?? pickCoachLine(moment, vars, lang));
     setOpen(true);
     track("coach_show", 0, moment);
     // vars nesnesi her çizimde yeni; cümle an değişince seçilir, isim/puan an ile gelir.

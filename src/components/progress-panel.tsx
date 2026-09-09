@@ -6,6 +6,7 @@ import { Disclosure } from "@/components/disclosure";
 import { WeakSpotsCard } from "@/components/weak-spots-card";
 import { useCachedJson } from "@/lib/use-cached";
 import type { GrowthReport, WeekPoint } from "@/lib/growth";
+import { useT } from "@/lib/i18n/client";
 
 /**
  * "Gelişimin" — profilin ölçüm bloğu.
@@ -31,6 +32,7 @@ import type { GrowthReport, WeekPoint } from "@/lib/growth";
  * varlığından daha kötü.
  */
 export function ProgressPanel() {
+  const t = useT();
   const { data } = useCachedJson<GrowthReport>("growth", "/api/growth", (body) => {
     const g = body as Partial<GrowthReport>;
     // 200 dönen ama biçimi tutmayan bir cevapta kör dönüşüm bütün profili
@@ -38,12 +40,12 @@ export function ProgressPanel() {
     return Array.isArray(g?.proficiency) && g?.series ? (g as GrowthReport) : null;
   });
 
-  if (data === undefined) return <CardSkeleton height={280} label="Gelişimin yükleniyor" />;
+  if (data === undefined) return <CardSkeleton height={280} label={t("progp.loading")} />;
   if (!data) return null;
 
   const measured = data.proficiency.filter((p) => p.now !== null);
   const hasSeries = Object.values(data.series).some((s) => s.some((p) => p.value !== null));
-  // Hiç ölçüm yoksa kart görünmüyor: "ölçülmedi" yazan altı çubuk, yeni
+  // Hiç ölçüm yoksa kart görünmüyor: t("assess.not_measured") yazan altı çubuk, yeni
   // kullanıcıya kendi eksikliğini gösteren bir liste demek.
   if (!measured.length && !hasSeries) return null;
 
@@ -112,7 +114,7 @@ export function ProgressPanel() {
               {data.next.reason} · {data.next.minutes} dk
             </span>
           </span>
-          <span className="btn btn-primary shrink-0 px-3 py-1.5 text-xs">Başla</span>
+          <span className="btn btn-primary shrink-0 px-3 py-1.5 text-xs">{t("common.start")}</span>
         </Link>
       ) : null}
 
@@ -120,12 +122,12 @@ export function ProgressPanel() {
           zaten cevap veriyor, aşağısı cevabı beğenmeyip "neden" diye soran
           için. */}
       <div className="mt-3 border-t pt-2" style={{ borderColor: "var(--border)" }}>
-        <Disclosure title="Nasıl gidiyorum" hint={`${data.weeks.length} hafta`}>
+        <Disclosure title={t("progp.how_am_i_doing")} hint={`${data.weeks.length} hafta`}>
           <div className="space-y-3">
             <div className="grid grid-cols-2 gap-2.5">
               <Spark title="Yazma" points={data.series.writing} max={100} color="var(--color-brand)" />
-              <Spark title="Konuşma" points={data.series.speaking} max={100} color="var(--color-mint)" />
-              <Spark title="Sınav" points={data.series.usage} max={100} color="var(--color-flame)" />
+              <Spark title={t("exam.sec_speaking")} points={data.series.speaking} max={100} color="var(--color-mint)" />
+              <Spark title={t("exam.title")} points={data.series.usage} max={100} color="var(--color-flame)" />
               <Spark title="Cevap" points={data.series.answers} color="var(--text-muted)" />
             </div>
 
@@ -178,6 +180,7 @@ function Spark({
   max?: number;
   color: string;
 }) {
+  const t = useT();
   const values = points.map((p) => p.value);
   const top = max ?? Math.max(1, ...values.map((v) => v ?? 0));
   const W = 120;

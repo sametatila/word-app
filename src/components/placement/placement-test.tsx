@@ -10,15 +10,16 @@ import { track } from "@/lib/track";
 import { describePerSkill, nextLevel, PLACEMENT_LEVELS, type PlacementAnswer, type PlacementStage } from "@/lib/placement-score";
 import type { PlacementRecord, PlacementTest as Test, TextItem } from "@/lib/placement";
 import type { CefrLevel } from "@/lib/skills/types";
+import { useT } from "@/lib/i18n/client";
 
 type Phase = "intro" | "loading" | "vocab" | "grammar" | "reading" | "listening" | "finishing" | "result" | "error";
 
 const STAGE_TITLE: Record<PlacementStage, string> = { vocab: "Kelime", grammar: "Dilbilgisi", reading: "Okuma", listening: "Dinleme" };
 const STAGE_HINT: Record<PlacementStage, string> = {
-  vocab: "Almanca kelimenin Türkçesini seç. Bilmiyorsan tahmin etme, 'bilmiyorum' de — test o zaman doğru ölçer.",
-  grammar: "Tablodaki boşluğa hangi biçim gelir? Bilmiyorsan 'bilmiyorum'.",
-  reading: "Metni oku, üç soruyu cevapla.",
-  listening: "Bölümü dinle (istediğin kadar), sonra soruları cevapla.",
+  vocab: "plc.vocab",
+  grammar: "plc.grammar",
+  reading: "plc.reading",
+  listening: "plc.listening",
 };
 
 function localDay(): string {
@@ -36,6 +37,7 @@ function localDay(): string {
  * geçirebilir, "bilmiyorum" geçiremez. Her aşama atlanabilir.
  */
 export function PlacementTest({ initialLast, canRetake, retakeDays }: { initialLast: PlacementRecord | null; canRetake: boolean; retakeDays: number }) {
+  const t = useT();
   const router = useRouter();
   const [phase, setPhase] = useState<Phase>("intro");
   const [test, setTest] = useState<Test | null>(null);
@@ -157,9 +159,9 @@ export function PlacementTest({ initialLast, canRetake, retakeDays }: { initialL
   if (phase === "intro") {
     return (
       <section className="card mx-auto w-full max-w-md p-5">
-        <h1 className="text-xl font-bold">Seviyeni ölçelim</h1>
+        <h1 className="text-xl font-bold">{t("onboarding.kisa_yerlestirme_sinavi")}</h1>
         <p className="muted mt-2 text-sm leading-relaxed">
-          Dört kısa aşama — kelime, dilbilgisi, okuma, dinleme — en çok 15 dakika. Sonunda bir seviye önerisi ve beceri profili alırsın; seviyeyi yine sen seçersin.
+          {t("plc.intro")}
         </p>
         {initialLast ? (
           <p className="mt-3 rounded-xl px-3 py-2 text-xs surface-2">
@@ -175,7 +177,7 @@ export function PlacementTest({ initialLast, canRetake, retakeDays }: { initialL
           <p className="muted mt-4 text-sm">Test {retakeDays} günde bir alınabiliyor. Bu arada plan seni yönlendirir.</p>
         )}
         <Link href="/profile" className="btn btn-ghost mt-2 w-full px-5 py-3 text-sm">
-          Vazgeç
+          {t("common.discard")}
         </Link>
       </section>
     );
@@ -183,7 +185,7 @@ export function PlacementTest({ initialLast, canRetake, retakeDays }: { initialL
   if (phase === "loading" || phase === "finishing") {
     return (
       <section className="card mx-auto w-full max-w-md p-5" aria-busy>
-        <p className="muted text-sm">{phase === "loading" ? "Test hazırlanıyor…" : "Sonuç hesaplanıyor…"}</p>
+        <p className="muted text-sm">{t(phase === "loading" ? "plc.preparing" : "placement.calculating_your_level")}</p>
         <div className="mt-3 h-10 animate-pulse rounded-xl surface-2" />
       </section>
     );
@@ -191,9 +193,9 @@ export function PlacementTest({ initialLast, canRetake, retakeDays }: { initialL
   if (phase === "error") {
     return (
       <section className="card mx-auto w-full max-w-md p-5">
-        <p className="text-sm">Test şu an yüklenemedi. Biraz sonra tekrar dene.</p>
+        <p className="text-sm">{t("placement.couldn_t_load_test")}</p>
         <button type="button" onClick={() => setPhase("intro")} className="btn btn-ghost mt-3 px-4 py-2 text-sm">
-          Geri
+          {t("common.back")}
         </button>
       </section>
     );
@@ -210,7 +212,7 @@ export function PlacementTest({ initialLast, canRetake, retakeDays }: { initialL
           {PLACEMENT_LEVELS.map((l) => (
             <button key={l} type="button" onClick={() => setChosen(l)} className={`chip px-3 py-1.5 text-sm font-bold ${chosen === l ? "chip-active" : ""}`} aria-pressed={chosen === l}>
               {l}
-              {l === result.suggested ? <span className="muted ml-1 text-xs font-semibold">öneri</span> : null}
+              {l === result.suggested ? <span className="muted ml-1 text-xs font-semibold">{t("plc.suggested")}</span> : null}
             </button>
           ))}
         </div>
@@ -229,7 +231,7 @@ export function PlacementTest({ initialLast, canRetake, retakeDays }: { initialL
         {STAGE_TITLE[stage]} · <span className="muted">{stage === "vocab" || stage === "grammar" ? level : ""}</span>
       </span>
       <button type="button" onClick={() => leaveStage(stage)} className="muted underline-offset-2 hover:underline">
-        Bu aşamayı atla
+        {t("plc.skip_stage")}
       </button>
     </div>
   );
@@ -267,7 +269,7 @@ export function PlacementTest({ initialLast, canRetake, retakeDays }: { initialL
     return (
       <section className="card mx-auto w-full max-w-md p-5">
         {header}
-        <p className="muted mb-3 text-xs">{STAGE_HINT[stage]}</p>
+        <p className="muted mb-3 text-xs">{t(STAGE_HINT[stage])}</p>
         {"de" in item ? (
           <p className="brand-text mb-4 text-2xl font-bold" lang="de">
             {item.artikel ? `${item.artikel} ` : ""}
@@ -296,7 +298,7 @@ export function PlacementTest({ initialLast, canRetake, retakeDays }: { initialL
   return (
     <section className="card mx-auto w-full max-w-md p-5">
       {header}
-      <p className="muted mb-2 text-xs">{STAGE_HINT[stage]} · {item.level}</p>
+      <p className="muted mb-2 text-xs">{t(STAGE_HINT[stage])} · {item.level}</p>
       {item.text ? (
         <div lang="de" className="mb-3 max-h-56 overflow-y-auto rounded-xl px-3.5 py-3 text-sm leading-relaxed surface-2">
           {item.text.split("\n\n").map((p, i) => (

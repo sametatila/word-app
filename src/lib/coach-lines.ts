@@ -1,3 +1,4 @@
+import { translate, DEFAULT_NATIVE, type NativeLang } from "@/lib/i18n/dict";
 /**
  * Erdi'nin koç cümleleri (WP-66).
  *
@@ -22,62 +23,63 @@ export type CoachMoment =
   | "weak_done"
   | "weekly";
 
+/* Metin değil ANAHTAR: cümleler gösterildiği yerde çevriliyor. */
 export const COACH_LINES: Record<CoachMoment, readonly string[]> = {
   plan_morning: [
-    "Günaydın, {name}! Kahveden önce birkaç kelime, gün böyle başlar.",
-    "Sabah sabah buradasın, {name} — en iyi hafıza saati bu.",
-    "Günaydın, {name}. Bugünün planı kısa, hadi ilkinden başlayalım.",
-    "Erken kalkan kelimeyi kapar, {name}. Plan hazır.",
-    "Günaydın! Dün öğrendiklerin bugün ilk kez sorulacak — hazır mısın, {name}?",
+    "coach.plan_morning_1",
+    "coach.plan_morning_2",
+    "coach.plan_morning_3",
+    "coach.plan_morning_4",
+    "coach.plan_morning_5",
   ],
   plan_day: [
-    "Hoş geldin, {name}. Kısa bir tur, sonra kaldığın yerden devam.",
-    "Ara verdiysen tam zamanı, {name}: bugünün planı on beş dakika bile değil.",
-    "Merhaba, {name}! Önce vadesi gelen kelimeler, sonra keyfine göre.",
-    "Bugün de geldin, {name} — seri böyle uzar.",
-    "Selam, {name}. Planın ilk öğesi en kolayı, oradan ısınalım.",
+    "coach.plan_day_1",
+    "coach.plan_day_2",
+    "coach.plan_day_3",
+    "coach.plan_day_4",
+    "coach.plan_day_5",
   ],
   plan_evening: [
-    "İyi akşamlar, {name}. Uyumadan önce tekrar, sabah hatırlamanın sırrı.",
-    "Günün sonunda birkaç dakika yeter, {name} — plan kısa tutuldu.",
-    "Akşam turu, {name}: yorgunsan yalnız kelime tekrarını yap, gerisi yarına.",
-    "Hoş geldin, {name}. Bugünü kapatmadan bir tur daha?",
-    "İyi akşamlar! Gece öğrenilen kelime sabah daha sağlam kalır, {name}.",
+    "coach.plan_evening_1",
+    "coach.plan_evening_2",
+    "coach.plan_evening_3",
+    "coach.plan_evening_4",
+    "coach.plan_evening_5",
   ],
   exam_intro: [
-    "Sınav bu — ipucu yok ama panik de yok. Bildiğini yaz, bilmediğini geç.",
-    "Kâğıt beş bölüm; bir bölüm kötü gitse bile diğerleri seni taşır.",
-    "Derin nefes. Sınav seviyeni ölçer, değerini değil.",
-    "Süre yeterli; hızlı değil, dikkatli ol.",
-    "Takıldığın soruda durma, sonrakine geç — geri dönüş yok ama zaman var.",
+    "coach.exam_intro_1",
+    "coach.exam_intro_2",
+    "coach.exam_intro_3",
+    "coach.exam_intro_4",
+    "coach.exam_intro_5",
   ],
   exam_pass: [
-    "%{pct} — geçtin! Bu kâğıt artık senin, sertifikayı aç.",
-    "Geçtin! %{pct} ile {level} artık kâğıt üstünde de senin.",
-    "İşte bu! %{pct}. Zor bölümler bile eşiğin üstünde kaldı.",
-    "Tebrikler, {name}! Sınavdan %{pct} çıktı, hak edilmiş.",
-    "Geçtin — %{pct}. Şimdi sıradaki seviyenin konuşmaları seni bekliyor.",
+    "coach.exam_pass_1",
+    "coach.exam_pass_2",
+    "coach.exam_pass_3",
+    "coach.exam_pass_4",
+    "coach.exam_pass_5",
   ],
   exam_fail: [
-    "%{pct} — bu sefer olmadı, ama hangi bölümün eksik olduğunu artık biliyorsun.",
-    "Olmadı; zayıf bölüm belli, iki hafta oraya yüklenip yeniden dene.",
-    "%{pct}. Sınav eşiğin altında kaldı ama bu bir ölçüm, bir yargı değil.",
-    "Bu sefer değil. Profilde zayıf noktalar ve sıradaki adım seni bekliyor.",
-    "Kâğıt geçmedi ama kâğıt gitmedi: bölümlere bak, en düşüğünden başla.",
+    "coach.exam_fail_1",
+    "coach.exam_fail_2",
+    "coach.exam_fail_3",
+    "coach.exam_fail_4",
+    "coach.exam_fail_5",
   ],
   weak_done: [
-    "Zayıf noktanın üstüne gittin — işin en zor kısmı buydu.",
-    "Bu hata tipini birkaç gün böyle çalış, listeden düşer.",
-    "Hedefli tur bitti. Aynı hata artık daha az şaşırtır.",
-    "Kaçınmak yerine üstüne gitmek: doğru olanı yaptın.",
-    "Bir tur daha böyle, sonra bu tip için kelimelerin aralığı açılır.",
+    "coach.weak_done_1",
+    "coach.weak_done_2",
+    "coach.weak_done_3",
+    "coach.weak_done_4",
+    "coach.weak_done_5",
   ],
   weekly: [
-    "Bak ne oldu: geçen haftanın özeti burada.",
-    "Yeni hafta! Geçen haftanın sayıları hemen altta.",
-    "Geçen hafta ne yaptığını görmek ister misin? Özet aşağıda.",
-    "Hafta başı: geçen haftanın toplamına bir bak, sonra devam.",
-    "Geçen haftanın özeti hazır — kısa bir bakış, sonra plana.",
+    "coach.weekly_1",
+    "coach.weekly_2",
+    "coach.weekly_3",
+    "coach.weekly_4",
+    "coach.weekly_5",
   ],
 };
 
@@ -119,7 +121,7 @@ function readSeen(): Partial<Record<CoachMoment, number[]>> {
  * Bir an için cümle seç. Seçim cihazda hatırlanır: aynı anın son (n-1)
  * cümlesi tekrar seçilmez. Tarayıcı dışında (test) yalnız rastgele seçer.
  */
-export function pickCoachLine(moment: CoachMoment, vars: CoachVars = {}): string {
+export function pickCoachLine(moment: CoachMoment, vars: CoachVars = {}, lang: NativeLang = DEFAULT_NATIVE): string {
   const lines = COACH_LINES[moment];
   const seen = typeof localStorage === "undefined" ? {} : readSeen();
   const recent = seen[moment] ?? [];
@@ -130,7 +132,7 @@ export function pickCoachLine(moment: CoachMoment, vars: CoachVars = {}): string
   } catch {
     /* depolama yoksa tekrar korunmaz, cümle yine söylenir */
   }
-  return fillCoachLine(lines[i], vars);
+  return fillCoachLine(translate(lang, lines[i]), vars);
 }
 
 /** Günün saatine göre plan selamı. */

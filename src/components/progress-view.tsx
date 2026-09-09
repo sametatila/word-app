@@ -4,6 +4,8 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { BookIcon, ChevronRightIcon, FlameIcon, SparkIcon, TrophyIcon } from "@/components/icons";
 import type { ComponentType, SVGProps } from "react";
+import { useT, useLang } from "@/lib/i18n/client";
+import { formatNumber } from "@/lib/i18n/dict";
 
 type LevelRow = {
   niveau: string;
@@ -46,6 +48,8 @@ export function WordProgress({
   upcoming: number;
   leeches: number;
 }) {
+  const t = useT();
+  const lang = useLang();
   const totalSeen = levels.reduce((s, l) => s + l.seen, 0);
   const totalWords = levels.reduce((s, l) => s + l.total, 0);
 
@@ -53,7 +57,7 @@ export function WordProgress({
     <div className="space-y-4">
       {/* CEFR seviyeleri */}
       <section className="card p-5">
-        <h2 className="mb-4 font-bold">CEFR seviyesine göre</h2>
+        <h2 className="mb-4 font-bold">{t("prog.by_level")}</h2>
         <div className="space-y-4">
           {levels.map((l, i) => {
             const pct = l.total ? (l.seen / l.total) * 100 : 0;
@@ -87,13 +91,12 @@ export function WordProgress({
           })}
         </div>
         <p className="muted mt-4 text-xs">
-          Koyu bölüm pekişmiş (21+ gün aralık), açık bölüm görülmüş kelimeleri gösterir. Toplam{" "}
-          {totalSeen}/{totalWords}.
+          {t("prog.bar_note", { seen: totalSeen, total: totalWords })}
         </p>
       </section>
 
       <section className="card p-5">
-          <h2 className="mb-3 font-bold">Tekrar kuyruğu</h2>
+          <h2 className="mb-3 font-bold">{t("prog.review_queue")}</h2>
           <div className="flex items-center gap-4">
             <Donut value={dueNow} total={Math.max(1, dueNow + upcoming)} />
             <div className="text-sm">
@@ -140,18 +143,20 @@ export function ActivityProgress({
   mastered: number;
   today: string;
 }) {
+  const t = useT();
+  const lang = useLang();
   const byDay = new Map(days.map((d) => [d.day, d]));
 
   return (
     <div className="space-y-4">
       <div className="grid grid-cols-2 gap-2.5 sm:grid-cols-4">
-        <KpiCard label="Güncel seri" value={`${streak} gün`} tone="var(--color-flame)" Icon={FlameIcon} />
-        <KpiCard label="En uzun seri" value={`${longest} gün`} tone="var(--color-brand)" Icon={TrophyIcon} />
-        <KpiCard label="Çalışma süresi" value={formatDuration(seconds)} tone="var(--color-violet)" Icon={SparkIcon} />
+        <KpiCard label={t("prog.current_streak")} value={t("social.days", { n: streak })} tone="var(--color-flame)" Icon={FlameIcon} />
+        <KpiCard label={t("socialw.stat_longest")} value={t("social.days", { n: longest })} tone="var(--color-brand)" Icon={TrophyIcon} />
+        <KpiCard label={t("prog.study_time")} value={formatDuration(seconds, t)} tone="var(--color-violet)" Icon={SparkIcon} />
         {/* Tek dokunuşla kelime ekranına: kapsamın ayrıntısı orada. */}
         <KpiCard
-          label="Pekişen kelime"
-          value={mastered.toLocaleString("tr-TR")}
+          label={t("prog.mastered_words")}
+          value={formatNumber(mastered, lang)}
           tone="var(--color-mint)"
           Icon={BookIcon}
           href="/words"
@@ -164,11 +169,14 @@ export function ActivityProgress({
   );
 }
 
-function formatDuration(totalSeconds: number): string {
+function formatDuration(
+  totalSeconds: number,
+  t: (key: string, vars?: Record<string, string | number>) => string,
+): string {
   const m = Math.round(totalSeconds / 60);
-  if (m < 60) return `${m} dk`;
+  if (m < 60) return t("skills.dk", { n: m });
   const h = Math.floor(m / 60);
-  return `${h} sa ${m % 60} dk`;
+  return `${t("prog.hours", { n: h })} ${t("skills.dk", { n: m % 60 })}`;
 }
 
 function KpiCard({
@@ -192,6 +200,8 @@ function KpiCard({
    */
   href?: string;
 }) {
+  const t = useT();
+  const lang = useLang();
   const body = (
     <>
       <div className="flex items-center justify-between" style={{ color: tone }}>
@@ -252,6 +262,8 @@ const WEEKDAY = ["Pt", "Sa", "Ça", "Pe", "Cu", "Ct", "Pa"];
  * bırakıyor: boşluk da bir bilgi, ama sütunlar hizasını kaybetmemeli.
  */
 function ActivityStrip({ byDay, today }: { byDay: Map<string, DayRow>; today: string }) {
+  const t = useT();
+  const lang = useLang();
   const end = new Date(`${today}T00:00:00Z`);
   const days: { day: string; reviews: number; weekday: number }[] = [];
   for (let i = STRIP_DAYS - 1; i >= 0; i--) {
@@ -268,9 +280,9 @@ function ActivityStrip({ byDay, today }: { byDay: Map<string, DayRow>; today: st
   return (
     <section className="card px-4 py-3.5">
       <div className="mb-2.5 flex items-baseline justify-between gap-3">
-        <h2 className="text-sm font-bold">Son iki hafta</h2>
+        <h2 className="text-sm font-bold">{t("prog.last_two_weeks")}</h2>
         <p className="muted text-xs font-semibold tabular-nums">
-          {active} gün · {total.toLocaleString("tr-TR")} tekrar
+          {t("social.days", { n: active })} · {t("prog.n_reviews", { n: formatNumber(total, lang) })}
         </p>
       </div>
 
@@ -329,6 +341,8 @@ function heatColor(count: number) {
 }
 
 function Donut({ value, total }: { value: number; total: number }) {
+  const t = useT();
+  const lang = useLang();
   const pct = Math.min(100, (value / total) * 100);
   return (
     <div

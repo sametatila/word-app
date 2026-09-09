@@ -4,14 +4,16 @@ import Link from "next/link";
 import { CardSkeleton } from "@/components/skeleton";
 import { useEffect, useState } from "react";
 import type { ErrorReport } from "@/lib/error-analytics";
+import { useT } from "@/lib/i18n/client";
 
 /**
- * Profil "Zayıf noktaların" (WP-51): son 30 günün ilk üç hata tipi, her
+ * Profil t("weak.title") (WP-51): son 30 günün ilk üç hata tipi, her
  * birine tek dokunuşla hedefli tur; karıştırılan kelime çiftleri; dersteki
  * zayıf kurallar. Hata yoksa kart görünmez — boş bir "zayıf nokta yok" kartı
  * ne bilgi verir ne motive eder.
  */
 export function WeakSpotsCard({ bare = false }: { bare?: boolean } = {}) {
+  const t = useT();
   const [report, setReport] = useState<ErrorReport | null | undefined>(undefined);
 
   useEffect(() => {
@@ -34,7 +36,7 @@ export function WeakSpotsCard({ bare = false }: { bare?: boolean } = {}) {
     };
   }, []);
 
-  if (report === undefined) return <CardSkeleton height={bare ? 140 : 200} label="Zayıf noktalar yükleniyor" />;
+  if (report === undefined) return <CardSkeleton height={bare ? 140 : 200} label={t("weak.loading")} />;
   if (!report || (!report.types.length && !report.weakRules.length)) return null;
   const top = report.types.slice(0, 3);
 
@@ -43,9 +45,9 @@ export function WeakSpotsCard({ bare = false }: { bare?: boolean } = {}) {
     <section id="weak-spots" className={bare ? "" : "card p-5"}>
       <div className="flex items-baseline justify-between">
         <h2 className={bare ? "text-[11px] font-bold uppercase tracking-wide muted" : "font-bold"}>
-          Zayıf noktaların
+          {t("weak.title")}
         </h2>
-        <span className="muted text-xs font-semibold">son {report.days} gün · {report.totalWrong} yanlış</span>
+        <span className="muted text-xs font-semibold">{t("weak.window", { days: report.days, wrong: report.totalWrong })}</span>
       </div>
       {top.length ? (
         <ul className="mt-2 space-y-2">
@@ -73,7 +75,7 @@ export function WeakSpotsCard({ bare = false }: { bare?: boolean } = {}) {
       ) : null}
       {report.confusions.length ? (
         <div className="mt-4">
-          <p className="text-xs font-bold uppercase tracking-wide muted">Karıştırdıkların</p>
+          <p className="text-xs font-bold uppercase tracking-wide muted">{t("weak.confusions")}</p>
           <ul className="mt-1.5 flex flex-wrap gap-2">
             {report.confusions.slice(0, 5).map((c) => (
               <li key={`${c.wordId}-${c.with}`} className="chip px-3 py-1.5 text-xs" title={`${c.n} kez`}>
@@ -83,7 +85,7 @@ export function WeakSpotsCard({ bare = false }: { bare?: boolean } = {}) {
                 </strong>
                 <span className="muted"> = {c.tr}, </span>
                 <s className="opacity-70">{c.with}</s>
-                <span className="muted"> değil</span>
+                <span className="muted"> {t("weak.not")}</span>
               </li>
             ))}
           </ul>
@@ -91,13 +93,13 @@ export function WeakSpotsCard({ bare = false }: { bare?: boolean } = {}) {
       ) : null}
       {report.weakRules.length ? (
         <div className="mt-4">
-          <p className="text-xs font-bold uppercase tracking-wide muted">Zayıf kurallar</p>
+          <p className="text-xs font-bold uppercase tracking-wide muted">{t("weak.rules")}</p>
           <ul className="mt-1.5 space-y-1">
             {report.weakRules.slice(0, 3).map((r) => (
               <li key={r} className="flex items-center justify-between text-sm">
                 <span>{r}</span>
                 <Link href="/immersion" className="btn btn-ghost px-3 py-1 text-xs">
-                  Konuşmaya git
+                  {t("weak.go_to_lesson")}
                 </Link>
               </li>
             ))}

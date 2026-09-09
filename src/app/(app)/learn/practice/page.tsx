@@ -23,17 +23,17 @@ export const dynamic = "force-dynamic";
  * İngilizce kursunda o iki oyun boş tur üretirdi.
  */
 const GAMES: { game: GameId; hint: string }[] = [
-  { game: "choice", hint: "Dört şıktan doğru anlamı seç" },
-  { game: "artikel", hint: "der, die, das — hızlı karar" },
-  { game: "cloze", hint: "Cümledeki boşluğu doldur" },
-  { game: "typing", hint: "Kelimeyi yazarak hatırla" },
-  { game: "listen", hint: "Duyduğun kelimeyi tanı" },
-  { game: "truefalse", hint: "Eşleşme doğru mu, değil mi" },
-  { game: "match", hint: "Kelime ve anlamı eşleştir" },
-  { game: "scramble", hint: "Karışık harflerden kelimeyi kur" },
-  { game: "order", hint: "Cümleyi doğru sıraya diz" },
-  { game: "plural", hint: "Çoğul biçimini bil" },
-  { game: "translate", hint: "Cümleyi hedef dile çevir" },
+  { game: "choice", hint: "prac.choice" },
+  { game: "artikel", hint: "prac.artikel" },
+  { game: "cloze", hint: "prac.cloze" },
+  { game: "typing", hint: "prac.typing" },
+  { game: "listen", hint: "prac.listen" },
+  { game: "truefalse", hint: "prac.truefalse" },
+  { game: "match", hint: "prac.match" },
+  { game: "scramble", hint: "prac.scramble" },
+  { game: "order", hint: "prac.order" },
+  { game: "plural", hint: "prac.plural" },
+  { game: "translate", hint: "prac.translate" },
 ];
 
 export default async function PracticePage() {
@@ -60,7 +60,7 @@ export default async function PracticePage() {
             <Link href={`/learn/game?game=${game}`} className="flex items-center gap-3 px-4 py-3.5">
               <span className="min-w-0 flex-1">
                 <span className="block font-semibold">{t(GAME_LABEL_KEYS[game])}</span>
-                <span className="muted block text-xs">{hint}</span>
+                <span className="muted block text-xs">{t(hint)}</span>
               </span>
               <ChevronRightIcon size={18} className="shrink-0" style={{ color: "var(--text-faint)" }} />
             </Link>
@@ -68,8 +68,7 @@ export default async function PracticePage() {
         ))}
       </ul>
       <p className="muted px-1 text-xs leading-relaxed">
-        Tur, aralıklı tekrar kuyruğundan senin kelimelerinle kurulur; oyun türü
-        sabit kalır. Karışık çalışmak için Öğren sekmesindeki normal turu kullan.
+        {t("prac.note")}
       </p>
     </div>
   );

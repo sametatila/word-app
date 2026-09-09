@@ -12,6 +12,7 @@ import { Confetti, CountUp } from "@/components/celebrate";
 import { play, resetCombo } from "@/lib/sfx";
 import { track } from "@/lib/track";
 import { AlertIcon, ClockIcon, TrophyIcon } from "@/components/icons";
+import { useT } from "@/lib/i18n/client";
 
 /**
  * Modül sınavı — patron turu.
@@ -71,6 +72,7 @@ export function BossPlayer({
   /** Çıkışta dönülecek adres — sınav kendi sayfasında açılıyor. */
   onExitHref: string;
 }) {
+  const t = useT();
   const router = useRouter();
   const onExit = useCallback(() => router.push(onExitHref), [router, onExitHref]);
   const [status, setStatus] = useState<Status>("loading");
@@ -281,7 +283,7 @@ export function BossPlayer({
         ) : null}
 
         <button onClick={start} className="btn btn-primary mt-5 w-full px-5 py-3.5 text-base">
-          {best !== null ? "Rekoru kır" : "Sınava gir"}
+          {t(best !== null ? "boss.beat_record" : "boss.enter")}
         </button>
         <button onClick={onExit} className="btn btn-ghost mt-2 w-full px-5 py-3">
           Yola dön
@@ -305,7 +307,7 @@ export function BossPlayer({
         >
           {won ? <TrophyIcon size={26} /> : <ClockIcon size={26} />}
         </div>
-        <h2 className="text-2xl font-black">{won ? "Modül geçildi" : "Süre bitti"}</h2>
+        <h2 className="text-2xl font-black">{t(won ? "boss.passed" : "boss.time_up")}</h2>
         <p className="muted mt-1 text-sm">
           {won
             ? `${secondsLeft} saniye kala · ${tally.correct}/${tally.total} doğru`

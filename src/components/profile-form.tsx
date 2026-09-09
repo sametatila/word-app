@@ -95,7 +95,7 @@ export function ProfileForm({
 
   async function save() {
     if (!nameOk) {
-      setSaveError("Görünen ad boş bırakılamaz.");
+      setSaveError(t("prof.name_required"));
       return;
     }
     setSaving(true);
@@ -119,12 +119,12 @@ export function ProfileForm({
         setSaved(true);
         setTimeout(() => setSaved(false), 2200);
       } else if (res.status === 401) {
-        setSaveError("Oturumun sona ermiş. Tekrar giriş yapman gerekiyor.");
+        setSaveError(t("prof.session_expired"));
       } else {
-        setSaveError("Ayarlar kaydedilemedi. Birazdan tekrar dene.");
+        setSaveError(t("prof.save_failed"));
       }
     } catch {
-      setSaveError("İnternet bağlantısı kurulamadı. Bağlantını kontrol et.");
+      setSaveError(t("autherrorw.network"));
     } finally {
       setSaving(false);
     }
