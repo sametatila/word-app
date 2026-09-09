@@ -140,6 +140,7 @@ export function FreeSentenceGame({ round, onDone }: GameProps<FreeRound>) {
     <GameShell
       label={tx("games.free_sentence")}
       verdict={outcome ? (outcome.correct ? "correct" : "wrong") : null}
+      onContinue={status === "done" && result ? finish : undefined}
       why={why}
       pull={false}
       feedback={
@@ -171,12 +172,11 @@ export function FreeSentenceGame({ round, onDone }: GameProps<FreeRound>) {
       }
     >
       {status === "done" && result ? (
-        <div className="flex flex-col gap-3">
-          <AssessmentCard answer={value.trim()} result={result} failure={failure} example={firstExample(word.beispiel)} />
-          <button type="button" onClick={finish} className="btn btn-primary min-h-12 px-4 text-sm">
-            {tx("common.continue")}
-          </button>
-        </div>
+        /* Değerlendirme kartı dokunma bölgesinde kalıyor: rubrik, düzeltme ve
+           örnek cümle tek bakışta okunacak bir şerit değil, okunacak bir
+           metin. Turu kapatan "Devam" ise diğer on oyunla aynı yerde, alttan
+           çıkan katmanda. */
+        <AssessmentCard answer={value.trim()} result={result} failure={failure} example={firstExample(word.beispiel)} />
       ) : (
         <form
           onSubmit={(e) => {

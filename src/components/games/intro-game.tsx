@@ -47,6 +47,9 @@ export function IntroGame({ round, onDone }: GameProps<IntroRound>) {
   return (
     <GameShell
       label={tx("games.intro")}
+      /* Tanıtım kartında doğru/yanlış diye bir şey yok: sonuç katmanı hiç
+         kurulmuyor ve yeri de ayrılmıyor. İki düğme kartın kendi akışında. */
+      sheet={false}
       /*
         Kabuğun okuma bölgesi bu turda boştu: tanıtım kartında sorulan bir soru
         yok, dolayısıyla `prompt` da yoktu ve etiket tek başına duruyordu.

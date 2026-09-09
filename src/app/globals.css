@@ -281,6 +281,9 @@
   --shadow-soft-sm: 0 4px 10px -2px rgb(90 52 24 / 0.14); /* mobil elevation 6 */
   --shadow-soft: 0 7px 16px -4px rgb(90 52 24 / 0.16); /* mobil elevation 10 */
   --shadow-soft-lg: 0 11px 26px -6px rgb(90 52 24 / 0.16); /* mobil elevation 16 */
+  /* Sonuç katmanı YUKARI doğru gölge veriyor: altındaki içerikten
+     ayrıldığı tek yer üst kenarı. */
+  --shadow-sheet: 0 -10px 28px -12px rgb(90 52 24 / 0.3);
 
   color-scheme: light;
 }
@@ -316,6 +319,7 @@
   --shadow-soft-sm: 0 4px 10px -2px rgb(0 0 0 / 0.4);
   --shadow-soft: 0 7px 16px -4px rgb(0 0 0 / 0.45);
   --shadow-soft-lg: 0 11px 26px -6px rgb(0 0 0 / 0.5);
+  --shadow-sheet: 0 -10px 28px -10px rgb(0 0 0 / 0.6);
 
   color-scheme: dark;
 }
@@ -598,6 +602,27 @@
   .verdict-wrong {
     background: color-mix(in srgb, var(--color-rose) 16%, var(--surface));
     color: color-mix(in srgb, var(--color-rose) 55%, var(--text));
+  }
+  /*
+   * Sonuç katmanı — cevaptan sonra ekranın dibinden çıkan yüzey.
+   *
+   * Kendi zemini var (`--surface`), yani altındaki kartla aynı aileden ama
+   * ondan AYRI bir düzlem; yüzen sekme çubuğu da aynı dili konuşuyor
+   * (bkz. components/app-shell). Ayrımı üç şey birlikte kuruyor: yukarı
+   * vuran gölge, üstte yuvarlanan köşeler ve sonucun rengini taşıyan üst
+   * kenarlık.
+   *
+   * Kenarlık rengi neden katmanın kendi zemininde değil: zemin de renklense
+   * içindeki şerit ikinci bir renk katmanı olurdu ve şeridin "cevabın kutusu"
+   * olduğu okunmazdı. Renk yalnız sınırda: göz katmanın geldiğini görüyor,
+   * cevabı ise şeritten okuyor.
+   */
+  .round-sheet {
+    background: var(--surface);
+    border-top: 2px solid var(--hairline);
+    border-top-left-radius: var(--radius-float);
+    border-top-right-radius: var(--radius-float);
+    box-shadow: var(--shadow-sheet);
   }
   .option-correct {
     border-color: var(--color-mint);

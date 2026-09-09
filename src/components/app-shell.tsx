@@ -367,6 +367,21 @@ export function AppShell({
         </main>
 
         {/*
+          TUR SONUCU KATMANININ KABI.
+
+          Oyun turlarında cevaptan sonra alttan çıkan şerit + "Devam" buraya
+          çiziliyor (porta ile; bkz. games/round-sheet). Kap boş dururken
+          yüksekliği yok ve `pointer-events-none` olduğu için altındaki
+          içeriğe dokunmayı engellemiyor.
+
+          Neden ekrana değil de SÜTUNA bağlı: masaüstünde kabuk solda 240
+          piksel kenar çubuğu tutuyor; ekrana göre ortalanan bir katman oyun
+          kartıyla hizasız kalırdı. `bottom-0` + kendi yüksekliği: kap
+          içeriğiyle YUKARI doğru büyüyor, dip kenarı sabit kalıyor.
+        */}
+        <div id="round-sheet-host" className="pointer-events-none absolute inset-x-0 bottom-0 z-40" />
+
+        {/*
           Alt gezinme — mobildeki YÜZEN HAP (`M/src/navigation/TabBar.tsx`).
 
           Önceki hali ekranın dibine yapışık, üst kenarlıklı düz bir banttı ve
