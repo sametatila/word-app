@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
-import { getT } from "@/lib/i18n/server";
+import { getT, getLang } from "@/lib/i18n/server";
+import { courseName } from "@/lib/courses";
 import { unitBriefs } from "@/lib/immersion/brief";
 import { deriveQuiz } from "@/lib/immersion/quiz";
 import { unitQuestions } from "@/lib/immersion/content";
@@ -25,6 +26,7 @@ export default async function ImmersionQuizPage({
   searchParams: Promise<{ mode?: string }>;
 }) {
   const t = await getT();
+  const lang = await getLang();
   const { unit } = await params;
   const checkpoint = (await searchParams).mode === "checkpoint";
 
@@ -60,7 +62,11 @@ export default async function ImmersionQuizPage({
       vocab: earlier.flatMap((b) => b.vocab),
       patterns: earlier.flatMap((b) => b.patterns),
     };
-    questions = deriveQuiz(brief, pool, checkpoint ? 12 : 8, review);
+    questions = deriveQuiz(brief, pool, checkpoint ? 12 : 8, review, {
+      whatMeans: (word) => t("quiz.what_means", { word }),
+      howToSay: (pattern) => t("quiz.how_to_say", { pattern, target: courseName(course, lang) }),
+      fromEarlier: t("quizw.from_earlier"),
+    });
   }
   if (!questions.length) notFound();
 

@@ -92,11 +92,23 @@ export function scorePlacement(answers: PlacementAnswer[]): PlacementResult {
   return { suggested, perSkill, estimates, score: total ? Math.round((100 * correct) / total) : 0 };
 }
 
-/** Türkçe tek cümle gerekçe: "okuman B1, konuşman A2". */
-export function describePerSkill(perSkill: PlacementResult["perSkill"]): string {
-  const label: Record<PlacementStage, string> = { vocab: "kelime", grammar: "dilbilgisi", reading: "okuma", listening: "dinleme" };
+/**
+ * Beceri kırılımı tek satırda: "Kelime B1 · Okuma A2".
+ *
+ * Cümle sabit Türkçe kuruluyordu, yani İngilizce ve Almanca arayüzde sonuç
+ * ekranının bu satırı Türkçe kalıyordu. Etiketler sınav bölüm adlarıyla
+ * ortak (`exam.sec_*`); çeviri çağıranın işi, bu modül saf kalıyor.
+ */
+const STAGE_LABEL_KEYS: Record<PlacementStage, string> = {
+  vocab: "exam.sec_vocab",
+  grammar: "exam.sec_grammar",
+  reading: "exam.sec_reading",
+  listening: "exam.sec_listening",
+};
+
+export function describePerSkill(perSkill: PlacementResult["perSkill"], t: (k: string) => string): string {
   return (Object.keys(perSkill) as PlacementStage[])
     .filter((s) => perSkill[s] !== undefined)
-    .map((s) => `${label[s]} ${perSkill[s] ?? "A1 altı"}`)
+    .map((s) => `${t(STAGE_LABEL_KEYS[s])} ${perSkill[s] ?? t("plc.below_a1")}`)
     .join(" · ");
 }

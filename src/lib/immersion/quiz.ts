@@ -58,12 +58,29 @@ function placeAnswer(correct: string, distractors: string[], i: number): { optio
  * ve seçim tüm geçmişe yayılır (yalnız bir önceki üniteye değil), çünkü asıl
  * unutulan eski olandır.
  */
+/**
+ * Soru metinleri DIŞARIDAN geliyor: bu modül saf ve dil bilmiyor, çağıran
+ * sayfa ise `getT()` ile kullanıcının dilini biliyor. Metinler burada sabit
+ * yazılıydı ve İngilizce/Almanca arayüzde soru Türkçe çıkıyordu.
+ */
+export type QuizText = {
+  whatMeans: (word: string) => string;
+  howToSay: (pattern: string) => string;
+  fromEarlier: string;
+};
+
 export function deriveQuiz(
   brief: UnitBrief,
   pool: QuizPool,
   count = 8,
   review?: QuizPool,
+  text?: QuizText,
 ): SkillQuestion[] {
+  const say: QuizText = text ?? {
+    whatMeans: (w) => `«${w}»?`,
+    howToSay: (p) => `«${p}»?`,
+    fromEarlier: "",
+  };
   const qs: SkillQuestion[] = [];
   const trPool = pool.vocab.map((v) => v.tr);
   const dePatternPool = pool.patterns.map((p) => p.de);
@@ -77,17 +94,17 @@ export function deriveQuiz(
   for (let i = 0; i < vocabTarget; i++) {
     const v = brief.vocab[i];
     const { options, answer } = placeAnswer(v.tr, pickDistractors(v.tr, trPool, i), i);
-    own.push({ kind: "mcq", text: `«${v.de}» ne demek?`, options, answer, explain: `${v.de} = ${v.tr}.` });
+    own.push({ kind: "mcq", text: say.whatMeans(v.de), options, answer, explain: `${v.de} = ${v.tr}.` });
   }
   const back: SkillQuestion[] = reviewWords.map((v, i) => {
     const { options, answer } = placeAnswer(v.tr, pickDistractors(v.tr, trPool, i + 101), i + 101);
     return {
       kind: "mcq" as const,
-      text: `«${v.de}» ne demek?`,
+      text: say.whatMeans(v.de),
       options,
       answer,
       // Soru metni ipucu vermez; açıklama nereden geldiğini söyler.
-      explain: `${v.de} = ${v.tr}. (önceki ünitelerden tekrar)`,
+      explain: `${v.de} = ${v.tr}. ${say.fromEarlier}`.trim(),
     };
   });
   qs.push(...interleave(own, back));
@@ -95,7 +112,7 @@ export function deriveQuiz(
   for (let j = 0; j < patTarget && qs.length < count; j++) {
     const p = brief.patterns[j];
     const { options, answer } = placeAnswer(p.de, pickDistractors(p.de, dePatternPool, j), j);
-    qs.push({ kind: "mcq", text: `«${p.tr}» Almanca nasıl denir?`, options, answer, explain: `${p.tr} → ${p.de}` });
+    qs.push({ kind: "mcq", text: say.howToSay(p.tr), options, answer, explain: `${p.tr} → ${p.de}` });
   }
   return qs.slice(0, count);
 }

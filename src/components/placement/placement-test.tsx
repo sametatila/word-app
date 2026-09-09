@@ -169,7 +169,7 @@ export function PlacementTest({ initialLast, canRetake, retakeDays }: { initialL
         {initialLast ? (
           <p className="mt-3 rounded-xl px-3 py-2 text-xs surface-2">
             {t("placement.last_taken", { date: initialLast.at.slice(0, 10) })} <strong>{initialLast.suggested}</strong>
-            {initialLast.accepted ? ` ${t("placement.you_chose", { level: initialLast.accepted })}` : ""} · {describePerSkill(initialLast.perSkill)}
+            {initialLast.accepted ? ` ${t("placement.you_chose", { level: initialLast.accepted })}` : ""} · {describePerSkill(initialLast.perSkill, t)}
           </p>
         ) : null}
         {canRetake ? (
@@ -208,7 +208,7 @@ export function PlacementTest({ initialLast, canRetake, retakeDays }: { initialL
       <section className="card mx-auto w-full max-w-md p-5">
         <h1 className="text-xl font-bold">{t("placew.suggestion", { level: result.suggested })}</h1>
         <p className="muted mt-1 text-sm">
-          {describePerSkill(result.perSkill)} · {t("placew.score_line", { pct: formatPercent(result.score, lang), min: minutes })}
+          {describePerSkill(result.perSkill, t)} · {t("placew.score_line", { pct: formatPercent(result.score, lang), min: minutes })}
         </p>
         <p className="mt-3 text-sm leading-relaxed">{t("placew.median_note")}</p>
         <div className="mt-4 flex flex-wrap gap-2">
