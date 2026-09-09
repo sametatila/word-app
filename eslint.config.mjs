@@ -18,7 +18,7 @@ import nextTypescript from "eslint-config-next/typescript";
  * `core-web-vitals` temel yapılandırmayı zaten içine alıyor (dist içinde `./index`i
  * yayıyor), o yüzden ayrıca eklenmedi.
  */
-export default [
+const config = [
   {
     ignores: [
       "node_modules/**",
@@ -99,3 +99,11 @@ export default [
     rules: { "@typescript-eslint/no-require-imports": "off" },
   },
 ];
+
+/**
+ * Adlandırılmış dışa aktarım — `export default [...]` doğrudan dizi veriyordu ve
+ * `import/no-anonymous-default-export` bunu haklı olarak uyarıyordu: yığın izinde
+ * ve hata mesajlarında anonim bir dizi görünüyor, hangi dosyadan geldiği
+ * anlaşılmıyor.
+ */
+export default config;

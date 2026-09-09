@@ -106,6 +106,15 @@ function Walker() {
       animate={{ x: toX }}
       transition={{ duration: walk.dur, ease: "linear" }}
     >
+      {/*
+        `next/image` DEĞİL ve bu bilinçli: klipler ANİMASYONLU WebP
+        (`public/anim/*.webp`, 16fps, sonsuz döngü). next/image varsayılan
+        olarak yeniden kodluyor ve animasyonu düşürüyor — görsel donuk bir
+        kareye iniyor. Ayrıca yükseklik sabit, genişlik `auto`: next/image iki
+        ölçüyü de bilmek istiyor. Statik marka PNG'si için tersi doğru ve orada
+        next/image kullanılıyor (bkz. icons.tsx LogoMark).
+      */}
+      {/* eslint-disable-next-line @next/next/no-img-element -- animasyonlu WebP, üstteki nota bak */}
       <img
         src={walkUrl}
         alt=""
@@ -159,6 +168,7 @@ function Peeker() {
           transition={{ duration: 0.3 }}
         >
           {/* Klip sağa yaslanıp sola sarkıyor: sağ kenar için doğal, sol kenar aynalı. */}
+          {/* eslint-disable-next-line @next/next/no-img-element -- animasyonlu WebP; yukarıdaki walkUrl notu geçerli */}
           <img
             src={peekUrl}
             alt=""

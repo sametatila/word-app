@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
@@ -273,7 +274,7 @@ export function AppShell({
             Önce gradyan bir kutuda geometrik bir "W" vardı; kullanıcı ana
             ekranda bir mirket, uygulamanın içinde bir harf görüyordu.
           */}
-          <img src="/logo-mark.png" alt="" width={36} height={36} className="rounded-xl" />
+          <Image src="/logo-mark.png" alt="" width={36} height={36} className="rounded-xl" />
           <span className="text-lg font-bold">Lernomi</span>
         </Link>
 

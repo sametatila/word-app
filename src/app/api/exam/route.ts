@@ -74,12 +74,15 @@ export async function POST(req: Request) {
   }
   const level = body.level as CefrLevel;
   if (!LEVELS.includes(level)) return NextResponse.json({ error: "bad_request" }, { status: 400 });
-  const module = typeof body.module === "number" && Number.isInteger(body.module) && body.module >= 0 && body.module <= 20 ? body.module : null;
+  // `module` DEĞİL: Next'in `no-assign-module-variable` kuralı haklı — CommonJS
+  // birlikte çalışabilirliğinde `module` ayrılmış bir addır ve paketleyici onu
+  // gölgeleyen bir yerel değişkende beklenmedik davranabilir.
+  const moduleNo = typeof body.module === "number" && Number.isInteger(body.module) && body.module >= 0 && body.module <= 20 ? body.module : null;
   const day = clampDay(body.day);
   try {
     const profile = await ensureProfile(userId);
     if (body.action === "start") {
-      const paper = await buildExam(userId, profile.course, level, module, day);
+      const paper = await buildExam(userId, profile.course, level, moduleNo, day);
       await track(userId, "exam_start", day, 0, `${paper.kind}:${level}`);
       return NextResponse.json({ paper });
     }
@@ -111,7 +114,7 @@ speakingScore: typeof body.speakingScore === "number" ? Math.max(0, Math.min(100
       };
       // Kelime cevapları SRS'e: sınav da bir tekrar (hatalar tipleriyle).
       if (vocabAnswers.length) await submitAnswers(userId, vocabAnswers, day, Math.min(sub.seconds, 3600));
-      const result = await finishExam(userId, { kind: module === null ? "level" : "module", level, module, trial: body.trial === true }, sub, day);
+      const result = await finishExam(userId, { kind: moduleNo === null ? "level" : "module", level, module: moduleNo, trial: body.trial === true }, sub, day);
       return NextResponse.json(result);
     }
     return NextResponse.json({ error: "bad_request" }, { status: 400 });

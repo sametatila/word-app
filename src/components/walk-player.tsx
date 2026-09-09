@@ -1353,7 +1353,13 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
    * (bkz. aşağıda "Cep yolu 'Cebe koy' ile, o an kuruluyor"). Düğme bugün
    * `darken`e bağlı; ikisinden hangisinin doğru olduğu davranış sorusu, lint
    * temizliğinin konusu değil.
+   *
+   * Bu yüzden kural burada BİLEREK susturuluyor. Silmek `arm`ı da öldürürdü
+   * (tek çağıranı bu) ve bekleyen bir ürün kararının kodunu lint temizliği
+   * uğruna atmış olurduk. Karar verilince ya düğme buraya bağlanır ve direktif
+   * kalkar, ya da ikisi birden silinir.
    */
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars -- bekleyen ürün kararı, üstteki nota bak
   async function toPocket() {
     const ok = await arm();
     announce.current = t(ok ? "walk.pocket_armed" : "walk.pocket_failed");

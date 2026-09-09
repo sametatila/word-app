@@ -1,7 +1,7 @@
 /**
- * Paket denetimi — merge.js'ten önce çalıştırılır.
+ * Paket denetimi — merge.cjs'ten önce çalıştırılır.
  *
- * merge.js biçimsel bütünlüğü denetliyor (id, artikel, ß, boş gsw). Burada asıl
+ * merge.cjs biçimsel bütünlüğü denetliyor (id, artikel, ß, boş gsw). Burada asıl
  * pahalı hatayı yakalıyoruz: **yerelleştirme**. seed-zurich.ts, Almanca cümleyle
  * Züritüütsch cümlenin sayıları ve yer adları örtüşmezse o maddenin Türkçe
  * çevirisini düşürüyor (translationFits). Önceki turda bu sessizce 374 maddeye

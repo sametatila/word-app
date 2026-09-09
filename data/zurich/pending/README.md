@@ -11,7 +11,7 @@ birleştirildikten sonra silinir, araçlar kalır.
 |---|---|
 | `SPEC-ZH.md` | Dönüşüm şartnamesi — bir üretim ajanına verilecek metin. `../style-guide.md` ile birlikte bağlayıcıdır |
 | `check.js` | Kalite kapısı. `node check.js [part-03]` |
-| `merge.js` | Çıktıları `../chunk-NN.json` olarak yazar. Önce `node merge.js --dry` |
+| `merge.cjs` | Çıktıları `../chunk-NN.json` olarak yazar. Önce `node merge.cjs --dry` |
 
 ## Yeni bir tur nasıl yapılır
 
@@ -19,13 +19,13 @@ birleştirildikten sonra silinir, araçlar kalır.
    Her madde: `id, de, artikel, tr, typ, niveau, beispiel`.
 2. Her paket için bir ajana `SPEC-ZH.md`'yi ver; çıktı `zh-out/part-NN.json`.
 3. `node check.js` — **yerelleştirme sütunu sıfır olmalı.**
-4. `node merge.js --dry`, sonra `node merge.js`.
+4. `node merge.cjs --dry`, sonra `node merge.cjs`.
 5. `npm run db:seed:zurich`.
 6. Tüketilen `part-*.json` ve `zh-out/` dosyalarını sil; parçalar artık kaynak.
 
 ## Neden ayrı bir `check.js` var
 
-`merge.js` biçimsel bütünlüğü denetler: bilinmeyen id, geçersiz artikel, `ß`,
+`merge.cjs` biçimsel bütünlüğü denetler: bilinmeyen id, geçersiz artikel, `ß`,
 boş `gsw`. Ama maddeleri asıl kaybettiren şey bu değil.
 
 `seed-zurich.ts` içindeki `translationFits`, Almanca ve Züritüütsch cümlenin
@@ -34,7 +34,7 @@ boş `gsw`. Ama maddeleri asıl kaybettiren şey bu değil.
 yanlıştır. İlk turda bu sessizce 374 maddeye mal oldu; kimse paket bazında
 görmedi. `check.js` tam olarak bu ölçütü paket paket ölçer.
 
-İkinci fark: `merge.js`'in "cümlede kelime yok" uyarısı düz önek karşılaştırması
+İkinci fark: `merge.cjs`'in "cümlede kelime yok" uyarısı düz önek karşılaştırması
 yapar ve ayrılabilen fiilleri yanlış işaretler (`abmaane` → `abgmaant` doğrudur).
 `check.js` ayrılabilen öneki ve dönüşlü `sich`'i soyup kökü arar; son turda
 uyarı 95'ten 18'e indi, kalan 18'in de doğru olduğu görüldü (ablaut/uzatma).

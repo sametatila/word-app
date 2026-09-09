@@ -244,11 +244,13 @@ export function Mascot({
         transition={{ duration: 2.4, repeat: still ? 0 : Infinity, ease: "easeInOut" }}
       />
       {still ? (
+        // eslint-disable-next-line @next/next/no-img-element -- SVG; next/image için `dangerouslyAllowSVG` gerekir ve SVG'de optimizasyonun kazancı yok
         <img src="/erdi.svg" alt="" className="block h-full w-full object-contain" draggable={false} />
       ) : (
         <>
           {/* Takas tamponu: yeni klip çözülene kadar eskinin donmuş nötr karesi. */}
           {prevUrl && (
+            /* eslint-disable-next-line @next/next/no-img-element -- animasyonlu WebP (public/anim/*.webp, 16fps); next/image yeniden kodlayıp animasyonu düşürür */
             <img
               src={prevUrl}
               alt=""
@@ -262,6 +264,7 @@ export function Mascot({
             gösteriyor; yeni öğe temiz başlıyor ve döngü baştan oynuyor.
           */}
           {url && (
+          /* eslint-disable-next-line @next/next/no-img-element -- animasyonlu WebP; yukarıdaki prevUrl notu geçerli */
           <img
             key={url}
             src={url}

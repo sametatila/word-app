@@ -1,4 +1,10 @@
 // zh-out/*.json -> data/zurich/chunk-NN.json  + bütünlük denetimi
+//
+// UZANTI .cjs: dosya CommonJS (`require`) ve depo genelinde ESM varsayılıyor.
+// `.js` iken lint onu ESM sanıp `no-require-imports` ile uyarıyordu; kural o
+// dosya türü için yanlıştı, sayı değil. `.cjs` hem doğru hem de eslint
+// yapılandırmasında zaten muaf (bkz. eslint.config.mjs sonundaki blok).
+// Çağrı aynı: `node merge.cjs [--dry]`.
 const fs = require("fs"), path = require("path");
 const SP = __dirname, ROOT = "/mnt/windows/Users/LinkinqArk/Desktop/Workspace/word-app";
 const DRY = process.argv.includes("--dry");

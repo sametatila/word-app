@@ -18,16 +18,44 @@ const { olc, ozet, türkçeMi } = require("./lib/vocab-gate.cjs") as {
   ozet: (d: string[]) => string[];
   türkçeMi: (s: string) => boolean;
 };
-const ex = BUNDLED_EXERCISES as any[];
+/**
+ * Egzersizin GEVŞEK görünümü — yalnız burada okunan alanlar.
+ *
+ * `any` yerine bu: paket birden çok egzersiz türü taşıyor (quiz, konuşma,
+ * yazma) ve hepsinin alanları farklı, ama bu betik yalnız metin yüzeyini
+ * topluyor. Hepsini isteğe bağlı alanlarla tarif etmek, `any`nin verdiği
+ * özgürlüğü koruyup yanlış alan adını yakalama yeteneğini geri kazandırıyor:
+ * `e.txet` artık derlemede patlıyor.
+ */
+type LooseTask = {
+  de?: string;
+  answer?: string;
+  source?: string;
+  sample?: string;
+  stimulus?: string;
+  kind?: string;
+  phrases?: unknown[];
+  fields?: { answer?: string }[];
+};
+type LooseExercise = {
+  id: string;
+  skill?: string;
+  text?: string;
+  segments?: { text?: string }[];
+  questions?: { text?: string; accept?: string[] }[];
+  tasks?: LooseTask[];
+};
+
+const ex = BUNDLED_EXERCISES as unknown as LooseExercise[];
 
 /** Egzersizin ölçülecek Almanca yüzeyi. Türkçe alanlar dışarıda. */
-function almanca(e: any): string {
+function almanca(e: LooseExercise): string {
   const out: string[] = [];
   if (e.text) out.push(e.text);
-  for (const s of e.segments || []) out.push(s.text);
+  for (const s of e.segments || []) if (s.text) out.push(s.text);
   // Şıklar Türkçe olabiliyor ("samimi (du)"); Almanca ölçümüne sokmuyoruz.
   for (const q of e.questions || []) {
-    if (!türkçeMi(q.text)) out.push(q.text);
+    if (q.text && !türkçeMi(q.text)) out.push(q.text);
     for (const a of q.accept || []) out.push(a);
   }
   for (const t of e.tasks || []) {
@@ -37,7 +65,7 @@ function almanca(e: any): string {
     if (t.source && !türkçeMi(t.source)) out.push(t.source);
     if (t.sample) out.push(t.sample);
     if (t.stimulus) out.push(t.stimulus);
-    for (const f of t.fields || []) out.push(f.answer);
+    for (const f of t.fields || []) if (f.answer) out.push(f.answer);
   }
   return out.join(" ");
 }

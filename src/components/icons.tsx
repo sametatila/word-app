@@ -1,3 +1,4 @@
+import Image from "next/image";
 import type { SVGProps } from "react";
 
 /**
@@ -916,7 +917,11 @@ export const RefreshIcon = (p: IconProps) => (
  * `currentColor` de almıyor — marka tek renkli bir simge değil, bir portre.
  */
 export const LogoMark = ({ size = 24, className = "" }: { size?: number; className?: string }) => (
-  <img
+  // `next/image`: statik bir PNG ve ölçüsü belli, yani optimizasyonun tam
+  // uyduğu durum — boyutlandırılmış ve modern formata çevrilmiş sürüm servis
+  // ediliyor. Maskot klipleri için AYNI şey doğru DEĞİL (animasyonlu WebP,
+  // bkz. mascot.tsx); ayrım kasıtlı.
+  <Image
     src="/logo-mark.png"
     alt=""
     width={size}

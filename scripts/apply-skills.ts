@@ -200,7 +200,21 @@ async function main() {
     unknown
   >[];
   const drift: string[] = [];
-  for (const e of loaded as any[]) {
+  /**
+   * Egzersizin GEVŞEK görünümü — yalnız burada okunan alanlar. `any` yerine bu:
+   * paket birden çok egzersiz türü taşıyor ve alanları farklı, ama burada
+   * yalnız sözlükçe yüzeyi geziliyor. İsteğe bağlı alanlarla tarif etmek,
+   * yanlış yazılmış bir alan adını derlemede yakalıyor.
+   */
+  type LoadedTask = { kind?: string; phrases?: Field[] };
+  type LoadedExercise = {
+    id?: string;
+    skill?: string;
+    gloss?: Field[];
+    targets?: Field[];
+    tasks?: LoadedTask[];
+  };
+  for (const e of loaded as unknown as LoadedExercise[]) {
     const s = glossaries.get(e.id as string);
     if (!s) continue;
     const allFields: Field[] = [
@@ -210,7 +224,7 @@ async function main() {
       // sözlükçesi `phrases` içinde duruyor.
       ...(e.skill === "speaking" ? (e.tasks ?? []) : []),
       ...(e.skill === "writing"
-        ? (e.tasks ?? []).flatMap((t: any) =>
+        ? (e.tasks ?? []).flatMap((t: LoadedTask) =>
             t.kind === "free" ? (t.phrases ?? []) : [],
           )
         : []),
