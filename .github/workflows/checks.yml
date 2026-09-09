@@ -15,6 +15,21 @@ jobs:
   web:
     runs-on: ubuntu-latest
     timeout-minutes: 20
+    # Yetki testi GERÇEK Postgres istiyor ve taklidi işe yaramaz: sınadığı
+    # şeylerin yarısı veritabanının kendi davranışı — benzersiz kısıtın
+    # çakışması, `for update` olmadan oluşan kayıp güncelleme, `now()`un
+    # cümlenin içinde değerlendirilmesi. Bellekte bir sahte katman bunların
+    # hiçbirini üretmez, yalnız yeşil gösterir.
+    services:
+      postgres:
+        image: postgres:17-alpine
+        env:
+          POSTGRES_PASSWORD: test
+          POSTGRES_DB: lernomi_test
+        ports: ["5432:5432"]
+        options: >-
+          --health-cmd pg_isready --health-interval 5s
+          --health-timeout 5s --health-retries 10
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -38,6 +53,20 @@ jobs:
       # Bu sınıfın tamamı ancak gerçek para akarken fark edilirdi.
       - name: Premium kuralları
         run: npm run test:premium
+      # Yetki katmanının veritabanı testi — 32 doğrulama. Buradaki hata sınıfı
+      # sessiz: yanlış hesaplanmış bir bitiş tarihi ya da iki kez uygulanmış bir
+      # ödeme olayı kullanıcı şikâyet edene kadar görünmez, sonra da parayla
+      # ilgili olduğu için geri alınması pahalıdır. Boş veritabanına bütün
+      # migration'lar uygulanıp şema kodla karşılaştırılıyor: migration yazmayı
+      # unutmak da burada düşüyor.
+      - name: Yetki (veritabanı)
+        run: |
+          npx tsx scripts/migrate-all.ts
+          npx tsx scripts/schema-check.ts
+          npm run test:entitlement
+        env:
+          DATABASE_URL: postgres://postgres:test@127.0.0.1:5432/lernomi_test
+          TEST_DATABASE_URL: postgres://postgres:test@127.0.0.1:5432/lernomi_test
       - name: next build
         run: npx next build
         env:

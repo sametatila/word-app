@@ -53,6 +53,22 @@ Bonus, mağaza kapsamı **yokken** harcanmaya başlıyor; abonelik varken bekliy
 yanmıyor. Kullanıcı hediye süresi çalışırken abone olursa kalan hediye bakiyeye
 **geri dönüyor** (`applyStoreEvent`).
 
+### Aynı olay iki kez gelirse
+
+Ödeme sağlayıcıları teslimatı **en az bir kez** garanti eder, tam bir kez değil:
+ağ koptuğunda ya da yanıt geç döndüğünde aynı olayı tekrar gönderirler. Yani
+"iki kez gelmez" diye bir varsayım kurulamaz.
+
+Eleme anahtarı **olay kimliği**, ve kısıt kodda değil veritabanında:
+`premium_grants(ref) where source='store'` BENZERSİZ. `applyStoreEvent` deftere
+yazmayı **kapı** olarak kullanıyor — satır dönmezse olay zaten işlenmiştir, çık —
+ve yazma ile durum güncellemesi **tek işlemde**.
+
+Bu ayrım önemli: "önce SELECT, satır yoksa uygula" bugünkü kodda çoğu zaman
+doğru sonuç verir, ama bir yarıştır ve `applyStoreEvent`e artıran tek bir yazma
+eklendiği gün sessizce delinir. Ödeme akışında hatanın para tarafına düştüğü
+yer tam burasıdır, o yüzden garanti kısıtta duruyor.
+
 ### Dosya haritası
 
 | Dosya | Ne yapar |
@@ -99,7 +115,9 @@ paywall metnine "puan yetmezse paket açılmaz" cümlesi eklenmeli.
 
 **Referans ödülü ilk ÖDEMEDE düşüyor**, denemede değil: 1 aylık deneme iptal
 edilebildiği için ödül denemeye bağlansaydı sahte hesapla hafta üretmek serbest
-kalırdı.
+kalırdı. Koşulu webhook'un doğru çağırmasına bırakmıyoruz — `rewardForFirstPayment`
+`store_paid_at`i kendisi okuyor, yani elle telafi ya da geri doldurma betiği gibi
+ikinci bir çağıran da ödülü denemeden üretemiyor.
 
 **"Sınırsız" denmiyor.** Premium'un da adil kullanım tavanı var ve paywall'da
 yazılı. Tavanı olan bir şeyi sınırsız diye pazarlamak App Store 3.1.2 ve Play'in

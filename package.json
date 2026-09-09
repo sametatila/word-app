@@ -27,6 +27,7 @@
     "test:why": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/test-why.ts",
     "test:apple": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/test-apple.ts",
     "test:premium": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/test-premium.ts",
+    "test:entitlement": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/test-entitlement.ts",
     "test:track": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/test-track.ts",
     "briefs": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/immersion-briefs.ts",
     "test:match": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/test-sentence-match.ts",
