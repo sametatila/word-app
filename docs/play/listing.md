@@ -28,9 +28,17 @@ eğitim uygulaması olarak doldurulur (Play'in anketinde eğitim seçeneği bu g
 | Kullanıcı üretimi içerik başkalarına görünüyor mu | Evet (görünen ad, kullanıcı adı, biyografi) | Moderasyon: ad filtresi, bildir/engelle, insan incelemesi |
 | Kişisel bilgi paylaşımı | Kullanıcı isterse görünen ad | Konum paylaşımı yok |
 | Konum paylaşımı | Hayır | Konum izni yok |
-| Dijital satın alma | Premium canlıysa **Evet** (abonelik); canlı değilse Hayır | `billingConfig.ts` anahtarı |
+| Dijital satın alma | **Evet** (abonelik) | Manifest zaten `com.android.vending.BILLING` taşıyor (react-native-purchases) ve premium ürünün parçası; bkz. aşağıdaki karar |
 | Reklam | Hayır | Reklam SDK'sı yok |
 | Yapay zekâ ile etkileşim / üretilen içerik | **Evet** | Rol yapma diyalogları ve değerlendirme; uygulama içi bildirme |
+
+
+> **Karar (2026-09-09):** premium ilk sürümde AÇIK sayılıyor. Abonelik satın alma
+> RevenueCat bağlanınca gelecek, ama ürün premium'lu bir ürün olarak yayımlanıyor:
+> ücretsiz katmanın sınırları uygulanıyor, paywall erişilebilir, promo kodu ve davet
+> ödülü bugün gerçek premium veriyor. Beyanlar buna göre doldurulur — sonradan
+> "aslında satın alma da varmış" demek, mağaza gözünde beyanın düzeltilmesi değil
+> YANLIŞ BEYAN olur.
 
 Beklenen sonuç: PEGI 3 / ESRB Everyone, "Kullanıcı etkileşimi" ve "Dijital satın alma"
 etiketleriyle.

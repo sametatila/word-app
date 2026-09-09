@@ -26,7 +26,7 @@ Sütunlar Console'daki sırayla: toplanıyor / paylaşılıyor / geçici işleme
 |---|---|---|---|---|---|
 | Kişisel bilgi › Ad | Evet | Hayır | Hayır | Zorunlu | Hesap yönetimi, kişiselleştirme |
 | Kişisel bilgi › E-posta adresi | Evet | Hayır | Hayır | Zorunlu | Hesap yönetimi, güvenlik (doğrulama, parola sıfırlama) |
-| Kişisel bilgi › Kullanıcı kimlikleri | Evet | Evet (RevenueCat, premium açılınca) | Hayır | Zorunlu | Hesap yönetimi, satın alma eşleme |
+| Kişisel bilgi › Kullanıcı kimlikleri | Evet | Evet (RevenueCat) | Hayır | Zorunlu | Hesap yönetimi, satın alma eşleme |
 | Kişisel bilgi › Diğer bilgi (IP adresi, tarayıcı/cihaz tanımı — oturum kaydı) | Evet | Hayır | Hayır | Zorunlu | Dolandırıcılık önleme, güvenlik, hız sınırı |
 | Ses › Ses kayıtları | Evet | Evet (Microsoft Azure, Groq, Cloudflare, Speechmatics, Deepgram, Mistral) | Evet (saklanmaz) | İsteğe bağlı (yürüyüş modu, açık rıza) | Uygulama işlevi (konuşma tanıma) |
 | Mesajlar › Diğer uygulama içi mesajlar (yazılan ve söylenen metinler: yazma görevleri, konuşma pratiği, sınav cevapları) | Evet | Evet (Groq, Mistral, Cerebras) | Hayır | İsteğe bağlı | Uygulama işlevi (değerlendirme ve geri bildirim) |
@@ -34,7 +34,7 @@ Sütunlar Console'daki sırayla: toplanıyor / paylaşılıyor / geçici işleme
 | Uygulama etkinliği › Diğer kullanıcı içeriği (görünen ad, kullanıcı adı, biyografi, içerik ve kullanıcı bildirimleri) | Evet | Hayır | Hayır | Zorunlu (ad) / isteğe bağlı (biyografi) | Uygulama işlevi, kişiselleştirme (sıralama, sosyal profil), güvenlik (moderasyon) |
 | Uygulama etkinliği › Diğer eylemler (arkadaşlık istekleri, tepkiler, dürtmeler, ortak görevler, engellemeler) | Evet | Hayır | Hayır | İsteğe bağlı | Uygulama işlevi (sosyal özellikler) |
 | Uygulama bilgisi ve performans › Diğer (ekran genişliği, platform etiketi) | Evet | Hayır | Hayır | İsteğe bağlı (kapatılabilir) | Analitik |
-| Finansal bilgi › Satın alma geçmişi | Evet (premium açılınca) | Evet (RevenueCat, Google Play) | Hayır | İsteğe bağlı | Uygulama işlevi (abonelik) |
+| Finansal bilgi › Satın alma geçmişi | Evet | Evet (RevenueCat, Google Play) | Hayır | İsteğe bağlı | Uygulama işlevi (abonelik) |
 | Konum, kişiler, takvim, fotoğraf/video, sağlık, cihaz veya diğer kimlikler, çökme günlükleri, tanılama | Hayır | Hayır | — | — | Toplanmıyor |
 
 Notlar:
@@ -61,5 +61,5 @@ Notlar:
 ## Diğer beyanlarla tutarlılık
 
 - Foreground service (mikrofon): "Kullanıcının başlattığı sürekli ses yakalama — yürüyüş modunda konuşma tanıma". Video: Başla → onay ekranı (MicDisclosure) → izin → ekran kapatma → bildirim → durdurma.
-- İçerik derecelendirme: kullanıcılar birbirini görüyor (görünen ad, arkadaşlık), yapay zekâ ile etkileşim var, dijital satın alma premium açılınca.
+- İçerik derecelendirme: kullanıcılar birbirini görüyor (görünen ad, arkadaşlık), yapay zekâ ile etkileşim var, dijital satın alma **var** (abonelik; satın alma akışı RevenueCat bağlanınca açılır — beyan ürüne göre yapılır, akışın hazır olma tarihine göre değil).
 - Üretken yapay zekâ: uygulama içi bildirme (her yanıtın altında "Bildir"), promptlarda güvenlik sınırları, insan incelemesi (admin › Loglar).

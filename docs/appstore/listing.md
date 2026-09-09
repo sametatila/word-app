@@ -110,7 +110,7 @@ yukarı taşıyabilecek olan bu ikinci grup.
 | **Kullanıcı üretimi içerik** | **Evet** | Görünen ad, kullanıcı adı ve biyografi başkalarına görünüyor. Süzgeç + bildir/engelle + insan incelemesi var |
 | **Kullanıcılar arası mesajlaşma** | **Hayır** | Özel mesajlaşma yok. Arkadaşlık, tepki ve dürtme sabit biçimli; serbest metin taşımıyor |
 | **Reklam** | Hayır | Reklam SDK'sı yok |
-| Uygulama içi satın alma | Bugün **Hayır** | RevenueCat anahtarları boş (`mobile/src/lib/billingConfig.ts`). Premium açılınca bu ayrı bir Connect alanı, ankete girmiyor |
+| Uygulama içi satın alma | **Evet** | Ürün premium'lu yayımlanıyor (2026-09-09 kararı); Connect'te ayrı alan, ankete girmiyor. Satın alma akışı RevenueCat bağlanınca açılır |
 | Yapay zekâ ile üretilen içerik | **Evet** | Rol yapma diyalogları; "gerçek kişi değil" bildirimi kalıcı, her yanıtın altında "Bildir" |
 
 **Beklenen sonuç ve uyarı:** içerik soruları tamamen "yok" olduğu için hesaplanan derece
@@ -475,7 +475,7 @@ görüntüsünü Almanca vitrine koymak 2.3.3'e takılır.
 | Support URL | `[[SITE]]/support` — **zorunlu**; destek adresi, yanıt süresi ve kanallar orada |
 | Marketing URL | `[[SITE]]` (isteğe bağlı) |
 | Privacy Policy URL | `[[SITE]]/privacy` — **zorunlu** |
-| Uygulama içi satın alma | Bugün **yok**; premium açılınca ürünler Connect'te tanımlanır |
+| Uygulama içi satın alma | **Var** — ürünler Connect'te tanımlanır; satın alma akışı RevenueCat bağlanınca açılır |
 | Age Rating | §2 anketinden hesaplanır |
 
 Yayıncı **Musa Atila** (Tufanbeyli, Adana), gizlilik politikasındaki veri sorumlusu ise
@@ -483,7 +483,7 @@ Yayıncı **Musa Atila** (Tufanbeyli, Adana), gizlilik politikasındaki veri sor
 App Store'da da aynı şekilde kalır — Connect'teki yasal ad `LEGAL_ENTITY.publisherName`
 ile aynı olmalı, `controllerName` ile değil.
 
-**Abonelik açılırsa:** Apple 3.1.2 gereği abonelik uygulamalarında başlık, süre, fiyat ve
+**Abonelik (ZORUNLU, ertelenemez):** Apple 3.1.2 gereği abonelik uygulamalarında başlık, süre, fiyat ve
 kullanım şartları/gizlilik bağlantısı metadata'da bulunmalı. Bugün satın alma kapalı
 (`billingConfig.ts` anahtarları boş) ve bu yüzden açıklamalarda abonelikten hiç söz
 edilmiyor. Premium canlıya alınırken açıklamalara abonelik paragrafı **eklenmeli**,
