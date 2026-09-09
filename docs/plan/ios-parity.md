@@ -1,5 +1,35 @@
 # iOS paritesi — envanter ve çalışma planı (2026-09-04)
 
+> ## Durum: kod tarafında parite kapandı (ölçüm 2026-09-09)
+>
+> Aşağıdaki envanter 4 Eylül'ün fotoğrafıdır ve **büyük bölümü artık geçersiz**.
+> Bugün ölçülenler:
+>
+> | Ne | 4 Eylül | 9 Eylül (ölçüm) |
+> |---|---|---|
+> | Native yöntem sayısı | Android 18 · iOS 10 | **Android 20 · iOS 20** — küme birebir aynı; iOS'ta ayrıca `ensureMicPermission` (Android'de karşılığı JS'teki `PermissionsAndroid`) |
+> | Xcode projesi (P1–P8) | sekiz açık | `npm run ios:check` **8/8 geçiyor** — pbxproj bütünlüğü, `.strings` sözlükleri, dil beyanı, Swift/ObjC sözdizimi, cihaz ailesi |
+> | Bundle kimliği | `org.reactjs.native.example…` | `app.lernomi.ios` |
+> | Sürüm | Android 1.0.11/13, iOS 1.0/1 | **dörtlü tek kaynaktan**: `package.json` → `version.ts` + `build.gradle` + `pbxproj`, hepsi 1.0.0 (1) |
+> | Uygulama ikonu (R1) | tek PNG yok | 18 giriş, 13 PNG — denetim geçiyor |
+> | Açılış ekranı (R2) | "Powered by React Native" | markalı; storyboard'daki tek "React Native" geçişi kaldırıldığını anlatan yorum |
+> | Gizlilik manifesti (C1) | boş dizi | `NSPrivacyCollectedDataTypes` dolu |
+> | Apple ile Giriş (C3) | yok | `M/src/lib/appleAuth.ts` + sunucu sağlayıcısı; `LinkedAccounts` iOS'ta sunuyor |
+> | CI (O2) | yok | `.github/workflows/checks.yml` + `ios-build.yml` |
+>
+> **Kodda kalan tek fark yok.** Açık kalanlar kod değil, hesap/kimlik ve cihaz işi:
+>
+> 1. **Google iOS istemcisi** (C4) — Google Cloud'da iOS OAuth istemcisi henüz
+>    açılmadı; `ios:check` bunu "KAPALI" diye raporluyor ve Android etkilenmiyor.
+> 2. **RevenueCat anahtarları** (C6) — `billingConfig.ts` içinde ikisi de boş.
+>    Bu iOS'a özgü DEĞİL, iki platformun ortak eksiği.
+> 3. **`LEGAL_PLATFORMS.ios = false`** — bilinçli kapı (`src/lib/legal/index.ts:246`);
+>    §6'daki koşullar sağlanınca `LEGAL_VERSION` artışıyla birlikte açılacak.
+> 4. **Mac'te derleme ve cihaz koşusu** (Şerit S) — `docs/plan/ios-device-runbook.md`.
+>
+> Aşağısı tarihsel kayıt olarak duruyor: hangi eksiğin neden kapatıldığı ve
+> şeritlerin nasıl bölündüğü oradan okunur.
+
 Android tarafı yayına hazır (`com.lernomi.learn`; sürümün tek kaynağı `M/src/version.ts`);
 iOS tarafı React Native şablonundan büyük ölçüde çıkmamış durumda. Bu belge iki şeyi
 yapar: **(1)** Android'de olup iOS'ta olmayan her şeyin envanterini kanıtıyla çıkarır,
