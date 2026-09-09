@@ -345,7 +345,7 @@ function BoardList({ rows, title }: { rows: Board; title: string }) {
             <span className="w-5 shrink-0 text-center font-black tabular-nums">{r.rank}</span>
             <span className="min-w-0 flex-1 truncate font-semibold">
               {r.name ?? t("social.unnamed")}
-              {r.isMe ? <span className="muted ml-1.5 text-[10px] uppercase">{t("common.you")}</span> : null}
+              {r.isMe ? <span className="muted ml-1.5 text-[10px] uppercase">{t("social.you")}</span> : null}
             </span>
             <span className="muted shrink-0 text-xs tabular-nums">
               {r.correct}/{r.total}
