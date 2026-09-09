@@ -214,7 +214,7 @@ export function WordList({
               key={l.id || "all"}
               onClick={() => setFilter("level", l.id)}
               aria-pressed={query.level === l.id}
-              className={`chip px-3 py-1.5 text-xs ${query.level === l.id ? "chip-active" : ""}`}
+              className={`chip chip-filter px-3 py-1.5 text-xs ${query.level === l.id ? "chip-active" : ""}`}
             >
               {l.labelKey ? tx(l.labelKey) : l.id}
             </button>
@@ -225,7 +225,7 @@ export function WordList({
               key={s.id || "any"}
               onClick={() => setFilter("status", s.id)}
               aria-pressed={query.status === s.id}
-              className={`chip px-3 py-1.5 text-xs ${query.status === s.id ? "chip-active" : ""}`}
+              className={`chip chip-filter px-3 py-1.5 text-xs ${query.status === s.id ? "chip-active" : ""}`}
             >
               {tx(s.labelKey)}
             </button>

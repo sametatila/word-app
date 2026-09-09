@@ -286,6 +286,9 @@
    * Android dolgun. Değer artık mobilinkiyle birebir.
    */
   --brand-soft: var(--color-brand-100);
+  /* `--brand-soft` zemin üstünde okunan yazı — mobil `onPrimarySoft`.
+     Marka 500'ü orada 2.24 veriyor (eşik 4.5); 800'ü 6.13. */
+  --on-brand-soft: var(--color-brand-800);
 
   --shadow-soft-sm: 0 4px 10px -2px rgb(90 52 24 / 0.14); /* mobil elevation 6 */
   --shadow-soft: 0 7px 16px -4px rgb(90 52 24 / 0.16); /* mobil elevation 10 */
@@ -324,6 +327,8 @@
   --text-muted: #a9998a;
   /* Koyu temada mobil `primarySoft` bir ALFA: rgba(248,118,18,0.16). */
   --brand-soft: color-mix(in srgb, var(--color-brand-500) 16%, transparent);
+  /* Koyu temada zemin alfa: marka 400 orada 5.93 veriyor, ton değişmiyor. */
+  --on-brand-soft: var(--color-brand-400);
 
   /* Koyu zeminde sıcak kahve gölge görünmüyor; orada gölge siyaha dönüyor ve
      derinleşiyor — Android'in `elevation`'ı da koyu temada aynı şeyi yapar. */
@@ -536,11 +541,21 @@
     box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-brand) 18%, transparent);
   }
   /* Seviye/filtre çipleri */
+  /*
+   * Seçim çipi — mobil `ui/Chip.tsx` ile aynı dil: PILL DEĞİL, yarıçap
+   * `tile` (14), 1,5 px kenarlık, seçiliyken yumuşak turuncu zemin ve
+   * turuncu yazı.
+   *
+   * Web bunu pill + dolu turuncu olarak çiziyordu, yani KELİME LİSTESİNİN
+   * süzgeç hapının dilini konuşuyordu (`.chip-filter`). İkisi aynı görününce
+   * "süzüyorum" ile "seçtim" ayırt edilemiyordu; mobilde ayrım iki ayrı
+   * yorumda kayıtlı ve bilinçli.
+   */
   .chip {
     border: 1.5px solid var(--border);
     background: var(--surface);
     color: var(--text-muted);
-    border-radius: 999px;
+    border-radius: var(--radius-tile);
     font-weight: 600;
     transition: border-color 0.15s ease, background-color 0.15s ease, color 0.15s ease,
       transform 0.12s ease;
@@ -558,9 +573,28 @@
   /* Seçili çip birincil butonun dilini konuşuyor: düz turuncu zemin, beyaz
      yazı — mobildeki filtre çipiyle aynı (`M/src/screens/WordsScreen.tsx`). */
   .chip-active {
-    border-color: transparent;
-    color: #ffffff;
+    border-color: var(--color-brand-500);
+    color: var(--on-brand-soft);
+    background-color: var(--brand-soft);
+  }
+  /*
+   * Kelime listesinin SÜZGEÇ hapı — mobil `WordsScreen`in çipi.
+   *
+   * Seçim çipinden bilerek ayrı: dolu turuncu hap, kenarlıksız, seçili
+   * olmayanı `surface-2` zeminde. Süzmek bir seçim değil, listeyi daraltmak;
+   * iki kontrol aynı görününce kullanıcı hangisinin ne yaptığını ayırt
+   * edemiyor.
+   */
+  .chip-filter {
+    border: none;
+    border-radius: 999px;
+    background: var(--surface-2);
+    color: var(--text-muted);
+    font-weight: 600;
+  }
+  .chip-filter.chip-active {
     background-color: var(--color-brand-500);
+    color: #ffffff;
     box-shadow: 0 6px 16px -8px var(--color-brand-700);
   }
   /*

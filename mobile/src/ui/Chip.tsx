@@ -47,7 +47,7 @@ export function Chip({
         backgroundColor: active ? colors.primarySoft : colors.surface,
       }}
     >
-      <Text variant="bodyStrong" color={active ? colors.primary : colors.textMuted}>{label}</Text>
+      <Text variant="bodyStrong" color={active ? colors.onPrimarySoft : colors.textMuted}>{label}</Text>
       {badge ? (
         <View style={{ minWidth: 18, height: 18, borderRadius: 9, backgroundColor: colors.streak, alignItems: "center", justifyContent: "center", paddingHorizontal: 4 }}>
           <Text variant="micro" color="#fff" style={{ fontSize: 10, lineHeight: 12 }}>{badge}</Text>
