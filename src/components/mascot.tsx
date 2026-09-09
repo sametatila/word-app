@@ -22,8 +22,9 @@ import { preloadClips, useClipUrl } from "@/lib/mascot-clips";
  * projesindeki hattın uyarlamasıyla (Wan 2.2 image-to-video, Replicate)
  * aksiyon kliplerine çevrildi; kareler ayıklanıp beyaz zemin kenardan taşma
  * doldurmasıyla şeffaflaştırıldı ve alfa kanallı animasyonlu WebP'lere
- * paketlendi (`public/anim/*.webp`, 16fps, sonsuz döngü). Boru hattı
- * `scripts/mascot-anim/` altında; görsel değişince oradan yeniden üretilir.
+ * paketlendi (`public/anim/*.webp`, 16fps, sonsuz döngü). Üretim hattı (Python
+ * betikleri ve SVG izleyici) tek seferlikti ve depodan kaldırıldı; kaynak
+ * görseller `data/mascot/` altında duruyor, hattın kendisi git geçmişinde.
  *
  * İki klip türü var:
  *   - Döngü klipleri `last_image` = ilk kare ile üretildi; ilk ve son kare
