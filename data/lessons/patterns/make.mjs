@@ -11,7 +11,7 @@
  * ("bir şey isterken kullanılır"). İngilizcesi de öyle yazılmalı — kalıbın
  * çevirisi değil, kullanım notu.
  */
-import { readFileSync, writeFileSync, mkdirSync } from "node:fs";
+import { writeFileSync, mkdirSync } from "node:fs";
 import { extractVocab } from "../vocab/extract.mjs";
 
 const DIR = new URL(".", import.meta.url).pathname;
