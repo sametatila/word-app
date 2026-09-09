@@ -117,190 +117,192 @@ export const deB2P5: SkillExercise[] = [
     course: "de",
     level: "B2",
     skill: "listening",
-    title: "Zwölftausend Stunden Erinnerung",
+    title: "Zwei Jahre für einen Hund",
     genre: "Podcast",
-    intro: "Bir podcast bölümü ses arşivini anlatıyor: kime, ne soruluyor, neye dikkat ediliyor, kayıtlar ne oluyor.",
+    intro: "Bir podcast bölümünde refakat köpeklerini büyüten aileler anlatılıyor: neye alıştırılıyor, en zoru ne, sonunda ne oluyor.",
     gloss: [
-      { de: "das Tonarchiv", tr: "ses arşivi", en: "audio archive" },
-      { de: "sich stapeln", tr: "yığılmak", en: "to pile up" },
-      { de: "aushalten", tr: "dayanmak", en: "to endure" },
-      { de: "einverstanden", tr: "razı", en: "in agreement" },
-      { de: "kippen", tr: "yön değiştirmek", en: "to tip over" },
-      { de: "verschlagworten", tr: "etiketlemek", en: "to tag" },
+      { de: "der Assistenzhund", tr: "refakat köpeği", en: "assistance dog" },
+      { de: "die Rolltreppe", tr: "yürüyen merdiven", en: "escalator" },
+      { de: "das Kunststück", tr: "numara", en: "trick" },
+      { de: "geeignet", tr: "uygun", en: "suitable" },
+      { de: "vermitteln", tr: "sahiplendirmek", en: "to rehome" },
+      { de: "großziehen", tr: "büyütmek", en: "to raise" },
     ],
     minutes: 9,
     segments: [
-      { speaker: "Host", text: "Willkommen zurück. Heute sind wir in einem Raum, in dem sich zwölftausend Stunden Erinnerung stapeln: dem Tonarchiv der Stadtbibliothek." },
-      { speaker: "Host", text: "Seit achtzehn Jahren nehmen hier Ehrenamtliche Gespräche mit älteren Menschen auf. Ich habe mit der Leiterin, Hanna Sperber, darüber gesprochen, worauf es dabei ankommt." },
-      { speaker: "Hanna", text: "Die häufigste Frage ist: Wen fragt ihr? Und die Antwort überrascht viele. Wir suchen nicht nach großen Ereignissen. Wir fragen nach Wegen zur Arbeit, nach Küchen, nach Straßennamen." },
-      { speaker: "Hanna", text: "Wer nach dem großen Ereignis fragt, bekommt eine Geschichte, die schon hundertmal erzählt wurde. Wer nach dem Alltag fragt, bekommt etwas, woran sich sonst niemand erinnert." },
-      { speaker: "Host", text: "Und wie bereitet man sich darauf vor?" },
-      { speaker: "Hanna", text: "Wenig recherchieren, viel zuhören. Unsere Leute lernen vor allem eines: aushalten, dass jemand zwanzig Sekunden schweigt. Genau danach kommt meistens der wichtige Satz." },
-      { speaker: "Hanna", text: "Technisch ist es einfach. Zwei Mikrofone, ein ruhiger Raum, keine Küche mit Kühlschrank. Und wir fragen immer am Anfang, womit die Person einverstanden ist und was gesperrt bleiben soll." },
-      { speaker: "Host", text: "Gibt es etwas, worüber die Gespräche regelmäßig kippen?" },
-      { speaker: "Hanna", text: "Ja, Fotos. Wenn jemand ein Album mitbringt, redet er über die Bilder statt über sich. Wir bitten deshalb darum, das Album erst am Ende herauszuholen." },
-      { speaker: "Host", text: "Und was passiert mit den Aufnahmen?" },
-      { speaker: "Hanna", text: "Sie werden verschriftlicht und verschlagwortet. Wer daran mitarbeiten möchte, muss nicht tippen können — Zuhören reicht. Die nächste Schulung ist im März." },
+      { speaker: "Moderator", text: "Willkommen zurück. Heute geht es um eine Ausbildung, die zwei Jahre dauert, und um Menschen, die dabei fast alles machen und am Ende nichts behalten." },
+      { speaker: "Moderator", text: "Assistenzhunde werden nicht in einem Zentrum groß. Sie leben die ersten anderthalb Jahre in einer Familie. Ich habe mit Nuray Kilic gesprochen, die das zum dritten Mal macht." },
+      { speaker: "Nuray", text: "Man gewöhnt den Hund an alles, woran ein normaler Hund nie gewöhnt wird: an Aufzüge, an Rolltreppen, an Krankenhausflure, an Menschen, die plötzlich schreien." },
+      { speaker: "Nuray", text: "Dafür bekommt man eine Liste, und auf dieser Liste steht nichts über Kunststücke. Es geht um Ruhe. Ein Hund, der sich über jeden Besucher freut, ist für diese Arbeit nicht geeignet." },
+      { speaker: "Moderator", text: "Und was ist das Schwierigste?" },
+      { speaker: "Nuray", text: "Nicht das Abgeben, was alle denken. Das Schwierigste ist das erste halbe Jahr, weil man ständig damit rechnen muss, etwas falsch zu machen, und weil einem niemand sagt, was genau." },
+      { speaker: "Nuray", text: "Beim Abgeben weint man einen Tag. Danach denkt man an den Menschen, der ihn jetzt hat, und das trägt erstaunlich gut." },
+      { speaker: "Moderator", text: "Wie viele Hunde schaffen die Prüfung?" },
+      { speaker: "Nuray", text: "Etwa die Hälfte. Die anderen werden vermittelt, meistens an die Familie, die sie großgezogen hat. Darüber wird selten gesprochen, und ich finde das falsch: Es gehört dazu." },
+      { speaker: "Moderator", text: "Worauf sollte jemand achten, der sich dafür interessiert?" },
+      { speaker: "Nuray", text: "Auf die eigene Wohnung nicht. Auf den eigenen Alltag schon. Wer den Hund nicht überallhin mitnehmen kann, kann ihn nicht ausbilden, und das merkt man erst im dritten Monat." },
     ],
     questions: [
       {
-        text: "Wonach fragt das Archiv vor allem?",
-        options: ["nach dem Alltag", "nach großen Ereignissen", "nach politischen Meinungen"],
+        text: "Worum geht es in der Folge?",
+        options: [
+          "um Familien, die Assistenzhunde großziehen",
+          "um die Prüfung am Ende der Ausbildung",
+          "um die Kosten einer Hundeausbildung",
+        ],
         answer: 0,
-        explain: "„Wir suchen nicht nach großen Ereignissen. Wir fragen nach Wegen zur Arbeit, nach Küchen, nach Straßennamen.“",
+        explain: "„Sie leben die ersten anderthalb Jahre in einer Familie“ — bölüm bu ailelerle ilgili.",
       },
       {
-        text: "Was lernen die Ehrenamtlichen als Wichtigstes?",
-        options: ["Schweigen aushalten", "schnell mitschreiben", "gründlich recherchieren"],
+        text: "Was steht auf der Liste, die die Familien bekommen?",
+        options: [
+          "woran der Hund gewöhnt werden soll",
+          "welche Kunststücke er lernen muss",
+          "wie oft er geprüft wird",
+        ],
         answer: 0,
-        explain: "„Unsere Leute lernen vor allem eines: aushalten, dass jemand zwanzig Sekunden schweigt.“",
+        explain: "„… auf dieser Liste steht nichts über Kunststücke. Es geht um Ruhe.“",
       },
       {
         kind: "truefalse",
-        text: "Fotoalben helfen dem Gespräch von Anfang an.",
+        text: "Für Nuray ist das Abgeben das Schwierigste.",
         options: ["Richtig", "Falsch"],
         answer: 1,
-        explain: "„Wenn jemand ein Album mitbringt, redet er über die Bilder statt über sich.“ — albüm sona bırakılıyor.",
+        explain: "„Nicht das Abgeben, was alle denken. Das Schwierigste ist das erste halbe Jahr.“",
       },
       {
         kind: "short_answer",
-        text: "Wann ist die nächste Schulung?",
+        text: "Wie viele Hunde bestehen die Prüfung?",
         options: [],
         answer: 0,
-        accept: ["im März", "März", "im Maerz"],
-        explain: "„Die nächste Schulung ist im März.“",
+        accept: ["etwa die Hälfte", "die Hälfte", "ungefähr die Hälfte"],
+        explain: "„Etwa die Hälfte. Die anderen werden vermittelt …“",
       },
       {
         kind: "dictation",
-        text: "Hazırlıkla ilgili iki kelimelik kuralı duyduğun gibi yaz.",
+        text: "Teslim gününü anlatan ilk cümleyi duyduğun gibi yaz.",
         options: [],
         answer: 0,
-        accept: ["Wenig recherchieren, viel zuhören.", "Wenig recherchieren viel zuhören"],
-        explain: "„Wenig recherchieren, viel zuhören.“ — iki mastar, iki zıt miktar.",
+        accept: ["Beim Abgeben weint man einen Tag.", "Beim Abgeben weint man einen Tag"],
+        explain: "„Beim Abgeben weint man einen Tag.“ — „bei“ + adlaştırma bir zaman öbeği kurar.",
       },
       {
-        text: "Was wird am Anfang jedes Gesprächs geklärt?",
-        options: [
-          "womit die Person einverstanden ist",
-          "wie lange das Gespräch dauern soll",
-          "wer die Aufnahme später bezahlt",
-        ],
+        text: "Worauf sollte man laut Nuray achten?",
+        options: ["auf den eigenen Alltag", "auf die Größe der Wohnung", "auf die Erfahrung mit Hunden"],
         answer: 0,
-        explain: "„… wir fragen immer am Anfang, womit die Person einverstanden ist und was gesperrt bleiben soll.“",
+        explain: "„Auf die eigene Wohnung nicht. Auf den eigenen Alltag schon.“",
       },
     ],
   },
-
   // ─────────────────────────── YAZMA ───────────────────────────
   {
     id: "de-b2-lib-w5",
     course: "de",
     level: "B2",
     skill: "writing",
-    title: "Anleitung für ein erstes Interview",
+    title: "Anleitung für neue Welpenpaten",
     genre: "Yönerge",
-    intro: "İlk kez kayıt alacak gönüllüler için bir yönerge yazacaksın; önce iki cümle kur, sonra yönergeyi yaz.",
+    intro: "Bir yavru köpeği ilk kez büyütecek kişilere yönerge yazacaksın; önce iki cümle kur, sonra yönergeyi yaz.",
     gloss: [
-      { de: "die Aufnahme", tr: "kayıt", en: "recording" },
-      { de: "das Einverständnis", tr: "rıza", en: "consent" },
-      { de: "schweigen", tr: "susmak", en: "to stay silent" },
-      { de: "nachfragen", tr: "üstüne sormak", en: "to follow up" },
+      { de: "der Welpe", tr: "yavru köpek", en: "puppy" },
+      { de: "sich gewöhnen an", tr: "alışmak", en: "to get used to" },
+      { de: "schaden", tr: "zarar vermek", en: "to harm" },
+      { de: "der Abgabetermin", tr: "teslim tarihi", en: "handover date" },
     ],
     minutes: 12,
     tasks: [
       {
         kind: "build",
-        tr: "Kayıttan önce mutlaka rızasını sor.",
-        answer: "Frag vor der Aufnahme unbedingt nach ihrem Einverständnis.",
-        alternatives: ["Vor der Aufnahme frag unbedingt nach ihrem Einverständnis."],
-        hint: "„fragen“ edatıyla birlikte öğrenilir: fragen nach + Dativ.",
+        tr: "Köpeği en baştan asansöre alıştır.",
+        answer: "Gewöhne den Hund von Anfang an an den Aufzug.",
+        alternatives: ["Von Anfang an gewöhne den Hund an den Aufzug."],
+        hint: "„gewöhnen an“ edatıyla birlikte öğrenilir ve Akkusativ ister.",
       },
       {
         kind: "build",
-        tr: "Sessizliğe dayan, çünkü önemli cümle çoğu zaman ondan sonra gelir.",
-        answer: "Halte das Schweigen aus, denn der wichtige Satz kommt meistens danach.",
-        alternatives: ["Halte das Schweigen aus, denn danach kommt meistens der wichtige Satz."],
-        hint: "„denn“ ana cümle bağlacıdır ve sırayı bozmaz; „danach“ bir da-bileşiğidir ve öne alınabilir.",
+        tr: "Bunun uzun süreceğini en baştan hesaba kat.",
+        answer: "Rechne von Anfang an damit, dass es lange dauert.",
+        alternatives: ["Von Anfang an rechne damit, dass es lange dauert."],
+        hint: "„rechnen mit“ nesnesi bir cümleyse edat önce „damit“ olarak duyurulur.",
       },
       {
         kind: "free",
         prompt:
-          "İlk kez yaşlı bir kişiyle kayıtlı görüşme yapacak gönüllüler için yönerge yaz: hazırlık, ilk beş dakika, soru türleri, kaçınılacaklar ve kapanış. Kısa başlıklar kullan.",
+          "Bir yavru köpeği ilk kez büyütecek kişilere yönerge yaz: ilk hafta nasıl geçiyor, neye alıştırılmalı, neyden kaçınılmalı, ne zaman ve neyi bildirmeli, nasıl bitiriliyor. Kısa başlıklar kullan.",
         checklist: [
-          "Hazırlıkta ne kadar araştırma yapılacağını söyle",
-          "İlk beş dakika için somut bir açılış öner",
-          "Soru türü için bir kural ver",
-          "Bir tuzağı adlandır ve kapanışı anlat",
+          "İlk haftadan ne beklenmemesi gerektiğini yaz",
+          "Neye alıştırılacağını günlük hayattan örneklerle say",
+          "Kaçınılması gerekeni ve nedenini söyle",
+          "Neyin ne zaman bildirileceğini ve kapanışı yaz",
         ],
         minWords: 90,
         phrases: [
-          { de: "Frag nach …", tr: "… sor" },
-          { de: "Beginne mit etwas, woran …", tr: "… olan bir şeyle başla" },
-          { de: "Bitte darum, dass …", tr: "… olmasını rica et" },
-          { de: "Halte das Schweigen aus.", tr: "Sessizliğe dayan." },
+          { de: "In der ersten Woche geht es nur darum, dass …", tr: "İlk hafta yalnız … ile ilgilidir" },
+          { de: "Gewöhne ihn an …", tr: "Onu …'e alıştır" },
           { de: "Rechne damit, dass …", tr: "… olacağını hesaba kat" },
+          { de: "Melde alles, wovor …", tr: "…'den korktuğu her şeyi bildir" },
+          { de: "Sprich mit jemandem, der …", tr: "… olan biriyle konuş" },
         ],
         sample:
-          "Diese Anleitung ist für alle, die zum ersten Mal ein Gespräch aufnehmen.\n\n" +
-          "Vorbereitung. Recherchiere wenig. Zwei Namen und ein Jahrzehnt reichen; alles andere soll aus dem " +
-          "Gespräch kommen. Frag vor der Aufnahme unbedingt nach ihrem Einverständnis und kläre, worüber sie " +
-          "nicht sprechen möchte.\n\n" +
-          "Die ersten fünf Minuten. Beginne mit etwas, woran sich jeder erinnert: dem Weg zur Schule, dem Geruch " +
-          "einer Küche, dem ersten eigenen Zimmer. Nach dem großen Ereignis fragst du später oder gar nicht.\n\n" +
-          "Fragen. Kurze Fragen sind besser als kluge. Frag nach Orten, nicht nach Gefühlen; die Gefühle kommen " +
-          "von selbst. Wenn eine Antwort abbricht, frag nach, aber nur einmal.\n\n" +
-          "Was du vermeiden solltest. Halte das Schweigen aus, denn der wichtige Satz kommt meistens danach. " +
-          "Und bitte darum, dass Fotoalben erst am Ende herauskommen; sonst redet dein Gegenüber über die Bilder " +
-          "statt über sich.\n\n" +
-          "Zum Schluss. Sag, was mit der Aufnahme passiert, und lass dir bestätigen, dass es so in Ordnung ist. " +
-          "Schreib danach in fünf Sätzen auf, woran du dich erinnerst.",
+          "Anleitung für neue Welpenpaten\n\n" +
+          "Die erste Woche. Erwarte nichts. In den ersten sieben Tagen geht es nur darum, dass der Welpe sich an " +
+          "dich und an die Wohnung gewöhnt; alles andere kommt später. Rechne von Anfang an damit, dass es " +
+          "lange dauert.\n\n" +
+          "Woran du ihn gewöhnen sollst. Beginne mit dem, was in deinem Alltag sowieso vorkommt: der Aufzug, " +
+          "der Bus, der Wochenmarkt, das Wartezimmer beim Arzt. Zwei kurze Situationen am Tag reichen; eine " +
+          "lange schadet mehr, als sie nützt.\n\n" +
+          "Wovon du die Finger lassen sollst. Bring ihm keine Kunststücke bei und spiel nicht mit ihm im " +
+          "Treppenhaus. Beides gewöhnt ihn daran, dass draußen etwas passiert, und genau das wollen wir nicht.\n\n" +
+          "Was du melden musst. Alles, wovor er sich zweimal erschreckt hat. Nicht am Monatsende, sondern in " +
+          "derselben Woche, weil wir sonst nicht wissen, worauf wir bei der Prüfung achten müssen.\n\n" +
+          "Zum Schluss. Frag früh nach dem Abgabetermin und sprich mit jemandem, der es schon einmal gemacht " +
+          "hat. Über den letzten Tag redet niemand gern, und genau deshalb sollte man vorher darüber reden.",
       },
     ],
   },
-
   // ─────────────────────────── KONUŞMA ───────────────────────────
   {
     id: "de-b2-lib-s5",
     course: "de",
     level: "B2",
     skill: "speaking",
-    title: "Woran erinnert sich eine Stadt?",
+    title: "Woran erkennt man eine gute Ausbildung?",
     genre: "Monolog",
-    intro: "Bir buçuk dakikaya kadar konuşacaksın: en güçlü karşı görüşle başla, sonra kendi ölçütünü kur.",
+    intro: "Bir buçuk dakikaya kadar konuşacaksın: kolay ölçütü ele, kendi ölçütünü parçalara ayır ve örnekle sına.",
     gloss: [],
     minutes: 6,
     monologue: {
       promptTr:
-        "Bir şehir arşivlere, anma yerlerine ve tabelalara para harcamalı mı, yoksa bu para bugünün ihtiyaçlarına mı gitmeli? Karşı görüşle başla, sonra kendi ölçütünü söyle.",
+        "İyi bir eğitimi (meslek eğitimi, kurs, çıraklık) neyden tanırsın? Yaygın ölçütü sına, kendi ölçütünü en az iki parçaya ayır ve her parçayı somutlaştır.",
       bulletsTr: [
-        "En güçlü karşı argümanla başla",
-        "Ona iki farklı düzeyde cevap ver",
-        "Kendi ölçütünü tek cümleyle koy",
-        "Ölçütünü iki somut örnekle sına",
+        "Yaygın ölçütü adlandır ve neden yetersiz olduğunu söyle",
+        "Birinci ölçütünü ver: hatalarla nasıl davranılıyor",
+        "İkinci ölçütünü ver: sorumluluk hangi sırayla veriliyor",
+        "Sonu neyle bittiğine bakarak bitir",
       ],
       targets: [
-        { de: "Ich fange mit dem Einwand an, den ich am stärksten finde: …", tr: "En güçlü bulduğum itirazla başlıyorum: …" },
-        { de: "Darauf gibt es zwei Antworten.", tr: "Buna iki cevap var." },
-        { de: "Wovon nichts aufbewahrt wurde, …", tr: "Hiçbir şeyi saklanmamış olan …" },
-        { de: "Mein Kriterium wäre …", tr: "Benim ölçütüm … olurdu" },
+        { de: "Darauf würde ich mich nicht verlassen.", tr: "Buna güvenmezdim." },
+        { de: "Mein erstes Kriterium hat mit … zu tun.", tr: "İlk ölçütüm … ile ilgili" },
+        { de: "Wo niemand einem sagt, …", tr: "Kimsenin söylemediği yerde …" },
+        { de: "Ich würde darauf achten, worüber …", tr: "Ne hakkında konuşulduğuna dikkat ederdim" },
       ],
       minSeconds: 50,
       maxSeconds: 90,
       sampleDe:
-        "Ich fange mit dem Einwand an, den ich am stärksten finde: Eine Stadt, die sich um Archive kümmert, " +
-        "während die Schulen bröckeln, setzt falsche Prioritäten. Darauf gibt es zwei Antworten. Die erste ist " +
-        "die einfache: Es geht um sehr kleine Summen. Die zweite ist wichtiger. Erinnerung ist kein Denkmal, " +
-        "sondern eine Entscheidung darüber, worüber man später überhaupt streiten kann. Wovon nichts aufbewahrt " +
-        "wurde, davon redet in dreißig Jahren niemand mehr. Mein Kriterium wäre deshalb nicht das Alter, sondern " +
-        "die Gefahr des Verschwindens. Ein Rathaus aus dem achtzehnten Jahrhundert verschwindet nicht; die " +
-        "Tonbänder einer Fabrik, in der viertausend Menschen gearbeitet haben, verschwinden bei einem einzigen " +
-        "Umzug. Ich würde also weniger in Bronze investieren und mehr in das, was sich nicht wiederholen lässt: " +
-        "Aufnahmen, Fotos und Zeugnisse von Menschen, die man heute noch fragen kann.",
+        "Die übliche Antwort lautet: an der Prüfung am Ende. Darauf würde ich mich nicht verlassen, und zwar " +
+        "aus einem einfachen Grund: Eine Prüfung misst, was sich an einem Tag zeigen lässt, und die meisten " +
+        "Berufe bestehen aus dem, was sich nicht an einem Tag zeigt. Mein erstes Kriterium hat mit Fehlern zu " +
+        "tun. In einer guten Ausbildung wird man auf Fehler hingewiesen, bevor sie teuer werden, und man wird " +
+        "dabei nicht beschämt. Wo niemand einem sagt, was genau falsch war, lernt man nur, vorsichtig zu " +
+        "wirken. Das zweite Kriterium ist die Reihenfolge. Man sollte früh etwas machen dürfen, wofür jemand " +
+        "anders die Verantwortung trägt, und später etwas, wofür man selbst haftet. Wird diese Reihenfolge " +
+        "umgedreht, sucht man sich Aufgaben, bei denen man nicht auffällt. Und drittens würde ich darauf " +
+        "achten, worüber am Ende gesprochen wird. Endet eine Ausbildung nur mit einem Zeugnis, fehlt etwas. " +
+        "Endet sie mit einem Gespräch darüber, was man als Nächstes lernen sollte, war es eine.",
       rubricHint:
-        "Karşı görüşle başlanmalı ve sonuç tek bir ölçüte bağlanmalı; edatlı fiiller ve da-/wo- bileşikleri beklenir.",
+        "Yaygın ölçüt sınanmalı ve kendi ölçütü en az iki parçaya ayrılmalı; edatlı fiiller ve da-/wo- bileşikleri beklenir.",
     },
   },
-
   // ─────────────────────────── DİL BİLGİSİ ───────────────────────────
   {
     id: "de-b2-lib-g5",

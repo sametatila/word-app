@@ -16,96 +16,99 @@ export const deC1P5: SkillExercise[] = [
     course: "de",
     level: "C1",
     skill: "reading",
-    title: "Die Ökonomie des Wartens",
+    title: "Warum niemand die Anleitung liest",
     genre: "Bilim yazısı",
-    intro: "Kuyrukların bir tasarım sorusu olduğunu savunan bir yazı okuyacaksın: hangi ilkeler var, öfkeyi ne belirliyor, ne yapılabilir.",
+    intro: "Kullanma kılavuzlarının neden okunmadığını inceleyen bir yazı okuyacaksın: sorun uzunluk mu, sıra mı.",
     gloss: [
-      { de: "das Ärgernis", tr: "sıkıntı", en: "nuisance" },
-      { de: "die Dringlichkeit", tr: "aciliyet", en: "urgency" },
-      { de: "sich tarnen", tr: "kılığına girmek", en: "to disguise itself" },
-      { de: "wahrgenommen", tr: "algılanan", en: "perceived" },
-      { de: "unbeschäftigt", tr: "boş", en: "unoccupied" },
-      { de: "die Empörung", tr: "öfke", en: "outrage" },
-      { de: "ertragen", tr: "katlanmak", en: "to bear" },
-      { de: "die Einsicht", tr: "kavrayış", en: "insight" },
+      { de: "einhellig", tr: "ağız birliğiyle", en: "unanimously" },
+      { de: "die Gebrauchsanweisung", tr: "kullanma kılavuzu", en: "instruction manual" },
+      { de: "der Lieferumfang", tr: "kutu içeriği", en: "package contents" },
+      { de: "überspringen", tr: "atlamak", en: "to skip" },
+      { de: "die Absicht", tr: "niyet", en: "intention" },
+      { de: "die Nachlässigkeit", tr: "ihmal", en: "negligence" },
+      { de: "abstellen", tr: "kapatmak", en: "to switch off" },
+      { de: "abbrechen", tr: "yarıda kesmek", en: "to break off" },
     ],
     minutes: 10,
     text:
-      "DIE ÖKONOMIE DES WARTENS\n\n" +
-      "Warteschlangen gelten als Ärgernis, nicht als Gestaltungsfrage. Genau darin liegt der Fehler. Wer eine " +
-      "Schlange plant, verteilt Zeit, und Zeit ist die einzige Ressource, von der alle gleich viel und niemand " +
-      "mehr bekommen kann.\n\n" +
-      "Drei Prinzipien stehen zur Wahl. Das erste ist die Reihenfolge des Eintreffens: Wer zuerst kommt, mahlt " +
-      "zuerst. Es ist billig, es ist überprüfbar, und es belohnt diejenigen, die früh da sein können. Das zweite " +
-      "ist die Dringlichkeit, wie in der Notaufnahme. Es rettet Leben und wird trotzdem regelmäßig als " +
-      "ungerecht erlebt, weil der Wartende die Begründung nicht sieht. Das dritte ist der Preis: Wer zahlt, " +
-      "wartet kürzer. Am ehrlichsten ist dieses Prinzip dort, wo es offen benannt wird, am problematischsten " +
-      "dort, wo es sich als Service tarnt.\n\n" +
-      "Interessanter als die Wahl zwischen den dreien ist eine Beobachtung aus der Forschung zur wahrgenommenen " +
-      "Wartezeit. Nicht die Dauer bestimmt den Ärger, sondern drei andere Faktoren: unerklärtes Warten wiegt " +
-      "schwerer als erklärtes, unbeschäftigtes schwerer als beschäftigtes, und ungerechtes deutlich schwerer als " +
-      "beides zusammen. Eine Schlange, in der jemand ohne sichtbaren Grund vorgezogen wird, erzeugt mehr " +
-      "Empörung als eine doppelt so lange faire Schlange.\n\n" +
-      "Daraus folgen zwei praktische Regeln, die wenig kosten. Erstens: Nennen Sie die Zahl. Eine angezeigte " +
-      "Wartezeit von zwanzig Minuten wird besser ertragen als eine unbekannte von zwölf. Zweitens: Machen Sie " +
-      "die Regel sichtbar. In Ämtern, in denen an der Wand steht, welche Fälle vorgezogen werden und warum, " +
-      "gehen die Beschwerden zurück, ohne dass sich eine einzige Wartezeit verkürzt.\n\n" +
-      "Am Ende bleibt eine unbequeme Einsicht. Wartezeit lässt sich selten abschaffen; verteilen muss man sie " +
-      "immer. Wer sie nicht sichtbar verteilt, verteilt sie trotzdem — nur nach Kriterien, die niemand " +
-      "aufgeschrieben hat und die deshalb auch niemand kritisieren kann.",
+      "WARUM NIEMAND DIE ANLEITUNG LIEST\n\n" +
+      "Über kaum einen Text wird so einhellig geklagt und so wenig nachgedacht wie über die " +
+      "Gebrauchsanweisung. Der Vorwurf lautet meistens, sie sei zu lang. Zu lang ist sie fast nie. " +
+      "Falsch geordnet ist sie fast immer.\n\n" +
+      "Beginnen wir mit dem, was ein Leser in diesem Moment tut. Er hat das Gerät in der Hand, er will eine " +
+      "einzige Sache erreichen, und er hat bereits angefangen. Er liest nicht, um zu lernen; er liest, um " +
+      "weiterzukommen. Für diesen Leser ist der erste Satz einer Anleitung fast immer der falsche: Er " +
+      "beschreibt den Lieferumfang.\n\n" +
+      "Daraus folgt die erste Regel, und sie kostet nichts. Ganz nach vorn gehört, was in den nächsten " +
+      "dreißig Sekunden gebraucht wird. Sicherheitshinweise sind wichtig, aber ein Hinweis, der vor der " +
+      "ersten Handlung steht und mit ihr nichts zu tun hat, wird nicht gelesen, sondern übersprungen — und " +
+      "mit ihm der nächste.\n\n" +
+      "Die zweite Regel betrifft die Überschriften. In einer Anleitung sucht niemand nach Kapiteln, sondern " +
+      "nach Absichten. „Anschluss“ ist eine Kategorie; „Wenn das Gerät nicht angeht“ ist eine Absicht, und " +
+      "sie wird gefunden.\n\n" +
+      "Interessanter als beide Regeln ist eine Beobachtung aus der Praxis. Getestet werden Anleitungen fast " +
+      "nie mit Menschen, die das Gerät nicht kennen. Geschrieben werden sie von denen, die es am besten " +
+      "kennen, und geprüft von denen, die es gebaut haben. Der Fehler ist deshalb nicht Nachlässigkeit; es " +
+      "ist eine Perspektive, die man nicht abstellen, sondern nur durch jemand anderen ersetzen kann.\n\n" +
+      "Am Ende bleibt eine unbequeme Einsicht. Wer eine Anleitung schreibt, entscheidet nicht darüber, ob " +
+      "sie gelesen wird. Er entscheidet darüber, an welcher Stelle abgebrochen wird. Und abgebrochen wird " +
+      "immer.",
     questions: [
       {
-        text: "Was ist die zentrale Aussage des Textes?",
+        text: "Was ist die These des Textes?",
         options: [
-          "Wartezeit wird immer verteilt, sichtbar oder unsichtbar.",
-          "Warteschlangen lassen sich fast überall abschaffen.",
-          "Das Preisprinzip ist das gerechteste der drei.",
+          "Anleitungen sind falsch geordnet, nicht zu lang.",
+          "Anleitungen sollten deutlich kürzer werden.",
+          "Sicherheitshinweise gehören ans Ende.",
         ],
         answer: 0,
-        explain: "„Wer sie nicht sichtbar verteilt, verteilt sie trotzdem“ — son paragraf tezi açıkça söylüyor.",
+        explain: "„Zu lang ist sie fast nie. Falsch geordnet ist sie fast immer.“",
       },
       {
-        text: "Welcher Faktor wiegt laut Text am schwersten?",
-        options: ["empfundene Ungerechtigkeit", "die reine Dauer des Wartens", "die Zahl der offenen Schalter"],
+        text: "Was tut der Leser laut Text in diesem Moment?",
+        options: [
+          "Er hat schon angefangen und will weiterkommen.",
+          "Er liest den Text vorher einmal ganz durch.",
+          "Er sucht zuerst nach den Überschriften.",
+        ],
         answer: 0,
-        explain: "„… und ungerechtes deutlich schwerer als beides zusammen.“",
+        explain: "„… und er hat bereits angefangen. Er liest nicht, um zu lernen; er liest, um weiterzukommen.“",
       },
       {
         kind: "truefalse",
-        text: "Der Text hält das Preisprinzip grundsätzlich für unzulässig.",
+        text: "Der Text hält die Verfasser für nachlässig.",
         options: ["Richtig", "Falsch"],
         answer: 1,
-        explain: "„Am ehrlichsten ist dieses Prinzip dort, wo es offen benannt wird“ — sorun ilkede değil, gizlenmesinde.",
+        explain: "„Der Fehler ist deshalb nicht Nachlässigkeit; es ist eine Perspektive …“",
       },
       {
         kind: "gapfill",
-        text: "Eine angezeigte Wartezeit von zwanzig Minuten wird besser ertragen als eine unbekannte von ___.",
+        text: "Ganz nach vorn gehört, was in den nächsten ___ Sekunden gebraucht wird.",
         options: [],
         answer: 0,
-        accept: ["zwölf", "12"],
-        explain: "„… wird besser ertragen als eine unbekannte von zwölf.“",
+        accept: ["dreißig", "30"],
+        explain: "„Ganz nach vorn gehört, was in den nächsten dreißig Sekunden gebraucht wird.“",
       },
       {
         kind: "short_answer",
-        text: "Was passiert in Ämtern mit sichtbar ausgehängter Regel?",
+        text: "Wonach sucht der Leser in einer Anleitung?",
         options: [],
         answer: 0,
-        accept: ["die Beschwerden gehen zurück", "weniger Beschwerden", "die Beschwerden sinken"],
-        explain: "„… gehen die Beschwerden zurück, ohne dass sich eine einzige Wartezeit verkürzt.“",
+        accept: ["nach Absichten", "Absichten", "nach einer Absicht"],
+        explain: "„In einer Anleitung sucht niemand nach Kapiteln, sondern nach Absichten.“",
       },
       {
-        text: "Warum wird das Dringlichkeitsprinzip oft als ungerecht erlebt?",
+        text: "Warum werden Anleitungen selten getestet?",
         options: [
-          "Die Begründung ist für Wartende unsichtbar.",
-          "Es dauert insgesamt deutlich länger.",
-          "Es kostet spürbar mehr Personal.",
+          "Sie werden von Leuten geprüft, die das Gerät kennen.",
+          "Ein Test wäre für die Hersteller zu teuer.",
+          "Die geltende Norm verlangt keinen Test.",
         ],
         answer: 0,
-        explain: "„… wird trotzdem regelmäßig als ungerecht erlebt, weil der Wartende die Begründung nicht sieht.“",
+        explain: "„Geschrieben werden sie von denen, die es am besten kennen, und geprüft von denen, die es gebaut haben.“",
       },
     ],
   },
-
   // ─────────────────────────── DİNLEME ───────────────────────────
   {
     id: "de-c1-lib-l5",
@@ -272,45 +275,44 @@ export const deC1P5: SkillExercise[] = [
     course: "de",
     level: "C1",
     skill: "speaking",
-    title: "Was verdient Vorrang?",
+    title: "Vor der Veröffentlichung testen?",
     genre: "Monolog",
-    intro: "İki dakikaya kadar konuşacaksın: yaygın çerçeveyi değiştir, ölçütünü kur ve reddettiğin seçeneği adlandır.",
+    intro: "İki dakikaya kadar konuşacaksın: soruyu yeniden çerçevele, en güçlü itirazı hakkıyla anlat ve ölçütünü koy.",
     gloss: [],
     minutes: 7,
     monologue: {
       promptTr:
-        "Bir kuyrukta ya da bekleme listesinde kime öncelik verilmeli? Yaygın „hak etme“ çerçevesini sorgula, kendi ölçütünü kur ve hangi uygulamayı reddettiğini söyle.",
+        "Kurumların ürettiği metinler — yönergeler, formlar, bilgilendirmeler — yayımlanmadan önce o metni hiç bilmeyen insanlarla test edilmeli mi? Bir konum al, en güçlü itirazı anlat ve kendi ölçütünü koy.",
       bulletsTr: [
-        "Sorunun neden „hak etme“ üzerinden kurulmadığını söyle",
-        "Eşit muamelenin neden yetmediğini göster",
-        "Ölçütünü iki parçaya ayır",
-        "Reddettiğin üçüncü uygulamayı adlandır",
+        "Test edilmemesinin ciddiye alınacak nedenini söyle",
+        "Sorunun aslında ne sorusu olduğunu adlandır",
+        "En güçlü itirazı hakkıyla anlat",
+        "Ölçütünü koy ve iki uçtan örnekle sına",
       ],
       targets: [
-        { de: "Genau da beginnt der Fehler.", tr: "Hata tam da orada başlıyor." },
-        { de: "Wer eine Stunde wartet, verliert nicht gleich viel.", tr: "Bir saat bekleyen herkes aynı şeyi kaybetmiyor." },
-        { de: "Mein Kriterium hätte zwei Teile.", tr: "Ölçütümün iki parçası olurdu." },
-        { de: "Was ich ablehne, ist …", tr: "Reddettiğim şey …" },
+        { de: "Getestet wird fast nie, und das hat einen Grund.", tr: "Neredeyse hiç test edilmiyor ve bunun bir nedeni var." },
+        { de: "Sie wird als … behandelt; sie ist …", tr: "… olarak ele alınıyor; oysa …" },
+        { de: "Dagegen steht ein starker Einwand.", tr: "Buna karşı güçlü bir itiraz var." },
+        { de: "Mein Kriterium wäre nicht …, sondern …", tr: "Ölçütüm … değil, … olurdu" },
       ],
       minSeconds: 60,
       maxSeconds: 110,
       sampleDe:
-        "Vorrang wird meistens so diskutiert, als ginge es um Verdienst. Genau da beginnt der Fehler. In einer " +
-        "Warteschlange verteilt man keine Belohnung, sondern Zeit, und Zeit hat bei jedem denselben Preis. " +
-        "Trotzdem halte ich gleiche Behandlung nicht für die Antwort. Wer eine Stunde wartet, verliert nicht " +
-        "gleich viel: Für die eine ist es ein verlorener Nachmittag, für den anderen eine unbezahlte Schicht. " +
-        "Mein Kriterium hätte deshalb zwei Teile. Erstens die Härte des Verlusts: Vorrang bekommt, wer durch " +
-        "Warten am meisten verliert, nicht wer am dringendsten wirkt. Zweitens die Sichtbarkeit der Regel. " +
-        "Eine Bevorzugung, die an der Wand steht, wird akzeptiert; dieselbe Bevorzugung ohne Begründung erzeugt " +
-        "Wut, und zwar zu Recht. Was ich ablehne, ist die dritte Variante, die man am häufigsten findet: " +
-        "Vorrang nach Beharrlichkeit. Wer dreimal anruft und laut wird, kommt vor. Das ist keine Regel, das ist " +
-        "die Abwesenheit einer Regel — und sie trifft immer dieselben, nämlich die, die weder Zeit noch Übung " +
-        "im Fordern haben.",
+        "Getestet wird in diesem Bereich fast nie, und das hat einen Grund, den man ernst nehmen sollte: Ein " +
+        "Test kostet Zeit, und Zeit ist genau das, was am Ende eines Projekts fehlt. Trotzdem halte ich die " +
+        "Frage für falsch gestellt. Sie wird meistens als Qualitätsfrage behandelt; sie ist eine " +
+        "Verantwortungsfrage. Wer einen Text veröffentlicht, den niemand außerhalb des Hauses gelesen hat, " +
+        "verlagert die Prüfung nach außen: Sie findet trotzdem statt, nur später, einzeln und auf Kosten " +
+        "derer, die den Text brauchen. Dagegen steht ein starker Einwand. Nicht jeder Text lohnt einen Test, " +
+        "und ein Verfahren, das für jede Seite fünf Testpersonen verlangt, wird nach drei Monaten heimlich " +
+        "umgangen. Mein Kriterium wäre deshalb nicht die Wichtigkeit, sondern die Zahl der Leser mal die " +
+        "Folgen eines Missverständnisses. Ein internes Protokoll braucht nichts. Ein Formular, das " +
+        "zweitausend Menschen ausfüllen und bei dem ein Fehler eine Ablehnung bedeutet, braucht drei " +
+        "Personen und eine Stunde. Mehr verlange ich nicht, und weniger sollte nicht durchgehen.",
       rubricHint:
-        "Yaygın çerçeve açıkça sorgulanmalı, ölçüt en az iki parçaya ayrılmalı ve reddedilen bir uygulama adlandırılmalı.",
+        "Soru yeniden çerçevelenmeli, en güçlü itiraz kabul edilmeli ve ölçüt iki uçtan örnekle sınanmalı; Vorfeld tercihleri belirgin olmalı.",
     },
   },
-
   // ─────────────────────────── DİL BİLGİSİ ───────────────────────────
   {
     id: "de-c1-lib-g5",
