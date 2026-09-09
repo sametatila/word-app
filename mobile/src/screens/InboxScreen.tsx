@@ -5,6 +5,7 @@ import { useNavigation } from "@react-navigation/native";
 import type { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import type { RootStackParams } from "../navigation/RootStack";
+import { goFriends } from "../lib/goFriends";
 import { social, errorText, notificationText, timeAgo, type NotificationView, type ReactionKind } from "../api/social";
 import { useAuth } from "../lib/AuthContext";
 import { Text } from "../ui/Text";
@@ -55,11 +56,14 @@ export function InboxScreen() {
 
   function open(n: NotificationView) {
     switch (n.type) {
-      case "friend_request": nav.navigate("Friends", { tab: "requests" }); break;
-      case "friend_accepted": if (n.actor?.username) nav.navigate("User", { username: n.actor.username }); else nav.navigate("Friends", undefined); break;
-      case "quest_invite": case "quest_accepted": case "quest_completed": nav.navigate("Friends", { tab: "quests" }); break;
+      // Gelen istekler ve bu haftanın ortak görevi artık kendi sekmelerinde
+      // değil, arkadaş listesinin başında (bkz. FriendsScreen).
+      case "friend_request": goFriends(nav, "friends"); break;
+      case "friend_accepted": if (n.actor?.username) nav.navigate("User", { username: n.actor.username }); else goFriends(nav); break;
+      case "quest_invite": case "quest_accepted": case "quest_completed": goFriends(nav, "friends"); break;
       case "nudge": nav.navigate("Tabs"); break;
-      default: nav.navigate("Friends", { tab: "feed" });
+      case "league_up": nav.navigate("Leaderboard"); break;
+      default: goFriends(nav, "feed");
     }
   }
 

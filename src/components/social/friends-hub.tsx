@@ -14,20 +14,34 @@ import { Quests } from "./quests";
 import { Requests } from "./requests";
 import { useT } from "@/lib/i18n/client";
 
-export type HubTab = "friends" | "feed" | "quests" | "requests" | "find";
+export type HubTab = "friends" | "feed" | "find";
 const TABS: { key: HubTab; label: string }[] = [
   { key: "friends", label: "social.tab_friends" },
   { key: "feed", label: "friends.tab_feed" },
-  { key: "quests", label: "friends.tab_quests" },
-  { key: "requests", label: "friends.tab_requests" },
   { key: "find", label: "friends.tab_find" },
 ];
 
+/** Eski adresler (bildirimler, kayıtlı bağlantılar) hâlâ çalışsın. */
+const ALIAS: Record<string, HubTab> = { quests: "friends", requests: "friends" };
+export function hubTab(raw: string | undefined): HubTab {
+  if (!raw) return "friends";
+  if (TABS.some((t) => t.key === raw)) return raw as HubTab;
+  return ALIAS[raw] ?? "friends";
+}
+
 /**
- * Sosyal merkez — tek sayfa, beş sekme. Üstte kimlik kartı: kullanıcı adı
- * ilk kez burada görülür (otomatik atanır) ve profil bağlantısı buradan
+ * Sosyal merkez — tek sayfa, ÜÇ sekme. Üstte kimlik kartı: kullanıcı adı ilk
+ * kez burada görülür (otomatik atanır) ve profil bağlantısı buradan
  * paylaşılır; davetin adresi bu. Sekme URL'de (`?tab=`) durur ki bildirimden
- * gelen kişi doğrudan isteklere düşsün.
+ * gelen kişi doğrudan yerine düşsün.
+ *
+ * Beş sekmeydi ve ikisi kalıcı olmayı hak etmiyordu. "İstekler" haftanın
+ * neredeyse tamamında boştu — istek gelmesi istisna, sekme ise sürekli.
+ * "Görevler" ise tek bir kartı taşıyordu: sunucu kişi başına aynı anda tek
+ * ortak göreve izin veriyor, yani o sekme tanım gereği hiçbir zaman bir
+ * listeye dönüşemezdi. İkisi de asıl işlerinin yanına taşındı: gelen istekler
+ * ve bu haftanın görevi arkadaş listesinin başında, gönderilen istekler
+ * "Bul"un altında.
  */
 export function FriendsHub({ me, initialTab }: { me: SocialMeView; initialTab: HubTab }) {
   const t = useT();
@@ -157,8 +171,9 @@ export function FriendsHub({ me, initialTab }: { me: SocialMeView; initialTab: H
 
       {/* Sekmeler çipti ama DOLGUSU yoktu: `.chip` yalnız kenarlık, yarıçap
           ve renk veriyor, ölçüyü kullanan yer seçiyor. Sonuç, yan yana yapışık
-          beş etiketti — seçili olan dolu zeminliyken bile nerede bittiği
-          okunmuyordu. */}
+          etiketlerdi — seçili olan dolu zeminliyken bile nerede bittiği
+          okunmuyordu. Rozet artık "Arkadaşlar"da: gelen istekler o sekmenin
+          başında duruyor. */}
       <nav className="no-scrollbar mt-3 flex gap-1.5 overflow-x-auto pb-1" aria-label={t("socialw.tabs")}>
         {TABS.map((tb) => (
           <button
@@ -168,7 +183,7 @@ export function FriendsHub({ me, initialTab }: { me: SocialMeView; initialTab: H
             onClick={() => go(tb.key)}
           >
             {t(tb.label)}
-            {tb.key === "requests" && incoming > 0 ? (
+            {tb.key === "friends" && incoming > 0 ? (
               <span className="ml-1.5 rounded-full px-1.5 text-micro" style={{ background: "var(--color-flame)", color: "#fff" }}>
                 {incoming}
               </span>
@@ -184,6 +199,10 @@ export function FriendsHub({ me, initialTab }: { me: SocialMeView; initialTab: H
             <RowSkeleton rows={3} height={64} />
           ) : (
             <div className="flex flex-col gap-4">
+              {/* Sıra bilinçli: cevap bekleyen iş (gelen istek), bu haftanın
+                  taahhüdü (ortak görev), sonra liste ve tablo. */}
+              <Requests incoming={data.incoming} outgoing={data.outgoing} side="incoming" onChanged={() => void reload()} />
+              {data.friends.length ? <Quests friends={data.friends} me={me.userId} onChanged={() => void reload()} /> : null}
               {data.friends.length ? (
                 <FriendList friends={data.friends} nudgedToday={data.nudgedToday} onChanged={() => void reload()} />
               ) : (
@@ -200,13 +219,12 @@ export function FriendsHub({ me, initialTab }: { me: SocialMeView; initialTab: H
           )
         ) : null}
         {tab === "feed" ? <Feed onFindFriends={() => go("find")} /> : null}
-        {tab === "quests" ? (
-          data === null ? <RowSkeleton rows={2} height={96} /> : <Quests friends={data.friends} me={me.userId} onChanged={() => void reload()} />
+        {tab === "find" ? (
+          <div className="flex flex-col gap-4">
+            <Find onChanged={() => void reload()} />
+            {data ? <Requests incoming={data.incoming} outgoing={data.outgoing} side="outgoing" onChanged={() => void reload()} /> : null}
+          </div>
         ) : null}
-        {tab === "requests" ? (
-          data === null ? <RowSkeleton rows={2} height={64} /> : <Requests incoming={data.incoming} outgoing={data.outgoing} onChanged={() => void reload()} />
-        ) : null}
-        {tab === "find" ? <Find onChanged={() => void reload()} /> : null}
       </div>
     </div>
   );

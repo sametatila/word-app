@@ -3,6 +3,7 @@ import { View } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import type { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import type { RootStackParams } from "../navigation/RootStack";
+import { goFriends } from "../lib/goFriends";
 import { social, formatXp, type QuestView } from "../api/social";
 import { t } from "../lib/i18n";
 import { useAuth } from "../lib/AuthContext";
@@ -54,7 +55,7 @@ export function FriendPulse() {
   if (!q) return null;
   const invited = q.status === "invited";
   return (
-    <PressableScale onPress={() => nav.navigate("Friends", { tab: "quests" })} style={{ marginBottom: spacing.xl }}>
+    <PressableScale onPress={() => goFriends(nav, "friends")} style={{ marginBottom: spacing.xl }}>
       <Card padded style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, borderColor: invited ? colors.info : colors.primary, borderWidth: 1.5 }}>
         <PersonAvatar userId={q.partner.userId} name={q.partner.name} size={44} ring={invited ? colors.info : colors.primary} />
         <View style={{ flex: 1 }}>

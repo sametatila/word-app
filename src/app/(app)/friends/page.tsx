@@ -3,20 +3,16 @@ import { titleMeta } from "@/lib/page-meta";
 import { getUserId } from "@/lib/auth/server";
 import { WrenchIcon } from "@/components/icons";
 import { socialMe } from "@/lib/social/profile";
-import { BackButton } from "@/components/page-back";
-import { FriendsHub, type HubTab } from "@/components/social/friends-hub";
+import { FriendsHub, hubTab } from "@/components/social/friends-hub";
 import { getT } from "@/lib/i18n/server";
 
 export const dynamic = "force-dynamic";
 export const generateMetadata = titleMeta("friends.friends");
-const TABS: HubTab[] = ["friends", "feed", "quests", "requests", "find"];
-
 export default async function FriendsPage({ searchParams }: { searchParams: Promise<{ tab?: string }> }) {
   const t = await getT();
   const userId = await getUserId();
   if (!userId) return null;
   const { tab } = await searchParams;
-  const initialTab: HubTab = TABS.includes(tab as HubTab) ? (tab as HubTab) : "friends";
   try {
     const me = await socialMe(userId);
     return (
@@ -24,8 +20,9 @@ export default async function FriendsPage({ searchParams }: { searchParams: Prom
         {/* Ayarlar başlığın SAĞ ÜSTÜNDE — mobil `ScreenHeader`in `right`
             yuvası. Kimlik kartının içinde bir çipti; kart kimliği söylüyor,
             ayarlar ise ekranın kendi eylemi. */}
+        {/* Geri düğmesi YOK: burası artık bir sekme, bir yığın sayfası değil —
+            geri gidilecek yer yok, sekme çubuğu zaten altta duruyor. */}
         <div className="mb-4 flex items-center gap-3">
-          <BackButton fallback="/profile" />
           <h1 className="min-w-0 flex-1 truncate text-h2">{t("friends.friends")}</h1>
           <Link
             href="/friends/settings"
@@ -37,7 +34,7 @@ export default async function FriendsPage({ searchParams }: { searchParams: Prom
             <WrenchIcon size={20} />
           </Link>
         </div>
-        <FriendsHub me={me} initialTab={initialTab} />
+        <FriendsHub me={me} initialTab={hubTab(tab)} />
       </div>
     );
   } catch (err) {

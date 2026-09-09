@@ -38,6 +38,25 @@ export function ScreenHeader({ title, subtitle, right }: { title: string; subtit
   );
 }
 
+/**
+ * Sekme ekranının başlığı — geri düğmesi YOK.
+ *
+ * `ScreenHeader` bir yığın ekranı içindir ve solunda geri düğmesi taşır.
+ * Arkadaşlar artık bir sekme: geri gidilecek yer yok, altta sekme çubuğu var.
+ * Yükseklik ikisinde de aynı ki sekmeler arası geçişte başlık zıplamasın.
+ */
+export function TabHeader({ title, right }: { title: string; right?: React.ReactNode }) {
+  const insets = useSafeAreaInsets();
+  return (
+    <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingTop: insets.top + spacing.sm, paddingHorizontal: spacing.lg, paddingBottom: spacing.sm, minHeight: 44 + spacing.sm * 2 }}>
+      <View style={{ flex: 1 }}>
+        <Text variant="h2">{title}</Text>
+      </View>
+      {right}
+    </View>
+  );
+}
+
 /** Başlık sağındaki kare düğme (Profil'deki dişli gibi). */
 export function HeaderButton({ icon: Icon, onPress, label }: { icon: IconCmp; onPress: () => void; label: string }) {
   const { colors } = useTheme();

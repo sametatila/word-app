@@ -5,18 +5,26 @@ import { social, errorText, timeAgo, type PendingView } from "../api/social";
 import { Text } from "../ui/Text";
 import { Card } from "../ui/Card";
 import { PersonAvatar } from "../ui/PersonAvatar";
-import { UserPlusIcon } from "../ui/icons";
 import { SkeletonCard, SkeletonLine, SkeletonPill, SkeletonTile } from "../ui/Skeleton";
 import { useTheme, spacing } from "../theme";
-import { EmptyCard, ErrorText, Pill, SectionTitle } from "./common";
+import { ErrorText, Pill, SectionTitle } from "./common";
 
-export function Requests({ incoming, outgoing, onChanged }: { incoming: PendingView[]; outgoing: PendingView[]; onChanged: () => void }) {
-  const { colors } = useTheme();
-  if (!incoming.length && !outgoing.length) return <EmptyCard icon={UserPlusIcon} tint={colors.info} title={t("requests.no_pending_requests")} text={t("requests.empty_text")} />;
+/**
+ * Bekleyen istekler. `side` verilmezse iki yön de çizilir.
+ *
+ * Kendi sekmesi VARDI ve o sekme haftanın neredeyse tamamında boştu: istek
+ * gelmesi istisna, sekme ise kalıcı. Artık gelen istekler arkadaş listesinin
+ * başında, gönderilenler "Bul" ekranının altında — her biri ait olduğu işin
+ * yanında. Boşken hiçbir şey çizilmiyor.
+ */
+export function Requests({ incoming, outgoing, onChanged, side }: { incoming: PendingView[]; outgoing: PendingView[]; onChanged: () => void; side?: "incoming" | "outgoing" }) {
+  const showIn = side !== "outgoing" && incoming.length > 0;
+  const showOut = side !== "incoming" && outgoing.length > 0;
+  if (!showIn && !showOut) return null;
   return (
     <View>
-      {incoming.length ? (<><SectionTitle title={t("requests.incoming")} right={`${incoming.length}`} />{incoming.map((r) => <RequestCard key={r.friendshipId} r={r} incoming onChanged={onChanged} />)}</>) : null}
-      {outgoing.length ? (<><SectionTitle title={t("requests.sent")} right={`${outgoing.length}`} />{outgoing.map((r) => <RequestCard key={r.friendshipId} r={r} incoming={false} onChanged={onChanged} />)}</>) : null}
+      {showIn ? (<><SectionTitle title={t("requests.incoming")} right={`${incoming.length}`} />{incoming.map((r) => <RequestCard key={r.friendshipId} r={r} incoming onChanged={onChanged} />)}</>) : null}
+      {showOut ? (<><SectionTitle title={t("requests.sent")} right={`${outgoing.length}`} />{outgoing.map((r) => <RequestCard key={r.friendshipId} r={r} incoming={false} onChanged={onChanged} />)}</>) : null}
     </View>
   );
 }

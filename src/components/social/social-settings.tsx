@@ -49,7 +49,7 @@ export function SocialSettings({ initial, course = "de", bare = false }: { initi
       const next = await social.updateMe(patch);
       setMe(next);
       setUsername(next.username);
-      setMsg({ text: done ?? t("settings.saved"), ok: true });
+      setMsg({ text: done ?? t("socialw.saved"), ok: true });
     } catch (e) {
       setMsg({ text: errorText(e, lang), ok: false });
     } finally {
@@ -70,7 +70,7 @@ export function SocialSettings({ initial, course = "de", bare = false }: { initi
       )}
 
       <div className="border-b px-4 py-3" style={{ borderColor: "var(--border)" }}>
-        <label className="text-sm font-bold" htmlFor="username">{t("socialsettings.username")}</label>
+        <label className="text-sm font-bold" htmlFor="username">{t("socialw.username")}</label>
         <div className="mt-1.5 flex items-center gap-2">
           <span className="muted text-sm">@</span>
           <input
@@ -91,14 +91,14 @@ export function SocialSettings({ initial, course = "de", bare = false }: { initi
         <p className="muted mt-1 text-[11px]">
           {t("socialsettings.username_rule")}{" "}
           {me.usernameChangeAvailableIn > 0
-            ? t("socialsettings.username_wait", { n: me.usernameChangeAvailableIn })
+            ? t("socialw.username_available_in", { n: me.usernameChangeAvailableIn })
             : t("socialsettings.username_cooldown")}{" "}
           {t("socialsettings.profile_link", { path: `/u/${me.username}` })}
         </p>
       </div>
 
       <div className="border-b px-4 py-3" style={{ borderColor: "var(--border)" }}>
-        <label className="text-sm font-bold" htmlFor="bio">{t("socialsettings.short_bio")}</label>
+        <label className="text-sm font-bold" htmlFor="bio">{t("socialw.short_bio")}</label>
         <textarea
           id="bio"
           value={bio}
@@ -117,7 +117,7 @@ export function SocialSettings({ initial, course = "de", bare = false }: { initi
       </div>
 
       <div className="border-b px-4 py-3" style={{ borderColor: "var(--border)" }}>
-        <p className="text-sm font-bold">{t("socialsettings.visibility")}</p>
+        <p className="text-sm font-bold">{t("socialw.visibility")}</p>
         <div className="mt-2 flex flex-col gap-1.5">
           {VIS.map((v) => (
             <button
@@ -153,7 +153,7 @@ export function SocialSettings({ initial, course = "de", bare = false }: { initi
       ) : null}
 
       <div className="border-t px-4 py-3" style={{ borderColor: "var(--border)" }}>
-        <p className="text-sm font-bold">{t("socialsettings.blocked_title")}</p>
+        <p className="text-sm font-bold">{t("socialw.blocked")}</p>
         {blocked === null ? (
           <p className="muted mt-1 text-xs">{t("social.loading")}</p>
         ) : blocked.length ? (

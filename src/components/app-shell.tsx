@@ -33,12 +33,19 @@ import { FlameIcon, HandshakeIcon, LearnIcon, ListIcon, PathIcon, SkillsIcon, Sp
  *
  * Kelimeler ve Profil alt gezinmede değil: Kelimeler bir hedef değil sonuç
  * (tura girip zorlanılan kelimeye bakılır), Profil günde bir bile açılmaz —
- * ikisi de üst başlıktan/ikincil gruptan ulaşılır. Üç sekme 320 px'de sığıyor.
+ * ikisi de üst başlıktan/ikincil gruptan ulaşılır.
+ *
+ * ARKADAŞLAR dördüncü sekme oldu. Önce ikincil gruptaydı ve orada görünmezdi:
+ * telefonda profil sayfasının içinden geçen üç dokunuşluk bir yol, öğrenme
+ * ekranındaki tek sosyal ögeyse (ortak görev satırı) yalnız zaten arkadaşı
+ * olanlara çiziliyordu. Yani özelliği en çok görmesi gereken kişi —arkadaşı
+ * olmayan— hiçbir izini görmüyordu. Dört sekme 320 px'de sığıyor.
  */
 const NAV = [
   { href: "/learn", labelKey: "nav.learn", Icon: LearnIcon, key: "learn" },
   { href: "/immersion", labelKey: "nav.path", Icon: PathIcon, key: "immersion" },
   { href: "/skills", labelKey: "nav.skills", Icon: SkillsIcon, key: "skills" },
+  { href: "/friends", labelKey: "nav.friends", Icon: HandshakeIcon, key: "friends" },
 ];
 
 /**
@@ -83,7 +90,6 @@ export function useShell(): ShellData {
  */
 const SECONDARY = [
   { href: "/words", labelKey: "profile.my_words", Icon: ListIcon },
-  { href: "/friends", labelKey: "profile.friends", Icon: HandshakeIcon },
   { href: "/profile", labelKey: "profile.profile", Icon: UserIcon },
 ];
 

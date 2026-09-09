@@ -582,6 +582,7 @@ export const en: Record<string, string> = {
   "nav.learn": "Learn",
   "nav.path": "Path",
   "nav.skills": "Skills",
+  "nav.friends": "Friends",
   "notif.channel": "Reminders",
   "notif.daily_body": "Don't forget today's round — keep your streak!",
   "notif.streak_body": "Don't lose your streak! A short round saves the day.",

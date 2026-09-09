@@ -6,13 +6,13 @@ import type { BottomTabBarProps } from "@react-navigation/bottom-tabs";
 import { useTheme, radii, spacing, softShadow } from "../theme";
 import { Text } from "../ui/Text";
 import { PressableScale } from "../ui/PressableScale";
-import { LearnIcon, PathIcon, SkillsIcon } from "../ui/icons";
+import { LearnIcon, PathIcon, SkillsIcon, HandshakeIcon } from "../ui/icons";
 import { track } from "../lib/track";
 
-const NAV_KEY: Record<string, string> = { Learn: "learn", Path: "immersion", Skills: "skills" };
+const NAV_KEY: Record<string, string> = { Learn: "learn", Path: "immersion", Skills: "skills", Friends: "friends" };
 
 const ICONS: Record<string, (p: { color: string; size: number }) => React.ReactElement> = {
-  Learn: (p) => <LearnIcon {...p} />, Path: (p) => <PathIcon {...p} />, Skills: (p) => <SkillsIcon {...p} />,
+  Learn: (p) => <LearnIcon {...p} />, Path: (p) => <PathIcon {...p} />, Skills: (p) => <SkillsIcon {...p} />, Friends: (p) => <HandshakeIcon {...p} />,
 };
 
 export function TabBar({ state, descriptors, navigation }: BottomTabBarProps) {
@@ -41,7 +41,11 @@ export function TabBar({ state, descriptors, navigation }: BottomTabBarProps) {
               accessibilityRole="tab" accessibilityLabel={label} accessibilityState={{ selected: focused }}
               style={{ flex: 1, alignItems: "center", paddingVertical: 9, borderRadius: radii.lg, backgroundColor: focused ? colors.primarySoft : "transparent" }}>
               {Icon?.({ color: focused ? colors.primary : colors.textMuted, size: 23 })}
-              <Text variant="micro" color={focused ? colors.primary : colors.textMuted} style={{ marginTop: 3 }}>{label}</Text>
+              {/* Dördüncü sekmeyle birlikte etiket başına düşen genişlik 320 dp'de
+                  ~72 dp'ye indi: "Beceriler" iki satıra kırılıyordu. Tek satırda
+                  kalıp gerekirse küçülüyor — çubuğun yüksekliği sekmeye göre
+                  değişmemeli. */}
+              <Text variant="micro" color={focused ? colors.primary : colors.textMuted} numberOfLines={1} adjustsFontSizeToFit style={{ marginTop: 3 }}>{label}</Text>
             </PressableScale>
           );
         })}

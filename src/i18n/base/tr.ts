@@ -584,6 +584,7 @@ export const trBase: Record<string, string> = {
   "nav.learn": "Öğren",
   "nav.path": "Patika",
   "nav.skills": "Beceriler",
+  "nav.friends": "Arkadaş",
   "notif.channel": "Hatırlatmalar",
   "notif.daily_body": "Bugünkü turunu unutma — serini koru!",
   "notif.streak_body": "Serini kaybetme! Kısa bir tur bugünü kurtarır.",

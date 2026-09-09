@@ -6,8 +6,26 @@ import { t, useLang } from "../lib/i18n";
 import { LearnScreen } from "../screens/LearnScreen";
 import { PathScreen } from "../screens/PathScreen";
 import { SkillsScreen } from "../screens/SkillsScreen";
+import { FriendsScreen } from "../screens/FriendsScreen";
 
-const Tab = createBottomTabNavigator();
+/**
+ * Sekmelerin parametreleri.
+ *
+ * ARKADAŞLAR dördüncü sekme oldu. Önce kök yığında bir ekrandı ve oraya yalnız
+ * Profil menüsünden gidiliyordu: Öğren'den üç dokunuş. Öğrenme ekranındaki tek
+ * sosyal öge de (ortak görev satırı) yalnız zaten görevi olana çiziliyordu —
+ * yani arkadaşı olmayan kullanıcı, özelliğin varlığından hiç haberdar
+ * olmuyordu. Yığından çıkarılıp buraya alındı; `?tab=` parametresi bildirim
+ * ve derin bağlantıların doğrudan doğru sekmeye düşmesi için korunuyor.
+ */
+export type RootTabParams = {
+  Learn: undefined;
+  Path: undefined;
+  Skills: undefined;
+  Friends: { tab?: "friends" | "feed" | "find" } | undefined;
+};
+
+const Tab = createBottomTabNavigator<RootTabParams>();
 /**
  * Sekme çubuğu render-prop'u MODÜL düzeyinde: bileşen içinde `(p) => <TabBar/>`
  * yazılınca her çizimde yeni bir bileşen kimliği doğuyor ve React eskisini
@@ -38,6 +56,7 @@ export function RootTabs() {
       <Tab.Screen name="Learn" component={LearnScreen} options={{ title: t("nav.learn") }} layout={wideColumnLayout} />
       <Tab.Screen name="Path" component={PathScreen} options={{ title: t("nav.path") }} layout={wideColumnLayout} />
       <Tab.Screen name="Skills" component={SkillsScreen} options={{ title: t("nav.skills") }} layout={wideColumnLayout} />
+      <Tab.Screen name="Friends" component={FriendsScreen} options={{ title: t("nav.friends") }} layout={wideColumnLayout} />
     </Tab.Navigator>
   );
 }

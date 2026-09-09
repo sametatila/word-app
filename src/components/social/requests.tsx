@@ -6,22 +6,34 @@ import { Avatar } from "@/components/avatar";
 import { errorText, social, timeAgo, type PendingView } from "@/lib/social/client";
 import { useT, useLang } from "@/lib/i18n/client";
 
-/** Gelen istekler (kabul/reddet) ve giden istekler (iptal). */
-export function Requests({ incoming, outgoing, onChanged }: { incoming: PendingView[]; outgoing: PendingView[]; onChanged: () => void }) {
+/**
+ * Bekleyen istekler. `side` verilmezse ikisi de çizilir.
+ *
+ * Kendi sekmesi VARDI ve o sekme haftanın 361 günü boşta duruyordu: istek
+ * gelmesi istisna, sekme ise kalıcı. Artık gelen istekler arkadaş listesinin
+ * başında, giden istekler "Bul" ekranının altında — yani her biri ait olduğu
+ * işin yanında. Boşken hiçbir şey çizilmiyor.
+ */
+export function Requests({
+  incoming,
+  outgoing,
+  onChanged,
+  side,
+}: {
+  incoming: PendingView[];
+  outgoing: PendingView[];
+  onChanged: () => void;
+  side?: "incoming" | "outgoing";
+}) {
   const t = useT();
-  if (!incoming.length && !outgoing.length) {
-    return (
-      <div className="card p-6 text-center">
-        <p className="font-bold">{t("socialw.no_requests")}</p>
-        <p className="muted mt-1 text-sm">{t("socialw.requests_sub")}</p>
-      </div>
-    );
-  }
+  const showIn = side !== "outgoing" && incoming.length > 0;
+  const showOut = side !== "incoming" && outgoing.length > 0;
+  if (!showIn && !showOut) return null;
   return (
     <div className="flex flex-col gap-4">
-      {incoming.length ? (
+      {showIn ? (
         <section>
-          <h3 className="muted mb-2 px-1 text-xs font-bold uppercase tracking-wide">Gelen</h3>
+          <h3 className="muted mb-2 px-1 text-xs font-bold uppercase tracking-wide">{t("requests.incoming")}</h3>
           <ol className="card divide-y divide-[color:var(--border)] overflow-hidden">
             {incoming.map((r) => (
               <RequestRow key={r.friendshipId} r={r} incoming onChanged={onChanged} />
@@ -29,9 +41,9 @@ export function Requests({ incoming, outgoing, onChanged }: { incoming: PendingV
           </ol>
         </section>
       ) : null}
-      {outgoing.length ? (
+      {showOut ? (
         <section>
-          <h3 className="muted mb-2 px-1 text-xs font-bold uppercase tracking-wide">{t("socialw.sent")}</h3>
+          <h3 className="muted mb-2 px-1 text-xs font-bold uppercase tracking-wide">{t("requests.sent")}</h3>
           <ol className="card divide-y divide-[color:var(--border)] overflow-hidden">
             {outgoing.map((r) => (
               <RequestRow key={r.friendshipId} r={r} incoming={false} onChanged={onChanged} />
@@ -77,10 +89,10 @@ function RequestRow({ r, incoming, onChanged }: { r: PendingView; incoming: bool
       {incoming ? (
         <div className="flex shrink-0 gap-1.5">
           <button className="btn btn-primary h-8 px-3 text-xs" disabled={busy} onClick={() => void act(() => social.respond(r.friendshipId, "accept"))}>
-            Kabul et
+            {t("requests.accept")}
           </button>
           <button className="btn btn-ghost h-8 px-3 text-xs" disabled={busy} onClick={() => void act(() => social.respond(r.friendshipId, "decline"))}>
-            Reddet
+            {t("requests.decline")}
           </button>
         </div>
       ) : (

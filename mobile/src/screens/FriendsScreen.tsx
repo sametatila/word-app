@@ -6,6 +6,7 @@ import { useNavigation, useRoute, type RouteProp } from "@react-navigation/nativ
 import type { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import type { RootStackParams } from "../navigation/RootStack";
+import type { RootTabParams } from "../navigation/RootTabs";
 import { social, errorText, type FriendsView, type SocialMe } from "../api/social";
 import { API_BASE } from "../api/client";
 import { useAuth } from "../lib/AuthContext";
@@ -17,7 +18,7 @@ import { PersonAvatar } from "../ui/PersonAvatar";
 import { PressableScale } from "../ui/PressableScale";
 import { SettingsIcon, ShareIcon, HandshakeIcon, UserPlusIcon, InboxIcon, ChevronRightIcon } from "../ui/icons";
 import { useTheme, spacing, radii, softShadow } from "../theme";
-import { Chip, EmptyCard, ErrorText, HeaderButton, Pill, ScreenHeader, StatPill } from "../social/common";
+import { Chip, EmptyCard, ErrorText, HeaderButton, Pill, StatPill, TabHeader } from "../social/common";
 import { FriendRows, FriendCardSkeleton } from "../social/FriendRows";
 import { FriendsBoard } from "../social/FriendsBoard";
 import { FeedList } from "../social/FeedList";
@@ -25,26 +26,33 @@ import { Quests, QuestsSkeleton } from "../social/Quests";
 import { Requests, RequestCardSkeleton } from "../social/Requests";
 import { Find } from "../social/Find";
 
-type Tab = "friends" | "feed" | "quests" | "requests" | "find";
+type Tab = "friends" | "feed" | "find";
 /** Sekme etiketleri — t() çağrı anında (dil modül yüklenirken hazır değil). */
 const TAB_KEYS: { key: Tab; label: string }[] = [
   { key: "friends", label: "social.tab_friends" },
   { key: "feed", label: "friends.tab_feed" },
-  { key: "quests", label: "friends.tab_quests" },
-  { key: "requests", label: "friends.tab_requests" },
   { key: "find", label: "friends.tab_find" },
 ];
 
 /**
  * Sosyal merkez — Profil ekranıyla aynı kurgu: başlık, ortalanmış kimlik kartı
- * (arma + ad + pill rozetler), Premium-blok tarzı davet CTA'sı, Ayarlar çipleriyle
- * sekmeler, altında kartlar. Misafir için giriş daveti.
+ * (arma + ad + pill rozetler), Premium-blok tarzı davet CTA'sı, Ayarlar
+ * çipleriyle sekmeler, altında kartlar. Misafir için giriş daveti.
+ *
+ * BEŞ SEKMEYDİ, ÜÇE İNDİ. "İstekler" haftanın neredeyse tamamında boştu —
+ * istek gelmesi istisna, sekme ise sürekli. "Görevler" ise tek bir kart
+ * taşıyordu: sunucu kişi başına aynı anda tek ortak göreve izin veriyor, yani
+ * o sekme tanım gereği hiçbir zaman bir listeye dönüşemezdi. İkisi de asıl
+ * işlerinin yanına taşındı: gelen istekler ve bu haftanın görevi arkadaş
+ * listesinin başında, gönderilen istekler "Bul"un altında.
+ *
+ * Artık bir SEKME ekranı (kök yığında değil): başlıkta geri düğmesi yok.
  */
 export function FriendsScreen() {
   const { colors } = useTheme();
   const insets = useSafeAreaInsets();
   const nav = useNavigation<NativeStackNavigationProp<RootStackParams>>();
-  const route = useRoute<RouteProp<RootStackParams, "Friends">>();
+  const route = useRoute<RouteProp<RootTabParams, "Friends">>();
   const { user } = useAuth();
   const initial = (route.params?.tab as Tab | undefined) ?? "friends";
   const [tab, setTab] = useState<Tab>(TAB_KEYS.some((k) => k.key === initial) ? initial : "friends");
@@ -75,7 +83,7 @@ export function FriendsScreen() {
   if (!user) {
     return (
       <View style={{ flex: 1, backgroundColor: colors.bg }}>
-        <ScreenHeader title={tx("friends.friends")} />
+        <TabHeader title={tx("friends.friends")} />
         <View style={{ paddingHorizontal: spacing.lg, paddingTop: spacing.sm }}>
           <EmptyCard icon={HandshakeIcon} tint={colors.success} title={tx("friends.sign_in_for_friends")} text={tx("friends.add_friends_react_in_feed_hit")} action={tx("friends.sign_in")} onAction={() => nav.navigate("Auth")} />
         </View>
@@ -86,7 +94,7 @@ export function FriendsScreen() {
   const incoming = data?.incoming.length ?? me?.counts.incoming ?? 0;
   return (
     <View style={{ flex: 1, backgroundColor: colors.bg }}>
-      <ScreenHeader title={tx("friends.friends")} right={<HeaderButton icon={SettingsIcon} label={tx("friends.social_settings")} onPress={() => nav.navigate("SocialSettings")} />} />
+      <TabHeader title={tx("friends.friends")} right={<HeaderButton icon={SettingsIcon} label={tx("friends.social_settings")} onPress={() => nav.navigate("SocialSettings")} />} />
       <ScrollView contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.xxl }} showsVerticalScrollIndicator={false} keyboardShouldPersistTaps="handled">
         {me ? (
           <Card style={{ alignItems: "center", marginTop: spacing.sm, marginBottom: spacing.lg }}>
@@ -124,12 +132,22 @@ export function FriendsScreen() {
         </PressableScale>
 
         <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={{ gap: spacing.sm, paddingBottom: spacing.lg }}>
-          {TAB_KEYS.map((it) => <Chip key={it.key} label={tx(it.label)} active={tab === it.key} onPress={() => setTab(it.key)} badge={it.key === "requests" ? incoming : undefined} />)}
+          {TAB_KEYS.map((it) => <Chip key={it.key} label={tx(it.label)} active={tab === it.key} onPress={() => setTab(it.key)} badge={it.key === "friends" ? incoming : undefined} />)}
         </ScrollView>
 
         {tab === "friends" ? (
-          data === null ? <View>{[0, 1].map((i) => <FriendCardSkeleton key={i} />)}</View> : (
+          data === null || !me ? (
             <View>
+              <RequestCardSkeleton />
+              <QuestsSkeleton />
+              {[0, 1].map((i) => <FriendCardSkeleton key={i} />)}
+            </View>
+          ) : (
+            <View>
+              {/* Sıra bilinçli: cevap bekleyen iş (gelen istek), bu haftanın
+                  taahhüdü (ortak görev), sonra liste ve tablo. */}
+              <Requests incoming={data.incoming} outgoing={data.outgoing} side="incoming" onChanged={() => void reload()} />
+              {data.friends.length ? <Quests friends={data.friends} me={me.userId} onChanged={() => void reload()} /> : null}
               {data.friends.length ? (
                 <FriendRows friends={data.friends} nudgedToday={data.nudgedToday} onChanged={() => void reload()} />
               ) : (
@@ -140,9 +158,12 @@ export function FriendsScreen() {
           )
         ) : null}
         {tab === "feed" ? <FeedList onFindFriends={() => setTab("find")} /> : null}
-        {tab === "quests" ? (data === null || !me ? <QuestsSkeleton /> : <Quests friends={data.friends} me={me.userId} onChanged={() => void reload()} />) : null}
-        {tab === "requests" ? (data === null ? <View>{[0, 1].map((i) => <RequestCardSkeleton key={i} />)}</View> : <Requests incoming={data.incoming} outgoing={data.outgoing} onChanged={() => void reload()} />) : null}
-        {tab === "find" ? <Find onChanged={() => void reload()} /> : null}
+        {tab === "find" ? (
+          <View>
+            <Find onChanged={() => void reload()} />
+            {data ? <Requests incoming={data.incoming} outgoing={data.outgoing} side="outgoing" onChanged={() => void reload()} /> : null}
+          </View>
+        ) : null}
         <ErrorText text={err} />
         {err ? <View style={{ marginTop: spacing.md, alignItems: "center" }}><Pill label={tx("friends.try_again")} tone="ghost" onPress={() => void reload()} /></View> : null}
       </ScrollView>

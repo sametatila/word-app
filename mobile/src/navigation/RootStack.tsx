@@ -1,7 +1,8 @@
 import React from "react";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import type { NavigatorScreenParams } from "@react-navigation/native";
 import { contentColumnLayout, wideColumnLayout } from "../ui/ContentColumn";
-import { RootTabs } from "./RootTabs";
+import { RootTabs, type RootTabParams } from "./RootTabs";
 import { GameScreen } from "../screens/GameScreen";
 import { ProfileScreen } from "../screens/ProfileScreen";
 import { AvatarScreen } from "../screens/AvatarScreen";
@@ -24,7 +25,6 @@ import { DeleteAccountScreen } from "../screens/DeleteAccountScreen";
 import { PlacementScreen } from "../screens/PlacementScreen";
 import { LeaderboardScreen } from "../screens/LeaderboardScreen";
 import { NotificationsScreen } from "../screens/NotificationsScreen";
-import { FriendsScreen } from "../screens/FriendsScreen";
 import { UserScreen } from "../screens/UserScreen";
 import { InboxScreen } from "../screens/InboxScreen";
 import { SocialSettingsScreen } from "../screens/SocialSettingsScreen";
@@ -42,7 +42,8 @@ export type RootStackParams = {
   Onboarding: undefined;
   FirstPractice: { level?: string } | undefined;
   NotifPrime: undefined;
-  Tabs: undefined;
+  /** Sekmeler; `{ screen, params }` ile içindeki bir sekmeye doğrudan gidilebilir. */
+  Tabs: NavigatorScreenParams<RootTabParams> | undefined;
   Game: { game?: string } | undefined;
   Profile: undefined;
   Avatar: undefined;
@@ -75,8 +76,8 @@ export type RootStackParams = {
   Writings: undefined;
   /** `from`: "skills" → bitiş kartı Beceriler'e döner (Patika'ya değil). */
   Item: { id: string; kind: string; title: string; from?: string };
-  /** Sosyal katman: arkadaş merkezi (sekme), herkese açık profil, gelen kutusu, sosyal ayarlar. */
-  Friends: { tab?: "friends" | "feed" | "quests" | "requests" | "find" } | undefined;
+  /** Sosyal katman: herkese açık profil, gelen kutusu, sosyal ayarlar.
+      Arkadaş merkezinin kendisi artık bir SEKME (bkz. RootTabs). */
   User: { username: string };
   Inbox: undefined;
   SocialSettings: undefined;
@@ -124,7 +125,6 @@ export function RootStack({ initialRoute }: { initialRoute: keyof RootStackParam
       <Stack.Screen name="Practice" component={PracticeScreen} options={{ animation: "slide_from_bottom" }} layout={wideColumnLayout} />
       <Stack.Screen name="Cando" component={CandoScreen} layout={wideColumnLayout} />
       <Stack.Screen name="Writings" component={WritingsScreen} layout={wideColumnLayout} />
-      <Stack.Screen name="Friends" component={FriendsScreen} />
       <Stack.Screen name="User" component={UserScreen} layout={wideColumnLayout} />
       <Stack.Screen name="Inbox" component={InboxScreen} />
       <Stack.Screen name="SocialSettings" component={SocialSettingsScreen} />
