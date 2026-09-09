@@ -306,6 +306,38 @@ de-a1-weh-tun         "Ağrıyan yer özne oluyor, tıpkı Türkçedeki gibi."
                         iddia tutuyor, ama tutması tesadüf, çeviri değil.
 ```
 
+#### Ana dile bağlılık ALMANCA metinde de var: 16 parça, 6 ders
+
+Yukarıdaki tarama Türkçe `tr()` alanlarınaydı. Almanca `de()` ve
+`opening` alanları da tarandı (Izmir, Istanbul, Ankara, Türkei, Türkisch…):
+
+```
+de-a1-hallo          "Ich komme aus der Türkei."  "Ich komme aus Istanbul."
+de-a1-woher          "Ich wohne in Izmir."
+de-a1-sprachen       "Ich spreche Türkisch und ein bisschen Deutsch."
+de-a1-alter          "Ich bin in Izmir geboren."
+de-b1-als-wenn       "Du bist also in Izmir aufgewachsen?"
+de-b1-sprache-akzent "Türkisch und Deutsch sind nicht verwandt."
+```
+
+Bunlar hedef dil metni, yani "çevrilmez" kuralına giriyor — ama sorun çeviri
+değil, İÇERİK. İki ayrı sınıf:
+
+1. **Öğrencinin kendisi hakkında söyleyeceği örnek cevaplar** (15 parça).
+   Yanlış değiller, bir öğrenci her yerden olabilir; ama Türk öğrenciye göre
+   kurulmuşlar. İngilizce çiftte doğal karşılıkları "Ich komme aus England",
+   "Ich spreche Englisch" olurdu.
+
+2. **Tersine dönen olgu iddiası** (1 parça). `de-b1-sprache-akzent`:
+   "Türkisch und Deutsch sind nicht verwandt." İngilizce için bu cümle
+   YANLIŞ — İngilizce ile Almanca akraba. Aynı ders Türkçe `lecture`
+   tarafında da aynı iddiayı taşıyor; ikisi birlikte değişmeli.
+
+Yani bir çiftin içeriği üç katmanda ana dile bağlanabiliyor: Türkçe anlatım,
+Türkçe sözlük istemi, ve Almanca örnek cümlenin kendisi. İlk ikisi çeviri
+turunda görülüyor, üçüncüsü GÖRÜLMÜYOR — çünkü o alan "çevrilmez" diye
+işaretli. Bu 16 parça ayrıca listelenip karara bağlanmalı.
+
 **Sonuç: `lecture` üç ayrı iş.**
 
 ```
