@@ -109,6 +109,14 @@ if [ -z "${JAVA_HOME:-}" ] && ! command -v java >/dev/null 2>&1; then
   exit 2
 fi
 [ -n "${JAVA_HOME:-}" ] && echo "  JAVA_HOME: $JAVA_HOME"
+
+# PATH'e de koyuyoruz, JAVA_HOME yetmiyor. Adım 4'teki `apksigner` bir sarmalayıcı
+# betik ve içinde doğrudan `exec java` var — JAVA_HOME'a hiç bakmıyor. Bu makinede
+# java PATH'te olmadığı için imza denetimi "exec: java: not found" ile düşüyordu:
+# yani gradle bittikten sonra, mağazaya gidecek yapının DEBUG anahtarıyla
+# imzalanmadığını doğrulayan kapı hiç koşmuyordu. Ölçüldü, 2026-09-09.
+[ -n "${JAVA_HOME:-}" ] && export PATH="$JAVA_HOME/bin:$PATH"
+
 ( cd android && ./gradlew --no-daemon clean bundleRelease assembleRelease )
 
 for f in "$OUT_AAB" "$OUT_APK"; do
@@ -119,8 +127,17 @@ done
 step "İmza"
 APKSIGNER=$(ls -d "$SDK"/build-tools/*/apksigner 2>/dev/null | sort -V | tail -1 || true)
 if [ -n "$APKSIGNER" ] && [ -x "$APKSIGNER" ]; then
-  signer=$("$APKSIGNER" verify --print-certs "$OUT_APK" | sed -n 's/^Signer #1 certificate DN: //p')
-  echo "  imzalayan: ${signer:-bilinmiyor}"
+  signer=$("$APKSIGNER" verify --print-certs "$OUT_APK" | sed -n 's/^.*certificate DN: //p' | head -1)
+  echo "  imzalayan: ${signer:-BULUNAMADI}"
+  # Boş gelirse DURUYORUZ. Denetim "Android Debug geçmiyorsa tamam" diye yazılmıştı
+  # ve boş dizgede o koşul kendiliğinden sağlanıyordu — yani apksigner'ın çıktısını
+  # okuyamadığımız her durumda kapı sessizce AÇILIYORDU. Kapının doğrulayamaması,
+  # doğrulamış olması demek değildir.
+  if [ -z "$signer" ]; then
+    echo "HATA: imzalayan okunamadı; apksigner çıktısı beklenen biçimde değil." >&2
+    echo "İmza doğrulanamadan yayın yapısı kabul edilmez." >&2
+    exit 1
+  fi
   if printf '%s' "$signer" | grep -qi "Android Debug"; then
     echo "HATA: APK DEBUG anahtarıyla imzalanmış. Mağazaya gidemez." >&2
     exit 1
