@@ -635,3 +635,94 @@ iyisiydi.
 5. **Mobil tarafı** (küçük kalemler): `skills.skills` Almanca sözlükte
    "Skills" diyor, `formatDuration` "dk"/"s" sabit yazıyor, hero rozetleri
    "{n} tekrar" / "{n} yeni" sabit.
+
+---
+
+## 10. Üçüncü tur — üç platformun ilerleme seviyesi (9 Eyl)
+
+Soru bu turda daha genişti: **web, Android ve iOS bugün nerede duruyor ve
+birbirlerinden nerede ayrışıyorlar?** Referans Android.
+
+### 10.1 Yöntem
+
+Belgeye değil koda bakıldı; her iddianın altında koşulan bir ölçüm var.
+
+| Ne ölçüldü | Nasıl |
+|---|---|
+| Ekran haritası | mobil `screens/` (37) ↔ web `app/**/page.tsx` (57) |
+| İçerik kapsamı | `lessonsFor` · `BUNDLED_EXERCISES` · `MOCK_PAPERS` kurs kurs sayıldı |
+| Web → mobil köprüleri | üç döküm betiği de koşuldu, çıktı depodakiyle diff'lendi |
+| Mobil → web sözlüğü | `i18n-pull.mjs` koşuldu, ayrışma arandı |
+| Sözlük kullanımı | `i18n-check`in `KEY_CALL` kalıbıyla iki taraftaki çağrılar çıkarıldı |
+| iOS native | `RCT_EXTERN_METHOD` listesi ↔ Kotlin `@ReactMethod` listesi |
+| Kapılar | `i18n:check`, `ios:check`, `tsc`, `eslint`, `typecheck:scripts` |
+
+### 10.2 iOS
+
+**Kod tarafında parite kapandı.** Ayrıntı ve ölçüm tablosu
+`docs/plan/ios-parity.md` başına eklendi. Özet: native yöntem kümesi birebir
+aynı (20/20), `ios:check` sekiz denetimi de geçiyor, sürüm dörtlüsü tek
+kaynaktan basılıyor. Açık kalanlar kod değil: Google iOS OAuth istemcisi,
+RevenueCat anahtarları (iki platformda da boş), `LEGAL_PLATFORMS.ios` kapısı
+ve Mac'te cihaz koşusu.
+
+### 10.3 Web → mobil içerik köprüleri: ayrışma yok
+
+Üç döküm betiği de koşuldu; `mobile/src/data/**` altında **tek satır fark
+çıkmadı**. Yani beceri egzersizleri, deneme kâğıtları ve Almanca dersler için
+"tek kaynak web, mobil türev" kuralı bugün gerçekten tutuyor.
+
+Betiğin kendisinde bir açık vardı: `dump:lessons` `package.json`'da **yoktu**.
+Mobil ders paketinin kaynağın gerisinde kalması (`3c1b7b61`) bu yüzden fark
+edilmemişti. Eklendi.
+
+### 10.4 Bulunan asıl ayrışma: İngilizce dersler
+
+| kurs | web ders | web egzersiz | web kâğıt | mobil ders |
+|---|---|---|---|---|
+| de | 580 | 995 | 60 | 580 |
+| gsw-zh | 0 (hedef dili Almanca) | 0 | 0 | — |
+| en | **0** | 189 | 60 | **200** |
+
+İki yüz ders (A1 100, A2 100) doğrudan `mobile/src/data/lessons/en-*.json`
+olarak yazılmış ve web'e **hiç girmemiş** — geçmişte de hiç olmamışlar
+(`git log --diff-filter=A 'src/lib/lessons/content/en-*'` boş). Sonuç:
+İngilizce kursu seçen web kullanıcısı Patika'da hiçbir konuşma düğümü
+görmüyordu; aynı kullanıcı Android'de yüz dersi birden görüyordu.
+
+`7957f895` ile kapandı: dosyalar `src/lib/lessons/content/` altına taşındı,
+tek kaynak yeniden web oldu, mobil paketi döküm üretiyor. Dönüşün kayıpsız
+olduğu ölçüldü — dökümden çıkan iki paket depodakiyle nesne nesne aynı.
+
+### 10.5 Sözlükte yapısal ayrışma (kapanmadı)
+
+`src/i18n/base/*` mobilden tazedir (`i18n-pull` ayrışma bulmadı). Ama web o
+tabanı **yarı yarıya kullanmıyor**:
+
+- mobilde çağrılan 851 anahtarın **446'sı web'de hiç çağrılmıyor**
+- web bunların yerine kendi paralel ad uzaylarını yazmış: `socialw` (57),
+  `exam` (34), `lessonp` (29), `onb` (21), `authw` (20), `del` (18)…
+- web sözlüğündeki 1251 anahtarın yalnız **%10'u** tabandaki bir metinle
+  birebir aynı — yani çoğu, aynı ekranın **başka sözcüklerle** yazılmış hâli
+
+Bu bir hata değil ama bir risk: mobilde bir cümle düzeltildiğinde web'e hiç
+ulaşmıyor ve iki uygulama aynı ekranda farklı şeyler söylüyor. Kapatmak ~740
+anahtarlık bir taşıma demek; bu turda yapılmadı, karar Samet'te.
+
+### 10.6 Kapatılan sabit Türkçeler
+
+Sabit Türkçe denetiminin kör noktası: birim sözcükleri ("dk", "sn", "gün")
+eşiğin altında kalıyor. Elle tarandı, on kalem çıktı ve hepsinin karşılığı
+tabanda zaten vardı (`7f9874ee`) — monolog oynatıcısının dört düğmesi, tur
+oynatıcısının iki hata kartı, beceri kabuğu ve kişi aramadaki seri rozeti,
+ilerleme paneli, ilk kelimeler ve ilerleme grafiği. Taban 185 → 180.
+
+### 10.7 Açık kalanlar
+
+| # | Ne | Not |
+|---|---|---|
+| 1 | `boss-player.tsx` sayacındaki "{n} sn" | Sözlükte karşılığı yok; yeni anahtar gerekiyor |
+| 2 | `monow.*` (4 anahtar) tabandaki `item.mono_*` ile aynı işi yapıyor | Web kopyası; taşınırsa dört anahtar düşer |
+| 3 | `/profile/cando` ve `/profile/writings` geniş ekranda `CardGrid` kullanmıyor | Mobil bu iki ekranı tablette sütunlara bölüyor |
+| 4 | §10.5'teki 446 anahtarlık taşıma | Ürün kararı |
+| 5 | Mobil tarafta bir sabit Türkçe: `rounds.tsx` "{n}/{n} kelime ilk denemede" | Referans taraf da tam temiz değil |
