@@ -694,20 +694,44 @@ görmüyordu; aynı kullanıcı Android'de yüz dersi birden görüyordu.
 tek kaynak yeniden web oldu, mobil paketi döküm üretiyor. Dönüşün kayıpsız
 olduğu ölçüldü — dökümden çıkan iki paket depodakiyle nesne nesne aynı.
 
-### 10.5 Sözlükte yapısal ayrışma (kapanmadı)
+### 10.5 Sözlükte yapısal ayrışma — ölçüldü ve büyük bölümü kapandı
 
 `src/i18n/base/*` mobilden tazedir (`i18n-pull` ayrışma bulmadı). Ama web o
-tabanı **yarı yarıya kullanmıyor**:
+tabanın yarısını kullanmıyordu: mobilde çağrılan 851 anahtarın **446'sı**
+web'de hiç çağrılmıyor, web onların yerine kendi ad uzaylarını yazmıştı.
 
-- mobilde çağrılan 851 anahtarın **446'sı web'de hiç çağrılmıyor**
-- web bunların yerine kendi paralel ad uzaylarını yazmış: `socialw` (57),
-  `exam` (34), `lessonp` (29), `onb` (21), `authw` (20), `del` (18)…
-- web sözlüğündeki 1251 anahtarın yalnız **%10'u** tabandaki bir metinle
-  birebir aynı — yani çoğu, aynı ekranın **başka sözcüklerle** yazılmış hâli
+**İlk okuma yanlıştı.** "446 anahtar taşınacak" demek, hepsinin aynı metnin
+ikinci kopyası olduğunu varsaymaktı. Ad uzayı ad uzayı bakıldığında ikiye
+ayrıldılar:
 
-Bu bir hata değil ama bir risk: mobilde bir cümle düzeltildiğinde web'e hiç
-ulaşmıyor ve iki uygulama aynı ekranda farklı şeyler söylüyor. Kapatmak ~740
-anahtarlık bir taşıma demek; bu turda yapılmadı, karar Samet'te.
+| Ad uzayı | Karar | Neden |
+|---|---|---|
+| `socialw` (57) | **taşındı** (46) | Aynı ekranlar; 17'si üç dilde birebir aynı cümle |
+| `del` (18) | **taşındı** (8) | Hesap silme ekranı mobilde `deleteaccount.*` ile kurulu |
+| `monow` (4) | **taşındı** (4) | Üçü üç dilde birebir aynı |
+| `achgroup` (9) | **silindi** | Web sözlüğü tabandakinin birebir kopyasını taşıyordu |
+| tekil kopyalar (7) | **taşındı** | `lang.app_language`, `anlt.send_usage`, `firstw.title`, `rpexam.listening`, `authw.no_connection`, `authw.reset_sent`, `wordsw.load_failed` |
+| `walk` (34) | **kalıyor** | Web yürüyüşü tarayıcı tanıyıcısıyla çalışıyor; mobilinki native servis. Metinler farklı çünkü DAVRANIŞ farklı ("Chrome ya da Safari", "Cebe koy") |
+| `onb` (21) | **kalıyor** | Web akışı beş adım ve mobilde olmayan bir "amaç" adımı taşıyor |
+| `lessonp` (29) | **kalıyor** | Web oynatıcısında eller serbest kipi, sohbet servisi kapalı uyarısı ve sınav bağlantısı var; mobilde yok |
+| `wordsw`, `authw` kalanı | **kalıyor** | Sayfalama, parola sıfırlama akışı — mobilde karşılığı yok |
+| `bossw`, `challenge`, `land`, `install`, `stage`, `pron` | **kalıyor** | Web'e özgü yüzeyler |
+
+Bir de **aynı sözcüğe denk gelen ama ayrı yerler** var ve bunlar bilerek
+birleştirilmedi: `common.go_back`, `common.listen`, `common.add`,
+`summary.streak`, `assess.vocab`, `settings.words_unit`, `theme.appearance`.
+Metin bugün aynı; rol farklı. Birleştirmek ilgisiz iki ekranı birbirine
+bağlar ve birinde yapılan düzeltme ötekini bozar.
+
+**Sonuç:** web sözlüğü 1255 → 1181 anahtar; mobilde çağrılıp web'de hiç
+çağrılmayan anahtar 446 → 385. Kalan 385'in ezici çoğunluğu yukarıdaki
+"kalıyor" satırlarına ait — yani ayrı yazılmış olmaları doğru.
+
+**Açık kalan tek parça:** `friends-hub.tsx`, `requests.tsx` ve
+`friends/page.tsx` taşıma sırasında başka bir oturumun elindeydi (sekme
+yapısı yeniden kuruluyordu); o üç dosyanın anahtarları (`socialw.tabs`,
+`socialw.invite_sub`, `socialw.link_copied`, `socialw.no_requests`,
+`socialw.requests_sub`, `socialw.sent`, `socialw.settings`) yerinde bırakıldı.
 
 ### 10.6 Kapatılan sabit Türkçeler
 
@@ -719,10 +743,12 @@ ilerleme paneli, ilk kelimeler ve ilerleme grafiği. Taban 185 → 180.
 
 ### 10.7 Açık kalanlar
 
-| # | Ne | Not |
+| # | Ne | Durum |
 |---|---|---|
-| 1 | `boss-player.tsx` sayacındaki "{n} sn" | Sözlükte karşılığı yok; yeni anahtar gerekiyor |
-| 2 | `monow.*` (4 anahtar) tabandaki `item.mono_*` ile aynı işi yapıyor | Web kopyası; taşınırsa dört anahtar düşer |
-| 3 | `/profile/cando` ve `/profile/writings` geniş ekranda `CardGrid` kullanmıyor | Mobil bu iki ekranı tablette sütunlara bölüyor |
-| 4 | §10.5'teki 446 anahtarlık taşıma | Ürün kararı |
-| 5 | Mobil tarafta bir sabit Türkçe: `rounds.tsx` "{n}/{n} kelime ilk denemede" | Referans taraf da tam temiz değil |
+| 1 | Google iOS OAuth istemcisi | **açık** — Google Cloud'da açılacak (hesap işi) |
+| 2 | RevenueCat anahtarları | **açık** — iki platformda da boş (hesap işi) |
+| 3 | Sözlük taşıması | **bitti**, §10.5. Üç dosyalık kalıntı orada yazılı |
+| 4 | `boss-player.tsx` sayacındaki "{n} sn" | **bitti** — `challenge.seconds` yeniden kullanıldı |
+| 5 | `monow.*` dört anahtarı | **bitti** — `item.mono_*`a çekildi |
+| 6 | Yapabildiklerim / Yazılarım geniş ekranda | **bitti** — `CardGrid`, `CardGrid` artık `as` alıyor |
+| 7 | Mobilde `rounds.tsx` sabit Türkçesi | **bitti** — `rounds.match_first_try` |
