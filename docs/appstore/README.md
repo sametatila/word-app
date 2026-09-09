@@ -13,11 +13,25 @@ Klasörde üç belge var, `docs/play/`in üçüne karşılık geliyor:
 | `connect.md` | `console.md` | İnceleme hesabı, giriş sağlayıcılarının kurulumu, yayın öncesi kontrol |
 | `listing.md` | `listing.md` | Yaş derecelendirmesi ve mağaza vitrini (üç dilde metinler, görseller) |
 
-## Durum (2026-09-04)
+## Durum (2026-09-09)
 
-iOS **yayında değil** ve bir satır kodu bile **derlenmedi** — geliştirme makinesi Linux,
-macOS/Xcode yok. Bugün `docs/plan/ios-parity.md` şeritleri boyunca yazılanların hepsi
-"derlenmemiş kod" sayılır; hangi iddianın neye dayandığı her bölümün sonunda yazılı.
+iOS **yayında değil**, ama artık "derlenmemiş kod" da değil. Ayrım önemli çünkü
+belgenin geri kalanındaki her "DOĞRULANMADI" notunun anlamı buna bağlı:
+
+| | Durum |
+|---|---|
+| **Derleniyor mu** | ✅ Evet. `.github/workflows/ios-build.yml` macos-15'te Release yapılandırmasıyla derliyor, `pod install` çözülüyor, UI test hedefi üretiliyor ve dokuz akış karesi iniyor (koşu `33920804380`). |
+| **Cihazda koşuldu mu** | ❌ Hayır. Mikrofon, konuşma tanıma, arka planda ses, kilit ekranı denetimi, haptik ve satın alma yalnız gerçek cihazda ölçülebiliyor. |
+
+Yani bugünkü doğru cümle: **derlendi, cihazda koşulmadı.** Geliştirme makinesi hâlâ
+Linux; derlemeyi yapan CI'daki macOS koşucusu. Cihazda sınanacakların listesi
+`docs/plan/ios-device-runbook.md`'de.
+
+> Bu bölüm 4 Eylül'de yazıldı ve "bir satır kodu bile derlenmedi" diyordu. O gün
+> doğruydu; iş akışı 5 Eylül'de kurulunca yanlış oldu ve gereğinden karamsar bir
+> tablo çizmeye devam etti. Aşağıdaki tek tek maddelerde geçen "(derlenmedi)"
+> notları da aynı sebeple eskidir — hepsi **derlendi**, hiçbiri **cihazda
+> koşulmadı**.
 
 Bugün kapanan boşluklar (hepsi DOĞRULANMADI): şablon bundle kimliği `app.lernomi.ios`
 oldu ve sürüm Android'le eşitlendi, `.lproj` dosyaları hedefe bağlandı, uygulama ikonu
@@ -35,16 +49,23 @@ Hukuki metinler iOS için **hazır yazıldı ama kapalı**: `src/lib/legal.ts` i
 - gizlilik politikasında platform sayımı ve alıcılar tablosuna **Apple (App Store)** satırı.
 
 Bayrağı açmadan önce `LEGAL_VERSION` artırılmalı ve `LEGAL_CHANGELOG`'a kayıt
-düşülmeli. **Kayıt hazır:** `legal.ts` içindeki `IOS_LAUNCH_ENTRY` sürüm 1.3'ün "ne
-değişti" metnini üç dilde tutuyor ve bayrak kapalıyken listeye hiç girmiyor. O gün
-yapılacak iş bu dosyada üç satır: bayrak `true`, `LEGAL_VERSION` `"1.3"`,
-`LEGAL_EFFECTIVE_DATE` yayın günü. Alıcılar tablosundaki **Apple (Sign-In)** ve
-**Apple (App Store)** satırları da aynı bayrağın arkasında hazır bekliyor.
+düşülmeli. **Kayıt hazır:** `legal.ts` içindeki `IOS_LAUNCH_ENTRY` sürüm **1.4**'ün
+"ne değişti" metnini üç dilde tutuyor ve bayrak kapalıyken listeye hiç girmiyor. O gün
+yapılacak iş bu dosyada üç satır: bayrak `true`, `LEGAL_VERSION` `"1.4"`,
+`LEGAL_EFFECTIVE_DATE` yayın günü.
+
+> **1.3 DEĞİL, 1.4.** "1.3" önce iOS'a ayrılmıştı ama 2026-09-08'de abonelik
+> maddesine verildi (fiyat değişikliği ve hediye süre hükümleri) ve yürürlüğe girdi.
+> Bu belge bir süre eski numarayı söyledi; harfiyen izlenseydi sürüm geçmişinde iki
+> ayrı 1.3 kaydı oluşurdu. Kod doğru: `IOS_LAUNCH_ENTRY.version` zaten `"1.4"`.
+
+Alıcılar tablosundaki **Apple (Sign-In)** ve **Apple (App Store)** satırları da aynı
+bayrağın arkasında hazır bekliyor.
 
 Bu dosyanın dışında kalan tek metin işi: şartların "üçüncü taraf hizmetleri" maddesi
 (`src/app/terms/page.tsx` ve `src/content/legal/terms-{en,de}.tsx`) giriş sağlayıcısı
 olarak yalnız Google'ı sayıyor. iOS'ta Apple ile Giriş de sunulduğu için oraya
-`hasIos()` koşullu bir "Apple ile Giriş" eklenmeli — 1.3 kaydı bunu anlattığı için
+`hasIos()` koşullu bir "Apple ile Giriş" eklenmeli — 1.4 kaydı bunu anlattığı için
 bayrak açılmadan önce yapılmalı.
 
 ## Bayrak açılmadan bitmesi gereken iş
@@ -52,13 +73,13 @@ bayrak açılmadan önce yapılmalı.
 | # | İş | Neden |
 |---|---|---|
 | 1 | Apple Developer Program hesabı | Bundle kimliği, sertifika, App Store Connect kaydı bunsuz yok |
-| 2 | ~~Gerçek bundle kimliği~~ → `app.lernomi.ios` **yazıldı** (derlenmedi) | Şablon kimliğiyle yükleme kabul edilmez |
+| 2 | ~~Gerçek bundle kimliği~~ → `app.lernomi.ios` **yazıldı** (derlendi, cihazda denenmedi) | Şablon kimliğiyle yükleme kabul edilmez |
 | 3 | ~~**Apple ile Giriş**~~ → **kod ve yetki yazıldı**, Apple Developer hesabı bekliyor | Google ile giriş sunulduğu için App Store Review Guidelines 4.8 istiyor. Metin işi değil, ürün işi. Ayrıntı aşağıda; kalan iki değer madde 10-11'de |
-| 4 | ~~Uygulama içi hesap silme~~ → **iki eksik kapandı** (2026-09-05, derlenmedi) · açık kalan: **cihazda doğrulama** | 5.1.1(v). Ekran zaten vardı ama iki yerde iOS'ta tıkanıyordu; ayrıntı aşağıda "Hesap silme" başlığında |
+| 4 | ~~Uygulama içi hesap silme~~ → **iki eksik kapandı** (2026-09-05, derlendi, cihazda denenmedi) · açık kalan: **cihazda doğrulama** | 5.1.1(v). Ekran zaten vardı ama iki yerde iOS'ta tıkanıyordu; ayrıntı aşağıda "Hesap silme" başlığında |
 | 5 | Gizlilik etiketleri | Aşağıdaki tablo App Store Connect'e girilir |
 | 6 | Yaş derecelendirmesi | Anket cevapları ve iki mağazanın neden farklı çıkacağı **yazıldı** (`listing.md` §2); Connect'te form doldurulup hesaplanan derece geri yazılacak |
 | 7 | Arka plan sesinin CİHAZDA doğrulanması | Ekran kapalıyken yürüyüş modu kararı verildi ve kod yazıldı, ama macOS/Xcode olmadan derlenip denenemedi (aşağıya bak) |
-| 8 | ~~`.lproj` dosyalarının Xcode hedefine eklenmesi~~ → **bağlandı** (derlenmedi) | Dosyalar yazılmıştı ama `project.pbxproj`'da kayıtlı değildi, yani derlemeye girmiyordu |
+| 8 | ~~`.lproj` dosyalarının Xcode hedefine eklenmesi~~ → **bağlandı** (derlendi, cihazda denenmedi) | Dosyalar yazılmıştı ama `project.pbxproj`'da kayıtlı değildi, yani derlemeye girmiyordu |
 | 9 | ~~Uygulama ikonu~~ → **üretildi** (Xcode'da görülmedi) | İkonsuz yükleme reddedilir |
 | 10 | ~~Sign in with Apple yetkisi (entitlements)~~ → **eklendi** (`d72da43`, imzalanmadı) · açık kalan: **`APPLE_BUNDLE_ID` değeri** | Yetki dosyası ve `CODE_SIGN_ENTITLEMENTS` yerinde; App ID'de "Sign in with Apple" işaretlenmesi portal işi. Env boşken sağlayıcı hiç kurulmaz, yani akış bugün kapalı |
 | 11 | ~~`CFBundleURLTypes`~~ → **eklendi** (`d72da43`, yer tutucu değerle) · açık kalan: **Google Console'da iOS istemcisi açmak** | Kodda yapılacak iş kalmadı: iki yazım (`googleAuth.ts` › `IOS_CLIENT_ID` ve Info.plist'teki tersi) tek komutla yazılıyor — `npm run google:ios -- <kimlik>`; yarım kurulum, yanlış biçim ve yanlış proje reddediliyor, kapı CI'da. Console adımları `docs/appstore/connect.md` §2.2. İkisi boşken düğme iOS'ta çizilmiyor |
@@ -96,7 +117,7 @@ Yapılanlar:
   iddiası incelemede karşılıksız kalıyordu.
 - `startWalkService` yeniden çağrılmaya dayanıklı (kesinti sonrası aynı yola düşüyor).
 
-**Doğrulanmadı.** Bu makinede macOS ve Xcode yok; kod derlenmedi, cihazda denenmedi.
+**Cihazda doğrulanmadı.** Kod CI'da (macos-15) derleniyor; aşağıdakiler yalnız gerçek cihazda ölçülebilir.
 Cihazda sınanacak beş şey: (1) ekran kilitlendikten sonra tur devam ediyor mu,
 (2) kelimeler arası boşlukta uygulama askıya alınıyor mu, (3) kilit ekranında mikrofon
 göstergesi ve Now Playing denetimi görünüyor mu, (4) telefon çağrısı gelip bittiğinde
@@ -221,8 +242,8 @@ Beceriler ekranı, klavye açıkken yazma görevi, Split View'da alt sekmeler.
 ## Hesap silme (5.1.1(v)) — 2026-09-05
 
 Ekran ve uç Android'den beri duruyordu (`DeleteAccountScreen`, Better Auth
-`delete-user`), ama iOS'a özgü iki yerde tıkanıyordu. İkisi de kapatıldı, ikisi de
-**derlenmedi**.
+`delete-user`), ama iOS'a özgü iki yerde tıkanıyordu. İkisi de kapatıldı; ikisi de
+**derlendi ama cihazda denenmedi**.
 
 **1. Apple ile giren kullanıcı hesabını silemiyordu.** Oturum 24 saatten eskiyse
 Better Auth "taze giriş" istiyor; ekrandaki yeniden giriş düğmesi sabit **Google**
