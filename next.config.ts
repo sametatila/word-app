@@ -40,6 +40,26 @@ const nextConfig: NextConfig = {
   // "x-powered-by: Next.js" sürüm/altyapı bilgisini gereksizce açık ediyordu.
   poweredByHeader: false,
 
+  /**
+   * Dağıtım kimliği — blue-green geçişinde SÜRÜM KAYMASI koruması.
+   *
+   * Sorun log'da görünüyordu: her deploy'dan sonra sunucu "Failed to find
+   * Server Action. This request might be from an older or newer deployment"
+   * hataları basıyor. Sebebi, deploy anında açık duran bir sekmenin ESKİ
+   * yapıya ait bir eylem kimliğini YENİ instance'a göndermesi; yeni yapıda o
+   * kimlik yok ve istek hataya düşüyor.
+   *
+   * `deploymentId` verilince Next yanıta `x-nextjs-deployment-id` koyuyor ve
+   * istemci kendi kimliğiyle uyuşmadığını görünce istemci-içi gezinme yerine
+   * TAM SAYFA YENİLEME yapıyor: eylem hiç gönderilmiyor, kullanıcı yeni yapıya
+   * geçmiş oluyor. Statik varlıklara da `?dpl=` ekleniyor, yani tarayıcı ve CDN
+   * eski parçaları yeni sürümle karıştırmıyor.
+   *
+   * Değeri deploy betiği veriyor (`NEXT_DEPLOYMENT_ID`, commit kısası). Yerelde
+   * tanımsız: özellik kapalı kalır, geliştirmede zaten tek sürüm var.
+   */
+  deploymentId: process.env.NEXT_DEPLOYMENT_ID,
+
   async headers() {
     return [
       { source: "/:path*", headers: SECURITY_HEADERS },
