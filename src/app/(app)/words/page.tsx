@@ -156,9 +156,11 @@ export default async function WordsPage({
     return (
       <div className="card mx-auto w-full max-w-md p-6 text-center">
         <h2 className="text-lg font-bold">{t("words.couldn_t_load_your_words")}</h2>
-        <p className="muted mt-2 text-sm">
-          Veritabanı bağlantısını kontrol et: <code>npm run db:push</code>.
-        </p>
+        {/* Buraya "npm run db:push çalıştır" yazıyordu: geliştirici yönergesi,
+            üretimde kullanıcının karşısına çıkıyordu ve yapabileceği bir şey
+            değildi. Sebep zaten sunucu günlüğünde; kullanıcıya bağlantı
+            sorunu söyleniyor. Android aynı yerde tek satır gösteriyor. */}
+        <p className="muted mt-2 text-sm">{t("social.err_offline")}</p>
       </div>
     );
   }

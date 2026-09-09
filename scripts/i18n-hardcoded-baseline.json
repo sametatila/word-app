@@ -1,7 +1,7 @@
 {
   "src/app/(app)/immersion/page.tsx": 1,
   "src/app/(app)/immersion/skill/[id]/page.tsx": 1,
-  "src/app/(app)/immersion/unit/[index]/page.tsx": 2,
+  "src/app/(app)/immersion/unit/[index]/page.tsx": 1,
   "src/app/(app)/layout.tsx": 1,
   "src/app/(app)/learn/page.tsx": 2,
   "src/app/(app)/learn/practice/page.tsx": 1,
@@ -11,7 +11,7 @@
   "src/app/(app)/profile/page.tsx": 1,
   "src/app/(app)/profile/progress/page.tsx": 1,
   "src/app/(app)/skills/page.tsx": 2,
-  "src/app/(app)/words/page.tsx": 2,
+  "src/app/(app)/words/page.tsx": 1,
   "src/app/api/certificate/[id]/route.ts": 3,
   "src/app/api/cron/assess/route.ts": 1,
   "src/app/api/cron/reminders/route.ts": 1,
