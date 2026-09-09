@@ -43,6 +43,12 @@ jobs:
         run: npm run version:check
       - name: TypeScript
         run: npx tsc --noEmit
+      # `scripts/` ana tsconfig'in `exclude`ında: uygulama derlemesi oraya hiç
+      # bakmıyor. Sonuç ölçüldü — e2e ağı aylarca derlenmeden durdu (bkz.
+      # docs/plan/web-parity.md §8) ve aynı şey lig işi `getLeaderboard`'u
+      # kaldırınca tekrarlandı. Ayrı kapı olmadan bu sınıf hata sessiz kalıyor.
+      - name: TypeScript (betikler)
+        run: npm run typecheck:scripts
       # Cırcırlı taban: eşik package.json'daki `lint` betiğinde (--max-warnings),
       # gerekçesi ve kural kural sayılar eslint.config.mjs'te. Yeni ihlal eşiği
       # aşar ve burası kırılır; listede olmayan her kural zaten hata.
