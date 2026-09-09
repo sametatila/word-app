@@ -680,8 +680,11 @@ export type PocketHeard = {
    *
    *   network — istek gitti, sunucu hata/400 döndü.
    *   empty   — sunucu boş metin döndü (Deepgram/Azure sessizliği).
+   *   premium — sunucu 403 `premium_required` döndü: ekran kapalı yol (mode=walk)
+   *             ücretsiz katmanda kapalı. Bu bir HATA DEĞİL, bir kapı; çağıranın
+   *             onu "duyamadım" diye göstermemesi için ayrı tutuluyor.
    */
-  reason?: "network" | "empty" | "low_confidence" | "aborted";
+  reason?: "network" | "empty" | "low_confidence" | "aborted" | "premium";
 };
 
 /**
@@ -723,6 +726,19 @@ export async function transcribe(
   const signal = opts.signal && typeof AbortSignal.any === "function" ? AbortSignal.any([timeout, opts.signal]) : timeout;
   try {
     const res = await fetch("/api/stt", { method: "POST", body: form, signal });
+    /*
+      403 PREMIUM KAPISI — "ağ hatası" değil.
+
+      Ekran kapalı yol (`mode=walk`) sunucuda `canPocketWalk` ile korunuyor ve
+      ücretsiz katmanda günlük hak sıfır, yani ücretsiz bir hesapta bu istek HER
+      ZAMAN 403 döner. Burada hepsi `network`e düşüyordu ve tur onu "duyamadım"
+      diye okuyordu: kullanıcı mikrofonunun bozuk olduğunu sanıyordu. Mobilde
+      aynı hata ölçülüp düzeltildi (2026-09-09), web de aynı davranıyor artık.
+    */
+    if (res.status === 403) {
+      const body = await res.json().catch(() => null) as { error?: string } | null;
+      return none(body?.error === "premium_required" ? "premium" : "network");
+    }
     if (!res.ok) return none("network");
     const data = (await res.json()) as { text?: string; confidence?: number; provider?: string };
     const text = (data.text ?? "").trim();

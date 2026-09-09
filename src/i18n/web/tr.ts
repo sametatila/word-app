@@ -181,6 +181,7 @@ export const trWeb: Record<string, string> = {
   "words.progress_summary": "{mastered} pekişti · {seen} görüldü · {due} tekrar sırada",
   "settings.account": "HESAP",
   "settings.app": "UYGULAMA",
+  "settings.session": "OTURUM",
   "settings.daily_goal_short": "Günlük tekrar hedefi",
   "settings.new_per_day": "Günde yeni kelime",
   "settings.reviews_unit": "tekrar",
@@ -188,6 +189,7 @@ export const trWeb: Record<string, string> = {
   "settings.saving": "Kaydediliyor…",
   "settings.privacy_and_terms": "Gizlilik ve şartlar",
   "settings.privacy_and_terms_sub": "Hangi veriyi neden işlediğimiz, hakların",
+  "settings.account_row": "Hesap",
   "settings.add_to_home": "Ana ekrana ekle",
   "settings.add_to_home_hint": "tam ekran, çevrimdışı",
   "level.a2_desc": "Temel günlük dili biliyorum",
@@ -205,6 +207,10 @@ export const trWeb: Record<string, string> = {
   "voice.en_us_guyneural.note": "Sakin ve tok Amerikan aksanı",
   "settings.srs_note": "Tekrar zamanları cevabının hızına ve doğruluğuna göre kendiliğinden hesaplanır.",
   "settings.course_switch_note": "Kelimeler ve tekrar kuyruğun yeni kursa geçer. Diğer kurs silinmez.",
+  "settings.signing_out": "Çıkılıyor…",
+  "settings.account_sub": "{name} olarak girdin · ilerlemen tüm cihazlarında senkron",
+  "settings.demo_mode": "Demo modu",
+  "settings.demo_mode_sub": "Giriş anahtarları eklendiğinde giriş ve çoklu cihaz senkronizasyonu kendiliğinden açılır.",
   /* Kelime turu — etap, bahis ve özet ekranları. Mobil `GameScreen` daha
      sade olduğu için bu anahtarların çoğu web'e özel. */
   "session.preparing": "Bugünkü çalışman hazırlanıyor…",
@@ -1100,6 +1106,7 @@ export const trWeb: Record<string, string> = {
   "lang.app_language_sub": "Anlatım ve arayüz bu dilde olur",
   "progw.my_progress": "İlerlemem",
   "achw.recent": "Son kazanılan",
+  "achw.unlocked": "Açıldı",
   "achgroup.streak": "Seri",
   "achgroup.vocab": "Kelime",
   "achgroup.games": "Oyunlar",
@@ -1109,6 +1116,7 @@ export const trWeb: Record<string, string> = {
   "achgroup.skills": "Beceriler",
   "achgroup.rounds": "Turlar",
   "achgroup.discovery": "Keşif",
+  "achw.remaining": "{n} kaldı",
   "lb.weekly": "Haftalık sıralama",
   "lb.this_week": "Bu haftanın sıralaması",
   "lb.gap": "Bir üsttekine {xp} XP — bir turluk mesafe.",
@@ -1275,29 +1283,4 @@ export const trWeb: Record<string, string> = {
   "email.reset.cta": "Parolamı sıfırla",
   "email.reset.text": "Lernomi parola sıfırlama\n\nParolanı sıfırlamak için: {url}\n\nİstemediysen yok say.",
   "email.fallback_link": "Düğme çalışmazsa: {url}",
-
-  /*
-    WEB'E ÖZEL, BASE'DEN DÜŞTÜ. Bu on altı anahtar `src/i18n/base/` içinde elle
-    duruyordu ama orası ÜRETİLİYOR (`scripts/i18n-pull.mjs`, kaynak mobil
-    sözlük) ve mobilde bu ekranların hiçbiri yok: ilk yenilemede sözlükten
-    silindiler, çağıran kod yerinde kaldı. Doğru yerleri burası — seviye
-    belirleme, tur özeti, çevrimdışı yazma geri bildirimi ve değerlendirme
-    bildirimi yalnız webde.
-  */
-  "game.exit_message_practice": "Cevapladıkların kaydedilir; pratik kaldığı yerden sürmez.",
-  "session.wager_won": "Son etapta bahis tuttu · +{xp} XP",
-  "session.wager_lost": "Son etapta bahis yandı · {xp} XP",
-  "session.goal_reached": "Günlük hedefi tamamladın",
-  "placement.last_taken": "Son alma: {date} · öneri",
-  "placement.you_chose": "· seçtiğin {level}",
-  "placement.continue_with": "{level} ile devam et",
-  "placement.pick_and_continue": "{level} seç ve devam et",
-  "placement.section_n": "Bölüm {n}",
-  "assessfb.length_ok": "Görevin uzunluğunu tutturdun.",
-  "assessfb.length_short": "Başladın; biraz daha uzatınca görev tamamlanır.",
-  "assessfb.try_phrase": "Şu kalıbı da kullanmayı dene: {phrase}",
-  "assessfb.turkish_chars": "Metinde Türkçe harf var; hedef dilin klavye düzenine geç.",
-  "assessfb.retry_when_ai": "AI açıldığında aynı metni tekrar değerlendirebilirsin.",
-  "push.assess_title": "Yazın değerlendirildi",
-  "push.assess_body": "Puan {score}/100 — düzeltmelere bak.",
 };

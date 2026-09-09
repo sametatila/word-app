@@ -30,7 +30,7 @@ import {
   transcribe,
 } from "@/components/pocket-mic";
 import { afterMs, withDeadline } from "@/components/pocket-clock";
-import { play, resetCombo } from "@/lib/sfx";
+import { play, resetCombo, walkCueMs, type WalkCue } from "@/lib/sfx";
 import { pocketWalkCue } from "@/components/pocket-audio";
 import { track } from "@/lib/track";
 import { CheckIcon, MicIcon, XIcon } from "@/components/icons";
@@ -382,6 +382,8 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
   const [diag, setDiag] = useState<string[] | null>(null);
   /** Üst üste kaç turda klip üretilemedi — kayıt arızasını sessizce sürüklememek için. */
   const captureFails = useRef(0);
+  /** Premium kapısı bir kez söylendi mi — her kelimede tekrarlanmasın. */
+  const premiumTold = useRef(false);
   /** Bu yürüyüşte sorulan kelimeler — devam turunda tekrar sorulmasın diye. */
   const askedIds = useRef<Set<number>>(new Set());
   /**
@@ -543,7 +545,7 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
    * İki çalma yolu, çünkü ekran kapalıyken `AudioContext` askıya alınıyor:
    * görünürken WebAudio, cepte `<audio>` öğesi (bkz. pocket-audio).
    */
-  const walkCue = useCallback((kind: "micon" | "micoff") => {
+  const walkCue = useCallback((kind: WalkCue) => {
     const ctx = sharedAudioContext();
     if (!armed.current && ctx && ctx.state === "running") play(kind);
     else pocketWalkCue(kind);
@@ -768,6 +770,22 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
             captureFails.current = 0;
             const startedAt = Date.now();
             const heard = await transcribe(clip.blob, lang, expected, { signal });
+            /*
+              PREMIUM KAPISI — "duyamadım" değil.
+
+              Ekran kapalı yol sunucuda korunuyor ve ücretsiz katmanda günlük hak
+              sıfır: ücretsiz bir hesapta `/api/stt` HER ZAMAN 403 döner. Eskiden
+              bu genel hataya düşüyor, tur da onu "duyamadım" diye okuyordu —
+              kullanıcı mikrofonunun bozuk olduğunu sanıyordu.
+              Bir kez söyleniyor: her kelimede tekrarlamak turu anlatıma çevirirdi.
+            */
+            if (heard.reason === "premium" && !premiumTold.current) {
+              premiumTold.current = true;
+              track("walk_listen", 0, "stt:premium");
+              walkCue("premium");
+              await new Promise((r) => setTimeout(r, walkCueMs("premium")));
+              await say([{ lang, narration: true, text: t("walkmode.screen_off_premium") }]);
+            }
             const outcome = heard.reason ?? "ok";
             track("walk_listen", Math.round(heard.sentSeconds * 10), `${heard.provider ?? "stt"}:${outcome}`);
             note(`${heard.provider ?? "sunucu"} ${outcome} ${heard.sentSeconds.toFixed(1)} sn ${Date.now() - startedAt} ms${heard.alternatives[0] ? ` "${heard.alternatives[0]}"` : ""}${typeof heard.confidence === "number" ? ` ${heard.confidence.toFixed(2)}` : ""}`);
@@ -802,7 +820,7 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
 
       return [];
     },
-    [cue, disarm, listen, note, say, waitForHidden, lang, t],
+    [cue, walkCue, disarm, listen, note, say, waitForHidden, lang, t],
   );
   /** Kendine dönmesi gereken tek yer (silahsızlanınca ekran yolu) — ref üzerinden. */
   const hearOnceRef = useRef(hearOnce);
