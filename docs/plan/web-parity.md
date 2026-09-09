@@ -440,6 +440,11 @@ DOM'u karşılaştırıldı; on bir fark çıktı ve düzeltildi.
 | Bildirimler | `/notifications` `/inbox` ile birebir aynı şeyi çiziyordu; hatırlatma anahtarları uygulama ayarlarındaydı | `89a8c566` |
 | Push metinleri | Akşam giden bildirimlerin metni sabit Türkçeydi; adsız kullanıcıda cümle küçük harfle başlıyordu | `6b253282` |
 | Hatırlatma kategorileri | Mobildeki üç anahtarın ikisi web'de hiç yoktu, günlük kanalın saati arayüzde görünmüyordu | `2e8e2577` |
+| Rozet duvarı | Sekmeliydi — yedi grup birer çip, aynı anda tek grup; mobil hepsini alt alta diziyor. Ayrıntı paneli kartın içine indi, kademe adları sabit Türkçeydi | `21fcdd7a` |
+| Deneme sınavları | Mobilin seviye/kapsam kartı yoktu; giriş paragrafı çiplerin üstündeydi | `f470d9d0` |
+| İçerik bildirme | `POST /api/reports` aylardır vardı, **hiçbir arayüz onu çağırmıyordu** — mobilde üç yerde var | `5dbfe4b6` |
+| Sabit Türkçe (11 yer) | Kelime listesi tekrar cümleleri, modül sınavı yönergesi, ses/gizlilik etiketleri, kilit ekranı albüm adı | `0c001fb6` |
+| Sekme başlıkları | 27 sayfa sabit Türkçe `metadata.title` taşıyordu; Kelimeler'in hiç başlığı yoktu | `9d8b844c` |
 
 Sözlük denetimine üçüncü kural eklendi: **kodda çağrılan her anahtar sözlükte
 var mı**. `translate` bulamadığı anahtarın kendisini döndürüyor, yani ekrana
@@ -508,3 +513,33 @@ DATABASE_URL=<e2e> npx tsx scripts/seed.ts          # 8.707 kelime
 DATABASE_URL=<e2e> npx tsx scripts/seed-skills.ts   # 984 egzersiz
 TEST_DATABASE_URL=<e2e> npm run test:e2e
 ```
+
+
+### Denetim araçları
+
+Bu turda iki denetim eklendi ve ikisi de ilk koşularında gerçek hata buldu:
+
+- `npm run i18n:check` üçüncü kural: **kodda çağrılan her anahtar sözlükte var
+  mı.** `translate` bulamadığı anahtarın kendisini döndürüyor, yani ekrana
+  `socialw.friends_load_failed` yazıyor — hata değil, sessiz arıza. Yedi tane
+  buldu.
+- `npm run typecheck:scripts`: `scripts/` klasörü `tsconfig.json`da `exclude`
+  içindeydi ve e2e aylardır 9. testte çöküyordu (bkz. §8).
+
+Üç dilde tam sayfa taraması (`scratchpad/sweep3.mjs`) ekranda ham anahtar
+kalmadığını doğruluyor.
+
+### Bilerek farklı kalanlar
+
+Parite "webde fazla olanı at" demek değil; web'e özgü olanlar mobilin
+düzenine oturtuldu, yerlerini korudular:
+
+- **Hayatta kalma turu** — mobilde yok, "Daha fazlası" ızgarasında duruyor.
+- **Kelime listesinde seviye süzgeci ve gelişim açılırı** — mobilde yok;
+  8.707 kelimelik listede seviye süzgeci mobilde olmayan bir işlev, kaldırmak
+  kayıp olurdu.
+- **Ayarlarda "Cihaz" bölümü** (ana ekrana ekle) — tarayıcıya özgü, mobilde
+  karşılığı olamaz. Görünümle gizliliğin arasında kendi etiketiyle duruyor.
+- **Yapabildiklerim'de beceriye göre alt başlıklar** — mobilde yalnız seviye
+  var; web'de eklenen yapı, eksilen değil.
+- **`/analytics` ve `admin/*`** — iç araçlar, Türkçe kalıyor.
