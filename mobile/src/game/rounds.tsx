@@ -127,6 +127,12 @@ function SpeakButton({ text, colors, size = 20 }: { text: string; colors: Palett
  * okunuyor ki ikisi ayrı yazılıp sessizce kaymasın.
  */
 const SHEET_H = 60 + spacing.sm + 50 + spacing.md * 2;
+/**
+ * Katmanla üstündeki içerik arasındaki pay. `md` denendi ve yetmedi: katmanın
+ * yükseltme gölgesi yukarı doğru yayıldığı için şıkların alt kenarı kesilmiş
+ * gibi duruyordu (koyu temada belirgin).
+ */
+const SHEET_GAP = spacing.xl;
 
 /**
  * Tur iskeleti — içerik üstte (kaydırılabilir; kısa ise dikey doldurur), AKSİYON
@@ -168,7 +174,7 @@ function RoundShell({ children, footer, sheet, scroll = true }: { children: Reac
         <View style={{ flex: 1 }}>{children}</View>
       )}
       {footer ? <View style={{ marginBottom: lift, paddingTop: spacing.md }}>{footer}</View> : null}
-      {footer ? null : <View style={{ height: SHEET_H + spacing.md }} />}
+      {footer ? null : <View style={{ height: SHEET_H + SHEET_GAP }} />}
       {sheet ? <SheetLayer>{sheet}</SheetLayer> : null}
     </View>
   );

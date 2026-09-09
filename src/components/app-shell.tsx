@@ -14,7 +14,7 @@ import { AchievementUnlock } from "./achievement-unlock";
 import { OnboardingAdopt } from "./onboarding-adopt";
 import { track } from "@/lib/track";
 import { useT } from "@/lib/i18n/client";
-import { FlameIcon, HandshakeIcon, LearnIcon, ListIcon, PathIcon, SkillsIcon, SparkIcon, UserIcon } from "./icons";
+import { BellIcon, FlameIcon, HandshakeIcon, LearnIcon, ListIcon, PathIcon, SkillsIcon, SparkIcon, UserIcon } from "./icons";
 
 /**
  * Alt gezinme: ÜÇ sekme.
@@ -72,18 +72,11 @@ export function useShell(): ShellData {
   return v;
 }
 
-/**
- * Masaüstünde kenar çubuğunun ikinci grubu — telefonda başlıktan ulaşılıyor.
- *
- * Burada bir "Bildirimler" satırı vardı ve `/notifications`e gidiyordu. O adres
- * artık hatırlatma AYARLARI (bkz. `(app)/notifications/page.tsx`), gelen kutusu
- * değil: zil ikonlu bir satır, açınca anahtarlar gösteriyordu. Gelen kutusuna
- * zaten başlıktaki zil götürüyor (`NotificationBell` → `/inbox`), hatırlatma
- * anahtarları da Ayarlar'ın kendi bölümünde. Satır kaldırıldı.
- */
+/** Masaüstünde kenar çubuğunun ikinci grubu — telefonda başlıktan ulaşılıyor. */
 const SECONDARY = [
   { href: "/words", labelKey: "profile.my_words", Icon: ListIcon },
   { href: "/friends", labelKey: "profile.friends", Icon: HandshakeIcon },
+  { href: "/notifications", labelKey: "profile.notifications", Icon: BellIcon },
   { href: "/profile", labelKey: "profile.profile", Icon: UserIcon },
 ];
 
