@@ -242,7 +242,7 @@ export function AchievementWall() {
               <div className="mt-2">
                 <div className="mb-1 flex items-baseline justify-between text-xs font-semibold tabular-nums">
                   <span style={{ color: "var(--color-brand)" }}>
-                    {open.done.toLocaleString("tr-TR")} / {open.target.toLocaleString("tr-TR")}
+                    {formatNumber(open.done, lang)} / {formatNumber(open.target, lang)}
                   </span>
                   <span className="muted">
                     {t("achw.remaining", { n: formatNumber(open.target - open.done, lang) })}

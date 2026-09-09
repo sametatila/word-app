@@ -9,7 +9,7 @@ import type { Relation } from "@/lib/social/types";
 import { FeedCard } from "./feed";
 import { UserAction } from "./user-action";
 import { useT, useLang } from "@/lib/i18n/client";
-import { localeOf } from "@/lib/i18n/dict";
+import { formatNumber, localeOf } from "@/lib/i18n/dict";
 
 /**
  * Herkese açık profil. Sunucu görünürlüğü uygulayıp kırpılmış veriyi verir;
@@ -159,11 +159,12 @@ export function PublicProfile({ data, me }: { data: PublicProfileView; me: strin
 }
 
 function Stat({ label, value, text, suffix = "", icon, tone }: { label: string; value?: number; text?: string; suffix?: string; icon?: React.ReactNode; tone: string }) {
+  const lang = useLang();
   return (
     <div className="card px-3 py-2.5 text-center">
       <p className="flex items-center justify-center gap-1 text-base font-black tabular-nums" style={{ color: tone }}>
         {icon}
-        {text ?? `${(value ?? 0).toLocaleString("tr-TR")}${suffix}`}
+        {text ?? `${formatNumber(value ?? 0, lang)}${suffix}`}
       </p>
       <p className="muted text-[11px]">{label}</p>
     </div>

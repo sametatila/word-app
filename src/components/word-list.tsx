@@ -2,7 +2,7 @@
 
 import { useEffect, useState, type ReactNode } from "react";
 import { useT, useLang } from "@/lib/i18n/client";
-import { LANG_LABEL } from "@/lib/i18n/dict";
+import { LANG_LABEL, formatNumber } from "@/lib/i18n/dict";
 import { courseName } from "@/lib/courses";
 import { useRouter, useSearchParams } from "next/navigation";
 import { trackOnce } from "@/lib/track";
@@ -144,7 +144,7 @@ export function WordList({
       <PageBack
         fallback="/learn"
         title={tx("words.my_words")}
-        subtitle={tx("words.subtitle", { n: total.toLocaleString("tr-TR") })}
+        subtitle={tx("words.subtitle", { n: formatNumber(total, lang) })}
       />
 
       {/*

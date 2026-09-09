@@ -63,7 +63,7 @@ export function FriendsBoard() {
               </span>
             ) : null}
             <span className="w-16 shrink-0 text-right text-sm font-bold tabular-nums" style={{ color: "var(--color-brand)" }}>
-              {r.xp.toLocaleString("tr-TR")}
+              {formatNumber(r.xp, lang)}
             </span>
           </li>
         ))}

@@ -3,6 +3,8 @@
 import { useState } from "react";
 import { CheckIcon, LinkIcon } from "@/components/icons";
 import { track } from "@/lib/track";
+import { useLang } from "@/lib/i18n/client";
+import { formatNumber, formatPercent, translate, type NativeLang } from "@/lib/i18n/dict";
 
 /**
  * Tur sonucunu paylaşma.
@@ -52,6 +54,12 @@ export function marksToGrid(marks: boolean[]): string {
  * Metinde skor da var çünkü günün turunda kıyaslanan şey doğru sayısı değil
  * puan: hız ve seri puana giriyor, iki kişi 18/20 yapıp farklı puan alabiliyor.
  */
+/**
+ * Paylaşım metni. DİL DIŞARIDAN geliyor: metin panoya ya da başka bir
+ * uygulamaya gidiyor, yani onu okuyan kişi ARAYÜZ dilini seçmiş olan kişi.
+ * Metnin tamamı sabit Türkçe yazılıydı — İngilizce arayüzdeki bir kullanıcı
+ * "12 kelime · %80 doğru" paylaşıyordu.
+ */
 export function buildShareText(input: {
   marks: boolean[];
   total: number;
@@ -59,21 +67,29 @@ export function buildShareText(input: {
   streak: number;
   level: string;
   origin: string;
+  lang: NativeLang;
   kind?: "session" | "daily";
   /** Günün turunun puanı — yalnızca `kind: "daily"` için anlamlı. */
   score?: number;
 }): string {
+  const { lang } = input;
+  const tr = (key: string, vars?: Record<string, string | number>) => translate(lang, key, vars);
   const daily = input.kind === "daily";
-  const head = daily ? `Lernomi · Günün turu · ${input.level}` : `Lernomi · ${input.level}`;
+  const head = daily
+    ? tr("sharew.head_daily", { level: input.level })
+    : tr("sharew.head", { level: input.level });
   const lines = [head, marksToGrid(input.marks)];
 
+  const pct = formatPercent(input.accuracy, lang);
   const stats = daily
-    ? [`${input.score?.toLocaleString("tr-TR") ?? 0} puan`, `${input.total} soruda %${input.accuracy}`]
-    : [`${input.total} kelime`, `%${input.accuracy} doğru`];
-  if (input.streak > 0) stats.push(daily ? `${input.streak} seri` : `${input.streak} gün seri`);
+    ? [tr("sharew.points", { n: formatNumber(input.score ?? 0, lang) }), tr("sharew.of_questions", { n: input.total, pct })]
+    : [tr("sharew.n_words", { n: input.total }), tr("sharew.pct_correct", { pct })];
+  if (input.streak > 0) {
+    stats.push(daily ? tr("sharew.streak_short", { n: input.streak }) : tr("social.days_streak", { n: input.streak }));
+  }
   lines.push(stats.join(" · "));
 
-  if (daily) lines.push("", `Aynı sorular ${input.level} seviyesindeki herkese aynı. Sen de dene:`);
+  if (daily) lines.push("", tr("sharew.daily_cta", { level: input.level }));
   else lines.push("");
   lines.push(input.origin);
   return lines.join("\n");
@@ -97,6 +113,7 @@ export function ShareResult({
   kind?: "session" | "daily";
   score?: number;
 }) {
+  const lang = useLang();
   const [copied, setCopied] = useState(false);
 
   if (!total) return null;
@@ -110,6 +127,7 @@ export function ShareResult({
       streak,
       level,
       origin: window.location.origin,
+      lang,
       kind,
       score,
     });

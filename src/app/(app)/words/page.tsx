@@ -5,7 +5,8 @@ import { getUserId } from "@/lib/auth/server";
 import { ensureProfile, getProgress } from "@/lib/session";
 import { WordProgress } from "@/components/progress-view";
 import { WordList, type WordRow } from "@/components/word-list";
-import { getT } from "@/lib/i18n/server";
+import { getT, getLang } from "@/lib/i18n/server";
+import { formatNumber } from "@/lib/i18n/dict";
 
 export const dynamic = "force-dynamic";
 
@@ -20,6 +21,7 @@ export default async function WordsPage({
 }) {
   const sp = await searchParams;
   const t = await getT();
+  const lang = await getLang();
   const userId = await getUserId();
   if (!userId) return null;
 
@@ -129,8 +131,8 @@ export default async function WordsPage({
         progressSummary={
           progress
             ? t("words.progress_summary", {
-                mastered: mastered.toLocaleString("tr-TR"),
-                seen: seen.toLocaleString("tr-TR"),
+                mastered: formatNumber(mastered, lang),
+                seen: formatNumber(seen, lang),
                 due: progress.dueNow,
               })
             : undefined

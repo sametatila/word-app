@@ -2,6 +2,7 @@ import { FlameIcon } from "@/components/icons";
 import { Avatar } from "@/components/avatar";
 import type { LeaderboardWeek } from "@/lib/session";
 import { getT, getLang } from "@/lib/i18n/server";
+import { formatNumber, type NativeLang } from "@/lib/i18n/dict";
 
 /** İlk üç için madalya rengi; sonrası nötr kalır ki tablo yorucu olmasın. */
 const MEDAL: Record<number, string> = {
@@ -54,7 +55,7 @@ export async function Leaderboard({ week }: { week: LeaderboardWeek }) {
 
       <ol>
         {top.map((r) => (
-          <Row key={r.userId} row={r} />
+          <Row key={r.userId} row={r} lang={lang} />
         ))}
       </ol>
 
@@ -62,7 +63,7 @@ export async function Leaderboard({ week }: { week: LeaderboardWeek }) {
         <>
           <div className="muted px-5 py-1 text-center text-xs">···</div>
           <ol>
-            <Row row={outside} />
+            <Row row={outside} lang={lang} />
           </ol>
         </>
       ) : null}
@@ -72,23 +73,24 @@ export async function Leaderboard({ week }: { week: LeaderboardWeek }) {
           className="border-t px-5 py-2.5 text-center text-xs font-semibold"
           style={{ borderColor: "var(--border)", color: "var(--color-brand)" }}
         >
-          Bir üsttekine {gap.toLocaleString("tr-TR")} XP — bir turluk mesafe.
+          {t("lb.gap", { xp: formatNumber(gap, lang) })}
         </p>
       ) : me && me.rank === 1 ? (
         <p
           className="border-t px-5 py-2.5 text-center text-xs font-semibold"
           style={{ borderColor: "var(--border)", color: "var(--color-flame)" }}
         >
-          Zirvedesin. Pazartesi herkes sıfırdan başlıyor.
+          {t("lb.at_top")}
         </p>
       ) : null}
     </section>
   );
 }
 
-async function Row({ row }: { row: { rank: number; userId: string; name: string | null; xp: number; streak: number; isMe: boolean } }) {
+/* Dil YUKARIDAN geliyor: her satır kendi `getLang()`ini çağırırsa on satırlık
+   bir tablo çerezi on kez okur; üstelik hepsi aynı cevabı verir. */
+async function Row({ row, lang }: { row: { rank: number; userId: string; name: string | null; xp: number; streak: number; isMe: boolean }; lang: NativeLang }) {
   const t = await getT();
-  const lang = await getLang();
   const medal = MEDAL[row.rank];
   return (
     <li
@@ -119,7 +121,7 @@ async function Row({ row }: { row: { rank: number; userId: string; name: string 
               color: "var(--color-brand)",
             }}
           >
-            sen
+            {t("social.you")}
           </span>
         ) : null}
       </span>
@@ -128,7 +130,7 @@ async function Row({ row }: { row: { rank: number; userId: string; name: string 
         <span
           className="flex shrink-0 items-center gap-1 text-xs font-semibold tabular-nums"
           style={{ color: "var(--color-flame)" }}
-          title={`${row.streak} günlük seri`}
+          title={t("social.days_streak", { n: row.streak })}
         >
           <FlameIcon size={13} />
           {row.streak}
@@ -139,7 +141,7 @@ async function Row({ row }: { row: { rank: number; userId: string; name: string 
         className="w-16 shrink-0 text-right text-sm font-bold tabular-nums"
         style={{ color: "var(--color-brand)" }}
       >
-        {row.xp.toLocaleString("tr-TR")}
+        {formatNumber(row.xp, lang)}
       </span>
     </li>
   );

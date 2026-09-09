@@ -7,7 +7,8 @@ import { QuestCard } from "@/components/quest-card";
 import { FriendPulse } from "@/components/social/friend-pulse";
 import { CardGrid } from "@/components/layout";
 import { LearnHeader } from "@/components/app-header";
-import { useT } from "@/lib/i18n/client";
+import { useT, useLang } from "@/lib/i18n/client";
+import { formatNumber } from "@/lib/i18n/dict";
 import {
   ArrowRightIcon,
   BoltIcon,
@@ -56,10 +57,9 @@ export type LearnHubData = {
   canWalk: boolean;
 };
 
-const nf = new Intl.NumberFormat("tr-TR");
-
 export function LearnHub({ data }: { data: LearnHubData }) {
   const t = useT();
+  const lang = useLang();
   const { level, mastered, totalWords, xp, streak, dailyGoal, reviewsToday, dueCount, newToday } = data;
   const pct = totalWords ? Math.min(100, Math.round((mastered / totalWords) * 100)) : 0;
   const goalPct = dailyGoal ? Math.min(100, Math.round((reviewsToday / dailyGoal) * 100)) : 0;
@@ -158,9 +158,9 @@ export function LearnHub({ data }: { data: LearnHubData }) {
             >
               {level}
             </span>
-            <span className="truncate text-strong">{t("learn.words_learned", { n: nf.format(mastered) })}</span>
+            <span className="truncate text-strong">{t("learn.words_learned", { n: formatNumber(mastered, lang) })}</span>
           </div>
-          <span className="muted shrink-0 text-caption tabular-nums">{nf.format(xp)} XP</span>
+          <span className="muted shrink-0 text-caption tabular-nums">{formatNumber(xp, lang)} XP</span>
         </div>
         <div className="h-2 overflow-hidden rounded-full" style={{ background: "var(--surface-2)" }}>
           <div

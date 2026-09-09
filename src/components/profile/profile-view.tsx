@@ -8,6 +8,7 @@ import { ConfirmDialog } from "@/components/confirm-dialog";
 import { BackButton } from "@/components/page-back";
 import { authApi } from "@/lib/auth/api";
 import { useT, useLang } from "@/lib/i18n/client";
+import { formatNumber } from "@/lib/i18n/dict";
 import { useShell } from "@/components/app-shell";
 import { inviteText, shareInvite } from "@/lib/share";
 import {
@@ -58,8 +59,6 @@ export type ProfileStats = {
   premium: boolean;
 };
 
-const nf = new Intl.NumberFormat("tr-TR");
-
 /**
  * "1 sa 20 dk" / "45 dk" — mobil `formatDuration` ile aynı biçim ama ÇEVRİLİ.
  *
@@ -81,6 +80,7 @@ function formatDuration(
 export function ProfileView({ stats }: { stats: ProfileStats }) {
   const router = useRouter();
   const t = useT();
+  const lang = useLang();
   const [confirmOut, setConfirmOut] = useState(false);
 
   async function signOut() {
@@ -140,16 +140,16 @@ export function ProfileView({ stats }: { stats: ProfileStats }) {
               color: "var(--color-brand)",
             }}
           >
-            <SparkIcon size={16} /> {nf.format(stats.xp)} XP
+            <SparkIcon size={16} /> {formatNumber(stats.xp, lang)} XP
           </span>
         </div>
       </div>
 
       {/* dört karo — mobildeki 2×2 ızgara */}
       <div className="mb-4 grid grid-cols-2 gap-3">
-        <Stat value={nf.format(stats.mastered)} label={t("profile.words_learned")} tone="var(--color-brand)" />
+        <Stat value={formatNumber(stats.mastered, lang)} label={t("profile.words_learned")} tone="var(--color-brand)" />
         <Stat value={String(stats.streak)} label={t("profile.day_streak")} tone="var(--color-flame)" />
-        <Stat value={nf.format(stats.xp)} label={t("profile.total_xp")} tone="var(--color-mint)" />
+        <Stat value={formatNumber(stats.xp, lang)} label={t("profile.total_xp")} tone="var(--color-mint)" />
         <Stat value={formatDuration(stats.seconds, t)} label={t("profile.time_this_week")} tone="var(--color-sky)" />
       </div>
 

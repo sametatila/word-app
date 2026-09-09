@@ -6,6 +6,7 @@ import { Avatar } from "@/components/avatar";
 import { social } from "@/lib/social/client";
 import type { QuestView } from "@/lib/social/types";
 import { useT, useLang } from "@/lib/i18n/client";
+import { formatNumber, formatPercent } from "@/lib/i18n/dict";
 
 /**
  * Öğren ekranındaki tek satırlık nabız: bu haftanın ortak görevi varsa
@@ -38,7 +39,10 @@ export function FriendPulse() {
             : t("socialw.quest_with", { name: q.partner.name ?? t("social.your_friend") })}
         </p>
         {invited ? (
-          <p className="muted text-xs">Hedef birlikte {q.targetXp.toLocaleString("tr-TR")} XP · {q.invitedByMe ? "cevap bekleniyor" : "kabul et"}</p>
+          <p className="muted text-xs">
+            {t("socialw.quest_target", { xp: formatNumber(q.targetXp, lang) })} ·{" "}
+            {t(q.invitedByMe ? "socialw.quest_pending" : "socialw.quest_accept")}
+          </p>
         ) : (
           <div className="mt-1 h-2 w-full overflow-hidden rounded-full" style={{ background: "var(--surface-2)" }}>
             <div className="h-full" style={{ width: `${q.pct}%`, background: "var(--color-brand)" }} />
@@ -47,7 +51,7 @@ export function FriendPulse() {
       </div>
       {!invited ? (
         <span className="shrink-0 text-xs font-bold tabular-nums" style={{ color: "var(--color-brand)" }}>
-          {q.pct}%
+          {formatPercent(q.pct, lang)}
         </span>
       ) : null}
     </Link>
