@@ -279,6 +279,11 @@ function olc(ham0, seviye = "a1", ekIzin = []) {
   // "14th" belirteç üretirken rakam düşüyor ve geriye "th" kalıyordu; ek
   // rakamla birlikte siliniyor ki sayı, sayı olarak elensin.
   ham = ham.replace(/(\d)(st|nd|rd|th)\b/gi, "$1");
+  // E-posta adresi ve alan adı sözcük değil: "kemal@post.net" ölçüme "post"
+  // ve "net" sokuyordu ve ikisi de metnin kelime seviyesi hakkında hiçbir şey
+  // söylemiyor. Adres bütün olarak siliniyor.
+  ham = ham.replace(/\b[\w.+-]+@[\w.-]+\.[a-z]{2,}\b/gi, " ");
+  ham = ham.replace(/\bhttps?:\/\/\S+|\bwww\.\S+/gi, " ");
   for (const [re, to] of KISALTMA) ham = ham.replace(re, to);
 
   /*
