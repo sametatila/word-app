@@ -10,7 +10,7 @@ import type { Assessment, AssessLevel, AssessRequest } from "@/lib/assess-prompt
 import { AssessmentCard } from "@/components/feedback/assessment-card";
 import { firstExample } from "@/lib/example";
 import { whyFor, type Why } from "@/lib/why";
-import { useT } from "@/lib/i18n/client";
+import { useT, useLang } from "@/lib/i18n/client";
 
 type FreeRound = Extract<Round, { game: "free_sentence" }>;
 type Status = "idle" | "checking" | "done";
@@ -31,6 +31,7 @@ const SPECIAL_CHARS = ["ä", "ö", "ü", "ß"] as const;
  */
 export function FreeSentenceGame({ round, onDone }: GameProps<FreeRound>) {
   const tx = useT();
+  const lang = useLang();
   const { word, partners, level } = round;
   const [value, setValue] = useState("");
   const [status, setStatus] = useState<Status>("idle");
@@ -131,7 +132,7 @@ export function FreeSentenceGame({ round, onDone }: GameProps<FreeRound>) {
           type: result.errors[0].type,
           word,
           detail: ["spelling", "meaning"].includes(result.errors[0].type) ? result.errors[0].wrong : null,
-        })
+        }, lang)
       : null;
 
   return (

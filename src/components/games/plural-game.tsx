@@ -10,7 +10,7 @@ import { withArtikel, type GameProps } from "./types";
 import type { Round } from "@/lib/types";
 import { fx, vibrate } from "@/lib/fx";
 import { prefetchGerman, speakGerman, SpeakButton } from "@/components/speak-button";
-import { useT } from "@/lib/i18n/client";
+import { useT, useLang } from "@/lib/i18n/client";
 
 type PluralRound = Extract<Round, { game: "plural" }>;
 
@@ -28,6 +28,7 @@ type PluralRound = Extract<Round, { game: "plural" }>;
  */
 export function PluralGame({ round, onDone }: GameProps<PluralRound>) {
   const tx = useT();
+  const lang = useLang();
   const { word, answer, options } = round;
   const [picked, setPicked] = useState<string | null>(null);
   const started = useRef(Date.now());
@@ -65,7 +66,7 @@ export function PluralGame({ round, onDone }: GameProps<PluralRound>) {
     <GameShell
       label={tx("games.plural")}
       verdict={picked == null ? null : picked === answer ? "correct" : "wrong"}
-      why={picked != null && picked !== answer ? whyFor({ type: "plural", word, detail: picked, correct: answer }) : null}
+      why={picked != null && picked !== answer ? whyFor({ type: "plural", word, detail: picked, correct: answer }, lang) : null}
       feedback={
         <span className="inline-flex items-center">
           <strong>die {answer}</strong>

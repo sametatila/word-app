@@ -2,6 +2,7 @@ import { ERROR_LABEL_KEYS, type ErrorType } from "@/lib/errors";
 import { parsePluralRule, pluralOf, umlautStem } from "@/lib/german";
 import { ruleFor } from "@/lib/why-rules";
 import { confusableHint } from "@/lib/confusables";
+import { translate, localeOf, DEFAULT_NATIVE, type NativeLang } from "@/lib/i18n/dict";
 
 /**
  * "Neden" — yanlış cevabın tek cümlelik gerekçesi (plan WP-13).
@@ -44,7 +45,7 @@ export type WhyWord = {
 type ArticleRule = {
   test: (de: string) => boolean;
   artikel: "der" | "die" | "das";
-  /** Kural açıklaması, kısa. */
+  /** Kuralın SÖZLÜK ANAHTARI — metin gösterildiği yerde çevriliyor. */
   rule: string;
   /** Kuralın güveni: "hep" = istisnası yok denecek kadar az; "genelde" = çoğunluk. */
   strength: "hep" | "genelde";
@@ -62,47 +63,49 @@ const endsWith = (...suffixes: string[]) => (de: string) => {
  * (-nis, -e) "genelde" işaretli.
  */
 const ARTICLE_RULES: ArticleRule[] = [
-  { test: endsWith("chen", "lein"), artikel: "das", rule: "-chen ve -lein küçültme ekleri her zaman nötr", strength: "hep" },
-  { test: endsWith("ung", "heit", "keit", "schaft", "tät", "tion", "sion", "enz", "anz", "ie", "ik", "ur"), artikel: "die", rule: "-ung/-heit/-keit/-schaft/-tät/-tion/-ik/-ur eki her zaman dişil", strength: "hep" },
-  { test: endsWith("ismus"), artikel: "der", rule: "-ismus her zaman eril", strength: "hep" },
-  { test: endsWith("ling"), artikel: "der", rule: "-ling her zaman eril", strength: "hep" },
-  { test: endsWith("ment", "um", "tum"), artikel: "das", rule: "-ment/-um/-tum genelde nötr", strength: "genelde" },
-  { test: endsWith("erei", "ei"), artikel: "die", rule: "-ei genelde dişil", strength: "genelde" },
-  { test: endsWith("in"), artikel: "die", rule: "-in (kadın meslek/kişi) dişil", strength: "genelde" },
-  { test: endsWith("or", "ist", "ant", "ent", "ier", "eur"), artikel: "der", rule: "-or/-ist/-ant/-ent/-eur (kişi) eki eril", strength: "genelde" },
-  { test: (de) => /^ge[a-zäöüß]+e$/i.test(de), artikel: "das", rule: "Ge-…-e kalıbı (toplu ad) nötr", strength: "genelde" },
-  { test: endsWith("ma", "o"), artikel: "das", rule: "-ma/-o sonu genelde nötr", strength: "genelde" },
-  { test: endsWith("e"), artikel: "die", rule: "-e sonu büyük çoğunlukla dişil", strength: "genelde" },
-  { test: endsWith("er", "el"), artikel: "der", rule: "-er/-el sonu genelde eril", strength: "genelde" },
+  { test: endsWith("chen", "lein"), artikel: "das", rule: "artrule.chen", strength: "hep" },
+  { test: endsWith("ung", "heit", "keit", "schaft", "tät", "tion", "sion", "enz", "anz", "ie", "ik", "ur"), artikel: "die", rule: "artrule.ung", strength: "hep" },
+  { test: endsWith("ismus"), artikel: "der", rule: "artrule.ismus", strength: "hep" },
+  { test: endsWith("ling"), artikel: "der", rule: "artrule.ling", strength: "hep" },
+  { test: endsWith("ment", "um", "tum"), artikel: "das", rule: "artrule.ment", strength: "genelde" },
+  { test: endsWith("erei", "ei"), artikel: "die", rule: "artrule.ei", strength: "genelde" },
+  { test: endsWith("in"), artikel: "die", rule: "artrule.in", strength: "genelde" },
+  { test: endsWith("or", "ist", "ant", "ent", "ier", "eur"), artikel: "der", rule: "artrule.or", strength: "genelde" },
+  { test: (de) => /^ge[a-zäöüß]+e$/i.test(de), artikel: "das", rule: "artrule.ge", strength: "genelde" },
+  { test: endsWith("ma", "o"), artikel: "das", rule: "artrule.ma", strength: "genelde" },
+  { test: endsWith("e"), artikel: "die", rule: "artrule.e", strength: "genelde" },
+  { test: endsWith("er", "el"), artikel: "der", rule: "artrule.er", strength: "genelde" },
 ];
 
 export function articleRule(de: string): ArticleRule | null {
   return ARTICLE_RULES.find((r) => r.test(de)) ?? null;
 }
 
-function whyArticle(word: WhyWord, picked?: string | null): Why {
+function whyArticle(word: WhyWord, lang: NativeLang, picked?: string | null): Why {
   const href = null;
   const target = word.artikel ?? "";
   const rule = articleRule(word.de);
-  const chosen = picked && picked !== target ? `„${picked}“ değil „${target}“: ` : "";
-  if (!target) return { type: "article", text: "Bu kelimenin artikeli veride yok.", href };
+  const chosen = picked && picked !== target ? translate(lang, "why.not_but", { picked, target }) : "";
+  if (!target) return { type: "article", text: translate(lang, "why.no_article_data"), href };
   if (rule && rule.artikel === target) {
     return {
       type: "article",
-      text: `${chosen}${rule.rule} — ${target} ${word.de}.`,
+      text: `${chosen}${translate(lang, rule.rule)} — ${target} ${word.de}.`,
       href,
     };
   }
   if (rule && rule.artikel !== target) {
     return {
       type: "article",
-      text: `${chosen}istisna — ${rule.rule}, ama ${word.de} ${target} alır; kelimeyle ezberle.`,
+      text:
+        chosen +
+        translate(lang, "why.article_exception", { rule: translate(lang, rule.rule), word: word.de, artikel: target }),
       href,
     };
   }
   return {
     type: "article",
-    text: `${chosen}${word.de} için son ek kuralı yok; artikeli kelimeyle ezberle: ${target} ${word.de}.`,
+    text: chosen + translate(lang, "why.article_no_rule", { word: word.de, artikel: target }),
     href,
   };
 }
@@ -110,12 +113,12 @@ function whyArticle(word: WhyWord, picked?: string | null): Why {
 /* ───────────────────────────── çoğul ───────────────────────────── */
 
 const PLURAL_PATTERN: Record<string, string> = {
-  "": "-el/-en/-er ile biten eril ve nötr isimler çoğulda değişmez",
-  e: "-e: tek heceli eril isimlerin çoğu (der Tisch → die Tische)",
-  er: "-er: kısa nötr isimler, umlaut alabilir (das Kind → die Kinder)",
-  en: "-(e)n: dişil isimlerin büyük çoğunluğu (die Frau → die Frauen)",
-  n: "-n: -e ile biten dişil isimler (die Blume → die Blumen)",
-  s: "-s: yabancı kökenli ve sesli harfle bitenler (das Auto → die Autos)",
+  "": "plrule.none",
+  e: "plrule.e",
+  er: "plrule.er",
+  en: "plrule.en",
+  n: "plrule.n",
+  s: "plrule.s",
 };
 
 /**
@@ -126,25 +129,35 @@ const PLURAL_PATTERN: Record<string, string> = {
  * kökün karşılaştırılmasından çıkar; okunamazsa `formen` kuralı, o da yoksa
  * "ezberle".
  */
-function whyPlural(word: WhyWord, picked?: string | null, correct?: string | null): Why {
+function whyPlural(word: WhyWord, lang: NativeLang, picked?: string | null, correct?: string | null): Why {
   const href = null;
   const rule = parsePluralRule(word.formen ?? "");
   const plural = correct?.replace(/^die\s+/i, "") || pluralOf(word.de, word.formen ?? null);
   if (!plural) {
-    return { type: "plural", text: `${word.de} kelimesinin çoğulu düzenli bir kalıba uymuyor — biçimi ezberle.`, href };
+    return { type: "plural", text: translate(lang, "why.plural_irregular", { word: word.de }), href };
   }
   const umlautedStem = umlautStem(word.de);
   const hasUmlaut = umlautedStem !== word.de && plural.startsWith(umlautedStem);
   const stem = hasUmlaut ? umlautedStem : word.de;
   const suffix = plural.startsWith(stem) ? plural.slice(stem.length) : rule?.suffix ?? null;
-  const chosen = picked && picked !== plural ? `„${picked}“ değil „${plural}“: ` : "";
+  const chosen = picked && picked !== plural ? translate(lang, "why.not_but", { picked, target: plural }) : "";
+  const forms = `${word.artikel ?? ""} ${word.de} → die ${plural}`.replace(/\s+/g, " ").trim();
   if (suffix === null || !(suffix in PLURAL_PATTERN)) {
-    return { type: "plural", text: `${chosen}${word.de} düzenli bir kalıba uymuyor — ${word.artikel ?? ""} ${word.de} → die ${plural}, biçimi ezberle.`.replace(/\s+/g, " "), href };
+    return {
+      type: "plural",
+      text: chosen + translate(lang, "why.plural_no_pattern", { word: word.de, forms }),
+      href,
+    };
   }
-  const umlaut = hasUmlaut ? "umlaut + " : "";
+  const umlaut = hasUmlaut ? translate(lang, "why.umlaut_prefix") : "";
   return {
     type: "plural",
-    text: `${chosen}kalıp ${umlaut}${PLURAL_PATTERN[suffix]}; ${word.artikel ?? ""} ${word.de} → die ${plural}.`.replace(/\s+/g, " "),
+    text:
+      chosen +
+      translate(lang, "why.plural_pattern", {
+        pattern: umlaut + translate(lang, PLURAL_PATTERN[suffix]),
+        forms,
+      }),
     href,
   };
 }
@@ -191,17 +204,17 @@ export function charDiff(typed: string, target: string): { typed: DiffSeg[]; tar
 
 /** Türkçe konuşanın en sık karıştırdığı ses–harf eşleşmeleri; farkta geçen harfe göre seçilir. */
 const SPELLING_HINTS: [RegExp, string][] = [
-  [/[zZ]/, "z harfi ts okunur, s değil"],
-  [/[vV]/, "v harfi f okunur; v sesi w ile yazılır"],
-  [/ie|ei/, "ie uzun i, ei „ay“ okunur — ikinci harf sesi söyler"],
-  [/sch|ch/, "ş sesi sch, gırtlak sesi ch ile yazılır"],
-  [/ß/, "ß uzun ünlüden sonraki keskin s sesi"],
-  [/[äöü]/, "umlaut harfi anlamı değiştirir (schon ≠ schön)"],
-  [/[A-ZÄÖÜ]/, "isimler her zaman büyük harfle başlar"],
-  [/h/, "ünlüden sonraki h okunmaz, ünlüyü uzatır"],
+  [/[zZ]/, "sphint.z"],
+  [/[vV]/, "sphint.v"],
+  [/ie|ei/, "sphint.ie"],
+  [/sch|ch/, "sphint.sch"],
+  [/ß/, "sphint.ss"],
+  [/[äöü]/, "sphint.umlaut"],
+  [/[A-ZÄÖÜ]/, "sphint.caps"],
+  [/h/, "sphint.h"],
 ];
 
-function whySpelling(word: WhyWord, typed?: string | null): Why {
+function whySpelling(word: WhyWord, lang: NativeLang, typed?: string | null): Why {
   const target = word.de;
   const diff = charDiff(typed ?? "", target);
   const changed = [...diff.typed.filter((s) => s.kind !== "same"), ...diff.target.filter((s) => s.kind !== "same")]
@@ -209,7 +222,7 @@ function whySpelling(word: WhyWord, typed?: string | null): Why {
     .join("");
   const hint = SPELLING_HINTS.find(([re]) => re.test(changed))?.[1];
   // Fark şeritte harf harf çiziliyor (FeedbackLine); metin yalnız ipucu.
-  const text = hint ?? "harfleri tek tek karşılaştır";
+  const text = translate(lang, hint ?? "sphint.compare");
   return { type: "spelling", text, href: null, diff: typed ? diff : undefined };
 }
 
@@ -218,7 +231,7 @@ function whySpelling(word: WhyWord, typed?: string | null): Why {
 const W_WORDS = /^(wer|was|wo|wann|wie|warum|wohin|woher|welche[rs]?|wieso|weshalb|wem|wen|wessen)$/i;
 const SUBORDINATORS = /\b(weil|dass|wenn|ob|obwohl|damit|während|bevor|nachdem|als|sobald|falls)\b/i;
 
-function whyVerbPosition(answer?: string[] | null, tail?: string | null): Why {
+function whyVerbPosition(lang: NativeLang, answer?: string[] | null, tail?: string | null): Why {
   // Bağlantı kural parçacığından (WP-73): "weil" geçen cümle a2-nebensatz'a,
   // soru a1-wfragen'e gider — hata tipinin genel tablosundan daha isabetli.
   const rule = ruleFor("verb_position", `${(answer ?? []).join(" ")}${tail ?? ""}`);
@@ -227,28 +240,29 @@ function whyVerbPosition(answer?: string[] | null, tail?: string | null): Why {
   const first = answer?.[0]?.replace(/[^a-zäöüß]/gi, "") ?? "";
   if (SUBORDINATORS.test(sentence)) {
     const m = sentence.match(SUBORDINATORS);
-    return { type: "verb_position", text: `„${m?.[1]}“ ile başlayan yan cümlede çekimli fiil en sona gider.`, href };
+    return { type: "verb_position", text: translate(lang, "why.vpos_sub", { word: m?.[1] ?? "" }), href };
   }
   if (tail?.trim() === "?" && !W_WORDS.test(first)) {
-    return { type: "verb_position", text: "Evet/hayır sorusunda çekimli fiil cümlenin başına gelir, özne ondan sonra.", href };
+    return { type: "verb_position", text: translate(lang, "why.vpos_yesno"), href };
   }
   if (tail?.trim() === "?") {
-    return { type: "verb_position", text: "Soru kelimesinden sonra fiil ikinci sırada, özne fiilden sonra gelir.", href };
+    return { type: "verb_position", text: translate(lang, "why.vpos_wfrage"), href };
   }
   if (answer && answer.length > 1 && !/^(ich|du|er|sie|es|wir|ihr|man)$/i.test(first)) {
-    return { type: "verb_position", text: `Cümle „${answer[0]}“ ile başlayınca fiil yine ikinci sırada kalır, özne fiilden SONRA gelir.`, href };
+    return { type: "verb_position", text: translate(lang, "why.vpos_inversion", { word: answer[0] }), href };
   }
-  return { type: "verb_position", text: "Ana cümlede çekimli fiil her zaman ikinci sırada durur.", href };
+  return { type: "verb_position", text: translate(lang, "whyrule.vpos.general"), href };
 }
 
 /**
  * Kural parçacığından gerekçe (WP-73): bağlamda geçen ipucuna göre seçilen
  * kural + Almanca örnek; tabloya kuralın kendi bağlantısıyla gider.
  */
-function whyFromRule(type: ErrorType, context: string): Why {
+function whyFromRule(type: ErrorType, context: string, lang: NativeLang): Why {
   const rule = ruleFor(type, context);
-  if (!rule) return { type, text: ERROR_LABEL_KEYS[type], href: null };
-  const text = `${rule.why.charAt(0).toLocaleUpperCase("tr-TR")}${rule.why.slice(1)}: ${rule.example}`;
+  if (!rule) return { type, text: translate(lang, ERROR_LABEL_KEYS[type]), href: null };
+  const why = translate(lang, rule.why);
+  const text = `${why.charAt(0).toLocaleUpperCase(localeOf(lang))}${why.slice(1)}: ${rule.example}`;
   return { type, text, href: null };
 }
 
@@ -276,32 +290,46 @@ export type WhyInput = {
  * dönmez; kural bilinmiyorsa "ezberle" der, çünkü sessiz kalmak da bir mesaj
  * verir ("bunun açıklaması yok") ve o mesaj yanlış.
  */
-export function whyFor(input: WhyInput): Why {
+export function whyFor(input: WhyInput, lang: NativeLang = DEFAULT_NATIVE): Why {
   const w = input.word ?? null;
+  const withArt = (word: WhyWord) => `${word.artikel ? `${word.artikel} ` : ""}${word.de}`;
   switch (input.type) {
     case "article":
-      return w ? whyArticle(w, input.detail) : { type: "article", text: "Artikel kelimenin parçasıdır; kelimeyle birlikte öğren.", href: null };
+      return w
+        ? whyArticle(w, lang, input.detail)
+        : { type: "article", text: translate(lang, "whyrule.article.general"), href: null };
     case "plural":
-      return w ? whyPlural(w, input.detail, input.correct) : { type: "plural", text: "Çoğul biçimi kelimeyle birlikte öğren.", href: null };
+      return w
+        ? whyPlural(w, lang, input.detail, input.correct)
+        : { type: "plural", text: translate(lang, "why.plural_learn"), href: null };
     case "spelling":
-      return w ? whySpelling(w, input.detail) : { type: "spelling", text: "Yazımı harf harf karşılaştır.", href: null };
+      return w
+        ? whySpelling(w, lang, input.detail)
+        : { type: "spelling", text: translate(lang, "sphint.compare"), href: null };
     case "verb_position":
-      return whyVerbPosition(input.answer, input.tail);
+      return whyVerbPosition(lang, input.answer, input.tail);
     case "word_order":
     case "case":
     case "conjugation":
-      return whyFromRule(input.type, contextOf(input));
+      return whyFromRule(input.type, contextOf(input), lang);
     case "meaning": {
-      // Karıştırma çifti (WP-73): seçilen karşılık bilinen bir çiftin öbür yarısıysa ayrım cümlesi.
-      const pair = w ? confusableHint(w.de, input.detail) : null;
+      /*
+        Karıştırma çifti (WP-73): seçilen karşılık bilinen bir çiftin öbür
+        yarısıysa ayrım cümlesi. Çiftler ve ayrım cümleleri TÜRKÇE KONUŞANA
+        göre seçilmiş (bkz. lib/confusables) — hem seçim hem cümle Türkçeye
+        bağlı. Başka bir arayüz dilinde çevrilmemiş bir cümle göstermektense
+        genel açıklamaya düşülüyor; çiftlerin o diller için yeniden seçilmesi
+        ayrı bir içerik işi.
+      */
+      const pair = lang === "tr" && w ? confusableHint(w.de, input.detail) : null;
       if (pair) return { type: "meaning", text: `${pair.hint} (${pair.example})`, href: null };
       return {
         type: "meaning",
         text: w
           ? input.detail
-            ? `„${input.detail}“ başka bir kelimenin karşılığı; ${w.artikel ? `${w.artikel} ` : ""}${w.de} = ${w.tr}. İkisini yan yana bir daha oku.`
-            : `${w.artikel ? `${w.artikel} ` : ""}${w.de} = ${w.tr}.`
-          : "Anlamı karıştırdın; iki kelimeyi yan yana bir daha oku.",
+            ? translate(lang, "why.meaning_wrong_pick", { picked: input.detail, word: withArt(w), meaning: w.tr })
+            : `${withArt(w)} = ${w.tr}.`
+          : translate(lang, "whyrule.meaning.general"),
         href: null,
       };
     }
@@ -309,20 +337,26 @@ export function whyFor(input: WhyInput): Why {
       return {
         type: "listening",
         text: w
-          ? `Duyduğun kelime ${w.artikel ? `${w.artikel} ` : ""}${w.de} (${w.tr})${input.detail ? `; „${input.detail}“ başka bir kelime` : ""}. Bir kez daha dinle ve yazımına bak.`
-          : "Bir kez daha dinle ve yazımına bak.",
+          ? translate(lang, input.detail ? "why.listening_with_pick" : "why.listening", {
+              word: withArt(w),
+              meaning: w.tr,
+              picked: input.detail ?? "",
+            })
+          : translate(lang, "whyrule.listening.general"),
         href: null,
       };
     case "pronunciation":
       return {
         type: "pronunciation",
-        text: w ? `Söylediğin başka bir kelimeye kaydı; hedef: ${w.de}. Vurgu ilk hecede, z = ts, w = v.` : "Söylediğin başka bir kelimeye kaydı.",
+        text: w
+          ? translate(lang, "why.pronunciation", { word: w.de })
+          : translate(lang, "why.pronunciation_general"),
         href: null,
       };
   }
 }
 
 /** Şeritteki etiket metni. */
-export function whyLabel(type: ErrorType): string {
-  return ERROR_LABEL_KEYS[type];
+export function whyLabel(type: ErrorType, lang: NativeLang = DEFAULT_NATIVE): string {
+  return translate(lang, ERROR_LABEL_KEYS[type]);
 }

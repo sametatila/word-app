@@ -12,7 +12,7 @@ import { matchSentence, VERDICT_KEYS, type SentenceMatch } from "@/lib/sentence-
 import { askAssess } from "@/lib/assess-client";
 import { whyFor, type Why } from "@/lib/why";
 import { TokenDiff, TypedTokens } from "@/components/feedback/diff-text";
-import { useT } from "@/lib/i18n/client";
+import { useT, useLang } from "@/lib/i18n/client";
 
 type TranslateRound = Extract<Round, { game: "translate" }>;
 type Status = "idle" | "checking" | "correct" | "wrong";
@@ -45,6 +45,7 @@ const ASSESS_ACCEPT = 75;
  */
 export function TranslateGame({ round, onDone }: GameProps<TranslateRound>) {
   const tx = useT();
+  const lang = useLang();
   // Sınav kâğıdında ipucu düğmesi yok (bkz. no-hints.tsx).
   const noHints = useNoHints();
   const { word, sentence, alternatives } = round;
@@ -150,7 +151,7 @@ export function TranslateGame({ round, onDone }: GameProps<TranslateRound>) {
           detail: result.errorType === "meaning" ? null : value.trim().slice(0, 60),
           answer: targetWords,
           tail: sentence.de.match(/[.!?…]+$/)?.[0] ?? ".",
-        })
+        }, lang)
       : null;
 
   return (

@@ -12,7 +12,7 @@ import { seededShuffle } from "@/lib/shuffle";
 import type { Round } from "@/lib/types";
 import { fx, vibrate } from "@/lib/fx";
 import { prefetchGerman, SpeakButton } from "@/components/speak-button";
-import { useT } from "@/lib/i18n/client";
+import { useT, useLang } from "@/lib/i18n/client";
 
 type ScrambleRound = Extract<Round, { game: "scramble" }>;
 type Status = "playing" | "correct" | "wrong";
@@ -43,6 +43,7 @@ function makePool(word: string, seed: string): Tile[] {
  */
 export function ScrambleGame({ round, onDone }: GameProps<ScrambleRound>) {
   const tx = useT();
+  const lang = useLang();
   // Sınav kâğıdında ipucu düğmesi yok (bkz. no-hints.tsx).
   const noHints = useNoHints();
   const { word } = round;
@@ -157,7 +158,7 @@ export function ScrambleGame({ round, onDone }: GameProps<ScrambleRound>) {
     <GameShell
       label={tx("games.scramble")}
       verdict={status === "playing" ? null : status}
-      why={status === "wrong" ? whyFor({ type: "spelling", word, detail: placed.map((t) => t.char).join("") }) : null}
+      why={status === "wrong" ? whyFor({ type: "spelling", word, detail: placed.map((t) => t.char).join("") }, lang) : null}
       feedback={
         <span className="inline-flex items-center">
           {tx(status === "correct" ? "rounds.great" : "rounds.answer_is")}

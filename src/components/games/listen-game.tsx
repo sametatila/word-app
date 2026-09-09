@@ -13,7 +13,7 @@ import { speakGerman, useSpeechAvailable } from "@/components/speak-button";
 import { SpeakerIcon } from "@/components/icons";
 import { firstExample } from "@/lib/example";
 import { roundHoldRemaining } from "@/lib/mascot-hold";
-import { useT } from "@/lib/i18n/client";
+import { useT, useLang } from "@/lib/i18n/client";
 
 type ListenRound = Extract<Round, { game: "listen" }>;
 
@@ -30,6 +30,7 @@ type ListenRound = Extract<Round, { game: "listen" }>;
  */
 export function ListenGame({ round, onDone }: GameProps<ListenRound>) {
   const tx = useT();
+  const lang = useLang();
   const { word, options } = round;
   const spoken = withArtikel(word);
   const speechAvailable = useSpeechAvailable();
@@ -81,7 +82,7 @@ export function ListenGame({ round, onDone }: GameProps<ListenRound>) {
     <GameShell
       label={tx("games.listen")}
       verdict={picked == null ? null : picked === word.tr ? "correct" : "wrong"}
-      why={picked != null && picked !== word.tr ? whyFor({ type: "listening", word, detail: picked }) : null}
+      why={picked != null && picked !== word.tr ? whyFor({ type: "listening", word, detail: picked }, lang) : null}
       feedback={
         // Bu oyunda öğrenilen şey sesin YAZIMI: şeritte duyulan kelime
         // yazıyla duruyor. Örnek cümle şeride girmiyor, kendi yerinde kalıyor

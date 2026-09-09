@@ -12,12 +12,13 @@ import { MeaningText } from "@/components/meaning-text";
 import { fx, vibrate } from "@/lib/fx";
 import { prefetchGerman, speakGerman } from "@/components/speak-button";
 import { CheckIcon, XIcon } from "@/components/icons";
-import { useT } from "@/lib/i18n/client";
+import { useT, useLang } from "@/lib/i18n/client";
 
 type ChoiceRound = Extract<Round, { game: "choice" }>;
 
 export function ChoiceGame({ round, onDone }: GameProps<ChoiceRound>) {
   const tx = useT();
+  const lang = useLang();
   const { word, options, direction } = round;
   const deSide = direction === "de-tr";
   const question = deSide ? withArtikel(word) : word.tr;
@@ -79,7 +80,7 @@ export function ChoiceGame({ round, onDone }: GameProps<ChoiceRound>) {
       /* Bu oyunda çekme koreografisi hiç yok — karışık turda da tek oyun modunda da. */
       pull={false}
       verdict={picked == null ? null : picked === answer ? "correct" : "wrong"}
-      why={picked != null && picked !== answer ? whyFor({ type: "meaning", word, detail: picked }) : null}
+      why={picked != null && picked !== answer ? whyFor({ type: "meaning", word, detail: picked }, lang) : null}
       feedback={
         // Şerit doğruda da doluyor: cevabı görmek kadar onu bir kez daha
         // okumak da turun işi. Yanlışta düzeltme, doğruda pekiştirme.

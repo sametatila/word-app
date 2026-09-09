@@ -4,6 +4,7 @@ import Link from "next/link";
 import { track } from "@/lib/track";
 import { whyLabel, type Why } from "@/lib/why";
 import { CharDiff } from "@/components/feedback/diff-text";
+import { useLang } from "@/lib/i18n/client";
 
 /**
  * "Neden" satırı (plan WP-13/61): [hata etiketi] [gerekçe] [Kural ↗].
@@ -18,13 +19,14 @@ import { CharDiff } from "@/components/feedback/diff-text";
  * kurcaladığı KPI'da izleniyor.
  */
 export function FeedbackLine({ why, compact = false }: { why: Why; compact?: boolean }) {
+  const lang = useLang();
   return (
     <span className={`${compact ? "text-xs" : "text-sm"} block font-normal leading-snug opacity-90`}>
       <span
         className="mr-1.5 inline-block rounded-md px-1.5 py-px text-[10px] font-bold uppercase tracking-wide"
         style={{ background: "color-mix(in srgb, currentColor 14%, transparent)" }}
       >
-        {whyLabel(why.type)}
+        {whyLabel(why.type, lang)}
       </span>
       {why.diff ? (
         <>

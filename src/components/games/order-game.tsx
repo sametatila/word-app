@@ -12,7 +12,7 @@ import type { Round } from "@/lib/types";
 import { SentenceTranslation } from "@/components/meaning-text";
 import { fx, vibrate } from "@/lib/fx";
 import { prefetchGerman, speakGerman, SpeakButton } from "@/components/speak-button";
-import { useT } from "@/lib/i18n/client";
+import { useT, useLang } from "@/lib/i18n/client";
 
 type OrderRound = Extract<Round, { game: "order" }>;
 type Status = "playing" | "correct" | "wrong";
@@ -33,6 +33,7 @@ type Token = { id: number; text: string };
  */
 export function OrderGame({ round, onDone }: GameProps<OrderRound>) {
   const tx = useT();
+  const lang = useLang();
   // Sınav kâğıdında ipucu düğmesi yok (bkz. no-hints.tsx).
   const noHints = useNoHints();
   const { word, tokens, answer, tail, sentenceTr, sentenceEn } = round;
@@ -150,7 +151,7 @@ export function OrderGame({ round, onDone }: GameProps<OrderRound>) {
               word,
               answer,
               tail,
-            })
+            }, lang)
           : null
       }
       feedback={

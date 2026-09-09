@@ -154,7 +154,7 @@ export function TypingGame({ round, onDone }: GameProps<TypingRound>) {
               type: classifyTyping(value, [word.de, ...(round.alternatives ?? [])]),
               word,
               detail: value,
-            })
+            }, lang)
           : null
       }
       feedback={

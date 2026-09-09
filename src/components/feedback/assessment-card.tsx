@@ -5,7 +5,7 @@ import { ASSESS_FAILURE_KEYS, type AssessFailure, type FallbackAssessment } from
 import type { Assessment } from "@/lib/assess-prompts";
 import { ERROR_LABEL_KEYS } from "@/lib/errors";
 import { whyLabel } from "@/lib/why";
-import { useT } from "@/lib/i18n/client";
+import { useT, useLang } from "@/lib/i18n/client";
 
 /**
  * Değerlendirme kartı (WP-12; WP-30 yazma ile ortak).
@@ -135,6 +135,7 @@ function Bar({ label, value, muted = false }: { label: string; value: number; mu
 /** Metinde hata aralıklarını vurgular; çakışan/boş span'ler atlanır. */
 function Highlighted({ answer, errors }: { answer: string; errors: Assessment["errors"] }) {
   const t = useT();
+  const lang = useLang();
   const spans = errors
     .filter((e) => e.span[1] > e.span[0] && e.span[1] <= answer.length)
     .sort((a, b) => a.span[0] - b.span[0]);
@@ -146,7 +147,7 @@ function Highlighted({ answer, errors }: { answer: string; errors: Assessment["e
     out.push(
       <mark
         key={`${e.span[0]}-${e.span[1]}`}
-        title={`${ERROR_LABEL_KEYS[e.type] ? t(ERROR_LABEL_KEYS[e.type]) : whyLabel(e.type)}: ${e.fix}`}
+        title={`${ERROR_LABEL_KEYS[e.type] ? t(ERROR_LABEL_KEYS[e.type]) : whyLabel(e.type, lang)}: ${e.fix}`}
         className="rounded px-0.5 underline decoration-2 underline-offset-2"
         style={{ background: "color-mix(in srgb, var(--color-rose) 18%, transparent)", color: "inherit" }}
       >

@@ -9,6 +9,7 @@ import { matchSentence } from "@/lib/sentence-match";
 import { charDiff, whyFor } from "@/lib/why";
 import type { Assessment } from "@/lib/assess-prompts";
 import { fallbackAssessment } from "@/lib/assess-client";
+import { useLang } from "@/lib/i18n/client";
 
 /**
  * Geri bildirim hikâye sayfası (WP-61) — `demo-games` deseninde, yalnız
@@ -32,6 +33,7 @@ const SAMPLE: Assessment = {
 const SAMPLE_ANSWER = "Ich trinke ein Kaffee mit mein Freund.";
 
 export default function DemoFeedback() {
+  const lang = useLang();
   const fb = fallbackAssessment({
     kind: "sentence",
     level: "A1",
@@ -52,7 +54,7 @@ export default function DemoFeedback() {
                   detail: type === "spelling" ? "Wonung" : type === "article" ? "der" : type === "plural" ? "Wohnungs" : "köpek",
                   answer: T.replace(".", "").split(" "),
                   tail: ".",
-                })}
+                }, lang)}
               />
             </li>
           ))}

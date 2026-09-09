@@ -11,7 +11,7 @@ import type { Round } from "@/lib/types";
 import { SentenceTranslation } from "@/components/meaning-text";
 import { fx, vibrate } from "@/lib/fx";
 import { prefetchGerman } from "@/components/speak-button";
-import { useT } from "@/lib/i18n/client";
+import { useT, useLang } from "@/lib/i18n/client";
 
 /**
  * Yanlış cevaptan sonra doğruyu okumaya geçmeden önceki okuma payı.
@@ -25,6 +25,7 @@ type ClozeRound = Extract<Round, { game: "cloze" }>;
 
 export function ClozeGame({ round, onDone }: GameProps<ClozeRound>) {
   const tx = useT();
+  const lang = useLang();
   const { word, sentence, sentenceTr, sentenceEn, answer, options } = round;
   const [before, after] = sentence.split("_____");
   const typeMode = round.mode === "type";
@@ -94,7 +95,7 @@ export function ClozeGame({ round, onDone }: GameProps<ClozeRound>) {
       verdict={picked == null ? null : correct ? "correct" : "wrong"}
       why={
         picked != null && !correct
-          ? whyFor({ type: typeMode ? classifyTyping(picked, [answer]) : "meaning", word: { ...word, de: answer }, detail: picked })
+          ? whyFor({ type: typeMode ? classifyTyping(picked, [answer]) : "meaning", word: { ...word, de: answer }, detail: picked }, lang)
           : null
       }
       feedback={

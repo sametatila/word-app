@@ -12,7 +12,7 @@ import { MeaningText } from "@/components/meaning-text";
 import { fx } from "@/lib/fx";
 import { CheckIcon, XIcon } from "@/components/icons";
 import { speakGerman, SpeakButton } from "@/components/speak-button";
-import { useT } from "@/lib/i18n/client";
+import { useT, useLang } from "@/lib/i18n/client";
 
 type TrueFalseRound = Extract<Round, { game: "truefalse" }>;
 
@@ -30,6 +30,7 @@ type TrueFalseRound = Extract<Round, { game: "truefalse" }>;
  */
 export function TrueFalseGame({ round, onDone }: GameProps<TrueFalseRound>) {
   const tx = useT();
+  const lang = useLang();
   const { word, claim, isTrue } = round;
   const [answered, setAnswered] = useState<boolean | null>(null);
   const started = useRef(Date.now());
@@ -63,7 +64,7 @@ export function TrueFalseGame({ round, onDone }: GameProps<TrueFalseRound>) {
       label={tx("games.truefalse")}
       prompt={<span className="muted text-base">{tx("rounds.is_match_right")}</span>}
       verdict={!settled ? null : wasRight ? "correct" : "wrong"}
-      why={settled && !wasRight ? whyFor({ type: "meaning", word, detail: isTrue ? null : claim.text }) : null}
+      why={settled && !wasRight ? whyFor({ type: "meaning", word, detail: isTrue ? null : claim.text }, lang) : null}
       feedback={
         <span>
           {withArtikel(word)} ={" "}
