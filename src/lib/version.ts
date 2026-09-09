@@ -1,9 +1,15 @@
 /**
- * Uygulama sürümü — `package.json` ile tek kaynak.
+ * Uygulama sürümü — `package.json` TEK KAYNAK; web ve mobil aynı numarayı gösterir.
  *
- * Mobil tarafın karşılığı `M/src/version.ts` ve o, `build.gradle` ile elle
- * eşitleniyor. Web'de böyle bir el işi gerekmiyor: sürüm zaten paket
- * tanımında ve derleme sırasında buraya geliyor.
+ * Eskiden iki ayrı hat vardı: web buradan okuyup kendi başına ilerliyordu, mobil
+ * üç dosyada elle tutuluyordu. İkisi de Ayarlar'ın dibinde "Lernomi <n>" yazıyor
+ * ve o satırın tek işi, destek isteyen kullanıcının söyleyebileceği şey olmak —
+ * ama web 1.0.5, mobil 1.0.0 diyordu. Aynı ürün, iki numara.
+ *
+ * Artık numara ürünün MAĞAZA sürümü: `package.json` → `scripts/version.mjs` →
+ * mobilin üç dosyası. Web dağıtımları numarayı artırmaz; artıran şey yeni bir
+ * mağaza yüklemesidir. `npm run version:check` dördünün aynı kaldığını CI'da
+ * doğruluyor.
  */
 import pkg from "../../package.json" with { type: "json" };
 

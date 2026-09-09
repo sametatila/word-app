@@ -42,19 +42,41 @@ için, üretildiği gün commit edilir (Android'de karşılığı `gradle-wrappe
 Bu makinede (Linux) iOS derlenemez. `ios/` altındaki her şey **derlenmemiş kod**
 sayılır; iddia listesi ve cihazda sınanacaklar `docs/plan/ios-parity.md` §5'te.
 
-## Sürüm: ÜÇ kaynak, elle eşitlenir
+## Sürüm: tek kaynak, üç hedef, bir kapı
 
-Sürüm numarası üç ayrı yerde yazılı ve **hiçbir betik onları eşitlemiyor** — yeni
-sürümde üçü birden elle artar:
+Sürüm **depo kökündeki `package.json`**'da yazılı ve başka hiçbir yerde elle
+tutulmuyor:
 
-| Kaynak | Alanlar |
+```json
+"version": "1.0.0",     // kullanıcıya görünen semver (mağaza sayfası, Ayarlar)
+"versionCode": 1,       // yalnız Android/iOS; MONOTON artar, tekrar edemez
+```
+
+Oradan üç hedefe `scripts/version.mjs` basıyor:
+
+| Hedef | Alanlar |
 |---|---|
-| `src/version.ts` | `APP_VERSION`, `APP_VERSION_CODE` |
+| `mobile/src/version.ts` | `APP_VERSION`, `APP_VERSION_CODE` — **üretilen dosya** |
 | `android/app/build.gradle` | `versionName`, `versionCode` |
-| `ios/Lernomi.xcodeproj/project.pbxproj` | `MARKETING_VERSION`, `CURRENT_PROJECT_VERSION` |
+| `ios/Lernomi.xcodeproj/project.pbxproj` | `MARKETING_VERSION`, `CURRENT_PROJECT_VERSION` (ikişer yerde) |
 
-`src/version.ts` native modül eklememek için sabit tutuluyor (device-info yok).
-Biri geride kalırsa uygulama kendini yanlış sürüm sanır; iOS uzun süre böyle sarktı.
+```sh
+npm run version:check        # dördü aynı mı (CI kapısı; release:check ve ios:check de bunu çağırır)
+npm run version:write        # kaynağı hedeflere bas
+npm run version:set -- 1.0.1 # yeni semver — versionCode da artar
+npm run version:bump-code    # aynı semver, yeni Play yüklemesi
+```
+
+**İki sayı, iki iş.** `version` ürünün numarası; web ve mobil aynı numarayı
+gösterir ve web dağıtımları onu artırmaz. `versionCode` yalnız mağaza için ve her
+yükleme yenisini ister — Play aynı kodu ikinci kez kabul etmiyor, dolayısıyla
+kapalı testte `1.0.0`ın onuncu yüklemesi bile yeni bir kod demek. Bu yüzden
+versionCode semver'den türetilmiyor, ayrı bir sayaç.
+
+Eskiden üçü elle eşitleniyordu ve web dördüncü kaynak olarak kendi başına
+ilerliyordu. Sonuç: aynı ekranın aynı yerinde web `Lernomi 1.0.5`, mobil
+`Lernomi 1.0.0` yazıyordu. Denetimler de bunu görmüyordu, çünkü her biri yalnız
+kendi üç dosyasına bakıyordu.
 
 ## patch-package
 

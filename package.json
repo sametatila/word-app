@@ -1,6 +1,7 @@
 {
   "name": "lernomi",
-  "version": "1.0.5",
+  "version": "1.0.0",
+  "versionCode": 1,
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -8,6 +9,10 @@
     "start": "next start",
     "lint": "eslint . --max-warnings 221",
     "typecheck:scripts": "tsc --noEmit -p scripts/tsconfig.e2e.json",
+    "version:check": "node scripts/version.mjs",
+    "version:write": "node scripts/version.mjs --write",
+    "version:set": "node scripts/version.mjs --set",
+    "version:bump-code": "node scripts/version.mjs --bump-code",
     "db:push": "drizzle-kit push",
     "db:generate": "drizzle-kit generate",
     "db:migrate": "tsx scripts/apply-migration.ts",
