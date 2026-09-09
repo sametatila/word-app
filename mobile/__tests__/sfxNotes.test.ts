@@ -56,7 +56,7 @@ describe("SFX nota tablosu iki native kopyada da aynı", () => {
     // Eksik bir tür `default`/`else` dalına düşer ve sessizce "tap" sesi çalar:
     // yanlış ses, hata değil. Sayının kendisi de kilitli ki kopyalar birbirinden
     // habersiz büyümesin.
-    expect(TURLER.length).toBe(6);
+    expect(TURLER.length).toBe(7);
     for (const tur of TURLER) {
       expect(kotlin).toContain(`"${tur}" -> listOf(`);
       expect(swift).toContain(`case "${tur}":`);

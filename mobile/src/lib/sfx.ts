@@ -43,7 +43,7 @@ function preload(name: string): void {
 }
 
 // Modül açılışında önden yükle.
-(["correct", "wrong", "tap", "micon", "micoff", "finish"] as const).forEach(preload);
+(["correct", "wrong", "tap", "micon", "micoff", "finish", "premium"] as const).forEach(preload);
 
 // Ekran-kapalı: WebView köprüsü askıya alınıp sustuğu için native res/raw'a düş (arka planda çalar).
 let screenOffMode = false;
@@ -68,6 +68,10 @@ function playNow(kind: SfxKind): void {
     s.stop(() => { s.setVolume(kind === "tap" ? 0.4 : 0.85); s.play(); });
   } catch { /* yut */ }
 }
+
+/** Bir sesin süresi (ms) — nota tablosundan türer, sabit yazılmaz. Jingle'dan sonra
+ *  konuşmayı başlatan yer bunu kullanıyor (WalkModeScreen, premium bilgilendirmesi). */
+export function sfxDurationMs(kind: SfxKind): number { return SFX_DUR[kind] ?? 300; }
 
 let lastKind = "";
 let lastAt = 0;

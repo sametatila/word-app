@@ -23,7 +23,7 @@ import { ensureMicPermission, listenOnce, stopListening, setKeepAwake, azureList
 import { currentTargetLocale } from "../lib/courses";
 import { API_BASE } from "../api/client";
 import { spokenMatches, parseSkip, encourage, parseConfirm } from "../lib/voiceMatch";
-import { sfx, setSfxScreenOff } from "../lib/sfx";
+import { sfx, setSfxScreenOff, sfxDurationMs } from "../lib/sfx";
 import { haptic } from "../lib/haptics";
 import { useTheme, spacing, radii, softShadow } from "../theme";
 import { ConfirmDialog } from "../ui/ConfirmDialog";
@@ -221,7 +221,14 @@ export function WalkModeScreen() {
         // çalıyorsa dokunmuyordu — köprü hazır değilken sayNative zaten native
         // yola düşüyor. Sonuç: bilgilendirme, süren cümlenin ÜSTÜNE biniyordu.
         stopServerTts();
-        void sayNative(tx(billingAvailable() ? "walkmode.screen_off_premium_upgrade" : "walkmode.screen_off_premium"));
+        // Jingle ÖNCE, söz sonra. Kullanıcı telefonu cebine koymuş ve ekranı
+        // kapatmış; araya giren bir cümlenin önce kendini duyurması gerekiyor.
+        // Bekleme süresi nota tablosundan türüyor (`sfxDurationMs`), sabit
+        // yazılmıyor: jingle değişirse söz kendiliğinden ona göre kayar.
+        sfx("premium");
+        void nativeDelay(sfxDurationMs("premium")).then(() =>
+          sayNative(tx(billingAvailable() ? "walkmode.screen_off_premium_upgrade" : "walkmode.screen_off_premium")),
+        );
       }
     });
     return () => { unsub(); stopWalkService(); };

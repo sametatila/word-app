@@ -14,7 +14,7 @@
  *  lp: alçak geçiren kesim Hz (0 yok; Q 0.707) — attack: saniye
  *  hold 0: pluck (peak'ten dur sonunda 0.0001'e üstel iniş) · 1: peak'te tut, son `release` saniyede in
  */
-export type SfxKind = "correct" | "wrong" | "tap" | "micon" | "micoff" | "finish";
+export type SfxKind = "correct" | "wrong" | "tap" | "micon" | "micoff" | "finish" | "premium";
 
 /** Ana kazanç — tüm yollarda aynı (köprü, native, mp3). */
 export const SFX_MASTER = 0.8;
@@ -79,6 +79,23 @@ export const SFX_NOTES: Record<SfxKind, number[][]> = {
     [1318.51, 0.92, 0.8, 0.1, 0, 0, 0, 0.004, 0, 0],
     [261.63, 0.92, 0.8, 0.07, 1, 0, 1400, 0.03, 1, 0.4],
     [392.0, 0.92, 0.8, 0.07, 1, 0, 1400, 0.03, 1, 0.4],
+  ],
+  // Premium jingle: yürüyüş modunda ekran kapalı yol premium'a kapalıyken, sesli
+  // bilgilendirmenin ÖNÜNDE çalıyor. Görevi kesmek değil hazırlamak — kullanıcı
+  // telefonu cebinde, konuşmanın geldiğini önce bu haber veriyor.
+  //
+  // Ailenin geri kalanından BİLEREK ayrı duruyor: ötekiler ksilofon vuruşu (kısa
+  // atak + filtreli kare "ping"), bu ise açılan bir zemin. Önce C4+G4 üçgen pad
+  // giriyor, motif (Do–Sol–Do) onun üstüne yavaş atakla biniyor; kare katman
+  // yalnız tek bir noktada ve çok kısık — ksilofon izi kalsın ama öne çıkmasın.
+  // ~1,05 sn: sözden önce duyulacak kadar uzun, beklemeye dönüşmeyecek kadar kısa.
+  premium: [
+    [261.63, 0.0, 1.05, 0.1, 1, 0, 1100, 0.09, 1, 0.55],
+    [392.0, 0.0, 1.05, 0.08, 1, 0, 1100, 0.09, 1, 0.55],
+    [523.25, 0.1, 0.34, 0.13, 0, 0, 0, 0.03, 0, 0],
+    [783.99, 0.24, 0.34, 0.12, 0, 0, 0, 0.03, 0, 0],
+    [1046.5, 0.38, 0.46, 0.12, 0, 0, 0, 0.035, 0, 0],
+    [1046.5, 0.38, 0.3, 0.025, 2, 0, 1200, 0.02, 0, 0],
   ],
   // Kısa dokunuş blip'i (scramble/order karo yerleştirme).
   tap: [
