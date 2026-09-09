@@ -18,7 +18,7 @@ import {
   CheckIcon,
 } from "@/components/icons";
 import { getT, getLang } from "@/lib/i18n/server";
-import { courseName } from "@/lib/courses";
+import { courseName, courseSub, coursesForNative } from "@/lib/courses";
 import { legalPath } from "@/lib/legal";
 
 /* Adlar oyunların kendi anahtarlarından: tanıtım sayfası ile turun içi aynı
@@ -36,10 +36,21 @@ const GAMES = [
   { Icon: CheckIcon, name: "games.truefalse", desc: "land.game_truefalse" },
 ];
 
-const COURSES = [
-  { id: "de", body: "land.course_de" },
-  { id: "gsw-zh", body: "land.course_gsw" },
-];
+/*
+  Vitrin kursları da KAYIT DEFTERİNDEN ve ziyaretçinin diline göre süzülüyor.
+  Liste elle yazılıydı; İngilizce kursu tanıtımda hiç görünmüyordu ve alt
+  başlık `c.id === "de" ? "Hochdeutsch" : "Züritüütsch"` üçlüsüyle
+  üretiliyordu — kayıt defterinin tam olarak uyardığı desen: üçüncü bir kurs
+  sessizce Züritüütsch etiketi alırdı.
+
+  Alamayacağı bir kursu ziyaretçiye tanıtmıyoruz: arayüzü Almanca olan biri
+  Almanca kursunu göremez, çünkü seçemez de.
+*/
+const COURSE_BODY: Record<string, string> = {
+  de: "land.course_de",
+  "gsw-zh": "land.course_gsw",
+  en: "land.course_en",
+};
 
 const FEATURES = [
   { title: "land.f_srs_title", body: "land.f_srs_body" },
@@ -128,16 +139,16 @@ export default async function Home() {
         </section>
 
         <section className="mb-12 grid gap-4 sm:grid-cols-2">
-          {COURSES.map((c, i) => (
+          {coursesForNative(lang).map((c, i) => (
             <Reveal key={c.id} delay={i * 0.08}>
               <div className="card h-full p-6">
                 <div className="flex items-baseline gap-2">
                   <h3 className="text-lg font-bold">{courseName(c.id, lang)}</h3>
                   <span className="text-xs font-semibold text-[color:var(--color-brand)]">
-                    {c.id === "de" ? "Hochdeutsch" : "Züritüütsch"}
+                    {courseSub(c.id, lang)}
                   </span>
                 </div>
-                <p className="muted mt-2 text-sm leading-relaxed">{t(c.body)}</p>
+                <p className="muted mt-2 text-sm leading-relaxed">{t(COURSE_BODY[c.id] ?? "land.course_de")}</p>
               </div>
             </Reveal>
           ))}

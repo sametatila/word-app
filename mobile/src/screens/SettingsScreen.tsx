@@ -17,7 +17,7 @@ import { VoicePicker } from "../ui/VoicePicker";
 import { SkeletonLine } from "../ui/Skeleton";
 import { loadVoicePref, setVoicePref } from "../lib/tts";
 import { defaultVoice, type VoiceId } from "../lib/voices";
-import { coursesForNative, NATIVE_LANGS, type NativeLang } from "../lib/courses";
+import { coursesForNative, offeredNativeLangs, type NativeLang } from "../lib/courses";
 import { currentLang, setLang } from "../lib/i18n";
 import { useTheme, spacing, radii, softShadow, type Palette, type ThemeMode } from "../theme";
 import { analyticsEnabled, setAnalyticsEnabled } from "../lib/track";
@@ -227,7 +227,7 @@ export function SettingsScreen() {
         <Group title={t("settings.group_app")} colors={colors} />
         <Section title={t("settings.app_language")} colors={colors}>
           <View style={{ flexDirection: "row", flexWrap: "wrap", gap: spacing.sm }}>
-            {NATIVE_LANGS.map((l) => (
+            {offeredNativeLangs().map((l) => (
               <Chip
                 key={l}
                 label={LANG_LABEL[l]}

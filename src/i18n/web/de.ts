@@ -158,7 +158,6 @@ export const deWeb: Record<string, string> = {
   "words.progress_summary": "{mastered} gefestigt · {seen} gesehen · {due} fällig",
   "settings.account": "KONTO",
   "settings.app": "APP",
-  "settings.session": "SITZUNG",
   "settings.daily_goal_short": "Tägliches Wiederholungsziel",
   "settings.new_per_day": "Neue Wörter pro Tag",
   "settings.reviews_unit": "Wiederholungen",
@@ -166,7 +165,6 @@ export const deWeb: Record<string, string> = {
   "settings.saving": "Wird gespeichert…",
   "settings.privacy_and_terms": "Datenschutz und Bedingungen",
   "settings.privacy_and_terms_sub": "Welche Daten wir warum verarbeiten, deine Rechte",
-  "settings.account_row": "Konto",
   "settings.add_to_home": "Zum Startbildschirm",
   "settings.add_to_home_hint": "Vollbild, offline",
   "level.a2_desc": "Ich kann einfache Alltagssprache",
@@ -184,10 +182,6 @@ export const deWeb: Record<string, string> = {
   "voice.en_us_guyneural.note": "Ruhiger, voller amerikanischer Akzent",
   "settings.srs_note": "Die Wiederholungszeiten ergeben sich daraus, wie schnell und wie richtig du antwortest.",
   "settings.course_switch_note": "Deine Wörter und die Wiederholungsliste wechseln in den neuen Kurs. Der andere Kurs wird nicht gelöscht.",
-  "settings.signing_out": "Wird abgemeldet…",
-  "settings.account_sub": "Angemeldet als {name} · dein Fortschritt gleicht sich auf allen Geräten ab",
-  "settings.demo_mode": "Demo-Modus",
-  "settings.demo_mode_sub": "Anmeldung und Geräte-Abgleich schalten sich von selbst ein, sobald die Zugangsschlüssel gesetzt sind.",
   /* Kelime turu — bkz. tr.ts notu. */
   "session.preparing": "Deine heutige Runde wird vorbereitet…",
   "session.lets_go": "Los geht's",
@@ -638,6 +632,7 @@ export const deWeb: Record<string, string> = {
   "land.cta_skills": "Lesen · Hören · Schreiben",
   "land.course_de": "7.392 nach Themen aufbereitete Wörter für GER A1–C1; jedes mit Artikel, Plural, Beispielsatz und dessen Übersetzung.",
   "land.course_gsw": "Die ganze Liste im Zürcher Dialekt: 7.392 Einträge, die Artikel de/d/s, Zürcher Beispielsätze und zu jedem Wort eine Hochdeutsch-Brücke. Die Sprache, die man in der Schweiz täglich hört.",
+  "land.course_en": "Lesen, Hören, Schreiben und Sprechen im Prüfungsformat; Wortschatz von A1 bis C1.",
   "land.f_srs_title": "Die Wiederholung planst nicht du",
   "land.f_srs_body": "Es gibt keinen eigenen „Wiederholen“-Bereich. Tempo und Treffsicherheit jeder Antwort werden gemessen, und ein Wort kommt im Spiel zurück, kurz bevor du es vergisst.",
   "land.f_skills_title": "Lesen, Hören, Schreiben",
@@ -745,6 +740,7 @@ export const deWeb: Record<string, string> = {
   "socialw.in_a_week": "In einer Woche",
   "onb.course_de": "Wortschatz für GER A1–C1, dazu Lesen, Hören und Schreiben im Prüfungsformat.",
   "onb.course_gsw": "Der Zürcher Dialekt: die gesprochene Alltagssprache, mit Hochdeutsch-Brücke.",
+  "onb.course_en": "Wortschatz für GER A1–C1, dazu Lesen, Hören und Schreiben im Prüfungsformat.",
   "onb.goal_work": "Beruf",
   "onb.goal_work_desc": "Meetings, E-Mails, Gespräche — bei der Arbeit sicher sein.",
   "onb.goal_daily": "Alltag",
@@ -1077,11 +1073,10 @@ export const deWeb: Record<string, string> = {
   "theme.appearance": "Darstellung",
   "theme.to_light": "Zum hellen Design wechseln",
   "theme.to_dark": "Zum dunklen Design wechseln",
-  "lang.app_language": "App-Sprache",
-  "lang.app_language_sub": "Erklärungen und Oberfläche sind in dieser Sprache",
+  "lang.app_language": "Meine Sprache",
+  "lang.app_language_sub": "Oberfläche, Erklärungen und Wortbedeutungen sind in dieser Sprache; sie bestimmt auch, welche Kurse zur Auswahl stehen.",
   "progw.my_progress": "Mein Fortschritt",
   "achw.recent": "Zuletzt erhalten",
-  "achw.unlocked": "Freigeschaltet",
   "achgroup.streak": "Serie",
   "achgroup.vocab": "Wortschatz",
   "achgroup.games": "Spiele",
@@ -1091,7 +1086,6 @@ export const deWeb: Record<string, string> = {
   "achgroup.skills": "Fertigkeiten",
   "achgroup.rounds": "Runden",
   "achgroup.discovery": "Entdeckung",
-  "achw.remaining": "noch {n}",
   "lb.weekly": "Wochenrangliste",
   "lb.this_week": "Die Rangliste dieser Woche",
   "lb.gap": "{xp} XP bis zum Nächsten — eine Runde Abstand.",
@@ -1258,4 +1252,29 @@ export const deWeb: Record<string, string> = {
   "email.reset.cta": "Passwort zurücksetzen",
   "email.reset.text": "Lernomi Passwort zurücksetzen\n\nZum Zurücksetzen deines Passworts: {url}\n\nWenn du das nicht angefragt hast, ignoriere es.",
   "email.fallback_link": "Wenn der Button nicht funktioniert: {url}",
+
+  /*
+    WEB'E ÖZEL, BASE'DEN DÜŞTÜ. Bu on altı anahtar `src/i18n/base/` içinde elle
+    duruyordu ama orası ÜRETİLİYOR (`scripts/i18n-pull.mjs`, kaynak mobil
+    sözlük) ve mobilde bu ekranların hiçbiri yok: ilk yenilemede sözlükten
+    silindiler, çağıran kod yerinde kaldı. Doğru yerleri burası — seviye
+    belirleme, tur özeti, çevrimdışı yazma geri bildirimi ve değerlendirme
+    bildirimi yalnız webde.
+  */
+  "game.exit_message_practice": "Deine Antworten werden gespeichert; die Übung wird nicht fortgesetzt.",
+  "session.wager_won": "Einsatz in der letzten Etappe aufgegangen · +{xp} XP",
+  "session.wager_lost": "Einsatz in der letzten Etappe verloren · {xp} XP",
+  "session.goal_reached": "Tagesziel geschafft",
+  "placement.last_taken": "Zuletzt: {date} · Vorschlag",
+  "placement.you_chose": "· deine Wahl {level}",
+  "placement.continue_with": "Mit {level} weitermachen",
+  "placement.pick_and_continue": "{level} wählen und weitermachen",
+  "placement.section_n": "Abschnitt {n}",
+  "assessfb.length_ok": "Du hast die geforderte Länge erreicht.",
+  "assessfb.length_short": "Du hast angefangen; etwas länger und die Aufgabe ist vollständig.",
+  "assessfb.try_phrase": "Versuch auch diese Wendung: {phrase}",
+  "assessfb.turkish_chars": "Im Text stehen türkische Buchstaben; wechsle zur Tastatur der Zielsprache.",
+  "assessfb.retry_when_ai": "Sobald die KI wieder da ist, kannst du denselben Text erneut bewerten lassen.",
+  "push.assess_title": "Dein Text wurde bewertet",
+  "push.assess_body": "Punktzahl {score}/100 — sieh dir die Korrekturen an.",
 };

@@ -10,7 +10,7 @@ import { PressableScale } from "../ui/PressableScale";
 import { BoltIcon, ExamIcon, CheckIcon, SkillsIcon, SpeakerIcon } from "../ui/icons";
 import { ONBOARDED_KEY } from "../lib/onboarding";
 import { saveOnboardingPrefs, clearOnboardingPrefs } from "../lib/onboardingPrefs";
-import { coursesForNative, onboardingCoursesFor, DEFAULT_COURSE_ID, NATIVE_LANGS, type NativeLang } from "../lib/courses";
+import { coursesForNative, onboardingCoursesFor, offeredNativeLangs, DEFAULT_COURSE_ID, type NativeLang } from "../lib/courses";
 import { hasDemoPlacement } from "../data/demoPlacement";
 import { hasFirstWords } from "../data/firstWords";
 import { t, currentLang, setLang } from "../lib/i18n";
@@ -63,7 +63,7 @@ function steps(course: string): Step[] {
       key: "lang", icon: SpeakerIcon,
       title: t("onboarding.which_language_should_we_teach"),
       subtitle: t("onboarding.lessons_and_hints_will_be_in"),
-      options: NATIVE_LANGS.map((l) => ({ key: l, label: LANG_LABEL[l] })),
+      options: offeredNativeLangs().map((l) => ({ key: l, label: LANG_LABEL[l] })),
     },
     {
       key: "course", icon: SkillsIcon,

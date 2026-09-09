@@ -4,6 +4,7 @@ import { useState } from "react";
 import { SettingRow } from "@/components/setting-row";
 import { track } from "@/lib/track";
 import { LANG_LABEL, NATIVE_LANGS, isNativeLang, type NativeLang } from "@/lib/i18n/dict";
+import { offeredNativeLangs } from "@/lib/courses";
 import { useT, useLang } from "@/lib/i18n/client";
 import { writeLangCookie } from "@/lib/i18n/set-lang";
 
@@ -37,6 +38,13 @@ export function LangSetting({ bare = false }: { bare?: boolean } = {}) {
     track("setting_change", NATIVE_LANGS.indexOf(next), "lang");
     writeLangCookie(next);
     try {
+      /*
+        YALNIZ ANADİL GÖNDERİLİYOR, kurs değil — ve bu bilinçli. Yeni anadille
+        kayıtlı kurs geçersiz kalırsa (Almanca öğrenen biri arayüzünü Almancaya
+        alırsa) sunucu kursu ilk geçerli olana TAŞIYOR; kararı istemcide
+        vermek, iki tarafın farklı kurs sanmasına açık kapı bırakırdı.
+        Sunucudaki kural `api/profile`ın çift doğrulamasında.
+      */
       await fetch("/api/profile", {
         method: "POST",
         headers: { "content-type": "application/json" },
@@ -48,9 +56,17 @@ export function LangSetting({ bare = false }: { bare?: boolean } = {}) {
     window.location.reload();
   }
 
+  /*
+    YALNIZ HAZIR ÇİFTİ OLAN DİLLER. Bir dili seçtirip ardından "öğrenilecek dil"
+    listesini boş bırakmak, kullanıcıyı kurssuz bir uygulamada bırakmak olurdu.
+    Bugün bu liste tek elemanlı (Türkçe) ve seçici hiç çizilmiyor; İngilizce ve
+    Almanca pariteleri tamamlandığında kendiliğinden geri geliyor
+    (`PAIR_READY`, bkz. docs/plan/native-language.md).
+  */
+  const offered = offeredNativeLangs();
   const chips = (
     <div className="flex gap-1.5">
-      {NATIVE_LANGS.map((l) => (
+      {offered.map((l) => (
         <button
           key={l}
           type="button"
@@ -65,6 +81,10 @@ export function LangSetting({ bare = false }: { bare?: boolean } = {}) {
       ))}
     </div>
   );
+
+  // Tek seçenek varsa seçim yoktur: tek çipli bir "dil seçici" kullanıcıya
+  // olmayan bir tercih sunar.
+  if (offered.length < 2) return null;
 
   if (bare) {
     return (

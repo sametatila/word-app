@@ -177,8 +177,31 @@ export function enabledCourses(): Course[] {
  *
  * Türkçe için sonuç değişmiyor: hiçbir kursun hedefi Türkçe değil.
  */
+/**
+ * SUNULAN ÇİFTLER — web'deki `src/lib/courses.ts` ile AYNI liste.
+ *
+ * Bir çiftin çalışması tek katman değil: kelime karşılıkları, beceri
+ * yönergeleri ve derslerin ANLATIM metni. Kelime katmanı hazırken ötekiler
+ * Türkçe kalırsa kullanıcı alıştırmayı kendi dilinde, dersi Türkçe görür —
+ * çalışıyormuş gibi görünen yarım bir parite.
+ *
+ * İki dosya ayrı (web ve mobil ayrı paketler) ama liste aynı kalmalı;
+ * `npm run check:pairs` beyanı veriden doğruluyor.
+ */
+export const PAIR_READY: Record<NativeLang, CourseId[]> = {
+  tr: ["de", "gsw-zh", "en"],
+  en: [],
+  de: [],
+};
+
 export function coursesForNative(lang: NativeLang): Course[] {
-  return enabledCourses().filter((c) => c.targetLang !== lang);
+  const ready = new Set<string>(PAIR_READY[lang] ?? []);
+  return enabledCourses().filter((c) => c.targetLang !== lang && ready.has(c.id));
+}
+
+/** Anadil olarak sunulacak diller — hazır çifti olmayan dil seçtirilmiyor. */
+export function offeredNativeLangs(): NativeLang[] {
+  return NATIVE_LANGS.filter((l) => coursesForNative(l).length > 0);
 }
 
 /** İlk açılışta sunulan kurslar — duraklatılmış/lehçe kursları elenir. */

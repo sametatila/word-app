@@ -12,7 +12,7 @@ import { Disclosure } from "@/components/disclosure";
 import { SettingRow } from "@/components/setting-row";
 import { ThemeSetting } from "@/components/theme-toggle";
 import { useT, useLang } from "@/lib/i18n/client";
-import { courseName, courseSub } from "@/lib/courses";
+import { courseName, courseSub, coursesForNative } from "@/lib/courses";
 import { LangSetting } from "@/components/lang-setting";
 import { defaultVoice, type VoiceId } from "@/lib/tts/voices";
 import { track } from "@/lib/track";
@@ -37,7 +37,13 @@ type Initial = {
  * (`lib/courses`) arayüz diline göre okunuyor. Sabit yazılıyken arayüz
  * İngilizceye alındığında bile "Almanca / Hochdeutsch" diyordu.
  */
-const COURSES = [{ id: "de" }, { id: "gsw-zh" }];
+/*
+  KURS LİSTESİ ARTIK KAYIT DEFTERİNDEN. Burada `[{ id: "de" }, { id: "gsw-zh" }]`
+  diye elle yazılıydı ve iki sonucu vardı: İngilizce kursu `enabled: true`
+  olmasına ve içeriği bulunmasına rağmen web'den HİÇ seçilemiyordu, ve liste
+  anadile göre süzülmediği için anadili Almanca olan kullanıcıya Almanca
+  kursları öneriliyordu. Mobil bunu baştan beri `coursesForNative` ile yapıyor.
+*/
 
 /** Seviyeler — açıklama sözlükten, kod (A1…C1) dilden bağımsız. */
 const LEVELS = [
@@ -178,10 +184,10 @@ export function ProfileForm({
       <Group title={t("settings.group_learning")} />
       <Section title={t("settings.language_to_learn")}>
         <div>
-          {/* İki kurs telefonda da yan yana. `sm:grid-cols-2` dar ekranda tek
-              sütuna düşüyordu ve iki kısa etiket için iki tam satır harcıyordu. */}
+          {/* Kurslar telefonda da yan yana. `sm:grid-cols-2` dar ekranda tek
+              sütuna düşüyordu ve kısa etiketler için tam satır harcıyordu. */}
           <div className="grid grid-cols-2 gap-2">
-            {COURSES.map((c) => (
+            {coursesForNative(lang).map((c) => (
               <button
                 key={c.id}
                 onClick={() => {

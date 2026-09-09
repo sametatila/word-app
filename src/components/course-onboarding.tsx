@@ -13,13 +13,16 @@ import { hasFirstWords } from "@/lib/first-words";
 import { useT, useLang } from "@/lib/i18n/client";
 import { LANG_LABEL, NATIVE_LANGS, type NativeLang } from "@/lib/i18n/dict";
 import { writeLangCookie } from "@/lib/i18n/set-lang";
-import { courseName } from "@/lib/courses";
+import { courseName, courseSub, offeredNativeLangs, onboardingCoursesFor } from "@/lib/courses";
 
-/* Kurs ADI tek kaynaktan (`courseName`); burada yalnız alt satır ve tanıtım. */
-const COURSES = [
-  { id: "de", subtitle: "Hochdeutsch", desc: "onb.course_de" },
-  { id: "gsw-zh", subtitle: "Züritüütsch", desc: "onb.course_gsw" },
-];
+/*
+  KURS LİSTESİ ARTIK KAYIT DEFTERİNDEN (`onboardingCoursesFor`).
+
+  Burada iki kurs elle yazılıydı ve iki şey yanlıştı: İngilizce kursu yeni
+  kullanıcıya hiç sunulmuyordu, duraklatılmış Züritüütsch ise sunuluyordu —
+  mobilde `offeredToNewUsers` bunu baştan beri ayırıyor. Liste ayrıca anadile
+  göre süzülmüyordu: arayüzünü Almanca seçen kullanıcıya Almanca öneriliyordu.
+*/
 
 const GOALS = [
   { id: "work", title: "onb.goal_work", desc: "onb.goal_work_desc" },
@@ -103,6 +106,22 @@ export function CourseOnboarding({
     // Hesap henüz yok: karar diğer onboarding tercihleriyle birlikte
     // saklanıyor ve giriş yapılınca profile taşınıyor.
     saveOnboardingPrefs({ nativeLang: next });
+    /*
+      SEÇİLİ KURS GEÇERSİZ KALABİLİR. Almanca kursu seçtikten sonra arayüzünü
+      Almancaya alan kullanıcıda o kurs listeden düşüyor (kendi dilini
+      öğretmiyoruz). Sessizce bırakılsaydı hiçbir seçenek işaretli görünmez ve
+      kullanıcı "seç" diyemeden takılırdı. Mobildeki `keepCourseValid` ile aynı
+      davranış: ilk geçerli kursa taşı.
+    */
+    const list = onboardingCoursesFor(next);
+    if (!list.some((c) => c.id === course)) {
+      const fallback = list[0]?.id;
+      if (fallback) {
+        setCourse(fallback);
+        setVoice(defaultVoice(fallback));
+        saveOnboardingPrefs({ course: fallback });
+      }
+    }
     router.refresh();
   }
   const [step, setStep] = useState<Step>(0);
@@ -242,7 +261,7 @@ export function CourseOnboarding({
               */}
               <h2 className="mb-2 mt-5 font-bold">{t("onboarding.which_language_should_we_teach")}</h2>
               <div className="flex gap-1.5">
-                {NATIVE_LANGS.map((l) => (
+                {offeredNativeLangs().map((l) => (
                   <button
                     key={l}
                     type="button"
@@ -262,7 +281,7 @@ export function CourseOnboarding({
               <p className="muted mt-1.5 text-xs">{t("onb.name_note")}</p>
               <h2 className="mb-2 mt-6 font-bold">{t("onboarding.which_course_shall_we_start_with")}</h2>
               <div className="grid gap-3 sm:grid-cols-2">
-                {COURSES.map((c) => {
+                {onboardingCoursesFor(lang).map((c) => {
                   const active = course === c.id;
                   return (
                     <button
@@ -280,8 +299,8 @@ export function CourseOnboarding({
                         </span>
                       ) : null}
                       <p className="font-bold">{courseName(c.id, lang)}</p>
-                      <p className="text-xs font-semibold text-[color:var(--color-brand)]">{c.subtitle}</p>
-                      <p className="muted mt-1.5 text-xs leading-relaxed">{t(c.desc)}</p>
+                      <p className="text-xs font-semibold text-[color:var(--color-brand)]">{courseSub(c.id, lang)}</p>
+                      <p className="muted mt-1.5 text-xs leading-relaxed">{t(c.descKey)}</p>
                     </button>
                   );
                 })}

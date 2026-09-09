@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { displayNameAllowed } from "@/lib/moderation";
-import { acceptsCourse, acceptsNativeLang } from "@/lib/courses";
+import { acceptsCourse, acceptsNativeLang, acceptsPair, coursesForNative, nativeOf } from "@/lib/courses";
 import { resolveVoice } from "@/lib/tts/voices";
 import { eq, sql } from "drizzle-orm";
 import { db } from "@/lib/db";
@@ -72,6 +72,33 @@ export async function POST(req: Request) {
   // kaybetmemesi. Serbest metin kabul edilmiyor.
   if (typeof body.nativeLang === "string" && acceptsNativeLang(body.nativeLang))
     patch.nativeLang = body.nativeLang;
+
+  /*
+    ÇİFT DOĞRULAMASI — kurs ve anadil ayrı ayrı geçerli olabilir ama BİRLİKTE
+    olmayabilir. `nativeLang="en"` + `course="en"` ikisi de tek başına geçerli
+    ve sunucu bunu kabul ediyordu: kullanıcı kendi anadilini öğrenmeye başlardı.
+    Mobil arayüzü buna izin vermiyordu, web veriyordu; kapı burada olmalıydı.
+
+    İki durum ayrılıyor, çünkü doğru davranış farklı:
+
+      - Kurs AÇIKÇA istendi ve çift geçersiz → REDDET. İstemci hatası ya da
+        elle atılmış bir istek; sessizce başka bir kursa taşımak, kullanıcının
+        istemediği bir kursa geçmesi olurdu.
+      - Yalnız anadil değişti ve kayıtlı kurs geçersiz kaldı → KURSU TAŞI.
+        Almanca öğrenen biri arayüzünü Almancaya alırsa kursu listeden düşüyor;
+        reddetmek meşru bir dil değişikliğini engellerdi. Mobildeki
+        `keepCourseValid` ile aynı davranış.
+  */
+  if (patch.course || patch.nativeLang) {
+    const current = await ensureProfile(userId);
+    const native = nativeOf(patch.nativeLang ?? current?.nativeLang);
+    const course = String(patch.course ?? current?.course ?? "de");
+    if (!acceptsPair(native, course)) {
+      if (patch.course) return NextResponse.json({ error: "pair_invalid" }, { status: 400 });
+      const next = coursesForNative(native)[0]?.id;
+      if (next) patch.course = next;
+    }
+  }
   // Ses, gideceği kursa göre doğrulanıyor: kurs ve ses aynı istekte
   // geliyorsa yeni kurs, gelmiyorsa kayıtlı kurs ölçü alınıyor. Aksi hâlde
   // Zürih'e geçen biri Almanca sesle kalabilirdi.

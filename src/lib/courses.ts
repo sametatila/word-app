@@ -39,6 +39,15 @@ export type Course = {
   /** Kursun alt satırı — lehçe/kapsam bilgisi, yine arayüz dilinde. */
   sub: Record<NativeLang, string>;
   /**
+   * İlk açılışta gösterilen tanıtım cümlesinin sözlük anahtarı.
+   *
+   * Metnin kendisi değil ANAHTAR: cümle üç dilde ve sözlükte duruyor. Kayıt
+   * defterine anahtarın girmesinin sebebi, onboarding'in kurs listesini artık
+   * buradan alması — metin orada elle yazılıydı ve İngilizce kursu listede
+   * olmadığı için tanıtımı da yoktu.
+   */
+  descKey: string;
+  /**
    * İçeriği hazır mı.
    *
    * API yalnızca hazır kursları kabul eder: içeriği olmayan bir kursa geçen
@@ -67,6 +76,7 @@ export const COURSES: Course[] = [
       en: "Standard German · CEFR A1–C1",
       de: "Hochdeutsch · CEFR A1–C1",
     },
+    descKey: "onb.course_de",
     enabled: true,
     offeredToNewUsers: true,
   },
@@ -79,6 +89,7 @@ export const COURSES: Course[] = [
       en: "Züritüütsch · Swiss dialect",
       de: "Züritüütsch · Schweizer Dialekt",
     },
+    descKey: "onb.course_gsw",
     enabled: true,
     offeredToNewUsers: false, // duraklatılmış lehçe kursu — mevcut öğrenciye açık, yeniye sunulmuyor
   },
@@ -92,6 +103,7 @@ export const COURSES: Course[] = [
       en: "English · CEFR A1–C1",
       de: "Englisch · CEFR A1–C1",
     },
+    descKey: "onb.course_en",
     enabled: true,
     offeredToNewUsers: true,
   },
@@ -132,6 +144,84 @@ export function courseOrDefault(id: string | null | undefined): Course {
  */
 export function acceptsCourse(value: string): boolean {
   return COURSES.some((c) => c.id === value && c.enabled);
+}
+
+/** İçeriği hazır kurslar. */
+export function enabledCourses(): Course[] {
+  return COURSES.filter((c) => c.enabled);
+}
+
+/**
+ * SUNULAN ÇİFTLER — hangi (anadil, hedef) ikilisi kullanıcıya gösteriliyor.
+ *
+ * Bir çiftin "çalışması" tek katman değil: kelime karşılıkları, beceri
+ * egzersizlerinin yönergeleri ve derslerin ANLATIM metni. Kelime katmanı
+ * hazırken ötekiler Türkçe kalırsa kullanıcı alıştırmayı kendi dilinde,
+ * dersi Türkçe görür — yarım bir parite, çalışıyormuş gibi görünen.
+ *
+ * Bu yüzden sunum bir BEYAN: burada yazılı olmayan çift hiç gösterilmiyor.
+ * Beyanın iyimser kalmaması `npm run check:pairs` ile veriden doğrulanıyor —
+ * hazır dediğimiz bir çiftte eksik varsa CI kırılır, hazır olmayan bir çiftin
+ * verisi tamamlandığında da uyarır ("artık açılabilir").
+ *
+ * BUGÜN YALNIZ tr→X. en→de kelime katmanında çalışıyor (karşılıklar zaten
+ * vardı, kod düzeltildi) ama beceri ve ders metinleri Türkçe; de→en ayrıca
+ * Almanca karşılık sütunu bekliyor. Sıra ve ölçüm
+ * `docs/plan/native-language.md`'de.
+ */
+export const PAIR_READY: Record<NativeLang, CourseId[]> = {
+  tr: ["de", "gsw-zh", "en"],
+  en: [],
+  de: [],
+};
+
+/**
+ * Kullanıcının ANADİLİNE göre seçilebilecek kurslar.
+ *
+ * Kendi anadilini "öğrenilecek dil" olarak sunmak anlamsız: arayüz dili
+ * İngilizce olan kullanıcıya "English · A1–C1" öneriliyordu. Eleme HEDEF DİLE
+ * göre, kurs id'sine göre değil — böylece anadili Almanca olan kullanıcıdan hem
+ * Hochdeutsch hem Züritüütsch birlikte düşüyor (ikisinin de hedefi Almanca).
+ *
+ * Türkçe için sonuç değişmiyor: hiçbir kursun hedefi Türkçe değil.
+ *
+ * Mobilde bu işlev baştan beri var; web'de yoktu ve kurs listesi iki ayrı
+ * dosyada ELLE yazılıydı (`profile-form`, `course-onboarding`). Sonucu:
+ * İngilizce kursu web'den hiç seçilemiyordu, duraklatılmış Züritüütsch ise
+ * yeni kullanıcıya sunuluyordu.
+ */
+export function coursesForNative(lang: NativeLang): Course[] {
+  const ready = new Set(PAIR_READY[lang] ?? []);
+  return enabledCourses().filter((c) => c.targetLang !== lang && ready.has(c.id));
+}
+
+/**
+ * Anadil seçeneği olarak sunulacak diller.
+ *
+ * Hiç hazır çifti olmayan bir anadili seçtirmek, kullanıcıyı kurssuz bir
+ * uygulamada bırakmak olurdu. Liste `PAIR_READY` dolduğunda kendiliğinden
+ * genişliyor — ayrıca bakım istemiyor.
+ */
+export function offeredNativeLangs(): NativeLang[] {
+  return NATIVE_LANGS.filter((l) => coursesForNative(l).length > 0);
+}
+
+/** İlk açılışta sunulanlar — duraklatılmış kurslar elenir. */
+export function onboardingCoursesFor(lang: NativeLang): Course[] {
+  return coursesForNative(lang).filter((c) => c.offeredToNewUsers);
+}
+
+/**
+ * Anadil + kurs ÇİFTİ geçerli mi — sunucunun kapısı.
+ *
+ * İkisi ayrı ayrı doğrulanıyordu (`acceptsCourse`, `acceptsNativeLang`) ama
+ * BİRLİKTE hiç bakılmıyordu: `nativeLang="en"` + `course="en"` sunucuda kabul
+ * ediliyordu, yani kullanıcı kendi anadilini öğrenmeye başlayabiliyordu.
+ * Mobil arayüzü buna izin vermiyordu, web veriyordu; asıl kapı burası olmalı.
+ */
+export function acceptsPair(native: string, course: string): boolean {
+  if (!acceptsNativeLang(native) || !acceptsCourse(course)) return false;
+  return coursesForNative(native as NativeLang).some((c) => c.id === course);
 }
 
 /**

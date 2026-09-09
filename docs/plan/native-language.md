@@ -55,22 +55,37 @@ Anadil ekseni artık kelime katmanında **gerçekten** çalışıyor.
 Bunun somut sonucu: **en→de kelime katmanında bugün çalışıyor** — yeni veri
 istemiyor, veri zaten vardı; eksik olan koddu.
 
-## Faz 2 — parite tamlık kapısı (sıradaki)
+## Faz 2 — parite tamlık kapısı ✅
 
-Her (anadil, hedef) çifti için tamlık **veriden ölçülür**, elle beyan edilmez;
-eksik çift kullanıcıya **hiç sunulmaz**. Böylece hiçbir aşamada yarım çeviri
-yayına çıkmaz ve fazlar birbirini beklemez.
+Sunum bir **beyan** (`PAIR_READY`), tamlık ise **veriden ölçülüyor**
+(`npm run check:pairs`). Beyanda olmayan çift kullanıcıya hiç gösterilmiyor;
+beyan iyimserse denetim kırılıyor, veri tamamlandığında da "artık açılabilir"
+diye uyarıyor. Böylece hiçbir aşamada yarım parite yayına çıkmıyor ve Faz 3
+parça parça ilerleyebiliyor.
 
-- `coursesForNative` + `offeredToNewUsers` web kayıt defterine de gelecek
-  (bugün yalnız mobilde var; web'de iki elle yazılmış liste duruyor ve
-  İngilizce kursu web'den seçilemiyor).
-- API çift doğrulaması: `nativeLang=en + course=en` sunucuda kabul ediliyor.
-- Ayar başlığı "Uygulama dili" → **"Ana dilim"**: alan ikisini birden
-  belirliyor ve kurs listesini de değiştiriyor.
+Bugün `PAIR_READY` yalnız **tr→{de, gsw-zh, en}**. İngilizce ve Almanca anadil
+seçenekleri, hazır çiftleri olmadığı için **sunulmuyor** — seçtirip ardından
+kurs listesini boş bırakmak kullanıcıyı kurssuz bırakmak olurdu. Canlıda kimse
+etkilenmiyor: on iki profilin hepsi Türkçe ya da varsayılan. Pariteler
+tamamlandığında seçici kendiliğinden geri geliyor.
 
-## Faz 3 — veri
+Bu fazda ayrıca:
 
-Sıra, en az veriyle en çok pariteyi açacak biçimde:
+- Web kayıt defteri mobile hizalandı: `coursesForNative`, `onboardingCoursesFor`,
+  `offeredToNewUsers`, `descKey`. Üç elle yazılmış kurs listesi kalktı
+  (ayarlar, onboarding, ana sayfa) — İngilizce kursu web'den seçilemiyordu,
+  duraklatılmış Züritüütsch ise yeni kullanıcıya sunuluyordu, ve alt başlık
+  `c.id === "de" ? "Hochdeutsch" : "Züritüütsch"` üçlüsüyle üretiliyordu.
+- **API çift doğrulaması** (`acceptsPair`): `nativeLang="en"` + `course="en"`
+  sunucuda kabul ediliyordu. Kurs açıkça istendiyse reddediliyor; yalnız anadil
+  değiştiyse kurs ilk geçerli olana taşınıyor (mobildeki `keepCourseValid`).
+- Ayar başlığı "Uygulama dili" → **"Ana dilim"**, alt metni de ne yaptığını
+  söylüyor: arayüz + anlatım + kelime anlamları + kurs listesi.
+
+## Faz 3 — veri (sıradaki)
+
+Bir pariteyi açmak = `check:pairs` onu "!" ile işaretlemesi + `PAIR_READY`ye
+eklenmesi. Sıra, en az veriyle en çok pariteyi açacak biçimde:
 
 1. `words` · gsw örnek çevirileri (8.266 + 351) → **en→gsw** kelime katmanı
 2. `words` · Almanca karşılık + örnek (7.175 + 7.175) → **de→en** kelime katmanı

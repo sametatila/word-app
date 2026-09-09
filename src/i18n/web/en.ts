@@ -158,7 +158,6 @@ export const enWeb: Record<string, string> = {
   "words.progress_summary": "{mastered} mastered · {seen} seen · {due} due",
   "settings.account": "ACCOUNT",
   "settings.app": "APP",
-  "settings.session": "SESSION",
   "settings.daily_goal_short": "Daily review goal",
   "settings.new_per_day": "New words per day",
   "settings.reviews_unit": "reviews",
@@ -166,7 +165,6 @@ export const enWeb: Record<string, string> = {
   "settings.saving": "Saving…",
   "settings.privacy_and_terms": "Privacy and terms",
   "settings.privacy_and_terms_sub": "What we process, why, and your rights",
-  "settings.account_row": "Account",
   "settings.add_to_home": "Add to home screen",
   "settings.add_to_home_hint": "full screen, offline",
   "level.a2_desc": "I know basic everyday language",
@@ -184,10 +182,6 @@ export const enWeb: Record<string, string> = {
   "voice.en_us_guyneural.note": "Calm, full American accent",
   "settings.srs_note": "Review timing is worked out from how fast and how accurately you answer.",
   "settings.course_switch_note": "Your words and review queue move to the new course. The other course is not deleted.",
-  "settings.signing_out": "Signing out…",
-  "settings.account_sub": "Signed in as {name} · your progress syncs across devices",
-  "settings.demo_mode": "Demo mode",
-  "settings.demo_mode_sub": "Sign-in and multi-device sync turn on by themselves once the auth keys are set.",
   /* Kelime turu — bkz. tr.ts notu. */
   "session.preparing": "Getting today's session ready…",
   "session.lets_go": "Let's go",
@@ -638,6 +632,7 @@ export const enWeb: Record<string, string> = {
   "land.cta_skills": "Reading · Listening · Writing",
   "land.course_de": "7,392 words prepared by topic for CEFR A1–C1; each with its article, plural, an example sentence and its translation.",
   "land.course_gsw": "The whole list in the Zurich dialect: 7,392 entries, the de/d/s articles, Zurich example sentences and a Hochdeutsch bridge on every word. The language you actually hear living in Switzerland.",
+  "land.course_en": "Reading, listening, writing and speaking in exam format; vocabulary from A1 to C1.",
   "land.f_srs_title": "You don't plan the reviews",
   "land.f_srs_body": "There's no separate “review” section. The speed and accuracy of every answer is measured, and a word comes back inside the game just before you'd forget it.",
   "land.f_skills_title": "Reading, listening, writing",
@@ -745,6 +740,7 @@ export const enWeb: Record<string, string> = {
   "socialw.in_a_week": "In a week",
   "onb.course_de": "CEFR A1–C1 vocabulary, plus reading, listening and writing in exam format.",
   "onb.course_gsw": "Switzerland's Zurich dialect: the everyday spoken language, with a Hochdeutsch bridge.",
+  "onb.course_en": "CEFR A1–C1 vocabulary, plus reading, listening and writing in exam format.",
   "onb.goal_work": "Work",
   "onb.goal_work_desc": "Meetings, emails, interviews — being comfortable at work.",
   "onb.goal_daily": "Everyday life",
@@ -1077,11 +1073,10 @@ export const enWeb: Record<string, string> = {
   "theme.appearance": "Appearance",
   "theme.to_light": "Switch to the light theme",
   "theme.to_dark": "Switch to the dark theme",
-  "lang.app_language": "App language",
-  "lang.app_language_sub": "Explanations and the interface use this language",
+  "lang.app_language": "My language",
+  "lang.app_language_sub": "The interface, explanations and word meanings use this language; it also decides which courses you can take.",
   "progw.my_progress": "My progress",
   "achw.recent": "Recently earned",
-  "achw.unlocked": "Unlocked",
   "achgroup.streak": "Streak",
   "achgroup.vocab": "Vocabulary",
   "achgroup.games": "Games",
@@ -1091,7 +1086,6 @@ export const enWeb: Record<string, string> = {
   "achgroup.skills": "Skills",
   "achgroup.rounds": "Rounds",
   "achgroup.discovery": "Discovery",
-  "achw.remaining": "{n} to go",
   "lb.weekly": "Weekly leaderboard",
   "lb.this_week": "This week's leaderboard",
   "lb.gap": "{xp} XP to the one above — one round away.",
@@ -1258,4 +1252,29 @@ export const enWeb: Record<string, string> = {
   "email.reset.cta": "Reset my password",
   "email.reset.text": "Lernomi password reset\n\nTo reset your password: {url}\n\nIf you did not ask for this, ignore it.",
   "email.fallback_link": "If the button does not work: {url}",
+
+  /*
+    WEB'E ÖZEL, BASE'DEN DÜŞTÜ. Bu on altı anahtar `src/i18n/base/` içinde elle
+    duruyordu ama orası ÜRETİLİYOR (`scripts/i18n-pull.mjs`, kaynak mobil
+    sözlük) ve mobilde bu ekranların hiçbiri yok: ilk yenilemede sözlükten
+    silindiler, çağıran kod yerinde kaldı. Doğru yerleri burası — seviye
+    belirleme, tur özeti, çevrimdışı yazma geri bildirimi ve değerlendirme
+    bildirimi yalnız webde.
+  */
+  "game.exit_message_practice": "Your answers are saved; practice does not resume where you left off.",
+  "session.wager_won": "Wager paid off in the last leg · +{xp} XP",
+  "session.wager_lost": "Wager lost in the last leg · {xp} XP",
+  "session.goal_reached": "You hit your daily goal",
+  "placement.last_taken": "Last taken: {date} · suggested",
+  "placement.you_chose": "· you chose {level}",
+  "placement.continue_with": "Continue with {level}",
+  "placement.pick_and_continue": "Pick {level} and continue",
+  "placement.section_n": "Section {n}",
+  "assessfb.length_ok": "You hit the required length.",
+  "assessfb.length_short": "You have started; a little longer and the task is complete.",
+  "assessfb.try_phrase": "Try using this phrase too: {phrase}",
+  "assessfb.turkish_chars": "There are Turkish letters in the text; switch to the target language keyboard.",
+  "assessfb.retry_when_ai": "When AI is back on you can have the same text assessed again.",
+  "push.assess_title": "Your writing has been assessed",
+  "push.assess_body": "Score {score}/100 — take a look at the corrections.",
 };
