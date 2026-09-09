@@ -245,6 +245,13 @@ export function ProfileForm({
             {t(LEVELS.find((l) => l.id === level)?.descKey ?? "")}.{" "}
             {t("settings.only_you_change_level")}
           </p>
+          {/* Yerleştirme testine tek giriş onboarding'di, yani bir kez geçilip
+              bir daha ulaşılamıyordu: seviyesinden emin olmayan mevcut kullanıcı
+              ancak elle tahmin edebiliyordu. Android aynı yerde, seviye
+              çiplerinin hemen altında bu bağlantıyı veriyor. */}
+          <Link href="/placement" className="mt-2.5 inline-block text-caption font-bold" style={{ color: "var(--color-brand)" }}>
+            {t("settings.not_sure_take_placement_test")}
+          </Link>
         </div>
       </Section>
 
