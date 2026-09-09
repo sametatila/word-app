@@ -9,9 +9,9 @@ import { useT, useLang } from "@/lib/i18n/client";
 import { courseName } from "@/lib/courses";
 
 const VIS: { key: Visibility; label: string; sub: string }[] = [
-  { key: "public", label: "vis.public", sub: "vis.public_sub" },
-  { key: "friends", label: "vis.friends", sub: "vis.friends_sub" },
-  { key: "private", label: "vis.private", sub: "vis.private_sub" },
+  { key: "public", label: "socialsettings.vis_public", sub: "socialsettings.vis_public_sub" },
+  { key: "friends", label: "social.tab_friends", sub: "socialsettings.vis_friends_sub" },
+  { key: "private", label: "socialsettings.vis_private", sub: "socialsettings.vis_private_sub" },
 ];
 
 /**

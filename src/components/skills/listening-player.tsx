@@ -246,7 +246,7 @@ export function ListeningPlayer({ exercise, backHref }: { exercise: ListeningExe
             onClick={() => setShowText((v) => !v)}
             className={`chip px-3 py-1.5 text-xs ${showText ? "chip-active" : ""}`}
           >
-            {t(showText ? "listenp.hide_text" : "listenp.show_text")}
+            {t(showText ? "item.hide_text" : "item.show_text")}
           </button>
           {!showText ? (
             <span className="muted text-xs">{t("listenp.hint_listen_first")}</span>
