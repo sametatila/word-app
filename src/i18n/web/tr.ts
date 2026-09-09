@@ -441,6 +441,7 @@ export const trWeb: Record<string, string> = {
   "walk.continue_on_screen": "Ekranda devam ediyoruz.",
   "walk.mic_unreachable": "Mikrofona ulaşamıyorum. Turu durdurdum, telefonu açınca devam edelim.",
   "walk.screen_off_warning": "Ekran kapanınca sesini duyamıyorum. Turu durdurdum. Cepte devam etmek için ekranı kapatma; Cebe koy'a basınca ekran kararır ama açık kalır.",
+  "micdw.you_start_it": "Yürüyüş modunu sen başlatırsın; mikrofon yalnız o sırada açıktır ve dinlediğini ekranda görürsün.",
   "walk.pocket_armed": "Cebe alındı. Ekranı kapatabilirsin.",
   "walk.pocket_failed": "Mikrofon açılamadı; ekranda devam ediyoruz.",
   "notfound.title": "Sayfa bulunamadı",

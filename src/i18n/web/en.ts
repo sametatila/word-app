@@ -416,6 +416,7 @@ export const enWeb: Record<string, string> = {
   "walk.continue_on_screen": "We'll carry on with the screen.",
   "walk.mic_unreachable": "I can't reach the microphone. I've stopped the round; we'll go on when you unlock the phone.",
   "walk.screen_off_warning": "I can't hear you once the screen turns off. I've stopped the round. To carry on in your pocket, don't turn the screen off — tap Pocket mode and it goes dark but stays on.",
+  "micdw.you_start_it": "You start walk mode yourself; the microphone is open only then, and the screen shows that it is listening.",
   "walk.pocket_armed": "Pocket mode is on. You can turn the screen off.",
   "walk.pocket_failed": "The microphone couldn't be opened; we'll carry on with the screen.",
   "notfound.title": "Page not found",

@@ -416,6 +416,7 @@ export const deWeb: Record<string, string> = {
   "walk.continue_on_screen": "Wir machen mit Bildschirm weiter.",
   "walk.mic_unreachable": "Ich komme nicht ans Mikrofon. Ich habe die Runde gestoppt; wir machen weiter, wenn du das Handy entsperrst.",
   "walk.screen_off_warning": "Bei ausgeschaltetem Bildschirm höre ich dich nicht. Ich habe die Runde gestoppt. Für die Tasche schalte den Bildschirm nicht aus — mit Taschenmodus wird er dunkel, bleibt aber an.",
+  "micdw.you_start_it": "Du startest den Gehmodus selbst; das Mikrofon ist nur dann offen, und der Bildschirm zeigt, dass es zuhört.",
   "walk.pocket_armed": "Taschenmodus ist an. Du kannst den Bildschirm ausschalten.",
   "walk.pocket_failed": "Das Mikrofon ließ sich nicht öffnen; wir machen mit Bildschirm weiter.",
   "notfound.title": "Seite nicht gefunden",

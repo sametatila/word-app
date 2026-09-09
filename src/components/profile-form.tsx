@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, type ReactNode } from "react";
+import { useEffect, useState, type ReactNode } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { AlertIcon, CheckIcon, ChevronRightIcon } from "@/components/icons";
@@ -10,6 +10,7 @@ import { AnalyticsSettings } from "@/components/analytics-settings";
 import { PageBack } from "@/components/page-back";
 import { Disclosure } from "@/components/disclosure";
 import { SettingRow } from "@/components/setting-row";
+import { hasMicConsent, setMicConsent } from "@/lib/mic-consent";
 import { ThemeSetting } from "@/components/theme-toggle";
 import { useT, useLang } from "@/lib/i18n/client";
 import { courseName, courseSub, coursesForNative } from "@/lib/courses";
@@ -384,6 +385,10 @@ export function ProfileForm({
       <Group title={t("settings.group_privacy_about")} />
       <Section title={t("settings.privacy")} bare>
         <AnalyticsSettings bare />
+        {/* Mikrofon onayı yalnız VERİLMİŞSE görünüyor: verilmemiş bir onayı
+            geri alma düğmesi göstermek, hiçbir şey yapmayan bir düğme demek.
+            Mobil ayarlarda da aynı satır ve aynı koşul var. */}
+        <MicConsentRow />
         <SettingRow title={t("settings.privacy_and_terms")} sub={t("settings.privacy_and_terms_sub")}>
           <Link href={legalPath("privacy", lang)} prefetch={false} className="btn btn-ghost h-9 px-3 text-xs">{t("settings.privacy_policy")}</Link>
           <Link href={legalPath("terms", lang)} prefetch={false} className="btn btn-ghost h-9 px-3 text-xs">{t("settings.terms_of_use")}</Link>
@@ -484,5 +489,33 @@ function Slider({
         className="h-2 w-full cursor-pointer appearance-none rounded-full accent-[color:var(--color-brand)] surface-2"
       />
     </label>
+  );
+}
+
+/**
+ * Yürüyüş modu mikrofon onayının geri alınması.
+ *
+ * Onay tarayıcıda saklandığı için sunucudan okunamıyor; satır ilk çizimden
+ * SONRA beliriyor. Yerinin baştan ayrılmaması bilerek: onayı olmayan
+ * kullanıcıda satır hiç yok ve boş bir yer tutucu göstermek yanlış olurdu.
+ */
+function MicConsentRow() {
+  const t = useT();
+  const [on, setOn] = useState(false);
+  useEffect(() => setOn(hasMicConsent()), []);
+  if (!on) return null;
+  return (
+    <SettingRow title={t("settings.revoke_microphone_consent")} sub={t("settings.you_ll_be_asked_about_voice_data")}>
+      <button
+        type="button"
+        onClick={() => {
+          setMicConsent(false);
+          setOn(false);
+        }}
+        className="btn btn-ghost h-9 px-3 text-xs"
+      >
+        {t("common.discard")}
+      </button>
+    </SettingRow>
   );
 }

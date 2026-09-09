@@ -890,3 +890,17 @@ tarayıcısının içerik listesinde (`first-words.ts` gibi).
   (web 36, Android 7). Kural artık iki tarayıcıda da var.
 - `npm run typecheck:scripts` ve `npm run lint` main'de kırmızıydı; ikisi de
   düzeltildi ve betik derlemesi CI kapısı oldu.
+- Sözlük tabanlı kuralın da bir kör noktası var: bir Türkçe kelimeyi ancak
+  sözlükte GEÇİYORSA tanıyor. `AvatarScreen`teki `"BIYIK"` bu yüzden aylarca
+  görünmedi — "bıyık" hiçbir çeviride yoktu. Dilden bağımsız bir üçüncü kural
+  (arayüz metni konumundaki düz dizgiler) prototiplendi ve iki platformda
+  koşturuldu: mobilde sıfır, web'de yalnız `analytics`/`admin` (ikisi de zaten
+  bilerek tek dilli). Yeni bir şey bulmadığı için kapı olarak eklenmedi.
+- Mikrofon açıklaması web'de yoktu. Android yürüyüş modunda mikrofonu açmadan
+  önce sesin nereye gittiğini anlatıp olumlu onay alıyor (Play "prominent
+  disclosure"); web'de o mağaza kuralı yok ama toplanan veri aynı — web de
+  sesi `/api/stt`e gönderiyor. Ekran, yerel onay saklama ve ayarlardan geri
+  alma web'e taşındı. Dört maddeden biri web'e özel yazıldı: Android'in metni
+  "sürekli bir bildirimden bunu görürsün" diyor ve o bildirim ön plan
+  servisinin kendisi; tarayıcıda öyle bir bildirim yok, tutulmayacak söz
+  verilmedi.

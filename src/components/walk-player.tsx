@@ -6,6 +6,8 @@ import { miss } from "@/lib/errors";
 import { motion } from "framer-motion";
 import { COURSE_KEY, readLocal, speakSegments, stopSpeaking, type SpeechSegment } from "@/components/speak-button";
 import { useT, useLang } from "@/lib/i18n/client";
+import { MicDisclosure } from "@/components/mic-disclosure";
+import { hasMicConsent, setMicConsent } from "@/lib/mic-consent";
 import type { NativeLang } from "@/lib/i18n/dict";
 import { courseName } from "@/lib/courses";
 import { useListen } from "@/components/use-listen";
@@ -283,6 +285,8 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
   // `currentCourseId()` ile aynı kaynak).
   const course = readLocal(COURSE_KEY) ?? "de";
   const [status, setStatus] = useState<Status>("loading");
+  // Açıklama ekranı: null = kapalı; açıksa hangi başlatma yolunun beklediği.
+  const [disclosure, setDisclosure] = useState<"pocket" | "screen" | null>(null);
   const [session, setSession] = useState<SessionPayload | null>(null);
   const [index, setIndex] = useState(0);
   const [phase, setPhase] = useState<Phase>("speaking");
@@ -1324,6 +1328,19 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
     [askContinue, fetchSession, flush, hear, release, say, lang, t],
   );
 
+  /**
+   * Başla: mikrofon açılmadan ÖNCE bir kez uygulama içi açıklama ve onay.
+   * Onay verilmişse doğrudan tur başlıyor (mobil `beginWalk` ile aynı sıra).
+   */
+  function begin(mode: "pocket" | "screen") {
+    if (!hasMicConsent()) {
+      setDisclosure(mode);
+      return;
+    }
+    if (mode === "pocket") darken();
+    void start(index);
+  }
+
   async function start(from: number) {
     const rounds = session?.rounds;
     if (!rounds?.length) return;
@@ -1636,20 +1653,32 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
           açık başlayan da tur içinde "Cebe koy"a basabilir.
         */}
         <button
-          onClick={() => {
-            darken();
-            void start(index);
-          }}
+          onClick={() => begin("pocket")}
           className="btn btn-primary mt-5 w-full px-5 py-4 text-base"
         >
           {t(status === "paused" ? "walk.pocket_continue" : "walk.pocket_start")}
         </button>
         <button
-          onClick={() => void start(index)}
+          onClick={() => begin("screen")}
           className="btn btn-ghost mt-2 w-full px-5 py-4 text-base"
         >
           {t(status === "paused" ? "walk.screen_continue" : "walk.screen_start")}
         </button>
+        {/* Açıklama İKİ düğmenin de önünde: hangisine basılmışsa onay
+            verildikten sonra o yol sürüyor. Onay diyaloğunun düğmesi de bir
+            kullanıcı hareketi olduğu için tam ekrana geçiş orada da alınıyor;
+            "Cebe koy" yolunun karartması bu yüzden kaybolmuyor. */}
+        <MicDisclosure
+          open={disclosure !== null}
+          onAccept={() => {
+            const mode = disclosure;
+            setMicConsent(true);
+            setDisclosure(null);
+            if (mode === "pocket") darken();
+            void start(index);
+          }}
+          onCancel={() => setDisclosure(null)}
+        />
         <button onClick={leave} className="btn btn-ghost mt-2 w-full px-5 py-3">{t("common.go_back")}</button>
       </Frame>
     );
