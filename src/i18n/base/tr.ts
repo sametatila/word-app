@@ -191,6 +191,7 @@ export const trBase: Record<string, string> = {
   "game.correct": "doğru",
   "game.done_no_more": "Bugünlük bu kadar",
   "game.exit_message": "Cevapladıkların kaydedilir; kalan turlara sonra devam edersin.",
+  "game.exit_message_practice": "Cevapladıkların kaydedilir; pratik kaldığı yerden sürmez.",
   "game.sign_in_sign_up": "Giriş yap / Kayıt ol",
   "game.sign_in_to_study_your_own_words": "Giriş yapınca kendi kelimelerinle çalışırsın ve serin, XP'n, ilerlemen hesabına kaydedilir.",
   "game.sign_in_to_save_your_progress": "İlerlemeni kaydetmek için giriş yap",

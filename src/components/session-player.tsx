@@ -34,7 +34,8 @@ import { MascotFx } from "@/components/mascot-fx";
 import { Stagger } from "@/components/reveal";
 import { CoachBubble } from "@/components/coach-bubble";
 import { LearnHeader } from "@/components/app-header";
-import { AlertIcon, FlameIcon, RefreshIcon, SparkIcon } from "@/components/icons";
+import { AlertIcon, FlameIcon, RefreshIcon, SparkIcon, XIcon } from "@/components/icons";
+import { ConfirmDialog } from "@/components/confirm-dialog";
 import { readCache, writeCache } from "@/lib/use-cached";
 import { useT } from "@/lib/i18n/client";
 
@@ -149,6 +150,23 @@ export function SessionPlayer() {
   const resumeRef = useRef<SessionProgress | null>(null);
   /** Tek oyunlu tur seçiliyse o oyun; karışık turda null. */
   const [onlyGame, setOnlyGame] = useState<PlayableGame | null>(null);
+  /*
+    Turdan çıkış onaya bağlı. Yarım bırakılan tur emek kaybı değil (cevaplar
+    zaten yazıldı) ama yanlışlıkla basılan bir düğme turu bölerdi; mobilde de
+    aynı kural, orada donanım geri tuşu da buraya bağlı (`useBackConfirm`).
+  */
+  const [confirmExit, setConfirmExit] = useState(false);
+
+  /**
+   * Turdan çıkış — Öğren merkezine döner.
+   *
+   * `router.refresh()` şart: tur XP ve seri kazandırmış olabilir, merkez o
+   * sayıları sunucudan okuyor. Yan modların çıkışı da aynı (`ModeScreen`).
+   */
+  const exit = useCallback(() => {
+    router.push("/learn");
+    router.refresh();
+  }, [router]);
   /**
    * Seçimin `load` tarafından okunabilen kopyası.
    *
@@ -776,6 +794,7 @@ export function SessionPlayer() {
             track("challenge_play");
             router.push("/learn/challenge");
           }}
+          onFinish={exit}
         />
       </Screen>
     );
@@ -788,13 +807,48 @@ export function SessionPlayer() {
     <MascotPop trigger={cheer} />
     <MascotFx />
     <div className="mx-auto flex min-h-0 w-full max-w-2xl flex-1 flex-col">
-      <div className="mb-2 shrink-0">
-        <LevelBadge
-          level={session!.meta.level}
-          mastered={session!.meta.coverage.mastered}
-          total={session!.meta.coverage.total}
-        />
+      {/* ÇIKIŞ — turun içindeyken sekme çubuğu yok (yığın sayfası) ve tarayıcı
+          geri düğmesi ana ekrana eklenmiş uygulamada da yok: düğme olmadan
+          turdan çıkmanın hiçbir yolu kalmıyordu. Mobilde aynı yerde, aynı
+          ölçüde (`GameScreen`: 44x44, `surface-2`). */}
+      <div className="mb-2 flex shrink-0 items-center gap-3">
+        <button
+          type="button"
+          onClick={() => setConfirmExit(true)}
+          aria-label={t("game.quit_round")}
+          className="pressable flex h-11 w-11 shrink-0 items-center justify-center rounded-tile"
+          style={{ background: "var(--surface-2)", color: "var(--text-muted)" }}
+        >
+          <XIcon size={22} />
+        </button>
+        <div className="min-w-0 flex-1">
+          <LevelBadge
+            level={session!.meta.level}
+            mastered={session!.meta.coverage.mastered}
+            total={session!.meta.coverage.total}
+          />
+        </div>
       </div>
+      {/* Hangi pratikte olunduğu ekranda yazıyor: tur tek oyundan kuruluysa
+          bunu söyleyen tek yer buydu, mobilde de öyle. */}
+      {onlyGame ? (
+        <p className="muted mb-2 shrink-0 text-center text-micro uppercase tracking-widest">
+          {t("game.practice_suffix", { game: t(GAME_LABEL_KEYS[onlyGame]) })}
+        </p>
+      ) : null}
+      <ConfirmDialog
+        open={confirmExit}
+        title={t("game.quit_round_2")}
+        message={t(onlyGame ? "game.exit_message_practice" : "game.exit_message")}
+        confirmLabel={t("common.exit")}
+        cancelLabel={t("common.continue_2")}
+        destructive
+        onConfirm={() => {
+          setConfirmExit(false);
+          exit();
+        }}
+        onCancel={() => setConfirmExit(false)}
+      />
       <div className="mb-3 shrink-0">
         <div className="mb-1.5 flex items-center justify-between text-xs font-semibold">
           <span className="muted flex items-center gap-2">
@@ -1218,6 +1272,7 @@ function SummaryCard({
   targeted,
   onContinue,
   onChallenge,
+  onFinish,
 }: {
   tally: { correct: number; total: number; xp: number };
   result: AnswerResult | null;
@@ -1231,6 +1286,8 @@ function SummaryCard({
   targeted?: boolean;
   onContinue: () => void;
   onChallenge: () => void;
+  /** Özet ekranından çıkış — turdan sonra Öğren merkezine dönüş. */
+  onFinish: () => void;
 }) {
   const t = useT();
   const accuracy = tally.total ? Math.round((tally.correct / tally.total) * 100) : 0;
@@ -1437,6 +1494,13 @@ function SummaryCard({
           </button>
           <button onClick={onChallenge} className="btn btn-ghost w-full px-5 py-3">
             Hayatta kalma turu
+          </button>
+          {/* KAPANIŞ — özetin üç düğmesi de yeni bir şey BAŞLATIYORDU (yeni
+              tur, hayatta kalma, paylaş) ve tur ekranında sekme çubuğu yok:
+              özetten Öğren'e dönmenin hiçbir yolu kalmıyordu. Mobilde bu
+              düğme baştan beri var (`GameScreen`: t("common.finish")). */}
+          <button onClick={onFinish} className="btn btn-ghost w-full px-5 py-3">
+            {t("common.finish")}
           </button>
           <ShareResult
             marks={marks}

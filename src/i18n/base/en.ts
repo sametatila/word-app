@@ -191,6 +191,7 @@ export const enBase: Record<string, string> = {
   "game.correct": "correct",
   "game.done_no_more": "That's it for today",
   "game.exit_message": "Your answers are saved; you can finish the remaining rounds later.",
+  "game.exit_message_practice": "Your answers are saved; practice does not resume where you left off.",
   "game.sign_in_sign_up": "Sign in / Sign up",
   "game.sign_in_to_study_your_own_words": "Sign in to study your own words and save your streak, XP and progress to your account.",
   "game.sign_in_to_save_your_progress": "Sign in to save your progress",
