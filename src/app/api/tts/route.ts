@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { getUserId } from "@/lib/auth/server";
+import { bumpUsage, getUsage } from "@/lib/premium";
 import { MAX_TEXT } from "@/lib/tts/edge";
 import { synthesizeSpeech } from "@/lib/tts/synth";
 import { TURKISH_VOICE, VOICES, type VoiceId } from "@/lib/tts/voices";
@@ -44,6 +45,9 @@ const MAX_AGE = 31_536_000;
 // Anlatım sesi listede yok (kullanıcı seçmiyor) ama uç onu da seslendirmeli.
 const VOICE_IDS = new Set<string>([...VOICES.map((v) => v.id), TURKISH_VOICE]);
 
+/** Hesap başına günlük sentez tavanı — gerekçesi aşağıda, kotanın koyulduğu yerde. */
+const DAILY_TTS_CEILING = 2000;
+
 export async function GET(req: Request) {
   const url = new URL(req.url);
   const text = (url.searchParams.get("t") ?? "").trim();
@@ -63,9 +67,31 @@ export async function GET(req: Request) {
   }
   // Girişsiz sayfaların hiçbiri seslendirme kullanmıyor; açık uç, Azure yedeğinin
   // ücretli kotasını herkesin harcayabildiği bir sentez servisi olurdu.
-  if (!(await getUserId())) {
+  const userId = await getUserId();
+  if (!userId) {
     return NextResponse.json({ error: "unauthorized" }, { status: 401, headers: { "cache-control": "no-store" } });
   }
+
+  /**
+   * Emniyet tavanı — hesap başına GÜNLÜK sentez sayısı.
+   *
+   * Oturum ve aynı-köken denetimi ucu tarayıcıdan gelen isteklere kapatıyor ama
+   * KAÇ istek geldiğini sınırlamıyordu: hesabı olan biri (ya da çalınmış bir
+   * çerez) Azure kotasını tek başına yakabilirdi. `stt` ve `assess` uçlarındaki
+   * desenin aynısı — kullanıcıya duyurulan bir sınır değil, kaçak kullanımın
+   * tavanı.
+   *
+   * Sayı bilerek cömert: bir tur ~20 kelime, en yoğun gün bile birkaç yüzü
+   * geçmiyor; önbellek (tarayıcı + CDN) zaten çoğu isteği buraya hiç
+   * getirmiyor. Yani normal kullanıcı bu tavanı göremez.
+   */
+  if ((await getUsage(userId, "tts_calls", "day")) >= DAILY_TTS_CEILING) {
+    return NextResponse.json(
+      { error: "quota" },
+      { status: 429, headers: { "cache-control": "no-store" } },
+    );
+  }
+  void bumpUsage(userId, "tts_calls", "day");
 
   try {
     const { audio, source } = await synthesizeSpeech(text, voice as VoiceId, slow);
