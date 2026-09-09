@@ -5,7 +5,7 @@ import { reviews, words } from "@/lib/db/schema";
 import { errorLabel, ERROR_TARGET_GAME, isErrorType, type ErrorType } from "@/lib/errors";
 import { GAME_LABEL_KEYS, type GameId } from "@/lib/types";
 import { weakRules } from "@/lib/lessons/progress";
-import { DEFAULT_NATIVE, type NativeLang } from "@/lib/i18n/dict";
+import { DEFAULT_NATIVE, translate, type NativeLang } from "@/lib/i18n/dict";
 
 /**
  * Hata analitiği (plan WP-51) — "zayıf noktaların".
@@ -73,7 +73,9 @@ export async function errorReport(
         n: r.n,
         pct: totalWrong ? Math.round((100 * r.n) / totalWrong) : 0,
         href: game ? `/learn/game?game=${game}` : null,
-        gameLabel: game ? GAME_LABEL_KEYS[game as GameId] : null,
+        // Etiket ÇEVRİLİYOR: `label` gibi bu da doğrudan ekrana gidiyor ve
+        // ham anahtar olarak dönerse arayüzde "games.article_race" yazıyordu.
+        gameLabel: game ? translate(lang, GAME_LABEL_KEYS[game as GameId]) : null,
       };
     });
 

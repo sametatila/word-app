@@ -21,12 +21,21 @@ async function main() {
   const url = process.env.DATABASE_URL;
   if (!url) throw new Error("DATABASE_URL tanımlı değil");
   const sql = new Pool({ connectionString: url });
+  /**
+ * `pg.Pool` ŞABLON ETİKETİ DEĞİL — sorgular `sql`…`` diye yazılıydı, yani havuz
+ * bir fonksiyon gibi çağrılıyordu ve betik ilk sorguda patlıyordu. Etiket
+ * burada: metni birleştirip `$1`, `$2` yer tutucularıyla `query()`ye veriyor,
+ * böylece çağrı yerleri olduğu gibi kalıyor ve değer geçirilirse de
+ * parametre olarak gidiyor (dizeye gömülmüyor).
+ */
+  const q = async <T = Record<string, unknown>>(s: TemplateStringsArray, ...v: unknown[]): Promise<T[]> =>
+    (await sql.query(s.reduce((acc, part, i) => `${acc}$${i}${part}`), v)).rows as T[];
 
   // ── AI çağrılarının muhasebesi ─────────────────────────────────────
   // Bu tablo başarısız denemeleri de tutuyor. Zincir düşen sağlayıcıyı
   // sessizce atladığı için, yalnızca başarıya bakan bir rapor "her istekte
   // 429 alan birincil"i hiç kullanılmıyor sanıyordu.
-  const usage = (await sql`
+  const usage = (await q`
     select kind, provider, model,
            count(*)::int as total,
            count(*) filter (where ok)::int as succeeded,
@@ -55,7 +64,7 @@ async function main() {
     }
 
     // Hatalar ayrı: en çok merak edilen "neden düştü" sorusu.
-    const errs = (await sql`
+    const errs = (await q`
       select provider, status, count(*)::int as n, max(error) as sample
       from ai_usage
       where not ok and created_at > now() - interval '30 days'
@@ -73,7 +82,7 @@ async function main() {
     // "Doğru söyledim ama yanlış saydı" şikâyetinin tek cevabı bu liste:
     // beklenen ile duyulan yan yana. Sorun telaffuzda mı, tanıyıcıda mı,
     // yoksa kabul mantığında mı — ancak böyle ayrılıyor.
-    const mismatch = (await sql`
+    const mismatch = (await q`
       select expected, heard, provider, count(*)::int as n
       from ai_usage
       where kind = 'stt' and ok and expected is not null and heard is not null
@@ -92,7 +101,7 @@ async function main() {
     }
 
     // Ücretsiz katmanın bağlayıcı sınırı istek sayısı; günlük en yoğunlar.
-    const daily = (await sql`
+    const daily = (await q`
       select day::text as day, kind, count(*)::int as n, coalesce(sum(audio_seconds), 0)::int as audio_sec
       from ai_usage where created_at > now() - interval '30 days'
       group by 1, 2 order by n desc limit 6
@@ -111,7 +120,7 @@ async function main() {
     console.log("\nai_usage boş — henüz kaydedilmiş AI çağrısı yok.");
   }
 
-  const total = (await sql`select count(*)::int as n from roleplay_logs`) as Row[];
+  const total = (await q`select count(*)::int as n from roleplay_logs`) as Row[];
   const n = Number(total[0]?.n ?? 0);
   if (!n) {
     console.log(
@@ -121,7 +130,7 @@ async function main() {
     return;
   }
 
-  const rows = (await sql`
+  const rows = (await q`
     select
       coalesce(provider, '(kayıtsız)') as provider,
       coalesce(model, '(kayıtsız)') as model,
@@ -143,7 +152,7 @@ async function main() {
 
   // Son cevabın bildirdiği kalan hak: limite ne kadar yaklaşıldığı ancak
   // buradan görülüyor — 429 gelene kadar her şey normal görünüyor.
-  const last = (await sql`
+  const last = (await q`
     select provider, model, limits, created_at::text as at
     from roleplay_logs
     where limits is not null

@@ -35,7 +35,8 @@ function mkLesson(i: number, level: CefrLevel): Lesson {
   };
 }
 function mkMeta(id: string, skill: SkillMeta["skill"], level: CefrLevel): SkillMeta {
-  return { id, skill, level, title: `${skill}-${id}`, genre: "İlan", minutes: 4, items: 5 };
+  // `unit: null` — kütüphane egzersizi (bkz. lib/skills/types `isLibraryExercise`).
+  return { id, skill, level, title: `${skill}-${id}`, genre: "İlan", minutes: 4, items: 5, unit: null };
 }
 
 const lessons = Array.from({ length: 10 }, (_, i) => mkLesson(i + 1, "A1"));

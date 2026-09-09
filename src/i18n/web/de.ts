@@ -1145,4 +1145,7 @@ export const deWeb: Record<string, string> = {
   "push.rem_weekly_body": "Was hast du diese Woche auf Niveau {level} gelernt? Zehn Fragen sagen es dir.",
   "push.rem_weekly_body_named": "{name}, was hast du diese Woche auf Niveau {level} gelernt? Zehn Fragen sagen es dir.",
   "notifw.hour": "UHRZEIT",
+  "weakw.study": "Üben",
+  "weakw.round_of": "{game}-Runde",
+  "weakw.n_times": "{n}-mal",
 };

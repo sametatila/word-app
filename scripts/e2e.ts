@@ -45,7 +45,7 @@ import { chatConfigured, chatProviders, readLimits } from "../src/lib/chat-provi
 import { cleanForSpeech } from "../src/lib/tts/edge";
 import { defaultVoice, rateFor, resolveVoice, voicesFor } from "../src/lib/tts/voices";
 import { itemCount, xpFor } from "../src/lib/skills/meta";
-import { GAME_LABELS, PLAYABLE_GAMES, type Answer, type Round } from "../src/lib/types";
+import { GAME_LABEL_KEYS, PLAYABLE_GAMES, type Answer, type Round } from "../src/lib/types";
 import { achievementBoard, markAchievementsSeen } from "../src/lib/achievements";
 import { xpForWager } from "../src/lib/xp";
 import { seededShuffle } from "../src/lib/shuffle";
@@ -723,8 +723,10 @@ async function main() {
     check("her derste sahne var", LESSONS.every((l) => l.roleplay.scene.trim().length > 20));
     check("her derste açılış repliği var",
       LESSONS.every((l) => l.roleplay.opening.trim().length > 0 && l.roleplay.openingTr.trim().length > 0));
+    // Üst sınır 8'di; konuşmalar `894ddb0b` ile 6-9 tura uzatıldı ve 166 ders
+    // 9 tur istiyor. Sınır tasarımın söylediği yerde.
     check("konuşmanın alt sınırı makul",
-      LESSONS.every((l) => l.roleplay.minTurns >= 3 && l.roleplay.minTurns <= 8));
+      LESSONS.every((l) => l.roleplay.minTurns >= 3 && l.roleplay.minTurns <= 9));
 
     check("Almanca kursunda ders var", lessonsFor("de").length > 0);
     check("kurs süzgeci karıştırmıyor",
@@ -1075,8 +1077,8 @@ async function main() {
   // serbest cümle (AI hakemli, seçicide değil). `speak` bir oyun değil bir
   // mod ama cevapları kendi adıyla kaydediliyor (bkz. lib/types), o yüzden
   // etiketi var ve seçicide yok.
-  check("etiketler eksiksiz", Object.keys(GAME_LABELS).length === PLAYABLE_GAMES.length + 3,
-    `(${Object.keys(GAME_LABELS).length})`);
+  check("etiketler eksiksiz", Object.keys(GAME_LABEL_KEYS).length === PLAYABLE_GAMES.length + 3,
+    `(${Object.keys(GAME_LABEL_KEYS).length})`);
   check("speak oyun seçicide değil", !(PLAYABLE_GAMES as readonly string[]).includes("speak"));
 
   console.log("\n11i) Eğik çizgiyle ayrılmış örnek cümleler");
@@ -1791,7 +1793,9 @@ async function main() {
   check("yedek: offline işaretli, hata listesi boş", fb.offline === true && fb.errors.length === 0);
   check("yedek: kelime sayısı ve kalıplar", fb.words === 15 && fb.checks.filter((c) => c.ok).length === fb.checks.length);
   const fb2 = fallbackAssessment({ kind: "sentence", level: "A1", task: { prompt: "çevir", target: "Ich trinke Kaffee." }, answer: { text: "ben kahve içiyorum" } });
-  check("yedek: Türkçe metin yakalanıyor, kalıp yok", fb2.checks.some((c) => c.label.startsWith("Almanca") && !c.ok) && fb2.score.overall < 50);
+  // Denetim TÜRÜNE bakılıyor, etiketine değil: etiket artık çeviriden
+  // geliyor ve dile göre değişiyor (bkz. lib/assess-client `FallbackCheck`).
+  check("yedek: Türkçe metin yakalanıyor, kalıp yok", fb2.checks.some((c) => c.kind === "target_lang" && !c.ok) && fb2.score.overall < 50);
   check("assessHash aynı cevap → aynı özet", assessHash({ kind: "sentence", level: "A1", task: { prompt: "a" }, answer: { text: " Ich trinke. " } }) === assessHash({ kind: "sentence", level: "A1", task: { prompt: "a" }, answer: { text: "Ich trinke." } }));
   check("assessHash farklı seviye → farklı özet", assessHash({ kind: "sentence", level: "A1", task: { prompt: "a" }, answer: { text: "x" } }) !== assessHash({ kind: "sentence", level: "A2", task: { prompt: "a" }, answer: { text: "x" } }));
   const noProvider = await assess(USER, { kind: "sentence", level: "A1", task: { prompt: "a" }, answer: { text: "x" } }, monday);
@@ -1817,7 +1821,19 @@ async function main() {
     if (!r.understood) understoodAll = false;
   }
   check("dört tipik cevap dört dalı tutuyor", understoodAll);
-  check("senaryo dördüncü turda bitiyor", ended && ost.userTurns === 4);
+  /*
+    Senaryo SABİT bir tur sayısında bitmiyor. Test dördüncü turda bitmesini
+    bekliyordu; konuşmalar `894ddb0b` ile 6-9 tura uzatıldı (amaç + yay) ve
+    beklenti güncellenmemişti. Ölçüt artık senaryonun kendi uzunluğu: her
+    turda örnek cevabı söyleyerek sonuna kadar gidiliyor.
+  */
+  for (const turn of hallo.roleplay.script!.slice(said.length)) {
+    if (ended) break;
+    const r = offlineReply(hallo, ost, turn.replies[0]?.match[0] ?? turn.fallback.example);
+    ost = r.state;
+    ended = r.ended;
+  }
+  check("senaryo sonuna kadar gidince bitiyor", ended && ost.userTurns >= hallo.roleplay.minTurns, `(${ost.userTurns}/${hallo.roleplay.minTurns})`);
   const halloSum = offlineSummary(hallo, ost);
   check("özet: üç kalıp kullanıldı, puan 100", halloSum.used.length === 3 && halloSum.score === 100);
   const miss1 = offlineReply(hallo, offlineStart(hallo).state, "guten abend, schönes wetter heute");
@@ -1887,7 +1903,7 @@ async function main() {
   const fsRound = makeRound("free_sentence", { ...fsPool[0], isNew: false } as never, fsPool, () => "f1", "strong");
   check("free_sentence turu kuruluyor: bir ortak, aynı seviye", fsRound?.game === "free_sentence" && (fsRound as { partners: { id: number }[] }).partners.length === 1 && (fsRound as { partners: { id: number }[] }).partners[0].id !== fsPool[0].id);
   check("havuzsuz kurulamıyor", makeRound("free_sentence", { ...fsPool[0], isNew: false } as never, [], () => "f2", "strong") === null);
-  check("PLAYABLE dışında, etiket var", !(PLAYABLE_GAMES as readonly string[]).includes("free_sentence") && GAME_LABELS.free_sentence === "Cümle Kur");
+  check("PLAYABLE dışında, etiket var", !(PLAYABLE_GAMES as readonly string[]).includes("free_sentence") && GAME_LABEL_KEYS.free_sentence === "games.free_sentence");
   check("üretim oyunu sayılıyor", isProductionGame("free_sentence"));
   await submitAnswers(USER, [{ wordId: fsPool[0].id, game: "free_sentence", correct: true, latencyMs: 30000, quality: 4 }], monday, 40);
   const [fsRv] = await db.select().from(reviews).where(and(eq(reviews.userId, USER), eq(reviews.wordId, fsPool[0].id))).orderBy(desc(reviews.id)).limit(1);
@@ -1905,7 +1921,7 @@ async function main() {
   await track(USER, "session_done", monday, 3);
   plan = await buildPlan(USER, monday, planProfile.course, "A1", planProfile.dailyGoal);
   const weak = plan.items.find((i) => i.id === "weak");
-  check("5 artikel hatası → zayıf nokta öğesi, Artikel Yarışı", weak?.href === "/learn?game=artikel" && weak.title.includes("artikel"), weak?.title);
+  check("5 artikel hatası → zayıf nokta öğesi, Artikel Yarışı", weak?.href === "/learn/game?game=artikel" && weak.title.includes("artikel"), weak?.title);
   check("tur bugün tamamlandı işareti (session_done)", plan.items.find((i) => i.id === "review")?.done === true);
   check("zayıf nokta öğesi bugün 5 artikel cevabıyla yapıldı sayılıyor", weak?.done === true);
 
@@ -1965,7 +1981,9 @@ async function main() {
   const pr3 = scorePlacement([...pa("vocab", "A1", 6, 0), ...pa("vocab", "A2", 6, 0), ...pa("vocab", "B1", 6, 0), ...pa("vocab", "B2", 6, 0), ...pa("grammar", "A1", 3, 0), ...pa("grammar", "A2", 3, 0), ...pa("grammar", "B1", 3, 0), ...pa("reading", "A2", 3, 0), ...pa("reading", "B1", 3, 0)]);
   check("güçlü profil, dinleme atlandı → B1 (medyan atlananı saymaz)", pr3.suggested === "B1", pr3.suggested);
   const test = await buildPlacement("de");
-  check("madde bankası: A1 kelime 6, A1 dilbilgisi 3, okuma/dinleme 2'şer", test.vocab.A1.length === 6 && test.grammar.A1.length === 3 && test.reading.length === 2 && test.listening.length === 2, `${test.vocab.A1.length}/${test.grammar.A1.length}/${test.reading.length}/${test.listening.length}`);
+  // Dilbilgisi bölümü 2026-08'de KALDIRILDI (bkz. lib/placement: cheatsheet
+  // gitti, konu immersion'a taşındı). Beklenti o değişiklikte güncellenmemişti.
+  check("madde bankası: A1 kelime 6, dilbilgisi yok, okuma/dinleme 2'şer", test.vocab.A1.length === 6 && test.grammar.A1.length === 0 && test.reading.length === 2 && test.listening.length === 2, `${test.vocab.A1.length}/${test.grammar.A1.length}/${test.reading.length}/${test.listening.length}`);
   check("kelime şıkları 4 ve cevap indeksi doğru", test.vocab.A1.every((v) => v.options.length === 4 && v.answer >= 0 && v.answer < 4));
   await reset();
   await ensureProfile(USER, "E2E");
@@ -2009,13 +2027,13 @@ async function main() {
   const nowP = new Date();
   const ev = (skill: ProficiencySkill, level: CefrLevel, score: number, source: EvidenceSource, daysAgo = 0): Evidence => ({ skill, level, score, source, at: new Date(nowP.getTime() - daysAgo * 86400000) });
   const prof1 = computeProficiency([ev("reading", "A2", 60, "exercise"), ev("reading", "A2", 90, "exam")], nowP);
-  check("sınav ×3 ağırlık: (60 + 90×3)/4 = 83 → sağlam", prof1.reading.A2?.score === 83 && prof1.reading.A2?.band === "sağlam", JSON.stringify(prof1.reading.A2));
+  check("sınav ×3 ağırlık: (60 + 90×3)/4 = 83 → sağlam", prof1.reading.A2?.score === 83 && prof1.reading.A2?.band === "solid", JSON.stringify(prof1.reading.A2));
   const prof2 = computeProficiency([ev("writing", "B1", 100, "assessment", 29), ev("writing", "B1", 40, "exercise", 0)], nowP);
   check("29 gün önceki kanıt neredeyse sönmüş → puan 40'a yakın", (prof2.writing.B1?.score ?? 0) < 50 && prof2.writing.B1?.n === 2, JSON.stringify(prof2.writing.B1));
   const prof3 = computeProficiency([ev("listening", "A1", 50, "exercise", 31)], nowP);
   check("31 gün önceki kanıt sayılmaz", prof3.listening.A1 === undefined);
-  check("bantlar", bandOf(39) === "başlangıç" && bandOf(40) === "gelişiyor" && bandOf(70) === "sağlam" && bandOf(85) === "ustalaştı");
-  check("en zayıf: ölçülmemiş beceri önce", weakestSkill(prof1, "A2") !== "reading" && weakestSkill({ ...prof1, listening: { A2: { score: 20, band: "başlangıç", n: 1, weight: 1 } }, writing: { A2: { score: 30, band: "başlangıç", n: 1, weight: 1 } }, speaking: { A2: { score: 30, band: "başlangıç", n: 1, weight: 1 } }, grammar: { A2: { score: 30, band: "başlangıç", n: 1, weight: 1 } }, vocab: { A2: { score: 30, band: "başlangıç", n: 1, weight: 1 } } }, "A2") === "listening");
+  check("bantlar", bandOf(39) === "beginner" && bandOf(40) === "developing" && bandOf(70) === "solid" && bandOf(85) === "mastered");
+  check("en zayıf: ölçülmemiş beceri önce", weakestSkill(prof1, "A2") !== "reading" && weakestSkill({ ...prof1, listening: { A2: { score: 20, band: "beginner", n: 1, weight: 1 } }, writing: { A2: { score: 30, band: "beginner", n: 1, weight: 1 } }, speaking: { A2: { score: 30, band: "beginner", n: 1, weight: 1 } }, grammar: { A2: { score: 30, band: "beginner", n: 1, weight: 1 } }, vocab: { A2: { score: 30, band: "beginner", n: 1, weight: 1 } } }, "A2") === "listening");
   await reset();
   await ensureProfile(USER, "E2E");
   const rdP = BUNDLED_EXERCISES.find((e) => e.skill === "reading" && e.level === "A1" && (!e.course || e.course === "de"))!;
@@ -2023,7 +2041,7 @@ async function main() {
   const evid = await gatherEvidence(USER);
   check("egzersiz kanıtı toplanıyor", evid.some((e) => e.skill === "reading" && e.level === "A1" && e.score === 90 && e.source === "exercise"));
   const pf = await proficiencyFor(USER, "de", "A1");
-  check("okuma A1 ustalaştı, diğerleri ölçülmedi", pf.proficiency.reading.A1?.band === "ustalaştı" && pf.proficiency.listening.A1 === undefined);
+  check("okuma A1 ustalaştı, diğerleri ölçülmedi", pf.proficiency.reading.A1?.band === "mastered" && pf.proficiency.listening.A1 === undefined);
   check("sıradaki adım okuma değil, ölçülmemiş bir beceri", pf.next !== null && pf.next.skill !== "reading" && pf.next.reason.includes("ölçülmedi"), pf.next?.reason);
   const planP = await buildPlan(USER, monday, "de", "A1", 20);
   check("plan beceri öğesi yetkinlikten geliyor", planP.items.some((i) => i.id === "skill" && i.detail.includes("ölçülmedi")));
@@ -2039,7 +2057,7 @@ async function main() {
     { wordId: eaWords[7].id, game: "typing", correct: false, latencyMs: 2000, errorType: "spelling", detail: "x" },
   ], monday, 20);
   const rep = await errorReport(USER, "de");
-  check("dağılım: artikel önde (6/9 = %67), hedefli tur bağlantısı", rep.totalWrong === 9 && rep.types[0]?.type === "article" && rep.types[0].pct === 67 && rep.types[0].href === "/learn?game=artikel", JSON.stringify(rep.types));
+  check("dağılım: artikel önde (6/9 = %67), hedefli tur bağlantısı", rep.totalWrong === 9 && rep.types[0]?.type === "article" && rep.types[0].pct === 67 && rep.types[0].href === "/learn/game?game=artikel", JSON.stringify(rep.types));
   check("karıştırma çifti: kelime ↔ 'kapı' ×2", rep.confusions.length === 1 && rep.confusions[0].with === "kapı" && rep.confusions[0].n === 2 && rep.confusions[0].wordId === eaWords[6].id);
   const freq = await frequentErrorTypes(USER);
   check("sık hata tipi: artikel (≥5), anlam değil (2)", freq.has("article") && !freq.has("meaning"));
@@ -2081,19 +2099,26 @@ async function main() {
   await ensureProfile(USER, "E2E");
   const p1 = await buildExam(USER, "de", "A1", null, monday);
   const p2 = await buildExam(USER, "de", "A1", null, monday);
-  check("seviye kâğıdı: 12 kelime, 12 dilbilgisi, 6 cümle kurma, 2 okuma, 2 dinleme", p1.sections.vocab.length === 12 && p1.sections.grammar.length === 12 && p1.sections.produce.length === 6 && p1.sections.reading.length === 2 && p1.sections.listening.length === 2, `${p1.sections.vocab.length}/${p1.sections.grammar.length}/${p1.sections.produce.length}/${p1.sections.reading.length}/${p1.sections.listening.length}`);
+  // Aynı sebep: sınav kâğıdında da dilbilgisi bölümü yok (lib/exam).
+  check("seviye kâğıdı: 12 kelime, dilbilgisi yok, 6 cümle kurma, 2 okuma, 2 dinleme", p1.sections.vocab.length === 12 && p1.sections.grammar.length === 0 && p1.sections.produce.length === 6 && p1.sections.reading.length === 2 && p1.sections.listening.length === 2, `${p1.sections.vocab.length}/${p1.sections.grammar.length}/${p1.sections.produce.length}/${p1.sections.reading.length}/${p1.sections.listening.length}`);
   check("kelime bölümü yalnız üretim oyunları", p1.sections.vocab.every((r) => r.game === "translate" || r.game === "typing"));
   check("aynı hafta aynı kâğıt (tohumlu)", p1.sections.grammar.map((g) => g.id).join() === p2.sections.grammar.map((g) => g.id).join() && p1.sections.produce.map((g) => g.id).join() === p2.sections.produce.map((g) => g.id).join());
   const p3 = await buildExam(USER, "de", "A1", null, shiftDay(monday, 7));
-  check("sonraki hafta farklı kâğıt", p3.sections.grammar.map((g) => g.id).join() !== p1.sections.grammar.map((g) => g.id).join());
+  /*
+    Haftalık farklılık CÜMLE KURMA bölümünden okunuyor. Eskiden dilbilgisinden
+    okunuyordu ve o bölüm 2026-08'de kaldırıldı — iki boş liste her zaman eşit
+    çıkar. Kelime bölümü de ölçüt olamaz: onun kaynağı kullanıcının kendi
+    kelimeleri, tohum değil. `produce` haftanın tohumuyla karılan tek bölüm.
+  */
+  check("sonraki hafta farklı kâğıt", p3.sections.produce.map((g) => g.id).join() !== p1.sections.produce.map((g) => g.id).join());
 
   const pm = await buildExam(USER, "de", "A1", 2, monday);
-  check("modül kâğıdı: 6/6/5/1/1 ve ön koşulsuz → deneme", pm.sections.vocab.length === 6 && pm.sections.grammar.length === 6 && pm.sections.produce.length === 5 && pm.sections.reading.length === 1 && pm.sections.listening.length === 1 && pm.trial === true, `${pm.sections.vocab.length}/${pm.sections.grammar.length}/${pm.sections.produce.length}`);
+  check("modül kâğıdı: 6 kelime, dilbilgisi yok, 5 cümle kurma, 1+1 metin ve ön koşulsuz → deneme", pm.sections.vocab.length === 6 && pm.sections.grammar.length === 0 && pm.sections.produce.length === 5 && pm.sections.reading.length === 1 && pm.sections.listening.length === 1 && pm.trial === true, `${pm.sections.vocab.length}/${pm.sections.grammar.length}/${pm.sections.produce.length}`);
   check("süre: modül 25 dk, seviye 45 dk", pm.seconds === 1500 && p1.seconds === 2700);
   check("kapak modülün kendisi (A1.3 · Yeme-içme)", pm.cover?.code === "A1.3" && pm.cover.titleDe === "Essen und Trinken" && pm.cover.canDo.length >= 4, JSON.stringify(pm.cover?.code));
   check("okuma ve dinleme modülün planından", pm.sections.reading[0].id === "r:A1.3" && pm.sections.listening[0].id === "l:A1.3");
   check("dinleme diyaloğu replikli, metni gizli", (pm.sections.listening[0].segments?.length ?? 0) >= 4 && !pm.sections.listening[0].text);
-  check("dilbilgisi: hem tablo hücresi hem ders hükmü", pm.sections.grammar.some((g) => g.kind === "cell") && pm.sections.grammar.some((g) => g.kind === "judge"));
+  check("dilbilgisi bölümü kâğıtta yok (2026-08'de kaldırıldı)", pm.sections.grammar.length === 0);
   const modLessons = moduleContent("de", "A1", 2).lessons.map((l) => l.id);
   check("hüküm maddeleri modülün derslerinden", pm.sections.grammar.filter((g) => g.kind === "judge").every((g) => modLessons.some((id) => g.id.startsWith(`j:${id}#`))));
   check("cümle kurma maddeleri modülün derslerinden", pm.sections.produce.every((i) => modLessons.some((id) => i.id.startsWith(`p:${id}#`))));

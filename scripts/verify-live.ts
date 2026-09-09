@@ -17,6 +17,17 @@ import { Pool } from "pg";
 import { cleanHeadword } from "../src/lib/headword";
 
 const sql = new Pool({ connectionString: process.env.DATABASE_URL! });
+
+/**
+ * `pg.Pool` ŞABLON ETİKETİ DEĞİL. Sorgular `sql\`…\`` diye yazılıydı ve bu,
+ * havuzu bir fonksiyon gibi çağırmak demek — betik ilk sorguda patlıyordu.
+ * Aynı hata `apply-migration.ts`te bir dalda vardı ve orada düzeltilmişti;
+ * burada kalmıştı çünkü `scripts/` tip denetiminin dışındaydı.
+ */
+async function q<T>(text: string): Promise<T[]> {
+  const res = await sql.query(text);
+  return res.rows as T[];
+}
 const ROOT = process.cwd();
 const problems: string[] = [];
 
@@ -28,7 +39,7 @@ async function checkWords() {
   const src = JSON.parse(readFileSync(path.join(ROOT, "data/app/words.json"), "utf8")) as {
     id: number; de: string; tr: string; niveau: string;
   }[];
-  const live = (await sql`select id, de, tr, niveau from words where course='de'`) as {
+  const live = (await q(`select id, de, tr, niveau from words where course='de'`)) as {
     id: number; de: string; tr: string; niveau: string;
   }[];
 
@@ -61,7 +72,7 @@ async function checkZurich() {
   const src = readdirSync(dir)
     .filter((f) => /^chunk-\d+\.json$/.test(f))
     .flatMap((f) => JSON.parse(readFileSync(path.join(dir, f), "utf8")) as { id: number; gsw: string }[]);
-  const live = (await sql`select id, de from words where course='gsw-zh'`) as { id: number; de: string }[];
+  const live = (await q(`select id, de from words where course='gsw-zh'`)) as { id: number; de: string }[];
 
   console.log(`\nZüritüütsch — kaynak ${src.length}, canlı ${live.length}`);
   if (src.length !== live.length) problems.push(`gsw kelime sayısı: ${src.length} ≠ ${live.length}`);
@@ -87,7 +98,7 @@ async function checkSkills() {
   const { BUNDLED_EXERCISES } = (await import("../src/lib/skills/bundled")) as {
     BUNDLED_EXERCISES: { id: string; title: string; skill: string; level: string }[];
   };
-  const live = (await sql`select id, title, skill, level from skill_exercises`) as {
+  const live = (await q(`select id, title, skill, level from skill_exercises`)) as {
     id: string; title: string; skill: string; level: string;
   }[];
 
@@ -110,12 +121,12 @@ async function checkSkills() {
 }
 
 async function checkUserData() {
-  const [p] = (await sql`select count(*)::int as n from profiles`) as { n: number }[];
-  const [u] = (await sql`select count(*)::int as n from user_words`) as { n: number }[];
-  const [r] = (await sql`select count(*)::int as n from reviews`) as { n: number }[];
-  const [o] = (await sql`
+  const [p] = (await q(`select count(*)::int as n from profiles`)) as { n: number }[];
+  const [u] = (await q(`select count(*)::int as n from user_words`)) as { n: number }[];
+  const [r] = (await q(`select count(*)::int as n from reviews`)) as { n: number }[];
+  const [o] = (await q(`
     select count(*)::int as n from user_words uw
-    left join words w on w.id = uw.word_id where w.id is null`) as { n: number }[];
+    left join words w on w.id = uw.word_id where w.id is null`)) as { n: number }[];
   console.log(`\nKullanıcı verisi — ${p.n} profil · ${u.n} kelime kaydı · ${r.n} cevap`);
   if (o.n) problems.push(`${o.n} kullanıcı kaydı silinmiş kelimeye bağlı (öksüz)`);
   else console.log("  öksüz kayıt yok");

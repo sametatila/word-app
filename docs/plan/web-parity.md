@@ -468,3 +468,43 @@ o yüzden karşılığı bir arka uç işiydi. Yapılanlar:
 **Kalan tek adım deploy sonrasına ait:** `lernomi-cron-streak` ve
 `lernomi-cron-weekly` timer'ları sunucuda kurulacak (AGENTS.md'de yazılı).
 Bugün kurulsalardı uçlar henüz canlıda olmadığı için 404 dönerdi.
+
+
+---
+
+## 8. Regresyon ağı geri kuruldu (9 Eyl)
+
+`npm run test:e2e` **9. testte çöküyordu** ve bu bir süredir böyleydi:
+`scripts/` klasörü `tsconfig.json`da `exclude` içindeydi, yani `npx tsc
+--noEmit` betiklere hiç bakmıyordu. Şerit I'in yeniden adlandırmaları
+(`GAME_LABELS` → `GAME_LABEL_KEYS`, bantlar Türkçe sözcükten kararlı kimliğe)
+ve şerit L'nin adres değişikliği (`/learn?game=` → `/learn/game?game=`)
+testlerde karşılıksız kalmıştı.
+
+- `npm run typecheck:scripts` eklendi; `scripts/tsconfig.e2e.json` artık
+  `include` taşıyor. İlk koşuda dört betikte daha aynı sınıf hata çıktı:
+  `pg.Pool` şablon etiketi gibi çağrılıyordu (`sql\`…\``), yani o raporlama
+  betikleri ilk sorguda patlardı. Etiket doğru biçimde yazıldı.
+- Beş beklenti, ürünün BİLEREK değiştiği yerlerde eskimişti: dilbilgisi
+  bölümü 2026-08'de kaldırıldı (yerleştirme + sınav kâğıdı), rol yapma
+  `894ddb0b` ile 6-9 tura uzatıldı. Testler bugünkü tasarıma göre yazıldı.
+- Bir gerçek hata çıktı: hata analizi `gameLabel`i ham anahtar olarak
+  döndürüyordu, yani zayıf nokta kartının ipucunda `games.article_race`
+  yazıyordu. Aynı kartta üç sabit Türkçe daha vardı ("Çalış", "{n} kez",
+  `%{pct}`).
+
+**Sonuç: 620 test geçiyor.** Tek oynak kalem "oyun çeşitliliği": yirmi oturum
+kurup aynı oyunun arka arkaya gelmemesini bekliyor ve gerçek veriyle koşuda
+bazen 1-3 tekrar çıkıyor (kelimenin durumuna göre uygun oyun sayısı azalınca).
+Eşiği gevşetmek sorunu gizlemek olurdu; olduğu gibi bırakıldı.
+
+**e2e veritabanı kurulumu** (yerel, `lernomi-dev-pg` kabında):
+
+```bash
+docker exec lernomi-dev-pg psql -U postgres -c "CREATE DATABASE lernomi_e2e"
+# tüm migration'lar TEK süreçte (apply-migration.ts dosya başına bir süreç
+# açıyor ve havuzu kapatmıyor — 43 dosya için 43 asılı süreç demek)
+DATABASE_URL=<e2e> npx tsx scripts/seed.ts          # 8.707 kelime
+DATABASE_URL=<e2e> npx tsx scripts/seed-skills.ts   # 984 egzersiz
+TEST_DATABASE_URL=<e2e> npm run test:e2e
+```

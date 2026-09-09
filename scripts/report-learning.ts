@@ -30,6 +30,15 @@ async function main() {
   const url = process.env.DATABASE_URL;
   if (!url) throw new Error("DATABASE_URL tanımlı değil");
   const sql = new Pool({ connectionString: url });
+  /**
+ * `pg.Pool` ŞABLON ETİKETİ DEĞİL — sorgular `sql`…`` diye yazılıydı, yani havuz
+ * bir fonksiyon gibi çağrılıyordu ve betik ilk sorguda patlıyordu. Etiket
+ * burada: metni birleştirip `$1`, `$2` yer tutucularıyla `query()`ye veriyor,
+ * böylece çağrı yerleri olduğu gibi kalıyor ve değer geçirilirse de
+ * parametre olarak gidiyor (dizeye gömülmüyor).
+ */
+  const q = async <T = Record<string, unknown>>(s: TemplateStringsArray, ...v: unknown[]): Promise<T[]> =>
+    (await sql.query(s.reduce((acc, part, i) => `${acc}$${i}${part}`), v)).rows as T[];
   const weeks = Math.max(1, Math.min(52, Number(process.argv[2]) || 8));
   const since = `current_date - ${7 * weeks}`;
   // Neon sürücüsü parametreyi tarih aritmetiğinde interval gibi okuyamıyor;
@@ -39,7 +48,7 @@ async function main() {
   console.log(`\n══ Öğrenme raporu · son ${weeks} hafta (${since}) ══`);
 
   // 1. WAU
-  const wau = (await sql`
+  const wau = (await q`
     select date_trunc('week', day)::date::text as week, count(distinct user_id)::int as wau,
            sum(reviews)::int as answers, sum(seconds)::int as seconds
     from daily_stats
@@ -52,7 +61,7 @@ async function main() {
   if (!wau.length) console.log("  (kayıt yok)");
 
   // 2. Üretim oranı
-  const prod = (await sql`
+  const prod = (await q`
     with p as (
       select date_trunc('week', day)::date as week, count(*)::int as n
       from events where name = 'production_attempt' and day >= current_date - ${days}::int group by 1),
@@ -75,7 +84,7 @@ async function main() {
   if (!prod.length) console.log("  (kayıt yok)");
 
   // 3. Sınav
-  const exams = (await sql`
+  const exams = (await q`
     select date_trunc('week', day)::date::text as week, split_part(coalesce(kind,'?'), ':', 1) as exam,
            round(avg(value))::int as avg_score, count(*)::int as exams, count(distinct user_id)::int as people
     from events where name = 'exam_finish' and day >= current_date - ${days}::int group by 1, 2 order by 1, 2
@@ -86,7 +95,7 @@ async function main() {
   if (!exams.length) console.log("  (henüz sınav olayı yok — Faz 4)");
 
   // 4. Beceri
-  const skills = (await sql`
+  const skills = (await q`
     select date_trunc('week', day)::date::text as week, coalesce(kind,'?') as skill_level,
            round(avg(value))::int as avg_score, count(*)::int as finishes, count(distinct user_id)::int as people
     from events where name = 'skill_finish' and day >= current_date - ${days}::int group by 1, 2 order by 1, 2
@@ -104,7 +113,7 @@ async function main() {
   if (!skills.length) console.log("  (henüz beceri olayı yok — WP-01 sonrası dolar)");
 
   // 5 + 6. Ders geçme ve rol yapma
-  const lessons = (await sql`
+  const lessons = (await q`
     select date_trunc('week', last_at)::date::text as week, count(*)::int as lessons,
            count(*) filter (where roleplay_done and correct::float / nullif(total,0) >= 0.7)::int as passed,
            count(*) filter (where roleplay_done)::int as roleplay_done,
@@ -118,7 +127,7 @@ async function main() {
   head("6. Rol yapma tamamlama", "hedef ≥ %85 (sağlayıcı kapalıyken de)");
   for (const r of lessons)
     console.log(`  ${r.week}  ${pad(r.roleplay_done, 4)} / ${pad(r.lessons, 4)}  → ${pct(n(r.roleplay_done), n(r.lessons))}`);
-  const rp = (await sql`
+  const rp = (await q`
     select date_trunc('week', day)::date::text as week, count(*)::int as n, round(avg(value))::int as avg_score
     from events where name = 'production_attempt' and kind = 'roleplay' and day >= current_date - ${days}::int
     group by 1 order by 1
@@ -126,7 +135,7 @@ async function main() {
   for (const r of rp) console.log(`    ${r.week}  rol yapma puanı ort ${r.avg_score} (${r.n} konuşma)`);
 
   // 7. Hata tipleri
-  const errors = (await sql`
+  const errors = (await q`
     select date_trunc('week', day)::date::text as week, coalesce(kind,'?') as error_type, count(*)::int as n
     from events where name = 'error_recorded' and day >= current_date - ${days}::int group by 1, 2 order by 1, 3 desc
   `) as Row[];
@@ -142,7 +151,7 @@ async function main() {
     console.log(`    ${String(r.error_type).padEnd(14)} ${pad(r.n, 5)}  ${pct(n(r.n), weekTotal)}`);
   }
   if (!errors.length) console.log("  (henüz hata tipi olayı yok — WP-02 sonrası dolar)");
-  const weighted = (await sql`
+  const weighted = (await q`
     select date_trunc('week', day)::date::text as week, coalesce(kind,'?') as error_type, count(*)::int as n, round(avg(value))::int as w
     from events where name = 'srs_weight' and day >= current_date - ${days}::int group by 1, 2 order by 1, 3 desc
   `) as Row[];
@@ -152,7 +161,7 @@ async function main() {
   }
 
   // 8. Tutunma
-  const retention = (await sql`
+  const retention = (await q`
     with first as (
       select user_id, date_trunc('week', min(day))::date as cohort
       from daily_stats where reviews > 0 or xp > 0 group by 1),
@@ -176,7 +185,7 @@ async function main() {
 
   // ── WP-80: öğrenme takibi ────────────────────────────────────────
   // 9. Ders adımları: nasıl geçiliyor
-  const steps = (await sql`
+  const steps = (await q`
     select split_part(kind, ':', 1) as step, split_part(kind, ':', 2) as via,
            count(*)::int as n,
            count(*) filter (where value = 2)::int as first_try,
@@ -188,60 +197,60 @@ async function main() {
   for (const r of steps)
     console.log(`  ${String(r.step).padEnd(10)} ${String(r.via).padEnd(6)} ${pad(r.n, 5)}  ilk ${pad(r.first_try, 4)}  sonra ${pad(r.later, 4)}  geçemedi ${pad(r.failed, 4)}  → ilk denemede ${pct(n(r.first_try), n(r.n))}`);
   if (!steps.length) console.log("  (henüz ders adımı olayı yok — WP-80 sonrası dolar)");
-  const lf = (await sql`
+  const lf = (await q`
     select date_trunc('week', day)::date::text as week, count(*)::int as n, round(avg(value))::int as avg_pct,
            count(*) filter (where kind is not null)::int as with_id, count(distinct user_id)::int as people
     from events where name = 'lesson_finish' and day >= current_date - ${days}::int group by 1 order by 1
   `) as Row[];
   for (const r of lf) console.log(`    ${r.week}  ${pad(r.n, 4)} ders bitişi · ort doğru %${r.avg_pct} · ${r.people} kişi`);
-  const ls = (await sql`
+  const ls = (await q`
     select count(*) filter (where value = 1)::int as resumed, count(*)::int as n from events where name = 'lesson_start' and day >= current_date - ${days}::int
   `) as Row[];
   if (n(ls[0]?.n)) console.log(`    ders başlangıcı ${ls[0].n} · kaldığı yerden ${ls[0].resumed} (${pct(n(ls[0].resumed), n(ls[0].n))})`);
 
   // 10. Söyleyiş: karar kimin
-  const ss = (await sql`
+  const ss = (await q`
     select kind as via, count(*)::int as n, count(*) filter (where value = 1)::int as ok
     from events where name = 'speak_self' and day >= current_date - ${days}::int group by 1 order by 1
   `) as Row[];
   head("10. Söyleyiş kararı", "tanıyıcı (asr) mı öğrenci (self) mi karar verdi · doğru oranı — self payı yüksekse drill sınamıyor");
   for (const r of ss) console.log(`  ${String(r.via).padEnd(6)} ${pad(r.n, 5)} karar  doğru ${pct(n(r.ok), n(r.n))}`);
   if (!ss.length) console.log("  (kayıt yok)");
-  const pr = (await sql`
+  const pr = (await q`
     select count(*)::int as n, round(avg(value))::int as avg_score, count(*) filter (where value >= 80)::int as passed, count(distinct user_id)::int as people
     from events where name = 'pronounce' and day >= current_date - ${days}::int
   `) as Row[];
   if (n(pr[0]?.n)) console.log(`  telaffuz puanı: ${pr[0].n} klip · ort ${pr[0].avg_score} · geçen ${pct(n(pr[0].passed), n(pr[0].n))} · ${pr[0].people} kişi`);
 
   // 11. Dilbilgisi drill'leri
-  const dr = (await sql`
+  const dr = (await q`
     select kind as table_id, count(*)::int as sets, round(avg(value))::int as avg_pct, count(distinct user_id)::int as people
     from events where name = 'drill_finish' and day >= current_date - ${days}::int group by 1 order by sets desc
   `) as Row[];
   head("11. Dilbilgisi drill setleri", "tablo · set · ortalama doğru · kişi");
   for (const r of dr) console.log(`  ${String(r.table_id).padEnd(22)} ${pad(r.sets, 4)}  %${pad(r.avg_pct, 3)}  ${r.people} kişi`);
   if (!dr.length) console.log("  (kayıt yok)");
-  const de = (await sql`
+  const de = (await q`
     select kind as error_type, count(*)::int as n, count(*) filter (where value = 1)::int as ok
     from events where name = 'drill' and day >= current_date - ${days}::int group by 1 order by n desc
   `) as Row[];
   for (const r of de) console.log(`    ${String(r.error_type).padEnd(16)} ${pad(r.n, 5)} cevap  doğru ${pct(n(r.ok), n(r.n))}`);
 
   // 12. Tur türleri
-  const st = (await sql`
+  const st = (await q`
     select coalesce(split_part(kind, ':', 1), 'eski') as mode, count(*)::int as n, count(distinct user_id)::int as people
     from events where name = 'session_start' and day >= current_date - ${days}::int group by 1 order by n desc
   `) as Row[];
   head("12. Tur türleri", "karışık · tek oyun · ek tur — üretim oranı düşükse tek oyun tercihi ipucu verir");
   for (const r of st) console.log(`  ${String(r.mode).padEnd(8)} ${pad(r.n, 5)} tur · ${r.people} kişi`);
-  const sg = (await sql`
+  const sg = (await q`
     select split_part(kind, ':', 2) as game, count(*)::int as n from events
     where name = 'session_start' and kind like 'single:%' and day >= current_date - ${days}::int group by 1 order by n desc
   `) as Row[];
   for (const r of sg) console.log(`    tek oyun ${String(r.game).padEnd(14)} ${pad(r.n, 4)}`);
 
   // 13. Ekranda geçen süre — öğrenme yüzeyleri
-  const ts = (await sql`
+  const ts = (await q`
     select kind as screen, sum(value)::int as seconds, count(*)::int as visits, count(distinct user_id)::int as people
     from events where name = 'time_spent' and day >= current_date - ${days}::int
       and kind in ('learn','lesson','skill','drill','cheatsheet','exam','placement','weekly','roleplay_exam')
@@ -252,7 +261,7 @@ async function main() {
   if (!ts.length) console.log("  (kayıt yok)");
 
   // 14. Sağlayıcı sağlığı — sessizce düşen konuşma hattı
-  const ai = (await sql`
+  const ai = (await q`
     select kind, provider, count(*)::int as n, count(*) filter (where ok)::int as ok,
            round(avg(ms))::int as latency, count(*) filter (where status = 429)::int as limited
     from ai_usage where created_at >= current_date - ${days}::int group by 1, 2 order by 1, n desc
@@ -260,7 +269,7 @@ async function main() {
   head("14. AI / STT sağlığı", "tür · sağlayıcı · istek · başarı · ort gecikme — başarı %90 altı = zincir çalışıyor ama kota yakın");
   for (const r of ai) console.log(`  ${String(r.kind).padEnd(9)} ${String(r.provider).padEnd(12)} ${pad(r.n, 5)}  ${pct(n(r.ok), n(r.n)).padStart(5)}  ${r.latency ?? "—"} ms${n(r.limited) ? `  · 429: ${r.limited}` : ""}`);
   if (!ai.length) console.log("  (kayıt yok)");
-  const ce = (await sql`
+  const ce = (await q`
     select kind as screen, count(*)::int as n, count(distinct user_id)::int as people, count(*) filter (where value = 1)::int as boundary
     from events where name = 'client_error' and day >= current_date - ${days}::int group by 1 order by n desc
   `) as Row[];

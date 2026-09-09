@@ -1170,4 +1170,7 @@ export const trWeb: Record<string, string> = {
   "push.rem_weekly_body": "{level} seviyesinde bu hafta ne öğrendin? On soruda ölç.",
   "push.rem_weekly_body_named": "{name}, {level} seviyesinde bu hafta ne öğrendin? On soruda ölç.",
   "notifw.hour": "SAAT",
+  "weakw.study": "Çalış",
+  "weakw.round_of": "{game} turu",
+  "weakw.n_times": "{n} kez",
 };

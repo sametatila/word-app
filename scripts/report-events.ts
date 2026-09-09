@@ -42,9 +42,18 @@ async function main() {
   const url = process.env.DATABASE_URL;
   if (!url) throw new Error("DATABASE_URL tanımlı değil");
   const sql = new Pool({ connectionString: url });
+  /**
+ * `pg.Pool` ŞABLON ETİKETİ DEĞİL — sorgular `sql`…`` diye yazılıydı, yani havuz
+ * bir fonksiyon gibi çağrılıyordu ve betik ilk sorguda patlıyordu. Etiket
+ * burada: metni birleştirip `$1`, `$2` yer tutucularıyla `query()`ye veriyor,
+ * böylece çağrı yerleri olduğu gibi kalıyor ve değer geçirilirse de
+ * parametre olarak gidiyor (dizeye gömülmüyor).
+ */
+  const q = async <T = Record<string, unknown>>(s: TemplateStringsArray, ...v: unknown[]): Promise<T[]> =>
+    (await sql.query(s.reduce((acc, part, i) => `${acc}$${i}${part}`), v)).rows as T[];
   const days = Math.max(1, Math.min(365, Number(process.argv[2]) || 14));
 
-  const totals = (await sql`
+  const totals = (await q`
     select name, count(*)::int as n, count(distinct user_id)::int as people
     from events
     where day >= current_date - ${days}::int
@@ -101,7 +110,7 @@ async function main() {
   }
 
   // ── Sekmeler ───────────────────────────────────────────────────────
-  const navs = (await sql`
+  const navs = (await q`
     select coalesce(kind, 'legacy:' || value::text) as tab, count(*)::int as n, count(distinct user_id)::int as people
     from events
     where name = 'nav' and day >= current_date - ${days}::int and (kind is null or kind not like 'onboarding:%' and kind not like 'roleplay_exam:%')
@@ -120,7 +129,7 @@ async function main() {
   // ── Ekranlar (WP-80) ───────────────────────────────────────────────
   // Sekme dışı ekranlar da burada: alt gezinmeden çıkarılan Kelimeler ve
   // Profil'e hâlâ giriliyor mu, ayarlar/sınav/yerleştirme açılıyor mu.
-  const screens = (await sql`
+  const screens = (await q`
     with v as (
       select kind, count(*)::int as views, count(distinct user_id)::int as people
       from events where name = 'page_view' and day >= current_date - ${days}::int group by 1),
@@ -141,7 +150,7 @@ async function main() {
   }
 
   // ── Katlı bölümler ─────────────────────────────────────────────────
-  const panels = (await sql`
+  const panels = (await q`
     select kind, count(*) filter (where value = 1)::int as opened, count(distinct user_id) filter (where value = 1)::int as people
     from events where name = 'panel_open' and day >= current_date - ${days}::int group by 1 order by opened desc
   `) as Row[];
@@ -151,7 +160,7 @@ async function main() {
   }
 
   // ── Onboarding hunisi ──────────────────────────────────────────────
-  const onb = (await sql`
+  const onb = (await q`
     select kind, count(distinct user_id)::int as people from events
     where name = 'onboarding_step' and day >= current_date - ${days}::int group by 1
   `) as Row[];
@@ -166,7 +175,7 @@ async function main() {
   }
 
   // ── Cihaz ──────────────────────────────────────────────────────────
-  const devices = (await sql`
+  const devices = (await q`
     select kind, count(*)::int as opens, count(distinct user_id)::int as people, round(avg(value))::int as width
     from events where name = 'app_open' and day >= current_date - ${days}::int group by 1 order by opens desc
   `) as Row[];
@@ -179,14 +188,14 @@ async function main() {
   const sent = get("push_sent"), opened = get("push_open"), optin = get("push_optin");
   if (sent.n || opened.n || optin.n) {
     console.log("\nBildirim");
-    const optRows = (await sql`
+    const optRows = (await q`
       select value, count(*)::int as n from events where name = 'push_optin' and day >= current_date - ${days}::int group by 1
     `) as Row[];
     const ov = (v: number) => Number(optRows.find((r) => Number(r.value) === v)?.n ?? 0);
     console.log(`  izin istendi: verildi ${ov(1)} · reddedildi ${ov(0)} · sonra ${ov(2)}`);
     console.log(`  gönderilen ${sent.n} (${sent.people} kişi) → bildirimden açılış ${opened.n} (${opened.people} kişi) ${sent.n ? pct(opened.n, sent.n) : ""}`);
   }
-  const inst = (await sql`
+  const inst = (await q`
     select value, count(*)::int as n from events where name = 'install_prompt' and day >= current_date - ${days}::int group by 1
   `) as Row[];
   if (inst.length) {
@@ -197,7 +206,7 @@ async function main() {
   if (inv.n) console.log(`  davet bağlantısıyla açılış ${inv.n} (${inv.people} kişi)`);
 
   // ── Ayarlar, arama, ses, koç ───────────────────────────────────────
-  const misc = (await sql`
+  const misc = (await q`
     select name, kind, count(*)::int as n, count(distinct user_id)::int as people
     from events where name in ('setting_change','search','tts_play','coach_show','client_error') and day >= current_date - ${days}::int
     group by 1, 2 order by 1, n desc
@@ -218,7 +227,7 @@ async function main() {
   }
 
   // ── Günlük etkinlik ────────────────────────────────────────────────
-  const daily = (await sql`
+  const daily = (await q`
     select day::text as day, count(*)::int as n, count(distinct user_id)::int as people
     from events
     where day >= current_date - ${days}::int

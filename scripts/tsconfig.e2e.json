@@ -3,9 +3,23 @@
   "compilerOptions": {
     "baseUrl": "..",
     "paths": {
-      "server-only": ["./scripts/empty-module.ts"],
-      "@/lib/db": ["./scripts/test-db.ts"],
-      "@/*": ["./src/*"]
+      "server-only": [
+        "./scripts/empty-module.ts"
+      ],
+      "@/lib/db": [
+        "./scripts/test-db.ts"
+      ],
+      "@/*": [
+        "./src/*"
+      ]
     }
-  }
+  },
+  "include": [
+    "./**/*.ts",
+    "../src/**/*.ts",
+    "../src/**/*.tsx"
+  ],
+  "exclude": [
+    "../node_modules"
+  ]
 }

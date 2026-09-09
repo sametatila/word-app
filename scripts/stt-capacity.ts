@@ -17,7 +17,13 @@ import { writeFileSync } from "node:fs";
 import { Pool } from "pg";
 
 const sql = new Pool({ connectionString: process.env.DATABASE_URL! });
-const q = async <T = Record<string, unknown>>(s: TemplateStringsArray, ...v: unknown[]) => (await sql(s, ...v)) as T[];
+/**
+ * `pg.Pool` şablon etiketi değil: `sql(s, ...v)` havuzu fonksiyon gibi
+ * çağırıyordu ve betik ilk sorguda patlardı. Metin birleştirilip `$1`, `$2`
+ * yer tutucularıyla `query()`ye veriliyor.
+ */
+const q = async <T = Record<string, unknown>>(s: TemplateStringsArray, ...v: unknown[]): Promise<T[]> =>
+  (await sql.query(s.reduce((acc, part, i) => `${acc}$${i}${part}`), v)).rows as T[];
 
 /** Kotalar (2026-08, kaynaklar docs/plan/pronunciation-providers.md). */
 const QUOTA = {
