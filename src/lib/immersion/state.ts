@@ -42,7 +42,10 @@ export type UnitState = {
   /** Önceki ünite tamamlanmadıysa kilitli. */
   locked: boolean;
   /** Tüm oynanabilir item'lar bitti mi. */
+  /** Kullanıcıya gösterilen "bitti" — ünitedeki TÜM sayılabilir item'lar bitti. */
   complete: boolean;
+  /** Sonraki üniteyi açan koşul — yalnız DERSLER (bkz. buildTrackState). */
+  unlocksNext: boolean;
   /** Biten oynanabilir item sayısı (dersler + zenginleştirme, gösterim için). */
   done: number;
   /** Toplam oynanabilir item sayısı (gösterim için). */
@@ -154,10 +157,23 @@ export function buildTrackState(track: ImmersionTrack, c: Completion): TrackStat
     // rastgele/eksik içeriği zorunlu kılardı. Temalı içerik oturunca kural
     // "tüm item'lar" haline sıkılaştırılabilir. Dersi olmayan ünite (de'de
     // olmaz) tüm-oynanabilir ölçütüne düşer — boş ünite sonrasını kilitlemesin.
-    const complete = lessonsTotal > 0 ? lessonsDone === lessonsTotal : total === 0 || done === total;
-    units.push({ unit, locked, complete, done, total, lessonsDone, lessonsTotal, items });
+    /*
+      İKİ AYRI SORU, İKİ AYRI CEVAP.
+
+      "Sonraki ünite açılsın mı?" — DERSLERE bakar (yukarıdaki gerekçe: beceri
+      içeriği seyrek ve temaya göre yeniden kuruluyor, onu kapı yapmak eksik
+      içeriği zorunlu kılardı).
+
+      "Bu ünite bitti mi?" — HEPSİNE bakar. İkisi tek bayrakla anlatılıyordu ve
+      kullanıcı dört dersi bitirince ünite, okuma/dinleme/yazma yuvaları
+      dururken "tamamlandı" görünüyordu. Kendi hesabında görüldü: 4 item bitmiş,
+      ünite bitmiş sayılıyordu.
+    */
+    const unlocksNext = lessonsTotal > 0 ? lessonsDone === lessonsTotal : total === 0 || done === total;
+    const complete = total === 0 ? unlocksNext : done === total;
+    units.push({ unit, locked, complete, unlocksNext, done, total, lessonsDone, lessonsTotal, items });
     if (!locked && !complete && currentIndex < 0) currentIndex = unit.index;
-    prevComplete = complete;
+    prevComplete = unlocksNext;
   }
 
   if (currentIndex < 0) currentIndex = track.units.at(-1)?.index ?? 1;

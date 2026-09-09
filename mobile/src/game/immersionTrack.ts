@@ -100,13 +100,28 @@ export function buildLocalLearningPath(level: string, done: Set<string>): Learni
 
     const lessonItems = items.filter((it) => it.kind === "lesson");
     const lessonsDone = lessonItems.filter((it) => it.done).length;
-    const doneCount = items.filter((it) => it.done).length;
+    /*
+      SAYILABİLİR item'lar: oynanabilir ders ve beceri yuvaları. Şablon her
+      ünitede 13 yuva açıyor ama içerik bitince kalanlar "Yakında" (ref yok) ve
+      gramer/quiz/kontrol noktası done-takibi tutmuyor. `total` bunların
+      hepsini sayıyordu: ünite, içeriği olmayan yuvalar yüzünden hiç
+      dolmayacak bir "x / 13" gösteriyordu. Sunucu (lib/immersion/state.ts)
+      zaten sayılabilir olanları sayıyor; yerel kurulum da öyle.
+    */
+    const completable = items.filter(
+      (it) => it.playable && (it.kind === "lesson" || it.kind === "read" || it.kind === "listen" || it.kind === "write"),
+    );
+    const completableCount = completable.length;
+    const doneCount = completable.filter((it) => it.done).length;
     units.push({
       id: unitId, index, group: Math.floor(u / GROUP_SIZE),
       theme: unitTheme(level, u * UNIT_LESSONS, index),
       locked: false,
-      complete: lessonItems.length > 0 && lessonsDone === lessonItems.length,
-      done: doneCount, total: items.length,
+      // Sunucudaki kuralla aynı (lib/immersion/state.ts): "bitti" ünitedeki
+      // BÜTÜN sayılabilir item'lara bakar. Yalnız derslere bakmak, dört dersi
+      // bitiren kullanıcıya beceri yuvaları dururken "tamamlandı" diyordu.
+      complete: completableCount > 0 && doneCount === completableCount,
+      done: doneCount, total: completableCount,
       lessonsDone, lessonsTotal: lessonItems.length,
       items,
     });

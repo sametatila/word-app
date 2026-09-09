@@ -121,9 +121,16 @@ check("currentIndex ünite2'ye ilerler", s1.currentIndex === 2);
 
 const u1Lessons = new Set(u1.items.filter((i) => i.kind === "lesson").map((i) => i.ref as string));
 const s2 = buildTrackState(t, { lessonDone: (r) => u1Lessons.has(r), skillDone: () => false });
-// GATING İSKELETE BAĞLI: yalnız dersler bitince ünite TAMAM (beceriler opsiyonel).
-check("yalnız dersler bitince ünite1 TAMAM (beceri gerekmez)", s2.units[0].complete && s2.units[0].lessonsDone === 4 && s2.units[0].done === 4);
+/*
+  İKİ AYRI SORU. "Sonraki ünite açılsın mı?" derslere bakar (beceri içeriği
+  seyrek, onu kapı yapmak eksik içeriği zorunlu kılardı). "Bu ünite bitti mi?"
+  ise hepsine bakar. Tek bayrakken dört dersi bitiren kullanıcıya, beceri
+  yuvaları dururken "tamamlandı" deniyordu.
+*/
+check("yalnız dersler bitince ünite1 BİTMİŞ SAYILMAZ", !s2.units[0].complete && s2.units[0].lessonsDone === 4 && s2.units[0].done === 4);
+check("ama sonraki üniteyi AÇAR (unlocksNext)", s2.units[0].unlocksNext);
 check("dersler bitince ünite2 açılır (beceri bloklamaz)", !s2.units[1].locked);
+check("bitmemiş ünite 'şu an buradasın' kalır", s2.currentIndex === 1);
 
 const sAll = buildTrackState(t, { lessonDone: () => true, skillDone: () => true });
 check("her şey bitince tüm üniteler complete", sAll.units.every((u) => u.complete));
