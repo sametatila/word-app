@@ -19,9 +19,18 @@ import { de } from "../i18n/de";
  *
  * `t()` modül düzeyinde okunuyor çünkü çeviriye ihtiyaç duyan her yer bir React
  * bileşeni değil (api/social.ts hata metinleri, game/session.ts tur adları).
- * Modül değişkeni tek başına yeniden render tetiklemediği için dil değişimini
- * dinleyen bir sağlayıcı var (I18nProvider): o `useState` ile ağacı yeniden
- * render ediyor, `t()` çağrıları da güncel dili okuyor.
+ * Modül değişkeni tek başına yeniden render TETİKLEMİYOR; bunun için `useLang()`
+ * var: dil değişince abone bileşeni yeniden çiziyor, `t()` de güncel dili okuyor.
+ *
+ * DİKKAT — `useLang()` yalnız ÇAĞRILDIĞI bileşeni yeniden çizer, ağacın tamamını
+ * değil. App.tsx tepede bir kez çağırıyor ama React Navigation ekranları o
+ * render'ı aşağı geçirmiyor: gezgin ekranı kendi belleğinde tutuyor. Bu yüzden
+ * ÇEVİRİ TAŞIYAN GEZGİN SEÇENEKLERİNİN bulunduğu bileşen useLang()'i kendisi
+ * çağırmak zorunda, yoksa o etiketler dil değişiminden sonra eski dilde kalır.
+ * Ölçülüp düzeltildi: navigation/RootTabs.tsx (sekme başlıkları).
+ *
+ * Bu docblock eskiden burada bir `I18nProvider` olduğunu söylüyordu; öyle bir
+ * bileşen hiç yazılmamıştı.
  *
  * Eksik anahtar Türkçeye, o da yoksa anahtarın kendisine düşer — yeni bir dil
  * yarım çevrildiğinde ekranda boşluk değil anlaşılır metin kalır.
