@@ -262,6 +262,24 @@ Yani `vocab` için tek tek okunacak madde 19 değil **714** (695 + 19).
 
 `VocabItem` tipi bugün `{ de, tr }` — `en` alanı yok, eklenmesi gerekiyor.
 
+**vocab yarısı BİTTİ (4.640/4.640).** Hat `data/lessons/vocab/`:
+`extract` → `triage` → elle `out/<paket>.json` → `check` (kapı + kapsam).
+3.926'sı türetildi, 714'ü elle okundu, 0 hata.
+
+Triyajın işe yarayıp yaramadığı sonradan ölçüldü — elle okunan 714 maddenin:
+
+```
+havuzun `en`i aynen alındı  437  (%61,2)  → yalnız Türkçe sözcük tercihi farkıymış
+havuzun `en`i değiştirildi  258  (%36,1)  → gerçekten yanlış olurdu
+havuzda İngilizcesi yok      19  ( %2,7)
+```
+
+Yani Türkçe ayrışması **kesin bir işaret değil, iyi bir eleme**: %36'sında
+gerçekten yanlış karşılık verirdi, %61'inde gereksiz yere okundu. Ama
+tersini yapmanın maliyeti çok daha yüksekti — 258 yanlış karşılık sessizce
+yüklenirdi ve hiçbir kapı görmezdi. `data/meanings/contains.mjs` notundaki
+ilkeyle aynı: yanlış ret yanlış kabulden ucuz.
+
 Kalem BÖLÜNEMİYOR. Sözlükçesi ve başlıkları İngilizce, anlatımı Türkçe bir
 ders yarım çeviridir ve Faz 1'in kuralı bunu yasaklıyor: karşılık yoksa
 `null` döner, Türkçeye DÜŞMEZ. Yarım ders "görünürde çalışan" en kötü
