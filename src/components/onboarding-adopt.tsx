@@ -36,6 +36,7 @@ export function OnboardingAdopt() {
     if (p.goal) body.goal = p.goal;
     if (p.level) body.level = p.level;
     if (p.dailyGoal) body.dailyGoal = p.dailyGoal;
+    if (p.nativeLang) body.nativeLang = p.nativeLang;
     if (Object.keys(body).length === 0) {
       clearOnboardingPrefs();
       return;

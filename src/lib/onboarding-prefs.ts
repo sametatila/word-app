@@ -19,6 +19,13 @@
  */
 export type OnboardingPrefs = {
   displayName?: string;
+  /**
+   * Arayüz dili. Onboarding'de seçilen dil YALNIZ çerezde kalırsa hesap
+   * açıldığında kayboluyordu: profil varsayılanla oluşuyor, `LangSync` de
+   * profili çereze aynalayıp kullanıcının seçimini eziyordu. Karar bu yüzden
+   * diğerleriyle birlikte taşınıyor.
+   */
+  nativeLang?: string;
   course?: string;
   voice?: string;
   goal?: string;

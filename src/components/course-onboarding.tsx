@@ -91,6 +91,9 @@ export function CourseOnboarding({
     if (next === lang) return;
     track("setting_change", NATIVE_LANGS.indexOf(next), "lang");
     writeLangCookie(next);
+    // Hesap henüz yok: karar diğer onboarding tercihleriyle birlikte
+    // saklanıyor ve giriş yapılınca profile taşınıyor.
+    saveOnboardingPrefs({ nativeLang: next });
     router.refresh();
   }
   const [step, setStep] = useState<Step>(0);
