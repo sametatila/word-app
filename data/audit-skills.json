@@ -2563,5 +2563,45 @@
   "id": "en-c1-lib-w1",
   "rule": "alternatif farklı kelimeler",
   "detail": "görev 2: \"What troubles me is not the decision but the wording.\""
+ },
+ {
+  "id": "de-a1-lib-l2",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"abholen\""
+ },
+ {
+  "id": "de-a1-lib-s5",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"zumachen\""
+ },
+ {
+  "id": "de-a2-lib-r2",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"streichen\""
+ },
+ {
+  "id": "de-a2-lib-w5",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"ziehen\""
+ },
+ {
+  "id": "de-b2-lib-g3",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"lösen\""
+ },
+ {
+  "id": "de-b2-lib-g5",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"bitten um\""
+ },
+ {
+  "id": "de-c1-lib-r2",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"gutschreiben\""
+ },
+ {
+  "id": "de-c1-lib-r5",
+  "rule": "sözlükçe metinde geçmiyor",
+  "detail": "\"abbrechen\""
  }
 ]
