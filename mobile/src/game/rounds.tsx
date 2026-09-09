@@ -122,12 +122,35 @@ function SpeakButton({ text, colors, size = 20 }: { text: string; colors: Palett
 }
 
 /**
- * Tur iskeleti — içerik üstte (kaydırılabilir; kısa ise dikey doldurur), AKSİYON
- * alanı (geri bildirim + Devam, ya da yazma turlarında input+ipucu+buton) ALTTA
- * sabit ve klavye açılınca yukarı kalkar. Böylece tek elle Devam'a ulaşılır ve
- * yazarken input klavyenin üstünde görünür (edge-to-edge'de adjustResize yetmiyor).
+ * Sonuç katmanının kapladığı yükseklik (px) — şerit + ara + "Devam" + iç pay.
+ * Yer turun BAŞINDAN bu ölçüde ayrılıyor; ölçü katmanın kendisiyle aynı yerden
+ * okunuyor ki ikisi ayrı yazılıp sessizce kaymasın.
  */
-function RoundShell({ children, footer, scroll = true }: { children: React.ReactNode; footer?: React.ReactNode; scroll?: boolean }) {
+const SHEET_H = 60 + spacing.sm + 50 + spacing.md * 2;
+
+/**
+ * Tur iskeleti — içerik üstte (kaydırılabilir; kısa ise dikey doldurur), AKSİYON
+ * alanı ALTTA.
+ *
+ * İki ayrı dip var ve karıştırılmamalı:
+ *
+ *   `footer` — turun KENDİ akışındaki dip: yazma turlarının input+ipucu+buton
+ *   bloğu, tanıtım kartının iki düğmesi. Klavye açılınca yukarı kalkıyor.
+ *
+ *   `sheet` — cevaptan sonra ÜSTE binen katman: doğru/yanlış şeridi ve "Devam".
+ *   Akışta değil, bu yüzden belirdiğinde altındaki hiçbir şey kımıldamıyor.
+ *
+ * Katman neden ayrı: geri bildirim de akıştaydı ve cevap verilince beliriyordu.
+ * Kartın boyu değişince esneyen boşluklar küçülüyor ve şıklar YUKARI kayıyordu
+ * — hem de tam öğrencinin işaretlediği şıkka baktığı anda, dokunulan şık
+ * parmağın altından kaçarak. Web'de de aynı karar (`games/round-sheet`).
+ *
+ * Katman içeriği örtmüyor: dipte kendi akışı OLMAYAN turlarda (şıklı turlar)
+ * katmanın bandı baştan boş tutuluyor. Yazma turlarında zaten input bloğu
+ * duruyor; orada katman onun üstüne biniyor — Duolingo'daki "Kontrol et"in
+ * yerini geri bildirimin alması gibi.
+ */
+function RoundShell({ children, footer, sheet, scroll = true }: { children: React.ReactNode; footer?: React.ReactNode; sheet?: React.ReactNode; scroll?: boolean }) {
   const kb = useKeyboardHeight();
   const insets = useSafeAreaInsets();
   // Host (GameScreen/DailyScreen) zaten insets.bottom + spacing.lg alt padding
@@ -145,7 +168,40 @@ function RoundShell({ children, footer, scroll = true }: { children: React.React
         <View style={{ flex: 1 }}>{children}</View>
       )}
       {footer ? <View style={{ marginBottom: lift, paddingTop: spacing.md }}>{footer}</View> : null}
+      {footer ? null : <View style={{ height: SHEET_H + spacing.md }} />}
+      {sheet ? <SheetLayer>{sheet}</SheetLayer> : null}
     </View>
+  );
+}
+
+/**
+ * Katmanın kendisi — dipten yükselip içeriğin üstünde duran kat.
+ *
+ * Kenarlara dayanmıyor, host'un yatay payının içinde kalıyor: negatif kenar
+ * boşluğuyla ebeveynin dışına taşan bir görünüm Android'de kırpılabiliyor ve
+ * o riski her turda tekrar eden bir öğede almaya değmez. Katman hissini
+ * gölge ve köşe yarıçapı kuruyor (bkz. FeedbackFooter).
+ */
+function SheetLayer({ children }: { children: React.ReactNode }) {
+  const slide = useRef(new Animated.Value(1)).current;
+  useEffect(() => {
+    Animated.timing(slide, { toValue: 0, duration: 200, useNativeDriver: true }).start();
+  }, [slide]);
+  return (
+    <Animated.View
+      style={{
+        position: "absolute",
+        left: 0,
+        right: 0,
+        bottom: 0,
+        zIndex: 10,
+        transform: [
+          { translateY: slide.interpolate({ inputRange: [0, 1], outputRange: [0, SHEET_H + spacing.xxl] }) },
+        ],
+      }}
+    >
+      {children}
+    </Animated.View>
   );
 }
 
@@ -153,13 +209,18 @@ function RoundShell({ children, footer, scroll = true }: { children: React.React
  * Geri bildirim (Duolingo mantığı): cevaptan sonra KOMPAKT şerit — maskot +
  * doğru/yanlış, doğru Almanca cevap (hoparlörlü), TÜRKÇE anlam BELİRGİN, yanlışta
  * kısa neden. "Devam" düğmesi şeridin ALTINDA, ekranın en altında (tek el).
+ *
+ * Kendi YÜZEYİ var: katman içeriğin üstüne bindiği için altındaki şıkların
+ * arasından sızmamalı. Zemin nötr (`surface`), rengi şerit taşıyor — zemin de
+ * renklense şerit ikinci bir renk katmanı olur ve "cevabın kutusu" olduğu
+ * okunmazdı.
  */
 function FeedbackFooter({ data, onContinue, colors }: { data: Feedback; onContinue: () => void; colors: Palette }) {
   const ok = data.correct;
   const tone = ok ? colors.success : colors.danger;
   const speakText = data.speakDe ?? data.answerDe ?? undefined;
   return (
-    <View style={{ gap: spacing.sm }}>
+    <View style={[{ gap: spacing.sm, backgroundColor: colors.surface, borderRadius: radii.xl, padding: spacing.md }, softShadow(tone, 16)]}>
       {/* Web VerdictBar: kompakt yatay şerit — maskot + tek akan satır (etiket +
           kalın Almanca cevap + · Türkçe), yanlışta ikinci küçük satır (neden). */}
       <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.sm, backgroundColor: ok ? colors.successSoft : colors.dangerSoft, borderRadius: radii.lg, borderWidth: 1.5, borderColor: tone, paddingVertical: spacing.sm, paddingHorizontal: spacing.sm, minHeight: 60 }}>
@@ -265,7 +326,7 @@ function ChoiceRound({ round, onDone, colors }: { round: Round; onDone: Done; co
     setFb({ correct: ok, answerDe: withArtikel(word), tr: word.tr, en: word.en, why: ok ? null : whyMeaning(word, o.text) });
   }
   return (
-    <RoundShell footer={fb ? <FeedbackFooter data={fb} onContinue={() => onDone(fb.correct)} colors={colors} /> : undefined}>
+    <RoundShell sheet={fb ? <FeedbackFooter data={fb} onContinue={() => onDone(fb.correct)} colors={colors} /> : undefined}>
       <Prompt label={deSide ? tx("rounds.ask_native", { nativeLang: nativeLangName() }) : tx("rounds.ask_target", { target: targetLangName() })} big={question} speakText={deSide ? question : null} sub={!deSide ? word.en : null} colors={colors} />
       <MascotMid mood={picked ? (picked === answer ? "thumbsup" : "sad") : "idle"} hidden={!!fb} />
       <View style={{ gap: spacing.md }}>
@@ -290,7 +351,7 @@ function ArtikelRound({ round, onDone, colors }: { round: Round; onDone: Done; c
     setFb({ correct: ok, answerDe: withArtikel(word), tr: word.tr, en: word.en, why: ok ? null : whyArticle(word) });
   }
   return (
-    <RoundShell footer={fb ? <FeedbackFooter data={fb} onContinue={() => onDone(fb.correct)} colors={colors} /> : undefined}>
+    <RoundShell sheet={fb ? <FeedbackFooter data={fb} onContinue={() => onDone(fb.correct)} colors={colors} /> : undefined}>
       <Prompt label={tx("rounds.which_article")} big={word.de} speakText={withArtikel(word)} sub={meaningLine(word)} colors={colors} />
       <MascotMid mood={picked ? (picked === word.artikel ? "thumbsup" : "sad") : "idle"} hidden={!!fb} />
       <View style={{ flexDirection: "row", gap: spacing.md }}>
@@ -316,7 +377,7 @@ function TrueFalseRound({ round, onDone, colors }: { round: Round; onDone: Done;
     setFb({ correct: ok, answerDe: withArtikel(word), tr: word.tr, en: word.en, why: ok ? null : whyMeaning(word, null) });
   }
   return (
-    <RoundShell footer={fb ? <FeedbackFooter data={fb} onContinue={() => onDone(fb.correct)} colors={colors} /> : undefined}>
+    <RoundShell sheet={fb ? <FeedbackFooter data={fb} onContinue={() => onDone(fb.correct)} colors={colors} /> : undefined}>
       <Prompt label={tx("rounds.correct")} big={withArtikel(word)} speakText={withArtikel(word)} sub={round.claim ? meaningLine({ tr: round.claim.text, en: round.claim.sub }) : meaningLine(word)} colors={colors} />
       <MascotMid mood={ans !== null ? (ans === round.isTrue ? "thumbsup" : "sad") : "idle"} hidden={!!fb} />
       <View style={{ flexDirection: "row", gap: spacing.md }}>
@@ -382,7 +443,7 @@ function TypingRound({ round, onDone, colors }: { round: Round; onDone: Done; co
     </View>
   );
   return (
-    <RoundShell footer={fb ? <FeedbackFooter data={fb} onContinue={() => onDone(fb.correct)} colors={colors} /> : inputBlock}>
+    <RoundShell footer={inputBlock} sheet={fb ? <FeedbackFooter data={fb} onContinue={() => onDone(fb.correct)} colors={colors} /> : undefined}>
       <Prompt label={tx("rounds.write_equivalent", { lang: targetLangName() })} big={word.tr} sub={word.en} colors={colors} />
       <MascotMid mood={fb === null ? "idle" : fb.correct ? "thumbsup" : "sad"} hidden={!!fb} />
     </RoundShell>
@@ -404,7 +465,7 @@ function ClozeRound({ round, onDone, colors }: { round: Round; onDone: Done; col
     setFb({ correct: ok, answerDe: full, tr: round.sentenceTr ?? null, en: round.sentenceEn ?? null });
   }
   return (
-    <RoundShell footer={fb ? <FeedbackFooter data={fb} onContinue={() => onDone(fb.correct)} colors={colors} /> : undefined}>
+    <RoundShell sheet={fb ? <FeedbackFooter data={fb} onContinue={() => onDone(fb.correct)} colors={colors} /> : undefined}>
       <View style={[{ backgroundColor: colors.surface, borderRadius: radii.xl, padding: spacing.xl, borderWidth: 1, borderColor: colors.hairline, marginBottom: spacing.md }, softShadow("#5a3418", 10)]}>
         <Text variant="micro" color={colors.textMuted} style={{ textTransform: "uppercase", letterSpacing: 1, marginBottom: spacing.md }}>{tx("rounds.fill_blank")}</Text>
         <View style={{ flexDirection: "row", alignItems: "flex-start", gap: spacing.sm }}>
@@ -439,7 +500,7 @@ function PluralRound({ round, onDone, colors }: { round: Round; onDone: Done; co
     setFb({ correct: ok, answerDe: `die ${answer}`, tr: word.tr, en: word.en, why: ok ? null : whyPlural(answer) });
   }
   return (
-    <RoundShell footer={fb ? <FeedbackFooter data={fb} onContinue={() => onDone(fb.correct)} colors={colors} /> : undefined}>
+    <RoundShell sheet={fb ? <FeedbackFooter data={fb} onContinue={() => onDone(fb.correct)} colors={colors} /> : undefined}>
       <Prompt label={tx("rounds.plural")} big={withArtikel(word)} speakText={withArtikel(word)} sub={meaningLine(word)} colors={colors} />
       <MascotMid mood={picked ? (picked === answer ? "thumbsup" : "sad") : "idle"} hidden={!!fb} />
       <View style={{ gap: spacing.md }}>
@@ -519,7 +580,7 @@ function ListenRound({ round, onDone, colors }: { round: Round; onDone: Done; co
     setFb({ correct: ok, answerDe: withArtikel(word), tr: word.tr, en: word.en, why: ok ? null : whyMeaning(word, o.text) });
   }
   return (
-    <RoundShell footer={fb ? <FeedbackFooter data={fb} onContinue={() => onDone(fb.correct)} colors={colors} /> : undefined}>
+    <RoundShell sheet={fb ? <FeedbackFooter data={fb} onContinue={() => onDone(fb.correct)} colors={colors} /> : undefined}>
       <View style={[{ backgroundColor: colors.surface, borderRadius: radii.xl, paddingVertical: spacing.xxl, paddingHorizontal: spacing.lg, alignItems: "center", borderWidth: 1, borderColor: colors.hairline, marginBottom: spacing.md }, softShadow("#5a3418", 10)]}>
         <Text variant="micro" color={colors.textMuted} style={{ textTransform: "uppercase", letterSpacing: 1 }}>{tx("rounds.listen_pick_meaning")}</Text>
         {hideWord ? (
@@ -582,7 +643,7 @@ function ScrambleRound({ round, onDone, colors }: { round: Round; onDone: Done; 
   }
   const brd = fb ? (fb.correct ? colors.success : colors.danger) : colors.border;
   return (
-    <RoundShell footer={fb ? <FeedbackFooter data={fb} onContinue={() => onDone(fb.correct)} colors={colors} /> : undefined}>
+    <RoundShell sheet={fb ? <FeedbackFooter data={fb} onContinue={() => onDone(fb.correct)} colors={colors} /> : undefined}>
       <Prompt label={tx("rounds.order_letters")} big={word.tr} sub={word.en} colors={colors} />
       <MascotMid mood={fb === null ? "idle" : fb.correct ? "thumbsup" : "sad"} hidden={!!fb} />
       <View>
@@ -631,7 +692,7 @@ function OrderRound({ round, onDone, colors }: { round: Round; onDone: Done; col
   }
   const brd = fb ? (fb.correct ? colors.success : colors.danger) : colors.border;
   return (
-    <RoundShell footer={fb ? <FeedbackFooter data={fb} onContinue={() => onDone(fb.correct)} colors={colors} /> : undefined}>
+    <RoundShell sheet={fb ? <FeedbackFooter data={fb} onContinue={() => onDone(fb.correct)} colors={colors} /> : undefined}>
       <Prompt label={tx("rounds.put_sentence_in_order")} big={round.sentenceTr ?? word.tr} sub={round.sentenceEn ?? null} colors={colors} />
       <MascotMid mood={fb === null ? "idle" : fb.correct ? "thumbsup" : "sad"} hidden={!!fb} />
       <View>
@@ -679,7 +740,7 @@ function TranslateRound({ round, onDone, colors }: { round: Round; onDone: Done;
     </View>
   );
   return (
-    <RoundShell footer={fb ? <FeedbackFooter data={fb} onContinue={() => onDone(fb.correct)} colors={colors} /> : inputBlock}>
+    <RoundShell footer={inputBlock} sheet={fb ? <FeedbackFooter data={fb} onContinue={() => onDone(fb.correct)} colors={colors} /> : undefined}>
       <Prompt label={tx("rounds.translate_into", { lang: targetLangName() })} big={s.tr} sub={s.en} colors={colors} />
       <MascotMid mood={fb === null ? "idle" : fb.correct ? "thumbsup" : "sad"} hidden={!!fb} />
     </RoundShell>
@@ -758,7 +819,7 @@ function MatchRound({ round, onDone, colors }: { round: Round; onDone: Done; col
   const batch = words.map((w) => ({ wordId: w.id, correct: !wrongBefore.current.has(w.id) }));
 
   return (
-    <RoundShell footer={fb ? <FeedbackFooter data={fb} onContinue={() => onDone(fb.correct, batch)} colors={colors} /> : undefined}>
+    <RoundShell sheet={fb ? <FeedbackFooter data={fb} onContinue={() => onDone(fb.correct, batch)} colors={colors} /> : undefined}>
       <Text variant="micro" color={colors.textMuted} style={{ textTransform: "uppercase", letterSpacing: 1, marginBottom: spacing.md, marginTop: spacing.md, textAlign: "center" }}>{tx("rounds.match")}</Text>
       <MascotMid mood={fb ? (fb.correct ? "happy" : "idle") : "idle"} hidden={!!fb} />
       <View style={{ flexDirection: "row", gap: spacing.md }}>
