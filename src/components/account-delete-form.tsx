@@ -63,7 +63,7 @@ export function AccountDeleteForm({ email }: { email: string | null }) {
 
   if (done) {
     return (
-      <AuthShell title={t("deleteaccount.your_account_is_deleted")} subtitle={t("del.done_sub")}>
+      <AuthShell title={t("deleteaccount.your_account_is_deleted")} subtitle={t("deleteaccount.your_data_is_gone_it_was_good_to")}>
         <AuthNotice tone="success">{t("del.redirecting")}</AuthNotice>
       </AuthShell>
     );
@@ -89,21 +89,26 @@ export function AccountDeleteForm({ email }: { email: string | null }) {
 
   return (
     <AuthShell
-      title={t("land.delete_account")}
-      subtitle={email ? t("del.will_delete_email", { email }) : t("del.will_delete")}
+      title={t("deleteaccount.delete_account")}
+      subtitle={t("deleteaccount.and_everything_tied_to_it_will", {
+        account: email ? t("deleteaccount.account", { email }) : t("deleteaccount.your_account"),
+      })}
       footer={
         <Link href="/profile/settings" className="underline-offset-4 hover:underline">
           {t("del.cancel_back")}
         </Link>
       }
     >
-      <ul className="muted mb-4 list-disc space-y-1 pl-5 text-sm">
-        <li>{t("del.item_progress")}</li>
-        <li>{t("del.item_writings")}</li>
-        <li>{t("del.item_social")}</li>
-        <li>{t("del.item_play")}</li>
-        <li>{t("del.item_irreversible")}</li>
+      {/* Liste ve altındaki abonelik notu mobil ekranın sırasıyla aynı:
+          silinecekler madde madde, mağaza uyarısı ayrı. "Geri alınamaz"
+          cümlesi listeden çıktı — başlığın altındaki cümle zaten söylüyor. */}
+      <ul className="muted mb-3 list-disc space-y-1 pl-5 text-sm">
+        <li>{t("deleteaccount.your_word_progress_streaks_xp")}</li>
+        <li>{t("deleteaccount.your_writing_speaking_records")}</li>
+        <li>{t("deleteaccount.your_friendships_and_your_inbox")}</li>
+        <li>{t("deleteaccount.your_account_and_your_email")}</li>
       </ul>
+      <p className="muted mb-4 text-xs">{t("deleteaccount.subscription_cancel_play")}</p>
 
       <form onSubmit={submit} className="space-y-3">
         {hasPassword ? (
