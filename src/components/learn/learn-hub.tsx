@@ -7,8 +7,7 @@ import { QuestCard } from "@/components/quest-card";
 import { FriendPulse } from "@/components/social/friend-pulse";
 import { CardGrid } from "@/components/layout";
 import { LearnHeader } from "@/components/app-header";
-import { useT, useLang } from "@/lib/i18n/client";
-import { formatNumber } from "@/lib/i18n/dict";
+import { useT } from "@/lib/i18n/client";
 import {
   ArrowRightIcon,
   BoltIcon,
@@ -59,9 +58,9 @@ export type LearnHubData = {
 
 export function LearnHub({ data }: { data: LearnHubData }) {
   const t = useT();
-  const lang = useLang();
-  const { level, mastered, totalWords, xp, streak, dailyGoal, reviewsToday, dueCount, newToday } = data;
-  const pct = totalWords ? Math.min(100, Math.round((mastered / totalWords) * 100)) : 0;
+  // `xp` kart kaldırıldıktan sonra da lazım: maskotun uyku hâli "puanı var ama
+  // serisi kırık" ayrımını buradan yapıyor (aşağıda).
+  const { xp, streak, dailyGoal, reviewsToday, dueCount, newToday } = data;
   const goalPct = dailyGoal ? Math.min(100, Math.round((reviewsToday / dailyGoal) * 100)) : 0;
 
   return (
@@ -145,31 +144,14 @@ export function LearnHub({ data }: { data: LearnHubData }) {
         ) : null}
       </Link>
 
-      {/* Dil ilerlemesi — sade bir satır, fitness metresi değil. */}
-      <div className="card mb-5 p-4">
-        <div className="mb-2 flex items-center justify-between gap-3">
-          <div className="flex min-w-0 items-center gap-2">
-            <span
-              className="rounded-chip px-2.5 py-1 text-strong"
-              style={{
-                background: "color-mix(in srgb, var(--color-brand-500) 14%, transparent)",
-                color: "var(--color-brand)",
-              }}
-            >
-              {level}
-            </span>
-            <span className="truncate text-strong">{t("learn.words_learned", { n: formatNumber(mastered, lang) })}</span>
-          </div>
-          <span className="muted shrink-0 text-caption tabular-nums">{formatNumber(xp, lang)} XP</span>
-        </div>
-        <div className="h-2 overflow-hidden rounded-full" style={{ background: "var(--surface-2)" }}>
-          <div
-            className="h-full rounded-full transition-[width] duration-500"
-            style={{ width: `${Math.max(3, pct)}%`, background: "var(--color-mint-500)" }}
-          />
-        </div>
-      </div>
+      {/*
+        BURADAN KALDIRILDI: "A1 · 128 kelime öğrenildi" + XP + ilerleme çubuğu.
 
+        Üç sayının üçü de başka yerde ve daha doğru yerde duruyor — seviye ve
+        öğrenilen kelime Gelişim'de, XP profilde ve sıralamada. Ana sekmenin
+        işi bir sonraki adımı göstermek; sayaç okumak değil. Mobilde de aynı
+        kart kaldırıldı, iki uygulama yine aynı.
+      */}
       {/* GÜNÜN GÖREVLERİ — gömülü, ayrı ekran yok.
           Yanında "bugünkü plan" satırı da vardı; mobilin Öğren ekranında öyle
           bir yüzey yok ve söylediği şey (sıradaki ders) zaten Patika'nın öne

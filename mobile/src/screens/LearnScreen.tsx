@@ -6,12 +6,12 @@ import type { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import type { RootStackParams } from "../navigation/RootStack";
 import { Screen } from "../ui/Screen";
 import { Card } from "../ui/Card";
-import { Skeleton, SkeletonBar, SkeletonLine, textHeight } from "../ui/Skeleton";
+import { Skeleton, textHeight } from "../ui/Skeleton";
 import { Text } from "../ui/Text";
 import { PressableScale } from "../ui/PressableScale";
 import { BoltIcon, WalkIcon, ExamIcon, ArrowRightIcon, PodiumIcon, CrownIcon, QuizIcon, RepeatIcon } from "../ui/icons";
 import { useAuth } from "../lib/AuthContext";
-import { useMe, formatXp } from "../lib/useMe";
+import { useMe } from "../lib/useMe";
 import { useMicrophone } from "../lib/useMicrophone";
 import { supportsMockExams } from "../data/exams";
 import { currentCourseId } from "../lib/courses";
@@ -72,10 +72,7 @@ export function LearnScreen() {
   // yine çiziliyor: ekran o zaman "bu seviyede sınav yok" diyor.
   const exams = supportsMockExams(currentCourseId());
   const level = me?.level ?? "A1";
-  const mastered = me?.mastered ?? 0;
-  const totalWords = me?.totalWords ?? 0;
   const streak = me?.streak ?? 0;
-  const pct = totalWords ? Math.min(100, Math.round((mastered / totalWords) * 100)) : 0;
   const dailyGoal = me?.dailyGoal ?? 0;
   const reviewsToday = me?.reviewsToday ?? 0;
   const dueCount = me?.dueCount ?? 0;
@@ -150,33 +147,15 @@ export function LearnScreen() {
 
       {/* dil ilerlemesi — sade satır (fitness metresi değil). Yalnız gerçek veri
           gelince; yoksa (misafir / uç henüz deploy değil) yanıltıcı 0 gösterme. */}
-      {meLoading ? (
-        <Card style={{ marginBottom: spacing.xl }}>
-          <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between", marginBottom: spacing.sm }}>
-            <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.sm }}>
-              <Skeleton height={textHeight("bodyStrong") + 8} width={44} radius={radii.sm} />
-              <SkeletonLine variant="bodyStrong" width={150} />
-            </View>
-            <SkeletonLine variant="caption" width={56} />
-          </View>
-          <SkeletonBar height={8} />
-        </Card>
-      ) : me ? (
-        <Card style={{ marginBottom: spacing.xl }}>
-          <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between", marginBottom: spacing.sm }}>
-            <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.sm }}>
-              <View style={{ backgroundColor: colors.primarySoft, borderRadius: radii.sm, paddingHorizontal: 10, paddingVertical: 4 }}>
-                <Text variant="bodyStrong" color={colors.primary}>{level}</Text>
-              </View>
-              <Text variant="bodyStrong">{t("learn.words_learned", { n: mastered })}</Text>
-            </View>
-            <Text variant="caption" color={colors.textMuted}>{formatXp(me.xp)} XP</Text>
-          </View>
-          <View style={{ height: 8, borderRadius: 4, backgroundColor: colors.surface2, overflow: "hidden" }}>
-            <View style={{ height: "100%", width: `${Math.max(3, pct)}%`, backgroundColor: colors.success, borderRadius: 4 }} />
-          </View>
-        </Card>
-      ) : null}
+      {/*
+        ÖĞREN sekmesinden KALDIRILDI: "A1 · 128 kelime öğrenildi" kartı.
+
+        Kartın verdiği üç sayının üçü de başka yerde ve daha doğru yerde
+        duruyor — seviye ve öğrenilen kelime Gelişim'de, XP profilde ve
+        sıralamada. Ana sekmenin işi bir sonraki adımı göstermek; sayaç
+        okumak değil. (İstenirse geri gelir: git geçmişinde bu yorumun
+        commit'inde duruyor.)
+      */}
 
       {/* GÜNÜN GÖREVLERİ — öne çıkanın ÜSTÜNDE, gömülü kutular (ayrı ekran yok) */}
       <DailyQuests />
