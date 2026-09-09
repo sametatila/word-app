@@ -61,6 +61,9 @@ const COMBO_IDLE_MS = 25_000;
 const DEDUPE_MS = 240;
 
 export type Cue =
+  | "micon"
+  | "micoff"
+  | "premium"
   | "correct"
   | "wrong"
   | "tap"
@@ -174,6 +177,89 @@ export function comboStep(): number {
   return combo;
 }
 
+/**
+ * YÜRÜYÜŞ MODUNUN SESLERİ — mobil ile BİREBİR aynı.
+ *
+ * Bu üçü buradaki öteki seslerden ayrı duruyor ve bilerek: gövdesi
+ * `mobile/src/lib/sfxNotes.ts`teki nota tablosundan KOPYALANDI, sentez modeli de
+ * mobilin WebView köprüsünde çalan modelin aynısı. Sebep bütünlük — yürüyüş modu
+ * iki platformda aynı ürün ve kullanıcı ekrana bakmadan yalnız sesi duyuyor;
+ * "mikrofon açıldı" işareti iki cihazda farklı çalarsa mod öğrenilmiyor.
+ *
+ * Web'in kendi sesleri (correct/wrong/start/…) başka bir tasarım: pentatonik
+ * kombo merdiveni, oyunlar için. Onlara DOKUNULMADI — uygulamanın her yerinde
+ * çalıyorlar ve burada değiştirmek yürüyüş modunun dışına taşardı.
+ *
+ * Nota: [freq, start, dur, peak, wave, glide, lp, attack, hold, release]
+ *   wave 0 sine · 1 triangle · 2 square — glide: hedef Hz (0 yok)
+ *   lp: alçak geçiren kesim Hz (0 yok, Q 0.7) — hold 0: pluck · 1: tut, son `release`te in
+ */
+export type WalkCue = "micon" | "micoff" | "premium";
+export const WALK_NOTES: Record<WalkCue, number[][]> = {
+  micon: [
+    [523.25, 0.0, 0.17, 0.05, 2, 0, 2400, 0.004, 0, 0],
+    [523.25, 0.0, 0.2, 0.16, 0, 0, 0, 0.004, 0, 0],
+    [783.99, 0.06, 0.17, 0.05, 2, 0, 2400, 0.004, 0, 0],
+    [783.99, 0.06, 0.2, 0.16, 0, 0, 0, 0.004, 0, 0],
+  ],
+  micoff: [
+    [783.99, 0.0, 0.17, 0.05, 2, 0, 1800, 0.004, 0, 0],
+    [783.99, 0.0, 0.2, 0.16, 0, 0, 0, 0.004, 0, 0],
+    [523.25, 0.06, 0.17, 0.05, 2, 0, 1800, 0.004, 0, 0],
+    [523.25, 0.06, 0.2, 0.16, 0, 0, 0, 0.004, 0, 0],
+  ],
+  premium: [
+    [261.63, 0.0, 1.05, 0.1, 1, 0, 1100, 0.09, 1, 0.55],
+    [392.0, 0.0, 1.05, 0.08, 1, 0, 1100, 0.09, 1, 0.55],
+    [523.25, 0.1, 0.34, 0.13, 0, 0, 0, 0.03, 0, 0],
+    [783.99, 0.24, 0.34, 0.12, 0, 0, 0, 0.03, 0, 0],
+    [1046.5, 0.38, 0.46, 0.12, 0, 0, 0, 0.035, 0, 0],
+    [1046.5, 0.38, 0.3, 0.025, 2, 0, 1200, 0.02, 0, 0],
+  ],
+};
+
+/** Nota tablosunu çalar — mobilin köprüye enjekte ettiği sentezin birebiri. */
+function playNotes(notes: number[][]) {
+  const b = bus();
+  if (!b) return;
+  const t0 = b.c.currentTime + 0.01;
+  for (const n of notes) {
+    const [f, st, dur, peak, wave, glide, lp, atk, hold, rel] = n;
+    const t = t0 + st;
+    const o = b.c.createOscillator();
+    const g = b.c.createGain();
+    o.type = wave === 2 ? "square" : wave === 1 ? "triangle" : "sine";
+    o.frequency.setValueAtTime(f, t);
+    if (glide > 0) o.frequency.exponentialRampToValueAtTime(Math.max(20, glide), t + dur);
+    let src: AudioNode = o;
+    if (lp > 0) {
+      const q = b.c.createBiquadFilter();
+      q.type = "lowpass";
+      q.Q.value = 0.7;
+      q.frequency.setValueAtTime(lp, t);
+      o.connect(q);
+      src = q;
+    }
+    const a = atk || 0.004;
+    g.gain.setValueAtTime(0.0001, t);
+    g.gain.exponentialRampToValueAtTime(peak, t + a);
+    if (hold >= 0.5) {
+      g.gain.setValueAtTime(peak, t + dur - rel);
+      g.gain.exponentialRampToValueAtTime(0.0001, t + dur);
+    } else {
+      g.gain.exponentialRampToValueAtTime(0.0001, t + dur);
+    }
+    src.connect(g).connect(b.out);
+    o.start(t);
+    o.stop(t + dur + 0.03);
+  }
+}
+
+/** Bir yürüyüş sesinin süresi (ms) — jingle'dan sonra konuşmayı başlatan yer kullanıyor. */
+export function walkCueMs(cue: WalkCue): number {
+  return Math.round(Math.max(...WALK_NOTES[cue].map((n) => n[1] + n[2])) * 1000) + 20;
+}
+
 function correctCue() {
   const now = Date.now();
   if (now - lastCorrectAt > COMBO_IDLE_MS) combo = 0;
@@ -220,6 +306,11 @@ export function play(cue: Cue) {
   lastCueAt = now;
 
   switch (cue) {
+    // Yürüyüş modunun üç sesi — mobille birebir aynı tablo (bkz. WALK_NOTES).
+    case "micon":
+    case "micoff":
+    case "premium":
+      return playNotes(WALK_NOTES[cue]);
     case "correct":
       return correctCue();
     case "wrong":

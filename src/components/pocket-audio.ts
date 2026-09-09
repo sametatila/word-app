@@ -1,6 +1,7 @@
 "use client";
 
 import { startClock, stopClock } from "@/components/pocket-clock";
+import { WALK_NOTES, type WalkCue } from "@/lib/sfx";
 
 /**
  * Cepte çalmayı ayakta tutan katman.
@@ -102,6 +103,94 @@ function beepUrl(freq: number, ms: number): string {
 let cue: HTMLAudioElement | null = null;
 
 /** Mikrofonun açıldığını kulağa söyler — ekran kapalıyken de duyulur. */
+/**
+ * YÜRÜYÜŞ SESLERİNİ CEPTE ÇALAR — WebAudio değil, `<audio>` öğesiyle.
+ *
+ * Ekran kapalıyken `AudioContext` askıya alınıyor, yani `lib/sfx.ts`teki
+ * WebAudio sentezi susuyor. Tam da bu yüzden `pocketCue` bir `<audio>` öğesiyle
+ * çalışıyordu — ama o tek bir bip'ti ve mobildeki sesle ilgisi yoktu.
+ *
+ * Burada aynı NOTA TABLOSU (`WALK_NOTES`, mobilden birebir kopya) WAV'a
+ * çiziliyor ve `<audio>` ile çalınıyor. Böylece üç yerde de tek ses var:
+ * webde ekran açık (WebAudio), webde cepte (bu), mobilde (native sentez).
+ * Kullanıcı ekrana bakmadığı için modun öğrenilmesi tamamen sese bağlı;
+ * "mikrofon açıldı" işareti duruma göre değişirse mod öğrenilmiyor.
+ *
+ * Sentez modeli `lib/sfx.ts`teki `playNotes` ile aynı: üstel zarf, isteğe bağlı
+ * alçak geçiren süzgeç (biquad, Q 0.7), pluck ya da tut-ve-in.
+ */
+const walkCueCache = new Map<WalkCue, HTMLAudioElement>();
+
+function renderWalkCue(cue: WalkCue): string {
+  const notes = WALK_NOTES[cue];
+  const total = Math.max(...notes.map((n) => n[1] + n[2])) + 0.05;
+  const rate = 48_000;
+  const n = Math.round(rate * total);
+  const buf = new Float32Array(n);
+
+  for (const [f, st, dur, peak, wave, glide, lp, atkRaw, hold, rel] of notes) {
+    const atk = atkRaw || 0.004;
+    const i0 = Math.round(st * rate);
+    const len = Math.round(dur * rate);
+    const tmp = new Float32Array(len);
+    let phase = 0;
+    for (let i = 0; i < len; i++) {
+      const t = i / rate;
+      // Frekans kayması: üstel, notanın süresi boyunca.
+      const fr = glide > 0 ? f * Math.pow(Math.max(20, glide) / f, t / dur) : f;
+      phase += (2 * Math.PI * fr) / rate;
+      const sn = Math.sin(phase);
+      const v = wave === 2 ? Math.sign(sn) : wave === 1 ? (2 / Math.PI) * Math.asin(sn) : sn;
+      // Zarf: 0.0001 → peak (atak), sonra pluck ya da tut-ve-in.
+      let g: number;
+      if (t < atk) g = 0.0001 * Math.pow(peak / 0.0001, t / atk);
+      else if (hold >= 0.5 && t < dur - rel) g = peak;
+      else {
+        const p0 = hold >= 0.5 ? dur - rel : atk;
+        g = peak * Math.pow(0.0001 / peak, (t - p0) / Math.max(1e-6, dur - p0));
+      }
+      tmp[i] = v * g;
+    }
+    if (lp > 0) lowpass(tmp, lp, rate);
+    for (let i = 0; i < len; i++) {
+      const j = i0 + i;
+      if (j < n) buf[j] += tmp[i];
+    }
+  }
+
+  return wavUrl(total * 1000, (i) => 9000 * 2.2 * (buf[i] ?? 0));
+}
+
+/** Biquad alçak geçiren (RBJ, Q 0.7) — WebAudio'nun `lowpass`ıyla aynı katsayılar. */
+function lowpass(x: Float32Array, freq: number, rate: number): void {
+  const w0 = (2 * Math.PI * freq) / rate;
+  const alpha = Math.sin(w0) / (2 * 0.7);
+  const c = Math.cos(w0);
+  const b0 = (1 - c) / 2, b1 = 1 - c, b2 = (1 - c) / 2;
+  const a0 = 1 + alpha, a1 = -2 * c, a2 = 1 - alpha;
+  let z1 = 0, z2 = 0;
+  for (let i = 0; i < x.length; i++) {
+    const inp = x[i];
+    const out = (b0 / a0) * inp + z1;
+    z1 = (b1 / a0) * inp - (a1 / a0) * out + z2;
+    z2 = (b2 / a0) * inp - (a2 / a0) * out;
+    x[i] = out;
+  }
+}
+
+/** Cepte kipinde yürüyüş sesi çalar (mobil ile aynı ses). */
+export function pocketWalkCue(cue: WalkCue): void {
+  if (typeof window === "undefined") return;
+  let el = walkCueCache.get(cue);
+  if (!el) {
+    el = new Audio(renderWalkCue(cue));
+    el.preload = "auto";
+    walkCueCache.set(cue, el);
+  }
+  try { el.currentTime = 0; } catch { /* henüz yüklenmediyse önemsiz */ }
+  void el.play().catch(() => {});
+}
+
 export function pocketCue() {
   if (typeof window === "undefined") return;
   if (!cue) {

@@ -11,7 +11,6 @@ import { useListen } from "@/components/use-listen";
 import { spokenMatches } from "@/components/games/types";
 import { parseConfirm, parseSkipDe } from "@/lib/voice-intent";
 import { useWakeLock } from "@/components/use-wake-lock";
-import { cueListen } from "@/lib/lessons/cues";
 import { sharedAudioContext } from "@/lib/audio-context";
 import {
   pocketCue,
@@ -32,6 +31,7 @@ import {
 } from "@/components/pocket-mic";
 import { afterMs, withDeadline } from "@/components/pocket-clock";
 import { play, resetCombo } from "@/lib/sfx";
+import { pocketWalkCue } from "@/components/pocket-audio";
 import { track } from "@/lib/track";
 import { CheckIcon, MicIcon, XIcon } from "@/components/icons";
 import type { Answer, Round, RoundWord, SessionPayload, SessionProgress } from "@/lib/types";
@@ -531,12 +531,24 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
     setDiag((d) => (d ? [...d.slice(-5), line] : d));
   }, []);
 
-  /** Mikrofon açıldı işareti: ekranda dersin işareti, cepte ses öğesi. */
-  const cue = useCallback(() => {
+  /**
+   * Mikrofon açıldı / kapandı işaretleri — MOBİLLE AYNI SES.
+   *
+   * Yürüyüş modunun tamamı ekrana bakmadan kullanılıyor; mikrofonun ne zaman
+   * dinlediğini söyleyen tek şey bu iki ton. Eskiden yalnız AÇILIŞ vardı
+   * (`cueListen`, derslerin işareti) ve kapanış hiç duyulmuyordu: kullanıcı
+   * konuşmayı ne zaman bitireceğini bilemiyordu. Mobilde ikisi de var ve
+   * ayrı seslerdi; artık üçü de tek nota tablosundan geliyor (`WALK_NOTES`).
+   *
+   * İki çalma yolu, çünkü ekran kapalıyken `AudioContext` askıya alınıyor:
+   * görünürken WebAudio, cepte `<audio>` öğesi (bkz. pocket-audio).
+   */
+  const walkCue = useCallback((kind: "micon" | "micoff") => {
     const ctx = sharedAudioContext();
-    if (!armed.current && ctx && ctx.state === "running") cueListen();
-    else pocketCue();
+    if (!armed.current && ctx && ctx.state === "running") play(kind);
+    else pocketWalkCue(kind);
   }, []);
+  const cue = useCallback(() => walkCue("micon"), [walkCue]);
 
   /**
    * Cepte kipini kurar — "Cebe koy" dokunuşunun içinden.
@@ -827,6 +839,9 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
         windowMs + HEAR_SLACK_MS,
         null as string[] | null,
       );
+      // Mikrofon kapandı — hangi yoldan dönülürse dönülsün burada duyuluyor.
+      // `hear` bütün dinlemelerin tek hunisi, o yüzden işaret tek yerde.
+      walkCue("micoff");
       if (heard === null) {
         ctl.abort();
         track("walk_listen", 0, "deadline");
@@ -834,7 +849,7 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
       }
       return heard;
     },
-    [hearOnce],
+    [hearOnce, walkCue],
   );
 
   const stopAll = useCallback(() => {
