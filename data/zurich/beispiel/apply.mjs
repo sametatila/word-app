@@ -16,7 +16,8 @@
  *
  * Doğrulama ayrı adımda: `node data/zurich/beispiel/check.mjs <paket>`.
  */
-import { readFileSync, writeFileSync, existsSync, mkdirSync, readdirSync } from "node:fs";
+import { readFileSync, writeFileSync, existsSync, mkdirSync, readdirSync, rmSync } from "node:fs";
+import { contains, numbers, words_ } from "./check.mjs";
 
 const ROOT = new URL("../../..", import.meta.url).pathname;
 const IN = `${ROOT}data/zurich/beispiel/in`;
@@ -34,6 +35,7 @@ const packets = readdirSync(IN)
   .sort();
 
 let built = 0;
+let skipped = 0;
 let written = 0;
 let kept = 0;
 
@@ -54,15 +56,49 @@ for (const p of packets) {
     continue;
   }
 
-  const out = src.words.map((k) => {
-    const fixed = fixes.get(k.id);
-    if (fixed) written++;
-    else kept++;
-    return { id: k.id, beispiel: fixed ?? String(k.currentGsw ?? "").trim() };
-  });
+  const out = src.words.map((k) => ({
+    id: k.id,
+    beispiel: (fixes.get(k.id) ?? String(k.currentGsw ?? "")).trim(),
+  }));
 
+  /*
+    TEMİZ DEĞİLSE YAZILMAZ.
+
+    İlk hâli koşulsuz yazıyordu ve `apply.mjs a1` henüz elle yazılmamış on iki
+    paket için de çıktı üretti — içleri eski cümlelerle doluydu ve `out/`
+    veritabanının tohumlandığı yer. Yani "hazır değil"i "hazır" diye
+    işaretlemiş oluyordu; bu hattın kaçınmak için kurulduğu şeyin ta kendisi.
+
+    Denetim `check.mjs`ten geliyor, kopyalanmıyor.
+  */
+  const bad = [];
+  for (const k of src.words) {
+    const b = out.find((r) => r.id === k.id).beispiel;
+    const n = words_(b);
+    if (!b) bad.push(`${k.id} boş`);
+    else if (!/[.!?]$/.test(b)) bad.push(`${k.id} noktalama`);
+    else if (/[.!?]\s+\S/.test(b.replace(/[.!?]$/, ""))) bad.push(`${k.id} çok cümleli`);
+    else if (/ß/.test(b)) bad.push(`${k.id} ß`);
+    else if (n < 3 || n > 13) bad.push(`${k.id} uzunluk ${n}`);
+    else if (!contains(b, k.gsw)) bad.push(`${k.id} kelime yok`);
+    else if (numbers(b) !== numbers(k.beispielDe)) bad.push(`${k.id} sayı`);
+    // Soru uyuşmazlığı `check.mjs`te UYARI ama kapı için HATA: çeviri Almanca
+    // cümleden devralındığı için, cümle soruyken çevirisi düz cümle oluyor.
+    // Dört paket tam bu yüzden "temiz" sanılıp yazılmıştı.
+    else if (/\?$/.test(b) !== /\?$/.test(k.beispielDe)) bad.push(`${k.id} soru`);
+  }
+  if (bad.length) {
+    console.log(`  ${p}: ATLANDI — ${bad.length} madde eksik (${bad.slice(0, 3).join(", ")}${bad.length > 3 ? "…" : ""})`);
+    // Önceden yazılmış bozuk bir çıktı varsa kaldırılıyor: yarım bir dosyanın
+    // durması, "bu paket bitti" demekle aynı şey.
+    rmSync(`${OUT}/${p}.json`, { force: true });
+    skipped++;
+    continue;
+  }
+
+  for (const r of out) (fixes.has(r.id) ? 1 : 0) ? written++ : kept++;
   writeFileSync(`${OUT}/${p}.json`, `${JSON.stringify(out, null, 1)}\n`);
   built++;
 }
 
-console.log(`${built} paket kuruldu · ${written} yeniden yazıldı · ${kept} korundu`);
+console.log(`${built} paket kuruldu · ${written} yeniden yazıldı · ${kept} korundu` + (skipped ? ` · ${skipped} atlandı` : ""));
