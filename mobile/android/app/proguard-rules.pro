@@ -29,3 +29,19 @@
 -dontwarn org.conscrypt.**
 -dontwarn org.bouncycastle.**
 -dontwarn org.openjsse.**
+
+# Fresco animasyonlu WebP çözücüsü (maskot animasyonları).
+#
+# ImagePipelineFactory çözücüyü REFLECTION ile kuruyor: sınıfı adıyla buluyor,
+# sonra `(PlatformBitmapFactory, boolean, boolean, boolean)` yapıcısını arıyor.
+# O yapıcının kodda statik bir çağrısı yok — R8 kullanılmıyor sayıp atıyor, arama
+# NoSuchMethodException ile düşüyor ve Fresco sessizce animasyonsuz çözücüye geri
+# dönüyor. Sonuç: build.gradle'a animated-webp bağımlılığı tam da bunun için
+# eklenmişken maskot yine ilk karede donuyor.
+#
+# Yalnız release'te oluyor (debug'da R8 koşmuyor), derlemede görünmüyor ve
+# uygulama çökmediği için kendini de söylemiyor. Cihazda ölçüldü 2026-09-09:
+# logcat'te `gl2.<init> [class e91, boolean, boolean, boolean]`, mapping.txt ile
+# çözülünce WebPImageDecoder ve PlatformBitmapFactory çıktı; yapıcının AAR'da
+# durduğu javap ile doğrulandı, yani eksik olan bağımlılık değil keep kuralıydı.
+-keep class com.facebook.animated.webp.WebPImageDecoder { <init>(...); }
