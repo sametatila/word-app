@@ -22,7 +22,10 @@ import {
  *   - Hazır DENMEYEN bir çiftin verisi tamamlandıysa → uyarır. Yoksa
  *     tamamlanmış bir parite aylarca kapalı kalır; kimse bakmaz.
  *
- * Ölçü kelime katmanı: karşılık ve örnek cümle çevirisi. Beceri ve ders
+ * Ölçü kelime katmanı: karşılık ve örnek cümle çevirisi. Üç anadilin üçü de
+ * artık gerçekten ÖLÇÜLÜYOR: Almanca sütunları (`de_gloss`, `beispiel_de`)
+ * 0046 ile geldi ve o güne kadar bu betik Almanca anadilli her çifti koşulsuz
+ * "0%" sayıyordu — yani ölçüm değil, bir yer tutucuydu. Beceri ve ders
  * metinleri ayrı fazlar (bkz. `docs/plan/native-language.md`) ve henüz
  * ölçülebilir bir alan taşımıyorlar — o katmanlar geldiğinde buraya eklenecek.
  *
@@ -43,17 +46,14 @@ const fmt = (l: Layer) => `${l.name} ${(pct(l) * 100).toFixed(1)}% (${l.have}/${
 /** Bir çiftin kelime katmanındaki doluluğu. */
 async function wordLayer(native: NativeLang, course: CourseId): Promise<Layer[]> {
   const gloss =
-    native === "tr" ? words.tr : native === "en" ? words.en : null;
+    native === "tr" ? words.tr : native === "en" ? words.en : words.deGloss;
   const example =
-    native === "tr" ? words.beispielTr : native === "en" ? words.beispielEn : null;
+    native === "tr" ? words.beispielTr : native === "en" ? words.beispielEn : words.beispielDe;
 
   const [{ total }] = await db
     .select({ total: sql<number>`count(*)::int` })
     .from(words)
     .where(eq(words.course, course));
-
-  // Almanca karşılık sütunu henüz YOK: alan eklenene kadar doluluk sıfır.
-  if (!gloss) return [{ name: "karşılık", have: 0, total }, { name: "örnek çevirisi", have: 0, total }];
 
   const [{ have }] = await db
     .select({ have: sql<number>`count(*)::int` })

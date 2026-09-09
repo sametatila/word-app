@@ -149,18 +149,31 @@ async function main() {
 
     let tr: string | null;
     let en: string | null;
+    /*
+      ALMANCA CÜMLE DE AYNI KAPIDAN GEÇİYOR. Alman anadilli kullanıcı için
+      örnek cümlenin "çevirisi" Almanca cümlenin ta kendisi — ama yalnız lehçe
+      cümlesi ONUN karşılığıysa. Türkçe ve İngilizce hangi ölçütle
+      devralınıyorsa Almanca da aynısıyla devralınıyor; ayrı bir ölçüt
+      yazılsaydı üç dil zamanla ayrışırdı ve hangisinin doğru olduğu belli
+      olmazdı.
+    */
+    let beispielDe: string | null;
     if (newSentence && meaning) {
       // Yeni hatta lehçe cümlesi Almanca cümlenin karşılığı olmak zorunda:
       // çeviri koşulsuz devralınıyor.
       tr = meaning.beispielTr;
       en = meaning.beispielEn;
+      beispielDe = meaning.beispiel?.trim() || firstExample(src.beispiel);
     } else {
       const deSentence = firstExample(src.beispiel);
       tr = gswSentence ? (beispielTr.get(g.id) ?? null) : null;
       en = null;
+      beispielDe = null;
       if (tr && deSentence && !translationFits(deSentence, gswSentence!)) {
         tr = null;
         droppedTr++;
+      } else if (deSentence && gswSentence && translationFits(deSentence, gswSentence)) {
+        beispielDe = deSentence;
       }
     }
 
@@ -183,6 +196,15 @@ async function main() {
       beispiel: gswSentence,
       beispielTr: tr,
       beispielEn: en,
+      /*
+        ALMANCA KARŞILIK = KAYNAK SATIRIN BAŞLIĞI. `formen` alanındaki
+        "HD: …" köprüsü zaten bu bilgiyi taşıyordu ama bir metin içinde
+        gömülüydü; `de_gloss` onu çözücünün (`glossFor`) okuyabileceği yere
+        koyuyor. Artikelsiz — `formen` köprüsü de öyle, ve karşılık ANADİLDE
+        olduğu için artikel Alman kullanıcıya bilmediği bir şey söylemiyor.
+      */
+      deGloss: cleanHeadword(src.de),
+      beispielDe,
       rank: src.rank ?? null,
       course: "gsw-zh",
     };
@@ -208,6 +230,8 @@ async function main() {
           beispiel: sql`excluded.beispiel`,
           beispielTr: sql`excluded.beispiel_tr`,
           beispielEn: sql`excluded.beispiel_en`,
+          deGloss: sql`excluded.de_gloss`,
+          beispielDe: sql`excluded.beispiel_de`,
           rank: sql`excluded.rank`,
           course: sql`excluded.course`,
         },
@@ -225,6 +249,10 @@ async function main() {
     `Züritüütsch havuzu yüklendi: ${values.length} kelime ` +
       `(${values.filter((v) => v.beispielTr).length} örnek cümle çevirisi, ` +
       `${droppedTr} madde yerelleştirildiği için çevirisiz).`,
+  );
+  console.log(
+    `  Almanca anadil: ${values.filter((v) => v.deGloss).length} karşılık, ` +
+      `${values.filter((v) => v.beispielDe).length} örnek cümle.`,
   );
 }
 

@@ -5,6 +5,7 @@ import { Pool } from "pg";
 import { drizzle } from "drizzle-orm/node-postgres";
 import { and, eq, notInArray, sql } from "drizzle-orm";
 import { words } from "../src/lib/db/schema";
+import { cleanHeadword } from "../src/lib/headword";
 
 /**
  * İngilizce kursunu (`course = "en"`) tohumlar: `npm run db:seed:en`
@@ -25,10 +26,14 @@ import { words } from "../src/lib/db/schema";
  *                "tr · en" biçiminde iki kez görünürdü
  *   rank         NULL — mevcut rank ALMANCA frekansı, İngilizceye taşınmaz
  *   niveau       İNGİLİZCE CEFR seviyesi (Almanca kaynağın seviyesi değil)
+ *   de_gloss     ALMANCA KARŞILIK — kaynak satırın başlığından TÜRETİLİYOR
+ *   beispiel_de  NULL — türetilemiyor, aşağıda anlatılıyor
  */
 
 type Row = {
   id: number;
+  /** Bu terimin türetildiği Almanca havuz satırının kimliği. */
+  srcId?: number;
   de: string;
   tr: string;
   typ: string;
@@ -36,6 +41,33 @@ type Row = {
   beispiel: string;
   beispielTr: string;
 };
+
+type SrcRow = { id: number; de: string };
+
+/**
+ * ALMANCA KARŞILIK YAZILMIYOR, TÜRETİLİYOR.
+ *
+ * İngilizce havuz Almanca havuzdan türetildi: her satırın `srcId`si bir Almanca
+ * satırı gösteriyor ve o satırın `en` alanı ile buradaki İngilizce başlık
+ * 6.975/6.975 BİREBİR aynı (ölçüldü, sıfır fark). Yani Almanca karşılık zaten
+ * elimizde — kaynak satırın başlığı. Elle yazmak aynı bilgiyi ikinci kez
+ * üretmek ve iki kopyanın ayrışmasına kapı açmak olurdu.
+ *
+ * ARTİKELSİZ. `de_gloss` tek bir metin alanı ve yanında artikel sütunu yok;
+ * "das Auto" yazılsaydı yazarak hatırlama turunda "Auto" yazan kullanıcı yanlış
+ * sayılırdı (`meanings()` karşılığı virgülle bölüp olduğu gibi karşılaştırıyor).
+ * Zaten karşılık ANADİLDE: artikel Alman kullanıcıya bilmediği bir şey
+ * söylemiyor. gsw kursundaki "HD: …" köprüsü de artikelsiz.
+ *
+ * Kaynağı olmayan 200 madde `null` kalıyor ve `hasGloss` onları Almanca anadilli
+ * kullanıcının havuzundan eliyor — Türkçe karşılık göstermektense hiç
+ * göstermemek doğru (bkz. `option-label.ts`).
+ */
+function readGermanHeadwords(): Map<number, string> {
+  const file = path.join(process.cwd(), "data", "app", "words.json");
+  const rows = JSON.parse(readFileSync(file, "utf8")) as SrcRow[];
+  return new Map(rows.map((r) => [r.id, cleanHeadword(r.de)]));
+}
 
 async function main() {
   if (!process.env.DATABASE_URL) throw new Error("DATABASE_URL tanımlı değil");
@@ -52,21 +84,38 @@ async function main() {
     .map((l) => JSON.parse(l) as Row);
   console.log(`${rows.length} İngilizce kelime okundu.`);
 
-  const values = rows.map((r) => ({
-    id: r.id,
-    de: r.de,
-    artikel: null,
-    tr: r.tr,
-    en: null,
-    formen: null,
-    typ: r.typ,
-    niveau: r.niveau,
-    beispiel: r.beispiel || null,
-    beispielTr: r.beispielTr || null,
-    beispielEn: null,
-    rank: null,
-    course: "en",
-  }));
+  const german = readGermanHeadwords();
+  let derived = 0;
+  const values = rows.map((r) => {
+    const deGloss = r.srcId ? (german.get(r.srcId) ?? null) : null;
+    if (deGloss) derived++;
+    return {
+      id: r.id,
+      de: r.de,
+      artikel: null,
+      tr: r.tr,
+      en: null,
+      formen: null,
+      typ: r.typ,
+      niveau: r.niveau,
+      beispiel: r.beispiel || null,
+      beispielTr: r.beispielTr || null,
+      beispielEn: null,
+      deGloss,
+      /*
+        ALMANCA CÜMLE TÜRETİLEMİYOR ve bu ölçüldü. İngilizce örnek cümleler
+        Almanca cümlenin çevirisi değil, aynı kelime için BAĞIMSIZ yazılmış
+        cümleler: «pflegen» Almancada "Sie pflegt ihre kranke Mutter seit zwei
+        Jahren", İngilizcede "Nurses care for patients day and night".
+        Devralınsaydı kullanıcı cümleyle ilgisiz bir çeviri görürdü — eksik
+        çevirinin en kötü biçimi, çünkü görünürde çalışır.
+      */
+      beispielDe: null,
+      rank: null,
+      course: "en",
+    };
+  });
+  console.log(`  Almanca karşılık türetildi: ${derived}/${rows.length}`);
 
   const CHUNK = 400;
   for (let i = 0; i < values.length; i += CHUNK) {
@@ -82,6 +131,7 @@ async function main() {
           niveau: sql`excluded.niveau`,
           beispiel: sql`excluded.beispiel`,
           beispielTr: sql`excluded.beispiel_tr`,
+          deGloss: sql`excluded.de_gloss`,
         },
       });
     console.log(`  ${Math.min(i + CHUNK, values.length)}/${values.length}`);
