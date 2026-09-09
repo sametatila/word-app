@@ -596,6 +596,27 @@ tekrar bekliyor; gerçek veriyle koşuda 0-3 arası çıkıyor, çünkü kelimen
 durumuna göre uygun oyun sayısı azalabiliyor. Eşiği gevşetmek sorunu gizlemek
 olurdu — merdivenin kendisi bakılacak bir kalem olarak duruyor.
 
+### Oyun katmanı: tek fark ve yönü TERS
+
+On iki oyunun yerleşimi de mobil `game/rounds.tsx` ile karşılaştırıldı. Şık
+kartları birebir aynı (metin + alt satır, ✓/✗ simgesi, yanlışta sarsıntı,
+doğruda parlama). Tek fark SORU BÖLGESİNDE:
+
+- **Mobil** soruyu bir KARTIN içine koyuyor (`Prompt`): yüzey zemin, kenarlık,
+  gölge; etiket kartın içinde küçük ve soluk.
+- **Web** kart kullanmıyor: etiket dolgulu bir çip, soru düz metin, ikisi de
+  sayfa zemininde.
+
+Bu farkı web lehine BIRAKIYORUZ ve sebebi ölçülmüş: `game-shell` ekranı üç
+bölgeye ayırıyor (okuma / dokunma / sonuç) ve artan boşluğu tavanlarla
+dağıtıyor, çünkü kart tek parça olarak dikey ortalandığında oyun tek elle
+oynanamıyordu — şıklar başparmağın erişemediği yerde kalıyordu. Soruyu
+yeniden bir kartın içine almak o çalışmayı geri almak olur.
+
+**Yani bu kalem mobile düşüyor**, web'e değil: mobilin de üç bölgeli düzene
+geçmesi ve soru kartını bırakması gerekiyor. §6'daki "mobil tarafına düşen
+küçük işler" listesinin en büyüğü bu.
+
 ### Samet'e kalanlar
 
 1. **Push** — 170+ yerel commit bekliyor; `git push origin main`.
@@ -605,3 +626,6 @@ olurdu — merdivenin kendisi bakılacak bir kalem olarak duruyor.
 4. **İçerik kararları** (§6): karıştırma çiftlerinin İngilizce/Almanca
    konuşana göre yeniden seçilmesi ve `words` tablosuna Almanca karşılık
    sütunu. İkisi de içerik projesi, kod değil.
+5. **Mobil tarafı**: oyun ekranının üç bölgeli düzene geçmesi (yukarıda),
+   `skills.skills` Almanca sözlükte "Skills" diyor, `formatDuration` "dk"/"s"
+   sabit yazıyor, hero rozetleri "{n} tekrar" / "{n} yeni" sabit.
