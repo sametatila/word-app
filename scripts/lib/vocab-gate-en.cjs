@@ -103,7 +103,7 @@ const DUZENSIZ = {
   grew: "grow", grown: "grow", heard: "hear", hid: "hide", hidden: "hide",
   laid: "lay", led: "lead", lent: "lend", meant: "mean", rose: "rise", risen: "rise",
   shown: "show", drawn: "draw", drew: "draw", blown: "blow", blew: "blow",
-  sang: "sing", sung: "sing", slept: "sleep", stole: "steal", stolen: "steal",
+  became: "become", become: "become", sang: "sing", sung: "sing", slept: "sleep", stole: "steal", stolen: "steal",
   swam: "swim", swum: "swim", threw: "throw", thrown: "throw", woke: "wake", woken: "wake",
   children: "child", people: "person", men: "man", women: "woman",
   feet: "foot", teeth: "tooth", mice: "mouse", geese: "goose",
@@ -172,7 +172,12 @@ function adim(w) {
     ["ive", "e"], ["ive", ""], ["ous", ""], ["ise", ""], ["ize", ""], ["ise", "ize"], ["ize", "ise"],
     ["isation", "ization"], ["ization", "isation"],
     ["bly", "ble"], ["ply", "ple"], ["ily", "y"], ["ly", ""], ["ly", "e"],
-    ["al", ""], ["ic", ""], ["ry", ""], ["cy", "t"],
+    ["al", ""], ["al", "e"], ["ic", ""], ["ry", ""], ["cy", "t"],
+    // Havuzda kökü BULUNAN ama kapının bağlayamadığı zincirler:
+    // growth→grow, retrieval→retrieve, prohibition→prohibit, widen→wide,
+    // deception→deceive, verifiable→verify, practise→practice.
+    ["th", ""], ["ion", ""], ["en", ""], ["en", "e"],
+    ["ception", "ceive"], ["iable", "y"], ["ise", "ice"], ["ice", "ise"],
   ]) {
     if (w.endsWith(ek) && w.length > ek.length + 2) ekle(w.slice(0, -ek.length) + yerine);
   }
@@ -250,6 +255,17 @@ function izinKumesi(seviye = "a1") {
 const SAYI_RE = /^(\d+|[a-z]+(?:teen|ty)|zero|one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|hundred|thousand|million|billion)(?:st|nd|rd|th|s)?$/;
 
 /**
+ * Sıra sayıları — açık liste.
+ *
+ * SAYI_RE bunları yakalayamıyor çünkü biçim düzenli değil: `nine`+`th` "ninth"
+ * vermiyor, `twelve`+`th` "twelfth" vermiyor. Kalıbı `[a-z]+th` diye gevşetmek
+ * ise "month", "north", "health", "truth" sözcüklerini de sayı sayardı.
+ * Sıra sayıları kapalı bir sınıf ve tıpkı `first`–`fifth` gibi hiçbir seviye
+ * hakkında bilgi vermiyor; o yüzden ölçüme girmiyorlar.
+ */
+const SIRA_RE = /^(sixth|seventh|eighth|ninth|tenth|eleventh|twelfth|thirteenth|fourteenth|fifteenth|sixteenth|seventeenth|eighteenth|nineteenth|twentieth|thirtieth|fortieth|fiftieth|sixtieth|seventieth|eightieth|ninetieth|hundredth|thousandth)$/;
+
+/**
  * `ham` metnini, `seviye`ye kadar öğretilenlere göre ölç.
  *
  * `ekIzin`: metne özel eklemeler (egzersizin kendi sözlükçesi gibi).
@@ -260,6 +276,9 @@ function olc(ham0, seviye = "a1", ekIzin = []) {
   for (const w of ekIzin) for (const x of parcala(w)) izin.add(x);
 
   let ham = String(ham0 || "");
+  // "14th" belirteç üretirken rakam düşüyor ve geriye "th" kalıyordu; ek
+  // rakamla birlikte siliniyor ki sayı, sayı olarak elensin.
+  ham = ham.replace(/(\d)(st|nd|rd|th)\b/gi, "$1");
   for (const [re, to] of KISALTMA) ham = ham.replace(re, to);
 
   /*
@@ -278,12 +297,16 @@ function olc(ham0, seviye = "a1", ekIzin = []) {
   for (const m of ham.toLowerCase().matchAll(/[a-z][a-z'-]*/g)) {
     const w = m[0].replace(/^'+|'+$/g, "");
     if (w.length < 2) continue;
-    if (SAYI_RE.test(w)) continue;
+    if (SAYI_RE.test(w) || SIRA_RE.test(w)) continue;
     tok.push(w);
     if (adlar.has(w)) continue;
     // Tireli bileşik: parçalarının hepsi biliniyorsa bileşik de bilinir.
     const parts = w.includes("-") ? w.split("-").filter(Boolean) : [w];
-    const bilinen = parts.every((pt) => [...kokler(pt)].some((k) => izin.has(k)));
+    // Bileşiğin sayı olan parçası da elenir; yoksa "fifteen-year-old" bilinmeyen
+    // sayılırdı çünkü sayılar izin kümesinde değil, ölçümün dışında tutuluyor.
+    const bilinen = parts.every(
+      (pt) => SAYI_RE.test(pt) || SIRA_RE.test(pt) || [...kokler(pt)].some((k) => izin.has(k)),
+    );
     if (!bilinen) disi.push(w);
   }
   return { tok, disi };
