@@ -20,7 +20,18 @@ const OUT = `${ROOT}data/en-de/out`;
 const ARG = (process.argv[2] || "all").toLowerCase();
 
 /** Cümledeki sayılar — çeviri sayıyı değiştiremez. */
-const numbers = (t) => [...String(t ?? "").matchAll(/\d+/g)].map((m) => m[0]).sort().join(",");
+/*
+  Sayı kümesi karşılaştırması, ama HARFE YAPIŞIK rakamlar sayı değildir.
+
+  `\d+` düz hâliyle «CO2-Ausstoß»taki 2'yi bir sayı sanıyordu ve İngilizce
+  karşılığı ("carbon emissions") rakamsız olduğu için madde HATA veriyordu.
+  Aynı tuzak B2, G20, mp3, DIN A4 gibi her formül/kod adında var — bunlar
+  nicelik değil, adın parçası.
+
+  Bu, «Diät» kırpılmasıyla aynı aile: JS'te `\b` ve `\d` sınırları harfi
+  hesaba katmıyor, o yüzden sınır `\p{L}` ile yazılıyor.
+*/
+const numbers = (t) => [...String(t ?? "").matchAll(/(?<!\p{L})\d+/gu)].map((m) => m[0]).sort().join(",");
 const words_ = (t) => String(t ?? "").trim().split(/\s+/).filter(Boolean).length;
 
 const packets = readdirSync(IN)

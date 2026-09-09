@@ -441,7 +441,11 @@ function contains(sentence, headword) {
 
 export { contains, flat, flatKey };
 export const words_ = (s) => s.trim().split(/\s+/).filter(Boolean).length;
-export const numbers = (s) => (s.match(/\d+/g) ?? []).sort().join(",");
+// Harfe yapışık rakam sayı değildir: «CO2», «B2», «mp3», «G20» — nicelik
+// değil, adın parçası. Düz `\d+` bunları sayı sanıp Almanca satırla
+// karşılaştırınca madde haksız yere HATA veriyor. `\b` gibi `\d` sınırı da
+// harfi görmüyor, o yüzden sınır `\p{L}` ile yazılıyor («Diät» ile aynı aile).
+export const numbers = (s) => (s.match(/(?<!\p{L})\d+/gu) ?? []).sort().join(",");
 
 function inspect(packet) {
   const src = JSON.parse(readFileSync(`${IN}/${packet}.json`, "utf8"));
