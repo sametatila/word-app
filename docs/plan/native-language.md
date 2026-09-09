@@ -131,9 +131,58 @@ belirsiz artikelin üç biçimi var), `was für en` → `was für en/e/es`,
 üretim veritabanına yazar; AGENTS.md gereği bu ayrıca sorulur. Uygulandığında
 `check:pairs` en→gsw paritesini "!" ile işaretleyecek.
 
-### 2–4. sırada
+### 2. words · Almanca karşılık + örnek — BİTTİ (146/146 paket, 7.175 cümle)
 
-2. `words` · Almanca karşılık + örnek (7.175 + 7.175) → **de→en** kelime katmanı
+İlk ölçümde bu kalem "7.175 karşılık + 7.175 örnek" görünüyordu. Yarısı
+yanlıştı. Ölçüm ayırdı:
+
+- **Karşılık %97,2 türetilebilir.** İngilizce kursun her satırı `srcId` ile
+  bir Almanca satıra bağlı; o satırın başlığı doğrudan karşılık oluyor.
+  Kalan 200 satırın kaynağı yok (`srcId: null`) ve elle yazıldı.
+- **Örnek cümle %0 türetilebilir.** İngilizce örnek, Almanca örneğin
+  çevirisi DEĞİL — bağımsız yazılmış bir cümle. Bunu satır satır okuyarak
+  doğruladım; sayı kümesi örtüşmesi (%99,6) yanıltıcı bir işaretti, çünkü
+  cümlelerin çoğunda hiç sayı yok.
+
+Gerçekleşen: **7.175/7.175 cümle elle yazıldı**, 146/146 paket, 0 hata,
+33 uyarı (hepsi uzunluk oranı: Almanca bileşik ad İngilizce tamlamadan
+kısa ya da uzun — çeviri kusuru değil, dilin biçimi).
+
+**Türetmenin tersine çevrilemediği yerler: 174 karşılık düzeltmesi.**
+Almanca satırın `en` alanı bağlam içinde doğru bir çeviri, ama İngilizce
+kelime çok anlamlıysa geri dönüşte başka anlama düşüyor — «circulation»
+kaynakta gazete tirajı, İngilizce cümlede kan dolaşımı. Oran seviyeye göre
+ölçüldü: A1-B1 %2,4 · B2 %3,7 · C1 %1,5. Sebep seviye değil kelimenin
+YAŞI: çok anlamlılık kısa, eski, sık kullanılan sözcüklerin özelliği; C1'in
+uluslararası terimleri ve uzun bileşikleri tek anlamlı.
+
+Hat: `make-packets` → elle `out/<paket>.json` → `check.mjs`. Kapı kuralları:
+boş, noktalama, çok cümleli, sayı kümesi, soru/düz uyuşmazlığı, uzunluk,
+karşılık cümlede yok. Denetleyici `data/meanings/contains.mjs`i paylaşıyor —
+ikinci bir kopya iki kopyanın ayrışması demekti.
+
+**Yan ürün: denetleyicide dört aile boşluğu.** Harfe yapışık rakam
+(«CO2» → sayı sanılıyordu, `\d` sınırı `\p{L}` ile yazıldı; aynı kusur
+zurich hattında da vardı), `aufrecht` sıfat-ön eki, ayrılabilir ön ekin
+altındaki ayrılmayan ön ek zinciri («einberufen» = ein+be+rufen), ve
+`zunichte` fosilleşmiş yuvası. Dördü de aynı desenle bulundu: doğru bir
+cümle yazılıyor, kapı reddediyor, reddin tekil mi aile mi olduğuna
+bakılıyor. Her düzeltme üç hatta önce/sonra ölçülerek doğrulandı.
+
+**Ölçülüp KUSUR OLMADIĞI anlaşılan bir şey de var:** iki İngilizce başlığın
+aynı Almanca karşılığı taşıması (131 grup). Kapıya uyarı yazıldı, 103 uyarı
+verdi, sonra bakıldı: «movie/film», «sick/ill» İngilizce eşanlamlı;
+«dick» = fat/thick ise Almancanın tek kelimede topladığı iki anlam. İkisinde
+de karşılık doğru. Üstelik şık kurucularının üçü de (session.ts
+`pickDistractors`, `pickFalseClaim`, daily.ts truefalse) aynı metinli şıkkı
+zaten eliyor. Uyarı kaldırıldı, yalnız sayı özet satırında duruyor.
+
+**Kalan adım — üretime uygulama.** `npm run db:seed` üretim veritabanına
+yazar; AGENTS.md gereği bu ayrıca sorulur. Uygulandığında `check:pairs`
+en→de paritesini "!" ile işaretleyecek.
+
+### 3–4. sırada
+
 3. `skill_exercises` · intro/gloss/açıklama
 4. `lessons` · anlatım metni
 
