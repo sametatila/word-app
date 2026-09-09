@@ -260,7 +260,32 @@ ders sözlükçesi kelimenin BU METİNDEKİ anlamını taşıyor, havuz ise biri
 sözlük anlamını (bkz. `types.ts`teki `Gloss` yorumu — kural zaten yazılıydı).
 Yani `vocab` için tek tek okunacak madde 19 değil **714** (695 + 19).
 
-`VocabItem` tipi bugün `{ de, tr }` — `en` alanı yok, eklenmesi gerekiyor.
+`VocabItem` ve `PatternItem` tipleri bugün `{ de, tr }` — `en` alanı yok,
+eklenmesi gerekiyor.
+
+**patterns yarısı da BİTTİ (1.291/1.291).** Hat `data/lessons/patterns/`,
+sözlükçenin kardeşi ama triyajsız: kalıbın havuzda karşılığı yok (%0,3),
+hepsi elle.
+
+Ve yazılan şey bir çeviri DEĞİL. `PatternItem.tr` kalıbın ne işe yaradığını
+söylüyor, karşılığını değil — İngilizcesi de öyle. Bu, hattı yazarken
+öğrenilen şey değil, ilk paketten belli olan şeydi ve bütün kararları
+belirledi. En keskin örnekler:
+
+```
+wird geöffnet          → process: is being opened
+ist geöffnet           → state: is open
+Nicht schlecht!        → actually means: very good
+Doch!                  → a positive answer to a negative question
+die steigenden Preise  → Partizip I: rising
+Er soll … sein.        → other people say so
+Er will … haben.       → he himself claims so
+```
+
+Hepsinde İngilizce çeviri AYRIMI SİLİYOR: "is opened" süreçle durumu,
+"not bad" alayı, "he is said to" kaynağı. Not bu yüzden yapının adını
+taşıyor. Kapıya "aynı not iki kez" gibi bir kural KOYULMADI ve bu doğruydu:
+ders aynı yapıyı farklı ünitelerde bilerek tekrar ediyor.
 
 **vocab yarısı BİTTİ (4.640/4.640).** Hat `data/lessons/vocab/`:
 `extract` → `triage` → elle `out/<paket>.json` → `check` (kapı + kapsam).
