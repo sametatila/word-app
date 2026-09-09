@@ -29,6 +29,7 @@
     "test:premium": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/test-premium.ts",
     "test:legal": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/test-legal.ts",
     "test:gloss": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/test-gloss.ts",
+    "check:en-de": "node data/en-de/check.mjs",
     "check:pairs": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/check-pairs.ts",
     "test:legal-db": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/test-legal-db.ts",
     "test:entitlement": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/test-entitlement.ts",

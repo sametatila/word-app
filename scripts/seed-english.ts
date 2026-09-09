@@ -1,5 +1,5 @@
 import "dotenv/config";
-import { readFileSync } from "node:fs";
+import { existsSync, readFileSync, readdirSync } from "node:fs";
 import path from "node:path";
 import { Pool } from "pg";
 import { drizzle } from "drizzle-orm/node-postgres";
@@ -28,7 +28,7 @@ import { cleanHeadword } from "../src/lib/headword";
  *   niveau       İNGİLİZCE CEFR seviyesi (Almanca kaynağın seviyesi değil)
  *   de_gloss     ALMANCA KARŞILIK — kaynak satırın başlığından TÜRETİLİYOR;
  *                kaynağı olmayan 200 maddede kaynak dosyada elle yazılı
- *   beispiel_de  NULL — türetilemiyor, aşağıda anlatılıyor
+ *   beispiel_de  ELLE ÇEVRİLİYOR — `data/en-de/out` (türetilemiyor, aşağıda)
  */
 
 type Row = {
@@ -79,6 +79,35 @@ function readGermanHeadwords(): Map<number, string> {
   return new Map(rows.map((r) => [r.id, cleanHeadword(r.de)]));
 }
 
+/**
+ * Örnek cümlenin Almanca çevirisi — `data/en-de/out`.
+ *
+ * TÜRETİLEMİYOR ve bu ölçüldü: İngilizce örnek cümleler Almanca cümlenin
+ * çevirisi değil, aynı kelime için BAĞIMSIZ yazılmış cümleler. «pflegen»
+ * Almancada "Sie pflegt ihre kranke Mutter seit zwei Jahren", İngilizcede
+ * "Nurses care for patients day and night". Devralınsaydı kullanıcı cümleyle
+ * ilgisiz bir çeviri görürdü — eksik çevirinin en kötü biçimi, çünkü görünürde
+ * çalışır.
+ *
+ * Yazılmamış paketler eksik değil, HENÜZ YOK: alan null kalıyor ve kullanıcı
+ * çevirisiz bir örnek görüyor. `exampleGlossFor` bunu zaten kaldırıyor ve
+ * kelime havuzdan DÜŞMÜYOR — örnek hedef dilde zaten anlamlı, çeviri bir ek.
+ */
+function readGermanSentences(): Map<number, string> {
+  const dir = path.join(process.cwd(), "data", "en-de", "out");
+  const out = new Map<number, string>();
+  if (!existsSync(dir)) return out;
+  for (const f of readdirSync(dir).filter((f) => f.endsWith(".json")).sort()) {
+    for (const r of JSON.parse(readFileSync(path.join(dir, f), "utf8")) as {
+      id: number;
+      beispielDe: string;
+    }[]) {
+      if (r.beispielDe?.trim()) out.set(r.id, r.beispielDe.trim());
+    }
+  }
+  return out;
+}
+
 async function main() {
   if (!process.env.DATABASE_URL) throw new Error("DATABASE_URL tanımlı değil");
   const db = drizzle(new Pool({ connectionString: process.env.DATABASE_URL }));
@@ -95,6 +124,7 @@ async function main() {
   console.log(`${rows.length} İngilizce kelime okundu.`);
 
   const german = readGermanHeadwords();
+  const sentences = readGermanSentences();
   let derived = 0;
   let written = 0;
   const values = rows.map((r) => {
@@ -115,15 +145,7 @@ async function main() {
       beispielTr: r.beispielTr || null,
       beispielEn: null,
       deGloss,
-      /*
-        ALMANCA CÜMLE TÜRETİLEMİYOR ve bu ölçüldü. İngilizce örnek cümleler
-        Almanca cümlenin çevirisi değil, aynı kelime için BAĞIMSIZ yazılmış
-        cümleler: «pflegen» Almancada "Sie pflegt ihre kranke Mutter seit zwei
-        Jahren", İngilizcede "Nurses care for patients day and night".
-        Devralınsaydı kullanıcı cümleyle ilgisiz bir çeviri görürdü — eksik
-        çevirinin en kötü biçimi, çünkü görünürde çalışır.
-      */
-      beispielDe: null,
+      beispielDe: sentences.get(r.id) ?? null,
       rank: null,
       course: "en",
     };
@@ -132,6 +154,7 @@ async function main() {
     `  Almanca karşılık: ${derived + written}/${rows.length} ` +
       `(${derived} türetildi, ${written} elle yazılmış)`,
   );
+  console.log(`  Almanca örnek cümle çevirisi: ${sentences.size}/${rows.length}`);
 
   const CHUNK = 400;
   for (let i = 0; i < values.length; i += CHUNK) {
@@ -148,6 +171,7 @@ async function main() {
           beispiel: sql`excluded.beispiel`,
           beispielTr: sql`excluded.beispiel_tr`,
           deGloss: sql`excluded.de_gloss`,
+          beispielDe: sql`excluded.beispiel_de`,
         },
       });
     console.log(`  ${Math.min(i + CHUNK, values.length)}/${values.length}`);
