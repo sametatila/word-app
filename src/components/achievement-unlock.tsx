@@ -2,7 +2,8 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { AchievementBadge, TIER_COLOR, TIER_LABEL, type BadgeRow } from "@/components/achievement-badge";
+import { AchievementBadge, TIER_COLOR, TIER_LABEL_KEYS, type BadgeRow } from "@/components/achievement-badge";
+import { useT } from "@/lib/i18n/client";
 import { Confetti } from "@/components/celebrate";
 import { play } from "@/lib/sfx";
 import { track } from "@/lib/track";
@@ -49,6 +50,8 @@ type View =
   | null;
 
 export function AchievementUnlock() {
+  /* Kanca `tt`: aşağıdaki zamanlayıcı değişkeni de `t` ve onu gölgeliyor. */
+  const tt = useT();
   const [view, setView] = useState<View>(null);
   const [busy, setBusy] = useState(false);
   /** Meşgulken beklemeye alınanlar. */
@@ -189,7 +192,7 @@ export function AchievementUnlock() {
               className="text-[11px] font-black uppercase tracking-[0.18em]"
               style={{ color: "var(--color-brand)" }}
             >
-              {view.items.length} rozet açıldı
+              {tt("achu.n_unlocked", { n: view.items.length })}
             </p>
             <div className="my-4 flex flex-wrap justify-center gap-2">
               {view.items.slice(0, BATCH_SHOWN).map((it) => (
@@ -215,14 +218,14 @@ export function AchievementUnlock() {
               className="text-[11px] font-black uppercase tracking-[0.18em]"
               style={{ color: TIER_COLOR[view.queue[0].tier] }}
             >
-              {TIER_LABEL[view.queue[0].tier]} rozet açıldı
+              {tt("achu.tier_unlocked", { tier: tt(TIER_LABEL_KEYS[view.queue[0].tier] ?? "tier.bronze") })}
             </p>
             <div className="my-4 flex justify-center">
               <AchievementBadge row={{ ...view.queue[0], unlocked: true }} size={92} />
             </div>
             <p className="muted text-sm">{view.queue[0].hint}</p>
             {view.queue.length > 1 ? (
-              <p className="muted mt-3 text-xs font-semibold">+{view.queue.length - 1} rozet daha</p>
+              <p className="muted mt-3 text-xs font-semibold">{tt("achu.n_more", { n: view.queue.length - 1 })}</p>
             ) : null}
             <Hint />
           </Card>

@@ -1148,4 +1148,12 @@ export const enWeb: Record<string, string> = {
   "weakw.study": "Practise",
   "weakw.round_of": "{game} round",
   "weakw.n_times": "{n} times",
+  "achw.badges": "Badges",
+  "tier.bronze": "Bronze",
+  "tier.silver": "Silver",
+  "tier.gold": "Gold",
+  "tier.legend": "Legend",
+  "achu.tier_unlocked": "{tier} badge unlocked",
+  "achu.n_unlocked": "{n} badges unlocked",
+  "achu.n_more": "+{n} more badges",
 };

@@ -1148,4 +1148,12 @@ export const deWeb: Record<string, string> = {
   "weakw.study": "Üben",
   "weakw.round_of": "{game}-Runde",
   "weakw.n_times": "{n}-mal",
+  "achw.badges": "Abzeichen",
+  "tier.bronze": "Bronze",
+  "tier.silver": "Silber",
+  "tier.gold": "Gold",
+  "tier.legend": "Legende",
+  "achu.tier_unlocked": "{tier}-Abzeichen freigeschaltet",
+  "achu.n_unlocked": "{n} Abzeichen freigeschaltet",
+  "achu.n_more": "+{n} weitere Abzeichen",
 };

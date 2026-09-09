@@ -1173,4 +1173,12 @@ export const trWeb: Record<string, string> = {
   "weakw.study": "Çalış",
   "weakw.round_of": "{game} turu",
   "weakw.n_times": "{n} kez",
+  "achw.badges": "Rozetler",
+  "tier.bronze": "Bronz",
+  "tier.silver": "Gümüş",
+  "tier.gold": "Altın",
+  "tier.legend": "Efsane",
+  "achu.tier_unlocked": "{tier} rozet açıldı",
+  "achu.n_unlocked": "{n} rozet açıldı",
+  "achu.n_more": "+{n} rozet daha",
 };

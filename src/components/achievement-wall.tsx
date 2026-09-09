@@ -1,38 +1,33 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
-import { AchievementBadge, TIER_COLOR, TIER_LABEL, type BadgeRow } from "@/components/achievement-badge";
-import { TrophyIcon } from "@/components/icons";
+import { motion } from "framer-motion";
+import { TIER_COLOR, type BadgeRow } from "@/components/achievement-badge";
+import { CheckIcon, TrophyIcon } from "@/components/icons";
 import { GROUP_LABEL_KEYS, GROUP_ORDER } from "@/lib/achievement-groups";
 import { useT, useLang } from "@/lib/i18n/client";
-import { formatNumber } from "@/lib/i18n/dict";
+import { formatNumber, localeOf, type NativeLang } from "@/lib/i18n/dict";
 
 /**
- * Profildeki rozet duvarı.
+ * Rozet duvarı — KENDİ SAYFASINDA, mobil `AchievementsScreen` yerleşiminde.
  *
- * İlk hâli 41 rozeti yedi bölüm hâlinde alt alta diziyordu ve iki şeyi birden
- * bozuyordu:
+ * Bir ara sekmelidir: yedi grup birer çip olmuş, aynı anda yalnız biri
+ * çizilirdi. Gerekçesi duvarın PROFİLİN İÇİNDE olmasıydı — yedi başlık ve on
+ * ızgara satırı, ilerlemeyi ve ayarları katlanın çok altına itiyordu. Şerit
+ * R'de duvar kendi adresine taşındı (`/profile/achievements`) ve o gerekçe
+ * ortadan kalktı; mobil de kendi ekranında bütün grupları alt alta diziyor.
  *
- *   1. **Profili kaplıyordu.** Yedi başlık + on ızgara satırı, sayfanın geri
- *      kalanını (ilerleme, ısı haritası, ayarlar) katlanın çok altına itiyordu.
- *   2. **Seçilenin ayrıntısı görünmüyordu.** Ayrıntı paneli bütün grupların
- *      ALTINDAYDI: üstteki bir rozete dokunan kullanıcı, açıklamanın belirdiğini
- *      bile görmüyordu.
+ * Sekmeler bir şeyi daha yapıyordu: bir gruba bakan kişi öbür grupları
+ * göremiyordu. Rozet duvarının işi tam olarak "neler var" sorusunu bir
+ * bakışta cevaplamak.
  *
- * Yeni kurgu tek bir fikre dayanıyor: **aynı anda tek grup**. Sekmeler
- * gruplar arası geçişi bir dokunuşa indiriyor, bölüm yüksekliği yediye
- * bölünüyor ve ayrıntı paneli ızgaranın hemen altına — yani her zaman
- * ekranda kalan bir yere — oturuyor.
+ * "SIRADAKİ" KALIYOR ama sekme değil, en üstteki BÖLÜM. Duvara bakan kişinin
+ * asıl sorusu "neyim var" değil "ne yapmalıyım"; onu grupların önüne koymak
+ * yedi grubu tarayıp aynı çıkarımı yapmasını beklemekten iyi.
  *
- * İlk sekme "Sıradaki": bitmeye en yakın kilitli rozetler. Duvara bakan
- * kişinin asıl sorusu "neyim var" değil "ne yapmalıyım"; açılışta onun
- * cevabını vermek, yedi grubu tarayıp aynı çıkarımı yapmasını beklemekten
- * iyi.
- *
- * Ayrıntı paneli hiç boş kalmıyor: sekme değişince ilk rozet kendiliğinden
- * seçiliyor. Boş bırakmak hem alanı açıklamasız bir boşluk yapardı hem de
- * dokununca yükseklik zıplardı.
+ * AYRINTI PANELİ GİTTİ. Mobilde kartın kendisi her şeyi taşıyor: başlık,
+ * ipucu, kademe ve ilerleme. Ayrı bir panel, dokunmayı gerektiren ve
+ * dokunulduğunda ızgarayı aşağı iten bir katmandı.
  */
 
 type Row = BadgeRow & { group: string; unlockedAt: string | null };
@@ -40,17 +35,14 @@ type Board = { rows: Row[]; unlockedCount: number; total: number };
 
 
 
-/** "Sıradaki" sekmesinde kaç rozet gösterilir. */
+/** "Sıradaki" bölümünde kaç rozet gösterilir. */
 const NEXT_COUNT = 4;
-const NEXT_TAB = "__next";
 
 export function AchievementWall() {
   const t = useT();
   const lang = useLang();
   const [board, setBoard] = useState<Board | null>(null);
   const [failed, setFailed] = useState(false);
-  const [tab, setTab] = useState<string>(NEXT_TAB);
-  const [openId, setOpenId] = useState<string | null>(null);
 
   useEffect(() => {
     let alive = true;
@@ -104,17 +96,8 @@ export function AchievementWall() {
       .slice(0, NEXT_COUNT);
   }, [board]);
 
-  const shown = useMemo(() => {
-    if (!board) return [];
-    if (tab === NEXT_TAB) return upcoming.length ? upcoming : recent;
-    return board.rows.filter((r) => r.group === tab);
-  }, [board, tab, upcoming, recent]);
-
-  // Sekme değişince ilk rozet seçili gelsin: panel boş kalmasın, yükseklik
-  // dokunuşla zıplamasın.
-  useEffect(() => {
-    setOpenId(shown[0]?.id ?? null);
-  }, [tab, shown.length]); // eslint-disable-line react-hooks/exhaustive-deps
+  /** En üstteki bölüm: bitmeye yakın olanlar, hepsi bittiyse son kazanılanlar. */
+  const lead = upcoming.length ? upcoming : recent;
 
   if (failed) return null;
 
@@ -122,7 +105,7 @@ export function AchievementWall() {
     return (
       <section className="card p-5">
         <h2 className="mb-3 flex items-center gap-2 font-bold">
-          <TrophyIcon size={18} /> Rozetler
+          <TrophyIcon size={18} /> {t("achw.badges")}
         </h2>
         <div className="grid grid-cols-4 gap-2 sm:grid-cols-6">
           {Array.from({ length: 8 }, (_, i) => (
@@ -134,21 +117,20 @@ export function AchievementWall() {
   }
 
   const pct = Math.round((board.unlockedCount / Math.max(1, board.total)) * 100);
-  const open = shown.find((r) => r.id === openId) ?? shown[0] ?? null;
-  const nextLabel = t(upcoming.length ? "skills.next" : "achw.recent");
+  const leadLabel = t(upcoming.length ? "skills.next" : "achw.recent");
 
   return (
-    <section className="card p-5">
+    <div>
       <div className="mb-1 flex items-baseline justify-between">
         <h2 className="flex items-center gap-2 font-bold">
-          <TrophyIcon size={18} /> Rozetler
+          <TrophyIcon size={18} /> {t("achw.badges")}
         </h2>
         <span className="muted text-xs font-semibold tabular-nums">
-          {board.unlockedCount} / {board.total}
+          {formatNumber(board.unlockedCount, lang)} / {formatNumber(board.total, lang)}
         </span>
       </div>
 
-      <div className="mb-3 h-1.5 overflow-hidden rounded-full" style={{ background: "var(--surface-2)" }}>
+      <div className="h-1.5 overflow-hidden rounded-full" style={{ background: "var(--surface-2)" }}>
         <motion.div
           className="brand-gradient h-full rounded-full"
           initial={{ width: 0 }}
@@ -157,154 +139,86 @@ export function AchievementWall() {
         />
       </div>
 
-      {/*
-        Sekmeler kartın kenarlarına taşıyor: kaydırılabilir olduğu, şeridin
-        kesilmesinden anlaşılıyor. Her sekme kendi ilerlemesini taşıyor, yani
-        bütün resim tek bakışta görünüyor — duvarı açmaya gerek kalmadan.
+      {/* Önce "sıradaki", sonra mobildeki grup sırası. */}
+      <Section label={leadLabel} rows={lead} lang={lang} t={t} />
+      {GROUP_ORDER.map((g) => (
+        <Section
+          key={g}
+          label={GROUP_LABEL_KEYS[g] ? t(GROUP_LABEL_KEYS[g]) : g}
+          rows={board.rows.filter((r) => r.group === g)}
+          lang={lang}
+          t={t}
+        />
+      ))}
+    </div>
+  );
+}
 
-        Sağdaki pay `padding` ile DEĞİL, sondaki boşluk öğesiyle veriliyor.
-        Sebep tarayıcı davranışı: yatay kaydırılan bir esnek kutuda sağ dolgu
-        kaydırma alanına katılmıyor, yani sonuna kadar kaydırıldığında son sekme
-        kartın sağ duvarına değiyordu. Soldaki pay dolguyla kalabiliyor çünkü
-        orada aynı sorun yok.
+type Tr = (key: string, vars?: Record<string, string | number>) => string;
 
-        Genişliği 20 değil 14 piksel: aradaki `gap-1.5` de payın parçası. 20
-        verildiğinde sağ boşluk 26 piksele çıkıyor ve altındaki rozet ızgarasıyla
-        hizayı kaçırıyordu — ölçüldü, ikisi de artık kartın 21 piksel içinde.
-      */}
-      <div className="no-scrollbar -mx-5 mb-3 flex gap-1.5 overflow-x-auto pl-5 pb-1">
-        <Tab active={tab === NEXT_TAB} onClick={() => setTab(NEXT_TAB)} label={nextLabel} />
-        {GROUP_ORDER.map((g) => {
-          const rows = board.rows.filter((r) => r.group === g);
-          if (!rows.length) return null;
-          const got = rows.filter((r) => r.unlocked).length;
-          return (
-            <Tab
-              key={g}
-              active={tab === g}
-              onClick={() => setTab(g)}
-              label={GROUP_LABEL_KEYS[g] ? t(GROUP_LABEL_KEYS[g]) : g}
-              count={`${got}/${rows.length}`}
-              complete={got === rows.length}
-            />
-          );
-        })}
-        <span aria-hidden className="w-3.5 shrink-0" />
-      </div>
-
-      <div className="grid grid-cols-4 gap-2 sm:grid-cols-6 md:grid-cols-7">
-        {shown.map((r) => (
-          <AchievementBadge
-            key={r.id}
-            row={r}
-            selected={open?.id === r.id}
-            onClick={() => setOpenId(r.id)}
-          />
+/** Mobildeki bölüm: küçük büyük-harf etiket + iki sütunlu kart ızgarası. */
+function Section({ label, rows, lang, t }: { label: string; rows: Row[]; lang: NativeLang; t: Tr }) {
+  if (!rows.length) return null;
+  return (
+    <section className="mt-5">
+      {/* Büyük harfe çevirme YEREL: Türkçede "i" → "İ" (bkz. localeOf). */}
+      <p className="muted mb-2 ml-1 text-caption tracking-wide">{label.toLocaleUpperCase(localeOf(lang))}</p>
+      <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4">
+        {rows.map((r) => (
+          <AchievementCard key={r.id} row={r} lang={lang} t={t} />
         ))}
       </div>
-
-      {/* Ayrıntı ızgaranın HEMEN altında. Önce bütün grupların en altındaydı ve
-          üstteki bir rozete dokunan kullanıcı açıklamanın belirdiğini bile
-          görmüyordu. */}
-      <AnimatePresence mode="wait">
-        {open ? (
-          <motion.div
-            key={open.id}
-            initial={{ opacity: 0, y: -4 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.16 }}
-            className="mt-3 rounded-xl p-3.5"
-            style={{ background: "var(--surface-2)" }}
-          >
-            <div className="flex items-baseline justify-between gap-3">
-              <p className="font-bold">{open.title}</p>
-              <span
-                className="shrink-0 rounded-full px-2 py-0.5 text-[10px] font-black uppercase tracking-wide"
-                style={{
-                  background: `color-mix(in srgb, ${TIER_COLOR[open.tier]} 18%, transparent)`,
-                  color: TIER_COLOR[open.tier],
-                }}
-              >
-                {TIER_LABEL[open.tier]}
-              </span>
-            </div>
-            <p className="muted mt-1 text-sm">{open.hint}</p>
-
-            {open.unlocked ? (
-              <p className="mt-2 text-xs font-semibold" style={{ color: "var(--color-mint)" }}>
-                Açıldı
-                {open.unlockedAt
-                  ? ` · ${new Date(open.unlockedAt).toLocaleDateString("tr-TR", { day: "numeric", month: "long", year: "numeric" })}`
-                  : ""}
-              </p>
-            ) : (
-              <div className="mt-2">
-                <div className="mb-1 flex items-baseline justify-between text-xs font-semibold tabular-nums">
-                  <span style={{ color: "var(--color-brand)" }}>
-                    {formatNumber(open.done, lang)} / {formatNumber(open.target, lang)}
-                  </span>
-                  <span className="muted">
-                    {t("achw.remaining", { n: formatNumber(open.target - open.done, lang) })}
-                  </span>
-                </div>
-                <div className="h-1.5 overflow-hidden rounded-full" style={{ background: "var(--border)" }}>
-                  <div
-                    className="h-full rounded-full"
-                    style={{
-                      width: `${Math.min(100, Math.round((open.done / Math.max(1, open.target)) * 100))}%`,
-                      background: TIER_COLOR[open.tier],
-                    }}
-                  />
-                </div>
-              </div>
-            )}
-          </motion.div>
-        ) : null}
-      </AnimatePresence>
     </section>
   );
 }
 
 /**
- * Grup sekmesi.
+ * Rozet kartı — mobil `AchievementsScreen` › `Badge`in aynısı: kademe renkli
+ * madalya, başlık, ipucu ve altında ya "kazanıldı" ya ilerleme şeridi.
  *
- * Kendi renklerini kuruyordu: seçiliyken `--color-brand` zemin üstünde beyaz
- * yazı. Açık temada bu değişken koyu bir kehribar (brand-600) ve beyaz iyi
- * okunuyor; KOYU temada ise açık kehribara (brand-300) dönüyor ve beyaz yazı
- * onun üstünde kalıyor. Ölçüldü: etiket 2.09:1, sayaç 1.82:1 — ikisi de
- * okunabilirlik eşiğinin çok altında.
- *
- * Çözüm yeni bir renk seçmek değil, uygulamanın çip diline dönmek. `.chip` ve
- * `.chip-active` bu işi zaten doğru yapıyor (kehribar geçiş, koyu yazı,
- * 6.25–7.94:1) ve sayacın saydamlığı da orada tanımlı. Yan faydası tutarlılık:
- * bu şerit artık Beceriler'deki ve Yapabildiklerim'deki şeritlerle aynı
- * görünüyor.
+ * Her şey KARTIN ÜSTÜNDE. Web'de ipucu ve ilerleme ızgaranın altındaki ayrı
+ * bir panelde duruyordu ve görmek için dokunmak gerekiyordu — kırk bir rozet
+ * için kırk bir dokunuş.
  */
-function Tab({
-  active,
-  onClick,
-  label,
-  count,
-  complete,
+function AchievementCard({
+  row,
+  lang,
+  t,
 }: {
-  active: boolean;
-  onClick: () => void;
-  label: string;
-  count?: string;
-  /** Gruptaki rozetlerin hepsi açıldı — seçili değilken nane. */
-  complete?: boolean;
+  row: Row;
+  lang: NativeLang;
+  t: Tr;
 }) {
+  const tone = TIER_COLOR[row.tier];
+  const pct = row.target ? Math.min(100, Math.round((row.done / row.target) * 100)) : 0;
   return (
-    <button
-      type="button"
-      onClick={onClick}
-      aria-pressed={active}
-      className={`chip shrink-0 whitespace-nowrap px-3 py-1.5 text-xs ${active ? "chip-active" : ""}`}
-      style={!active && complete ? { color: "var(--color-mint)" } : undefined}
-    >
-      {label}
-      {count ? <span className="muted ml-1.5 font-semibold tabular-nums">{count}</span> : null}
-    </button>
+    <div className="card p-3" style={{ opacity: row.unlocked ? 1 : 0.92 }}>
+      <span
+        className="flex h-[46px] w-[46px] items-center justify-center rounded-full"
+        style={
+          row.unlocked
+            ? { background: tone, color: "#fff", boxShadow: `0 6px 16px -6px ${tone}` }
+            : { background: "var(--surface-2)", color: "var(--text-faint)" }
+        }
+      >
+        <TrophyIcon size={24} />
+      </span>
+      <p className="mt-2 text-strong">{row.title}</p>
+      <p className="muted mt-0.5 text-micro">{row.hint}</p>
+      {row.unlocked ? (
+        <p className="mt-2 flex items-center gap-1 text-micro" style={{ color: "var(--color-mint)" }}>
+          <CheckIcon size={14} /> {t("achievements.earned")}
+        </p>
+      ) : (
+        <div className="mt-2">
+          <div className="h-[5px] overflow-hidden rounded-full" style={{ background: "var(--surface-2)" }}>
+            <div className="h-full rounded-full" style={{ width: `${pct}%`, background: tone }} />
+          </div>
+          <p className="muted mt-1 text-micro tabular-nums">
+            {formatNumber(row.done, lang)}/{formatNumber(row.target, lang)}
+          </p>
+        </div>
+      )}
+    </div>
   );
 }

@@ -52,11 +52,15 @@ export const TIER_COLOR: Record<string, string> = {
   legend: "var(--color-violet)",
 };
 
-export const TIER_LABEL: Record<string, string> = {
-  bronze: "Bronz",
-  silver: "Gümüş",
-  gold: "Altın",
-  legend: "Efsane",
+/**
+ * Kademe adları — ANAHTAR, metin değil. Değerler Türkçe yazılıydı ve rozet
+ * açılış kartı Almanca arayüzde de "Altın rozet açıldı" diyordu.
+ */
+export const TIER_LABEL_KEYS: Record<string, string> = {
+  bronze: "tier.bronze",
+  silver: "tier.silver",
+  gold: "tier.gold",
+  legend: "tier.legend",
 };
 
 const ICONS: Record<string, (p: { size?: number; className?: string }) => React.ReactNode> = {
