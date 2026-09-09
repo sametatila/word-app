@@ -343,7 +343,9 @@ export function BossPlayer({
           className="text-sm font-black tabular-nums"
           style={{ color: urgent ? "var(--color-flame)" : "var(--text)" }}
         >
-          {left.toFixed(1)} sn
+          {/* Meydan okuma sayacıyla aynı anahtar: iki sayaç da "{n} sn"
+              yazıyor ve ikinci bir anahtar aynı metnin ikinci kopyası olurdu. */}
+          {t("challenge.seconds", { n: left.toFixed(1) })}
         </motion.span>
       </div>
       <div className="mb-3 h-1.5 w-full overflow-hidden rounded-full" style={{ background: "var(--surface-2)" }}>
