@@ -60,11 +60,25 @@ export function roundSheetHeight(hasFeedback: boolean): string {
   return `calc(${hasFeedback ? BODY_FULL : BODY_ACTION} + 0.75rem + max(0.75rem, var(--safe-b, 0px)))`;
 }
 
-/** Katmanın çizileceği kap — kabuk boşsa (tur kabuk dışında) hiç çizilmez. */
-function useSheetHost(): HTMLElement | null {
-  const [host, setHost] = useState<HTMLElement | null>(null);
-  useEffect(() => setHost(document.getElementById("round-sheet-host")), []);
-  return host;
+/**
+ * Katmanın çizileceği kap.
+ *
+ * Normalde kabuğun sütunundaki kap (`#round-sheet-host`). Bulunamazsa gövdeye
+ * düşülüyor: turun kabuk dışında çizildiği bir yer bugün yok, ama olsaydı
+ * katman hiç çizilmez ve turu kapatan "Devam" ekranda olmazdı — öğrenci turda
+ * kilitli kalırdı. Yedek yolda konum ekrana göre (`fixed`), çünkü gövdenin
+ * dibi düzen alanının dibi değil.
+ */
+function useSheetHost(): { host: HTMLElement | null; fixed: boolean } {
+  const [state, setState] = useState<{ host: HTMLElement | null; fixed: boolean }>({
+    host: null,
+    fixed: false,
+  });
+  useEffect(() => {
+    const anchored = document.getElementById("round-sheet-host");
+    setState(anchored ? { host: anchored, fixed: false } : { host: document.body, fixed: true });
+  }, []);
+  return state;
 }
 
 export function RoundSheet({
@@ -80,7 +94,7 @@ export function RoundSheet({
   pull: boolean;
   onContinue?: () => void;
 }) {
-  const host = useSheetHost();
+  const { host, fixed } = useSheetHost();
   const still = useStill();
   const open = verdict != null && (Boolean(feedback) || Boolean(onContinue));
 
@@ -118,7 +132,9 @@ export function RoundSheet({
                    yok (damping yüksek): her turda tekrar eden bir hareket. */
                 { type: "spring", stiffness: 460, damping: 42, mass: 0.9 }
           }
-          className="round-sheet pointer-events-auto safe-bottom overflow-hidden px-4 pt-3 md:px-8"
+          className={`round-sheet pointer-events-auto safe-bottom z-40 overflow-hidden px-4 pt-3 md:px-8 ${
+            fixed ? "fixed inset-x-0 bottom-0" : ""
+          }`}
           style={{ borderTopColor: verdict === "correct" ? "var(--color-mint)" : "var(--color-rose)" }}
         >
           {/* Genişlik kartla aynı (`max-w-md`): katman ekranın dibinde ayrı bir
