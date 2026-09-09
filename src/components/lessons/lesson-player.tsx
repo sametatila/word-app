@@ -24,6 +24,7 @@ import { cueListen, startThinking } from "@/lib/lessons/cues";
 import { judgeSpeech } from "@/lib/speech";
 import { type Expectation, type Lesson, type Segment } from "@/lib/lessons/types";
 import { useT, useLang } from "@/lib/i18n/client";
+import { ReportDialog } from "@/components/report-dialog";
 import { translate, type NativeLang } from "@/lib/i18n/dict";
 import { courseName } from "@/lib/courses";
 import { parseJudgment } from "@/lib/voice-intent";
@@ -211,6 +212,8 @@ export function LessonPlayer({
   const [speakingId, setSpeakingId] = useState<number | null>(null);
   /** Konuşma fazında okunan tur — aynı işaret orada da var. */
   const [speakingTurn, setSpeakingTurn] = useState<number | null>(null);
+  /** "Bildir" açık olan yapay zekâ yanıtı (mobil `LessonScreen` ile aynı). */
+  const [reported, setReported] = useState<{ ref: string; text: string } | null>(null);
   const [stepIndex, setStepIndex] = useState(0);
   const [started, setStarted] = useState(false);
   const [correctCount, setCorrectCount] = useState(0);
@@ -1353,6 +1356,7 @@ export function LessonPlayer({
                   pending={busy && i === turns.length - 1}
                   speaking={speakingTurn === i && turn.role === "assistant"}
                   ttsAvailable={ttsAvailable}
+                  onReport={(text) => setReported({ ref: `${lesson.id}:${i}`, text })}
                 />
               ))}
               {/* Hata akışın İÇİNDE: kullanıcı cevabını yazdı, gözü konuşmada.
@@ -1454,7 +1458,7 @@ export function LessonPlayer({
                       }
                     }}
                     rows={1}
-                    placeholder="Almanca yaz…"
+                    placeholder={t("lesson.type_in", { lang: courseName(lesson.course, lang) })}
                     className="input max-h-28 flex-1 resize-none py-2 text-sm"
                   />
                   <button
@@ -1628,6 +1632,14 @@ export function LessonPlayer({
           </motion.section>
         ) : null}
       </AnimatePresence>
+
+      <ReportDialog
+        open={reported !== null}
+        kind="roleplay"
+        refId={reported?.ref ?? ""}
+        content={reported?.text ?? ""}
+        onClose={() => setReported(null)}
+      />
     </div>
   );
 }
@@ -1871,12 +1883,16 @@ function Bubble({
   pending,
   speaking,
   ttsAvailable,
+  onReport,
 }: {
   turn: Turn;
   pending: boolean;
   speaking: boolean;
   ttsAvailable: boolean;
+  /** Yapay zekâ yanıtını bildir — yalnız asistan baloncuklarında. */
+  onReport?: (text: string) => void;
 }) {
+  const t = useT();
   const still = useStill();
   if (turn.role === "user") {
     return (
@@ -1907,7 +1923,7 @@ function Bubble({
               type="button"
               whileTap={{ scale: 0.9 }}
               onClick={() => speakGerman(body)}
-              aria-label="Yeniden dinle"
+              aria-label={t("lessonp.listen_again")}
               className="btn btn-ghost ml-1 h-7 w-7 shrink-0 align-middle"
             >
               <SpeakerIcon size={13} />
@@ -1928,6 +1944,18 @@ function Bubble({
           <span>{c}</span>
         </p>
       ))}
+      {/* Bildir — mobilde de her yapay zekâ yanıtının altında (Play'in
+          "yapay zekâ ile üretilen içerik" politikası: rahatsız edici bir
+          yanıt uygulamadan çıkmadan bildirilebilmeli). */}
+      {onReport && body.trim() && !pending ? (
+        <button
+          type="button"
+          onClick={() => onReport(turn.content)}
+          className="muted text-micro underline underline-offset-2"
+        >
+          {t("lesson.report_this_answer")}
+        </button>
+      ) : null}
     </motion.div>
   );
 }

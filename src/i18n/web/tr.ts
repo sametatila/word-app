@@ -1183,4 +1183,5 @@ export const trWeb: Record<string, string> = {
   "achu.n_more": "+{n} rozet daha",
   "candow.n_proven": "{n} kanıtlı",
   "candow.rule": "Bir ifade, ona bağlı en az iki konuşma ya da egzersizi tamamlayınca kanıtlı sayılır.",
+  "lessonp.listen_again": "Yeniden dinle",
 };

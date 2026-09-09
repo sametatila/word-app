@@ -7,6 +7,7 @@ import { CardSkeleton } from "@/components/skeleton";
 import { AssessmentCard } from "@/components/feedback/assessment-card";
 import type { Assessment } from "@/lib/assess-prompts";
 import { useT } from "@/lib/i18n/client";
+import { ReportDialog } from "@/components/report-dialog";
 
 type Item = {
   id: number;
@@ -34,6 +35,7 @@ export function WritingsCard({ showEmpty = false }: { showEmpty?: boolean }) {
   const t = useT();
   const [items, setItems] = useState<Item[] | null | undefined>(undefined);
   const [open, setOpen] = useState<number | null>(null);
+  const [reported, setReported] = useState<Item | null>(null);
 
   useEffect(() => {
     let alive = true;
@@ -94,16 +96,26 @@ export function WritingsCard({ showEmpty = false }: { showEmpty?: boolean }) {
                   </span>
                   <span className="muted block text-xs">
                     {(KIND_LABEL_KEYS[it.kind] ? t(KIND_LABEL_KEYS[it.kind]) : it.kind) ?? it.kind} · {it.level} · {it.day}
-                    {score === null ? " · puanlanacak" : ""}
+                    {score === null ? ` · ${t("writings.to_be_graded")}` : ""}
                   </span>
                 </button>
                 <button type="button" onClick={() => void remove(it.id)} className="btn btn-ghost shrink-0 px-2 py-1 text-xs">
-                  Sil
+                  {t("common.delete")}
                 </button>
               </div>
               {open === it.id && it.result ? (
                 <div className="mt-2">
                   <AssessmentCard answer={it.answer} result={it.result} />
+                  {/* Değerlendirmeyi bildir — mobilde de açık kartın altında.
+                      Yapay zekâ yanıtı rahatsız edici ya da yanlışsa kullanıcı
+                      uygulamadan çıkmadan söyleyebilmeli (Play politikası). */}
+                  <button
+                    type="button"
+                    onClick={() => setReported(it)}
+                    className="muted mt-2 text-micro underline underline-offset-2"
+                  >
+                    {t("writings.report_this_feedback")}
+                  </button>
                 </div>
               ) : open === it.id ? (
                 <p className="muted mt-2 text-xs" lang="de">
@@ -114,6 +126,14 @@ export function WritingsCard({ showEmpty = false }: { showEmpty?: boolean }) {
           );
         })}
       </ul>
+
+      <ReportDialog
+        open={reported !== null}
+        kind="assessment"
+        refId={reported ? String(reported.id) : ""}
+        content={reported?.answer ?? ""}
+        onClose={() => setReported(null)}
+      />
     </section>
   );
 }
