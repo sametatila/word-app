@@ -1046,7 +1046,6 @@ export const trWeb: Record<string, string> = {
   "lb.this_week": "Bu haftanın sıralaması",
   "lb.gap": "Bir üsttekine {xp} XP — bir turluk mesafe.",
   "lb.at_top": "Zirvedesin. Pazartesi herkes sıfırdan başlıyor.",
-  "social.you": "sen",
   "sharew.head": "Lernomi · {level}",
   "sharew.head_daily": "Lernomi · Günün turu · {level}",
   "sharew.points": "{n} puan",

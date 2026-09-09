@@ -1477,7 +1477,7 @@ function SummaryCard({
             <p className="muted mt-2 text-center text-xs">
               {t("sessionw.missed_note")}{" "}
               <Link href="/words?status=learning" className="font-semibold underline-offset-2 hover:underline">
-                Kelimelerim
+                {t("words.my_words")}
               </Link>
             </p>
           </div>
@@ -1493,7 +1493,7 @@ function SummaryCard({
             {partial ? t("summary.back_to_round") : t("game.continue")}
           </button>
           <button onClick={onChallenge} className="btn btn-ghost w-full px-5 py-3">
-            Hayatta kalma turu
+            {t("challenge.title")}
           </button>
           {/* KAPANIŞ — özetin üç düğmesi de yeni bir şey BAŞLATIYORDU (yeni
               tur, hayatta kalma, paylaş) ve tur ekranında sekme çubuğu yok:

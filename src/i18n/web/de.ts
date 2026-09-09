@@ -1021,7 +1021,6 @@ export const deWeb: Record<string, string> = {
   "lb.this_week": "Die Rangliste dieser Woche",
   "lb.gap": "{xp} XP bis zum Nächsten — eine Runde Abstand.",
   "lb.at_top": "Du bist ganz oben. Am Montag fangen alle bei null an.",
-  "social.you": "du",
   "sharew.head": "Lernomi · {level}",
   "sharew.head_daily": "Lernomi · Tagesrunde · {level}",
   "sharew.points": "{n} Punkte",

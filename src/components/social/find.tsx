@@ -66,8 +66,8 @@ export function Find({ onChanged }: { onChanged?: () => void }) {
           aria-label={t("find.search_users")}
         />
         {q ? (
-          <button className="muted text-xs" onClick={() => setQ("")} aria-label="Temizle">
-            Temizle
+          <button className="muted text-xs" onClick={() => setQ("")} aria-label={t("find.clear")}>
+            {t("find.clear")}
           </button>
         ) : null}
       </label>

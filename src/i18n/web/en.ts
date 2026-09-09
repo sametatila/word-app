@@ -1021,7 +1021,6 @@ export const enWeb: Record<string, string> = {
   "lb.this_week": "This week's leaderboard",
   "lb.gap": "{xp} XP to the one above — one round away.",
   "lb.at_top": "You're on top. Everyone restarts on Monday.",
-  "social.you": "you",
   "sharew.head": "Lernomi · {level}",
   "sharew.head_daily": "Lernomi · Daily round · {level}",
   "sharew.points": "{n} points",

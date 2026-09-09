@@ -91,7 +91,7 @@ export function VoicePicker({
                 onClick={() => preview(v.id)}
                 className="chip flex h-8 w-8 shrink-0 items-center justify-center"
                 aria-label={t("voicew.listen_to", { name: v.label })}
-                title="Dinle"
+                title={t("item.listen")}
               >
                 <SpeakerIcon size={14} />
               </button>

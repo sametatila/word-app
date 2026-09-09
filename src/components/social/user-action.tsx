@@ -95,7 +95,7 @@ export function UserAction({
           })
         }
       >
-        Kabul et
+        {t("useractionbutton.accept")}
       </button>
     );
   } else if (state === "declined") {
@@ -114,7 +114,7 @@ export function UserAction({
           })
         }
       >
-        Ekle
+        {t("useractionbutton.add")}
       </button>
     );
   }

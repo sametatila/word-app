@@ -114,7 +114,7 @@ export function FirstPractice() {
             color: "var(--color-brand)",
           }}
         >
-          <SpeakerIcon size={18} /> Dinle
+          <SpeakerIcon size={18} /> {t("firstpractice.listen")}
         </button>
 
         {seen ? (

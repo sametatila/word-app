@@ -56,7 +56,7 @@ export function SoundSettings({ bare = false }: { bare?: boolean } = {}) {
           <SpeakerIcon size={15} />
         </button>
       ) : null}
-      <Switch on={on} onChange={toggle} disabled={!ready} label="Oyun sesleri" />
+      <Switch on={on} onChange={toggle} disabled={!ready} label={t("snd.game_sounds")} />
     </SettingRow>
   );
 

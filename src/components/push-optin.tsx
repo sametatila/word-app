@@ -164,6 +164,7 @@ function Card({
   icon?: React.ReactNode;
   children: React.ReactNode;
 }) {
+  const t = useT();
   const color = tone === "mint" ? "var(--color-mint)" : "var(--color-brand)";
   return (
     <motion.div
@@ -179,7 +180,7 @@ function Card({
       {onClose ? (
         <button
           onClick={onClose}
-          aria-label="Kapat"
+          aria-label={t("common.close")}
           className="muted shrink-0 rounded-lg p-1 hover:text-[color:var(--text)]"
         >
           <XIcon size={15} />
