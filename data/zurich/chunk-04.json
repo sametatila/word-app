@@ -89,7 +89,7 @@
 { "id": 841, "gsw": "Vorsicht", "artikel": "d", "beispiel": "Vorsicht! Da chunt es Auto." },
 { "id": 842, "gsw": "sich vorschtelle", "artikel": null, "beispiel": "Mir wänd eus kännelerne. Chönd Si sich vorschtelle, bitte?" },
 { "id": 843, "gsw": "Vorwaal", "artikel": "d", "beispiel": "Wie isch d Vorwaal vo Münche?" },
-{ "id": 844, "gsw": "was für en", "artikel": null, "beispiel": "Was für e Farb möchted Si?" },
+{ "id": 844, "gsw": "was für en/e/es", "artikel": null, "beispiel": "Was für e Farb möchted Si?" },
 { "id": 845, "gsw": "sich wäsche", "artikel": null, "beispiel": "Wo chan ich mer d Händ wäsche?" },
 { "id": 846, "gsw": "wiiblich", "artikel": null, "beispiel": "Chrüüzed Si bitte aa: «wiiblich» oder «männlich»." },
 { "id": 847, "gsw": "Wii", "artikel": "de", "beispiel": "Näi danke, ich wett kän Wii." },

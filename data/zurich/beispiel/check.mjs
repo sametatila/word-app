@@ -46,8 +46,26 @@ const flat = (t) =>
 const flatKey = (t) => flat(t).replace(/[^a-z]/g, "");
 
 /** Züritüütsch'te çekimde kökten kopabilen ön ekler. */
-const SEPARABLE =
-  /^(abe|ufe|ine|use|witer|zame|vora|zrug|verbi|fascht|furt|unter|uber|vor|zue|na|dur|mit|los|fri|wag|har|us|uf|ab|um|bi|hi|a)(.{2,})$/;
+const SEPARABLE_PREFIXES = [
+  "abe", "ufe", "ine", "use", "witer", "zame", "vora", "zrug", "verbi", "fascht",
+  "furt", "unter", "uber", "vor", "zue", "na", "dur", "mit", "los", "fri", "wag",
+  "har", "us", "uf", "ab", "um", "bi", "hi", "a",
+];
+const SEPARABLE = new RegExp(`^(${SEPARABLE_PREFIXES.join("|")})(.{2,})$`);
+
+/**
+ * Bir gövdenin OLASI ön ek bölünmelerinin HEPSİ.
+ *
+ * Tek eşleşme yetmiyor ve bu ölçülerek çıktı: `aabüüte` düzleşince `abute`
+ * oluyor ve alternatif sırası yüzünden önce `ab|ute` diye bölünüyordu — oysa
+ * doğru bölme `a|büüte` ve cümlede ön ek sonda ayrık duruyor
+ * ("S Hotel büütet … aa."). Yanlış bölme yüzünden doğru cümle reddediliyordu.
+ * Artık her geçerli bölme deneniyor; biri tutarsa kelime bulunmuş sayılıyor.
+ */
+function splits(bare) {
+  return SEPARABLE_PREFIXES.filter((p) => bare.startsWith(p) && bare.length - p.length >= 2)
+    .map((p) => [p, bare.slice(p.length)]);
+}
 
 /**
  * Züritüütsch'ün düzensiz fiilleri.
@@ -63,14 +81,19 @@ const IRREGULAR = {
   gaa: ["gaat", "gaasch", "gang", "gange"],
   choo: ["chunt", "chunsch", "chume", "chomed", "choo"],
   gsee: ["gsent", "gsee", "gsehsch"],
-  gää: ["git", "gisch", "gaben", "gee"],
-  nää: ["nimt", "nimsch", "name", "gno"],
+  // 1. TEKİL ŞAHIS EKSİKTİ. Liste mevcut 8266 cümle üzerinde ölçülerek
+  // kurulmuştu ve o cümlelerde bu üç fiilin "ich …" biçimi hiç geçmiyordu;
+  // yeni cümleler yazılırken üçü de ilk denemede "kelime cümlede yok" diye
+  // reddedildi ("Ich nime min Räägeschirm mit." — kusursuz Zürihçe).
+  // Ölçüme dayanan bir liste, ölçülen metnin taşımadığı biçimi bilmiyor.
+  gää: ["git", "gisch", "gaben", "gee", "gibe", "gänd"],
+  nää: ["nimt", "nimsch", "name", "gno", "nime", "nimm", "nämed"],
   schtaa: ["schtaat", "gschtande"],
   laa: ["laat", "laasch", "gla"],
   tue: ["tuet", "tuesch", "taa"],
   wusse: ["wais", "waisch", "wusst"],
   sage: ["sait", "saisch", "gsait"],
-  wole: ["wot", "wotsch", "wand", "wei"],
+  wole: ["wot", "wotsch", "wand", "wei", "wil", "wänd"],
   muese: ["mues", "muesch", "mand"],
   chone: ["cha", "chasch", "chond", "chond"],
   dorfe: ["darf", "darfsch"],
@@ -78,6 +101,13 @@ const IRREGULAR = {
   moge: ["mag", "magsch"],
   esse: ["isst", "gasse"],
   gfale: ["gfalt", "gfalsch"],
+  // `weetue` ayrılınca cümlede "weh" duruyor ("Mir tuet de Chopf weh") ve bu
+  // parça ön ek listesine girecek kadar ayırt edici değil — iki harfe inince
+  // yarım kelimeleri de yakalardı. Ayrık biçim burada tanınıyor.
+  wetue: ["weh", "wee"],
+  // 3. tekil şahıs kökten kopuyor: ligge → er liit/ligt. Kök karşılaştırması
+  // dört harf istiyor ("lige") ve "ligt" yalnız üçünü paylaşıyor.
+  ligge: ["liit", "ligt", "gläge"],
 };
 
 // Anahtarlar düzleştirilmiş biçimle aranıyor; "gaa" ile "gää" aynı harflere
@@ -164,11 +194,18 @@ function contains(sentence, headword) {
     const headLen = part.replace(/[^\p{L}]/gu, "").length;
     if (roots(part).some((r) => search(r, headLen))) return true;
 
-    const sep = bare.match(SEPARABLE);
-    if (sep && hasWord(sep[1])) {
-      const stem = sep[2];
+    /*
+      `ii-` ÖNEKİ ÖZEL. Düzleştirme uzun ünlüyü teke indirdiği için `iischtiige`
+      → `ischtige` oluyor ve ön ek listesinde tek harfli "i" yok — olmamalı da,
+      "i" Zürihçede çok sık bir edat ("i de Schtadt") ve listeye girseydi her
+      i-ile-başlayan gövdeyi yanlış bölerdi. Bunun yerine bölme yalnız BAŞLIK
+      gerçekten "ii" ile başlıyorsa ekleniyor: iischtiige, iikaufe, iilade.
+    */
+    const extra = /^ii/i.test(part) ? [["i", bare.slice(1)]] : [];
+    for (const [prefix, stem] of [...splits(bare), ...extra]) {
+      if (!hasWord(prefix)) continue;
       if (roots(stem).some((r) => search(r, stem.length))) return true;
-      const irrSep = IRREGULAR[sep[2]];
+      const irrSep = IRREGULAR[stem];
       if (irrSep?.some((f) => search(flatKey(f), flatKey(f).length))) return true;
     }
 
