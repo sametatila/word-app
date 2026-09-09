@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import { PenIcon } from "@/components/icons";
 import { CardSkeleton } from "@/components/skeleton";
 import { AssessmentCard } from "@/components/feedback/assessment-card";
+import { AiNotice } from "@/components/ai-notice";
 import type { Assessment } from "@/lib/assess-prompts";
 import { useT } from "@/lib/i18n/client";
 import { ReportDialog } from "@/components/report-dialog";
@@ -81,6 +82,7 @@ export function WritingsCard({ showEmpty = false }: { showEmpty?: boolean }) {
     <section id="writings" className="card p-5">
       <h2 className="font-bold">{t("writings.my_writing")}</h2>
       <p className="muted mt-1 text-xs">{t("writ.sub")}</p>
+      <AiNotice variant="output" className="mt-3" />
       {/* Kayıtlar geniş ekranda sütunlara bölünüyor (mobil de öyle yapıyor).
           Sütunlara ayrılan bir listede yatay ayraç çizgisi anlamını yitirdiği
           için her kayıt kendi yüzeyine alındı; dar kapta tek sütun kalıyor. */}

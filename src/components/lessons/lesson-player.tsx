@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useRef, useState, useMemo } from "react";
 import { offlineReply, offlineStart, offlineSummary, type OfflineState } from "@/lib/lessons/offline-roleplay";
+import { AiNotice } from "@/components/ai-notice";
 import { track } from "@/lib/track";
 import { AnimatePresence, motion } from "framer-motion";
 import { useRouter } from "next/navigation";
@@ -1318,6 +1319,10 @@ export function LessonPlayer({
                 <span className="muted ml-1.5 font-semibold">· {lesson.roleplay.partner}</span>
               </p>
               <p className="muted mt-0.5 text-xs leading-relaxed">{lesson.roleplay.scene}</p>
+              {/* Sohbetin başlığında ve KALICI: akışta yukarı kayan bir
+                  baloncuk, konuşmanın ortasına giren kullanıcı için yok
+                  hükmünde olurdu (mobil `AiNotice` ile aynı gerekçe). */}
+              <AiNotice variant="character" className="mt-2" />
               {offline ? (
                 <p
                   className="mt-2 inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-[11px] font-semibold"

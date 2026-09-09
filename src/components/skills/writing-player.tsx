@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import { glossTitle } from "./gloss-entry";
 import type { WritingExercise, WritingTask } from "@/lib/skills/types";
 import { PlayerShell, ResultCard, useSkillFinish } from "./player-shell";
+import { AiNotice } from "@/components/ai-notice";
 import { askAssess, fallbackAssessment, type AssessFailure, type FallbackAssessment } from "@/lib/assess-client";
 import type { Assessment, AssessLevel, AssessRequest } from "@/lib/assess-prompts";
 import { AssessmentCard } from "@/components/feedback/assessment-card";
@@ -84,6 +85,9 @@ export function WritingPlayer({ exercise, backHref }: { exercise: WritingExercis
   return (
     <PlayerShell exercise={exercise} backHref={backHref}>
       <p className="muted px-1 text-sm">{exercise.intro}</p>
+      {/* Yazma görevleri sunucuda dil modeliyle puanlanıyor; kimin
+          değerlendirdiği yazmaya başlamadan önce söyleniyor (mobilde de öyle). */}
+      <AiNotice variant="output" className="mt-3" />
 
       <div className="mt-3 px-1">
         <div className="mb-1.5 flex justify-between text-xs font-semibold">

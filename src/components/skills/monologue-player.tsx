@@ -8,6 +8,7 @@ import { localeOf, useTargetLang } from "./player-context";
 import { askAssess, fallbackAssessment, type AssessFailure, type FallbackAssessment } from "@/lib/assess-client";
 import type { Assessment, AssessLevel, AssessRequest } from "@/lib/assess-prompts";
 import { AssessmentCard } from "@/components/feedback/assessment-card";
+import { AiNotice } from "@/components/ai-notice";
 import { recognitionCtor, requestMicrophone, type Recognition } from "@/components/microphone";
 import { CheckIcon, MicIcon } from "@/components/icons";
 import { Mascot } from "@/components/mascot";
@@ -218,6 +219,9 @@ export function MonologuePlayer({ exercise, backHref }: { exercise: SpeakingMono
   return (
     <PlayerShell exercise={exercise} backHref={backHref}>
       <p className="muted px-1 text-sm">{exercise.intro}</p>
+      {/* Monolog metni sunucuda rubrikle puanlanıyor (ses gitmiyor); puanı
+          kimin verdiği konuşmadan önce söyleniyor — mobilde de öyle. */}
+      <AiNotice variant="output" className="mt-3" />
 
       {phase === "prep" ? (
         <section className="card mt-3 p-5">

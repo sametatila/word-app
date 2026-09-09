@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { AiNotice } from "@/components/ai-notice";
 import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import type { Lesson } from "@/lib/lessons/types";
@@ -303,6 +304,7 @@ export function RoleplayExam({ lesson, cando }: { lesson: Lesson; cando: string[
           {mm}:{ss}
         </span>
       </div>
+      <AiNotice variant="character" className="mt-3" />
       <div className="mt-3 space-y-2">
         {turns.map((t, i) => (
           <motion.p
