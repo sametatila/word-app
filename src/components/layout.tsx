@@ -67,14 +67,21 @@ export function CardGrid({
   children,
   min = 420,
   className = "",
+  as: Tag = "div",
 }: {
   children: ReactNode;
   /** Bir kartın altına düşmemesi gereken genişlik (px). */
   min?: number;
   className?: string;
+  /**
+   * Kabın etiketi. Varsayılan `div`; anlamsal bir liste sütunlara bölünürken
+   * `ul` verilir ki `li` çocukları geçerli kalsın — ızgaraya girmek için
+   * listeyi `div`e çevirmek ekran okuyucudan "5 öğe" bilgisini alırdı.
+   */
+  as?: "div" | "ul" | "ol";
 }) {
   return (
-    <div
+    <Tag
       className={`grid gap-3 ${className}`}
       style={{
         gridTemplateColumns: `repeat(auto-fill, minmax(max(${min}px, (100% - 1.5rem) / 3), 1fr))`,
@@ -82,6 +89,6 @@ export function CardGrid({
       }}
     >
       {children}
-    </div>
+    </Tag>
   );
 }

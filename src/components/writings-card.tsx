@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { CardGrid } from "@/components/layout";
 import { useEffect, useState } from "react";
 import { PenIcon } from "@/components/icons";
 import { CardSkeleton } from "@/components/skeleton";
@@ -80,12 +81,15 @@ export function WritingsCard({ showEmpty = false }: { showEmpty?: boolean }) {
     <section id="writings" className="card p-5">
       <h2 className="font-bold">{t("writings.my_writing")}</h2>
       <p className="muted mt-1 text-xs">{t("writ.sub")}</p>
-      <ul className="mt-3 divide-y divide-[color:var(--border)]">
+      {/* Kayıtlar geniş ekranda sütunlara bölünüyor (mobil de öyle yapıyor).
+          Sütunlara ayrılan bir listede yatay ayraç çizgisi anlamını yitirdiği
+          için her kayıt kendi yüzeyine alındı; dar kapta tek sütun kalıyor. */}
+      <CardGrid as="ul" min={380} className="mt-3">
         {items.map((it) => {
           const score = it.result?.score.overall ?? null;
           const tone = score === null ? "var(--text-muted)" : score >= 70 ? "var(--color-mint)" : score >= 40 ? "var(--color-flame)" : "var(--color-rose)";
           return (
-            <li key={it.id} className="py-2.5">
+            <li key={it.id} className="rounded-xl px-3 py-2.5 surface-2">
               <div className="flex items-center gap-3">
                 <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-xs font-black text-white" style={{ background: tone }}>
                   {score ?? "…"}
@@ -125,7 +129,7 @@ export function WritingsCard({ showEmpty = false }: { showEmpty?: boolean }) {
             </li>
           );
         })}
-      </ul>
+      </CardGrid>
 
       <ReportDialog
         open={reported !== null}

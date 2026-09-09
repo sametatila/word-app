@@ -19,7 +19,7 @@ export const generateMetadata = titleMeta("cando.what_i_can_do");
 export default async function CandoPage() {
   const t = await getT();
   return (
-    <div className="mx-auto w-full max-w-3xl space-y-5">
+    <div className="mx-auto w-full max-w-3xl space-y-5 xl:max-w-none">
       <PageBack fallback="/profile" title={t("cando.what_i_can_do")} subtitle={t("candow.sub")} />
       <CandoCard />
     </div>

@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { CardSkeleton } from "@/components/skeleton";
 import { CheckIcon } from "@/components/icons";
 import { CANDO_LEVELS, CANDO_SKILL_LABEL_KEYS, type Cando } from "@/lib/cando";
+import { CardGrid } from "@/components/layout";
 import type { CefrLevel } from "@/lib/skills/types";
 import { useT } from "@/lib/i18n/client";
 
@@ -78,8 +79,12 @@ export function CandoCard({ bare = false }: { bare?: boolean } = {}) {
           </button>
         ))}
       </div>
-      {skills.map((sk) => (
-        <div key={sk} className="mt-3">
+      {/* Beceri bölümleri geniş ekranda sütunlara bölünüyor: mobil bu ekranı
+          tablette `CardGrid` ile üçe kadar ayırıyor, web tek sütunda kalıyordu
+          ve C1 listesi kabın altında uzayıp gidiyordu. Dar kapta düzen aynı. */}
+      <CardGrid min={320} className="mt-3">
+        {skills.map((sk) => (
+        <div key={sk}>
           <p className="muted text-[11px] font-bold uppercase tracking-wide">{t(CANDO_SKILL_LABEL_KEYS[sk])}</p>
           <ul className="mt-1 space-y-1">
             {shown
@@ -105,7 +110,8 @@ export function CandoCard({ bare = false }: { bare?: boolean } = {}) {
               ))}
           </ul>
         </div>
-      ))}
+        ))}
+      </CardGrid>
     </section>
   );
 }

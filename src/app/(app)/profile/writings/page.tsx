@@ -8,7 +8,7 @@ export const generateMetadata = titleMeta("writings.my_writing");
 export default async function WritingsPage() {
   const t = await getT();
   return (
-    <div className="mx-auto w-full max-w-3xl space-y-5">
+    <div className="mx-auto w-full max-w-3xl space-y-5 xl:max-w-none">
       <PageBack fallback="/profile" title={t("writings.my_writing")} subtitle={t("writ.sub")} />
       <WritingsCard showEmpty />
     </div>
