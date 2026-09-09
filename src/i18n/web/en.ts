@@ -1097,8 +1097,6 @@ export const enWeb: Record<string, string> = {
   "snd.game_sounds_sub": "Pronunciation audio is separate — it works even with this off",
   "anlt.send_usage": "Send usage data",
   "anlt.send_usage_sub": "Which features get used; it doesn't go to third parties",
-  "inv.title": "Invite someone",
-  "inv.sub": "Send the link and compete on the same board",
   "progp.window": "last 30 days · {n} measurements",
   "growth.p_answers": "{n} answers",
   "growth.p_exercises": "{n} exercises",

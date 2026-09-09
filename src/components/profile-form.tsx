@@ -11,7 +11,6 @@ import { InstallGuide } from "@/components/install-guide";
 import { PushSettings } from "@/components/push-settings";
 import { SoundSettings } from "@/components/sound-settings";
 import { AnalyticsSettings } from "@/components/analytics-settings";
-import { InviteCard } from "@/components/invite-card";
 import { PageBack } from "@/components/page-back";
 import { Disclosure } from "@/components/disclosure";
 import { SettingRow } from "@/components/setting-row";
@@ -343,9 +342,6 @@ export function ProfileForm({
           <Link href={legalPath("terms", lang)} prefetch={false} className="btn btn-ghost h-9 px-3 text-xs">{t("settings.terms_of_use")}</Link>
         </SettingRow>
       </Section>
-
-      {/* Davet kendi kartında kalıyor: bir ayar değil, bir çağrı. */}
-      <InviteCard />
 
       {/* Hesap da satır. "Giriş yaptın, ilerlemen senkron" cümlesi kalıyor
           çünkü çıkış yapmadan önce bilinmesi gereken tek şey o; ama iki satır

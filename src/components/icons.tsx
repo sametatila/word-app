@@ -227,6 +227,16 @@ export const LinkIcon = (p: IconProps) => (
   </Svg>
 );
 
+/** Paylaş — mobil `ShareIcon`in aynısı: üç düğüm, ikisi sağda. */
+export const ShareIcon = (p: IconProps) => (
+  <Svg {...p}>
+    <circle cx="6" cy="12" r="2.4" />
+    <circle cx="17" cy="6" r="2.4" />
+    <circle cx="17" cy="18" r="2.4" />
+    <path d="M8.1 10.9l6.8-3.8M8.1 13.1l6.8 3.8" />
+  </Svg>
+);
+
 /** Doğru anlam oyunu — hedef */
 export const TargetIcon = (p: IconProps) => (
   <Svg {...p}>

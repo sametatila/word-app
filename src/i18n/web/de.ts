@@ -1097,8 +1097,6 @@ export const deWeb: Record<string, string> = {
   "snd.game_sounds_sub": "Die Aussprache ist davon getrennt — sie läuft auch, wenn das aus ist",
   "anlt.send_usage": "Nutzungsdaten senden",
   "anlt.send_usage_sub": "Welche Funktionen genutzt werden; nichts geht an Dritte",
-  "inv.title": "Jemanden einladen",
-  "inv.sub": "Schick den Link und messt euch in derselben Tabelle",
   "progp.window": "letzte 30 Tage · {n} Messungen",
   "growth.p_answers": "{n} Antworten",
   "growth.p_exercises": "{n} Übungen",

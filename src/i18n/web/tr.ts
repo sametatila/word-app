@@ -1122,8 +1122,6 @@ export const trWeb: Record<string, string> = {
   "snd.game_sounds_sub": "Telaffuz sesi ayrı — bu kapalıyken de çalışır",
   "anlt.send_usage": "Kullanım verisi gönder",
   "anlt.send_usage_sub": "Hangi özelliklerin kullanıldığı; üçüncü tarafa gitmez",
-  "inv.title": "Birini çağır",
-  "inv.sub": "Bağlantıyı gönder, aynı tabloda yarışın",
   "progp.window": "son 30 gün · {n} ölçüm",
   "growth.p_answers": "{n} cevap",
   "growth.p_exercises": "{n} egzersiz",

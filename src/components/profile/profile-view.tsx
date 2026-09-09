@@ -7,7 +7,9 @@ import { MyAvatar } from "@/components/my-avatar";
 import { ConfirmDialog } from "@/components/confirm-dialog";
 import { BackButton } from "@/components/page-back";
 import { authApi } from "@/lib/auth/api";
-import { useT } from "@/lib/i18n/client";
+import { useT, useLang } from "@/lib/i18n/client";
+import { useShell } from "@/components/app-shell";
+import { inviteText, shareInvite } from "@/lib/share";
 import {
   BellIcon,
   CheckIcon,
@@ -19,6 +21,7 @@ import {
   MailIcon,
   PenIcon,
   PodiumIcon,
+  ShareIcon,
   SparkIcon,
   TrophyIcon,
   UserIcon,
@@ -194,11 +197,11 @@ export function ProfileView({ stats }: { stats: ProfileStats }) {
         <Row href="/words" icon={<LearnIcon size={20} />} tone="var(--color-brand-500)" label={t("profile.my_words")} />
         <Row href="/profile/achievements" icon={<TrophyIcon size={20} />} tone="var(--color-flame-500)" label={t("profile.achievements")} />
         <Row href="/profile/cando" icon={<CheckIcon size={20} />} tone="var(--color-mint-500)" label={t("profile.what_can_i_do")} />
-        <Row href="/profile/progress" icon={<PodiumIcon size={20} />} tone="var(--color-sky-500)" label={t("appheader.progress")} />
         <Row href="/profile/writings" icon={<PenIcon size={20} />} tone="var(--color-sky-500)" label={t("profile.my_posts")} />
-        <Row href="/leaderboard" icon={<PodiumIcon size={20} />} tone="var(--color-violet-500)" label={t("profile.weekly_leaderboard")} />
+        <Row href="/leaderboard" icon={<PodiumIcon size={20} />} tone="var(--color-sky-500)" label={t("profile.weekly_leaderboard")} />
         <Row href="/friends" icon={<HandshakeIcon size={20} />} tone="var(--color-mint-500)" label={t("profile.friends")} />
         <Row href="/inbox" icon={<MailIcon size={20} />} tone="var(--color-flame-500)" label={t("profile.inbox")} />
+        <InviteRow />
         <Row href="/notifications" icon={<BellIcon size={20} />} tone="var(--color-sky-500)" label={t("profile.notifications")} last />
       </nav>
 
@@ -264,5 +267,53 @@ function Row({
       <span className="flex-1 text-strong">{label}</span>
       <ChevronRightIcon size={20} className="muted shrink-0" />
     </Link>
+  );
+}
+
+/**
+ * Davet satırı — menünün tek DÜĞMESİ, bağlantısı değil.
+ *
+ * Mobilde de burada duruyor (`ProfileScreen`, "Arkadaşını davet et") ve orada
+ * işletim sisteminin paylaşım sayfasını açıyor. Web'de paylaşım sayfası her
+ * tarayıcıda yok; olmadığında metin panoya düşüyor ve satır bunu bir süre
+ * söylüyor — yoksa dokunuş hiçbir şey yapmamış gibi görünür.
+ */
+function InviteRow() {
+  const t = useT();
+  const lang = useLang();
+  const { course } = useShell();
+  const [copied, setCopied] = useState(false);
+
+  async function invite() {
+    // Davet kodu ödülün tek bağı; okunamazsa bağlantı yine paylaşılıyor.
+    let code: string | null = null;
+    try {
+      const res = await fetch("/api/premium/referral", { cache: "no-store" });
+      if (res.ok) code = ((await res.json()) as { code?: string }).code ?? null;
+    } catch {
+      /* kod olmadan da davet edilebilir */
+    }
+    if ((await shareInvite(inviteText(lang, course, code))) === "copied") {
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2200);
+    }
+  }
+
+  return (
+    <button
+      type="button"
+      onClick={() => void invite()}
+      className="pressable flex w-full items-center gap-3 py-3 text-left"
+      style={{ borderBottom: "1px solid var(--hairline)" }}
+    >
+      <span
+        className="flex h-10 w-10 shrink-0 items-center justify-center rounded-tile"
+        style={{ background: "color-mix(in srgb, var(--color-mint-500) 16%, transparent)", color: "var(--color-mint-500)" }}
+      >
+        <ShareIcon size={20} />
+      </span>
+      <span className="flex-1 text-strong">{t(copied ? "inv.copied" : "profile.invite_friend")}</span>
+      <ChevronRightIcon size={20} className="muted shrink-0" />
+    </button>
   );
 }
