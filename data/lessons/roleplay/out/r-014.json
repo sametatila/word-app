@@ -1,0 +1,177 @@
+[
+ {
+  "lesson": "de-b1-hafenstadt",
+  "sceneEn": "You have visited a port city. You are telling a friend about the places you saw: what you could see from which tower, which ferry took you where.",
+  "partnerEn": "a friend planning a trip to the same city who asks for detail",
+  "openingEn": "Tell me — what did you like best in the port city?",
+  "goalEn": "At least three places have been described with relative clauses after a preposition and a recommendation has been given."
+ },
+ {
+  "lesson": "de-b1-berg-und-tal",
+  "sceneEn": "You went walking in the mountains last weekend and the weather turned. You are telling a friend what happened, in order.",
+  "partnerEn": "a friend who loves hill walking and asks for detail",
+  "openingEn": "I heard you were up in the mountains. How was it — did you have any luck with the weather?",
+  "goalEn": "The start of the walk, the change in the weather and the way back have been told in order."
+ },
+ {
+  "lesson": "de-b1-wohnort-wechseln",
+  "sceneEn": "You are talking to a new acquaintance about where you have lived: which cities, which districts, why you moved. Use the past tense of written German as you tell it.",
+  "partnerEn": "an acquaintance who wants to tell you their own moving story too",
+  "openingEn": "You've moved a lot, haven't you — where did you live before?",
+  "goalEn": "At least two former homes and the reasons for moving have been described in order."
+ },
+ {
+  "lesson": "de-b1-notfall-unterwegs",
+  "sceneEn": "A friend has broken down on the road and is ringing you. You calm them down, suggest what they should do in the subjunctive and tell them who to call.",
+  "partnerEn": "a flustered friend who is talking fast",
+  "openingEn": "I'm stuck here at the side of the road and I don't know what to do — what should I do?",
+  "goalEn": "The situation has been understood, at least three steps have been advised and it has been settled who to call."
+ },
+ {
+  "lesson": "de-b1-reise-erzaehlen",
+  "sceneEn": "You are back from a long journey. You are telling a friend about the day that stayed with you most: what happened, and what had happened before it.",
+  "partnerEn": "a friend who listens without interrupting and asks for detail afterwards",
+  "openingEn": "Back at last! Tell me — which day stayed with you most?",
+  "goalEn": "One day has been told with two layers of the past and your friend's question has been answered."
+ },
+ {
+  "lesson": "de-b1-koerper-teile",
+  "sceneEn": "You are at the doctor's. You describe where the pain is, how long it has been going on and what makes it worse.",
+  "partnerEn": "a GP who asks short, clear questions",
+  "openingEn": "Good afternoon! Tell me exactly — where does it hurt?",
+  "goalEn": "Where the pain is, how long it has lasted and when it gets worse have been described, and the doctor has said the next step."
+ },
+ {
+  "lesson": "de-b1-kleine-verletzung",
+  "sceneEn": "You are on a first aid course. You explain to the instructor which steps are taken, and in what order, for a small wound.",
+  "partnerEn": "a first aid instructor who questions each step in turn",
+  "openingEn": "Good. And what is done if someone cuts their finger?",
+  "goalEn": "At least four steps have been described in order and impersonally, and one exception has been given."
+ },
+ {
+  "lesson": "de-b1-vorsorge-alltag",
+  "sceneEn": "A friend is constantly ill and asking you for advice. You describe what you do and how you do it.",
+  "partnerEn": "a friend who answers every piece of advice with 'but how'",
+  "openingEn": "You never get ill — what do you do differently from me?",
+  "goalEn": "At least three pieces of advice have been given, each with how it is put into practice."
+ },
+ {
+  "lesson": "de-b1-schwangerschaft",
+  "sceneEn": "A baby is on the way in the family. You are talking to a close friend about the news, your hopes and your worries.",
+  "partnerEn": "a friend who has been through the same and shares their experience",
+  "openingEn": "That's wonderful news! And — how are you feeling about it?",
+  "goalEn": "The news has been shared and at least one hope and one worry have been put in a subordinate clause."
+ },
+ {
+  "lesson": "de-b1-familie-gross",
+  "sceneEn": "You are showing a friend a family photo. You describe who is who and your relationship to each of them, with relative clauses.",
+  "partnerEn": "a friend asking about everyone in the photo and trying to work out the family tree",
+  "openingEn": "So many people! Who's who in this photo?",
+  "goalEn": "At least four relatives have been introduced and your relationship to each has been described with a relative clause."
+ },
+ {
+  "lesson": "de-b1-generationen",
+  "sceneEn": "You and a friend are talking about the gap between generations: what your grandparents' youth was like, what has changed today, what has stayed the same.",
+  "partnerEn": "a friend who tells you their own grandparents' story too",
+  "openingEn": "Tell me — what was it like when your grandparents were young?",
+  "goalEn": "A period in the past has been described and at least two differences from today have been given with reasons."
+ },
+ {
+  "lesson": "de-b1-pflege-zuhause",
+  "sceneEn": "You and your sibling are discussing how to share the care of an older relative: who does what, a care home or care at home, and the aim behind each decision.",
+  "partnerEn": "your sibling, busy with work but wanting to take responsibility",
+  "openingEn": "We really do have to sort this out now — who takes on what?",
+  "goalEn": "The work has been shared out, the aim of each decision has been given and a next step has been settled."
+ },
+ {
+  "lesson": "de-b1-in-pension",
+  "sceneEn": "You are chatting to a retired neighbour: what is not as it used to be, what they still do themselves, where they ask for help.",
+  "partnerEn": "a witty retired neighbour who values their independence",
+  "openingEn": "Oh, you know — it all used to go much faster. How is it with you?",
+  "goalEn": "At least three comparisons have been made, a preference has been given and an offer of help has been discussed."
+ },
+ {
+  "lesson": "de-b1-beim-friseur",
+  "sceneEn": "You are at the hairdresser's. You describe what you want, ask for one correction while the work is going on, and ask about a product at the end.",
+  "partnerEn": "a chatty hairdresser who asks about every step",
+  "openingEn": "Do take a seat! And — what would you like today?",
+  "goalEn": "The style you wanted has been described, a correction has been asked for and a product has been asked about."
+ },
+ {
+  "lesson": "de-b1-sucht-gespraech",
+  "sceneEn": "You have noticed that a close friend has been drinking a lot lately. You raise it without blame, say you are worried and offer help.",
+  "partnerEn": "a friend who tries to change the subject at first but then listens",
+  "openingEn": "What's the matter? You look so serious — has something happened?",
+  "goalEn": "The subject has been raised without blame, the worry has been said and concrete help has been offered."
+ },
+ {
+  "lesson": "de-b1-geraet-anschliessen",
+  "sceneEn": "A friend cannot set up the device they have just bought and is ringing you. You describe the steps in order and impersonally.",
+  "partnerEn": "an impatient friend who started without reading the manual",
+  "openingEn": "I've got three cables here and no idea — what gets done first?",
+  "goalEn": "At least four steps have been described in order and the device is working."
+ },
+ {
+  "lesson": "de-b1-computer-problem",
+  "sceneEn": "Your computer will not start. You ring the technical support line, list the symptoms, and say what you have tried and whether you have a backup.",
+  "partnerEn": "a support agent who asks the questions in turn and works step by step",
+  "openingEn": "Technical support, good afternoon. Can you describe to me what exactly is happening?",
+  "goalEn": "The symptoms have been listed, a likely cause has been given and a next step has been settled."
+ },
+ {
+  "lesson": "de-b1-netz-stoerung",
+  "sceneEn": "The internet at home has been down for three days. You ring the provider and find out the cause, when it will be fixed and whether you get a refund, with indirect questions.",
+  "partnerEn": "a call centre agent who talks in set phrases but gives information when pressed",
+  "openingEn": "Thank you for your call. Which address is it about?",
+  "goalEn": "The cause of the fault, how long it is expected to last and the question of a refund have all been found out."
+ },
+ {
+  "lesson": "de-b1-werkzeug-leihen",
+  "sceneEn": "You want to put a shelf up on the wall but you have not got the tool. You knock on your neighbour's door, explain what you are doing and ask to borrow one.",
+  "partnerEn": "a neighbour ready to help but attached to their tools",
+  "openingEn": "Oh, hello! You look as if you need something — what can I do?",
+  "goalEn": "What you are doing has been described, the tool has been asked for politely and it has been said when it will come back."
+ },
+ {
+  "lesson": "de-b1-putzen-teilen",
+  "sceneEn": "You and your flatmate are discussing the cleaning routine: who does what and how often, and the aim behind each rule.",
+  "partnerEn": "a flatmate who is more relaxed about cleaning than you are",
+  "openingEn": "Do we really have to make a plan? Doesn't it work as it is?",
+  "goalEn": "The work has been shared out, the aim of at least two rules has been given and a routine has been agreed."
+ },
+ {
+  "lesson": "de-b1-einbruch-melden",
+  "sceneEn": "You came home and saw that the door had been forced. You report it to the police, list what has been taken and say when you noticed.",
+  "partnerEn": "a police officer taking a statement and asking the questions in turn",
+  "openingEn": "Good afternoon. Please describe it to me exactly — when did you notice?",
+  "goalEn": "The incident has been reported, what was taken has been listed and the details needed for the statement have been given."
+ },
+ {
+  "lesson": "de-b1-grafik-lesen",
+  "sceneEn": "You are presenting a graphic at a small meeting. You describe what each thing is with relative clauses and answer the questions.",
+  "partnerEn": "a participant who cannot see the graphic from where they are and asks for detail",
+  "openingEn": "Sorry, I can't see it very well from here — what exactly does the graphic show?",
+  "goalEn": "What the graphic shows has been described, at least two elements have been identified and one question has been answered."
+ },
+ {
+  "lesson": "de-b1-alte-technik",
+  "sceneEn": "You and a friend are talking about old technology: cassettes, radio, the first phones. You compare what was better and what was worse.",
+  "partnerEn": "a nostalgic friend who is suspicious of every new thing",
+  "openingEn": "I found an old cassette yesterday — do you remember what that was like?",
+  "goalEn": "At least three comparisons have been made and a conclusion has been reached about what has really improved."
+ },
+ {
+  "lesson": "de-b1-reparieren-lassen",
+  "sceneEn": "You have taken your broken device to a repair shop. You explain what happened, ask the price and decide whether repairing it or buying a new one makes more sense.",
+  "partnerEn": "an honest repairer who does not want to lose the job either",
+  "openingEn": "Let me have a look. How long has the device been playing up?",
+  "goalEn": "The fault has been described, the price has been asked and a decision has been made with reasons between repair and replacement."
+ },
+ {
+  "lesson": "de-b1-technik-diskussion",
+  "sceneEn": "You and a friend are arguing about how technology has changed your lives: what it has made easier, what it has made harder, where dependence begins.",
+  "partnerEn": "a friend who admits being very attached to technology but defends it",
+  "openingEn": "I can't manage without my phone any more — do you actually think that's a bad thing?",
+  "goalEn": "Both sides have been given on at least three points and a personal conclusion has been reached."
+ }
+]
