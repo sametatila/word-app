@@ -1,8 +1,9 @@
 import { PageBack } from "@/components/page-back";
+import { titleMeta } from "@/lib/page-meta";
+import { getT } from "@/lib/i18n/server";
 import { CandoCard } from "@/components/cando-card";
 
-export const metadata = { title: "Yapabildiklerim" };
-
+export const generateMetadata = titleMeta("cando.what_i_can_do");
 /**
  * "Yapabildiklerim" (WP-43) — web'de HİÇBİR YERDEN açılamıyordu.
  *
@@ -15,10 +16,11 @@ export const metadata = { title: "Yapabildiklerim" };
  * uzun ve kendi sekmelerini taşıyor; profilin altında bir bölüm olarak durursa
  * sayfanın gerisini bastırır. Mobildeki yerleşim de böyle.
  */
-export default function CandoPage() {
+export default async function CandoPage() {
+  const t = await getT();
   return (
     <div className="mx-auto w-full max-w-3xl space-y-5">
-      <PageBack fallback="/profile" title="Yapabildiklerim" subtitle="Kanıtladığın beceriler, seviye seviye" />
+      <PageBack fallback="/profile" title={t("cando.what_i_can_do")} subtitle={t("candow.sub")} />
       <CandoCard />
     </div>
   );

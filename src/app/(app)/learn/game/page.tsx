@@ -1,6 +1,7 @@
 import { SessionPlayer } from "@/components/session-player";
+import { titleMeta } from "@/lib/page-meta";
 
-export const metadata = { title: "Kelime turu" };
+export const generateMetadata = titleMeta("learn.daily_round");
 export const dynamic = "force-dynamic";
 
 /**

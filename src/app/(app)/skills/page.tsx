@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import { titleMeta } from "@/lib/page-meta";
 import Link from "next/link";
 import { AppHeader } from "@/components/app-header";
 import { getT, getLang } from "@/lib/i18n/server";
@@ -14,7 +14,7 @@ import { moduleExamPlan } from "@/lib/lessons/module-exam";
 import type { CefrLevel, SkillId } from "@/lib/skills/types";
 import { localeOf } from "@/lib/i18n/dict";
 
-export const metadata: Metadata = { title: "Beceriler" };
+export const generateMetadata = titleMeta("skills.skills");
 export const dynamic = "force-dynamic";
 
 const LEVELS: CefrLevel[] = ["A1", "A2", "B1", "B2", "C1"];

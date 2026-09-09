@@ -1,8 +1,9 @@
 import { redirect } from "next/navigation";
+import { titleMeta } from "@/lib/page-meta";
 import { getUserId } from "@/lib/auth/server";
 import { WeeklyPlayer } from "@/components/weekly-player";
 
-export const metadata = { title: "Haftanın kısa sınavı" };
+export const generateMetadata = titleMeta("learn.weekly_quiz");
 export const dynamic = "force-dynamic";
 
 /** Haftalık kullanım sınavı (WP-42) — oynatıcı istemcide, durum ve sorular /api/weekly'den. */

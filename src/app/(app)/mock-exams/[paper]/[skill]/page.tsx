@@ -1,9 +1,10 @@
 import { notFound, redirect } from "next/navigation";
+import { titleMeta } from "@/lib/page-meta";
 import { getUserId } from "@/lib/auth/server";
 import { MockExamPlayer } from "@/components/mock-exam-player";
 import { mockPaperById, type MockSkill } from "@/lib/mock-exams";
 
-export const metadata = { title: "Deneme sınavı" };
+export const generateMetadata = titleMeta("mockexams.title");
 export const dynamic = "force-dynamic";
 
 const SKILLS: MockSkill[] = ["reading", "listening", "writing", "speaking"];

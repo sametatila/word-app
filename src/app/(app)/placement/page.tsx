@@ -1,9 +1,10 @@
 import { redirect } from "next/navigation";
+import { titleMeta } from "@/lib/page-meta";
 import { getUserId } from "@/lib/auth/server";
 import { lastPlacement, RETAKE_DAYS } from "@/lib/placement";
 import { PlacementTest } from "@/components/placement/placement-test";
 
-export const metadata = { title: "Seviye testi" };
+export const generateMetadata = titleMeta("placement.title");
 export const dynamic = "force-dynamic";
 
 /** Yerleştirme testi sayfası (WP-40). Son alma sunucuda okunur; test istemcide akar. */

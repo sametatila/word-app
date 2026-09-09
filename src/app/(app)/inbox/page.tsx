@@ -1,9 +1,9 @@
 import { PageBack } from "@/components/page-back";
+import { titleMeta } from "@/lib/page-meta";
 import { getT } from "@/lib/i18n/server";
 import { Inbox } from "@/components/social/inbox";
 
-export const metadata = { title: "Gelen kutusu" };
-
+export const generateMetadata = titleMeta("inbox.inbox");
 /**
  * Gelen kutusu — istek, tepki, dürtme.
  *

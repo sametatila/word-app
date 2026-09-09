@@ -1178,4 +1178,12 @@ export const enWeb: Record<string, string> = {
   "bossw.rule_pool": "Questions come from this module's {n} words.",
   "bossw.not_ready_yet": "You've finished {done}/{total} conversations in this module. The test is open anyway — but it's hard without seeing the words first.",
   "bossw.best_left": "Passed · your best remaining time is {n} s",
+  "quizw.pct_correct": "{pct} correct",
+  "appw.offline_title": "Couldn't connect",
+  "appw.offline_body": "You're still signed in, but the server can't be reached right now. Try again in a few seconds — you don't need to sign out.",
+  "candow.sub": "The skills you've proven, level by level",
+  "wordsw.load_failed": "Couldn't load words",
+  "lesson.module_exam": "Module test",
+  "premium.title": "Premium",
+  "firstw.title": "Your first words",
 };

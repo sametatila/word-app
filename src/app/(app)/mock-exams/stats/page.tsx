@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { titleMeta } from "@/lib/page-meta";
 import { PageBack } from "@/components/page-back";
 import { getUserId } from "@/lib/auth/server";
 import { mockStats } from "@/lib/mock-exams/stats";
@@ -8,8 +9,7 @@ import { ChevronRightIcon } from "@/components/icons";
 import { getT } from "@/lib/i18n/server";
 
 export const dynamic = "force-dynamic";
-export const metadata = { title: "Deneme istatistiği" };
-
+export const generateMetadata = titleMeta("mockstats.title");
 /**
  * Deneme sınavı istatistiği — mobil `MockStatsScreen`in karşılığı.
  *

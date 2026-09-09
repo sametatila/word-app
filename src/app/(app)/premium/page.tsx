@@ -1,10 +1,10 @@
-import type { Metadata } from "next";
+import { titleMeta } from "@/lib/page-meta";
 import { getUserId } from "@/lib/auth/server";
 import { premiumConfig, premiumCopy, premiumStatus } from "@/lib/premium";
 import { referralStats } from "@/lib/premium/referral";
 import { PremiumPaywall } from "@/components/premium-paywall";
 
-export const metadata: Metadata = { title: "Premium" };
+export const generateMetadata = titleMeta("premium.title");
 export const dynamic = "force-dynamic";
 
 /** Paywall'a nereden gelindiği — huni ölçümünde `paywall_view` kind'ı. */

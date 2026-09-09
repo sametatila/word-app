@@ -4,6 +4,8 @@ import { useState } from "react";
 import Link from "next/link";
 import { QuestionList } from "@/components/skills/quiz";
 import type { SkillQuestion } from "@/lib/skills/types";
+import { useT, useLang } from "@/lib/i18n/client";
+import { formatPercent } from "@/lib/i18n/dict";
 
 /**
  * Immersion quiz/checkpoint oynatıcısı — ünitenin brief'inden TÜRETİLEN sorular
@@ -21,12 +23,14 @@ export function ImmersionQuizPlayer({
   subtitle: string;
   questions: SkillQuestion[];
 }) {
+  const t = useT();
+  const lang = useLang();
   const [score, setScore] = useState<number | null>(null);
 
   return (
     <div className="mx-auto w-full max-w-2xl px-4 py-6">
       <div className="mb-5 flex items-center gap-3">
-        <Link href="/immersion" aria-label="Patika'ya dön" className="btn btn-ghost h-9 w-9 shrink-0 text-lg">
+        <Link href="/immersion" aria-label={t("lesson.back_to_path")} className="btn btn-ghost h-9 w-9 shrink-0 text-lg">
           ←
         </Link>
         <div className="min-w-0">
@@ -43,10 +47,10 @@ export function ImmersionQuizPlayer({
             {score}/{questions.length}
           </p>
           <p className="muted mt-1 text-sm">
-            %{questions.length ? Math.round((score / questions.length) * 100) : 0} doğru
+            {t("quizw.pct_correct", { pct: formatPercent(questions.length ? Math.round((score / questions.length) * 100) : 0, lang) })}
           </p>
           <Link href="/immersion" className="btn btn-primary mt-5 inline-flex px-6 py-3">
-            Patika'ya dön
+            {t("lesson.back_to_path")}
           </Link>
         </div>
       )}

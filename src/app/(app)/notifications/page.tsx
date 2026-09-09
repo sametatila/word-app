@@ -1,10 +1,10 @@
 import { BackButton } from "@/components/page-back";
+import { titleMeta } from "@/lib/page-meta";
 import { NotificationSettings } from "@/components/notification-settings";
 import { getT } from "@/lib/i18n/server";
 
 export const dynamic = "force-dynamic";
-export const metadata = { title: "Bildirimler" };
-
+export const generateMetadata = titleMeta("notifications.notifications");
 /**
  * Bildirimler — HATIRLATMA AYARLARI, gelen kutusu değil.
  *

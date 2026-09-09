@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import { titleMeta } from "@/lib/page-meta";
 import { PageBack } from "@/components/page-back";
 import Link from "next/link";
 import { redirect } from "next/navigation";
@@ -13,7 +13,7 @@ import { ChevronRightIcon } from "@/components/icons";
 import { getT, getLang } from "@/lib/i18n/server";
 import { formatPercent } from "@/lib/i18n/dict";
 
-export const metadata: Metadata = { title: "Deneme Sınavları" };
+export const generateMetadata = titleMeta("mockexams.title");
 export const dynamic = "force-dynamic";
 
 const LEVELS: MockLevel[] = ["A1", "A2", "B1", "B2", "C1"];

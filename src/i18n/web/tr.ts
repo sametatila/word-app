@@ -1203,4 +1203,12 @@ export const trWeb: Record<string, string> = {
   "bossw.rule_pool": "Sorular bu modülün {n} kelimesinden geliyor.",
   "bossw.not_ready_yet": "Bu modülün {done}/{total} konuşmasını bitirdin. Sınav yine de açık — ama kelimeleri görmeden girmek zor.",
   "bossw.best_left": "Geçtin · en iyi kalan süren {n} sn",
+  "quizw.pct_correct": "{pct} doğru",
+  "appw.offline_title": "Bağlantı kurulamadı",
+  "appw.offline_body": "Hesabın açık, ama şu anda sunucuya ulaşılamıyor. Birkaç saniye sonra tekrar dene — çıkış yapmana gerek yok.",
+  "candow.sub": "Kanıtladığın beceriler, seviye seviye",
+  "wordsw.load_failed": "Kelimeler yüklenemedi",
+  "lesson.module_exam": "Modül sınavı",
+  "premium.title": "Premium",
+  "firstw.title": "İlk kelimelerin",
 };

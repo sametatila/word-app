@@ -1,9 +1,10 @@
 import { notFound, redirect } from "next/navigation";
+import { titleMeta } from "@/lib/page-meta";
 import { getUserId } from "@/lib/auth/server";
 import { ExamPlayer } from "@/components/exam-player";
 import type { CefrLevel } from "@/lib/skills/types";
 
-export const metadata = { title: "Modül sınavı" };
+export const generateMetadata = titleMeta("lesson.module_exam");
 export const dynamic = "force-dynamic";
 const LEVELS = ["A1", "A2", "B1", "B2", "C1"];
 

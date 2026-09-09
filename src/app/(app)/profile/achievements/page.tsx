@@ -1,9 +1,9 @@
 import { PageBack } from "@/components/page-back";
+import { titleMeta } from "@/lib/page-meta";
 import { AchievementWall } from "@/components/achievement-wall";
 import { getT } from "@/lib/i18n/server";
 
-export const metadata = { title: "Başarımlar" };
-
+export const generateMetadata = titleMeta("achievements.achievements");
 /**
  * Başarımlar — mobilde kendi ekranı (`AchievementsScreen`), web'de profilin
  * ortasına gömülüydü. Rozet duvarı elli dört rozetlik bir ızgara: profilin

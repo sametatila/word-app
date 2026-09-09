@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { titleMeta } from "@/lib/page-meta";
 import { PageBack } from "@/components/page-back";
 import { getUserInfo } from "@/lib/auth/server";
 import { ensureProfile } from "@/lib/session";
@@ -7,7 +8,7 @@ import { GAME_LABEL_KEYS, type GameId } from "@/lib/types";
 import { getT } from "@/lib/i18n/server";
 import { ChevronRightIcon } from "@/components/icons";
 
-export const metadata = { title: "Pratik" };
+export const generateMetadata = titleMeta("learn.practice");
 export const dynamic = "force-dynamic";
 
 /**

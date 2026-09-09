@@ -1,12 +1,12 @@
 import { PageBack } from "@/components/page-back";
+import { titleMeta } from "@/lib/page-meta";
 import { getUserId } from "@/lib/auth/server";
 import { getLeaderboard, type LeaderboardWeek } from "@/lib/session";
 import { Leaderboard } from "@/components/leaderboard";
 import { getT } from "@/lib/i18n/server";
 
 export const dynamic = "force-dynamic";
-export const metadata = { title: "Haftalık sıralama" };
-
+export const generateMetadata = titleMeta("profile.weekly_leaderboard");
 /**
  * Haftalık sıralama — mobilde Profil'den açılan kendi ekranı
  * (`LeaderboardScreen`), web'de Öğren sekmesinin dibinde duruyordu.

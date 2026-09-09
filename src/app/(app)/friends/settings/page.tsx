@@ -1,4 +1,5 @@
 import { getUserId } from "@/lib/auth/server";
+import { titleMeta } from "@/lib/page-meta";
 import { socialMe } from "@/lib/social/profile";
 import { ensureProfile } from "@/lib/session";
 import { BackButton } from "@/components/page-back";
@@ -6,8 +7,7 @@ import { SocialSettings } from "@/components/social/social-settings";
 import { getT } from "@/lib/i18n/server";
 
 export const dynamic = "force-dynamic";
-export const metadata = { title: "Sosyal ve gizlilik" };
-
+export const generateMetadata = titleMeta("socialsettings.social_and_privacy");
 /**
  * Sosyal ve gizlilik — KENDİ ADRESİ, mobildeki `SocialSettingsScreen` gibi.
  *

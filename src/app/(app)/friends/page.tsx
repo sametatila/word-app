@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { titleMeta } from "@/lib/page-meta";
 import { getUserId } from "@/lib/auth/server";
 import { WrenchIcon } from "@/components/icons";
 import { socialMe } from "@/lib/social/profile";
@@ -7,8 +8,7 @@ import { FriendsHub, type HubTab } from "@/components/social/friends-hub";
 import { getT } from "@/lib/i18n/server";
 
 export const dynamic = "force-dynamic";
-export const metadata = { title: "Arkadaşlar" };
-
+export const generateMetadata = titleMeta("friends.friends");
 const TABS: HubTab[] = ["friends", "feed", "quests", "requests", "find"];
 
 export default async function FriendsPage({ searchParams }: { searchParams: Promise<{ tab?: string }> }) {

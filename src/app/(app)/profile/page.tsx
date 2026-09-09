@@ -1,4 +1,5 @@
 import { getUserInfo } from "@/lib/auth/server";
+import { getT } from "@/lib/i18n/server";
 import { ensureProfile, getProgress } from "@/lib/session";
 import { isPremium } from "@/lib/premium";
 import { ProfileView } from "@/components/profile/profile-view";
@@ -15,6 +16,7 @@ export const dynamic = "force-dynamic";
  * söylüyor — mobil `ProfileScreen` ile aynı kurgu.
  */
 export default async function ProfilePage() {
+  const t = await getT();
   const user = await getUserInfo();
   if (!user) return null;
 
@@ -31,7 +33,7 @@ export default async function ProfilePage() {
     return (
       <ProfileView
         stats={{
-          name: profile.displayName || user.name || "Öğrenci",
+          name: profile.displayName || user.name || t("social.student"),
           email: user.email ?? null,
           streak: profile.currentStreak,
           xp: profile.totalXp,

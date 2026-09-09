@@ -1,6 +1,7 @@
 import { FirstPractice } from "@/components/first-practice";
+import { titleMeta } from "@/lib/page-meta";
 
-export const metadata = { title: "İlk kelimelerin" };
+export const generateMetadata = titleMeta("firstw.title");
 
 /**
  * Isınma — hesap AÇILMADAN önce. Bu yüzden `(app)` grubunun dışında: kabuk

@@ -1,4 +1,5 @@
 import { getUserInfo, authEnabled, googleConfigured } from "@/lib/auth/server";
+import { titleMeta } from "@/lib/page-meta";
 import { getT } from "@/lib/i18n/server";
 import { ensureProfile } from "@/lib/session";
 import { ProfileForm } from "@/components/profile-form";
@@ -7,8 +8,7 @@ import { APP_VERSION } from "@/lib/version";
 import { socialMe } from "@/lib/social/profile";
 
 export const dynamic = "force-dynamic";
-export const metadata = { title: "Ayarlar" };
-
+export const generateMetadata = titleMeta("settings.settings");
 /** Ayarlar: öğrenme, uygulama ve hesap. Profilden tek dokunuşla açılıyor. */
 export default async function SettingsPage() {
   const t = await getT();

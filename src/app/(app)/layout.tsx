@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { getT } from "@/lib/i18n/server";
 import { redirect } from "next/navigation";
 import { AppShell } from "@/components/app-shell";
 import { getSessionRead, authEnabled } from "@/lib/auth/server";
@@ -54,16 +55,16 @@ export default async function AppLayout({ children }: { children: React.ReactNod
 }
 
 /** Oturum sunucusuna ulaşılamadı — çıkış değil, geçici bir kesinti. */
-function SessionUnavailable() {
+async function SessionUnavailable() {
+  const t = await getT();
   return (
     <div className="mx-auto flex min-h-dvh w-full max-w-md flex-col items-center justify-center gap-4 px-6 text-center">
-      <h1 className="text-xl font-bold">Bağlantı kurulamadı</h1>
+      <h1 className="text-xl font-bold">{t("appw.offline_title")}</h1>
       <p className="muted text-sm">
-        Hesabın açık, ama şu anda sunucuya ulaşılamıyor. Birkaç saniye sonra tekrar dene —
-        çıkış yapmana gerek yok.
+        {t("appw.offline_body")}
       </p>
       <Link href="/learn" prefetch={false} className="btn btn-primary px-5 py-3">
-        Tekrar dene
+        {t("common.try_again")}
       </Link>
     </div>
   );

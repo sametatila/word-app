@@ -1,4 +1,5 @@
 import { PageBack } from "@/components/page-back";
+import { titleMeta } from "@/lib/page-meta";
 import { getUserInfo } from "@/lib/auth/server";
 import { ensureProfile, getProgress } from "@/lib/session";
 import { ActivityProgress } from "@/components/progress-view";
@@ -6,8 +7,7 @@ import { ProgressPanel } from "@/components/progress-panel";
 import { getT } from "@/lib/i18n/server";
 
 export const dynamic = "force-dynamic";
-export const metadata = { title: "İlerlemem" };
-
+export const generateMetadata = titleMeta("progw.my_progress");
 /**
  * İlerleme — iki haftalık ritim + yetkinlik paneli.
  *

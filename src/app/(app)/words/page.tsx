@@ -1,4 +1,5 @@
 import { and, asc, eq, ilike, or, sql, type SQL } from "drizzle-orm";
+import { titleMeta } from "@/lib/page-meta";
 import { db } from "@/lib/db";
 import { userWords, words } from "@/lib/db/schema";
 import { getUserId } from "@/lib/auth/server";
@@ -8,6 +9,7 @@ import { WordList, type WordRow } from "@/components/word-list";
 import { getT, getLang } from "@/lib/i18n/server";
 import { formatNumber } from "@/lib/i18n/dict";
 
+export const generateMetadata = titleMeta("words.my_words");
 export const dynamic = "force-dynamic";
 
 const PAGE_SIZE = 40;
@@ -153,7 +155,7 @@ export default async function WordsPage({
     console.error("[words]", err);
     return (
       <div className="card mx-auto w-full max-w-md p-6 text-center">
-        <h2 className="text-lg font-bold">Kelimeler yüklenemedi</h2>
+        <h2 className="text-lg font-bold">{t("wordsw.load_failed")}</h2>
         <p className="muted mt-2 text-sm">
           Veritabanı bağlantısını kontrol et: <code>npm run db:push</code>.
         </p>

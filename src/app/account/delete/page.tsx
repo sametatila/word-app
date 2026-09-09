@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { titleMeta } from "@/lib/page-meta";
 import { AuthShell } from "@/components/auth-shell";
 import { AccountDeleteForm } from "@/components/account-delete-form";
 import { auth, authEnabled } from "@/lib/auth/server";
@@ -6,8 +7,7 @@ import { headers } from "next/headers";
 import { getT } from "@/lib/i18n/server";
 
 export const dynamic = "force-dynamic";
-export const metadata = { title: "Hesabını sil" };
-
+export const generateMetadata = titleMeta("settings.delete_account");
 /**
  * Herkese açık hesap silme adresi (Google Play › Veri güvenliği › hesap silme
  * bağlantısı). Oturum yoksa girişe götürür ve sonra buraya döner; oturum varsa
