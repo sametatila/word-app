@@ -123,16 +123,16 @@ export function OnboardingScreen() {
    */
   function pick(key: string, value: string) {
     setChoices((c) => {
-      const next = { ...c, [key]: value };
+      const secim = { ...c, [key]: value };
       if (key === "lang") {
         void setLang(value as NativeLang);
         // Hesaba devredilmeyi beklesin (kurs/seviye ile aynı yol): kullanıcı
         // henüz giriş yapmadı, seçim ancak girişte profile yazılabiliyor.
         void saveOnboardingPrefs({ nativeLang: value });
-        const ok = coursesForNative(value as NativeLang).some((x) => x.id === next.course);
-        if (!ok) delete next.course;
+        const ok = coursesForNative(value as NativeLang).some((x) => x.id === secim.course);
+        if (!ok) delete secim.course;
       }
-      return next;
+      return secim;
     });
   }
   // Seviye adımında "Seviyeni seç" işaretliyse ayrıca bir seviye seçilmeli.
@@ -157,8 +157,8 @@ export function OnboardingScreen() {
       const lvl = levelChoice === "A1" ? "A1" : (pickedLevel ?? "A1");
       await saveOnboardingPrefs({ course, goal, level: lvl });
       // Isınma yalnız o paritenin kelimeleri varsa; yoksa doğrudan giriş duvarı.
-      const next = hasFirstWords(currentLang(), course) ? "FirstPractice" : "Auth";
-      nav.reset({ index: 0, routes: [next === "FirstPractice" ? { name: next, params: { level: lvl } } : { name: "Auth" }] });
+      const hedef = hasFirstWords(currentLang(), course) ? "FirstPractice" : "Auth";
+      nav.reset({ index: 0, routes: [hedef === "FirstPractice" ? { name: hedef, params: { level: lvl } } : { name: "Auth" }] });
     }
   }
   /**

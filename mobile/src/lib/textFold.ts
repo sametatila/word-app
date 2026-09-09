@@ -31,7 +31,7 @@ const APOSTROF = /['’´`\u02BC]/g;
  * "U Bahn" yazıyor — havuzda 142 İngilizce, 14 Almanca tireli başlık var.
  * Üç nokta da öyle: içerikte "My name is …" duruyor, kimse onu söylemiyor.
  */
-export const PUNCT = /[.,!?;:"…—–\-+/()\[\]{}≠→„“”»«]/g;
+export const PUNCT = /[.,!?;:"…—–\-+/()[\]{}≠→„“”»«]/g;
 
 /**
  * Simge → sözcük. İçerikte simge HİÇ geçmiyor (hepsi "Euro", "Prozent" diye

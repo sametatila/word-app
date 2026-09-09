@@ -8,11 +8,18 @@ import { PathScreen } from "../screens/PathScreen";
 import { SkillsScreen } from "../screens/SkillsScreen";
 
 const Tab = createBottomTabNavigator();
+/**
+ * Sekme çubuğu render-prop'u MODÜL düzeyinde: bileşen içinde `(p) => <TabBar/>`
+ * yazılınca her çizimde yeni bir bileşen kimliği doğuyor ve React eskisini
+ * söküp yenisini takıyor (durum sıfırlanır, gereksiz yeniden çizim).
+ */
+const renderTabBar = (p: React.ComponentProps<typeof TabBar>) => <TabBar {...p} />;
+
 export function RootTabs() {
   return (
     // `screenLayout` yalnız EKRAN içeriğini sarmalıyor; `tabBar` dışarıda kaldığı
     // için sekme çubuğu geniş ekranda tam genişlikte duruyor.
-    <Tab.Navigator tabBar={(p) => <TabBar {...p} />} screenOptions={{ headerShown: false }} screenLayout={contentColumnLayout}>
+    <Tab.Navigator tabBar={renderTabBar} screenOptions={{ headerShown: false }} screenLayout={contentColumnLayout}>
       <Tab.Screen name="Learn" component={LearnScreen} options={{ title: t("nav.learn") }} layout={wideColumnLayout} />
       <Tab.Screen name="Path" component={PathScreen} options={{ title: t("nav.path") }} layout={wideColumnLayout} />
       <Tab.Screen name="Skills" component={SkillsScreen} options={{ title: t("nav.skills") }} layout={wideColumnLayout} />

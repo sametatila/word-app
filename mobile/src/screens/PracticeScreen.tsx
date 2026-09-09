@@ -30,6 +30,12 @@ const META: Record<string, { icon: (p: { color: string; size: number }) => React
   translate: { icon: (p) => <ReadIcon {...p} />, tint: "primary" },
 };
 
+/** META'da olmayan bir oyun için yedek: modül düzeyinde, her çizimde yeniden doğmasın. */
+const FALLBACK_META = {
+  icon: (p: { color: string; size: number }) => <QuizIcon {...p} />,
+  tint: "primary" as keyof Palette,
+};
+
 export function PracticeScreen() {
   const { colors } = useTheme();
   const { gridItemWidth } = useLayout();
@@ -75,7 +81,7 @@ export function PracticeScreen() {
           {meLoading ? [0, 1, 2, 3, 4, 5].map((i) => (
             <Skeleton key={i} height={116} width={gridItemWidth} radius={radii.xl} />
           )) : practiceGamesFor(me?.course).map((g) => {
-            const m = META[g.game] ?? { icon: (p: { color: string; size: number }) => <QuizIcon {...p} />, tint: "primary" as keyof Palette };
+            const m = META[g.game] ?? FALLBACK_META;
             const tint = colors[m.tint] as string;
             return (
               <PressableScale key={g.game} onPress={() => nav.navigate("Game", { game: g.game })} style={{ width: gridItemWidth }}>

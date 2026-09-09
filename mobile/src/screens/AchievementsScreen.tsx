@@ -19,8 +19,8 @@ function groupLabel(group: string): string {
   return key ? t(key) : group;
 }
 
-function tierColor(t: Tier, colors: Palette): string {
-  return t === "bronze" ? "#b08d57" : t === "silver" ? "#9aa3ad" : t === "gold" ? colors.streak : colors.accent;
+function tierColor(tier: Tier, colors: Palette): string {
+  return tier === "bronze" ? "#b08d57" : tier === "silver" ? "#9aa3ad" : tier === "gold" ? colors.streak : colors.accent;
 }
 
 function Badge({ a, colors }: { a: Achievement; colors: Palette }) {

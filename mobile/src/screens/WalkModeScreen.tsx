@@ -295,18 +295,18 @@ export function WalkModeScreen() {
       // TÜM tanıyıcı adaylarını değerlendir — doğru cevap çoğu zaman ilk aday DEĞİL
       // (ör. "er" için tanıyıcı ["ja","ja im","er","eher"] döndürüyor; "er" 3. adayda).
       // Web de böyle: spokenMatches(heard[], ...). Tek adaya bakmak kısa kelimeleri kaçırıyordu.
-      const heard = res.heard;
-      said = heard[0] ?? "";
+      const adaylar = res.heard;
+      said = adaylar[0] ?? "";
       if (said) setHeard(said); // ilk adayı göster (STT mi eşleşme mi belli olsun)
       // Tanıyıcı kısa sözcüğe fazladan kelime ekliyor ("er" → "er im in") ve 2-harfli hedef
       // içerme kuralına (form.length >= CONTAINS_MIN) takılıyor. Tam ifadeyi VE tek tek
       // kelimeleri aday yap → hedef kelime nerede geçerse geçsin exact eşleşsin.
-      const cands = heard.flatMap((h) => [h, ...h.split(/\s+/)]).filter(Boolean);
-      const unheard = heard.length === 0;
+      const cands = adaylar.flatMap((h) => [h, ...h.split(/\s+/)]).filter(Boolean);
+      const unheard = adaylar.length === 0;
       const ok = !unheard && spokenMatches(cands, [withArtikel(w), w.de]);
       // Sarmalayıcı şart: parseSkip'in ikinci parametresi dil, ama .some()
       // ikinci argüman olarak dizinin index'ini geçirir.
-      const skipped = !unheard && !ok && heard.some((h) => parseSkip(h));
+      const skipped = !unheard && !ok && adaylar.some((h) => parseSkip(h));
       result = unheard ? "unheard" : skipped ? "skip" : ok ? "correct" : "wrong";
     }
 
@@ -440,15 +440,15 @@ export function WalkModeScreen() {
     setPhase("continue");
     sfx("micon");
     // Cepte/ekran-kapalı → Azure (Türkçe evet/hayır); ekran açık → native.
-    let heard: string[] | null;
+    let yanit: string[] | null;
     if (pocketRef.current || screenOffRef.current) {
-      heard = await azureListenOnce("", 4000, () => sfx("micoff"), "tr");
+      yanit = await azureListenOnce("", 4000, () => sfx("micoff"), "tr");
     } else {
-      heard = await listenOnce(currentTargetLocale(), 7000);
+      yanit = await listenOnce(currentTargetLocale(), 7000);
       sfx("micoff");
     }
-    if (!alive() || !heard) return null;
-    for (const s of heard) { const c = parseConfirm(s); if (c !== null) return c; }
+    if (!alive() || !yanit) return null;
+    for (const s of yanit) { const c = parseConfirm(s); if (c !== null) return c; }
     return null;
   }
 

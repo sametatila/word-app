@@ -47,7 +47,7 @@ export function FriendsScreen() {
   const route = useRoute<RouteProp<RootStackParams, "Friends">>();
   const { user } = useAuth();
   const initial = (route.params?.tab as Tab | undefined) ?? "friends";
-  const [tab, setTab] = useState<Tab>(TAB_KEYS.some((tab) => tab.key === initial) ? initial : "friends");
+  const [tab, setTab] = useState<Tab>(TAB_KEYS.some((k) => k.key === initial) ? initial : "friends");
   const [me, setMe] = useState<SocialMe | null>(null);
   const [data, setData] = useState<FriendsView | null>(null);
   const [err, setErr] = useState<string | null>(null);

@@ -513,13 +513,13 @@ function Speak({ it, colors, pad, onDone }: { it: SpeakingItem; colors: Palette;
     if (phase === "rec") return;
     if (!(await ensureMicPermission())) { setTip(t("speak.mic_needed")); setPhase("err"); return; }
     setPhase("rec"); setTip(null);
-    const heard = await listenOnce(currentTargetLocale(), 8000);
-    if (!heard?.length) { setTip(t("speak.not_heard")); setPhase("err"); return; }
-    setHeard(heard[0]);
-    const ok = spokenMatches(heard, [it.de]);
-    setOk(ok);
-    if (!ok) {
-      const lowered = heard.map((h) => h.toLowerCase());
+    const duyulan = await listenOnce(currentTargetLocale(), 8000);
+    if (!duyulan?.length) { setTip(t("speak.not_heard")); setPhase("err"); return; }
+    setHeard(duyulan[0]);
+    const tutti = spokenMatches(duyulan, [it.de]);
+    setOk(tutti);
+    if (!tutti) {
+      const lowered = duyulan.map((h) => h.toLowerCase());
       setTip((it.confusions ?? []).find((c) => c.heard.some((x) => lowered.some((h) => h.includes(x.toLowerCase()))))?.fix ?? it.hint ?? null);
     }
     setPhase("done");

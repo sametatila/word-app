@@ -124,9 +124,9 @@ export function listenOnce(locale = currentTargetLocale(), windowMs = 9000): Pro
         finish((e?.value ?? []).map((s) => (s ?? "").trim()).filter(Boolean)),
       ),
       emitter.addListener("LernomiSpeechPartial", (e: { value?: string[] }) => {
-        const t = (e?.value?.[0] ?? "").trim();
-        if (t) {
-          best = t;
+        const metin = (e?.value?.[0] ?? "").trim();
+        if (metin) {
+          best = metin;
           // Partial-tabanlı endpointing: yeni partial ~800ms gelmezse kullanıcı bitmiştir → dön.
           // Motor endpointing'i WEB_SEARCH ile güvenilmez (bazen hiç bitirmeyip 8sn takılıyor).
           if (quietTimer) clearTimeout(quietTimer);
