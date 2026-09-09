@@ -12,7 +12,6 @@ import { fx } from "@/lib/fx";
 import { speakGerman, useSpeechAvailable } from "@/components/speak-button";
 import { SpeakerIcon } from "@/components/icons";
 import { firstExample } from "@/lib/example";
-import { roundHoldRemaining } from "@/lib/mascot-hold";
 import { useT, useLang } from "@/lib/i18n/client";
 
 type ListenRound = Extract<Round, { game: "listen" }>;

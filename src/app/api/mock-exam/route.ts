@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { and, desc, eq, isNotNull } from "drizzle-orm";
+import { and, desc, eq } from "drizzle-orm";
 import { db } from "@/lib/db";
 import { mockExamAttempts } from "@/lib/db/schema";
 import { getUserId } from "@/lib/auth/server";

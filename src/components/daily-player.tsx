@@ -9,7 +9,7 @@ import { FitBox } from "@/components/fit-box";
 import { Confetti, CountUp } from "@/components/celebrate";
 import { scoreAnswer } from "@/lib/daily-score";
 import { ShareResult } from "@/components/share-result";
-import { AlertIcon, FlameIcon, SparkIcon } from "@/components/icons";
+import { AlertIcon, SparkIcon } from "@/components/icons";
 import { Mascot } from "@/components/mascot";
 import { useT, useLang } from "@/lib/i18n/client";
 import { formatNumber } from "@/lib/i18n/dict";

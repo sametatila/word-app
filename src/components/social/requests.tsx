@@ -9,7 +9,6 @@ import { useT, useLang } from "@/lib/i18n/client";
 /** Gelen istekler (kabul/reddet) ve giden istekler (iptal). */
 export function Requests({ incoming, outgoing, onChanged }: { incoming: PendingView[]; outgoing: PendingView[]; onChanged: () => void }) {
   const t = useT();
-  const lang = useLang();
   if (!incoming.length && !outgoing.length) {
     return (
       <div className="card p-6 text-center">

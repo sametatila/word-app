@@ -26,8 +26,6 @@
  */
 import { chromium } from "playwright-core";
 const BASE = "http://localhost:3011";
-const t0 = Date.now();
-const at = () => String(Date.now() - t0).padStart(6);
 
 const W = (id, de, artikel, tr, beispiel) => ({
   id, de, artikel, tr, en: null, typ: "nomen", niveau: "A1",
@@ -80,7 +78,6 @@ await ctx.addInitScript(() => {
     return pause0.apply(this, a);
   };
   // WebAudio kaynakları: boşluksuz okuma yolu ve oyun sesleri buradan çıkıyor.
-  const AC = window.AudioContext;
   const start0 = AudioBufferSourceNode.prototype.start;
   AudioBufferSourceNode.prototype.start = function (...a) {
     window.__audio.push({ t: Date.now(), kind: "webaudio.buffer", dur: this.buffer?.duration ?? null });

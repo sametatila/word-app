@@ -44,7 +44,7 @@ import { roleplayPrompt } from "../src/lib/lessons/roleplay";
 import { chatConfigured, chatProviders, readLimits } from "../src/lib/chat-providers";
 import { cleanForSpeech } from "../src/lib/tts/edge";
 import { defaultVoice, rateFor, resolveVoice, voicesFor } from "../src/lib/tts/voices";
-import { itemCount, xpFor } from "../src/lib/skills/meta";
+import { itemCount } from "../src/lib/skills/meta";
 import { GAME_LABEL_KEYS, PLAYABLE_GAMES, type Answer, type Round } from "../src/lib/types";
 import { achievementBoard, markAchievementsSeen } from "../src/lib/achievements";
 import { xpForWager } from "../src/lib/xp";

@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { reducedMotion, vibrate } from "@/lib/fx";
 import { FlameIcon, TrophyIcon } from "@/components/icons";

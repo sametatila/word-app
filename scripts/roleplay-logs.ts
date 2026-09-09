@@ -10,7 +10,7 @@
  * Ayrı bir arayüz yerine betik: kayıt geliştirme için tutuluyor, kullanıcıya
  * gösterilecek bir şey değil ve uygulamada ona yer açmak yanlış işaret olurdu.
  */
-import { and, desc, eq, sql } from "drizzle-orm";
+import { desc, eq, sql } from "drizzle-orm";
 import { db, pool } from "./test-db";
 import { profiles, roleplayLogs } from "../src/lib/db/schema";
 import { parseReply } from "../src/lib/chat-format";

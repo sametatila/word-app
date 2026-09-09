@@ -49,7 +49,7 @@ export default async function SettingsPage() {
     );
   }
 
-  const { profile, me } = veri;
+  const { profile } = veri;
   return (
     <>
       <ProfileForm

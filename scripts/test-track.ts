@@ -1,4 +1,3 @@
-import assert from "node:assert";
 import { buildTrack, UNIT_LESSONS, GROUP_SIZE } from "../src/lib/immersion/build";
 import type { Lesson } from "../src/lib/lessons/types";
 import type { CefrLevel } from "../src/lib/skills/types";

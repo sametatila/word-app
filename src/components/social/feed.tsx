@@ -17,7 +17,6 @@ import { useT, useLang } from "@/lib/i18n/client";
  */
 export function Feed({ onFindFriends }: { onFindFriends?: () => void }) {
   const t = useT();
-  const lang = useLang();
   const [items, setItems] = useState<FeedItem[] | null>(null);
   const [cursor, setCursor] = useState<string | null>(null);
   const [busy, setBusy] = useState(false);

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { EntityBlock, LegalShell, Ph } from "@/components/legal-shell";
-import { FAIR_USE, LEGAL_PATHS, PLATFORM_TEXT, hasIos, legalPath } from "@/lib/legal";
+import { FAIR_USE, LEGAL_PATHS, hasIos, legalPath } from "@/lib/legal";
 
 export const metadata = {
   title: "Kullanım Şartları",

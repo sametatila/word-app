@@ -1,9 +1,8 @@
 "use client";
 
-import Link from "next/link";
 import { useCallback, useEffect, useState } from "react";
 import { Avatar } from "@/components/avatar";
-import { HandshakeIcon, WrenchIcon } from "@/components/icons";
+import { HandshakeIcon } from "@/components/icons";
 import { RowSkeleton } from "@/components/skeleton";
 import { track } from "@/lib/track";
 import { errorText, social, type FriendsView, type SocialMeView } from "@/lib/social/client";
@@ -13,7 +12,7 @@ import { FriendList } from "./friend-list";
 import { FriendsBoard } from "./friends-board";
 import { Quests } from "./quests";
 import { Requests } from "./requests";
-import { useT, useLang } from "@/lib/i18n/client";
+import { useT } from "@/lib/i18n/client";
 
 export type HubTab = "friends" | "feed" | "quests" | "requests" | "find";
 const TABS: { key: HubTab; label: string }[] = [
@@ -32,7 +31,6 @@ const TABS: { key: HubTab; label: string }[] = [
  */
 export function FriendsHub({ me, initialTab }: { me: SocialMeView; initialTab: HubTab }) {
   const t = useT();
-  const lang = useLang();
   const [tab, setTab] = useState<HubTab>(initialTab);
   const [data, setData] = useState<FriendsView | null>(null);
   const [err, setErr] = useState<string | null>(null);

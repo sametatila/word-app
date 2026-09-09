@@ -19,7 +19,6 @@ import { useT, useLang } from "@/lib/i18n/client";
  * Ses biter bitmez tur kapanırsa ekranda beliren doğru cevap okunamıyor.
  * Doğru cevapta bu paya gerek yok — okunacak yeni bir bilgi yok.
  */
-const WRONG_TAIL_MS = 900;
 
 type ClozeRound = Extract<Round, { game: "cloze" }>;
 

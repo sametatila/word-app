@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { errorText, social } from "@/lib/social/client";
 import type { Relation } from "@/lib/social/types";
-import { useT, useLang } from "@/lib/i18n/client";
+import { useT } from "@/lib/i18n/client";
 
 /**
  * İlişkiye göre tek düğme: Ekle · İstek gönderildi (iptal) · Kabul et ·
@@ -26,7 +26,6 @@ export function UserAction({
   compact?: boolean;
 }) {
   const t = useT();
-  const lang = useLang();
   const [state, setState] = useState<Relation>(relation);
   const [fid, setFid] = useState<number | null>(friendshipId ?? null);
   const [busy, setBusy] = useState(false);

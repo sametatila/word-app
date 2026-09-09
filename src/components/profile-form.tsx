@@ -58,7 +58,6 @@ const LEVELS = [
  * şeyler geliyor.
  */
 export function ProfileForm({
-  userId,
   initial,
   authEnabled,
   linkedAccounts,

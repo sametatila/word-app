@@ -20,7 +20,6 @@ const SLUG = (process.argv[2] || "").toLowerCase();
 if (!SLUG) throw new Error("kullanım: check.mjs <seviye-slug>");
 
 const words = JSON.parse(readFileSync(`${ROOT}data/app/words.json`, "utf8"));
-const byId = new Map(words.map((w) => [w.id, w]));
 
 const dir = `${ROOT}data/review`;
 const packets = new Map();

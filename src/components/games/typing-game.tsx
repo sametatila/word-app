@@ -3,7 +3,6 @@
 import { useEffect, useRef, useState } from "react";
 import { whyFor } from "@/lib/why";
 import { classifyTyping, miss } from "@/lib/errors";
-import { motion } from "framer-motion";
 import { GameShell } from "./game-shell";
 import { useNoHints } from "./no-hints";
 import { useRoundExit } from "./use-round-exit";
@@ -25,7 +24,6 @@ const SPECIAL_CHARS = ["ä", "ö", "ü", "ß"] as const;
  * Yanlışta ekranda yeni bir bilgi beliriyor ("Doğrusu: …"); ses biter bitmez
  * tur kapanırsa o satır okunamıyor. Doğruda böyle bir satır yok.
  */
-const WRONG_TAIL_MS = 900;
 
 
 /**

@@ -3,7 +3,6 @@ import { ensureProfile } from "@/lib/session";
 import { loadTrack } from "@/lib/immersion/build";
 import { buildTrackState } from "@/lib/immersion/state";
 import { immersionCompletion } from "@/lib/immersion/progress";
-import type { ImmersionItem } from "@/lib/immersion/types";
 import type { CefrLevel } from "@/lib/skills/types";
 import { ImmersionHub } from "@/components/immersion/immersion-hub";
 import { buildHubUnits } from "@/lib/immersion/hub";

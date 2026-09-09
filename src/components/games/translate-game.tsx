@@ -19,7 +19,6 @@ type Status = "idle" | "checking" | "correct" | "wrong";
 
 const SPECIAL_CHARS = ["ä", "ö", "ü", "ß"] as const;
 /** Yanlışta düzeltme satırını okumak için ek pay. */
-const WRONG_TAIL_MS = 1600;
 /**
  * AI onayı için bekleme tavanı. Yerel hakem "yanlış" dediğinde ve cümle en
  * az üç kelimeyse model bir kez sorulur: anlamca doğru ama başka kuruluşsa

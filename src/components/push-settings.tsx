@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from "react";
 import { SettingRow, Switch } from "@/components/setting-row";
-import { BellIcon } from "@/components/icons";
 import {
   currentSubscription,
   iosNeedsInstall,

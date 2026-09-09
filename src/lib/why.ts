@@ -234,7 +234,6 @@ const SUBORDINATORS = /\b(weil|dass|wenn|ob|obwohl|damit|während|bevor|nachdem|
 function whyVerbPosition(lang: NativeLang, answer?: string[] | null, tail?: string | null): Why {
   // Bağlantı kural parçacığından (WP-73): "weil" geçen cümle a2-nebensatz'a,
   // soru a1-wfragen'e gider — hata tipinin genel tablosundan daha isabetli.
-  const rule = ruleFor("verb_position", `${(answer ?? []).join(" ")}${tail ?? ""}`);
   const href = null;
   const sentence = (answer ?? []).join(" ");
   const first = answer?.[0]?.replace(/[^a-zäöüß]/gi, "") ?? "";

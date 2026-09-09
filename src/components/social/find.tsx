@@ -7,7 +7,7 @@ import { FlameIcon } from "@/components/icons";
 import { RowSkeleton } from "@/components/skeleton";
 import { errorText, social, type SearchHitView, type SuggestionView } from "@/lib/social/client";
 import { UserAction } from "./user-action";
-import { useT, useLang } from "@/lib/i18n/client";
+import { useT } from "@/lib/i18n/client";
 
 /**
  * Bul: arama kutusu + öneriler. Arama iki karakterden sonra, 350 ms
@@ -16,7 +16,6 @@ import { useT, useLang } from "@/lib/i18n/client";
  */
 export function Find({ onChanged }: { onChanged?: () => void }) {
   const t = useT();
-  const lang = useLang();
   const [q, setQ] = useState("");
   const [hits, setHits] = useState<SearchHitView[] | null>(null);
   const [sugg, setSugg] = useState<SuggestionView[] | null>(null);
@@ -130,7 +129,6 @@ function PersonRow({
   children: React.ReactNode;
 }) {
   const t = useT();
-  const lang = useLang();
   const href = user.username ? `/u/${user.username}` : null;
   return (
     <li className="flex items-center gap-3 px-4 py-3" style={{ borderColor: "var(--border)" }}>

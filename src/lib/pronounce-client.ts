@@ -41,7 +41,7 @@ export function captureClip(maxMs = 15_000): Promise<Capture | null> {
         stopped = true;
         clearTimeout(guard);
         try {
-          rec.state !== "inactive" ? rec.stop() : null;
+          if (rec.state !== "inactive") rec.stop();
         } catch {
           /* zaten kapalı */
         }

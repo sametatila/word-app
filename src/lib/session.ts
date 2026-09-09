@@ -17,7 +17,6 @@ import { pluralChoices } from "@/lib/german";
 import type {
   Answer,
   AnswerResult,
-  GameId,
   MissedWord,
   PlayableGame,
   Round,

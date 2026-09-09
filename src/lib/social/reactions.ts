@@ -8,7 +8,7 @@ import { SocialError } from "./errors";
 import { notify } from "./notify";
 import { limited } from "./ratelimit";
 import { friendIds, publicUsers } from "./stats";
-import { REACTION_KINDS, REACTION_LABEL_KEYS, type ActivityType, type ReactionKind, type ReactionSummary } from "./types";
+import { REACTION_KINDS, REACTION_LABEL_KEYS, type ReactionKind, type ReactionSummary } from "./types";
 import { langOf } from "./notify";
 import { translate, type NativeLang } from "@/lib/i18n/dict";
 

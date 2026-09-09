@@ -4,7 +4,7 @@ import { useState } from "react";
 import { errorText, social } from "@/lib/social/client";
 import { REACTION_KINDS, REACTION_LABEL_KEYS, type ReactionKind, type ReactionSummary } from "@/lib/social/types";
 import { ReactionGlyph, REACTION_TONE } from "./reaction-icons";
-import { useT, useLang } from "@/lib/i18n/client";
+import { useT } from "@/lib/i18n/client";
 
 /**
  * Tepki çubuğu: mevcut tepkiler sayılarıyla, "+" ile altı seçenek. Kendi
@@ -24,7 +24,6 @@ export function ReactionBar({
   onChange?: (next: ReactionSummary) => void;
 }) {
   const t = useT();
-  const lang = useLang();
   const [s, setS] = useState<ReactionSummary>(summary);
   const [open, setOpen] = useState(false);
   const [busy, setBusy] = useState(false);

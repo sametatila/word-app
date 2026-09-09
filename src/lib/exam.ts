@@ -8,7 +8,6 @@ import { LESSONS } from "@/lib/lessons";
 import { MODULE_SIZE, moduleCount } from "@/lib/lessons/modules";
 import {
   moduleContent,
-  moduleSheets,
   selfAnswering,
   type ProduceItem as LessonProduceItem,
 } from "@/lib/lessons/module-content";

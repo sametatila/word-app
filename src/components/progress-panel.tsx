@@ -182,7 +182,6 @@ function Spark({
   max?: number;
   color: string;
 }) {
-  const t = useT();
   const values = points.map((p) => p.value);
   const top = max ?? Math.max(1, ...values.map((v) => v ?? 0));
   const W = 120;
