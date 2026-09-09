@@ -1,0 +1,9 @@
+import type { SkillExercise } from "../../types";
+
+/**
+ * EN · B2 — Beceriler kütüphanesi, parti 2.
+ *
+ * Hücre başına hedef beş egzersiz; bu dosya 2. seti taşır (kimlik sonu 2).
+ * Kurallar ve emsal: `en-b2.ts` (parti 1) ve `data/content/SPEC.md`.
+ */
+export const enB2P2: SkillExercise[] = [];

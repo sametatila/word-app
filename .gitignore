@@ -88,3 +88,6 @@ data/mascot/raw/
 # Agent yönergeleri — yerel-only (server ops bilgisi repoda değil)
 AGENTS.md
 CLAUDE.md
+
+# Kütüphane yazar girdileri — üretilir (npm run prep:library)
+data/library/in/

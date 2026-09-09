@@ -261,6 +261,27 @@ for (const course of courses) {
   // Karşılaştırma havuzu: Patika egzersizleri + dersler + deneme kâğıtları.
   const others: string[] = [];
   for (const e of all) if (!isLib(e)) others.push(surfaceOf(e));
+
+  /*
+   * KÜTÜPHANE İÇİ kopya ayrı ölçülüyor. Hedef hücre başına beş egzersiz;
+   * aynı seviyede beş okuma yazarken ikinci ve üçüncü metnin birbirine
+   * benzemesi, Patika'ya benzemesinden daha olası. Aşağıdaki çapraz
+   * karşılaştırma her kütüphane egzersizini ötekilerle kıyaslıyor.
+   */
+  const libs = all.filter((x) => isLib(x) && courses.includes(courseOf(x)));
+  const libGrams = new Map<string, Set<string>>();
+  for (const e of libs) libGrams.set(e.id, grams(surfaceOf(e)));
+  const ic: string[] = [];
+  for (let i = 0; i < libs.length; i++) {
+    for (let j = i + 1; j < libs.length; j++) {
+      const a = libGrams.get(libs[i].id)!;
+      const b = libGrams.get(libs[j].id)!;
+      const ortak = [...a].filter((g) => b.has(g));
+      if (ortak.length > 2) ic.push(`  ${libs[i].id} ↔ ${libs[j].id}: ${ortak.length} pencere — ör. "${ortak[0].slice(0, 60)}…"`);
+    }
+  }
+  console.log(`Kütüphane içi kopya: ${ic.length ? `${ic.length} çift` : "yok"}`);
+  for (const d of ic.slice(0, 8)) console.log(d);
   const fs = require("node:fs") as typeof import("node:fs");
   for (const f of ["de-a1", "de-a2", "de-b1", "de-b2", "de-c1", "en-a1", "en-a2"]) {
     const path = `mobile/src/data/lessons/${f}.json`;
