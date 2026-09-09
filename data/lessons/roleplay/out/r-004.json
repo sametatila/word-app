@@ -1,0 +1,177 @@
+[
+ {
+  "lesson": "de-a1-wetter-smalltalk",
+  "sceneEn": "You have met your neighbour at the entrance to the building. Talk about the weather, say what you are doing today, and ask about their plans too.",
+  "partnerEn": "a chatty neighbour who walks the dog every morning",
+  "openingEn": "Good morning! Lovely weather today, isn't it?",
+  "goalEn": "A short conversation about the weather has been had and you have both learnt the other's plans for the day."
+ },
+ {
+  "lesson": "de-a1-park",
+  "sceneEn": "You have met a friend in the park on a sunny day. Say what there is in the park, talk about where to sit, and decide together what to do.",
+  "partnerEn": "a cheerful friend who likes to plan everything",
+  "openingEn": "There you are! Shall we go to the lake or onto the meadow?",
+  "goalEn": "Where you are sitting and what you are doing in the park have been settled."
+ },
+ {
+  "lesson": "de-a1-schwimmbad",
+  "sceneEn": "You are at the ticket desk of a swimming pool. Ask the entrance fee, find out how long you can stay, ask where the changing rooms are, and ask about hiring a towel.",
+  "partnerEn": "a friendly pool attendant who explains every rule",
+  "openingEn": "Hello! Would you like a ticket for two hours or for the whole day?",
+  "goalEn": "The entrance fee, how long you can stay and the changing rooms have been sorted out, and the towel question has been settled."
+ },
+ {
+  "lesson": "de-a1-fernsehen",
+  "sceneEn": "You are at home in the evening and you and your flatmate cannot agree on what to watch. Say what you want to watch and why, reply to their suggestion, and agree on a time.",
+  "partnerEn": "a flatmate who wants to watch the news every evening",
+  "openingEn": "The news is about to start. Or would you like to watch something else?",
+  "goalEn": "You have agreed on what to watch and what time it starts."
+ },
+ {
+  "lesson": "de-a1-absage",
+  "sceneEn": "A friend has rung to invite you to something this evening but you cannot go. Say you are sorry, decline politely, explain why, and suggest another day.",
+  "partnerEn": "an affectionate, persistent friend who does not give up easily",
+  "openingEn": "Hello! We're going out to eat this evening. Are you coming along?",
+  "goalEn": "The invitation has been declined politely, the reason has been given and another day has been suggested."
+ },
+ {
+  "lesson": "de-a1-koerper",
+  "sceneEn": "You are on a first aid course. The instructor is pointing at parts of the body: give their names with the articles and ask for the German of the ones you do not know.",
+  "partnerEn": "a witty and very patient first aid instructor",
+  "openingEn": "Welcome to the course! Tell me, what's this called in German?",
+  "goalEn": "Every part of the body pointed at has been named with its article and you have learnt the German for the ones you did not know."
+ },
+ {
+  "lesson": "de-a1-weh-tun",
+  "sceneEn": "You are in the doctor's consulting room. Say where it hurts and how long it has been going on, and answer the doctor's questions.",
+  "partnerEn": "a doctor who is in a hurry but listens carefully",
+  "openingEn": "Good afternoon! So what's the trouble?",
+  "goalEn": "Where the pain is and how long it has lasted have been described, and the doctor has said what happens next."
+ },
+ {
+  "lesson": "de-a1-termin-arzt",
+  "sceneEn": "You are ringing a doctor's surgery to make an appointment. Say why you are coming and discuss which day and time suit you.",
+  "partnerEn": "a receptionist with a full diary who talks fast on the phone",
+  "openingEn": "Doctor Weber's surgery, good afternoon! What can I do for you?",
+  "goalEn": "The day and time of the appointment have been fixed and you have been told what to bring with you."
+ },
+ {
+  "lesson": "de-a1-muessen",
+  "sceneEn": "A friend of yours is ill but still wants to go to work. Say what they ought to do and talk them into seeing a doctor.",
+  "partnerEn": "a stubborn friend who complains constantly but comes round in the end",
+  "openingEn": "I feel awful, but I have to work today. Is that a problem?",
+  "goalEn": "Your friend has been talked out of going to work today and into seeing a doctor."
+ },
+ {
+  "lesson": "de-a1-apotheke",
+  "sceneEn": "You have a sore throat and you are at the pharmacy. Describe your symptoms, ask for a medicine, and repeat the pharmacist's instructions to be sure you have them right.",
+  "partnerEn": "a meticulous pharmacist who explains everything one step at a time",
+  "openingEn": "Good afternoon! Do you have a prescription?",
+  "goalEn": "The medicine has been bought and how to take it has been repeated back and understood correctly."
+ },
+ {
+  "lesson": "de-a1-krank-melden",
+  "sceneEn": "You are ringing your boss in the morning to say you are ill. Say what is wrong, say you cannot come in today, and say when you will be back.",
+  "partnerEn": "an understanding boss who asks question after question",
+  "openingEn": "Good morning! You don't sound well at all. What's happened?",
+  "goalEn": "Your boss has been told what is wrong and you have agreed when you will be back."
+ },
+ {
+  "lesson": "de-a1-imperativ-du",
+  "sceneEn": "You are ringing a friend who has come down with flu. Give them advice in the informal imperative: what to drink, what to do, what not to worry about.",
+  "partnerEn": "a slightly whiny friend who is hopeless at looking after themselves",
+  "openingEn": "I've got such a bad cold! Have you got any tips for me?",
+  "goalEn": "Your friend has been given at least three pieces of advice and has said what they will do."
+ },
+ {
+  "lesson": "de-a1-notruf",
+  "sceneEn": "You have seen an accident in the street and rung the emergency number. Say what has happened and where you are, and answer the operator's questions briefly.",
+  "partnerEn": "a calm-voiced emergency operator who guides you step by step",
+  "openingEn": "Emergency services, one one two, good afternoon. Where are you?",
+  "goalEn": "The place and the state of the accident have been reported and the operator has said a team is on its way."
+ },
+ {
+  "lesson": "de-a1-gesund-leben",
+  "sceneEn": "You are at the doctor's for your annual check-up and they are asking about your habits. Say what you eat and what you do, and answer the doctor's suggestions in your own words.",
+  "partnerEn": "a rather blunt but well-meaning doctor",
+  "openingEn": "You say you're often tired. What do you eat every day?",
+  "goalEn": "Your habits have been described and you have accepted one change the doctor suggested."
+ },
+ {
+  "lesson": "de-a1-beim-zahnarzt",
+  "sceneEn": "You are in the dentist's chair. Say which tooth has been hurting and for how long, and respond to the dentist's instructions.",
+  "partnerEn": "a cheerful dentist who talks non-stop",
+  "openingEn": "Right, open your mouth, please. Where does it hurt?",
+  "goalEn": "The tooth that hurts has been found and you have been told what will be done."
+ },
+ {
+  "lesson": "de-a1-telefonieren",
+  "sceneEn": "You have rung an office and the receptionist has answered. Introduce yourself, say who you want to speak to, and say you will ring back if that person is not there.",
+  "partnerEn": "a polite receptionist who speaks formally",
+  "openingEn": "Berger's, good afternoon. What can I do for you?",
+  "goalEn": "You have reached the person you wanted, or settled when you will ring back."
+ },
+ {
+  "lesson": "de-a1-nachricht",
+  "sceneEn": "You are texting a friend. Say when you will write, say what you will send, and end the conversation with a suitable sign-off.",
+  "partnerEn": "a friend who writes short and fast",
+  "openingEn": "Hey! Are you going to text me this evening?",
+  "goalEn": "When and what you will send have been settled and the exchange has ended with a goodbye."
+ },
+ {
+  "lesson": "de-a1-termin-machen",
+  "sceneEn": "You have rung a hairdressing salon and you want an appointment. Suggest a day that suits you, discuss the time, and ask to move the appointment if you need to.",
+  "partnerEn": "a hairdresser with a full diary who still looks for a way",
+  "openingEn": "Salon Schnittpunkt, good morning. Would you like an appointment?",
+  "goalEn": "The day and time of the hairdresser's appointment have been fixed."
+ },
+ {
+  "lesson": "de-a1-einladung",
+  "sceneEn": "You are throwing a party and inviting a friend. Invite them, say when it is, and say what you would like them to bring.",
+  "partnerEn": "a friend who loves a party and asks questions straight away",
+  "openingEn": "Oh, a party? When is it, then?",
+  "goalEn": "Your friend has said they are coming and it has been settled what they are bringing."
+ },
+ {
+  "lesson": "de-a1-perfekt-haben",
+  "sceneEn": "A friend is asking what you did yesterday. Say what you bought, what you saw and what you listened to; remember to put the past form at the end of every sentence.",
+  "partnerEn": "a friend who wants to know every detail",
+  "openingEn": "Go on, what did you do yesterday?",
+  "goalEn": "At least three things you did yesterday have been described in the past tense."
+ },
+ {
+  "lesson": "de-a1-perfekt-sein",
+  "sceneEn": "A friend is asking where you went at the weekend. Say where you went, how you got there, and whether you stayed at home for a day.",
+  "partnerEn": "a friend who loves travelling and keeps suggesting places",
+  "openingEn": "Where did you travel to at the weekend?",
+  "goalEn": "Where and how you travelled, and how you spent one of the days, have been described."
+ },
+ {
+  "lesson": "de-a1-gestern",
+  "sceneEn": "You are talking about yesterday with a friend. Tell your day in order: what you did first, where you went next, what happened in the evening.",
+  "partnerEn": "a friend who wants to tell you about their day too",
+  "openingEn": "How was your day yesterday? What did you do first?",
+  "goalEn": "Yesterday morning, afternoon and evening have been told in order."
+ },
+ {
+  "lesson": "de-a1-wochenende-bericht",
+  "sceneEn": "It is Monday morning and a colleague is asking about your weekend. Say what you did on each day, say where you went, and give your verdict on how it was.",
+  "partnerEn": "a colleague who needs a chat on a Monday morning",
+  "openingEn": "Good morning! How was your weekend?",
+  "goalEn": "Both days of the weekend have been described and you have said how it went."
+ },
+ {
+  "lesson": "de-a1-jahreszeiten",
+  "sceneEn": "You are talking about the seasons and your birthdays with someone you have just met. Say which season you like and give the date of your birthday.",
+  "partnerEn": "a talkative acquaintance who loves the summer",
+  "openingEn": "Which season do you like best?",
+  "goalEn": "The season you like and the date of your birthday have been given, and you have learnt theirs."
+ },
+ {
+  "lesson": "de-a1-a1-rueckblick",
+  "sceneEn": "An acquaintance is asking how your German is going. Say what you have learnt in the past tense, say what you can do now, and say what comes next.",
+  "partnerEn": "an encouraging acquaintance who is proud of you",
+  "openingEn": "So, how's it going with your German?",
+  "goalEn": "What you have learnt, what you can do now and your next goal have all been described."
+ }
+]
