@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { AuthNotice, AuthShell, authInputClass } from "@/components/auth-shell";
 import { authApi } from "@/lib/auth/api";
+import { useT } from "@/lib/i18n/client";
 
 type Account = { providerId?: string };
 
@@ -17,6 +18,7 @@ type Account = { providerId?: string };
  * Silme geri alınamaz; ne gideceği düğmeden önce açıkça listelenir.
  */
 export function AccountDeleteForm({ email }: { email: string | null }) {
+  const t = useT();
   const router = useRouter();
   const [hasPassword, setHasPassword] = useState<boolean | null>(null);
   const [password, setPassword] = useState("");
@@ -41,9 +43,9 @@ export function AccountDeleteForm({ email }: { email: string | null }) {
     setBusy(false);
     if (!res.ok) {
       const msg = res.message.toLowerCase();
-      if (msg.includes("password")) setError("Parola yanlış.");
+      if (msg.includes("password")) setError(t("autherror.password_wrong"));
       else if (msg.includes("session") || msg.includes("expired")) setNeedsFresh(true);
-      else setError("Silinemedi. Birkaç saniye sonra tekrar dene.");
+      else setError(t("del.failed"));
       return;
     }
     setDone(true);
@@ -61,8 +63,8 @@ export function AccountDeleteForm({ email }: { email: string | null }) {
 
   if (done) {
     return (
-      <AuthShell title="Hesabın silindi" subtitle="Verilerin kaldırıldı. Seni tanımak güzeldi.">
-        <AuthNotice tone="success">Ana sayfaya yönlendiriliyorsun…</AuthNotice>
+      <AuthShell title={t("deleteaccount.your_account_is_deleted")} subtitle={t("del.done_sub")}>
+        <AuthNotice tone="success">{t("del.redirecting")}</AuthNotice>
       </AuthShell>
     );
   }
@@ -70,16 +72,16 @@ export function AccountDeleteForm({ email }: { email: string | null }) {
   if (needsFresh) {
     return (
       <AuthShell
-        title="Önce yeniden giriş yap"
-        subtitle="Güvenlik için hesap silme, son 24 saat içinde açılmış bir oturum ister."
+        title={t("deleteaccount.sign_in_again_first")}
+        subtitle={t("deleteaccount.for_security_deleting_your")}
         footer={
           <Link href="/profile/settings" className="underline-offset-4 hover:underline">
-            Ayarlara dön
+            {t("del.back_to_settings")}
           </Link>
         }
       >
         <button type="button" onClick={reLogin} className="btn btn-primary w-full px-5 py-3.5">
-          Çıkış yap ve yeniden gir
+          {t("del.sign_out_and_in")}
         </button>
       </AuthShell>
     );
@@ -87,20 +89,20 @@ export function AccountDeleteForm({ email }: { email: string | null }) {
 
   return (
     <AuthShell
-      title="Hesabını sil"
-      subtitle={email ? `${email} hesabı kalıcı olarak silinecek.` : "Hesabın kalıcı olarak silinecek."}
+      title={t("land.delete_account")}
+      subtitle={email ? t("del.will_delete_email", { email }) : t("del.will_delete")}
       footer={
         <Link href="/profile/settings" className="underline-offset-4 hover:underline">
-          Vazgeç, ayarlara dön
+          {t("del.cancel_back")}
         </Link>
       }
     >
       <ul className="muted mb-4 list-disc space-y-1 pl-5 text-sm">
-        <li>Kelime ilerlemen, serilerin, XP ve başarımların silinir.</li>
-        <li>Yazıların, konuşma kayıtların ve değerlendirmelerin silinir.</li>
-        <li>Arkadaşlıkların ve gelen kutun silinir.</li>
-        <li>Google Play aboneliğin varsa onu Play Store üzerinden ayrıca iptal etmen gerekir.</li>
-        <li>Bu işlem geri alınamaz.</li>
+        <li>{t("del.item_progress")}</li>
+        <li>{t("del.item_writings")}</li>
+        <li>{t("del.item_social")}</li>
+        <li>{t("del.item_play")}</li>
+        <li>{t("del.item_irreversible")}</li>
       </ul>
 
       <form onSubmit={submit} className="space-y-3">
@@ -110,19 +112,19 @@ export function AccountDeleteForm({ email }: { email: string | null }) {
             onChange={(e) => setPassword(e.target.value)}
             type="password"
             required
-            placeholder="Parolan"
+            placeholder={t("deleteaccount.your_password")}
             autoComplete="current-password"
             className={authInputClass}
           />
         ) : hasPassword === null ? (
-          <p className="muted text-sm">Hesap bilgisi alınıyor…</p>
+          <p className="muted text-sm">{t("del.loading_account")}</p>
         ) : (
-          <p className="muted text-sm">Google ile girdiğin için parola gerekmiyor.</p>
+          <p className="muted text-sm">{t("deleteaccount.you_signed_in_with_google_so_no")}</p>
         )}
 
         <label className="flex items-start gap-2 text-sm">
           <input type="checkbox" checked={agree} onChange={(e) => setAgree(e.target.checked)} className="mt-1" />
-          <span>Verilerimin kalıcı olarak silineceğini anladım.</span>
+          <span>{t("deleteaccount.i_understand_my_data_will_be")}</span>
         </label>
 
         {error ? <AuthNotice tone="error">{error}</AuthNotice> : null}
@@ -133,7 +135,7 @@ export function AccountDeleteForm({ email }: { email: string | null }) {
           className="btn w-full px-5 py-3.5 font-bold text-white disabled:opacity-50"
           style={{ background: "var(--color-rose-500)" }}
         >
-          {busy ? "Siliniyor…" : "Hesabımı kalıcı olarak sil"}
+          {t(busy ? "deleteaccount.deleting" : "deleteaccount.permanently_delete_my_account")}
         </button>
       </form>
     </AuthShell>

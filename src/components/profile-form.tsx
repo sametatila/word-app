@@ -21,6 +21,7 @@ import { courseName, courseSub } from "@/lib/courses";
 import { LangSetting } from "@/components/lang-setting";
 import { defaultVoice, type VoiceId } from "@/lib/tts/voices";
 import { track } from "@/lib/track";
+import { legalPath } from "@/lib/legal";
 
 type Initial = {
   displayName: string;
@@ -338,8 +339,8 @@ export function ProfileForm({
       <Section title={t("settings.privacy")} bare>
         <AnalyticsSettings bare />
         <SettingRow title={t("settings.privacy_and_terms")} sub={t("settings.privacy_and_terms_sub")}>
-          <Link href="/privacy" prefetch={false} className="btn btn-ghost h-9 px-3 text-xs">{t("settings.privacy_policy")}</Link>
-          <Link href="/terms" prefetch={false} className="btn btn-ghost h-9 px-3 text-xs">{t("settings.terms_of_use")}</Link>
+          <Link href={legalPath("privacy", lang)} prefetch={false} className="btn btn-ghost h-9 px-3 text-xs">{t("settings.privacy_policy")}</Link>
+          <Link href={legalPath("terms", lang)} prefetch={false} className="btn btn-ghost h-9 px-3 text-xs">{t("settings.terms_of_use")}</Link>
         </SettingRow>
       </Section>
 

@@ -131,7 +131,7 @@ export function QuestCard() {
               color: "var(--color-mint)",
             }}
           >
-            {claimable} ödül hazır
+            {t("questw.rewards_ready", { n: claimable })}
           </span>
         ) : (
           <span className="muted text-xs">{t("quests.resets_midnight")}</span>
@@ -188,7 +188,7 @@ export function QuestCard() {
                   disabled={busy === q.id}
                   className="btn btn-primary shrink-0 px-3 py-1.5 text-xs disabled:opacity-60"
                 >
-                  {busy === q.id ? "…" : `+${q.xp} XP al`}
+                  {busy === q.id ? "…" : t("questw.claim_xp", { xp: q.xp })}
                 </button>
               ) : (
                 <span className="muted shrink-0 text-[11px] tabular-nums">
@@ -217,7 +217,7 @@ export function QuestCard() {
               disabled={busy === "all"}
               className="btn btn-primary shrink-0 px-3 py-1.5 text-xs disabled:opacity-60"
             >
-              {busy === "all" ? "…" : "+300 XP al"}
+              {busy === "all" ? "…" : t("questw.claim_xp", { xp: 300 })}
             </button>
           )}
         </div>

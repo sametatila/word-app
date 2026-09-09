@@ -12,6 +12,7 @@ import {
   unsubscribeFromPush,
   vapidKey,
 } from "@/lib/push-client";
+import { useT } from "@/lib/i18n/client";
 
 /**
  * Profildeki hatırlatma anahtarı.
@@ -26,6 +27,7 @@ import {
 type State = "loading" | "off" | "on" | "busy" | "unsupported" | "ios" | "denied";
 
 export function PushSettings({ bare = false }: { bare?: boolean } = {}) {
+  const t = useT();
   const [state, setState] = useState<State>("loading");
   const [error, setError] = useState<string | null>(null);
 
@@ -57,7 +59,7 @@ export function PushSettings({ bare = false }: { bare?: boolean } = {}) {
       }
     } catch (err) {
       console.error("[push] ayar değiştirilemedi", err);
-      setError("Değiştirilemedi. Birazdan tekrar dene.");
+      setError(t("pushw.change_failed"));
       setState(wasOn ? "on" : "off");
     }
   }
@@ -72,28 +74,28 @@ export function PushSettings({ bare = false }: { bare?: boolean } = {}) {
   */
   const blocked =
     state === "unsupported"
-      ? "Uygulamayı ana ekrana ekleyip oradan aç."
+      ? t("pushw.add_to_home")
       : state === "ios"
-        ? "Önce “Ana ekrana ekle” adımlarını izle, sonra uygulamayı ana ekrandan aç."
+        ? t("pushw.follow_install")
         : state === "denied"
-          ? "Tarayıcının site ayarlarından Lernomi'e bildirim izni ver."
+          ? t("pushw.allow_in_browser")
           : null;
 
   /* `bare`: kendi kartını bırakıp uygulama ayarları kartının bir bölümü oluyor. */
   const body = (
     <div>
       <SettingRow
-        title="Hatırlatmalar"
+        title={t("notif.channel")}
         // Açıkken kaç bildirim geleceği yazıyla söylenmesi GEREKEN şey: izni
         // veren kişinin tek sorusu bu ve deneyerek öğrenilmiyor.
-        sub={blocked ?? "Günde en fazla bir bildirim: serin tehlikedeyse ya da tekrarın varsa"}
+        sub={blocked ?? t("pushw.one_a_day")}
       >
         {blocked ? null : (
           <Switch
             on={state === "on"}
             onChange={() => void toggle()}
             disabled={state === "busy"}
-            label="Hatırlatmalar"
+            label={t("notif.channel")}
           />
         )}
       </SettingRow>

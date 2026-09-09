@@ -10,17 +10,20 @@ import { AlertIcon, CheckIcon, LogoMark } from "@/components/icons";
 import { track } from "@/lib/track";
 import { saveOnboardingPrefs } from "@/lib/onboarding-prefs";
 import { hasFirstWords } from "@/lib/first-words";
+import { useT, useLang } from "@/lib/i18n/client";
+import { courseName } from "@/lib/courses";
 
+/* Kurs ADI tek kaynaktan (`courseName`); burada yalnız alt satır ve tanıtım. */
 const COURSES = [
-  { id: "de", title: "Almanca", subtitle: "Hochdeutsch", desc: "CEFR A1–C1 kelime hazinesi, sınav formatında okuma, dinleme ve yazma." },
-  { id: "gsw-zh", title: "Zürih Almancası", subtitle: "Züritüütsch", desc: "İsviçre'nin Zürih lehçesi: günlük konuşma dili, Hochdeutsch köprüsüyle." },
+  { id: "de", subtitle: "Hochdeutsch", desc: "onb.course_de" },
+  { id: "gsw-zh", subtitle: "Züritüütsch", desc: "onb.course_gsw" },
 ];
 
 const GOALS = [
-  { id: "work", title: "İş", desc: "Toplantı, e-posta, görüşme — iş yerinde rahat konuşmak." },
-  { id: "daily", title: "Günlük hayat", desc: "Komşu, market, doktor, resmi daire — yaşadığım yerde yaşamak." },
-  { id: "exam", title: "Sınav", desc: "Resmî dil sertifikası, dil şartı." },
-  { id: "swiss", title: "İsviçre", desc: "Zürih'te yaşam: lehçeyi anlamak, Hochdeutsch ile yazmak." },
+  { id: "work", title: "onb.goal_work", desc: "onb.goal_work_desc" },
+  { id: "daily", title: "onb.goal_daily", desc: "onb.goal_daily_desc" },
+  { id: "exam", title: "onb.goal_exam", desc: "onb.goal_exam_desc" },
+  { id: "swiss", title: "onb.goal_swiss", desc: "onb.goal_swiss_desc" },
 ];
 
 /**
@@ -33,17 +36,19 @@ const GOALS = [
  * ve iki tarafta birden yapılmalı (bkz. docs/plan/web-parity.md, Şerit O).
  */
 const PACES = [
-  { goal: 5, title: "Rahat", desc: "5 dk / gün" },
-  { goal: 10, title: "Kararlı", desc: "10 dk / gün" },
-  { goal: 20, title: "Ciddi", desc: "20 dk / gün" },
+  { goal: 5, minutes: 5, title: "onboarding.easy" },
+  { goal: 10, minutes: 10, title: "onboarding.steady" },
+  { goal: 20, minutes: 20, title: "onboarding.serious" },
 ];
 
+/* Seviye açıklamaları ayar ekranıyla AYNI anahtarlardan: iki yerde iki ayrı
+   cümle görmek, aynı seçimi iki farklı şey sanmaya yol açıyordu. */
 const LEVELS = [
-  { id: "A1", desc: "Yeni başlıyorum" },
-  { id: "A2", desc: "Temel günlük dili biliyorum" },
-  { id: "B1", desc: "Kendimi genel konularda ifade ederim" },
-  { id: "B2", desc: "İş ve toplum dilini anlarım" },
-  { id: "C1", desc: "Akademik ve soyut dile hâkimim" },
+  { id: "A1", desc: "onboarding.i_m_just_starting_out" },
+  { id: "A2", desc: "level.a2_desc" },
+  { id: "B1", desc: "level.b1_desc" },
+  { id: "B2", desc: "level.b2_desc" },
+  { id: "C1", desc: "level.c1_desc" },
 ];
 
 type Step = 0 | 1 | 2 | 3 | 4;
@@ -70,6 +75,8 @@ export function CourseOnboarding({
    */
   signedIn?: boolean;
 }) {
+  const t = useT();
+  const lang = useLang();
   const router = useRouter();
   const [step, setStep] = useState<Step>(0);
   // Onboarding hunisi: hangi adıma kadar gelindi (WP-80).
@@ -115,7 +122,7 @@ export function CourseOnboarding({
       if (!res.ok) throw new Error(String(res.status));
       return true;
     } catch {
-      setError("Kaydedilemedi — bağlantını kontrol edip tekrar dene.");
+      setError(t("onb.save_failed"));
       return false;
     } finally {
       setSaving(false);
@@ -175,9 +182,17 @@ export function CourseOnboarding({
         <LogoMark size={36} />
         <div>
           <h1 className="text-h3">
-            {step === 0 ? "Hoş geldin!" : step === 1 ? "Neden Almanca?" : step === 2 ? "Seviyen" : step === 3 ? "Günlük hedefin" : "Hazırsın"}
+            {step === 0
+              ? t("onb.step0_title")
+              : step === 1
+                ? t("onb.step1_title", { lang: courseName(course, lang) })
+                : step === 2
+                  ? t("onb.step2_title")
+                  : step === 3
+                    ? t("onboarding.what_s_your_daily_goal")
+                    : t("onb.step4_title")}
           </h1>
-          <p className="muted text-caption">Adım {step + 1} / 5 · sonradan profilden değiştirebilirsin</p>
+          <p className="muted text-caption">{t("onb.step_of", { n: step + 1 })}</p>
         </div>
       </div>
       {dots}
@@ -187,12 +202,12 @@ export function CourseOnboarding({
             <>
               <div className="flex items-start gap-3">
                 <Mascot mood="wave" size={72} stage="onboarding" />
-                <p className="muted text-sm leading-relaxed">Ben Erdi. Sana yol göstereceğim — önce adını ve hangi Almancayı öğreneceğini söyle.</p>
+                <p className="muted text-sm leading-relaxed">{t("onb.intro")}</p>
               </div>
-              <h2 className="mb-2 mt-5 font-bold">Sana nasıl seslenelim?</h2>
-              <input value={name} onChange={(e) => setName(e.target.value)} maxLength={60} autoComplete="given-name" placeholder="Adın" aria-label="Adın" className="option w-full px-4 py-3 text-base" />
-              <p className="muted mt-1.5 text-xs">Sıralamada bu isim görünecek.</p>
-              <h2 className="mb-2 mt-6 font-bold">Hangi dili öğrenmek istiyorsun?</h2>
+              <h2 className="mb-2 mt-5 font-bold">{t("onb.what_to_call_you")}</h2>
+              <input value={name} onChange={(e) => setName(e.target.value)} maxLength={60} autoComplete="given-name" placeholder={t("onb.your_name")} aria-label={t("onb.your_name")} className="option w-full px-4 py-3 text-base" />
+              <p className="muted mt-1.5 text-xs">{t("onb.name_note")}</p>
+              <h2 className="mb-2 mt-6 font-bold">{t("onboarding.which_course_shall_we_start_with")}</h2>
               <div className="grid gap-3 sm:grid-cols-2">
                 {COURSES.map((c) => {
                   const active = course === c.id;
@@ -211,26 +226,26 @@ export function CourseOnboarding({
                           <CheckIcon size={13} />
                         </span>
                       ) : null}
-                      <p className="font-bold">{c.title}</p>
+                      <p className="font-bold">{courseName(c.id, lang)}</p>
                       <p className="text-xs font-semibold text-[color:var(--color-brand)]">{c.subtitle}</p>
-                      <p className="muted mt-1.5 text-xs leading-relaxed">{c.desc}</p>
+                      <p className="muted mt-1.5 text-xs leading-relaxed">{t(c.desc)}</p>
                     </button>
                   );
                 })}
               </div>
-              <h2 className="mb-2 mt-6 font-bold">Hangi sesi dinlemek istersin?</h2>
+              <h2 className="mb-2 mt-6 font-bold">{t("onb.which_voice")}</h2>
               <VoicePicker course={course} value={voice} onChange={setVoice} />
               <button
                 type="button"
                 onClick={() => {
-                  if (!nameOk) return setError("Sana nasıl sesleneceğimizi yaz — sıralamada bu isim görünecek.");
+                  if (!nameOk) return setError(t("onb.name_required"));
                   setError(null);
                   if (course === "gsw-zh" && !goal) setGoal("swiss");
                   setStep(1);
                 }}
                 className="btn btn-primary mt-7 w-full px-6 py-3.5 text-base"
               >
-                Devam
+                {t("common.continue_2")}
               </button>
             </>
           ) : null}
@@ -239,7 +254,7 @@ export function CourseOnboarding({
             <>
               <div className="flex items-start gap-3">
                 <Mascot mood="think" size={72} stage="onboarding" />
-                <p className="muted text-sm leading-relaxed">Hedefin görevleri ve içerik önerilerini şekillendirir — iş için e-posta, günlük hayat için komşu sohbeti.</p>
+                <p className="muted text-sm leading-relaxed">{t("onb.goal_intro")}</p>
               </div>
               <div className="mt-5 grid gap-3 sm:grid-cols-2">
                 {GOALS.map((g) => {
@@ -251,18 +266,18 @@ export function CourseOnboarding({
                           <CheckIcon size={13} />
                         </span>
                       ) : null}
-                      <p className="font-bold">{g.title}</p>
-                      <p className="muted mt-1.5 text-xs leading-relaxed">{g.desc}</p>
+                      <p className="font-bold">{t(g.title)}</p>
+                      <p className="muted mt-1.5 text-xs leading-relaxed">{t(g.desc)}</p>
                     </button>
                   );
                 })}
               </div>
               <div className="mt-6 flex gap-2">
                 <button type="button" onClick={() => setStep(0)} className="btn btn-ghost px-4 py-3 text-sm">
-                  Geri
+                  {t("common.back")}
                 </button>
                 <button type="button" disabled={!goal} onClick={() => setStep(2)} className="btn btn-primary flex-1 px-6 py-3 text-base disabled:opacity-60">
-                  Devam
+                  {t("common.continue_2")}
                 </button>
               </div>
             </>
@@ -272,16 +287,16 @@ export function CourseOnboarding({
             <>
               <div className="flex items-start gap-3">
                 <Mascot mood="idle" size={72} stage="onboarding" />
-                <p className="muted text-sm leading-relaxed">Seviyeni 12 dakikalık bir testle ölçebiliriz ya da kendin seçersin. İki yolda da sonradan değiştirmek serbest.</p>
+                <p className="muted text-sm leading-relaxed">{t("onb.level_intro")}</p>
               </div>
               <div className="mt-5 grid gap-3">
                 <button type="button" onClick={() => setLevelMode("measure")} className={`option p-4 text-left ${levelMode === "measure" ? "option-picked" : ""}`}>
-                  <p className="font-bold">Seviyemi ölçelim</p>
-                  <p className="muted mt-1 text-xs">Kelime, dilbilgisi, okuma, dinleme — en çok 15 dakika, sonunda öneri + beceri profili.</p>
+                  <p className="font-bold">{t("onboarding.kisa_yerlestirme_sinavi")}</p>
+                  <p className="muted mt-1 text-xs">{t("onb.measure_desc")}</p>
                 </button>
                 <button type="button" onClick={() => setLevelMode("pick")} className={`option p-4 text-left ${levelMode === "pick" ? "option-picked" : ""}`}>
-                  <p className="font-bold">Seviyemi biliyorum</p>
-                  <p className="muted mt-1 text-xs">Kendin seç; iyi gittikçe sistem yukarı taşır, zorlanırsan alta indirir.</p>
+                  <p className="font-bold">{t("onboarding.pick_level_directly")}</p>
+                  <p className="muted mt-1 text-xs">{t("onb.pick_desc")}</p>
                 </button>
               </div>
               {levelMode === "pick" ? (
@@ -293,12 +308,12 @@ export function CourseOnboarding({
                       </button>
                     ))}
                   </div>
-                  <p className="muted mt-1.5 text-xs">{LEVELS.find((l) => l.id === level)?.desc}.</p>
+                  <p className="muted mt-1.5 text-xs">{t(LEVELS.find((l) => l.id === level)?.desc ?? "")}.</p>
                 </>
               ) : null}
               <div className="mt-6 flex gap-2">
                 <button type="button" onClick={() => setStep(1)} className="btn btn-ghost px-4 py-3 text-sm">
-                  Geri
+                  {t("common.back")}
                 </button>
                 <button
                   type="button"
@@ -306,7 +321,7 @@ export function CourseOnboarding({
                   onClick={toPace}
                   className="btn btn-primary flex-1 px-6 py-3 disabled:opacity-60"
                 >
-                  {levelMode === "measure" ? "Devam" : levelMode === "pick" ? `${level} ile devam` : "Devam"}
+                  {levelMode === "pick" ? t("onb.continue_with", { level }) : t("common.continue_2")}
                 </button>
               </div>
             </>
@@ -317,7 +332,7 @@ export function CourseOnboarding({
               <div className="flex items-start gap-3">
                 <Mascot mood="think" size={72} stage="onboarding" />
                 <p className="muted text-body">
-                  Her gün tekrar et, daha hızlı öğren. Hedefi sonradan Ayarlar&apos;dan değiştirebilirsin.
+                  {t("onb.pace_intro")}
                 </p>
               </div>
               <div className="mt-5 grid gap-3">
@@ -328,14 +343,14 @@ export function CourseOnboarding({
                     onClick={() => setPace(p.goal)}
                     className={`option p-4 text-left ${pace === p.goal ? "option-picked" : ""}`}
                   >
-                    <p className="text-h3">{p.title}</p>
-                    <p className="muted mt-0.5 text-caption">{p.desc}</p>
+                    <p className="text-h3">{t(p.title)}</p>
+                    <p className="muted mt-0.5 text-caption">{t("onboarding.min_day", { n: p.minutes })}</p>
                   </button>
                 ))}
               </div>
               <div className="mt-6 flex gap-2">
                 <button type="button" onClick={() => setStep(2)} className="btn btn-ghost px-4 py-3">
-                  Geri
+                  {t("common.back")}
                 </button>
                 <button
                   type="button"
@@ -343,7 +358,7 @@ export function CourseOnboarding({
                   onClick={() => void finishFromPace()}
                   className="btn btn-primary flex-1 px-6 py-3 disabled:opacity-60"
                 >
-                  {saving ? "Kaydediliyor…" : levelMode === "measure" ? "Teste başla" : "Başla"}
+                  {saving ? t("rounds.saving") : levelMode === "measure" ? t("onb.start_test") : t("common.start")}
                 </button>
               </div>
             </>
@@ -354,9 +369,10 @@ export function CourseOnboarding({
               <div className="flex items-start gap-3">
                 <Mascot mood="cheer" size={80} stage="onboarding" />
                 <div>
-                  <p className="font-bold">Bugünkü planın hazır, {cleanName}.</p>
+                  <p className="font-bold">{t("onb.plan_ready", { name: cleanName })}</p>
                   <p className="muted mt-1 text-sm leading-relaxed">
-                    {course === "gsw-zh" ? "Zürih Almancası" : "Almanca"} · {LEVELS.find((l) => l.id === level)?.id} · hedef: {GOALS.find((g) => g.id === goal)?.title ?? "—"}. Öğren ekranında seni kısa bir kelime turu, sıradaki konuşma ve bir beceri egzersizi bekliyor.
+                    {courseName(course, lang)} · {LEVELS.find((l) => l.id === level)?.id} ·{" "}
+                    {t("onb.summary_goal", { goal: goal ? t(GOALS.find((g) => g.id === goal)!.title) : "—" })}
                   </p>
                 </div>
               </div>
@@ -368,7 +384,7 @@ export function CourseOnboarding({
                 }}
                 className="btn btn-primary mt-7 w-full px-6 py-3.5 text-base"
               >
-                Öğrenmeye başla
+                {t("land.cta_button")}
               </button>
             </>
           ) : null}

@@ -6,6 +6,7 @@ import { PenIcon } from "@/components/icons";
 import { CardSkeleton } from "@/components/skeleton";
 import { AssessmentCard } from "@/components/feedback/assessment-card";
 import type { Assessment } from "@/lib/assess-prompts";
+import { useT } from "@/lib/i18n/client";
 
 type Item = {
   id: number;
@@ -17,11 +18,11 @@ type Item = {
   createdAt: string;
 };
 
-const KIND_LABEL: Record<string, string> = {
-  writing: "Yazma",
-  sentence: "Cümle",
-  speaking: "Konuşma",
-  roleplay: "Rol yapma",
+const KIND_LABEL_KEYS: Record<string, string> = {
+  writing: "exam.sec_writing",
+  sentence: "writ.kind_sentence",
+  speaking: "exam.sec_speaking",
+  roleplay: "writ.kind_roleplay",
 };
 
 /**
@@ -30,6 +31,7 @@ const KIND_LABEL: Record<string, string> = {
  * Açınca aynı değerlendirme kartı — geri bildirim dili her yerde aynı.
  */
 export function WritingsCard({ showEmpty = false }: { showEmpty?: boolean }) {
+  const t = useT();
   const [items, setItems] = useState<Item[] | null | undefined>(undefined);
   const [open, setOpen] = useState<number | null>(null);
 
@@ -51,7 +53,7 @@ export function WritingsCard({ showEmpty = false }: { showEmpty?: boolean }) {
   }, []);
 
   async function remove(id: number) {
-    if (!confirm("Bu yazı ve değerlendirmesi silinsin mi?")) return;
+    if (!confirm(t("writ.delete_confirm"))) return;
     try {
       const res = await fetch(`/api/assessments?id=${id}`, { method: "DELETE" });
       if (res.ok) setItems((list) => (list ?? []).filter((i) => i.id !== id));
@@ -60,7 +62,7 @@ export function WritingsCard({ showEmpty = false }: { showEmpty?: boolean }) {
     }
   }
 
-  if (items === undefined) return <CardSkeleton height={160} label="Yazıların yükleniyor" />;
+  if (items === undefined) return <CardSkeleton height={160} label={t("writ.loading")} />;
   /*
     Boş durum, kartın nerede durduğuna göre değişiyor.
 
@@ -74,8 +76,8 @@ export function WritingsCard({ showEmpty = false }: { showEmpty?: boolean }) {
 
   return (
     <section id="writings" className="card p-5">
-      <h2 className="font-bold">Yazılarım</h2>
-      <p className="muted mt-1 text-xs">Değerlendirilen cümle ve metinlerin. Metinler yalnız sana görünür; istediğini silebilirsin.</p>
+      <h2 className="font-bold">{t("writings.my_writing")}</h2>
+      <p className="muted mt-1 text-xs">{t("writ.sub")}</p>
       <ul className="mt-3 divide-y divide-[color:var(--border)]">
         {items.map((it) => {
           const score = it.result?.score.overall ?? null;
@@ -91,7 +93,7 @@ export function WritingsCard({ showEmpty = false }: { showEmpty?: boolean }) {
                     {it.answer}
                   </span>
                   <span className="muted block text-xs">
-                    {KIND_LABEL[it.kind] ?? it.kind} · {it.level} · {it.day}
+                    {(KIND_LABEL_KEYS[it.kind] ? t(KIND_LABEL_KEYS[it.kind]) : it.kind) ?? it.kind} · {it.level} · {it.day}
                     {score === null ? " · puanlanacak" : ""}
                   </span>
                 </button>
@@ -123,6 +125,7 @@ export function WritingsCard({ showEmpty = false }: { showEmpty?: boolean }) {
  * gidilir. "Henüz yazın yok" tek başına bir duvar; yanına bir kapı gerekiyor.
  */
 function WritingsEmpty() {
+  const t = useT();
   return (
     <section className="card p-6 text-center">
       <span
@@ -134,14 +137,12 @@ function WritingsEmpty() {
       >
         <PenIcon size={22} />
       </span>
-      <h2 className="mt-3 font-bold">Henüz değerlendirilmiş yazın yok</h2>
+      <h2 className="mt-3 font-bold">{t("writ.empty_title")}</h2>
       <p className="muted mx-auto mt-2 max-w-sm text-sm">
-        Yazma alıştırmalarında serbest bir metin yazdığında buraya düşüyor:
-        metnin, aldığı puan ve düzeltmeler bir arada duruyor. Aynı görevi
-        tekrar yazdığında ikisini yan yana görebilirsin.
+        {t("writ.empty_sub")}
       </p>
       <Link href="/immersion" prefetch={false} className="btn btn-primary mt-4 inline-flex px-5 py-2.5 text-sm">
-        Yazma alıştırmalarına git
+        {t("writ.go_to_writing")}
       </Link>
     </section>
   );

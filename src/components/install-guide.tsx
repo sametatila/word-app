@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { CheckIcon, LogoMark } from "@/components/icons";
+import { useT } from "@/lib/i18n/client";
 
 /**
  * Kurulum rehberi — kalıcı, her zaman ulaşılabilir.
@@ -27,40 +28,25 @@ type InstallEvent = Event & {
 
 type Platform = "ios-safari" | "ios-other" | "android" | "desktop";
 
+/* Metin değil ANAHTAR: adımlar gösterildiği yerde çevriliyor. */
 const STEPS: Record<Platform, { title: string; steps: string[]; note?: string }> = {
   "ios-safari": {
-    title: "iPhone / iPad — Safari",
-    steps: [
-      "Ekranın altındaki Paylaş düğmesine dokun (kutudan çıkan ok).",
-      "Listeyi aşağı kaydır ve “Ana Ekrana Ekle”ye dokun.",
-      "Sağ üstteki “Ekle”ye dokun.",
-    ],
+    title: "install.ios_safari",
+    steps: ["install.ios_1", "install.ios_2", "install.ios_3"],
   },
   "ios-other": {
-    title: "iPhone / iPad — Chrome, Firefox ya da başka tarayıcı",
-    steps: [
-      "Bu sayfayı Safari'de aç — iOS'ta ana ekrana ekleme yalnızca Safari'den yapılabiliyor.",
-      "Ekranın altındaki Paylaş düğmesine dokun.",
-      "“Ana Ekrana Ekle” → “Ekle”.",
-    ],
-    note: "Adresi kopyalayıp Safari'ye yapıştırman yeterli.",
+    title: "install.ios_other",
+    steps: ["install.iso_1", "install.iso_2", "install.iso_3"],
+    note: "install.iso_note",
   },
   android: {
-    title: "Android — Chrome",
-    steps: [
-      "Sağ üstteki üç noktalı menüye dokun.",
-      "“Uygulamayı yükle” ya da “Ana ekrana ekle”yi seç.",
-      "Açılan kutuda “Yükle”ye dokun.",
-    ],
-    note: "Menüde göremiyorsan sayfayı bir kez yenile; tarayıcının seçeneği çıkarması birkaç saniye sürebiliyor.",
+    title: "install.android",
+    steps: ["install.and_1", "install.and_2", "install.and_3"],
+    note: "install.and_note",
   },
   desktop: {
-    title: "Bilgisayar — Chrome ya da Edge",
-    steps: [
-      "Adres çubuğunun sağ ucundaki yükleme simgesine tıkla.",
-      "Simge yoksa üç noktalı menüden “Yükle”yi seç.",
-      "Açılan kutuda “Yükle”ye tıkla.",
-    ],
+    title: "install.desktop",
+    steps: ["install.desk_1", "install.desk_2", "install.desk_3"],
   },
 };
 
@@ -77,6 +63,7 @@ function detect(): Platform {
 }
 
 export function InstallGuide({ tone = "surface" }: { tone?: "surface" | "plain" }) {
+  const t = useT();
   const [platform, setPlatform] = useState<Platform | null>(null);
   const [installed, setInstalled] = useState(false);
   const [deferred, setDeferred] = useState<InstallEvent | null>(null);
@@ -119,8 +106,8 @@ export function InstallGuide({ tone = "surface" }: { tone?: "surface" | "plain" 
           <CheckIcon size={16} />
         </span>
         <div className="min-w-0">
-          <p className="text-sm font-bold">Uygulama kurulu</p>
-          <p className="muted text-xs">Lernomi'i ana ekranından açıyorsun.</p>
+          <p className="text-sm font-bold">{t("install.installed")}</p>
+          <p className="muted text-xs">{t("install.installed_sub")}</p>
         </div>
       </div>
     );
@@ -144,7 +131,7 @@ export function InstallGuide({ tone = "surface" }: { tone?: "surface" | "plain" 
           {/* Başlık yok: rehber her iki yerde de kendi başlığı olan bir bölümün
               içinde duruyor, buraya bir tane daha koymak onu tekrarlıyordu. */}
           <p className="text-sm">
-            Tam ekran açılır, çevrimdışı çalışır ve tek dokunuşla girersin. Mağazaya gerek yok.
+            {t("install.pitch")}
           </p>
           {deferred ? (
             <button
@@ -153,7 +140,7 @@ export function InstallGuide({ tone = "surface" }: { tone?: "surface" | "plain" 
               }}
               className="btn btn-primary mt-3 px-5 py-2.5 text-sm"
             >
-              Şimdi kur
+              {t("install.now")}
             </button>
           ) : null}
         </div>
@@ -163,7 +150,7 @@ export function InstallGuide({ tone = "surface" }: { tone?: "surface" | "plain" 
         {shown.map((p) => (
           <div key={p}>
             <p className="text-xs font-bold" style={{ color: "var(--color-brand)" }}>
-              {STEPS[p].title}
+              {t(STEPS[p].title)}
             </p>
             <ol className="mt-1.5 space-y-1.5">
               {STEPS[p].steps.map((step, i) => (
@@ -174,11 +161,11 @@ export function InstallGuide({ tone = "surface" }: { tone?: "surface" | "plain" 
                   >
                     {i + 1}
                   </span>
-                  <span className="min-w-0">{step}</span>
+                  <span className="min-w-0">{t(step)}</span>
                 </li>
               ))}
             </ol>
-            {STEPS[p].note ? <p className="muted mt-1.5 text-xs">{STEPS[p].note}</p> : null}
+            {STEPS[p].note ? <p className="muted mt-1.5 text-xs">{t(STEPS[p].note)}</p> : null}
           </div>
         ))}
       </div>
@@ -187,7 +174,7 @@ export function InstallGuide({ tone = "surface" }: { tone?: "surface" | "plain" 
         onClick={() => setShowAll((v) => !v)}
         className="muted mt-3 text-xs font-semibold underline underline-offset-2"
       >
-        {showAll ? "Yalnızca bu cihazın adımlarını göster" : "Başka bir cihazın adımlarını göster"}
+        {t(showAll ? "install.show_this_device" : "install.show_other_device")}
       </button>
     </div>
   );

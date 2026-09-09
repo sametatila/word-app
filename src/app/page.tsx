@@ -19,6 +19,7 @@ import {
 } from "@/components/icons";
 import { getT, getLang } from "@/lib/i18n/server";
 import { courseName } from "@/lib/courses";
+import { legalPath } from "@/lib/legal";
 
 /* Adlar oyunların kendi anahtarlarından: tanıtım sayfası ile turun içi aynı
    sözcüğü kullanmalı, yoksa ziyaretçi gördüğü oyunu uygulamada tanımıyor. */
@@ -219,8 +220,8 @@ export default async function Home() {
         <br />
         {t("land.footer_gsw")}
         <div className="mt-4 flex flex-wrap justify-center gap-x-4 gap-y-1">
-          <Link href="/privacy" prefetch={false} className="underline-offset-4 hover:underline">{t("auth.privacy_policy")}</Link>
-          <Link href="/terms" prefetch={false} className="underline-offset-4 hover:underline">{t("auth.terms_of_use")}</Link>
+          <Link href={legalPath("privacy", lang)} prefetch={false} className="underline-offset-4 hover:underline">{t("auth.privacy_policy")}</Link>
+          <Link href={legalPath("terms", lang)} prefetch={false} className="underline-offset-4 hover:underline">{t("auth.terms_of_use")}</Link>
           <Link href="/account/delete" prefetch={false} className="underline-offset-4 hover:underline">{t("land.delete_account")}</Link>
         </div>
       </footer>

@@ -14,6 +14,7 @@ import {
   subscribeToPush,
   vapidKey,
 } from "@/lib/push-client";
+import { useT } from "@/lib/i18n/client";
 
 /**
  * Hatırlatma izni isteme kartı.
@@ -35,6 +36,7 @@ const DISMISS_DAYS = 21;
 type State = "hidden" | "ask" | "busy" | "done" | "ios";
 
 export function PushOptIn({ streak }: { streak: number }) {
+  const t = useT();
   const [state, setState] = useState<State>("hidden");
 
   useEffect(() => {
@@ -99,10 +101,10 @@ export function PushOptIn({ streak }: { streak: number }) {
           className="flex items-center gap-2 text-sm font-bold"
           style={{ color: "var(--color-mint)" }}
         >
-          <CheckIcon size={16} /> Hatırlatmalar açık
+          <CheckIcon size={16} /> {t("pushw.reminders_on")}
         </span>
         <p className="muted mt-1 text-xs">
-          Çalışmadığın günlerde kısa bir bildirim göndereceğiz. Profilden kapatabilirsin.
+          {t("pushw.optin_done")}
         </p>
       </Card>
     );
@@ -111,10 +113,9 @@ export function PushOptIn({ streak }: { streak: number }) {
   if (state === "ios") {
     return (
       <Card tone="brand" onClose={dismiss}>
-        <p className="text-sm font-bold">Hatırlatma almak ister misin?</p>
+        <p className="text-sm font-bold">{t("pushw.want_reminders")}</p>
         <p className="muted mt-1 text-xs">
-          iPhone&apos;da bildirim yalnızca uygulama ana ekrana eklenince çalışıyor. Paylaş
-          düğmesine dokunup “Ana Ekrana Ekle”yi seç — sonra profilden açabilirsin.
+          {t("pushw.ios_note")}
         </p>
       </Card>
     );
@@ -135,19 +136,17 @@ export function PushOptIn({ streak }: { streak: number }) {
       icon={<Mascot mood="sleep" size={34} />}
     >
       <p className="text-sm font-bold">
-        {streak > 0 ? `${streak} günlük serini koruyalım mı?` : "Yarın hatırlatalım mı?"}
+        {streak > 0 ? t("pushw.keep_streak", { n: streak }) : t("pushw.remind_tomorrow")}
       </p>
       <p className="muted mt-1 text-xs">
-        {streak > 0
-          ? "Çalışmadığın bir günde kısa bir bildirim gönderelim; seri kırılmadan haberin olsun."
-          : "Tekrar zamanı gelen kelimeler için günde en fazla bir bildirim. Fazlası yok."}
+        {t(streak > 0 ? "pushw.remind_body" : "pushw.remind_note")}
       </p>
       <button
         onClick={() => void enable()}
         disabled={state === "busy"}
         className="btn btn-primary mt-3 w-full px-4 py-2.5 text-sm disabled:opacity-60"
       >
-        {state === "busy" ? "Bekle…" : "Hatırlatmaları aç"}
+        {t(state === "busy" ? "authw.wait" : "pushw.enable")}
       </button>
     </Card>
   );

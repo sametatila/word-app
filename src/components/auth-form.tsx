@@ -7,6 +7,7 @@ import { AuthNotice, AuthShell, authInputClass } from "@/components/auth-shell";
 import { authApi, type SignUpResponse } from "@/lib/auth/api";
 import { isEmailNotVerified, translateAuthError } from "@/lib/auth/errors";
 import { useT, useLang } from "@/lib/i18n/client";
+import { legalPath } from "@/lib/legal";
 
 type Mode = "signin" | "signup";
 
@@ -114,11 +115,11 @@ export function AuthForm() {
               içine bağlantı gömmek çeviride ek uyumuna takılıyordu. */}
           <p className="mb-1 text-xs leading-relaxed">{t("auth.legal_notice")}</p>
           <p className="mb-3 text-xs leading-relaxed">
-            <Link href="/terms" prefetch={false} className="underline underline-offset-4">
+            <Link href={legalPath("terms", lang)} prefetch={false} className="underline underline-offset-4">
               {t("auth.terms_of_use")}
             </Link>{" "}
             ·{" "}
-            <Link href="/privacy" prefetch={false} className="underline underline-offset-4">
+            <Link href={legalPath("privacy", lang)} prefetch={false} className="underline underline-offset-4">
               {t("auth.privacy_policy")}
             </Link>
           </p>
