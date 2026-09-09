@@ -258,6 +258,31 @@ const IRREGULAR = {
   springen: ["sprang", "gesprungen"],
   sinken: ["sank", "gesunken"],
   weisen: ["wies", "gewiesen"],
+  /*
+    ei → i/ie SINIFI TAMAMLANDI. Listede `schneiden`, `steigen`, `schreiben`,
+    `bleiben`, `treiben`, `weisen` vardı ama aynı sınıfın on dört fiili yoktu —
+    ve hepsi havuzda başlık olarak geçiyor, çoğu ön ekli bileşik hâlinde
+    (`entscheiden`, `unterscheiden`, `vermeiden`, `ausleihen`, `unterstreichen`,
+    `abweichen`, `abstreiten`). Eksikliği `leiden` → "gelitten" ortaya çıkardı:
+    "Im Krieg haben viele Menschen gelitten" kusursuz Almanca ve reddediliyordu.
+
+    Ekleme yalnız KABULÜ genişletiyor, yani daha önce geçen hiçbir madde
+    düşemez; Almanca anlam hattı zaten 0 hatada ve orada bir şey değişmiyor.
+  */
+  leiden: ["litt", "gelitten"],
+  streiten: ["stritt", "gestritten"],
+  reiten: ["ritt", "geritten"],
+  pfeifen: ["pfiff", "gepfiffen"],
+  beißen: ["biss", "gebissen"],
+  gleiten: ["glitt", "geglitten"],
+  schreien: ["schrie", "geschrien"],
+  leihen: ["lieh", "geliehen"],
+  meiden: ["mied", "gemieden"],
+  scheiden: ["schied", "geschieden"],
+  reißen: ["riss", "gerissen"],
+  schleichen: ["schlich", "geschlichen"],
+  streichen: ["strich", "gestrichen"],
+  weichen: ["wich", "gewichen"],
   greifen: ["griff", "gegriffen"],
   // Ayrılabilir bileşiklerde çok üretken olanlar: anwerben/abwerben,
   // antreten/auftreten/eintreten/zurücktreten. Bunlar listede yokken o
