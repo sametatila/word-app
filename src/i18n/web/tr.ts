@@ -1041,7 +1041,7 @@ export const trWeb: Record<string, string> = {
   "prac.order": "Cümleyi doğru sıraya diz",
   "prac.plural": "Çoğul biçimini bil",
   "prac.translate": "Cümleyi hedef dile çevir",
-  "prac.note": "Tur, aralıklı tekrar kuyruğundan senin kelimelerinle kurulur; oyun türü sabit kalır. Karışık çalışmak için Öğren sekmesindeki normal turu kullan.",
+  "prac.note": "Tur, aralıklı tekrar kuyruğundan senin kelimelerinle kurulur; oyun türü sabit kalır. Pratik kaldığı yerden sürmez, her açılışta taze başlar.",
   "prog.by_level": "CEFR seviyesine göre",
   "prog.bar_note": "Koyu bölüm pekişmiş (21+ gün aralık), açık bölüm görülmüş kelimeleri gösterir. Toplam {seen}/{total}.",
   "prog.review_queue": "Tekrar kuyruğu",

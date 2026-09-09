@@ -1016,7 +1016,7 @@ export const enWeb: Record<string, string> = {
   "prac.order": "Put the sentence in the right order",
   "prac.plural": "Know the plural form",
   "prac.translate": "Translate the sentence into the target language",
-  "prac.note": "The round is built from your own words in the spaced-repetition queue; the game type stays fixed. For a mixed session, use the normal round on the Learn tab.",
+  "prac.note": "The round is built from your own words in the spaced-repetition queue; the game type stays fixed. Practice does not resume: every visit starts a fresh round.",
   "prog.by_level": "By CEFR level",
   "prog.bar_note": "The dark part is mastered (21+ day interval), the light part words you've seen. Total {seen}/{total}.",
   "prog.review_queue": "Review queue",

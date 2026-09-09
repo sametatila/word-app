@@ -1016,7 +1016,7 @@ export const deWeb: Record<string, string> = {
   "prac.order": "Bring den Satz in die richtige Reihenfolge",
   "prac.plural": "Kenn die Pluralform",
   "prac.translate": "Übersetz den Satz in die Zielsprache",
-  "prac.note": "Die Runde entsteht aus deinen eigenen Wörtern in der Wiederholungsschlange; die Spielart bleibt gleich. Für gemischtes Üben nimm die normale Runde im Lernen-Bereich.",
+  "prac.note": "Die Runde entsteht aus deinen eigenen Wörtern in der Wiederholungsschlange; die Spielart bleibt gleich. Die Übung wird nicht fortgesetzt: Jeder Besuch startet eine frische Runde.",
   "prog.by_level": "Nach GER-Stufe",
   "prog.bar_note": "Der dunkle Teil ist gefestigt (Intervall ab 21 Tagen), der helle Teil gesehene Wörter. Gesamt {seen}/{total}.",
   "prog.review_queue": "Wiederholungsschlange",
