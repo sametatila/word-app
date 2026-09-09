@@ -1,6 +1,7 @@
 import type { CefrLevel } from "@/lib/skills/types";
 import type { Lesson } from "@/lib/lessons/types";
 import { MODULE_SIZE, moduleTheme } from "@/lib/lessons/modules";
+import { translate, DEFAULT_NATIVE } from "@/lib/i18n/dict";
 import { lessonsFor } from "@/lib/lessons/index";
 import { listExerciseMeta, pathMetas, type SkillMeta } from "@/lib/skills/index";
 import { hasAuthoredGrammar } from "./content";
@@ -40,14 +41,15 @@ function slotPlan(): ImmersionItemKind[] {
   return [...BASE_PATTERN, "grammar", "quiz", "checkpoint"];
 }
 
-const SKILL_TITLE: Record<"read" | "listen" | "write", string> = {
-  read: "Okuma", listen: "Dinleme", write: "Yazma",
+/** İçeriği henüz olmayan beceri yuvasının adı — arayüz metni, çevrilir. */
+const SKILL_TITLE_KEY: Record<"read" | "listen" | "write", string> = {
+  read: "unitkind.read", listen: "unitkind.listen", write: "unitkind.write",
 };
 
 /** Ünite teması — ilk dersinin düştüğü modülden; taşarsa seviye+sıra. */
-function unitTheme(level: CefrLevel, firstLessonIndex: number, unitIndex: number): string {
+function unitTheme(level: CefrLevel, firstLessonIndex: number, fallback: string): string {
   const theme = moduleTheme(level, Math.floor(firstLessonIndex / MODULE_SIZE));
-  return theme || `${level} · Ünite ${unitIndex}`;
+  return theme || fallback;
 }
 
 export type BuildTrackInput = {
@@ -61,10 +63,24 @@ export type BuildTrackInput = {
   writing?: SkillMeta[];
   /** Grup boyutu (varsayılan GROUP_SIZE). */
   groupSize?: number;
+  /**
+   * Yer tutucu başlıkların çevirisi.
+   *
+   * Ders ve beceri başlıkları İÇERİK (kendi dilinde yazılmış, çevrilmez); ama
+   * "Dil bilgisi", "Tekrar", "Kontrol Noktası" ve içeriği henüz olmayan beceri
+   * yuvasının adı ARAYÜZ metni. Bunlar sunucuda Türkçe sabit yazılıydı ve
+   * /api/immersion onları olduğu gibi gönderiyordu: arayüzü İngilizce olan
+   * kullanıcı Patika'da Türkçe satırlar görüyordu. Sözlük denetimi bunu
+   * bulamazdı, çünkü metinler sözlüğe hiç girmemişti.
+   *
+   * Verilmezse Türkçeye düşer — testler ve betikler için.
+   */
+  t?: (key: string) => string;
 };
 
 export function buildTrack(input: BuildTrackInput): ImmersionTrack {
   const { course, level, lessons } = input;
+  const t = input.t ?? ((key: string) => translate(DEFAULT_NATIVE, key));
   const groupSize = input.groupSize ?? GROUP_SIZE;
   const levelLower = level.toLowerCase();
   const pools: Record<"read" | "listen" | "write", SkillMeta[]> = {
@@ -96,8 +112,8 @@ export function buildTrack(input: BuildTrackInput): ImmersionTrack {
         items.push({
           id, kind,
           ref: meta?.id ?? null,
-          title: meta?.title ?? SKILL_TITLE[kind],
-          titleTr: meta?.genre ?? SKILL_TITLE[kind],
+          title: meta?.title ?? t(SKILL_TITLE_KEY[kind]),
+          titleTr: meta?.genre ?? t(SKILL_TITLE_KEY[kind]),
         });
       } else if (kind === "grammar") {
         // Gramer artık TÜRETİLEBİLİYOR (lib/immersion/grammar.ts): elle
@@ -105,13 +121,13 @@ export function buildTrack(input: BuildTrackInput): ImmersionTrack {
         // adımlarından kuruluyor. Ders taşıyan her ünitede oynanabilir; dersi
         // olmayan (eksik son ünite) yer tutucu kalır.
         const gRef = hasAuthoredGrammar(unitId) || unitLessons.length ? unitId : null;
-        items.push({ id, kind, ref: gRef, title: "Dil bilgisi", titleTr: "Odak alıştırması" });
+        items.push({ id, kind, ref: gRef, title: t("unitkind.grammar"), titleTr: t("path.slot_grammar_sub") });
       } else if (kind === "quiz") {
         // quiz/checkpoint ünitenin brief'inden TÜRETİLİR (deriveQuiz) → oynanabilir.
         // ref = unitId: oynatıcı rotası hangi üniteden soru üreteceğini bundan bilir.
-        items.push({ id, kind, ref: unitId, title: "Tekrar", titleTr: "Karışık hatırlama" });
+        items.push({ id, kind, ref: unitId, title: t("unitkind.quiz"), titleTr: t("path.slot_quiz_sub") });
       } else {
-        items.push({ id, kind, ref: unitId, title: "Kontrol Noktası", titleTr: "Üniteyi bitir" });
+        items.push({ id, kind, ref: unitId, title: t("path.slot_checkpoint"), titleTr: t("path.slot_checkpoint_sub") });
       }
     }
 
@@ -121,7 +137,7 @@ export function buildTrack(input: BuildTrackInput): ImmersionTrack {
       group: Math.floor(u / groupSize),
       level,
       course,
-      theme: unitTheme(level, u * UNIT_LESSONS, index),
+      theme: unitTheme(level, u * UNIT_LESSONS, `${level} · ${t("common.unit")} ${index}`),
       items,
       lessonCount: items.filter((it) => it.kind === "lesson").length,
     });
@@ -131,7 +147,12 @@ export function buildTrack(input: BuildTrackInput): ImmersionTrack {
 }
 
 /** DB'den okuyup buildTrack'i çağıran ince sarmalayıcı. */
-export async function loadTrack(course: string, level: CefrLevel): Promise<ImmersionTrack> {
+export async function loadTrack(
+  course: string,
+  level: CefrLevel,
+  /** Yer tutucu başlıkların dili — çağıranın dili (bkz. BuildTrackInput.t). */
+  t?: (key: string) => string,
+): Promise<ImmersionTrack> {
   const lessons = lessonsFor(course).filter((l) => l.level === level);
   // Yalnız üniteye bağlı egzersizler: havuz liste sırasıyla tüketiliyor ve
   // Beceriler kütüphanesinin ünitesiz egzersizleri (2026-09) bu listeye
@@ -146,5 +167,6 @@ export async function loadTrack(course: string, level: CefrLevel): Promise<Immer
     reading: byLevel.filter((m) => m.skill === "reading"),
     listening: byLevel.filter((m) => m.skill === "listening"),
     writing: byLevel.filter((m) => m.skill === "writing"),
+    t,
   });
 }

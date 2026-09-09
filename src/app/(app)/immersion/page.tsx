@@ -1,4 +1,5 @@
 import { getUserInfo } from "@/lib/auth/server";
+import { getT } from "@/lib/i18n/server";
 import { ensureProfile } from "@/lib/session";
 import { loadTrack } from "@/lib/immersion/build";
 import { buildTrackState } from "@/lib/immersion/state";
@@ -19,6 +20,7 @@ const LEVELS: CefrLevel[] = ["A1", "A2", "B1", "B2", "C1"];
  * kurulur, kullanıcının ilerlemesiyle gating hesaplanır, sunucuda çizilir.
  */
 export default async function ImmersionPage() {
+  const t = await getT();
   const user = await getUserInfo();
   if (!user) return null;
 
@@ -36,7 +38,7 @@ export default async function ImmersionPage() {
   // yerleştirme testiyle belirlenir, patika ekranından değiştirilmez.
   const level = profileLevel;
 
-  const track = await loadTrack(course, level);
+  const track = await loadTrack(course, level, t);
   const completion = await immersionCompletion(user.id, course);
   const state = buildTrackState(track, completion);
 
