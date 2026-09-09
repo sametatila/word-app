@@ -100,7 +100,7 @@ export function FirstPractice() {
 
       <div className="flex flex-1 flex-col items-center justify-center gap-4 text-center">
         <p className="text-caption uppercase tracking-widest" style={{ color: "var(--color-brand)" }}>
-          {t("firstw.title")}
+          {t("firstpractice.first_words")}
         </p>
         <p className="text-display">{withArtikel(w)}</p>
 

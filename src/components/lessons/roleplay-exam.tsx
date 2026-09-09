@@ -343,7 +343,7 @@ export function RoleplayExam({ lesson, cando }: { lesson: Lesson; cando: string[
           lang="de"
           placeholder={
             listening
-              ? t("rpexam.listening")
+              ? t("speak.listening")
               : asr
                 ? t("rpexam.speak_or_type")
                 : t("lesson.type_in", { lang: targetName })

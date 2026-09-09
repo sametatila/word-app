@@ -95,7 +95,7 @@ export function LangSetting({ bare = false }: { bare?: boolean } = {}) {
     );
   }
   return (
-    <SettingRow title={t("lang.app_language")} sub={t("lang.app_language_sub")}>
+    <SettingRow title={t("settings.app_language")} sub={t("lang.app_language_sub")}>
       {chips}
     </SettingRow>
   );
