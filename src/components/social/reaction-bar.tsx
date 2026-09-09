@@ -46,7 +46,7 @@ export function ReactionBar({
   }
 
   const present = REACTION_KINDS.filter((k) => (s.counts[k] ?? 0) > 0);
-  const who = s.names.length ? `${s.names.join(", ")}${s.total > s.names.length ? t("social.and_others", { n: s.total - s.names.length }) : ""}` : "";
+  const who = s.names.length ? `${s.names.map((n) => n ?? t("social.unnamed")).join(", ")}${s.total > s.names.length ? t("social.and_others", { n: s.total - s.names.length }) : ""}` : "";
 
   return (
     <div className="mt-2 flex flex-wrap items-center gap-1.5">

@@ -65,7 +65,7 @@ export async function reactionSummaries(eventIds: number[], me: string): Promise
   const users = await publicUsers(allIds);
   for (const [eventId, ids] of sampleIds) {
     const s = map.get(eventId);
-    if (s) s.names = ids.map((id) => users.get(id)?.name ?? "Biri");
+    if (s) s.names = ids.map((id) => users.get(id)?.name ?? null);
   }
   return map;
 }

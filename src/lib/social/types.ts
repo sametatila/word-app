@@ -107,7 +107,9 @@ export type ReactionSummary = {
   total: number;
   mine: ReactionKind | null;
   /** Son tepki verenlerden en çok üç ad — "Ali, Ayşe ve 2 kişi". */
-  names: string[];
+  /** Adsız kullanıcı `null` gelir: yedek metin ARAYÜZDE, kullanıcının dilinde
+   *  yazılıyor (burada sabit "Biri" yazılıydı ve her dilde Türkçe çıkıyordu). */
+  names: (string | null)[];
 };
 
 export type FeedItem = {

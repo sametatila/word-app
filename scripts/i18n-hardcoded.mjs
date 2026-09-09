@@ -67,6 +67,71 @@ const SKIP = [
 ].map((p) => path.join(SRC, ...p.split("/")));
 
 const TURKISH_LETTERS = /[çğışöüÇĞİŞÖÜ]/;
+
+/**
+ * İKİNCİ KURAL — Türkçe'ye özgü harf TAŞIMAYAN Türkçe metin.
+ *
+ * Üstteki sezgi ölçüldü ve yarısını kaçırıyordu: "tamam", "Kontrol et",
+ * "Bitir", "Sorular", "Kural", "Durdur", "Dinle", "Ekle" — hiçbirinde
+ * çğışöü yok, dolayısıyla hiçbiri sayılmıyordu. Bir tarama turunda bu
+ * yoldan 36 ham metin çıktı; hepsi kullanıcının gördüğü düğme ve etiketti.
+ * Mobil tarafta da bir ASCII kuralı var ama sabit bir durak sözcük listesine
+ * bakıyor ve boşluk şart koşuyor, yani tek sözcüklük düğmeleri göremiyor.
+ *
+ * Sinyal SÖZLÜĞÜN KENDİSİ: adayın her sözcüğü Türkçe sözlükte geçiyorsa ve
+ * hiçbiri İngilizce/Almanca sözlükte geçmiyorsa o metin çevrilmemiş Türkçedir.
+ * Sabit sözcük listesi tutmaya gerek yok — sözlük zaten ürünün Türkçesi.
+ *
+ * Kod parçaları eleniyor: içinde kod noktalaması olan aday metin değildir
+ * (`{r.isMe ?`, `/ilk-kelimeler`, `if (--kalan === 0)` gibi ayrıştırma artıkları).
+ */
+const CODEY = /[(){}\[\]<>=;\/\\|&$*+"'`~^%@#]/;
+
+/**
+ * İkinci kuraldan MUAF dosyalar — hepsinde Türkçe olması DOĞRU:
+ *
+ *   - `lib/voice-intent.ts` — konuşma tanıma anahtar sözcükleri. Kullanıcının
+ *     söylediği Türkçe sözcükler burada aranıyor; çevrilirse tanıma bozulur.
+ *   - `lib/social/username.ts` — ayrılmış kullanıcı adları kara listesi.
+ *   - `lib/why.ts` — `strength: "hep" | "genelde"` tip değerleri, metin değil.
+ *   - `lib/courses.ts` — dil adlarının dile göre haritası; Türkçe satırı Türkçe.
+ *   - `lib/server-metrics.ts`, `app/manifest.ts`, `app/sitemap.ts` — komut
+ *     adları, kısayol adı ve adresler.
+ *   - `components/screen-diag.tsx` — `?diag=1` paneli, bilerek tek dil.
+ */
+const SKIP_ASCII = [
+  "lib/voice-intent.ts",
+  "lib/social/username.ts",
+  "lib/why.ts",
+  "lib/courses.ts",
+  "lib/server-metrics.ts",
+  "app/manifest.ts",
+  "app/sitemap.ts",
+  "components/screen-diag.tsx",
+].map((p) => path.join(SRC, ...p.split("/")));
+
+/** Sözlükten sözcük kümesi — `"anahtar": "metin"` satırlarını okur. */
+function dictTokens(files) {
+  const set = new Set();
+  for (const f of files) {
+    if (!fs.existsSync(f)) continue;
+    for (const m of fs.readFileSync(f, "utf8").matchAll(/^\s*"[^"]+":\s*"((?:[^"\\]|\\.)*)",?\s*$/gm)) {
+      for (const w of m[1].toLocaleLowerCase("tr").match(/[a-zçğıöşü]+/g) ?? []) if (w.length > 2) set.add(w);
+    }
+  }
+  return set;
+}
+const DICTS = (lang) => [path.join(SRC, "i18n", "base", `${lang}.ts`), path.join(SRC, "i18n", "web", `${lang}.ts`)];
+const TR_WORDS = dictTokens(DICTS("tr"));
+const FOREIGN_WORDS = new Set([...dictTokens(DICTS("en")), ...dictTokens(DICTS("de"))]);
+
+/** Türkçe'ye özgü harf olmadan Türkçe mi? */
+function asciiTurkish(text) {
+  if (CODEY.test(text)) return false;
+  const words = (text.toLocaleLowerCase("tr").match(/[a-zçğıöşü]+/g) ?? []).filter((w) => w.length > 2);
+  if (!words.length) return false;
+  return words.every((w) => TR_WORDS.has(w) && !FOREIGN_WORDS.has(w));
+}
 const SEP = "";
 
 function walk(dir, out = []) {
@@ -131,8 +196,10 @@ function scan() {
       const wasInside = inTemplate;
       if (ticks % 2 === 1) inTemplate = !inTemplate;
       if (wasInside) return;
+      const asciiSkipped = SKIP_ASCII.some((x) => file === x);
       for (const text of candidates(line)) {
         if (TURKISH_LETTERS.test(text)) (hard[rel] ??= []).push({ line: i + 1, text });
+        else if (!asciiSkipped && asciiTurkish(text)) (hard[rel] ??= []).push({ line: i + 1, text });
       }
     });
   }
