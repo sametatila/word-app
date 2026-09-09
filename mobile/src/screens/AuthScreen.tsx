@@ -134,7 +134,7 @@ export function AuthScreen() {
           Yalnız e-posta formundan sağlayıcı listesine geri dönülür. */}
       <View style={{ flexDirection: "row", alignItems: "center", paddingTop: insets.top + spacing.sm, paddingHorizontal: spacing.lg, minHeight: 44 }}>
         {view === "email" && (
-          <PressableScale hitSlop={4} onPress={() => { setView("options"); setError(null); }} style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
+          <PressableScale accessibilityLabel={t("common.back")} hitSlop={4} onPress={() => { setView("options"); setError(null); }} style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
             <ArrowBackIcon color={colors.text} size={24} />
           </PressableScale>
         )}

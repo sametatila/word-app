@@ -36,7 +36,9 @@ export function FeedCard({ item }: { item: FeedItem }) {
   return (
     <Card padded style={{ marginBottom: spacing.md }}>
       <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md }}>
-        <PressableScale onPress={open}><PersonAvatar userId={item.user.userId} name={item.user.name} size={44} /></PressableScale>
+        {/* Ad bu kartta basılabilir DEĞİL; profile giden tek yol avatar. Adsız
+            bırakılırsa ekran okuyucu yalnız "düğme" diyor. */}
+        <PressableScale accessibilityLabel={item.user.name ?? t("social.unnamed")} onPress={open}><PersonAvatar userId={item.user.userId} name={item.user.name} size={44} /></PressableScale>
         <View style={{ flex: 1 }}>
           <Text variant="h3" numberOfLines={1}>{item.isMine ? t("social.you") : item.user.name ?? t("social.unnamed")}</Text>
           <Text variant="caption" color={colors.textMuted}>{timeAgo(item.createdAt)}</Text>

@@ -115,7 +115,7 @@ function markAnswer(ok: boolean, speak?: string | null): void {
 function SpeakButton({ text, colors, size = 20 }: { text: string; colors: Palette; size?: number }) {
   if (!text?.trim()) return null;
   return (
-    <PressableScale onPress={() => speakTarget(text)} hitSlop={8} style={{ padding: 4 }}>
+    <PressableScale accessibilityLabel={tx("item.listen")} onPress={() => speakTarget(text)} hitSlop={8} style={{ padding: 4 }}>
       <SpeakerIcon color={colors.primary} size={size} />
     </PressableScale>
   );
@@ -590,7 +590,7 @@ function ListenRound({ round, onDone, colors }: { round: Round; onDone: Done; co
       <View style={[{ backgroundColor: colors.surface, borderRadius: radii.xl, paddingVertical: spacing.xxl, paddingHorizontal: spacing.lg, alignItems: "center", borderWidth: 1, borderColor: colors.hairline, marginBottom: spacing.md }, softShadow("#5a3418", 10)]}>
         <Text variant="micro" color={colors.textMuted} style={{ textTransform: "uppercase", letterSpacing: 1 }}>{tx("rounds.listen_pick_meaning")}</Text>
         {hideWord ? (
-          <PressableScale onPress={() => speakTarget(withArtikel(word))} style={[{ width: 84, height: 84, borderRadius: 42, backgroundColor: colors.primary, alignItems: "center", justifyContent: "center", marginTop: spacing.lg }, softShadow(colors.primary, 12)]}>
+          <PressableScale accessibilityLabel={tx("item.listen")} onPress={() => speakTarget(withArtikel(word))} style={[{ width: 84, height: 84, borderRadius: 42, backgroundColor: colors.primary, alignItems: "center", justifyContent: "center", marginTop: spacing.lg }, softShadow(colors.primary, 12)]}>
             <SpeakerIcon color="#fff" size={38} />
           </PressableScale>
         ) : (

@@ -475,7 +475,7 @@ function TextSection({ it, spoken, colors, pad, onDone }: { it: TextItem; spoken
         {it.text ? <Text variant="body" style={{ lineHeight: 23, marginTop: spacing.xs }}>{it.text}</Text> : null}
         {it.segments?.map((s, i) => (
           <View key={i} style={{ flexDirection: "row", alignItems: "flex-start", gap: spacing.sm, marginTop: spacing.xs }}>
-            <PressableScale onPress={() => void speakTarget(s.text)} hitSlop={6}><SpeakerIcon color={colors.textMuted} size={18} /></PressableScale>
+            <PressableScale accessibilityLabel={t("item.listen")} onPress={() => void speakTarget(s.text)} hitSlop={6}><SpeakerIcon color={colors.textMuted} size={18} /></PressableScale>
             <Text variant="body" style={{ flex: 1, lineHeight: 22 }}>{spoken ? (s.speaker ? `${s.speaker}: ` : "") + s.text : s.text}</Text>
           </View>
         ))}
@@ -532,7 +532,7 @@ function Speak({ it, colors, pad, onDone }: { it: SpeakingItem; colors: Palette;
         {it.situation ? <Text variant="caption" color={colors.textMuted}>{it.situation}</Text> : null}
         <View style={{ flexDirection: "row", alignItems: "flex-start", gap: spacing.sm }}>
           <Text variant="h3" style={{ flex: 1 }}>{it.de}</Text>
-          <PressableScale onPress={() => void speakTarget(it.de)} hitSlop={6}><SpeakerIcon color={colors.textMuted} size={20} /></PressableScale>
+          <PressableScale accessibilityLabel={t("item.listen")} onPress={() => void speakTarget(it.de)} hitSlop={6}><SpeakerIcon color={colors.textMuted} size={20} /></PressableScale>
         </View>
         <Text variant="body" color={colors.textMuted}>{it.tr}</Text>
         {heard ? <Text variant="caption" color={colors.textMuted}>{t("speak.heard")}: {heard}</Text> : null}

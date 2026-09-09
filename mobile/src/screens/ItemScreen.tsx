@@ -50,7 +50,7 @@ function ListeningBody({ segments, colors }: { segments: ListeningSegment[]; col
   return (
     <>
       <Card style={{ alignItems: "center", marginTop: spacing.md, paddingVertical: spacing.xl }}>
-        <PressableScale onPress={() => speakTarget(full)} style={[{ width: 80, height: 80, borderRadius: 40, backgroundColor: colors.accent, alignItems: "center", justifyContent: "center" }, softShadow(colors.accent, 12)]}>
+        <PressableScale accessibilityLabel={t("item.listen")} onPress={() => speakTarget(full)} style={[{ width: 80, height: 80, borderRadius: 40, backgroundColor: colors.accent, alignItems: "center", justifyContent: "center" }, softShadow(colors.accent, 12)]}>
           <SpeakerIcon color="#fff" size={34} />
         </PressableScale>
         <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.md }}>{t("item.listen_and_understand")}</Text>
@@ -62,7 +62,7 @@ function ListeningBody({ segments, colors }: { segments: ListeningSegment[]; col
         <Card style={{ marginTop: spacing.sm }}>
           {segments.map((s, i) => (
             <View key={i} style={{ marginTop: i > 0 ? spacing.md : 0, flexDirection: "row", alignItems: "flex-start", gap: spacing.sm }}>
-              <PressableScale onPress={() => speakTarget(s.text)} hitSlop={6} style={{ marginTop: 2 }}><SpeakerIcon color={colors.textMuted} size={16} /></PressableScale>
+              <PressableScale accessibilityLabel={t("item.listen")} onPress={() => speakTarget(s.text)} hitSlop={6} style={{ marginTop: 2 }}><SpeakerIcon color={colors.textMuted} size={16} /></PressableScale>
               <View style={{ flex: 1 }}>
                 {s.speaker ? <Text variant="micro" color={colors.textMuted}>{s.speaker}</Text> : null}
                 <Text variant="body" style={{ lineHeight: 24 }}>{s.text}</Text>
