@@ -96,7 +96,10 @@ for (const p of packets) {
     continue;
   }
 
-  for (const r of out) (fixes.has(r.id) ? 1 : 0) ? written++ : kept++;
+  for (const r of out) {
+    if (fixes.has(r.id)) written++;
+    else kept++;
+  }
   writeFileSync(`${OUT}/${p}.json`, `${JSON.stringify(out, null, 1)}\n`);
   built++;
 }
