@@ -1516,7 +1516,21 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
 
   // ── Görünüm ────────────────────────────────────────────────────────
 
-  const total = session?.rounds.length ?? 0;
+  /**
+   * Sayaç SORU turlarını sayar, öğretme (intro) turlarını DEĞİL.
+   *
+   * Eskiden `rounds.length` idi ve öğretme turları da paydaya giriyordu: üstte
+   * "7 / 20" yazarken bitiş ekranı "4 doğru / 12" diyordu — aynı turun iki ayrı
+   * paydası. Öğretme turu bir soru değil, cevabı da yok; bitişteki toplam zaten
+   * yalnız soruları sayıyor. Mobil bunu böyle yapıyor, ikisi artık aynı.
+   */
+  const rounds = session?.rounds ?? [];
+  const total = rounds.filter((r) => r.game !== "intro").length || rounds.length;
+  const step = Math.min(
+    total,
+    rounds.slice(0, index).filter((r) => r.game !== "intro").length +
+      (rounds[index] && rounds[index].game !== "intro" ? 1 : 0),
+  );
 
   if (status === "loading") return <Frame><p className="muted">{t("walk.preparing")}</p></Frame>;
 
@@ -1590,7 +1604,7 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
         ) : null}
         <div className="mt-4 rounded-xl px-3 py-2.5 text-center text-sm" style={{ background: "var(--surface-2)" }}>
           <span className="muted">{t("walk.where_you_left")} </span>
-          <strong>{Math.min(index + 1, total)}</strong>
+          <strong>{Math.max(1, step)}</strong>
           <span className="muted"> / {t("walk.n_rounds", { n: total })}</span>
         </div>
         {/*
@@ -1655,7 +1669,7 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
       ) : null}
 
       <div className="mb-4 flex items-baseline justify-between text-xs font-semibold">
-        <span className="muted">{index + 1} / {total}</span>
+        <span className="muted">{Math.max(1, step)} / {total}</span>
         <span className="flex items-center gap-2">
           {/* Kip ekranda yazıyor: cepte kipinde cevaplar ölçülmüyor ve bunu
               bilmeyen kullanıcı "neden sayı artmıyor" diye sorardı. */}
