@@ -214,9 +214,39 @@ olur.
 ikinci bir oturum şu anda tam orayı düzenliyor (bkz. `8b6a131f`, `d2d11677`).
 Çakışmamak için o dosyalara dokunulmadı.
 
-### 4. sırada
+### 4. lessons — ÖLÇÜLDÜ: eksenin en büyük kalemi, tek başına ötekilerin toplamından fazla
 
-4. `lessons` · anlatım metni
+59 dosya, `src/lib/lessons/content/`:
+
+```
+ders                 580
+tr() segment      17.369   ← öğretmenin konuşma metni · İngilizcesi 0
+de() segment       8.486   ← hedef dil, çevrilmez
+titleTr + summary  1.160   ← İngilizcesi 0
+vocab girdisi      4.640   ← %99,6'sı kelime havuzundan TÜRETİLEBİLİR (19 eksik)
+patterns girdisi   1.292   ← %0,3 · kalıp cümleler havuzda yok, elle
+```
+
+Elle yazılacak: **19.840 dize** (19 + 1.292 + 1.160 + 17.369). Bunun
+%88'i tek bir alan: `lecture`. Karşılaştırma için en→de örnek cümleleri
+7.175'ti — yani bu kalem tek başına onun 2,8 katı.
+
+Türetilebilirlik ölçüldü, tahmin edilmedi: `vocab` girdileri `{de, tr}`
+çiftleri ve Almanca başlık kelime havuzunda `en` alanıyla duruyor. Eksik
+kalan 19 madde ortaç (gemacht, gekauft, gesehen…) ve birkaç işlev sözcüğü.
+`patterns` ise tam cümle kalıbı ("Ich heiße …") ve havuzda karşılığı yok —
+bu yüzden %0,3.
+
+Kalem BÖLÜNEMİYOR. Sözlükçesi ve başlıkları İngilizce, anlatımı Türkçe bir
+ders yarım çeviridir ve Faz 1'in kuralı bunu yasaklıyor: karşılık yoksa
+`null` döner, Türkçeye DÜŞMEZ. Yarım ders "görünürde çalışan" en kötü
+biçimdir.
+
+**Tip hazır.** `Segment.lang` birleşimi zaten `"tr" | "de" | "en"` —
+`en()` yardımcısı ve içerik yok, ama alan tipi bunu bekliyordu. `lang`
+etiketi yalnız ekranı değil TTS sesini ve mikrofon dilini de seçiyor, o
+yüzden İngilizce anlatımın `en` etiketli olması zorunlu, Türkçe metnin
+yerine İngilizce yazmak yetmez.
 
 Kaynak `data/app/words-*.json` (JSONL) ve `data/skills/`; tohumlama
 `scripts/seed-*.ts`. Çeviriler **doğal** olmak zorunda: sözlük karşılığı değil,
