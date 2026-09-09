@@ -134,6 +134,45 @@ for (const f of readdirSync(IN).filter((x) => x.endsWith(".json"))) {
 }
 const twinGroups = [...byGloss.values()].filter((n) => n > 1).length;
 
+/*
+  KAPSAM — cümleler geçerli mi'nin yanında "her satır bir cümle alıyor mu".
+
+  Paket denetimi `in/` ile `out/`u karşılaştırıyor, ama `in/` da üretilmiş bir
+  dosya. Asıl soru tohumlamanın gördüğü soru: `words-en.json`daki her satır
+  için `deGloss` çözülüyor ve `out/`ta bir cümle bulunuyor mu? Yol yanlış,
+  alan adı yanlış ya da id kayması olsa paketler yine 0 hata verirdi — ve
+  7.175 cümle hiç yüklenmezdi. Bu blok `seed-english.ts`in mantığını
+  veritabanına dokunmadan aynen tekrarlıyor.
+
+  Yalnız `all` denetiminde çalışıyor: tek paket bakılırken kapsam sorusu
+  anlamsız.
+*/
+let coverage = null;
+if (ARG === "all") {
+  const german = new Map(
+    JSON.parse(readFileSync(`${ROOT}data/app/words.json`, "utf8")).map((r) => [r.id, r.de]),
+  );
+  const sentences = new Set();
+  for (const f of readdirSync(OUT).filter((x) => x.endsWith(".json")))
+    for (const r of JSON.parse(readFileSync(`${OUT}/${f}`, "utf8")))
+      if (String(r.beispielDe ?? "").trim()) sentences.add(r.id);
+
+  let rows = 0;
+  let noGloss = 0;
+  let noSentence = 0;
+  for (const line of readFileSync(`${ROOT}data/app/words-en.json`, "utf8").split("\n")) {
+    if (!line.trim()) continue;
+    const r = JSON.parse(line);
+    rows++;
+    const gloss = String(r.deGloss ?? "").trim() || (r.srcId ? (german.get(r.srcId) ?? null) : null);
+    if (!gloss) noGloss++;
+    if (!sentences.has(r.id)) noSentence++;
+  }
+  coverage = { rows, noGloss, noSentence };
+  if (noGloss) errors.push(`  [kapsam] ${noGloss} satırın Almanca karşılığı çözülemiyor`);
+  if (noSentence) errors.push(`  [kapsam] ${noSentence} satıra karşılık gelen cümle yok`);
+}
+
 if (errors.length) {
   console.log(`\nHATA (${errors.length}):`);
   console.log(errors.slice(0, 40).join("\n"));
@@ -146,6 +185,10 @@ if (warnings.length) {
 }
 console.log(
   `\nözet: ${packets.length - pending}/${packets.length} paket üretilmiş, ${items} madde · ` +
-    `${errors.length} hata · ${warnings.length} uyarı · ${twinGroups} ikiz karşılık grubu`,
+    `${errors.length} hata · ${warnings.length} uyarı · ${twinGroups} ikiz karşılık grubu` +
+    (coverage
+      ? `\nkapsam: ${coverage.rows - coverage.noGloss}/${coverage.rows} karşılık · ` +
+        `${coverage.rows - coverage.noSentence}/${coverage.rows} cümle`
+      : ""),
 );
 process.exit(errors.length ? 1 : 0);
