@@ -152,7 +152,7 @@ export function ScrambleGame({ round, onDone }: GameProps<ScrambleRound>) {
 
   return (
     <GameShell
-      label={tx("games.scramble")}
+      label={tx("rounds.order_letters")}
       verdict={status === "playing" ? null : status}
       onContinue={pending ? () => onDoneRef.current([pending]) : undefined}
       why={status === "wrong" ? whyFor({ type: "spelling", word, detail: placed.map((t) => t.char).join("") }, lang) : null}

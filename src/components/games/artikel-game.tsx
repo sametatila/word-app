@@ -58,7 +58,7 @@ export function ArtikelGame({ round, onDone }: GameProps<ArtikelRound>) {
 
   return (
     <GameShell
-      label={tx("games.article_race")}
+      label={tx("rounds.which_article")}
       verdict={picked == null ? null : picked === answer ? "correct" : "wrong"}
       onContinue={pending ? () => onDone([pending]) : undefined}
       why={picked != null && picked !== answer ? whyFor({ type: "article", word, detail: picked }, lang) : null}

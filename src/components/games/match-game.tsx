@@ -115,7 +115,7 @@ export function MatchGame({ round, onDone }: GameProps<MatchRound>) {
 
   return (
     <GameShell
-      label={tx("games.match")}
+      label={tx("rounds.match")}
       /* Eşleştirmede tek tek doğru/yanlış yok: tur bitince hepsi eşleşmiş
          olur, o yüzden şerit yalnız "tamam" diyor. */
       verdict={pending ? "correct" : null}

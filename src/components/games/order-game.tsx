@@ -134,7 +134,7 @@ export function OrderGame({ round, onDone }: GameProps<OrderRound>) {
 
   return (
     <GameShell
-      label={tx("games.order")}
+      label={tx("rounds.put_sentence_in_order")}
       verdict={status === "playing" ? null : status}
       onContinue={pending ? () => onDoneRef.current([pending]) : undefined}
       why={

@@ -78,7 +78,7 @@ export function ListenGame({ round, onDone }: GameProps<ListenRound>) {
 
   return (
     <GameShell
-      label={tx("games.listen")}
+      label={tx("rounds.listen_pick_meaning")}
       verdict={picked == null ? null : picked === meaning ? "correct" : "wrong"}
       onContinue={pending ? () => onDone([pending]) : undefined}
       why={picked != null && picked !== meaning ? whyFor({ type: "listening", word, detail: picked }, lang) : null}

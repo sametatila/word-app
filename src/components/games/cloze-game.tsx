@@ -86,7 +86,7 @@ export function ClozeGame({ round, onDone }: GameProps<ClozeRound>) {
 
   return (
     <GameShell
-      label={tx(typeMode ? "rounds.cloze_typed" : "games.cloze")}
+      label={tx(typeMode ? "rounds.cloze_typed" : "rounds.fill_blank")}
       verdict={picked == null ? null : correct ? "correct" : "wrong"}
       onContinue={pending ? () => onDone([pending]) : undefined}
       why={

@@ -46,7 +46,7 @@ export function IntroGame({ round, onDone }: GameProps<IntroRound>) {
 
   return (
     <GameShell
-      label={tx("games.intro")}
+      label={tx("rounds.new_word")}
       /* Tanıtım kartında doğru/yanlış diye bir şey yok: sonuç katmanı hiç
          kurulmuyor ve yeri de ayrılmıyor. İki düğme kartın kendi akışında. */
       sheet={false}

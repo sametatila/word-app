@@ -64,7 +64,7 @@ export function PluralGame({ round, onDone }: GameProps<PluralRound>) {
 
   return (
     <GameShell
-      label={tx("games.plural")}
+      label={tx("rounds.plural")}
       verdict={picked == null ? null : picked === answer ? "correct" : "wrong"}
       onContinue={pending ? () => onDone([pending]) : undefined}
       why={picked != null && picked !== answer ? whyFor({ type: "plural", word, detail: picked, correct: answer }, lang) : null}
