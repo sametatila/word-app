@@ -11,6 +11,8 @@ import { track } from "@/lib/track";
 import { saveOnboardingPrefs } from "@/lib/onboarding-prefs";
 import { hasFirstWords } from "@/lib/first-words";
 import { useT, useLang } from "@/lib/i18n/client";
+import { LANG_LABEL, NATIVE_LANGS, type NativeLang } from "@/lib/i18n/dict";
+import { writeLangCookie } from "@/lib/i18n/set-lang";
 import { courseName } from "@/lib/courses";
 
 /* Kurs ADI tek kaynaktan (`courseName`); burada yalnız alt satır ve tanıtım. */
@@ -78,6 +80,19 @@ export function CourseOnboarding({
   const t = useT();
   const lang = useLang();
   const router = useRouter();
+
+  /**
+   * Dil değişince sayfa TAZELENİYOR: onboarding metinlerinin yarısı sunucu
+   * bileşenlerinden değil ama `getLang()` sunucuda çözüldüğü için üst
+   * kabuk eski dilde kalırdı. Seçim çereze yazılıyor; hesap açıldığında
+   * profile de geçiyor (bkz. lib/onboarding-prefs).
+   */
+  function pickLang(next: NativeLang) {
+    if (next === lang) return;
+    track("setting_change", NATIVE_LANGS.indexOf(next), "lang");
+    writeLangCookie(next);
+    router.refresh();
+  }
   const [step, setStep] = useState<Step>(0);
   // Onboarding hunisi: hangi adıma kadar gelindi (WP-80).
   useEffect(() => {
@@ -204,7 +219,33 @@ export function CourseOnboarding({
                 <Mascot mood="wave" size={72} stage="onboarding" />
                 <p className="muted text-sm leading-relaxed">{t("onb.intro")}</p>
               </div>
-              <h2 className="mb-2 mt-5 font-bold">{t("onb.what_to_call_you")}</h2>
+              {/*
+                ARAYÜZ DİLİ — mobil onboarding'in ikinci adımının karşılığı
+                (`OnboardingScreen`, "anlatım ve ipuçları bu dilde olacak").
+                Web'de ayrı bir adım değil, bu adımın ilk sorusu: tarayıcının
+                dili zaten seçili geliyor (bkz. lib/i18n/server
+                `fromAcceptLanguage`), yani burada sorulan şey bir onay.
+                Ayrı bir sayfa açmak, cevabı çoğu zaman hazır olan bir soru
+                için bir adım daha eklemek olurdu.
+              */}
+              <h2 className="mb-2 mt-5 font-bold">{t("onboarding.which_language_should_we_teach")}</h2>
+              <div className="flex gap-1.5">
+                {NATIVE_LANGS.map((l) => (
+                  <button
+                    key={l}
+                    type="button"
+                    lang={l}
+                    aria-pressed={lang === l}
+                    onClick={() => pickLang(l)}
+                    className={`chip px-3.5 py-2 text-caption ${lang === l ? "chip-active" : ""}`}
+                  >
+                    {LANG_LABEL[l]}
+                  </button>
+                ))}
+              </div>
+              <p className="muted mt-1.5 text-xs">{t("onboarding.lessons_and_hints_will_be_in")}</p>
+
+              <h2 className="mb-2 mt-6 font-bold">{t("onb.what_to_call_you")}</h2>
               <input value={name} onChange={(e) => setName(e.target.value)} maxLength={60} autoComplete="given-name" placeholder={t("onb.your_name")} aria-label={t("onb.your_name")} className="option w-full px-4 py-3 text-base" />
               <p className="muted mt-1.5 text-xs">{t("onb.name_note")}</p>
               <h2 className="mb-2 mt-6 font-bold">{t("onboarding.which_course_shall_we_start_with")}</h2>
