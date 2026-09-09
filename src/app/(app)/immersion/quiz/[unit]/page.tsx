@@ -1,4 +1,5 @@
 import { notFound } from "next/navigation";
+import { getT } from "@/lib/i18n/server";
 import { unitBriefs } from "@/lib/immersion/brief";
 import { deriveQuiz } from "@/lib/immersion/quiz";
 import { unitQuestions } from "@/lib/immersion/content";
@@ -23,6 +24,7 @@ export default async function ImmersionQuizPage({
   params: Promise<{ unit: string }>;
   searchParams: Promise<{ mode?: string }>;
 }) {
+  const t = await getT();
   const { unit } = await params;
   const checkpoint = (await searchParams).mode === "checkpoint";
 
@@ -64,8 +66,8 @@ export default async function ImmersionQuizPage({
 
   return (
     <ImmersionQuizPlayer
-      title={checkpoint ? "Kontrol Noktası" : "Tekrar"}
-      subtitle={`Ünite ${brief.index} · ${brief.theme}`}
+      title={t(checkpoint ? "immw.checkpoint" : "immw.review")}
+      subtitle={`${t("common.unit")} ${brief.index} · ${brief.theme}`}
       questions={questions}
     />
   );

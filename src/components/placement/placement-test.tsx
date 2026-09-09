@@ -10,7 +10,8 @@ import { track } from "@/lib/track";
 import { describePerSkill, nextLevel, PLACEMENT_LEVELS, type PlacementAnswer, type PlacementStage } from "@/lib/placement-score";
 import type { PlacementRecord, PlacementTest as Test, TextItem } from "@/lib/placement";
 import type { CefrLevel } from "@/lib/skills/types";
-import { useT } from "@/lib/i18n/client";
+import { useT, useLang } from "@/lib/i18n/client";
+import { formatPercent } from "@/lib/i18n/dict";
 
 type Phase = "intro" | "loading" | "vocab" | "grammar" | "reading" | "listening" | "finishing" | "result" | "error";
 
@@ -38,6 +39,7 @@ function localDay(): string {
  */
 export function PlacementTest({ initialLast, canRetake, retakeDays }: { initialLast: PlacementRecord | null; canRetake: boolean; retakeDays: number }) {
   const t = useT();
+  const lang = useLang();
   const router = useRouter();
   const [phase, setPhase] = useState<Phase>("intro");
   const [test, setTest] = useState<Test | null>(null);
@@ -171,10 +173,10 @@ export function PlacementTest({ initialLast, canRetake, retakeDays }: { initialL
         ) : null}
         {canRetake ? (
           <button type="button" onClick={() => void start()} className="btn btn-primary mt-4 w-full px-5 py-3.5 text-base">
-            Başla
+            {t("common.start")}
           </button>
         ) : (
-          <p className="muted mt-4 text-sm">Test {retakeDays} günde bir alınabiliyor. Bu arada plan seni yönlendirir.</p>
+          <p className="muted mt-4 text-sm">{t("placew.retake_in", { n: retakeDays })}</p>
         )}
         <Link href="/profile" className="btn btn-ghost mt-2 w-full px-5 py-3 text-sm">
           {t("common.discard")}
@@ -203,11 +205,11 @@ export function PlacementTest({ initialLast, canRetake, retakeDays }: { initialL
   if (phase === "result" && result) {
     return (
       <section className="card mx-auto w-full max-w-md p-5">
-        <h1 className="text-xl font-bold">Önerimiz: {result.suggested}</h1>
-        <p className="muted mt-1 text-sm">{describePerSkill(result.perSkill)} · doğru %{result.score} · {minutes} dk</p>
-        <p className="mt-3 text-sm leading-relaxed">
-          Öneri, dört aşamanın ortanca seviyesi: tek bir güçlü ya da zayıf beceri sonucu tek başına belirlemez. İstersen farklı bir seviye seç — karar senin.
+        <h1 className="text-xl font-bold">{t("placew.suggestion", { level: result.suggested })}</h1>
+        <p className="muted mt-1 text-sm">
+          {describePerSkill(result.perSkill)} · {t("placew.score_line", { pct: formatPercent(result.score, lang), min: minutes })}
         </p>
+        <p className="mt-3 text-sm leading-relaxed">{t("placew.median_note")}</p>
         <div className="mt-4 flex flex-wrap gap-2">
           {PLACEMENT_LEVELS.map((l) => (
             <button key={l} type="button" onClick={() => setChosen(l)} className={`chip px-3 py-1.5 text-sm font-bold ${chosen === l ? "chip-active" : ""}`} aria-pressed={chosen === l}>

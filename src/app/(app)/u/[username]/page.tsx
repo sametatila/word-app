@@ -1,4 +1,5 @@
 import { notFound } from "next/navigation";
+import { getT } from "@/lib/i18n/server";
 import { getUserId } from "@/lib/auth/server";
 import { SocialError } from "@/lib/social/errors";
 import { ensureUsername, publicProfile } from "@/lib/social/profile";
@@ -9,6 +10,7 @@ export const dynamic = "force-dynamic";
 
 /** /u/<kullanıcıadı> — davet bağlantısının açıldığı yer. Oturum yoksa (app) düzeni girişe yollar. */
 export default async function PublicProfilePage({ params }: { params: Promise<{ username: string }> }) {
+  const t = await getT();
   const userId = await getUserId();
   if (!userId) return null;
   const { username } = await params;
@@ -29,8 +31,8 @@ export default async function PublicProfilePage({ params }: { params: Promise<{ 
     console.error("[u page]", err);
     return (
       <div className="card mx-auto w-full max-w-md p-6 text-center">
-        <h2 className="text-lg font-bold">Profil yüklenemedi</h2>
-        <p className="muted mt-2 text-sm">Birkaç saniye sonra tekrar dene.</p>
+        <h2 className="text-lg font-bold">{t("profw.load_failed")}</h2>
+        <p className="muted mt-2 text-sm">{t("socialw.try_in_a_moment")}</p>
       </div>
     );
   }

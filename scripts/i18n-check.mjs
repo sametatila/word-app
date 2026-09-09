@@ -21,11 +21,19 @@ import { readFileSync, readdirSync } from "node:fs";
 
 const LANGS = ["tr", "en", "de"];
 
+const dupes = [];
+
 function load(dir, lang) {
   const src = readFileSync(new URL(`../src/i18n/${dir}/${lang}.ts`, import.meta.url), "utf8");
   const out = new Map();
   // Anahtar satırları: `  "key": "value",` — çok satırlı değer yok.
   for (const m of src.matchAll(/^\s*"([^"]+)":\s*"((?:[^"\\]|\\.)*)",?\s*$/gm)) {
+    /*
+      AYNI ANAHTAR İKİ KEZ: TypeScript bunu hata sayıyor ama denetim saymıyordu
+      — Map ikincisini yazıyor ve ilki sessizce ölüyor. Aynı anahtarın iki
+      farklı değeri olsaydı hangisinin kazandığı dosyadaki SIRAYA kalırdı.
+    */
+    if (out.has(m[1])) dupes.push(`${dir}/${lang}: "${m[1]}"`);
     out.set(m[1], m[2]);
   }
   return out;
@@ -86,6 +94,11 @@ for (const file of files) {
     }
   }
 }
+if (dupes.length) {
+  bad += dupes.length;
+  for (const d of dupes) console.error(`yinelenen anahtar → ${d}`);
+}
+
 if (missingUse.size) {
   bad += missingUse.size;
   for (const [k, file] of missingUse) console.error(`kod: "${k}" sözlükte yok — ${file}`);

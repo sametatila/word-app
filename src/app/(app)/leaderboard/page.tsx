@@ -35,7 +35,7 @@ export default async function LeaderboardPage() {
         <Leaderboard week={week} />
       ) : (
         <p className="card p-5 text-body" style={{ color: "var(--text-muted)" }}>
-          Sıralama şu anda okunamadı. Birkaç saniye sonra tekrar dene.
+          {t("lbw.load_failed")}
         </p>
       )}
     </div>

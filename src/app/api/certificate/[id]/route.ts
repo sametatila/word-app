@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import { getUserId, getUserInfo } from "@/lib/auth/server";
 import { ensureProfile } from "@/lib/session";
 import { examById, examCando, SECTION_TITLE_KEYS, SECTION_TITLE_DE, type ExamSectionId } from "@/lib/exam";
-import { translate, isNativeLang, DEFAULT_NATIVE } from "@/lib/i18n/dict";
+import { translate, formatPercent, isNativeLang, DEFAULT_NATIVE } from "@/lib/i18n/dict";
 import { moduleExamPlan } from "@/lib/lessons/module-exam";
 
 export const dynamic = "force-dynamic";
@@ -33,7 +33,7 @@ export async function GET(_req: Request, ctx: { params: Promise<{ id: string }> 
   // Sertifika bölüm adlarını kullanıcının dilinde yazıyor. Dil ÇEREZDEN değil
   // profilden: bu ucu mobil de çağırıyor ve orada web çerezimiz yok.
   const lang = isNativeLang(profile.nativeLang) ? profile.nativeLang : DEFAULT_NATIVE;
-  const name = esc(profile.displayName ?? info?.name ?? "Öğrenci");
+  const name = esc(profile.displayName ?? info?.name ?? translate(lang, "social.student"));
   const plan = exam.module === null ? undefined : moduleExamPlan(exam.level, exam.module);
   const kicker = exam.kind === "level" ? `${exam.level} · Niveauprüfung` : `Modulprüfung ${plan?.code ?? `${exam.level}.${(exam.module ?? 0) + 1}`}`;
   const title = plan ? plan.titleDe : exam.kind === "level" ? `Prüfung ${exam.level}` : `Modul ${(exam.module ?? 0) + 1}`;
@@ -66,15 +66,15 @@ export async function GET(_req: Request, ctx: { params: Promise<{ id: string }> 
     <text x="400" y="120" text-anchor="middle" font-size="16" fill="#8a6a4f">${esc(kicker)}</text>
     <text x="400" y="166" text-anchor="middle" font-size="34" font-weight="700" fill="#3b2a1e">${esc(title)}</text>
     ${subtitle ? `<text x="400" y="196" text-anchor="middle" font-size="17" fill="#8a6a4f">${esc(subtitle)}</text>` : ""}
-    <text x="400" y="240" text-anchor="middle" font-size="18" fill="#5b4636">Bu belge</text>
+    <text x="400" y="240" text-anchor="middle" font-size="18" fill="#5b4636">${esc(translate(lang, "certw.this_document"))}</text>
     <text x="400" y="278" text-anchor="middle" font-size="28" font-weight="700" fill="#c8792d">${name}</text>
-    <text x="400" y="306" text-anchor="middle" font-size="16" fill="#5b4636">adına, sınavı %${exam.total} ile geçtiği için verilmiştir.</text>
-    <text x="72" y="${rowTop - 22}" font-size="13" font-weight="700" fill="#8a6a4f">BÖLÜMLER</text>
+    <text x="400" y="306" text-anchor="middle" font-size="16" fill="#5b4636">${esc(translate(lang, "certw.awarded_to", { pct: formatPercent(exam.total, lang) }))}</text>
+    <text x="72" y="${rowTop - 22}" font-size="13" font-weight="700" fill="#8a6a4f">${esc(translate(lang, "certw.sections"))}</text>
     ${cando.length ? `<text x="430" y="${rowTop - 22}" font-size="13" font-weight="700" fill="#8a6a4f">DAS KANN ICH JETZT</text>` : ""}
     ${rows}
     ${candoRows}
     <text x="72" y="${height - 44}" font-size="14" fill="#8a6a4f">${date}</text>
-    <text x="728" y="${height - 44}" text-anchor="end" font-size="14" fill="#8a6a4f">Geçme: toplam ≥ %70, her bölüm ≥ %50</text>
+    <text x="728" y="${height - 44}" text-anchor="end" font-size="14" fill="#8a6a4f">${esc(translate(lang, "certw.pass_rule"))}</text>
   </g>
 </svg>`;
   return new NextResponse(svg, { headers: { "content-type": "image/svg+xml; charset=utf-8", "cache-control": "private, max-age=3600" } });

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { getT } from "@/lib/i18n/server";
 import { notFound, redirect } from "next/navigation";
 import { getUserId } from "@/lib/auth/server";
 import { BossPlayer } from "@/components/boss-player";
@@ -19,6 +20,7 @@ export default async function BossPage({
 }: {
   params: Promise<{ level: string; module: string }>;
 }) {
+  const t = await getT();
   const userId = await getUserId();
   if (!userId) redirect("/login");
 
@@ -39,7 +41,7 @@ export default async function BossPage({
       */}
       <div className="mx-auto mb-3 w-full max-w-2xl text-right">
         <Link href={`/exam/${level}/${index}`} className="muted text-xs font-semibold underline-offset-2 hover:underline">
-          Modül sınavı (25 dk, yedi bölüm) →
+          {t("bossw.exam_link")}
         </Link>
       </div>
       <BossPlayer level={level} moduleIndex={index} onExitHref="/immersion" />

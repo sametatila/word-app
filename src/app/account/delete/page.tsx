@@ -36,7 +36,7 @@ export default async function AccountDeletePage() {
       <AuthShell
         title={t("land.delete_account")}
         subtitle={t("del.sign_in_first")}
-        footer={<span>Uygulamada: Profil › Ayarlar › Hesap › Hesabı sil</span>}
+        footer={<span>{t("del.in_app_path")}</span>}
       >
         <Link href="/login?next=/account/delete" className="btn btn-primary w-full px-5 py-3.5">
           {t("auth.sign_in")}

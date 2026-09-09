@@ -1,4 +1,5 @@
 import { notFound } from "next/navigation";
+import { getT } from "@/lib/i18n/server";
 import { unitBriefs } from "@/lib/immersion/brief";
 import { unitQuestions } from "@/lib/immersion/content";
 import { deriveGrammar } from "@/lib/immersion/grammar";
@@ -22,6 +23,7 @@ const LEVELS = ["A1", "A2", "B1", "B2", "C1"];
  * ve üretim hedefleri. Türetme onları kullanıyor, hiçbir şey uydurmuyor.
  */
 export default async function ImmersionGrammarPage({ params }: { params: Promise<{ unit: string }> }) {
+  const t = await getT();
   const { unit } = await params;
 
   const authored = unitQuestions(unit);
@@ -44,8 +46,8 @@ export default async function ImmersionGrammarPage({ params }: { params: Promise
 
   return (
     <ImmersionQuizPlayer
-      title="Dil bilgisi"
-      subtitle={brief ? `Ünite ${brief.index} · ${brief.theme}` : "Dil bilgisi alıştırması"}
+      title={t("skills.grammar")}
+      subtitle={brief ? `${t("common.unit")} ${brief.index} · ${brief.theme}` : t("immw.grammar_exercise")}
       questions={questions}
     />
   );

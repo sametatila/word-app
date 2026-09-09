@@ -47,10 +47,8 @@ export default async function ProfilePage() {
     console.error("[profile page]", err);
     return (
       <div className="card mx-auto w-full max-w-md p-6 text-center">
-        <h2 className="text-h3">Profil yüklenemedi</h2>
-        <p className="muted mt-2 text-body">
-          Veritabanı bağlantısını kontrol et: <code>npm run db:push</code>.
-        </p>
+        <h2 className="text-h3">{t("profw.load_failed")}</h2>
+        <p className="muted mt-2 text-body">{t("socialw.try_in_a_moment")}</p>
       </div>
     );
   }
