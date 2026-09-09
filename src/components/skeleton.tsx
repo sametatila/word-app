@@ -121,7 +121,15 @@ export function textHeight(variant: TextVariant): number {
   return Math.round(size * lh);
 }
 
-/** Tek bir metin satırının yeri. */
+/**
+ * Tek bir metin satırının yeri.
+ *
+ * Dış kap gerçek satırın TAM yüksekliğini kaplar, çubuk onun içinde 4 px daha
+ * kısadır ve ortalanır — mobil `ui/Skeleton.tsx` ile aynı kural. Web çubuğu
+ * satırın tamamına yayıyordu: boşluksuz dizilen satırlar tek bir blok gibi
+ * görünüyordu, oysa gerçek metinde aralarında nefes var. Blok yüksekliği
+ * bozulmadan aradaki boşluk geri geldi.
+ */
 export function SkeletonLine({
   variant = "body",
   width = "100%",
@@ -131,12 +139,15 @@ export function SkeletonLine({
   width?: number | string;
   className?: string;
 }) {
+  const h = textHeight(variant);
+  const bar = Math.max(6, h - 4);
   return (
-    <div
-      aria-hidden
-      className={`animate-pulse rounded-chip ${className}`}
-      style={{ height: textHeight(variant), width, background: "var(--surface-2)" }}
-    />
+    <div aria-hidden className={`flex items-center ${className}`} style={{ height: h, width }}>
+      <div
+        className="w-full animate-pulse"
+        style={{ height: bar, borderRadius: Math.min(10, bar / 2), background: "var(--surface-2)" }}
+      />
+    </div>
   );
 }
 

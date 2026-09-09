@@ -1,6 +1,8 @@
 "use client";
 
 import Link from "next/link";
+import { EmptyCard } from "@/components/empty-card";
+import { PodiumIcon } from "@/components/icons";
 import { useEffect, useState } from "react";
 import { Avatar } from "@/components/avatar";
 import { FlameIcon } from "@/components/icons";
@@ -26,10 +28,12 @@ export function FriendsBoard() {
   if (!board) return <RowSkeleton rows={3} height={48} />;
   if (board.rows.length < 2) {
     return (
-      <div className="card p-5 text-center">
-        <p className="font-bold">{t("friendsboard.no_one_to_compete_with_yet")}</p>
-        <p className="muted mt-1 text-sm">{t("friendsboard.add_friends_to_see_each_other_in")}</p>
-      </div>
+      <EmptyCard
+        icon={PodiumIcon}
+        tint="var(--color-sky)"
+        title={t("friendsboard.no_one_to_compete_with_yet")}
+        text={t("friendsboard.add_friends_to_see_each_other_in")}
+      />
     );
   }
   const me = board.rows.find((r) => r.isMe);

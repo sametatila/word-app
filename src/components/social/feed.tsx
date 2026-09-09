@@ -1,6 +1,8 @@
 "use client";
 
 import Link from "next/link";
+import { EmptyCard } from "@/components/empty-card";
+import { SparkIcon } from "@/components/icons";
 import { useCallback, useEffect, useState } from "react";
 import { Avatar } from "@/components/avatar";
 import { RowSkeleton } from "@/components/skeleton";
@@ -44,18 +46,24 @@ export function Feed({ onFindFriends }: { onFindFriends?: () => void }) {
   if (items === null) return <RowSkeleton rows={4} height={84} />;
   if (!items.length) {
     return (
-      <div className="card p-6 text-center">
-        <p className="font-bold">{t("feedlist.your_feed_is_still_empty")}</p>
-        <p className="muted mt-1 text-sm">{t("feedlist.empty_text")}</p>
-        {onFindFriends ? (
-          <button className="btn btn-primary mt-4 h-9 px-4 text-xs" onClick={onFindFriends}>
-            {t("friends.find_friends")}
-          </button>
-        ) : null}
-        {err ? <p className="mt-3 text-xs" style={{ color: "var(--color-rose)" }}>{err}</p> : null}
-      </div>
+      <>
+      <EmptyCard
+        icon={SparkIcon}
+        title={t("feedlist.your_feed_is_still_empty")}
+        text={t("feedlist.empty_text")}
+        action={
+          onFindFriends ? (
+            <button className="btn btn-primary h-9 px-4 text-xs" onClick={onFindFriends}>
+              {t("friends.find_friends")}
+            </button>
+          ) : null
+        }
+      />
+      {err ? <p className="mt-3 text-center text-xs" style={{ color: "var(--color-rose)" }}>{err}</p> : null}
+      </>
     );
   }
+  /* Boş durumda da hata görünmeli: liste yokken ağ hatası tek geri bildirim. */
   return (
     <div className="flex flex-col gap-2">
       {items.map((it) => (
