@@ -1,5 +1,6 @@
 import "server-only";
 import { headers } from "next/headers";
+import { unstable_rethrow } from "next/navigation";
 import { betterAuth } from "better-auth";
 import { drizzleAdapter } from "better-auth/adapters/drizzle";
 import { db } from "@/lib/db";
@@ -240,6 +241,18 @@ async function readSession(): Promise<SessionRead> {
     if (!u) return { user: null, failed: false };
     return { user: { id: u.id, name: u.name ?? u.email ?? null, email: u.email ?? null }, failed: false };
   } catch (err) {
+    /*
+      Next'in KENDİ akış hataları buraya düşmemeli. Somut hâli: ana sayfa
+      derleme sırasında statik üretilmeye çalışılıyor, `headers()` bunu
+      "dinamik" diye kesiyor (DynamicServerError) ve bizim catch'imiz onu
+      gerçek bir arıza sanıp her yapıda "[auth] oturum okunamadı" hatası
+      basıyordu — deploy log'undaki tek kırmızı satır buydu ve yanlış alarmdı.
+
+      `unstable_rethrow` çerçeveye ait olanları (dinamik kullanım, notFound,
+      redirect, CSR'ye düşme) geri fırlatıyor; aşağısı yalnız GERÇEK okuma
+      hatası için kalıyor.
+    */
+    unstable_rethrow(err);
     console.error("[auth] oturum okunamadı", err);
     return { user: null, failed: true };
   }
