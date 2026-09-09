@@ -63,6 +63,7 @@ export const en: Record<string, string> = {
   "avatar.glasses": "GLASSES",
   "avatar.hat": "HAT",
   "avatar.hat_color": "HAT COLOR",
+  "avatar.mustache": "MOUSTACHE",
   "cando.sign_in_and_finish_lessons_and": "Sign in and finish speaking practices and exercises to prove your \"I can\" statements here.",
   "cando.what_i_can_do": "What I can do",
   "common.answer_is": "The answer:",

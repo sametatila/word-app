@@ -68,6 +68,7 @@ export const tr: Record<string, string> = {
   "avatar.glasses": "GÖZLÜK",
   "avatar.hat": "ŞAPKA",
   "avatar.hat_color": "ŞAPKA RENGİ",
+  "avatar.mustache": "BIYIK",
   "cando.sign_in_and_finish_lessons_and": "Giriş yapıp konuşma ve alıştırmaları bitirdikçe \"yapabilirim\" ifadelerin burada kanıtlanır.",
   "cando.what_i_can_do": "Neler yapabilirim",
   "common.answer_is": "Doğrusu:",

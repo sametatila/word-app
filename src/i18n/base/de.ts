@@ -65,6 +65,7 @@ export const deBase: Record<string, string> = {
   "avatar.glasses": "BRILLE",
   "avatar.hat": "MÜTZE",
   "avatar.hat_color": "MÜTZENFARBE",
+  "avatar.mustache": "SCHNURRBART",
   "cando.sign_in_and_finish_lessons_and": "Melde dich an und schließe Sprechübungen und Aufgaben ab – dann werden deine „Das kann ich“-Sätze hier bestätigt.",
   "cando.what_i_can_do": "Was ich kann",
   "common.answer_is": "Richtig:",

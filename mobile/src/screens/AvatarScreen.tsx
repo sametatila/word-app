@@ -11,10 +11,24 @@ import { HATS, GLASSES, MUSTACHES, HAT_COLORS } from "../ui/avatarParts";
 import { getAvatar, saveAvatar, DEFAULT_AVATAR, type AvatarConfig } from "../lib/avatar";
 import { useTheme, spacing, radii, softShadow, type Palette } from "../theme";
 
-/** Bir aksesuar seçeneği — o aksesuarı taşıyan mini avatar önizlemesi + seçili çerçeve. */
-function OptTile({ preview, selected, onPress, colors }: { preview: AvatarConfig; selected: boolean; onPress: () => void; colors: Palette }) {
+/**
+ * Bir aksesuar seçeneği — o aksesuarı taşıyan mini avatar önizlemesi + seçili
+ * çerçeve.
+ *
+ * SEÇİLİLİK YALNIZ ÇERÇEVEYLE anlatılıyordu: ekran okuyucu bu karoları adsız
+ * düğmeler olarak okuyor, hangisinin seçili olduğunu hiç söylemiyordu. Rol ve
+ * durum verilince en azından "seçili" duyuluyor; ad da grubun adı ve sıra
+ * numarasından kuruluyor (aksesuarların kendi adları yok, uydurulmadı).
+ */
+function OptTile({ preview, selected, onPress, colors, label }: { preview: AvatarConfig; selected: boolean; onPress: () => void; colors: Palette; label: string }) {
   return (
-    <PressableScale onPress={onPress} style={{ padding: 4, borderRadius: radii.lg, borderWidth: 2, borderColor: selected ? colors.primary : "transparent" }}>
+    <PressableScale
+      accessibilityRole="radio"
+      accessibilityState={{ selected }}
+      accessibilityLabel={label}
+      onPress={onPress}
+      style={{ padding: 4, borderRadius: radii.lg, borderWidth: 2, borderColor: selected ? colors.primary : "transparent" }}
+    >
       <Avatar size={54} config={preview} />
     </PressableScale>
   );
@@ -63,9 +77,9 @@ export function AvatarScreen() {
         </View>
 
         <Group title={t("avatar.hat")} colors={colors}>
-          <OptTile preview={none({ hat: null })} selected={cfg.hat === null} onPress={() => setCfg((c) => ({ ...c, hat: null }))} colors={colors} />
-          {HATS.map((h) => (
-            <OptTile key={h} preview={none({ hat: h })} selected={cfg.hat === h} onPress={() => setCfg((c) => ({ ...c, hat: h }))} colors={colors} />
+          <OptTile preview={none({ hat: null })} selected={cfg.hat === null} label={`${t("avatar.hat")} 1`} onPress={() => setCfg((c) => ({ ...c, hat: null }))} colors={colors} />
+          {HATS.map((h, i) => (
+            <OptTile key={h} label={`${t("avatar.hat")} ${i + 2}`} preview={none({ hat: h })} selected={cfg.hat === h} onPress={() => setCfg((c) => ({ ...c, hat: h }))} colors={colors} />
           ))}
         </Group>
 
@@ -84,16 +98,16 @@ export function AvatarScreen() {
         ) : null}
 
         <Group title={t("avatar.glasses")} colors={colors}>
-          <OptTile preview={none({ glasses: null })} selected={cfg.glasses === null} onPress={() => setCfg((c) => ({ ...c, glasses: null }))} colors={colors} />
-          {GLASSES.map((g) => (
-            <OptTile key={g} preview={none({ glasses: g })} selected={cfg.glasses === g} onPress={() => setCfg((c) => ({ ...c, glasses: g }))} colors={colors} />
+          <OptTile preview={none({ glasses: null })} selected={cfg.glasses === null} label={`${t("avatar.glasses")} 1`} onPress={() => setCfg((c) => ({ ...c, glasses: null }))} colors={colors} />
+          {GLASSES.map((g, i) => (
+            <OptTile key={g} label={`${t("avatar.glasses")} ${i + 2}`} preview={none({ glasses: g })} selected={cfg.glasses === g} onPress={() => setCfg((c) => ({ ...c, glasses: g }))} colors={colors} />
           ))}
         </Group>
 
-        <Group title="BIYIK" colors={colors}>
-          <OptTile preview={none({ mustache: null })} selected={cfg.mustache === null} onPress={() => setCfg((c) => ({ ...c, mustache: null }))} colors={colors} />
-          {MUSTACHES.map((m) => (
-            <OptTile key={m} preview={none({ mustache: m })} selected={cfg.mustache === m} onPress={() => setCfg((c) => ({ ...c, mustache: m }))} colors={colors} />
+        <Group title={t("avatar.mustache")} colors={colors}>
+          <OptTile preview={none({ mustache: null })} selected={cfg.mustache === null} label={`${t("avatar.mustache")} 1`} onPress={() => setCfg((c) => ({ ...c, mustache: null }))} colors={colors} />
+          {MUSTACHES.map((m, i) => (
+            <OptTile key={m} label={`${t("avatar.mustache")} ${i + 2}`} preview={none({ mustache: m })} selected={cfg.mustache === m} onPress={() => setCfg((c) => ({ ...c, mustache: m }))} colors={colors} />
           ))}
         </Group>
 
