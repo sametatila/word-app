@@ -1,4 +1,4 @@
-import { ERROR_LABELS, type ErrorType } from "@/lib/errors";
+import { ERROR_LABEL_KEYS, type ErrorType } from "@/lib/errors";
 import { parsePluralRule, pluralOf, umlautStem } from "@/lib/german";
 import { ruleFor } from "@/lib/why-rules";
 import { confusableHint } from "@/lib/confusables";
@@ -247,7 +247,7 @@ function whyVerbPosition(answer?: string[] | null, tail?: string | null): Why {
  */
 function whyFromRule(type: ErrorType, context: string): Why {
   const rule = ruleFor(type, context);
-  if (!rule) return { type, text: ERROR_LABELS[type], href: null };
+  if (!rule) return { type, text: ERROR_LABEL_KEYS[type], href: null };
   const text = `${rule.why.charAt(0).toLocaleUpperCase("tr-TR")}${rule.why.slice(1)}: ${rule.example}`;
   return { type, text, href: null };
 }
@@ -324,5 +324,5 @@ export function whyFor(input: WhyInput): Why {
 
 /** Şeritteki etiket metni. */
 export function whyLabel(type: ErrorType): string {
-  return ERROR_LABELS[type];
+  return ERROR_LABEL_KEYS[type];
 }

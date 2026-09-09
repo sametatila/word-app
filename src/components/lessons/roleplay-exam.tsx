@@ -9,7 +9,9 @@ import { EXAM_SECONDS, EXAM_TURNS } from "@/lib/lessons/roleplay-const";
 import { askAssess, fallbackAssessment, type AssessFailure, type FallbackAssessment } from "@/lib/assess-client";
 import type { Assessment, AssessLevel, AssessRequest } from "@/lib/assess-prompts";
 import { AssessmentCard } from "@/components/feedback/assessment-card";
-import { ERROR_LABELS, type ErrorType } from "@/lib/errors";
+import { ERROR_LABEL_KEYS, type ErrorType } from "@/lib/errors";
+import { useT, useLang } from "@/lib/i18n/client";
+import { courseName } from "@/lib/courses";
 import { recognitionCtor, requestMicrophone, type Recognition } from "@/components/microphone";
 import { speakGerman, stopSpeaking } from "@/components/speak-button";
 import { MicIcon } from "@/components/icons";
@@ -34,6 +36,9 @@ type Phase = "intro" | "talk" | "scoring" | "result" | "error";
  * sayılır (telaffuz puanı WP-20 ile gelecek).
  */
 export function RoleplayExam({ lesson, cando }: { lesson: Lesson; cando: string[] }) {
+  const t = useT();
+  const lang = useLang();
+  const targetName = courseName(lesson.course, lang);
   const [phase, setPhase] = useState<Phase>("intro");
   const [turns, setTurns] = useState<Turn[]>([]);
   const [draft, setDraft] = useState("");
@@ -182,22 +187,22 @@ export function RoleplayExam({ lesson, cando }: { lesson: Lesson; cando: string[
     return (
       <section className="card mx-auto w-full max-w-md p-5">
         <CoachBubble moment="exam_intro" mood="think" size={48} className="mb-3" />
-        <h1 className="text-xl font-bold">Konuşma sınavı</h1>
+        <h1 className="text-xl font-bold">{t("rpexam.title")}</h1>
         <p className="muted mt-1 text-sm">
           {lesson.title} · {lesson.titleTr}
         </p>
         <p className="mt-3 text-sm leading-relaxed">{lesson.roleplay.scene}</p>
         <ul className="muted mt-3 space-y-1 text-xs">
-          <li>· {EXAM_TURNS} tur, {EXAM_SECONDS / 60} dakika — süre bitince konuşma kapanır.</li>
-          <li>· Muhatap yardım etmez, düzeltmez, Türkçe konuşmaz.</li>
-          <li>· Bittiğinde bütün söylediklerin birlikte puanlanır: görev, dilbilgisi, kelime, uygunluk.</li>
-          <li>· Kalıplar: {lesson.patterns.map((p) => p.de).join(" · ")}</li>
+          <li>· {t("rpexam.rule_time", { turns: EXAM_TURNS, minutes: EXAM_SECONDS / 60 })}</li>
+          <li>· {t("rpexam.rule_partner")}</li>
+          <li>· {t("rpexam.rule_scoring")}</li>
+          <li>· {t("rpexam.patterns", { list: lesson.patterns.map((p) => p.de).join(" · ") })}</li>
         </ul>
         <button type="button" onClick={start} className="btn btn-primary mt-4 w-full px-5 py-3.5 text-base">
-          Sınava başla
+          {t("exam.start")}
         </button>
         <Link href={`/lessons/${lesson.id}`} className="btn btn-ghost mt-2 w-full px-5 py-3 text-center text-sm">
-          Vazgeç
+          {t("common.discard")}
         </Link>
       </section>
     );
@@ -207,8 +212,8 @@ export function RoleplayExam({ lesson, cando }: { lesson: Lesson; cando: string[
     return (
       <section className="card mx-auto w-full max-w-md p-5 text-center" aria-busy>
         <Mascot mood="think" size={80} className="mx-auto" />
-        <p className="mt-2 text-sm font-semibold">Puanlanıyor…</p>
-        <p className="muted text-xs">{userTurns} turun tamamı rubrikle değerlendiriliyor.</p>
+        <p className="mt-2 text-sm font-semibold">{t("exam.scoring")}</p>
+        <p className="muted text-xs">{t("rpexam.scoring_note", { n: userTurns })}</p>
       </section>
     );
   }
@@ -216,9 +221,9 @@ export function RoleplayExam({ lesson, cando }: { lesson: Lesson; cando: string[
   if (phase === "error") {
     return (
       <section className="card mx-auto w-full max-w-md p-5">
-        <p className="text-sm">Konuşma servisi şu an ulaşılamıyor; sınav senaryolu konuşmayla yapılamaz (ölçüm sayılmaz).</p>
+        <p className="text-sm">{t("rpexam.service_down")}</p>
         <Link href={`/lessons/${lesson.id}`} className="btn btn-ghost mt-3 px-4 py-2 text-sm">
-          Konuşmaya dön
+          {t("lessonp.back_to_conversation")}
         </Link>
       </section>
     );
@@ -238,16 +243,19 @@ export function RoleplayExam({ lesson, cando }: { lesson: Lesson; cando: string[
     return (
       <section className="card mx-auto w-full max-w-md p-5">
         <CoachBubble moment={passed ? "exam_pass" : "exam_fail"} mood={passed ? "cheer" : "sad"} vars={{ pct: result.score.overall, level: lesson.level }} size={56} className="mb-3" />
-        <h1 className="text-xl font-bold">Konuşma sınavı · %{result.score.overall}</h1>
+        <h1 className="text-xl font-bold">
+          {t("rpexam.title")} · {t("common.pct", { n: result.score.overall })}
+        </h1>
         <p className="muted mt-1 text-xs">
-          {lesson.title} · {userTurns} tur · {passed ? "geçti" : "eşiğin altında (60)"}
+          {lesson.title} · {t("lessonp.n_turns", { n: userTurns })} ·{" "}
+          {passed ? t("rpexam.passed") : t("rpexam.below_threshold")}
         </p>
         <div className="mt-3">
           <AssessmentCard answer={said.join("\n")} result={result} failure={failure} example={null} />
         </div>
         {best.length ? (
           <div className="mt-3">
-            <p className="muted text-[11px] font-bold uppercase tracking-wide">En iyi cümlelerin</p>
+            <p className="muted text-[11px] font-bold uppercase tracking-wide">{t("rpexam.best_sentences")}</p>
             <ul className="mt-1 space-y-1">
               {best.map((s) => (
                 <li key={s} className="rounded-xl px-3 py-2 text-sm surface-2" lang="de">
@@ -259,25 +267,26 @@ export function RoleplayExam({ lesson, cando }: { lesson: Lesson; cando: string[
         ) : null}
         {topErrors.length ? (
           <p className="muted mt-3 text-xs">
-            En çok: {topErrors.map(([t, n]) => `${ERROR_LABELS[t]} ×${n}`).join(", ")}
+            {t("rpexam.most_common")}{" "}
+            {topErrors.map(([type, n]) => `${t(ERROR_LABEL_KEYS[type])} ×${n}`).join(", ")}
           </p>
         ) : (
           <p className="mt-3 text-xs" style={{ color: "var(--color-mint)" }}>
-            Rubrik hata bulmadı.
+            {t("rpexam.no_errors")}
           </p>
         )}
         {cando.length ? (
           <p className="muted mt-3 text-xs">
-            <span className="font-semibold">{passed ? "✓ Yapabildiklerim: " : "Hedef: "}</span>
+            <span className="font-semibold">{passed ? `✓ ${t("lessonp.i_can")} ` : `${t("rpexam.goal")} `}</span>
             {cando.join(" · ")}
           </p>
         ) : null}
         <div className="mt-4 flex gap-2">
           <button type="button" onClick={() => location.reload()} className="btn btn-ghost flex-1 py-3 text-sm">
-            Tekrar
+            {t("common.try_again")}
           </button>
           <Link href={`/lessons/${lesson.id}`} className="btn btn-primary flex-1 py-3 text-center text-sm">
-            Konuşmaya dön
+            {t("lessonp.back_to_conversation")}
           </Link>
         </div>
       </section>
@@ -288,7 +297,7 @@ export function RoleplayExam({ lesson, cando }: { lesson: Lesson; cando: string[
     <section className="card mx-auto flex w-full max-w-md flex-col p-4">
       <div className="flex items-center justify-between text-xs font-semibold">
         <span className="muted">
-          Tur {Math.min(userTurns + 1, EXAM_TURNS)} / {EXAM_TURNS}
+          {t("rpexam.turn_of", { n: Math.min(userTurns + 1, EXAM_TURNS), total: EXAM_TURNS })}
         </span>
         <span className="tabular-nums" style={{ color: left <= 30 ? "var(--color-rose)" : "var(--text-muted)" }}>
           {mm}:{ss}
@@ -315,7 +324,7 @@ export function RoleplayExam({ lesson, cando }: { lesson: Lesson; cando: string[
             type="button"
             onClick={() => void listen()}
             disabled={busy || listening}
-            aria-label="Konuş"
+            aria-label={t("lesson.mic_talk")}
             className="brand-gradient flex h-12 w-12 shrink-0 items-center justify-center rounded-full text-white shadow disabled:opacity-40"
           >
             <MicIcon size={20} />
@@ -332,12 +341,18 @@ export function RoleplayExam({ lesson, cando }: { lesson: Lesson; cando: string[
           }}
           rows={1}
           lang="de"
-          placeholder={listening ? "Dinliyorum…" : asr ? "Konuş ya da yaz…" : "Almanca yaz…"}
+          placeholder={
+            listening
+              ? t("rpexam.listening")
+              : asr
+                ? t("rpexam.speak_or_type")
+                : t("lesson.type_in", { lang: targetName })
+          }
           disabled={busy}
           className="input max-h-24 flex-1 resize-none py-2 text-sm"
         />
         <button type="button" onClick={() => void send(draft)} disabled={busy || !draft.trim()} className="btn btn-primary px-3.5 py-2.5 text-sm">
-          Gönder
+          {t("common.send")}
         </button>
       </div>
     </section>

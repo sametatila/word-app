@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState, useMemo } from "react";
 import { offlineReply, offlineStart, offlineSummary, type OfflineState } from "@/lib/lessons/offline-roleplay";
 import { track } from "@/lib/track";
 import { AnimatePresence, motion } from "framer-motion";
@@ -22,7 +22,11 @@ import { fx } from "@/lib/fx";
 import { useStill } from "@/lib/use-still";
 import { cueListen, startThinking } from "@/lib/lessons/cues";
 import { judgeSpeech } from "@/lib/speech";
-import { tr as trSeg, type Expectation, type Lesson, type Segment } from "@/lib/lessons/types";
+import { type Expectation, type Lesson, type Segment } from "@/lib/lessons/types";
+import { useT, useLang } from "@/lib/i18n/client";
+import { translate, type NativeLang } from "@/lib/i18n/dict";
+import { courseName } from "@/lib/courses";
+import { parseJudgment } from "@/lib/voice-intent";
 
 /**
  * Ders oynatıcısı — anlatım, konuşma pratiği, özet.
@@ -89,7 +93,12 @@ const STEP_TONE: Record<string, string> = {
   confirm: "var(--text-muted)",
   say: "var(--border)",
 };
-const STEP_LABEL: Record<string, string> = { repeat: "tekrar", produce: "üret", truefalse: "doğru/yanlış" };
+/** Adım rozeti — anahtar; metin gösterildiği yerde çevriliyor. */
+const STEP_LABEL_KEYS: Record<string, string> = {
+  repeat: "lessonp.step_repeat",
+  produce: "lessonp.step_produce",
+  truefalse: "lessonp.step_truefalse",
+};
 
 /** Özet köprüleri — sunucuda hesaplanıp sayfadan gelir. */
 export type LessonExtras = {
@@ -148,16 +157,36 @@ function readSaved(lesson: Lesson): Saved | null {
  * Övgüler dönüşümlü: her doğruda aynı kelimeyi duymak övgüyü görünmez yapıyor.
  * Sıra adım numarasından geliyor ki aynı adımın tekrarında bile değişsin.
  */
-const PRAISE = ["Çok iyi!", "Harika!", "Süper!", "Çok güzel söyledin!", "Mükemmel!"];
-
-/** Türkçe hükmün ayrıştırılması — doğru mu dedi, yanlış mı? */
-function parseJudgment(text: string): boolean | null {
-  const t = text.toLocaleLowerCase("tr-TR");
-  const yes = /doğru|dogru/.test(t);
-  const no = /yanlış|yanlıs|yanlis/.test(t);
-  if (yes === no) return null; // ikisi birden ya da hiçbiri: hüküm yok
-  return yes;
+/**
+ * ANLATIM parçası — metin sözlükten geliyor, yani parçanın dili gerçekten
+ * arayüz dili. `narration` bayrağı sesi anlatım sesine bağlıyor (bkz.
+ * speak-button `voiceForSegment`); ders İÇERİĞİ Türkçe kaldığı için o
+ * parçalar bayraksız kalıyor ve bugünkü sesle okunuyor.
+ */
+function narFor(lang: NativeLang) {
+  return (key: string, vars?: Record<string, string | number>): Segment => ({
+    lang,
+    text: translate(lang, key, vars),
+    narration: true,
+  });
 }
+
+/** `doğru`/`yanlış` düğmeleri hükmü metin olarak veriyor — dilde karşılığı. */
+/** Anlatım tarafının tanıyıcı etiketi — arayüz dili neyse o dinleniyor. */
+const NATIVE_TAG: Record<NativeLang, string> = { tr: "tr-TR", en: "en-US", de: "de-DE" };
+
+const TRUE_WORD: Record<NativeLang, string> = { tr: "doğru", en: "true", de: "richtig" };
+const FALSE_WORD: Record<NativeLang, string> = { tr: "yanlış", en: "false", de: "falsch" };
+
+const PRAISE_KEYS = [
+  "lesson.praise_1",
+  "lesson.praise_2",
+  "lesson.praise_3",
+  "lesson.praise_4",
+  "lesson.praise_5",
+];
+
+
 
 export function LessonPlayer({
   lesson,
@@ -169,6 +198,9 @@ export function LessonPlayer({
   character: { name: string; note: string };
   extras?: LessonExtras;
 }) {
+  const t = useT();
+  const lang = useLang();
+  const nar = useMemo(() => narFor(lang), [lang]);
   const router = useRouter();
   const [phase, setPhase] = useState<Phase>("lecture");
 
@@ -322,13 +354,13 @@ export function LessonPlayer({
       prefetchSegments(s.say);
       const prev = lesson.lecture[i - 1]?.expect?.kind;
       if (prev === "repeat" || prev === "produce") {
-        prefetchSegments([trSeg(PRAISE[(i - 1) % PRAISE.length]), ...s.say]);
+        prefetchSegments([nar(PRAISE_KEYS[(i - 1) % PRAISE_KEYS.length]), ...s.say]);
       }
       const e = s.expect;
       if (e?.kind === "produce") prefetchSegments(e.hint);
       if (e?.kind === "truefalse") {
-        prefetchSegments([trSeg(PRAISE[i % PRAISE.length]), ...e.why]);
-        prefetchSegments([trSeg("Olmadı."), ...e.why]);
+        prefetchSegments([nar(PRAISE_KEYS[i % PRAISE_KEYS.length]), ...e.why]);
+        prefetchSegments([nar("lessonp.not_quite"), ...e.why]);
       }
     }
     prefetchGerman(lesson.roleplay.opening);
@@ -362,7 +394,7 @@ export function LessonPlayer({
       if (!Ctor) return;
       const permission = await requestMicrophone();
       if (permission === "denied") {
-        setError("Mikrofon izni verilmedi. Yazarak da devam edebilirsin.");
+        setError(t("lessonp.mic_denied"));
         return;
       }
       recognition.current?.abort();
@@ -445,7 +477,7 @@ export function LessonPlayer({
           silence.current = setTimeout(() => {
             rec.stop();
             setListening(false);
-            setHint("Sesini duyamadım. Hazır olunca mikrofona dokun ya da yazarak devam et.");
+            setHint(t("lessonp.not_heard"));
           }, SILENCE_MS);
           heard.current = false;
           typeNudge.current = setTimeout(() => {
@@ -461,15 +493,20 @@ export function LessonPlayer({
     [],
   );
 
-  /** Beklentinin tanıma dili. Almanca hedefler kursun diliyle dinleniyor. */
+  /**
+   * Beklentinin tanıma dili. Hedef dilli beklentiler kursun diliyle, ONAY ve
+   * DOĞRU/YANLIŞ ise ARAYÜZ diliyle dinleniyor — soru o dilde soruluyor,
+   * cevap da o dilde geliyor. Sabit "tr-TR" yazılıydı: İngilizce arayüzde
+   * "true" diyen kullanıcı Türkçe tanıyıcıya konuşuyordu.
+   */
   const langFor = useCallback(
     (e: Expectation): string =>
       e.kind === "confirm" || e.kind === "truefalse"
-        ? "tr-TR"
+        ? NATIVE_TAG[lang]
         : lesson.course === "gsw-zh"
           ? "de-CH"
           : "de-DE",
-    [lesson.course],
+    [lesson.course, lang],
   );
 
   /**
@@ -593,7 +630,7 @@ export function LessonPlayer({
       const said = alternatives[0] ?? "";
       if (!said.trim()) return;
       setFeed((f) => [...f, { id: ++feedSeq.current, role: "user", text: said }]);
-      const praise = trSeg(PRAISE[stepIndexRef.current % PRAISE.length]);
+      const praise = nar(PRAISE_KEYS[stepIndexRef.current % PRAISE_KEYS.length]);
       const next = () => runStepRef.current(stepIndexRef.current + 1, [praise]);
       const isFirstTry = attempts.current === 0;
       const via = inputMode.current;
@@ -605,9 +642,9 @@ export function LessonPlayer({
       }
 
       if (e.kind === "truefalse") {
-        const judgment = parseJudgment(said);
+        const judgment = parseJudgment(said, lang);
         if (judgment === null) {
-          interject([trSeg("Lütfen yalnızca 'doğru' ya da 'yanlış' de.")], reopen);
+          interject([nar("lessonp.say_true_or_false")], reopen);
           return;
         }
         const ok = judgment === e.answer;
@@ -615,7 +652,7 @@ export function LessonPlayer({
         if (ok && isFirstTry) setCorrectCount((n) => n + 1);
         fx(ok ? "correct" : "wrong", 900);
         interject(
-          [trSeg(ok ? PRAISE[stepIndexRef.current % PRAISE.length] : "Olmadı."), ...e.why],
+          [nar(ok ? PRAISE_KEYS[stepIndexRef.current % PRAISE_KEYS.length] : "lessonp.not_quite"), ...e.why],
           () => runStepRef.current(stepIndexRef.current + 1),
           ok ? undefined : "hint",
         );
@@ -637,7 +674,7 @@ export function LessonPlayer({
 
       if (best.kind === "uncertain") {
         interject(
-          [trSeg("Tam duyamadım. Bir kez daha söyler misin:"), { lang: "de", text: e.target }],
+          [nar("lessonp.didnt_catch"), { lang: "de", text: e.target }],
           reopen,
         );
         return;
@@ -649,7 +686,7 @@ export function LessonPlayer({
       if (attempts.current >= 3) {
         track("lesson_step", 0, `${e.kind}:${via}`);
         interject(
-          [trSeg("Sorun değil — bu, konuşmada tekrar karşına çıkacak. Devam edelim.")],
+          [nar("lessonp.no_worries")],
           () => runStepRef.current(stepIndexRef.current + 1),
         );
         return;
@@ -657,7 +694,7 @@ export function LessonPlayer({
 
       if (attempts.current === 2) {
         interject(
-          [trSeg("Doğrusu:"), { lang: "de", text: e.target }, trSeg("Lütfen tekrar et.")],
+          [nar("lesson.answer_is"), { lang: "de", text: e.target }, nar("lessonp.please_repeat")],
           reopen,
         );
         return;
@@ -673,12 +710,12 @@ export function LessonPlayer({
         interject(
           missing.length
             ? [
-                trSeg("Neredeyse! Eksik kalan:"),
+                nar("lessonp.almost_missing"),
                 { lang: "de", text: missing.join(", ") },
-                trSeg("Bir kez daha:"),
+                nar("lessonp.once_more"),
                 { lang: "de", text: e.target },
               ]
-            : [trSeg("Bir kez daha deneyelim:"), { lang: "de", text: e.target }],
+            : [nar("lessonp.lets_try_again"), { lang: "de", text: e.target }],
           reopen,
         );
       }
@@ -831,7 +868,7 @@ export function LessonPlayer({
         }
         if (!res.ok || !res.body) {
           setTurns(next);
-          setError("Cevap alınamadı. Tekrar dener misin?");
+          setError(t("lessonp.no_answer"));
           return;
         }
         const reader = res.body.getReader();
@@ -865,7 +902,7 @@ export function LessonPlayer({
         }
       } catch {
         setTurns(next);
-        setError("İnternet bağlantısı kurulamadı.");
+        setError(t("lessonp.no_connection"));
       } finally {
         stopThinking();
         setBusy(false);
@@ -993,12 +1030,12 @@ export function LessonPlayer({
   // ─────────────────────────── görünüm ───────────────────────────
 
   const micLabel = busy
-    ? "Cevap geliyor…"
+    ? t("lessonp.answer_coming")
     : listening
       ? partial
         ? `“${partial}”`
-        : "Dinliyorum — es versen de beklerim"
-      : (hint ?? "Konuşmak için dokun");
+        : t("lessonp.listening_take_time")
+      : (hint ?? t("lessonp.tap_to_speak"));
 
   return (
     <div className="mx-auto flex min-h-0 w-full max-w-2xl flex-1 flex-col gap-4">
@@ -1014,14 +1051,12 @@ export function LessonPlayer({
           style={{ background: "color-mix(in srgb, var(--color-brand) 10%, transparent)" }}
         >
           <span className="flex-1" style={{ color: "var(--color-brand)" }}>
-            {phase === "roleplay"
-              ? "Konuşmaya kaldığın yerden devam ediyorsun."
-              : "Konuşmaya kaldığın yerden devam ediyorsun."}
+            {t("lessonp.resumed")}
           </span>
           <button
             type="button"
             onClick={() => setResumed(false)}
-            aria-label="Kapat"
+            aria-label={t("common.close")}
             className="muted shrink-0"
           >
             <XIcon size={14} />
@@ -1044,7 +1079,7 @@ export function LessonPlayer({
             }}
             className="btn btn-ghost shrink-0 px-2 py-0.5 text-xs"
           >
-            Baştan başla
+            {t("lesson.start_over")}
           </button>
         </div>
       ) : null}
@@ -1073,7 +1108,7 @@ export function LessonPlayer({
                     style={{ color: handsFree ? "var(--color-brand)" : undefined }}
                   >
                     <MicIcon size={13} />
-                    {handsFree ? "Eller serbest: açık" : "Eller serbest"}
+                    {t(handsFree ? "lessonp.hands_free_on" : "lessonp.hands_free")}
                   </button>
                 ) : null}
               </div>
@@ -1114,10 +1149,10 @@ export function LessonPlayer({
                     }}
                     className="btn btn-primary w-full py-3 text-sm"
                   >
-                    Hazırım, başlayalım
+                    {t("lessonp.ready_lets_start")}
                   </button>
                   {asrAvailable ? (
-                    <p className="muted text-center text-xs">…ya da sesli cevap ver.</p>
+                    <p className="muted text-center text-xs">{t("lessonp.or_answer_aloud")}</p>
                   ) : null}
                 </div>
               ) : null}
@@ -1128,21 +1163,21 @@ export function LessonPlayer({
                     type="button"
                     onClick={() => {
                       recognition.current?.abort();
-                      evaluate(["doğru"]);
+                      evaluate([TRUE_WORD[lang]]);
                     }}
                     className="option px-4 py-3 text-center text-sm font-semibold"
                   >
-                    Doğru
+                    {t("lesson.correct")}
                   </button>
                   <button
                     type="button"
                     onClick={() => {
                       recognition.current?.abort();
-                      evaluate(["yanlış"]);
+                      evaluate([FALSE_WORD[lang]]);
                     }}
                     className="option px-4 py-3 text-center text-sm font-semibold"
                   >
-                    Yanlış
+                    {t("lesson.wrong")}
                   </button>
                 </div>
               ) : null}
@@ -1167,7 +1202,7 @@ export function LessonPlayer({
                       setAwaiting(true);
                       void capture(langFor(expect), (a) => evaluate(a), false);
                     }}
-                    aria-label={listening ? "Kaydı bitir" : "Konuşmaya başla"}
+                    aria-label={t(listening ? "exam.stop_recording" : "lessonp.start_speaking")}
                     className="flex h-16 w-16 items-center justify-center rounded-full text-white shadow-lg"
                     style={{
                       background: listening ? "var(--color-rose)" : "var(--color-brand)",
@@ -1191,9 +1226,9 @@ export function LessonPlayer({
                       ? partial
                         ? `“${partial}”`
                         : expect.kind === "truefalse"
-                          ? "Dinliyorum — 'doğru' ya da 'yanlış' de"
-                          : "Dinliyorum — es versen de beklerim"
-                      : (hint ?? "Konuşmak için dokun")}
+                          ? t("lessonp.listening_true_false")
+                          : t("lessonp.listening_take_time")
+                      : (hint ?? t("lessonp.tap_to_speak"))}
                   </p>
                   <div className="flex items-center gap-2">
                     {expect.kind !== "truefalse" ? (
@@ -1202,7 +1237,7 @@ export function LessonPlayer({
                         onClick={() => setTyping((v) => !v)}
                         className="btn btn-ghost px-3 py-1 text-xs"
                       >
-                        {typing ? "Yazmayı kapat" : "Yazarak cevapla"}
+                        {t(typing ? "lessonp.close_typing" : "lesson.answer_by_typing")}
                       </button>
                     ) : null}
                     <button
@@ -1210,7 +1245,7 @@ export function LessonPlayer({
                       onClick={skipStep}
                       className="btn btn-ghost px-3 py-1 text-xs"
                     >
-                      Bu adımı atla
+                      {t("lessonp.skip_step")}
                     </button>
                   </div>
                 </div>
@@ -1218,7 +1253,7 @@ export function LessonPlayer({
 
               {expect && expect.kind !== "confirm" && !asrAvailable ? (
                 <p className="muted mb-2 text-center text-xs">
-                  Konuşma tanıma yok — yazarak devam et.
+                  {t("lessonp.no_asr")}
                 </p>
               ) : null}
 
@@ -1236,7 +1271,7 @@ export function LessonPlayer({
                       }
                     }}
                     rows={1}
-                    placeholder="Almanca yaz…"
+                    placeholder={t("lesson.type_in", { lang: courseName(lesson.course, lang) })}
                     className="input max-h-28 flex-1 resize-none py-2 text-sm"
                   />
                   <button
@@ -1245,7 +1280,7 @@ export function LessonPlayer({
                     disabled={!draft.trim()}
                     className="btn btn-primary h-10 shrink-0 px-4 text-sm disabled:opacity-50"
                   >
-                    Gönder
+                    {t("common.send")}
                   </button>
                 </div>
               ) : null}
@@ -1256,7 +1291,7 @@ export function LessonPlayer({
                   onClick={startRoleplay}
                   className="btn btn-primary w-full py-3 text-sm"
                 >
-                  Konuşmaya geç
+                  {t("lessonp.to_roleplay")}
                 </button>
               ) : null}
             </div>
@@ -1284,12 +1319,10 @@ export function LessonPlayer({
                     background: "color-mix(in srgb, var(--color-flame) 12%, transparent)",
                     color: "var(--color-flame)",
                   }}
-                  title="Sohbet servisi şu an kapalı; konuşma önceden yazılmış bir senaryoyla sürüyor. Konuşma yine sayılır."
+                  title={t("lessonp.chat_offline_note")}
                 >
                   <AlertIcon size={12} />
-                  {lesson.roleplay.script?.length
-                    ? "Konuşma servisi kapalı — senaryolu konuşma"
-                    : "Konuşma servisi kapalı — kalıpları kullan"}
+                  {t(lesson.roleplay.script?.length ? "lessonp.chat_off_scripted" : "lessonp.chat_off_patterns")}
                 </p>
               ) : null}
               <div className="mt-2 flex items-center justify-between gap-2">
@@ -1305,7 +1338,7 @@ export function LessonPlayer({
                     style={{ color: handsFree ? "var(--color-brand)" : undefined }}
                   >
                     <MicIcon size={13} />
-                    {handsFree ? "Eller serbest: açık" : "Eller serbest"}
+                    {t(handsFree ? "lessonp.hands_free_on" : "lessonp.hands_free")}
                   </button>
                 ) : null}
               </div>
@@ -1371,7 +1404,7 @@ export function LessonPlayer({
                       void listenRoleplay();
                     }}
                     disabled={busy}
-                    aria-label={listening ? "Kaydı bitir" : "Konuşmaya başla"}
+                    aria-label={t(listening ? "exam.stop_recording" : "lessonp.start_speaking")}
                     className="flex h-16 w-16 items-center justify-center rounded-full text-white shadow-lg disabled:opacity-50"
                     style={{
                       background: listening ? "var(--color-rose)" : "var(--color-brand)",
@@ -1400,12 +1433,12 @@ export function LessonPlayer({
                     onClick={() => setTyping((v) => !v)}
                     className="btn btn-ghost px-3 py-1 text-xs"
                   >
-                    {typing ? "Yazmayı kapat" : "Yazarak cevapla"}
+                    {t(typing ? "lessonp.close_typing" : "lesson.answer_by_typing")}
                   </button>
                 </div>
               ) : (
                 <p className="muted mb-2 text-center text-xs">
-                  Konuşma tanıma yok — yazarak devam et.
+                  {t("lessonp.no_asr")}
                 </p>
               )}
 
@@ -1430,7 +1463,7 @@ export function LessonPlayer({
                     disabled={busy || !draft.trim()}
                     className="btn btn-primary h-10 shrink-0 px-4 text-sm disabled:opacity-50"
                   >
-                    Gönder
+                    {t("common.send")}
                   </button>
                 </div>
               ) : null}
@@ -1442,7 +1475,7 @@ export function LessonPlayer({
                 onClick={() => void finish()}
                 className="btn btn-ghost w-full py-2.5 text-sm"
               >
-                {roleplayDone ? "Konuşmayı bitir" : "Şimdilik bırak"}
+                {t(roleplayDone ? "lessonp.end_conversation" : "lessonp.leave_for_now")}
               </button>
             </div>
           </motion.section>
@@ -1467,7 +1500,7 @@ export function LessonPlayer({
               <Mascot mood={saved?.passed ? "cheer" : "think"} size={54} className="-my-2 shrink-0" />
               <div>
                 <h2 className="text-base font-bold">
-                  {saved?.passed ? "Konuşma tamam" : "Konuşma yarım kaldı"}
+                  {t(saved?.passed ? "lesson.lesson_complete" : "lessonp.conversation_unfinished")}
                 </h2>
                 <p className="muted text-xs">
                   {lesson.title} · {lesson.titleTr}
@@ -1476,10 +1509,10 @@ export function LessonPlayer({
             </div>
 
             <dl className="mt-4 grid grid-cols-2 gap-3">
-              <Stat label="Alıştırma" value={`${correctCount} / ${scoredTotal}`} />
+              <Stat label={t("lessonp.practice")} value={`${correctCount} / ${scoredTotal}`} />
               <Stat
-                label="Konuşma"
-                value={`${userTurns} tur`}
+                label={t("lesson.phase_roleplay")}
+                value={t("lessonp.n_turns", { n: userTurns })}
                 tone={roleplayDone ? "ok" : "warn"}
               />
             </dl>
@@ -1487,7 +1520,7 @@ export function LessonPlayer({
             {/* Öğrenilen kelimeler özette bir kez daha: dersin dili kapanışta
                 toplu görünmeli — Learna bunu yapmıyor, biz yapıyoruz. */}
             <div className="mt-4">
-              <p className="muted text-xs font-semibold">Bu konuşmanın kelimeleri</p>
+              <p className="muted text-xs font-semibold">{t("lessonp.words_of_lesson")}</p>
               <div className="mt-1.5 flex flex-wrap gap-1.5">
                 {lesson.vocab.map((v) => (
                   <span key={v.de} className="chip px-2 py-1 text-xs">
@@ -1501,7 +1534,7 @@ export function LessonPlayer({
                 geçmeyen soluk — dersin asıl amacı kalıbı kullanmak. */}
             {lesson.patterns.length && turns.length > 1 ? (
               <div className="mt-4">
-                <p className="muted text-xs font-semibold">Kalıplar</p>
+                <p className="muted text-xs font-semibold">{t("lessonp.patterns")}</p>
                 <div className="mt-1.5 flex flex-wrap gap-1.5">
                   {lesson.patterns.map((pt) => {
                     const used = patternUsed(pt.de, turns);
@@ -1523,13 +1556,13 @@ export function LessonPlayer({
 
             {extras.cando.length ? (
               <p className="muted mt-4 text-xs leading-relaxed">
-                <span className="font-semibold">Yapabildiklerim:</span> {extras.cando.join(" · ")}
+                <span className="font-semibold">{t("lessonp.i_can")}</span> {extras.cando.join(" · ")}
               </p>
             ) : null}
 
             {corrections.length ? (
               <div className="mt-4">
-                <p className="muted text-xs font-semibold">Konuşmadaki düzeltmeler</p>
+                <p className="muted text-xs font-semibold">{t("lessonp.corrections")}</p>
                 <ul className="mt-1.5 space-y-1">
                   {corrections.map((c, i) => (
                     <li key={i} className="text-xs leading-relaxed">
@@ -1540,18 +1573,17 @@ export function LessonPlayer({
               </div>
             ) : turns.length > 1 ? (
               <p className="mt-4 text-xs" style={{ color: "var(--color-mint)" }}>
-                Konuşmada hiç düzeltme gerekmedi.
+                {t("lessonp.no_corrections")}
               </p>
             ) : null}
 
             {!roleplayDone ? (
               <p className="muted mt-4 text-xs leading-relaxed">
-                Konuşmanın sayılması için sohbette en az {lesson.roleplay.minTurns} kez söz alman
-                gerekiyor — kalıplar ancak kullanılınca oturuyor.
+                {t("lessonp.min_turns_note", { n: lesson.roleplay.minTurns })}
               </p>
             ) : saved ? (
               <p className="muted mt-4 text-xs leading-relaxed">
-                Bu konuşma {saved.nextDays} gün sonra tekrar karşına çıkacak.
+                {t("lessonp.next_in_days", { n: saved.nextDays })}
               </p>
             ) : null}
 
@@ -1562,7 +1594,7 @@ export function LessonPlayer({
                   onClick={() => setPhase("roleplay")}
                   className="btn btn-primary flex-1 py-3 text-sm"
                 >
-                  Konuşmaya dön
+                  {t("lessonp.back_to_conversation")}
                 </button>
               ) : null}
               {roleplayDone ? (
@@ -1570,9 +1602,9 @@ export function LessonPlayer({
                   type="button"
                   onClick={() => router.push(`/lessons/${lesson.id}/exam`)}
                   className="btn btn-ghost flex-1 py-3 text-sm"
-                  title="Aynı sahne, yardım yok, 5 tur, puanlı (WP-22)"
+                  title={t("lessonp.exam_hint")}
                 >
-                  Sınav olarak dene
+                  {t("lessonp.try_as_exam")}
                 </button>
               ) : null}
               {roleplayDone && extras.next ? (
@@ -1582,7 +1614,7 @@ export function LessonPlayer({
                   className="btn btn-primary flex-1 py-3 text-sm"
                   title={`${extras.next.title} · ${extras.next.titleTr}`}
                 >
-                  Sıradaki konuşma: {extras.next.title}
+                  {t("lesson.next_speaking", { title: extras.next.title })}
                 </button>
               ) : null}
               <button
@@ -1590,7 +1622,7 @@ export function LessonPlayer({
                 onClick={() => router.push("/immersion")}
                 className={`btn flex-1 py-3 text-sm ${roleplayDone && !extras.next ? "btn-primary" : "btn-ghost"}`}
               >
-                Konuşmalara dön
+                {t("lesson.back_to_path")}
               </button>
             </div>
           </motion.section>
@@ -1601,10 +1633,11 @@ export function LessonPlayer({
 }
 
 function Steps({ phase }: { phase: Phase }) {
+  const t = useT();
   const steps: { id: Phase; label: string }[] = [
-    { id: "lecture", label: "Anlatım" },
-    { id: "roleplay", label: "Konuşma" },
-    { id: "summary", label: "Özet" },
+    { id: "lecture", label: t("lesson.phase_lecture") },
+    { id: "roleplay", label: t("lesson.phase_roleplay") },
+    { id: "summary", label: t("lesson.phase_summary") },
   ];
   const at = steps.findIndex((s) => s.id === phase);
   return (
@@ -1635,7 +1668,10 @@ function Steps({ phase }: { phase: Phase }) {
  * derste olan türleri sayar.
  */
 function LectureProgress({ at, steps }: { at: number; steps: { expect?: Expectation }[] }) {
-  const kinds = Array.from(new Set(steps.map((s) => s.expect?.kind ?? "say"))).filter((k) => k in STEP_LABEL);
+  const t = useT();
+  const kinds = Array.from(new Set(steps.map((s) => s.expect?.kind ?? "say"))).filter(
+    (k) => k in STEP_LABEL_KEYS,
+  );
   return (
     <div>
       <div className="flex h-1.5 w-full gap-[2px] overflow-hidden rounded-full" aria-hidden>
@@ -1652,7 +1688,7 @@ function LectureProgress({ at, steps }: { at: number; steps: { expect?: Expectat
           {kinds.map((k) => (
             <span key={k} className="flex items-center gap-1">
               <span className="inline-block h-1.5 w-1.5 rounded-full" style={{ background: STEP_TONE[k] }} />
-              {STEP_LABEL[k]} {steps.filter((s) => (s.expect?.kind ?? "say") === k).length}
+              {t(STEP_LABEL_KEYS[k])} {steps.filter((s) => (s.expect?.kind ?? "say") === k).length}
             </span>
           ))}
         </p>
@@ -1708,9 +1744,10 @@ function bubbleEntrance(still: boolean) {
  * nefes önce bu noktaların yerine geçiyor.
  */
 function TypingDots() {
+  const t = useT();
   const still = useStill();
   return (
-    <span className="flex items-center gap-1 px-0.5 py-1.5" aria-label="hazırlanıyor">
+    <span className="flex items-center gap-1 px-0.5 py-1.5" aria-label={t("lesson.typing")}>
       {[0, 1, 2].map((i) => (
         <motion.span
           key={i}
@@ -1897,6 +1934,7 @@ function Bubble({
 
 /** Tanıyıcı yoksa kullanıcıya sebebini söylemek gerekiyor. */
 function AsrNote({ visible }: { visible: boolean }) {
+  const t = useT();
   if (!visible) return null;
   return (
     <div
@@ -1907,7 +1945,7 @@ function AsrNote({ visible }: { visible: boolean }) {
       }}
     >
       <AlertIcon size={14} className="mt-0.5 shrink-0" />
-      <span>Konuşma tanıma yok — yazarak devam edebilirsin.</span>
+      <span>{t("lessonp.no_asr_long")}</span>
     </div>
   );
 }

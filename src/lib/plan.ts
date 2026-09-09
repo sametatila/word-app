@@ -2,7 +2,7 @@ import "server-only";
 import { and, desc, eq, gte, isNotNull, lte, sql } from "drizzle-orm";
 import { db } from "@/lib/db";
 import { events, reviews, userLessons, userSkills, userWords } from "@/lib/db/schema";
-import { ERROR_LABELS, ERROR_TARGET_GAME, isErrorType } from "@/lib/errors";
+import { errorLabel, ERROR_TARGET_GAME, isErrorType } from "@/lib/errors";
 import { GAME_LABEL_KEYS, type GameId } from "@/lib/types";
 import { translate, DEFAULT_NATIVE, type NativeLang } from "@/lib/i18n/dict";
 import type { CefrLevel } from "@/lib/skills/types";
@@ -156,7 +156,7 @@ export async function buildPlan(
         .where(and(eq(reviews.userId, userId), eq(reviews.game, target.game), gte(reviews.createdAt, dayStart)));
       items.push({
         id: "weak",
-        title: translate(lang, "plan.weak_spot", { type: ERROR_LABELS[top.type] }),
+        title: translate(lang, "plan.weak_spot", { type: errorLabel(top.type, lang) }),
         detail: translate(lang, "plan.weak_spot_detail", { n: top.n, game: target.label }),
         minutes: 4,
         done: (todayRows?.n ?? 0) >= 5,

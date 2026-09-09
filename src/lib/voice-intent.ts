@@ -95,21 +95,85 @@ export function parseSkipDe(text: string): boolean {
 }
 
 /**
+ * Aynı kural kümesi İNGİLİZCE ve ALMANCA için.
+ *
+ * Soru kullanıcının dilinde soruluyor, dolayısıyla cevap da o dilde geliyor:
+ * yalnız Türkçe sözcüklere bakan bir ayrıştırıcı İngilizce "yes" diyen
+ * kullanıcıyı hiç anlamaz ve tur iki kez sorup sessizce biterdi. Sözcükler
+ * tam-sözcük, kalıplar alt dize olarak aranıyor — Türkçedeki ile aynı kural.
+ */
+const NO_WORDS_EN = new Set(["no", "nope", "stop", "quit", "enough", "later", "cancel", "done", "finish"]);
+const YES_WORDS_EN = new Set(["yes", "yeah", "yep", "sure", "ok", "okay", "continue", "go", "keep", "more", "again"]);
+const NO_PHRASES_EN = ["not now", "i m done", "that s enough", "no thanks", "stop here"];
+const YES_PHRASES_EN = ["go on", "keep going", "let s go", "one more", "why not"];
+
+const NO_WORDS_DE = new Set(["nein", "nee", "stopp", "stop", "aufhoeren", "genug", "spaeter", "fertig", "schluss", "abbrechen"]);
+const YES_WORDS_DE = new Set(["ja", "jaa", "klar", "gerne", "weiter", "los", "okay", "ok", "weitermachen", "natuerlich"]);
+const NO_PHRASES_DE = ["nicht mehr", "keine lust", "das reicht", "fuer heute", "lieber nicht"];
+const YES_PHRASES_DE = ["mach weiter", "weiter machen", "noch eins", "warum nicht", "gerne weiter"];
+
+/** Latin harfli genel katlama — İngilizce için yeterli. */
+function foldPlain(text: string): string {
+  return text
+    .toLocaleLowerCase("en-US")
+    .replace(/[^a-z0-9\s]/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+/**
  * Söylenenin niyeti. Anlaşılmazsa `null` — çağıran taraf soruyu tekrarlar.
  * Emin olunamayan bir cevabı EVET saymak, kullanıcıyı istemediği bir tura
  * sokardı; HAYIR saymak ise turu sessizce bitirirdi. İkisi de sormaktan kötü.
+ *
+ * `lang` soruyu SORDUĞUMUZ dil: kullanıcı hangi dilde soruldu ise o dilde
+ * cevap veriyor.
  */
-export function parseConfirm(text: string): Confirm {
-  const folded = foldTurkish(text);
+export function parseConfirm(text: string, lang: "tr" | "en" | "de" = "tr"): Confirm {
+  const folded = lang === "tr" ? foldTurkish(text) : lang === "de" ? foldGerman(text) : foldPlain(text);
   if (!folded) return null;
   const words = folded.split(" ");
+  const [noWords, yesWords, noPhrases, yesPhrases] =
+    lang === "en"
+      ? [NO_WORDS_EN, YES_WORDS_EN, NO_PHRASES_EN, YES_PHRASES_EN]
+      : lang === "de"
+        ? [NO_WORDS_DE, YES_WORDS_DE, NO_PHRASES_DE, YES_PHRASES_DE]
+        : [NO_WORDS, YES_WORDS, NO_PHRASES, YES_PHRASES];
 
   // Olumsuzluk ÖNCE: "devam etmeyelim" içinde "devam" da geçiyor.
-  if (NO_PHRASES.some((p) => folded.includes(p))) return "no";
-  if (words.some((w) => NO_WORDS.has(w))) return "no";
+  if (noPhrases.some((p) => folded.includes(p))) return "no";
+  if (words.some((w) => noWords.has(w))) return "no";
 
-  if (YES_PHRASES.some((p) => folded.includes(p))) return "yes";
-  if (words.some((w) => YES_WORDS.has(w))) return "yes";
+  if (yesPhrases.some((p) => folded.includes(p))) return "yes";
+  if (words.some((w) => yesWords.has(w))) return "yes";
 
   return null;
+}
+
+/**
+ * "Doğru mu yanlış mı" hükmü — konuşma dersindeki `truefalse` adımı.
+ *
+ * Ayrıştırma `parseConfirm` ile aynı sorunu taşıyordu: hüküm yalnız Türkçe
+ * sözcüklerle aranıyordu ve soru kullanıcının dilinde sorulunca cevabı
+ * hiç anlaşılmıyordu.
+ */
+const TRUE_WORDS: Record<string, string[]> = {
+  tr: ["dogru", "evet", "katiliyorum"],
+  en: ["true", "right", "correct", "yes"],
+  de: ["richtig", "stimmt", "ja", "wahr"],
+};
+const FALSE_WORDS: Record<string, string[]> = {
+  tr: ["yanlis", "hayir", "katilmiyorum"],
+  en: ["false", "wrong", "incorrect", "no"],
+  de: ["falsch", "nein", "unwahr"],
+};
+
+export function parseJudgment(text: string, lang: "tr" | "en" | "de" = "tr"): boolean | null {
+  const folded = lang === "tr" ? foldTurkish(text) : lang === "de" ? foldGerman(text) : foldPlain(text);
+  if (!folded) return null;
+  const words = new Set(folded.split(" "));
+  const yes = (TRUE_WORDS[lang] ?? TRUE_WORDS.tr).some((w) => words.has(w));
+  const no = (FALSE_WORDS[lang] ?? FALSE_WORDS.tr).some((w) => words.has(w));
+  if (yes === no) return null; // ikisi birden ya da hiçbiri: hüküm yok
+  return yes;
 }

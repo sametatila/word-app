@@ -157,6 +157,9 @@ function glossSegment(word: { tr: string; en: string | null }, lang: NativeLang)
  */
 const UNHEARD_IS_NOT_WRONG = true;
 
+/** Anlatım tarafının tanıyıcı etiketi — arayüz dili neyse o dinleniyor. */
+const NATIVE_TAG: Record<NativeLang, string> = { tr: "tr-TR", en: "en-US", de: "de-DE" };
+
 /**
  * Mikrofonun çalışmadığına ne zaman karar verilir.
  *
@@ -632,7 +635,8 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
    */
   const hearOnce = useCallback(
     async (
-      lang: "de" | "tr",
+      /** Hangi taraf dinleniyor: anlatım dili ("native") ya da hedef dil ("target"). */
+      side: "target" | "native",
       windowMs: number,
       expected = "",
       /** Ara sonuç bunu geçerse dinleme HEMEN kapanır (bkz. use-listen). */
@@ -666,7 +670,7 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
       if (!armed.current && browserRef.current && visible()) {
         const startedAt = Date.now();
         const heard = await listen({
-          lang: lang === "tr" ? "tr-TR" : "de-DE",
+          lang: side === "native" ? NATIVE_TAG[lang] : "de-DE",
           silenceMs: BROWSER_SILENCE_MS,
           maxMs: windowMs,
           accept,
@@ -722,7 +726,7 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
           await say([{ lang, narration: true, text: t("walk.continue_on_screen") }]);
           if (reprompt) await say(reprompt);
           if (signal?.aborted) return [];
-          return hearOnceRef.current(lang, windowMs, expected, accept, reprompt, signal);
+          return hearOnceRef.current(side, windowMs, expected, accept, reprompt, signal);
         }
         track("walk_switch", 1, "hidden");
         note("ekran kapandı → cep yolu");
@@ -805,7 +809,8 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
    */
   const hear = useCallback(
     async (
-      lang: "de" | "tr",
+      /** Hangi taraf dinleniyor: anlatım dili ("native") ya da hedef dil ("target"). */
+      side: "target" | "native",
       windowMs: number,
       expected = "",
       accept?: (alternatives: string[]) => boolean,
@@ -815,7 +820,7 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
       const ctl = new AbortController();
       hearCtl.current = ctl;
       const heard = await withDeadline(
-        hearOnce(lang, windowMs, expected, accept, reprompt, ctl.signal),
+        hearOnce(side, windowMs, expected, accept, reprompt, ctl.signal),
         windowMs + HEAR_SLACK_MS,
         null as string[] | null,
       );
@@ -975,13 +980,13 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
         if (ended.current) return "no";
         setPhase("listening");
         const heard = await hear(
-          "tr",
+          "native",
           CONFIRM_SILENCE_MS,
           "",
-          (alts) => parseConfirm(alts[0] ?? "") !== null,
+          (alts) => parseConfirm(alts[0] ?? "", lang) !== null,
           [{ lang, narration: true, text: t("walk.continue_q") }],
         );
-        const intent = parseConfirm(heard[0] ?? "");
+        const intent = parseConfirm(heard[0] ?? "", lang);
         if (intent === "yes") return "yes";
         if (intent === "no") return "no";
       }
@@ -1085,7 +1090,7 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
           // belliyken duraklama payının dolmasını beklemenin karşılığı yok.
           const ask = () =>
             hear(
-              "de",
+              "target",
               ANSWER_WINDOW_MS,
               target,
               // Doğru cevap DA teslim işareti ("weiter") de dinlemeyi erken

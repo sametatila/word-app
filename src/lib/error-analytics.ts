@@ -2,9 +2,10 @@ import "server-only";
 import { and, desc, eq, gte, isNotNull, sql } from "drizzle-orm";
 import { db } from "@/lib/db";
 import { reviews, words } from "@/lib/db/schema";
-import { ERROR_LABELS, ERROR_TARGET_GAME, isErrorType, type ErrorType } from "@/lib/errors";
+import { errorLabel, ERROR_TARGET_GAME, isErrorType, type ErrorType } from "@/lib/errors";
 import { GAME_LABEL_KEYS, type GameId } from "@/lib/types";
 import { weakRules } from "@/lib/lessons/progress";
+import { DEFAULT_NATIVE, type NativeLang } from "@/lib/i18n/dict";
 
 /**
  * Hata analitiği (plan WP-51) — "zayıf noktaların".
@@ -48,7 +49,12 @@ export type ErrorReport = {
   weakRules: string[];
 };
 
-export async function errorReport(userId: string, course: string, days = 30): Promise<ErrorReport> {
+export async function errorReport(
+  userId: string,
+  course: string,
+  days = 30,
+  lang: NativeLang = DEFAULT_NATIVE,
+): Promise<ErrorReport> {
   const since = new Date(Date.now() - days * 86400000);
   const rows = await db
     .select({ type: reviews.errorType, n: sql<number>`count(*)::int` })
@@ -63,7 +69,7 @@ export async function errorReport(userId: string, course: string, days = 30): Pr
       const game = ERROR_TARGET_GAME[r.type] ?? null;
       return {
         type: r.type,
-        label: ERROR_LABELS[r.type],
+        label: errorLabel(r.type, lang),
         n: r.n,
         pct: totalWrong ? Math.round((100 * r.n) / totalWrong) : 0,
         href: game ? `/learn/game?game=${game}` : null,

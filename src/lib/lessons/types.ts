@@ -39,7 +39,17 @@ import type { CefrLevel } from "../skills/types";
  * "!== tr" diye bakmalı — yoksa İngilizce dersler hedef dil sayılmaz ve ne
  * seslendirilir ne de vurgulanır.
  */
-export type Segment = { lang: "tr" | "de" | "en"; text: string };
+export type Segment = {
+  lang: "tr" | "de" | "en";
+  text: string;
+  /**
+   * Anlatım parçası — metin sözlükten geliyor, yani `lang` gerçekten o
+   * parçanın dili ve ses anlatım sesiyle okunuyor (bkz. speak-button).
+   * İÇERİK dosyalarındaki parçalar bunu taşımıyor: onların metni Türkçe ve
+   * o metni Almanca sesle okumak yanlış olurdu.
+   */
+  narration?: boolean;
+};
 
 /** İçerik dosyaları için kısayollar — segment yazımını okunur tutuyor. */
 export const tr = (text: string): Segment => ({ lang: "tr", text });

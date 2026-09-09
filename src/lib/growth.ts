@@ -2,7 +2,7 @@ import "server-only";
 import { and, asc, eq, gte, isNotNull, sql } from "drizzle-orm";
 import { db } from "@/lib/db";
 import { assessments, dailyStats, events, exams, reviews, userLessons, userSkills } from "@/lib/db/schema";
-import { ERROR_LABELS, isErrorType } from "@/lib/errors";
+import { errorLabel, isErrorType } from "@/lib/errors";
 import { computeProficiency, PROFICIENCY_LABEL_KEYS, PROFICIENCY_SKILLS, type Band, type ProficiencySkill } from "@/lib/proficiency";
 import { translate, DEFAULT_NATIVE, type NativeLang } from "@/lib/i18n/dict";
 import { gatherEvidence, nextStep, type NextStep } from "@/lib/proficiency-data";
@@ -197,7 +197,7 @@ export async function weeklySummary(
   const idx = s.writing.findIndex((p) => p.week === lastWeek);
   const writing = { from: idx > 0 ? s.writing[idx - 1].value : null, to: idx >= 0 ? s.writing[idx].value : null };
   const usage = s.usage.find((p) => p.week === lastWeek)?.value ?? null;
-  const topError = top && isErrorType(top.type) ? { type: top.type, label: ERROR_LABELS[top.type], n: top.n } : null;
+  const topError = top && isErrorType(top.type) ? { type: top.type, label: errorLabel(top.type, lang), n: top.n } : null;
 
   const parts: string[] = [];
   if (answers) parts.push(`${answers} cevap`);

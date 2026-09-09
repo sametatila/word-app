@@ -1,3 +1,4 @@
+import { translate, type NativeLang } from "@/lib/i18n/dict";
 /**
  * Hata taksonomisi (plan WP-02).
  *
@@ -36,18 +37,23 @@ export function isErrorType(v: unknown): v is ErrorType {
 }
 
 /** Türkçe ad — şeritte, profilde, raporda. */
-export const ERROR_LABELS: Record<ErrorType, string> = {
-  article: "artikel",
-  plural: "çoğul",
-  case: "hâl (Kasus)",
-  verb_position: "fiilin yeri",
-  conjugation: "fiil çekimi",
-  spelling: "yazım",
-  meaning: "anlam",
-  word_order: "kelime sırası",
-  pronunciation: "telaffuz",
-  listening: "dinleme",
+export const ERROR_LABEL_KEYS: Record<ErrorType, string> = {
+  article: "err.article",
+  plural: "err.plural",
+  case: "err.case",
+  verb_position: "err.verb_position",
+  conjugation: "err.conjugation",
+  spelling: "err.spelling",
+  meaning: "err.meaning",
+  word_order: "err.word_order",
+  pronunciation: "err.pronunciation",
+  listening: "err.listening",
 };
+
+/** Hata türünün adı, verilen arayüz dilinde. */
+export function errorLabel(type: ErrorType, lang: NativeLang): string {
+  return translate(lang, ERROR_LABEL_KEYS[type] ?? "err.meaning");
+}
 
 /**
  * Hata tipinden dilbilgisi sayfasına bağlantı: `/cheatsheet#<tablo>`.
