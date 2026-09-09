@@ -1,18 +1,16 @@
 {
-  "total": 126,
+  "total": 123,
   "files": {
     "src/data/demoPlacement.ts": 5,
-    "src/data/exams.ts": 2,
+    "src/data/exams/index.ts": 1,
     "src/data/firstWords.ts": 40,
     "src/data/moduleThemes.ts": 54,
     "src/lib/courses.ts": 7,
     "src/lib/i18n.ts": 1,
     "src/lib/numbers.ts": 10,
     "src/screens/ExamScreen.tsx": 1,
-    "src/screens/LearnScreen.tsx": 1,
     "src/screens/OnboardingScreen.tsx": 1,
     "src/screens/SettingsScreen.tsx": 1,
-    "src/ui/VoicePicker.tsx": 2,
-    "src/data/exams/index.ts": 1
+    "src/ui/VoicePicker.tsx": 2
   }
 }
