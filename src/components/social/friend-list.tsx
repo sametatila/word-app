@@ -77,7 +77,7 @@ function FriendItem({ f, nudged, onChanged }: { f: FriendRow; nudged: boolean; o
     }
   }
   async function remove() {
-    if (!window.confirm(`${f.name ?? t("social.this_person")} arkadaşlıktan çıkarılsın mı? Bildirim gitmez.`)) return;
+    if (!window.confirm(t("friendrows.remove_confirm", { name: f.name ?? t("social.this_person") }))) return;
     try {
       await social.remove(f.userId);
       onChanged();
@@ -146,7 +146,7 @@ function FriendItem({ f, nudged, onChanged }: { f: FriendRow; nudged: boolean; o
           onClick={() => void nudge()}
           title={t(cheer ? "socialw.cheer_hint" : "socialw.nudge_hint")}
         >
-          {t(sent ? (cheer ? "socialw.cheered" : "socialw.nudged") : cheer ? "socialw.cheer" : "user.nudge")}
+          {t(sent ? (cheer ? "friendrows.cheered" : "friendrows.nudged") : cheer ? "friendrows.cheer" : "friendrows.nudge")}
         </button>
         <button className="btn btn-ghost h-8 px-2 text-xs" disabled={busy} onClick={() => void quest()} title={t("socialw.quest_hint")} aria-label={t("quests.invite_title")}>
           <TargetIcon size={15} />
