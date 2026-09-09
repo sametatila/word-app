@@ -87,7 +87,10 @@ export function FeedCard({ item }: { item: FeedItem }) {
     <article className="card px-4 py-3">
       <div className="flex items-start gap-3">
         {item.user.username ? (
-          <Link href={`/u/${item.user.username}`} prefetch={false} className="shrink-0">
+          /* Avatar `aria-hidden`, ad da burada bağlantı DEĞİL: bu bağlantının
+             erişilebilir bir adı hiç yoktu ve ekran okuyucu yalnız "bağlantı"
+             diyordu. Profile giden tek yol da bu. */
+          <Link href={`/u/${item.user.username}`} prefetch={false} aria-label={name} className="shrink-0">
             <Avatar userId={item.user.userId} name={item.user.name} size={40} />
           </Link>
         ) : (

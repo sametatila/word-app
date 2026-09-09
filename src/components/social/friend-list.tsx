@@ -90,7 +90,10 @@ function FriendItem({ f, nudged, onChanged }: { f: FriendRow; nudged: boolean; o
   return (
     <li className="flex items-center gap-3 px-4 py-3" style={{ borderColor: "var(--border)" }}>
       {href ? (
-        <Link href={href} prefetch={false} className="shrink-0">
+        /* Ad zaten aynı adrese giden bir bağlantı; avatar onun süsü. Adsız
+           ikinci bir durak eklemesin diye klavye ve ekran okuyucu dışında
+           bırakıldı. */
+        <Link href={href} prefetch={false} aria-hidden tabIndex={-1} className="shrink-0">
           <Avatar userId={f.userId} name={f.name} size={40} />
         </Link>
       ) : (
