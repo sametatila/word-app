@@ -78,7 +78,7 @@ export type Metric =
   | "courses"
   // Uygulama büyüdükçe rozetsiz kalan bölümler: dilbilgisi çalışması,
   // sınavlar, yazma ve konuşma değerlendirmeleri, görevler ve oyun keşfi.
-  | "drillMastered"
+  | "grammarDone"
   | "exams"
   | "bestExam"
   | "writings"
@@ -154,9 +154,16 @@ export const ACHIEVEMENTS: AchievementDef[] = [
   // ——— Dilbilgisi ————————————————————————————————————————————————
   // Dilbilgisi çalışması uygulamanın en yeni bölümü ve hiç rozeti yoktu.
   // Ölçü kelimedekiyle aynı tanım: 21 günü geçen aralık = pekişmiş.
-  { id: "drill50", titleKey: "ach.drill50.title", hintKey: "ach.drill50.hint", icon: "TagIcon", tier: "bronze", group: "grammar", metric: "drillMastered", target: 50 },
-  { id: "drill250", titleKey: "ach.drill250.title", hintKey: "ach.drill250.hint", icon: "ListIcon", tier: "silver", group: "grammar", metric: "drillMastered", target: 250 },
-  { id: "drill1000", titleKey: "ach.drill1000.title", hintKey: "ach.drill1000.hint", icon: "MountainIcon", tier: "gold", group: "grammar", metric: "drillMastered", target: 1000 },
+  /*
+    HEDEFLER İÇERİĞİN ÖLÇEĞİNE GÖRE. Eski 50/250/1000 madde başınaydı (her gün
+    tekrar edilen tek tek çekim maddeleri); yeni ölçü ALIŞTIRMA sayıyor ve
+    kütüphanede kurs başına bugün 25 dilbilgisi alıştırması var (seviye başına
+    beş, beş seviye). 5/12/25: ilki ilk oturumda, sonuncusu kursun tamamını
+    bitirenlerde. Kütüphane büyüdükçe hedefler yine anlamlı kalır.
+  */
+  { id: "grammar5", titleKey: "ach.grammar5.title", hintKey: "ach.grammar5.hint", icon: "GrammarIcon", tier: "bronze", group: "grammar", metric: "grammarDone", target: 5 },
+  { id: "grammar12", titleKey: "ach.grammar12.title", hintKey: "ach.grammar12.hint", icon: "GrammarIcon", tier: "silver", group: "grammar", metric: "grammarDone", target: 12 },
+  { id: "grammar25", titleKey: "ach.grammar25.title", hintKey: "ach.grammar25.hint", icon: "MountainIcon", tier: "gold", group: "grammar", metric: "grammarDone", target: 25 },
 
   // ——— Ders ——————————————————————————————————————————————————————
   { id: "lesson1", titleKey: "ach.lesson1.title", hintKey: "ach.lesson1.hint", icon: "ChatIcon", tier: "bronze", group: "lessons", metric: "lessons", target: 1 },
@@ -314,8 +321,34 @@ async function collectMetrics(userId: string): Promise<Metrics> {
       .innerJoin(words, eq(words.id, userWords.wordId))
       .where(and(eq(userWords.userId, userId), gt(userWords.reps, 0))),
 
-    // Dilbilgisi drill'i kaldırıldı (2026-08); pekişmiş dilbilgisi maddesi artık 0.
-    Promise.resolve([{ n: 0 }]),
+    /*
+      GEÇİLMİŞ DİLBİLGİSİ ALIŞTIRMASI.
+
+      Eski ölçü 2026-08'de kaldırılan dilbilgisi çalışmasına (`cheat_progress`)
+      bakıyordu ve o günden beri sabit 0 dönüyordu: üç rozet kazanılması
+      imkânsız duruyordu. Yeni karşılığı Beceriler kütüphanesindeki dilbilgisi
+      alıştırmaları — `user_skills` satırı `skill` alanını kendi taşıyor
+      (WP-01), bu yüzden katalogla birleştirmeye gerek yok.
+
+      Geçme eşiği Yapabildiklerim'dekiyle AYNI (lib/cando-progress.ts): son
+      puan ≥ 70 ya da doğru/toplam ≥ 0.7. İki yerde iki farklı "geçti" tanımı
+      olsaydı aynı alıştırma bir ekranda geçilmiş, diğerinde geçilmemiş
+      görünürdü.
+
+      Patika'nın gramer adımı bu sayıya GİRMİYOR: o adım bugün sunucuya hiçbir
+      şey yazmıyor (bkz. components/immersion/quiz-player.tsx — "v1: pratik,
+      ilerleme kaydı yok). Kayıt eklendiği gün buraya da eklenir.
+    */
+    db
+      .select({ n: sql<number>`count(*)::int` })
+      .from(userSkills)
+      .where(
+        and(
+          eq(userSkills.userId, userId),
+          eq(userSkills.skill, "grammar"),
+          sql`(coalesce(${userSkills.lastScore}, 0) >= 70 or (${userSkills.total} > 0 and ${userSkills.correct}::numeric / ${userSkills.total} >= 0.7))`,
+        ),
+      ),
 
     db
       .select({ n: sql<number>`count(*)::int`, best: sql<number>`coalesce(max(${exams.score}), 0)::int` })
@@ -375,7 +408,7 @@ async function collectMetrics(userId: string): Promise<Metrics> {
     activeDays: Number(dayRow[0]?.days ?? 0),
     bossClears: Number(bossRow[0]?.n ?? 0),
     courses,
-    drillMastered: Number(drillRow[0]?.n ?? 0),
+    grammarDone: Number(drillRow[0]?.n ?? 0),
     exams: Number(examRow[0]?.n ?? 0),
     bestExam: Number(examRow[0]?.best ?? 0),
     writings: Number(assessRow[0]?.writings ?? 0),
