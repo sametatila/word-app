@@ -223,19 +223,44 @@ ders                 580
 tr() segment      17.369   ← öğretmenin konuşma metni · İngilizcesi 0
 de() segment       8.486   ← hedef dil, çevrilmez
 titleTr + summary  1.160   ← İngilizcesi 0
-vocab girdisi      4.640   ← %99,6'sı kelime havuzundan TÜRETİLEBİLİR (19 eksik)
+vocab girdisi      4.640   ← havuzda karşılığı olan 4.621, ama bkz. aşağısı
 patterns girdisi   1.292   ← %0,3 · kalıp cümleler havuzda yok, elle
+roleplay scene       580   ← İngilizcesi 0
+goal                 580   ← İngilizcesi 0
 ```
 
-Elle yazılacak: **19.840 dize** (19 + 1.292 + 1.160 + 17.369). Bunun
-%88'i tek bir alan: `lecture`. Karşılaştırma için en→de örnek cümleleri
-7.175'ti — yani bu kalem tek başına onun 2,8 katı.
+Elle yazılacak: **en az 21.000 dize**. Bunun %83'ü tek bir alan: `lecture`.
+Karşılaştırma için en→de örnek cümleleri 7.175'ti — bu kalem tek başına
+onun üç katı.
 
-Türetilebilirlik ölçüldü, tahmin edilmedi: `vocab` girdileri `{de, tr}`
-çiftleri ve Almanca başlık kelime havuzunda `en` alanıyla duruyor. Eksik
-kalan 19 madde ortaç (gemacht, gekauft, gesehen…) ve birkaç işlev sözcüğü.
-`patterns` ise tam cümle kalıbı ("Ich heiße …") ve havuzda karşılığı yok —
-bu yüzden %0,3.
+**TÜRETİLEBİLİRLİK İKİ AYRI SORU ve ilk ölçüm yanlış yanıtlıyordu.**
+"Havuzda karşılığı var mı" (%99,6) ile "havuzdaki karşılık DOĞRU mu"
+başka şeyler. İkincisi ölçüldü: dersin `tr` alanı havuzun `tr` alanıyla
+karşılaştırıldı.
+
+```
+havuzda karşılığı olan  4.621
+tr birebir aynı         3.926  (%84,6) → havuzun `en`i güvenle alınır
+tr FARKLI                 695  (%15,0) → tek tek okunmalı
+```
+
+Farkın bir kısmı yalnız sözcük tercihi (`soyad`/`soyadı`, `nine`/
+`büyükanne`) ama bir kısmı gerçek anlam ayrımı ve türetme orada YANLIŞ
+karşılık verirdi:
+
+```
+bitte      ders «lütfen»      ↔ havuz «rica»       (en: request)
+schreiben  ders «yazmak»      ↔ havuz «resmî yazı» (en: letter)
+groß       ders «uzun boylu»  ↔ havuz «büyük»      (en: grand)
+süß        ders «sevimli»     ↔ havuz «tatlı»      (en: sweet)
+```
+
+Bu, en→de örnek cümlelerinde 174 kez görülen tersine-çevrilemezliğin aynısı:
+ders sözlükçesi kelimenin BU METİNDEKİ anlamını taşıyor, havuz ise birinci
+sözlük anlamını (bkz. `types.ts`teki `Gloss` yorumu — kural zaten yazılıydı).
+Yani `vocab` için tek tek okunacak madde 19 değil **714** (695 + 19).
+
+`VocabItem` tipi bugün `{ de, tr }` — `en` alanı yok, eklenmesi gerekiyor.
 
 Kalem BÖLÜNEMİYOR. Sözlükçesi ve başlıkları İngilizce, anlatımı Türkçe bir
 ders yarım çeviridir ve Faz 1'in kuralı bunu yasaklıyor: karşılık yoksa
