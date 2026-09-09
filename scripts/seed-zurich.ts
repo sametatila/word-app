@@ -11,7 +11,7 @@ import { readMeanings } from "./apply-meanings";
 import { readZurichSentences } from "./apply-zurich-beispiel";
 
 /**
- * Züritüütsch kelime havuzunu Neon'a yükler.
+ * Züritüütsch kelime havuzunu veritabanına yükler.
  *
  * Kaynak: data/app/words.json (Almanca havuz — tr/typ/niveau/rank buradan) +
  * data/zurich/chunk-*.json (gsw biçim, artikel, Zürihce örnek cümle).

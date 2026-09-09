@@ -1,10 +1,12 @@
 /**
  * Yerel test veritabanına kelime yükler.
  *
- * `scripts/seed.ts` bunu yapamıyor çünkü Neon'un HTTP sürücüsünü kullanıyor ve
- * o sürücü düz bir PostgreSQL'e bağlanamıyor. E2E testi ise dolu bir `words`
- * tablosu bekliyor: tohumlanmamış veritabanında oturum kurulamadığı için
- * testlerin çoğu "0 tur üretildi" diye düşüyor ve sebebi kodmuş gibi görünüyor.
+ * `scripts/seed.ts` ayrı duruyor çünkü o CANLI hattı besliyor: `DATABASE_URL`'e
+ * bakar, anlam düzeltmelerini bindirir ve kaynaktan çıkmış maddeleri siler.
+ * Burası ise `TEST_DATABASE_URL`'e yazan çıplak bir fikstür yükleyicisi — E2E
+ * testi dolu bir `words` tablosu bekliyor: tohumlanmamış veritabanında oturum
+ * kurulamadığı için testlerin çoğu "0 tur üretildi" diye düşüyor ve sebebi
+ * kodmuş gibi görünüyor.
  *
  *   TEST_DATABASE_URL=postgres://... npm run test:seed
  */

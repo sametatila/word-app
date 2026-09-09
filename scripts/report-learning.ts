@@ -41,8 +41,8 @@ async function main() {
     (await sql.query(s.reduce((acc, part, i) => `${acc}$${i}${part}`), v)).rows as T[];
   const weeks = Math.max(1, Math.min(52, Number(process.argv[2]) || 8));
   const since = `current_date - ${7 * weeks}`;
-  // Neon sürücüsü parametreyi tarih aritmetiğinde interval gibi okuyamıyor;
-  // gün sayısını tam sayı olarak bağlayıp `::int` ile çarpıyoruz.
+  // Sürücü parametreyi tarih aritmetiğinde interval gibi okuyamıyor; gün
+  // sayısını tam sayı olarak bağlayıp `::int` ile çarpıyoruz.
   const days = 7 * weeks;
 
   console.log(`\n══ Öğrenme raporu · son ${weeks} hafta (${since}) ══`);

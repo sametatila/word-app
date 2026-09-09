@@ -11,7 +11,7 @@ import { purgeUserData } from "@/lib/account/purge";
 import { revokeAppleSignIn } from "@/lib/account/apple-revoke";
 
 /**
- * Self-hosted Better Auth (Neon Auth yerine). Oturumlar/kullanıcılar KENDİ
+ * Self-hosted Better Auth. Oturumlar/kullanıcılar KENDİ
  * Postgres'imizde. Uçlar aynı (`/api/auth/sign-in/email`, `sign-up/email`,
  * `get-session`, `sign-out`, `sign-in/social`, `request-password-reset`) →
  * web formları ve mobil uygulama değişmeden çalışır.

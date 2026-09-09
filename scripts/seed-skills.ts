@@ -8,7 +8,7 @@ import type { SkillExercise } from "../src/lib/skills/types";
 import { BUNDLED_EXERCISES } from "../src/lib/skills/bundled";
 
 /**
- * Beceri içeriğini (okuma/dinleme/yazma) Neon'a yükler.
+ * Beceri içeriğini (okuma/dinleme/yazma) veritabanına yükler.
  *
  * Repo içindeki content/ dosyaları tek doğruluk kaynağıdır; bu script mevcut
  * satırları günceller, yenilerini ekler, artık var olmayanları siler. Tablo

@@ -8,7 +8,7 @@ import { Pool } from "pg";
  * Yenilenen anlamları ve örnek cümleleri veritabanına yazar:
  *   `npm run meanings:apply -- [seviye|paket|all] [--dry]`
  *
- * Kaynak `data/meanings/out/*.json`; orası **doğrunun tek kaynağı**. Neon'a
+ * Kaynak `data/meanings/out/*.json`; orası **doğrunun tek kaynağı**. Veritabanına
  * doğrudan yazmak yetmiyor: `db:seed` kelimeleri `data/app/words.json`'dan
  * yeniden yüklüyor ve elle yapılan her düzeltmeyi siliyor. Bu yüzden düzeltme
  * repoda duruyor, betik yalnızca onu uyguluyor — ve `seed.ts` de aynı dosyaları

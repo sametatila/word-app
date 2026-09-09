@@ -13,9 +13,9 @@ export default async function LoginPage() {
     return (
       <div className="mx-auto flex min-h-dvh max-w-md flex-col items-center justify-center gap-4 p-6 text-center">
         <h1 className="text-xl font-bold">{t("del.disabled")}</h1>
-        {/* Sebep TEKNİK ve kullanıcıya söylenmiyordu — "Neon Auth anahtarları
-            tanımlı değil" cümlesi kurulumu yapan kişiye ait, giriş yapmaya
-            çalışan kişiye değil. Üstelik sağlayıcı artık better-auth. */}
+        {/* Sebep TEKNİK ve kullanıcıya söylenmiyordu — "giriş sağlayıcısının
+            anahtarları tanımlı değil" cümlesi kurulumu yapan kişiye ait, giriş
+            yapmaya çalışan kişiye değil. */}
         <p className="muted text-sm">{t("del.disabled_sub")}</p>
         <Link href="/learn" className="btn btn-primary px-5 py-3">
           {t("loginw.continue_demo")}

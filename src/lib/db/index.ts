@@ -7,7 +7,7 @@ type Db = NodePgDatabase<typeof schema>;
 let instance: Db | null = null;
 
 /**
- * Kendi sunucumuzdaki PostgreSQL'e bağlanır (Neon değil). Bağlantı ilk sorguda
+ * Kendi sunucumuzdaki PostgreSQL'e bağlanır. Bağlantı ilk sorguda
  * kurulur; böylece DATABASE_URL olmadan da `next build` tamamlanır, hata yalnız
  * istek anında oluşur. Havuz (Pool) tek örnek olarak tutulur.
  */

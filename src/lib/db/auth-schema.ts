@@ -1,7 +1,7 @@
 import { pgTable, text, timestamp, boolean } from "drizzle-orm/pg-core";
 
 /**
- * Self-hosted Better Auth tabloları (Neon Auth yerine). Better Auth bu dört
+ * Self-hosted Better Auth tabloları. Better Auth bu dört
  * tabloyu bekler: user / session / account / verification. Kolon adları Better
  * Auth 1.2 varsayılanlarıyla (camelCase) eşleşir. drizzle-kit push bunları
  * yerel Postgres'te oluşturur (schema.ts'ten re-export ediliyor).

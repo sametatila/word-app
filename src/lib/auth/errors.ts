@@ -1,6 +1,6 @@
 import { translate, DEFAULT_NATIVE, type NativeLang } from "@/lib/i18n/dict";
 /**
- * Neon Auth (Better Auth) hataları iki biçimde gelebilir:
+ * Better Auth hataları iki biçimde gelebilir:
  *  - metodun döndürdüğü `{ error }` nesnesi
  *  - fırlatılan istisna (BetterFetchError, Error, düz nesne…)
  * Her ikisini de tek bir `{ code, message, status }` biçimine indirir.

@@ -9,7 +9,7 @@ import { BUNDLED_EXERCISES } from "./bundled";
 export { SKILL_LABEL_KEYS, SKILL_ORDER, LEVEL_ORDER, itemCount, xpFor } from "./meta";
 
 /**
- * Repoda yazılan içerik: `npm run db:seed:skills` bunun tamamını Neon'daki
+ * Repoda yazılan içerik: `npm run db:seed:skills` bunun tamamını veritabanının
  * `skill_exercises` tablosuna yükler. Çalışma zamanında içerik veritabanından
  * okunur; tablo boşsa ya da veritabanına ulaşılamazsa bu gömülü kopya devreye
  * girer — uygulama hiçbir durumda boş ekranla kalmaz.

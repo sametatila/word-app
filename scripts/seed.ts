@@ -107,7 +107,7 @@ async function main() {
     console.log(`  ${Math.min(i + CHUNK, values.length)}/${values.length}`);
   }
   // Kaynaktan çıkarılan maddeler veritabanında kalmamalı: yalnızca upsert
-  // yapılırsa silinen yinelenen kayıtlar Neon'da sonsuza kadar yaşar ve
+  // yapılırsa silinen yinelenen kayıtlar veritabanında sonsuza kadar yaşar ve
   // öğrenciye aynı kelime iki kez gelmeye devam eder.
   const removed = await db
     .delete(words)

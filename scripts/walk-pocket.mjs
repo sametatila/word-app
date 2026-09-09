@@ -268,9 +268,8 @@ page.on("console", (m) => {
 /*
   Tur verisi de koşumdan veriliyor.
 
-  Uygulama Neon'un HTTP sürücüsünü kullanıyor, yani yerel bir Postgres'e
-  bağlanmıyor; gerçek veritabanına bağlanmak ise bu testin cevaplarını
-  kullanıcının kendi ilerlemesine yazardı. Burada sınanan şey zaten sunucu
+  Gerçek veritabanına bağlanmak bu testin cevaplarını kullanıcının kendi
+  ilerlemesine yazardı. Burada sınanan şey zaten sunucu
   değil: ekran kapalıyken İSTEMCİ döngüsünün yürüyüp yürümediği. Sabit veri
   aynı zamanda tekrarlanabilirlik demek — hangi kelimenin ne zaman okunması
   gerektiği baştan belli.

@@ -1,7 +1,7 @@
 "use client";
 
 /**
- * Neon Auth uçlarına doğrudan istek.
+ * Better Auth uçlarına doğrudan istek.
  *
  * SDK hatayı kendi sarmalayıcısında farklı biçimlerde döndürebiliyor; bu da
  * "Email not verified" gibi net yanıtların yanlış mesaja eşlenmesine yol açtı.
