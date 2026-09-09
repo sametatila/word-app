@@ -16,7 +16,10 @@ export default async function InboxPage() {
   const t = await getT();
   return (
     <div className="mx-auto w-full max-w-md">
-      <PageBack fallback="/profile" title={t("inbox.inbox")} />
+      {/* Alt başlık Android'in ekran başlığında var: kutunun ne topladığını
+          bir bakışta söylüyor. Web'de yalnız "Gelen kutusu" yazıyordu ve
+          boşken ekran neyin bekleneceğini hiç anlatmıyordu. */}
+      <PageBack fallback="/profile" title={t("inbox.inbox")} subtitle={t("inbox.requests_reactions_nudges_quests")} />
       <Inbox />
     </div>
   );
