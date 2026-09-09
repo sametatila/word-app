@@ -807,6 +807,11 @@ referans taraf da düzeldi — bu oturumdaki `textMuted` kararıyla aynı çizgi
 - **Ünite teması ikonları.** Web'in ikon setinde 47 kullanılmayan ikon var
   (bread, bus, cake…) ve `lesson.icon` alanı İKİ tarafta da uykuda. Asimetri
   değil, ortak bir uyuyan zemin; temalı Patika için hazırlık gibi duruyor.
+- **Tur başlığının kompozisyonu.** Android tek satırda çıkış, ilerleme çubuğu,
+  seri hapı ve sayaç gösteriyor; web bunları iki satıra bölüyor ve üstte
+  ayrıca seviye rozetini (CEFR + pekişme) tutuyor. Bilgi kaybı yok — web'de
+  FAZLASI var, üstelik yeni/tekrar çipiyle. Kompozisyon farkı ekran
+  genişliğinden geliyor; renkler eşitlendi (seri hapı iki tarafta da gök).
 
 ### 11.4 Yan bulgular
 

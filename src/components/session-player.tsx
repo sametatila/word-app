@@ -880,9 +880,11 @@ export function SessionPlayer() {
               animate={{ scale: 1 }}
               transition={{ type: "spring", stiffness: 420, damping: 16 }}
               className="flex items-center gap-1 rounded-full px-2 py-0.5 text-[11px] font-black"
+              /* Mobil seri hapı `info` (gök) tonunda; web mordaydı ve aynı rozet
+                 iki uygulamada iki ayrı şey söylüyor gibi duruyordu. */
               style={{
-                background: "color-mix(in srgb, var(--color-violet) 16%, transparent)",
-                color: "var(--color-violet)",
+                background: "color-mix(in srgb, var(--color-sky) 14%, transparent)",
+                color: "var(--color-sky)",
               }}
             >
               <SparkIcon size={12} /> {t("sessionw.combo", { n: combo })}
