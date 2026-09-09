@@ -133,6 +133,15 @@ export function GameScreen() {
   // Yarım kalan turu terk edince (X / donanım geri / kaydırma) toplanan
   // cevapları yaz — web'deki çıkışta-flush (sendBeacon) gibi. Yoksa 15/20'de
   // çıkan kullanıcının emeği ve SRS/XP güncellemesi tümden yok olurdu.
+  /*
+    `progressNow` her çizimde yeniden doğuyor; aşağıdaki etkinin bağımlılığına
+    yazılsa etki her çizimde sökülüp kurulurdu ve "yalnız çıkışta yaz" anlamı
+    kaybolurdu. Onun yerine EN SON kopyası bir ref'te tutuluyor: etki bir kez
+    kuruluyor, temizlik çıkış anındaki güncel işlevi çağırıyor.
+  */
+  const progressNowRef = useRef(progressNow);
+  useEffect(() => { progressNowRef.current = progressNow; });
+
   useEffect(() => {
     // Ref NESNELERİ kopyalanır, .current değil: temizlik çıkış anındaki canlı
     // değerleri okur (mount'taki kopya boş cevap listesi olurdu).
@@ -140,13 +149,14 @@ export function GameScreen() {
     const answersRef = answers;
     const startedRef = startedAt;
     const dayRef = day;
+    const progressRef = progressNowRef;
     return () => {
       if (submittedRef.current) return;
       const pending = answersRef.current;
       if (!pending.length) return;
       submittedRef.current = true;
       const secs = Math.round((Date.now() - startedRef.current) / 1000);
-      void submitAnswers(pending, dayRef.current, secs, progressNow()).catch(() => { /* sessizce düşer */ });
+      void submitAnswers(pending, dayRef.current, secs, progressRef.current()).catch(() => { /* sessizce düşer */ });
     };
   }, []);
 
