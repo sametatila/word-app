@@ -165,7 +165,7 @@ export function FriendsHub({ me, initialTab }: { me: SocialMeView; initialTab: H
         </span>
         <span className="min-w-0 flex-1 text-left">
           <span className="block text-h3">{t(copied ? "socialw.link_copied" : "friends.invite_friend")}</span>
-          <span className="block text-caption text-white/85">{t("socialw.invite_sub")}</span>
+          <span className="block text-caption text-white/85">{t("friends.send_your_profile_link_and_study")}</span>
         </span>
       </button>
 

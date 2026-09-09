@@ -727,11 +727,19 @@ bağlar ve birinde yapılan düzeltme ötekini bozar.
 çağrılmayan anahtar 446 → 385. Kalan 385'in ezici çoğunluğu yukarıdaki
 "kalıyor" satırlarına ait — yani ayrı yazılmış olmaları doğru.
 
-**Açık kalan tek parça:** `friends-hub.tsx`, `requests.tsx` ve
-`friends/page.tsx` taşıma sırasında başka bir oturumun elindeydi (sekme
-yapısı yeniden kuruluyordu); o üç dosyanın anahtarları (`socialw.tabs`,
-`socialw.invite_sub`, `socialw.link_copied`, `socialw.no_requests`,
-`socialw.requests_sub`, `socialw.sent`, `socialw.settings`) yerinde bırakıldı.
+**Erteleme kapandı.** `friends-hub.tsx`, `requests.tsx` ve `friends/page.tsx`
+taşıma sırasında başka bir oturumun elindeydi (sekme yapısı yeniden
+kuruluyordu); sekme işi inince o üç dosya da tarandı. Bir taşıma çıktı —
+davet kartının alt satırı (`socialw.invite_sub` → mobilin
+`friends.send_your_profile_link_and_study`'si) — ve sekme yeniden kurgusuyla
+sahipsiz kalan dört anahtar silindi (`socialw.no_requests`,
+`socialw.requests_sub`, `socialw.sent`, `socialw.settings`).
+
+Geriye kalan `socialw.*` anahtarları BİLEREK duruyor, hepsinin mobilde
+karşılığı yok: alkışlama ve dürtme ipuçları, ortak seri uyarısı, sekme
+listesinin ekran okuyucu etiketi, "bağlantı kopyalandı" durumu (mobil yerel
+paylaşım sayfasını açıyor, kopyalama durumu yok), tam sayfa hata kartı
+(mobil yalnız "tekrar dene" hapı gösteriyor) ve profil karolarından ikisi.
 
 ### 10.6 Kapatılan sabit Türkçeler
 
