@@ -5,7 +5,7 @@ import { whyFor } from "@/lib/why";
 import { miss } from "@/lib/errors";
 import { motion } from "framer-motion";
 import { GameShell } from "./game-shell";
-import { withArtikel, type GameProps } from "./types";
+import { withArtikel, type GameProps, type GameResult } from "./types";
 import type { Option, Round } from "@/lib/types";
 import { MeaningText, SentenceTranslation } from "@/components/meaning-text";
 import { fx } from "@/lib/fx";
@@ -36,12 +36,15 @@ export function ListenGame({ round, onDone }: GameProps<ListenRound>) {
   const speechAvailable = useSpeechAvailable();
 
   const [picked, setPicked] = useState<string | null>(null);
+  /* Cevabın sonucu "Devam"a kadar burada bekliyor (bkz. game-shell). */
+  const [pending, setPending] = useState<GameResult | null>(null);
   const [replays, setReplays] = useState(0);
   const started = useRef(Date.now());
 
   useEffect(() => {
     started.current = Date.now();
     setPicked(null);
+    setPending(null);
     setReplays(0);
     // Tur açılır açılmaz bir kez okunur: öğrencinin ilk işi dinlemek.
     const t = setTimeout(() => speakGerman(spoken), 300);
@@ -53,25 +56,17 @@ export function ListenGame({ round, onDone }: GameProps<ListenRound>) {
     setPicked(option.text);
     const isCorrect = option.text === word.tr;
     const latencyMs = Date.now() - started.current;
-    const wait = isCorrect ? 1400 : 2600;
-    fx(isCorrect ? "correct" : "wrong", wait);
-    const fire = () =>
-        onDone([
-          {
-            wordId: word.id,
-            correct: isCorrect,
-            latencyMs,
-            // Tekrar tekrar dinlemek yardım almaktır: kalite puanı bunu bilsin.
-            hintUsed: replays >= 2,
-            ...miss(isCorrect, "listening", option.text),
-          },
-        ]);
-    // Erdi şeridi sürükleyerek getiriyorsa kapanış onu bekler (bkz. lib/mascot-hold).
-    setTimeout(() => {
-      const extra = roundHoldRemaining();
-      if (extra) setTimeout(fire, extra);
-      else fire();
-    }, wait);
+    fx(isCorrect ? "correct" : "wrong", isCorrect ? 1400 : 2600);
+    // Tur "Devam" ile kapanıyor (bkz. game-shell): dinleme turunda cevabı
+    // görmek kadar kelimeyi bir kez daha dinlemek de öğrencinin hakkı.
+    setPending({
+      wordId: word.id,
+      correct: isCorrect,
+      latencyMs,
+      // Tekrar tekrar dinlemek yardım almaktır: kalite puanı bunu bilsin.
+      hintUsed: replays >= 2,
+      ...miss(isCorrect, "listening", option.text),
+    });
   }
 
   const example = firstExample(word.beispiel);
@@ -82,6 +77,7 @@ export function ListenGame({ round, onDone }: GameProps<ListenRound>) {
     <GameShell
       label={tx("games.listen")}
       verdict={picked == null ? null : picked === word.tr ? "correct" : "wrong"}
+      onContinue={pending ? () => onDone([pending]) : undefined}
       why={picked != null && picked !== word.tr ? whyFor({ type: "listening", word, detail: picked }, lang) : null}
       feedback={
         // Bu oyunda öğrenilen şey sesin YAZIMI: şeritte duyulan kelime
@@ -96,7 +92,7 @@ export function ListenGame({ round, onDone }: GameProps<ListenRound>) {
           <span className="muted text-base">{tx("rounds.what_you_heard")}</span>
         ) : (
           // Konuşma sentezi yoksa tur çıkmaza girmesin: kelime yazıyla gösterilir.
-          <span className="brand-text text-2xl font-bold sm:text-3xl">{spoken}</span>
+          <span className="text-2xl font-bold sm:text-3xl">{spoken}</span>
         )
       }
       hint={

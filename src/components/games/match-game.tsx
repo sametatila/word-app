@@ -4,7 +4,6 @@ import { useEffect, useRef, useState } from "react";
 import { miss } from "@/lib/errors";
 import { motion } from "framer-motion";
 import { GameShell } from "./game-shell";
-import { useRoundExit } from "./use-round-exit";
 import { withArtikel, shuffle, type GameProps, type GameResult } from "./types";
 import type { Round } from "@/lib/types";
 import { MeaningText } from "@/components/meaning-text";
@@ -24,6 +23,8 @@ export function MatchGame({ round, onDone }: GameProps<MatchRound>) {
   const [selectedLeft, setSelectedLeft] = useState<number | null>(null);
   const [selectedRightIdx, setSelectedRightIdx] = useState<number | null>(null);
   const [matched, setMatched] = useState<Set<number>>(new Set());
+  /* Eşleşmelerin sonucu "Devam"a kadar burada bekliyor (bkz. game-shell). */
+  const [pending, setPending] = useState<GameResult[] | null>(null);
   const [wrongPair, setWrongPair] = useState<{ left: number; rightIdx: number } | null>(null);
   const [pulseId, setPulseId] = useState<number | null>(null);
 
@@ -31,13 +32,13 @@ export function MatchGame({ round, onDone }: GameProps<MatchRound>) {
   const wrongBeforeRef = useRef<Set<number>>(new Set());
   const resultsRef = useRef<GameResult[]>([]);
   const doneRef = useRef(false);
-  const { exitAfter } = useRoundExit();
 
   useEffect(() => {
     setRightItems(shuffle(words.map((w) => ({ wordId: w.id, tr: w.tr, en: w.en }))));
     setSelectedLeft(null);
     setSelectedRightIdx(null);
     setMatched(new Set());
+    setPending(null);
     setWrongPair(null);
     setPulseId(null);
     startedRef.current = Date.now();
@@ -67,7 +68,11 @@ export function MatchGame({ round, onDone }: GameProps<MatchRound>) {
       if (next.size === words.length && !doneRef.current) {
         doneRef.current = true;
         fx("correct", 500);
-        exitAfter(500, () => onDone(resultsRef.current));
+        // Tur "Devam" ile kapanıyor (bkz. game-shell): mobilde de eşleştirme
+        // bitince şerit ve düğme geliyor, ekran kendiliğinden kayıp gitmiyor.
+        // Kopya: `resultsRef` bir sonraki turda sıfırlanıyor, duruma
+        // referans vermek onu turdan sonra da canlı tutardı.
+        setPending([...resultsRef.current]);
       } else {
         fx("correct");
       }
@@ -106,7 +111,13 @@ export function MatchGame({ round, onDone }: GameProps<MatchRound>) {
   }
 
   return (
-    <GameShell label={tx("games.match")}>
+    <GameShell
+      label={tx("games.match")}
+      /* Eşleştirmede tek tek doğru/yanlış yok: tur bitince hepsi eşleşmiş
+         olur, o yüzden şerit yalnız "tamam" diyor. */
+      verdict={pending ? "correct" : null}
+      onContinue={pending ? () => onDone(pending) : undefined}
+    >
       <div className="grid grid-cols-2 gap-3">
         <div className="flex flex-col gap-3">
           {words.map((w, i) => {

@@ -91,8 +91,24 @@ export function useRoundExit() {
   );
 
   /**
+   * Yalnız OKU — turu kapatma.
+   *
+   * Tur artık kendiliğinden ilerlemiyor: doğru karşılık okunuyor, sonra
+   * "Devam"a basılmasını bekliyor (mobil `rounds.tsx` › `FeedbackFooter`).
+   * Okuma yine de iptal edilebilir olmalı; bileşen sökülürken bekleyen ses
+   * kalmasın diye buradan yönetiliyor.
+   */
+  const speak = useCallback(
+    (text: string, opts: { maxWaitMs?: number; onDuration?: (ms: number) => void } = {}) => {
+      abort();
+      cancelSpeech.current = speakThen(text, () => { cancelSpeech.current = null; }, opts);
+    },
+    [abort],
+  );
+
+  /**
    * Bekleyeni iptal et. Tur değişiminde gerekiyor: bazı oyunlar cevabı bir
    * etkiden veriyor ve bileşen sökülmeden yeni tura geçebiliyor.
    */
-  return { speakAndExit, exitAfter, abortExit: abort };
+  return { speak, speakAndExit, exitAfter, abortExit: abort };
 }

@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 import { GameShell } from "./game-shell";
 import { useNoHints } from "./no-hints";
 import { useRoundExit } from "./use-round-exit";
-import type { GameProps } from "./types";
+import type { GameProps, GameResult } from "./types";
 import type { Round } from "@/lib/types";
 import { SentenceTranslation } from "@/components/meaning-text";
 import { fx, vibrate } from "@/lib/fx";
@@ -45,7 +45,9 @@ export function OrderGame({ round, onDone }: GameProps<OrderRound>) {
 
   const started = useRef(Date.now());
   const resolved = useRef(false);
-  const { speakAndExit, abortExit } = useRoundExit();
+  const { speak, abortExit } = useRoundExit();
+  /* Cevabın sonucu "Devam"a kadar burada bekliyor (bkz. game-shell). */
+  const [pending, setPending] = useState<GameResult | null>(null);
 
   // Cümle tamamlanınca doğru hâli okunuyor ve o metin baştan belli; en uzun
   // ses bu oyunda olduğu için önden indirmenin kazancı da en çok burada.
@@ -61,6 +63,7 @@ export function OrderGame({ round, onDone }: GameProps<OrderRound>) {
   useEffect(() => {
     setPlaced([]);
     setStatus("playing");
+    setPending(null);
     setHintUsed(false);
     started.current = Date.now();
     resolved.current = false;
@@ -83,30 +86,19 @@ export function OrderGame({ round, onDone }: GameProps<OrderRound>) {
     // Cümle uzun ve uzunluğu turdan tura çok değişiyor; sabit süre burada
     // özellikle kırılgandı. Çizgi okumanın gerçek uzunluğunda dolduruluyor.
     vibrate(isCorrect ? "correct" : "wrong");
-    const rest = isCorrect ? 0 : 1400;
-    speakAndExit(
-      full,
-      () =>
-        onDoneRef.current([
-          {
-            wordId: word.id,
-            correct: isCorrect,
-            latencyMs,
-            hintUsed,
-            ...miss(
-              isCorrect,
-              classifyOrder(placed.map((t) => t.text), answer, tail),
-              placed.map((t) => t.text).join(" "),
-            ),
-          },
-        ]),
-      {
-        tail: rest,
-        maxWaitMs: 12000,
-        onDuration: (ms) => fx(isCorrect ? "correct" : "wrong", ms + rest),
-      },
-    );
-  }, [placed, status, answer, tail, word.id, hintUsed, speakAndExit]);
+    setPending({
+      wordId: word.id,
+      correct: isCorrect,
+      latencyMs,
+      hintUsed,
+      ...miss(
+        isCorrect,
+        classifyOrder(placed.map((t) => t.text), answer, tail),
+        placed.map((t) => t.text).join(" "),
+      ),
+    });
+    speak(full, { maxWaitMs: 12000, onDuration: (ms) => fx(isCorrect ? "correct" : "wrong", ms) });
+  }, [placed, status, answer, tail, word.id, hintUsed, speak]);
 
   const usedIds = new Set(placed.map((t) => t.id));
 
@@ -144,6 +136,7 @@ export function OrderGame({ round, onDone }: GameProps<OrderRound>) {
     <GameShell
       label={tx("games.order")}
       verdict={status === "playing" ? null : status}
+      onContinue={pending ? () => onDoneRef.current([pending]) : undefined}
       why={
         status === "wrong"
           ? whyFor({

@@ -6,7 +6,7 @@ import { miss } from "@/lib/errors";
 import { motion } from "framer-motion";
 import { GameShell } from "./game-shell";
 import { useRoundExit } from "./use-round-exit";
-import { withArtikel, type GameProps } from "./types";
+import { withArtikel, type GameProps, type GameResult } from "./types";
 import type { Option, Round } from "@/lib/types";
 import { MeaningText } from "@/components/meaning-text";
 import { fx, vibrate } from "@/lib/fx";
@@ -26,11 +26,19 @@ export function ChoiceGame({ round, onDone }: GameProps<ChoiceRound>) {
 
   const [picked, setPicked] = useState<string | null>(null);
   const started = useRef(Date.now());
-  const { speakAndExit, exitAfter } = useRoundExit();
+  const { speak } = useRoundExit();
+  /*
+    Cevabın SONUCU burada bekliyor. Tur artık kendiliğinden kapanmıyor;
+    "Devam"a basıldığında bu kayıt gönderiliyor (bkz. game-shell
+    `onContinue`). Gecikmeyi cevap ANINDA ölçmek şart — "Devam"a ne zaman
+    basıldığı öğrencinin okuma hızı, cevap hızı değil.
+  */
+  const [pending, setPending] = useState<GameResult | null>(null);
 
   useEffect(() => {
     started.current = Date.now();
     setPicked(null);
+    setPending(null);
     // Soru Almancaysa hemen okunuyor: öğrenci anlamı ararken kelimeyi de
     // duyuyor. Soru Türkçeyse okunacak bir şey yok — Almanca olan cevap
     // şıklarında ve o, seçim yapılınca okunuyor.
@@ -53,23 +61,15 @@ export function ChoiceGame({ round, onDone }: GameProps<ChoiceRound>) {
     // pekiştirmek öğrenmenin tersine çalışırdı.
     // Titreşim dokunuşun kaydedildiğini anında belli ediyor.
     vibrate(correct ? "correct" : "wrong");
-    const finish = () => onDone([{ wordId: word.id, correct, latencyMs, ...miss(correct, "meaning", opt.text) }]);
+    setPending({ wordId: word.id, correct, latencyMs, ...miss(correct, "meaning", opt.text) });
 
     if (deSide) {
-      // Bu yönde soru zaten kart açılırken okundu; seçimde ses yok, dolayısıyla
-      // çizginin süresi de sesle değil okuma-anlama payıyla belirleniyor.
-      const wait = correct ? 620 : 1200;
-      fx(correct ? "correct" : "wrong", wait);
-      exitAfter(wait, finish);
+      // Bu yönde soru zaten kart açılırken okundu; seçimde ses yok.
+      fx(correct ? "correct" : "wrong", correct ? 620 : 1200);
       return;
     }
-
-    // Almanca olan taraf cevap: geçiş çizgisi okumanın gerçek uzunluğunda.
-    const tail = correct ? 0 : 900;
-    speakAndExit(answer, finish, {
-      tail,
-      onDuration: (ms) => fx(correct ? "correct" : "wrong", ms + tail),
-    });
+    // Almanca olan taraf cevap: okunuyor, geçiş çizgisi okumanın uzunluğunda.
+    speak(answer, { onDuration: (ms) => fx(correct ? "correct" : "wrong", ms) });
   }
 
   return (
@@ -80,6 +80,7 @@ export function ChoiceGame({ round, onDone }: GameProps<ChoiceRound>) {
       /* Bu oyunda çekme koreografisi hiç yok — karışık turda da tek oyun modunda da. */
       pull={false}
       verdict={picked == null ? null : picked === answer ? "correct" : "wrong"}
+      onContinue={pending ? () => onDone([pending]) : undefined}
       why={picked != null && picked !== answer ? whyFor({ type: "meaning", word, detail: picked }, lang) : null}
       feedback={
         // Şerit doğruda da doluyor: cevabı görmek kadar onu bir kez daha
@@ -96,7 +97,7 @@ export function ChoiceGame({ round, onDone }: GameProps<ChoiceRound>) {
         </span>
       }
       prompt={
-        <span className="brand-text text-2xl font-bold sm:text-3xl">
+        <span className="text-2xl font-bold sm:text-3xl">
           {question}
           {/* Türkçeden Almancaya yönde soru bir anlamdır; İngilizcesi burada
               ayırt edici olarak duruyor ("o" tek başına üç kelimeye uyar). */}

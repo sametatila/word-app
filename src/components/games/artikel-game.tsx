@@ -6,7 +6,7 @@ import { miss } from "@/lib/errors";
 import { motion } from "framer-motion";
 import { GameShell } from "./game-shell";
 import { useRoundExit } from "./use-round-exit";
-import type { GameProps } from "./types";
+import type { GameProps, GameResult } from "./types";
 import type { Round } from "@/lib/types";
 import { fx, vibrate } from "@/lib/fx";
 import { prefetchGerman } from "@/components/speak-button";
@@ -28,11 +28,14 @@ export function ArtikelGame({ round, onDone }: GameProps<ArtikelRound>) {
 
   const [picked, setPicked] = useState<string | null>(null);
   const started = useRef(Date.now());
-  const { speakAndExit } = useRoundExit();
+  const { speak } = useRoundExit();
+  /* Cevabın sonucu "Devam"a kadar burada bekliyor (bkz. game-shell). */
+  const [pending, setPending] = useState<GameResult | null>(null);
 
   useEffect(() => {
     started.current = Date.now();
     setPicked(null);
+    setPending(null);
     // Seçimden sonra okunacak metin belli: doğru artikelli kelime.
     prefetchGerman(`${answer} ${word.de}`);
   }, [round.id, answer, word.de]);
@@ -49,17 +52,15 @@ export function ArtikelGame({ round, onDone }: GameProps<ArtikelRound>) {
     // dolup kullanıcıyı dolu bir çizgiye baktırıyor ya da ses bitince boşuna
     // bekletiyordu. Yanlışta doğruyu görmek için kısa bir ek süre kalıyor.
     vibrate(correct ? "correct" : "wrong");
-    const tail = correct ? 0 : 900;
-    speakAndExit(`${answer} ${word.de}`, () => onDone([{ wordId: word.id, correct, latencyMs, ...miss(correct, "article", opt) }]), {
-      tail,
-      onDuration: (ms) => fx(correct ? "correct" : "wrong", ms + tail),
-    });
+    setPending({ wordId: word.id, correct, latencyMs, ...miss(correct, "article", opt) });
+    speak(`${answer} ${word.de}`, { onDuration: (ms) => fx(correct ? "correct" : "wrong", ms) });
   }
 
   return (
     <GameShell
       label={tx("games.article_race")}
       verdict={picked == null ? null : picked === answer ? "correct" : "wrong"}
+      onContinue={pending ? () => onDone([pending]) : undefined}
       why={picked != null && picked !== answer ? whyFor({ type: "article", word, detail: picked }, lang) : null}
       feedback={
         <span>
@@ -75,7 +76,7 @@ export function ArtikelGame({ round, onDone }: GameProps<ArtikelRound>) {
           ) : null}
         </span>
       }
-      prompt={<span className="brand-text text-3xl font-bold sm:text-4xl">{word.de}</span>}
+      prompt={<span className="text-3xl font-bold sm:text-4xl">{word.de}</span>}
     >
       <div className="grid grid-cols-3 gap-3">
         {options.map((opt, i) => {

@@ -6,7 +6,7 @@ import { miss } from "@/lib/errors";
 import { motion } from "framer-motion";
 import { GameShell } from "./game-shell";
 import { useRoundExit } from "./use-round-exit";
-import { withArtikel, type GameProps } from "./types";
+import { withArtikel, type GameProps, type GameResult } from "./types";
 import type { Round } from "@/lib/types";
 import { MeaningText } from "@/components/meaning-text";
 import { fx } from "@/lib/fx";
@@ -34,11 +34,14 @@ export function TrueFalseGame({ round, onDone }: GameProps<TrueFalseRound>) {
   const { word, claim, isTrue } = round;
   const [answered, setAnswered] = useState<boolean | null>(null);
   const started = useRef(Date.now());
-  const { exitAfter } = useRoundExit();
+  const { } = useRoundExit();
+  /* Cevabın sonucu "Devam"a kadar burada bekliyor (bkz. game-shell). */
+  const [pending, setPending] = useState<GameResult | null>(null);
 
   useEffect(() => {
     started.current = Date.now();
     setAnswered(null);
+    setPending(null);
     // Kelime kendiliğinden okunuyor: karar verirken telaffuzu duymak
     // eşleştirmeyi kolaylaştırıyor ve düğmeye basma adımını ortadan kaldırıyor.
     const s = setTimeout(() => speakGerman(withArtikel(round.word)), 350);
@@ -51,9 +54,8 @@ export function TrueFalseGame({ round, onDone }: GameProps<TrueFalseRound>) {
     const isCorrect = said === isTrue;
     const latencyMs = Date.now() - started.current;
     // Yanlış eşleşmede gerçek karşılığı okumaya vakit gerekir.
-    const wait = isCorrect ? 900 : 2400;
-    fx(isCorrect ? "correct" : "wrong", wait);
-    exitAfter(wait, () => onDone([{ wordId: word.id, correct: isCorrect, latencyMs, ...miss(isCorrect, "meaning", claim.text) }]));
+    fx(isCorrect ? "correct" : "wrong", isCorrect ? 900 : 2400);
+    setPending({ wordId: word.id, correct: isCorrect, latencyMs, ...miss(isCorrect, "meaning", claim.text) });
   }
 
   const settled = answered !== null;
@@ -64,6 +66,7 @@ export function TrueFalseGame({ round, onDone }: GameProps<TrueFalseRound>) {
       label={tx("games.truefalse")}
       prompt={<span className="muted text-base">{tx("rounds.is_match_right")}</span>}
       verdict={!settled ? null : wasRight ? "correct" : "wrong"}
+      onContinue={pending ? () => onDone([pending]) : undefined}
       why={settled && !wasRight ? whyFor({ type: "meaning", word, detail: isTrue ? null : claim.text }, lang) : null}
       feedback={
         <span>
@@ -94,7 +97,7 @@ export function TrueFalseGame({ round, onDone }: GameProps<TrueFalseRound>) {
         }}
       >
         <div className="flex items-center justify-center gap-2">
-          <span className="brand-text text-2xl font-bold sm:text-3xl">{withArtikel(word)}</span>
+          <span className="text-2xl font-bold sm:text-3xl">{withArtikel(word)}</span>
           <SpeakButton text={withArtikel(word)} size="sm" />
         </div>
         <div className="my-3 flex items-center justify-center gap-3">

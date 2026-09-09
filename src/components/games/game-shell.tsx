@@ -10,6 +10,7 @@ import { holdRound } from "@/lib/mascot-hold";
 import { claimStage, releaseStage } from "@/lib/mascot-stage";
 import { preloadClips } from "@/lib/mascot-clips";
 import { useClipUrl } from "@/lib/mascot-clips";
+import { useT } from "@/lib/i18n/client";
 
 /**
  * Her oyunun ortak çerçevesi.
@@ -76,6 +77,7 @@ export function GameShell({
   feedback,
   why = null,
   pull = true,
+  onContinue,
 }: {
   label: string;
   /** Sorunun kendisi. Oyunun içeriği zaten yeterince açıksa boş bırakılabilir. */
@@ -100,22 +102,42 @@ export function GameShell({
   feedback?: ReactNode;
   /** Erdi'nin şeridi çekerek getirme koreografisi bu oyunda olabilir mi. */
   pull?: boolean;
+  /**
+   * "Devam" — cevaptan sonra turu KULLANICI kapatır.
+   *
+   * Tur eskiden kendiliğinden ilerliyordu: doğruda 620 ms, yanlışta 1200 ms
+   * ya da okumanın süresi. Bu, düzeltmeyi ve gerekçeyi okumaya yetmiyordu ve
+   * kararı öğrencinin elinden alıyordu — hoparlöre basıp tekrar dinlemek de
+   * mümkün değildi, tur çoktan geçmiş oluyordu. Mobilde şeridin altında sabit
+   * bir "Devam" var (`rounds.tsx` › `FeedbackFooter`) ve karar öğrencinin.
+   */
+  onContinue?: () => void;
 }) {
   return (
     <div className="mx-auto flex w-full max-w-md flex-1 flex-col md:block">
-      {/* Okuma bölgesinin üstü — tavansız, artan boşluk burada toplanıyor. */}
-      <div aria-hidden className="grow md:hidden" />
-
-      <div className="text-center">
-        <span className="brand-gradient inline-block rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-wide">
-          {label}
-        </span>
-        {prompt ? <div className="mt-2.5 text-lg font-medium sm:text-xl">{prompt}</div> : null}
+      {/* SORU KARTI — mobil `rounds.tsx` › `Prompt` ile aynı: kendi yüzeyi,
+          kenarlığı ve gölgesi var. Önce etiket dolgulu bir çipti ve soru
+          sayfa zemininde duruyordu; okuma bölgesinin nerede bittiği yalnızca
+          boşluktan anlaşılıyordu. */}
+      <div className="card px-4 py-6 text-center">
+        <span className="muted text-micro uppercase tracking-widest">{label}</span>
+        {prompt ? <div className="mt-1.5 text-lg font-medium sm:text-xl">{prompt}</div> : null}
         {hint ? <div className="muted mt-1 text-sm">{hint}</div> : null}
       </div>
 
-      {/* İki bölge arası — en az bir nefes payı, en çok okunabilir bir aralık. */}
-      <div aria-hidden className="min-h-5 max-h-28 grow-[3] md:hidden" />
+      {/*
+        İki bölge arası — boşluğu Erdi dolduruyor (mobil `MascotMid`).
+        Cevaptan sonra gizleniyor ama YERİNİ koruyor: şıklar zıplamasın.
+
+        ARTAN BOŞLUK BURADA TOPLANIYOR, sorunun ÜSTÜNDE değil. Önce üstteydi
+        ve uzun ekranda soru kartı dibe çöküyordu; mobilde soru en üstte kalır,
+        esneyen tek yer bu orta bölge (`MascotMid`, `flex: 1`). Ulaşım
+        meselesini de artık dipteki aksiyon alanı çözüyor: şıklar ve "Devam"
+        zaten başparmağın yanında.
+      */}
+      <div aria-hidden={verdict != null} className="flex min-h-5 grow items-center justify-center md:hidden">
+        {verdict == null ? <Mascot mood="idle" size={72} /> : null}
+      </div>
 
       <div className="md:mt-5">{children}</div>
       {footer ? <div className="mt-4">{footer}</div> : null}
@@ -124,8 +146,52 @@ export function GameShell({
           ekranda tamamen kapanıp yeri içeriğe bırakıyor. */}
       <div aria-hidden className="max-h-8 grow md:hidden" />
 
+      {/* AKSİYON ALANI — şerit ve "Devam" birlikte, ekranın dibinde. Mobilde
+          de öyle (`RoundShell` footer'ı): başparmağın ulaştığı yer burası ve
+          turu kapatan düğme oraya ait. */}
       <VerdictBar verdict={verdict} feedback={feedback} why={verdict === "wrong" ? why : null} pull={pull} />
+      {verdict && onContinue ? <ContinueButton verdict={verdict} onContinue={onContinue} /> : null}
     </div>
+  );
+}
+
+/**
+ * Turu kapatan düğme.
+ *
+ * Rengi sonucu tekrarlıyor (doğruda nane, yanlışta marka) — şeridin rengiyle
+ * aynı dili konuşuyor. Enter ve boşluk da çalışıyor: klavyeyle oynayan
+ * kullanıcı her turda fareye uzanmak zorunda kalmasın.
+ */
+function ContinueButton({ verdict, onContinue }: { verdict: "correct" | "wrong"; onContinue: () => void }) {
+  const t = useT();
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key !== "Enter" && e.key !== " ") return;
+      // Yazma turlarında girdi hâlâ odaktaysa boşluk metne gitmeli.
+      const el = document.activeElement;
+      if (el instanceof HTMLInputElement || el instanceof HTMLTextAreaElement) return;
+      e.preventDefault();
+      onContinue();
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [onContinue]);
+
+  return (
+    <motion.button
+      type="button"
+      autoFocus
+      initial={{ opacity: 0, y: 6 }}
+      animate={{ opacity: 1, y: 0 }}
+      onClick={onContinue}
+      className="btn mt-2 w-full py-3.5 text-white"
+      style={{
+        background: verdict === "correct" ? "var(--color-mint-600)" : "var(--color-brand-500)",
+        boxShadow: "var(--shadow-soft-sm)",
+      }}
+    >
+      {t("common.continue")}
+    </motion.button>
   );
 }
 

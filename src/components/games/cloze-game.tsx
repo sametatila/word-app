@@ -6,7 +6,7 @@ import { classifyTyping, miss } from "@/lib/errors";
 import { AnimatePresence, motion } from "framer-motion";
 import { GameShell } from "./game-shell";
 import { useRoundExit } from "./use-round-exit";
-import { matchesAnswer, type GameProps } from "./types";
+import { matchesAnswer, type GameProps, type GameResult } from "./types";
 import type { Round } from "@/lib/types";
 import { SentenceTranslation } from "@/components/meaning-text";
 import { fx, vibrate } from "@/lib/fx";
@@ -34,11 +34,14 @@ export function ClozeGame({ round, onDone }: GameProps<ClozeRound>) {
   const [draft, setDraft] = useState("");
   const inputRef = useRef<HTMLInputElement>(null);
   const started = useRef(Date.now());
-  const { speakAndExit } = useRoundExit();
+  const { speak } = useRoundExit();
+  /* Cevabın sonucu "Devam"a kadar burada bekliyor (bkz. game-shell). */
+  const [pending, setPending] = useState<GameResult | null>(null);
 
   useEffect(() => {
     started.current = Date.now();
     setPicked(null);
+    setPending(null);
     setDraft("");
     // Doğru cümlenin sesi tur açılırken iniyor. Hangi şıkkın seçileceği belli
     // değil ama doğru cümle her hâlükârda okunuyor; önden indirmek dokunuşla
@@ -71,28 +74,22 @@ export function ClozeGame({ round, onDone }: GameProps<ClozeRound>) {
     // Geçiş çizgisi sesin GERÇEK uzunluğunda dolduruluyor ve tur tam o bitince
     // kapanıyor. Sabit süre iki yönde de yanlıştı: kısa tahminde çizgi dolup
     // kullanıcı bekliyor, uzun tahminde ses bittikten sonra boşuna bekleniyordu.
-    const advance = () =>
-      onDone([
-        {
-          wordId: word.id,
-          correct: isCorrect,
-          latencyMs,
-          ...miss(isCorrect, typeMode ? classifyTyping(opt, [answer]) : "meaning", opt),
-        },
-      ]);
+    setPending({
+      wordId: word.id,
+      correct: isCorrect,
+      latencyMs,
+      ...miss(isCorrect, typeMode ? classifyTyping(opt, [answer]) : "meaning", opt),
+    });
 
     vibrate(isCorrect ? "correct" : "wrong");
-    const tail = isCorrect ? 0 : WRONG_TAIL_MS;
-    speakAndExit(truth, advance, {
-      tail,
-      onDuration: (ms) => fx(isCorrect ? "correct" : "wrong", ms + tail),
-    });
+    speak(truth, { onDuration: (ms) => fx(isCorrect ? "correct" : "wrong", ms) });
   }
 
   return (
     <GameShell
       label={tx(typeMode ? "rounds.cloze_typed" : "games.cloze")}
       verdict={picked == null ? null : correct ? "correct" : "wrong"}
+      onContinue={pending ? () => onDone([pending]) : undefined}
       why={
         picked != null && !correct
           ? whyFor({ type: typeMode ? classifyTyping(picked, [answer]) : "meaning", word: { ...word, de: answer }, detail: picked }, lang)

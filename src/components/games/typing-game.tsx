@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 import { GameShell } from "./game-shell";
 import { useNoHints } from "./no-hints";
 import { useRoundExit } from "./use-round-exit";
-import { matchesAnswer, withArtikel, type GameProps, typLabel } from "./types";
+import { matchesAnswer, withArtikel, type GameProps, typLabel, type GameResult } from "./types";
 import type { Round } from "@/lib/types";
 import { fx, vibrate } from "@/lib/fx";
 import { prefetchGerman } from "@/components/speak-button";
@@ -63,11 +63,14 @@ export function TypingGame({ round, onDone }: GameProps<TypingRound>) {
 
   const inputRef = useRef<HTMLInputElement>(null);
   const started = useRef(Date.now());
-  const { speakAndExit } = useRoundExit();
+  const { speak } = useRoundExit();
+  /* Cevabın sonucu "Devam"a kadar burada bekliyor (bkz. game-shell). */
+  const [pending, setPending] = useState<GameResult | null>(null);
 
   useEffect(() => {
     setValue("");
     setStatus("idle");
+    setPending(null);
     setHintUsed(false);
     setHintShown(Boolean(round.assist));
     started.current = Date.now();
@@ -107,21 +110,14 @@ export function TypingGame({ round, onDone }: GameProps<TypingRound>) {
     // dolduruluyor, yoksa kısa kelimede boşuna bekleniyor, uzun kelimede ses
     // yarıda kesiliyordu.
     vibrate(correct ? "correct" : "wrong");
-    const tail = correct ? 0 : WRONG_TAIL_MS;
-    const finish = () =>
-      onDone([
-        {
-          wordId: word.id,
-          correct,
-          latencyMs,
-          hintUsed,
-          ...miss(correct, classifyTyping(value, [word.de, ...(round.alternatives ?? [])]), value),
-        },
-      ]);
-    speakAndExit(withArtikel(word), finish, {
-      tail,
-      onDuration: (ms) => fx(correct ? "correct" : "wrong", ms + tail),
+    setPending({
+      wordId: word.id,
+      correct,
+      latencyMs,
+      hintUsed,
+      ...miss(correct, classifyTyping(value, [word.de, ...(round.alternatives ?? [])]), value),
     });
+    speak(withArtikel(word), { onDuration: (ms) => fx(correct ? "correct" : "wrong", ms) });
   }
 
   function insertChar(char: string) {
@@ -148,6 +144,7 @@ export function TypingGame({ round, onDone }: GameProps<TypingRound>) {
     <GameShell
       label={tx("games.typing")}
       verdict={status === "idle" ? null : status}
+      onContinue={pending ? () => onDone([pending]) : undefined}
       why={
         status === "wrong"
           ? whyFor({
@@ -170,7 +167,7 @@ export function TypingGame({ round, onDone }: GameProps<TypingRound>) {
         </span>
       }
       prompt={
-        <span className="brand-text text-2xl font-bold sm:text-3xl">
+        <span className="text-2xl font-bold sm:text-3xl">
           {word.tr}
           {word.en ? (
             <span className="block text-base font-normal opacity-60" lang="en">

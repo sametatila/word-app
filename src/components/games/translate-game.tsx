@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { GameShell } from "./game-shell";
 import { useNoHints } from "./no-hints";
 import { useRoundExit } from "./use-round-exit";
-import { withArtikel, type GameProps } from "./types";
+import { withArtikel, type GameProps, type GameResult } from "./types";
 import type { Round } from "@/lib/types";
 import { fx, vibrate } from "@/lib/fx";
 import { prefetchGerman } from "@/components/speak-button";
@@ -57,11 +57,14 @@ export function TranslateGame({ round, onDone }: GameProps<TranslateRound>) {
   const [aiAccepted, setAiAccepted] = useState(false);
   const inputRef = useRef<HTMLTextAreaElement>(null);
   const started = useRef(Date.now());
-  const { speakAndExit } = useRoundExit();
+  const { speak } = useRoundExit();
+  /* Cevabın sonucu "Devam"a kadar burada bekliyor (bkz. game-shell). */
+  const [pending, setPending] = useState<GameResult | null>(null);
 
   useEffect(() => {
     setValue("");
     setStatus("idle");
+    setPending(null);
     setHintShown(false);
     setResult(null);
     setAiAccepted(false);
@@ -107,22 +110,15 @@ export function TranslateGame({ round, onDone }: GameProps<TranslateRound>) {
     setStatus(correct ? "correct" : "wrong");
     vibrate(correct ? "correct" : "wrong");
     if (hintShown) quality = Math.min(quality, 3);
-    const tail = correct ? 400 : WRONG_TAIL_MS;
-    const finish = () =>
-      onDone([
-        {
-          wordId: word.id,
-          correct,
-          latencyMs,
-          hintUsed: hintShown,
-          quality,
-          ...(correct ? {} : { errorType: m.errorType ?? "meaning", detail: typed.slice(0, 60) }),
-        },
-      ]);
-    speakAndExit(sentence.de, finish, {
-      tail,
-      onDuration: (ms) => fx(correct ? "correct" : "wrong", ms + tail),
+    setPending({
+      wordId: word.id,
+      correct,
+      latencyMs,
+      hintUsed: hintShown,
+      quality,
+      ...(correct ? {} : { errorType: m.errorType ?? "meaning", detail: typed.slice(0, 60) }),
     });
+    speak(sentence.de, { onDuration: (ms) => fx(correct ? "correct" : "wrong", ms) });
   }
 
   function insertChar(char: string) {
@@ -158,6 +154,7 @@ export function TranslateGame({ round, onDone }: GameProps<TranslateRound>) {
     <GameShell
       label={tx("games.translate")}
       verdict={status === "idle" || status === "checking" ? null : status}
+      onContinue={pending ? () => onDone([pending]) : undefined}
       why={why}
       feedback={
         result ? (
@@ -175,7 +172,7 @@ export function TranslateGame({ round, onDone }: GameProps<TranslateRound>) {
         ) : null
       }
       prompt={
-        <span className="brand-text text-xl font-bold sm:text-2xl">
+        <span className="text-xl font-bold sm:text-2xl">
           {sentence.tr}
           {sentence.en ? (
             <span className="block text-sm font-normal opacity-60" lang="en">

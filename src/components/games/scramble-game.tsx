@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 import { GameShell } from "./game-shell";
 import { useNoHints } from "./no-hints";
 import { useRoundExit } from "./use-round-exit";
-import { normalize, withArtikel, type GameProps } from "./types";
+import { normalize, withArtikel, type GameProps, type GameResult } from "./types";
 import { seededShuffle } from "@/lib/shuffle";
 import type { Round } from "@/lib/types";
 import { fx, vibrate } from "@/lib/fx";
@@ -58,7 +58,9 @@ export function ScrambleGame({ round, onDone }: GameProps<ScrambleRound>) {
 
   const started = useRef(Date.now());
   const resolvedRef = useRef(false);
-  const { speakAndExit, abortExit } = useRoundExit();
+  const { speak, abortExit } = useRoundExit();
+  /* Cevabın sonucu "Devam"a kadar burada bekliyor (bkz. game-shell). */
+  const [pending, setPending] = useState<GameResult | null>(null);
   const onDoneRef = useRef(onDone);
 
   useEffect(() => {
@@ -72,6 +74,7 @@ export function ScrambleGame({ round, onDone }: GameProps<ScrambleRound>) {
     prefetchGerman(withArtikel(round.word));
     setPlaced([]);
     setStatus("playing");
+    setPending(null);
     setHintUsed(false);
     started.current = Date.now();
     resolvedRef.current = false;
@@ -93,22 +96,15 @@ export function ScrambleGame({ round, onDone }: GameProps<ScrambleRound>) {
     // yazımı bilip nasıl okunduğunu bilmemek sık rastlanan bir boşluk.
     // Her zaman doğru biçim okunuyor, dizilen değil.
     vibrate(isCorrect ? "correct" : "wrong");
-    const tail = isCorrect ? 0 : 1100;
-    speakAndExit(
-      withArtikel(word),
-      () =>
-        onDoneRef.current([
-          {
-            wordId: word.id,
-            correct: isCorrect,
-            latencyMs,
-            hintUsed,
-            ...miss(isCorrect, "spelling", placed.map((t) => t.char).join("")),
-          },
-        ]),
-      { tail, onDuration: (ms) => fx(isCorrect ? "correct" : "wrong", ms + tail) },
-    );
-  }, [placed, status, targetLetters.length, compareTarget, word, hintUsed, speakAndExit]);
+    setPending({
+      wordId: word.id,
+      correct: isCorrect,
+      latencyMs,
+      hintUsed,
+      ...miss(isCorrect, "spelling", placed.map((t) => t.char).join("")),
+    });
+    speak(withArtikel(word), { onDuration: (ms) => fx(isCorrect ? "correct" : "wrong", ms) });
+  }, [placed, status, targetLetters.length, compareTarget, word, hintUsed, speak]);
 
   const usedIds = new Set(placed.map((t) => t.id));
 
@@ -158,6 +154,7 @@ export function ScrambleGame({ round, onDone }: GameProps<ScrambleRound>) {
     <GameShell
       label={tx("games.scramble")}
       verdict={status === "playing" ? null : status}
+      onContinue={pending ? () => onDoneRef.current([pending]) : undefined}
       why={status === "wrong" ? whyFor({ type: "spelling", word, detail: placed.map((t) => t.char).join("") }, lang) : null}
       feedback={
         <span className="inline-flex items-center">

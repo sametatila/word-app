@@ -150,7 +150,7 @@ export function FreeSentenceGame({ round, onDone }: GameProps<FreeRound>) {
           </span>
         ) : null
       }
-      prompt={<span className="brand-text text-xl font-bold sm:text-2xl">{tx("rounds.build_sentence")}</span>}
+      prompt={<span className="text-xl font-bold sm:text-2xl">{tx("rounds.build_sentence")}</span>}
       hint={
         <div className="flex flex-wrap items-center justify-center gap-2">
           {targets.map((t) => (

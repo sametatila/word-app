@@ -596,26 +596,32 @@ tekrar bekliyor; gerçek veriyle koşuda 0-3 arası çıkıyor, çünkü kelimen
 durumuna göre uygun oyun sayısı azalabiliyor. Eşiği gevşetmek sorunu gizlemek
 olurdu — merdivenin kendisi bakılacak bir kalem olarak duruyor.
 
-### Oyun katmanı: tek fark ve yönü TERS
+### Oyun katmanı — dört fark, dördü de web'in aleyhine
 
-On iki oyunun yerleşimi de mobil `game/rounds.tsx` ile karşılaştırıldı. Şık
-kartları birebir aynı (metin + alt satır, ✓/✗ simgesi, yanlışta sarsıntı,
-doğruda parlama). Tek fark SORU BÖLGESİNDE:
+**Önceki değerlendirme yanlıştı.** Yalnız mobilin `Prompt` bileşenine bakıp
+"web'in kartsız düzeni ölçüme dayanıyor, kalem mobile düşüyor" demiştim;
+mobilin ekranın TAMAMINI nasıl kurduğuna bakmamıştım. Bakınca mobil dört
+noktada da daha iyi çıktı:
 
-- **Mobil** soruyu bir KARTIN içine koyuyor (`Prompt`): yüzey zemin, kenarlık,
-  gölge; etiket kartın içinde küçük ve soluk.
-- **Web** kart kullanmıyor: etiket dolgulu bir çip, soru düz metin, ikisi de
-  sayfa zemininde.
+| | Mobil | Web (önce) |
+|---|---|---|
+| Soru | kendi kartı: yüzey, kenarlık, gölge | kartsız, dolgulu çip + düz metin |
+| Soru ↔ şık arası | `MascotMid` — boşluğu Erdi dolduruyor, cevaptan sonra gizlenip **yerini koruyor** | boş `aria-hidden` div |
+| Aksiyon alanı | `RoundShell` footer — dipte, klavye açılınca kalkıyor | akışın içinde |
+| İlerleme | **"Devam" düğmesi** — kararı öğrenci veriyor | zamanlayıcı: doğruda 620 ms, yanlışta 1200 ms |
 
-Bu farkı web lehine BIRAKIYORUZ ve sebebi ölçülmüş: `game-shell` ekranı üç
-bölgeye ayırıyor (okuma / dokunma / sonuç) ve artan boşluğu tavanlarla
-dağıtıyor, çünkü kart tek parça olarak dikey ortalandığında oyun tek elle
-oynanamıyordu — şıklar başparmağın erişemediği yerde kalıyordu. Soruyu
-yeniden bir kartın içine almak o çalışmayı geri almak olur.
+Sonuncusu en ağırı: 1200 ms bir düzeltmeyi ve altındaki gerekçeyi okumaya
+yetmiyor, üstelik hoparlöre basıp tekrar dinlemek de mümkün değildi — tur
+çoktan geçmiş oluyordu. Mobil kararı öğrenciye bırakıyor.
 
-**Yani bu kalem mobile düşüyor**, web'e değil: mobilin de üç bölgeli düzene
-geçmesi ve soru kartını bırakması gerekiyor. §6'daki "mobil tarafına düşen
-küçük işler" listesinin en büyüğü bu.
+Dördü de web'de düzeltildi: `game-shell` artık soruyu kartın içine alıyor,
+aradaki boşluğu Erdi dolduruyor, şeridin altına "Devam" koyuyor (Enter ve
+boşluk da çalışıyor) ve on bir oyunun tamamı kendiliğinden ilerlemek yerine
+cevabı bekletiyor. Soru rengi de mobildeki gibi düz metin rengine döndü.
+
+**Ders:** bir farkı "web daha iyi" diye bırakmadan önce öbür tarafın
+tamamına bakmak gerekiyor. Mobil burada kendi çözümünü bulmuştu ve daha
+iyisiydi.
 
 ### Samet'e kalanlar
 
@@ -626,6 +632,6 @@ küçük işler" listesinin en büyüğü bu.
 4. **İçerik kararları** (§6): karıştırma çiftlerinin İngilizce/Almanca
    konuşana göre yeniden seçilmesi ve `words` tablosuna Almanca karşılık
    sütunu. İkisi de içerik projesi, kod değil.
-5. **Mobil tarafı**: oyun ekranının üç bölgeli düzene geçmesi (yukarıda),
-   `skills.skills` Almanca sözlükte "Skills" diyor, `formatDuration` "dk"/"s"
-   sabit yazıyor, hero rozetleri "{n} tekrar" / "{n} yeni" sabit.
+5. **Mobil tarafı** (küçük kalemler): `skills.skills` Almanca sözlükte
+   "Skills" diyor, `formatDuration` "dk"/"s" sabit yazıyor, hero rozetleri
+   "{n} tekrar" / "{n} yeni" sabit.
