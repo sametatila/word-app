@@ -437,30 +437,34 @@ DOM'u karşılaştırıldı; on bir fark çıktı ve düzeltildi.
 | Sıralama · nabız · paylaşım | Sabit Türkçe cümleler ve sekiz yerde `tr-TR` sabitli sayı biçimi | `d769eac5` |
 | Arkadaşlar | Sosyal ayarlar uygulama ayarlarının içinde ve `#social` çapasıyla; ayarlar düğmesi kartın içinde; iki rozet hiç çizilmiyor | `c2e39958` |
 | İlerleme | Seri kahramanı, kelime ustalığı şeridi ve başarımlar satırı yok; karolar mobildekiler değil; yetkinlik bandı ham ("40developing") | `c188eb5f` |
-| Bildirimler | `/notifications` `/inbox` ile birebir aynı şeyi çiziyordu; hatırlatma anahtarları uygulama ayarlarındaydı | — |
+| Bildirimler | `/notifications` `/inbox` ile birebir aynı şeyi çiziyordu; hatırlatma anahtarları uygulama ayarlarındaydı | `89a8c566` |
+| Push metinleri | Akşam giden bildirimlerin metni sabit Türkçeydi; adsız kullanıcıda cümle küçük harfle başlıyordu | `6b253282` |
+| Hatırlatma kategorileri | Mobildeki üç anahtarın ikisi web'de hiç yoktu, günlük kanalın saati arayüzde görünmüyordu | `2e8e2577` |
 
 Sözlük denetimine üçüncü kural eklendi: **kodda çağrılan her anahtar sözlükte
 var mı**. `translate` bulamadığı anahtarın kendisini döndürüyor, yani ekrana
 `socialw.friends_load_failed` yazıyor — hata değil, sessiz arıza. İlk koşuda
 yedi tane buldu.
 
-### Açık kalan tek işlevsel boşluk: hatırlatma kategorileri
+### Hatırlatma kategorileri — kapandı (`2e8e2577`)
 
-Mobilde üç ayrı hatırlatma var ve her biri CİHAZDA kuruluyor: günlük
-hatırlatma (saat seçimiyle), seri koruma (her akşam 20:30), haftalık sınav
-(pazar). Web'de bildirim SUNUCUDAN gidiyor (`lib/push` · `runReminders`) ve
-şimdilik tek bir günlük kanal var — kullanıcı başına tercih yok.
+Mobildeki üç hatırlatma CİHAZDA kuruluyor; web'de bildirim sunucudan gidiyor,
+o yüzden karşılığı bir arka uç işiydi. Yapılanlar:
 
-Kapatmak için gerekenler (yerleşim değil, arka uç işi):
+1. `0042_reminder_kinds` — `streak_alert` ve `weekly_reminder` (eklemeli,
+   varsayılan açık: bugün hiç gönderilmeyen kanallar, yani kimsenin sustuğu
+   bir kanal açılmıyor). Günlük kanalın kendisi ve saati zaten şemadaydı
+   (`reminders_enabled`, `reminder_hour`) ama arayüzde görünmüyordu.
+2. `/api/notifications/prefs` — tercih sunucuda durur, iki tarayıcıda aynı
+   görünür. Saat 0–23 dışında kabul edilmiyor; sorgu onu doğrudan
+   karşılaştırmada kullanıyor.
+3. `runStreakAlerts` / `runWeeklyReminders` + iki cron ucu. İkisi de günlük
+   bütçeyi paylaşıyor (`last_reminder_day`): ayrı sayaç, öğlen hatırlatma alan
+   birine akşam ikinci bir bildirim demekti.
+4. `/notifications` mobildeki üç anahtarı ve beş saat çipini gösteriyor —
+   yalnız push izni varken, çünkü izinsiz bir anahtar dokunulunca hiçbir şey
+   yapmaz.
 
-1. `profiles`e eklemeli üç sütun (`remind_daily`, `remind_streak`,
-   `remind_weekly`) + günlük hatırlatmanın saati. Migrasyon eklemeli olur,
-   varsayılanlar bugünkü davranışı korur.
-2. `runReminders` tercihleri okur; `findReminderTargets` saate göre süzer.
-3. Seri koruma için 20:30'da ikinci bir systemd timer, haftalık için pazar
-   akşamı bir üçüncü (`lernomi-cron-summary` pazartesi sabahı, aynı şey değil).
-4. `/notifications` üç anahtarı ve saat çiplerini gösterir — arayüz tarafı
-   mobilde hazır, kopyalanacak.
-
-Bu satırlar tamamlanana kadar web'de tek anahtar var ve ekranın metni bunu
-dürüstçe söylüyor ("günde en fazla bir bildirim").
+**Kalan tek adım deploy sonrasına ait:** `lernomi-cron-streak` ve
+`lernomi-cron-weekly` timer'ları sunucuda kurulacak (AGENTS.md'de yazılı).
+Bugün kurulsalardı uçlar henüz canlıda olmadığı için 404 dönerdi.
