@@ -201,6 +201,11 @@ export function LearnScreen() {
         <ActionRow title={t("learn.practice")} subtitle={t("learn.practice_one_game_with_your_own")} tint={colors.primary} icon={QuizIcon} onPress={() => nav.navigate("Practice")} />
         <ActionRow title={t("learn.daily_round_2")} subtitle={t("learn.same_challenge_for_everyone_get")} tint={colors.info} icon={PodiumIcon} onPress={() => nav.navigate("Daily")} />
         <ActionRow title={t("learn.weekly_quiz")} subtitle={t("learn.test_what_you_ve_learned_weekly")} tint={colors.success} icon={CrownIcon} onPress={() => nav.navigate("Weekly")} />
+        {/* Seviye sınavı: beş bölüm, 45 dakika — ünite ya da modül ölçeğinde
+            değil, o yüzden Patika'da değil burada. Web'de de Öğren'de
+            (components/learn/learn-hub). Mobilde ExamScreen'e giden İLK
+            bağlantı bu: ekran aylardır kayıtlıydı ama çağıran yoktu. */}
+        <ActionRow title={t("learn.level_exam", { level })} subtitle={t("learn.level_exam_sub")} tint={colors.streak} icon={ExamIcon} onPress={() => nav.navigate("Exam", { level, module: null })} />
       </CardGrid>
     </Screen>
   );

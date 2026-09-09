@@ -67,6 +67,13 @@ export type ImmersionHubProps = {
   currentIndex: number;
   doneUnits: number;
   totalUnits: number;
+  /**
+   * Seviyenin modül sınavları. Patika'da duruyor çünkü kâğıt modülün KENDİ
+   * derslerinden üretiliyor ve dersleri geçilmemişse motor kâğıdı "deneme"
+   * sayıyor. Bir süre Beceriler'in altında listeleniyordu; orası çalışma
+   * kütüphanesi, sınavın ön koşulu ise burada.
+   */
+  moduleExams?: { index: number; code: string; titleTr: string; titleDe: string }[];
 };
 
 /** Tür → sözlük anahtarı; etiket kullanım anında çözülüyor (mobil `KIND_KEY`). */
@@ -103,7 +110,7 @@ function useTwoPane(): boolean {
   return wide;
 }
 
-export function ImmersionHub({ level, units, currentIndex, doneUnits, totalUnits }: ImmersionHubProps) {
+export function ImmersionHub({ level, units, currentIndex, doneUnits, totalUnits, moduleExams = [] }: ImmersionHubProps) {
   const t = useT();
   const twoPane = useTwoPane();
   const [selected, setSelected] = useState<number | null>(null);
@@ -151,6 +158,33 @@ export function ImmersionHub({ level, units, currentIndex, doneUnits, totalUnits
           />
         ))}
       </div>
+
+      {moduleExams.length ? (
+        <section className="mt-6">
+          <h2 className="mb-2 ml-1 text-h3">{t("path.module_exams")}</h2>
+          <ul className="card divide-y" style={{ borderColor: "var(--hairline)" }}>
+            {moduleExams.map((m) => (
+              <li key={m.code}>
+                <Link
+                  href={`/exam/${level}/${m.index}`}
+                  prefetch={false}
+                  className="pressable flex items-center gap-3 px-4 py-3"
+                >
+                  <span className="min-w-0 flex-1">
+                    <span className="block truncate text-strong">
+                      {m.code} · {m.titleTr}
+                    </span>
+                    <span className="muted block truncate text-caption" lang="de">
+                      {m.titleDe}
+                    </span>
+                  </span>
+                  <span className="muted shrink-0 text-caption">{t("path.module_exam_minutes")}</span>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </section>
+      ) : null}
     </>
   );
 

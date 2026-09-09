@@ -7,6 +7,7 @@ import type { ImmersionItem } from "@/lib/immersion/types";
 import type { CefrLevel } from "@/lib/skills/types";
 import { ImmersionHub } from "@/components/immersion/immersion-hub";
 import { buildHubUnits } from "@/lib/immersion/hub";
+import { moduleExamPlan } from "@/lib/lessons/module-exam";
 
 export const dynamic = "force-dynamic";
 
@@ -42,6 +43,15 @@ export default async function ImmersionPage() {
 
   const units = buildHubUnits(state);
 
+  // Modül sınavları: seviyenin planı olan modüller. Ön koşul BURADA
+  // denetlenmiyor — motor, dersleri geçilmemiş modülün kâğıdını "deneme"
+  // olarak veriyor ve bunu kendisi söylüyor; kapıyı iki kez kapatmak,
+  // hazır olup olmadığını merak eden öğrenciyi bilgisiz bırakırdı.
+  const moduleExams = [...Array(21).keys()]
+    .map((i) => ({ index: i, plan: moduleExamPlan(level, i) }))
+    .filter((m): m is { index: number; plan: NonNullable<ReturnType<typeof moduleExamPlan>> } => Boolean(m.plan))
+    .map(({ index, plan }) => ({ index, code: plan.code, titleTr: plan.titleTr, titleDe: plan.titleDe }));
+
   const doneUnits = state.units.filter((u) => u.complete).length;
   return (
     <ImmersionHub
@@ -50,6 +60,7 @@ export default async function ImmersionPage() {
       currentIndex={state.currentIndex}
       doneUnits={doneUnits}
       totalUnits={state.units.length}
+      moduleExams={moduleExams}
     />
   );
 }

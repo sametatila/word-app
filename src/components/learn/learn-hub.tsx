@@ -227,6 +227,19 @@ export function LearnHub({ data }: { data: LearnHubData }) {
           title={t("learn.daily_round_2")}
           sub={t("learn.same_challenge_for_everyone_get")}
         />
+        {/*
+          Seviye sınavı Öğren'de: beş bölümlük, 45 dakikalık bir ölçüm, yani
+          ünite ya da modül ölçeğinde değil. Bir süre Beceriler'in altında
+          duruyordu (bkz. app/(app)/skills/page.tsx); orası çalışma yüzeyi,
+          burası "bugün ne yapayım" yüzeyi.
+        */}
+        <Action
+          href={`/exam/${data.level}`}
+          tone="var(--color-flame-500)"
+          icon={<ExamIcon size={24} />}
+          title={t("learn.level_exam", { level: data.level })}
+          sub={t("learn.level_exam_sub")}
+        />
         <Action
           href="/learn/weekly"
           tone="var(--color-mint-500)"

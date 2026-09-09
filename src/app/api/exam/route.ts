@@ -40,6 +40,20 @@ export async function GET(req: Request) {
       { headers: { "cache-control": "private, max-age=3600" } },
     );
   }
+  /*
+   * Seviyenin modül sınavı LİSTESİ (`?level=A1`, module olmadan).
+   *
+   * Web bu listeyi sunucu bileşeninde doğrudan `moduleExamPlan`'dan kuruyor;
+   * mobilin böyle bir yolu yok ve tek tek kapak çekmek on istek ederdi. Plan
+   * kod içinde sabit olduğu için yanıt uzun süre önbelleklenebilir.
+   */
+  if (level) {
+    const modules = [...Array(21).keys()]
+      .map((i) => ({ index: i, plan: moduleExamPlan(level, i) }))
+      .filter((m) => m.plan)
+      .map(({ index, plan }) => ({ index, code: plan!.code, titleDe: plan!.titleDe, titleTr: plan!.titleTr }));
+    return NextResponse.json({ modules }, { headers: { "cache-control": "private, max-age=3600" } });
+  }
   try {
     return NextResponse.json({ exams: await examHistory(userId) }, { headers: { "cache-control": "no-store" } });
   } catch (err) {

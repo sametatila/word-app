@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { t } from "../lib/i18n";
 import { View, ScrollView } from "react-native";
 import { useNavigation } from "@react-navigation/native";
@@ -9,12 +9,13 @@ import { Skeleton, SkeletonBar, SkeletonCard, SkeletonLine, SkeletonTile, textHe
 import { Card } from "../ui/Card";
 import { Text } from "../ui/Text";
 import { PressableScale } from "../ui/PressableScale";
-import { LearnIcon, ReadIcon, ListenIcon, WriteIcon, GrammarIcon, QuizIcon, CheckIcon, LockIcon } from "../ui/icons";
+import { LearnIcon, ReadIcon, ListenIcon, WriteIcon, GrammarIcon, QuizIcon, CheckIcon, LockIcon, ExamIcon, ChevronRightIcon } from "../ui/icons";
 import { itemOpen, useLearningPath, type LearningPathUnit } from "../lib/useLearningPath";
 import { useLayout, gridColumnsFor, gridItemWidthFor } from "../lib/useLayout";
 import { UnitPane } from "./UnitScreen";
 import { KIND_KEY } from "../data/unit";
 import { AppHeader } from "../ui/AppHeader";
+import { api } from "../api/client";
 import { useTheme, spacing, radii, softShadow, type Palette } from "../theme";
 
 const KIND_ICON: Record<string, (p: { color: string; size: number }) => React.ReactElement> = {
@@ -171,6 +172,27 @@ export function PathScreen() {
   */
   const vurguluIndex = ikiPanel ? (secili?.index ?? -1) : path.currentIndex;
 
+  /*
+   * Modül sınavları. Patika'da duruyorlar çünkü kâğıt modülün KENDİ
+   * derslerinden üretiliyor ve dersleri geçilmemişse motor kâğıdı "deneme"
+   * sayıyor — ön koşul burada, giriş de burada olmalı. Web'de aynı liste
+   * ImmersionHub'ın altında.
+   *
+   * Liste tek istekle geliyor (`GET /api/exam?level=…`); plan kod içinde
+   * sabit olduğu için sunucu uzun süre önbellekliyor. Ağ yoksa bölüm hiç
+   * çizilmiyor: Patika'nın kendisi çevrimdışı çalışmaya devam ediyor.
+   */
+  const [moduller, setModuller] = useState<{ index: number; code: string; titleTr: string; titleDe: string }[]>([]);
+  const seviye = path?.level;
+  useEffect(() => {
+    if (!seviye) return;
+    let iptal = false;
+    api<{ modules?: { index: number; code: string; titleTr: string; titleDe: string }[] }>(`/api/exam?level=${seviye}`)
+      .then((d) => { if (!iptal) setModuller(d.modules ?? []); })
+      .catch(() => { /* çevrimdışı: bölüm gösterilmez */ });
+    return () => { iptal = true; };
+  }, [seviye]);
+
   const govde = (
     <>
       <View style={{ height: 10, borderRadius: 5, backgroundColor: colors.surface2, overflow: "hidden", marginBottom: 6 }}>
@@ -195,6 +217,28 @@ export function PathScreen() {
           </PressableScale>
         ))}
       </View>
+
+      {moduller.length ? (
+        <View style={{ marginTop: spacing.xl }}>
+          <Text variant="h3" style={{ marginBottom: spacing.sm, marginLeft: 4 }}>{t("path.module_exams")}</Text>
+          <Card padded style={{ paddingVertical: 4 }}>
+            {moduller.map((m, i) => (
+              <PressableScale
+                key={m.code}
+                onPress={() => nav.navigate("Exam", { level: path.level, module: m.index })}
+                style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingVertical: 12, borderBottomWidth: i === moduller.length - 1 ? 0 : 1, borderBottomColor: colors.hairline }}
+              >
+                <ExamIcon color={colors.streak} size={18} />
+                <View style={{ flex: 1 }}>
+                  <Text variant="bodyStrong" numberOfLines={1}>{m.code} · {m.titleTr}</Text>
+                  <Text variant="caption" color={colors.textMuted} numberOfLines={1}>{m.titleDe} · {t("path.module_exam_minutes")}</Text>
+                </View>
+                <ChevronRightIcon color={colors.textFaint} size={20} />
+              </PressableScale>
+            ))}
+          </Card>
+        </View>
+      ) : null}
     </>
   );
 

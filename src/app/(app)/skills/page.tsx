@@ -10,7 +10,6 @@ import { SKILL_LABEL_KEYS, SKILL_ORDER } from "@/lib/skills/meta";
 import { SKILL_ICON, SKILL_TINT } from "@/components/skills/theme";
 import { CardGrid } from "@/components/layout";
 import { CheckIcon, ChevronRightIcon } from "@/components/icons";
-import { moduleExamPlan } from "@/lib/lessons/module-exam";
 import type { CefrLevel, SkillId } from "@/lib/skills/types";
 import { localeOf } from "@/lib/i18n/dict";
 
@@ -41,6 +40,14 @@ const DONE_PCT = 70;
  * Seviyedeki her şey bittiyse öneri bir üst seviyeye geçmektir. Puan (son
  * deneme, 0–100) satırda görünür: geri bildirim yalnız egzersizin içinde değil,
  * listede de.
+ *
+ * SINAVLAR BURADA DEĞİL (2026-09-09). Bir süre modül ve seviye sınavı bu
+ * sayfanın altında listeleniyordu, ama sebebi bir tasarım kararı değil bir
+ * kapı eksikliğiydi: `/exam/*` rotaları çalışıyordu ve web'de onlara giden
+ * hiçbir bağlantı yoktu. Artık her sınav ait olduğu yerde — modül sınavı
+ * Patika'da (kâğıdı zaten modülün derslerinden üretiliyor ve dersler
+ * geçilmeden "deneme" sayılıyor), seviye sınavı ile deneme ve haftalık sınav
+ * Öğren'de. Beceriler tek bir iş yapıyor: seçip çalışmak.
  *
  * Seviye seçimi sorgu parametresiyle: sayfa sunucuda çiziliyor, sekme için
  * istemci durumu taşımaya değmez.
@@ -204,7 +211,6 @@ export default async function SkillsPage({
         </p>
       ) : null}
 
-      <ExamSection level={level} />
     </div>
   );
 }
@@ -292,62 +298,5 @@ async function Row({
         <ChevronRightIcon size={20} className="muted shrink-0" />
       )}
     </Link>
-  );
-}
-
-/**
- * Sınavlar — web'de HİÇBİR YERDEN açılamıyordu.
- *
- * `/exam/[level]` ve `/exam/[level]/[module]` rotaları aylardır duruyor ve
- * çalışıyor, ama onlara giden tek bir bağlantı yoktu: modül kâğıtları ve
- * seviye sınavı yazılmış, denetlenmiş, ama tıklanamıyordu. Mobilde ExamPrep
- * ekranı var, web'de karşılığı yoktu.
- *
- * Buraya konuldu çünkü Beceriler zaten "patikanın dışındaki çalışma yüzeyi":
- * sıradaki adımı Patika seçer, burada öğrenci ne çalışacağını kendi seçer —
- * sınav da öyle bir şey.
- *
- * Ön koşul burada KONTROL EDİLMİYOR: sınav motoru modül derslerinin %80'i
- * geçilmediyse kâğıdı "deneme" olarak veriyor (sayılmaz, sertifika yok).
- * Kapıyı burada da kapatmak, hazır olup olmadığını merak eden öğrenciyi
- * bilgisiz bırakırdı; motor zaten dürüst davranıyor.
- */
-async function ExamSection({ level }: { level: CefrLevel }) {
-  const t = await getT();
-  const modules = [...Array(21).keys()]
-    .map((i) => ({ index: i, plan: moduleExamPlan(level, i) }))
-    .filter((m): m is { index: number; plan: NonNullable<ReturnType<typeof moduleExamPlan>> } => Boolean(m.plan));
-  if (!modules.length) return null;
-
-  return (
-    <section className="mb-5">
-      <h2 className="mb-2 px-1 text-sm font-bold">{t("skillsp.exams")}</h2>
-      <ul className="card divide-y" style={{ borderColor: "var(--border)" }}>
-        <li>
-          <Link href={`/exam/${level}`} className="flex items-center gap-3 px-4 py-3">
-            <span className="min-w-0 flex-1">
-              <span className="block truncate font-semibold">{t("exam.level_exam", { level })}</span>
-              <span className="muted block text-xs">{t("skillsp.level_exam_sub")}</span>
-            </span>
-            <ChevronRightIcon size={18} className="shrink-0" style={{ color: "var(--text-faint)" }} />
-          </Link>
-        </li>
-        {modules.map(({ index, plan }) => (
-          <li key={plan.code}>
-            <Link href={`/exam/${level}/${index}`} className="flex items-center gap-3 px-4 py-3">
-              <span className="min-w-0 flex-1">
-                <span className="block truncate font-semibold">
-                  {plan.code} · {plan.titleTr}
-                </span>
-                <span className="muted block truncate text-xs" lang="de">
-                  {plan.titleDe} · 20 dk
-                </span>
-              </span>
-              <ChevronRightIcon size={18} className="shrink-0" style={{ color: "var(--text-faint)" }} />
-            </Link>
-          </li>
-        ))}
-      </ul>
-    </section>
   );
 }
