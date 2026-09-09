@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { Avatar } from "@/components/avatar";
 import { social } from "@/lib/social/client";
 import type { QuestView } from "@/lib/social/types";
+import { useT, useLang } from "@/lib/i18n/client";
 
 /**
  * Öğren ekranındaki tek satırlık nabız: bu haftanın ortak görevi varsa
@@ -12,6 +13,8 @@ import type { QuestView } from "@/lib/social/types";
  * pazarlama panosu değil; görev yoksa görev satırı da yok.
  */
 export function FriendPulse() {
+  const t = useT();
+  const lang = useLang();
   const [q, setQ] = useState<QuestView | null | undefined>(undefined);
   useEffect(() => {
     social
@@ -28,7 +31,11 @@ export function FriendPulse() {
       </div>
       <div className="min-w-0 flex-1">
         <p className="truncate text-sm font-bold">
-          {invited ? (q.invitedByMe ? "Görev daveti bekliyor" : `${q.partner.name ?? "Arkadaşın"} seni göreve çağırdı`) : `${q.partner.name ?? "Arkadaşın"} ile ortak görev`}
+          {invited
+            ? q.invitedByMe
+              ? t("socialw.quest_waiting")
+              : t("socialw.quest_invited_you", { name: q.partner.name ?? t("social.your_friend") })
+            : t("socialw.quest_with", { name: q.partner.name ?? t("social.your_friend") })}
         </p>
         {invited ? (
           <p className="muted text-xs">Hedef birlikte {q.targetXp.toLocaleString("tr-TR")} XP · {q.invitedByMe ? "cevap bekleniyor" : "kabul et"}</p>

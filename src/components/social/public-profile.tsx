@@ -8,6 +8,8 @@ import { errorText, social, type PublicProfileView } from "@/lib/social/client";
 import type { Relation } from "@/lib/social/types";
 import { FeedCard } from "./feed";
 import { UserAction } from "./user-action";
+import { useT, useLang } from "@/lib/i18n/client";
+import { localeOf } from "@/lib/i18n/dict";
 
 /**
  * Herkese açık profil. Sunucu görünürlüğü uygulayıp kırpılmış veriyi verir;
@@ -15,9 +17,11 @@ import { UserAction } from "./user-action";
  * ama bulunabilir. Şikayet sebebi kapalı liste, serbest metin isteğe bağlı.
  */
 export function PublicProfile({ data, me }: { data: PublicProfileView; me: string }) {
+  const t = useT();
+  const lang = useLang();
   const router = useRouter();
   const [rel, setRel] = useState<Relation>(data.relation);
-  const [msg, setMsg] = useState<string | null>(null);
+  const [msg, setMsg] = useState<{ text: string; ok: boolean } | null>(null);
   const [busy, setBusy] = useState(false);
   const [more, setMore] = useState(false);
   const [reporting, setReporting] = useState(false);
@@ -31,23 +35,23 @@ export function PublicProfile({ data, me }: { data: PublicProfileView; me: strin
     setMsg(null);
     try {
       await fn();
-      setMsg(done);
+      setMsg({ text: done, ok: true });
     } catch (e) {
-      setMsg(errorText(e));
+      setMsg({ text: errorText(e, lang), ok: false });
     } finally {
       setBusy(false);
     }
   }
 
   async function block() {
-    if (!window.confirm(`${u.name ?? "Bu kişi"} engellensin mi? Arkadaşlık ve görevler silinir; kendisine bildirim gitmez.`)) return;
+    if (!window.confirm(t("socialw.block_confirm", { name: u.name ?? t("social.this_person") }))) return;
     await act(async () => {
       await social.block(u.userId);
       router.replace("/friends");
-    }, "Engellendi");
+    }, t("socialw.blocked_done"));
   }
   async function report(reason: string) {
-    await act(() => social.report(u.userId, reason), "Şikayet alındı");
+    await act(() => social.report(u.userId, reason), t("socialw.report_received"));
     setReporting(false);
   }
 
@@ -57,19 +61,19 @@ export function PublicProfile({ data, me }: { data: PublicProfileView; me: strin
         <div className="flex items-start gap-4">
           <Avatar userId={u.userId} name={u.name} size={64} ring={friends ? "var(--color-mint)" : null} />
           <div className="min-w-0 flex-1">
-            <h1 className="truncate text-lg font-bold">{u.name ?? "İsimsiz öğrenci"}</h1>
+            <h1 className="truncate text-lg font-bold">{u.name ?? t("social.unnamed")}</h1>
             <p className="muted text-sm">
               @{u.username} · {u.level}
             </p>
             {data.bio ? <p className="mt-2 text-sm leading-snug">{data.bio}</p> : null}
             <p className="muted mt-2 flex flex-wrap gap-x-3 text-[11px]">
-              {data.mutual > 0 ? <span>{data.mutual} ortak arkadaş</span> : null}
+              {data.mutual > 0 ? <span>{t("social.mutual", { n: data.mutual })}</span> : null}
               {data.friendStreak > 0 ? (
                 <span className="flex items-center gap-0.5" style={{ color: "var(--color-mint)" }}>
-                  <HandshakeIcon size={12} /> {data.friendStreak} gün birlikte
+                  <HandshakeIcon size={12} /> {t("social.days_together", { n: data.friendStreak })}
                 </span>
               ) : null}
-              <span>Katılım {new Date(data.joined).toLocaleDateString("tr-TR", { month: "short", year: "numeric" })}</span>
+              <span>{t("socialw.joined", { date: new Date(data.joined).toLocaleDateString(localeOf(lang), { month: "short", year: "numeric" }) })}</span>
             </p>
           </div>
         </div>
@@ -78,39 +82,45 @@ export function PublicProfile({ data, me }: { data: PublicProfileView; me: strin
             <UserAction userId={u.userId} relation={rel} friendshipId={data.friendshipId} canRequest={data.canRequest} onChange={setRel} />
             {friends ? (
               <>
-                <button className="btn btn-ghost h-9 px-3 text-xs" disabled={busy} onClick={() => void act(() => social.nudge(u.userId, "remind"), "Dürttün")}>
-                  Dürt
+                <button className="btn btn-ghost h-9 px-3 text-xs" disabled={busy} onClick={() => void act(() => social.nudge(u.userId, "remind"), t("social.nudged_you"))}>
+                  {t("socialw.nudge")}
                 </button>
-                <button className="btn btn-ghost h-9 px-3 text-xs" disabled={busy} onClick={() => void act(() => social.inviteQuest(u.userId), "Görev daveti gitti")}>
+                <button className="btn btn-ghost h-9 px-3 text-xs" disabled={busy} onClick={() => void act(() => social.inviteQuest(u.userId), t("social.quest_sent"))}>
                   <TargetIcon size={14} />
-                  <span className="ml-1">Ortak görev</span>
+                  <span className="ml-1">{t("socialw.shared_quest")}</span>
                 </button>
               </>
             ) : null}
             <button className="muted ml-auto text-[11px]" onClick={() => setMore((m) => !m)} aria-expanded={more}>
-              Daha fazla
+              {t("socialw.more")}
             </button>
           </div>
         ) : null}
-        {msg ? <p className="mt-2 text-xs" style={{ color: msg.includes("gitti") || msg === "Dürttün" || msg.includes("alındı") ? "var(--color-mint)" : "var(--color-rose)" }}>{msg}</p> : null}
+        {/* Ton mesajın metninden değil kendi alanından: Türkçe sözcük aramak
+            çeviriyle birlikte her başarı iletisini kırmızıya çeviriyordu. */}
+        {msg ? (
+          <p className="mt-2 text-xs" style={{ color: msg.ok ? "var(--color-mint)" : "var(--color-rose)" }}>
+            {msg.text}
+          </p>
+        ) : null}
         {more && !isSelf ? (
           <div className="mt-3 flex flex-wrap gap-2 border-t pt-3" style={{ borderColor: "var(--border)" }}>
             <button className="btn btn-ghost h-8 px-3 text-xs" disabled={busy} onClick={() => void block()}>
-              Engelle
+              {t("socialw.block")}
             </button>
             <button className="btn btn-ghost h-8 px-3 text-xs" disabled={busy} onClick={() => setReporting((r) => !r)}>
-              Şikayet et
+              {t("socialw.report")}
             </button>
             {reporting ? (
               <div className="flex w-full flex-wrap gap-1.5">
                 {[
-                  ["spam", "Spam"],
-                  ["abuse", "Taciz"],
-                  ["impersonation", "Sahte hesap"],
-                  ["other", "Başka"],
+                  ["spam", "socialw.report_spam"],
+                  ["abuse", "socialw.report_abuse"],
+                  ["impersonation", "socialw.report_fake"],
+                  ["other", "socialw.report_other"],
                 ].map(([k, l]) => (
                   <button key={k} className="chip px-3 py-1.5 text-caption" disabled={busy} onClick={() => void report(k)}>
-                    {l}
+                    {t(l)}
                   </button>
                 ))}
               </div>
@@ -121,22 +131,22 @@ export function PublicProfile({ data, me }: { data: PublicProfileView; me: strin
 
       {data.stats ? (
         <section className="grid grid-cols-3 gap-2">
-          <Stat label="Seri" value={data.stats.currentStreak} icon={<FlameIcon size={14} />} tone="var(--color-flame)" />
-          <Stat label="Bu hafta" value={data.stats.weeklyXp} suffix=" XP" tone="var(--color-brand)" />
-          <Stat label="Toplam" value={data.stats.totalXp} suffix=" XP" tone="var(--color-brand)" />
-          <Stat label="En uzun seri" value={data.stats.longestStreak} tone="var(--color-flame)" />
-          <Stat label="Rozet" value={data.stats.achievements} icon={<TrophyIcon size={14} />} tone="var(--color-violet)" />
-          <Stat label="Son aktif" text={data.stats.lastActiveDay ? new Date(`${data.stats.lastActiveDay}T00:00:00`).toLocaleDateString("tr-TR", { day: "numeric", month: "short" }) : "—"} tone="var(--text-muted)" />
+          <Stat label={t("socialw.stat_streak")} value={data.stats.currentStreak} icon={<FlameIcon size={14} />} tone="var(--color-flame)" />
+          <Stat label={t("socialw.stat_week")} value={data.stats.weeklyXp} suffix=" XP" tone="var(--color-brand)" />
+          <Stat label={t("socialw.stat_total")} value={data.stats.totalXp} suffix=" XP" tone="var(--color-brand)" />
+          <Stat label={t("socialw.stat_longest")} value={data.stats.longestStreak} tone="var(--color-flame)" />
+          <Stat label={t("socialw.stat_badges")} value={data.stats.achievements} icon={<TrophyIcon size={14} />} tone="var(--color-violet)" />
+          <Stat label={t("socialw.stat_last_active")} text={data.stats.lastActiveDay ? new Date(`${data.stats.lastActiveDay}T00:00:00`).toLocaleDateString(localeOf(lang), { day: "numeric", month: "short" }) : "—"} tone="var(--text-muted)" />
         </section>
       ) : (
         <section className="card p-4 text-center">
-          <p className="muted text-sm">{data.visibility === "friends" ? "İstatistikler yalnız arkadaşlarına açık." : "Bu profil gizli."}</p>
+          <p className="muted text-sm">{t(data.visibility === "friends" ? "socialw.stats_friends_only" : "socialw.profile_private")}</p>
         </section>
       )}
 
       {data.recent.length ? (
         <section>
-          <h2 className="muted mb-2 px-1 text-xs font-bold uppercase tracking-wide">Son kilometre taşları</h2>
+          <h2 className="muted mb-2 px-1 text-xs font-bold uppercase tracking-wide">{t("socialw.recent_milestones")}</h2>
           <div className="flex flex-col gap-2">
             {data.recent.map((it) => (
               <FeedCard key={it.id} item={friends || isSelf ? it : { ...it, isMine: true }} />

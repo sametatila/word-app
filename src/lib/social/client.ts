@@ -1,4 +1,6 @@
 import type { FeedItem, FriendRow, PublicUser, QuestView, ReactionKind, ReactionSummary, Relation } from "./types";
+import { translate, isNativeLang, DEFAULT_NATIVE, type NativeLang } from "@/lib/i18n/dict";
+import { readLangCookie } from "@/lib/i18n/set-lang";
 
 /**
  * Tarayıcı tarafı sosyal API istemcisi. Hata gövdesi `{ error: kod }`;
@@ -36,28 +38,40 @@ async function call<T>(path: string, init?: RequestInit): Promise<T> {
 
 const json = (body: unknown) => JSON.stringify(body);
 
-export const ERROR_TEXT: Record<string, string> = {
-  unauthorized: "Oturum gerekli.",
-  forbidden: "Bu işlem için yetkin yok.",
-  self: "Kendinle yapamazsın.",
-  not_found: "Kullanıcı bulunamadı.",
-  requests_closed: "Bu kişi arkadaşlık isteği kabul etmiyor.",
-  declined_recent: "İsteğin reddedildi; bir hafta sonra yeniden deneyebilirsin.",
-  rate_limited: "Çok hızlı. Biraz sonra tekrar dene.",
-  not_friends: "Bunun için önce arkadaş olmalısınız.",
-  already_exists: "Bu hafta zaten bir görevin var.",
-  username_invalid: "Kullanıcı adı 3-20 karakter; küçük harf, rakam ve alt çizgi.",
-  username_taken: "Bu kullanıcı adı alınmış.",
-  username_cooldown: "Kullanıcı adı 14 günde bir değişir.",
-  week_over: "Bu haftanın süresi doldu.",
-  bad_request: "Geçersiz istek.",
-  database: "Bir şeyler ters gitti. Tekrar dene.",
-  failed: "Bağlantı kurulamadı.",
+/**
+ * Hata kodu → SÖZLÜK ANAHTARI. Anahtarlar mobilin sözlüğünden (`social.err_*`):
+ * iki taraf aynı cümleyi kullanıyor.
+ */
+export const ERROR_KEYS: Record<string, string> = {
+  unauthorized: "social.err_unauthorized",
+  forbidden: "social.err_forbidden",
+  self: "social.err_self",
+  not_found: "social.err_not_found",
+  requests_closed: "social.err_requests_closed",
+  declined_recent: "social.err_declined_recent",
+  rate_limited: "social.err_rate_limited",
+  not_friends: "social.err_not_friends",
+  already_exists: "social.err_already_exists",
+  username_invalid: "social.err_username_invalid",
+  username_taken: "social.err_username_taken",
+  username_cooldown: "social.err_username_cooldown",
+  week_over: "social.err_week_over",
+  bad_request: "social.err_bad_request",
+  database: "social.err_database",
+  failed: "social.err_offline",
 };
 
-export function errorText(err: unknown): string {
-  if (err instanceof SocialClientError) return ERROR_TEXT[err.code] ?? ERROR_TEXT.failed;
-  return ERROR_TEXT.failed;
+/**
+ * Hata metni, kullanıcının dilinde.
+ *
+ * Dil ÇEREZDEN okunuyor: bu modül bir bileşen değil (yirmi sekiz çağrı yeri
+ * var ve çoğu olay işleyicisinin içinde), kancadan okuyamaz. Çerez profilin
+ * aynası — `lib/i18n/server` bunu açıklıyor.
+ */
+export function errorText(err: unknown, lang?: NativeLang): string {
+  const code = err instanceof SocialClientError ? err.code : "failed";
+  const l = lang ?? (isNativeLang(readLangCookie()) ? (readLangCookie() as NativeLang) : DEFAULT_NATIVE);
+  return translate(l, ERROR_KEYS[code] ?? ERROR_KEYS.failed);
 }
 
 export type SocialMeView = {

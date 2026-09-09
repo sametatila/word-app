@@ -4,14 +4,17 @@ import Link from "next/link";
 import { useState } from "react";
 import { Avatar } from "@/components/avatar";
 import { errorText, social, timeAgo, type PendingView } from "@/lib/social/client";
+import { useT, useLang } from "@/lib/i18n/client";
 
 /** Gelen istekler (kabul/reddet) ve giden istekler (iptal). */
 export function Requests({ incoming, outgoing, onChanged }: { incoming: PendingView[]; outgoing: PendingView[]; onChanged: () => void }) {
+  const t = useT();
+  const lang = useLang();
   if (!incoming.length && !outgoing.length) {
     return (
       <div className="card p-6 text-center">
-        <p className="font-bold">Bekleyen istek yok</p>
-        <p className="muted mt-1 text-sm">Gelen istekler burada birikir; gönderdiklerini de buradan iptal edersin.</p>
+        <p className="font-bold">{t("socialw.no_requests")}</p>
+        <p className="muted mt-1 text-sm">{t("socialw.requests_sub")}</p>
       </div>
     );
   }
@@ -29,7 +32,7 @@ export function Requests({ incoming, outgoing, onChanged }: { incoming: PendingV
       ) : null}
       {outgoing.length ? (
         <section>
-          <h3 className="muted mb-2 px-1 text-xs font-bold uppercase tracking-wide">Gönderilen</h3>
+          <h3 className="muted mb-2 px-1 text-xs font-bold uppercase tracking-wide">{t("socialw.sent")}</h3>
           <ol className="card divide-y divide-[color:var(--border)] overflow-hidden">
             {outgoing.map((r) => (
               <RequestRow key={r.friendshipId} r={r} incoming={false} onChanged={onChanged} />
@@ -42,6 +45,8 @@ export function Requests({ incoming, outgoing, onChanged }: { incoming: PendingV
 }
 
 function RequestRow({ r, incoming, onChanged }: { r: PendingView; incoming: boolean; onChanged: () => void }) {
+  const t = useT();
+  const lang = useLang();
   const [busy, setBusy] = useState(false);
   const [err, setErr] = useState<string | null>(null);
   async function act(fn: () => Promise<unknown>) {
@@ -62,7 +67,7 @@ function RequestRow({ r, incoming, onChanged }: { r: PendingView; incoming: bool
       <Avatar userId={r.user.userId} name={r.user.name} size={40} />
       <div className="min-w-0 flex-1">
         <p className="truncate text-sm font-bold">
-          {href ? <Link href={href} prefetch={false}>{r.user.name ?? "İsimsiz öğrenci"}</Link> : r.user.name ?? "İsimsiz öğrenci"}
+          {href ? <Link href={href} prefetch={false}>{r.user.name ?? t("social.unnamed")}</Link> : (r.user.name ?? t("social.unnamed"))}
           {r.user.username ? <span className="muted ml-1.5 text-xs font-normal">@{r.user.username}</span> : null}
         </p>
         <p className="muted text-[11px]">

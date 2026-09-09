@@ -4,6 +4,7 @@ import { useState } from "react";
 import { errorText, social } from "@/lib/social/client";
 import { REACTION_KINDS, REACTION_LABELS, type ReactionKind, type ReactionSummary } from "@/lib/social/types";
 import { ReactionGlyph, REACTION_TONE } from "./reaction-icons";
+import { useT, useLang } from "@/lib/i18n/client";
 
 /**
  * Tepki çubuğu: mevcut tepkiler sayılarıyla, "+" ile altı seçenek. Kendi
@@ -22,6 +23,8 @@ export function ReactionBar({
   disabled?: boolean;
   onChange?: (next: ReactionSummary) => void;
 }) {
+  const t = useT();
+  const lang = useLang();
   const [s, setS] = useState<ReactionSummary>(summary);
   const [open, setOpen] = useState(false);
   const [busy, setBusy] = useState(false);
@@ -44,7 +47,7 @@ export function ReactionBar({
   }
 
   const present = REACTION_KINDS.filter((k) => (s.counts[k] ?? 0) > 0);
-  const who = s.names.length ? `${s.names.join(", ")}${s.total > s.names.length ? ` ve ${s.total - s.names.length} kişi` : ""}` : "";
+  const who = s.names.length ? `${s.names.join(", ")}${s.total > s.names.length ? t("social.and_others", { n: s.total - s.names.length }) : ""}` : "";
 
   return (
     <div className="mt-2 flex flex-wrap items-center gap-1.5">
@@ -77,7 +80,7 @@ export function ReactionBar({
             aria-label="Tepki ver"
             disabled={busy}
           >
-            {s.mine ? "Değiştir" : "Tepki ver"}
+            {t(s.mine ? "social.reaction_change" : "social.reaction_add")}
           </button>
           {open ? (
             <div

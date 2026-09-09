@@ -13,14 +13,15 @@ import { FriendList } from "./friend-list";
 import { FriendsBoard } from "./friends-board";
 import { Quests } from "./quests";
 import { Requests } from "./requests";
+import { useT, useLang } from "@/lib/i18n/client";
 
 export type HubTab = "friends" | "feed" | "quests" | "requests" | "find";
 const TABS: { key: HubTab; label: string }[] = [
-  { key: "friends", label: "Arkadaşlar" },
-  { key: "feed", label: "Akış" },
-  { key: "quests", label: "Görevler" },
-  { key: "requests", label: "İstekler" },
-  { key: "find", label: "Bul" },
+  { key: "friends", label: "social.tab_friends" },
+  { key: "feed", label: "friends.tab_feed" },
+  { key: "quests", label: "friends.tab_quests" },
+  { key: "requests", label: "friends.tab_requests" },
+  { key: "find", label: "friends.tab_find" },
 ];
 
 /**
@@ -30,6 +31,8 @@ const TABS: { key: HubTab; label: string }[] = [
  * gelen kişi doğrudan isteklere düşsün.
  */
 export function FriendsHub({ me, initialTab }: { me: SocialMeView; initialTab: HubTab }) {
+  const t = useT();
+  const lang = useLang();
   const [tab, setTab] = useState<HubTab>(initialTab);
   const [data, setData] = useState<FriendsView | null>(null);
   const [err, setErr] = useState<string | null>(null);
@@ -97,7 +100,7 @@ export function FriendsHub({ me, initialTab }: { me: SocialMeView; initialTab: H
       */}
       <section className="card flex flex-col items-center p-5">
         <Avatar userId={me.userId} name={me.name} size={64} />
-        <p className="mt-3 text-h3">{me.name ?? "İsimsiz öğrenci"}</p>
+        <p className="mt-3 text-h3">{me.name ?? t("social.unnamed")}</p>
         <p className="muted text-caption">@{me.username}</p>
         <div className="mt-3 flex gap-2">
           <span
@@ -107,16 +110,16 @@ export function FriendsHub({ me, initialTab }: { me: SocialMeView; initialTab: H
               color: "var(--color-mint)",
             }}
           >
-            {me.counts.friends} arkadaş
+            {t("friends.count_friends", { n: me.counts.friends })}
           </span>
           <Link
             href="/profile/settings#social"
             prefetch={false}
-            aria-label="Sosyal ayarlar"
+            aria-label={t("friends.social_settings")}
             className="pressable flex items-center gap-1.5 rounded-full px-3 py-1.5 text-caption"
             style={{ background: "var(--surface-2)", color: "var(--text-muted)" }}
           >
-            <WrenchIcon size={14} /> Ayarlar
+            <WrenchIcon size={14} /> {t("socialw.settings")}
           </Link>
         </div>
       </section>
@@ -133,8 +136,8 @@ export function FriendsHub({ me, initialTab }: { me: SocialMeView; initialTab: H
           <HandshakeIcon size={22} />
         </span>
         <span className="min-w-0 flex-1 text-left">
-          <span className="block text-h3">{copied ? "Bağlantı kopyalandı" : "Arkadaş davet et"}</span>
-          <span className="block text-caption text-white/85">Aynı tabloda yarışın, birbirinizi dürtün</span>
+          <span className="block text-h3">{t(copied ? "socialw.link_copied" : "friends.invite_friend")}</span>
+          <span className="block text-caption text-white/85">{t("socialw.invite_sub")}</span>
         </span>
       </button>
 
@@ -142,16 +145,16 @@ export function FriendsHub({ me, initialTab }: { me: SocialMeView; initialTab: H
           ve renk veriyor, ölçüyü kullanan yer seçiyor. Sonuç, yan yana yapışık
           beş etiketti — seçili olan dolu zeminliyken bile nerede bittiği
           okunmuyordu. */}
-      <nav className="no-scrollbar mt-3 flex gap-1.5 overflow-x-auto pb-1" aria-label="Sosyal sekmeler">
-        {TABS.map((t) => (
+      <nav className="no-scrollbar mt-3 flex gap-1.5 overflow-x-auto pb-1" aria-label={t("socialw.tabs")}>
+        {TABS.map((tb) => (
           <button
-            key={t.key}
-            className={`chip shrink-0 px-3.5 py-2 text-caption ${tab === t.key ? "chip-active" : ""}`}
-            aria-current={tab === t.key ? "page" : undefined}
-            onClick={() => go(t.key)}
+            key={tb.key}
+            className={`chip shrink-0 px-3.5 py-2 text-caption ${tab === tb.key ? "chip-active" : ""}`}
+            aria-current={tab === tb.key ? "page" : undefined}
+            onClick={() => go(tb.key)}
           >
-            {t.label}
-            {t.key === "requests" && incoming > 0 ? (
+            {t(tb.label)}
+            {tb.key === "requests" && incoming > 0 ? (
               <span className="ml-1.5 rounded-full px-1.5 text-micro" style={{ background: "var(--color-flame)", color: "#fff" }}>
                 {incoming}
               </span>
@@ -171,10 +174,10 @@ export function FriendsHub({ me, initialTab }: { me: SocialMeView; initialTab: H
                 <FriendList friends={data.friends} nudgedToday={data.nudgedToday} onChanged={() => void reload()} />
               ) : (
                 <div className="card p-6 text-center">
-                  <p className="text-h3">Henüz arkadaşın yok</p>
-                  <p className="muted mt-1 text-body">Kullanıcı adıyla ara ya da davet bağlantını gönder. Arkadaşlar birbirinin serisini görür, tepki verir, birlikte görev yapar.</p>
+                  <p className="text-h3">{t("friends.no_friends_yet")}</p>
+                  <p className="muted mt-1 text-body">{t("friends.search_by_username_or_send_your")}</p>
                   <button className="btn btn-primary mt-4 px-4 py-2.5" onClick={() => go("find")}>
-                    Arkadaş bul
+                    {t("friends.find_friends")}
                   </button>
                 </div>
               )}

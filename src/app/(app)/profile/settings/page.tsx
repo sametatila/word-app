@@ -73,7 +73,7 @@ export default async function SettingsPage() {
       <LinkedAccounts googleEnabled={googleConfigured} />
       {me ? (
         <div className="mx-auto w-full max-w-md">
-          <SocialSettings initial={me} />
+          <SocialSettings initial={me} course={profile.course} />
         </div>
       ) : null}
       {/* Sürüm en altta — mobilde de ayarların dibinde. Destek isteyen

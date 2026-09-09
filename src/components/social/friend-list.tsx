@@ -6,6 +6,8 @@ import { Avatar } from "@/components/avatar";
 import { FlameIcon, HandshakeIcon, TargetIcon } from "@/components/icons";
 import { errorText, social } from "@/lib/social/client";
 import type { FriendRow } from "@/lib/social/types";
+import { useT, useLang } from "@/lib/i18n/client";
+import { formatNumber } from "@/lib/i18n/dict";
 
 /**
  * Arkadaş satırı: kimlik + bu haftaki emeği + ortak seri + iki eylem
@@ -33,8 +35,10 @@ export function FriendList({
 }
 
 function FriendItem({ f, nudged, onChanged }: { f: FriendRow; nudged: boolean; onChanged: () => void }) {
+  const t = useT();
+  const lang = useLang();
   const [sent, setSent] = useState(nudged);
-  const [msg, setMsg] = useState<string | null>(null);
+  const [msg, setMsg] = useState<{ text: string; ok: boolean } | null>(null);
   const [busy, setBusy] = useState(false);
 
   async function nudge() {
@@ -44,9 +48,9 @@ function FriendItem({ f, nudged, onChanged }: { f: FriendRow; nudged: boolean; o
     try {
       await social.nudge(f.userId, "remind");
       setSent(true);
-      setMsg("Dürttün");
+      setMsg({ text: t("social.nudged_you"), ok: true });
     } catch (e) {
-      setMsg(errorText(e));
+      setMsg({ text: errorText(e, lang), ok: false });
     } finally {
       setBusy(false);
     }
@@ -57,21 +61,21 @@ function FriendItem({ f, nudged, onChanged }: { f: FriendRow; nudged: boolean; o
     setMsg(null);
     try {
       await social.inviteQuest(f.userId);
-      setMsg("Görev daveti gitti");
+      setMsg({ text: t("social.quest_sent"), ok: true });
       onChanged();
     } catch (e) {
-      setMsg(errorText(e));
+      setMsg({ text: errorText(e, lang), ok: false });
     } finally {
       setBusy(false);
     }
   }
   async function remove() {
-    if (!window.confirm(`${f.name ?? "Bu kişi"} arkadaşlıktan çıkarılsın mı? Bildirim gitmez.`)) return;
+    if (!window.confirm(`${f.name ?? t("social.this_person")} arkadaşlıktan çıkarılsın mı? Bildirim gitmez.`)) return;
     try {
       await social.remove(f.userId);
       onChanged();
     } catch (e) {
-      setMsg(errorText(e));
+      setMsg({ text: errorText(e, lang), ok: false });
     }
   }
 
@@ -87,12 +91,12 @@ function FriendItem({ f, nudged, onChanged }: { f: FriendRow; nudged: boolean; o
       )}
       <div className="min-w-0 flex-1">
         <p className="truncate text-sm font-bold">
-          {href ? <Link href={href} prefetch={false}>{f.name ?? "İsimsiz öğrenci"}</Link> : f.name ?? "İsimsiz öğrenci"}
+          {href ? <Link href={href} prefetch={false}>{f.name ?? t("social.unnamed")}</Link> : (f.name ?? t("social.unnamed"))}
           {f.username ? <span className="muted ml-1.5 text-xs font-normal">@{f.username}</span> : null}
         </p>
         <p className="muted mt-0.5 flex flex-wrap items-center gap-x-3 text-[11px]">
           <span className="font-semibold" style={{ color: "var(--color-brand)" }}>
-            {f.weeklyXp.toLocaleString("tr-TR")} XP bu hafta
+            {t("social.xp_this_week", { xp: formatNumber(f.weeklyXp, lang) })}
           </span>
           {f.currentStreak > 0 ? (
             <span className="flex items-center gap-0.5" style={{ color: "var(--color-flame)" }}>
@@ -101,24 +105,30 @@ function FriendItem({ f, nudged, onChanged }: { f: FriendRow; nudged: boolean; o
             </span>
           ) : null}
           {f.friendStreak > 0 ? (
-            <span className="flex items-center gap-0.5" style={{ color: "var(--color-mint)" }} title="Birlikte çalıştığınız ardışık gün">
+            <span className="flex items-center gap-0.5" style={{ color: "var(--color-mint)" }} title={t("socialw.costreak_hint")}>
               <HandshakeIcon size={12} />
-              {f.friendStreak} gün birlikte
+              {t("social.days_together", { n: f.friendStreak })}
             </span>
           ) : null}
           <span>{f.level}</span>
         </p>
-        {msg ? <p className="mt-1 text-[11px]" style={{ color: msg === "Dürttün" || msg.startsWith("Görev") ? "var(--color-mint)" : "var(--color-rose)" }}>{msg}</p> : null}
+        {/* Ton mesajın METNİNDEN değil kendi alanından okunuyor: metni Türkçe
+            sözcüklere göre sınamak çeviriyle birlikte bozuluyordu. */}
+        {msg ? (
+          <p className="mt-1 text-[11px]" style={{ color: msg.ok ? "var(--color-mint)" : "var(--color-rose)" }}>
+            {msg.text}
+          </p>
+        ) : null}
       </div>
       <div className="flex shrink-0 items-center gap-1">
-        <button className="btn btn-ghost h-8 px-2.5 text-xs" disabled={busy || sent} onClick={() => void nudge()} title="Bugün çalışmasını hatırlat">
-          {sent ? "Dürtüldü" : "Dürt"}
+        <button className="btn btn-ghost h-8 px-2.5 text-xs" disabled={busy || sent} onClick={() => void nudge()} title={t("socialw.nudge_hint")}>
+          {t(sent ? "socialw.nudged" : "socialw.nudge")}
         </button>
-        <button className="btn btn-ghost h-8 px-2 text-xs" disabled={busy} onClick={() => void quest()} title="Bu hafta ortak görev" aria-label="Ortak görev daveti">
+        <button className="btn btn-ghost h-8 px-2 text-xs" disabled={busy} onClick={() => void quest()} title={t("socialw.quest_hint")} aria-label={t("quests.invite_title")}>
           <TargetIcon size={15} />
         </button>
-        <button className="muted h-8 px-1.5 text-[11px]" onClick={() => void remove()} aria-label="Arkadaşlıktan çıkar">
-          Çıkar
+        <button className="muted h-8 px-1.5 text-[11px]" onClick={() => void remove()} aria-label={t("social.unfriend")}>
+          {t("social.remove")}
         </button>
       </div>
     </li>

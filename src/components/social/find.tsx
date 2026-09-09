@@ -7,6 +7,7 @@ import { FlameIcon } from "@/components/icons";
 import { RowSkeleton } from "@/components/skeleton";
 import { errorText, social, type SearchHitView, type SuggestionView } from "@/lib/social/client";
 import { UserAction } from "./user-action";
+import { useT, useLang } from "@/lib/i18n/client";
 
 /**
  * Bul: arama kutusu + öneriler. Arama iki karakterden sonra, 350 ms
@@ -14,6 +15,8 @@ import { UserAction } from "./user-action";
  * boşa harcar. Kutu boşken öneriler görünür; yazınca sonuçlar onun yerine geçer.
  */
 export function Find({ onChanged }: { onChanged?: () => void }) {
+  const t = useT();
+  const lang = useLang();
   const [q, setQ] = useState("");
   const [hits, setHits] = useState<SearchHitView[] | null>(null);
   const [sugg, setSugg] = useState<SuggestionView[] | null>(null);
@@ -56,12 +59,12 @@ export function Find({ onChanged }: { onChanged?: () => void }) {
         <input
           value={q}
           onChange={(e) => setQ(e.target.value)}
-          placeholder="Kullanıcı adı ya da isim"
+          placeholder={t("socialw.search_placeholder")}
           className="min-w-0 flex-1 bg-transparent text-sm outline-none"
           autoCapitalize="none"
           autoCorrect="off"
           spellCheck={false}
-          aria-label="Kullanıcı ara"
+          aria-label={t("socialw.search_label")}
         />
         {q ? (
           <button className="muted text-xs" onClick={() => setQ("")} aria-label="Temizle">
@@ -84,11 +87,11 @@ export function Find({ onChanged }: { onChanged?: () => void }) {
             ))}
           </ol>
         ) : (
-          <p className="muted px-1 text-sm">Sonuç yok. Gizli profiller yalnız tam kullanıcı adıyla bulunur.</p>
+          <p className="muted px-1 text-sm">{t("socialw.no_results")}</p>
         )
       ) : (
         <section>
-          <h3 className="muted mb-2 px-1 text-xs font-bold uppercase tracking-wide">Tanıyor olabilirsin</h3>
+          <h3 className="muted mb-2 px-1 text-xs font-bold uppercase tracking-wide">{t("socialw.you_may_know")}</h3>
           {sugg === null ? (
             <RowSkeleton rows={3} height={60} />
           ) : sugg.length ? (
@@ -97,7 +100,7 @@ export function Find({ onChanged }: { onChanged?: () => void }) {
                 <PersonRow
                   key={s.userId}
                   user={s}
-                  note={s.reason === "mutual" ? `${s.mutual} ortak arkadaş` : s.reason === "level" ? `Aynı seviye (${s.level})` : "Bu hafta aktif"}
+                  note={s.reason === "mutual" ? t("social.mutual", { n: s.mutual }) : s.reason === "level" ? t("socialw.same_level", { level: s.level }) : t("socialw.active_this_week")}
                   streak={s.currentStreak}
                   onChanged={onChanged}
                 >
@@ -106,7 +109,7 @@ export function Find({ onChanged }: { onChanged?: () => void }) {
               ))}
             </ol>
           ) : (
-            <p className="muted px-1 text-sm">Şimdilik öneri yok. Kullanıcı adıyla ara ya da profil bağlantını paylaş.</p>
+            <p className="muted px-1 text-sm">{t("socialw.no_suggestions")}</p>
           )}
         </section>
       )}
@@ -126,13 +129,15 @@ function PersonRow({
   onChanged?: () => void;
   children: React.ReactNode;
 }) {
+  const t = useT();
+  const lang = useLang();
   const href = user.username ? `/u/${user.username}` : null;
   return (
     <li className="flex items-center gap-3 px-4 py-3" style={{ borderColor: "var(--border)" }}>
       <Avatar userId={user.userId} name={user.name} size={40} />
       <div className="min-w-0 flex-1">
         <p className="truncate text-sm font-bold">
-          {href ? <Link href={href} prefetch={false}>{user.name ?? "İsimsiz öğrenci"}</Link> : user.name ?? "İsimsiz öğrenci"}
+          {href ? <Link href={href} prefetch={false}>{user.name ?? t("social.unnamed")}</Link> : (user.name ?? t("social.unnamed"))}
           {user.username ? <span className="muted ml-1.5 text-xs font-normal">@{user.username}</span> : null}
         </p>
         <p className="muted flex items-center gap-2 text-[11px]">

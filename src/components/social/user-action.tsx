@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { errorText, social } from "@/lib/social/client";
 import type { Relation } from "@/lib/social/types";
+import { useT, useLang } from "@/lib/i18n/client";
 
 /**
  * İlişkiye göre tek düğme: Ekle · İstek gönderildi (iptal) · Kabul et ·
@@ -24,6 +25,8 @@ export function UserAction({
   onChange?: (next: Relation) => void;
   compact?: boolean;
 }) {
+  const t = useT();
+  const lang = useLang();
   const [state, setState] = useState<Relation>(relation);
   const [fid, setFid] = useState<number | null>(friendshipId ?? null);
   const [busy, setBusy] = useState(false);
@@ -55,14 +58,14 @@ export function UserAction({
         className={`btn btn-ghost ${size}`}
         disabled={busy}
         onClick={() => {
-          if (!window.confirm("Arkadaşlıktan çıkarılsın mı? Bildirim gitmez.")) return;
+          if (!window.confirm(t("socialw.unfriend_confirm"))) return;
           void run(async () => {
             await social.remove(userId);
             return "none";
           });
         }}
       >
-        Arkadaş
+        {t("socialw.friend")}
       </button>
     );
   } else if (state === "outgoing") {
@@ -77,7 +80,7 @@ export function UserAction({
           })
         }
       >
-        İstek gönderildi
+        {t("socialw.request_sent")}
       </button>
     );
   } else if (state === "incoming") {
@@ -97,13 +100,13 @@ export function UserAction({
       </button>
     );
   } else if (state === "declined") {
-    button = <span className="muted text-xs">Bir hafta sonra</span>;
+    button = <span className="muted text-xs">{t("socialw.in_a_week")}</span>;
   } else {
     button = (
       <button
         className={`btn btn-primary ${size}`}
         disabled={busy || !canRequest}
-        title={canRequest ? undefined : "Bu kişi istek kabul etmiyor"}
+        title={canRequest ? undefined : t("social.err_requests_closed")}
         onClick={() =>
           void run(async () => {
             const r = await social.request(userId);

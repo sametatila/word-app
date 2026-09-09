@@ -7,6 +7,7 @@ import { RowSkeleton } from "@/components/skeleton";
 import { errorText, notificationText, social, timeAgo, type NotificationView } from "@/lib/social/client";
 import { ReactionGlyph } from "./reaction-icons";
 import type { ReactionKind } from "@/lib/social/types";
+import { useT, useLang } from "@/lib/i18n/client";
 
 /** Bildirimin götürdüğü yer — her satırın bir işi var. */
 function hrefFor(n: NotificationView): string {
@@ -32,6 +33,8 @@ function hrefFor(n: NotificationView): string {
  * ilgili yere gider.
  */
 export function Inbox() {
+  const t = useT();
+  const lang = useLang();
   const [items, setItems] = useState<NotificationView[] | null>(null);
   const [cursor, setCursor] = useState<number | null>(null);
   const [err, setErr] = useState<string | null>(null);
@@ -62,8 +65,8 @@ export function Inbox() {
   if (!items.length) {
     return (
       <div className="card p-6 text-center">
-        <p className="font-bold">Bildirim yok</p>
-        <p className="muted mt-1 text-sm">Arkadaşlık istekleri, tepkiler, dürtmeler ve görev haberleri burada toplanır.</p>
+        <p className="font-bold">{t("inbox.no_notifications")}</p>
+        <p className="muted mt-1 text-sm">{t("inbox.friend_requests_reactions_nudges")}</p>
         {err ? <p className="mt-2 text-xs" style={{ color: "var(--color-rose)" }}>{err}</p> : null}
       </div>
     );
@@ -86,7 +89,7 @@ export function Inbox() {
       </ol>
       {cursor ? (
         <button className="btn btn-ghost h-9 text-xs" disabled={busy} onClick={() => void load(cursor)}>
-          {busy ? "Yükleniyor" : "Daha eski"}
+          {t(busy ? "social.loading" : "social.older")}
         </button>
       ) : null}
       {err ? <p className="text-center text-xs" style={{ color: "var(--color-rose)" }}>{err}</p> : null}

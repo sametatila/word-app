@@ -1,4 +1,5 @@
 import { PageBack } from "@/components/page-back";
+import { getT } from "@/lib/i18n/server";
 import { Inbox } from "@/components/social/inbox";
 
 export const metadata = { title: "Gelen kutusu" };
@@ -11,10 +12,11 @@ export const metadata = { title: "Gelen kutusu" };
  * bir satır da yoktu. Mobilde ayrı bir ekran (`InboxScreen`) ve Profil'den
  * açılıyor.
  */
-export default function InboxPage() {
+export default async function InboxPage() {
+  const t = await getT();
   return (
     <div className="mx-auto w-full max-w-md">
-      <PageBack fallback="/profile" title="Gelen kutusu" />
+      <PageBack fallback="/profile" title={t("inbox.inbox")} />
       <Inbox />
     </div>
   );

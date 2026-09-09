@@ -7,6 +7,7 @@ import { RowSkeleton } from "@/components/skeleton";
 import { errorText, feedText, social, timeAgo } from "@/lib/social/client";
 import type { FeedItem } from "@/lib/social/types";
 import { ReactionBar } from "./reaction-bar";
+import { useT, useLang } from "@/lib/i18n/client";
 
 /**
  * Arkadaş akışı. Yalnız kilometre taşları düşer; her satırda tepki çubuğu.
@@ -15,6 +16,8 @@ import { ReactionBar } from "./reaction-bar";
  * yönlendirme kadar bile bilgi vermez.
  */
 export function Feed({ onFindFriends }: { onFindFriends?: () => void }) {
+  const t = useT();
+  const lang = useLang();
   const [items, setItems] = useState<FeedItem[] | null>(null);
   const [cursor, setCursor] = useState<string | null>(null);
   const [busy, setBusy] = useState(false);
@@ -43,11 +46,11 @@ export function Feed({ onFindFriends }: { onFindFriends?: () => void }) {
   if (!items.length) {
     return (
       <div className="card p-6 text-center">
-        <p className="font-bold">Akış henüz boş</p>
-        <p className="muted mt-1 text-sm">Arkadaşlarının seri, rozet ve görev haberleri burada görünür; sen de tepki verirsin.</p>
+        <p className="font-bold">{t("socialw.feed_empty")}</p>
+        <p className="muted mt-1 text-sm">{t("socialw.feed_empty_sub")}</p>
         {onFindFriends ? (
           <button className="btn btn-primary mt-4 h-9 px-4 text-xs" onClick={onFindFriends}>
-            Arkadaş bul
+            {t("friends.find_friends")}
           </button>
         ) : null}
         {err ? <p className="mt-3 text-xs" style={{ color: "var(--color-rose)" }}>{err}</p> : null}
@@ -61,7 +64,7 @@ export function Feed({ onFindFriends }: { onFindFriends?: () => void }) {
       ))}
       {cursor ? (
         <button className="btn btn-ghost h-9 text-xs" disabled={busy} onClick={() => void load(cursor)}>
-          {busy ? "Yükleniyor" : "Daha eski"}
+          {t(busy ? "social.loading" : "social.older")}
         </button>
       ) : null}
       {err ? <p className="text-center text-xs" style={{ color: "var(--color-rose)" }}>{err}</p> : null}
@@ -70,7 +73,9 @@ export function Feed({ onFindFriends }: { onFindFriends?: () => void }) {
 }
 
 export function FeedCard({ item }: { item: FeedItem }) {
-  const name = item.user.name ?? "İsimsiz öğrenci";
+  const t = useT();
+  const lang = useLang();
+  const name = item.user.name ?? t("social.unnamed");
   return (
     <article className="card px-4 py-3">
       <div className="flex items-start gap-3">
