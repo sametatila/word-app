@@ -813,7 +813,47 @@ referans taraf da düzeldi — bu oturumdaki `textMuted` kararıyla aynı çizgi
   FAZLASI var, üstelik yeni/tekrar çipiyle. Kompozisyon farkı ekran
   genişliğinden geliyor; renkler eşitlendi (seri hapı iki tarafta da gök).
 
-### 11.4 Yan bulgular
+### 11.4 Semantik renklerin bir basamak farkı — ÖLÇÜLDÜ, hizalanmadı
+
+Web'in semantik renkleri Android'inkinden bir basamak koyu ve bu bilinçli:
+paletin ölçüm kapısı (`palette-check.mjs`) beyaz kart üstünde metin kontrastı
+istiyor. Ölçüm (metin / beyaz, eşik 4.5):
+
+| rol | mobil | | web | |
+|---|---|---|---|---|
+| streak / flame | #b8940f | **2.88** | #86690e | 5.20 |
+| success / mint | #2f9a61 | **3.55** | #237a4c | 5.30 |
+| info / sky | #1b93ac | **3.61** | #16748a | 5.39 |
+| danger / rose | #dc3f55 | **4.30** | #b62e43 | 6.07 |
+| accent / violet | #9256bc | 4.91 | #77439d | 6.83 |
+
+Android'in beşinden dördü metin olarak eşiği geçmiyor. Web'i Android'e çekmek
+bu dört ölçümü birden kırardı, o yüzden YAPILMADI — bu turdaki `textMuted` ve
+çip kararlarıyla aynı çizgi: ölçüm yön tayin ediyor.
+
+Ters yön (Android'i web'e çekmek) da bu turda yapılmadı: mobilde bu tonlar
+yalnız metin değil DOLU ZEMİN olarak da kullanılıyor (ikon karoları, ilerleme
+çubukları), yani bir basamak koyulaştırmak Android'in görünümünü geniş bir
+alanda değiştirir ve gözle doğrulanmadan yapılmamalı. Samet'e açık kalem.
+
+**Düzeltme:** bu turun daha erken bir notunda başlıktaki seri hapının rengi
+"iki tarafta aynı" diye geçmişti; yalnız ALFASI eşitlendi, ton bu tablodaki
+farkı taşımaya devam ediyor.
+
+**Rozet kademeleri** de ayrışıyor ve ikisi de temiz değil — beyaz ikon /
+kademe zemini (ikon eşiği 3.0):
+
+| kademe | web | mobil |
+|---|---|---|
+| bronz | #a9683c 4.44 | #b08d57 3.09 |
+| gümüş | #a8a29a **2.53** | #9aa3ad **2.56** |
+| altın | #d4a017 **2.38** | #b8940f **2.88** |
+| efsane | #77439d 6.83 | #9256bc 4.91 |
+
+Gümüş ve altın iki tarafta da geçmiyor; birini ötekine çekmek sorunu taşımak
+olurdu. Dört kademenin de geçtiği bir set seçmek ayrı bir ürün kararı.
+
+### 11.5 Yan bulgular
 
 - Seçim çipi mobilde dört kopya halinde yazılıydı (Ayarlar, Bildirimler, sosyal
   ortak modül, Sıralama'da satır içi) ve dolguları üç türlüydü;
