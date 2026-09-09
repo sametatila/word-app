@@ -19,6 +19,7 @@
 		AB01F1002D4E51A700000032 /* finish.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AB01F1002D4E51A700000022 /* finish.mp3 */; };
 		AB01F1002D4E51A700000033 /* micoff.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AB01F1002D4E51A700000023 /* micoff.mp3 */; };
 		AB01F1002D4E51A700000034 /* micon.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AB01F1002D4E51A700000024 /* micon.mp3 */; };
+		AB01F1002D4E51A700000037 /* premium.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AB01F1002D4E51A700000027 /* premium.mp3 */; };
 		AB01F1002D4E51A700000035 /* tap.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AB01F1002D4E51A700000025 /* tap.mp3 */; };
 		AB01F1002D4E51A700000036 /* wrong.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AB01F1002D4E51A700000026 /* wrong.mp3 */; };
 		AB01F1002D4E51A700000055 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = AB01F1002D4E51A700000051 /* Localizable.strings */; };
@@ -43,6 +44,7 @@
 		AB01F1002D4E51A700000022 /* finish.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = finish.mp3; path = Lernomi/sfx/finish.mp3; sourceTree = "<group>"; };
 		AB01F1002D4E51A700000023 /* micoff.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = micoff.mp3; path = Lernomi/sfx/micoff.mp3; sourceTree = "<group>"; };
 		AB01F1002D4E51A700000024 /* micon.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = micon.mp3; path = Lernomi/sfx/micon.mp3; sourceTree = "<group>"; };
+		AB01F1002D4E51A700000027 /* premium.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = premium.mp3; path = Lernomi/sfx/premium.mp3; sourceTree = "<group>"; };
 		AB01F1002D4E51A700000025 /* tap.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = tap.mp3; path = Lernomi/sfx/tap.mp3; sourceTree = "<group>"; };
 		AB01F1002D4E51A700000026 /* wrong.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = wrong.mp3; path = Lernomi/sfx/wrong.mp3; sourceTree = "<group>"; };
 		AB01F1002D4E51A700000041 /* Lernomi.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = Lernomi.entitlements; path = Lernomi/Lernomi.entitlements; sourceTree = "<group>"; };
@@ -127,6 +129,7 @@
 				AB01F1002D4E51A700000022 /* finish.mp3 */,
 				AB01F1002D4E51A700000023 /* micoff.mp3 */,
 				AB01F1002D4E51A700000024 /* micon.mp3 */,
+				AB01F1002D4E51A700000027 /* premium.mp3 */,
 				AB01F1002D4E51A700000025 /* tap.mp3 */,
 				AB01F1002D4E51A700000026 /* wrong.mp3 */,
 			);
@@ -211,6 +214,7 @@
 				AB01F1002D4E51A700000032 /* finish.mp3 in Resources */,
 				AB01F1002D4E51A700000033 /* micoff.mp3 in Resources */,
 				AB01F1002D4E51A700000034 /* micon.mp3 in Resources */,
+				AB01F1002D4E51A700000037 /* premium.mp3 in Resources */,
 				AB01F1002D4E51A700000035 /* tap.mp3 in Resources */,
 				AB01F1002D4E51A700000036 /* wrong.mp3 in Resources */,
 				AB01F1002D4E51A700000055 /* Localizable.strings in Resources */,
