@@ -8,7 +8,7 @@ import type { RootStackParams } from "../navigation/RootStack";
 import { Text } from "../ui/Text";
 import { Card } from "../ui/Card";
 import { PressableScale } from "../ui/PressableScale";
-import { ArrowBackIcon, BoltIcon, QuizIcon, GrammarIcon, WriteIcon, ListenIcon, CheckIcon, SkillsIcon, LearnIcon, ReadIcon, ArrowRightIcon } from "../ui/icons";
+import { ArrowBackIcon, BoltIcon, QuizIcon, WriteIcon, ListenIcon, CheckIcon, KeyboardIcon, PuzzleIcon, TagIcon, CardsIcon, SortIcon, TranslateIcon, StackIcon, ArrowRightIcon } from "../ui/icons";
 import { Skeleton } from "../ui/Skeleton";
 import { practiceGamesFor } from "../game/session";
 import { useMe } from "../lib/useMe";
@@ -16,18 +16,24 @@ import { useTheme, spacing, radii, softShadow, type Palette } from "../theme";
 import { useLayout } from "../lib/useLayout";
 
 /** Oyun → ikon + renk (görsel çeşitlilik). */
+/*
+  Her oyunun ikonu ne yaptığını söylemeli. Eskiden söylemiyordu: yazma oyununda
+  "öğren" ikonu, eşleştirmede Beceriler sekmesinin yıldızı, çeviride "okuma"
+  vardı; üstelik üç çift oyun aynı ikonu paylaşıyordu (typing/scramble,
+  artikel/order, choice/plural), yani ızgarada iki karo aynı görünüyordu.
+*/
 const META: Record<string, { icon: (p: { color: string; size: number }) => React.ReactElement; tint: keyof Palette }> = {
   choice: { icon: (p) => <QuizIcon {...p} />, tint: "primary" },
-  artikel: { icon: (p) => <GrammarIcon {...p} />, tint: "streak" },
+  artikel: { icon: (p) => <TagIcon {...p} />, tint: "streak" },
   cloze: { icon: (p) => <WriteIcon {...p} />, tint: "info" },
-  typing: { icon: (p) => <LearnIcon {...p} />, tint: "success" },
+  typing: { icon: (p) => <KeyboardIcon {...p} />, tint: "success" },
   listen: { icon: (p) => <ListenIcon {...p} />, tint: "accent" },
   truefalse: { icon: (p) => <CheckIcon {...p} />, tint: "primary" },
-  match: { icon: (p) => <SkillsIcon {...p} />, tint: "info" },
-  scramble: { icon: (p) => <LearnIcon {...p} />, tint: "streak" },
-  order: { icon: (p) => <GrammarIcon {...p} />, tint: "accent" },
-  plural: { icon: (p) => <QuizIcon {...p} />, tint: "success" },
-  translate: { icon: (p) => <ReadIcon {...p} />, tint: "primary" },
+  match: { icon: (p) => <CardsIcon {...p} />, tint: "info" },
+  scramble: { icon: (p) => <PuzzleIcon {...p} />, tint: "streak" },
+  order: { icon: (p) => <SortIcon {...p} />, tint: "accent" },
+  plural: { icon: (p) => <StackIcon {...p} />, tint: "success" },
+  translate: { icon: (p) => <TranslateIcon {...p} />, tint: "primary" },
 };
 
 /** META'da olmayan bir oyun için yedek: modül düzeyinde, her çizimde yeniden doğmasın. */

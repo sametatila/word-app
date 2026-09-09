@@ -16,8 +16,16 @@ export const PathIcon = ({ color = "#000", size }: P) => (
 export const SkillsIcon = ({ color = "#000", size }: P) => (
   <S size={size}><Path d="M12 3l1.9 4.6L18.5 9l-3.6 3.2 1 4.9L12 14.8 8.1 17l1-4.9L5.5 9l4.6-1.4L12 3z" {...stroke(color)} /></S>
 );
+/**
+ * Seri alevi.
+ *
+ * Eski çizim 24'lük ızgaranın yalnız 8 birimini kaplıyordu (x 8–16) ve y 3–15
+ * arasında duruyordu: yanındaki sayının hizasında hem KÜÇÜK hem YUKARIDA
+ * görünüyordu. Yeni gövde setteki diğer ikonlarla aynı kutuyu dolduruyor
+ * (x 6–18, y 2.6–21), yani başlıkta, sıralamada ve profilde aynı optik boyda.
+ */
 export const FlameIcon = ({ color = "#000", size }: P) => (
-  <S size={size}><Path d="M12 3c1 3 4 4 4 8a4 4 0 11-8 0c0-1.5.5-2.5 1-3 .3 1 .8 1.5 1.5 1.5C11 8.5 10.5 6 12 3z" {...stroke(color)} /></S>
+  <S size={size}><Path d="M12 2.6C12.8 6.2 15.2 7.4 16.6 9.6 17.8 11.4 18 12.9 18 14.2 18 17.6 15.3 21 12 21 8.7 21 6 17.6 6 14.2 6 11.6 7.4 9.8 9.1 8.3 9.5 10.3 10.3 11.2 11.3 11.6 11.9 8.6 11.2 5.6 12 2.6Z" {...stroke(color)} /></S>
 );
 export const BoltIcon = ({ color = "#000", size }: P) => (
   <S size={size}><Path d="M13 2L5 13h5l-1 9 8-11h-5z" {...stroke(color)} /></S>
@@ -161,4 +169,38 @@ export const UserPlusIcon = ({ color = "#000", size }: P) => (
 );
 export const InboxIcon = ({ color = "#000", size }: P) => (
   <S size={size}><Path d="M4 13l2-8h12l2 8v6H4v-6z" {...stroke(color)} /><Path d="M4 13h5a3 3 0 006 0h5" {...stroke(color)} /></S>
+);
+
+/* ——— Oyun türleri ———————————————————————————————————————————————————
+   Bu yedisi, oyun listesinde anlamı taşımayan ikonların yerine geldi: yazma
+   oyununda "öğren" ikonu, eşleştirmede "beceriler" sekmesinin yıldızı, çeviride
+   "okuma" vardı; üstelik üç çift oyun aynı ikonu paylaşıyordu. */
+
+/** Klavye — yazma oyunu. */
+export const KeyboardIcon = ({ color = "#000", size }: P) => (
+  <S size={size}><Rect x="3" y="6" width="18" height="12" rx="2.5" {...stroke(color)} /><Path d="M7 10h.01M11 10h.01M15 10h.01M17 10h.01M7 14h10" {...stroke(color)} /></S>
+);
+/** Yapboz parçası — karışık harfler (scramble). */
+export const PuzzleIcon = ({ color = "#000", size }: P) => (
+  <S size={size}><Path d="M13.8 4.6a2 2 0 10-3.6 0H7.5a1 1 0 00-1 1v2.9a2 2 0 100 3.6V15a1 1 0 001 1h2.9a2 2 0 103.6 0h2.5a1 1 0 001-1v-3a2 2 0 100-3.6V5.6a1 1 0 00-1-1h-2.7z" {...stroke(color)} /></S>
+);
+/** Etiket — artikel (der/die/das) oyunu: kelimeye cinsiyet etiketi takmak. */
+export const TagIcon = ({ color = "#000", size }: P) => (
+  <S size={size}><Path d="M4 11V5a1 1 0 011-1h6l9 9a1.5 1.5 0 010 2l-6 6a1.5 1.5 0 01-2 0L4 11z" {...stroke(color)} /><Circle cx="8.5" cy="8.5" r="1.4" {...stroke(color)} /></S>
+);
+/** İki kart — eşleştirme oyunu. */
+export const CardsIcon = ({ color = "#000", size }: P) => (
+  <S size={size}><Rect x="3" y="6.5" width="7" height="11" rx="1.6" {...stroke(color)} /><Rect x="14" y="6.5" width="7" height="11" rx="1.6" {...stroke(color)} /><Path d="M10 12h4" {...stroke(color)} /></S>
+);
+/** Sıralama okları — cümle dizme oyunu. */
+export const SortIcon = ({ color = "#000", size }: P) => (
+  <S size={size}><Path d="M10 7h10M10 12h7M10 17h4" {...stroke(color)} /><Path d="M5 5.5v13M3 8l2-2.5L7 8M3 16l2 2.5L7 16" {...stroke(color)} /></S>
+);
+/** 文/A — çeviri oyunu (iki dil arasında geçiş). */
+export const TranslateIcon = ({ color = "#000", size }: P) => (
+  <S size={size}><Path d="M4 6h7M7.5 6V4.6M9.4 6c-.5 3.6-2.8 6.4-5.4 7.6M5.2 9.4c.9 2 2.6 3.4 4.6 4.1" {...stroke(color)} /><Path d="M12.6 20l3.7-9 3.7 9M14 17.2h4.6" {...stroke(color)} /></S>
+);
+/** Katmanlar — çoğul oyunu (tekilden çoğula). */
+export const StackIcon = ({ color = "#000", size }: P) => (
+  <S size={size}><Path d="M12 4l8 4-8 4-8-4 8-4z" {...stroke(color)} /><Path d="M4 12l8 4 8-4M4 16l8 4 8-4" {...stroke(color)} /></S>
 );

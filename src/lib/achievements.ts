@@ -137,12 +137,12 @@ export const ACHIEVEMENTS: AchievementDef[] = [
   { id: "artikel300", titleKey: "ach.artikel300.title", hintKey: "ach.artikel300.hint", icon: "TagIcon", tier: "silver", group: "games", metric: "gameArtikel", target: 300 },
   { id: "listen200", titleKey: "ach.listen200.title", hintKey: "ach.listen200.hint", icon: "HeadphonesIcon", tier: "silver", group: "games", metric: "gameListen", target: 200 },
   { id: "typing200", titleKey: "ach.typing200.title", hintKey: "ach.typing200.hint", icon: "KeyboardIcon", tier: "silver", group: "games", metric: "gameTyping", target: 200 },
-  { id: "order150", titleKey: "ach.order150.title", hintKey: "ach.order150.hint", icon: "ListIcon", tier: "silver", group: "games", metric: "gameOrder", target: 150 },
-  { id: "plural150", titleKey: "ach.plural150.title", hintKey: "ach.plural150.hint", icon: "PuzzleIcon", tier: "silver", group: "games", metric: "gamePlural", target: 150 },
-  { id: "speak100", titleKey: "ach.speak100.title", hintKey: "ach.speak100.hint", icon: "HeadphonesIcon", tier: "silver", group: "games", metric: "gameSpeak", target: 100 },
-  { id: "speak500", titleKey: "ach.speak500.title", hintKey: "ach.speak500.hint", icon: "HeadphonesIcon", tier: "gold", group: "games", metric: "gameSpeak", target: 500 },
+  { id: "order150", titleKey: "ach.order150.title", hintKey: "ach.order150.hint", icon: "SortIcon", tier: "silver", group: "games", metric: "gameOrder", target: 150 },
+  { id: "plural150", titleKey: "ach.plural150.title", hintKey: "ach.plural150.hint", icon: "StackIcon", tier: "silver", group: "games", metric: "gamePlural", target: 150 },
+  { id: "speak100", titleKey: "ach.speak100.title", hintKey: "ach.speak100.hint", icon: "MicIcon", tier: "silver", group: "games", metric: "gameSpeak", target: 100 },
+  { id: "speak500", titleKey: "ach.speak500.title", hintKey: "ach.speak500.hint", icon: "MicIcon", tier: "gold", group: "games", metric: "gameSpeak", target: 500 },
 
-  { id: "translate200", titleKey: "ach.translate200.title", hintKey: "ach.translate200.hint", icon: "PenIcon", tier: "silver", group: "games", metric: "gameTranslate", target: 200 },
+  { id: "translate200", titleKey: "ach.translate200.title", hintKey: "ach.translate200.hint", icon: "TranslateIcon", tier: "silver", group: "games", metric: "gameTranslate", target: 200 },
   /*
     Keşif rozeti: sayı değil ÇEŞİT. On bir oyunun bazıları yalnızca karışık
     turda ve seyrek çıkıyor; kullanıcıların çoğu "Çoğul Bilmece"nin ya da
@@ -171,7 +171,7 @@ export const ACHIEVEMENTS: AchievementDef[] = [
   // kanıtı ama hiç rozeti yoktu. Puan rozeti sayıdan ayrı: on sınava girmek
   // alışkanlık, bir sınavdan 90 almak başarı.
   { id: "exam1", titleKey: "ach.exam1.title", hintKey: "ach.exam1.hint", icon: "FlagIcon", tier: "bronze", group: "exams", metric: "exams", target: 1 },
-  { id: "exam10", titleKey: "ach.exam10.title", hintKey: "ach.exam10.hint", icon: "CalendarIcon", tier: "silver", group: "exams", metric: "exams", target: 10 },
+  { id: "exam10", titleKey: "ach.exam10.title", hintKey: "ach.exam10.hint", icon: "FlagIcon", tier: "silver", group: "exams", metric: "exams", target: 10 },
   { id: "exam90", titleKey: "ach.exam90.title", hintKey: "ach.exam90.hint", icon: "StarIcon", tier: "gold", group: "exams", metric: "bestExam", target: 90 },
 
   // ——— Beceri ————————————————————————————————————————————————————

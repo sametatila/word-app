@@ -27,10 +27,18 @@ function Svg({ size = 24, children, ...props }: IconProps) {
 }
 
 /** Seri (streak) — alev */
+/**
+ * Seri alevi.
+ *
+ * Eskiden iki ayrı parçadan kuruluydu ve dış parça KAPANMIYORDU: 16 pikselde
+ * alev değil, bir kıvrımın yanında duran bir damla gibi görünüyordu. Üstelik
+ * ızgaranın yalnız 8 birimini kaplıyordu (x 8–16), yani yanındaki sayıya göre
+ * ince ve küçük kalıyordu. Yeni gövde setteki ölçüye oturuyor (x 6–18,
+ * y 2.6–21) ve mobildekiyle birebir aynı yol — iki uygulamada aynı alev.
+ */
 export const FlameIcon = (p: IconProps) => (
   <Svg {...p}>
-    <path d="M12 3c.6 2.2.1 3.6-1.3 4.9C9 9.4 8 10.7 8 12.8a4 4 0 0 0 8 0c0-1.4-.5-2.5-1.4-3.5" />
-    <path d="M12 21a3 3 0 0 1-3-3c0-1.4 1-2.3 1.6-3.1.5.9 1.4 1.3 1.4 2.3.9-.4 1.4-1.2 1.4-2.3.7.8 1.6 1.7 1.6 3.1a3 3 0 0 1-3 3z" />
+    <path d="M12 2.6C12.8 6.2 15.2 7.4 16.6 9.6 17.8 11.4 18 12.9 18 14.2 18 17.6 15.3 21 12 21 8.7 21 6 17.6 6 14.2 6 11.6 7.4 9.8 9.1 8.3 9.5 10.3 10.3 11.2 11.3 11.6 11.9 8.6 11.2 5.6 12 2.6Z" />
   </Svg>
 );
 
@@ -930,4 +938,35 @@ export const LogoMark = ({ size = 24, className = "" }: { size?: number; classNa
     draggable={false}
     aria-hidden="true"
   />
+);
+
+/** Dilbilgisi — mobildeki `GrammarIcon` ile aynı çizim (A + kural çizgisi). */
+export const GrammarIcon = (p: IconProps) => (
+  <Svg {...p}>
+    <path d="M4 18L9 6l5 12M5.5 14h7M17 10v8M17 11a3 3 0 1 0 0 6" />
+  </Svg>
+);
+
+/** Çeviri (文/A) — iki dil arasında geçiş. */
+export const TranslateIcon = (p: IconProps) => (
+  <Svg {...p}>
+    <path d="M4 6h7M7.5 6V4.6M9.4 6c-.5 3.6-2.8 6.4-5.4 7.6M5.2 9.4c.9 2 2.6 3.4 4.6 4.1" />
+    <path d="M12.6 20l3.7-9 3.7 9M14 17.2h4.6" />
+  </Svg>
+);
+
+/** Katmanlar — çoğul (tekilden çoğula). */
+export const StackIcon = (p: IconProps) => (
+  <Svg {...p}>
+    <path d="M12 4l8 4-8 4-8-4 8-4z" />
+    <path d="M4 12l8 4 8-4M4 16l8 4 8-4" />
+  </Svg>
+);
+
+/** Sıralama okları — dizme oyunu. */
+export const SortIcon = (p: IconProps) => (
+  <Svg {...p}>
+    <path d="M10 7h10M10 12h7M10 17h4" />
+    <path d="M5 5.5v13M3 8l2-2.5L7 8M3 16l2 2.5L7 16" />
+  </Svg>
 );
