@@ -36,13 +36,37 @@ Cloud'da paket adı + SHA-1 ile eşleşir. Play'den indirilen sürüm Play App S
 anahtarıyla imzalandığı için o anahtarın SHA-1'i de kayıtlı olmalı; yoksa Google girişi
 `DEVELOPER_ERROR` ile kapanır ve inceleyici "giriş çalışmıyor" yazar.
 
-Google Cloud › APIs & Services › Credentials › Create credentials › OAuth client ID › Android:
+Google Cloud › APIs & Services › Credentials › Create credentials › OAuth client ID › Android.
 
-| İstemci | Paket adı | SHA-1 kaynağı |
-|---|---|---|
-| Debug | `com.lernomi.learn` | `keytool -list -v -keystore mobile/android/app/debug.keystore -alias androiddebugkey -storepass android` |
-| Upload | `com.lernomi.learn` | `keytool -list -v -keystore <upload.keystore> -alias lernomi` |
-| Play App Signing | `com.lernomi.learn` | Console › Setup › App signing › "App signing key certificate" › SHA-1 |
+Bir Android istemcisi **tek** paket adı + **tek** SHA-1 taşır, yani her anahtar için
+ayrı bir istemci gerekir. Üçünde de paket adı `com.lernomi.learn`:
+
+| Console'daki ad | Anahtar | SHA-1 | Durum |
+|---|---|---|---|
+| `lernomi-android` | debug (`android/app/debug.keystore`, repoda) | `5E:8F:16:06:2E:A3:CD:2C:4A:0D:54:78:76:BA:A6:F3:8C:AB:F6:25` | açık (2026-09-09) |
+| `lernomi-android-upload` | yayın anahtarı (`android/app/release.keystore`) | `2F:2F:57:45:C3:8D:F9:3B:2E:F2:7E:FB:17:42:2A:3F:13:30:9F:3F` | açık (2026-09-09) |
+| *(henüz yok)* | Play App Signing — Google'ın kendi anahtarı | Console › Test and release › Setup › App signing › "App signing key certificate" | **ilk AAB yüklendikten sonra** |
+
+Üçüncüsü Play'den **indirilen** her kurulumu kapsıyor ve testçiler davet edilmeden önce
+açılmalı: Play App Signing devrede olduğu için Google yüklediğin AAB'yi kendi anahtarıyla
+yeniden imzalıyor, yani kullanıcının telefonundaki uygulama upload anahtarını taşımıyor.
+
+SHA-1'ler sır değil (herhangi bir APK'dan çıkarılabilir); buraya yazılmalarının sebebi
+`DEVELOPER_ERROR` ayıklarken karşılaştırılacak referansın elde olması.
+
+> **Paket adı tuzağı.** Paket adı üç kez değişti: `com.wortspiel` (29 Ağu) →
+> `com.nomi` (31 Ağu) → `com.nomi.learn` (2 Eyl) → `com.lernomi.learn` (4 Eyl).
+> `lernomi-android` 31 Ağustos'ta, yani `com.nomi` döneminde açılmıştı ve paket adı
+> 2026-09-09'da elle düzeltildi. Eşleşme paket adı + SHA-1 ile yapıldığı için eski
+> paket adı taşıyan bir istemci sessizce hiçbir şeye eşleşmez — giriş `DEVELOPER_ERROR`
+> ile kapanır ve hata sebebi söylemez. Paket adı bir daha değişirse üç istemci de
+> güncellenmeli.
+
+**Onay ekranı (OAuth consent screen).** Publishing status "Testing" ise yalnız test
+kullanıcısı olarak eklenen hesaplar giriş yapabilir ve token'lar 7 günde düşer; halka
+açık sürümden önce **In production** olmalı. Uygulama yalnız varsayılan kapsamları
+istiyor (`email`, `profile`, `openid`; `googleAuth.ts`'te ek `scopes` yok), bunlar
+hassas kapsam sayılmadığı için Google doğrulama incelemesi gerekmiyor — yayımlama anında.
 
 Sunucu tarafı: `GOOGLE_CLIENT_ID` (Web istemci) ve `GOOGLE_CLIENT_SECRET` prod `.env`'de
 dolu olmalı. Boşsa `/api/config` `providers.google=false` döner ve mobil giriş ekranı
