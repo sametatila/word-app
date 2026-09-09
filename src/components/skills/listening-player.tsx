@@ -204,7 +204,7 @@ export function ListeningPlayer({ exercise, backHref }: { exercise: ListeningExe
             whileTap={{ scale: 0.92 }}
             onClick={() => (playing ? stop() : play())}
             disabled={available === false && !hasAudio}
-            aria-label={playing ? "Durdur" : "Dinle"}
+            aria-label={t(playing ? "exam.stop" : "item.listen")}
             className="brand-gradient flex h-16 w-16 shrink-0 items-center justify-center rounded-full shadow-lg disabled:opacity-40"
           >
             {playing ? <XIcon size={26} /> : <SpeakerIcon size={28} />}

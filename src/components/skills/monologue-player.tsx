@@ -330,7 +330,7 @@ export function MonologuePlayer({ exercise, backHref }: { exercise: SpeakingMono
                 disabled={!transcript.trim()}
                 className="btn btn-primary mt-3 min-h-12 w-full px-4 text-sm"
               >
-                Puanlat
+                {t("item.mono_score")}
               </button>
             </>
           ) : (
@@ -351,7 +351,7 @@ export function MonologuePlayer({ exercise, backHref }: { exercise: SpeakingMono
                 ))}
               </ul>
               <button type="button" onClick={selfFinish} className="btn btn-primary mt-3 min-h-12 w-full px-4 text-sm">
-                Bitir
+                {t("item.mono_finish")}
               </button>
             </>
           )}

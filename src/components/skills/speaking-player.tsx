@@ -181,7 +181,7 @@ export function SpeakingPlayer({ exercise, backHref }: { exercise: SkillExercise
                 <XIcon size={18} className="text-[color:var(--color-rose)]" />
               )}
               <span className="font-bold">%{score.overall}</span>
-              <span className="muted text-xs">duyulan: {score.transcript || "—"}</span>
+              <span className="muted text-xs">{t("item.heard", { text: score.transcript || "—" })}</span>
             </div>
 
             {/* Puan düşükse önce KARIŞMA uyarısı: sayı değil, düzeltme öğretir. */}

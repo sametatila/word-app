@@ -35,7 +35,7 @@ export function GrammarPlayer({ exercise, backHref }: { exercise: GrammarExercis
 
       <section className="card mt-3 p-5">
         <p className="text-[11px] font-bold uppercase tracking-wide" style={{ color: "var(--color-flame-500)" }}>
-          Kural
+          {t("item.grammar_rule")}
         </p>
         <h2 className="mt-1 text-base font-bold">{exercise.focus}</h2>
 

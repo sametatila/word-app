@@ -27,6 +27,7 @@ export function QuestionList({
   questions: SkillQuestion[];
   onAllAnswered: (correct: number) => void;
 }) {
+  const t = useT();
   /** Soru başına sonuç: null = cevaplanmadı; true/false = doğru/yanlış. */
   const [results, setResults] = useState<(boolean | null)[]>(() => questions.map(() => null));
 
@@ -40,7 +41,7 @@ export function QuestionList({
 
   return (
     <div className="mt-5 space-y-4">
-      <h2 className="px-1 font-bold">Sorular</h2>
+      <h2 className="px-1 font-bold">{t("skillquiz.questions")}</h2>
       {questions.map((q, qi) => {
         const kind = q.kind ?? "mcq";
         const done = results[qi] !== null;

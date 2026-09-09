@@ -93,7 +93,7 @@ export function WritingPlayer({ exercise, backHref }: { exercise: WritingExercis
         <div className="mb-1.5 flex justify-between text-xs font-semibold">
           <span className="muted">{t("writew.task_n", { n: Math.min(step + 1, total), total })}</span>
           <span className="text-[color:var(--color-brand)]">
-            {correctCount} tamam
+            {t("common.n_correct", { correct: correctCount, total })}
           </span>
         </div>
         <div className="h-1.5 w-full overflow-hidden rounded-full surface-2">
@@ -289,7 +289,7 @@ function BuildTask({
               onClick={check}
               className="btn btn-primary px-6 py-2.5 disabled:opacity-50"
             >
-              Kontrol et
+              {t("skillquiz.check")}
             </button>
             {chosen.length > 0 ? (
               <button
@@ -297,7 +297,7 @@ function BuildTask({
                 onClick={() => setChosen([])}
                 className="btn btn-ghost px-4 py-2.5 text-sm"
               >
-                Temizle
+                {t("find.clear")}
               </button>
             ) : null}
           </>
@@ -435,7 +435,7 @@ function FreeTask({
   return (
     <section className="card mt-4 p-5">
       <p className="text-xs font-bold uppercase tracking-wide text-[color:var(--color-brand)]">
-        {task.title ?? "Serbest yazma"}
+        {task.title ?? t("writp.free_writing")}
       </p>
       <p className="mt-1.5 text-sm font-semibold leading-relaxed">{task.prompt}</p>
 
@@ -768,7 +768,7 @@ function FormTask({ task, onDone }: { task: FormTaskData; onDone: (ok: boolean) 
         </div>
       ) : (
         <button type="button" onClick={() => setChecked(true)} disabled={values.every((v) => !v.trim())} className="btn btn-primary mt-3 min-h-12 w-full px-4 text-sm">
-          Kontrol et
+          {t("skillquiz.check")}
         </button>
       )}
     </section>
@@ -836,7 +836,7 @@ function RewriteTask({ task, onDone }: { task: RewriteTaskData; onDone: (ok: boo
             disabled={!text.trim()}
             className="btn btn-primary mt-3 min-h-12 w-full px-4 text-sm"
           >
-            Kontrol et
+            {t("skillquiz.check")}
           </button>
         </>
       )}
