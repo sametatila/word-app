@@ -201,15 +201,17 @@ export const enB1P4: SkillExercise[] = [
     tasks: [
       {
         kind: "build",
-        tr: "Bana işin nisanda başlayacağını söylediniz.",
-        answer: "You told me that the work would start in April.",
-        hint: "Aktarımda zaman bir adım geriye gider: will → would. „that“ atılabilir.",
+        tr: "Görüşmede bana suyun kapatılacağı söylendi.",
+        answer: "During the call I was told that the water would be turned off.",
+        alternatives: ["I was told during the call that the water would be turned off."],
+        hint: "Aktarımda zaman bir adım geriye gider: will → would; zaman öbeği başta da ortada da durabilir.",
       },
       {
         kind: "build",
-        tr: "Meslektaşınız pencerelerin değiştirilmeyeceğini söyledi.",
-        answer: "Your colleague said that the windows would not be changed.",
-        hint: "Olumsuz biçim de geriye kayar: will not → would not.",
+        tr: "Telefonda meslektaşınız pencerelerin değiştirilmeyeceğini söyledi.",
+        answer: "On the phone your colleague said that the windows would not be changed.",
+        alternatives: ["Your colleague said on the phone that the windows would not be changed."],
+        hint: "Olumsuz biçim de geriye kayar: will not → would not; yer öbeği iki konumda da durabilir.",
       },
       {
         kind: "free",

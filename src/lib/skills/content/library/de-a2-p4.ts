@@ -196,8 +196,9 @@ export const deA2P4: SkillExercise[] = [
     tasks: [
       {
         kind: "build",
-        tr: "Yirmi iki kişi katıldı.",
-        answer: "Zweiundzwanzig Personen haben teilgenommen.",
+        tr: "Tura yirmi iki kişi katıldı.",
+        answer: "An der Tour haben zweiundzwanzig Personen teilgenommen.",
+        alternatives: ["Zweiundzwanzig Personen haben an der Tour teilgenommen."],
         hint: "Ayrılabilen fiilin Partizip'inde „ge-“ ön ekle kökün ARASINA girer: teil-ge-nommen.",
       },
       {

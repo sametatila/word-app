@@ -173,9 +173,10 @@ export const enA1P3: SkillExercise[] = [
     tasks: [
       {
         kind: "build",
-        tr: "Yirmi dakika geç kaldım.",
-        answer: "I am twenty minutes late.",
-        hint: "„be“ + süre + late kalıbı yeter; ayrı bir fiil eklemeye gerek yok.",
+        tr: "Bugün yirmi dakika geç kaldım.",
+        answer: "Today I am twenty minutes late.",
+        alternatives: ["I am twenty minutes late today."],
+        hint: "„be“ + süre + late kalıbı yeter; zaman ifadesi başta da sonda da durabilir.",
       },
       {
         kind: "build",

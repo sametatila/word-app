@@ -218,14 +218,16 @@ export const enC1P2: SkillExercise[] = [
     tasks: [
       {
         kind: "build",
-        tr: "Kategorilerin değiştirilmesi farklı bir sonuç üretti.",
-        answer: "The change of categories produced a different result.",
+        tr: "İkinci turda kategorilerin değiştirilmesi farklı bir sonuç üretti.",
+        answer: "In the second round the change of categories produced a different result.",
+        alternatives: ["The change of categories produced a different result in the second round."],
         hint: "Akademik kayıtta fiil sık sık adlaştırılır: we changed → the change of.",
       },
       {
         kind: "build",
-        tr: "Veriler üç okulda toplandı.",
-        answer: "The data were collected in three schools.",
+        tr: "Veriler dört ay boyunca on bir kuruluşta toplandı.",
+        answer: "Over four months the data were collected in eleven organizations.",
+        alternatives: ["The data were collected in eleven organizations over four months."],
         hint: "„data“ akademik yazıda çoğul sayılır; edilgen çatı faili geri planda bırakır.",
       },
       {

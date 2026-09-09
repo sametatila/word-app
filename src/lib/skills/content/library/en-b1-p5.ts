@@ -215,9 +215,10 @@ export const enB1P5: SkillExercise[] = [
       },
       {
         kind: "build",
-        tr: "Bu evrakı yanında taşımak zorunda değilsin.",
-        answer: "You don't have to carry this paper with you.",
-        hint: "„don't have to“ zorunluluk yok demektir; „mustn't“ ise yasak demektir — ikisi karıştırılmamalı.",
+        tr: "Yolculuk boyunca bu evrakı yanında taşımak zorunda değilsin.",
+        answer: "During the trip you don't have to carry this paper with you.",
+        alternatives: ["You don't have to carry this paper with you during the trip."],
+        hint: "„don't have to“ zorunluluk yok demektir, „mustn't“ ise yasak; süre öbeği iki uçta da durabilir.",
       },
       {
         kind: "free",

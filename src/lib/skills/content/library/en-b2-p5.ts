@@ -218,14 +218,16 @@ export const enB2P5: SkillExercise[] = [
     tasks: [
       {
         kind: "build",
-        tr: "Konteyneri kaldırmak sorunu çözmez.",
-        answer: "Removing the container will not solve the problem.",
-        hint: "Fiil özne olduğunda -ing biçimini alır: Removing … solves.",
+        tr: "Cumartesi kapatmak tek başına yığılmayı çözmez.",
+        answer: "On its own, closing on Saturday will not solve the congestion.",
+        alternatives: ["Closing on Saturday will not solve the congestion on its own."],
+        hint: "Fiil özne olduğunda -ing biçimini alır; belirteç öbeği başta da sonda da durabilir.",
       },
       {
         kind: "build",
-        tr: "Kuralı bir yıl ertelemenizi öneriyoruz.",
-        answer: "We propose to postpone the rule for one year.",
+        tr: "Bu aşamada kuralı bir yıl ertelemeyi öneriyoruz.",
+        answer: "At this stage we propose to postpone the rule for one year.",
+        alternatives: ["We propose to postpone the rule for one year at this stage."],
         hint: "„propose“ hem mastar hem -ing alır; „decide“ yalnız mastar, „avoid“ yalnız -ing alır.",
       },
       {

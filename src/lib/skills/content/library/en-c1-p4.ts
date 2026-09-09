@@ -222,12 +222,14 @@ export const enC1P4: SkillExercise[] = [
         kind: "build",
         tr: "Yeni sistemi altı ay denedikten sonra üç sorun görüyoruz.",
         answer: "Having tried the new system for six months, we see three problems.",
-        hint: "„Having + üçüncü hâl“ önce olan eylemi kısaltır; iki yarının öznesi aynı olmalıdır.",
+        alternatives: ["We see three problems, having tried the new system for six months."],
+        hint: "„Having + üçüncü hâl“ önce olan eylemi kısaltır; öbek cümlenin sonuna da alınabilir.",
       },
       {
         kind: "build",
-        tr: "Aynı gün iptal edilen randevular kapsam dışında tutulmalı.",
-        answer: "Appointments canceled on the same day should be excluded.",
+        tr: "Bize göre aynı gün iptal edilen randevular kapsam dışında tutulmalı.",
+        answer: "In our view appointments canceled on the same day should be excluded.",
+        alternatives: ["Appointments canceled on the same day should, in our view, be excluded."],
         hint: "Edilgen ortaç ismin arkasına gelerek ilgi cümlesini kısaltır.",
       },
       {

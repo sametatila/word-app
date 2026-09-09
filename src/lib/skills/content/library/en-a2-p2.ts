@@ -195,9 +195,10 @@ export const enA2P2: SkillExercise[] = [
       },
       {
         kind: "build",
-        tr: "Bana yazılı bir teyit gönderir misiniz?",
-        answer: "Could you send me a written confirmation?",
-        hint: "Kibar rica „Could you …?“ ile kurulur ve arkasından yalın fiil gelir.",
+        tr: "Sözleşmeye göre ihbar süresi bir ay.",
+        answer: "According to the contract the notice period is one month.",
+        alternatives: ["The notice period is one month according to the contract."],
+        hint: "„according to“ öbeği cümlenin başında da sonunda da durabilir.",
       },
       {
         kind: "free",

@@ -214,15 +214,17 @@ export const enB2P2: SkillExercise[] = [
     tasks: [
       {
         kind: "build",
-        tr: "Hiçbir şeyi geri göndermeyen müşteriler farkı ödüyor.",
-        answer: "The customers who never send anything back pay the difference.",
-        hint: "Tanımlayıcı ilgi cümlesi virgülsüzdür ve hangi müşteriler olduğunu belirler.",
+        tr: "Sonunda farkı, hiçbir şeyi geri göndermeyen müşteriler ödüyor.",
+        answer: "In the end the customers who never send anything back pay the difference.",
+        alternatives: ["The customers who never send anything back pay the difference in the end."],
+        hint: "Tanımlayıcı ilgi cümlesi virgülsüzdür ve isimden hemen sonra gelir; zaman öbeği iki uçta durabilir.",
       },
       {
         kind: "build",
-        tr: "Bahsettiğim mağaza artık iadeler için ücret alıyor.",
-        answer: "The shop that I mentioned now charges for returns.",
-        hint: "İlgi zamiri nesne konumundaysa atılabilir: the shop (that) I mentioned.",
+        tr: "Geçen yıldan beri bahsettiğim mağaza iade oranlarını gösteriyor.",
+        answer: "Since last year the shop that I mentioned has shown the return rates.",
+        alternatives: ["The shop that I mentioned has shown the return rates since last year."],
+        hint: "İlgi zamiri nesne konumundaysa atılabilir; „since“ öbeği başta da sonda da durabilir.",
       },
       {
         kind: "free",

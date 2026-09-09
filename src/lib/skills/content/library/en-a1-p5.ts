@@ -175,9 +175,10 @@ export const enA1P5: SkillExercise[] = [
     tasks: [
       {
         kind: "build",
-        tr: "Oda küçük ama çok temiz.",
-        answer: "The room is small but very clean.",
-        hint: "„but“ iki yarıyı bağlar; ikinci yarıda özne ve fiil tekrar edilebilir.",
+        tr: "Sabahları oda çok sessiz.",
+        answer: "In the morning the room is very quiet.",
+        alternatives: ["The room is very quiet in the morning."],
+        hint: "Günün bölümü „in the“ ile söylenir ve cümlenin başında da sonunda da durabilir.",
       },
       {
         kind: "build",

@@ -176,9 +176,10 @@ export const deA1P5: SkillExercise[] = [
     tasks: [
       {
         kind: "build",
-        tr: "Yeni işin için tebrikler!",
-        answer: "Herzlichen Glückwunsch zur neuen Stelle!",
-        hint: "Kalıp „Herzlichen Glückwunsch zu …“; „zu der“ kaynaşıp „zur“ olur.",
+        tr: "Yeni işin için çok sevindim.",
+        answer: "Ich freue mich sehr über deine neue Stelle.",
+        alternatives: ["Über deine neue Stelle freue ich mich sehr."],
+        hint: "Cümlenin başına özne dışında bir öğe gelirse çekimli fiil yine İKİNCİ sırada kalır.",
       },
       {
         kind: "build",

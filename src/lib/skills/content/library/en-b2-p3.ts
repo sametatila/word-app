@@ -219,9 +219,10 @@ export const enB2P3: SkillExercise[] = [
       },
       {
         kind: "build",
-        tr: "Onarımların iki gün sürdüğü söyleniyor.",
-        answer: "Repairs are said to take two days.",
-        hint: "Kaynağı belirsiz bilgi „is said to“ ya da „It is said that“ ile aktarılır.",
+        tr: "Uygulamada onarımların iki gün sürdüğü söyleniyor.",
+        answer: "In practice repairs are said to take two days.",
+        alternatives: ["Repairs are said to take two days in practice."],
+        hint: "Kaynağı belirsiz bilgi „is said to“ ile aktarılır; belirteç öbeği iki uçta da durabilir.",
       },
       {
         kind: "free",

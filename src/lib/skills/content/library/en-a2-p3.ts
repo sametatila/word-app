@@ -188,9 +188,10 @@ export const enA2P3: SkillExercise[] = [
     tasks: [
       {
         kind: "build",
-        tr: "Sabahlar akşamlardan daha sakin.",
-        answer: "The mornings are quieter than the evenings.",
-        hint: "Kısa sıfatlar -er alır ve karşılaştırmada „than“ gelir.",
+        tr: "Bana göre sabahlar akşamlardan daha sakin.",
+        answer: "For me the mornings are quieter than the evenings.",
+        alternatives: ["The mornings are quieter than the evenings for me."],
+        hint: "Kısa sıfatlar -er alır ve karşılaştırmada „than“ gelir; „for me“ iki uçta da durabilir.",
       },
       {
         kind: "build",

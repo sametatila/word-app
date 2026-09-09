@@ -195,8 +195,9 @@ export const enA2P4: SkillExercise[] = [
       },
       {
         kind: "build",
-        tr: "Kaç kişi geldi?",
-        answer: "How many people came?",
+        tr: "Bu hafta çok fazla toplantımız var.",
+        answer: "This week we have too many meetings.",
+        alternatives: ["We have too many meetings this week."],
         hint: "Sayılabilen isimlerde „many“, sayılamayanlarda „much“ kullanılır.",
       },
       {

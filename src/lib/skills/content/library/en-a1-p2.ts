@@ -175,15 +175,17 @@ export const enA1P2: SkillExercise[] = [
     tasks: [
       {
         kind: "build",
-        tr: "Telefonumun ekranı kırık.",
-        answer: "The screen of my phone is broken.",
-        hint: "İyelik iki yolla kurulur: „of“ ile ya da „'s“ ile; kısa biçim daha doğaldır.",
+        tr: "Ekranın üst kısmında bir çatlak var.",
+        answer: "There is a crack at the top of the screen.",
+        alternatives: ["At the top of the screen there is a crack."],
+        hint: "„var“ İngilizcede „there is“ ile söylenir; yer ifadesi cümlenin başına da alınabilir.",
       },
       {
         kind: "build",
-        tr: "Tamir ne kadar sürer?",
-        answer: "How long does the repair take?",
-        hint: "Soru sırası: soru kelimesi + yardımcı fiil + özne + yalın fiil.",
+        tr: "Şu anda ekranın üst kısmını göremiyorum.",
+        answer: "At the moment I cannot see the top of the screen.",
+        alternatives: ["I cannot see the top of the screen at the moment."],
+        hint: "Zaman ifadesi cümlenin başında da sonunda da durabilir; anlamı değişmez.",
       },
       {
         kind: "free",
