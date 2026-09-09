@@ -74,6 +74,7 @@ export default async function ImmersionQuizPage({
     <ImmersionQuizPlayer
       title={t(checkpoint ? "immw.checkpoint" : "immw.review")}
       subtitle={`${t("common.unit")} ${brief.index} · ${brief.theme}`}
+      intro={t(checkpoint ? "quiz.intro_checkpoint" : "quiz.intro_review")}
       questions={questions}
     />
   );

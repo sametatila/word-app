@@ -17,10 +17,17 @@ import { formatPercent } from "@/lib/i18n/dict";
 export function ImmersionQuizPlayer({
   title,
   subtitle,
+  intro,
   questions,
 }: {
   title: string;
   subtitle: string;
+  /**
+   * Quizin ne yaptığını söyleyen tek cümle — mobil `QuizScreen` sorulardan
+   * önce onu gösteriyor, web hiç göstermiyordu. Başlık ("Tekrar") türü
+   * söylüyor ama neyin tekrarı olduğunu söylemiyor.
+   */
+  intro?: string;
   questions: SkillQuestion[];
 }) {
   const t = useT();
@@ -38,6 +45,8 @@ export function ImmersionQuizPlayer({
           <p className="muted truncate text-xs">{subtitle}</p>
         </div>
       </div>
+
+      {intro && score === null ? <p className="muted mb-4 text-body">{intro}</p> : null}
 
       {score === null ? (
         <QuestionList questions={questions} onAllAnswered={(c) => setScore(c)} />
