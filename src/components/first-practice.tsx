@@ -107,7 +107,7 @@ export function FirstPractice() {
         <button
           type="button"
           onClick={() => speakGerman(withArtikel(w))}
-          aria-label={t("firstpractice.listen_word", { word: w.de })}
+          aria-label={`${w.de} kelimesini dinle`}
           className="pressable flex items-center gap-2 rounded-full px-4 py-2 text-strong"
           style={{
             background: "color-mix(in srgb, var(--color-brand-500) 14%, transparent)",

@@ -379,7 +379,7 @@ function ActivityStrip({ byDay, today }: { byDay: Map<string, DayRow>; today: st
                   initial={{ height: 0 }}
                   animate={{ height: `${pct}%` }}
                   transition={{ delay: i * 0.02, type: "spring", stiffness: 180, damping: 22 }}
-                  title={`${d.day}: ${t("prog.n_reviews", { n: d.reviews })}`}
+                  title={`${d.day}: ${d.reviews} tekrar`}
                   className={`w-full rounded-[3px] ${isToday ? "brand-gradient" : ""}`}
                   style={isToday ? undefined : { background: heatColor(d.reviews) }}
                 />

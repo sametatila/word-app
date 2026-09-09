@@ -80,7 +80,6 @@
     "audit:skills": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/audit-skills.ts",
     "test:options": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/test-options.ts",
     "dump:skills": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/dump-skills-mobile.ts",
-    "dump:lessons": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/dump-lessons-mobile.ts",
     "dump:mock-exams": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/dump-mock-exams-mobile.ts",
     "dump:mock-exams:en": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/dump-mock-exams-mobile.ts en",
     "check:unitvocab": "tsx scripts/check-unit-vocab.ts",

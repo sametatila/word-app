@@ -12,12 +12,19 @@ import { REACTION_KINDS, REACTION_LABEL_KEYS, type ReactionKind, type ReactionSu
 import { langOf } from "./notify";
 import { translate, type NativeLang } from "@/lib/i18n/dict";
 
-/** Akış olayını tek satır Türkçeyle anlatır — bildirim ve push metinleri buradan. */
+/**
+ * Akış olayını tek satırla anlatır — tepki bildirimi ve push metni buradan.
+ *
+ * Dallar ACTIVITY_TYPES'ın DEĞERLERİ. İlk ikisi "streak" ve "badge" yazıyordu,
+ * oysa olaylar `streak_milestone` ve `achievement` olarak yazılıyor: seriye ya
+ * da rozete gelen her tepki bildirimi "bir paylaşımına" diye genel dala
+ * düşüyordu — yani en sık iki olay türü, tepkinin neye verildiğini söylemiyordu.
+ */
 function describeEvent(type: string, payload: Record<string, unknown>, lang: NativeLang): string {
   switch (type) {
-    case "streak":
+    case "streak_milestone":
       return translate(lang, "social.on_streak", { n: Number(payload.days ?? 0) });
-    case "badge":
+    case "achievement":
       return translate(lang, "social.on_badge", { badge: String(payload.title ?? "") });
     case "friend_joined":
       return translate(lang, "social.on_friend");

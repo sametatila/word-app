@@ -59,8 +59,6 @@ import { deC1B08 } from "./content/de-c1-b08";
 import { deC1B09 } from "./content/de-c1-b09";
 import { deC1B10 } from "./content/de-c1-b10";
 import { A1_SCRIPTS } from "./content/scripts-a1";
-import enA1 from "./content/en-a1.json";
-import enA2 from "./content/en-a2.json";
 
 /**
  * Ders kataloğu.
@@ -70,9 +68,9 @@ import enA2 from "./content/en-a2.json";
  * üretiliyor ve ikisinin ayrı yerlerde durması istemin içeriğe göre değişmesini
  * zorlaştırırdı. İlerleme (hangi ders bitti, hangi kural zayıf) veritabanında.
  *
- * İki kurs: Almanca (580 ders, TypeScript) ve İngilizce (200 ders, JSON —
- * bkz. EN_LESSONS). Zürih'in kendi dersi yok; hedef dili Almanca olduğu için
- * aynı iskelet doğrulandıktan sonra bu yapıda yeniden yazılacak.
+ * Şimdilik yalnızca Almanca kursu: katalog Learna kurgusuna (anlatım + konuşma)
+ * yeni geçti ve önce bu yapının oturması gerekiyor. Zürih dersleri aynı iskelet
+ * doğrulandıktan sonra bu yapıda yeniden yazılacak.
  */
 /**
  * Çevrimdışı senaryolar derse kimliğiyle bağlanıyor (WP-04). Ders dosyasına
@@ -86,26 +84,6 @@ function withScript(lesson: Lesson): Lesson {
   if (lesson.roleplay.script || !SCRIPTS[lesson.id]) return lesson;
   return { ...lesson, roleplay: { ...lesson.roleplay, script: SCRIPTS[lesson.id] } };
 }
-
-/**
- * İngilizce kursunun dersleri JSON, Almancanınkiler TypeScript.
- *
- * Sebep tarihsel ve kayda geçiyor: bu 200 ders (A1 100 + A2 100) doğrudan
- * `mobile/src/data/lessons/en-*.json` olarak yazıldı ve web'e hiç girmedi —
- * yani İngilizce kursta Patika web'de BOŞTU, mobilde doluydu. Dosyalar
- * buraya taşındı, tek kaynak yine web oldu ve mobil paketi `dump:lessons`
- * yeniden üretiyor (yön, Almancadaki ile aynı).
- *
- * JSON'dan TypeScript'e çevrilmediler çünkü kazanç yok: içerik elle yazılmış
- * veri, kod değil; TS'e dökmek 2 MB'lık üretilmiş kaynak dosya demekti.
- * Yeni ders eklerken JSON düzenlenir, `npm run dump:lessons -- en` koşulur.
- *
- * Dönüşüm gerekiyor çünkü `resolveJsonModule` alan tiplerini genişletiyor:
- * `lang: "tr" | "de" | "en"` JSON'da `string` görünüyor. Yapının uygunluğunu
- * döküm zinciri koruyor — mobil paket bu dosyalardan üretiliyor ve ayrışma
- * ilk dökümde diff olarak çıkar.
- */
-const EN_LESSONS = [...enA1, ...enA2] as unknown as Lesson[];
 
 export const LESSONS: Lesson[] = [
   ...[
@@ -169,7 +147,6 @@ export const LESSONS: Lesson[] = [
   ...deC1B09,
   ...deC1B10,
   ].map(withScript),
-  ...EN_LESSONS,
 ];
 
 export const LEVEL_ORDER = ["A1", "A2", "B1", "B2", "C1"] as const;
