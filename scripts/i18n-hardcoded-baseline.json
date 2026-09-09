@@ -50,7 +50,6 @@
   "src/components/share-result.tsx": 2,
   "src/components/skills/quiz.tsx": 1,
   "src/components/skills/writing-player.tsx": 6,
-  "src/components/social/friends-hub.tsx": 1,
   "src/components/voice-picker.tsx": 2,
   "src/components/walk-player.tsx": 5,
   "src/lib/account/apple-revoke.ts": 2,

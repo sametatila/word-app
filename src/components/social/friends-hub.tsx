@@ -14,7 +14,9 @@ import { FriendList } from "./friend-list";
 import { FriendsBoard } from "./friends-board";
 import { Quests } from "./quests";
 import { Requests } from "./requests";
-import { useT } from "@/lib/i18n/client";
+import { useT, useLang } from "@/lib/i18n/client";
+import { courseName } from "@/lib/courses";
+import { useShell } from "@/components/app-shell";
 
 export type HubTab = "friends" | "feed" | "find";
 const TABS: { key: HubTab; label: string }[] = [
@@ -47,6 +49,8 @@ export function hubTab(raw: string | undefined): HubTab {
  */
 export function FriendsHub({ me, initialTab }: { me: SocialMeView; initialTab: HubTab }) {
   const t = useT();
+  const lang = useLang();
+  const { course } = useShell();
   const [tab, setTab] = useState<HubTab>(initialTab);
   const [data, setData] = useState<FriendsView | null>(null);
   const [err, setErr] = useState<string | null>(null);
@@ -82,7 +86,12 @@ export function FriendsHub({ me, initialTab }: { me: SocialMeView; initialTab: H
 
   async function share() {
     const url = `${window.location.origin}/u/${me.username}`;
-    const text = `Lernomi'de Almanca çalışıyorum. Arkadaş ol, birlikte hedef tutturalım: ${url}`;
+    /* DAVET METNİ ÇEVİRİDEN. Web'de cümle doğrudan Türkçe yazılıydı: İngilizce
+       ya da Almanca oynayan kullanıcı arkadaşına Türkçe bir davet gönderiyordu.
+       Öğrenilen dil de "Almanca" diye sabitti - İngilizce kursundaki kullanıcı
+       "Almanca çalışıyorum" diye paylaşıyordu. Android ikisini de yerine
+       koyuyor (`friends.share_text`). */
+    const text = t("friends.share_text", { lang: courseName(course, lang), link: url });
     track("share", 0, "profile");
     try {
       if (navigator.share) {
