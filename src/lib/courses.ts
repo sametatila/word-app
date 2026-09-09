@@ -93,7 +93,7 @@ export const COURSES: Course[] = [
     enabled: true,
     offeredToNewUsers: false, // duraklatılmış lehçe kursu — mevcut öğrenciye açık, yeniye sunulmuyor
   },
-  // Kelime katmanı hazır; ders/beceri içeriği henüz yok.
+  // Kelime, ders, beceri ve deneme sınavı katmanları hazır.
   {
     id: "en",
     targetLang: "en",
