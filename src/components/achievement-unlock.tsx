@@ -204,12 +204,10 @@ export function AchievementUnlock() {
                 olduğunu düşündürür. */}
             {view.items.length > BATCH_SHOWN ? (
               <p className="muted -mt-2 mb-3 text-xs font-semibold">
-                ve {view.items.length - BATCH_SHOWN} tane daha
+                {tt("achu.and_n_more", { n: view.items.length - BATCH_SHOWN })}
               </p>
             ) : null}
-            <p className="muted text-sm">
-              Bugüne kadar yaptığın işin karşılığı. Hepsi profilinde duruyor.
-            </p>
+            <p className="muted text-sm">{tt("achu.batch_note")}</p>
             <Hint />
           </Card>
         ) : (
@@ -252,9 +250,10 @@ function Card({ tier, children }: { tier: string; children: React.ReactNode }) {
 
 /** Kapatılabilir olduğunu söyleyen tek satır. */
 function Hint() {
+  const t = useT();
   return (
     <p className="muted mt-4 text-[11px] font-semibold uppercase tracking-wide opacity-70">
-      Devam etmek için dokun
+      {t("achu.tap_to_continue")}
     </p>
   );
 }

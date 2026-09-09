@@ -5,6 +5,8 @@ import { profiles, pushSubscriptions } from "@/lib/db/schema";
 import { getUserId } from "@/lib/auth/server";
 import { sameOrigin } from "@/lib/auth/origin";
 import { pushEnabled, sendToUser } from "@/lib/push";
+import { langOf } from "@/lib/social/notify";
+import { translate } from "@/lib/i18n/dict";
 
 export const dynamic = "force-dynamic";
 export const runtime = "nodejs"; // web-push Node API'lerine dayanıyor
@@ -130,11 +132,12 @@ export async function PUT(req: Request) {
       .limit(1);
 
     const first = profile?.name?.trim().split(/\s+/)[0];
+    // Bildirim ALICININ dilinde — abonelik açılışında giden ilk mesaj bu ve
+    // sabit Türkçe yazılıydı (bkz. lib/push `composeReminder`, aynı düzeltme).
+    const lang = await langOf(userId);
     const sent = await sendToUser(userId, {
-      title: "Hatırlatmalar açık",
-      body: first
-        ? `${first}, çalışmadığın günlerde seni buradan dürteceğiz.`
-        : "Çalışmadığın günlerde seni buradan dürteceğiz.",
+      title: translate(lang, "push.reminders_on_title"),
+      body: translate(lang, first ? "push.reminders_on_body_named" : "push.reminders_on_body", { name: first ?? "" }),
       url: "/learn",
       tag: "reminder-test",
     });

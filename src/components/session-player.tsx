@@ -842,7 +842,7 @@ export function SessionPlayer() {
                 color: "var(--color-violet)",
               }}
             >
-              <SparkIcon size={12} /> {combo} üst üste
+              <SparkIcon size={12} /> {t("sessionw.combo", { n: combo })}
             </motion.span>
           ) : (
             <span className="muted">
@@ -959,7 +959,7 @@ function ErrorCard({ kind, onRetry }: { kind: ErrorKind; onRetry: () => void }) 
       body: t("session.expired_sub"),
       action: (
         <Link href="/login" className="btn btn-primary mt-5 w-full px-5 py-3.5">
-          Giriş yap
+          {t("auth.sign_in")}
         </Link>
       ),
     },
@@ -1162,9 +1162,9 @@ function StageCard({
             }}
           >
             {wagerResult > 0
-              ? `Bahis tuttu · +${wagerResult} XP`
+              ? t("sessionw.wager_won", { xp: wagerResult })
               : wagerResult < 0
-                ? `Bahis yandı · ${wagerResult} XP`
+                ? t("sessionw.wager_lost", { xp: wagerResult })
                 : t("wager.even")}
           </div>
         ) : null}
@@ -1365,7 +1365,7 @@ function SummaryCard({
             style={{ background: "color-mix(in srgb, var(--color-mint) 14%, transparent)" }}
           >
             <p className="text-sm font-bold" style={{ color: "var(--color-mint)" }}>
-              {mastered} kelime pekişti
+              {t("sessionw.n_mastered", { n: mastered })}
             </p>
 
           </div>
@@ -1383,12 +1383,9 @@ function SummaryCard({
               className="flex items-center justify-center gap-1.5 text-sm font-bold"
               style={{ color: "var(--color-flame)" }}
             >
-              <FlameIcon size={16} /> Serin kurtarıldı
+              <FlameIcon size={16} /> {t("sessionw.streak_saved")}
             </p>
-            <p className="muted mt-1 text-xs">
-              Bir gün ara vermiştin — seri {result.currentStreak} günden devam ediyor. Bu hak
-              ayda bir kez işler.
-            </p>
+            <p className="muted mt-1 text-xs">{t("sessionw.streak_saved_sub", { n: result.currentStreak })}</p>
           </div>
         ) : null}
 
@@ -1397,11 +1394,7 @@ function SummaryCard({
             vermiyordu. */}
         {result && result.dueTomorrow > 0 ? (
           <p className="px-6 pt-2 text-center text-sm font-semibold">
-            Yarın{" "}
-            <span style={{ color: "var(--color-brand)" }}>
-              {result.dueTomorrow} kelimenin
-            </span>{" "}
-            tekrarı var.
+            {t("sessionw.due_tomorrow", { n: result.dueTomorrow })}
           </p>
         ) : null}
 
@@ -1429,7 +1422,7 @@ function SummaryCard({
               ))}
             </ul>
             {missed.length > 6 ? (
-              <p className="muted mt-2 text-center text-xs">+{missed.length - 6} kelime daha</p>
+              <p className="muted mt-2 text-center text-xs">{t("sessionw.n_more_words", { n: missed.length - 6 })}</p>
             ) : null}
             {/*
               Kelime listesinin GİRİŞİ burası.
@@ -1440,7 +1433,7 @@ function SummaryCard({
               olarak bu ekran — bağlantı da o yüzden burada.
             */}
             <p className="muted mt-2 text-center text-xs">
-              Bunlar yakında tekrar karşına çıkacak — ayrıca bir şey yapmana gerek yok.{" "}
+              {t("sessionw.missed_note")}{" "}
               <Link href="/words?status=learning" className="font-semibold underline-offset-2 hover:underline">
                 Kelimelerim
               </Link>

@@ -230,7 +230,7 @@ export function QuestCard() {
           className="px-5 py-2 text-center text-sm font-bold"
           style={{ color: "var(--color-mint)" }}
         >
-          +{flash} XP kazandın
+          {t("questw.xp_earned", { xp: flash })}
         </motion.p>
       ) : null}
     </section>

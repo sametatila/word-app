@@ -4,6 +4,7 @@ import { and, gte, sql } from "drizzle-orm";
 import { db } from "@/lib/db";
 import { dailyStats } from "@/lib/db/schema";
 import { sendToUser } from "@/lib/push";
+import { translate } from "@/lib/i18n/dict";
 import { weeklySummary } from "@/lib/growth";
 import { track } from "@/lib/events";
 import { shiftDay } from "@/lib/session";
@@ -34,10 +35,12 @@ export async function GET(req: Request) {
     for (const r of rows) {
       try {
         // Haftalık özet bildirimi ALICININ dilinde.
-        const s = await weeklySummary(r.userId, today, undefined, await langOf(r.userId));
+        const lang = await langOf(r.userId);
+        const s = await weeklySummary(r.userId, today, undefined, lang);
         if (!s.answers && !s.exercises && !s.lessonsPassed) continue;
         // Gelişim/yetkinlik panosu profildedir (ProgressPanel) — özet oraya götürür.
-        await sendToUser(r.userId, { title: "Haftalık özetin", body: s.text, url: "/profile", tag: "weekly-summary" });
+        // Başlık da gövde gibi alıcının dilinde: gövde çevriliydi, başlık değil.
+        await sendToUser(r.userId, { title: translate(lang, "push.weekly_summary_title"), body: s.text, url: "/profile", tag: "weekly-summary" });
         sent++;
         await track(r.userId, "push_sent", today, 0, "summary");
       } catch (err) {
