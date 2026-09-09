@@ -133,7 +133,7 @@ export const enA2P4: SkillExercise[] = [
       },
       {
         text: "When is Kerem's last day?",
-        options: ["on the twenty-eighth", "in July", "on Saturday"],
+        options: ["on the twenty-eighth", "at the end of July", "on Saturday morning"],
         answer: 0,
         explain: "„His last day is on the twenty-eighth.“ Temmuz Bruno'nun yanlış hatırladığı tarih.",
       },

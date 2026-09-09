@@ -355,9 +355,9 @@ export const enC1P5: SkillExercise[] = [
         heading: "Bağdaşıklık yalnız bağlayıcı değildir",
         tr: "Metni tutan asıl şey sıradır: bilinen bilgi önce, yeni bilgi sonra. Buna ismi tekrar etmek ve zamiri fazla kullanmamak eklenir. Sıra zaten iş görüyorsa bağlayıcı eklemek metni ağırlaştırır, düzenli göstermez.",
         examples: [
-          { de: "The scheme differs from its predecessor. Under the old arrangement, families collected the glasses.", tr: "Program öncelinden ayrılıyor. Eski düzende gözlükleri aileler alıyordu.", note: "bilinen önce" },
-          { de: "Say the committee again, even if you said it two lines earlier.", tr: "Kurulu bir daha adıyla an, iki satır önce anmış olsan bile." },
-          { de: "Delete every connective and read it again.", tr: "Bütün bağlayıcıları sil ve yeniden oku." },
+          { de: "The report has two parts. The first sets out the figures; the second draws conclusions from them.", tr: "Raporun iki bölümü var. İlki rakamları veriyor, ikincisi onlardan sonuç çıkarıyor.", note: "bilinen önce" },
+          { de: "Repeat the name of the department rather than writing it a third time.", tr: "Zamir yerine birimin adını tekrar et, üçüncü kez yazmaktansa." },
+          { de: "Remove the linking words and see what still holds.", tr: "Bağlayıcı kelimeleri çıkar ve neyin ayakta kaldığına bak." },
         ],
       },
     ],

@@ -76,7 +76,7 @@ export const enA1P3: SkillExercise[] = [
       },
       {
         text: "How long does the cake bake?",
-        options: ["thirty-five minutes", "two minutes", "ten minutes"],
+        options: ["thirty-five minutes", "twenty-five minutes", "forty-five minutes"],
         answer: 0,
         explain: "„… bake it for thirty-five minutes.“ İki dakika karıştırma, on dakika bekleme süresi.",
       },
@@ -147,7 +147,7 @@ export const enA1P3: SkillExercise[] = [
       },
       {
         text: "What opens on Saturday?",
-        options: ["a new room about old maps", "the museum shop", "the cloakroom"],
+        options: ["a new room about old maps", "a new shop for books and gifts", "a bigger cloakroom by the door"],
         answer: 0,
         explain: "„The new room about old maps opens on Saturday.“",
       },
