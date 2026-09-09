@@ -215,7 +215,7 @@ export function CourseOnboarding({
   }
 
   const dots = (
-    <ol className="mb-5 flex items-center gap-2" aria-label={`Adım ${step + 1} / 5`}>
+    <ol className="mb-5 flex items-center gap-2" aria-hidden>
       {[0, 1, 2, 3, 4].map((i) => (
         <li key={i} className="h-1.5 flex-1 rounded-full" style={{ background: i <= step ? "var(--color-brand)" : "var(--surface-2)" }} />
       ))}

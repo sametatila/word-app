@@ -187,7 +187,7 @@ export function ResultCard({
               <SparkIcon size={16} /> +{state.xpGained} XP
             </span>
             <span className="flex items-center gap-1" style={{ color: "var(--color-flame)" }}>
-              <FlameIcon size={16} /> {state.currentStreak} gün
+              <FlameIcon size={16} /> {t("social.days_streak", { n: state.currentStreak })}
             </span>
           </p>
           {state.repeat && state.xpGained === 0 ? (
