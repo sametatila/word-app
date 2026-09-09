@@ -32,8 +32,8 @@ export const enA2: SkillExercise[] = [
     minutes: 5,
     text:
       "MY FIRST MONTH AT THE SHELTER\n\n" +
-      "Four weeks ago I started as a volunteer at the animal shelter near my flat. I go there every Saturday morning " +
-      "and stay for three hours.\n\n" +
+      "Four weeks ago I started as a volunteer at the animal shelter near my flat. I go there every Saturday " +
+      "morning for three hours.\n\n" +
       "On my first day I was nervous. Marta, who has worked there for nine years, showed me everything: where the food is, " +
       "how much water each bowl needs, and which dogs you can walk alone.\n\n" +
       "The work is not romantic. I clean cages, I wash blankets and I carry heavy bags. But then there is the other part. " +

@@ -139,6 +139,8 @@ export const deC1: SkillExercise[] = [
       { speaker: "Dr. Lindqvist", text: "Das höre ich oft. Speicher ist billig, Erschließung ist es nicht. Ein Bestand, den niemand beschrieben hat, ist digital genauso unauffindbar wie im Keller." },
       { speaker: "Moderator", text: "Sie bekommen auch private Nachlässe. Sagen Sie da je Nein?" },
       { speaker: "Dr. Lindqvist", text: "Häufiger, als Angehörigen lieb ist. Und das ist der unangenehmste Teil meiner Arbeit, weil ich dabei über etwas urteile, das für jemanden ein ganzes Leben war." },
+      { speaker: "Moderator", text: "Gibt es Unterlagen, die Ihnen niemand anbietet, die Sie aber gern hätten?" },
+      { speaker: "Dr. Lindqvist", text: "Ständig. Vereinsprotokolle, Kassenbücher kleiner Läden, die Korrespondenz von Nachbarschaftsinitiativen. Das Alltägliche wird weggeworfen, weil es niemandem wichtig erscheint, und genau das fehlt später." },
       { speaker: "Moderator", text: "Gibt es eine Entscheidung, die Sie bereuen?" },
       { speaker: "Dr. Lindqvist", text: "Bereuen wäre zu groß. Aber es gibt Kisten, an die ich denke. Man merkt erst zwanzig Jahre später, ob man richtig lag — und dann ist die Frage ohnehin nicht mehr zu ändern." },
     ],

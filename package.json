@@ -74,6 +74,7 @@
     "dump:mock-exams:en": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/dump-mock-exams-mobile.ts en",
     "check:unitvocab": "tsx scripts/check-unit-vocab.ts",
     "check:libvocab": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/check-library-vocab.ts",
+    "report:library": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/report-library.ts",
     "check:examvocab": "tsx scripts/check-exam-vocab.ts"
   },
   "dependencies": {

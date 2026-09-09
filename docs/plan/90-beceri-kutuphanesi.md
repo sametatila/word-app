@@ -54,9 +54,24 @@ düşürüyordu).
 | 2 | Seviye × beceri başına 5 (250) | parti 1 onaylanınca aynı hatla |
 | 3 | Seviye × beceri başına 25 | hedef |
 
-Parti 1 doğrulaması: `test:content -- skills` kütüphane kimlikleri için sıfır hata
-ve sıfır uyarı; `audit:skills` 984 egzersizde 513 bulgu, hiçbiri kütüphaneden;
-havuz dışı kelime oranı DE %1,0–2,1 · EN %1,9–3,7 (hedefler %10/15/20).
+Parti 1 doğrulaması (2026-09-09 kalite kontrolü): `test:content -- skills`
+kütüphane kimlikleri için sıfır hata ve sıfır uyarı; `audit:skills` 984
+egzersizde 513 bulgu, hiçbiri kütüphaneden; havuz dışı kelime oranı
+DE %1,0–2,0 · EN %0,5–3,4 (hedefler %10/15/20).
+
+Pedagojik ölçüm `npm run report:library` ile alınıyor ve şunları basıyor:
+kapsam matrisi, egzersiz başına madde/süre/sözlükçe, tanıma-üretim dengesi,
+gerekçe doluluğu, doğru şık konumu ve uzunluğu, metin uzunluğunun seviye
+hedefine uyumu, seviyeler arası tırmanma, yapabilirlik etiketi ve **kopya
+denetimi** (sekiz kelimelik pencerelerin Patika, ders ve deneme kâğıdı
+havuzuyla karşılaştırılması).
+
+Kontrolde düzeltilenler: iki dinleme metni seviye hedefinin altındaydı
+(DE B2 170→213, DE C1 217→252 kelime), bir okuma bir kelime uzundu
+(EN A2 181→179), bir dinleme sorusunda doğru şık ötekilerden belirgin uzundu
+(okumadan seçilebilirdi). Kopya denetimi üç egzersizde bir-iki pencere
+buldu; üçü de formül cümle ("Guten Tag, was kann ich für Sie tun?",
+"Sehr geehrte Damen und Herren") ve eşiğin altında.
 
 ### Parti 1 içeriği
 
