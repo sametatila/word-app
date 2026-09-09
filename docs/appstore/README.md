@@ -49,15 +49,17 @@ Hukuki metinler iOS için **hazır yazıldı ama kapalı**: `src/lib/legal.ts` i
 - gizlilik politikasında platform sayımı ve alıcılar tablosuna **Apple (App Store)** satırı.
 
 Bayrağı açmadan önce `LEGAL_VERSION` artırılmalı ve `LEGAL_CHANGELOG`'a kayıt
-düşülmeli. **Kayıt hazır:** `legal.ts` içindeki `IOS_LAUNCH_ENTRY` sürüm **1.4**'ün
+düşülmeli. **Kayıt hazır:** `legal.ts` içindeki `IOS_LAUNCH_ENTRY` sürüm **1.1**'in
 "ne değişti" metnini üç dilde tutuyor ve bayrak kapalıyken listeye hiç girmiyor. O gün
-yapılacak iş bu dosyada üç satır: bayrak `true`, `LEGAL_VERSION` `"1.4"`,
+yapılacak iş bu dosyada üç satır: bayrak `true`, `LEGAL_VERSION` `"1.1"`,
 `LEGAL_EFFECTIVE_DATE` yayın günü.
 
-> **1.3 DEĞİL, 1.4.** "1.3" önce iOS'a ayrılmıştı ama 2026-09-08'de abonelik
-> maddesine verildi (fiyat değişikliği ve hediye süre hükümleri) ve yürürlüğe girdi.
-> Bu belge bir süre eski numarayı söyledi; harfiyen izlenseydi sürüm geçmişinde iki
-> ayrı 1.3 kaydı oluşurdu. Kod doğru: `IOS_LAUNCH_ENTRY.version` zaten `"1.4"`.
+> **NUMARA NEDEN 1.1.** Sürüm geçmişi 2026-09-09'da sıfırlandı: numara geliştirme
+> sırasında 1.1'den 1.3.1'e yürümüştü ama o kayıtların anlattığı değişikliklerin çoğu
+> henüz yayında olmayan özelliklerin maddeleriydi ve kimsenin kabul ettiği bir sürüm
+> değişmemişti (kabul edilen sürüm hiçbir yerde saklanmıyor). Yürürlükteki metin
+> **1.0**; iOS yayını, metne gerçekten yeni hükümler eklediği için ikinci basamağı
+> alıyor. Gerekçenin tamamı `src/lib/legal.ts`'in sürüm notunda.
 
 Alıcılar tablosundaki **Apple (Sign-In)** ve **Apple (App Store)** satırları da aynı
 bayrağın arkasında hazır bekliyor.
