@@ -7,13 +7,14 @@ import type { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import type { RootStackParams } from "../navigation/RootStack";
 import { Text } from "../ui/Text";
 import { Card } from "../ui/Card";
+import { MenuRow } from "../ui/MenuRow";
 import { PressableScale } from "../ui/PressableScale";
-import { ArrowBackIcon, ChevronRightIcon, FlameIcon, BoltIcon, LearnIcon, TrophyIcon, BellIcon, LogoutIcon, CrownIcon, ShareIcon, SettingsIcon, PodiumIcon, CheckIcon, WriteIcon, FaceIcon, HandshakeIcon, InboxIcon } from "../ui/icons";
+import { ArrowBackIcon, ChevronRightIcon, FlameIcon, BoltIcon, TrophyIcon, LogoutIcon, CrownIcon, ShareIcon, SettingsIcon, PodiumIcon, CheckIcon, HandshakeIcon, InboxIcon } from "../ui/icons";
 import { Avatar } from "../ui/Avatar";
 import { SkeletonCard, SkeletonLine, SkeletonPill, textHeight } from "../ui/Skeleton";
 import { useAuth } from "../lib/AuthContext";
 import { shareInvite } from "../lib/share";
-import { useMe, formatDuration, formatXp } from "../lib/useMe";
+import { useMe, formatXp } from "../lib/useMe";
 import { usePremiumStatus } from "../lib/premium";
 import { billingAvailable } from "../lib/billing";
 import { useTheme, spacing, radii, softShadow, type Palette } from "../theme";
@@ -30,17 +31,6 @@ function StatTile({ value, label, color, colors }: { value: string; label: strin
   );
 }
 
-function Row({ icon: Icon, label, tint, colors, last, onPress }: { icon: (p: { color: string; size: number }) => React.ReactElement; label: string; tint: string; colors: Palette; last?: boolean; onPress?: () => void }) {
-  return (
-    <PressableScale onPress={onPress} style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingVertical: spacing.md, borderBottomWidth: last ? 0 : 1, borderBottomColor: colors.hairline }}>
-      <View style={{ width: 38, height: 38, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: tint + "22" }}>
-        <Icon color={tint} size={20} />
-      </View>
-      <Text variant="bodyStrong" style={{ flex: 1 }}>{label}</Text>
-      <ChevronRightIcon color={colors.textFaint} size={20} />
-    </PressableScale>
-  );
-}
 
 export function ProfileScreen() {
   const { colors } = useTheme();
@@ -99,19 +89,23 @@ export function ProfileScreen() {
           ) : null}
         </Card>
 
-        {/* istatistik ızgarası — yalnız gerçek veriyle; misafirde uydurma sayı yok */}
+        {/*
+          İKİ KARO, DÖRT DEĞİL. Profil kimliktir, ölçüm tablosu değil: öğrenilen
+          kelime ve toplam süre Gelişim ekranında zaten duruyor ve burada birebir
+          tekrar ediyorlardı. Kalan ikisi kimliğin parçası — seri "ne kadar
+          düzenlisin", XP "ne kadar biriktirdin" der ve ikisi herkese açık
+          profilde de görünür (bkz. lib/social/profile publicProfile).
+        */}
         {me ? (
           <View style={{ flexDirection: "row", flexWrap: "wrap", gap: spacing.md, marginBottom: spacing.lg }}>
-            <StatTile value={String(me.mastered)} label={t("profile.words_learned")} color={colors.primary} colors={colors} />
             <StatTile value={String(me.streak)} label={t("profile.day_streak")} color={colors.streak} colors={colors} />
             <StatTile value={String(me.xp).replace(/\B(?=(\d{3})+(?!\d))/g, ".")} label={t("profile.total_xp")} color={colors.success} colors={colors} />
-            <StatTile value={formatDuration(me.seconds)} label={t("profile.time_total")} color={colors.info} colors={colors} />
           </View>
         ) : (
           // Kısa "yükleniyor" kartı yerine ızgaranın kendi iskeleti: dört karo
           // gelince ekran iki satır boyu uzamıyor.
           <View style={{ flexDirection: "row", flexWrap: "wrap", gap: spacing.md, marginBottom: spacing.lg }}>
-            {[0, 1, 2, 3].map((i) => (
+            {[0, 1].map((i) => (
               <SkeletonCard key={i} style={{ width: gridItemWidth, gap: 2 }}>
                 <SkeletonLine variant="h1" width="60%" />
                 <SkeletonLine variant="caption" width="85%" />
@@ -145,18 +139,26 @@ export function ProfileScreen() {
           </PressableScale>
         )}
 
-        {/* ayar satırları — görünüm / okuma sesi / dil artık Ayarlar'da */}
+        {/*
+          MENÜNÜN KURALI: burada duran şey ya KİMLİĞİN ya da BAŞKALARIYLA
+          İLİŞKİN. Kendi ölçün Gelişim ekranında.
+
+          Buradan taşınanlar: Kelimelerim (Gelişim'de "kelime ustalığı"
+          kartının detayı), Yapabildiklerim (yeterlik ölçüsü), Yazılarım
+          (değerlendirilmiş üretimin arşivi). Kaldırılanlar: "Avatarını
+          düzenle" (avatarın kendisi zaten o ekranı açıyor) ve "Bildirimler"
+          (içeriği ayar; Ayarlar → Uygulama'ya taşındı).
+
+          Başarımlar KALIYOR çünkü rozet sayısı herkese açık profilde
+          görünüyor: statü işareti, yani kimliğin parçası. Haftalık sıralama da
+          kalıyor — o bir ölçüm değil, başkalarıyla kıyas.
+        */}
         <Card padded style={{ paddingVertical: 0 }}>
-          <Row icon={FaceIcon} label={t("profile.edit_your_avatar")} tint={colors.primary} colors={colors} onPress={() => nav.navigate("Avatar")} />
-          <Row icon={LearnIcon} label={t("profile.my_words")} tint={colors.primary} colors={colors} onPress={() => nav.navigate("Words")} />
-          <Row icon={TrophyIcon} label={t("profile.achievements")} tint={colors.streak} colors={colors} onPress={() => nav.navigate("Achievements")} />
-          <Row icon={CheckIcon} label={t("profile.what_can_i_do")} tint={colors.success} colors={colors} onPress={() => nav.navigate("Cando")} />
-          <Row icon={WriteIcon} label={t("profile.my_posts")} tint={colors.info} colors={colors} onPress={() => nav.navigate("Writings")} />
-          <Row icon={PodiumIcon} label={t("profile.weekly_leaderboard")} tint={colors.info} colors={colors} onPress={() => nav.navigate("Leaderboard")} />
-          <Row icon={HandshakeIcon} label={t("profile.friends")} tint={colors.success} colors={colors} onPress={() => nav.navigate("Friends", undefined)} />
-          <Row icon={InboxIcon} label={t("profile.inbox")} tint={colors.streak} colors={colors} onPress={() => nav.navigate("Inbox")} />
-          <Row icon={ShareIcon} label={t("profile.invite_friend")} tint={colors.success} colors={colors} onPress={() => shareInvite(premiumStatus?.referral?.code)} />
-          <Row icon={BellIcon} label={t("profile.notifications")} tint={colors.info} colors={colors} onPress={() => nav.navigate("Notifications")} last />
+          <MenuRow icon={TrophyIcon} label={t("profile.achievements")} tint={colors.streak} colors={colors} onPress={() => nav.navigate("Achievements")} />
+          <MenuRow icon={PodiumIcon} label={t("profile.weekly_leaderboard")} tint={colors.info} colors={colors} onPress={() => nav.navigate("Leaderboard")} />
+          <MenuRow icon={HandshakeIcon} label={t("profile.friends")} tint={colors.success} colors={colors} onPress={() => nav.navigate("Friends", undefined)} />
+          <MenuRow icon={InboxIcon} label={t("profile.inbox")} tint={colors.streak} colors={colors} onPress={() => nav.navigate("Inbox")} />
+          <MenuRow icon={ShareIcon} label={t("profile.invite_friend")} tint={colors.success} colors={colors} onPress={() => shareInvite(premiumStatus?.referral?.code)} last />
         </Card>
 
         {/*

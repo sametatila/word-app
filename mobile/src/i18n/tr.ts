@@ -714,6 +714,7 @@ export const tr: Record<string, string> = {
   "progress.time_total": "Toplam süre",
   "progress.progress": "Gelişim",
   "progress.day_streak": "gün seri",
+  "progress.longest_streak": "En uzun {n} gün",
   "progress.word_mastery": "Kelime ustalığı",
   "progress.words_learned": "Öğrenilen kelime",
   "progress.level": "Seviye",
@@ -1100,4 +1101,9 @@ export const tr: Record<string, string> = {
   "writings.my_writing": "Yazılarım",
   "time.minutes_short": "{m} dk",
   "time.hours_minutes_short": "{h}s {m}dk",
+  "settings.group_account": "Hesap",
+  "settings.group_learning": "Öğrenme",
+  "settings.group_app": "Uygulama",
+  "settings.group_privacy_about": "Gizlilik ve hakkında",
+  "settings.notifications_sub": "Hatırlatmalar, seri koruma, haftalık test",
 };

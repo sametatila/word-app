@@ -7,8 +7,9 @@ import type { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import type { RootStackParams } from "../navigation/RootStack";
 import { Text } from "../ui/Text";
 import { Card } from "../ui/Card";
+import { MenuRow } from "../ui/MenuRow";
 import { PressableScale } from "../ui/PressableScale";
-import { ArrowBackIcon, ChevronRightIcon, FlameIcon, BoltIcon, LearnIcon, TrophyIcon, PodiumIcon } from "../ui/icons";
+import { ArrowBackIcon, BoltIcon, CheckIcon, ChevronRightIcon, FlameIcon, LearnIcon, PodiumIcon, TrophyIcon, WriteIcon } from "../ui/icons";
 import { Mascot } from "../ui/Mascot";
 import { SkeletonBar, SkeletonCard, SkeletonLine, SkeletonTile } from "../ui/Skeleton";
 import { useMe, formatXp, formatDuration } from "../lib/useMe";
@@ -61,6 +62,15 @@ export function ProgressScreen() {
           <View style={{ flex: 1 }}>
             <Text variant="display" color="#fff">{me?.streak ?? 0}</Text>
             <Text variant="bodyStrong" color="#ffffffdd">{t("progress.day_streak")}</Text>
+            {/*
+              EN UZUN SERİ. Sunucu bunu zaten gönderiyor (`/api/me`) ve BAŞKASININ
+              profilinde görünüyordu (herkese açık profil satırı), ama kendi
+              ekranında hiç yoktu. Bugünkü sayı ancak kendi rekoruyla kıyaslanınca
+              bir şey söylüyor.
+            */}
+            {me?.longestStreak ? (
+              <Text variant="caption" color="#ffffffbb">{t("progress.longest_streak", { n: me.longestStreak })}</Text>
+            ) : null}
           </View>
           <Mascot mood={(me?.streak ?? 0) > 0 ? "happy" : "idle"} size={58} />
         </View>
@@ -87,17 +97,26 @@ export function ProgressScreen() {
           </View>
         )}
 
-        {/* seviye ilerlemesi */}
+        {/*
+          Seviye ilerlemesi. Kart artık DOKUNULABİLİR: "Kelimelerim" profilin
+          menüsünde ayrı bir satırdı, oysa bu kartın detayından başka bir şey
+          değil. Kart hedefsiz duruyordu, satır da bağlamsızdı; ikisi birleşti.
+        */}
         {me ? (
-          <Card style={{ marginBottom: spacing.lg }}>
-            <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between", marginBottom: spacing.sm }}>
-              <Text variant="bodyStrong">{t("progress.word_mastery")}</Text>
-              <Text variant="caption" color={colors.textMuted}>{mastered}/{totalWords || "—"}</Text>
-            </View>
-            <View style={{ height: 8, borderRadius: 4, backgroundColor: colors.surface2, overflow: "hidden" }}>
-              <View style={{ height: "100%", width: `${Math.max(3, pct)}%`, backgroundColor: colors.success, borderRadius: 4 }} />
-            </View>
-          </Card>
+          <PressableScale onPress={() => nav.navigate("Words")} accessibilityLabel={t("profile.my_words")}>
+            <Card style={{ marginBottom: spacing.lg }}>
+              <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between", marginBottom: spacing.sm }}>
+                <Text variant="bodyStrong">{t("progress.word_mastery")}</Text>
+                <View style={{ flexDirection: "row", alignItems: "center", gap: 6 }}>
+                  <Text variant="caption" color={colors.textMuted}>{mastered}/{totalWords || "—"}</Text>
+                  <ChevronRightIcon color={colors.textFaint} size={18} />
+                </View>
+              </View>
+              <View style={{ height: 8, borderRadius: 4, backgroundColor: colors.surface2, overflow: "hidden" }}>
+                <View style={{ height: "100%", width: `${Math.max(3, pct)}%`, backgroundColor: colors.success, borderRadius: 4 }} />
+              </View>
+            </Card>
+          </PressableScale>
         ) : (
           <SkeletonCard style={{ marginBottom: spacing.lg }}>
             <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between", marginBottom: spacing.sm }}>
@@ -108,16 +127,19 @@ export function ProgressScreen() {
           </SkeletonCard>
         )}
 
-        {/* başarımlar */}
-        <PressableScale onPress={() => nav.navigate("Achievements")}>
-          <Card padded style={{ flexDirection: "row", alignItems: "center", gap: spacing.md }}>
-            <View style={{ width: 38, height: 38, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.streak + "22" }}>
-              <TrophyIcon color={colors.streak} size={20} />
-            </View>
-            <Text variant="bodyStrong" style={{ flex: 1 }}>{t("progress.achievements")}</Text>
-            <ChevronRightIcon color={colors.textFaint} size={20} />
-          </Card>
-        </PressableScale>
+        {/*
+          KENDİ ÖLÇÜN BURADA. Profilden taşınan iki satır: yeterlik
+          (Yapabildiklerim) ve değerlendirilmiş üretimin arşivi (Yazılarım).
+          İkisi de yalnız sana ait ölçüler, yani kimlik değil ilerleme.
+
+          Başarımlar buradan KALDIRILDI: rozet sayısı herkese açık profilde
+          görünüyor, yani statü işareti — yeri profil. Aynı ekrana iki giriş
+          olmasın diye kart değil satır kaldı.
+        */}
+        <Card padded style={{ paddingVertical: 0 }}>
+          <MenuRow icon={CheckIcon} label={t("profile.what_can_i_do")} tint={colors.success} colors={colors} onPress={() => nav.navigate("Cando")} />
+          <MenuRow icon={WriteIcon} label={t("profile.my_posts")} tint={colors.info} colors={colors} onPress={() => nav.navigate("Writings")} last />
+        </Card>
       </ScrollView>
     </View>
   );

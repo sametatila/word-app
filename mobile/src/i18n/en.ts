@@ -709,6 +709,7 @@ export const en: Record<string, string> = {
   "progress.time_total": "Total time",
   "progress.progress": "Progress",
   "progress.day_streak": "day streak",
+  "progress.longest_streak": "Longest {n} days",
   "progress.word_mastery": "Word mastery",
   "progress.words_learned": "Words learned",
   "progress.level": "Level",
@@ -1095,4 +1096,9 @@ export const en: Record<string, string> = {
   "writings.my_writing": "My writing",
   "time.minutes_short": "{m} min",
   "time.hours_minutes_short": "{h}h {m}m",
+  "settings.group_account": "Account",
+  "settings.group_learning": "Learning",
+  "settings.group_app": "App",
+  "settings.group_privacy_about": "Privacy and about",
+  "settings.notifications_sub": "Reminders, streak saver, weekly test",
 };

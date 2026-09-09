@@ -98,7 +98,12 @@ export function useMe(): { me: Me | null; loading: boolean } {
               level: m.level,
               course: "de",
               streak: m.currentStreak,
-              longestStreak: m.currentStreak,
+              // 0 = BİLİNMİYOR. Burada `m.currentStreak` yazılıydı, yani yedek
+              // yolda "en uzun seri" güncel seriyle UYDURULUYORDU. Hiçbir ekran
+              // okumadığı sürece görünmedi; Gelişim ekranı okumaya başlayınca
+              // yanlış bir rekor gösterecekti. Bu uçta veri yok, o yüzden sıfır
+              // ve arayüz satırı hiç çizmiyor.
+              longestStreak: 0,
               xp: m.totalXp,
               dailyGoal: m.dailyGoal,
               mastered: m.coverage?.mastered ?? 0,
