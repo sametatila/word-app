@@ -19,7 +19,7 @@ import { usePremiumStatus } from "../lib/premium";
 import { billingAvailable } from "../lib/billing";
 import { narrationVoice } from "../lib/voices";
 import { currentLang, nativeLangName, targetLangName } from "../lib/i18n";
-import { ensureMicPermission, listenOnce, stopListening, setKeepAwake, azureListenOnce, startWalkService, stopWalkService, onScreenState, onWalkStop, onWalkServiceFailed, speakServerTts, nativeDelay, nativeHttpGet } from "../lib/stt";
+import { ensureMicPermission, listenOnce, stopListening, setKeepAwake, azureListenOnce, startWalkService, stopWalkService, onScreenState, onWalkStop, onWalkServiceFailed, speakServerTts, stopServerTts, nativeDelay, nativeHttpGet } from "../lib/stt";
 import { currentTargetLocale } from "../lib/courses";
 import { API_BASE } from "../api/client";
 import { spokenMatches, parseSkip, encourage, parseConfirm } from "../lib/voiceMatch";
@@ -216,6 +216,11 @@ export function WalkModeScreen() {
       if (off && pocketGateClosed() && !premiumToldRef.current) {
         premiumToldRef.current = true;
         setBgUnavailable(true);
+        // ÇALAN SESİ ÖNCE KES. Yukarıdaki `bridgeStop()` yalnız WebView yolunu
+        // susturuyor; o sırada native yoldan (`speakServerTts`) bir cümle
+        // çalıyorsa dokunmuyordu — köprü hazır değilken sayNative zaten native
+        // yola düşüyor. Sonuç: bilgilendirme, süren cümlenin ÜSTÜNE biniyordu.
+        stopServerTts();
         void sayNative(tx(billingAvailable() ? "walkmode.screen_off_premium_upgrade" : "walkmode.screen_off_premium"));
       }
     });
