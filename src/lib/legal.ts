@@ -95,6 +95,17 @@ export const LEGAL_ENTITY = {
   privacyEmailEu: "gdpr@lernomi.app",
   /** Genel destek e-postası. */
   supportEmail: "support@lernomi.app",
+  /**
+   * Destek yanıt süresi taahhüdü (iş günü) — destek sayfasında yazılı.
+   *
+   * Apple Guidelines 1.2 kullanıcı içeriği taşıyan uygulamalardan yalnız bir
+   * bildirme düğmesi değil, "zamanında yanıt" da istiyor; bir sayı vermeyen
+   * destek sayfası o beklentiyi karşılamıyor. Sayı buraya konuldu ki söz tek
+   * yerde dursun ve üç dilde birden değişsin. Veri koruma başvuruları bunun
+   * DIŞINDA: onların süresi kanunla belirli (KVKK m.13 otuz gün, GDPR m.12(3)
+   * bir ay) ve gizlilik politikasında yazılı.
+   */
+  supportResponseDays: "5",
   /** Türkiye'deki uyuşmazlıklarda yetkili mahkeme ve icra dairelerinin ili. */
   court: "Adana",
   /**
@@ -142,6 +153,16 @@ export function isLegalOmitted(value: string): boolean {
 export const LEGAL_PATHS = {
   privacy: "/privacy",
   terms: "/terms",
+  /**
+   * Destek sayfası — App Store Connect'in **Support URL** alanına girilen adres
+   * ve Apple Guidelines 1.2'nin istediği "yayımlanmış iletişim bilgisi".
+   *
+   * Ayrı bir sayfa olmasının sebebi: adres bugüne kadar yalnız /privacy ve
+   * /terms'in içinde geçiyordu. İnceleyen Support URL'yi açıp destek bilgisi
+   * arıyor; onu on bölümlük bir hukuk metninin ortasında aratmak hem inceleme
+   * riski hem de kullanıcıya kötü davranmak.
+   */
+  support: "/support",
   deleteAccount: "/account/delete",
 } as const;
 

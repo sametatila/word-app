@@ -222,6 +222,7 @@ export default async function Home() {
         <div className="mt-4 flex flex-wrap justify-center gap-x-4 gap-y-1">
           <Link href={legalPath("privacy", lang)} prefetch={false} className="underline-offset-4 hover:underline">{t("auth.privacy_policy")}</Link>
           <Link href={legalPath("terms", lang)} prefetch={false} className="underline-offset-4 hover:underline">{t("auth.terms_of_use")}</Link>
+          <Link href={legalPath("support", lang)} prefetch={false} className="underline-offset-4 hover:underline">{t("land.support")}</Link>
           <Link href="/account/delete" prefetch={false} className="underline-offset-4 hover:underline">{t("land.delete_account")}</Link>
         </div>
       </footer>

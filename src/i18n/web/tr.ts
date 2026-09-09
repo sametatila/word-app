@@ -695,6 +695,7 @@ export const trWeb: Record<string, string> = {
   "land.footer_source": "Kelime kaynağı: CEFR A1–C1 için konu bazlı hazırlanmış set.",
   "land.footer_gsw": "Zürih kursu, aynı listenin Züritüütsch karşılığıdır (Dieth temelli sadeleştirilmiş yazım).",
   "land.delete_account": "Hesabını sil",
+  "land.support": "Destek",
   "vis.public": "Herkese açık",
   "vis.public_sub": "Profil ve kilometre taşları herkese görünür",
   "vis.friends": "Arkadaşlar",

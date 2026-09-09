@@ -331,8 +331,17 @@ inceleme hesabı ve adımlar App Store Connect'e de girilir. Ek olarak açıklan
 - **Yapay zekâ içeriği:** rol yapma bir dil modeliyle üretiliyor; uygulamada "gerçek kişi
   değil" bildirimi ekranda kalıcı ve her yanıtın altında "Bildir" var (Guidelines 1.2 ve
   üretken içerik beklentileri).
-- **Kullanıcı içeriği:** görünen ad, kullanıcı adı ve biyografi moderasyondan geçiyor;
-  engelleme ve bildirme var, özel mesajlaşma yok.
+- **Kullanıcı içeriği (Guidelines 1.2):** dördü de var — görünen ad, kullanıcı adı ve
+  biyografi moderasyondan geçiyor (filtreleme), her yapay zekâ yanıtının altında ve
+  profillerde **Bildir**, profillerde **Engelle**, ve **yayımlanmış iletişim bilgisi**
+  olarak `[[SITE]]/support`. Özel mesajlaşma yok.
+
+  Dördüncüsü 2026-09-09'a kadar EKSİKTİ: destek adresi yalnız gizlilik politikası ve
+  şartların içinde geçiyordu, Support URL alanı ise ana sayfayı gösteriyordu ve ana
+  sayfada iletişim bilgisi yoktu. Sayfa artık ayrı (`/support`, üç dilde), ana sayfanın
+  alt şeridinden, hukuki sayfaların gezinme şeridinden ve **uygulama içinde** Profil ›
+  Ayarlar › Destek ve iletişim satırından açılıyor — 1.2 "yayımlanmış" derken
+  uygulamadan ulaşılabilir olmasını da kastediyor.
 
 ## Not
 

@@ -265,6 +265,24 @@ export function SettingsScreen() {
             <Text variant="bodyStrong" style={{ flex: 1 }}>{t("settings.terms_of_use")}</Text>
             <ChevronRightIcon color={colors.textFaint} size={20} />
           </PressableScale>
+          {/*
+            İLETİŞİM YÜZEYİ — Apple Guidelines 1.2. Kullanıcı içeriği taşıyan
+            uygulamalarda filtreleme, bildirme ve engellemenin YANINDA
+            "yayımlanmış iletişim bilgisi" de isteniyor. Bildirme ve engelleme
+            zaten vardı; ulaşılacak bir adres yoktu ve destek e-postası yalnız
+            gizlilik/şartlar metinlerinin içinde geçiyordu.
+
+            Alt metin taşıyan tek satır bu bölümde: ötekiler (politika, şartlar)
+            adıyla anlaşılıyor, bu ise ne olduğunu söylemezse "hangi destek"
+            sorusunu bırakıyor.
+          */}
+          <PressableScale onPress={() => openLegal("support")} accessibilityRole="link" style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingVertical: 12, borderTopWidth: 1, borderTopColor: colors.hairline }}>
+            <View style={{ flex: 1 }}>
+              <Text variant="bodyStrong">{t("settings.support_contact")}</Text>
+              <Text variant="caption" color={colors.textMuted}>{t("settings.support_contact_sub")}</Text>
+            </View>
+            <ChevronRightIcon color={colors.textFaint} size={20} />
+          </PressableScale>
           <Text variant="micro" color={colors.textFaint} style={{ marginTop: spacing.md }}>Lernomi {APP_VERSION}</Text>
         </Section>
 

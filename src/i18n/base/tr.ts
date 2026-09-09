@@ -807,6 +807,8 @@ export const trBase: Record<string, string> = {
   "settings.not_sure_take_placement_test": "Emin değil misin? Seviye testini çöz →",
   "settings.privacy": "GİZLİLİK",
   "settings.privacy_policy": "Gizlilik politikası",
+  "settings.support_contact": "Destek ve iletişim",
+  "settings.support_contact_sub": "Bize yaz; gelen her mesaba bir insan bakıyor.",
   "settings.display_name": "Görünen ad",
   "settings.appearance": "GÖRÜNÜM",
   "settings.daily_goal_reviews_day": "GÜNLÜK HEDEF · tekrar / gün",

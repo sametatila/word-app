@@ -14,6 +14,12 @@ import { currentLang } from "./i18n";
 const PATHS = {
   privacy: "/privacy",
   terms: "/terms",
+  /**
+   * Destek sayfası. Apple Guidelines 1.2, kullanıcı içeriği taşıyan
+   * uygulamalardan bildirme ve engellemenin YANINDA "yayımlanmış iletişim
+   * bilgisi" de istiyor; ayarlardaki satır buraya açılıyor.
+   */
+  support: "/support",
   deleteAccount: "/account/delete",
 } as const;
 

@@ -352,6 +352,15 @@ export function ProfileForm({
           <Link href={legalPath("privacy", lang)} prefetch={false} className="btn btn-ghost h-9 px-3 text-xs">{t("settings.privacy_policy")}</Link>
           <Link href={legalPath("terms", lang)} prefetch={false} className="btn btn-ghost h-9 px-3 text-xs">{t("settings.terms_of_use")}</Link>
         </SettingRow>
+        {/*
+          İLETİŞİM YÜZEYİ. Apple Guidelines 1.2 kullanıcı içeriği taşıyan
+          uygulamalardan filtreleme, bildirme ve engellemenin YANINDA
+          "yayımlanmış iletişim bilgisi" de istiyor; ilk üçü vardı, bu yoktu.
+          Mobil ayarlarda da aynı satır duruyor — iki taraf ayrışmasın.
+        */}
+        <SettingRow title={t("settings.support_contact")} sub={t("settings.support_contact_sub")}>
+          <Link href={legalPath("support", lang)} prefetch={false} className="btn btn-ghost h-9 px-3 text-xs">{t("settings.support_contact")}</Link>
+        </SettingRow>
       </Section>
 
       {/*

@@ -670,6 +670,7 @@ export const enWeb: Record<string, string> = {
   "land.footer_source": "Word source: a topic-based set prepared for CEFR A1–C1.",
   "land.footer_gsw": "The Zurich course is the same list in Züritüütsch (a simplified spelling based on Dieth).",
   "land.delete_account": "Delete your account",
+  "land.support": "Support",
   "vis.public": "Public",
   "vis.public_sub": "Your profile and milestones are visible to everyone",
   "vis.friends": "Friends",

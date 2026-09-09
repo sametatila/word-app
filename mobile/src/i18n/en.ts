@@ -807,6 +807,8 @@ export const en: Record<string, string> = {
   "settings.privacy_policy": "Privacy policy",
   "settings.support_contact": "Support and contact",
   "settings.support_contact_sub": "Write to us — a person reads every message.",
+  "settings.support_contact": "Support and contact",
+  "settings.support_contact_sub": "Write to us — a person reads every message.",
   "settings.display_name": "Display name",
   "settings.appearance": "APPEARANCE",
   "settings.daily_goal_reviews_day": "DAILY GOAL · reviews / day",

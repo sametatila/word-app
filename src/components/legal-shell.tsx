@@ -5,28 +5,28 @@ import { LEGAL_CHANGELOG, LEGAL_EFFECTIVE_DATE, LEGAL_ENTITY, LEGAL_LOCALES, LEG
 
 /** Çerçevenin kendi metinleri — belge gövdesi değil, kabuk (gezinme, etiketler). */
 const CHROME: Record<LegalLocale, {
-  privacy: string; terms: string; deleteAccount: string;
+  privacy: string; terms: string; support: string; deleteAccount: string;
   effective: string; version: string; inBrief: string;
   languageLabel: string; names: Record<LegalLocale, string>;
   changelog: string; changelogNote: string;
   binding: string;
 }> = {
   tr: {
-    privacy: "Gizlilik politikası", terms: "Kullanım şartları", deleteAccount: "Hesabını sil",
+    privacy: "Gizlilik politikası", terms: "Kullanım şartları", support: "Destek", deleteAccount: "Hesabını sil",
     effective: "Yürürlük", version: "Sürüm", inBrief: "Kısaca",
     changelog: "Sürüm geçmişi", changelogNote: "En son iki sürüm. Bağlayıcı olan metnin kendisidir; bu liste yalnız neyin değiştiğini gösterir.",
     languageLabel: "Dil", names: { tr: "Türkçe", en: "English", de: "Deutsch" },
     binding: "",
   },
   en: {
-    privacy: "Privacy policy", terms: "Terms of use", deleteAccount: "Delete your account",
+    privacy: "Privacy policy", terms: "Terms of use", support: "Support", deleteAccount: "Delete your account",
     effective: "Effective", version: "Version", inBrief: "In brief",
     changelog: "Version history", changelogNote: "The last two versions. What binds is the text itself; this list only shows what changed.",
     languageLabel: "Language", names: { tr: "Türkçe", en: "English", de: "Deutsch" },
     binding: "This is an informational translation. The binding text is the Turkish version.",
   },
   de: {
-    privacy: "Datenschutzerklärung", terms: "Nutzungsbedingungen", deleteAccount: "Konto löschen",
+    privacy: "Datenschutzerklärung", terms: "Nutzungsbedingungen", support: "Support", deleteAccount: "Konto löschen",
     effective: "Gültig ab", version: "Version", inBrief: "Kurz gefasst",
     changelog: "Versionsverlauf", changelogNote: "Die letzten zwei Fassungen. Verbindlich ist der Text selbst; diese Liste zeigt nur, was sich geändert hat.",
     languageLabel: "Sprache", names: { tr: "Türkçe", en: "English", de: "Deutsch" },
@@ -57,15 +57,7 @@ export function LegalShell({ title, summary, children, doc, locale = "tr" }: {
   const c = CHROME[locale];
   return (
     <div className="mx-auto w-full max-w-2xl px-5 py-10">
-      <Link href="/" className="mb-8 flex items-center gap-2">
-        <LogoMark size={32} />
-        <span className="text-base font-bold">Lernomi</span>
-      </Link>
-      <nav className="muted mb-6 flex flex-wrap gap-x-4 gap-y-1 text-sm">
-        <Link href={legalPath("privacy", locale)} className="underline-offset-4 hover:underline">{c.privacy}</Link>
-        <Link href={legalPath("terms", locale)} className="underline-offset-4 hover:underline">{c.terms}</Link>
-        <Link href={legalPath("deleteAccount", locale)} className="underline-offset-4 hover:underline">{c.deleteAccount}</Link>
-      </nav>
+      <DocHeader locale={locale} />
       <h1 className="text-3xl font-extrabold tracking-tight">{title}</h1>
       <p className="muted mt-2 text-sm">
         {c.effective}: {LEGAL_EFFECTIVE_DATE} · {c.version} {LEGAL_VERSION}
@@ -96,6 +88,39 @@ export function LegalShell({ title, summary, children, doc, locale = "tr" }: {
           </div>
         ))}
       </article>
+      <LegalStyles />
+    </div>
+  );
+}
+
+/**
+ * Hukuki sayfaların üst şeridi: logo + belgeler arası gezinme.
+ *
+ * DESTEK SAYFASI da bunu kullanıyor, o yüzden ayrı bileşen. Aynı şerit iki
+ * yerde elle yazılsaydı yeni bir belge eklendiğinde biri güncellenip öteki
+ * unutulurdu — bu şerit tam olarak "başka hangi sayfalar var"ı anlatan yer.
+ */
+export function DocHeader({ locale = "tr" }: { locale?: LegalLocale }) {
+  const c = CHROME[locale];
+  return (
+    <>
+      <Link href="/" className="mb-8 flex items-center gap-2">
+        <LogoMark size={32} />
+        <span className="text-base font-bold">Lernomi</span>
+      </Link>
+      <nav className="muted mb-6 flex flex-wrap gap-x-4 gap-y-1 text-sm">
+        <Link href={legalPath("privacy", locale)} className="underline-offset-4 hover:underline">{c.privacy}</Link>
+        <Link href={legalPath("terms", locale)} className="underline-offset-4 hover:underline">{c.terms}</Link>
+        <Link href={legalPath("support", locale)} className="underline-offset-4 hover:underline">{c.support}</Link>
+        <Link href={legalPath("deleteAccount", locale)} className="underline-offset-4 hover:underline">{c.deleteAccount}</Link>
+      </nav>
+    </>
+  );
+}
+
+/** Belge gövdesinin tipografisi — `.legal` sınıfı altında. */
+export function LegalStyles() {
+  return (
       <style>{`
         .legal h2 { font-size: 1.125rem; font-weight: 800; margin: 2rem 0 0.5rem; letter-spacing: -0.01em; }
         .legal h3 { font-size: 1rem; font-weight: 700; margin: 1.25rem 0 0.35rem; }
@@ -114,7 +139,6 @@ export function LegalShell({ title, summary, children, doc, locale = "tr" }: {
         .legal .entity dt { font-weight: 700; font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.04em; margin-top: 0.5rem; }
         .legal .entity dd { margin: 0.1rem 0 0; font-size: 0.95rem; }
       `}</style>
-    </div>
   );
 }
 

@@ -807,6 +807,8 @@ export const deBase: Record<string, string> = {
   "settings.not_sure_take_placement_test": "Unsicher? Mach den Einstufungstest →",
   "settings.privacy": "DATENSCHUTZ",
   "settings.privacy_policy": "Datenschutzerklärung",
+  "settings.support_contact": "Support und Kontakt",
+  "settings.support_contact_sub": "Schreib uns — jede Nachricht liest ein Mensch.",
   "settings.display_name": "Anzeigename",
   "settings.appearance": "DARSTELLUNG",
   "settings.daily_goal_reviews_day": "TAGESZIEL · Wiederholungen / Tag",

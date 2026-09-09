@@ -670,6 +670,7 @@ export const deWeb: Record<string, string> = {
   "land.footer_source": "Wortquelle: ein themenbasierter Satz für GER A1–C1.",
   "land.footer_gsw": "Der Zürich-Kurs ist dieselbe Liste auf Züritüütsch (vereinfachte Schreibung nach Dieth).",
   "land.delete_account": "Konto löschen",
+  "land.support": "Support",
   "vis.public": "Öffentlich",
   "vis.public_sub": "Profil und Meilensteine sind für alle sichtbar",
   "vis.friends": "Freunde",

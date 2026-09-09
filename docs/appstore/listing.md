@@ -472,7 +472,7 @@ görüntüsünü Almanca vitrine koymak 2.3.3'e takılır.
 | Primary Category | Education |
 | Secondary Category | Reference |
 | Copyright | `2026 [[YAYINCI_ADI]]` — `LEGAL_ENTITY.publisherName` ile aynı |
-| Support URL | `[[SITE]]/` (destek e-postası sayfada görünür) |
+| Support URL | `[[SITE]]/support` — **zorunlu**; destek adresi, yanıt süresi ve kanallar orada |
 | Marketing URL | `[[SITE]]` (isteğe bağlı) |
 | Privacy Policy URL | `[[SITE]]/privacy` — **zorunlu** |
 | Uygulama içi satın alma | Bugün **yok**; premium açılınca ürünler Connect'te tanımlanır |
