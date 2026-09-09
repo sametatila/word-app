@@ -760,3 +760,61 @@ ilerleme paneli, ilk kelimeler ve ilerleme grafiği. Taban 185 → 180.
 | 5 | `monow.*` dört anahtarı | **bitti** — `item.mono_*`a çekildi |
 | 6 | Yapabildiklerim / Yazılarım geniş ekranda | **bitti** — `CardGrid`, `CardGrid` artık `as` alıyor |
 | 7 | Mobilde `rounds.tsx` sabit Türkçesi | **bitti** — `rounds.match_first_try` |
+
+---
+
+## 11. Tasarım turu — ölçü ölçü karşılaştırma (10 Eyl)
+
+Önceki turlar bilgi mimarisine ve metne bakmıştı; bu tur ÖLÇÜLERE baktı:
+belirteçler, kabuk, bileşen ölçüleri ve tur yönergeleri. Yöntem aynı — iki
+tarafın kaynağı yan yana okundu, fark bulunca ölçüldü.
+
+### 11.1 Ölçülüp EŞİT çıkanlar
+
+Zemin, yüzey, kenarlık, ayraç, metin rengi, marka rampası (10 basamak), altı
+semantik renk, beş yarıçap, üç gölge basamağı ve tipografi ölçeği (sekiz
+varyant) iki tarafta birebir aynı. Yüzen sekme çubuğunun yarıçapı, iç dolgusu,
+kenarlığı, gölgesi, ikon boyu ve seçili öğesinin yarıçapı da öyle. Şık
+(`option`) kenarlığı ve yarıçapı aynı. iOS'un pencere ve açılış zeminleri
+Android'in `window_bg` / `ic_launcher_background` değerleriyle birebir.
+
+### 11.2 Düzeltilen farklar
+
+| Ne | Fark | Yön |
+|---|---|---|
+| Sönük metin | mobil #8a7866 (4.23) · web #7c6c5d (5.05) | Ölçüm: mobil web'e geçti. Koyu temada ikisi de geçiyordu, orada web mobile geçti |
+| Seçili sekme hapı | web `color-mix(%14)` = #feecde · mobil düz `orange[100]` = #ffe3c4 | Web mobile geçti (`--brand-soft`) |
+| Sekme öğesi dikey dolgu | web 10 · mobil 9 | Web mobile geçti |
+| Başlık seri hapı alfası | web %16 · mobil %13,3 | Web mobile geçti |
+| Seçim çipi | web pill + dolu turuncu · mobil radius 14 + yumuşak zemin | Web mobile geçti; süzgeç hapı `.chip-filter` olarak AYRILDI |
+| Seçili çip yazısı | mobil marka 500 (**2.24**) | Ölçüm: ikisi de marka 800'e (6.13). Yeni belirteç: `onPrimarySoft` / `--on-brand-soft` |
+| `.input` | web'de sınıf kullanılıyor ama TANIMLI DEĞİL | Mobilin ölçüleriyle tanımlandı |
+| Tur yönergesi | web oyunun ADINI yazıyordu, mobil YÖNERGEYİ | On iki oyun mobile geçti |
+
+Çipin yazı tonu bu turun en öğretici kalemi: körlemesine hizalama Android'in
+2.24'lük kontrastını yirmi web yüzeyine taşıyacaktı. Ölçüm yön tayin etti ve
+referans taraf da düzeldi — bu oturumdaki `textMuted` kararıyla aynı çizgi.
+
+### 11.3 Ölçülüp BİLEREK farklı bırakılanlar
+
+- **Sonuç şeridinin kenarlığı.** Mobilde 1,5 px tonlu kenarlık var, web'de yok.
+  Web'in gerekçesi dosyada yazılı: kenarlık şeridi dokunulabilir gösterir,
+  şerit ise bir bildirim. Üstelik bu bileşende referans WEB — mobil kendi
+  yorumunda "Web VerdictBar" diye kaynağı gösteriyor.
+- **Kenar çubuğundaki XP hapı.** Mobilde yok ama o çubuk masaüstüne özgü bir
+  yüzey; mobildeki başlığın gerçek karşılığı (`app-header.tsx`) zaten aynı
+  üçlüyü taşıyor.
+- **Ünite teması ikonları.** Web'in ikon setinde 47 kullanılmayan ikon var
+  (bread, bus, cake…) ve `lesson.icon` alanı İKİ tarafta da uykuda. Asimetri
+  değil, ortak bir uyuyan zemin; temalı Patika için hazırlık gibi duruyor.
+
+### 11.4 Yan bulgular
+
+- Seçim çipi mobilde dört kopya halinde yazılıydı (Ayarlar, Bildirimler, sosyal
+  ortak modül, Sıralama'da satır içi) ve dolguları üç türlüydü;
+  `mobile/src/ui/Chip.tsx` tek yer oldu.
+- Ham metin tarayıcısının sezgisi yalnız Türkçe'ye özgü harfe bakıyordu.
+  Sözlük tabanlı ikinci kural eklendi ve iki platformda 43 ham metin çıkardı
+  (web 36, Android 7). Kural artık iki tarayıcıda da var.
+- `npm run typecheck:scripts` ve `npm run lint` main'de kırmızıydı; ikisi de
+  düzeltildi ve betik derlemesi CI kapısı oldu.
