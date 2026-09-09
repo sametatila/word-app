@@ -61,7 +61,7 @@ export function candoForLesson(lesson: { level: CefrLevel; icon: string; focusId
   return out.filter(isCandoId);
 }
 
-const SKILL_CODE: Record<SkillId, CandoSkill> = { reading: "RD", listening: "LS", writing: "WR", speaking: "SPK" };
+const SKILL_CODE: Record<SkillId, CandoSkill> = { reading: "RD", listening: "LS", writing: "WR", speaking: "SPK", grammar: "GR" };
 
 /** Tür anahtarı → (seviye başına) ifade numarası; eşleşmezse 1. */
 const GENRE_INDEX: [RegExp, Partial<Record<CandoSkill, Record<CefrLevel, number>>>][] = [
@@ -77,9 +77,18 @@ const GENRE_INDEX: [RegExp, Partial<Record<CandoSkill, Record<CefrLevel, number>
   [/ses çalışması/i, { SPK: { A1: 6, A2: 6, B1: 6, B2: 6, C1: 4 } }],
 ];
 
-export function candoForExercise(ex: { skill: SkillId; level: CefrLevel; genre: string; cando?: string[] }): string[] {
+export function candoForExercise(ex: { skill: SkillId; level: CefrLevel; genre: string; cando?: string[]; focus?: string }): string[] {
   if (ex.cando?.length) return ex.cando.filter(isCandoId);
   const code = SKILL_CODE[ex.skill];
+  // Dil bilgisi egzersizi kuralını `focus` alanında adlandırıyor; dersin
+  // `focusId`'sini eşleyen tablo burada da iş görür (aynı kural aileleri).
+  if (ex.skill === "grammar" && ex.focus) {
+    const gr = FOCUS_GR.find(([re]) => re.test(ex.focus!));
+    if (gr) {
+      const id = `${ex.level}.GR.${gr[1][ex.level]}`;
+      if (isCandoId(id)) return [id];
+    }
+  }
   const hit = GENRE_INDEX.find(([re, map]) => re.test(ex.genre) && map[code]);
   const n = hit ? hit[1][code]![ex.level] : 1;
   const id = `${ex.level}.${code}.${n}`;

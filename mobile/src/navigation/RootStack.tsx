@@ -73,7 +73,8 @@ export type RootStackParams = {
   Practice: undefined;
   Cando: undefined;
   Writings: undefined;
-  Item: { id: string; kind: string; title: string };
+  /** `from`: "skills" → bitiş kartı Beceriler'e döner (Patika'ya değil). */
+  Item: { id: string; kind: string; title: string; from?: string };
   /** Sosyal katman: arkadaş merkezi (sekme), herkese açık profil, gelen kutusu, sosyal ayarlar. */
   Friends: { tab?: "friends" | "feed" | "quests" | "requests" | "find" } | undefined;
   User: { username: string };

@@ -12,22 +12,29 @@ export const SKILL_LABELS: Record<SkillId, string> = {
   listening: "Dinleme",
   writing: "Yazma",
   speaking: "Konuşma",
+  grammar: "Dil bilgisi",
 };
 
-// Konuşma bu listede YOK ve bilerek yok: patikada konuşma için ayrı bir düğüm
-// açılmadı, dördüncü beceri dersin kendisinde yaşıyor (ders adımlarının yarıdan
-// fazlası "söyle" adımı, üstüne karşılıklı konuşma fazı). Ayrı bir "Ses
-// çalışması" havuzu bir süre denendi ama yalnız A1 ve B1'de içeriği vardı ve
-// beceri listesinde dersle yarışıyordu. `SkillId` birleşiminde duruyor çünkü
-// sınav kâğıdının Sprechen bölümü hâlâ o adı kullanıyor.
-export const SKILL_ORDER: SkillId[] = ["reading", "listening", "writing"];
+/**
+ * Beceriler sekmesinin bölüm sırası — BEŞ beceri.
+ *
+ * Konuşma bir süre bu listede yoktu: ayrı havuz yalnız A1 ve B1'de içerik
+ * taşıyordu ve Patika'daki dersle yarışıyordu. 2026-09'da Beceriler kendi
+ * kütüphanesini aldı (`content/library/`): öğrenci Patika'nın sırasına bağlı
+ * kalmadan seviye ve beceri seçip çalışıyor. Orada konuşma (söyleyiş drilli ve
+ * monolog) ve dil bilgisi (kural anlatımı + soru) da birer bölüm. Patika'nın
+ * yuvaları değişmedi; o hâlâ okuma/dinleme/yazma yerleştiriyor
+ * (immersion/build.ts).
+ */
+export const SKILL_ORDER: SkillId[] = ["reading", "listening", "writing", "speaking", "grammar"];
 export const LEVEL_ORDER: CefrLevel[] = ["A1", "A2", "B1", "B2", "C1"];
 
 /** Puanlanabilir madde sayısı: soru ya da yazma görevi. */
 export function itemCount(ex: SkillExercise): number {
   if (ex.skill === "writing") return ex.tasks.length;
-  // Konuşma iki biçimde gelir: tek tek söyleyiş görevleri ya da diyalog turları.
+  // Konuşma üç biçimde gelir: söyleyiş görevleri, diyalog turları ya da tek monolog.
   if (ex.skill === "speaking") return "dialogue" in ex ? ex.dialogue.length : "monologue" in ex ? 1 : ex.tasks.length;
+  // Okuma, dinleme ve dil bilgisi: soru sayısı.
   return ex.questions.length;
 }
 

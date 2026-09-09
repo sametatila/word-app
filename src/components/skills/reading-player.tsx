@@ -1,12 +1,14 @@
 "use client";
 
 import { useState } from "react";
+import { useTargetLang } from "./player-context";
 import type { ReadingExercise } from "@/lib/skills/types";
 import { PlayerShell, ResultCard, useSkillFinish } from "./player-shell";
 import { GlossPanel, QuestionList } from "./quiz";
 
 /** Okuma egzersizi: metin + sözlükçe + anlama soruları. */
 export function ReadingPlayer({ exercise, backHref }: { exercise: ReadingExercise; backHref?: string }) {
+  const lang = useTargetLang();
   const { finish, state, reset } = useSkillFinish(exercise, exercise.questions.length);
   const [correct, setCorrect] = useState(0);
   const [round, setRound] = useState(0);
@@ -21,7 +23,7 @@ export function ReadingPlayer({ exercise, backHref }: { exercise: ReadingExercis
           <p
             key={i}
             className={`whitespace-pre-line text-[15px] leading-relaxed ${i > 0 ? "mt-3.5" : ""}`}
-            lang="de"
+            lang={lang}
           >
             {para}
           </p>

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useTargetLang } from "./player-context";
 import { motion } from "framer-motion";
 import type { Gloss, SkillQuestion } from "@/lib/skills/types";
 import { GlossEntry } from "./gloss-entry";
@@ -153,6 +154,7 @@ function WrittenInput({
   done: boolean;
   onSettle: (ok: boolean) => void;
 }) {
+  const lang = useTargetLang();
   const [typed, setTyped] = useState("");
   const accept = q.accept ?? [];
   const ok = done && written(typed, accept);
@@ -183,7 +185,7 @@ function WrittenInput({
             }
           }}
           disabled={done}
-          lang="de"
+          lang={lang}
           spellCheck={false}
           placeholder={kind === "dictation" ? "Duyduğun cümleyi yaz…" : kind === "gapfill" ? "Boşluğa gelen kelime…" : "Kısa cevap (1–5 kelime)…"}
           className="input flex-1 py-2 text-sm"
@@ -198,7 +200,7 @@ function WrittenInput({
       {done && !ok ? (
         <p className="mt-2 text-xs">
           <span className="muted">Doğrusu: </span>
-          <strong lang="de">{accept[0]}</strong>
+          <strong lang={lang}>{accept[0]}</strong>
         </p>
       ) : null}
     </div>
@@ -208,6 +210,7 @@ function WrittenInput({
 /* ───────────── sıralama ───────────── */
 
 function OrderInput({ q, done, onSettle }: { q: SkillQuestion; done: boolean; onSettle: (ok: boolean) => void }) {
+  const lang = useTargetLang();
   const items = q.items ?? [];
   // Sabit karışıklık (dizin tersine + orta çevirme): sunucu ve istemci aynı sırayı üretsin.
   const [order, setOrder] = useState<number[]>(() => {
@@ -240,7 +243,7 @@ function OrderInput({ q, done, onSettle }: { q: SkillQuestion; done: boolean; on
               className={`option flex w-full items-center gap-2 px-3 py-2 text-left text-sm ${picked === pos ? "option-correct" : ""} ${done ? (v === pos ? "option-correct" : "option-wrong") : ""}`}
             >
               <span className="muted w-5 shrink-0 text-xs font-bold">{pos + 1}.</span>
-              <span lang="de">{items[v]}</span>
+              <span lang={lang}>{items[v]}</span>
             </button>
           </li>
         ))}

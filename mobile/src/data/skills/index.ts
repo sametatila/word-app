@@ -15,10 +15,20 @@ export type SkillQuestion = {
   text: string; options: string[]; answer: number; accept?: string[]; items?: string[]; explain: string;
 };
 export type ListeningSegment = { speaker?: string; text: string; audio?: string };
+export type SkillKey = "reading" | "listening" | "writing" | "speaking" | "grammar";
+/**
+ * Web'deki `SkillExercise` birleşiminin düz (gevşek) mobil karşılığı: paket
+ * JSON ve alanlar beceriye göre dolu/boş. Beceriler kütüphanesiyle (2026-09)
+ * gelen alanlar: `course`, `focus` + `explanation` (dil bilgisi), `monologue`
+ * (konuşma, B1+), `tasks` (yazma görevleri ya da söyleyiş cümleleri).
+ */
 export type SkillExercise = {
-  id: string; level: string; skill: "reading" | "listening" | "writing" | "speaking";
+  id: string; level: string; skill: SkillKey; course?: string;
   title: string; genre: string; intro: string; gloss: Gloss[]; minutes: number; unit?: number;
   text?: string; segments?: ListeningSegment[]; questions?: SkillQuestion[]; tasks?: unknown[];
+  focus?: string;
+  explanation?: { heading?: string; tr: string; examples?: { de: string; tr: string; note?: string }[] }[];
+  monologue?: { promptTr: string; bulletsTr: string[]; targets: Gloss[]; minSeconds: number; maxSeconds: number; sampleDe: string; rubricHint?: string };
 };
 
 const ALL = all as SkillExercise[];
@@ -30,8 +40,9 @@ const ALL_EN = allEn as SkillExercise[];
  * ("en-a1-r1") — aynı id iki kursta birden var olsaydı tek bir dizin ikisini
  * birbirine karıştırırdı. Dersler zaten kurs önekli, beceriler de öyle kalmalı.
  *
- * İngilizce bugün yalnız A1 okuma; dinleme ve yazma slotları havuz boş olduğu
- * için "Yakında" gösterir (Almancada da geç ünitelerde öyle).
+ * İngilizce paketi 2026-09'dan beri web'den dökülüyor (tek kaynak
+ * `src/lib/skills/content/library/`): A1/A2'nin 64 egzersizi ve her seviyenin
+ * kütüphane egzersizleri orada.
  */
 const BY_COURSE: Record<string, SkillExercise[]> = { de: ALL, en: ALL_EN };
 
@@ -75,7 +86,7 @@ function metaOf(e: SkillExercise): SkillMeta {
 
 function listMeta(
   level: string,
-  skill: "reading" | "listening" | "writing" | "speaking",
+  skill: SkillKey,
   course: string,
   keep: (e: SkillExercise) => boolean,
 ): SkillMeta[] {
@@ -85,7 +96,7 @@ function listMeta(
 /** Patika üretici havuzu — yalnız bir üniteye bağlı egzersizler. */
 export function listPathSkillMeta(
   level: string,
-  skill: "reading" | "listening" | "writing" | "speaking",
+  skill: SkillKey,
   course: string = currentCourseId(),
 ): SkillMeta[] {
   return listMeta(level, skill, course, (e) => e.unit != null);
@@ -94,7 +105,7 @@ export function listPathSkillMeta(
 /** Beceriler sekmesi — yalnız Patika'da yeri olmayan, sekmenin kendi egzersizleri. */
 export function listOwnSkillMeta(
   level: string,
-  skill: "reading" | "listening" | "writing" | "speaking",
+  skill: SkillKey,
   course: string = currentCourseId(),
 ): SkillMeta[] {
   return listMeta(level, skill, course, (e) => e.unit == null);

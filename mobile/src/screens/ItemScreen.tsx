@@ -8,10 +8,11 @@ import { Card } from "../ui/Card";
 import { PressableScale } from "../ui/PressableScale";
 import { Mascot } from "../ui/Mascot";
 import { Celebrate } from "../ui/Celebrate";
-import { XIcon, ReadIcon, ListenIcon, WriteIcon, MicIcon, SpeakerIcon } from "../ui/icons";
+import { XIcon, ReadIcon, ListenIcon, WriteIcon, MicIcon, SpeakerIcon, GrammarIcon } from "../ui/icons";
 import { KIND_KEY, type ItemKind } from "../data/unit";
 import { getExercise, type ListeningSegment } from "../data/skills";
 import { QuestionList, GlossPanel, WritingList, type WritingTask } from "../game/skillQuiz";
+import { GrammarBody, SpeakingDrill, MonologueBody, type SpeakingTask } from "../game/skillLibrary";
 import { markItemDone } from "../game/lessonProgress";
 import { speakTarget } from "../lib/tts";
 import { API_BASE } from "../api/client";
@@ -23,9 +24,9 @@ import { sfx } from "../lib/sfx";
 
 const KIND_ICON: Record<string, (p: { color: string; size: number }) => React.ReactElement> = {
   read: (p) => <ReadIcon {...p} />, listen: (p) => <ListenIcon {...p} />, write: (p) => <WriteIcon {...p} />,
-  speak: (p) => <MicIcon {...p} />,
+  speak: (p) => <MicIcon {...p} />, grammar: (p) => <GrammarIcon {...p} />,
 };
-const KIND_TINT: Record<string, keyof Palette> = { read: "info", listen: "accent", write: "success", speak: "primary" };
+const KIND_TINT: Record<string, keyof Palette> = { read: "info", listen: "accent", write: "success", speak: "primary", grammar: "streak" };
 
 /** Okuma metni — paragraflar \n\n ile ayrılır (web reading-player gibi). */
 function ReadingText({ text, colors }: { text: string; colors: Palette }) {
@@ -93,7 +94,8 @@ export function ItemScreen() {
   const tint = colors[(KIND_TINT[kind] ?? "primary")] as string;
   const Icon = KIND_ICON[kind];
 
-  async function recordAndFinish(c: number) {
+  /** `score`: monologda rubrik puanı (0–100); verilmezse sunucu doğru/toplam oranını yazar. */
+  async function recordAndFinish(c: number, score?: number) {
     setCorrect(c);
     setFinished(true);
     setTimeout(() => sfx("finish"), 600); // son cevabın sesinden sonra tamamlanma sesi
@@ -103,7 +105,7 @@ export function ItemScreen() {
     try {
       await fetch(`${API_BASE}/api/skills`, {
         method: "POST", headers: { "content-type": "application/json" },
-        body: JSON.stringify({ id: exercise.id, correct: c, day: todayStr(), seconds: Math.round((Date.now() - startedAt.current) / 1000) }),
+        body: JSON.stringify({ id: exercise.id, correct: c, score, day: todayStr(), seconds: Math.round((Date.now() - startedAt.current) / 1000) }),
       });
     } catch { /* çevrimdışı: yerel işaret yeterli */ }
   }
@@ -125,11 +127,17 @@ export function ItemScreen() {
     );
   }
 
+  // Konuşma iki biçim: söyleyiş drilli (`tasks`, her biri bir cümle) ya da
+  // monolog (`monologue`, tek görev). Dil bilgisi okuma gibi soru sayar.
+  const drillTasks = exercise.skill === "speaking" && !exercise.monologue ? ((exercise.tasks ?? []) as SpeakingTask[]) : null;
   const total =
     exercise.skill === "writing"
       ? (exercise.tasks?.length ?? 0)
-      : (exercise.questions?.length ?? 0);
+      : exercise.skill === "speaking"
+        ? (drillTasks ? drillTasks.length : 1)
+        : (exercise.questions?.length ?? 0);
   const pct = total ? Math.round((correct / total) * 100) : 100;
+  const fromSkills = params.from === "skills";
 
   return (
     <View style={{ flex: 1, backgroundColor: colors.bg }}>
@@ -151,6 +159,9 @@ export function ItemScreen() {
 
         {exercise.skill === "reading" && exercise.text ? <ReadingText text={exercise.text} colors={colors} /> : null}
         {exercise.skill === "listening" && exercise.segments ? <ListeningBody segments={exercise.segments} colors={colors} /> : null}
+        {exercise.skill === "grammar" && exercise.explanation ? (
+          <GrammarBody focus={exercise.focus ?? ""} blocks={exercise.explanation} colors={colors} />
+        ) : null}
 
         <GlossPanel gloss={exercise.gloss} colors={colors} />
 
@@ -161,6 +172,15 @@ export function ItemScreen() {
             <AiNotice variant="output" style={{ marginBottom: spacing.md }} />
             <WritingList key={round} tasks={(exercise.tasks ?? []) as WritingTask[]} onAllDone={recordAndFinish} colors={colors} />
           </>
+        ) : exercise.skill === "speaking" && exercise.monologue ? (
+          // Monolog: metin sunucuda rubrikle puanlanıyor (ses gitmiyor).
+          <>
+            <AiNotice variant="output" style={{ marginBottom: spacing.md }} />
+            <MonologueBody key={round} mono={exercise.monologue} level={exercise.level} exerciseId={exercise.id}
+              onDone={(ok, score) => recordAndFinish(ok ? 1 : 0, score)} colors={colors} />
+          </>
+        ) : drillTasks ? (
+          <SpeakingDrill key={round} tasks={drillTasks} onAllDone={recordAndFinish} colors={colors} />
         ) : (
           <QuestionList key={round} questions={exercise.questions ?? []} onAllAnswered={recordAndFinish} colors={colors} />
         )}
@@ -169,14 +189,14 @@ export function ItemScreen() {
           <Card padded style={{ marginTop: spacing.lg, alignItems: "center", gap: spacing.sm }}>
             <Celebrate show={pct >= 70} />
             <Mascot mood={pct >= 70 ? "celebrate" : pct >= 40 ? "happy" : "idle"} size={84} />
-            <Text variant="h2">{exercise.skill === "writing" ? t("item.tasks_done") : t("common.n_correct", { correct: correct, total: total })}</Text>
-            {exercise.skill !== "writing" ? <Text variant="caption" color={colors.textMuted}>{t("item.score_pct", { pct })}</Text> : null}
+            <Text variant="h2">{exercise.skill === "writing" || exercise.monologue ? t("item.tasks_done") : t("common.n_correct", { correct: correct, total: total })}</Text>
+            {exercise.skill !== "writing" && !exercise.monologue ? <Text variant="caption" color={colors.textMuted}>{t("item.score_pct", { pct })}</Text> : null}
             <View style={{ flexDirection: "row", gap: spacing.sm, alignSelf: "stretch", marginTop: spacing.sm }}>
               <PressableScale onPress={retry} style={{ flex: 1, backgroundColor: colors.surface2, borderRadius: radii.lg, paddingVertical: 14, alignItems: "center" }}>
                 <Text variant="bodyStrong" color={colors.text}>{t("item.try_again")}</Text>
               </PressableScale>
               <PressableScale onPress={() => nav.goBack()} style={[{ flex: 1, backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: 14, alignItems: "center" }, softShadow(colors.primary, 10)]}>
-                <Text variant="bodyStrong" color={colors.onPrimary}>{t("item.back_to_path")}</Text>
+                <Text variant="bodyStrong" color={colors.onPrimary}>{t(fromSkills ? "item.back_to_skills" : "item.back_to_path")}</Text>
               </PressableScale>
             </View>
           </Card>

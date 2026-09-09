@@ -114,15 +114,27 @@ function checkSkills(list: SkillExercise[]) {
     // (hiçbiri Almancada geçmez).
     if (!TR_HINT.test(e.intro) && /[ßÄÖÜäöü]/.test(e.intro) && !/„|"/.test(e.intro)) W(w, "intro Türkçe olmalı; Almanca harf var");
 
+    // İngilizce kursta hedef dil zaten İngilizce: `en` alanı ayırt edici değil,
+    // gereksiz; aranmaz. Sözlükçe kapsaması da Almanca morfolojisiyle değil
+    // düz küçük harf aramasıyla yapılır (İngilizce çekim ekleri kısa: -s, -ed, -ing).
+    const english = e.course === "en";
     const text =
-      e.skill === "reading" ? e.text : e.skill === "listening" ? e.segments.map((s) => s.text).join(" ") : "";
+      e.skill === "reading"
+        ? e.text
+        : e.skill === "listening"
+          ? e.segments.map((s) => s.text).join(" ")
+          : e.skill === "grammar"
+            ? [...e.explanation.flatMap((b) => (b.examples ?? []).map((x) => x.de)), ...e.questions.flatMap((q) => [q.text, ...(q.options ?? []), ...(q.accept ?? []), ...(q.items ?? [])])].join(" ")
+            : "";
+    const inText = (word: string) =>
+      english ? text.toLowerCase().includes(word.toLowerCase().replace(/^(to|the|a|an) /, "").split(" (")[0]) : contains(text, word);
     for (const g of e.gloss ?? []) {
       if (!g.de?.trim() || !g.tr?.trim()) E(w, `gloss eksik: ${JSON.stringify(g)}`);
       if (multi(g.tr)) W(w, `çok anlamlı tr: ${g.de} → "${g.tr}"`);
-      if (!g.en) W(w, `en yok: ${g.de}`);
+      if (!g.en && !english) W(w, `en yok: ${g.de}`);
       if (g.en && TR_LETTER.test(g.en)) E(w, `en alanında Türkçe harf: ${g.de} → "${g.en}"`);
       if (/[()[\]]/.test(g.tr)) W(w, `parantezli tr: ${g.de} → "${g.tr}"`);
-      if (text && !/[…/,]/.test(g.de) && !contains(text, g.de)) W(w, `sözlükçe kelimesi metinde yok: "${g.de}"`);
+      if (text && !/[…/,]/.test(g.de) && !inText(g.de)) W(w, `sözlükçe kelimesi metinde yok: "${g.de}"`);
     }
 
     if (e.skill === "reading") {
@@ -137,7 +149,25 @@ function checkSkills(list: SkillExercise[]) {
         if (trLetters(s.text)) E(w, `dinleme bölümünde Türkçe harf: "${s.text.slice(0, 40)}"`);
       }
     }
-    if (e.skill === "reading" || e.skill === "listening") {
+    if (e.skill === "grammar") {
+      // Kütüphane dil bilgisi egzersizi (2026-09): önce anlatım, sonra soru.
+      if (!e.focus?.trim()) E(w, "grammar: focus boş");
+      if (!e.explanation?.length || e.explanation.length > 5) E(w, `grammar: ${e.explanation?.length ?? 0} anlatım bloğu (1–5)`);
+      let ornek = 0;
+      for (const b of e.explanation ?? []) {
+        if (!b.tr?.trim()) E(w, "grammar: anlatım bloğunun tr'si boş");
+        if (!TR_HINT.test(b.tr) && /[ßÄÖÜäöü]/.test(b.tr) && !/„|"/.test(b.tr)) W(w, "grammar: anlatım Türkçe olmalı");
+        for (const x of b.examples ?? []) {
+          ornek++;
+          if (!x.de?.trim() || !x.tr?.trim()) E(w, `grammar: örnek eksik ${JSON.stringify(x)}`);
+          if (x.de && trLetters(x.de)) E(w, `grammar: örnekte Türkçe harf "${x.de}"`);
+        }
+      }
+      if (ornek < 3) W(w, `grammar: ${ornek} örnek (< 3)`);
+      if (e.questions.length < 6 || e.questions.length > 12) W(w, `grammar: ${e.questions.length} soru (6–12)`);
+      if (e.unit != null) E(w, "grammar: kütüphane egzersizinde unit olmamalı");
+    }
+    if (e.skill === "reading" || e.skill === "listening" || e.skill === "grammar") {
       if (e.questions.length < 3) W(w, `${e.questions.length} soru (< 3)`);
       e.questions.forEach((q, i) => {
         const qw = `${w} soru ${i + 1}`;
@@ -164,6 +194,19 @@ function checkSkills(list: SkillExercise[]) {
       // WP-31 kabul ölçütü: üretim/gapfill soruları — henüz pilot; eksikse uyarı.
       const written = e.questions.filter((q) => ["gapfill", "short_answer", "dictation", "order", "produce"].includes(q.kind ?? "mcq")).length;
       if (written < 2) W(w, `çoktan seçmeli olmayan soru ${written} (< 2)`);
+    }
+    // Kütüphane kimliği: kurs-seviye-lib-becerin. Yanlış önek Patika'ya ya da
+    // eski Beceriler kimliklerine karışırdı; kimlik kalıcı olduğu için baştan doğru.
+    if (e.id.includes("-lib-")) {
+      const m = /^(de|en|gsw-zh)-([abc][12])-lib-([rlwsg])\d+$/.exec(e.id);
+      if (!m) E(w, "kütüphane kimliği biçimi: <kurs>-<seviye>-lib-<r|l|w|s|g><n>");
+      else {
+        if (m[2].toUpperCase() !== e.level) E(w, `kütüphane kimliği seviyesi (${m[2]}) egzersiz seviyesiyle (${e.level}) uyuşmuyor`);
+        if ((e.course ?? "de") !== m[1]) E(w, `kütüphane kimliği kursu (${m[1]}) egzersiz kursuyla (${e.course ?? "de"}) uyuşmuyor`);
+        const harf: Record<string, string> = { reading: "r", listening: "l", writing: "w", speaking: "s", grammar: "g" };
+        if (harf[e.skill] !== m[3]) E(w, `kütüphane kimliği beceri harfi (${m[3]}) ${e.skill} ile uyuşmuyor`);
+      }
+      if (e.unit != null) E(w, "kütüphane egzersizinde unit olmamalı (Patika'ya sızar)");
     }
     if (e.skill === "writing") {
       if (!e.tasks.length) E(w, "yazma görevi yok");

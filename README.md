@@ -19,9 +19,12 @@ uygulama gibi tam ekran açılır (PWA).
   bir şey ölçer: tanıma, üretim, söz dizimi (Cümleyi Diz), çoğul biçim (Çoğul Bilmece), dinleme
   (Kulaktan Tanı) ve hızlı ikili karar (Doğru mu Yanlış mı). Aynı oyun üç tur boyunca tekrarlanmaz
   ve oturumda az çıkan oyun öne alınır.
-- **Beceriler bölümü (`/skills`):** her kursta A1–C1 için okuma, dinleme ve yazma alıştırmaları —
-  metin, sözlükçe (gloss), çoktan seçmeli sorular ve gerekçeli açıklamalar; yazmada önce cümle
-  kurma, sonra kontrol listeli serbest yazı ve örnek çözüm.
+- **Beceriler bölümü (`/skills`):** Patika'dan bağımsız **kütüphane** — öğrenci seviyesini ve
+  becerisini kendi seçer. Her kursta A1–C1 için beş beceri: okuma, dinleme, yazma, konuşma
+  (A1–A2 söyleyiş drilli, B1–C1 monolog) ve dil bilgisi (kural anlatımı + soru). Her soruda
+  gerekçe, yazma ve monologda rubrik puanı, hub'da "sıradaki" önerisi ve son puan. İçerik
+  `src/lib/skills/content/library/` altında, ünitesiz; Patika bu havuza dokunmaz
+  (bkz. `docs/plan/90-beceri-kutuphanesi.md`).
 - **Ders içi rol yapma:** serbest sohbet bölümü kaldırıldı; yerine her dersin sonundaki
   konuşma fazı geçti (`/api/roleplay`). Fark tek kelimede: **amaç**. Sohbette model her şeye
   cevap veriyordu ve konuşmanın nereye gideceği belirsizdi — boş sayfa serbest sohbetin en
@@ -140,7 +143,7 @@ cp .env.example .env            # DATABASE_URL'i yerel ya da sunucu Postgres'ten
 npm run db:push                 # tabloları oluştur
 npm run db:seed                 # Almanca kursu: 7.392 kelime + örnek cümle çevirileri
 npm run db:seed:zurich          # Zürih kursu: 7.392 Züritüütsch madde
-npm run db:seed:skills          # beceri alıştırmaları (iki kurs, A1–C1)
+npm run db:seed:skills          # beceri alıştırmaları (Patika üniteleri + Beceriler kütüphanesi, üç kurs)
 npm run dev                     # http://localhost:3000
 ```
 

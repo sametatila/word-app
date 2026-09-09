@@ -15,10 +15,10 @@ import { join } from "node:path";
 import { BUNDLED_EXERCISES } from "../src/lib/skills/bundled";
 
 const course = (process.argv[2] ?? "de").toLowerCase();
-// Konuşma 2026-09'da eklendi: A1 için 8 ses çalışması var ve mobilde artık
-// oynatıcısı da var (ItemScreen konuşma dalı, native STT ile). Daha önce
-// dışlanıyordu çünkü mobilde çalacak yer yoktu.
-const SKILLS = ["reading", "listening", "writing", "speaking"];
+// Beş beceri: konuşma ve dil bilgisi Beceriler kütüphanesiyle (2026-09)
+// geldi ve mobilde ItemScreen'de oynatıcıları var. Süzgeç yine de duruyor:
+// tanınmayan bir beceri pakete girip mobilde boş ekran açmasın.
+const SKILLS = ["reading", "listening", "writing", "speaking", "grammar"];
 const keep = BUNDLED_EXERCISES.filter(
   (e) => ((e as { course?: string }).course ?? "de") === course && SKILLS.includes(e.skill),
 );

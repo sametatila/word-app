@@ -2,7 +2,7 @@ import type { CefrLevel } from "@/lib/skills/types";
 import type { Lesson } from "@/lib/lessons/types";
 import { MODULE_SIZE, moduleTheme } from "@/lib/lessons/modules";
 import { lessonsFor } from "@/lib/lessons/index";
-import { listExerciseMeta, type SkillMeta } from "@/lib/skills/index";
+import { listExerciseMeta, pathMetas, type SkillMeta } from "@/lib/skills/index";
 import { hasAuthoredGrammar } from "./content";
 import type { ImmersionItem, ImmersionItemKind, ImmersionTrack, ImmersionUnit } from "./types";
 
@@ -133,7 +133,11 @@ export function buildTrack(input: BuildTrackInput): ImmersionTrack {
 /** DB'den okuyup buildTrack'i çağıran ince sarmalayıcı. */
 export async function loadTrack(course: string, level: CefrLevel): Promise<ImmersionTrack> {
   const lessons = lessonsFor(course).filter((l) => l.level === level);
-  const metas = await listExerciseMeta(course);
+  // Yalnız üniteye bağlı egzersizler: havuz liste sırasıyla tüketiliyor ve
+  // Beceriler kütüphanesinin ünitesiz egzersizleri (2026-09) bu listeye
+  // girseydi, dersleri biten son ünitelerin boş yuvalarına sessizce akardı —
+  // mobil `listPathSkillMeta` aynı süzgeci zaten uyguluyor.
+  const metas = pathMetas(await listExerciseMeta(course));
   const byLevel = metas.filter((m) => m.level === level);
   return buildTrack({
     course,

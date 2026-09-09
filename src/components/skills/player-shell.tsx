@@ -10,6 +10,7 @@ import { recordSkillResult } from "@/lib/skills/progress";
 import { ArrowLeftIcon, FlameIcon, SparkIcon } from "@/components/icons";
 import { Mascot } from "@/components/mascot";
 import { LEVEL_TONE } from "./theme";
+import { usePlayerFrame } from "./player-context";
 
 /** Cihazın yerel gününü verir — istatistikler kullanıcının gününe yazılır. */
 function localDay() {
@@ -97,18 +98,20 @@ export function useSkillFinish(exercise: SkillExercise, total: number) {
 export function PlayerShell({
   exercise,
   children,
-  backHref = "/immersion",
+  backHref,
 }: {
   exercise: SkillExercise;
   children: ReactNode;
-  /** Nereye dönülecek. Patika varsayılan; Beceriler hub'ından gelince /skills. */
+  /** Nereye dönülecek. Verilmezse çerçeve bağlamından (rota sayfası) gelir. */
   backHref?: string;
 }) {
+  const frame = usePlayerFrame();
+  const back = backHref ?? frame.backHref;
   return (
     <div className="mx-auto w-full max-w-2xl">
       <MascotFx />
       <div className="mb-5 flex items-center gap-3">
-        <Link href={backHref} aria-label="Geri dön" className="btn btn-ghost h-9 w-9 shrink-0">
+        <Link href={back} aria-label="Geri dön" className="btn btn-ghost h-9 w-9 shrink-0">
           <ArrowLeftIcon size={18} />
         </Link>
         <div className="min-w-0">
@@ -146,6 +149,7 @@ export function ResultCard({
   onRetry?: () => void;
 }) {
   const ref = useRef<HTMLElement>(null);
+  const frame = usePlayerFrame();
   const visible = state.phase !== "idle";
   // Sonuç sayfanın en altına eklenir; öğrenci görmeden kaçırmasın.
   useEffect(() => {
@@ -195,9 +199,26 @@ export function ResultCard({
       ) : (
         <p className="muted mt-2 text-sm">Kaydediliyor…</p>
       )}
+      {/* Sıradaki: Beceriler kütüphanesinden gelindiyse aynı seviye ve
+          becerideki bitmemiş bir sonraki egzersiz. Öğrenci hub'a dönüp
+          aramasın; "todo" burada, bitirdiği anda. */}
+      {frame.next ? (
+        <Link
+          href={frame.next.href}
+          className="mt-4 flex items-center justify-between gap-3 rounded-xl px-4 py-3 text-left surface-2"
+        >
+          <span className="min-w-0">
+            <span className="muted block text-[11px] font-bold uppercase tracking-wide">Sıradaki</span>
+            <span className="block truncate text-sm font-semibold">{frame.next.title}</span>
+          </span>
+          <span className="shrink-0 text-lg" aria-hidden>
+            →
+          </span>
+        </Link>
+      ) : null}
       <div className="mt-4 flex items-center justify-center gap-3">
-        <Link href="/immersion" className="btn btn-primary px-6 py-3">
-          Patika'ya dön
+        <Link href={frame.backHref} className="btn btn-primary px-6 py-3">
+          {frame.backLabel}
         </Link>
         {onRetry && !perfect ? (
           <button type="button" onClick={onRetry} className="btn btn-ghost px-5 py-3">

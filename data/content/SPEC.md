@@ -6,7 +6,7 @@ Uygulamadaki bütün öğretici içerik kod içinde TypeScript olarak yaşar ve 
 
 | Tür | Tip | Dosya | Kimlik |
 |---|---|---|---|
-| Beceri egzersizi (okuma/dinleme/yazma/konuşma) | `SkillExercise` — `src/lib/skills/types.ts` | `src/lib/skills/content/{a1..c1,zh-*,speaking,dialogue}.ts` → `bundled.ts` | `"a1-r1"`, `"zh-a2-l3"` — kalıcı, değiştirilmez |
+| Beceri egzersizi (okuma/dinleme/yazma/konuşma/dil bilgisi) | `SkillExercise` — `src/lib/skills/types.ts` | Patika üniteleri: `src/lib/skills/content/{a1..c1}-uNN.ts`; Beceriler kütüphanesi (ünitesiz, iki kurs): `content/library/<kurs>-<seviye>.ts` → `bundled.ts` | `"a1-u1-r1"`, `"de-a2-lib-g1"` — kalıcı, değiştirilmez |
 | Ders | `Lesson` — `src/lib/lessons/types.ts` | `src/lib/lessons/content/de-{a1..b1}-bNN.ts` → `index.ts` | `"de-a1-hallo"` |
 | Çevrimdışı rol yapma senaryosu | `DialogueTurn[]` — `src/lib/dialogue.ts` | `src/lib/lessons/content/scripts-*.ts` (ders kimliğiyle) | dersin kimliği |
 | Dilbilgisi sayfası | `CheatSheet` — `src/lib/cheatsheet/types.ts` | `src/lib/cheatsheet/de-{a1..c1}.ts` | `"a1-artikel"` |
@@ -36,6 +36,9 @@ Uygulamadaki bütün öğretici içerik kod içinde TypeScript olarak yaşar ve 
 - Yazma görev türleri (WP-31): `reply` (free + zorunlu `stimulus`), `form` (`facts` Türkçe, `fields[]` 3–8: `label` Almanca alan adı, `answer`, `accept?`), `rewrite` (`prompt` Türkçe yönerge, `source` ≠ `answer`, `alternatives?`, `why?`), `summary` (B1+; `source`, `maxSentences` 1–4, `sample`).
 - Konuşma drill'i: `tasks` ≥ 4, her `de` ≤ 12 kelime; `confusions[].heard` boş değil.
 - Konuşma diyaloğu: `dialogue[].id` benzersiz, her `next` var olan bir tura gider, `fallback.example` boş değil, `targets` ≥ 2.
+- Konuşma monoloğu: `bulletsTr` 3–5, `minSeconds` ≥ 20 < `maxSeconds` ≤ 120, `sampleDe` ≥ 30 kelime, `targets` ≥ 2.
+- Dil bilgisi (`skill: "grammar"`, yalnız kütüphane): `focus` Türkçe tek satır, `explanation[]` 1–5 blok (`tr` Türkçe; `examples[].de` hedef dil, `tr` Türkçe), toplam örnek ≥ 3, `questions[]` 6–12 (okuma/dinlemeyle aynı soru kuralları), `unit` yok.
+- Kütüphane kimliği `<kurs>-<seviye>-lib-<r|l|w|s|g><n>`: kurs, seviye ve beceri harfi egzersizle uyuşur; `unit` yok (Patika'ya sızar). İngilizce kursta (`course: "en"`) `de` alanı hedef dil (İngilizce) metnidir ve sözlükçede `en` aranmaz.
 
 ### Lesson
 - `id` benzersiz, `level`, `course`, `icon` listeden, `title` Almanca, `titleTr`/`summary` Türkçe, `minutes` 3–20, `focusId` boş değil.

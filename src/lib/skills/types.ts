@@ -1,14 +1,24 @@
 import type { DialogueTurn } from "@/lib/dialogue";
 
 /**
- * Beceri egzersizleri (okuma / dinleme / yazma) içerik modeli.
+ * Beceri egzersizleri (okuma / dinleme / yazma / konuşma / dil bilgisi) içerik modeli.
  *
  * İçerik statiktir ve derlemeye gömülür: veritabanı gerektirmez, PWA'da
- * çevrimdışı çalışır. Metinler Almanca, yönergeler ve açıklamalar Türkçe;
- * sorular sınav geleneğine uygun olarak Almanca sorulur.
+ * çevrimdışı çalışır. Metinler hedef dilde, yönergeler ve açıklamalar Türkçe;
+ * sorular sınav geleneğine uygun olarak hedef dilde sorulur.
+ *
+ * İKİ HAVUZ, TEK TİP. `unit` alanı dolu egzersiz bir Patika ünitesine aittir
+ * ve Patika onu sırayla yerleştirir. `unit` alanı BOŞ egzersiz Beceriler
+ * sekmesinin kendi kütüphanesidir (`content/library/`): öğrenci seviyesini ve
+ * becerisini kendi seçer, sıra yoktur. İki havuz birbirinin egzersizini
+ * göstermez (bkz. `isLibraryExercise`, `immersion/build.ts`).
+ *
+ * Alan adı `de` HEDEF DİL metnini taşır, kurs Almanca olmasa da: İngilizce
+ * kursta `gloss[].de` İngilizce kelimedir. Tarihsel ad; kolonu yeniden
+ * adlandırmak 900 egzersizi ve mobil paketi birlikte kırardı.
  */
 
-export type SkillId = "reading" | "listening" | "writing" | "speaking";
+export type SkillId = "reading" | "listening" | "writing" | "speaking" | "grammar";
 export type CefrLevel = "A1" | "A2" | "B1" | "B2" | "C1";
 
 /**
@@ -311,8 +321,58 @@ export type SpeakingMonologueExercise = ExerciseBase & {
 };
 export type SpeakingExercise = SpeakingDrillExercise | SpeakingDialogueExercise | SpeakingMonologueExercise;
 
+/**
+ * Dil bilgisi anlatımının bir bloğu: Türkçe açıklama + hedef dilde örnekler.
+ *
+ * Anlatım Türkçe, örnek hedef dilde — ders anlatımındaki segment disipliniyle
+ * aynı: hedef dil cümlesi Türkçe paragrafın içine yazılmaz, `examples`
+ * dizisinde durur (seslendirme ve `lang` işareti oradan doğru çalışır).
+ */
+export type GrammarBlock = {
+  /** Kısa Türkçe alt başlık (isteğe bağlı): "Ne zaman kullanılır?" */
+  heading?: string;
+  /** Türkçe açıklama; Türkçeyle karşıtlık kurarak anlatır. */
+  tr: string;
+  /** Hedef dilde örnekler ve doğal Türkçe karşılıkları. */
+  examples?: { de: string; tr: string; /** Kısa Türkçe not: neyi gösteriyor. */ note?: string }[];
+};
+
+/**
+ * Dil bilgisi egzersizi (Beceriler kütüphanesi, 2026-09).
+ *
+ * Patika'nın gramer adımı derslerden TÜRETİLİYOR (immersion/grammar.ts) ve
+ * bir üniteye bağlı. Buradaki egzersiz bağımsızdır: tek bir kuralı (`focus`)
+ * önce anlatır, sonra aynı soru motoruyla (`SkillQuestion`) sınar. Soru
+ * türleri okuma/dinlemeyle aynı olduğu için hem web hem mobil mevcut
+ * `QuestionList`'i kullanır; yeni bir oynatıcı motoru gerekmez.
+ */
+export type GrammarExercise = ExerciseBase & {
+  skill: "grammar";
+  /** Kuralın adı, Türkçe ve tek satır: "Akkusativ: den / einen". */
+  focus: string;
+  /** Anlatım blokları (2–4). */
+  explanation: GrammarBlock[];
+  /** Kuralı sınayan sorular (6–10); `explain` alanı kuralı yeniden söyler. */
+  questions: SkillQuestion[];
+};
+
 export type SkillExercise =
   | ReadingExercise
   | ListeningExercise
   | WritingExercise
-  | SpeakingExercise;
+  | SpeakingExercise
+  | GrammarExercise;
+
+/** Beceriler kütüphanesinin egzersizi mi (Patika ünitesine bağlı değil)? */
+export function isLibraryExercise(e: { unit?: number }): boolean {
+  return e.unit == null;
+}
+
+/**
+ * Egzersizin hedef dili — oynatıcılar sesi, tanıyıcıyı ve `lang` işaretini
+ * buradan seçer. Kurs alanı boşsa Almanca (tarihsel varsayılan); Zürih kursu
+ * da Almanca tanıyıcı/ses ailesindedir.
+ */
+export function targetLangOf(e: { course?: string }): "de" | "en" {
+  return e.course === "en" ? "en" : "de";
+}

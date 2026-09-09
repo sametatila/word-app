@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useRef, useState } from "react";
+import { useTargetLang } from "./player-context";
 import { motion } from "framer-motion";
 import { glossTitle } from "./gloss-entry";
 import type { WritingExercise, WritingTask } from "@/lib/skills/types";
@@ -154,6 +155,7 @@ function BuildTask({
   seed: string;
   onDone: (ok: boolean) => void;
 }) {
+  const lang = useTargetLang();
   /**
    * Diziliş tohumlu, çünkü bu hesap render sırasında yapılıyor:
    * `Math.random()` ile sunucu bir sıra, tarayıcı başka bir sıra üretiyor ve
@@ -246,13 +248,13 @@ function BuildTask({
       {phase === "correct" ? (
         <p className="mt-3 flex items-start gap-2 text-sm font-semibold text-[color:var(--color-mint)]">
           <CheckIcon size={17} className="mt-0.5 shrink-0" />
-          <span lang="de">{task.answer}</span>
+          <span lang={lang}>{task.answer}</span>
         </p>
       ) : null}
       {phase === "revealed" ? (
         <p className="mt-3 text-sm">
           <span className="muted">Doğrusu:</span>{" "}
-          <strong lang="de">{task.answer}</strong>
+          <strong lang={lang}>{task.answer}</strong>
         </p>
       ) : null}
 
@@ -307,6 +309,7 @@ function FreeTask({
   exerciseId: string;
   onDone: (ok: boolean, score?: number) => void;
 }) {
+  const lang = useTargetLang();
   // Taslak cihazda saklanır: sayfadan çıkıp dönen öğrenci yazdığını kaybetmez.
   // localStorage yalnızca istemcide var; hidrasyon uyuşmazlığı olmasın diye
   // taslak mount sonrasında yüklenir ve yüklenene kadar kayıt yapılmaz.
@@ -364,6 +367,7 @@ function FreeTask({
       answer: { text: text.trim() },
       exerciseId,
       locale: "tr",
+      lang,
     };
   }
 
@@ -422,7 +426,7 @@ function FreeTask({
 
       {task.stimulus ? (
         <blockquote
-          lang="de"
+          lang={lang}
           className="mt-3 rounded-xl border-l-4 px-3.5 py-2.5 text-sm leading-relaxed surface-2"
           style={{ borderColor: "var(--color-brand)" }}
         >
@@ -460,7 +464,7 @@ function FreeTask({
         value={text}
         onChange={(e) => setText(e.target.value)}
         rows={7}
-        lang="de"
+        lang={lang}
         placeholder="Hier schreiben…"
         className="option mt-3 w-full px-3.5 py-3 text-[15px] leading-relaxed outline-none focus:border-[color:var(--color-brand)]"
       />
@@ -518,7 +522,7 @@ function FreeTask({
           {showSample ? "Örnek cevabı gizle" : "Örnek cevabı göster"}
         </button>
         {showSample ? (
-          <div lang="de" className="mt-2 rounded-xl px-3.5 py-3 text-sm leading-relaxed surface-2">
+          <div lang={lang} className="mt-2 rounded-xl px-3.5 py-3 text-sm leading-relaxed surface-2">
             {task.sample.split("\n\n").map((p, i) => (
               <p key={i} className={`whitespace-pre-line ${i > 0 ? "mt-2" : ""}`}>
                 {p}
@@ -583,6 +587,7 @@ function FreeTask({
  * görev "tamam" sayılması için genel puan ≥ 70 (yedekte: kelimeler geçti).
  */
 function SentenceTask({ task, level, onDone }: { task: SentenceTaskData; level: string; onDone: (ok: boolean) => void }) {
+  const lang = useTargetLang();
   const [text, setText] = useState("");
   const [busy, setBusy] = useState(false);
   const [result, setResult] = useState<Assessment | FallbackAssessment | null>(null);
@@ -600,6 +605,7 @@ function SentenceTask({ task, level, onDone }: { task: SentenceTaskData; level: 
       task: { prompt: task.prompt ?? `Bu kelimelerle bir cümle kur: ${task.words.map((w) => w.de).join(", ")}`, targets: task.words.map((w) => w.de) },
       answer: { text: typed },
       locale: "tr",
+      lang,
     };
     const ai = await askAssess(req);
     if (ai.ok) {
@@ -633,7 +639,7 @@ function SentenceTask({ task, level, onDone }: { task: SentenceTaskData; level: 
       <div className="mt-2 flex flex-wrap gap-2">
         {task.words.map((w) => (
           <button key={w.de} type="button" onClick={() => insert((text && !text.endsWith(" ") ? " " : "") + w.de + " ")} disabled={Boolean(result)} className="chip px-3 py-1.5 text-sm" title={w.tr}>
-            <strong lang="de">{w.de}</strong>
+            <strong lang={lang}>{w.de}</strong>
             <span className="muted ml-1.5 text-xs">{w.tr}</span>
           </button>
         ))}
@@ -652,7 +658,7 @@ function SentenceTask({ task, level, onDone }: { task: SentenceTaskData; level: 
             value={text}
             onChange={(e) => setText(e.target.value)}
             rows={3}
-            lang="de"
+            lang={lang}
             spellCheck={false}
             placeholder="Almanca bir cümle yaz…"
             className="card mt-3 min-h-20 w-full resize-none px-4 py-3 text-base outline-none"
@@ -694,6 +700,7 @@ function fieldOk(typed: string, answer: string, accept: string[] = []): boolean 
  * yere koymak. Alanların ≥ %70'i doğruysa görev tamam.
  */
 function FormTask({ task, onDone }: { task: FormTaskData; onDone: (ok: boolean) => void }) {
+  const lang = useTargetLang();
   const [values, setValues] = useState<string[]>(() => task.fields.map(() => ""));
   const [checked, setChecked] = useState(false);
   const results = task.fields.map((f, i) => fieldOk(values[i], f.answer, f.accept));
@@ -707,14 +714,14 @@ function FormTask({ task, onDone }: { task: FormTaskData; onDone: (ok: boolean) 
       <div className="mt-3 space-y-2">
         {task.fields.map((f, i) => (
           <label key={f.label} className="block">
-            <span className="muted text-xs font-semibold" lang="de">{f.label}</span>
+            <span className="muted text-xs font-semibold" lang={lang}>{f.label}</span>
             <div className="mt-0.5 flex items-center gap-2">
               <input
                 type="text"
                 value={values[i]}
                 onChange={(e) => setValues(values.map((v, j) => (j === i ? e.target.value : v)))}
                 disabled={checked}
-                lang="de"
+                lang={lang}
                 spellCheck={false}
                 className="input flex-1 py-2 text-sm"
                 style={checked ? { borderColor: results[i] ? "var(--color-mint)" : "var(--color-rose)" } : undefined}
@@ -723,7 +730,7 @@ function FormTask({ task, onDone }: { task: FormTaskData; onDone: (ok: boolean) 
                 results[i] ? (
                   <CheckIcon size={16} className="shrink-0 text-[color:var(--color-mint)]" />
                 ) : (
-                  <span className="shrink-0 text-xs" lang="de">
+                  <span className="shrink-0 text-xs" lang={lang}>
                     <span className="muted">doğrusu: </span>
                     <strong>{f.answer}</strong>
                   </span>
@@ -759,6 +766,7 @@ function FormTask({ task, onDone }: { task: FormTaskData; onDone: (ok: boolean) 
  * yanlış biçim geçmez; fark vurgusu + gerekçe drill'le aynı dilde.
  */
 function RewriteTask({ task, onDone }: { task: RewriteTaskData; onDone: (ok: boolean) => void }) {
+  const lang = useTargetLang();
   const [text, setText] = useState("");
   const [match, setMatch] = useState<SentenceMatch | null>(null);
   const ok = match ? match.verdict === "exact" || match.verdict === "spelling" : false;
@@ -766,7 +774,7 @@ function RewriteTask({ task, onDone }: { task: RewriteTaskData; onDone: (ok: boo
     <section className="card mt-4 p-5">
       <p className="text-xs font-bold uppercase tracking-wide text-[color:var(--color-brand)]">Yeniden yaz</p>
       <p className="mt-1.5 text-sm font-semibold leading-relaxed">{task.prompt}</p>
-      <p className="mt-2 rounded-xl px-3 py-2 text-base font-semibold surface-2" lang="de">
+      <p className="mt-2 rounded-xl px-3 py-2 text-base font-semibold surface-2" lang={lang}>
         {task.source}
       </p>
       {match ? (
@@ -799,7 +807,7 @@ function RewriteTask({ task, onDone }: { task: RewriteTaskData; onDone: (ok: boo
               }
             }}
             rows={2}
-            lang="de"
+            lang={lang}
             spellCheck={false}
             placeholder="Cümleyi yeni biçimiyle yaz…"
             className="card mt-3 min-h-16 w-full resize-none px-4 py-3 text-base outline-none"

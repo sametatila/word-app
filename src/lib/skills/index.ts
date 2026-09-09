@@ -1,8 +1,8 @@
 import "server-only";
-import { asc, eq } from "drizzle-orm";
+import { asc, eq, sql } from "drizzle-orm";
 import { db } from "@/lib/db";
 import { skillExercises } from "@/lib/db/schema";
-import type { CefrLevel, SkillExercise, SkillId } from "./types";
+import { isLibraryExercise, type CefrLevel, type SkillExercise, type SkillId } from "./types";
 import { itemCount } from "./meta";
 import { BUNDLED_EXERCISES } from "./bundled";
 
@@ -33,6 +33,13 @@ export type SkillMeta = {
   genre: string;
   minutes: number;
   items: number;
+  /**
+   * Patika ünitesi (1 tabanlı) ya da null. İki havuzun ayrımı bu alandan
+   * yapılıyor: Patika yalnız üniteli egzersizi yerleştirir, Beceriler yalnız
+   * ünitesiz olanı listeler. Veritabanı yolunda jsonb'den okunur; tablo
+   * satırında ayrı sütun yok ve olması da gerekmiyor.
+   */
+  unit: number | null;
 };
 
 function toMeta(e: SkillExercise): SkillMeta {
@@ -44,7 +51,18 @@ function toMeta(e: SkillExercise): SkillMeta {
     genre: e.genre,
     minutes: e.minutes,
     items: itemCount(e),
+    unit: e.unit ?? null,
   };
+}
+
+/** Patika'nın yerleştirdiği havuz: yalnız bir üniteye bağlı egzersizler. */
+export function pathMetas(list: SkillMeta[]): SkillMeta[] {
+  return list.filter((m) => m.unit != null);
+}
+
+/** Beceriler kütüphanesi: Patika'da yeri olmayan, öğrencinin kendi seçtiği egzersizler. */
+export function libraryMetas(list: SkillMeta[]): SkillMeta[] {
+  return list.filter((m) => m.unit == null);
 }
 
 export async function listExerciseMeta(course = "de"): Promise<SkillMeta[]> {
@@ -58,16 +76,19 @@ export async function listExerciseMeta(course = "de"): Promise<SkillMeta[]> {
         genre: skillExercises.genre,
         minutes: skillExercises.minutes,
         items: skillExercises.items,
+        unit: sql<number | null>`(${skillExercises.data}->>'unit')::int`,
       })
       .from(skillExercises)
       .where(eq(skillExercises.course, course))
       .orderBy(asc(skillExercises.level), asc(skillExercises.skill), asc(skillExercises.position));
-    if (rows.length) return rows as SkillMeta[];
+    if (rows.length) return rows.map((r) => ({ ...r, unit: r.unit ?? null })) as SkillMeta[];
   } catch (err) {
     console.error("[skills] liste veritabanından okunamadı, gömülü içerik kullanılıyor", err);
   }
   return BUNDLED_EXERCISES.filter((e) => (e.course ?? "de") === course).map(toMeta);
 }
+
+export { isLibraryExercise };
 
 export async function getExercise(id: string): Promise<SkillExercise | undefined> {
   try {

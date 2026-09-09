@@ -52,7 +52,15 @@ function bodyOf(ex: SkillExercise): string {
   if (ex.skill === "speaking")
     return "tasks" in ex && Array.isArray(ex.tasks)
       ? (ex.tasks as { de?: string }[]).map((t) => t.de ?? "").join(" ")
-      : "";
+      : "monologue" in ex
+        ? `${ex.monologue.sampleDe} ${ex.monologue.targets.map((t) => t.de).join(" ")}`
+        : "";
+  // Dil bilgisi: öğrencinin gördüğü hedef dil yüzeyi örnekler ve sorulardır.
+  if (ex.skill === "grammar")
+    return [
+      ...ex.explanation.flatMap((b) => (b.examples ?? []).map((x) => x.de)),
+      ...ex.questions.flatMap((q) => [q.text, ...(q.options ?? []), ...(q.accept ?? []), ...(q.items ?? [])]),
+    ].join(" ");
   return "";
 }
 
@@ -103,14 +111,31 @@ for (const ex of BUNDLED_EXERCISES as SkillExercise[]) {
   if (!ex.title?.trim()) add(id, "başlık yok", "");
   if (!ex.intro?.trim()) add(id, "yönerge yok", "");
   if (!ex.minutes || ex.minutes < 1) add(id, "süre geçersiz", String(ex.minutes));
-  // Kurs ile id öneki tutarlı olmalı: zh- ile başlayan egzersiz Zürih kursuna ait.
-  const isZh = id.startsWith("zh-");
+  /*
+   * Kimlik iki biçimde geliyor ve ikisi de meşru:
+   *   - Patika ünite içeriği kurs öneksiz ("a2-u3-r1"), Zürih içeriği "zh-" ile.
+   *   - Beceriler kütüphanesi ve İngilizce içerik KURS önekli ("de-a2-lib-r1",
+   *     "en-a1-r1"): aynı seviye kodu iki kursta birden var olduğu için önek
+   *     olmadan kimlikler çakışırdı.
+   * Denetim eskiden yalnız birinci biçimi tanıyordu ve kurs önekli 114
+   * egzersizin hepsi için "seviye id ile uyuşmuyor" diyordu — gerçek bir kusur
+   * değil, tanımadığı bir kalıp.
+   */
   const course = ex.course ?? "de";
-  if (isZh !== (course === "gsw-zh"))
-    add(id, "kurs etiketi tutarsız", `id "${id}" ama course "${course}"`);
-  // Seviye id ile eşleşmeli: "a2-r3" → A2
-  const lvlInId = id.replace(/^zh-/, "").slice(0, 2).toUpperCase();
-  if (lvlInId !== ex.level) add(id, "seviye id ile uyuşmuyor", `id "${id}" ama level "${ex.level}"`);
+  const m = /^(?:(de|en|gsw-zh|zh)-)?([abc][12])\b/i.exec(id);
+  if (!m) {
+    add(id, "kimlik biçimi tanınmıyor", `id "${id}" seviye kodu taşımıyor`);
+  } else {
+    const prefix = (m[1] ?? "").toLowerCase();
+    const idCourse = prefix === "zh" ? "gsw-zh" : prefix || null;
+    if (idCourse && idCourse !== course)
+      add(id, "kurs etiketi tutarsız", `id "${id}" ama course "${course}"`);
+    // Önek yoksa Almanca beklenir; "zh-" Zürih kursunun tarihsel öneki.
+    if (!idCourse && course !== "de")
+      add(id, "kurs etiketi tutarsız", `id "${id}" öneksiz ama course "${course}"`);
+    if (m[2].toUpperCase() !== ex.level)
+      add(id, "seviye id ile uyuşmuyor", `id "${id}" ama level "${ex.level}"`);
+  }
 
   const body = norm(bodyOf(ex));
 
@@ -163,10 +188,18 @@ for (const f of findings) {
   if (!byRule.has(f.rule)) byRule.set(f.rule, []);
   byRule.get(f.rule)!.push(f);
 }
-const byCourse = { de: 0, "gsw-zh": 0 } as Record<string, number>;
-for (const ex of BUNDLED_EXERCISES as SkillExercise[]) byCourse[ex.course ?? "de"]++;
+// Kurs sayacı SABİT iki kursa yazılıydı; İngilizce içerik (2026-09) geldiğinde
+// `byCourse.en` tanımsız olduğu için hiç sayılmıyor ve toplamla özet
+// tutmuyordu. Artık kurslar veriden çıkarılıyor.
+const byCourse: Record<string, number> = {};
+for (const ex of BUNDLED_EXERCISES as SkillExercise[]) {
+  const c = ex.course ?? "de";
+  byCourse[c] = (byCourse[c] ?? 0) + 1;
+}
+const kurslar = Object.entries(byCourse).sort((a, b) => b[1] - a[1]).map(([c, n]) => `${c} ${n}`).join(" · ");
+const kutuphane = (BUNDLED_EXERCISES as SkillExercise[]).filter((e) => e.id.includes("-lib-")).length;
 
-console.log(`${(BUNDLED_EXERCISES as SkillExercise[]).length} egzersiz (de ${byCourse.de} · gsw-zh ${byCourse["gsw-zh"]}) · ${findings.length} bulgu\n`);
+console.log(`${(BUNDLED_EXERCISES as SkillExercise[]).length} egzersiz (${kurslar} · kütüphane ${kutuphane}) · ${findings.length} bulgu\n`);
 for (const [rule, list] of [...byRule.entries()].sort((a, b) => b[1].length - a[1].length)) {
   console.log(`${String(list.length).padStart(4)}  ${rule}`);
   for (const f of list.slice(0, 6)) console.log(`        ${f.id}  ${f.detail}`);

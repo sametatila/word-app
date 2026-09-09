@@ -5,6 +5,7 @@ import { a2 } from "./content/a2";
 import { b1 } from "./content/b1";
 import { b2 } from "./content/b2";
 import { c1 } from "./content/c1";
+import { library } from "./content/library";
 
 /**
  * Repoda yazılan beceri içeriğinin tamamı — tek liste.
@@ -17,9 +18,9 @@ import { c1 } from "./content/c1";
  * o sınır index.ts'in server-only olmasıyla korunur — istemci bileşenleri
  * yalnızca meta.ts'ten sabit alır.
  *
- * Not (2026-08): Konuşma (speaking) becerisi tamamen kaldırıldı — hiç
- * kullanılmıyordu ve LLM koçu (askCoach) hiç çağrılmamıştı. Kalan beceriler:
- * okuma, dinleme, yazma.
+ * Not (2026-08): Ayrı konuşma havuzu kaldırılmıştı (kullanılmıyordu).
+ * 2026-09'da Beceriler kütüphanesiyle geri geldi: konuşma ve dil bilgisi
+ * artık `content/library/` altında, Patika'dan bağımsız.
  */
 
 /*
@@ -38,6 +39,9 @@ const BASE: SkillExercise[] = [
   ...b1,
   ...b2,
   ...c1,
+  // Beceriler kütüphanesi (ünitesiz, iki kurs): Patika bu egzersizleri
+  // görmez (build.ts `pathMetas`), Beceriler yalnız bunları gösterir.
+  ...library,
 ];
 
 /**

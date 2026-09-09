@@ -1,6 +1,7 @@
 "use client";
 
 import { stopSpeaking } from "@/components/speak-button";
+import { localeOf, useTargetLang } from "./player-context";
 import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import type { CefrLevel, ListeningExercise } from "@/lib/skills/types";
@@ -26,6 +27,7 @@ const PITCHES = [1, 1.16, 0.88, 1.3];
  * ayrışır; istenirse yavaş mod ve (önce dinlemeyi teşvik eden) metin açma vardır.
  */
 export function ListeningPlayer({ exercise, backHref }: { exercise: ListeningExercise; backHref?: string }) {
+  const lang = useTargetLang();
   const { finish, state, reset } = useSkillFinish(exercise, exercise.questions.length);
   const [correct, setCorrect] = useState(0);
   const [round, setRound] = useState(0);
@@ -63,8 +65,10 @@ export function ListeningPlayer({ exercise, backHref }: { exercise: ListeningExe
   function makeUtterance(text: string, speaker: string | undefined, slowNow: boolean) {
     const synth = window.speechSynthesis;
     const u = new SpeechSynthesisUtterance(text);
-    u.lang = "de-DE";
-    const voice = synth.getVoices().find((v) => v.lang.startsWith("de")) ?? null;
+    // Hedef dile göre yerel: İngilizce kütüphane egzersizi Almanca sesle
+    // okunmasın. Çerçeve bağlamı rota sayfasından geliyor.
+    u.lang = localeOf(lang);
+    const voice = synth.getVoices().find((v) => v.lang.startsWith(lang)) ?? null;
     if (voice) u.voice = voice;
     u.rate = BASE_RATE[exercise.level] * (slowNow ? 0.78 : 1);
     u.pitch = PITCHES[speakers.indexOf(speaker ?? "") % PITCHES.length];
@@ -273,7 +277,7 @@ export function ListeningPlayer({ exercise, backHref }: { exercise: ListeningExe
             {exercise.segments.map((seg, i) => (
               <p
                 key={i}
-                lang="de"
+                lang={lang}
                 onClick={() => playSegment(i)}
                 role={available ? "button" : undefined}
                 className={`rounded-lg px-2 py-1 text-[15px] leading-relaxed transition-colors ${
