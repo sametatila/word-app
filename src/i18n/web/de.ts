@@ -355,7 +355,7 @@ export const deWeb: Record<string, string> = {
   "weekly.week_n": "Woche {n}",
   "weekly.back_in_queue": "Zurück in der Wiederholung",
   "weekly.all_correct": "Alles richtig — deine gefestigten Wörter sitzen wirklich.",
-  "weekly.once_a_week": "Der Test läuft einmal pro Woche; neue Fragen gibt es am Montag. Den Verlauf gibt es im Profil (bald).",
+  "weekly.once_a_week": "Der Test läuft einmal pro Woche; neue Fragen gibt es am Montag.",
   "weekly.usage_exam": "Anwendungstest",
   "weekly.no_hints": "keine Tipps",
   "challenge.tier_warmup": "Aufwärmen",

@@ -605,7 +605,7 @@ export const tr: Record<string, string> = {
   "onboarding.steady": "Kararlı",
   "onboarding.kisa_turlarla_oyun_gibi_ogren_birk": "İster kelime ister sınava çalış her yerde öğrenebileceğin yol arkadaşın seninle!",
   "onboarding.kisa_yerlestirme_sinavi": "Seviyemi öğrenmek istiyorum",
-  "onboarding.more_languages_are_coming_soon": "Şimdilik Almanca ve İngilizce var, yeni diller yakında eklenecek. Yeni diller keşfetmek istersen sonradan değiştirebilirsin!",
+  "onboarding.languages_available_now": "Şimdilik Almanca ve İngilizce var. Sonradan değiştirebilirsin.",
   "onboarding.min_day": "{n} dk / gün",
   "onboarding.where_shall_we_start": "Nereden başlayalım?",
   "onboarding.welcome_to_lernomi": "Lernomi'ye hoş geldin",

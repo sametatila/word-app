@@ -600,7 +600,7 @@ export const de: Record<string, string> = {
   "onboarding.steady": "Konsequent",
   "onboarding.kisa_turlarla_oyun_gibi_ogren_birk": "Ob Vokabeln oder Prüfungsvorbereitung — dein Lernbegleiter ist überall dabei!",
   "onboarding.kisa_yerlestirme_sinavi": "Ich möchte mein Niveau erfahren",
-  "onboarding.more_languages_are_coming_soon": "Weitere Sprachen kommen bald. Du kannst später jederzeit wechseln, wenn du Lust auf etwas Neues hast!",
+  "onboarding.languages_available_now": "Zurzeit gibt es Deutsch und Englisch. Du kannst später wechseln.",
   "onboarding.min_day": "{n} Min / Tag",
   "onboarding.where_shall_we_start": "Wo fangen wir an?",
   "onboarding.welcome_to_lernomi": "Willkommen bei Lernomi",

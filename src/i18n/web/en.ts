@@ -355,7 +355,7 @@ export const enWeb: Record<string, string> = {
   "weekly.week_n": "week {n}",
   "weekly.back_in_queue": "Back in the review queue",
   "weekly.all_correct": "All correct — your mastered words really are mastered.",
-  "weekly.once_a_week": "The quiz runs once a week; new questions arrive next Monday. The trend lands in your profile (soon).",
+  "weekly.once_a_week": "The quiz runs once a week; new questions arrive next Monday.",
   "weekly.usage_exam": "usage quiz",
   "weekly.no_hints": "no hints",
   "challenge.tier_warmup": "Warm-up",

@@ -380,7 +380,7 @@ export const trWeb: Record<string, string> = {
   "weekly.week_n": "hafta {n}",
   "weekly.back_in_queue": "Tekrar kuyruğuna dönenler",
   "weekly.all_correct": "Hepsi doğru — pekişmiş kelimelerin gerçekten pekişmiş.",
-  "weekly.once_a_week": "Sınav haftada bir; sonraki Pazartesi yeni sorular gelir. Trend profilde (yakında).",
+  "weekly.once_a_week": "Sınav haftada bir; sonraki Pazartesi yeni sorular gelir.",
   "weekly.usage_exam": "kullanım sınavı",
   "weekly.no_hints": "ipucu yok",
   "challenge.tier_warmup": "Isınma",

@@ -68,7 +68,7 @@ function steps(course: string): Step[] {
     {
       key: "course", icon: SkillsIcon,
       title: t("onboarding.which_course_shall_we_start_with"),
-      subtitle: t("onboarding.more_languages_are_coming_soon"),
+      subtitle: t("onboarding.languages_available_now"),
       // Kurs kayıt defterinden türüyor (lib/courses.ts). Anadil elenir (kimse
       // kendi dilini "öğrenilecek dil" olarak seçmez) ve duraklatılmış lehçe
       // kursu ilk açılışta sunulmaz — Ayarlar'dan hâlâ seçilebilir.

@@ -600,7 +600,7 @@ export const en: Record<string, string> = {
   "onboarding.steady": "Steady",
   "onboarding.kisa_turlarla_oyun_gibi_ogren_birk": "Whether you study words or prepare for an exam, your learning companion goes wherever you go!",
   "onboarding.kisa_yerlestirme_sinavi": "I'd like to learn my level",
-  "onboarding.more_languages_are_coming_soon": "More languages are coming soon. You can always switch later if you feel like exploring!",
+  "onboarding.languages_available_now": "For now there's German and English. You can change this later.",
   "onboarding.min_day": "{n} min / day",
   "onboarding.where_shall_we_start": "Where shall we start?",
   "onboarding.welcome_to_lernomi": "Welcome to Lernomi",
