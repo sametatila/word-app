@@ -105,7 +105,7 @@ export function ProfileScreen() {
             <StatTile value={String(me.mastered)} label={t("profile.words_learned")} color={colors.primary} colors={colors} />
             <StatTile value={String(me.streak)} label={t("profile.day_streak")} color={colors.streak} colors={colors} />
             <StatTile value={String(me.xp).replace(/\B(?=(\d{3})+(?!\d))/g, ".")} label={t("profile.total_xp")} color={colors.success} colors={colors} />
-            <StatTile value={formatDuration(me.seconds)} label={t("profile.time_this_week")} color={colors.info} colors={colors} />
+            <StatTile value={formatDuration(me.seconds)} label={t("profile.time_total")} color={colors.info} colors={colors} />
           </View>
         ) : (
           // Kısa "yükleniyor" kartı yerine ızgaranın kendi iskeleti: dört karo

@@ -150,7 +150,7 @@ export function ProfileView({ stats }: { stats: ProfileStats }) {
         <Stat value={formatNumber(stats.mastered, lang)} label={t("profile.words_learned")} tone="var(--color-brand)" />
         <Stat value={String(stats.streak)} label={t("profile.day_streak")} tone="var(--color-flame)" />
         <Stat value={formatNumber(stats.xp, lang)} label={t("profile.total_xp")} tone="var(--color-mint)" />
-        <Stat value={formatDuration(stats.seconds, t)} label={t("profile.time_this_week")} tone="var(--color-sky)" />
+        <Stat value={formatDuration(stats.seconds, t)} label={t("profile.time_total")} tone="var(--color-sky)" />
       </div>
 
       {/* premium bandı */}

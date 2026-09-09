@@ -70,7 +70,7 @@ export function ProgressScreen() {
           <View style={{ flexDirection: "row", flexWrap: "wrap", gap: spacing.md, marginBottom: spacing.lg }}>
             <Stat icon={LearnIcon} value={String(mastered)} label={t("progress.words_learned")} tint={colors.primary} colors={colors} />
             <Stat icon={BoltIcon} value={formatXp(me.xp)} label={t("progress.total_xp")} tint={colors.success} colors={colors} />
-            <Stat icon={PodiumIcon} value={formatDuration(me.seconds)} label={t("progress.time_this_week")} tint={colors.info} colors={colors} />
+            <Stat icon={PodiumIcon} value={formatDuration(me.seconds)} label={t("progress.time_total")} tint={colors.info} colors={colors} />
             <Stat icon={TrophyIcon} value={level} label={t("progress.level")} tint={colors.accent} colors={colors} />
           </View>
         ) : (
