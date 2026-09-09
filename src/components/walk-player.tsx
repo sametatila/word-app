@@ -3,7 +3,10 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { miss } from "@/lib/errors";
 import { motion } from "framer-motion";
-import { speakSegments, stopSpeaking, type SpeechSegment } from "@/components/speak-button";
+import { COURSE_KEY, readLocal, speakSegments, stopSpeaking, type SpeechSegment } from "@/components/speak-button";
+import { useT, useLang } from "@/lib/i18n/client";
+import type { NativeLang } from "@/lib/i18n/dict";
+import { courseName } from "@/lib/courses";
 import { useListen } from "@/components/use-listen";
 import { spokenMatches } from "@/components/games/types";
 import { parseConfirm, parseSkipDe } from "@/lib/voice-intent";
@@ -122,17 +125,27 @@ type Phase = "speaking" | "listening" | "judging";
  * ifadeyle değil, ceza da vermeden, kısa bir cesaretle karşılık veriyoruz ve
  * doğrusunu okuyoruz. Rastgele biri seçiliyor ki hep aynı cümle olmasın.
  */
-const ENCOURAGE = [
-  "Sorun değil, doğrusu:",
-  "Olsun, aklında kalsın:",
-  "Zararı yok, doğrusu:",
-  "Boş ver, doğrusu:",
-  "Öğreniyoruz, doğrusu:",
-  "Bir dahakine. Doğrusu:",
-];
+type T = (key: string, vars?: Record<string, string | number>) => string;
 
-/** Cebe konunca okunan kısa anons — uzun açıklama akışı boğuyordu. */
-const POCKET_ANNOUNCE = "Cebe koyabilirsin. Çıkmak için üç kez dokun.";
+function encourage(t: T): string {
+  // Mobil seçenekleri TEK anahtarda boru işaretiyle taşıyor (`walk.encourage`);
+  // web aynı sözlüğü okuduğu için aynı biçimi ayrıştırıyor.
+  const list = t("walk.encourage").split("|").filter(Boolean);
+  return list[Math.floor(Math.random() * list.length)] ?? "";
+}
+
+/**
+ * Anlamın SESLİ hâli — metin ve ses BİRLİKTE seçiliyor.
+ *
+ * `words` tablosunda yalnız Türkçe ve İngilizce karşılık var. Almanca arayüzde
+ * Almanca karşılık olmadığı için metin Türkçe kalıyor; o metni anlatım sesiyle
+ * (Almanca) okutmak Türkçeyi Almanca sesle okumak olurdu. Bu yüzden karar tek
+ * yerde: karşılık hangi dildeyse ses de o dilde.
+ */
+function glossSegment(word: { tr: string; en: string | null }, lang: NativeLang): SpeechSegment {
+  if (lang === "en" && word.en) return { lang: "en", text: word.en, narration: true };
+  return { lang: "tr", text: word.tr, narration: lang === "tr" };
+}
 
 /**
  * Duyulmayan cevabın karşılığı.
@@ -255,6 +268,11 @@ function wordsOf(round: Round): RoundWord[] {
 }
 
 export function WalkPlayer({ onExit }: { onExit: () => void }) {
+  const t = useT();
+  const lang = useLang();
+  // Hedef dilin adı ekranda geçiyor; kurs cihazdaki aynadan okunuyor (mobil
+  // `currentCourseId()` ile aynı kaynak).
+  const course = readLocal(COURSE_KEY) ?? "de";
   const [status, setStatus] = useState<Status>("loading");
   const [session, setSession] = useState<SessionPayload | null>(null);
   const [index, setIndex] = useState(0);
@@ -528,7 +546,7 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
   const arm = useCallback(async (): Promise<boolean> => {
     if (armed.current) return true;
     if (!sttReady.current) return false;
-    startPocketAudio("Lernomi · Yürürken", {});
+    startPocketAudio(`Lernomi · ${t("walk.title")}`, {});
     if (!(await openMic())) {
       stopPocketAudio();
       track("walk_switch", 1, "arm-failed");
@@ -629,7 +647,7 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
       if (announce.current) {
         const text = announce.current;
         announce.current = null;
-        await say([{ lang: "tr", text }]);
+        await say([{ lang: "tr", text, narration: true }]);
         if (signal?.aborted) return [];
       }
 
@@ -669,10 +687,9 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
           track("walk_switch", 1, "handoff");
           await say([
             {
-              lang: "tr",
-              text: sttReady.current
-                ? "Tarayıcının tanıyıcısı çalışmıyor; cevapları sunucuya soracağım."
-                : "Tarayıcının tanıyıcısı çalışmıyor. Turu durdurdum.",
+              lang,
+              narration: true,
+              text: t(sttReady.current ? "walk.browser_stt_dead_server" : "walk.browser_stt_dead_stop"),
             },
           ]);
           if (!sttReady.current) {
@@ -702,7 +719,7 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
         if (signal?.aborted) return [];
         if (!went) {
           disarm("timeout");
-          await say([{ lang: "tr", text: "Ekranda devam ediyoruz." }]);
+          await say([{ lang, narration: true, text: t("walk.continue_on_screen") }]);
           if (reprompt) await say(reprompt);
           if (signal?.aborted) return [];
           return hearOnceRef.current(lang, windowMs, expected, accept, reprompt, signal);
@@ -753,7 +770,7 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
             track("walk_end", 4);
             ended.current = true;
             await say([
-              { lang: "tr", text: "Mikrofona ulaşamıyorum. Turu durdurdum, telefonu açınca devam edelim." },
+              { lang, narration: true, text: t("walk.mic_unreachable") },
             ]);
             pauseRef.current();
           }
@@ -935,7 +952,9 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
   const askContinue = useCallback(
     async (correct: number, total: number): Promise<"yes" | "no"> => {
       const summary =
-        total > 0 ? `Tur bitti. ${total} sorudan ${correct} doğru.` : "Tur bitti.";
+        total > 0
+          ? t("walk.tour_done_continue", { total, correct })
+          : `${t("common.round_done")} ${t("walk.continue_q")}`;
       setAsking(true);
       setVerdict(null);
       try {
@@ -948,8 +967,9 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
         setPrompt(null);
         await say([
           {
-            lang: "tr",
-            text: attempt === 0 ? `${summary} Devam edelim mi?` : "Devam edelim mi? Evet ya da hayır de.",
+            lang,
+            narration: true,
+            text: attempt === 0 ? summary : t("walk.continue_yes_no"),
           },
         ]);
         if (ended.current) return "no";
@@ -959,7 +979,7 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
           CONFIRM_SILENCE_MS,
           "",
           (alts) => parseConfirm(alts[0] ?? "") !== null,
-          [{ lang: "tr", text: "Devam edelim mi?" }],
+          [{ lang, narration: true, text: t("walk.continue_q") }],
         );
         const intent = parseConfirm(heard[0] ?? "");
         if (intent === "yes") return "yes";
@@ -995,14 +1015,14 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
       const preroll: SpeechSegment[] = [];
       if (pocketPreroll.current) {
         pocketPreroll.current = false;
-        preroll.push({ lang: "tr", text: POCKET_ANNOUNCE });
+        preroll.push({ lang, narration: true, text: t("walk.pocket_announce") });
       }
       if (!hintDone.current) {
         hintDone.current = true;
         preroll.push(
-          { lang: "tr", text: "Bilmediğin kelimede" },
+          { lang, narration: true, text: t("walk.skip_hint_before") },
           { lang: "de", text: "weiter" },
-          { lang: "tr", text: "de." },
+          { lang, narration: true, text: t("walk.skip_hint_after") },
         );
       }
       if (preroll.length) {
@@ -1029,9 +1049,9 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
             setVerdict(null);
             setPhase("speaking");
             await say([
-              { lang: "tr", text: "Yeni kelime." },
+              { lang, narration: true, text: t("walk.new_word") },
               { lang: "de", text: target },
-              { lang: "tr", text: word.tr },
+              glossSegment(word, lang),
               { lang: "de", text: target },
             ]);
             if (!alive()) return;
@@ -1056,7 +1076,7 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
           // Soru: Türkçe karşılık okunuyor, ardından mikrofon açılıyor.
           setPhase("speaking");
           updatePocketTitle(word.tr);
-          await say([{ lang: "tr", text: word.tr }]);
+          await say([glossSegment(word, lang)]);
           if (!alive()) return;
 
           setPhase("listening");
@@ -1071,7 +1091,7 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
               // Doğru cevap DA teslim işareti ("weiter") de dinlemeyi erken
               // kapatır: cevap veren de teslim eden de pencerenin dolmasını beklemesin.
               (alts) => spokenMatches(alts, [target, word.de]) || alts.some(parseSkipDe),
-              [{ lang: "tr", text: word.tr }],
+              [glossSegment(word, lang)],
             );
           let heard = await ask();
           if (!alive()) return;
@@ -1082,7 +1102,7 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
             setPhase("speaking");
             const pre = announce.current;
             announce.current = null;
-            await say([...(pre ? [{ lang: "tr" as const, text: pre }] : []), { lang: "tr", text: word.tr }]);
+            await say([...(pre ? [{ lang, narration: true, text: pre }] : []), glossSegment(word, lang)]);
             if (!alive()) return;
             setPhase("listening");
             heard = await ask();
@@ -1115,9 +1135,8 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
           // "Bilmiyorum": tekrar planına DOKUNMA (yanlış değil), doğrusunu oku.
           if (skipped) {
             setVerdict("skip");
-            const line = ENCOURAGE[Math.floor(Math.random() * ENCOURAGE.length)];
             await say([
-              { lang: "tr", text: line },
+              { lang, narration: true, text: `${encourage(t)} ${t("walk.correct_is")}` },
               { lang: "de", text: target },
             ]);
             if (!alive()) return;
@@ -1142,7 +1161,7 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
               // Eski hâli tarayıcı yolunda "ekranın açık kalması gerekiyor" diyordu;
               // ekran zaten açıkken bu, kullanıcıya yanlış bir sebep söylemekti.
               await say([
-                { lang: "tr", text: "Sesini duyamıyorum. Turu durdurdum; mikrofonu kontrol edip hazır olunca devam et." },
+                { lang, narration: true, text: t("walk.mic_silent") },
               ]);
               if (!alive()) return;
               track("walk_end", 3);
@@ -1154,7 +1173,7 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
             }
 
             await say([
-              { lang: "tr", text: "Duyamadım." },
+              { lang, narration: true, text: t("walk.not_heard") },
               { lang: "de", text: target },
             ]);
             continue;
@@ -1187,7 +1206,7 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
             // Yanlışta doğrusu okunuyor: ekransız akışta düzeltmeyi görmenin
             // başka yolu yok.
             await say([
-              { lang: "tr", text: "Doğrusu:" },
+              { lang, narration: true, text: t("walk.correct_is") },
               { lang: "de", text: target },
             ]);
           } else {
@@ -1224,7 +1243,7 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
         track("walk_end", 1);
         ended.current = true;
         setPhase("speaking");
-        await say([{ lang: "tr", text: "Tamam, iyi günler." }]);
+        await say([{ lang, narration: true, text: t("walk.goodbye") }]);
         stopPocketAudio();
         closeMic();
         void release();
@@ -1233,13 +1252,13 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
       }
 
       setPhase("speaking");
-      await say([{ lang: "tr", text: "Devam ediyoruz." }]);
+      await say([{ lang, narration: true, text: t("walk.continuing") }]);
       const next = await fetchSession();
       if (!alive()) return;
       if (!next?.rounds.length) {
         track("walk_end", 2);
         ended.current = true;
-        await say([{ lang: "tr", text: "Bugünlük tekrar kalmadı." }]);
+        await say([{ lang, narration: true, text: t("walk.no_more") }]);
         setStatus("done");
         return;
       }
@@ -1322,7 +1341,7 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
   /** "Cebe koy" dokunuşu — okumaz, döngüye not bırakır (bkz. `announce`). */
   async function toPocket() {
     const ok = await arm();
-    announce.current = ok ? "Cebe alındı. Ekranı kapatabilirsin." : "Mikrofon açılamadı; ekranda devam ediyoruz.";
+    announce.current = t(ok ? "walk.pocket_armed" : "walk.pocket_failed");
   }
 
   /**
@@ -1353,7 +1372,7 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
       // Kelime DİNLENİRKEN cebe kondu: süren dinleme iptal edilip önce anons,
       // sonra kelime tekrar okunup yeniden dinleniyor (reask) — kullanıcı
       // darken'a basarken kelimeyi kaçırmasın.
-      announce.current = POCKET_ANNOUNCE;
+      announce.current = t("walk.pocket_announce");
       reask.current = true;
       hearCtl.current.abort();
     } else {
@@ -1434,8 +1453,9 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
         speakSegments(
           [
             {
-              lang: "tr",
-              text: "Ekran kapanınca sesini duyamıyorum. Turu durdurdum. Cepte devam etmek için ekranı kapatma; Cebe koy'a basınca ekran kararır ama açık kalır.",
+              lang,
+              narration: true,
+              text: t("walk.screen_off_warning"),
             },
           ],
           undefined,
@@ -1462,47 +1482,41 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
 
   const total = session?.rounds.length ?? 0;
 
-  if (status === "loading") return <Frame><p className="muted">Tur hazırlanıyor…</p></Frame>;
+  if (status === "loading") return <Frame><p className="muted">{t("walk.preparing")}</p></Frame>;
 
   if (status === "error")
     return (
       <Frame>
-        <h2 className="text-lg font-bold">Tur açılamadı</h2>
-        <p className="muted mt-2 text-sm">Bağlantını kontrol edip tekrar dene.</p>
-        <button onClick={leave} className="btn btn-ghost mt-5 w-full px-5 py-3">Geri dön</button>
+        <h2 className="text-lg font-bold">{t("walk.error_title")}</h2>
+        <p className="muted mt-2 text-sm">{t("walk.error_sub")}</p>
+        <button onClick={leave} className="btn btn-ghost mt-5 w-full px-5 py-3">{t("common.go_back")}</button>
       </Frame>
     );
 
   if (status === "empty")
     return (
       <Frame>
-        <h2 className="text-lg font-bold">Bugünlük tur yok</h2>
-        <p className="muted mt-2 text-sm">Tekrar zamanı gelen kelime kalmamış.</p>
-        <button onClick={leave} className="btn btn-ghost mt-5 w-full px-5 py-3">Geri dön</button>
+        <h2 className="text-lg font-bold">{t("walk.empty_title")}</h2>
+        <p className="muted mt-2 text-sm">{t("walk.empty_sub")}</p>
+        <button onClick={leave} className="btn btn-ghost mt-5 w-full px-5 py-3">{t("common.go_back")}</button>
       </Frame>
     );
 
   if (status === "unsupported")
     return (
       <Frame>
-        <h2 className="text-lg font-bold">Bu tarayıcı sesli cevabı desteklemiyor</h2>
-        <p className="muted mt-2 text-sm">
-          Yürürken modu tarayıcının konuşma tanıyıcısına dayanıyor. Chrome ya da Safari&apos;de
-          çalışıyor; Firefox&apos;ta henüz yok.
-        </p>
-        <button onClick={leave} className="btn btn-ghost mt-5 w-full px-5 py-3">Geri dön</button>
+        <h2 className="text-lg font-bold">{t("walk.unsupported_title")}</h2>
+        <p className="muted mt-2 text-sm">{t("walk.unsupported_sub")}</p>
+        <button onClick={leave} className="btn btn-ghost mt-5 w-full px-5 py-3">{t("common.go_back")}</button>
       </Frame>
     );
 
   if (status === "denied")
     return (
       <Frame>
-        <h2 className="text-lg font-bold">Mikrofon izni yok</h2>
-        <p className="muted mt-2 text-sm">
-          Ekransız tur için mikrofon gerekiyor. Tarayıcının site ayarlarından izin verip
-          tekrar dene.
-        </p>
-        <button onClick={leave} className="btn btn-ghost mt-5 w-full px-5 py-3">Geri dön</button>
+        <h2 className="text-lg font-bold">{t("walk.denied_title")}</h2>
+        <p className="muted mt-2 text-sm">{t("walk.denied_sub")}</p>
+        <button onClick={leave} className="btn btn-ghost mt-5 w-full px-5 py-3">{t("common.go_back")}</button>
       </Frame>
     );
 
@@ -1510,18 +1524,12 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
     return (
       <Frame>
         <h2 className="text-xl font-bold">
-          {status === "paused" ? "Duraklatıldı" : "Yürürken"}
+          {t(status === "paused" ? "walk.paused" : "walk.title")}
         </h2>
         <p className="muted mt-2 text-sm leading-relaxed">
-          Türkçesini duyacaksın, Almancasını söyleyeceksin. Yanlışta doğrusu okunur, duyulmayan
-          tur yanlış sayılmaz. Yirmi tur bitince <strong>“devam edelim mi?”</strong> diye
-          sorulur; “evet” demen yeter.
+          {t("walk.intro_1", { target: courseName(course, lang) })}
         </p>
-        <p className="muted mt-2 text-sm leading-relaxed">
-          Telefonu cebine koyacaksan <strong>Cebe koy</strong>&apos;a bas: ekran kararır ama
-          açık kalır, tanıyıcı dinlemeyi sürdürür. Güç tuşuyla kapatma — ekran kapanınca
-          telefon mikrofonu susturur.
-        </p>
+        <p className="muted mt-2 text-sm leading-relaxed">{t("walk.intro_2")}</p>
         {pocketReady === false ? (
           <p
             className="mt-3 rounded-xl px-3 py-2.5 text-sm leading-relaxed"
@@ -1530,9 +1538,7 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
               color: "var(--color-flame)",
             }}
           >
-            Bu kurulumda ekran kapalıyken ses yakalanamıyor: tur sürer ama cevapların
-            duyulmaz. Cepte çalışması için sunucuda bir konuşma tanıma anahtarı
-            (<code>AZURE_SPEECH_KEY</code> ya da <code>DEEPGRAM_API_KEY</code>) tanımlı olmalı.
+            {t("walk.no_server_stt")}
           </p>
         ) : null}
         {status === "paused" ? (
@@ -1543,13 +1549,13 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
               color: "var(--color-flame)",
             }}
           >
-            Ses gelmediği ya da uygulamadan çıkıldığı için durduruldu. Cevapların kaydedildi.
+            {t("walk.paused_note")}
           </p>
         ) : null}
         <div className="mt-4 rounded-xl px-3 py-2.5 text-center text-sm" style={{ background: "var(--surface-2)" }}>
-          <span className="muted">Kaldığın yer: </span>
+          <span className="muted">{t("walk.where_you_left")} </span>
           <strong>{Math.min(index + 1, total)}</strong>
-          <span className="muted"> / {total} tur</span>
+          <span className="muted"> / {t("walk.n_rounds", { n: total })}</span>
         </div>
         {/*
           İki başlatma: "Cebe koy" ekranı karartarak başlatır (fullscreen düğme
@@ -1563,30 +1569,30 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
           }}
           className="btn btn-primary mt-5 w-full px-5 py-4 text-base"
         >
-          Cebe koy, {status === "paused" ? "devam et" : "başla"}
+          {t(status === "paused" ? "walk.pocket_continue" : "walk.pocket_start")}
         </button>
         <button
           onClick={() => void start(index)}
           className="btn btn-ghost mt-2 w-full px-5 py-4 text-base"
         >
-          Ekran açık {status === "paused" ? "devam et" : "başla"}
+          {t(status === "paused" ? "walk.screen_continue" : "walk.screen_start")}
         </button>
-        <button onClick={leave} className="btn btn-ghost mt-2 w-full px-5 py-3">Geri dön</button>
+        <button onClick={leave} className="btn btn-ghost mt-2 w-full px-5 py-3">{t("common.go_back")}</button>
       </Frame>
     );
 
   if (status === "done")
     return (
       <Frame>
-        <h2 className="text-2xl font-bold">Yürüyüş bitti</h2>
+        <h2 className="text-2xl font-bold">{t("walk.done_title")}</h2>
         <p className="mt-2 text-sm" style={{ color: "var(--color-mint)" }}>
-          {tally.correct}/{tally.total} doğru
-          {walkRef.current.sessions > 1 ? ` · ${walkRef.current.sessions} tur` : ""}
+          {t("common.n_correct", { correct: tally.correct, total: tally.total })}
+          {walkRef.current.sessions > 1
+            ? ` · ${t("walk.n_rounds", { n: walkRef.current.sessions })}`
+            : ""}
         </p>
-        <p className="muted mt-2 text-sm">
-          Cevapların kaydedildi: tekrar planın, günlük hedefin ve serin güncellendi.
-        </p>
-        <button onClick={leave} className="btn btn-primary mt-5 w-full px-5 py-3.5">Bitir</button>
+        <p className="muted mt-2 text-sm">{t("walk.done_sub")}</p>
+        <button onClick={leave} className="btn btn-primary mt-5 w-full px-5 py-3.5">{t("common.finish")}</button>
       </Frame>
     );
 
@@ -1605,9 +1611,9 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
           style={{ background: "#000", touchAction: "none" }}
         >
           <p className="mb-24 px-8 text-center text-xs leading-relaxed" style={{ color: "rgba(255,255,255,0.22)" }}>
-            Ekran karanlık ama açık — seni dinliyorum.
+            {t("walk.dark_listening")}
             <br />
-            Çıkmak için üç kez dokun.
+            {t("walk.dark_exit")}
           </p>
         </div>
       ) : null}
@@ -1629,9 +1635,11 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
               color: capture === "stt" ? "var(--color-mint)" : "var(--color-flame)",
             }}
           >
-            {capture === "stt" ? "cepte" : "ekran açık"}
+            {t(capture === "stt" ? "walk.chip_pocket" : "walk.chip_screen")}
           </span>
-          <span className="muted tabular-nums">{tally.correct}/{tally.total} doğru</span>
+          <span className="muted tabular-nums">
+            {t("common.n_correct", { correct: tally.correct, total: tally.total })}
+          </span>
         </span>
       </div>
 
@@ -1653,9 +1661,9 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
             >
               <MicIcon size={28} />
             </motion.span>
-            <p className="mt-3 text-lg font-bold">Devam edelim mi?</p>
+            <p className="mt-3 text-lg font-bold">{t("walk.continue_q")}</p>
             <p className="muted mt-1 text-sm">
-              {phase === "listening" ? "“evet” ya da “hayır” de" : "…"}
+              {phase === "listening" ? t("walk.say_yes_no") : "…"}
             </p>
           </>
         ) : phase === "listening" ? (
@@ -1672,7 +1680,7 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
               <MicIcon size={28} />
             </motion.span>
             <p className="mt-3 text-lg font-bold">{prompt?.tr}</p>
-            <p className="muted mt-1 text-sm">Almancasını söyle</p>
+            <p className="muted mt-1 text-sm">{t("walk.say_target", { target: courseName(course, lang) })}</p>
           </>
         ) : verdict ? (
           <>
@@ -1692,18 +1700,24 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
             </span>
             <p className="mt-3 text-lg font-bold">{prompt?.de}</p>
             <p className="muted mt-1 text-sm">
-              {verdict === "correct" ? "Doğru" : verdict === "unheard" ? "Duyamadım" : verdict === "skip" ? "Bilmiyorsan sorun değil" : prompt?.tr}
+              {verdict === "correct"
+                ? t("common.correct")
+                : verdict === "unheard"
+                  ? t("walk.not_heard")
+                  : verdict === "skip"
+                    ? t("walk.skip_ok")
+                    : prompt?.tr}
             </p>
             {verdict === "wrong" && heardText ? (
               <p className="muted mt-2 text-xs">
-                duyduğum: <span className="font-semibold">“{heardText}”</span>
+                {t("walk.i_heard")} <span className="font-semibold">“{heardText}”</span>
               </p>
             ) : null}
           </>
         ) : (
           <>
             <p className="text-lg font-bold">{prompt?.tr ?? "…"}</p>
-            <p className="muted mt-1 text-sm">Okunuyor…</p>
+            <p className="muted mt-1 text-sm">{t("walk.speaking")}</p>
           </>
         )}
       </motion.div>
@@ -1727,14 +1741,14 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
       */}
       {browserRef.current ? (
         <button onClick={darken} className="btn btn-primary mt-6 w-full px-5 py-4 text-base">
-          Cebe koy · ekranı karart
+          {t("walk.pocket_darken")}
         </button>
       ) : null}
       <button onClick={pause} className={`btn btn-ghost ${browserRef.current ? "mt-2" : "mt-6"} w-full px-5 py-4 text-base`}>
-        Duraklat
+        {t("walk.pause")}
       </button>
       <button onClick={leave} className="btn btn-ghost mt-2 w-full px-5 py-3">
-        Bitir
+        {t("common.finish")}
       </button>
     </Frame>
   );

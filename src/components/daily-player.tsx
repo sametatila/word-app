@@ -11,6 +11,8 @@ import { scoreAnswer } from "@/lib/daily-score";
 import { ShareResult } from "@/components/share-result";
 import { AlertIcon, FlameIcon, SparkIcon } from "@/components/icons";
 import { Mascot } from "@/components/mascot";
+import { useT, useLang } from "@/lib/i18n/client";
+import { formatNumber } from "@/lib/i18n/dict";
 
 /**
  * Günün turu.
@@ -50,6 +52,8 @@ function localDay(): string {
 }
 
 export function DailyPlayer({ onExit }: { onExit: () => void }) {
+  const t = useT();
+  const lang = useLang();
   const [status, setStatus] = useState<Status>("loading");
   const [data, setData] = useState<Payload | null>(null);
   const [index, setIndex] = useState(0);
@@ -139,7 +143,7 @@ export function DailyPlayer({ onExit }: { onExit: () => void }) {
   if (status === "loading") {
     return (
       <Card>
-        <p className="muted py-8 text-center text-sm">Günün turu hazırlanıyor…</p>
+        <p className="muted py-8 text-center text-sm">{t("daily.preparing")}</p>
       </Card>
     );
   }
@@ -149,9 +153,9 @@ export function DailyPlayer({ onExit }: { onExit: () => void }) {
       <Card>
         <div className="p-6 text-center">
           <AlertIcon size={22} />
-          <p className="mt-2 text-sm font-bold">Günün turu yüklenemedi</p>
+          <p className="mt-2 text-sm font-bold">{t("daily.couldn_t_load_daily_round")}</p>
           <button onClick={onExit} className="btn btn-ghost mt-4 px-5 py-2.5 text-sm">
-            Geri dön
+            {t("common.go_back")}
           </button>
         </div>
       </Card>
@@ -162,12 +166,10 @@ export function DailyPlayer({ onExit }: { onExit: () => void }) {
     return (
       <Card>
         <div className="p-6 text-center">
-          <p className="text-sm font-bold">Bugün bu seviyede tur yok</p>
-          <p className="muted mt-1 text-xs">
-            Seviyendeki kelime havuzu günün turunu kurmaya yetmiyor.
-          </p>
+          <p className="text-sm font-bold">{t("daily.none_title")}</p>
+          <p className="muted mt-1 text-xs">{t("daily.none_sub")}</p>
           <button onClick={onExit} className="btn btn-ghost mt-4 px-5 py-2.5 text-sm">
-            Geri dön
+            {t("common.go_back")}
           </button>
         </div>
       </Card>
@@ -178,11 +180,10 @@ export function DailyPlayer({ onExit }: { onExit: () => void }) {
     return (
       <Card>
         <div className="brand-gradient-deep px-6 py-6 text-center text-white">
-          <p className="text-sm opacity-90">Bugünün turu · {data.level}</p>
-          <h2 className="mt-1 text-2xl font-bold">Herkes aynı kelimeler</h2>
+          <p className="text-sm opacity-90">{t("daily.daily_round")} · {data.level}</p>
+          <h2 className="mt-1 text-2xl font-bold">{t("daily.same_words")}</h2>
           <p className="mx-auto mt-2 max-w-xs text-sm opacity-90">
-            {data.rounds.length} soru · tek hak · süre baskısı yok. Seviyendeki herkesle aynı
-            turu oynuyorsun.
+            {t("daily.pitch", { n: data.rounds.length })}
           </p>
         </div>
         <div className="space-y-2 p-6">
@@ -193,13 +194,13 @@ export function DailyPlayer({ onExit }: { onExit: () => void }) {
             }}
             className="btn btn-primary w-full px-5 py-3.5 text-base"
           >
-            Başla
+            {t("common.start")}
           </button>
           <button onClick={onExit} className="btn btn-ghost w-full px-5 py-3">
-            Sonra
+            {t("common.later")}
           </button>
         </div>
-        {board.length > 1 ? <BoardList rows={board} title="Bugünün tablosu" /> : null}
+        {board.length > 1 ? <BoardList rows={board} title={t("daily.today_s_ranking")} /> : null}
       </Card>
     );
   }
@@ -229,7 +230,7 @@ export function DailyPlayer({ onExit }: { onExit: () => void }) {
                 </motion.span>
               ) : null}
               <span className="font-black" style={{ color: "var(--color-brand)" }}>
-                {score.toLocaleString("tr-TR")}
+                {formatNumber(score, lang)}
               </span>
             </span>
           </div>
@@ -276,11 +277,11 @@ export function DailyPlayer({ onExit }: { onExit: () => void }) {
               Kupa simgesi bunun dışında kalan tek yerdi. */}
           <Mascot mood="cheer" size={88} className="mx-auto" />
           <h2 className="mt-1 text-2xl font-bold">
-            <CountUp value={finalScore} /> puan
+            <CountUp value={finalScore} /> {t("common.points")}
           </h2>
           <p className="mt-1 text-sm opacity-90">
-            {finalCorrect}/{finalTotal} doğru
-            {me ? ` · bugün ${me.rank}. sıradasın` : ""}
+            {t("common.n_correct", { correct: finalCorrect, total: finalTotal })}
+            {me ? ` · ${t("daily.your_rank_today", { rank: me.rank })}` : ""}
           </p>
           {xpGained > 0 ? <p className="mt-1 text-sm opacity-90">+{xpGained} XP</p> : null}
         </div>
@@ -288,10 +289,10 @@ export function DailyPlayer({ onExit }: { onExit: () => void }) {
         {/* Tablo tek satırken de gösteriliyor: "Tabloyu gör" deyip tablo
             görmemek, düğmenin yalan söylemesi. Seviyesinde ilk oynayan
             kullanıcı kendi satırını ve neden yalnız olduğunu görüyor. */}
-        {board.length > 0 ? <BoardList rows={board} title="Bugünün tablosu" /> : null}
+        {board.length > 0 ? <BoardList rows={board} title={t("daily.today_s_ranking")} /> : null}
         {board.length === 1 ? (
           <p className="muted border-t px-5 py-3 text-xs" style={{ borderColor: "var(--border)" }}>
-            Seviyende bugün ilk oynayan sensin — diğerleri oynadıkça tablo dolacak.
+            {t("daily.first_today")}
           </p>
         ) : null}
 
@@ -308,10 +309,10 @@ export function DailyPlayer({ onExit }: { onExit: () => void }) {
             level={data?.level ?? "A1"}
           />
           <button onClick={onExit} className="btn btn-primary w-full px-5 py-3.5">
-            Öğrenmeye dön
+            {t("common.back_to_learn")}
           </button>
           <p className="muted pt-1 text-center text-xs">
-            Günün turu günde bir kez oynanır. Yarın yeni kelimelerle döner.
+            {t("daily.once_a_day")}
           </p>
         </div>
       </div>
@@ -324,6 +325,8 @@ function Card({ children }: { children: React.ReactNode }) {
 }
 
 function BoardList({ rows, title }: { rows: Board; title: string }) {
+  const t = useT();
+  const lang = useLang();
   return (
     <div className="border-t" style={{ borderColor: "var(--border)" }}>
       <div className="muted px-5 py-2.5 text-xs font-semibold uppercase tracking-wide">{title}</div>
@@ -341,8 +344,8 @@ function BoardList({ rows, title }: { rows: Board; title: string }) {
           >
             <span className="w-5 shrink-0 text-center font-black tabular-nums">{r.rank}</span>
             <span className="min-w-0 flex-1 truncate font-semibold">
-              {r.name ?? "İsimsiz öğrenci"}
-              {r.isMe ? <span className="muted ml-1.5 text-[10px] uppercase">sen</span> : null}
+              {r.name ?? t("social.unnamed")}
+              {r.isMe ? <span className="muted ml-1.5 text-[10px] uppercase">{t("common.you")}</span> : null}
             </span>
             <span className="muted shrink-0 text-xs tabular-nums">
               {r.correct}/{r.total}
@@ -351,7 +354,7 @@ function BoardList({ rows, title }: { rows: Board; title: string }) {
               className="w-16 shrink-0 text-right font-bold tabular-nums"
               style={{ color: "var(--color-brand)" }}
             >
-              {r.score.toLocaleString("tr-TR")}
+              {formatNumber(r.score, lang)}
             </span>
           </li>
         ))}

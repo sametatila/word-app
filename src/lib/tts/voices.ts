@@ -1,3 +1,4 @@
+import type { NativeLang } from "@/lib/courses";
 /**
  * Ses kataloğu — hem sunucu hem arayüz kullanıyor, o yüzden `server-only` değil.
  *
@@ -31,6 +32,25 @@ export type VoiceId =
  * alternatifi yok.
  */
 export const TURKISH_VOICE: VoiceId = "tr-TR-EmelNeural";
+
+/**
+ * ANLATIM sesi — öğretmenin konuştuğu dil, yani kullanıcının ANADİLİ.
+ *
+ * Hedef dille karışmaz: anlatım dili tanım gereği hedef dilden farklıdır
+ * (Türk kullanıcı Almanca öğrenirken anlatım Türkçe; İngiliz kullanıcı Almanca
+ * öğrenirken anlatım İngilizce). Yürüyüş modu doğrudan `TURKISH_VOICE`
+ * kullanıyordu — anadili Türkçe olmayan kullanıcıya anlatım yine Türkçe
+ * okunurdu. Mobil (`M/src/lib/voices.ts`) bu haritanın aynısını taşıyor.
+ */
+const NARRATION: Record<NativeLang, VoiceId> = {
+  tr: "tr-TR-EmelNeural",
+  en: "en-US-JennyNeural",
+  de: "de-DE-KatjaNeural",
+};
+
+export function narrationVoice(lang: NativeLang): VoiceId {
+  return NARRATION[lang] ?? TURKISH_VOICE;
+}
 
 /**
  * Ders anlatımının Almanca sesi — kullanıcının profil tercihi DEĞİL, bilerek.

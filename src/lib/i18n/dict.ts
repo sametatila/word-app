@@ -29,6 +29,14 @@ export type { NativeLang };
 /** Dillerin KENDİ adları — arayüz yanlış dildeyken bile kullanıcı kendi dilini tanısın. */
 export const LANG_LABEL: Record<NativeLang, string> = { tr: "Türkçe", en: "English", de: "Deutsch" };
 
+/**
+ * Arayüz dilinin kendi adı — "{anadil} ipucunu duyacaksın" gibi metinler için.
+ * Mobil `nativeLangName()` ile aynı harita.
+ */
+export function nativeLangName(lang: NativeLang): string {
+  return LANG_LABEL[lang] ?? LANG_LABEL[DEFAULT_NATIVE];
+}
+
 export function isNativeLang(v: string | null | undefined): v is NativeLang {
   return typeof v === "string" && (NATIVE_LANGS as readonly string[]).includes(v);
 }

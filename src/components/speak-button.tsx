@@ -7,7 +7,7 @@ import { sharedAudioContext } from "@/lib/audio-context";
 import { afterMs } from "@/components/pocket-clock";
 import { trackOnce } from "@/lib/track";
 import { screenKey } from "@/lib/screens";
-import { TURKISH_VOICE, lessonVoice, resolveVoice, type VoiceId } from "@/lib/tts/voices";
+import { TURKISH_VOICE, lessonVoice, narrationVoice, resolveVoice, type VoiceId } from "@/lib/tts/voices";
 import { useT } from "@/lib/i18n/client";
 
 /**
@@ -18,10 +18,11 @@ import { useT } from "@/lib/i18n/client";
  * Gerçek Mundart kayıtları dinleme egzersizlerinde ayrıca sunulur.
  */
 /** Kursun ve sesin cihazdaki aynası — çalma anında eşzamanlı okunmalı. */
-const COURSE_KEY = "lernomi-course";
+/** Seçili kursun cihazdaki aynası — hedef dilin ADINI yazan yerler de okuyor. */
+export const COURSE_KEY = "lernomi-course";
 const VOICE_KEY = "lernomi-voice";
 
-function readLocal(key: string): string | null {
+export function readLocal(key: string): string | null {
   try {
     return localStorage.getItem(key);
   } catch {
@@ -306,7 +307,18 @@ export function speakSlowly(text: string, onEnd?: () => void) {
  * kabul edilebilir bir bozulma değil; parça hangi dildeyse o dilin nöral
  * sesiyle okunuyor.
  */
-export type SpeechSegment = { lang: "tr" | "de" | "en"; text: string };
+export type SpeechSegment = {
+  lang: "tr" | "de" | "en";
+  text: string;
+  /**
+   * Anlatım parçası: metin SÖZLÜKTEN geliyor, yani `lang` gerçekten o parçanın
+   * dili. Bayrak olmadan `lang: "tr"` iki ayrı şey demek oluyordu — "Türkçe
+   * metin" ve "anlatım" — ve ders içeriği Türkçe kaldığı için ikisini tek
+   * kuralla ayırmak mümkün değildi. İşaretli parçalar anlatım sesiyle,
+   * işaretsizler bugünkü davranışla okunuyor.
+   */
+  narration?: boolean;
+};
 
 /**
  * Parçanın sesi profil tercihinden BAĞIMSIZ: derste öncelik gecikme.
@@ -317,6 +329,9 @@ export type SpeechSegment = { lang: "tr" | "de" | "en"; text: string };
  * yerlerde geçerli olmayı sürdürüyor.
  */
 function voiceForSegment(seg: SpeechSegment): { voice: VoiceId; course: string } {
+  // Anlatım: ses kullanıcının ARAYÜZ dilinden. Çerez tek istemci kaynağı —
+  // bu fonksiyon bir bileşen değil, kancadan okuyamaz.
+  if (seg.narration) return { voice: narrationVoice(seg.lang), course: "de" };
   if (seg.lang === "tr") return { voice: TURKISH_VOICE, course: "de" };
   const course = readLocal(COURSE_KEY) ?? "de";
   return { voice: lessonVoice(course), course };
@@ -345,8 +360,8 @@ function mergeForSpeech(segments: SpeechSegment[]): SpeechSegment[] {
     const text = cleanForSpeech(seg.text.replace(/…|\.{3}/g, " "));
     if (!text) continue;
     const last = out[out.length - 1];
-    if (last && last.lang === seg.lang) last.text = `${last.text} ${text}`;
-    else out.push({ lang: seg.lang, text });
+    if (last && last.lang === seg.lang && last.narration === seg.narration) last.text = `${last.text} ${text}`;
+    else out.push({ lang: seg.lang, text, narration: seg.narration });
   }
   return out;
 }

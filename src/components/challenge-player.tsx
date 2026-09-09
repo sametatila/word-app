@@ -13,6 +13,7 @@ import { vibrate } from "@/lib/fx";
 import { play, resetCombo } from "@/lib/sfx";
 import { AlertIcon, FlameIcon, SparkIcon } from "@/components/icons";
 import { Mascot } from "@/components/mascot";
+import { useT } from "@/lib/i18n/client";
 
 /** Başlangıç süresi kısa: süreyi doğru cevaplarla kazanırsın. */
 const START_SECONDS = 40;
@@ -33,7 +34,8 @@ function multiplier(combo: number): number {
   return 1;
 }
 
-const TIER_LABEL = ["", "Isınma", "Baskı", "Kriz"];
+/** Dalga adları anahtar olarak; metin gösterildiği yerde çevriliyor. */
+const TIER_KEYS = ["", "challenge.tier_warmup", "challenge.tier_pressure", "challenge.tier_crisis"];
 
 function localDay(): string {
   const d = new Date();
@@ -56,6 +58,7 @@ type Outcome = { best: number; previous: number };
  * ya da bilmeyen erken biter.
  */
 export function ChallengePlayer({ onExit }: { onExit: () => void }) {
+  const t = useT();
   const [status, setStatus] = useState<Status>("loading");
   const [data, setData] = useState<Payload | null>(null);
   const [index, setIndex] = useState(0);
@@ -205,11 +208,11 @@ export function ChallengePlayer({ onExit }: { onExit: () => void }) {
 
     // Kombo kilometre taşları ve dalga geçişleri duyurulur.
     if (nextCombo > combo && [3, 5, 7, 10, 15].includes(nextCombo)) {
-      setFlash({ fire: Date.now(), text: `${nextCombo}'li seri · ${multiplier(nextCombo)}x`, tone: "flame" });
+      setFlash({ fire: Date.now(), text: t("challenge.flash_combo", { n: nextCombo, mult: multiplier(nextCombo) }), tone: "flame" });
     } else {
       const nextTier = data?.tiers[index + 1];
       if (nextTier && nextTier > tier) {
-        setFlash({ fire: Date.now(), text: `${TIER_LABEL[nextTier]} dalgası`, tone: "mint" });
+        setFlash({ fire: Date.now(), text: t("challenge.flash_wave", { wave: t(TIER_KEYS[nextTier] ?? TIER_KEYS[1]) }), tone: "mint" });
         vibrate("wrong");
       }
     }
@@ -221,7 +224,7 @@ export function ChallengePlayer({ onExit }: { onExit: () => void }) {
   if (status === "loading")
     return (
       <Frame>
-        <p className="muted text-center text-sm">Meydan okuma hazırlanıyor…</p>
+        <p className="muted text-center text-sm">{t("challenge.preparing")}</p>
       </Frame>
     );
 
@@ -230,9 +233,9 @@ export function ChallengePlayer({ onExit }: { onExit: () => void }) {
       <Frame>
         <div className="text-center">
           <AlertIcon size={22} />
-          <p className="mt-2 text-sm">Meydan okuma yüklenemedi.</p>
+          <p className="mt-2 text-sm">{t("challenge.load_failed")}</p>
           <button onClick={onExit} className="btn btn-ghost mt-4 w-full px-5 py-3">
-            Geri dön
+            {t("common.go_back")}
           </button>
         </div>
       </Frame>
@@ -242,13 +245,12 @@ export function ChallengePlayer({ onExit }: { onExit: () => void }) {
     return (
       <Frame>
         <div className="text-center">
-          <h2 className="text-lg font-bold">Henüz yeterli kelime yok</h2>
+          <h2 className="text-lg font-bold">{t("challenge.none_title")}</h2>
           <p className="muted mt-2 text-sm">
-            Meydan okuma, daha önce çalıştığın kelimelerden kurulur. Birkaç tur oynadıktan sonra
-            burası açılacak.
+            {t("challenge.none_sub")}
           </p>
           <button onClick={onExit} className="btn btn-primary mt-5 w-full px-5 py-3.5">
-            Öğrenmeye dön
+            {t("common.back_to_learn")}
           </button>
         </div>
       </Frame>
@@ -261,32 +263,31 @@ export function ChallengePlayer({ onExit }: { onExit: () => void }) {
           <div className="brand-gradient mx-auto mb-3 flex h-14 w-14 items-center justify-center rounded-2xl">
             <FlameIcon size={26} />
           </div>
-          <h2 className="text-xl font-bold">Hayatta kalma turu</h2>
+          <h2 className="text-xl font-bold">{t("challenge.title")}</h2>
           <p className="muted mt-2 text-sm">
-            {START_SECONDS} saniyeyle başlıyorsun. Her doğru sana süre kazandırır, her yanlış
-            süreni yakar. Üst üste doğrular puanını 3 katına kadar çıkarır.
+            {t("challenge.pitch", { n: START_SECONDS })}
           </p>
 
           <ul className="mt-4 space-y-1.5 text-left text-sm">
-            <Rule tone="mint">Doğru: +2 sn · hızlıysan +3,5 sn</Rule>
-            <Rule tone="rose">Yanlış: −4 sn ve seri sıfırlanır</Rule>
+            <Rule tone="mint">{t("challenge.rule_correct")}</Rule>
+            <Rule tone="rose">{t("challenge.rule_wrong")}</Rule>
             <Rule tone="flame">
-              Üç dalga: ısınma → baskı → kriz. Son dalga en çok unuttuğun
-              {data?.weak ? ` ${data.weak} ` : " "}
-              kelimeyle gelir.
+              {data?.weak
+                ? t("challenge.rule_waves_weak", { weak: data.weak })
+                : t("challenge.rule_waves")}
             </Rule>
           </ul>
 
           {record > 0 ? (
             <p className="muted mt-4 text-sm">
-              Rekorun: <strong>{record}</strong> puan
+              {t("challenge.your_record")} <strong>{record}</strong> {t("common.points")}
             </p>
           ) : null}
           <button onClick={start} className="btn btn-primary mt-5 w-full px-5 py-3.5 text-base">
-            Başla
+            {t("common.start")}
           </button>
           <button onClick={onExit} className="btn btn-ghost mt-2 w-full px-5 py-3">
-            Vazgeç
+            {t("common.discard")}
           </button>
         </div>
       </Frame>
@@ -307,27 +308,27 @@ export function ChallengePlayer({ onExit }: { onExit: () => void }) {
               kalma turu tükenerek bitiyor, üzgün bir yüz burada haksız olurdu. */}
           <Mascot mood={isRecord ? "cheer" : "happy"} size={96} className="mx-auto" />
           <h2 className="text-3xl font-black">
-            <CountUp value={score} /> <span className="text-lg font-bold">puan</span>
+            <CountUp value={score} /> <span className="text-lg font-bold">{t("common.points")}</span>
           </h2>
           {isRecord ? (
             <p className="mt-1 text-sm font-bold text-[color:var(--color-mint)]">
-              Yeni rekor! Önceki: {previous}
+              {t("challenge.new_record", { previous })}
             </p>
           ) : (
-            <p className="muted mt-1 text-sm">Rekorun: {outcome?.best ?? Math.max(record, score)}</p>
+            <p className="muted mt-1 text-sm">{t("challenge.your_record")} {outcome?.best ?? Math.max(record, score)}</p>
           )}
 
           <div className="mt-5 grid grid-cols-3 gap-2 text-center">
-            <Box label="doğru" value={`${tally.correct}/${tally.total}`} />
-            <Box label="isabet" value={`%${accuracy}`} />
-            <Box label="en uzun seri" value={String(bestCombo)} />
+            <Box label={t("daily.correct")} value={`${tally.correct}/${tally.total}`} />
+            <Box label={t("challenge.hit_rate")} value={t("common.pct", { n: accuracy })} />
+            <Box label={t("challenge.longest_streak")} value={String(bestCombo)} />
           </div>
 
           <button onClick={start} className="btn btn-primary mt-5 w-full px-5 py-3.5">
-            Yeniden dene
+            {t("common.try_again")}
           </button>
           <button onClick={onExit} className="btn btn-ghost mt-2 w-full px-5 py-3">
-            Öğrenmeye dön
+            {t("common.back_to_learn")}
           </button>
         </div>
       </Frame>
@@ -354,10 +355,10 @@ export function ChallengePlayer({ onExit }: { onExit: () => void }) {
                 color: "var(--color-brand)",
               }}
             >
-              {TIER_LABEL[tier]}
+              {t(TIER_KEYS[tier] ?? TIER_KEYS[1])}
             </span>
             <motion.span key={score} initial={{ scale: 1.25 }} animate={{ scale: 1 }} className="font-bold">
-              {score} puan
+              {score} {t("common.points")}
             </motion.span>
           </span>
           <motion.span
@@ -367,7 +368,7 @@ export function ChallengePlayer({ onExit }: { onExit: () => void }) {
             className="font-bold tabular-nums"
             style={{ color: urgent ? "var(--color-rose)" : "var(--color-flame)" }}
           >
-            {left.toFixed(1)} sn
+            {t("challenge.seconds", { n: left.toFixed(1) })}
           </motion.span>
         </div>
 
@@ -393,10 +394,10 @@ export function ChallengePlayer({ onExit }: { onExit: () => void }) {
                 className="flex items-center gap-1 text-xs font-black"
                 style={{ color: "var(--color-violet)" }}
               >
-                <SparkIcon size={13} /> {combo} üst üste · {mult}x
+                <SparkIcon size={13} /> {t("challenge.combo", { n: combo, mult })}
               </motion.span>
             ) : (
-              <span className="muted text-xs font-semibold">Seri kur, puanın katlansın</span>
+              <span className="muted text-xs font-semibold">{t("challenge.build_streak")}</span>
             )}
           </AnimatePresence>
           <span className="muted text-xs font-semibold">
@@ -446,6 +447,7 @@ function Box({ label, value }: { label: string; value: string }) {
 }
 
 function Frame({ children }: { children: React.ReactNode }) {
+  const t = useT();
   return (
     <motion.div
       initial={{ opacity: 0, y: 12 }}
@@ -455,7 +457,7 @@ function Frame({ children }: { children: React.ReactNode }) {
       <div className="card p-6">{children}</div>
       <p className="muted mt-4 text-center text-xs">
         <Link href="/learn" className="underline-offset-4 hover:underline">
-          Normal tura dön
+          {t("challenge.back_to_normal")}
         </Link>
       </p>
     </motion.div>
