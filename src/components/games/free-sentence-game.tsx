@@ -10,6 +10,7 @@ import type { Assessment, AssessLevel, AssessRequest } from "@/lib/assess-prompt
 import { AssessmentCard } from "@/components/feedback/assessment-card";
 import { firstExample } from "@/lib/example";
 import { whyFor, type Why } from "@/lib/why";
+import { useT } from "@/lib/i18n/client";
 
 type FreeRound = Extract<Round, { game: "free_sentence" }>;
 type Status = "idle" | "checking" | "done";
@@ -29,6 +30,7 @@ const SPECIAL_CHARS = ["ä", "ö", "ü", "ß"] as const;
  * lapse yok), < 40 → 2. Hata tipi rubriğin ilk hatasından.
  */
 export function FreeSentenceGame({ round, onDone }: GameProps<FreeRound>) {
+  const tx = useT();
   const { word, partners, level } = round;
   const [value, setValue] = useState("");
   const [status, setStatus] = useState<Status>("idle");
@@ -84,7 +86,7 @@ export function FreeSentenceGame({ round, onDone }: GameProps<FreeRound>) {
       setFailure(ai.reason);
       // Yedek dilbilgisini bilmiyor: kalite 3'ü aşmaz, "doğru" yalnız
       // kelimelerin hepsi geçip cümle uzunluğu tutuyorsa.
-      const targetsOk = fb.checks.filter((c) => c.label.startsWith("Kalıp")).every((c) => c.ok);
+      const targetsOk = fb.checks.filter((c) => c.kind === "target").every((c) => c.ok);
       const correct = targetsOk && fb.words >= 3;
       setOutcome({ correct, quality: correct ? 3 : 2 });
       vibrate(correct ? "correct" : "wrong");
@@ -134,19 +136,20 @@ export function FreeSentenceGame({ round, onDone }: GameProps<FreeRound>) {
 
   return (
     <GameShell
-      label="Cümle Kur"
+      label={tx("games.free_sentence")}
       verdict={outcome ? (outcome.correct ? "correct" : "wrong") : null}
       why={why}
       pull={false}
       feedback={
         result && outcome ? (
           <span>
-            {outcome.correct ? "Güzel cümle" : "Bir daha bak"} — puan <strong>{result.score.overall}</strong>
-            {"offline" in result && result.offline ? <span className="font-normal opacity-80"> · temel kontrol</span> : null}
+            {tx(outcome.correct ? "rounds.nice_sentence" : "rounds.look_again")} — {tx("rounds.score")}{" "}
+            <strong>{result.score.overall}</strong>
+            {"offline" in result && result.offline ? <span className="font-normal opacity-80"> · {tx("rounds.basic_check")}</span> : null}
           </span>
         ) : null
       }
-      prompt={<span className="brand-text text-xl font-bold sm:text-2xl">Bu kelimelerle bir cümle kur</span>}
+      prompt={<span className="brand-text text-xl font-bold sm:text-2xl">{tx("rounds.build_sentence")}</span>}
       hint={
         <div className="flex flex-wrap items-center justify-center gap-2">
           {targets.map((t) => (
@@ -169,7 +172,7 @@ export function FreeSentenceGame({ round, onDone }: GameProps<FreeRound>) {
         <div className="flex flex-col gap-3">
           <AssessmentCard answer={value.trim()} result={result} failure={failure} example={firstExample(word.beispiel)} />
           <button type="button" onClick={finish} className="btn btn-primary min-h-12 px-4 text-sm">
-            Devam
+            {tx("common.continue")}
           </button>
         </div>
       ) : (
@@ -191,7 +194,7 @@ export function FreeSentenceGame({ round, onDone }: GameProps<FreeRound>) {
             autoCorrect="off"
             spellCheck={false}
             lang="de"
-            placeholder="Almanca bir cümle yaz…"
+            placeholder={tx("rounds.write_a_sentence_ph")}
             className="card min-h-20 w-full resize-none px-4 py-3 text-lg outline-none"
           />
           <div className="flex flex-wrap justify-center gap-2">
@@ -202,7 +205,7 @@ export function FreeSentenceGame({ round, onDone }: GameProps<FreeRound>) {
             ))}
           </div>
           <button type="submit" disabled={status !== "idle" || value.trim().split(/\s+/).length < 2} className="btn btn-primary min-h-12 px-4 text-sm">
-            {status === "checking" ? "Değerlendiriliyor…" : "Değerlendir"}
+            {tx(status === "checking" ? "rounds.evaluating" : "rounds.evaluate")}
           </button>
         </form>
       )}

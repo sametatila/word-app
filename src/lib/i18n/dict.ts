@@ -52,3 +52,29 @@ export function translate(
     return v === undefined ? m : String(v);
   });
 }
+
+/**
+ * Arayüz dilinin sayı biçimi yerel adı.
+ *
+ * Binlik ayracı dile göre değişiyor (1.234 / 1,234 / 1.234) ve her yerde
+ * `toLocaleString("tr-TR")` yazılıydı: İngilizce arayüzde bile Türkçe biçim
+ * çıkıyordu. Kurs değil ARAYÜZ dili belirliyor — sayıyı okuyan kişi bu.
+ */
+const LOCALE: Record<NativeLang, string> = { tr: "tr-TR", en: "en-US", de: "de-DE" };
+
+export function localeOf(lang: NativeLang): string {
+  return LOCALE[lang] ?? LOCALE[DEFAULT_NATIVE];
+}
+
+/** Binlik ayraçlı sayı, arayüz dilinde. */
+export function formatNumber(n: number, lang: NativeLang): string {
+  return n.toLocaleString(localeOf(lang));
+}
+
+/**
+ * Yüzde — işaretin YERİ dile göre değişiyor (%45 / 45% / 45 %), o yüzden
+ * biçim sözlükten geliyor, koda gömülmüyor.
+ */
+export function formatPercent(n: number, lang: NativeLang): string {
+  return translate(lang, "common.pct", { n });
+}

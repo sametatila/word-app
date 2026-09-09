@@ -13,6 +13,7 @@ import { speakGerman, useSpeechAvailable } from "@/components/speak-button";
 import { SpeakerIcon } from "@/components/icons";
 import { firstExample } from "@/lib/example";
 import { roundHoldRemaining } from "@/lib/mascot-hold";
+import { useT } from "@/lib/i18n/client";
 
 type ListenRound = Extract<Round, { game: "listen" }>;
 
@@ -28,6 +29,7 @@ type ListenRound = Extract<Round, { game: "listen" }>;
  * bağ asıl öğrenilecek şey.
  */
 export function ListenGame({ round, onDone }: GameProps<ListenRound>) {
+  const tx = useT();
   const { word, options } = round;
   const spoken = withArtikel(word);
   const speechAvailable = useSpeechAvailable();
@@ -77,7 +79,7 @@ export function ListenGame({ round, onDone }: GameProps<ListenRound>) {
 
   return (
     <GameShell
-      label="Kulaktan Tanı"
+      label={tx("games.listen")}
       verdict={picked == null ? null : picked === word.tr ? "correct" : "wrong"}
       why={picked != null && picked !== word.tr ? whyFor({ type: "listening", word, detail: picked }) : null}
       feedback={
@@ -90,7 +92,7 @@ export function ListenGame({ round, onDone }: GameProps<ListenRound>) {
       }
       prompt={
         speechAvailable ? (
-          <span className="muted text-base">Duyduğun kelime ne demek?</span>
+          <span className="muted text-base">{tx("rounds.what_you_heard")}</span>
         ) : (
           // Konuşma sentezi yoksa tur çıkmaza girmesin: kelime yazıyla gösterilir.
           <span className="brand-text text-2xl font-bold sm:text-3xl">{spoken}</span>
@@ -98,7 +100,7 @@ export function ListenGame({ round, onDone }: GameProps<ListenRound>) {
       }
       hint={
         speechAvailable ? undefined : (
-          <span>Cihazın sesli okumayı desteklemiyor — kelime yazıyla gösterildi.</span>
+          <span>{tx("rounds.no_tts")}</span>
         )
       }
     >
@@ -111,12 +113,12 @@ export function ListenGame({ round, onDone }: GameProps<ListenRound>) {
               speakGerman(spoken);
             }}
             whileTap={{ scale: 0.93 }}
-            aria-label="Tekrar dinle"
+            aria-label={tx("rounds.listen_again")}
             className="brand-gradient flex h-20 w-20 items-center justify-center rounded-full shadow-lg"
           >
             <SpeakerIcon size={34} />
           </motion.button>
-          <span className="muted text-xs">Tekrar dinlemek için dokun</span>
+          <span className="muted text-xs">{tx("rounds.tap_to_listen")}</span>
         </div>
       ) : null}
 

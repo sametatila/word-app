@@ -331,5 +331,40 @@ Arkadaşlar / kullanıcı / gelen kutusu / sosyal ayarlar ekranlarını yeni dil
 | R — Profil/Ayarlar | **bitti** | `815728d` maskot avatarı + düzenleyici · `dd57b9e` profil + 4 yeni adres + onay diyaloğu · `c33face` üçlü tema · `62c8a51` ayar bölümleri · `86bdc4b` deneme istatistiği |
 | S — Sosyal | **bitti** | `97bef74` — kimlik kartı + davet bandı + dolgusuz çipler |
 | O — Onboarding | **bitti** | `b9b68ba` günlük hedef adımı · `11bbbe3` akış mobil sıraya: misafir onboarding + `/ilk-kelimeler` + kararların hesaba taşınması |
-| I — Arayüz dili | **sürüyor** | `b4a5bf2` altyapı · `b2eb5a8` kabuk+sekmeler · `bda8770` profil/ünite · `189cf21` görevler (sunucu) · `6b332b7` başarımlar (sunucu) · `fc2ff10` yetkinlik/gelişim. Kalan: ekranların geri kalanı + can-do (128) ve dilbilgisi açıklamaları (42) |
+| I — Arayüz dili | **sürüyor** | `b4a5bf2` altyapı · `b2eb5a8` kabuk+sekmeler · `bda8770` profil/ünite · `189cf21` görevler (sunucu) · `6b332b7` başarımlar (sunucu) · `fc2ff10` yetkinlik/gelişim · `715aa617` günlük plan + oyun adları (sunucu) · tur katmanı (aşağıda). Kalan: sosyal, giriş/karşılama, hukuki sayfalar, sınav/deneme oynatıcıları, ders oynatıcısı, yerleştirme, premium + can-do (128) ve dilbilgisi açıklamaları (42) |
 | X — Temizlik | **bitti** | `6b992d6` migrasyon açıkları · `65e019d` ders ikiliği + öksüz bileşenler. İki madde yanlış alarmdı (vercel.json, demo sayfaları) |
+
+---
+
+## 5. Tur katmanı (oyunlar) — 9 Eyl
+
+Şerit I'in en derin parçası: `src/components/games/*` (12 oyun + kabuk),
+`session-player`, `level-badge`, fark vurgusu ve cümle hakemi. 42 yeni anahtar
+(`rounds.*`, `words.*`, `match.*`, `diff.*`) + mobilin `games.*` / `common.*` /
+`rounds.*` kalemlerinin yeniden kullanımı.
+
+**Mobilden alınanlar.** Oyun adları, "Doğrusu:", "İpucu", "Sil", "Kontrol et",
+"Devam", "Doğru/Yanlış" mobil sözlükten geliyor — web ayrı bir metin yazmıyor.
+Web'de karşılığı olmayanlar (`rounds.letter_hint`, `rounds.build_sentence`,
+`rounds.ai_accepted` gibi) `src/i18n/web/` içinde.
+
+**Üç yapısal düzeltme, çeviri sırasında çıktı:**
+
+| # | Bulgu | Neden önemli |
+|---|---|---|
+| G1 | `load()` geç dönen cevabı **oynanan turun üstüne** yazıyordu: durum "oynanıyor"dan "hazır"a düşüyor, ekran yükleme kartında donuyordu. Geliştirme modunda React etkiyi iki kez çalıştırdığı için **her açılışta** oluşuyordu. | Tur hiç başlamıyordu. `setStatus` artık başlamış turu geri çekmiyor. |
+| G2 | Özet kartındaki "Devam" yeni turu yüklüyor ama `autoStarted` kapısı bir daha açılmadığı için **kimse başlatmıyordu**. | Kapı her `load()`'da sıfırlanıyor. |
+| G3 | Önbellekten çizilen kuyruk `resume()` ile **doğrulanmadan oynanıyordu** — cevaplanmış kelimeler yeniden sorulabilirdi. `startFresh` bunu zaten bekliyordu, `resume` beklemiyordu. | İki yol da artık taze cevabı bekliyor. |
+
+**Sayı biçimi.** `toLocaleString("tr-TR")` her yerde gömülüydü: İngilizce
+arayüzde bile Türkçe binlik ayracı çıkıyordu. `formatNumber(n, lang)` ve
+`formatPercent(n, lang)` eklendi (yüzde işaretinin YERİ dile göre değişiyor:
+`%45` / `45%` / `45 %`, mobilin `item.score_pct` kalıbıyla aynı). Tur ekranı
+düzeltildi; kalan ~18 çağrı yeri sırada.
+
+**Açık kalan parite maddesi (G4).** Mobilde cevaptan sonra **"Devam" düğmesi**
+var (`FeedbackFooter`, tek elle erişim için ekranın dibinde); web'de şerit
+kendiliğinden ilerliyor ve arada Erdi şeridi sürükleyerek getiriyor. İkisi
+bilinçli tasarlanmış ve mobil kodu web'i kaynak gösteriyor
+(`M/src/game/rounds.tsx`: "web VerdictBar'ın taşıdığı bilgi"). Karar
+gerekiyor — bu belge kapanmadan.

@@ -12,6 +12,7 @@ import { MeaningText } from "@/components/meaning-text";
 import { fx } from "@/lib/fx";
 import { CheckIcon, XIcon } from "@/components/icons";
 import { speakGerman, SpeakButton } from "@/components/speak-button";
+import { useT } from "@/lib/i18n/client";
 
 type TrueFalseRound = Extract<Round, { game: "truefalse" }>;
 
@@ -28,6 +29,7 @@ type TrueFalseRound = Extract<Round, { game: "truefalse" }>;
  * bir eşleşme göstermek öğrenciyi haksız yere yanıltır.
  */
 export function TrueFalseGame({ round, onDone }: GameProps<TrueFalseRound>) {
+  const tx = useT();
   const { word, claim, isTrue } = round;
   const [answered, setAnswered] = useState<boolean | null>(null);
   const started = useRef(Date.now());
@@ -58,8 +60,8 @@ export function TrueFalseGame({ round, onDone }: GameProps<TrueFalseRound>) {
 
   return (
     <GameShell
-      label="Doğru mu Yanlış mı"
-      prompt={<span className="muted text-base">Bu eşleşme doğru mu?</span>}
+      label={tx("games.truefalse")}
+      prompt={<span className="muted text-base">{tx("rounds.is_match_right")}</span>}
       verdict={!settled ? null : wasRight ? "correct" : "wrong"}
       why={settled && !wasRight ? whyFor({ type: "meaning", word, detail: isTrue ? null : claim.text }) : null}
       feedback={
@@ -96,7 +98,7 @@ export function TrueFalseGame({ round, onDone }: GameProps<TrueFalseRound>) {
         </div>
         <div className="my-3 flex items-center justify-center gap-3">
           <span className="h-px w-10" style={{ background: "var(--border)" }} />
-          <span className="muted text-xs uppercase tracking-wide">demek</span>
+          <span className="muted text-xs uppercase tracking-wide">{tx("rounds.means")}</span>
           <span className="h-px w-10" style={{ background: "var(--border)" }} />
         </div>
         <div className="flex justify-center font-semibold">
@@ -114,7 +116,7 @@ export function TrueFalseGame({ round, onDone }: GameProps<TrueFalseRound>) {
             settled && isTrue ? "option-correct" : settled && answered === true ? "option-wrong" : ""
           }`}
         >
-          <CheckIcon size={20} /> Doğru
+          <CheckIcon size={20} /> {tx("common.correct")}
         </motion.button>
         <motion.button
           type="button"
@@ -125,7 +127,7 @@ export function TrueFalseGame({ round, onDone }: GameProps<TrueFalseRound>) {
             settled && !isTrue ? "option-correct" : settled && answered === false ? "option-wrong" : ""
           }`}
         >
-          <XIcon size={20} /> Yanlış
+          <XIcon size={20} /> {tx("common.wrong")}
         </motion.button>
       </div>
 

@@ -10,6 +10,7 @@ import type { GameProps } from "./types";
 import type { Round } from "@/lib/types";
 import { fx, vibrate } from "@/lib/fx";
 import { prefetchGerman } from "@/components/speak-button";
+import { useT } from "@/lib/i18n/client";
 
 type ArtikelRound = Extract<Round, { game: "artikel" }>;
 
@@ -19,6 +20,7 @@ const GSW_OPTIONS = ["de", "d", "s"];
 const OPTION_COLORS = ["var(--color-sky)", "var(--color-rose)", "var(--color-mint)"];
 
 export function ArtikelGame({ round, onDone }: GameProps<ArtikelRound>) {
+  const tx = useT();
   const { word } = round;
   const answer = word.artikel;
   const options = GSW_OPTIONS.includes(answer ?? "") ? GSW_OPTIONS : HD_OPTIONS;
@@ -55,7 +57,7 @@ export function ArtikelGame({ round, onDone }: GameProps<ArtikelRound>) {
 
   return (
     <GameShell
-      label="Artikel Yarışı"
+      label={tx("games.article_race")}
       verdict={picked == null ? null : picked === answer ? "correct" : "wrong"}
       why={picked != null && picked !== answer ? whyFor({ type: "article", word, detail: picked }) : null}
       feedback={

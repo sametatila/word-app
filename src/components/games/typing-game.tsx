@@ -11,6 +11,7 @@ import { matchesAnswer, withArtikel, type GameProps, typLabel } from "./types";
 import type { Round } from "@/lib/types";
 import { fx, vibrate } from "@/lib/fx";
 import { prefetchGerman } from "@/components/speak-button";
+import { useT, useLang } from "@/lib/i18n/client";
 
 type TypingRound = Extract<Round, { game: "typing" }>;
 
@@ -48,6 +49,8 @@ function skeleton(de: string): string {
 }
 
 export function TypingGame({ round, onDone }: GameProps<TypingRound>) {
+  const tx = useT();
+  const lang = useLang();
   // Sınav kâğıdında ipucu düğmesi yok (bkz. no-hints.tsx).
   const noHints = useNoHints();
   const { word } = round;
@@ -76,6 +79,9 @@ export function TypingGame({ round, onDone }: GameProps<TypingRound>) {
 
   const letterCount = word.de.replace(/\s+/g, "").length;
   const firstLetter = word.de.trim().charAt(0).toUpperCase();
+  // Ayraç: çeviri metnindeki harfin yerini bulmak için. Metinde geçmeyecek bir
+  // karakter seçildi ki bölme her dilde tam iki parça versin.
+  const [hintBefore, hintAfter] = tx("rounds.letter_hint", { n: letterCount, letter: "\u0000" }).split("\u0000");
 
   function submit() {
     if (status !== "idle") return;
@@ -140,7 +146,7 @@ export function TypingGame({ round, onDone }: GameProps<TypingRound>) {
 
   return (
     <GameShell
-      label="Yazarak Hatırla"
+      label={tx("games.typing")}
       verdict={status === "idle" ? null : status}
       why={
         status === "wrong"
@@ -153,7 +159,7 @@ export function TypingGame({ round, onDone }: GameProps<TypingRound>) {
       }
       feedback={
         <span>
-          {status === "correct" ? "Harika! " : "Doğrusu: "}
+          {tx(status === "correct" ? "rounds.great" : "rounds.answer_is")}
           <strong>{withArtikel(word)}</strong>
           {word.en ? (
             <span className="font-normal opacity-70" lang="en">
@@ -176,11 +182,17 @@ export function TypingGame({ round, onDone }: GameProps<TypingRound>) {
       hint={
         <div className="flex items-center justify-center gap-2">
           <span className="surface-2 rounded-full px-2.5 py-0.5 text-xs font-semibold uppercase tracking-wide">
-            {typLabel(word.typ, word.tr)}
+            {typLabel(word.typ, word.tr, lang)}
           </span>
           <span>
-            {letterCount} harf · <strong>{firstLetter}</strong> ile başlıyor
-            {round.assist ? " · ipuçlu" : ""}
+            {/* Baş harf kalın kalmalı ama cümledeki YERİ dile göre değişiyor:
+                metin bir ayraçla üretilip ikiye bölünüyor, kalın harf araya
+                giriyor. Kalıbı Türkçenin söz dizimine sabitlemenin tek yolu
+                buydu. */}
+            {hintBefore}
+            <strong>{firstLetter}</strong>
+            {hintAfter}
+            {round.assist ? tx("rounds.with_hints") : ""}
           </span>
         </div>
       }
@@ -201,7 +213,7 @@ export function TypingGame({ round, onDone }: GameProps<TypingRound>) {
           autoCapitalize="off"
           autoCorrect="off"
           spellCheck={false}
-          placeholder="Almanca yaz..."
+          placeholder={tx("rounds.type")}
           className={`card min-h-14 w-full px-4 text-lg outline-none ${
             status === "wrong" ? "animate-shake border-[color:var(--color-rose)]" : ""
           } ${status === "correct" ? "border-[color:var(--color-mint)]" : ""}`}
@@ -229,7 +241,7 @@ export function TypingGame({ round, onDone }: GameProps<TypingRound>) {
               disabled={status !== "idle" || hintShown}
               className="btn btn-ghost min-h-12 flex-1 px-4 text-sm"
             >
-              İpucu
+              {tx("rounds.hint")}
             </button>
           )}
           <button
@@ -237,7 +249,7 @@ export function TypingGame({ round, onDone }: GameProps<TypingRound>) {
             disabled={status !== "idle" || value.trim() === ""}
             className="btn btn-primary min-h-12 flex-[2] px-4 text-sm"
           >
-            Kontrol Et
+            {tx("common.check")}
           </button>
         </div>
       </form>

@@ -11,6 +11,7 @@ import type { Round } from "@/lib/types";
 import { SentenceTranslation } from "@/components/meaning-text";
 import { fx, vibrate } from "@/lib/fx";
 import { prefetchGerman } from "@/components/speak-button";
+import { useT } from "@/lib/i18n/client";
 
 /**
  * Yanlış cevaptan sonra doğruyu okumaya geçmeden önceki okuma payı.
@@ -23,6 +24,7 @@ const WRONG_TAIL_MS = 900;
 type ClozeRound = Extract<Round, { game: "cloze" }>;
 
 export function ClozeGame({ round, onDone }: GameProps<ClozeRound>) {
+  const tx = useT();
   const { word, sentence, sentenceTr, sentenceEn, answer, options } = round;
   const [before, after] = sentence.split("_____");
   const typeMode = round.mode === "type";
@@ -88,7 +90,7 @@ export function ClozeGame({ round, onDone }: GameProps<ClozeRound>) {
 
   return (
     <GameShell
-      label={typeMode ? "Yazarak Tamamla" : "Cümleyi Tamamla"}
+      label={tx(typeMode ? "rounds.cloze_typed" : "games.cloze")}
       verdict={picked == null ? null : correct ? "correct" : "wrong"}
       why={
         picked != null && !correct
@@ -164,7 +166,7 @@ export function ClozeGame({ round, onDone }: GameProps<ClozeRound>) {
             autoCorrect="off"
             spellCheck={false}
             lang="de"
-            placeholder={`Boşluğa yaz… (${word.tr})`}
+            placeholder={tx("rounds.write_in_blank", { hint: word.tr })}
             className={`card min-h-14 w-full px-4 text-lg outline-none ${
               picked != null && !correct ? "animate-shake border-[color:var(--color-rose)]" : ""
             } ${picked != null && correct ? "border-[color:var(--color-mint)]" : ""}`}

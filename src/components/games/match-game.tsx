@@ -10,12 +10,14 @@ import type { Round } from "@/lib/types";
 import { MeaningText } from "@/components/meaning-text";
 import { fx } from "@/lib/fx";
 import { speakGerman } from "@/components/speak-button";
+import { useT } from "@/lib/i18n/client";
 
 type MatchRound = Extract<Round, { game: "match" }>;
 
 type RightItem = { wordId: number; tr: string; en: string | null };
 
 export function MatchGame({ round, onDone }: GameProps<MatchRound>) {
+  const tx = useT();
   const { words } = round;
 
   const [rightItems, setRightItems] = useState<RightItem[]>([]);
@@ -104,7 +106,7 @@ export function MatchGame({ round, onDone }: GameProps<MatchRound>) {
   }
 
   return (
-    <GameShell label="Eşleştirme">
+    <GameShell label={tx("games.match")}>
       <div className="grid grid-cols-2 gap-3">
         <div className="flex flex-col gap-3">
           {words.map((w, i) => {

@@ -8,6 +8,7 @@ import { afterMs } from "@/components/pocket-clock";
 import { trackOnce } from "@/lib/track";
 import { screenKey } from "@/lib/screens";
 import { TURKISH_VOICE, lessonVoice, resolveVoice, type VoiceId } from "@/lib/tts/voices";
+import { useT } from "@/lib/i18n/client";
 
 /**
  * Tarayıcının konuşma sentezi ile telaffuz. Desteklenmiyorsa hiç görünmez.
@@ -1007,6 +1008,7 @@ export function SpeakButton({
   className?: string;
 }) {
   const available = useSpeechAvailable();
+  const t = useT();
   const speak = useCallback(() => speakGerman(text), [text]);
   if (!available) return null;
   const dim = size === "sm" ? "h-7 w-7" : "h-9 w-9";
@@ -1015,8 +1017,8 @@ export function SpeakButton({
       type="button"
       onClick={speak}
       whileTap={{ scale: 0.9 }}
-      aria-label="Telaffuzu dinle"
-      title="Telaffuzu dinle"
+      aria-label={t("common.listen_pronunciation")}
+      title={t("common.listen_pronunciation")}
       className={`btn btn-ghost shrink-0 ${dim} ${className}`}
     >
       <SpeakerIcon size={size === "sm" ? 13 : 16} />

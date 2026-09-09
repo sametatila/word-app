@@ -164,10 +164,15 @@ export function matchSentence(typed: string, target: string, alternatives: strin
   return { verdict: "wrong", quality: 1, errorType: "meaning", target: targetOut, typed: typedOut, matched: cand };
 }
 
-/** Şerit metni: karar → Türkçe kısa başlık. */
-export const VERDICT_TEXT: Record<Verdict, string> = {
-  exact: "Harika! Cümle tam doğru.",
-  spelling: "Neredeyse — yalnız yazım.",
-  order: "Kelimeler doğru, sıra değil.",
-  wrong: "Doğrusu:",
+/**
+ * Şerit metni: karar → sözlük anahtarı.
+ *
+ * Metnin kendisi burada durmuyor: hakem hem sunucuda hem istemcide çalışıyor,
+ * çeviri ise gösterildiği yerde yapılıyor (kullanıcının dili orada biliniyor).
+ */
+export const VERDICT_KEYS: Record<Verdict, string> = {
+  exact: "match.exact",
+  spelling: "match.spelling",
+  order: "match.order",
+  wrong: "match.wrong",
 };

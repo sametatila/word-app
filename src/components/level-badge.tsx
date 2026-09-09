@@ -1,6 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useT, useLang } from "@/lib/i18n/client";
+import { formatNumber, formatPercent } from "@/lib/i18n/dict";
 
 /*
  * Rozet DOLU bir zemin ve üstünde beyaz yazı taşıyor, o yüzden tonlar temaya
@@ -45,6 +47,8 @@ export function LevelBadge({
   total: number;
   compact?: boolean;
 }) {
+  const t = useT();
+  const lang = useLang();
   const tone = TONE[level] ?? "var(--color-brand)";
   const pct = total > 0 ? Math.min(100, (mastered / total) * 100) : 0;
 
@@ -65,14 +69,14 @@ export function LevelBadge({
           {!compact ? (
             <span className="muted text-xs font-semibold">
               {mastered > 0
-                ? `${mastered.toLocaleString("tr-TR")} kelime pekişti`
-                : "kelimeler pekiştikçe burada birikecek"}
+                ? t("level.mastered_count", { n: formatNumber(mastered, lang) })
+                : t("level.mastered_none")}
             </span>
           ) : null}
         </div>
         {!compact && total > 0 ? (
           <span className="muted text-xs font-semibold tabular-nums">
-            %{pct < 1 && mastered > 0 ? "<1" : Math.round(pct)}
+            {pct < 1 && mastered > 0 ? t("common.pct_lt1") : formatPercent(Math.round(pct), lang)}
           </span>
         ) : null}
       </div>

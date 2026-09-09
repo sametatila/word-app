@@ -2,6 +2,7 @@ import type { Round, RoundWord } from "@/lib/types";
 import type { ErrorType } from "@/lib/errors";
 import { umlautStem } from "@/lib/german";
 import { foldNumbers } from "@/lib/german-numbers";
+import { translate, type NativeLang } from "@/lib/i18n/dict";
 
 export type GameResult = {
   wordId: number;
@@ -42,31 +43,36 @@ export function shuffle<T>(arr: T[]): T[] {
   return a;
 }
 
-/** Kelime türünün Türkçe etiketi. Veri "Sonstiges" dese de çeviri fiilse fiil sayılır. */
-export function typLabel(typ: string, tr: string): string {
-  if (typ === "Nomen") return "isim";
-  if (typ === "Verb" || /(mek|mak)(\s*,|$)/.test(tr)) return "fiil";
-  return "diğer";
+/**
+ * Kelime türünün etiketi, arayüz dilinde. Veri "Sonstiges" dese de çeviri
+ * fiilse fiil sayılır — bu çıkarım TÜRKÇE çeviriye bakıyor (mastar eki), yani
+ * arayüz dili ne olursa olsun aynı kaynaktan besleniyor.
+ */
+export function typLabel(typ: string, tr: string, lang: NativeLang): string {
+  if (typ === "Nomen") return translate(lang, "words.typ_noun");
+  if (typ === "Verb" || /(mek|mak)(\s*,|$)/.test(tr)) return translate(lang, "words.typ_verb");
+  return translate(lang, "words.typ_other");
 }
 
 /**
  * Ekranda gösterilecek dilbilgisi notu.
  * Ham PDF gösterimi ("¨-e", "(Sg.)") yerine öğrencinin okuyabileceği bir metin döner.
  */
-export function grammarNote(word: RoundWord): string | null {
+export function grammarNote(word: RoundWord, lang: NativeLang): string | null {
   const raw = word.formen?.trim();
   if (!raw) return null;
-  if (/^\(?Sg\.?\)?$/i.test(raw)) return "çoğulu yok";
-  if (/^\(?Pl\.?\)?$/i.test(raw)) return "yalnızca çoğul";
+  if (/^\(?Sg\.?\)?$/i.test(raw)) return translate(lang, "words.no_plural");
+  if (/^\(?Pl\.?\)?$/i.test(raw)) return translate(lang, "words.plural_only");
 
   if (word.artikel) {
     const m = raw.match(/^(¨)?-?\s*(\w*)$/);
     if (m) {
       const stem = m[1] ? umlautStem(word.de) : word.de;
       const suffix = m[2] ?? "";
-      return `çoğul: die ${stem}${suffix}`;
+      // Çoğul biçimin kendisi Almanca kalıyor; çevrilen yalnız etiket.
+      return translate(lang, "words.plural_is", { form: `die ${stem}${suffix}` });
     }
-    return `çoğul: ${raw}`;
+    return translate(lang, "words.plural_is", { form: raw });
   }
   return raw; // fiil çekimleri olduğu gibi
 }

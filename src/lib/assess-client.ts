@@ -30,16 +30,16 @@ export type AssessResponse =
 export const ASSESS_TIMEOUT_MS = 20_000;
 
 /** Kullanıcıya gösterilecek kısa açıklama. */
-export const ASSESS_FAILURE_TEXT: Record<AssessFailure, string> = {
-  not_configured: "AI değerlendirmesi şu an kapalı — temel kontrol gösteriliyor.",
-  quota: "Bugünlük AI değerlendirme hakkın doldu — temel kontrol gösteriliyor.",
-  too_long: "Metin çok uzun; kısaltıp tekrar dene.",
-  timeout: "Değerlendirme zaman aşımına uğradı — temel kontrol gösteriliyor.",
+export const ASSESS_FAILURE_KEYS: Record<AssessFailure, string> = {
+  not_configured: "assess.fail_not_configured",
+  quota: "assess.fail_quota",
+  too_long: "assess.fail_too_long",
+  timeout: "assess.fail_timeout",
   aborted: "",
-  invalid: "Değerlendirme okunamadı — temel kontrol gösteriliyor.",
-  upstream: "Değerlendirme servisi şu an cevap vermiyor — temel kontrol gösteriliyor.",
-  unauthorized: "Oturum bulunamadı; yeniden giriş yap.",
-  bad_request: "Görev eksik; sayfayı yenileyip tekrar dene.",
+  invalid: "assess.fail_invalid",
+  upstream: "assess.fail_upstream",
+  unauthorized: "assess.fail_unauthorized",
+  bad_request: "assess.fail_bad_request",
 };
 
 function localDay(): string {
@@ -93,7 +93,20 @@ export async function askAssess(
 }
 
 /** Yedek değerlendirmenin dayandığı kontrol listesi — ekranda madde madde gösterilir. */
-export type FallbackCheck = { label: string; ok: boolean };
+/**
+ * Yedek denetim maddesi.
+ *
+ * Metin DEĞİL anahtar taşıyor: madde hem sunucuda kuruluyor hem üç ayrı
+ * ekranda gösteriliyor, çeviri ise gösterildiği yerde yapılıyor. `kind` ayrıca
+ * çağıranların maddeyi TANIMASINI sağlıyor — önceden `label.startsWith("Kalıp")`
+ * yazılıydı, yani mantık Türkçe metne bağlıydı ve çeviri onu sessizce bozardı.
+ */
+export type FallbackCheck = {
+  kind: "min_words" | "target" | "capital" | "punctuation" | "target_lang";
+  key: string;
+  vars?: Record<string, string | number>;
+  ok: boolean;
+};
 
 export type FallbackAssessment = Assessment & {
   offline: true;
@@ -147,7 +160,7 @@ export function fallbackAssessment(req: AssessRequest): FallbackAssessment {
   const checks: FallbackCheck[] = [];
 
   const minWords = minWordsFrom(req.task.constraints) ?? MIN_WORDS[req.kind];
-  checks.push({ label: `En az ${minWords} kelime (${words})`, ok: words >= minWords });
+  checks.push({ kind: "min_words", key: "assess.min_words", vars: { min: minWords, n: words }, ok: words >= minWords });
 
   const targets = req.task.targets ?? (req.task.target ? [req.task.target] : []);
   let hit = 0;
@@ -158,15 +171,15 @@ export function fallbackAssessment(req: AssessRequest): FallbackAssessment {
       .filter((w) => w.length >= 3);
     const ok = stems.length ? stems.some((w) => folded.includes(` ${w} `) || folded.includes(` ${w}`)) : false;
     if (ok) hit++;
-    checks.push({ label: `Kalıp: ${t}`, ok });
+    checks.push({ kind: "target", key: "assess.target", vars: { pattern: t }, ok });
   }
 
   if (req.kind === "writing" || req.kind === "sentence") {
-    checks.push({ label: "Büyük harfle başlıyor", ok: /^[A-ZÄÖÜ]/.test(text) });
-    checks.push({ label: "Noktalama ile bitiyor", ok: /[.!?]$/.test(text) });
+    checks.push({ kind: "capital", key: "assess.capital", ok: /^[A-ZÄÖÜ]/.test(text) });
+    checks.push({ kind: "punctuation", key: "assess.punctuation", ok: /[.!?]$/.test(text) });
   }
   const turkishChars = /[çğışİ]/.test(text);
-  checks.push({ label: "Almanca yazılmış (Türkçe harf yok)", ok: !turkishChars });
+  checks.push({ kind: "target_lang", key: "assess.target_lang", ok: !turkishChars });
 
   const passed = checks.filter((c) => c.ok).length;
   const ratio = checks.length ? passed / checks.length : 0;

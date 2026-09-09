@@ -9,6 +9,7 @@ import { firstExample } from "@/lib/example";
 import { SentenceTranslation } from "@/components/meaning-text";
 import { SpeakButton, speakGerman } from "@/components/speak-button";
 import { Mascot } from "@/components/mascot";
+import { useT, useLang } from "@/lib/i18n/client";
 
 type IntroRound = Extract<Round, { game: "intro" }>;
 
@@ -20,6 +21,8 @@ const ARTIKEL_TONE: Record<string, string> = {
 
 /** Yeni kelimeyi tanıtır — cevap beklenmez, kalite puanı "iyi" sayılır. */
 export function IntroGame({ round, onDone }: GameProps<IntroRound>) {
+  const tx = useT();
+  const lang = useLang();
   const { word } = round;
   const [revealed, setRevealed] = useState(false);
   const [skipping, setSkipping] = useState(false);
@@ -43,7 +46,7 @@ export function IntroGame({ round, onDone }: GameProps<IntroRound>) {
 
   return (
     <GameShell
-      label="Yeni Kelime"
+      label={tx("games.intro")}
       /*
         Kabuğun okuma bölgesi bu turda boştu: tanıtım kartında sorulan bir soru
         yok, dolayısıyla `prompt` da yoktu ve etiket tek başına duruyordu.
@@ -82,8 +85,8 @@ export function IntroGame({ round, onDone }: GameProps<IntroRound>) {
           <SpeakButton text={withArtikel(word)} />
         </div>
         <p className="muted mt-1 text-sm">
-          {typLabel(word.typ, word.tr)}
-          {grammarNote(word) ? ` · ${grammarNote(word)}` : ""}
+          {typLabel(word.typ, word.tr, lang)}
+          {grammarNote(word, lang) ? ` · ${grammarNote(word, lang)}` : ""}
         </p>
 
         <motion.p
@@ -137,7 +140,7 @@ export function IntroGame({ round, onDone }: GameProps<IntroRound>) {
           }
           className="btn btn-primary w-full px-6 py-3 text-base"
         >
-          {withArtikel(word)} — anladım
+          {tx("rounds.understood", { word: withArtikel(word) })}
         </button>
         <button
           onClick={async () => {
@@ -156,7 +159,7 @@ export function IntroGame({ round, onDone }: GameProps<IntroRound>) {
           disabled={skipping}
           className="btn btn-ghost w-full px-6 py-2.5 text-sm disabled:opacity-50"
         >
-          {skipping ? "Kaydediliyor…" : "Bunu zaten biliyorum"}
+          {tx(skipping ? "rounds.saving" : "rounds.already_known")}
         </button>
       </div>
     </GameShell>

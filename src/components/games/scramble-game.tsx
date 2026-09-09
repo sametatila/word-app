@@ -12,6 +12,7 @@ import { seededShuffle } from "@/lib/shuffle";
 import type { Round } from "@/lib/types";
 import { fx, vibrate } from "@/lib/fx";
 import { prefetchGerman, SpeakButton } from "@/components/speak-button";
+import { useT } from "@/lib/i18n/client";
 
 type ScrambleRound = Extract<Round, { game: "scramble" }>;
 type Status = "playing" | "correct" | "wrong";
@@ -41,6 +42,7 @@ function makePool(word: string, seed: string): Tile[] {
  * dokunulacak hedef oyun boyunca aynı yerde kalır.
  */
 export function ScrambleGame({ round, onDone }: GameProps<ScrambleRound>) {
+  const tx = useT();
   // Sınav kâğıdında ipucu düğmesi yok (bkz. no-hints.tsx).
   const noHints = useNoHints();
   const { word } = round;
@@ -153,12 +155,12 @@ export function ScrambleGame({ round, onDone }: GameProps<ScrambleRound>) {
 
   return (
     <GameShell
-      label="Harf Bulmacası"
+      label={tx("games.scramble")}
       verdict={status === "playing" ? null : status}
       why={status === "wrong" ? whyFor({ type: "spelling", word, detail: placed.map((t) => t.char).join("") }) : null}
       feedback={
         <span className="inline-flex items-center">
-          {status === "correct" ? "Harika! " : "Doğrusu: "}
+          {tx(status === "correct" ? "rounds.great" : "rounds.answer_is")}
           <strong className="ml-1">{word.de}</strong>
           <SpeakButton text={withArtikel(word)} size="sm" className="ml-1" />
         </span>
@@ -189,7 +191,7 @@ export function ScrambleGame({ round, onDone }: GameProps<ScrambleRound>) {
                 type="button"
                 onClick={() => tile && removeAt(i)}
                 disabled={!tile || status !== "playing"}
-                aria-label={tile ? `${tile.char} harfini geri al` : "boş yuva"}
+                aria-label={tile ? tx("rounds.undo_letter", { char: tile.char }) : tx("rounds.empty_letter_slot")}
                 className={`flex items-center justify-center rounded-xl font-bold transition-colors ${slotSize}`}
                 style={{
                   border: `2px ${tile ? "solid" : "dashed"} ${slotTone}`,
@@ -231,7 +233,7 @@ export function ScrambleGame({ round, onDone }: GameProps<ScrambleRound>) {
             disabled={status !== "playing" || placed.length === 0}
             className="btn btn-ghost px-5 py-2.5 text-sm disabled:opacity-40"
           >
-            Sil
+            {tx("common.delete")}
           </button>
           {noHints ? null : (
             <button
@@ -240,7 +242,7 @@ export function ScrambleGame({ round, onDone }: GameProps<ScrambleRound>) {
               disabled={status !== "playing" || placed.length >= targetLetters.length}
               className="btn btn-ghost px-5 py-2.5 text-sm disabled:opacity-40"
             >
-              İpucu
+              {tx("rounds.hint")}
             </button>
           )}
         </div>

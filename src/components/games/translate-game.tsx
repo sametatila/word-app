@@ -8,10 +8,11 @@ import { withArtikel, type GameProps } from "./types";
 import type { Round } from "@/lib/types";
 import { fx, vibrate } from "@/lib/fx";
 import { prefetchGerman } from "@/components/speak-button";
-import { matchSentence, VERDICT_TEXT, type SentenceMatch } from "@/lib/sentence-match";
+import { matchSentence, VERDICT_KEYS, type SentenceMatch } from "@/lib/sentence-match";
 import { askAssess } from "@/lib/assess-client";
 import { whyFor, type Why } from "@/lib/why";
 import { TokenDiff, TypedTokens } from "@/components/feedback/diff-text";
+import { useT } from "@/lib/i18n/client";
 
 type TranslateRound = Extract<Round, { game: "translate" }>;
 type Status = "idle" | "checking" | "correct" | "wrong";
@@ -43,6 +44,7 @@ const ASSESS_ACCEPT = 75;
  * düşürür (hintUsed).
  */
 export function TranslateGame({ round, onDone }: GameProps<TranslateRound>) {
+  const tx = useT();
   // Sınav kâğıdında ipucu düğmesi yok (bkz. no-hints.tsx).
   const noHints = useNoHints();
   const { word, sentence, alternatives } = round;
@@ -153,19 +155,19 @@ export function TranslateGame({ round, onDone }: GameProps<TranslateRound>) {
 
   return (
     <GameShell
-      label="Çevir"
+      label={tx("games.translate")}
       verdict={status === "idle" || status === "checking" ? null : status}
       why={why}
       feedback={
         result ? (
           <span>
             <span className="block">
-              {aiAccepted ? "Anlamca doğru — başka bir kuruluş. " : `${VERDICT_TEXT[result.verdict]} `}
+              {aiAccepted ? tx("rounds.ai_accepted") : `${tx(VERDICT_KEYS[result.verdict])} `}
               <TokenDiff tokens={result.target} />
             </span>
             {status === "wrong" && result.typed.some((t) => t.mark !== "same") ? (
               <span className="block text-xs font-normal opacity-80">
-                Yazdığın: <TypedTokens tokens={result.typed} />
+                {tx("rounds.you_wrote")} <TypedTokens tokens={result.typed} />
               </span>
             ) : null}
           </span>
@@ -186,7 +188,7 @@ export function TranslateGame({ round, onDone }: GameProps<TranslateRound>) {
           <span className="surface-2 rounded-full px-2.5 py-0.5 font-semibold uppercase tracking-wide">
             {withArtikel(word)}
           </span>
-          <span>{targetWords.length} kelime</span>
+          <span>{tx("rounds.n_words", { n: targetWords.length })}</span>
         </div>
       }
     >
@@ -214,7 +216,7 @@ export function TranslateGame({ round, onDone }: GameProps<TranslateRound>) {
           autoCorrect="off"
           spellCheck={false}
           lang="de"
-          placeholder="Almanca cümleyi yaz…"
+          placeholder={tx("rounds.write_sentence_ph")}
           className={`card min-h-16 w-full resize-none px-4 py-3 text-lg outline-none ${
             status === "wrong" ? "animate-shake border-[color:var(--color-rose)]" : ""
           } ${status === "correct" ? "border-[color:var(--color-mint)]" : ""}`}
@@ -242,7 +244,7 @@ export function TranslateGame({ round, onDone }: GameProps<TranslateRound>) {
               disabled={status !== "idle" || hintShown}
               className="btn btn-ghost min-h-12 flex-1 px-4 text-sm"
             >
-              İpucu
+              {tx("rounds.hint")}
             </button>
           )}
           <button
@@ -250,7 +252,7 @@ export function TranslateGame({ round, onDone }: GameProps<TranslateRound>) {
             disabled={status !== "idle" || value.trim() === ""}
             className="btn btn-primary min-h-12 flex-[2] px-4 text-sm"
           >
-            {status === "checking" ? "Kontrol ediliyor…" : "Kontrol Et"}
+            {tx(status === "checking" ? "rounds.checking" : "common.check")}
           </button>
         </div>
       </form>

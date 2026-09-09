@@ -12,6 +12,7 @@ import type { Round } from "@/lib/types";
 import { SentenceTranslation } from "@/components/meaning-text";
 import { fx, vibrate } from "@/lib/fx";
 import { prefetchGerman, speakGerman, SpeakButton } from "@/components/speak-button";
+import { useT } from "@/lib/i18n/client";
 
 type OrderRound = Extract<Round, { game: "order" }>;
 type Status = "playing" | "correct" | "wrong";
@@ -31,6 +32,7 @@ type Token = { id: number; text: string };
  * yuvayla çizilir. Böylece dokunulacak hedef tur boyunca sabit kalır.
  */
 export function OrderGame({ round, onDone }: GameProps<OrderRound>) {
+  const tx = useT();
   // Sınav kâğıdında ipucu düğmesi yok (bkz. no-hints.tsx).
   const noHints = useNoHints();
   const { word, tokens, answer, tail, sentenceTr, sentenceEn } = round;
@@ -139,7 +141,7 @@ export function OrderGame({ round, onDone }: GameProps<OrderRound>) {
 
   return (
     <GameShell
-      label="Cümleyi Diz"
+      label={tx("games.order")}
       verdict={status === "playing" ? null : status}
       why={
         status === "wrong"
@@ -153,7 +155,7 @@ export function OrderGame({ round, onDone }: GameProps<OrderRound>) {
       }
       feedback={
         <span className="inline-flex flex-wrap items-center">
-          {status === "correct" ? "Harika! " : "Doğrusu: "}
+          {tx(status === "correct" ? "rounds.great" : "rounds.answer_is")}
           <strong className="ml-1">
             {answer.join(" ")}
             {tail}
@@ -193,7 +195,7 @@ export function OrderGame({ round, onDone }: GameProps<OrderRound>) {
                 type="button"
                 onClick={() => token && removeAt(i)}
                 disabled={!token || status !== "playing"}
-                aria-label={token ? `${token.text} kelimesini geri al` : "boş yer"}
+                aria-label={token ? tx("rounds.undo_word", { word: token.text }) : tx("rounds.empty_word_slot")}
                 className={
                   token
                     ? "option px-2.5 py-1.5 text-base font-semibold"
@@ -242,7 +244,7 @@ export function OrderGame({ round, onDone }: GameProps<OrderRound>) {
             disabled={status !== "playing" || placed.length === 0}
             className="btn btn-ghost px-5 py-2.5 text-sm disabled:opacity-40"
           >
-            Sil
+            {tx("common.delete")}
           </button>
           {noHints ? null : (
             <button
@@ -251,7 +253,7 @@ export function OrderGame({ round, onDone }: GameProps<OrderRound>) {
               disabled={status !== "playing" || placed.length >= answer.length}
               className="btn btn-ghost px-5 py-2.5 text-sm disabled:opacity-40"
             >
-              İpucu
+              {tx("rounds.hint")}
             </button>
           )}
         </div>

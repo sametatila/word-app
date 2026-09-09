@@ -236,7 +236,7 @@ export function WordList({
           {rows.map((r, i) => {
             const st = statusOf(r);
             const isOpen = open === r.id;
-            const note = grammarNote({ ...r, isNew: false });
+            const note = grammarNote({ ...r, isNew: false }, lang);
             const example = firstExample(r.beispiel);
             const exampleTr = firstExample(r.beispielTr);
             const exampleEn = firstExample(r.beispielEn);
@@ -288,7 +288,7 @@ export function WordList({
                     <div className="flex items-center gap-2">
                       <SpeakButton text={r.artikel ? `${r.artikel} ${r.de}` : r.de} size="sm" />
                       <span className="muted">
-                        {typLabel(r.typ, r.tr)}
+                        {typLabel(r.typ, r.tr, lang)}
                         {note ? ` · ${note}` : ""}
                       </span>
                     </div>

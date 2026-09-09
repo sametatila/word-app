@@ -615,7 +615,7 @@ function SentenceTask({ task, level, onDone }: { task: SentenceTaskData; level: 
       const fb = fallbackAssessment(req);
       setResult(fb);
       setFailure(ai.reason);
-      setOk(fb.checks.filter((c) => c.label.startsWith("Kalıp")).every((c) => c.ok) && fb.words >= 3);
+      setOk(fb.checks.filter((c) => c.kind === "target").every((c) => c.ok) && fb.words >= 3);
     }
     setBusy(false);
   }

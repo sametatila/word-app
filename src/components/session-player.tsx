@@ -167,6 +167,9 @@ export function SessionPlayer() {
   const marks = useRef<boolean[]>([]);
   // Yarım kalan tur artık sunucudan gelir; cihazda hiçbir şey saklanmaz.
   const [resumable, setResumable] = useState<SessionProgress | null>(null);
+  /* Etkinin içindeki `resumable` kapanışı eskiyor (taze cevap beklenirken
+     değişiyor), o yüzden kararı ref'ten okuyoruz. */
+  const resumeRef = useRef<SessionProgress | null>(null);
   /** Tek oyunlu tur seçiliyse o oyun; karışık turda null. */
   const [onlyGame, setOnlyGame] = useState<PlayableGame | null>(null);
   /**
@@ -237,10 +240,15 @@ export function SessionPlayer() {
     } = {}) => {
     if (!opts.quiet) setStatus("loading");
     fresh.current = false;
+    // Kapı her yeni kuyrukta yeniden açılıyor: aksi hâlde özet kartındaki
+    // "Devam" yeni turu yüklüyor ama kimse başlatmıyordu — ekran "hazır"
+    // durumunda, yani yükleme kartında asılı kalıyordu.
+    autoStarted.current = false;
     setIndex(0);
     setTally({ correct: 0, total: 0, xp: 0 });
     setResult(null);
     setResumable(null);
+    resumeRef.current = null;
     pending.current = [];
     sessionXp.current = 0;
     missed.current = [];
@@ -286,8 +294,25 @@ export function SessionPlayer() {
       const data = (await res.json()) as SessionPayload;
       setSession(data);
       setResumable(data.resume);
+      resumeRef.current = data.resume;
       startedAt.current = Date.now();
-      setStatus(data.rounds.length ? "ready" : "empty");
+      /*
+        Başlamış tur geri çekilmiyor.
+
+        Açılışta istek "sessiz" gidiyor (ekranda önbellekten çizilmiş bir kart
+        var) ve cevabı, tur çoktan başladıktan SONRA dönebiliyor — geliştirme
+        modunda React etkiyi iki kez çalıştırdığı için bu her açılışta oluyordu:
+        ikinci cevap durumu "hazır"a çekiyor, oynanan tur yükleme kartının
+        altında kayboluyordu. Gürültüsüz her yeniden yükleme zaten önce
+        "yükleniyor"a düşüyor, yani bu koruma meşru bir tazelemeyi engellemez.
+      */
+      setStatus((cur) =>
+        cur === "playing" || cur === "stage" || cur === "done"
+          ? cur
+          : data.rounds.length
+            ? "ready"
+            : "empty",
+      );
       // Bir sonraki açılış bu kartı anında çizsin. Yalnızca AÇILIŞ turu
       // saklanıyor: ek tur ve "yeni tur" istekleri o anın sonucu, yarının
       // başlangıç kartı değil.
@@ -357,15 +382,36 @@ export function SessionPlayer() {
   useEffect(() => {
     if (status !== "ready" || autoStarted.current) return;
     autoStarted.current = true;
-    if (resumable) resume();
-    else void startFresh();
+    void (async () => {
+      /*
+        Önbellekten çizilen kuyruk henüz DOĞRULANMADI: `resume()` onu olduğu
+        gibi oynatırdı ve cevaplanmış kelimeler yeniden sorulurdu. Taze cevap
+        bekleniyor — `startFresh` bunu zaten yapıyordu, eksik olan kaldığı
+        yerden devam yoluydu. Ayrıca beklemeden başlamak, sunucu cevabının
+        durumu "hazır"a geri çekmesiyle turu yükleme kartında dondurdu.
+      */
+      if (!fresh.current && inflight.current) {
+        const data = await inflight.current;
+        if (!data?.rounds.length) return; // hata/boş ekranını `load` gösterdi
+      }
+      if (resumeRef.current) resume();
+      else void startFresh();
+    })();
     // `resume`/`startFresh` her render'da yeniden kuruluyor; bağımlılığa
     // alınmaları etkiyi her render'da tetiklerdi. Kapı zaten `autoStarted`.
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [status, resumable]);
 
-  /** Kaldığı yerden devam: sunucudaki ilerlemeyi yerine koyar. */
+  /**
+   * Kaldığı yerden devam: sunucudaki ilerlemeyi yerine koyar.
+   *
+   * İlerleme REF'ten okunuyor. Durum değişkeni kullanılıyordu ve otomatik
+   * başlatma taze cevabı beklediği için o kapanış eskimiş oluyordu: önbellekli
+   * açılışta (ikinci ziyaretten sonra her açılış) `resumable` hâlâ null'du,
+   * fonksiyon ilk satırda dönüyor ve tur yükleme kartında donuyordu.
+   */
   function resume() {
+    const resumable = resumeRef.current;
     if (!resumable) return;
     setIndex(resumable.index);
     setTally({ correct: resumable.correct, total: resumable.total, xp: resumable.xp });
@@ -397,7 +443,8 @@ export function SessionPlayer() {
       const data = await inflight.current;
       if (!data?.rounds.length) return;
     }
-    if (resumable) {
+    // Aynı sebep (bkz. resume): karar ref'ten okunuyor.
+    if (resumeRef.current) {
       const data = await load({ fresh: true });
       if (!data?.rounds.length) return; // load hata/boş durumunu zaten gösterdi
     }
@@ -776,7 +823,7 @@ export function SessionPlayer() {
                     color: isNew ? "var(--color-brand)" : "var(--color-flame)",
                   }}
                 >
-                  {isNew ? "yeni" : "tekrar"}
+                  {t(isNew ? "session.chip_new" : "session.chip_review")}
                 </span>
               );
             })()}
@@ -799,7 +846,11 @@ export function SessionPlayer() {
             </motion.span>
           ) : (
             <span className="muted">
-              {tally.total > 0 ? `%${Math.round((tally.correct / tally.total) * 100)} doğru` : t("session.lets_go")}
+              {tally.total > 0
+                ? t("session.accuracy", {
+                    pct: t("common.pct", { n: Math.round((tally.correct / tally.total) * 100) }),
+                  })
+                : t("session.lets_go")}
             </span>
           )}
         </div>
@@ -828,7 +879,7 @@ export function SessionPlayer() {
           <AlertIcon size={16} />
           {saveWarning === "dropped"
             ? t("session.save_failed")
-            : "Cevapların kaydedilemiyor — bağlantın döndüğünde otomatik gönderilecek."}
+            : t("session.save_queued")}
         </div>
       ) : null}
 
@@ -976,7 +1027,7 @@ function EmptyCard({
               çalıştığını baştan anlatıyordu; boş ekranda okunacak son şey bu. */}
           <p className="muted mt-2 text-sm">{t("session.review_only_mode")}</p>
           <button onClick={onMixed} className="btn btn-primary mt-5 w-full px-5 py-3.5">
-            Karışık tura dön
+            {t("session.back_to_mixed")}
           </button>
         </div>
       </motion.div>
@@ -995,12 +1046,15 @@ function EmptyCard({
         <p className="muted mt-2 text-sm">{t("session.goal_done_sub")}</p>
         {meta ? (
           <p className="muted mt-4 text-sm">
-            Bugün <strong>{meta.reviewsToday}</strong> tekrar · <strong>{meta.newToday}</strong> yeni
-            kelime · seri <strong>{meta.currentStreak} gün</strong>
+            {t("session.today_summary", {
+              reviews: meta.reviewsToday,
+              news: meta.newToday,
+              streak: meta.currentStreak,
+            })}
           </p>
         ) : null}
         <button onClick={onExtra} className="btn btn-primary mt-5 w-full px-5 py-3.5">
-          Yeni kelimelerle devam et
+          {t("session.continue_with_new")}
         </button>
       </div>
     </motion.div>
@@ -1069,9 +1123,7 @@ function StageCard({
           >
             <Mascot mood={perfect ? "cheer" : "happy"} size={72} />
           </motion.div>
-          <p className="mt-1 text-sm opacity-90">
-            Etap {stage} / {stages}
-          </p>
+          <p className="mt-1 text-sm opacity-90">{t("stage.counter", { n: stage, total: stages })}</p>
           <h2 className="mt-0.5 text-xl font-bold">
             {perfect ? t("stage.clean") : t("stage.done")}
           </h2>
@@ -1149,10 +1201,7 @@ function StageCard({
             </span>
             <span className="min-w-0">
               <span className="block text-sm font-bold">{t("wager.next_stage")}</span>
-              <span className="muted block text-xs">
-                Beşi de doğruysa etabın puanı iki katı; iki yanlışta etap puan kazandırmaz.
-                Önceki puanına dokunulmaz.
-              </span>
+              <span className="muted block text-xs">{t("wager.rules")}</span>
             </span>
           </button>
 
@@ -1160,13 +1209,13 @@ function StageCard({
             onClick={() => onContinue(bet)}
             className="btn btn-primary w-full px-5 py-3.5 text-base"
           >
-            {bet ? `Bahisli devam · ${remaining} tur kaldı` : `Devam et · ${remaining} tur kaldı`}
+            {t(bet ? "stage.continue_bet" : "stage.continue", { n: remaining })}
           </button>
           <button onClick={onStop} className="btn btn-ghost w-full px-5 py-3">
-            Şimdilik yeter
+            {t("stage.enough")}
           </button>
           <p className="muted pt-1 text-center text-xs">
-            Durursan ilerlemen kayıtlı kalır; bir sonraki gelişinde bu turdan devam edersin.
+            {t("stage.stop_note")}
           </p>
         </div>
       </div>

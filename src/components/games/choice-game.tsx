@@ -12,10 +12,12 @@ import { MeaningText } from "@/components/meaning-text";
 import { fx, vibrate } from "@/lib/fx";
 import { prefetchGerman, speakGerman } from "@/components/speak-button";
 import { CheckIcon, XIcon } from "@/components/icons";
+import { useT } from "@/lib/i18n/client";
 
 type ChoiceRound = Extract<Round, { game: "choice" }>;
 
 export function ChoiceGame({ round, onDone }: GameProps<ChoiceRound>) {
+  const tx = useT();
   const { word, options, direction } = round;
   const deSide = direction === "de-tr";
   const question = deSide ? withArtikel(word) : word.tr;
@@ -73,7 +75,7 @@ export function ChoiceGame({ round, onDone }: GameProps<ChoiceRound>) {
     // "Türkçe karşılığını seç" gibi bir alt bilgi yok: oyun başlığı + şıkların
     // dili zaten görevi anlatıyor, fazladan metin ekranı yorar.
     <GameShell
-      label="Doğru Anlam"
+      label={tx("games.choice")}
       /* Bu oyunda çekme koreografisi hiç yok — karışık turda da tek oyun modunda da. */
       pull={false}
       verdict={picked == null ? null : picked === answer ? "correct" : "wrong"}
@@ -82,7 +84,7 @@ export function ChoiceGame({ round, onDone }: GameProps<ChoiceRound>) {
         // Şerit doğruda da doluyor: cevabı görmek kadar onu bir kez daha
         // okumak da turun işi. Yanlışta düzeltme, doğruda pekiştirme.
         <span>
-          {picked === answer ? "Doğru — " : "Doğrusu: "}
+          {tx(picked === answer ? "rounds.correct_excl" : "rounds.answer_is")}
           <strong>{answer}</strong>
           {word.en ? (
             <span className="font-normal opacity-70" lang="en">
