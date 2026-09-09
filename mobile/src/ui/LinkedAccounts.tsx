@@ -67,11 +67,11 @@ export function LinkedAccounts({ colors }: { colors: Palette }) {
 
   if (!accounts) return null;
 
-  const bagliMi = (p: string) => accounts.some((a) => a.provider === p);
+  const bagliMi = (p: string) => accounts.some((a) => a.providerId === p);
   const sonYontem = accounts.length <= 1;
   // Teklif edilenler platforma göre: Apple yalnız iOS'ta native olarak var.
   const teklif = [...(googleSupported() ? ["google"] : []), ...(Platform.OS === "ios" && appleSupported() ? ["apple"] : [])];
-  const satirlar = [...new Set([...accounts.map((a) => a.provider), ...teklif])];
+  const satirlar = [...new Set([...accounts.map((a) => a.providerId), ...teklif])];
 
   return (
     <View style={{ gap: spacing.sm }}>

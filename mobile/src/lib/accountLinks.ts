@@ -1,6 +1,14 @@
 import { api } from "../api/client";
 
-export type LinkedAccount = { id: string; provider: string; accountId: string };
+/**
+ * better-auth `/list-accounts` yanıtı. Alan adı `providerId` — `provider` DEĞİL.
+ *
+ * Burada eskiden `provider` yazıyordu ve `api<T>()` denetimsiz bir tip ataması
+ * olduğu için TypeScript hiçbir şey söylemiyordu: `a.provider` her zaman
+ * undefined dönüyor, Ayarlar'daki liste etiketsiz bir satır çiziyor ve Google
+ * ile girmiş kullanıcıya "Bağlı değil" diyordu. Cihazda görüldü 2026-09-09.
+ */
+export type LinkedAccount = { id: string; providerId: string; accountId: string };
 
 /**
  * Bağlı giriş yöntemleri (better-auth /list-accounts). Hata sessiz: liste boş
@@ -8,7 +16,11 @@ export type LinkedAccount = { id: string; provider: string; accountId: string };
  */
 export async function listAccounts(): Promise<LinkedAccount[]> {
   try {
-    return await api<LinkedAccount[]>("/api/auth/list-accounts");
+    // Süzgeç şart: `api<T>()` tip ATAMASI yapıyor, doğrulama değil. Alan adı
+    // değişirse (bir kez değişti) sessizce undefined dolu bir liste dönerdi.
+    const raw = await api<Partial<LinkedAccount>[]>("/api/auth/list-accounts");
+    return (Array.isArray(raw) ? raw : [])
+      .filter((a): a is LinkedAccount => typeof a?.providerId === "string");
   } catch {
     return [];
   }
