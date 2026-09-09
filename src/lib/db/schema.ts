@@ -57,8 +57,35 @@ export const words = pgTable(
     beispiel: text("beispiel"),
     beispielTr: text("beispiel_tr"), // örnek cümlenin doğal Türkçe çevirisi
     beispielEn: text("beispiel_en"), // aynı cümlenin doğal İngilizce çevirisi
+    /**
+     * Aynı kelimenin Almanca karşılığı — anadil ekseninin üçüncü yüzü.
+     *
+     * `course='de'` satırlarında BOŞ ve öyle kalıyor: kendi dilini öğretmiyoruz
+     * (`coursesForNative`), yani Almanca anadilli kullanıcı bu satırları hiç
+     * görmüyor ve alanı doldurmak 8.707 satırlık bir kopya olurdu.
+     *
+     * Öteki iki kursta ÜRETİLİYOR, elle yazılmıyor: hem gsw-zh hem en havuzu
+     * Almanca havuzdan türetilmiş, o yüzden Almanca karşılık kaynak satırın
+     * başlığının ta kendisi (gsw'de `formen` alanındaki "HD: …" köprüsü zaten
+     * bu). İngilizce kursta kaynağı olmayan 200 madde elle yazılıyor.
+     */
+    deGloss: text("de_gloss"),
+    /**
+     * Örnek cümlenin Almanca çevirisi.
+     *
+     * gsw-zh'de üretiliyor: lehçe cümlesi Almanca cümlenin karşılığı olacak
+     * biçimde hizalandı (167/167 paket), dolayısıyla Almanca cümle kaynak
+     * satırın cümlesidir.
+     *
+     * İngilizce kursta ÜRETİLEMİYOR ve bu ölçüldü: İngilizce örnek cümleler
+     * Almanca cümlenin çevirisi değil, aynı kelime için bağımsız yazılmış
+     * cümleler ("pflegen" → "Sie pflegt ihre kranke Mutter" ↔ "Nurses care for
+     * patients day and night"). Devralınsaydı kullanıcı cümleyle ilgisiz bir
+     * çeviri görürdü — eksik çevirinin en kötü biçimi, çünkü görünürde çalışır.
+     */
+    beispielDe: text("beispiel_de"),
     rank: integer("rank"), // sıklık sırası (küçük = daha yaygın)
-    course: text("course").notNull().default("de"), // de | gsw-zh
+    course: text("course").notNull().default("de"), // de | gsw-zh | en
   },
   (t) => [
     index("words_niveau_idx").on(t.niveau),
@@ -346,7 +373,7 @@ export const skillExercises = pgTable(
     id: text("id").primaryKey(), // "a1-r1", "zh-a1-r1" gibi kalıcı kimlik
     skill: text("skill").notNull(), // reading | listening | writing
     level: text("level").notNull(), // A1 | A2 | B1 | B2 | C1
-    course: text("course").notNull().default("de"), // de | gsw-zh
+    course: text("course").notNull().default("de"), // de | gsw-zh | en
     title: text("title").notNull(),
     genre: text("genre").notNull(),
     minutes: integer("minutes").notNull(),
