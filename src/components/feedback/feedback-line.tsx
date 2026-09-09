@@ -4,7 +4,7 @@ import Link from "next/link";
 import { track } from "@/lib/track";
 import { whyLabel, type Why } from "@/lib/why";
 import { CharDiff } from "@/components/feedback/diff-text";
-import { useLang } from "@/lib/i18n/client";
+import { useLang, useT } from "@/lib/i18n/client";
 
 /**
  * "Neden" satırı (plan WP-13/61): [hata etiketi] [gerekçe] [Kural ↗].
@@ -20,6 +20,7 @@ import { useLang } from "@/lib/i18n/client";
  */
 export function FeedbackLine({ why, compact = false }: { why: Why; compact?: boolean }) {
   const lang = useLang();
+  const t = useT();
   return (
     <span className={`${compact ? "text-xs" : "text-sm"} block font-normal leading-snug opacity-90`}>
       <span
@@ -41,7 +42,7 @@ export function FeedbackLine({ why, compact = false }: { why: Why; compact?: boo
           onClick={() => track("feedback_why_opened", 0, why.type)}
           className="ml-1.5 whitespace-nowrap font-semibold underline decoration-dotted underline-offset-2"
         >
-          Kural ↗
+          {t("why.rule_link")}
         </Link>
       ) : null}
     </span>

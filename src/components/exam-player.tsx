@@ -209,7 +209,7 @@ export function ExamPlayer({ level, module }: { level: CefrLevel; module: number
   function onVocabDone(round: Round, results: GameResult[]) {
     for (const r of results) {
       if (r.correct) score.current.vocab.correct++;
-      else misses.current.push({ section: "vocab", prompt: wordPrompt(round), answer: wordAnswer(round) });
+      else misses.current.push({ section: "vocab", prompt: wordPrompt(round, t), answer: wordAnswer(round) });
       vocabAnswers.current.push({ ...r, game: round.game });
     }
     if (idx + 1 < paper!.sections.vocab.length) setIdx(idx + 1);
@@ -493,7 +493,7 @@ export function ExamPlayer({ level, module }: { level: CefrLevel; module: number
         {q.textTr ? <p className="muted mb-3 text-xs">{q.textTr}</p> : <div className="mb-3" />}
         {options(q.options, (i) => pickText(section, i))}
         <p className="muted mt-3 text-center text-xs">
-          Soru {qIdx + 1} / {item.questions.length}
+          {t("exam.question_of", { n: qIdx + 1, total: item.questions.length })}
         </p>
       </section>
     );
@@ -1009,9 +1009,11 @@ function Result({
 }
 
 /* Kelime turunda kaçırılan maddenin dökümde görünecek hâli. */
-function wordPrompt(round: Round): string {
+function wordPrompt(round: Round, t: (k: string) => string): string {
   if ("word" in round && round.word) return round.game === "translate" && "sentence" in round ? round.sentence.tr : round.word.tr;
-  return "Kelime";
+  // Kelimesiz bir kelime turu üretilmiyor; yine de sabit Türkçe bırakmamak
+  // için yedek de sözlükten geliyor (zayıf nokta kartında görünebilir).
+  return t("exam.sec_vocab");
 }
 function wordAnswer(round: Round): string {
   if (round.game === "translate" && "sentence" in round) return round.sentence.de;

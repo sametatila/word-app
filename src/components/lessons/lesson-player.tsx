@@ -1783,11 +1783,12 @@ function TypingDots() {
 
 /** Okunmakta olan baloncuğun canlı ses çubukları — hoparlör simgesinin yerine. */
 function SpeakingBars({ inline = false }: { inline?: boolean }) {
+  const t = useT();
   const still = useStill();
   return (
     <span
       className={`${inline ? "ml-1 inline-flex align-middle" : "flex"} h-7 w-7 shrink-0 items-center justify-center gap-0.5`}
-      aria-label="okunuyor"
+      aria-label={t("walk.speaking")}
     >
       {[0, 1, 2].map((i) => (
         <motion.span
@@ -1818,6 +1819,7 @@ function LectureBubble({
   ttsAvailable: boolean;
   speaking: boolean;
 }) {
+  const t = useT();
   const still = useStill();
   if (item.role === "user") {
     return (
@@ -1875,7 +1877,7 @@ function LectureBubble({
           type="button"
           whileTap={{ scale: 0.9 }}
           onClick={() => speakSegments(item.segments)}
-          aria-label="Yeniden dinle"
+          aria-label={t("lessonp.listen_again")}
           className="btn btn-ghost h-7 w-7 shrink-0"
         >
           <SpeakerIcon size={13} />

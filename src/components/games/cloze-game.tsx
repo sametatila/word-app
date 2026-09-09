@@ -185,7 +185,7 @@ export function ClozeGame({ round, onDone }: GameProps<ClozeRound>) {
             ))}
           </div>
           <button type="submit" disabled={picked != null || !draft.trim()} className="btn btn-primary min-h-12 px-4 text-sm">
-            Kontrol Et
+            {tx("common.check")}
           </button>
         </form>
       ) : (

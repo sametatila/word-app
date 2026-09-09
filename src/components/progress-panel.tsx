@@ -129,10 +129,10 @@ export function ProgressPanel() {
         <Disclosure title={t("progp.how_am_i_doing")} hint={t("progp.n_weeks", { n: data.weeks.length })}>
           <div className="space-y-3">
             <div className="grid grid-cols-2 gap-2.5">
-              <Spark title="Yazma" points={data.series.writing} max={100} color="var(--color-brand)" />
+              <Spark title={t("exam.sec_writing")} points={data.series.writing} max={100} color="var(--color-brand)" />
               <Spark title={t("exam.sec_speaking")} points={data.series.speaking} max={100} color="var(--color-mint)" />
               <Spark title={t("exam.title")} points={data.series.usage} max={100} color="var(--color-flame)" />
-              <Spark title="Cevap" points={data.series.answers} color="var(--text-muted)" />
+              <Spark title={t("prog.answers")} points={data.series.answers} color="var(--text-muted)" />
             </div>
 
             <WeakSpotsCard bare />
