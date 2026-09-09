@@ -1,10 +1,7 @@
-import { Suspense } from "react";
 import { redirect } from "next/navigation";
 import { LearnHub, type LearnHubData } from "@/components/learn/learn-hub";
-import { Leaderboard } from "@/components/leaderboard";
 import { getUserInfo } from "@/lib/auth/server";
-import { ensureProfile, getProgress, getLeaderboard, type LeaderboardWeek } from "@/lib/session";
-import { CardSkeleton } from "@/components/skeleton";
+import { ensureProfile, getProgress } from "@/lib/session";
 import { supportsMockExams } from "@/lib/mock-exams";
 
 export const dynamic = "force-dynamic";
@@ -19,7 +16,7 @@ export const dynamic = "force-dynamic";
  * SUNUCUDA ÇİZİLİYOR. Mobil aynı sayıları `/api/me` ile çekiyor ve o yüzden
  * iskelet gösteriyor; web'de veri zaten sunucuda, yani kahraman kart ve
  * ilerleme şeridi ilk boyamada DOLU geliyor. İskelet yalnız kendi verisini
- * çeken parçalarda (görevler, plan, sıralama) kalıyor.
+ * çeken parçalarda (günün görevleri, arkadaş nabzı) kalıyor.
  */
 export default async function LearnPage({
   searchParams,
@@ -83,32 +80,10 @@ export default async function LearnPage({
   }
 
   /*
-    Sıralama BEKLENMİYOR. On kişilik bir tabloyu toplamak, "bugün ne
-    çalışacağım" sorusunun cevabını geciktiriyordu. Suspense ile kabuk anında
-    gidiyor, tablo hazır olduğunda kendi yerine akıyor; yer tutucu tablonun
-    boyunda, yani sayfa zıplamıyor.
+    SIRALAMA BURADA DEĞİL. Sekmenin altında haftalık tablo duruyordu; mobilin
+    Öğren ekranında yok, tabloya Profil › Haftalık sıralama satırından
+    gidiliyor. Web'de o satır ve `/leaderboard` adresi zaten var, yani
+    kaldırılan bir işlev değil, tekrarlanan bir yüzey.
   */
-  return (
-    <LearnHub
-      data={data}
-      leaderboard={
-        <Suspense fallback={<CardSkeleton height={168} label="Bu hafta sıralaması yükleniyor" />}>
-          <LeaderboardSlot userId={user.id} day={today} />
-        </Suspense>
-      }
-    />
-  );
-}
-
-async function LeaderboardSlot({ userId, day }: { userId: string; day: string }) {
-  let week: LeaderboardWeek | null = null;
-  try {
-    // Hafta sınırı sunucunun gününden: tablo herkes için aynı anda dönmeli,
-    // yoksa farklı saat dilimlerindeki iki kişi farklı haftalarda yarışır.
-    week = await getLeaderboard(userId, day);
-  } catch (err) {
-    // Sıralama okunamazsa merkez yine açılır — bu bilgi ikincildir.
-    console.error("[learn] sıralama okunamadı", err);
-  }
-  return week ? <Leaderboard week={week} /> : null;
+  return <LearnHub data={data} />;
 }

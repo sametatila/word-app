@@ -63,7 +63,7 @@ export function AppHeader({ title, subtitle }: { title: string; subtitle?: strin
         */}
         {streak > 0 ? (
           <Link
-            href="/profile"
+            href="/profile/progress"
             prefetch={false}
             aria-label={t("appheader.progress")}
             className="pressable flex items-center gap-1.5 rounded-full px-3 py-2 text-strong"

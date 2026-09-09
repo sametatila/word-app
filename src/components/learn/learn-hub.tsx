@@ -4,7 +4,6 @@ import Link from "next/link";
 import type { ReactNode } from "react";
 import { Mascot } from "@/components/mascot";
 import { QuestCard } from "@/components/quest-card";
-import { PlanCard } from "@/components/plan-card";
 import { FriendPulse } from "@/components/social/friend-pulse";
 import { CardGrid } from "@/components/layout";
 import { LearnHeader } from "@/components/app-header";
@@ -59,7 +58,7 @@ export type LearnHubData = {
 
 const nf = new Intl.NumberFormat("tr-TR");
 
-export function LearnHub({ data, leaderboard }: { data: LearnHubData; leaderboard?: ReactNode }) {
+export function LearnHub({ data }: { data: LearnHubData }) {
   const t = useT();
   const { level, mastered, totalWords, xp, streak, dailyGoal, reviewsToday, dueCount, newToday } = data;
   const pct = totalWords ? Math.min(100, Math.round((mastered / totalWords) * 100)) : 0;
@@ -171,11 +170,13 @@ export function LearnHub({ data, leaderboard }: { data: LearnHubData; leaderboar
         </div>
       </div>
 
-      {/* GÜNÜN GÖREVLERİ — gömülü, ayrı ekran yok. Planla birlikte: biri ne
-          kazanılacağını, diğeri sıradaki adımı söylüyor. */}
-      <div className="mb-5 space-y-3">
+      {/* GÜNÜN GÖREVLERİ — gömülü, ayrı ekran yok.
+          Yanında "bugünkü plan" satırı da vardı; mobilin Öğren ekranında öyle
+          bir yüzey yok ve söylediği şey (sıradaki ders) zaten Patika'nın öne
+          çıkan ünite kartında yazıyor. İki yerde duran bir cümle, bölüm
+          sırasını mobilden ayırmaya değmiyordu. */}
+      <div className="mb-5">
         <QuestCard />
-        <PlanCard />
       </div>
 
       {/* Bu haftanın ortak görevi/daveti varsa tek satır nabız; yoksa hiç çizilmez. */}
@@ -245,8 +246,6 @@ export function LearnHub({ data, leaderboard }: { data: LearnHubData; leaderboar
           sub={t("learn.survival_pitch")}
         />
       </CardGrid>
-
-      {leaderboard}
     </div>
   );
 }
