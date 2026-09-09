@@ -1,4 +1,5 @@
 export * from "./auth-schema";
+import { sql } from "drizzle-orm";
 import {
   pgTable,
   serial,
@@ -1179,7 +1180,20 @@ export const premiumGrants = pgTable(
     note: text("note"),
     createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
   },
-  (t) => [index("premium_grants_user_idx").on(t.userId, t.createdAt)],
+  (t) => [
+    index("premium_grants_user_idx").on(t.userId, t.createdAt),
+    /*
+      Tekrar teslimat elemesi: sağlayıcı aynı olayı iki kez gönderirse ikinci
+      kez yetki yazılmasın (bkz. lib/premium/entitlement.ts — `source = 'store'
+      and ref = eventId`). KISMİ indeks, çünkü `ref` yalnız mağaza satırında
+      olay kimliği taşıyor; promo ve davet satırlarında aynı `ref` tekrar edebilir.
+
+      0041 migration'ında yazılıydı ama BURADA tanımlı değildi. Canlıya
+      uygulanmadığı fark edilmedi, çünkü şema tanımı onu bilmiyordu: sürüklenme
+      ne kodda ne de üretilecek bir migration'da görünüyordu.
+    */
+    index("premium_grants_store_ref_idx").on(t.ref).where(sql`${t.source} = 'store'`),
+  ],
 );
 
 /**

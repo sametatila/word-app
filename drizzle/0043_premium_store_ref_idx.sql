@@ -1,0 +1,21 @@
+-- Mağaza olayı tekrar teslimat elemesinin indeksi — 0041'de yazılmıştı ama
+-- canlıya UYGULANMAMIŞTI.
+--
+-- Nasıl gözden kaçtı: indeks yalnız 0041'in SQL'inde vardı, `lib/db/schema.ts`
+-- onu tanımıyordu. Bu yüzden ne kod tarafında bir iz bıraktı ne de üretilecek
+-- bir migration'da göründü; şema karşılaştırması "her şey yerinde" diyordu.
+-- Bu dosyayla birlikte tanım schema.ts'e de eklendi, sürüklenme bir daha
+-- sessiz kalmasın.
+--
+-- Ne işe yarıyor: sağlayıcı aynı olayı iki kez gönderdiğinde ikinci kez yetki
+-- yazılmasın diye `premium/entitlement.ts` şu sorguyu atıyor:
+--   where source = 'store' and ref = <olay kimliği>
+--
+-- KISMİ indeks: `ref` yalnız mağaza satırında olay kimliği taşıyor; promo ve
+-- davet satırlarında aynı `ref` (kod ya da davet edilen kullanıcı) tekrar
+-- edebiliyor, onları indekslemek hem gereksiz hem yanıltıcı olurdu.
+--
+-- Güvenli: tablo şu an boş (premium pasif), oluşturma anlık ve kilitsiz.
+-- `IF NOT EXISTS` ile tekrar tekrar çalıştırılabilir.
+CREATE INDEX IF NOT EXISTS "premium_grants_store_ref_idx"
+  ON "premium_grants" ("ref") WHERE "source" = 'store';
