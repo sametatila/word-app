@@ -1860,9 +1860,9 @@ async function main() {
   await db.delete(userWords).where(eq(userWords.userId, USER));
   const trWords = await db.select().from(words).where(and(isNotNull(words.beispielTr), sql`${words.beispiel} ~ '^\\S+ \\S+ \\S+ \\S+'`)).limit(3);
   check("örnek cümlesi Türkçeli kelime var", trWords.length > 0);
-  const trRound = trWords.length ? makeRound("translate", { ...trWords[0], isNew: false } as never, [], () => "t1", "strong") : null;
+  const trRound = trWords.length ? makeRound("translate", { ...trWords[0], isNew: false } as never, [], () => "t1", "strong", "tr") : null;
   check("makeRound çeviri turu kuruyor", trRound?.game === "translate" && (trRound as { sentence: { tr: string } }).sentence.tr.length > 0);
-  check("örnek cümlesi olmayan kelimeye çeviri turu yok", makeRound("translate", { ...trWords[0], beispiel: null, isNew: false } as never, [], () => "t2", "strong") === null);
+  check("örnek cümlesi olmayan kelimeye çeviri turu yok", makeRound("translate", { ...trWords[0], beispiel: null, isNew: false } as never, [], () => "t2", "strong", "tr") === null);
   const w0 = trWords[0].id;
   await submitAnswers(USER, [{ wordId: w0, game: "translate", correct: false, latencyMs: 9000, quality: 3, errorType: "word_order", detail: "Ich gehe ins Kino heute" }], monday, 20);
   const [uwOrder] = await db.select().from(userWords).where(and(eq(userWords.userId, USER), eq(userWords.wordId, w0)));
@@ -1900,9 +1900,9 @@ async function main() {
 
   console.log("\n33) Serbest cümle turu (WP-12)");
   const fsPool = await db.select().from(words).where(eq(words.niveau, "A1")).limit(30);
-  const fsRound = makeRound("free_sentence", { ...fsPool[0], isNew: false } as never, fsPool, () => "f1", "strong");
+  const fsRound = makeRound("free_sentence", { ...fsPool[0], isNew: false } as never, fsPool, () => "f1", "strong", "tr");
   check("free_sentence turu kuruluyor: bir ortak, aynı seviye", fsRound?.game === "free_sentence" && (fsRound as { partners: { id: number }[] }).partners.length === 1 && (fsRound as { partners: { id: number }[] }).partners[0].id !== fsPool[0].id);
-  check("havuzsuz kurulamıyor", makeRound("free_sentence", { ...fsPool[0], isNew: false } as never, [], () => "f2", "strong") === null);
+  check("havuzsuz kurulamıyor", makeRound("free_sentence", { ...fsPool[0], isNew: false } as never, [], () => "f2", "strong", "tr") === null);
   check("PLAYABLE dışında, etiket var", !(PLAYABLE_GAMES as readonly string[]).includes("free_sentence") && GAME_LABEL_KEYS.free_sentence === "games.free_sentence");
   check("üretim oyunu sayılıyor", isProductionGame("free_sentence"));
   await submitAnswers(USER, [{ wordId: fsPool[0].id, game: "free_sentence", correct: true, latencyMs: 30000, quality: 4 }], monday, 40);
