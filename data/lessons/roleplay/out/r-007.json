@@ -1,0 +1,177 @@
+[
+ {
+  "lesson": "de-a2-komparativ",
+  "sceneEn": "You are in an electronics shop and you cannot decide between two devices. Ask the assistant what the difference is, compare price and quality, and make a decision.",
+  "partnerEn": "a sales assistant who knows both products well",
+  "openingEn": "Can I help you? Are you looking for anything in particular?",
+  "goalEn": "The two products have been compared on at least two features and one has been chosen with a reason given."
+ },
+ {
+  "lesson": "de-a2-superlativ",
+  "sceneEn": "You are walking round a shopping centre with a friend. Argue about which shop is the cheapest and which is the best, and ask whether there is a sale on.",
+  "partnerEn": "a friend who knows every shop and loves comparing prices",
+  "openingEn": "Where shall we go first? Where's the best value?",
+  "goalEn": "At least three options have been compared in the superlative and it has been decided where to go."
+ },
+ {
+  "lesson": "de-a2-zwei-jacken",
+  "sceneEn": "You are torn between two garments in a shop and you are asking the assistant for help. Ask to try them on, compare the two and make a decision.",
+  "partnerEn": "a sales assistant who praises both but is honest in the end",
+  "openingEn": "They both suit you. Which one do you prefer?",
+  "goalEn": "Both have been tried on, compared on at least two features, and one has been chosen with a reason given."
+ },
+ {
+  "lesson": "de-a2-adjektiv-ein",
+  "sceneEn": "You are looking for a garment in a particular colour and pattern. Describe what you are after, give your verdict on what you are shown, and ask for another colour or pattern.",
+  "partnerEn": "a sales assistant bringing different options off the shelves",
+  "openingEn": "Good afternoon! Are you looking for anything in particular?",
+  "goalEn": "The colour and pattern you wanted have been described, at least two options have been judged and one has been chosen."
+ },
+ {
+  "lesson": "de-a2-friseur",
+  "sceneEn": "You have sat down in the chair at the hairdresser's. Say what you want using comparative forms, ask for one extra service, and give your verdict on the result at the end.",
+  "partnerEn": "a hairdresser who wants to be sure what you mean",
+  "openingEn": "Right, what are we doing today? Just a cut?",
+  "goalEn": "The request has been made clearly, one extra service has been discussed and a sentence has been said about the result."
+ },
+ {
+  "lesson": "de-a2-reklamation",
+  "sceneEn": "The item you bought turned out to be damaged and you have brought it back to the shop. Explain the problem, say what you want, and say you would like to speak to the manager if that is not possible.",
+  "partnerEn": "a till assistant who quotes the rules first but then looks for a solution",
+  "openingEn": "Good afternoon. Would you like to return something?",
+  "goalEn": "The problem has been explained, the receipt has come up and a conclusion has been reached about a refund or an exchange."
+ },
+ {
+  "lesson": "de-a2-handyvertrag",
+  "sceneEn": "You are in a phone shop and you cannot decide between two tariffs. Ask about the price, the term and what is included, compare the two and make a decision.",
+  "partnerEn": "a sales assistant who explains both tariffs",
+  "openingEn": "Are you looking for a new contract? I'd be glad to show you two offers.",
+  "goalEn": "The two tariffs have been compared on price and content and one has been chosen with a reason given."
+ },
+ {
+  "lesson": "de-a2-bank-konto",
+  "sceneEn": "You want to open an account at the bank. Say what you want, ask about the fees and the terms, and find out which documents you need.",
+  "partnerEn": "a bank clerk who explains it step by step",
+  "openingEn": "Good afternoon! You'd like to open an account? Have you got your ID with you?",
+  "goalEn": "The type of account has been chosen, the fees have been asked about and the documents needed have been found out."
+ },
+ {
+  "lesson": "de-a2-post",
+  "sceneEn": "You want to send a parcel at the post office. Have it weighed, ask about the options, find out the fastest and the cheapest, and choose one.",
+  "partnerEn": "a post office clerk listing the options",
+  "openingEn": "Good afternoon! Is the parcel going inland or abroad?",
+  "goalEn": "The weight and the price have been found out, at least two ways of sending have been compared and one has been chosen."
+ },
+ {
+  "lesson": "de-a2-flohmarkt",
+  "sceneEn": "You have found something that interests you on a stall at the flea market. Ask what condition it is in, find out the price, haggle politely and reach a conclusion.",
+  "partnerEn": "a stallholder who loves telling the story behind the item",
+  "openingEn": "Do have a look round! Is there anything you like?",
+  "goalEn": "The condition and the price have been discussed, a polite bit of haggling has taken place and it has been decided whether you are buying."
+ },
+ {
+  "lesson": "de-a2-reiseplan",
+  "sceneEn": "You and a friend are planning the summer holiday. Talk about where you are going, what you are travelling by and where you will stop on the way.",
+  "partnerEn": "a friend with the map open who wants to plan everything",
+  "openingEn": "So, where are we going this year? To the sea or to the mountains?",
+  "goalEn": "The destination, the means of travel and one stop on the route have been settled."
+ },
+ {
+  "lesson": "de-a2-hotel",
+  "sceneEn": "You have arrived at a hotel and you are checking in. Give your booking, ask something about the room and find out the breakfast time.",
+  "partnerEn": "a friendly receptionist at the front desk",
+  "openingEn": "A warm welcome! Have you booked?",
+  "goalEn": "The booking has been found, a question about the room has been asked and the breakfast and checkout times have been found out."
+ },
+ {
+  "lesson": "de-a2-koffer",
+  "sceneEn": "You are going away tomorrow and packing the cases. Your travelling companion is asking what has gone in; you remind them what has been forgotten.",
+  "partnerEn": "a travelling companion who checks everything twice",
+  "openingEn": "Right, I'm nearly done. Have you packed everything?",
+  "goalEn": "At least three items have been gone through one by one, one has turned out to be forgotten and the case has been declared done."
+ },
+ {
+  "lesson": "de-a2-flughafen",
+  "sceneEn": "You are at the check-in desk at the airport. Give your flight, hand over your luggage, ask for a seat and ask what happens next.",
+  "partnerEn": "a member of staff working at the check-in desk",
+  "openingEn": "Good afternoon, where are you flying to today?",
+  "goalEn": "Check-in has been completed, the seat has been discussed and the next step and the time have been found out."
+ },
+ {
+  "lesson": "de-a2-wetterbericht",
+  "sceneEn": "You are making plans for the weekend but the weather is uncertain. Describe the forecast, make a prediction in the future tense and suggest a plan to match.",
+  "partnerEn": "a friend who plans around the weather",
+  "openingEn": "What do you reckon, what will the weather be like at the weekend?",
+  "goalEn": "The forecast has been described in the future tense and a weekend plan to match has been agreed."
+ },
+ {
+  "lesson": "de-a2-ausflug",
+  "sceneEn": "You are planning a trip for Sunday but the weather is uncertain. Suggest two separate plans: what you will do if it is fine and what if it is not.",
+  "partnerEn": "a friend who wants a plan for every eventuality",
+  "openingEn": "We were going to get out on Sunday. What shall we do if it rains?",
+  "goalEn": "Two conditional plans have been made, tickets or costs have been discussed and a meeting time has been settled."
+ },
+ {
+  "lesson": "de-a2-camping",
+  "sceneEn": "You have just arrived at a campsite. Ask the attendant what there is and what there is not: showers, electricity, somewhere to shop. And find out where you can light a fire.",
+  "partnerEn": "an attendant who knows the campsite rules well",
+  "openingEn": "Hello there! Tent or camper van?",
+  "goalEn": "At least three facilities have been asked about, one rule has been learnt and a pitch has been chosen."
+ },
+ {
+  "lesson": "de-a2-stadtfuehrung",
+  "sceneEn": "You are on a city tour. Ask the guide about the buildings you can see, find out the age and history of one of them, and ask what is nearby.",
+  "partnerEn": "a guide who enjoys telling the history of the city",
+  "openingEn": "Here we are standing in front of the oldest building in the city. Do you have any questions?",
+  "goalEn": "Questions have been asked about at least two buildings, the history of one has been given and the next stop has been found out."
+ },
+ {
+  "lesson": "de-a2-souvenirs",
+  "sceneEn": "It is the last day of your holiday and you are in a gift shop. Ask what is typical of the area, choose presents for two people and find out the prices.",
+  "partnerEn": "a shop owner who recommends the local specialities",
+  "openingEn": "Are you looking for something to take home? Let me show you something typical.",
+  "goalEn": "Presents have been chosen for at least two people, a reason has been given for one, and the payment and the change have been discussed."
+ },
+ {
+  "lesson": "de-a2-reise-problem",
+  "sceneEn": "Your flight has been cancelled and you have decided to go on by train. Explain the situation to the clerk at the counter, buy a ticket and find out what time you arrive.",
+  "partnerEn": "a clerk working at the railway ticket counter",
+  "openingEn": "Good afternoon. Where would you like to travel to?",
+  "goalEn": "The situation has been explained, a ticket has been bought and the arrival time and any change have been found out."
+ },
+ {
+  "lesson": "de-a2-geburtstag",
+  "sceneEn": "It is a colleague's birthday. Wish them well, ask where the celebration will be, and give the date of your own birthday.",
+  "partnerEn": "a colleague who has brought a cake into the office for their birthday",
+  "openingEn": "Come on, have a slice of cake! Is it your birthday soon as well?",
+  "goalEn": "Birthday wishes have been given, the place and time of the celebration have been discussed and your own date has been said with an ordinal number."
+ },
+ {
+  "lesson": "de-a2-party-planen",
+  "sceneEn": "You and a friend are planning a party at home. Talk about who does what, guess who will come and work out what is missing.",
+  "partnerEn": "a friend with the list in hand who wants to share out the jobs",
+  "openingEn": "Okay, we've got three days left. What do we need to get?",
+  "goalEn": "At least three jobs have been shared out, who is coming has been discussed and one thing has been identified as missing."
+ },
+ {
+  "lesson": "de-a2-gastgeschenk",
+  "sceneEn": "You and a friend are going to a family dinner this evening and you are discussing what to take. Decide who gets what and plan where to buy it.",
+  "partnerEn": "a friend who does not want to turn up empty-handed",
+  "openingEn": "We can't turn up empty-handed. What shall we bring?",
+  "goalEn": "At least two gift options have been discussed, one has been chosen and it has been settled where to buy it."
+ },
+ {
+  "lesson": "de-a2-hochzeit",
+  "sceneEn": "You are chatting at a wedding with the person sitting next to you. Ask who is who, give your verdict on the ceremony and propose a toast.",
+  "partnerEn": "a guest from the bride's family who knows everyone",
+  "openingEn": "Are you on the bride's side or the groom's?",
+  "goalEn": "You have found out who at least two people are, given an opinion on the ceremony and raised a toast."
+ },
+ {
+  "lesson": "de-a2-feiertage",
+  "sceneEn": "A colleague is asking you about the celebrations in your own country. Compare a German celebration with one of your own and describe two differences.",
+  "partnerEn": "a colleague who is curious about other cultures",
+  "openingEn": "How do you actually celebrate that where you are from?",
+  "goalEn": "Two celebrations have been compared, at least two differences have been named and your colleague has told you about a custom of their own."
+ }
+]
