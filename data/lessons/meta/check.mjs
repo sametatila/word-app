@@ -20,6 +20,7 @@ const errors = [];
 const warnings = [];
 const written = new Map();
 const german = new Map(extractMeta().map((r) => [r.lesson, r.title]));
+const turkish = new Map(extractMeta().map((r) => [r.lesson, r.titleTr]));
 
 if (existsSync(`${DIR}out`))
   for (const f of readdirSync(`${DIR}out`).filter((x) => x.endsWith(".json"))) {
@@ -32,7 +33,14 @@ if (existsSync(`${DIR}out`))
       const t = String(r.titleEn ?? "").trim();
       const s = String(r.summaryEn ?? "").trim();
       if (!t) H("başlık boş");
-      else if (t.length > 40) U(`başlık uzun (${t.length})`);
+      // Eşik mutlak DEĞİL: 580 Türkçe başlığın 578’i 40 karakterin altında,
+      // ikisi ise Almanca bağlaç LİSTESİ taşıyor ("İkili bağlaçlar:
+      // entweder…oder, sowohl…als auch, weder…noch" 59 karakter). Listeyi
+      // İngilizcede kısaltmak bilgiyi atardı. Kural: KISA bir başlık uzun bir
+      // başlığa dönüşmüşse uyar — yakalamak istediği şey zaten ad yerine
+      // cümle yazılması, mutlak uzunluk değil.
+      else if (t.length > 40 && t.length > (turkish.get(r.lesson)?.length ?? 0) + 8)
+        U(`başlık uzun (${t.length}, Türkçesi ${turkish.get(r.lesson)?.length})`);
       else if (/[.]$/.test(t)) U("başlık nokta ile bitiyor — özetle karışmış olabilir");
       else if (german.get(r.lesson) && t.toLowerCase() === german.get(r.lesson).toLowerCase())
         U("başlık Almancanın aynısı — konu adı değil ders cümlesi yazılmış olabilir");
