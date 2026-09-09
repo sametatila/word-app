@@ -95,7 +95,10 @@ export function FriendsScreen() {
   return (
     <View style={{ flex: 1, backgroundColor: colors.bg }}>
       <TabHeader title={tx("friends.friends")} right={<HeaderButton icon={SettingsIcon} label={tx("friends.social_settings")} onPress={() => nav.navigate("SocialSettings")} />} />
-      <ScrollView contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.xxl }} showsVerticalScrollIndicator={false} keyboardShouldPersistTaps="handled">
+      {/* Alt dolgu 96: yüzen sekme çubuğunun altında kalan içerik olmasın
+          (ui/Screen ile aynı ölçü). Bu ekran bir yığın ekranıyken çubuk yoktu
+          ve xxl yetiyordu. */}
+      <ScrollView contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + 96 }} showsVerticalScrollIndicator={false} keyboardShouldPersistTaps="handled">
         {me ? (
           <Card style={{ alignItems: "center", marginTop: spacing.sm, marginBottom: spacing.lg }}>
             <View style={softShadow(colors.primary, 10)}><PersonAvatar userId={me.userId} name={me.name} size={76} /></View>
