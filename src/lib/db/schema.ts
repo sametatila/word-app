@@ -1192,7 +1192,7 @@ export const premiumGrants = pgTable(
       uygulanmadığı fark edilmedi, çünkü şema tanımı onu bilmiyordu: sürüklenme
       ne kodda ne de üretilecek bir migration'da görünüyordu.
     */
-    index("premium_grants_store_ref_idx").on(t.ref).where(sql`${t.source} = 'store'`),
+    uniqueIndex("premium_grants_store_ref_idx").on(t.ref).where(sql`${t.source} = 'store'`),
   ],
 );
 

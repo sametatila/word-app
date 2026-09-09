@@ -131,6 +131,25 @@ export async function rewardForFirstPayment(inviteeUserId: string): Promise<stri
   const [row] = await db.select().from(referrals).where(eq(referrals.inviteeUserId, inviteeUserId)).limit(1);
   if (!row || row.rewardedAt) return null;
 
+  /**
+   * ÖDEMENİN GERÇEKTEN ALINDIĞINI BURASI DA DOĞRULAR.
+   *
+   * Çağıran (webhook) bunu zaten `firstPayment` bayrağıyla kapıyor, ama işlevin
+   * adı "ilk ödemede" diye söz veriyorsa sözü kendisi tutmalı: ikinci bir
+   * çağıran çıktığında (elle telafi, geri doldurma betiği, admin aracı) ödül
+   * ücretsiz DENEME için de dağıtılırdı ve bu, sahte hesapla hafta üretmenin
+   * tam olarak kapatmak istediğimiz yolu. Veritabanı testi bunu yakaladı:
+   * deneme olayından sonra doğrudan çağrılınca ödül düşüyordu.
+   *
+   * `store_paid_at` yalnız gerçek para alındığında yazılıyor (`applyStoreEvent`).
+   */
+  const [ent] = await db
+    .select({ paidAt: entitlements.storePaidAt })
+    .from(entitlements)
+    .where(eq(entitlements.userId, inviteeUserId))
+    .limit(1);
+  if (!ent?.paidAt) return null;
+
   const cfg = await premiumConfig();
   const days = cfg.referral.rewardDays;
   if (days <= 0) return null;

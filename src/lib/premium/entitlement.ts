@@ -255,14 +255,6 @@ export const daysToMinutes = (days: number): number => Math.round(days * 24 * 60
  * @returns ödül tetiklenecekse `firstPayment: true` (referans zinciri buna bakar)
  */
 export async function applyStoreEvent(ev: StoreEvent): Promise<{ applied: boolean; firstPayment: boolean }> {
-  // Tekrar teslimat elemesi.
-  const [seen] = await db
-    .select({ id: premiumGrants.id })
-    .from(premiumGrants)
-    .where(and(eq(premiumGrants.source, "store"), eq(premiumGrants.ref, ev.eventId)))
-    .limit(1);
-  if (seen) return { applied: false, firstPayment: false };
-
   const now = Date.now();
   const row = await readRow(ev.userId);
   const grants = STATE_GRANTS.has(ev.state);
@@ -270,66 +262,84 @@ export async function applyStoreEvent(ev: StoreEvent): Promise<{ applied: boolea
 
   // Yetki veren bir olayda bitiş sağlayıcıdan gelir; vermeyen olayda pencere kapanır.
   const storeUntil = grants ? ev.expiresAt : null;
-
   const firstPayment = ev.paid && !row.storePaidAt;
   const storePaidAt = row.storePaidAt ?? (ev.paid ? new Date() : null);
 
-  // 1) Mağaza alanları — MUTLAK yazılır, çünkü orada tek kaynak sağlayıcıdır.
-  const next = {
-    storeUntil,
-    storeProvider: ev.provider,
-    storePlatform: ev.platform,
-    storeProduct: ev.productId,
-    storeState: ev.state,
-    storeRef: ev.ref,
-    storePaidAt,
-    updatedAt: new Date(),
-  };
-  await db
-    .insert(entitlements)
-    .values({ userId: ev.userId, ...emptyRow(), ...next })
-    .onConflictDoUpdate({ target: entitlements.userId, set: next });
+  try {
+    return await db.transaction(async (tx) => {
+      /**
+       * KAPI: deftere yazma. `premium_grants(ref) where source='store'` BENZERSİZ
+       * (0044) ve olay kimliği oraya yazılıyor — yani idempotans anahtarı
+       * veritabanı kısıtıyla zorlanıyor, koda güvenilmiyor.
+       *
+       * Çakışırsa hiçbir satır dönmüyor: olay zaten işlenmiş, çık. Önceki hâli
+       * "önce SELECT, satır yoksa uygula" idi ve bu bir kontrol-et-sonra-davran
+       * yarışıydı; eşzamanlı çift teslimat ikisini de geçirirdi.
+       */
+      const [gate] = await tx
+        .insert(premiumGrants)
+        .values({
+          userId: ev.userId,
+          source: "store",
+          until: storeUntil,
+          ref: ev.eventId,
+          actor: ev.provider,
+          note: `${ev.state}${ev.productId ? ` · ${ev.productId}` : ""}${ev.paid ? " · ödendi" : ""}`,
+        })
+        .onConflictDoNothing()
+        .returning({ id: premiumGrants.id });
+      if (!gate) return { applied: false, firstPayment: false };
 
-  /**
-   * 2) Hediye çalışırken abonelik başladıysa KALANI bakiyeye geri al.
-   *
-   * AYRI VE ARTIRARAK, mutlak yazarak değil. Bakiye yukarıdaki mutlak yazmanın
-   * içinde olsaydı `grantBonus`ın SQL artırımıyla yarışırdı: webhook satırı
-   * okuduktan sonra araya bir davet ödülü girerse, hesaplanmış mutlak değer o
-   * ödülü üzerine yazıp silerdi. Aynı hata sınıfı `resolveEntitlement`te de
-   * vardı ve orada da tek atomik cümleyle kapatıldı.
-   *
-   * Kalan süre veritabanının kendi okuduğu `bonus_until`den hesaplanıyor; koşul
-   * da aynı cümlede, yani pencere bu arada bittiyse hiçbir şey yapılmıyor.
-   */
-  if (grants && !wasCovered) {
-    await db
-      .update(entitlements)
-      .set({
-        bonusMinutes: sql`${entitlements.bonusMinutes} + ceil(extract(epoch from (${entitlements.bonusUntil} - now())) / 60)::int`,
-        bonusUntil: null,
+      // Mağaza alanları — MUTLAK yazılır, orada tek kaynak sağlayıcıdır.
+      const next = {
+        storeUntil,
+        storeProvider: ev.provider,
+        storePlatform: ev.platform,
+        storeProduct: ev.productId,
+        storeState: ev.state,
+        storeRef: ev.ref,
+        storePaidAt,
         updatedAt: new Date(),
-      })
-      .where(
-        and(
-          eq(entitlements.userId, ev.userId),
-          isNotNull(entitlements.bonusUntil),
-          gt(entitlements.bonusUntil, sql`now()`),
-        ),
-      );
+      };
+      await tx
+        .insert(entitlements)
+        .values({ userId: ev.userId, ...emptyRow(), ...next })
+        .onConflictDoUpdate({ target: entitlements.userId, set: next });
+
+      /**
+       * Hediye çalışırken abonelik başladıysa KALANI bakiyeye geri al.
+       *
+       * AYRI VE ARTIRARAK, mutlak yazarak değil. Bakiye yukarıdaki mutlak yazmanın
+       * içinde olsaydı `grantBonus`ın SQL artırımıyla yarışırdı: webhook satırı
+       * okuduktan sonra araya bir davet ödülü girerse, hesaplanmış mutlak değer o
+       * ödülü üzerine yazıp silerdi.
+       *
+       * Kalan süre veritabanının kendi okuduğu `bonus_until`den hesaplanıyor ve
+       * koşul da aynı cümlede: pencere bu arada kapandıysa hiçbir şey olmuyor.
+       */
+      if (grants && !wasCovered) {
+        await tx
+          .update(entitlements)
+          .set({
+            bonusMinutes: sql`${entitlements.bonusMinutes} + ceil(extract(epoch from (${entitlements.bonusUntil} - now())) / 60)::int`,
+            bonusUntil: null,
+            updatedAt: new Date(),
+          })
+          .where(
+            and(
+              eq(entitlements.userId, ev.userId),
+              isNotNull(entitlements.bonusUntil),
+              gt(entitlements.bonusUntil, sql`now()`),
+            ),
+          );
+      }
+      return { applied: true, firstPayment };
+    });
+  } finally {
+    // İŞLEMİN DIŞINDA: önbelleği tazelemek yetkiyi değiştirmiyor, ve içeride
+    // olsaydı `resolveEntitlement`in kendi yazmaları kapının kilidini uzatırdı.
+    await resolveEntitlement(ev.userId).catch(() => {});
   }
-
-  await db.insert(premiumGrants).values({
-    userId: ev.userId,
-    source: "store",
-    until: storeUntil,
-    ref: ev.eventId,
-    actor: ev.provider,
-    note: `${ev.state}${ev.productId ? ` · ${ev.productId}` : ""}${ev.paid ? " · ödendi" : ""}`,
-  });
-
-  await resolveEntitlement(ev.userId);
-  return { applied: true, firstPayment };
 }
 
 /**
