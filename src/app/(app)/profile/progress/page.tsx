@@ -37,6 +37,7 @@ export default async function ProgressPage() {
           xp: d.xp,
         }))}
         streak={profile.currentStreak}
+        longestStreak={profile.longestStreak}
         seconds={data.seconds}
         mastered={mastered}
         totalWords={totalWords}

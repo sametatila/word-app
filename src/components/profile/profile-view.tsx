@@ -12,20 +12,16 @@ import { formatNumber } from "@/lib/i18n/dict";
 import { useShell } from "@/components/app-shell";
 import { inviteText, shareInvite } from "@/lib/share";
 import {
-  BellIcon,
   CheckIcon,
   ChevronRightIcon,
   CrownIcon,
   FlameIcon,
   HandshakeIcon,
-  LearnIcon,
   MailIcon,
-  PenIcon,
   PodiumIcon,
   ShareIcon,
   SparkIcon,
   TrophyIcon,
-  UserIcon,
   WrenchIcon,
 } from "@/components/icons";
 
@@ -59,23 +55,6 @@ export type ProfileStats = {
   premium: boolean;
 };
 
-/**
- * "1 sa 20 dk" / "45 dk" — mobil `formatDuration` ile aynı biçim ama ÇEVRİLİ.
- *
- * Mobildeki karşılığı birimi sabit yazıyor ("3s 20dk"), yani orada süre
- * İngilizce ve Almanca arayüzde de Türkçe kalıyor. Burada anahtara bağlandı;
- * aynı düzeltme mobil tarafta da yapılmalı.
- */
-function formatDuration(
-  seconds: number,
-  t: (key: string, vars?: Record<string, string | number>) => string,
-): string {
-  const m = Math.round(seconds / 60);
-  if (m < 60) return t("skills.dk", { n: m });
-  const h = Math.floor(m / 60);
-  const rest = m % 60;
-  return rest ? t("common.hours_minutes", { h, m: rest }) : t("common.hours", { h });
-}
 
 export function ProfileView({ stats }: { stats: ProfileStats }) {
   const router = useRouter();
@@ -147,10 +126,14 @@ export function ProfileView({ stats }: { stats: ProfileStats }) {
 
       {/* dört karo — mobildeki 2×2 ızgara */}
       <div className="mb-4 grid grid-cols-2 gap-3">
-        <Stat value={formatNumber(stats.mastered, lang)} label={t("profile.words_learned")} tone="var(--color-brand)" />
+        {/*
+          İKİ SAYI, DÖRT DEĞİL. Profil kimliktir, ölçüm tablosu değil: öğrenilen
+          kelime ve toplam süre Gelişim sayfasında zaten var ve burada birebir
+          tekrar ediyordu. Kalan ikisi kimliğin parçası ve herkese açık profilde
+          de görünüyor (bkz. lib/social/profile).
+        */}
         <Stat value={String(stats.streak)} label={t("profile.day_streak")} tone="var(--color-flame)" />
         <Stat value={formatNumber(stats.xp, lang)} label={t("profile.total_xp")} tone="var(--color-mint)" />
-        <Stat value={formatDuration(stats.seconds, t)} label={t("profile.time_total")} tone="var(--color-sky)" />
       </div>
 
       {/* premium bandı */}
@@ -193,16 +176,21 @@ export function ProfileView({ stats }: { stats: ProfileStats }) {
 
       {/* menü — mobildeki satırların karşılığı */}
       <nav className="card px-4" aria-label="Profil">
-        <Row href="/profile/avatar" icon={<UserIcon size={20} />} tone="var(--color-brand-500)" label={t("profile.edit_your_avatar")} />
-        <Row href="/words" icon={<LearnIcon size={20} />} tone="var(--color-brand-500)" label={t("profile.my_words")} />
+        {/*
+          MENÜNÜN KURALI: burada duran şey ya KİMLİĞİN ya da BAŞKALARIYLA
+          İLİŞKİN; kendi ölçün /profile/progress sayfasında. Mobil profil
+          ekranıyla aynı bölünme.
+
+          Taşınanlar: Kelimelerim (Gelişim'de "kelime ustalığı" kartının
+          detayı), Yapabildiklerim, Yazılarım. Kaldırılan: "Avatarını düzenle"
+          (avatarın kendisi zaten o sayfayı açıyor) ve "Bildirimler" (içeriği
+          ayar; Ayarlar → Uygulama'ya taşındı).
+        */}
         <Row href="/profile/achievements" icon={<TrophyIcon size={20} />} tone="var(--color-flame-500)" label={t("profile.achievements")} />
-        <Row href="/profile/cando" icon={<CheckIcon size={20} />} tone="var(--color-mint-500)" label={t("profile.what_can_i_do")} />
-        <Row href="/profile/writings" icon={<PenIcon size={20} />} tone="var(--color-sky-500)" label={t("profile.my_posts")} />
         <Row href="/leaderboard" icon={<PodiumIcon size={20} />} tone="var(--color-sky-500)" label={t("profile.weekly_leaderboard")} />
         <Row href="/friends" icon={<HandshakeIcon size={20} />} tone="var(--color-mint-500)" label={t("profile.friends")} />
         <Row href="/inbox" icon={<MailIcon size={20} />} tone="var(--color-flame-500)" label={t("profile.inbox")} />
-        <InviteRow />
-        <Row href="/notifications" icon={<BellIcon size={20} />} tone="var(--color-sky-500)" label={t("profile.notifications")} last />
+        <InviteRow last />
       </nav>
 
       {/*
@@ -294,7 +282,7 @@ function Row({
  * tarayıcıda yok; olmadığında metin panoya düşüyor ve satır bunu bir süre
  * söylüyor — yoksa dokunuş hiçbir şey yapmamış gibi görünür.
  */
-function InviteRow() {
+function InviteRow({ last }: { last?: boolean }) {
   const t = useT();
   const lang = useLang();
   const { course } = useShell();
@@ -320,7 +308,7 @@ function InviteRow() {
       type="button"
       onClick={() => void invite()}
       className="pressable flex w-full items-center gap-3 py-3 text-left"
-      style={{ borderBottom: "1px solid var(--hairline)" }}
+      style={last ? undefined : { borderBottom: "1px solid var(--hairline)" }}
     >
       <span
         className="flex h-10 w-10 shrink-0 items-center justify-center rounded-tile"

@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { BookIcon, ChevronRightIcon, ClockIcon, FlameIcon, SparkIcon, TrophyIcon } from "@/components/icons";
+import { BookIcon, CheckIcon, ChevronRightIcon, ClockIcon, FlameIcon, PenIcon, SparkIcon, TrophyIcon } from "@/components/icons";
 import { Mascot } from "@/components/mascot";
 import type { ComponentType, SVGProps } from "react";
 import { useT, useLang } from "@/lib/i18n/client";
@@ -125,6 +125,7 @@ export function WordProgress({
 export function ActivityProgress({
   days,
   streak,
+  longestStreak,
   seconds,
   mastered,
   totalWords,
@@ -134,6 +135,8 @@ export function ActivityProgress({
 }: {
   days: DayRow[];
   streak: number;
+  /** En uzun seri — 0 ise bilinmiyor, satır çizilmez. */
+  longestStreak: number;
   seconds: number;
   /** Pekişmiş kelime sayısı — kart Kelimeler ekranına götürüyor. */
   mastered: number;
@@ -166,6 +169,16 @@ export function ActivityProgress({
         <span className="min-w-0 flex-1">
           <span className="block text-display">{streak}</span>
           <span className="block text-strong text-white/85">{t("progress.day_streak")}</span>
+          {/*
+            EN UZUN SERİ. Sunucu bunu zaten gönderiyor ve BAŞKASININ profilinde
+            görünüyordu; kendi ekranında yoktu. Bugünkü sayı ancak kendi
+            rekoruyla kıyaslanınca bir şey söylüyor.
+          */}
+          {longestStreak > 0 ? (
+            <span className="block text-caption text-white/75">
+              {t("progress.longest_streak", { n: formatNumber(longestStreak, lang) })}
+            </span>
+          ) : null}
         </span>
         <Mascot mood={streak > 0 ? "happy" : "idle"} size={58} />
       </div>
@@ -186,6 +199,17 @@ export function ActivityProgress({
         <KpiCard label={t("prog.study_time")} value={formatDuration(seconds, t)} tone="var(--color-sky)" Icon={ClockIcon} />
         <KpiCard label={t("progress.level")} value={level} tone="var(--color-violet)" Icon={TrophyIcon} />
       </div>
+
+      {/*
+        KENDİ ÖLÇÜN BURADA. Profilden taşınan iki satır: yeterlik
+        (Yapabildiklerim) ve değerlendirilmiş üretimin arşivi (Yazılarım).
+        Başarımlar taşınmadı — rozet sayısı herkese açık profilde görünüyor,
+        yani kimliğin parçası. Mobil Gelişim ekranıyla aynı bölünme.
+      */}
+      <nav className="card px-4" aria-label={t("progw.my_progress")}>
+        <ProgressRow href="/profile/cando" icon={<CheckIcon size={20} />} tone="var(--color-mint-500)" label={t("profile.what_can_i_do")} />
+        <ProgressRow href="/profile/writings" icon={<PenIcon size={20} />} tone="var(--color-sky-500)" label={t("profile.my_posts")} last />
+      </nav>
 
       {/* Kelime hakimiyeti — mobilde karoların hemen altında tek şerit. */}
       <section className="card p-4">
@@ -413,5 +437,38 @@ function Donut({ value, total }: { value: number; total: number }) {
         {value}
       </div>
     </div>
+  );
+}
+
+/** Gelişim sayfasının satırı — profil menüsündeki satırla aynı ölçü ve davranış. */
+function ProgressRow({
+  href,
+  icon,
+  tone,
+  label,
+  last,
+}: {
+  href: string;
+  icon: React.ReactNode;
+  tone: string;
+  label: string;
+  last?: boolean;
+}) {
+  return (
+    <Link
+      href={href}
+      prefetch={false}
+      className="pressable flex items-center gap-3 py-3"
+      style={last ? undefined : { borderBottom: "1px solid var(--hairline)" }}
+    >
+      <span
+        className="flex h-10 w-10 shrink-0 items-center justify-center rounded-tile"
+        style={{ background: `color-mix(in srgb, ${tone} 16%, transparent)`, color: tone }}
+      >
+        {icon}
+      </span>
+      <span className="flex-1 text-strong">{label}</span>
+      <ChevronRightIcon size={18} style={{ color: "var(--text-faint)" }} />
+    </Link>
   );
 }
