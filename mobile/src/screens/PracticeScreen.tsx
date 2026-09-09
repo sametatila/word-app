@@ -95,7 +95,11 @@ export function PracticeScreen() {
                   <View style={[{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: tint }, softShadow(tint, 6)]}>
                     {m.icon({ color: "#fff", size: 22 })}
                   </View>
-                  <Text variant="bodyStrong" style={{ marginTop: spacing.md }}>{g.label}</Text>
+                  {/* `label` bir SÖZLÜK ANAHTARI (bkz. game/session.ts PRACTICE_GAMES):
+                      liste modül yüklenirken kuruluyor, dil tercihi o an okunmamış
+                      oluyor. Çeviri bu yüzden burada, çizim anında yapılır — ham
+                      basılınca ekranda "games.choice" görünüyordu. */}
+                  <Text variant="bodyStrong" style={{ marginTop: spacing.md }}>{t(g.label)}</Text>
                 </Card>
               </PressableScale>
             );
