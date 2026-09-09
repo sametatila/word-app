@@ -73,11 +73,16 @@ jobs:
       # ilgili olduğu için geri alınması pahalıdır. Boş veritabanına bütün
       # migration'lar uygulanıp şema kodla karşılaştırılıyor: migration yazmayı
       # unutmak da burada düşüyor.
-      - name: Yetki (veritabanı)
+      # `test:legal-db` de burada: hukuki metinler artık panelden düzenleniyor ve
+      # o yolun her adımı yayına çıkmış bir sözleşme sayfasını değiştiriyor —
+      # bozuk girdinin geri çevrildiği, "varsayılana dön"ün gerçekten döndüğü ve
+      # boş bir gövdenin sayfayı boşaltmadığı veritabanı olmadan sınanamıyor.
+      - name: Yetki ve hukuki metin (veritabanı)
         run: |
           npx tsx scripts/migrate-all.ts
           npx tsx scripts/schema-check.ts
           npm run test:entitlement
+          npm run test:legal-db
         env:
           DATABASE_URL: postgres://postgres:test@127.0.0.1:5432/lernomi_test
           TEST_DATABASE_URL: postgres://postgres:test@127.0.0.1:5432/lernomi_test

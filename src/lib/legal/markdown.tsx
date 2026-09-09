@@ -1,7 +1,7 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
 import { LEGAL_PATHS, isLegalPlaceholder, isLegalOmitted, legalPath, type LegalLocale } from "./index";
-import { platformText, visibleProcessors, type LegalConfig } from "./config";
+import { platformText, visibleProcessors, type LegalConfig } from "./shape";
 
 /**
  * Hukuki belge gövdesinin markdown + belirteç motoru.
@@ -383,4 +383,36 @@ export function renderLegalBody(markdown: string, ctx: Ctx): ReactNode[] {
   });
 
   return out;
+}
+
+/**
+ * Belge gövdesinin tipografisi — `.legal` sınıfı altında.
+ *
+ * BURADA, `legal-shell`de DEĞİL: yönetim panelindeki canlı önizleme de aynı
+ * stili basıyor ve o bir İSTEMCİ bileşeni. `legal-shell` veritabanına dokunan
+ * modülleri (server-only) içe aktardığı için oradan bir şey almak, tüm sunucu
+ * zincirini istemci paketine sürüklüyordu — sayfalar 500 veriyordu ve bunu ne
+ * tsc ne lint görüyor, yalnız çalışırken çıkıyor.
+ */
+export function LegalStyles() {
+  return (
+    <style>{`
+      .legal h2 { font-size: 1.125rem; font-weight: 800; margin: 2rem 0 0.5rem; letter-spacing: -0.01em; }
+      .legal h3 { font-size: 1rem; font-weight: 700; margin: 1.25rem 0 0.35rem; }
+      .legal p, .legal li { font-size: 0.95rem; line-height: 1.65; }
+      .legal p { margin: 0.5rem 0; }
+      .legal ul { margin: 0.5rem 0 0.5rem 1.25rem; list-style: disc; }
+      .legal li { margin: 0.25rem 0; }
+      .legal table { width: 100%; border-collapse: collapse; font-size: 0.85rem; margin: 0.75rem 0 1rem; }
+      .legal th, .legal td { text-align: left; vertical-align: top; padding: 0.45rem 0.5rem; border-bottom: 1px solid var(--border); }
+      .legal th { font-weight: 700; color: var(--text-muted); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.04em; }
+      .legal .tablewrap { overflow-x: auto; }
+      .legal a { text-decoration: underline; text-underline-offset: 4px; }
+      .legal code { font-size: 0.85em; background: var(--surface-2); padding: 0.05em 0.35em; border-radius: 0.35rem; }
+      .legal .ph { font-family: ui-monospace, monospace; font-size: 0.85em; padding: 0.05em 0.4em; border-radius: 0.35rem; background: color-mix(in srgb, var(--color-flame-400) 22%, transparent); color: var(--text); white-space: nowrap; }
+      .legal .entity { margin: 0.75rem 0 1rem; }
+      .legal .entity dt { font-weight: 700; font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.04em; margin-top: 0.5rem; }
+      .legal .entity dd { margin: 0.1rem 0 0; font-size: 0.95rem; }
+    `}</style>
+  );
 }

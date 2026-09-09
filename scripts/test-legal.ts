@@ -1,4 +1,9 @@
 import { existsSync } from "node:fs";
+import { PRIVACY_DEFAULT } from "@/content/legal/defaults/privacy";
+import { TERMS_DEFAULT } from "@/content/legal/defaults/terms";
+import { SUPPORT_DEFAULT } from "@/content/legal/defaults/support";
+import type { LegalDocDefault } from "@/content/legal/defaults/types";
+import { unbalancedConditionals, unknownTokens } from "@/lib/legal/markdown";
 import {
   LEGAL_CHANGELOG,
   LEGAL_EFFECTIVE_DATE,
@@ -93,6 +98,34 @@ const used: Record<string, Set<string>> = {
 for (const [group, keys] of Object.entries(LEGAL_VOCAB) as [keyof typeof used, readonly string[]][]) {
   const dead = keys.filter((k) => !used[group].has(k));
   check(`${group}: kullanılmayan anahtar yok`, dead.length === 0, dead.join(", "));
+}
+
+console.log("\nBelgelerin varsayılan metni");
+const DOCS: Record<string, Record<string, LegalDocDefault>> = {
+  privacy: PRIVACY_DEFAULT,
+  terms: TERMS_DEFAULT,
+  support: SUPPORT_DEFAULT,
+};
+for (const [doc, byLocale] of Object.entries(DOCS)) {
+  for (const locale of LEGAL_LOCALES) {
+    const d = byLocale[locale];
+    const where = `${doc} · ${locale}`;
+    check(`${where}: başlık ve gövde dolu`, Boolean(d?.title?.trim() && d?.body?.trim()));
+    if (!d) continue;
+    const unknown = unknownTokens(d.body);
+    // Kapalı sözlük: yazım hatası olan bir belirteç sayfada ham {{...}} olarak
+    // görünür. Panelde kaydetme bunu reddediyor; varsayılan metin panelden
+    // geçmediği için kapı burada.
+    check(`${where}: belirteçlerin hepsi tanınıyor`, unknown.length === 0, unknown.join(", "));
+    check(`${where}: {{ifIos}} dengeli`, !unbalancedConditionals(d.body));
+    check(`${where}: en az bir bölüm başlığı var`, d.body.includes("## "));
+    // Blok belirteçleri kendi satırlarında olmalı, yoksa paragrafa düşer ve
+    // sayfada ham metin olarak görünür.
+    const inlineBlock = d.body
+      .split("\n")
+      .some((l) => /\{\{(processorsTable|entityBlock:)/.test(l) && l.trim() !== l.trim().match(/^\{\{[^}]+\}\}$/)?.[0]);
+    check(`${where}: blok belirteçleri kendi satırında`, !inlineBlock);
+  }
 }
 
 console.log(fails === 0 ? `\ntamam: hepsi geçti` : `\nKALDI: ${fails}`);

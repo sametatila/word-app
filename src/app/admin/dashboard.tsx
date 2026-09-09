@@ -125,7 +125,13 @@ export function AdminDashboard({ data: d, server: s }: { data: AdminData; server
           <h1 className="text-3xl font-extrabold tracking-tight">Yönetim panosu</h1>
           <p className="text-sm" style={{ color: "var(--text-muted)" }}>Canlı veriler — web + mobil · sunucu · telemetri</p>
         </div>
-        <span className="text-xs" style={{ color: "var(--text-muted)" }}>{new Date(d.generatedAt).toLocaleString("tr-TR")}</span>
+        <div className="flex flex-wrap items-center gap-2">
+          {/* Ayrı sayfada duran yönetim ekranları: panonun sekmeleri okuma,
+              bunlar YAZMA. Karıştırmamak için görsel olarak da ayrı. */}
+          <a href="/admin/premium" className="chip h-8 px-3 text-xs font-semibold">Premium</a>
+          <a href="/admin/legal" className="chip h-8 px-3 text-xs font-semibold">Hukuki metinler</a>
+          <span className="text-xs" style={{ color: "var(--text-muted)" }}>{new Date(d.generatedAt).toLocaleString("tr-TR")}</span>
+        </div>
       </header>
 
       {/* Sekmeler */}
