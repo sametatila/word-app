@@ -181,9 +181,41 @@ zaten eliyor. Uyarı kaldırıldı, yalnız sayı özet satırında duruyor.
 yazar; AGENTS.md gereği bu ayrıca sorulur. Uygulandığında `check:pairs`
 en→de paritesini "!" ile işaretleyecek.
 
-### 3–4. sırada
+### 3. skill_exercises — ÖLÇÜLDÜ, iş planın söylediğinin yarısı ve bir kod fazı
 
-3. `skill_exercises` · intro/gloss/açıklama
+Plan bu kalemi "~9.400 dize × 2 dil" diye tahmin ediyordu. Ölçüm (150 dosya,
+`src/lib/skills/content/`):
+
+```
+egzersiz                870
+intro                   870 dize · İngilizcesi 0
+questions[].explain   2.835 dize · İngilizcesi 0
+gloss girdisi         4.945 · `en` alanı olan 4.945   ← ZATEN BİTMİŞ
+```
+
+Yani yazılacak dize **9.400 değil 3.705**: sözlükçe yarısı (4.945) baştan
+iki dilli yazılmış. Ama planın hiç saymadığı bir şey var — **kod fazı**.
+Bugün hiçbir alan anadile göre seçilmiyor:
+
+- `intro` altı oynatıcıda ham basılıyor (`{exercise.intro}` — reading,
+  listening, writing, speaking, grammar, monologue).
+- `explain` `quiz.tsx`te ham basılıyor (`{q.explain}`).
+- `GlossEntry` `tr` ve `en`i BİRLİKTE gösteriyor, seçmiyor: Türkçe kalın ve
+  önde, İngilizce soluk ve altta. İngilizce anadilli kullanıcı için sıra
+  ters ve Türkçe satır gürültü.
+
+Yani kelime katmanının Faz 1 öncesi hâli. Orada çözüm `glossFor(word, native)`
+tek çözücüsüydü; beceri katmanının karşılığı yok. Veri fazından ÖNCE alanların
+şekli kararlaşmalı (`introEn`/`explainEn` kardeş alanlar, `Gloss`un `tr`/`en`/
+`hd` deseniyle aynı) — yoksa 3.705 dize sonradan değişecek bir şekle yazılmış
+olur.
+
+**Dikkat:** kod fazı `src/components/skills/` altında çalışıyor ve aynı depoda
+ikinci bir oturum şu anda tam orayı düzenliyor (bkz. `8b6a131f`, `d2d11677`).
+Çakışmamak için o dosyalara dokunulmadı.
+
+### 4. sırada
+
 4. `lessons` · anlatım metni
 
 Kaynak `data/app/words-*.json` (JSONL) ve `data/skills/`; tohumlama
