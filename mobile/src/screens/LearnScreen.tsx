@@ -92,12 +92,12 @@ export function LearnScreen() {
             <View style={{ position: "absolute", top: spacing.md, right: spacing.md, flexDirection: "row", gap: 6, zIndex: 2 }}>
               {dueCount > 0 && (
                 <View style={{ flexDirection: "row", alignItems: "center", gap: 4, backgroundColor: "#ffffff2e", borderRadius: radii.pill, paddingHorizontal: 9, paddingVertical: 4 }}>
-                  <RepeatIcon color="#fff" size={13} /><Text variant="micro" color="#fff">{dueCount} tekrar</Text>
+                  <RepeatIcon color="#fff" size={13} /><Text variant="micro" color="#fff">{t("learn.due_count", { n: dueCount })}</Text>
                 </View>
               )}
               {newToday > 0 && (
                 <View style={{ flexDirection: "row", alignItems: "center", gap: 4, backgroundColor: "#ffffff2e", borderRadius: radii.pill, paddingHorizontal: 9, paddingVertical: 4 }}>
-                  <BoltIcon color="#fff" size={13} /><Text variant="micro" color="#fff">{newToday} yeni</Text>
+                  <BoltIcon color="#fff" size={13} /><Text variant="micro" color="#fff">{t("learn.new_count", { n: newToday })}</Text>
                 </View>
               )}
             </View>

@@ -10,8 +10,6 @@
  */
 export const deWeb: Record<string, string> = {
   /* Kahraman kartındaki iki rozet — mobilde henüz sabit yazılı (bkz. tr.ts). */
-  "learn.due_count": "{n} Wiederholung",
-  "learn.new_count": "{n} neu",
   /* Web'e özel mod. */
   "learn.survival": "Überleben",
   "learn.survival_pitch": "40 s · bis die Zeit abläuft",

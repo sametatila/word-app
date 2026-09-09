@@ -49,7 +49,7 @@ export function SocialSettingsScreen() {
     social.blocks().then((r) => setBlocked(r.blocked)).catch(() => setBlocked([]));
   }, [user]);
 
-  async function save(patch: Record<string, unknown>, done = "Kaydedildi") {
+  async function save(patch: Record<string, unknown>, done = tx("settings.saved")) {
     if (busy) return;
     setBusy(true);
     setMsg(null);

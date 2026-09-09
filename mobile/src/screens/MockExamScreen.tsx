@@ -779,7 +779,7 @@ function SpeakingTask({
   onOpen: (id: string, v: string) => void;
   onOpenScore: (id: string, v: OpenScore) => void;
 }) {
-  const [step, setStep] = useState<"bekleme" | "hazirlik" | "konusma" | "bitti">("bekleme");
+  const [step, setStep] = useState<"waiting" | "prep" | "speaking" | "done">("waiting");
   const [turn, setTurn] = useState(0);
   const [count, setCount] = useState(0);
   const [heard, setHeard] = useState<string[]>([]);
@@ -793,7 +793,7 @@ function SpeakingTask({
 
   // Hazırlık sayacı.
   useEffect(() => {
-    if (step !== "hazirlik") return;
+    if (step !== "prep") return;
     if (count <= 0) { void run(); return; }
     const id = setTimeout(() => setCount((c) => c - 1), 1000);
     return () => clearTimeout(id);
@@ -805,12 +805,12 @@ function SpeakingTask({
     if (!ok) return;
     if (!(await sttAvailable(currentTargetLocale()))) { setMicOk(false); return; }
     setCount(prep);
-    setStep("hazirlik");
+    setStep("prep");
   }
 
   /** Hazırlık bitince: tek kişilikse doğrudan konuş, karşılıklıysa adımları yürüt. */
   async function run() {
-    setStep("konusma");
+    setStep("speaking");
     const said: string[] = [];
     const vs = voicesFor(currentCourseId());
     const partnerVoice = (vs[1] ?? vs[0]).id;
@@ -835,7 +835,7 @@ function SpeakingTask({
     if (!alive.current) return;
     setHeard(said);
     onOpen(task.id, said.join("\n"));
-    setStep("bitti");
+    setStep("done");
   }
 
   async function evaluate() {
@@ -862,7 +862,7 @@ function SpeakingTask({
         </View>
       ))}
 
-      {step === "bekleme" ? (
+      {step === "waiting" ? (
         <>
           <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.md, lineHeight: 20 }}>
             {exchange.length
@@ -878,13 +878,13 @@ function SpeakingTask({
           </PressableScale>
           {micOk === false ? <Text variant="caption" color={colors.danger} style={{ marginTop: spacing.xs }}>{t("mockexam.mic_needed")}</Text> : null}
         </>
-      ) : step === "hazirlik" ? (
+      ) : step === "prep" ? (
         <View style={{ marginTop: spacing.md, alignItems: "center" }}>
           <Text variant="micro" color={colors.textMuted}>{t("mockexam.prep")}</Text>
           <Text variant="h1" color={colors.primary}>{mmss(count)}</Text>
           <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.xs, textAlign: "center", lineHeight: 20 }}>{t("mockexam.prep_hint")}</Text>
         </View>
-      ) : step === "konusma" ? (
+      ) : step === "speaking" ? (
         <View style={{ marginTop: spacing.md }}>
           {current?.who === "partner" ? (
             <>

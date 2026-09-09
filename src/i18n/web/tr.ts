@@ -14,8 +14,6 @@ export const trWeb: Record<string, string> = {
    * yazılı (`M/src/screens/LearnScreen.tsx`) — yani orada da çevrilmiyor.
    * Anahtar burada açıldı; mobil tarafa da taşınması gereken bir eksik.
    */
-  "learn.due_count": "{n} tekrar",
-  "learn.new_count": "{n} yeni",
   /* Hayatta kalma modu web'e özel: mobilde böyle bir mod yok. */
   "learn.survival": "Hayatta kalma",
   "learn.survival_pitch": "40 sn · süre bitene kadar",

@@ -101,7 +101,7 @@ export function NotificationsScreen() {
         <ToggleRow title={tx("notifications.daily_reminder")} subtitle={dailyOn ? tx("notifications.daily_on", { time: dailyTime }) : tx("notifications.daily_off")} value={dailyOn} onValueChange={toggleDaily} colors={colors}>
           {dailyOn && (
             <View style={{ marginTop: spacing.md }}>
-              <Text variant="caption" color={colors.textMuted} style={{ marginBottom: spacing.sm }}>SAAT</Text>
+              <Text variant="caption" color={colors.textMuted} style={{ marginBottom: spacing.sm }}>{tx("notifications.hour")}</Text>
               <View style={{ flexDirection: "row", flexWrap: "wrap", gap: spacing.sm }}>
                 {TIMES.map((t) => <Chip key={t} label={t} active={dailyTime === t} onPress={() => pickTime(t)} colors={colors} />)}
               </View>

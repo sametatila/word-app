@@ -40,7 +40,7 @@ async function parse(res: Response): Promise<AuthOutcome> {
   try { json = text ? JSON.parse(text) : null; } catch { /* düz metin */ }
   if (!res.ok) {
     const o = (json ?? {}) as { code?: string; message?: string };
-    return { ok: false, code: o.code ?? "", message: o.message ?? text.slice(0, 200) ?? "Bir sorun oldu" };
+    return { ok: false, code: o.code ?? "", message: o.message ?? text.slice(0, 200) ?? t("autherror.something_went_wrong") };
   }
   return { ok: true, user: userFrom(json) };
 }

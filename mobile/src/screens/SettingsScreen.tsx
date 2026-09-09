@@ -98,6 +98,8 @@ export function SettingsScreen() {
   const [voice, setVoice] = useState<VoiceId>(defaultVoice(me?.course ?? "de"));
   const [busy, setBusy] = useState(false);
   const [msg, setMsg] = useState<string | null>(null);
+  /** İletinin TONU ayrı tutuluyor: metne bakarak renk seçmek çeviride kırılır. */
+  const [msgOk, setMsgOk] = useState(true);
   const [analytics, setAnalytics] = useState(analyticsEnabled());
   const [uiLang, setUiLang] = useState<NativeLang>(currentLang());
   const [micConsent, setMicConsentState] = useState<boolean | null>(null);
@@ -151,8 +153,8 @@ export function SettingsScreen() {
     setMsg(null);
     const ok = await updateProfile({ displayName: name.trim() || undefined, dailyGoal: goal, level });
     setBusy(false);
-    if (ok) { await refresh(); setMsg("Kaydedildi"); setTimeout(() => nav.goBack(), 600); }
-    else setMsg("Kaydedilemedi, tekrar dene.");
+    if (ok) { await refresh(); setMsgOk(true); setMsg(t("settings.saved")); setTimeout(() => nav.goBack(), 600); }
+    else { setMsgOk(false); setMsg(t("settings.save_failed")); }
   }
 
   return (
@@ -335,7 +337,7 @@ export function SettingsScreen() {
             {t("settings.signin_to_save")}
           </Text>
         )}
-        {msg && <Text variant="bodyStrong" color={msg === "Kaydedildi" ? colors.success : colors.danger} style={{ marginTop: spacing.lg, textAlign: "center" }}>{msg}</Text>}
+        {msg && <Text variant="bodyStrong" color={msgOk ? colors.success : colors.danger} style={{ marginTop: spacing.lg, textAlign: "center" }}>{msg}</Text>}
 
         <PressableScale onPress={save} style={[{ borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: 16, alignItems: "center", marginTop: spacing.xl }, softShadow(colors.primary, 10)]}>
           <Text variant="h3" color="#fff">{busy ? "..." : t(user ? "common.save" : "settings.signin_and_save")}</Text>
