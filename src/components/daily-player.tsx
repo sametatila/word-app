@@ -9,7 +9,7 @@ import { FitBox } from "@/components/fit-box";
 import { Confetti, CountUp } from "@/components/celebrate";
 import { scoreAnswer } from "@/lib/daily-score";
 import { ShareResult } from "@/components/share-result";
-import { AlertIcon, SparkIcon } from "@/components/icons";
+import { AlertIcon, FlameIcon, SparkIcon } from "@/components/icons";
 import { Mascot } from "@/components/mascot";
 import { useT, useLang } from "@/lib/i18n/client";
 import { formatNumber } from "@/lib/i18n/dict";
@@ -283,6 +283,13 @@ export function DailyPlayer({ onExit }: { onExit: () => void }) {
             {t("common.n_correct", { correct: finalCorrect, total: finalTotal })}
             {me ? ` · ${t("daily.your_rank_today", { rank: me.rank })}` : ""}
           </p>
+          {/* En iyi seri Android'in sonuç başlığında ayrı bir kutu; web'de
+              yalnız paylaşım görselinin içindeydi, ekranda hiç görünmüyordu —
+              oysa turun asıl anlattığı şey art arda kaç doğru yaptığın. */}
+          <p className="mt-1 flex items-center justify-center gap-1 text-sm opacity-90">
+            <FlameIcon size={14} />
+            {bestCombo.current} {t("daily.best_streak")}
+          </p>
           {xpGained > 0 ? <p className="mt-1 text-sm opacity-90">+{xpGained} XP</p> : null}
         </div>
 
@@ -329,7 +336,13 @@ function BoardList({ rows, title }: { rows: Board; title: string }) {
   const lang = useLang();
   return (
     <div className="border-t" style={{ borderColor: "var(--border)" }}>
-      <div className="muted px-5 py-2.5 text-xs font-semibold uppercase tracking-wide">{title}</div>
+      {/* Tablonun seviyeye göre olduğu Android'de altyazıyla söyleniyor;
+          web'de yalnız başlık vardı ve kullanıcı kendini bütün oyuncularla
+          karşılaştırdığını sanıyordu. */}
+      <div className="px-5 pt-2.5 pb-1">
+        <p className="muted text-xs font-semibold uppercase tracking-wide">{title}</p>
+        <p className="muted text-[11px]">{t("daily.players_at_your_level")}</p>
+      </div>
       <ol>
         {rows.map((r) => (
           <li
