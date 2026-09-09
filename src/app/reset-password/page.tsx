@@ -1,6 +1,9 @@
 import { ResetPasswordForm } from "@/components/reset-password-form";
+import { titleMeta } from "@/lib/page-meta";
 
 export const dynamic = "force-dynamic";
+
+export const generateMetadata = titleMeta("authw.set_new_password");
 
 export default async function ResetPasswordPage({
   searchParams,

@@ -8,6 +8,7 @@ import type { CefrLevel } from "@/lib/skills/types";
 import { ImmersionHub } from "@/components/immersion/immersion-hub";
 import { buildHubUnits } from "@/lib/immersion/hub";
 import { moduleExamPlan } from "@/lib/lessons/module-exam";
+import { titleMeta } from "@/lib/page-meta";
 
 export const dynamic = "force-dynamic";
 
@@ -19,6 +20,8 @@ const LEVELS: CefrLevel[] = ["A1", "A2", "B1", "B2", "C1"];
  * item'ları örülür (bkz. docs/plan/immersion.md). Seçili seviyenin track'i
  * kurulur, kullanıcının ilerlemesiyle gating hesaplanır, sunucuda çizilir.
  */
+export const generateMetadata = titleMeta("nav.path");
+
 export default async function ImmersionPage() {
   const t = await getT();
   const user = await getUserInfo();

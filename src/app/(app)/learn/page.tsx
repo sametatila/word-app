@@ -3,6 +3,7 @@ import { LearnHub, type LearnHubData } from "@/components/learn/learn-hub";
 import { getUserInfo } from "@/lib/auth/server";
 import { ensureProfile, getProgress } from "@/lib/session";
 import { supportsMockExams } from "@/lib/mock-exams";
+import { titleMeta } from "@/lib/page-meta";
 
 export const dynamic = "force-dynamic";
 
@@ -18,6 +19,8 @@ export const dynamic = "force-dynamic";
  * ilerleme şeridi ilk boyamada DOLU geliyor. İskelet yalnız kendi verisini
  * çeken parçalarda (günün görevleri, arkadaş nabzı) kalıyor.
  */
+export const generateMetadata = titleMeta("nav.learn");
+
 export default async function LearnPage({
   searchParams,
 }: {

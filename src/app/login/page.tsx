@@ -4,8 +4,11 @@ import { Suspense } from "react";
 import { redirect } from "next/navigation";
 import { authEnabled, getUserId } from "@/lib/auth/server";
 import { AuthForm } from "@/components/auth-form";
+import { titleMeta } from "@/lib/page-meta";
 
 export const dynamic = "force-dynamic";
+
+export const generateMetadata = titleMeta("auth.sign_in");
 
 export default async function LoginPage() {
   const t = await getT();

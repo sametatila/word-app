@@ -3,6 +3,7 @@ import { getUserInfo } from "@/lib/auth/server";
 import { ensureProfile } from "@/lib/session";
 import { CourseOnboarding } from "@/components/course-onboarding";
 import { OnboardingAdopt } from "@/components/onboarding-adopt";
+import { titleMeta } from "@/lib/page-meta";
 
 export const dynamic = "force-dynamic";
 
@@ -11,6 +12,8 @@ export const dynamic = "force-dynamic";
  * Kurs zaten seçilmişse doğrudan uygulamaya geçilir; ayarlar sonradan
  * profilden değiştirilebilir.
  */
+export const generateMetadata = titleMeta("onboarding.welcome_to_lernomi");
+
 export default async function CourseSelectPage() {
   /*
     OTURUM ARTIK ŞART DEĞİL.

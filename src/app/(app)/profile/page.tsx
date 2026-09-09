@@ -3,6 +3,7 @@ import { getT } from "@/lib/i18n/server";
 import { ensureProfile, getProgress } from "@/lib/session";
 import { isPremium } from "@/lib/premium";
 import { ProfileView } from "@/components/profile/profile-view";
+import { titleMeta } from "@/lib/page-meta";
 
 export const dynamic = "force-dynamic";
 
@@ -15,6 +16,8 @@ export const dynamic = "force-dynamic";
  * bu sayfa yalnız kim olduğunu, ne biriktirdiğini ve nereye gidebileceğini
  * söylüyor — mobil `ProfileScreen` ile aynı kurgu.
  */
+export const generateMetadata = titleMeta("profile.profile");
+
 export default async function ProfilePage() {
   const t = await getT();
   const user = await getUserInfo();
