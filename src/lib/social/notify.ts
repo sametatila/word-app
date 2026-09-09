@@ -6,6 +6,8 @@ import { track } from "@/lib/events";
 import { serverToday } from "./dates";
 import { publicUsers } from "./stats";
 import type { NotificationType, PublicUser } from "./types";
+import { profiles } from "@/lib/db/schema";
+import { translate, isNativeLang, DEFAULT_NATIVE, type NativeLang } from "@/lib/i18n/dict";
 
 /**
  * Bildirim merkezi + web push aynası.
@@ -26,14 +28,48 @@ export type NotifyInput = {
   refId?: number | null;
 };
 
-export async function notify(userId: string, n: NotifyInput, push?: PushPayload | null): Promise<number> {
+/**
+ * Bildirim metni ALICININ dilinde.
+ *
+ * Çağıran taraf anahtar veriyor, metni değil: bildirimi OKUYAN kişi ile onu
+ * TETİKLEYEN kişi farklı ve ikisinin dili aynı olmayabilir. Dil alıcının
+ * profilinden okunuyor — bildirim bir isteğin içinde değil, arka planda da
+ * gönderilebiliyor, orada çerez yok.
+ */
+export type PushKeyed = Omit<PushPayload, "title" | "body"> & {
+  titleKey: string;
+  bodyKey: string;
+  vars?: Record<string, string | number>;
+};
+
+/** Alıcının arayüz dili — bildirim metnini kuran yerler de okuyabilsin. */
+export async function langOf(userId: string): Promise<NativeLang> {
+  const [prof] = await db
+    .select({ lang: profiles.nativeLang })
+    .from(profiles)
+    .where(eq(profiles.userId, userId))
+    .limit(1);
+  return isNativeLang(prof?.lang) ? prof.lang : DEFAULT_NATIVE;
+}
+
+export async function notify(
+  userId: string,
+  n: NotifyInput,
+  push?: PushKeyed | null,
+): Promise<number> {
   const [row] = await db
     .insert(socialNotifications)
     .values({ userId, type: n.type, actorId: n.actorId ?? null, refType: n.refType ?? null, refId: n.refId ?? null })
     .returning({ id: socialNotifications.id });
   if (push) {
     try {
-      const sent = await sendToUser(userId, push);
+      const lang = await langOf(userId);
+      const { titleKey, bodyKey, vars, ...rest } = push;
+      const sent = await sendToUser(userId, {
+        ...rest,
+        title: translate(lang, titleKey, vars),
+        body: translate(lang, bodyKey, vars),
+      });
       if (sent) await track(userId, "push_sent", serverToday(), 0, `social:${n.type}`);
     } catch (err) {
       console.error("[social:push]", err);

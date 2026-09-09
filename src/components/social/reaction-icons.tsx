@@ -1,6 +1,9 @@
+"use client";
+
 import type { SVGProps } from "react";
 import { FlameIcon, HeartIcon, PartyIcon, SparkIcon, StarIcon } from "@/components/icons";
-import { REACTION_LABELS, type ReactionKind } from "@/lib/social/types";
+import { REACTION_LABEL_KEYS, type ReactionKind } from "@/lib/social/types";
+import { useT } from "@/lib/i18n/client";
 
 type IconProps = SVGProps<SVGSVGElement> & { size?: number };
 
@@ -33,9 +36,10 @@ export const REACTION_TONE: Record<ReactionKind, string> = {
 };
 
 export function ReactionGlyph({ kind, size = 16 }: { kind: ReactionKind; size?: number }) {
+  const t = useT();
   const Icon = REACTION_ICON[kind];
   return (
-    <span style={{ color: REACTION_TONE[kind] }} title={REACTION_LABELS[kind]} aria-label={REACTION_LABELS[kind]}>
+    <span style={{ color: REACTION_TONE[kind] }} title={t(REACTION_LABEL_KEYS[kind])} aria-label={t(REACTION_LABEL_KEYS[kind])}>
       <Icon size={size} />
     </span>
   );

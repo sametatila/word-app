@@ -34,6 +34,7 @@
     "test:exam-build": "tsx --tsconfig scripts/tsconfig.dry.json scripts/exam-dryrun.ts",
     "db:seed": "tsx scripts/seed.ts",
     "db:seed:skills": "tsx scripts/seed-skills.ts",
+    "i18n:check": "node scripts/i18n-check.mjs",
     "db:seed:zurich": "tsx scripts/seed-zurich.ts",
     "db:seed:en": "tsx scripts/seed-english.ts",
     "meanings:packets": "node data/meanings/make-packets.mjs",

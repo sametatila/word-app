@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { errorText, social } from "@/lib/social/client";
-import { REACTION_KINDS, REACTION_LABELS, type ReactionKind, type ReactionSummary } from "@/lib/social/types";
+import { REACTION_KINDS, REACTION_LABEL_KEYS, type ReactionKind, type ReactionSummary } from "@/lib/social/types";
 import { ReactionGlyph, REACTION_TONE } from "./reaction-icons";
 import { useT, useLang } from "@/lib/i18n/client";
 
@@ -64,7 +64,7 @@ export function ReactionBar({
               : undefined
           }
           aria-pressed={s.mine === k}
-          aria-label={`${REACTION_LABELS[k]} ${s.counts[k]}`}
+          aria-label={`${t(REACTION_LABEL_KEYS[k])} ${s.counts[k]}`}
         >
           <ReactionGlyph kind={k} size={14} />
           <span className="tabular-nums">{s.counts[k]}</span>
@@ -93,8 +93,8 @@ export function ReactionBar({
                   key={k}
                   type="button"
                   role="menuitem"
-                  title={REACTION_LABELS[k]}
-                  aria-label={REACTION_LABELS[k]}
+                  title={t(REACTION_LABEL_KEYS[k])}
+                  aria-label={t(REACTION_LABEL_KEYS[k])}
                   onClick={() => void pick(k)}
                   className="flex h-9 w-9 items-center justify-center rounded-lg transition-transform hover:scale-110"
                   style={s.mine === k ? { background: `color-mix(in srgb, ${REACTION_TONE[k]} 18%, transparent)` } : undefined}

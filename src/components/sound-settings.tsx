@@ -5,6 +5,7 @@ import { SettingRow, Switch } from "@/components/setting-row";
 import { SpeakerIcon } from "@/components/icons";
 import { play, setSoundEnabled, soundEnabled } from "@/lib/sfx";
 import { track } from "@/lib/track";
+import { useT } from "@/lib/i18n/client";
 
 /**
  * Oyun sesleri anahtarı.
@@ -22,6 +23,7 @@ import { track } from "@/lib/track";
  * duymadan anlamanın yolu yok.
  */
 export function SoundSettings({ bare = false }: { bare?: boolean } = {}) {
+  const t = useT();
   // Sunucuda localStorage yok; ilk çizim varsayılanla yapılıp bağlanma
   // anında gerçek tercihle düzeltiliyor.
   const [on, setOn] = useState(true);
@@ -40,7 +42,7 @@ export function SoundSettings({ bare = false }: { bare?: boolean } = {}) {
 
   /* `bare`: kendi kartını bırakıp uygulama ayarları kartının bir bölümü oluyor. */
   const body = (
-    <SettingRow title="Oyun sesleri" sub="Telaffuz sesi ayrı — bu kapalıyken de çalışır">
+    <SettingRow title={t("snd.game_sounds")} sub={t("snd.game_sounds_sub")}>
       {/* Dinleme, anahtarın SOLUNDA ve yalnızca sesler açıkken: kapalıyken
           çalacak bir şey yok ve orada durması çalışmayan bir düğme demek. */}
       {on ? (

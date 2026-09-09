@@ -1,5 +1,6 @@
 import { PageBack } from "@/components/page-back";
 import { AchievementWall } from "@/components/achievement-wall";
+import { getT } from "@/lib/i18n/server";
 
 export const metadata = { title: "Başarımlar" };
 
@@ -9,10 +10,11 @@ export const metadata = { title: "Başarımlar" };
  * içinde dururken hem sayfayı üç ekran boyu uzatıyor hem de altındaki menüyü
  * görünmez kılıyordu.
  */
-export default function AchievementsPage() {
+export default async function AchievementsPage() {
+  const t = await getT();
   return (
     <div className="mx-auto w-full max-w-2xl">
-      <PageBack fallback="/profile" title="Başarımlar" />
+      <PageBack fallback="/profile" title={t("achievements.achievements")} />
       <AchievementWall />
     </div>
   );

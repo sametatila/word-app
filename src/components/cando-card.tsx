@@ -5,6 +5,7 @@ import { CardSkeleton } from "@/components/skeleton";
 import { CheckIcon } from "@/components/icons";
 import { CANDO_LEVELS, CANDO_SKILL_LABELS, type Cando } from "@/lib/cando";
 import type { CefrLevel } from "@/lib/skills/types";
+import { useT } from "@/lib/i18n/client";
 
 type Item = { cando: Cando; state: "proven" | "progressing" | "none"; done: number; total: number };
 type Data = { level: string; items: Item[]; byLevel: Record<CefrLevel, { proven: number; total: number }> };
@@ -15,6 +16,7 @@ type Data = { level: string; items: Item[]; byLevel: Record<CefrLevel, { proven:
  * İfade dili "…yapabilirim": burası bir ölçek değil, bir ayna.
  */
 export function CandoCard({ bare = false }: { bare?: boolean } = {}) {
+  const t = useT();
   const [data, setData] = useState<Data | null | undefined>(undefined);
   const [level, setLevel] = useState<CefrLevel | null>(null);
 
@@ -37,7 +39,7 @@ export function CandoCard({ bare = false }: { bare?: boolean } = {}) {
     };
   }, []);
 
-  if (data === undefined) return <CardSkeleton height={bare ? 180 : 220} label="Yapabildiklerin yükleniyor" />;
+  if (data === undefined) return <CardSkeleton height={bare ? 180 : 220} label={t("cando.loading")} />;
   if (!data || !level) return null;
   const shown = data.items.filter((i) => i.cando.level === level);
   const skills = [...new Set(shown.map((i) => i.cando.skill))];
@@ -49,7 +51,7 @@ export function CandoCard({ bare = false }: { bare?: boolean } = {}) {
     <section id="cando" className={bare ? "" : "card p-5"}>
       {bare ? null : (
         <div className="flex items-baseline justify-between">
-          <h2 className="font-bold">Yapabildiklerim</h2>
+          <h2 className="font-bold">{t("lessonp.i_can").replace(":", "")}</h2>
           <span className="muted text-xs font-semibold">{provenTotal} kanıtlı</span>
         </div>
       )}
@@ -90,7 +92,7 @@ export function CandoCard({ bare = false }: { bare?: boolean } = {}) {
                       background: i.state === "proven" ? "var(--color-mint)" : i.state === "progressing" ? "color-mix(in srgb, var(--color-flame) 25%, transparent)" : "var(--surface-2)",
                       color: i.state === "proven" ? "white" : "var(--text-muted)",
                     }}
-                    title={i.state === "proven" ? "kanıtlı" : i.state === "progressing" ? "gelişiyor" : "henüz değil"}
+                    title={t(i.state === "proven" ? "cando.proven" : i.state === "progressing" ? "cando.progressing" : "cando.not_yet")}
                     aria-hidden
                   >
                     {i.state === "proven" ? <CheckIcon size={12} /> : i.state === "progressing" ? "½" : ""}

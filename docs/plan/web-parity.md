@@ -331,7 +331,7 @@ Arkadaşlar / kullanıcı / gelen kutusu / sosyal ayarlar ekranlarını yeni dil
 | R — Profil/Ayarlar | **bitti** | `815728d` maskot avatarı + düzenleyici · `dd57b9e` profil + 4 yeni adres + onay diyaloğu · `c33face` üçlü tema · `62c8a51` ayar bölümleri · `86bdc4b` deneme istatistiği |
 | S — Sosyal | **bitti** | `97bef74` — kimlik kartı + davet bandı + dolgusuz çipler |
 | O — Onboarding | **bitti** | `b9b68ba` günlük hedef adımı · `11bbbe3` akış mobil sıraya: misafir onboarding + `/ilk-kelimeler` + kararların hesaba taşınması |
-| I — Arayüz dili | **sürüyor** | `b4a5bf2` altyapı · `b2eb5a8` kabuk+sekmeler · `bda8770` profil/ünite · `189cf21` görevler (sunucu) · `6b332b7` başarımlar (sunucu) · `fc2ff10` yetkinlik/gelişim · `715aa617` günlük plan + oyun adları (sunucu) · tur katmanı (aşağıda). Kalan: sosyal, giriş/karşılama, hukuki sayfalar, sınav/deneme oynatıcıları, ders oynatıcısı, yerleştirme, premium + can-do (128) ve dilbilgisi açıklamaları (42) |
+| I — Arayüz dili | **bitti** | Altyapıdan (`b4a5bf2`) son taramaya kadar 14 commit. Arayüzün tamamı üç dilde; kalan yalnızca İÇERİK (aşağıda, §6) |
 | X — Temizlik | **bitti** | `6b992d6` migrasyon açıkları · `65e019d` ders ikiliği + öksüz bileşenler. İki madde yanlış alarmdı (vercel.json, demo sayfaları) |
 
 ---
@@ -368,3 +368,54 @@ kendiliğinden ilerliyor ve arada Erdi şeridi sürükleyerek getiriyor. İkisi
 bilinçli tasarlanmış ve mobil kodu web'i kaynak gösteriyor
 (`M/src/game/rounds.tsx`: "web VerdictBar'ın taşıdığı bilgi"). Karar
 gerekiyor — bu belge kapanmadan.
+
+---
+
+## 6. Şerit I kapanışı — ne bitti, ne bilerek kaldı
+
+**Bitti.** Kabuk, sekmeler, on iki oyun ve tur katmanı, dört yan mod, sınav ve
+deneme sınavı, ders oynatıcısı ve konuşma sınavı, beş beceri oynatıcısı,
+sosyal katmanın tamamı, giriş/kayıt/parola akışı, karşılama sayfası,
+onboarding, kurulum rehberi, ayarlar, profil, ilerleme, başarımlar, avatar,
+yerleştirme testi, hata sayfası ve 404. Sözlük: `src/i18n/base/*` mobilden
+üretiliyor (1079 anahtar), `src/i18n/web/*` web'e özgü (1090).
+
+`npm run i18n:check` üç dilin anahtar kümesini ve YER TUTUCULARINI denetliyor.
+Eksik anahtar sessizce Türkçeye düşüyor — yani fark edilmeyen bir hata; betik
+onu görünür kılıyor.
+
+**Çeviri sırasında çıkan İŞLEVSEL hatalar** (hepsi çeviriden önce de vardı):
+
+| # | Hata | Sonuç |
+|---|---|---|
+| G1 | Geç dönen oturum cevabı oynanan turun üstüne yazıyordu | Tur hiç başlamıyordu |
+| G2 | Özet kartındaki "Devam" yeni turu yüklüyor ama kimse başlatmıyordu | Yükleme kartında donuyordu |
+| G3 | `resume()` ilerlemeyi eskimiş kapanıştan okuyordu | İkinci ziyaretten sonra her açılış donuyordu |
+| G5 | Onay/doğru-yanlış adımları tanıyıcıyı `tr-TR` kipinde açıyordu | İngilizce "true" diyen kullanıcı adımı geçemiyordu |
+| G6 | `parseConfirm` yalnız Türkçe sözcüklere bakıyordu | Yürüyüşteki "devam edelim mi?" cevabı hiç anlaşılmıyordu |
+| G7 | Anlatım sesi doğrudan `TURKISH_VOICE`a bağlıydı | Anadili Türkçe olmayan kullanıcı açıklamaları Türkçe sesle duyuyordu |
+| G8 | Üç yerde ileti TONU metin içinde Türkçe sözcük aranarak seçiliyordu | Çeviriyle birlikte her başarı iletisi kırmızıya dönerdi |
+| G9 | "Kalıp tuttu mu" kararı `label.startsWith("Kalıp")` ile veriliyordu | Çeviri mantığı sessizce bozardı |
+
+**Bilerek Türkçe kalanlar (karar gerektirenler Samet'e):**
+
+1. **Ders ve sınav içeriği** (~89 bin satır): konuşma senaryoları, deneme
+   sınavı kâğıtları, beceri kütüphanesi. Mobilde de Türkçe; ayrı bir içerik
+   projesi.
+2. **Can-do ifadeleri** (`lib/cando.ts`, 128) — aynı sınıf.
+3. **Karıştırma çiftleri** (`lib/confusables.ts`, 148 çift): hem çiftlerin
+   SEÇİMİ hem ayrım cümleleri Türkçe konuşana göre ("bekommen ≠ become" bir
+   İngilizce yalancı eşi). Başka dilde çevrilmemiş cümle göstermektense genel
+   açıklamaya düşülüyor; çiftlerin yeniden seçilmesi içerik kararı.
+4. **Kelime karşılıkları**: `words` tablosunda `tr` ve `en` var, Almanca yok.
+   Almanca arayüzde anlam Türkçe kalıyor — mobil de öyle. Yeni bir sütun ve
+   içerik gerekir.
+5. `/analytics` (iç ölçüm sayfası), `admin/*`, `console.error` günlükleri ve
+   modele giden İSTEMLER. İstemin talimatı Türkçe; modelden CEVABI kullanıcının
+   dilinde vermesi isteniyor.
+
+**Mobil tarafına düşen küçük işler** (web'de düzeltmek iki tarafı ayırırdı):
+
+- `skills.skills` Almanca sözlükte "Skills" diyor, "Fertigkeiten" değil.
+- Mobil `formatDuration` "dk"/"s" sabit yazıyor.
+- Mobil hero rozetleri "{n} tekrar" / "{n} yeni" sabit.

@@ -4,7 +4,7 @@ import { useState } from "react";
 import { SettingRow } from "@/components/setting-row";
 import { track } from "@/lib/track";
 import { LANG_LABEL, NATIVE_LANGS, isNativeLang, type NativeLang } from "@/lib/i18n/dict";
-import { useLang } from "@/lib/i18n/client";
+import { useT, useLang } from "@/lib/i18n/client";
 import { writeLangCookie } from "@/lib/i18n/set-lang";
 
 /**
@@ -22,6 +22,7 @@ import { writeLangCookie } from "@/lib/i18n/set-lang";
  * bırakıyor.
  */
 export function LangSetting() {
+  const t = useT();
   const current = useLang();
   const [busy, setBusy] = useState(false);
 
@@ -43,7 +44,7 @@ export function LangSetting() {
   }
 
   return (
-    <SettingRow title="Uygulama dili" sub="Anlatım ve arayüz bu dilde olur">
+    <SettingRow title={t("lang.app_language")} sub={t("lang.app_language_sub")}>
       <div className="flex gap-1.5">
         {NATIVE_LANGS.map((l) => (
           <button

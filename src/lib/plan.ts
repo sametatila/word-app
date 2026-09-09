@@ -191,7 +191,7 @@ export async function buildPlan(
   const remaining = items.filter((i) => !i.done);
   let summary: string | undefined;
   try {
-    const s = await weeklySummary(userId, today);
+    const s = await weeklySummary(userId, today, undefined, lang);
     if (s.answers || s.exercises || s.lessonsPassed) summary = s.text;
   } catch (err) {
     console.error("[plan] haftalık özet", err);

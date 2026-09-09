@@ -43,14 +43,15 @@ export const GROUP_ORDER: Group[] = [
   "discovery",
 ];
 
-export const GROUP_LABELS: Record<Group, string> = {
-  streak: "Seri",
-  vocab: "Kelime",
-  games: "Oyunlar",
-  grammar: "Dilbilgisi",
-  lessons: "Konuşmalar",
-  exams: "Sınavlar",
-  skills: "Beceriler",
-  rounds: "Turlar",
-  discovery: "Keşif",
+/** Sekme adları ANAHTAR olarak — metin gösterildiği yerde çevriliyor. */
+export const GROUP_LABEL_KEYS: Record<Group, string> = {
+  streak: "achgroup.streak",
+  vocab: "achgroup.vocab",
+  games: "achgroup.games",
+  grammar: "achgroup.grammar",
+  lessons: "achgroup.lessons",
+  exams: "achgroup.exams",
+  skills: "achgroup.skills",
+  rounds: "achgroup.rounds",
+  discovery: "achgroup.discovery",
 };

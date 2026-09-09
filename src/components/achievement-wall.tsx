@@ -4,7 +4,9 @@ import { useEffect, useMemo, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { AchievementBadge, TIER_COLOR, TIER_LABEL, type BadgeRow } from "@/components/achievement-badge";
 import { TrophyIcon } from "@/components/icons";
-import { GROUP_LABELS, GROUP_ORDER } from "@/lib/achievement-groups";
+import { GROUP_LABEL_KEYS, GROUP_ORDER } from "@/lib/achievement-groups";
+import { useT, useLang } from "@/lib/i18n/client";
+import { formatNumber } from "@/lib/i18n/dict";
 
 /**
  * Profildeki rozet duvarı.
@@ -43,6 +45,8 @@ const NEXT_COUNT = 4;
 const NEXT_TAB = "__next";
 
 export function AchievementWall() {
+  const t = useT();
+  const lang = useLang();
   const [board, setBoard] = useState<Board | null>(null);
   const [failed, setFailed] = useState(false);
   const [tab, setTab] = useState<string>(NEXT_TAB);
@@ -131,7 +135,7 @@ export function AchievementWall() {
 
   const pct = Math.round((board.unlockedCount / Math.max(1, board.total)) * 100);
   const open = shown.find((r) => r.id === openId) ?? shown[0] ?? null;
-  const nextLabel = upcoming.length ? "Sıradaki" : "Son kazanılan";
+  const nextLabel = t(upcoming.length ? "skills.next" : "achw.recent");
 
   return (
     <section className="card p-5">
@@ -179,7 +183,7 @@ export function AchievementWall() {
               key={g}
               active={tab === g}
               onClick={() => setTab(g)}
-              label={GROUP_LABELS[g] ?? g}
+              label={GROUP_LABEL_KEYS[g] ? t(GROUP_LABEL_KEYS[g]) : g}
               count={`${got}/${rows.length}`}
               complete={got === rows.length}
             />
@@ -241,7 +245,7 @@ export function AchievementWall() {
                     {open.done.toLocaleString("tr-TR")} / {open.target.toLocaleString("tr-TR")}
                   </span>
                   <span className="muted">
-                    {(open.target - open.done).toLocaleString("tr-TR")} kaldı
+                    {t("achw.remaining", { n: formatNumber(open.target - open.done, lang) })}
                   </span>
                 </div>
                 <div className="h-1.5 overflow-hidden rounded-full" style={{ background: "var(--border)" }}>

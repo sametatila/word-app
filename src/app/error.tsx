@@ -5,6 +5,7 @@ import Link from "next/link";
 import { AlertIcon, RefreshIcon } from "@/components/icons";
 import { track } from "@/lib/track";
 import { screenKey } from "@/lib/screens";
+import { useT } from "@/lib/i18n/client";
 
 export default function ErrorPage({
   error,
@@ -13,6 +14,7 @@ export default function ErrorPage({
   error: Error & { digest?: string };
   reset: () => void;
 }) {
+  const t = useT();
   useEffect(() => {
     console.error("[lernomi]", error);
     // Hata sınırına düşen ekran ölçülüyor: "bir şeyler ters gitti"yi kaç
@@ -31,22 +33,21 @@ export default function ErrorPage({
       >
         <AlertIcon size={24} />
       </span>
-      <h1 className="text-2xl font-bold">Bir şeyler ters gitti</h1>
+      <h1 className="text-2xl font-bold">{t("err.title")}</h1>
       <p className="muted text-sm">
-        Beklenmeyen bir hata oluştu. Tekrar denemek genelde yeterli olur; sorun sürerse birkaç
-        dakika sonra tekrar gel.
+        {t("err.body")}
       </p>
       {error.digest ? (
         <p className="muted text-xs">
-          Hata kodu: <code>{error.digest}</code>
+          {t("err.code")} <code>{error.digest}</code>
         </p>
       ) : null}
       <div className="mt-2 flex flex-wrap justify-center gap-3">
         <button onClick={reset} className="btn btn-primary flex items-center gap-2 px-5 py-3">
-          <RefreshIcon size={18} /> Tekrar dene
+          <RefreshIcon size={18} /> {t("common.try_again")}
         </button>
         <Link href="/" className="btn btn-ghost px-5 py-3">
-          Ana sayfa
+          {t("common.home")}
         </Link>
       </div>
     </div>

@@ -95,8 +95,9 @@ export async function inviteQuest(me: string, friendId: string, today: string): 
     friendId,
     { type: "quest_invite", actorId: me, refType: "quest", refId: row.id },
     {
-      title: "Ortak görev daveti",
-      body: `${meP?.name ?? "Bir arkadaşın"} seni davet etti: bu hafta birlikte ${targetXp} XP`,
+      titleKey: "quests.invite_title",
+      bodyKey: "social.notif_quest_invite",
+      vars: { who: meP?.name ?? "", xp: targetXp },
       url: "/friends?tab=quests",
       tag: `quest-${row.id}`,
     },
@@ -126,8 +127,9 @@ export async function respondQuest(me: string, questId: number, accept: boolean)
     row.invitedBy,
     { type: "quest_accepted", actorId: me, refType: "quest", refId: questId },
     {
-      title: "Görev başladı",
-      body: `${meP?.name ?? "Arkadaşın"} kabul etti — hedef birlikte ${row.targetXp} XP`,
+      titleKey: "push.quest_started_title",
+      bodyKey: "social.notif_quest_accepted",
+      vars: { who: meP?.name ?? "", xp: row.targetXp },
       url: "/friends?tab=quests",
       tag: `quest-${questId}`,
     },
@@ -205,7 +207,13 @@ export async function checkQuestProgress(userId: string, today: string): Promise
       await notify(
         self,
         { type: "quest_completed", actorId: partner, refType: "quest", refId: r.id },
-        { title: "Ortak görev tamamlandı", body: `${p?.name ?? "Arkadaşın"} ile birlikte ${r.targetXp} XP topladınız`, url: "/friends?tab=quests", tag: `quest-${r.id}` },
+        {
+          titleKey: "push.quest_done_title",
+          bodyKey: "social.notif_quest_done",
+          vars: { who: p?.name ?? "", xp: r.targetXp },
+          url: "/friends?tab=quests",
+          tag: `quest-${r.id}`,
+        },
       );
       await track(self, "quest_complete", today, r.targetXp);
     }

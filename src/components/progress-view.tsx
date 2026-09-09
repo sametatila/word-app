@@ -5,7 +5,7 @@ import Link from "next/link";
 import { BookIcon, ChevronRightIcon, FlameIcon, SparkIcon, TrophyIcon } from "@/components/icons";
 import type { ComponentType, SVGProps } from "react";
 import { useT, useLang } from "@/lib/i18n/client";
-import { formatNumber } from "@/lib/i18n/dict";
+import { formatNumber, localeOf, type NativeLang } from "@/lib/i18n/dict";
 
 type LevelRow = {
   niveau: string;
@@ -240,7 +240,15 @@ const STRIP_DAYS = 14;
   aynı harfe düşüyor. Şeridin altına gün adı koymanın tek sebebi hafta sonu
   ritmini görünür kılmaktı; ayırt edilemeyen bir harf o işi yapmıyor.
 */
-const WEEKDAY = ["Pt", "Sa", "Ça", "Pe", "Cu", "Ct", "Pa"];
+/**
+ * Gün kısaltmaları elle yazılıydı ("Pt, Sa, Ça…") ve İngilizce arayüzde de
+ * Türkçe çıkıyordu. Artık yerelden üretiliyor; hafta pazartesiyle başlıyor
+ * (2024-01-01 bir pazartesi).
+ */
+function weekdayNames(lang: NativeLang): string[] {
+  const fmt = new Intl.DateTimeFormat(localeOf(lang), { weekday: "short" });
+  return Array.from({ length: 7 }, (_, i) => fmt.format(new Date(Date.UTC(2024, 0, 1 + i))));
+}
 
 /**
  * Son iki haftanın çalışma ritmi.
@@ -324,7 +332,7 @@ function ActivityStrip({ byDay, today }: { byDay: Map<string, DayRow>; today: st
               d.day === today ? "font-bold" : d.weekday >= 5 ? "muted opacity-60" : "muted"
             }`}
           >
-            {WEEKDAY[d.weekday]}
+            {weekdayNames(lang)[d.weekday]}
           </span>
         ))}
       </div>

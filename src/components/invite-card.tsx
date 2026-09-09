@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { SettingRow } from "@/components/setting-row";
 import { HandshakeIcon } from "@/components/icons";
 import { track } from "@/lib/track";
+import { useT } from "@/lib/i18n/client";
 
 /**
  * Davet kartı.
@@ -19,6 +20,7 @@ import { track } from "@/lib/track";
  * kişi sayısı.
  */
 export function InviteCard() {
+  const t = useT();
   const [origin, setOrigin] = useState("");
   const [copied, setCopied] = useState(false);
 
@@ -54,13 +56,13 @@ export function InviteCard() {
        anlatıyordu — ikna metni bile olsa kullanıcıya kendi uygulamasını
        tanıtıyordu. Kalan cümle davetin ne işe yaradığını söylüyor. */
     <section className="card">
-      <SettingRow title="Birini çağır" sub="Bağlantıyı gönder, aynı tabloda yarışın">
+      <SettingRow title={t("inv.title")} sub={t("inv.sub")}>
         <button
           onClick={() => void invite()}
           className="btn btn-primary h-9 px-3.5 text-xs"
         >
           <HandshakeIcon size={15} />
-          <span className="ml-1.5">{copied ? "Kopyalandı" : "Paylaş"}</span>
+          <span className="ml-1.5">{t(copied ? "inv.copied" : "common.share")}</span>
         </button>
       </SettingRow>
     </section>

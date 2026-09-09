@@ -79,8 +79,8 @@ export function Inbox() {
             <Link href={hrefFor(n)} prefetch={false} className="flex items-center gap-3 px-4 py-3">
               {n.actor ? <Avatar userId={n.actor.userId} name={n.actor.name} size={36} /> : <span className="h-9 w-9 rounded-full" style={{ background: "var(--surface-2)" }} />}
               <span className="min-w-0 flex-1">
-                <span className="block text-sm leading-snug">{notificationText(n)}</span>
-                <span className="muted block text-[11px]">{timeAgo(n.createdAt)}</span>
+                <span className="block text-sm leading-snug">{notificationText(n, lang)}</span>
+                <span className="muted block text-[11px]">{timeAgo(n.createdAt, lang)}</span>
               </span>
               {n.type === "reaction" && typeof n.detail.reaction === "string" ? <ReactionGlyph kind={n.detail.reaction as ReactionKind} size={18} /> : null}
             </Link>

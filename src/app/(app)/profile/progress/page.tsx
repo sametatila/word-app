@@ -3,6 +3,7 @@ import { getUserInfo } from "@/lib/auth/server";
 import { ensureProfile, getProgress } from "@/lib/session";
 import { ActivityProgress } from "@/components/progress-view";
 import { ProgressPanel } from "@/components/progress-panel";
+import { getT } from "@/lib/i18n/server";
 
 export const dynamic = "force-dynamic";
 export const metadata = { title: "İlerlemem" };
@@ -16,6 +17,7 @@ export const metadata = { title: "İlerlemem" };
  * sıkıştırılacak kadar küçük değil.
  */
 export default async function ProgressPage() {
+  const t = await getT();
   const user = await getUserInfo();
   if (!user) return null;
 
@@ -46,7 +48,7 @@ export default async function ProgressPage() {
 
   return (
     <div className="mx-auto w-full max-w-2xl space-y-4">
-      <PageBack fallback="/profile" title="İlerlemem" />
+      <PageBack fallback="/profile" title={t("progw.my_progress")} />
       {content}
       {/* Ölçüm bloğu: yetkinlik, dört haftalık değişim ve önerilen adım. */}
       <ProgressPanel />

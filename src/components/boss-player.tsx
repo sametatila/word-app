@@ -224,26 +224,26 @@ export function BossPlayer({
 
   // ── Görünüm ────────────────────────────────────────────────────────
 
-  if (status === "loading") return <Frame><p className="muted">Sınav hazırlanıyor…</p></Frame>;
+  if (status === "loading") return <Frame><p className="muted">{t("exam.preparing")}</p></Frame>;
 
   if (status === "error")
     return (
       <Frame>
         <AlertIcon size={26} />
-        <h2 className="mt-2 text-lg font-bold">Sınav açılamadı</h2>
-        <button onClick={onExit} className="btn btn-ghost mt-5 w-full px-5 py-3">Geri dön</button>
+        <h2 className="mt-2 text-lg font-bold">{t("exam.could_not_load")}</h2>
+        <button onClick={onExit} className="btn btn-ghost mt-5 w-full px-5 py-3">{t("common.go_back")}</button>
       </Frame>
     );
 
   if (status === "empty")
     return (
       <Frame>
-        <h2 className="text-lg font-bold">Bu modülün sınavı henüz kurulamıyor</h2>
+        <h2 className="text-lg font-bold">{t("boss.not_ready")}</h2>
         <p className="muted mt-2 text-sm">
           Sınav modülün konuşmalarındaki kelimelerden kuruluyor ve bu modülde yeterli kelime
           eşleşmedi.
         </p>
-        <button onClick={onExit} className="btn btn-ghost mt-5 w-full px-5 py-3">Geri dön</button>
+        <button onClick={onExit} className="btn btn-ghost mt-5 w-full px-5 py-3">{t("common.go_back")}</button>
       </Frame>
     );
 

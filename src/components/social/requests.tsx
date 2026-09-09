@@ -71,7 +71,7 @@ function RequestRow({ r, incoming, onChanged }: { r: PendingView; incoming: bool
           {r.user.username ? <span className="muted ml-1.5 text-xs font-normal">@{r.user.username}</span> : null}
         </p>
         <p className="muted text-[11px]">
-          {r.user.level} · {timeAgo(r.createdAt)}
+          {r.user.level} · {timeAgo(r.createdAt, lang)}
         </p>
         {err ? <p className="text-[11px]" style={{ color: "var(--color-rose)" }}>{err}</p> : null}
       </div>

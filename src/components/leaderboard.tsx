@@ -1,6 +1,7 @@
 import { FlameIcon } from "@/components/icons";
 import { Avatar } from "@/components/avatar";
 import type { LeaderboardWeek } from "@/lib/session";
+import { getT, getLang } from "@/lib/i18n/server";
 
 /** İlk üç için madalya rengi; sonrası nötr kalır ki tablo yorucu olmasın. */
 const MEDAL: Record<number, string> = {
@@ -25,7 +26,9 @@ const MEDAL: Record<number, string> = {
  *     biter. "Bir üsttekine 140 XP" ise ulaşılabilir, bugün kapatılabilir
  *     bir hedeftir — üstelik kullanıcının kendi elindeki ölçüyle.
  */
-export function Leaderboard({ week }: { week: LeaderboardWeek }) {
+export async function Leaderboard({ week }: { week: LeaderboardWeek }) {
+  const t = await getT();
+  const lang = await getLang();
   const { rows, daysLeft } = week;
   if (rows.length < 2) return null; // tek kişilik sıralama sıralama değildir
 
@@ -43,9 +46,9 @@ export function Leaderboard({ week }: { week: LeaderboardWeek }) {
         className="flex items-baseline justify-between border-b px-5 py-3.5"
         style={{ borderColor: "var(--border)" }}
       >
-        <h2 className="font-bold">Bu haftanın sıralaması</h2>
+        <h2 className="font-bold">{t("lb.this_week")}</h2>
         <span className="muted text-xs">
-          {daysLeft === 1 ? "son gün" : `${daysLeft} gün kaldı`}
+          {daysLeft === 1 ? t("social.last_day") : t("social.days_left", { n: daysLeft })}
         </span>
       </div>
 
@@ -83,7 +86,9 @@ export function Leaderboard({ week }: { week: LeaderboardWeek }) {
   );
 }
 
-function Row({ row }: { row: { rank: number; userId: string; name: string | null; xp: number; streak: number; isMe: boolean } }) {
+async function Row({ row }: { row: { rank: number; userId: string; name: string | null; xp: number; streak: number; isMe: boolean } }) {
+  const t = await getT();
+  const lang = await getLang();
   const medal = MEDAL[row.rank];
   return (
     <li
@@ -105,7 +110,7 @@ function Row({ row }: { row: { rank: number; userId: string; name: string | null
       <Avatar userId={row.userId} name={row.name} size={32} ring={medal ?? null} />
 
       <span className="min-w-0 flex-1 truncate text-sm font-semibold">
-        {row.name ?? "İsimsiz öğrenci"}
+        {row.name ?? t("social.unnamed")}
         {row.isMe ? (
           <span
             className="ml-2 rounded-full px-1.5 py-0.5 text-[10px] font-bold uppercase tracking-wide"

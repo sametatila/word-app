@@ -35,19 +35,19 @@ export async function sendNudge(me: string, to: string, kind: NudgeKind): Promis
     db.select({ streak: profiles.currentStreak, name: profiles.displayName }).from(profiles).where(eq(profiles.userId, to)).limit(1),
     weeklyXpFor([to], serverToday()),
   ]);
-  const meName = users.get(me)?.name ?? "Bir arkadaşın";
+  const meName = users.get(me)?.name ?? "";
   const streak = target[0]?.streak ?? 0;
   const xp = weekly.get(to) ?? 0;
-  const body =
-    kind === "remind"
-      ? streak > 0
-        ? `${meName} seni dürttü: ${streak} günlük serin bugün de sürsün`
-        : `${meName} seni dürttü: bugün kısa bir tur yeter`
-      : `${meName} sana aferin dedi: bu hafta ${xp} XP topladın`;
   await notify(
     to,
     { type: "nudge", actorId: me, refType: "nudge", refId: row.id },
-    { title: kind === "remind" ? "Bir arkadaşın seni dürttü" : "Bir arkadaşın seni alkışladı", body, url: "/learn", tag: `nudge-${me}` },
+    {
+      titleKey: kind === "remind" ? "push.nudge_title" : "push.cheer_title",
+      bodyKey: kind === "remind" ? "social.notif_nudge" : "social.notif_cheer",
+      vars: { who: meName, xp },
+      url: "/learn",
+      tag: `nudge-${me}`,
+    },
   );
   await track(me, "nudge_send", serverToday(), 0, kind);
   return { id: row.id, remainingToday: Math.max(0, LIMITS.nudgeTotal.limit - total.count) };

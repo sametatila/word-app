@@ -88,9 +88,9 @@ export function FeedCard({ item }: { item: FeedItem }) {
         )}
         <div className="min-w-0 flex-1">
           <p className="text-sm leading-snug">
-            <span className="font-bold">{item.isMine ? "Sen" : name}</span> {feedText(item)}
+            <span className="font-bold">{item.isMine ? "Sen" : name}</span> {feedText(item, lang)}
           </p>
-          <p className="muted mt-0.5 text-[11px]">{timeAgo(item.createdAt)}</p>
+          <p className="muted mt-0.5 text-[11px]">{timeAgo(item.createdAt, lang)}</p>
           <ReactionBar eventId={item.id} summary={item.reactions} disabled={item.isMine} />
         </div>
       </div>

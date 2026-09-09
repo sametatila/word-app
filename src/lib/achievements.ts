@@ -3,7 +3,7 @@ import { and, count, desc, eq, gt, gte, inArray, isNotNull, sql } from "drizzle-
 import { db } from "@/lib/db";
 import { translate, DEFAULT_NATIVE, type NativeLang } from "@/lib/i18n/dict";
 import { PLAYABLE_GAMES } from "@/lib/types";
-import { GROUP_LABELS, GROUP_ORDER, type Group } from "@/lib/achievement-groups";
+import { GROUP_LABEL_KEYS, GROUP_ORDER, type Group } from "@/lib/achievement-groups";
 import { onAchievementsUnlocked } from "@/lib/social/hooks";
 import {
   achievements,
@@ -222,7 +222,7 @@ const BY_ID = new Map(ACHIEVEMENTS.map((a) => [a.id, a]));
 // `server-only` olduğu için arayüz onu içe aktaramıyordu ve liste elle
 // kopyalanmıştı. Yeni bir grup eklenince rozetler açılıyor ama duvarda hiç
 // görünmüyordu.
-export { GROUP_LABELS, GROUP_ORDER };
+export { GROUP_LABEL_KEYS, GROUP_ORDER };
 export type { Group };
 
 

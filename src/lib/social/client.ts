@@ -1,5 +1,5 @@
 import type { FeedItem, FriendRow, PublicUser, QuestView, ReactionKind, ReactionSummary, Relation } from "./types";
-import { translate, isNativeLang, DEFAULT_NATIVE, type NativeLang } from "@/lib/i18n/dict";
+import { translate, localeOf, formatNumber, isNativeLang, DEFAULT_NATIVE, type NativeLang } from "@/lib/i18n/dict";
 import { readLangCookie } from "@/lib/i18n/set-lang";
 
 /**
@@ -151,80 +151,100 @@ export const social = {
 };
 
 /** "3 dk önce" — akış ve gelen kutusu için. */
-export function timeAgo(iso: string, now = Date.now()): string {
+export function timeAgo(iso: string, lang: NativeLang, now = Date.now()): string {
   const s = Math.max(0, Math.round((now - Date.parse(iso)) / 1000));
-  if (s < 60) return "az önce";
+  if (s < 60) return translate(lang, "social.ago_now");
   const m = Math.round(s / 60);
-  if (m < 60) return `${m} dk önce`;
+  if (m < 60) return translate(lang, "social.ago_min", { n: m });
   const h = Math.round(m / 60);
-  if (h < 24) return `${h} sa önce`;
+  if (h < 24) return translate(lang, "social.ago_hour", { n: h });
   const d = Math.round(h / 24);
-  if (d < 7) return `${d} gün önce`;
-  return new Date(iso).toLocaleDateString("tr-TR", { day: "numeric", month: "short" });
+  if (d < 7) return translate(lang, "social.ago_day", { n: d });
+  return new Date(iso).toLocaleDateString(localeOf(lang), { day: "numeric", month: "short" });
 }
 
-/** Akış olayının Türkçe cümlesi — sunucudaki describeEvent ile aynı anlam, burada özne dahil. */
-export function feedText(item: FeedItem): string {
+/** Akış olayının cümlesi — sunucudaki describeEvent ile aynı anlam, burada özne dahil. */
+export function feedText(item: FeedItem, lang: NativeLang): string {
   const p = item.payload;
+  const T = (k: string, v?: Record<string, string | number>) => translate(lang, k, v);
   switch (item.type) {
     case "streak_milestone":
-      return `${Number(p.days ?? 0)} günlük seriye ulaştı`;
+      return T("social.feed_streak", { n: Number(p.days ?? 0) });
     case "achievement":
-      return `"${String(p.title ?? "rozet")}" rozetini açtı`;
+      return T("social.feed_badge", { badge: String(p.title ?? T("social.feed_a_badge")) });
     case "friend_joined":
-      return `${String(p.friendName ?? "biri")} ile arkadaş oldu`;
+      return T("social.feed_friend", { name: String(p.friendName ?? T("social.feed_someone")) });
     case "quest_completed":
-      return `${String(p.partnerName ?? "arkadaşı")} ile ${Number(p.targetXp ?? 0)} XP'lik ortak görevi tamamladı`;
+      return T("social.feed_quest", {
+        name: String(p.partnerName ?? T("social.feed_a_friend")),
+        xp: Number(p.targetXp ?? 0),
+      });
     case "weekly_top":
-      return `geçen hafta ${Number(p.rank ?? 0)}. oldu (${Number(p.xp ?? 0).toLocaleString("tr-TR")} XP)`;
+      return T("social.feed_weekly", {
+        rank: Number(p.rank ?? 0),
+        xp: formatNumber(Number(p.xp ?? 0), lang),
+      });
     case "friend_streak":
-      return `${String(p.friendName ?? "arkadaşı")} ile ${Number(p.days ?? 0)} günlük ortak seriye ulaştı`;
+      return T("social.feed_costreak", {
+        name: String(p.friendName ?? T("social.feed_a_friend")),
+        n: Number(p.days ?? 0),
+      });
     default:
-      return "bir kilometre taşına ulaştı";
+      return T("social.feed_default");
   }
 }
 
-/** Gelen kutusu satırının Türkçe cümlesi. */
-export function notificationText(n: NotificationView): string {
-  const who = n.actor?.name ?? "Biri";
+/** Gelen kutusu satırının cümlesi. */
+export function notificationText(n: NotificationView, lang: NativeLang): string {
+  const T = (k: string, v?: Record<string, string | number>) => translate(lang, k, v);
+  const who = n.actor?.name ?? T("social.notif_someone");
   const d = n.detail;
   switch (n.type) {
     case "friend_request":
-      return `${who} seni arkadaş olarak eklemek istiyor`;
+      return T("social.notif_friend_request", { who });
     case "friend_accepted":
-      return `${who} arkadaşlık isteğini kabul etti`;
+      return T("social.notif_friend_accepted", { who });
     case "reaction": {
-      const ev = d.eventType ? describeShort(String(d.eventType), (d.payload as Record<string, unknown>) ?? {}) : "paylaşımına";
-      return `${who} ${ev} tepki gönderdi`;
+      const ev = d.eventType
+        ? describeShort(String(d.eventType), (d.payload as Record<string, unknown>) ?? {}, lang)
+        : T("social.on_default");
+      return T("social.notif_reaction", { who, item: ev });
     }
     case "nudge":
-      return d.kind === "cheer" ? `${who} seni alkışladı` : `${who} seni dürttü: bugün bir tur?`;
+      return d.kind === "cheer" ? T("social.notif_cheer", { who }) : T("social.notif_nudge", { who });
     case "quest_invite":
-      return `${who} seni ${Number(d.targetXp ?? 0)} XP'lik ortak göreve davet etti`;
+      return T("social.notif_quest_invite", { who, xp: Number(d.targetXp ?? 0) });
     case "quest_accepted":
-      return `${who} ortak görevi kabul etti`;
+      return T("social.notif_quest_accepted", { who });
     case "quest_completed":
-      return `${who} ile ortak görevi tamamladınız`;
+      return T("social.notif_quest_done", { who });
     case "friend_milestone":
-      return `${who} ${d.eventType ? describeShort(String(d.eventType), (d.payload as Record<string, unknown>) ?? {}) : "bir kilometre taşına"} ulaştı`;
+      return T("social.notif_milestone", {
+        who,
+        event: d.eventType
+          ? describeShort(String(d.eventType), (d.payload as Record<string, unknown>) ?? {}, lang)
+          : T("social.on_default"),
+      });
     default:
-      return "Yeni bir şey oldu";
+      return T("social.notif_default");
   }
 }
 
-function describeShort(type: string, p: Record<string, unknown>): string {
+function describeShort(type: string, p: Record<string, unknown>, lang: NativeLang): string {
   switch (type) {
     case "streak_milestone":
-      return `${Number(p.days ?? 0)} günlük serine`;
+      return translate(lang, "social.on_streak", { n: Number(p.days ?? 0) });
     case "achievement":
-      return `"${String(p.title ?? "rozet")}" rozetine`;
+      return translate(lang, "social.on_badge", {
+        badge: String(p.title ?? translate(lang, "social.feed_a_badge")),
+      });
     case "quest_completed":
-      return "ortak görevine";
+      return translate(lang, "social.on_quest");
     case "weekly_top":
-      return `haftanın ${Number(p.rank ?? 0)}. sırasına`;
+      return translate(lang, "social.on_weekly", { rank: Number(p.rank ?? 0) });
     case "friend_joined":
-      return "yeni arkadaşlığına";
+      return translate(lang, "social.on_friend");
     default:
-      return "paylaşımına";
+      return translate(lang, "social.on_default");
   }
 }

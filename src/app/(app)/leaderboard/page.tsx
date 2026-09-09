@@ -2,6 +2,7 @@ import { PageBack } from "@/components/page-back";
 import { getUserId } from "@/lib/auth/server";
 import { getLeaderboard, type LeaderboardWeek } from "@/lib/session";
 import { Leaderboard } from "@/components/leaderboard";
+import { getT } from "@/lib/i18n/server";
 
 export const dynamic = "force-dynamic";
 export const metadata = { title: "Haftalık sıralama" };
@@ -15,6 +16,7 @@ export const metadata = { title: "Haftalık sıralama" };
  * doğrudan ulaşılıyor.
  */
 export default async function LeaderboardPage() {
+  const t = await getT();
   const userId = await getUserId();
   if (!userId) return null;
 
@@ -28,7 +30,7 @@ export default async function LeaderboardPage() {
 
   return (
     <div className="mx-auto w-full max-w-2xl">
-      <PageBack fallback="/profile" title="Haftalık sıralama" />
+      <PageBack fallback="/profile" title={t("lb.weekly")} />
       {week ? (
         <Leaderboard week={week} />
       ) : (

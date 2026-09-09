@@ -52,9 +52,9 @@ export function ProgressPanel() {
   return (
     <section className="card p-4">
       <div className="flex items-baseline justify-between gap-3">
-        <h2 className="font-bold">Gelişimin · {data.level}</h2>
+        <h2 className="font-bold">{t("progress.progress")} · {data.level}</h2>
         <span className="muted shrink-0 text-xs font-semibold">
-          son 30 gün · {data.evidenceCount} ölçüm
+          {t("progp.window", { n: data.evidenceCount })}
         </span>
       </div>
 
@@ -69,7 +69,7 @@ export function ProgressPanel() {
                 <span className="font-semibold">{p.label}</span>
                 <span className="muted shrink-0 tabular-nums">
                   {p.now === null ? (
-                    "ölçülmedi"
+                    t("assess.not_measured")
                   ) : (
                     <>
                       {p.now}
@@ -109,7 +109,7 @@ export function ProgressPanel() {
           className="mt-3 flex items-center justify-between gap-3 rounded-xl px-3 py-2.5 surface-2"
         >
           <span className="min-w-0">
-            <span className="block text-sm font-semibold">Sıradaki: {data.next.title}</span>
+            <span className="block text-sm font-semibold">{t("skills.next")}: {data.next.title}</span>
             <span className="muted block truncate text-xs">
               {data.next.reason} · {data.next.minutes} dk
             </span>
@@ -122,7 +122,7 @@ export function ProgressPanel() {
           zaten cevap veriyor, aşağısı cevabı beğenmeyip "neden" diye soran
           için. */}
       <div className="mt-3 border-t pt-2" style={{ borderColor: "var(--border)" }}>
-        <Disclosure title={t("progp.how_am_i_doing")} hint={`${data.weeks.length} hafta`}>
+        <Disclosure title={t("progp.how_am_i_doing")} hint={t("progp.n_weeks", { n: data.weeks.length })}>
           <div className="space-y-3">
             <div className="grid grid-cols-2 gap-2.5">
               <Spark title="Yazma" points={data.series.writing} max={100} color="var(--color-brand)" />

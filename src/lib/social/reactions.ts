@@ -8,25 +8,27 @@ import { SocialError } from "./errors";
 import { notify } from "./notify";
 import { limited } from "./ratelimit";
 import { friendIds, publicUsers } from "./stats";
-import { REACTION_KINDS, REACTION_LABELS, type ActivityType, type ReactionKind, type ReactionSummary } from "./types";
+import { REACTION_KINDS, REACTION_LABEL_KEYS, type ActivityType, type ReactionKind, type ReactionSummary } from "./types";
+import { langOf } from "./notify";
+import { translate, type NativeLang } from "@/lib/i18n/dict";
 
 /** Akış olayını tek satır Türkçeyle anlatır — bildirim ve push metinleri buradan. */
-export function describeEvent(type: ActivityType | string, payload: Record<string, unknown>): string {
+function describeEvent(type: string, payload: Record<string, unknown>, lang: NativeLang): string {
   switch (type) {
-    case "streak_milestone":
-      return `${Number(payload.days ?? 0)} günlük seri`;
-    case "achievement":
-      return `"${String(payload.title ?? "rozet")}" rozeti`;
+    case "streak":
+      return translate(lang, "social.on_streak", { n: Number(payload.days ?? 0) });
+    case "badge":
+      return translate(lang, "social.on_badge", { badge: String(payload.title ?? "") });
     case "friend_joined":
-      return `${String(payload.friendName ?? "biri")} ile arkadaşlık`;
+      return translate(lang, "social.on_friend");
     case "quest_completed":
-      return `${Number(payload.targetXp ?? 0)} XP'lik ortak görev`;
+      return translate(lang, "social.on_quest");
     case "weekly_top":
-      return `haftanın ${Number(payload.rank ?? 0)}. sırası`;
+      return translate(lang, "social.on_weekly", { rank: Number(payload.rank ?? 0) });
     case "friend_streak":
-      return `${Number(payload.days ?? 0)} günlük arkadaş serisi`;
+      return translate(lang, "react.friend_streak", { n: Number(payload.days ?? 0) });
     default:
-      return "bir kilometre taşı";
+      return translate(lang, "social.on_default");
   }
 }
 
@@ -95,8 +97,13 @@ export async function react(me: string, eventId: number, kind: ReactionKind): Pr
       ev.userId,
       { type: "reaction", actorId: me, refType: "event", refId: eventId },
       {
-        title: `${meP?.name ?? "Biri"} tepki gönderdi`,
-        body: `${describeEvent(ev.type, ev.payload as Record<string, unknown>)} için ${REACTION_LABELS[kind].toLocaleLowerCase("tr-TR")}`,
+        titleKey: "push.reaction_title",
+        bodyKey: "push.reaction_body",
+        vars: {
+          who: meP?.name ?? "",
+          event: describeEvent(ev.type, ev.payload as Record<string, unknown>, await langOf(ev.userId)),
+          reaction: translate(await langOf(ev.userId), REACTION_LABEL_KEYS[kind]),
+        },
         url: "/friends?tab=feed",
         tag: `reaction-${eventId}`,
       },

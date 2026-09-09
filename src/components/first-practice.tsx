@@ -8,6 +8,7 @@ import { speakGerman } from "@/components/speak-button";
 import { track } from "@/lib/track";
 import { firstWordsFor, type FirstWord } from "@/lib/first-words";
 import { readOnboardingPrefs } from "@/lib/onboarding-prefs";
+import { useT } from "@/lib/i18n/client";
 
 /**
  * Hesap açmadan önce kısa bir ISINMA — beş kelime, sesli, örnekli.
@@ -28,6 +29,7 @@ import { readOnboardingPrefs } from "@/lib/onboarding-prefs";
 const withArtikel = (w: FirstWord) => (w.artikel ? `${w.artikel} ${w.de}` : w.de);
 
 export function FirstPractice() {
+  const t = useT();
   const router = useRouter();
   const [words, setWords] = useState<FirstWord[] | null>(null);
   const [idx, setIdx] = useState(0);
@@ -64,7 +66,7 @@ export function FirstPractice() {
   if (!words || !w) return null;
 
   const last = idx + 1 >= words.length;
-  const label = !seen ? "Anlamını gör" : last ? "Hesabımı aç" : "Sonraki kelime";
+  const label = t(!seen ? "fp.see_meaning" : last ? "fp.create_account" : "fp.next_word");
 
   function primary() {
     if (!seen) {

@@ -5,6 +5,7 @@ import { applyTheme, readThemeMode, writeThemeMode, type ThemeMode } from "@/lib
 import { SettingRow } from "@/components/setting-row";
 import { MoonIcon, SunIcon } from "./icons";
 import { track } from "@/lib/track";
+import { useT } from "@/lib/i18n/client";
 
 /**
  * Açılış sayfasının tema düğmesi — tek dokunuş, açık ↔ koyu.
@@ -16,6 +17,7 @@ import { track } from "@/lib/track";
  * gösteriyor — üçüncü duruma dönmek oradan mümkün.
  */
 export function ThemeToggle() {
+  const t = useT();
   const [dark, setDark] = useState(false);
 
   useEffect(() => {
@@ -32,7 +34,7 @@ export function ThemeToggle() {
   return (
     <button
       onClick={toggle}
-      aria-label={dark ? "Açık temaya geç" : "Koyu temaya geç"}
+      aria-label={t(dark ? "theme.to_light" : "theme.to_dark")}
       className="btn btn-ghost h-10 w-10"
     >
       {dark ? <SunIcon size={18} /> : <MoonIcon size={18} />}
@@ -52,6 +54,7 @@ export function ThemeToggle() {
  * şey yapmıyor, kullanıcı zaten karar vermiş.
  */
 export function ThemeSetting() {
+  const t = useT();
   const [mode, setMode] = useState<ThemeMode>("system");
 
   useEffect(() => setMode(readThemeMode()), []);
@@ -71,13 +74,13 @@ export function ThemeSetting() {
   }
 
   const OPTIONS: { key: ThemeMode; label: string }[] = [
-    { key: "system", label: "Sistem" },
-    { key: "light", label: "Açık" },
-    { key: "dark", label: "Koyu" },
+    { key: "system", label: t("settings.theme_system") },
+    { key: "light", label: t("settings.theme_light") },
+    { key: "dark", label: t("settings.theme_dark") },
   ];
 
   return (
-    <SettingRow title="Görünüm">
+    <SettingRow title={t("theme.appearance")}>
       {/* Segment: üçü de aynı ağırlıkta, seçili olan dolu. Mobildeki üçlü
           segmentin aynısı. */}
       <div className="flex gap-1.5">

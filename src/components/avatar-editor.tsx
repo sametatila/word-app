@@ -110,7 +110,7 @@ export function AvatarEditor() {
       </Group>
 
       <button type="button" onClick={save} className="btn btn-primary mt-7 w-full py-4">
-        Kaydet
+        {t("common.save")}
       </button>
     </div>
   );

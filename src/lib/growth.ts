@@ -158,7 +158,7 @@ export async function growthReport(
   if (firstPlacement) milestones.push({ at: String(firstPlacement.day), text: `Seviye testi: ${firstPlacement.kind ?? "?"} önerildi` });
   milestones.sort((a, b) => a.at.localeCompare(b.at));
 
-  const summary = await weeklySummary(userId, today, series);
+  const summary = await weeklySummary(userId, today, series, lang);
   return { weeks, level, series, proficiency, evidenceCount: evidenceNow.length, next, milestones, summary };
 }
 
@@ -193,19 +193,25 @@ export async function weeklySummary(
     .groupBy(reviews.errorType)
     .orderBy(sql`count(*) desc`)
     .limit(1);
-  const s = series ?? (await growthReport(userId, "de", "A1", today)).series;
+  const s = series ?? (await growthReport(userId, "de", "A1", today, lang)).series;
   const idx = s.writing.findIndex((p) => p.week === lastWeek);
   const writing = { from: idx > 0 ? s.writing[idx - 1].value : null, to: idx >= 0 ? s.writing[idx].value : null };
   const usage = s.usage.find((p) => p.week === lastWeek)?.value ?? null;
   const topError = top && isErrorType(top.type) ? { type: top.type, label: errorLabel(top.type, lang), n: top.n } : null;
 
   const parts: string[] = [];
-  if (answers) parts.push(`${answers} cevap`);
-  if (exercises) parts.push(`${exercises} egzersiz`);
-  if (lessonsPassed) parts.push(`${lessonsPassed} konuşma`);
-  if (writing.to !== null) parts.push(writing.from !== null ? `yazma ${writing.from}→${writing.to}` : `yazma ${writing.to}`);
-  if (usage !== null) parts.push(`kullanım ${usage}`);
-  if (topError) parts.push(`en çok hata: ${topError.label}`);
+  const T = (k: string, v?: Record<string, string | number>) => translate(lang, k, v);
+  if (answers) parts.push(T("growth.p_answers", { n: answers }));
+  if (exercises) parts.push(T("growth.p_exercises", { n: exercises }));
+  if (lessonsPassed) parts.push(T("growth.p_lessons", { n: lessonsPassed }));
+  if (writing.to !== null)
+    parts.push(
+      writing.from !== null
+        ? T("growth.p_writing_change", { from: writing.from, to: writing.to })
+        : T("growth.p_writing", { n: writing.to }),
+    );
+  if (usage !== null) parts.push(T("growth.p_usage", { n: usage }));
+  if (topError) parts.push(T("growth.p_top_error", { label: topError.label }));
   const text = parts.length
     ? translate(lang, "growth.last_week", { parts: parts.join(", ") })
     : translate(lang, "growth.last_week_empty");

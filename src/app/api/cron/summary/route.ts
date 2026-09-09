@@ -8,6 +8,7 @@ import { weeklySummary } from "@/lib/growth";
 import { track } from "@/lib/events";
 import { shiftDay } from "@/lib/session";
 import { purgeExpiredRoleplayLogs } from "@/lib/lessons/log";
+import { langOf } from "@/lib/social/notify";
 
 export const dynamic = "force-dynamic";
 export const runtime = "nodejs";
@@ -32,7 +33,8 @@ export async function GET(req: Request) {
     let sent = 0;
     for (const r of rows) {
       try {
-        const s = await weeklySummary(r.userId, today);
+        // Haftalık özet bildirimi ALICININ dilinde.
+        const s = await weeklySummary(r.userId, today, undefined, await langOf(r.userId));
         if (!s.answers && !s.exercises && !s.lessonsPassed) continue;
         // Gelişim/yetkinlik panosu profildedir (ProgressPanel) — özet oraya götürür.
         await sendToUser(r.userId, { title: "Haftalık özetin", body: s.text, url: "/profile", tag: "weekly-summary" });

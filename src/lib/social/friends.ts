@@ -142,8 +142,9 @@ export async function sendRequest(me: string, other: string): Promise<{ state: R
     other,
     { type: "friend_request", actorId: me, refType: "friendship", refId: id },
     {
-      title: "Yeni arkadaşlık isteği",
-      body: `${meP?.name ?? "Biri"} seni arkadaş olarak eklemek istiyor`,
+      titleKey: "push.friend_request_title",
+      bodyKey: "social.notif_friend_request",
+      vars: { who: meP?.name ?? "" },
       url: "/friends?tab=requests",
       tag: "friend-request",
     },
@@ -171,8 +172,9 @@ export async function respondRequest(me: string, friendshipId: number, action: "
     row.requesterId,
     { type: "friend_accepted", actorId: me, refType: "friendship", refId: friendshipId },
     {
-      title: "Artık arkadaşsınız",
-      body: `${meP?.name ?? "Biri"} isteğini kabul etti`,
+      titleKey: "push.friend_accepted_title",
+      bodyKey: "social.notif_friend_accepted",
+      vars: { who: meP?.name ?? "" },
       url: meP?.username ? `/u/${meP.username}` : "/friends",
       tag: "friend-accepted",
     },

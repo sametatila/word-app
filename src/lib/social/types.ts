@@ -5,13 +5,14 @@
  */
 export const REACTION_KINDS = ["cheer", "fire", "heart", "strong", "star", "wow"] as const;
 export type ReactionKind = (typeof REACTION_KINDS)[number];
-export const REACTION_LABELS: Record<ReactionKind, string> = {
-  cheer: "Alkış",
-  fire: "Ateş",
-  heart: "Kalp",
-  strong: "Güçlü",
-  star: "Yıldız",
-  wow: "Vay",
+/** Tepki adları ANAHTAR olarak — mobilin `social.reaction_*` kümesiyle aynı. */
+export const REACTION_LABEL_KEYS: Record<ReactionKind, string> = {
+  cheer: "social.reaction_cheer",
+  fire: "social.reaction_fire",
+  heart: "social.reaction_heart",
+  strong: "social.reaction_strong",
+  star: "social.reaction_star",
+  wow: "social.reaction_wow",
 };
 
 export const ACTIVITY_TYPES = [
