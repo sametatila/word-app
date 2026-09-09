@@ -35,7 +35,7 @@ export const c1U19: SkillExercise[] = [
     skill: "reading",
     unit: 19,
     title: "Angenommen, es stimmt",
-    genre: "Deneme",
+    genre: "essay",
     intro: "Varsayım dili: bir görüşü benimsemeden sonuna kadar götürmek.",
     gloss: [
       { de: "die Hypothese", tr: "varsayım", en: "hypothesis" },
@@ -118,7 +118,7 @@ export const c1U19: SkillExercise[] = [
     skill: "reading",
     unit: 19,
     title: "Wer trägt die Verantwortung?",
-    genre: "Yorum yazısı",
+    genre: "opinion",
     intro: "İklim tartışmasında sorumluluk nasıl kaydırılıyor?",
     gloss: [
       { de: "die Verlagerung", tr: "kaydırma", en: "shifting" },
@@ -194,7 +194,7 @@ export const c1U19: SkillExercise[] = [
     skill: "listening",
     unit: 19,
     title: "Zwischen den Stühlen",
-    genre: "Söyleşi",
+    genre: "interview",
     intro: "Aidiyet: iki şey aynı anda doğru olabilir mi?",
     gloss: [
       { de: "die Zugehörigkeit", tr: "aidiyet", en: "belonging" },
@@ -271,7 +271,7 @@ export const c1U19: SkillExercise[] = [
     skill: "listening",
     unit: 19,
     title: "Es wäre an der Zeit gewesen",
-    genre: "Panel",
+    genre: "meeting",
     intro: "Eğitim tartışması: kaçırılmış zamanın dili.",
     gloss: [
       { de: "die Chancengleichheit", tr: "fırsat eşitliği", en: "equality of opportunity" },
@@ -348,7 +348,7 @@ export const c1U19: SkillExercise[] = [
     skill: "writing",
     unit: 19,
     title: "Varsayım ve irreal koşul",
-    genre: "Dil bilgisi",
+    genre: "grammar",
     intro: "Varsayım kalıpları, bağlaçsız gerçek dışı koşul ve ikili kabul yapısı.",
     gloss: [
       { de: "angenommen", tr: "diyelim ki", en: "assuming" },
@@ -395,7 +395,7 @@ export const c1U19: SkillExercise[] = [
     skill: "writing",
     unit: 19,
     title: "İki yarıyı aynı cümlede tutmak",
-    genre: "Görüş yazısı",
+    genre: "opinion",
     intro: "Tartışmalı bir konuda kendi konumunu bırakmadan yazmak.",
     gloss: [
       { de: "der Zielkonflikt", tr: "hedef çatışması", en: "conflict of goals" },

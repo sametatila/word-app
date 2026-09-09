@@ -33,7 +33,7 @@ export const b1U44: SkillExercise[] = [
     skill: "reading",
     unit: 44,
     title: "Drei Tage Karneval",
-    genre: "Kutlama yazısı",
+    genre: "text",
     intro: "Bir karnaval anlatılıyor. Ne kadar sürüyor, kim ne giyiyor?",
     minutes: 5,
     gloss: [
@@ -99,7 +99,7 @@ export const b1U44: SkillExercise[] = [
     skill: "reading",
     unit: 44,
     title: "Das Spiel am Sonntag",
-    genre: "Spor haberi",
+    genre: "article",
     intro: "Bir maç raporu. Skor ne, kim ne yaptı?",
     minutes: 5,
     gloss: [
@@ -166,7 +166,7 @@ export const b1U44: SkillExercise[] = [
     skill: "listening",
     unit: 44,
     title: "Welche Sportart?",
-    genre: "Spor konuşması",
+    genre: "dialogue",
     intro: "Bir spor seçiliyor. Hangisi kime uygun?",
     minutes: 4,
     gloss: [
@@ -228,7 +228,7 @@ export const b1U44: SkillExercise[] = [
     skill: "listening",
     unit: 44,
     title: "Zelten am Feld",
-    genre: "Doğa planı",
+    genre: "info",
     intro: "Bir kamp planlanıyor. Nerede, ne zaman?",
     minutes: 4,
     gloss: [
@@ -291,7 +291,7 @@ export const b1U44: SkillExercise[] = [
     skill: "writing",
     unit: 44,
     title: "Ein Spiel beschreiben",
-    genre: "Spor raporu",
+    genre: "report",
     intro: "Bir maçı ya da antrenmanı anlat. Süre ve ölçü edatsız gelir.",
     minutes: 8,
     gloss: [
@@ -345,7 +345,7 @@ export const b1U44: SkillExercise[] = [
     skill: "writing",
     unit: 44,
     title: "Ein Fest planen",
-    genre: "Plan metni",
+    genre: "info",
     intro: "Bir kutlama planla. 'daha' ve 'bile' Almancada iki ayrı sözcük.",
     minutes: 12,
     gloss: [

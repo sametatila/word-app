@@ -18,7 +18,7 @@ export const enB1P4: SkillExercise[] = [
     level: "B1",
     skill: "reading",
     title: "Notes from the Meeting",
-    genre: "Rapor",
+    genre: "report",
     intro: "Köy toplantısından üyelere yazılmış notları okuyacaksın: kim ne dedi, kim itiraz etti, ne karar çıktı.",
     gloss: [
       { de: "owner", tr: "sahip" },
@@ -111,7 +111,7 @@ export const enB1P4: SkillExercise[] = [
     level: "B1",
     skill: "listening",
     title: "A Paid Coach?",
-    genre: "Tartışma",
+    genre: "opinion",
     intro: "Bir spor kulübünün toplantısını dinleyeceksin: öneri ne, itiraz ne, hangi karar alınıyor.",
     gloss: [
       { de: "coach", tr: "antrenör" },
@@ -189,7 +189,7 @@ export const enB1P4: SkillExercise[] = [
     level: "B1",
     skill: "writing",
     title: "What the Agency Told Me",
-    genre: "Resmî e-posta",
+    genre: "email",
     intro: "Telefonda konuşulanları yazılı olarak teyit edeceksin; önce iki cümle kur, sonra e-postayı yaz.",
     gloss: [
       { de: "heating", tr: "kalorifer" },
@@ -251,7 +251,7 @@ export const enB1P4: SkillExercise[] = [
     level: "B1",
     skill: "speaking",
     title: "News from People or Apps?",
-    genre: "Monolog",
+    genre: "monologue",
     intro: "Bir dakikaya yakın tek başına konuşacaksın: ikili soruyu böl, her tarafa bir iş ver ve kendi kuralını söyle.",
     gloss: [],
     minutes: 6,
@@ -293,7 +293,7 @@ export const enB1P4: SkillExercise[] = [
     level: "B1",
     skill: "grammar",
     title: "He said that he was tired",
-    genre: "Kural",
+    genre: "grammar",
     intro: "Söyleneni aktarırken İngilizcede zaman bir adım geriye kayar; Türkçede böyle bir kayma yoktur.",
     focus: "Reported speech: zaman kayması ve soru aktarımı",
     gloss: [

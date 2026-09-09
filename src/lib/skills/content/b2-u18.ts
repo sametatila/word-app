@@ -34,7 +34,7 @@ export const b2U18: SkillExercise[] = [
     skill: "reading",
     unit: 18,
     title: "Was ist Kunst wert?",
-    genre: "Deneme",
+    genre: "essay",
     intro: "Sanat piyasasının fiyatı nasıl kurduğunu anlatan bir yazı.",
     gloss: [
       { de: "die Sammlung", tr: "koleksiyon", en: "collection" },
@@ -106,7 +106,7 @@ export const b2U18: SkillExercise[] = [
     skill: "reading",
     unit: 18,
     title: "Sparen oder anlegen?",
-    genre: "Tüketici rehberi",
+    genre: "guide",
     intro: "Bir tüketici derneğinin birikim rehberi. Risk ile getiri arasındaki bağa dikkat et.",
     gloss: [
       { de: "die Rendite", tr: "getiri", en: "return" },
@@ -179,7 +179,7 @@ export const b2U18: SkillExercise[] = [
     skill: "listening",
     unit: 18,
     title: "Angeblich sehenswert",
-    genre: "Diyalog",
+    genre: "dialogue",
     intro: "Bir tatil önerisi konuşuluyor — ama bilgi hep başkasından geliyor.",
     gloss: [
       { de: "der Reiseveranstalter", tr: "tur operatörü", en: "tour operator" },
@@ -254,7 +254,7 @@ export const b2U18: SkillExercise[] = [
     skill: "listening",
     unit: 18,
     title: "Mehr Gehalt, bitte",
-    genre: "Diyalog",
+    genre: "dialogue",
     intro: "Maaş görüşmesi. Rakam nasıl söyleniyor, geri adım nasıl açık bırakılıyor?",
     gloss: [
       { de: "die Vergütung", tr: "ücretlendirme", en: "remuneration" },
@@ -330,7 +330,7 @@ export const b2U18: SkillExercise[] = [
     skill: "writing",
     unit: 18,
     title: "Değer, karşılaştırma, pazarlık",
-    genre: "Cümle kurma",
+    genre: "build",
     intro: "soll iddiayı, je-desto karşılaştırmayı, Konjunktiv II ise pazarlık payını taşır.",
     gloss: [
       { de: "malerisch", tr: "resim gibi", en: "picturesque" },
@@ -384,7 +384,7 @@ export const b2U18: SkillExercise[] = [
     skill: "writing",
     unit: 18,
     title: "Die Anfrage vor dem Gespräch",
-    genre: "Resmî e-posta",
+    genre: "email",
     intro: "Maaş görüşmesi iste ve gerekçeni önceden yaz — rakamı söyle ama kapıyı kapatma.",
     gloss: [
       { de: "die Vergütung", tr: "ücretlendirme", en: "remuneration" },

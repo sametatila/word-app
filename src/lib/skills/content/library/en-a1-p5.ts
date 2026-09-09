@@ -18,7 +18,7 @@ export const enA1P5: SkillExercise[] = [
     level: "A1",
     skill: "reading",
     title: "Dog Walker Wanted",
-    genre: "İlan",
+    genre: "ad",
     intro: "Apartman girişindeki küçük iş ilanını okuyacaksın: kim aranıyor, ne zaman, ne kadar ödeniyor.",
     gloss: [
       { de: "walk", tr: "yürüyüş" },
@@ -91,7 +91,7 @@ export const enA1P5: SkillExercise[] = [
     level: "A1",
     skill: "listening",
     title: "Welcome on the City Bus Tour",
-    genre: "Tanıtım konuşması",
+    genre: "profile",
     intro: "Şehir turunda rehberin karşılama konuşmasını dinleyeceksin: tur ne kadar sürüyor, nerede duruluyor, kurallar neler.",
     gloss: [
       { de: "guide", tr: "rehber" },
@@ -163,7 +163,7 @@ export const enA1P5: SkillExercise[] = [
     level: "A1",
     skill: "writing",
     title: "My Hotel Review",
-    genre: "Yorum",
+    genre: "opinion",
     intro: "Kaldığın bir yeri internette değerlendireceksin; önce iki cümle kur, sonra kısa bir yorum yaz.",
     gloss: [
       { de: "clean", tr: "temiz" },
@@ -221,7 +221,7 @@ export const enA1P5: SkillExercise[] = [
     level: "A1",
     skill: "speaking",
     title: "cats, dogs and buses",
-    genre: "Ses çalışması",
+    genre: "pronounce",
     intro: "Çoğul eki hep aynı yazılır ama üç ayrı ses verir: s, z ve iz. Hangisinin geleceğini önceki harf belirler.",
     gloss: [
       { de: "bridge", tr: "köprü" },
@@ -297,7 +297,7 @@ export const enA1P5: SkillExercise[] = [
     level: "A1",
     skill: "grammar",
     title: "a, an, the — and some or any",
-    genre: "Kural",
+    genre: "grammar",
     intro: "Türkçede olmayan üç küçük kelime ve Türkçeden farklı çalışan bir çoğul: ikisi birlikte öğrenilir.",
     focus: "Çoğul biçimler, a / an / the ve some / any",
     gloss: [

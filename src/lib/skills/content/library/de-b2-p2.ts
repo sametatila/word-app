@@ -18,7 +18,7 @@ export const deB2P2: SkillExercise[] = [
     level: "B2",
     skill: "reading",
     title: "Schöffen gesucht — und kaum gefunden",
-    genre: "Haber analizi",
+    genre: "article",
     intro: "Az bilinen bir gönüllü görev için başvuru bulunamamasını inceleyen bir haber yazısı okuyacaksın.",
     gloss: [
       { de: "der Schöffe", tr: "halk jürisi üyesi", en: "lay judge" },
@@ -115,7 +115,7 @@ export const deB2P2: SkillExercise[] = [
     level: "B2",
     skill: "listening",
     title: "Nachrichten am Mittag",
-    genre: "Haber bülteni",
+    genre: "article",
     intro: "Yerel radyonun öğle bültenini dinleyeceksin: birden fazla haber, aktarılan açıklamalar ve hava durumu.",
     gloss: [
       { de: "die Fernwärme", tr: "bölgesel ısıtma", en: "district heating" },
@@ -199,7 +199,7 @@ export const deB2P2: SkillExercise[] = [
     level: "B2",
     skill: "writing",
     title: "Bericht vom Informationsabend",
-    genre: "Aktarım e-postası",
+    genre: "email",
     intro: "Bir bilgilendirme toplantısına katıldın; önce iki cümle kur, sonra gelemeyenlere söylenenleri aktaran bir e-posta yaz.",
     gloss: [
       { de: "die Verwaltung", tr: "yönetim", en: "administration" },
@@ -263,7 +263,7 @@ export const deB2P2: SkillExercise[] = [
     level: "B2",
     skill: "speaking",
     title: "Straßennamen ändern?",
-    genre: "Monolog",
+    genre: "monologue",
     intro: "Bir buçuk dakikaya kadar konuşacaksın: iki tarafın da en güçlü argümanını söyle, sonra kendi konumunu gerekçelendir.",
     gloss: [],
     minutes: 6,
@@ -306,7 +306,7 @@ export const deB2P2: SkillExercise[] = [
     level: "B2",
     skill: "grammar",
     title: "Wer spricht hier eigentlich?",
-    genre: "Kural",
+    genre: "grammar",
     intro: "Haber ve rapor dilinin ayırt edici biçimi: söyleneni aktarırken doğruluğuna kefil olmadan bildirmek.",
     focus: "Konjunktiv I: dolaylı aktarım",
     gloss: [

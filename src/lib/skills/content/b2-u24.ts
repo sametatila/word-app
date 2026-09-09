@@ -34,7 +34,7 @@ export const b2U24: SkillExercise[] = [
     skill: "reading",
     unit: 24,
     title: "Drei Angebote",
-    genre: "İşletme yazısı",
+    genre: "text",
     intro: "Teklif karşılaştırmasının nasıl yapıldığını anlatan bir yazı.",
     gloss: [
       { de: "der Kostenvoranschlag", tr: "fiyat teklifi", en: "cost estimate" },
@@ -107,7 +107,7 @@ export const b2U24: SkillExercise[] = [
     skill: "reading",
     unit: 24,
     title: "Der starke Schluss",
-    genre: "Sunum rehberi",
+    genre: "guide",
     intro: "Sunumun son iki dakikasını anlatan bir rehber. Kapanış kalıplarına dikkat et.",
     gloss: [
       { de: "die Zusammenfassung", tr: "özet", en: "summary" },
@@ -180,7 +180,7 @@ export const b2U24: SkillExercise[] = [
     skill: "listening",
     unit: 24,
     title: "Die Rückfrage-Runde",
-    genre: "Diyalog",
+    genre: "dialogue",
     intro: "Mülakatın sonunda aday soru soruyor. Dolaylı soru kalıplarına dikkat et.",
     gloss: [
       { de: "die Probezeit", tr: "deneme süresi", en: "probation period" },
@@ -251,7 +251,7 @@ export const b2U24: SkillExercise[] = [
     skill: "listening",
     unit: 24,
     title: "Der Abschied",
-    genre: "Diyalog",
+    genre: "dialogue",
     intro: "Emekli olan bir meslektaş için veda hazırlığı. Zaman kademelerine dikkat et.",
     gloss: [
       { de: "die Laufbahn", tr: "meslek yolu", en: "career" },
@@ -327,7 +327,7 @@ export const b2U24: SkillExercise[] = [
     skill: "writing",
     unit: 24,
     title: "Dört an, dört yapı",
-    genre: "Cümle kurma",
+    genre: "build",
     intro: "Karşılaştırma, dolaylı soru, kapanış kalıbı ve zaman kademesi.",
     gloss: [
       { de: "der Kostenvoranschlag", tr: "fiyat teklifi", en: "cost estimate" },
@@ -378,7 +378,7 @@ export const b2U24: SkillExercise[] = [
     skill: "writing",
     unit: 24,
     title: "Der Schluss",
-    genre: "Kapanış metni",
+    genre: "text",
     intro: "Bir kapanış yaz: ya bir sunumun son iki dakikası, ya bir veda konuşması.",
     gloss: [
       { de: "der Ausblick", tr: "ileriye bakış", en: "outlook" },

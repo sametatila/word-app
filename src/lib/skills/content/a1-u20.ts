@@ -32,7 +32,7 @@ export const a1U20: SkillExercise[] = [
     skill: "reading",
     unit: 20,
     title: "Ein Tag im Park",
-    genre: "Bilgi tabelası",
+    genre: "ad",
     intro: "Parkın girişindeki tabela. Nerede ne var, ne yasak?",
     gloss: [
       { de: "die Wiese", tr: "çayır", en: "meadow" },
@@ -92,7 +92,7 @@ export const a1U20: SkillExercise[] = [
     skill: "reading",
     unit: 20,
     title: "Was läuft heute Abend?",
-    genre: "Program",
+    genre: "info",
     intro: "Televizyon programı. Hangi kanalda ne var?",
     gloss: [
       { de: "die Sendung", tr: "program", en: "programme" },
@@ -146,7 +146,7 @@ export const a1U20: SkillExercise[] = [
     skill: "listening",
     unit: 20,
     title: "Im Schwimmbad",
-    genre: "Gişe",
+    genre: "dialogue",
     intro: "Yüzme havuzunun gişesinde. Fiyat, saat, ne getirmeli?",
     gloss: [
       { de: "der Eintritt", tr: "giriş (ücreti)", en: "admission" },
@@ -205,7 +205,7 @@ export const a1U20: SkillExercise[] = [
     skill: "listening",
     unit: 20,
     title: "Leider kann ich nicht",
-    genre: "Telefon",
+    genre: "phone",
     intro:
       "Bir davet reddediliyor. Almanca'da hayır demek üç parçalıdır: net hayır + gerekçe + SOMUT alternatif.",
     gloss: [
@@ -265,7 +265,7 @@ export const a1U20: SkillExercise[] = [
     skill: "writing",
     unit: 20,
     title: "Nein sagen, aber richtig",
-    genre: "Dil bilgisi",
+    genre: "grammar",
     intro: "Reddetmenin üç parçasını tek tek kur.",
     gloss: [
       { de: "leider", tr: "maalesef", en: "unfortunately" },
@@ -303,7 +303,7 @@ export const a1U20: SkillExercise[] = [
     skill: "writing",
     unit: 20,
     title: "Danke, aber leider …",
-    genre: "Mesaj",
+    genre: "message",
     intro: "Bir arkadaşın davetini reddet — ama kapıyı açık bırak.",
     gloss: [
       { de: "hoffen", tr: "ummak", en: "to hope" },

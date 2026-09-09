@@ -30,7 +30,7 @@ export const b1U10: SkillExercise[] = [
     skill: "reading",
     unit: 10,
     title: "Im Fundbüro",
-    genre: "Bilgi metni ve kayıp bildirimi",
+    genre: "report",
     intro: "Kayıp eşya bürosunun kuralları ve bir bildirim. Tarifin ne kadar ayrıntılı olduğuna dikkat et.",
     minutes: 5,
     gloss: [
@@ -95,7 +95,7 @@ export const b1U10: SkillExercise[] = [
     skill: "reading",
     unit: 10,
     title: "Mein Lieblingsort",
-    genre: "Kişisel yazı",
+    genre: "personal",
     intro: "Biri en sevdiği yeri anlatıyor. Yer nasıl, orada ne yapıyor?",
     minutes: 5,
     gloss: [
@@ -161,7 +161,7 @@ export const b1U10: SkillExercise[] = [
     skill: "listening",
     unit: 10,
     title: "Die Fernbedienung geht nicht",
-    genre: "Teknik yardım konuşması",
+    genre: "dialogue",
     intro: "Bir alet çalışmıyor. Sorun ne, ne deneniyor?",
     minutes: 4,
     gloss: [
@@ -223,7 +223,7 @@ export const b1U10: SkillExercise[] = [
     skill: "listening",
     unit: 10,
     title: "Ein einfaches Rezept",
-    genre: "Tarif anlatımı",
+    genre: "guide",
     intro: "Biri kolay bir yemek tarif ediyor. Sırayı ve malzemeyi not et.",
     minutes: 4,
     gloss: [
@@ -286,7 +286,7 @@ export const b1U10: SkillExercise[] = [
     skill: "writing",
     unit: 10,
     title: "Verlustmeldung",
-    genre: "Kayıp bildirimi",
+    genre: "report",
     intro: "Kaybettiğin bir eşyayı tarif et. Sıfatlar isimden önce gelirse çekilir.",
     minutes: 8,
     gloss: [
@@ -340,7 +340,7 @@ export const b1U10: SkillExercise[] = [
     skill: "writing",
     unit: 10,
     title: "Ein Rezept empfehlen",
-    genre: "Tarif ve öneri",
+    genre: "guide",
     intro: "Sevdiğin bir yemeği tarif et. Sırayı ve mastar yapılarını doğru kur.",
     minutes: 12,
     gloss: [

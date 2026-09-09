@@ -18,7 +18,7 @@ export const enB2P3: SkillExercise[] = [
     level: "B2",
     skill: "reading",
     title: "Before You Have Work Done on Your Flat",
-    genre: "Bilgilendirme",
+    genre: "info",
     intro: "Tadilat yaptıracaklara yönelik bir rehber okuyacaksın: teklifler nasıl okunur, ödeme nasıl bölünür, ne yazıya geçirilir.",
     gloss: [
       { de: "dispute", tr: "anlaşmazlık" },
@@ -113,7 +113,7 @@ export const enB2P3: SkillExercise[] = [
     level: "B2",
     skill: "listening",
     title: "Where Stolen Bikes Go",
-    genre: "Sunum",
+    genre: "monologue",
     intro: "Bisiklet hırsızlığı üzerine kısa bir sunum dinleyeceksin: yaygın inanışlar, gerçek rakamlar ve tek bir öneri.",
     gloss: [
       { de: "recover", tr: "geri bulmak" },
@@ -200,7 +200,7 @@ export const enB2P3: SkillExercise[] = [
     level: "B2",
     skill: "writing",
     title: "How to Get Equipment Serviced",
-    genre: "Yönerge",
+    genre: "guide",
     intro: "İş yerindeki cihazların bakımı için meslektaşlarına yönerge yazacaksın; önce iki cümle kur, sonra yönergeyi yaz.",
     gloss: [
       { de: "label", tr: "etiket" },
@@ -268,7 +268,7 @@ export const enB2P3: SkillExercise[] = [
     level: "B2",
     skill: "speaking",
     title: "Do It Yourself or Have It Done?",
-    genre: "Monolog",
+    genre: "monologue",
     intro: "Bir buçuk dakikaya kadar konuşacaksın: iki yaklaşımı karşılaştır ve kendi ölçütünü örnekle sına.",
     gloss: [],
     minutes: 6,
@@ -311,7 +311,7 @@ export const enB2P3: SkillExercise[] = [
     level: "B2",
     skill: "grammar",
     title: "I had it repaired",
-    genre: "Kural",
+    genre: "grammar",
     intro: "Bir işi kendin yapmadığında ve bir bilginin kaynağını söylemek istemediğinde kullanılan iki yapı.",
     focus: "have something done ve reporting passives",
     gloss: [

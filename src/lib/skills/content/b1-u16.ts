@@ -33,7 +33,7 @@ export const b1U16: SkillExercise[] = [
     skill: "reading",
     unit: 16,
     title: "Bildschirmzeit: dafür und dagegen",
-    genre: "Artı-eksi metni",
+    genre: "opinion",
     intro: "Ekran süresi tartışılıyor. Hangi argüman hangi tarafta?",
     minutes: 5,
     gloss: [
@@ -98,7 +98,7 @@ export const b1U16: SkillExercise[] = [
     skill: "reading",
     unit: 16,
     title: "Ich sehe das anders",
-    genre: "Okur mektupları",
+    genre: "letter",
     intro: "Bir yazıya iki yanıt. Kim katılıyor, kim karşı çıkıyor?",
     minutes: 5,
     gloss: [
@@ -168,7 +168,7 @@ export const b1U16: SkillExercise[] = [
     skill: "listening",
     unit: 16,
     title: "Wir kommen zu keinem Ergebnis",
-    genre: "Toplantı tartışması",
+    genre: "meeting",
     intro: "Bir toplantı dağılmak üzere. Kim hangi uzlaşmayı öneriyor?",
     minutes: 4,
     gloss: [
@@ -230,7 +230,7 @@ export const b1U16: SkillExercise[] = [
     skill: "listening",
     unit: 16,
     title: "Wie viel Nachrichten am Tag?",
-    genre: "Günlük konuşma",
+    genre: "personal",
     intro: "İki kişi haber tüketimini konuşuyor. Kim ne kadar azaltmış?",
     minutes: 4,
     gloss: [
@@ -293,7 +293,7 @@ export const b1U16: SkillExercise[] = [
     skill: "writing",
     unit: 16,
     title: "Pro und Contra",
-    genre: "Tartışma metni",
+    genre: "opinion",
     intro: "Bir konunun iki tarafını yaz. 'es gibt' sonrası hâle dikkat et.",
     minutes: 8,
     gloss: [
@@ -347,7 +347,7 @@ export const b1U16: SkillExercise[] = [
     skill: "writing",
     unit: 16,
     title: "Meine Meinung dazu",
-    genre: "Yorum yazısı",
+    genre: "opinion",
     intro: "Bir konuda görüşünü yaz. Yan cümleye gönderme yaparken 'da-' bileşiğini unutma.",
     minutes: 12,
     gloss: [

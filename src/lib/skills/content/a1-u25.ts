@@ -41,7 +41,7 @@ export const a1U25: SkillExercise[] = [
     skill: "reading",
     unit: 25,
     title: "Die vier Jahreszeiten",
-    genre: "Blog",
+    genre: "blog",
     intro: "Dört mevsim, dört kısa paragraf. Kim hangisini seviyor?",
     gloss: [
       { de: "der Frühling", tr: "ilkbahar", en: "spring" },
@@ -100,7 +100,7 @@ export const a1U25: SkillExercise[] = [
     skill: "reading",
     unit: 25,
     title: "Mein Deutsch-Start",
-    genre: "Forum mesajı",
+    genre: "forum",
     intro: "Bir yıl önce başlayan biri anlatıyor. Kursun kapanış metni.",
     gloss: [
       { de: "gelernt", tr: "öğrenmiş", en: "learned" },
@@ -168,7 +168,7 @@ export const a1U25: SkillExercise[] = [
     skill: "listening",
     unit: 25,
     title: "Gestern war ein guter Tag",
-    genre: "Diyalog",
+    genre: "dialogue",
     intro:
       "Bir gün anlatılıyor. „war“ ile „habe/bin“ arasındaki farka kulak ver.",
     gloss: [
@@ -235,7 +235,7 @@ export const a1U25: SkillExercise[] = [
     skill: "listening",
     unit: 25,
     title: "Mein Wochenende",
-    genre: "Diyalog",
+    genre: "dialogue",
     intro: "Bir hafta sonu gezisi. Nereye, kiminle, nerede kalmış?",
     gloss: [
       { de: "die Reise", tr: "yolculuk", en: "trip" },
@@ -295,7 +295,7 @@ export const a1U25: SkillExercise[] = [
     skill: "writing",
     unit: 25,
     title: "war, nicht gewesen",
-    genre: "Dil bilgisi",
+    genre: "grammar",
     intro: "Son üç kalıp. İkisi ünite 24'ün kuralını kırıyor.",
     gloss: [
       { de: "war", tr: "idi", en: "was" },
@@ -335,7 +335,7 @@ export const a1U25: SkillExercise[] = [
     skill: "writing",
     unit: 25,
     title: "Mein Deutsch-Start",
-    genre: "Forum mesajı",
+    genre: "forum",
     intro:
       "A1'in son görevi: kendi Almanca yolculuğunu anlat — öğrendiğin son dilbilgisiyle.",
     gloss: [

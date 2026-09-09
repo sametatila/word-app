@@ -30,7 +30,7 @@ export const b1U09: SkillExercise[] = [
     skill: "reading",
     unit: 9,
     title: "Das Haus, von dem ich träume",
-    genre: "Blog yazısı",
+    genre: "blog",
     intro: "Biri hayalindeki evi anlatıyor. Her ilgi cümlesinde edatın nereye gittiğine bak.",
     minutes: 6,
     gloss: [
@@ -97,7 +97,7 @@ export const b1U09: SkillExercise[] = [
     skill: "reading",
     unit: 9,
     title: "Menschen, denen man vertraut",
-    genre: "Deneme",
+    genre: "essay",
     intro: "Güven üzerine kısa bir yazı. Hangi fiillerin ardından 'dem/denen' geldiğine dikkat et.",
     minutes: 6,
     gloss: [
@@ -163,7 +163,7 @@ export const b1U09: SkillExercise[] = [
     skill: "listening",
     unit: 9,
     title: "In welcher Gegend?",
-    genre: "Semt konuşması",
+    genre: "dialogue",
     intro: "İki kişi taşınacakları semti konuşuyor. Hangi ölçüt kime önemli?",
     minutes: 4,
     gloss: [
@@ -225,7 +225,7 @@ export const b1U09: SkillExercise[] = [
     skill: "listening",
     unit: 9,
     title: "Das war mein Fehler",
-    genre: "Barışma konuşması",
+    genre: "dialogue",
     intro: "Bir tartışmadan sonra iki kişi konuşuyor. Kim suçu nereye koyuyor?",
     minutes: 4,
     gloss: [
@@ -288,7 +288,7 @@ export const b1U09: SkillExercise[] = [
     skill: "writing",
     unit: 9,
     title: "Mein Traumhaus",
-    genre: "Betimleme",
+    genre: "profile",
     intro: "Hayalindeki evi ve semti anlat. Edatlı ilgi cümlelerini doğru kur.",
     minutes: 8,
     gloss: [
@@ -342,7 +342,7 @@ export const b1U09: SkillExercise[] = [
     skill: "writing",
     unit: 9,
     title: "Ein Mensch, dem ich vertraue",
-    genre: "Kişi ve karakter",
+    genre: "profile",
     intro: "Güvendiğin birini anlat. Dativ isteyen fiillere dikkat et.",
     minutes: 12,
     gloss: [

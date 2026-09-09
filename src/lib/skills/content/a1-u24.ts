@@ -41,7 +41,7 @@ export const a1U24: SkillExercise[] = [
     skill: "reading",
     unit: 24,
     title: "Die Einladung",
-    genre: "Davetiye",
+    genre: "personal",
     intro: "Bir doğum günü daveti. Ne zaman, nerede, ne götürmeli?",
     gloss: [
       { de: "die Einladung", tr: "davet(iye)", en: "invitation" },
@@ -109,7 +109,7 @@ export const a1U24: SkillExercise[] = [
     skill: "reading",
     unit: 24,
     title: "Was hast du gemacht?",
-    genre: "Forum mesajı",
+    genre: "forum",
     intro:
       "Üç kişi dünü anlatıyor. Yardımcı fiillere dikkat: bazıları haben, bazıları sein.",
     gloss: [
@@ -168,7 +168,7 @@ export const a1U24: SkillExercise[] = [
     skill: "listening",
     unit: 24,
     title: "Einen Termin verschieben",
-    genre: "Telefon",
+    genre: "phone",
     intro: "Randevu erteleniyor. Yeni tarih ve saat ne?",
     gloss: [
       { de: "verschieben", tr: "ertelemek", en: "to postpone" },
@@ -227,7 +227,7 @@ export const a1U24: SkillExercise[] = [
     skill: "listening",
     unit: 24,
     title: "Wohin bist du gegangen?",
-    genre: "Diyalog",
+    genre: "dialogue",
     intro:
       "Hafta sonu sohbeti. Her cümlede yardımcı fiili dinle: haben mi, sein mi?",
     gloss: [
@@ -292,7 +292,7 @@ export const a1U24: SkillExercise[] = [
     skill: "writing",
     unit: 24,
     title: "haben oder sein?",
-    genre: "Dil bilgisi",
+    genre: "grammar",
     intro: "A1'in en çok karıştırılan noktası. Üç cümle.",
     gloss: [
       { de: "gekauft", tr: "satın almış", en: "bought" },
@@ -329,7 +329,7 @@ export const a1U24: SkillExercise[] = [
     skill: "writing",
     unit: 24,
     title: "Mein Wochenende",
-    genre: "Forum mesajı",
+    genre: "forum",
     intro: "Hafta sonunu geçmiş zamanla anlat.",
     gloss: [
       { de: "erzählen", tr: "anlatmak", en: "to tell" },

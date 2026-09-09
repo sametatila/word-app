@@ -26,7 +26,7 @@ export const a1U02: SkillExercise[] = [
     skill: "reading",
     unit: 2,
     title: "Deutschkurs A1",
-    genre: "İlan",
+    genre: "ad",
     intro: "Bir dil okulunun kurs ilanını okuyacaksın. Sayılara dikkat et.",
     gloss: [
       { de: "der Kurs", tr: "kurs", en: "course" },
@@ -82,7 +82,7 @@ export const a1U02: SkillExercise[] = [
     skill: "reading",
     unit: 2,
     title: "Drei Personen, drei Berufe",
-    genre: "Profil",
+    genre: "profile",
     intro: "Üç kişi kendini tanıtıyor: mesleği ne, hangi dilleri konuşuyor?",
     gloss: [
       { de: "die Ärztin", tr: "kadın doktor", en: "doctor (f.)" },
@@ -143,7 +143,7 @@ export const a1U02: SkillExercise[] = [
     skill: "listening",
     unit: 2,
     title: "Wie schreibt man das?",
-    genre: "Telefon",
+    genre: "phone",
     intro: "Bir kadın telefonda adını harf harf söylüyor. Dinle ve yaz.",
     gloss: [
       { de: "buchstabieren", tr: "harf harf söylemek", en: "to spell" },
@@ -194,7 +194,7 @@ export const a1U02: SkillExercise[] = [
     skill: "listening",
     unit: 2,
     title: "Die Kursnummer",
-    genre: "Anons",
+    genre: "phone",
     intro: "Dil okulunda bir anons duyacaksın. Kurs numarasını ve sayıları yakala.",
     gloss: [
       { de: "wiederholen", tr: "tekrarlamak", en: "to repeat" },
@@ -250,7 +250,7 @@ export const a1U02: SkillExercise[] = [
     skill: "writing",
     unit: 2,
     title: "Anmeldung zum Sprachkurs",
-    genre: "Form",
+    genre: "formal",
     intro: "Dil kursu kayıt formunu doldur ve iki cümle kur.",
     gloss: [
       { de: "der Vorname", tr: "ad", en: "first name" },
@@ -293,7 +293,7 @@ export const a1U02: SkillExercise[] = [
     skill: "writing",
     unit: 2,
     title: "Kurz über meinen Beruf",
-    genre: "Forum mesajı",
+    genre: "forum",
     intro: "Dil kursunun forumunda kendini tanıt: mesleğin ve dillerin.",
     gloss: [
       { de: "arbeiten als", tr: "… olarak çalışmak", en: "to work as" },

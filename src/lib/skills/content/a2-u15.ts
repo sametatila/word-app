@@ -31,7 +31,7 @@ export const a2U15: SkillExercise[] = [
     skill: "reading",
     unit: 15,
     title: "Drei Tarife im Vergleich",
-    genre: "Bilgilendirme",
+    genre: "info",
     intro: "Üç telefon tarifesi. Hangisi ucuz, hangisi hızlı, hangisi en uygun?",
     gloss: [
       { de: "der Tarif", tr: "tarife", en: "tariff" },
@@ -89,7 +89,7 @@ export const a2U15: SkillExercise[] = [
     skill: "reading",
     unit: 15,
     title: "Sonntag auf dem Flohmarkt",
-    genre: "Blog yazısı",
+    genre: "blog",
     intro: "Bitpazarı günlüğü: ne satıldı, ne satılmadı, pazarlık nasıl gitti?",
     gloss: [
       { de: "der Flohmarkt", tr: "bitpazarı", en: "flea market" },
@@ -151,7 +151,7 @@ export const a2U15: SkillExercise[] = [
     skill: "listening",
     unit: 15,
     title: "Ein Konto eröffnen",
-    genre: "Diyalog",
+    genre: "dialogue",
     intro: "Bankada hesap açılıyor. Hangi belgeler gerekiyor, ücret ne kadar?",
     gloss: [
       { de: "die Sparkasse", tr: "tasarruf bankası", en: "savings bank" },
@@ -213,7 +213,7 @@ export const a2U15: SkillExercise[] = [
     skill: "listening",
     unit: 15,
     title: "Auf der Post",
-    genre: "Diyalog",
+    genre: "dialogue",
     intro: "Postanede bir paket. Kaç gram, hangi yol en hızlı?",
     gloss: [
       { de: "das Porto", tr: "posta ücreti", en: "postage" },
@@ -272,7 +272,7 @@ export const a2U15: SkillExercise[] = [
     skill: "writing",
     unit: 15,
     title: "Teurer als, am teuersten",
-    genre: "Dil bilgisi",
+    genre: "grammar",
     intro: "İki şeyi karşılaştır ya da en üstününü söyle — iki ayrı biçim.",
     gloss: [
       { de: "der Tarif", tr: "tarife", en: "tariff" },
@@ -315,7 +315,7 @@ export const a2U15: SkillExercise[] = [
     skill: "writing",
     unit: 15,
     title: "Antwort auf eine Kleinanzeige",
-    genre: "İlan yanıtı",
+    genre: "ad",
     intro: "Bitpazarı ilanına yaz: neyi istiyorsun, ne kadar veriyorsun, ne zaman geliyorsun?",
     gloss: [
       { de: "gebraucht", tr: "ikinci el", en: "second-hand" },

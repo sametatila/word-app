@@ -30,7 +30,7 @@ export const b2U05: SkillExercise[] = [
     skill: "reading",
     unit: 5,
     title: "Kündigen, aber richtig",
-    genre: "Tüketici rehberi",
+    genre: "guide",
     intro: "Bir abonelik nasıl geçerli biçimde feshedilir? Yazının uyardığı üç tuzağa dikkat et.",
     gloss: [
       { de: "fristgerecht", tr: "süresine uygun", en: "within the deadline" },
@@ -103,7 +103,7 @@ export const b2U05: SkillExercise[] = [
     skill: "reading",
     unit: 5,
     title: "Erst klingeln, dann schreiben",
-    genre: "Belediye broşürü",
+    genre: "ad",
     intro: "Bir belediyenin gürültü broşürü. Hangi adım hangi sırada geliyor?",
     gloss: [
       { de: "die Nachbarschaft", tr: "komşuluk", en: "neighbourhood" },
@@ -172,7 +172,7 @@ export const b2U05: SkillExercise[] = [
     skill: "listening",
     unit: 5,
     title: "Zum dritten Mal kaputt",
-    genre: "Mağaza görüşmesi",
+    genre: "opinion",
     intro: "Aynı cihaz üçüncü kez bozuldu. Edilgen geçmişin listeyi nasıl güçlendirdiğine dikkat et.",
     gloss: [
       { de: "reklamieren", tr: "şikâyet etmek", en: "to make a complaint" },
@@ -246,7 +246,7 @@ export const b2U05: SkillExercise[] = [
     skill: "listening",
     unit: 5,
     title: "Drei Beobachtungen",
-    genre: "Geri bildirim görüşmesi",
+    genre: "opinion",
     intro: "Zor bir geri bildirim. Gözlem, öneri ve soru hangi sırayla geliyor?",
     gloss: [
       { de: "die Rückmeldung", tr: "geri bildirim", en: "feedback" },
@@ -324,7 +324,7 @@ export const b2U05: SkillExercise[] = [
     skill: "writing",
     unit: 5,
     title: "Vier Sätze, in denen man recht hat",
-    genre: "Cümle kurma",
+    genre: "build",
     intro: "İsimleştirme, koşullu yan cümle, edilgen geçmiş ve dilek kipiyle öneri.",
     gloss: [
       { de: "fristgerecht", tr: "süresine uygun", en: "within the deadline" },
@@ -375,7 +375,7 @@ export const b2U05: SkillExercise[] = [
     skill: "writing",
     unit: 5,
     title: "Die Kündigung",
-    genre: "Resmî mektup",
+    genre: "formal",
     intro: "Bir aboneliği geçerli biçimde fesheden kısa bir mektup yaz.",
     gloss: [
       { de: "die Kündigungsfrist", tr: "ihbar süresi", en: "notice period" },

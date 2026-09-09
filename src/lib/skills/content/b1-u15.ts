@@ -32,7 +32,7 @@ export const b1U15: SkillExercise[] = [
     skill: "reading",
     unit: 15,
     title: "Die erste Woche im Betrieb",
-    genre: "Staj günlüğü",
+    genre: "text",
     intro: "Bir stajın ilk haftası. Hangi gün ne yapıldı, sırayla oku.",
     minutes: 5,
     gloss: [
@@ -98,7 +98,7 @@ export const b1U15: SkillExercise[] = [
     skill: "reading",
     unit: 15,
     title: "Welche Methode hilft wirklich?",
-    genre: "Rehber metin",
+    genre: "guide",
     intro: "Öğrenme yöntemleri üzerine bir yazı. Hangisi işe yarıyor, hangisi yaramıyor?",
     minutes: 5,
     gloss: [
@@ -166,7 +166,7 @@ export const b1U15: SkillExercise[] = [
     skill: "listening",
     unit: 15,
     title: "Das war mein Fehler",
-    genre: "İş yerinde geri bildirim",
+    genre: "report",
     intro: "Bir hata konuşuluyor. Ton nasıl, sonuç ne?",
     minutes: 4,
     gloss: [
@@ -228,7 +228,7 @@ export const b1U15: SkillExercise[] = [
     skill: "listening",
     unit: 15,
     title: "Ein Gespräch mit dem Mentor",
-    genre: "Yönlendirme konuşması",
+    genre: "dialogue",
     intro: "Bir mentor görüşmesi. Hangi öneri, hangi gerekçe?",
     minutes: 4,
     gloss: [
@@ -291,7 +291,7 @@ export const b1U15: SkillExercise[] = [
     skill: "writing",
     unit: 15,
     title: "Praktikumsbericht",
-    genre: "Staj raporu",
+    genre: "report",
     intro: "Staj haftanı anlat. Cümle ortasında zaman, biçim ve yer sırasına dikkat et.",
     minutes: 8,
     gloss: [
@@ -345,7 +345,7 @@ export const b1U15: SkillExercise[] = [
     skill: "writing",
     unit: 15,
     title: "Eine Rückmeldung geben",
-    genre: "Geri bildirim notu",
+    genre: "report",
     intro: "Birine hatasını nazikçe söyle. Olumsuzlukta 'nicht' mi 'kein' mi?",
     minutes: 12,
     gloss: [

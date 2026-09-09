@@ -35,7 +35,7 @@ export const b1U29: SkillExercise[] = [
     skill: "reading",
     unit: 29,
     title: "Das erste Girokonto",
-    genre: "Banka bilgilendirmesi",
+    genre: "info",
     intro: "Bir hesap açılıyor. Ne gerekiyor, ne ücretli?",
     minutes: 5,
     gloss: [
@@ -101,7 +101,7 @@ export const b1U29: SkillExercise[] = [
     skill: "reading",
     unit: 29,
     title: "Online bestellen — worauf achten?",
-    genre: "Tüketici rehberi",
+    genre: "guide",
     intro: "İnternetten sipariş. Nelere dikkat edilmeli?",
     minutes: 5,
     gloss: [
@@ -168,7 +168,7 @@ export const b1U29: SkillExercise[] = [
     skill: "listening",
     unit: 29,
     title: "Im Kleidungsgeschäft",
-    genre: "Mağaza konuşması",
+    genre: "dialogue",
     intro: "Bir kıyafet aranıyor. Beden, renk, malzeme?",
     minutes: 4,
     gloss: [
@@ -230,7 +230,7 @@ export const b1U29: SkillExercise[] = [
     skill: "listening",
     unit: 29,
     title: "Aus welchem Material?",
-    genre: "Alışveriş danışması",
+    genre: "dialogue",
     intro: "Bir alet için malzeme seçiliyor. Hangisi ne için iyi?",
     minutes: 4,
     gloss: [
@@ -293,7 +293,7 @@ export const b1U29: SkillExercise[] = [
     skill: "writing",
     unit: 29,
     title: "Was ich suche",
-    genre: "Ürün sorusu",
+    genre: "text",
     intro: "Aradığın ürünü tarif et. Malzeme iki isim yan yana yazılmaz.",
     minutes: 8,
     gloss: [
@@ -349,7 +349,7 @@ export const b1U29: SkillExercise[] = [
     skill: "writing",
     unit: 29,
     title: "Anfrage an den Anbieter",
-    genre: "Sipariş yazısı",
+    genre: "text",
     intro: "Bir siparişle ilgili yaz. Almanca tamlamayı tek sözcük yapar.",
     minutes: 12,
     gloss: [

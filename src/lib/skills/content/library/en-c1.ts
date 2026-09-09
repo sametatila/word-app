@@ -19,7 +19,7 @@ export const enC1: SkillExercise[] = [
     level: "C1",
     skill: "reading",
     title: "The bench with the armrest",
-    genre: "Deneme",
+    genre: "essay",
     intro: "Kamusal alandaki küçük tasarım kararlarını okuyan bir deneme: bir bankın kolçağı gerçekte kime ne söylüyor?",
     gloss: [
       { de: "armrest", tr: "kolçak" },
@@ -117,7 +117,7 @@ export const enC1: SkillExercise[] = [
     level: "C1",
     skill: "listening",
     title: "The sound of a quiet car",
-    genre: "Söyleşi",
+    genre: "interview",
     intro: "Bir ses tasarımcısıyla söyleşi: elektrikli araçlara neden ses ekleniyor ve o sesi kim seçiyor?",
     gloss: [
       { de: "pedestrian", tr: "yaya" },
@@ -216,7 +216,7 @@ export const enC1: SkillExercise[] = [
     level: "C1",
     skill: "writing",
     title: "A letter to the editor",
-    genre: "Okur mektubu",
+    genre: "opinion",
     intro: "Önce iki cümle kur, sonra bir dergi yazısının iddiasına gerekçeli ve ölçülü bir itiraz yaz.",
     gloss: [
       { de: "claim", tr: "iddia" },
@@ -290,7 +290,7 @@ export const enC1: SkillExercise[] = [
     level: "C1",
     skill: "speaking",
     title: "Watching the workers",
-    genre: "Monolog",
+    genre: "monologue",
     intro: "İki dakikaya kadar konuşacaksın: bir konumu savun, en güçlü karşı argümanı anlat ve ölçütünü koy.",
     gloss: [],
     minutes: 7,
@@ -337,7 +337,7 @@ export const enC1: SkillExercise[] = [
     level: "C1",
     skill: "grammar",
     title: "not only, but where the stress goes",
-    genre: "Kural",
+    genre: "grammar",
     intro: "Cümlenin neyi öne çıkardığını belirleyen yapılar: devrik başlangıçlar ve vurgu cümleleri.",
     focus: "Inversion (Not only…, Hardly…) ve cleft cümleler (It was … that / What … is)",
     gloss: [

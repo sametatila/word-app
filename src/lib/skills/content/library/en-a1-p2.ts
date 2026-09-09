@@ -18,7 +18,7 @@ export const enA1P2: SkillExercise[] = [
     level: "A1",
     skill: "reading",
     title: "Green Corner — Garden Rules",
-    genre: "Kural metni",
+    genre: "grammar",
     intro: "Ortak bahçenin girişindeki kural yazısını okuyacaksın: kapı ne zaman açık, ne yapılabilir, ne yapılamaz.",
     gloss: [
       { de: "gate", tr: "bahçe kapısı" },
@@ -92,7 +92,7 @@ export const enA1P2: SkillExercise[] = [
     level: "A1",
     skill: "listening",
     title: "Your Shoes Are Ready",
-    genre: "Sesli mesaj",
+    genre: "phone",
     intro: "Ayakkabı tamircisi telesekretere mesaj bırakıyor: ne yapıldı, ne kadar tuttu, ne getirmek gerekiyor.",
     gloss: [
       { de: "heel", tr: "topuk" },
@@ -163,7 +163,7 @@ export const enA1P2: SkillExercise[] = [
     level: "A1",
     skill: "writing",
     title: "An Email to a Repair Shop",
-    genre: "E-posta",
+    genre: "email",
     intro: "Telefonun bozuldu; önce iki cümle kur, sonra tamirciye kısa bir e-posta yaz.",
     gloss: [
       { de: "broken", tr: "kırık" },
@@ -220,7 +220,7 @@ export const enA1P2: SkillExercise[] = [
     level: "A1",
     skill: "speaking",
     title: "ship or sheep?",
-    genre: "Ses çalışması",
+    genre: "pronounce",
     intro: "İngilizcede kısa „i“ ile uzun „ii“ iki ayrı sestir ve kelimeyi değiştirir; yedi cümlede ikisini ayır.",
     gloss: [
       { de: "ship", tr: "gemi" },
@@ -296,7 +296,7 @@ export const enA1P2: SkillExercise[] = [
     level: "A1",
     skill: "grammar",
     title: "am, is, are — and there is",
-    genre: "Kural",
+    genre: "grammar",
     intro: "Türkçede olmayan bir zorunluluk: İngilizce cümlede fiil hep bulunur, „var“ ise ayrı bir kalıpla söylenir.",
     focus: "to be ve there is / there are",
     gloss: [

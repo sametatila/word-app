@@ -17,7 +17,7 @@ export const deB2P5: SkillExercise[] = [
     level: "B2",
     skill: "reading",
     title: "Am Ende bleiben die Schlüssel",
-    genre: "Söyleşi",
+    genre: "interview",
     intro: "Kayıp eşya müzayedesini yürüten biriyle söyleşi okuyacaksın: nasıl işliyor, insanlar neye kızıyor, ne geriye kalıyor.",
     gloss: [
       { de: "die Versteigerung", tr: "açık artırma", en: "auction" },
@@ -118,7 +118,7 @@ export const deB2P5: SkillExercise[] = [
     level: "B2",
     skill: "listening",
     title: "Zwei Jahre für einen Hund",
-    genre: "Podcast",
+    genre: "phone",
     intro: "Bir podcast bölümünde refakat köpeklerini büyüten aileler anlatılıyor: neye alıştırılıyor, en zoru ne, sonunda ne oluyor.",
     gloss: [
       { de: "der Assistenzhund", tr: "refakat köpeği", en: "assistance dog" },
@@ -201,7 +201,7 @@ export const deB2P5: SkillExercise[] = [
     level: "B2",
     skill: "writing",
     title: "Anleitung für neue Welpenpaten",
-    genre: "Yönerge",
+    genre: "guide",
     intro: "Bir yavru köpeği ilk kez büyütecek kişilere yönerge yazacaksın; önce iki cümle kur, sonra yönergeyi yaz.",
     gloss: [
       { de: "der Welpe", tr: "yavru köpek", en: "puppy" },
@@ -267,7 +267,7 @@ export const deB2P5: SkillExercise[] = [
     level: "B2",
     skill: "speaking",
     title: "Woran erkennt man eine gute Ausbildung?",
-    genre: "Monolog",
+    genre: "monologue",
     intro: "Bir buçuk dakikaya kadar konuşacaksın: kolay ölçütü ele, kendi ölçütünü parçalara ayır ve örnekle sına.",
     gloss: [],
     minutes: 6,
@@ -310,7 +310,7 @@ export const deB2P5: SkillExercise[] = [
     level: "B2",
     skill: "grammar",
     title: "Worauf wartest du? Darauf.",
-    genre: "Kural",
+    genre: "grammar",
     intro: "Fiiller Almancada kendi edatlarını taşır; nesne bir şeyse edat zamirle değil, da- ve wo- bileşikleriyle kurulur.",
     focus: "Verben mit Präposition ve da-/wo-Komposita",
     gloss: [

@@ -17,7 +17,7 @@ export const deB1P2: SkillExercise[] = [
     level: "B1",
     skill: "reading",
     title: "Zweimal im Jahr dasselbe",
-    genre: "Okur mektubu",
+    genre: "opinion",
     intro: "Bir gazeteye gönderilmiş okur mektubunu okuyacaksın: yazar neye karşı çıkıyor, hangi gerekçeleri sıralıyor, ne öneriyor.",
     gloss: [
       { de: "die Umstellung", tr: "saat değişimi", en: "clock change" },
@@ -106,7 +106,7 @@ export const deB1P2: SkillExercise[] = [
     level: "B1",
     skill: "listening",
     title: "Eine Stunde ist eine Stunde",
-    genre: "Podcast",
+    genre: "phone",
     intro: "Bir podcast bölümünde zaman takasına dayalı bir mahalle ağı anlatılıyor: nasıl işliyor, ne işe yarıyor, sorunu ne.",
     gloss: [
       { de: "der Tauschring", tr: "takas ağı", en: "exchange network" },
@@ -191,7 +191,7 @@ export const deB1P2: SkillExercise[] = [
     level: "B1",
     skill: "writing",
     title: "Trinkbrunnen für die Stadt?",
-    genre: "Forum katkısı",
+    genre: "forum",
     intro: "Bir şehir forumunda çeşme tartışması var; önce iki cümle kur, sonra kendi görüşünü gerekçeleriyle yaz.",
     gloss: [
       { de: "der Trinkbrunnen", tr: "çeşme", en: "drinking fountain" },
@@ -255,7 +255,7 @@ export const deB1P2: SkillExercise[] = [
     level: "B1",
     skill: "speaking",
     title: "Geschenke oder Zeit?",
-    genre: "Monolog",
+    genre: "monologue",
     intro: "Bir dakikaya yakın tek başına konuşacaksın: iki seçenek arasında tercih yap ve gerekçelendir.",
     gloss: [],
     minutes: 6,
@@ -296,7 +296,7 @@ export const deB1P2: SkillExercise[] = [
     level: "B1",
     skill: "grammar",
     title: "Die Wohnung, die ich suche",
-    genre: "Kural",
+    genre: "grammar",
     intro: "Bir ismi uzun uzun tarif etmenin Almanca yolu: ismin arkasına der, die ya da das ile başlayan bir yan cümle eklersin.",
     focus: "Relativsatz: der / die / das ile ilgi cümlesi",
     gloss: [

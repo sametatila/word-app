@@ -24,7 +24,7 @@ export const a1U05: SkillExercise[] = [
     skill: "reading",
     unit: 5,
     title: "Meine beste Freundin",
-    genre: "Profil",
+    genre: "profile",
     intro: "Jonas en yakın arkadaşını anlatıyor: nasıl görünüyor, ne yapıyor?",
     gloss: [
       { de: "aussehen", tr: "görünmek", en: "to look" },
@@ -83,7 +83,7 @@ export const a1U05: SkillExercise[] = [
     skill: "reading",
     unit: 5,
     title: "Einladung zur Hochzeit",
-    genre: "Davetiye",
+    genre: "personal",
     intro: "Bir düğün davetiyesini okuyacaksın. Kim kiminle evleniyor, ne getirilecek?",
     gloss: [
       { de: "die Hochzeit", tr: "düğün", en: "wedding" },
@@ -136,7 +136,7 @@ export const a1U05: SkillExercise[] = [
     skill: "listening",
     unit: 5,
     title: "Wie sieht er aus?",
-    genre: "Diyalog",
+    genre: "dialogue",
     intro: "İki kişi bir arkadaşı tarif ediyor. Dikkat: biri yanlış hatırlıyor!",
     gloss: [
       { de: "tragen", tr: "giymek", en: "to wear" },
@@ -192,7 +192,7 @@ export const a1U05: SkillExercise[] = [
     skill: "listening",
     unit: 5,
     title: "Auf dem Familienfest",
-    genre: "Diyalog",
+    genre: "dialogue",
     intro: "Aile kutlamasında iki kişi konuşuyor. Kim ne getirdi?",
     gloss: [
       { de: "gratulieren", tr: "tebrik etmek", en: "to congratulate" },
@@ -250,7 +250,7 @@ export const a1U05: SkillExercise[] = [
     skill: "writing",
     unit: 5,
     title: "Das stimmt nicht!",
-    genre: "Dil bilgisi",
+    genre: "grammar",
     intro: "Yanlış cümleleri düzelt ve bir kişiyi tarif et.",
     gloss: [
       { de: "richtig", tr: "doğru", en: "correct" },
@@ -287,7 +287,7 @@ export const a1U05: SkillExercise[] = [
     skill: "writing",
     unit: 5,
     title: "Glückwunsch schreiben",
-    genre: "Kutlama mesajı",
+    genre: "message",
     intro: "Bir arkadaşına düğün için tebrik mesajı yaz.",
     gloss: [
       { de: "der Glückwunsch", tr: "tebrik", en: "congratulation" },

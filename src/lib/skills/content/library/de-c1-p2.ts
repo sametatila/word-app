@@ -18,7 +18,7 @@ export const deC1P2: SkillExercise[] = [
     level: "C1",
     skill: "reading",
     title: "Die Reserve, die niemand bezahlen wollte",
-    genre: "Vaka analizi",
+    genre: "review",
     intro: "Bir kış aksaklığının ardından yazılmış çözümlemeyi okuyacaksın: hangi kararlar tek tek makuldü ve sistem yine de neden çöktü.",
     gloss: [
       { de: "abfedern", tr: "yumuşatmak", en: "to cushion" },
@@ -120,7 +120,7 @@ export const deC1P2: SkillExercise[] = [
     level: "C1",
     skill: "listening",
     title: "Wem gehört die Nacht?",
-    genre: "Panel tartışması",
+    genre: "meeting",
     intro: "Üç konuşmacılı bir panel dinleyeceksin: gürültü kimin sorunu, ölçüm neyi kaçırıyor, hangi önlem işe yarıyor.",
     gloss: [
       { de: "bestreiten", tr: "inkâr etmek", en: "to deny" },
@@ -205,7 +205,7 @@ export const deC1P2: SkillExercise[] = [
     level: "C1",
     skill: "writing",
     title: "Nachbetrachtung zu einem Vorfall",
-    genre: "Değerlendirme notu",
+    genre: "review",
     intro: "Ekibin için geriye dönük bir değerlendirme notu yazacaksın; önce iki cümle kur, sonra notu yaz.",
     gloss: [
       { de: "die Nachbetrachtung", tr: "geriye dönük değerlendirme", en: "retrospective" },
@@ -276,7 +276,7 @@ export const deC1P2: SkillExercise[] = [
     level: "C1",
     skill: "speaking",
     title: "Hätte man es wissen können?",
-    genre: "Monolog",
+    genre: "monologue",
     intro: "İki dakikaya kadar konuşacaksın: yaygın bir yargıyı sına, karşı tarafı hakkıyla anlat ve kendi ölçütünü kur.",
     gloss: [],
     minutes: 7,
@@ -320,7 +320,7 @@ export const deC1P2: SkillExercise[] = [
     level: "C1",
     skill: "grammar",
     title: "Hätte, wäre — und als ob",
-    genre: "Kural",
+    genre: "grammar",
     intro: "Geriye dönük yargının dili: olmamış bir geçmişi kurmak ve gerçekdışı bir benzetme yapmak.",
     focus: "Konjunktiv II geçmiş zaman ve als ob / als",
     gloss: [

@@ -31,7 +31,7 @@ export const b1U25: SkillExercise[] = [
     skill: "reading",
     unit: 25,
     title: "Wie man einen Konflikt klärt",
-    genre: "Rehber metin",
+    genre: "guide",
     intro: "Bir anlaşmazlık nasıl çözülür? Üç adım ve bir uyarı.",
     minutes: 5,
     gloss: [
@@ -98,7 +98,7 @@ export const b1U25: SkillExercise[] = [
     skill: "reading",
     unit: 25,
     title: "Heimweh nach zwei Orten",
-    genre: "Kişisel yazı",
+    genre: "personal",
     intro: "İki yere birden özlem. Yön sözcüklerine dikkat: hangi taraf?",
     minutes: 5,
     gloss: [
@@ -166,7 +166,7 @@ export const b1U25: SkillExercise[] = [
     skill: "listening",
     unit: 25,
     title: "Der erste Schritt",
-    genre: "Hayal konuşması",
+    genre: "dialogue",
     intro: "Biri bir hayalin peşine düşüyor. İlk adım ne, kuşku ne?",
     minutes: 4,
     gloss: [
@@ -228,7 +228,7 @@ export const b1U25: SkillExercise[] = [
     skill: "listening",
     unit: 25,
     title: "Was bleibt von diesem Jahr?",
-    genre: "Yıl sonu sohbeti",
+    genre: "dialogue",
     intro: "Geçen yıla bakılıyor. Ne kaldı, ne değişti?",
     minutes: 4,
     gloss: [
@@ -291,7 +291,7 @@ export const b1U25: SkillExercise[] = [
     skill: "writing",
     unit: 25,
     title: "Das Gespräch suchen",
-    genre: "Uzlaşma mesajı",
+    genre: "message",
     intro: "Bir anlaşmazlığı çözmek için yaz. İki nesne varsa sıra zamire bağlı.",
     minutes: 8,
     gloss: [
@@ -345,7 +345,7 @@ export const b1U25: SkillExercise[] = [
     skill: "writing",
     unit: 25,
     title: "Zwei Orte",
-    genre: "Kişisel yazı",
+    genre: "personal",
     intro: "İki yer arasındaki hayatını yaz. Yön konuşana göre işaretlenir.",
     minutes: 12,
     gloss: [

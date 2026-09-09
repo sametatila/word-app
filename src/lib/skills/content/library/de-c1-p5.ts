@@ -17,7 +17,7 @@ export const deC1P5: SkillExercise[] = [
     level: "C1",
     skill: "reading",
     title: "Warum niemand die Anleitung liest",
-    genre: "Bilim yazısı",
+    genre: "article",
     intro: "Kullanma kılavuzlarının neden okunmadığını inceleyen bir yazı okuyacaksın: sorun uzunluk mu, sıra mı.",
     gloss: [
       { de: "einhellig", tr: "ağız birliğiyle", en: "unanimously" },
@@ -116,7 +116,7 @@ export const deC1P5: SkillExercise[] = [
     level: "C1",
     skill: "listening",
     title: "Patina: warum Dinge altern dürfen",
-    genre: "Ders",
+    genre: "monologue",
     intro: "Bir ders dinleyeceksin: aşınma neden bazen değer bazen kusur sayılıyor ve bu tasarım için ne anlama geliyor.",
     gloss: [
       { de: "die Abnutzung", tr: "aşınma", en: "wear" },
@@ -204,7 +204,7 @@ export const deC1P5: SkillExercise[] = [
     level: "C1",
     skill: "writing",
     title: "Was ich zu spät verstanden habe",
-    genre: "Deneme",
+    genre: "essay",
     intro: "Geç anladığın bir şeyi anlatan kısa bir deneme yazacaksın; önce iki cümle kur, sonra denemeyi yaz.",
     gloss: [
       { de: "widerlegen", tr: "çürütmek", en: "to refute" },
@@ -276,7 +276,7 @@ export const deC1P5: SkillExercise[] = [
     level: "C1",
     skill: "speaking",
     title: "Vor der Veröffentlichung testen?",
-    genre: "Monolog",
+    genre: "monologue",
     intro: "İki dakikaya kadar konuşacaksın: soruyu yeniden çerçevele, en güçlü itirazı hakkıyla anlat ve ölçütünü koy.",
     gloss: [],
     minutes: 7,
@@ -320,7 +320,7 @@ export const deC1P5: SkillExercise[] = [
     level: "C1",
     skill: "grammar",
     title: "Was steht vorn?",
-    genre: "Kural",
+    genre: "grammar",
     intro: "Almanca cümlede fiilin yeri sabittir; oynayabildiğin tek şey onun önünde ne duracağıdır — ve bu seçim vurguyu kurar.",
     focus: "Vorfeld: bilgi sırası ve vurgu",
     gloss: [

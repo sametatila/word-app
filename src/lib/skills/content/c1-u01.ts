@@ -28,7 +28,7 @@ export const c1U01: SkillExercise[] = [
     skill: "reading",
     unit: 1,
     title: "Beschlussvorlage zur Standortfrage",
-    genre: "Kurum yazısı",
+    genre: "formal",
     intro: "Bir yönetim kurulu tutanağı. Karar ne, çekince nerede saklı?",
     gloss: [
       { de: "die Erwägung", tr: "değerlendirme", en: "consideration" },
@@ -112,7 +112,7 @@ export const c1U01: SkillExercise[] = [
     skill: "reading",
     unit: 1,
     title: "Antwort auf einen Förderantrag",
-    genre: "Resmî mektup",
+    genre: "formal",
     intro: "Bir destek başvurusuna yanıt. Onay mı, ret mi — ve nasıl söyleniyor?",
     gloss: [
       { de: "einreichen", tr: "teslim etmek", en: "to submit" },
@@ -191,7 +191,7 @@ export const c1U01: SkillExercise[] = [
     skill: "listening",
     unit: 1,
     title: "Einwand in der Sitzung",
-    genre: "Toplantı",
+    genre: "meeting",
     intro: "Bir toplantıda itiraz. Kim neyi reddediyor, kim yalnız erteliyor?",
     gloss: [
       { de: "der Einwand", tr: "itiraz", en: "objection" },
@@ -262,7 +262,7 @@ export const c1U01: SkillExercise[] = [
     skill: "listening",
     unit: 1,
     title: "Was nicht gesagt wurde",
-    genre: "Diyalog",
+    genre: "dialogue",
     intro: "İki meslektaş bir geri bildirimi çözüyor. Söylenen ne, kastedilen ne?",
     gloss: [
       { de: "die Andeutung", tr: "ima", en: "hint" },
@@ -339,7 +339,7 @@ export const c1U01: SkillExercise[] = [
     skill: "writing",
     unit: 1,
     title: "İşlev fiili öbeği",
-    genre: "Dil bilgisi",
+    genre: "grammar",
     intro: "Resmî dilde fiil boşalır, anlam isme geçer — ve öbek belirteç almaz.",
     gloss: [
       { de: "in Frage kommen", tr: "söz konusu olmak", en: "to be an option" },
@@ -383,7 +383,7 @@ export const c1U01: SkillExercise[] = [
     skill: "writing",
     unit: 1,
     title: "Eine Absage, die niemanden verliert",
-    genre: "Resmî yazı",
+    genre: "formal",
     intro: "Reddet ama kapıyı kapatma: gerekçeyi kaliteden ayır, yol göster.",
     gloss: [
       { de: "relativieren", tr: "görecelileştirmek", en: "to qualify" },

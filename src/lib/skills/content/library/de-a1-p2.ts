@@ -19,7 +19,7 @@ export const deA1P2: SkillExercise[] = [
     level: "A1",
     skill: "reading",
     title: "Ferienprogramm im Jugendhaus",
-    genre: "Program",
+    genre: "info",
     intro: "Bir gençlik evinin tatil programını okuyacaksın: hangi gün ne var, ne kadar tutuyor, nasıl kayıt yapılıyor.",
     gloss: [
       { de: "das Grillfest", tr: "mangal partisi", en: "barbecue party" },
@@ -92,7 +92,7 @@ export const deA1P2: SkillExercise[] = [
     level: "A1",
     skill: "listening",
     title: "Eine Nachricht von Jonas",
-    genre: "Sesli mesaj",
+    genre: "phone",
     intro: "Jonas telesekretere mesaj bırakıyor: anahtar nerede, köpeğe ne zaman bakılacak, sorun olursa ne yapılacak.",
     gloss: [
       { de: "der Schlüssel", tr: "anahtar", en: "key" },
@@ -167,7 +167,7 @@ export const deA1P2: SkillExercise[] = [
     level: "A1",
     skill: "writing",
     title: "Schreibtisch zu verkaufen",
-    genre: "Küçük ilan",
+    genre: "ad",
     intro: "Odanı boşaltıyorsun; önce iki cümle kur, sonra bir eşyanı satmak için kısa bir ilan yaz.",
     gloss: [
       { de: "verkaufen", tr: "satmak", en: "to sell" },
@@ -224,7 +224,7 @@ export const deA1P2: SkillExercise[] = [
     level: "A1",
     skill: "speaking",
     title: "z ist ts",
-    genre: "Ses çalışması",
+    genre: "pronounce",
     intro: "Almancada „z“ harfi hep „ts“ okunur, Türkçedeki z sesi gibi değil; yedi cümlede bunu ve „tz“ birleşimini çalış.",
     gloss: [
       { de: "der Zucker", tr: "şeker", en: "sugar" },
@@ -300,7 +300,7 @@ export const deA1P2: SkillExercise[] = [
     level: "A1",
     skill: "grammar",
     title: "fährst du oder fahrst du?",
-    genre: "Kural",
+    genre: "grammar",
     intro: "Geniş zamanda fiilin nasıl çekildiğini ve bazı fiillerin kökünün neden değiştiğini öğren.",
     focus: "Präsens: fiil çekimi ve düzensiz kök (fahren → du fährst)",
     gloss: [

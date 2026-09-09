@@ -19,7 +19,7 @@ export const deC1: SkillExercise[] = [
     level: "C1",
     skill: "reading",
     title: "Der Durchschnitt und andere Halbwahrheiten",
-    genre: "Deneme",
+    genre: "essay",
     intro: "Sayıların nasıl kurulduğunu anlatan bir deneme: hangi karar hangi rakamı üretiyor ve manşete ne kalıyor.",
     gloss: [
       { de: "der Median", tr: "ortanca", en: "median" },
@@ -117,7 +117,7 @@ export const deC1: SkillExercise[] = [
     level: "C1",
     skill: "listening",
     title: "Was ein Archiv wegwirft",
-    genre: "Söyleşi",
+    genre: "interview",
     intro: "Bir arşiv yöneticisiyle söyleşi: neyin saklandığına kim karar veriyor ve bu kararın bedeli ne.",
     gloss: [
       { de: "der Bestand", tr: "koleksiyon", en: "holdings" },
@@ -208,7 +208,7 @@ export const deC1: SkillExercise[] = [
     level: "C1",
     skill: "writing",
     title: "Eine Jurybegründung",
-    genre: "Değerlendirme yazısı",
+    genre: "review",
     intro: "Önce iki cümle kur, sonra bir ödül jürisi adına kararın gerekçesini yaz.",
     gloss: [
       { de: "die Begründung", tr: "gerekçe", en: "rationale" },
@@ -281,7 +281,7 @@ export const deC1: SkillExercise[] = [
     level: "C1",
     skill: "speaking",
     title: "Übersetzen Maschinen uns weg?",
-    genre: "Monolog",
+    genre: "monologue",
     intro: "İki dakikaya kadar konuşacaksın: bir konumu savun, karşı tarafı hakkıyla anlat ve kendi ölçütünü koy.",
     gloss: [],
     minutes: 7,
@@ -326,7 +326,7 @@ export const deC1: SkillExercise[] = [
     level: "C1",
     skill: "grammar",
     title: "Nominal oder verbal?",
-    genre: "Kural",
+    genre: "grammar",
     intro: "Aynı içeriği iki ayrı üslupta söyleyebilmek ve hangisinin nereye ait olduğunu bilmek.",
     focus: "Nominalstil ↔ Verbalstil ve Partizipialattribut",
     gloss: [

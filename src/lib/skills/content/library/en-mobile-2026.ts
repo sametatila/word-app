@@ -24,7 +24,7 @@ export const enMobile2026: SkillExercise[] = [
     "level": "A1",
     "skill": "reading",
     "title": "Cinema on Saturday",
-    "genre": "Mesaj",
+    "genre": "message",
     "intro": "Deniz ile Emma'nın sinema planı yaptığı mesajlaşmayı okuyacaksın.",
     "gloss": [
       {
@@ -106,7 +106,7 @@ export const enMobile2026: SkillExercise[] = [
     "level": "A1",
     "skill": "reading",
     "title": "Elena's Profile",
-    "genre": "Profil",
+    "genre": "profile",
     "intro": "Bir dil değişim sitesindeki kendini tanıtma profilini okuyacaksın.",
     "gloss": [
       {
@@ -184,7 +184,7 @@ export const enMobile2026: SkillExercise[] = [
     "level": "A1",
     "skill": "reading",
     "title": "Our Family Photo",
-    "genre": "E-posta",
+    "genre": "email",
     "intro": "Elif'in arkadaşına gönderdiği, aile fotoğrafını anlatan e-postayı okuyacaksın.",
     "gloss": [
       {
@@ -262,7 +262,7 @@ export const enMobile2026: SkillExercise[] = [
     "level": "A1",
     "skill": "reading",
     "title": "Green Cup Cafe",
-    "genre": "Menü",
+    "genre": "info",
     "intro": "Küçük bir kafenin menüsünü ve altındaki notu okuyacaksın.",
     "gloss": [
       {
@@ -340,7 +340,7 @@ export const enMobile2026: SkillExercise[] = [
     "level": "A1",
     "skill": "reading",
     "title": "My Tuesday",
-    "genre": "Günlük",
+    "genre": "personal",
     "intro": "Bir öğrencinin salı gününü saat saat anlattığı günlük yazısını okuyacaksın.",
     "gloss": [
       {
@@ -422,7 +422,7 @@ export const enMobile2026: SkillExercise[] = [
     "level": "A1",
     "skill": "reading",
     "title": "Big Summer Sale",
-    "genre": "İlan",
+    "genre": "ad",
     "intro": "Bir mağazanın indirim ilanını okuyacaksın.",
     "gloss": [
       {
@@ -500,7 +500,7 @@ export const enMobile2026: SkillExercise[] = [
     "level": "A1",
     "skill": "reading",
     "title": "Bus 12 Timetable",
-    "genre": "Tarife",
+    "genre": "guide",
     "intro": "Şehir merkezine giden 12 numaralı otobüsün sefer saatlerini ve yanındaki kısa duyuruyu okuyacaksın.",
     "gloss": [
       {
@@ -582,7 +582,7 @@ export const enMobile2026: SkillExercise[] = [
     "level": "A1",
     "skill": "reading",
     "title": "Room for Rent",
-    "genre": "İlan",
+    "genre": "ad",
     "intro": "Bir kiralık oda ilanını okuyacaksın.",
     "gloss": [
       {
@@ -664,7 +664,7 @@ export const enMobile2026: SkillExercise[] = [
     "level": "A1",
     "skill": "reading",
     "title": "Note on the Fridge",
-    "genre": "Not",
+    "genre": "message",
     "intro": "Ev arkadaşın Dan'in buzdolabına bıraktığı ev işleri notunu okuyacaksın.",
     "gloss": [
       {
@@ -742,7 +742,7 @@ export const enMobile2026: SkillExercise[] = [
     "level": "A1",
     "skill": "reading",
     "title": "Green Park Sports Club",
-    "genre": "Duyuru",
+    "genre": "phone",
     "intro": "Bir spor kulübünün yeni üyeler için astığı duyuruyu okuyacaksın.",
     "gloss": [
       {
@@ -824,7 +824,7 @@ export const enMobile2026: SkillExercise[] = [
     "level": "A1",
     "skill": "reading",
     "title": "Appointment Card",
-    "genre": "Bilgi kartı",
+    "genre": "info",
     "intro": "Bir sağlık merkezinin randevu kartını ve arkasındaki ilaç notunu okuyacaksın.",
     "gloss": [
       {
@@ -906,7 +906,7 @@ export const enMobile2026: SkillExercise[] = [
     "level": "A1",
     "skill": "reading",
     "title": "Postcard from Antalya",
-    "genre": "Kartpostal",
+    "genre": "personal",
     "intro": "Deniz'in tatilden arkadaşı Elif'e gönderdiği kartpostalı okuyacaksın.",
     "gloss": [
       {
@@ -988,7 +988,7 @@ export const enMobile2026: SkillExercise[] = [
     "level": "A1",
     "skill": "listening",
     "title": "A Coffee and a Sandwich",
-    "genre": "Diyalog",
+    "genre": "dialogue",
     "intro": "Bir kafede Emre'nin sipariş verirken garsonla konuşmasını dinleyeceksin; ne istediğine ve fiyata dikkat et.",
     "gloss": [
       {
@@ -1107,7 +1107,7 @@ export const enMobile2026: SkillExercise[] = [
     "level": "A1",
     "skill": "listening",
     "title": "First Day at the Course",
-    "genre": "Tanıtım",
+    "genre": "profile",
     "intro": "Dil kursunun ilk gününde kendini sınıfa tanıtan bir öğrenciyi dinleyeceksin.",
     "gloss": [
       {
@@ -1190,7 +1190,7 @@ export const enMobile2026: SkillExercise[] = [
     "level": "A1",
     "skill": "listening",
     "title": "Where Is the Train Station?",
-    "genre": "Diyalog",
+    "genre": "dialogue",
     "intro": "Sokakta bir turistin yol sorduğu konuşmayı dinleyeceksin.",
     "gloss": [
       {
@@ -1309,7 +1309,7 @@ export const enMobile2026: SkillExercise[] = [
     "level": "A1",
     "skill": "listening",
     "title": "Green Market Announcement",
-    "genre": "Duyuru",
+    "genre": "phone",
     "intro": "Bir süpermarkette hoparlörden yapılan indirim ve kapanış saati duyurusunu dinleyeceksin.",
     "gloss": [
       {
@@ -1392,7 +1392,7 @@ export const enMobile2026: SkillExercise[] = [
     "level": "A1",
     "skill": "listening",
     "title": "Booking a Haircut",
-    "genre": "Telefon",
+    "genre": "phone",
     "intro": "Bir kuaförden telefonla randevu alınan konuşmayı dinleyeceksin; gün, saat ve fiyata dikkat et.",
     "gloss": [
       {
@@ -1507,7 +1507,7 @@ export const enMobile2026: SkillExercise[] = [
     "level": "A1",
     "skill": "listening",
     "title": "Delay at Central Station",
-    "genre": "Anons",
+    "genre": "phone",
     "intro": "Bir tren istasyonunda peron ve gecikme bilgisi veren anonsu dinleyeceksin.",
     "gloss": [
       {
@@ -1590,7 +1590,7 @@ export const enMobile2026: SkillExercise[] = [
     "level": "A1",
     "skill": "listening",
     "title": "At the Clothes Shop",
-    "genre": "Diyalog",
+    "genre": "dialogue",
     "intro": "Bir mağazada müşterinin ceket için beden, renk ve fiyat sorduğu konuşmayı dinleyeceksin.",
     "gloss": [
       {
@@ -1701,7 +1701,7 @@ export const enMobile2026: SkillExercise[] = [
     "level": "A1",
     "skill": "listening",
     "title": "The Family Photo",
-    "genre": "Diyalog",
+    "genre": "dialogue",
     "intro": "İki arkadaşın bir aile fotoğrafındaki kişileri konuştuğu diyaloğu dinleyeceksin.",
     "gloss": [
       {
@@ -1816,7 +1816,7 @@ export const enMobile2026: SkillExercise[] = [
     "level": "A1",
     "skill": "listening",
     "title": "A Weekend Voice Message",
-    "genre": "Sesli mesaj",
+    "genre": "phone",
     "intro": "Bir arkadaşının hafta sonu planı için bıraktığı sesli mesajı dinleyeceksin.",
     "gloss": [
       {
@@ -1899,7 +1899,7 @@ export const enMobile2026: SkillExercise[] = [
     "level": "A1",
     "skill": "listening",
     "title": "At the Doctor's",
-    "genre": "Diyalog",
+    "genre": "dialogue",
     "intro": "Bir hastanın doktora şikâyetlerini anlattığı konuşmayı dinleyeceksin.",
     "gloss": [
       {
@@ -2018,7 +2018,7 @@ export const enMobile2026: SkillExercise[] = [
     "level": "A1",
     "skill": "listening",
     "title": "Gym Opening Hours",
-    "genre": "Anons",
+    "genre": "phone",
     "intro": "Bir spor salonunun telefon bilgi kaydını dinleyeceksin: hangi gün, saat kaçta açık olduklarını ve fiyatları anlatıyor.",
     "gloss": [
       {
@@ -2105,7 +2105,7 @@ export const enMobile2026: SkillExercise[] = [
     "level": "A1",
     "skill": "listening",
     "title": "A Weekend in Izmir",
-    "genre": "Diyalog",
+    "genre": "dialogue",
     "intro": "İki arkadaşın geçen hafta sonu ne yaptıklarını anlattığı konuşmayı dinleyeceksin.",
     "gloss": [
       {
@@ -2220,7 +2220,7 @@ export const enMobile2026: SkillExercise[] = [
     "level": "A1",
     "skill": "writing",
     "title": "Introduce Yourself",
-    "genre": "Tanışma",
+    "genre": "profile",
     "intro": "Kurs forumuna kendini tanıtan kısa bir mesaj yazmayı çalışacaksın: adın, nereli olduğun, mesleğin ve hobilerin.",
     "gloss": [
       {
@@ -2336,7 +2336,7 @@ export const enMobile2026: SkillExercise[] = [
     "level": "A1",
     "skill": "writing",
     "title": "Let's Go to the Cinema",
-    "genre": "Mesaj",
+    "genre": "message",
     "intro": "Bir arkadaşını sinemaya davet etmeyi, gün ve saat söylemeyi ve buluşma yeri önermeyi çalışacaksın.",
     "gloss": [
       {
@@ -2457,7 +2457,7 @@ export const enMobile2026: SkillExercise[] = [
     "level": "A1",
     "skill": "writing",
     "title": "My Family",
-    "genre": "E-posta",
+    "genre": "email",
     "intro": "Aileni ve akrabalarını tanıtmayı, görünüşlerini anlatmayı ve bunu kısa bir e-postada toplamayı çalışacaksın.",
     "gloss": [
       {
@@ -2575,7 +2575,7 @@ export const enMobile2026: SkillExercise[] = [
     "level": "A1",
     "skill": "writing",
     "title": "A Note for My Flatmate",
-    "genre": "Not",
+    "genre": "message",
     "intro": "Ev arkadaşına market listesi bırakmayı çalışacaksın: evde ne bittiğini söylemeyi, miktar belirtmeyi ve kibarca rica etmeyi öğreniyorsun.",
     "gloss": [
       {
@@ -2693,7 +2693,7 @@ export const enMobile2026: SkillExercise[] = [
     "level": "A1",
     "skill": "writing",
     "title": "My Ordinary Day",
-    "genre": "Blog yorumu",
+    "genre": "blog",
     "intro": "Sıradan bir gününü anlatmak için saatleri, sıklık sözcüklerini ve geniş zamanı çalışacaksın.",
     "gloss": [
       {
@@ -2809,7 +2809,7 @@ export const enMobile2026: SkillExercise[] = [
     "level": "A1",
     "skill": "writing",
     "title": "Returning a T-Shirt",
-    "genre": "E-posta",
+    "genre": "email",
     "intro": "Bu egzersizde aldığın bir ürünü iade etmek için mağazaya kibar bir e-posta yazmayı çalışacaksın.",
     "gloss": [
       {
@@ -2927,7 +2927,7 @@ export const enMobile2026: SkillExercise[] = [
     "level": "A1",
     "skill": "writing",
     "title": "Answering a Room Ad",
-    "genre": "İlan cevabı",
+    "genre": "ad",
     "intro": "Kiralık oda ilanına cevap yazmayı, kendini tanıtmayı ve ev sahibine soru sormayı çalışacaksın.",
     "gloss": [
       {
@@ -3039,7 +3039,7 @@ export const enMobile2026: SkillExercise[] = [
     "level": "A1",
     "skill": "writing",
     "title": "A Weekend Postcard",
-    "genre": "Kartpostal",
+    "genre": "personal",
     "intro": "Geçen hafta sonunu anlatan kısa bir kartpostal yazmayı ve geçmiş zamanı (was/were, -ed, düzensiz fiiller) kullanmayı çalışacaksın.",
     "gloss": [
       {
@@ -3156,7 +3156,7 @@ export const enMobile2026: SkillExercise[] = [
     "level": "A2",
     "skill": "reading",
     "title": "How Was Your Weekend?",
-    "genre": "Mesaj",
+    "genre": "message",
     "intro": "Elif ile Kerem'in hafta sonlarını anlattıkları mesajlaşmayı okuyacaksın.",
     "gloss": [
       {
@@ -3234,7 +3234,7 @@ export const enMobile2026: SkillExercise[] = [
     "level": "A2",
     "skill": "reading",
     "title": "My Life in Three Cities",
-    "genre": "Blog",
+    "genre": "blog",
     "intro": "Elif'in kendi hayat hikâyesini anlattığı blog yazısını okuyacaksın.",
     "gloss": [
       {
@@ -3312,7 +3312,7 @@ export const enMobile2026: SkillExercise[] = [
     "level": "A2",
     "skill": "reading",
     "title": "Green Valley Health Centre",
-    "genre": "Broşür",
+    "genre": "ad",
     "intro": "Bir sağlık merkezinin sağlıklı yaşam broşürünü okuyacaksın.",
     "gloss": [
       {
@@ -3390,7 +3390,7 @@ export const enMobile2026: SkillExercise[] = [
     "level": "A2",
     "skill": "reading",
     "title": "Flat for Rent: 14 Green Street",
-    "genre": "İlan",
+    "genre": "ad",
     "intro": "Bir kiralık daire ilanını okuyacaksın.",
     "gloss": [
       {
@@ -3472,7 +3472,7 @@ export const enMobile2026: SkillExercise[] = [
     "level": "A2",
     "skill": "reading",
     "title": "Weekend Help Wanted",
-    "genre": "İlan",
+    "genre": "ad",
     "intro": "Bir kafenin kapıya astığı iş ilanını ve altına bırakılan başvuru notunu okuyacaksın.",
     "gloss": [
       {
@@ -3550,7 +3550,7 @@ export const enMobile2026: SkillExercise[] = [
     "level": "A2",
     "skill": "reading",
     "title": "Returns and Exchanges",
-    "genre": "Duyuru",
+    "genre": "phone",
     "intro": "Bir mağazanın kapısına astığı iade ve değişim duyurusunu okuyacaksın.",
     "gloss": [
       {
@@ -3628,7 +3628,7 @@ export const enMobile2026: SkillExercise[] = [
     "level": "A2",
     "skill": "reading",
     "title": "Three Days in Edinburgh",
-    "genre": "Program",
+    "genre": "info",
     "intro": "Bir grup gezisinin üç günlük programını okuyacaksın.",
     "gloss": [
       {
@@ -3710,7 +3710,7 @@ export const enMobile2026: SkillExercise[] = [
     "level": "A2",
     "skill": "reading",
     "title": "Elif and Daniel's Wedding",
-    "genre": "Davetiye",
+    "genre": "personal",
     "intro": "Bir düğün davetiyesini ve gelinin yanına eklediği kısa notu okuyacaksın.",
     "gloss": [
       {
@@ -3792,7 +3792,7 @@ export const enMobile2026: SkillExercise[] = [
     "level": "A2",
     "skill": "reading",
     "title": "FocusLeaf: User Reviews",
-    "genre": "Yorum",
+    "genre": "opinion",
     "intro": "Bir çalışma uygulamasına yazılmış üç kullanıcı yorumunu okuyacaksın.",
     "gloss": [
       {
@@ -3870,7 +3870,7 @@ export const enMobile2026: SkillExercise[] = [
     "level": "A2",
     "skill": "reading",
     "title": "Notice from Greenfield Town Council",
-    "genre": "Resmî yazı",
+    "genre": "formal",
     "intro": "Belediyenin mahalle sakinlerine gönderdiği kısa bilgilendirme yazısını okuyacaksın.",
     "gloss": [
       {
@@ -3952,7 +3952,7 @@ export const enMobile2026: SkillExercise[] = [
     "level": "A2",
     "skill": "reading",
     "title": "Old Mill Bridge Opens Again",
-    "genre": "Haber",
+    "genre": "article",
     "intro": "Yerel bir gazetede çıkan, yeniden açılan bir köprü haberini okuyacaksın.",
     "gloss": [
       {
@@ -4034,7 +4034,7 @@ export const enMobile2026: SkillExercise[] = [
     "level": "A2",
     "skill": "reading",
     "title": "Seaside Park Hotel — Booking Confirmation",
-    "genre": "Onay",
+    "genre": "formal",
     "intro": "Bir otelin gönderdiği rezervasyon onayını ve iptal koşullarını okuyacaksın.",
     "gloss": [
       {
@@ -4112,7 +4112,7 @@ export const enMobile2026: SkillExercise[] = [
     "level": "A2",
     "skill": "listening",
     "title": "How Was Your Weekend?",
-    "genre": "Diyalog",
+    "genre": "dialogue",
     "intro": "İki arkadaşın geçen hafta sonu neler yaptıklarını anlattığı konuşmayı dinleyeceksin.",
     "gloss": [
       {
@@ -4231,7 +4231,7 @@ export const enMobile2026: SkillExercise[] = [
     "level": "A2",
     "skill": "listening",
     "title": "A Job Interview",
-    "genre": "Diyalog",
+    "genre": "dialogue",
     "intro": "Bir iş mülakatında geçen konuşmayı dinleyeceksin: aşçı adayı deneyimini anlatıyor.",
     "gloss": [
       {
@@ -4346,7 +4346,7 @@ export const enMobile2026: SkillExercise[] = [
     "level": "A2",
     "skill": "listening",
     "title": "At the Doctor's",
-    "genre": "Diyalog",
+    "genre": "dialogue",
     "intro": "Bir doktor ile hastası arasında geçen muayene konuşmasını dinleyeceksin.",
     "gloss": [
       {
@@ -4461,7 +4461,7 @@ export const enMobile2026: SkillExercise[] = [
     "level": "A2",
     "skill": "listening",
     "title": "Morning Traffic and Weather",
-    "genre": "Anons",
+    "genre": "phone",
     "intro": "Radyoda sabah yayınlanan trafik ve hava durumu bültenini dinleyeceksin.",
     "gloss": [
       {
@@ -4544,7 +4544,7 @@ export const enMobile2026: SkillExercise[] = [
     "level": "A2",
     "skill": "listening",
     "title": "Booking a Room by Phone",
-    "genre": "Telefon",
+    "genre": "phone",
     "intro": "Bir otele telefon eden müşterinin oda rezervasyonu yaparken geçen konuşmasını dinleyeceksin.",
     "gloss": [
       {
@@ -4663,7 +4663,7 @@ export const enMobile2026: SkillExercise[] = [
     "level": "A2",
     "skill": "listening",
     "title": "Platform Change",
-    "genre": "Anons",
+    "genre": "phone",
     "intro": "Bir tren istasyonunda peron değişikliğini bildiren anonsu dinleyeceksin.",
     "gloss": [
       {
@@ -4750,7 +4750,7 @@ export const enMobile2026: SkillExercise[] = [
     "level": "A2",
     "skill": "listening",
     "title": "Headphones and a Receipt",
-    "genre": "Diyalog",
+    "genre": "dialogue",
     "intro": "Bir mağazada bozuk bir kulaklığı iade etmeye çalışan müşteri ile görevli arasındaki konuşmayı dinleyeceksin.",
     "gloss": [
       {
@@ -4869,7 +4869,7 @@ export const enMobile2026: SkillExercise[] = [
     "level": "A2",
     "skill": "listening",
     "title": "A Wedding Invitation",
-    "genre": "Sesli mesaj",
+    "genre": "phone",
     "intro": "Bir arkadaşının düğüne davet ettiği sesli mesajı dinleyeceksin.",
     "gloss": [
       {
@@ -4956,7 +4956,7 @@ export const enMobile2026: SkillExercise[] = [
     "level": "A2",
     "skill": "listening",
     "title": "Tech Support Call",
-    "genre": "Telefon",
+    "genre": "phone",
     "intro": "Bir teknik destek hattını arayan müşterinin telefon görüşmesini dinleyeceksin.",
     "gloss": [
       {
@@ -5071,7 +5071,7 @@ export const enMobile2026: SkillExercise[] = [
     "level": "A2",
     "skill": "listening",
     "title": "The City Hall Information Line",
-    "genre": "Anons",
+    "genre": "phone",
     "intro": "Belediyenin telefon danışma kaydını dinleyeceksin: çalışma saatleri, gerekli belgeler ve ücretler anlatılıyor.",
     "gloss": [
       {
@@ -5154,7 +5154,7 @@ export const enMobile2026: SkillExercise[] = [
     "level": "A2",
     "skill": "listening",
     "title": "Weekend Trip to Izmir",
-    "genre": "Diyalog",
+    "genre": "dialogue",
     "intro": "İki arkadaşın hafta sonu gezi planını konuştuğu sohbeti dinleyeceksin.",
     "gloss": [
       {
@@ -5273,7 +5273,7 @@ export const enMobile2026: SkillExercise[] = [
     "level": "A2",
     "skill": "listening",
     "title": "Tech Minute: A Small Idea",
-    "genre": "Anons",
+    "genre": "phone",
     "intro": "Teknoloji üzerine kısa bir podcast bölümünü dinleyeceksin; sunucu genç bir öğrencinin uygulamasını anlatıyor.",
     "gloss": [
       {
@@ -5360,7 +5360,7 @@ export const enMobile2026: SkillExercise[] = [
     "level": "A2",
     "skill": "writing",
     "title": "My Weekend Message",
-    "genre": "Mesaj",
+    "genre": "message",
     "intro": "Hafta sonunu anlatmak için geçmiş zamanı ve sık kullanılan düzensiz fiilleri (go → went, have → had, buy → bought) çalışacaksın.",
     "gloss": [
       {
@@ -5474,7 +5474,7 @@ export const enMobile2026: SkillExercise[] = [
     "level": "A2",
     "skill": "writing",
     "title": "My Story in a Comment",
-    "genre": "Blog yorumu",
+    "genre": "blog",
     "intro": "Bir blog yazısının altına kendi hikâyeni yazarken present perfect ile geçmiş zamanı birlikte kullanmayı çalışacaksın.",
     "gloss": [
       {
@@ -5591,7 +5591,7 @@ export const enMobile2026: SkillExercise[] = [
     "level": "A2",
     "skill": "writing",
     "title": "A Problem in the Flat",
-    "genre": "E-posta",
+    "genre": "email",
     "intro": "Ev sahibine yazılan kısa bir e-postada evdeki arızayı bildirmeyi, sorunun ne zamandır sürdüğünü anlatmayı ve kibarca yardım istemeyi çalışacaksın.",
     "gloss": [
       {
@@ -5708,7 +5708,7 @@ export const enMobile2026: SkillExercise[] = [
     "level": "A2",
     "skill": "writing",
     "title": "Applying for a Job",
-    "genre": "Başvuru",
+    "genre": "formal",
     "intro": "Bir iş ilanına kısa ve kibar bir başvuru e-postası yazmayı, deneyimini ve uygunluğunu anlatmayı çalışacaksın.",
     "gloss": [
       {
@@ -5821,7 +5821,7 @@ export const enMobile2026: SkillExercise[] = [
     "level": "A2",
     "skill": "writing",
     "title": "A Complaint Email",
-    "genre": "Şikâyet",
+    "genre": "formal",
     "intro": "Bu derste bir mağazaya arızalı ürün için şikâyet yazmayı, garanti ve fişten söz etmeyi ve kibarca para iadesi istemeyi çalışacaksın.",
     "gloss": [
       {
@@ -5940,7 +5940,7 @@ export const enMobile2026: SkillExercise[] = [
     "level": "A2",
     "skill": "writing",
     "title": "A Postcard from Rome",
-    "genre": "Kartpostal",
+    "genre": "personal",
     "intro": "Bu egzersizde gezideyken yazılan bir kartpostalı çalışacaksın: nereye vardığını, neler yaptığını ve yarın ne yapacağını anlatmayı.",
     "gloss": [
       {
@@ -6055,7 +6055,7 @@ export const enMobile2026: SkillExercise[] = [
     "level": "A2",
     "skill": "writing",
     "title": "Birthday Invitation",
-    "genre": "Davet",
+    "genre": "personal",
     "intro": "Bu derste bir doğum günü davetini yazmayı ve bir davete kısa notla cevap vermeyi çalışacaksın.",
     "gloss": [
       {
@@ -6172,7 +6172,7 @@ export const enMobile2026: SkillExercise[] = [
     "level": "A2",
     "skill": "writing",
     "title": "An Email to the City Office",
-    "genre": "Resmî e-posta",
+    "genre": "email",
     "intro": "Belediyeden randevu isteyip hangi belgeleri getirmen gerektiğini sorarken kullanılan resmî e-posta dilini çalışacaksın.",
     "gloss": [
       {

@@ -17,7 +17,7 @@ export const deA1P4: SkillExercise[] = [
     level: "A1",
     skill: "reading",
     title: "Neue Adresse für die Stadtbibliothek",
-    genre: "Haber",
+    genre: "article",
     intro: "Kütüphanenin taşındığını duyuran kısa bir haber okuyacaksın: yeni adres, kapalı günler ve açılış günü.",
     gloss: [
       { de: "umziehen", tr: "taşınmak", en: "to move house" },
@@ -93,7 +93,7 @@ export const deA1P4: SkillExercise[] = [
     level: "A1",
     skill: "listening",
     title: "Das Wetter am Mittwoch",
-    genre: "Hava durumu",
+    genre: "info",
     intro: "Radyoda yarının hava durumunu dinleyeceksin: sabah, öğlen, akşam nasıl olacak ve neye dikkat etmek gerekiyor.",
     gloss: [
       { de: "der Nebel", tr: "sis", en: "fog" },
@@ -164,7 +164,7 @@ export const deA1P4: SkillExercise[] = [
     level: "A1",
     skill: "writing",
     title: "Meine Bewertung im Netz",
-    genre: "Yorum",
+    genre: "opinion",
     intro: "Bir dükkâna internette puan vereceksin; önce iki cümle kur, sonra kısa bir yorum yaz.",
     gloss: [
       { de: "freundlich", tr: "güler yüzlü", en: "friendly" },
@@ -221,7 +221,7 @@ export const deA1P4: SkillExercise[] = [
     level: "A1",
     skill: "speaking",
     title: "st und sp am Wortanfang",
-    genre: "Ses çalışması",
+    genre: "pronounce",
     intro: "Kelimenin başındaki „st“ ve „sp“ Almancada şt ve şp okunur, ortada ya da sonda ise normal st kalır.",
     gloss: [
       { de: "still", tr: "sessiz", en: "quiet" },
@@ -297,7 +297,7 @@ export const deA1P4: SkillExercise[] = [
     level: "A1",
     skill: "grammar",
     title: "kann, muss, möchte",
-    genre: "Kural",
+    genre: "grammar",
     intro: "Modal fiillerle kurulan cümlede iki fiil vardır: biri ikinci sırada çekimli, öteki cümlenin sonunda yalın.",
     focus: "Modalverben: können, müssen, möchten",
     gloss: [

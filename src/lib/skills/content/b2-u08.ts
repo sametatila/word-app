@@ -32,7 +32,7 @@ export const b2U08: SkillExercise[] = [
     skill: "reading",
     unit: 8,
     title: "Prüfliste vor dem Winter",
-    genre: "Bakım kontrol listesi",
+    genre: "info",
     intro: "Bir servis atölyesinin kış öncesi kontrol listesi. Kısa yazılmış: fail hiç geçmiyor.",
     gloss: [
       { de: "die Wartung", tr: "bakım", en: "maintenance" },
@@ -101,7 +101,7 @@ export const b2U08: SkillExercise[] = [
     skill: "reading",
     unit: 8,
     title: "Vier Wörter, eine Titelseite",
-    genre: "Medya eleştirisi",
+    genre: "opinion",
     intro: "Manşet dilinin nasıl çalıştığını anlatan bir yazı: kısaltma neyi düşürüyor?",
     gloss: [
       { de: "die Schlagzeile", tr: "manşet", en: "headline" },
@@ -173,7 +173,7 @@ export const b2U08: SkillExercise[] = [
     skill: "listening",
     unit: 8,
     title: "Zwei Wochen bis zum Fest",
-    genre: "Toplantı",
+    genre: "meeting",
     intro: "Bir mahalle şenliğinin hazırlık toplantısı. Neyin öncelikli olduğuna dikkat et.",
     gloss: [
       { de: "die Aufgabenverteilung", tr: "görev dağılımı", en: "division of tasks" },
@@ -248,7 +248,7 @@ export const b2U08: SkillExercise[] = [
     skill: "listening",
     unit: 8,
     title: "Was genau hat er gesagt?",
-    genre: "Diyalog",
+    genre: "dialogue",
     intro: "Toplantıda olmayan birine ne konuşulduğu aktarılıyor. Aktaran ile aktarılan sözü ayır.",
     gloss: [
       { de: "angeblich", tr: "iddiaya göre", en: "allegedly" },
@@ -329,7 +329,7 @@ export const b2U08: SkillExercise[] = [
     skill: "writing",
     unit: 8,
     title: "Kısalt, sonra geri aç",
-    genre: "Cümle kurma",
+    genre: "build",
     intro: "Üç kısaltma yolu: sein + zu, adlaştırma ve dolaylı aktarım. Sonda biri geri açılıyor.",
     gloss: [
       { de: "die Dichtung", tr: "conta", en: "seal" },
@@ -384,7 +384,7 @@ export const b2U08: SkillExercise[] = [
     skill: "writing",
     unit: 8,
     title: "Für die, die nicht da waren",
-    genre: "Toplantı notu",
+    genre: "meeting",
     intro: "Katılmayanlara toplantıda ne konuşulduğunu yaz — kendi görüşünü karıştırmadan.",
     gloss: [
       { de: "die Aufgabenverteilung", tr: "görev dağılımı", en: "division of tasks" },

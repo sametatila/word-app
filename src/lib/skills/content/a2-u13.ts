@@ -32,7 +32,7 @@ export const a2U13: SkillExercise[] = [
     skill: "reading",
     unit: 13,
     title: "Krankmeldung per E-Mail",
-    genre: "E-posta",
+    genre: "email",
     intro: "İşe gönderilen hastalık bildirimi. Ne yazılmış, ne eklenmiş?",
     gloss: [
       { de: "der Betreff", tr: "konu başlığı", en: "subject line" },
@@ -95,7 +95,7 @@ export const a2U13: SkillExercise[] = [
     skill: "reading",
     unit: 13,
     title: "Zwei Kaufhäuser im Vergleich",
-    genre: "Dergi yazısı",
+    genre: "article",
     intro: "İki mağaza karşılaştırması. Hangisi ucuz, hangisi kaliteli?",
     gloss: [
       { de: "vergleichen", tr: "karşılaştırmak", en: "to compare" },
@@ -156,7 +156,7 @@ export const a2U13: SkillExercise[] = [
     skill: "listening",
     unit: 13,
     title: "Das Jahresgespräch",
-    genre: "Diyalog",
+    genre: "dialogue",
     intro: "Yıllık değerlendirme görüşmesi. Geri bildirim ne, çalışan ne istiyor?",
     gloss: [
       { de: "bewerten", tr: "değerlendirmek", en: "to assess" },
@@ -216,7 +216,7 @@ export const a2U13: SkillExercise[] = [
     skill: "listening",
     unit: 13,
     title: "Im Schlussverkauf",
-    genre: "Diyalog",
+    genre: "dialogue",
     intro: "Mağazada indirim konuşması. Hangi fiyat geçerli?",
     gloss: [
       { de: "der Schlussverkauf", tr: "sezon sonu indirimi", en: "end-of-season sale" },
@@ -275,7 +275,7 @@ export const a2U13: SkillExercise[] = [
     skill: "writing",
     unit: 13,
     title: "als, wie und am …sten",
-    genre: "Dil bilgisi",
+    genre: "grammar",
     intro: "Karşılaştırma ile en üstünlük. İkisinde de klasik bir hata var.",
     gloss: [
       { de: "preiswert", tr: "uygun fiyatlı", en: "good value" },
@@ -319,7 +319,7 @@ export const a2U13: SkillExercise[] = [
     skill: "writing",
     unit: 13,
     title: "Eine Krankmeldung schreiben",
-    genre: "Resmî yazı",
+    genre: "formal",
     intro: "İşe hastalık bildirimi yaz: ne oldun, ne kadar süreyle, işler ne olacak?",
     gloss: [
       { de: "der Betreff", tr: "konu başlığı", en: "subject line" },

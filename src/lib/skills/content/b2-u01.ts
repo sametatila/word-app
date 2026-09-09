@@ -33,7 +33,7 @@ export const b2U01: SkillExercise[] = [
     skill: "reading",
     unit: 1,
     title: "Die ersten neunzig Sekunden",
-    genre: "Meslek dergisi yazısı",
+    genre: "article",
     intro: "Bir sunum eğitmeni, sunumun ilk dakikasında nelerin karara bağlandığını anlatıyor.",
     gloss: [
       { de: "der Überblick", tr: "genel bakış", en: "overview" },
@@ -105,7 +105,7 @@ export const b2U01: SkillExercise[] = [
     skill: "reading",
     unit: 1,
     title: "Was die Kurve nicht sagt",
-    genre: "Köşe yazısı",
+    genre: "article",
     intro: "Bir gazete yazarı, sunumlarda gösterilen sayıların neden yanıltıcı olabildiğini anlatıyor.",
     gloss: [
       { de: "die Zunahme", tr: "artış", en: "increase" },
@@ -177,7 +177,7 @@ export const b2U01: SkillExercise[] = [
     skill: "listening",
     unit: 1,
     title: "Punkt drei, bitte",
-    genre: "Toplantı",
+    genre: "meeting",
     intro: "Bir ekip toplantısı sarkıyor. Toplantıyı yöneten kişi nasıl toparlıyor?",
     gloss: [
       { de: "moderieren", tr: "toplantıyı yönetmek", en: "to chair" },
@@ -247,7 +247,7 @@ export const b2U01: SkillExercise[] = [
     skill: "listening",
     unit: 1,
     title: "Steht das so im Protokoll?",
-    genre: "Diyalog",
+    genre: "dialogue",
     intro: "İki meslektaş dünkü toplantının tutanağını gözden geçiriyor. Aktarım kipine dikkat et.",
     gloss: [
       { de: "das Protokoll", tr: "tutanak", en: "minutes" },
@@ -321,7 +321,7 @@ export const b2U01: SkillExercise[] = [
     skill: "writing",
     unit: 1,
     title: "Vier Sätze aus dem Sitzungssaal",
-    genre: "Cümle kurma",
+    genre: "build",
     intro: "Ünitenin dört yapısı: isimleştirme, edilgen Perfekt, dilek kipiyle öneri ve dolaylı aktarım.",
     gloss: [
       { de: "die Gliederung", tr: "ana hatlar", en: "outline" },
@@ -372,7 +372,7 @@ export const b2U01: SkillExercise[] = [
     skill: "writing",
     unit: 1,
     title: "Das Protokoll von gestern",
-    genre: "Tutanak",
+    genre: "report",
     intro: "Kısa bir toplantı tutanağı yaz: ne karara bağlandı, kim ne belirtti, ne bekliyor?",
     gloss: [
       { de: "das Protokoll", tr: "tutanak", en: "minutes" },

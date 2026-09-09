@@ -32,7 +32,7 @@ export const c1U16: SkillExercise[] = [
     skill: "reading",
     unit: 16,
     title: "Der Satz, der sich zusammenfaltet",
-    genre: "Dil yazısı",
+    genre: "text",
     intro: "Ortaç öbeği ne yapıyor? Bir ilgi cümlesinin sıkıştırılmış hâli.",
     gloss: [
       { de: "verdichten", tr: "yoğunlaştırmak", en: "to condense" },
@@ -115,7 +115,7 @@ export const c1U16: SkillExercise[] = [
     skill: "reading",
     unit: 16,
     title: "Vom Nominalstil zurück",
-    genre: "Rehber yazısı",
+    genre: "guide",
     intro: "İsim üslubu ne zaman işe yarıyor, ne zaman metni boğuyor?",
     gloss: [
       { de: "der Nominalstil", tr: "isim üslubu", en: "nominal style" },
@@ -195,7 +195,7 @@ export const c1U16: SkillExercise[] = [
     skill: "listening",
     unit: 16,
     title: "Diesen Satz versteht niemand",
-    genre: "Diyalog",
+    genre: "dialogue",
     intro: "Bir yönetmelik cümlesi birlikte çözülüyor. Önce çekirdek.",
     gloss: [
       { de: "der Schachtelsatz", tr: "iç içe cümle", en: "convoluted sentence" },
@@ -273,7 +273,7 @@ export const c1U16: SkillExercise[] = [
     skill: "listening",
     unit: 16,
     title: "Das zu lösende Problem",
-    genre: "Toplantı",
+    genre: "meeting",
     intro: "Gerundivum bir toplantıda. Zorunluluk nasıl tek sıfata sığıyor?",
     gloss: [
       { de: "die Notwendigkeit", tr: "zorunluluk", en: "necessity" },
@@ -345,7 +345,7 @@ export const c1U16: SkillExercise[] = [
     skill: "writing",
     unit: 16,
     title: "Sıkıştır ve çöz",
-    genre: "Dil bilgisi",
+    genre: "grammar",
     intro: "İlgi cümlesi ↔ ortaç öbeği, isim üslubu ↔ fiil üslubu.",
     gloss: [
       { de: "auflösen", tr: "çözmek", en: "to unpack" },
@@ -392,7 +392,7 @@ export const c1U16: SkillExercise[] = [
     skill: "writing",
     unit: 16,
     title: "Amtsdeutsch übersetzen",
-    genre: "Kurum yazısı",
+    genre: "formal",
     intro: "Yönetmelik cümlesini vatandaşın okuyacağı bildirime çevir.",
     gloss: [
       { de: "umformulieren", tr: "yeniden yazmak", en: "to rephrase" },

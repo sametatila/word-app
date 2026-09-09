@@ -32,7 +32,7 @@ export const b1U28: SkillExercise[] = [
     skill: "reading",
     unit: 28,
     title: "Der Kuchen für den Empfang",
-    genre: "Hazırlık notu",
+    genre: "message",
     intro: "Bir kutlama için pasta yapılıyor. Kim ne yapıyor, ne kalıyor?",
     minutes: 5,
     gloss: [
@@ -97,7 +97,7 @@ export const b1U28: SkillExercise[] = [
     skill: "reading",
     unit: 28,
     title: "Preise vergleichen",
-    genre: "Tüketici rehberi",
+    genre: "guide",
     intro: "Fiyat karşılaştırması nasıl yapılır? Neye bakmalı, neye bakmamalı?",
     minutes: 5,
     gloss: [
@@ -164,7 +164,7 @@ export const b1U28: SkillExercise[] = [
     skill: "listening",
     unit: 28,
     title: "Der Abschied am Tisch",
-    genre: "Veda konuşması",
+    genre: "dialogue",
     intro: "Bir veda yemeği sonu. Ne planlanıyor, kim ne getiriyor?",
     minutes: 4,
     gloss: [
@@ -226,7 +226,7 @@ export const b1U28: SkillExercise[] = [
     skill: "listening",
     unit: 28,
     title: "Ich möchte das umtauschen",
-    genre: "Mağazada değişim",
+    genre: "dialogue",
     intro: "Bir ürün iade ediliyor. Ne gerekiyor, sonuç ne çıkıyor?",
     minutes: 4,
     gloss: [
@@ -289,7 +289,7 @@ export const b1U28: SkillExercise[] = [
     skill: "writing",
     unit: 28,
     title: "Preise vergleichen",
-    genre: "Karşılaştırma raporu",
+    genre: "report",
     intro: "Bir alışverişi karşılaştır. Belirsiz öncülden sonra 'was' gelir.",
     minutes: 8,
     gloss: [
@@ -343,7 +343,7 @@ export const b1U28: SkillExercise[] = [
     skill: "writing",
     unit: 28,
     title: "Umtausch beantragen",
-    genre: "İade yazısı",
+    genre: "text",
     intro: "Bir ürünü iade et. Rol bildiren 'als' artikel almaz — bu kısa kuralı unutma.",
     minutes: 12,
     gloss: [

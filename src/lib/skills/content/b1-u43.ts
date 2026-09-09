@@ -33,7 +33,7 @@ export const b1U43: SkillExercise[] = [
     skill: "reading",
     unit: 43,
     title: "Was ein Beitrag bewirkt",
-    genre: "Katılım yazısı",
+    genre: "text",
     intro: "Küçük katkılar ne işe yarar? Bir dernek anlatıyor.",
     minutes: 5,
     gloss: [
@@ -99,7 +99,7 @@ export const b1U43: SkillExercise[] = [
     skill: "reading",
     unit: 43,
     title: "Vorlesen für Erwachsene",
-    genre: "Etkinlik yazısı",
+    genre: "info",
     intro: "Yetişkinlere sesli okuma. Neden işe yarıyor?",
     minutes: 5,
     gloss: [
@@ -168,7 +168,7 @@ export const b1U43: SkillExercise[] = [
     skill: "listening",
     unit: 43,
     title: "Vor der Eröffnung",
-    genre: "Konser öncesi",
+    genre: "dialogue",
     intro: "Bir konser başlamak üzere. Program ne?",
     minutes: 4,
     gloss: [
@@ -230,7 +230,7 @@ export const b1U43: SkillExercise[] = [
     skill: "listening",
     unit: 43,
     title: "Nach der Katastrophe",
-    genre: "Yardım konuşması",
+    genre: "dialogue",
     intro: "Bir felaketten sonra yardım örgütleniyor. Ne gerekiyor?",
     minutes: 4,
     gloss: [
@@ -293,7 +293,7 @@ export const b1U43: SkillExercise[] = [
     skill: "writing",
     unit: 43,
     title: "Ein Abend im Konzert",
-    genre: "Etkinlik yazısı",
+    genre: "info",
     intro: "Bir konseri anlat. Çoğul isim Dativ'de bir ek daha alır.",
     minutes: 8,
     gloss: [
@@ -347,7 +347,7 @@ export const b1U43: SkillExercise[] = [
     skill: "writing",
     unit: 43,
     title: "Warum ich mitmache",
-    genre: "Katılım yazısı",
+    genre: "text",
     intro: "Bir gönüllü işi anlat. '-meden' Almancada zu'lu mastar ister.",
     minutes: 12,
     gloss: [

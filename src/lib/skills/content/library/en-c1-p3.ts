@@ -18,7 +18,7 @@ export const enC1P3: SkillExercise[] = [
     level: "C1",
     skill: "reading",
     title: "In Defense of the Second Name",
-    genre: "Yorum yazısı",
+    genre: "opinion",
     intro: "İnternette gerçek ad zorunluluğu tartışmasını ele alan bir köşe yazısı okuyacaksın: kanıt ne diyor, bedeli kim ödüyor.",
     gloss: [
       { de: "straightforward", tr: "açık" },
@@ -118,7 +118,7 @@ export const enC1P3: SkillExercise[] = [
     level: "C1",
     skill: "listening",
     title: "Should Museums Be Free?",
-    genre: "Panel",
+    genre: "meeting",
     intro: "Üç konuşmacılı bir panel dinleyeceksin: ücretsiz giriş kimi getiriyor, kimi getirmiyor, para nereden çıkıyor.",
     gloss: [
       { de: "admission", tr: "giriş ücreti" },
@@ -208,7 +208,7 @@ export const enC1P3: SkillExercise[] = [
     level: "C1",
     skill: "writing",
     title: "Who Are Opening Hours For?",
-    genre: "Yorum yazısı",
+    genre: "opinion",
     intro: "Kurumların çalışma saatleri üzerine bir köşe yazısı yazacaksın; önce iki cümle kur, sonra yazıyı yaz.",
     gloss: [
       { de: "opening hours", tr: "çalışma saatleri" },
@@ -276,7 +276,7 @@ export const enC1P3: SkillExercise[] = [
     level: "C1",
     skill: "speaking",
     title: "What Does a Study Actually Show?",
-    genre: "Monolog",
+    genre: "monologue",
     intro: "İki dakikaya kadar konuşacaksın: iddiayı kalibre et, iki tuzağı adlandır ve bir okuma kuralı öner.",
     gloss: [],
     minutes: 7,
@@ -323,7 +323,7 @@ export const enC1P3: SkillExercise[] = [
     level: "C1",
     skill: "grammar",
     title: "it may well be that",
-    genre: "Kural",
+    genre: "grammar",
     intro: "C1'in ayırt edici işi iddiayı doğru dereceye ayarlamaktır: ne kadar eminsin ve bunu nasıl gösteriyorsun.",
     focus: "Hedging: kiplik, uzaklaştırma ve iddianın derecesi",
     gloss: [

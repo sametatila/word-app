@@ -24,7 +24,7 @@ export const b1U03: SkillExercise[] = [
     skill: "reading",
     unit: 3,
     title: "Ich kündige — aber richtig",
-    genre: "Danışma yazısı",
+    genre: "text",
     intro: "İstifa etmenin kurallarını anlatan kısa bir rehber. Süreye ve yazılı biçime dikkat et.",
     minutes: 5,
     gloss: [
@@ -96,7 +96,7 @@ export const b1U03: SkillExercise[] = [
     skill: "reading",
     unit: 3,
     title: "Drei Wohnungen",
-    genre: "İlan",
+    genre: "ad",
     intro: "Üç daire ilanı ve bir kiracının notu. Hangisi hangi koşulda uygun?",
     minutes: 5,
     gloss: [
@@ -168,7 +168,7 @@ export const b1U03: SkillExercise[] = [
     skill: "listening",
     unit: 3,
     title: "Auf der Jobmesse",
-    genre: "Kısa tanışma",
+    genre: "profile",
     intro: "Bir kariyer fuarında iki kişi tanışıyor. Dinle: kim hangi sektörde, ne değiş tokuş ediyorlar?",
     minutes: 4,
     gloss: [
@@ -230,7 +230,7 @@ export const b1U03: SkillExercise[] = [
     skill: "listening",
     unit: 3,
     title: "Die Besichtigung",
-    genre: "Daire gezme",
+    genre: "dialogue",
     intro: "Bir daire geziliyor. Dinle: kiracı ne soruyor, hangi cevabı alıyor?",
     minutes: 4,
     gloss: [
@@ -293,7 +293,7 @@ export const b1U03: SkillExercise[] = [
     skill: "writing",
     unit: 3,
     title: "Die Kündigung",
-    genre: "Resmî mektup",
+    genre: "formal",
     intro: "Kısa ve kuru bir istifa mektubu yaz. Gerekçe yok, süre var.",
     minutes: 8,
     gloss: [
@@ -349,7 +349,7 @@ export const b1U03: SkillExercise[] = [
     skill: "writing",
     unit: 3,
     title: "Anfrage zur Wohnung",
-    genre: "Yarı resmî e-posta",
+    genre: "email",
     intro: "Bir daire ilanına yazıyorsun. Kendini tanıt, üç soru sor, randevu iste.",
     minutes: 12,
     gloss: [

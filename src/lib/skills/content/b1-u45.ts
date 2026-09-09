@@ -36,7 +36,7 @@ export const b1U45: SkillExercise[] = [
     skill: "reading",
     unit: 45,
     title: "Wenn das Wetter extrem wird",
-    genre: "Uyarı metni",
+    genre: "info",
     intro: "Fırtına ve dolu. Ne yapılır, ne yapılmaz?",
     minutes: 5,
     gloss: [
@@ -102,7 +102,7 @@ export const b1U45: SkillExercise[] = [
     skill: "reading",
     unit: 45,
     title: "Was B1 wirklich heißt",
-    genre: "Kapanış yazısı",
+    genre: "text",
     intro: "Bir seviyenin sonu. Ne başarıldı, ne başarılmadı?",
     minutes: 6,
     gloss: [
@@ -172,7 +172,7 @@ export const b1U45: SkillExercise[] = [
     skill: "listening",
     unit: 45,
     title: "Tiere im Garten",
-    genre: "Doğa sohbeti",
+    genre: "dialogue",
     intro: "Bahçedeki hayvanlar konuşuluyor. Hangisi tehlikeli, hangisi değil?",
     minutes: 4,
     gloss: [
@@ -234,7 +234,7 @@ export const b1U45: SkillExercise[] = [
     skill: "listening",
     unit: 45,
     title: "Zum Abschluss",
-    genre: "Kurs sonu",
+    genre: "dialogue",
     intro: "Kurs bitiyor. Sonra ne olacak?",
     minutes: 4,
     gloss: [
@@ -297,7 +297,7 @@ export const b1U45: SkillExercise[] = [
     skill: "writing",
     unit: 45,
     title: "Eine Warnung schreiben",
-    genre: "Uyarı metni",
+    genre: "info",
     intro: "Bir uyarı yaz. Bu kalıplarda kişi özne değil, Dativ'dir.",
     minutes: 8,
     gloss: [
@@ -351,7 +351,7 @@ export const b1U45: SkillExercise[] = [
     skill: "writing",
     unit: 45,
     title: "Mein B1-Rückblick",
-    genre: "Kapanış yazısı",
+    genre: "text",
     intro: "B1'i kapat. Yan cümlelerde fiilin yerini son kez sınayalım.",
     minutes: 12,
     gloss: [

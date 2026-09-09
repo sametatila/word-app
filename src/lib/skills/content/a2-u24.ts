@@ -33,7 +33,7 @@ export const a2U24: SkillExercise[] = [
     skill: "reading",
     unit: 24,
     title: "Kurse im Herbst",
-    genre: "Program broşürü",
+    genre: "ad",
     intro: "Halk eğitim programı. Hangi kurs ne zaman, kim katılabilir?",
     gloss: [
       { de: "der Stundenplan", tr: "ders programı", en: "timetable" },
@@ -103,7 +103,7 @@ export const a2U24: SkillExercise[] = [
     skill: "reading",
     unit: 24,
     title: "Zwei Stunden am Amt",
-    genre: "Şikâyet mektubu",
+    genre: "formal",
     intro: "Uzun kuyruk üstüne resmî bir şikâyet. Ne olmuş, ne isteniyor?",
     gloss: [
       { de: "die Warteschlange", tr: "kuyruk", en: "queue" },
@@ -174,7 +174,7 @@ export const a2U24: SkillExercise[] = [
     skill: "listening",
     unit: 24,
     title: "In der Bibliothek",
-    genre: "Diyalog",
+    genre: "dialogue",
     intro: "Kütüphane üyeliği. Ne kadar süreyle, hangi kurallarla?",
     gloss: [
       { de: "das E-Book", tr: "e-kitap", en: "e-book" },
@@ -241,7 +241,7 @@ export const a2U24: SkillExercise[] = [
     skill: "listening",
     unit: 24,
     title: "Was ist dein Ziel?",
-    genre: "Diyalog",
+    genre: "dialogue",
     intro: "İki arkadaş geleceği konuşuyor. Planlar ne kadar somut?",
     gloss: [
       { de: "das Ziel", tr: "hedef", en: "goal" },
@@ -316,7 +316,7 @@ export const a2U24: SkillExercise[] = [
     skill: "writing",
     unit: 24,
     title: "Gelecek: werden mi, şimdiki zaman mı?",
-    genre: "Dil bilgisi",
+    genre: "grammar",
     intro: "Almanca gelecek çoğu zaman zaman zarfıyla söylenir; werden ağırlık taşır.",
     gloss: [
       { de: "beenden", tr: "bitirmek", en: "to finish" },
@@ -359,7 +359,7 @@ export const a2U24: SkillExercise[] = [
     skill: "writing",
     unit: 24,
     title: "Anmeldung zum Kurs",
-    genre: "Resmî yazı",
+    genre: "formal",
     intro: "Kursa kayıt yaz: hangi kurs, hangi indirim, hangi soru?",
     gloss: [
       { de: "teilnehmen", tr: "katılmak", en: "to take part" },

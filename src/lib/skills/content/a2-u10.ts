@@ -32,7 +32,7 @@ export const a2U10: SkillExercise[] = [
     skill: "reading",
     unit: 10,
     title: "Zettel im Treppenhaus",
-    genre: "İlan",
+    genre: "ad",
     intro: "Apartman girişindeki iki not. Kim ne istiyor, kim ne sunuyor?",
     gloss: [
       { de: "ausleihen", tr: "ödünç almak", en: "to borrow" },
@@ -96,7 +96,7 @@ export const a2U10: SkillExercise[] = [
     skill: "reading",
     unit: 10,
     title: "Ihr Paket konnte nicht zugestellt werden",
-    genre: "Bilgilendirme",
+    genre: "info",
     intro: "Posta kutusundaki kargo kartı. Paket nerede, ne zamana kadar alınmalı?",
     gloss: [
       { de: "das Päckchen", tr: "küçük paket", en: "small parcel" },
@@ -159,7 +159,7 @@ export const a2U10: SkillExercise[] = [
     skill: "listening",
     unit: 10,
     title: "Zu laut von oben",
-    genre: "Diyalog",
+    genre: "dialogue",
     intro: "Üst kat komşusuyla gürültü konuşması. Nasıl başlıyor, nasıl bitiyor?",
     gloss: [
       { de: "die Lautstärke", tr: "ses seviyesi", en: "volume" },
@@ -216,7 +216,7 @@ export const a2U10: SkillExercise[] = [
     skill: "listening",
     unit: 10,
     title: "Die Heizung ist defekt",
-    genre: "Telefon görüşmesi",
+    genre: "phone",
     intro: "Bina yöneticisine arıza bildirimi. Kaç arıza var, tamirci ne zaman geliyor?",
     gloss: [
       { de: "die Heizung", tr: "kalorifer", en: "heating" },
@@ -275,7 +275,7 @@ export const a2U10: SkillExercise[] = [
     skill: "writing",
     unit: 10,
     title: "helfen und höflich bitten",
-    genre: "Dil bilgisi",
+    genre: "grammar",
     intro: "Yardım fiilinin hâli ve ricanın kibar biçimi. İkisi de komşulukta her gün gerekiyor.",
     gloss: [
       { de: "weiterhelfen", tr: "yardımcı olmak", en: "to help further" },
@@ -319,7 +319,7 @@ export const a2U10: SkillExercise[] = [
     skill: "writing",
     unit: 10,
     title: "Eine Nachricht an die Hausverwaltung",
-    genre: "Resmî yazı",
+    genre: "formal",
     intro: "Bina yönetimine yaz: neyin bozuk olduğunu bildir ve birinin gönderilmesini iste.",
     gloss: [
       { de: "defekt", tr: "arızalı", en: "broken" },

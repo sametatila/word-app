@@ -36,7 +36,7 @@ export const b1U39: SkillExercise[] = [
     skill: "reading",
     unit: 39,
     title: "Wer hilft bei Problemen im Betrieb?",
-    genre: "İş hukuku bilgilendirmesi",
+    genre: "info",
     intro: "İşyerinde sorun çıkarsa kime gidilir? Üç adres.",
     minutes: 5,
     gloss: [
@@ -102,7 +102,7 @@ export const b1U39: SkillExercise[] = [
     skill: "reading",
     unit: 39,
     title: "Einen Experten fragen",
-    genre: "Rehber metin",
+    genre: "guide",
     intro: "Uzmana nasıl soru sorulur? Neye dikkat etmeli?",
     minutes: 5,
     gloss: [
@@ -169,7 +169,7 @@ export const b1U39: SkillExercise[] = [
     skill: "listening",
     unit: 39,
     title: "Vor der Konferenz",
-    genre: "Ofis konuşması",
+    genre: "dialogue",
     intro: "Bir konferans hazırlığı. Kim ne getiriyor?",
     minutes: 4,
     gloss: [
@@ -231,7 +231,7 @@ export const b1U39: SkillExercise[] = [
     skill: "listening",
     unit: 39,
     title: "Gespräch mit der Chefin",
-    genre: "Yönetici görüşmesi",
+    genre: "opinion",
     intro: "Bir öneri sunuluyor. Nasıl karşılanıyor?",
     minutes: 4,
     gloss: [
@@ -294,7 +294,7 @@ export const b1U39: SkillExercise[] = [
     skill: "writing",
     unit: 39,
     title: "Meine Situation im Betrieb",
-    genre: "Durum yazısı",
+    genre: "text",
     intro: "İş durumunu anlat. Sıfattan türeyen isimler artikele göre değişir.",
     minutes: 8,
     gloss: [
@@ -349,7 +349,7 @@ export const b1U39: SkillExercise[] = [
     skill: "writing",
     unit: 39,
     title: "Ein Vorschlag an die Leitung",
-    genre: "Resmî öneri",
+    genre: "guide",
     intro: "Yönetime bir öneri yaz. Yazıda 'dass' ile 'das' karışmasın.",
     minutes: 12,
     gloss: [

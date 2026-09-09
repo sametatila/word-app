@@ -17,7 +17,7 @@ export const deB2P3: SkillExercise[] = [
     level: "B2",
     skill: "reading",
     title: "Die fehlende Rampe",
-    genre: "Deneme",
+    genre: "essay",
     intro: "Erişilebilirliğin neden binada değil günlük işleyişte kazanıldığını savunan bir deneme okuyacaksın.",
     gloss: [
       { de: "die Barrierefreiheit", tr: "erişilebilirlik", en: "accessibility" },
@@ -114,7 +114,7 @@ export const deB2P3: SkillExercise[] = [
     level: "B2",
     skill: "listening",
     title: "Welche Bäume die Stadt noch verträgt",
-    genre: "Sunum",
+    genre: "monologue",
     intro: "Bir uzmanın halka açık sunumunu dinleyeceksin: şehir ağaçları nasıl seçiliyor, neden değişti, hangi kural konuldu.",
     gloss: [
       { de: "verdunsten", tr: "buharlaştırmak", en: "to evaporate" },
@@ -193,7 +193,7 @@ export const deB2P3: SkillExercise[] = [
     level: "B2",
     skill: "writing",
     title: "Wem gehört der Gehweg?",
-    genre: "Yorum yazısı",
+    genre: "opinion",
     intro: "Bir gazete için kısa bir köşe yazısı yazacaksın; önce iki cümle kur, sonra yorumu yaz.",
     gloss: [
       { de: "der Gehweg", tr: "kaldırım", en: "sidewalk" },
@@ -258,7 +258,7 @@ export const deB2P3: SkillExercise[] = [
     level: "B2",
     skill: "speaking",
     title: "Barrierefreiheit: Pflicht oder Freiwilligkeit?",
-    genre: "Monolog",
+    genre: "monologue",
     intro: "Bir buçuk dakikaya kadar konuşacaksın: iki yaklaşımı karşılaştır ve kendi ölçütünü söyle.",
     gloss: [],
     minutes: 6,
@@ -301,7 +301,7 @@ export const deB2P3: SkillExercise[] = [
     level: "B2",
     skill: "grammar",
     title: "Die wartenden Gäste, der gedeckte Tisch",
-    genre: "Kural",
+    genre: "grammar",
     intro: "Fiilden sıfat üretmenin iki yolu: biri süren eylemi, öteki tamamlanmış olanı anlatır.",
     focus: "Partizip I ve Partizip II sıfat olarak",
     gloss: [

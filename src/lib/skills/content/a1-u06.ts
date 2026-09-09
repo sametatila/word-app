@@ -27,7 +27,7 @@ export const a1U06: SkillExercise[] = [
     skill: "reading",
     unit: 6,
     title: "Die Speisekarte",
-    genre: "Menü",
+    genre: "info",
     intro: "Bir kafenin menüsünü okuyacaksın. Ne var, ne kadar?",
     gloss: [
       { de: "die Speisekarte", tr: "yemek listesi", en: "menu" },
@@ -83,7 +83,7 @@ export const a1U06: SkillExercise[] = [
     skill: "reading",
     unit: 6,
     title: "Mein Frühstück",
-    genre: "Forum mesajı",
+    genre: "forum",
     intro: "Üç kişi kahvaltıda ne yediğini yazıyor.",
     gloss: [
       { de: "das Frühstück", tr: "kahvaltı", en: "breakfast" },
@@ -135,7 +135,7 @@ export const a1U06: SkillExercise[] = [
     skill: "listening",
     unit: 6,
     title: "Im Café bestellen",
-    genre: "Diyalog",
+    genre: "dialogue",
     intro: "Kafede sipariş veriliyor. Ne isteniyor, hesap ne kadar?",
     gloss: [
       { de: "bestellen", tr: "sipariş etmek", en: "to order" },
@@ -192,7 +192,7 @@ export const a1U06: SkillExercise[] = [
     skill: "listening",
     unit: 6,
     title: "Am Imbiss",
-    genre: "Diyalog",
+    genre: "dialogue",
     intro: "Büfede sipariş. Kaç tane, ne kadar, burada mı paket mi?",
     gloss: [
       { de: "die Pommes", tr: "patates kızartması", en: "fries" },
@@ -249,7 +249,7 @@ export const a1U06: SkillExercise[] = [
     skill: "writing",
     unit: 6,
     title: "Bestellen und bezahlen",
-    genre: "Dil bilgisi",
+    genre: "grammar",
     intro: "Sipariş ve ödeme kalıplarını yaz.",
     gloss: [
       { de: "möchten", tr: "istemek", en: "would like" },
@@ -286,7 +286,7 @@ export const a1U06: SkillExercise[] = [
     skill: "writing",
     unit: 6,
     title: "Was isst du zum Frühstück?",
-    genre: "Forum mesajı",
+    genre: "forum",
     intro: "Kahvaltıda ne yiyip içtiğini yaz.",
     gloss: [
       { de: "zum Frühstück", tr: "kahvaltıda", en: "for breakfast" },

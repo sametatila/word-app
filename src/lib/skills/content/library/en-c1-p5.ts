@@ -18,7 +18,7 @@ export const enC1P5: SkillExercise[] = [
     level: "C1",
     skill: "reading",
     title: "School Eye Tests: Three-Year Review",
-    genre: "Rapor",
+    genre: "report",
     intro: "Bir okul programının üç yıllık değerlendirmesini okuyacaksın: hangi sayı ne söylüyor, hangi iddia desteklenmiyor.",
     gloss: [
       { de: "prescribe", tr: "reçete etmek" },
@@ -120,7 +120,7 @@ export const enC1P5: SkillExercise[] = [
     level: "C1",
     skill: "listening",
     title: "Writing for Somebody in a Hurry",
-    genre: "Konferans konuşması",
+    genre: "meeting",
     intro: "Bir konferans konuşması dinleyeceksin: acele okuyan biri için nasıl yazılır ve bağlayıcılar ne zaman zarar verir.",
     gloss: [
       { de: "draft", tr: "taslak" },
@@ -207,7 +207,7 @@ export const enC1P5: SkillExercise[] = [
     level: "C1",
     skill: "writing",
     title: "Something I Changed My Mind About",
-    genre: "Deneme",
+    genre: "essay",
     intro: "Fikrini değiştirdiğin bir konuyu anlatan kısa bir deneme yazacaksın; önce iki cümle kur, sonra denemeyi yaz.",
     gloss: [
       { de: "handover", tr: "devir" },
@@ -276,7 +276,7 @@ export const enC1P5: SkillExercise[] = [
     level: "C1",
     skill: "speaking",
     title: "What Makes an Explanation Stick?",
-    genre: "Monolog",
+    genre: "monologue",
     intro: "İki dakikaya kadar konuşacaksın: kolay cevabı ele, iki koşul öner ve ikisini de örnekle.",
     gloss: [],
     minutes: 7,
@@ -322,7 +322,7 @@ export const enC1P5: SkillExercise[] = [
     level: "C1",
     skill: "grammar",
     title: "however, that said, in other words",
-    genre: "Kural",
+    genre: "grammar",
     intro: "Bağlayıcılar içerik eklemez; okura hangi ilişkinin geldiğini söyler ve yanlış kullanıldıklarında düzeni taklit ederler.",
     focus: "Söylem belirteçleri ve bağdaşıklık",
     gloss: [

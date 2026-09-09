@@ -19,7 +19,7 @@ export const deB2: SkillExercise[] = [
     level: "B2",
     skill: "reading",
     title: "Mehrweg statt Einweg: eine Zwischenbilanz",
-    genre: "Kurum raporu",
+    genre: "report",
     intro: "Bir belediyenin dokuz aylık ara raporu: sayılar iyi görünüyor, ama iki ayrı yerden itiraz geliyor.",
     gloss: [
       { de: "der Mehrwegbecher", tr: "yeniden kullanılabilir bardak", en: "reusable cup" },
@@ -119,7 +119,7 @@ export const deB2: SkillExercise[] = [
     level: "B2",
     skill: "listening",
     title: "Wer sich beschwert, hat Kraft",
-    genre: "Röportaj",
+    genre: "interview",
     intro: "Bir kliniğin şikâyet biriminden sorumlu kişiyle röportaj: şikâyetler neyi gösterir, neyi gizler.",
     gloss: [
       { de: "die Beschwerde", tr: "şikâyet", en: "complaint" },
@@ -210,7 +210,7 @@ export const deB2: SkillExercise[] = [
     level: "B2",
     skill: "writing",
     title: "Stellungnahme an die Verwaltung",
-    genre: "Resmî yazı",
+    genre: "formal",
     intro: "Önce iki cümle kur, sonra bir kurum kararına gerekçeli ve nazik bir itiraz yaz.",
     gloss: [
       { de: "die Öffnungszeit", tr: "açılış saati", en: "opening hours" },
@@ -281,7 +281,7 @@ export const deB2: SkillExercise[] = [
     level: "B2",
     skill: "speaking",
     title: "Vier Tage arbeiten?",
-    genre: "Monolog",
+    genre: "monologue",
     intro: "Bir buçuk dakikaya kadar konuşacaksın: iki tarafı da tart, sonra kendi konumunu söyle.",
     gloss: [],
     minutes: 6,
@@ -324,7 +324,7 @@ export const deB2: SkillExercise[] = [
     level: "B2",
     skill: "grammar",
     title: "Wenn der Täter verschwindet",
-    genre: "Kural",
+    genre: "grammar",
     intro: "Kurumsal dilin belkemiği: eylemi yapan söylenmediğinde cümle nasıl kurulur, hangi zamanda ne değişir.",
     focus: "Passiv: Vorgangs- und Zustandspassiv, Präsens und Präteritum",
     gloss: [

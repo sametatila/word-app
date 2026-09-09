@@ -35,7 +35,7 @@ export const b2U15: SkillExercise[] = [
     skill: "reading",
     unit: 15,
     title: "Wofür zahlen wir eigentlich?",
-    genre: "Bilgilendirme yazısı",
+    genre: "info",
     intro: "Verginin nereye gittiğini anlatan bir yazı. Paranın kaynağı nasıl söyleniyor?",
     gloss: [
       { de: "die Steuerlast", tr: "vergi yükü", en: "tax burden" },
@@ -107,7 +107,7 @@ export const b2U15: SkillExercise[] = [
     skill: "reading",
     unit: 15,
     title: "Stadt oder Land?",
-    genre: "Deneme",
+    genre: "essay",
     intro: "Kır ile kent arasındaki dengeyi ele alan bir yazı. Bağlantılı eğilimlere dikkat et.",
     gloss: [
       { de: "die Infrastruktur", tr: "altyapı", en: "infrastructure" },
@@ -179,7 +179,7 @@ export const b2U15: SkillExercise[] = [
     skill: "listening",
     unit: 15,
     title: "Jung und Alt",
-    genre: "Diyalog",
+    genre: "dialogue",
     intro: "İki kuşak arasındaki tartışma. İki tarafı birden anan bağlaçlara dikkat et.",
     gloss: [
       { de: "der Umgang", tr: "ilişki biçimi", en: "way of dealing" },
@@ -254,7 +254,7 @@ export const b2U15: SkillExercise[] = [
     skill: "listening",
     unit: 15,
     title: "Vor der Wahl",
-    genre: "Diyalog",
+    genre: "dialogue",
     intro: "Seçim öncesi bir sohbet. Vaat ile tahmin arasındaki farkı dinle.",
     gloss: [
       { de: "das Wahlversprechen", tr: "seçim vaadi", en: "election promise" },
@@ -327,7 +327,7 @@ export const b2U15: SkillExercise[] = [
     skill: "writing",
     unit: 15,
     title: "İki taraf birden",
-    genre: "Cümle kurma",
+    genre: "build",
     intro: "sowohl … als auch kapsar, weder … noch dışlar — ve fazladan olumsuzluk istemez.",
     gloss: [
       { de: "erheben", tr: "tahsil etmek", en: "to levy" },
@@ -378,7 +378,7 @@ export const b2U15: SkillExercise[] = [
     skill: "writing",
     unit: 15,
     title: "Zwei Minuten am Mikrofon",
-    genre: "Konuşma metni",
+    genre: "monologue",
     intro: "Bir halk toplantısında iki dakikalık konuşma yaz — kısa, açık ve karşı tarafı anan.",
     gloss: [
       { de: "die Investition", tr: "yatırım", en: "investment" },

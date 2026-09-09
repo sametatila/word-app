@@ -28,7 +28,7 @@ export const c1U02: SkillExercise[] = [
     skill: "reading",
     unit: 2,
     title: "Stellungnahme nach dem Datenvorfall",
-    genre: "Basın açıklaması",
+    genre: "info",
     intro: "Kurumsal kriz açıklaması. Ne kabul ediliyor, ne söylenmeden geçiliyor?",
     gloss: [
       { de: "bedauern", tr: "üzüntü duymak", en: "to regret" },
@@ -115,7 +115,7 @@ export const c1U02: SkillExercise[] = [
     skill: "reading",
     unit: 2,
     title: "Protokollnotiz: Verhandlungsstand",
-    genre: "Tutanak notu",
+    genre: "report",
     intro: "Müzakere tutanağı. Kim taviz verdi, kim vermiş gibi göründü?",
     gloss: [
       { de: "zur Sprache bringen", tr: "gündeme getirmek", en: "to bring up" },
@@ -195,7 +195,7 @@ export const c1U02: SkillExercise[] = [
     skill: "listening",
     unit: 2,
     title: "Führen ohne Anweisung",
-    genre: "Diyalog",
+    genre: "dialogue",
     intro: "Bir ekip lideri iş devrediyor — ama emir vermeden. Yetki nereye kadar?",
     gloss: [
       { de: "anregen", tr: "önermek, teşvik etmek", en: "to suggest" },
@@ -268,7 +268,7 @@ export const c1U02: SkillExercise[] = [
     skill: "listening",
     unit: 2,
     title: "Im Nachgang zur Abstimmung",
-    genre: "Diyalog",
+    genre: "dialogue",
     intro: "Ofis jargonu çözülüyor. Cümleler ne diyor, ne kastediyor?",
     gloss: [
       { de: "im Nachgang", tr: "sonrasında", en: "subsequently" },
@@ -343,7 +343,7 @@ export const c1U02: SkillExercise[] = [
     skill: "writing",
     unit: 2,
     title: "Faili silmek ve geri koymak",
-    genre: "Dil bilgisi",
+    genre: "grammar",
     intro: "İsimleşme ve edilgen sorumluluğu cümleden çıkarır; C1'de her ikisi de araçtır.",
     gloss: [
       { de: "einleiten", tr: "başlatmak", en: "to initiate" },
@@ -390,7 +390,7 @@ export const c1U02: SkillExercise[] = [
     skill: "writing",
     unit: 2,
     title: "Eine Krisenmeldung nach innen",
-    genre: "Kurum yazısı",
+    genre: "formal",
     intro: "Aynı olayı ekibe yaz: dışa açıklamadan farklı olarak fail görünsün.",
     gloss: [
       { de: "die Aufarbeitung", tr: "inceleme, hesaplaşma", en: "review" },

@@ -33,7 +33,7 @@ export const a2U25: SkillExercise[] = [
     skill: "reading",
     unit: 25,
     title: "Vier Wege in einen Beruf",
-    genre: "Dergi yazısı",
+    genre: "article",
     intro: "Dört kişi mesleğini nasıl seçtiğini anlatıyor. Yol hep düz mü?",
     gloss: [
       { de: "der Programmierer", tr: "yazılımcı", en: "programmer" },
@@ -103,7 +103,7 @@ export const a2U25: SkillExercise[] = [
     skill: "reading",
     unit: 25,
     title: "Was mir hier aufgefallen ist",
-    genre: "Forum yazısı",
+    genre: "forum",
     intro: "Almanya'ya taşınan biri gözlemlerini yazıyor. Neyi haklı, neyi tuhaf buluyor?",
     gloss: [
       { de: "getrennt", tr: "ayrı", en: "separated" },
@@ -170,7 +170,7 @@ export const a2U25: SkillExercise[] = [
     skill: "listening",
     unit: 25,
     title: "Vor der Prüfung",
-    genre: "Diyalog",
+    genre: "dialogue",
     intro: "Sınav öncesi heyecan. Ne yardımcı oluyor, ne olmuyor?",
     gloss: [
       { de: "aufgeregt", tr: "heyecanlı", en: "nervous" },
@@ -240,7 +240,7 @@ export const a2U25: SkillExercise[] = [
     skill: "listening",
     unit: 25,
     title: "Schon so weit!",
-    genre: "Diyalog",
+    genre: "dialogue",
     intro: "A2'nin sonu. İki öğrenci bir yılda ne değiştiğini konuşuyor.",
     gloss: [
       { de: "sich trauen", tr: "cesaret etmek", en: "to dare" },
@@ -310,7 +310,7 @@ export const a2U25: SkillExercise[] = [
     skill: "writing",
     unit: 25,
     title: "Gerekçe, koşul, karşılaştırma",
-    genre: "Dil bilgisi",
+    genre: "grammar",
     intro: "A2'nin üç yan cümlesi bir arada — hangisi fiili nereye atıyor?",
     gloss: [
       { de: "der Programmierer", tr: "yazılımcı", en: "programmer" },
@@ -353,7 +353,7 @@ export const a2U25: SkillExercise[] = [
     skill: "writing",
     unit: 25,
     title: "Ein Jahr Deutsch",
-    genre: "Serbest metin",
+    genre: "text",
     intro: "A2'nin kapanışı: bir yılda ne değişti, sırada ne var?",
     gloss: [
       { de: "sich trauen", tr: "cesaret etmek", en: "to dare" },

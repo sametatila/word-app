@@ -18,7 +18,7 @@ export const enC1P4: SkillExercise[] = [
     level: "C1",
     skill: "reading",
     title: "Tuning Is a Decision, Not a Measurement",
-    genre: "Söyleşi",
+    genre: "interview",
     intro: "Kırk yıllık bir piyano akortçusuyla söyleşi okuyacaksın: işi neden ölçüm değil karar, neyi kimse duymuyor.",
     gloss: [
       { de: "tune", tr: "akort etmek" },
@@ -120,7 +120,7 @@ export const enC1P4: SkillExercise[] = [
     level: "C1",
     skill: "listening",
     title: "The Last Mile",
-    genre: "Radyo denemesi",
+    genre: "essay",
     intro: "Radyoda kısa bir deneme dinleyeceksin: bir kolinin en pahalı iki kilometresi ve bunun kimin için ne anlama geldiği.",
     gloss: [
       { de: "bulk", tr: "toplu" },
@@ -208,7 +208,7 @@ export const enC1P4: SkillExercise[] = [
     level: "C1",
     skill: "writing",
     title: "Response on Missed Appointments",
-    genre: "Resmî görüş",
+    genre: "opinion",
     intro: "Görüşe açılmış bir öneriye resmî yanıt yazacaksın; önce iki cümle kur, sonra görüşünü yaz.",
     gloss: [
       { de: "fee", tr: "ücret" },
@@ -281,7 +281,7 @@ export const enC1P4: SkillExercise[] = [
     level: "C1",
     skill: "speaking",
     title: "To the Door or Not?",
-    genre: "Monolog",
+    genre: "monologue",
     intro: "İki dakikaya kadar konuşacaksın: soruyu kolaylık sorusundan çıkar, dağılımı adlandır ve bir ölçüt öner.",
     gloss: [],
     minutes: 7,
@@ -328,7 +328,7 @@ export const enC1P4: SkillExercise[] = [
     level: "C1",
     skill: "grammar",
     title: "having said that",
-    genre: "Kural",
+    genre: "grammar",
     intro: "İngilizcenin yazıda cümleyi sıkıştırma yolu: bütün bir yan cümleyi tek bir ortaç öbeğine indirmek.",
     focus: "Participle clauses: -ing, -ed ve having + üçüncü hâl",
     gloss: [

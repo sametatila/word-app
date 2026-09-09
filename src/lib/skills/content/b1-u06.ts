@@ -28,7 +28,7 @@ export const b1U06: SkillExercise[] = [
     skill: "reading",
     unit: 6,
     title: "Warum machen Sie den Kurs?",
-    genre: "Kurs bilgisi ve not",
+    genre: "message",
     intro: "Bir kurs duyurusu ve bir katılımcının notu. Her cümlede amacın kime ait olduğuna dikkat et.",
     minutes: 5,
     gloss: [
@@ -93,7 +93,7 @@ export const b1U06: SkillExercise[] = [
     skill: "reading",
     unit: 6,
     title: "Meine Kindheit",
-    genre: "Anı yazısı",
+    genre: "personal",
     intro: "Bir çocukluk anısı. Hangi olay bir kez oldu, hangisi her yaz tekrarlandı?",
     minutes: 5,
     gloss: [
@@ -158,7 +158,7 @@ export const b1U06: SkillExercise[] = [
     skill: "listening",
     unit: 6,
     title: "Damit du früher gehen kannst",
-    genre: "İş yerinde konuşma",
+    genre: "dialogue",
     intro: "İki meslektaş işi paylaşıyor. Her yardımın amacı kim için, dinle.",
     minutes: 4,
     gloss: [
@@ -220,7 +220,7 @@ export const b1U06: SkillExercise[] = [
     skill: "listening",
     unit: 6,
     title: "Das alte Foto",
-    genre: "Anı konuşması",
+    genre: "personal",
     intro: "İki arkadaş eski bir fotoğrafa bakıyor. Bir kez olan ile her seferinde olanı ayır.",
     minutes: 4,
     gloss: [
@@ -283,7 +283,7 @@ export const b1U06: SkillExercise[] = [
     skill: "writing",
     unit: 6,
     title: "Wozu brauchen Sie das?",
-    genre: "Gerekçeli istek",
+    genre: "text",
     intro: "Bir kurs için destek istiyorsun. Her cümlede amacın kime ait olduğunu göster.",
     minutes: 8,
     gloss: [
@@ -338,7 +338,7 @@ export const b1U06: SkillExercise[] = [
     skill: "writing",
     unit: 6,
     title: "Ein Erlebnis aus der Kindheit",
-    genre: "Anı metni",
+    genre: "personal",
     intro: "Çocukluğundan bir anı yaz. Bir kez olanı ve her seferinde olanı ayrı ayrı anlat.",
     minutes: 12,
     gloss: [

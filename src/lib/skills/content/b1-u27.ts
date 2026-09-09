@@ -32,7 +32,7 @@ export const b1U27: SkillExercise[] = [
     skill: "reading",
     unit: 27,
     title: "Mein Heimatgericht",
-    genre: "Kişisel tarif yazısı",
+    genre: "guide",
     intro: "Biri memleket yemeğini anlatıyor. Ne en iyi nasıl olur?",
     minutes: 5,
     gloss: [
@@ -98,7 +98,7 @@ export const b1U27: SkillExercise[] = [
     skill: "reading",
     unit: 27,
     title: "Reklamation im Lokal",
-    genre: "Rehber metin",
+    genre: "guide",
     intro: "Lokantada bir sorun nasıl söylenir? Ne işe yarar, ne yaramaz?",
     minutes: 5,
     gloss: [
@@ -166,7 +166,7 @@ export const b1U27: SkillExercise[] = [
     skill: "listening",
     unit: 27,
     title: "Was machen wir mit dem Rest?",
-    genre: "Mutfak konuşması",
+    genre: "dialogue",
     intro: "Artan yemek konuşuluyor. Ne saklanabilir, nasıl?",
     minutes: 4,
     gloss: [
@@ -228,7 +228,7 @@ export const b1U27: SkillExercise[] = [
     skill: "listening",
     unit: 27,
     title: "Mittags in der Mensa",
-    genre: "Öğle sohbeti",
+    genre: "dialogue",
     intro: "Öğle yemeği alışkanlıkları. Kim nerede yiyor, neden?",
     minutes: 4,
     gloss: [
@@ -291,7 +291,7 @@ export const b1U27: SkillExercise[] = [
     skill: "writing",
     unit: 27,
     title: "Ein Gericht empfehlen",
-    genre: "Tarif ve öneri",
+    genre: "guide",
     intro: "Bir yemeği anlat ve öner. 'en iyi' sıfatta ve fiilde farklı yazılır.",
     minutes: 8,
     gloss: [
@@ -346,7 +346,7 @@ export const b1U27: SkillExercise[] = [
     skill: "writing",
     unit: 27,
     title: "Eine Reklamation",
-    genre: "Şikâyet yazısı",
+    genre: "formal",
     intro: "Lokantadaki bir sorunu yaz. 'bir şey' + sıfat Almancada isimleşir.",
     minutes: 12,
     gloss: [

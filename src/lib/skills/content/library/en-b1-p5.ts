@@ -18,7 +18,7 @@ export const enB1P5: SkillExercise[] = [
     level: "B1",
     skill: "reading",
     title: "If You Lose Your Documents Abroad",
-    genre: "Rehber metin",
+    genre: "guide",
     intro: "Yurt dışında belgesini kaybedenler için bir rehber okuyacaksın: ilk saatte ne yapılmalı, neyi ödemek zorunda değilsin.",
     gloss: [
       { de: "passport", tr: "pasaport" },
@@ -110,7 +110,7 @@ export const enB1P5: SkillExercise[] = [
     level: "B1",
     skill: "listening",
     title: "Calling the Insurance Line",
-    genre: "Telefon",
+    genre: "phone",
     intro: "Pasaportu çalınan biri sigorta hattını arıyor: hangi belge, hangi süre, neyi beklemek gerekiyor.",
     gloss: [
       { de: "theft", tr: "hırsızlık" },
@@ -196,7 +196,7 @@ export const enB1P5: SkillExercise[] = [
     level: "B1",
     skill: "writing",
     title: "Before Your First Trip Alone",
-    genre: "Öğüt mektubu",
+    genre: "text",
     intro: "İlk kez tek başına yolculuğa çıkacak birine mektup yazacaksın; önce iki cümle kur, sonra mektubu yaz.",
     gloss: [
       { de: "alone", tr: "yalnız" },
@@ -260,7 +260,7 @@ export const enB1P5: SkillExercise[] = [
     level: "B1",
     skill: "speaking",
     title: "One Thing Before School Ends",
-    genre: "Monolog",
+    genre: "monologue",
     intro: "Bir dakikaya yakın tek başına konuşacaksın: dar bir seçim yap, savun ve iki yaygın öneriyi neden seçmediğini söyle.",
     gloss: [],
     minutes: 6,
@@ -302,7 +302,7 @@ export const enB1P5: SkillExercise[] = [
     level: "B1",
     skill: "grammar",
     title: "must, should and have to",
-    genre: "Kural",
+    genre: "grammar",
     intro: "Türkçedeki tek bir „-meli“ eki İngilizcede üçe ayrılır ve olumsuzlarında anlam tümüyle değişir.",
     focus: "must / should / have to ve olumsuzları",
     gloss: [

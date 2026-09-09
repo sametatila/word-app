@@ -30,7 +30,7 @@ export const c1U05: SkillExercise[] = [
     skill: "reading",
     unit: 5,
     title: "Warum „nicht schlecht“ ein Lob ist",
-    genre: "Dergi yazısı",
+    genre: "article",
     intro: "Alman övgü ölçeği üstüne bir yazı. Yabancı kulakta neden soğuk duyuluyor?",
     gloss: [
       { de: "die Untertreibung", tr: "eksiltme, az söyleme", en: "understatement" },
@@ -113,7 +113,7 @@ export const c1U05: SkillExercise[] = [
     skill: "reading",
     unit: 5,
     title: "Die Kunst der harmlosen Frage",
-    genre: "Rehber yazısı",
+    genre: "guide",
     intro: "Sohbet açma rehberi. Hangi soru kapı açar, hangisi çıkmaza sokar?",
     gloss: [
       { de: "die Plauderei", tr: "hoşbeş", en: "chit-chat" },
@@ -191,7 +191,7 @@ export const c1U05: SkillExercise[] = [
     skill: "listening",
     unit: 5,
     title: "Dürfte ich Sie kurz stören?",
-    genre: "Telefon görüşmesi",
+    genre: "phone",
     intro: "Telefonda nezaket. Ses tonu yokken kibarlık neyle taşınıyor?",
     gloss: [
       { de: "durchstellen", tr: "bağlamak", en: "to put through" },
@@ -266,7 +266,7 @@ export const c1U05: SkillExercise[] = [
     skill: "listening",
     unit: 5,
     title: "Die Betonung entscheidet",
-    genre: "Diyalog",
+    genre: "dialogue",
     intro: "İki parçacık bir arada. Aynı sözcükler, vurguya göre başka anlam.",
     gloss: [
       { de: "die Kombination", tr: "birleşim", en: "combination" },
@@ -340,7 +340,7 @@ export const c1U05: SkillExercise[] = [
     skill: "writing",
     unit: 5,
     title: "Eksiltme ve dilek kipi",
-    genre: "Dil bilgisi",
+    genre: "grammar",
     intro: "Az söyleyerek övmek, dilek kipiyle rica etmek — iki ayrı ölçek.",
     gloss: [
       { de: "die Untertreibung", tr: "eksiltme", en: "understatement" },
@@ -387,7 +387,7 @@ export const c1U05: SkillExercise[] = [
     skill: "writing",
     unit: 5,
     title: "Rückmeldung mit Maß",
-    genre: "Kurum yazısı",
+    genre: "formal",
     intro: "Bir çalışmayı değerlendir: överken şişirme, eleştirirken kişiselleştirme.",
     gloss: [
       { de: "anerkennend", tr: "takdir edici", en: "appreciative" },

@@ -18,7 +18,7 @@ export const enA2P3: SkillExercise[] = [
     level: "A2",
     skill: "reading",
     title: "Quiet Hour at Marlow's",
-    genre: "Bilgilendirme",
+    genre: "info",
     intro: "Bir marketin sessiz saat uygulamasını anlatan bilgi yazısını okuyacaksın: ne değişiyor, kimin için, nasıl başladı.",
     gloss: [
       { de: "shelves", tr: "raflar" },
@@ -104,7 +104,7 @@ export const enA2P3: SkillExercise[] = [
     level: "A2",
     skill: "listening",
     title: "Your Lesson on Thursday",
-    genre: "Sesli mesaj",
+    genre: "phone",
     intro: "Sürücü kursundan bir sesli mesaj dinleyeceksin: ders neden iptal, hangi seçenekler var, ne getirilecek.",
     gloss: [
       { de: "cancel", tr: "iptal etmek" },
@@ -176,7 +176,7 @@ export const enA2P3: SkillExercise[] = [
     level: "A2",
     skill: "writing",
     title: "Advice for a New Week",
-    genre: "Forum yazısı",
+    genre: "forum",
     intro: "Bir forumda ilk tam zamanlı işe başlayan birine tavsiye vereceksin; önce iki cümle kur, sonra cevabını yaz.",
     gloss: [
       { de: "tip", tr: "tavsiye" },
@@ -239,7 +239,7 @@ export const enA2P3: SkillExercise[] = [
     level: "A2",
     skill: "speaking",
     title: "The weak vowel",
-    genre: "Ses çalışması",
+    genre: "pronounce",
     intro: "İngilizcede vurgusuz heceler kısalır ve ünlüsü belirsiz bir „ı“ sesine döner; her heceyi net söylemek aksanı ağırlaştırır.",
     gloss: [
       { de: "banana", tr: "muz" },
@@ -315,7 +315,7 @@ export const enA2P3: SkillExercise[] = [
     level: "A2",
     skill: "grammar",
     title: "bigger, the biggest",
-    genre: "Kural",
+    genre: "grammar",
     intro: "Karşılaştırma İngilizcede ayrı bir kelimeyle değil, çoğu zaman sıfatın kendisine gelen eklerle kurulur.",
     focus: "Comparatives ve superlatives",
     gloss: [

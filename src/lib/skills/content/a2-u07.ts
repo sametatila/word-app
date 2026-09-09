@@ -30,7 +30,7 @@ export const a2U07: SkillExercise[] = [
     skill: "reading",
     unit: 7,
     title: "Was gibt es ohne Rezept?",
-    genre: "Bilgilendirme",
+    genre: "info",
     intro: "Eczanenin bilgi yazısı: neyi reçetesiz alabilirsin, neyi alamazsın?",
     gloss: [
       { de: "der Apotheker", tr: "eczacı", en: "pharmacist" },
@@ -92,7 +92,7 @@ export const a2U07: SkillExercise[] = [
     skill: "reading",
     unit: 7,
     title: "Ein Brief von der Krankenkasse",
-    genre: "Resmî yazı",
+    genre: "formal",
     intro: "Sigortadan gelen bir mektup. Ne isteniyor, ne zamana kadar?",
     gloss: [
       { de: "der Bescheid", tr: "resmî bildirim", en: "official notice" },
@@ -155,7 +155,7 @@ export const a2U07: SkillExercise[] = [
     skill: "listening",
     unit: 7,
     title: "Beim Sport verletzt",
-    genre: "Diyalog",
+    genre: "dialogue",
     intro: "Acil serviste bir konuşma. Nasıl olmuş, neresi incinmiş?",
     gloss: [
       { de: "verletzt", tr: "yaralı", en: "injured" },
@@ -214,7 +214,7 @@ export const a2U07: SkillExercise[] = [
     skill: "listening",
     unit: 7,
     title: "Notfall beim Zahnarzt",
-    genre: "Telefon görüşmesi",
+    genre: "phone",
     intro: "Sabah erken bir telefon: ağrı ne kadar şiddetli, hasta ne zaman gelecek?",
     gloss: [
       { de: "die Zahnschmerzen", tr: "diş ağrısı", en: "toothache" },
@@ -274,7 +274,7 @@ export const a2U07: SkillExercise[] = [
     skill: "writing",
     unit: 7,
     title: "Ich habe mir den Knöchel verletzt",
-    genre: "Dil bilgisi",
+    genre: "grammar",
     intro: "Vücudunun bir yerini incittiğini söylemenin Almanca yolu. Türkçeden birebir çevrilmez.",
     gloss: [
       { de: "der Knöchel", tr: "ayak bileği", en: "ankle" },
@@ -318,7 +318,7 @@ export const a2U07: SkillExercise[] = [
     skill: "writing",
     unit: 7,
     title: "An die Krankenkasse schreiben",
-    genre: "Resmî yazı",
+    genre: "formal",
     intro: "Sigortaya kısa bir e-posta yaz: neyi soruyorsun, hangi belgeyi gönderiyorsun?",
     gloss: [
       { de: "die Krankenkasse", tr: "sağlık sigortası", en: "health insurance" },

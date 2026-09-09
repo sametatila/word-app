@@ -19,7 +19,7 @@ export const enB2: SkillExercise[] = [
     level: "B2",
     skill: "reading",
     title: "The five-star problem",
-    genre: "Yorum yazısı",
+    genre: "opinion",
     intro: "Puanlama sistemlerinin neden işe yaramaz hale geldiğini anlatan bir yorum yazısı: sorun yıldızlarda mı, bizde mi?",
     gloss: [
       { de: "rating", tr: "puanlama" },
@@ -120,7 +120,7 @@ export const enB2: SkillExercise[] = [
     level: "B2",
     skill: "listening",
     title: "Promote or hire?",
-    genre: "İş görüşmesi",
+    genre: "opinion",
     intro: "Bir müdür ve insan kaynakları sorumlusu boşalan pozisyonu tartışıyor: içeriden terfi mi, dışarıdan işe alım mı?",
     gloss: [
       { de: "promote", tr: "terfi ettirmek" },
@@ -212,7 +212,7 @@ export const enB2: SkillExercise[] = [
     level: "B2",
     skill: "writing",
     title: "Answering a complaint",
-    genre: "Kurumsal e-posta",
+    genre: "email",
     intro: "Önce iki cümle kur, sonra bir kurum adına gelen şikâyete yanıt yaz.",
     gloss: [
       { de: "delay", tr: "gecikme" },
@@ -287,7 +287,7 @@ export const enB2: SkillExercise[] = [
     level: "B2",
     skill: "speaking",
     title: "Tips or better pay?",
-    genre: "Monolog",
+    genre: "monologue",
     intro: "Bir buçuk dakikaya kadar konuşacaksın: iki tarafı da tart, sonra kendi konumunu koşuluyla söyle.",
     gloss: [],
     minutes: 6,
@@ -331,7 +331,7 @@ export const enB2: SkillExercise[] = [
     level: "B2",
     skill: "grammar",
     title: "if only we had known",
-    genre: "Kural",
+    genre: "grammar",
     intro: "Olmayanı konuşmanın dilbilgisi: şimdiki gerçek dışı, geçmişteki gerçek dışı ve ikisinin karışımı.",
     focus: "Conditionals 2-3, mixed conditionals ve wish / if only",
     gloss: [

@@ -28,7 +28,7 @@ export const a1U17: SkillExercise[] = [
     skill: "reading",
     unit: 17,
     title: "Die Hausordnung",
-    genre: "Yönetmelik",
+    genre: "grammar",
     intro: "Apartman girişindeki kuralları okuyacaksın. Ne yasak?",
     gloss: [
       { de: "die Hausordnung", tr: "apartman yönetmeliği", en: "house rules" },
@@ -88,7 +88,7 @@ export const a1U17: SkillExercise[] = [
     skill: "reading",
     unit: 17,
     title: "Warm oder kalt?",
-    genre: "E-posta",
+    genre: "email",
     intro: "Ev sahibinden kira hakkında bir e-posta. Dikkat: „warm“ burada sıcaklık demek değil!",
     gloss: [
       { de: "die Miete", tr: "kira", en: "rent" },
@@ -142,7 +142,7 @@ export const a1U17: SkillExercise[] = [
     skill: "listening",
     unit: 17,
     title: "Kannst du mir helfen?",
-    genre: "Diyalog",
+    genre: "dialogue",
     intro: "Taşınma günü. Kim neyi taşıyor?",
     gloss: [
       { de: "der Umzug", tr: "taşınma", en: "move" },
@@ -200,7 +200,7 @@ export const a1U17: SkillExercise[] = [
     skill: "listening",
     unit: 17,
     title: "Wir putzen die Wohnung",
-    genre: "Diyalog",
+    genre: "dialogue",
     intro: "Temizlik paylaşılıyor. Kim ne yapıyor?",
     gloss: [
       { de: "putzen", tr: "temizlemek", en: "to clean" },
@@ -262,7 +262,7 @@ export const a1U17: SkillExercise[] = [
     skill: "writing",
     unit: 17,
     title: "Man darf nicht …",
-    genre: "Dil bilgisi",
+    genre: "grammar",
     intro: "Kural ve yardım isteme cümleleri.",
     gloss: [
       { de: "dürfen", tr: "izinli olmak", en: "to be allowed" },
@@ -299,7 +299,7 @@ export const a1U17: SkillExercise[] = [
     skill: "writing",
     unit: 17,
     title: "Um Hilfe bitten",
-    genre: "Mesaj",
+    genre: "message",
     intro: "Taşınma için arkadaşından yardım iste.",
     gloss: [
       { de: "der Umzug", tr: "taşınma", en: "move" },

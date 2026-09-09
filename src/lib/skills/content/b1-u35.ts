@@ -32,7 +32,7 @@ export const b1U35: SkillExercise[] = [
     skill: "reading",
     unit: 35,
     title: "Pflege zu Hause",
-    genre: "Bilgilendirme metni",
+    genre: "info",
     intro: "Evde bakım nasıl düzenlenir? Hangi iş kime?",
     minutes: 5,
     gloss: [
@@ -97,7 +97,7 @@ export const b1U35: SkillExercise[] = [
     skill: "reading",
     unit: 35,
     title: "Aufhören ist keine Frage von Willen",
-    genre: "Deneyim yazısı",
+    genre: "personal",
     intro: "Biri sigarayı bırakmış. Ne işe yaradı, ne yaramadı?",
     minutes: 5,
     gloss: [
@@ -164,7 +164,7 @@ export const b1U35: SkillExercise[] = [
     skill: "listening",
     unit: 35,
     title: "Beim Friseur",
-    genre: "Kuaförde",
+    genre: "dialogue",
     intro: "Bir saç kesimi. Müşteri ne istiyor, kuaför ne öneriyor?",
     minutes: 4,
     gloss: [
@@ -226,7 +226,7 @@ export const b1U35: SkillExercise[] = [
     skill: "listening",
     unit: 35,
     title: "Ein schwieriges Gespräch",
-    genre: "Kaygı konuşması",
+    genre: "dialogue",
     intro: "Biri bir yakını için endişeli. Nasıl konuşulmalı?",
     minutes: 4,
     gloss: [
@@ -289,7 +289,7 @@ export const b1U35: SkillExercise[] = [
     skill: "writing",
     unit: 35,
     title: "Warum ich aufgehört habe",
-    genre: "Kişisel yazı",
+    genre: "personal",
     intro: "Bıraktığın bir şeyi anlat. 'bırakmak' Almancada doğrudan nesne almaz.",
     minutes: 8,
     gloss: [
@@ -345,7 +345,7 @@ export const b1U35: SkillExercise[] = [
     skill: "writing",
     unit: 35,
     title: "Ein Plan für die Betreuung",
-    genre: "Bakım planı",
+    genre: "info",
     intro: "Bir bakım planı yaz. Mastar isimleşince büyük harfle yazılır.",
     minutes: 12,
     gloss: [

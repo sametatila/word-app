@@ -30,7 +30,7 @@ export const b1U01: SkillExercise[] = [
     skill: "reading",
     unit: 1,
     title: "Die Stellenanzeige",
-    genre: "İş ilanı",
+    genre: "ad",
     intro: "Bir iş ilanı ve altında adayın kendi notu. İlanın ne istediğini ve adayın neyi karşıladığını oku.",
     minutes: 5,
     gloss: [
@@ -102,7 +102,7 @@ export const b1U01: SkillExercise[] = [
     skill: "reading",
     unit: 1,
     title: "Zwei Lebensläufe",
-    genre: "Özgeçmiş",
+    genre: "profile",
     intro: "İki kısa özgeçmiş. Yazı dilinin geçmiş zamanına dikkat et: arbeitete, wechselte, machte.",
     minutes: 5,
     gloss: [
@@ -173,7 +173,7 @@ export const b1U01: SkillExercise[] = [
     skill: "listening",
     unit: 1,
     title: "Das Telefoninterview",
-    genre: "Telefon görüşmesi",
+    genre: "phone",
     intro: "Bir firma adayı telefonla arıyor. Dinle: aday ne kadar deneyimli, neden başvurdu, ne zaman başlayabilir?",
     minutes: 4,
     gloss: [
@@ -235,7 +235,7 @@ export const b1U01: SkillExercise[] = [
     skill: "listening",
     unit: 1,
     title: "Nach dem Gespräch",
-    genre: "Sohbet",
+    genre: "dialogue",
     intro: "İki arkadaş görüşmeden sonra konuşuyor. Dinle: görüşme nasıl geçti, hangi soru zor geldi?",
     minutes: 4,
     gloss: [
@@ -298,7 +298,7 @@ export const b1U01: SkillExercise[] = [
     skill: "writing",
     unit: 1,
     title: "Stärken und Schwächen",
-    genre: "Görüşme hazırlığı",
+    genre: "opinion",
     intro: "Görüşmenin en zor sorusuna hazırlan. Önce cümle kur, sonra hazırlık kartını doldur.",
     minutes: 8,
     gloss: [
@@ -355,7 +355,7 @@ export const b1U01: SkillExercise[] = [
     skill: "writing",
     unit: 1,
     title: "Warum gerade Sie?",
-    genre: "Ön yazı",
+    genre: "text",
     intro: "Bir başvuru ön yazısı yaz. Önce iki cümle kur, sonra kısa bir mektup.",
     minutes: 12,
     gloss: [

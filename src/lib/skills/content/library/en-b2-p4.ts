@@ -18,7 +18,7 @@ export const enB2P4: SkillExercise[] = [
     level: "B2",
     skill: "reading",
     title: "The House Tells You, If You Let It",
-    genre: "Söyleşi",
+    genre: "interview",
     intro: "Bir yapı eksperiyle söyleşi okuyacaksın: neye önce bakıyor, izlerden ne çıkarıyor, neyi göremiyor.",
     gloss: [
       { de: "surveyor", tr: "eksper" },
@@ -112,7 +112,7 @@ export const enB2P4: SkillExercise[] = [
     level: "B2",
     skill: "listening",
     title: "Later Starts",
-    genre: "Röportaj",
+    genre: "interview",
     intro: "Okul başlangıç saatini geciktiren iki okulun değerlendirmesini dinleyeceksin: ne değişti, ne değişmedi, ne öneriliyor.",
     gloss: [
       { de: "attendance", tr: "devam" },
@@ -198,7 +198,7 @@ export const enB2P4: SkillExercise[] = [
     level: "B2",
     skill: "writing",
     title: "Why the Delivery Failed",
-    genre: "Rapor",
+    genre: "report",
     intro: "Bir aksaklığın nedenini araştıran kısa bir iç rapor yazacaksın; önce iki cümle kur, sonra raporu yaz.",
     gloss: [
       { de: "delivery", tr: "teslimat" },
@@ -265,7 +265,7 @@ export const enB2P4: SkillExercise[] = [
     level: "B2",
     skill: "speaking",
     title: "Should Schools Start Later?",
-    genre: "Monolog",
+    genre: "monologue",
     intro: "Bir buçuk dakikaya kadar konuşacaksın: kanıtı hakkıyla anlat, karşı tarafın en güçlü itirazını ver ve ölçütünü söyle.",
     gloss: [],
     minutes: 6,
@@ -309,7 +309,7 @@ export const enB2P4: SkillExercise[] = [
     level: "B2",
     skill: "grammar",
     title: "must be, can't be, might have been",
-    genre: "Kural",
+    genre: "grammar",
     intro: "Bilmediğin bir şey hakkında ne kadar emin olduğunu İngilizcede fiil değil, önündeki kip belirtir.",
     focus: "Modals of deduction: must / can't / might, şimdi ve geçmiş",
     gloss: [

@@ -18,7 +18,7 @@ export const enB2P2: SkillExercise[] = [
     level: "B2",
     skill: "reading",
     title: "The Building That Was Easier to Knock Down",
-    genre: "Deneme",
+    genre: "essay",
     intro: "Eski binaların neden yıkıldığını sorgulayan bir deneme okuyacaksın: hesap nasıl kuruluyor, neyi dışarıda bırakıyor.",
     gloss: [
       { de: "demolish", tr: "yıkmak" },
@@ -115,7 +115,7 @@ export const enB2P2: SkillExercise[] = [
     level: "B2",
     skill: "listening",
     title: "Opt In or Opt Out?",
-    genre: "Podcast",
+    genre: "phone",
     intro: "Bir podcast bölümünde varsayılan kuralın etkisi tartışılıyor: yasa ne kadar değiştiriyor, asıl darboğaz nerede.",
     gloss: [
       { de: "donor", tr: "bağışçı" },
@@ -202,7 +202,7 @@ export const enB2P2: SkillExercise[] = [
     level: "B2",
     skill: "writing",
     title: "Who Pays for Free Returns?",
-    genre: "Yorum yazısı",
+    genre: "opinion",
     intro: "Bir gazete için kısa bir köşe yazısı yazacaksın; önce iki cümle kur, sonra yorumu yaz.",
     gloss: [
       { de: "gamble", tr: "kumar" },
@@ -268,7 +268,7 @@ export const enB2P2: SkillExercise[] = [
     level: "B2",
     skill: "speaking",
     title: "Whose Name on the Building?",
-    genre: "Monolog",
+    genre: "monologue",
     intro: "Bir buçuk dakikaya kadar konuşacaksın: iki tarafı da tart, sonra kendi ölçütünü ayrıştırarak koy.",
     gloss: [],
     minutes: 6,
@@ -312,7 +312,7 @@ export const enB2P2: SkillExercise[] = [
     level: "B2",
     skill: "grammar",
     title: "the man who, the day when",
-    genre: "Kural",
+    genre: "grammar",
     intro: "İki tür ilgi cümlesi vardır ve aralarındaki fark yalnız virgül değil, anlamın kendisidir.",
     focus: "Relative clauses: defining ve non-defining",
     gloss: [

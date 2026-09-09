@@ -33,7 +33,7 @@ export const b2U25: SkillExercise[] = [
     skill: "reading",
     unit: 25,
     title: "Das Empfehlungsschreiben",
-    genre: "Referans mektubu",
+    genre: "formal",
     intro: "Bir stajyer için yazılmış referans mektubu. Ortaç sıfatlarının taşıdığı bilgiye dikkat et.",
     gloss: [
       { de: "das Empfehlungsschreiben", tr: "referans mektubu", en: "letter of recommendation" },
@@ -107,7 +107,7 @@ export const b2U25: SkillExercise[] = [
     skill: "reading",
     unit: 25,
     title: "Vom Können zum Beherrschen",
-    genre: "Kapanış yazısı",
+    genre: "text",
     intro: "B2'nin sonunda geriye bakış. Neyin başarıldığı nasıl anlatılıyor?",
     gloss: [
       { de: "die Etappe", tr: "etap", en: "stage" },
@@ -175,7 +175,7 @@ export const b2U25: SkillExercise[] = [
     skill: "listening",
     unit: 25,
     title: "Fremd im eigenen Land",
-    genre: "Diyalog",
+    genre: "dialogue",
     intro: "Uzun süre yurt dışında yaşamış biri döndükten sonra anlatıyor.",
     gloss: [
       { de: "sich entfremden", tr: "yabancılaşmak", en: "to become estranged" },
@@ -255,7 +255,7 @@ export const b2U25: SkillExercise[] = [
     skill: "listening",
     unit: 25,
     title: "Fit für C1?",
-    genre: "Diyalog",
+    genre: "dialogue",
     intro: "Bir öğrenci bir sonraki seviye için ne yapması gerektiğini konuşuyor.",
     gloss: [
       { de: "die Wissenslücke", tr: "bilgi eksiği", en: "knowledge gap" },
@@ -336,7 +336,7 @@ export const b2U25: SkillExercise[] = [
     skill: "writing",
     unit: 25,
     title: "Dördü bir arada",
-    genre: "Cümle kurma",
+    genre: "build",
     intro: "Ortaç sıfatı, als ob, öznel kip ve edilgen Perfekt — B2'nin dört sütunu.",
     gloss: [
       { de: "die Zuverlässigkeit", tr: "güvenilirlik", en: "reliability" },
@@ -390,7 +390,7 @@ export const b2U25: SkillExercise[] = [
     skill: "writing",
     unit: 25,
     title: "Ihr Empfehlungsschreiben",
-    genre: "Referans mektubu",
+    genre: "formal",
     intro: "Birini öner — sıfatlarla değil, yaptığı işle.",
     gloss: [
       { de: "das Empfehlungsschreiben", tr: "referans mektubu", en: "letter of recommendation" },

@@ -18,7 +18,7 @@ export const enA2P5: SkillExercise[] = [
     level: "A2",
     skill: "reading",
     title: "What Do You Do With Your Old Phone?",
-    genre: "Forum",
+    genre: "forum",
     intro: "Bir forumda eski telefonların ne yapıldığı soruluyor; soruyu ve üç farklı cevabı okuyacaksın.",
     gloss: [
       { de: "battery", tr: "pil" },
@@ -103,7 +103,7 @@ export const enA2P5: SkillExercise[] = [
     level: "A2",
     skill: "listening",
     title: "A Café Without Phones",
-    genre: "Röportaj",
+    genre: "interview",
     intro: "Telefonsuz bir kafeyi işleten kadınla söyleşi dinleyeceksin: kural nasıl işliyor, neden başladı, sonuç ne.",
     gloss: [
       { de: "joke", tr: "şaka" },
@@ -182,7 +182,7 @@ export const enA2P5: SkillExercise[] = [
     level: "A2",
     skill: "writing",
     title: "Handover Letter",
-    genre: "Mektup",
+    genre: "letter",
     intro: "Gönüllü olduğun işi devrediyorsun; önce iki cümle kur, sonra devralacak kişiye bir mektup yaz.",
     gloss: [
       { de: "shift", tr: "vardiya" },
@@ -242,7 +242,7 @@ export const enA2P5: SkillExercise[] = [
     level: "A2",
     skill: "speaking",
     title: "Words that hold hands",
-    genre: "Ses çalışması",
+    genre: "pronounce",
     intro: "İngilizcede kelimeler tek tek değil, birbirine bağlanarak söylenir; bu yüzden bildiğin kelimeleri duymak zorlaşır.",
     gloss: [
       { de: "turn off", tr: "kapatmak" },
@@ -318,7 +318,7 @@ export const enA2P5: SkillExercise[] = [
     level: "A2",
     skill: "grammar",
     title: "at, on, in — and plans",
-    genre: "Kural",
+    genre: "grammar",
     intro: "Zaman edatlarının üçü de Türkçede „-de“ ile karşılanır; hangisinin geleceğini zaman biriminin büyüklüğü belirler.",
     focus: "Zaman edatları ve gelecek için present continuous",
     gloss: [

@@ -31,7 +31,7 @@ export const b1U18: SkillExercise[] = [
     skill: "reading",
     unit: 18,
     title: "Die Ausstellung",
-    genre: "Sergi tanıtımı ve yorum",
+    genre: "opinion",
     intro: "Bir sergi ve bir ziyaretçinin notu. Hangi eser nasıl etki bırakıyor?",
     minutes: 5,
     gloss: [
@@ -98,7 +98,7 @@ export const b1U18: SkillExercise[] = [
     skill: "reading",
     unit: 18,
     title: "Vom Hausarzt zum Facharzt",
-    genre: "Sağlık bilgilendirmesi",
+    genre: "info",
     intro: "Sevk süreci anlatılıyor. Hangi adım hangi sırada?",
     minutes: 5,
     gloss: [
@@ -165,7 +165,7 @@ export const b1U18: SkillExercise[] = [
     skill: "listening",
     unit: 18,
     title: "Die kurze Debatte",
-    genre: "Tartışma turu",
+    genre: "opinion",
     intro: "Kısa bir tartışma turu. Kim kaç argüman getiriyor?",
     minutes: 4,
     gloss: [
@@ -227,7 +227,7 @@ export const b1U18: SkillExercise[] = [
     skill: "listening",
     unit: 18,
     title: "In der Klinik",
-    genre: "Hastane konuşması",
+    genre: "dialogue",
     intro: "Bir ameliyat öncesi konuşma. Ne zaman, kim, ne yapıyor?",
     minutes: 4,
     gloss: [
@@ -290,7 +290,7 @@ export const b1U18: SkillExercise[] = [
     skill: "writing",
     unit: 18,
     title: "Beim Arzt",
-    genre: "Şikâyet anlatımı",
+    genre: "formal",
     intro: "Doktora durumunu anlat. Bir işi başkasına yaptırırken 'lassen' kullan.",
     minutes: 8,
     gloss: [
@@ -345,7 +345,7 @@ export const b1U18: SkillExercise[] = [
     skill: "writing",
     unit: 18,
     title: "Ein Debattenbeitrag",
-    genre: "Tartışma katkısı",
+    genre: "opinion",
     intro: "Kısa bir tartışma katkısı yaz. Sebep bir cümle mi, bir isim mi?",
     minutes: 12,
     gloss: [

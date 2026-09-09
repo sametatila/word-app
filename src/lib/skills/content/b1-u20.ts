@@ -31,7 +31,7 @@ export const b1U20: SkillExercise[] = [
     skill: "reading",
     unit: 20,
     title: "Wann ist es mehr als schlechte Laune?",
-    genre: "Rehber metin",
+    genre: "guide",
     intro: "Ne zaman yardım aranmalı? Ölçüt süre ve etki.",
     minutes: 5,
     gloss: [
@@ -97,7 +97,7 @@ export const b1U20: SkillExercise[] = [
     skill: "reading",
     unit: 20,
     title: "In der Notaufnahme",
-    genre: "Deneyim yazısı",
+    genre: "personal",
     intro: "Acil serviste bir gece. Ne oldu, ne kadar sürdü — sırayla takip et.",
     minutes: 5,
     gloss: [
@@ -164,7 +164,7 @@ export const b1U20: SkillExercise[] = [
     skill: "listening",
     unit: 20,
     title: "Die Impfung",
-    genre: "Muayenehane konuşması",
+    genre: "dialogue",
     intro: "Bir aşı öncesi konuşma. Ne koruyor, ne yan etki var?",
     minutes: 4,
     gloss: [
@@ -226,7 +226,7 @@ export const b1U20: SkillExercise[] = [
     skill: "listening",
     unit: 20,
     title: "Der Besuch auf Station 3",
-    genre: "Hastane ziyareti",
+    genre: "dialogue",
     intro: "Bir hasta ziyareti. Kim nasıl, ne getirilmiş?",
     minutes: 4,
     gloss: [
@@ -289,7 +289,7 @@ export const b1U20: SkillExercise[] = [
     skill: "writing",
     unit: 20,
     title: "Wie lange schon?",
-    genre: "Durum bildirimi",
+    genre: "report",
     intro: "Bir durumu ve ne kadar sürdüğünü yaz. Süren mi, planlanan mı?",
     minutes: 8,
     gloss: [
@@ -343,7 +343,7 @@ export const b1U20: SkillExercise[] = [
     skill: "writing",
     unit: 20,
     title: "Eine Nachricht an die Kranke",
-    genre: "Geçmiş olsun mesajı",
+    genre: "message",
     intro: "Hasta bir tanıdığına yaz. Geçmişte kipli fiili Präteritum ile kur.",
     minutes: 12,
     gloss: [

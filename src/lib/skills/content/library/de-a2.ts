@@ -19,7 +19,7 @@ export const deA2: SkillExercise[] = [
     level: "A2",
     skill: "reading",
     title: "Repair-Café im Stadtteilzentrum",
-    genre: "Duyuru",
+    genre: "phone",
     intro: "Mahalle merkezinin panosundaki duyuruyu okuyacaksın: kim ne tamir ediyor, ne zaman ve hangi kuralla.",
     gloss: [
       { de: "das Werkzeug", tr: "alet", en: "tool" },
@@ -101,7 +101,7 @@ export const deA2: SkillExercise[] = [
     level: "A2",
     skill: "listening",
     title: "Ein Tandem-Partner",
-    genre: "Telefon",
+    genre: "phone",
     intro: "Lena, kütüphanedeki ilana cevap veriyor. İkisi dil değişimi için nasıl bir düzen kurduklarını konuşuyor.",
     gloss: [
       { de: "die Anzeige", tr: "ilan", en: "advert" },
@@ -189,7 +189,7 @@ export const deA2: SkillExercise[] = [
     level: "A2",
     skill: "writing",
     title: "Mein neues Hobby",
-    genre: "Mesaj",
+    genre: "message",
     intro: "Yeni bir şeye başladın. Önce iki cümle kur, sonra bir arkadaşına yazıp onu da çağır.",
     gloss: [
       { de: "anfangen", tr: "başlamak", en: "to start" },
@@ -248,7 +248,7 @@ export const deA2: SkillExercise[] = [
     level: "A2",
     skill: "speaking",
     title: "Zwei ch-Laute",
-    genre: "Ses çalışması",
+    genre: "pronounce",
     intro: "Almancada „ch“ iki ayrı sestir: ince ünlüden sonra yumuşak (ich), kalın ünlüden sonra boğazdan (Buch). İkisi de Türkçede yok.",
     gloss: [
       { de: "die Tochter", tr: "kız evlat", en: "daughter" },
@@ -324,7 +324,7 @@ export const deA2: SkillExercise[] = [
     level: "A2",
     skill: "grammar",
     title: "haben oder sein?",
-    genre: "Kural",
+    genre: "grammar",
     intro: "Geçmişi anlatmanın konuşma dilindeki yolu: iki parçalı Perfekt ve doğru yardımcı fiil.",
     focus: "Perfekt: haben ya da sein + Partizip II",
     gloss: [

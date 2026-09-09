@@ -34,7 +34,7 @@ export const c1U09: SkillExercise[] = [
     skill: "reading",
     unit: 9,
     title: "Warum immer Tiere?",
-    genre: "Dergi yazısı",
+    genre: "article",
     intro: "Deyimlerdeki hayvanlar nereden geliyor ve ne taşıyor?",
     gloss: [
       { de: "Schwein gehabt", tr: "şansı yaver gitmiş", en: "got lucky" },
@@ -116,7 +116,7 @@ export const c1U09: SkillExercise[] = [
     skill: "reading",
     unit: 9,
     title: "Dicke Luft und grünes Licht",
-    genre: "Rehber yazısı",
+    genre: "guide",
     intro: "Hava ve renk deyimleri: hangisi ofiste durur, hangisi hukuki sorun?",
     gloss: [
       { de: "dicke Luft", tr: "gergin hava", en: "a tense atmosphere" },
@@ -200,7 +200,7 @@ export const c1U09: SkillExercise[] = [
     skill: "listening",
     unit: 9,
     title: "Am Ball bleiben",
-    genre: "Diyalog",
+    genre: "dialogue",
     intro: "Spor deyimleri bir proje konuşmasında. Hangisi neyi söylüyor?",
     gloss: [
       { de: "am Ball bleiben", tr: "peşini bırakmamak", en: "to stay on the ball" },
@@ -275,7 +275,7 @@ export const c1U09: SkillExercise[] = [
     skill: "listening",
     unit: 9,
     title: "Wörtlich genommen",
-    genre: "Diyalog",
+    genre: "dialogue",
     intro: "Deyimler birebir çevrilince ne oluyor? İki dil arasında bir yanlış anlama.",
     gloss: [
       { de: "einen Bären aufbinden", tr: "kafaya atmak", en: "to pull someone's leg" },
@@ -356,7 +356,7 @@ export const c1U09: SkillExercise[] = [
     skill: "writing",
     unit: 9,
     title: "Deyimin sabit parçaları",
-    genre: "Dil bilgisi",
+    genre: "grammar",
     intro: "Deyimde artikel, edat ve sıfat çekimi donmuştur — tek harf değişince bozulur.",
     gloss: [
       { de: "den Stier bei den Hörnern packen", tr: "boğayı boynuzundan tutmak", en: "to take the bull by the horns" },
@@ -399,7 +399,7 @@ export const c1U09: SkillExercise[] = [
     skill: "writing",
     unit: 9,
     title: "Ein Bericht ohne schiefe Bilder",
-    genre: "Kurum yazısı",
+    genre: "formal",
     intro: "Deyim kullan ama yerinde: durumu tarif et, kişiyi suçlama.",
     gloss: [
       { de: "dicke Luft", tr: "gergin hava", en: "tense atmosphere" },

@@ -34,7 +34,7 @@ export const b1U38: SkillExercise[] = [
     skill: "reading",
     unit: 38,
     title: "Vier Berufe, vier Wege",
-    genre: "Meslek tanıtımı",
+    genre: "profile",
     intro: "Dört meslek, dört farklı yol. Kim ne yapıyor, nasıl başlamış?",
     minutes: 5,
     gloss: [
@@ -101,7 +101,7 @@ export const b1U38: SkillExercise[] = [
     skill: "reading",
     unit: 38,
     title: "Lehre oder Studium?",
-    genre: "Rehber metin",
+    genre: "guide",
     intro: "İki yol karşılaştırılıyor. Hangisi kime uygun?",
     minutes: 5,
     gloss: [
@@ -170,7 +170,7 @@ export const b1U38: SkillExercise[] = [
     skill: "listening",
     unit: 38,
     title: "Der Kopierer klemmt",
-    genre: "Ofis arızası",
+    genre: "dialogue",
     intro: "Bir fotokopi makinesi bozulmuş. Kim ne deniyor?",
     minutes: 4,
     gloss: [
@@ -232,7 +232,7 @@ export const b1U38: SkillExercise[] = [
     skill: "listening",
     unit: 38,
     title: "Macht Technik abhängig?",
-    genre: "Kısa tartışma",
+    genre: "opinion",
     intro: "Teknoloji tartışılıyor. İki farklı bakış.",
     minutes: 4,
     gloss: [
@@ -295,7 +295,7 @@ export const b1U38: SkillExercise[] = [
     skill: "writing",
     unit: 38,
     title: "Einen Beruf vorstellen",
-    genre: "Meslek tanıtımı",
+    genre: "profile",
     intro: "Bir mesleği tanıt. Almancada meslek adı cinsiyete göre değişir.",
     minutes: 8,
     gloss: [
@@ -349,7 +349,7 @@ export const b1U38: SkillExercise[] = [
     skill: "writing",
     unit: 38,
     title: "Mein Weg nach der Schule",
-    genre: "Plan metni",
+    genre: "info",
     intro: "Okuldan sonraki yolunu yaz. Bazı fiillerden sonra 'zu' gelmez.",
     minutes: 12,
     gloss: [

@@ -31,7 +31,7 @@ export const b1U14: SkillExercise[] = [
     skill: "reading",
     unit: 14,
     title: "Intensiv oder langsam?",
-    genre: "Kurs karşılaştırması",
+    genre: "info",
     intro: "İki kurs biçimi karşılaştırılıyor. Hangisi kime uygun?",
     minutes: 5,
     gloss: [
@@ -97,7 +97,7 @@ export const b1U14: SkillExercise[] = [
     skill: "reading",
     unit: 14,
     title: "Die Prüfung war anders",
-    genre: "Deneyim yazısı",
+    genre: "personal",
     intro: "Biri sınav deneyimini anlatıyor. Beklenti ile gerçek arasındaki farka dikkat et.",
     minutes: 5,
     gloss: [
@@ -165,7 +165,7 @@ export const b1U14: SkillExercise[] = [
     skill: "listening",
     unit: 14,
     title: "Lohnt sich die Weiterbildung?",
-    genre: "Danışma konuşması",
+    genre: "dialogue",
     intro: "Bir mesleki eğitim konuşuluyor. Kim ödüyor, ne kazandırıyor?",
     minutes: 4,
     gloss: [
@@ -227,7 +227,7 @@ export const b1U14: SkillExercise[] = [
     skill: "listening",
     unit: 14,
     title: "An der Hochschule",
-    genre: "Danışma masası",
+    genre: "dialogue",
     intro: "Biri okul hakkında bilgi alıyor. Hangi soruya hangi yanıt?",
     minutes: 4,
     gloss: [
@@ -290,7 +290,7 @@ export const b1U14: SkillExercise[] = [
     skill: "writing",
     unit: 14,
     title: "Zwei Kurse vergleichen",
-    genre: "Karşılaştırma metni",
+    genre: "info",
     intro: "İki kursu karşılaştır. Eşitlik mi, fark mı — bağlacı ona göre seç.",
     minutes: 8,
     gloss: [
@@ -344,7 +344,7 @@ export const b1U14: SkillExercise[] = [
     skill: "writing",
     unit: 14,
     title: "Anfrage an die Hochschule",
-    genre: "Bilgi isteme e-postası",
+    genre: "email",
     intro: "Bir okula soru sor. Dolaylı soruda 'ob' ile 'wenn' karışmasın.",
     minutes: 12,
     gloss: [

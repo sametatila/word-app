@@ -31,7 +31,7 @@ export const a2U09: SkillExercise[] = [
     skill: "reading",
     unit: 9,
     title: "Wo ist der Schlüssel?",
-    genre: "Mesaj",
+    genre: "message",
     intro: "Evden çıkmış birine yazılmış mesaj: eşyalar tam olarak nerede?",
     gloss: [
       { de: "die Schublade", tr: "çekmece", en: "drawer" },
@@ -94,7 +94,7 @@ export const a2U09: SkillExercise[] = [
     skill: "reading",
     unit: 9,
     title: "Unsere Nachbarschaft",
-    genre: "Blog yazısı",
+    genre: "blog",
     intro: "Mahalle tanıtımı: ne nerede, en yakın durak hangisi?",
     gloss: [
       { de: "das Zentrum", tr: "merkez", en: "town centre" },
@@ -155,7 +155,7 @@ export const a2U09: SkillExercise[] = [
     skill: "listening",
     unit: 9,
     title: "Wohin stellen wir das?",
-    genre: "Diyalog",
+    genre: "dialogue",
     intro: "Oda düzenleniyor. Ne nereye gidiyor, hangi karar değişiyor?",
     gloss: [
       { de: "hinstellen", tr: "oraya koymak", en: "to put there" },
@@ -214,7 +214,7 @@ export const a2U09: SkillExercise[] = [
     skill: "listening",
     unit: 9,
     title: "Wie komme ich zur Haltestelle?",
-    genre: "Diyalog",
+    genre: "dialogue",
     intro: "Yeni taşınan biri yol soruyor. Hangi yol daha kısa?",
     gloss: [
       { de: "die Bushaltestelle", tr: "otobüs durağı", en: "bus stop" },
@@ -271,7 +271,7 @@ export const a2U09: SkillExercise[] = [
     skill: "writing",
     unit: 9,
     title: "Wo oder wohin?",
-    genre: "Dil bilgisi",
+    genre: "grammar",
     intro: "Aynı edat, iki hâl. Soru NEREDE ise yönelme, NEREYE ise belirtme.",
     gloss: [
       { de: "das Bücherregal", tr: "kitaplık", en: "bookshelf" },
@@ -315,7 +315,7 @@ export const a2U09: SkillExercise[] = [
     skill: "writing",
     unit: 9,
     title: "Deine Nachbarschaft beschreiben",
-    genre: "Forum mesajı",
+    genre: "forum",
     intro: "Yeni taşınan birine mahalleni anlat: ne nerede, en yakın durak, bir tavsiye.",
     gloss: [
       { de: "das Zentrum", tr: "merkez", en: "town centre" },

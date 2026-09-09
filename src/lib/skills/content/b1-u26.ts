@@ -34,7 +34,7 @@ export const b1U26: SkillExercise[] = [
     skill: "reading",
     unit: 26,
     title: "Ein Rezept für vier Personen",
-    genre: "Yemek tarifi",
+    genre: "guide",
     intro: "Bir tarif. Neyi nereye koyuyoruz, ne nerede duruyor?",
     minutes: 5,
     gloss: [
@@ -98,7 +98,7 @@ export const b1U26: SkillExercise[] = [
     skill: "reading",
     unit: 26,
     title: "Im Gasthaus",
-    genre: "Lokanta rehberi",
+    genre: "guide",
     intro: "Bir lokantada neler bilinmeli? Rezervasyon, sipariş, bahşiş.",
     minutes: 5,
     gloss: [
@@ -165,7 +165,7 @@ export const b1U26: SkillExercise[] = [
     skill: "listening",
     unit: 26,
     title: "Auf dem Markt",
-    genre: "Pazar konuşması",
+    genre: "dialogue",
     intro: "Pazarda alışveriş. Ne kadar, kaç tane, kaç para?",
     minutes: 4,
     gloss: [
@@ -227,7 +227,7 @@ export const b1U26: SkillExercise[] = [
     skill: "listening",
     unit: 26,
     title: "Zum Essen eingeladen",
-    genre: "Akşam yemeği",
+    genre: "dialogue",
     intro: "Bir davet. Ne getirilmiş, tatlıda ne var?",
     minutes: 4,
     gloss: [
@@ -290,7 +290,7 @@ export const b1U26: SkillExercise[] = [
     skill: "writing",
     unit: 26,
     title: "Ein Rezept aufschreiben",
-    genre: "Tarif metni",
+    genre: "guide",
     intro: "Bir tarif yaz. Koymak mı, durmak mı — hâl ona göre.",
     minutes: 8,
     gloss: [
@@ -344,7 +344,7 @@ export const b1U26: SkillExercise[] = [
     skill: "writing",
     unit: 26,
     title: "Einkaufszettel und Bericht",
-    genre: "Alışveriş yazısı",
+    genre: "text",
     intro: "Pazardan aldıklarını yaz. Sayıdan sonra isim çoğul olur.",
     minutes: 12,
     gloss: [

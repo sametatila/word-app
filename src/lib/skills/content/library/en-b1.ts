@@ -23,7 +23,7 @@ export const enB1: SkillExercise[] = [
     level: "B1",
     skill: "reading",
     title: "Learning to Swim at Thirty-Five",
-    genre: "Blog yazısı",
+    genre: "blog",
     intro: "Yetişkin yaşta yüzme öğrenen bir kadının blog yazısını oku: neden başladı, ilk ders nasıl geçti, bugün nerede.",
     gloss: [
       { de: "confident", tr: "kendine güvenen" },
@@ -97,7 +97,7 @@ export const enB1: SkillExercise[] = [
     level: "B1",
     skill: "listening",
     title: "Swapping Homes for the Summer",
-    genre: "Röportaj",
+    genre: "interview",
     intro: "Radyo sunucusu, tatillerini ev takasıyla geçiren Leyla'yla konuşuyor: sistem nasıl işliyor, başta neden endişeliydi, şimdi ne düşünüyor.",
     gloss: [
       { de: "home exchange", tr: "ev takası" },
@@ -176,7 +176,7 @@ export const enB1: SkillExercise[] = [
     level: "B1",
     skill: "writing",
     title: "Should Ayla Get a Dog?",
-    genre: "E-posta",
+    genre: "email",
     intro: "Arkadaşın Ayla köpek almayı düşünüyor ve fikrini soruyor; önce iki cümle kur, sonra e-postasına görüşünü ve gerekçelerini yaz.",
     gloss: [
       { de: "opinion", tr: "görüş" },
@@ -232,7 +232,7 @@ export const enB1: SkillExercise[] = [
     level: "B1",
     skill: "speaking",
     title: "When Should You Leave Home?",
-    genre: "Monolog",
+    genre: "monologue",
     intro: "Gençlerin evden ayrılma yaşı üzerine kırk ile yetmiş beş saniyelik bir konuşma yap: görüşün ve en az iki gerekçen.",
     gloss: [],
     minutes: 5,
@@ -272,7 +272,7 @@ export const enB1: SkillExercise[] = [
     level: "B1",
     skill: "grammar",
     title: "have done or did?",
-    genre: "Kural",
+    genre: "grammar",
     intro: "İngilizcenin iki geçmiş zamanını ayırmayı öğren: ne zaman have + üçüncü hâl, ne zaman -ed; since/for, already/yet, ever/never işaretleri.",
     focus: "Present perfect ile past simple: since/for, already/yet, ever/never",
     gloss: [

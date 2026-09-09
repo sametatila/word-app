@@ -29,7 +29,7 @@ export const c1U12: SkillExercise[] = [
     skill: "reading",
     unit: 12,
     title: "Was ein Abstract verspricht",
-    genre: "Rehber yazısı",
+    genre: "guide",
     intro: "Özet yazma dili: hangi fiil ne kadar iddia taşıyor?",
     gloss: [
       { de: "nahelegen", tr: "düşündürmek, işaret etmek", en: "to suggest" },
@@ -109,7 +109,7 @@ export const c1U12: SkillExercise[] = [
     skill: "reading",
     unit: 12,
     title: "Der Vergleich hinkt",
-    genre: "Deneme",
+    genre: "essay",
     intro: "Bilimi sadeleştirmek: hangi kayıp kabul edilebilir, hangisi değil?",
     gloss: [
       { de: "vereinfachen", tr: "basitleştirmek", en: "to simplify" },
@@ -192,7 +192,7 @@ export const c1U12: SkillExercise[] = [
     skill: "listening",
     unit: 12,
     title: "Im Kolloquium",
-    genre: "Akademik oturum",
+    genre: "meeting",
     intro: "Tez savunması. İtiraz nasıl geliyor, nasıl karşılanıyor?",
     gloss: [
       { de: "einwenden", tr: "itiraz etmek", en: "to object" },
@@ -264,7 +264,7 @@ export const c1U12: SkillExercise[] = [
     skill: "listening",
     unit: 12,
     title: "Für Laien erklärt",
-    genre: "Diyalog",
+    genre: "dialogue",
     intro: "Bir araştırmacı ile gazeteci. Sadeleştirme nerede duruyor?",
     gloss: [
       { de: "vereinfachen", tr: "basitleştirmek", en: "to simplify" },
@@ -341,7 +341,7 @@ export const c1U12: SkillExercise[] = [
     skill: "writing",
     unit: 12,
     title: "İddianın basamağı",
-    genre: "Dil bilgisi",
+    genre: "grammar",
     intro: "nahelegen, aufzeigen, belegen — aynı bulgu, üç ayrı iddia gücü.",
     gloss: [
       { de: "nahelegen", tr: "işaret etmek", en: "to suggest" },
@@ -388,7 +388,7 @@ export const c1U12: SkillExercise[] = [
     skill: "writing",
     unit: 12,
     title: "Ein Abstract, das hält",
-    genre: "Akademik metin",
+    genre: "text",
     intro: "Soru, yöntem, sonuç — ve her fiil kendi kanıt yükünü taşısın.",
     gloss: [
       { de: "die Fragestellung", tr: "araştırma sorusu", en: "research question" },

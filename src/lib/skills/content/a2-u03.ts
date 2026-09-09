@@ -29,7 +29,7 @@ export const a2U03: SkillExercise[] = [
     skill: "reading",
     unit: 3,
     title: "Eine volle Woche",
-    genre: "Mesaj",
+    genre: "message",
     intro: "Bir iş arkadaşına yazılmış mesaj: geçen hafta neyi yetiştirdi, neyi yetiştiremedi?",
     gloss: [
       { de: "voll", tr: "dolu", en: "full" },
@@ -91,7 +91,7 @@ export const a2U03: SkillExercise[] = [
     skill: "reading",
     unit: 3,
     title: "Mein Weg nach Deutschland",
-    genre: "Blog yazısı",
+    genre: "blog",
     intro: "Bir göç hikâyesi: başta neyi zor buldu, bugün nasıl?",
     gloss: [
       { de: "die Hauptstadt", tr: "başkent", en: "capital city" },
@@ -152,7 +152,7 @@ export const a2U03: SkillExercise[] = [
     skill: "listening",
     unit: 3,
     title: "Rate mal, was passiert ist!",
-    genre: "Telefon görüşmesi",
+    genre: "phone",
     intro: "Bir telefon konuşması: iyi haber ne, kim ne kazandı?",
     gloss: [
       { de: "erraten", tr: "doğru tahmin etmek", en: "to guess right" },
@@ -210,7 +210,7 @@ export const a2U03: SkillExercise[] = [
     skill: "listening",
     unit: 3,
     title: "Was wolltest du als Kind werden?",
-    genre: "Diyalog",
+    genre: "dialogue",
     intro: "Çocukluk hayalleri üzerine bir sohbet. Kim ne olmak istedi, neden olamadı?",
     gloss: [
       { de: "der Traum", tr: "hayal", en: "dream" },
@@ -269,7 +269,7 @@ export const a2U03: SkillExercise[] = [
     skill: "writing",
     unit: 3,
     title: "wollte, konnte, musste",
-    genre: "Dil bilgisi",
+    genre: "grammar",
     intro: "Kip fiillerinin kısa geçmişi. Asıl fiil hep cümlenin sonunda kalır.",
     gloss: [
       { de: "der Pilot", tr: "pilot", en: "pilot" },
@@ -313,7 +313,7 @@ export const a2U03: SkillExercise[] = [
     skill: "writing",
     unit: 3,
     title: "Eine gute Nachricht weitergeben",
-    genre: "Mesaj",
+    genre: "message",
     intro: "Bir arkadaşına iyi haberini yaz: ne oldu, nasıl hissettin, ne zaman başlıyor.",
     gloss: [
       { de: "bestehen", tr: "sınavı geçmek", en: "to pass" },

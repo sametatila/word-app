@@ -18,7 +18,7 @@ export const enA2P2: SkillExercise[] = [
     level: "A2",
     skill: "reading",
     title: "Bees on the Roof",
-    genre: "Röportaj",
+    genre: "interview",
     intro: "Şehirde arıcılık yapan biriyle üç soruluk kısa bir söyleşi okuyacaksın.",
     gloss: [
       { de: "beekeeper", tr: "arıcı" },
@@ -103,7 +103,7 @@ export const enA2P2: SkillExercise[] = [
     level: "A2",
     skill: "listening",
     title: "The Library System Is Down",
-    genre: "Anons",
+    genre: "phone",
     intro: "Kütüphanede bir anons dinleyeceksin: sorun ne, bugün ne değişiyor, ne zaman düzelecek.",
     gloss: [
       { de: "announcement", tr: "anons" },
@@ -176,7 +176,7 @@ export const enA2P2: SkillExercise[] = [
     level: "A2",
     skill: "writing",
     title: "Cancelling a Membership",
-    genre: "E-posta",
+    genre: "email",
     intro: "Bir spor salonu üyeliğini bitireceksin; önce iki cümle kur, sonra resmî bir e-posta yaz.",
     gloss: [
       { de: "membership", tr: "üyelik" },
@@ -235,7 +235,7 @@ export const enA2P2: SkillExercise[] = [
     level: "A2",
     skill: "speaking",
     title: "Where is the stress?",
-    genre: "Ses çalışması",
+    genre: "pronounce",
     intro: "İngilizcede vurgulu hece daha uzun ve daha yüksektir; yanlış heceyi vurgulamak kelimeyi tanınmaz yapar.",
     gloss: [
       { de: "photographer", tr: "fotoğrafçı" },
@@ -311,7 +311,7 @@ export const enA2P2: SkillExercise[] = [
     level: "A2",
     skill: "grammar",
     title: "going to or will?",
-    genre: "Kural",
+    genre: "grammar",
     intro: "Türkçedeki tek gelecek eki İngilizcede ikiye ayrılır ve seçimi kararın ne zaman verildiği belirler.",
     focus: "going to ve will",
     gloss: [

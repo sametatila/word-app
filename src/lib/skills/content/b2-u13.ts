@@ -33,7 +33,7 @@ export const b2U13: SkillExercise[] = [
     skill: "reading",
     unit: 13,
     title: "Amtliche Bekanntmachung",
-    genre: "Resmî duyuru",
+    genre: "phone",
     intro: "Bir belediyenin resmî duyurusu. Aynı bilgi günlük dilde nasıl söylenirdi?",
     gloss: [
       { de: "die Maßnahme", tr: "tedbir", en: "measure" },
@@ -107,7 +107,7 @@ export const b2U13: SkillExercise[] = [
     skill: "reading",
     unit: 13,
     title: "Morgen schon Realität?",
-    genre: "Teknoloji yazısı",
+    genre: "text",
     intro: "Gelecek teknolojileri üzerine ölçülü bir yazı. Tahmin bildiren kiplere dikkat et.",
     gloss: [
       { de: "sich durchsetzen", tr: "yaygınlaşmak", en: "to catch on" },
@@ -176,7 +176,7 @@ export const b2U13: SkillExercise[] = [
     skill: "listening",
     unit: 13,
     title: "Der Anruf beim Support",
-    genre: "Telefon görüşmesi",
+    genre: "phone",
     intro: "Sinirli bir kullanıcı destek hattını arıyor. Çözüm nasıl anlatılıyor?",
     gloss: [
       { de: "abstürzen", tr: "çökmek", en: "to crash" },
@@ -247,7 +247,7 @@ export const b2U13: SkillExercise[] = [
     skill: "listening",
     unit: 13,
     title: "Wegen des Wetters",
-    genre: "Diyalog",
+    genre: "dialogue",
     intro: "Hava yüzünden bir plan değişiyor. Neden ile rağmen arasındaki farkı dinle.",
     gloss: [
       { de: "das Unwetter", tr: "fırtına", en: "storm" },
@@ -322,7 +322,7 @@ export const b2U13: SkillExercise[] = [
     skill: "writing",
     unit: 13,
     title: "İki kayıt, aynı sebep",
-    genre: "Cümle kurma",
+    genre: "build",
     intro: "wegen ve trotz sokakta, aufgrund ve infolge ilan panosunda. İkisi de genitif ister.",
     gloss: [
       { de: "das Unwetter", tr: "fırtına", en: "storm" },
@@ -376,7 +376,7 @@ export const b2U13: SkillExercise[] = [
     skill: "writing",
     unit: 13,
     title: "Zweimal dieselbe Nachricht",
-    genre: "Kayıt alıştırması",
+    genre: "pronounce",
     intro: "Aynı haberi iki kez yaz: bir kez arkadaşlara, bir kez ilan panosuna.",
     gloss: [
       { de: "die Bekanntmachung", tr: "resmî duyuru", en: "public notice" },

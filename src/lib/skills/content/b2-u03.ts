@@ -31,7 +31,7 @@ export const b2U03: SkillExercise[] = [
     skill: "reading",
     unit: 3,
     title: "Zwei Tage im Büro, drei zu Hause",
-    genre: "İşyeri yönergesi",
+    genre: "guide",
     intro: "Bir şirketin uzaktan çalışma yönergesi. Neyi kim karara bağlıyor?",
     gloss: [
       { de: "die Absprache", tr: "mutabakat", en: "arrangement" },
@@ -101,7 +101,7 @@ export const b2U03: SkillExercise[] = [
     skill: "reading",
     unit: 3,
     title: "Sehr geehrte Damen und Herren",
-    genre: "Resmî şikâyet mektubu",
+    genre: "formal",
     intro: "Bir müşteri üçüncü kez yazıyor. Öfke tonla mı, dilbilgisiyle mi taşınıyor?",
     gloss: [
       { de: "die Beschwerde", tr: "şikâyet", en: "complaint" },
@@ -171,7 +171,7 @@ export const b2U03: SkillExercise[] = [
     skill: "listening",
     unit: 3,
     title: "In der Kaffeepause",
-    genre: "Diyalog",
+    genre: "dialogue",
     intro: "Konferans arasında iki kişi tanışıyor. Tamlayan hâli isteyen edatlara dikkat et.",
     gloss: [
       { de: "der Austausch", tr: "fikir alışverişi", en: "exchange" },
@@ -245,7 +245,7 @@ export const b2U03: SkillExercise[] = [
     skill: "listening",
     unit: 3,
     title: "Zehn Prozent sind zu viel",
-    genre: "Müzakere",
+    genre: "meeting",
     intro: "Yıllık sözleşme pazarlığı. Teklif ne zaman karar, ne zaman öneri olur?",
     gloss: [
       { de: "verhandeln", tr: "pazarlık etmek", en: "to negotiate" },
@@ -323,7 +323,7 @@ export const b2U03: SkillExercise[] = [
     skill: "writing",
     unit: 3,
     title: "Vier Sätze ohne Ich",
-    genre: "Cümle kurma",
+    genre: "build",
     intro: "İsimleştirme, tamlayan hâli edatları, dilek kipiyle teklif ve resmî mesafe.",
     gloss: [
       { de: "die Absprache", tr: "mutabakat", en: "arrangement" },
@@ -374,7 +374,7 @@ export const b2U03: SkillExercise[] = [
     skill: "writing",
     unit: 3,
     title: "Die dritte Mahnung",
-    genre: "Resmî mektup",
+    genre: "formal",
     intro: "Cevapsız kalan bir talep için resmî bir şikâyet mektubu yaz.",
     gloss: [
       { de: "die Beschwerde", tr: "şikâyet", en: "complaint" },

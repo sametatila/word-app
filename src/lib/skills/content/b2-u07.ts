@@ -30,7 +30,7 @@ export const b2U07: SkillExercise[] = [
     skill: "reading",
     unit: 7,
     title: "Eine Führung durch das Werk",
-    genre: "Fabrika turu metni",
+    genre: "text",
     intro: "Bir fabrikanın ziyaretçi turu için hazırladığı metin. Her istasyonda ne yapıldığı anlatılıyor.",
     gloss: [
       { de: "verarbeiten", tr: "işlemek", en: "to process" },
@@ -102,7 +102,7 @@ export const b2U07: SkillExercise[] = [
     skill: "reading",
     unit: 7,
     title: "Zwölf Jahre Altstadt",
-    genre: "Yerel gazete haberi",
+    genre: "article",
     intro: "Uzun süren bir restorasyonun bittiği gün yazılmış bir haber. Neyin ne zaman yapıldığına dikkat et.",
     gloss: [
       { de: "sanieren", tr: "restore etmek", en: "to renovate" },
@@ -174,7 +174,7 @@ export const b2U07: SkillExercise[] = [
     skill: "listening",
     unit: 7,
     title: "Was ist gestern passiert?",
-    genre: "Telefon görüşmesi",
+    genre: "phone",
     intro: "Bir radyo muhabiri polis basın sözcüsünü arıyor. Dün olan bir kaza konuşuluyor.",
     gloss: [
       { de: "die Unfallstelle", tr: "kaza yeri", en: "accident site" },
@@ -251,7 +251,7 @@ export const b2U07: SkillExercise[] = [
     skill: "listening",
     unit: 7,
     title: "Erster Tag in der Küche",
-    genre: "Diyalog",
+    genre: "dialogue",
     intro: "Bir aşçı yeni gelen yardımcıya kuralları anlatıyor. Neyin zorunlu, neyin yasak olduğunu ayır.",
     gloss: [
       { de: "die Zutat", tr: "malzeme", en: "ingredient" },
@@ -327,7 +327,7 @@ export const b2U07: SkillExercise[] = [
     skill: "writing",
     unit: 7,
     title: "Zaman werden'de durur",
-    genre: "Cümle kurma",
+    genre: "build",
     intro: "Aynı edilgen cümle üç zamanda ve bir kip altında. Değişen tek şey werden.",
     gloss: [
       { de: "verarbeiten", tr: "işlemek", en: "to process" },
@@ -378,7 +378,7 @@ export const b2U07: SkillExercise[] = [
     skill: "writing",
     unit: 7,
     title: "Wie es gemacht wird",
-    genre: "Süreç anlatımı",
+    genre: "story",
     intro: "Bir işin nasıl yapıldığını adım adım anlat — ama kimin yaptığını söylemeden.",
     gloss: [
       { de: "die Fertigung", tr: "imalat", en: "production" },

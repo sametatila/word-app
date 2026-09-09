@@ -32,7 +32,7 @@ export const b1U17: SkillExercise[] = [
     skill: "reading",
     unit: 17,
     title: "Woher stammt diese Nachricht?",
-    genre: "Rehber metin",
+    genre: "guide",
     intro: "Bir haberin güvenilir olup olmadığı nasıl anlaşılır? Üç ölçüt.",
     minutes: 5,
     gloss: [
@@ -101,7 +101,7 @@ export const b1U17: SkillExercise[] = [
     skill: "reading",
     unit: 17,
     title: "Im Buchclub",
-    genre: "Kulüp duyurusu ve yorum",
+    genre: "phone",
     intro: "Bir kitap kulübü ve iki okurun yorumu. Kim neyi beğenmiş?",
     minutes: 5,
     gloss: [
@@ -169,7 +169,7 @@ export const b1U17: SkillExercise[] = [
     skill: "listening",
     unit: 17,
     title: "Noch eine Folge?",
-    genre: "Dizi akşamı",
+    genre: "dialogue",
     intro: "İki kişi diziyi konuşuyor. Kim devamını bekliyor, kim beklemiyor?",
     minutes: 4,
     gloss: [
@@ -231,7 +231,7 @@ export const b1U17: SkillExercise[] = [
     skill: "listening",
     unit: 17,
     title: "Der Auftritt",
-    genre: "Konser sonrası",
+    genre: "dialogue",
     intro: "Bir konser konuşuluyor. Kime ne kadar hitap etmiş?",
     minutes: 4,
     gloss: [
@@ -294,7 +294,7 @@ export const b1U17: SkillExercise[] = [
     skill: "writing",
     unit: 17,
     title: "Eine Kritik schreiben",
-    genre: "Değerlendirme",
+    genre: "review",
     intro: "Bir dizi ya da kitap hakkında yorum yaz. 'gefallen'in öznesine dikkat.",
     minutes: 8,
     gloss: [
@@ -349,7 +349,7 @@ export const b1U17: SkillExercise[] = [
     skill: "writing",
     unit: 17,
     title: "Ein Beitrag für den Buchclub",
-    genre: "Kulüp yazısı",
+    genre: "text",
     intro: "Okuduğun kitap hakkında yaz. Sevinç edatını zamana göre seç.",
     minutes: 12,
     gloss: [

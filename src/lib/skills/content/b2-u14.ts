@@ -34,7 +34,7 @@ export const b2U14: SkillExercise[] = [
     skill: "reading",
     unit: 14,
     title: "Der enge Markt",
-    genre: "Ekonomi yazısı",
+    genre: "text",
     intro: "Konut piyasası üzerine bir yazı. İki eğilimi birbirine bağlayan cümlelere dikkat et.",
     gloss: [
       { de: "der Wohnraum", tr: "konut", en: "housing" },
@@ -107,7 +107,7 @@ export const b2U14: SkillExercise[] = [
     skill: "reading",
     unit: 14,
     title: "Ohne Ehrenamt läuft nichts",
-    genre: "Deneme",
+    genre: "essay",
     intro: "Gönüllü emeğin ne taşıdığını anlatan bir yazı. Nasıl sorusuna verilen cevaplara dikkat et.",
     gloss: [
       { de: "das Ehrenamt", tr: "gönüllü görev", en: "voluntary work" },
@@ -179,7 +179,7 @@ export const b2U14: SkillExercise[] = [
     skill: "listening",
     unit: 14,
     title: "Alles wird teurer",
-    genre: "Diyalog",
+    genre: "dialogue",
     intro: "İki kişi fiyat artışlarını konuşuyor. Rakam ile hissedilen arasındaki farka dikkat et.",
     gloss: [
       { de: "die Inflation", tr: "enflasyon", en: "inflation" },
@@ -254,7 +254,7 @@ export const b2U14: SkillExercise[] = [
     skill: "listening",
     unit: 14,
     title: "Die Stelle ist kaum zu besetzen",
-    genre: "Diyalog",
+    genre: "dialogue",
     intro: "Bir işletmede boş kadro konuşuluyor. Eksikliğin nasıl dile getirildiğini dinle.",
     gloss: [
       { de: "die Fachkraft", tr: "nitelikli eleman", en: "skilled worker" },
@@ -334,7 +334,7 @@ export const b2U14: SkillExercise[] = [
     skill: "writing",
     unit: 14,
     title: "Ne kadar, o kadar",
-    genre: "Cümle kurma",
+    genre: "build",
     intro: "je-desto iki eğilimi bağlar; adlaştırma rakamı başlığa sıkıştırır.",
     gloss: [
       { de: "der Wohnraum", tr: "konut", en: "housing" },
@@ -385,7 +385,7 @@ export const b2U14: SkillExercise[] = [
     skill: "writing",
     unit: 14,
     title: "Ihr Beitrag zur Debatte",
-    genre: "Tartışma yazısı",
+    genre: "opinion",
     intro: "Bir toplumsal tartışmada tutum al — ama rakamı ve karşı tarafı da hesaba kat.",
     gloss: [
       { de: "der Verbraucher", tr: "tüketici", en: "consumer" },

@@ -31,7 +31,7 @@ export const b1U19: SkillExercise[] = [
     skill: "reading",
     unit: 19,
     title: "Der Beipackzettel",
-    genre: "İlaç kullanım bilgisi",
+    genre: "info",
     intro: "Bir ilacın kullanım bilgisi. Ne kadar, ne zaman, neye dikkat?",
     minutes: 5,
     gloss: [
@@ -96,7 +96,7 @@ export const b1U19: SkillExercise[] = [
     skill: "reading",
     unit: 19,
     title: "Essen in der Kantine",
-    genre: "Deneyim yazısı",
+    genre: "personal",
     intro: "Biri beslenme alışkanlığını değiştirmiş. Ne değişti, neden?",
     minutes: 5,
     gloss: [
@@ -164,7 +164,7 @@ export const b1U19: SkillExercise[] = [
     skill: "listening",
     unit: 19,
     title: "Der Rücken tut weh",
-    genre: "Fizyoterapi konuşması",
+    genre: "dialogue",
     intro: "Sırt ağrısı konuşuluyor. Hangi öneri, hangi sebep?",
     minutes: 4,
     gloss: [
@@ -226,7 +226,7 @@ export const b1U19: SkillExercise[] = [
     skill: "listening",
     unit: 19,
     title: "Warum wache ich immer auf?",
-    genre: "Uyku üzerine sohbet",
+    genre: "dialogue",
     intro: "İki kişi uykuyu konuşuyor. Sorun ne, ne deneniyor?",
     minutes: 4,
     gloss: [
@@ -289,7 +289,7 @@ export const b1U19: SkillExercise[] = [
     skill: "writing",
     unit: 19,
     title: "Eine Anleitung schreiben",
-    genre: "Kullanım talimatı",
+    genre: "guide",
     intro: "Bir ilacın nasıl kullanılacağını yaz. Resmî emirde zamiri unutma.",
     minutes: 8,
     gloss: [
@@ -343,7 +343,7 @@ export const b1U19: SkillExercise[] = [
     skill: "writing",
     unit: 19,
     title: "Was ich geändert habe",
-    genre: "Kişisel yazı",
+    genre: "personal",
     intro: "Bir alışkanlığını nasıl değiştirdiğini yaz. Yan cümlede kipli fiili sona koy.",
     minutes: 12,
     gloss: [

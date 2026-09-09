@@ -29,7 +29,7 @@ export const b2U06: SkillExercise[] = [
     skill: "reading",
     unit: 6,
     title: "Der Bericht aus der Fertigung",
-    genre: "Haftalık durum raporu",
+    genre: "report",
     intro: "Bir üretim biriminin haftalık raporu. Neyin yapıldığı, neyin yapılması gerektiği ayrı ayrı yazılmış.",
     gloss: [
       { de: "bearbeiten", tr: "işleme almak", en: "to process" },
@@ -101,7 +101,7 @@ export const b2U06: SkillExercise[] = [
     skill: "reading",
     unit: 6,
     title: "Geöffnet oder wird geöffnet?",
-    genre: "Dil köşesi",
+    genre: "article",
     intro: "Bir dil köşesi yazısı: Almancada süreç ile durum neden ayrı yazılır?",
     gloss: [
       { de: "der Vorgang", tr: "işlem", en: "process" },
@@ -170,7 +170,7 @@ export const b2U06: SkillExercise[] = [
     skill: "listening",
     unit: 6,
     title: "Das muss noch abgesegnet werden",
-    genre: "Diyalog",
+    genre: "dialogue",
     intro: "İki mühendis bir onay sürecini konuşuyor. Kipli edilgene dikkat et.",
     gloss: [
       { de: "bedenken", tr: "göz önünde bulundurmak", en: "to consider" },
@@ -244,7 +244,7 @@ export const b2U06: SkillExercise[] = [
     skill: "listening",
     unit: 6,
     title: "Lässt sich das machen?",
-    genre: "Diyalog",
+    genre: "dialogue",
     intro: "Bir öneri konuşuluyor: neyin mümkün, neyin zorunlu olduğunu ayır.",
     gloss: [
       { de: "nachweisen", tr: "kanıtlamak", en: "to prove" },
@@ -318,7 +318,7 @@ export const b2U06: SkillExercise[] = [
     skill: "writing",
     unit: 6,
     title: "Vorgang oder Zustand",
-    genre: "Cümle kurma",
+    genre: "build",
     intro: "Edilgenin dört biçimi: geçmiş, kipli, durum ve edilgen yerine geçenler.",
     gloss: [
       { de: "ausliefern", tr: "sevk etmek", en: "to deliver" },
@@ -369,7 +369,7 @@ export const b2U06: SkillExercise[] = [
     skill: "writing",
     unit: 6,
     title: "Der Wochenbericht",
-    genre: "Durum raporu",
+    genre: "report",
     intro: "Kısa bir haftalık durum raporu yaz: ne yapıldı, ne yapılmalı, ne şu an hangi durumda?",
     gloss: [
       { de: "der Arbeitsgang", tr: "iş adımı", en: "operation" },

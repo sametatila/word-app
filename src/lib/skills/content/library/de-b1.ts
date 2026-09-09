@@ -19,7 +19,7 @@ export const deB1: SkillExercise[] = [
     level: "B1",
     skill: "reading",
     title: "Warten auf ein Stück Grün",
-    genre: "Gazete yazısı",
+    genre: "article",
     intro: "Şehirdeki hobi bahçelerini anlatan bir gazete yazısı: neden sıra bekleniyor, kim başvuruyor, kavga neden çıkıyor.",
     gloss: [
       { de: "die Warteliste", tr: "bekleme listesi", en: "waiting list" },
@@ -110,7 +110,7 @@ export const deB1: SkillExercise[] = [
     level: "B1",
     skill: "listening",
     title: "Führung durch den Stadtwald",
-    genre: "Rehberli gezi",
+    genre: "guide",
     intro: "Bir orman görevlisi gruba ormanı gezdiriyor: neyin değiştiğini, ne diktiklerini ve ziyaretçilerden ne beklediğini anlatıyor.",
     gloss: [
       { de: "der Förster", tr: "orman görevlisi", en: "forester" },
@@ -200,7 +200,7 @@ export const deB1: SkillExercise[] = [
     level: "B1",
     skill: "writing",
     title: "Antwort auf eine Anzeige",
-    genre: "Resmî e-posta",
+    genre: "email",
     intro: "Önce iki cümle kur, sonra bir gönüllülük ilanına yarı resmî bir e-postayla cevap ver.",
     gloss: [
       { de: "das Ehrenamt", tr: "gönüllü iş", en: "voluntary work" },
@@ -270,7 +270,7 @@ export const deB1: SkillExercise[] = [
     level: "B1",
     skill: "speaking",
     title: "Zu Hause oder im Büro?",
-    genre: "Monolog",
+    genre: "monologue",
     intro: "Bir dakikaya yakın tek başına konuşacaksın: görüşünü söyle ve gerekçelendir.",
     gloss: [],
     minutes: 6,
@@ -310,7 +310,7 @@ export const deB1: SkillExercise[] = [
     level: "B1",
     skill: "grammar",
     title: "Das Verb wandert ans Ende",
-    genre: "Kural",
+    genre: "grammar",
     intro: "Yan cümlenin tek büyük kuralı ve onun üç sık bağlacı: weil, dass, wenn.",
     focus: "Nebensatz: weil / dass / wenn — çekimli fiil sona",
     gloss: [

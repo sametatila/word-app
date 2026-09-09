@@ -233,7 +233,7 @@ async function SuggestionCard({ skill, meta, reason }: { skill: SkillId; meta: S
         </span>
         <span className="block truncate text-sm font-bold">{meta.title}</span>
         <span className="muted block truncate text-caption">
-          {reason} {meta.genre} · {t("skills.dk", { n: meta.minutes })}
+          {reason} {t(`genre.${meta.genre}`)} · {t("skills.dk", { n: meta.minutes })}
         </span>
       </span>
       <ChevronRightIcon className="size-4 shrink-0" />
@@ -268,7 +268,7 @@ async function Row({
       <span className="min-w-0 flex-1">
         <span className="block truncate text-strong">{meta.title}</span>
         <span className="muted block text-caption">
-          {meta.genre} · {t("skills.dk", { n: meta.minutes })} · {t("mockexams.n_items_short", { n: meta.items })}
+          {t(`genre.${meta.genre}`)} · {t("skills.dk", { n: meta.minutes })} · {t("mockexams.n_items_short", { n: meta.items })}
           {isNext ? (
             <>
               {" · "}

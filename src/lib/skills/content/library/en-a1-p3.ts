@@ -18,7 +18,7 @@ export const enA1P3: SkillExercise[] = [
     level: "A1",
     skill: "reading",
     title: "Lemon Cake — Easy and Fast",
-    genre: "Tarif",
+    genre: "guide",
     intro: "Basit bir kek tarifini okuyacaksın: neler gerekiyor, sıra nasıl, sonunda ne öneriliyor.",
     gloss: [
       { de: "flour", tr: "un" },
@@ -90,7 +90,7 @@ export const enA1P3: SkillExercise[] = [
     level: "A1",
     skill: "listening",
     title: "The Museum Closes in Twenty Minutes",
-    genre: "Anons",
+    genre: "phone",
     intro: "Müzede kapanış anonsunu dinleyeceksin: hangi kat önce kapanıyor, mağaza ne zamana kadar açık, yarın ne var.",
     gloss: [
       { de: "floor", tr: "kat" },
@@ -161,7 +161,7 @@ export const enA1P3: SkillExercise[] = [
     level: "A1",
     skill: "writing",
     title: "I Am Late",
-    genre: "Mesaj",
+    genre: "message",
     intro: "Arkadaşın seni bekliyor ama geciktin; önce iki cümle kur, sonra ona kısa bir mesaj yaz.",
     gloss: [
       { de: "late", tr: "geç" },
@@ -218,7 +218,7 @@ export const enA1P3: SkillExercise[] = [
     level: "A1",
     skill: "speaking",
     title: "w and v",
-    genre: "Ses çalışması",
+    genre: "pronounce",
     intro: "İngilizcede „w“ dudaklarla, „v“ ise diş ve dudakla çıkar; Türkçedeki tek v sesi ikisinin arasında kalır.",
     gloss: [
       { de: "van", tr: "kamyonet" },
@@ -294,7 +294,7 @@ export const enA1P3: SkillExercise[] = [
     level: "A1",
     skill: "grammar",
     title: "I work or I am working?",
-    genre: "Kural",
+    genre: "grammar",
     intro: "Türkçedeki tek „-yor“ eki İngilizcede ikiye ayrılır: alışkanlık başka biçim, şu an başka biçim ister.",
     focus: "Present continuous ile present simple farkı",
     gloss: [

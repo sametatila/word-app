@@ -30,7 +30,7 @@ export const c1U07: SkillExercise[] = [
     skill: "reading",
     unit: 7,
     title: "Spontan ist auch nur vorbereitet",
-    genre: "Deneme",
+    genre: "essay",
     intro: "Doğaçlama üstüne bir yazı. Hazırlıksız konuşan neye dayanıyor?",
     gloss: [
       { de: "improvisieren", tr: "doğaçlama yapmak", en: "to improvise" },
@@ -113,7 +113,7 @@ export const c1U07: SkillExercise[] = [
     skill: "reading",
     unit: 7,
     title: "Wie eine Geschichte trägt",
-    genre: "Rehber yazısı",
+    genre: "guide",
     intro: "Anlatı tekniği üstüne bir yazı. Gerilim nereden geliyor?",
     gloss: [
       { de: "der Spannungsbogen", tr: "gerilim yayı", en: "narrative arc" },
@@ -188,7 +188,7 @@ export const c1U07: SkillExercise[] = [
     skill: "listening",
     unit: 7,
     title: "Zwei Minuten, kein Manuskript",
-    genre: "Etkinlik",
+    genre: "info",
     intro: "Sunucu bir aksilikle karşılaşıyor. Boşluğu nasıl dolduruyor?",
     gloss: [
       { de: "der Auftakt", tr: "açılış", en: "opening" },
@@ -264,7 +264,7 @@ export const c1U07: SkillExercise[] = [
     skill: "listening",
     unit: 7,
     title: "Schlagfertig, aber nicht scharf",
-    genre: "Diyalog",
+    genre: "dialogue",
     intro: "İğneleyici bir söz geliyor. Cevap nasıl veriliyor?",
     gloss: [
       { de: "die Schlagfertigkeit", tr: "hazırcevaplık", en: "quick wit" },
@@ -340,7 +340,7 @@ export const c1U07: SkillExercise[] = [
     skill: "writing",
     unit: 7,
     title: "Anlatı iskeleti ve geçiş",
-    genre: "Dil bilgisi",
+    genre: "grammar",
     intro: "Lage, Wendung, Folge — üç hamle; ve iki cümleyi bağlayan geçiş.",
     gloss: [
       { de: "die Wendung", tr: "dönüş noktası", en: "turn" },
@@ -386,7 +386,7 @@ export const c1U07: SkillExercise[] = [
     skill: "writing",
     unit: 7,
     title: "Zwei Minuten füllen",
-    genre: "Konuşma metni",
+    genre: "monologue",
     intro: "Teknik arıza: elinde metin yok. Boşluğu bir hikâyeyle doldur ve geçişi kur.",
     gloss: [
       { de: "die Überleitung", tr: "geçiş", en: "transition" },

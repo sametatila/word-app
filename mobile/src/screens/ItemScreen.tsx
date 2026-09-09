@@ -148,7 +148,7 @@ export function ItemScreen() {
         <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.sm, flex: 1 }}>
           {Icon && <View style={{ width: 34, height: 34, borderRadius: radii.sm, backgroundColor: tint, alignItems: "center", justifyContent: "center" }}>{Icon({ color: "#fff", size: 18 })}</View>}
           <View style={{ flex: 1 }}>
-            <Text variant="micro" color={colors.textMuted}>{t(KIND_KEY[kind as keyof typeof KIND_KEY] ?? "") || t("item.content")} · {exercise.genre}</Text>
+            <Text variant="micro" color={colors.textMuted}>{t(KIND_KEY[kind as keyof typeof KIND_KEY] ?? "") || t("item.content")} · {t(`genre.${exercise.genre}`)}</Text>
             <Text variant="h3" numberOfLines={1}>{exercise.title}</Text>
           </View>
         </View>

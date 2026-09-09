@@ -17,7 +17,7 @@ export const deA2P3: SkillExercise[] = [
     level: "A2",
     skill: "reading",
     title: "Seit einem Monat werfe ich nichts mehr weg",
-    genre: "Blog",
+    genre: "blog",
     intro: "Birinin gıda israfını azaltma denemesini anlattığı blog yazısını okuyacaksın: önce nasıldı, ne değişti, sonuç ne oldu.",
     gloss: [
       { de: "der Beutel", tr: "poşet", en: "bag" },
@@ -99,7 +99,7 @@ export const deA2P3: SkillExercise[] = [
     level: "A2",
     skill: "listening",
     title: "Die Marktstraße ohne Autos",
-    genre: "Röportaj",
+    genre: "interview",
     intro: "Bir muhabir sokakta iki kişiye yeni yaya bölgesini soruyor: kim ne buluyor, sorun ne.",
     gloss: [
       { de: "der Fußgänger", tr: "yaya", en: "pedestrian" },
@@ -180,7 +180,7 @@ export const deA2P3: SkillExercise[] = [
     level: "A2",
     skill: "writing",
     title: "Neu in der Stadt",
-    genre: "Forum yazısı",
+    genre: "forum",
     intro: "Bir forumda yeni şehirde arkadaş edinmeyi soruyorlar; önce iki cümle kur, sonra kendi deneyiminle cevap yaz.",
     gloss: [
       { de: "der Verein", tr: "dernek", en: "club" },
@@ -243,7 +243,7 @@ export const deA2P3: SkillExercise[] = [
     level: "A2",
     skill: "speaking",
     title: "Gesprochenes und stummes h",
-    genre: "Ses çalışması",
+    genre: "pronounce",
     intro: "Kelime ya da hece başındaki „h“ üflenerek söylenir; ünlüden sonraki „h“ ise hiç duyulmaz, yalnız ünlüyü uzatır.",
     gloss: [
       { de: "der Hunger", tr: "açlık", en: "hunger" },
@@ -319,7 +319,7 @@ export const deA2P3: SkillExercise[] = [
     level: "A2",
     skill: "grammar",
     title: "größer, am größten",
-    genre: "Kural",
+    genre: "grammar",
     intro: "Karşılaştırma Almancada ayrı bir kelimeyle değil, sıfatın kendisine gelen eklerle kurulur.",
     focus: "Komparativ ve Superlativ",
     gloss: [

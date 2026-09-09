@@ -32,7 +32,7 @@ export const b1U34: SkillExercise[] = [
     skill: "reading",
     unit: 34,
     title: "Gesund bleiben im Alltag",
-    genre: "Sağlık rehberi",
+    genre: "guide",
     intro: "Gündelik korunma. Neyi nasıl yaparak?",
     minutes: 5,
     gloss: [
@@ -98,7 +98,7 @@ export const b1U34: SkillExercise[] = [
     skill: "reading",
     unit: 34,
     title: "Drei Generationen",
-    genre: "Aile yazısı",
+    genre: "text",
     intro: "Üç kuşak bir arada. Kim neyi hatırlıyor, kim neyi anlatmıyor?",
     minutes: 5,
     gloss: [
@@ -166,7 +166,7 @@ export const b1U34: SkillExercise[] = [
     skill: "listening",
     unit: 34,
     title: "Bald zu dritt",
-    genre: "Aile konuşması",
+    genre: "dialogue",
     intro: "Bir doğum yaklaşıyor. Ne planlanıyor, ne değişiyor?",
     minutes: 4,
     gloss: [
@@ -228,7 +228,7 @@ export const b1U34: SkillExercise[] = [
     skill: "listening",
     unit: 34,
     title: "Wer kommt alles?",
-    genre: "Aile planı",
+    genre: "info",
     intro: "Bir aile buluşması planlanıyor. Kim geliyor?",
     minutes: 4,
     gloss: [
@@ -291,7 +291,7 @@ export const b1U34: SkillExercise[] = [
     skill: "writing",
     unit: 34,
     title: "Wie ich gesund bleibe",
-    genre: "Alışkanlık yazısı",
+    genre: "text",
     intro: "Nasıl sağlıklı kaldığını yaz. Türkçedeki '-erek' burada tam bir cümle.",
     minutes: 8,
     gloss: [
@@ -345,7 +345,7 @@ export const b1U34: SkillExercise[] = [
     skill: "writing",
     unit: 34,
     title: "Meine Familie",
-    genre: "Aile betimlemesi",
+    genre: "profile",
     intro: "Aileni anlat. Bazı eril isimler yalın hâl dışında ek alır.",
     minutes: 12,
     gloss: [

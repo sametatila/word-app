@@ -32,7 +32,7 @@ export const b2U17: SkillExercise[] = [
     skill: "reading",
     unit: 17,
     title: "Warum berührt uns Musik?",
-    genre: "Popüler bilim yazısı",
+    genre: "article",
     intro: "Müziğin neden etkilediğini anlatan bir yazı. Nasıl sorusunun cevaplarına dikkat et.",
     gloss: [
       { de: "der Rhythmus", tr: "ritim", en: "rhythm" },
@@ -105,7 +105,7 @@ export const b2U17: SkillExercise[] = [
     skill: "reading",
     unit: 17,
     title: "Beton oder Altbau?",
-    genre: "Mimarlık yazısı",
+    genre: "text",
     intro: "Eski yapı ile yeni yapı tartışması. Binaları anlatan ilgi cümlelerine dikkat et.",
     gloss: [
       { de: "der Altbau", tr: "eski yapı", en: "old building" },
@@ -178,7 +178,7 @@ export const b2U17: SkillExercise[] = [
     skill: "listening",
     unit: 17,
     title: "Der entscheidende Moment",
-    genre: "Diyalog",
+    genre: "dialogue",
     intro: "İki taraftar dünkü maçı konuşuyor. Anı anlatan sıfatlara dikkat et.",
     gloss: [
       { de: "der Wettkampf", tr: "müsabaka", en: "competition" },
@@ -257,7 +257,7 @@ export const b2U17: SkillExercise[] = [
     skill: "listening",
     unit: 17,
     title: "Auf dem Volksfest",
-    genre: "Diyalog",
+    genre: "dialogue",
     intro: "Festivalden dönen iki kişi konuşuyor. Adlaştırılmış ifadelere dikkat et.",
     gloss: [
       { de: "das Volksfest", tr: "halk şenliği", en: "public festival" },
@@ -332,7 +332,7 @@ export const b2U17: SkillExercise[] = [
     skill: "writing",
     unit: 17,
     title: "Anı kur",
-    genre: "Cümle kurma",
+    genre: "build",
     intro: "indem etkiyi, ortaç sıfatı anı, adlaştırma ise hâli tek öbeğe sığdırır.",
     gloss: [
       { de: "der Rhythmus", tr: "ritim", en: "rhythm" },
@@ -386,7 +386,7 @@ export const b2U17: SkillExercise[] = [
     skill: "writing",
     unit: 17,
     title: "Der Erlebnisbericht",
-    genre: "Deneyim yazısı",
+    genre: "personal",
     intro: "Bir anı anlat — sıfat yığmadan, ne olduğunu söyleyerek.",
     gloss: [
       { de: "die Tribüne", tr: "tribün", en: "stand" },

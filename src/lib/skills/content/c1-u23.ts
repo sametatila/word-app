@@ -35,7 +35,7 @@ export const c1U23: SkillExercise[] = [
     skill: "reading",
     unit: 23,
     title: "Die feinen Unterschiede",
-    genre: "Deneme",
+    genre: "essay",
     intro: "Doğrudan eleştiri, kısık övgü — ve ikisinin birleşimi.",
     gloss: [
       { de: "die Direktheit", tr: "doğrudanlık", en: "directness" },
@@ -117,7 +117,7 @@ export const c1U23: SkillExercise[] = [
     skill: "reading",
     unit: 23,
     title: "Die Sprache der Krise",
-    genre: "Rehber yazısı",
+    genre: "guide",
     intro: "Baskı altında Almanca hazır bloklara geçiyor. Bu bir avantaj.",
     gloss: [
       { de: "Maßnahmen ergreifen", tr: "önlem almak", en: "to take measures" },
@@ -199,7 +199,7 @@ export const c1U23: SkillExercise[] = [
     skill: "listening",
     unit: 23,
     title: "Trocken, nicht abwesend",
-    genre: "Sohbet",
+    genre: "dialogue",
     intro: "Alman mizahı var mı? Soru yanlış kurulmuş olabilir.",
     gloss: [
       { de: "trocken", tr: "kuru (mizah)", en: "deadpan" },
@@ -275,7 +275,7 @@ export const c1U23: SkillExercise[] = [
     skill: "listening",
     unit: 23,
     title: "Die Krisensitzung",
-    genre: "Toplantı",
+    genre: "meeting",
     intro: "Kademeler, yetki ve ara çözüm — hepsi on dakikada.",
     gloss: [
       { de: "die Eskalationsstufe", tr: "tırmanma kademesi", en: "escalation level" },
@@ -351,7 +351,7 @@ export const c1U23: SkillExercise[] = [
     skill: "writing",
     unit: 23,
     title: "Hazır bloklar",
-    genre: "Dil bilgisi",
+    genre: "grammar",
     intro: "Funktionsverbgefüge ve kademe farkı.",
     gloss: [
       { de: "Maßnahmen ergreifen", tr: "önlem almak", en: "to take measures" },
@@ -398,7 +398,7 @@ export const c1U23: SkillExercise[] = [
     skill: "writing",
     unit: 23,
     title: "Kriz durumu bildirimi",
-    genre: "Kurum yazısı",
+    genre: "formal",
     intro: "Ara çözümü ara çözüm diye yaz, tarih verme.",
     gloss: [
       { de: "die Zwischenlösung", tr: "ara çözüm", en: "interim solution" },

@@ -18,7 +18,7 @@ export const enB1P2: SkillExercise[] = [
     level: "B1",
     skill: "reading",
     title: "The Night the Town Turned Off Its Lights",
-    genre: "Haber",
+    genre: "article",
     intro: "Bir kasabanın sokak lambalarını doksan dakika söndürdüğü geceyi anlatan haberi okuyacaksın: fikir kimden çıktı, ne ölçüldü, sonra ne olacak.",
     gloss: [
       { de: "council", tr: "belediye meclisi" },
@@ -108,7 +108,7 @@ export const enB1P2: SkillExercise[] = [
     level: "B1",
     skill: "listening",
     title: "A Free Year",
-    genre: "Podcast",
+    genre: "phone",
     intro: "Bir podcast üç kişiye aynı soruyu soruyor: bir yıl boyunca masrafların karşılansaydı ne yapardın?",
     gloss: [
       { de: "warehouse", tr: "depo" },
@@ -186,7 +186,7 @@ export const enB1P2: SkillExercise[] = [
     level: "B1",
     skill: "writing",
     title: "A Terrace on the Roof?",
-    genre: "Forum katkısı",
+    genre: "forum",
     intro: "Apartmanın forumunda çatı terası tartışılıyor; önce iki cümle kur, sonra gerekçeli katkını yaz.",
     gloss: [
       { de: "terrace", tr: "teras" },
@@ -252,7 +252,7 @@ export const enB1P2: SkillExercise[] = [
     level: "B1",
     skill: "speaking",
     title: "One Extra Hour",
-    genre: "Monolog",
+    genre: "monologue",
     intro: "Bir dakikaya yakın tek başına konuşacaksın: bir seçim yap, gerekçelendir ve neyi seçmediğini de söyle.",
     gloss: [],
     minutes: 6,
@@ -293,7 +293,7 @@ export const enB1P2: SkillExercise[] = [
     level: "B1",
     skill: "grammar",
     title: "if I go and if I went",
-    genre: "Kural",
+    genre: "grammar",
     intro: "Aynı „if“ kelimesi iki ayrı dünyayı kurar: biri gerçekten olabilecek, öteki yalnız hayal edilen.",
     focus: "Conditionals 1 ve 2",
     gloss: [

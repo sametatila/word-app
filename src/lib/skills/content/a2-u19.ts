@@ -33,7 +33,7 @@ export const a2U19: SkillExercise[] = [
     skill: "reading",
     unit: 19,
     title: "Feste im deutschen Jahr",
-    genre: "Dergi yazısı",
+    genre: "article",
     intro: "Yıl boyunca hangi kutlamalar var, hangisi resmî tatil?",
     gloss: [
       { de: "das Fest", tr: "bayram, kutlama", en: "festival" },
@@ -99,7 +99,7 @@ export const a2U19: SkillExercise[] = [
     skill: "reading",
     unit: 19,
     title: "Eingeladen — und jetzt?",
-    genre: "Bilgilendirme",
+    genre: "info",
     intro: "Almanya'da eve davet: ne getirilir, ne zaman gelinir, ne beklenir?",
     gloss: [
       { de: "der Gastgeber", tr: "ev sahibi", en: "host" },
@@ -161,7 +161,7 @@ export const a2U19: SkillExercise[] = [
     skill: "listening",
     unit: 19,
     title: "Auf einer Hochzeit",
-    genre: "Diyalog",
+    genre: "dialogue",
     intro: "Düğünde iki misafir sohbet ediyor. Kim kimin nesi, konuşma nasıldı?",
     gloss: [
       { de: "die Braut", tr: "gelin", en: "bride" },
@@ -225,7 +225,7 @@ export const a2U19: SkillExercise[] = [
     skill: "listening",
     unit: 19,
     title: "Ich muss leider absagen",
-    genre: "Telefon görüşmesi",
+    genre: "phone",
     intro: "Bir davet iptal ediliyor. Sebep ne, yerine ne öneriliyor?",
     gloss: [
       { de: "die Absage", tr: "iptal", en: "cancellation" },
@@ -288,7 +288,7 @@ export const a2U19: SkillExercise[] = [
     skill: "writing",
     unit: 19,
     title: "weil, denn, dass",
-    genre: "Dil bilgisi",
+    genre: "grammar",
     intro: "Üçü de gerekçe ya da içerik veriyor, ama fiilin yeri farklı.",
     gloss: [
       { de: "absagen", tr: "iptal etmek", en: "to cancel" },
@@ -331,7 +331,7 @@ export const a2U19: SkillExercise[] = [
     skill: "writing",
     unit: 19,
     title: "Eine höfliche Absage",
-    genre: "Mesaj",
+    genre: "message",
     intro: "Daveti iptal et: sebep ne, ne kadar üzgünsün, ne öneriyorsun?",
     gloss: [
       { de: "die Absage", tr: "iptal", en: "cancellation" },

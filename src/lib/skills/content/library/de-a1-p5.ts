@@ -18,7 +18,7 @@ export const deA1P5: SkillExercise[] = [
     level: "A1",
     skill: "reading",
     title: "Waschsalon Blau — so geht es",
-    genre: "Kullanma talimatı",
+    genre: "guide",
     intro: "Çamaşırhanenin duvarındaki kullanım talimatını okuyacaksın: hangi sırayla ne yapılıyor, ne kadar tutuyor.",
     gloss: [
       { de: "der Waschsalon", tr: "çamaşırhane", en: "laundrette" },
@@ -93,7 +93,7 @@ export const deA1P5: SkillExercise[] = [
     level: "A1",
     skill: "listening",
     title: "Willkommen auf dem Bauernhof",
-    genre: "Tanıtım konuşması",
+    genre: "profile",
     intro: "Bir çiftlikte rehber grubu karşılıyor: gün nasıl geçecek, nerede ne yapılacak, sonunda ne var.",
     gloss: [
       { de: "der Bauernhof", tr: "çiftlik", en: "farm" },
@@ -164,7 +164,7 @@ export const deA1P5: SkillExercise[] = [
     level: "A1",
     skill: "writing",
     title: "Glückwunsch zur neuen Stelle",
-    genre: "Mesaj",
+    genre: "message",
     intro: "Bir arkadaşın iş bulduğunu yazmış; önce iki cümle kur, sonra ona kısa bir cevap mesajı yaz.",
     gloss: [
       { de: "der Glückwunsch", tr: "tebrik", en: "congratulation" },
@@ -225,7 +225,7 @@ export const deA1P5: SkillExercise[] = [
     level: "A1",
     skill: "speaking",
     title: "Kurzer oder langer Vokal?",
-    genre: "Ses çalışması",
+    genre: "pronounce",
     intro: "Almancada ünlünün uzunluğu anlamı değiştirir; yedi cümlede kısa ve uzun ünlüyü ayırarak söyle.",
     gloss: [
       { de: "der Ofen", tr: "fırın", en: "oven" },
@@ -301,7 +301,7 @@ export const deA1P5: SkillExercise[] = [
     level: "A1",
     skill: "grammar",
     title: "Wann stehst du auf?",
-    genre: "Kural",
+    genre: "grammar",
     intro: "Bazı fiiller cümlede ikiye ayrılır; ön ekin nereye gittiğini ve W-sorusunun sırasını öğren.",
     focus: "Ayrılabilen fiiller ve W-soruları",
     gloss: [

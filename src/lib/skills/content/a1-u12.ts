@@ -27,7 +27,7 @@ export const a1U12: SkillExercise[] = [
     skill: "reading",
     unit: 12,
     title: "Ein Geschenk für Mia",
-    genre: "Mesaj",
+    genre: "message",
     intro: "İki arkadaş hediye arıyor. Ne alacaklar?",
     gloss: [
       { de: "das Geschenk", tr: "hediye", en: "gift" },
@@ -87,7 +87,7 @@ export const a1U12: SkillExercise[] = [
     skill: "reading",
     unit: 12,
     title: "Auf dem Wochenmarkt",
-    genre: "Blog",
+    genre: "blog",
     intro: "Bir pazar gezisi. Ne alınıyor, ne kadar?",
     gloss: [
       { de: "frisch", tr: "taze", en: "fresh" },
@@ -145,7 +145,7 @@ export const a1U12: SkillExercise[] = [
     skill: "listening",
     unit: 12,
     title: "Ich möchte das umtauschen",
-    genre: "Diyalog",
+    genre: "dialogue",
     intro: "Bir müşteri iade yapmak istiyor. Sorun ne?",
     gloss: [
       { de: "umtauschen", tr: "değiştirmek", en: "to exchange" },
@@ -204,7 +204,7 @@ export const a1U12: SkillExercise[] = [
     skill: "listening",
     unit: 12,
     title: "Wie findest du das?",
-    genre: "Diyalog",
+    genre: "dialogue",
     intro: "İki arkadaş bir hediye seçiyor. Hangisi daha çok beğeniliyor?",
     gloss: [
       { de: "gefallen", tr: "hoşuna gitmek", en: "to please" },
@@ -262,7 +262,7 @@ export const a1U12: SkillExercise[] = [
     skill: "writing",
     unit: 12,
     title: "gefallen — dikkat!",
-    genre: "Dil bilgisi",
+    genre: "grammar",
     intro: "„gefallen“ kalıbını ve iade cümlelerini yaz.",
     gloss: [
       { de: "gefallen", tr: "hoşuna gitmek", en: "to please" },
@@ -305,7 +305,7 @@ export const a1U12: SkillExercise[] = [
     skill: "writing",
     unit: 12,
     title: "Ein Geschenk aussuchen",
-    genre: "Mesaj",
+    genre: "message",
     intro: "Arkadaşının mesajına cevap yaz: hangi hediyeyi öneriyorsun?",
     gloss: [
       { de: "das Geschenk", tr: "hediye", en: "gift" },

@@ -17,7 +17,7 @@ export const deB1P5: SkillExercise[] = [
     level: "B1",
     skill: "reading",
     title: "Lob der Langeweile",
-    genre: "Yorum yazısı",
+    genre: "opinion",
     intro: "Can sıkıntısını savunan kısa bir köşe yazısı okuyacaksın: yazar neyi iddia ediyor, hangi kanıtı kullanıyor, ne öneriyor.",
     gloss: [
       { de: "die Langeweile", tr: "can sıkıntısı", en: "boredom" },
@@ -101,7 +101,7 @@ export const deB1P5: SkillExercise[] = [
     level: "B1",
     skill: "listening",
     title: "Der letzte Meter vor dem Schultor",
-    genre: "Tartışma",
+    genre: "opinion",
     intro: "Veli toplantısında okul önündeki trafik konuşuluyor: sorun ne, kim itiraz ediyor, hangi karar çıkıyor.",
     gloss: [
       { de: "das Schultor", tr: "okul kapısı", en: "school gate" },
@@ -188,7 +188,7 @@ export const deB1P5: SkillExercise[] = [
     level: "B1",
     skill: "writing",
     title: "Anleitung für zwei Wochen",
-    genre: "Yönerge",
+    genre: "guide",
     intro: "Evine iki hafta bakacak birine yönerge yazacaksın; önce iki cümle kur, sonra yönergeyi yaz.",
     gloss: [
       { de: "gießen", tr: "sulamak", en: "to water" },
@@ -250,7 +250,7 @@ export const deB1P5: SkillExercise[] = [
     level: "B1",
     skill: "speaking",
     title: "Lohnt sich eine dritte Sprache?",
-    genre: "Monolog",
+    genre: "monologue",
     intro: "Bir dakikaya yakın tek başına konuşacaksın: kendi deneyiminden yola çıkarak bir soruyu yanıtla.",
     gloss: [],
     minutes: 6,
@@ -291,7 +291,7 @@ export const deB1P5: SkillExercise[] = [
     level: "B1",
     skill: "grammar",
     title: "zu, um … zu oder damit?",
-    genre: "Kural",
+    genre: "grammar",
     intro: "Üç yapı da cümlenin ikinci yarısını taşır; hangisini seçeceğini özne ve amaç belirler.",
     focus: "Infinitiv mit zu · um … zu · damit",
     gloss: [

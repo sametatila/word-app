@@ -32,7 +32,7 @@ export const c1U17: SkillExercise[] = [
     skill: "reading",
     unit: 17,
     title: "Das Wort, das man nicht wiederholt",
-    genre: "Dil yazısı",
+    genre: "text",
     intro: "Gönderme sözcükleri: tekrar etmeden nasıl geri işaret edilir?",
     gloss: [
       { de: "der Verweis", tr: "gönderme, atıf", en: "reference" },
@@ -115,7 +115,7 @@ export const c1U17: SkillExercise[] = [
     skill: "reading",
     unit: 17,
     title: "Was man weglassen darf",
-    genre: "Rehber yazısı",
+    genre: "guide",
     intro: "Eksilti: kısalık ne zaman ustalık, ne zaman kabalık?",
     gloss: [
       { de: "die Ellipse", tr: "eksilti", en: "ellipsis" },
@@ -192,7 +192,7 @@ export const c1U17: SkillExercise[] = [
     skill: "listening",
     unit: 17,
     title: "Das kann man so sehen",
-    genre: "Diyalog",
+    genre: "dialogue",
     intro: "Kasıtlı çift anlam: söylemeden söylemek.",
     gloss: [
       { de: "die Zweideutigkeit", tr: "çift anlamlılık", en: "ambiguity" },
@@ -272,7 +272,7 @@ export const c1U17: SkillExercise[] = [
     skill: "listening",
     unit: 17,
     title: "Der Einschub zwischen zwei Kommas",
-    genre: "Ders",
+    genre: "monologue",
     intro: "Ara açıklama: virgüller arasına ne sıkıştırılabilir?",
     gloss: [
       { de: "die Apposition", tr: "ara açıklama", en: "apposition" },
@@ -350,7 +350,7 @@ export const c1U17: SkillExercise[] = [
     skill: "writing",
     unit: 17,
     title: "Tekrar etme, işaret et",
-    genre: "Dil bilgisi",
+    genre: "grammar",
     intro: "Gönderme sözcükleri, ara açıklama ve eksilti.",
     gloss: [
       { de: "Letzteres", tr: "ikincisi", en: "the latter" },
@@ -397,7 +397,7 @@ export const c1U17: SkillExercise[] = [
     skill: "writing",
     unit: 17,
     title: "Zu kurz war zu teuer",
-    genre: "İş yazışması",
+    genre: "formal",
     intro: "Telgraf üslubuyla yazılmış bir ret mektubunu yeniden yaz.",
     gloss: [
       { de: "die Ellipse", tr: "eksilti", en: "ellipsis" },

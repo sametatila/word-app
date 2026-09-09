@@ -26,7 +26,7 @@ export const a1U07: SkillExercise[] = [
     skill: "reading",
     unit: 7,
     title: "Der Einkaufszettel",
-    genre: "Liste",
+    genre: "info",
     intro: "Bir alışveriş listesi ve kısa bir not okuyacaksın.",
     gloss: [
       { de: "brauchen", tr: "ihtiyacı olmak", en: "to need" },
@@ -86,7 +86,7 @@ export const a1U07: SkillExercise[] = [
     skill: "reading",
     unit: 7,
     title: "Was isst du gern?",
-    genre: "Forum mesajı",
+    genre: "forum",
     intro: "Üç kişi sevdiği ve sevmediği yemekleri yazıyor.",
     gloss: [
       { de: "mögen", tr: "sevmek", en: "to like" },
@@ -139,7 +139,7 @@ export const a1U07: SkillExercise[] = [
     skill: "listening",
     unit: 7,
     title: "Wo finde ich die Milch?",
-    genre: "Diyalog",
+    genre: "dialogue",
     intro: "Markette bir müşteri soru soruyor.",
     gloss: [
       { de: "finden", tr: "bulmak", en: "to find" },
@@ -195,7 +195,7 @@ export const a1U07: SkillExercise[] = [
     skill: "listening",
     unit: 7,
     title: "Wir kochen zusammen",
-    genre: "Diyalog",
+    genre: "dialogue",
     intro: "İki kişi birlikte yemek yapıyor. Kim ne yapıyor?",
     gloss: [
       { de: "schneiden", tr: "doğramak", en: "to cut" },
@@ -253,7 +253,7 @@ export const a1U07: SkillExercise[] = [
     skill: "writing",
     unit: 7,
     title: "Ein Kilo Tomaten",
-    genre: "Dil bilgisi",
+    genre: "grammar",
     intro: "Miktar kalıplarını yaz: kilo, şişe, tane.",
     gloss: [
       { de: "das Kilo", tr: "kilo", en: "kilo" },
@@ -290,7 +290,7 @@ export const a1U07: SkillExercise[] = [
     skill: "writing",
     unit: 7,
     title: "Einkaufszettel schreiben",
-    genre: "Not",
+    genre: "message",
     intro: "Ev arkadaşına alışveriş notu yaz.",
     gloss: [
       { de: "der Supermarkt", tr: "market", en: "supermarket" },

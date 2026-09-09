@@ -37,7 +37,7 @@ export const a1U23: SkillExercise[] = [
     skill: "reading",
     unit: 23,
     title: "Gesund leben",
-    genre: "Broşür",
+    genre: "ad",
     intro: "Sağlık ocağının broşürü. Beş öneri.",
     gloss: [
       { de: "gesund", tr: "sağlıklı", en: "healthy" },
@@ -91,7 +91,7 @@ export const a1U23: SkillExercise[] = [
     skill: "reading",
     unit: 23,
     title: "Zwei Nachrichten",
-    genre: "E-posta",
+    genre: "email",
     intro:
       "Aynı kişi iki mesaj yazıyor: biri arkadaşına, biri muayenehaneye. Kapanışlara dikkat.",
     gloss: [
@@ -153,7 +153,7 @@ export const a1U23: SkillExercise[] = [
     skill: "listening",
     unit: 23,
     title: "Am Telefon",
-    genre: "Telefon",
+    genre: "phone",
     intro:
       "İki telefon. Almanya'da telefonu ADINLA açarsın — „alo“ demek eksik sayılır.",
     gloss: [
@@ -218,7 +218,7 @@ export const a1U23: SkillExercise[] = [
     skill: "listening",
     unit: 23,
     title: "Beim Zahnarzt",
-    genre: "Muayene",
+    genre: "dialogue",
     intro: "Diş hekiminde. Hasta korkuyor.",
     gloss: [
       { de: "der Zahn", tr: "diş", en: "tooth" },
@@ -277,7 +277,7 @@ export const a1U23: SkillExercise[] = [
     skill: "writing",
     unit: 23,
     title: "Wiederhören oder Wiedersehen?",
-    genre: "Dil bilgisi",
+    genre: "grammar",
     intro: "Üç kalıp, üçü de yanlış yerde kullanılınca göze batar.",
     gloss: [
       { de: "das Wiederhören", tr: "tekrar duyma (telefonda vedalaşma)", en: "hearing again" },
@@ -315,7 +315,7 @@ export const a1U23: SkillExercise[] = [
     skill: "writing",
     unit: 23,
     title: "Eine E-Mail an die Praxis",
-    genre: "E-posta",
+    genre: "email",
     intro: "Resmî bir e-posta yaz. Kapanışı doğru seç.",
     gloss: [
       { de: "möchten", tr: "istemek (kibar)", en: "would like" },

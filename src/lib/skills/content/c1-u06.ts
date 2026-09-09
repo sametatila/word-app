@@ -30,7 +30,7 @@ export const c1U06: SkillExercise[] = [
     skill: "reading",
     unit: 6,
     title: "Wo die Betonung im Satz sitzt",
-    genre: "Dil yazısı",
+    genre: "text",
     intro: "Almanca vurguyu nereye koyuyor? Ses değil, dizilim.",
     gloss: [
       { de: "die Hervorhebung", tr: "öne çıkarma", en: "emphasis" },
@@ -114,7 +114,7 @@ export const c1U06: SkillExercise[] = [
     skill: "reading",
     unit: 6,
     title: "Drei Sätze und ein Bild",
-    genre: "Rehber yazısı",
+    genre: "guide",
     intro: "Üçleme ve metafor: neden işe yarıyor, ne zaman bozuyor?",
     gloss: [
       { de: "die Aufzählung", tr: "sıralama", en: "enumeration" },
@@ -198,7 +198,7 @@ export const c1U06: SkillExercise[] = [
     skill: "listening",
     unit: 6,
     title: "Der Zwischenruf",
-    genre: "Etkinlik",
+    genre: "info",
     intro: "Sunumda laf atma. Konuşmacı nasıl karşılıyor?",
     gloss: [
       { de: "der Zwischenruf", tr: "laf atma", en: "heckling" },
@@ -276,7 +276,7 @@ export const c1U06: SkillExercise[] = [
     skill: "listening",
     unit: 6,
     title: "Ein Bild zu viel",
-    genre: "Diyalog",
+    genre: "dialogue",
     intro: "Sunum provası. Hangi metafor taşıyor, hangisi ters tepiyor?",
     gloss: [
       { de: "die Metapher", tr: "metafor", en: "metaphor" },
@@ -353,7 +353,7 @@ export const c1U06: SkillExercise[] = [
     skill: "writing",
     unit: 6,
     title: "Vurguyu dizilimle kurmak",
-    genre: "Dil bilgisi",
+    genre: "grammar",
     intro: "İlk konum vurguyu taşır; fiil her hâlükârda ikinci sırada kalır.",
     gloss: [
       { de: "hervorheben", tr: "öne çıkarmak", en: "to highlight" },
@@ -396,7 +396,7 @@ export const c1U06: SkillExercise[] = [
     skill: "writing",
     unit: 6,
     title: "Der Einstieg einer Rede",
-    genre: "Konuşma metni",
+    genre: "monologue",
     intro: "Bir konuşmanın ilk otuz saniyesi: devrik cümle, üçleme, taşıyan bir imge.",
     gloss: [
       { de: "die Hervorhebung", tr: "öne çıkarma", en: "emphasis" },

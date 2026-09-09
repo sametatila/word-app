@@ -18,7 +18,7 @@ export const enB1P3: SkillExercise[] = [
     level: "B1",
     skill: "reading",
     title: "What Happens to Your Suitcase",
-    genre: "Bilgilendirme",
+    genre: "info",
     intro: "Havalimanında bagajın izlediği yolu anlatan bir yazı okuyacaksın: hangi adımlar var, ne zaman insan devreye giriyor.",
     gloss: [
       { de: "label", tr: "etiket" },
@@ -108,7 +108,7 @@ export const enB1P3: SkillExercise[] = [
     level: "B1",
     skill: "listening",
     title: "Where Your Water Comes From",
-    genre: "Sunum",
+    genre: "monologue",
     intro: "Su arıtma tesisinde bir sunum dinleyeceksin: su nereden geliyor, neler yapılıyor, ne yapılmıyor.",
     gloss: [
       { de: "layer", tr: "katman" },
@@ -189,7 +189,7 @@ export const enB1P3: SkillExercise[] = [
     level: "B1",
     skill: "writing",
     title: "Three Months on the Night Desk",
-    genre: "Blog yazısı",
+    genre: "blog",
     intro: "Çoğu kişinin görmediği bir işi anlatan blog yazısı yazacaksın; önce iki cümle kur, sonra yazıyı yaz.",
     gloss: [
       { de: "desk", tr: "resepsiyon" },
@@ -252,7 +252,7 @@ export const enB1P3: SkillExercise[] = [
     level: "B1",
     skill: "speaking",
     title: "First Aid Every Year?",
-    genre: "Monolog",
+    genre: "monologue",
     intro: "Bir dakikaya yakın tek başına konuşacaksın: görüşünü söyle, karşı görüşü kabul et ve bir şart koy.",
     gloss: [],
     minutes: 6,
@@ -295,7 +295,7 @@ export const enB1P3: SkillExercise[] = [
     level: "B1",
     skill: "grammar",
     title: "is done, was done",
-    genre: "Kural",
+    genre: "grammar",
     intro: "Kurum ve süreç dilinin temel çatısı: işi kimin yaptığı değil, neyin yapıldığı öne çıkar.",
     focus: "Passive voice: present ve past",
     gloss: [

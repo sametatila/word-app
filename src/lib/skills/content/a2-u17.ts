@@ -32,7 +32,7 @@ export const a2U17: SkillExercise[] = [
     skill: "reading",
     unit: 17,
     title: "Das Wochenendwetter",
-    genre: "Hava raporu",
+    genre: "report",
     intro: "Hafta sonu hava tahmini. Ne zaman güneş, ne zaman fırtına?",
     gloss: [
       { de: "bewölkt", tr: "bulutlu", en: "cloudy" },
@@ -93,7 +93,7 @@ export const a2U17: SkillExercise[] = [
     skill: "reading",
     unit: 17,
     title: "Das Schloss am Teich",
-    genre: "Broşür",
+    genre: "ad",
     intro: "Şehir turu broşürü. Bu şato ne kadar eski, eskiden burada ne vardı?",
     gloss: [
       { de: "das Schloss", tr: "şato", en: "castle" },
@@ -156,7 +156,7 @@ export const a2U17: SkillExercise[] = [
     skill: "listening",
     unit: 17,
     title: "Was machen wir am Sonntag?",
-    genre: "Diyalog",
+    genre: "dialogue",
     intro: "İki arkadaş pazar gününü planlıyor. Hava nasıl olursa ne yapacaklar?",
     gloss: [
       { de: "die Bootsfahrt", tr: "tekne turu", en: "boat trip" },
@@ -220,7 +220,7 @@ export const a2U17: SkillExercise[] = [
     skill: "listening",
     unit: 17,
     title: "Auf dem Campingplatz",
-    genre: "Diyalog",
+    genre: "dialogue",
     intro: "Kamp alanına varış. Neresi boş, orada ne var, ne yasak?",
     gloss: [
       { de: "das Zelt", tr: "çadır", en: "tent" },
@@ -283,7 +283,7 @@ export const a2U17: SkillExercise[] = [
     skill: "writing",
     unit: 17,
     title: "Yarın, koşulsa, eskiden",
-    genre: "Dil bilgisi",
+    genre: "grammar",
     intro: "Üç ayrı zaman: gelecek werden, koşul wenn, geçmiş war.",
     gloss: [
       { de: "sonnig", tr: "güneşli", en: "sunny" },
@@ -326,7 +326,7 @@ export const a2U17: SkillExercise[] = [
     skill: "writing",
     unit: 17,
     title: "Ausflug am Sonntag?",
-    genre: "Mesaj",
+    genre: "message",
     intro: "Arkadaşının mesajına cevap ver: hava nasıl olursa ne yapılacak?",
     gloss: [
       { de: "der Ausflug", tr: "gezi", en: "excursion" },

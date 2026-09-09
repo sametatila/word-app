@@ -34,7 +34,7 @@ export const b1U31: SkillExercise[] = [
     skill: "reading",
     unit: 31,
     title: "Mit der Bahn quer durchs Land",
-    genre: "Yolculuk bilgisi",
+    genre: "info",
     intro: "Trenle yolculuk. Hangi araçla nereye, ne kadar mola?",
     minutes: 5,
     gloss: [
@@ -100,7 +100,7 @@ export const b1U31: SkillExercise[] = [
     skill: "reading",
     unit: 31,
     title: "Was auf der Straße gilt",
-    genre: "Trafik bilgisi",
+    genre: "info",
     intro: "Trafik kuralları. Kim geçer, nerede yürünür?",
     minutes: 5,
     gloss: [
@@ -167,7 +167,7 @@ export const b1U31: SkillExercise[] = [
     skill: "listening",
     unit: 31,
     title: "Vor der Landung",
-    genre: "Uçakta anons ve sohbet",
+    genre: "phone",
     intro: "Uçuşun sonu. Ne söyleniyor, yolcu ne soruyor?",
     minutes: 4,
     gloss: [
@@ -229,7 +229,7 @@ export const b1U31: SkillExercise[] = [
     skill: "listening",
     unit: 31,
     title: "Unterwegs mit dem Auto",
-    genre: "Yolda konuşma",
+    genre: "dialogue",
     intro: "Araba yolda sorun çıkarıyor. Ne oluyor, nereye gidiliyor?",
     minutes: 4,
     gloss: [
@@ -292,7 +292,7 @@ export const b1U31: SkillExercise[] = [
     skill: "writing",
     unit: 31,
     title: "Der Reiseplan",
-    genre: "Yolculuk planı",
+    genre: "info",
     intro: "Bir yolculuk planla. Araç bildirirken artikel düşmez.",
     minutes: 8,
     gloss: [
@@ -346,7 +346,7 @@ export const b1U31: SkillExercise[] = [
     skill: "writing",
     unit: 31,
     title: "Reisebericht",
-    genre: "Yolculuk anlatısı",
+    genre: "story",
     intro: "Bir yolculuğu anlat. Türkçe '-e' Almancada üç ayrı sözcüktür.",
     minutes: 12,
     gloss: [

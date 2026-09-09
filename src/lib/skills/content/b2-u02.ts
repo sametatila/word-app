@@ -31,7 +31,7 @@ export const b2U02: SkillExercise[] = [
     skill: "reading",
     unit: 2,
     title: "Die Frage hinter der Frage",
-    genre: "Blog yazısı",
+    genre: "blog",
     intro: "Sunum sonrası soru turunu yöneten biri, iyi cevabın sorudan önce başladığını anlatıyor.",
     gloss: [
       { de: "die Zwischenfrage", tr: "ara soru", en: "interposed question" },
@@ -104,7 +104,7 @@ export const b2U02: SkillExercise[] = [
     skill: "reading",
     unit: 2,
     title: "Wer macht was bis wann",
-    genre: "İç bülten yazısı",
+    genre: "text",
     intro: "Bir ekip lideri, görev dağıtmanın neden bir zaman meselesi değil bir dil meselesi olduğunu yazıyor.",
     gloss: [
       { de: "delegieren", tr: "görev devretmek", en: "to delegate" },
@@ -177,7 +177,7 @@ export const b2U02: SkillExercise[] = [
     skill: "listening",
     unit: 2,
     title: "Sechs Stockwerke",
-    genre: "Diyalog",
+    genre: "dialogue",
     intro: "Asansörde kısa bir sohbet. Konu ne zaman açılıyor, nasıl kapanıyor?",
     gloss: [
       { de: "unverbindlich", tr: "bağlayıcı olmayan", en: "non-committal" },
@@ -248,7 +248,7 @@ export const b2U02: SkillExercise[] = [
     skill: "listening",
     unit: 2,
     title: "Sofern nichts dazwischenkommt",
-    genre: "Telefon görüşmesi",
+    genre: "phone",
     intro: "Bir teslim tarihi tehlikede. Koşullu söz ile boş söz arasındaki farka dikkat et.",
     gloss: [
       { de: "einhalten", tr: "uymak", en: "to keep to" },
@@ -322,7 +322,7 @@ export const b2U02: SkillExercise[] = [
     skill: "writing",
     unit: 2,
     title: "Vier Sätze, die niemanden festnageln",
-    genre: "Cümle kurma",
+    genre: "build",
     intro: "Dolaylı soru, dilek kipiyle rica, edilgen yerine geçen yapı ve koşullu söz.",
     gloss: [
       { de: "klarstellen", tr: "netleştirmek", en: "to clarify" },
@@ -373,7 +373,7 @@ export const b2U02: SkillExercise[] = [
     skill: "writing",
     unit: 2,
     title: "Die Mail an das Team",
-    genre: "İş yazışması",
+    genre: "formal",
     intro: "Görev dağıtan ve süreyi koşula bağlayan kısa bir ekip e-postası yaz.",
     gloss: [
       { de: "federführend", tr: "baş sorumlu", en: "in the lead" },

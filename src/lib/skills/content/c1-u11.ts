@@ -30,7 +30,7 @@ export const c1U11: SkillExercise[] = [
     skill: "reading",
     unit: 11,
     title: "Ein Satz, zwei Verantwortliche",
-    genre: "Dil yazısı",
+    genre: "text",
     intro: "Aktarım kipi kimi bağlar? İki cümle, iki farklı sorumluluk.",
     gloss: [
       { de: "die Wiedergabe", tr: "aktarım", en: "rendering" },
@@ -109,7 +109,7 @@ export const c1U11: SkillExercise[] = [
     skill: "reading",
     unit: 11,
     title: "Laut Angaben der Behörden",
-    genre: "Haber metni",
+    genre: "article",
     intro: "Bir ajans haberi. Hangi cümle olgu, hangisi aktarım?",
     gloss: [
       { de: "der Sachverhalt", tr: "olgu, vaka", en: "the facts of the case" },
@@ -193,7 +193,7 @@ export const c1U11: SkillExercise[] = [
     skill: "listening",
     unit: 11,
     title: "Zwei Aussagen, ein Protokoll",
-    genre: "Toplantı",
+    genre: "meeting",
     intro: "Tutanak yazan biri iki ifadeyi nasıl kaydediyor?",
     gloss: [
       { de: "sich distanzieren", tr: "mesafe koymak", en: "to distance oneself" },
@@ -269,7 +269,7 @@ export const c1U11: SkillExercise[] = [
     skill: "listening",
     unit: 11,
     title: "Wer sagt das?",
-    genre: "Diyalog",
+    genre: "dialogue",
     intro: "Bir çalışma paylaşılıyor. Kaynak nasıl sınanıyor?",
     gloss: [
       { de: "die Primärquelle", tr: "birincil kaynak", en: "primary source" },
@@ -344,7 +344,7 @@ export const c1U11: SkillExercise[] = [
     skill: "writing",
     unit: 11,
     title: "Aktarım kipi ve sorumluluk",
-    genre: "Dil bilgisi",
+    genre: "grammar",
     intro: "Konjunktiv I aktaranı iddianın dışında bırakır — bildirme kipi bırakmaz.",
     gloss: [
       { de: "sich distanzieren", tr: "mesafe koymak", en: "to distance oneself" },
@@ -388,7 +388,7 @@ export const c1U11: SkillExercise[] = [
     skill: "writing",
     unit: 11,
     title: "Ein Bericht, zwei Aussagen",
-    genre: "Kurum yazısı",
+    genre: "formal",
     intro: "Çelişkili iki ifadeyi taraf tutmadan kaydet.",
     gloss: [
       { de: "übereinstimmen", tr: "örtüşmek", en: "to match" },

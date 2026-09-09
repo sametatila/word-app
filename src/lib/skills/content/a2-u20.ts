@@ -29,7 +29,7 @@ export const a2U20: SkillExercise[] = [
     skill: "reading",
     unit: 20,
     title: "Komplimente — aber richtig",
-    genre: "Dergi yazısı",
+    genre: "article",
     intro: "İltifat etme rehberi. Hangisi hoş, hangisi fazla kişisel?",
     gloss: [
       { de: "edel", tr: "zarif, kaliteli", en: "elegant" },
@@ -90,7 +90,7 @@ export const a2U20: SkillExercise[] = [
     skill: "reading",
     unit: 20,
     title: "Zweitausend Kilometer",
-    genre: "Forum yazısı",
+    genre: "forum",
     intro: "Ailesi uzakta olan biri anlatıyor. Bağı ne ayakta tutuyor?",
     gloss: [
       { de: "der Kontakt", tr: "iletişim", en: "contact" },
@@ -161,7 +161,7 @@ export const a2U20: SkillExercise[] = [
     skill: "listening",
     unit: 20,
     title: "Das war nicht so gemeint",
-    genre: "Diyalog",
+    genre: "dialogue",
     intro: "Tartışmadan sonra barışma. Kim ne yaptı, nasıl çözülüyor?",
     gloss: [
       { de: "sich zanken", tr: "atışmak", en: "to squabble" },
@@ -229,7 +229,7 @@ export const a2U20: SkillExercise[] = [
     skill: "listening",
     unit: 20,
     title: "Im neuen Jahr mehr Sport",
-    genre: "Diyalog",
+    genre: "dialogue",
     intro: "Yılbaşı kararları. Hangi plan gerçekçi, hangisi değil?",
     gloss: [
       { de: "boxen", tr: "boks yapmak", en: "to box" },
@@ -296,7 +296,7 @@ export const a2U20: SkillExercise[] = [
     skill: "writing",
     unit: 20,
     title: "Bana yakışıyor, sana uyuyor",
-    genre: "Dil bilgisi",
+    genre: "grammar",
     intro: "Beğenmek, yakışmak, uymak: Almancada özne kişi değil, şeydir.",
     gloss: [
       { de: "stehen", tr: "yakışmak", en: "to suit" },
@@ -341,7 +341,7 @@ export const a2U20: SkillExercise[] = [
     skill: "writing",
     unit: 20,
     title: "Eine Entschuldigung",
-    genre: "Mesaj",
+    genre: "message",
     intro: "Tartıştığın arkadaşına yaz: ne oldu, ne için özür diliyorsun?",
     gloss: [
       { de: "streiten", tr: "tartışmak", en: "to argue" },

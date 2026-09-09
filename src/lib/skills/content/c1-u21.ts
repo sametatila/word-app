@@ -32,7 +32,7 @@ export const c1U21: SkillExercise[] = [
     skill: "reading",
     unit: 21,
     title: "Na, das lief ja super",
-    genre: "Dil yazısı",
+    genre: "text",
     intro: "İroniyi tonsuz nasıl tanırsın? Metinde gülümseme yok.",
     gloss: [
       { de: "die Ironie", tr: "ironi", en: "irony" },
@@ -116,7 +116,7 @@ export const c1U21: SkillExercise[] = [
     skill: "reading",
     unit: 21,
     title: "Witz oder Spitze?",
-    genre: "Deneme",
+    genre: "essay",
     intro: "Şakanın hükmü kimde? Almanca deyimin kendisi cevap veriyor.",
     gloss: [
       { de: "ankommen", tr: "karşı tarafa varmak, tutmak", en: "to land, to go down" },
@@ -191,7 +191,7 @@ export const c1U21: SkillExercise[] = [
     skill: "listening",
     unit: 21,
     title: "Der doppelte Boden",
-    genre: "Diyalog",
+    genre: "dialogue",
     intro: "Kelime oyunu çeviride ölüyor. Bu kimin eksiği?",
     gloss: [
       { de: "das Wortspiel", tr: "kelime oyunu", en: "wordplay" },
@@ -269,7 +269,7 @@ export const c1U21: SkillExercise[] = [
     skill: "listening",
     unit: 21,
     title: "Nord gegen Süd",
-    genre: "Sohbet",
+    genre: "dialogue",
     intro: "Bölge klişeleri göz kırpmayla söyleniyor — göz kırpma düşerse?",
     gloss: [
       { de: "das Klischee", tr: "klişe", en: "cliché" },
@@ -346,7 +346,7 @@ export const c1U21: SkillExercise[] = [
     skill: "writing",
     unit: 21,
     title: "İroninin ve şakanın dili",
-    genre: "Dil bilgisi",
+    genre: "grammar",
     intro: "Şakanın varışı, geri alma ve göz kırpma kalıbı.",
     gloss: [
       { de: "ankommen", tr: "karşı tarafa varmak", en: "to land" },
@@ -393,7 +393,7 @@ export const c1U21: SkillExercise[] = [
     skill: "writing",
     unit: 21,
     title: "Şaka tutmadığında",
-    genre: "İş yazışması",
+    genre: "formal",
     intro: "Toplantıda yaptığın espri kimseyi güldürmedi. Şimdi ne yazacaksın?",
     gloss: [
       { de: "die Zielscheibe", tr: "hedef tahtası", en: "target" },

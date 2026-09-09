@@ -18,7 +18,7 @@ export const enA1P4: SkillExercise[] = [
     level: "A1",
     skill: "reading",
     title: "The Old Cinema Opens Again",
-    genre: "Haber",
+    genre: "article",
     intro: "Kasabanın eski sinemasının yeniden açıldığını duyuran kısa bir haber okuyacaksın.",
     gloss: [
       { de: "seat", tr: "koltuk" },
@@ -89,7 +89,7 @@ export const enA1P4: SkillExercise[] = [
     level: "A1",
     skill: "listening",
     title: "Two Pizzas, Please",
-    genre: "Telefon",
+    genre: "phone",
     intro: "Telefonla yemek siparişi veren birini dinleyeceksin: ne istiyor, ne kadar tutuyor, ne zaman geliyor.",
     gloss: [
       { de: "order", tr: "ısmarlamak" },
@@ -164,7 +164,7 @@ export const enA1P4: SkillExercise[] = [
     level: "A1",
     skill: "writing",
     title: "Winter Boots for Sale",
-    genre: "Küçük ilan",
+    genre: "ad",
     intro: "Dolabını boşaltıyorsun; önce iki cümle kur, sonra bir eşyanı satmak için küçük bir ilan yaz.",
     gloss: [
       { de: "size", tr: "beden" },
@@ -222,7 +222,7 @@ export const enA1P4: SkillExercise[] = [
     level: "A1",
     skill: "speaking",
     title: "bad or bed?",
-    genre: "Ses çalışması",
+    genre: "pronounce",
     intro: "Türkçede tek bir e sesi var; İngilizcede ise açık „a“ ile kapalı „e“ iki ayrı sestir ve kelimeyi değiştirir.",
     gloss: [
       { de: "bag", tr: "çanta" },
@@ -298,7 +298,7 @@ export const enA1P4: SkillExercise[] = [
     level: "A1",
     skill: "grammar",
     title: "can, can't and orders",
-    genre: "Kural",
+    genre: "grammar",
     intro: "Yetenek ve izin için tek bir kelime yeter; rica ve emirde ise fiil hiç değişmez.",
     focus: "can / can't ve emir kipi",
     gloss: [

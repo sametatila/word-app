@@ -31,7 +31,7 @@ export const b1U24: SkillExercise[] = [
     skill: "reading",
     unit: 24,
     title: "Die Chance, die ich versäumt habe",
-    genre: "Kişisel yazı",
+    genre: "personal",
     intro: "Biri kaçırdığı bir fırsatı anlatıyor. Neden kaçırmış, bugün ne düşünüyor?",
     minutes: 5,
     gloss: [
@@ -96,7 +96,7 @@ export const b1U24: SkillExercise[] = [
     skill: "reading",
     unit: 24,
     title: "Freundschaft auf Distanz",
-    genre: "Deneme",
+    genre: "essay",
     intro: "Uzaktaki dostluklar üzerine bir yazı. Ne işe yarıyor, ne yaramıyor?",
     minutes: 5,
     gloss: [
@@ -165,7 +165,7 @@ export const b1U24: SkillExercise[] = [
     skill: "listening",
     unit: 24,
     title: "Wovor fürchtest du dich?",
-    genre: "Gelecek konuşması",
+    genre: "dialogue",
     intro: "İki kişi kaygılarını konuşuyor. Kim neyden korkuyor?",
     minutes: 4,
     gloss: [
@@ -227,7 +227,7 @@ export const b1U24: SkillExercise[] = [
     skill: "listening",
     unit: 24,
     title: "Er hat es endlich gesagt",
-    genre: "Arkadaş sohbeti",
+    genre: "dialogue",
     intro: "Bir itiraf anlatılıyor. Ne oldu, nasıl karşılandı?",
     minutes: 4,
     gloss: [
@@ -290,7 +290,7 @@ export const b1U24: SkillExercise[] = [
     skill: "writing",
     unit: 24,
     title: "Eine versäumte Chance",
-    genre: "Kişisel yazı",
+    genre: "personal",
     intro: "Kaçırdığın bir fırsatı yaz. Nesne varsa dönüşlü zamir Dativ olur.",
     minutes: 8,
     gloss: [
@@ -344,7 +344,7 @@ export const b1U24: SkillExercise[] = [
     skill: "writing",
     unit: 24,
     title: "Über eine Freundschaft",
-    genre: "Betimleme",
+    genre: "profile",
     intro: "Uzun bir dostluğu anlat. Türkçe 'bilmek' Almancada ikiye ayrılır.",
     minutes: 12,
     gloss: [

@@ -33,7 +33,7 @@ export const c1U24: SkillExercise[] = [
     skill: "reading",
     unit: 24,
     title: "Der Dolmetscher im Kopf",
-    genre: "Deneme",
+    genre: "essay",
     intro: "Birebir çeviri neden tökezler? Sorun sözcüklerde değil.",
     gloss: [
       { de: "vermitteln", tr: "aracılık etmek", en: "to mediate" },
@@ -116,7 +116,7 @@ export const c1U24: SkillExercise[] = [
     skill: "reading",
     unit: 24,
     title: "Die große Rede",
-    genre: "Rehber yazısı",
+    genre: "guide",
     intro: "Bir konuşmayı taşıyan şey: yay, tek fikir, son cümle.",
     gloss: [
       { de: "der Bogen", tr: "yay, kavis", en: "arc" },
@@ -199,7 +199,7 @@ export const c1U24: SkillExercise[] = [
     skill: "listening",
     unit: 24,
     title: "Alles oder nichts",
-    genre: "Müzakere",
+    genre: "meeting",
     intro: "Son teklif nasıl verilir — kapıyı kapatmadan.",
     gloss: [
       { de: "unterschriftsreif", tr: "imzaya hazır", en: "ready to sign" },
@@ -275,7 +275,7 @@ export const c1U24: SkillExercise[] = [
     skill: "listening",
     unit: 24,
     title: "Die C1-Simulation",
-    genre: "Bilgilendirme",
+    genre: "info",
     intro: "Sınav ne ölçüyor, puanlar nasıl dağılıyor?",
     gloss: [
       { de: "der Prüfling", tr: "sınava giren", en: "candidate" },
@@ -353,7 +353,7 @@ export const c1U24: SkillExercise[] = [
     skill: "writing",
     unit: 24,
     title: "Aracılık ve müzakere kalıpları",
-    genre: "Dil bilgisi",
+    genre: "grammar",
     intro: "Aracılık cümlesi, koşullu diplomasi ve son teklif kalıbı.",
     gloss: [
       { de: "vermitteln", tr: "aracılık etmek", en: "to mediate" },
@@ -400,7 +400,7 @@ export const c1U24: SkillExercise[] = [
     skill: "writing",
     unit: 24,
     title: "Son teklif",
-    genre: "İş yazışması",
+    genre: "formal",
     intro: "Kapıyı kapatmadan nihai teklifi yaz.",
     gloss: [
       { de: "unterschriftsreif", tr: "imzaya hazır", en: "ready to sign" },

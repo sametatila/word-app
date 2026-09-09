@@ -34,7 +34,7 @@ export const b1U22: SkillExercise[] = [
     skill: "reading",
     unit: 22,
     title: "Der Garten hinter dem Haus",
-    genre: "Proje duyurusu",
+    genre: "phone",
     intro: "Ortak bir bahçe kuruluyor. Kim ne yapıyor, ürün nasıl paylaşılıyor?",
     minutes: 5,
     gloss: [
@@ -99,7 +99,7 @@ export const b1U22: SkillExercise[] = [
     skill: "reading",
     unit: 22,
     title: "Wie sich das Viertel verändert hat",
-    genre: "Mahalle yazısı",
+    genre: "text",
     intro: "Bir mahallenin geçmişi ve bugünü. Ne arttı, ne azaldı?",
     minutes: 5,
     gloss: [
@@ -166,7 +166,7 @@ export const b1U22: SkillExercise[] = [
     skill: "listening",
     unit: 22,
     title: "Der Wetterbericht",
-    genre: "Hava durumu konuşması",
+    genre: "info",
     intro: "Sıcak bir hafta konuşuluyor. Ne bekleniyor, ne yapılıyor?",
     minutes: 4,
     gloss: [
@@ -228,7 +228,7 @@ export const b1U22: SkillExercise[] = [
     skill: "listening",
     unit: 22,
     title: "Freiwillig oder Pflicht?",
-    genre: "Gönüllülük konuşması",
+    genre: "dialogue",
     intro: "Gönüllü hizmet konuşuluyor. Hangi görev, ne kadar sorumluluk?",
     minutes: 4,
     gloss: [
@@ -291,7 +291,7 @@ export const b1U22: SkillExercise[] = [
     skill: "writing",
     unit: 22,
     title: "Notiz zum Wetter",
-    genre: "Duyuru notu",
+    genre: "phone",
     intro: "Sıcak hafta için bir not yaz. Almanca cümle öznesiz kurulmaz.",
     minutes: 8,
     gloss: [
@@ -345,7 +345,7 @@ export const b1U22: SkillExercise[] = [
     skill: "writing",
     unit: 22,
     title: "Mein Viertel früher und heute",
-    genre: "Karşılaştırmalı yazı",
+    genre: "info",
     intro: "Mahalleni anlat. 'çok' ve 'az' sayılabilirliğe göre çekilir.",
     minutes: 12,
     gloss: [

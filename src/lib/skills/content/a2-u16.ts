@@ -33,7 +33,7 @@ export const a2U16: SkillExercise[] = [
     skill: "reading",
     unit: 16,
     title: "Unser Reiseplan",
-    genre: "E-posta",
+    genre: "email",
     intro: "Bir arkadaşa yazılan rota planı. Nereye, nasıl, hangi molalarla?",
     gloss: [
       { de: "der Reiseplan", tr: "seyahat planı", en: "travel plan" },
@@ -96,7 +96,7 @@ export const a2U16: SkillExercise[] = [
     skill: "reading",
     unit: 16,
     title: "Hausordnung der Jugendherberge",
-    genre: "Duyuru",
+    genre: "phone",
     intro: "Hostel kuralları. Ne zaman giriş, ne zaman çıkış, eşyalar nerede?",
     gloss: [
       { de: "die Jugendherberge", tr: "gençlik hosteli", en: "youth hostel" },
@@ -161,7 +161,7 @@ export const a2U16: SkillExercise[] = [
     skill: "listening",
     unit: 16,
     title: "An der Rezeption",
-    genre: "Diyalog",
+    genre: "dialogue",
     intro: "Otel resepsiyonu. Rezervasyon var mı, oda hangi katta?",
     gloss: [
       { de: "reservieren", tr: "yer ayırtmak", en: "to reserve" },
@@ -220,7 +220,7 @@ export const a2U16: SkillExercise[] = [
     skill: "listening",
     unit: 16,
     title: "Am Flughafen",
-    genre: "Diyalog",
+    genre: "dialogue",
     intro: "Check-in kuyruğu. Bagaj kaça çıkıyor, hangi kapıdan gidiliyor?",
     gloss: [
       { de: "die Bordkarte", tr: "biniş kartı", en: "boarding pass" },
@@ -280,7 +280,7 @@ export const a2U16: SkillExercise[] = [
     skill: "writing",
     unit: 16,
     title: "Ayrılabilen fiil, geçmiş zaman",
-    genre: "Dil bilgisi",
+    genre: "grammar",
     intro: "Ön ek başta kalır, ge- ortaya girer: einpacken → eingepackt.",
     gloss: [
       { de: "einpacken", tr: "bavula koymak", en: "to pack" },
@@ -324,7 +324,7 @@ export const a2U16: SkillExercise[] = [
     skill: "writing",
     unit: 16,
     title: "Eine Zimmerreservierung",
-    genre: "Resmî yazı",
+    genre: "formal",
     intro: "Otele yaz: hangi tarih, kaç kişi, hangi oda, hangi soru?",
     gloss: [
       { de: "buchen", tr: "rezervasyon yapmak", en: "to book" },

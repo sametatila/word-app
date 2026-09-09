@@ -36,7 +36,7 @@ export const b1U21: SkillExercise[] = [
     skill: "reading",
     unit: 21,
     title: "Welche Tonne für was?",
-    genre: "Bina duyurusu",
+    genre: "phone",
     intro: "Atık ayrımı kuralları. Hangi çöp hangi kutuya?",
     minutes: 5,
     gloss: [
@@ -102,7 +102,7 @@ export const b1U21: SkillExercise[] = [
     skill: "reading",
     unit: 21,
     title: "Wo der Strom bleibt",
-    genre: "Bilgilendirme",
+    genre: "info",
     intro: "Evde enerji nereye gidiyor? Hangi öneri ne kadar kazandırıyor?",
     minutes: 5,
     gloss: [
@@ -170,7 +170,7 @@ export const b1U21: SkillExercise[] = [
     skill: "listening",
     unit: 21,
     title: "Die neue Fußgängerzone",
-    genre: "Sokak röportajı",
+    genre: "interview",
     intro: "Yeni yaya bölgesi konuşuluyor. Kim memnun, kim değil?",
     minutes: 4,
     gloss: [
@@ -232,7 +232,7 @@ export const b1U21: SkillExercise[] = [
     skill: "listening",
     unit: 21,
     title: "Woher kommt das?",
-    genre: "Pazar konuşması",
+    genre: "dialogue",
     intro: "Bir pazar tezgâhında konuşma. Ürünün kaynağı ne?",
     minutes: 4,
     gloss: [
@@ -295,7 +295,7 @@ export const b1U21: SkillExercise[] = [
     skill: "writing",
     unit: 21,
     title: "Aushang für das Haus",
-    genre: "Bina duyurusu",
+    genre: "phone",
     intro: "Atık ayrımı için bir duyuru yaz. Bileşik ismin artikeli son parçadan gelir.",
     minutes: 8,
     gloss: [
@@ -349,7 +349,7 @@ export const b1U21: SkillExercise[] = [
     skill: "writing",
     unit: 21,
     title: "Was ich anders mache",
-    genre: "Kişisel yazı",
+    genre: "personal",
     intro: "Bir alışkanlığını yaz. '… yerine' derken zu'lu mastar kullan.",
     minutes: 12,
     gloss: [

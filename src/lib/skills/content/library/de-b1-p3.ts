@@ -17,7 +17,7 @@ export const deB1P3: SkillExercise[] = [
     level: "B1",
     skill: "reading",
     title: "Wenn die Tür zufällt",
-    genre: "Rehber metin",
+    genre: "guide",
     intro: "Kapıda kalanlara yönelik bir tüketici rehberini okuyacaksın: telefonda ne sorulmalı, neye dikkat edilmeli, fatura fahişse ne yapılmalı.",
     gloss: [
       { de: "zufallen", tr: "kapanıvermek", en: "to slam shut" },
@@ -106,7 +106,7 @@ export const deB1P3: SkillExercise[] = [
     level: "B1",
     skill: "listening",
     title: "Um Viertel nach zwei",
-    genre: "Röportaj",
+    genre: "interview",
     intro: "Gece gazete dağıtan bir kadınla söyleşi: işin ritmi, zorlukları, güzel yanı ve kime tavsiye ettiği.",
     gloss: [
       { de: "durchhalten", tr: "dayanmak", en: "to keep it up" },
@@ -189,7 +189,7 @@ export const deB1P3: SkillExercise[] = [
     level: "B1",
     skill: "writing",
     title: "Warum ich wieder Briefe schreibe",
-    genre: "Blog yazısı",
+    genre: "blog",
     intro: "Yeniden başladığın bir alışkanlığı anlatan bir blog yazısı yazacaksın; önce iki cümle kur, sonra yazıyı yaz.",
     gloss: [
       { de: "die Handschrift", tr: "el yazısı", en: "handwriting" },
@@ -250,7 +250,7 @@ export const deB1P3: SkillExercise[] = [
     level: "B1",
     skill: "speaking",
     title: "Eine Sache in deiner Stadt",
-    genre: "Monolog",
+    genre: "monologue",
     intro: "Bir dakikaya yakın tek başına konuşacaksın: bir şeyi seç, neden önemli olduğunu anlat ve nasıl yapılacağını söyle.",
     gloss: [],
     minutes: 6,
@@ -291,7 +291,7 @@ export const deB1P3: SkillExercise[] = [
     level: "B1",
     skill: "grammar",
     title: "Könnten Sie mir helfen?",
-    genre: "Kural",
+    genre: "grammar",
     intro: "Aynı biçim üç işi birden görür: nazik rica, gerçekleşmemiş dilek ve gerçekdışı koşul.",
     focus: "Konjunktiv II: nezaket, dilek ve gerçekdışı koşul",
     gloss: [

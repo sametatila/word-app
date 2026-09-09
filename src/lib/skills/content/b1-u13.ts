@@ -31,7 +31,7 @@ export const b1U13: SkillExercise[] = [
     skill: "reading",
     unit: 13,
     title: "Die Vollmacht",
-    genre: "Bilgilendirme metni",
+    genre: "info",
     intro: "Birine sizin adınıza iş yapma yetkisi vermek. Neyin aslı, neyin kopyası gerekiyor?",
     minutes: 5,
     gloss: [
@@ -98,7 +98,7 @@ export const b1U13: SkillExercise[] = [
     skill: "reading",
     unit: 13,
     title: "Der Weg zur Einbürgerung",
-    genre: "Deneyim yazısı",
+    genre: "personal",
     intro: "Vatandaşlık süreci üzerine bir yazı. Hangi koşul, hangi duygu?",
     minutes: 6,
     gloss: [
@@ -167,7 +167,7 @@ export const b1U13: SkillExercise[] = [
     skill: "listening",
     unit: 13,
     title: "Kannst du mich vertreten?",
-    genre: "Rica konuşması",
+    genre: "message",
     intro: "Biri başkasından kendi adına gitmesini istiyor. Ne gerekiyor?",
     minutes: 4,
     gloss: [
@@ -229,7 +229,7 @@ export const b1U13: SkillExercise[] = [
     skill: "listening",
     unit: 13,
     title: "Was hast du dir vorgenommen?",
-    genre: "Hedef konuşması",
+    genre: "dialogue",
     intro: "İki kişi öğrenme hedeflerini konuşuyor. Kim neyi nasıl ölçüyor?",
     minutes: 4,
     gloss: [
@@ -292,7 +292,7 @@ export const b1U13: SkillExercise[] = [
     skill: "writing",
     unit: 13,
     title: "Vollmacht schreiben",
-    genre: "Yetki belgesi",
+    genre: "formal",
     intro: "Bir vekâlet yaz. Kipli fiilden sonra 'zu' gelmediğine dikkat et.",
     minutes: 8,
     gloss: [
@@ -347,7 +347,7 @@ export const b1U13: SkillExercise[] = [
     skill: "writing",
     unit: 13,
     title: "Meine Lernziele",
-    genre: "Plan metni",
+    genre: "info",
     intro: "Öğrenme hedeflerini yaz. 'nicht'in nereye geldiğine dikkat et.",
     minutes: 12,
     gloss: [

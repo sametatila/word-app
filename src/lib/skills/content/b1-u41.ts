@@ -35,7 +35,7 @@ export const b1U41: SkillExercise[] = [
     skill: "reading",
     unit: 41,
     title: "Zwei Sprachen, ein Kopf",
-    genre: "Kişisel yazı",
+    genre: "personal",
     intro: "İki dille büyümek. Hangi dil ne zaman öne çıkıyor?",
     minutes: 5,
     gloss: [
@@ -101,7 +101,7 @@ export const b1U41: SkillExercise[] = [
     skill: "reading",
     unit: 41,
     title: "Mehrheit und Minderheit",
-    genre: "Deneme",
+    genre: "essay",
     intro: "Çoğunluk ve azınlık üzerine kısa bir yazı. Hangi soru soruluyor?",
     minutes: 5,
     gloss: [
@@ -168,7 +168,7 @@ export const b1U41: SkillExercise[] = [
     skill: "listening",
     unit: 41,
     title: "Im Konsulat",
-    genre: "Resmî işlem",
+    genre: "formal",
     intro: "Bir belge işlemi. Ne gerekiyor, ne kadar sürüyor?",
     minutes: 4,
     gloss: [
@@ -230,7 +230,7 @@ export const b1U41: SkillExercise[] = [
     skill: "listening",
     unit: 41,
     title: "Duzen oder siezen?",
-    genre: "Dil üzerine sohbet",
+    genre: "dialogue",
     intro: "Hitap biçimi konuşuluyor. Ne zaman hangisi?",
     minutes: 4,
     gloss: [
@@ -293,7 +293,7 @@ export const b1U41: SkillExercise[] = [
     skill: "writing",
     unit: 41,
     title: "Meine Sprachen",
-    genre: "Dil özgeçmişi",
+    genre: "profile",
     intro: "Dillerini anlat. 'daha çok' Almancada düzensizdir, kalıpla üretilmez.",
     minutes: 8,
     gloss: [
@@ -347,7 +347,7 @@ export const b1U41: SkillExercise[] = [
     skill: "writing",
     unit: 41,
     title: "Wer gehört dazu?",
-    genre: "Görüş yazısı",
+    genre: "opinion",
     intro: "Aidiyet üzerine yaz. 'sein' sonrası yüklem yalın hâlde kalır.",
     minutes: 12,
     gloss: [

@@ -27,7 +27,7 @@ export const a1U14: SkillExercise[] = [
     skill: "reading",
     unit: 14,
     title: "Am Fahrkartenautomat",
-    genre: "Bilgilendirme",
+    genre: "info",
     intro: "Bilet otomatındaki bilgi ekranını okuyacaksın.",
     gloss: [
       { de: "die Fahrkarte", tr: "bilet", en: "ticket" },
@@ -87,7 +87,7 @@ export const a1U14: SkillExercise[] = [
     skill: "reading",
     unit: 14,
     title: "Der Zug hat Verspätung",
-    genre: "Anons metni",
+    genre: "phone",
     intro: "Garda yazılı bir duyuru. Trenler ne durumda?",
     gloss: [
       { de: "die Verspätung", tr: "gecikme", en: "delay" },
@@ -141,7 +141,7 @@ export const a1U14: SkillExercise[] = [
     skill: "listening",
     unit: 14,
     title: "Einmal nach Bremen",
-    genre: "Diyalog",
+    genre: "dialogue",
     intro: "Gişede bilet alınıyor. Tek yön mü gidiş dönüş mü?",
     gloss: [
       { de: "hin und zurück", tr: "gidiş dönüş", en: "return" },
@@ -199,7 +199,7 @@ export const a1U14: SkillExercise[] = [
     skill: "listening",
     unit: 14,
     title: "Zum Flughafen, bitte",
-    genre: "Diyalog",
+    genre: "dialogue",
     intro: "Takside bir yolculuk. Ne kadar sürüyor, ne kadar tutuyor?",
     gloss: [
       { de: "die Autobahn", tr: "otoyol", en: "motorway" },
@@ -260,7 +260,7 @@ export const a1U14: SkillExercise[] = [
     skill: "writing",
     unit: 14,
     title: "Fahrkarte und Verspätung",
-    genre: "Dil bilgisi",
+    genre: "grammar",
     intro: "Bilet alma ve gecikme cümleleri.",
     gloss: [
       { de: "die Fahrkarte", tr: "bilet", en: "ticket" },
@@ -297,7 +297,7 @@ export const a1U14: SkillExercise[] = [
     skill: "writing",
     unit: 14,
     title: "Ist das weit?",
-    genre: "Mesaj",
+    genre: "message",
     intro: "Arkadaşına gardan nasıl geleceğini ve ne kadar süreceğini yaz.",
     gloss: [
       { de: "die Nähe", tr: "yakınlık", en: "vicinity" },

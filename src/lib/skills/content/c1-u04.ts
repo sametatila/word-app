@@ -31,7 +31,7 @@ export const c1U04: SkillExercise[] = [
     skill: "reading",
     unit: 4,
     title: "Zwischen Einsicht und Aufgeben",
-    genre: "Deneme",
+    genre: "essay",
     intro: "Kabullenmenin iki yüzü üstüne bir yazı. Nerede olgunluk, nerede pes ediş?",
     gloss: [
       { de: "sich abfinden", tr: "razı olmak", en: "to come to terms with" },
@@ -115,7 +115,7 @@ export const c1U04: SkillExercise[] = [
     skill: "reading",
     unit: 4,
     title: "Wie sicher ist „wohl“?",
-    genre: "Dergi yazısı",
+    genre: "article",
     intro: "Tahmin dereceleri üstüne bir yazı. Hangi sözcük ne kadar kesinlik taşıyor?",
     gloss: [
       { de: "die Mutmaßung", tr: "tahmin, varsayım", en: "conjecture" },
@@ -194,7 +194,7 @@ export const c1U04: SkillExercise[] = [
     skill: "listening",
     unit: 4,
     title: "Das wird schon",
-    genre: "Diyalog",
+    genre: "dialogue",
     intro: "Teselli mi, geçiştirme mi? Aynı cümle iki kez, iki farklı etkiyle.",
     gloss: [
       { de: "trösten", tr: "teselli etmek", en: "to console" },
@@ -272,7 +272,7 @@ export const c1U04: SkillExercise[] = [
     skill: "listening",
     unit: 4,
     title: "Nun mach doch endlich",
-    genre: "Diyalog",
+    genre: "dialogue",
     intro: "Sabırsızlık dile nasıl sızıyor? Baskı hangi sözcükte başlıyor?",
     gloss: [
       { de: "die Ungeduld", tr: "sabırsızlık", en: "impatience" },
@@ -348,7 +348,7 @@ export const c1U04: SkillExercise[] = [
     skill: "writing",
     unit: 4,
     title: "Ton taşıyan tek hece",
-    genre: "Dil bilgisi",
+    genre: "grammar",
     intro: "eben, wohl, schon, endlich — dördü de cümlenin ortasında durur ve tonu taşır.",
     gloss: [
       { de: "hinnehmen", tr: "kabullenmek", en: "to accept" },
@@ -395,7 +395,7 @@ export const c1U04: SkillExercise[] = [
     skill: "writing",
     unit: 4,
     title: "Trösten, ohne das Thema zu schließen",
-    genre: "Mesaj",
+    genre: "message",
     intro: "Kötü haber alan birine yaz: sorunu adlandır, kapatma, kötü ihtimalde de kal.",
     gloss: [
       { de: "die Ungewissheit", tr: "belirsizlik", en: "uncertainty" },

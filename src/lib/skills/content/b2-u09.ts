@@ -32,7 +32,7 @@ export const b2U09: SkillExercise[] = [
     skill: "reading",
     unit: 9,
     title: "Wer sagt das eigentlich?",
-    genre: "Deneme",
+    genre: "essay",
     intro: "Söylentilerin nasıl yayıldığını anlatan bir yazı. Kimin iddia ettiğine dikkat et.",
     gloss: [
       { de: "das Gerücht", tr: "söylenti", en: "rumour" },
@@ -105,7 +105,7 @@ export const b2U09: SkillExercise[] = [
     skill: "reading",
     unit: 9,
     title: "Leserbrief an die Redaktion",
-    genre: "Okur mektubu",
+    genre: "opinion",
     intro: "Bir okurun gazeteye yazdığı itiraz mektubu. Nerede hak veriyor, nerede karşı çıkıyor?",
     gloss: [
       { de: "der Leserbrief", tr: "okur mektubu", en: "letter to the editor" },
@@ -179,7 +179,7 @@ export const b2U09: SkillExercise[] = [
     skill: "listening",
     unit: 9,
     title: "Nach der Pressekonferenz",
-    genre: "Diyalog",
+    genre: "dialogue",
     intro: "İki gazeteci basın toplantısından çıkmış, kimin neye cevap vermediğini konuşuyor.",
     gloss: [
       { de: "der Anlass", tr: "vesile", en: "occasion" },
@@ -256,7 +256,7 @@ export const b2U09: SkillExercise[] = [
     skill: "listening",
     unit: 9,
     title: "Hast du die Doku gesehen?",
-    genre: "Diyalog",
+    genre: "dialogue",
     intro: "İki arkadaş dün akşam yayınlanan bir belgeseli konuşuyor.",
     gloss: [
       { de: "der Dokumentarfilm", tr: "belgesel", en: "documentary" },
@@ -336,7 +336,7 @@ export const b2U09: SkillExercise[] = [
     skill: "writing",
     unit: 9,
     title: "Kaynağı işaretle",
-    genre: "Cümle kurma",
+    genre: "build",
     intro: "İddia kimin? Söylenti kipi, dolaylı soru, iki parçalı bağlaç ve ortaç sıfatı.",
     gloss: [
       { de: "sich aufhalten", tr: "bir yerde bulunmak", en: "to be staying" },
@@ -387,7 +387,7 @@ export const b2U09: SkillExercise[] = [
     skill: "writing",
     unit: 9,
     title: "Ihr Leserbrief",
-    genre: "Okur mektubu",
+    genre: "opinion",
     intro: "Bir yazıya itiraz et — ama önce hak verdiğin yeri söyle.",
     gloss: [
       { de: "die Redaktion", tr: "yayın kurulu", en: "editorial team" },

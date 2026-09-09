@@ -34,7 +34,7 @@ export const b2U23: SkillExercise[] = [
     skill: "reading",
     unit: 23,
     title: "Wie ein Schreiben durchs Haus geht",
-    genre: "Kurum içi rehber",
+    genre: "guide",
     intro: "Bir kurumun yazışma rehberi. Resmî dilin adlaştırmalarına dikkat et.",
     gloss: [
       { de: "das Rundschreiben", tr: "genelge", en: "circular" },
@@ -103,7 +103,7 @@ export const b2U23: SkillExercise[] = [
     skill: "reading",
     unit: 23,
     title: "Gut ist gut genug",
-    genre: "Deneme",
+    genre: "essay",
     intro: "Mükemmeliyetçilik üzerine bir yazı. Kendine dair kurulan varsayımlara dikkat et.",
     gloss: [
       { de: "der Leistungsdruck", tr: "performans baskısı", en: "pressure to perform" },
@@ -176,7 +176,7 @@ export const b2U23: SkillExercise[] = [
     skill: "listening",
     unit: 23,
     title: "Die höfliche Anfrage",
-    genre: "Telefon görüşmesi",
+    genre: "phone",
     intro: "Bir tedarikçiyle görüşme. Talebin nasıl yumuşatıldığına dikkat et.",
     gloss: [
       { de: "zeitnah", tr: "kısa sürede", en: "promptly" },
@@ -248,7 +248,7 @@ export const b2U23: SkillExercise[] = [
     skill: "listening",
     unit: 23,
     title: "Raus aus der Geborgenheit",
-    genre: "Diyalog",
+    genre: "dialogue",
     intro: "Büyük bir değişiklik konuşuluyor. Koşullara ve tereddüde dikkat et.",
     gloss: [
       { de: "das Wachstum", tr: "büyüme", en: "growth" },
@@ -323,7 +323,7 @@ export const b2U23: SkillExercise[] = [
     skill: "writing",
     unit: 23,
     title: "Ölçüyü tutturmak",
-    genre: "Cümle kurma",
+    genre: "build",
     intro: "Resmî kalıp, nazik talep ve kendine kurulan varsayım.",
     gloss: [
       { de: "die Versandkosten", tr: "kargo ücreti", en: "shipping costs" },
@@ -377,7 +377,7 @@ export const b2U23: SkillExercise[] = [
     skill: "writing",
     unit: 23,
     title: "Die Anfrage",
-    genre: "Resmî mektup",
+    genre: "formal",
     intro: "Bir kuruma ya da firmaya resmî bir bilgi talebi yaz.",
     gloss: [
       { de: "der Klärungsbedarf", tr: "açıklığa kavuşturma ihtiyacı", en: "need for clarification" },

@@ -26,7 +26,7 @@ export const a1U04: SkillExercise[] = [
     skill: "reading",
     unit: 4,
     title: "Haustiere im Haus",
-    genre: "Forum mesajı",
+    genre: "forum",
     intro: "Üç kişi evcil hayvanlarını anlatıyor. Kimde ne var, kimde yok?",
     gloss: [
       { de: "das Tier", tr: "hayvan", en: "animal" },
@@ -86,7 +86,7 @@ export const a1U04: SkillExercise[] = [
     skill: "reading",
     unit: 4,
     title: "Wer ist das auf dem Foto?",
-    genre: "Fotoğraf açıklaması",
+    genre: "info",
     intro: "Bir aile fotoğrafının altındaki yazıyı okuyacaksın.",
     gloss: [
       { de: "das Bild", tr: "resim", en: "picture" },
@@ -140,7 +140,7 @@ export const a1U04: SkillExercise[] = [
     skill: "listening",
     unit: 4,
     title: "Ich habe keine Zeit",
-    genre: "Diyalog",
+    genre: "dialogue",
     intro: "İki arkadaş konuşuyor. Kim ne yapamıyor ve neden?",
     gloss: [
       { de: "die Zeit", tr: "zaman", en: "time" },
@@ -197,7 +197,7 @@ export const a1U04: SkillExercise[] = [
     skill: "listening",
     unit: 4,
     title: "Mein Hund Bruno",
-    genre: "Tanıtım",
+    genre: "profile",
     intro: "Bir çocuk köpeğini anlatıyor. Adı, yaşı ve neyi sevdiği ne?",
     gloss: [
       { de: "der Ball", tr: "top", en: "ball" },
@@ -254,7 +254,7 @@ export const a1U04: SkillExercise[] = [
     skill: "writing",
     unit: 4,
     title: "kein oder keine?",
-    genre: "Dil bilgisi",
+    genre: "grammar",
     intro: "Olumsuzluk ve çoğul üzerine kısa alıştırmalar.",
     gloss: [
       { de: "kein", tr: "hiç (eril/nötr)", en: "no (m./n.)" },
@@ -291,7 +291,7 @@ export const a1U04: SkillExercise[] = [
     skill: "writing",
     unit: 4,
     title: "Ein Foto beschreiben",
-    genre: "Forum mesajı",
+    genre: "forum",
     intro: "Bir aile fotoğrafını anlat: kimler var, kaç kişi?",
     gloss: [
       { de: "das Foto", tr: "fotoğraf", en: "photo" },

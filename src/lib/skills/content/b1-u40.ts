@@ -34,7 +34,7 @@ export const b1U40: SkillExercise[] = [
     skill: "reading",
     unit: 40,
     title: "Vom Brief zum Vertrag",
-    genre: "İş arama rehberi",
+    genre: "guide",
     intro: "Bir başvurunun aşamaları. Ne zaman ne beklenir?",
     minutes: 5,
     gloss: [
@@ -101,7 +101,7 @@ export const b1U40: SkillExercise[] = [
     skill: "reading",
     unit: 40,
     title: "Was macht zufrieden?",
-    genre: "Anket raporu",
+    genre: "report",
     intro: "Bir iş memnuniyeti anketi. Hangi etken önde?",
     minutes: 5,
     gloss: [
@@ -171,7 +171,7 @@ export const b1U40: SkillExercise[] = [
     skill: "listening",
     unit: 40,
     title: "Das Projekt vorstellen",
-    genre: "Sunum öncesi",
+    genre: "monologue",
     intro: "Bir sunum planlanıyor. Ne gösterilecek, ne söz verilecek?",
     minutes: 4,
     gloss: [
@@ -233,7 +233,7 @@ export const b1U40: SkillExercise[] = [
     skill: "listening",
     unit: 40,
     title: "Selbstständig — ja oder nein?",
-    genre: "Karar konuşması",
+    genre: "dialogue",
     intro: "Biri kendi işini kurmayı düşünüyor. Ne konuşuluyor?",
     minutes: 4,
     gloss: [
@@ -296,7 +296,7 @@ export const b1U40: SkillExercise[] = [
     skill: "writing",
     unit: 40,
     title: "Bin ich zufrieden?",
-    genre: "Kişisel değerlendirme",
+    genre: "review",
     intro: "İşinden memnun musun? 'Sıkılıyorum' Almancada özneyi değiştirir.",
     minutes: 8,
     gloss: [
@@ -351,7 +351,7 @@ export const b1U40: SkillExercise[] = [
     skill: "writing",
     unit: 40,
     title: "Ergebnisse einer Umfrage",
-    genre: "Anket raporu",
+    genre: "report",
     intro: "Bir anketi raporla. 'çoğu' Almancada ismi ve fiili çoğullar.",
     minutes: 12,
     gloss: [

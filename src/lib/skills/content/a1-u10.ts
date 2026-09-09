@@ -29,7 +29,7 @@ export const a1U10: SkillExercise[] = [
     skill: "reading",
     unit: 10,
     title: "Mein Arbeitstag",
-    genre: "Blog",
+    genre: "blog",
     intro: "Elif iş gününü anlatıyor: ne zaman başlıyor, ne zaman bitiyor?",
     gloss: [
       { de: "anfangen", tr: "başlamak", en: "to start" },
@@ -89,7 +89,7 @@ export const a1U10: SkillExercise[] = [
     skill: "reading",
     unit: 10,
     title: "Pläne für das Wochenende",
-    genre: "Forum mesajı",
+    genre: "forum",
     intro: "Üç kişi hafta sonu planını yazıyor.",
     gloss: [
       { de: "der Plan", tr: "plan", en: "plan" },
@@ -143,7 +143,7 @@ export const a1U10: SkillExercise[] = [
     skill: "listening",
     unit: 10,
     title: "Hast du morgen Zeit?",
-    genre: "Telefon",
+    genre: "phone",
     intro: "Randevu ayarlanıyor. İlk teklif uymuyor — sonunda hangi saatte buluşuyorlar?",
     gloss: [
       { de: "passen", tr: "uymak", en: "to suit" },
@@ -201,7 +201,7 @@ export const a1U10: SkillExercise[] = [
     skill: "listening",
     unit: 10,
     title: "Endlich Feierabend",
-    genre: "Diyalog",
+    genre: "dialogue",
     intro: "İki iş arkadaşı mesai sonunda konuşuyor.",
     gloss: [
       { de: "der Feierabend", tr: "iş çıkışı", en: "end of workday" },
@@ -259,7 +259,7 @@ export const a1U10: SkillExercise[] = [
     skill: "writing",
     unit: 10,
     title: "Einen Termin vereinbaren",
-    genre: "Dil bilgisi",
+    genre: "grammar",
     intro: "Randevu kalıplarını yaz.",
     gloss: [
       { de: "passen", tr: "uymak", en: "to suit" },
@@ -296,7 +296,7 @@ export const a1U10: SkillExercise[] = [
     skill: "writing",
     unit: 10,
     title: "Was machst du am Wochenende?",
-    genre: "Mesaj",
+    genre: "message",
     intro: "Bir arkadaşının mesajına cevap yaz.",
     gloss: [
       { de: "der Plan", tr: "plan", en: "plan" },

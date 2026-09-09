@@ -17,7 +17,7 @@ export const deC1P3: SkillExercise[] = [
     level: "C1",
     skill: "reading",
     title: "Was eine Karte weglässt",
-    genre: "Yorum yazısı",
+    genre: "opinion",
     intro: "Haritaların seçiciliği üzerine bir köşe yazısı okuyacaksın: hangi eksiltme teknik, hangisi içeriğe müdahale.",
     gloss: [
       { de: "der Maßstab", tr: "ölçek", en: "scale" },
@@ -119,7 +119,7 @@ export const deC1P3: SkillExercise[] = [
     level: "C1",
     skill: "listening",
     title: "Wie eine Norm entsteht",
-    genre: "Konferans konuşması",
+    genre: "meeting",
     intro: "Bir konferans konuşması dinleyeceksin: teknik normları kim yazıyor, dilleri neden böyle, bağlayıcılıkları ne kadar.",
     gloss: [
       { de: "der Ausschuss", tr: "komite", en: "committee" },
@@ -202,7 +202,7 @@ export const deC1P3: SkillExercise[] = [
     level: "C1",
     skill: "writing",
     title: "Ein Einwand an die Redaktion",
-    genre: "Okur mektubu",
+    genre: "opinion",
     intro: "Bir yazıya itiraz eden okur mektubu yazacaksın; önce iki cümle kur, sonra mektubu yaz.",
     gloss: [
       { de: "der Einwand", tr: "itiraz", en: "objection" },
@@ -277,7 +277,7 @@ export const deC1P3: SkillExercise[] = [
     level: "C1",
     skill: "speaking",
     title: "Was sich regeln lässt",
-    genre: "Monolog",
+    genre: "monologue",
     intro: "İki dakikaya kadar konuşacaksın: bir ayrım kur, iki alanı farklı ele al ve ölçütünü örnekle sına.",
     gloss: [],
     minutes: 7,
@@ -322,7 +322,7 @@ export const deC1P3: SkillExercise[] = [
     level: "C1",
     skill: "grammar",
     title: "Das lässt sich machen",
-    genre: "Kural",
+    genre: "grammar",
     intro: "Edilgen çatının ağırlığını taşımadan aynı içeriği söylemenin üç yolu ve aralarındaki ince farklar.",
     focus: "Passiversatz: lassen sich, sein + zu, -bar",
     gloss: [

@@ -31,7 +31,7 @@ export const b1U08: SkillExercise[] = [
     skill: "reading",
     unit: 8,
     title: "Entweder Fleisch oder nicht",
-    genre: "Kantin duyurusu ve yorum",
+    genre: "phone",
     intro: "Bir yemekhane iki seçenek sunuyor. Kim neyi neden seçiyor?",
     minutes: 5,
     gloss: [
@@ -96,7 +96,7 @@ export const b1U08: SkillExercise[] = [
     skill: "reading",
     unit: 8,
     title: "Der Mann, der nicht wartete",
-    genre: "Kısa öykü",
+    genre: "story",
     intro: "Kısa bir öykü. Her ilgi cümlesinde zamirin kimi gösterdiğine dikkat et.",
     minutes: 6,
     gloss: [
@@ -163,7 +163,7 @@ export const b1U08: SkillExercise[] = [
     skill: "listening",
     unit: 8,
     title: "Entweder heute oder gar nicht",
-    genre: "Karar konuşması",
+    genre: "dialogue",
     intro: "İki arkadaş iki seçenek arasında kalıyor. Hangisi neden eleniyor?",
     minutes: 4,
     gloss: [
@@ -225,7 +225,7 @@ export const b1U08: SkillExercise[] = [
     skill: "listening",
     unit: 8,
     title: "Nach dem Theater",
-    genre: "Oyun sonrası sohbet",
+    genre: "dialogue",
     intro: "İki kişi bir oyunu konuşuyor. Kim neyi beğendi, kim neyi beğenmedi?",
     minutes: 4,
     gloss: [
@@ -288,7 +288,7 @@ export const b1U08: SkillExercise[] = [
     skill: "writing",
     unit: 8,
     title: "Zwei Wege, eine Wahl",
-    genre: "Karşılaştırmalı not",
+    genre: "message",
     intro: "İki seçeneği karşılaştır ve birini seç. Olumsuzdan sonraki düzeltmeye dikkat et.",
     minutes: 8,
     gloss: [
@@ -343,7 +343,7 @@ export const b1U08: SkillExercise[] = [
     skill: "writing",
     unit: 8,
     title: "Ein Mensch, den ich kenne",
-    genre: "Kişi betimlemesi",
+    genre: "profile",
     intro: "Tanıdığın birini anlat. Her cümlede ilgi zamirinin hâlini yan cümledeki görevinden çıkar.",
     minutes: 12,
     gloss: [

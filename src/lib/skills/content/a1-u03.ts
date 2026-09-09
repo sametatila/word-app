@@ -27,7 +27,7 @@ export const a1U03: SkillExercise[] = [
     skill: "reading",
     unit: 3,
     title: "Das ist meine Familie",
-    genre: "Profil",
+    genre: "profile",
     intro: "Lena ailesini tanıtıyor. Kim kimin nesi, kaç yaşında?",
     gloss: [
       { de: "die Geschwister", tr: "kardeşler", en: "siblings" },
@@ -86,7 +86,7 @@ export const a1U03: SkillExercise[] = [
     skill: "reading",
     unit: 3,
     title: "Das Anmeldeformular",
-    genre: "Form",
+    genre: "formal",
     intro: "Doldurulmuş bir kayıt formunu okuyacaksın. Bilgiler doğru mu?",
     gloss: [
       { de: "die Anmeldung", tr: "kayıt", en: "registration" },
@@ -141,7 +141,7 @@ export const a1U03: SkillExercise[] = [
     skill: "listening",
     unit: 3,
     title: "Meine Geschwister",
-    genre: "Tanışma",
+    genre: "profile",
     intro: "Jonas kardeşlerinden bahsediyor. Kaç kardeşi var, kaç yaşındalar?",
     gloss: [
       { de: "der Bruder", tr: "erkek kardeş", en: "brother" },
@@ -199,7 +199,7 @@ export const a1U03: SkillExercise[] = [
     skill: "listening",
     unit: 3,
     title: "Bei der Anmeldung",
-    genre: "Diyalog",
+    genre: "dialogue",
     intro: "Kayıt masasında bir görevli bilgi soruyor. Cevapları yakala.",
     gloss: [
       { de: "das Formular", tr: "form", en: "form" },
@@ -258,7 +258,7 @@ export const a1U03: SkillExercise[] = [
     skill: "writing",
     unit: 3,
     title: "Formular für den Kurs",
-    genre: "Form",
+    genre: "formal",
     intro: "Kayıt formunu doldur ve aile cümleleri kur.",
     gloss: [
       { de: "der Familienstand", tr: "medeni hâl", en: "marital status" },
@@ -301,7 +301,7 @@ export const a1U03: SkillExercise[] = [
     skill: "writing",
     unit: 3,
     title: "Über meine Familie schreiben",
-    genre: "Forum mesajı",
+    genre: "forum",
     intro: "Kurs forumunda aileni tanıt.",
     gloss: [
       { de: "die Familie", tr: "aile", en: "family" },

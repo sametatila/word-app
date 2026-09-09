@@ -18,7 +18,7 @@ export const deA2P2: SkillExercise[] = [
     level: "A2",
     skill: "reading",
     title: "Der Bücherschrank an der Ecke",
-    genre: "Röportaj",
+    genre: "interview",
     intro: "Sokaktaki açık kitap dolabına bakan bir kadınla yapılmış kısa söyleşiyi okuyacaksın.",
     gloss: [
       { de: "der Bücherschrank", tr: "kitap dolabı", en: "book cabinet" },
@@ -99,7 +99,7 @@ export const deA2P2: SkillExercise[] = [
     level: "A2",
     skill: "listening",
     title: "Durchsage im Möbelhaus",
-    genre: "Anons",
+    genre: "phone",
     intro: "Mobilya mağazasında kapanış anonsunu dinleyeceksin: indirim, restoran saati, kaybolan çocuk ve teslim alma.",
     gloss: [
       { de: "das Möbelhaus", tr: "mobilyacı", en: "furniture store" },
@@ -171,7 +171,7 @@ export const deA2P2: SkillExercise[] = [
     level: "A2",
     skill: "writing",
     title: "Ich habe Ihre Geldbörse gefunden",
-    genre: "E-posta",
+    genre: "email",
     intro: "İçinde adres olan bir cüzdan buldun; önce iki cümle kur, sonra sahibine kısa bir e-posta yaz.",
     gloss: [
       { de: "die Geldbörse", tr: "cüzdan", en: "wallet" },
@@ -231,7 +231,7 @@ export const deA2P2: SkillExercise[] = [
     level: "A2",
     skill: "speaking",
     title: "Das deutsche r hat zwei Gesichter",
-    genre: "Ses çalışması",
+    genre: "pronounce",
     intro: "Hece başındaki „r“ boğazdan gelir, hece sonundaki „r“ ise neredeyse bir „a“ sesine dönüşür.",
     gloss: [
       { de: "das Krankenhaus", tr: "hastane", en: "hospital" },
@@ -307,7 +307,7 @@ export const deA2P2: SkillExercise[] = [
     level: "A2",
     skill: "grammar",
     title: "Wo? Dativ. Wohin? Akkusativ.",
-    genre: "Kural",
+    genre: "grammar",
     intro: "Dokuz yer edatı iki hâl arasında gidip gelir: durum anlatırsan Dativ, hareket anlatırsan Akkusativ.",
     focus: "Wechselpräpositionen: wo (Dativ) ↔ wohin (Akkusativ)",
     gloss: [

@@ -18,7 +18,7 @@ export const enB2P5: SkillExercise[] = [
     level: "B2",
     skill: "reading",
     title: "Clothes Collection: Two Years On",
-    genre: "Rapor",
+    genre: "report",
     intro: "Bir derneğin iki yıllık ara raporunu okuyacaksın: sayılar ne diyor, ne öneriliyor, hangi soru cevapsız.",
     gloss: [
       { de: "permanent", tr: "kalıcı" },
@@ -116,7 +116,7 @@ export const enB2P5: SkillExercise[] = [
     level: "B2",
     skill: "listening",
     title: "Why Volunteers Stop",
-    genre: "Panel",
+    genre: "meeting",
     intro: "Üç konuşmacılı bir panel dinleyeceksin: gönüllüler neden ayrılıyor, çıkış görüşmeleri neden işe yaramıyor, ne yapılabilir.",
     gloss: [
       { de: "coordinate", tr: "koordine etmek" },
@@ -206,7 +206,7 @@ export const enB2P5: SkillExercise[] = [
     level: "B2",
     skill: "writing",
     title: "Response to the Consultation",
-    genre: "Resmî görüş",
+    genre: "opinion",
     intro: "Belediyenin görüşe açtığı bir öneriye resmî yanıt yazacaksın; önce iki cümle kur, sonra görüşünü yaz.",
     gloss: [
       { de: "consultation", tr: "görüş alma" },
@@ -278,7 +278,7 @@ export const enB2P5: SkillExercise[] = [
     level: "B2",
     skill: "speaking",
     title: "Promise Less or Try More?",
-    genre: "Monolog",
+    genre: "monologue",
     intro: "Bir buçuk dakikaya kadar konuşacaksın: iki tutumu karşılaştır ve kendi ölçütünü koy.",
     gloss: [],
     minutes: 6,
@@ -322,7 +322,7 @@ export const enB2P5: SkillExercise[] = [
     level: "B2",
     skill: "grammar",
     title: "stop smoking or stop to smoke?",
-    genre: "Kural",
+    genre: "grammar",
     intro: "Bir fiilden sonra mastar mı yoksa -ing biçimi mi geleceği ezberlenir; birkaç fiilde ise seçim anlamı değiştirir.",
     focus: "Gerund ve infinitive",
     gloss: [

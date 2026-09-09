@@ -25,7 +25,7 @@ export const b1U05: SkillExercise[] = [
     skill: "reading",
     unit: 5,
     title: "Die Nebenkostenabrechnung",
-    genre: "Hesap dökümü",
+    genre: "report",
     intro: "Yıllık gider hesabı geldi ve tutar yüksek. Neyin nasıl hesaplandığını oku.",
     minutes: 5,
     gloss: [
@@ -96,7 +96,7 @@ export const b1U05: SkillExercise[] = [
     skill: "reading",
     unit: 5,
     title: "Möbliert oder leer?",
-    genre: "Forum yazısı",
+    genre: "forum",
     intro: "Eşyalı mı boş mu tutmalı? Bir forumda iki görüş. Zıtlık bağlaçlarına dikkat.",
     minutes: 5,
     gloss: [
@@ -168,7 +168,7 @@ export const b1U05: SkillExercise[] = [
     skill: "listening",
     unit: 5,
     title: "Der Umzugstag",
-    genre: "Planlama konuşması",
+    genre: "info",
     intro: "Taşınma günü planlanıyor. Dinle: hangi iş hangisinden önce, kim ne yapıyor?",
     minutes: 4,
     gloss: [
@@ -230,7 +230,7 @@ export const b1U05: SkillExercise[] = [
     skill: "listening",
     unit: 5,
     title: "Ein Zimmer zur Untermiete",
-    genre: "Oda gösterme",
+    genre: "dialogue",
     intro: "Kısa dönem bir oda gösteriliyor. Dinle: ne var, ne yok, ne kadar süre?",
     minutes: 4,
     gloss: [
@@ -293,7 +293,7 @@ export const b1U05: SkillExercise[] = [
     skill: "writing",
     unit: 5,
     title: "Widerspruch zur Abrechnung",
-    genre: "Resmî itiraz",
+    genre: "formal",
     intro: "Gider hesabındaki bir sayı yanlış. Kişisiz, tarihli ve gerekçeli yaz.",
     minutes: 8,
     gloss: [
@@ -350,7 +350,7 @@ export const b1U05: SkillExercise[] = [
     skill: "writing",
     unit: 5,
     title: "Das Zimmer weitergeben",
-    genre: "İlan metni",
+    genre: "ad",
     intro: "Odanı kısa süreliğine devredeceksin. Bir ilan yaz: ne var, ne kadar süre, hangi koşullar.",
     minutes: 12,
     gloss: [

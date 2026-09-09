@@ -35,7 +35,7 @@ export const b1U42: SkillExercise[] = [
     skill: "reading",
     unit: 42,
     title: "Was vor Gericht passiert",
-    genre: "Bilgilendirme metni",
+    genre: "info",
     intro: "Bir duruşma nasıl işler? Kim ne yapar?",
     minutes: 5,
     gloss: [
@@ -102,7 +102,7 @@ export const b1U42: SkillExercise[] = [
     skill: "reading",
     unit: 42,
     title: "Was gilt bei einer Versammlung?",
-    genre: "Kural metni",
+    genre: "grammar",
     intro: "Toplantı ve gösteri kuralları. Ne serbest, ne değil?",
     minutes: 5,
     gloss: [
@@ -169,7 +169,7 @@ export const b1U42: SkillExercise[] = [
     skill: "listening",
     unit: 42,
     title: "Eine Anzeige erstatten",
-    genre: "Karakolda",
+    genre: "dialogue",
     intro: "Bir olay bildiriliyor. Hangi bilgi isteniyor?",
     minutes: 4,
     gloss: [
@@ -231,7 +231,7 @@ export const b1U42: SkillExercise[] = [
     skill: "listening",
     unit: 42,
     title: "Theorie und Wirklichkeit",
-    genre: "Siyaset sohbeti",
+    genre: "dialogue",
     intro: "Bir yasa tartışılıyor. Kâğıt üstünde ne, gerçekte ne?",
     minutes: 4,
     gloss: [
@@ -294,7 +294,7 @@ export const b1U42: SkillExercise[] = [
     skill: "writing",
     unit: 42,
     title: "Ein Ereignis melden",
-    genre: "Resmî bildirim",
+    genre: "report",
     intro: "Bir olayı bildir. Ortaç isimden önce gelirse çekilir.",
     minutes: 8,
     gloss: [
@@ -348,7 +348,7 @@ export const b1U42: SkillExercise[] = [
     skill: "writing",
     unit: 42,
     title: "Regeln erklären",
-    genre: "Kural metni",
+    genre: "grammar",
     intro: "Bir kuralı açıkla. Yan cümle sona giderse başa 'es' gelir.",
     minutes: 12,
     gloss: [

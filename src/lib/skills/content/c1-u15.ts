@@ -32,7 +32,7 @@ export const c1U15: SkillExercise[] = [
     skill: "reading",
     unit: 15,
     title: "Die Frist schlägt das Argument",
-    genre: "Rehber yazısı",
+    genre: "guide",
     intro: "Resmî itiraz: neden gerekçeden önce tarih gelir?",
     gloss: [
       { de: "fristwahrend", tr: "süreyi koruyan", en: "within the deadline" },
@@ -114,7 +114,7 @@ export const c1U15: SkillExercise[] = [
     skill: "reading",
     unit: 15,
     title: "Wer für andere unterschreibt",
-    genre: "Bilgilendirme",
+    genre: "info",
     intro: "Kefalet: imza atıldığı anda ne değişiyor?",
     gloss: [
       { de: "die Bürgschaft", tr: "kefalet", en: "guarantee" },
@@ -190,7 +190,7 @@ export const c1U15: SkillExercise[] = [
     skill: "listening",
     unit: 15,
     title: "Der strittige Versicherungsfall",
-    genre: "Telefon görüşmesi",
+    genre: "phone",
     intro: "Sigorta ödemeyi reddediyor. Gerekçe hangi maddede saklı?",
     gloss: [
       { de: "der Deckungsumfang", tr: "teminat kapsamı", en: "scope of cover" },
@@ -270,7 +270,7 @@ export const c1U15: SkillExercise[] = [
     skill: "listening",
     unit: 15,
     title: "Vor der Kammer",
-    genre: "Duruşma",
+    genre: "meeting",
     intro: "Duruşma sahnesi. İfade nasıl kaydediliyor, karar nasıl bildiriliyor?",
     gloss: [
       { de: "die Kammer", tr: "heyet, daire", en: "chamber" },
@@ -344,7 +344,7 @@ export const c1U15: SkillExercise[] = [
     skill: "writing",
     unit: 15,
     title: "Kabul et, sonucu koru",
-    genre: "Dil bilgisi",
+    genre: "grammar",
     intro: "wenngleich ve gleichwohl: gerekçeyi tanı, kararı değiştirme.",
     gloss: [
       { de: "wenngleich", tr: "her ne kadar", en: "although" },
@@ -391,7 +391,7 @@ export const c1U15: SkillExercise[] = [
     skill: "writing",
     unit: 15,
     title: "Fristwahrender Einspruch",
-    genre: "Resmî yazı",
+    genre: "formal",
     intro: "Önce süreyi koru: kısa itiraz, gerekçe sonra.",
     gloss: [
       { de: "fristwahrend", tr: "süreyi koruyan", en: "within the deadline" },

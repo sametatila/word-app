@@ -18,7 +18,7 @@ export const enC1P2: SkillExercise[] = [
     level: "C1",
     skill: "reading",
     title: "What a Form Does Before Anybody Answers It",
-    genre: "Bilim yazısı",
+    genre: "article",
     intro: "Formların soru sormadan önce ne yaptığını inceleyen bir yazı okuyacaksın: kategoriler kararı nasıl önceden veriyor.",
     gloss: [
       { de: "classification", tr: "sınıflandırma" },
@@ -118,7 +118,7 @@ export const enC1P2: SkillExercise[] = [
     level: "C1",
     skill: "listening",
     title: "The Most Neglected Infrastructure",
-    genre: "Ders",
+    genre: "monologue",
     intro: "Bir ders dinleyeceksin: hangi altyapı hiçbir strateji belgesinde geçmiyor ve yokluğu kimin şehrini küçültüyor.",
     gloss: [
       { de: "infrastructure", tr: "altyapı" },
@@ -206,7 +206,7 @@ export const enC1P2: SkillExercise[] = [
     level: "C1",
     skill: "writing",
     title: "Writing an Abstract",
-    genre: "Özet",
+    genre: "report",
     intro: "Küçük bir çalışmanın akademik özetini yazacaksın; önce iki cümle kur, sonra özeti yaz.",
     gloss: [
       { de: "questionnaire", tr: "anket formu" },
@@ -271,7 +271,7 @@ export const enC1P2: SkillExercise[] = [
     level: "C1",
     skill: "speaking",
     title: "Should Official Language Be Simplified?",
-    genre: "Monolog",
+    genre: "monologue",
     intro: "İki dakikaya kadar konuşacaksın: kolay cevabı sorgula, ödünleşimi adlandır ve kendi ölçütünü koy.",
     gloss: [],
     minutes: 7,
@@ -318,7 +318,7 @@ export const enC1P2: SkillExercise[] = [
     level: "C1",
     skill: "grammar",
     title: "the removal of the bench",
-    genre: "Kural",
+    genre: "grammar",
     intro: "Akademik ve kurumsal yazının belkemiği: fiili ada çevirmek, bunun neyi kazandırdığını ve neyi gizlediğini bilmek.",
     focus: "Nominalisation ve akademik kayıt",
     gloss: [

@@ -33,7 +33,7 @@ export const a2U18: SkillExercise[] = [
     skill: "reading",
     unit: 18,
     title: "Was nehme ich mit nach Hause?",
-    genre: "Blog yazısı",
+    genre: "blog",
     intro: "Hediyelik alma rehberi. Kime ne, ne kadara?",
     gloss: [
       { de: "das Andenken", tr: "hediyelik eşya", en: "souvenir" },
@@ -100,7 +100,7 @@ export const a2U18: SkillExercise[] = [
     skill: "reading",
     unit: 18,
     title: "Einladung zur Familienfeier",
-    genre: "Davetiye",
+    genre: "personal",
     intro: "Bir aile kutlaması daveti. Ne zaman, nerede, kim ne getiriyor?",
     gloss: [
       { de: "die Familienfeier", tr: "aile kutlaması", en: "family celebration" },
@@ -164,7 +164,7 @@ export const a2U18: SkillExercise[] = [
     skill: "listening",
     unit: 18,
     title: "Der Zug hat Verspätung",
-    genre: "Diyalog",
+    genre: "dialogue",
     intro: "Trende bir aksilik. Kaç dakika gecikme, ne yapmak gerekiyor?",
     gloss: [
       { de: "der Schaffner", tr: "kondüktör", en: "conductor" },
@@ -229,7 +229,7 @@ export const a2U18: SkillExercise[] = [
     skill: "listening",
     unit: 18,
     title: "Wir planen eine Party",
-    genre: "Diyalog",
+    genre: "dialogue",
     intro: "İki ev arkadaşı parti hazırlığı yapıyor. Kim neyi üstleniyor?",
     gloss: [
       { de: "aufstellen", tr: "kurmak, dizmek", en: "to set up" },
@@ -294,7 +294,7 @@ export const a2U18: SkillExercise[] = [
     skill: "writing",
     unit: 18,
     title: "Kime, ne zaman, umarım ki",
-    genre: "Dil bilgisi",
+    genre: "grammar",
     intro: "Yönelme hâli, sıra sayılı tarih ve dass yan cümlesi.",
     gloss: [
       { de: "das Andenken", tr: "hediyelik eşya", en: "souvenir" },
@@ -337,7 +337,7 @@ export const a2U18: SkillExercise[] = [
     skill: "writing",
     unit: 18,
     title: "Antwort auf die Einladung",
-    genre: "Mesaj",
+    genre: "message",
     intro: "Davete cevap yaz: geliyor musun, ne getiriyorsun, ne soruyorsun?",
     gloss: [
       { de: "die Feier", tr: "kutlama", en: "celebration" },

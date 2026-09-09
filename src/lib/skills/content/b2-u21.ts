@@ -33,7 +33,7 @@ export const b2U21: SkillExercise[] = [
     skill: "reading",
     unit: 21,
     title: "Was Gesten verraten",
-    genre: "Popüler bilim yazısı",
+    genre: "article",
     intro: "Beden dili üzerine ölçülü bir yazı. Neyin gerçekten okunabildiğine dikkat et.",
     gloss: [
       { de: "die Geste", tr: "jest", en: "gesture" },
@@ -105,7 +105,7 @@ export const b2U21: SkillExercise[] = [
     skill: "reading",
     unit: 21,
     title: "Das große Missverständnis",
-    genre: "Deneme",
+    genre: "essay",
     intro: "Yabancı dilde yanlış anlaşılmanın nerede doğduğunu anlatan bir yazı.",
     gloss: [
       { de: "das Missverständnis", tr: "yanlış anlama", en: "misunderstanding" },
@@ -177,7 +177,7 @@ export const b2U21: SkillExercise[] = [
     skill: "listening",
     unit: 21,
     title: "Als wäre nichts passiert",
-    genre: "Diyalog",
+    genre: "dialogue",
     intro: "İki arkadaş bir davranışı konuşuyor. Görünen ile olan arasındaki farka dikkat et.",
     gloss: [
       { de: "gleichgültig", tr: "kayıtsız", en: "indifferent" },
@@ -256,7 +256,7 @@ export const b2U21: SkillExercise[] = [
     skill: "listening",
     unit: 21,
     title: "Das dürfte stimmen",
-    genre: "Diyalog",
+    genre: "dialogue",
     intro: "Bir tahmin tartışılıyor. Kesinlik derecelerini kiplerden çıkar.",
     gloss: [
       { de: "die Vermutung", tr: "tahmin", en: "assumption" },
@@ -335,7 +335,7 @@ export const b2U21: SkillExercise[] = [
     skill: "writing",
     unit: 21,
     title: "Sanki ve galiba",
-    genre: "Cümle kurma",
+    genre: "build",
     intro: "als ob gerçek olmayanı, öznel kip ise kesinliğin derecesini işaretler.",
     gloss: [
       { de: "gleichgültig", tr: "kayıtsız", en: "indifferent" },
@@ -389,7 +389,7 @@ export const b2U21: SkillExercise[] = [
     skill: "writing",
     unit: 21,
     title: "Ein Missverständnis",
-    genre: "Anlatı",
+    genre: "story",
     intro: "Yaşadığın bir yanlış anlamayı anlat — iki tarafın da ne demek istediğini göster.",
     gloss: [
       { de: "das Missverständnis", tr: "yanlış anlama", en: "misunderstanding" },

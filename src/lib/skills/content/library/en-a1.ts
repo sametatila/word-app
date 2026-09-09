@@ -19,7 +19,7 @@ export const enA1: SkillExercise[] = [
     level: "A1",
     skill: "reading",
     title: "School Trip to the Zoo",
-    genre: "Veli mektubu",
+    genre: "text",
     intro: "Öğretmenin velilere gönderdiği kısa mektubu oku: gezi ne zaman, kaç para, çocuk yanında ne getirecek.",
     gloss: [
       { de: "trip", tr: "gezi" },
@@ -89,7 +89,7 @@ export const enA1: SkillExercise[] = [
     level: "A1",
     skill: "listening",
     title: "Lost Property at the Bus Station",
-    genre: "Diyalog",
+    genre: "dialogue",
     intro: "Nadia otobüste çantasını unutmuş; kayıp eşya bürosundaki görevliyle konuşmasını dinle.",
     gloss: [
       { de: "lost", tr: "kayıp" },
@@ -168,7 +168,7 @@ export const enA1: SkillExercise[] = [
     level: "A1",
     skill: "writing",
     title: "A Card for Grandma",
-    genre: "Tebrik kartı",
+    genre: "personal",
     intro: "Ninenin doğum günü; önce iki cümle kur, sonra ona kısa bir kart yaz.",
     gloss: [
       { de: "grandma", tr: "nine" },
@@ -219,7 +219,7 @@ export const enA1: SkillExercise[] = [
     level: "A1",
     skill: "speaking",
     title: "th: think and this",
-    genre: "Ses çalışması",
+    genre: "pronounce",
     intro: "Türkçede olmayan „th“ sesi: dilin ucu dişlerin arasında. Yedi cümlede t, s ve d'ye kaçmadan söyle.",
     gloss: [
       { de: "think", tr: "düşünmek" },
@@ -281,7 +281,7 @@ export const enA1: SkillExercise[] = [
     level: "A1",
     skill: "grammar",
     title: "do or does?",
-    genre: "Kural",
+    genre: "grammar",
     intro: "Alışkanlıkları anlatırken fiilin ne zaman -s aldığını ve soruda do/does'ın nasıl çalıştığını öğren.",
     focus: "Present simple: do / does ve üçüncü tekilde -s",
     gloss: [

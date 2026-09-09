@@ -32,7 +32,7 @@ export const b2U16: SkillExercise[] = [
     skill: "reading",
     unit: 16,
     title: "Die Führung durch Saal 3",
-    genre: "Müze rehber metni",
+    genre: "guide",
     intro: "Bir müze rehberinin salon metni. Neyin ne zaman yapıldığına dikkat et.",
     gloss: [
       { de: "das Gemälde", tr: "tablo", en: "painting" },
@@ -100,7 +100,7 @@ export const b2U16: SkillExercise[] = [
     skill: "reading",
     unit: 16,
     title: "Ein Roman, über den man spricht",
-    genre: "Kitap eleştirisi",
+    genre: "opinion",
     intro: "Ödül almış bir romanın eleştirisi. İlgi cümlelerinin taşıdığı bilgiye dikkat et.",
     gloss: [
       { de: "verfassen", tr: "kaleme almak", en: "to write" },
@@ -173,7 +173,7 @@ export const b2U16: SkillExercise[] = [
     skill: "listening",
     unit: 16,
     title: "Der Dirigent, dessen Orchester",
-    genre: "Diyalog",
+    genre: "dialogue",
     intro: "İki kişi bir konser programını konuşuyor. Kimin neyi olduğuna dikkat et.",
     gloss: [
       { de: "der Komponist", tr: "besteci", en: "composer" },
@@ -248,7 +248,7 @@ export const b2U16: SkillExercise[] = [
     skill: "listening",
     unit: 16,
     title: "Nach der Premiere",
-    genre: "Diyalog",
+    genre: "dialogue",
     intro: "Prömiyer sonrası fuayede iki seyirci konuşuyor.",
     gloss: [
       { de: "die Inszenierung", tr: "sahneleme", en: "staging" },
@@ -323,7 +323,7 @@ export const b2U16: SkillExercise[] = [
     skill: "writing",
     unit: 16,
     title: "Kimin, ne hakkında",
-    genre: "Cümle kurma",
+    genre: "build",
     intro: "Edatlı ilgi cümlesinde edat öne geçer; dessen ve deren sahibe göre seçilir.",
     gloss: [
       { de: "verfassen", tr: "kaleme almak", en: "to write" },
@@ -374,7 +374,7 @@ export const b2U16: SkillExercise[] = [
     skill: "writing",
     unit: 16,
     title: "Ihre Kritik",
-    genre: "Eleştiri yazısı",
+    genre: "opinion",
     intro: "Gördüğün ya da okuduğun bir şeyi değerlendir — övgüyü de itirazı da gerekçelendir.",
     gloss: [
       { de: "die Aufführung", tr: "temsil", en: "performance" },

@@ -33,7 +33,7 @@ export const b2U22: SkillExercise[] = [
     skill: "reading",
     unit: 22,
     title: "Die Macht der Gewohnheit",
-    genre: "Popüler bilim yazısı",
+    genre: "article",
     intro: "Alışkanlıkların nasıl kurulduğunu anlatan bir yazı.",
     gloss: [
       { de: "die Neigung", tr: "eğilim", en: "tendency" },
@@ -101,7 +101,7 @@ export const b2U22: SkillExercise[] = [
     skill: "reading",
     unit: 22,
     title: "Fair streiten",
-    genre: "Deneme",
+    genre: "essay",
     intro: "Tartışma kültürü üzerine bir yazı. İki tarafı birden anan cümlelere dikkat et.",
     gloss: [
       { de: "der Zorn", tr: "gazap", en: "wrath" },
@@ -170,7 +170,7 @@ export const b2U22: SkillExercise[] = [
     skill: "listening",
     unit: 22,
     title: "Der innere Schweinehund",
-    genre: "Diyalog",
+    genre: "dialogue",
     intro: "Ertelemekten yakınan biri konuşuyor. Engel nasıl adlandırılıyor?",
     gloss: [
       { de: "die Hürde", tr: "engel", en: "hurdle" },
@@ -245,7 +245,7 @@ export const b2U22: SkillExercise[] = [
     skill: "listening",
     unit: 22,
     title: "Was hättest du gesagt?",
-    genre: "Diyalog",
+    genre: "dialogue",
     intro: "Zor durumdaki bir arkadaşa nasıl davranılacağı konuşuluyor.",
     gloss: [
       { de: "das Mitgefühl", tr: "empati", en: "compassion" },
@@ -322,7 +322,7 @@ export const b2U22: SkillExercise[] = [
     skill: "writing",
     unit: 22,
     title: "Onun yerinde olsam",
-    genre: "Cümle kurma",
+    genre: "build",
     intro: "Konjunktiv II başkasının yerine geçirir; indem alışkanlığı kurar.",
     gloss: [
       { de: "aufschieben", tr: "ertelemek", en: "to put off" },
@@ -376,7 +376,7 @@ export const b2U22: SkillExercise[] = [
     skill: "writing",
     unit: 22,
     title: "Die schwierige Nachricht",
-    genre: "Kişisel mesaj",
+    genre: "message",
     intro: "Zor bir dönemden geçen birine yaz — teselli etmeden, yanında durarak.",
     gloss: [
       { de: "das Mitgefühl", tr: "empati", en: "compassion" },

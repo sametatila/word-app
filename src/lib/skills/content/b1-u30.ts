@@ -35,7 +35,7 @@ export const b1U30: SkillExercise[] = [
     skill: "reading",
     unit: 30,
     title: "Die Fabrik im Ort",
-    genre: "Yerel haber",
+    genre: "article",
     intro: "Bir fabrikanın durumu. Ne arttı, ne azaldı, kaça çıktı?",
     minutes: 5,
     gloss: [
@@ -101,7 +101,7 @@ export const b1U30: SkillExercise[] = [
     skill: "reading",
     unit: 30,
     title: "Zahlen richtig lesen",
-    genre: "Rehber metin",
+    genre: "guide",
     intro: "Bir tablo nasıl okunur? İki edat, iki farklı anlam.",
     minutes: 5,
     gloss: [
@@ -169,7 +169,7 @@ export const b1U30: SkillExercise[] = [
     skill: "listening",
     unit: 30,
     title: "Die Annonce",
-    genre: "İlan üzerine konuşma",
+    genre: "ad",
     intro: "Bir ilan okunuyor. Hangi ayrıntı önemli?",
     minutes: 4,
     gloss: [
@@ -231,7 +231,7 @@ export const b1U30: SkillExercise[] = [
     skill: "listening",
     unit: 30,
     title: "In der Verwaltung",
-    genre: "Ofis konuşması",
+    genre: "dialogue",
     intro: "Bir evrak aranıyor. Nerede, hangi klasörde?",
     minutes: 4,
     gloss: [
@@ -294,7 +294,7 @@ export const b1U30: SkillExercise[] = [
     skill: "writing",
     unit: 30,
     title: "Zahlen berichten",
-    genre: "Sayı raporu",
+    genre: "report",
     intro: "Rakamlarla bir gelişme anlat. Ne kadar arttı mı, kaça çıktı mı?",
     minutes: 8,
     gloss: [
@@ -348,7 +348,7 @@ export const b1U30: SkillExercise[] = [
     skill: "writing",
     unit: 30,
     title: "Reklamationsbrief",
-    genre: "Resmî şikâyet",
+    genre: "formal",
     intro: "Bir kuruma resmî şikâyet yaz. Eril ve nötr iyelikte isim de değişir.",
     minutes: 12,
     gloss: [

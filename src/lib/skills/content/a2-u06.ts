@@ -30,7 +30,7 @@ export const a2U06: SkillExercise[] = [
     skill: "reading",
     unit: 6,
     title: "Hinweise für Patienten",
-    genre: "Bilgilendirme",
+    genre: "info",
     intro: "Muayenehanenin bekleme odasındaki bilgi yazısı. Ne zaman gelinir, ne getirilir?",
     gloss: [
       { de: "die Sprechstunde", tr: "muayene saati", en: "consultation hours" },
@@ -91,7 +91,7 @@ export const a2U06: SkillExercise[] = [
     skill: "reading",
     unit: 6,
     title: "Omas Hausmittel",
-    genre: "Dergi yazısı",
+    genre: "article",
     intro: "Ev çareleri üzerine kısa bir yazı. Neye ne iyi geliyor?",
     gloss: [
       { de: "das Mittel", tr: "çare", en: "remedy" },
@@ -152,7 +152,7 @@ export const a2U06: SkillExercise[] = [
     skill: "listening",
     unit: 6,
     title: "Ich fühle mich nicht gut",
-    genre: "Diyalog",
+    genre: "dialogue",
     intro: "İşte bir sohbet: belirtiler neler, ne yapması öneriliyor?",
     gloss: [
       { de: "sich fühlen", tr: "kendini hissetmek", en: "to feel" },
@@ -210,7 +210,7 @@ export const a2U06: SkillExercise[] = [
     skill: "listening",
     unit: 6,
     title: "Darf ich das?",
-    genre: "Diyalog",
+    genre: "dialogue",
     intro: "Kontrol muayenesi. Neye izin var, ne yasak?",
     gloss: [
       { de: "erlaubt", tr: "serbest", en: "allowed" },
@@ -269,7 +269,7 @@ export const a2U06: SkillExercise[] = [
     skill: "writing",
     unit: 6,
     title: "sollen, dürfen und „mir ist …“",
-    genre: "Dil bilgisi",
+    genre: "grammar",
     intro: "Aktarılan tavsiye, izin ve belirtinin hâli. Üçü de kolayca karışır.",
     gloss: [
       { de: "das Medikament", tr: "ilaç", en: "medicine" },
@@ -313,7 +313,7 @@ export const a2U06: SkillExercise[] = [
     skill: "writing",
     unit: 6,
     title: "Einem kranken Freund schreiben",
-    genre: "Mesaj",
+    genre: "message",
     intro: "Hasta bir arkadaşına yaz: hâlini sor, iki çare öner, ne yapması gerektiğini söyle.",
     gloss: [
       { de: "sich fühlen", tr: "kendini hissetmek", en: "to feel" },

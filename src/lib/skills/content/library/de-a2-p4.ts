@@ -18,7 +18,7 @@ export const deA2P4: SkillExercise[] = [
     level: "A2",
     skill: "reading",
     title: "Was darf in welche Tonne?",
-    genre: "Bilgilendirme",
+    genre: "info",
     intro: "Apartman girişindeki çöp ayırma yazısını okuyacaksın: hangi kutuya ne giriyor, ne girmiyor, sorun olursa kime sorulacak.",
     gloss: [
       { de: "die Tonne", tr: "çöp kutusu", en: "bin" },
@@ -104,7 +104,7 @@ export const deA2P4: SkillExercise[] = [
     level: "A2",
     skill: "listening",
     title: "Anruf aus der Tierarztpraxis",
-    genre: "Sesli mesaj",
+    genre: "phone",
     intro: "Veteriner muayenehanesi telesekretere mesaj bırakıyor: randevu neden değişti, ne getirilecek, neye dikkat edilecek.",
     gloss: [
       { de: "die Fortbildung", tr: "hizmet içi eğitim", en: "training course" },
@@ -184,7 +184,7 @@ export const deA2P4: SkillExercise[] = [
     level: "A2",
     skill: "writing",
     title: "Bericht für den Vereinsbrief",
-    genre: "Bülten yazısı",
+    genre: "text",
     intro: "Derneğin bülteni için kısa bir etkinlik raporu yazacaksın; önce iki cümle kur, sonra raporu yaz.",
     gloss: [
       { de: "platt", tr: "patlak", en: "flat" },
@@ -244,7 +244,7 @@ export const deA2P4: SkillExercise[] = [
     level: "A2",
     skill: "speaking",
     title: "eu, äu und ä",
-    genre: "Ses çalışması",
+    genre: "pronounce",
     intro: "„eu“ ve „äu“ aynı sesi verir: oy. Tek başına „ä“ ise Türkçedeki e gibidir, ay gibi değil.",
     gloss: [
       { de: "der Baum", tr: "ağaç", en: "tree" },
@@ -320,7 +320,7 @@ export const deA2P4: SkillExercise[] = [
     level: "A2",
     skill: "grammar",
     title: "war, hatte, musste",
-    genre: "Kural",
+    genre: "grammar",
     intro: "Konuşurken çoğu fiil için Perfekt kullanılır, ama üç grup fiil geçmişte hep kısa biçimiyle söylenir.",
     focus: "Präteritum: sein, haben ve modal fiiller",
     gloss: [

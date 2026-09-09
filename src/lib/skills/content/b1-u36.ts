@@ -34,7 +34,7 @@ export const b1U36: SkillExercise[] = [
     skill: "reading",
     unit: 36,
     title: "Das Gerät anschließen",
-    genre: "Kurulum kılavuzu",
+    genre: "guide",
     intro: "Bir cihaz kuruluyor. Hangi adım hangi sırada?",
     minutes: 5,
     gloss: [
@@ -99,7 +99,7 @@ export const b1U36: SkillExercise[] = [
     skill: "reading",
     unit: 36,
     title: "Die Daten sind weg",
-    genre: "Bilgisayar rehberi",
+    genre: "guide",
     intro: "Veriler kayboldu. Ne yapılır, ne yapılmaz?",
     minutes: 5,
     gloss: [
@@ -166,7 +166,7 @@ export const b1U36: SkillExercise[] = [
     skill: "listening",
     unit: 36,
     title: "Störung im Netz",
-    genre: "Teknik destek",
+    genre: "dialogue",
     intro: "Bir ağ arızası. Sorun nerede, ne kadar sürecek?",
     minutes: 4,
     gloss: [
@@ -228,7 +228,7 @@ export const b1U36: SkillExercise[] = [
     skill: "listening",
     unit: 36,
     title: "Hast du eine Leiter?",
-    genre: "Komşudan alet isteme",
+    genre: "dialogue",
     intro: "Bir komşudan alet isteniyor. Ne için, ne zaman geri?",
     minutes: 4,
     gloss: [
@@ -291,7 +291,7 @@ export const b1U36: SkillExercise[] = [
     skill: "writing",
     unit: 36,
     title: "Eine kurze Anleitung",
-    genre: "Kurulum notu",
+    genre: "guide",
     intro: "Bir kurulum notu yaz. Ortaçta 'ge-' her fiile gelmez.",
     minutes: 8,
     gloss: [
@@ -345,7 +345,7 @@ export const b1U36: SkillExercise[] = [
     skill: "writing",
     unit: 36,
     title: "Datenverlust melden",
-    genre: "Sorun bildirimi",
+    genre: "report",
     intro: "Bir veri kaybını bildir. Bazı isimler Almancada yalnız çoğuldur.",
     minutes: 12,
     gloss: [

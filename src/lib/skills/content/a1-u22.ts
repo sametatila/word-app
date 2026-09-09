@@ -35,7 +35,7 @@ export const a1U22: SkillExercise[] = [
     skill: "reading",
     unit: 22,
     title: "In der Apotheke",
-    genre: "Bilgi yazısı",
+    genre: "info",
     intro: "Eczanenin kapısındaki bilgi. Ne zaman açık, gece ne olur?",
     gloss: [
       { de: "die Apotheke", tr: "eczane", en: "pharmacy" },
@@ -97,7 +97,7 @@ export const a1U22: SkillExercise[] = [
     skill: "reading",
     unit: 22,
     title: "Trink viel Tee!",
-    genre: "Forum mesajı",
+    genre: "forum",
     intro: "Soğuk algınlığına karşı üç öneri. Kim ne diyor?",
     gloss: [
       { de: "die Erkältung", tr: "soğuk algınlığı", en: "cold" },
@@ -156,7 +156,7 @@ export const a1U22: SkillExercise[] = [
     skill: "listening",
     unit: 22,
     title: "Etwas gegen Husten",
-    genre: "Eczane",
+    genre: "dialogue",
     intro: "Eczanede bir müşteri. Ne alıyor, nasıl kullanacak?",
     gloss: [
       { de: "täglich", tr: "her gün", en: "daily" },
@@ -215,7 +215,7 @@ export const a1U22: SkillExercise[] = [
     skill: "listening",
     unit: 22,
     title: "Der Notruf: 112",
-    genre: "Acil çağrı",
+    genre: "phone",
     intro:
       "Bir kaza ihbarı. Almanya'da acil çağrının sırası dörttür — dördüncüsü en çok atlanan.",
     gloss: [
@@ -281,7 +281,7 @@ export const a1U22: SkillExercise[] = [
     skill: "writing",
     unit: 22,
     title: "Rat geben",
-    genre: "Dil bilgisi",
+    genre: "grammar",
     intro: "Hasta bir arkadaşa öğüt vermenin üç biçimi.",
     gloss: [
       { de: "bleiben", tr: "kalmak", en: "to stay" },
@@ -319,7 +319,7 @@ export const a1U22: SkillExercise[] = [
     skill: "writing",
     unit: 22,
     title: "Was ist passiert?",
-    genre: "Mesaj",
+    genre: "message",
     intro: "Hasta bir arkadaşa öğüt yaz.",
     gloss: [
       { de: "die Hilfe", tr: "yardım", en: "help" },

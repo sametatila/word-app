@@ -19,7 +19,7 @@ export const enA2: SkillExercise[] = [
     level: "A2",
     skill: "reading",
     title: "My First Month at the Shelter",
-    genre: "Blog yazısı",
+    genre: "blog",
     intro: "Hayvan barınağında gönüllü olan birinin ilk ayını anlattığı blog yazısını okuyacaksın.",
     gloss: [
       { de: "shelter", tr: "barınak" },
@@ -106,7 +106,7 @@ export const enA2: SkillExercise[] = [
     level: "A2",
     skill: "listening",
     title: "Joining the Sunday Ride",
-    genre: "Telefon",
+    genre: "phone",
     intro: "Nadir bir bisiklet kulübünü arıyor. Hangi grup, nerede, saat kaçta ve yanında ne getirmeli - dinleyip yakala.",
     gloss: [
       { de: "helmet", tr: "kask" },
@@ -191,7 +191,7 @@ export const enA2: SkillExercise[] = [
     level: "A2",
     skill: "writing",
     title: "One Small Change",
-    genre: "Mesaj",
+    genre: "message",
     intro: "Önce iki cümle kur, sonra bir arkadaşına son zamanlarda değiştirdiğin bir alışkanlığı anlat.",
     gloss: [
       { de: "instead of", tr: "yerine" },
@@ -252,7 +252,7 @@ export const enA2: SkillExercise[] = [
     level: "A2",
     skill: "speaking",
     title: "Three sounds of -ed",
-    genre: "Ses çalışması",
+    genre: "pronounce",
     intro: "Yazılışı hep aynı, sesi üç türlü: -ed kimi zaman „t“, kimi zaman „d“, yalnız t/d'den sonra „ıd“ olur.",
     gloss: [
       { de: "walked", tr: "yürüdü" },
@@ -328,7 +328,7 @@ export const enA2: SkillExercise[] = [
     level: "A2",
     skill: "grammar",
     title: "did and the past",
-    genre: "Kural",
+    genre: "grammar",
     intro: "Geçmişi anlatmanın temel zamanı: düzenli -ed, düzensiz biçimler ve soruda ortaya çıkan „did“.",
     focus: "Past simple: düzenli ve düzensiz fiiller, did ile soru ve olumsuz",
     gloss: [

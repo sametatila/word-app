@@ -33,7 +33,7 @@ export const c1U10: SkillExercise[] = [
     skill: "reading",
     unit: 10,
     title: "Wer den Ton angibt",
-    genre: "Deneme",
+    genre: "essay",
     intro: "Müzik ve para deyimleri: ikisi de güç ilişkisini tarif ediyor.",
     gloss: [
       { de: "den Ton angeben", tr: "havayı belirlemek", en: "to call the tune" },
@@ -109,7 +109,7 @@ export const c1U10: SkillExercise[] = [
     skill: "reading",
     unit: 10,
     title: "Wörtlich wird's falsch",
-    genre: "Rehber yazısı",
+    genre: "guide",
     intro: "Türkçeden Almancaya deyim taşımak: hangisi geçer, hangisi tuzak?",
     gloss: [
       { de: "der falsche Freund", tr: "yalancı eşdeğer", en: "false friend" },
@@ -189,7 +189,7 @@ export const c1U10: SkillExercise[] = [
     skill: "listening",
     unit: 10,
     title: "Knapp bei Kasse",
-    genre: "Diyalog",
+    genre: "dialogue",
     intro: "Bütçe konuşması. Para deyimleri hangi yargıyı taşıyor?",
     gloss: [
       { de: "knapp bei Kasse sein", tr: "parası kıt olmak", en: "to be short of money" },
@@ -262,7 +262,7 @@ export const c1U10: SkillExercise[] = [
     skill: "listening",
     unit: 10,
     title: "Dosiert einstreuen",
-    genre: "Diyalog",
+    genre: "dialogue",
     intro: "Metinde kaç deyim fazla? Bir yazı üstünden dozaj konuşması.",
     gloss: [
       { de: "einstreuen", tr: "serpiştirmek", en: "to sprinkle in" },
@@ -342,7 +342,7 @@ export const c1U10: SkillExercise[] = [
     skill: "writing",
     unit: 10,
     title: "Yargı taşıyan deyim, taşımayan deyim",
-    genre: "Dil bilgisi",
+    genre: "grammar",
     intro: "Aynı olguyu iki deyimle söyle: biri suçlar, öteki tarif eder.",
     gloss: [
       { de: "die Kosten im Griff haben", tr: "maliyeti kontrol altında tutmak", en: "to have costs under control" },
@@ -388,7 +388,7 @@ export const c1U10: SkillExercise[] = [
     skill: "writing",
     unit: 10,
     title: "Zwei Bilder, nicht acht",
-    genre: "Metin düzeltme",
+    genre: "text",
     intro: "Deyimle dolu bir metni seyrelt: altısını at, ikisini bırak, iki somut cümle yaz.",
     gloss: [
       { de: "dosiert", tr: "dozunda", en: "in measured amounts" },

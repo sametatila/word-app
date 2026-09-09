@@ -33,7 +33,7 @@ export const b2U19: SkillExercise[] = [
     skill: "reading",
     unit: 19,
     title: "Gründen auf Deutsch",
-    genre: "Resmî bilgilendirme",
+    genre: "formal",
     intro: "Bir ticaret odasının iş kurma rehberi. Resmî dilin adlaştırmalarına dikkat et.",
     gloss: [
       { de: "das Gewerbe", tr: "ticari faaliyet", en: "trade" },
@@ -102,7 +102,7 @@ export const b2U19: SkillExercise[] = [
     skill: "reading",
     unit: 19,
     title: "Arbeiten, um zu leben?",
-    genre: "Deneme",
+    genre: "essay",
     intro: "İş ile yaşam arasındaki denge üzerine bir yazı. Amaç cümlelerine dikkat et.",
     gloss: [
       { de: "der Ausgleich", tr: "denge", en: "balance" },
@@ -170,7 +170,7 @@ export const b2U19: SkillExercise[] = [
     skill: "listening",
     unit: 19,
     title: "Der Sprung",
-    genre: "Diyalog",
+    genre: "dialogue",
     intro: "Kendi işini kurmayı düşünen biri deneyimli birine danışıyor. Koşullara dikkat et.",
     gloss: [
       { de: "die Existenzgründung", tr: "iş kurma", en: "starting a business" },
@@ -249,7 +249,7 @@ export const b2U19: SkillExercise[] = [
     skill: "listening",
     unit: 19,
     title: "Vitamin B",
-    genre: "Diyalog",
+    genre: "dialogue",
     intro: "İlişki ağının işe yarayıp yaramadığı konuşuluyor.",
     gloss: [
       { de: "die Referenz", tr: "referans", en: "reference" },
@@ -328,7 +328,7 @@ export const b2U19: SkillExercise[] = [
     skill: "writing",
     unit: 19,
     title: "Koşul, amaç, usul",
-    genre: "Cümle kurma",
+    genre: "build",
     intro: "sofern koşulu daraltır, um-zu amacı verir, adlaştırma usulü resmîleştirir.",
     gloss: [
       { de: "das Eigenkapital", tr: "öz sermaye", en: "equity" },
@@ -379,7 +379,7 @@ export const b2U19: SkillExercise[] = [
     skill: "writing",
     unit: 19,
     title: "Die Vorhabenbeschreibung",
-    genre: "Proje tanımı",
+    genre: "text",
     intro: "Bir işi kısaca tarif et: ne yapacaksın, hangi koşulla, hangi amaçla?",
     gloss: [
       { de: "der Umsatz", tr: "ciro", en: "turnover" },

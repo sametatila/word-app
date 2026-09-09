@@ -34,7 +34,7 @@ export const a1U21: SkillExercise[] = [
     skill: "reading",
     unit: 21,
     title: "Die Praxis Dr. Weber",
-    genre: "Bilgi yazısı",
+    genre: "info",
     intro: "Bir muayenehanenin kapısındaki bilgi. Ne zaman, nasıl randevu?",
     gloss: [
       { de: "die Praxis", tr: "muayenehane", en: "doctor's practice" },
@@ -95,7 +95,7 @@ export const a1U21: SkillExercise[] = [
     skill: "reading",
     unit: 21,
     title: "Mir tut alles weh",
-    genre: "Mesaj",
+    genre: "message",
     intro: "Ali hasta. Arkadaşına yazıyor.",
     gloss: [
       { de: "weh tun", tr: "ağrımak", en: "to hurt" },
@@ -149,7 +149,7 @@ export const a1U21: SkillExercise[] = [
     skill: "listening",
     unit: 21,
     title: "Einen Termin machen",
-    genre: "Telefon",
+    genre: "phone",
     intro: "Muayenehaneye telefon. Randevu alınıyor.",
     gloss: [
       { de: "dringend", tr: "acil", en: "urgent" },
@@ -209,7 +209,7 @@ export const a1U21: SkillExercise[] = [
     skill: "listening",
     unit: 21,
     title: "Du musst zum Arzt!",
-    genre: "Diyalog",
+    genre: "dialogue",
     intro: "İki arkadaş. Biri hasta, diğeri öğüt veriyor.",
     gloss: [
       { de: "sofort", tr: "hemen", en: "immediately" },
@@ -268,7 +268,7 @@ export const a1U21: SkillExercise[] = [
     skill: "writing",
     unit: 21,
     title: "Wo tut es weh?",
-    genre: "Dil bilgisi",
+    genre: "grammar",
     intro: "Ağrı cümlesi Türkçeden ters kurulur. Üç deneme.",
     gloss: [
       { de: "weh tun", tr: "ağrımak", en: "to hurt" },
@@ -306,7 +306,7 @@ export const a1U21: SkillExercise[] = [
     skill: "writing",
     unit: 21,
     title: "Ich bin krank",
-    genre: "Mesaj",
+    genre: "message",
     intro: "Hasta olduğun için gelemeyeceğini haber ver.",
     gloss: [
       { de: "krank", tr: "hasta", en: "ill" },

@@ -28,7 +28,7 @@ export const a2U02: SkillExercise[] = [
     skill: "reading",
     unit: 2,
     title: "Ein schrecklicher Montag",
-    genre: "Blog yazısı",
+    genre: "blog",
     intro: "Ters giden bir sabahın anlatımı. Sırayla ne oldu?",
     gloss: [
       { de: "verschlafen", tr: "uyuyakalmak", en: "to oversleep" },
@@ -89,7 +89,7 @@ export const a2U02: SkillExercise[] = [
     skill: "reading",
     unit: 2,
     title: "Früher und heute",
-    genre: "Dergi yazısı",
+    genre: "article",
     intro: "Bir dergi yazısı: yetmişli yıllarda evler nasıldı, bugün nasıl?",
     gloss: [
       { de: "damals", tr: "o zamanlar", en: "back then" },
@@ -150,7 +150,7 @@ export const a2U02: SkillExercise[] = [
     skill: "listening",
     unit: 2,
     title: "Warum kommst du so spät?",
-    genre: "Diyalog",
+    genre: "dialogue",
     intro: "Bir buluşmaya geç kalan arkadaş sebebini anlatıyor.",
     gloss: [
       { de: "sich verspäten", tr: "gecikmek", en: "to be late" },
@@ -207,7 +207,7 @@ export const a2U02: SkillExercise[] = [
     skill: "listening",
     unit: 2,
     title: "Wer ist das auf dem Foto?",
-    genre: "Diyalog",
+    genre: "dialogue",
     intro: "İki arkadaş eski bir okul fotoğrafına bakıyor. Kim kimdi, nasıl biriydi?",
     gloss: [
       { de: "damals", tr: "o zamanlar", en: "back then" },
@@ -265,7 +265,7 @@ export const a2U02: SkillExercise[] = [
     skill: "writing",
     unit: 2,
     title: "war und hatte",
-    genre: "Dil bilgisi",
+    genre: "grammar",
     intro: "İki fiilin kısa geçmişi: durum ve sahip olmak. Perfekt ile karışmaz.",
     gloss: [
       { de: "damals", tr: "o zamanlar", en: "back then" },
@@ -309,7 +309,7 @@ export const a2U02: SkillExercise[] = [
     skill: "writing",
     unit: 2,
     title: "Mein erstes Mal",
-    genre: "Forum mesajı",
+    genre: "forum",
     intro: "Bir foruma ilk deneyimini anlat: ne oldu ve o an nasıl hissettin?",
     gloss: [
       { de: "nervös", tr: "gergin", en: "nervous" },

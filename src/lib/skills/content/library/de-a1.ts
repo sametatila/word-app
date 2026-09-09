@@ -20,7 +20,7 @@ export const deA1: SkillExercise[] = [
     level: "A1",
     skill: "reading",
     title: "Katze gesucht!",
-    genre: "Kayıp ilanı",
+    genre: "ad",
     intro: "Sokakta bir direğe asılmış kayıp ilanı okuyacaksın: kim kayıp, nasıl görünüyor, kime haber verilecek.",
     gloss: [
       { de: "weg", tr: "kayıp", en: "gone" },
@@ -92,7 +92,7 @@ export const deA1: SkillExercise[] = [
     level: "A1",
     skill: "listening",
     title: "Ein Paket in die Türkei",
-    genre: "Diyalog",
+    genre: "dialogue",
     intro: "Postanede bir müşteri Türkiye'ye paket gönderiyor; fiyatı, süreyi ve ne yazması gerektiğini dinle.",
     gloss: [
       { de: "das Paket", tr: "paket", en: "parcel" },
@@ -167,7 +167,7 @@ export const deA1: SkillExercise[] = [
     level: "A1",
     skill: "writing",
     title: "Grüße vom Meer",
-    genre: "Kartpostal",
+    genre: "personal",
     intro: "Tatildesin; önce iki cümle kur, sonra bir arkadaşına kısa bir kartpostal yaz.",
     gloss: [
       { de: "das Wetter", tr: "hava", en: "weather" },
@@ -219,7 +219,7 @@ export const deA1: SkillExercise[] = [
     level: "A1",
     skill: "speaking",
     title: "ei oder ie?",
-    genre: "Ses çalışması",
+    genre: "pronounce",
     intro: "Yazılışı benzeyen iki ses: „ei“ hep „ay“, „ie“ hep uzun „ii“. Yedi cümlede ikisini karıştırmadan söyle.",
     gloss: [
       { de: "die Miete", tr: "kira", en: "rent" },
@@ -281,7 +281,7 @@ export const deA1: SkillExercise[] = [
     level: "A1",
     skill: "grammar",
     title: "den oder einen?",
-    genre: "Kural",
+    genre: "grammar",
     intro: "Nesneyi söylerken artikelin nasıl değiştiğini öğren: Akkusativ yalnız eril kelimede görünür.",
     focus: "Akkusativ: den / einen (belirtme hâli)",
     gloss: [

@@ -29,7 +29,7 @@ export const a1U15: SkillExercise[] = [
     skill: "reading",
     unit: 15,
     title: "Was kann man in Bremen sehen?",
-    genre: "Broşür",
+    genre: "ad",
     intro: "Bir şehir broşürü. Nereleri gezebilirsin?",
     gloss: [
       { de: "die Sehenswürdigkeit", tr: "turistik yer", en: "sight" },
@@ -89,7 +89,7 @@ export const a1U15: SkillExercise[] = [
     skill: "reading",
     unit: 15,
     title: "Am Informationsschalter",
-    genre: "Bilgilendirme",
+    genre: "info",
     intro: "Gardaki danışma tabelasını okuyacaksın.",
     gloss: [
       { de: "die Auskunft", tr: "danışma", en: "information" },
@@ -143,7 +143,7 @@ export const a1U15: SkillExercise[] = [
     skill: "listening",
     unit: 15,
     title: "Ich habe mich verlaufen",
-    genre: "Diyalog",
+    genre: "dialogue",
     intro: "Biri kaybolmuş ve yol soruyor. Yönleri takip et.",
     gloss: [
       { de: "sich verlaufen", tr: "kaybolmak", en: "to get lost" },
@@ -202,7 +202,7 @@ export const a1U15: SkillExercise[] = [
     skill: "listening",
     unit: 15,
     title: "Ein Fahrrad leihen",
-    genre: "Diyalog",
+    genre: "dialogue",
     intro: "Bisiklet kiralanıyor. Ne kadar, neye dikkat?",
     gloss: [
       { de: "leihen", tr: "kiralamak", en: "to rent" },
@@ -261,7 +261,7 @@ export const a1U15: SkillExercise[] = [
     skill: "writing",
     unit: 15,
     title: "Den Weg und den Zug erklären",
-    genre: "Dil bilgisi",
+    genre: "grammar",
     intro: "Yön verme ve aktarma cümleleri.",
     gloss: [
       { de: "abbiegen", tr: "dönmek", en: "to turn" },
@@ -298,7 +298,7 @@ export const a1U15: SkillExercise[] = [
     skill: "writing",
     unit: 15,
     title: "Eine Stadt empfehlen",
-    genre: "Forum mesajı",
+    genre: "forum",
     intro: "Bir gezginin sorusuna cevap yaz.",
     gloss: [
       { de: "die Sehenswürdigkeit", tr: "turistik yer", en: "sight" },

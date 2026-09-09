@@ -28,7 +28,7 @@ export const b1U07: SkillExercise[] = [
     skill: "reading",
     unit: 7,
     title: "Mein Weg zur Arbeit",
-    genre: "Günlük yazısı",
+    genre: "personal",
     intro: "Bir işe gidiş öyküsü. Olaylar hangi sırayla oldu, dikkatle takip et.",
     minutes: 5,
     gloss: [
@@ -91,7 +91,7 @@ export const b1U07: SkillExercise[] = [
     skill: "reading",
     unit: 7,
     title: "Warum ich abgelehnt habe",
-    genre: "Blog yazısı",
+    genre: "blog",
     intro: "Biri iyi bir teklifi reddetmiş. Sebebi ile buna rağmen yaptığını ayırt et.",
     minutes: 5,
     gloss: [
@@ -157,7 +157,7 @@ export const b1U07: SkillExercise[] = [
     skill: "listening",
     unit: 7,
     title: "Bevor wir losfahren",
-    genre: "Yola çıkma konuşması",
+    genre: "dialogue",
     intro: "İki kişi yola çıkmadan önce işleri paylaşıyor. Ne önce, ne aynı anda?",
     minutes: 4,
     gloss: [
@@ -219,7 +219,7 @@ export const b1U07: SkillExercise[] = [
     skill: "listening",
     unit: 7,
     title: "Je mehr, desto besser?",
-    genre: "Öğrenme üzerine sohbet",
+    genre: "dialogue",
     intro: "İki kişi öğrenmeyi konuşuyor. Neyin artması neyi artırıyor, dinle.",
     minutes: 4,
     gloss: [
@@ -282,7 +282,7 @@ export const b1U07: SkillExercise[] = [
     skill: "writing",
     unit: 7,
     title: "Der Grund und die Folge",
-    genre: "Açıklama metni",
+    genre: "info",
     intro: "Bir gecikmeyi açıkla. Sebebi ve sonucu ayrı ayrı, doğru sırayla yaz.",
     minutes: 8,
     gloss: [
@@ -337,7 +337,7 @@ export const b1U07: SkillExercise[] = [
     skill: "writing",
     unit: 7,
     title: "Je mehr, desto …",
-    genre: "Görüş metni",
+    genre: "opinion",
     intro: "Bir şeyin artmasıyla neyin değiştiğini anlat. Orantıyı doğru kur.",
     minutes: 12,
     gloss: [

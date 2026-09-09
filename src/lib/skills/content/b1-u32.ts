@@ -34,7 +34,7 @@ export const b1U32: SkillExercise[] = [
     skill: "reading",
     unit: 32,
     title: "Eine Unterkunft in der Saison",
-    genre: "Konaklama rehberi",
+    genre: "guide",
     intro: "Sezonda yer bulmak. Ne zaman, nerede, ne kadar?",
     minutes: 5,
     gloss: [
@@ -100,7 +100,7 @@ export const b1U32: SkillExercise[] = [
     skill: "reading",
     unit: 32,
     title: "Raus aus der Metropole",
-    genre: "Deneyim yazısı",
+    genre: "personal",
     intro: "Biri şehirden banliyöye taşınmış. Ne kazandı, ne kaybetti?",
     minutes: 5,
     gloss: [
@@ -168,7 +168,7 @@ export const b1U32: SkillExercise[] = [
     skill: "listening",
     unit: 32,
     title: "Im Hafen",
-    genre: "Liman konuşması",
+    genre: "dialogue",
     intro: "Bir liman gezisi planlanıyor. Feribot ne zaman, nereye?",
     minutes: 4,
     gloss: [
@@ -230,7 +230,7 @@ export const b1U32: SkillExercise[] = [
     skill: "listening",
     unit: 32,
     title: "Wetter im Gebirge",
-    genre: "Dağ yürüyüşü planı",
+    genre: "info",
     intro: "Dağda hava konuşuluyor. Ne bekleniyor, ne yapılıyor?",
     minutes: 4,
     gloss: [
@@ -293,7 +293,7 @@ export const b1U32: SkillExercise[] = [
     skill: "writing",
     unit: 32,
     title: "Wo wir waren",
-    genre: "Gezi anlatısı",
+    genre: "story",
     intro: "Bir geziyi anlat. Aynı edat, yön ve yer için farklı hâl alır.",
     minutes: 8,
     gloss: [
@@ -347,7 +347,7 @@ export const b1U32: SkillExercise[] = [
     skill: "writing",
     unit: 32,
     title: "Wir ziehen um",
-    genre: "Taşınma duyurusu",
+    genre: "phone",
     intro: "Taşınmanı duyur. 'sonra' Almancada iki ayrı sözcüktür.",
     minutes: 12,
     gloss: [

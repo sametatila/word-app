@@ -28,7 +28,7 @@ export const a2U08: SkillExercise[] = [
     skill: "reading",
     unit: 8,
     title: "Warum wir nicht abschalten können",
-    genre: "Dergi yazısı",
+    genre: "article",
     intro: "Stres üzerine kısa bir yazı. Neden kafamızı dağıtamıyoruz, ne yardımcı oluyor?",
     gloss: [
       { de: "der Stress", tr: "stres", en: "stress" },
@@ -88,7 +88,7 @@ export const a2U08: SkillExercise[] = [
     skill: "reading",
     unit: 8,
     title: "Einladung zur Vorsorge",
-    genre: "Bilgilendirme",
+    genre: "info",
     intro: "Muayenehaneden gelen kontrol daveti. Ne yapılıyor, ne getirilmeli?",
     gloss: [
       { de: "die Gesundheit", tr: "sağlık", en: "health" },
@@ -152,7 +152,7 @@ export const a2U08: SkillExercise[] = [
     skill: "listening",
     unit: 8,
     title: "Kannst du mir das leihen?",
-    genre: "Diyalog",
+    genre: "dialogue",
     intro: "Komşular arasında ödünç alma. Ne veriliyor, ne zaman geri gelecek?",
     gloss: [
       { de: "der Schirm", tr: "şemsiye", en: "umbrella" },
@@ -211,7 +211,7 @@ export const a2U08: SkillExercise[] = [
     skill: "listening",
     unit: 8,
     title: "Im Fundbüro",
-    genre: "Diyalog",
+    genre: "dialogue",
     intro: "Kayıp eşya bürosunda. Hangi eşya kimin?",
     gloss: [
       { de: "gehören", tr: "ait olmak", en: "to belong to" },
@@ -269,7 +269,7 @@ export const a2U08: SkillExercise[] = [
     skill: "writing",
     unit: 8,
     title: "Wem gehört was?",
-    genre: "Dil bilgisi",
+    genre: "grammar",
     intro: "Üç sıralama kuralı: dönüşlü zamirin yeri, iki nesnenin sırası ve aitlik fiilinin hâli.",
     gloss: [
       { de: "sich entspannen", tr: "rahatlamak", en: "to relax" },
@@ -313,7 +313,7 @@ export const a2U08: SkillExercise[] = [
     skill: "writing",
     unit: 8,
     title: "Einen Tipp gegen Stress geben",
-    genre: "Forum mesajı",
+    genre: "forum",
     intro: "Foruma cevap yaz: stresle nasıl baş ediyorsun, iki somut öneri ver.",
     gloss: [
       { de: "abschalten", tr: "kafa dağıtmak", en: "to switch off" },

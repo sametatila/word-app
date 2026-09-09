@@ -17,7 +17,7 @@ export const deC1P4: SkillExercise[] = [
     level: "C1",
     skill: "reading",
     title: "Der Satz steht da, der Ton nicht",
-    genre: "Söyleşi",
+    genre: "interview",
     intro: "Bir sesli kitap seslendiricisiyle söyleşi okuyacaksın: tonu ne belirliyor, hangi küçük kelimeler işi taşıyor.",
     gloss: [
       { de: "einlesen", tr: "seslendirmek", en: "to record" },
@@ -115,7 +115,7 @@ export const deC1P4: SkillExercise[] = [
     level: "C1",
     skill: "listening",
     title: "Was der Raum von dir will",
-    genre: "Radyo denemesi",
+    genre: "essay",
     intro: "Radyoda kısa bir deneme dinleyeceksin: mekânlar davranışı nasıl yönlendiriyor ve bunu kim tasarlıyor.",
     gloss: [
       { de: "verzögert", tr: "gecikmeli", en: "delayed" },
@@ -202,7 +202,7 @@ export const deC1P4: SkillExercise[] = [
     level: "C1",
     skill: "writing",
     title: "Eine ehrliche Antwort",
-    genre: "Kişisel e-posta",
+    genre: "email",
     intro: "Yakın bir arkadaşın büyük bir karar aldı ve fikrini soruyor; önce iki cümle kur, sonra cevabı yaz.",
     gloss: [
       { de: "die Sorge", tr: "kaygı", en: "concern" },
@@ -275,7 +275,7 @@ export const deC1P4: SkillExercise[] = [
     level: "C1",
     skill: "speaking",
     title: "Geschenk oder Zumutung?",
-    genre: "Monolog",
+    genre: "monologue",
     intro: "İki dakikaya kadar konuşacaksın: bir ölçüt kur, üç parçaya ayır ve her parçayı örnekle.",
     gloss: [],
     minutes: 7,
@@ -319,7 +319,7 @@ export const deC1P4: SkillExercise[] = [
     level: "C1",
     skill: "grammar",
     title: "doch, ja, mal, eben",
-    genre: "Kural",
+    genre: "grammar",
     intro: "Sözlükte neredeyse hiçbir şey ifade etmeyen, cümledeyse tutumu tümüyle belirleyen dört küçük kelime.",
     focus: "Modalpartikel: doch, ja, mal, eben",
     gloss: [

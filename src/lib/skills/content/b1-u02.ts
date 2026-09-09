@@ -23,7 +23,7 @@ export const b1U02: SkillExercise[] = [
     skill: "reading",
     unit: 2,
     title: "Der erste Arbeitstag",
-    genre: "Blog yazısı",
+    genre: "blog",
     intro: "Yeni bir işe başlayan birinin ilk gün notları. Neyi bilmediğini ve kime sorduğunu oku.",
     minutes: 5,
     gloss: [
@@ -94,7 +94,7 @@ export const b1U02: SkillExercise[] = [
     skill: "reading",
     unit: 2,
     title: "Zwei Antworten",
-    genre: "E-posta",
+    genre: "email",
     intro: "Bir başvuruya gelen iki farklı cevap. Hangisi ret, hangisi davet? Gerekçelere dikkat et.",
     minutes: 5,
     gloss: [
@@ -169,7 +169,7 @@ export const b1U02: SkillExercise[] = [
     skill: "listening",
     unit: 2,
     title: "Gleitzeit oder feste Zeit?",
-    genre: "İş yeri konuşması",
+    genre: "dialogue",
     intro: "İki meslektaş çalışma saatlerini konuşuyor. Dinle: kim esnek çalışıyor, fazla mesai ne oluyor?",
     minutes: 4,
     gloss: [
@@ -231,7 +231,7 @@ export const b1U02: SkillExercise[] = [
     skill: "listening",
     unit: 2,
     title: "Über Geld sprechen",
-    genre: "Görüşme",
+    genre: "opinion",
     intro: "Maaş konuşuluyor. Dinle: aday ne kadar istiyor, firma ne diyor, sonuç ne?",
     minutes: 4,
     gloss: [
@@ -294,7 +294,7 @@ export const b1U02: SkillExercise[] = [
     skill: "writing",
     unit: 2,
     title: "Der Antrag",
-    genre: "Resmî istek",
+    genre: "formal",
     intro: "Esnek çalışma için bir istek yaz. Önce cümle kur, sonra formu doldur.",
     minutes: 8,
     gloss: [
@@ -350,7 +350,7 @@ export const b1U02: SkillExercise[] = [
     skill: "writing",
     unit: 2,
     title: "Nach der Absage",
-    genre: "Yarı resmî e-posta",
+    genre: "email",
     intro: "Ret cevabı geldi. Kibarca geri bildirim iste ve kapıyı açık bırak.",
     minutes: 12,
     gloss: [

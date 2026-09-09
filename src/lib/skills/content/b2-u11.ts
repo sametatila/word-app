@@ -32,7 +32,7 @@ export const b2U11: SkillExercise[] = [
     skill: "reading",
     unit: 11,
     title: "Was sich automatisieren lässt",
-    genre: "Popüler bilim yazısı",
+    genre: "article",
     intro: "Yapay zekânın gündelik hayattaki yerini anlatan bir yazı. Sıfat öbeklerine dikkat et.",
     gloss: [
       { de: "automatisieren", tr: "otomatikleştirmek", en: "to automate" },
@@ -104,7 +104,7 @@ export const b2U11: SkillExercise[] = [
     skill: "reading",
     unit: 11,
     title: "Was die Studie wirklich sagt",
-    genre: "Araştırma özeti",
+    genre: "report",
     intro: "Bir araştırmanın basına yansıyan hâli ile gerçek bulguları karşılaştırılıyor.",
     gloss: [
       { de: "die Erkenntnis", tr: "bulgu", en: "finding" },
@@ -177,7 +177,7 @@ export const b2U11: SkillExercise[] = [
     skill: "listening",
     unit: 11,
     title: "Die steigenden Kosten",
-    genre: "Diyalog",
+    genre: "dialogue",
     intro: "Eski bir sistemin değişip değişmeyeceği konuşuluyor. Süren ile biten arasındaki farkı dinle.",
     gloss: [
       { de: "die Innovation", tr: "inovasyon", en: "innovation" },
@@ -256,7 +256,7 @@ export const b2U11: SkillExercise[] = [
     skill: "listening",
     unit: 11,
     title: "Der Testlauf am Freitag",
-    genre: "Diyalog",
+    genre: "dialogue",
     intro: "Yapılmış bir deneme çalışmasının sonucu konuşuluyor. Biten işler ortaç II ile anılıyor.",
     gloss: [
       { de: "das Verfahren", tr: "yöntem", en: "procedure" },
@@ -337,7 +337,7 @@ export const b2U11: SkillExercise[] = [
     skill: "writing",
     unit: 11,
     title: "Süren mi, biten mi",
-    genre: "Cümle kurma",
+    genre: "build",
     intro: "Ortaç I sürer ve etkendir, ortaç II biter ve edilgendir. Doğru olanı seç.",
     gloss: [
       { de: "das Verfahren", tr: "yöntem", en: "procedure" },
@@ -388,7 +388,7 @@ export const b2U11: SkillExercise[] = [
     skill: "writing",
     unit: 11,
     title: "Der Testbericht",
-    genre: "Deneme raporu",
+    genre: "essay",
     intro: "Bir denemenin sonucunu yaz: ne işledi, ne açık kaldı, ne öneriyorsun?",
     gloss: [
       { de: "der Testlauf", tr: "deneme çalışması", en: "test run" },

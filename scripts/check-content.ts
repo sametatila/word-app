@@ -97,6 +97,24 @@ function checkTurns(where: string, turns: DialogueTurn[], opts: { minTurns?: num
 }
 
 /* ───────────── beceri egzersizleri ───────────── */
+/**
+ * Tür etiketleri KAPALI bir sözlükten gelir.
+ *
+ * `genre` eskiden serbest Türkçe metindi ve doğrudan ekrana basılıyordu: 984
+ * egzersizde 384 ayrı değer birikmişti ve İngilizce/Almanca arayüzde hepsi
+ * Türkçe görünüyordu. Değerler 2026-09-09'da bu 26 anahtara indirildi ve
+ * anahtarlar `genre.*` çeviri anahtarlarıyla eşleşiyor.
+ *
+ * Kapı burada çünkü tek koruma bu: yeni bir egzersiz serbest metin yazarsa
+ * `t("genre.Diyalog")` çeviriyi bulamaz ve ekrana ANAHTARIN KENDİSİ basılır —
+ * çirkin ama sessiz. Liste değişecekse üç sözlüğe de `genre.<yeni>` eklenmeli.
+ */
+const GENRES = new Set([
+  "ad", "article", "blog", "build", "dialogue", "email", "essay", "formal", "forum",
+  "grammar", "guide", "info", "interview", "letter", "meeting", "message", "monologue",
+  "opinion", "personal", "phone", "profile", "pronounce", "report", "review", "story", "text",
+]);
+
 function checkSkills(list: SkillExercise[]) {
   const ids = new Set<string>();
   for (const e of list) {
@@ -105,6 +123,7 @@ function checkSkills(list: SkillExercise[]) {
     ids.add(e.id);
     need(w, e as unknown as Record<string, unknown>, ["id", "level", "title", "genre", "intro", "minutes"]);
     if (!LEVELS.has(e.level)) E(w, `geçersiz seviye ${e.level}`);
+    if (e.genre && !GENRES.has(e.genre)) E(w, `bilinmeyen tür etiketi "${e.genre}" — kapalı liste: ${[...GENRES].join(", ")}`);
     if (e.minutes < 1 || e.minutes > 20) W(w, `minutes ${e.minutes} aralık dışı (1–20)`);
     for (const id of e.cando ?? []) if (!isCandoId(id)) E(w, `bilinmeyen can-do kimliği ${id}`);
     if (!candoForExercise(e).length) E(w, "can-do etiketi üretilemedi");

@@ -17,7 +17,7 @@ export const deA1P3: SkillExercise[] = [
     level: "A1",
     skill: "reading",
     title: "Kartoffelsuppe für vier Personen",
-    genre: "Tarif",
+    genre: "guide",
     intro: "Basit bir çorba tarifi okuyacaksın: neler gerekiyor, hangi sırayla yapılıyor, sonunda ne öneriliyor.",
     gloss: [
       { de: "die Zwiebel", tr: "soğan", en: "onion" },
@@ -90,7 +90,7 @@ export const deA1P3: SkillExercise[] = [
     level: "A1",
     skill: "listening",
     title: "Durchsage im Freibad",
-    genre: "Anons",
+    genre: "phone",
     intro: "Açık havuzda kapanış anonsunu dinleyeceksin: saatler, bulunan eşyalar ve yarınla ilgili bilgi.",
     gloss: [
       { de: "das Freibad", tr: "açık havuz", en: "outdoor pool" },
@@ -161,7 +161,7 @@ export const deA1P3: SkillExercise[] = [
     level: "A1",
     skill: "writing",
     title: "Anfrage: Ferienwohnung",
-    genre: "E-posta",
+    genre: "email",
     intro: "Bir tatil evi ilanı buldun; önce iki cümle kur, sonra ev sahibine sorularını içeren kısa bir e-posta yaz.",
     gloss: [
       { de: "die Ferienwohnung", tr: "tatil evi", en: "holiday flat" },
@@ -219,7 +219,7 @@ export const deA1P3: SkillExercise[] = [
     level: "A1",
     skill: "speaking",
     title: "w ist v, v ist f",
-    genre: "Ses çalışması",
+    genre: "pronounce",
     intro: "Almancada „w“ Türkçedeki v gibi, „v“ ise çoğu kelimede f gibi okunur; yedi cümlede ikisini ayır.",
     gloss: [
       { de: "der Wagen", tr: "araba", en: "car" },
@@ -295,7 +295,7 @@ export const deA1P3: SkillExercise[] = [
     level: "A1",
     skill: "grammar",
     title: "der, die, das — und der Plural",
-    genre: "Kural",
+    genre: "grammar",
     intro: "İsimlerin üç cinsini ve beş çoğul biçimini tanı: artikel isimle birlikte öğrenilir, çoğulda hepsi „die“ olur.",
     focus: "Artikel ve çoğul biçimleri",
     gloss: [

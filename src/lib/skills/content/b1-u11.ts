@@ -30,7 +30,7 @@ export const b1U11: SkillExercise[] = [
     skill: "reading",
     unit: 11,
     title: "Was hier gilt",
-    genre: "Kurum yönergesi",
+    genre: "guide",
     intro: "Bir kurumun kuralları. Kim yapıyor değil, ne yapılıyor — çatıya dikkat et.",
     minutes: 5,
     gloss: [
@@ -96,7 +96,7 @@ export const b1U11: SkillExercise[] = [
     skill: "reading",
     unit: 11,
     title: "Der Antrag wurde genehmigt",
-    genre: "Süreç anlatımı",
+    genre: "story",
     intro: "Bir başvuru süreci. Ne zaman 'wurde', ne zaman 'war' kullanıldığına dikkat et.",
     minutes: 6,
     gloss: [
@@ -163,7 +163,7 @@ export const b1U11: SkillExercise[] = [
     skill: "listening",
     unit: 11,
     title: "Am Schalter",
-    genre: "Kurum gişesi",
+    genre: "formal",
     intro: "Bir başvuru gişede konuşuluyor. Hangi evrak eksik, süre ne kadar?",
     minutes: 4,
     gloss: [
@@ -225,7 +225,7 @@ export const b1U11: SkillExercise[] = [
     skill: "listening",
     unit: 11,
     title: "Soll ich Widerspruch schreiben?",
-    genre: "Danışma konuşması",
+    genre: "dialogue",
     intro: "Biri olumsuz bir karara itiraz etmeyi düşünüyor. Neye dayanacak?",
     minutes: 4,
     gloss: [
@@ -288,7 +288,7 @@ export const b1U11: SkillExercise[] = [
     skill: "writing",
     unit: 11,
     title: "Der Weg des Antrags",
-    genre: "Süreç raporu",
+    genre: "report",
     intro: "Bir başvurunun aşamalarını yaz. Olay mı durum mu — çatıyı ona göre seç.",
     minutes: 8,
     gloss: [
@@ -342,7 +342,7 @@ export const b1U11: SkillExercise[] = [
     skill: "writing",
     unit: 11,
     title: "Widerspruch",
-    genre: "Resmî itiraz",
+    genre: "formal",
     intro: "Olumsuz karara itiraz et. Kararı kimin verdiğini doğru biçimde göster.",
     minutes: 12,
     gloss: [

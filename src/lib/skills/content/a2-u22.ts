@@ -33,7 +33,7 @@ export const a2U22: SkillExercise[] = [
     skill: "reading",
     unit: 22,
     title: "Wenn niemand antwortet",
-    genre: "Blog yazısı",
+    genre: "blog",
     intro: "Cevapsız kalan mesajlar üstüne bir yazı. Ne zaman hatırlatmalı?",
     gloss: [
       { de: "ungeduldig", tr: "sabırsız", en: "impatient" },
@@ -104,7 +104,7 @@ export const a2U22: SkillExercise[] = [
     skill: "reading",
     unit: 22,
     title: "Drei Podcasts für den Weg zur Arbeit",
-    genre: "Öneri yazısı",
+    genre: "guide",
     intro: "Podcast önerileri. Hangisi kime, ne kadar sürüyor?",
     gloss: [
       { de: "der Podcast", tr: "podcast", en: "podcast" },
@@ -174,7 +174,7 @@ export const a2U22: SkillExercise[] = [
     skill: "listening",
     unit: 22,
     title: "Der Computer spinnt",
-    genre: "Diyalog",
+    genre: "dialogue",
     intro: "Bilgisayar sorunu telefonda çözülüyor. Sırayla ne yapılıyor?",
     gloss: [
       { de: "speichern", tr: "kaydetmek", en: "to save" },
@@ -246,7 +246,7 @@ export const a2U22: SkillExercise[] = [
     skill: "listening",
     unit: 22,
     title: "Schau mal, meine Fotos",
-    genre: "Diyalog",
+    genre: "dialogue",
     intro: "Tatil fotoğrafları gösteriliyor. Hangisi en çok beğeniliyor?",
     gloss: [
       { de: "teilen", tr: "paylaşmak", en: "to share" },
@@ -313,7 +313,7 @@ export const a2U22: SkillExercise[] = [
     skill: "writing",
     unit: 22,
     title: "Fiilin edatı",
-    genre: "Dil bilgisi",
+    genre: "grammar",
     intro: "warten auf, sich interessieren für, Interesse an — edat fiile bağlıdır.",
     gloss: [
       { de: "warten auf", tr: "beklemek", en: "to wait for" },
@@ -357,7 +357,7 @@ export const a2U22: SkillExercise[] = [
     skill: "writing",
     unit: 22,
     title: "Höflich nachfragen",
-    genre: "Resmî yazı",
+    genre: "formal",
     intro: "Cevapsız kalan yazına hatırlatma yaz: ne sormuştun, ne zamana lazım?",
     gloss: [
       { de: "beantworten", tr: "cevaplamak", en: "to answer" },

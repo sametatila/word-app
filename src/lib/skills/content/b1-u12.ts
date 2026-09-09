@@ -31,7 +31,7 @@ export const b1U12: SkillExercise[] = [
     skill: "reading",
     unit: 12,
     title: "Der Strafzettel",
-    genre: "Bilgi metni ve itiraz notu",
+    genre: "formal",
     intro: "Bir trafik cezası ve buna bir yanıt. Neyin kanıtlanması gerekiyor?",
     minutes: 5,
     gloss: [
@@ -97,7 +97,7 @@ export const b1U12: SkillExercise[] = [
     skill: "reading",
     unit: 12,
     title: "Ein Schaden, zwei Versicherungen",
-    genre: "Sigorta bilgilendirmesi",
+    genre: "info",
     intro: "Bir hasarın nasıl bildirileceği. Hangi bilgi ne zaman veriliyor?",
     minutes: 5,
     gloss: [
@@ -163,7 +163,7 @@ export const b1U12: SkillExercise[] = [
     skill: "listening",
     unit: 12,
     title: "Der Termin fällt aus",
-    genre: "Telefon konuşması",
+    genre: "phone",
     intro: "Bir randevu erteleniyor. Yeni tarih ne, sebep ne?",
     minutes: 4,
     gloss: [
@@ -225,7 +225,7 @@ export const b1U12: SkillExercise[] = [
     skill: "listening",
     unit: 12,
     title: "Was kann ich angeben?",
-    genre: "Vergi danışması",
+    genre: "dialogue",
     intro: "Vergi beyanı konuşuluyor. Hangi belge neden gerekiyor?",
     minutes: 4,
     gloss: [
@@ -288,7 +288,7 @@ export const b1U12: SkillExercise[] = [
     skill: "writing",
     unit: 12,
     title: "Den Vorfall melden",
-    genre: "Hasar bildirimi",
+    genre: "report",
     intro: "Bir olayı sigortaya bildir. Geçmiş anlatırken yardımcı fiili doğru seç.",
     minutes: 8,
     gloss: [
@@ -342,7 +342,7 @@ export const b1U12: SkillExercise[] = [
     skill: "writing",
     unit: 12,
     title: "Den Termin verschieben",
-    genre: "Randevu e-postası",
+    genre: "email",
     intro: "Bir randevuyu ertele. Dönüşlü fiillerde zamiri unutma.",
     minutes: 12,
     gloss: [

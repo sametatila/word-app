@@ -32,7 +32,7 @@ export const b2U10: SkillExercise[] = [
     skill: "reading",
     unit: 10,
     title: "Wozu eine vierte Gewalt?",
-    genre: "Deneme",
+    genre: "essay",
     intro: "Basın özgürlüğünün ne işe yaradığını anlatan bir yazı. Tahmin bildiren kipleri ayır.",
     gloss: [
       { de: "die Pressefreiheit", tr: "basın özgürlüğü", en: "freedom of the press" },
@@ -104,7 +104,7 @@ export const b2U10: SkillExercise[] = [
     skill: "reading",
     unit: 10,
     title: "Werbung oder Meinung?",
-    genre: "Tüketici bilgilendirmesi",
+    genre: "info",
     intro: "Bir tüketici derneğinin sosyal medya reklamları üzerine bilgilendirme metni.",
     gloss: [
       { de: "die Reichweite", tr: "erişim", en: "reach" },
@@ -176,7 +176,7 @@ export const b2U10: SkillExercise[] = [
     skill: "listening",
     unit: 10,
     title: "Folge sieben",
-    genre: "Diyalog",
+    genre: "dialogue",
     intro: "İki kişi kendi podcast'lerinin yeni bölümünü planlıyor.",
     gloss: [
       { de: "die Plattform", tr: "platform", en: "platform" },
@@ -252,7 +252,7 @@ export const b2U10: SkillExercise[] = [
     skill: "listening",
     unit: 10,
     title: "Das mit dem Wasser stimmt nicht",
-    genre: "Diyalog",
+    genre: "dialogue",
     intro: "Bir yalan haber konuşuluyor. İddia ile gerçeği ayır.",
     gloss: [
       { de: "die Falschmeldung", tr: "yalan haber", en: "false report" },
@@ -333,7 +333,7 @@ export const b2U10: SkillExercise[] = [
     skill: "writing",
     unit: 10,
     title: "Tahmin mi, iddia mı?",
-    genre: "Cümle kurma",
+    genre: "build",
     intro: "dürfte tahmindir, sollen başkasının iddiasıdır — ve ortaç sıfatı cümleyi kısaltır.",
     gloss: [
       { de: "die Quelle", tr: "kaynak", en: "source" },
@@ -384,7 +384,7 @@ export const b2U10: SkillExercise[] = [
     skill: "writing",
     unit: 10,
     title: "Die Richtigstellung",
-    genre: "Düzeltme metni",
+    genre: "text",
     intro: "Yayılmış bir yanlış bilgiyi düzelt — iddiayı, gerçeği ve kaynağı ayrı ayrı ver.",
     gloss: [
       { de: "die Falschmeldung", tr: "yalan haber", en: "false report" },

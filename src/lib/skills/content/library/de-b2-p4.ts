@@ -17,7 +17,7 @@ export const deB2P4: SkillExercise[] = [
     level: "B2",
     skill: "reading",
     title: "Streit im Haus: was eine Schlichtung leistet",
-    genre: "Bilgilendirme",
+    genre: "info",
     intro: "Komşu anlaşmazlıklarında mahkeme öncesi uzlaştırmayı anlatan bir rehber okuyacaksın: kim yapıyor, nasıl işliyor, sınırı ne.",
     gloss: [
       { de: "die Schlichtung", tr: "uzlaştırma", en: "conciliation" },
@@ -115,7 +115,7 @@ export const deB2P4: SkillExercise[] = [
     level: "B2",
     skill: "listening",
     title: "Beratung wegen eines Gebrauchtwagens",
-    genre: "Danışma görüşmesi",
+    genre: "opinion",
     intro: "Tüketici danışma merkezinde bir görüşme: sorun ne, hukuken kimin ne yapması gerekiyor, hangi sırayla.",
     gloss: [
       { de: "das Getriebe", tr: "şanzıman", en: "gearbox" },
@@ -202,7 +202,7 @@ export const deB2P4: SkillExercise[] = [
     level: "B2",
     skill: "writing",
     title: "Acht Stunden oder achtzig Euro?",
-    genre: "Tartışma katkısı",
+    genre: "opinion",
     intro: "Derneğin forumunda bir öneri tartışılıyor; önce iki cümle kur, sonra gerekçeli katkını yaz.",
     gloss: [
       { de: "die Arbeitsstunde", tr: "çalışma saati", en: "work hour" },
@@ -269,7 +269,7 @@ export const deB2P4: SkillExercise[] = [
     level: "B2",
     skill: "speaking",
     title: "Regeln oder Vertrauen?",
-    genre: "Monolog",
+    genre: "monologue",
     intro: "Bir buçuk dakikaya kadar konuşacaksın: iki yaklaşımı karşılaştır ve hangisinin nerede işe yaradığını ayır.",
     gloss: [],
     minutes: 6,
@@ -312,7 +312,7 @@ export const deB2P4: SkillExercise[] = [
     level: "B2",
     skill: "grammar",
     title: "obwohl, trotzdem, je … desto",
-    genre: "Kural",
+    genre: "grammar",
     intro: "Aynı zıtlığı üç ayrı dizimle kurabilirsin; hangisini seçtiğin cümlenin sırasını tümüyle değiştirir.",
     focus: "Konnektoren: obwohl, trotzdem ve je … desto",
     gloss: [

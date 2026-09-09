@@ -32,7 +32,7 @@ export const b2U12: SkillExercise[] = [
     skill: "reading",
     unit: 12,
     title: "Was mit Ihren Daten geschieht",
-    genre: "Bilgilendirme metni",
+    genre: "info",
     intro: "Bir kurumun kullanıcılarına gönderdiği bilgilendirme. Neyin yasak olduğuna dikkat et.",
     gloss: [
       { de: "der Datenschutz", tr: "veri koruma", en: "data protection" },
@@ -105,7 +105,7 @@ export const b2U12: SkillExercise[] = [
     skill: "reading",
     unit: 12,
     title: "Die bedrohte Vielfalt",
-    genre: "Bilim yazısı",
+    genre: "article",
     intro: "Tür çeşitliliği üzerine bir yazı. Sıfat öbeklerinin ne kadar bilgi taşıdığına dikkat et.",
     gloss: [
       { de: "der Klimawandel", tr: "iklim değişikliği", en: "climate change" },
@@ -177,7 +177,7 @@ export const b2U12: SkillExercise[] = [
     skill: "listening",
     unit: 12,
     title: "Wie habt ihr das gemessen?",
-    genre: "Diyalog",
+    genre: "dialogue",
     intro: "Bir öğrenci deneyinin nasıl yapıldığı anlatılıyor. Yöntem cümlelerine dikkat et.",
     gloss: [
       { de: "das Messgerät", tr: "ölçüm aleti", en: "measuring device" },
@@ -256,7 +256,7 @@ export const b2U12: SkillExercise[] = [
     skill: "listening",
     unit: 12,
     title: "Ist das wirklich ein Durchbruch?",
-    genre: "Diyalog",
+    genre: "dialogue",
     intro: "Bir eczacı hastaya yeni bir ilacı anlatıyor. Neyin denenmiş olduğuna dikkat et.",
     gloss: [
       { de: "der Durchbruch", tr: "atılım", en: "breakthrough" },
@@ -337,7 +337,7 @@ export const b2U12: SkillExercise[] = [
     skill: "writing",
     unit: 12,
     title: "Yöntem, sınır, sonuç",
-    genre: "Cümle kurma",
+    genre: "build",
     intro: "indem yöntemi verir, dürfen nicht sınırı çizer, edilgen Perfekt sonucu bildirir.",
     gloss: [
       { de: "vermessen", tr: "ölçüm yapmak", en: "to measure up" },
@@ -388,7 +388,7 @@ export const b2U12: SkillExercise[] = [
     skill: "writing",
     unit: 12,
     title: "Der Methodenteil",
-    genre: "Yöntem açıklaması",
+    genre: "info",
     intro: "Bir sonuca nasıl vardığını anlat — sonucu değil, yolu.",
     gloss: [
       { de: "erfassen", tr: "kaydetmek", en: "to record" },

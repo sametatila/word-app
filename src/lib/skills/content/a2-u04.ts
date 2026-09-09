@@ -29,7 +29,7 @@ export const a2U04: SkillExercise[] = [
     skill: "reading",
     unit: 4,
     title: "Meine Schulzeit",
-    genre: "Blog yazısı",
+    genre: "blog",
     intro: "Okul yıllarının anlatımı: neye izin vardı, ne zorunluydu?",
     gloss: [
       { de: "das Gymnasium", tr: "lise", en: "grammar school" },
@@ -90,7 +90,7 @@ export const a2U04: SkillExercise[] = [
     skill: "reading",
     unit: 4,
     title: "Seit drei Jahren in Köln",
-    genre: "Forum mesajı",
+    genre: "forum",
     intro: "Bir forum mesajı. Ne zaman geldi, ne zamandır burada — ikisi aynı şey değil.",
     gloss: [
       { de: "seit", tr: "-den beri", en: "since" },
@@ -153,7 +153,7 @@ export const a2U04: SkillExercise[] = [
     skill: "listening",
     unit: 4,
     title: "Der Umzug am Samstag",
-    genre: "Diyalog",
+    genre: "dialogue",
     intro: "Taşınma günü. Kim ne taşıdı, ne kaldı?",
     gloss: [
       { de: "der Kofferraum", tr: "araba bagajı", en: "car boot" },
@@ -211,7 +211,7 @@ export const a2U04: SkillExercise[] = [
     skill: "listening",
     unit: 4,
     title: "Wie habt ihr euch kennengelernt?",
-    genre: "Diyalog",
+    genre: "dialogue",
     intro: "Bir tanışma hikâyesi. Nerede tanışmışlar, ne kadar zamandır birlikteler?",
     gloss: [
       { de: "sich anfreunden", tr: "arkadaş olmak", en: "to become friends" },
@@ -269,7 +269,7 @@ export const a2U04: SkillExercise[] = [
     skill: "writing",
     unit: 4,
     title: "seit oder vor?",
-    genre: "Dil bilgisi",
+    genre: "grammar",
     intro: "Süren bir zaman mı, bitmiş bir nokta mı? İki edat ve iki ayrı zaman.",
     gloss: [
       { de: "seit", tr: "-den beri", en: "since" },
@@ -313,7 +313,7 @@ export const a2U04: SkillExercise[] = [
     skill: "writing",
     unit: 4,
     title: "Wie wir uns kennengelernt haben",
-    genre: "Forum mesajı",
+    genre: "forum",
     intro: "Foruma bir tanışma hikâyesi yaz: nerede, ne zaman, bugün nasıl?",
     gloss: [
       { de: "sich anfreunden", tr: "arkadaş olmak", en: "to become friends" },

@@ -31,7 +31,7 @@ export const a1U01: SkillExercise[] = [
     skill: "reading",
     unit: 1,
     title: "Drei Namen",
-    genre: "Tanışma",
+    genre: "profile",
     intro: "Üç kişi kendini tanıtıyor. Herkes adını, nereli olduğunu ve nerede oturduğunu söylüyor.",
     gloss: [
       { de: "Deutschland", tr: "Almanya", en: "Germany" },
@@ -87,7 +87,7 @@ export const a1U01: SkillExercise[] = [
     skill: "reading",
     unit: 1,
     title: "Hallo! Wie heißt du?",
-    genre: "Diyalog",
+    genre: "dialogue",
     intro: "Ben ile Sara ilk kez tanışıyor. Kısa bir selamlaşma ve tanışma konuşması.",
     gloss: [
       { de: "der Schweiz", tr: "İsviçre", en: "Switzerland" },
@@ -163,7 +163,7 @@ export const a1U01: SkillExercise[] = [
     skill: "listening",
     unit: 1,
     title: "Ich heiße Emma",
-    genre: "Tanışma",
+    genre: "profile",
     intro: "Emma kendini tanıtıyor. Dinle: adı ne, nereden geliyor, nerede oturuyor?",
     gloss: [
       { de: "Frankreich", tr: "Fransa", en: "France" },
@@ -219,7 +219,7 @@ export const a1U01: SkillExercise[] = [
     skill: "listening",
     unit: 1,
     title: "Sind Sie Frau Yılmaz?",
-    genre: "Diyalog",
+    genre: "dialogue",
     intro: "Resmî bir tanışma (siz/Sie). Bay Koch, Bayan Yılmaz'la tanışıyor. Dikkat: burada „Sie“ (siz) kullanılıyor.",
     gloss: [
       { de: "Guten Tag", tr: "iyi günler", en: "good day" },
@@ -299,7 +299,7 @@ export const a1U01: SkillExercise[] = [
     skill: "writing",
     unit: 1,
     title: "Ich stelle mich vor",
-    genre: "Tanışma",
+    genre: "profile",
     intro: "Kendini tanıtmayı yazarak çalış. Parçaları birleştir, sonra formu doldur. Sadece bu ünitenin kalıpları.",
     gloss: [
       { de: "Ich heiße …", tr: "Benim adım …", en: "My name is …" },
@@ -350,7 +350,7 @@ export const a1U01: SkillExercise[] = [
     skill: "writing",
     unit: 1,
     title: "du oder Sie?",
-    genre: "Tanışma",
+    genre: "profile",
     intro: "Soru sormayı ve resmî/samimi ayrımını (du/Sie) yaz. Kısa cümleler yeter.",
     gloss: [
       { de: "du", tr: "sen (samimi)", en: "you (informal)" },

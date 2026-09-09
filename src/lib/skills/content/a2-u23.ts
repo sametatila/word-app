@@ -33,7 +33,7 @@ export const a2U23: SkillExercise[] = [
     skill: "reading",
     unit: 23,
     title: "Anmeldung beim Bürgeramt",
-    genre: "Bilgilendirme",
+    genre: "info",
     intro: "Nüfus dairesi bilgilendirmesi. Ne getirilecek, kaç günde yapılacak?",
     gloss: [
       { de: "das Rathaus", tr: "belediye binası", en: "town hall" },
@@ -99,7 +99,7 @@ export const a2U23: SkillExercise[] = [
     skill: "reading",
     unit: 23,
     title: "Ein Tag ohne Handy",
-    genre: "Blog yazısı",
+    genre: "blog",
     intro: "Telefonsuz bir gün denemesi. Ne zaman zor oldu, ne değişti?",
     gloss: [
       { de: "ausprobieren", tr: "denemek", en: "to try out" },
@@ -170,7 +170,7 @@ export const a2U23: SkillExercise[] = [
     skill: "listening",
     unit: 23,
     title: "Der Online-Termin",
-    genre: "Diyalog",
+    genre: "dialogue",
     intro: "Görüntülü görüşmenin başı. Ses sorunu nasıl çözülüyor?",
     gloss: [
       { de: "das Mikrofon", tr: "mikrofon", en: "microphone" },
@@ -240,7 +240,7 @@ export const a2U23: SkillExercise[] = [
     skill: "listening",
     unit: 23,
     title: "Das Formular ausfüllen",
-    genre: "Diyalog",
+    genre: "dialogue",
     intro: "Formda hatalar var. Memur ne düzeltilmesini istiyor?",
     gloss: [
       { de: "leserlich", tr: "okunaklı", en: "legible" },
@@ -310,7 +310,7 @@ export const a2U23: SkillExercise[] = [
     skill: "writing",
     unit: 23,
     title: "Sie emri ve du emri",
-    genre: "Dil bilgisi",
+    genre: "grammar",
     intro: "Resmî emirde Sie söylenir, samimi emirde özne hiç söylenmez.",
     gloss: [
       { de: "ausfüllen", tr: "doldurmak", en: "to fill in" },
@@ -354,7 +354,7 @@ export const a2U23: SkillExercise[] = [
     skill: "writing",
     unit: 23,
     title: "Termin vereinbaren",
-    genre: "Resmî yazı",
+    genre: "formal",
     intro: "Nüfus dairesinden randevu iste: ne için, ne zaman, hangi soru?",
     gloss: [
       { de: "sich anmelden", tr: "kayıt yaptırmak", en: "to register" },

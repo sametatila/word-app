@@ -32,7 +32,7 @@ export const a2U21: SkillExercise[] = [
     skill: "reading",
     unit: 21,
     title: "Warum wir Krimis schauen",
-    genre: "Dergi yazısı",
+    genre: "article",
     intro: "Diziler üstüne bir yazı. Neden hep aynı türü seçiyoruz?",
     gloss: [
       { de: "der Krimi", tr: "polisiye", en: "crime drama" },
@@ -103,7 +103,7 @@ export const a2U21: SkillExercise[] = [
     skill: "reading",
     unit: 21,
     title: "Stimmt das wirklich?",
-    genre: "Bilgilendirme",
+    genre: "info",
     intro: "Haber kontrol rehberi. Bir habere inanmadan önce ne yapmalı?",
     gloss: [
       { de: "der Zeitungsartikel", tr: "gazete yazısı", en: "newspaper article" },
@@ -170,7 +170,7 @@ export const a2U21: SkillExercise[] = [
     skill: "listening",
     unit: 21,
     title: "Wann hast du eigentlich Zeit?",
-    genre: "Diyalog",
+    genre: "dialogue",
     intro: "Haftalık düzen konuşması. Kim ne zaman müsait?",
     gloss: [
       { de: "meistens", tr: "çoğunlukla", en: "mostly" },
@@ -240,7 +240,7 @@ export const a2U21: SkillExercise[] = [
     skill: "listening",
     unit: 21,
     title: "Zu viel am Handy",
-    genre: "Diyalog",
+    genre: "dialogue",
     intro: "Ekran süresi konuşması. Kim ne kadar, kim ne değiştirdi?",
     gloss: [
       { de: "die App", tr: "uygulama", en: "app" },
@@ -305,7 +305,7 @@ export const a2U21: SkillExercise[] = [
     skill: "writing",
     unit: 21,
     title: "Yan cümle başta olunca",
-    genre: "Dil bilgisi",
+    genre: "grammar",
     intro: "wenn ile başlayan cümlede ana cümle özneyle değil fiille devam eder.",
     gloss: [
       { de: "meistens", tr: "çoğunlukla", en: "mostly" },
@@ -349,7 +349,7 @@ export const a2U21: SkillExercise[] = [
     skill: "writing",
     unit: 21,
     title: "Zu viel am Handy?",
-    genre: "Forum yazısı",
+    genre: "forum",
     intro: "Foruma yaz: telefonu ne zaman eline alıyorsun, ne değiştirmek istiyorsun?",
     gloss: [
       { de: "die App", tr: "uygulama", en: "app" },

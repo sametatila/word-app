@@ -37,7 +37,7 @@ export const c1U22: SkillExercise[] = [
     skill: "reading",
     unit: 22,
     title: "Das heikle Du",
-    genre: "Rehber yazısı",
+    genre: "guide",
     intro: "Sen'e geçiş: kim teklif eder, nasıl reddedilir, geri dönülür mü?",
     gloss: [
       { de: "heikel", tr: "nazik, riskli", en: "delicate" },
@@ -120,7 +120,7 @@ export const c1U22: SkillExercise[] = [
     skill: "reading",
     unit: 22,
     title: "Loben auf Deutsch",
-    genre: "Dil yazısı",
+    genre: "text",
     intro: "Övgü neden bu kadar kısık? Ve sıcak övgü neden ters teper?",
     gloss: [
       { de: "das Kompliment", tr: "iltifat", en: "compliment" },
@@ -202,7 +202,7 @@ export const c1U22: SkillExercise[] = [
     skill: "listening",
     unit: 22,
     title: "Verstehen, nicht sprechen",
-    genre: "Diyalog",
+    genre: "dialogue",
     intro: "Lehçe karşısındaki gerçekçi hedef.",
     gloss: [
       { de: "der Dialekt", tr: "lehçe", en: "dialect" },
@@ -278,7 +278,7 @@ export const c1U22: SkillExercise[] = [
     skill: "listening",
     unit: 22,
     title: "Ins Fettnäpfchen getreten",
-    genre: "Diyalog",
+    genre: "dialogue",
     intro: "Gaf yapıldı. Silinebilen ile silinemeyeni ayırmak.",
     gloss: [
       { de: "ins Fettnäpfchen treten", tr: "pot kırmak", en: "to put one's foot in it" },
@@ -353,7 +353,7 @@ export const c1U22: SkillExercise[] = [
     skill: "writing",
     unit: 22,
     title: "İnce ayarın kalıpları",
-    genre: "Dil bilgisi",
+    genre: "grammar",
     intro: "duzen teklifi, kibar ret, Schwamm drüber, ölçülü övgü.",
     gloss: [
       { de: "heikel", tr: "nazik", en: "delicate" },
@@ -400,7 +400,7 @@ export const c1U22: SkillExercise[] = [
     skill: "writing",
     unit: 22,
     title: "Veda konuşması",
-    genre: "Konuşma metni",
+    genre: "monologue",
     intro: "Ölçüsünü kaçırmadan övmek — ve kendi gafını kullanmak.",
     gloss: [
       { de: "die Anerkennung", tr: "takdir", en: "recognition" },

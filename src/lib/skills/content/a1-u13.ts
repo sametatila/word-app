@@ -28,7 +28,7 @@ export const a1U13: SkillExercise[] = [
     skill: "reading",
     unit: 13,
     title: "Wie komme ich zum Bahnhof?",
-    genre: "Yol tarifi",
+    genre: "guide",
     intro: "Birine yazılı yol tarifi verilmiş. Yolu takip et.",
     gloss: [
       { de: "geradeaus", tr: "dosdoğru", en: "straight ahead" },
@@ -92,7 +92,7 @@ export const a1U13: SkillExercise[] = [
     skill: "reading",
     unit: 13,
     title: "Online bestellen",
-    genre: "E-posta",
+    genre: "email",
     intro: "Bir sipariş onay e-postası. Ne zaman geliyor, ne kadar?",
     gloss: [
       { de: "die Lieferung", tr: "teslimat", en: "delivery" },
@@ -145,7 +145,7 @@ export const a1U13: SkillExercise[] = [
     skill: "listening",
     unit: 13,
     title: "Entschuldigung, wo ist …?",
-    genre: "Diyalog",
+    genre: "dialogue",
     intro: "Sokakta yol soruluyor. Yönleri takip et.",
     gloss: [
       { de: "links", tr: "sol", en: "left" },
@@ -207,7 +207,7 @@ export const a1U13: SkillExercise[] = [
     skill: "listening",
     unit: 13,
     title: "In der Drogerie",
-    genre: "Diyalog",
+    genre: "dialogue",
     intro: "Drogeride bir müşteri bir şey arıyor.",
     gloss: [
       { de: "die Seife", tr: "sabun", en: "soap" },
@@ -265,7 +265,7 @@ export const a1U13: SkillExercise[] = [
     skill: "writing",
     unit: 13,
     title: "Den Weg beschreiben",
-    genre: "Dil bilgisi",
+    genre: "grammar",
     intro: "Yol tarifi ve ulaşım cümleleri.",
     gloss: [
       { de: "geradeaus", tr: "dosdoğru", en: "straight ahead" },
@@ -302,7 +302,7 @@ export const a1U13: SkillExercise[] = [
     skill: "writing",
     unit: 13,
     title: "Den Weg erklären",
-    genre: "Mesaj",
+    genre: "message",
     intro: "Bir arkadaşına evine nasıl geleceğini yaz.",
     gloss: [
       { de: "der Weg", tr: "yol", en: "way" },

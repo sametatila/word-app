@@ -33,7 +33,7 @@ export const c1U08: SkillExercise[] = [
     skill: "reading",
     unit: 8,
     title: "Was eine Abschiedsrede trägt",
-    genre: "Rehber yazısı",
+    genre: "guide",
     intro: "Veda konuşması üstüne bir yazı. Alıntı ne zaman taşır, ne zaman gizler?",
     gloss: [
       { de: "der Weggefährte", tr: "yol arkadaşı", en: "companion" },
@@ -113,7 +113,7 @@ export const c1U08: SkillExercise[] = [
     skill: "reading",
     unit: 8,
     title: "Wann ein Argument stichhaltig ist",
-    genre: "Deneme",
+    genre: "essay",
     intro: "Münazara üstüne bir yazı. Kabul etmek neden güçlendirir?",
     gloss: [
       { de: "zugegeben", tr: "kabul, itiraf edeyim", en: "admittedly" },
@@ -197,7 +197,7 @@ export const c1U08: SkillExercise[] = [
     skill: "listening",
     unit: 8,
     title: "Unter vier Augen",
-    genre: "Diyalog",
+    genre: "dialogue",
     intro: "Vücut deyimleri gerçek bir konuşmada. Hangisi ne kadar yakınlık istiyor?",
     gloss: [
       { de: "unter vier Augen", tr: "baş başa", en: "in private" },
@@ -271,7 +271,7 @@ export const c1U08: SkillExercise[] = [
     skill: "listening",
     unit: 8,
     title: "Das ist mir nicht Wurst",
-    genre: "Diyalog",
+    genre: "dialogue",
     intro: "Yiyecek deyimleri iş ortamında. Hangisi toplantıda durur?",
     gloss: [
       { de: "Tomaten auf den Augen", tr: "göz göre göre görmemek", en: "blind to the obvious" },
@@ -350,7 +350,7 @@ export const c1U08: SkillExercise[] = [
     skill: "writing",
     unit: 8,
     title: "Kabul et, sonra çürüt",
-    genre: "Dil bilgisi",
+    genre: "grammar",
     intro: "Konzessiv yapı: önce tavizi ver, sonra karşı çık.",
     gloss: [
       { de: "zugegeben", tr: "kabul", en: "admittedly" },
@@ -397,7 +397,7 @@ export const c1U08: SkillExercise[] = [
     skill: "writing",
     unit: 8,
     title: "Eine Rede zum Abschied",
-    genre: "Konuşma metni",
+    genre: "monologue",
     intro: "Veda konuşması yaz: alıntıyla başlama, ayrıntıyla değerini teslim et.",
     gloss: [
       { de: "würdigen", tr: "değerini teslim etmek", en: "to pay tribute" },

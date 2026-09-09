@@ -18,7 +18,7 @@ export const enA2P4: SkillExercise[] = [
     level: "A2",
     skill: "reading",
     title: "A Fridge on the Street",
-    genre: "Haber",
+    genre: "article",
     intro: "Sokağa konmuş bir buzdolabını anlatan yerel haberi okuyacaksın: fikir kimden çıktı, kurallar neler, sonuç ne.",
     gloss: [
       { de: "fridge", tr: "buzdolabı" },
@@ -96,7 +96,7 @@ export const enA2P4: SkillExercise[] = [
     level: "A2",
     skill: "listening",
     title: "A Present for Kerem",
-    genre: "Diyalog",
+    genre: "dialogue",
     intro: "İki iş arkadaşı ayrılan bir meslektaşları için hazırlık yapıyor: ne alınacak, ne kadar toplanacak, kim ne yapacak.",
     gloss: [
       { de: "present", tr: "hediye" },
@@ -176,7 +176,7 @@ export const enA2P4: SkillExercise[] = [
     level: "A2",
     skill: "writing",
     title: "Notes from the Meeting",
-    genre: "Rapor",
+    genre: "report",
     intro: "Toplantıya gelemeyen bir arkadaşın için kısa not yazacaksın; önce iki cümle kur, sonra notu yaz.",
     gloss: [
       { de: "decide", tr: "karar vermek" },
@@ -236,7 +236,7 @@ export const enA2P4: SkillExercise[] = [
     level: "A2",
     skill: "speaking",
     title: "Letters you do not say",
-    genre: "Ses çalışması",
+    genre: "pronounce",
     intro: "İngilizcede yazılan her harf okunmaz; bu sessiz harfler kelimelerin en sık tanınmama nedenidir.",
     gloss: [
       { de: "answer", tr: "cevap" },
@@ -312,7 +312,7 @@ export const enA2P4: SkillExercise[] = [
     level: "A2",
     skill: "grammar",
     title: "much, many and a lot of",
-    genre: "Kural",
+    genre: "grammar",
     intro: "Türkçedeki tek „çok“ İngilizcede ikiye ayrılır ve bazı isimler hiç çoğul olmaz.",
     focus: "Sayılabilen ve sayılamayan isimler, much / many",
     gloss: [

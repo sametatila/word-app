@@ -31,7 +31,7 @@ export const a2U12: SkillExercise[] = [
     skill: "reading",
     unit: 12,
     title: "Protokoll vom Team-Meeting",
-    genre: "Tutanak",
+    genre: "report",
     intro: "Toplantı notları. Kim ne önerdi, neye karar verildi?",
     gloss: [
       { de: "der Vorschlag", tr: "öneri", en: "proposal" },
@@ -94,7 +94,7 @@ export const a2U12: SkillExercise[] = [
     skill: "reading",
     unit: 12,
     title: "Speiseplan der Cafeteria",
-    genre: "Bilgilendirme",
+    genre: "info",
     intro: "İş yerindeki kafeteryanın haftalık menüsü ve kuralları.",
     gloss: [
       { de: "die Cafeteria", tr: "kafeterya", en: "cafeteria" },
@@ -160,7 +160,7 @@ export const a2U12: SkillExercise[] = [
     skill: "listening",
     unit: 12,
     title: "Ein Anruf für Frau Klein",
-    genre: "Telefon görüşmesi",
+    genre: "phone",
     intro: "Aranan kişi yerinde yok. Mesaj nasıl alınıyor?",
     gloss: [
       { de: "erreichen", tr: "ulaşmak", en: "to reach" },
@@ -219,7 +219,7 @@ export const a2U12: SkillExercise[] = [
     skill: "listening",
     unit: 12,
     title: "Urlaub beantragen",
-    genre: "Diyalog",
+    genre: "dialogue",
     intro: "Yöneticiyle izin görüşmesi. Hangi tarihte anlaşıyorlar?",
     gloss: [
       { de: "der Urlaubstag", tr: "izin günü", en: "day of leave" },
@@ -279,7 +279,7 @@ export const a2U12: SkillExercise[] = [
     skill: "writing",
     unit: 12,
     title: "dass — und wohin geht das Verb?",
-    genre: "Dil bilgisi",
+    genre: "grammar",
     intro: "Yan cümlede fiil sona gider. Geçmiş zaman varsa yardımcı fiil EN sona.",
     gloss: [
       { de: "dass", tr: "ki", en: "that" },
@@ -323,7 +323,7 @@ export const a2U12: SkillExercise[] = [
     skill: "writing",
     unit: 12,
     title: "Einen Urlaubsantrag schreiben",
-    genre: "Resmî yazı",
+    genre: "formal",
     intro: "Yöneticine yazılı izin talebi yaz: hangi tarihler, kaç gün, yokluğunda ne olacak?",
     gloss: [
       { de: "der Urlaubstag", tr: "izin günü", en: "day of leave" },

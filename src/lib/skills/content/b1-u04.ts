@@ -26,7 +26,7 @@ export const b1U04: SkillExercise[] = [
     skill: "reading",
     unit: 4,
     title: "Was im Mietvertrag steht",
-    genre: "Sözleşme özeti",
+    genre: "report",
     intro: "Bir kira sözleşmesinin sade özeti. Edilgen cümlelere dikkat: kimin yaptığı söylenmiyor.",
     minutes: 5,
     gloss: [
@@ -97,7 +97,7 @@ export const b1U04: SkillExercise[] = [
     skill: "reading",
     unit: 4,
     title: "Zettel im Treppenhaus",
-    genre: "Not / duyuru",
+    genre: "phone",
     intro: "Merdiven boşluğuna asılmış üç not. Aynı sorun, üç farklı ton. Hangisi işe yarar?",
     minutes: 5,
     gloss: [
@@ -168,7 +168,7 @@ export const b1U04: SkillExercise[] = [
     skill: "listening",
     unit: 4,
     title: "Das WG-Gespräch",
-    genre: "Tanışma konuşması",
+    genre: "profile",
     intro: "Paylaşımlı eve aday biri geliyor. Dinle: hangi kurallar var, ne konuşuluyor?",
     minutes: 4,
     gloss: [
@@ -230,7 +230,7 @@ export const b1U04: SkillExercise[] = [
     skill: "listening",
     unit: 4,
     title: "Die Heizung ist kaputt",
-    genre: "Telefon görüşmesi",
+    genre: "phone",
     intro: "Kiracı ev sahibini arıyor. Dinle: ne bozuk, ne zaman geliyorlar?",
     minutes: 4,
     gloss: [
@@ -293,7 +293,7 @@ export const b1U04: SkillExercise[] = [
     skill: "writing",
     unit: 4,
     title: "Ein Zettel an die Nachbarn",
-    genre: "Kibar not",
+    genre: "message",
     intro: "Aynı şikâyeti kibar biçimde yaz. Dilek kipi burada nezaket değil, işe yarama meselesi.",
     minutes: 8,
     gloss: [
@@ -338,7 +338,7 @@ export const b1U04: SkillExercise[] = [
     skill: "writing",
     unit: 4,
     title: "Schaden melden",
-    genre: "Resmî bildirim",
+    genre: "report",
     intro: "Ev sahibine yazılı arıza bildirimi. Kişisiz, net ve tarihli.",
     minutes: 12,
     gloss: [

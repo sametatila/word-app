@@ -33,7 +33,7 @@ export const c1U25: SkillExercise[] = [
     skill: "reading",
     unit: 25,
     title: "Wandel ist kein Verfall",
-    genre: "Deneme",
+    genre: "essay",
     intro: "Dil bozuluyor mu? Tarih başka bir şey söylüyor.",
     gloss: [
       { de: "der Sprachwandel", tr: "dil değişimi", en: "language change" },
@@ -114,7 +114,7 @@ export const c1U25: SkillExercise[] = [
     skill: "reading",
     unit: 25,
     title: "Angekommen — und weiter",
-    genre: "Deneme",
+    genre: "essay",
     intro: "C1 ne demek, ne demek değil?",
     gloss: [
       { de: "der Gipfel", tr: "zirve", en: "summit" },
@@ -195,7 +195,7 @@ export const c1U25: SkillExercise[] = [
     skill: "listening",
     unit: 25,
     title: "Jetzt hilfst du",
-    genre: "Mentorluk sohbeti",
+    genre: "dialogue",
     intro: "Öğrendiğini aktarmak: hangi öğüt işe yarar?",
     gloss: [
       { de: "weitergeben", tr: "aktarmak", en: "to pass on" },
@@ -275,7 +275,7 @@ export const c1U25: SkillExercise[] = [
     skill: "listening",
     unit: 25,
     title: "In zwei Sprachen zu Hause",
-    genre: "Söyleşi",
+    genre: "interview",
     intro: "İki dillilik: zenginlik mi, çatlak mı — yoksa ikisi de mi?",
     gloss: [
       { de: "zweisprachig", tr: "iki dilli", en: "bilingual" },
@@ -354,7 +354,7 @@ export const c1U25: SkillExercise[] = [
     skill: "writing",
     unit: 25,
     title: "Öğüt vermenin dili",
-    genre: "Dil bilgisi",
+    genre: "grammar",
     intro: "Öğüt verme kalıpları ve gerçek dışı kıyas.",
     gloss: [
       { de: "weitergeben", tr: "aktarmak", en: "to pass on" },
@@ -401,7 +401,7 @@ export const c1U25: SkillExercise[] = [
     skill: "writing",
     unit: 25,
     title: "Sonraki kişiye mektup",
-    genre: "Kişisel metin",
+    genre: "personal",
     intro: "Bugün başlayan birine yaz — abartmadan, küçültmeden.",
     gloss: [
       { de: "weitergeben", tr: "aktarmak", en: "to pass on" },

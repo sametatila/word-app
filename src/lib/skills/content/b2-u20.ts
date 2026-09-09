@@ -34,7 +34,7 @@ export const b2U20: SkillExercise[] = [
     skill: "reading",
     unit: 20,
     title: "An später denken",
-    genre: "Bilgilendirme yazısı",
+    genre: "info",
     intro: "Emeklilik birikimi üzerine bir rehber yazı. Tahmin bildiren kiplere dikkat et.",
     gloss: [
       { de: "die Altersvorsorge", tr: "emeklilik birikimi", en: "retirement provision" },
@@ -103,7 +103,7 @@ export const b2U20: SkillExercise[] = [
     skill: "reading",
     unit: 20,
     title: "Das zweite Standbein",
-    genre: "Danışma metni",
+    genre: "text",
     intro: "Ek iş üzerine bir danışma yazısı. Koşulların hangi edatlarla verildiğine dikkat et.",
     gloss: [
       { de: "nebenberuflich", tr: "yan iş olarak", en: "on the side" },
@@ -175,7 +175,7 @@ export const b2U20: SkillExercise[] = [
     skill: "listening",
     unit: 20,
     title: "Der mutige Wechsel",
-    genre: "Diyalog",
+    genre: "dialogue",
     intro: "İş değiştiren biri anlatıyor. Beklenene rağmen atılan adıma dikkat et.",
     gloss: [
       { de: "der Wechsel", tr: "geçiş", en: "change" },
@@ -254,7 +254,7 @@ export const b2U20: SkillExercise[] = [
     skill: "listening",
     unit: 20,
     title: "Das Hobby, das Geld frisst",
-    genre: "Diyalog",
+    genre: "dialogue",
     intro: "Pahalı bir hobi konuşuluyor. Masrafın nasıl anlatıldığına dikkat et.",
     gloss: [
       { de: "die Ausrüstung", tr: "ekipman", en: "equipment" },
@@ -329,7 +329,7 @@ export const b2U20: SkillExercise[] = [
     skill: "writing",
     unit: 20,
     title: "obwohl mi trotz mi",
-    genre: "Cümle kurma",
+    genre: "build",
     intro: "İkisi de karşıtlık kurar: obwohl yan cümle ister, trotz genitif bir ad öbeği.",
     gloss: [
       { de: "bereuen", tr: "pişman olmak", en: "to regret" },
@@ -383,7 +383,7 @@ export const b2U20: SkillExercise[] = [
     skill: "writing",
     unit: 20,
     title: "Die Entscheidungsnotiz",
-    genre: "Karar notu",
+    genre: "message",
     intro: "Vermek üzere olduğun bir kararı kendine yaz — iki tarafı da dürüstçe.",
     gloss: [
       { de: "der Wechsel", tr: "geçiş", en: "change" },

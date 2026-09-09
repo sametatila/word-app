@@ -31,7 +31,7 @@ export const c1U03: SkillExercise[] = [
     skill: "reading",
     unit: 3,
     title: "Zwei Pitches, ein Produkt",
-    genre: "Analiz yazısı",
+    genre: "text",
     intro: "Aynı ürün, iki sunum. Hangisi ikna ediyor ve neye dayanarak?",
     gloss: [
       { de: "der Clou", tr: "püf noktası", en: "the clever part" },
@@ -114,7 +114,7 @@ export const c1U03: SkillExercise[] = [
     skill: "reading",
     unit: 3,
     title: "Der Vermittler berichtet",
-    genre: "Rapor",
+    genre: "report",
     intro: "Arabulucunun raporu. İki tarafın sözü nasıl aktarılıyor?",
     gloss: [
       { de: "schlichten", tr: "arabuluculuk etmek", en: "to mediate" },
@@ -193,7 +193,7 @@ export const c1U03: SkillExercise[] = [
     skill: "listening",
     unit: 3,
     title: "Ein Wort verändert die Einladung",
-    genre: "Diyalog",
+    genre: "dialogue",
     intro: "Aynı cümle, tek parçacık farkı. Davet mi, baskı mı?",
     gloss: [
       { de: "die Aufforderung", tr: "çağrı, talep", en: "request" },
@@ -268,7 +268,7 @@ export const c1U03: SkillExercise[] = [
     skill: "listening",
     unit: 3,
     title: "Das ist ja interessant",
-    genre: "Diyalog",
+    genre: "dialogue",
     intro: "Şaşkınlık mı, kibar bir itiraz mı? Aynı cümle iki yönde okunuyor.",
     gloss: [
       { de: "die Überraschung", tr: "şaşkınlık", en: "surprise" },
@@ -345,7 +345,7 @@ export const c1U03: SkillExercise[] = [
     skill: "writing",
     unit: 3,
     title: "Parçacık, kanıt, aktarım",
-    genre: "Dil bilgisi",
+    genre: "grammar",
     intro: "Üç ayrı ikna aracı: ton taşıyan parçacık, kanıt, tarafsız aktarım.",
     gloss: [
       { de: "belegen", tr: "kanıtlamak", en: "to substantiate" },
@@ -388,7 +388,7 @@ export const c1U03: SkillExercise[] = [
     skill: "writing",
     unit: 3,
     title: "Ein Pitch in sechs Sätzen",
-    genre: "Sunum metni",
+    genre: "monologue",
     intro: "İkna et ama kanıtla: iddia, rakam, ayırt edici nokta, kabul edilen zayıflık.",
     gloss: [
       { de: "das Alleinstellungsmerkmal", tr: "ayırt edici özellik", en: "unique selling point" },

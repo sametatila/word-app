@@ -32,7 +32,7 @@ export const b2U04: SkillExercise[] = [
     skill: "reading",
     unit: 4,
     title: "Wer haftet eigentlich?",
-    genre: "Tüketici rehberi",
+    genre: "guide",
     intro: "Bir tüketici danışma merkezinin yazısı: zarar doğduğunda kim ne kanıtlamak zorunda?",
     gloss: [
       { de: "der Schadenersatz", tr: "tazminat", en: "compensation" },
@@ -104,7 +104,7 @@ export const b2U04: SkillExercise[] = [
     skill: "reading",
     unit: 4,
     title: "Der goldene Mittelweg ist kein Ort",
-    genre: "Köşe yazısı",
+    genre: "article",
     intro: "Bir arabulucu, uzlaşmanın neden ortada bir yerde durmadığını anlatıyor.",
     gloss: [
       { de: "nachgeben", tr: "geri adım atmak", en: "to give in" },
@@ -176,7 +176,7 @@ export const b2U04: SkillExercise[] = [
     skill: "listening",
     unit: 4,
     title: "Seit Dienstag kein Netz",
-    genre: "Telefon görüşmesi",
+    genre: "phone",
     intro: "Teknik destek hattı. Edilgen yerine geçen yapılara dikkat et.",
     gloss: [
       { de: "der Kundendienst", tr: "müşteri hizmetleri", en: "customer service" },
@@ -246,7 +246,7 @@ export const b2U04: SkillExercise[] = [
     skill: "listening",
     unit: 4,
     title: "Erst die Wut, dann die Sache",
-    genre: "Diyalog",
+    genre: "dialogue",
     intro: "Öfkeli bir müşteri arıyor. Gerilim hangi sırayla düşüyor?",
     gloss: [
       { de: "die Wut", tr: "öfke", en: "anger" },
@@ -326,7 +326,7 @@ export const b2U04: SkillExercise[] = [
     skill: "writing",
     unit: 4,
     title: "Vier Sätze im Konflikt",
-    genre: "Cümle kurma",
+    genre: "build",
     intro: "Edilgen yerine geçen yapı, tamlayan hâli edatı, iki parçalı bağlaç ve dilek kipiyle yatıştırma.",
     gloss: [
       { de: "beheben", tr: "gidermek", en: "to fix" },
@@ -377,7 +377,7 @@ export const b2U04: SkillExercise[] = [
     skill: "writing",
     unit: 4,
     title: "Die Antwort auf eine wütende Mail",
-    genre: "İş yazışması",
+    genre: "formal",
     intro: "Öfkeli bir müşteri e-postasına cevap yaz: önce duygu, sonra olgu, en son çözüm.",
     gloss: [
       { de: "die Wut", tr: "öfke", en: "anger" },

@@ -33,7 +33,7 @@ export const c1U18: SkillExercise[] = [
     skill: "reading",
     unit: 18,
     title: "Scheinbar oder anscheinend",
-    genre: "Dil yazısı",
+    genre: "text",
     intro: "İki sözcük, zıt iddialar. Türkçede ayrım zaten var — eşleşme ters.",
     gloss: [
       { de: "scheinbar", tr: "sözde, görünürde (ama değil)", en: "seemingly (but not)" },
@@ -111,7 +111,7 @@ export const c1U18: SkillExercise[] = [
     skill: "reading",
     unit: 18,
     title: "Ein Inhalt, drei Töne",
-    genre: "Rehber yazısı",
+    genre: "guide",
     intro: "Aynı bilgi üç metin türünde. Değişen ne, değişmeyen ne?",
     gloss: [
       { de: "die Textsorte", tr: "metin türü", en: "text type" },
@@ -195,7 +195,7 @@ export const c1U18: SkillExercise[] = [
     skill: "listening",
     unit: 18,
     title: "Als wäre nichts geschehen",
-    genre: "Diyalog",
+    genre: "dialogue",
     intro: "als ob / als wäre: gerçek dışını işaretlemek.",
     gloss: [
       { de: "verdrängen", tr: "bastırmak", en: "to suppress" },
@@ -271,7 +271,7 @@ export const c1U18: SkillExercise[] = [
     skill: "listening",
     unit: 18,
     title: "Ungeachtet aller Einwände",
-    genre: "Toplantı",
+    genre: "meeting",
     intro: "İmtiyaz bağlaçları: kabul et, ama iddianı bırakma.",
     gloss: [
       { de: "ungeachtet", tr: "-e rağmen", en: "notwithstanding" },
@@ -349,7 +349,7 @@ export const c1U18: SkillExercise[] = [
     skill: "writing",
     unit: 18,
     title: "Doğru sözcük, doğru iddia",
-    genre: "Dil bilgisi",
+    genre: "grammar",
     intro: "Görünüş bildiren iki zarf, imtiyaz edatı ve gerçek dışı kıyas.",
     gloss: [
       { de: "anscheinend", tr: "görünüşe göre", en: "apparently" },
@@ -396,7 +396,7 @@ export const c1U18: SkillExercise[] = [
     skill: "writing",
     unit: 18,
     title: "Aynı olay, iki muhatap",
-    genre: "Kurum yazışması",
+    genre: "formal",
     intro: "Bir arıza, iki metin: ekip içi ve müşteriye.",
     gloss: [
       { de: "die Textsorte", tr: "metin türü", en: "text type" },

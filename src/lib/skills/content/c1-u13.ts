@@ -30,7 +30,7 @@ export const c1U13: SkillExercise[] = [
     skill: "reading",
     unit: 13,
     title: "Aus dem Zusammenhang gerissen",
-    genre: "Deneme",
+    genre: "essay",
     intro: "Alıntı doğru ama yanlış olabilir mi? Bağlamın taşıdığı yük.",
     gloss: [
       { de: "die Passage", tr: "pasaj", en: "passage" },
@@ -111,7 +111,7 @@ export const c1U13: SkillExercise[] = [
     skill: "reading",
     unit: 13,
     title: "Vorbehaltlich, ausgeschlossen, zumutbar",
-    genre: "Bilgilendirme",
+    genre: "info",
     intro: "Sözleşme dili: hangi kelime neyi askıya alır, neyi bağlar?",
     gloss: [
       { de: "vorbehaltlich", tr: "…-in kaydıyla", en: "subject to" },
@@ -189,7 +189,7 @@ export const c1U13: SkillExercise[] = [
     skill: "listening",
     unit: 13,
     title: "Auf dem Podium",
-    genre: "Panel",
+    genre: "meeting",
     intro: "Panelde söz sırası ve ayrım yapma. Kim neyi kabul ediyor?",
     gloss: [
       { de: "das Podium", tr: "panel", en: "panel" },
@@ -266,7 +266,7 @@ export const c1U13: SkillExercise[] = [
     skill: "listening",
     unit: 13,
     title: "Lesen Sie die Klausel noch einmal",
-    genre: "Danışma görüşmesi",
+    genre: "opinion",
     intro: "Bir sözleşme maddesi birlikte okunuyor. Nerede bağlayıcı, nerede değil?",
     gloss: [
       { de: "die Klausel", tr: "madde", en: "clause" },
@@ -343,7 +343,7 @@ export const c1U13: SkillExercise[] = [
     skill: "writing",
     unit: 13,
     title: "Bağlayan ve askıya alan",
-    genre: "Dil bilgisi",
+    genre: "grammar",
     intro: "Bir cümlede taahhüt nerede kuruluyor, nerede boşaltılıyor?",
     gloss: [
       { de: "vorbehaltlich", tr: "…-in kaydıyla", en: "subject to" },
@@ -390,7 +390,7 @@ export const c1U13: SkillExercise[] = [
     skill: "writing",
     unit: 13,
     title: "Zwei Änderungen, nicht zwanzig",
-    genre: "Resmî yazı",
+    genre: "formal",
     intro: "Sözleşme taslağına yanıt: hangi iki madde değişmeli ve neden?",
     gloss: [
       { de: "die Klausel", tr: "madde", en: "clause" },

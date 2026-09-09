@@ -32,7 +32,7 @@ export const a2U11: SkillExercise[] = [
     skill: "reading",
     unit: 11,
     title: "Wir suchen Verstärkung",
-    genre: "İlan",
+    genre: "ad",
     intro: "Bir iş ilanı. Kim aranıyor, ne sunuluyor, nasıl başvurulur?",
     gloss: [
       { de: "der Mitarbeiter", tr: "çalışan", en: "employee" },
@@ -93,7 +93,7 @@ export const a2U11: SkillExercise[] = [
     skill: "reading",
     unit: 11,
     title: "Warum lernt ihr Deutsch?",
-    genre: "Forum mesajı",
+    genre: "forum",
     intro: "Forumda üç cevap. Herkes sebebini başka bir yapıyla söylüyor.",
     gloss: [
       { de: "weil", tr: "çünkü", en: "because" },
@@ -154,7 +154,7 @@ export const a2U11: SkillExercise[] = [
     skill: "listening",
     unit: 11,
     title: "Ich komme später",
-    genre: "Telefon görüşmesi",
+    genre: "phone",
     intro: "İşe geç kalma telefonu. Sebep ne, toplantı ne oluyor?",
     gloss: [
       { de: "denn", tr: "çünkü", en: "because" },
@@ -213,7 +213,7 @@ export const a2U11: SkillExercise[] = [
     skill: "listening",
     unit: 11,
     title: "Der erste Tag im Büro",
-    genre: "Diyalog",
+    genre: "dialogue",
     intro: "İşteki ilk gün. Kim kim, kim kiminle çalışıyor?",
     gloss: [
       { de: "der Arbeitskollege", tr: "iş arkadaşı", en: "work colleague" },
@@ -273,7 +273,7 @@ export const a2U11: SkillExercise[] = [
     skill: "writing",
     unit: 11,
     title: "weil, denn oder wegen?",
-    genre: "Dil bilgisi",
+    genre: "grammar",
     intro: "Aynı sebep, üç yapı, üç ayrı söz dizimi. Seçimi yaptığın an sıra da belli oluyor.",
     gloss: [
       { de: "weil", tr: "çünkü", en: "because" },
@@ -317,7 +317,7 @@ export const a2U11: SkillExercise[] = [
     skill: "writing",
     unit: 11,
     title: "Eine kurze Bewerbung schreiben",
-    genre: "Resmî yazı",
+    genre: "formal",
     intro: "İş ilanına kısa bir başvuru yaz: kimsin, neden yazıyorsun, ne zaman başlayabilirsin?",
     gloss: [
       { de: "die Bewerbung", tr: "iş başvurusu", en: "application" },

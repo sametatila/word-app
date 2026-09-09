@@ -17,7 +17,7 @@ export const deA2P5: SkillExercise[] = [
     level: "A2",
     skill: "reading",
     title: "Zusammen wohnen — wer macht was?",
-    genre: "Forum",
+    genre: "forum",
     intro: "Bir forumda ev arkadaşlığı soruluyor; soruyu ve üç farklı cevabı okuyacaksın.",
     gloss: [
       { de: "der Abwasch", tr: "bulaşık", en: "dishwashing" },
@@ -103,7 +103,7 @@ export const deA2P5: SkillExercise[] = [
     level: "A2",
     skill: "listening",
     title: "Kleider abgeben",
-    genre: "Diyalog",
+    genre: "dialogue",
     intro: "Bir müşteri ikinci el dükkânına kıyafet getiriyor: neler alınıyor, karşılığında ne veriliyor, ne gerekiyor.",
     gloss: [
       { de: "abgeben", tr: "teslim etmek", en: "to hand in" },
@@ -177,7 +177,7 @@ export const deA2P5: SkillExercise[] = [
     level: "A2",
     skill: "writing",
     title: "Brief an eine alte Freundin",
-    genre: "Mektup",
+    genre: "letter",
     intro: "Uzun süredir yazmadığın bir arkadaşına mektup yazacaksın; önce iki cümle kur, sonra mektubu yaz.",
     gloss: [
       { de: "der Balkon", tr: "balkon", en: "balcony" },
@@ -237,7 +237,7 @@ export const deA2P5: SkillExercise[] = [
     level: "A2",
     skill: "speaking",
     title: "Wo liegt die Betonung?",
-    genre: "Ses çalışması",
+    genre: "pronounce",
     intro: "Almancada vurgu yeri anlamı taşır: ayrılabilen ön ek vurgulu, ayrılmayan ön ek vurgusuz, birleşik kelimede ilk parça öne çıkar.",
     gloss: [
       { de: "der Bahnhof", tr: "tren istasyonu", en: "train station" },
@@ -313,7 +313,7 @@ export const deA2P5: SkillExercise[] = [
     level: "A2",
     skill: "grammar",
     title: "mein, meine und ein kleines Haus",
-    genre: "Kural",
+    genre: "grammar",
     intro: "İyelik kelimesi sahibine değil, sahip olunan ismin cinsine göre biçim alır; aynı kutu sıfat ekini de belirler.",
     focus: "Possessivartikel ve sıfat çekimine giriş",
     gloss: [

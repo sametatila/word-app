@@ -28,7 +28,7 @@ export const a1U09: SkillExercise[] = [
     skill: "reading",
     unit: 9,
     title: "Meine Woche",
-    genre: "Blog",
+    genre: "blog",
     intro: "Tom haftasını anlatıyor: hangi gün ne yapıyor?",
     gloss: [
       { de: "aufstehen", tr: "kalkmak", en: "to get up" },
@@ -88,7 +88,7 @@ export const a1U09: SkillExercise[] = [
     skill: "reading",
     unit: 9,
     title: "Zuerst, dann, danach",
-    genre: "Forum mesajı",
+    genre: "forum",
     intro: "İki kişi sabah rutinini anlatıyor. Sıraya dikkat et.",
     gloss: [
       { de: "sich anziehen", tr: "giyinmek", en: "to get dressed" },
@@ -141,7 +141,7 @@ export const a1U09: SkillExercise[] = [
     skill: "listening",
     unit: 9,
     title: "Wann stehst du auf?",
-    genre: "Diyalog",
+    genre: "dialogue",
     intro: "İki arkadaş sabah alışkanlıklarını konuşuyor.",
     gloss: [
       { de: "aufstehen", tr: "kalkmak", en: "to get up" },
@@ -199,7 +199,7 @@ export const a1U09: SkillExercise[] = [
     skill: "listening",
     unit: 9,
     title: "Rufst du mich an?",
-    genre: "Telefon",
+    genre: "phone",
     intro: "Bir plan yapılıyor. Hangi gün, saat kaçta?",
     gloss: [
       { de: "anrufen", tr: "telefonla aramak", en: "to call" },
@@ -257,7 +257,7 @@ export const a1U09: SkillExercise[] = [
     skill: "writing",
     unit: 9,
     title: "Trennbare Verben",
-    genre: "Dil bilgisi",
+    genre: "grammar",
     intro: "Ayrılabilir fiiller ve cümle dizilişi.",
     gloss: [
       { de: "aufstehen", tr: "kalkmak", en: "to get up" },
@@ -294,7 +294,7 @@ export const a1U09: SkillExercise[] = [
     skill: "writing",
     unit: 9,
     title: "Meine Woche beschreiben",
-    genre: "Blog",
+    genre: "blog",
     intro: "Haftanı anlat: hangi gün ne yapıyorsun?",
     gloss: [
       { de: "die Woche", tr: "hafta", en: "week" },

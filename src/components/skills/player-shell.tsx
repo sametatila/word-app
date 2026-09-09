@@ -125,7 +125,7 @@ export function PlayerShell({
               {exercise.level}
             </span>
             <span className="muted text-xs font-semibold">
-              {t(SKILL_LABEL_KEYS[exercise.skill])} · {exercise.genre} · {t("skills.dk", { n: exercise.minutes })}
+              {t(SKILL_LABEL_KEYS[exercise.skill])} · {t(`genre.${exercise.genre}`)} · {t("skills.dk", { n: exercise.minutes })}
             </span>
           </div>
           <h1 className="truncate text-lg font-bold">{exercise.title}</h1>

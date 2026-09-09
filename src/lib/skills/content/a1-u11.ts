@@ -27,7 +27,7 @@ export const a1U11: SkillExercise[] = [
     skill: "reading",
     unit: 11,
     title: "Sommerangebote",
-    genre: "İlan",
+    genre: "ad",
     intro: "Bir mağazanın indirim ilanını okuyacaksın. Ne kaça?",
     gloss: [
       { de: "das Angebot", tr: "indirim", en: "special offer" },
@@ -85,7 +85,7 @@ export const a1U11: SkillExercise[] = [
     skill: "reading",
     unit: 11,
     title: "Was trägst du gern?",
-    genre: "Forum mesajı",
+    genre: "forum",
     intro: "Üç kişi ne giymeyi sevdiğini yazıyor.",
     gloss: [
       { de: "die Kleidung", tr: "kıyafet", en: "clothes" },
@@ -137,7 +137,7 @@ export const a1U11: SkillExercise[] = [
     skill: "listening",
     unit: 11,
     title: "Im Kleidungsgeschäft",
-    genre: "Diyalog",
+    genre: "dialogue",
     intro: "Bir müşteri kazak arıyor. Hangi beden, hangi renk, ne kadar?",
     gloss: [
       { de: "suchen", tr: "aramak", en: "to look for" },
@@ -196,7 +196,7 @@ export const a1U11: SkillExercise[] = [
     skill: "listening",
     unit: 11,
     title: "Das ist zu teuer",
-    genre: "Diyalog",
+    genre: "dialogue",
     intro: "Bir müşteri fiyatı beğenmiyor. Ne yapıyor?",
     gloss: [
       { de: "teuer", tr: "pahalı", en: "expensive" },
@@ -254,7 +254,7 @@ export const a1U11: SkillExercise[] = [
     skill: "writing",
     unit: 11,
     title: "Größe, Farbe, Preis",
-    genre: "Dil bilgisi",
+    genre: "grammar",
     intro: "Alışveriş kalıplarını yaz.",
     gloss: [
       { de: "die Größe", tr: "beden", en: "size" },
@@ -297,7 +297,7 @@ export const a1U11: SkillExercise[] = [
     skill: "writing",
     unit: 11,
     title: "Kleidung beschreiben",
-    genre: "Forum mesajı",
+    genre: "forum",
     intro: "Ne giymeyi sevdiğini yaz.",
     gloss: [
       { de: "die Kleidung", tr: "kıyafet", en: "clothes" },

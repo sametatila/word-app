@@ -31,7 +31,7 @@ export const c1U14: SkillExercise[] = [
     skill: "reading",
     unit: 14,
     title: "Erst melden, dann mindern",
-    genre: "Bilgilendirme",
+    genre: "info",
     intro: "Kira indirimi rehberi. Hangi adım hangi hakkı doğuruyor?",
     gloss: [
       { de: "die Mietminderung", tr: "kira indirimi", en: "rent reduction" },
@@ -114,7 +114,7 @@ export const c1U14: SkillExercise[] = [
     skill: "reading",
     unit: 14,
     title: "Einwilligung ist kein Häkchen",
-    genre: "Rehber yazısı",
+    genre: "guide",
     intro: "Veri koruma dili: geçerli onay hangi koşulları taşıyor?",
     gloss: [
       { de: "die Verarbeitung", tr: "işleme", en: "processing" },
@@ -192,7 +192,7 @@ export const c1U14: SkillExercise[] = [
     skill: "listening",
     unit: 14,
     title: "Die Abmahnung",
-    genre: "Danışma görüşmesi",
+    genre: "opinion",
     intro: "İhtar aldı. Ne yapmalı, ne yapmamalı?",
     gloss: [
       { de: "die Abmahnung", tr: "ihtar", en: "formal warning" },
@@ -268,7 +268,7 @@ export const c1U14: SkillExercise[] = [
     skill: "listening",
     unit: 14,
     title: "Zu Protokoll gegeben",
-    genre: "İfade alma",
+    genre: "formal",
     intro: "Tanık ifadesi. Hatırlamamak nasıl kayda geçiyor?",
     gloss: [
       { de: "die Zeugenaussage", tr: "tanık ifadesi", en: "witness statement" },
@@ -346,7 +346,7 @@ export const c1U14: SkillExercise[] = [
     skill: "writing",
     unit: 14,
     title: "Hak doğuran sıra",
-    genre: "Dil bilgisi",
+    genre: "grammar",
     intro: "Bildirim, süre, temerrüt, talep — dördü de fiil kalıbıyla kuruluyor.",
     gloss: [
       { de: "Anspruch erheben", tr: "hak iddia etmek", en: "to lay claim" },
@@ -393,7 +393,7 @@ export const c1U14: SkillExercise[] = [
     skill: "writing",
     unit: 14,
     title: "Mängelanzeige mit Frist",
-    genre: "Resmî yazı",
+    genre: "formal",
     intro: "Ayıbı bildir, süre koy, sonucu şimdiden söyle — ama tehdit etme.",
     gloss: [
       { de: "die Beseitigung", tr: "giderme", en: "rectification" },

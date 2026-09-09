@@ -35,7 +35,7 @@ export const b1U33: SkillExercise[] = [
     skill: "reading",
     unit: 33,
     title: "Was im Notfall zählt",
-    genre: "Bilgilendirme metni",
+    genre: "info",
     intro: "Yolda bir acil durum. Ne söylenir, ne yapılır?",
     minutes: 5,
     gloss: [
@@ -103,7 +103,7 @@ export const b1U33: SkillExercise[] = [
     skill: "reading",
     unit: 33,
     title: "Eine kleine Verletzung",
-    genre: "Sağlık rehberi",
+    genre: "guide",
     intro: "Küçük bir yara. Ne zaman kendin bakarsın, ne zaman doktora gidersin?",
     minutes: 5,
     gloss: [
@@ -171,7 +171,7 @@ export const b1U33: SkillExercise[] = [
     skill: "listening",
     unit: 33,
     title: "Die Nacht am Ozean",
-    genre: "Gezi anlatısı",
+    genre: "story",
     intro: "Bir gezi anısı anlatılıyor. Ne oldu, ne kaldı?",
     minutes: 4,
     gloss: [
@@ -233,7 +233,7 @@ export const b1U33: SkillExercise[] = [
     skill: "listening",
     unit: 33,
     title: "In der Praxis",
-    genre: "Muayene konuşması",
+    genre: "dialogue",
     intro: "Küçük bir yaralanma muayenesi. Ne oldu, ne yapılıyor?",
     minutes: 4,
     gloss: [
@@ -296,7 +296,7 @@ export const b1U33: SkillExercise[] = [
     skill: "writing",
     unit: 33,
     title: "Was mir passiert ist",
-    genre: "Yaralanma bildirimi",
+    genre: "report",
     intro: "Bir yaralanmayı anlat. Almancada beden bölümü iyelik almaz.",
     minutes: 8,
     gloss: [
@@ -351,7 +351,7 @@ export const b1U33: SkillExercise[] = [
     skill: "writing",
     unit: 33,
     title: "Von der Reise erzählen",
-    genre: "Anlatı",
+    genre: "story",
     intro: "Bir yolculuk anını anlat. Yan cümle önde ise ana cümle fiille başlar.",
     minutes: 12,
     gloss: [

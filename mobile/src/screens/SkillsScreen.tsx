@@ -41,7 +41,7 @@ function ExerciseRow({ ex, tint, done, isNext, onPress, colors, last }: { ex: Sk
       <View style={{ flex: 1 }}>
         <Text variant="bodyStrong" numberOfLines={1}>{ex.title}</Text>
         <Text variant="caption" color={colors.textMuted}>
-          {ex.genre} · {t("skills.dk", { n: ex.minutes })}
+          {t(`genre.${ex.genre}`)} · {t("skills.dk", { n: ex.minutes })}
           {isNext ? <Text variant="caption" color={tint}> · {t("skills.next").toLowerCase()}</Text> : null}
         </Text>
       </View>

@@ -28,7 +28,7 @@ export const a2U05: SkillExercise[] = [
     skill: "reading",
     unit: 5,
     title: "Was hat sich bei mir verändert?",
-    genre: "Blog yazısı",
+    genre: "blog",
     intro: "Bir yıl sonra geriye bakış: neyi bilerek değiştirmiş, ne kendiliğinden değişmiş?",
     gloss: [
       { de: "sich erinnern", tr: "hatırlamak", en: "to remember" },
@@ -88,7 +88,7 @@ export const a2U05: SkillExercise[] = [
     skill: "reading",
     unit: 5,
     title: "Bei meinen Großeltern",
-    genre: "Anı",
+    genre: "personal",
     intro: "Bir çocukluk anısı: o evde ne vardı, kim nasıl biriydi?",
     gloss: [
       { de: "der Kamin", tr: "şömine", en: "fireplace" },
@@ -149,7 +149,7 @@ export const a2U05: SkillExercise[] = [
     skill: "listening",
     unit: 5,
     title: "Das war mir so peinlich!",
-    genre: "Diyalog",
+    genre: "dialogue",
     intro: "Bir utanç anısı anlatılıyor. Ne oldu ve nasıl bitti?",
     gloss: [
       { de: "sich verwählen", tr: "yanlış numara çevirmek", en: "to dial the wrong number" },
@@ -207,7 +207,7 @@ export const a2U05: SkillExercise[] = [
     skill: "listening",
     unit: 5,
     title: "Darauf bin ich stolz",
-    genre: "Röportaj",
+    genre: "interview",
     intro: "Kısa bir röportaj: neyi başardı, arkasında ne kadar emek var?",
     gloss: [
       { de: "trainieren", tr: "antrenman yapmak", en: "to train" },
@@ -266,7 +266,7 @@ export const a2U05: SkillExercise[] = [
     skill: "writing",
     unit: 5,
     title: "ändern oder wechseln?",
-    genre: "Dil bilgisi",
+    genre: "grammar",
     intro: "Aynı şeyi başka hâle getirmek mi, bırakıp yenisini almak mı? Bir de duygunun hâli.",
     gloss: [
       { de: "ändern", tr: "başka hâle getirmek", en: "to change" },
@@ -310,7 +310,7 @@ export const a2U05: SkillExercise[] = [
     skill: "writing",
     unit: 5,
     title: "Worauf bist du stolz?",
-    genre: "Forum mesajı",
+    genre: "forum",
     intro: "Başardığın bir şeyi anlat: arkasında ne kadar emek vardı, zor anda ne yaptın?",
     gloss: [
       { de: "trainieren", tr: "antrenman yapmak", en: "to train" },

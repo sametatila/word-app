@@ -34,7 +34,7 @@ export const b1U37: SkillExercise[] = [
     skill: "reading",
     unit: 37,
     title: "Wer putzt was?",
-    genre: "Ev arkadaşı anlaşması",
+    genre: "formal",
     intro: "Ortak evde temizlik paylaşımı. Kim ne yapıyor, kim ne yapmıyor?",
     minutes: 5,
     gloss: [
@@ -100,7 +100,7 @@ export const b1U37: SkillExercise[] = [
     skill: "reading",
     unit: 37,
     title: "Nach dem Einbruch",
-    genre: "Bilgilendirme metni",
+    genre: "info",
     intro: "Eve hırsız girmiş. İlk saatlerde ne yapılır?",
     minutes: 5,
     gloss: [
@@ -167,7 +167,7 @@ export const b1U37: SkillExercise[] = [
     skill: "listening",
     unit: 37,
     title: "Was zeigt die Grafik?",
-    genre: "Sunum konuşması",
+    genre: "monologue",
     intro: "Bir grafik okunuyor. Hangi işaret ne demek?",
     minutes: 4,
     gloss: [
@@ -229,7 +229,7 @@ export const b1U37: SkillExercise[] = [
     skill: "listening",
     unit: 37,
     title: "Die alten Kassetten",
-    genre: "Eski teknoloji sohbeti",
+    genre: "dialogue",
     intro: "Eski kayıtlar konuşuluyor. Kim ne saklamış?",
     minutes: 4,
     gloss: [
@@ -292,7 +292,7 @@ export const b1U37: SkillExercise[] = [
     skill: "writing",
     unit: 37,
     title: "Einen Einbruch melden",
-    genre: "Resmî bildirim",
+    genre: "report",
     intro: "Bir hırsızlığı bildir. Almanca öznesiz edilgen kurabilir.",
     minutes: 8,
     gloss: [
@@ -346,7 +346,7 @@ export const b1U37: SkillExercise[] = [
     skill: "writing",
     unit: 37,
     title: "Der Putzplan",
-    genre: "Ev içi anlaşma",
+    genre: "formal",
     intro: "Bir temizlik planı yaz. 'de/da' Almancada sözcüğün önüne geçer.",
     minutes: 12,
     gloss: [

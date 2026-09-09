@@ -31,7 +31,7 @@ export const b1U23: SkillExercise[] = [
     skill: "reading",
     unit: 23,
     title: "Der friedliche Protest",
-    genre: "Haber ve yorum",
+    genre: "article",
     intro: "Bir gösteri anlatılıyor. Talep ne, sonuç ne oldu?",
     minutes: 5,
     gloss: [
@@ -97,7 +97,7 @@ export const b1U23: SkillExercise[] = [
     skill: "reading",
     unit: 23,
     title: "Ein Zuhause für Nero",
-    genre: "Barınak ilanı",
+    genre: "ad",
     intro: "Bir köpek yeni yuva arıyor. Karakteri nasıl, kime uygun?",
     minutes: 5,
     gloss: [
@@ -164,7 +164,7 @@ export const b1U23: SkillExercise[] = [
     skill: "listening",
     unit: 23,
     title: "Was wäre, wenn?",
-    genre: "Hayal sohbeti",
+    genre: "dialogue",
     intro: "İki kişi olmayacak şeyleri konuşuyor. Kim ne yapardı?",
     minutes: 4,
     gloss: [
@@ -226,7 +226,7 @@ export const b1U23: SkillExercise[] = [
     skill: "listening",
     unit: 23,
     title: "Ein Wunsch und eine Entscheidung",
-    genre: "Kişisel konuşma",
+    genre: "personal",
     intro: "Biri bir karar vermiş. Dilek ne, karar ne?",
     minutes: 4,
     gloss: [
@@ -289,7 +289,7 @@ export const b1U23: SkillExercise[] = [
     skill: "writing",
     unit: 23,
     title: "Was anders gelaufen wäre",
-    genre: "Değerlendirme yazısı",
+    genre: "review",
     intro: "Olmuş bir olayı 'olmasaydı' diye anlat. İki katmanı da kur.",
     minutes: 8,
     gloss: [
@@ -343,7 +343,7 @@ export const b1U23: SkillExercise[] = [
     skill: "writing",
     unit: 23,
     title: "Wenn ich könnte",
-    genre: "Dilek metni",
+    genre: "personal",
     intro: "Dileklerini yaz. sein, haben ve kipli fiiller 'würde' almaz — kendi kalıpları var.",
     minutes: 12,
     gloss: [

@@ -26,7 +26,7 @@ export const a1U08: SkillExercise[] = [
     skill: "reading",
     unit: 8,
     title: "Ich bin allergisch",
-    genre: "E-posta",
+    genre: "email",
     intro: "Bir davete cevap: ne yiyemiyor, ne istiyor?",
     gloss: [
       { de: "allergisch", tr: "alerjik", en: "allergic" },
@@ -84,7 +84,7 @@ export const a1U08: SkillExercise[] = [
     skill: "reading",
     unit: 8,
     title: "Mein Tag",
-    genre: "Blog",
+    genre: "blog",
     intro: "Lena gününü anlatıyor. Saatlere dikkat et.",
     gloss: [
       { de: "beginnen", tr: "başlamak", en: "to begin" },
@@ -138,7 +138,7 @@ export const a1U08: SkillExercise[] = [
     skill: "listening",
     unit: 8,
     title: "Wie spät ist es?",
-    genre: "Diyalog",
+    genre: "dialogue",
     intro: "Saat soruluyor. Dikkat: „halb“ sonraki saati gösterir!",
     gloss: [
       { de: "spät", tr: "geç", en: "late" },
@@ -196,7 +196,7 @@ export const a1U08: SkillExercise[] = [
     skill: "listening",
     unit: 8,
     title: "Zum Essen eingeladen",
-    genre: "Diyalog",
+    genre: "dialogue",
     intro: "Yemek masasında bir konuk ve ev sahibi konuşuyor.",
     gloss: [
       { de: "schmecken", tr: "tadı güzel olmak", en: "to taste good" },
@@ -254,7 +254,7 @@ export const a1U08: SkillExercise[] = [
     skill: "writing",
     unit: 8,
     title: "Uhrzeit und Allergie",
-    genre: "Dil bilgisi",
+    genre: "grammar",
     intro: "Saat söylemeyi ve alerji bildirmeyi yaz.",
     gloss: [
       { de: "halb", tr: "yarım", en: "half" },
@@ -291,7 +291,7 @@ export const a1U08: SkillExercise[] = [
     skill: "writing",
     unit: 8,
     title: "Mein Tag von morgens bis abends",
-    genre: "Blog",
+    genre: "blog",
     intro: "Gününü saatlerle anlat.",
     gloss: [
       { de: "der Morgen", tr: "sabah", en: "morning" },

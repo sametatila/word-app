@@ -17,7 +17,7 @@ export const deB1P4: SkillExercise[] = [
     level: "B1",
     skill: "reading",
     title: "Der Markt zieht um",
-    genre: "Haber",
+    genre: "article",
     intro: "Yerel bir haber okuyacaksın: pazar neden taşınıyor, kim itiraz ediyor, şehir ne söz veriyor.",
     gloss: [
       { de: "der Stadtrat", tr: "belediye meclisi", en: "city council" },
@@ -109,7 +109,7 @@ export const deB1P4: SkillExercise[] = [
     level: "B1",
     skill: "listening",
     title: "Zum ersten Mal spenden",
-    genre: "Telefon konuşması",
+    genre: "phone",
     intro: "Biri kan bağışı için telefonla bilgi alıyor: koşullar, süre, öncesi ve sonrası için ne öneriliyor.",
     gloss: [
       { de: "spenden", tr: "bağışlamak", en: "to donate" },
@@ -192,7 +192,7 @@ export const deB1P4: SkillExercise[] = [
     level: "B1",
     skill: "writing",
     title: "Antrag auf einen ermäßigten Beitrag",
-    genre: "Başvuru yazısı",
+    genre: "formal",
     intro: "Bir dernekten indirimli aidat isteyeceksin; önce iki cümle kur, sonra resmî başvuru yazısını yaz.",
     gloss: [
       { de: "der Beitrag", tr: "aidat", en: "membership fee" },
@@ -254,7 +254,7 @@ export const deB1P4: SkillExercise[] = [
     level: "B1",
     skill: "speaking",
     title: "Muss man seine Nachbarn kennen?",
-    genre: "Monolog",
+    genre: "monologue",
     intro: "Bir dakikaya yakın tek başına konuşacaksın: soruya net bir cevap ver ve iki farklı türde gerekçe kullan.",
     gloss: [],
     minutes: 6,
@@ -295,7 +295,7 @@ export const deB1P4: SkillExercise[] = [
     level: "B1",
     skill: "grammar",
     title: "Wer es macht, ist egal",
-    genre: "Kural",
+    genre: "grammar",
     intro: "Kurum dilinin temel çatısı: eylemi kimin yaptığı değil, neyin yapıldığı öne çıkar.",
     focus: "Passiv Präsens: werden + Partizip II",
     gloss: [

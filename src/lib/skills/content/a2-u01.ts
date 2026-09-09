@@ -25,7 +25,7 @@ export const a2U01: SkillExercise[] = [
     skill: "reading",
     unit: 1,
     title: "Urlaubsgrüße aus den Bergen",
-    genre: "E-posta",
+    genre: "email",
     intro: "Bir tatil e-postası. Kim nereye gitti, orada ne yaptı ve ne zaman döndü?",
     gloss: [
       { de: "verreisen", tr: "seyahate çıkmak", en: "to travel away" },
@@ -86,7 +86,7 @@ export const a2U01: SkillExercise[] = [
     skill: "reading",
     unit: 1,
     title: "Mein Abend vor dem Fernseher",
-    genre: "Blog yazısı",
+    genre: "blog",
     intro: "Kısa bir blog yazısı: dün akşam sırayla ne oldu?",
     gloss: [
       { de: "das Programm", tr: "program", en: "programme" },
@@ -147,7 +147,7 @@ export const a2U01: SkillExercise[] = [
     skill: "listening",
     unit: 1,
     title: "Wie war dein Wochenende?",
-    genre: "Diyalog",
+    genre: "dialogue",
     intro: "İki arkadaş hafta sonunu konuşuyor. Kim nereye gitti, kim evde kaldı?",
     gloss: [
       { de: "verreisen", tr: "seyahate çıkmak", en: "to travel away" },
@@ -204,7 +204,7 @@ export const a2U01: SkillExercise[] = [
     skill: "listening",
     unit: 1,
     title: "Hast du alles vorbereitet?",
-    genre: "Diyalog",
+    genre: "dialogue",
     intro: "Yola çıkmadan önce son kontrol. Neyi yapmışlar, neyi unutmuşlar?",
     gloss: [
       { de: "vorbereiten", tr: "hazırlamak", en: "to prepare" },
@@ -261,7 +261,7 @@ export const a2U01: SkillExercise[] = [
     skill: "writing",
     unit: 1,
     title: "Perfekt: haben oder sein?",
-    genre: "Dil bilgisi",
+    genre: "grammar",
     intro: "Geçmiş zamanın üç yüzü: yardımcı fiil seçimi, kuralsız ortaç ve ayrılabilen fiil.",
     gloss: [
       { de: "verreisen", tr: "seyahate çıkmak", en: "to travel away" },
@@ -305,7 +305,7 @@ export const a2U01: SkillExercise[] = [
     skill: "writing",
     unit: 1,
     title: "Erzähl von deinem letzten Urlaub",
-    genre: "E-posta",
+    genre: "email",
     intro: "Bir arkadaşına tatilini anlatan kısa bir e-posta yaz.",
     gloss: [
       { de: "verreisen", tr: "seyahate çıkmak", en: "to travel away" },

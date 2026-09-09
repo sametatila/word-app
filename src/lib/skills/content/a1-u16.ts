@@ -27,7 +27,7 @@ export const a1U16: SkillExercise[] = [
     skill: "reading",
     unit: 16,
     title: "Wohnung zu vermieten",
-    genre: "İlan",
+    genre: "ad",
     intro: "Kiralık daire ilanı. Kaç oda, ne kadar, ne var?",
     gloss: [
       { de: "die Wohnung", tr: "daire", en: "apartment" },
@@ -91,7 +91,7 @@ export const a1U16: SkillExercise[] = [
     skill: "reading",
     unit: 16,
     title: "Die neuen Nachbarn",
-    genre: "Mesaj",
+    genre: "message",
     intro: "Yeni komşulara bırakılmış bir not.",
     gloss: [
       { de: "der Nachbar", tr: "komşu", en: "neighbour" },
@@ -144,7 +144,7 @@ export const a1U16: SkillExercise[] = [
     skill: "listening",
     unit: 16,
     title: "Wo steht das Sofa?",
-    genre: "Diyalog",
+    genre: "dialogue",
     intro: "İki kişi mobilyaların yerini konuşuyor. Ne nerede?",
     gloss: [
       { de: "stehen", tr: "ayakta durmak", en: "to stand" },
@@ -202,7 +202,7 @@ export const a1U16: SkillExercise[] = [
     skill: "listening",
     unit: 16,
     title: "Herzlich willkommen!",
-    genre: "Diyalog",
+    genre: "dialogue",
     intro: "Yeni komşu kapıyı çalıyor.",
     gloss: [
       { de: "neu", tr: "yeni", en: "new" },
@@ -260,7 +260,7 @@ export const a1U16: SkillExercise[] = [
     skill: "writing",
     unit: 16,
     title: "stehen, liegen, hängen",
-    genre: "Dil bilgisi",
+    genre: "grammar",
     intro: "Konum fiillerini ayırt et.",
     gloss: [
       { de: "stehen", tr: "ayakta durmak", en: "to stand" },
@@ -297,7 +297,7 @@ export const a1U16: SkillExercise[] = [
     skill: "writing",
     unit: 16,
     title: "Meine Wohnung beschreiben",
-    genre: "Forum mesajı",
+    genre: "forum",
     intro: "Evini anlat: kaç oda, ne var, nasıl?",
     gloss: [
       { de: "das Zimmer", tr: "oda", en: "room" },

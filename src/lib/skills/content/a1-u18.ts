@@ -28,7 +28,7 @@ export const a1U18: SkillExercise[] = [
     skill: "reading",
     unit: 18,
     title: "Was machst du in der Freizeit?",
-    genre: "Forum mesajı",
+    genre: "forum",
     intro: "Üç kişi hobilerini yazıyor. Kim ne yapabiliyor?",
     gloss: [
       { de: "die Freizeit", tr: "boş zaman", en: "free time" },
@@ -88,7 +88,7 @@ export const a1U18: SkillExercise[] = [
     skill: "reading",
     unit: 18,
     title: "Die Lampe ist kaputt",
-    genre: "Not",
+    genre: "message",
     intro: "Apartman görevlisine bırakılmış bir not.",
     gloss: [
       { de: "kaputt", tr: "bozuk", en: "broken" },
@@ -141,7 +141,7 @@ export const a1U18: SkillExercise[] = [
     skill: "listening",
     unit: 18,
     title: "Kannst du das reparieren?",
-    genre: "Telefon",
+    genre: "phone",
     intro: "Apartman görevlisiyle telefon konuşması.",
     gloss: [
       { de: "reparieren", tr: "tamir etmek", en: "to repair" },
@@ -199,7 +199,7 @@ export const a1U18: SkillExercise[] = [
     skill: "listening",
     unit: 18,
     title: "Auf dem Balkon",
-    genre: "Diyalog",
+    genre: "dialogue",
     intro: "İki komşu balkonda konuşuyor.",
     gloss: [
       { de: "gießen", tr: "sulamak", en: "to water" },
@@ -256,7 +256,7 @@ export const a1U18: SkillExercise[] = [
     skill: "writing",
     unit: 18,
     title: "können: yetenek mi, imkân mı?",
-    genre: "Dil bilgisi",
+    genre: "grammar",
     intro: "„können“ fiilinin iki kullanımını yaz.",
     gloss: [
       { de: "können", tr: "-ebilmek", en: "can" },
@@ -293,7 +293,7 @@ export const a1U18: SkillExercise[] = [
     skill: "writing",
     unit: 18,
     title: "Ein Problem melden",
-    genre: "Not",
+    genre: "message",
     intro: "Apartman görevlisine bozuk bir şey için not yaz.",
     gloss: [
       { de: "kaputt", tr: "bozuk", en: "broken" },

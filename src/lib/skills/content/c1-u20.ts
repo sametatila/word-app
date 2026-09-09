@@ -35,7 +35,7 @@ export const c1U20: SkillExercise[] = [
     skill: "reading",
     unit: 20,
     title: "Wem rechnet man es zu?",
-    genre: "Deneme",
+    genre: "essay",
     intro: "Makine karar verirse sorumluluk kime yazılır?",
     gloss: [
       { de: "zurechnen", tr: "atfetmek, yüklemek", en: "to attribute" },
@@ -118,7 +118,7 @@ export const c1U20: SkillExercise[] = [
     skill: "reading",
     unit: 20,
     title: "Die Grenzen des Sagbaren",
-    genre: "Bilgilendirme",
+    genre: "info",
     intro: "İfade özgürlüğü neyi koruyor, neyi korumuyor?",
     gloss: [
       { de: "die Meinungsfreiheit", tr: "ifade özgürlüğü", en: "freedom of expression" },
@@ -199,7 +199,7 @@ export const c1U20: SkillExercise[] = [
     skill: "listening",
     unit: 20,
     title: "Wer zahlt für wen?",
-    genre: "Aile sohbeti",
+    genre: "dialogue",
     intro: "Kuşak sözleşmesi: yük kimin üstünde?",
     gloss: [
       { de: "der Generationenvertrag", tr: "kuşak sözleşmesi", en: "generational contract" },
@@ -275,7 +275,7 @@ export const c1U20: SkillExercise[] = [
     skill: "listening",
     unit: 20,
     title: "Rückblickend aus dem Jahr 2050",
-    genre: "Atölye",
+    genre: "meeting",
     intro: "Senaryo çalışması: gelecekten geriye bakmak.",
     gloss: [
       { de: "entwerfen", tr: "tasarlamak", en: "to draft" },
@@ -356,7 +356,7 @@ export const c1U20: SkillExercise[] = [
     skill: "writing",
     unit: 20,
     title: "Ayır, sonra itiraz et",
-    genre: "Dil bilgisi",
+    genre: "grammar",
     intro: "Davon zu unterscheiden ist …, insofern, zulasten, Stellte man sich vor.",
     gloss: [
       { de: "insofern", tr: "bu bakımdan", en: "in that respect" },
@@ -403,7 +403,7 @@ export const c1U20: SkillExercise[] = [
     skill: "writing",
     unit: 20,
     title: "Sorumluluk kime yazılacak",
-    genre: "Kurumsal görüş",
+    genre: "opinion",
     intro: "Bir yapay zekâ kararının ardından sorumluluk zincirini yaz.",
     gloss: [
       { de: "zurechnen", tr: "atfetmek", en: "to attribute" },

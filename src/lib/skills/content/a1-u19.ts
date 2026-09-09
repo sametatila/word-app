@@ -31,7 +31,7 @@ export const a1U19: SkillExercise[] = [
     skill: "reading",
     unit: 19,
     title: "Sport im Verein",
-    genre: "İlan",
+    genre: "ad",
     intro: "Bir spor derneğinin ilanı. Ne zaman, ne kadar?",
     gloss: [
       { de: "die Mannschaft", tr: "takım", en: "team" },
@@ -91,7 +91,7 @@ export const a1U19: SkillExercise[] = [
     skill: "reading",
     unit: 19,
     title: "Welche Musik hörst du?",
-    genre: "Forum mesajı",
+    genre: "forum",
     intro: "Üç kişi müzik zevkini anlatıyor.",
     gloss: [
       { de: "das Lied", tr: "şarkı", en: "song" },
@@ -145,7 +145,7 @@ export const a1U19: SkillExercise[] = [
     skill: "listening",
     unit: 19,
     title: "Gehen wir ins Kino?",
-    genre: "Telefon",
+    genre: "phone",
     intro: "Sinema planı yapılıyor. Hangi film, ne zaman, kim kimi alıyor?",
     gloss: [
       { de: "der Film", tr: "film", en: "film" },
@@ -204,7 +204,7 @@ export const a1U19: SkillExercise[] = [
     skill: "listening",
     unit: 19,
     title: "Schönes Wetter heute!",
-    genre: "Küçük sohbet",
+    genre: "dialogue",
     intro: "Asansörde iki komşu. Almanya'da hava sohbeti bir nezaket biçimidir.",
     gloss: [
       { de: "das Wetter", tr: "hava", en: "weather" },
@@ -262,7 +262,7 @@ export const a1U19: SkillExercise[] = [
     skill: "writing",
     unit: 19,
     title: "Sport, Musik, Wetter",
-    genre: "Dil bilgisi",
+    genre: "grammar",
     intro: "Üç konunun kalıplarını yaz.",
     gloss: [
       { de: "zweimal", tr: "iki kez", en: "twice" },
@@ -299,7 +299,7 @@ export const a1U19: SkillExercise[] = [
     skill: "writing",
     unit: 19,
     title: "Was machst du gern?",
-    genre: "Forum mesajı",
+    genre: "forum",
     intro: "Boş zamanını, sporunu ve müzik zevkini yaz.",
     gloss: [
       { de: "der Sport", tr: "spor", en: "sport" },

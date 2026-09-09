@@ -28,7 +28,7 @@ export const a2U14: SkillExercise[] = [
     skill: "reading",
     unit: 14,
     title: "Was ziehe ich an?",
-    genre: "Blog yazısı",
+    genre: "blog",
     intro: "Bir giyim yazısı: hangi renk neye gider, hangi desen ne zaman?",
     gloss: [
       { de: "hellblau", tr: "açık mavi", en: "light blue" },
@@ -93,7 +93,7 @@ export const a2U14: SkillExercise[] = [
     skill: "reading",
     unit: 14,
     title: "Rückgabe und Reklamation",
-    genre: "Bilgilendirme",
+    genre: "info",
     intro: "Mağazanın iade kuralları. Ne zaman iade olur, ne zaman olmaz?",
     gloss: [
       { de: "die Rückgabe", tr: "iade", en: "return" },
@@ -155,7 +155,7 @@ export const a2U14: SkillExercise[] = [
     skill: "listening",
     unit: 14,
     title: "Beim Friseur",
-    genre: "Diyalog",
+    genre: "dialogue",
     intro: "Kuaförde. Ne kadar kısaltılıyor, hangi ek hizmet isteniyor?",
     gloss: [
       { de: "der Friseursalon", tr: "kuaför salonu", en: "hair salon" },
@@ -215,7 +215,7 @@ export const a2U14: SkillExercise[] = [
     skill: "listening",
     unit: 14,
     title: "Die Jacke ist beschädigt",
-    genre: "Diyalog",
+    genre: "dialogue",
     intro: "Mağazada şikâyet. Sorun ne, çözüm ne oluyor?",
     gloss: [
       { de: "der Kassenzettel", tr: "kasa fişi", en: "receipt" },
@@ -275,7 +275,7 @@ export const a2U14: SkillExercise[] = [
     skill: "writing",
     unit: 14,
     title: "Sıfat ne zaman ek alır?",
-    genre: "Dil bilgisi",
+    genre: "grammar",
     intro: "Sıfat bir ismin önünde durunca son alır, yüklem olunca hiç almaz.",
     gloss: [
       { de: "hellblau", tr: "açık mavi", en: "light blue" },
@@ -319,7 +319,7 @@ export const a2U14: SkillExercise[] = [
     skill: "writing",
     unit: 14,
     title: "Eine Reklamation schreiben",
-    genre: "Resmî yazı",
+    genre: "formal",
     intro: "Mağazaya şikâyet yaz: ne aldın, sorun ne, ne istiyorsun?",
     gloss: [
       { de: "fehlerhaft", tr: "hatalı", en: "faulty" },
