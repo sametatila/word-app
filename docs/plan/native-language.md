@@ -222,7 +222,7 @@ ikinci bir oturum şu anda tam orayı düzenliyor (bkz. `8b6a131f`, `d2d11677`).
 ders                 580
 tr() segment      17.369   ← öğretmenin konuşma metni · İngilizcesi 0
 de() segment       8.486   ← hedef dil, çevrilmez
-titleTr + summary  1.160   ← İngilizcesi 0
+titleTr + summary  1.160   ← BİTTİ, bkz. aşağısı
 vocab girdisi      4.640   ← havuzda karşılığı olan 4.621, ama bkz. aşağısı
 patterns girdisi   1.292   ← %0,3 · kalıp cümleler havuzda yok, elle
 roleplay scene       580   ← İngilizcesi 0
@@ -364,6 +364,54 @@ gerçekten yanlış karşılık verirdi, %61'inde gereksiz yere okundu. Ama
 tersini yapmanın maliyeti çok daha yüksekti — 258 yanlış karşılık sessizce
 yüklenirdi ve hiçbir kapı görmezdi. `data/meanings/contains.mjs` notundaki
 ilkeyle aynı: yanlış ret yanlış kabulden ucuz.
+
+**başlık ve özet BİTTİ (580/580 ders · 1.160 dize).** Hat
+`data/lessons/meta/`: `make` → elle `out/m-NNN.json` → `check`
+(kapı + kapsam). 12 paket, 0 hata, 0 uyarı.
+
+Bu kalemin kendi kuralı çıktı ve kapıya üç kural olarak yazıldı:
+
+1. **Alan ne taşıyorsa İngilizcesi de onu taşır.** Almanca `title` dersin
+   kendi cümlesidir ("Hallo!"), Türkçe `titleTr` ise konunun adıdır
+   ("Tanışma"). İngilizcesi de konunun adı — kapı "başlık Almancanın aynısı"
+   olduğunda uyarıyor.
+
+2. **Terim çevrilir, öğretilen sözcük çevrilmez.** 580 başlığın 17'si Almanca
+   bir sözcük taşıyor. Ölçüt: hedef dilin o şey için KENDİ adı var mı?
+
+   ```
+   Dativ / Akkusativ / Perfekt   → dative / accusative / the perfect   (çevrildi)
+   Partizip I / II               → present / past participle           (çevrildi)
+   weil · denn · wenn · damit    → weil · denn · wenn · damit          (kalır)
+   als · nachdem · obwohl        → als · nachdem · obwohl              (kalır)
+   doch · ja · mal · eben · wohl → doch · ja · mal · eben · wohl       (kalır)
+   ```
+
+   İkinci grup dersin ÖĞRETTİĞİ sözcük: "Sebep: weil" ile "Sebep: denn" ayrı
+   iki ders ve ikisi de "because" olsaydı başlıkları aynı çıkardı. C1'in
+   `doch` dersi bunun uç hâli — `doch`un İngilizcede tek karşılığı yok,
+   dersin varlık sebebi de bu.
+
+   Partizip'te Türkçe Almancayı koruyor, İngilizce korumuyor; tutarsızlık
+   değil, aynı ölçütün sonucu: Türkçenin kendi adı yok, İngilizcenin var.
+
+3. **Aynı İngilizce başlık, Türkçeleri farklıysa kusurdur.** Kaynakta 7
+   Türkçe başlık 14 derste tekrar ediyor (Kuaförde A2'de ve B1'de) — orada
+   tekrar bilgidir ve İngilizcesi de tekrar etmeli. Kural ilk çalıştırmada
+   gerçek bir düzleştirme yakaladı:
+
+   ```
+   de-a1-restaurant   Im Restaurant · Restoranda → At the restaurant
+   de-b1-im-gasthaus  Im Gasthaus   · Lokantada  → At the restaurant  ✗
+                                                 → At the inn         ✓
+   ```
+
+   Almanca ayırıyordu, Türkçe ayırıyordu, İngilizce ayırmıyordu.
+
+Bir de yazım birliği kuralı çıktı ve ÜÇ hatta birden bağlandı
+(`data/lessons/spelling.mjs`): 2.305 yazılmış satır tarandığında hat zaten
+İngiliz İngilizcesi yazıyordu (-our 25 / -or 0, flat 6 / apartment 0) ama
+kural yazılı değildi, alışkanlıktı. İki sapma çoğunluğa uyduruldu.
 
 Kalem BÖLÜNEMİYOR. Sözlükçesi ve başlıkları İngilizce, anlatımı Türkçe bir
 ders yarım çeviridir ve Faz 1'in kuralı bunu yasaklıyor: karşılık yoksa
