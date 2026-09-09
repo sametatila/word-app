@@ -5,7 +5,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import {
-  GAME_LABELS,
+  GAME_LABEL_KEYS,
   PLAYABLE_GAMES,
   type Answer,
   type AnswerResult,
@@ -971,7 +971,7 @@ function EmptyCard({
       >
         <div className="card p-8 text-center">
           <Mascot mood="think" size={104} className="mx-auto" />
-          <h2 className="mt-1 text-xl font-bold">{GAME_LABELS[onlyGame]} için kelime yok</h2>
+          <h2 className="mt-1 text-xl font-bold">{t("session.no_words_for_game", { game: t(GAME_LABEL_KEYS[onlyGame]) })}</h2>
           {/* Tek cümle. Önce üç satırlık bir açıklama vardı ve modun nasıl
               çalıştığını baştan anlatıyordu; boş ekranda okunacak son şey bu. */}
           <p className="muted mt-2 text-sm">{t("session.review_only_mode")}</p>

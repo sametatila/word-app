@@ -5,7 +5,7 @@ import { getUserId } from "@/lib/auth/server";
 import { sameOrigin } from "@/lib/auth/origin";
 import { saveSessionProgress, submitAnswers } from "@/lib/session";
 import { parseProgress } from "@/lib/progress";
-import { GAME_LABELS, type Answer, type GameId, type Wager } from "@/lib/types";
+import { GAME_LABEL_KEYS, type Answer, type GameId, type Wager } from "@/lib/types";
 
 export const dynamic = "force-dynamic";
 
@@ -17,11 +17,11 @@ export const dynamic = "force-dynamic";
  * dönüyor, istemci turu kaydedemiyor ve "bağlantın koptu" uyarısı çıkıyordu.
  * Bağlantı kopmamıştı; istek reddediliyordu.
  *
- * `GAME_LABELS` bir `Record<GameId, string>`, yani anahtarları GameId'nin
+ * `GAME_LABEL_KEYS` bir `Record<GameId, string>`, yani anahtarları GameId'nin
  * TAMAMI ve derleyici eksik bırakmaya izin vermiyor. Listeyi ondan türetmek
  * aynı sürüklenmeyi bir daha imkânsız kılıyor.
  */
-const GAMES = new Set(Object.keys(GAME_LABELS));
+const GAMES = new Set(Object.keys(GAME_LABEL_KEYS));
 
 export async function POST(req: Request) {
   if (!sameOrigin(req)) return NextResponse.json({ error: "forbidden" }, { status: 403 });

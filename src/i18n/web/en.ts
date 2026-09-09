@@ -214,4 +214,17 @@ export const enWeb: Record<string, string> = {
   "summary.streak": "Streak",
   "summary.scheduled": "Added to your review plan",
   "summary.back_to_round": "Back to the round",
+  /* Oyun adları + plan — bkz. tr.ts notu. */
+  "games.intro": "New Word",
+  "games.free_sentence": "Build a Sentence",
+  "games.speak": "Say It Aloud",
+  "session.no_words_for_game": "No words for {game}",
+  "plan.lesson": "Conversation: {title}",
+  "plan.lesson_review": "Conversation review: {title}",
+  "plan.weak_spot": "Weak spot: {type}",
+  "plan.weak_spot_detail": "{n} mistakes in the last 14 days · {game} round",
+  "plan.weekly_short": "This week's quick check",
+  "plan.weekly_exam": "This week's usage exam",
+  "plan.review_waiting": "{n} reviews waiting · new words",
+  "plan.review_goal": "goal {n} reviews · new words",
 };

@@ -7,7 +7,7 @@ import { buildExam, examHistory, finishExam, type ExamSubmission, type ExamSecti
 import { moduleExamPlan } from "@/lib/lessons/module-exam";
 import { track } from "@/lib/events";
 import { cleanDetail, isErrorType } from "@/lib/errors";
-import { GAME_LABELS, type Answer, type GameId } from "@/lib/types";
+import { GAME_LABEL_KEYS, type Answer, type GameId } from "@/lib/types";
 import type { CefrLevel } from "@/lib/skills/types";
 
 export const dynamic = "force-dynamic";
@@ -77,7 +77,7 @@ export async function POST(req: Request) {
       if (!sections.length) return NextResponse.json({ error: "bad_request" }, { status: 400 });
       const vocabAnswers: Answer[] = [];
       for (const a of (Array.isArray(body.vocabAnswers) ? body.vocabAnswers : []) as Record<string, unknown>[]) {
-        if (typeof a.wordId !== "number" || typeof a.game !== "string" || !(a.game in GAME_LABELS) || typeof a.correct !== "boolean") continue;
+        if (typeof a.wordId !== "number" || typeof a.game !== "string" || !(a.game in GAME_LABEL_KEYS) || typeof a.correct !== "boolean") continue;
         vocabAnswers.push({
           wordId: a.wordId,
           game: a.game as GameId,

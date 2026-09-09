@@ -3,7 +3,7 @@ import { and, desc, eq, gte, isNotNull, sql } from "drizzle-orm";
 import { db } from "@/lib/db";
 import { reviews, words } from "@/lib/db/schema";
 import { ERROR_LABELS, ERROR_TARGET_GAME, isErrorType, type ErrorType } from "@/lib/errors";
-import { GAME_LABELS, type GameId } from "@/lib/types";
+import { GAME_LABEL_KEYS, type GameId } from "@/lib/types";
 import { weakRules } from "@/lib/lessons/progress";
 
 /**
@@ -67,7 +67,7 @@ export async function errorReport(userId: string, course: string, days = 30): Pr
         n: r.n,
         pct: totalWrong ? Math.round((100 * r.n) / totalWrong) : 0,
         href: game ? `/learn/game?game=${game}` : null,
-        gameLabel: game ? GAME_LABELS[game as GameId] : null,
+        gameLabel: game ? GAME_LABEL_KEYS[game as GameId] : null,
       };
     });
 

@@ -3,7 +3,8 @@ import { and, desc, eq, gte, isNotNull, lte, sql } from "drizzle-orm";
 import { db } from "@/lib/db";
 import { events, reviews, userLessons, userSkills, userWords } from "@/lib/db/schema";
 import { ERROR_LABELS, ERROR_TARGET_GAME, isErrorType } from "@/lib/errors";
-import { GAME_LABELS, type GameId } from "@/lib/types";
+import { GAME_LABEL_KEYS, type GameId } from "@/lib/types";
+import { translate, DEFAULT_NATIVE, type NativeLang } from "@/lib/i18n/dict";
 import type { CefrLevel } from "@/lib/skills/types";
 import { computeProficiency } from "@/lib/proficiency";
 import { gatherEvidence, nextStep } from "@/lib/proficiency-data";
@@ -61,6 +62,8 @@ export async function buildPlan(
   course: string,
   level: string,
   dailyGoal: number,
+  /** Plan metinlerinin dili — çağıranın profilinden. */
+  lang: NativeLang = DEFAULT_NATIVE,
 ): Promise<Plan> {
   const now = new Date();
   const items: PlanItem[] = [];
@@ -77,8 +80,11 @@ export async function buildPlan(
   const reviewDone = (doneToday?.n ?? 0) > 0;
   items.push({
     id: "review",
-    title: "Kelime turu",
-    detail: due > 0 ? `${due} tekrar bekliyor · yeni kelimeler` : `hedef ${dailyGoal} tekrar · yeni kelimeler`,
+    title: translate(lang, "plan.word_round"),
+    detail:
+      due > 0
+        ? translate(lang, "plan.review_waiting", { n: due })
+        : translate(lang, "plan.review_goal", { n: dailyGoal }),
     minutes: 6,
     done: reviewDone,
     action: "session",
@@ -95,7 +101,7 @@ export async function buildPlan(
       const doneT = row ? row.lastAt.toISOString().slice(0, 10) >= today : false;
       items.push({
         id: "lesson",
-        title: next.due ? `Konuşma tekrarı: ${next.lesson.title}` : `Konuşma: ${next.lesson.title}`,
+        title: translate(lang, next.due ? "plan.lesson_review" : "plan.lesson", { title: next.lesson.title }),
         detail: next.lesson.titleTr,
         minutes: next.lesson.minutes,
         done: doneT,
@@ -111,7 +117,7 @@ export async function buildPlan(
   try {
     const lv = (["A1", "A2", "B1", "B2", "C1"].includes(level) ? level : "A1") as CefrLevel;
     const prof = computeProficiency(await gatherEvidence(userId));
-    const step = await nextStep(userId, course, lv, prof);
+    const step = await nextStep(userId, course, lv, prof, lang);
     if (step && step.href.startsWith("/immersion/skill/")) {
       const rows = await db
         .select({ skill: userSkills.skill, lastAt: userSkills.lastAt })
@@ -142,7 +148,7 @@ export async function buildPlan(
       .orderBy(desc(sql`count(*)`))
       .limit(1);
     if (top && isErrorType(top.type) && top.n >= 5 && ERROR_TARGET_GAME[top.type]) {
-      const target = { game: ERROR_TARGET_GAME[top.type]!, label: GAME_LABELS[ERROR_TARGET_GAME[top.type] as GameId] };
+      const target = { game: ERROR_TARGET_GAME[top.type]!, label: translate(lang, GAME_LABEL_KEYS[ERROR_TARGET_GAME[top.type] as GameId]) };
       const dayStart = new Date(`${today}T00:00:00`);
       const [todayRows] = await db
         .select({ n: sql<number>`count(*)::int` })
@@ -150,8 +156,8 @@ export async function buildPlan(
         .where(and(eq(reviews.userId, userId), eq(reviews.game, target.game), gte(reviews.createdAt, dayStart)));
       items.push({
         id: "weak",
-        title: `Zayıf nokta: ${ERROR_LABELS[top.type]}`,
-        detail: `son 14 günde ${top.n} hata · ${target.label} turu`,
+        title: translate(lang, "plan.weak_spot", { type: ERROR_LABELS[top.type] }),
+        detail: translate(lang, "plan.weak_spot_detail", { n: top.n, game: target.label }),
         minutes: 4,
         done: (todayRows?.n ?? 0) >= 5,
         href: `/learn/game?game=${target.game}`,
@@ -171,7 +177,7 @@ export async function buildPlan(
       const ws = await weeklyStatus(userId, today);
       items.push({
         id: "weekly",
-        title: ws.short ? "Haftanın kısa kontrolü" : "Haftanın kullanım sınavı",
+        title: translate(lang, ws.short ? "plan.weekly_short" : "plan.weekly_exam"),
         detail: ws.done ? `skor ${ws.score}` : "15 soru · yazarak · tek hak",
         minutes: 8,
         done: ws.done,

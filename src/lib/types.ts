@@ -15,21 +15,31 @@ export type GameId =
   | "free_sentence"
   | "speak";
 
-export const GAME_LABELS: Record<GameId, string> = {
-  intro: "Yeni Kelime",
-  match: "Eşleştirme",
-  choice: "Doğru Anlam",
-  artikel: "Artikel Yarışı",
-  cloze: "Cümleyi Tamamla",
-  scramble: "Harf Bulmacası",
-  typing: "Yazarak Hatırla",
-  order: "Cümleyi Diz",
-  plural: "Çoğul Bilmece",
-  listen: "Kulaktan Tanı",
-  truefalse: "Doğru mu Yanlış mı",
-  translate: "Çevir",
-  free_sentence: "Cümle Kur",
-  speak: "Sesli Söyle",
+/**
+ * Oyun adlarının SÖZLÜK ANAHTARLARI, metnin kendisi değil.
+ *
+ * Adlar burada Türkçe sabit yazılıydı ve hem arayüzde hem `/api/answers`'ın
+ * doğrulamasında kullanılıyordu. İkisi ayrıldı: DOĞRULAMA anahtar kümesine
+ * bakıyor (dilden bağımsız), GÖSTERİM sözlükten geliyor.
+ *
+ * On bir ad mobil sözlükte zaten var (`games.*`); üçü (yeni kelime, cümle
+ * kur, sesli söyle) web'e özel oyunlar ve web sözlüğünde.
+ */
+export const GAME_LABEL_KEYS: Record<GameId, string> = {
+  intro: "games.intro",
+  match: "games.match",
+  choice: "games.choice",
+  artikel: "games.article_race",
+  cloze: "games.cloze",
+  scramble: "games.scramble",
+  typing: "games.typing",
+  order: "games.order",
+  plural: "games.plural",
+  listen: "games.listen",
+  truefalse: "games.truefalse",
+  translate: "games.translate",
+  free_sentence: "games.free_sentence",
+  speak: "games.speak",
 };
 
 /**

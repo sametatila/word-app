@@ -214,4 +214,17 @@ export const deWeb: Record<string, string> = {
   "summary.streak": "Serie",
   "summary.scheduled": "In deinen Wiederholungsplan aufgenommen",
   "summary.back_to_round": "Zurück zur Runde",
+  /* Oyun adları + plan — bkz. tr.ts notu. */
+  "games.intro": "Neues Wort",
+  "games.free_sentence": "Satz bilden",
+  "games.speak": "Laut sprechen",
+  "session.no_words_for_game": "Keine Wörter für {game}",
+  "plan.lesson": "Gespräch: {title}",
+  "plan.lesson_review": "Gesprächswiederholung: {title}",
+  "plan.weak_spot": "Schwachstelle: {type}",
+  "plan.weak_spot_detail": "{n} Fehler in den letzten 14 Tagen · {game}-Runde",
+  "plan.weekly_short": "Kurzer Wochencheck",
+  "plan.weekly_exam": "Wochen-Anwendungstest",
+  "plan.review_waiting": "{n} Wiederholungen warten · neue Wörter",
+  "plan.review_goal": "Ziel {n} Wiederholungen · neue Wörter",
 };

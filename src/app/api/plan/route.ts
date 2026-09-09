@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import { getUserId } from "@/lib/auth/server";
 import { ensureProfile } from "@/lib/session";
 import { buildPlan } from "@/lib/plan";
+import { isNativeLang, DEFAULT_NATIVE } from "@/lib/i18n/dict";
 
 export const dynamic = "force-dynamic";
 
@@ -16,7 +17,7 @@ export async function GET(req: Request) {
   const day = raw && /^\d{4}-\d{2}-\d{2}$/.test(raw) ? raw : new Date().toISOString().slice(0, 10);
   try {
     const profile = await ensureProfile(userId);
-    const plan = await buildPlan(userId, day, profile.course, profile.level, profile.dailyGoal);
+    const plan = await buildPlan(userId, day, profile.course, profile.level, profile.dailyGoal, isNativeLang(profile.nativeLang) ? profile.nativeLang : DEFAULT_NATIVE);
     return NextResponse.json(plan, { headers: { "cache-control": "no-store" } });
   } catch (err) {
     console.error("[plan]", err);

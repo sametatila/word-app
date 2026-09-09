@@ -3,7 +3,8 @@ import { PageBack } from "@/components/page-back";
 import { getUserInfo } from "@/lib/auth/server";
 import { ensureProfile } from "@/lib/session";
 import { courseOrDefault } from "@/lib/courses";
-import { GAME_LABELS, type GameId } from "@/lib/types";
+import { GAME_LABEL_KEYS, type GameId } from "@/lib/types";
+import { getT } from "@/lib/i18n/server";
 import { ChevronRightIcon } from "@/components/icons";
 
 export const metadata = { title: "Pratik" };
@@ -36,6 +37,7 @@ const GAMES: { game: GameId; hint: string }[] = [
 ];
 
 export default async function PracticePage() {
+  const t = await getT();
   const user = await getUserInfo();
   if (!user) return null;
 
@@ -57,7 +59,7 @@ export default async function PracticePage() {
           <li key={game}>
             <Link href={`/learn/game?game=${game}`} className="flex items-center gap-3 px-4 py-3.5">
               <span className="min-w-0 flex-1">
-                <span className="block font-semibold">{GAME_LABELS[game]}</span>
+                <span className="block font-semibold">{t(GAME_LABEL_KEYS[game])}</span>
                 <span className="muted block text-xs">{hint}</span>
               </span>
               <ChevronRightIcon size={18} className="shrink-0" style={{ color: "var(--text-faint)" }} />

@@ -238,4 +238,18 @@ export const trWeb: Record<string, string> = {
   "summary.streak": "Seri",
   "summary.scheduled": "Tekrar planına alındı",
   "summary.back_to_round": "Tura geri dön",
+  /* Oyun adları (web'e özel üçü) ve günlük plan metinleri. Plan sunucuda
+     kuruluyor, o yüzden çeviri de orada. */
+  "games.intro": "Yeni Kelime",
+  "games.free_sentence": "Cümle Kur",
+  "games.speak": "Sesli Söyle",
+  "session.no_words_for_game": "{game} için kelime yok",
+  "plan.lesson": "Konuşma: {title}",
+  "plan.lesson_review": "Konuşma tekrarı: {title}",
+  "plan.weak_spot": "Zayıf nokta: {type}",
+  "plan.weak_spot_detail": "son 14 günde {n} hata · {game} turu",
+  "plan.weekly_short": "Haftanın kısa kontrolü",
+  "plan.weekly_exam": "Haftanın kullanım sınavı",
+  "plan.review_waiting": "{n} tekrar bekliyor · yeni kelimeler",
+  "plan.review_goal": "hedef {n} tekrar · yeni kelimeler",
 };

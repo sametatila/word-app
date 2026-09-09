@@ -4,7 +4,7 @@ import { getUserId } from "@/lib/auth/server";
 import { sameOrigin } from "@/lib/auth/origin";
 import { ensureProfile } from "@/lib/session";
 import { buildWeeklyExam, finishWeekly, weeklyStatus } from "@/lib/weekly";
-import { GAME_LABELS, type Answer, type GameId } from "@/lib/types";
+import { GAME_LABEL_KEYS, type Answer, type GameId } from "@/lib/types";
 import { cleanDetail, isErrorType } from "@/lib/errors";
 
 export const dynamic = "force-dynamic";
@@ -34,7 +34,7 @@ export async function GET(req: Request) {
   }
 }
 
-const GAMES = new Set(Object.keys(GAME_LABELS));
+const GAMES = new Set(Object.keys(GAME_LABEL_KEYS));
 
 export async function POST(req: Request) {
   if (!sameOrigin(req)) return NextResponse.json({ error: "forbidden" }, { status: 403 });
