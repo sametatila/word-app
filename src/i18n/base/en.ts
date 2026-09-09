@@ -1142,4 +1142,8 @@ export const enBase: Record<string, string> = {
   "social.notif_league_up": "You moved up to the {league}",
   "social.on_league": "your league promotion",
   "leaderboard.league": "League",
+  "social.costreak_risk": "Your shared streak breaks today",
+  "social.cheered_you": "Cheered",
+  "friendrows.cheer": "Cheer",
+  "friendrows.cheered": "Cheered",
 };

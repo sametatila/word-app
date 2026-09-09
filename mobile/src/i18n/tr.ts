@@ -1145,4 +1145,8 @@ export const tr: Record<string, string> = {
   "social.notif_league_up": "{league}'e yükseldin",
   "social.on_league": "lig yükselişine",
   "leaderboard.league": "Lig",
+  "social.costreak_risk": "Ortak seri bugün kırılıyor",
+  "social.cheered_you": "Alkışladın",
+  "friendrows.cheer": "Alkışla",
+  "friendrows.cheered": "Alkışlandı",
 };

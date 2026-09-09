@@ -12,7 +12,7 @@ import { mutualFriendCount, relation, relations } from "./friends";
 import { unreadCount } from "./notify";
 import { limited } from "./ratelimit";
 import { friendIds, weeklyXpFor } from "./stats";
-import { friendStreaks } from "./streaks";
+import { friendStreaks, type FriendStreak } from "./streaks";
 import { BIO_MAX, USERNAME_CHANGE_COOLDOWN_DAYS, normalizeBio, normalizeUsername, usernameQuery } from "./username";
 import { assignOne, ensureUsernames } from "./usernames";
 import { VISIBILITIES, type FeedItem, type PublicUser, type Relation, type Visibility } from "./types";
@@ -185,7 +185,7 @@ export async function publicProfile(viewer: string, usernameRaw: string): Promis
     isSelf ? Promise.resolve(0) : mutualFriendCount(viewer, uid),
     canSee ? weeklyXpFor([uid], today) : Promise.resolve(new Map<string, number>()),
     canSee ? achievementCount(uid) : Promise.resolve(0),
-    rel.state === "friends" ? friendStreaks(viewer, [uid], today) : Promise.resolve(new Map<string, number>()),
+    rel.state === "friends" ? friendStreaks(viewer, [uid], today) : Promise.resolve(new Map<string, FriendStreak>()),
     canSee ? feed(viewer, null, 5, uid) : Promise.resolve({ items: [] as FeedItem[], nextCursor: null }),
   ]);
   return {
@@ -196,7 +196,7 @@ export async function publicProfile(viewer: string, usernameRaw: string): Promis
     friendshipId: rel.friendshipId,
     canRequest: !isSelf && p.allowRequests && (rel.state === "none" || rel.state === "incoming"),
     mutual,
-    friendStreak: streaks.get(uid) ?? 0,
+    friendStreak: streaks.get(uid)?.days ?? 0,
     joined: new Date(p.createdAt).toISOString(),
     stats: canSee
       ? {

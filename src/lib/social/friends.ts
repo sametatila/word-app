@@ -224,6 +224,7 @@ export async function listFriends(me: string, today: string): Promise<FriendRow[
     .map((r) => {
       const u = users.get(r.friendId);
       const p = profMap.get(r.friendId);
+      const co = streaks.get(r.friendId);
       return {
         userId: r.friendId,
         name: u?.name ?? null,
@@ -233,7 +234,9 @@ export async function listFriends(me: string, today: string): Promise<FriendRow[
         currentStreak: p?.currentStreak ?? 0,
         weeklyXp: weekly.get(r.friendId) ?? 0,
         lastActiveDay: p?.lastActiveDay ? String(p.lastActiveDay) : null,
-        friendStreak: streaks.get(r.friendId) ?? 0,
+        friendStreak: co?.days ?? 0,
+        streakAtRisk: Boolean(co && co.days > 0 && !co.bothToday),
+        friendActiveToday: Boolean(co?.friendToday),
         since: new Date(r.since).toISOString(),
       };
     })

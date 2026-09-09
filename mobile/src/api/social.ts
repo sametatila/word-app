@@ -16,7 +16,14 @@ export function reactionLabel(kind: ReactionKind): string {
 export type Relation = "self" | "none" | "friends" | "outgoing" | "incoming" | "declined" | "blocked";
 export type Visibility = "public" | "friends" | "private";
 export type PublicUser = { userId: string; name: string | null; username: string | null; level: string };
-export type FriendRow = PublicUser & { friendshipId: number; currentStreak: number; weeklyXp: number; lastActiveDay: string | null; friendStreak: number; since: string };
+export type FriendRow = PublicUser & {
+  friendshipId: number; currentStreak: number; weeklyXp: number; lastActiveDay: string | null; friendStreak: number;
+  /** Ortak seri var ama bugün ikisi de çalışmadı — zincir bu gece kırılıyor. */
+  streakAtRisk: boolean;
+  /** Arkadaş bugün çalıştı mı — dürtme "hatırlat" mı "alkışla" mı olacak. */
+  friendActiveToday: boolean;
+  since: string;
+};
 export type ReactionSummary = { counts: Partial<Record<ReactionKind, number>>; total: number; mine: ReactionKind | null; names: string[] };
 export type FeedItem = { id: number; type: string; payload: Record<string, unknown>; createdAt: string; user: PublicUser; reactions: ReactionSummary; isMine: boolean };
 export type QuestView = {

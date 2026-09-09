@@ -91,6 +91,14 @@ export type FriendRow = PublicUser & {
   lastActiveDay: string | null;
   /** İkisinin de çalıştığı ardışık gün sayısı (bugün ya da dün biten). */
   friendStreak: number;
+  /**
+   * Ortak seri var ama bugün ikisi birden çalışmadı: zincir bu gece kırılıyor.
+   * Arayüzün tek gerçek aciliyet işareti — arkadaş listesindeki uyarı ve
+   * dürtme düğmesinin tonu buradan.
+   */
+  streakAtRisk: boolean;
+  /** Arkadaş bugün çalıştı mı — dürtme "hatırlat" mı "alkışla" mı olacak. */
+  friendActiveToday: boolean;
   since: string;
 };
 

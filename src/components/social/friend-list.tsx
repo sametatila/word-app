@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import { Avatar } from "@/components/avatar";
-import { FlameIcon, HandshakeIcon, TargetIcon } from "@/components/icons";
+import { AlertIcon, FlameIcon, HandshakeIcon, TargetIcon } from "@/components/icons";
 import { errorText, social } from "@/lib/social/client";
 import type { FriendRow } from "@/lib/social/types";
 import { useT, useLang } from "@/lib/i18n/client";
@@ -14,6 +14,11 @@ import { formatNumber } from "@/lib/i18n/dict";
  * (dürt, ortak görev). Çıkarma menüde değil, satırın sonunda küçük — az
  * kullanılır ama saklanmaz. Dürtme günde bir: düğme gönderilince kapanır,
  * 429 beklenmez.
+ *
+ * DÜRTMENİN TÜRÜ duruma göre: arkadaş bugün çalıştıysa "alkışla" (cheer),
+ * çalışmadıysa "hatırlat" (remind). İki tür de sunucuda vardı ama arayüz
+ * yalnız birini gönderiyordu — "aferin" demenin yolu yoktu, oysa tebrik
+ * hatırlatmadan daha çok geri getiriyor.
  */
 export function FriendList({
   friends,
@@ -41,14 +46,16 @@ function FriendItem({ f, nudged, onChanged }: { f: FriendRow; nudged: boolean; o
   const [msg, setMsg] = useState<{ text: string; ok: boolean } | null>(null);
   const [busy, setBusy] = useState(false);
 
+  const cheer = f.friendActiveToday;
+
   async function nudge() {
     if (busy || sent) return;
     setBusy(true);
     setMsg(null);
     try {
-      await social.nudge(f.userId, "remind");
+      await social.nudge(f.userId, cheer ? "cheer" : "remind");
       setSent(true);
-      setMsg({ text: t("social.nudged_you"), ok: true });
+      setMsg({ text: t(cheer ? "social.cheered_you" : "social.nudged_you"), ok: true });
     } catch (e) {
       setMsg({ text: errorText(e, lang), ok: false });
     } finally {
@@ -105,13 +112,25 @@ function FriendItem({ f, nudged, onChanged }: { f: FriendRow; nudged: boolean; o
             </span>
           ) : null}
           {f.friendStreak > 0 ? (
-            <span className="flex items-center gap-0.5" style={{ color: "var(--color-mint)" }} title={t("socialw.costreak_hint")}>
+            <span
+              className="flex items-center gap-0.5"
+              style={{ color: f.streakAtRisk ? "var(--color-flame)" : "var(--color-mint)" }}
+              title={t(f.streakAtRisk ? "socialw.costreak_risk_hint" : "socialw.costreak_hint")}
+            >
               <HandshakeIcon size={12} />
               {t("social.days_together", { n: f.friendStreak })}
             </span>
           ) : null}
           <span>{f.level}</span>
         </p>
+        {/* Aciliyet BİR satır: zincir bugün kırılıyorsa yaz, kırılmıyorsa
+            hiçbir şey yazma. Her gün duran bir uyarı uyarı olmaktan çıkar. */}
+        {f.streakAtRisk ? (
+          <p className="mt-1 flex items-center gap-1 text-[11px] font-semibold" style={{ color: "var(--color-flame)" }}>
+            <AlertIcon size={12} />
+            {t("social.costreak_risk")}
+          </p>
+        ) : null}
         {/* Ton mesajın METNİNDEN değil kendi alanından okunuyor: metni Türkçe
             sözcüklere göre sınamak çeviriyle birlikte bozuluyordu. */}
         {msg ? (
@@ -121,8 +140,13 @@ function FriendItem({ f, nudged, onChanged }: { f: FriendRow; nudged: boolean; o
         ) : null}
       </div>
       <div className="flex shrink-0 items-center gap-1">
-        <button className="btn btn-ghost h-8 px-2.5 text-xs" disabled={busy || sent} onClick={() => void nudge()} title={t("socialw.nudge_hint")}>
-          {t(sent ? "socialw.nudged" : "socialw.nudge")}
+        <button
+          className="btn btn-ghost h-8 px-2.5 text-xs"
+          disabled={busy || sent}
+          onClick={() => void nudge()}
+          title={t(cheer ? "socialw.cheer_hint" : "socialw.nudge_hint")}
+        >
+          {t(sent ? (cheer ? "socialw.cheered" : "socialw.nudged") : cheer ? "socialw.cheer" : "socialw.nudge")}
         </button>
         <button className="btn btn-ghost h-8 px-2 text-xs" disabled={busy} onClick={() => void quest()} title={t("socialw.quest_hint")} aria-label={t("quests.invite_title")}>
           <TargetIcon size={15} />

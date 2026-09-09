@@ -1304,4 +1304,8 @@ export const trWeb: Record<string, string> = {
   "push.league_up_body": "Geçen haftayı {rank}. sırada bitirdin. Yeni lig, yeni rakipler — bu hafta da başla.",
   "react.league_up": "lig yükselişine",
   "lbw.league_sub": "Grubundaki herkes seninle aynı hafta başladı. Pazartesi sıfırlanır.",
+  "socialw.cheer": "Alkışla",
+  "socialw.cheered": "Alkışlandı",
+  "socialw.cheer_hint": "Bugün çalıştı — alkışla",
+  "socialw.costreak_risk_hint": "Bugün ikiniz de çalışmazsanız zincir sıfırlanır",
 };

@@ -1,6 +1,7 @@
 import { emitActivity, streakMilestoneCrossed } from "./activity";
 import { joinLeague } from "./leagues";
 import { checkQuestProgress } from "./quests";
+import { celebrateFriendStreaks } from "./streaks";
 
 /**
  * Öğrenme yollarından sosyal katmana giden kancalar.
@@ -16,6 +17,10 @@ export async function onActivityAwarded(userId: string, today: string, prevStrea
     // Lige giriş XP kazanınca: hafta boyunca bir kez, sonraki çağrılar okuyup döner.
     await joinLeague(userId, today);
     await checkQuestProgress(userId, today);
+    // Ortak seri yalnız GÜNÜN İLK etkinliğinde değişebilir; serinin ilerlemiş
+    // olması tam olarak o an demek. Her cevapta arkadaş serisi hesaplamak,
+    // hiç değişmeyecek bir sayıyı günde onlarca kez sorgulamak olurdu.
+    if (nextStreak !== prevStreak) await celebrateFriendStreaks(userId, today);
   } catch (err) {
     console.error("[social:hook:award]", err);
   }

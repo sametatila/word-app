@@ -9,12 +9,20 @@ import { Text } from "../ui/Text";
 import { Card } from "../ui/Card";
 import { PersonAvatar } from "../ui/PersonAvatar";
 import { PressableScale } from "../ui/PressableScale";
-import { FlameIcon, HandshakeIcon, TargetIcon, BoltIcon, BellIcon, XIcon, ChevronRightIcon } from "../ui/icons";
+import { FlameIcon, HandshakeIcon, TargetIcon, BoltIcon, BellIcon, PartyIcon, XIcon, ChevronRightIcon } from "../ui/icons";
 import { useTheme, spacing, radii } from "../theme";
 import { SkeletonCard, SkeletonLine, SkeletonPill, SkeletonTile } from "../ui/Skeleton";
 import { StatPill, type IconCmp } from "./common";
 
-/** Her arkadaş kendi kartı (Sıralama/Günün görevleri gibi): kimlik + pill rozetler + ikon karolu eylemler. */
+/**
+ * Her arkadaş kendi kartı (Sıralama/Günün görevleri gibi): kimlik + pill
+ * rozetler + ikon karolu eylemler.
+ *
+ * İlk eylem karosu duruma göre değişiyor: arkadaş bugün çalıştıysa ALKIŞ
+ * (cheer), çalışmadıysa DÜRT (remind). İki tür de sunucuda vardı ama arayüz
+ * yalnız birini gönderiyordu. Ortak seri bugün kırılacaksa kartta ayrıca tek
+ * satırlık bir uyarı çıkıyor — her gün duran bir uyarı uyarı olmaktan çıkar.
+ */
 export function FriendRows({ friends, nudgedToday, onChanged }: { friends: FriendRow[]; nudgedToday: string[]; onChanged: () => void }) {
   if (!friends.length) return null;
   return <View>{friends.map((f) => <FriendCard key={f.userId} f={f} nudged={nudgedToday.includes(f.userId)} onChanged={onChanged} />)}</View>;
@@ -75,6 +83,7 @@ function FriendCard({ f, nudged, onChanged }: { f: FriendRow; nudged: boolean; o
     try { await fn(); setMsg(done); setOk(true); } catch (e) { setMsg(errorText(e)); setOk(false); } finally { setBusy(false); }
   }
   const open = () => { if (f.username) nav.navigate("User", { username: f.username }); };
+  const cheer = f.friendActiveToday;
   return (
     <Card padded style={{ marginBottom: spacing.md }}>
       <PressableScale onPress={open} style={{ flexDirection: "row", alignItems: "center", gap: spacing.md }}>
@@ -88,10 +97,19 @@ function FriendCard({ f, nudged, onChanged }: { f: FriendRow; nudged: boolean; o
       <View style={{ flexDirection: "row", flexWrap: "wrap", gap: 6, marginTop: spacing.md }}>
         <StatPill icon={BoltIcon} label={t("social.xp_this_week", { xp: formatXp(f.weeklyXp) })} tint={colors.primary} soft={colors.primarySoft} />
         {f.currentStreak > 0 ? <StatPill icon={FlameIcon} label={t("social.days", { n: f.currentStreak })} tint={colors.streak} /> : null}
-        {f.friendStreak > 0 ? <StatPill icon={HandshakeIcon} label={t("social.days_together", { n: f.friendStreak })} tint={colors.success} soft={colors.successSoft} /> : null}
+        {f.friendStreak > 0 ? <StatPill icon={HandshakeIcon} label={t("social.days_together", { n: f.friendStreak })} tint={f.streakAtRisk ? colors.streak : colors.success} soft={f.streakAtRisk ? undefined : colors.successSoft} /> : null}
       </View>
+      {f.streakAtRisk ? (
+        <Text variant="caption" color={colors.streak} style={{ marginTop: spacing.sm }}>{t("social.costreak_risk")}</Text>
+      ) : null}
       <View style={{ flexDirection: "row", justifyContent: "space-around", marginTop: spacing.md, paddingTop: spacing.md, borderTopWidth: 1, borderTopColor: colors.hairline }}>
-        <ActionTile icon={BellIcon} label={t(sent ? "friendrows.nudged" : "friendrows.nudge")} tint={colors.streak} disabled={busy || sent} onPress={() => void act(async () => { await social.nudge(f.userId, "remind"); setSent(true); }, t("social.nudged_you"))} />
+        <ActionTile
+          icon={cheer ? PartyIcon : BellIcon}
+          label={t(sent ? (cheer ? "friendrows.cheered" : "friendrows.nudged") : cheer ? "friendrows.cheer" : "friendrows.nudge")}
+          tint={cheer ? colors.success : colors.streak}
+          disabled={busy || sent}
+          onPress={() => void act(async () => { await social.nudge(f.userId, cheer ? "cheer" : "remind"); setSent(true); }, t(cheer ? "social.cheered_you" : "social.nudged_you"))}
+        />
         <ActionTile icon={TargetIcon} label={t("friendrows.quest")} tint={colors.primary} disabled={busy} onPress={() => void act(() => social.inviteQuest(f.userId), t("social.quest_sent"))} />
         <ActionTile icon={XIcon} label={t("friendrows.remove")} tint={colors.danger} disabled={busy} onPress={() => Alert.alert(t("social.unfriend"), t("friendrows.remove_confirm", { name: f.name ?? t("social.this_person") }), [
           { text: t("common.discard"), style: "cancel" },

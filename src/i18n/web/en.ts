@@ -1279,4 +1279,8 @@ export const enWeb: Record<string, string> = {
   "push.league_up_body": "You finished last week in {rank}th place. New league, new rivals - start this week too.",
   "react.league_up": "your league promotion",
   "lbw.league_sub": "Everyone in your group started the week with you. It resets Monday.",
+  "socialw.cheer": "Cheer",
+  "socialw.cheered": "Cheered",
+  "socialw.cheer_hint": "They studied today - send a cheer",
+  "socialw.costreak_risk_hint": "If you both skip today, the chain resets",
 };

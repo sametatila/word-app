@@ -1279,4 +1279,8 @@ export const deWeb: Record<string, string> = {
   "push.league_up_body": "Letzte Woche hast du Platz {rank} erreicht. Neue Liga, neue Gegner - fang auch diese Woche an.",
   "react.league_up": "deinen Liga-Aufstieg",
   "lbw.league_sub": "Alle in deiner Gruppe haben die Woche mit dir begonnen. Montag wird zurückgesetzt.",
+  "socialw.cheer": "Applaus",
+  "socialw.cheered": "Applaudiert",
+  "socialw.cheer_hint": "Hat heute gelernt - schick Applaus",
+  "socialw.costreak_risk_hint": "Wenn ihr heute beide aussetzt, beginnt die Kette von vorn",
 };

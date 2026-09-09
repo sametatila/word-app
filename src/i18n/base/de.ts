@@ -1142,4 +1142,8 @@ export const deBase: Record<string, string> = {
   "social.notif_league_up": "Du bist in die {league} aufgestiegen",
   "social.on_league": "deinen Liga-Aufstieg",
   "leaderboard.league": "Liga",
+  "social.costreak_risk": "Eure gemeinsame Serie reißt heute",
+  "social.cheered_you": "Applaudiert",
+  "friendrows.cheer": "Applaus",
+  "friendrows.cheered": "Applaudiert",
 };
