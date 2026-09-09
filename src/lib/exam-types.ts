@@ -21,14 +21,18 @@ export type ExamSectionId = "vocab" | "grammar" | "produce" | "reading" | "liste
 /** Bölümlerin kâğıttaki sırası — hem sunucu hem oynatıcı bunu izliyor. */
 export const SECTION_ORDER: ExamSectionId[] = ["vocab", "grammar", "produce", "reading", "listening", "speaking", "writing"];
 
-export const SECTION_TITLE: Record<ExamSectionId, string> = {
-  vocab: "Kelime",
-  grammar: "Dilbilgisi",
-  produce: "Cümle kurma",
-  reading: "Okuma",
-  listening: "Dinleme",
-  speaking: "Konuşma",
-  writing: "Yazma",
+/**
+ * Bölüm adları SÖZLÜK ANAHTARI olarak — metin gösterildiği yerde çevriliyor.
+ * Anahtarlar mobilin sözlüğünden (`exam.sec_*`); iki taraf aynı adı kullanıyor.
+ */
+export const SECTION_TITLE_KEYS: Record<ExamSectionId, string> = {
+  vocab: "exam.sec_vocab",
+  grammar: "exam.sec_grammar",
+  produce: "exam.sec_produce",
+  reading: "exam.sec_reading",
+  listening: "exam.sec_listening",
+  speaking: "exam.sec_speaking",
+  writing: "exam.sec_writing",
 };
 
 /** Bölümlerin Almanca adı — sınav havası kâğıdın dilinden başlıyor. */

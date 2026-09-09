@@ -1,7 +1,8 @@
 import { NextResponse } from "next/server";
 import { getUserId, getUserInfo } from "@/lib/auth/server";
 import { ensureProfile } from "@/lib/session";
-import { examById, examCando, SECTION_TITLE, SECTION_TITLE_DE, type ExamSectionId } from "@/lib/exam";
+import { examById, examCando, SECTION_TITLE_KEYS, SECTION_TITLE_DE, type ExamSectionId } from "@/lib/exam";
+import { translate, isNativeLang, DEFAULT_NATIVE } from "@/lib/i18n/dict";
 import { moduleExamPlan } from "@/lib/lessons/module-exam";
 
 export const dynamic = "force-dynamic";
@@ -29,6 +30,9 @@ export async function GET(_req: Request, ctx: { params: Promise<{ id: string }> 
   if (!exam || !exam.passed || exam.trial) return NextResponse.json({ error: "not_found" }, { status: 404 });
   const info = await getUserInfo();
   const profile = await ensureProfile(userId, info?.name);
+  // Sertifika bölüm adlarını kullanıcının dilinde yazıyor. Dil ÇEREZDEN değil
+  // profilden: bu ucu mobil de çağırıyor ve orada web çerezimiz yok.
+  const lang = isNativeLang(profile.nativeLang) ? profile.nativeLang : DEFAULT_NATIVE;
   const name = esc(profile.displayName ?? info?.name ?? "Öğrenci");
   const plan = exam.module === null ? undefined : moduleExamPlan(exam.level, exam.module);
   const kicker = exam.kind === "level" ? `${exam.level} · Niveauprüfung` : `Modulprüfung ${plan?.code ?? `${exam.level}.${(exam.module ?? 0) + 1}`}`;
@@ -41,7 +45,7 @@ export async function GET(_req: Request, ctx: { params: Promise<{ id: string }> 
   const rows = exam.sections
     .map(
       (s, i) =>
-        `<text x="72" y="${rowTop + i * 26}" font-size="15" fill="#5b4636">${esc(SECTION_TITLE_DE[s.id as ExamSectionId] ?? s.id)} · ${esc(SECTION_TITLE[s.id as ExamSectionId] ?? s.id)}</text>` +
+        `<text x="72" y="${rowTop + i * 26}" font-size="15" fill="#5b4636">${esc(SECTION_TITLE_DE[s.id as ExamSectionId] ?? s.id)} · ${esc(SECTION_TITLE_KEYS[s.id as ExamSectionId] ? translate(lang, SECTION_TITLE_KEYS[s.id as ExamSectionId]) : s.id)}</text>` +
         `<text x="380" y="${rowTop + i * 26}" font-size="15" fill="#5b4636" text-anchor="end">%${s.pct}</text>`,
     )
     .join("");

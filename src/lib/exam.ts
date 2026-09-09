@@ -84,7 +84,7 @@ export type {
 } from "@/lib/exam-types";
 export {
   SECTION_ORDER,
-  SECTION_TITLE,
+  SECTION_TITLE_KEYS,
   SECTION_TITLE_DE,
   SECTION_WEIGHT,
   MODULE_SECONDS,

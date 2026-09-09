@@ -14,7 +14,8 @@ import { askAssess, fallbackAssessment, type FallbackAssessment } from "@/lib/as
 import type { Assessment, AssessLevel, AssessRequest } from "@/lib/assess-prompts";
 import type { GameResult } from "@/components/games/types";
 import type { ExamPaper, ExamResult, ExamSectionId, ProduceExamItem, TextItem } from "@/lib/exam-types";
-import { SECTION_ORDER, SECTION_TITLE, SECTION_TITLE_DE } from "@/lib/exam-types";
+import { SECTION_ORDER, SECTION_TITLE_KEYS, SECTION_TITLE_DE } from "@/lib/exam-types";
+import { useT } from "@/lib/i18n/client";
 import { matchSentence } from "@/lib/sentence-match";
 import type { Round } from "@/lib/types";
 import type { CefrLevel } from "@/lib/skills/types";
@@ -43,14 +44,14 @@ type Phase = "cover" | "loading" | "intro" | "run" | "finishing" | "result" | "e
 const SPEAK_MAX_MS = 12_000;
 
 /** Bölümün öğrenciye ne yaptıracağı — bölüm arası kartında okunur. */
-const SECTION_BRIEF: Record<ExamSectionId, string> = {
-  vocab: "Modülün kelimeleri. Türkçesi verilen cümleyi ya da kelimeyi Almanca yaz.",
-  grammar: "Modülün dilbilgisi odakları. Doğru biçimi seç ya da cümle hakkında hüküm ver.",
-  produce: "Sınavın omurgası. Türkçesi verilen cümleyi Almanca kur — yazarak ya da parçaları sıralayarak.",
-  reading: "Kısa bir metin. Önce oku, sonra soruları cevapla. Metin sorular boyunca ekranda kalır.",
-  listening: "Bir diyalog. İstediğin kadar dinleyebilirsin ama metni göremezsin.",
-  speaking: "Cümleyi yüksek sesle, doğal hızda oku. Tek kayıt hakkı; puan kelime düzeyinde.",
-  writing: "Tek görev, serbest metin. Kontrol listesindeki maddelerin hepsine değin.",
+const SECTION_BRIEF_KEYS: Record<ExamSectionId, string> = {
+  vocab: "exam.brief_vocab",
+  grammar: "exam.brief_grammar",
+  produce: "exam.brief_produce",
+  reading: "exam.brief_reading",
+  listening: "exam.brief_listening",
+  speaking: "exam.brief_speaking",
+  writing: "exam.brief_writing",
 };
 
 type Miss = {
@@ -88,6 +89,7 @@ function present(p: ExamPaper): ExamSectionId[] {
 const empty = () => ({ correct: 0, total: 0 });
 
 export function ExamPlayer({ level, module }: { level: CefrLevel; module: number | null }) {
+  const t = useT();
   const [phase, setPhase] = useState<Phase>("cover");
   const [paper, setPaper] = useState<ExamPaper | null>(null);
   const [section, setSection] = useState<ExamSectionId>("vocab");
@@ -224,8 +226,8 @@ export function ExamPlayer({ level, module }: { level: CefrLevel; module: number
       misses.current.push({
         section: "grammar",
         prompt: g.statement,
-        answer: g.answer ? "Doğru" : "Yanlış",
-        given: chosen === 0 ? "Doğru" : "Yanlış",
+        answer: t(g.answer ? "common.correct" : "common.wrong"),
+        given: t(chosen === 0 ? "common.correct" : "common.wrong"),
         why: g.why.map((s) => s.text).join(" "),
       });
     setPicked(null);
@@ -287,14 +289,19 @@ export function ExamPlayer({ level, module }: { level: CefrLevel; module: number
   const mm = Math.floor(left / 60);
   const ss = String(left % 60).padStart(2, "0");
   const cover = paper?.cover ?? null;
-  const title = module === null ? `${level} Seviye Sınavı` : cover ? `${cover.code} · ${cover.titleTr}` : `${level} · Modül ${module + 1} Sınavı`;
+  const title =
+    module === null
+      ? t("exam.level_exam", { level })
+      : cover
+        ? `${cover.code} · ${cover.titleTr}`
+        : t("exam.module_exam", { level, n: module + 1 });
 
   if (phase === "cover") return <Cover level={level} module={module} onStart={() => void start()} />;
 
   if (phase === "loading" || phase === "finishing") {
     return (
       <section className="card mx-auto w-full max-w-md p-5" aria-busy>
-        <p className="muted text-sm">{phase === "loading" ? "Kâğıt hazırlanıyor…" : "Puanlanıyor…"}</p>
+        <p className="muted text-sm">{t(phase === "loading" ? "exam.preparing" : "exam.scoring")}</p>
         <div className="mt-3 h-10 animate-pulse rounded-xl surface-2" />
       </section>
     );
@@ -303,9 +310,9 @@ export function ExamPlayer({ level, module }: { level: CefrLevel; module: number
   if (phase === "error") {
     return (
       <section className="card mx-auto w-full max-w-md p-5">
-        <p className="text-sm">Sınav şu an yüklenemedi ya da kaydedilemedi.</p>
+        <p className="text-sm">{t("exam.load_or_save_failed")}</p>
         <Link href="/immersion" className="btn btn-ghost mt-3 px-4 py-2 text-sm">
-          Konuşmalara dön
+          {t("exam.back_to_path")}
         </Link>
       </section>
     );
@@ -342,14 +349,14 @@ export function ExamPlayer({ level, module }: { level: CefrLevel; module: number
           {SECTION_TITLE_DE[section]}
         </h2>
         <p className="text-base font-semibold" style={{ color: "var(--color-brand)" }}>
-          {SECTION_TITLE[section]}
+          {t(SECTION_TITLE_KEYS[section])}
         </p>
-        <p className="muted mt-3 text-sm leading-relaxed">{SECTION_BRIEF[section]}</p>
+        <p className="muted mt-3 text-sm leading-relaxed">{t(SECTION_BRIEF_KEYS[section])}</p>
         <p className="muted mt-3 text-xs">
-          {sectionCount(paper!, section)} madde · kalan süre {mm}:{ss}
+          {t("exam.items_and_time", { n: sectionCount(paper!, section), time: `${mm}:${ss}` })}
         </p>
         <button type="button" onClick={() => setPhase("run")} className="btn btn-primary mt-4 w-full px-5 py-3.5 text-base">
-          Bölüme başla
+          {t("exam.start_section")}
         </button>
       </section>
     );
@@ -430,11 +437,11 @@ export function ExamPlayer({ level, module }: { level: CefrLevel; module: number
           </>
         ) : (
           <>
-            <p className="muted text-xs">Richtig oder falsch? · Bu cümle doğru mu?</p>
+            <p className="muted text-xs">Richtig oder falsch? · {t("exam.is_sentence_right")}</p>
             <p className="mb-4 mt-1 text-xl font-bold leading-snug" lang="de">
               {g.statement}
             </p>
-            {options(["Richtig · Doğru", "Falsch · Yanlış"], pickGrammar)}
+            {options([`Richtig · ${t("common.correct")}`, `Falsch · ${t("common.wrong")}`], pickGrammar)}
           </>
         )}
         <p className="muted mt-3 text-center text-xs">
@@ -525,7 +532,7 @@ export function ExamPlayer({ level, module }: { level: CefrLevel; module: number
       // Teknik arıza iki denemede de sürdüyse madde 0 sayılır ama sınav durmaz.
       if (spk === "failed" && speakingScores.current[idx] === undefined) speakingScores.current[idx] = 0;
       if (!speakingScores.current[idx] || speakingScores.current[idx] < 60)
-        misses.current.push({ section: "speaking", prompt: item.situation ?? "Söyleyiş", answer: item.de });
+        misses.current.push({ section: "speaking", prompt: item.situation ?? t("exam.pronunciation"), answer: item.de });
       setSpk("idle");
       setSpkResult(null);
       setSpkTries(0);
@@ -536,7 +543,7 @@ export function ExamPlayer({ level, module }: { level: CefrLevel; module: number
       <section className="card mx-auto w-full max-w-md p-5">
         {header}
         <p className="muted text-xs">
-          {idx + 1}/{paper!.sections.speaking.length} · {item.situation ?? "Cümleyi yüksek sesle oku."}
+          {idx + 1}/{paper!.sections.speaking.length} · {item.situation ?? t("exam.read_aloud")}
         </p>
         <p className="mt-3 text-lg font-bold leading-snug" lang="de">
           {item.de}
@@ -547,16 +554,16 @@ export function ExamPlayer({ level, module }: { level: CefrLevel; module: number
             <button
               type="button"
               onClick={() => (spk === "rec" ? void stopRec() : void startRec())}
-              aria-label={spk === "rec" ? "Kaydı bitir" : "Kaydı başlat"}
+              aria-label={t(spk === "rec" ? "exam.stop_recording" : "exam.start_recording")}
               className="flex h-20 w-20 items-center justify-center rounded-full text-white"
               style={{ background: spk === "rec" ? "var(--color-rose)" : "var(--color-brand)" }}
             >
               <MicIcon size={30} />
             </button>
-            <span className="muted text-xs">{spk === "rec" ? "Kaydediliyor… bitince dokun" : "Mikrofona dokun, oku, tekrar dokun"}</span>
+            <span className="muted text-xs">{t(spk === "rec" ? "exam.recording_tap_done" : "exam.tap_mic_read")}</span>
           </div>
         ) : null}
-        {spk === "scoring" ? <p className="muted mt-5 text-center text-sm">Puanlanıyor…</p> : null}
+        {spk === "scoring" ? <p className="muted mt-5 text-center text-sm">{t("exam.scoring")}</p> : null}
         {spk === "done" && spkResult ? (
           <div className="mt-4">
             <PronounceCard score={spkResult} compact />
@@ -564,17 +571,17 @@ export function ExamPlayer({ level, module }: { level: CefrLevel; module: number
         ) : null}
         {spk === "failed" ? (
           <p className="mt-4 rounded-xl px-3 py-2 text-sm" style={{ background: "color-mix(in srgb, var(--color-rose) 10%, transparent)" }}>
-            {spkTries < 2 ? "Ses alınamadı ya da puanlanamadı. Bir kez daha dene; olmazsa madde atlanır." : "Bu madde puanlanamadı; sınav devam ediyor."}
+            {t(spkTries < 2 ? "exam.audio_failed_retry" : "exam.audio_failed_skip")}
           </p>
         ) : null}
         {spk === "failed" && spkTries < 2 ? (
           <button type="button" onClick={() => void startRec()} className="btn btn-ghost mt-3 w-full px-5 py-3 text-sm">
-            Tekrar dene
+            {t("common.try_again")}
           </button>
         ) : null}
         {spk === "done" || spk === "failed" ? (
           <button type="button" onClick={advance} className="btn btn-primary mt-3 w-full px-5 py-3 text-sm">
-            {last ? "Bölümü bitir" : "Sıradaki cümle"}
+            {t(last ? "exam.finish_section" : "exam.next_sentence")}
           </button>
         ) : null}
       </section>
@@ -596,13 +603,13 @@ export function ExamPlayer({ level, module }: { level: CefrLevel; module: number
         {w.task.checklist.map((c, i) => (
           <li key={i}>{c}</li>
         ))}
-        <li>en az {w.task.minWords} kelime</li>
+        <li>{t("exam.min_words", { n: w.task.minWords })}</li>
       </ul>
       {writingResult ? (
         <div className="mt-3 flex flex-col gap-3">
           <AssessmentCard answer={writingText.trim()} result={writingResult} />
           <button type="button" onClick={() => void finishNow()} className="btn btn-primary px-5 py-3 text-sm">
-            Sınavı bitir
+            {t("exam.finish_exam")}
           </button>
         </div>
       ) : (
@@ -613,11 +620,14 @@ export function ExamPlayer({ level, module }: { level: CefrLevel; module: number
             rows={7}
             lang="de"
             spellCheck={false}
-            placeholder="Almanca yaz…"
+            placeholder="Auf Deutsch schreiben…"
             className="card mt-3 w-full resize-none px-4 py-3 text-base outline-none"
           />
           <p className="muted mt-1 text-right text-xs tabular-nums">
-            {writingText.trim() ? writingText.trim().split(/\s+/).length : 0} / {w.task.minWords} kelime
+            {t("exam.word_count", {
+              n: writingText.trim() ? writingText.trim().split(/\s+/).length : 0,
+              min: w.task.minWords,
+            })}
           </p>
           <button
             type="button"
@@ -625,7 +635,7 @@ export function ExamPlayer({ level, module }: { level: CefrLevel; module: number
             onClick={() => void evaluateWriting()}
             className="btn btn-primary mt-2 w-full px-5 py-3 text-sm disabled:opacity-50"
           >
-            {busy ? "Değerlendiriliyor…" : "Gönder ve puanla"}
+            {t(busy ? "exam.evaluating" : "exam.submit_and_score")}
           </button>
         </>
       )}
@@ -637,6 +647,7 @@ export function ExamPlayer({ level, module }: { level: CefrLevel; module: number
 
 /** Kâğıdın kapağı: ne ölçülüyor, kaç bölüm, kural ne. */
 function Cover({ level, module, onStart }: { level: CefrLevel; module: number | null; onStart: () => void }) {
+  const t = useT();
   const [cover, setCover] = useState<{ code: string; titleDe: string; titleTr: string; focus: { de: string; tr: string }[] } | null>(null);
   useEffect(() => {
     if (module === null) return;
@@ -666,7 +677,7 @@ function Cover({ level, module, onStart }: { level: CefrLevel; module: number | 
 
       {cover?.focus.length ? (
         <div className="mt-4">
-          <p className="muted text-xs font-semibold">Bu sınav şunları ölçüyor</p>
+          <p className="muted text-xs font-semibold">{t("exam.measures_these")}</p>
           <ul className="mt-1.5 space-y-1">
             {cover.focus.map((f, i) => (
               <li key={i} className="text-sm">
@@ -681,18 +692,17 @@ function Cover({ level, module, onStart }: { level: CefrLevel; module: number | 
       ) : null}
 
       <div className="mt-4 rounded-xl px-3.5 py-3 text-xs leading-relaxed surface-2">
-        <p className="font-semibold">Kurallar</p>
+        <p className="font-semibold">{t("exam.rules")}</p>
         <p className="muted mt-1">
-          {module === null ? "Yedi bölüm, 45 dakika" : "Yedi bölüme kadar, 25 dakika"}. Geri dönüş yok, ipucu yok, cevap sınav bitmeden gösterilmiyor. Geçme: toplam ≥ %70 ve her bölüm ≥ %50.
-          Üretim bölümleri (cümle kurma, konuşma, yazma) puanın yarısını taşıyor.
+          {t(module === null ? "exam.rules_level" : "exam.rules_module")} {t("exam.rules_body")}
         </p>
       </div>
 
       <button type="button" onClick={onStart} className="btn btn-primary mt-4 w-full px-5 py-3.5 text-base">
-        Sınava başla
+        {t("exam.start")}
       </button>
       <Link href="/immersion" className="btn btn-ghost mt-2 w-full px-5 py-3 text-sm">
-        Vazgeç
+        {t("common.discard")}
       </Link>
     </section>
   );
@@ -700,6 +710,7 @@ function Cover({ level, module, onStart }: { level: CefrLevel; module: number | 
 
 /** Dinleme diyaloğu: tek düğme bütün replikleri sırayla çalar. */
 function DialogPlayer({ segments }: { segments: { speaker?: string; text: string }[] }) {
+  const t = useT();
   const [at, setAt] = useState<number | null>(null);
   const alive = useRef(true);
   useEffect(() => {
@@ -726,7 +737,7 @@ function DialogPlayer({ segments }: { segments: { speaker?: string; text: string
         className="btn btn-primary flex items-center justify-center gap-2 px-4 py-2.5 text-sm"
       >
         <SpeakerIcon size={16} />
-        {at === null ? "Dialog abspielen · Diyaloğu dinle" : "Durdur"}
+        {at === null ? `Dialog abspielen · ${t("exam.listen_dialog")}` : t("exam.stop")}
       </button>
       <div className="flex flex-wrap gap-1.5">
         {segments.map((s, i) => (
@@ -767,6 +778,7 @@ function ProduceCard({
   onChunks: (v: number[]) => void;
   onSubmit: () => void;
 }) {
+  const t = useT();
   const ref = useRef<HTMLTextAreaElement>(null);
   useEffect(() => {
     ref.current?.focus();
@@ -778,7 +790,9 @@ function ProduceCard({
     <section className="card mx-auto w-full max-w-md p-5">
       {header}
       <p className="muted text-xs">
-        {item.mode === "order" ? "Bringen Sie den Satz in die richtige Reihenfolge · Cümleyi doğru sıraya diz" : "Schreiben Sie den Satz auf Deutsch · Cümleyi Almanca yaz"}
+        {item.mode === "order"
+          ? `Bringen Sie den Satz in die richtige Reihenfolge · ${t("exam.order_the_sentence")}`
+          : `Schreiben Sie den Satz auf Deutsch · ${t("exam.write_in_target")}`}
       </p>
       <p className="mt-2 text-lg font-bold leading-snug">{item.prompt}</p>
 
@@ -794,7 +808,7 @@ function ProduceCard({
                 ))}
               </span>
             ) : (
-              <span className="muted text-sm font-normal">Parçalara dokunarak cümleyi kur.</span>
+              <span className="muted text-sm font-normal">{t("exam.tap_chunks")}</span>
             )}
           </div>
           <div className="mt-3 flex flex-wrap gap-2">
@@ -821,10 +835,10 @@ function ProduceCard({
       )}
 
       <button type="button" disabled={!ready} onClick={onSubmit} className="btn btn-primary mt-4 w-full px-5 py-3 text-sm disabled:opacity-50">
-        {index + 1 === total ? "Bölümü bitir" : "Cevabı ver ve devam et"}
+        {t(index + 1 === total ? "exam.finish_section" : "exam.answer_and_next")}
       </button>
       <p className="muted mt-2 text-center text-xs">
-        {index + 1} / {total} · cevap sınav sonunda gösterilir
+        {index + 1} / {total} · {t("exam.answers_at_end")}
       </p>
     </section>
   );
@@ -855,6 +869,7 @@ function Result({
   onToggleMisses: () => void;
   writingSample: string | null;
 }) {
+  const t = useT();
   return (
     <section className="card mx-auto w-full max-w-md p-5">
       <CoachBubble
@@ -865,10 +880,12 @@ function Result({
         className="mb-3"
       />
       <p className="muted text-xs font-semibold uppercase tracking-wide">{title}</p>
-      <h1 className="text-xl font-bold">{result.passed ? "Bestanden — geçtin!" : "Nicht bestanden — bu sefer olmadı"}</h1>
+      <h1 className="text-xl font-bold">
+        {result.passed ? `Bestanden — ${t("exam.passed")}` : `Nicht bestanden — ${t("exam.not_passed")}`}
+      </h1>
       <p className="muted mt-1 text-sm">
-        Toplam <strong>%{result.total}</strong>
-        {result.trial ? " · deneme (modül konuşmaları bitmeden sayılmaz)" : ""}
+        {t("exam.total")} <strong>{t("common.pct", { n: result.total })}</strong>
+        {result.trial ? ` · ${t("exam.trial_note")}` : ""}
       </p>
 
       <ul className="mt-3 space-y-1.5">
@@ -879,11 +896,11 @@ function Result({
                 <span lang="de" className="font-semibold">
                   {SECTION_TITLE_DE[s.id]}
                 </span>
-                <span className="muted"> · {SECTION_TITLE[s.id]}</span>
-                <span className="muted text-xs"> (ağırlık %{s.weight})</span>
+                <span className="muted"> · {t(SECTION_TITLE_KEYS[s.id])}</span>
+                <span className="muted text-xs"> {t("exam.weight", { pct: t("common.pct", { n: s.weight }) })}</span>
               </span>
               <span className="tabular-nums" style={{ color: s.pct >= 50 ? "var(--text)" : "var(--color-rose)" }}>
-                %{s.pct}
+                {t("common.pct", { n: s.pct })}
               </span>
             </div>
             <div className="mt-1 h-1.5 overflow-hidden rounded-full surface-2">
@@ -895,7 +912,7 @@ function Result({
 
       {cando.length ? (
         <div className="mt-4 rounded-xl px-3.5 py-3 surface-2">
-          <p className="text-sm font-bold">{result.passed ? "Artık şunları yapabiliyorsun" : "Bu sınav şunları ölçüyordu"}</p>
+          <p className="text-sm font-bold">{t(result.passed ? "exam.now_you_can" : "exam.this_measured")}</p>
           <ul className="mt-2 space-y-2">
             {cando.map((c, i) => (
               <li key={i} className="flex gap-2 text-sm">
@@ -916,20 +933,20 @@ function Result({
           </ul>
         </div>
       ) : focus.length ? (
-        <p className="muted mt-3 text-xs">Ölçülen yapılar: {focus.map((f) => f.de).join(", ")}</p>
+        <p className="muted mt-3 text-xs">{t("exam.structures_measured", { list: focus.map((f) => f.de).join(", ") })}</p>
       ) : null}
 
       {misses.length ? (
         <div className="mt-3">
           <button type="button" onClick={onToggleMisses} className="btn btn-ghost w-full px-4 py-2.5 text-sm">
-            {showMisses ? "Dökümü kapat" : `Kaçırdığın ${misses.length} madde`}
+            {showMisses ? t("exam.hide_breakdown") : t("exam.missed_n", { n: misses.length })}
           </button>
           {showMisses ? (
             <ul className="mt-2 space-y-2.5">
               {misses.map((m, i) => (
                 <li key={i} className="rounded-xl px-3 py-2.5 text-sm surface-2">
                   <p className="muted text-xs font-semibold">
-                    <span lang="de">{SECTION_TITLE_DE[m.section]}</span> · {SECTION_TITLE[m.section]}
+                    <span lang="de">{SECTION_TITLE_DE[m.section]}</span> · {t(SECTION_TITLE_KEYS[m.section])}
                   </p>
                   <p className="mt-0.5">{m.prompt}</p>
                   <p className="mt-1 font-semibold" lang="de" style={{ color: "var(--color-mint)" }}>
@@ -937,7 +954,7 @@ function Result({
                   </p>
                   {m.given ? (
                     <p className="muted text-xs">
-                      Senin cevabın: <span lang="de">{m.given}</span>
+                      {t("exam.your_answer")} <span lang="de">{m.given}</span>
                     </p>
                   ) : null}
                   {m.section === "produce" && m.given ? (
@@ -955,7 +972,7 @@ function Result({
 
       {showMisses && writingSample ? (
         <div className="mt-2 rounded-xl px-3 py-2.5 text-sm surface-2">
-          <p className="muted text-xs font-semibold">Yazma bölümü · örnek cevap</p>
+          <p className="muted text-xs font-semibold">{t("exam.writing_sample")}</p>
           <p className="mt-1 whitespace-pre-line text-xs" lang="de">
             {writingSample}
           </p>
@@ -964,13 +981,13 @@ function Result({
 
       {result.passed && !result.trial ? (
         <a href={`/api/certificate/${result.id}`} target="_blank" rel="noreferrer" className="btn btn-primary mt-4 w-full px-5 py-3 text-sm">
-          Sertifikayı aç
+          {t("exam.open_certificate")}
         </a>
       ) : (
-        <p className="muted mt-3 text-xs">Zayıf bölüm için profilde &quot;Zayıf noktaların&quot; ve &quot;Sıradaki en iyi adım&quot; var.</p>
+        <p className="muted mt-3 text-xs">{t("exam.weak_section_hint")}</p>
       )}
       <Link href="/immersion" className="btn btn-ghost mt-2 w-full px-5 py-3 text-sm">
-        Konuşmalara dön
+        {t("exam.back_to_path")}
       </Link>
       {/*
         Hız turunun tek girişi burası. Eskiden yol haritasında, modül
@@ -984,7 +1001,7 @@ function Result({
           href={`/lessons/boss/${level}/${moduleIndex}`}
           className="muted mt-2 block text-center text-xs font-semibold underline-offset-2 hover:underline"
         >
-          Oyun: hız turu · modülün kelimeleri, 60 sn
+          {t("exam.speed_round_link")}
         </Link>
       ) : null}
     </section>

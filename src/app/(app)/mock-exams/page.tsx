@@ -10,6 +10,7 @@ import { ensureProfile } from "@/lib/session";
 import { mockPapersFor, mockSkillLabel, partPoints, type MockLevel, type MockSkill } from "@/lib/mock-exams";
 import { mockCourseOf } from "@/lib/courses";
 import { ChevronRightIcon } from "@/components/icons";
+import { getT } from "@/lib/i18n/server";
 
 export const metadata: Metadata = { title: "Deneme Sınavları" };
 export const dynamic = "force-dynamic";
@@ -37,6 +38,7 @@ const LEVELS: MockLevel[] = ["A1", "A2", "B1", "B2", "C1"];
  * toplanırsa o ortalama hiçbir dilin becerisini söylemez.
  */
 export default async function MockExamsPage({ searchParams }: { searchParams: Promise<{ level?: string }> }) {
+  const t = await getT();
   const userId = await getUserId();
   if (!userId) redirect("/login");
   const profile = await ensureProfile(userId);
@@ -72,7 +74,7 @@ export default async function MockExamsPage({ searchParams }: { searchParams: Pr
 
   return (
     <div className="mx-auto w-full max-w-2xl space-y-3">
-      <PageBack fallback="/skills" title="Deneme Sınavları">
+      <PageBack fallback="/skills" title={t("mockexams.title")}>
         {/* İstatistiğin kapısı burada: liste "ne çözeyim", istatistik "nasıl
             gidiyorum" sorusunun yeri ve ikisi aynı ekranda yarışmamalı. */}
         <Link
@@ -80,15 +82,14 @@ export default async function MockExamsPage({ searchParams }: { searchParams: Pr
           prefetch={false}
           className="btn btn-ghost h-11 shrink-0 px-3.5 text-caption"
         >
-          İstatistik
+          {t("mockstats.title")}
         </Link>
       </PageBack>
       <p className="muted text-body">
-        Her bölüm kendi başına çözülür ve kendi süresi vardır. Süre dolunca bir sonraki göreve otomatik geçilir ve
-        bitmiş bir göreve geri dönülemez — gerçek dijital sınav oturumlarında olduğu gibi.
+        {t("mockexams.intro_web")}
       </p>
 
-      <nav className="flex flex-wrap gap-2" aria-label="Seviye">
+      <nav className="flex flex-wrap gap-2" aria-label={t("mockexams.level")}>
         {LEVELS.map((l) => (
           <Link
             key={l}
@@ -106,12 +107,12 @@ export default async function MockExamsPage({ searchParams }: { searchParams: Pr
 
       {running.filter((r) => mine(r.paperId)).length ? (
         <section className="card p-4">
-          <p className="muted text-xs font-bold tracking-wide">YARIM KALAN</p>
+          <p className="muted text-xs font-bold tracking-wide">{t("mockstats.running")}</p>
           {running.filter((r) => mine(r.paperId)).map((r) => (
             <Link key={r.id} href={`/mock-exams/${r.paperId}/${r.skill}`} className="mt-2 flex items-center justify-between rounded-xl p-3" style={{ background: "var(--surface-2)" }}>
               <span className="text-sm font-semibold">
                 {r.paperId.toUpperCase().replace(/^(DE|EN)-/, "")} · {mockSkillLabel(course, r.skill as MockSkill)}
-                <span className="muted ml-2 font-normal">{r.taskIx + 1}. görevde kaldın</span>
+                <span className="muted ml-2 font-normal">{t("mockstats.at_task", { n: r.taskIx + 1 })}</span>
               </span>
               <ChevronRightIcon className="size-4" />
             </Link>
@@ -121,19 +122,19 @@ export default async function MockExamsPage({ searchParams }: { searchParams: Pr
 
       {bySkill.size ? (
         <section className="card p-4">
-          <p className="muted text-xs font-bold tracking-wide">BÖLÜMLERE GÖRE</p>
+          <p className="muted text-xs font-bold tracking-wide">{t("mockstats.by_skill")}</p>
           {[...bySkill.entries()].map(([skill, v]) => {
             const avg = Math.round(v.sum / v.n);
             return (
               <div key={skill} className="mt-3">
                 <div className="flex justify-between text-sm">
                   <span lang={course}>{mockSkillLabel(course, skill as MockSkill)}</span>
-                  <span className="font-semibold" style={{ color: avg >= 60 ? "var(--color-success)" : "var(--color-danger)" }}>%{avg}</span>
+                  <span className="font-semibold" style={{ color: avg >= 60 ? "var(--color-success)" : "var(--color-danger)" }}>{t("common.pct", { n: avg })}</span>
                 </div>
                 <div className="mt-1 h-1 rounded-full" style={{ background: "var(--surface-2)" }}>
                   <div className="h-1 rounded-full" style={{ width: `${avg}%`, background: avg >= 60 ? "var(--color-success)" : "var(--color-danger)" }} />
                 </div>
-                <p className="muted mt-1 text-xs">{v.n} deneme · en iyi %{v.best}</p>
+                <p className="muted mt-1 text-xs">{t("mockstats.attempts_best", { n: v.n, best: v.best })}</p>
               </div>
             );
           })}
@@ -143,9 +144,9 @@ export default async function MockExamsPage({ searchParams }: { searchParams: Pr
       {papers.length ? (
         papers.map((p) => (
           <section key={p.id} className="card p-4">
-            <p className="muted text-xs font-bold tracking-wide">DENEME {p.no}</p>
+            <p className="muted text-xs font-bold tracking-wide">{t("mockexams.paper", { n: p.no })}</p>
             <h2 className="mt-0.5 text-lg font-bold" lang={course}>{p.theme}</h2>
-            <p className="muted text-sm">{p.themeTr} · toplam {p.minutes} dakika</p>
+            <p className="muted text-sm">{p.themeTr} · {t("mockexams.minutes", { n: p.minutes })}</p>
             <div className="mt-3 space-y-2">
               {p.parts.map((part) => {
                 const pts = partPoints(part);
@@ -158,7 +159,11 @@ export default async function MockExamsPage({ searchParams }: { searchParams: Pr
                   >
                     <span className="text-sm">
                       <span className="font-semibold" lang={course}>{mockSkillLabel(course, part.skill)}</span>
-                      <span className="muted ml-2">{part.minutes} dk · {pts ? `${pts} madde` : "puanlanmaz"}</span>
+                      <span className="muted ml-2">
+                        {pts
+                          ? t("mockexams.part_summary", { minutes: part.minutes, n: pts })
+                          : t("mockexams.part_open", { minutes: part.minutes })}
+                      </span>
                     </span>
                     <ChevronRightIcon className="size-4" />
                   </Link>
@@ -168,7 +173,7 @@ export default async function MockExamsPage({ searchParams }: { searchParams: Pr
           </section>
         ))
       ) : (
-        <p className="card p-4 text-sm">{level} seviyesi için henüz deneme sınavı yok.</p>
+        <p className="card p-4 text-sm">{t("mockexams.none_for_level", { level })}</p>
       )}
     </div>
   );

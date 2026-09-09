@@ -2,6 +2,7 @@ import "server-only";
 import { completeChat, chatConfigured, type CallReport } from "@/lib/chat-providers";
 import type { MockScore } from "./scoring";
 import type { MockCourse } from "./types";
+import { translate, DEFAULT_NATIVE, type NativeLang } from "@/lib/i18n/dict";
 
 /**
  * Deneme sınavından sonra yapılacaklar listesi.
@@ -36,17 +37,23 @@ export type MockFeedback = {
   source: "ai" | "rules";
 };
 
-/** Ölçüm hedeflerinin Türkçe adı — hem istemde hem kural tabanlı listede. */
-export const GOAL_TR: Record<string, string> = {
-  gist: "ana fikri yakalama",
-  detail: "tek bir bilgiyi bulma",
-  opinion: "tutum ve görüş ayırt etme",
-  orientation: "hangi ilan kime uyar",
-  instruction: "kural ve yönerge okuma",
-  structure: "metnin bağdaşıklığı",
-  production: "kendi metnini/konuşmanı kurma",
-  interaction: "karşılıklı iletişim",
+/**
+ * Ölçüm hedeflerinin ADI — anahtar olarak; hem istemde hem kural tabanlı
+ * listede kullanıcının dilinde yazılıyor. Anahtarlar mobilin sözlüğünden.
+ */
+export const GOAL_KEYS: Record<string, string> = {
+  gist: "mockexam.goal_gist",
+  detail: "mockexam.goal_detail",
+  opinion: "mockexam.goal_opinion",
+  orientation: "mockexam.goal_orientation",
+  instruction: "mockexam.goal_instruction",
+  structure: "mockexam.goal_structure",
+  production: "mockexam.goal_production",
+  interaction: "mockexam.goal_interaction",
 };
+
+const goalName = (goal: string, lang: NativeLang) =>
+  GOAL_KEYS[goal] ? translate(lang, GOAL_KEYS[goal]).toLocaleLowerCase(lang) : goal;
 
 /**
  * Hedefe bağlı çalışma yolu — kural tabanlı listenin gövdesi.
@@ -56,49 +63,33 @@ export const GOAL_TR: Record<string, string> = {
  * yaramaz. Genel bir tavsiyeye ("bağlaçlara dikkat et") indirgemek iki
  * öğrenciye birden zarar verirdi — listenin bütün değeri somutluğunda.
  */
-const GOAL_HOW_EN: Record<string, string> = {
-  gist:
-    "Metni iki turda oku. Birinci turda yalnız ilk ve son paragrafı oku ve metnin ne savunduğunu tek cümleyle kendine söyle; ayrıntıya hiç bakma. İkinci turda soruları oku ve o cümleyi sına.",
-  detail:
-    "Soruları metinden ÖNCE oku ve her sorudaki sayıyı, saati ya da özel adı işaretle. Sonra metni tararken yalnız o işaretleri ara. Bu maddelerde tuzak çoğu zaman metindeki ikinci bir sayıdır.",
-  opinion:
-    "Her metnin SON cümlesini ayrıca oku: taraf çoğu zaman orada belli olur. `but`, `however`, `still`, `only`, `in fact` sözcüklerinden sonrası yazarın vardığı sonuçtur; öncesi çoğu zaman karşı tarafa verilen paydır.",
-  orientation:
-    "Kişinin metnindeki ölçütleri önce bir kenara yaz (kaç kişi, hangi gün, ne kadar para). Sonra ilanları elemeye çalış: bir ilan tek bir ölçütte düşüyorsa gerisini okumana gerek yok.",
-  instruction:
-    "Yönergelerde istisnayı ara. `only`, `except`, `unless`, `from`, `until` sözcüklerinin geçtiği cümleleri iki kez oku — maddelerin çoğu kuralın kendisini değil sınırını sorar.",
-  structure:
-    "Boşluk doldurmada önce boşluğun ne TÜR sözcük istediğini söyle: edat mı, yardımcı fiil mi, bağlaç mı, ilgi zamiri mi. Türü bilmeden anlam aramak en sık yapılan hata. Kelime türetmede kökün türünü değiştir (isim mi sıfat mı), sonra olumsuzluk ekini ve çoğulu kontrol et.",
-  production:
-    "Metni yazdıktan sonra içerik noktalarını tek tek işaretle: her noktaya karşılık gelen cümleyi bulamıyorsan o nokta işlenmemiştir. Sınavda en sık kaybedilen puan burada.",
-  interaction:
-    "Karşı tarafın söylediğine açıkça gönderme yapmayı çalış: `That's true, but …`, `I hadn't thought of that …`. Yalnız kendi önerini sıralamak bu görevlerde yeterli sayılmaz.",
+const GOAL_HOW_EN_KEYS: Record<string, string> = {
+  gist: "mockhow_en.gist",
+  detail: "mockhow_en.detail",
+  opinion: "mockhow_en.opinion",
+  orientation: "mockhow_en.orientation",
+  instruction: "mockhow_en.instruction",
+  structure: "mockhow_en.structure",
+  production: "mockhow_en.production",
+  interaction: "mockhow_en.interaction",
 };
 
-const GOAL_HOW: Record<string, string> = {
-  gist:
-    "Metni iki turda oku. Birinci turda yalnız ilk ve son paragrafı oku ve metnin ne savunduğunu tek cümleyle kendine söyle; ayrıntıya hiç bakma. İkinci turda soruları oku ve o cümleyi sına.",
-  detail:
-    "Soruları metinden ÖNCE oku ve her sorudaki sayıyı, saati ya da özel adı işaretle. Sonra metni tararken yalnız o işaretleri ara. Bu maddelerde tuzak çoğu zaman metindeki ikinci bir sayıdır.",
-  opinion:
-    "Her yorumun SON cümlesini ayrıca oku: taraf çoğu zaman orada belli olur. `aber`, `trotzdem`, `deshalb`, `nur` sözcüklerinin ardından gelen kısım yazarın vardığı sonuçtur; öncesi çoğu zaman karşı tarafa verilen paydır.",
-  orientation:
-    "Kişinin metnindeki ölçütleri önce bir kenara yaz (kaç kişi, hangi gün, ne kadar para). Sonra ilanları elemeye çalış: bir ilan tek bir ölçütte düşüyorsa gerisini okumana gerek yok.",
-  instruction:
-    "Yönergelerde istisnayı ara. `nur`, `außer`, `jedoch`, `ab`, `bis` sözcüklerinin geçtiği cümleleri iki kez oku — maddelerin çoğu kuralın kendisini değil sınırını sorar.",
-  structure:
-    "Boşluğun ÖNCEKİ cümlesine bak ve gönderme öğelerini izle: `sie`, `dieses Muster`, `in der Zwischenzeit`, `deshalb`. Doğru cümle çoğu zaman anlamdan değil, bu bağlardan bulunur.",
-  production:
-    "Metni yazdıktan sonra içerik noktalarını tek tek işaretle: her noktaya karşılık gelen cümleyi bulamıyorsan o nokta işlenmemiştir. Sınavda en sık kaybedilen puan burada.",
-  interaction:
-    "Karşı tarafın söylediğine açıkça gönderme yapmayı çalış: `Das stimmt, aber …`, `Daran habe ich nicht gedacht …`. Yalnız kendi önerini sıralamak bu görevlerde yeterli sayılmaz.",
+const GOAL_HOW_KEYS: Record<string, string> = {
+  gist: "mockhow_de.gist",
+  detail: "mockhow_de.detail",
+  opinion: "mockhow_de.opinion",
+  orientation: "mockhow_de.orientation",
+  instruction: "mockhow_de.instruction",
+  structure: "mockhow_de.structure",
+  production: "mockhow_de.production",
+  interaction: "mockhow_de.interaction",
 };
 
-const SKILL_TR: Record<string, string> = {
-  reading: "Okuma",
-  listening: "Dinleme",
-  writing: "Yazma",
-  speaking: "Konuşma",
+const SKILL_KEYS: Record<string, string> = {
+  reading: "exam.sec_reading",
+  listening: "exam.sec_listening",
+  writing: "exam.sec_writing",
+  speaking: "exam.sec_speaking",
 };
 
 /**
@@ -108,8 +99,12 @@ const SKILL_TR: Record<string, string> = {
  * değilse tek bir madde veriliyor (en düşük hedef), çünkü boş bir liste de
  * öğrenciye bir şey söylemez.
  */
-export function rulesFeedback(score: MockScore, course: MockCourse = "de"): MockFeedback {
-  const how = course === "en" ? GOAL_HOW_EN : GOAL_HOW;
+export function rulesFeedback(
+  score: MockScore,
+  course: MockCourse = "de",
+  lang: NativeLang = DEFAULT_NATIVE,
+): MockFeedback {
+  const how = course === "en" ? GOAL_HOW_EN_KEYS : GOAL_HOW_KEYS;
   const ranked = score.byGoal
     .filter((g) => g.total > 0)
     .map((g) => ({ ...g, pct: Math.round((100 * g.correct) / g.total) }))
@@ -122,27 +117,42 @@ export function rulesFeedback(score: MockScore, course: MockCourse = "de"): Mock
   return {
     summary:
       score.total > 0
-        ? `${SKILL_TR[score.skill] ?? score.skill} bölümünde ${score.total} maddenin ${score.correct} tanesi doğru (%${score.pct}). ` +
+        ? `${translate(lang, SKILL_KEYS[score.skill] ?? score.skill)}: ` +
+          translate(lang, "mockfb.summary", {
+            correct: score.correct,
+            total: score.total,
+            pct: translate(lang, "common.pct", { n: score.pct }),
+          }) +
+          " " +
           (picked.length
-            ? `En çok zorlandığın yer: ${GOAL_TR[picked[0].goal] ?? picked[0].goal} (%${picked[0].pct}).`
-            : "Hedeflerin tamamında dengeli bir sonuç var.")
-        : "Bu bölümde makinece puanlanan madde yok; değerlendirme ölçütler üzerinden yapılır.",
-    strengths: strong.map((g) => `${GOAL_TR[g.goal] ?? g.goal} (%${g.pct})`),
+            ? translate(lang, "mockfb.hardest", {
+                goal: goalName(picked[0].goal, lang),
+                pct: translate(lang, "common.pct", { n: picked[0].pct }),
+              })
+            : translate(lang, "mockfb.balanced"))
+        : translate(lang, "mockfb.not_machine_scored"),
+    strengths: strong.map(
+      (g) => `${goalName(g.goal, lang)} (${translate(lang, "common.pct", { n: g.pct })})`,
+    ),
     todo: picked.map((g) => ({
-      title: `${GOAL_TR[g.goal] ?? g.goal} üzerine çalış`,
-      why: `Bu hedefteki ${g.total} maddenin ${g.total - g.correct} tanesi yanlış (%${g.pct}).`,
-      how: how[g.goal] ?? "Yanlış maddelerin açıklamalarını sırayla oku ve her birinde hatanın nereden geldiğini kendi cümlenle yaz.",
+      title: translate(lang, "mockfb.work_on", { goal: goalName(g.goal, lang) }),
+      why: translate(lang, "mockfb.wrong_of", {
+        wrong: g.total - g.correct,
+        total: g.total,
+        pct: translate(lang, "common.pct", { n: g.pct }),
+      }),
+      how: how[g.goal] ? translate(lang, how[g.goal]) : translate(lang, "mockfb.how_fallback"),
     })),
     source: "rules",
   };
 }
 
-const SYSTEM = (dil: string) => `Sen ${dil} sınavlarına hazırlanan bir öğrencinin çalışma koçusun.
+const SYSTEM = (dil: string, cevapDili: string) => `Sen ${dil} sınavlarına hazırlanan bir öğrencinin çalışma koçusun.
 Öğrencinin bir deneme sınavı bölümündeki sonucunu ve yanlış maddelerini alacaksın.
 Görevin, ölçülebilir ve tek oturumda yapılabilir bir YAPILACAKLAR listesi üretmek.
 
 Kurallar:
-- Türkçe yaz. ${dil} örnekler verebilirsin ama açıklama Türkçe olsun.
+- ${cevapDili} yaz. ${dil} örnekler verebilirsin ama açıklama ${cevapDili} olsun.
 - En fazla 4 madde. Az ve keskin olsun; her madde tek bir davranış değiştirsin.
 - Her madde ÖĞRENCİNİN GERÇEK HATASINA dayansın. Genel tavsiye ("daha çok oku") yasak.
 - "how" alanı somut bir yöntem olsun: ne yapılacak, hangi sırayla, neye bakılacak.
@@ -202,25 +212,29 @@ export async function mockFeedback(
   explains: Record<string, string>,
   course: MockCourse = "de",
   report?: CallReport,
+  lang: NativeLang = DEFAULT_NATIVE,
 ): Promise<MockFeedback> {
-  if (!chatConfigured() || score.total === 0) return rulesFeedback(score, course);
+  if (!chatConfigured() || score.total === 0) return rulesFeedback(score, course, lang);
 
   const dil = course === "en" ? "İngilizce" : "Almanca";
+  // Modelin CEVABI kullanıcının dilinde olmalı: liste doğrudan ekrana çıkıyor
+  // ve arayüzün geri kalanı çevrilmişken bu bölüm Türkçe kalıyordu.
+  const cevapDili = { tr: "Türkçe", en: "İngilizce", de: "Almanca" }[lang];
   const goals = score.byGoal
-    .map((g) => `${GOAL_TR[g.goal] ?? g.goal}: ${g.correct}/${g.total}`)
+    .map((g) => `${goalName(g.goal, lang)}: ${g.correct}/${g.total}`)
     .join(" · ");
   const user =
     `Seviye: ${score.level}\n` +
-    `Bölüm: ${SKILL_TR[score.skill] ?? score.skill}\n` +
+    `Bölüm: ${translate(lang, SKILL_KEYS[score.skill] ?? score.skill)}\n` +
     `Sonuç: ${score.correct}/${score.total} (%${score.pct})\n` +
     `Ölçüm hedeflerine göre: ${goals}\n\n` +
     `Yanlış maddeler:\n${wrongDigest(score, explains)}`;
 
   try {
-    const raw = await completeChat(SYSTEM(dil), [{ role: "user", content: user }], 900, report);
+    const raw = await completeChat(SYSTEM(dil, cevapDili), [{ role: "user", content: user }], 900, report);
     return parse(raw) ?? rulesFeedback(score, course);
   } catch {
     // Sağlayıcı hatası öğrencinin sonucunu görmesini engellememeli.
-    return rulesFeedback(score, course);
+    return rulesFeedback(score, course, lang);
   }
 }

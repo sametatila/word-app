@@ -8,6 +8,7 @@ import { captureClip } from "@/lib/pronounce-client";
 import { taskSeconds, type MockItem, type MockPaper, type MockPart, type MockStimulus, type MockTask } from "@/lib/mock-exams";
 import { MOCK_PASS_PCT, mockBoolLabels, mockSkillLabel, type MockCourse } from "@/lib/mock-exams/types";
 import { foldAnswer, isOpenTask } from "@/lib/mock-exams/scoring";
+import { useT } from "@/lib/i18n/client";
 
 /**
  * Deneme sınavı oynatıcısı — web.
@@ -35,15 +36,16 @@ type Score = {
   items: ScoredItem[];
 };
 
-const GOAL_TR: Record<string, string> = {
-  gist: "Ana fikri yakalama",
-  detail: "Tek bir bilgiyi bulma",
-  opinion: "Tutum ve görüş ayırt etme",
-  orientation: "Hangi ilan kime uyar",
-  instruction: "Kural ve yönerge okuma",
-  structure: "Metnin bağdaşıklığı",
-  production: "Kendi metnini kurma",
-  interaction: "Karşılıklı iletişim",
+/** Ölçüm hedefleri — mobilin `mockexam.goal_*` anahtarlarıyla aynı küme. */
+const GOAL_KEYS: Record<string, string> = {
+  gist: "mockexam.goal_gist",
+  detail: "mockexam.goal_detail",
+  opinion: "mockexam.goal_opinion",
+  orientation: "mockexam.goal_orientation",
+  instruction: "mockexam.goal_instruction",
+  structure: "mockexam.goal_structure",
+  production: "mockexam.goal_production",
+  interaction: "mockexam.goal_interaction",
 };
 
 const mmss = (s: number) => `${String(Math.floor(Math.max(0, s) / 60)).padStart(2, "0")}:${String(Math.max(0, s) % 60).padStart(2, "0")}`;
@@ -100,10 +102,10 @@ function dropLocalRun(paperId: string, skill: string): void {
  * Hepsine "bağlantı yok" demek yanlış teşhis koyuyordu.
  */
 type Fail = "not_deployed" | "unauthorized" | "unreachable";
-const FAIL_TR: Record<Fail, string> = {
-  not_deployed: "Sunucu bu bölümü henüz tanımıyor: uygulama sunucudan yeni. Sınav çalıştı ama puan sunucuda hesaplanamadı.",
-  unauthorized: "Oturumun düşmüş görünüyor. Tekrar giriş yaptığında sonuçların kaydedilmeye başlar.",
-  unreachable: "Sunucuya ulaşılamadı. Sınav çalıştı ama puan sunucuda hesaplanamadı.",
+const FAIL_KEYS: Record<Fail, string> = {
+  not_deployed: "mockexam.fail_not_deployed",
+  unauthorized: "mockexam.fail_unauthorized",
+  unreachable: "mockexam.fail_unreachable",
 };
 
 class HttpError extends Error {
@@ -127,6 +129,7 @@ async function post<T>(body: Record<string, unknown>): Promise<T> {
 }
 
 export function MockExamPlayer({ paper, part }: { paper: MockPaper; part: MockPart }) {
+  const t = useT();
   const budgets = useMemo(() => taskSeconds(part), [part]);
   const [phase, setPhase] = useState<"cover" | "run" | "result">("cover");
   const [ix, setIx] = useState(0);
@@ -254,11 +257,11 @@ export function MockExamPlayer({ paper, part }: { paper: MockPaper; part: MockPa
           </div>
         </div>
 
-        <p className="muted mt-4 text-xs">{part.minutes} dakika · {points ? `${points} madde` : "puanlanmaz"}</p>
-        <p className="muted mt-3 text-xs leading-relaxed">
-          Her görevin kendi süresi var. Süre dolunca bir sonraki göreve otomatik geçilir ve bitmiş bir göreve geri
-          dönülemez. Cevapların her an kaydedilir; sınav yarıda kalırsa kaldığın yerden devam edersin.
+        <p className="muted mt-4 text-xs">
+          {t("mockexam.minutes", { n: part.minutes })} ·{" "}
+          {points ? t("mockexam.n_items", { n: points }) : t("mockexam.not_machine_scored")}
         </p>
+        <p className="muted mt-3 text-xs leading-relaxed">{t("mockexam.rules_body")}</p>
 
         <button
           type="button"
@@ -266,7 +269,7 @@ export function MockExamPlayer({ paper, part }: { paper: MockPaper; part: MockPa
           disabled={busy}
           onClick={() => { announce(`part:${part.skill}`, part.instruction); void begin(); }}
         >
-          {busy ? "Başlatılıyor…" : "Bölüme başla"}
+          {t(busy ? "mockexam.starting" : "mockexam.start")}
         </button>
       </section>
     );
@@ -276,7 +279,7 @@ export function MockExamPlayer({ paper, part }: { paper: MockPaper; part: MockPa
     if (busy || !result) {
       return (
         <section className="card mx-auto w-full max-w-2xl p-5" aria-busy>
-          <p className="muted text-sm">Puanlanıyor…</p>
+          <p className="muted text-sm">{t("mockexam.scoring")}</p>
           <div className="mt-3 h-10 animate-pulse rounded-xl surface-2" />
         </section>
       );
@@ -289,7 +292,7 @@ export function MockExamPlayer({ paper, part }: { paper: MockPaper; part: MockPa
       <header className="card flex items-center justify-between gap-3 p-4">
         <div>
           <p className="muted text-xs font-bold tracking-wide">{paper.level} · {mockSkillLabel(paper.course, part.skill)}</p>
-          <p className="text-sm font-semibold">Görev {ix + 1}/{part.tasks.length}</p>
+          <p className="text-sm font-semibold">{t("mockexam.task_of", { n: ix + 1, total: part.tasks.length })}</p>
         </div>
         <p className="text-lg font-bold tabular-nums" style={{ color: left < 30 ? "var(--color-danger)" : undefined }}>{mmss(left)}</p>
       </header>
@@ -300,8 +303,8 @@ export function MockExamPlayer({ paper, part }: { paper: MockPaper; part: MockPa
         ))}
       </div>
 
-      {autoNext ? <p className="mt-2 text-xs" style={{ color: "var(--color-danger)" }}>Süre doldu; bir sonraki göreve geçildi.</p> : null}
-      {resumed && ix === (attempt?.taskIx ?? 0) ? <p className="muted mt-2 text-xs">Yarım kalan sınavın kaldığı yerden açıldı.</p> : null}
+      {autoNext ? <p className="mt-2 text-xs" style={{ color: "var(--color-danger)" }}>{t("mockexam.auto_next")}</p> : null}
+      {resumed && ix === (attempt?.taskIx ?? 0) ? <p className="muted mt-2 text-xs">{t("mockexam.resumed")}</p> : null}
 
       <TaskView
         key={task.id}
@@ -325,9 +328,9 @@ export function MockExamPlayer({ paper, part }: { paper: MockPaper; part: MockPa
       />
 
       <div className="card mt-3 p-4">
-        <p className="muted text-xs">Gerçek sınavda olduğu gibi bitmiş bir göreve geri dönülemez.</p>
+        <p className="muted text-xs">{t("mockexam.no_back")}</p>
         <button type="button" className="btn btn-primary mt-2 w-full py-3 text-sm" onClick={() => advance(false)}>
-          {ix < part.tasks.length - 1 ? "Sonraki görev" : "Bitir ve sonucu gör"}
+          {t(ix < part.tasks.length - 1 ? "mockexam.next_task" : "mockexam.submit")}
         </button>
       </div>
     </section>
@@ -423,6 +426,7 @@ function TaskView({
 }
 
 function Stimulus({ course, st, plays, onPlay }: { course: MockCourse; st: MockStimulus; plays: Record<string, number>; onPlay: (st: Extract<MockStimulus, { kind: "audio" }>) => void }) {
+  const t = useT();
   if (st.kind === "text") {
     return (
       <div className="card p-4">
@@ -439,14 +443,16 @@ function Stimulus({ course, st, plays, onPlay }: { course: MockCourse; st: MockS
       {st.title ? <p className="mt-1 text-sm font-semibold" lang={course}>{st.title}</p> : null}
       <p className="muted mt-1 text-sm leading-relaxed">{st.situation}</p>
       <button type="button" className="btn btn-ghost mt-3 px-4 py-2 text-sm" disabled={rest <= 0} onClick={() => onPlay(st)}>
-        <SpeakerIcon className="size-4" /> {rest <= 0 ? "Dinleme hakkın bitti" : rest === st.plays ? "Dinle" : "Tekrar dinle"}
+        <SpeakerIcon className="size-4" />{" "}
+        {t(rest <= 0 ? "mockexam.plays_done" : rest === st.plays ? "mockexam.listen" : "mockexam.listen_again")}
       </button>
-      {rest > 0 ? <p className="muted mt-1 text-xs">{rest} dinleme hakkı kaldı</p> : null}
+      {rest > 0 ? <p className="muted mt-1 text-xs">{t("mockexam.plays_left", { n: rest })}</p> : null}
     </div>
   );
 }
 
 function Item({ course, item, task, value, onAnswer }: { course: MockCourse; item: MockItem; task: MockTask; value?: string; onAnswer: (id: string, v: string) => void }) {
+  const t = useT();
   const [yes, no] = mockBoolLabels(course, task.format);
   const chip = (label: string, active: boolean, onClick: () => void, key: string) => (
     <button
@@ -480,7 +486,7 @@ function Item({ course, item, task, value, onAnswer }: { course: MockCourse; ite
                   value={value ?? ""}
                   onChange={(e) => onAnswer(item.id, e.target.value)}
                   className="input w-full"
-                  placeholder={task.format === "transform" ? "2–5 kelime yaz" : "Buraya yaz"}
+                  placeholder={t(task.format === "transform" ? "mockexam.write_transform" : "mockexam.write_here")}
                   lang={course}
                   autoComplete="off"
                 />
@@ -502,6 +508,7 @@ function OpenTask({
   onOpen: (id: string, v: string) => void;
   onOpenScore: (id: string, v: OpenScore) => void;
 }) {
+  const t = useT();
   const [busy, setBusy] = useState(false);
   const n = words(value);
   const need = task.rubric?.minWords ?? 0;
@@ -520,7 +527,7 @@ function OpenTask({
 
   return (
     <div className="card p-4">
-      <p className="muted text-xs font-bold tracking-wide">İÇERİK NOKTALARI</p>
+      <p className="muted text-xs font-bold tracking-wide">{t("mockexam.content_points")}</p>
       {(task.rubric?.points ?? []).map((p, i) => (
         <div key={i} className="mt-2">
           <p className="text-sm" lang={course}>• {p.de}</p>
@@ -533,19 +540,23 @@ function OpenTask({
         onChange={(e) => onOpen(task.id, e.target.value)}
         rows={8}
         className="input mt-4 w-full"
-        placeholder="Buraya yaz"
+        placeholder={t("mockexam.write_here")}
         lang={course}
       />
-      <p className="muted mt-1 text-xs">{need ? `${n} / ${need} kelime` : `${n} kelime`}</p>
+      <p className="muted mt-1 text-xs">
+        {need
+          ? `${n} / ${need} ${t("mockexam.words_unit")}`
+          : `${n} ${t("mockexam.words_unit")}`}
+      </p>
 
       {score ? (
         <OpenResult score={score} />
       ) : (
         <button type="button" className="btn btn-ghost mt-3 px-4 py-2 text-sm" disabled={busy || !attemptId || n < 5} onClick={() => void evaluate()}>
-          {busy ? "Değerlendiriliyor…" : "Değerlendir"}
+          {t(busy ? "mockexam.evaluating" : "mockexam.evaluate")}
         </button>
       )}
-      {!attemptId ? <p className="muted mt-2 text-xs">Değerlendirme sunucuda yapılıyor; şu an sunucuya ulaşılamadığı için kapalı.</p> : null}
+      {!attemptId ? <p className="muted mt-2 text-xs">{t("mockexam.ai_needs_server")}</p> : null}
     </div>
   );
 }
@@ -574,6 +585,7 @@ function SpeakingTask({
   onOpen: (id: string, v: string) => void;
   onOpenScore: (id: string, v: OpenScore) => void;
 }) {
+  const t = useT();
   const [step, setStep] = useState<"bekleme" | "hazirlik" | "konusma" | "bitti">("bekleme");
   const [turn, setTurn] = useState(0);
   const [count, setCount] = useState(0);
@@ -673,7 +685,7 @@ function SpeakingTask({
   const current = exchange[turn];
   return (
     <div className="card p-4">
-      <p className="muted text-xs font-bold tracking-wide">İÇERİK NOKTALARI</p>
+      <p className="muted text-xs font-bold tracking-wide">{t("mockexam.content_points")}</p>
       {(task.rubric?.points ?? []).map((p, i) => (
         <div key={i} className="mt-2">
           <p className="text-sm" lang={course}>• {p.de}</p>
@@ -685,62 +697,60 @@ function SpeakingTask({
         <>
           <p className="muted mt-4 text-sm leading-relaxed">
             {exchange.length
-              ? `Karşılıklı konuşma: ${exchange.filter((x) => x.who === "you").length} kez sıra sana gelecek. Önce ${prep} saniye hazırlık süren var.`
-              : `Önce ${prep} saniye hazırlık, sonra ${task.speakSeconds ?? 120} saniye konuşma.`}
+              ? t("mockexam.exchange_intro", { n: exchange.filter((x) => x.who === "you").length, prep })
+              : t("mockexam.solo_intro", { prep, speak: task.speakSeconds ?? 120 })}
           </p>
           <button type="button" className="btn btn-ghost mt-3 px-4 py-2 text-sm" onClick={() => { setCount(prep); setStep("hazirlik"); }}>
-            <MicIcon className="size-4" /> Konuşmaya başla
+            <MicIcon className="size-4" /> {t("mockexam.speak_start")}
           </button>
           <button type="button" className="btn btn-ghost ml-2 mt-3 px-4 py-2 text-sm" onClick={() => setStep("bitti")}>
-            Mikrofonsuz yaz
+            {t("mockexam.write_without_mic")}
           </button>
         </>
       ) : step === "hazirlik" ? (
         <div className="mt-4 text-center">
-          <p className="muted text-xs font-bold tracking-wide">HAZIRLIK</p>
+          <p className="muted text-xs font-bold tracking-wide">{t("mockexam.prep")}</p>
           <p className="text-3xl font-bold tabular-nums" style={{ color: "var(--color-brand)" }}>{mmss(count)}</p>
-          <p className="muted mt-1 text-sm">Ne söyleyeceğini planla. Süre bitince mikrofon kendiliğinden açılacak.</p>
+          <p className="muted mt-1 text-sm">{t("mockexam.prep_hint")}</p>
         </div>
       ) : step === "konusma" ? (
         <div className="mt-4">
           {current?.who === "partner" ? (
             <>
-              <p className="muted text-xs font-bold tracking-wide">KARŞI TARAF</p>
+              <p className="muted text-xs font-bold tracking-wide">{t("mockexam.partner")}</p>
               <p className="mt-1 text-sm leading-relaxed" lang={course}>{current.de}</p>
               <p className="muted mt-1 text-sm">{current.tr}</p>
             </>
           ) : (
             <div className="text-center">
               <MicIcon className="mx-auto size-6" style={{ color: "var(--color-danger)" }} />
-              <p className="mt-1 text-sm font-bold" style={{ color: "var(--color-danger)" }}>Şimdi konuş · {mmss(count)}</p>
-              <p className="muted mt-1 text-sm">{current?.who === "you" ? current.hint : "Görevi baştan sona anlat."}</p>
+              <p className="mt-1 text-sm font-bold" style={{ color: "var(--color-danger)" }}>{t("mockexam.speak_now")} · {mmss(count)}</p>
+              <p className="muted mt-1 text-sm">{current?.who === "you" ? current.hint : t("mockexam.solo_hint")}</p>
             </div>
           )}
         </div>
       ) : (
         <>
-          <p className="muted mt-4 text-xs font-bold tracking-wide">SÖYLEDİKLERİN</p>
+          <p className="muted mt-4 text-xs font-bold tracking-wide">{t("mockexam.transcript_you")}</p>
           <textarea
             value={value}
             onChange={(e) => onOpen(task.id, e.target.value)}
             rows={8}
             className="input mt-1 w-full"
-            placeholder="Söylediklerin buraya gelir; mikrofon çalışmadıysa doğrudan yazabilirsin."
+            placeholder={t("mockexam.transcript_placeholder")}
             lang={course}
           />
           <p className="muted mt-1 text-xs leading-relaxed">
-            {micErr
-              ? "Mikrofon açılamadı. Cevabını yazarak verebilirsin."
-              : "Metin konuşma tanıyıcısından geldi; yanlış yazılan yerleri düzeltebilirsin. Ses hiçbir yerde saklanmıyor."}
+            {t(micErr ? "mockexam.mic_failed" : "mockexam.transcript_note")}
           </p>
           {score ? (
             <OpenResult score={score} />
           ) : (
             <button type="button" className="btn btn-ghost mt-3 px-4 py-2 text-sm" disabled={busy || !attemptId || value.trim().length < 5} onClick={() => void evaluate()}>
-              {busy ? "Değerlendiriliyor…" : "Değerlendir"}
+              {t(busy ? "mockexam.evaluating" : "mockexam.evaluate")}
             </button>
           )}
-          {!attemptId ? <p className="muted mt-2 text-xs">Değerlendirme sunucuda yapılıyor; şu an sunucuya ulaşılamadığı için kapalı.</p> : null}
+          {!attemptId ? <p className="muted mt-2 text-xs">{t("mockexam.ai_needs_server")}</p> : null}
         </>
       )}
     </div>
@@ -748,12 +758,13 @@ function SpeakingTask({
 }
 
 function OpenResult({ score }: { score: OpenScore }) {
+  const t = useT();
   if (score.score == null) {
-    return <p className="muted mt-3 text-sm leading-relaxed">Yapay zekâ değerlendirmesi şu an kullanılamıyor. Metnini ölçütlere ve örnek cevaba göre kendin oku.</p>;
+    return <p className="muted mt-3 text-sm leading-relaxed">{t("mockexam.ai_off")}</p>;
   }
   return (
     <div className="mt-3">
-      <p className="text-lg font-bold" style={{ color: score.score >= 60 ? "var(--color-success)" : "var(--color-danger)" }}>%{score.score}</p>
+      <p className="text-lg font-bold" style={{ color: score.score >= 60 ? "var(--color-success)" : "var(--color-danger)" }}>{t("common.pct", { n: score.score })}</p>
       {score.praise ? <p className="muted mt-1 text-sm leading-relaxed">{score.praise}</p> : null}
       {score.tip ? <p className="mt-1 text-sm leading-relaxed">{score.tip}</p> : null}
       {(score.errors ?? []).slice(0, 5).map((e, i) => (
@@ -777,43 +788,42 @@ function Result({
   reveal: Record<string, boolean>;
   onReveal: (id: string) => void;
 }) {
+  const t = useT();
   const { score, ai, offline } = result;
   return (
     <section className="mx-auto w-full max-w-2xl space-y-3">
       {offline ? (
         <div className="card p-4">
-          <p className="text-sm" style={{ color: "var(--color-danger)" }}>{FAIL_TR[offline]}</p>
-          <p className="muted mt-1 text-xs">Cevapların bu tarayıcıda saklandı; sunucu istatistiğine girmedi.</p>
+          <p className="text-sm" style={{ color: "var(--color-danger)" }}>{t(FAIL_KEYS[offline])}</p>
+          <p className="muted mt-1 text-xs">{t("mockexam.saved_locally")}</p>
         </div>
       ) : null}
 
       {score.total > 0 ? (
         <div className="card p-5">
-          <p className="muted text-xs font-bold tracking-wide">SONUÇ</p>
+          <p className="muted text-xs font-bold tracking-wide">{t("mockexam.result")}</p>
           <div className="mt-1 flex items-end justify-between">
-            <p className="text-3xl font-bold" style={{ color: score.passed ? "var(--color-success)" : "var(--color-danger)" }}>%{score.pct}</p>
-            <p className="text-sm font-semibold">{score.correct}/{score.total} doğru</p>
+            <p className="text-3xl font-bold" style={{ color: score.passed ? "var(--color-success)" : "var(--color-danger)" }}>{t("common.pct", { n: score.pct })}</p>
+            <p className="text-sm font-semibold">{t("mockexam.score", { correct: score.correct, total: score.total })}</p>
           </div>
           <p className="mt-2 text-sm font-semibold" style={{ color: score.passed ? "var(--color-success)" : "var(--color-danger)" }}>
-            {score.passed ? "Geçtin" : "Geçemedin"}
+            {t(score.passed ? "mockexam.passed" : "mockexam.failed")}
           </p>
-          <p className="muted text-xs">Geçme eşiği %{MOCK_PASS_PCT}.</p>
+          <p className="muted text-xs">{t("mockexam.pass_note", { pct: MOCK_PASS_PCT })}</p>
         </div>
       ) : (
-        <p className="card p-4 text-sm leading-relaxed">
-          Bu bölüm makinece puanlanmıyor. Metnini aşağıdaki ölçütlere ve örnek cevaba göre değerlendir.
-        </p>
+        <p className="card p-4 text-sm leading-relaxed">{t("mockexam.not_scored")}</p>
       )}
 
       {score.byGoal.length ? (
         <div className="card p-4">
-          <p className="muted text-xs font-bold tracking-wide">ÖLÇÜM HEDEFLERİNE GÖRE</p>
+          <p className="muted text-xs font-bold tracking-wide">{t("mockexam.by_goal")}</p>
           {score.byGoal.map((g) => {
             const pct = g.total ? Math.round((100 * g.correct) / g.total) : 0;
             return (
               <div key={g.goal} className="mt-3">
                 <div className="flex justify-between text-sm">
-                  <span>{GOAL_TR[g.goal] ?? g.goal}</span>
+                  <span>{GOAL_KEYS[g.goal] ? t(GOAL_KEYS[g.goal]) : g.goal}</span>
                   <span className="font-semibold">{g.correct}/{g.total}</span>
                 </div>
                 <div className="mt-1 h-1 rounded-full" style={{ background: "var(--surface-2)" }}>
@@ -827,9 +837,13 @@ function Result({
 
       {ai ? (
         <div className="card p-4">
-          <p className="muted text-xs font-bold tracking-wide">YAPILACAKLAR</p>
+          <p className="muted text-xs font-bold tracking-wide">{t("mockexam.todo")}</p>
           <p className="mt-1 text-sm leading-relaxed">{ai.summary}</p>
-          {ai.strengths.length ? <p className="mt-2 text-sm" style={{ color: "var(--color-success)" }}>İyi giden: {ai.strengths.join(" · ")}</p> : null}
+          {ai.strengths.length ? (
+            <p className="mt-2 text-sm" style={{ color: "var(--color-success)" }}>
+              {t("mockexam.strengths")}: {ai.strengths.join(" · ")}
+            </p>
+          ) : null}
           {ai.todo.map((td, i) => (
             <div key={i} className="mt-3 border-l-2 pl-3" style={{ borderColor: "var(--color-brand)" }}>
               <p className="text-sm font-semibold">{i + 1}. {td.title}</p>
@@ -837,11 +851,11 @@ function Result({
               <p className="mt-1 text-sm leading-relaxed">{td.how}</p>
             </div>
           ))}
-          {ai.source === "rules" ? <p className="muted mt-3 text-xs">Bu liste kural tabanlı üretildi.</p> : null}
+          {ai.source === "rules" ? <p className="muted mt-3 text-xs">{t("mockexam.source_rules")}</p> : null}
         </div>
       ) : null}
 
-      <h2 className="pt-2 text-lg font-bold">Çözümler</h2>
+      <h2 className="pt-2 text-lg font-bold">{t("mockexam.review")}</h2>
 
       {part.tasks.map((task) => (
         <div key={task.id} className="space-y-2">
@@ -850,20 +864,20 @@ function Result({
             <div className="card p-4">
               {(open[task.id] ?? "").trim() ? (
                 <>
-                  <p className="muted text-xs font-bold tracking-wide">SENİN CEVABIN</p>
+                  <p className="muted text-xs font-bold tracking-wide">{t("mockexam.your_answer")}</p>
                   <p className="mt-1 whitespace-pre-line text-sm leading-relaxed" lang={paper.course}>{open[task.id]}</p>
                 </>
               ) : null}
               {openScores[task.id] ? <OpenResult score={openScores[task.id]} /> : null}
-              <p className="muted mt-3 text-xs font-bold tracking-wide">NASIL DEĞERLENDİRİLİR</p>
+              <p className="muted mt-3 text-xs font-bold tracking-wide">{t("mockexam.criteria")}</p>
               {task.rubric.criteria.map((c, i) => <p key={i} className="muted mt-1 text-sm leading-relaxed">• {c}</p>)}
               {reveal[task.id] ? (
                 <>
-                  <p className="muted mt-3 text-xs font-bold tracking-wide">ÖRNEK CEVAP</p>
+                  <p className="muted mt-3 text-xs font-bold tracking-wide">{t("mockexam.model_answer")}</p>
                   <p className="mt-1 whitespace-pre-line text-sm leading-relaxed" lang={paper.course}>{task.rubric.sample}</p>
                 </>
               ) : (
-                <button type="button" className="btn btn-ghost mt-3 px-4 py-2 text-sm" onClick={() => onReveal(task.id)}>Örnek cevabı göster</button>
+                <button type="button" className="btn btn-ghost mt-3 px-4 py-2 text-sm" onClick={() => onReveal(task.id)}>{t("mockexam.show_model")}</button>
               )}
             </div>
           ) : (
@@ -884,8 +898,14 @@ function Result({
                     {it.kind === "gap" && it.cue ? (
                       <p className="mt-1 text-sm font-bold tracking-wide" lang={paper.course} style={{ color: "var(--color-brand)" }}>{it.cue}</p>
                     ) : null}
-                    {!ok ? <p className="muted mt-1 text-sm">Senin cevabın: {s?.given || "boş"}</p> : null}
-                    <p className="mt-1 text-sm" style={{ color: ok ? "var(--color-success)" : undefined }}>Doğru cevap: {s?.expected ?? expected(it, task)}</p>
+                    {!ok ? (
+                      <p className="muted mt-1 text-sm">
+                        {t("mockexam.your_answer")}: {s?.given || t("mockexam.blank")}
+                      </p>
+                    ) : null}
+                    <p className="mt-1 text-sm" style={{ color: ok ? "var(--color-success)" : undefined }}>
+                      {t("mockexam.correct_answer")}: {s?.expected ?? expected(it, task)}
+                    </p>
                     <p className="muted mt-1 text-sm leading-relaxed">{it.explain}</p>
                   </div>
                 </div>
@@ -896,7 +916,7 @@ function Result({
           {(task.texts ?? []).map((st) =>
             st.kind === "audio" ? (
               <div key={st.id} className="card p-4">
-                <p className="muted text-xs font-bold tracking-wide">KAYDIN METNİ · {st.genreTr}</p>
+                <p className="muted text-xs font-bold tracking-wide">{t("mockexam.transcript")} · {st.genreTr}</p>
                 {st.segments.map((sg, i) => (
                   <p key={i} className="mt-1 text-sm leading-relaxed" lang={paper.course}>{sg.speaker ? `${sg.speaker}: ` : ""}{sg.text}</p>
                 ))}
@@ -906,7 +926,7 @@ function Result({
         </div>
       ))}
 
-      <Link href="/mock-exams" className="btn btn-primary mt-2 block w-full py-3 text-center text-sm">Listeye dön</Link>
+      <Link href="/mock-exams" className="btn btn-primary mt-2 block w-full py-3 text-center text-sm">{t("mockexam.back_to_list")}</Link>
     </section>
   );
 }

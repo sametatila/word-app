@@ -14,6 +14,8 @@ import { findPart, isOpenTask, scorePart } from "@/lib/mock-exams/scoring";
 import { mockFeedback } from "@/lib/mock-exams/feedback";
 import { mockStats } from "@/lib/mock-exams/stats";
 import type { AssessLevel } from "@/lib/assess-prompts";
+import { isNativeLang, DEFAULT_NATIVE } from "@/lib/i18n/dict";
+import { ensureProfile } from "@/lib/session";
 
 export const dynamic = "force-dynamic";
 
@@ -317,7 +319,20 @@ async function finish(userId: string, body: Record<string, unknown>) {
   const explains: Record<string, string> = {};
   for (const t of part.tasks) for (const it of t.items) explains[it.id] = it.explain;
 
-  const ai = await mockFeedback(score, explains, paper.course, (r) => recordAiUsage(userId, { kind: "assess", ...r }));
+  /*
+    Geri bildirim doğrudan ekrana çıkıyor, o yüzden kullanıcının dilinde
+    üretiliyor. Dil ÇEREZDEN değil profilden: bu ucu mobil de çağırıyor ve
+    orada web çerezimiz yok.
+  */
+  const profile = await ensureProfile(userId).catch(() => null);
+  const lang = isNativeLang(profile?.nativeLang) ? profile.nativeLang : DEFAULT_NATIVE;
+  const ai = await mockFeedback(
+    score,
+    explains,
+    paper.course,
+    (r) => recordAiUsage(userId, { kind: "assess", ...r }),
+    lang,
+  );
 
   const [saved] = await db
     .update(mockExamAttempts)
