@@ -3,7 +3,7 @@ import { db } from "@/lib/db";
 import { activityEvents, profiles } from "@/lib/db/schema";
 import { track } from "@/lib/events";
 import { serverToday } from "./dates";
-import { notify } from "./notify";
+import { notifyMany } from "./notify";
 import { reactionSummaries } from "./reactions";
 import { friendIds, publicUsers } from "./stats";
 import { STREAK_MILESTONES, type ActivityType, type FeedItem } from "./types";
@@ -31,9 +31,8 @@ export async function emitActivity(userId: string, type: ActivityType, payload: 
   const [row] = await db.insert(activityEvents).values({ userId, type, payload }).returning({ id: activityEvents.id });
   if (FANOUT.includes(type)) {
     const friends = (await friendIds(userId)).slice(0, FANOUT_CAP);
-    for (const f of friends) {
-      await notify(f, { type: "friend_milestone", actorId: userId, refType: "event", refId: row.id });
-    }
+    // Tek toplu ekleme: yüz arkadaşı olan biri için yüz ayrı INSERT atılıyordu.
+    await notifyMany(friends, { type: "friend_milestone", actorId: userId, refType: "event", refId: row.id });
   }
   return row.id;
 }

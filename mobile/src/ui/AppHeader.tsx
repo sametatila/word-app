@@ -37,7 +37,8 @@ export function AppHeader({ title, subtitle }: { title: string; subtitle?: strin
             <Text variant="bodyStrong" color={colors.streak}>{streak}</Text>
           </PressableScale>
         )}
-        {/* Sosyal gelen kutusu: istek, tepki, dürtme. Mobilde uzak push yok; rozet buradan. */}
+        {/* Sosyal gelen kutusu: istek, tepki, dürtme. Uzak bildirim artık var (FCM)
+            ama izin reddedilebilir ve jeton ölebilir; rozet tek güvenilir sayaç. */}
         <InboxBell />
         <PressableScale onPress={() => nav.navigate("Profile")} accessibilityLabel={t("appheader.profile")} style={softShadow(colors.primary, 6)}>
           <Avatar size={44} />

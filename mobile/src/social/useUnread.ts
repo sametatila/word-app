@@ -4,7 +4,7 @@ import { social } from "../api/social";
 import { useAuth } from "../lib/AuthContext";
 
 /**
- * Okunmamış bildirim sayısı — mobilde uzak push olmadığı için gelen kutusu
+ * Okunmamış bildirim sayısı — push izni reddedilmiş olabileceği için gelen kutusu
  * dakikada bir ve uygulama öne gelince çekilir. Rozet kişiye özel sayıdır.
  */
 let listeners = new Set<(n: number) => void>();

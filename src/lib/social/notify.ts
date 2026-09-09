@@ -1,4 +1,4 @@
-import { and, desc, eq, inArray, lt } from "drizzle-orm";
+import { and, desc, eq, inArray, lt, sql } from "drizzle-orm";
 import { db } from "@/lib/db";
 import { activityEvents, eventReactions, friendQuests, nudges, socialNotifications } from "@/lib/db/schema";
 import { sendToUser, type PushPayload } from "@/lib/push";
@@ -18,8 +18,9 @@ import { translate, isNativeLang, DEFAULT_NATIVE, type NativeLang } from "@/lib/
  * ve gelen kutusunda durur. Yoksa on arkadaşı olan kişiye günde on bildirim
  * düşerdi ve hepsini kapatırdı; push'un değeri azlığındadır.
  *
- * Mobilde uzak push yok: gelen kutusu uygulama açılınca çekilir, bu yüzden
- * satır her koşulda yazılır, push ise "varsa" gider.
+ * Push iki kanaldan gidiyor: tarayıcıda Web Push, uygulamada FCM (bkz.
+ * lib/fcm.ts). İkisi de olmayabilir — izin reddedilir, jeton ölür, anahtar
+ * tanımsızdır. Bu yüzden satır HER KOŞULDA yazılır, push ise "varsa" gider.
  */
 export type NotifyInput = {
   type: NotificationType;
@@ -78,13 +79,35 @@ export async function notify(
   return row?.id ?? 0;
 }
 
+/**
+ * Aynı bildirimi çok kişiye — TEK ekleme.
+ *
+ * Arkadaşın kilometre taşı bütün arkadaşlarına düşüyor ve bu satırlar push
+ * göndermiyor (bkz. yukarıdaki gerekçe). Yüz arkadaşı olan biri seri eşiğini
+ * geçtiğinde yüz ayrı INSERT atılıyordu; hepsi aynı tabloya, aynı anda.
+ */
+export async function notifyMany(userIds: string[], n: NotifyInput): Promise<void> {
+  if (!userIds.length) return;
+  await db.insert(socialNotifications).values(
+    userIds.map((userId) => ({
+      userId,
+      type: n.type,
+      actorId: n.actorId ?? null,
+      refType: n.refType ?? null,
+      refId: n.refId ?? null,
+    })),
+  );
+}
+
 export async function unreadCount(userId: string): Promise<number> {
-  const rows = await db
-    .select({ id: socialNotifications.id })
+  // Sayıyı veritabanı sayıyor. Önce en çok yüz satırın kimliği çekilip
+  // uzunluğu ölçülüyordu: hem yüzün üstünde yanlış, hem de bir sayaç için
+  // gereksiz veri taşıyordu.
+  const [row] = await db
+    .select({ n: sql<number>`count(*)::int` })
     .from(socialNotifications)
-    .where(and(eq(socialNotifications.userId, userId), eq(socialNotifications.read, false)))
-    .limit(100);
-  return rows.length;
+    .where(and(eq(socialNotifications.userId, userId), eq(socialNotifications.read, false)));
+  return Number(row?.n ?? 0);
 }
 
 export async function markRead(userId: string, ids: number[] | "all"): Promise<void> {

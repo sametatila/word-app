@@ -69,3 +69,27 @@ export function weeklyXpFor(ids: string[], today: string): Promise<Map<string, n
   const start = weekStart(today);
   return xpBetween(ids, start, shiftDay(start, 7));
 }
+
+/**
+ * Birden çok haftanın XP'si TEK sorguda — anahtar `userId|haftaBaşı`.
+ *
+ * Ortak görev listesi bunu satır satır soruyordu: on iki görevlik bir sayfa
+ * on iki ayrı veritabanı gidişi demekti ve hepsi aynı tabloyu okuyordu.
+ * Postgres'in `date_trunc('week')` sonucu pazartesi — weekStart() ile aynı
+ * kural, yani gruplama bizim hafta tanımımızla birebir.
+ */
+export async function xpByWeek(ids: string[], start: string, end: string): Promise<Map<string, number>> {
+  const map = new Map<string, number>();
+  if (!ids.length) return map;
+  const rows = await db
+    .select({
+      userId: dailyStats.userId,
+      week: sql<string>`to_char(date_trunc('week', ${dailyStats.day}), 'YYYY-MM-DD')`,
+      xp: sql<number>`coalesce(sum(${dailyStats.xp}), 0)::int`,
+    })
+    .from(dailyStats)
+    .where(and(inArray(dailyStats.userId, ids), gte(dailyStats.day, start), lt(dailyStats.day, end)))
+    .groupBy(dailyStats.userId, sql`date_trunc('week', ${dailyStats.day})`);
+  for (const r of rows) map.set(`${r.userId}|${r.week}`, Number(r.xp));
+  return map;
+}

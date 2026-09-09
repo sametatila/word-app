@@ -8,7 +8,7 @@ import { daysLeftInWeek, serverToday, shiftDay, weekStart } from "./dates";
 import { SocialError } from "./errors";
 import { notify } from "./notify";
 import { limited } from "./ratelimit";
-import { friendIds, publicUsers, xpBetween } from "./stats";
+import { friendIds, publicUsers, xpByWeek, xpBetween } from "./stats";
 import type { QuestView } from "./types";
 
 /**
@@ -155,14 +155,19 @@ export async function questViews(me: string, today: string): Promise<QuestView[]
     .limit(12);
   if (!rows.length) return [];
   const partnerIds = rows.map((r) => (r.userAId === me ? r.userBId : r.userAId));
-  const users = await publicUsers([...new Set(partnerIds)]);
+  // XP TEK sorguda: eskiden görev başına bir gidiş vardı ve on iki görevlik
+  // bir sayfa aynı tabloyu on iki kez okuyordu.
+  const weeks = rows.map((r) => String(r.weekStart)).sort();
+  const [users, xp] = await Promise.all([
+    publicUsers([...new Set(partnerIds)]),
+    xpByWeek([me, ...new Set(partnerIds)], weeks[0], shiftDay(weeks[weeks.length - 1], 7)),
+  ]);
   const views: QuestView[] = [];
   for (const r of rows) {
     const partner = r.userAId === me ? r.userBId : r.userAId;
     const ws = String(r.weekStart);
-    const xp = await xpBetween([me, partner], ws, shiftDay(ws, 7));
-    const myXp = xp.get(me) ?? 0;
-    const partnerXp = xp.get(partner) ?? 0;
+    const myXp = xp.get(`${me}|${ws}`) ?? 0;
+    const partnerXp = xp.get(`${partner}|${ws}`) ?? 0;
     const total = myXp + partnerXp;
     const current = ws === weekStart(today);
     views.push({

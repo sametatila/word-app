@@ -1060,8 +1060,9 @@ export const friendQuests = pgTable(
 
 /**
  * Bildirim merkezi: sosyal olaylar uygulama içinde bir gelen kutusuna düşer;
- * web push bunun aynasıdır. Mobilde uzak push olmadığı için gelen kutusu tek
- * güvenilir teslim yoludur (uygulama açılınca çekilir).
+ * push bunun aynasıdır (tarayıcıda Web Push, uygulamada FCM). Gelen kutusu
+ * yine de TEK güvenilir teslim yolu: push izni reddedilebilir, jeton ölebilir,
+ * anahtarlar tanımsız olabilir — satır her koşulda yazılır.
  */
 export const socialNotifications = pgTable(
   "social_notifications",
