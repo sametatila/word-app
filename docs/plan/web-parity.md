@@ -526,8 +526,10 @@ Bu turda iki denetim eklendi ve ikisi de ilk koşularında gerçek hata buldu:
 - `npm run typecheck:scripts`: `scripts/` klasörü `tsconfig.json`da `exclude`
   içindeydi ve e2e aylardır 9. testte çöküyordu (bkz. §8).
 
-Üç dilde tam sayfa taraması (`scratchpad/sweep3.mjs`) ekranda ham anahtar
-kalmadığını doğruluyor.
+Üç dilde 24 sayfalık tam tarama: ekranda ham anahtar YOK, sayfa hatası YOK,
+hepsi üç dilde çiziliyor. (Tarama `networkidle` beklerken `/notifications`
+zaman aşımına uğruyor; sebep Next'in HMR websocket'i — geliştirme sunucusuna
+ait, ürüne değil. Sayfa `domcontentloaded` ile üç dilde de doğrulandı.)
 
 ### Bilerek farklı kalanlar
 
