@@ -13,14 +13,20 @@ import { readFileSync, readdirSync } from "node:fs";
 
 const DIR = new URL("../../../src/lib/lessons/content/", import.meta.url).pathname;
 
-export function extractVocab() {
+/**
+ * `block` ya `vocab` ya `patterns`: ikisi de `{ de, tr }` öğesi taşıyor ve
+ * ikisi de derse konum sırasıyla bağlanıyor. Ayrı iki çıkarıcı yazmak iki
+ * kopyanın ayrışması demekti (aynı gerekçe `data/en-de/check.mjs`in
+ * `contains`i paylaşmasında da yazılı).
+ */
+export function extractVocab(block = "vocab") {
   const rows = [];
   for (const f of readdirSync(DIR).filter((x) => x.endsWith(".ts")).sort()) {
     const src = readFileSync(`${DIR}${f}`, "utf8");
-    // Dersin kimliği ve sözlükçe bloklarını TEK taramada, konum sırasıyla al:
-    // ayrı ayrı toplanırsa hangi bloğun hangi derse ait olduğu kaybolur.
+    // Dersin kimliği ve blokları TEK taramada, konum sırasıyla al: ayrı ayrı
+    // toplanırsa hangi bloğun hangi derse ait olduğu kaybolur.
     let lesson = null;
-    const re = /^\s*id:\s*"([^"]+)"|vocab:\s*\[([\s\S]*?)\n\s*\]/gm;
+    const re = new RegExp(`^\\s*id:\\s*"([^"]+)"|${block}:\\s*\\[([\\s\\S]*?)\\n\\s*\\]`, "gm");
     for (const m of src.matchAll(re)) {
       if (m[1] !== undefined) {
         lesson = m[1];
@@ -34,7 +40,7 @@ export function extractVocab() {
 }
 
 if (import.meta.url === `file://${process.argv[1]}`) {
-  const rows = extractVocab();
+  const rows = extractVocab(process.argv[2] || "vocab");
   const noLesson = rows.filter((r) => !r.lesson).length;
   console.log(`${rows.length} sözlükçe girdisi · ${new Set(rows.map((r) => r.lesson)).size} ders`);
   if (noLesson) console.log(`UYARI: ${noLesson} girdi bir derse bağlanamadı`);

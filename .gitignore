@@ -21,6 +21,7 @@ dist/
 !data/zurich/beispiel/out/
 !data/en-de/out/
 !data/lessons/vocab/out/
+!data/lessons/patterns/out/
 # Paketler ve triyaj listesi ÜRETİLİYOR (`make-packets.mjs`, `triage.mjs`) ve
 # kaynaktan her an yeniden kurulabiliyor; repoda durmaları yalnız gürültü.
 # `fix/` ise elle yazılan cümleler — o commit'lenir, `out/` da ondan kuruluyor.
@@ -29,6 +30,7 @@ data/zurich/beispiel/todo.json
 data/en-de/in/
 data/lessons/vocab/in/
 data/lessons/vocab/derived.json
+data/lessons/patterns/in/
 *.tsbuildinfo
 next-env.d.ts
 
