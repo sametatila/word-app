@@ -1783,8 +1783,35 @@ kırmızıya çevirir - içerik üreten paralel oturumlar dâhil. Sıra tersi ol
 kendi sözcüğü), sonra adım eklenir. Bu bir ürün/içerik kararı ve içeriği yazan
 tarafın kararı.
 
-Öneri, sırasıyla: (a) `npm run test:content -- lessons` ile üç etiketin
-hangi derslerden geldiğini çıkar, (b) "çok anlamlı vocab tr" 81'den 188'e
-neden çıktı - yeni derslerin sözlükçesi mi yoksa kuralın kendisi mi
-sıkılaştı, (c) karar verilince `checks.yml`e "İçerik doğrulaması" adımı ekle;
-o adım eklenmeden SPEC'in birinci cümlesi yalnız bir niyet.
+#### Sebep bulundu: taban İNGİLİZCE KURSTAN ÖNCE donmuş
+
+Üç etiketin hepsi ders ders çıkarıldı ve kurs eksenine göre ayrıldı. Sonuç
+tesadüf olamayacak kadar düzenli:
+
+    etiket                          taban   bugün   Almanca   İngilizce
+    çok anlamlı vocab tr               81     188        81         107
+    lecture N adım (N–N)               25      31        25           6
+    havuz dışı kelime N/N               4       5         4           1
+
+ÜÇÜNDE DE Almanca sayı tabana BİREBİR eşit ve aşımın tamamı İngilizce
+kurstan geliyor. Yani Almanca içerik hiç gerilemedi; taban İngilizce dersler
+depoya girmeden önce donmuş ve o günden beri güncellenmemiş.
+
+(Dördüncü ders etiketi `tekrar adımı payı %N` bütçe içinde: 44, tabanı da 44,
+hepsi Almanca. Beceri etiketlerinin hiçbiri aşılmamış.)
+
+Bu, "içerik özensizleşti" değil "kapı bir kursu hiç görmedi" demek ve kararı
+kolaylaştırıyor:
+
+  (a) Almanca tarafta düzeltilecek bir şey YOK - sayı tabanla aynı.
+  (b) İngilizce aşımı (107 + 6 + 1) ya `--baseline` ile BİLİNÇLİ kabul edilir
+      (SPEC'in kendi mekanizması) ya da İngilizce sözlükçe yeniden yazılır.
+      "Çok anlamlı tr" demek Türkçe karşılıkta virgül var demek, yani
+      "kapsam, ağırlık" gibi iki anlamlı gloss; 107 tanesi C1/B2 soyut
+      kelimeleri ve orada tek karşılık bulmak gerçekten zor.
+  (c) Karar verilince `checks.yml`e "İçerik doğrulaması" adımı eklenir. O adım
+      eklenmeden SPEC'in birinci cümlesi yalnız bir niyet.
+
+`--baseline` BU OTURUMDA ÇALIŞTIRILMADI: SPEC onu "bilinçli kabul" diye
+tanımlıyor, yani içeriği yazan tarafın kararı, ve başka bir oturumun taban
+dosyasını sessizce yeniden yazmak o kararı gasp etmek olurdu.
