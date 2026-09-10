@@ -151,6 +151,25 @@ if (existsSync(proseDir))
   for (const f of readdirSync(proseDir).filter((x) => x.endsWith(".json")).sort())
     for (const r of JSON.parse(readFileSync(proseDir + f, "utf8"))) prose[r.tr] = r.en;
 
+/*
+  GÖREV METNİ — yazma görevleri, söyleyiş drilleri, monolog ve dil bilgisi
+  anlatımı (`data/skills/task/out/`).
+
+  Anahtar `tür + AYRAÇ + tr`, düz `tr` DEĞİL. Korpusta bir çakışma var ve
+  düz anahtar onu sessizce yiyordu:
+
+    explanation.examples.tr  "Saat altıda kalkıyorum."  Ich stehe um sechs Uhr auf.
+    build.tr                 "Saat altıda kalkıyorum."  Ich stehe um sechs auf
+
+  Aynı Türkçe, farklı Almanca, farklı İngilizce. Anlatım hattındaki
+  `lectureSplit` ile aynı gerekçe.
+*/
+const task = {};
+const taskDir = `${DIR}../skills/task/out/`;
+if (existsSync(taskDir))
+  for (const f of readdirSync(taskDir).filter((x) => x.endsWith(".json")).sort())
+    for (const r of JSON.parse(readFileSync(taskDir + f, "utf8"))) task[r.kind + SEP + r.tr] = r.en;
+
 const swap = {};
 const swapEn = {};
 const swapFile = `${DIR}swap/en.json`;
@@ -160,7 +179,7 @@ if (existsSync(swapFile))
     for (const [from, to] of r.en) swapEn[r.lesson + SEP + from] = to;
   }
 
-const data = { lecture, lectureSplit, frames, ordinals, notes, vocab, patterns, meta, roleplay, cando, script, exam, prose, swap, swapEn };
+const data = { lecture, lectureSplit, frames, ordinals, notes, vocab, patterns, meta, roleplay, cando, script, exam, prose, task, swap, swapEn };
 
 mkdirSync(OUT, { recursive: true });
 writeFileSync(`${OUT}native-en.json`, `${JSON.stringify(data)}\n`);
@@ -170,6 +189,6 @@ console.log(
   "native-en.json yazıldı\n" +
     `  anlatım ${n(lecture)} (+${n(lectureSplit)} bölünmüş) · çerçeve ${n(frames)} · sıra ${n(ordinals)} · not ${n(notes)}\n` +
     `  sözlükçe ${n(vocab)} · kalıp ${n(patterns)} · ders ${n(meta)} · rol yapma ${n(roleplay)} · can-do ${n(cando)} · senaryo ${n(script)} · sınav ${n(exam)}\n` +
-    `  beceri düz metni ${n(prose)}\n` +
+    `  beceri düz metni ${n(prose)} · görev metni ${n(task)}\n` +
     `  takas ${n(swap)} Almanca + ${n(swapEn)} İngilizce`,
 );

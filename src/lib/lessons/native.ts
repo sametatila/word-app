@@ -97,6 +97,22 @@ export type NativeDict = {
    * taraf ayrışamıyor.
    */
   prose: Record<string, string>;
+  /**
+   * BECERİ EGZERSİZLERİNİN GÖREV METNİ — yazma görevleri, söyleyiş
+   * drilleri, monolog ve dil bilgisi anlatımı (`data/skills/task/out/`).
+   *
+   * Anahtar `tür + AYRAÇ + tr`, düz `tr` değil. Bir dize iki ayrı alanda
+   * geçip FARKLI karşılık isteyebiliyor ve korpusta tam da bu bulundu:
+   *
+   *   explanation.examples.tr  "Saat altıda kalkıyorum."  Ich stehe um sechs Uhr auf.
+   *   build.tr                 "Saat altıda kalkıyorum."  Ich stehe um sechs auf
+   *
+   * İkisi aynı Türkçeyi kullanıyor ama Almancaları farklı ("um sechs Uhr"
+   * ile "um sechs"), o yüzden İngilizceleri de farklı. Düz anahtar birini
+   * ötekinin üstüne yazardı — anlatım hattındaki `lectureSplit` ile aynı
+   * gerekçe, aynı çözüm.
+   */
+  task: Record<string, string>;
 };
 
 /*
@@ -448,11 +464,75 @@ export function resolveExercise<T extends ExerciseShape>(dict: NativeDict, ex: T
      için TypeScript "ortak alanı yok" diyip `SkillExercise`i şekle
      uydurmuyordu. Alanı şekilden çıkarıp burada okumak, şekli de dürüst
      tutuyor: çözücünün SÖZ VERDİĞİ alanlar `intro`, `questions` ve `gloss`. */
-  const tasks = (ex as { tasks?: { phrases?: GlossShape[] }[] }).tasks;
+  const tasks = (ex as { tasks?: TaskShape[] }).tasks;
+
+  /**
+   * Görev nesnesinin çevrilen alanları. TÜR AYRIMI `kind` alanından
+   * geliyor; söyleyiş drilinin `kind`ı YOK (konuşma egzersizinin görevleri
+   * tek biçimde) ve o yüzden `drill` sayılıyor — paketleyici de aynı
+   * ayrımı yapıyor.
+   */
+  const task = (x: TaskShape): TaskShape => {
+    const kind = typeof x.kind === "string" ? x.kind : "drill";
+    const out: TaskShape = { ...x };
+    if (x.phrases) out.phrases = x.phrases.map(fold);
+    if (kind === "drill") {
+      out.tr = k("drill.tr", x.tr);
+      out.hint = k("drill.hint", x.hint);
+      if (x.confusions) out.confusions = x.confusions.map((c) => ({ ...c, fix: k("drill.fix", c.fix) }));
+      return out;
+    }
+    if (kind === "build") {
+      out.tr = k("build.tr", x.tr);
+      out.hint = k("build.hint", x.hint);
+      return out;
+    }
+    if (kind === "form") {
+      out.prompt = k("form.prompt", x.prompt);
+      out.facts = k("form.facts", x.facts);
+      return out;
+    }
+    if (kind === "rewrite") {
+      out.prompt = k("rewrite.prompt", x.prompt);
+      out.why = k("rewrite.why", x.why);
+      return out;
+    }
+    if (kind === "reply" || kind === "free") {
+      out.prompt = k(`${kind}.prompt`, x.prompt);
+      if (x.checklist) out.checklist = x.checklist.map((c) => k(`${kind}.checklist`, c) ?? c);
+      return out;
+    }
+    /* `sentence` ve `summary` türlerinin Türkçe alanı çıkarıcıda YOK:
+       `sentence.prompt` isteğe bağlı ve korpusta hiç dolmamış, `summary`
+       ise yalnız Almanca metin taşıyor. Sessizce geçiyorlar. */
+    return out;
+  };
+
+  /* GÖREV METNİ: anahtar `tür + AYRAÇ + tr`. Alanın hangi türe ait olduğunu
+     çağıran biliyor, sözlük bilmiyor — o yüzden tür burada veriliyor. */
+  const k = (kind: string, s: string | undefined): string | undefined => {
+    if (typeof s !== "string" || !s.trim()) return s;
+    const en = dict.task[kind + SEP + s];
+    if (en === undefined) failed = true;
+    return en ?? s;
+  };
 
   const fold = <G extends GlossShape>(g: G): G => {
     if (!g.en?.trim()) failed = true;
     return { ...g, tr: g.en ?? g.tr, en: undefined, ...(g.note ? { note: t(g.note) } : {}) };
+  };
+
+  /* Dil bilgisi anlatımı ve monolog da yapısal tipin dışında okunuyor —
+     `tasks` ile aynı gerekçe: ikisi de yalnız bir egzersiz türünde var. */
+  const wide = ex as unknown as {
+    focus?: string;
+    explanation?: { heading?: string; tr?: string; examples?: { tr?: string; note?: string }[] }[];
+    monologue?: {
+      promptTr?: string;
+      rubricHint?: string;
+      bulletsTr?: string[];
+      targets?: { tr?: string }[];
+    };
   };
 
   const out = {
@@ -460,7 +540,46 @@ export function resolveExercise<T extends ExerciseShape>(dict: NativeDict, ex: T
     intro: t(ex.intro),
     ...(ex.questions ? { questions: ex.questions.map((q) => ({ ...q, explain: t(q.explain) })) } : {}),
     ...(ex.gloss ? { gloss: ex.gloss.map(fold) } : {}),
-    ...(tasks ? { tasks: tasks.map((k) => (k.phrases ? { ...k, phrases: k.phrases.map(fold) } : k)) } : {}),
+    ...(wide.focus ? { focus: k("focus", wide.focus) } : {}),
+    ...(wide.explanation
+      ? {
+          explanation: wide.explanation.map((b) => ({
+            ...b,
+            heading: k("explanation.heading", b.heading),
+            tr: k("explanation.tr", b.tr),
+            ...(b.examples
+              ? {
+                  examples: b.examples.map((x) => ({
+                    ...x,
+                    tr: k("explanation.examples.tr", x.tr),
+                    note: k("explanation.examples.note", x.note),
+                  })),
+                }
+              : {}),
+          })),
+        }
+      : {}),
+    ...(wide.monologue
+      ? {
+          monologue: {
+            ...wide.monologue,
+            promptTr: k("monologue.promptTr", wide.monologue.promptTr),
+            rubricHint: k("monologue.rubricHint", wide.monologue.rubricHint),
+            ...(wide.monologue.bulletsTr
+              ? { bulletsTr: wide.monologue.bulletsTr.map((b) => k("monologue.bulletsTr", b)) }
+              : {}),
+            ...(wide.monologue.targets
+              ? {
+                  targets: wide.monologue.targets.map((x) => ({
+                    ...x,
+                    tr: k("monologue.targets.tr", x.tr),
+                  })),
+                }
+              : {}),
+          },
+        }
+      : {}),
+    ...(tasks ? { tasks: tasks.map(task) } : {}),
   };
   return failed ? null : (out as T);
 }
@@ -478,3 +597,16 @@ export type ExerciseShape = {
 
 /** `Gloss`un katlamayı ilgilendiren üç alanı. */
 export type GlossShape = { tr: string; en?: string; note?: string };
+
+/** `resolveExercise`in bir görev nesnesinde dokunduğu alanlar. */
+export type TaskShape = {
+  kind?: string;
+  tr?: string;
+  hint?: string;
+  prompt?: string;
+  facts?: string;
+  why?: string;
+  checklist?: string[];
+  phrases?: GlossShape[];
+  confusions?: { fix?: string }[];
+};

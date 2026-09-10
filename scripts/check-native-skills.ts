@@ -19,6 +19,7 @@
 import { readFileSync } from "node:fs";
 import { BUNDLED_EXERCISES } from "@/lib/skills";
 import { resolveExercise, isProseQuote, type NativeDict } from "@/lib/lessons/native";
+import { extractTasks } from "../data/skills/task/make.js";
 
 const dict = JSON.parse(
   readFileSync("src/lib/lessons/generated/native-en.json", "utf8"),
@@ -43,6 +44,12 @@ const list = (BUNDLED_EXERCISES as unknown as Ex[]).filter((e) => (e.course ?? "
 let strings = 0;
 let quotes = 0;
 let glosses = 0;
+/* Görev metni AYRI sayılıyor: anahtarı `tür + AYRAÇ + tr` ve çıkarıcı zaten
+   türe göre tekilleştiriyor, o yüzden ölçüm de oradan alınıyor. Kaynağı
+   tarayıp aynı ayrımı burada tekrar kurmak ikinci bir doğruluk kaynağı
+   açardı — hattın kendi kuralı bunu yasaklıyor. */
+const taskRows = extractTasks();
+const taskMissing = taskRows.filter((r) => dict.task[`${r.kind}\u0000${r.tr}`] === undefined);
 const misses = new Map<string, { ex: string; n: number }>();
 /* Sözlükçe KATLANIYOR, çevrilmiyor: `tr` yerine `en` konuyor. Karşılığı
    olmayan bir madde egzersizi tümden reddettiriyor ve bu "reddedildi"
@@ -77,9 +84,16 @@ for (const e of list) {
 }
 
 console.log(
-  `egzersiz ${list.length} · çevrilecek dize ${strings} · alıntı (geçiş) ${quotes} · ` +
-    `katlanan sözlükçe ${glosses} · çözülen egzersiz ${list.length - bad.length}`,
+  `egzersiz ${list.length} · düz metin ${strings} · alıntı (geçiş) ${quotes} · ` +
+    `görev metni ${taskRows.length} · katlanan sözlükçe ${glosses} · ` +
+    `çözülen egzersiz ${list.length - bad.length}`,
 );
+
+if (taskMissing.length) {
+  console.log(`\nHATA: ${taskMissing.length} görev metni dizesi sözlükte yok\n`);
+  for (const r of taskMissing.slice(0, 25)) console.log(`  [${r.kind}] ${JSON.stringify(r.tr.slice(0, 80))}`);
+  process.exit(1);
+}
 
 if (noEn.size) {
   console.log(`\nHATA: ${noEn.size} sözlükçe maddesinin \`en\` karşılığı yok\n`);
