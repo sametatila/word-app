@@ -115,12 +115,17 @@ jobs:
       # (`derived.json` .gitignore'daydı, sunucu derlemesi sözlüğü eksik
       # kurdu, İngilizce kurs sessizce Türkçe açıldı).
       #
-      # `check:mock-prose` beşinci kapı ve öteki dörtten farklı bir şey
-      # ölçüyor: 60 Almanca deneme kâğıdının Türkçe yazılmış her dizesini —
-      # yönerge, ölçüt, dinleme durumu ve açıklama, 6.627 dize. Hat
-      # 6627/6627'ye ulaşınca eklendi; o güne kadar BİLEREK dışarıda tutuldu,
-      # çünkü kapsam kuralı yarım bir hatta her koşuda kırmızı döner ve
-      # alışılan kırmızı kapı olmaktan çıkar.
+      # `check:mock-prose` YAZILANI ölçüyor: 60 Almanca deneme kâğıdının
+      # Türkçe her dizesini — yönerge, ölçüt, dinleme durumu ve açıklama,
+      # 6.627 dize. Hat 6627/6627'ye ulaşınca eklendi; o güne kadar BİLEREK
+      # dışarıda tutuldu, çünkü kapsam kuralı yarım bir hatta her koşuda
+      # kırmızı döner ve alışılan kırmızı kapı olmaktan çıkar.
+      #
+      # `check:mock-native` onun ÇİFTİ ve tam da bu ayrımı savunuyor: 6.627
+      # dize yazılmıştı ama `apply.mjs` dizini okumadığı için hiçbiri
+      # uygulamaya ulaşmıyordu ve YAZILANI ölçen kapı bunu göremiyordu.
+      # Yazmak ile bağlamak ayrı iki iş; ikisini tek kapıya sormak birini
+      # sessizce cevapsız bırakıyor.
       - name: Ana dil çözücüsü
         run: |
           npm run check:lessons-native
@@ -128,6 +133,7 @@ jobs:
           npm run check:skills-native
           npm run check:skills-task
           npm run check:mock-prose
+          npm run check:mock-native
       # Premium kurallarının birim testi — veritabanı istemiyor. Paket ilerlemesi,
       # yapılandırma doğrulaması ve paywall metinlerinin üç sözlükte de bulunması.
       # Bu sınıfın tamamı ancak gerçek para akarken fark edilirdi.

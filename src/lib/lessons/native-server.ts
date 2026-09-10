@@ -4,9 +4,12 @@ import {
   resolveLesson,
   resolveExam,
   resolveExercise,
+  resolveMockPaper,
+  mockKey,
   type NativeDict,
   type ExamShape,
   type ExerciseShape,
+  type MockShape,
 } from "./native";
 import { DEFAULT_NATIVE, type NativeLang } from "@/lib/courses";
 
@@ -173,4 +176,54 @@ export async function localiseExercise<T extends ExerciseShape>(
     return ex;
   }
   return out;
+}
+
+/**
+ * Deneme kâğıdını ana dile çevirir; çeviremezse kâğıdı OLDUĞU GİBİ döner.
+ *
+ * Kardeşleriyle aynı geri düşüş ve aynı gerekçe: yarım değil, tümden Türkçe.
+ * Kâğıt Almancayı ölçmeye devam ediyor — çevrilen yalnız yönerge, durum
+ * tarifi, görev metni, değerlendirme ölçütleri ve cevaptan sonraki gerekçe.
+ * Metinlerin gövdesi, madde kökleri, şıklar ve `partner` replikleri sınav
+ * malzemesi ve olduğu gibi kalıyor.
+ *
+ * Çağıran: `/mock-exams/[paper]/[skill]`. Liste sayfası bunu KULLANMIYOR
+ * (bkz. `nativeMockText`): orada tek bir alan var ve hep-ya-hiç kuralı bir
+ * kâğıdı listeden düşürürdü.
+ */
+export async function localiseMockPaper<T extends MockShape>(
+  paper: T,
+  lang: NativeLang | null | undefined,
+): Promise<T> {
+  if (!lang || lang === DEFAULT_NATIVE || lang !== "en") return paper;
+  const dict = await nativeDict();
+  if (!dict) return paper;
+  const out = resolveMockPaper(dict, paper);
+  if (!out) {
+    // 60 Almanca kâğıdın hepsi çözülüyor (kapı: check:mock-native).
+    // Buraya düşen kâğıt başka bir kurstan geliyor demektir.
+    console.warn("[native] deneme kâğıdı çevrilemedi, Türkçe kalıyor");
+    return paper;
+  }
+  return out;
+}
+
+/**
+ * Kâğıdın TEK bir Türkçe alanını çeviren eşleyici — liste satırları için.
+ *
+ * `nativeExamText` ile aynı düşünce ve aynı bilinçli gevşeklik: burada
+ * hep-ya-hiç YOK. Satırın kimliği ALMANCA tema (`theme`) ve o yanında zaten
+ * duruyor; karşılığı bulunamayan bir alt başlık lekedir, satırı düşürmek
+ * ise o kâğıdı listeden gizler.
+ *
+ * Anahtar bileşik olduğu için TÜR de isteniyor — çağıran hangi alanı
+ * çevirdiğini biliyor, sözlük bilmiyor.
+ */
+export async function nativeMockText(
+  lang: NativeLang | null | undefined,
+): Promise<(kind: string, tr: string) => string> {
+  if (!lang || lang === DEFAULT_NATIVE || lang !== "en") return (_kind, tr) => tr;
+  const dict = await nativeDict();
+  if (!dict) return (_kind, tr) => tr;
+  return (kind, tr) => dict.mock[mockKey(kind, tr)] ?? tr;
 }

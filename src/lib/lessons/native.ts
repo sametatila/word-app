@@ -742,3 +742,125 @@ export type TaskShape = {
   phrases?: GlossShape[];
   confusions?: { fix?: string }[];
 };
+
+/**
+ * DENEME KÂĞIDI — Almanca kâğıdın Türkçe yüzünü İngilizceye çözer.
+ *
+ * Hep-ya-hiç, ötekiler gibi: bir dize sözlükte yoksa kâğıt `null` döner.
+ * Yarım çevrilmiş bir sınav kâğıdı, çevrilmemişinden kötüdür — öğrenci
+ * yönergeyi anlar, gerekçeyi anlamaz ve hangi yarısına güveneceğini
+ * bilemez.
+ *
+ * ALMANCA TARAF HİÇ DEĞİŞMİYOR ve bu kâğıdın kendisidir: `prompt`, `genre`,
+ * metinlerin gövdesi, maddelerin kökü, şıklar, `rubric.sample`, `points[].de`
+ * ve konuşmadaki `partner` replikleri (`de`) sınav malzemesi. Çevrilirse
+ * sınav ölçtüğü şeyi ölçmez.
+ *
+ * `MOCK_LABELS` de burada yok: "Richtig / Falsch" düğmeleri kâğıdın dilinden
+ * gelir, kullanıcının anadilinden değil.
+ */
+/**
+ * Deneme kâğıdı sözlüğünün anahtarı — `tür + AYRAÇ + tr`.
+ *
+ * Ayraç TEK YERDE duruyor ve dışarı bu işlevle çıkıyor. Üç yer aynı
+ * anahtarı kuruyor (`apply.mjs`, çözücü, liste sayfasının eşleyicisi) ve
+ * biri ayrışırsa sözlük dolu olduğu hâlde hiçbir şey bulunmaz — sessiz,
+ * çünkü eksik anahtar "karşılığı yok" ile aynı görünür.
+ */
+export const mockKey = (kind: string, tr: string): string => kind + SEP + tr;
+
+export function resolveMockPaper<T extends MockShape>(dict: NativeDict, paper: T): T | null {
+  let failed = false;
+  /* Anahtar `tür + AYRAÇ + tr` ve türü ÇAĞIRAN biliyor — çıkarıcıdaki
+     `add()` ile birebir aynı tür adları kullanılmak zorunda, yoksa sözlük
+     dolu olduğu hâlde hiçbir şey bulunmaz. */
+  const t = (kind: string, s: string): string => {
+    const en = dict.mock[mockKey(kind, s)];
+    if (en === undefined) failed = true;
+    return en ?? s;
+  };
+  /* Çıkarıcı BOŞ dizeyi hiç eklemiyor (`str()` süzgeci). Çözücü de aynı
+     yerde susmalı; sussa da olmaz denip `t`ye verilseydi sözlükte
+     bulunmayan boş anahtar her kâğıdı düşürürdü. */
+  const opt = (kind: string, s: string | undefined): string | undefined =>
+    typeof s === "string" && s.trim() ? t(kind, s) : s;
+
+  const out = {
+    ...paper,
+    themeTr: t("themeTr", paper.themeTr),
+    parts: paper.parts.map((part) => ({
+      ...part,
+      instructionTr: opt("instructionTr", part.instructionTr),
+      tasks: part.tasks.map((task) => ({
+        ...task,
+        promptTr: opt("promptTr", task.promptTr),
+        ...(task.texts
+          ? {
+              texts: task.texts.map((x) => ({
+                ...x,
+                ...(x.genreTr !== undefined ? { genreTr: opt("genreTr", x.genreTr) } : {}),
+                ...(x.situation !== undefined ? { situation: opt("situation", x.situation) } : {}),
+              })),
+            }
+          : {}),
+        ...(task.items
+          ? { items: task.items.map((it) => ({ ...it, explain: opt("explain", it.explain) })) }
+          : {}),
+        ...(task.rubric
+          ? {
+              rubric: {
+                ...task.rubric,
+                ...(task.rubric.criteria
+                  ? { criteria: task.rubric.criteria.map((c) => opt("rubric.criteria", c) as string) }
+                  : {}),
+                ...(task.rubric.points
+                  ? {
+                      points: task.rubric.points.map((p) => ({
+                        ...p,
+                        tr: opt("rubric.points.tr", p.tr) as string,
+                      })),
+                    }
+                  : {}),
+              },
+            }
+          : {}),
+        /* KONUŞMA: `partner` repliğinin `tr`si, `you` adımının `hint` ve
+           `expect`i. Üçü ayrı tür çünkü aynı Türkçe cümle bir yerde karşı
+           tarafın sözü, ötekinde öğrenciden beklenen şey. */
+        ...(task.exchange
+          ? {
+              exchange: task.exchange.map((x) =>
+                x.who === "partner"
+                  ? { ...x, ...(x.tr !== undefined ? { tr: opt("exchange.tr", x.tr) } : {}) }
+                  : {
+                      ...x,
+                      ...(x.hint !== undefined ? { hint: opt("exchange.hint", x.hint) } : {}),
+                      ...(x.expect !== undefined ? { expect: opt("exchange.expect", x.expect) } : {}),
+                    },
+              ),
+            }
+          : {}),
+      })),
+    })),
+  };
+  return failed ? null : (out as T);
+}
+
+/**
+ * `resolveMockPaper`in dokunduğu alanlar — `MockPaper`den ALINMIYOR.
+ * `resolveExam`deki gerekçenin aynısı: çözücü tarayıcıda da derleniyor,
+ * sınav tipleri ise sunucu tarafının ağır ağacını çekiyor.
+ */
+export type MockShape = {
+  themeTr: string;
+  parts: {
+    instructionTr: string;
+    tasks: {
+      promptTr: string;
+      texts?: { genreTr?: string; situation?: string }[];
+      items?: { explain: string }[];
+      rubric?: { criteria?: string[]; points?: { tr: string }[] };
+      exchange?: { who: string; tr?: string; hint?: string; expect?: string }[];
+    }[];
+  }[];
+};

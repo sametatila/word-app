@@ -12,6 +12,8 @@ import { mockCourseOf } from "@/lib/courses";
 import { mockAccess } from "@/lib/premium/access";
 import { ChevronRightIcon, LockIcon } from "@/components/icons";
 import { getT, getLang } from "@/lib/i18n/server";
+import { isNativeLang } from "@/lib/i18n/dict";
+import { nativeMockText } from "@/lib/lessons/native-server";
 import { formatPercent } from "@/lib/i18n/dict";
 
 export const generateMetadata = titleMeta("mockexams.title");
@@ -50,6 +52,14 @@ export default async function MockExamsPage({ searchParams }: { searchParams: Pr
 
   const course = mockCourseOf(profile.course);
   const papers = mockPapersFor(level, course);
+
+  /* TEMANIN ana dildeki karşılığı. Burada hep-ya-hiç YOK: satırın kimliği
+     Almanca tema ve o yanında zaten duruyor, karşılığı bulunamayan bir alt
+     başlık lekedir — satırı düşürmek ise o kâğıdı listeden gizler. Kâğıdın
+     tamamı bölüm sayfasında çevriliyor. */
+  const mockText = await nativeMockText(
+    isNativeLang(profile.nativeLang) ? profile.nativeLang : null,
+  );
 
   /*
     Kelime kapsamı: pekişmiş kelimenin kursun toplamına oranı (mobil
@@ -223,7 +233,7 @@ export default async function MockExamsPage({ searchParams }: { searchParams: Pr
               ) : null}
             </div>
             <h2 className="mt-0.5 text-lg font-bold" lang={course}>{p.theme}</h2>
-            <p className="muted text-sm">{p.themeTr} · {t("mockexams.minutes", { n: p.minutes })}</p>
+            <p className="muted text-sm">{mockText("themeTr", p.themeTr)} · {t("mockexams.minutes", { n: p.minutes })}</p>
             <div className={`mt-3 space-y-2${locked ? " opacity-60" : ""}`}>
               {p.parts.map((part) => {
                 const pts = partPoints(part);
