@@ -752,6 +752,23 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   }
 }
 
+/* ── elle yazilmis icerik ciftleri ──────────────────────────────────────────
+   Iki dosyanin "birebir ayni kalmali" dedigi ama hicbir kapinin bakmadigi
+   veri. Modul temalari tam bu yuzden bes gun ayrisik kaldi (bkz. 11.52):
+   dosya basliginda yazmak drift'i durdurmuyor, olcum durduruyor.
+
+   Karsilastirma dizge dizgesi: her iki dosyadaki tirnakli degerler sirayla.
+   Ice alma yolu (`@/lib/courses` ile `../lib/courses`) elenir - ayni modulun
+   iki platformdaki yolu zaten farkli olmak zorunda. */
+{
+  const lits = (p) =>
+    [...read(p).matchAll(/"([^"\n]+)"/g)]
+      .map((m) => m[1])
+      .filter((x) => !x.includes("lib/courses"));
+  sameList("ilk kelimeler", lits("mobile/src/data/firstWords.ts"), lits("src/lib/first-words.ts"));
+  sameList("demo yerlestirme", lits("mobile/src/data/demoPlacement.ts"), lits("src/lib/placement-demo.ts"));
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"

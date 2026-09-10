@@ -2930,3 +2930,42 @@ müfredat webde de aynı biçimde duruyor. Liste DAR: yalnız başlığında iç
 olduğu yazılı, saf veri dosyaları. `firstWords`/`numbers`/`demoPlacement` de
 aynı sınıfa giriyor ama bu turda taşınmadı - biri taşınıp ötekiler
 bırakılmasın diye hepsi birlikte, ayrı bir turda değerlendirilecek.
+
+### 11.53 "Birebir aynı kalmalı" diyen üç çift daha — şimdi ölçülüyor
+
+§11.52'nin dersi şuydu: dosya başlığında "birebir aynı kalmalı" yazmak
+drift'i durdurmuyor, ölçüm durduruyor. Kalan içerik dosyalarını o gözle
+taradım.
+
+    mobil dosya                web karşılığı              kapı var mıydı
+    data/moduleThemes.ts       lib/lessons/modules.ts     yoktu → 11.52'de eklendi
+    data/firstWords.ts         lib/first-words.ts         YOKTU
+    data/demoPlacement.ts      lib/placement-demo.ts      YOKTU
+    lib/numbers.ts             lib/numbers.ts             VARDI (gövde paritesi)
+
+`first-words.ts`in başlığı bunu açıkça yazıyor: *"Veri mobil
+`M/src/data/firstWords.ts` ile BİREBİR aynı ve öyle kalmalı… iki dosyadan
+biri değişirse diğeri de değişmeli."* Aynı cümle modül temalarında da
+yazılıydı ve beş gün ayrışık kaldı.
+
+**İkisi de bugün eşit çıktı** - ısınma kelimelerinin veri blokları bayt
+bayt aynı, demo yerleştirmede tek fark içe alma yolu (`@/lib/courses` ile
+`../lib/courses`, ki zaten farklı olmak zorunda). Yani düzeltilecek bir
+sapma yok; eksik olan yalnız kapıydı.
+
+`check:parity`ye iki bölüm eklendi: "ilk kelimeler" (116 dizge) ve "demo
+yerlestirme" (84 dizge). Karşılaştırma dizge dizge - iki dosyadaki tırnaklı
+değerler sırayla, içe alma yolu elenerek. Doğrulandı: ısınma kelimelerinden
+birinin Türkçe karşılığını bozunca kapı kırıldı ve hangi kelimede ayrıştığı
+çıktıda görünüyor, sonra geri alındı.
+
+Ancak bu kapılar kurulduktan SONRA dördü de tarayıcının `SKIP_CONTENT`
+listesine alındı ve her satırın yanına hangi parite bölümünün onu koruduğu
+yazıldı. Sıra önemliydi: sayımdan çıkarmak gözden çıkarmak olmasın.
+
+**Mobil cırcırlı taban 69'dan 14'e indi.** Kalan on dört dizgenin hepsi
+§11.52'de tek tek okunmuş ve meşru bulunmuştu: `courses.ts`in dil adları (7,
+webin 7'siyle aynı), `VoicePicker`ın Almanca örnek cümleleri (2), üç dosyada
+"Türkçe" (dil adı kendi dilinde) ve iki yerde "Hören" (Almanca sınav bölümü
+adı). Bu sayı artık gerçekten bir taban: her satırı bilinen ve gerekçesi
+yazılı.

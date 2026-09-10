@@ -69,8 +69,19 @@ const SKIP_ASCII = ["data/firstWords.ts", "lib/courses.ts"].map((p) => path.join
  *
  * Liste DAR tutuluyor: yalnız başlığında içerik olduğu yazılı, saf veri
  * dosyaları. Bir dosyaya arayüz metni girme ihtimali varsa buraya yazılmaz.
+ *
+ * VE HER BİRİNİN BİR KAPISI VAR. Sayımdan çıkarmak, gözden çıkarmak değil:
+ * dördünün de web karşılığı `check:parity`de dizge dizge karşılaştırılıyor
+ * (bölüm adları aşağıda yazılı). Modül temaları tam bu kapı olmadığı için
+ * beş gün ayrışık kalmıştı - dosya başlığında "birebir aynı kalmalı" yazmak
+ * drift'i durdurmuyor, ölçüm durduruyor.
  */
-const SKIP_CONTENT = ["data/moduleThemes.ts"].map((p) => path.join(SRC, ...p.split("/")));
+const SKIP_CONTENT = [
+  "data/moduleThemes.ts", // modül başlıkları (müfredat) — `check:parity` "modul temalari"
+  "data/firstWords.ts", //  ısınma kelimeleri + Türkçe karşılıkları — `check:parity` "ilk kelimeler"
+  "data/demoPlacement.ts", // demo yerleştirme maddeleri — `check:parity` "demo yerlestirme"
+  "lib/numbers.ts", //      sayı sözcükleri — `check:parity` "sayi modulu govdesi"
+].map((p) => path.join(SRC, ...p.split("/")));
 
 /**
  * TİRE PARÇALARI SÖZCÜK DEĞİL. Sözlükte dilbilgisi kuralları var ve içlerinde
