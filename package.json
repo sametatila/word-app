@@ -41,6 +41,7 @@
     "check:pairs": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/check-pairs.ts",
     "test:legal-db": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/test-legal-db.ts",
     "test:entitlement": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/test-entitlement.ts",
+    "grant:premium": "tsx --tsconfig scripts/tsconfig.ops.json scripts/grant-premium.ts",
     "test:track": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/test-track.ts",
     "briefs": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/immersion-briefs.ts",
     "test:match": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/test-sentence-match.ts",
