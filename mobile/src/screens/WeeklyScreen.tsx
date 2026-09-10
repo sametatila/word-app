@@ -20,7 +20,7 @@ import { useTheme, spacing, radii, softShadow } from "../theme";
 import { sfx } from "../lib/sfx";
 import { bumpStats } from "../lib/statsSignal";
 
-type Phase = "loading" | "auth" | "error" | "play" | "submitting" | "done";
+type Phase = "loading" | "auth" | "error" | "ready" | "play" | "submitting" | "done";
 
 export function WeeklyScreen() {
   const { colors } = useTheme();
@@ -30,6 +30,7 @@ export function WeeklyScreen() {
   const [rounds, setRounds] = useState<Round[]>([]);
   const [idx, setIdx] = useState(0);
   const [result, setResult] = useState<{ score: number; correct: number; total: number } | null>(null);
+  const [status, setStatus] = useState<WeeklyStatus | null>(null);
 
   const answers = useRef<AnswerOut[]>([]);
   const day = useRef("");
@@ -42,6 +43,7 @@ export function WeeklyScreen() {
     try {
       const p = await fetchWeekly();
       const st: WeeklyStatus = p.status;
+      setStatus(st);
       day.current = todayStr();
       if (st.done) {
         setResult({ score: st.score ?? 0, correct: st.correct ?? 0, total: st.total ?? 0 });
@@ -55,8 +57,14 @@ export function WeeklyScreen() {
       setIdx(0);
       startedAt.current = Date.now();
       roundStart.current = Date.now();
-      track("session_start", 0, "weekly");
-      setPhase("play");
+      /*
+       * KURALLAR SORULMADAN SINAV BAŞLAMIYOR. Mobil doğrudan ilk soruya
+       * giriyordu: "yalnız yazarak, ipucu yok, tek hak" ve yanlış bilinen
+       * kelimenin tekrar kuyruğuna döneceği hiçbir yerde söylenmiyordu.
+       * Web bir tanıtım adımı gösteriyor (`weekly-player` ready) - sınav
+       * ölçüm, ve ölçümün kuralı önceden bilinmeli (bkz. 11.124).
+       */
+      setPhase("ready");
     } catch (e) {
       setPhase(e instanceof ApiError && e.status === 401 ? "auth" : "error");
     }
@@ -127,6 +135,26 @@ export function WeeklyScreen() {
     );
   }
 
+  if (phase === "ready") {
+    return (
+      <View style={[pad, { justifyContent: "center" }]}>
+        <Text variant="h1" style={{ textAlign: "center" }}>{t(status?.short ? "plan.weekly_short" : "plan.weekly_exam")}</Text>
+        <Text variant="body" color={colors.textMuted} style={{ textAlign: "center", marginTop: spacing.md, lineHeight: 22 }}>
+          {t("weekly.pitch", { n: rounds.length })}{" "}
+          {t(status?.short ? "weekly.pitch_short" : "weekly.pitch_full", { n: status?.mastered ?? 0 })}
+        </Text>
+        <Text variant="caption" color={colors.textFaint} style={{ textAlign: "center", marginTop: spacing.sm, lineHeight: 19 }}>{t("weekly.honest_note")}</Text>
+        <PressableScale
+          onPress={() => { startedAt.current = Date.now(); roundStart.current = Date.now(); track("session_start", 0, "weekly"); setPhase("play"); }}
+          style={[{ width: "100%", backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: 16, alignItems: "center", marginTop: spacing.xxl }, softShadow(colors.primary, 10)]}
+        >
+          <Text variant="h3" color={colors.onPrimary}>{t("common.start")}</Text>
+        </PressableScale>
+        <PressableScale onPress={() => nav.goBack()} style={{ paddingVertical: spacing.lg, marginTop: spacing.sm }}><Text variant="bodyStrong" color={colors.textMuted}>{t("common.close")}</Text></PressableScale>
+      </View>
+    );
+  }
+
   if (phase === "error") {
     return (
       <View style={[pad, { alignItems: "center", justifyContent: "center" }]}>
@@ -146,14 +174,22 @@ export function WeeklyScreen() {
           <PressableScale hitSlop={4} onPress={() => nav.goBack()} accessibilityLabel={t("common.back")} style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}><XIcon color={colors.textMuted} size={22} /></PressableScale>
         </View>
         <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-          <ProgressRing size={160} stroke={15} pct={score} track={colors.surface2} from={colors.gradientA[0]} to={colors.gradientA[1]}>
-            <Text variant="display" color={colors.primaryText}>%{score}</Text>
-            <Text variant="micro" color={colors.textMuted}>{t("weekly.score")}</Text>
-          </ProgressRing>
+          {/* HALKA YALNIZ OYNANMIŞSA. Sınav kurulamadığında da %0'lık bir halka
+              çiziliyordu: "şu an sınav yok" başlığının üstünde sıfır puan,
+              oynanmamış bir sınavdan kalınmış gibi okunuyordu. */}
+          {done ? (
+            <ProgressRing size={160} stroke={15} pct={score} track={colors.surface2} from={colors.gradientA[0]} to={colors.gradientA[1]}>
+              <Text variant="display" color={colors.primaryText}>%{score}</Text>
+              <Text variant="micro" color={colors.textMuted}>{t("weekly.score")}</Text>
+            </ProgressRing>
+          ) : null}
           <Text variant="h1" style={{ marginTop: spacing.xl }}>{t(done ? "weekly.done_title" : "weekly.none_title")}</Text>
           <Text variant="body" color={colors.textMuted} style={{ marginTop: spacing.xs, marginBottom: spacing.xxl, textAlign: "center" }}>
             {done ? t("weekly.done_sub", { total: result?.total ?? 0, correct: result?.correct ?? 0 }) : t("weekly.none_sub")}
           </Text>
+          {/* Sınavın haftada bir olduğu ve sonrakinin ne zaman geleceği: web
+              aynı yerde söylüyor, mobilde hiç yazmıyordu. */}
+          {done ? <Text variant="micro" color={colors.textFaint} style={{ textAlign: "center", marginBottom: spacing.lg, lineHeight: 18 }}>{t("weekly.once_a_week")}</Text> : null}
           <PressableScale onPress={() => nav.goBack()} style={[{ width: "100%", backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: spacing.lg, alignItems: "center" }, softShadow(colors.primary, 8)]}><Text variant="bodyStrong" color={colors.onPrimary}>{t("common.finish")}</Text></PressableScale>
         </View>
       </View>
@@ -168,7 +204,11 @@ export function WeeklyScreen() {
         <View style={{ flex: 1, height: 10, borderRadius: 5, backgroundColor: colors.surface2, overflow: "hidden" }}>
           <View style={{ height: "100%", width: `${Math.round((idx / rounds.length) * 100)}%`, backgroundColor: colors.primary, borderRadius: 5 }} />
         </View>
-        <Text variant="bodyStrong" color={colors.textMuted}>{idx + 1}/{rounds.length}</Text>
+        <View style={{ alignItems: "flex-end" }}>
+          <Text variant="bodyStrong" color={colors.textMuted}>{idx + 1}/{rounds.length}</Text>
+          {/* "İpucu yok" oynarken de görünüyor: web şeridin üstünde yazıyor. */}
+          <Text variant="micro" color={colors.textFaint}>{t("weekly.no_hints")}</Text>
+        </View>
       </View>
       <RoundView key={rounds[idx]?.id ?? idx} round={rounds[idx]} onDone={onDone} />
     </View>

@@ -105,6 +105,11 @@ export function PracticeScreen() {
             );
           })}
         </View>
+        {/* NE OLDUĞUNU SÖYLEYEN SATIR. Turun kendi kelimelerinden kurulduğu,
+            oyun türünün sabit kaldığı ve pratiğin kaldığı yerden SÜRMEDİĞİ
+            yalnız webde yazıyordu (`learn/practice`); üçü de mobilde
+            uygulanan davranış (bkz. `GameScreen` yükleme yorumu). */}
+        <Text variant="micro" color={colors.textMuted} style={{ marginTop: spacing.lg, lineHeight: 18 }}>{t("prac.note")}</Text>
       </ScrollView>
     </View>
   );
