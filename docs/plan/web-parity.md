@@ -4079,3 +4079,49 @@ düğme kapalı — kullanıcı neden basamadığını hiçbir yoldan öğrenemi
 `find.tsx` `PersonRow` ayrıca `onChanged` propunu **alıyor ama hiç
 kullanmıyordu**; iki çağıran da boşuna geçiriyordu. Aynı sınıfın bileşen
 düzeyindeki hâli.
+
+### 11.82 Anahtar kümesi karşılaştırması: hangi yüzey nerede yok
+
+Bu tur yeni bir ölçüm aracı: **taban sözlükteki bir anahtarı hangi tarafın
+çağırdığı**. Taban sözlük mobilin sözlüğünden üretiliyor, yani orada olan bir
+anahtarın mobilde bir karşılığı olması beklenir; yalnız webin çağırdığı bir
+taban anahtarı, mobilde dizgesi olup **yüzeyi olmayan** bir şeye işaret eder.
+
+Sonuç: 35 anahtar yalnız webde çağrılıyor. Çoğu meşru çıktı —
+
+| küme | neden meşru |
+|---|---|
+| `plan.*` (10) | uç çağıransız, mobil karşılığı bilerek yok (§7) |
+| `social.reaction_*` (6) | mobil anahtarı dinamik kuruyor (`social.reaction_${kind}`) |
+| `paywall.*`, `premiumstate.*` | web satamıyor, mağazaya yönlendiriyor — platforma özgü |
+| `mockexam.goal_*`, `mockexam.fail_*` | mobil bunları da dinamik kuruyor |
+
+İki tanesi gerçekti.
+
+**Hedef etiketi tanınmayan hedefte anahtarı yazıyordu.** Mobil `goal_${g.goal}`
+kuruyor ve hedef **içerikten** geliyor, kapalı bir kümeden değil: sözlükte
+karşılığı olmayan bir hedefte ekranda `mockexam.goal_xyz` görünüyordu. Web
+tanımadığı hedefte ham adı yazıyor. `GOAL_KEYS` mobile de geldi ve iki harita
+kapıya bağlandı.
+
+**Web'de ikinci bir başarım girişi vardı.** `progress-view` içindeki kartın
+yorumu "mobilde de ilerlemenin altında" diyordu — **artık doğru değil**:
+Android onu bilerek kaldırmış ve gerekçesini yazmış ("rozet sayısı herkese açık
+profilde görünüyor, yani statü işareti ve yeri profil; aynı ekrana iki giriş
+olmasın diye"). Webde profil satırı duruyor, yani ekran erişilebilir kalıyor.
+
+Bu ikincisi, yönü ters işleyen ilk bulgu: Android'in **kaldırma** kararı da bir
+karar ve web onu izlemeliydi. Eski yorum kararı yanlış aktardığı için fark
+görünmüyordu — yorumun kendisi drift etmişti.
+
+#### Bu turda temiz çıkanlar
+
+`SocialSettingsScreen` ile `social-settings`: anahtar kümeleri **birebir**.
+`InboxScreen` ile `inbox`: beş fark var, hepsi mobilin oturum-kapalı boş
+durumu ve ekran başlığı (webde başlık `page.tsx` içinde, bileşende değil).
+Değişiklik gerekmedi.
+
+Mobil tip taramasında (§11.80) kalan yedi alan (`weekStart`, `completedAt`,
+`usernameChangedAt`, `wagerXp`, `taskId`, `taskNo`, `byTask`) **iki tarafta da**
+çizilmiyor — parite farkı değil. `byTask` bir gün ikinci bir kırılım paneli
+olabilir; bugün `byGoal` yeterli sayıldı.
