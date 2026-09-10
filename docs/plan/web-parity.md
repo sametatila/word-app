@@ -5160,3 +5160,18 @@ Pratik ekranı da ne olduğunu söylemiyordu: turun kendi kelimelerinden
 kurulduğu, oyun türünün sabit kaldığı ve pratiğin **kaldığı yerden sürmediği**
 yalnız webdeydi. Üçü de mobilde uygulanan davranış — `GameScreen`in yükleme
 yorumu bunu ayrıntısıyla anlatıyor, ekran kullanıcıya hiç söylemiyordu.
+
+### 11.132 İlk kurulumda seviye seçeneğinin ne demek olduğu yazmıyordu
+
+Seçici yalnız **"A1 A2 B1 B2 C1"** yazıyordu: kullanıcıdan seviyesini seçmesi
+isteniyor ama seçebileceği bir şey verilmiyordu. Web her seçenek için bir
+cümlelik karşılık gösteriyor ("Temel günlük dili biliyorum", "Kendimi genel
+konularda ifade ederim" …) ve bu, kararın verildiği tek yer — yanlış seçilen
+seviye bütün müfredatı kaydırıyor.
+
+**Yöntem notu:** bu turda üç karşılaştırma (`BossScreen`/`boss-player`,
+`ProfileScreen`/`profile-view`, `AvatarScreen`/`avatar-editor`) önce "eksik
+anahtar" gibi göründü, üçü de yanlış alarmdı: anahtarlar üçnokta içinde
+kullanılıyordu (`t(x ? "a" : "b")`) ve `t("…")` deseni onları görmüyor. Anahtar
+kıyaslamasının bilinen kör noktası — dosyadaki tüm `"ns.key"` dizgilerini almak
+doğru yöntem (ölü anahtar kapısında kullanılan yaklaşımın aynısı).
