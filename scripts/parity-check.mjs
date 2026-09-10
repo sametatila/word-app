@@ -540,6 +540,22 @@ console.log("\n" + C.b + "17. CUMLE HAKEMI" + C.off);
   };
   const webErr = read("src/lib/errors.ts");
   const mobErr = read("mobile/src/lib/errors.ts");
+  /* Fark isaretleri: hangi isaretin hangi sozluk anahtarina bagli oldugu. */
+  const marks = (src) => {
+    const i = src.indexOf("TITLE_KEYS");
+    const body = src.slice(i, src.indexOf("};", i));
+    return [...body.matchAll(/(\w+): (?:"([\w.]+)"|undefined)/g)].map((m) => `${m[1]}=${m[2] ?? "-"}`);
+  };
+  sameList(
+    "fark isaretleri",
+    marks(read("mobile/src/ui/TokenDiff.tsx")),
+    marks(read("src/components/feedback/diff-text.tsx")),
+  );
+  sameList(
+    "hukum anahtarlari",
+    [...read("mobile/src/lib/sentenceMatch.ts").matchAll(/^\s{2}(\w+): "([\w.]+)",$/gm)].map((m) => `${m[1]}=${m[2]}`),
+    [...read("src/lib/sentence-match.ts").matchAll(/^\s{2}(\w+): "([\w.]+)",$/gm)].map((m) => `${m[1]}=${m[2]}`),
+  );
   sameList("levenshtein", fn(mobErr, "levenshtein"), fn(webErr, "levenshtein"));
   sameList("classifyOrder", fn(mobErr, "classifyOrder"), fn(webErr, "classifyOrder"));
   sameList(

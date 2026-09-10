@@ -1,7 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
 import { t as tx, nativeLangName, targetLangName } from "../lib/i18n";
 import { foldCase, foldCompare, foldTight } from "../lib/textFold";
-import { matchSentence, type SentenceMatch } from "../lib/sentenceMatch";
+import { matchSentence, VERDICT_KEYS, type SentenceMatch } from "../lib/sentenceMatch";
+import { SentenceFeedback, type MarkedToken } from "../ui/TokenDiff";
 import { classifyOrder, classifyTyping, miss } from "../lib/errors";
 import type { DoneExtra } from "./session";
 import { currentTargetLang } from "../lib/courses";
@@ -109,6 +110,16 @@ type Feedback = {
   en?: string | null;
   why?: string | null;      // yalnız yanlışta: neden yanlış
   note?: string | null;     // özet (match gibi tek cevabı olmayan turlar)
+  /**
+   * Kelime kelime fark (yalnız cümle hakemi olan turlar).
+   *
+   * Web çeviri turunda hükmü ve farkı birlikte gösteriyor
+   * (`components/feedback/diff-text`); mobil hakem sonucunu kullanmaya
+   * başladıktan sonra da farkı GÖSTERMİYORDU: öğrenci "yanlış" görüyor, nerede
+   * yanlış olduğunu görmüyordu. Verildiğinde `answerDe` satırının yerine bu
+   * çiziliyor - ikisi aynı şeyi iki kez söylerdi.
+   */
+  diff?: { verdictKey: string; target: MarkedToken[]; typed: MarkedToken[]; showTyped: boolean } | null;
 };
 
 /**
@@ -246,10 +257,13 @@ function FeedbackFooter({ data, onContinue, colors }: { data: Feedback; onContin
         <View style={{ flex: 1 }}>
           <Text variant="body" style={{ lineHeight: 21 }}>
             <Text variant="body" color={tone} style={{ fontWeight: "800" }}>{tx(ok ? "rounds.correct_excl" : "rounds.answer_is")}</Text>
-            {data.answerDe ? <Text variant="body" color={colors.text} style={{ fontWeight: "800" }}>{data.answerDe}</Text> : null}
+            {data.answerDe && !data.diff ? <Text variant="body" color={colors.text} style={{ fontWeight: "800" }}>{data.answerDe}</Text> : null}
             {data.tr ? <Text variant="body" color={colors.textMuted}>{`  ·  ${data.tr}`}</Text> : null}
             {data.note ? <Text variant="body" color={colors.text} style={{ fontWeight: "800" }}>{data.note}</Text> : null}
           </Text>
+          {data.diff ? (
+            <SentenceFeedback verdictKey={data.diff.verdictKey} target={data.diff.target} typed={data.diff.typed} showTyped={data.diff.showTyped} />
+          ) : null}
           {!ok && data.why ? <Text variant="caption" color={colors.textMuted} style={{ marginTop: 2 }}>{data.why}</Text> : null}
         </View>
         {speakText ? <SpeakButton text={speakText} colors={colors} size={20} /> : null}
@@ -786,7 +800,20 @@ function TranslateRound({ round, onDone, colors }: { round: Round; onDone: Done;
     judged.current = m;
     Keyboard.dismiss();
     markAnswer(ok, s.de); // doğru Almanca cümleyi oku
-    setFb({ correct: ok, answerDe: s.de, speakDe: s.de, tr: s.tr, en: s.en });
+    setFb({
+      correct: ok,
+      answerDe: s.de,
+      speakDe: s.de,
+      tr: s.tr,
+      en: s.en,
+      diff: {
+        verdictKey: VERDICT_KEYS[m.verdict],
+        target: m.target,
+        typed: m.typed,
+        // Yazdığın satırı yalnız YANLIŞTA ve gerçekten fark varken göster.
+        showTyped: !ok && m.typed.some((tk) => tk.mark !== "same"),
+      },
+    });
   }
   /* Yük web `translate-game` ile aynı: kalite hep, hata tipi yalnız yanlışta.
      Web ipucu kullanıldığında kaliteyi 3'e kırpıyor; mobilde `HintRow` bunu

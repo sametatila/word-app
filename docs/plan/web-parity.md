@@ -1320,10 +1320,21 @@ BOŞ ve SRS'i yalnız doğru/yanlış görüyor.
   mobilde `HintRow` bunu dışarı bildirmiyor. Kırpma için ipucu durumunun tur
   bileşenine çıkması gerekiyor - ayrı iş.
 
-  **3. Fark vurgusu arayüzü** (webde `TokenDiff`) — 2'den sonra.
+  **3. Fark vurgusu arayüzü — YAPILDI.** `mobile/src/ui/TokenDiff.tsx` web
+  `components/feedback/diff-text` karşılığı; çeviri turunun geri bildirimi artık
+  hükmü ve kelime kelime farkı birlikte gösteriyor, yanlışta "yazdığın" satırı
+  da (yalnız gerçekten fark varken). `diff` verildiğinde `answerDe` satırı
+  çizilmiyor - ikisi aynı şeyi iki kez söylerdi.
 
-2 olmadan 1 yalnız hükmü düzeltir, SRS'i düzeltmez; bu yüzden 1 tek başına da
-değerli (yazım hatası artık lapse ettirmiyor) ama iş yarım.
+  BİÇİM RN'in verdiği kadar: web noktalı alt çizgi kullanıyor, React Native'de
+  `textDecorationStyle` yalnız iOS'ta işliyor. Ayrım biçim çiftiyle kuruldu -
+  eksik kelime düz alt çizgi, yazım hatası alt çizgi + eğik. İkisi de renkten
+  bağımsız ayrışıyor. Sözlük anahtarları (`diff.*`, `match.*`,
+  `rounds.you_wrote`) web-özelden mobil kaynağa taşındı ve `i18n-pull` ile
+  tabana çekildi. `parity-check` 17. bölümü işaret→anahtar tablosunu ve hüküm
+  anahtarlarını karşılaştırıyor.
+
+Üç adımın hepsi bitti. Kalan tek fark ipucu kırpması (yukarıda, adım 2).
 
 Yan bulgu, web tarafında DÜZELTİLDİ: katlama sayı sözcüklerini rakama
 indirdiği için "at six o'clock" ile "at 5 o'clock" arasındaki fark tek
