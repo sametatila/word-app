@@ -15,6 +15,7 @@ import { CheckIcon, XIcon, SpeakerIcon } from "../ui/icons";
 import { Mascot, type Mood } from "../ui/Mascot";
 import { haptic } from "../lib/haptics";
 import { sfx } from "../lib/sfx";
+import { reduceMotion } from "../lib/reduceMotion";
 import { useKeyboardHeight } from "../lib/useKeyboardHeight";
 import { whyMeaning, whyArticle, whyPlural } from "./why";
 import { speakTarget, ttsAvailable } from "../lib/tts";
@@ -237,7 +238,9 @@ function RoundShell({ children, footer, sheet, scroll = true }: { children: Reac
 function SheetLayer({ children }: { children: React.ReactNode }) {
   const slide = useRef(new Animated.Value(1)).current;
   useEffect(() => {
-    Animated.timing(slide, { toValue: 0, duration: 200, useNativeDriver: true }).start();
+    /* "Hareketi azalt": tur yerinde beliriyor. */
+    if (reduceMotion()) slide.setValue(0);
+    else Animated.timing(slide, { toValue: 0, duration: 200, useNativeDriver: true }).start();
   }, [slide]);
   return (
     <Animated.View
@@ -339,8 +342,12 @@ function OptionButton({ text, sub, state, onPress, colors, idleTint }: { text: s
   const pop = useRef(new Animated.Value(1)).current;
   useEffect(() => {
     if (state === "wrong") {
-      Animated.sequence([-8, 8, -6, 6, -3, 0].map((v) => Animated.timing(shake, { toValue: v, duration: 45, useNativeDriver: true }))).start();
-    } else if (state === "correct") {
+      /* "Hareketi azalt": sarsıntı yok. Yanlış cevabın geri bildirimi renk,
+         ikon, ses ve titreşimle zaten veriliyor - hareket dördüncü kanal. */
+      if (!reduceMotion())
+        Animated.sequence([-8, 8, -6, 6, -3, 0].map((v) => Animated.timing(shake, { toValue: v, duration: 45, useNativeDriver: true }))).start();
+    } else if (state === "correct" && !reduceMotion()) {
+      /* Doğru cevabın "pop"u da hareket; renk ve ikon zaten söylüyor. */
       Animated.sequence([
         Animated.spring(pop, { toValue: 1.05, useNativeDriver: true, speed: 50, bounciness: 0 }),
         Animated.spring(pop, { toValue: 1, useNativeDriver: true, speed: 20, bounciness: 8 }),

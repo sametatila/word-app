@@ -3,6 +3,7 @@ import { View, Animated } from "react-native";
 import { Text } from "../ui/Text";
 import { PressableScale } from "../ui/PressableScale";
 import { CheckIcon, XIcon } from "../ui/icons";
+import { reduceMotion } from "../lib/reduceMotion";
 import { SpeakButton } from "../ui/SpeakButton";
 import { useTheme, spacing, radii, softShadow } from "../theme";
 import { haptic } from "../lib/haptics";
@@ -34,6 +35,8 @@ export function ChoiceGame({ round, onDone }: { round: ChoiceRound; onDone: (cor
     setPicked(null);
     fade.setValue(0);
     slide.setValue(12);
+    /* "Hareketi azalt": tur kayarak/solarak girmiyor, yerinde beliriyor. */
+    if (reduceMotion()) { fade.setValue(1); slide.setValue(0); return; }
     Animated.parallel([
       Animated.timing(fade, { toValue: 1, duration: 260, useNativeDriver: true }),
       Animated.spring(slide, { toValue: 0, useNativeDriver: true, speed: 14, bounciness: 6 }),

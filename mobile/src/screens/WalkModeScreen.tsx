@@ -24,6 +24,7 @@ import { API_BASE } from "../api/client";
 import { spokenMatches, parseSkip, encourage, parseConfirm } from "../lib/voiceMatch";
 import { sfx, setSfxScreenOff, sfxDurationMs } from "../lib/sfx";
 import { haptic } from "../lib/haptics";
+import { reduceMotion } from "../lib/reduceMotion";
 import { useTheme, spacing, radii, softShadow } from "../theme";
 import { ConfirmDialog } from "../ui/ConfirmDialog";
 import { useBackConfirm } from "../lib/useBackConfirm";
@@ -253,6 +254,9 @@ export function WalkModeScreen() {
   useEffect(() => {
     const active = phase === "listening";
     if (!active) { pulse.stopAnimation(); pulse.setValue(0); return; }
+    /* "Hareketi azalt": dinleme nabzı hiç başlamıyor. Mikrofonun açık olduğunu
+       renk ve etiket söylüyor; nabız yalnız dikkat çekiyor. */
+    if (reduceMotion()) return;
     const loop = Animated.loop(Animated.sequence([
       Animated.timing(pulse, { toValue: 1, duration: 1100, easing: Easing.inOut(Easing.ease), useNativeDriver: true }),
       Animated.timing(pulse, { toValue: 0, duration: 1100, easing: Easing.inOut(Easing.ease), useNativeDriver: true }),

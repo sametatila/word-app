@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Animated } from "react-native";
 import { Mascot, type Mood } from "./Mascot";
+import { reduceMotion } from "../lib/reduceMotion";
 
 /**
  * Ortam maskotu — rastgele aralıklarla ekranın sağ kenarından "dikizler" ve
@@ -23,9 +24,12 @@ export function AmbientPeek({ size = 78 }: { size?: number }) {
         if (!alive) return;
         setMood(MOODS[Math.floor(Math.random() * MOODS.length)]);
         setShow(true);
-        Animated.spring(x, { toValue: 0, useNativeDriver: true, speed: 8, bounciness: 6 }).start();
+        /* "Hareketi azalt": maskot yandan kaymıyor, yerinde beliriyor. */
+        if (reduceMotion()) x.setValue(0);
+        else Animated.spring(x, { toValue: 0, useNativeDriver: true, speed: 8, bounciness: 6 }).start();
         out = setTimeout(() => {
           if (!alive) return;
+          if (reduceMotion()) { x.setValue(size + 30); setShow(false); return; }
           Animated.timing(x, { toValue: size + 30, duration: 420, useNativeDriver: true }).start(({ finished }) => {
             if (finished && alive) setShow(false);
           });
