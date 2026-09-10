@@ -15,7 +15,7 @@
  *   ölçüyor, burada ayrıca uzunluk sapması uyarı veriyor.
  */
 import { readFileSync, readdirSync, existsSync } from "node:fs";
-import { extractProse } from "./make.js";
+import { proseWork } from "./make.js";
 import { usSpelling } from "../../lessons/spelling.mjs";
 
 const DIR = new URL(".", import.meta.url).pathname;
@@ -37,7 +37,10 @@ const numbers = (t: string): string[] =>
 const flat = (t: string): string =>
   String(t).replace(/[„“”‚‘’'"]/g, "'").replace(/\s+/g, " ").trim();
 
-const src = new Map(extractProse().map((r) => [r.kind + "|" + r.tr, r]));
+/* Kapsam ALINTILARI SAYMIYOR: onların karşılığı kendileri ve sözlüğe
+   `apply` adımında birim eşleme olarak giriyor. Pakete hiç girmedikleri
+   için burada da beklenmiyorlar. */
+const src = new Map(proseWork().map((r) => [r.kind + "|" + r.tr, r]));
 
 if (existsSync(`${DIR}out`))
   for (const f of readdirSync(`${DIR}out`).filter((x) => x.endsWith(".json"))) {
@@ -74,7 +77,7 @@ if (existsSync(`${DIR}out`))
 
 let coverage: { rows: number; missing: number } | null = null;
 if (ARG === "all") {
-  const rows = extractProse();
+  const rows = proseWork();
   const missing = rows.filter((r) => !written.has(r.kind + "|" + r.tr)).length;
   coverage = { rows: rows.length, missing };
   if (missing) errors.push(`  [kapsam] ${missing} dizenin İngilizcesi yok`);

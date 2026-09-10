@@ -29,6 +29,25 @@ import { BUNDLED_EXERCISES } from "@/lib/skills";
 
 const DIR = new URL(".", import.meta.url).pathname;
 
+/**
+ * ALINTI SATIRI — çeviri istemeyen `explain`.
+ *
+ * Açıklamaların büyük kısmı Türkçe düzyazı DEĞİL: metinden alınmış Almanca
+ * (İngilizce kursta İngilizce) bir cümle, tırnak içinde. "„Fünf Minuten.“"
+ * satırının İngilizcesi yine "„Fünf Minuten.“" — kanıt cümlesi çevrilmez,
+ * çünkü öğrencinin metinde göreceği şey odur.
+ *
+ * Ölçüt DAR tutuldu: dizenin TAMAMI tek bir tırnak açıklığı olacak, içinde
+ * başka tırnak geçmeyecek, sonunda en fazla bir nokta olacak. Böylece
+ * "„X“ ve Murat'ın sorusu …" gibi alıntıyla BAŞLAYIP Türkçe devam eden
+ * satırlar geçiş sayılmıyor — 34 tanesi var ve hepsi yazılacak listede.
+ *
+ * Yanlış geçiş yanlış redden tehlikeli: geçiş sayılan bir satır kimseye
+ * sorulmadan olduğu gibi kalır. O yüzden ölçüt gevşetilmemeli.
+ */
+export const isQuote = (t: string): boolean =>
+  /^\s*[„"“']([^„"“”']+)[”“"']\s*\.?\s*$/.test(t);
+
 export type ProseRow = {
   tr: string;
   kind: "intro" | "explain";
@@ -76,8 +95,14 @@ export function extractProse(): ProseRow[] {
   );
 }
 
+/** Yazılacak satırlar — alıntılar dışarıda. */
+export const proseWork = (): ProseRow[] => extractProse().filter((r) => !isQuote(r.tr));
+
+/** Alıntı satırları: karşılıkları KENDİLERİ. Sözlüğe birim eşleme olarak giriyor. */
+export const proseQuotes = (): ProseRow[] => extractProse().filter((r) => isQuote(r.tr));
+
 if (process.argv[1]?.endsWith("make.ts")) {
-  const rows = extractProse();
+  const rows = proseWork();
   mkdirSync(`${DIR}in`, { recursive: true });
   mkdirSync(`${DIR}out`, { recursive: true });
   const SIZE = 150;
@@ -91,8 +116,10 @@ if (process.argv[1]?.endsWith("make.ts")) {
     );
   }
   const kinds = rows.reduce<Record<string, number>>((a, r) => ((a[r.kind] = (a[r.kind] ?? 0) + 1), a), {});
+  const quotes = proseQuotes().length;
   console.log(
-    `${rows.length} benzersiz dize · ${n} paket\n` +
+    `${rows.length + quotes} benzersiz dize · ${quotes} alıntı (geçiş) · ` +
+      `${rows.length} yazılacak · ${n} paket\n` +
       Object.entries(kinds)
         .sort((a, b) => b[1] - a[1])
         .map(([k, v]) => `${k} ${v}`)
