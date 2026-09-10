@@ -4486,3 +4486,33 @@ gün kaymış seriyle çiziliyordu.
 daily, weekly, growth) tarayıcıdan giden her **sorgulu** adres `day=` taşımalı.
 Sosyal uçlar dışarıda: haftayı sunucu belirliyor ve iki istemci de bilerek gün
 göndermiyor (§11.77'de ölçüldü).
+
+### 11.94 §11.86'nın düzeltmesi: yanlış çiftle karşılaştırma
+
+Patron turunun süre kurallarını incelerken kendi hatamı buldum.
+
+§11.86'da `DANGER_SECONDS`i webde 8'den 10'a çekmiş ve "Android'in değeri
+alındı" demiştim. **Karşılaştırma yanlış çiftle yapılmıştı.** Web bu adı iki
+dosyada taşıyor:
+
+| dosya | ne | değer |
+|---|---|---|
+| `boss-player` | patron turu — mobil `BossScreen`in eşi | 10 |
+| `challenge-player` | sürenin doğru cevapla **kazanıldığı** mod, mobilde karşılığı yok | 8 |
+
+Kapı "son tanımı" aldığı için mobilin `BossScreen`ini webin `challenge-player`ı
+ile karşılaştırdı. Gerçek eşte (patron turu) iki taraf **zaten eşitti** — yani
+düzeltilecek bir ayrışma en baştan yoktu, ve ben web-özel bir modun ayarını
+değiştirmiştim. Geri alındı; süre kazandıran modda eşiğin daha dar olması
+mantıklı, orada süre yalnız azalmıyor.
+
+**Kapı da düzeltildi.** Bir ad bir ağaçta birden çok yerde tanımlıysa
+karşılaştırmaya girmiyor: hangi çiftin kastedildiğini kapı bilemez. Belirsizler
+sessizce düşmüyor, yedisi de listede yazılı ve yenisi çıkarsa kapı kalıyor.
+Bugünküler meşru — farklı uçların hız sınırları (`DAILY_LIMIT` 120/20/400),
+farklı listelerin sayfa boyu (`PAGE_SIZE` 40 sayfa / 30 uç), farklı modların
+eşikleri.
+
+Ders: "adı aynı olan sabit" varsayımı, adın **tek** olduğu varsayımını gizlice
+taşıyor. Otomatik kapı elle bakım istemiyor diye doğru olduğu anlamına gelmiyor;
+eşleştirmenin kendisi de bir varsayım ve o da ölçülmeli.
