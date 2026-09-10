@@ -46,6 +46,7 @@ export const deBase: Record<string, string> = {
   "auth.legal_notice": "Ich bin über 18 und akzeptiere:",
   "auth.password_min_hint": "Passwort (mindestens 10 Zeichen)",
   "auth.password_ok": "Passwort sieht gut aus",
+  "auth.passwords_dont_match": "Die Passwörter stimmen nicht überein.",
   "auth.forgot_your_password": "Passwort vergessen?",
   "auth.continue_with": "Weiter mit {provider}",
   "auth.pick_your_streak_up_where_you": "Setze deine Serie dort fort, wo du aufgehört hast.",

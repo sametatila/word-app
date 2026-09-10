@@ -44,6 +44,7 @@ export const en: Record<string, string> = {
   "auth.legal_notice": "I am over 18 and I accept:",
   "auth.password_min_hint": "Password (at least 10 characters)",
   "auth.password_ok": "Password looks good",
+  "auth.passwords_dont_match": "The passwords don't match.",
   "auth.forgot_your_password": "Forgot your password?",
   "auth.continue_with": "Continue with {provider}",
   "auth.pick_your_streak_up_where_you": "Pick your streak up where you left off.",

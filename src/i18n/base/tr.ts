@@ -46,6 +46,7 @@ export const trBase: Record<string, string> = {
   "auth.legal_notice": "18 yaşından büyüğüm ve şunları kabul ediyorum:",
   "auth.password_min_hint": "Parola (en az 10 karakter)",
   "auth.password_ok": "Parola uygun",
+  "auth.passwords_dont_match": "Parolalar eşleşmiyor.",
   "auth.forgot_your_password": "Parolanı mı unuttun?",
   "auth.continue_with": "{provider} ile devam et",
   "auth.pick_your_streak_up_where_you": "Serini kaldığın yerden sürdür.",
