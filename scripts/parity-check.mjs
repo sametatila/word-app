@@ -2376,6 +2376,56 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   sameSet("sinav sonucu alanlari", web, [...mobil, ...KAYITLI_DUSEN].sort(), "sunucu", "mobil + kayitli dusen");
 }
 
+/* ── 60. sinav kapaginin alanlari ─────────────────────────────────────────
+ * 58 SONUC tipini kapiya aliyor; kapak tipi aciktaydi ve `canDo` tam olarak
+ * oradan dusmustu: sunucu gonderiyor, mobil tipi yazmiyor, yuzey listeyi hic
+ * gostermiyordu (11.125). Ayni kalibin ucuncu ornegiydi, o yuzden kapak da
+ * kapiya aliniyor. */
+{
+  const alanlar = (p, name) => {
+    const x = read(p).replace(/\/\*[\s\S]*?\*\//g, " ").replace(/\/\/[^\n]*/g, " ");
+    const i = x.indexOf("type " + name + " =");
+    if (i < 0) return ["bulunamadi: " + name];
+    let k = x.indexOf("{", i);
+    let d = 0;
+    let son = -1;
+    for (let j = k; j < x.length; j++) {
+      if (x[j] === "{") d++;
+      else if (x[j] === "}" && --d === 0) { son = j; break; }
+    }
+    if (son < 0) return ["okunamadi: " + name];
+    const govde = x.slice(k + 1, son);
+    const parcalar = [];
+    let dd = 0;
+    let buf = "";
+    for (const c of govde) {
+      if ("{[(".includes(c)) dd++;
+      else if ("}])".includes(c)) dd--;
+      if ((c === ";" || c === ",") && dd === 0) { parcalar.push(buf); buf = ""; } else buf += c;
+    }
+    parcalar.push(buf);
+    return [...new Set(parcalar.map((seg) => (seg.match(/^\s*(\w+)\??\s*:/) ?? [])[1]).filter(Boolean))].sort();
+  };
+  const web = alanlar("src/lib/exam-types.ts", "ExamCover");
+  /* Mobil kapagi kendi `Paper` tipinin icinde yaziyor; satiri ayikliyoruz. */
+  const mobilSatir = (read("mobile/src/screens/ExamScreen.tsx").match(/^\s*cover: \{([^}]*(?:\{[^}]*\}[^}]*)*)\} \| null;/m) ?? [])[1] ?? "";
+  /* IC ICE nesneler atlaniyor: `canDo` satirinin kendi alanlari (de/tr/en)
+     ust duzeyde degil ve sunucu tipinde de ayri bir tipte duruyor. */
+  const mobilParca = [];
+  {
+    let d = 0;
+    let buf = "";
+    for (const c of mobilSatir) {
+      if ("{[(".includes(c)) d++;
+      else if ("}])".includes(c)) d--;
+      if ((c === ";" || c === ",") && d === 0) { mobilParca.push(buf); buf = ""; } else buf += c;
+    }
+    mobilParca.push(buf);
+  }
+  const mobil = [...new Set(mobilParca.map((seg) => (seg.match(/^\s*(\w+)\??\s*:/) ?? [])[1]).filter(Boolean))].sort();
+  sameSet("sinav kapagi alanlari", mobil, web, "mobil", "sunucu");
+}
+
 /* ── 59. sinav kacanlari hangi bolumlerden toplaniyor ─────────────────────
  * Sonuc ekranindaki kirilim, sinavin OGRETEN kismi: yuzde neyi kacirdigini
  * soylemiyor. Iki taraf da kacanlari cevap noktalarinda elle biriktiriyor ve
