@@ -4616,3 +4616,26 @@ duraklaması yok).
 geçtiği yer bir **yorum** satırıydı ("Burada `track("exam_start", …)`
 yazıyordu"). Yorum ayıklamayan bir tarama yanlış pozitif üretiyor — §11.85'te
 kapıya yazdığım kuralın (yorumlar ayıklanmalı) aynısı, bu kez ölçüm aracında.
+
+### 11.98 Kapı yazılınca bir eksik daha çıktı
+
+§11.97'nin listesini kapıya bağladım ve kapı ilk çalışmasında **altıncı**
+eksiği gösterdi: `exam_start`.
+
+Web yerleştirme testi **başlarken** yazıyor (`placement:A1`); mobil yalnız
+bitişi yazıyordu. Yani "kaç kişi başlayıp bıraktı" hesaplanamıyordu — huninin
+**payı** eksikti, paydası değil. Bir önceki tur `placement_finish`i eklemişti
+ve bu, yarım bir ölçüm bırakmıştı.
+
+Elle taramada gözden kaçmasının sebebi ilginç: aynı ad webin bir **yorum**
+satırında da geçiyor (`weekly-player`: "Burada `track("exam_start", …)`
+yazıyordu") ve elle bakarken onu gerçeğinden ayırmamıştım — tek geçiş sandım.
+Kapı yorumları ayıkladığı için doğruyu gösterdi.
+
+Ders: yanlış pozitif yalnız fazladan iş çıkarmaz, **gerçek bulguyu da
+gizleyebilir**. §11.85'te kapıya yazdığım "yorumlar ayıklanmalı" kuralının
+ikinci gerekçesi bu.
+
+Kalan on altı ad web-özel ve her biri gerekçesiyle kapının listesinde duruyor;
+yenisi çıkarsa kapı kalıyor ve "bunun mobil yüzeyi var mı" sorusu insana
+geliyor.
