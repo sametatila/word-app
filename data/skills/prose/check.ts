@@ -94,7 +94,16 @@ if (existsSync(`${DIR}out`))
         }
         if (en.length > r.tr.length * 2 + 20 || en.length * 2 + 20 < r.tr.length)
           U(`uzunluk çok sapıyor (${r.tr.length} → ${en.length})`);
-        for (const h of usSpelling(en)) U(`Amerikan yazımı ${h}`);
+        /*
+          Yazım denetimi ALINTININ DIŞINA bakıyor. Tırnak içi kaynaktan
+          geldiği gibi duruyor ve düzeltilmesi YASAK — „In den Bergen über
+          1200 Meter“ Almanca bir cümle, `Meter` de Almanca sözcük; İngilizce
+          kursun kendi egzersizinde geçen „analyze“ ve „color“ da öyle.
+          Onları uyarı olarak bildirmek, düzeltilmemesi gereken üç satırı
+          her koşuda tekrar göstermek demekti; asıl uyarılar da o gürültüde
+          kayboluyordu.
+        */
+        for (const h of usSpelling(en.replace(/[„"][^„"“”]*[“"]/g, " "))) U(`Amerikan yazımı ${h}`);
       }
       written.set(key, en);
     }
