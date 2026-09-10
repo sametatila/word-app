@@ -25,15 +25,78 @@ export class ApiError extends Error {
   }
 }
 
-export async function api<T = unknown>(path: string, init?: RequestInit): Promise<T> {
-  const res = await fetch(`${API_BASE}${path}`, {
-    ...init,
-    headers: {
-      accept: "application/json",
-      ...(init?.body ? { "content-type": "application/json" } : {}),
-      ...(init?.headers ?? {}),
-    },
-  });
+/**
+ * ZAMAN AŞIMI — webin `lib/assess-client` kalıbının karşılığı.
+ *
+ * `api()` hiç zaman aşımı taşımıyordu: yapay zekâ uçları (`/api/assess`,
+ * `/api/roleplay`) otuz saniyeyi aşabiliyor ve RN'in `fetch`i işletim sistemi
+ * vazgeçene kadar bekliyor. Kullanıcı dönmeyen bir spinner'a bakıyordu ve
+ * çıkış yolu yoktu. Web aynı çağrıyı yirmi saniyede kesiyor
+ * (`ASSESS_TIMEOUT_MS`) ve `timeout` sebebini ayrı gösteriyor.
+ *
+ * Varsayılan yirmi beş saniye: webin yirmisinden biraz yukarı, çünkü mobil
+ * ses yükleyen uçları da (`/api/stt`) aynı istemciden çağırıyor. Çağıran
+ * `timeoutMs` ile değiştirebilir; `0` kapatır (yükleme gibi uzun işler için).
+ *
+ * Kesildiğinde `ApiError(0, "timeout")` atılıyor. Durum 0, çünkü sunucudan
+ * bir yanıt gelmedi - `failReason` gibi sınıflandırıcılar onu doğru biçimde
+ * "ulaşılamadı" sayıyor, ama mesaj artık sebebi söylüyor.
+ */
+export const API_TIMEOUT_MS = 25_000;
+
+export type ApiInit = RequestInit & { timeoutMs?: number };
+
+/**
+ * Zaman aşımlı ham `fetch` — `api()`yi KULLANAMAYAN çağrılar için.
+ *
+ * Altı çağrı yeri paylaşılan istemciyi atlıyor ve her birinin sebebi var:
+ * rol yapma metin döndürüyor (`api()` JSON çözüyor), ilerleme POST'ları
+ * yanıtı hiç okumuyor, oturum/hesap uçları ham yanıtla çalışıyor. Hepsinin
+ * ORTAK eksiği zaman aşımıydı: sunucu yanıt vermezse istek işletim sistemi
+ * vazgeçene kadar duruyordu.
+ *
+ * Yanıtı olduğu gibi döndürüyor - çağıranın kendi çözümlemesi bozulmasın.
+ * Kesilirse `ApiError(0, "timeout")`.
+ */
+export async function fetchWithTimeout(url: string, init?: ApiInit): Promise<Response> {
+  const ms = init?.timeoutMs ?? API_TIMEOUT_MS;
+  const ctl = ms > 0 ? new AbortController() : null;
+  const timer = ctl ? setTimeout(() => ctl.abort(), ms) : null;
+  try {
+    return await fetch(url, { ...init, signal: ctl?.signal as RequestInit["signal"] });
+  } catch (e) {
+    if (timer && (e as Error)?.name === "AbortError") throw new ApiError(0, "timeout");
+    throw e;
+  } finally {
+    if (timer) clearTimeout(timer);
+  }
+}
+
+export async function api<T = unknown>(path: string, init?: ApiInit): Promise<T> {
+  const ms = init?.timeoutMs ?? API_TIMEOUT_MS;
+  const ctl = ms > 0 ? new AbortController() : null;
+  const timer = ctl ? setTimeout(() => ctl.abort(), ms) : null;
+  let res: Response;
+  try {
+    res = await fetch(`${API_BASE}${path}`, {
+      ...init,
+      /* RN'in `AbortSignal` tipi DOM'unkiyle birebir değil; dönüşüm burada.
+         Çağıranın kendi `signal`ını taşımıyoruz çünkü hiçbir çağrı yeri
+         vermiyor (ölçüldü: sıfır) - gerekirse o zaman eklenir. */
+      signal: ctl?.signal as RequestInit["signal"],
+      headers: {
+        accept: "application/json",
+        ...(init?.body ? { "content-type": "application/json" } : {}),
+        ...(init?.headers ?? {}),
+      },
+    });
+  } catch (e) {
+    /* Tek iptal sebebi bizim zaman aşımımız (çağıran `signal` vermiyor). */
+    if (timer && (e as Error)?.name === "AbortError") throw new ApiError(0, "timeout");
+    throw e;
+  } finally {
+    if (timer) clearTimeout(timer);
+  }
   const text = await res.text().catch(() => "");
   if (!res.ok) {
     let msg = text.slice(0, 200);

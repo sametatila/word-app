@@ -16,7 +16,7 @@ import { QuestionList, GlossPanel, WritingList, type WritingTask } from "../game
 import { GrammarBody, SpeakingDrill, MonologueBody, type SpeakingTask } from "../game/skillLibrary";
 import { markItemDone } from "../game/lessonProgress";
 import { speakTarget } from "../lib/tts";
-import { API_BASE } from "../api/client";
+import { API_BASE, fetchWithTimeout } from "../api/client";
 import { AiNotice } from "../ui/AiNotice";
 import { todayStr } from "../game/session";
 import type { RootStackParams } from "../navigation/RootStack";
@@ -100,7 +100,7 @@ export function ItemScreen() {
     saved.current = true;
     void markItemDone(exercise.id);
     try {
-      await fetch(`${API_BASE}/api/skills`, {
+      await fetchWithTimeout(`${API_BASE}/api/skills`, {
         method: "POST", headers: { "content-type": "application/json" },
         body: JSON.stringify({ id: exercise.id, correct: c, score, day: todayStr(), seconds: Math.round((Date.now() - startedAt.current) / 1000) }),
       });

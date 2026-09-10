@@ -1,4 +1,4 @@
-import { API_BASE } from "../api/client";
+import { API_BASE, fetchWithTimeout } from "../api/client";
 import { t } from "./i18n";
 
 /**
@@ -64,7 +64,7 @@ export async function signUp(name: string, email: string, password: string): Pro
 /** Geçerli oturumun kullanıcısı; oturum yoksa null. */
 export async function getSession(): Promise<AuthUser | null> {
   try {
-    const res = await fetch(`${API_BASE}/api/auth/get-session`, { headers: { accept: "application/json" } });
+    const res = await fetchWithTimeout(`${API_BASE}/api/auth/get-session`, { headers: { accept: "application/json" } });
     if (!res.ok) return null;
     const text = await res.text().catch(() => "");
     if (!text || text === "null") return null;
@@ -153,7 +153,7 @@ export async function updateUserName(name: string): Promise<boolean> {
  */
 export async function sendAppleAuthorizationCode(code: string): Promise<boolean> {
   try {
-    const res = await fetch(`${API_BASE}/api/account/apple-code`, {
+    const res = await fetchWithTimeout(`${API_BASE}/api/account/apple-code`, {
       method: "POST",
       headers: { "content-type": "application/json", accept: "application/json" },
       body: JSON.stringify({ code }),
@@ -182,7 +182,7 @@ export async function requestPasswordReset(email: string): Promise<boolean> {
 /** Hesaba bağlı sağlayıcılar (credential = e-posta/parola, google …). */
 export async function listAccounts(): Promise<{ providerId: string }[]> {
   try {
-    const res = await fetch(`${API_BASE}/api/auth/list-accounts`, { headers: { accept: "application/json" } });
+    const res = await fetchWithTimeout(`${API_BASE}/api/auth/list-accounts`, { headers: { accept: "application/json" } });
     if (!res.ok) return [];
     const j = JSON.parse(await res.text()) as { providerId?: string }[];
     return Array.isArray(j) ? j.filter((a) => typeof a.providerId === "string").map((a) => ({ providerId: a.providerId! })) : [];

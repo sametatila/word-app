@@ -22,7 +22,7 @@ import { ensureMicPermission, listenOnce, sttAvailable, stopListening } from "..
 import { spokenMatches } from "../lib/voiceMatch";
 import { currentTargetLang, currentTargetLocale } from "../lib/courses";
 import { haptic } from "../lib/haptics";
-import { API_BASE } from "../api/client";
+import { API_BASE, fetchWithTimeout } from "../api/client";
 import { todayStr } from "../game/session";
 import { useTheme, spacing, radii, softShadow, type Palette } from "../theme";
 import { sfx } from "../lib/sfx";
@@ -415,7 +415,7 @@ export function LessonScreen() {
     void clearLessonResume(lesson.id);
     const seconds = Math.round((Date.now() - startedAt.current) / 1000);
     try {
-      await fetch(`${API_BASE}/api/lesson`, {
+      await fetchWithTimeout(`${API_BASE}/api/lesson`, {
         method: "POST",
         headers: { "content-type": "application/json" },
         body: JSON.stringify({ lessonId: lesson.id, correct, roleplayDone: roleDone, day: todayStr(), seconds }),

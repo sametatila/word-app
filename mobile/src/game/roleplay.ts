@@ -1,4 +1,4 @@
-import { api, API_BASE } from "../api/client";
+import { api, API_BASE, fetchWithTimeout } from "../api/client";
 
 /**
  * Sohbet (roleplay) — web /api/roleplay (DEPLOY'LU). Senaryo metnini SUNUCU
@@ -13,7 +13,10 @@ export async function roleplayConfigured(): Promise<boolean> {
 }
 
 export async function sendRoleplay(lessonId: string, messages: ChatMsg[]): Promise<string> {
-  const res = await fetch(`${API_BASE}/api/roleplay`, {
+  /* Yapay zekâ üretimi: varsayılandan uzun. Yanıt METİN olduğu için `api()`
+     kullanılamıyor (o JSON çözüyor), ama zaman aşımı ortak yardımcıdan. */
+  const res = await fetchWithTimeout(`${API_BASE}/api/roleplay`, {
+    timeoutMs: 45_000,
     method: "POST",
     headers: { "content-type": "application/json" },
     body: JSON.stringify({ lessonId, messages, mode: "practice" }),

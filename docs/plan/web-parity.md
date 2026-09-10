@@ -3263,3 +3263,37 @@ timeout, aborted, bad_request) ve hepsinin sözlük anahtarı var; `/api/assess`
 gerçekten 403/413/429/502/503 döndürüyor ve istemci hepsini ayırıyor. Mobil
 tarafta kapılar çağrı yerinde ele alınıyor ve `ExamScreen` ikisini de doğru
 ayırıyordu - eksik yalnız `skillLibrary`deydi.
+
+### 11.61 Mobil isteklerin hiçbirinde zaman aşımı yoktu
+
+Ölçüm: web `lib/assess-client` her değerlendirme çağrısını yirmi saniyede
+kesiyor (`ASSESS_TIMEOUT_MS`) ve `timeout` sebebini `aborted`dan bile ayırıyor;
+`chat-providers`, `tts/azure`, `walk-player` ve serbest cümle turu da
+`AbortController` kullanıyor. **Mobilde tek bir zaman aşımı yoktu.**
+
+Sonucu: yapay zekâ uçları (`/api/assess`, `/api/roleplay`) otuz saniyeyi
+aşabiliyor ve RN'in `fetch`i işletim sistemi vazgeçene kadar bekliyor.
+Kullanıcı dönmeyen bir spinner'a bakıyordu ve çıkış yolu yoktu.
+
+`api()` artık varsayılan yirmi beş saniyede kesiyor - webin yirmisinden biraz
+yukarı, çünkü mobil ses yükleyen uçları da (`/api/stt`) aynı istemciden
+çağırıyor. Çağıran `timeoutMs` ile değiştirebilir, `0` kapatır. Kesildiğinde
+`ApiError(0, "timeout")` atılıyor: durum 0, çünkü sunucudan yanıt gelmedi -
+`failReason` gibi sınıflandırıcılar onu doğru biçimde "ulaşılamadı" sayıyor
+ama mesaj artık sebebi söylüyor.
+
+**Yan bulgu: altı çağrı paylaşılan istemciyi atlıyordu.** `ItemScreen` ve
+`LessonScreen` ilerleme POST'ları, `game/roleplay` sohbet turu, `lib/auth`ın
+üç oturum/hesap çağrısı. Her birinin atlama sebebi var (rol yapma METİN
+döndürüyor, ilerleme POST'ları yanıtı hiç okumuyor, oturum uçları ham yanıtla
+çalışıyor) ama ORTAK eksikleri zaman aşımıydı. `fetchWithTimeout` eklendi:
+yanıtı olduğu gibi döndürüyor, yalnız süreyi bağlıyor. Rol yapma turu kırk
+beş saniye alıyor (yapay zekâ üretimi, varsayılandan uzun).
+
+Ölçüm doğrulandı: mobilde `api/client.ts` dışında zaman aşımsız `fetch`
+kalmadı.
+
+**Ölçülüp temiz çıkanlar:** `writings.ts` düz bir liste çağrısı ve hatayı
+`WritingsScreen` ele alıyor (hata durumu + tekrar deneme var);
+`/api/assess`in on sebebini web istemcisi tek tek ayırıyor ve mobil kapıları
+çağrı yerinde ayırıyor (bkz. §11.60).
