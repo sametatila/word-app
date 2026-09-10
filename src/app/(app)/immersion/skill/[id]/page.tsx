@@ -60,7 +60,10 @@ export default async function ImmersionSkillPage({
     const lang = isNativeLang(profile?.nativeLang) ? profile.nativeLang : null;
     exercise = await localiseExercise(source, lang);
   } catch (err) {
-    console.error("[skill] ana dil çözülemedi", err);
+    // Log Türkçe DEĞİL, bilerek: `i18n-hardcoded` cırcırlı tabanı dosya
+    // başına sayıyor ve buraya Türkçe bir cümle eklemek tabanı yükseltirdi.
+    // Tanımlayıcı artı hata nesnesi teşhis için zaten yeterli.
+    console.error("[skill] localiseExercise", err);
   }
   // Aynı oynatıcıya iki yerden giriliyor; "geri" nereden gelindiyse oraya
   // dönmeli, yoksa Beceriler'den giren kullanıcı Patika'ya düşüyor.

@@ -56,7 +56,9 @@ export async function POST(req: Request) {
   if (!verified.ok) {
     // Anahtarlara ulaşılamadıysa suç bizde değil: Apple tekrar denesin.
     const status = verified.reason === "jwks_unavailable" ? 503 : 401;
-    console.warn("[apple/notifications] doğrulanamadı:", verified.reason);
+    // Türkçe cümle YOK: `i18n-hardcoded` cırcırlı tabanı dosya başına
+    // sayıyor. `reason` zaten makine okunur ve teşhis için yeterli.
+    console.warn("[apple/notifications]", verified.reason);
     return NextResponse.json({ error: verified.reason }, { status });
   }
 
