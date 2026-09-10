@@ -15,7 +15,8 @@ import { seededShuffle } from "@/lib/shuffle";
 import { matchSentence, type SentenceMatch } from "@/lib/sentence-match";
 import { TokenDiff, TypedTokens } from "@/components/feedback/diff-text";
 import { levenshtein } from "@/lib/errors";
-import { useT } from "@/lib/i18n/client";
+import { useT, useLang } from "@/lib/i18n/client";
+import { courseName } from "@/lib/courses";
 
 type BuildTaskData = Extract<WritingTask, { kind: "build" }>;
 type FreeTaskData = Extract<WritingTask, { kind: "free" }>;
@@ -324,6 +325,7 @@ function FreeTask({
   onDone: (ok: boolean, score?: number) => void;
 }) {
   const t = useT();
+  const uiLang = useLang();
   const lang = useTargetLang();
   // Taslak cihazda saklanır: sayfadan çıkıp dönen öğrenci yazdığını kaybetmez.
   // localStorage yalnızca istemcide var; hidrasyon uyuşmazlığı olmasın diye
@@ -480,7 +482,9 @@ function FreeTask({
         onChange={(e) => setText(e.target.value)}
         rows={7}
         lang={lang}
-        placeholder="Hier schreiben…"
+        /* Sabit Almanca yazıyordu. Android hedef dili SÖYLÜYOR
+           (`skillquiz.write_your_answer_in`, {lang} = kursun adı); web de öyle. */
+        placeholder={t("skillquiz.write_your_answer_in", { lang: courseName(lang, uiLang) })}
         className="option mt-3 w-full px-3.5 py-3 text-[15px] leading-relaxed outline-none focus:border-[color:var(--color-brand)]"
       />
       <div className="mt-1.5 flex items-center justify-between">

@@ -647,7 +647,9 @@ export function ExamPlayer({ level, module }: { level: CefrLevel; module: number
             rows={7}
             lang="de"
             spellCheck={false}
-            placeholder="Auf Deutsch schreiben…"
+            /* Sabit Almanca yazıyordu; kurs İngilizce olabiliyor ve arayüzün
+               üç dili var. Android aynı yerde `exam.write_text` kullanıyor. */
+            placeholder={t("exam.write_text")}
             className="card mt-3 w-full resize-none px-4 py-3 text-base outline-none"
           />
           <p className="muted mt-1 text-right text-xs tabular-nums">
@@ -868,7 +870,8 @@ function ProduceCard({
           rows={3}
           lang="de"
           spellCheck={false}
-          placeholder="Auf Deutsch schreiben…"
+          /* Android: `exam.write_sentence`. */
+          placeholder={t("exam.write_sentence")}
           className="card mt-3 w-full resize-none px-4 py-3 text-base outline-none"
         />
       )}
