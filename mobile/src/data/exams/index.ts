@@ -1,7 +1,7 @@
 import PAPERS from "./papers.json";
 import PAPERS_EN from "./papers-en.json";
 import { courseOrDefault, type CourseId } from "../../lib/courses";
-import { nativeMockPaper, nativeMockText } from "../../lib/nativeContent";
+import { nativeMockPaper, nativeMockText, translatedCourse } from "../../lib/nativeContent";
 
 /**
  * Deneme sınavları — elle yazılmış, kendi başına duran sınav kâğıtları.
@@ -202,7 +202,10 @@ export function mockPapersFor(course: CourseId, level?: string): MockPaper[] {
   return (level ? list.filter((p) => p.level === level) : list)
     .slice()
     .sort((a, b) => a.no - b.no)
-    .map((p) => (p.course === "de" ? { ...p, themeTr: nativeMockText("themeTr", p.themeTr) } : p));
+    /* Süzgeç KURSA değil ANADİLE bağlı: çevrilen kurs anadille birlikte
+       değişiyor (`translatedCourse`). Sabit "de" kalsaydı anadili Almanca
+       olan kullanıcının İngilizce kâğıt listesi Türkçe kalırdı. */
+    .map((p) => (p.course === translatedCourse() ? { ...p, themeTr: nativeMockText("themeTr", p.themeTr) } : p));
 }
 
 export function mockPaperById(id: string): MockPaper | null {

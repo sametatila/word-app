@@ -699,9 +699,29 @@ export function resolveExercise<T extends ExerciseShape>(dict: NativeDict, ex: T
   const stem = (kind: string, s: string | undefined): string | undefined =>
     typeof s === "string" && isTurkishStem(s) ? k(kind, s) : s;
 
+  /**
+   * Sözlükçeyi ANA DİLE katlar: Türkçe anlamın yerine ana dildeki anlam
+   * geçer ve `en` alanı düşer.
+   *
+   * KAYNAK İKİ YERDEN BİRİ ve sırası sabit. Önce `g.en` — Almanca kursta
+   * o alan 5.633'ün 5.633'ünde dolu, yani içeriği yazan taraf İngilizceyi
+   * baştan düşünmüş ve hat onu hiç paketlemiyor (gerekçesi
+   * `data/skills/prose/make.ts` başında: ikinci bir doğruluk kaynağı
+   * açmak, ikisi ayrışınca hangisinin doğru olduğunu bilinemez hâle
+   * getirir).
+   *
+   * Alan BOŞSA sözlüğe düşülüyor. İngilizce kursta 1.207 maddenin
+   * 1.207'sinde boş — ayrışacak birinci kaynak yok, o yüzden anlam
+   * hattan geliyor (`data/skills/prose-de`, `gloss.tr` türü). Almanca
+   * yönde bu dal hiç çalışmıyor; İngilizce yönde ise tek yol o.
+   *
+   * İkisi de yoksa egzersiz DÜŞÜYOR — yarım katlanmış bir sözlükçe,
+   * katlanmamışından kötü.
+   */
   const fold = <G extends GlossShape>(g: G): G => {
-    if (!g.en?.trim()) failed = true;
-    return { ...g, tr: g.en ?? g.tr, en: undefined, ...(g.note ? { note: t(g.note) } : {}) };
+    const native = g.en?.trim() ? g.en : dict.prose[g.tr];
+    if (!native) failed = true;
+    return { ...g, tr: native ?? g.tr, en: undefined, ...(g.note ? { note: t(g.note) } : {}) };
   };
 
   /* Dil bilgisi anlatımı ve monolog da yapısal tipin dışında okunuyor —

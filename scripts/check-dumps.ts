@@ -93,6 +93,8 @@ compare(
   for (const [label, file, body] of [
     ["ana dil çözücüsü", NATIVE_DUMP_FILES.ts, want.ts],
     ["ana dil sözlüğü", NATIVE_DUMP_FILES.json, want.json],
+    ["Almanca çözücü", NATIVE_DUMP_FILES.tsDe, want.tsDe],
+    ["Almanca sözlük", NATIVE_DUMP_FILES.jsonDe, want.jsonDe],
   ] as const) {
     let have: string | null = null;
     try {
