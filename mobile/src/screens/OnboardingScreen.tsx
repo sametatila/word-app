@@ -36,7 +36,22 @@ type Step = {
   options?: Option[];
 };
 
+/**
+ * Seviye seçici — kod ve NE ANLAMA GELDİĞİ.
+ *
+ * Satır yalnız "A1 A2 B1 B2 C1" yazıyordu: kullanıcıdan seviyesini seçmesi
+ * isteniyor ama seçecek bir şey verilmiyordu. Web her seçenek için bir
+ * cümlelik karşılık gösteriyor (`course-onboarding` `LEVELS`) ve bu, kararın
+ * verildiği tek yer.
+ */
 const LEVELS = ["A1", "A2", "B1", "B2", "C1"];
+const LEVEL_DESC: Record<string, string> = {
+  A1: "onboarding.i_m_just_starting_out",
+  A2: "level.a2_desc",
+  B1: "level.b1_desc",
+  B2: "level.b2_desc",
+  C1: "level.c1_desc",
+};
 
 /** Dil adları kendi dillerinde yazılır — arayüz hangi dilde olursa olsun okunur. */
 const LANG_LABEL: Record<NativeLang, string> = { tr: "Türkçe", en: "English", de: "Deutsch" };
@@ -244,6 +259,11 @@ export function OnboardingScreen() {
                 })}
               </View>
             )}
+            {step.key === "level" && chosen === "pick" && pickedLevel ? (
+              <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.sm, lineHeight: 20 }}>
+                {t(LEVEL_DESC[pickedLevel] ?? "")}
+              </Text>
+            ) : null}
           </View>
         )}
       </View>

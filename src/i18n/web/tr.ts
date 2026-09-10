@@ -181,10 +181,6 @@ export const trWeb: Record<string, string> = {
   "settings.privacy_and_terms_sub": "Hangi veriyi neden işlediğimiz, hakların",
   "settings.add_to_home": "Ana ekrana ekle",
   "settings.add_to_home_hint": "tam ekran, çevrimdışı",
-  "level.a2_desc": "Temel günlük dili biliyorum",
-  "level.b1_desc": "Kendimi genel konularda ifade ederim",
-  "level.b2_desc": "İş ve toplum dilini anlarım",
-  "level.c1_desc": "Akademik ve soyut dile hâkimim",
   /* Kelime turu — etap, bahis ve özet ekranları. Mobil `GameScreen` daha
      sade olduğu için bu anahtarların çoğu web'e özel. */
   "session.preparing": "Bugünkü çalışman hazırlanıyor…",

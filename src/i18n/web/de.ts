@@ -158,10 +158,6 @@ export const deWeb: Record<string, string> = {
   "settings.privacy_and_terms_sub": "Welche Daten wir warum verarbeiten, deine Rechte",
   "settings.add_to_home": "Zum Startbildschirm",
   "settings.add_to_home_hint": "Vollbild, offline",
-  "level.a2_desc": "Ich kann einfache Alltagssprache",
-  "level.b1_desc": "Ich kann mich zu allgemeinen Themen ausdrücken",
-  "level.b2_desc": "Ich verstehe Berufs- und Öffentlichkeitssprache",
-  "level.c1_desc": "Ich beherrsche akademische und abstrakte Sprache",
   /* Kelime turu — bkz. tr.ts notu. */
   "session.preparing": "Deine heutige Runde wird vorbereitet…",
   "session.lets_go": "Los geht's",

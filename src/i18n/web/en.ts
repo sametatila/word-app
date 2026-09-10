@@ -158,10 +158,6 @@ export const enWeb: Record<string, string> = {
   "settings.privacy_and_terms_sub": "What we process, why, and your rights",
   "settings.add_to_home": "Add to home screen",
   "settings.add_to_home_hint": "full screen, offline",
-  "level.a2_desc": "I know basic everyday language",
-  "level.b1_desc": "I can express myself on general topics",
-  "level.b2_desc": "I understand work and public language",
-  "level.c1_desc": "I handle academic and abstract language",
   /* Kelime turu — bkz. tr.ts notu. */
   "session.preparing": "Getting today's session ready…",
   "session.lets_go": "Let's go",
