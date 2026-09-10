@@ -137,5 +137,16 @@
  { "tr": "Beşinci paragraf bunu açıkça ayırıyor: „What I object to is not that a choice was made. It is that the choice was made silently, and then furnished.“", "kind": "explain", "de": "Der fünfte Absatz trennt es deutlich: „What I object to is not that a choice was made. It is that the choice was made silently, and then furnished.“" },
  { "tr": "Yazıda \"Since Monday we have worked at 4 King Street, next to the library\" diyor. Ofis kütüphanenin içinde değil, yanındadır; Mill Road'daki eski ofis kapandı.", "kind": "explain", "de": "Im Text steht \"Since Monday we have worked at 4 King Street, next to the library\". Das Amt ist nicht in der Bibliothek, sondern daneben; das alte Büro an der Mill Road ist zu." },
  { "tr": "Haber şöyle diyor: \"The bridge closed last November because heavy rain damaged the stone under it.\" Sebep şiddetli yağmurun köprünün altındaki taşa zarar vermesi.", "kind": "explain", "de": "Die Meldung sagt so: \"The bridge closed last November because heavy rain damaged the stone under it.\" Grund ist der Schaden, den starker Regen am Stein darunter anrichtete." },
- { "tr": "\"You must call before you come, because the classes are small\" cümlesi telefon etmeyi zorunlu kılıyor. Havlu sadece yoga için, 300 ise bu yıl yardım edilen kişi sayısı.", "kind": "explain", "de": "Der Satz \"You must call before you come, because the classes are small\" macht den Anruf zur Pflicht. Das Handtuch gilt nur fürs Yoga, 300 ist die Zahl der in diesem Jahr Unterstützten." }
+ { "tr": "\"You must call before you come, because the classes are small\" cümlesi telefon etmeyi zorunlu kılıyor. Havlu sadece yoga için, 300 ise bu yıl yardım edilen kişi sayısı.", "kind": "explain", "de": "Der Satz \"You must call before you come, because the classes are small\" macht den Anruf zur Pflicht. Das Handtuch gilt nur fürs Yoga, 300 ist die Zahl der in diesem Jahr Unterstützten." },
+ { "tr": "yorgun", "kind": "gloss.tr", "de": "müde" },
+ { "tr": "hemşire", "kind": "gloss.tr", "de": "Krankenschwester" },
+ { "tr": "fiş", "kind": "gloss.tr", "de": "Flugticket" },
+ { "tr": "ucuz", "kind": "gloss.tr", "de": "billig" },
+ { "tr": "bilet", "kind": "gloss.tr", "de": "Ticket" },
+ { "tr": "daire", "kind": "gloss.tr", "de": "Wohnung" },
+ { "tr": "hediye", "kind": "gloss.tr", "de": "Geschenk" },
+ { "tr": "kat", "kind": "gloss.tr", "de": "Anstrich" },
+ { "tr": "kira", "kind": "gloss.tr", "de": "Miete" },
+ { "tr": "beden", "kind": "gloss.tr", "de": "Größe" },
+ { "tr": "erken", "kind": "gloss.tr", "de": "früh" }
 ]
