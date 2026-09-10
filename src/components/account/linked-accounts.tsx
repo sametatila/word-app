@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { SettingRow } from "@/components/setting-row";
 import { ChangePassword } from "@/components/account/change-password";
+import { ActiveSessions } from "@/components/account/active-sessions";
 import { useT } from "@/lib/i18n/client";
 
 /**
@@ -176,6 +177,11 @@ export function LinkedAccounts({ googleEnabled }: { googleEnabled: boolean }) {
           `credential` yoksa (yalnız Google/Apple ile girmiş biri) form hiç
           çizilmiyor — olmayan bir parolayı sormak anlamsız olurdu. */}
       {bagliMi("credential") ? <ChangePassword /> : null}
+
+      {/* Etkin oturumlar HER hesapta: yalnız Google ile giren biri de
+          telefonunu kaybedebilir. Parola değiştirmenin aksine bu, giriş
+          yöntemine bağlı değil. */}
+      <ActiveSessions />
     </section>
   );
 }
