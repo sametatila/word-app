@@ -1,0 +1,177 @@
+[
+ {
+  "lesson": "de-c1-inversion",
+  "sceneEn": "You are giving your verdict on a talk you both heard as you come out of a conference. Say what you found impressive and what you did not in sentences with emphatic word order, explain why and answer the other side's objection.",
+  "partnerEn": "a listener who found the talk ordinary and wants reasons",
+  "openingEn": "Honestly, I thought it was overrated. What exactly impressed you about it?",
+  "goalEn": "What was impressive and what was not have been given with reasons and the two of you have reached a shared verdict."
+ },
+ {
+  "lesson": "de-c1-dreierfigur",
+  "sceneEn": "You are defending your idea in a meeting and your speech is thought too long. Gather your idea into three points, give each in one sentence, answer the question briefly and close concisely.",
+  "partnerEn": "a chair who tires of long speeches and says 'keep it short'",
+  "openingEn": "We've got five minutes left. Can you say it in three points?",
+  "goalEn": "The idea has been gathered into three points, one question has been answered briefly and a concise close has been made."
+ },
+ {
+  "lesson": "de-c1-metapher-vortrag",
+  "sceneEn": "You are explaining a complex subject from your own field to a listener who is not an expert. Use at least two images, make the main thread clear, answer the question with another image and round it off.",
+  "partnerEn": "a listener new to the subject who is curious and asks questions",
+  "openingEn": "Honestly, I know nothing at all about your field. Could you explain it to me as if I were twelve?",
+  "goalEn": "The subject has been explained with at least two images, the main thread has been made clear and the listener has said in their own words that they understood."
+ },
+ {
+  "lesson": "de-c1-publikum",
+  "sceneEn": "Your presentation is over and one of the audience has asked an aggressive question. Stay calm, take the question on, refute the claim, concede one point where they are right and close the round.",
+  "partnerEn": "an assertive listener who interrupts and is not easily convinced",
+  "openingEn": "I know your figures differently. Are you working with a flattering selection there?",
+  "goalEn": "The question has been taken on, the claim refuted, one fair point conceded and the question round closed calmly."
+ },
+ {
+  "lesson": "de-c1-stegreif",
+  "sceneEn": "You have been given the floor in a meeting when you did not expect it. Buy yourself time, divide your answer into three, say honestly where you do not know and hand back with a summing-up.",
+  "partnerEn": "a chair who has caught you unprepared and expects a lot",
+  "openingEn": "You've been with this subject longest — would you sum up briefly where we stand?",
+  "goalEn": "Time has been bought, the answer has been divided into three, an unknown has been admitted honestly and the floor has been handed back with a summing-up."
+ },
+ {
+  "lesson": "de-c1-moderation",
+  "sceneEn": "You are hosting an event and the programme has slipped: the speaker is late. Greet the room, announce the situation politely, build a bridge to fill the gap and restart the programme.",
+  "partnerEn": "a flustered event manager passing on news from backstage",
+  "openingEn": "She'll be at least ten minutes. Can you bridge that somehow?",
+  "goalEn": "The room has been greeted, the delay announced politely, a bridge has been built and the programme restarted."
+ },
+ {
+  "lesson": "de-c1-schlagfertig",
+  "sceneEn": "Someone at a celebration keeps making barbed remarks at you. Meet the first calmly, turn the second back to the subject, and if they go too far draw a polite but firm line and end the conversation.",
+  "partnerEn": "a guest trying to seem witty who goes too far",
+  "openingEn": "Well, if it isn't the famous expert! So? Did everything get finished on time this time?",
+  "goalEn": "The barbs have been met calmly, the subject has been taken back and, where needed, a polite but firm line has been drawn."
+ },
+ {
+  "lesson": "de-c1-storytelling",
+  "sceneEn": "You are telling a story at dinner about something that happened to you. Set up the opening, hold the tension, do not give the ending away early, weave the interruptions into the story and deliver the point at the end.",
+  "partnerEn": "an impatient listener who keeps asking 'and then?'",
+  "openingEn": "Wait — first tell me: does the story end well?",
+  "goalEn": "The story has been told with the tension held, the interruptions have been woven in and the point has been delivered at the end."
+ },
+ {
+  "lesson": "de-c1-abschlussrede",
+  "sceneEn": "You are leaving a team you have worked with for a long time and giving a farewell speech. Open with an image, thank a few people by name, tell one memory briefly and close with good wishes.",
+  "partnerEn": "a colleague who has known you for years and throws in short remarks",
+  "openingEn": "Before you start: be honest, did you prepare this or are you making it up as you go?",
+  "goalEn": "The speech has opened with an image, at least two people have been thanked, a memory has been told and it has closed with good wishes."
+ },
+ {
+  "lesson": "de-c1-debatte-c1",
+  "sceneEn": "You are in a short debate on a contested subject. Concede the other side's strongest argument, then line up your own reasons, refute one objection and say at the end what weighs more.",
+  "partnerEn": "a well-prepared opponent with solid arguments",
+  "openingEn": "I'll start: the benefit is short-term, the costs remain. How do you propose to counter that?",
+  "goalEn": "The other side's strongest argument has been conceded, your own reasons have been lined up and what weighs more has been said at the end."
+ },
+ {
+  "lesson": "de-c1-daumen",
+  "sceneEn": "A friend has an important exam or interview tomorrow. Support them, listen to their worry, tell them their plan is sound and ask whether there is something they want to talk through in private. Use idioms in measure.",
+  "partnerEn": "a nervous friend who lacks confidence but wants to talk",
+  "openingEn": "I think I'm going to make a mess of it tomorrow. Tell me honestly — does my plan actually hold water?",
+  "goalEn": "The worry has been heard, an honest verdict has been given on the plan and support has been offered with something concrete."
+ },
+ {
+  "lesson": "de-c1-tomaten",
+  "sceneEn": "You are making a joint decision (a holiday, a move, a purchase). Say which points matter to you and which you do not mind about; accept putting up with one thing unwillingly and reach a conclusion.",
+  "partnerEn": "a friend who finds fault in every detail and does not decide easily",
+  "openingEn": "Well, honestly, it isn't all the same to me. You go first: what really matters to you?",
+  "goalEn": "The points that matter and those that do not have been separated, one concession has been made and a joint decision has been reached."
+ },
+ {
+  "lesson": "de-c1-tiere-idiome",
+  "sceneEn": "You are telling a friend about a narrow escape: what happened, why you were lucky, whose word you trusted and what you would do differently. Use idioms where they fit.",
+  "partnerEn": "a friend listening keenly and asking for detail",
+  "openingEn": "Tell me from the beginning — and were you really just jammy, or was it skill?",
+  "goalEn": "The event has been told from the beginning, luck and skill have been told apart and what you would do again has been said."
+ },
+ {
+  "lesson": "de-c1-wetter-idiome",
+  "sceneEn": "The atmosphere at work has turned tense and you are talking to a friend: where the tension comes from, whether it is being blown up, whether there is a hopeful sign and what you should do. Use the metaphors where they fit.",
+  "partnerEn": "a friend who thinks it is being blown up but takes your worry seriously",
+  "openingEn": "Is it really that bad, or isn't it more of a storm in a teacup?",
+  "goalEn": "The source of the tension has been described, how much is exaggeration has been weighed and a conclusion has been reached about what to do."
+ },
+ {
+  "lesson": "de-c1-farben-idiome",
+  "sceneEn": "A colleague often shirks the work and it lands on you. Talk it through: what you have noticed, how you feel, whether management needs to sign anything off and how you will go on.",
+  "partnerEn": "a colleague who denies it at first and then explains the reason",
+  "openingEn": "Tell me, have you got some problem with me? You've been looking at me like that all week.",
+  "goalEn": "What you noticed has been said without blame, the reason has been heard and how to go on has been settled."
+ },
+ {
+  "lesson": "de-c1-sport-idiome",
+  "sceneEn": "You are stuck on something you have run for a long time and you are thinking of giving up. Talk to a friend: describe why it is hard, admit your own part, weigh what giving up would mean and reach a decision.",
+  "partnerEn": "a friend against your giving up who still listens to your reasons",
+  "openingEn": "You want to throw in the towel? After two years? First tell me exactly what isn't working any more.",
+  "goalEn": "The difficulty has been described, your own part has been admitted and a decision has been reached about going on or giving up."
+ },
+ {
+  "lesson": "de-c1-geld-idiome",
+  "sceneEn": "You are discussing a shared purchase and you think it is unnecessary. Say why it is money down the drain, mention your own situation politely, suggest a cheaper alternative and reach a decision.",
+  "partnerEn": "a friend defending the expensive option who will pay for quality",
+  "openingEn": "I know it's dear. But buying cheap often means buying twice — or do you see it differently?",
+  "goalEn": "Both sides' reasons have been given, the budget position has been mentioned politely and a decision has been reached."
+ },
+ {
+  "lesson": "de-c1-musik-idiome",
+  "sceneEn": "You are trying to work out who really carries weight in a team you have just joined. Ask a colleague: who sets the tone, how decisions are made, how you can find your place. Use idioms in measure.",
+  "partnerEn": "a plain-spoken but diplomatic colleague who knows the team well",
+  "openingEn": "You're new, so I'll tell you straight away: on paper the management decides. And in reality? Have a guess.",
+  "goalEn": "The real balance of power in the team has been learnt and a concrete piece of advice on finding your place has been taken away."
+ },
+ {
+  "lesson": "de-c1-falsche-freunde-idiome",
+  "sceneEn": "You are trying to explain an English idiom to a German-speaking friend. First say it word for word, notice why it makes no sense, explain what it means and find the German equivalent together.",
+  "partnerEn": "a German friend who is curious about languages and tries to suggest an equivalent",
+  "openingEn": "Say it literally once more — I honestly can't make head nor tail of it. What is that supposed to mean?",
+  "goalEn": "The real meaning of the idiom has been explained and a German equivalent has been found together."
+ },
+ {
+  "lesson": "de-c1-idiome-alltag",
+  "sceneEn": "You are telling a friend about a busy day. Use idioms in measure: three or four at most, each fitting its context. If the other person says you are overdoing it, adjust.",
+  "partnerEn": "a friend who knows you well and pulls you up when you overdo it",
+  "openingEn": "Tell me, how was your day? And please, no book of proverbs — just say it as it was.",
+  "goalEn": "The day has been described, the idioms have been used in measure and the other person has said it sounded natural."
+ },
+ {
+  "lesson": "de-c1-konjunktiv1",
+  "sceneEn": "You are passing on what was said in a meeting to a colleague who was not there. Give who said what in the reporting mood, put your own assessment in a separate sentence and say what is certain and what is only claimed.",
+  "partnerEn": "a colleague who wants to know exactly who said what and asks for detail",
+  "openingEn": "And what exactly did the management say — in their words, not with your assessment?",
+  "goalEn": "What was said has been given in the reporting mood, the speaker's own view has been separated and what is certain and what is claimed have been marked."
+ },
+ {
+  "lesson": "de-c1-pressebericht",
+  "sceneEn": "You are reporting an incident to a local radio station. Keep apart what has been confirmed, what is only claimed and what the state of the sources is; give an assessment without overstating.",
+  "partnerEn": "a radio presenter who wants a definite sentence and asks 'yes or no'",
+  "openingEn": "Very briefly and without the subjunctive: has someone been injured there or not?",
+  "goalEn": "The confirmed and the claimed have been separated, the state of the sources has been given and an assessment has been made without overstating."
+ },
+ {
+  "lesson": "de-c1-wissenschaftssprache",
+  "sceneEn": "You are presenting your own finding at a working meeting. Report the finding in impersonal language, say which assumption it rests on, concede one limitation and say how far the result can be generalised.",
+  "partnerEn": "a researcher who questions the method and asks about the limits of generalisation",
+  "openingEn": "Before we talk about the interpretation: what assumption does your finding actually rest on?",
+  "goalEn": "The finding has been reported impersonally, the assumption and one limitation have been given and its generalisability has been stated."
+ },
+ {
+  "lesson": "de-c1-quellenkritik",
+  "sceneEn": "An acquaintance is making a strong claim on the basis of a study. Question the source, separate what is reported from what is proven, ask about the interests involved and reach a shared conclusion about how far it can be trusted.",
+  "partnerEn": "an acquaintance who trusts the study and thinks questioning the source is unnecessary",
+  "openingEn": "It's in the study, isn't it. What more do you want — shall I ring the authors?",
+  "goalEn": "The reported claim and the proven fact have been separated, the source and the interests have been questioned and agreement has been reached about how far to trust it."
+ },
+ {
+  "lesson": "de-c1-abstract",
+  "sceneEn": "Someone at a conference asks about your work and you have one minute. Give the research question, your method, your main finding and what you have left open, in that order; answer the question briefly.",
+  "partnerEn": "a colleague with little time who is genuinely interested",
+  "openingEn": "I've got exactly one minute — what is your work about and what is the one result that counts?",
+  "goalEn": "The research question, the method, the main finding and the open point have been given in one minute and a question has been answered."
+ }
+]
