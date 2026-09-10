@@ -1654,6 +1654,28 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   sameList("ortak dizge sabitleri", ayrisanS.length ? ayrisanS : ["ayrisma yok (" + ortakS.length + ")"], ["ayrisma yok (" + ortakS.length + ")"], "ayrisan", "beklenen");
 }
 
+/* ── 38. sinav yazma bolumunun degerlendirme istegi ────────────────────────
+ * Ayni kompozisyon iki uygulamada AYNI PUANI almali. Puani model veriyor ve
+ * modele ne soylendigi istekte: gorev metni, kisitlar ve dil. Kisit listesi
+ * "en az N kelime" satirini elle ekliyor - iki taraftan birinde unutulursa
+ * ayni yazi bir uygulamada gecer, otekinde kalir ve sebebi hicbir yerde
+ * gorunmez.
+ *
+ * Sozcugu sozcuguna degil, ISTEGIN SEKLI karsilastiriliyor: kisit ifadesi ve
+ * `locale`. Alan adlari iki tarafta ayni (`task.constraints`, `answer.text`). */
+{
+  const sekil = (p) => {
+    const src = read(p).replace(/\/\*[\s\S]*?\*\//g, " ").replace(/\/\/[^\n]*/g, " ");
+    const c = (src.match(/constraints:\s*(\[[^\]]*\])/) ?? [])[1];
+    const l = (src.match(/locale:\s*("(\w+)"|`[^`]*`)/) ?? [])[1];
+    return [
+      "kisit=" + (c ? c.replace(/\s+/g, " ").replace(/\b(item|w)\./g, "GOREV.") : "yok"),
+      "dil=" + (l ?? "yok"),
+    ];
+  };
+  sameList("sinav yazma degerlendirme istegi", sekil("mobile/src/screens/ExamScreen.tsx"), sekil("src/components/exam-player.tsx"));
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"
