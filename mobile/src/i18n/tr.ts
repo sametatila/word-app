@@ -104,6 +104,7 @@ export const tr: Record<string, string> = {
   "changepw.save": "Parolayı değiştir",
   "changepw.saving": "Değiştiriliyor…",
   "changepw.done": "Parolan değiştirildi. Öteki cihazlardaki oturumlar kapatıldı.",
+  "common.listen": "Dinle",
   "common.answer_is": "Doğrusu:",
   "common.start": "Başla",
   "common.finish": "Bitir",

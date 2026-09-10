@@ -881,7 +881,6 @@ export const deWeb: Record<string, string> = {
   "wordsw.due_in_days": "in {n} Tagen fällig",
   "wordsw.not_studied": "noch nicht geübt",
   "snd.play_sample": "Beispielton anhören",
-  "common.listen": "Anhören",
   "settings.privacy_policy_short": "Richtlinie",
   "voicew.listen_to": "{name} anhören",
   "voicew.playing": "Läuft…",

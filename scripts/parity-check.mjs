@@ -2335,16 +2335,14 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
 }
 
 /* ── 57. seviye testi asamalari ───────────────────────────────────────────
- * Sunucu DORT asamali bir test veriyor (`PlacementStage`) ve web dordunu de
- * oynatiyor. Mobil istemci tipi yalnizca `vocab` tasiyor: Android'de seviye
- * testi KELIME olcuyor, dilbilgisi/okuma/dinleme hic sorulmuyor ve `perSkill`
- * uc alanini bos donduruyor.
+ * Sunucu DORT asamali bir test veriyor (`PlacementStage`) ve iki istemci de
+ * dordunu oynuyor. Uzun sure boyle DEGILDI: mobil tipi yalnizca `vocab`
+ * tasiyordu, yani Android'de seviye testi kelime olcuyor, dilbilgisi/okuma/
+ * dinleme hic sorulmuyor ve `perSkill` uc alanini bos donduruyordu
+ * (docs/plan/web-parity.md §11.119, §11.168'de kapandi).
  *
- * Bu bir tur icinde kapatilacak bir acik degil (uyarlanan asama makinesi,
- * metin oynatici ve dinleme sesi gerekiyor); docs/plan/web-parity.md 11.119'da
- * kayitli ve Samet'in karari bekliyor. Kapinin isi acigi BUYUTMEMEK: sunucu
- * besinci bir asama eklerse ya da mobil bir asama kazanirsa burasi kaliyor ve
- * insan bakiyor. */
+ * Kapi artik MUAFIYETSIZ: sunucunun asama listesi ile mobil tipin alanlari
+ * birebir. Sunucu besinci bir asama eklerse burasi kirmiziya doner. */
 {
   const sunucu = (() => {
     const m = read("src/lib/placement-score.ts").match(/type PlacementStage =([^;]*);/);
@@ -2354,9 +2352,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     const m = read("mobile/src/game/placement.ts").match(/type PlacementTest = \{([^}]*)\}/);
     return m ? [...m[1].matchAll(/(\w+)\s*:/g)].map((x) => x[1]).sort() : ["bulunamadi"];
   })();
-  /* Mobilde OLMAYAN asamalar - kayitli acik. */
-  const KAYITLI_EKSIK = ["grammar", "listening", "reading"];
-  sameSet("seviye testi asamalari (sunucu)", sunucu, [...mobil, ...KAYITLI_EKSIK].sort(), "sunucu", "mobil + kayitli eksik");
+  sameSet("seviye testi asamalari (sunucu)", sunucu, mobil, "sunucu", "mobil");
 }
 
 /* ── 58. sinav sonucunun alanlari ─────────────────────────────────────────

@@ -273,6 +273,15 @@ if (mode === "--baseline") {
  * Arama cagri govdesinin TAMAMINA bakiyor: `t(x ? "a.b" : "c.d")` bicimi
  * webde tam olarak bu yuzden kacmisti (11.133).
  */
+/*
+ * KENDİ `t`si OLAN DOSYA. `lib/native-de.ts` içindeki `t(...)` i18n değil:
+ * ders içeriğinin Almanca-Türkçe eşleme tablosunda bir arama ve ikinci
+ * argümanı yedek metin. Anahtarları ("vocab.tr", "pattern.tr") sözlükte
+ * OLMAMALI. Web tarafındaki eşdeğer denetim aynı dosyayı aynı sebeple muaf
+ * tutuyor (`scripts/i18n-check.mjs` YEREL_T).
+ */
+const YEREL_T = ["lib/native-de.ts"];
+
 function eksikAnahtarlar() {
   const sozluk = new Set();
   const tr = fs.readFileSync(path.join(SRC, "i18n", "tr.ts"), "utf8");
@@ -280,6 +289,7 @@ function eksikAnahtarlar() {
   const out = [];
   for (const file of walk(SRC)) {
     if (file.includes(path.sep + "i18n" + path.sep)) continue;
+    if (YEREL_T.some((y) => file.endsWith(y.split("/").join(path.sep)))) continue;
     const src = fs.readFileSync(file, "utf8");
     for (const m of src.matchAll(/\b(?:t|tx|tt)\(([^()\n]*)\)/g)) {
       for (const k of m[1].matchAll(/"([a-z][\w]*(?:\.[\w]+)+)"/g)) {

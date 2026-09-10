@@ -99,6 +99,7 @@ export const de: Record<string, string> = {
   "changepw.save": "Passwort ändern",
   "changepw.saving": "Wird geändert…",
   "changepw.done": "Dein Passwort wurde geändert. Auf deinen anderen Geräten wurdest du abgemeldet.",
+  "common.listen": "Anhören",
   "common.answer_is": "Richtig:",
   "common.start": "Starten",
   "common.finish": "Beenden",

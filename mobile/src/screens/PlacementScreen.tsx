@@ -8,7 +8,7 @@ import { useNavigation, useRoute, type RouteProp } from "@react-navigation/nativ
 import type { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { Text } from "../ui/Text";
 import { PressableScale } from "../ui/PressableScale";
-import { XIcon } from "../ui/icons";
+import { XIcon, SpeakerIcon } from "../ui/icons";
 import { Chip } from "../ui/Chip";
 import { ChoiceGame, type ChoiceRound } from "../game/ChoiceGame";
 import { RoundSkeleton } from "../game/RoundSkeleton";
@@ -18,7 +18,7 @@ import {
   fetchPlacementStatus,
   finishPlacement,
   acceptPlacement,
-  type PlacementVocab,
+  type PlacementQuestion,
   type PlacementAnswer,
   type PlacementRecord,
   type PlacementStatus,
@@ -27,22 +27,46 @@ import { useAuth } from "../lib/AuthContext";
 import { updateProfile } from "../lib/updateProfile";
 import { saveOnboardingPrefs } from "../lib/onboardingPrefs";
 import type { RootStackParams } from "../navigation/RootStack";
-import { useTheme, spacing, radii, softShadow } from "../theme";
+import { useTheme, spacing, radii, softShadow, type Palette } from "../theme";
 import { sfx } from "../lib/sfx";
+import { speakTarget } from "../lib/tts";
 
 /** Kullanıcının seçebileceği seviyeler — web `PLACEMENT_LEVELS` ile aynı. */
 const CHOOSABLE = ["A1", "A2", "B1", "B2", "C1"] as const;
 
-const withArtikel = (a: string | null, de: string) => (a ? `${a} ${de}` : de);
-
 /** Ekranın oynadığı birleşik soru — hem sunucudan geleni hem demo aynı biçime düşer. */
-type PQ = { round: ChoiceRound; level: PlacementAnswer["level"]; itemId: string };
+type PQ = {
+  round: ChoiceRound;
+  level: PlacementAnswer["level"];
+  itemId: string;
+  stage: PlacementAnswer["stage"];
+  /** Okuma metni / dinleme bölümleri — sorunun ÜSTÜNDE gösteriliyor. */
+  head?: { title: string; text?: string; segments?: { speaker?: string; text: string }[]; listen: boolean };
+};
 
-function realQuestions(items: PlacementVocab[]): PQ[] {
-  return items.map((it, i) => ({
-    round: { wordId: i, question: withArtikel(it.artikel, it.de), answer: it.options[it.answer], options: it.options, prompt: t("rounds.ask_native", { nativeLang: nativeLangName() }) },
-    level: it.level,
-    itemId: it.id,
+/**
+ * DÖRT AŞAMA TEK SIRADA. Kelime ve dil bilgisi doğrudan şıklı soru; okuma ve
+ * dinleme sorunun üstünde metni (ya da dinleme düğmesini) taşıyor. Aşama adı
+ * cevapla birlikte gidiyor: sunucu `perSkill`i ondan çıkarıyor.
+ */
+function realQuestions(items: PlacementQuestion[]): PQ[] {
+  return items.map((q, i) => ({
+    round: {
+      wordId: i,
+      question: q.question,
+      answer: q.options[q.answer],
+      options: q.options,
+      prompt:
+        q.kind === "vocab"
+          ? t("rounds.ask_native", { nativeLang: nativeLangName() })
+          : t(q.kind === "grammar" ? "unitkind.grammar" : q.kind === "reading" ? "unitkind.read" : "unitkind.listen"),
+    },
+    level: q.level,
+    itemId: q.itemId,
+    stage: q.kind,
+    head: q.kind === "reading" || q.kind === "listening"
+      ? { title: q.title, text: q.text, segments: q.segments, listen: q.kind === "listening" }
+      : undefined,
   }));
 }
 function demoQuestions(): PQ[] {
@@ -50,7 +74,29 @@ function demoQuestions(): PQ[] {
     round: { wordId: i, question: q.question, answer: q.answer, options: q.options, prompt: t(q.promptKey, { anadil: nativeLangName() }) },
     level: q.level,
     itemId: q.id,
+    stage: "vocab" as const,
   }));
+}
+
+/** Okuma metni ya da dinleme düğmesi — sorunun üstündeki bağlam. */
+function StageHead({ head, colors }: { head: { title: string; text?: string; segments?: { speaker?: string; text: string }[]; listen: boolean }; colors: Palette }) {
+  const say = () => {
+    const parcalar = head.segments?.length ? head.segments.map((sg) => sg.text) : head.text ? [head.text] : [];
+    speakTarget(parcalar.join(" "));
+  };
+  return (
+    <View style={{ backgroundColor: colors.surface, borderRadius: radii.lg, borderWidth: 1, borderColor: colors.hairline, padding: spacing.lg, marginBottom: spacing.lg }}>
+      <Text variant="micro" color={colors.textMuted} style={{ marginBottom: 6 }}>{head.title}</Text>
+      {head.listen ? (
+        <PressableScale onPress={say} accessibilityLabel={t("common.listen")} style={{ flexDirection: "row", alignItems: "center", gap: spacing.sm, alignSelf: "flex-start", backgroundColor: colors.surface2, borderRadius: radii.md, paddingHorizontal: spacing.md, paddingVertical: 9 }}>
+          <SpeakerIcon color={colors.primaryText} size={20} />
+          <Text variant="bodyStrong" color={colors.primaryText}>{t("common.listen")}</Text>
+        </PressableScale>
+      ) : (
+        <Text variant="body" style={{ lineHeight: 22 }}>{head.text ?? head.segments?.map((sg) => sg.text).join(" ")}</Text>
+      )}
+    </View>
+  );
 }
 
 export function PlacementScreen() {
@@ -65,7 +111,7 @@ export function PlacementScreen() {
   const { user } = useAuth();
 
   // Gerçek test (oturum açıksa sunucudan). Yüklenene dek loading; hata → demo.
-  const [real, setReal] = useState<PlacementVocab[] | null>(null);
+  const [real, setReal] = useState<PlacementQuestion[] | null>(null);
   const [loading, setLoading] = useState<boolean>(!!user);
   const [loadError, setLoadError] = useState(false);
   const [attempt, setAttempt] = useState(0);
@@ -125,7 +171,7 @@ export function PlacementScreen() {
 
   function onDone(ok: boolean) {
     const q = questions[idx];
-    if (q) answers.current.push({ stage: "vocab", level: q.level, itemId: q.itemId, correct: ok });
+    if (q) answers.current.push({ stage: q.stage, level: q.level, itemId: q.itemId, correct: ok });
     if (ok) setCorrect((c) => c + 1);
     const next = idx + 1;
     setIdx(next);
@@ -233,6 +279,13 @@ export function PlacementScreen() {
           <Text variant="micro" color={colors.textMuted} style={{ textAlign: "center", marginBottom: spacing.md, textTransform: "uppercase", letterSpacing: 1 }}>
             {t("placement.title")}{usingReal ? "" : t("placement.sample")}
           </Text>
+          {/*
+            OKUMA VE DİNLEME BAŞLIĞI. Okuma sorusunun üstünde metin duruyor;
+            dinlemede metin GÖRÜNMÜYOR, bölümler sesli okunuyor (dinleme
+            ölçümünün anlamı bu). Web aynı ayrımı yapıyor (`placement-test`
+            okuma metnini yazıyor, dinlemede oynat düğmesi veriyor).
+          */}
+          {questions[idx].head ? <StageHead head={questions[idx].head!} colors={colors} /> : null}
           <ChoiceGame key={idx} round={questions[idx].round} onDone={onDone} />
         </>
       ) : submitting ? (
