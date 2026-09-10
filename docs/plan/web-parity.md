@@ -6053,3 +6053,42 @@ kendisi kadar bilgi taşıyor. §82 beş ölçüyle bağladı.
 farkla kapandı. Ölçümün değeri bulduğu hatayla değil, ARADIĞI yerin
 tükenmesiyle de ölçülüyor: elle yazılmış eşlemeler, renk kimlikleri, simge
 kimlikleri ve durum kabukları artık taranmış durumda.
+
+
+### 11.165 Beş ses ipucu: "varlık farkı" yanlış teşhisti (§11.15 kapandı)
+
+Webde on üç ses ipucu, mobilde yedi. Aradaki beşi — turun açılışı, rozet
+açılışı, süre uyarısı, rekor, kusursuz tur — kayıt defterinde **"varlık
+(asset) farkı"** diye duruyordu ve Samet'i bekliyordu.
+
+**Teşhis yanlıştı.** Mobilde ses dosyadan çalmıyor: üç yolun üçü de
+(`sfxNotes.ts` → WebView köprüsü, Kotlin native sentez, Swift native sentez)
+aynı NOTA TABLOSUNDAN sentezliyor; mp3'ler yalnız hata ayıklama yedeği. Yani
+eksik olan ses dosyası değil, tablodaki beş satırdı. Web'in tarifleri
+(`arpeggio`/`note` çağrıları) doğrudan on sayılık nota biçimine çevrildi.
+
+**Tek kaynak beş yeri birden besliyor** ve hepsi güncellendi: tablo, iki
+native kopya (`render-sfx.py --kotlin/--swift`), iki paketin mp3 yedekleri ve
+iOS proje dosyasının kaynak girdileri (dosya başvurusu + kaynak fazı, elle
+kimlik atayarak; `check:ios` doğruladı). Testin "yedi tür" kilidi on ikiye
+çıktı.
+
+**Çağrı yerleri de eklendi**, yoksa tablo sessiz kalırdı:
+- `danger` patron turunun son on saniyesinde saniyede bir. Sayaç kırmızıya
+  dönüyordu ama ses yoktu — telefona bakmayan kullanıcı süresinin bittiğini
+  duymuyordu.
+- `record` patron geçilince: mobil sıradan bitiş sesini çalıyordu, yani
+  patronu geçmek günlük turu bitirmekle aynı sesi veriyordu.
+- `perfect` hak edilmiş turda. Karar `finish()` içinde verilemiyor çünkü
+  pekişen kelime sayısı sunucu yanıtıyla geliyor; özet açılınca veriliyor,
+  konfetiyle aynı ölçütten.
+- `start` üç turun açılışında, `unlock` rozet kartında ve görev ödülünde.
+
+**Kapı iki soruyu birden soruyor (§83):** ipucu KÜMELERİ eşit mi, ve her
+ipucu gerçekten ÇALINIYOR mu. İkincisi olmadan tablo büyür, ekran sessiz
+kalır. Kapının ilk yazımı iki kez yanıldı: birleşimin son satırı noktalı
+virgülle bittiği için her iki taraf da kendi son ipucunu kaybediyordu, ve web
+mikrofon ipuçlarını bir sarmalayıcıdan (`walkCue`) çalıyor — düz `play(` araması
+onları görmüyordu.
+
+**`stage` webe özel kalıyor:** etap kartı mobilde yok, ses de olmamalı.
