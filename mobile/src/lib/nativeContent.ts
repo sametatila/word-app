@@ -43,7 +43,7 @@ function nativeDict(): NativeDict | null {
     // eslint-disable-next-line @typescript-eslint/no-var-requires, global-require
     dict = require("../data/native/en.json") as NativeDict;
   } catch (err) {
-    console.warn("[native] sözlük yüklenemedi", err);
+    console.warn("[native] dictionary load failed", err);
     dict = null;
   }
   return dict;
