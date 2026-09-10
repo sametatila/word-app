@@ -10,10 +10,13 @@ export const dynamic = "force-dynamic";
 /**
  * Hatırlatma tercihleri — mobildeki `NotificationsScreen`in üç anahtarı.
  *
- * Mobilde bunlar CİHAZDA kurulan yerel bildirimler olduğu için hiçbir uca
- * ihtiyaç duymuyor. Web'de bildirim sunucudan gidiyor, yani tercih de
- * sunucuda durmalı: kullanıcının iki tarayıcısı varsa ikisinde de aynı
- * kararı görmeli.
+ * Tercih SUNUCUDA duruyor: kullanıcının iki tarayıcısı varsa ikisinde de
+ * aynı kararı görmeli. Mobil de aynı ucu çağırıyor (`lib/notifications`
+ * `loadPrefs`/`syncPrefs`) - bildirimi cihazda zamanlıyor olması bu uca
+ * ihtiyacı kaldırmıyordu: buradaki üç alan varsayılan olarak AÇIK ve
+ * hatırlatma turu mobil cihaz jetonlarını da hedefliyor (bkz.
+ * `findReminderTargets`), yani uygulamadaki anahtar sunucuya yazılmadığı
+ * sürece kapalı görünürken push gitmeye devam ediyordu.
  *
  * SAAT KULLANICININ KENDİ SAATİ. `profiles.timezone` ile birlikte
  * okunuyor (bkz. `findReminderTargets`); 0–23 dışına çıkan değer kabul

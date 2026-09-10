@@ -1,6 +1,7 @@
 import notifee, { TriggerType, RepeatFrequency, AndroidImportance, AuthorizationStatus } from "@notifee/react-native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { t } from "./i18n";
+import { api } from "../api/client";
 
 /**
  * Yerel bildirimler (§4 — push yeniden-etkileşim). Üç bağımsız kategori cihazda
@@ -12,6 +13,90 @@ import { t } from "./i18n";
  * Tercihler AsyncStorage'da; notifee tekrarlayan TIMESTAMP tetikleyici.
  */
 const CHANNEL_ID = "reminder";
+
+/**
+ * SUNUCUDAKİ AYNI TERCİH DE YAZILIYOR.
+ *
+ * Bu anahtarların cihazdaki kopyası yalnız yerel zamanlamayı yönetiyordu ve
+ * sunucudaki `profiles.streak_alert` / `weekly_reminder` / `reminders_enabled`
+ * alanlarına HİÇ dokunmuyordu. O alanlar VARSAYILAN OLARAK AÇIK ve sunucunun
+ * cron'u onlara bakıp FCM'e push atıyor (`lib/push` `runStreakAlerts`); mobil
+ * de cihaz kaydını `/api/push/device` ile bırakıyor. Sonuç iki yönlü bozuktu:
+ *
+ *   - anahtar KAPALIYKEN sunucu yine push atıyordu — düğme söylediği şeyi
+ *     yapmıyordu;
+ *   - anahtar AÇIKKEN kullanıcı aynı hatırlatmayı İKİ KEZ alıyordu (yerel
+ *     bildirim + sunucu push'u).
+ *
+ * Web aynı tercihleri baştan beri `/api/notifications/prefs` ile yazıyor
+ * (`components/notification-settings`); mobil de artık aynı ucu çağırıyor.
+ * Hata YUTULUYOR: ağ yoksa yerel zamanlama yine kurulmalı, tercih bir sonraki
+ * açılışta tekrar gönderilir (aşağıdaki `loadPrefs`).
+ */
+type ServerPrefs = { daily: boolean; hour: number; streak: boolean; weekly: boolean };
+type PrefPatch = { daily?: boolean; hour?: number; streak?: boolean; weekly?: boolean };
+
+async function syncPrefs(patch: PrefPatch): Promise<void> {
+  try {
+    await api("/api/notifications/prefs", { method: "POST", body: JSON.stringify(patch) });
+  } catch { /* ağ yok: yerel zamanlama yine geçerli, bir sonraki `loadPrefs` tekrar dener */ }
+}
+
+/**
+ * Anahtar HİÇ yazılmamış mı — yani kullanıcı bu kategoride bir karar verdi mi.
+ *
+ * Kapatmak boş dizi yazıyor, silmiyor: `""` "kullanıcı kapattı" demek, `null`
+ * "hiç dokunmadı" demek. Ayrım gerekli çünkü sunucudaki üç alan da VARSAYILAN
+ * OLARAK AÇIK; hiç dokunulmamış bir anahtarı yerel `false` sanıp sunucuya
+ * yazmak, kullanıcının hiç istemediği bir kapatma olurdu.
+ */
+async function decided(key: string): Promise<boolean> {
+  try { return (await AsyncStorage.getItem(key)) !== null; } catch { return false; }
+}
+
+const hhmmOf = (hour: number) => `${String(hour).padStart(2, "0")}:00`;
+
+export type ReminderPrefs = { daily: string | null; streak: boolean; weekly: boolean };
+
+/**
+ * Ekranın göstereceği üç değer — yerel karar varsa o, yoksa sunucudaki.
+ *
+ * Yerel anahtarlar zamanlamanın kaynağı, ama tek başına ekrana ÇİZİLECEK
+ * gerçeği vermiyorlardı: uygulamayı ilk kez açan kullanıcı üç anahtarı da
+ * kapalı görüyor, oysa sunucu tarafı açık ve günlük hatırlatma cron'u
+ * (`lernomi-cron-reminders`) mobil cihaz jetonuna zaten push atıyor. Ekran
+ * "kapalı" derken bildirim geliyordu. Karar verilmemiş kategoride artık
+ * sunucunun değeri gösteriliyor - web de aynısını yapıyor
+ * (`components/notification-settings` açılışta uçtan okuyor).
+ *
+ * Ters yön de burada onarılıyor: kullanıcının verdiği kararlar her açılışta
+ * sunucuya tekrar yazılıyor, böylece kayıt sırasında ağ yoksa tercih kaybolmuyor.
+ */
+export async function loadPrefs(): Promise<ReminderPrefs> {
+  const [daily, streak, weekly] = await Promise.all([getReminder(), getStreakAlert(), getWeeklyReminder()]);
+  const [hasDaily, hasStreak, hasWeekly] = await Promise.all([decided(KEY_DAILY), decided(KEY_STREAK), decided(KEY_WEEKLY)]);
+
+  let srv: ServerPrefs | null = null;
+  if (!hasDaily || !hasStreak || !hasWeekly) {
+    try { srv = await api<ServerPrefs>("/api/notifications/prefs"); } catch { /* ağ yok: yerel değerlerle çiziliyor */ }
+  }
+  const out: ReminderPrefs = {
+    daily: hasDaily || !srv ? daily : srv.daily ? hhmmOf(srv.hour) : null,
+    streak: hasStreak || !srv ? streak : srv.streak,
+    weekly: hasWeekly || !srv ? weekly : srv.weekly,
+  };
+
+  const patch: PrefPatch = {};
+  if (hasDaily) {
+    patch.daily = out.daily !== null;
+    if (out.daily) patch.hour = Number(out.daily.slice(0, 2));
+  }
+  if (hasStreak) patch.streak = out.streak;
+  if (hasWeekly) patch.weekly = out.weekly;
+  if (Object.keys(patch).length) await syncPrefs(patch);
+
+  return out;
+}
 
 // Her kategori ayrı adreslenir (cancelTriggerNotification(id) ile tek tek iptal).
 const ID_DAILY = "lernomi-daily";
@@ -81,12 +166,14 @@ export async function enableDailyReminder(hhmm: string): Promise<boolean> {
   await notifee.cancelTriggerNotification(ID_DAILY);
   await schedule(ID_DAILY, t("notif.daily_body"), nextDaily(hhmm), RepeatFrequency.DAILY);
   try { await AsyncStorage.setItem(KEY_DAILY, hhmm); } catch { /* depolama kapalı */ }
+  await syncPrefs({ daily: true, hour: Number(hhmm.slice(0, 2)) });
   return true;
 }
 
 export async function disableReminder(): Promise<void> {
   try { await notifee.cancelTriggerNotification(ID_DAILY); } catch { /* yut */ }
   try { await AsyncStorage.setItem(KEY_DAILY, ""); } catch { /* yut */ }
+  await syncPrefs({ daily: false });
 }
 
 /* ----------------------------------------------------------------- streak */
@@ -103,10 +190,12 @@ export async function setStreakAlert(on: boolean): Promise<boolean> {
     await notifee.cancelTriggerNotification(ID_STREAK);
     await schedule(ID_STREAK, t("notif.streak_body"), nextDaily(STREAK_TIME), RepeatFrequency.DAILY);
     try { await AsyncStorage.setItem(KEY_STREAK, "1"); } catch { /* yut */ }
+    await syncPrefs({ streak: true });
     return true;
   }
   try { await notifee.cancelTriggerNotification(ID_STREAK); } catch { /* yut */ }
   try { await AsyncStorage.setItem(KEY_STREAK, ""); } catch { /* yut */ }
+  await syncPrefs({ streak: false });
   return true;
 }
 
@@ -124,10 +213,12 @@ export async function setWeeklyReminder(on: boolean): Promise<boolean> {
     await notifee.cancelTriggerNotification(ID_WEEKLY);
     await schedule(ID_WEEKLY, t("notif.weekly_body"), nextWeekly(WEEKLY_DAY, WEEKLY_TIME), RepeatFrequency.WEEKLY);
     try { await AsyncStorage.setItem(KEY_WEEKLY, "1"); } catch { /* yut */ }
+    await syncPrefs({ weekly: true });
     return true;
   }
   try { await notifee.cancelTriggerNotification(ID_WEEKLY); } catch { /* yut */ }
   try { await AsyncStorage.setItem(KEY_WEEKLY, ""); } catch { /* yut */ }
+  await syncPrefs({ weekly: false });
   return true;
 }
 

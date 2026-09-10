@@ -9,9 +9,8 @@ import { Card } from "../ui/Card";
 import { PressableScale } from "../ui/PressableScale";
 import { ArrowBackIcon, BellIcon } from "../ui/icons";
 import {
-  getReminder, enableDailyReminder, disableReminder,
-  getStreakAlert, setStreakAlert,
-  getWeeklyReminder, setWeeklyReminder,
+  loadPrefs, enableDailyReminder, disableReminder,
+  setStreakAlert, setWeeklyReminder,
   showTestNotification, openNotificationSettings,
 } from "../lib/notifications";
 import { pushPermissionDenied } from "../lib/pushDevice";
@@ -48,9 +47,12 @@ export function NotificationsScreen() {
   const [msg, setMsg] = useState<string | null>(null);
 
   useEffect(() => {
-    getReminder().then((r) => { if (r) { setDailyOn(true); setDailyTime(r); } });
-    getStreakAlert().then(setStreakOn);
-    getWeeklyReminder().then(setWeeklyOn);
+    /* Karar verilmemiş kategori sunucudaki değerle çiziliyor; bkz. `loadPrefs`. */
+    loadPrefs().then((p) => {
+      if (p.daily) { setDailyOn(true); setDailyTime(p.daily); }
+      setStreakOn(p.streak);
+      setWeeklyOn(p.weekly);
+    });
     /*
      * REDDEDİLMİŞ İZİN AÇILIŞTA SÖYLENİYOR.
      *
