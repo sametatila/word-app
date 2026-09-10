@@ -11,8 +11,15 @@
  * Yalnız tırnağa bakan bir ölçüt `free.checklist` paketlerinde hiçbir şey
  * bulamazdı; o türün kanıtı hep parantezde ("(Ich heiße …)").
  *
- * Ölçüt yalnız TEŞHİS için: Türkçe açıklıklar atlanıyor ve hiçbir şey
- * bulunamazsa yalnız sayı bildiriliyor.
+ * ÖLÇÜT DAR: açıklık ancak TARTIŞMASIZ Almanca görünüyorsa (ä/ß taşıyor ya
+ * da büyük harfle başlayan bir sözcüğü var) kullanılıyor. İlk yazımda ölçüt
+ * yalnız Türkçeye özgü harfleri atlıyordu ve t-004'te YANLIŞ satırı
+ * gösterdi: „hep dürüst ol“ Türkçe ama ı/ş/ğ taşımıyor. Teşhis aracının
+ * yanlış yeri göstermesi, hiçbir şey göstermemesinden kötü.
+ *
+ * Kapıdaki `foreign()` ile aynı olmak ZORUNDA DEĞİL — bu bir kural değil,
+ * teşhis. Orada ölçüt geniş tutulup yanlış ret pahasına kanıt korunuyor;
+ * burada dar tutulup yanlış işaret önleniyor.
  */
 import { readFileSync, writeFileSync, mkdirSync } from "node:fs";
 
@@ -29,10 +36,11 @@ if (lines.length !== src.words.length) {
     ...[...String(t).matchAll(/[„"]([^„"“”]{4,})[“"]/g)].map((m) => m[1]),
     ...[...String(t).matchAll(/\(([^()]{4,})\)/g)].map((m) => m[1]),
   ];
+  const german = (s) => /[äßÄ]/.test(s) || /[A-ZÄÖÜ][a-zäöüß]{2,}/.test(s);
   let at = null;
   for (let i = 0; i < src.words.length && at === null; i++)
     for (const s of spans(src.words[i].tr)) {
-      if (/[ışğİĞŞ]/.test(s)) continue;
+      if (/[ışğİĞŞ]/.test(s) || !german(s)) continue;
       if (!flat(lines[i] ?? "").includes(flat(s))) at = i;
     }
   throw new Error(
