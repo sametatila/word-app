@@ -37,13 +37,17 @@ let client: Redis | null = null;
 function redis(url: string): Redis {
   if (!client) {
     client = new Redis(url, {
+      // Bağlantı ilk komutta kurulur; modül yüklenmesi Redis'e bağlı olmasın.
       lazyConnect: true,
-      // Sayaç isteği kullanıcının GİRİŞ İSTEĞİNİN önünde duruyor: Redis
-      // yanıt vermiyorsa orada beklemek girişi bekletmek demek. Tek deneme,
-      // kısa zaman aşımı, kuyruk yok — hata hemen dönsün ve aşağıdaki
-      // "açığa düş" dalı çalışsın.
+      /*
+        `enableOfflineQueue` AÇIK KALMALI (varsayılan). Kapatıldığında
+        `lazyConnect` ile birlikte şu oluyor: ilk komut bağlantı daha
+        kurulmadan reddediliyor, aşağıdaki catch "açığa düş" diyor ve sayaç
+        HİÇ yazılmıyor. Ölçüldü (2026-09-10): 135 istek, tek 429 yok, Redis'te
+        sıfır anahtar. Kuyruk açıkken ilk komut bağlantıyı bekliyor —
+        `connectTimeout` zaten o beklemeyi yarım saniyeyle sınırlıyor.
+      */
       maxRetriesPerRequest: 1,
-      enableOfflineQueue: false,
       connectTimeout: 500,
       commandTimeout: 500,
     });
@@ -56,6 +60,22 @@ function redis(url: string): Redis {
 
 type Rule = { window: number; max: number };
 type Decision = { allowed: boolean; retryAfter: number | null };
+
+/**
+ * Açığa düşüş SESSİZ OLMAMALI.
+ *
+ * İlk sürümde catch hiçbir şey yazmıyordu ve bir yapılandırma hatası yüzünden
+ * her komut düşüyordu: sınır fiilen yoktu ama her şey yolunda görünüyordu.
+ * Sessiz bir "açığa düş", hiç sınır koymamaktan daha kötü çünkü yanlış bir
+ * güven veriyor. Log'u bir kez basıp susuyoruz — her istekte basmak, Redis
+ * kesintisinde günlüğü boğardı.
+ */
+let warned = false;
+function warnOnce(err: unknown): void {
+  if (warned) return;
+  warned = true;
+  console.error("[hız sınırı] Redis'e ulaşılamadı, sayaç atlanıyor (nginx sınırı devrede):", err);
+}
 
 /**
  * `rateLimit.customStorage` için depo. `REDIS_URL` boşsa `undefined` döner ve
@@ -77,7 +97,7 @@ export function redisRateLimitStorage(): { consume: (key: string, rule: Rule) =>
         if (count <= rule.max) return { allowed: true, retryAfter: null };
         const ttl = await r.ttl(k);
         return { allowed: false, retryAfter: ttl > 0 ? ttl : rule.window };
-      } catch {
+      } catch (err) {
         /*
           REDIS ERİŞİLEMİYORSA AÇIĞA DÜŞÜLÜR (isteğe izin verilir).
           Kapalıya düşmek daha "güvenli" görünüyor ama sonucu şu: Redis'in
@@ -86,6 +106,7 @@ export function redisRateLimitStorage(): { consume: (key: string, rule: Rule) =>
           Açığa düşünce kaybedilen şey ise yalnız bu katman: nginx'in
           IP başına 10r/dk sınırı ve fail2ban yerinde duruyor.
         */
+        warnOnce(err);
         return { allowed: true, retryAfter: null };
       }
     },
