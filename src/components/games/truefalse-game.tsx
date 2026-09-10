@@ -11,6 +11,7 @@ import type { Round } from "@/lib/types";
 import { MeaningText } from "@/components/meaning-text";
 import { vibrate } from "@/lib/fx";
 import { CheckIcon, XIcon } from "@/components/icons";
+import { OptionMark } from "./option-mark";
 import { speakGerman, SpeakButton } from "@/components/speak-button";
 import { useT, useLang } from "@/lib/i18n/client";
 
@@ -121,6 +122,7 @@ export function TrueFalseGame({ round, onDone }: GameProps<TrueFalseRound>) {
           }`}
         >
           <CheckIcon size={20} /> {tx("common.correct")}
+          <OptionMark state={!settled ? null : isTrue ? "correct" : answered === true ? "wrong" : null} />
         </motion.button>
         <motion.button
           type="button"
@@ -132,6 +134,7 @@ export function TrueFalseGame({ round, onDone }: GameProps<TrueFalseRound>) {
           }`}
         >
           <XIcon size={20} /> {tx("common.wrong")}
+          <OptionMark state={!settled ? null : !isTrue ? "correct" : answered === false ? "wrong" : null} />
         </motion.button>
       </div>
 

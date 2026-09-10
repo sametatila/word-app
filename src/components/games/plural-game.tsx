@@ -5,6 +5,7 @@ import { whyFor } from "@/lib/why";
 import { miss } from "@/lib/errors";
 import { motion } from "framer-motion";
 import { GameShell } from "./game-shell";
+import { OptionMark } from "./option-mark";
 import { useRoundExit } from "./use-round-exit";
 import { withArtikel, type GameProps, type GameResult , meaningOf } from "./types";
 import type { Round } from "@/lib/types";
@@ -116,6 +117,7 @@ export function PluralGame({ round, onDone }: GameProps<PluralRound>) {
               {/* Çoğulda artikel her zaman "die" — şıkta da öyle görünsün. */}
               <span className="muted mr-1.5 text-sm">die</span>
               {option}
+              <OptionMark state={picked == null ? null : isAnswer ? "correct" : option === picked ? "wrong" : null} />
             </motion.button>
           );
         })}

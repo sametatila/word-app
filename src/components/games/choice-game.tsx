@@ -5,6 +5,7 @@ import { whyFor } from "@/lib/why";
 import { miss } from "@/lib/errors";
 import { motion } from "framer-motion";
 import { GameShell } from "./game-shell";
+import { OptionMark } from "./option-mark";
 import { useRoundExit } from "./use-round-exit";
 import { withArtikel, targetName, type GameProps, type GameResult , meaningOf } from "./types";
 import { nativeLangName } from "@/lib/i18n/dict";
@@ -12,7 +13,6 @@ import type { Option, Round } from "@/lib/types";
 import { MeaningText } from "@/components/meaning-text";
 import { vibrate } from "@/lib/fx";
 import { prefetchGerman, speakGerman } from "@/components/speak-button";
-import { CheckIcon, XIcon } from "@/components/icons";
 import { useT, useLang } from "@/lib/i18n/client";
 
 type ChoiceRound = Extract<Round, { game: "choice" }>;
@@ -133,12 +133,9 @@ export function ChoiceGame({ round, onDone }: GameProps<ChoiceRound>) {
               } ${picked === opt.text && isAnswer ? "animate-glow" : ""}`}
             >
               <MeaningText tr={opt.text} en={opt.sub} />
-              {/* Seçim sonucu simgeyle de anlatılır: renk körlüğünde de okunur. */}
-              {picked != null && isAnswer ? (
-                <CheckIcon size={18} className="shrink-0 text-[color:var(--color-mint)]" />
-              ) : picked === opt.text ? (
-                <XIcon size={18} className="shrink-0 text-[color:var(--color-rose)]" />
-              ) : null}
+              {/* Seçim sonucu simgeyle de anlatılır: renk körlüğünde de okunur.
+                  Simgenin erişilebilir adı da var (bkz. option-mark). */}
+              <OptionMark state={picked == null ? null : isAnswer ? "correct" : picked === opt.text ? "wrong" : null} />
             </motion.button>
           );
         })}

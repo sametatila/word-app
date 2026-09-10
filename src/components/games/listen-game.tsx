@@ -5,6 +5,7 @@ import { whyFor } from "@/lib/why";
 import { miss } from "@/lib/errors";
 import { motion } from "framer-motion";
 import { GameShell } from "./game-shell";
+import { OptionMark } from "./option-mark";
 import { withArtikel, type GameProps, type GameResult , meaningOf } from "./types";
 import type { Option, Round } from "@/lib/types";
 import { MeaningText, SentenceTranslation } from "@/components/meaning-text";
@@ -146,6 +147,7 @@ export function ListenGame({ round, onDone }: GameProps<ListenRound>) {
               }`}
             >
               <MeaningText tr={option.text} en={option.sub} align="center" />
+              <OptionMark state={picked == null ? null : isAnswer ? "correct" : option.text === picked ? "wrong" : null} />
             </motion.button>
           );
         })}

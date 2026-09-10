@@ -5,6 +5,7 @@ import { whyFor } from "@/lib/why";
 import { miss } from "@/lib/errors";
 import { motion } from "framer-motion";
 import { GameShell } from "./game-shell";
+import { OptionMark } from "./option-mark";
 import { useRoundExit } from "./use-round-exit";
 import { meaningOf, type GameProps, type GameResult } from "./types";
 import type { Round } from "@/lib/types";
@@ -97,6 +98,7 @@ export function ArtikelGame({ round, onDone }: GameProps<ArtikelRound>) {
               }`}
             >
               <span style={picked == null ? { color: OPTION_COLORS[i] } : undefined}>{opt}</span>
+              <OptionMark state={picked == null ? null : isAnswer ? "correct" : opt === picked ? "wrong" : null} />
             </motion.button>
           );
         })}
