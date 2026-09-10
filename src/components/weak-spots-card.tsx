@@ -102,7 +102,7 @@ export function WeakSpotsCard({ bare = false }: { bare?: boolean } = {}) {
                   className="btn btn-ghost shrink-0 px-3 py-1.5 text-xs"
                   title={tx("weakw.round_of", { game: t.gameLabel ?? "" })}
                 >
-                  {tx("weakw.study")}
+                  {tx("weak.study")}
                 </Link>
               ) : null}
             </li>
@@ -114,7 +114,7 @@ export function WeakSpotsCard({ bare = false }: { bare?: boolean } = {}) {
           <p className="text-xs font-bold uppercase tracking-wide muted">{tx("weak.confusions")}</p>
           <ul className="mt-1.5 flex flex-wrap gap-2">
             {report.confusions.slice(0, 5).map((c) => (
-              <li key={`${c.wordId}-${c.with}`} className="chip px-3 py-1.5 text-xs" title={tx("weakw.n_times", { n: c.n })}>
+              <li key={`${c.wordId}-${c.with}`} className="chip px-3 py-1.5 text-xs" title={tx("weak.n_times", { n: c.n })}>
                 <strong lang={course}>
                   {c.artikel ? `${c.artikel} ` : ""}
                   {c.de}

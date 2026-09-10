@@ -11,6 +11,7 @@ import { MenuRow } from "../ui/MenuRow";
 import { PressableScale } from "../ui/PressableScale";
 import { ArrowBackIcon, BoltIcon, CheckIcon, ChevronRightIcon, FlameIcon, LearnIcon, PodiumIcon, TrophyIcon, WriteIcon } from "../ui/icons";
 import { Mascot } from "../ui/Mascot";
+import { WeakSpots } from "../ui/WeakSpots";
 import { SkeletonBar, SkeletonCard, SkeletonLine, SkeletonTile } from "../ui/Skeleton";
 import { useMe, formatXp, formatDuration } from "../lib/useMe";
 import { useTheme, spacing, radii, softShadow, onTint, type Palette } from "../theme";
@@ -282,6 +283,11 @@ export function ProgressScreen() {
         ) : null}
 
         {me?.days ? <ActivityStrip rows={me.days} today={todayStr()} colors={colors} /> : null}
+
+        {/* ZAYIF NOKTALAR. Uç ve rapor katmanı aylardır duruyordu, web
+            profilinde bir kart onu okuyordu, mobilde çağıran hiçbir şey yoktu.
+            Yeri web ile aynı: gelişim kutusunun içinde (`progress-panel`). */}
+        <WeakSpots />
 
         <Card padded style={{ paddingVertical: 0 }}>
           <MenuRow icon={CheckIcon} label={t("profile.what_can_i_do")} tint={colors.success} colors={colors} onPress={() => nav.navigate("Cando")} />
