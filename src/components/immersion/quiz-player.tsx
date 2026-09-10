@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { QuestionList } from "@/components/skills/quiz";
-import { KindIconFor } from "@/components/immersion/unit-pane";
+import { KindIconFor, KIND_TINT } from "@/components/immersion/unit-pane";
 import { Confetti } from "@/components/celebrate";
 import { Mascot } from "@/components/mascot";
 import type { SkillQuestion } from "@/lib/skills/types";
@@ -23,7 +23,7 @@ export function ImmersionQuizPlayer({
   title,
   subtitle,
   intro,
-  checkpoint = false,
+  kind = "quiz",
   questions,
 }: {
   title: string;
@@ -34,8 +34,13 @@ export function ImmersionQuizPlayer({
    * söylüyor ama neyin tekrarı olduğunu söylemiyor.
    */
   intro?: string;
-  /** Kontrol noktası mı — başlıktaki karonun rengini ve ikonunu belirliyor. */
-  checkpoint?: boolean;
+  /**
+   * Başlıktaki karonun türü — Patika listesindeki aynı ikon/renk haritasından
+   * okunuyor. Eskiden yalnız "kontrol noktası mı" diye soruluyordu ve dil
+   * bilgisi turu da tekrar karosuyla açılıyordu; oysa Patika onu kendi
+   * ikonuyla (bulmaca) ve kendi rengiyle gösteriyor.
+   */
+  kind?: "quiz" | "checkpoint" | "grammar";
   questions: SkillQuestion[];
 }) {
   const t = useT();
@@ -43,8 +48,7 @@ export function ImmersionQuizPlayer({
   /** Yeniden denemede soru listesi sıfırdan kurulsun diye taze anahtar. */
   const [round, setRound] = useState(0);
 
-  const kind = checkpoint ? "checkpoint" : "quiz";
-  const tint = checkpoint ? "var(--color-rose-500)" : "var(--color-brand-500)";
+  const tint = KIND_TINT[kind];
   const pct = questions.length ? Math.round(((score ?? 0) / questions.length) * 100) : 0;
   const passed = pct >= PASS_PCT;
 

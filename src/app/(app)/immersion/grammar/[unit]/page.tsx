@@ -55,6 +55,7 @@ export default async function ImmersionGrammarPage({ params }: { params: Promise
          ünitenin kelime ve kalıplarından karışık hatırlama" vardı ve dil
          bilgisi alıştırması için yanlış olduğu için web hiç göstermiyordu.
          Doğru cümle yazıldı, mobil de aynısını kullanıyor. */
+      kind="grammar"
       intro={t("quiz.intro_grammar")}
       questions={questions}
     />

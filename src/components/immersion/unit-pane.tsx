@@ -47,7 +47,7 @@ const KIND_KEY: Record<string, string> = {
 };
 
 /** Tür → renk. Mobil `KIND_TINT` ile birebir. */
-const KIND_TINT: Record<string, string> = {
+export const KIND_TINT: Record<string, string> = {
   lesson: "var(--color-brand-500)",
   read: "var(--color-sky-500)",
   listen: "var(--color-violet-500)",
