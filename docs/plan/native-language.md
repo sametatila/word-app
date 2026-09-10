@@ -338,6 +338,30 @@ Türkçe sözlük istemi, ve Almanca örnek cümlenin kendisi. İlk ikisi çevir
 turunda görülüyor, üçüncüsü GÖRÜLMÜYOR — çünkü o alan "çevrilmez" diye
 işaretli. Bu 16 parça ayrıca listelenip karara bağlanmalı.
 
+#### Çeviri turu Türkçe tarafın kusurunu görüyor: yanlış dilbilgisi terimi
+
+`l-008` yazılırken iki dize çıktı:
+
+```
+"En üstün derece edatla kurulur:"    [Die Karotten sind frischer als die Pilze.]
+"En üstün derece edatlı biçimde:"    [Die Hütte ist ruhiger als das Hotel.]
+```
+
+İkisinin de örneği ÜSTÜNLÜK derecesi (`frischer als`, `ruhiger als`), yani
+karşılaştırma. "En üstünlük" ise `am frischesten` olurdu ve derste geçmiyor.
+Türkçede terim kaymış.
+
+İngilizcede kayma yaşayamaz: `comparative` ile `superlative` ayrı sözcükler ve
+öğrenci hangisini okuduğunu bilerek okuyor. O yüzden İngilizcesi örneğin
+gösterdiği şeye göre yazıldı — `The comparative is built with a preposition:`.
+Bu, çeviri turunun ikinci ürünü: Türkçe metnin kendi kusuru, ancak başka bir
+dile geçerken görünür oluyor (aynı şey `yüz`/`son` çokanlamlılığında da oldu,
+orada da Türkçe kaçabildiği için kusur gizliydi).
+
+**Karar bekliyor:** Türkçe kaynak da düzeltilmeli mi? Düzeltilirse `lecture`
+metni değişir ve bu dizelerin İngilizcesi zaten doğru kalır; düzeltilmezse
+iki dil aynı derste farklı terim kullanır. Küçük ama içerik kararı.
+
 #### `lecture` SAYILDI: 17.369 çağrı ama 8.824 dize (2026-09-10)
 
 17.369 rakamı doğru — ama o `tr()` ÇAĞRISI sayısı, yazılacak DİZE sayısı
