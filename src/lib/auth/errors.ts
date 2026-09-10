@@ -92,7 +92,7 @@ export function translateAuthError(input: unknown, lang: NativeLang = DEFAULT_NA
   if (code.includes("INVALID_TOKEN") || code.includes("TOKEN_EXPIRED") || msg.includes("token"))
     return t("autherrorw.token_expired");
   if (status === 429 || code.includes("TOO_MANY") || msg.includes("rate limit"))
-    return t("autherrorw.too_many");
+    return t("autherror.too_many");
   if (status === 403 || code.includes("FORBIDDEN"))
     return t("autherrorw.forbidden");
   if (msg.includes("failed to fetch") || msg.includes("networkerror") || msg.includes("load failed"))

@@ -71,6 +71,7 @@ export const enBase: Record<string, string> = {
   "autherror.password_contains_identity": "The password must not contain your name or e-mail address.",
   "autherror.password_wrong": "Wrong password.",
   "autherror.something_went_wrong": "Something went wrong",
+  "autherror.too_many": "Too many attempts. Try again in a few minutes.",
   "avatar.your_avatar": "Your avatar",
   "avatar.glasses": "GLASSES",
   "avatar.hat": "HAT",

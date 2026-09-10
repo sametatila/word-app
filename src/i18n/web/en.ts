@@ -561,7 +561,6 @@ export const enWeb: Record<string, string> = {
   "authw.wait": "Hold on…",
   "autherrorw.account_not_linked": "You already have an account with this email. Sign in your usual way first, then link this account in Settings.",
   "autherrorw.token_expired": "The link has expired or is invalid. Ask for a new one.",
-  "autherrorw.too_many": "Too many attempts. Try again in a few minutes.",
   "autherrorw.forbidden": "You don't have permission for this. Check the Domains setting.",
   "autherrorw.network": "No internet connection could be made. Check it and try again.",
   "authw.passwords_dont_match": "The passwords don't match.",

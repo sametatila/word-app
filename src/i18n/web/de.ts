@@ -561,7 +561,6 @@ export const deWeb: Record<string, string> = {
   "authw.wait": "Moment…",
   "autherrorw.account_not_linked": "Mit dieser E-Mail hast du schon ein Konto. Melde dich erst wie gewohnt an und verknüpf dieses Konto dann in den Einstellungen.",
   "autherrorw.token_expired": "Der Link ist abgelaufen oder ungültig. Fordere einen neuen an.",
-  "autherrorw.too_many": "Zu viele Versuche. Versuch es in ein paar Minuten noch mal.",
   "autherrorw.forbidden": "Dafür fehlt dir die Berechtigung. Prüf die Domains-Einstellung.",
   "autherrorw.network": "Es kam keine Internetverbindung zustande. Prüf sie und versuch es noch mal.",
   "authw.passwords_dont_match": "Die Passwörter stimmen nicht überein.",

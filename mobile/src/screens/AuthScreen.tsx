@@ -144,7 +144,7 @@ export function AuthScreen() {
 
     // Doğrulanmamış hesap bir hata değil, eksik bir adım: kullanıcıyı oraya al.
     if (isEmailNotVerified(r.code, r.message)) { toVerify(address, "blocked"); return; }
-    setError(translateAuthError(r.code, r.message));
+    setError(translateAuthError(r.code, r.message, r.status));
   }
 
   async function doResend() {
@@ -154,7 +154,7 @@ export function AuthScreen() {
     setResendSent(false);
     const r = await sendVerificationEmail(verifyEmail);
     setResendBusy(false);
-    if (!r.ok) { setError(translateAuthError(r.code, r.message)); return; }
+    if (!r.ok) { setError(translateAuthError(r.code, r.message, r.status)); return; }
     setResendSent(true);
     setCooldown(RESEND_COOLDOWN);
   }

@@ -30,7 +30,13 @@ export type AuthUser = {
  */
 export type AuthOutcome =
   | { ok: true; user: AuthUser | null; session: boolean }
-  | { ok: false; code: string; message: string };
+  /**
+   * `status`: HTTP durum kodu. Hız sınırına takılan yanıtın GÖVDESİNDE ayırt
+   * edici bir kod yok — Better Auth düz bir İngilizce cümle döndürüyor, nginx
+   * ise HTML sayfası. İkisi de yalnız 429'dan tanınıyor; kod olmadan mesaj
+   * ham hâliyle ekrana düşerdi (bkz. authErrors.translateAuthError).
+   */
+  | { ok: false; code: string; message: string; status?: number };
 
 async function post(path: string, body: Record<string, unknown>): Promise<Response> {
   return fetch(`${API_BASE}/api/auth/${path}`, {
@@ -58,7 +64,7 @@ async function parse(res: Response): Promise<AuthOutcome> {
   try { json = text ? JSON.parse(text) : null; } catch { /* düz metin */ }
   if (!res.ok) {
     const o = (json ?? {}) as { code?: string; message?: string };
-    return { ok: false, code: o.code ?? "", message: o.message ?? text.slice(0, 200) ?? t("autherror.something_went_wrong") };
+    return { ok: false, code: o.code ?? "", message: o.message ?? text.slice(0, 200) ?? t("autherror.something_went_wrong"), status: res.status };
   }
   return { ok: true, user: userFrom(json), session: hasSession(json) };
 }

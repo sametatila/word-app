@@ -71,6 +71,7 @@ export const deBase: Record<string, string> = {
   "autherror.password_contains_identity": "Das Passwort darf deinen Namen oder deine E-Mail-Adresse nicht enthalten.",
   "autherror.password_wrong": "Falsches Passwort.",
   "autherror.something_went_wrong": "Etwas ist schiefgelaufen",
+  "autherror.too_many": "Zu viele Versuche. Versuch es in ein paar Minuten noch mal.",
   "avatar.your_avatar": "Dein Avatar",
   "avatar.glasses": "BRILLE",
   "avatar.hat": "MÜTZE",

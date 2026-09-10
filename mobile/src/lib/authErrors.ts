@@ -16,10 +16,18 @@ export function isEmailNotVerified(code: string, message: string): boolean {
     || (message || "").toLowerCase().includes("email not verified");
 }
 
-export function translateAuthError(code: string, message: string): string {
+export function translateAuthError(code: string, message: string, status = 0): string {
   const c = (code || "").toUpperCase();
   const m = (message || "").toLowerCase();
   if (c === "NETWORK") return t("autherror.could_not_connect_check_your");
+  /*
+    HIZ SINIRI. İki ayrı kaynaktan gelebiliyor ve ikisinin de gövdesi
+    çevrilemez: Better Auth düz bir İngilizce cümle döndürüyor, nginx ise bir
+    HTML hata sayfası. Kod alanı ikisinde de boş, o yüzden tek ayırt edici
+    durum kodu. Bu dal olmadan kullanıcı ekranda ham İngilizce (ya da ham
+    HTML) görüyordu — web'de aynı eşleme baştan vardı.
+  */
+  if (status === 429 || m.includes("too many requests")) return t("autherror.too_many");
   if (c.includes("EMAIL_NOT_VERIFIED") || m.includes("email not verified"))
     return t("autherror.your_email_address_is_not");
   if (c.includes("INVALID_EMAIL_OR_PASSWORD") || m.includes("invalid email or password"))

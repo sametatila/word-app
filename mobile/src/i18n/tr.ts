@@ -74,6 +74,7 @@ export const tr: Record<string, string> = {
   "autherror.password_contains_identity": "Parola adını ya da e-posta adresini içeremez.",
   "autherror.password_wrong": "Parola yanlış.",
   "autherror.something_went_wrong": "Bir sorun oldu",
+  "autherror.too_many": "Çok fazla deneme yapıldı. Birkaç dakika sonra tekrar dene.",
   "avatar.your_avatar": "Avatarın",
   "avatar.glasses": "GÖZLÜK",
   "avatar.hat": "ŞAPKA",

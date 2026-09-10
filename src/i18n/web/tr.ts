@@ -586,7 +586,6 @@ export const trWeb: Record<string, string> = {
   "authw.wait": "Bekle…",
   "autherrorw.account_not_linked": "Bu e-postayla zaten bir hesabın var. Önce her zamanki yönteminle gir, sonra Ayarlar'dan bu hesabı bağla.",
   "autherrorw.token_expired": "Bağlantının süresi dolmuş ya da geçersiz. Yeni bir bağlantı iste.",
-  "autherrorw.too_many": "Çok fazla deneme yapıldı. Birkaç dakika sonra tekrar dene.",
   "autherrorw.forbidden": "Bu işlem için yetkin yok. Adres listesi (Domains) ayarını kontrol et.",
   "autherrorw.network": "İnternet bağlantısı kurulamadı. Bağlantını kontrol edip tekrar dene.",
   "authw.passwords_dont_match": "Parolalar eşleşmiyor.",
