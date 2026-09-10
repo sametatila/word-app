@@ -1029,6 +1029,90 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   sameList("gorev toplu odulu (webin karti)", written, [server, server], "web karti", "sunucu sabiti");
 }
 
+/* ── 24. sosyal katmanin alanlari ve cumle tablolari ───────────────────────
+ * Sosyal katman on iki uc ve bes ortak tip; hicbir kapi bakmiyordu. Iki sey
+ * olculuyor:
+ *
+ * 1. Bes tipin alan kumesi IKI YONDE (bkz. 19: fazlasi da hata).
+ * 2. Uc cumle tablosunun `case` kumesi. Adlar iki tarafta farkli
+ *    (`feedText`/`describeShort` <-> `feedPhrase`/`reactionTarget`) ama
+ *    tablolar ayni olaylari anlatmak zorunda: sunucu yeni bir etkinlik turu
+ *    yazdiginda karsiligi olmayan taraf "bir sey oldu" diye genel bir cumle
+ *    basiyor ve kimse fark etmiyor. Ayrica iki tablonun sunucunun
+ *    `ACTIVITY_TYPES` / `NOTIFICATION_TYPES` listesini TAM kapsadigi
+ *    olculuyor - kapsamayan tur sessizce varsayilana dusuyor.
+ *
+ * `reactionTarget` `friend_streak` tasimiyor: tepki verilebilen olaylar
+ * `lib/social/reactions.ts` ile sinirli ve ortak seri onlarin arasinda degil
+ * (iki tarafta da yok, yani ayrisma degil). */
+{
+  const strip = (x) => x.replace(/\/\*[\s\S]*?\*\//g, " ").replace(/\/\/[^\n]*/g, " ");
+  const typeBlock = (src, name) => {
+    const x = strip(src);
+    const i = x.indexOf("export type " + name + " =");
+    if (i < 0) return "";
+    let k = x.indexOf("{", i);
+    if (k < 0) return "";
+    let d = 0;
+    for (let j = k; j < x.length; j++) {
+      if (x[j] === "{") d++;
+      else if (x[j] === "}" && --d === 0) return x.slice(k, j + 1);
+    }
+    return "";
+  };
+  const flds = (b) => [...new Set([...b.matchAll(/[{;\n]\s*(\w+)\??:/g)].map((m) => m[1]))].sort();
+  const wt = read("src/lib/social/types.ts");
+  const mt = read("mobile/src/api/social.ts");
+  for (const n of ["PublicUser", "FriendRow", "ReactionSummary", "FeedItem", "QuestView"]) {
+    const w = flds(typeBlock(wt, n));
+    const m = flds(typeBlock(mt, n));
+    const eksik = w.filter((a) => !m.includes(a));
+    const fazla = m.filter((a) => !w.includes(a));
+    sameList("sosyal " + n + " alanlari", eksik.length ? eksik : ["ayrisma yok"], ["ayrisma yok"], "mobilde eksik", "beklenen");
+    sameList("sosyal " + n + " alanlari (ters)", fazla.length ? fazla : ["ayrisma yok"], ["ayrisma yok"], "mobilde fazla", "beklenen");
+  }
+
+  /* Cumle tablolarinin `case` kumeleri. Islevin govdesindeki ILK `switch`
+     alinir; ic ice switch yok. */
+  const swCases = (src, fn) => {
+    const x = strip(src);
+    const i = x.indexOf(fn);
+    if (i < 0) return ["bulunamadi: " + fn];
+    const k = x.indexOf("switch", i);
+    if (k < 0) return ["switch yok: " + fn];
+    let b = x.indexOf("{", k);
+    let d = 0;
+    for (let j = b; j < x.length; j++) {
+      if (x[j] === "{") d++;
+      else if (x[j] === "}" && --d === 0) {
+        return [...new Set([...x.slice(b, j + 1).matchAll(/case\s+"([^"]+)"/g)].map((m) => m[1]))].sort();
+      }
+    }
+    return ["okunamadi: " + fn];
+  };
+  const wc = read("src/lib/social/client.ts");
+  const TABLES = [
+    ["akis cumlesi", "function feedText", "function feedPhrase"],
+    ["tepki hedefi", "function describeShort", "function reactionTarget"],
+    ["bildirim cumlesi", "function notificationText", "function notificationText"],
+  ];
+  for (const [baslik, wf, mf] of TABLES) sameList(baslik + " tablosu", swCases(mt, mf), swCases(wc, wf));
+
+  /* Sunucunun listesini TAM kapsama. */
+  const konst = (name) => {
+    const m = strip(wt).match(new RegExp("export const " + name + " = \\[([^\\]]*)\\]"));
+    return m ? [...new Set((m[1].match(/"[^"]+"/g) ?? []).map((x) => x.slice(1, -1)))].sort() : ["okunamadi: " + name];
+  };
+  const kapsam = (baslik, liste, cases) => {
+    const eksik = liste.filter((x) => !cases.includes(x));
+    sameList(baslik, eksik.length ? eksik : ["kapsam tam"], ["kapsam tam"], "kapsanmayan", "beklenen");
+  };
+  kapsam("etkinlik turlerinin kapsami (mobil)", konst("ACTIVITY_TYPES"), swCases(mt, "function feedPhrase"));
+  kapsam("etkinlik turlerinin kapsami (web)", konst("ACTIVITY_TYPES"), swCases(wc, "function feedText"));
+  kapsam("bildirim turlerinin kapsami (mobil)", konst("NOTIFICATION_TYPES"), swCases(mt, "function notificationText"));
+  kapsam("bildirim turlerinin kapsami (web)", konst("NOTIFICATION_TYPES"), swCases(wc, "function notificationText"));
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"
