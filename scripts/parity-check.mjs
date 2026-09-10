@@ -2471,6 +2471,34 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   sameSet("onerilen adim adresleri", mobil, sunucu, "mobil esleyici", "sunucu");
 }
 
+/* ── 62. gelisim serisi cizgisinin geometrisi ─────────────────────────────
+ * Sekiz haftalik cizgi iki tarafta AYRI cizilliyor (web SVG, mobil
+ * react-native-svg) ve ayni raporu anlatmak zorunda. En onemlisi OLCULMEMIS
+ * haftanin cizgiyi KESMESI: boslugu sifir saymak, olcum yapilmamis bir
+ * haftayi "puanin dibe vurdu" diye cizerdi. Kutu olculeri de ayni, yoksa
+ * ayni veri iki uygulamada baska bir egim gosterir. */
+{
+  const geo = (p) => {
+    const src = read(p).replace(/\/\*[\s\S]*?\*\//g, " ").replace(/\/\/[^\n]*/g, " ");
+    const i = src.indexOf("function Spark");
+    if (i < 0) return ["bulunamadi"];
+    const govde = src.slice(i, i + 1600);
+    const bul = (re, ad) => ad + "=" + ((govde.match(re) ?? [])[1] ?? "yok");
+    return [
+      bul(/const W = (\d+)/, "W"),
+      bul(/const H = (\d+)/, "H"),
+      bul(/\(H - (\d+)\)/, "ic bosluk"),
+      /* Kesme IKI BICIMDE de yaziliyor: web koordinat yokluguna bakiyor
+         (`if (!c)`), mobil degerin kendisine (`if (v === null)`). Aranan sey
+         ikisinde de ayni: cizginin kopmasi (`open = false`). Bicimlerden
+         birine bakan bir desen yanlis pozitif verir. */
+      "kesme=" + (/open = false/.test(govde) ? "var" : "yok"),
+      "tavan=" + (/max \?\? Math\.max\(1/.test(govde) ? "max ?? en buyuk" : "?"),
+    ];
+  };
+  sameList("gelisim serisi geometrisi", geo("mobile/src/ui/GrowthPanel.tsx"), geo("src/components/progress-panel.tsx"));
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"

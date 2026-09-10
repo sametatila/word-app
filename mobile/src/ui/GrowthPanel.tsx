@@ -11,6 +11,7 @@ import { Text } from "./Text";
 import { Card } from "./Card";
 import { PressableScale } from "./PressableScale";
 import { SkeletonBar, SkeletonLine } from "./Skeleton";
+import Svg, { Path as SvgPath } from "react-native-svg";
 import { useTheme, spacing, radii, type Palette } from "../theme";
 
 /**
@@ -29,6 +30,7 @@ import { useTheme, spacing, radii, type Palette } from "../theme";
  * Gün İSTEMCİNİN yerel günü: uç gün gelmezse sunucunun UTC gününe düşüyor ve
  * gece yarısına yakın açılan rapor bir gün kaymış seriyle çiziliyor.
  */
+type WeekPoint = { week: string; value: number | null; n: number };
 type Prof = { skill: string; label: string; now: number | null; before: number | null; band: string | null };
 type NextStep = { skill: string; label: string; reason: string; href: string; title: string; minutes: number };
 type Growth = {
@@ -37,7 +39,46 @@ type Growth = {
   proficiency: Prof[];
   next: NextStep | null;
   summary: { text: string };
+  weeks: string[];
+  series: { writing: WeekPoint[]; speaking: WeekPoint[]; usage: WeekPoint[]; answers: WeekPoint[] };
+  milestones: { at: string; text: string }[];
 };
+
+/**
+ * Sekiz haftalık çizgi — web `progress-panel` `Spark` ile AYNI geometri
+ * (120×32, dört piksel iç boşluk, ölçülmemiş hafta çizgiyi KESİYOR).
+ *
+ * Kesme önemli: boşluğu sıfır saymak, ölçüm yapılmamış bir haftayı "puanın
+ * dibe vurdu" diye çizerdi.
+ */
+function Spark({ title, points, max, color, colors }: { title: string; points: WeekPoint[]; max?: number; color: string; colors: Palette }) {
+  const values = points.map((p) => p.value);
+  const top = max ?? Math.max(1, ...values.map((v) => v ?? 0));
+  const W = 120;
+  const H = 32;
+  const step = W / Math.max(1, points.length - 1);
+  let d = "";
+  let open = false;
+  values.forEach((v, i) => {
+    if (v === null) { open = false; return; }
+    const x = i * step;
+    const y = H - (Math.min(v, top) / top) * (H - 4) - 2;
+    d += `${open ? "L" : "M"}${x.toFixed(1)},${y.toFixed(1)} `;
+    open = true;
+  });
+  const last = [...values].reverse().find((v) => v !== null) ?? null;
+  return (
+    <View style={{ flex: 1, minWidth: 132, gap: 2 }}>
+      <View style={{ flexDirection: "row", alignItems: "baseline", justifyContent: "space-between" }}>
+        <Text variant="micro" color={colors.textMuted}>{title}</Text>
+        <Text variant="micro" color={colors.text}>{last ?? "—"}</Text>
+      </View>
+      <Svg width="100%" height={H} viewBox={`0 0 ${W} ${H}`}>
+        {d ? <SvgPath d={d.trim()} stroke={color} strokeWidth={2} fill="none" strokeLinecap="round" strokeLinejoin="round" /> : null}
+      </Svg>
+    </View>
+  );
+}
 
 function tone(now: number | null, colors: Palette): string {
   if (now === null) return colors.surface2;
@@ -50,6 +91,10 @@ export function GrowthPanel() {
   const { colors } = useTheme();
   const nav = useNavigation<NativeStackNavigationProp<RootStackParams>>();
   const [data, setData] = useState<Growth | null | undefined>(undefined);
+  /* Ayrıntı KAPALI geliyor: yukarıdaki çubuklar "neredeyim" sorusuna zaten
+     cevap veriyor, aşağısı cevabı beğenmeyip "neden" diye soran için. Web de
+     aynı kararı veriyor (`Disclosure`). */
+  const [detail, setDetail] = useState(false);
 
   useEffect(() => {
     let alive = true;
@@ -82,7 +127,8 @@ export function GrowthPanel() {
   if (!data) return null;
   /* Hiç ölçüm yoksa panel görünmüyor: "ölçülmedi" yazan altı çubuk, yeni
      kullanıcıya kendi eksikliğini gösteren bir liste demek (web de öyle). */
-  if (!data.proficiency.some((p) => p.now !== null)) return null;
+  const hasSeries = data.series ? Object.values(data.series).some((x) => x.some((p) => p.value !== null)) : false;
+  if (!data.proficiency.some((p) => p.now !== null) && !hasSeries) return null;
 
   const step = data.next;
   const route = step ? routeFromHref(step.href) : null;
@@ -141,6 +187,40 @@ export function GrowthPanel() {
           </View>
           <Text variant="micro" color={colors.primaryText}>{t("common.start")}</Text>
         </PressableScale>
+      ) : null}
+
+      {/* NASIL GİDİYORUM — sekiz haftalık seri ve kilometre taşları. */}
+      {data.weeks?.length ? (
+        <>
+          <PressableScale
+            onPress={() => setDetail((v) => !v)}
+            style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between", marginTop: spacing.xs, paddingTop: spacing.sm, borderTopWidth: 1, borderTopColor: colors.hairline }}
+          >
+            <Text variant="caption" color={colors.text}>{t("progp.how_am_i_doing")}</Text>
+            <Text variant="micro" color={colors.textMuted}>{t("progp.n_weeks", { n: data.weeks.length })}</Text>
+          </PressableScale>
+          {detail ? (
+            <View style={{ gap: spacing.md, marginTop: spacing.sm }}>
+              <View style={{ flexDirection: "row", flexWrap: "wrap", gap: spacing.md }}>
+                <Spark title={t("exam.sec_writing")} points={data.series.writing} max={100} color={colors.primary} colors={colors} />
+                <Spark title={t("exam.sec_speaking")} points={data.series.speaking} max={100} color={colors.success} colors={colors} />
+                <Spark title={t("exam.title")} points={data.series.usage} max={100} color={colors.streak} colors={colors} />
+                <Spark title={t("prog.answers")} points={data.series.answers} color={colors.textMuted} colors={colors} />
+              </View>
+              {data.milestones?.length ? (
+                <View>
+                  <Text variant="micro" color={colors.textMuted}>{t("progw.milestones")}</Text>
+                  {data.milestones.map((m) => (
+                    <View key={`${m.at}-${m.text}`} style={{ flexDirection: "row", gap: spacing.sm, marginTop: 4 }}>
+                      <Text variant="micro" color={colors.textFaint}>{m.at}</Text>
+                      <Text variant="caption" color={colors.text} style={{ flex: 1, lineHeight: 19 }}>{m.text}</Text>
+                    </View>
+                  ))}
+                </View>
+              ) : null}
+            </View>
+          ) : null}
+        </>
       ) : null}
     </Card>
   );
