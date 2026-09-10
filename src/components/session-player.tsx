@@ -171,6 +171,8 @@ export function SessionPlayer() {
    * kimliği değiştirmeden güncel değeri taşıyor.
    */
   const onlyGameRef = useRef<PlayableGame | null>(null);
+  /** Turun türü — `session_start` ve `session_done` aynı `kind`i taşısın diye. */
+  const sessionKind = useRef<string>("mixed");
   /** Tur `/learn?game=` ile açıldı (zayıf nokta / plan öğesi) — özet koçu için. */
   const targeted = useRef(false);
   /**
@@ -251,7 +253,13 @@ export function SessionPlayer() {
     play("start");
     // Tur türü: karışık, tek oyun (hangisi), ek tur — üretim oranı KPI'sını
     // tür bazında okumak için (WP-80).
-    track("session_start", 0, opts.game ? `single:${opts.game}` : opts.extra ? "extra" : "mixed");
+    /* Tur türü BİR KEZ hesaplanıp saklanıyor: bitişte de aynı `kind` gidiyor
+       (bkz. `sessionKind`). Eskiden `session_done` KİND'SIZ yazılıyordu, yani
+       bir turun başlangıcı kovalanıyor ama bitişi kovalanmıyordu ve ikisi
+       `kind` üzerinden eşleştirilemiyordu. Mobil `GameScreen` ikisine de aynı
+       kind'i veriyor (bkz. web-parity §11.31). */
+    sessionKind.current = opts.game ? `single:${opts.game}` : opts.extra ? "extra" : "mixed";
+    track("session_start", 0, sessionKind.current);
     wagerOn.current = false;
     setWagerResult(null);
     bestCombo.current = 0;
@@ -642,7 +650,7 @@ export function SessionPlayer() {
       if (wager) wagerOn.current = false;
 
       if (isLast) {
-        track("session_done", next.correct);
+        track("session_done", next.correct, sessionKind.current);
         const res = await flush(true, progress, wager);
         setResult(res ? { ...res, xpGained: sessionXp.current } : null);
         setStatus("done");

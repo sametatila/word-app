@@ -16,18 +16,6 @@ python3 scripts/store-shots.py --plan docs/store/plan/b-exam.json --out docs/sto
 
 `--store play` 1080×1920, `--store ios` 1290×2796 üretir.
 
-## Play ikonu (512×512)
-
-Kaynağı iOS'un 1024'lük ikonu; Play 512 istiyor, alfa ve köşe yuvarlatma
-KABUL ETMİYOR. Türetme tek satır, o yüzden çıktı depoda durmuyor:
-
-```bash
-python3 -c "from PIL import Image; \
-Image.open('mobile/ios/Lernomi/Images.xcassets/AppIcon.appiconset/AppIcon-1024.png') \
-.convert('RGB').resize((512,512), Image.LANCZOS) \
-.save('docs/store/graphics/play-icon-512.png','PNG',optimize=True)"
-```
-
 ## Yeni ham görüntü çekmek
 
 Gerçek cihaz (ya da emülatör) + **imzalı release yapısı** + giriş yapılmış hesap gerekir.

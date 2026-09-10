@@ -1983,3 +1983,34 @@ yüzden aynı anlam.
 dilde yazılı ama hiçbir ekranda düğme yok - iki platformda birden eksik değil,
 mobilde `shareStreak()` var ama çağıranı yok. Yani o satır bu maddeyle
 kapanmıyor.
+
+### 11.31 `session_done` kind'sız yazılıyordu — başlangıçla bitiş eşleşmiyordu
+
+`session_*` çiftinin tamamı çıkarıldı. İki gerçek kusur çıktı ve ikisi de
+"kind sözlüğü" tartışmasından (§11.29) BAĞIMSIZ - biri webin kendi içinde
+tutarsızlığı:
+
+**a) Karışık/pratik tur — DÜZELTİLDİ.** `session-player` başlangıcı
+`kind` ile yazıyordu (`mixed` / `extra` / `single:<oyun>`) ama bitişi
+KİND'SIZ:
+
+    track("session_start", 0, opts.game ? `single:${opts.game}` : …)   ✓
+    track("session_done", next.correct)                                 ✗
+
+Yani bir turun başlangıcı kovalanıyor, bitişi kovalanmıyordu; ikisi `kind`
+üzerinden eşleştirilemiyordu ve "başlayan kaç tur bitiyor" sorusu tür bazında
+cevaplanamıyordu. Tür artık bir kez hesaplanıp `sessionKind` ref'inde
+saklanıyor ve iki olaya da aynı değer gidiyor. Mobil `GameScreen` ikisine de
+aynı kind'i (`session` / `practice`) baştan beri veriyor.
+
+**b) Yürüyüş turu — yarısı düzeltildi, yarısı kayıt.** Web `walk-player`
+bitişi kind'sız yazıyordu; artık `kind="walk"` taşıyor, yoksa yürüyüş
+tamamlamaları karışık turlarla aynı kovaya düşüyordu.
+
+MOBİLDE İSE BU OLAY HİÇ YOK: `WalkModeScreen` yalnız `walk_start` yazıyor,
+`session_done` yazmıyor. Yani yürüyüş tamamlamaları yalnız webden sayılıyor.
+Buraya olay EKLENMEDİ çünkü mobilin yürüyüş akışı bitişi "devam edelim mi"
+sorusuyla döngüye sokuyor ve turun "bittiği" anın hangisi olduğu (yirmi tur
+mu, kullanıcı vazgeçtiğinde mi) bir tanım kararı; webde o karar `askContinue`
+öncesine konmuş. Aynı kararı mobilde kendi başıma vermek, iki platformda
+farklı anlamda bir sayı üretme riski taşıyordu.

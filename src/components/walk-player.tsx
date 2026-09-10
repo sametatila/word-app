@@ -1280,7 +1280,10 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
 
       if (!alive()) return;
       play("finish");
-      track("session_done", tallyRef.current.correct);
+      /* Yürüyüş turunun bitişi de KİND taşıyor: kind'sız yazıldığında rapor
+         onu karışık turlarla aynı kovaya koyuyordu. Mobil `WalkModeScreen`
+         bu olayı HİÇ yazmıyor - orası ayrı bir eksik (bkz. §11.31). */
+      track("session_done", tallyRef.current.correct, "walk");
 
       const again = await askContinue(tallyRef.current.correct, tallyRef.current.total);
       if (!alive()) return;
