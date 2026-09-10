@@ -12,6 +12,7 @@ import { Skeleton, SkeletonLine, SkeletonTile, textHeight } from "../ui/Skeleton
 import { useAuth } from "../lib/AuthContext";
 import { api } from "../api/client";
 import { STATUS_KEY, type WordRow, type WordStatus } from "../data/words";
+import { grammarLine } from "../game/wordGrammar";
 import { useTheme, spacing, radii, type Palette } from "../theme";
 
 /** Filtreler — etiket ANAHTAR tutar (durum etiketleriyle aynı sözlük girdileri). */
@@ -136,6 +137,8 @@ export function WordsScreen() {
               <View style={{ flex: 1 }}>
                 <Text variant="bodyStrong">{w.artikel ? `${w.artikel} ${w.de}` : w.de}</Text>
                 <Text variant="caption" color={colors.textMuted}>{w.tr}</Text>
+                {/* Tür ve çoğul — web listesi de aynı satırı yazıyor. */}
+                <Text variant="micro" color={colors.textFaint}>{grammarLine(w, w.tr)}</Text>
               </View>
               <SpeakButton text={w.artikel ? `${w.artikel} ${w.de}` : w.de} size={34} />
               <View style={{ backgroundColor: colors.surface2, borderRadius: radii.sm, paddingHorizontal: 7, paddingVertical: 2 }}>

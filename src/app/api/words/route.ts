@@ -49,6 +49,12 @@ export async function GET(req: Request) {
         artikel: words.artikel,
         tr: words.tr,
         niveau: words.niveau,
+        /* Tür ve çoğul kalıbı da gidiyor: web listesi bunları sunucu
+           bileşeninde doğrudan tablodan okuyup yazıyor, mobilin tek kaynağı
+           bu uç ve iki alan hiç gönderilmediği için Android listesi kelimenin
+           isim mi fiil mi olduğunu söyleyemiyordu. */
+        typ: words.typ,
+        formen: words.formen,
         intervalDays: userWords.intervalDays,
       })
       .from(words)
@@ -65,6 +71,8 @@ export async function GET(req: Request) {
       artikel: r.artikel,
       tr: r.tr,
       niveau: r.niveau,
+      typ: r.typ,
+      formen: r.formen,
       status: r.intervalDays == null ? "new" : r.intervalDays >= 21 ? "mastered" : "learning",
     }));
 

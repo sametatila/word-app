@@ -10,6 +10,9 @@ export type WordRow = {
   artikel: string | null;
   tr: string;
   niveau: string;
+  /** Tür ("Nomen"/"Verb"/...) ve çoğul kalıbı — `ui/wordGrammar` ile etikete çevrilir. */
+  typ: string;
+  formen: string | null;
   status: WordStatus;
 };
 
