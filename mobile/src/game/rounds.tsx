@@ -423,14 +423,21 @@ function TrueFalseRound({ round, onDone, colors }: { round: Round; onDone: Done;
 }
 
 /** Yaz(arak) turları için: ipucu düğmesi + iskelet. */
-function HintRow({ answer, colors }: { answer: string; colors: Palette }) {
-  const [shown, setShown] = useState(false);
+/**
+ * İpucu satırı — harf iskeleti.
+ *
+ * DURUM DIŞARIDA: tur bileşeni ipucunun açıldığını bilmek zorunda, çünkü cevap
+ * `hintUsed` ile gönderiliyor ve sunucudaki SRS puanı ona bakıyor (`lib/srs`
+ * `grade`). Eskiden durum burada kapalıydı ve dışarı hiç çıkmıyordu.
+ */
+function HintRow({ answer, colors, shown, onShow }: { answer: string; colors: Palette; shown: boolean; onShow: () => void }) {
+  const setShown = onShow;
   return (
     <View style={{ marginTop: spacing.md }}>
       {shown ? (
         <Text variant="bodyStrong" color={colors.textMuted} style={{ fontFamily: Platform.OS === "ios" ? "Menlo" : "monospace", letterSpacing: 2, textAlign: "center" }}>{skeleton(answer)}</Text>
       ) : (
-        <PressableScale onPress={() => setShown(true)} style={{ alignSelf: "flex-start", flexDirection: "row", alignItems: "center", gap: 6, backgroundColor: colors.surface2, borderRadius: radii.pill, paddingHorizontal: 14, paddingVertical: 8 }}>
+        <PressableScale onPress={() => setShown()} style={{ alignSelf: "flex-start", flexDirection: "row", alignItems: "center", gap: 6, backgroundColor: colors.surface2, borderRadius: radii.pill, paddingHorizontal: 14, paddingVertical: 8 }}>
           <Text variant="caption" color={colors.textMuted}>{tx("rounds.show_hint")}</Text>
         </PressableScale>
       )}
@@ -441,6 +448,9 @@ function HintRow({ answer, colors }: { answer: string; colors: Palette }) {
 function TypingRound({ round, onDone, colors }: { round: Round; onDone: Done; colors: Palette }) {
   const word = round.word!;
   const [val, setVal] = useState("");
+  /* Sunucu bu turu taze kelimenin ardına koyduysa ipucu baştan açık (web
+     `typing-game` `hintShown` başlangıcı da `round.assist`). */
+  const [hintShown, setHintShown] = useState(Boolean(round.assist));
   const [fb, setFb] = useState<Feedback | null>(null);
   function check() {
     if (fb) return;
@@ -468,14 +478,14 @@ function TypingRound({ round, onDone, colors }: { round: Round; onDone: Done; co
         blurOnSubmit={false}
         style={{ backgroundColor: colors.surface, borderRadius: radii.lg, borderWidth: 1.5, borderColor: colors.border, paddingHorizontal: spacing.lg, paddingVertical: 16, color: colors.text, fontSize: 18 }}
       />
-      <HintRow answer={word.de} colors={colors} />
+      <HintRow answer={word.de} colors={colors} shown={hintShown} onShow={() => setHintShown(true)} />
       <PressableScale onPress={check} style={[{ marginTop: spacing.md, borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: 15, alignItems: "center" }, softShadow(colors.primary, 8)]}>
         <Text variant="h3" color="#fff">{tx("common.check")}</Text>
       </PressableScale>
     </View>
   );
   return (
-    <RoundShell footer={inputBlock} sheet={fb ? <FeedbackFooter data={fb} onContinue={() => onDone(fb.correct, miss(fb.correct, classifyTyping(val, [word.de, withArtikel(word), ...(round.alternatives ?? [])]), val))} colors={colors} /> : undefined}>
+    <RoundShell footer={inputBlock} sheet={fb ? <FeedbackFooter data={fb} onContinue={() => onDone(fb.correct, { ...miss(fb.correct, classifyTyping(val, [word.de, withArtikel(word), ...(round.alternatives ?? [])]), val), hintUsed: hintShown })} colors={colors} /> : undefined}>
       <Prompt label={tx("rounds.write_equivalent", { lang: targetLangName() })} big={word.tr} sub={word.en} colors={colors} />
       <MascotMid mood={fb === null ? "idle" : fb.correct ? "thumbsup" : "sad"} hidden={!!fb} />
     </RoundShell>
@@ -598,8 +608,8 @@ function SelfAssess({ round, onDone, colors }: { round: Round; onDone: Done; col
     </PressableScale>
   ) : (
     <View style={{ flexDirection: "row", gap: spacing.md }}>
-      <View style={{ flex: 1 }}><OptionButton text={tx("rounds.struggled")} state="idle" onPress={() => onDone(false)} colors={colors} /></View>
-      <View style={{ flex: 1 }}><OptionButton text={tx("rounds.got_it")} state="idle" onPress={() => onDone(true)} colors={colors} /></View>
+      <View style={{ flex: 1 }}><OptionButton text={tx("rounds.struggled")} state="idle" onPress={() => onDone(false, { hintUsed: true })} colors={colors} /></View>
+      <View style={{ flex: 1 }}><OptionButton text={tx("rounds.got_it")} state="idle" onPress={() => onDone(true, { hintUsed: true })} colors={colors} /></View>
     </View>
   );
   return (
@@ -630,6 +640,9 @@ function ListenRound({ round, onDone, colors }: { round: Round; onDone: Done; co
   const [picked, setPicked] = useState<string | null>(null);
   const [fb, setFb] = useState<Feedback | null>(null);
   const [audible, setAudible] = useState<boolean | null>(null);
+  /* Üçüncü dinleyişten sonra ipucu sayılıyor — web `listen-game` de
+     `replays >= 2` diyor. İlk otomatik okuma sayılmıyor. */
+  const [replays, setReplays] = useState(0);
   useEffect(() => { ttsAvailable().then(setAudible); }, []);
   // Tur basina bir kez oku: word zaten round.id'den turuyor, bagimliliga
   // eklemek ayni turda tekrar okumaya yol acabilir.
@@ -644,11 +657,11 @@ function ListenRound({ round, onDone, colors }: { round: Round; onDone: Done; co
     setFb({ correct: ok, answerDe: withArtikel(word), tr: word.tr, en: word.en, why: ok ? null : whyMeaning(word, o.text) });
   }
   return (
-    <RoundShell sheet={fb ? <FeedbackFooter data={fb} onContinue={() => onDone(fb.correct, miss(fb.correct, "listening", picked))} colors={colors} /> : undefined}>
+    <RoundShell sheet={fb ? <FeedbackFooter data={fb} onContinue={() => onDone(fb.correct, { ...miss(fb.correct, "listening", picked), hintUsed: replays >= 2 })} colors={colors} /> : undefined}>
       <View style={[{ backgroundColor: colors.surface, borderRadius: radii.xl, paddingVertical: spacing.xxl, paddingHorizontal: spacing.lg, alignItems: "center", borderWidth: 1, borderColor: colors.hairline, marginBottom: spacing.md }, softShadow("#5a3418", 10)]}>
         <Text variant="micro" color={colors.textMuted} style={{ textTransform: "uppercase", letterSpacing: 1 }}>{tx("rounds.listen_pick_meaning")}</Text>
         {hideWord ? (
-          <PressableScale accessibilityLabel={tx("item.listen")} onPress={() => speakTarget(withArtikel(word))} style={[{ width: 84, height: 84, borderRadius: 42, backgroundColor: colors.primary, alignItems: "center", justifyContent: "center", marginTop: spacing.lg }, softShadow(colors.primary, 12)]}>
+          <PressableScale accessibilityLabel={tx("item.listen")} onPress={() => { setReplays((n) => n + 1); speakTarget(withArtikel(word)); }} style={[{ width: 84, height: 84, borderRadius: 42, backgroundColor: colors.primary, alignItems: "center", justifyContent: "center", marginTop: spacing.lg }, softShadow(colors.primary, 12)]}>
             <SpeakerIcon color="#fff" size={38} />
           </PressableScale>
         ) : (
@@ -682,6 +695,7 @@ function ScrambleRound({ round, onDone, colors }: { round: Round; onDone: Done; 
   }, [round.id]);
   const [placed, setPlaced] = useState<{ id: number; char: string }[]>([]);
   const [fb, setFb] = useState<Feedback | null>(null);
+  const [hintUsed, setHintUsed] = useState(false);
   const usedIds = new Set(placed.map((t) => t.id));
   // Bir harf yerleştir; tamamlanınca değerlendir (hem dokunuş hem ipucu buradan geçer).
   function place(t: { id: number; char: string }) {
@@ -699,6 +713,7 @@ function ScrambleRound({ round, onDone, colors }: { round: Round; onDone: Done; 
   function backspace() { if (fb || placed.length === 0) return; sfx("tap"); setPlaced((p) => p.slice(0, -1)); }
   // İpucu (web): sıradaki DOĞRU harfi havuzdan bulup otomatik yerleştirir.
   function useHint() {
+    setHintUsed(true);
     if (fb || placed.length >= target.length) return;
     const needed = target[placed.length];
     const tile = pool.find((t) => !usedIds.has(t.id) && t.char === needed)
@@ -707,7 +722,7 @@ function ScrambleRound({ round, onDone, colors }: { round: Round; onDone: Done; 
   }
   const brd = fb ? (fb.correct ? colors.success : colors.danger) : colors.border;
   return (
-    <RoundShell sheet={fb ? <FeedbackFooter data={fb} onContinue={() => onDone(fb.correct, miss(fb.correct, "spelling", placed.map((x) => x.char).join("")))} colors={colors} /> : undefined}>
+    <RoundShell sheet={fb ? <FeedbackFooter data={fb} onContinue={() => onDone(fb.correct, { ...miss(fb.correct, "spelling", placed.map((x) => x.char).join("")), hintUsed })} colors={colors} /> : undefined}>
       <Prompt label={tx("rounds.order_letters")} big={word.tr} sub={word.en} colors={colors} />
       <MascotMid mood={fb === null ? "idle" : fb.correct ? "thumbsup" : "sad"} hidden={!!fb} />
       <View>
@@ -775,6 +790,7 @@ function TranslateRound({ round, onDone, colors }: { round: Round; onDone: Done;
   const s = round.sentence as unknown as { tr: string; de: string; en: string | null };
   const alts = round.alternatives ?? [];
   const [val, setVal] = useState("");
+  const [hintShown, setHintShown] = useState(false);
   const [fb, setFb] = useState<Feedback | null>(null);
   /*
    * HÜKÜM ÜÇ KATMANLI HAKEMDEN (`lib/sentenceMatch`), ikili karşılaştırmadan
@@ -815,14 +831,14 @@ function TranslateRound({ round, onDone, colors }: { round: Round; onDone: Done;
       },
     });
   }
-  /* Yük web `translate-game` ile aynı: kalite hep, hata tipi yalnız yanlışta.
-     Web ipucu kullanıldığında kaliteyi 3'e kırpıyor; mobilde `HintRow` bunu
-     dışarı bildirmiyor, o yüzden kırpma yok (bkz. web-parity §11.19). */
+  /* Yük web `translate-game` ile aynı: kalite hep, hata tipi yalnız yanlışta,
+     ipucu kullanıldıysa kalite 3'e kırpılıyor. */
   const payload = (): DoneExtra => {
     const m = judged.current;
     if (!m) return {};
     return {
-      quality: m.quality,
+      quality: hintShown ? Math.min(m.quality, 3) : m.quality,
+      hintUsed: hintShown,
       ...(fb?.correct ? {} : { errorType: m.errorType ?? "meaning", detail: val.trim().slice(0, 60) }),
     };
   };
@@ -838,7 +854,7 @@ function TranslateRound({ round, onDone, colors }: { round: Round; onDone: Done;
         placeholderTextColor={colors.textFaint}
         style={{ backgroundColor: colors.surface, borderRadius: radii.lg, borderWidth: 1.5, borderColor: colors.border, paddingHorizontal: spacing.lg, paddingVertical: 16, color: colors.text, fontSize: 18, minHeight: 88, textAlignVertical: "top" }}
       />
-      <HintRow answer={s.de} colors={colors} />
+      <HintRow answer={s.de} colors={colors} shown={hintShown} onShow={() => setHintShown(true)} />
       <PressableScale onPress={check} style={[{ marginTop: spacing.md, borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: 15, alignItems: "center" }, softShadow(colors.primary, 8)]}>
         <Text variant="h3" color="#fff">{tx("common.check")}</Text>
       </PressableScale>

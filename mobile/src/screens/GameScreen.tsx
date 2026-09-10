@@ -181,6 +181,7 @@ export function GameScreen() {
           ...(extra?.errorType ? { errorType: extra.errorType } : {}),
           ...(extra?.detail ? { detail: extra.detail } : {}),
           ...(extra?.quality != null ? { quality: extra.quality } : {}),
+          ...(extra?.hintUsed ? { hintUsed: true } : {}),
         });
       }
     }

@@ -55,6 +55,15 @@ export type Round = {
    * her seferinde çiziliyor ve tur olduğundan kolay geçiyordu.
    */
   mode?: "type";
+  /**
+   * typing: sunucu bu turu YENİ kelimenin hemen ardına koydu ve ipucu baştan
+   * açık olmalı (`lib/session`: taze kelimeden sonra `assist: true`).
+   *
+   * Web `typing-game` bunu `hintShown` başlangıç değeri yapıyor ve cevabı
+   * `hintUsed` olarak gönderiyor. Mobil alanı hiç tanımıyordu: iskele hiç
+   * gösterilmiyor ve ipucu kullanılmamış sayılıyordu.
+   */
+  assist?: boolean;
 };
 
 export type SessionMeta = {
@@ -93,6 +102,15 @@ export type AnswerOut = {
    */
   errorType?: ErrorType;
   detail?: string;
+  /**
+   * İpucu kullanıldı mı — SUNUCUDAKİ SRS puanını belirliyor.
+   *
+   * `lib/srs` `grade(game, correct, latencyMs, hintUsed)`: ipucu kullanıldıysa
+   * kalite hızdan bağımsız 3, yoksa 5'e kadar çıkıyor. Mobil bu alanı hiç
+   * göndermiyordu, yani cevabı görüp yazan kullanıcı hızlı ve doğru sayılıp
+   * 5 alıyordu - ipucu Androidde BEDAVAYDI.
+   */
+  hintUsed?: boolean;
 };
 
 /** Tur bileşeninin sonuca ekleyebildiği alanlar (bkz. `game/rounds` `Done`). */
@@ -102,6 +120,7 @@ export type DoneExtra = {
   errorType?: ErrorType;
   detail?: string;
   quality?: number;
+  hintUsed?: boolean;
 };
 
 export function todayStr(): string {

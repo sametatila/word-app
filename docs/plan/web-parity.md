@@ -1316,9 +1316,8 @@ BOŞ ve SRS'i yalnız doğru/yanlış görüyor.
   tipi gönderiyor (`lib/errors` `miss` portu). Çevir turu `quality`yi de
   gönderiyor. `parity-check` 18. bölümü tur→tip tablosunu karşılaştırıyor.
 
-  Tek fark bilerek kaldı: web ipucu kullanıldığında kaliteyi 3'e kırpıyor,
-  mobilde `HintRow` bunu dışarı bildirmiyor. Kırpma için ipucu durumunun tur
-  bileşenine çıkması gerekiyor - ayrı iş.
+  İpucu kırpması da eklendi (bkz. §11.21): `HintRow`un durumu tur bileşenine
+  çıktı, çevir turu kaliteyi 3'e kırpıyor ve `hintUsed` gönderiyor.
 
   **3. Fark vurgusu arayüzü — YAPILDI.** `mobile/src/ui/TokenDiff.tsx` web
   `components/feedback/diff-text` karşılığı; çeviri turunun geri bildirimi artık
@@ -1334,7 +1333,7 @@ BOŞ ve SRS'i yalnız doğru/yanlış görüyor.
   tabana çekildi. `parity-check` 17. bölümü işaret→anahtar tablosunu ve hüküm
   anahtarlarını karşılaştırıyor.
 
-Üç adımın hepsi bitti. Kalan tek fark ipucu kırpması (yukarıda, adım 2).
+Üç adımın hepsi bitti.
 
 Yan bulgu, web tarafında DÜZELTİLDİ: katlama sayı sözcüklerini rakama
 indirdiği için "at six o'clock" ile "at 5 o'clock" arasındaki fark tek
@@ -1361,3 +1360,35 @@ katlamalı karşılaştırma (boşluksuz yedekle) ve hata tipi `classifyTyping`.
 `i18n-pull` ile tabana çekildi (webdeki web-özel kopyası kaldırıldı - artık
 tek kaynak mobil). `parity-check` 18. bölümü iki istemcinin de `mode`u
 okuduğunu denetliyor.
+
+### 11.21 İpucu Androidde bedavaydı
+
+Sunucu SRS kalitesini `hintUsed` ile belirliyor: `lib/srs`
+`grade(game, correct, latencyMs, hintUsed)` ipucu kullanıldıysa hızdan
+bağımsız 3 veriyor, kullanılmadıysa 5'e kadar çıkıyor. Web ipucu sunan her
+turda bunu gönderiyor.
+
+Mobil `AnswerOut`ta alan HİÇ YOKTU ve `HintRow`un "gösterildi" durumu bileşenin
+içinde kapalıydı. Sonuç: cevabın harf iskeletini açıp yazan kullanıcı hızlı ve
+doğru sayılıp kalite 5 alıyordu. Ölçülen dört tur:
+
+    typing     ipucu düğmesi + sunucunun `assist` bayrağı
+    translate  ipucu düğmesi (webde ayrıca kaliteyi 3'e kırpıyor)
+    scramble   ipucu düğmesi (bir harf yerleştirir)
+    listen     üçüncü dinleyişten sonra ipucu sayılıyor (web `replays >= 2`)
+
+Dördü de artık bildiriyor; `SelfAssess` (web `intro` karşılığı) web gibi her
+zaman `hintUsed: true` gönderiyor - orada cevap zaten gösteriliyor.
+
+ÜÇÜNCÜ SESSİZCE DÜŞEN ALAN: `round.assist`. Sunucu taze kelimenin ardındaki
+yazma turunu `assist: true` ile işaretliyor (`lib/session`) ve web ipucu iskeletini
+baştan açık gösteriyor. Mobilin `Round` tipinde alan yoktu, yani o turda ne
+iskele görünüyordu ne de ipucu sayılıyordu. (Önceki ikisi: `mode` §11.20,
+`errorType` §11.19.)
+
+`parity-check` 18. bölümü dört turun ipucu bildirimini ve `assist` alanının
+iki istemcide de okunduğunu denetliyor.
+
+Kalan: web `order-game`de ipucu var, mobil `OrderRound`da ipucu düğmesi HİÇ
+YOK - bu bir eksik özellik, bildirim eksiği değil. Bedava ipucu sorunu orada
+doğmuyor; düğmenin kendisi ayrı bir iş.

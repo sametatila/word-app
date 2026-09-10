@@ -612,7 +612,27 @@ console.log("\n" + C.b + "18. TUR -> HATA TIPI" + C.off);
     satirlar((g) => tipOf(bolum(OYUN[g]))),
     satirlar((g) => tipOf(read(`src/components/games/${g}-game.tsx`))),
   );
-}
+
+  /*
+   * IPUCU BILDIRIMI. Sunucu SRS puanini `hintUsed` ile belirliyor
+   * (`lib/srs` `grade`: ipucu varsa kalite 3). Ipucu sunan her turun bunu
+   * bildirmesi gerek; bildirmeyen turda ipucu BEDAVA olur.
+   */
+  const ipucu = (metin) => (/hintUsed/.test(metin) ? "bildiriyor" : "BILDIRMIYOR");
+  const IPUCLU = { typing: "TypingRound", translate: "TranslateRound", scramble: "ScrambleRound", listen: "ListenRound" };
+  sameList(
+    "ipucu bildirimi",
+    Object.keys(IPUCLU).sort().map((g) => `${g}:${ipucu(bolum(IPUCLU[g]))}`),
+    Object.keys(IPUCLU).sort().map((g) => `${g}:${ipucu(read(`src/components/games/${g}-game.tsx`))}`),
+  );
+
+  /* `assist` alani: sunucu taze kelimenin ardindaki yazma turunda gonderiyor. */
+  const asist = (src) => (/round\.assist/.test(src) ? "okunuyor" : "OKUNMUYOR");
+  sameList(
+    "typing assist alani",
+    [asist(read("mobile/src/game/rounds.tsx"))],
+    [asist(read("src/components/games/typing-game.tsx"))],
+  );
 
   /* cloze `mode` alani: sunucu "type" gonderiyor, iki istemci de okumali. */
   const clozeMode = (src) => (/round\.mode === "type"/.test(src) ? ["type modu okunuyor"] : ["type modu OKUNMUYOR"]);
@@ -621,6 +641,7 @@ console.log("\n" + C.b + "18. TUR -> HATA TIPI" + C.off);
     clozeMode(read("mobile/src/game/rounds.tsx")),
     clozeMode(read("src/components/games/cloze-game.tsx")),
   );
+}
 
 console.log(
   fails === 0
