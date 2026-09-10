@@ -5,6 +5,17 @@ import { t } from "./i18n";
  * lib/auth/errors.ts ile aynı eşlemeler (mobil sürüm: code + message alır).
  * Sunucudan gelen ham `message` yalnız eşleşme bulunamazsa gösterilir.
  */
+/**
+ * Doğrulama bekleyen hesap mı — web'deki `isEmailNotVerified`in eşi.
+ *
+ * Bu bir hata değil, eksik bir adım: çağıran kullanıcıyı kırmızı bir satırla
+ * baş başa bırakmak yerine doğrulama ekranına alıyor (bkz. AuthScreen).
+ */
+export function isEmailNotVerified(code: string, message: string): boolean {
+  return (code || "").toUpperCase().includes("EMAIL_NOT_VERIFIED")
+    || (message || "").toLowerCase().includes("email not verified");
+}
+
 export function translateAuthError(code: string, message: string): string {
   const c = (code || "").toUpperCase();
   const m = (message || "").toLowerCase();

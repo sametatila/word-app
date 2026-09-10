@@ -136,9 +136,22 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     return r;
   }, [adoptAccount]);
 
+  /**
+   * Kayıt. OTURUM AÇILDIYSA kullanıcıyı yazar — açılmadıysa yazmaz.
+   *
+   * Doğrulama zorunluyken sunucu 200 dönüyor ama oturum çerezi yazmıyor
+   * (bkz. auth.AuthOutcome.session). Eskiden bu ayrım yoktu: `r.ok` yeterli
+   * sayılıyor, `user` state'e yazılıyor ve ekran uygulamaya geçiyordu. Ortaya
+   * çıkan durum "giriş yapmış görünen ama oturumu olmayan" bir uygulamaydı —
+   * her istek 401, açılışta yeniden giriş ekranı, arada hiçbir açıklama yok.
+   *
+   * `adoptAccount` da oturuma bağlı: içindeki profil yazımı oturumsuz 401 alır
+   * ve bekleyen onboarding seçimleri boşuna harcanırdı. Şimdi seçimler
+   * cihazda kalıyor, kullanıcı doğrulayıp girince devrediliyor.
+   */
   const signUp = useCallback(async (name: string, email: string, password: string) => {
     const r = await apiSignUp(name, email, password);
-    if (r.ok) { const u = r.user ?? (await getSession()); setUser(u); await adoptAccount(u, true); }
+    if (r.ok && r.session) { const u = r.user ?? (await getSession()); setUser(u); await adoptAccount(u, true); }
     return r;
   }, [adoptAccount]);
 

@@ -18,7 +18,19 @@ export type AuthUser = {
    */
   createdAt: string | null;
 };
-export type AuthOutcome = { ok: true; user: AuthUser | null } | { ok: false; code: string; message: string };
+/**
+ * `session`: istek 200 döndü ve OTURUM DA AÇILDI mı.
+ *
+ * İkisi aynı şey değil. Doğrulama zorunluyken kayıt ucu 200 dönüyor ama
+ * gövdedeki `token` NULL geliyor (better-auth sign-up.mjs): kullanıcı satırı
+ * yazıldı, oturum çerezi YAZILMADI. Buradaki 200'ü "giriş yapıldı" saymak
+ * uygulamayı oturumsuz açıyor, sonraki her istek 401 alıyor ve kullanıcı
+ * "e-postanı doğrula" cümlesini hiç görmüyordu. Giriş ve sosyal giriş uçları
+ * `token`ı dolu döndürüyor, yani ayrım tek alanla yapılabiliyor.
+ */
+export type AuthOutcome =
+  | { ok: true; user: AuthUser | null; session: boolean }
+  | { ok: false; code: string; message: string };
 
 async function post(path: string, body: Record<string, unknown>): Promise<Response> {
   return fetch(`${API_BASE}/api/auth/${path}`, {
@@ -34,6 +46,12 @@ function userFrom(obj: unknown): AuthUser | null {
   return { id: u.id, name: u.name ?? u.email ?? null, email: u.email ?? null, createdAt: u.createdAt ?? null };
 }
 
+/** Yanıt gövdesinde oturum jetonu var mı (bkz. AuthOutcome.session). */
+function hasSession(obj: unknown): boolean {
+  const token = (obj as { token?: unknown } | null)?.token;
+  return typeof token === "string" && token.length > 0;
+}
+
 async function parse(res: Response): Promise<AuthOutcome> {
   const text = await res.text().catch(() => "");
   let json: unknown = null;
@@ -42,7 +60,7 @@ async function parse(res: Response): Promise<AuthOutcome> {
     const o = (json ?? {}) as { code?: string; message?: string };
     return { ok: false, code: o.code ?? "", message: o.message ?? text.slice(0, 200) ?? t("autherror.something_went_wrong") };
   }
-  return { ok: true, user: userFrom(json) };
+  return { ok: true, user: userFrom(json), session: hasSession(json) };
 }
 
 export async function signIn(email: string, password: string): Promise<AuthOutcome> {
@@ -176,6 +194,27 @@ export async function requestPasswordReset(email: string): Promise<boolean> {
     return res.ok;
   } catch {
     return false;
+  }
+}
+
+/**
+ * Doğrulama e-postasını YENİDEN gönderir — web'deki "Tekrar gönder" düğmesinin
+ * eşi (bkz. components/verify-email-notice).
+ *
+ * Uç oturum İSTEMİYOR: doğrulanmamış kullanıcının zaten oturumu yok. Kayıtlı
+ * olmayan ya da zaten doğrulanmış bir adres için de aynı 200'ü döndürüyor
+ * (better-auth email-verification.mjs, 500 ms'lik sabit taban) — yani bu uç
+ * hesabın var olup olmadığını sızdırmıyor ve ekranda ayrı bir dal gerekmiyor.
+ *
+ * `callbackURL` doğrulama bittikten sonra TARAYICININ gideceği yer. Uygulamanın
+ * derin bağlantısı henüz yok, o yüzden web'in kendi sayfası: kullanıcı orada
+ * doğruluyor, uygulamaya dönüp giriş yapıyor.
+ */
+export async function sendVerificationEmail(email: string): Promise<AuthOutcome> {
+  try {
+    return await parse(await post("send-verification-email", { email, callbackURL: `${API_BASE}/learn` }));
+  } catch {
+    return { ok: false, code: "NETWORK", message: t("common.connection_failed") };
   }
 }
 

@@ -9,18 +9,23 @@ import { Text } from "../ui/Text";
 import { PressableScale } from "../ui/PressableScale";
 import { AppleIcon, ArrowBackIcon, BoltIcon, GoogleIcon, MailIcon } from "../ui/icons";
 import { useAuth } from "../lib/AuthContext";
-import { requestPasswordReset } from "../lib/auth";
+import { requestPasswordReset, sendVerificationEmail } from "../lib/auth";
 import { fetchServerConfig } from "../lib/serverConfig";
 import { openLegal } from "../lib/legal";
 import { googleSignIn, googleSupported } from "../lib/googleAuth";
 import { appleSignIn, appleSupported } from "../lib/appleAuth";
 import { notifPrimeNeeded } from "../lib/notifications";
-import { translateAuthError } from "../lib/authErrors";
+import { isEmailNotVerified, translateAuthError } from "../lib/authErrors";
 import { checkPassword } from "../lib/passwordPolicy";
 import { useTheme, spacing, radii, softShadow, type Palette } from "../theme";
 
 type Mode = "signin" | "signup";
-type View2 = "options" | "email" | "forgot";
+type View2 = "options" | "email" | "forgot" | "verify";
+/** Doğrulama ekranına hangi yoldan gelindi: yeni kayıt mı, girişi kesilen hesap mı. */
+type VerifyReason = "new" | "blocked";
+
+/** İki gönderim arası bekleme. Web'deki `RESEND_COOLDOWN` ile aynı (saniye). */
+const RESEND_COOLDOWN = 60;
 
 /**
  * Giriş / kayıt. Önce sağlayıcı listesi (Apple / Google / E-posta); e-posta formu
@@ -75,6 +80,22 @@ export function AuthScreen() {
   const [socialBusy, setSocialBusy] = useState<string | null>(null);
   const [resetSent, setResetSent] = useState(false);
   const [resetBusy, setResetBusy] = useState(false);
+  /*
+    Doğrulama ekranı. Adres AYRI tutuluyor: kullanıcı bu ekranda dururken
+    e-posta alanını değiştirebiliyor ve "tekrar gönder" o an yazılı olana değil,
+    kaydın yapıldığı adrese gitmeli.
+  */
+  const [verifyReason, setVerifyReason] = useState<VerifyReason>("new");
+  const [verifyEmail, setVerifyEmail] = useState("");
+  const [resendBusy, setResendBusy] = useState(false);
+  const [resendSent, setResendSent] = useState(false);
+  const [cooldown, setCooldown] = useState(0);
+  // Geri sayım: art arda basış sunucunun hız sınırına takılmasın (web ile aynı).
+  useEffect(() => {
+    if (cooldown <= 0) return;
+    const id = setTimeout(() => setCooldown((c) => c - 1), 1000);
+    return () => clearTimeout(id);
+  }, [cooldown]);
   // Sunucuda kapalı olan sağlayıcının düğmesi hiç çizilmez (çalışmayan düğme yok).
   // Cevap gelene dek de çizilmez; yalnız e-posta görünür — ekran hiçbir an "bozuk"
   // değildir. İkisinin de ayrıca bir CİHAZ kapısı var: sunucu açık dese bile Apple
@@ -92,14 +113,50 @@ export function AuthScreen() {
     return () => { alive = false; };
   }, []);
 
+  /** Doğrulama ekranına geç. Adres dondurulur, geri sayım ve bildirimler sıfırlanır. */
+  function toVerify(address: string, reason: VerifyReason) {
+    setVerifyEmail(address);
+    setVerifyReason(reason);
+    setResendSent(false);
+    setCooldown(0);
+    setError(null);
+    setView("verify");
+  }
+
   async function submit() {
     if (busy) return;
+    const address = email.trim();
     setBusy(true);
     setError(null);
-    const r = mode === "signin" ? await signIn(email.trim(), password) : await signUp(name, email.trim(), password);
+    const r = mode === "signin" ? await signIn(address, password) : await signUp(name, address, password);
     setBusy(false);
-    if (r.ok) { void toApp(); return; }
+
+    if (r.ok) {
+      /*
+        Kayıt 200 döndü ama oturum açılmadıysa e-posta doğrulaması bekleniyor
+        (bkz. lib/auth AuthOutcome.session). Uygulamaya geçmek yerine doğrulama
+        ekranına — web de aynı ayrımı yapıyor (components/auth-form).
+      */
+      if (r.session) { void toApp(); return; }
+      toVerify(address, "new");
+      return;
+    }
+
+    // Doğrulanmamış hesap bir hata değil, eksik bir adım: kullanıcıyı oraya al.
+    if (isEmailNotVerified(r.code, r.message)) { toVerify(address, "blocked"); return; }
     setError(translateAuthError(r.code, r.message));
+  }
+
+  async function doResend() {
+    if (resendBusy || cooldown > 0 || !verifyEmail) return;
+    setResendBusy(true);
+    setError(null);
+    setResendSent(false);
+    const r = await sendVerificationEmail(verifyEmail);
+    setResendBusy(false);
+    if (!r.ok) { setError(translateAuthError(r.code, r.message)); return; }
+    setResendSent(true);
+    setCooldown(RESEND_COOLDOWN);
   }
 
   async function doReset() {
@@ -135,13 +192,32 @@ export function AuthScreen() {
     paddingHorizontal: spacing.lg, paddingVertical: 14, color: colors.text, fontSize: 16,
   } as const;
 
+  /*
+    Başlık ve alt başlık dört görünüm × iki kip boyunca ayrışıyor. Satır içi
+    üçlü koşul dördüncü dalda okunmaz hâle geldiği için burada hesaplanıyor.
+  */
+  const headTitle =
+    view === "verify" ? t(verifyReason === "blocked" ? "verify.title_blocked" : "verify.title")
+      : view === "forgot" ? t("auth.forgot_your_password")
+        : view === "options" ? t("auth.sign_in")
+          : mode === "signin" ? t("auth.welcome_back") : t("auth.create_account");
+
+  const headSub =
+    view === "verify"
+      ? verifyReason === "blocked"
+        ? (verifyEmail ? t("verify.blocked_with_email", { email: verifyEmail }) : t("verify.blocked"))
+        : (verifyEmail ? t("verify.sent_with_email", { email: verifyEmail }) : t("verify.sent"))
+      : view === "forgot" ? t("auth.enter_your_email_and_we_ll_send")
+        : view === "options" ? t("auth.your_progress_is_saved_and")
+          : mode === "signin" ? t("auth.pick_your_streak_up_where_you") : t("auth.it_takes_few_seconds_and_your");
+
   return (
     <View style={{ flex: 1, backgroundColor: colors.bg }}>
       {/* Zorunlu giriş duvarı: seçenekler ekranında kapatma YOK (misafir modu yok).
           Yalnız e-posta formundan sağlayıcı listesine geri dönülür. */}
       <View style={{ flexDirection: "row", alignItems: "center", paddingTop: insets.top + spacing.sm, paddingHorizontal: spacing.lg, minHeight: 44 }}>
-        {view === "email" && (
-          <PressableScale accessibilityLabel={t("common.back")} hitSlop={4} onPress={() => { setView("options"); setError(null); }} style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
+        {(view === "email" || view === "verify") && (
+          <PressableScale accessibilityLabel={t("common.back")} hitSlop={4} onPress={() => { setView(view === "verify" ? "email" : "options"); setError(null); }} style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
             <ArrowBackIcon color={colors.text} size={24} />
           </PressableScale>
         )}
@@ -152,12 +228,8 @@ export function AuthScreen() {
           <View style={[{ width: 72, height: 72, borderRadius: radii.xl, alignItems: "center", justifyContent: "center", backgroundColor: colors.primary }, softShadow(colors.primary, 12)]}>
             <BoltIcon color={colors.onPrimary} size={38} />
           </View>
-          <Text variant="display" style={{ marginTop: spacing.md }}>
-            {view === "forgot" ? t("auth.forgot_your_password") : view === "options" ? t("auth.sign_in") : mode === "signin" ? t("auth.welcome_back") : t("auth.create_account")}
-          </Text>
-          <Text variant="body" color={colors.textMuted} style={{ marginTop: 4, textAlign: "center" }}>
-            {view === "forgot" ? t("auth.enter_your_email_and_we_ll_send") : view === "options" ? t("auth.your_progress_is_saved_and") : mode === "signin" ? t("auth.pick_your_streak_up_where_you") : t("auth.it_takes_few_seconds_and_your")}
-          </Text>
+          <Text variant="display" style={{ marginTop: spacing.md }}>{headTitle}</Text>
+          <Text variant="body" color={colors.textMuted} style={{ marginTop: 4, textAlign: "center" }}>{headSub}</Text>
         </View>
 
         {view === "options" ? (
@@ -203,6 +275,52 @@ export function AuthScreen() {
             )}
             <PressableScale onPress={() => { setView("email"); setResetSent(false); setError(null); }} style={{ alignItems: "center", paddingVertical: spacing.md }}>
               <Text variant="bodyStrong" color={colors.primaryText}>{t("auth.back_to_sign_in")}</Text>
+            </PressableScale>
+          </View>
+        ) : view === "verify" ? (
+          <View style={{ gap: spacing.md }}>
+            {/* E-posta gelmediğinde kullanıcının tek başına deneyebileceği üç şey.
+                Web'deki ipucu kutusunun eşi (components/verify-email-notice). */}
+            <View style={{ backgroundColor: colors.surface2, borderRadius: radii.lg, padding: spacing.lg, gap: 6 }}>
+              <Text variant="bodyStrong">{t("verify.tips_title")}</Text>
+              <Text variant="caption" color={colors.textMuted}>· {t("verify.tip_spam")}</Text>
+              <Text variant="caption" color={colors.textMuted}>· {t("verify.tip_contacts")}</Text>
+              <Text variant="caption" color={colors.textMuted}>· {t("verify.tip_wrong_address")}</Text>
+            </View>
+
+            {resendSent && (
+              <View style={{ backgroundColor: colors.successSoft, borderRadius: radii.md, padding: spacing.md }}>
+                <Text variant="caption" color={colors.successText} accessibilityLiveRegion="polite">{t("verify.resent")}</Text>
+              </View>
+            )}
+            {error && (
+              <View style={{ backgroundColor: colors.dangerSoft, borderRadius: radii.md, padding: spacing.md }}>
+                <Text variant="caption" color={colors.dangerText}>{error}</Text>
+              </View>
+            )}
+
+            <PressableScale
+              onPress={doResend}
+              disabled={resendBusy || cooldown > 0}
+              accessibilityLabel={t("verify.resend")}
+              accessibilityState={{ disabled: resendBusy || cooldown > 0 }}
+              style={{ borderRadius: radii.lg, borderWidth: 1.5, borderColor: colors.border, backgroundColor: colors.surface, paddingVertical: 15, alignItems: "center", opacity: resendBusy || cooldown > 0 ? 0.6 : 1 }}
+            >
+              <Text variant="h3" color={colors.text}>
+                {resendBusy ? "..." : cooldown > 0 ? t("verify.resend_in", { n: cooldown }) : t("verify.resend")}
+              </Text>
+            </PressableScale>
+
+            {/* Doğrulama tarayıcıda bitiyor (uygulamanın derin bağlantısı henüz
+                yok); kullanıcı dönüp kendi parolasıyla giriyor. Kip bilerek
+                "signin"e çekiliyor — bu ekrana kayıt kipinden gelinmiş olabilir
+                ve parola alanı da temizleniyor. */}
+            <PressableScale
+              onPress={() => { setMode("signin"); setPassword(""); setView("email"); setError(null); }}
+              accessibilityLabel={t("verify.verified_sign_in")}
+              style={[{ borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: 16, alignItems: "center" }, softShadow(colors.primary, 10)]}
+            >
+              <Text variant="h3" color={colors.onPrimary}>{t("verify.verified_sign_in")}</Text>
             </PressableScale>
           </View>
         ) : (
