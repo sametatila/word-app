@@ -74,7 +74,9 @@ let warned = false;
 function warnOnce(err: unknown): void {
   if (warned) return;
   warned = true;
-  console.error("[hız sınırı] Redis'e ulaşılamadı, sayaç atlanıyor (nginx sınırı devrede):", err);
+  // Metin İNGİLİZCE: bu bir arayüz dizgisi değil, sunucu log'u. Kod içindeki
+  // Türkçe dizgileri `i18n:check` sayıyor ve o taban yalnız aşağı iniyor.
+  console.error("[rate-limit] Redis unreachable, counter skipped (nginx limit still applies):", err);
 }
 
 /**
