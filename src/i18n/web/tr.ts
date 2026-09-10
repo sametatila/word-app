@@ -623,6 +623,7 @@ export const trWeb: Record<string, string> = {
   "land.h1_after": " öğren",
   "land.hero_sub": "Hochdeutsch ya da Zürih Almancası — kursunu seç, on kelime oyunu ve beceri alıştırmaları tek akışta gelsin.",
   "land.cta_free": "Hemen başla — ücretsiz",
+  "land.cta_continue": "Öğrenmeye devam et",
   "land.cta_skills": "Okuma · Dinleme · Yazma",
   "land.course_de": "CEFR A1–C1 için alan bazlı hazırlanmış 7.392 kelime; her biri artikel, çoğul, örnek cümle ve cümlenin çevirisiyle.",
   "land.course_gsw": "Listenin tamamının Zürih lehçesindeki karşılığı: 7.392 madde, de/d/s artikelleri, Zürihçe örnek cümleler ve her kelimede Hochdeutsch köprüsü. İsviçre'de yaşayanın günlük duyduğu dil.",

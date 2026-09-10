@@ -598,6 +598,7 @@ export const enWeb: Record<string, string> = {
   "land.h1_after": "",
   "land.hero_sub": "Hochdeutsch or Zurich German — pick your course, and ten word games plus skill exercises arrive in one flow.",
   "land.cta_free": "Start now — free",
+  "land.cta_continue": "Continue learning",
   "land.cta_skills": "Reading · Listening · Writing",
   "land.course_de": "7,392 words prepared by topic for CEFR A1–C1; each with its article, plural, an example sentence and its translation.",
   "land.course_gsw": "The whole list in the Zurich dialect: 7,392 entries, the de/d/s articles, Zurich example sentences and a Hochdeutsch bridge on every word. The language you actually hear living in Switzerland.",

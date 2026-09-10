@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { getUserId } from "@/lib/auth/server";
+import { SignOutLink } from "@/components/sign-out-link";
 import { Reveal } from "@/components/reveal";
 import { Mascot } from "@/components/mascot";
 import { InstallGuide } from "@/components/install-guide";
@@ -91,7 +92,7 @@ export default async function Home() {
         <div className="flex items-center gap-2">
           <ThemeToggle />
           <Link href={startHref} className="btn btn-primary px-4 py-2.5 text-sm">
-            {t("common.start")}
+            {t(signedIn ? "land.cta_continue" : "common.start")}
           </Link>
         </div>
       </header>
@@ -128,8 +129,14 @@ export default async function Home() {
           </Reveal>
           <Reveal delay={0.18}>
             <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
+              {/*
+                Giriş yapmışa "Hemen başla — ücretsiz" demek yanlış: kullanıcı
+                zaten kayıtlı ve düğme onu kaldığı yere götürüyor. Etiketin
+                durumla ayrışması, dönen kullanıcının kendi içeri kapısını
+                tanıyamamasına yol açıyordu.
+              */}
               <Link href={startHref} className="btn btn-primary w-full px-7 py-4 text-base sm:w-auto">
-                {t("land.cta_free")}
+                {t(signedIn ? "land.cta_continue" : "land.cta_free")}
               </Link>
               <Link href="/immersion" className="btn btn-ghost w-full px-7 py-4 text-base sm:w-auto">
                 {t("land.cta_skills")}
@@ -242,6 +249,9 @@ export default async function Home() {
           <Link href={legalPath("support", lang)} prefetch={false} className="underline-offset-4 hover:underline">{t("land.support")}</Link>
           <Link href="/account/delete" prefetch={false} className="underline-offset-4 hover:underline">{t("land.delete_account")}</Link>
         </div>
+        {/* Vitrinde de çıkış: kurulumu yarıda bırakan kullanıcı buraya dönüyor
+            ve uygulamanın içine giremediği için Profil ekranına da ulaşamıyor. */}
+        {signedIn ? <SignOutLink className="mt-4" /> : null}
       </footer>
     </div>
   );

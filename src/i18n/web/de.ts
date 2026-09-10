@@ -598,6 +598,7 @@ export const deWeb: Record<string, string> = {
   "land.h1_after": " lernen",
   "land.hero_sub": "Hochdeutsch oder Zürichdeutsch — wähl deinen Kurs, und zehn Wortspiele plus Fertigkeitsübungen kommen in einem Fluss.",
   "land.cta_free": "Jetzt loslegen — kostenlos",
+  "land.cta_continue": "Weiterlernen",
   "land.cta_skills": "Lesen · Hören · Schreiben",
   "land.course_de": "7.392 nach Themen aufbereitete Wörter für GER A1–C1; jedes mit Artikel, Plural, Beispielsatz und dessen Übersetzung.",
   "land.course_gsw": "Die ganze Liste im Zürcher Dialekt: 7.392 Einträge, die Artikel de/d/s, Zürcher Beispielsätze und zu jedem Wort eine Hochdeutsch-Brücke. Die Sprache, die man in der Schweiz täglich hört.",

@@ -1,4 +1,5 @@
 import { redirect } from "next/navigation";
+import { SignOutLink } from "@/components/sign-out-link";
 import { getUserInfo } from "@/lib/auth/server";
 import { ensureProfile } from "@/lib/session";
 import { CourseOnboarding } from "@/components/course-onboarding";
@@ -56,6 +57,16 @@ export default async function CourseSelectPage() {
       */}
       {user ? <OnboardingAdopt /> : null}
       <CourseOnboarding initialName={knownName} signedIn={Boolean(user)} />
+      {/*
+        ÇIKIŞ KAPISI. Buraya düşen giriş yapmış kullanıcının başka çıkışı yoktu:
+        Profil ekranı `(app)` düzeninin arkasında ve o düzen kursu seçilmemiş
+        profili buraya geri yolluyor. Ana sayfadaki her düğme de `/learn`e,
+        `/learn` de buraya atıyor — kapalı bir döngü. Yanlış hesapla giren ya da
+        vazgeçen kullanıcı kilitleniyordu.
+      */}
+      {user ? (
+        <SignOutLink email={user.email} className="mx-auto mt-8 max-w-md px-5 pb-10 text-center text-sm" />
+      ) : null}
     </>
   );
 }
