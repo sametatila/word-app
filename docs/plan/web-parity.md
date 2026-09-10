@@ -5264,3 +5264,25 @@ Kapı kurulunca elle ölçümün **kaçırdığı iki uç** daha çıktı:
   yapılacak iş değil, bölünerek taşınacak.
 - `/api/pronounce` — mobil ses klibini sunucuya yükleyip puanı oradan almalı;
   altyapı var (`azureListenOnce`, `speakServerTts`, `/api/stt` yolu).
+
+### 11.137 Gelişim paneli mobilde: ilk parça
+
+§11.136'da kayda geçen açığın ölçüm yüzü taşındı: seviye + kanıt sayısı,
+haftalık özet cümlesi, altı beceride yeterlik (şimdi, dört hafta öncesine göre
+değişim, bant) ve **önerilen sıradaki adım**. Sekiz haftalık seri grafikleri
+ile kilometre taşları ayrı bir turda — webde de kapalı bir ayrıntı bölümünde
+duruyorlar, yani sıra doğru.
+
+**Yeni bir sessiz kayıp yolu kapandı.** Önerilen adım sunucudan bir **web
+adresiyle** geliyor (`nextStep.href`: `/learn/game`, `/immersion`,
+`/immersion/skill/<id>`, `/lessons/<id>`) ve mobil onu ekrana çevirmek
+zorunda. Eşleyici `routeFromHref` olarak `pushRoute`un yanına kondu — o
+**bildirim** adreslerini çeviriyor, bu **yanıt gövdesindekileri**; ikisi ayrı
+küme, aynı dosyada. Tanınmayan adres `null` dönüyor ve düğme hiç çizilmiyor,
+yani kapı olmasa sunucunun ekleyeceği yeni bir biçim Android'de öneriyi
+**sessizce yok ederdi**. **Parity 61** dört biçimi eşliyor.
+
+**İki kapı kendi işini yaptı:** uç artık mobilde de çağrıldığı için
+`check-endpoints` onu `WEB_ONLY` listesinden düşürmemi istedi; gölgeleme kapısı
+(§11.128) da yeni eklenen altı anahtarın web kopyasını. İkisi de doğru
+zamanda, doğru şeyi söyledi.
