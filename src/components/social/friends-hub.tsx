@@ -129,7 +129,8 @@ export function FriendsHub({ me, initialTab }: { me: SocialMeView; initialTab: H
           <span
             className="rounded-full px-3 py-1.5 text-caption"
             style={{
-              background: "color-mix(in srgb, var(--color-mint-500) 16%, transparent)",
+              /* %14 - bkz. `unit-pane`: %16'da açık temada 4.44, eşik 4.5. */
+              background: "color-mix(in srgb, var(--color-mint-500) 14%, transparent)",
               color: "var(--color-mint)",
             }}
           >
@@ -142,7 +143,8 @@ export function FriendsHub({ me, initialTab }: { me: SocialMeView; initialTab: H
             <span
               className="rounded-full px-3 py-1.5 text-caption"
               style={{
-                background: "color-mix(in srgb, var(--color-flame-500) 16%, transparent)",
+                /* %14 - %16'da 4.47, eşik 4.5. */
+                background: "color-mix(in srgb, var(--color-flame-500) 14%, transparent)",
                 color: "var(--color-flame)",
               }}
             >
@@ -153,7 +155,7 @@ export function FriendsHub({ me, initialTab }: { me: SocialMeView; initialTab: H
             <span
               className="rounded-full px-3 py-1.5 text-caption"
               style={{
-                background: "color-mix(in srgb, var(--color-brand-500) 16%, transparent)",
+                background: "color-mix(in srgb, var(--color-brand-500) 14%, transparent)",
                 color: "var(--color-brand)",
               }}
             >

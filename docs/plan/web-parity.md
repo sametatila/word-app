@@ -2553,3 +2553,45 @@ Kapı da tamamlandı: `check:colors` artık webin bu kuralını da denetliyor
 (tema duyarlı dolgu + beyaz içerik). Gürültü tabanı burada da SIFIR, istisna
 listesi yok. Yakaladığı doğrulandı - `mic-disclosure` bir satır geri alındığında
 kapı kırıldı, sonra geri alındı.
+
+### 11.44 Yumuşak tint oranı: ölçülen %14, bileşenler %16-18'e kaymıştı
+
+Yumuşak tint kalıbı iki platformda AYNI ve bu turda doğrulandı: zemin
+tonun ~%14 saydamı, üstündeki içerik o tonun METİN varyantı. Mobilde
+`tint + "22"` (0x22 = %13.3) ve `onTint(tint, colors)`; webde
+`color-mix(... 14%, transparent)` ve `var(--color-mint)` gibi anlamsal
+jetonlar. İki taraf birbirinden bağımsız aynı yere gelmiş.
+
+Mobil temiz çıktı: on iki tint yüzeyinin hepsi metin varyantını kullanıyor -
+yedisi `onTint` yardımcısıyla, beşi doğrudan `streakText` / `infoText` gibi
+yazarak, ki `onTint`in döndürdüğü değerin ta kendisi.
+
+**Webde oran kaymıştı.** `palette-check.mjs` 12. bölümü ("yumuşak rozet")
+altı ailenin metin varyantını KENDİ %14 TİNTİ üstünde ölçüyor - yani
+garanti edilen oran %14. Bileşenler ise %16 ve %18 kullanıyordu:
+
+    tint            açık tema    eşik 4.5
+    mint %18          4.34        KALIR
+    mint %16          4.44        KALIR
+    flame %16         4.47        KALIR
+    brand %16         4.59        geçer (ama ölçülen oran değil)
+    mint/flame %14    4.54/4.55   geçer
+
+Beş yer %14'e çekildi: patika ünitesinin iki rozeti, arkadaşlar başlığının
+üç sayacı. Marka ailesindeki ikisi tesadüfen eşiği geçiyordu ama garanti
+edilen oran %14 olduğu için onlar da eşitlendi - "tesadüfen geçmek" bir
+kural değil.
+
+Kapıya kural eklendi: yazı taşıyan bir tint %14'ü aşamaz. Yazısız tint
+yüzeylerinde oran serbest (rapor kutusunda %10, konuşma göstergesinde %22
+var ve ikisinde de üstünde renk verilmiş bir içerik yok), o yüzden kural
+ancak aynı stilde bir `color:` varsa işliyor.
+
+**Kuralı yazarken yanlış bir eşik seçtim ve ölçüm düzeltti.** İlk hâli düz
+bir "%14'ü aşma" idi ve marka ailesindeki iki yeri yanlış pozitif olarak
+işaretledi (4.59, yani gerçekten okunuyorlar). Bir an ailelere göre ayrı
+eşik yazmayı düşündüm; doğru cevap kapının kendisinde değildi -
+`palette-check` yalnız %14'ü ölçtüğü için garanti edilen tek oran o, ve
+bileşenleri ona eşitlemek hem kuralı hem ölçümü tek noktaya bağlıyor.
+Ailelere göre eşik, kontrast matematiğini ikinci bir betiğe kopyalamak
+demek olurdu.

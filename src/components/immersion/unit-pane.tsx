@@ -161,8 +161,12 @@ export function UnitPane({
               {it.done ? (
                 <span
                   className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full"
+                  /* %14: yumuşak tintin üstünde YAZI/İKON varken uygulamanın
+                     kullandığı oran. %18'de açık temada 4.34 ölçüyordu, eşik
+                     4.5; %14'te 4.54. Daha koyu tintler yalnız yazısız
+                     yüzeylerde. */
                   style={{
-                    background: "color-mix(in srgb, var(--color-mint-500) 18%, transparent)",
+                    background: "color-mix(in srgb, var(--color-mint-500) 14%, transparent)",
                     color: "var(--color-mint)",
                   }}
                 >
@@ -172,7 +176,7 @@ export function UnitPane({
                 <span
                   className="shrink-0 rounded-full px-2.5 py-1 text-micro"
                   style={{
-                    background: "color-mix(in srgb, var(--color-brand-500) 16%, transparent)",
+                    background: "color-mix(in srgb, var(--color-brand-500) 14%, transparent)",
                     color: "var(--color-brand)",
                   }}
                 >

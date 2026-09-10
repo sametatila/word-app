@@ -426,6 +426,42 @@ export const isProseQuote = (t: string): boolean =>
   /^\s*[„"“']([^„"“”']+)[”“"']\s*\.?\s*$/.test(t);
 
 /**
+ * SORU KÖKÜ / BAŞLIK ÖĞRENCİNİN DİLİNDE Mİ?
+ *
+ * Bu iki alan uzun süre "öğrenilen dilde" sayıldı ve çözücünün dışında
+ * bırakıldı. Ölçüm bunun yalnız ÇOĞUNLUK için doğru olduğunu gösterdi:
+ * 4.100 kökten 3.821'i düpedüz Almanca ("Woher kommt Frau Yılmaz?"), ama
+ * 246'sı Türkçe ("Jonas'ın son cümlesini yaz.", "Sıfat ne zaman ek alır?").
+ * O 246'sı İngilizce kursta Türkçe kalıyordu ve hiçbir kapı bunu görmüyordu,
+ * çünkü çözücü bu alanlara hiç bakmıyordu.
+ *
+ * AYIRT ETMEK KOLAY DEĞİL, çünkü ikisi de karışıyor:
+ *
+ *   Sind Sie Frau Yılmaz?                 Almanca cümle + Türkçe ÖZEL AD
+ *   „Wir haben ein Kinder.“ — Bu cümle doğru mu?   Almanca alıntı + Türkçe çerçeve
+ *
+ * Ölçüt: KÜÇÜK HARFLE başlayan bir Türkçe işareti var mı. Özel adlar
+ * (Yılmaz, Aydın, Yıldız) büyük harfli olduğu için dizeyi Türkçe yapmıyor;
+ * çerçeve cümlesindeki `doğru`, `cümlesini`, `mi` ise küçük harfli.
+ * Ölçüldü: Almanca işlev sözcüğü ile Türkçe harfi birlikte taşıyan 54
+ * dizenin 48'i çerçeve, 6'sı özel ad — ölçüt 54'ünü de doğru ayırıyor.
+ *
+ * BURADA duruyor, paketleyicide değil: `isProseQuote` ile aynı gerekçe.
+ * İki kopya ayrışırsa biri dizeyi "yazılacak" sayar, sözlükte karşılığı
+ * olmaz ve hep-ya-hiç kuralı bütün egzersizi Türkçeye düşürür.
+ */
+const TR_WORD =
+  /^(?:bir|ve|ile|için|değil|var|yok|gibi|daha|çok|ama|kadar|sonra|önce|mi|mı|mu|mü|ne|nasıl|hangi|neden|nedir|bu|şu|yani|hem|ancak|yaz|söyle|koy|seç|nerede)$/u;
+/** Kesme işaretiyle bağlanan Türkçe ek: `Jonas'ın`, `Timo'nun`. */
+const TR_SUFFIX =
+  /['’](?:de|da|te|ta|den|dan|ten|tan|ye|ya|yi|yı|yu|yü|nin|nın|nun|nün|in|ın|un|ün|le|la|dir|dır|e|a|i|ı|u|ü)$/u;
+export const isTurkishStem = (t: string): boolean =>
+  t
+    .split(/[^\p{L}'’]+/u)
+    .filter(Boolean)
+    .some((w) => !/^\p{Lu}/u.test(w) && (/[ışğ]/.test(w) || TR_WORD.test(w) || TR_SUFFIX.test(w)));
+
+/**
  * Beceri egzersizini öğrencinin diline çevirir; bir dize bile eksikse `null`.
  *
  * Hep-ya-hiç, kardeşleriyle aynı gerekçeyle: yarısı Türkçe yarısı İngilizce
@@ -517,6 +553,14 @@ export function resolveExercise<T extends ExerciseShape>(dict: NativeDict, ex: T
     return en ?? s;
   };
 
+  /**
+   * Soru kökü ve başlık: yalnız TÜRKÇE olanlar çevriliyor. Almanca kök
+   * (4.100'ün 3.821'i) öğrenilen dilde ve olduğu gibi kalıyor; `k`ye
+   * verilseydi sözlükte karşılığı olmadığı için her egzersiz düşerdi.
+   */
+  const stem = (kind: string, s: string | undefined): string | undefined =>
+    typeof s === "string" && isTurkishStem(s) ? k(kind, s) : s;
+
   const fold = <G extends GlossShape>(g: G): G => {
     if (!g.en?.trim()) failed = true;
     return { ...g, tr: g.en ?? g.tr, en: undefined, ...(g.note ? { note: t(g.note) } : {}) };
@@ -538,7 +582,19 @@ export function resolveExercise<T extends ExerciseShape>(dict: NativeDict, ex: T
   const out = {
     ...ex,
     intro: t(ex.intro),
-    ...(ex.questions ? { questions: ex.questions.map((q) => ({ ...q, explain: t(q.explain) })) } : {}),
+    ...(ex.title !== undefined ? { title: stem("title", ex.title) } : {}),
+    ...(ex.questions
+      ? {
+          questions: ex.questions.map((q) => ({
+            ...q,
+            explain: t(q.explain),
+            ...(q.text !== undefined ? { text: stem("question.text", q.text) } : {}),
+            ...(q.options
+              ? { options: q.options.map((o) => stem("question.option", o) as string) }
+              : {}),
+          })),
+        }
+      : {}),
     ...(ex.gloss ? { gloss: ex.gloss.map(fold) } : {}),
     ...(wide.focus ? { focus: k("focus", wide.focus) } : {}),
     ...(wide.explanation
@@ -591,7 +647,15 @@ export function resolveExercise<T extends ExerciseShape>(dict: NativeDict, ex: T
  */
 export type ExerciseShape = {
   intro: string;
-  questions?: { explain: string }[];
+  /** Başlık: çoğu Almanca, 53'ü Türkçe — ayrımı `isTurkishStem` yapıyor. */
+  title?: string;
+  /**
+   * `text` soru kökü, `options` şıklar; Almanca olanlar `isTurkishStem`le
+   * eleniyor. Şıkların 5.590'ından yalnız 15'i Türkçe (altı kök) ama
+   * onlar da hep-ya-hiç kuralına dahil: Türkçe kalmış bir şık, kökü
+   * çevrilmiş bir sorunun altında en görünür yarım çeviridir.
+   */
+  questions?: { explain: string; text?: string; options?: string[] }[];
   gloss?: GlossShape[];
 };
 

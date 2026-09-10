@@ -103,6 +103,21 @@ const SEMANTIC_FILL = /backgroundColor:\s*([^,\n}]+)/g;
 const WEB_SEM_FILL = /var\(--color-(?:brand|mint|rose|sky|violet|flame|success|danger)\)/;
 const WEB_FILL = /(?:background|background-color)\s*:\s*([^,;\n}]+)/g;
 const WEB_WHITE = /text-white|color:\s*"#fff"|color:\s*"#ffffff"/;
+
+/**
+ * YUMUŞAK TİNTİN ORANI %14 - ÇÜNKÜ ÖLÇÜLEN O.
+ *
+ * `palette-check.mjs` 12. bölümü ("yumuşak rozet") altı ailenin metin
+ * varyantını KENDİ %14 TİNTİ üstünde ölçüyor ve geçtiğini söylüyor. Bileşenler
+ * %16 ve %18'e kaymıştı: mint %18'de 4.34, mint %16'da 4.44, flame %16'da
+ * 4.47 - eşik 4.5. Marka ailesi %16'da 4.59 ile tesadüfen geçiyor ama garanti
+ * edilen oran %14, o yüzden o da eşitlendi (§11.44).
+ *
+ * Yazısız tint yüzeylerinde (yalnız zemin) oran serbest - kural ancak aynı
+ * stilde bir `color:` varsa işliyor.
+ */
+const WEB_TINT = /color-mix\(in srgb,\s*var\(--color-[a-z]+-\d+\)\s*(\d+)%/;
+const TINT_MAX = 14;
 const PLAIN_WHITE = /"#fff"|"#ffffff"/;
 
 function fillIsSemantic(fill) {
@@ -163,6 +178,15 @@ for (const f of await sources("src")) {
       const fills = [...win.matchAll(WEB_FILL)].map((x) => x[1]);
       if (fills.some((x) => WEB_SEM_FILL.test(x)) && !WEB_ALLOW.has(f)) {
         problems.push(`${f}:${i + 1}  tema duyarlı dolgu üstünde beyaz (--on-fill / .on-fill bekleniyordu)`);
+        return;
+      }
+    }
+    const tint = WEB_TINT.exec(line);
+    if (tint && Number(tint[1]) > TINT_MAX) {
+      /* Aynı stil nesnesinde bir içerik rengi var mı: yoksa zemin yazısız. */
+      const win = lines.slice(i, i + 4).join("\n");
+      if (/(^|[^-a-zA-Z])color:\s*"/.test(win)) {
+        problems.push(`${f}:${i + 1}  yazı taşıyan tint %${tint[1]} (en çok %${TINT_MAX})`);
         return;
       }
     }
