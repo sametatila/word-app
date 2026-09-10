@@ -1392,3 +1392,42 @@ iki istemcide de okunduğunu denetliyor.
 Kalan: web `order-game`de ipucu var, mobil `OrderRound`da ipucu düğmesi HİÇ
 YOK - bu bir eksik özellik, bildirim eksiği değil. Bedava ipucu sorunu orada
 doğmuyor; düğmenin kendisi ayrı bir iş.
+
+### 11.22 Sessizce düşen sunucu alanları — sınıfın kendisi ve kapısı
+
+Bu turda üst üste üç kez aynı şey çıktı: SUNUCU bir alan gönderiyor, İSTEMCİ
+tipinde o alan yok, alan sessizce düşüyor. Derleme kırılmıyor, istek başarılı,
+hiçbir kapı bir şey söylemiyor — yalnız o bilgi hiç kullanılmıyor.
+
+    errorType   cevap yükünde yok         -> hata dökümü boş, SRS kaba (§11.19)
+    mode        cloze turunda yok         -> yazarak zorlaştırma hiç olmuyor (§11.20)
+    assist      typing turunda yok        -> ipucu iskelesi hiç açılmıyor (§11.21)
+    coverage    oturum metasında yok      -> seviye rozeti hiç çizilemiyor (bu madde)
+
+Dördüncüsü de düzeltildi: `SessionMeta.coverage` eklendi ve oturum başlığına
+`ui/LevelBadge` kondu (web `components/level-badge` karşılığı; renk rolleri
+aynı, yüzde biçimi yerelden - Türkçe "%45", Almanca "45 %"). Aynı satıra webde
+olup mobilde olmayan YENİ/TEKRAR çipi de eklendi: öğrenci bu kelimeyi ilk kez
+mi gördüğünü artık görüyor.
+
+KAPI: `parity-check` 19. bölümü web `Round` union'ının ve oturum `meta`sının
+bütün alan adlarını mobil tipiyle karşılaştırıyor; webde olup mobilde olmayan
+her alan ayrışma sayılıyor. Sınandı - `coverage` geri alındığında kapı onu
+söylüyor. Yani bu sınıf artık sessiz değil.
+
+İki alan bilerek listeden çıkarıldı: `partners` ve `level` yalnız
+`free_sentence` turunun alanları ve o turun mobilde oynatıcısı yok (§11.13).
+
+HİÇBİR İSTEMCİDE OKUNMAYAN üç meta alanı da ölçüldü ve ayrı tutuldu, çünkü bu
+parite değil "yazılmış ama bağlanmamış":
+
+  - `pacing` ("normal" | "light" | "review") — sunucu günlük yükü karara
+    bağlıyor ve gerekçesini paketle gönderiyor, ama ne web ne mobil gösteriyor.
+    Kullanıcı yeni kelime gelmediğinde sebebini hiçbir yerde görmüyor.
+  - `leeches` — takılan kelime sayısı. Webde YALNIZ ilerleme ekranında
+    kullanılıyor (`progress-view`), oturum paketindeki kopya okunmuyor;
+    mobilde hiç yok.
+  - `challengeBest` — meta'ya "başlangıç kartındaki arena kartı için"
+    bindirilmiş ama hiçbir bileşen okumuyor. Mobilde hayatta kalma turu da yok.
+
+Üçü de ürün kararı istiyor: gösterilecek mi, yoksa paketten çıkarılacak mı.

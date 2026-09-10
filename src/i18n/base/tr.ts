@@ -494,6 +494,7 @@ export const trBase: Record<string, string> = {
   "exam.speak_missed": "Tam anlaşılmadı",
   "common.true": "Doğru",
   "common.false": "Yanlış",
+  "common.pct_lt1": "%<1",
   "quiz.order_sentence": "Cümleyi doğru sıraya diz.",
   "quiz.order_question": "Soruyu doğru sıraya diz.",
   "quiz.grammar": "Dil bilgisi",
@@ -1170,4 +1171,8 @@ export const trBase: Record<string, string> = {
   "diff.extra": "fazla",
   "diff.moved": "yeri yanlış",
   "diff.typo": "yazım",
+  "session.chip_new": "yeni",
+  "session.chip_review": "tekrar",
+  "level.mastered_count": "{n} kelime pekişti",
+  "level.mastered_none": "kelimeler pekiştikçe burada birikecek",
 };

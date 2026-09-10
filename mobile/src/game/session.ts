@@ -75,6 +75,14 @@ export type SessionMeta = {
   totalXp: number;
   displayName: string | null;
   level: string;
+  /**
+   * Seçilen seviyenin pekişme durumu — yalnızca artan bir ölçü.
+   *
+   * Sunucu baştan beri gönderiyor ama mobilin tipi alanı tanımıyordu, yani
+   * sessizce düşüyordu ve oturum başlığındaki seviye rozeti hiç çizilemiyordu
+   * (web `session-player` çiziyor). Bkz. web-parity §11.22.
+   */
+  coverage?: { mastered: number; total: number };
 };
 
 /** Yarım kalan turun sunucudaki durumu — kaldığın yerden devam için. */

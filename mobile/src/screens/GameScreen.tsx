@@ -15,12 +15,14 @@ import { ProgressRing } from "../ui/ProgressRing";
 import { Mascot } from "../ui/Mascot";
 import { Celebrate } from "../ui/Celebrate";
 import { RoundView } from "../game/rounds";
-import { fetchSession, submitAnswers, todayStr, PRACTICE_GAMES, type Round, type AnswerOut, type DoneExtra, type SessionProgress } from "../game/session";
+import { fetchSession, submitAnswers, todayStr, PRACTICE_GAMES, type Round, type AnswerOut, type DoneExtra, type SessionMeta, type SessionProgress } from "../game/session";
 import { ApiError } from "../api/client";
 import { track } from "../lib/track";
 import { sfx } from "../lib/sfx";
 import { RoundSkeleton } from "../game/RoundSkeleton";
 import { useTheme, spacing, radii, softShadow } from "../theme";
+import { onTint } from "../theme/colors";
+import { LevelBadge } from "../ui/LevelBadge";
 import { ConfirmDialog } from "../ui/ConfirmDialog";
 import { useBackConfirm } from "../lib/useBackConfirm";
 
@@ -41,6 +43,8 @@ export function GameScreen() {
   const gameLabel = gameKey ? t(gameKey) : null;
   const [phase, setPhase] = useState<Phase>("loading");
   const [rounds, setRounds] = useState<Round[]>([]);
+  /* Oturum meta bilgisi: başlıktaki seviye rozeti bundan besleniyor. */
+  const [meta, setMeta] = useState<SessionMeta | null>(null);
   const [idx, setIdx] = useState(0);
   const [finalCorrect, setFinalCorrect] = useState(0);
   const [finalTotal, setFinalTotal] = useState(0);
@@ -119,6 +123,7 @@ export function GameScreen() {
       const start = r && r.index > 0 && r.index < list.length ? r.index : 0;
       resumeBase.current = { correct: r?.correct ?? 0, total: r?.total ?? 0, xp: r?.xp ?? 0 };
       setRounds(list);
+      setMeta(p.meta ?? null);
       idxRef.current = start;
       setIdx(start);
       startedAt.current = Date.now();
@@ -306,12 +311,35 @@ export function GameScreen() {
   // play
   return (
     <View style={pad}>
-      <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, marginBottom: spacing.xl }}>
+      {/* Üst satır: çıkış + seviye rozeti. Rozet webde (`session-player`)
+          baştan beri var, mobilde hiç yoktu - sayı `meta.coverage` ile
+          geliyor ve tip onu tanımıyordu (bkz. web-parity §11.22). */}
+      <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, marginBottom: spacing.md }}>
         <PressableScale hitSlop={4} onPress={back.ask} accessibilityLabel={t("game.quit_round")} style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}><XIcon color={colors.textMuted} size={22} /></PressableScale>
+        <View style={{ flex: 1 }}>
+          <LevelBadge level={meta?.level ?? ""} mastered={meta?.coverage?.mastered ?? 0} total={meta?.coverage?.total ?? 0} />
+        </View>
+      </View>
+      <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, marginBottom: spacing.xl }}>
         <View style={{ flex: 1, height: 10, borderRadius: 5, backgroundColor: colors.surface2, overflow: "hidden" }}>
           <View style={{ height: "100%", width: `${Math.round((idx / rounds.length) * 100)}%`, backgroundColor: colors.primary, borderRadius: 5 }} />
         </View>
         {combo >= 3 && <View style={{ flexDirection: "row", alignItems: "center", gap: 3, backgroundColor: colors.info + "22", borderRadius: radii.pill, paddingHorizontal: 10, paddingVertical: 5 }}><BoltIcon color={colors.info} size={15} /><Text variant="bodyStrong" color={colors.infoText}>{combo}</Text></View>}
+        {/* Bu turdaki kelime yeni mi tekrar mı: webde sayacın yanında bir çip
+            var, mobilde hiç yoktu. Öğrenci "bunu ilk kez mi görüyorum" diye
+            sormuyor artık. */}
+        {(() => {
+          const r = rounds[idx];
+          const ws = r?.words?.length ? r.words : r?.word ? [r.word] : [];
+          if (!ws.length) return null;
+          const isNew = ws.every((w) => w.isNew);
+          const tone = isNew ? colors.primary : colors.streak;
+          return (
+            <View style={{ backgroundColor: tone + "22", borderRadius: radii.pill, paddingHorizontal: 8, paddingVertical: 3 }}>
+              <Text variant="micro" color={onTint(tone, colors)}>{t(isNew ? "session.chip_new" : "session.chip_review").toUpperCase()}</Text>
+            </View>
+          );
+        })()}
         <Text variant="bodyStrong" color={colors.textMuted}>{idx + 1}/{rounds.length}</Text>
       </View>
       {gameLabel && <Text variant="caption" color={colors.textMuted} style={{ textAlign: "center", marginBottom: spacing.md, textTransform: "uppercase", letterSpacing: 1 }}>{t("game.practice_suffix", { game: gameLabel })}</Text>}

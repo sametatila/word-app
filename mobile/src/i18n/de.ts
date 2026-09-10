@@ -492,6 +492,7 @@ export const de: Record<string, string> = {
   "exam.speak_missed": "Nicht ganz verstanden",
   "common.true": "Richtig",
   "common.false": "Falsch",
+  "common.pct_lt1": "<1 %",
   "quiz.order_sentence": "Bring den Satz in die richtige Reihenfolge.",
   "quiz.order_question": "Bring die Frage in die richtige Reihenfolge.",
   "quiz.grammar": "Grammatik",
@@ -1168,4 +1169,8 @@ export const de: Record<string, string> = {
   "diff.extra": "zu viel",
   "diff.moved": "falsche Stelle",
   "diff.typo": "Schreibung",
+  "session.chip_new": "neu",
+  "session.chip_review": "Wdh.",
+  "level.mastered_count": "{n} Wörter gefestigt",
+  "level.mastered_none": "hier sammeln sich die gefestigten Wörter",
 };

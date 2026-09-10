@@ -492,6 +492,7 @@ export const en: Record<string, string> = {
   "exam.speak_missed": "Not quite understood",
   "common.true": "True",
   "common.false": "False",
+  "common.pct_lt1": "<1%",
   "quiz.order_sentence": "Put the sentence in the right order.",
   "quiz.order_question": "Put the question in the right order.",
   "quiz.grammar": "Grammar",
@@ -1168,4 +1169,8 @@ export const en: Record<string, string> = {
   "diff.extra": "extra",
   "diff.moved": "wrong place",
   "diff.typo": "spelling",
+  "session.chip_new": "new",
+  "session.chip_review": "review",
+  "level.mastered_count": "{n} words mastered",
+  "level.mastered_none": "words collect here as they stick",
 };

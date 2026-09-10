@@ -643,6 +643,49 @@ console.log("\n" + C.b + "18. TUR -> HATA TIPI" + C.off);
   );
 }
 
+/* ── 19. oturum paketi alanlari ─────────────────────────────────────────── */
+/*
+ * Sunucunun oturum paketine koydugu her alanin istemci tipinde KARSILIGI
+ * olmali. Olmayan alan sessizce dusuyor: derleme kirilmiyor, istek basarili,
+ * yalnizca o bilgi hic kullanilmiyor. Bu turda uc ornegi cikti - `errorType`
+ * (§11.19), `mode` (§11.20), `assist` (§11.21) ve `meta.coverage` (§11.22).
+ *
+ * `partners` ve `level` listede YOK: yalniz `free_sentence` turunun alanlari ve
+ * o turun mobilde oynaticisi yok (§11.13).
+ */
+console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
+{
+  const web = read("src/lib/types.ts");
+  const mob = read("mobile/src/game/session.ts");
+  const seg = (src, start, end) => {
+    const i = src.indexOf(start);
+    if (i < 0) return "";
+    const j = src.indexOf(end, i + start.length);
+    return src.slice(i, j < 0 ? undefined : j);
+  };
+  /* Web `Round` union'i ile mobil `Round` tipindeki alan adlari. */
+  const alanlar = (metin) =>
+    [...new Set([...metin.matchAll(/^\s+(\w+)\??:/gm)].map((m) => m[1]))]
+      .filter((a) => !["id", "game"].includes(a))
+      .sort();
+  const webRound = alanlar(seg(web, "export type Round =", "\nexport type Answer = {")).filter((a) => !["partners", "level"].includes(a));
+  const mobRound = alanlar(seg(mob, "export type Round = {", "\n};"));
+  const yok = (l) => (l.length ? l : ["eksik yok"]);
+  sameList(
+    "tur alanlari",
+    yok(webRound.filter((a) => !mobRound.includes(a))),
+    ["eksik yok"],
+    "mobilde eksik",
+    "beklenen",
+  );
+
+  /* Oturum meta alanlari. `pacing`, `leeches` ve `challengeBest` hicbir
+     istemcide okunmuyor (web dahil) - ayri bir konu, bkz. §11.22. */
+  const metaWeb = alanlar(seg(web, "  meta: {", "\n  };")).filter((a) => !["meta", "pacing", "leeches", "challengeBest"].includes(a));
+  const metaMob = alanlar(seg(mob, "export type SessionMeta = {", "\n};"));
+  sameList("meta alanlari", yok(metaWeb.filter((a) => !metaMob.includes(a))), ["eksik yok"], "mobilde eksik", "beklenen");
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"
