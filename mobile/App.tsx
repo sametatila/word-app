@@ -12,6 +12,7 @@ import { migrateReminderIds } from "./src/lib/notifications";
 import { loadVoicePref } from "./src/lib/tts";
 import { TtsBridge } from "./src/lib/ttsBridge";
 import { track, loadAnalyticsPref } from "./src/lib/track";
+import { loadReduceMotion } from "./src/lib/reduceMotion";
 import { loadLang, useLang } from "./src/lib/i18n";
 import { attachPushListeners } from "./src/lib/pushDevice";
 import { navigationRef } from "./src/lib/pushRoute";
@@ -41,6 +42,9 @@ function Nav() {
       .then(() => migrateReminderIds())
       .then(() => loadVoicePref())
       .then(() => loadAnalyticsPref())
+      // "Hareketi azalt" sistem tercihi — animasyon kararı veren her yer bunu
+      // senkron okuyor, o yüzden ilk çizimden önce yüklenmesi gerekiyor.
+      .then(() => loadReduceMotion())
       // Günün ilk açılışı (§4 funnel) — kind platform:görünüm, value ekran genişliği.
       // Görünüm native pakette her zaman "standalone"; web tarafı (components/telemetry)
       // aynı kalıbı display-mode'dan üretiyor ve yönetim panosu ikisini de tanıyor

@@ -3054,3 +3054,47 @@ Normalize ederken bir tuzağa düştüm ve düzelttim: ilk sürüm yorumları
 ayıklamıyordu, yani (a)'daki gerekçeyi web dosyasına yazmak kapıyı kırdı.
 Yorum ayıklaması artık normalize adımının parçası - iki taraf aynı kararı
 kendi diliyle anlatabilir.
+
+### 11.56 "Hareketi azalt" mobilde hiç onurlandırılmıyordu
+
+Animasyon eksenini ölçtüm. Süreler karşılaştırılabilir değil (biri `Animated`
+yayı, öteki CSS geçişi) ama ölçülebilir bir şey çıktı: **azaltılmış hareket
+tercihi.**
+
+    web    reducedMotion() 6 yerde + globals.css medya sorgusu
+    mobil  AccessibilityInfo hiç çağrılmıyor
+
+Yani Android'de "Animasyonları kaldır" açık olan kullanıcı yüz on parçacıklı
+konfetiyi, her dokunuşta ölçek yayını ve iskelet nabzını olduğu gibi alıyordu.
+Web tercihi altı yerde onurlandırıyor. Bu, referans platformun geride kaldığı
+bir erişilebilirlik ayarı - ve sistem ayarı olduğu için kullanıcı zaten
+"istemiyorum" demiş durumda.
+
+`mobile/src/lib/reduceMotion.ts` eklendi, web `lib/fx` + `use-still` ikilisinin
+karşılığı: açılışta bir kez okunuyor (`App.tsx` önyükleme zinciri, ilk
+çizimden önce) ve `reduceMotionChanged` dinleniyor, yani kullanıcı ayarı
+uygulama açıkken değiştirirse bir sonraki animasyon doğru kararı verir. Değer
+SENKRON: animasyon kararı render sırasında veriliyor, Promise beklenemez.
+Okunmadan önceki ilk anlarda `false` - webin `useStill()`ü de ilk render'da
+`false` diyor ve aynı sebeple.
+
+Üç yüzeye bağlandı:
+- **Konfeti** hiç çizilmiyor (web `celebrate.tsx` de aynı kararı veriyor).
+- **`PressableScale`** ölçek yayını atlıyor; düğmenin işi ve sistem basma
+  vurgusu duruyor, yalnız hareket kalkıyor.
+- **İskelet** nabzı hiç başlamıyor, sabit opaklıkta duruyor - iskeletin işi
+  şekli ve yüksekliği göstermek, nabız süsleme.
+
+**Bu turda ortak çalışma ağacı ilk kez ısırdı.** `mobile/src/lib/nativeContent.ts`
+içinde ölü bir `eslint-disable` gördüm ve düzelttim; sonra `git status`
+dosyanın İZLENMEYEN olduğunu gösterdi - yani başka bir Claude oturumunun
+üzerinde çalıştığı, henüz commit edilmemiş dosyası. Düzeltmeyi geri alıp
+dosyayı bulduğum hâle döndürdüm. Aynı sebeple mobil `lint`e
+`--max-warnings 0` eklemekten de vazgeçtim: bayrak DOĞRU (web'de var, mobilde
+yok - kapı asimetrisi) ama şu an yakaladığı tek uyarı o oturumun dosyasında
+ve onların derlemesini kırardı. Ağaç temizlendiğinde ayrı bir turda.
+
+Aynı sebeple `i18n:check` şu an kırmızı (18 dizge / taban 14) ve TABAN
+YENİLENMEDİ: fazladan dört dizge o iki izlenmeyen dosyada, benim
+değişikliğim sıfır dizge ekliyor. Başka bir oturumun yarım işini cırcıra
+yazmak, onların borcunu benim kapımdan geçirmek olurdu.

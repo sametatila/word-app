@@ -1,5 +1,6 @@
 import React, { useRef } from "react";
 import { Animated, Pressable, type PressableProps, type StyleProp, type ViewStyle } from "react-native";
+import { reduceMotion } from "../lib/reduceMotion";
 
 const AnimatedPressable = Animated.createAnimatedComponent(Pressable);
 
@@ -16,8 +17,11 @@ export function PressableScale({ children, style, onPressIn, onPressOut, ...rest
   return (
     <AnimatedPressable
       accessibilityRole="button"
-      onPressIn={(e) => { Animated.spring(scale, { toValue: 0.96, useNativeDriver: true, speed: 50, bounciness: 0 }).start(); onPressIn?.(e); }}
-      onPressOut={(e) => { Animated.spring(scale, { toValue: 1, useNativeDriver: true, speed: 40, bounciness: 6 }).start(); onPressOut?.(e); }}
+      /* "Hareketi azalt" açıkken ölçek yayı çalışmıyor; dokunma geri bildirimi
+         yine var (ses/titreşim çağıranlarda, sistem basma vurgusu her yerde).
+         Düğmenin İŞİ değişmiyor, yalnız hareket kalkıyor. */
+      onPressIn={(e) => { if (!reduceMotion()) Animated.spring(scale, { toValue: 0.96, useNativeDriver: true, speed: 50, bounciness: 0 }).start(); onPressIn?.(e); }}
+      onPressOut={(e) => { if (!reduceMotion()) Animated.spring(scale, { toValue: 1, useNativeDriver: true, speed: 40, bounciness: 6 }).start(); onPressOut?.(e); }}
       style={[style, { transform: [{ scale }] }]}
       {...rest}
     >

@@ -1,6 +1,7 @@
 import React from "react";
 import { useWindowDimensions, View, StyleSheet } from "react-native";
 import ConfettiCannon from "react-native-confetti-cannon";
+import { reduceMotion } from "../lib/reduceMotion";
 
 /*
  * Konfeti renkleri — web `components/celebrate.tsx` `COLORS` ile BİREBİR:
@@ -22,7 +23,10 @@ const CONFETTI = ["#eda45d", "#ddb62c", "#45b87a", "#35b2cc", "#ae79d4", "#ee6b7
 export function Celebrate({ show }: { show: boolean }) {
   // Döndürme/yeniden boyutlanmada (tablet, yatay) güncel genişlik.
   const { width } = useWindowDimensions();
-  if (!show) return null;
+  /* "Hareketi azalt" açıkken konfeti HİÇ çizilmiyor - web `celebrate.tsx` de
+     aynı kararı veriyor (`if (!fire || reducedMotion()) return`). Yüz on
+     parçacık bu ayarın kapatmayı istediği şeyin ta kendisi. */
+  if (!show || reduceMotion()) return null;
   return (
     <View pointerEvents="none" style={StyleSheet.absoluteFill}>
       <ConfettiCannon

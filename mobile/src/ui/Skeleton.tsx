@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { Animated, PixelRatio, View, type ViewStyle } from "react-native";
 import { Card } from "./Card";
 import { useTheme, radii, spacing, typography } from "../theme";
+import { reduceMotion } from "../lib/reduceMotion";
 
 /**
  * Yükleme iskeletleri — düz spinner yerine içeriğin ŞEKLİNİ ve YÜKSEKLİĞİNİ
@@ -40,6 +41,10 @@ let alive = 0;
 
 function usePulse(): Animated.AnimatedInterpolation<number> {
   useEffect(() => {
+    /* "Hareketi azalt" açıkken nabız hiç başlamıyor: iskelet SABİT opaklıkta
+       duruyor (aşağıdaki `pulse` başlangıç değeri 0 → 0.45). İskeletin işi
+       şekli ve yüksekliği göstermek; nabız yalnız süsleme. */
+    if (reduceMotion()) return;
     alive += 1;
     if (alive === 1) {
       loop = Animated.loop(Animated.sequence([
