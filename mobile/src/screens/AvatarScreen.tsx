@@ -77,9 +77,9 @@ export function AvatarScreen() {
         </View>
 
         <Group title={t("avatar.hat")} colors={colors}>
-          <OptTile preview={none({ hat: null })} selected={cfg.hat === null} label={`${t("avatar.hat")} 1`} onPress={() => setCfg((c) => ({ ...c, hat: null }))} colors={colors} />
+          <OptTile preview={none({ hat: null })} selected={cfg.hat === null} label={t("avatar.no_hat")} onPress={() => setCfg((c) => ({ ...c, hat: null }))} colors={colors} />
           {HATS.map((h, i) => (
-            <OptTile key={h} label={`${t("avatar.hat")} ${i + 2}`} preview={none({ hat: h })} selected={cfg.hat === h} onPress={() => setCfg((c) => ({ ...c, hat: h }))} colors={colors} />
+            <OptTile key={h} label={`${t("avatar.hat")} ${i + 1}`} preview={none({ hat: h })} selected={cfg.hat === h} onPress={() => setCfg((c) => ({ ...c, hat: h }))} colors={colors} />
           ))}
         </Group>
 
@@ -98,16 +98,16 @@ export function AvatarScreen() {
         ) : null}
 
         <Group title={t("avatar.glasses")} colors={colors}>
-          <OptTile preview={none({ glasses: null })} selected={cfg.glasses === null} label={`${t("avatar.glasses")} 1`} onPress={() => setCfg((c) => ({ ...c, glasses: null }))} colors={colors} />
+          <OptTile preview={none({ glasses: null })} selected={cfg.glasses === null} label={t("avatar.no_glasses")} onPress={() => setCfg((c) => ({ ...c, glasses: null }))} colors={colors} />
           {GLASSES.map((g, i) => (
-            <OptTile key={g} label={`${t("avatar.glasses")} ${i + 2}`} preview={none({ glasses: g })} selected={cfg.glasses === g} onPress={() => setCfg((c) => ({ ...c, glasses: g }))} colors={colors} />
+            <OptTile key={g} label={`${t("avatar.glasses")} ${i + 1}`} preview={none({ glasses: g })} selected={cfg.glasses === g} onPress={() => setCfg((c) => ({ ...c, glasses: g }))} colors={colors} />
           ))}
         </Group>
 
         <Group title={t("avatar.mustache")} colors={colors}>
-          <OptTile preview={none({ mustache: null })} selected={cfg.mustache === null} label={`${t("avatar.mustache")} 1`} onPress={() => setCfg((c) => ({ ...c, mustache: null }))} colors={colors} />
+          <OptTile preview={none({ mustache: null })} selected={cfg.mustache === null} label={t("avatar.no_mustache")} onPress={() => setCfg((c) => ({ ...c, mustache: null }))} colors={colors} />
           {MUSTACHES.map((m, i) => (
-            <OptTile key={m} label={`${t("avatar.mustache")} ${i + 2}`} preview={none({ mustache: m })} selected={cfg.mustache === m} onPress={() => setCfg((c) => ({ ...c, mustache: m }))} colors={colors} />
+            <OptTile key={m} label={`${t("avatar.mustache")} ${i + 1}`} preview={none({ mustache: m })} selected={cfg.mustache === m} onPress={() => setCfg((c) => ({ ...c, mustache: m }))} colors={colors} />
           ))}
         </Group>
 

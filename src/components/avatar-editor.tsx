@@ -49,7 +49,7 @@ export function AvatarEditor() {
       </div>
 
       <Group title={t("avatar.hat")}>
-        <Opt preview={only({ hat: null })} selected={cfg.hat === null} label={t("avatarw.no_hat")} onPick={() => setCfg((c) => ({ ...c, hat: null }))} />
+        <Opt preview={only({ hat: null })} selected={cfg.hat === null} label={t("avatar.no_hat")} onPick={() => setCfg((c) => ({ ...c, hat: null }))} />
         {HATS.map((h) => (
           <Opt
             key={h}
@@ -84,7 +84,7 @@ export function AvatarEditor() {
       ) : null}
 
       <Group title={t("avatar.glasses")}>
-        <Opt preview={only({ glasses: null })} selected={cfg.glasses === null} label={t("avatarw.no_glasses")} onPick={() => setCfg((c) => ({ ...c, glasses: null }))} />
+        <Opt preview={only({ glasses: null })} selected={cfg.glasses === null} label={t("avatar.no_glasses")} onPick={() => setCfg((c) => ({ ...c, glasses: null }))} />
         {GLASSES.map((g) => (
           <Opt
             key={g}
@@ -96,8 +96,8 @@ export function AvatarEditor() {
         ))}
       </Group>
 
-      <Group title={t("avatarw.mustache")}>
-        <Opt preview={only({ mustache: null })} selected={cfg.mustache === null} label={t("avatarw.no_mustache")} onPick={() => setCfg((c) => ({ ...c, mustache: null }))} />
+      <Group title={t("avatar.mustache")}>
+        <Opt preview={only({ mustache: null })} selected={cfg.mustache === null} label={t("avatar.no_mustache")} onPick={() => setCfg((c) => ({ ...c, mustache: null }))} />
         {MUSTACHES.map((m) => (
           <Opt
             key={m}
