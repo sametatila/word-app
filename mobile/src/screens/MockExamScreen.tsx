@@ -99,6 +99,26 @@ function mmss(sec: number): string {
 
 const words = (s: string) => s.trim().split(/\s+/).filter(Boolean).length;
 
+/**
+ * Görev hedefi -> sözlük anahtarı — web `mock-exam-player` `GOAL_KEYS` ile aynı.
+ *
+ * Anahtar ELLE yazılıyordu (`` t(`mockexam.goal_${g.goal}`) ``) ve hedef
+ * İÇERİKTEN geliyor, kapalı bir kümeden değil: sözlükte karşılığı olmayan bir
+ * hedef geldiğinde ekran çeviri yerine ANAHTARIN KENDİSİNİ yazıyordu
+ * ("mockexam.goal_xyz"). Web tanımadığı hedefte ham adı yazıyor; mobil de
+ * artık öyle.
+ */
+const GOAL_KEYS: Record<string, string> = {
+  gist: "mockexam.goal_gist",
+  detail: "mockexam.goal_detail",
+  opinion: "mockexam.goal_opinion",
+  orientation: "mockexam.goal_orientation",
+  instruction: "mockexam.goal_instruction",
+  structure: "mockexam.goal_structure",
+  production: "mockexam.goal_production",
+  interaction: "mockexam.goal_interaction",
+};
+
 export function MockExamScreen() {
   const { colors } = useTheme();
   const insets = useSafeAreaInsets();
@@ -1001,7 +1021,7 @@ function ResultView({
             return (
               <View key={g.goal} style={{ marginTop: spacing.sm }}>
                 <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
-                  <Text variant="body">{t(`mockexam.goal_${g.goal}`)}</Text>
+                  <Text variant="body">{GOAL_KEYS[g.goal] ? t(GOAL_KEYS[g.goal]) : g.goal}</Text>
                   <Text variant="bodyStrong" color={pct >= 70 ? colors.successText : pct >= 50 ? colors.text : colors.dangerText}>
                     {g.correct}/{g.total}
                   </Text>

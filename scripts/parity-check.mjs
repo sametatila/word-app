@@ -1483,6 +1483,26 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   sameList("umlaut govdesi", [um("mobile/src/game/wordGrammar.ts")], [um("src/lib/german.ts")]);
 }
 
+/* ── 34. deneme sinavi hedef etiketleri ────────────────────────────────────
+ * Sonuc ekranindaki "hedefe gore" kirilimi. Hedef ICERIKTEN geliyor, kapali
+ * bir kumeden degil: iki taraf da adi sozluk anahtarina cevirmek zorunda ve
+ * tanimadigi hedefte HAM ADI yazmali. Mobil anahtari elle kuruyordu
+ * (`goal_${g.goal}`) ve sozlukte karsiligi olmayan hedefte anahtarin kendisi
+ * ekrana cikiyordu.
+ *
+ * Iki harita adiyla karsilastiriliyor; kume ayrisirsa bir tarafta okunur bir
+ * etiket, otekinde ham ad kalir. */
+{
+  const map = (p) => {
+    const src = read(p);
+    const i = src.indexOf("const GOAL_KEYS");
+    if (i < 0) return ["bulunamadi: GOAL_KEYS @ " + p];
+    const blok = src.slice(i, src.indexOf("};", i));
+    return [...blok.matchAll(/(\w+):\s*"([^"]+)"/g)].map((m) => m[1] + "=" + m[2]).sort();
+  };
+  sameList("deneme sinavi hedef etiketleri", map("mobile/src/screens/MockExamScreen.tsx"), map("src/components/mock-exam-player.tsx"));
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"
