@@ -392,9 +392,13 @@ export function CourseOnboarding({
                         </button>
                       ))}
                     </div>
-                    <p className="muted mt-2 text-xs leading-relaxed">
-                      {pickedLevel ? `${t(LEVELS.find((l) => l.id === pickedLevel)!.desc)}.` : t("onboarding.pick_level_directly")}
-                    </p>
+                    {/* Açıklama YALNIZ seçimden sonra: seçilmemişken buraya
+                        "Seviyemi biliyorum" yazıyordu, yani hemen üstteki
+                        şıkkın alt satırının aynısı. Düğme zaten seçim
+                        yapılana kadar kapalı — söylenecek bir şey yok. */}
+                    {pickedLevel ? (
+                      <p className="muted mt-2 text-xs leading-relaxed">{t(LEVELS.find((l) => l.id === pickedLevel)!.desc)}.</p>
+                    ) : null}
                   </div>
                 ) : null}
               </div>
