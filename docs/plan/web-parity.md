@@ -5236,3 +5236,31 @@ kullanıyor, ayrı uç), webe özel hayatta kalma modu. Kalan ikisi:
 `/api/errors` (bu bölüm) ve `/api/assess/queue` (§11.12'de Samet'in kararı
 bekliyor). `check-endpoints` "her ucun bir çağıranı var mı" diye soruyor; bu
 ölçüm onun parite hâli — **"her ucun İKİ çağıranı var mı"**.
+
+### 11.136 "Her ucun İKİ çağıranı var mı" — kapı ve iki yeni bulgu
+
+§11.135'in elle yaptığım ölçümü kalıcı bir kapıya çevrildi. `check-endpoints`
+"her ucun **bir** çağıranı var mı" diye soruyordu; parite hâli eksikti: bir uç
+yalnız webden çağrılıyorsa ya bunun bir sebebi vardır ya da **Android'de o
+yüzey hiç yok** — ve ikincisi sessizce oluyor.
+
+Kapı kurulunca elle ölçümün **kaçırdığı iki uç** daha çıktı:
+
+- **`/api/premium/referral`** — meşru: mobil aynı kodu `premium/status`
+  içinden alıyor. Elle ölçümde "mobil kaynakta geçiyor" diye elenmişti, oysa
+  yalnız bir **yorumda** geçiyordu. (Yorum çağıran değildir — betiğin kendisi
+  bunu baştan beri biliyor, benim ad-hoc ölçümüm bilmiyordu.)
+- **`/api/pronounce`** — meşru değil: web konuşma puanını sunucudan alıyor
+  (gerçek telaffuz değerlendirmesi, `lib/pronounce-client`), mobil aynı puanı
+  **cihazdaki tanıyıcının metnini eşleyerek** üretiyor (`spokenMatches`). Yani
+  seviye sınavının konuşma bölümü iki platformda **başka bir şey ölçüyor**:
+  webde söyleyiş, Android'de "doğru kelimeleri söyledi mi". Aynı kâğıt, aynı
+  puan alanı, farklı ölçüm.
+
+**Kayıtlı ve sıradaki iş:**
+- `/api/growth` — gelişim paneli (yetkinlik + dört haftalık değişim, kanıt
+  sayısı, sıradaki adım, kilometre taşları, sekiz haftalık seri, haftalık
+  özet). Mobilde hiç yok. Web tarafı 250 satır ve grafik içeriyor; bir turda
+  yapılacak iş değil, bölünerek taşınacak.
+- `/api/pronounce` — mobil ses klibini sunucuya yükleyip puanı oradan almalı;
+  altyapı var (`azureListenOnce`, `speakServerTts`, `/api/stt` yolu).
