@@ -913,6 +913,11 @@ function Result({
             })
           )}
 
+          {/* SÖZLÜKÇE SINAVDAN SONRA. Metinlerin kilit kelimeleri içerikte
+              duruyordu (`gloss`) ve tip de bunu "sınavdan sonra, dökümde
+              gösterilir" diye yazıyordu ama web hiçbir yerde çizmiyordu:
+              yazılmış içerik sessizce düşüyordu. Android ikisini de gösteriyor
+              - dinleme dökümünün altında ve okuma metni için ayrı kartta. */}
           {(task.texts ?? []).map((st) =>
             st.kind === "audio" ? (
               <div key={st.id} className="card p-4">
@@ -920,6 +925,11 @@ function Result({
                 {st.segments.map((sg, i) => (
                   <p key={i} className="mt-1 text-sm leading-relaxed" lang={paper.course}>{sg.speaker ? `${sg.speaker}: ` : ""}{sg.text}</p>
                 ))}
+                <Glossary gloss={st.gloss} course={paper.course} t={t} />
+              </div>
+            ) : st.gloss?.length ? (
+              <div key={st.id} className="card p-4">
+                <Glossary gloss={st.gloss} course={paper.course} t={t} />
               </div>
             ) : null,
           )}
@@ -928,5 +938,35 @@ function Result({
 
       <Link href="/mock-exams" className="btn btn-primary mt-2 block w-full py-3 text-center text-sm">{t("mockexam.back_to_list")}</Link>
     </section>
+  );
+}
+
+/**
+ * Metnin kilit kelimeleri — yalnız sınav bittikten sonra, dökümün yanında.
+ * Sınav sırasında gösterilseydi okuma görevinin yarısını hediye ederdi;
+ * Android'de de kapanış ekranında duruyor.
+ */
+function Glossary({
+  gloss,
+  course,
+  t,
+}: {
+  gloss?: { de: string; tr: string }[];
+  course: string;
+  t: ReturnType<typeof useT>;
+}) {
+  if (!gloss?.length) return null;
+  return (
+    <>
+      <p className="muted mt-3 text-xs font-bold tracking-wide">{t("mockexam.glossary")}</p>
+      <dl className="mt-1">
+        {gloss.map((g) => (
+          <div key={g.de} className="muted flex gap-1.5 text-xs leading-relaxed">
+            <dt lang={course}>{g.de}</dt>
+            <dd>— {g.tr}</dd>
+          </div>
+        ))}
+      </dl>
+    </>
   );
 }
