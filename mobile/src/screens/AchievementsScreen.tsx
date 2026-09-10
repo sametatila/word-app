@@ -5,7 +5,8 @@ import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { useNavigation } from "@react-navigation/native";
 import { Text } from "../ui/Text";
 import { PressableScale } from "../ui/PressableScale";
-import { ArrowBackIcon, TrophyIcon, CheckIcon } from "../ui/icons";
+import { ArrowBackIcon, CheckIcon } from "../ui/icons";
+import { AchievementIcon } from "../ui/achievementIcon";
 import { Skeleton, SkeletonLine } from "../ui/Skeleton";
 import { useAuth } from "../lib/AuthContext";
 import { api } from "../api/client";
@@ -40,7 +41,10 @@ function Badge({ a, colors }: { a: Achievement; colors: Palette }) {
   return (
     <View style={{ width: gridItemWidth, backgroundColor: colors.surface, borderRadius: radii.lg, borderWidth: 1, borderColor: colors.hairline, padding: spacing.md, opacity: a.unlocked ? 1 : 0.92 }}>
       <View style={[{ width: 46, height: 46, borderRadius: 23, alignItems: "center", justifyContent: "center", backgroundColor: a.unlocked ? tc : colors.surface2 }, a.unlocked ? softShadow(tc, 6) : {}]}>
-        {a.unlocked ? <TrophyIcon color="#fff" size={24} /> : <TrophyIcon color={colors.textFaint} size={24} />}
+        {/* Rozetin KENDİ ikonu (sunucu `icon` alanında veriyor): eskiden hepsi
+            kupaydı ve iki rozeti ayıran tek şey kademe rengiydi. Web baştan
+            beri her rozeti kendi ikonuyla çiziyor. */}
+        <AchievementIcon name={a.icon} color={a.unlocked ? "#fff" : colors.textFaint} size={24} />
       </View>
       <Text variant="bodyStrong" style={{ marginTop: spacing.sm }}>{a.title}</Text>
       <Text variant="micro" color={colors.textMuted} style={{ marginTop: 2 }}>{a.hint}</Text>

@@ -208,3 +208,54 @@ export const TranslateIcon = ({ color = "#000", size }: P) => (
 export const StackIcon = ({ color = "#000", size }: P) => (
   <S size={size}><Path d="M12 4l8 4-8 4-8-4 8-4z" {...stroke(color)} /><Path d="M4 12l8 4 8-4M4 16l8 4 8-4" {...stroke(color)} /></S>
 );
+
+/* ——— Rozet ikonları ———————————————————————————————————————————————————
+   Sunucu her rozete kendi ikonunu veriyor (`lib/achievements` `icon`) ve web
+   onu çiziyor; mobil alanı hiç tanımıyordu, yani elli yedi rozetin hepsi
+   KUPA görünüyordu. Aşağıdaki on beşi webin `components/icons.tsx` içindeki
+   gövdelerin birebir aynısı - iki uygulamada aynı rozet aynı çizim. */
+export const BookIcon = ({ color = "#000", size }: P) => (
+  <S size={size}><Path d="M4 5.5A1.5 1.5 0 0 1 5.5 4H10a2.5 2.5 0 0 1 2 1 2.5 2.5 0 0 1 2-1h4.5A1.5 1.5 0 0 1 20 5.5v11a1.5 1.5 0 0 1-1.5 1.5H14a2.5 2.5 0 0 0-2 1 2.5 2.5 0 0 0-2-1H5.5A1.5 1.5 0 0 1 4 16.5z" {...stroke(color)} /><Path d="M12 5v14" {...stroke(color)} /></S>
+);
+export const BookOpenIcon = ({ color = "#000", size }: P) => (
+  <S size={size}><Path d="M12 6.5C10.7 5.2 8.9 4.5 6.9 4.5H4v13h2.9c2 0 3.8.7 5.1 2 1.3-1.3 3.1-2 5.1-2H20v-13h-2.9c-2 0-3.8.7-5.1 2z" {...stroke(color)} /><Path d="M12 6.5v13" {...stroke(color)} /></S>
+);
+export const CalendarIcon = ({ color = "#000", size }: P) => (
+  <S size={size}><Rect x="4.5" y="5.5" width="15" height="14" rx="2" {...stroke(color)} /><Path d="M4.5 10h15M9 3.5v4M15 3.5v4" {...stroke(color)} /></S>
+);
+export const ChatIcon = ({ color = "#000", size }: P) => (
+  <S size={size}><Path d="M20 12.5c0 3.6-3.6 6.5-8 6.5-1 0-2-.15-2.9-.42L4 20l1.2-3.3C4.15 15.5 3.5 14.06 3.5 12.5 3.5 8.9 7.1 6 12 6s8 2.9 8 6.5Z" {...stroke(color)} /></S>
+);
+export const CompassIcon = ({ color = "#000", size }: P) => (
+  <S size={size}><Circle cx="12" cy="12" r="8.5" {...stroke(color)} /><Path d="M15.5 8.5 13.6 13.6 8.5 15.5 10.4 10.4z" {...stroke(color)} /></S>
+);
+export const FlagIcon = ({ color = "#000", size }: P) => (
+  <S size={size}><Path d="M6 20V4.5" {...stroke(color)} /><Path d="M6 5c4-2 8 2 12 0v8c-4 2-8-2-12 0" {...stroke(color)} /></S>
+);
+export const GlobeIcon = ({ color = "#000", size }: P) => (
+  <S size={size}><Circle cx="12" cy="12" r="8" {...stroke(color)} /><Path d="M4 12h16M12 4a13 13 0 0 1 0 16M12 4a13 13 0 0 0 0 16" {...stroke(color)} /></S>
+);
+export const HeadphonesIcon = ({ color = "#000", size }: P) => (
+  <S size={size}><Path d="M4.5 17v-4a7.5 7.5 0 0 1 15 0v4" {...stroke(color)} /><Rect x="3.5" y="14" width="4" height="6" rx="1.6" {...stroke(color)} /><Rect x="16.5" y="14" width="4" height="6" rx="1.6" {...stroke(color)} /></S>
+);
+export const MapIcon = ({ color = "#000", size }: P) => (
+  <S size={size}><Path d="M4 6.5 9 4.5l6 2 5-2v13l-5 2-6-2-5 2z" {...stroke(color)} /><Path d="M9 4.5v13M15 6.5v13" {...stroke(color)} /></S>
+);
+export const MoonIcon = ({ color = "#000", size }: P) => (
+  <S size={size}><Path d="M20 14.2A8.4 8.4 0 0 1 9.8 4 8.4 8.4 0 1 0 20 14.2z" {...stroke(color)} /></S>
+);
+export const MountainIcon = ({ color = "#000", size }: P) => (
+  <S size={size}><Path d="m3.5 18.5 6-10 3.3 5.4L15 11l5.5 7.5z" {...stroke(color)} /><Path d="m8 12.9 1.5 1.6 1.6-1.6M19 6.5h.01" {...stroke(color)} /></S>
+);
+export const PenIcon = ({ color = "#000", size }: P) => (
+  <S size={size}><Path d="M16.5 4.5 19.5 7.5 9 18l-4 1 1-4z" {...stroke(color)} /><Path d="M14.5 6.5 17.5 9.5" {...stroke(color)} /></S>
+);
+export const RunIcon = ({ color = "#000", size }: P) => (
+  <S size={size}><Circle cx="14.5" cy="5.5" r="1.8" {...stroke(color)} /><Path d="m9 20 2.5-4.5-2-2.5 3-3.5 3 2.5 3-1" {...stroke(color)} /><Path d="M12.5 9.5 9 8.5l-3 2.5M11.5 15.5 14 18l1 2.5" {...stroke(color)} /></S>
+);
+export const SchoolIcon = ({ color = "#000", size }: P) => (
+  <S size={size}><Path d="M3.5 9.5 12 5.5l8.5 4-8.5 4z" {...stroke(color)} /><Path d="M7 11.6V15c0 1.4 2.2 2.5 5 2.5s5-1.1 5-2.5v-3.4" {...stroke(color)} /><Path d="M20.5 9.5V14" {...stroke(color)} /></S>
+);
+export const SunIcon = ({ color = "#000", size }: P) => (
+  <S size={size}><Circle cx="12" cy="12" r="4" {...stroke(color)} /><Path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.2 5.2l1.4 1.4M17.4 17.4l1.4 1.4M18.8 5.2l-1.4 1.4M6.6 17.4l-1.4 1.4" {...stroke(color)} /></S>
+);

@@ -26,6 +26,13 @@ export type Achievement = {
   hint: string;
   tier: Tier;
   group: AchGroup;
+  /**
+   * Rozetin kendi ikonunun ADI (`BookIcon`, `FlameIcon`, ...) — sunucu her
+   * satırda gönderiyor. Mobil alanı hiç tanımıyordu, yani elli yedi rozetin
+   * hepsi KUPA görünüyordu; web her rozeti kendi ikonuyla çiziyor. Ad
+   * `ui/achievementIcon` ile bileşene çevriliyor.
+   */
+  icon: string;
   target: number;
   /** Sunucunun alan adı bu; ilerleme çubuğu ve "n/target" bunu okur. */
   done: number;

@@ -2,7 +2,7 @@ import React, { useCallback, useEffect, useRef, useState } from "react";
 import { Modal, View, Pressable } from "react-native";
 import { t } from "../lib/i18n";
 import { Text } from "./Text";
-import { TrophyIcon } from "./icons";
+import { AchievementIcon } from "./achievementIcon";
 import { Celebrate } from "./Celebrate";
 import { api } from "../api/client";
 import { useAuth } from "../lib/AuthContext";
@@ -86,7 +86,7 @@ function Badge({ a, size }: { a: Achievement; size: number }) {
   const tc = TIER_COLOR[a.tier] ?? TIER_COLOR.legend;
   return (
     <View style={[{ width: size, height: size, borderRadius: size / 2, alignItems: "center", justifyContent: "center", backgroundColor: tc }, softShadow(tc, 8)]}>
-      <TrophyIcon color="#fff" size={Math.round(size * 0.52)} />
+      <AchievementIcon name={a.icon} color="#fff" size={Math.round(size * 0.52)} />
     </View>
   );
 }
