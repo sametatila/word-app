@@ -24,7 +24,11 @@ export type EventName =
   | "paywall_view"
   | "premium_gate"
   | "purchase_start"
-  | "purchase_done";
+  | "purchase_done"
+  /* Modul patronu - web `lib/events` ile ayni adlar: `boss_play` degeri modul
+     sirasi, `boss_clear` degeri kalan saniye. */
+  | "boss_play"
+  | "boss_clear";
 
 /** Analitik tercihi (Gizlilik Politikası §8) — cihazda, varsayılan açık; açılışta yüklenir. */
 const ANALYTICS_KEY = "lernomi:analytics";

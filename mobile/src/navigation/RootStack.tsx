@@ -31,6 +31,7 @@ import { SocialSettingsScreen } from "../screens/SocialSettingsScreen";
 import { ItemScreen } from "../screens/ItemScreen";
 import { DailyScreen } from "../screens/DailyScreen";
 import { WeeklyScreen } from "../screens/WeeklyScreen";
+import { BossScreen } from "../screens/BossScreen";
 import { PracticeScreen } from "../screens/PracticeScreen";
 import { CandoScreen } from "../screens/CandoScreen";
 import { WritingsScreen } from "../screens/WritingsScreen";
@@ -54,6 +55,8 @@ export type RootStackParams = {
   MockStats: undefined;
   /** Sınav: modül (module = 0..) ya da seviye sınavı (module = null). */
   Exam: { level: string; module: number | null };
+  /** Modul patronu - sureli tur; modulun derslerindeki kelimelerden kuruluyor. */
+  Boss: { level: string; moduleIndex: number };
   Walk: undefined;
   Paywall: undefined;
   Unit: { index: number; level: string; theme: string; items?: { id: string; kind: string; title: string; titleTr?: string | null; done: boolean; playable: boolean; attempted?: boolean; open?: boolean; ref?: string | null }[] };
@@ -122,6 +125,7 @@ export function RootStack({ initialRoute }: { initialRoute: keyof RootStackParam
       <Stack.Screen name="Item" component={ItemScreen} options={{ animation: "slide_from_bottom" }} />
       <Stack.Screen name="Daily" component={DailyScreen} options={{ animation: "slide_from_bottom" }} />
       <Stack.Screen name="Weekly" component={WeeklyScreen} options={{ animation: "slide_from_bottom" }} />
+      <Stack.Screen name="Boss" component={BossScreen} options={{ animation: "slide_from_bottom" }} />
       <Stack.Screen name="Practice" component={PracticeScreen} options={{ animation: "slide_from_bottom" }} layout={wideColumnLayout} />
       <Stack.Screen name="Cando" component={CandoScreen} layout={wideColumnLayout} />
       <Stack.Screen name="Writings" component={WritingsScreen} layout={wideColumnLayout} />

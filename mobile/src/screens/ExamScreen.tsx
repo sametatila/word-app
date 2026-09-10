@@ -278,6 +278,19 @@ export function ExamScreen() {
           <PressableScale onPress={() => nav.goBack()} style={[{ backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: 16, alignItems: "center" }, softShadow(colors.primary, 10)]}>
             <Text variant="bodyStrong" color={colors.onPrimary}>{t("item.go_back")}</Text>
           </PressableScale>
+          {/*
+            HIZ TURUNUN TEK GİRİŞİ BURASI — web ile aynı yer ve aynı sebep
+            (`components/exam-player`): patron turu yol haritasında modül
+            sınavının altındaydı ve orada ikinci bir sınav gibi okunuyordu,
+            oysa altmış saniyede on beş kelime bir şey KANITLAMIYOR. Sınavdan
+            SONRA yeri doğru: ölçüm bitti, bu bir oyun. Yalnız MODÜL sınavında
+            var, seviye sınavında yok.
+          */}
+          {moduleIx !== null ? (
+            <PressableScale onPress={() => nav.navigate("Boss", { level, moduleIndex: moduleIx })} style={{ paddingVertical: 12, alignItems: "center" }}>
+              <Text variant="caption" color={colors.textMuted}>{t("exam.speed_round_link")}</Text>
+            </PressableScale>
+          ) : null}
         </ScrollView>
       </View>
     );

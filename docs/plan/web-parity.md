@@ -1528,9 +1528,39 @@ kullanıyor).
   - **`/api/challenge`** — süreye karşı hayatta kalma turu (`challenge-player`).
     Mobilde ekran yok; Öğren'deki "günlük tur" bambaşka bir şey (herkese aynı
     tur, `Daily`). `meta.challengeBest` bu yüzden mobilde anlamsız (§11.22).
-  - **`/api/boss`** — modül patronu (`boss-player`). Mobilde ekran yok.
+  - **`/api/boss`** — modül patronu (`boss-player`). PORT EDİLDİ, aşağıda.
 
-İkisi de ekran işi, alan ya da bayrak değil; ayrı tur.
+Hayatta kalma turu ekran işi, alan ya da bayrak değil; ayrı tur.
+
+#### `/api/boss` — modül patronu (hız turu)
+
+`mobile/src/screens/BossScreen.tsx` eklendi (web `boss-player` karşılığı):
+süreli tur, doğru cevap süre ekliyor, yanlış siliyor, süre bitmeden bitiren
+modül tacını alıyor. Tur döngüsü mevcut `RoundView`dan geliyor, yani oyun
+türlerinin hiçbiri yeniden yazılmadı.
+
+SÜRE KURALLARI SUNUCUDAN: saniye, bonus, ceza ve tavan yanıtla geliyor ve
+istemcide ikinci bir kopya tutulmuyor - ucun kendi yorumu da bunu şart
+koşuyor ("dengeyi değiştirdiğimizde iki yerde birden değiştirmeyi hatırlamak
+demekti").
+
+GİRİŞ YERİ WEB İLE AYNI ve sebebi de aynı: modül sınavı bittikten SONRA, sonuç
+ekranının altında sessiz bir satır. Web bunu bir kez yol haritasına koymuş ve
+geri almış - yorumu duruyor: "orada ikinci bir sınav gibi okunuyordu, oysa
+altmış saniyede on beş kelime bir şey KANITLAMIYOR; sınavdan sonra yeri doğru:
+ölçüm bitti, bu bir oyun". Aynı hatayı mobilde tekrarlamamak için giriş
+`ExamScreen` sonucuna kondu, `PathScreen`e değil, ve yalnız MODÜL sınavında
+görünüyor.
+
+İki bilinçli fark, ikisi de mobilin verdiğiyle sınırlı:
+  - Webin son saniyelerdeki tık sesi yok: mobil ses tablosunda `danger` diye
+    bir tür yok ve eklemek native tabloları yeniden üretmeyi gerektiriyor
+    (`scripts/render-sfx.py`, iki paket). Sayaç görünüyor.
+  - Kaybetme kartındaki saat ikonu yerine tekrar ikonu: mobil ikon kümesinde
+    saat yok, "süre bitti, yeniden dene" aynı şeyi söylüyor.
+
+Yirmi beş sözlük anahtarı web-özelden mobil kaynağa taşındı ve `i18n-pull` ile
+tabana çekildi (taban 1203); webdeki kopyalar kaldırıldı.
 
 **Yalnız mobilde (6)** — hepsi doğru: `account/apple-code` (native Apple
 girişi), `config` (mobil çalışma zamanı ayarı), `me` / `premium/status` /
