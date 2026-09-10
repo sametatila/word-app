@@ -198,10 +198,9 @@ export function enabledCourses(): Course[] {
  * hazır dediğimiz bir çiftte eksik varsa CI kırılır, hazır olmayan bir çiftin
  * verisi tamamlandığında da uyarır ("artık açılabilir").
  *
- * BUGÜN YALNIZ tr→X. en→de kelime katmanında çalışıyor (karşılıklar zaten
- * vardı, kod düzeltildi) ama beceri ve ders metinleri Türkçe; de→en ayrıca
- * Almanca karşılık sütunu bekliyor. Sıra ve ölçüm
- * `docs/plan/native-language.md`'de.
+ * ÜÇ ANADİLİN ÜÇÜ DE AÇIK (2026-09-11). Sıra ve ölçüm
+ * `docs/plan/native-language.md`'de; gsw-zh yalnız Türkçe için sunuluyor
+ * (gerekçe aşağıda).
  */
 export const PAIR_READY: Record<NativeLang, CourseId[]> = {
   tr: ["de", "gsw-zh", "en"],
@@ -219,11 +218,22 @@ export const PAIR_READY: Record<NativeLang, CourseId[]> = {
   */
   en: ["de"],
   /*
-    de→en HENÜZ YOK ve eksik olan VERİ: İngilizce kursun Almanca yüzü hiç
-    yazılmadı. Üretimde `de_gloss` 0/7.175, `beispiel_de` 0/7.175; ders,
-    egzersiz ve kâğıtlarda ~17.800 Türkçe dizenin Almancası yok.
+    de→en AÇILDI (2026-09-11). Dört katman da tam:
+      kelime      üretimde 7.175/7.175 Almanca karşılık + örnek çevirisi
+                  (`db:seed:en`, 6.801 türetildi + 374 elle yazılmış)
+      ders/beceri/deneme/can-do  `check:native-de` yeşil — ders 200/200,
+                  egzersiz 189/189, kâğıt 60/60, can-do 11/11; yazan
+                  hatların kendi kapıları da CI'da (prose-de 11.011,
+                  skills-prose-de 1.725, skills-task-de 1.325, mock-prose-de
+                  6.828, cando-de 131)
+      mobil       sözlük ve çözücü dökülüyor (`dump:native`, `check:dumps`)
+      arayüz      1.411 anahtar × 3 dil (i18n:check)
+
+    Almanca kursu bu anadile HİÇ sunulmuyor, kendi dilini öğretmiyoruz —
+    `coursesForNative` hedef dile bakıyor, yani Züritüütsch de birlikte
+    düşüyor.
   */
-  de: [],
+  de: ["en"],
 };
 
 /**

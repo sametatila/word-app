@@ -204,11 +204,14 @@ export const PAIR_READY: Record<NativeLang, CourseId[]> = {
   */
   en: ["de"],
   /*
-    de→en HENÜZ YOK ve eksik olan VERİ: İngilizce kursun Almanca yüzü hiç
-    yazılmadı. Üretimde `de_gloss` 0/7.175, `beispiel_de` 0/7.175; ders,
-    egzersiz ve kâğıtlarda ~17.800 Türkçe dizenin Almancası yok.
+    de→en AÇILDI (2026-09-11). Dört katman da tam:
+      kelime      üretimde 7.175/7.175 Almanca karşılık + örnek çevirisi
+      ders/beceri/deneme/can-do  `check:native-de` yeşil — ders 200/200,
+                  egzersiz 189/189, kâğıt 60/60, can-do 11/11
+      mobil       Almanca sözlük ve çözücü pakette (`dump:native`)
+      arayüz      1.411 anahtar × 3 dil (i18n:check)
   */
-  de: [],
+  de: ["en"],
 };
 
 export function coursesForNative(lang: NativeLang): Course[] {
