@@ -880,6 +880,31 @@ Onboarding'in "Testle belirle" dalı artık misafiri `/level-test`e gönderiyor.
 Soru metinleri öğrenme içeriği olduğu için `placement-demo.ts` ham metin
 tarayıcısının içerik listesinde (`first-words.ts` gibi).
 
+### 11.7 TERS YÖN: beceri kütüphanesinde web ileride
+
+Bu turların çoğu Android'i referans aldı çünkü genelde ileride olan o. Beceri
+egzersizlerinde durum TERSİNE dönmüş ve bunu yazmadan bırakmak, sonraki turda
+yanlış yöne çekmeye yol açar.
+
+Mobilde bütün beceri türleri tek ekranda (`ItemScreen`) ve ortak bir soru
+listesiyle çiziliyor. Web'de her tür kendi oynatıcısını almış:
+
+| Oynatıcı | Web'e özel anahtar | Mobilde |
+|---|---|---|
+| `listening-player` | `listenp.*` — 9 | yok |
+| `speaking-player` | `speakp.*` — 7 | yok |
+| `writing-player` | `writp.*` — 20 | yok |
+| `player-shell` | `skillp.*` — 5 | yok |
+| `monologue-player` | `item.mono_*` — 14 | ekran var, oynatıcı yok |
+
+Web'in kapanış kartı da ileride: kazanılan XP, seri, "tekrar sayılmadı" notu,
+çevrimdışı kaydedildi hâli, yeniden dene ve SIRADAKİ egzersize bağlantı.
+Mobilde kapanış yüzde ve iki düğme.
+
+Bunu bir loop turunda kapatmak doğru değil: mobil tarafta beş yeni oynatıcı
+ve elli civarı yeni metin demek, yani ürün kararı. Buraya yazıldı ki
+"Android referanstır" kuralı bu alanda körlemesine uygulanmasın.
+
 ### 11.6 Yan bulgular
 
 - Seçim çipi mobilde dört kopya halinde yazılıydı (Ayarlar, Bildirimler, sosyal
