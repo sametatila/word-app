@@ -17,9 +17,13 @@ hangisi"*) durum uzayını üçe katlar, tek bir yeni içerik üretmez.
 | tr → de | ✅ | ✅ | ✅ |
 | tr → gsw | ✅ | ✅ | ✅ |
 | tr → en | ✅ | ✅ | ✅ |
-| **en → de** | ✅ (8707/8707 İngilizce karşılık) | ❌ Türkçe | ❌ Türkçe |
+| **en → de** | ✅ (8707/8707 İngilizce karşılık) | ✅ çözülüyor (yerelde) | ✅ çözülüyor (yerelde) |
 | **en → gsw** | ⚠️ karşılık ✅, örnek çevirisi 0/8266 | ❌ | ❌ |
 | **de → en** | ❌ Almanca karşılık sütunu yok | ❌ | ❌ |
+
+en→de'nin beceri ve ders sütunu 2026-09-10'da yeşile döndü ama `PAIR_READY`
+hâlâ boş: yazılanların hepsi YERELDE ve beyan ancak deploy'dan sonra
+doldurulur (aşağıda "Faz 3 nerede durdu").
 
 ## Ölçülen eksikler (2026-09-09)
 
@@ -1160,7 +1164,7 @@ yazılır (`data/meanings` hattının deseni).
 
 ---
 
-## Beceri ekseni — düz metin hattı BİTTİ, ikinci kalem ÖLÇÜLDÜ (2026-09-10)
+## Beceri ekseni BİTTİ — düz metin, görev metni ve kalan alanlar (2026-09-10)
 
 `data/skills/prose/` hattı 3.394 dizeyle kapandı ve çalışma anına bağlandı
 (`apply.mjs` → `NativeDict.prose` → `resolveExercise` → `localiseExercise` →
@@ -1259,19 +1263,31 @@ okuyamaz, "shtoo-DEERT", "MY-nuh" gerekir. 210 ipucunun 168'i böyleydi.
 ne sayı. Üçüncüsü kaymanın YERİNİ değil GÖRÜNDÜĞÜ yeri veriyor ve ileti
 bunu söylüyor — sınandı, gerçek eksik 130'daydı, ölçüt 139'u gösterdi.
 
-### Beceri ekseninde KALAN: ~240 dize (2026-09-10 ölçümü)
+### Beceri ekseninde KALANIN tamamı yazıldı (2026-09-10)
 
 Çözülmüş 995 egzersizin tamamı tarandı (yapının her dizesi, alan alan).
-Sonuç: 995/995 çözülüyor, ama hâlâ Türkçe kalan alanlar var. Ölçüm iki
-sınıfı AYIRIYOR, çünkü ilk sezgi ikisini karıştırıyordu:
+Sonuç: 995/995 çözülüyordu ama YÖNERGE ve AÇIKLAMA dışındaki alanlar
+hattın dışındaydı — hiçbir kapı onlara bakmıyordu, hata yalnız ekranda
+görünürdü. Dördü de artık çıkarıcıda, çözücüde ve kapıda:
 
 | kalem | benzersiz | not |
 |---|---:|---|
 | `questions[].text` | 191 | 122'si `dictation`, 48'i `truefalse`, 27'si `order` |
 | `title` | 28 | hepsi yazma egzersizi ("können: yetenek mi, imkân mı?") |
-| `tasks[].stimulus` | 21 | Almanca metnin üstündeki Türkçe çerçeve satırı |
+| `tasks[].stimulus` | 21 | çok satırlı brifing: e-posta taslağı, tebligat, toplantı notu |
 | `tasks[].source` | 1 | "Neyiniz var?" — öğrencinin Almancaya çevireceği cümle |
-| **toplam** | **~241** | |
+| **toplam** | **~241** | **hepsi yazıldı** |
+
+`tasks[].stimulus` hattın "bir satır bir dize" varsayımını kırdı: bir
+brifing 143 satır sonu taşıyor ve `write.mjs` satırı kayıt sanıyordu.
+Girdide tek başına duran `%%` artık kayıt ayracı — eski yirmi dört paket
+hiç değişmeden yazılmaya devam ediyor. Kapı da üç yerde genişledi (satır
+sonu, `€`, Almanca metnin altındaki Türkçe imza) ve üçü de ölçülerek.
+
+Kapının yeni bir işi daha var: `check:skills-native` çözülmüş çıktıyı
+TEKRAR tarıyor. Sözlükte karşılık yoksa çözücü zaten `null` dönüyor;
+bu tarama ise ÖLÇÜTÜN kendisi kayarsa (`isTurkishStem` daralırsa) sessiz
+kalmayı önlüyor — kural kendi kendini ölçmez.
 
 BOŞLUK OLMAYAN 137 dize ayrıca sayıldı ve bilerek dışarıda: Türkçe AD
 taşıyan Almanca cümleler (`Sind Sie Frau Yılmaz?`, `Frau Yılmaz` konuşmacı
@@ -1291,30 +1307,53 @@ var mı.
 | Modül sınavı kâğıtları | ✅ 1.781/1.781 · bağlı |
 | Can-do ifadeleri | ✅ kaynakta `en` dolu |
 | Beceri düz metni (`intro`, `questions.explain`) | ✅ 3.394/3.394 · bağlı |
-| Beceri görev metni (19 alan) | ✅ 3.426/3.426 · bağlı |
+| Beceri görev metni (27 alan) | ✅ 3.715/3.715 · kapı: `check:skills-task` |
 | Egzersiz sözlükçesi (`gloss`, `phrases`) | ✅ 5.633 katlanıyor |
 | Kelime havuzu | ✅ 8.707/8.707 `en` dolu · kapı: `test:gloss` |
 | Arayüz metinleri | ✅ 1.203 anahtar × 3 dil · kapı: `i18n:check` |
-| **Beceri egzersizlerinin kalanı** | ❌ ~241 dize |
-| **Deneme kâğıtları (60 Almanca kâğıt)** | ❌ 4.920 dize |
+| Beceri egzersizlerinin kalanı (kök, şık, başlık, brifing) | ✅ 241/241 · kapı: `check:skills-native` |
+| Deneme kâğıtları (60 Almanca kâğıt) | ✅ 6.627/6.627 · kapı: `check:mock-prose` |
 
-**Deneme kâğıtları eksenin EN BÜYÜK kalemi ve bugüne kadar hiç ölçülmemişti.**
-60 Almanca kâğıtta 4.920 benzersiz Türkçe dize (6.366 geçiş):
+Tablo artık baştan sona yeşil. **`PAIR_READY.en` yine de BOŞ** ve bu bir
+unutma değil: yazılanların hepsi YERELDE duruyor. Beyan, kod canlıya
+çıktıktan sonra doldurulur — push Samet'te. Sıra: push → deploy → `en`
+beyanı → `check:pairs`in "!" işareti.
 
-| alan | benzersiz | ne |
-|---|---:|---|
-| `items[].explain` | 2.168 | cevaptan sonraki gerekçe |
-| `rubric.criteria[]` | 757 | değerlendirme ölçütleri |
-| `promptTr` | 434 | görev yönergesi |
-| `texts[].situation` | 341 | durum tarifi |
-| `exchange[].tr` / `.hint` / `.expect` | 798 | konuşma bölümü |
-| `rubric.points[].tr` | 242 | içerik noktaları |
-| `parts[].instructionTr` · `themeTr` · öteki | 180 | bölüm yönergesi ve tema |
+**Deneme kâğıtları eksenin EN BÜYÜK kalemiydi ve bugüne kadar hiç
+ölçülmemişti.** İlk ölçüm 4.920 dedi, hat kurulunca gerçek sayı **6.627**
+çıktı — %35 fark. Sebep ölçüm hatası değil, ÖLÇÜTÜN kendisi: ilk sayım
+"Türkçe görünen" dizeleri sayıyordu (beceri ekseninde 445 → 241 yapan aynı
+işlev-sözcüğü ölçütü), çıkarıcı ise ALANI sayıyor. Alan Türkçe-yüzlüyse
+İngilizcesi olmak zorundadır; ölçütün onu Türkçe sayıp saymaması ayrı bir
+şey. Aradaki 1.707 dizenin çoğu kısa ve işlev sözcüğü taşımayan gerekçe
+(`explain` 2.168 → 3.060), bir kısmı da hiç ayrı sayılmamış bir alan
+(`genreTr` 381, ilk tabloda üç alanlık 180'lik "öteki" satırının içindeydi).
 
-Ders ekseninin sınav hattı (1.781) bunun üçte biri kadardı. Sıra buysa,
-hat deseni aynı: `data/mock-exams/prose/` altında `make` → `in/` → `out/`
-→ `check`, anahtar `alan + AYRAÇ + tr` (kâğıtlar arasında aynı Türkçe
-gerekçe farklı soruda farklı şey anlatabiliyor).
+**Türkçe-görünürlük ölçütü kapsam ölçmez.** Kapsam alandan çıkar.
+
+| tür | benzersiz | geçiş | ne |
+|---|---:|---:|---|
+| `explain` | 3.060 | 3.060 | cevaptan sonraki gerekçe |
+| `rubric.criteria` | 757 | 1.316 | değerlendirme ölçütleri |
+| `situation` | 563 | 582 | durum tarifi |
+| `promptTr` | 439 | 732 | görev yönergesi |
+| `rubric.points.tr` | 405 | 934 | içerik noktaları |
+| `genreTr` | 381 | 980 | metnin türü |
+| `exchange.tr` · `.hint` · `.expect` | 877 | 1.068 | konuşma bölümü |
+| `instructionTr` | 85 | 240 | bölüm yönergesi |
+| `themeTr` | 60 | 60 | bölüm teması |
+| **toplam** | **6.627** | **8.972** | |
+
+Anahtar `tür + AYRAÇ + tr` ve bu hatta gerçekten fark yarattı: yalnız
+dizeye bakılsa 6.626 olurdu, yani bir dize iki türde iki ayrı şey anlatıyor.
+Tek satırlık bir kazanç gibi görünüyor ama kuralı ucuza doğruluyor —
+anahtarı dizeye indirmek o satırı sessizce yanlış çevirirdi.
+
+Ders ekseninin sınav hattı (1.781) bunun dörtte biri kadardı. Hat deseni
+yine aynı kuruldu — `data/mock-exams/prose/` altında `make` → `in/` →
+`out/` → `check` — ve 6.627/6.627 yazıldı. `check:mock-prose`, CI'da
+"Ana dil çözücüsü" adımının BEŞİNCİ kapısı; hat yarım dururken bilerek
+dışarıdaydı, çünkü kırmızı bir kapı kimsenin bakmadığı bir kapıya dönüşür.
 
 **Ölçüm nasıl yapıldı — ve neden iki kez yapıldı.** İlk sezgi "Türkçeye
 özgü harf ya da Türkçe işlev sözcüğü" idi ve 445 dize buldu. Ama harf
@@ -1323,3 +1362,51 @@ cümledir, `Frau Yılmaz` bir konuşmacı adıdır, `Ayla Yıldız` bir form
 cevabıdır — üçü de İÇERİK ve çevrilmeleri egzersizi bozar. Harf ölçütü
 atıldı, yalnız işlev sözcüğü kaldı; ayrıca `de`, `da`, `ya`, `her` gibi
 Almancada da geçen sözcükler listeden çıkarıldı. 445 → 241.
+
+---
+
+## Faz 3 nerede durdu (2026-09-10)
+
+**Almanca kursun Türkçe yüzü baştan sona İngilizceye çözülüyor.** Beş kapı
+CI'da "Ana dil çözücüsü" adımında, hepsi yeşil:
+
+| kapı | ne ölçüyor | sayı |
+|---|---|---|
+| `check:lessons-native` | ders anlatımı, sözlükçe, kalıp, rol yapma, senaryo, sınav | 26.375/26.375 |
+| `check:lessons-swap` | öğrenciye söyletilen Almanca cümleler | 25 + 17 |
+| `check:skills-native` | çözülmüş egzersiz çıktısında Türkçe kaldı mı | 995/995 |
+| `check:skills-task` | beceri görev metni (27 tür) | 3.715/3.715 |
+| `check:mock-prose` | deneme kâğıtları (11 tür) | 6.627/6.627 |
+
+İlk üçü sözlüğü yeniden kurup yazılanın UYGULAMAYA ULAŞTIĞINI ölçüyor,
+son ikisi YAZILANI ölçüyor. Ayrım kasıtlı: bir hat tamamlanabilir ve yine
+de çözücüye bağlanmamış olabilir; iki soruyu tek kapıya sormak, birini
+sessizce cevapsız bırakır.
+
+### Kalan üç iş — üçü de benim elimde değil
+
+1. **Push ve deploy.** Yazılanların tamamı yerelde. `PAIR_READY.en`
+   doldurulmadan önce kod canlıda olmalı, yoksa beyan yalan olur:
+   uygulama İngilizce sözlüğü olmayan bir sürüm sunar. Push Samet'te.
+2. **`npm run db:seed` — en→de kelime katmanı.** Üretim veritabanına
+   yazma; ayrıca sorulur ve henüz cevap gelmedi.
+3. **de→gsw bir parite mi?** Züritüütsch hattı 2026-08-24'te durduruldu.
+   Almanca konuşan birine Züritüütsch öğretmek ayrı bir ürün kararı;
+   `PAIR_READY`ye eklenip eklenmeyeceği kod sorusu değil.
+
+### Bu fazda üç kez tekrarlanan ders
+
+**Kapı yanlış öterse ÖLÇ, sonra TÜRKÇE tarafı genişlet.** Deneme kâğıtları
+hattında kapı üç kez yanlış öttü ve üçünde de refleks "Almanca ölçütünü
+daralt" idi. Ölçüldüğünde: daraltma 3 yanlış pozitifi düzeltirken 107
+gerçek Almanca açıklığı kaybediyordu. Türkçe tarafı genişletmek aynı üçünü
+düzeltip 2.991 açıklığın 2.988'ini koruyor. Kanıtı korumak, gürültüyü
+susturmaktan önce gelir.
+
+**Türkçe-görünürlük ölçütü KAPSAM ölçmez.** Deneme kâğıtları 4.920 sanıldı,
+6.627 çıktı; fark, ölçütün Türkçe saymadığı kısa gerekçeler ve hiç ayrı
+sayılmamış bir alan. Kapsam alandan çıkar, dizeye bakan bir sezgiden değil.
+
+**Yarım hat kapıya bağlanmaz.** `check:mock-prose` 1.800/6.627'yken CI'ya
+eklenseydi ay boyunca kırmızı yanardı; kırmızı bir kapı okunmaz hâle gelir
+ve okunmayan kapı, olmayan kapıdır.

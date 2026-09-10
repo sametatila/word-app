@@ -69,7 +69,7 @@ export const KINDS = [
   "free.checklist",
   "build.tr",
   "build.hint",
-  /* EN SONDA ve bilerek: bu ikisi hat 3.426/3.426'yken eklendi ve
+  /* EN SONDA ve bilerek: bu beşi hat 3.426/3.426'yken eklendi ve
      t-001..t-023 paketlerinin kayması yasak. `rank` KINDS sırasına
      baktığı için sona eklemek eskileri hiç oynatmıyor. */
   "question.text",
