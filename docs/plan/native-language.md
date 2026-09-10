@@ -1403,7 +1403,46 @@ Patika kancasındaki `titleTr` ayrıca bakıldı: web onu HİÇ çizmiyor
 üzerinden yalnız mobile gidiyor. `genre` de bakıldı ve Türkçe değil —
 26 benzersiz değerin hepsi makine anahtarı (`dialogue`, `formal`, `phone`).
 
-### Kalan üç iş — üçü de benim elimde değil
+### MOBİL: İngilizce yüz hiç yok (2026-09-10 ölçümü)
+
+Web bitti; mobil bitmedi ve bugüne kadar hiç ölçülmemişti.
+
+`mobile/src/data/` altındaki paketler KURSA göre dizili, `(anadil, kurs)`
+çiftine göre değil: `exercises.json` + `de-a1…c1.json` + `papers.json`
+Almanca kursun **Türkçe yüzünü** taşıyor, `-en` ekli eşleri ise İngilizce
+KURSUN paketleri (anadili İngilizce olan biri İngilizce kursu almıyor).
+Çözücü mobilde hiç çalışmıyor; `dump-*-mobile.ts` betiklerinin üçü de
+`process.argv[2]` ile yalnız kursu alıyor, anadili değil.
+
+**Bugün bir şey bozulmuyor** ve bu bir tesadüf değil: mobildeki
+`PAIR_READY.en` de boş, `offeredNativeLangs()` hazır çifti olmayan dili
+seçtirmiyor. Yani yarım çeviri kullanıcıya hiç görünmüyor.
+
+**Ama `PAIR_READY.en` yalnız web'de doldurulamaz.** Tablo iki yerde duruyor
+(`src/lib/courses.ts` ve `mobile/src/lib/courses.ts`); web'de doldurulup
+mobilde doldurulmazsa aynı hesap iki cihazda iki farklı katalog görür.
+Mobil hazır olmadan beyan yapılamaz.
+
+Maliyet ölçüldü, iki yol var ve ikisi de ucuz değil:
+
+| yol | ek yük | not |
+|---|---:|---|
+| Çözülmüş ikinci kopya (`exercises.en.json`, `de-a1.en.json`, …) | **+8,40 MB** | paket dizini `(anadil, kurs)` olur; çözücü mobile hiç girmez |
+| Sözlük + çözücü mobile taşınır | **+4,62 MB** + 867 satır | `native-en.json` olduğu gibi gider, çözüm cihazda olur |
+
+Sözlük yolu %45 daha küçük çünkü Almanca içeriği İKİNCİ KEZ taşımıyor —
+yalnız Türkçe→İngilizce eşlemeleri, tekilleştirilmiş. Bedeli, `native.ts`in
+mobilde İKİNCİ BİR KOPYASI: mobil `src/`i göremiyor. `taskSeconds` ile aynı
+durum ve orada kural yazılı — "ikisi birlikte değişir; ayrılırlarsa
+oynatıcının saati kâğıdın süresiyle çelişir".
+
+Üçüncü bir yol (İngilizce paketi ağdan indirmek) DEĞERLENDİRİLDİ ve elendi:
+içerik bilerek pakete gömülü, çevrimdışı çalışması gerekiyor.
+
+Karar ürün kararı: 4,62 MB'lık bir APK büyümesi mi, iki yerde duran bir
+çözücü mü, yoksa mobilde en→de'nin şimdilik kapalı kalması mı.
+
+### Kalan dört iş — dördü de benim elimde değil
 
 1. **Push ve deploy.** Yazılanların tamamı yerelde. `PAIR_READY.en`
    doldurulmadan önce kod canlıda olmalı, yoksa beyan yalan olur:
@@ -1413,6 +1452,8 @@ Patika kancasındaki `titleTr` ayrıca bakıldı: web onu HİÇ çizmiyor
 3. **de→gsw bir parite mi?** Züritüütsch hattı 2026-08-24'te durduruldu.
    Almanca konuşan birine Züritüütsch öğretmek ayrı bir ürün kararı;
    `PAIR_READY`ye eklenip eklenmeyeceği kod sorusu değil.
+4. **Mobilde hangi yol?** Yukarıdaki tablo iki yolu ve ikisinin de
+   ölçülmüş bedelini veriyor; hangisinin seçileceği ürün kararı.
 
 ### Bu fazda üç kez tekrarlanan ders
 
