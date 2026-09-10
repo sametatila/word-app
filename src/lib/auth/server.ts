@@ -89,6 +89,24 @@ export const auth = betterAuth({
       kullanıcı hangisinin doğru olduğunu bilemez.
     */
     minPasswordLength: MIN_PASSWORD_LENGTH,
+    /**
+     * SIFIRLAMA ESKİ OTURUMLARI DA DÜŞÜRÜR.
+     *
+     * Parolasını sıfırlayan kişinin sebebi çoğu zaman "hesabıma başkası girdi"
+     * oluyor. Bayrak kapalıyken sıfırlama o kişiyi DIŞARI ATMIYORDU: oturum
+     * çerezi 30 gün geçerli ve parolaya bağlı değil, yani saldırgan parola
+     * değişse de aynı çerezle okumaya, yazmaya, hatta hesabı silmeye devam
+     * ediyordu. Kullanıcı ise sorunu çözdüğünü sanıyordu — sessiz olduğu için
+     * en kötü türden bir açık.
+     *
+     * Açıkken better-auth sıfırlama başarılı olur olmaz o kullanıcının BÜTÜN
+     * oturumlarını siliyor (api/routes/password.mjs). Bedeli, kişinin öteki
+     * cihazlarında da yeniden giriş yapması; sıfırlama zaten yeni parolayı
+     * bildiği an oluyor, yani bedel bir kez ve küçük.
+     *
+     * OWASP ASVS 3.3.1 ve NIST SP 800-63B'nin doğrudan istediği davranış.
+     */
+    revokeSessionsOnPasswordReset: true,
     sendResetPassword: async ({ user: u, url }) => {
       // Dil isteğin kendisinden: dil çerezi, yoksa tarayıcının Accept-Language'i
       // (bkz. lib/i18n/server). Profil okumak burada işe yaramaz — sıfırlama
