@@ -24,7 +24,8 @@ eğitim uygulaması olarak doldurulur (Play'in anketinde eğitim seçeneği bu g
 
 | Soru | Cevap | Dayanak |
 |---|---|---|
-| Şiddet, cinsellik, uyuşturucu, kumar, kaba dil içeriği | Hayır | Ders içerikleri sınav odaklı; STT küfür maskeli; promptlarda güvenlik sınırları |
+| Şiddet, cinsellik, kumar, kaba dil içeriği | Hayır | ÖLÇÜLDÜ (2026-09-10): cinsellik ve şiddet tasviri sıfır; `Gewalt` yalnız B1 hırsızlık ünitesinde kelime maddesi, silah geçişleri mecaz |
+| Alkol, tütün, uyuşturucu ATFI | **Evet, seyrek** | 8.707 kelimenin 14'ü: `Bier`, `Wein`, `rauchen`, `Zigarette` (A1), `Alkohol`, `Kneipe`, `Droge` (B1). IARC bu soruyu ayrı soruyor; App Store'da aynı cevap dereceyi 4+'tan 13+'a çekti |
 | Kullanıcılar birbiriyle etkileşiyor mu | **Evet, sınırlı** | Haftalık sıralamada görünen ad; arkadaşlık, tepki, dürtme; özel mesajlaşma yok |
 | Kullanıcı üretimi içerik başkalarına görünüyor mu | Evet (görünen ad, kullanıcı adı, biyografi) | Moderasyon: ad filtresi, bildir/engelle, insan incelemesi |
 | Kişisel bilgi paylaşımı | Kullanıcı isterse görünen ad | Konum paylaşımı yok |
@@ -32,6 +33,7 @@ eğitim uygulaması olarak doldurulur (Play'in anketinde eğitim seçeneği bu g
 | Dijital satın alma | **Evet** (abonelik) | Manifest zaten `com.android.vending.BILLING` taşıyor (react-native-purchases) ve premium ürünün parçası; bkz. aşağıdaki karar |
 | Reklam | Hayır | Reklam SDK'sı yok |
 | Yapay zekâ ile etkileşim / üretilen içerik | **Evet** | Rol yapma diyalogları ve değerlendirme; uygulama içi bildirme |
+| Yarışma (contests) | **Evet, sürekli** | Haftalık lig: küme başına sıralama, yükselme/düşme, haftalık sıfırlama. "Ödülsüz" olması tanımı değiştirmiyor — App Store anketinde ilk taslak bu yüzden yanlıştı, bkz. `docs/appstore/listing.md` §2.3 |
 
 
 > **Karar (2026-09-09):** premium ilk sürümde AÇIK sayılıyor. Abonelik satın alma
@@ -41,8 +43,11 @@ eğitim uygulaması olarak doldurulur (Play'in anketinde eğitim seçeneği bu g
 > "aslında satın alma da varmış" demek, mağaza gözünde beyanın düzeltilmesi değil
 > YANLIŞ BEYAN olur.
 
-Beklenen sonuç: PEGI 3 / ESRB Everyone, "Kullanıcı etkileşimi" ve "Dijital satın alma"
-etiketleriyle.
+Beklenen sonuç: alkol/tütün atfı ve yarışma cevapları PEGI 3'ü yukarı çekecek —
+App Store'da aynı cevaplar 13+ verdi. **Hedef kitle 18+ olarak kalıyor** ve App Store
+derecesi de 2026-09-10'da elle 18+'a yükseltildi; üç beyan (Play hedef kitlesi,
+App Store derecesi, şartlar §3) artık aynı sayıyı söylüyor. Gerekçe:
+`docs/appstore/listing.md` §2.4.
 
 ## 3. Mağaza listesi
 

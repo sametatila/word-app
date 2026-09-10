@@ -95,56 +95,69 @@ sorularının yanına **yetenek (capability)** soruları ekledi: kullanıcı ür
 mesajlaşma, sınırsız web erişimi, reklam, uygulama içi denetimler. Bizim derecemizi
 yukarı taşıyabilecek olan bu ikinci grup.
 
-### 2.3 Anket cevapları
+### 2.3 Anket cevapları — Connect'te dolduruldu (2026-09-10)
 
-| Anket başlığı | Cevap | Dayanak |
+Anket 2025'te yeniden düzenlendi: içerik soruları artık **None / Infrequent / Frequent**
+üçlüsüyle soruluyor ve yanlarına bir **yetenek** grubu geldi. Aşağıdaki cevaplar
+tahminle değil, içerik TARANARAK verildi — üç tanesi bu yüzden ilk taslaktan farklı.
+
+**Yetenekler**
+
+| Soru | Cevap | Dayanak |
 |---|---|---|
-| Şiddet (çizgi film / fantastik / gerçekçi) | Yok | Ders içeriği sınav odaklı |
-| Cinsel içerik veya çıplaklık | Yok | — |
-| Müstehcen mizah / kaba dil | Yok | STT sonucunda küfür maskeleniyor; moderasyon süzgeci `src/lib/moderation.ts` |
-| Korku / gerilim | Yok | — |
-| Alkol, tütün, uyuşturucu | Yok | — |
-| Kumar (gerçek ya da simüle) | Yok | Şans oyunu, kutu, çekiliş yok |
-| Tıbbi / tedavi bilgisi | Yok | "Doktor randevusu" bir rol yapma sahnesi; tıbbi tavsiye verilmiyor |
-| Yarışma (contests) | Yok | Haftalık sıralama ödülsüz |
-| **Sınırsız web erişimi** | **Hayır** | Uygulama içi tarayıcı yok. Hukuki sayfalar `Linking.openURL` ile SİSTEM tarayıcısında açılıyor (`mobile/src/lib/legal.ts`); tek WebView `${API_BASE}/tts-bridge` sayfasını yüklüyor ve gezinme yüzeyi değil (`mobile/src/lib/ttsBridge.tsx:128`) |
-| **Kullanıcı üretimi içerik** | **Evet** | Görünen ad, kullanıcı adı ve biyografi başkalarına görünüyor. Süzgeç + bildir/engelle + insan incelemesi var |
-| **Kullanıcılar arası mesajlaşma** | **Hayır** | Özel mesajlaşma yok. Arkadaşlık, tepki ve dürtme sabit biçimli; serbest metin taşımıyor |
-| **Reklam** | Hayır | Reklam SDK'sı yok |
-| Uygulama içi satın alma | **Evet** | Ürün premium'lu yayımlanıyor (2026-09-09 kararı); Connect'te ayrı alan, ankete girmiyor. Satın alma akışı RevenueCat bağlanınca açılır |
+| Parental Controls / Age Assurance | Hayır | Kodda yaş kapısı yok; şartlardaki 18 sınırı sözleşme koşulu |
+| Sınırsız web erişimi | **Hayır** | Uygulama içi tarayıcı yok. Hukuki sayfalar `Linking.openURL` ile SİSTEM tarayıcısında; tek WebView `${API_BASE}/tts-bridge` ve gezinme yüzeyi değil |
+| Kullanıcı üretimi içerik | **Evet** | Görünen ad, kullanıcı adı ve biyografi başkalarına dağıtılıyor (sıralama, profil). Süzgeç + bildir/engelle + insan incelemesi var |
+| **Social Media** | **Hayır** | Apple'ın tanımı "kullanıcı içeriğinin bir akış üzerinden yayılması". `activity_events` YALNIZ sistem olayları taşıyor (`streak_milestone`, `achievement`, `friend_joined`, `quest_completed`, `weekly_top`, `friend_streak`); tepkiler altı sabit türden, serbest metin yok |
+| Kullanıcılar arası mesajlaşma | **Hayır** | Özel mesajlaşma yok; arkadaşlık, tepki ve dürtme sabit biçimli |
+| Reklam | Hayır | Reklam SDK'sı yok |
+
+**İçerik**
+
+| Soru | Cevap | Dayanak |
+|---|---|---|
+| Müstehcen mizah / kaba dil | None | Ders içeriği sınav odaklı; STT sonucunda küfür maskeleniyor (`src/lib/moderation.ts`) |
+| Korku / gerilim | None | — |
+| **Alkol, tütün, uyuşturucu** | **Infrequent** | ÖLÇÜLDÜ: 8.707 kelimenin 14'ü — `Bier`, `Wein` (A1), `rauchen`, `Zigarette` (A1), `Alkohol`, `betrunken`, `Kneipe`, `Prost`, `Raucher`, `Nichtraucher`, `Droge`, `Sucht`, `süchtig` (B1), `anstoßen` (A2). Atıf var, yani None yanlış beyan olurdu; binde iki, yani Frequent de değil |
+| Tıbbi / tedavi bilgisi | None | "Doktor randevusu" bir rol yapma sahnesi. A2'deki iki sağlık dersi (`Sağlık sigortası`, `Check-up`) dil pratiği — teşhis ya da yönetim yönlendirmesi yok. **Frequent deseydik "Regulated Medical Device" beyanı açılırdı** |
+| Health or Wellness Topics | Hayır | "Check-up" dersi `sollte` ile öneri kurmayı öğretiyor; öneri kullanıcıya değil, dilbilgisi hedefine ait |
+| **Mature or Suggestive Themes** | **Infrequent** | ÖLÇÜLDÜ: 269 içerik dosyasında 107 geçiş — `arbeitslos`/`Arbeitslosigkeit` 34, `Tod`/`sterben` 25, `Trennung` 13, `Einsamkeit` 12, `Migration` 10, `Flucht` 5. B1-C1 metinlerinin doğal konuları; tanımın "yetişkin kitleye yönelik gerçek dünya konuları" yarısına giriyor |
+| Cinsel içerik / çıplaklık (üç kademe) | None | ÖLÇÜLDÜ: `sex`, `sexuell`, `erotik`, `nackt`, `intim` — 269 dosyada sıfır geçiş |
+| Şiddet (dört kademe, silahlar dahil) | None | ÖLÇÜLDÜ: `Gewalt` 14 geçişin tamamı B1 hırsızlık ünitesinde (`b1-u37`) kelime listesi maddesi ve metin "hırsızlıkta neredeyse hiç şiddet kullanılmaz" diyor. `Krieg` 9 — dedenin savaştan hiç söz etmemesi (`b1-u34`). `Angriff` 4 ve `Kampf` 2 — hepsi mecaz ("bir laf atma saldırı değildir", "pazar payı savaşı"). Silah geçişi iki tane ve ikisi de mecaz ("taviz bir silahtır", "kendimize karşı mühimmat"); havuzdaki tek kesici alet `Messer` = çatal-bıçak. Tasvir yok |
+| **Contests** | **Frequent** | İLK TASLAK YANLIŞTI. "Ödülsüz" diye None yazılmıştı, ama Apple'ın tanımı ödül şartı koymuyor: *"compete with one another for **rankings**, rewards, or the achievement of personal goals"*. Haftalık lig — küme başına sıralama, yükselme/düşme (`leagues`, CI'da `test:league`), haftalık sıfırlama, sıralama bildirimi — tanıma birebir giriyor ve sürekli çalışıyor |
+| Simulated Gambling / Gambling / Loot Boxes | None / Hayır / Hayır | Bahis yok; başarımlar ve görevler tamamen belirlenimci, rastgele içerik veren satın alınabilir kutu yok |
+| Uygulama içi satın alma | **Evet** | Connect'te ayrı alan, ankete girmiyor |
 | Yapay zekâ ile üretilen içerik | **Evet** | Rol yapma diyalogları; "gerçek kişi değil" bildirimi kalıcı, her yanıtın altında "Bildir" |
 
-**Beklenen sonuç ve uyarı:** içerik soruları tamamen "yok" olduğu için hesaplanan derece
-Play'deki IARC sonucuyla aynı yerde, yani DÜŞÜK çıkacak; kullanıcı üretimi içerik ve
-yapay zekâ soruları onu bir kademe yukarı çekebilir. Kesin kademe anketin o günkü
-biçimine bağlı ve **burada doğrulanamaz** — Connect'te form doldurulunca hesaplanan
-değer bu belgeye yazılmalı.
+**Sonuç: hesaplanan 13+, ELLE 18+'a yükseltildi.**
 
-### 2.4 İki mağaza neden farklı görünecek — ve inceleyene ne denecek
+Alkol atıfları ve gerçek dünya konuları dereceyi 4+'tan 13+'a çekti. Aynı iki cevap
+yüzünden Apple uygulamayı **Afganistan ve Fas'ta satmıyor** — yerel mevzuat, otomatik,
+düzeltilecek bir şey değil.
 
-App Store'da hesaplanan derece büyük olasılıkla **18+'ın altında** kalacak, oysa kendi
-kullanım şartlarımız hesap açmayı 18 yaşla sınırlıyor. Bu bir tutarsızlık **değil**, iki
-farklı şeyin ölçüsü:
+### 2.4 Neden 18+'a yükseltildi
 
-- **Yaş derecelendirmesi içeriğin uygunluğunu** anlatır. İçerikte yaş yükseltecek bir şey
-  gerçekten yok.
-- **18 sınırı bir sözleşme koşulu.** Kaynağı şartlar §3; sebebi açık uçlu yapay zekâ
-  sohbeti ve serbest metinli sosyal katman, içeriğin sertliği değil.
+Hesaplanan derece içeriğin sertliğini ölçüyor ve 13+ o ölçüme göre doğru. Ama hesap
+açmak **şartlar §3 gereği 18 yaş ve üzeri** ve Play'de hedef kitle de 18+. Üç beyandan
+biri ötekileri tutmayınca hem inceleyene açıklama borcu doğuyor hem de gerçek bir açık
+kalıyor: kodda yaş kapısı yok, yani 13+ diyen bir vitrin on dört yaşındaki birini
+kurmaya davet ediyor ve o kişinin sesi konuşma tanıma sağlayıcılarına, yazdığı metin dil
+modellerine gidiyor — KVKK ve GDPR'da veli onayı gerektiren bir akış.
 
-Yapılacaklar, tam bu sırayla:
+Apple'ın **Override to Higher Age Rating** kutusu tam bu durum için var; kendi metni
+*"has a EULA with age requirements"* diyor. Kullanıldı.
 
-1. Ankete **doğru** cevap verilir. Dereceyi yukarı zorlamak için yanlış cevap işaretlemek
-   metadata ihlalidir; Apple zaten dereceyi kendisi hesapladığı için işe de yaramaz.
-2. "Made for Kids" / Kids kategorisi **seçilmez**, uygulama Çocuklar kategorisine
-   girmez.
-3. Vitrinde çocuk vurgusu olmaz: ekran görüntülerinde ve metinlerde "çocuk", "kids",
-   "eğlenceli oyun" geçmez; maskot yalnız uygulama içinde kalır (Play'deki kuralın aynısı).
-4. **App Review Information notlarına** bir cümle yazılır: hesap açmak kullanım şartları
-   §3 gereği 18 yaş ve üzeri içindir, uygulama açık uçlu yapay zekâ sohbeti ve serbest
-   metinli bir sosyal katman içerdiği için bu sınır konmuştur. İnceleyenin "derece 4+ ama
-   şartlar 18 diyor" sorusunu soracağı yer burası.
-5. Play'deki hedef kitle 18+ **değiştirilmez**. İki mağazanın sayısı farklı olacak ve
-   sebebi bu belgede yazılı; sayıları eşitlemeye çalışmak ikisinden birini yanlış yapar.
+Kararın bedeli gerçek ve bilinerek ödendi: 18+ etiketi keşfedilirliği düşürüyor ve bazı
+bölgelerde ebeveyn denetimine takılıyor. Karşılığında App Store, Play ve sözleşme aynı
+sayıyı söylüyor.
+
+Değişmeyen kurallar:
+
+1. Ankete **doğru** cevap verilir. Dereceyi yukarı zorlamak için yanlış cevap
+   işaretlemek metadata ihlalidir — override zaten sağlanan yol, anketi eğmeye gerek yok.
+2. "Made for Kids" / Kids kategorisi **seçilmez**.
+3. Vitrinde çocuk vurgusu olmaz: metinlerde ve karelerde "çocuk", "kids", "eğlenceli
+   oyun" geçmez; maskot yalnız uygulama içinde (Play'deki kuralın aynısı).
 
 ---
 
