@@ -31,6 +31,7 @@
     "test:gloss": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/test-gloss.ts",
     "test:league": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/test-league.ts",
     "check:en-de": "node data/en-de/check.mjs",
+    "check:parity": "node scripts/parity-check.mjs",
     "check:pairs": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/check-pairs.ts",
     "test:legal-db": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/test-legal-db.ts",
     "test:entitlement": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/test-entitlement.ts",
