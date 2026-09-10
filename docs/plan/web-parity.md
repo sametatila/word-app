@@ -1815,3 +1815,27 @@ kolaylaştırıyor:
 `--baseline` BU OTURUMDA ÇALIŞTIRILMADI: SPEC onu "bilinçli kabul" diye
 tanımlıyor, yani içeriği yazan tarafın kararı, ve başka bir oturumun taban
 dosyasını sessizce yeniden yazmak o kararı gasp etmek olurdu.
+
+#### Beceri tarafı ölçüldü: bir etiketin borcu TAMAMEN ödenmiş, tabanı bayat
+
+`npm run test:content -- skills` GEÇİYOR (363 uyarı, bütçe içinde). Ama tabanda
+en büyük kalem duruyordu: `skills: en yok` → 1209.
+
+O etiket bugün SIFIR uyarı üretiyor. Kural yalnız ALMANCA kurs egzersizlerinde
+işliyor (`!g.en && !english`), yani Almanca sözlükçesi İngilizce karşılığı
+olmayan girdiler için; İngilizce kursun kendi girdileri kuralı hiç tetiklemiyor.
+Demek ki İngilizce karşılık kampanyası bitmiş ve borç kapanmış.
+
+TABAN 1209'DAN 0'A İNDİRİLDİ. Sebep, betiğin kendi tasarım notunda yazılı:
+"etiket başına tavan: hiçbir kategori büyüyemez". 1209'luk bayat tavan, o
+kategorinin sessizce 1209 uyarıya kadar geri büyümesine izin veriyordu - kapı
+orada hiçbir şey söylemezdi. Bu bir borç KABULÜ değil, tam tersi: kapıyı
+sıkmak, ve ratchet'in kendi kuralı ("sayı yalnız aşağı inebilir") bunu
+gerektiriyor.
+
+Riski ölçüldü ve düşük: kural İngilizce kurs girdilerini atladığı için
+sürmekte olan beceri kütüphanesi işi (İngilizce egzersizler) bu etiketi
+tetikleyemez. Yalnız Almanca bir egzersiz İngilizce karşılıksız eklenirse
+kırmızı olur - ki bugünkü standart tam olarak bunu yasaklıyor.
+
+Üç ders etiketine DOKUNULMADI; onlar hâlâ içeriği yazan tarafın kararı.
