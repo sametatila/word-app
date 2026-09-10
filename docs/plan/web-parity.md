@@ -5540,3 +5540,38 @@ gösterir.
 **Başka oturumun açık işi:** `autherrorw.invalid_code` şu an ölü anahtar
 (iki adımlı doğrulama paketi yazılıyor, henüz bağlanmadı). Bana ait değil,
 dokunulmadı.
+
+
+### 11.148 Aynı sınıf hatanın kalan iki yeri: ders ve haftalık sınav
+
+§11.147'nin sorusunu iki uca daha sordum. İkisi de aynı biçimde kaybediyordu.
+
+**Ders (`/api/lesson`) — iki tarafta da.** Ders bitince sonuç yazılıyor, ağ
+yoksa istek düşüyor ve bir daha denenmiyordu. Yerel işaret (`markItemDone`)
+Patika'yı bitmiş gösterdiği için hata GÖRÜNMÜYOR: kullanıcı dersi bitmiş
+sanıyor, sunucu onu hiç öğrenmiyor — XP verilmiyor, aralıklı tekrar merdiveni
+kurulmuyor, cihaz değişince ders geri geliyor. Kayıt artık kendi günüyle
+kuyruğa alınıyor; iki kuyruk ayrı teknolojide (AsyncStorage / localStorage)
+ama aynı sözleşmeyi tutuyor ve §66 bunu ölçüyor: aynı depolama anahtarı, kendi
+`day`i, ders başına tek kayıt, 4xx kuyruğa girmiyor, biri düşünce kalanı
+kuyrukta kalıyor.
+
+**Yanında çıkan web hatası:** web `/api/lesson`a `day` ve `seconds`i **hiç
+göndermiyordu**. Yani her ders sunucuda sıfır saniye görünüyor, ve gece
+yarısından sonra bitirilen ders kullanıcının değil SUNUCUNUN gününe (UTC)
+yazılıyordu — seri yanlış güne düşüyor. Mobil ikisini de baştan beri
+gönderiyor. Bunu kuyruğun gövdesini eşlerken kapının kendisi söyledi
+("yalnız mobil: day, seconds").
+
+**Haftalık sınav.** Haftada tek hak var. Sonuç yazılamayınca web hata kartına
+düşüp puanı ekrandan siliyordu (on dakikalık sınav yok oluyor); mobil puanı
+gösteriyor ama **kaydedilmediğini söylemiyordu** — bu da kullanıcıyı hakkını
+harcadığı sanısına bırakıyor. İkisi de düzeldi: yerel puan + açık uyarı
+(`weekly.not_sent`). Bu kez eksik olan taraf webdi, yani ölçüm yine yönü
+kendisi seçti.
+
+**Yöntem notu:** üç kapının üçü de hatayı enjekte ederek sınandı ve üçü de
+yakaladı. §66'nın ilk yazımı iki YANLIŞ ayrışma gösterdi: web'in `slice(-LIMIT)`
+sabiti (sayı arayan desen) ve nesne kısayol yazımı (`seconds` ile
+`seconds: secs` aynı alan). İkisi de kapının kusuruydu, kodun değil —
+düzeltilmeden bırakılsa gerçek bulguları gürültüye gömerdi.
