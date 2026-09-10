@@ -9,7 +9,9 @@ import { track } from "@/lib/events";
 import { assess } from "@/lib/assess";
 import { recordAiUsage } from "@/lib/ai-usage";
 import { mockPaperById, type MockSkill, type MockTask } from "@/lib/mock-exams";
-import { canMockPaper } from "@/lib/premium/access";
+import type { MockLevel } from "@/lib/mock-exams/types";
+import { mockCourseOf } from "@/lib/courses";
+import { canMockPaper, mockAccess } from "@/lib/premium/access";
 import { findPart, isOpenTask, scorePart } from "@/lib/mock-exams/scoring";
 import { mockFeedback } from "@/lib/mock-exams/feedback";
 import { mockStats } from "@/lib/mock-exams/stats";
@@ -24,6 +26,7 @@ export const dynamic = "force-dynamic";
  *
  *   GET  ?paper=de-b1-01&skill=reading   → yarım kalan deneme (varsa)
  *   GET  ?stats=1                        → istatistik
+ *   GET  ?access=1&level=B1              → hangi kâğıtlar açık
  *   POST {action:"start",  paper, skill}
  *   POST {action:"save",   id, answers?, open?, taskIx?, secondsLeft?}
  *   POST {action:"assess", id, taskId, text, day?}
@@ -45,6 +48,7 @@ export const dynamic = "force-dynamic";
  */
 
 const SKILLS = new Set<MockSkill>(["reading", "listening", "writing", "speaking"]);
+const MOCK_LEVELS = new Set(["A1", "A2", "B1", "B2", "C1"]);
 /** Bir bölümde en fazla bu kadar madde var (C1 dinleme 25); pay bırakıldı. */
 const MAX_ANSWERS = 60;
 const MAX_ANSWER_CHARS = 240;
@@ -98,6 +102,29 @@ export async function GET(req: Request) {
       return NextResponse.json(await mockStats(userId), { headers: { "cache-control": "no-store" } });
     } catch (err) {
       console.error("[mock-exam stats]", err);
+      return NextResponse.json({ error: "database" }, { status: 500 });
+    }
+  }
+
+  /*
+   * HANGİ KÂĞITLAR AÇIK.
+   *
+   * Kilit sunucuda zaten vardı (`canMockPaper`, POST action:"start") ama hiçbir
+   * uç durumu SÖYLEMİYORDU: liste ekranları elli kâğıdın hepsini açık gibi
+   * çiziyor, kullanıcı ikinci kâğıda giriyor ve ancak sınavın içinde
+   * "kilitli" cevabını alıyordu. Kilidin listede görünmesi için gereken tek
+   * şey buydu.
+   */
+  if (url.searchParams.get("access")) {
+    const level = url.searchParams.get("level") ?? "";
+    if (!MOCK_LEVELS.has(level)) return NextResponse.json({ error: "bad_request" }, { status: 400 });
+    try {
+      const profile = await ensureProfile(userId);
+      return NextResponse.json(await mockAccess(userId, level as MockLevel, mockCourseOf(profile.course)), {
+        headers: { "cache-control": "no-store" },
+      });
+    } catch (err) {
+      console.error("[mock-exam access]", err);
       return NextResponse.json({ error: "database" }, { status: 500 });
     }
   }

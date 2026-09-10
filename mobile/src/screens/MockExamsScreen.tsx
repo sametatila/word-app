@@ -8,12 +8,13 @@ import type { RootStackParams } from "../navigation/RootStack";
 import { Text } from "../ui/Text";
 import { Card } from "../ui/Card";
 import { PressableScale } from "../ui/PressableScale";
-import { ArrowBackIcon, ChevronRightIcon } from "../ui/icons";
+import { ArrowBackIcon, ChevronRightIcon, LockIcon } from "../ui/icons";
 import { SkeletonLine } from "../ui/Skeleton";
 import { useMe } from "../lib/useMe";
 import { currentCourseId } from "../lib/courses";
 import { mockPapersFor, mockSkillLabel, partPoints, type MockLevel, type MockPaper, type MockSkill } from "../data/exams";
 import { localPartStates, type PartState } from "../game/mockExamLocal";
+import { fetchMockAccess, type MockAccess } from "../game/mockExam";
 import { loadOnboardingPrefs } from "../lib/onboardingPrefs";
 import { useTheme, spacing, radii } from "../theme";
 
@@ -72,6 +73,22 @@ export function MockExamsScreen() {
 
     Odaklanınca yeniden okunuyor: sınavdan dönüldüğünde liste güncel olsun.
   */
+  /*
+   * KİLİT LİSTEDE GÖRÜNÜYOR.
+   *
+   * Sunucu seviye başına kaç kâğıdın açık olduğunu biliyor; ekran artık
+   * soruyor. Okunamazsa (ağ yok, misafir) `null` kalıyor ve hiçbir şey
+   * kilitli çizilmiyor: uydurma bir kilit, gerçek bir kilitten daha kötü.
+   */
+  const [access, setAccess] = useState<MockAccess | null>(null);
+  useEffect(() => {
+    if (!me) { setAccess(null); return; }
+    let dead = false;
+    void fetchMockAccess(level).then((a) => { if (!dead) setAccess(a); }).catch(() => { if (!dead) setAccess(null); });
+    return () => { dead = true; };
+  }, [me, level]);
+  const isLocked = (id: string) => (access ? !access.unlocked.includes(id) : false);
+
   const [states, setStates] = useState<Record<string, Record<string, PartState>>>({});
   const readStates = useCallback(() => {
     let dead = false;
@@ -158,8 +175,30 @@ export function MockExamsScreen() {
             <Text variant="caption" color={colors.textMuted} style={{ marginBottom: spacing.md, lineHeight: 20 }}>
               {t("mockexams.intro")}
             </Text>
+            {/* Kaç kâğıdın açık olduğu LİSTEDEN ÖNCE söyleniyor: kuralı kilide
+                çarptıktan sonra öğrenmek, kuralı hiç söylememekle aynı şey. */}
+            {access && !access.premium ? (
+              <Text variant="micro" color={colors.textMuted} style={{ marginBottom: spacing.md, lineHeight: 18 }}>
+                {t("mockpack.free_note", { n: access.freeLimit })}
+              </Text>
+            ) : null}
+            {access?.premium && papers.some((p) => isLocked(p.id)) ? (
+              <Text variant="micro" color={colors.textMuted} style={{ marginBottom: spacing.md, lineHeight: 18 }}>
+                {access.unlockOnComplete
+                  ? t("mockpack.unlock_hint_both", { pct: access.unlockPct })
+                  : t("mockpack.unlock_hint_score", { pct: access.unlockPct })}
+              </Text>
+            ) : null}
             {papers.map((p) => (
-              <PaperCard key={p.id} paper={p} states={states[p.id] ?? {}} onOpen={(skill) => nav.navigate("MockExam", { paperId: p.id, skill })} />
+              <PaperCard
+                key={p.id}
+                paper={p}
+                states={states[p.id] ?? {}}
+                locked={isLocked(p.id)}
+                showPlans={!access?.premium}
+                onOpen={(skill) => nav.navigate("MockExam", { paperId: p.id, skill })}
+                onPlans={() => nav.navigate("Paywall")}
+              />
             ))}
           </>
         ) : (
@@ -172,21 +211,33 @@ export function MockExamsScreen() {
   );
 }
 
-function PaperCard({ paper, states, onOpen }: { paper: MockPaper; states: Record<string, PartState>; onOpen: (skill: MockPaper["parts"][number]["skill"]) => void }) {
+function PaperCard({ paper, states, locked, showPlans, onOpen, onPlans }: { paper: MockPaper; states: Record<string, PartState>; locked: boolean; showPlans: boolean; onOpen: (skill: MockPaper["parts"][number]["skill"]) => void; onPlans: () => void }) {
   const { colors } = useTheme();
   return (
     <Card padded style={{ marginBottom: spacing.md }}>
-      <Text variant="micro" color={colors.textMuted}>{t("mockexams.paper", { n: paper.no })}</Text>
+      <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between", gap: spacing.sm }}>
+        <Text variant="micro" color={colors.textMuted}>{t("mockexams.paper", { n: paper.no })}</Text>
+        {locked ? (
+          <View style={{ flexDirection: "row", alignItems: "center", gap: 4, paddingVertical: 2, paddingHorizontal: spacing.sm, borderRadius: radii.pill, backgroundColor: colors.surface2 }}>
+            <LockIcon color={colors.textMuted} size={12} />
+            <Text variant="micro" color={colors.textMuted}>{t("mockpack.locked")}</Text>
+          </View>
+        ) : null}
+      </View>
       <Text variant="bodyStrong" style={{ marginTop: 2 }}>{paper.theme}</Text>
       <Text variant="caption" color={colors.textMuted}>{paper.themeTr}</Text>
       <Text variant="micro" color={colors.textMuted} style={{ marginTop: spacing.xs }}>{t("mockexams.minutes", { n: paper.minutes })}</Text>
 
-      <View style={{ marginTop: spacing.sm }}>
+      <View style={{ marginTop: spacing.sm, opacity: locked ? 0.6 : 1 }}>
         {paper.parts.map((part) => {
           const pts = partPoints(part);
           return (
+            /* Kilitli bölüm BASILAMIYOR: dokunulabilir bırakılsaydı basan kişi
+               yine sınavın içinde 403 görürdü. */
             <PressableScale
               key={part.skill}
+              disabled={locked}
+              accessibilityState={{ disabled: locked }}
               onPress={() => onOpen(part.skill)}
               style={{
                 flexDirection: "row",
@@ -206,11 +257,16 @@ function PaperCard({ paper, states, onOpen }: { paper: MockPaper; states: Record
                 </Text>
               </View>
               <PartBadge state={states[part.skill] ?? null} />
-              <ChevronRightIcon color={colors.textMuted} size={20} />
+              {locked ? <LockIcon color={colors.textMuted} size={18} /> : <ChevronRightIcon color={colors.textMuted} size={20} />}
             </PressableScale>
           );
         })}
       </View>
+      {locked && showPlans ? (
+        <PressableScale onPress={onPlans} style={{ marginTop: spacing.md, borderRadius: radii.md, backgroundColor: colors.primary, paddingVertical: 12, alignItems: "center" }}>
+          <Text variant="bodyStrong" color="#fff">{t("gate.see_plans")}</Text>
+        </PressableScale>
+      ) : null}
     </Card>
   );
 }

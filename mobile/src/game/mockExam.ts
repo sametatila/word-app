@@ -188,6 +188,29 @@ export type MockStats = {
   running: { id: number; paperId: string; skill: MockSkill; level: string; taskIx: number }[];
 };
 
+/**
+ * Bir seviyedeki kâğıtların açık/kilitli durumu.
+ *
+ * Kilit sunucuda hep vardı ama yalnız sınav BAŞLARKEN sınanıyordu: liste
+ * kâğıtların hepsini açık gibi çiziyor, kullanıcı kilitli bir kâğıda giriyor
+ * ve ancak orada 403 alıyordu. Liste artık kilidi önceden soruyor.
+ */
+export type MockAccess = {
+  premium: boolean;
+  /** Açık kâğıt kimlikleri. */
+  unlocked: string[];
+  /** Sonraki paketi açan yüzde (premium). */
+  unlockPct: number;
+  /** Paketi bitirmenin de açtığı emniyet supabı (premium). */
+  unlockOnComplete: boolean;
+  /** Ücretsiz hesapta seviye başına açık kâğıt sayısı. */
+  freeLimit: number;
+};
+
+export function fetchMockAccess(level: string): Promise<MockAccess> {
+  return api(`/api/mock-exam?access=1&level=${encodeURIComponent(level)}`);
+}
+
 export function fetchMockStats(): Promise<MockStats> {
   return api("/api/mock-exam?stats=1");
 }

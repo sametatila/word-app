@@ -9,7 +9,8 @@ import { getUserId } from "@/lib/auth/server";
 import { ensureProfile, getProgress } from "@/lib/session";
 import { mockPapersFor, mockSkillLabel, partPoints, type MockLevel, type MockSkill } from "@/lib/mock-exams";
 import { mockCourseOf } from "@/lib/courses";
-import { ChevronRightIcon } from "@/components/icons";
+import { mockAccess } from "@/lib/premium/access";
+import { ChevronRightIcon, LockIcon } from "@/components/icons";
 import { getT, getLang } from "@/lib/i18n/server";
 import { formatPercent } from "@/lib/i18n/dict";
 
@@ -65,6 +66,20 @@ export default async function MockExamsPage({ searchParams }: { searchParams: Pr
       console.error("[mock-exams] kapsam okunamadı", err);
       return null;
     });
+  /*
+   * KİLİT LİSTEDE GÖRÜNÜYOR.
+   *
+   * Kâğıt kilidi sunucuda hep vardı ama yalnız sınav BAŞLARKEN sınanıyordu:
+   * liste elli kâğıdı da açık gibi çiziyor, kullanıcı ikinci kâğıda giriyor ve
+   * ancak orada "kilitli" cevabını alıyordu. Kilitli kâğıt artık kilitli
+   * görünüyor ve oynatıcıya değil plan sayfasına götürüyor.
+   */
+  const access = await mockAccess(userId, level, course).catch((err) => {
+    console.error("[mock-exams access]", err);
+    return null;
+  });
+  const isLocked = (id: string) => (access ? !access.unlocked.includes(id) : false);
+
   const [running, done] = await Promise.all([
     db
       .select({ id: mockExamAttempts.id, paperId: mockExamAttempts.paperId, skill: mockExamAttempts.skill, taskIx: mockExamAttempts.taskIx })
@@ -145,6 +160,19 @@ export default async function MockExamsPage({ searchParams }: { searchParams: Pr
         {t("mockexams.intro_web")}
       </p>
 
+      {/* Kaç kâğıdın açık olduğu LİSTEDEN ÖNCE söyleniyor: kuralı kilide
+          çarptıktan sonra öğrenmek, kuralı hiç söylememekle aynı şey. */}
+      {access && !access.premium ? (
+        <p className="muted text-caption">{t("mockpack.free_note", { n: access.freeLimit })}</p>
+      ) : null}
+      {access && access.premium && papers.some((p) => isLocked(p.id)) ? (
+        <p className="muted text-caption">
+          {access.unlockOnComplete
+            ? t("mockpack.unlock_hint_both", { pct: access.unlockPct })
+            : t("mockpack.unlock_hint_score", { pct: access.unlockPct })}
+        </p>
+      ) : null}
+
       {running.filter((r) => mine(r.paperId)).length ? (
         <section className="card p-4">
           <p className="muted text-xs font-bold tracking-wide">{t("mockstats.running")}</p>
@@ -182,21 +210,25 @@ export default async function MockExamsPage({ searchParams }: { searchParams: Pr
       ) : null}
 
       {papers.length ? (
-        papers.map((p) => (
+        papers.map((p) => {
+          const locked = isLocked(p.id);
+          return (
           <section key={p.id} className="card p-4">
-            <p className="muted text-xs font-bold tracking-wide">{t("mockexams.paper", { n: p.no })}</p>
+            <div className="flex items-center justify-between gap-3">
+              <p className="muted text-xs font-bold tracking-wide">{t("mockexams.paper", { n: p.no })}</p>
+              {locked ? (
+                <span className="chip flex items-center gap-1 px-2 py-0.5 text-micro font-bold">
+                  <LockIcon className="size-3.5" /> {t("mockpack.locked")}
+                </span>
+              ) : null}
+            </div>
             <h2 className="mt-0.5 text-lg font-bold" lang={course}>{p.theme}</h2>
             <p className="muted text-sm">{p.themeTr} · {t("mockexams.minutes", { n: p.minutes })}</p>
-            <div className="mt-3 space-y-2">
+            <div className={`mt-3 space-y-2${locked ? " opacity-60" : ""}`}>
               {p.parts.map((part) => {
                 const pts = partPoints(part);
-                return (
-                  <Link
-                    key={part.skill}
-                    href={`/mock-exams/${p.id}/${part.skill}`}
-                    className="flex items-center justify-between rounded-xl p-3"
-                    style={{ background: "var(--surface-2)" }}
-                  >
+                const inner = (
+                  <>
                     <span className="text-sm">
                       <span className="font-semibold" lang={course}>{mockSkillLabel(course, part.skill)}</span>
                       <span className="muted ml-2">
@@ -205,13 +237,40 @@ export default async function MockExamsPage({ searchParams }: { searchParams: Pr
                           : t("mockexams.part_open", { minutes: part.minutes })}
                       </span>
                     </span>
-                    <ChevronRightIcon className="size-4" />
+                    {locked ? <LockIcon className="size-4" /> : <ChevronRightIcon className="size-4" />}
+                  </>
+                );
+                /* Kilitli bölüm oynatıcıya BAĞLANMIYOR: bağlantı bırakılsaydı
+                   tıklayan kişi yine sınavın içinde 403 görürdü. */
+                return locked ? (
+                  <div
+                    key={part.skill}
+                    aria-disabled
+                    className="flex items-center justify-between rounded-xl p-3"
+                    style={{ background: "var(--surface-2)" }}
+                  >
+                    {inner}
+                  </div>
+                ) : (
+                  <Link
+                    key={part.skill}
+                    href={`/mock-exams/${p.id}/${part.skill}`}
+                    className="flex items-center justify-between rounded-xl p-3"
+                    style={{ background: "var(--surface-2)" }}
+                  >
+                    {inner}
                   </Link>
                 );
               })}
             </div>
+            {locked && !access?.premium ? (
+              <Link href="/premium" prefetch={false} className="btn btn-primary mt-3 w-full px-4 py-2.5 text-sm">
+                {t("gate.see_plans")}
+              </Link>
+            ) : null}
           </section>
-        ))
+          );
+        })
       ) : (
         <p className="card p-4 text-sm">{t("mockexams.none_for_level", { level })}</p>
       )}
