@@ -13,6 +13,7 @@ import { play, resetCombo } from "@/lib/sfx";
 import { AlertIcon, FlameIcon, SparkIcon } from "@/components/icons";
 import { Mascot } from "@/components/mascot";
 import { useT } from "@/lib/i18n/client";
+import { localDay } from "@/lib/day";
 
 /** Başlangıç süresi kısa: süreyi doğru cevaplarla kazanırsın. */
 const START_SECONDS = 40;
@@ -35,13 +36,6 @@ function multiplier(combo: number): number {
 
 /** Dalga adları anahtar olarak; metin gösterildiği yerde çevriliyor. */
 const TIER_KEYS = ["", "challenge.tier_warmup", "challenge.tier_pressure", "challenge.tier_crisis"];
-
-function localDay(): string {
-  const d = new Date();
-  return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(
-    d.getDate(),
-  ).padStart(2, "0")}`;
-}
 
 type Status = "loading" | "ready" | "playing" | "done" | "empty" | "error";
 type Payload = { rounds: Round[]; tiers: number[]; pool: number; weak: number; best: number };

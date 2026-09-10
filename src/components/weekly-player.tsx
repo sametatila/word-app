@@ -11,14 +11,10 @@ import { Mascot } from "@/components/mascot";
 import { track } from "@/lib/track";
 import type { WeeklyStatus } from "@/lib/weekly";
 import { useT } from "@/lib/i18n/client";
+import { localDay } from "@/lib/day";
 
 type Payload = { status: WeeklyStatus; rounds: Round[] };
 type Phase = "loading" | "ready" | "playing" | "saving" | "done" | "empty" | "error";
-
-function localDay(): string {
-  const d = new Date();
-  return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
-}
 
 /**
  * Haftalık kullanım sınavı oynatıcısı (WP-42): tek hak, ipuçsuz, yalnız

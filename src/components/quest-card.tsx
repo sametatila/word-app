@@ -9,6 +9,7 @@ import { CheckIcon, GiftIcon, TargetIcon } from "@/components/icons";
 import { track } from "@/lib/track";
 import { play } from "@/lib/sfx";
 import { useT } from "@/lib/i18n/client";
+import { localDay } from "@/lib/day";
 
 /**
  * Günün görevleri kartı.
@@ -30,13 +31,6 @@ type Quest = {
 };
 
 type Board = { quests: Quest[]; allDone: boolean; allClaimed: boolean };
-
-function localDay(): string {
-  const d = new Date();
-  return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(
-    d.getDate(),
-  ).padStart(2, "0")}`;
-}
 
 export function QuestCard() {
   const t = useT();

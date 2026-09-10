@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useState } from "react";
+import { localDay } from "@/lib/day";
 
 /**
  * Önce önbellek, sonra tazeleme.
@@ -165,10 +166,7 @@ export function useCachedJson<T>(
   return { data, refresh: load, put };
 }
 
-/** Günlük veriler için anahtar eki — cihazın günü, sunucununki değil. */
+/** Önbellek anahtarındaki gün — kural `lib/day` ile ORTAK, ikinci bir tanım değil. */
 export function localDayKey(): string {
-  const d = new Date();
-  return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(
-    d.getDate(),
-  ).padStart(2, "0")}`;
+  return localDay();
 }

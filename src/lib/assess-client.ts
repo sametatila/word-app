@@ -2,6 +2,7 @@
 
 import { overallScore, type AssessRequest, type Assessment } from "@/lib/assess-prompts";
 import { translate, DEFAULT_NATIVE } from "@/lib/i18n/dict";
+import { localDay } from "@/lib/day";
 
 /**
  * `/api/assess` istemci yardımcısı (WP-03).
@@ -46,12 +47,6 @@ export const ASSESS_FAILURE_KEYS: Record<AssessFailure, string> = {
   unauthorized: "assess.fail_unauthorized",
   bad_request: "assess.fail_bad_request",
 };
-
-function localDay(): string {
-  const d = new Date();
-  const p = (n: number) => String(n).padStart(2, "0");
-  return `${d.getFullYear()}-${p(d.getMonth() + 1)}-${p(d.getDate())}`;
-}
 
 export async function askAssess(
   req: AssessRequest,

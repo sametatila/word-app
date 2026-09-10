@@ -23,6 +23,7 @@ import { CoachBubble } from "@/components/coach-bubble";
 import { PronounceCard } from "@/components/feedback/pronounce-card";
 import { askPronounce, captureClip, type Capture } from "@/lib/pronounce-client";
 import type { PronounceScore } from "@/lib/pronounce";
+import { localDay } from "@/lib/day";
 
 /**
  * Sınav oynatıcısı (WP-41 v3).
@@ -65,11 +66,6 @@ type Miss = {
   /** Gerekçe — hüküm maddelerinde dersin kendi açıklaması. */
   why?: string;
 };
-
-function localDay(): string {
-  const d = new Date();
-  return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
-}
 
 function sectionCount(p: ExamPaper, id: ExamSectionId): number {
   const s = p.sections;

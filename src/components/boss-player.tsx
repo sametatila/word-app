@@ -12,6 +12,7 @@ import { play, resetCombo } from "@/lib/sfx";
 import { track } from "@/lib/track";
 import { AlertIcon, ClockIcon, TrophyIcon } from "@/components/icons";
 import { useT } from "@/lib/i18n/client";
+import { localDay } from "@/lib/day";
 
 /**
  * Modül sınavı — patron turu.
@@ -53,13 +54,6 @@ type Payload = {
   penalty: number;
   maxSeconds: number;
 };
-
-function localDay(): string {
-  const d = new Date();
-  return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(
-    d.getDate(),
-  ).padStart(2, "0")}`;
-}
 
 export function BossPlayer({
   level,

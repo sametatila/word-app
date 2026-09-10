@@ -13,6 +13,7 @@ import { AlertIcon, FlameIcon, SparkIcon } from "@/components/icons";
 import { Mascot } from "@/components/mascot";
 import { useT, useLang } from "@/lib/i18n/client";
 import { formatNumber } from "@/lib/i18n/dict";
+import { localDay } from "@/lib/day";
 
 /**
  * Günün turu.
@@ -43,13 +44,6 @@ type Payload = {
 };
 
 type Status = "loading" | "ready" | "playing" | "done" | "error" | "empty";
-
-function localDay(): string {
-  const d = new Date();
-  return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(
-    d.getDate(),
-  ).padStart(2, "0")}`;
-}
 
 export function DailyPlayer({ onExit }: { onExit: () => void }) {
   const t = useT();

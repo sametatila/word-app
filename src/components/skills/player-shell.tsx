@@ -12,13 +12,7 @@ import { Mascot } from "@/components/mascot";
 import { LEVEL_TONE } from "./theme";
 import { usePlayerFrame } from "./player-context";
 import { useT } from "@/lib/i18n/client";
-
-/** Cihazın yerel gününü verir — istatistikler kullanıcının gününe yazılır. */
-function localDay() {
-  const d = new Date();
-  const p = (n: number) => String(n).padStart(2, "0");
-  return `${d.getFullYear()}-${p(d.getMonth() + 1)}-${p(d.getDate())}`;
-}
+import { localDay } from "@/lib/day";
 
 type FinishState =
   | { phase: "idle" }

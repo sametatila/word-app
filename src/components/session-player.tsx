@@ -38,6 +38,7 @@ import { AlertIcon, FlameIcon, RefreshIcon, SparkIcon, XIcon } from "@/component
 import { ConfirmDialog } from "@/components/confirm-dialog";
 import { readCache, writeCache } from "@/lib/use-cached";
 import { useT } from "@/lib/i18n/client";
+import { localDay } from "@/lib/day";
 
 /**
  * Turun durumları.
@@ -94,13 +95,6 @@ type ErrorKind = "auth" | "db" | "network";
  */
 function sessionKey(game: PlayableGame | null): string {
   return `session:${game ?? "mixed"}:${localDay()}`;
-}
-
-function localDay(): string {
-  const d = new Date();
-  return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(
-    d.getDate(),
-  ).padStart(2, "0")}`;
 }
 
 /**

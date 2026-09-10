@@ -12,6 +12,7 @@ import type { PlacementRecord, PlacementTest as Test, TextItem } from "@/lib/pla
 import type { CefrLevel } from "@/lib/skills/types";
 import { useT, useLang } from "@/lib/i18n/client";
 import { formatPercent } from "@/lib/i18n/dict";
+import { localDay } from "@/lib/day";
 
 type Phase = "intro" | "loading" | "vocab" | "grammar" | "reading" | "listening" | "finishing" | "result" | "error";
 
@@ -23,11 +24,6 @@ const STAGE_HINT: Record<PlacementStage, string> = {
   reading: "plc.reading",
   listening: "plc.listening",
 };
-
-function localDay(): string {
-  const d = new Date();
-  return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
-}
 
 /**
  * Yerleştirme testi (WP-40): dört aşama, ≤ 15 dakika, sonunda öneri +

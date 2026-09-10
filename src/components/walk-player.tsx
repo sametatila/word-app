@@ -38,6 +38,7 @@ import { pocketWalkCue } from "@/components/pocket-audio";
 import { track } from "@/lib/track";
 import { CheckIcon, MicIcon, XIcon } from "@/components/icons";
 import type { Answer, Round, RoundWord, SessionPayload, SessionProgress } from "@/lib/types";
+import { localDay } from "@/lib/day";
 
 /**
  * Yürürken modu — ekransız kelime turu.
@@ -263,11 +264,6 @@ const SPEAK_CAP_MS = 30_000;
  * çevirmeye. Süre dolarsa "duyulmadı" sayılıyor — turun donması değil.
  */
 const HEAR_SLACK_MS = 15_000;
-
-function localDay(): string {
-  const d = new Date();
-  return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
-}
 
 function withArtikel(w: RoundWord): string {
   return w.artikel ? `${w.artikel} ${w.de}` : w.de;
