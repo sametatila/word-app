@@ -11,8 +11,14 @@
  * Yalnız tırnağa bakan bir ölçüt `free.checklist` paketlerinde hiçbir şey
  * bulamazdı; o türün kanıtı hep parantezde ("(Ich heiße …)").
  *
- * ÖLÇÜT DAR: açıklık ancak TARTIŞMASIZ Almanca görünüyorsa (ä/ß taşıyor ya
- * da büyük harfle başlayan bir sözcüğü var) kullanılıyor. İlk yazımda ölçüt
+ * İKİ ÖLÇÜT VAR ve ikincisi dilden bağımsız: SAYI PARİTESİ. Türkçe satırdaki
+ * harfe bitişik olmayan sayılar İngilizcede de aynen durmak zorunda; ilk
+ * tutmadığı yer kaymanın başladığı yerdir. `build.tr` paketlerinde alıntı
+ * açıklığı neredeyse hiç yok (cümleler kısa ve tırnaksız), o yüzden orada
+ * tek çalışan ölçüt bu — t-017'de eksik satırı yalnız o buldu.
+ *
+ * ALINTI ÖLÇÜTÜ DAR: açıklık ancak TARTIŞMASIZ Almanca görünüyorsa (ä/ß
+ * taşıyor ya da büyük harfle başlayan bir sözcüğü var) kullanılıyor. İlk yazımda ölçüt
  * yalnız Türkçeye özgü harfleri atlıyordu ve t-004'te YANLIŞ satırı
  * gösterdi: „hep dürüst ol“ Türkçe ama ı/ş/ğ taşımıyor. Teşhis aracının
  * yanlış yeri göstermesi, hiçbir şey göstermemesinden kötü.
@@ -37,12 +43,15 @@ if (lines.length !== src.words.length) {
     ...[...String(t).matchAll(/\(([^()]{4,})\)/g)].map((m) => m[1]),
   ];
   const german = (s) => /[äßÄ]/.test(s) || /[A-ZÄÖÜ][a-zäöüß]{2,}/.test(s);
+  const nums = (t) => [...String(t).matchAll(/(?<!\p{L})\d+/gu)].map((m) => m[0]).join(",");
   let at = null;
-  for (let i = 0; i < src.words.length && at === null; i++)
+  for (let i = 0; i < src.words.length && at === null; i++) {
+    if (nums(src.words[i].tr) !== nums(lines[i] ?? "")) at = i;
     for (const s of spans(src.words[i].tr)) {
       if (/[ışğİĞŞ]/.test(s) || !german(s)) continue;
       if (!flat(lines[i] ?? "").includes(flat(s))) at = i;
     }
+  }
   throw new Error(
     `${packet}: ${src.words.length} satır bekleniyor, ${lines.length} geldi` +
       (at === null
