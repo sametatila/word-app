@@ -10,7 +10,7 @@
  * Amaç "veri yok" durumuna sessizce düşmemek: biri olayı listeden silerse ya
  * da adı yanlış yazarsa sunucu 204 döner ve kimse fark etmez — bu test eder.
  */
-import { readdirSync, readFileSync, statSync } from "node:fs";
+import { existsSync, readdirSync, readFileSync, statSync } from "node:fs";
 import { join } from "node:path";
 import { EVENT_NAMES } from "../src/lib/events";
 
@@ -25,6 +25,21 @@ const files: string[] = [];
     } else if (/\.(ts|tsx)$/.test(name)) files.push(p);
   }
 })("src");
+/*
+  MOBİL KAYNAK DA TARANIYOR. Sözlük TEK ve uç ortak (`api/events`): mobil
+  `lib/track` aynı adlarla aynı uca yazıyor. Tarama yalnız `src`e baktığı için
+  mobilin yazdığı olaylar "yazılmayan" görünüyordu - `onboarding_existing_account`,
+  `purchase_start` ve `purchase_done` üçü de mobil ekranlardan yazılıyor.
+*/
+if (existsSync("mobile/src")) {
+  (function walk(dir: string) {
+    for (const name of readdirSync(dir)) {
+      const p = join(dir, name);
+      if (statSync(p).isDirectory()) walk(p);
+      else if (/\.(ts|tsx)$/.test(name)) files.push(p);
+    }
+  })("mobile/src");
+}
 
 const seen = new Map<string, number>();
 const problems: string[] = [];
@@ -65,8 +80,29 @@ for (const f of files) {
 // kaynakta çağrısı olmayan olay bu listede değilse hata.
 // session_round bilerek yazılmıyor (kpi.md: reviews tablosu aynı satırı taşıyor).
 const WRITTEN_ELSEWHERE = new Set<string>(["session_round"]);
-const unused = EVENT_NAMES.filter((n) => !seen.has(n) && !WRITTEN_ELSEWHERE.has(n));
+
+/*
+  HENÜZ YAZILMAYAN, PLANLI olaylar — adı sözlükte duruyor ama çağıran yok.
+
+  `WRITTEN_ELSEWHERE`ten ayrı: orası "başka yerde yazılıyor" der, burası
+  "hiç yazılmıyor" der. Ayrı tutulmasının sebebi dürüstlük - ikisini
+  karıştırmak, yazılmayan bir olayı "yazılıyor" diye kaydetmek olurdu.
+
+  Liste yalnız KISALABİLİR ve iki yönlü denetleniyor: adı yazan biri çıkarsa
+  test "listeden çıkar" diyor, yani liste bayatlamıyor.
+*/
+const PLANNED: Record<string, string> = {
+  start_card: "başlangıç kartı ölçümü; kart var, olay hiç yazılmadı",
+  daily_play: "günlük tur oynanması; Daily ekranı olayı yazmıyor",
+  plan_start: "bugünkü plan satırı parite turunda kaldırıldı (web-parity §11.10)",
+  speak_self: "sesli özdeğerlendirme; yalnız yürüyüş turunda var ve orada yazılmıyor",
+  premium_gate: "premium kilidine çarpma; mobil birleşiminde de tanımlı, çağıran yok",
+};
+
+const unused = EVENT_NAMES.filter((n) => !seen.has(n) && !WRITTEN_ELSEWHERE.has(n) && !(n in PLANNED));
 if (unused.length) problems.push(`yazılmayan olaylar: ${unused.join(", ")}`);
+const stale = Object.keys(PLANNED).filter((n) => seen.has(n));
+if (stale.length) problems.push(`PLANNED listesinde olup artık yazılan olaylar (listeden çıkar): ${stale.join(", ")}`);
 
 if (problems.length) {
   console.error("test:events — sorunlar:\n  " + problems.join("\n  "));

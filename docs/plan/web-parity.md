@@ -1858,3 +1858,35 @@ büyümeye açık kapı.
 
 Artık tabandaki her kalem ya bugünkü sayıya EŞİT ya da yazılı bir karar
 bekliyor. Sonraki denetim bu tabloyu yeniden üretip karşılaştırabilir.
+
+### 11.27 `test:events` ana dalda kırmızıydı — mobil olaylar sayılmıyordu
+
+Push öncesi durum ölçülürken çıktı ve iki ayrı hata taşıyordu. `test:events`
+CI'nın "Birim testleri" adımında çalışıyor, yani ana dalın CI'sı bu yüzden
+kırmızıydı; test dosyası ve olay sözlüğü `origin/main` ile BİREBİR aynı, yani
+bu oturumun 44 commit'inden gelmiyor.
+
+**a) Tarama yalnız `src`e bakıyordu.** Olay sözlüğü TEK ve uç ortak
+(`api/events`): mobil `lib/track` aynı adlarla aynı uca yazıyor. Ama test
+`walk("src")` ile yalnız webi tarıyordu ve mobilin yazdığı üç olay
+"yazılmayan" görünüyordu: `onboarding_existing_account` (OnboardingScreen),
+`purchase_start` ve `purchase_done` (PaywallScreen). Tarama `mobile/src`i de
+kapsıyor artık.
+
+**b) `notif_prime` SÖZLÜKTE HİÇ YOKTU.** Mobil onu iki yerden yazıyor
+(`NotifPrimeScreen`: value 1 saat seçildi / 0 atlandı, kind = saat) ama web
+sözlüğünün 70 adı arasında değildi. Uç bilinmeyen adı sessizce düşürüyor -
+`api/events` `isEventName` geçmezse 204 dönüyor ve gövde hiç yazılmıyor,
+"ölçümün başarısız olması istemcide hiçbir şeyi bozmasın" diye. Yani bildirim
+izni hunisinin mobil tarafı HİÇ KAYDEDİLMEDİ ve raporlarda boş göründü.
+Sözlüğe eklendi (71 oldu).
+
+Kalan beş olay gerçekten yazılmıyor ve teste `PLANNED` listesi olarak
+sebepleriyle girdi: `start_card`, `daily_play`, `plan_start` (yüzeyi parite
+turunda kaldırıldı, §11.10), `speak_self`, `premium_gate`. Liste
+`WRITTEN_ELSEWHERE`ten AYRI tutuldu - orası "başka yerde yazılıyor" der,
+burası "hiç yazılmıyor"; ikisini karıştırmak yazılmayan bir olayı yazılıyor
+diye kaydetmek olurdu. İki yönlü denetleniyor ve sınandı: listedeki bir ada
+çağıran çıkarsa test "listeden çıkar" diyor.
+
+Sonuç: `test:events` 71 olay / 138 çağrı ile yeşil.

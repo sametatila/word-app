@@ -59,6 +59,15 @@ export const EVENT_NAMES = [
   "boss_clear", // modül sınavı geçildi (value = kalan saniye)
   "quest_claim", // görev ödülü alındı
   "achievement_unlock", // rozet açıldı (value = rozet sayısı)
+  /*
+   * Bildirim izni hazırlık ekranı — YALNIZ MOBİL yazıyor
+   * (`screens/NotifPrimeScreen`: value 1 saat seçildi / 0 atlandı, kind = saat).
+   *
+   * Sözlükte YOKTU ve uç bilinmeyen adı 204 ile sessizce düşürüyor
+   * (`api/events`: `isEventName` geçmezse gövde hiç yazılmıyor). Yani mobilin
+   * bu olayı hiç kaydedilmedi ve hiçbir yerde görünmedi.
+   */
+  "notif_prime",
   "nav", // sekme açıldı (value = sekme sırası)
   "push_open", // bildirimden gelindi
   "sound_toggle", // ses açıldı/kapandı (value = 1 açık, 0 kapalı)
