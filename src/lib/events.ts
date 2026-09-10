@@ -129,7 +129,13 @@ export const EVENT_NAMES = [
   "tts_play", // sesli okuma çalındı (kind = ekran anahtarı; ekran açılışı başına bir kez)
   "tts_fallback", // nöral ses çalınamadı, alt basamağa düşüldü (kind = basamak: element | browser; ekran açılışı başına bir kez)
   "search", // arama yapıldı (kind = words|cheatsheet, value = sorgu uzunluğu; ekran açılışı başına ilk)
-  "setting_change", // ayar değişti (kind = alan: name|daily_goal|new_per_day|level|course|voice|theme, value = sayısal ayarlarda yeni değer)
+  /* Ayar değişti. kind = alan: name | daily_goal | new_per_day | level | course |
+     voice | theme | lang | remind_daily | remind_streak | remind_weekly. value =
+     sayısal ayarlarda yeni değer, anahtarlarda 1 açık / 0 kapalı, temada
+     0 açık / 1 koyu / 2 sistem, dilde `NATIVE_LANGS` sırası. Liste `lang` ve üç
+     hatırlatma anahtarını saymıyordu; yazılan kind'lar sayılmadığında bu yorum
+     sözlüğü okuyanı yanıltıyor. */
+  "setting_change",
   "push_optin", // bildirim izni (value = 1 verildi / 0 reddedildi / 2 sonra dedi)
   "install_prompt", // ana ekrana ekleme (value = 1 eklendi / 0 reddedildi / 2 iOS ipucu gösterildi)
   "push_sent", // sunucu bildirim gönderdi (kind = reminder|summary) — push_open ile huni

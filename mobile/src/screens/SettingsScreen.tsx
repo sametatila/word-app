@@ -18,10 +18,10 @@ import { VoicePicker } from "../ui/VoicePicker";
 import { SkeletonLine } from "../ui/Skeleton";
 import { loadVoicePref, setVoicePref } from "../lib/tts";
 import { defaultVoice, type VoiceId } from "../lib/voices";
-import { coursesForNative, offeredNativeLangs, type NativeLang } from "../lib/courses";
+import { coursesForNative, offeredNativeLangs, NATIVE_LANGS, type NativeLang } from "../lib/courses";
 import { currentLang, setLang } from "../lib/i18n";
 import { useTheme, spacing, radii, softShadow, type Palette, type ThemeMode } from "../theme";
-import { analyticsEnabled, setAnalyticsEnabled } from "../lib/track";
+import { analyticsEnabled, setAnalyticsEnabled, track } from "../lib/track";
 import { hasMicConsent, setMicConsent } from "../lib/micConsent";
 import { openLegal } from "../lib/legal";
 import { APP_VERSION } from "../version";
@@ -116,7 +116,7 @@ export function SettingsScreen() {
   }, [me, user]);
 
   // Görünüm / ses / dil ANINDA uygulanır (kaydet butonu ad/hedef/seviye için).
-  function pickVoice(v: VoiceId) { setVoice(v); void setVoicePref(course, v); void updateProfile({ voice: v }); }
+  function pickVoice(v: VoiceId) { setVoice(v); void setVoicePref(course, v); void updateProfile({ voice: v }); track("setting_change", 0, "voice"); }
   /**
    * Arayüz dili değişince seçili kurs geçersiz kalabilir: İngilizce kursundaki
    * kullanıcı arayüzü İngilizceye alırsa o kurs listeden düşer. Sessizce
@@ -137,6 +137,7 @@ export function SettingsScreen() {
     setVoice(v);
     void setVoicePref(c, v);
     await updateProfile({ course: c, voice: v });
+    track("setting_change", 0, "course");
     await refresh();
   }
 
@@ -147,8 +148,24 @@ export function SettingsScreen() {
     setMsg(null);
     const ok = await updateProfile({ displayName: name.trim() || undefined, dailyGoal: goal, level });
     setBusy(false);
-    if (ok) { await refresh(); setMsgOk(true); setMsg(t("settings.saved")); setTimeout(() => nav.goBack(), 600); }
-    else { setMsgOk(false); setMsg(t("settings.save_failed")); }
+    /*
+     * HANGİ ayar değişti — web `profile-form` ile aynı kural: olay yalnız
+     * kayıt BAŞARILI olduğunda ve yalnız GERÇEKTEN değişen alan için yazılır.
+     * "Kaydet"e her basışta üç olay yazmak, dokunulmamış alanları da
+     * değişmiş gösterip "seviyeyi kimse değiştirmiyor" gibi soruları
+     * cevaplanamaz hâle getirirdi. Karşılaştırma sunucudaki değere (`me`)
+     * bakıyor; `refresh()` ondan SONRA çağrılıyor, yoksa eski değer kaybolur.
+     */
+    if (ok) {
+      const cleanName = name.trim();
+      if (cleanName !== (me?.name ?? "")) track("setting_change", 0, "name");
+      if (goal !== me?.dailyGoal) track("setting_change", goal, "daily_goal");
+      if (level !== me?.level) track("setting_change", 0, "level");
+      await refresh();
+      setMsgOk(true);
+      setMsg(t("settings.saved"));
+      setTimeout(() => nav.goBack(), 600);
+    } else { setMsgOk(false); setMsg(t("settings.save_failed")); }
   }
 
   return (
@@ -228,7 +245,7 @@ export function SettingsScreen() {
                 key={l}
                 label={LANG_LABEL[l]}
                 active={uiLang === l}
-                onPress={() => { setUiLang(l); void setLang(l); void updateProfile({ nativeLang: l }); void keepCourseValid(l); }}
+                onPress={() => { setUiLang(l); void setLang(l); void updateProfile({ nativeLang: l }); track("setting_change", NATIVE_LANGS.indexOf(l), "lang"); void keepCourseValid(l); }}
               />
             ))}
           </View>
@@ -239,7 +256,7 @@ export function SettingsScreen() {
             {THEME_OPTIONS.map((o) => {
               const active = mode === o.key;
               return (
-                <PressableScale key={o.key} onPress={() => setMode(o.key)} style={{ flex: 1, paddingVertical: 10, borderRadius: radii.sm, alignItems: "center", backgroundColor: active ? colors.surface : "transparent", ...(active ? softShadow("#5a3418", 4) : {}) }}>
+                <PressableScale key={o.key} onPress={() => { if (o.key !== mode) track("setting_change", o.key === "dark" ? 1 : o.key === "light" ? 0 : 2, "theme"); setMode(o.key); }} style={{ flex: 1, paddingVertical: 10, borderRadius: radii.sm, alignItems: "center", backgroundColor: active ? colors.surface : "transparent", ...(active ? softShadow("#5a3418", 4) : {}) }}>
                   <Text variant="bodyStrong" color={active ? colors.primaryText : colors.textMuted}>{t(o.label)}</Text>
                 </PressableScale>
               );

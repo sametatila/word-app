@@ -32,6 +32,11 @@ export type EventName =
      6 elle duraklatıldı / çıkıldı. 4 (mikrofona ulaşılamadı) ve 5 (ekran
      kapandı, kayıt yolu yok) webin tarayıcı yollarına özgü. */
   | "walk_end"
+  /* Hangi ayar değişti (web `lib/events` ile aynı kind tablosu):
+     name · daily_goal · new_per_day · level · course · voice · theme · lang ·
+     remind_daily · remind_streak · remind_weekly. Sayısal ayarlarda value yeni
+     değer, anahtarlarda 1 açık / 0 kapalı, temada 0 açık / 1 koyu / 2 sistem. */
+  | "setting_change"
   | "boss_play"
   | "boss_clear";
 

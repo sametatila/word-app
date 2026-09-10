@@ -14,6 +14,7 @@ import {
   showTestNotification, openNotificationSettings,
 } from "../lib/notifications";
 import { pushPermissionDenied } from "../lib/pushDevice";
+import { track } from "../lib/track";
 import { useTheme, spacing, radii, softShadow, type Palette } from "../theme";
 
 const TIMES = ["09:00", "12:00", "15:00", "19:00", "21:00"];
@@ -67,10 +68,21 @@ export function NotificationsScreen() {
 
   function fail() { setDenied(true); setMsg(tx("notifications.permission_off")); }
 
+  /*
+   * HATIRLATMA ANAHTARLARI ÖLÇÜLÜYOR — web `notification-settings` ile aynı
+   * üç kind. Olay yalnız anahtar GERÇEKTEN döndüğünde yazılıyor: mobilde
+   * izin reddedilmişse çevirme başarısız olup eski durumda kalıyor ve o anı
+   * "kullanıcı hatırlatmayı açtı" diye saymak, açılmamış bir hatırlatmayı
+   * açılmış göstermek olurdu. Webde anahtarlar izin olmadan hiç çizilmiyor,
+   * yani orada da sayı aynı şeyi ifade ediyor.
+   *
+   * Saat seçimi bilerek ölçülmüyor: web de ölçmüyor ve iki tarafta farklı
+   * davranmak "kaç kişi saatini değiştirdi" sorusunu yarım cevaplardı.
+   */
   async function toggleDaily(on: boolean) {
     setMsg(null);
-    if (on) { const ok = await enableDailyReminder(dailyTime); if (ok) { setDailyOn(true); setDenied(false); } else fail(); }
-    else { await disableReminder(); setDailyOn(false); }
+    if (on) { const ok = await enableDailyReminder(dailyTime); if (ok) { setDailyOn(true); setDenied(false); track("setting_change", 1, "remind_daily"); } else fail(); }
+    else { await disableReminder(); setDailyOn(false); track("setting_change", 0, "remind_daily"); }
   }
   async function pickTime(t: string) {
     setDailyTime(t);
@@ -79,12 +91,12 @@ export function NotificationsScreen() {
   async function toggleStreak(on: boolean) {
     setMsg(null);
     const ok = await setStreakAlert(on);
-    if (ok) { setStreakOn(on); setDenied(false); } else fail();
+    if (ok) { setStreakOn(on); setDenied(false); track("setting_change", on ? 1 : 0, "remind_streak"); } else fail();
   }
   async function toggleWeekly(on: boolean) {
     setMsg(null);
     const ok = await setWeeklyReminder(on);
-    if (ok) { setWeeklyOn(on); setDenied(false); } else fail();
+    if (ok) { setWeeklyOn(on); setDenied(false); track("setting_change", on ? 1 : 0, "remind_weekly"); } else fail();
   }
 
   return (

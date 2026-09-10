@@ -2056,3 +2056,49 @@ mevcut değerlerden birine zorlamak veri kaybettirir, yenisini uydurmak da
 Sametin kararı. `walk_switch` / `walk_capture` ise gerçekten tarayıcıya özgü
 mekanikler (ekran kapanınca devir, echoCancellation) ve mobilde karşılıkları
 yok; eksik değil, konusuz.
+
+### 11.33 Ayar değişiklikleri Androidde HİÇ ölçülmüyordu
+
+Ölçüm, iki tarafta `setting_change` çağrılarının sayısı:
+
+    web    13 çağrı  (profile-form 6, notification-settings 3, theme-toggle 2,
+                      lang-setting 1, course-onboarding 1)
+    mobil   0 çağrı
+
+Olay web sözlüğünde vardı, mobil `EventName` birleşiminde YOKTU — yani
+Android'de bir kullanıcının seviyesini değiştirdiği, günlük hedefini
+düşürdüğü, kursunu ya da temasını değiştirdiği hiç kaydedilmiyordu. Ayarların
+çoğuna mobilde dokunuluyor (uygulamanın ana yüzeyi orası), dolayısıyla
+"seviyeyi kimse değiştirmiyor" ya da "günlük hedef hep düşürülüyor" gibi
+sorular tam da en çok veri üreten taraftan cevapsız kalıyordu.
+
+Eklenen çağrılar, web'deki kind'lara birebir:
+
+    SettingsScreen        name · daily_goal · level  (kaydet, yalnız değişeni)
+                          course · voice · theme · lang  (anında uygulanıyor)
+    NotificationsScreen   remind_daily · remind_streak · remind_weekly
+
+Üç kural web'den aynen alındı:
+
+- **Yalnız gerçekten değişen alan.** "Kaydet"e her basışta üç olay yazmak
+  dokunulmamış alanları da değişmiş gösterirdi. Karşılaştırma sunucudaki
+  değere (`me`) bakıyor ve `refresh()` ondan SONRA çağrılıyor - tersi olsa
+  karşılaştırılacak eski değer kaybolurdu.
+- **Yalnız kayıt başarılıysa.** Başarısız kaydı "ayar değişti" saymak
+  değişmemiş bir ayarı değişmiş gösterirdi.
+- **Saat seçimi ölçülmüyor**, çünkü web de ölçmüyor; tek tarafta ölçmek "kaç
+  kişi hatırlatma saatini değiştirdi" sorusunu yarım cevaplardı.
+
+Mobilde bir kural EKLENDİ: hatırlatma anahtarları izin reddedilmişse
+çevrilmiş görünüp başarısız oluyor. Olay yalnız anahtar gerçekten döndüğünde
+yazılıyor. Webde anahtarlar izin olmadan hiç çizilmediği için orada bu durum
+zaten oluşamıyor - yani iki taraftaki sayı aynı şeyi ifade ediyor.
+
+Ölçülmeyen iki ayar, bilerek: **analitik anahtarı** (webde de ölçülmüyor -
+ölçümü kapatan hareketi ölçmek kullanıcının kararına aykırı) ve **mikrofon
+onayının geri alınması** (aynı gerekçe, ayrıca webde karşılığı yok).
+
+Yan bulgu: sözlükteki kind listesi eskimişti - `lang` ve üç hatırlatma
+anahtarı yazılıyor ama listede yoktu. Sözlüğü okuyan kişi yazılmayan bir
+kind'ı yazılıyor sanmaz ama yazılan bir kind'ı yok sanır; liste tamamlandı ve
+`value`nun her kind'da ne anlama geldiği de yazıldı.
