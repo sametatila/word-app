@@ -872,6 +872,9 @@ function Summary({ lesson, correct, total, next, roleMsgs, colors, insets, onBac
   insets: { bottom: number }; onBack: () => void; onNext?: () => void;
 }) {
   const pct = total ? Math.round((correct / total) * 100) : 100;
+  /* Düzeltmeler karşı tarafın cevaplarından çıkarılıyor — web ile aynı kural
+     ve aynı ayrıştırıcı (`parseReply`). */
+  const corrections = roleMsgs.filter((m) => m.role === "assistant").flatMap((m) => parseReply(m.content).corrections);
   const mood = pct >= 80 ? "celebrate" : pct >= 50 ? "happy" : "idle";
   return (
     <ScrollView contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.xl, alignItems: "center" }} showsVerticalScrollIndicator={false}>
@@ -918,6 +921,37 @@ function Summary({ lesson, correct, total, next, roleMsgs, colors, insets, onBac
             );
           })}
         </View>
+      ) : null}
+
+      {/* DERSİN KELİMELERİ kapanışta bir kez daha. Liste kâğıtta zaten vardı
+          (`lesson.vocab`) ve mobil özet onu hiç göstermiyordu: dersin dili
+          kapanışta toplu görünmeli, web özeti bunu yapıyor. */}
+      {lesson.vocab?.length ? (
+        <View style={{ alignSelf: "stretch", marginTop: spacing.lg, backgroundColor: colors.surface, borderRadius: radii.lg, borderWidth: 1, borderColor: colors.hairline, padding: spacing.lg }}>
+          <Text variant="micro" color={colors.textMuted} style={{ marginBottom: spacing.sm }}>{tx("lessonp.words_of_lesson")}</Text>
+          <View style={{ flexDirection: "row", flexWrap: "wrap", gap: 6 }}>
+            {lesson.vocab.map((v) => (
+              <View key={v.de} style={{ paddingHorizontal: 10, paddingVertical: 5, borderRadius: radii.pill, backgroundColor: colors.surface2 }}>
+                <Text variant="micro" color={colors.text}><Text variant="micro" color={colors.text} style={{ fontWeight: "700" }}>{v.de}</Text> · {v.tr}</Text>
+              </View>
+            ))}
+          </View>
+        </View>
+      ) : null}
+
+      {/* DÜZELTMELER TOPLU. Konuşma sırasında her balonun altında tek tek
+          geçiyordu ve akışta kayboluyordu; kapanışta hepsi bir arada durmalı
+          - dersin öğrettiği şey tam olarak bunlar. Web aynı listeyi aynı
+          yerde çıkarıyor (`parseReply(...).corrections`). */}
+      {corrections.length ? (
+        <View style={{ alignSelf: "stretch", marginTop: spacing.lg, backgroundColor: colors.surface, borderRadius: radii.lg, borderWidth: 1, borderColor: colors.hairline, padding: spacing.lg }}>
+          <Text variant="micro" color={colors.textMuted} style={{ marginBottom: spacing.sm }}>{tx("lessonp.corrections")}</Text>
+          {corrections.map((c, i) => (
+            <Text key={i} variant="caption" color={colors.text} style={{ lineHeight: 20, marginBottom: 4 }}>{c}</Text>
+          ))}
+        </View>
+      ) : roleMsgs.length > 1 ? (
+        <Text variant="caption" color={colors.successText} style={{ alignSelf: "stretch", marginTop: spacing.lg }}>{tx("lessonp.no_corrections")}</Text>
       ) : null}
 
       <View style={{ alignSelf: "stretch", marginTop: spacing.xl, gap: spacing.sm }}>
