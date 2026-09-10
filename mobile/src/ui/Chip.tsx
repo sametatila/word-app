@@ -50,7 +50,7 @@ export function Chip({
       <Text variant="bodyStrong" color={active ? colors.onPrimarySoft : colors.textMuted}>{label}</Text>
       {badge ? (
         <View style={{ minWidth: 18, height: 18, borderRadius: 9, backgroundColor: colors.streak, alignItems: "center", justifyContent: "center", paddingHorizontal: 4 }}>
-          <Text variant="micro" color="#fff" style={{ fontSize: 10, lineHeight: 12 }}>{badge}</Text>
+          <Text variant="micro" color={colors.badgeInk} style={{ fontSize: 10, lineHeight: 12 }}>{badge}</Text>
         </View>
       ) : null}
     </PressableScale>

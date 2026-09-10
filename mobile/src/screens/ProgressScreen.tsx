@@ -55,13 +55,16 @@ export function ProgressScreen() {
 
       <ScrollView contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.xxl }} showsVerticalScrollIndicator={false}>
         {/* seri kahramanı */}
-        <View style={[{ borderRadius: radii.xl, backgroundColor: colors.streak, padding: spacing.xl, flexDirection: "row", alignItems: "center", gap: spacing.lg, marginTop: spacing.sm, marginBottom: spacing.lg }, softShadow(colors.streak, 12)]}>
+        {/* ZEMİN `streakDeep`. Ölçüm: beyaz yazı `streak` üstünde açık temada 2.88,
+            koyu temada 1.94 - AA'nın büyük yazı eşiği 3.0'ı bile tutmuyor. Koyu
+            kehribarda 5.20. Web'in aynı kartı da 500'den 600'e indi. */}
+        <View style={[{ borderRadius: radii.xl, backgroundColor: colors.streakDeep, padding: spacing.xl, flexDirection: "row", alignItems: "center", gap: spacing.lg, marginTop: spacing.sm, marginBottom: spacing.lg }, softShadow(colors.streakDeep, 12)]}>
           <View style={{ width: 64, height: 64, borderRadius: radii.lg, backgroundColor: "#ffffff2e", alignItems: "center", justifyContent: "center" }}>
             <FlameIcon color="#fff" size={34} />
           </View>
           <View style={{ flex: 1 }}>
             <Text variant="display" color="#fff">{me?.streak ?? 0}</Text>
-            <Text variant="bodyStrong" color="#ffffffdd">{t("progress.day_streak")}</Text>
+            <Text variant="bodyStrong" color="#fff">{t("progress.day_streak")}</Text>
             {/*
               EN UZUN SERİ. Sunucu bunu zaten gönderiyor (`/api/me`) ve BAŞKASININ
               profilinde görünüyordu (herkese açık profil satırı), ama kendi
@@ -69,7 +72,7 @@ export function ProgressScreen() {
               bir şey söylüyor.
             */}
             {me?.longestStreak ? (
-              <Text variant="caption" color="#ffffffbb">{t("progress.longest_streak", { n: me.longestStreak })}</Text>
+              <Text variant="caption" color="#ffffffe6">{t("progress.longest_streak", { n: me.longestStreak })}</Text>
             ) : null}
           </View>
           <Mascot mood={(me?.streak ?? 0) > 0 ? "happy" : "idle"} size={58} />

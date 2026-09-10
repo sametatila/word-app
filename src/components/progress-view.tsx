@@ -159,23 +159,28 @@ export function ActivityProgress({
         rozetinden geliniyor, yani gelen kişinin sorusu "kaç gün" ve cevabı
         diğer üç sayıyla aynı boyda duruyordu.
       */}
+      {/* ZEMİN 600, 500 DEĞİL. Ölçüm: beyaz yazı `flame-500` (#b8940f) üstünde
+          2.88 veriyor - AA'nın küçük yazı için istediği 4.5'in çok altında ve
+          büyük yazı eşiği 3.0'ı bile tutmuyor. 600'de (#86690e) 5.20. Aynı
+          kart mobilde de aynı hatayı taşıyordu; ikisi birlikte koyulaştı. */}
       <div
         className="flex items-center gap-4 rounded-card p-5 text-white shadow-soft"
-        style={{ background: "var(--color-flame-500)" }}
+        style={{ background: "var(--color-flame-600)" }}
       >
         <span className="flex h-16 w-16 shrink-0 items-center justify-center rounded-tile bg-white/20">
           <FlameIcon size={34} />
         </span>
         <span className="min-w-0 flex-1">
           <span className="block text-display">{streak}</span>
-          <span className="block text-strong text-white/85">{t("progress.day_streak")}</span>
+          <span className="block text-strong">{t("progress.day_streak")}</span>
           {/*
             EN UZUN SERİ. Sunucu bunu zaten gönderiyor ve BAŞKASININ profilinde
             görünüyordu; kendi ekranında yoktu. Bugünkü sayı ancak kendi
             rekoruyla kıyaslanınca bir şey söylüyor.
           */}
+          {/* Saydamlık 75'ten 90'a: 600 zeminde %75 beyaz 3.70, %90 ise 4.56. */}
           {longestStreak > 0 ? (
-            <span className="block text-caption text-white/75">
+            <span className="block text-caption text-white/90">
               {t("progress.longest_streak", { n: formatNumber(longestStreak, lang) })}
             </span>
           ) : null}

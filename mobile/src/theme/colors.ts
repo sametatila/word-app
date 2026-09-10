@@ -30,6 +30,17 @@ export type Palette = {
   text: string; textMuted: string; textFaint: string;
   success: string; danger: string; streak: string; info: string; accent: string;
   /**
+   * Dolu kehribar zemin ÜSTÜNE beyaz yazı için - iki temada da aynı değer.
+   *
+   * `streak` bu iş için fazla açık: beyaz yazı açık temada 2.88, koyu temada
+   * 1.94 veriyor; AA küçük yazı için 4.5, büyük yazı için 3.0 istiyor. Web'in
+   * `--color-flame-600`sı ile aynı ton, 5.20. Tema ile DEĞİŞMİYOR çünkü web
+   * de bu kartta sabit bir basamak kullanıyor ve ikisi eş görünmeli.
+   */
+  streakDeep: string;
+  /** Sayaç rozetinin (parlak kehribar zemin) yazı rengi - 6.04. */
+  badgeInk: string;
+  /**
    * Aynı anlamların YAZI ağırlığındaki tonları.
    *
    * Üsttekiler DOLGU için seçilmiş: beyaz ikon taşıyan karo, ilerleme çubuğu,
@@ -53,6 +64,7 @@ export const light: Palette = {
   border: "#ece3d8", hairline: "#f1eae0",
   text: "#241a12", textMuted: "#7c6c5d", textFaint: "#b7a695",
   success: "#2f9a61", danger: "#dc3f55", streak: "#b8940f", info: "#1b93ac", accent: "#9256bc",
+  streakDeep: "#86690e", badgeInk: "#1e1916",
   successText: "#237a4c", dangerText: "#b62e43", streakText: "#86690e", infoText: "#16748a", accentText: "#77439d",
   successSoft: "#e2f2e9", dangerSoft: "#fde6ea",
   gradientA: ["#fb8f2a", "#f87612"], gradientB: ["#ffab54", "#db5f08"],
@@ -64,6 +76,7 @@ export const dark: Palette = {
   border: "#3a2e23", hairline: "#2b221a",
   text: "#f6efe6", textMuted: "#a9998a", textFaint: "#7c6c5d",
   success: "#6fd19b", danger: "#f79ba6", streak: "#ddb62c", info: "#6fd1e3", accent: "#cda6e8",
+  streakDeep: "#86690e", badgeInk: "#1e1916",
   // Koyu temada dolgu ve yazı ayrımı gerekmiyor: bu tonlar yüzey üstünde
   // 8.3-9.7 veriyor. Aynı değerler, ikinci bir ton uydurulmadı.
   successText: "#6fd19b", dangerText: "#f79ba6", streakText: "#ddb62c", infoText: "#6fd1e3", accentText: "#cda6e8",

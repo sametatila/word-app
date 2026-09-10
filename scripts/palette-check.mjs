@@ -289,6 +289,24 @@ contrastRows([["acik", "light", L], ["koyu", "dark", D]].flatMap(([tn, key, T]) 
   [`${tn}: secili sik metni`, T["--text"], mix(tone("brand", key), 8, T["--surface"])],
 ]));
 
+title("9. KEHRIBAR DOLU ZEMINLER  (seri karti + sayac rozeti)");
+/*
+ * Kehribar açık bir aile ve dolu zemin olarak kullanılınca beyaz yazıyı
+ * taşımıyor: 500 (#b8940f) üstünde beyaz 2.88 - AA'nın 4.5'i bir yana, büyük
+ * yazı için istediği 3.0 bile değil. Seri kartı ve sayaç rozeti tam olarak bu
+ * hatayı taşıyordu, üstelik iki platformda birden.
+ *
+ * İki çözüm iki ayrı yerde: kart zemini 600'e indi (beyaz 5.20), rozet ise
+ * parlak kalıp yazısını mürekkebe çevirdi (6.04) - rozet küçük ve koyu
+ * zeminde kaybolurdu. Mobil karşılıkları `theme/colors.ts` içindeki
+ * `streakDeep` ve `badgeInk`; ikisi de burada ölçülen değerlerle aynı.
+ */
+contrastRows([
+  ["beyaz / seri karti zemini (flame 600)", W, step("flame", 600)],
+  ["beyaz %90 / seri karti zemini", mix(W, 90, step("flame", 600)), step("flame", 600)],
+  ["murekkep / sayac rozeti (flame 500)", step("ink", 900), step("flame", 500)],
+]);
+
 title("8. AYRISMA  [GEVSEK — ikon ve etiketle birlikte]");
 for (const [tn, key] of [["acik", "light"], ["koyu", "dark"]]) {
   distinct({ brand: tone("brand", key), streak: tone("flame", key), wrong: tone("rose", key) }, 12, `${tn}: brand / streak / wrong`);

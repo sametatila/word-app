@@ -50,7 +50,10 @@ export function NotificationBell({ className = "" }: { className?: string }) {
       {unread > 0 ? (
         <span
           className="absolute -right-0.5 -top-0.5 min-w-[16px] rounded-full px-1 text-center text-[10px] font-black leading-4"
-          style={{ background: "var(--color-flame)", color: "#fff" }}
+          /* Sayaç rozeti: parlak kehribar zemin + mürekkep yazı (6.04).
+             Beyaz yazı açık temada 5.20 veriyordu ama koyu temada
+             `--color-flame` 300'e düşüyor ve 1.49'a iniyordu - okunmuyordu. */
+          style={{ background: "var(--color-flame-500)", color: "var(--color-ink-900)" }}
         >
           {unread > 9 ? "9+" : unread}
         </span>

@@ -195,7 +195,7 @@ export function FriendsHub({ me, initialTab }: { me: SocialMeView; initialTab: H
           >
             {t(tb.label)}
             {tb.key === "friends" && incoming > 0 ? (
-              <span className="ml-1.5 rounded-full px-1.5 text-micro" style={{ background: "var(--color-flame)", color: "#fff" }}>
+              <span className="ml-1.5 rounded-full px-1.5 text-micro" style={{ background: "var(--color-flame-500)", color: "var(--color-ink-900)" }}>
                 {incoming}
               </span>
             ) : null}
