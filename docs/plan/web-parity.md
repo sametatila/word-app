@@ -6029,3 +6029,27 @@ karşılaştırılamıyordu — kapı "yalnız mobil: lesson" diyordu ve bu doğ
 yazılı, varsayılan yalnızca tanınmayan tür için.
 
 §81 iki haritayı da (beceri, patika türü) satır satır ölçüyor.
+
+
+### 11.164 Boş ve hata durumlarının kabuğu
+
+Bu tur "aynı durum aynı kabukta mı" diye baktım. Web `EmptyCard`ı yedi yerde
+kullanıyor, mobil altı yerde; kesişimin dışında kalan tek gerçek fark başarım
+duvarının HATA durumuydu: mobilde çıplak bir cümle ve bir düğme, webde kupa
+simgeli kart. Çıplak cümle "ekran bozuk" gibi okunuyor — kabuk, mesajın
+kendisi kadar bilgi taşıyor. §82 beş ölçüyle bağladı.
+
+**Ölçüldü, eşit çıktı:**
+- Lig tablosu: basamak listesi (bronz→elmas), yükselme/düşme bölge renkleri,
+  başlık simgesi.
+- Günün görevleri: üç durum (alındı → "+N XP", tamam → "al", sürüyor →
+  ilerleme) iki tarafta aynı; satırın sol karosu farklı (web sayı, mobil
+  şimşek) ama sayı iki tarafta da satırın içinde ayrıca yazıyor — bilgi
+  kaybı yok, bu yüzden dokunmadım.
+- Maskot: mobilde yedi klip, webde on bir. Kod farkı değil VARLIK farkı
+  (§11.15'te kayıtlı, `cheer`in mobil karşılığı `celebrate`).
+
+**Yöntem notu:** bu tur üç ölçümden ikisi "eşit" çıktı ve biri küçük bir
+farkla kapandı. Ölçümün değeri bulduğu hatayla değil, ARADIĞI yerin
+tükenmesiyle de ölçülüyor: elle yazılmış eşlemeler, renk kimlikleri, simge
+kimlikleri ve durum kabukları artık taranmış durumda.
