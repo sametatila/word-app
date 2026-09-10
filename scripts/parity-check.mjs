@@ -1674,6 +1674,23 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     ];
   };
   sameList("sinav yazma degerlendirme istegi", sekil("mobile/src/screens/ExamScreen.tsx"), sekil("src/components/exam-player.tsx"));
+
+  /* Ceviri turunun IKINCI SANSI: yerel hakem "yanlis" dediginde modele
+     sorulan istek. Istem metni ("Cevir: ...") modele gidiyor, arayuze degil -
+     iki tarafta da ham dizge olarak duruyor ve iki ham-metin tabaninda da
+     yazili. Tabanlardaki muafiyetin kapisi bu olcum: istem, esikler ve dil
+     ayrisirsa ayni cevap bir uygulamada kabul edilir, otekinde edilmez. */
+  const ikinciSans = (p) => {
+    const src = read(p).replace(/\/\*[\s\S]*?\*\//g, " ").replace(/\/\/[^\n]*/g, " ");
+    const istem = (src.match(/prompt:\s*(`[^`]*`)/) ?? [])[1];
+    return [
+      "istem=" + (istem ? istem.replace(/\$\{[^}]*\}/g, "${}") : "yok"),
+      "bekleme=" + ((src.match(/ASSESS_WAIT_MS\s*=\s*(\d+)/) ?? [])[1] ?? "yok"),
+      "esik=" + ((src.match(/ASSESS_ACCEPT\s*=\s*(\d+)/) ?? [])[1] ?? "yok"),
+      "soz=" + ((src.match(/split\(\/\\s\+\/\)\.length\s*>=\s*(\d+)/) ?? [])[1] ?? "yok"),
+    ];
+  };
+  sameList("ceviri ikinci sansi", ikinciSans("mobile/src/game/rounds.tsx"), ikinciSans("src/components/games/translate-game.tsx"));
 }
 
 console.log(
