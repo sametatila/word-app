@@ -143,7 +143,6 @@ export function ExamScreen() {
       })
       .catch((e: Error) => !cancelled && setErr(e.message || t("exam.could_not_load")));
     return () => { cancelled = true; };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [level, moduleIx, attempt]);
 
   /**
