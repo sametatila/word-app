@@ -65,6 +65,16 @@ type Paper = {
 /* `id` SUNUCUDAN GELİYORDU ve burada düşüyordu: sertifika ucu sınav kimliğiyle
    adresleniyor (`/api/certificate/<id>`) ve alan olmadan sertifikaya ulaşmanın
    yolu yoktu (bkz. `ExamResult` `id`). */
+/**
+ * Kaçırılan madde — sonuç ekranındaki kırılım.
+ *
+ * Sınav yalnız YÜZDE gösteriyordu: öğrenci "%62" görüp neyi kaçırdığını hiç
+ * öğrenmiyordu, oysa sınavın öğreten kısmı tam olarak bu. Web `exam-player`
+ * her cevap noktasında kaçanı biriktiriyor ve sonuçta doğru cevabıyla
+ * birlikte gösteriyor.
+ */
+type Miss = { section: SectionId; prompt: string; answer: string; given?: string; why?: string };
+
 type Result = { id: number; total: number; passed: boolean; trial: boolean; sections: { id: SectionId; pct: number; weight: number }[] };
 
 /**
@@ -107,6 +117,8 @@ export function ExamScreen() {
   const [left, setLeft] = useState(0);
   const [result, setResult] = useState<Result | null>(null);
   const [certOpen, setCertOpen] = useState(false);
+  const [showMisses, setShowMisses] = useState(false);
+  const misses = useRef<Miss[]>([]);
   const score = useRef<Record<SectionId, { correct: number; total: number }>>({
     vocab: { correct: 0, total: 0 }, grammar: { correct: 0, total: 0 }, produce: { correct: 0, total: 0 },
     reading: { correct: 0, total: 0 }, listening: { correct: 0, total: 0 }, speaking: { correct: 0, total: 0 }, writing: { correct: 0, total: 0 },
@@ -333,6 +345,41 @@ export function ExamScreen() {
             altında açıyor; geçilmemiş ya da deneme sınavında ise aynı yerde
             ne yapılacağını söylüyor.
           */}
+          {/*
+            KAÇANLARIN KIRILIMI. Sınav yalnız YÜZDE gösteriyordu: öğrenci
+            "%62" görüp neyi kaçırdığını hiç öğrenmiyordu, oysa sınavın
+            öğreten kısmı tam olarak bu. Web sonuç kartının altında her kaçan
+            maddeyi doğru cevabıyla ve verilen cevapla birlikte açıyor;
+            kapalı başlıyor ki puanın önüne geçmesin.
+          */}
+          {misses.current.length ? (
+            <>
+              <PressableScale onPress={() => setShowMisses((v) => !v)} style={{ paddingVertical: 12, alignItems: "center", borderRadius: radii.lg, backgroundColor: colors.surface2 }}>
+                <Text variant="bodyStrong" color={colors.text}>
+                  {showMisses ? t("exam.hide_breakdown") : t("exam.missed_n", { n: misses.current.length })}
+                </Text>
+              </PressableScale>
+              {showMisses ? misses.current.map((m, i) => (
+                <Card key={i} padded style={{ gap: 4 }}>
+                  <Text variant="micro" color={colors.textMuted}>{SECTION_DE[m.section]} · {t(SECTION_KEY[m.section])}</Text>
+                  <Text variant="body" style={{ lineHeight: 21 }}>{m.prompt}</Text>
+                  <Text variant="bodyStrong" color={colors.successText}>{m.answer}</Text>
+                  {m.given ? <Text variant="caption" color={colors.textMuted}>{t("exam.your_answer")} {m.given}</Text> : null}
+                  {m.why ? <Text variant="caption" color={colors.textMuted} style={{ lineHeight: 19 }}>{m.why}</Text> : null}
+                </Card>
+              )) : null}
+              {/* ÖRNEK CEVAP kâğıtta zaten vardı (`task.sample`) ve mobilde hiç
+                  gösterilmiyordu: yazma bölümünde öğrencinin karşılaştıracağı
+                  tek şey buydu. Web aynı yerde açıyor. */}
+              {showMisses && paper?.sections.writing[0]?.task.sample ? (
+                <Card padded style={{ gap: 4, backgroundColor: colors.surface2 }}>
+                  <Text variant="micro" color={colors.textMuted}>{t("exam.writing_sample")}</Text>
+                  <Text variant="caption" style={{ lineHeight: 20 }}>{paper.sections.writing[0].task.sample}</Text>
+                </Card>
+              ) : null}
+            </>
+          ) : null}
+
           {result?.passed && !result.trial ? (
             <PressableScale onPress={() => setCertOpen(true)} style={[{ backgroundColor: colors.success, borderRadius: radii.lg, paddingVertical: 16, alignItems: "center" }, softShadow(colors.success, 10)]}>
               <Text variant="bodyStrong" color={colors.onFill}>{t("exam.open_certificate")}</Text>
@@ -386,6 +433,7 @@ export function ExamScreen() {
         insets={insets}
         onSpeakScore={(p) => speakScores.current.push(p)}
         onWriteScore={(p) => { writeScore.current = p; }}
+        onMiss={(m) => misses.current.push(m)}
         onTick={(c) => { score.current[active].correct = c; }}
         onVocabAnswer={(a) => vocabAnswers.current.push(a)}
         onDone={(c) => sectionDone(active, c)}
@@ -397,10 +445,12 @@ export function ExamScreen() {
 /* ─────────────────────────── bölümler ─────────────────────────── */
 
 function SectionBody({
-  id, paper, colors, insets, onDone, onTick, onSpeakScore, onWriteScore, onVocabAnswer,
+  id, paper, colors, insets, onDone, onTick, onSpeakScore, onWriteScore, onVocabAnswer, onMiss,
 }: {
   id: SectionId; paper: Paper; colors: Palette; insets: { bottom: number };
   onDone: (correct: number) => void;
+  /** Kaçan madde — sonuç ekranındaki kırılım için biriktiriliyor. */
+  onMiss: (m: Miss) => void;
   /** Kelime turunun tek tek cevapları — SRS'e gidiyor (bkz. `vocabAnswers`). */
   onVocabAnswer: (a: Record<string, unknown>) => void;
   /** Her maddeden sonra: süre dolarsa yarım bölümün doğruları da sayılsın. */
@@ -445,6 +495,7 @@ function SectionBody({
                 });
               }
             }
+            if (!ok && !extra?.skip) onMiss({ section: "vocab", prompt: wordPrompt(r), answer: wordAnswer(r) });
             advance(ok, paper.sections.vocab.length);
           }}
         />
@@ -463,7 +514,10 @@ function SectionBody({
             options={it.options}
             answerIdx={it.answer}
             colors={colors}
-            onPick={(ok) => advance(ok, paper.sections.grammar.length)}
+            onPick={(ok, pick) => {
+              if (!ok) onMiss({ section: "grammar", prompt: `${it.sheet} · ${it.label}`, answer: it.options[it.answer], given: it.options[pick] });
+              advance(ok, paper.sections.grammar.length);
+            }}
           />
         ) : (
           <Choice
@@ -472,7 +526,10 @@ function SectionBody({
             options={[t("common.true"), t("common.false")]}
             answerIdx={it.answer ? 0 : 1}
             colors={colors}
-            onPick={(ok) => advance(ok, paper.sections.grammar.length)}
+            onPick={(ok, pick) => {
+              if (!ok) onMiss({ section: "grammar", prompt: it.statement, answer: t(it.answer ? "common.true" : "common.false"), given: t(pick === 0 ? "common.true" : "common.false") });
+              advance(ok, paper.sections.grammar.length);
+            }}
           />
         )}
       </ScrollView>
@@ -481,19 +538,27 @@ function SectionBody({
 
   if (id === "produce") {
     const it = paper.sections.produce[idx];
-    return <Produce key={it.id} it={it} colors={colors} pad={pad} onDone={(ok) => advance(ok, paper.sections.produce.length)} />;
+    return <Produce key={it.id} it={it} colors={colors} pad={pad} onDone={(ok, given) => {
+      if (!ok) onMiss({ section: "produce", prompt: it.prompt, answer: it.de, given });
+      advance(ok, paper.sections.produce.length);
+    }} />;
   }
 
   if (id === "reading" || id === "listening") {
     const items = paper.sections[id];
     return <TextSection key={items[idx].id} it={items[idx]} spoken={id === "listening"} colors={colors} pad={pad}
+      onMiss={(q, given) => onMiss({ section: id, prompt: q.textTr ?? q.text, answer: q.options[q.answer], given })}
       onDone={(c) => { correctRef.current += c; onTick(correctRef.current); if (idx + 1 < items.length) setIdx(idx + 1); else onDone(correctRef.current); }} />;
   }
 
   if (id === "speaking") {
     const it = paper.sections.speaking[idx];
     return <Speak key={it.id} it={it} colors={colors} pad={pad}
-      onDone={(ok, score) => { onSpeakScore(score); advance(ok, paper.sections.speaking.length); }} />;
+      onDone={(ok, score) => {
+        if (!ok) onMiss({ section: "speaking", prompt: it.situation ?? t("exam.pronunciation"), answer: it.de });
+        onSpeakScore(score);
+        advance(ok, paper.sections.speaking.length);
+      }} />;
   }
 
   const w = paper.sections.writing[0];
@@ -501,7 +566,24 @@ function SectionBody({
     onDone={(ok, sc) => { onWriteScore(sc); onTick(ok ? 1 : 0); onDone(ok ? 1 : 0); }} />;
 }
 
-function Choice({ prompt, options, answerIdx, colors, onPick }: { prompt: string; options: string[]; answerIdx: number; colors: Palette; onPick: (ok: boolean) => void }) {
+/**
+ * Kaçan kelime turunun sorusu ve doğru cevabı — web `exam-player`
+ * `wordPrompt`/`wordAnswer` ile aynı kural.
+ *
+ * `sentence` iki biçimde gelebiliyor (düz metin ya da üç dilli nesne, bkz.
+ * `game/session` `Round`); çeviri turunda sorulan cümlenin kendisi.
+ */
+function wordPrompt(r: Round): string {
+  if (r.game === "translate" && r.sentence) return typeof r.sentence === "string" ? r.sentence : r.sentence.tr;
+  return r.word?.tr ?? t("exam.sec_vocab");
+}
+function wordAnswer(r: Round): string {
+  if (r.game === "translate" && r.sentence && typeof r.sentence !== "string") return r.sentence.de;
+  if (r.word) return r.word.artikel ? `${r.word.artikel} ${r.word.de}` : r.word.de;
+  return "";
+}
+
+function Choice({ prompt, options, answerIdx, colors, onPick }: { prompt: string; options: string[]; answerIdx: number; colors: Palette; onPick: (ok: boolean, pick: number) => void }) {
   const [pick, setPick] = useState<number | null>(null);
   return (
     <Card padded style={{ gap: spacing.sm }}>
@@ -510,7 +592,7 @@ function Choice({ prompt, options, answerIdx, colors, onPick }: { prompt: string
         const picked = pick !== null;
         const bg = !picked ? colors.surface : i === answerIdx ? colors.success : pick === i ? colors.danger : colors.surface;
         return (
-          <PressableScale key={i} disabled={picked} onPress={() => { setPick(i); setTimeout(() => onPick(i === answerIdx), 550); }}
+          <PressableScale key={i} disabled={picked} onPress={() => { setPick(i); setTimeout(() => onPick(i === answerIdx, i), 550); }}
             style={{ backgroundColor: bg, borderRadius: radii.md, borderWidth: 1.5, borderColor: colors.border, paddingVertical: 13, paddingHorizontal: spacing.md }}>
             <Text variant="body" color={picked && (i === answerIdx || pick === i) ? "#fff" : colors.text}>{o}</Text>
           </PressableScale>
@@ -520,7 +602,7 @@ function Choice({ prompt, options, answerIdx, colors, onPick }: { prompt: string
   );
 }
 
-function Produce({ it, colors, pad, onDone }: { it: ProduceItem; colors: Palette; pad: object; onDone: (ok: boolean) => void }) {
+function Produce({ it, colors, pad, onDone }: { it: ProduceItem; colors: Palette; pad: object; onDone: (ok: boolean, given: string) => void }) {
   const [typed, setTyped] = useState("");
   const [parts, setParts] = useState<string[]>([]);
   const [done, setDone] = useState(false);
@@ -564,7 +646,7 @@ function Produce({ it, colors, pad, onDone }: { it: ProduceItem; colors: Palette
         ) : null}
         <PressableScale
           disabled={!answer.trim() && !done}
-          onPress={() => (done ? onDone(ok) : setDone(true))}
+          onPress={() => (done ? onDone(ok, answer) : setDone(true))}
           style={{ backgroundColor: answer.trim() || done ? colors.primary : colors.surface2, borderRadius: radii.lg, paddingVertical: 14, alignItems: "center" }}>
           <Text variant="bodyStrong" color={answer.trim() || done ? colors.onPrimary : colors.textFaint}>
             {done ? t("common.next") : t("skillquiz.check")}
@@ -575,7 +657,7 @@ function Produce({ it, colors, pad, onDone }: { it: ProduceItem; colors: Palette
   );
 }
 
-function TextSection({ it, spoken, colors, pad, onDone }: { it: TextItem; spoken: boolean; colors: Palette; pad: object; onDone: (correct: number, total: number) => void }) {
+function TextSection({ it, spoken, colors, pad, onDone, onMiss }: { it: TextItem; spoken: boolean; colors: Palette; pad: object; onDone: (correct: number, total: number) => void; onMiss: (q: TextItem["questions"][number], given: string) => void }) {
   const [answers, setAnswers] = useState<(number | null)[]>(() => it.questions.map(() => null));
   const allAnswered = answers.every((a) => a !== null);
   const correctRef = answers.filter((a, i) => a === it.questions[i].answer).length;
@@ -607,8 +689,13 @@ function TextSection({ it, spoken, colors, pad, onDone }: { it: TextItem; spoken
           })}
         </Card>
       ))}
+      {/* Kaçanlar bölüm bitince toplanıyor: her soru tek tek işaretlenmiyor,
+          öğrenci son cevabını değiştirebiliyor (`answers` durumu). */}
       {allAnswered ? (
-        <PressableScale onPress={() => onDone(correctRef, it.questions.length)} style={[{ backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: 15, alignItems: "center" }, softShadow(colors.primary, 8)]}>
+        <PressableScale onPress={() => {
+          it.questions.forEach((q, i) => { const a = answers[i]; if (a !== null && a !== q.answer) onMiss(q, q.options[a]); });
+          onDone(correctRef, it.questions.length);
+        }} style={[{ backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: 15, alignItems: "center" }, softShadow(colors.primary, 8)]}>
           <Text variant="bodyStrong" color={colors.onPrimary}>{t("common.next")}</Text>
         </PressableScale>
       ) : null}
