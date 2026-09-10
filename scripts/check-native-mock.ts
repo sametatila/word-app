@@ -14,7 +14,13 @@
  */
 import { readFileSync } from "node:fs";
 import { MOCK_PAPERS } from "@/lib/mock-exams";
-import { resolveMockPaper, mockKey, type MockShape, type NativeDict } from "@/lib/lessons/native";
+import {
+  resolveMockPaper,
+  mockKey,
+  isTurkishStem,
+  type MockShape,
+  type NativeDict,
+} from "@/lib/lessons/native";
 import { extractMock } from "../data/mock-exams/prose/make.js";
 
 const dict = JSON.parse(
@@ -34,16 +40,40 @@ const papers = MOCK_PAPERS.filter((p) => p.course === "de");
 const rows = extractMock();
 const missing = rows.filter((r) => dict.mock[mockKey(r.kind, r.tr)] === undefined);
 
+/* ÇIKTIDA TÜRKÇE KALDI MI — kâğıdın HER dizesi, alan adına bakmadan.
+   Yukarıdaki iki ölçüt yalnız ÇIKARICININ BİLDİĞİ alanları görüyor: yeni bir
+   Türkçe alan eklenirse çıkarıcı onu görmez, sözlükte aranmaz, kapı yeşil
+   kalır ve Türkçe doğrudan ekrana çıkar. Bu tarama tam da o boşluk için —
+   ve ilk koşuşunda 408 dize buldu: metinlerin `gloss` sözlükçeleri hiç
+   katlanmıyordu. */
+const leftover = new Map<string, string>();
+let strings = 0;
+const walk = (v: unknown, id: string): void => {
+  if (typeof v === "string") {
+    strings++;
+    if (isTurkishStem(v)) leftover.set(v, id);
+    return;
+  }
+  if (Array.isArray(v)) {
+    for (const x of v) walk(x, id);
+    return;
+  }
+  if (v && typeof v === "object") for (const x of Object.values(v)) walk(x, id);
+};
+
 const bad: string[] = [];
 let resolved = 0;
 for (const p of papers) {
-  if (resolveMockPaper(dict, p as unknown as MockShape)) resolved++;
-  else bad.push(p.id);
+  const out = resolveMockPaper(dict, p as unknown as MockShape);
+  if (out) {
+    resolved++;
+    walk(out, p.id);
+  } else bad.push(p.id);
 }
 
 console.log(
   `deneme kâğıdı ${papers.length} · sözlük ${Object.keys(dict.mock).length} girdi · ` +
-    `çıkarıcı ${rows.length} dize · çözülen kâğıt ${resolved}`,
+    `çıkarıcı ${rows.length} dize · çözülen kâğıt ${resolved} · taranan dize ${strings}`,
 );
 
 if (missing.length) {
@@ -56,4 +86,13 @@ if (bad.length) {
   console.log(`\nHATA: ${bad.length} kâğıt reddedildi: ${bad.slice(0, 10).join(", ")}`);
   process.exit(1);
 }
-console.log("\ntamam: her Almanca deneme kâğıdının Türkçe yüzü İngilizceye çözülüyor");
+if (leftover.size) {
+  console.log(`\nHATA: çözüldükten sonra ${leftover.size} dize hâlâ Türkçe görünüyor\n`);
+  for (const [text, id] of [...leftover].slice(0, 25))
+    console.log(`  [${id}] ${JSON.stringify(text.slice(0, 90))}`);
+  process.exit(1);
+}
+console.log(
+  "\ntamam: her Almanca deneme kâğıdının Türkçe yüzü — sözlükçesi dahil —" +
+    " İngilizceye çözülüyor",
+);

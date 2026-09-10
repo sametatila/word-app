@@ -462,14 +462,34 @@ export const isProseQuote = (t: string): boolean =>
  */
 const TR_WORD =
   /^(?:bir|ve|ile|için|değil|var|yok|gibi|daha|çok|ama|kadar|sonra|önce|mi|mı|mu|mü|ne|nasıl|hangi|neden|nedir|bu|şu|yani|hem|ancak|yaz|söyle|koy|seç|nerede)$/u;
-/** Kesme işaretiyle bağlanan Türkçe ek: `Jonas'ın`, `Timo'nun`. */
+/**
+ * Kesme işaretiyle bağlanan Türkçe ek: `Jonas'ın`, `Berlin'de`, `3'te`.
+ *
+ * BÜTÜN DİZEDE aranıyor, sözcük sözcük değil — ve bunun iki sebebi var,
+ * ikisi de ölçüldü:
+ *
+ * 1. Sözcük ayracı harf olmayan her şey, yani `Berlin'de` ikiye bölünüyor
+ *    (`Berlin`, `'de`) ve `3'te` yalnız `'te` bırakıyor. Sözcük düzeyinde
+ *    bakan eski kural büyük harfli sözcükleri elediği için `Jonas'ın`,
+ *    `Hamburg'da`, `Türkiye'den` gibi ASIL hedefini hiç görmüyordu:
+ *    29 Türkçe dize kaçıyordu.
+ * 2. Kesme işaretinden ÖNCEKİ karakter ayırt edici. Türkçe ekte orada bir
+ *    harf, rakam ya da noktalama var (`20:00'de`, `…'den`); İngilizce tek
+ *    tırnakta orada BOŞLUK var. Bu ayrım olmadan kapı gerçek bir yanlış
+ *    pozitif üretti: "address the 'a one-off cost' argument" — `'a`
+ *    Türkçe yönelme eki sanılıyordu.
+ *
+ * Ölçüldü: 95.188 benzersiz dizede yeni kural 29 dize KAZANIYOR, 0 dize
+ * kaybediyor.
+ */
 const TR_SUFFIX =
-  /['’](?:de|da|te|ta|den|dan|ten|tan|ye|ya|yi|yı|yu|yü|nin|nın|nun|nün|in|ın|un|ün|le|la|dir|dır|e|a|i|ı|u|ü)$/u;
+  /[^\s'’]['’](?:de|da|te|ta|den|dan|ten|tan|ye|ya|yi|yı|yu|yü|nin|nın|nun|nün|in|ın|un|ün|le|la|dir|dır|e|a|i|ı|u|ü)(?!\p{L})/u;
 export const isTurkishStem = (t: string): boolean =>
+  TR_SUFFIX.test(t) ||
   t
     .split(/[^\p{L}'’]+/u)
     .filter(Boolean)
-    .some((w) => !/^\p{Lu}/u.test(w) && (/[ışğ]/.test(w) || TR_WORD.test(w) || TR_SUFFIX.test(w)));
+    .some((w) => !/^\p{Lu}/u.test(w) && (/[ışğ]/.test(w) || TR_WORD.test(w)));
 
 /**
  * ŞIKLARIN BİRİMİ SORU, dize değil.
@@ -785,6 +805,22 @@ export function resolveMockPaper<T extends MockShape>(dict: NativeDict, paper: T
   const opt = (kind: string, s: string | undefined): string | undefined =>
     typeof s === "string" && s.trim() ? t(kind, s) : s;
 
+  /**
+   * SÖZLÜKÇE KATLANIYOR, çevrilmiyor: `tr ← en`, `en` düşüyor. Kaynak
+   * zaten iki karşılığı da taşıyor — ölçüldü, 857 maddenin 857'sinde `en`
+   * dolu — yani burada yazılacak hiçbir şey yok, yalnız hangi sütunun
+   * gösterileceği seçiliyor. Ders ve egzersiz hatlarında aynı kural.
+   *
+   * `note` alanı bugün HİÇ yok (ölçüldü: 0/857). Biri eklenirse kâğıt
+   * düşecek ve kapı kırmızı yanacak — çünkü notun İngilizcesi için bir hat
+   * kurulmuş değil ve Türkçe bir kullanım notunu İngilizce sözlükçenin
+   * altında bırakmak, yarım çevirinin en görünür hâli.
+   */
+  const fold = <G extends { tr: string; en?: string; note?: string }>(g: G): G => {
+    if (!g.en?.trim() || g.note?.trim()) failed = true;
+    return { ...g, tr: g.en ?? g.tr, en: undefined };
+  };
+
   const out = {
     ...paper,
     themeTr: t("themeTr", paper.themeTr),
@@ -800,6 +836,7 @@ export function resolveMockPaper<T extends MockShape>(dict: NativeDict, paper: T
                 ...x,
                 ...(x.genreTr !== undefined ? { genreTr: opt("genreTr", x.genreTr) } : {}),
                 ...(x.situation !== undefined ? { situation: opt("situation", x.situation) } : {}),
+                ...(x.gloss ? { gloss: x.gloss.map(fold) } : {}),
               })),
             }
           : {}),
@@ -857,7 +894,7 @@ export type MockShape = {
     instructionTr: string;
     tasks: {
       promptTr: string;
-      texts?: { genreTr?: string; situation?: string }[];
+      texts?: { genreTr?: string; situation?: string; gloss?: GlossShape[] }[];
       items?: { explain: string }[];
       rubric?: { criteria?: string[]; points?: { tr: string }[] };
       exchange?: { who: string; tr?: string; hint?: string; expect?: string }[];
