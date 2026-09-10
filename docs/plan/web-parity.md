@@ -5432,3 +5432,32 @@ mobil çağırmıyor" kuralı bunu **görmedi**, çünkü mobil aynı yolu POST 
 zaten anıyordu. Kural **yolu** eşliyor, **yöntemi** değil. Aynı ucun bir
 yönteminin tek platformda kalması, ucun tamamen tek platformda kalması kadar
 sessiz. Yöntem ayrımını da ölçmek gerekiyor — bir sonraki turun işi.
+
+### 11.145 Kendi yazısını silmenin yolu yoktu — ve kapı yöntem düzeyine indi
+
+Uç (`DELETE /api/assessments?id=`) aylardır duruyor ve web kartı onu
+kullanıyordu; mobilde **kendi yazısını silmenin hiçbir yolu yoktu**. Kendi
+ürettiği içeriği kaldıramamak, kullanıcının kendi verisi üzerindeki en temel
+denetimi eksik bırakıyor. Onay isteniyor (geri alınamaz), satır önce gidiyor
+sunucu sonra — kullanıcı beklemiyor.
+
+**§11.144'ün dersi kapıya yazıldı:** `check-endpoints` artık **yöntem
+düzeyinde** de bakıyor. Aynı ucun bir yönteminin tek platformda kalması, ucun
+tamamen tek platformda kalması kadar sessiz — `GET /api/skills` tam olarak
+böyle kaçmıştı. Yeni kural bu silme eksiğini **kendiliğinden buldu**.
+
+Çağrı yerindeki yöntem `method:` alanından okunuyor, yoksa GET. **İlk ölçümüm
+yanlıştı:** pencere sabit 240 karakterdi ve komşu iki çağrı (önce GET, sonra
+POST) aynı pencereye girip birbirinin yöntemini gölgeliyordu — üç yanlış
+pozitif. Pencere artık çağrı ifadesinin sonunda kesiliyor.
+
+`WEB_ONLY_METHOD` listesindeki her satır sebebiyle yazılı; ikisi kayıtlı karar
+(`POST /api/pronounce` §11.139, `POST /api/assess/queue` §11.12), biri gerçek
+bir teknik kısıt (`POST /api/stt` mobilde **native** çağrılıyor, JS kaynağında
+görünmez).
+
+**Yan etki, kayda geçsin:** üçnokta genişlemesinden sonra `i18n-check`,
+`native-de.ts`teki **yerel bir `t` yardımcısını** çevirmen sandı
+(`t("vocab.tr", v.tr)` bir alan adı). Dosya düzeyinde, gerekçeli muafiyet
+yazıldı; asıl çözüm o yardımcının adını çevirmenden ayırmak — dosya başka bir
+oturumun elinde.
