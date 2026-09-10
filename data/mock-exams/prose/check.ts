@@ -43,7 +43,31 @@ const TR_WORDS =
   /(?<!\p{L})(?:bir|ve|ile|için|değil|demek|var|yok|olur|olmak|gibi|daha|çok|ama|yani|kadar|sonra|önce|hâli|biçim|biçimi|yerine|zaman|yer|yön|ya|nerede|hangi|kim|nasıl|doğru|yanlış)(?!\p{L})/iu;
 const TR_TERMS =
   /(?<!\p{L})(?:mastar|ortaç|isim|fiil|zamir|özne|nesne|tekil|çoğul|edat|kip|ek|sıfat|zarf|cümle|metin|sözcük|kelime|soru|cevap)(?!\p{L})/iu;
-const turkish = (t: string): boolean => /[ışğİĞŞ]/.test(t) || TR_WORDS.test(t) || TR_TERMS.test(t);
+/*
+  ÖZEL HARFSİZ TÜRKÇE. "Teknolojiye ayak uyduramayan kendi kabahati.",
+  "Mülkiyet: yetki mi, müzakere mi?" ve "Sunumun neresi iyiydi, neden?"
+  baştan sona Türkçe ama hiçbirinde ne ı/ş/ğ var ne de yukarıdaki iki
+  listeden bir sözcük. Olumlu ölçütteki büyük-harf kuralı ("Teknolojiye",
+  "Mülkiyet") onları yabancı saydı ve kapı, Türkçe iddianın İngilizcede
+  BİREBİR durmasını — yani ÇEVRİLMEMESİNİ — istedi. Yanlış ret burada
+  satırı elle baktırmakla kalmıyor, yanlış olanı dayatıyordu.
+
+  Önce ters yönden denendi: büyük-harf ölçütünü yalnız kısa açıklıklara
+  (≤3 sözcük) bırakmak. Ölçüldü ve BIRAKILDI — üç yanlışı düzeltirken
+  "Ich backe zwei Kuchen", "Die Zeit bleibt gleich" gibi 107 gerçek
+  Almanca açıklığı denetim dışına çıkarıyordu. Uzun Almanca açıklıkların
+  çoğunda listedeki işlev sözcüklerinden biri yok; onları ayakta tutan
+  tek şey adların büyük harfi.
+
+  Kalan çare Türkçe tarafını büyütmek. Buradakiler ne Almancada ne
+  İngilizcede geçiyor; soru eki (`mi`, `mu`, `mü`) ayrı yazıldığı için
+  tek başına da yakalanıyor. Ölçüldü — kanıt sayılan 2.991 açıklıktan
+  tam 3'ü düşüyor ve üçü de yukarıdaki satırlar.
+*/
+const TR_PRON =
+  /(?<!\p{L})(?:kendi|kendine|kendini|bunu|onu|şunu|herkes|hepsi|mi|mu|mü|neden|niçin|ancak|hem|üzerine|konusunda|olarak|göre)(?!\p{L})/iu;
+const turkish = (t: string): boolean =>
+  /[ışğİĞŞ]/.test(t) || TR_WORDS.test(t) || TR_TERMS.test(t) || TR_PRON.test(t);
 const DE_WORDS =
   /(?<!\p{L})(?:der|die|das|ein|eine|einen|einem|ist|sind|war|nicht|kein|keine|und|mit|wir|ich|Sie|du|zu|auf|für|von|dem|den|im|am|bei|nach|vor|über|wie|was|wo|wer|bitte|hier|ja|nein|sehr|gut|noch|schon|aus|um|halb|man|sich|es|habe|hat|haben|werden|wird|wurde|worden|muss|müssen|kann|können|soll|sollen|will|wollen|würde|hätte|wäre)(?!\p{L})/u;
 const EN_WORDS =
