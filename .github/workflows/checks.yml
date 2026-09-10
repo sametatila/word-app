@@ -103,8 +103,15 @@ jobs:
       # otomatik çalışmıyordu ve biri (test:track) sessizce KIRMIZIYDI: quiz
       # cümleleri çağırana taşınınca test eski Türkçe cümleyi aramaya devam
       # etmişti. Çalıştıran olmayınca kırık test kırık kalıyor.
+      #
+      # `test:apple` bu listeye sonradan katıldı ve diğerlerinden ağır basıyor:
+      # Apple'ın sunucudan sunucuya bildirim ucu kimlik doğrulamasız ve herkese
+      # açık, tek kapısı imza. O doğrulamadaki bir gerileme (alg başlığına
+      # uymak, aud'u atlamak) uydurma bir bildirimle hesap sildirmeye kadar
+      # gider ve başka hiçbir yerde görünmez.
       - name: Birim testleri
         run: |
+          npm run test:apple
           npm run test:award
           npm run test:coach-lines
           npm run test:events

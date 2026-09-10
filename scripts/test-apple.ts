@@ -92,5 +92,127 @@ check("her çağrı yeni jti", appleClientSecret(now) !== appleClientSecret(now)
 process.env.APPLE_PRIVATE_KEY = "";
 check("anahtar yokken yapılandırılmamış sayılıyor", !appleRevokeConfigured());
 
-console.log(failures === 0 ? `\ntamam: ${total}/${total}` : `\nKALDI: ${failures}/${total} test`);
-process.exit(failures === 0 ? 0 : 1);
+/**
+ * Sunucudan sunucuya bildirim doğrulaması.
+ *
+ * NEDEN BU TEST: uç kimlik doğrulamasız ve herkese açık; tek kapı imza. Kapının
+ * yanlış açıldığı üç klasik yol da burada deneniyor — `alg` başlığına uymak,
+ * `aud` kontrolünü atlamak, imzayı hiç bakmadan geçmek. Üçü de gerçek hayatta
+ * ancak birinin uydurma bildirimle hesap sildirmesiyle fark edilirdi.
+ *
+ * Ağ yok: Apple'ın JWKS'i yerine testin ürettiği RSA anahtarı önbelleğe elle
+ * konuyor.
+ */
+async function notificationTests(): Promise<void> {
+  const { generateKeyPairSync: genRsa, createSign } = await import("node:crypto");
+  const { verifyAppleNotification, __setAppleJwksForTest } = await import(
+    "../src/lib/auth/apple-notifications"
+  );
+
+  console.log("\nApple sunucudan sunucuya bildirim");
+
+  process.env.APPLE_BUNDLE_ID = "app.lernomi.ios";
+  const { publicKey, privateKey: rsaPrivate } = genRsa("rsa", { modulusLength: 2048 });
+  const jwk = publicKey.export({ format: "jwk" }) as Record<string, string>;
+  __setAppleJwksForTest([{ ...jwk, kid: "TESTKID", alg: "RS256", use: "sig" }]);
+
+  const b64u = (b: Buffer) => b.toString("base64").replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/, "");
+  const nowS = Math.floor(now / 1000);
+
+  /** Verilen başlık ve iddialarla imzalı bir JWS üretir. */
+  function sign(claims: Record<string, unknown>, head: Record<string, unknown> = {}): string {
+    const h = b64u(Buffer.from(JSON.stringify({ alg: "RS256", kid: "TESTKID", ...head })));
+    const p = b64u(Buffer.from(JSON.stringify(claims)));
+    const s = createSign("RSA-SHA256");
+    s.update(`${h}.${p}`);
+    s.end();
+    return `${h}.${p}.${b64u(s.sign(rsaPrivate))}`;
+  }
+
+  const base = (events: unknown, over: Record<string, unknown> = {}) => ({
+    iss: "https://appleid.apple.com",
+    aud: "app.lernomi.ios",
+    iat: nowS,
+    exp: nowS + 600,
+    jti: "test-jti",
+    events,
+    ...over,
+  });
+
+  // Apple `events`i JSON DİZGİ olarak gönderiyor — asıl biçim bu.
+  const revoked = JSON.stringify({ type: "consent-revoked", sub: "001234.abcdef", event_time: now });
+  const okRes = await verifyAppleNotification(sign(base(revoked)), now);
+  check("geçerli bildirim doğrulanıyor", okRes.ok, okRes.ok ? "" : okRes.reason);
+  check("olay türü okundu", okRes.ok && okRes.event.type === "consent-revoked");
+  check("sub okundu", okRes.ok && okRes.event.sub === "001234.abcdef");
+
+  // Belgelerin bazı örnekleri nesne veriyor; ikisi de kabul edilmeli.
+  const asObject = await verifyAppleNotification(
+    sign(base({ type: "account-delete", sub: "001234.abcdef" })),
+    now,
+  );
+  check("events nesne olarak da okunuyor", asObject.ok && asObject.event.type === "account-delete");
+
+  const emailEv = JSON.stringify({
+    type: "email-disabled",
+    sub: "001234.abcdef",
+    email: "x@privaterelay.appleid.com",
+    is_private_email: "true",
+  });
+  const emailRes = await verifyAppleNotification(sign(base(emailEv)), now);
+  check(
+    "is_private_email dizgisi boolean'a çevriliyor",
+    emailRes.ok && emailRes.event.isPrivateEmail === true,
+  );
+
+  // ── reddedilmesi gerekenler ──────────────────────────────────────────────
+
+  const tampered = (() => {
+    const parts = sign(base(revoked)).split(".");
+    const sig = Buffer.from(parts[2].replace(/-/g, "+").replace(/_/g, "/"), "base64");
+    sig[0] ^= 0xff;
+    return `${parts[0]}.${parts[1]}.${b64u(sig)}`;
+  })();
+  const bad = await verifyAppleNotification(tampered, now);
+  check("bozulmuş imza reddediliyor", !bad.ok && bad.reason === "bad_signature", bad.ok ? "kabul edildi" : bad.reason);
+
+  const otherApp = await verifyAppleNotification(sign(base(revoked, { aud: "com.baskasi.app" })), now);
+  check("başka uygulamanın bildirimi reddediliyor", !otherApp.ok && otherApp.reason === "bad_audience");
+
+  const badIss = await verifyAppleNotification(sign(base(revoked, { iss: "https://evil.example" })), now);
+  check("sahte issuer reddediliyor", !badIss.ok && badIss.reason === "bad_issuer");
+
+  // `alg` başlığına uymak JWT'nin en bilinen zafiyeti: header ne derse desin RS256.
+  const noneAlg = await verifyAppleNotification(sign(base(revoked), { alg: "none" }), now);
+  check("alg:none reddediliyor", !noneAlg.ok && noneAlg.reason === "bad_alg");
+  const hs256 = await verifyAppleNotification(sign(base(revoked), { alg: "HS256" }), now);
+  check("alg:HS256 reddediliyor", !hs256.ok && hs256.reason === "bad_alg");
+
+  const expired = await verifyAppleNotification(sign(base(revoked, { exp: nowS - 3600 })), now);
+  check("süresi geçmiş bildirim reddediliyor", !expired.ok && expired.reason === "expired");
+
+  const unknownKid = await verifyAppleNotification(sign(base(revoked), { kid: "BASKA" }), now);
+  check("tanınmayan kid reddediliyor", !unknownKid.ok);
+
+  const weird = await verifyAppleNotification(
+    sign(base(JSON.stringify({ type: "bir-sey", sub: "001234.abcdef" }))),
+    now,
+  );
+  check("bilinmeyen olay türü reddediliyor", !weird.ok && weird.reason.startsWith("unknown_type"));
+
+  const noSub = await verifyAppleNotification(sign(base(JSON.stringify({ type: "consent-revoked" }))), now);
+  check("sub'suz olay reddediliyor", !noSub.ok && noSub.reason === "no_sub");
+
+  const junk = await verifyAppleNotification("bu-bir-jws-degil", now);
+  check("bozuk JWS reddediliyor", !junk.ok && junk.reason === "malformed_jws");
+
+  // Yapılandırma yoksa hiç denenmemeli: `aud` karşılaştırılamaz.
+  process.env.APPLE_BUNDLE_ID = "";
+  const unconfigured = await verifyAppleNotification(sign(base(revoked)), now);
+  check("bundle kimliği yokken doğrulama yapılmıyor", !unconfigured.ok && unconfigured.reason === "not_configured");
+}
+
+void notificationTests().then(() => {
+  console.log(failures === 0 ? `\ntamam: ${total}/${total}` : `\nKALDI: ${failures}/${total} test`);
+  process.exit(failures === 0 ? 0 : 1);
+});
