@@ -913,6 +913,20 @@ function SpeakingTask({
             <MicIcon color={colors.primaryText} size={20} />
             <Text variant="bodyStrong" color={colors.primaryText}>{t("mockexam.speak_start")}</Text>
           </PressableScale>
+          {/*
+            MİKROFONSUZ YOL. Konuşma görevinin tek girişi mikrofondu: izni
+            reddeden ya da cihazında tanıma çalışmayan kullanıcı
+            "mikrofon gerekli" uyarısında KALIYORDU - bölümü hiç bitiremiyor,
+            oysa yazılı döküm yolu aynı bileşende zaten var (`done` adımı) ve
+            değerlendirme metin üzerinden çalışıyor. Web ikinci bir düğmeyle
+            o yolu açıyor.
+          */}
+          <PressableScale
+            onPress={() => setStep("done")}
+            style={{ marginTop: spacing.sm, alignSelf: "flex-start", paddingVertical: spacing.sm, paddingHorizontal: spacing.md, borderRadius: radii.pill, backgroundColor: colors.surface2 }}
+          >
+            <Text variant="bodyStrong" color={colors.text}>{t("mockexam.write_without_mic")}</Text>
+          </PressableScale>
           {micOk === false ? <Text variant="caption" color={colors.dangerText} style={{ marginTop: spacing.xs }}>{t("mockexam.mic_needed")}</Text> : null}
         </>
       ) : step === "prep" ? (
@@ -946,11 +960,14 @@ function SpeakingTask({
             value={value}
             onChangeText={(v) => onOpen(task.id, v)}
             multiline
-            placeholder={t("mockexam.write_here")}
+            placeholder={t("mockexam.transcript_placeholder")}
             placeholderTextColor={colors.textFaint}
             style={{ marginTop: spacing.xs, minHeight: 120, borderRadius: radii.md, backgroundColor: colors.surface2, color: colors.text, padding: spacing.md, textAlignVertical: "top" }}
           />
-          <Text variant="micro" color={colors.textMuted} style={{ marginTop: spacing.xs, lineHeight: 18 }}>{t("mockexam.transcript_note")}</Text>
+          {/* Mikrofon açılamadıysa sebebi ve çıkış yolu ayrı söyleniyor —
+              genel döküm notu o durumda yanlış şeyi anlatıyor. Web aynı ayrımı
+              yapıyor (`mic_failed` / `transcript_note`). */}
+          <Text variant="micro" color={colors.textMuted} style={{ marginTop: spacing.xs, lineHeight: 18 }}>{t(micOk === false ? "mockexam.mic_failed" : "mockexam.transcript_note")}</Text>
           {score ? (
             <OpenResult score={score} colors={colors} />
           ) : (

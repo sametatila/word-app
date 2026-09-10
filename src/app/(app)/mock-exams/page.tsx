@@ -167,7 +167,7 @@ export default async function MockExamsPage({ searchParams }: { searchParams: Pr
           seçicisini aşağı itiyor, "hangi seviyeyi çözeyim" sorusunun cevabını
           bir paragrafın arkasına koyuyordu. */}
       <p className="muted text-body">
-        {t("mockexams.intro_web")}
+        {t("mockexams.intro")}
       </p>
 
       {/* Kaç kâğıdın açık olduğu LİSTEDEN ÖNCE söyleniyor: kuralı kilide
