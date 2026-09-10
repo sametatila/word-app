@@ -64,12 +64,24 @@ export type Course = {
    * yazılmış bir listeyle Züritüütsch'ü yeni kullanıcıya sunuyordu.
    */
   offeredToNewUsers: boolean;
+  /**
+   * Cinsiyetli isim sistemi var mı — Artikel Yarışı ve Çoğul Bilmece bu
+   * kursta üretilebilir mi.
+   *
+   * Web bunu `targetLang === "de"` diye çıkarıyordu. Bugünkü kataloğun üç
+   * kursunda sonuç aynı ama kural yanlış: artikel Almancaya değil, DİLİN
+   * kendisine ait bir özellik. Fransızca eklenseydi web artikel oyunlarını
+   * sessizce gizlerdi. Mobil baştan beri bu bayrağı taşıyor
+   * (`M/src/lib/courses.ts` `hasArticles`); web de artık taşıyor.
+   */
+  hasArticles: boolean;
 };
 
 export const COURSES: Course[] = [
   {
     id: "de",
     targetLang: "de",
+    hasArticles: true,
     label: { tr: "Almanca", en: "German", de: "Deutsch" },
     sub: {
       tr: "Hochdeutsch · CEFR A1–C1",
@@ -83,6 +95,7 @@ export const COURSES: Course[] = [
   {
     id: "gsw-zh",
     targetLang: "de",
+    hasArticles: true,
     label: { tr: "Zürih Almancası", en: "Zurich German", de: "Züritüütsch" },
     sub: {
       tr: "Züritüütsch · İsviçre lehçesi",
@@ -97,6 +110,7 @@ export const COURSES: Course[] = [
   {
     id: "en",
     targetLang: "en",
+    hasArticles: false,
     label: { tr: "İngilizce", en: "English", de: "Englisch" },
     sub: {
       tr: "İngilizce · CEFR A1–C1",

@@ -90,8 +90,11 @@ export default async function PracticePage() {
     console.error("[practice] profil okunamadı", err);
   }
   // Artikel ve çoğul dile bağlı: hedef dil Almanca değilse o oyunlar listelenmez.
-  const german = courseOrDefault(course).targetLang === "de";
-  const list = TILES.filter((g) => german || (g.game !== "artikel" && g.game !== "plural"));
+  /* Eleme kursun KENDİ bayrağına bakıyor, hedef dilin adına değil: artikel
+     Almancaya değil dilin cinsiyetli isim sistemine ait bir özellik. Mobil
+     de aynı bayrağı kullanıyor (`supportsGame`). */
+  const articles = courseOrDefault(course).hasArticles;
+  const list = TILES.filter((g) => articles || (g.game !== "artikel" && g.game !== "plural"));
 
   return (
     <div className="mx-auto w-full max-w-2xl space-y-5">
