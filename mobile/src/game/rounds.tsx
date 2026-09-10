@@ -524,8 +524,9 @@ function TypingRound({ round, onDone, colors }: { round: Round; onDone: Done; co
 
 function ClozeRound({ round, onDone, colors }: { round: Round; onDone: Done; colors: Palette }) {
   const opts = (round.options as unknown as string[] | undefined) ?? [];
-  const answer = round.answer ?? "";
-  const full = fillBlank(round.sentence, answer);
+  const answer = typeof round.answer === "string" ? round.answer : "";
+  const sentence = typeof round.sentence === "string" ? round.sentence : "";
+  const full = fillBlank(sentence, answer);
   const typeMode = round.mode === "type";
   const [picked, setPicked] = useState<string | null>(null);
   const [val, setVal] = useState("");
@@ -549,8 +550,8 @@ function ClozeRound({ round, onDone, colors }: { round: Round; onDone: Done; col
       <View style={[{ backgroundColor: colors.surface, borderRadius: radii.xl, padding: spacing.xl, borderWidth: 1, borderColor: colors.hairline, marginBottom: spacing.md }, softShadow("#5a3418", 10)]}>
         <Text variant="micro" color={colors.textMuted} style={{ textTransform: "uppercase", letterSpacing: 1, marginBottom: spacing.md }}>{tx(typeMode ? "rounds.cloze_typed" : "rounds.fill_blank")}</Text>
         <View style={{ flexDirection: "row", alignItems: "flex-start", gap: spacing.sm }}>
-          <Text variant="h2" style={{ flex: 1, lineHeight: 32 }}>{round.sentence}</Text>
-          <SpeakButton text={round.sentence ?? ""} colors={colors} size={22} />
+          <Text variant="h2" style={{ flex: 1, lineHeight: 32 }}>{sentence}</Text>
+          <SpeakButton text={sentence} colors={colors} size={22} />
         </View>
         {round.sentenceTr ? <Text variant="body" color={colors.textMuted} style={{ marginTop: spacing.sm }}>{round.sentenceTr}</Text> : null}
       </View>
@@ -591,7 +592,7 @@ function ClozeRound({ round, onDone, colors }: { round: Round; onDone: Done; col
 
 function PluralRound({ round, onDone, colors }: { round: Round; onDone: Done; colors: Palette }) {
   const word = round.word!;
-  const answer = round.answer ?? "";
+  const answer = typeof round.answer === "string" ? round.answer : "";
   const opts = (round.options as unknown as string[] | undefined) ?? [];
   const [picked, setPicked] = useState<string | null>(null);
   const [fb, setFb] = useState<Feedback | null>(null);
@@ -667,7 +668,7 @@ function SelfAssess({ round, onDone, colors }: { round: Round; onDone: Done; col
   );
   return (
     <RoundShell footer={footer}>
-      <Prompt label={tx(round.game === "intro" ? "rounds.new_word" : "rounds.recall")} big={withArtikel(word)} speakText={withArtikel(word)} sub={round.sentence ?? null} colors={colors} />
+      <Prompt label={tx(round.game === "intro" ? "rounds.new_word" : "rounds.recall")} big={withArtikel(word)} speakText={withArtikel(word)} sub={typeof round.sentence === "string" ? round.sentence : null} colors={colors} />
       {reveal ? (
         <View style={{ backgroundColor: colors.surface, borderRadius: radii.lg, borderWidth: 1, borderColor: colors.hairline, padding: spacing.lg }}>
           <Text variant="h3">{meaningLine(word)}</Text>
@@ -802,7 +803,7 @@ function ScrambleRound({ round, onDone, colors }: { round: Round; onDone: Done; 
 
 function OrderRound({ round, onDone, colors }: { round: Round; onDone: Done; colors: Palette }) {
   const word = round.word!;
-  const answer = (round.answer as unknown as string[] | undefined) ?? [];
+  const answer = Array.isArray(round.answer) ? round.answer : [];
   const tail = round.tail ?? "";
   const full = [...answer, tail].filter(Boolean).join(" ");
   const pool = React.useMemo(() => (round.tokens ?? []).map((text, id) => ({ id, text })), [round.tokens]);
@@ -840,7 +841,7 @@ function OrderRound({ round, onDone, colors }: { round: Round; onDone: Done; col
 }
 
 function TranslateRound({ round, onDone, colors }: { round: Round; onDone: Done; colors: Palette }) {
-  const s = round.sentence as unknown as { tr: string; de: string; en: string | null };
+  const s = typeof round.sentence === "object" && round.sentence ? round.sentence : { tr: "", de: "", en: null };
   const alts = round.alternatives ?? [];
   const [val, setVal] = useState("");
   const [hintShown, setHintShown] = useState(false);
@@ -1026,8 +1027,8 @@ function pickRound(round: Round, onDone: Done, colors: Palette) {
   if (round.game === "plural" && (round.options as unknown as string[])?.length) return <PluralRound round={round} onDone={onDone} colors={colors} />;
   if (round.game === "listen" && round.options?.length) return <ListenRound round={round} onDone={onDone} colors={colors} />;
   if (round.game === "scramble" && round.word) return <ScrambleRound round={round} onDone={onDone} colors={colors} />;
-  if (round.game === "order" && round.tokens?.length && (round.answer as unknown as string[])?.length) return <OrderRound round={round} onDone={onDone} colors={colors} />;
-  if (round.game === "translate" && round.sentence) return <TranslateRound round={round} onDone={onDone} colors={colors} />;
+  if (round.game === "order" && round.tokens?.length && Array.isArray(round.answer) && round.answer.length) return <OrderRound round={round} onDone={onDone} colors={colors} />;
+  if (round.game === "translate" && typeof round.sentence === "object" && round.sentence) return <TranslateRound round={round} onDone={onDone} colors={colors} />;
   if (round.game === "match" && (round.words?.length ?? 0) >= 2) return <MatchRound round={round} onDone={onDone} colors={colors} />;
   return <SelfAssess round={round} onDone={onDone} colors={colors} />;
 }

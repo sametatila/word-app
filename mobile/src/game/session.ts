@@ -32,16 +32,29 @@ export type Round = {
   words?: RoundWord[];
   options?: Option[];
   direction?: "de-tr" | "tr-de";
-  sentence?: string;
+  /**
+   * Cümle. `translate` turunda NESNE (`{ tr, de, en }`), cloze/scramble/intro
+   * turlarında düz dizge — web birleşiminde de öyle. Mobil tek gövdeli bir tip
+   * kullandığı için ikisi burada yazılı; eskiden yalnız `string` deniyor ve
+   * `translate` turu `as unknown as` ile kaçırılıyordu.
+   */
+  sentence?: string | { tr: string; de: string; en: string | null };
   sentenceTr?: string | null;
   sentenceEn?: string | null;
-  answer?: string;
+  /**
+   * Doğru cevap. `order` turunda DİZİ (sunucu kelimeleri sırayla veriyor),
+   * öteki turlarda tek dizge — web `Round` birleşiminde ikisi ayrı üye
+   * (`order` için `answer: string[]`, cloze/plural için `answer: string`).
+   * Mobil tek gövdeli bir tip kullandığı için birleşim burada yazılı.
+   *
+   * Eskiden yalnız `string` deniyordu ve `order` turu iki yerde
+   * `as unknown as string[]` ile kaçırılıyordu: tip sözleşmeyi yanlış
+   * anlatıyor, kaçış da yanlışı saklıyordu.
+   */
+  answer?: string | string[];
   claim?: Option;
   isTrue?: boolean;
-  blank?: string;
   tokens?: string[];
-  correctOrder?: string[];
-  prompt?: string;
   /** order: cümle sonu noktalaması (son kelimeyi ele vermesin diye ayrı durur). */
   tail?: string;
   /** translate: kabul edilen başka kuruluşlar. */
