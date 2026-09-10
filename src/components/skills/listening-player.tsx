@@ -234,9 +234,13 @@ export function ListeningPlayer({ exercise, backHref }: { exercise: ListeningExe
         </div>
 
         <div className="mt-4 flex flex-wrap items-center gap-2">
+          {/* Basılı kalan çipin DURUMU söylenmeli: ekran okuyucu "yavaş"
+              düğmesinin açık mı kapalı mı olduğunu ancak böyle bilir. Mobil
+              çipi durumu merkezden veriyor (`ui/Chip` accessibilityState). */}
           <button
             type="button"
             onClick={toggleSlow}
+            aria-pressed={slow}
             className={`chip px-3 py-1.5 text-xs ${slow ? "chip-active" : ""}`}
           >
             {t("listenp.slow")}
@@ -244,6 +248,7 @@ export function ListeningPlayer({ exercise, backHref }: { exercise: ListeningExe
           <button
             type="button"
             onClick={() => setShowText((v) => !v)}
+            aria-pressed={showText}
             className={`chip px-3 py-1.5 text-xs ${showText ? "chip-active" : ""}`}
           >
             {t(showText ? "item.hide_text" : "item.show_text")}

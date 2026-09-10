@@ -29,7 +29,9 @@ function ToggleRow({ title, subtitle, value, onValueChange, colors, children }: 
           <Text variant="h3">{title}</Text>
           <Text variant="caption" color={colors.textMuted}>{subtitle}</Text>
         </View>
-        <Switch value={value} onValueChange={onValueChange} trackColor={{ true: colors.primary, false: colors.surface2 }} thumbColor="#fff" />
+        {/* Anahtarın ADI satırın başlığı (bkz. SocialSettings): yanındaki
+            metin kendiliğinden ilişkilendirilmiyor. */}
+        <Switch value={value} onValueChange={onValueChange} accessibilityLabel={title} trackColor={{ true: colors.primary, false: colors.surface2 }} thumbColor="#fff" />
       </View>
       {children}
     </Card>

@@ -63,7 +63,10 @@ export function SocialSettingsScreen() {
         <Text variant="bodyStrong">{title}</Text>
         <Text variant="caption" color={colors.textMuted}>{sub}</Text>
       </View>
-      <Switch value={value} onValueChange={onChange} disabled={busy} trackColor={{ true: colors.primary, false: colors.border }} thumbColor="#fff" />
+      {/* Anahtarın ADI satırın başlığı: ekran okuyucu onu yanındaki metinle
+          kendiliğinden ilişkilendirmiyor, "açık/kapalı anahtar" diye okuyup
+          neyin anahtarı olduğunu söylemiyordu. */}
+      <Switch value={value} onValueChange={onChange} disabled={busy} accessibilityLabel={title} trackColor={{ true: colors.primary, false: colors.border }} thumbColor="#fff" />
     </View>
   );
 

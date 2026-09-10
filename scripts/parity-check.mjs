@@ -2866,7 +2866,42 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   };
   const mobil = say(["mobile/src"], /<PressableScale\b([^>]*)>\s*<[A-Za-z]+Icon\b[^>]*\/>\s*<\/PressableScale>/g, "accessibilityLabel");
   const web = say(["src/components", "src/app"], /<button\b([^>]*)>\s*<[A-Za-z]+Icon\b[^>]*\/>\s*<\/button>/g, "aria-label");
-  sameList("etiketsiz simge dugmesi", ["adsiz=" + mobil], ["adsiz=" + web]);
+  /* Anahtar (Switch) da metinsiz bir denetim: ekran okuyucu yanindaki basligi
+     kendiliginden ILISKILENDIRMIYOR, "acik anahtar" deyip neyin anahtari
+     oldugunu soylemiyor. Webin karsiligi `<input type="checkbox">` ve orada
+     etiket `<label>` ile bagli, o yuzden sayim mobile ozel - beklenen sifir. */
+  const anahtar = say(["mobile/src"], /<Switch\b([^>]*)\/>/g, "accessibilityLabel");
+  sameList("etiketsiz simge dugmesi", ["adsiz dugme=" + mobil, "adsiz anahtar=" + anahtar], ["adsiz dugme=" + web, "adsiz anahtar=0"]);
+}
+
+/* ── 76. basili kalan cipin DURUMU soyleniyor mu ──────────────────────────
+ * Secili cip gorsel olarak belli ama ekran okuyucu rengi gormez: durumu
+ * ayrica soylenmeli. Mobil bunu MERKEZDEN veriyor (`ui/Chip`
+ * accessibilityState), web her cagri yerinde kendi soyluyor - o yuzden webde
+ * unutulabiliyor ve iki yerde unutulmustu (dinleme oynaticisinin "yavas" ve
+ * "metni goster" cipleri). Olcum: `chip-active` yazan her dosyada en az o
+ * kadar `aria-*` durum bildirimi olmali. */
+{
+  const gez = (d, out = []) => {
+    for (const e of readdirSync(new URL("../" + d, import.meta.url), { withFileTypes: true })) {
+      const p = d + "/" + e.name;
+      if (e.isDirectory()) { if (!/node_modules|__tests__/.test("/" + p)) gez(p, out); }
+      else if (e.name.endsWith(".tsx")) out.push(p);
+    }
+    return out;
+  };
+  const eksik = [];
+  for (const f of gez("src/components")) {
+    const src = read(f);
+    const cip = (src.match(/chip-active/g) ?? []).length;
+    if (!cip) continue;
+    const durum = (src.match(/aria-(?:pressed|current|selected)/g) ?? []).length;
+    if (durum < cip) eksik.push(f.split("/").pop() + " (" + cip + " cip, " + durum + " durum)");
+  }
+  /* Mobil tarafta cip TEK bilesen: durum orada bir kez yaziliyor, cagri yeri
+     basina unutulamaz. Kapi yine de bilesenin durumu verdigini dogruluyor. */
+  const mobilEksik = /accessibilityState=\{\{ selected: active \}\}/.test(read("mobile/src/ui/Chip.tsx")) ? [] : ["ui/Chip durum vermiyor"];
+  sameList("cip durum bildirimi", mobilEksik.length ? mobilEksik : ["yok"], eksik.length ? eksik : ["yok"], "mobil", "web");
 }
 
 console.log(
