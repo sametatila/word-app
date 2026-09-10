@@ -4879,3 +4879,35 @@ tiplerini değil — ad kümesi aynı olduğu için bu ayrışma görünmüyordu
 ölçülmüyor: mobil kendi kısayollarını kullanıyor ve o karşılaştırma gürültü
 üretip gerçek bulguyu gizlerdi (§11.104, §11.109) — ama "bu alan boş
 gelebilir mi" sorusu iki tarafta aynı cevabı vermek zorunda.
+
+### 11.115 Web iskeletleri düz bloktu
+
+Ortak görev iki tane doksan altı piksellik düz satırla, kişi listeleri
+(arkadaşlar, arama sonuçları, öneriler) göz kararı yükseklikte `RowSkeleton`
+ile yer ayırıyordu: kart gelince yerleşim yerinden oynuyordu. İskeletin işi
+yükseklik doldurmak değil **gelecek şeyin şeklini göstermek** — akış ve gelen
+kutusu bu kuralı zaten uyguluyordu, bu üçü uygulamıyordu. Android'in
+karşılıkları şekilli (`QuestsSkeleton`, `FriendCardSkeleton`,
+`SearchResultSkeleton`).
+
+Ortak görev kartında **hedef XP** alt satırın kuyruğuna `· 500 XP` diye
+ekleniyordu: kartın en önemli sayısı, kimin kiminle olduğunu anlatan cümlenin
+arkasında kalıyordu. Android sağ üstte büyük yazıp altına ne olduğunu
+söylüyor.
+
+### 11.116 Üçüncü kör nokta: süslü parantezin yuttuğu JSX
+
+Arkadaş tablosunda kendi satırını işaretleyen rozet **`sen` diye elle
+yazılıydı** — İngilizce ve Almanca arayüzde de "sen" çıkıyordu; anahtar taban
+sözlükte hazırdı ve Android aynı satırda onu kullanıyor.
+
+Sebep yine tarayıcıda: `{...}` içini komple atan desen, tek satırlık **koşullu
+bir JSX**'i (`{x ? <span>sen</span> : null}`) tamamen yok ediyor ve gövde
+metni hiçbir kurala düşmüyordu. İçinde etiket açılışı olan parantez artık
+olduğu gibi bırakılıyor; etiket temizliği zaten gövdeyi ayırıp çıkarıyor.
+Ölçüldü: iki tarafta da yeni yanlış pozitif yok (166 / 17 aynı) ve enjekte
+edilen satır yakalanıyor.
+
+§11.104 ve §11.109 ile birlikte üçüncü kez aynı ders: **yanlış negatif iş
+çıkarmıyor, bulguyu gizliyor** — ve gizlediği şey her seferinde gerçek bir
+kullanıcı hatası oldu.
