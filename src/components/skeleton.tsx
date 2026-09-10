@@ -38,46 +38,18 @@ export function PageSkeleton({ rows = 5, header = true }: { rows?: number; heade
   );
 }
 
-/**
- * Kendi verisini çeken bir kartın YERİ.
+/*
+ * `CardSkeleton` KALDIRILDI.
  *
- * Bu kartlar yüklenirken `null` dönüyordu ve sonuç ekranda görünür bir
- * sarsıntıydı: sayfa açılıyor, yarım saniye sonra araya bir kart giriyor ve
- * altındaki her şey aşağı kayıyor. Kullanıcı bunu "bir şeyler ters gitti"
- * diye okuyor — oysa sistem doğru çalışıyor, yalnızca yerini önceden
- * ayırmıyordu.
+ * Kendi verisini çeken kartların yerini ayırmak için yazılmıştı ve yüksekliği
+ * elle veriliyordu ("bu kart aşağı yukarı 220 piksel"). Tuttuğu sürece işini
+ * görüyordu ama tutmadığında iskeletin çözdüğü sarsıntıyı iskeletin kendisi
+ * üretiyordu — beş çağrı yerinin hiçbirinde ölçü gerçek kartla aynı değildi.
  *
- * Yükseklik kartın GERÇEK yüksekliğine yakın seçiliyor: iskelet kartın
- * yerine geçmiyorsa kaymayı azaltır ama bitirmez.
- *
- * Veri gelip de gösterilecek bir şey ÇIKMAZSA kart yine hiç görünmüyor. O
- * ayrım korunuyor: boş bir "zayıf noktan yok" kartı ne bilgi verir ne motive
- * eder. İskelet yalnızca BEKLERKEN var.
+ * Yerine aşağıdaki ölçülü parçalar geçti; beş kart da kendi düzenini çiziyor.
+ * Bileşen bilerek geri konmadı: kalırsa göz kararı yükseklik yazma yolu açık
+ * kalır ve sessizce geri gelir.
  */
-export function CardSkeleton({
-  height = 120,
-  label,
-}: {
-  /** Piksel — yerini tutacağı kartın yaklaşık boyu. */
-  height?: number;
-  /** Ekran okuyucuya durum: "yükleniyor". */
-  label?: string;
-}) {
-  return (
-    <div
-      className="card animate-pulse"
-      style={{ height, background: "var(--surface-2)", borderColor: "transparent" }}
-      role="status"
-      aria-busy="true"
-      /* Etiket VERİLMEZSE hiç yazılmıyor. Önce sabit "Yükleniyor" düşülüyordu
-         ve bu dosya sunucu bileşenlerinden de çağrıldığı için (bkz. Suspense
-         yer tutucuları) `useT()` kullanılamıyor — yanlış dilde bir etiket
-         yerine `role="status"` + `aria-busy` yeterli. Çağıranların hepsi
-         zaten kendi etiketini veriyor. */
-      aria-label={label}
-    />
-  );
-}
 
 /** Satır iskeleti — menü ve liste satırlarının yeri. */
 export function RowSkeleton({ rows = 3, height = 56 }: { rows?: number; height?: number }) {
@@ -201,9 +173,9 @@ export function SkeletonPill({
 /**
  * Kart iskeleti — İÇİ olan.
  *
- * `CardSkeleton` boş bir kutu; bu, kartın kendi çerçevesini (yarıçap, kenarlık,
- * dolgu) koruyup içine gerçek düzenin parçalarını almayı sağlıyor. Kartın
- * yüksekliği böylece varsayılmıyor, içeriğinden çıkıyor.
+ * Kartın kendi çerçevesini (yarıçap, kenarlık, dolgu) koruyup içine gerçek
+ * düzenin parçalarını alıyor. Kartın yüksekliği böylece VARSAYILMIYOR,
+ * içeriğinden çıkıyor — kaldırılan `CardSkeleton`ın yapamadığı da buydu.
  */
 export function SkeletonCard({
   children,

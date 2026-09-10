@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { CardSkeleton } from "@/components/skeleton";
+import { SkeletonBar, SkeletonLine } from "@/components/skeleton";
 import { Disclosure } from "@/components/disclosure";
 import { WeakSpotsCard } from "@/components/weak-spots-card";
 import { useCachedJson } from "@/lib/use-cached";
@@ -41,7 +41,31 @@ export function ProgressPanel() {
     return Array.isArray(g?.proficiency) && g?.series ? (g as GrowthReport) : null;
   });
 
-  if (data === undefined) return <CardSkeleton height={280} label={t("progp.loading")} />;
+  /* İskelet kartın gerçek yapısında: başlık + pencere bilgisi, özet cümlesi
+     ve iki sütuna dizilen altı yeterlik satırı (etiket, sayı, çubuk). Göz
+     kararı 280 piksel, iki sütunlu ızgaranın geniş ekranda üçe, telefonda
+     altıya inen yüksekliğini tutamıyordu. */
+  if (data === undefined)
+    return (
+      <section role="status" aria-busy="true" aria-label={t("progp.loading")} className="card p-4">
+        <div className="flex items-baseline justify-between gap-3">
+          <SkeletonLine variant="bodyStrong" width={150} />
+          <SkeletonLine variant="caption" width={88} />
+        </div>
+        <SkeletonLine variant="body" width="92%" className="mt-1.5" />
+        <div className="mt-3 grid gap-x-4 gap-y-2.5 sm:grid-cols-2">
+          {[0, 1, 2, 3, 4, 5].map((i) => (
+            <div key={i} style={{ opacity: 1 - Math.min(4, i) * 0.1 }}>
+              <div className="flex items-baseline justify-between gap-2">
+                <SkeletonLine variant="micro" width={72} />
+                <SkeletonLine variant="micro" width={34} />
+              </div>
+              <SkeletonBar height={6} className="mt-1" />
+            </div>
+          ))}
+        </div>
+      </section>
+    );
   if (!data) return null;
 
   const measured = data.proficiency.filter((p) => p.now !== null);
