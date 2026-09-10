@@ -4544,3 +4544,40 @@ karşılaştırmadan çıkıyor ve kayıtlı listede duruyorlar.
 
 **Rol yapma SINAVI** (`/lessons/[id]/exam`) webe özel; mobilde karşılığı yok
 ve bu §11.11'deki oynatıcı sınırının parçası.
+
+### 11.96 §11.9 kapandı: sağlayıcı kapalıyken konuşma
+
+Üç turda tamamlandı. §11.9'daki blokaj "port ölçülmedi"ydi ve ölçüm o
+bölümün kendi içinde yapılmıştı; kalan iş yapmaktı.
+
+**Neden önemliydi:** ders geçme koşulu konuşmanın **yapılmasını** istiyor
+(`roleplayDone`). Sağlayıcı kapalıyken web derse ait senaryoya düşüp devam
+ediyordu; mobil yalnız "yapay zekâ kapalı" deyip bırakıyordu — yani Android'de
+**hiçbir konuşma dersi tamamlanamıyordu**.
+
+| adım | ne geldi |
+|---|---|
+| 1/3 | `lib/speech` `normalizeSpoken`, `game/dialogue` `matchReply`/`usedTargets` |
+| 2/3 | `game/offlineRoleplay` durum makinesi + `LessonRoleplay.script` alanı |
+| 3/3 | döküme `script`, ekranın bu yola düşmesi, dört yönlendirme anahtarı |
+
+Her adım kendi kapısıyla geldi: niyet eşleştirme (kısa kök sınırı, kök arama,
+puanlama), sözlü metin normalizasyonu (noktalama kümesi, küçültme yereli) ve
+çevrimdışı akış (kalıp eşiği, özet puanı, koç cümleleri tablosu).
+
+**Döküm gerekçesi ölçülünce düştü.** Eski karar "paket şişmesin" diyordu;
+senaryo 780 dersin **10'unda** var ve `de-a1.json` 613K'dan 676K'ya çıktı.
+Kalan 770 ders zaten kalıp moduna düşüyor ve döküm gerekli iki alanı baştan
+beri taşıyordu.
+
+**İki yerde webden ayrıldım, ikisi de gerekçeli:**
+
+- *Yönlendirme baloncuk olarak çiziliyor* (webde mikrofon etiketinde): mobilde
+  o etiket tek satır ve kalıp cümlesi sığmıyor, üstelik ekranda zaten "ipucu"
+  tonlu baloncuk var.
+- *Karşı tarafın cümleleri hedef dile göre seçiliyor.* Web dördünü de Almanca
+  sabit yazıyordu ve İngilizce kursta (iki yüz ders) Almanca çıkıyordu. Port
+  sırasında çıktı; **web de düzeltildi** ve tablo kapıya bağlandı. `Richtig/
+  Falsch` ile aynı sınıf (§11.84): Türkçe harf taşımadığı için
+  `i18n-hardcoded` görmüyor, sözlük anahtarı olmadığı için `i18n:check`
+  görmüyor.
