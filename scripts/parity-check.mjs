@@ -152,6 +152,33 @@ console.log("\n" + C.b + "6. CEFR SEVIYELERI" + C.off);
   );
 }
 
+/* anadil ekseni */
+
+console.log("\n" + C.b + "7. ANADIL EKSENI" + C.off);
+{
+  // `NATIVE_LANGS` hangi anadillerin var olduğunu, `PAIR_READY` hangi
+  // anadil→kurs çiftinin HAZIR olduğunu söylüyor. İkisi de iki platformda
+  // ayrı ayrı yazılı ve ikisi de kullanıcıya ne sunulacağını belirliyor:
+  // ayrışırlarsa bir platformda seçilebilen çift ötekinde seçilemez, üstelik
+  // sunucu kapısı (`acceptsPair`) web kopyasına bakıyor - yani mobil fazladan
+  // bir çift sunarsa kullanıcı 400 alır.
+  const langs = (src) => {
+    const m = src.match(/NATIVE_LANGS[^=]*=\s*\[(.*?)\];/s);
+    return m ? [...m[1].matchAll(/"(\w+)"/g)].map((x) => x[1]) : [];
+  };
+  const pairs = (src) => {
+    const m = src.match(/PAIR_READY[^=]*=\s*\{(.*?)\n\};/s);
+    if (!m) return [];
+    return [...m[1].matchAll(/(\w+):\s*\[([^\]]*)\]/g)].map(
+      (x) => `${x[1]}=${[...x[2].matchAll(/"([\w-]+)"/g)].map((y) => y[1]).join(",")}`,
+    );
+  };
+  const mob = read("mobile/src/lib/courses.ts");
+  const web = read("src/lib/courses.ts");
+  sameList("anadil listesi", langs(mob), langs(web));
+  sameList("hazir cift tablosu", pairs(mob), pairs(web));
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"
