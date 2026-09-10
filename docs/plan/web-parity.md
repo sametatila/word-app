@@ -6007,3 +6007,25 @@ oturum düzeltirken ben ölçüyordum; kapı ikisi de bitince yeşile döndü.
 "iki taraftan biri henüz gelmedi" demek. Ölçüp kimin işi olduğunu görmek,
 düzeltmeye atılmaktan önce geliyor; yoksa aynı satırı iki oturum iki kez
 yazar.
+
+
+### 11.163 Simge de kimliktir: beş kavram, iki ayrı çizim
+
+§11.162 rengi kimlik saydı; aynı ölçüt simgeye uygulanınca beş ayrışma çıktı.
+Okuma, dinleme, yazma, dil bilgisi ve tekrar turu **iki uygulamada başka
+çizimlerle** gösteriliyordu (kitap ↔ açık kitap, kulaklık ↔ başka kulaklık,
+kalem ↔ başka kalem, harf ↔ yapboz, soru işareti ↔ hedef).
+
+**Ayrışmanın sebebi eksiklik değil seçim:** mobilde iki simge ailesi de var —
+`Read/Listen/Write` patika ve beceri yüzeylerinde, `BookOpen/Headphones/Pen`
+başarım rozetlerinde. Web yalnız ikinci aileyi taşıyordu ve onu her iki iş
+için kullanıyordu. Android'in üç çizimi ve `Quiz` webin kütüphanesine
+eklendi; rozet ailesi olduğu gibi duruyor.
+
+**Yan düzeltme:** web'in patika tür haritasında `lesson` varsayılana
+bırakılmıştı. Aynı simgeyi veriyordu ama harita satır satır
+karşılaştırılamıyordu — kapı "yalnız mobil: lesson" diyordu ve bu doğruydu:
+**yazılmamış bir eşleme, doğru sonucu verse bile ölçülemez.** Tür artık açıkça
+yazılı, varsayılan yalnızca tanınmayan tür için.
+
+§81 iki haritayı da (beceri, patika türü) satır satır ölçüyor.
