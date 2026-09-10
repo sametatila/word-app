@@ -290,6 +290,19 @@
      Marka 500'ü orada 2.24 veriyor (eşik 4.5); 800'ü 6.13. */
   --on-brand-soft: var(--color-brand-800);
   /*
+   * DOLU VURGU KAROSUNUN ÜSTÜ — ikon ya da yazı.
+   *
+   * Vurgu tokenleri tema ile basamak değiştiriyor (açıkta 600, koyuda 300) ve
+   * tek bir sabit renk ikisini birden taşımıyor: beyaz ikon açık temada
+   * 5.20-6.83 veriyor ama koyu temada 1.49-2.06'ya iniyor - grafik eşiği 3.0
+   * bile değil. Mürekkep tam tersi. Bu yüzden renk temayla dönüyor; ölçümler
+   * `scripts/palette-check.mjs` 11. bölümde.
+   *
+   * Mobil karşılığı `theme/colors.ts` `onFill`; aynı fikir orada `onPrimary`
+   * ile zaten vardı, dolu karo onu kullanmıyordu.
+   */
+  --on-fill: #ffffff;
+  /*
    * En sönük metin katmanı — mobil `textFaint`.
    *
    * Web'de yoktu ve `.muted` onun yerine kullanılıyordu; menü satırlarının
@@ -351,6 +364,7 @@
   --brand-soft: color-mix(in srgb, var(--color-brand-500) 16%, transparent);
   /* Koyu temada zemin alfa: marka 400 orada 5.93 veriyor, ton değişmiyor. */
   --on-brand-soft: var(--color-brand-400);
+  --on-fill: var(--color-ink-900);
   --text-faint: #7c6c5d;
   /* Koyu temada mobil de alfa kullanıyor: rgba(…,0.16). */
   --color-success-soft: color-mix(in srgb, var(--color-mint-300) 16%, transparent);

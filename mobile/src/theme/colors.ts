@@ -41,6 +41,15 @@ export type Palette = {
   /** Sayaç rozetinin (parlak kehribar zemin) yazı rengi - 6.04. */
   badgeInk: string;
   /**
+   * DOLU VURGU KAROSUNUN ÜSTÜ — ikon ya da yazı (`IconTile solid`).
+   *
+   * Vurgu renkleri tema ile basamak değiştiriyor ve tek bir sabit renk ikisini
+   * birden taşımıyor: beyaz ikon koyu temada 1.76-2.76 veriyor, grafik eşiği
+   * 3.0 bile değil; mürekkep orada 6.31-9.87. Açık temada tam tersi. Aynı
+   * fikir `onPrimary` ile zaten vardı, dolu karo onu kullanmıyordu.
+   */
+  onFill: string;
+  /**
    * Aynı anlamların YAZI ağırlığındaki tonları.
    *
    * Üsttekiler DOLGU için seçilmiş: beyaz ikon taşıyan karo, ilerleme çubuğu,
@@ -64,7 +73,7 @@ export const light: Palette = {
   border: "#ece3d8", hairline: "#f1eae0",
   text: "#241a12", textMuted: "#7c6c5d", textFaint: "#b7a695",
   success: "#2f9a61", danger: "#dc3f55", streak: "#b8940f", info: "#1b93ac", accent: "#9256bc",
-  streakDeep: "#86690e", badgeInk: "#1e1916",
+  streakDeep: "#86690e", badgeInk: "#1e1916", onFill: "#ffffff",
   successText: "#237a4c", dangerText: "#b62e43", streakText: "#86690e", infoText: "#16748a", accentText: "#77439d",
   successSoft: "#e2f2e9", dangerSoft: "#fde6ea",
   gradientA: ["#fb8f2a", "#f87612"], gradientB: ["#ffab54", "#db5f08"],
@@ -76,7 +85,7 @@ export const dark: Palette = {
   border: "#3a2e23", hairline: "#2b221a",
   text: "#f6efe6", textMuted: "#a9998a", textFaint: "#7c6c5d",
   success: "#6fd19b", danger: "#f79ba6", streak: "#ddb62c", info: "#6fd1e3", accent: "#cda6e8",
-  streakDeep: "#86690e", badgeInk: "#1e1916",
+  streakDeep: "#86690e", badgeInk: "#1e1916", onFill: "#1e1916",
   // Koyu temada dolgu ve yazı ayrımı gerekmiyor: bu tonlar yüzey üstünde
   // 8.3-9.7 veriyor. Aynı değerler, ikinci bir ton uydurulmadı.
   successText: "#6fd19b", dangerText: "#f79ba6", streakText: "#ddb62c", infoText: "#6fd1e3", accentText: "#cda6e8",

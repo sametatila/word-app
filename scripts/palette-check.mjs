@@ -323,6 +323,21 @@ contrastRows([
   ["beyaz / indirim rozeti mint 600", W, step("mint", 600)],
 ]);
 
+title("11. DOLU VURGU KAROSU  (--on-fill / mobil onFill)  [GRAFIK 3.0]");
+/*
+ * `EmptyCard`in 52 piksellik dolu karosu ve mobil `IconTile solid`. Karonun
+ * rengi tema ile basamak değiştiriyor (açıkta 600, koyuda 300) ama ikonun
+ * rengi SABİT beyazdı: koyu temada 1.49-2.06, yani grafik eşiği 3.0 bile
+ * değil. Artık ikon da temayla dönüyor.
+ */
+contrastRows(
+  [
+    ...["mint", "flame", "sky", "violet", "rose"].map((f) => [`acik: beyaz ikon / ${f} 600`, W, step(f, 600)]),
+    ...["mint", "flame", "sky", "violet", "rose"].map((f) => [`koyu: murekkep ikon / ${f} 300`, step("ink", 900), step(f, 300)]),
+  ],
+  3,
+);
+
 title("8. AYRISMA  [GEVSEK — ikon ve etiketle birlikte]");
 for (const [tn, key] of [["acik", "light"], ["koyu", "dark"]]) {
   distinct({ brand: tone("brand", key), streak: tone("flame", key), wrong: tone("rose", key) }, 12, `${tn}: brand / streak / wrong`);

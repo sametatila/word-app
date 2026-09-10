@@ -80,9 +80,12 @@ export function SectionTitle({ title, right }: { title: string; right?: string }
 
 /** Renkli ikon karosu — solid (beyaz ikon + gölge) ya da yumuşak (tint+22). */
 export function IconTile({ icon: Icon, tint, size = 42, solid = false, iconSize }: { icon: IconCmp; tint: string; size?: number; solid?: boolean; iconSize?: number }) {
+  const { colors } = useTheme();
   return (
     <View style={[{ width: size, height: size, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: solid ? tint : tint + "22" }, solid ? softShadow(tint, 6) : {}]}>
-      <Icon color={solid ? "#fff" : tint} size={iconSize ?? Math.round(size * 0.5)} />
+      {/* Dolu karonun ikonu `onFill`: sabit beyaz koyu temada okunmuyordu
+          (1.76-2.76, grafik eşiği 3.0). Bkz. `theme/colors.ts`. */}
+      <Icon color={solid ? colors.onFill : tint} size={iconSize ?? Math.round(size * 0.5)} />
     </View>
   );
 }

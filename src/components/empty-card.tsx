@@ -32,7 +32,7 @@ export function EmptyCard({
     <div className={`card flex flex-col items-center gap-2 p-4 text-center ${className}`}>
       <span
         className="flex items-center justify-center rounded-tile"
-        style={{ width: 52, height: 52, background: tint, color: "#ffffff" }}
+        style={{ width: 52, height: 52, background: tint, color: "var(--on-fill)" }}
       >
         <Icon size={26} />
       </span>
