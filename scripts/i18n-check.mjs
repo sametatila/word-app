@@ -128,6 +128,18 @@ for (const file of files) {
   for (const m of src.matchAll(KEY_CALL_TERNARY)) {
     for (const k of m[1].matchAll(/"([a-z][\w]*(?:\.[\w]+)+)"/g)) gorulen.push(k[1]);
   }
+  /*
+    TABLO ANAHTARLARI. Yüzeylerin çoğu etiketi bir sabit tabloda tutuyor
+    (`{ labelKey: "leaderboard.league" }`) ve `t()` o tabloyu okuyor — anahtar
+    hiçbir çağrının içinde geçmiyor. Yalnız çağrılara bakan bir denetim, tablo
+    anahtarının YANLIŞ YAZILMASINI görmüyordu: ekranda ham anahtar çıkar ve
+    kapı susar. Ölü anahtar denetimi (5) düz literalleri zaten tarıyordu; eksik
+    anahtar denetimi taramıyordu — iki denetim aynı metni iki farklı gözle
+    okuyordu. Mobil kapısına da aynı satır yazıldı.
+  */
+  for (const m of src.matchAll(/\b(?:label|labelKey|titleKey|subKey|promptKey|descKey|noteKey)\s*:\s*"([a-z][\w]*(?:\.[\w]+)+)"/g)) {
+    gorulen.push(m[1]);
+  }
   for (const k of gorulen) {
     if (!known.has(k)) {
       const rel = file.slice(file.indexOf("/src/") + 1);

@@ -6269,3 +6269,23 @@ Denetim `label`/`labelKey`/`titleKey`/`subKey`/`promptKey` alanlarını da
 okuyor artık; hata enjekte edilerek sınandı. (Web'in eşdeğer denetimi bu
 biçimi zaten tanıyordu — §11.143'teki ölü anahtar taraması tablo anahtarlarını
 da sayıyor.)
+
+
+### 11.172 Aynı kör nokta webde de vardı
+
+§11.171'de mobil kapısına eklediğim tablo-anahtarı denetimini webde de aradım:
+**aynı kör nokta oradaydı.** Web'in eksik-anahtar denetimi `t()` çağrılarına ve
+üçlü ifadelere bakıyordu; `{ labelKey: "words.filter_all" }` gibi tablo
+anahtarları görünmüyordu. İlginç olan şu: ÖLÜ anahtar denetimi (5) düz
+literalleri zaten tarıyordu — yani **aynı dosya iki denetim tarafından iki
+farklı gözle okunuyordu**. Biri "bu anahtar kullanılıyor mu" diye bakarken
+tabloları sayıyor, öteki "bu anahtar var mı" diye bakarken saymıyordu.
+
+Bugün eksik bir tablo anahtarı yok (ölçüldü: sıfır), yani bu bir hata
+düzeltmesi değil kapı düzeltmesi — ama enjekte edilen yanlış anahtar artık
+yakalanıyor.
+
+**Ölçüldü, ayrışma değil:** "Yapabildiklerim" iki tarafta da seviye, beceri ve
+üç durumu (kanıtlı / gelişiyor / henüz yok) gösteriyor; düzen genişliğe göre
+ayrışıyor (web seviye çipi + beceri sütunları, mobil seviye başlıkları +
+ilerleme şeridi). Bilgi kümesi aynı, o yüzden dokunulmadı.
