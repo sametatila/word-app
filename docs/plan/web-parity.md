@@ -5679,3 +5679,35 @@ mobilde yok - çünkü bahisli etap mekaniği mobilde hiç yok (`session.ts`
 yorumunda yazılı). Tur özetinin halka/karo hiyerarşisi hâlâ açık: web üç
 `Stat` karosu, Android halka + maskot. Bu, sonuç kartının bütününü
 değiştirmek demek ve kendi turunu bekliyor.
+
+
+### 11.152 iOS sürüm sayacı, tur özeti halkası ve `dialogue` ölçümü
+
+**iOS'un sürümü Android'in gerçeğinden geride kalmıştı.** `check:ios` ve
+`version:check` kırmızıydı: Android `versionCode 2` taşıyor (Play'e yüklenmiş),
+kaynak 1 diyordu, iOS de 1'de kalmıştı. versionCode Play'e her yüklemede artar
+ve GERİ ALINAMAZ — yani ayrışmanın tek doğru yönü kaynağı 2'ye çıkarmaktı;
+Android'i 1'e düşürmek Play'in reddedeceği bir şey. `version:bump-code`
+kaynağı 2 yaptı, iOS de aynı sayıya geldi. check:ios sekiz denetimin sekizini
+de geçiyor. **check:ios bundan sonra tur kapı setinin parçası** — bu tura
+kadar hiç çalıştırılmamıştı ve kırmızılığı kimseye görünmüyordu.
+
+**Tur özeti halkası** (§11.150'de açık bırakılan iş): Android özetin ortasında
+halka çiziyor, doluluk turun kendisi. Web'de halka yoktu; aynı bilgi yalnız
+karoların içinde bir sayıydı. Halka başlığın koyu gradyanı içine kondu
+(dolu yay beyaz, boş yay beyazın %28'i, iç daire başlığın zemininde) ve
+içinde Android'deki aynı iki satır var. Karolar kaldı: halka başlık, karolar
+ayrıntı.
+
+**Ölçüldü, ayrışma değil:** mobil `SkillExercise.dialogue` alanı `unknown[]`
+ve mobilde onu çizen hiçbir yüzey yok. §11.151'deki `missed` hatasının aynısı
+gibi duruyordu — ama içerik ölçüldü: paketin 995 + 189 egzersizinin
+**hiçbirinde** `dialogue` yok, web'in `BUNDLED_EXERCISES`inde de yok. Tip
+(`SpeakingDialogueExercise`) modellenmiş ve `lib/lessons/roleplay` onu
+kullanıyor, ama içerik henüz yazılmamış. İki tarafta da eşit derecede boş,
+yani bu bir parite açığı değil — içerik geldiğinde mobilde oynatıcı da
+gerekecek, o gün ItemScreen'in `dialogue` dalı yazılmalı.
+
+iOS yapılandırmasının geri kalanı ölçüldü ve tam: mikrofon ve konuşma tanıma
+açıklamaları, arka planda ses + uzak bildirim kipleri, Apple ile giriş
+yetkisi, universal links, APNs ortamı, Google iOS istemcisi.
