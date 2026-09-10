@@ -6,13 +6,15 @@ import { BUNDLED_EXERCISES } from "@/lib/skills/bundled";
 import type { CefrLevel } from "@/lib/skills/types";
 import { track } from "@/lib/events";
 import { scorePlacement, type PlacementAnswer, type PlacementResult } from "@/lib/placement-score";
+import { glossFor } from "@/lib/option-label";
+import { DEFAULT_NATIVE, type NativeLang } from "@/lib/courses";
 
 /**
  * Yerleştirme testi — madde bankası ve kayıt (plan WP-40).
  *
  * Maddeler mevcut içerikten çekilir, yeni içerik yazılmaz:
- *   kelime     — seviyenin en yaygın 60 kelimesinden 6'sı (rank), Türkçe
- *                anlam şıklı; çeldiriciler aynı seviyeden.
+ *   kelime     — seviyenin en yaygın 60 kelimesinden 6'sı (rank), ÖĞRENCİNİN
+ *                ANA DİLİNDE anlam şıklı; çeldiriciler aynı seviyeden.
  *   dilbilgisi — dilbilgisi sayfalarının tablo hücreleri (`CHEAT_ITEMS`),
  *                seviye başına 3 madde, kardeş hücreler çeldirici.
  *   okuma      — A2 ve B1'den birer okuma egzersizi, ilk 3 soru.
@@ -58,21 +60,39 @@ function shuffle<T>(arr: T[]): T[] {
   return a;
 }
 
-export async function buildPlacement(course: string): Promise<PlacementTest> {
+/**
+ * Kelime maddeleri ÖĞRENCİNİN ANA DİLİNDE.
+ *
+ * Şıklar `words.tr` ile kuruluyordu, yani anadili İngilizce ya da Almanca olan
+ * kullanıcı seviye testinin kelime bölümünde Türkçe şıklar görüyordu — testin
+ * ölçtüğü şey kelime bilgisi değil, Türkçe bilgisi oluyordu. Sorgu `en`
+ * sütununu zaten seçiyordu ama hiç kullanmıyordu.
+ *
+ * Karşılığı olmayan kelime TESTTEN DÜŞÜYOR, Türkçeye düşmüyor — kelime
+ * turlarının kuralının aynısı (`hasGloss`). Bugün üç kurs için de karşılıklar
+ * tam, yani eleme boş küme.
+ */
+export async function buildPlacement(course: string, native: NativeLang = DEFAULT_NATIVE): Promise<PlacementTest> {
   const vocab = {} as PlacementTest["vocab"];
   const grammar = {} as PlacementTest["grammar"];
   for (const level of LEVELS) {
     const rows = await db
-      .select({ id: words.id, de: words.de, artikel: words.artikel, tr: words.tr, en: words.en })
+      .select({ id: words.id, de: words.de, artikel: words.artikel, tr: words.tr, en: words.en, deGloss: words.deGloss })
       .from(words)
       .where(and(eq(words.course, course), eq(words.niveau, level), isNotNull(words.rank)))
       .orderBy(sql`${words.rank} asc nulls last`, asc(words.id))
       .limit(60);
-    const picked = shuffle(rows).slice(0, VOCAB_PER_LEVEL);
+    /* Anlamı ana dilde olan kelimeler; `gloss` şıkkın metni. */
+    const usable = rows
+      .map((w) => ({ ...w, gloss: glossFor(w, native)?.text ?? null }))
+      .filter((w): w is typeof w & { gloss: string } => Boolean(w.gloss));
+    const picked = shuffle(usable).slice(0, VOCAB_PER_LEVEL);
     vocab[level] = picked.map((w) => {
-      const distractors = shuffle(rows.filter((r) => r.id !== w.id && r.tr !== w.tr)).slice(0, 3).map((r) => r.tr);
-      const options = shuffle([w.tr, ...distractors]);
-      return { id: `v${w.id}`, level, de: w.de, artikel: w.artikel, options, answer: options.indexOf(w.tr) };
+      const distractors = shuffle(usable.filter((r) => r.id !== w.id && r.gloss !== w.gloss))
+        .slice(0, 3)
+        .map((r) => r.gloss);
+      const options = shuffle([w.gloss, ...distractors]);
+      return { id: `v${w.id}`, level, de: w.de, artikel: w.artikel, options, answer: options.indexOf(w.gloss) };
     });
 
     grammar[level] = []; // dilbilgisi kaldırıldı (2026-08); immersion'da yeniden

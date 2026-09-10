@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import { getUserId } from "@/lib/auth/server";
 import { sameOrigin } from "@/lib/auth/origin";
 import { ensureProfile } from "@/lib/session";
+import { nativeOf } from "@/lib/courses";
 import { acceptPlacement, buildPlacement, finishPlacement, lastPlacement, RETAKE_DAYS } from "@/lib/placement";
 import { PLACEMENT_LEVELS, type PlacementAnswer, type PlacementStage } from "@/lib/placement-score";
 import type { CefrLevel } from "@/lib/skills/types";
@@ -43,7 +44,9 @@ export async function POST(req: Request) {
   try {
     const profile = await ensureProfile(userId);
     if (body.action === "start") {
-      return NextResponse.json({ test: await buildPlacement(profile.course) });
+      /* Şıkların dili öğrencinin ana dili — kelime bölümü yoksa testin
+         ölçtüğü şey kelime bilgisi değil, o dili bilmek olurdu. */
+      return NextResponse.json({ test: await buildPlacement(profile.course, nativeOf(profile.nativeLang)) });
     }
     if (body.action === "finish") {
       const raw = Array.isArray(body.answers) ? body.answers : null;
