@@ -102,6 +102,7 @@
     "check:lessons-exam": "tsx --tsconfig scripts/tsconfig.e2e.json data/lessons/exam/check.ts",
     "check:lessons-swap": "tsx --tsconfig scripts/tsconfig.e2e.json data/lessons/swap/check.ts",
     "check:skills-prose": "tsx --tsconfig scripts/tsconfig.e2e.json data/skills/prose/check.ts",
+    "check:skills-task": "tsx --tsconfig scripts/tsconfig.e2e.json data/skills/task/check.ts",
     "lessons:apply": "node data/lessons/vocab/triage.mjs && node data/lessons/apply.mjs",
     "report:native": "npm run lessons:apply && tsx --tsconfig scripts/tsconfig.e2e.json scripts/report-native-gaps.ts",
     "check:lessons-native": "npm run lessons:apply && tsx --tsconfig scripts/tsconfig.e2e.json scripts/check-native-lessons.ts",
