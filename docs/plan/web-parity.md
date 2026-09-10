@@ -4823,3 +4823,34 @@ uygulanmamıştı. **Parity 51** artık kaçakları sayıyor ve kapsamı bilerek
 `"tr-TR"` büyütmesi. Veri üzerindeki `toLowerCase()` (e-posta, kullanıcı adı,
 eşleştirme) meşru ve aranmıyor — o kadar geniş bir kural yalnızca gürültü
 üretip **gerçek bulguyu gizlerdi** (§11.104).
+
+### 11.110 Şikayet sebebi eksikti — o şikayet hiç gelmiyordu
+
+Sunucu dört sebep kabul ediyor (`REPORT_REASONS`: spam, abuse, impersonation,
+**other**) ve web dördünü de sunuyor; mobil `UserScreen` üçünü yazıyordu.
+Şikayeti bu üçe girmeyen kullanıcının bildirebileceği **hiçbir yol yoktu** —
+moderasyon yüzeyinde eksik bir sebep, o şikayetin hiç gelmemesi demek (Play/
+Apple UGC gerekleri de bunu istiyor). **Parity 52** iki yüzeyi de sunucunun
+listesiyle eşliyor.
+
+### 11.111 "Bir üst lige çıktın" bildirimi akışa götürüyordu
+
+`league_up` gerçek bir bildirim türü (`NOTIFICATION_TYPES`) ama web'in
+`hrefFor`unda ele alınmamıştı ve `default` dalına düşüyordu: satır, anlattığı
+şeyin bulunduğu yere değil akışa gidiyordu. Android sıralamaya götürüyor.
+
+Kalıcı olan kısım şu: iki yönlendiricinin de bir `default` dalı var, yani
+paylaşılan listeye yeni bir tür eklendiğinde **hiçbir şey kırılmıyor** —
+satır sessizce yanlış yere gider. **Parity 53** artık açıkça ele alınan
+türleri iki tarafta eşliyor; biri ötekine bir tür eklerse kapı kalıyor.
+
+### 11.112 Profil kartında üçüncü sözlük kopyası dalgası
+
+`socialw.stat_longest`, `socialw.stat_last_active`, `socialw.shared_quest` ve
+`socialw.more` yalnız `public-profile` içinde kullanılıyordu ve dördü de mobil
+sözlükteki cümlelerin ikinci kopyasıydı (§11.102). Web mobil kaynaklı
+anahtarlara geçti.
+
+"Daha fazla" düğmesi ayrıca **ne açtığını söylemiyordu**; açılan şey engelleme
+ve şikayet. Android iki durumu da adıyla yazıyor ("Engelle / Şikayet et" ↔
+"Gizle"), web de artık öyle.
