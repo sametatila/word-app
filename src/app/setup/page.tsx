@@ -65,7 +65,15 @@ export default async function CourseSelectPage() {
         vazgeçen kullanıcı kilitleniyordu.
       */}
       {user ? (
-        <SignOutLink email={user.email} className="mx-auto mt-8 max-w-md px-5 pb-10 text-center text-sm" />
+        /*
+          SABİT KÖŞE, sihirbazın altında DEĞİL. İlk deneme `<CourseOnboarding>`
+          sonrasına konmuştu ama o bileşen `min-h-dvh` ile ekranı dolduruyor:
+          bağlantı ilk ekranda hiç görünmüyor, kullanıcı kaydırmak zorunda
+          kalıyordu — yani çıkış yine pratikte yoktu.
+        */
+        <div className="fixed right-0 top-0 z-10 p-4 text-xs">
+          <SignOutLink email={user.email} />
+        </div>
       ) : null}
     </>
   );

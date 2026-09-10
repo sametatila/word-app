@@ -41,8 +41,11 @@ export function SignOutLink({ email, className }: { email?: string | null; class
     <p className={className}>
       {/* Hangi hesapla girildiği YAZILIYOR: kullanıcı çoğu zaman yanlış hesapla
           girdiği için çıkmak istiyor ve adresi görmeden emin olamıyor. */}
-      {email ? <span className="muted">{email}</span> : null}
-      {email ? <span className="muted"> · </span> : null}
+      {/* E-posta dar ekranda gizli: başlıkta ve sabit köşede yer yok, taşarsa
+          çıkış düğmesini ekran dışına itiyor. Geniş ekranda görünüyor çünkü
+          "hangi hesap" sorusu çoğu zaman çıkışın sebebi. */}
+      {email ? <span className="muted hidden sm:inline">{email}</span> : null}
+      {email ? <span className="muted hidden sm:inline"> · </span> : null}
       <button
         type="button"
         onClick={() => void out()}

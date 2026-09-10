@@ -91,6 +91,13 @@ export default async function Home() {
         </div>
         <div className="flex items-center gap-2">
           <ThemeToggle />
+          {/*
+            ÇIKIŞ BAŞLIKTA. Önce yalnız altbilgiye konmuştu ve bu yetmedi:
+            çıkmak isteyen kullanıcının uzun bir vitrin sayfasını sonuna kadar
+            kaydırması gerekiyordu, yani pratikte yine görünmüyordu. Hesap
+            durumunun yeri başlık.
+          */}
+          {signedIn ? <SignOutLink className="text-xs" /> : null}
           <Link href={startHref} className="btn btn-primary px-4 py-2.5 text-sm">
             {t(signedIn ? "land.cta_continue" : "common.start")}
           </Link>
