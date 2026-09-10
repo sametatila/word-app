@@ -4159,3 +4159,46 @@ parçaları; `rounds.hint` (web) ile `rounds.show_hint` (mobil) ise aynı düğm
 iki ayrı anahtarı — metin aynı, yalnız ad ayrışmış. Bugün ikisi de doğru
 çalışıyor, tek zararı sözlükte iki satır; birleştirmek yayımlanmış mobil
 sürümleri kırar, o yüzden dokunulmadı.
+
+### 11.84 Gramer türetmesinde iki Türkçe cümle ve Almanca şık çifti
+
+`quiz.order_question` / `quiz.order_sentence` "yalnız mobilde çağrılıyor" diye
+çıktı. Sebep, umduğumdan kötüydü: web aynı iki cümleyi **koda gömülü Türkçe**
+yazıyordu.
+
+```ts
+text: step.expect.target.endsWith("?")
+  ? "Soruyu doğru sıraya diz."
+  : "Cümleyi doğru sıraya diz.",
+```
+
+İngilizce ya da Almanca arayüzde de bu cümleler çıkıyordu. Anahtarlar taban
+sözlükte zaten duruyor ve mobil onları kullanıyor; web sunucu tarafında `t()`
+olmadığı için `deriveQuiz`in kalıbı izlendi — metin çağırandan veriliyor.
+
+**Aynı işlevde ikinci bir kusur:** hüküm şıkları `["Richtig", "Falsch"]` diye
+**sabitti** ve İngilizce kursta da Almanca çıkıyordu — İngilizce derslerde
+**yüz** tane hüküm adımı var. Deneme sınavı aynı çifti kursa göre veriyor
+(`MOCK_LABELS[course].bool`); artık buraya da oradan geliyor. Mobil tarafta da
+aynı sabit vardı, o da düzeltildi.
+
+İkisi de `i18n:check`in göremeyeceği türden: eksik çıkacak bir **anahtar
+çağrısı yok**; dizge doğrudan üretilen içeriğe giriyor. Anahtar kümesi
+karşılaştırması (§11.82) tam bu boşluğu dolduruyor — "mobilde çağrılıp webde
+çağrılmayan anahtar" bir kez de **webin o işi başka türlü yaptığını** gösterdi.
+
+**Kural çifti kapıya bağlandı:** ünite gramer alıştırması iki tarafta da ders
+adımlarından türetiliyor ve iki gerçekleştirme ayrı dosyada. Ayrışırlarsa aynı
+ünite iki uygulamada başka sorular verir — öğrenci webde geçip mobilde
+kalabilir. Ölçülen: dizme uzunluğunun alt/üst sınırı, hüküm/dizme bölüşmesi,
+tohum etiketleri ve hangi şıkkın doğru sayıldığı.
+
+#### Ölçülüp iş çıkmayanlar
+
+- `prog.study_time` (web) ile `progress.time_total` (mobil) aynı karonun iki
+  ayrı anahtarı; metin aynı. `rounds.hint`/`rounds.show_hint` gibi.
+- `daily.*`, `game.*`, `weekly.*`, `settings.*` kümelerindeki "giriş yap"
+  anahtarları: mobilde ekranlar oturumsuz da açılıyor, webde yönlendirme
+  oturumdan önce oluyor — yapısal fark, eksik değil.
+- `quiz.this_unit_has_no_questions_yet`: web boş ünitede `notFound()` çağırıyor.
+  Patika boş bir quize bağlantı vermediği için bugün ulaşılamaz; kayda geçti.
