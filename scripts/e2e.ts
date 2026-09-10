@@ -1851,12 +1851,12 @@ async function main() {
   check("anlaşılmayan cevap: tur ilerlemiyor, örnek öneriliyor", !miss1.understood && miss1.state.turnId === "t1" && miss1.content.includes("[SAY] Ich heiße Mehmet."));
   const noScript = LESSONS.find((l) => !l.roleplay.script?.length && l.patterns.length >= 2)!;
   os = offlineStart(noScript);
-  check("senaryosuz ders: kalıp modu, ilk kalıp isteniyor", os.state.turnId === null && Boolean(os.hint?.startsWith("Kalıbı kullan")));
+  check("senaryosuz ders: kalıp modu, ilk kalıp isteniyor", os.state.turnId === null && os.hint?.key === "roleplay.hint_use_pattern");
   const p0 = noScript.patterns[0].de;
   const r0 = offlineReply(noScript, os.state, p0.replace(/…/g, "Berlin"));
   check("kalıp söylenince sayılıyor", r0.understood && r0.state.usedPatterns.includes(p0));
   const rX = offlineReply(noScript, r0.state, "blabla");
-  check("alakasız cümle: kalıp sayılmıyor, ipucu kalıbı gösteriyor", !rX.understood && Boolean(rX.hint?.includes(noScript.patterns[1].de)));
+  check("alakasız cümle: kalıp sayılmıyor, ipucu kalıbı gösteriyor", !rX.understood && rX.hint?.vars?.pattern === noScript.patterns[1].de);
   let stAll = r0.state;
   for (const p of noScript.patterns.slice(1)) stAll = offlineReply(noScript, stAll, p.de.replace(/…/g, "x")).state;
   check("bütün kalıplar → bitti, puan 100", stAll.ended && offlineSummary(noScript, stAll).score === 100);
