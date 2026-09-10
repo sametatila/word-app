@@ -1,9 +1,11 @@
 "use client";
 
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { speakSegments, stopSpeaking } from "@/components/speak-button";
-import { SpeakerIcon, MicIcon, CheckIcon } from "@/components/icons";
+import { SpeakerIcon, MicIcon, CheckIcon, XIcon } from "@/components/icons";
+import { ConfirmDialog } from "@/components/confirm-dialog";
 import { captureClip } from "@/lib/pronounce-client";
 import { taskSeconds, type MockItem, type MockPaper, type MockPart, type MockStimulus, type MockTask } from "@/lib/mock-exams";
 import { MOCK_PASS_PCT, mockBoolLabels, mockSkillLabel, type MockCourse } from "@/lib/mock-exams/types";
@@ -131,7 +133,10 @@ async function post<T>(body: Record<string, unknown>): Promise<T> {
 export function MockExamPlayer({ paper, part }: { paper: MockPaper; part: MockPart }) {
   const t = useT();
   const budgets = useMemo(() => taskSeconds(part), [part]);
+  const router = useRouter();
   const [phase, setPhase] = useState<"cover" | "run" | "result">("cover");
+  /** Sınavı bırakma onayı — mobil `MockExamScreen`deki ConfirmDialog ile aynı. */
+  const [quit, setQuit] = useState(false);
   const [ix, setIx] = useState(0);
   const [left, setLeft] = useState(0);
   const [answers, setAnswers] = useState<Answers>({});
@@ -287,6 +292,12 @@ export function MockExamPlayer({ paper, part }: { paper: MockPaper; part: MockPa
     return <Result paper={paper} part={part} answers={answers} open={open} openScores={openScores} result={result} reveal={reveal} onReveal={(id) => setReveal((r) => ({ ...r, [id]: true }))} />;
   }
 
+  /** Cevaplanmamış kapalı uçlu madde sayısı — bırakma uyarısında geçiyor. */
+  const blanks = part.tasks.reduce(
+    (n, tk) => (isOpenTask(tk) ? n : n + tk.items.filter((it) => !(answers[it.id] ?? "").trim()).length),
+    0,
+  );
+
   return (
     <section className="mx-auto w-full max-w-2xl">
       <header className="card flex items-center justify-between gap-3 p-4">
@@ -294,8 +305,39 @@ export function MockExamPlayer({ paper, part }: { paper: MockPaper; part: MockPa
           <p className="muted text-xs font-bold tracking-wide">{paper.level} · {mockSkillLabel(paper.course, part.skill)}</p>
           <p className="text-sm font-semibold">{t("mockexam.task_of", { n: ix + 1, total: part.tasks.length })}</p>
         </div>
-        <p className="text-lg font-bold tabular-nums" style={{ color: left < 30 ? "var(--color-danger)" : undefined }}>{mmss(left)}</p>
+        <div className="flex items-center gap-3">
+          <p className="text-lg font-bold tabular-nums" style={{ color: left < 30 ? "var(--color-danger)" : undefined }}>{mmss(left)}</p>
+          {/* ÇIKIŞ YOLU YOKTU: sınav başlayınca kullanıcı bitirene kadar
+              kapana kısılıyordu, tek çıkış tarayıcının geri düğmesiydi.
+              Android'de başlıkta bir kapat düğmesi var ve cevapların
+              kaydedildiğini söyleyip çıkıyor - web zaten iki saniyede bir
+              kaydediyor, yani söz tutuluyor. */}
+          <button
+            type="button"
+            onClick={() => setQuit(true)}
+            aria-label={t("mockexam.quit_title")}
+            className="pressable flex h-9 w-9 shrink-0 items-center justify-center rounded-tile"
+            style={{ background: "var(--surface-2)" }}
+          >
+            <XIcon size={18} />
+          </button>
+        </div>
       </header>
+
+      <ConfirmDialog
+        open={quit}
+        title={t("mockexam.quit_title")}
+        message={`${t("mockexam.quit_body_saved")} ${blanks ? t("mockexam.unanswered", { n: blanks }) : ""}`.trim()}
+        confirmLabel={t("mockexam.quit_ok")}
+        destructive
+        onConfirm={() => {
+          setQuit(false);
+          writeLocalRun(paper.id, part.skill, { answers, open, taskIx: ix, secondsLeft: left });
+          if (attempt) void post({ action: "save", id: attempt.id, answers, open, taskIx: ix, secondsLeft: left }).catch(() => {});
+          router.push("/mock-exams");
+        }}
+        onCancel={() => setQuit(false)}
+      />
 
       <div className="mt-2 flex gap-1" aria-hidden>
         {part.tasks.map((tk, i) => (
