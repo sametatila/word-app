@@ -973,3 +973,24 @@ ve elli civarı yeni metin demek, yani ürün kararı. Buraya yazıldı ki
   "sürekli bir bildirimden bunu görürsün" diyor ve o bildirim ön plan
   servisinin kendisi; tarayıcıda öyle bir bildirim yok, tutulmayacak söz
   verilmedi.
+
+### 11.11 Kelime listesi — web ileride (kayıt, port edilmedi)
+
+`/words` iki platformda da aynı sorguyu kuruyor: kurs süzgeci, arama (de/tr/en),
+seviye ve durum eşikleri, sıralama, sayfalama — hepsi birebir. Ayrışan tek şey
+satırın DERİNLİĞİ:
+
+| | alan |
+|---|---|
+| web (`word-list.tsx`) | de · artikel · tr · en · tip · seviye · örnek cümle (de/tr/en) · SRS aralığı · sonraki tekrar · unutma sayısı · sülük işareti |
+| Android (`WordsScreen`) | de · artikel · tr · seviye · durum |
+
+Web satırı açılıyor ve ayrıntıyı gösteriyor; Android satırı düz. Sayfa boyu da
+farklı (web 40, uç 30) ama o ekran genişliğine ait bir seçim, kusur değil.
+
+PORT EDİLMEDİ. Kapatmak `/api/words` yanıtını genişletmeyi, `WordRow` tipini
+büyütmeyi ve satıra açılır bir ayrıntı eklemeyi gerektiriyor — yani ANDROID'E
+ÖZELLİK EKLEMEK. Bu turun kuralı bunun tersi: Android referans, web ve iOS ona
+hizalanıyor. Web'i kırpmak ise düpedüz gerileme olurdu. Karar Samet'in: örnek
+cümle tek başına bile eklenmeye değer olabilir (öğrenci için en yararlı alan ve
+uçtan bir kolon uzağa).
