@@ -168,7 +168,7 @@ export function PlacementScreen() {
         </>
       ) : submitting ? (
         <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-          <ActivityIndicator color={colors.primary} />
+          <ActivityIndicator color={colors.primaryText} />
           <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.md }}>{t("placement.calculating_your_level")}</Text>
         </View>
       ) : (

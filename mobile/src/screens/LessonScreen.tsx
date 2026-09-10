@@ -400,7 +400,7 @@ export function LessonScreen() {
       <View style={{ flex: 1, backgroundColor: colors.bg, alignItems: "center", justifyContent: "center", gap: spacing.lg, padding: spacing.xl }}>
         <Mascot mood="sad" size={90} />
         <Text variant="body" color={colors.textMuted} style={{ textAlign: "center" }}>{tx("lesson.this_lesson_wasn_t_found")}</Text>
-        <PressableScale onPress={() => nav.goBack()}><Text variant="bodyStrong" color={colors.primary}>{tx("lesson.go_back")}</Text></PressableScale>
+        <PressableScale onPress={() => nav.goBack()}><Text variant="bodyStrong" color={colors.primaryText}>{tx("lesson.go_back")}</Text></PressableScale>
       </View>
     );
   }
@@ -471,7 +471,7 @@ export function LessonScreen() {
             {feed.map((b) => <BubbleView key={b.id} b={b} colors={colors} onReport={setReport} />)}
             {busy && (
               <View style={{ alignSelf: "flex-start", flexDirection: "row", alignItems: "center", gap: 8, marginTop: 4 }}>
-                <ActivityIndicator color={colors.primary} size="small" /><Text variant="caption" color={colors.textMuted}>{tx("lesson.typing")}</Text>
+                <ActivityIndicator color={colors.primaryText} size="small" /><Text variant="caption" color={colors.textMuted}>{tx("lesson.typing")}</Text>
               </View>
             )}
           </ScrollView>
@@ -567,8 +567,8 @@ function MicButton({ listening, onPress, label, colors }: { listening: boolean; 
   return (
     <PressableScale onPress={listening ? () => {} : onPress}>
       <View style={[{ borderRadius: radii.lg, backgroundColor: listening ? colors.surface2 : colors.primary, paddingVertical: 15, alignItems: "center", flexDirection: "row", justifyContent: "center", gap: 8 }, listening ? {} : softShadow(colors.primary, 10)]}>
-        <MicIcon color={listening ? colors.primary : colors.onPrimary} size={22} />
-        <Text variant="h3" color={listening ? colors.primary : colors.onPrimary}>
+        <MicIcon color={listening ? colors.primaryText : colors.onPrimary} size={22} />
+        <Text variant="h3" color={listening ? colors.primaryText : colors.onPrimary}>
           {listening ? tx("speak.listening") : label}
         </Text>
       </View>
@@ -617,7 +617,7 @@ function LectureControls({ expect, tries, input, setInput, onConfirm, onSpeakRep
       <View style={{ gap: spacing.sm }}>
         {tries > 0 && <Text variant="caption" color={colors.dangerText}>{tx("lesson.try_again", { n: tries })}</Text>}
         <PressableScale onPress={() => speakTarget(expect.target)} style={{ flexDirection: "row", alignItems: "center", justifyContent: "center", gap: 8, paddingVertical: 10, borderRadius: radii.lg, backgroundColor: colors.surface2 }}>
-          <SpeakerIcon color={colors.primary} size={20} /><Text variant="bodyStrong" color={colors.primary}>{expect.target}</Text>
+          <SpeakerIcon color={colors.primaryText} size={20} /><Text variant="bodyStrong" color={colors.primaryText}>{expect.target}</Text>
         </PressableScale>
         {yaziYolu ? (
           <TypedRow value={input} onChange={setInput} onSubmit={onTypedRepeat} placeholder={tx("lesson.type_in", { lang: targetLangName() })} colors={colors} />
@@ -679,7 +679,7 @@ function RoleplayControls({ input, setInput, busy, onSend, onSpeak, suggestions,
         <View style={{ flexDirection: "row", flexWrap: "wrap", gap: spacing.xs }}>
           {suggestions.map((s, i) => (
             <PressableScale key={i} onPress={() => onSuggest(s)} style={{ backgroundColor: colors.primarySoft, borderRadius: radii.pill, paddingHorizontal: spacing.md, paddingVertical: 8, borderWidth: 1, borderColor: colors.primary }}>
-              <Text variant="caption" color={colors.primary}>{s}</Text>
+              <Text variant="caption" color={colors.primaryText}>{s}</Text>
             </PressableScale>
           ))}
         </View>
@@ -716,7 +716,7 @@ function Summary({ lesson, correct, total, next, colors, insets, onBack, onNext 
 
       <View style={{ flexDirection: "row", gap: spacing.md, marginTop: spacing.xl, alignSelf: "stretch" }}>
         <View style={{ flex: 1, backgroundColor: colors.surface, borderRadius: radii.lg, borderWidth: 1, borderColor: colors.hairline, padding: spacing.lg, alignItems: "center" }}>
-          <Text variant="display" color={colors.primary}>{total ? `${correct}/${total}` : "—"}</Text>
+          <Text variant="display" color={colors.primaryText}>{total ? `${correct}/${total}` : "—"}</Text>
           <Text variant="caption" color={colors.textMuted}>{tx("lesson.correct_production")}</Text>
         </View>
         <View style={{ flex: 1, backgroundColor: colors.surface, borderRadius: radii.lg, borderWidth: 1, borderColor: colors.hairline, padding: spacing.lg, alignItems: "center" }}>

@@ -243,7 +243,7 @@ export function GameScreen() {
           <Celebrate show={total > 0 && pct >= 60} />
           {total > 0 ? <Mascot mood={pct >= 60 ? "celebrate" : "happy"} size={104} /> : <Mascot mood="idle" size={104} />}
           <ProgressRing size={150} stroke={14} pct={pct} track={colors.surface2} from={colors.gradientA[0]} to={colors.gradientA[1]}>
-            <Text variant="display" color={colors.primary}>{finalCorrect}/{total || 0}</Text>
+            <Text variant="display" color={colors.primaryText}>{finalCorrect}/{total || 0}</Text>
             <Text variant="micro" color={colors.textMuted}>{t("game.correct")}</Text>
           </ProgressRing>
           <Text variant="h1" style={{ marginTop: spacing.xl }}>{t(total ? "common.round_done" : "game.done_no_more")}</Text>

@@ -124,7 +124,7 @@ export function QuestCard({ q, me, busy, onAct }: { q: QuestView; me: string; bu
           <Text variant="caption" color={colors.textMuted}>{t("quests.with_partner", { name: q.partner.name ?? t("social.your_friend"), remaining: q.daysLeft === 1 ? t("social.last_day") : t("social.days_left", { n: q.daysLeft }) })}</Text>
         </View>
         <View style={{ alignItems: "flex-end" }}>
-          <Text variant="h2" color={colors.primary}>{formatXp(q.targetXp)}</Text>
+          <Text variant="h2" color={colors.primaryText}>{formatXp(q.targetXp)}</Text>
           <Text variant="micro" color={colors.textMuted}>{t("quests.target_xp")}</Text>
         </View>
       </View>
@@ -149,7 +149,7 @@ export function QuestCard({ q, me, busy, onAct }: { q: QuestView; me: string; bu
             <View style={{ width: `${Math.round(q.pct * (1 - myShare))}%`, backgroundColor: colors.info }} />
           </View>
           <View style={{ flexDirection: "row", justifyContent: "space-between", marginTop: 8 }}>
-            <Text variant="caption" color={colors.primary}>{t("quests.my_xp", { xp: formatXp(q.myXp) })}</Text>
+            <Text variant="caption" color={colors.primaryText}>{t("quests.my_xp", { xp: formatXp(q.myXp) })}</Text>
             <Text variant="bodyStrong">{formatXp(q.totalXp)} / {formatXp(q.targetXp)}</Text>
             <Text variant="caption" color={colors.infoText}>{q.partner.name?.split(" ")[0] ?? t("quests.partner_short")} {formatXp(q.partnerXp)}</Text>
           </View>

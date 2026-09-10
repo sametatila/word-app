@@ -41,7 +41,7 @@ function Featured({ unit, isCurrent, colors, onContinue }: { unit: LearningPathU
           {unit.complete ? <CheckIcon color="#fff" size={26} /> : <Text variant="h1" color="#fff">{unit.index}</Text>}
         </View>
         <View style={{ flex: 1 }}>
-          <Text variant="micro" color={colors.primary}>{t(isCurrent ? "path.now" : "common.unit")} · {t("common.unit")} {unit.index}</Text>
+          <Text variant="micro" color={colors.primaryText}>{t(isCurrent ? "path.now" : "common.unit")} · {t("common.unit")} {unit.index}</Text>
           <Text variant="h2">{unit.theme}</Text>
           <Text variant="caption" color={colors.textMuted}>{unit.complete ? t("common.completed") : t("path.lessons_done", { n: unit.lessonsDone, total: unit.lessonsTotal })}</Text>
         </View>
@@ -217,7 +217,7 @@ export function PathScreen() {
           <PressableScale key={u.id} style={{ width: gridItemWidth }} onPress={() => openUnit(u)}>
             <Card padded style={{ minHeight: 116, opacity: u.locked ? 0.6 : 1, borderColor: u.index === vurguluIndex ? colors.primary : colors.border, borderWidth: u.index === vurguluIndex ? 2 : 1 }}>
               <View style={{ width: 44, height: 44, borderRadius: 20, borderWidth: 3, borderColor: u.complete ? colors.success : u.index === path.currentIndex ? colors.primary : colors.border, alignItems: "center", justifyContent: "center" }}>
-                {u.complete ? <CheckIcon color={colors.success} size={18} /> : u.locked ? <LockIcon color={colors.textMuted} size={18} /> : <Text variant="bodyStrong" color={u.index === vurguluIndex ? colors.primary : colors.textMuted}>{u.index}</Text>}
+                {u.complete ? <CheckIcon color={colors.success} size={18} /> : u.locked ? <LockIcon color={colors.textMuted} size={18} /> : <Text variant="bodyStrong" color={u.index === vurguluIndex ? colors.primaryText : colors.textMuted}>{u.index}</Text>}
               </View>
               <Text variant="bodyStrong" style={{ marginTop: 8 }} numberOfLines={2}>{u.theme}</Text>
               <Text variant="micro" color={u.complete ? colors.success : colors.textMuted} style={{ marginTop: 2 }}>{u.complete ? t("common.completed") : u.locked ? t("common.locked") : t("path.lessons_done", { n: u.lessonsDone, total: u.lessonsTotal })}</Text>

@@ -38,10 +38,10 @@ function Board({ rows, colors }: { rows: DailyBoardRow[]; colors: Palette }) {
               <Text variant="bodyStrong" color={r.isMe ? "#fff" : colors.textMuted}>{initial}</Text>
             </View>
             <View style={{ flex: 1 }}>
-              <Text variant="bodyStrong" color={r.isMe ? colors.primary : colors.text}>{r.name ?? t("social.student")}{r.isMe ? t("social.you_paren") : ""}</Text>
+              <Text variant="bodyStrong" color={r.isMe ? colors.primaryText : colors.text}>{r.name ?? t("social.student")}{r.isMe ? t("social.you_paren") : ""}</Text>
               <Text variant="micro" color={colors.textMuted}>{t("common.n_correct", { correct: r.correct, total: r.total })}</Text>
             </View>
-            <Text variant="h3" color={r.isMe ? colors.primary : colors.text}>{r.score.toLocaleString(dateLocale())}</Text>
+            <Text variant="h3" color={r.isMe ? colors.primaryText : colors.text}>{r.score.toLocaleString(dateLocale())}</Text>
           </View>
         );
       })}
@@ -194,7 +194,7 @@ export function DailyScreen() {
         </View>
         <View style={{ flexDirection: "row", alignItems: "center", gap: 6 }}>
           {comboView >= 3 && <View style={{ flexDirection: "row", alignItems: "center", gap: 2 }}><FlameIcon color={colors.streak} size={15} /><Text variant="bodyStrong" color={colors.streakText}>{comboView}</Text></View>}
-          <View style={{ flexDirection: "row", alignItems: "center", gap: 3 }}><BoltIcon color={colors.primary} size={15} /><Text variant="bodyStrong" color={colors.primary}>{scoreView.toLocaleString("tr-TR")}</Text></View>
+          <View style={{ flexDirection: "row", alignItems: "center", gap: 3 }}><BoltIcon color={colors.primaryText} size={15} /><Text variant="bodyStrong" color={colors.primaryText}>{scoreView.toLocaleString("tr-TR")}</Text></View>
         </View>
       </View>
       <RoundView key={rounds[idx]?.id ?? idx} round={rounds[idx]} onDone={onDone} />

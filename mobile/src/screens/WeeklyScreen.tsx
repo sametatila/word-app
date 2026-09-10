@@ -131,7 +131,7 @@ export function WeeklyScreen() {
         </View>
         <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
           <ProgressRing size={160} stroke={15} pct={score} track={colors.surface2} from={colors.gradientA[0]} to={colors.gradientA[1]}>
-            <Text variant="display" color={colors.primary}>%{score}</Text>
+            <Text variant="display" color={colors.primaryText}>%{score}</Text>
             <Text variant="micro" color={colors.textMuted}>{t("weekly.score")}</Text>
           </ProgressRing>
           <Text variant="h1" style={{ marginTop: spacing.xl }}>{t(done ? "weekly.done_title" : "weekly.none_title")}</Text>

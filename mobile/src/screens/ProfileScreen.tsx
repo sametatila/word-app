@@ -83,7 +83,7 @@ export function ProfileScreen() {
                 <FlameIcon color={colors.streakText} size={16} /><Text variant="bodyStrong" color={colors.streakText}>{t("profile.days", { n: me.streak })}</Text>
               </View>
               <View style={{ flexDirection: "row", alignItems: "center", gap: 5, backgroundColor: colors.primarySoft, borderRadius: radii.pill, paddingHorizontal: 12, paddingVertical: 6 }}>
-                <BoltIcon color={colors.primary} size={16} /><Text variant="bodyStrong" color={colors.primary}>{xpLabel} XP</Text>
+                <BoltIcon color={colors.primaryText} size={16} /><Text variant="bodyStrong" color={colors.primaryText}>{xpLabel} XP</Text>
               </View>
             </View>
           ) : null}

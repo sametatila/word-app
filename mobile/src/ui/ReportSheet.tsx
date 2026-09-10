@@ -50,7 +50,7 @@ export function ReportSheet({ visible, kind, refId, content, onClose }: {
                   return (
                     <PressableScale key={r.key} onPress={() => setReason(r.key)} accessibilityRole="radio" accessibilityState={{ selected: active }} style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingVertical: 10, paddingHorizontal: spacing.md, borderRadius: radii.md, borderWidth: 1.5, borderColor: active ? colors.primary : colors.border, backgroundColor: active ? colors.primarySoft : colors.surface }}>
                       <View style={{ flex: 1 }}>
-                        <Text variant="bodyStrong" color={active ? colors.primary : colors.text}>{r.label}</Text>
+                        <Text variant="bodyStrong" color={active ? colors.primaryText : colors.text}>{r.label}</Text>
                         <Text variant="micro" color={colors.textMuted}>{r.sub}</Text>
                       </View>
                       <View style={{ width: 20, height: 20, borderRadius: 10, borderWidth: 2, borderColor: active ? colors.primary : colors.border, alignItems: "center", justifyContent: "center" }}>

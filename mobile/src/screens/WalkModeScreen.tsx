@@ -631,7 +631,7 @@ export function WalkModeScreen() {
             <Celebrate show={tally.total > 0 && donePct >= 60} />
             <Mascot mood={tally.total > 0 ? (donePct >= 60 ? "celebrate" : "happy") : "idle"} size={104} />
             <ProgressRing size={150} stroke={14} pct={donePct} track={colors.surface2} from={colors.gradientA[0]} to={colors.gradientA[1]}>
-              <Text variant="display" color={colors.primary}>{tally.correct}/{tally.total || 0}</Text>
+              <Text variant="display" color={colors.primaryText}>{tally.correct}/{tally.total || 0}</Text>
               <Text variant="micro" color={colors.textMuted}>{tx("walkmode.correct")}</Text>
             </ProgressRing>
             <Text variant="h1" style={{ marginTop: spacing.xl }}>{tx(noMore ? "walkmode.done_no_more" : "walkmode.done_title")}</Text>
@@ -691,8 +691,8 @@ export function WalkModeScreen() {
             {/* durum rozeti */}
             <View style={{ alignItems: "center" }}>
               <View style={{ flexDirection: "row", alignItems: "center", gap: 6, backgroundColor: (teaching ? colors.primary : colors.info) + "1e", borderRadius: radii.pill, paddingHorizontal: 14, paddingVertical: 7 }}>
-                <WalkIcon color={teaching ? colors.primary : colors.info} size={15} />
-                <Text variant="caption" color={teaching ? colors.primary : colors.info}>{tx(teaching ? "walkmode.badge_teaching" : "walkmode.badge_walking")}</Text>
+                <WalkIcon color={teaching ? colors.primaryText : colors.info} size={15} />
+                <Text variant="caption" color={teaching ? colors.primaryText : colors.info}>{tx(teaching ? "walkmode.badge_teaching" : "walkmode.badge_walking")}</Text>
               </View>
             </View>
 
@@ -715,7 +715,7 @@ export function WalkModeScreen() {
               </View>
 
               <View style={{ alignItems: "center", gap: 4, minHeight: 46 }}>
-                <Text variant="bodyStrong" color={verdict === "correct" ? colors.success : verdict === "wrong" ? colors.danger : listening ? colors.primary : colors.textMuted}>{stepLabel}</Text>
+                <Text variant="bodyStrong" color={verdict === "correct" ? colors.success : verdict === "wrong" ? colors.danger : listening ? colors.primaryText : colors.textMuted}>{stepLabel}</Text>
                 {heard ? <Text variant="caption" color={verdict === "correct" ? colors.success : colors.danger}>{tx("walkmode.heard", { text: heard })}</Text> : null}
               </View>
             </View>

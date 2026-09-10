@@ -148,7 +148,7 @@ export function SkillsScreen() {
               const active = activeLevel === l;
               return (
                 <PressableScale key={l} onPress={() => setLevel(l)} accessibilityRole="tab" accessibilityState={{ selected: active }} style={{ flex: 1, paddingVertical: 10, borderRadius: radii.md, alignItems: "center", borderWidth: 1.5, borderColor: active ? colors.primary : colors.border, backgroundColor: active ? colors.primarySoft : colors.surface }}>
-                  <Text variant="bodyStrong" color={active ? colors.primary : colors.textMuted}>{l}</Text>
+                  <Text variant="bodyStrong" color={active ? colors.primaryText : colors.textMuted}>{l}</Text>
                 </PressableScale>
               );
             })}

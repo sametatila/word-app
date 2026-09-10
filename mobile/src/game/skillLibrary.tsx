@@ -43,7 +43,7 @@ export function GrammarBody({ focus, blocks, colors }: { focus: string; blocks: 
           {b.examples?.map((x, j) => (
             <PressableScale key={j} onPress={() => speakTarget(x.de)} accessibilityLabel={t("item.listen_example")}
               style={{ marginTop: spacing.sm, flexDirection: "row", gap: spacing.sm, backgroundColor: colors.surface2, borderRadius: radii.md, padding: spacing.md }}>
-              <SpeakerIcon color={colors.primary} size={16} />
+              <SpeakerIcon color={colors.primaryText} size={16} />
               <View style={{ flex: 1 }}>
                 <Text variant="bodyStrong">{x.de}</Text>
                 <Text variant="caption" color={colors.textMuted}>{x.tr}</Text>
@@ -119,7 +119,7 @@ export function SpeakingDrill({ tasks, onAllDone, colors }: { tasks: SpeakingTas
         <Text variant="h3" style={{ flex: 1, lineHeight: 26 }}>{task.de}</Text>
         <PressableScale onPress={() => speakTarget(task.de)} hitSlop={8} accessibilityLabel={t("item.read_aloud")}
           style={{ width: 36, height: 36, borderRadius: 18, backgroundColor: colors.primarySoft, alignItems: "center", justifyContent: "center" }}>
-          <SpeakerIcon color={colors.primary} size={18} />
+          <SpeakerIcon color={colors.primaryText} size={18} />
         </PressableScale>
       </View>
       <Text variant="caption" color={colors.textMuted} style={{ marginTop: 4 }}>{task.tr}</Text>
@@ -168,7 +168,7 @@ export function SpeakingDrill({ tasks, onAllDone, colors }: { tasks: SpeakingTas
 
       {sttOk === false && (verdict === "idle") ? (
         <PressableScale onPress={advance} style={{ marginTop: spacing.sm, alignSelf: "center" }}>
-          <Text variant="bodyStrong" color={colors.primary}>{t(last ? "item.skip_unscored_finish" : "item.skip_unscored")}</Text>
+          <Text variant="bodyStrong" color={colors.primaryText}>{t(last ? "item.skip_unscored_finish" : "item.skip_unscored")}</Text>
         </PressableScale>
       ) : null}
     </Card>
@@ -293,7 +293,7 @@ export function MonologueBody({ mono, level, exerciseId, onDone, colors }: {
     <Card padded style={{ marginTop: spacing.md }}>
       {phase === "prep" ? (
         <>
-          <Text variant="micro" color={colors.primary}>{t("item.mono_prep")}</Text>
+          <Text variant="micro" color={colors.primaryText}>{t("item.mono_prep")}</Text>
           <Text variant="bodyStrong" style={{ marginTop: 6, lineHeight: 23 }}>{mono.promptTr}</Text>
           {mono.bulletsTr.map((b, i) => <Text key={i} variant="body" color={colors.text} style={{ marginTop: 6 }}>• {b}</Text>)}
           <View style={{ flexDirection: "row", flexWrap: "wrap", gap: 6, marginTop: spacing.md }}>
@@ -336,7 +336,7 @@ export function MonologueBody({ mono, level, exerciseId, onDone, colors }: {
 
       {phase === "review" ? (
         <>
-          <Text variant="micro" color={colors.primary}>{t("item.mono_review")}</Text>
+          <Text variant="micro" color={colors.primaryText}>{t("item.mono_review")}</Text>
           <Text variant="caption" color={colors.textMuted} style={{ marginTop: 4 }}>{t("item.mono_spoke", { time: mm(seconds) })}</Text>
           {sttOk !== false ? (
             <>
@@ -398,7 +398,7 @@ export function MonologueBody({ mono, level, exerciseId, onDone, colors }: {
             </Text>
           )}
           <PressableScale onPress={() => setShowSample((v) => !v)} style={{ marginTop: spacing.md, alignSelf: "flex-start" }}>
-            <Text variant="bodyStrong" color={colors.primary}>{t(showSample ? "item.mono_hide_sample" : "item.mono_sample")}</Text>
+            <Text variant="bodyStrong" color={colors.primaryText}>{t(showSample ? "item.mono_hide_sample" : "item.mono_sample")}</Text>
           </PressableScale>
           {showSample ? (
             <View style={{ marginTop: spacing.sm, backgroundColor: colors.successSoft, borderRadius: radii.md, padding: spacing.md }}>

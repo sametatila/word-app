@@ -127,7 +127,7 @@ export function UserScreen() {
         {data.stats ? (
           <View style={{ flexDirection: "row", flexWrap: "wrap", gap: spacing.md, marginBottom: spacing.lg }}>
             <StatTile value={String(data.stats.currentStreak)} label={t("user.day_streak")} color={colors.streak} colors={colors} />
-            <StatTile value={formatXp(data.stats.weeklyXp)} label={t("user.xp_this_week")} color={colors.primary} colors={colors} />
+            <StatTile value={formatXp(data.stats.weeklyXp)} label={t("user.xp_this_week")} color={colors.primaryText} colors={colors} />
             <StatTile value={formatXp(data.stats.totalXp)} label={t("user.total_xp")} color={colors.success} colors={colors} />
             <StatTile value={String(data.stats.achievements)} label={t("user.badge")} color={colors.accent} colors={colors} />
           </View>

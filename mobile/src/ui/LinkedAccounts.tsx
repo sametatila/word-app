@@ -96,7 +96,7 @@ export function LinkedAccounts({ colors }: { colors: Palette }) {
             ) : (
               <PressableScale onPress={() => void bagla(p as "google" | "apple")} disabled={calisiyor} accessibilityRole="button"
                 style={{ paddingHorizontal: spacing.md, paddingVertical: 8, borderRadius: radii.md, backgroundColor: colors.primarySoft }}>
-                <Text variant="caption" color={colors.primary}>{calisiyor ? "…" : t("links.link")}</Text>
+                <Text variant="caption" color={colors.primaryText}>{calisiyor ? "…" : t("links.link")}</Text>
               </PressableScale>
             )}
           </View>

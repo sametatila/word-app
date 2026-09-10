@@ -121,7 +121,7 @@ function LeagueRowCard({ row, zone, onOpen, onReport }: { row: LeagueRow; zone: 
       </View>
       <PersonAvatar userId={row.userId} name={row.name} size={40} ring={tint} />
       <View style={{ flex: 1 }}>
-        <Text variant="bodyStrong" color={row.isMe ? colors.primary : colors.text} numberOfLines={1}>
+        <Text variant="bodyStrong" color={row.isMe ? colors.primaryText : colors.text} numberOfLines={1}>
           {row.name ?? t("social.student")}{row.isMe ? t("social.you_paren") : ""}
         </Text>
         {row.streak > 0 ? (
@@ -131,7 +131,7 @@ function LeagueRowCard({ row, zone, onOpen, onReport }: { row: LeagueRow; zone: 
           </View>
         ) : null}
       </View>
-      <Text variant="h3" color={row.isMe ? colors.primary : colors.text}>{formatXp(row.xp)}</Text>
+      <Text variant="h3" color={row.isMe ? colors.primaryText : colors.text}>{formatXp(row.xp)}</Text>
       <Text variant="micro" color={colors.textMuted}>XP</Text>
     </PressableScale>
   );

@@ -190,7 +190,7 @@ export function SettingsScreen() {
             return (
               <PressableScale key={c.key} onPress={() => pickCourse(c.key)} style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingVertical: 12, borderTopWidth: i === 0 ? 0 : 1, borderTopColor: colors.hairline }}>
                 <View style={{ flex: 1 }}>
-                  <Text variant="bodyStrong" color={active ? colors.primary : colors.text}>{c.label}</Text>
+                  <Text variant="bodyStrong" color={active ? colors.primaryText : colors.text}>{c.label}</Text>
                   <Text variant="caption" color={colors.textMuted}>{c.sub}</Text>
                 </View>
                 <View style={{ width: 22, height: 22, borderRadius: 11, borderWidth: 2, borderColor: active ? colors.primary : colors.border, alignItems: "center", justifyContent: "center" }}>
@@ -206,7 +206,7 @@ export function SettingsScreen() {
             {LEVELS.map((l) => <Chip key={l} label={l} active={level === l} onPress={() => setLevel(l)} />)}
           </View>
           <PressableScale onPress={() => nav.navigate("Placement")} style={{ marginTop: spacing.md, alignSelf: "flex-start" }}>
-            <Text variant="bodyStrong" color={colors.primary}>{t("settings.not_sure_take_placement_test")}</Text>
+            <Text variant="bodyStrong" color={colors.primaryText}>{t("settings.not_sure_take_placement_test")}</Text>
           </PressableScale>
         </Section>
 
@@ -240,7 +240,7 @@ export function SettingsScreen() {
               const active = mode === o.key;
               return (
                 <PressableScale key={o.key} onPress={() => setMode(o.key)} style={{ flex: 1, paddingVertical: 10, borderRadius: radii.sm, alignItems: "center", backgroundColor: active ? colors.surface : "transparent", ...(active ? softShadow("#5a3418", 4) : {}) }}>
-                  <Text variant="bodyStrong" color={active ? colors.primary : colors.textMuted}>{t(o.label)}</Text>
+                  <Text variant="bodyStrong" color={active ? colors.primaryText : colors.textMuted}>{t(o.label)}</Text>
                 </PressableScale>
               );
             })}

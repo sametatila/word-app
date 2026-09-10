@@ -55,14 +55,14 @@ export function VoicePicker({
             }}
           >
             <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between" }}>
-              <Text variant="bodyStrong" color={on ? colors.primary : colors.text}>{v.label}</Text>
+              <Text variant="bodyStrong" color={on ? colors.primaryText : colors.text}>{v.label}</Text>
               <PressableScale
                 accessibilityLabel={`${v.label} sesini dinle`}
                 hitSlop={8}
                 onPress={() => speakWithVoice(sample, v.id)}
                 style={{ padding: 4 }}
               >
-                <SpeakerIcon color={colors.primary} size={20} />
+                <SpeakerIcon color={colors.primaryText} size={20} />
               </PressableScale>
             </View>
             <Text variant="caption" color={colors.textMuted}>{t(v.gender === "female" ? "voices.female" : "voices.male")}</Text>

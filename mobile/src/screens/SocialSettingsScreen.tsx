@@ -109,7 +109,7 @@ export function SocialSettingsScreen() {
                 return (
                   <PressableScale key={v.key} onPress={() => void save({ visibility: v.key })} disabled={busy} style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingVertical: 12, borderTopWidth: i === 0 ? 0 : 1, borderTopColor: colors.hairline }}>
                     <View style={{ flex: 1 }}>
-                      <Text variant="bodyStrong" color={active ? colors.primary : colors.text}>{tx(v.label)}</Text>
+                      <Text variant="bodyStrong" color={active ? colors.primaryText : colors.text}>{tx(v.label)}</Text>
                       <Text variant="caption" color={colors.textMuted}>{tx(v.sub)}</Text>
                     </View>
                     <View style={{ width: 22, height: 22, borderRadius: 11, borderWidth: 2, borderColor: active ? colors.primary : colors.border, alignItems: "center", justifyContent: "center" }}>

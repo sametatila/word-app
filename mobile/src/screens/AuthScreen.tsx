@@ -195,7 +195,7 @@ export function AuthScreen() {
               </>
             )}
             <PressableScale onPress={() => { setView("email"); setResetSent(false); setError(null); }} style={{ alignItems: "center", paddingVertical: spacing.md }}>
-              <Text variant="bodyStrong" color={colors.primary}>{t("auth.back_to_sign_in")}</Text>
+              <Text variant="bodyStrong" color={colors.primaryText}>{t("auth.back_to_sign_in")}</Text>
             </PressableScale>
           </View>
         ) : (
@@ -225,7 +225,7 @@ export function AuthScreen() {
             <PressableScale onPress={() => { setMode(mode === "signin" ? "signup" : "signin"); setError(null); }} style={{ alignItems: "center", paddingVertical: spacing.md }}>
               <Text variant="body" color={colors.textMuted}>
                 {mode === "signin" ? t("auth.no_account_yet") : t("auth.already_have_account")}
-                <Text variant="bodyStrong" color={colors.primary}>{mode === "signin" ? t("auth.sign_up") : t("auth.sign_in")}</Text>
+                <Text variant="bodyStrong" color={colors.primaryText}>{mode === "signin" ? t("auth.sign_up") : t("auth.sign_in")}</Text>
               </Text>
             </PressableScale>
           </View>

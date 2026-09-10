@@ -119,7 +119,7 @@ export function WritingsScreen() {
           </Text>
           {phase === "error" && user ? (
             <PressableScale onPress={() => setAttempt((n) => n + 1)} style={{ paddingHorizontal: 18, paddingVertical: 10, borderRadius: radii.md, borderWidth: 1.5, borderColor: colors.border }}>
-              <Text variant="bodyStrong" color={colors.primary}>{t("common.try_again")}</Text>
+              <Text variant="bodyStrong" color={colors.primaryText}>{t("common.try_again")}</Text>
             </PressableScale>
           ) : null}
         </View>

@@ -32,8 +32,8 @@ function ReadingText({ text, colors }: { text: string; colors: Palette }) {
       <View style={{ flexDirection: "row", justifyContent: "flex-end", marginBottom: spacing.xs }}>
         <PressableScale onPress={() => speakTarget(text)} hitSlop={8} accessibilityLabel={t("item.read_text_aloud")}
           style={{ flexDirection: "row", alignItems: "center", gap: 6, backgroundColor: colors.primarySoft, borderRadius: radii.pill, paddingHorizontal: 12, paddingVertical: 6 }}>
-          <SpeakerIcon color={colors.primary} size={18} />
-          <Text variant="caption" color={colors.primary}>{t("item.read_aloud")}</Text>
+          <SpeakerIcon color={colors.primaryText} size={18} />
+          <Text variant="caption" color={colors.primaryText}>{t("item.read_aloud")}</Text>
         </PressableScale>
       </View>
       {text.split("\n\n").map((p, i) => (
@@ -56,7 +56,7 @@ function ListeningBody({ segments, colors }: { segments: ListeningSegment[]; col
         <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.md }}>{t("item.listen_and_understand")}</Text>
       </Card>
       <PressableScale onPress={() => setReveal((v) => !v)} style={{ marginTop: spacing.md, alignSelf: "flex-start" }}>
-        <Text variant="bodyStrong" color={colors.primary}>{t(reveal ? "item.hide_text" : "item.show_text")}</Text>
+        <Text variant="bodyStrong" color={colors.primaryText}>{t(reveal ? "item.hide_text" : "item.show_text")}</Text>
       </PressableScale>
       {reveal ? (
         <Card style={{ marginTop: spacing.sm }}>
@@ -119,7 +119,7 @@ export function ItemScreen() {
       <View style={{ flex: 1, backgroundColor: colors.bg, alignItems: "center", justifyContent: "center", gap: spacing.lg, padding: spacing.xl }}>
         <Mascot mood="sad" size={90} />
         <Text variant="body" color={colors.textMuted} style={{ textAlign: "center" }}>{t("item.this_exercise_can_t_be_opened")}</Text>
-        <PressableScale onPress={() => nav.goBack()}><Text variant="bodyStrong" color={colors.primary}>{t("item.go_back")}</Text></PressableScale>
+        <PressableScale onPress={() => nav.goBack()}><Text variant="bodyStrong" color={colors.primaryText}>{t("item.go_back")}</Text></PressableScale>
       </View>
     );
   }

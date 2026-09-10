@@ -25,7 +25,7 @@ function Point({ text, colors }: { text: string; colors: Palette }) {
   return (
     <View style={{ flexDirection: "row", gap: spacing.md, alignItems: "flex-start" }}>
       <View style={{ width: 24, height: 24, borderRadius: 12, backgroundColor: colors.primarySoft, alignItems: "center", justifyContent: "center", marginTop: 2 }}>
-        <CheckIcon color={colors.primary} size={14} />
+        <CheckIcon color={colors.primaryText} size={14} />
       </View>
       <Text variant="body" style={{ flex: 1, lineHeight: 22 }}>{text}</Text>
     </View>
@@ -55,7 +55,7 @@ export function MicDisclosure({ visible, onAccept, onCancel }: { visible: boolea
             {points().map((p) => <Point key={p} text={p} colors={colors} />)}
           </View>
           <PressableScale onPress={() => openLegal("privacy")} hitSlop={6} accessibilityRole="link" style={{ alignSelf: "center", paddingVertical: spacing.sm }}>
-            <Text variant="bodyStrong" color={colors.primary}>{t("micdisclosure.read_privacy_policy")}</Text>
+            <Text variant="bodyStrong" color={colors.primaryText}>{t("micdisclosure.read_privacy_policy")}</Text>
           </PressableScale>
         </ScrollView>
         <View style={{ paddingHorizontal: spacing.xl, paddingBottom: insets.bottom + spacing.lg, gap: spacing.sm }}>

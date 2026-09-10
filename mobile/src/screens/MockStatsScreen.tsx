@@ -85,7 +85,7 @@ export function MockStatsScreen() {
         refreshControl={<RefreshControl refreshing={busy && !!data} onRefresh={() => void load()} tintColor={colors.primary} />}
       >
         {busy && !data ? (
-          <View style={{ paddingTop: spacing.xxl, alignItems: "center" }}><ActivityIndicator color={colors.primary} /></View>
+          <View style={{ paddingTop: spacing.xxl, alignItems: "center" }}><ActivityIndicator color={colors.primaryText} /></View>
         ) : !data || data.attempts === 0 ? (
           <>
             {data?.running?.length ? <Running data={data} colors={colors} nav={nav} label={label} skillOf={skillOf} /> : null}

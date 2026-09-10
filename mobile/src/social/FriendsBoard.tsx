@@ -49,12 +49,12 @@ export function FriendsBoard({ compact = false }: { compact?: boolean }) {
               <View style={{ width: 30, alignItems: "center" }}><Text variant="h3" color={mc}>{r.rank}</Text></View>
               <PersonAvatar userId={r.userId} name={r.name} size={40} ring={r.rank <= 3 ? mc : null} />
               <View style={{ flex: 1 }}>
-                <Text variant="bodyStrong" color={r.isMe ? colors.primary : colors.text} numberOfLines={1}>{r.name ?? t("social.student")}{r.isMe ? t("social.you_paren") : ""}</Text>
+                <Text variant="bodyStrong" color={r.isMe ? colors.primaryText : colors.text} numberOfLines={1}>{r.name ?? t("social.student")}{r.isMe ? t("social.you_paren") : ""}</Text>
                 <View style={{ flexDirection: "row", alignItems: "center", gap: 4 }}>
                   <FlameIcon color={colors.streak} size={12} /><Text variant="micro" color={colors.textMuted}>{t("social.days_streak", { n: r.streak })}</Text>
                 </View>
               </View>
-              <Text variant="h3" color={r.isMe ? colors.primary : colors.text}>{formatXp(r.xp)}</Text>
+              <Text variant="h3" color={r.isMe ? colors.primaryText : colors.text}>{formatXp(r.xp)}</Text>
               <Text variant="micro" color={colors.textMuted}>XP</Text>
             </PressableScale>
           );
@@ -62,7 +62,7 @@ export function FriendsBoard({ compact = false }: { compact?: boolean }) {
       </View>
       {me && gap > 0 ? (
         <Card padded style={{ marginTop: spacing.md, alignItems: "center", backgroundColor: colors.primarySoft, borderColor: colors.primary }}>
-          <Text variant="bodyStrong" color={colors.primary}>{t("friendsboard.gap", { name: above?.name?.split(" ")[0] ?? t("friendsboard.the_one_above"), xp: formatXp(gap) })}</Text>
+          <Text variant="bodyStrong" color={colors.primaryText}>{t("friendsboard.gap", { name: above?.name?.split(" ")[0] ?? t("friendsboard.the_one_above"), xp: formatXp(gap) })}</Text>
         </Card>
       ) : null}
     </View>

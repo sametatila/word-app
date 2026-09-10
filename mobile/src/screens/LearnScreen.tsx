@@ -115,8 +115,8 @@ export function LearnScreen() {
               {t("learn.daily_pitch")}
             </Text>
             <View style={{ flexDirection: "row", alignItems: "center", gap: 8, marginTop: spacing.lg, backgroundColor: "#ffffff", borderRadius: radii.pill, alignSelf: "flex-start", paddingHorizontal: 20, paddingVertical: 11 }}>
-              <Text variant="bodyStrong" color={colors.primary}>{t("common.start")}</Text>
-              <ArrowRightIcon color={colors.primary} size={18} />
+              <Text variant="bodyStrong" color={colors.primaryText}>{t("common.start")}</Text>
+              <ArrowRightIcon color={colors.primaryText} size={18} />
             </View>
             </View>
             <Mascot mood={streak > 0 ? "happy" : (me?.xp ?? 0) > 0 ? "sleep" : "wave"} size={66} />

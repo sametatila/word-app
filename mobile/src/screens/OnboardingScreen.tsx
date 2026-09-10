@@ -225,7 +225,7 @@ export function OnboardingScreen() {
                     {active && <View style={{ width: 12, height: 12, borderRadius: 6, backgroundColor: colors.primary }} />}
                   </View>
                   <View style={{ flex: 1 }}>
-                    <Text variant="bodyStrong" color={active ? colors.primary : colors.text}>{o.label}</Text>
+                    <Text variant="bodyStrong" color={active ? colors.primaryText : colors.text}>{o.label}</Text>
                     {o.sub && <Text variant="caption" color={colors.textMuted}>{o.sub}</Text>}
                   </View>
                 </PressableScale>
@@ -238,7 +238,7 @@ export function OnboardingScreen() {
                   const on = pickedLevel === lv;
                   return (
                     <PressableScale key={lv} onPress={() => setPickedLevel(lv)} style={{ flex: 1, paddingVertical: 12, borderRadius: radii.md, alignItems: "center", borderWidth: 2, borderColor: on ? colors.primary : colors.border, backgroundColor: on ? colors.primarySoft : colors.surface }}>
-                      <Text variant="bodyStrong" color={on ? colors.primary : colors.text}>{lv}</Text>
+                      <Text variant="bodyStrong" color={on ? colors.primaryText : colors.text}>{lv}</Text>
                     </PressableScale>
                   );
                 })}
@@ -257,7 +257,7 @@ export function OnboardingScreen() {
       <PressableScale onPress={() => void zatenHesabimVar()} style={{ alignItems: "center", paddingTop: spacing.lg, paddingBottom: spacing.xs }}>
         <Text variant="body" color={colors.textMuted}>
           {t("auth.already_have_account")}
-          <Text variant="bodyStrong" color={colors.primary}>{t("auth.sign_in")}</Text>
+          <Text variant="bodyStrong" color={colors.primaryText}>{t("auth.sign_in")}</Text>
         </Text>
       </PressableScale>
     </View>

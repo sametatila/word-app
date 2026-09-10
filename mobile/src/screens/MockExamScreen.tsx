@@ -360,7 +360,7 @@ export function MockExamScreen() {
           </>
         ) : busy || !result ? (
           <View style={{ paddingTop: spacing.xxl, alignItems: "center" }}>
-            <ActivityIndicator color={colors.primary} />
+            <ActivityIndicator color={colors.primaryText} />
             <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.md }}>{t("mockexam.scoring")}</Text>
           </View>
         ) : (
@@ -464,7 +464,7 @@ function Cover({
     <>
       <Card padded style={{ marginBottom: spacing.md }}>
         <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.sm }}>
-          <SpeakerIcon color={colors.primary} size={18} />
+          <SpeakerIcon color={colors.primaryText} size={18} />
           <Text variant="micro" color={colors.textMuted}>{t("mockexam.instructions")}</Text>
         </View>
         <Text variant="body" style={{ marginTop: spacing.xs, lineHeight: 22 }}>{part.instruction}</Text>
@@ -596,8 +596,8 @@ function StimulusView({
           backgroundColor: rest > 0 ? colors.primarySoft : colors.surface2, opacity: rest > 0 ? 1 : 0.6,
         }}
       >
-        {busy ? <ActivityIndicator color={colors.primary} size="small" /> : <SpeakerIcon color={rest > 0 ? colors.primary : colors.textMuted} size={20} />}
-        <Text variant="bodyStrong" color={rest > 0 ? colors.primary : colors.textMuted}>
+        {busy ? <ActivityIndicator color={colors.primaryText} size="small" /> : <SpeakerIcon color={rest > 0 ? colors.primaryText : colors.textMuted} size={20} />}
+        <Text variant="bodyStrong" color={rest > 0 ? colors.primaryText : colors.textMuted}>
           {rest <= 0 ? t("mockexam.plays_done") : used === 0 ? t("mockexam.listen") : t("mockexam.listen_again")}
         </Text>
       </PressableScale>
@@ -628,7 +628,7 @@ function ItemView({
         borderWidth: 1, borderColor: active ? colors.primary : "transparent", marginBottom: spacing.xs,
       }}
     >
-      <Text variant="body" color={active ? colors.primary : colors.text}>{label}</Text>
+      <Text variant="body" color={active ? colors.primaryText : colors.text}>{label}</Text>
     </PressableScale>
   );
 
@@ -640,7 +640,7 @@ function ItemView({
     <Card padded style={{ marginBottom: spacing.sm }}>
       <Text variant="bodyStrong" style={{ lineHeight: 22 }}>{item.no}. {item.text}</Text>
       {item.kind === "gap" && item.cue ? (
-        <Text variant="bodyStrong" color={colors.primary} style={{ marginTop: spacing.xs, letterSpacing: 1 }}>{item.cue}</Text>
+        <Text variant="bodyStrong" color={colors.primaryText} style={{ marginTop: spacing.xs, letterSpacing: 1 }}>{item.cue}</Text>
       ) : null}
       <View style={{ marginTop: spacing.sm }}>
         {item.kind === "mcq"
@@ -732,7 +732,7 @@ function WritingTask({
           disabled={busy || !attemptId || n < 5}
           style={{ marginTop: spacing.md, alignSelf: "flex-start", paddingVertical: spacing.sm, paddingHorizontal: spacing.md, borderRadius: radii.pill, backgroundColor: colors.primarySoft, opacity: busy || !attemptId || n < 5 ? 0.5 : 1 }}
         >
-          <Text variant="bodyStrong" color={colors.primary}>{busy ? t("mockexam.evaluating") : t("mockexam.evaluate")}</Text>
+          <Text variant="bodyStrong" color={colors.primaryText}>{busy ? t("mockexam.evaluating") : t("mockexam.evaluate")}</Text>
         </PressableScale>
       )}
       {!attemptId ? <Text variant="micro" color={colors.textMuted} style={{ marginTop: spacing.xs }}>{t("mockexam.ai_needs_server")}</Text> : null}
@@ -873,15 +873,15 @@ function SpeakingTask({
             onPress={() => void begin()}
             style={{ marginTop: spacing.md, flexDirection: "row", alignItems: "center", gap: spacing.sm, alignSelf: "flex-start", paddingVertical: spacing.sm, paddingHorizontal: spacing.md, borderRadius: radii.pill, backgroundColor: colors.primarySoft }}
           >
-            <MicIcon color={colors.primary} size={20} />
-            <Text variant="bodyStrong" color={colors.primary}>{t("mockexam.speak_start")}</Text>
+            <MicIcon color={colors.primaryText} size={20} />
+            <Text variant="bodyStrong" color={colors.primaryText}>{t("mockexam.speak_start")}</Text>
           </PressableScale>
           {micOk === false ? <Text variant="caption" color={colors.dangerText} style={{ marginTop: spacing.xs }}>{t("mockexam.mic_needed")}</Text> : null}
         </>
       ) : step === "prep" ? (
         <View style={{ marginTop: spacing.md, alignItems: "center" }}>
           <Text variant="micro" color={colors.textMuted}>{t("mockexam.prep")}</Text>
-          <Text variant="h1" color={colors.primary}>{mmss(count)}</Text>
+          <Text variant="h1" color={colors.primaryText}>{mmss(count)}</Text>
           <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.xs, textAlign: "center", lineHeight: 20 }}>{t("mockexam.prep_hint")}</Text>
         </View>
       ) : step === "speaking" ? (
@@ -922,7 +922,7 @@ function SpeakingTask({
               disabled={busy || !attemptId}
               style={{ marginTop: spacing.md, alignSelf: "flex-start", paddingVertical: spacing.sm, paddingHorizontal: spacing.md, borderRadius: radii.pill, backgroundColor: colors.primarySoft, opacity: busy || !attemptId ? 0.5 : 1 }}
             >
-              <Text variant="bodyStrong" color={colors.primary}>{busy ? t("mockexam.evaluating") : t("mockexam.evaluate")}</Text>
+              <Text variant="bodyStrong" color={colors.primaryText}>{busy ? t("mockexam.evaluating") : t("mockexam.evaluate")}</Text>
             </PressableScale>
           )}
           {!attemptId ? <Text variant="micro" color={colors.textMuted} style={{ marginTop: spacing.xs }}>{t("mockexam.ai_needs_server")}</Text> : null}
@@ -1076,7 +1076,7 @@ function ResultView({
                       <Text variant="bodyStrong" style={{ lineHeight: 22 }}>{it.no}. {it.text}</Text>
                       {/* Anahtar sözcük dökümde de görünmeli: açıklama ona gönderme yapıyor. */}
                       {it.kind === "gap" && it.cue ? (
-                        <Text variant="bodyStrong" color={colors.primary} style={{ marginTop: spacing.xs, letterSpacing: 1 }}>{it.cue}</Text>
+                        <Text variant="bodyStrong" color={colors.primaryText} style={{ marginTop: spacing.xs, letterSpacing: 1 }}>{it.cue}</Text>
                       ) : null}
                       {!ok ? (
                         <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.xs }}>

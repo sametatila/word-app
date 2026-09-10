@@ -260,7 +260,7 @@ export function PaywallScreen() {
                     <Text variant="h3">{planLabel(p)}</Text>
                     <Text variant="caption" color={colors.textMuted}>{tr ? t("paywall.first_free", { duration: tr }) : t("paywall.cancel_anytime")}</Text>
                   </View>
-                  <Text variant="h3" color={active ? colors.primary : colors.text}>{p.product.priceString}</Text>
+                  <Text variant="h3" color={active ? colors.primaryText : colors.text}>{p.product.priceString}</Text>
                 </PressableScale>
               );
             })}

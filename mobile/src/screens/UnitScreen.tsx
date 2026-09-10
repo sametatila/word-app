@@ -121,7 +121,7 @@ export function UnitPane({ index, level, theme, items: gelenItems, embedded = fa
                     </View>
                   ) : it.current ? (
                     <View style={{ backgroundColor: colors.primarySoft, borderRadius: radii.pill, paddingHorizontal: 10, paddingVertical: 4 }}>
-                      <Text variant="micro" color={colors.primary}>{t("unit.now")}</Text>
+                      <Text variant="micro" color={colors.primaryText}>{t("unit.now")}</Text>
                     </View>
                   ) : it.open && it.playable ? (
                     <ChevronRightIcon color={colors.textFaint} size={20} />

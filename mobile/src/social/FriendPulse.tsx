@@ -69,7 +69,7 @@ export function FriendPulse() {
             </View>
           )}
         </View>
-        {!invited ? <Text variant="h3" color={colors.primary}>{q.pct}%</Text> : <ArrowRightIcon color={colors.textFaint} size={20} />}
+        {!invited ? <Text variant="h3" color={colors.primaryText}>{q.pct}%</Text> : <ArrowRightIcon color={colors.textFaint} size={20} />}
       </Card>
     </PressableScale>
   );

@@ -123,7 +123,7 @@ function WrittenInput({ q, kind, done, onSettle, colors }: { q: SkillQuestion; k
     <View style={{ marginTop: spacing.md }}>
       {kind === "dictation" ? (
         <PressableScale onPress={() => speakTarget(accept[0] ?? "")} style={{ flexDirection: "row", alignItems: "center", gap: 6, alignSelf: "flex-start", marginBottom: spacing.sm, backgroundColor: colors.surface2, borderRadius: radii.pill, paddingHorizontal: spacing.md, paddingVertical: 7 }}>
-          <SpeakerIcon color={colors.primary} size={15} /><Text variant="caption" color={colors.primary}>{tx("skillquiz.listen_to_sentence")}</Text>
+          <SpeakerIcon color={colors.primaryText} size={15} /><Text variant="caption" color={colors.primaryText}>{tx("skillquiz.listen_to_sentence")}</Text>
         </PressableScale>
       ) : null}
       <View style={{ flexDirection: "row", alignItems: "flex-end", gap: spacing.sm }}>

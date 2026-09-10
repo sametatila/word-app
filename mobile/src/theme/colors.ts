@@ -25,6 +25,19 @@ export type Palette = {
    * zaten alfa olduğu için `primary` 5.93 veriyor, orada değişen bir şey yok.
    */
   onPrimarySoft: string;
+  /**
+   * Marka turuncusu YAZI ve İKON olarak.
+   *
+   * `primary` bir DOLGU rengi: açık temada orange[500] ve açık bir yüzeyin
+   * üstünde okunmuyor - ölçüm kart üstünde 2.77, zeminde 2.59, `primarySoft`
+   * üstünde 2.24. AA yazı için 4.5, grafik için 3.0 istiyor. orange[700] aynı
+   * yerlerde 5.39 / 5.05 / 4.37.
+   *
+   * Web bu kararı zaten vermişti (`globals.css` `--color-brand: brand-700`) ve
+   * sebebini oraya yazmıştı; mobilde karşılığı yoktu. Koyu temada iki değer
+   * aynı - orada `primary` zaten 7.41 veriyor.
+   */
+  primaryText: string;
   bg: string; surface: string; surface2: string; surfaceGlass: string; elevated: string;
   border: string; hairline: string;
   text: string; textMuted: string; textFaint: string;
@@ -68,7 +81,7 @@ export type Palette = {
 };
 
 export const light: Palette = {
-  primary: orange[500], primaryStrong: orange[600], primarySoft: orange[100], onPrimary: "#ffffff", onPrimarySoft: orange[800],
+  primary: orange[500], primaryStrong: orange[600], primarySoft: orange[100], onPrimary: "#ffffff", onPrimarySoft: orange[800], primaryText: orange[700],
   bg: "#fbf7f2", surface: "#ffffff", surface2: "#f5efe8", surfaceGlass: "rgba(255,255,255,0.72)", elevated: "#ffffff",
   border: "#ece3d8", hairline: "#f1eae0",
   text: "#241a12", textMuted: "#7c6c5d", textFaint: "#b7a695",
@@ -80,7 +93,7 @@ export const light: Palette = {
 };
 
 export const dark: Palette = {
-  primary: orange[400], primaryStrong: orange[500], primarySoft: "rgba(248,118,18,0.16)", onPrimary: "#1a1008", onPrimarySoft: orange[400],
+  primary: orange[400], primaryStrong: orange[500], primarySoft: "rgba(248,118,18,0.16)", onPrimary: "#1a1008", onPrimarySoft: orange[400], primaryText: orange[400],
   bg: "#17120e", surface: "#211a14", surface2: "#2b221a", surfaceGlass: "rgba(43,34,26,0.6)", elevated: "#2b221a",
   border: "#3a2e23", hairline: "#2b221a",
   text: "#f6efe6", textMuted: "#a9998a", textFaint: "#7c6c5d",

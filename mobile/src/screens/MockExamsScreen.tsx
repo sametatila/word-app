@@ -125,7 +125,7 @@ export function MockExamsScreen() {
           <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between" }}>
             <View>
               <Text variant="micro" color={colors.textMuted}>{t("mockexams.level")}</Text>
-              <Text variant="h1" color={colors.primary}>{level}</Text>
+              <Text variant="h1" color={colors.primaryText}>{level}</Text>
             </View>
             {meLoading ? (
               <View style={{ alignItems: "flex-end" }}>
@@ -159,7 +159,7 @@ export function MockExamsScreen() {
                   borderColor: on ? colors.primary : "transparent",
                 }}
               >
-                <Text variant="bodyStrong" color={on ? colors.primary : colors.textMuted}>{lv}</Text>
+                <Text variant="bodyStrong" color={on ? colors.primaryText : colors.textMuted}>{lv}</Text>
               </PressableScale>
             );
           })}

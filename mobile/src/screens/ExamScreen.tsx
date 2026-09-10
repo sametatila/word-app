@@ -205,7 +205,7 @@ export function ExamScreen() {
       <View style={{ flex: 1, backgroundColor: colors.bg, alignItems: "center", justifyContent: "center", gap: spacing.lg, padding: spacing.xl }}>
         <Mascot mood="sad" size={90} />
         <Text variant="body" color={colors.textMuted} style={{ textAlign: "center" }}>{err}</Text>
-        <PressableScale onPress={() => nav.goBack()}><Text variant="bodyStrong" color={colors.primary}>{t("item.go_back")}</Text></PressableScale>
+        <PressableScale onPress={() => nav.goBack()}><Text variant="bodyStrong" color={colors.primaryText}>{t("item.go_back")}</Text></PressableScale>
       </View>
     );
   }
@@ -213,7 +213,7 @@ export function ExamScreen() {
   if (phase === "yukleniyor" || !paper) {
     return (
       <View style={{ flex: 1, backgroundColor: colors.bg, alignItems: "center", justifyContent: "center" }}>
-        <ActivityIndicator color={colors.primary} />
+        <ActivityIndicator color={colors.primaryText} />
       </View>
     );
   }
@@ -425,7 +425,7 @@ function Produce({ it, colors, pad, onDone }: { it: ProduceItem; colors: Palette
               {parts.map((p, i) => (
                 <PressableScale key={p} disabled={done} onPress={() => setParts(parts.filter((_, j) => j !== i))}
                   style={{ backgroundColor: colors.primarySoft, borderRadius: radii.sm, paddingHorizontal: 10, paddingVertical: 6 }}>
-                  <Text variant="body" color={colors.primary}>{p.split(":").slice(1).join(":")}</Text>
+                  <Text variant="body" color={colors.primaryText}>{p.split(":").slice(1).join(":")}</Text>
                 </PressableScale>
               ))}
             </View>
@@ -541,7 +541,7 @@ function Speak({ it, colors, pad, onDone }: { it: SpeakingItem; colors: Palette;
         ) : null}
         {tip ? <Text variant="body" style={{ backgroundColor: colors.surface2, borderRadius: radii.md, padding: spacing.sm, lineHeight: 20 }}>{tip}</Text> : null}
         {phase === "rec" ? (
-          <Text variant="bodyStrong" color={colors.primary} style={{ textAlign: "center", paddingVertical: 14 }}>{t("speak.listening")}</Text>
+          <Text variant="bodyStrong" color={colors.primaryText} style={{ textAlign: "center", paddingVertical: 14 }}>{t("speak.listening")}</Text>
         ) : phase === "done" ? (
           <PressableScale onPress={() => onDone(ok, ok ? 100 : 0)} style={{ backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: 14, alignItems: "center" }}>
             <Text variant="bodyStrong" color={colors.onPrimary}>{t("common.next")}</Text>

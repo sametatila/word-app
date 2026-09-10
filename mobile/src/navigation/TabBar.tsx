@@ -40,12 +40,12 @@ export function TabBar({ state, descriptors, navigation }: BottomTabBarProps) {
             <PressableScale key={route.key} onPress={() => { const e = navigation.emit({ type: "tabPress", target: route.key, canPreventDefault: true }); if (!focused && !e.defaultPrevented) { track("nav", i, NAV_KEY[route.name]); navigation.navigate(route.name); } }}
               accessibilityRole="tab" accessibilityLabel={label} accessibilityState={{ selected: focused }}
               style={{ flex: 1, alignItems: "center", paddingVertical: 9, borderRadius: radii.lg, backgroundColor: focused ? colors.primarySoft : "transparent" }}>
-              {Icon?.({ color: focused ? colors.primary : colors.textMuted, size: 23 })}
+              {Icon?.({ color: focused ? colors.primaryText : colors.textMuted, size: 23 })}
               {/* Dördüncü sekmeyle birlikte etiket başına düşen genişlik 320 dp'de
                   ~72 dp'ye indi: "Beceriler" iki satıra kırılıyordu. Tek satırda
                   kalıp gerekirse küçülüyor — çubuğun yüksekliği sekmeye göre
                   değişmemeli. */}
-              <Text variant="micro" color={focused ? colors.primary : colors.textMuted} numberOfLines={1} adjustsFontSizeToFit style={{ marginTop: 3 }}>{label}</Text>
+              <Text variant="micro" color={focused ? colors.primaryText : colors.textMuted} numberOfLines={1} adjustsFontSizeToFit style={{ marginTop: 3 }}>{label}</Text>
             </PressableScale>
           );
         })}

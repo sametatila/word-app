@@ -116,7 +116,7 @@ function SpeakButton({ text, colors, size = 20 }: { text: string; colors: Palett
   if (!text?.trim()) return null;
   return (
     <PressableScale accessibilityLabel={tx("item.listen")} onPress={() => speakTarget(text)} hitSlop={8} style={{ padding: 4 }}>
-      <SpeakerIcon color={colors.primary} size={size} />
+      <SpeakerIcon color={colors.primaryText} size={size} />
     </PressableScale>
   );
 }

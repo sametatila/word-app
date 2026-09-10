@@ -67,11 +67,11 @@ export function FirstPracticeScreen() {
       </View>
 
       <View style={{ flex: 1, alignItems: "center", justifyContent: "center", gap: spacing.lg }}>
-        <Text variant="caption" color={colors.primary} style={{ letterSpacing: 1, textTransform: "uppercase" }}>{kicker}</Text>
+        <Text variant="caption" color={colors.primaryText} style={{ letterSpacing: 1, textTransform: "uppercase" }}>{kicker}</Text>
         <Text variant="display" style={{ textAlign: "center" }}>{withArtikel(w)}</Text>
 
         <PressableScale onPress={() => speakTarget(withArtikel(w))} accessibilityRole="button" accessibilityLabel={t("firstpractice.listen_word", { word: w.de })} style={{ flexDirection: "row", alignItems: "center", gap: 8, backgroundColor: colors.primarySoft, borderRadius: radii.pill, paddingHorizontal: 16, paddingVertical: 9 }}>
-          <SpeakerIcon color={colors.primary} size={18} /><Text variant="bodyStrong" color={colors.primary}>{t("firstpractice.listen")}</Text>
+          <SpeakerIcon color={colors.primaryText} size={18} /><Text variant="bodyStrong" color={colors.primaryText}>{t("firstpractice.listen")}</Text>
         </PressableScale>
 
         {seen ? (

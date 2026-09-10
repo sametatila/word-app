@@ -118,7 +118,7 @@ export function NotificationsScreen() {
 
         <ToggleRow title={tx("notifications.weekly_test")} subtitle={tx("notifications.every_sunday_measure_your")} value={weeklyOn} onValueChange={toggleWeekly} colors={colors} />
 
-        {msg && <Text variant="bodyStrong" color={denied ? colors.danger : colors.primary} style={{ marginTop: spacing.sm }}>{msg}</Text>}
+        {msg && <Text variant="bodyStrong" color={denied ? colors.danger : colors.primaryText} style={{ marginTop: spacing.sm }}>{msg}</Text>}
 
         {denied && (
           <PressableScale onPress={openNotificationSettings} style={[{ marginTop: spacing.md, borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: 14, alignItems: "center" }, softShadow(colors.primary, 8)]}>
