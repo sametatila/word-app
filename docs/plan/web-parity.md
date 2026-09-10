@@ -902,6 +902,19 @@ kaldı ve ikisi de EKSİK PARİTE DEĞİL, iki platformda birden yok:
 - `coach.plan_*` (on beş cümle, üç dil) + `planMoment()` — "bugünkü plan"
   selamı. O satır mobilde karşılığı olmadığı için web'den bilerek kaldırıldı
   (§ Öğren). Cümleler yüzey geri gelirse yeniden yazılmasın diye duruyor.
+- `coach.weekly_*` (beş cümle, üç dil) + `CoachMoment "weekly"` — cümleler
+  okununca hangi yüzeye ait olduğu anlaşılıyor: "geçen haftanın özeti burada",
+  "yeni hafta, geçen haftanın sayıları hemen altta". Yani HAFTALIK ÖZET
+  ekranına yazılmışlar, haftalık SINAV girişine değil. Haftalık özet bugün bir
+  ekran değil, cron'un gönderdiği bir bildirim (`lernomi-cron-summary`) - o
+  yüzden anın çağıranı yok. Sınav girişine bağlamak yanlış olurdu: test
+  düğmesinin üstünde "geçen haftanın özeti aşağıda" yazardı.
+
+KOÇ ZATEN WEB'E ÖZEL bir katman: `coach.*` anahtarlarının hiçbiri mobil
+kaynak sözlükte YOK (ölçüldü: sıfır), yalnız `src/i18n/web/*` içinde. Yani
+Android'de koç olmaması bir eksik değil, kurulum böyle. Sekiz andan dördü
+canlı (`exam_intro`, `exam_pass`, `exam_fail`, `weak_done`), dördü yüzeysiz
+(üç plan + weekly).
 
 ### 11.8 Rozet kademe renkleri — ölçüldü ve eşitlendi
 
