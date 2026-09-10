@@ -57,10 +57,18 @@ const foreign = (t: string): boolean =>
 const flat = (t: string): string =>
   String(t).replace(/[„“”‚‘’'"]/g, "'").replace(/\s+/g, " ").trim();
 
-/** Almanca kanıt açıklıkları: „…“ ve (…). Türkçe olanlar elenir. */
+/**
+ * Almanca kanıt açıklıkları: „…“, «…» ve (…). Türkçe olanlar elenir.
+ *
+ * « » KARDEŞ HATLARDA YOKTU ve buradaki kaynak onu kullanıyor:
+ * "«Fahrkarte» için bir soru kur." Kapı ilk koşuda 62 hata verdi ve hepsi
+ * aynı sebeptendi — karakter kümesinde de yoktu. İkisi birlikte düzeltildi:
+ * ayraç karakterleri kümeye girdi, İÇİ de kanıt sayıldı. İkincisi olmadan
+ * „…“ ile «…» aynı işi gören iki ayraç olurdu ama yalnız biri denetlenirdi.
+ */
 const evidence = (t: string): string[] => {
   const out: string[] = [];
-  for (const m of t.matchAll(/[„"]([^„"“”]{2,})[“"]/g)) out.push(m[1]);
+  for (const m of t.matchAll(/[„"«]([^„"“”«»]{2,})[“"»]/g)) out.push(m[1]);
   for (const m of t.matchAll(/\(([^()]{2,})\)/g)) out.push(m[1]);
   return out.filter((s) => !turkish(s) && foreign(s));
 };
@@ -96,7 +104,7 @@ if (existsSync(`${DIR}out`))
         if (a !== b) H(`sayılar uyuşmuyor: «${a}» → «${b}»`);
 
         for (const ch of strip(en, r.tr))
-          if (!/[ -~ÄÖÜäöüßé·×‚„“”‘’–—…→↔€]/.test(ch))
+          if (!/[ -~ÄÖÜäöüßé·×‚„“”‘’«»–—…→↔€]/.test(ch))
             H(`beklenmedik karakter: «${ch}» (U+${ch.codePointAt(0)?.toString(16).toUpperCase().padStart(4, "0")})`);
 
         for (const span of evidence(r.tr))
