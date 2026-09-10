@@ -199,7 +199,32 @@ export const auth = betterAuth({
   session: {
     expiresIn: 60 * 60 * 24 * 30, // 30 gün
     updateAge: 60 * 60 * 24, // günde bir tazele
-    cookieCache: { enabled: true, maxAge: 900 }, // 15 dk çerez-önbelleği (dış isteği azaltır)
+    /**
+     * Çerez-önbelleği: oturum verisi imzalı bir çerezde taşınır ve o süre
+     * boyunca veritabanına HİÇ gidilmez (dış isteği azaltır).
+     *
+     * 900 saniyeden 60'a indirildi. Sebep ölçüldü: parola sıfırlandığında
+     * oturum satırları siliniyor (bkz. revokeSessionsOnPasswordReset) ama
+     * ELİNDE ÇEREZ OLAN istemci `get-session`'ı önbellekten yanıtlamaya devam
+     * ediyordu — satır gitmişken oturum ayakta görünüyordu. Yani iptal
+     * gerçekleşiyor, etkisi maxAge kadar gecikiyordu: saldırgana 15 dakika.
+     *
+     * `cookieCache.version` bu işe yaramıyor: sürüm işlevi ÖNBELLEKTEKİ
+     * oturum ve kullanıcıyla çağrılıyor (api/routes/session.mjs), yani
+     * dışarıdan yapılan bir iptali göremiyor. Geriye pencereyi kısaltmak
+     * kalıyor.
+     *
+     * 60 saniye, iptalin en geç bir dakikada etkisini göstermesi demek.
+     * Bedeli, etkin kullanıcı başına dakikada en çok bir oturum okuması —
+     * yerel Postgres'te tek indeksli sorgu, ölçülen 2000+ req/s kapasitenin
+     * yanında görünmez. Önbellek yine de işini yapıyor: bir dakika içindeki
+     * onlarca istek tek okumayla karşılanıyor.
+     *
+     * TAMAMEN kapatmak da bir seçenekti; iptal o zaman anında olurdu ama her
+     * istek bir okuma demekti. Bir dakikalık pencere bu iki uç arasında
+     * bilinçli bir orta yol.
+     */
+    cookieCache: { enabled: true, maxAge: 60 },
     // Hesap silme gibi yıkıcı işlemler parola verilmezse "taze" oturum ister:
     // oturum 24 saatten eskiyse yeniden giriş gerekir (çalınan çerezle silme olmasın).
     freshAge: 60 * 60 * 24,
