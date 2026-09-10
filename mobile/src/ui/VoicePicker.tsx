@@ -16,7 +16,7 @@ import { speakWithVoice } from "../lib/tts";
 // Kurs id'sine göre örnek cümle. Yeni bir kurs eklendiğinde buraya da bir
 // satır gerekiyor; eksikse kursun kendi diline düşmek yerine sessizce Almanca
 // cümle okunmasın diye aşağıda açıkça ele alınıyor.
-const SAMPLE: Record<string, string> = {
+export const SAMPLE: Record<string, string> = {
   "gsw-zh": "De nöi Vertrag gilt für alli Bschäftigte.",
   de: "Der neue Vertrag gilt für alle Beschäftigten.",
   en: "The new contract applies to all employees.",

@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { voicesFor, resolveVoice, type VoiceId } from "@/lib/tts/voices";
+import { courseOrDefault } from "@/lib/courses";
 import { speakWithVoice } from "@/components/speak-button";
 import { CheckIcon, SpeakerIcon } from "@/components/icons";
 import { useT } from "@/lib/i18n/client";
@@ -17,9 +18,21 @@ import { useT } from "@/lib/i18n/client";
  * demo cümlesi kulağa iyi gelip günlük kullanımda hayal kırıklığı yaratabilir.
  */
 
-const SAMPLE: Record<string, string> = {
-  de: "Der neue Vertrag gilt für alle Beschäftigten.",
+/**
+ * Ses önizlemesinin okuduğu cümle — KURSUN HEDEF DİLİNDE.
+ *
+ * `en` girdisi YOKTU ve arama `course === "gsw-zh" ? "gsw-zh" : "de"` biçiminde
+ * yazılıydı: Zürihçe dışındaki her kurs Almanca cümleye düşüyordu. İngilizce
+ * kursu seçen kullanıcı doğru İngilizce sesleri görüyor ama örneği dinlediğinde
+ * ses Almanca bir cümleyi okumaya çalışıyordu.
+ *
+ * Mobil karşılığı (`mobile/src/ui/VoicePicker.tsx`) baştan beri doğruydu; iki
+ * kopya `check:parity` ile karşılaştırılıyor, sıra ve metin birebir aynı olmalı.
+ */
+export const SAMPLE: Record<string, string> = {
   "gsw-zh": "De nöi Vertrag gilt für alli Bschäftigte.",
+  de: "Der neue Vertrag gilt für alle Beschäftigten.",
+  en: "The new contract applies to all employees.",
 };
 
 export function VoicePicker({
@@ -47,7 +60,7 @@ export function VoicePicker({
   // Kurs değiştiğinde eski kursun sesi seçili kalabilir; gösterilen seçim
   // her zaman gerçekte kullanılacak ses olmalı.
   const selected = resolveVoice(course, value);
-  const sample = SAMPLE[course === "gsw-zh" ? "gsw-zh" : "de"];
+  const sample = SAMPLE[courseOrDefault(course).id] ?? SAMPLE.de;
 
   function preview(voice: VoiceId) {
     setPlaying(voice);

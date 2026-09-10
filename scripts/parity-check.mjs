@@ -878,6 +878,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   const PAIRS = [
     ["DEFAULT_AVATAR", "src/lib/avatar.ts", "mobile/src/lib/avatar.ts"],
     ["DEFAULT_NATIVE", "src/lib/courses.ts", "mobile/src/lib/courses.ts"],
+    ["SAMPLE", "src/components/voice-picker.tsx", "mobile/src/ui/VoicePicker.tsx"],
     ["MIN_PASSWORD_LENGTH", "src/lib/auth/password-policy.ts", "mobile/src/lib/passwordPolicy.ts"],
     ["COMMON", "src/lib/auth/password-policy.ts", "mobile/src/lib/passwordPolicy.ts"],
     ["DETAIL_MAX", "src/lib/errors.ts", "mobile/src/lib/errors.ts"],
