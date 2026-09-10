@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { CardSkeleton } from "@/components/skeleton";
+import { EmptyCard } from "@/components/empty-card";
 import { CheckIcon } from "@/components/icons";
 import { CANDO_LEVELS, CANDO_SKILL_LABEL_KEYS, type Cando } from "@/lib/cando";
 import { CardGrid } from "@/components/layout";
@@ -41,7 +42,22 @@ export function CandoCard({ bare = false }: { bare?: boolean } = {}) {
   }, []);
 
   if (data === undefined) return <CardSkeleton height={bare ? 180 : 220} label={t("cando.loading")} />;
-  if (!data || !level) return null;
+  /* VERİ YOKKEN SESSİZ KALMIYOR. Kart kendi sayfasında da çiziliyor ve orada
+     `null` dönmek, başlığın altında boş bir sayfa bırakıyordu: hiç ders
+     bitirmemiş kullanıcı ekranın bozuk olduğunu sanıyordu. Android sebebi
+     söylüyor. Profilin içine gömülü hâlde (`bare`) eskisi gibi hiç
+     çizilmiyor - orada boş bir bölüm sayfayı uzatmaktan başka işe yaramaz. */
+  if (!data || !level) {
+    if (bare) return null;
+    return (
+      <EmptyCard
+        icon={CheckIcon}
+        tint="var(--color-mint)"
+        title={t("cando.what_i_can_do")}
+        text={t("cando.sign_in_and_finish_lessons_and")}
+      />
+    );
+  }
   const shown = data.items.filter((i) => i.cando.level === level);
   const skills = [...new Set(shown.map((i) => i.cando.skill))];
   const provenTotal = data.items.filter((i) => i.state === "proven").length;
