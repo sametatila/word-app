@@ -61,6 +61,31 @@ export type OfflineReply = {
  */
 export type Hint = { key: string; vars?: Record<string, string> };
 
+/**
+ * Karşı tarafın kalıp modundaki cümleleri — HEDEF DİLDE.
+ *
+ * Dört cümle Almanca SABİTTİ ve İngilizce kursta da Almanca çıkıyordu:
+ * partner hedef dili konuşuyor, o yüzden tablo kursun hedef diline göre
+ * seçiliyor. Aynı tablo Android'de de var ve `check:parity` ikisini
+ * karşılaştırıyor.
+ */
+const COACH: Record<string, { allDone: string; next: (p: string) => string; notUnderstood: (p: string) => string; closed: string }> = {
+  de: {
+    allDone: "Sehr gut, Sie haben alle Redemittel benutzt. Danke, das war alles!",
+    next: (p) => `Gut! Jetzt bitte: „${p}“.`,
+    notUnderstood: (p) => `Hm, das habe ich nicht verstanden. Sagen Sie bitte: „${p}“.`,
+    closed: "Danke, das war alles. Bis zum nächsten Mal!",
+  },
+  en: {
+    allDone: "Great, you used all the phrases. Thanks, that's all!",
+    next: (p) => `Good! Now please say: “${p}”.`,
+    notUnderstood: (p) => `Hm, I didn't get that. Please say: “${p}”.`,
+    closed: "Thanks, that's all. See you next time!",
+  },
+};
+
+const coachFor = (course: string) => COACH[targetLangOf(course)] ?? COACH.de;
+
 export function hasScript(lesson: Lesson): boolean {
   return Boolean(lesson.roleplay.script?.length);
 }
@@ -116,6 +141,7 @@ function say(body: string, example?: string): string {
 
 export function offlineReply(lesson: Lesson, state: OfflineState, said: string): OfflineReply {
   const userTurns = state.userTurns + 1;
+  const coach = coachFor(lesson.course);
 
   // ── Senaryo modu ──
   const turn = turnById(lesson, state.turnId);
@@ -147,8 +173,8 @@ export function offlineReply(lesson: Lesson, state: OfflineState, said: string):
     // Senaryo bitti ama öğrenci konuşmaya devam etti: kibarca kapat.
     return {
       state: { ...state, userTurns, ended: true },
-      content: "Danke, das war alles. Bis zum nächsten Mal!",
-      speak: "Danke, das war alles. Bis zum nächsten Mal!",
+      content: coach.closed,
+      speak: coach.closed,
       understood: true,
       hint: null,
       ended: true,
@@ -169,11 +195,7 @@ export function offlineReply(lesson: Lesson, state: OfflineState, said: string):
   const ended = remaining.length === 0;
   const nextP = remaining[0];
   const example = nextP ? nextP.replace(/…|\.\.\./g, "...").trim() : undefined;
-  const body = ended
-    ? "Sehr gut, Sie haben alle Redemittel benutzt. Danke, das war alles!"
-    : understood
-      ? `Gut! Jetzt bitte: „${nextP}“.`
-      : `Hm, das habe ich nicht verstanden. Sagen Sie bitte: „${nextP}“.`;
+  const body = ended ? coach.allDone : understood ? coach.next(nextP) : coach.notUnderstood(nextP);
   return {
     state: { ...state, usedPatterns: [...used], userTurns, ended },
     content: say(body, ended ? undefined : example),
