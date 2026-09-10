@@ -314,7 +314,20 @@ export function LessonScreen() {
     if (ok) {
       track("lesson_step", tries === 0 ? 2 : 1, `produce:${via}`);
       haptic("correct");
-      setCorrect((c) => c + 1);
+      /*
+       * İSABET YALNIZ İLK DENEMEDE SAYILIYOR.
+       *
+       * Sayaç her doğruda artıyordu, kaçıncı denemede olduğuna bakmadan: aynı
+       * adımı üçüncü denemede bilen öğrenci de ilk denemede bilenle aynı
+       * yüzdeyi alıyordu. Ekranın kendi ölçümü zaten ayrımı biliyor
+       * (`lesson_step` değeri 2 ilk denemede, 1 sonrakinde) - puan onu
+       * görmezden geliyordu. Web `lesson-player` iki adım türünde de
+       * `ok && isFirstTry` istiyor.
+       *
+       * Doğru/yanlış adımında fark yok: orada tek deneme var (`answered`
+       * kilidi), yani doğru cevap zaten hep ilk denemede geliyor.
+       */
+      if (tries === 0) setCorrect((c) => c + 1);
       push({ role: "teacher", segments: [{ lang: "tr", text: tx(PRAISE_KEYS[correct % PRAISE_KEYS.length]) }] });
       speakTarget(expect.target);
       setTimeout(advance, 500);
