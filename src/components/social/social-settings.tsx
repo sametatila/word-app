@@ -81,6 +81,7 @@ export function SocialSettings({ initial, course = "de", bare = false }: { initi
             autoCapitalize="none"
             autoCorrect="off"
             spellCheck={false}
+            placeholder={t("socialsettings.username_2")}
             className="min-w-0 flex-1 rounded-lg border px-3 py-2 text-sm"
             style={{ borderColor: "var(--border)", background: "var(--surface-2)" }}
           />
@@ -133,6 +134,13 @@ export function SocialSettings({ initial, course = "de", bare = false }: { initi
           ))}
         </div>
       </div>
+
+      {/* İZİNLER başlığı Android'de var: "Görünürlük"ün başlığı olduğu hâlde
+          altındaki üç anahtarın başlığı yoktu ve üçü serbestçe asılı
+          duruyordu. Başlık, neyin neye ait olduğunu bir bakışta söylüyor. */}
+      <p className="border-b px-4 pb-1.5 pt-3 text-sm font-bold" style={{ borderColor: "var(--border)" }}>
+        {t("socialsettings.permissions")}
+      </p>
 
       <SettingRow title={t("socialsettings.perm_requests")} sub={t("socialsettings.perm_requests_sub")}>
         <Switch on={me.allowRequests} disabled={busy} label={t("socialsettings.perm_requests")} onChange={(v) => void save({ allowRequests: v })} />
