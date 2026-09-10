@@ -23,6 +23,7 @@ import { spokenMatches } from "../lib/voiceMatch";
 import { currentTargetLang, currentTargetLocale } from "../lib/courses";
 import { haptic } from "../lib/haptics";
 import { API_BASE, fetchWithTimeout } from "../api/client";
+import { bumpStats } from "../lib/statsSignal";
 import { todayStr } from "../game/session";
 import { useTheme, spacing, radii, softShadow, type Palette } from "../theme";
 import { sfx } from "../lib/sfx";
@@ -411,6 +412,7 @@ export function LessonScreen() {
        (`correct` üstten kırpılıyor - konuşma fazı `correct`i artırmıyor ama
        formül yine de tavanı aşmasın). Geçme kaydı sunucuda. */
     track("lesson_finish", scoreTotal ? Math.round((100 * Math.min(correct, scoreTotal)) / scoreTotal) : 0, lesson.id);
+    bumpStats(); // ders bitti: XP/seri değişti
     void markItemDone(lesson.id);
     void clearLessonResume(lesson.id);
     const seconds = Math.round((Date.now() - startedAt.current) / 1000);

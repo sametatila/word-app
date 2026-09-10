@@ -23,6 +23,7 @@ import { currentTargetLocale } from "../lib/courses";
 import { API_BASE } from "../api/client";
 import { spokenMatches, parseSkip, encourage, parseConfirm } from "../lib/voiceMatch";
 import { sfx, setSfxScreenOff, sfxDurationMs } from "../lib/sfx";
+import { bumpStats } from "../lib/statsSignal";
 import { haptic } from "../lib/haptics";
 import { reduceMotion } from "../lib/reduceMotion";
 import { useTheme, spacing, radii, softShadow } from "../theme";
@@ -455,6 +456,7 @@ export function WalkModeScreen() {
     if (!alive()) return;
     flush(true); // tur bitti — SRS'e yaz
     sfx("finish"); // tamamlanma sesi
+    bumpStats(); // yürüyüş bitti: XP/seri değişti
     // Güç tuşuyla ekran kapalı (eller serbest) → sesli "Devam edelim mi?"; ekran açık → görsel özet + butonlar.
     if (screenOffRef.current) { await askContinue(alive); return; }
     setKeepAwake(false); stopWalkService();

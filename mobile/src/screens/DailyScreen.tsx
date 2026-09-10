@@ -17,6 +17,7 @@ import { track } from "../lib/track";
 import { RoundSkeleton } from "../game/RoundSkeleton";
 import { useTheme, spacing, radii, softShadow, TIER_COLOR, type Palette } from "../theme";
 import { sfx } from "../lib/sfx";
+import { bumpStats } from "../lib/statsSignal";
 
 type Phase = "loading" | "auth" | "error" | "play" | "submitting" | "done";
 
@@ -155,6 +156,7 @@ export function DailyScreen() {
     setPhase("submitting");
     track("session_done", correctRef.current, "daily");
     if (rounds.length > 0) sfx("finish"); // tamamlanma sesi
+    bumpStats(); // günün turu bitti
     const secs = Math.round((Date.now() - startedAt.current) / 1000);
     try {
       const res = await submitDaily({ day: day.current, correct: correctRef.current, score: scoreRef.current, bestCombo: bestComboRef.current, seconds: secs });

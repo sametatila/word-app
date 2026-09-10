@@ -17,6 +17,7 @@ import { GrammarBody, SpeakingDrill, MonologueBody, type SpeakingTask } from "..
 import { markItemDone } from "../game/lessonProgress";
 import { speakTarget } from "../lib/tts";
 import { API_BASE, fetchWithTimeout } from "../api/client";
+import { bumpStats } from "../lib/statsSignal";
 import { AiNotice } from "../ui/AiNotice";
 import { todayStr } from "../game/session";
 import type { RootStackParams } from "../navigation/RootStack";
@@ -118,6 +119,7 @@ export function ItemScreen() {
       if (res.ok) {
         const d = (await res.json()) as { xpGained?: number };
         if (typeof d.xpGained === "number") setEarnedXp(d.xpGained);
+        bumpStats(); // XP/seri değişti
       }
     } catch { /* çevrimdışı: yerel işaret yeterli */ }
   }

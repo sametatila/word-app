@@ -17,6 +17,7 @@ import { Celebrate } from "../ui/Celebrate";
 import { RoundView } from "../game/rounds";
 import { fetchSession, submitAnswers, todayStr, PRACTICE_GAMES, type Round, type AnswerOut, type DoneExtra, type SessionMeta, type SessionProgress, type SubmitResult } from "../game/session";
 import { ApiError } from "../api/client";
+import { bumpStats } from "../lib/statsSignal";
 import { track } from "../lib/track";
 import { sfx } from "../lib/sfx";
 import { RoundSkeleton } from "../game/RoundSkeleton";
@@ -222,6 +223,7 @@ export function GameScreen() {
     try {
       if (answers.current.length) {
         const r = await submitAnswers(answers.current, day.current, secs, progressNow());
+        bumpStats(); // sayılar değişti: başlık ve özet tazelensin
         if (r?.streakRepaired) setRepaired(r.currentStreak);
         if (r?.newlyMastered) setMastered(r.newlyMastered);
         if (r) setResult(r);

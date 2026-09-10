@@ -18,6 +18,7 @@ import { track } from "../lib/track";
 import { RoundSkeleton } from "../game/RoundSkeleton";
 import { useTheme, spacing, radii, softShadow } from "../theme";
 import { sfx } from "../lib/sfx";
+import { bumpStats } from "../lib/statsSignal";
 
 type Phase = "loading" | "auth" | "error" | "play" | "submitting" | "done";
 
@@ -97,6 +98,7 @@ export function WeeklyScreen() {
     setPhase("submitting");
     track("session_done", answers.current.filter((a) => a.correct).length, "weekly");
     if (answers.current.length > 0) sfx("finish"); // tamamlanma sesi
+    bumpStats(); // haftalık sınav bitti
     const secs = Math.round((Date.now() - startedAt.current) / 1000);
     try {
       const res = await submitWeekly(answers.current, day.current, secs);

@@ -4,6 +4,7 @@ import { adoptServerLang, t } from "./i18n";
 import { loadOnboardingPrefs } from "./onboardingPrefs";
 import { api } from "../api/client";
 import { useAuth } from "./AuthContext";
+import { useStatsBump } from "./statsSignal";
 import { todayStr } from "../game/session";
 
 /** /api/me özeti — ana ekran ve profilin gösterdiği gerçek sayılar. */
@@ -67,6 +68,8 @@ type SessionMetaLite = {
  */
 export function useMe(): { me: Me | null; loading: boolean } {
   const { user } = useAuth();
+  /* Sayılar değişince yeniden çekilsin; bkz. `lib/statsSignal`. */
+  const bump = useStatsBump();
   const [me, setMe] = useState<Me | null>(null);
   // İlk render'da zaten "yükleniyor": oturum varken false başlasaydı ekranlar bir
   // kare boyunca "veri yok" halini çizip sonra iskelete, sonra içeriğe geçerdi.
@@ -122,7 +125,7 @@ export function useMe(): { me: Me | null; loading: boolean } {
       })
       .finally(() => { if (alive) setLoading(false); });
     return () => { alive = false; };
-  }, [user]);
+  }, [user, bump]);
 
   return { me, loading };
 }

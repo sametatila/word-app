@@ -3585,3 +3585,35 @@ görmüyordu**. Oysa aynı bilgi tur sonunda gösteriliyor (`GameScreen`,
 - `totalXp` / `currentStreak` — mobilde başlığı güncelleyecek bir kanal yok
   (`useMe` bir kez çekiyor, geçersizleme yolu yok); web bunu bir CustomEvent
   ile yapıyor. Mimari bir ek; ölçüm burada.
+
+### 11.70 Başlıktaki XP ve seri hiç güncellenmiyordu
+
+§11.69 bir ucu ölçmüştü; sebebi bu turda çıktı. Web'in `lernomi:stats` olayı
+yerleşik bir kanal: **altı yerden yayınlanıyor** (tur özeti, beceri
+alıştırması, yürüyüş, ders, patron, görev kartı) ve **üç yerde dinleniyor** -
+başlıktaki XP/seri (`app-shell`), rozet açılış tetikleyicisi
+(`achievement-unlock`) ve başlangıç ekranının önbelleği (`lib/use-cached`).
+
+**Mobilde bu kanalın hiçbiri yoktu.** `useMe` bir kez çekiyor, bağımlılığı
+`[user]` ve o hiç değişmiyor; üstelik `AppHeader`ı taşıyan üç ekran SEKME,
+yani hiç yeniden kurulmuyor. Sonucu:
+
+    Kullanıcı uygulamayı açıyor       seri 5 · XP 1200
+    Bir tur bitiriyor (+40 XP)        sunucuda 1240
+    Öğren sekmesine dönüyor           başlık hâlâ 1200
+
+Sayı ancak uygulama yeniden başlatılınca düzeliyordu. Aynı bayatlık `useMe`
+okuyan yedi ekranın hepsinde vardı (profil, gelişim, ayarlar, beceriler,
+alıştırma, deneme listesi).
+
+`lib/statsSignal.ts` eklendi - `window` olmadığı için modül düzeyinde küçük bir
+abone listesi. `useMe` sinyali bağımlılığına aldı. Sinyal DEĞER TAŞIMIYOR:
+web başlığı olayın içindeki `{xp, streak}` ile yamalıyor, burada `useMe`
+yeniden çekiyor - bir istek, karşılığında `mastered`, `dueCount`,
+`reviewsToday` gibi öteki alanlar da tazeleniyor.
+
+Yayın noktaları webin altısına denk geliyor: tur özeti (`GameScreen`), beceri
+alıştırması (`ItemScreen`), ders (`LessonScreen`), yürüyüş
+(`WalkModeScreen`), patron (`BossScreen`), günün turu (`DailyScreen`) ve
+haftalık sınav (`WeeklyScreen`) - yedi yer, çünkü mobilde günün turu ve
+haftalık ayrı ekranlar.

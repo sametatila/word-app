@@ -15,6 +15,7 @@ import { submitAnswers, todayStr, type AnswerOut, type DoneExtra, type Round } f
 import { api } from "../api/client";
 import { track } from "../lib/track";
 import { sfx } from "../lib/sfx";
+import { bumpStats } from "../lib/statsSignal";
 import { useTheme, spacing, radii, softShadow } from "../theme";
 
 /**
@@ -112,6 +113,7 @@ export function BossScreen() {
       finished.current = true;
       setPhase(won ? "won" : "lost");
       sfx(won ? "finish" : "wrong");
+      bumpStats(); // patron turu bitti
       await flush();
       if (!won) return;
       track("boss_clear", Math.round(secondsLeft));
