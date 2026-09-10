@@ -22,7 +22,7 @@
  */
 export const REVENUECAT = {
   androidKey: "", // "goog_..." — RevenueCat › Project settings › API keys
-  iosKey: "",     // "appl_..." — aynı yer, iOS uygulaması
+  iosKey: "appl_EBBnjnnBSAkxNbLcwmPQDgMIVWL",
   /*
     RevenueCat'te `premium` kimliğini örnek projeyle gelen entitlement tutuyordu
     ve ikinci kez kullanılamıyor. Kimliğin yazımı önemsiz, iki tarafın AYNI
