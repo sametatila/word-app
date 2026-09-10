@@ -4437,3 +4437,27 @@ kararı yeniden açmak bana ait değil. Buraya yazıldı ki sonraki tur da
 yeniden keşfetmesin.
 
 Değerlendirme kuyruğu (§11.12) da aynı sınırın parçası ve orada duruyor.
+
+### 11.92 Derste isabet: mobil kendi ölçümüyle çelişiyordu
+
+Ders akışının dört adım türü (`confirm`, `repeat`, `produce`, `truefalse`) iki
+tarafta da işleniyor ve puanlanan adım yüklemi aynı (`produce` + `truefalse`),
+yüzde formülü aynı. **İsabetin ne zaman sayıldığı** ayrışmıştı.
+
+Web iki adım türünde de `ok && isFirstTry` istiyor. Mobil `gradeProduce` ise
+**her doğruda** sayıyordu, kaçıncı denemede olduğuna bakmadan: aynı adımı
+üçüncü denemede bilen öğrenci ilk denemede bilenle aynı yüzdeyi alıyordu.
+
+Asıl çarpıcı yanı, ekranın **kendi ölçümünün ayrımı zaten bilmesi**:
+`lesson_step` olayı değeri 2 (ilk denemede) ya da 1 (sonraki denemede) diye
+yazıyor — puan onu görmezden geliyordu. Yani parite farkından önce mobil kendi
+içinde tutarsızdı. Doğru/yanlış adımında fark yok: orada tek deneme var
+(`answered` kilidi).
+
+Sonuç: ders bitiş yüzdesi ve `lesson_finish` ölçümü artık iki uygulamada aynı
+şeyi anlatıyor.
+
+**Kapı üç kuralı birden ölçüyor** — hangi adımlar puanlanıyor, isabet ne zaman
+sayılıyor, yüzde formülü. Yüklem mobilde ayrı dosyada (`data/lessons`
+`scoredSteps`), webde oynatıcının içinde iki kez yazılı; kapı ikisini de kendi
+yerinden okuyor.
