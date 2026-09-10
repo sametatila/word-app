@@ -12,7 +12,11 @@ export const dynamic = "force-dynamic";
  * D1/D7/D30 retention, paywall görüntüleme → satın alma. İç ölçüm sayfası.
  */
 function Stat({ label, value, sub, tone }: { label: string; value: string; sub?: string; tone?: "good" | "warn" | "bad" }) {
-  const color = tone === "good" ? "var(--color-mint-600)" : tone === "warn" ? "var(--color-flame)" : tone === "bad" ? "var(--color-rose-600)" : "var(--text)";
+  /* Üç tonun üçü de ANLAMSAL jeton. "warn" baştan beri öyleydi, "good" ve
+     "bad" ise sabit 600 basamağıydı - koyu temada kart üstünde mint-600 3.24,
+     rose-600 2.83 veriyordu (eşik 4.5). Anlamsal jetonlar koyu temada 300'e
+     geçiyor: 9.22 ve 8.34. */
+  const color = tone === "good" ? "var(--color-success)" : tone === "warn" ? "var(--color-flame)" : tone === "bad" ? "var(--color-danger)" : "var(--text)";
   return (
     <div className="card px-4 py-3">
       <div className="text-2xl font-extrabold" style={{ color }}>{value}</div>

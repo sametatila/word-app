@@ -2302,3 +2302,45 @@ sıcak kahve tinti `#5a3418` (gölge rengi, iki temada da aynı olması bilinçl
 `avatar.ts` şapka varsayılanı (kullanıcının seçtiği aksesuar rengi, palet
 değil), `icons.tsx` / `avatarParts.tsx` / `PersonAvatar.tsx` içindeki çizim
 renkleri (illüstrasyon, tema jetonu değil).
+
+### 11.38 Webde aynı sınıf: bir ternary'nin iki yanı iki ayrı kurala uyuyordu
+
+§11.37'yi web tarafında tekrarladım. `globals.css` dışında elle yazılı renk
+83 satır çıktı; büyük kısmı meşru (sertifika SVG'si, opengraph görseli,
+e-posta HTML'i, Google logosunun kendi path renkleri, avatar illüstrasyonu,
+karartma perdeleri, yönetim panosu). Ama `palette-check.mjs`in GÖRMEDİĞİ bir
+sınıf çıktı ve üç yerde aynı şekli aldı: **aynı ternary'nin bir yanı anlamsal
+(tema duyarlı) jeton, öteki yanı sabit basamak.** Betik yalnız
+`globals.css`ten okuduğu jetonları ölçüyor, bileşenlerin içindeki kullanımı
+görmüyor - o yüzden üçü de kapıdan geçiyordu.
+
+**a) `premium-paywall`: promosyon kodu iletisi.**
+
+    başarı yanı  var(--color-mint-600)     sabit basamak
+    hata yanı    var(--color-danger, ...)  anlamsal jeton
+
+Koyu temada başarı iletisi #237a4c, koyu kartın (#211a14) üstünde **3.24** -
+küçük yazı eşiği 4.5. Hata iletisi doğru çalışıyordu. `--color-success` koyu
+temada mint-300'e geçiyor: 9.22. Android iki yanı da tema jetonuyla yazıyor
+(`PaywallScreen`: `successText` / `dangerText`), yani referans platform bu
+işi baştan doğru yapıyordu.
+
+Aynı satırdaki ölü yedek de atıldı: `--color-danger` tanımlı, yani `#dc2626`
+hiç çizilmiyordu - ama jeton bir gün yeniden adlandırılsa sessizce paletin
+dışında bir Tailwind kırmızısına düşerdi.
+
+**b) `analytics` sayfası: üç tonlu istatistik.** "warn" baştan beri anlamsal
+jetondu, "good" ve "bad" sabit 600 basamağıydı. Koyu temada kart üstünde
+mint-600 **3.24**, rose-600 **2.83**. Anlamsal jetonlarla 9.22 ve 8.34.
+
+**c) `skills` sayfası: beceri puanı çipi.** İki sapma birden - tint %18'di
+(uygulamanın her yerindeki kalıp %14) ve kehribar yanı sabit `flame-500`
+yazıyordu. Ölçüm, %18 tint üstünde flame-500 açık temada **2.43**; küçük
+kalın yazı eşiği 4.5'in çok altında. Bitmiş (mint) yanı zaten anlamsal
+jetondu. `--color-flame` + %14 ile açık temada 4.55, koyu temada 9.31 -
+`progress-view` ve `app-shell`teki kabul edilmiş kalıbın aynısı.
+
+Üçünün ortak dersi: bir rengin metin olarak kullanıldığı yerde sabit basamak
+YANLIŞ - basamak dolgu için, anlamsal jeton metin için. Sapma her seferinde
+tek bir ternary'nin bir yanında duruyordu, yani gözle bakan biri "jeton
+kullanılmış" diye geçiyordu.

@@ -258,8 +258,21 @@ function PromoBox({ prefill }: { prefill: string }) {
           {t("promo.apply")}
         </button>
       </div>
+      {/*
+        İKİ YAN DA ANLAMSAL JETON. Başarı yanı sabit `mint-600` basamağıydı,
+        yani temayla değişmiyordu: koyu temada #237a4c koyu kartın (#211a14)
+        üstünde 3.24 veriyordu - küçük yazı eşiği 4.5. Hata yanı zaten anlamsal
+        jetonla (`--color-danger`) yazılıydı ve doğru çalışıyordu, yani tek
+        satırın iki yanı iki ayrı kurala uyuyordu. `--color-success` koyu
+        temada mint-300'e geçiyor: 9.22.
+
+        Ölü yedek de atıldı: `--color-danger` tanımlı (globals.css), yani
+        `#dc2626` hiç çizilmiyordu ama jeton bir gün yeniden adlandırılsa
+        sessizce paletin dışında bir kırmızıya düşerdi. Android iki yanı da
+        tema jetonuyla yazıyor (`PaywallScreen`: successText / dangerText).
+      */}
       {msg && (
-        <p className="mt-2 text-sm font-semibold" style={{ color: msg.ok ? "var(--color-mint-600)" : "var(--color-danger, #dc2626)" }}>
+        <p className="mt-2 text-sm font-semibold" style={{ color: msg.ok ? "var(--color-success)" : "var(--color-danger)" }}>
           {msg.text}
         </p>
       )}

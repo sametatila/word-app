@@ -289,10 +289,16 @@ async function Row({
         <span
           className="shrink-0 rounded-md px-1.5 py-0.5 text-[11px] font-bold"
           style={{
+            /* %14 TİNT + ANLAMSAL JETON — uygulamanın her yerindeki kalıp
+               (bkz. `progress-view`, `app-shell`). Burada iki sapma vardı:
+               tint %18'di ve kehribar yanı sabit `flame-500` yazıyordu.
+               Ölçüm, %18 tint üstünde: flame-500 açık temada 2.43 - küçük
+               kalın yazı eşiği 4.5'in çok altında. `--color-flame` ile %18'de
+               4.39, %14'te 4.55; mint yanı da %14'te daha rahat geçiyor. */
             background: done
-              ? "color-mix(in srgb, var(--color-mint-500) 18%, transparent)"
-              : "color-mix(in srgb, var(--color-flame-500) 18%, transparent)",
-            color: done ? "var(--color-mint)" : "var(--color-flame-500)",
+              ? "color-mix(in srgb, var(--color-mint-500) 14%, transparent)"
+              : "color-mix(in srgb, var(--color-flame-500) 14%, transparent)",
+            color: done ? "var(--color-mint)" : "var(--color-flame)",
           }}
         >
           %{score}
