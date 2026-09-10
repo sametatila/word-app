@@ -47,7 +47,7 @@ const WEB_CLIENT_ID = "658160017552-9vkn1d5rbie1utdspf5f61n497p668hu.apps.google
  * bozardı. Ölçüldü: örnek bir kimlikle koşuldu, hata çıktı, açıklama buraya
  * düşüldü. Kaldırılmamalı.
  */
-const IOS_CLIENT_ID: string = "";
+const IOS_CLIENT_ID: string = "658160017552-8di7u96v77l0f5oiv47201o8jaamqe55.apps.googleusercontent.com";
 
 /** iOS'ta Google girişi kurulu mu; Android'de her zaman true (istemci koda girmez). */
 export function googleSupported(): boolean {
