@@ -5355,3 +5355,22 @@ Bu, aynı sınıfın üçüncü örneği: §11.109 harf çevirisi, §11.130 say�
 §11.140 yüzde. Ortak sebep: **yerel bir biçim kararı, koda sabit yazıldığında
 sessizce yanlış dile taşınıyor** — ve üçü de ancak aranınca görünüyor, çünkü
 Türkçe arayüzde hepsi doğru görünüyor.
+
+### 11.141 Derste eller serbest mobilde hiç yoktu
+
+Web derste kalıcı bir anahtar tutuyor (`lessonp.hands_free`) ve **varsayılan
+açık**: açıkken öğretmen cümlesini bitirir bitirmez dinleme kendiliğinden
+başlıyor. Mobilde hiç yoktu — her tekrar ve üretim adımında ekrana dokunmak
+gerekiyordu.
+
+Farkın telefonda webdekinden **büyük** olması gerekirdi: cihaz masaya dayalıyken
+her tur için ekrana uzanmak, konuşma dersinin ritmini kesen tek şey.
+
+**Sıralama, yürüyüş modunun kanıtlanmış kalıbı:** önce `speakAndWaitVoiced`,
+sonra dinle. `speakTarget` bitişi bildirmiyor; onunla kurulsaydı mikrofon
+öğretmenin sesinin üstüne açılırdı — sessiz ama kesin bir bozukluk. Anahtar
+kapalıyken eski yol (fire-and-forget) korunuyor, yani hiçbir şey yavaşlamıyor.
+
+**Cihazda doğrulanmadı:** ses zamanlaması bu ortamda çalıştırılamıyor. Kod
+yolu, aynı depoda çalışan ve sahada denenmiş yürüyüş modu sıralamasının
+aynısı; yine de ilk gerçek cihaz denemesinde bakılacak yer burası.
