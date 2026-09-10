@@ -406,11 +406,11 @@ export function WalkModeScreen() {
     const target = withArtikel(w);
     setPhase("judging");
     if (result === "correct") {
-      setVerdict("correct"); haptic("correct"); sfx("correct");
+      setVerdict("correct"); haptic("correct");
       await sayTarget(target);
       recordSpeak(w, true);
     } else if (result === "wrong") {
-      setVerdict("wrong"); haptic("wrong"); sfx("wrong");
+      setVerdict("wrong"); haptic("wrong");
       await sayNative(tx("walk.correct_is")); await sayTarget(target);
       recordSpeak(w, false);
     } else if (result === "skip") {

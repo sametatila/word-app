@@ -3087,6 +3087,36 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   sameSet("calinan ses ipuclari", [...cM].sort(), [...cW].sort(), "mobil", "web (stage haric)");
 }
 
+/* ── 84. geri bildirim TEK cagriyla veriliyor mu ──────────────────────────
+ * Iki tarafta da haptik sarmalayicisi sesi de caliyor (`haptic` → `sfx`,
+ * `vibrate` → `play`). Ikisini birden yazmak sesi iki kez tetikliyor; mobilde
+ * dort cagri yeri boyleydi ve ses yalnizca `sfx` icindeki 120 ms yineleme
+ * penceresi sayesinde tek duyuluyordu - pencereye bagli, gorunmez bir denge.
+ * Iki tarafta da SIFIR cift cagri olmali. */
+{
+  const cift = (kokler, re) => {
+    const bulunan = [];
+    const gez = (d) => {
+      for (const e of readdirSync(new URL("../" + d, import.meta.url), { withFileTypes: true })) {
+        const p = d + "/" + e.name;
+        if (e.isDirectory()) { if (!/node_modules|__tests__/.test("/" + p)) gez(p); }
+        else if (/\.tsx?$/.test(e.name)) {
+          /* Yorumlar ONCE atiliyor: sarmalayicinin kendi aciklamasi kaliba
+             ornek olarak `haptic("correct"); sfx("correct")` yaziyor ve kapi
+             onu gercek bir cagri sanmisti. */
+          const src = read(p).replace(/\/\*[\s\S]*?\*\//g, " ").replace(/\/\/[^\n]*/g, " ");
+          for (const satir of src.split("\n")) if (re.test(satir)) bulunan.push(p.split("/").pop());
+        }
+      }
+    };
+    for (const k of kokler) gez(k);
+    return bulunan.sort();
+  };
+  const m = cift(["mobile/src"], /haptic\("([a-z]+)"\)[\s\S]*sfx\("\1"\)/);
+  const w = cift(["src/components"], /vibrate\("([a-z]+)"\)[\s\S]*play\("\1"\)/);
+  sameList("cift geri bildirim cagrisi", m.length ? m : ["yok"], w.length ? w : ["yok"]);
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"

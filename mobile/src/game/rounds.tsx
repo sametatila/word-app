@@ -1026,14 +1026,14 @@ function MatchRound({ round, onDone, colors }: { round: Round; onDone: Done; col
   function pickRight(r: { wordId: number; text: string }) {
     if (fb || selLeft == null || matched.has(r.wordId)) return;
     if (r.wordId === selLeft) {
-      const nm = new Set(matched); nm.add(selLeft); setMatched(nm); setSelLeft(null); haptic("correct"); sfx("correct");
+      const nm = new Set(matched); nm.add(selLeft); setMatched(nm); setSelLeft(null); haptic("correct");
       if (nm.size === words.length) {
         const batch = words.map((w) => ({ wordId: w.id, correct: !wrongBefore.current.has(w.id) }));
         const okCount = batch.filter((b) => b.correct).length;
         setFb({ correct: batch.every((b) => b.correct), note: tx("rounds.match_first_try", { n: okCount, total: words.length }), tr: null, answerDe: null });
       }
     } else {
-      wrongBefore.current.add(selLeft); haptic("wrong"); sfx("wrong");
+      wrongBefore.current.add(selLeft); haptic("wrong");
       const l = selLeft;
       setWrong({ left: l, right: r.wordId });
       setSelLeft(null);
