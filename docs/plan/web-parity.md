@@ -5340,3 +5340,18 @@ ekran-kapalı yürüyüş modu için gerekliydi). Yani "evet" denirse iş küç�
 ise webin de mobil gibi bir yedeği olmalı (ağ yokken 0 yerine metin eşlemesi),
 çünkü şu hâliyle aynı sınav iki platformda iki farklı şeyi ölçüyor ve bunu
 kullanıcıya söyleyen bir yer yok.
+
+### 11.140 Yüzde biçimi Türkçe yazımı koda gömüyordu
+
+On üç yerde puan `%{n}` diye yazılıyordu — Türkçe yazım ("%62") koda gömülü,
+oysa İngilizce arayüzde "62%", Almancada "62 %" olmalı. Yerler puanın
+gösterildiği yerler: sınav sonucu, deneme sınavı istatistikleri, haftalık
+sınav, ders sonu, beceri kütüphanesi.
+
+Araç ikisinde de zaten vardı (`formatPercent` / `t("common.pct")`) ve ikisi de
+yereli çalışma anında soruyor. **Parity 51** artık bu deseni de arıyor.
+
+Bu, aynı sınıfın üçüncü örneği: §11.109 harf çevirisi, §11.130 sayı ayracı,
+§11.140 yüzde. Ortak sebep: **yerel bir biçim kararı, koda sabit yazıldığında
+sessizce yanlış dile taşınıyor** — ve üçü de ancak aranınca görünüyor, çünkü
+Türkçe arayüzde hepsi doğru görünüyor.
