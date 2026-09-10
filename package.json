@@ -99,6 +99,7 @@
     "check:lessons-cando": "node data/lessons/cando/check.mjs",
     "check:lessons-script": "node data/lessons/script/check.mjs",
     "lessons:apply": "node data/lessons/apply.mjs",
+    "report:native": "npm run lessons:apply && tsx --tsconfig scripts/tsconfig.e2e.json scripts/report-native-gaps.ts",
     "check:lessons-native": "npm run lessons:apply && tsx --tsconfig scripts/tsconfig.e2e.json scripts/check-native-lessons.ts"
   },
   "dependencies": {
