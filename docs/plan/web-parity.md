@@ -5461,3 +5461,27 @@ görünmez).
 (`t("vocab.tr", v.tr)` bir alan adı). Dosya düzeyinde, gerekçeli muafiyet
 yazıldı; asıl çözüm o yardımcının adını çevirmenden ayırmak — dosya başka bir
 oturumun elinde.
+
+### 11.146 Çevrimdışı bitirilen egzersiz sunucuya hiç ulaşmıyordu
+
+§11.145'in yöntem listesini tek tek doğrularken çıktı. Egzersiz bitince sonuç
+sunucuya yazılıyor, ama **ağ yoksa o istek düşüyor ve bir daha denenmiyordu**:
+yerel işaret duruyor, sunucu o egzersizi hiç öğrenmiyor. Kullanıcı metroda
+çalıştığı egzersizi cihaz değiştirince kaybediyordu — §11.144'ün kalan yarısı.
+
+Sonuç artık kuyruğa alınıyor (`correct`/`total` ile — `PUT /api/skills` bunları
+istiyor, yalnız puan yetmiyor) ve bir sonraki senkronda taşınıyor. Uç
+idempotent, yeniden gönderim zararsız.
+
+**Aynı uç, iki farklı sebeple:** web onu kendi `localStorage` geçmişini bir
+kereliğine taşımak için kullanıyordu; mobilde taşınacak şey çevrimdışı
+bitirilmiş egzersizler çıktı. `WEB_ONLY_METHOD` listesindeki "mobilde taşınacak
+eski kayıt yok" satırı böylece yanlışa düştü — ve **kapı bunu kendisi söyledi**
+("listede olup artık mobilde de çağrılan yöntem"). Listenin yalnız kısalabilir
+olması tam da bu yüzden: her satır bir iddiadır ve iddia eskiyebilir.
+
+**Ölçüldü, ayrışma değil:** `POST /api/session` (tur ortası ilerleme damgası)
+mobilde gereksiz. Mobil ilerlemeyi cevaplarla birlikte `/api/answers`a yazıyor;
+cevap yoksa saklanacak ilerleme de yok — `GameScreen`de tur ortası flush yok,
+`answers` yalnızca yüklemede sıfırlanıyor. Web'in ayrı damgası kendi
+toplu-gönderim modelinin gereği.
