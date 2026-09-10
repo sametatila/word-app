@@ -5196,3 +5196,23 @@ ekran okuyucuya veriyor — dairenin rengi göreni bilgilendiriyordu, okuyucuya
 hiçbir şey söylenmiyordu.
 
 Kalıp üçüncü kez aynı: **kapının görmediği yer, hatanın biriktiği yer.**
+
+### 11.134 Aynı hata mobilde: sözlükte olmayan anahtar, ve üçü benim
+
+§11.133'ün kapısı webi kapattı. Mobilde **aynı denetim hiç yoktu** — `t()` de
+bulamadığını olduğu gibi döndürüyor, yani yanlış yazılan bir anahtar ekranda
+ham hâliyle yazıyor ve hiçbir şey itiraz etmiyor.
+
+Kapıyı kurunca dört kaçak çıktı ve **üçü bu oturumda benim**: §11.123'te
+`exam.pronunciation`, §11.131'de `plan.weekly_short` / `plan.weekly_exam`. Web
+yüzeyini mobile taşırken anahtarların **mobil sözlükte olduğunu doğrulamadım**;
+üçü de web-özel anahtardı. Dördüncüsü `lib/i18n.ts`in örnek yorumundaki eski
+ad (`home.greeting`).
+
+Üçü mobil sözlüğe eklendi — ve bu sefer **gölgeleme kapısı** (§11.128) hemen
+itiraz etti: aynı anahtar artık hem base hem web'de duruyordu. Web kopyaları
+silindi. İki kapı arka arkaya kendi işini yaptı.
+
+**Ders:** bir yüzeyi karşı platforma taşırken metnin *varlığı* kadar
+*bulunduğu sözlük* de kontrol edilmeli. Bu turdan sonra o kontrol elle değil,
+kapıda.
