@@ -4,6 +4,7 @@ import { t } from "../lib/i18n";
 import { Text } from "./Text";
 import { PressableScale } from "./PressableScale";
 import { spacing, radii, type Palette } from "../theme";
+import { ChangePassword } from "./ChangePassword";
 import { listAccounts, unlinkAccount, type LinkedAccount } from "../lib/accountLinks";
 import { googleLink, googleSupported } from "../lib/googleAuth";
 import { appleLink, appleSupported } from "../lib/appleAuth";
@@ -104,6 +105,11 @@ export function LinkedAccounts({ colors }: { colors: Palette }) {
       })}
       <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.xs }}>{t("links.hint")}</Text>
       {msg ? <Text variant="caption" color={colors.text}>{msg}</Text> : null}
+
+      {/* Parola değiştirme YALNIZ parolası olan hesapta. Sağlayıcı listesi
+          zaten burada; ikinci bir istek atmaya gerek yok. Yalnız Google/Apple
+          ile girmiş birine "şu anki parolan" sormak anlamsız olurdu. */}
+      {accounts.some((a) => a.providerId === "credential") ? <ChangePassword colors={colors} /> : null}
     </View>
   );
 }

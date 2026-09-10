@@ -31,7 +31,7 @@ export function ResetPasswordForm({ token }: { token: string | null }) {
     e.preventDefault();
     if (busy || !token) return;
     if (password !== confirm) {
-      setError(t("authw.passwords_dont_match"));
+      setError(t("auth.passwords_dont_match"));
       return;
     }
     setBusy(true);

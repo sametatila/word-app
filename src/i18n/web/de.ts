@@ -558,7 +558,6 @@ export const deWeb: Record<string, string> = {
   "autherrorw.token_expired": "Der Link ist abgelaufen oder ungültig. Fordere einen neuen an.",
   "autherrorw.forbidden": "Dafür fehlt dir die Berechtigung. Prüf die Domains-Einstellung.",
   "autherrorw.network": "Es kam keine Internetverbindung zustande. Prüf sie und versuch es noch mal.",
-  "authw.passwords_dont_match": "Die Passwörter stimmen nicht überein.",
   "authw.link_invalid": "Ungültiger Link",
   "authw.link_invalid_sub": "Der Zurücksetzen-Link fehlt oder ist abgelaufen.",
   "authw.request_new_link": "Neuen Link anfordern",

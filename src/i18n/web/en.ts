@@ -558,7 +558,6 @@ export const enWeb: Record<string, string> = {
   "autherrorw.token_expired": "The link has expired or is invalid. Ask for a new one.",
   "autherrorw.forbidden": "You don't have permission for this. Check the Domains setting.",
   "autherrorw.network": "No internet connection could be made. Check it and try again.",
-  "authw.passwords_dont_match": "The passwords don't match.",
   "authw.link_invalid": "Invalid link",
   "authw.link_invalid_sub": "The reset link is missing or has expired.",
   "authw.request_new_link": "Request a new link",

@@ -50,7 +50,7 @@ export function ChangePassword() {
     e.preventDefault();
     if (busy) return;
     if (next !== confirm) {
-      setError(t("authw.passwords_dont_match"));
+      setError(t("auth.passwords_dont_match"));
       return;
     }
     setBusy(true);

@@ -583,7 +583,6 @@ export const trWeb: Record<string, string> = {
   "autherrorw.token_expired": "Bağlantının süresi dolmuş ya da geçersiz. Yeni bir bağlantı iste.",
   "autherrorw.forbidden": "Bu işlem için yetkin yok. Adres listesi (Domains) ayarını kontrol et.",
   "autherrorw.network": "İnternet bağlantısı kurulamadı. Bağlantını kontrol edip tekrar dene.",
-  "authw.passwords_dont_match": "Parolalar eşleşmiyor.",
   "authw.link_invalid": "Bağlantı geçersiz",
   "authw.link_invalid_sub": "Sıfırlama bağlantısı eksik ya da süresi dolmuş.",
   "authw.request_new_link": "Yeni bağlantı iste",

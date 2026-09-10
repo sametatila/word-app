@@ -226,6 +226,24 @@ export async function sendVerificationEmail(email: string): Promise<AuthOutcome>
   }
 }
 
+/**
+ * Parola değiştirme — web'deki ayarlar formunun eşi.
+ *
+ * `revokeOtherSessions` AÇIK: parola değiştirmenin yaygın sebebi "başkası
+ * girmiş olabilir" kaygısı, öteki oturumları ayakta bırakmak o kaygıya cevap
+ * vermez. Sıfırlama akışı da aynı şeyi yapıyor.
+ *
+ * Yanlış "şu anki parola" INVALID_PASSWORD ile dönüyor — giriş akışının
+ * INVALID_EMAIL_OR_PASSWORD'ünden ayrı bir kod (bkz. authErrors).
+ */
+export async function changePassword(currentPassword: string, newPassword: string): Promise<AuthOutcome> {
+  try {
+    return await parse(await post("change-password", { currentPassword, newPassword, revokeOtherSessions: true }));
+  } catch {
+    return { ok: false, code: "NETWORK", message: t("common.connection_failed") };
+  }
+}
+
 /** Hesaba bağlı sağlayıcılar (credential = e-posta/parola, google …). */
 export async function listAccounts(): Promise<{ providerId: string }[]> {
   try {
