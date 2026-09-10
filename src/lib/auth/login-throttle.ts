@@ -56,18 +56,23 @@ export async function isLockedOut(email: string): Promise<boolean> {
 }
 
 /**
- * Başarısız denemeyi kaydeder. Pencere HER başarısızlıkta yenileniyor:
- * saldırgan eşiğin hemen altında durup beklemesin diye.
+ * Başarısız denemeyi kaydeder ve YENİ SAYIYI döndürür (Redis yoksa null).
+ * Sayı çağırana lazım: log satırı "kaçıncı deneme" yazabilsin diye.
+ *
+ * Pencere HER başarısızlıkta yenileniyor: saldırgan eşiğin hemen altında
+ * durup beklemesin diye.
  */
-export async function noteFailedLogin(email: string): Promise<void> {
+export async function noteFailedLogin(email: string): Promise<number | null> {
   try {
     const r = redisClient();
-    if (!r) return;
+    if (!r) return null;
     const k = key(email);
-    await r.incr(k);
+    const count = await r.incr(k);
     await r.expire(k, LOCKOUT_SECONDS);
+    return count;
   } catch (err) {
     warnRedisOnce(err);
+    return null;
   }
 }
 

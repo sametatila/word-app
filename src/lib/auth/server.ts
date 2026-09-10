@@ -12,7 +12,7 @@ import { revokeAppleSignIn } from "@/lib/account/apple-revoke";
 import { APIError, createAuthMiddleware } from "better-auth/api";
 import { checkPassword, MIN_PASSWORD_LENGTH, PASSWORD_ERROR_CODE } from "@/lib/auth/password-policy";
 import { redisRateLimitStorage } from "@/lib/auth/rate-limit-store";
-import { clearFailedLogins, isLockedOut, noteFailedLogin } from "@/lib/auth/login-throttle";
+import { clearFailedLogins, isLockedOut, MAX_FAILED_LOGINS, noteFailedLogin } from "@/lib/auth/login-throttle";
 
 /**
  * Self-hosted Better Auth. Oturumlar/kullanıcılar KENDİ
@@ -423,7 +423,25 @@ export const auth = betterAuth({
       */
       if (returned?.body?.code === "EMAIL_NOT_VERIFIED") return;
 
-      await noteFailedLogin(email);
+      /*
+        BAŞARISIZ GİRİŞ KAYDA GEÇİYOR.
+
+        Eskiden hiçbir iz kalmıyordu: bir hesaba yönelen saldırı ancak
+        fail2ban 429'ları saydığında görünüyordu, parola doğru tutturulduğunda
+        ise hiç görünmüyordu. Satır İNGİLİZCE (sunucu log'u, arayüz değil) ve
+        e-posta içeriyor — aynı dosyadaki e-posta log'ları da alıcıyı yazıyor,
+        yeni bir veri sınıfı açılmıyor.
+
+        Eşiğe varan deneme AYRI ve daha yüksek sesle yazılıyor: kilitlenen bir
+        hesap operasyonel olarak bakılması gereken bir olay.
+      */
+      const count = await noteFailedLogin(email);
+      const ip = ctx.request?.headers.get("x-real-ip") ?? "?";
+      if (count !== null && count >= MAX_FAILED_LOGINS) {
+        console.warn(`[auth] account locked after ${count} failed sign-ins: ${email} (ip ${ip})`);
+      } else {
+        console.warn(`[auth] failed sign-in ${count ?? "?"}/${MAX_FAILED_LOGINS}: ${email} (ip ${ip})`);
+      }
     }),
   },
 });
