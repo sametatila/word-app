@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { Avatar } from "@/components/avatar";
 import { EmptyCard } from "@/components/empty-card";
 import { TargetIcon } from "@/components/icons";
-import { RowSkeleton } from "@/components/skeleton";
+import { SkeletonBar, SkeletonCard, SkeletonLine, SkeletonPill, SkeletonTile } from "@/components/skeleton";
 import { errorText, social } from "@/lib/social/client";
 import type { FriendRow, QuestView } from "@/lib/social/types";
 import { useT, useLang } from "@/lib/i18n/client";
@@ -53,7 +53,7 @@ export function Quests({ friends, onChanged, me }: { friends: FriendRow[]; onCha
     }
   }
 
-  if (quests === null) return <RowSkeleton rows={2} height={96} />;
+  if (quests === null) return <QuestsSkeleton />;
   const current = quests.filter((q) => q.status === "invited" || q.status === "active");
   const past = quests.filter((q) => q.status === "completed" || q.status === "failed");
   const canStart = !current.length && friends.length > 0;
@@ -129,6 +129,47 @@ export function Quests({ friends, onChanged, me }: { friends: FriendRow[]; onCha
   );
 }
 
+/**
+ * QuestCard iskeleti — iki arma, başlık, hedef, iki paylı çubuk.
+ *
+ * Burada iki tane doksan altı piksellik düz satır vardı: kart gelince
+ * yerleşim yerinden oynuyordu. İskeletin işi yükseklik doldurmak değil,
+ * gelecek şeyin ŞEKLİNİ göstermek — akış ve gelen kutusu bu kuralı zaten
+ * uyguluyor (`feed`, `inbox`), ortak görevde uygulanmamıştı. Android
+ * `QuestsSkeleton` ile aynı parçalar.
+ */
+export function QuestsSkeleton() {
+  return (
+    <SkeletonCard>
+      <div className="flex items-center gap-3">
+        <div className="flex -space-x-2">
+          <SkeletonTile size={36} className="rounded-full" />
+          <SkeletonTile size={36} className="rounded-full" />
+        </div>
+        <div className="min-w-0 flex-1">
+          <SkeletonLine variant="h3" width="80%" />
+          <SkeletonLine variant="caption" width="60%" />
+        </div>
+        <div className="flex flex-col items-end">
+          <SkeletonLine variant="h2" width={48} />
+          <SkeletonLine variant="micro" width={54} />
+        </div>
+      </div>
+      <div className="mt-4">
+        <SkeletonBar height={12} />
+        <div className="mt-2 flex justify-between">
+          <SkeletonLine variant="caption" width={62} />
+          <SkeletonLine variant="bodyStrong" width={78} />
+          <SkeletonLine variant="caption" width={62} />
+        </div>
+        <div className="mt-2 flex justify-end">
+          <SkeletonPill width={84} height={21} />
+        </div>
+      </div>
+    </SkeletonCard>
+  );
+}
+
 export function QuestCard({ q, me, busy, onAct }: { q: QuestView; me: string; busy: boolean; onAct: (fn: () => Promise<unknown>) => Promise<void> }) {
   const t = useT();
   const lang = useLang();
@@ -149,9 +190,16 @@ export function QuestCard({ q, me, busy, onAct }: { q: QuestView; me: string; bu
             {t("quests.with_partner", {
               name: q.partner.name ?? t("social.your_friend"),
               remaining: q.daysLeft === 1 ? t("social.last_day") : t("social.days_left", { n: q.daysLeft }),
-            })}{" "}
-            · {formatNumber(q.targetXp, lang)} XP
+            })}
           </p>
+        </div>
+        {/* HEDEF KENDİ SÜTUNUNDA. Alt satırın sonuna "· 500 XP" diye
+            ekleniyordu ve kartın en önemli sayısı, kimin kiminle olduğunu
+            anlatan cümlenin kuyruğunda kalıyordu. Android sağ üstte büyük
+            yazıp altına ne olduğunu söylüyor. */}
+        <div className="shrink-0 text-right">
+          <p className="text-h2 tabular-nums" style={{ color: "var(--color-brand)" }}>{formatNumber(q.targetXp, lang)}</p>
+          <p className="muted text-micro">{t("quests.target_xp")}</p>
         </div>
       </div>
       {invited ? (

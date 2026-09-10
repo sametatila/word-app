@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { Avatar } from "@/components/avatar";
 import { FlameIcon } from "@/components/icons";
-import { RowSkeleton } from "@/components/skeleton";
+import { PersonRowSkeleton } from "@/components/skeleton";
 import { errorText, social, type SearchHitView, type SuggestionView } from "@/lib/social/client";
 import { UserAction } from "./user-action";
 import { useT } from "@/lib/i18n/client";
@@ -76,7 +76,7 @@ export function Find({ onChanged }: { onChanged?: () => void }) {
 
       {q.trim().length >= 2 ? (
         hits === null ? (
-          <RowSkeleton rows={3} height={60} />
+          <PersonRowSkeleton rows={3} />
         ) : hits.length ? (
           <ol className="card divide-y divide-[color:var(--border)] overflow-hidden">
             {hits.map((h) => (
@@ -92,7 +92,7 @@ export function Find({ onChanged }: { onChanged?: () => void }) {
         <section>
           <h3 className="muted mb-2 px-1 text-xs font-bold uppercase tracking-wide">{t("find.you_may_know")}</h3>
           {sugg === null ? (
-            <RowSkeleton rows={3} height={60} />
+            <PersonRowSkeleton rows={3} />
           ) : sugg.length ? (
             <ol className="card divide-y divide-[color:var(--border)] overflow-hidden">
               {sugg.map((s) => (

@@ -51,6 +51,32 @@ export function PageSkeleton({ rows = 5, header = true }: { rows?: number; heade
  * kalır ve sessizce geri gelir.
  */
 
+/**
+ * KİŞİ satırı iskeleti — arma, iki metin satırı, eylem düğmesi.
+ *
+ * Arkadaş listesi, arama sonuçları ve öneriler `RowSkeleton` ile yer
+ * ayırıyordu: göz kararı yükseklikte düz bloklar. İskeletin işi yükseklik
+ * doldurmak değil, gelecek şeyin ŞEKLİNİ göstermek — akış, gelen kutusu ve
+ * ortak görev bu kuralı uyguluyor, kişi listeleri uygulamıyordu. Android'in
+ * karşılıkları da şekilli (`FriendCardSkeleton`, `SearchResultSkeleton`).
+ */
+export function PersonRowSkeleton({ rows = 3 }: { rows?: number }) {
+  return (
+    <ol aria-hidden className="card divide-y divide-[color:var(--border)] overflow-hidden">
+      {Array.from({ length: rows }).map((_, i) => (
+        <li key={i} className="flex items-center gap-3 px-4 py-3" style={{ opacity: 1 - i * 0.12 }}>
+          <SkeletonTile size={40} className="rounded-full" />
+          <span className="min-w-0 flex-1">
+            <SkeletonLine variant="body" width={`${64 - i * 8}%`} />
+            <SkeletonLine variant="micro" width={72} />
+          </span>
+          <SkeletonPill width={78} height={32} />
+        </li>
+      ))}
+    </ol>
+  );
+}
+
 /** Satır iskeleti — menü ve liste satırlarının yeri. */
 export function RowSkeleton({ rows = 3, height = 56 }: { rows?: number; height?: number }) {
   return (

@@ -5,7 +5,7 @@ import { EmptyCard } from "@/components/empty-card";
 import { UserPlusIcon } from "@/components/icons";
 import { Avatar } from "@/components/avatar";
 import { HandshakeIcon } from "@/components/icons";
-import { RowSkeleton } from "@/components/skeleton";
+import { PersonRowSkeleton } from "@/components/skeleton";
 import { track } from "@/lib/track";
 import { errorText, social, type FriendsView, type SocialMeView } from "@/lib/social/client";
 import { Feed } from "./feed";
@@ -209,7 +209,7 @@ export function FriendsHub({ me, initialTab }: { me: SocialMeView; initialTab: H
         {err ? <p className="mb-2 text-caption" style={{ color: "var(--color-rose)" }}>{err}</p> : null}
         {tab === "friends" ? (
           data === null ? (
-            <RowSkeleton rows={3} height={64} />
+            <PersonRowSkeleton rows={3} />
           ) : (
             <div className="flex flex-col gap-4">
               {/* Sıra bilinçli: cevap bekleyen iş (gelen istek), bu haftanın
