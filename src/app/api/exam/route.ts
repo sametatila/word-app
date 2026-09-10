@@ -4,7 +4,7 @@ import { getUserId } from "@/lib/auth/server";
 import { sameOrigin } from "@/lib/auth/origin";
 import { ensureProfile, submitAnswers } from "@/lib/session";
 import { buildExam, examHistory, finishExam, modulePrereq, type ExamSubmission, type ExamSectionId } from "@/lib/exam";
-import { moduleExamPlan } from "@/lib/lessons/module-exam";
+import { moduleExamPlan, hasModuleExams } from "@/lib/lessons/module-exam";
 import { track } from "@/lib/events";
 import { cleanDetail, isErrorType } from "@/lib/errors";
 import { GAME_LABEL_KEYS, type Answer, type GameId } from "@/lib/types";
@@ -34,7 +34,10 @@ export async function GET(req: Request) {
   const level = url.searchParams.get("level");
   const mod = url.searchParams.get("module");
   if (level && mod !== null) {
-    const plan = moduleExamPlan(level, Number(mod));
+    const profile = await ensureProfile(userId);
+    /* Modül sınavı planları Almanca yazılmış ve kurs boyutu yok (bkz.
+       `hasModuleExams`): kursu olmayan kullanıcıya kapak da gösterilmiyor. */
+    const plan = hasModuleExams(profile.course ?? "de") ? moduleExamPlan(level, Number(mod)) : undefined;
     /*
      * DENEME BİLGİSİ DE KAPAKTA. Modülün konuşmaları yeterince geçilmediyse
      * sonuç sayılmıyor; bunu yalnız sınav bittikten sonra söylemek sırayı
@@ -46,7 +49,6 @@ export async function GET(req: Request) {
      * değişiyor ve bir saat eski kalması "hâlâ deneme" demek olurdu. Uç yine
      * KÂĞIDI ÜRETMİYOR, o yüzden kapağı açmak haftanın kâğıdını harcamıyor.
      */
-    const profile = await ensureProfile(userId);
     const trial = plan ? !(await modulePrereq(userId, profile?.course ?? "de", level as CefrLevel, Number(mod))) : false;
     return NextResponse.json(
       { cover: plan ? { code: plan.code, titleDe: plan.titleDe, titleTr: plan.titleTr, focus: plan.focus, trial } : null },
@@ -61,7 +63,8 @@ export async function GET(req: Request) {
    * kod içinde sabit olduğu için yanıt uzun süre önbelleklenebilir.
    */
   if (level) {
-    const modules = [...Array(21).keys()]
+    const listProfile = await ensureProfile(userId);
+    const modules = (hasModuleExams(listProfile.course ?? "de") ? [...Array(21).keys()] : [])
       .map((i) => ({ index: i, plan: moduleExamPlan(level, i) }))
       .filter((m) => m.plan)
       .map(({ index, plan }) => ({ index, code: plan!.code, titleDe: plan!.titleDe, titleTr: plan!.titleTr }));

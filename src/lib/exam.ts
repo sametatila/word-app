@@ -261,7 +261,17 @@ export async function buildExam(userId: string, course: string, level: CefrLevel
 
   // Okuma / dinleme: modülde elle yazılmış metin, seviyede beceri bankası.
   const done = new Set((await db.select({ id: userSkills.exerciseId }).from(userSkills).where(eq(userSkills.userId, userId))).map((r) => r.id));
-  const bank = BUNDLED_EXERCISES.filter((e) => (e.course ?? "de") === (course === "gsw-zh" ? "gsw-zh" : "de") && e.level === level);
+  /*
+   * BANKA KURSUN KENDİSİNDEN.
+   *
+   * Süzgeç `course === "gsw-zh" ? "gsw-zh" : "de"` diye yazılıydı: yalnız iki
+   * kurs varken doğruydu, İngilizce kurs eklenince İngilizce öğrenen birinin
+   * seviye sınavına ALMANCA okuma ve dinleme metinleri koymaya başladı.
+   * Katalogda İngilizce beceri var (seviye başına 25-57); süzgeç artık kursun
+   * kendisine bakıyor. Züritüütsch davranışı değişmiyor - onun bankası zaten
+   * kendi kimliğiyle süzülüyordu.
+   */
+  const bank = BUNDLED_EXERCISES.filter((e) => (e.course ?? "de") === course && e.level === level);
   const pickTexts = (skill: "reading" | "listening"): TextItem[] => {
     const list = bank.filter((e) => e.skill === skill && examQuestions(e).length > 0);
     const ordered = [...seededShuffle(list.filter((e) => !done.has(e.id)), `${seed}|${skill}`), ...seededShuffle(list.filter((e) => done.has(e.id)), `${seed}|${skill}|used`)];

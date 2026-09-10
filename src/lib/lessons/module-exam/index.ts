@@ -22,3 +22,20 @@ const BY_KEY = new Map(MODULE_EXAMS.map((p) => [`${p.level}:${p.index}`, p]));
 export function moduleExamPlan(level: string, index: number): ModuleExamPlan | undefined {
   return BY_KEY.get(`${level}:${index}`);
 }
+
+/**
+ * Bu kursta modül sınavı var mı.
+ *
+ * Planlar `level:index` ile anahtarlanıyor, KURS boyutu yok: başlıkları
+ * (`titleDe`), soruları ve `canDo` maddeleri Almanca yazılmış. Bu, iki kurs
+ * varken görünmez bir varsayımdı — ikisi de Almanca öğretiyor. İngilizce kurs
+ * eklenince görünür oldu: İngilizce öğrenen birinin Patika'sında Almanca
+ * başlıklı modül sınavları çıkıyor ve açtığında Almanca kâğıt geliyordu.
+ *
+ * Varsayım artık TEK YERDE ve adı var. İngilizce planlar yazıldığında burası
+ * plan verisine bakan bir kontrole dönüşür; o zamana kadar yanlış kâğıdı
+ * göstermek yerine hiç göstermiyoruz.
+ */
+export function hasModuleExams(course: string): boolean {
+  return course !== "en";
+}
