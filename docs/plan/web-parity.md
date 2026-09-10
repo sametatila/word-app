@@ -1011,3 +1011,31 @@ o dosya şu an başka bir oturumun açık işi (beceri kütüphanesi portu). Ayn
 dosyaya dokunmak onların yarım işini kırar. Kütüphane oturumu bittiğinde
 eklenecek tek şey: sağlayıcı/ağ hatasında aynı gövdeyi `/api/assess/queue`e
 POST etmek ve `assess.queued` benzeri bir satır göstermek.
+
+### 11.13 `free_sentence` turu mobilde YANLIŞ ÇİZİLİYOR (kayıt, karar gerekiyor)
+
+Sunucu "Cümle Kur" turunu üretiyor (`lib/session` `free_sentence`): iki kelime
+veriliyor, öğrenci onlarla cümle yazıyor, hakem `/api/assess`. Koşullar —
+öğrencinin gücü `strong`, oturum başına en çok 2 tur, ve `chatConfigured()`.
+Sunucu istemciyi TANIMIYOR: aynı turu mobile de gönderiyor.
+
+Web'de karşılığı var (`games/free-sentence-game`). Mobilin tur dağıtıcısında
+YOK, o yüzden `SelfAssess`e düşüyor — yani ekranda "bu kelimeyi biliyor musun?"
+kartı çıkıyor: görev söylenmiyor, ikinci kelime hiç kullanılmıyor. Üstelik
+öz-değerlendirmenin cevabı `/api/answers`e `free_sentence` cevabı olarak
+yazılıyor; SRS hiç sorulmamış bir alıştırmanın sonucunu kaydediyor.
+
+Üç yol var ve seçim ürün kararı:
+  1. SUNUCU SUSTURSUN — istemci neyi çizebildiğini söylesin (`?can=` gibi) ve
+     `free_sentence` yalnız onu bilen istemciye gitsin. En temizi ama sözleşme
+     değişikliği.
+  2. MOBİL ATLASIN — tur çizilmeden geçilsin. Küçük ama "atla" yolu cevabı da
+     yazmamalı, o da `GameScreen`in cevap kaydına dokunmayı gerektiriyor.
+  3. MOBİLE PORT — AI puanlı yazma turunu eklemek. Bu turun kuralının tersi
+     (Android referans), yani ayrı bir ürün işi.
+
+Bugünkü hâl ölçüldü, uydurulmadı: mobil dağıtıcı on bir oyunu tanıyor
+(choice, artikel, truefalse, typing, cloze, plural, listen, scramble, order,
+translate, match) + `intro`; web on üçü tanıyor. Fark yalnız `free_sentence`.
+`speak` de iki tarafta dağıtıcıda yok ama o yalnız yürüyüş modunda üretiliyor
+ve orada kendi oynatıcısı var — sorun değil.
