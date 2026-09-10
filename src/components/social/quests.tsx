@@ -185,8 +185,12 @@ export function QuestCard({ q, me, busy, onAct }: { q: QuestView; me: string; bu
               {q.partner.name?.split(" ")[0] ?? t("quests.partner_short")} {formatNumber(q.partnerXp, lang)}
             </span>
           </p>
+          {/* Onay metni İKİ CÜMLE: görevi bırakmak karşı taraf için de iptal
+              ediyor ve web bunu hiç söylemiyordu ("Görev iptal edilsin mi?").
+              Android sonucu açıkça yazıyor; başkasını etkileyen bir eylemde
+              bunun söylenmemesi olmaz. */}
           <div className="mt-2 text-right">
-            <button className="muted text-[11px]" onClick={() => { if (window.confirm(t("socialw.cancel_quest_confirm"))) void onAct(() => social.questAction(q.id, "cancel")); }}>
+            <button className="muted text-[11px]" onClick={() => { if (window.confirm(`${t("quests.leave_title")}\n\n${t("quests.leave_text")}`)) void onAct(() => social.questAction(q.id, "cancel")); }}>
               {t("quests.leave_quest")}
             </button>
           </div>

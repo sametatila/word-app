@@ -689,7 +689,6 @@ export const trWeb: Record<string, string> = {
   "socialw.link_copied": "Bağlantı kopyalandı",
   "socialw.tabs": "Sosyal sekmeler",
   "socialw.progress_pct": "İlerleme yüzde {n}",
-  "socialw.cancel_quest_confirm": "Görev iptal edilsin mi?",
   "socialw.joined": "Katılım {date}",
   "socialw.shared_quest": "Ortak görev",
   "socialw.more": "Daha fazla",

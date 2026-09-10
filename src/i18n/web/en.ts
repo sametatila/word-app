@@ -664,7 +664,6 @@ export const enWeb: Record<string, string> = {
   "socialw.link_copied": "Link copied",
   "socialw.tabs": "Social tabs",
   "socialw.progress_pct": "Progress {n} percent",
-  "socialw.cancel_quest_confirm": "Cancel the quest?",
   "socialw.joined": "Joined {date}",
   "socialw.shared_quest": "Shared quest",
   "socialw.more": "More",

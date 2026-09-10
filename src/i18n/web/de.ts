@@ -664,7 +664,6 @@ export const deWeb: Record<string, string> = {
   "socialw.link_copied": "Link kopiert",
   "socialw.tabs": "Soziale Reiter",
   "socialw.progress_pct": "Fortschritt {n} Prozent",
-  "socialw.cancel_quest_confirm": "Quest abbrechen?",
   "socialw.joined": "Dabei seit {date}",
   "socialw.shared_quest": "Gemeinsame Quest",
   "socialw.more": "Mehr",
