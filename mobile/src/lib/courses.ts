@@ -128,9 +128,9 @@ export const COURSES: Course[] = [
     speechLocale: "en-US",
     label: { tr: "İngilizce", en: "English", de: "Englisch" },
     sub: {
-      tr: "İngilizce · A1–C1",
-      en: "English · A1–C1",
-      de: "Englisch · A1–C1",
+      tr: "İngilizce · CEFR A1–C1",
+      en: "English · CEFR A1–C1",
+      de: "Englisch · CEFR A1–C1",
     },
     // İngilizcede isimlerin cinsiyeti yok; artikel/çoğul turları anlamsız.
     hasArticles: false,

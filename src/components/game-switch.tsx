@@ -1,6 +1,9 @@
 "use client";
 
+import { useEffect } from "react";
 import type { Round } from "@/lib/types";
+
+type IntroRound = Extract<Round, { game: "intro" }>;
 import type { GameResult } from "@/components/games/types";
 import { IntroGame } from "@/components/games/intro-game";
 import { ChoiceGame } from "@/components/games/choice-game";
@@ -52,4 +55,26 @@ export function GameSwitch({
     case "free_sentence":
       return <FreeSentenceGame round={round} onDone={onDone} />;
   }
+  /*
+   * TANIMADIĞI TUR EKRANI DÜŞÜRMESİN.
+   *
+   * `switch`in dalları tükendiğinde bileşen `undefined` döndürüyordu ve React
+   * bunu hata sayıyor: sunucu istemciden yeni olduğunda (yeni bir tur türü
+   * eklendiğinde ya da `speak` gibi başka bir yüzeye ait bir tur sızdığında)
+   * oturumun tamamı çöküyordu. Android bilmediği turu kendi kendine
+   * değerlendirmeye düşürüyor (`game/rounds` `SelfAssess`); web de kelimeyi
+   * gösterip devam ettiriyor, kelime yoksa turu atlıyor.
+   */
+  const unknown = round as { word?: IntroRound["word"] };
+  if (!unknown.word) return <SkipRound onDone={onDone} />;
+  return <IntroGame round={{ id: round.id, game: "intro", word: unknown.word }} onDone={onDone} />;
+}
+
+/** Oynatılamayan turu sessizce geçer — render sırasında değil, efektte. */
+function SkipRound({ onDone }: { onDone: (r: GameResult[]) => void }) {
+  useEffect(() => {
+    onDone([]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+  return null;
 }
