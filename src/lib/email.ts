@@ -2,6 +2,7 @@ import "server-only";
 import nodemailer, { type Transporter } from "nodemailer";
 import { LEGAL_ENTITY } from "@/lib/legal";
 import { translate, DEFAULT_NATIVE, type NativeLang } from "@/lib/i18n/dict";
+import { redisClient, warnRedisOnce } from "@/lib/auth/redis";
 
 /**
  * Giden e-posta — sağlayıcı **Resend**, taşıma **SMTP**.
@@ -44,9 +45,46 @@ function transport(): Transporter {
   return cached;
 }
 
+/**
+ * ALICI BAŞINA SAATLİK TAVAN.
+ *
+ * Hız sınırları IP başına sayıyor; farklı IP'lerden aynı adrese posta
+ * yağdırmanın önünde bir şey yoktu. Doğrulama ve sıfırlama uçları kimlik
+ * istemediği için bu, bir kurbanın gelen kutusunu doldurmanın ve SMTP
+ * kotasını tüketmenin yoluydu.
+ *
+ * Tavan ADRESE bağlı, gönderen akışa değil: kim tetiklerse tetiklesin aynı
+ * kutuya saatte en çok bu kadar posta düşüyor. Gerçek kullanıcı bu sayıya
+ * çarpmıyor — doğrulama, sıfırlama ve bildirim postaları bir arada bile
+ * saatte birkaç tane.
+ *
+ * Redis yoksa TAVAN YOK (açığa düş): posta göndermeyi bir önbelleğin
+ * varlığına bağlamak, kayıt akışını Redis kesintisinde durdururdu.
+ */
+const MAIL_CAP_PER_HOUR = 10;
+
+async function overMailCap(to: string): Promise<boolean> {
+  try {
+    const r = redisClient();
+    if (!r) return false;
+    const k = `lernomi:mailcap:${to.trim().toLowerCase()}`;
+    const count = await r.incr(k);
+    if (count === 1) await r.expire(k, 3600);
+    return count > MAIL_CAP_PER_HOUR;
+  } catch (err) {
+    warnRedisOnce(err);
+    return false;
+  }
+}
+
 export async function sendEmail(to: string, subject: string, html: string, text: string): Promise<void> {
   if (!emailConfigured) {
     console.log(`[email] SMTP tanımsız — gönderilmedi: ${to} · ${subject}`);
+    return;
+  }
+  if (await overMailCap(to)) {
+    // İngilizce: sunucu log'u, arayüz dizgisi değil.
+    console.warn(`[email] hourly cap reached for ${to}, not sent: ${subject}`);
     return;
   }
   try {
