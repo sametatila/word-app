@@ -1009,7 +1009,7 @@ export function SpeakButton({
       whileTap={{ scale: 0.9 }}
       aria-label={t("common.listen_pronunciation")}
       title={t("common.listen_pronunciation")}
-      className={`btn btn-ghost shrink-0 ${dim} ${className}`}
+      className={`btn btn-ghost hit-8 shrink-0 ${dim} ${className}`}
     >
       <SpeakerIcon size={size === "sm" ? 13 : 16} />
     </motion.button>

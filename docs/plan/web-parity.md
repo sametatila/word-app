@@ -2730,3 +2730,44 @@ onaltı girdinin puntosunu ve yuvarlaklığını tek değere çekmek bir düzine
 ekranın görünümünü değiştirir ve hangi değerin doğru olduğu ölçümle değil
 bakışla kararlaştırılır. Envanter Samet karar verince tek turda uygulanacak
 biçimde burada duruyor.
+
+### 11.48 Dokunma hedefleri: hepsi eşti, biri hariç
+
+Ölçüm, kare dokunma hedeflerinin dağılımı:
+
+    mobil  44x44 43 kez · 46 6 · 48 3 · 42/40/38/36/34 birer-ikişer
+    web    h-11 w-11 (44px) 18 kez · h-12 w-12 (48) 10 · h-9 w-9 (36) 5
+
+Baskın değer iki tarafta da 44 ve bu tesadüf değil - webin `h-11 w-11`i
+mobilin 44'ünün karşılığı olarak seçilmiş. Geri düğmeleri, kapatma
+düğmeleri, satır ikonları hepsi eşleşiyor.
+
+**Ayrışan tek denetim: hoparlör düğmesi.** Ve ayrım GÖRÜNEN boyutta değil,
+DOKUNULABİLİR alanda:
+
+    mobil  görünen 20 / 22 (x3) / 24 / 34   + hitSlop 8  → gerçek hedef 36-50
+    web    görünen 28 (x7) / 36 (x1)        genişleme yok → hedef 28-36
+
+Yani görünürde web daha büyük ama gerçekte daha küçük bir hedef sunuyordu -
+ve bu, uygulamanın en çok dokunulan ikincil denetimi (her kelime, her cümle,
+her şıkkın yanında bir tane var). WCAG 2.2'nin 24px asgarisi ikisinde de
+tutuyor, yani ihlal değil; ama Android'in hedefi sistematik olarak ~8px daha
+büyüktü.
+
+`hitSlop`un web karşılığı yoktu; `.hit-8` yardımcı sınıfı eklendi ve
+hoparlör düğmesine bağlandı. Dolgu DEĞİL yalancı öğe (`::after` + `inset:
+-8px`) kullanılıyor: düğme metnin yanında satır içinde duruyor ve dolgu
+eklemek çevresindeki hizalamayı kaydırırdı. Görünüm hiç değişmiyor, yalnız
+tıklama alanı büyüyor.
+
+Yan düzeltme: mobil `SpeakButton`ın varsayılan boyutu 40'tı ve hiçbir çağrı
+yeri onu kullanmıyordu (altı çağrı 20/22/22/22/24/34 veriyor). Yeni bir çağrı
+yeri ötekilerin hiçbirine benzemeyen bir düğme üretirdi; varsayılan çoğunluğa
+(22) çekildi.
+
+**Webde kalan iki küçük hedef, sebebiyle bırakıldı:** özel karakter ekleme
+düğmeleri (ä ö ü ß) `min-h-9 min-w-9` (36px) ve hoparlörün küçük varyantı.
+Karakter satırının Android'de karşılığı HİÇ YOK ve olmaması doğru - native
+klavye o harfleri uzun basmayla veriyor, ayrıca cevap karşılaştırması umlaut
+katlıyor (`textFold`), yani "ae" yazmak da kabul ediliyor. Webin kendine
+özgü bir yüzeyi ve 36px WCAG asgarisinin üstünde.

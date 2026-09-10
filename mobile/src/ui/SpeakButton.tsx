@@ -14,7 +14,11 @@ import { speakTarget } from "../lib/tts";
  */
 export function SpeakButton({
   text,
-  size = 40,
+  /* Varsayılan 40'tı ve HİÇBİR çağrı yeri onu kullanmıyordu: altı çağrı 20,
+     22 (üç kez), 24 ve 34 veriyor. Yani yeni bir çağrı yeri ötekilerin hiç
+     birine benzemeyen bir düğme üretiyordu. Varsayılan çoğunluğa (22) çekildi;
+     açıkça boyut veren çağrılar etkilenmiyor. */
+  size = 22,
   slow = false,
   tone,
 }: {

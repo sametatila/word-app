@@ -628,6 +628,30 @@
     color: var(--text);
     border: 1px solid var(--border);
   }
+  /*
+   * DOKUNMA HEDEFİ BÜYÜTME — mobil `hitSlop`un karşılığı.
+   *
+   * React Native'de küçük düğmeler `hitSlop` alıyor: görünen daire küçük
+   * kalırken dokunulabilir alan her yönde büyüyor. Webde karşılığı yoktu ve
+   * ölçüm ayrımı gösterdi: hoparlör düğmesinin görünen boyutu mobilde 20-34,
+   * webde 28-36 - yani görünürde web daha büyük. Ama mobil her birine
+   * `hitSlop={8}` veriyor, yani gerçek hedef 36-50; webde hedef görünen
+   * boyutun kendisi. Yani en çok dokunulan ikincil denetim webde sistematik
+   * olarak daha küçük bir hedef sunuyordu.
+   *
+   * Yalancı öğe kullanılıyor, dolgu değil: düğme metnin YANINDA satır içinde
+   * duruyor ve dolgu eklemek çevresindeki hizalamayı kaydırırdı. `::after`
+   * yerleşimi hiç değiştirmiyor, yalnız düğmenin kendi tıklama alanını
+   * genişletiyor.
+   */
+  .hit-8 {
+    position: relative;
+  }
+  .hit-8::after {
+    content: "";
+    position: absolute;
+    inset: -8px;
+  }
   .option {
     border: 1.5px solid var(--border);
     background: var(--surface);
