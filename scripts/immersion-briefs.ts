@@ -7,7 +7,8 @@ import type { CefrLevel } from "../src/lib/skills/types";
  */
 const level = ((process.argv[2] as CefrLevel) || "A1");
 const course = process.argv[3] || "de";
-const briefs = unitBriefs(course, level);
+/* Şartname TÜRKÇE dökülüyor: içerik yazan kişinin dili bu, ekranınki değil. */
+const briefs = unitBriefs(course, level, "tr");
 
 console.log(`# ${course} ${level} — ${briefs.length} ünite içerik brief'i\n`);
 for (const b of briefs) {

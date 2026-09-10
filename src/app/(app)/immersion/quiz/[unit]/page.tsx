@@ -1,7 +1,8 @@
 import { notFound } from "next/navigation";
 import { getT, getLang } from "@/lib/i18n/server";
 import { courseName } from "@/lib/courses";
-import { unitBriefs } from "@/lib/immersion/brief";
+import { nativeUnitBriefs } from "@/lib/immersion/brief";
+import { localiseLesson } from "@/lib/lessons/native-server";
 import { deriveQuiz } from "@/lib/immersion/quiz";
 import { unitQuestions } from "@/lib/immersion/content";
 import type { CefrLevel, SkillQuestion } from "@/lib/skills/types";
@@ -42,7 +43,7 @@ export default async function ImmersionQuizPage({
   const index = Number.parseInt(num ?? "", 10);
   if (!course || !LEVELS.includes(level) || !Number.isInteger(index)) notFound();
 
-  const briefs = unitBriefs(course, level, lang);
+  const briefs = await nativeUnitBriefs(course, level, lang, (l) => localiseLesson(l, lang));
   const brief = briefs.find((b) => b.index === index);
   if (!brief) notFound();
 

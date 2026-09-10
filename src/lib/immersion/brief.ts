@@ -88,6 +88,34 @@ export function buildUnitBriefs(
   return briefs;
 }
 
+/**
+ * Brief'ler, dizeleri ÖĞRENCİNİN DİLİNE çevrilmiş derslerden.
+ *
+ * Ünite quiz'i ve dilbilgisi alıştırması sorularını brief'in kelime ve kalıp
+ * havuzundan kuruyor: soru kökü arayüz sözlüğünden geliyor ama ŞIKLAR
+ * `v.tr`/`p.tr`, yani dersin anadil yüzü. Ham dersten kurulduğunda o yüz
+ * Türkçe kalıyordu ve anadili İngilizce ya da Almanca olan kullanıcı Türkçe
+ * şıklar arasında seçim yapıyordu — soruyu anladığı hâlde cevaplayamıyordu.
+ *
+ * ÇEVİRİYİ ÇAĞIRAN VERİYOR. Sözlük yükleyicisi sunucuya bağlı
+ * (`native-server.ts`, `import "server-only"`); bu dosya saf kalmalı ki
+ * `test:track` onu veritabanısız koşturabilsin. Çözülemeyen ders OLDUĞU GİBİ
+ * geçiyor — hep-ya-hiç kuralı ders başına, havuz başına değil.
+ */
+export async function nativeUnitBriefs(
+  course: string,
+  level: CefrLevel,
+  lang: NativeLang,
+  localise: (lesson: Lesson) => Promise<Lesson>,
+): Promise<UnitBrief[]> {
+  const lessons = await Promise.all(
+    lessonsFor(course)
+      .filter((l) => l.level === level)
+      .map(localise),
+  );
+  return buildUnitBriefs(course, level, lessons, lang);
+}
+
 /** DB'siz sarmalayıcı: seviyenin derslerini katalogdan alıp brief'leri kurar. */
 export function unitBriefs(course: string, level: CefrLevel, lang: NativeLang): UnitBrief[] {
   const lessons = lessonsFor(course).filter((l) => l.level === level);

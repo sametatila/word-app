@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import { getT, getLang } from "@/lib/i18n/server";
-import { unitBriefs } from "@/lib/immersion/brief";
+import { nativeUnitBriefs } from "@/lib/immersion/brief";
+import { localiseLesson } from "@/lib/lessons/native-server";
 import { unitQuestions } from "@/lib/immersion/content";
 import { deriveGrammar } from "@/lib/immersion/grammar";
 import { mockBoolLabels } from "@/lib/mock-exams/types";
@@ -40,7 +41,12 @@ export default async function ImmersionGrammarPage({ params }: { params: Promise
   const course = parts.join("-");
   const level = levelRaw.toUpperCase() as CefrLevel;
   const index = Number.parseInt(num ?? "", 10);
-  const brief = course && LEVELS.includes(level) ? unitBriefs(course, level, lang).find((b) => b.index === index) : undefined;
+  const brief =
+    course && LEVELS.includes(level)
+      ? (await nativeUnitBriefs(course, level, lang, (l) => localiseLesson(l, lang))).find(
+          (b) => b.index === index,
+        )
+      : undefined;
 
   let questions = authored?.grammar ?? [];
   if (!questions.length && course && LEVELS.includes(level) && Number.isInteger(index)) {

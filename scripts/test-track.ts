@@ -194,7 +194,7 @@ const briefLessons = [
   bl(3, [["Beruf", "meslek"]], [["Ich bin …", "…yim"]], ["a1.self.introduce"]),
   bl(4, [["Hobby", "hobi"]], [["Ich mag …", "…severim"]], ["a1.self.hobby"]),
 ];
-const briefs = buildUnitBriefs("de", "A1", briefLessons);
+const briefs = buildUnitBriefs("de", "A1", briefLessons, "tr");
 check("4 ders → 1 brief", briefs.length === 1);
 check("brief teması modülden (Tanışma ve ben)", briefs[0].theme === "Tanışma ve ben");
 check("brief vocab de'ye göre tekil (Name bir kez)", briefs[0].vocab.length === 5 && briefs[0].vocab.filter((v) => v.de === "Name").length === 1);
