@@ -2155,6 +2155,51 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   sameList("yerelsiz harf cevirisi", kacak.length ? kacak : ["yok"], ["yok"], "bulunan", "beklenen");
 }
 
+/* ── 52. kullanici sikayeti: sebepler sunucununkiyle ayni ────────────────
+ * `/api/social/reports` dort sebep kabul ediyor (`REPORT_REASONS`) ve iki
+ * yuzey de kendi listesini ELLE yaziyor. Mobil ucunu yaziyordu: sikayeti bu
+ * uce girmeyen kullanicinin bildirebilecegi hicbir yol kalmiyordu ve eksik
+ * bir sebep, o sikayetin hic gelmemesi demek. Kapi ucunu de sunucunun
+ * listesiyle esliyor. */
+{
+  const sunucu = (() => {
+    const m = read("src/lib/social/types.ts").match(/REPORT_REASONS = \[([^\]]*)\]/);
+    return m ? [...m[1].matchAll(/"([^"]+)"/g)].map((x) => x[1]).sort() : ["bulunamadi"];
+  })();
+  const mobil = [...read("mobile/src/screens/UserScreen.tsx").matchAll(/social\.report\(u\.userId,\s*"([^"]+)"\)/g)].map((m) => m[1]).sort();
+  const web = (() => {
+    const src = read("src/components/social/public-profile.tsx");
+    const blok = src.slice(src.indexOf('["spam"'), src.indexOf("].map((["));
+    return [...blok.matchAll(/\["([a-z]+)",/g)].map((m) => m[1]).sort();
+  })();
+  sameSet("sikayet sebepleri (mobil)", mobil, sunucu, "mobil", "sunucu");
+  sameSet("sikayet sebepleri (web)", web, sunucu, "web", "sunucu");
+}
+
+/* ── 53. bildirim satiri nereye goturur ───────────────────────────────────
+ * Iki yuzey de bildirim turunu ELLE bir hedefe esliyor ve ikisinin de bir
+ * `default` dali var - yani listeye yeni bir tur eklendiginde hicbir sey
+ * kirilmiyor, satir sessizce akisa goturuyor. `league_up` tam olarak boyle
+ * kacmisti: "bir ust lige ciktin" bildirimi webde akisa gidiyordu, satirin
+ * anlattigi seyin bulundugu yere degil. Kapi ACIKCA ele alinan turleri iki
+ * tarafta esliyor. */
+{
+  const daller = (p, imza) => {
+    const src = read(p).replace(/\/\*[\s\S]*?\*\//g, " ").replace(/\/\/[^\n]*/g, " ");
+    const i = src.indexOf(imza);
+    if (i < 0) return ["bulunamadi: " + imza];
+    const govde = src.slice(i, src.indexOf("\n}", i));
+    return [...new Set([...govde.matchAll(/case "([a-z_]+)":/g)].map((m) => m[1]))].sort();
+  };
+  sameSet(
+    "bildirim yonlendirmesi",
+    daller("mobile/src/screens/InboxScreen.tsx", "function open(n: NotificationView)"),
+    daller("src/components/social/inbox.tsx", "function hrefFor(n: NotificationView)"),
+    "mobil",
+    "web",
+  );
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"

@@ -24,6 +24,12 @@ function hrefFor(n: NotificationView): string {
       return "/friends?tab=quests";
     case "nudge":
       return "/learn";
+    /* LIG YUKSELISI SIRALAMAYA GIDIYOR. Bu tur `default`a düşüyordu, yani
+       "bir üst lige çıktın" bildirimi akışa götürüyordu - satırın anlattığı
+       şeyin bulunduğu yere değil. Android doğru yere götürüyor
+       (`InboxScreen` `open`). */
+    case "league_up":
+      return "/leaderboard";
     default:
       return "/friends?tab=feed";
   }

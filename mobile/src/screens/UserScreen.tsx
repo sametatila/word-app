@@ -164,10 +164,17 @@ export function UserScreen() {
                   { text: t("common.discard"), style: "cancel" },
                   { text: t("user.block"), style: "destructive", onPress: () => void act(async () => { await social.block(u.userId); nav.goBack(); }, t("user.blocked_done")) },
                 ])} />
+                {/* DÖRDÜNCÜ SEBEP. Sunucu dört sebep kabul ediyor
+                    (`REPORT_REASONS`: spam, abuse, impersonation, other) ve
+                    web dördünü de sunuyor; mobil üç tanesini yazıyordu. Şikayeti
+                    bu üçe girmeyen kullanıcının bildirebileceği hiçbir yol
+                    kalmıyordu - moderasyon yüzeyinde eksik bir sebep, o
+                    şikayetin hiç gelmemesi demek. */}
                 <Pill label={t("user.report")} tone="ghost" disabled={busy} onPress={() => Alert.alert(t("user.report_reason"), undefined, [
                   { text: t("user.report_spam"), onPress: () => void act(() => social.report(u.userId, "spam"), t("user.report_done")) },
                   { text: t("user.report_abuse"), onPress: () => void act(() => social.report(u.userId, "abuse"), t("user.report_done")) },
                   { text: t("user.report_fake"), onPress: () => void act(() => social.report(u.userId, "impersonation"), t("user.report_done")) },
+                  { text: t("report.something_else"), onPress: () => void act(() => social.report(u.userId, "other"), t("user.report_done")) },
                   { text: t("common.discard"), style: "cancel" },
                 ])} />
               </View>

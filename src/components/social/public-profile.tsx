@@ -88,12 +88,15 @@ export function PublicProfile({ data, me }: { data: PublicProfileView; me: strin
                 </button>
                 <button className="btn btn-ghost h-9 px-3 text-xs" disabled={busy} onClick={() => void act(() => social.inviteQuest(u.userId), t("social.quest_sent"))}>
                   <TargetIcon size={14} />
-                  <span className="ml-1">{t("socialw.shared_quest")}</span>
+                  <span className="ml-1">{t("user.task")}</span>
                 </button>
               </>
             ) : null}
+            {/* Etiket AÇIK: "Daha fazla" ne olduğunu söylemiyordu ve açılan
+                şey engelleme/şikayet gibi geri dönüşü olan bir seçim değil.
+                Android iki durumu da adıyla yazıyor. */}
             <button className="muted ml-auto text-[11px]" onClick={() => setMore((m) => !m)} aria-expanded={more}>
-              {t("socialw.more")}
+              {t(more ? "user.hide" : "user.block_or_report")}
             </button>
           </div>
         ) : null}
@@ -135,9 +138,9 @@ export function PublicProfile({ data, me }: { data: PublicProfileView; me: strin
           <Stat label={t("user.day_streak")} value={data.stats.currentStreak} icon={<FlameIcon size={14} />} tone="var(--color-flame)" />
           <Stat label={t("user.xp_this_week")} value={data.stats.weeklyXp} tone="var(--color-brand)" />
           <Stat label={t("user.total_xp")} value={data.stats.totalXp} tone="var(--color-brand)" />
-          <Stat label={t("socialw.stat_longest")} value={data.stats.longestStreak} tone="var(--color-flame)" />
+          <Stat label={t("user.longest_streak")} value={data.stats.longestStreak} tone="var(--color-flame)" />
           <Stat label={t("user.badge")} value={data.stats.achievements} icon={<TrophyIcon size={14} />} tone="var(--color-violet)" />
-          <Stat label={t("socialw.stat_last_active")} text={data.stats.lastActiveDay ? new Date(`${data.stats.lastActiveDay}T00:00:00`).toLocaleDateString(localeOf(lang), { day: "numeric", month: "short" }) : "—"} tone="var(--text-muted)" />
+          <Stat label={t("user.last_active")} text={data.stats.lastActiveDay ? new Date(`${data.stats.lastActiveDay}T00:00:00`).toLocaleDateString(localeOf(lang), { day: "numeric", month: "short" }) : "—"} tone="var(--text-muted)" />
         </section>
       ) : (
         /* Başlık ve gövde ROLLERİ karışmıştı: web `user.private_profile`i
