@@ -239,15 +239,30 @@ export function resolveLesson(dict: NativeDict, lesson: Lesson): Lesson | null {
       for (const r of t.replies ?? []) {
         const sayTr = dict.script[r.sayTr];
         if (sayTr === undefined) return null;
-        replies.push({ ...r, sayTr, say: sw(r.say) });
+        replies.push({ ...r, sayTr: swapEn(dict, lesson.id, sayTr), say: sw(r.say) });
       }
       let fallback = t.fallback;
       if (fallback) {
         const sayTr = dict.script[fallback.sayTr];
         if (sayTr === undefined) return null;
-        fallback = { ...fallback, sayTr, say: sw(fallback.say) };
+        /* `example` de Almanca ve öğrencinin söyleyeceği örnek cevap —
+           replik takas edilip örnek eski kalırsa ikisi çelişir. */
+        const ex = (fallback as { example?: string }).example;
+        fallback = {
+          ...fallback,
+          sayTr: swapEn(dict, lesson.id, sayTr),
+          say: sw(fallback.say),
+          ...(ex ? { example: sw(ex) } : {}),
+        };
       }
-      turns.push({ ...t, ask: sw(t.ask), askTr, cue, replies, fallback });
+      turns.push({
+        ...t,
+        ask: sw(t.ask),
+        askTr: swapEn(dict, lesson.id, askTr),
+        cue: swapEn(dict, lesson.id, cue),
+        replies,
+        fallback,
+      });
     }
     script = turns;
   }
@@ -268,6 +283,10 @@ export function resolveLesson(dict: NativeDict, lesson: Lesson): Lesson | null {
       ...lesson.roleplay,
       ...(rp ?? {}),
       ...(lesson.roleplay?.opening ? { opening: sw(lesson.roleplay.opening) } : {}),
+      /* Açılış repliğinin ANA DİLDEKİ karşılığı da takas ediliyor: Almancası
+         "Du bist also in Manchester aufgewachsen?" olup altındaki İngilizce
+         "So you grew up in Izmir?" kalsaydı ikisi birbirini yalanlardı. */
+      ...(rp?.openingTr ? { openingTr: swapEn(dict, lesson.id, rp.openingTr) } : {}),
       ...(script ? { script } : {}),
     },
     lecture,

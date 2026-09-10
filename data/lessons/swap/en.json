@@ -1,56 +1,215 @@
 [
   {
     "lesson": "de-a1-woher",
-    "why": "Adım 19 cevabı ÖĞRENCİYE atfediyor: 'Ülke söylüyorsan … şehir söylüyorsan … dersin.' Örnek değil, öğrencinin kendi cümlesi. Artikelli ülke kalıbı (aus der Türkei) bu derste öğretilmiyor — de-a1-hallo'da öğretiliyor ve orası olduğu gibi duruyor.",
+    "why": "Adım 19 cevabı ÖĞRENCİYE atfediyor: 'Ülke söylüyorsan … şehir söylüyorsan … dersin.' Örnek değil, öğrencinin kendi cümlesi. Artikelli ülke kalıbı (aus der Türkei) bu derste öğretilmiyor — de-a1-hallo'da öğretiliyor ve orası olduğu gibi duruyor. Senaryonun örnek cevabı da öğrencinin kendi cümlesi — `example` alanı çevrilmiyor ama takas ediliyor.",
     "de": [
-      ["Ich komme aus der Türkei.", "Ich komme aus England."],
-      ["Ich wohne in Izmir.", "Ich wohne in Manchester."]
+      [
+        "Ich komme aus der Türkei.",
+        "Ich komme aus England."
+      ],
+      [
+        "Ich wohne in Izmir.",
+        "Ich wohne in Manchester."
+      ],
+      [
+        "Ich komme aus der Türkei. Und du?",
+        "Ich komme aus England. Und du?"
+      ]
     ],
     "en": []
   },
   {
     "lesson": "de-a1-alter",
-    "why": "'Üçüncü kalıbımız DOĞUM YERİN için' — cümle öğrencinin kendi doğum yeri. Şehir ortada, 'geboren' sonda: yapı değişmiyor.",
+    "why": "'Üçüncü kalıbımız DOĞUM YERİN için' — cümle öğrencinin kendi doğum yeri. Şehir ortada, 'geboren' sonda: yapı değişmiyor. Senaryonun örnek cevabı anlatımdan başka bir şehir kullanıyordu (Istanbul); İngilizce tarafta ders içinde tek şehirde kalınıyor.",
     "de": [
-      ["Ich bin in Izmir geboren.", "Ich bin in Manchester geboren."],
-      ["Ich bin in Izmir geboren", "Ich bin in Manchester geboren"]
+      [
+        "Ich bin in Izmir geboren.",
+        "Ich bin in Manchester geboren."
+      ],
+      [
+        "Ich bin in Izmir geboren",
+        "Ich bin in Manchester geboren"
+      ],
+      [
+        "Ich bin in Istanbul geboren.",
+        "Ich bin in Manchester geboren."
+      ]
     ],
     "en": []
   },
   {
     "lesson": "de-a1-sprachen",
-    "why": "Ders öğrenciye KENDİ dillerini saymayı öğretiyor; 'Türkisch' hem sözlükçe maddesi hem de cevabın içinde. İngilizce konuşana Türkçe bildiğini söyletmek dersin amacını tersine çeviriyor. Sözlükçe karşılığı da birlikte dönüyor, yoksa kart 'Englisch → Turkish' derdi.",
+    "why": "Ders öğrenciye KENDİ dillerini saymayı öğretiyor; 'Türkisch' hem sözlükçe maddesi hem cevabın içinde. İngilizce konuşana Türkçe bildiğini söyletmek dersin amacını tersine çeviriyor. Sözlükçe karşılığı da birlikte dönüyor, yoksa kart 'Englisch → Turkish' derdi.\n\nSENARYODA TAKAS BİRİMİ REPLİK, KELİME DEĞİL. 'Türkisch'i tek tek 'Englisch' yapmak konuşmayı bozuyordu: muhatap zaten 'ich spreche Spanisch und Englisch' diyor ve arkasından 'Sprichst du auch Englisch?' diye soruyor — İngilizce konuşana sorulacak en anlamsız soru. Replikler birbirini kısıtladığı için birim replik oldu: karşı taraf artık İspanyolcayı soruyor, öğrenci İngilizceyi geri soruyor ve kapanışta 'Danke'nin İngilizcesi isteniyor.",
     "de": [
-      ["Türkisch", "Englisch"],
-      ["Ja, ich spreche Türkisch und ein bisschen Deutsch.", "Ja, ich spreche Englisch und ein bisschen Deutsch."],
-      ["Ich spreche Türkisch und ein bisschen Deutsch", "Ich spreche Englisch und ein bisschen Deutsch"]
+      [
+        "Türkisch",
+        "Englisch"
+      ],
+      [
+        "Ja, ich spreche Türkisch und ein bisschen Deutsch.",
+        "Ja, ich spreche Englisch und ein bisschen Deutsch."
+      ],
+      [
+        "Ich spreche Türkisch und ein bisschen Deutsch",
+        "Ich spreche Englisch und ein bisschen Deutsch"
+      ],
+      [
+        "Toll! Und ich spreche Spanisch und Englisch. Sprichst du auch Englisch?",
+        "Toll! Und ich spreche Spanisch und Englisch. Sprichst du auch Spanisch?"
+      ],
+      [
+        "Welche Sprachen? Türkisch, Englisch …?",
+        "Welche Sprachen? Englisch, Spanisch …?"
+      ],
+      [
+        "Ich spreche Türkisch und ein bisschen Englisch.",
+        "Ich spreche Englisch und ein bisschen Spanisch."
+      ],
+      [
+        "Sprichst du auch Englisch?",
+        "Sprichst du auch Spanisch?"
+      ],
+      [
+        "Nein, leider kein Türkisch! Wo lernst du Deutsch?",
+        "Englisch schon, aber wir üben Deutsch! Wo lernst du Deutsch?"
+      ],
+      [
+        "Englisch — ja oder nein?",
+        "Spanisch — ja oder nein?"
+      ],
+      [
+        "Ja, ein bisschen. Sprichst du Türkisch?",
+        "Ja, ein bisschen. Sprichst du Englisch?"
+      ],
+      [
+        "Gut, dann bleiben wir bei Deutsch. Wie sagt man Danke auf Türkisch?",
+        "Gut, dann bleiben wir bei Deutsch. Wie sagt man Danke auf Englisch?"
+      ],
+      [
+        "Wie sagt man Danke auf Türkisch?",
+        "Wie sagt man Danke auf Englisch?"
+      ],
+      [
+        "Wie sagt man das auf Türkisch?",
+        "Wie sagt man das auf Englisch?"
+      ],
+      [
+        "Auf Türkisch sagt man teşekkürler.",
+        "Auf Englisch sagt man thank you."
+      ]
     ],
     "en": [
-      ["Turkish", "English"],
-      ["It means 'Turkish'. Please say", "It means 'English'. Please say"],
-      ["That is, 'Yes, I speak Turkish and a little German.'", "That is, 'Yes, I speak English and a little German.'"]
+      [
+        "Turkish",
+        "English"
+      ],
+      [
+        "It means 'Turkish'. Please say",
+        "It means 'English'. Please say"
+      ],
+      [
+        "That is, 'Yes, I speak Turkish and a little German.'",
+        "That is, 'Yes, I speak English and a little German.'"
+      ],
+      [
+        "List your languages: Ich spreche Türkisch und …",
+        "List your languages: Ich spreche Englisch und …"
+      ],
+      [
+        "Wonderful! I speak Spanish and English. Do you speak English too?",
+        "Wonderful! I speak Spanish and English. Do you speak Spanish too?"
+      ],
+      [
+        "Which languages? Turkish, English…?",
+        "Which languages? English, Spanish…?"
+      ],
+      [
+        "Do you speak English too?",
+        "Do you speak Spanish too?"
+      ],
+      [
+        "Say yes or no and ask them: Sprichst du Türkisch?",
+        "Say yes or no and ask them: Sprichst du Englisch?"
+      ],
+      [
+        "No, I am afraid I do not know Turkish! Where are you learning German?",
+        "English yes, but we are practising German! Where are you learning German?"
+      ],
+      [
+        "English — yes or no?",
+        "Spanish — yes or no?"
+      ],
+      [
+        "Good, German it is then. How do you say Danke in Turkish?",
+        "Good, German it is then. How do you say Danke in English?"
+      ],
+      [
+        "How do you say Danke in Turkish?",
+        "How do you say Danke in English?"
+      ],
+      [
+        "Say it in Turkish and explain briefly",
+        "Say it in English and explain briefly"
+      ],
+      [
+        "How do you say that in Turkish?",
+        "How do you say that in English?"
+      ]
     ]
   },
   {
     "lesson": "de-b1-als-wenn",
     "why": "Rol yapma açılışı öğrenciye bir OLGU söylüyor: 'Du bist also in Izmir aufgewachsen?' Model, öğrencinin çocukluğunu nerede geçirdiğini iddia ediyor. Anlatımdaki tekrar cümlesi de aynı biyografiyi kuruyor.",
     "de": [
-      ["Als ich ein Kind war, wohnten wir in Izmir", "Als ich ein Kind war, wohnten wir in Manchester"],
-      ["Du bist also in Izmir aufgewachsen? Wie war deine Kindheit dort? Erzähl mal von damals.", "Du bist also in Manchester aufgewachsen? Wie war deine Kindheit dort? Erzähl mal von damals."]
+      [
+        "Als ich ein Kind war, wohnten wir in Izmir",
+        "Als ich ein Kind war, wohnten wir in Manchester"
+      ],
+      [
+        "Du bist also in Izmir aufgewachsen? Wie war deine Kindheit dort? Erzähl mal von damals.",
+        "Du bist also in Manchester aufgewachsen? Wie war deine Kindheit dort? Erzähl mal von damals."
+      ]
     ],
     "en": [
-      ["a one-off event or period in the past: 'Als ich ein Kind war, wohnten wir in Izmir.' Childhood is a single period → als.", "a one-off event or period in the past: 'Als ich ein Kind war, wohnten wir in Manchester.' Childhood is a single period → als."]
+      [
+        "a one-off event or period in the past: 'Als ich ein Kind war, wohnten wir in Izmir.' Childhood is a single period → als.",
+        "a one-off event or period in the past: 'Als ich ein Kind war, wohnten wir in Manchester.' Childhood is a single period → als."
+      ],
+      [
+        "So you grew up in Izmir? What was your childhood like there? Tell me about those days.",
+        "So you grew up in Manchester? What was your childhood like there? Tell me about those days."
+      ]
     ]
   },
   {
     "lesson": "de-b1-sprache-akzent",
     "why": "TAKAS DEĞİL DÜZELTME. 'Türkisch und Deutsch sind nicht verwandt' İngilizce öğrenci için YANLIŞ: İngilizce ile Almanca akraba diller. Alıştırmanın ölçtüğü şey çoğul öznede yüklem sıfatının çekilmemesi ve o iki cümlede de aynı; olumsuzluk kalkınca ölçüm bozulmuyor, hatta cümle öğrenciye işine yarayan bir olgu söylüyor.",
     "de": [
-      ["Türkisch und Deutsch sind nicht verwandt.", "Englisch und Deutsch sind verwandt."],
-      ["Türkisch und Deutsch sind nicht verwandt", "Englisch und Deutsch sind verwandt"]
+      [
+        "Türkisch und Deutsch sind nicht verwandt.",
+        "Englisch und Deutsch sind verwandt."
+      ],
+      [
+        "Türkisch und Deutsch sind nicht verwandt",
+        "Englisch und Deutsch sind verwandt"
+      ]
     ],
     "en": [
-      ["Last: 'Turkish and German are not related languages.'", "Last: 'English and German are related languages.'"]
+      [
+        "Last: 'Turkish and German are not related languages.'",
+        "Last: 'English and German are related languages.'"
+      ]
     ]
+  },
+  {
+    "lesson": "de-a1-du-oder-sie",
+    "why": "Rol yapmanın yedek örnek cevabı öğrencinin KENDİ cevabı: 'Aus welchem Land kommen Sie?' sorusuna model. Bu ders artikelli ülke kalıbını ÖĞRETMİYOR (de-a1-hallo öğretiyor), o yüzden burada artikeli korumak gerekmiyor. AYNI DİZE de-a1-hallo'da da var ve orada DEĞİŞMİYOR — anahtarın derse bağlı olmasının sebebi bu: aynı cümle bir derste öğretilen kalıp, ötekinde öğrenciye atfedilen cevap.",
+    "de": [
+      [
+        "Ich komme aus der Türkei.",
+        "Ich komme aus England."
+      ]
+    ],
+    "en": []
   }
 ]
