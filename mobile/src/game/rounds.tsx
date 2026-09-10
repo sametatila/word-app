@@ -83,7 +83,7 @@ function ExampleBlock({ de, tr, en, colors }: { de: string | null; tr: string | 
     <View style={{ marginTop: spacing.sm }}>
       {d ? <Text variant="body" color={colors.text} style={{ fontStyle: "italic" }}>{d}</Text> : null}
       {t ? <Text variant="caption" color={colors.textMuted} style={{ marginTop: 3 }}>{t}</Text> : null}
-      {e ? <Text variant="body" color={colors.textFaint} style={{ marginTop: 1, fontSize: 12 }}>{e}</Text> : null}
+      {e ? <Text variant="caption" color={colors.textFaint} style={{ marginTop: 1 }}>{e}</Text> : null}
     </View>
   );
 }
@@ -926,7 +926,7 @@ function MatchCard({ text, sub, state, onPress, colors }: { text: string; sub?: 
     <Animated.View style={{ transform: [{ translateX: shake }] }}>
       <PressableScale onPress={onPress} disabled={state === "correct"} accessibilityLabel={sub ? `${text}, ${sub}` : text} accessibilityState={{ selected: state === "sel", disabled: state === "correct" }} style={{ borderWidth: 1.5, borderColor: border, backgroundColor: bg, borderRadius: radii.lg, paddingVertical: spacing.md, paddingHorizontal: spacing.md, opacity: state === "correct" ? 0.5 : 1, minHeight: 60, justifyContent: "center" }}>
         <Text variant="bodyStrong" color={colors.text}>{text}</Text>
-        {sub ? <Text variant="body" color={colors.textMuted} style={{ fontSize: 12 }}>{sub}</Text> : null}
+        {sub ? <Text variant="caption" color={colors.textMuted}>{sub}</Text> : null}
       </PressableScale>
     </Animated.View>
   );

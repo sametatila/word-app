@@ -2,6 +2,7 @@ import React from "react";
 import { Text as RNText, View } from "react-native";
 import { t } from "../lib/i18n";
 import { useTheme } from "../theme";
+import { Text } from "./Text";
 import type { TokenMark } from "../lib/sentenceMatch";
 
 /**
@@ -91,14 +92,22 @@ export function SentenceFeedback({ verdictKey, target, typed, showTyped }: { ver
   const { colors } = useTheme();
   return (
     <View>
-      <RNText style={{ color: colors.text, fontSize: 15, lineHeight: 21 }}>
+      {/*
+        ÖLÇEKTEN, ELLE PUNTODAN DEĞİL. Bu iki satır ham `RNText` ile
+        yazılmıştı ve iki şeyi birden atlıyordu: punto ölçeği (13, ölçekte
+        olmayan bir değer - `caption` 12.5) ve sistem yazı ölçeği sınırı.
+        `Text` bileşeni `maxFontSizeMultiplier`ı 1.5'te tutuyor; ham `RNText`
+        tutmuyor, yani kullanıcı yazıyı 2x'e aldığında bu iki satır ötekiler
+        sabit kalırken büyümeye devam ediyordu.
+      */}
+      <Text variant="body" style={{ lineHeight: 21 }}>
         {t(verdictKey)}{" "}
         <TokenDiff tokens={target} />
-      </RNText>
+      </Text>
       {showTyped ? (
-        <RNText style={{ marginTop: 4, color: colors.textMuted, fontSize: 13, lineHeight: 18 }}>
+        <Text variant="caption" color={colors.textMuted} style={{ marginTop: 4, lineHeight: 18 }}>
           {t("rounds.you_wrote")} <TypedTokens tokens={typed} />
-        </RNText>
+        </Text>
       ) : null}
     </View>
   );

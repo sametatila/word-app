@@ -2680,3 +2680,53 @@ ve 1.47), açıklama metni için 20 (12.5 punto üstünde 1.60, webin caption'ı
 parçası değil. Ölçeğe taşımak metin yoğunluğunu her ekranda değiştirir ve
 sonucu yalnız iki uygulamayı yan yana görerek yargılanabilir - Sametin
 kararı, benim ölçebileceğim bir şey değil.
+
+### 11.47 Punto ölçeğini atlayan yerler — ve girdi puntosunun envanteri
+
+Sistem yazı ölçeği davranışı iki platformda karşılaştırılamıyor ve bu
+beklenen: mobil `Text` sistem ölçeğini 1.5 katla sınırlıyor
+(`maxFontSizeMultiplier`, gerekçesi 2x'te kırpılan sabit yükseklikli tur
+kartları); webde `rem` tabanı tarayıcı yazı ayarını kendiliğinden taşıyor ve
+onu sınırlamak WCAG'ın %200 metin gereğini ihlal ederdi. Karşılaştırma
+konusu değil.
+
+Ama ölçmeye devam edince ÖLÇEĞİ ATLAYAN yerler çıktı.
+
+**a) `TokenDiff` ham `RNText` kullanıyordu — kendi eklediğim kod.** Cümle
+geri bildiriminin iki satırı `<RNText style={{ fontSize: 15 }}>` ve
+`fontSize: 13` yazıyordu. İki şeyi birden atlıyordu: punto ölçeğini (13
+ölçekte yok - `caption` 12.5) ve sistem yazı ölçeği sınırını. `Text` bileşeni
+`maxFontSizeMultiplier`ı 1.5'te tutuyor, ham `RNText` tutmuyor - yani
+kullanıcı yazıyı 2x'e aldığında bu iki satır ötekiler sabit kalırken büyümeye
+devam ediyordu. `Text` bileşenine ve `body`/`caption` varyantlarına alındı.
+
+**b) İki `variant` üstüne elle punto biniyordu.** `rounds.tsx`te iki satır
+`variant="body"` deyip `fontSize: 12` ile eziyordu; 12 ölçekte yok. `caption`
+(12.5) ile değiştirildi - yarım punto fark, ama artık ölçeğin içinde ve
+varyantın ağırlığını da (600) doğru alıyor.
+
+**c) Girdi puntosu: envanter çıkarıldı, DÜZELTİLMEDİ.**
+
+    yuvarlaklık  punto  yer
+    -            16     AuthScreen, Find
+    md (14)      16     SettingsScreen, DeleteAccountScreen, SocialSettings
+    lg (20)      16     LessonScreen (ders yazma alanı)
+    md (14)      15     skillQuiz (5), ExamScreen (2)
+    lg (20)      15     WordsScreen, skillLibrary
+    lg (20)      18     rounds (3) - tur cevap alanları
+
+Webde `.input` tek bir kural: punto `--text-body` (15), yarıçap
+`--radius-panel` (20). Ama webin kendisi de her yüzeyde eziyor - ders yazma
+alanı `text-sm` (14) yazıyor.
+
+İki gerçek eşleşme var ve ikisi de doğru çıktı: tur cevap alanları iki
+tarafta da 18 (webde `text-lg`), ve ölçeğin gövde puntosu iki tarafta 15.
+Ama ORDİNARY girdilerde ne Android'in ne webin tek bir cevabı var - Android
+15 ve 16'yı, web 15 ve 14'ü yan yana taşıyor; yuvarlaklık da mobilde
+`md`/`lg` arasında bölünmüş, webde tek başına 20.
+
+Bu yüzden düzeltilmedi: "Android'de şu var" diye izlenecek bir değer yok,
+onaltı girdinin puntosunu ve yuvarlaklığını tek değere çekmek bir düzine
+ekranın görünümünü değiştirir ve hangi değerin doğru olduğu ölçümle değil
+bakışla kararlaştırılır. Envanter Samet karar verince tek turda uygulanacak
+biçimde burada duruyor.
