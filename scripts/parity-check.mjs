@@ -2376,6 +2376,28 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   sameSet("sinav sonucu alanlari", web, [...mobil, ...KAYITLI_DUSEN].sort(), "sunucu", "mobil + kayitli dusen");
 }
 
+/* ── 59. sinav kacanlari hangi bolumlerden toplaniyor ─────────────────────
+ * Sonuc ekranindaki kirilim, sinavin OGRETEN kismi: yuzde neyi kacirdigini
+ * soylemiyor. Iki taraf da kacanlari cevap noktalarinda elle biriktiriyor ve
+ * unutulan bolum sessizce kirilimin disinda kaliyor - mobilde bastan beri
+ * hicbiri yoktu (11.123). Kapi iki tarafin da hangi bolumler icin kayit
+ * actigini esliyor. */
+{
+  const bolumler = (p) => {
+    const src = read(p).replace(/\/\*[\s\S]*?\*\//g, " ").replace(/\/\/[^\n]*/g, " ");
+    return [...new Set([...src.matchAll(/section:\s*"([a-z]+)"/g)].map((m) => m[1]))].sort();
+  };
+  /* Okuma ve dinleme IKI TARAFTA da tek cagriyla bildiriliyor: bolum kimligi
+     degiskenden geliyor (`section: id` / `section: kind`), yani dizgi olarak
+     dosyada yok. Desen goruldugunde ikisi de listeye ekleniyor. */
+  const tam = (p) => {
+    const src = read(p).replace(/\/\*[\s\S]*?\*\//g, " ").replace(/\/\/[^\n]*/g, " ");
+    const dinamik = /section:\s*(id|kind)\b/.test(src) ? ["reading", "listening"] : [];
+    return [...new Set([...bolumler(p), ...dinamik])].sort();
+  };
+  sameSet("sinav kacan bolumleri", tam("mobile/src/screens/ExamScreen.tsx"), tam("src/components/exam-player.tsx"), "mobil", "web");
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"
