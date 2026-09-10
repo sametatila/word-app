@@ -35,5 +35,17 @@ export function UserActionButton({ userId, relation, friendshipId, canRequest = 
   } else {
     btn = <Pill label={t("useractionbutton.add")} icon={UserPlusIcon} small={small} disabled={busy || !canRequest} onPress={() => void run(async () => { const r = await social.request(userId); setFid(r.friendshipId); return r.state; })} />;
   }
-  return <View style={{ alignItems: "flex-end" }}>{btn}<ErrorText text={err} /></View>;
+  /*
+   * KAPALI DÜĞMENİN SEBEBİ YAZIYOR. Kişi istek kabul etmiyorsa pill sönük
+   * duruyordu ve kullanıcı neden basamadığını hiç öğrenemiyordu - dokunup
+   * hata almak bile mümkün değil, çünkü düğme kapalı. Web sebebi başlık
+   * balonunda söylüyor (`title`); mobilde balon yok, satır olarak yazılıyor.
+   */
+  return (
+    <View style={{ alignItems: "flex-end" }}>
+      {btn}
+      {!canRequest && state === "none" ? <Text variant="micro" color={colors.textMuted} style={{ marginTop: 4, textAlign: "right" }}>{t("social.err_requests_closed")}</Text> : null}
+      <ErrorText text={err} />
+    </View>
+  );
 }
