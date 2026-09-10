@@ -1,5 +1,6 @@
 /**
  * Paketi yazar: `node data/skills/task/write.mjs <paket> < satirlar.txt`
+ * Bir satır bir dize; çok satırlı dizeler için ayraç `%%` (aşağıda).
  *
  * Anahtar paket dosyasından kopyalanıyor; yazan taraf yalnız metni veriyor.
  * Sözlükçe hattında anahtarı elle yazınca elli maddenin otuz altısı
@@ -44,7 +45,17 @@ const packet = process.argv[2];
 if (!packet) throw new Error("paket adı gerekli");
 
 const src = JSON.parse(readFileSync(`${DIR}in/${packet}.json`, "utf8"));
-const lines = readFileSync(0, "utf8").split("\n").map((l) => l.trim()).filter(Boolean);
+const raw = readFileSync(0, "utf8");
+
+/* ÇOK SATIRLI DİZE. `task.stimulus` kaynakları satır sonu taşıyor — bir
+   e-posta taslağı, bir ilan, bir tablo. Orada "bir satır bir dize" kuralı
+   çalışmaz. Girdide tek başına `%%` duran bir satır varsa kayıt ayracı O
+   olur ve satır sonları dizenin İÇİNDE kalır; boş satır da korunur, çünkü
+   kaynakta paragraf ayracı o. `%%` yoksa eski davranış aynen sürüyor —
+   yirmi dört paket öyle yazıldı, onları bozmuyoruz. */
+const lines = /^%%$/m.test(raw)
+  ? raw.split(/^%%$/m).map((r) => r.replace(/^\s+|\s+$/g, "")).filter(Boolean)
+  : raw.split("\n").map((l) => l.trim()).filter(Boolean);
 
 if (lines.length !== src.words.length) {
   const flat = (t) => String(t).replace(/[„“”‚‘’]/g, '"').replace(/\s+/g, " ").trim();

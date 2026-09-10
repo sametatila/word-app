@@ -156,6 +156,27 @@ const evidence = (t: string, de?: string): string[] => {
 };
 
 /**
+ * ÖZEL AD DA KANITTIR. `task.stimulus` blokları Almanca bir metnin altına
+ * imza taşıyor — „Mit freundlichen Grüßen / Deniz Aydın“ — ve ad İngilizce
+ * tarafta AYNEN duruyor; "Aydin" yazan öğrenci formu geçemez. Addaki
+ * Türkçe harf bir çeviri kusuru değil, kaynağın kendisi.
+ *
+ * ÖLÇÜT DAR: kaynakta birebir geçen, BÜYÜK HARFLE başlayan ve Türkçeye
+ * ÖZGÜ harf taşıyan sözcük. Küçük harfli hiçbir şey elenmiyor, yani
+ * çevrilmeden kalmış bir Türkçe cümle hâlâ görünüyor — "Öğrencilerin
+ * adlarını bilirdi" sızarsa baştaki sözcük elense de "adlarını" kalır ve
+ * kapı kırmızı yanar.
+ *
+ * ÖLÇÜLDÜ: yazılmış 3693 dizenin 10'u böyle bir ad taşıyor (t-007'de
+ * „Sedef Aydın“ ve „Ayla Yıldız“) ve dokuzu kapıdan zaten geçiyordu —
+ * o dizelerin `row.de`'si formun cevaplarını taşıyor, ad oradan kanıt
+ * sayılıyordu. Yeni olan tek durum `de`'si boş olan blok: t-025'teki
+ * e-posta imzası. Kural o boşluğu kapatıyor, başka hiçbir dizeyi
+ * değiştirmiyor.
+ */
+const NAME = /(?<!\p{L})\p{Lu}[\p{L}'’-]*[ışğİĞŞçÇı][\p{L}'’-]*/gu;
+
+/**
  * KANITI çıkarır — yalnız onu. Yazım ve karakter denetimleri kalanı görür.
  *
  * İlk yazımda İngilizce taraftaki BÜTÜN tırnaklı ve parantezli açıklıklar
@@ -169,6 +190,7 @@ const evidence = (t: string, de?: string): string[] => {
 const strip = (en: string, tr: string, de?: string): string => {
   let out = en;
   for (const span of evidence(tr, de)) out = out.split(span).join(" ");
+  for (const w of tr.match(NAME) ?? []) out = out.split(w).join(" ");
   return out;
 };
 
@@ -198,7 +220,7 @@ if (existsSync(`${DIR}out`))
         if (a !== b) H(`sayılar uyuşmuyor: «${a}» → «${b}»`);
 
         for (const ch of strip(en, r.tr, row.de))
-          if (!/[ -~ÄÖÜäöüßé·×‚„“”‘’–—…→↔]/.test(ch))
+          if (!/[\n -~ÄÖÜäöüßé€·×‚„“”‘’–—…→↔]/.test(ch))
             H(`beklenmedik karakter: «${ch}» (U+${ch.codePointAt(0)?.toString(16).toUpperCase().padStart(4, "0")})`);
 
         for (const span of evidence(r.tr, row.de))

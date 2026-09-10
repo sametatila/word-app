@@ -22,7 +22,7 @@
  * çünkü türler arası bağlam sıçraması yazan tarafı yavaşlatıyor.
  *
  * KAPSAM DIŞI ve bilerek:
- *   `stimulus` / `sample` / `source`  öğrencinin okuyacağı ALMANCA metin
+ *   `sample`                          örnek cevap, Almanca
  *   `fields[].label`                  formun Almanca alan adı
  *   `genre`                           kapalı slug kümesi, arayüz sözlüğünde
  *   `gloss` / `phrases`               `en` alanı zaten dolu, çözücü katlıyor
@@ -75,6 +75,8 @@ export const KINDS = [
   "question.text",
   "question.option",
   "title",
+  "task.stimulus",
+  "task.source",
 ] as const;
 
 export type TaskKind = (typeof KINDS)[number];
@@ -162,6 +164,15 @@ export function extractTasks(): TaskRow[] {
     }
 
     for (const t of (e.tasks as Any[]) ?? []) {
+      /* `stimulus` ve `source` ÇOĞUNLUKLA Almanca (43 ve 189) ve öyle
+         kalıyor; azınlık Türkçe (21 brifing bloğu, 1 cümle) ve o kadarı
+         yazılıyor. Tür ayrımı gerekmiyor, çünkü ikisi de tek anlam
+         taşıyor — ayrımı dilin kendisi yapıyor. */
+      const stim = str(t.stimulus);
+      if (stim && isTurkishStem(stim)) add("task.stimulus", stim, at, undefined, str(t.prompt));
+      const src = str(t.source);
+      if (src && isTurkishStem(src)) add("task.source", src, at, str(t.answer) ?? str(t.de), str(t.prompt));
+
       // Söyleyiş drilinin `kind`ı YOK — konuşma egzersizinin görevleri tek
       // biçimde ve ayırıcı alan gerekmemiş.
       const k = str(t.kind);

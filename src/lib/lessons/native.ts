@@ -555,6 +555,8 @@ export function resolveExercise<T extends ExerciseShape>(dict: NativeDict, ex: T
     const kind = typeof x.kind === "string" ? x.kind : "drill";
     const out: TaskShape = { ...x };
     if (x.phrases) out.phrases = x.phrases.map(fold);
+    if (x.stimulus !== undefined) out.stimulus = stem("task.stimulus", x.stimulus);
+    if (x.source !== undefined) out.source = stem("task.source", x.source);
     if (kind === "drill") {
       out.tr = k("drill.tr", x.tr);
       out.hint = k("drill.hint", x.hint);
@@ -717,6 +719,15 @@ export type TaskShape = {
   prompt?: string;
   facts?: string;
   why?: string;
+  /**
+   * İkisi de ÇOĞUNLUKLA Almanca ve öyle kalıyor: `stimulus` öğrencinin
+   * okuduğu metin (43), `source` yeniden yazacağı cümle (189). Ama bir
+   * azınlık Türkçe — 21 brifing bloğu ("DURUM: … ELİNDEKİ VERİ: …") ve
+   * A1'de Almancaya çevrilecek tek bir Türkçe cümle. Ayrımı yine
+   * `isTurkishStem` yapıyor.
+   */
+  stimulus?: string;
+  source?: string;
   checklist?: string[];
   phrases?: GlossShape[];
   confusions?: { fix?: string }[];

@@ -58,7 +58,7 @@ const misses = new Map<string, { ex: string; n: number }>();
    maddesi `en` taşımıyordu ve 25 egzersiz birden düşüyordu. */
 const noEn = new Map<string, { de: string; ex: string }>();
 const bad: string[] = [];
-/** Çözüldükten SONRA hâlâ Türkçe görünen kök/şık/başlık → dize, egzersiz. */
+/** Çözüldükten SONRA hâlâ Türkçe görünen kök/şık/başlık/brifing → dize, egzersiz. */
 const leftover = new Map<string, string>();
 
 for (const e of list) {
@@ -84,7 +84,11 @@ for (const e of list) {
   const out = resolveExercise(
     dict,
     e as unknown as { intro: string; questions?: { explain: string }[] },
-  ) as { title?: string; questions?: { text?: string; options?: string[] }[] } | null;
+  ) as {
+    title?: string;
+    questions?: { text?: string; options?: string[] }[];
+    tasks?: { stimulus?: string; source?: string }[];
+  } | null;
   if (!out) {
     bad.push(e.id);
     continue;
@@ -102,6 +106,10 @@ for (const e of list) {
   for (const q of out.questions ?? []) {
     leak(q.text);
     (q.options ?? []).forEach(leak);
+  }
+  for (const t of out.tasks ?? []) {
+    leak(t.stimulus);
+    leak(t.source);
   }
 }
 
@@ -141,6 +149,6 @@ if (leftover.size) {
   process.exit(1);
 }
 console.log(
-  "\ntamam: her egzersizin yönergesi, açıklaması, soru kökü, şıkları ve" +
-    " başlığı İngilizceye çözülüyor",
+  "\ntamam: her egzersizin yönergesi, açıklaması, soru kökü, şıkları," +
+    " başlığı ve görev brifingi İngilizceye çözülüyor",
 );
