@@ -30,16 +30,19 @@ export default async function CourseSelectPage() {
   const user = await getUserInfo();
 
   let alreadyChosen = false;
-  let knownName = "";
   try {
     if (!user) throw new Error("misafir");
+    /*
+      Ad, hesabın kendi adından tamamlanıyor (`ensureProfile` ikinci argüman).
+      Bu ekran ismi ARTIK SORMUYOR: kayıt formu ve kimlik sağlayıcısı zaten
+      veriyor, iki yerden toplamak aynı bilgiyi iki kez sormaktı.
+
+      Bu yüzden koşulda da yok. `Boolean(profile?.displayName)` da aranıyordu
+      ve isimsiz bir profil buraya kilitleniyordu — ekran ismi sormadığı için
+      koşul hiç sağlanamazdı.
+    */
     const profile = await ensureProfile(user.id, user.name);
-    // Kurs seçilmiş olsa bile ismi olmayan hesap buraya gelir; ikisi birden
-    // tamamlanmadan uygulamaya geçilmiyor.
-    alreadyChosen = Boolean(profile?.courseChosenAt) && Boolean(profile?.displayName);
-    // Kimlik sağlayıcısından ad geldiyse alan dolu başlasın — kullanıcı
-    // bildiğimiz bir şeyi yeniden yazmak zorunda kalmamalı.
-    knownName = profile?.displayName ?? user.name ?? "";
+    alreadyChosen = Boolean(profile?.courseChosenAt);
   } catch {
     // Misafir ya da veritabanına ulaşılamıyor — ekran yine açılır.
   }
@@ -56,7 +59,7 @@ export default async function CourseSelectPage() {
         kullanıcıyı `/learn`e alıyor. Yani sihirbaz ikinci kez sorulmuyor.
       */}
       {user ? <OnboardingAdopt /> : null}
-      <CourseOnboarding initialName={knownName} signedIn={Boolean(user)} />
+      <CourseOnboarding signedIn={Boolean(user)} />
       {/*
         ÇIKIŞ KAPISI. Buraya düşen giriş yapmış kullanıcının başka çıkışı yoktu:
         Profil ekranı `(app)` düzeninin arkasında ve o düzen kursu seçilmemiş

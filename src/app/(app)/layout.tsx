@@ -32,10 +32,17 @@ export default async function AppLayout({ children }: { children: React.ReactNod
     voice = profile?.voice ?? null;
     name = profile?.displayName ?? user.name ?? null;
     nativeLang = profile?.nativeLang ?? null;
-    // Kurs hiç seçilmediyse (yeni kullanıcı) önce kurs/seviye ekranı gelir.
-    // İsmi olmayan hesaplar da buraya düşer: sıralamada "İsimsiz öğrenci"
-    // olarak görünmek yerine bir kez isim sorulur.
-    needsOnboarding = Boolean(profile) && (!profile.courseChosenAt || !profile.displayName);
+    /*
+      Kurs hiç seçilmediyse (yeni kullanıcı) önce kurs/seviye ekranı gelir.
+
+      İSİM ARTIK KAPI DEĞİL. Koşulda `!profile.displayName` de vardı ve
+      onboarding ismi soruyordu; ekran artık sormuyor (kayıt formu ve kimlik
+      sağlayıcısı zaten veriyor, bkz. components/course-onboarding). İsimsiz
+      bir profil bu koşulla `/setup`e kilitlenirdi: kurulum ekranı ismi hiç
+      sormadığı için kullanıcı döngüden çıkamazdı. Adı olmayan hesap
+      sıralamada `social.unnamed` ile görünüyor ve adını Profil'den veriyor.
+    */
+    needsOnboarding = Boolean(profile) && !profile.courseChosenAt;
   } catch (err) {
     // Veritabanı henüz kurulmadıysa arayüz yine de açılsın.
     console.error("[layout] profil okunamadı", err);

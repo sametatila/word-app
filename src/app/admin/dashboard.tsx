@@ -104,8 +104,14 @@ const PLATFORM_LABEL: Record<string, string> = {
 const WALK_REASON: Record<number, string> = {
   1: "Kullanıcı bitirdi", 2: "Tur kalmadı", 3: "Duyulmama sınırı", 4: "Mikrofon yok", 5: "Ekran kapandı", 6: "Elle duraklatıldı / çıkıldı",
 };
-const ONB_ORDER = ["welcome", "goal", "level", "ready"];
-const ONB_LABEL: Record<string, string> = { welcome: "Karşılama", goal: "Hedef", level: "Seviye", ready: "Hazır" };
+/*
+  Onboarding hunisi — web ve mobil AYNI beş adımı yayınlıyor. Liste eskiden
+  webin kendi akışını yansıtıyordu (`ready` yalnız webde vardı, mobilin `lang`
+  ve `course` adımları hiç görünmüyordu) ve `goal` kovası iki platformda iki
+  ayrı soruyu topluyordu: webde "neden öğreniyorsun", mobilde günlük hedef.
+*/
+const ONB_ORDER = ["welcome", "lang", "course", "level", "goal"];
+const ONB_LABEL: Record<string, string> = { welcome: "Karşılama", lang: "Anlatım dili", course: "Kurs", level: "Seviye", goal: "Günlük hedef" };
 
 const TABS = ["Genel Bakış", "Sunucu & Ops", "Kullanıcı Deneyimi", "Öğrenme & İçerik", "Kullanıcılar", "Loglar"] as const;
 

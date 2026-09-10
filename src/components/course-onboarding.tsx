@@ -1,62 +1,79 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
-import { VoicePicker } from "@/components/voice-picker";
-import { Mascot } from "@/components/mascot";
-import { defaultVoice, type VoiceId } from "@/lib/tts/voices";
-import { AlertIcon, CheckIcon, LogoMark } from "@/components/icons";
+import { Mascot, type Mood } from "@/components/mascot";
+import { defaultVoice } from "@/lib/tts/voices";
+import { AlertIcon, LogoMark } from "@/components/icons";
 import { track } from "@/lib/track";
 import { saveOnboardingPrefs } from "@/lib/onboarding-prefs";
 import { hasFirstWords } from "@/lib/first-words";
+import { hasDemoPlacement } from "@/lib/placement-demo";
 import { useT, useLang } from "@/lib/i18n/client";
 import { LANG_LABEL, NATIVE_LANGS, type NativeLang } from "@/lib/i18n/dict";
 import { writeLangCookie } from "@/lib/i18n/set-lang";
 import { courseName, courseSub, offeredNativeLangs, onboardingCoursesFor } from "@/lib/courses";
 
 /*
-  KURS LİSTESİ ARTIK KAYIT DEFTERİNDEN (`onboardingCoursesFor`).
+  İLK AÇILIŞ AKIŞI — MOBİLLE AYNI BEŞ EKRAN.
 
-  Burada iki kurs elle yazılıydı ve iki şey yanlıştı: İngilizce kursu yeni
-  kullanıcıya hiç sunulmuyordu, duraklatılmış Züritüütsch ise sunuluyordu —
-  mobilde `offeredToNewUsers` bunu baştan beri ayırıyor. Liste ayrıca anadile
-  göre süzülmüyordu: arayüzünü Almanca seçen kullanıcıya Almanca öneriliyordu.
+  Bu dosya webin kendi akışını taşıyordu ve mobilinkiyle örtüşmüyordu: ilk
+  ekranda dört soru üst üste duruyor (anlatım dili + ad + kurs + ses), sonra
+  webde olup mobilde olmayan bir "neden öğreniyorsun" adımı geliyor, en sonda
+  da yalnız webde olan bir özet ekranı. Aynı kullanıcı telefonda ve tarayıcıda
+  farklı sorular görüyordu.
+
+  Sıra artık `M/src/screens/OnboardingScreen.tsx` ile BİREBİR aynı ve her
+  ekranda TEK karar var:
+
+      welcome → lang → course → level → goal
+
+  Üç soru bilerek düştü:
+
+  • AD. Kayıt formu zaten soruyor (`auth-form`, `auth.your_name_optional`) ve
+    sağlayıcıyla girişte addan geliyor. Burada ikinci kez sormak aynı bilgiyi
+    iki yerden toplamaktı; mobil hiç sormuyor.
+  • SES. Kursun varsayılan sesi zaten doğru (`defaultVoice`) ve ayarlardan
+    değiştirilebiliyor. Mobil onboarding'de ses seçici YOK.
+  • GÜDÜ ("neden Almanca?"). `profiles.goal`e yazılıyordu ama HİÇBİR YERDE
+    okunmuyordu — ne görev seçiminde ne içerik önerisinde. Dört seçenekli bir
+    ekran, hiçbir şeyi değiştirmeyen bir cevap için. Sütun duruyor (eski
+    kayıtlar), yazan kalmadı.
+
+  Adım adları (`STEP_KEYS`) telemetride mobille aynı kovaya düşüyor: yönetim
+  panosundaki huni iki platformu `kind`e göre birlikte topluyor. Eskiden web
+  günlük hedef adımına `pace`, güdü adımına `goal` diyordu; Android'de `goal`
+  günlük hedef demek. Yani panoda iki ayrı soru tek kovada toplanıyordu.
 */
 
-const GOALS = [
-  { id: "work", title: "onb.goal_work", desc: "onb.goal_work_desc" },
-  { id: "daily", title: "onb.goal_daily", desc: "onb.goal_daily_desc" },
-  { id: "exam", title: "onb.goal_exam", desc: "onb.goal_exam_desc" },
-  { id: "swiss", title: "onb.goal_swiss", desc: "onb.goal_swiss_desc" },
-];
+/** Adım adları — telemetri kovası da bu (mobil `steps()` ile aynı sıra). */
+const STEP_KEYS = ["welcome", "lang", "course", "level", "goal"] as const;
+type StepKey = (typeof STEP_KEYS)[number];
+
+type Option = { key: string; label: string; sub?: string };
+type Step = { key: StepKey; mood: Mood; title: string; subtitle: string; options?: Option[] };
 
 /**
- * Günlük hedef — mobil onboarding'in dördüncü adımıyla AYNI üç seçenek ve
- * aynı değerler (`M/src/screens/OnboardingScreen.tsx`).
+ * Günlük hedef — mobil onboarding'in son adımıyla AYNI üç seçenek ve aynı
+ * değerler.
  *
- * Etiket dakika diyor, değer TEKRAR SAYISI: mobilde de öyle ve iki taraf
- * bilerek aynı bırakıldı — biri "düzeltilirse" aynı seçeneği seçen iki
- * kullanıcı iki farklı hedefe düşerdi. Etiket–değer uyumsuzluğu ayrı bir iş
- * ve iki tarafta birden yapılmalı (bkz. docs/plan/web-parity.md, Şerit O).
+ * HEDEFİN BİRİMİ TEKRAR, DAKİKA DEĞİL. Buradaki sayı doğrudan
+ * `profiles.daily_goal`e yazılıyor ve uygulamanın her yerinde "gün başına
+ * tekrar" olarak okunuyor (ayarlar, günlük tur, seri). Değerler ayarlardaki
+ * ölçekle aynı (10/20/30/50); varsayılan 20 ortadaki.
  */
 const PACES = [
-  /*
-    HEDEFİN BİRİMİ TEKRAR, DAKİKA DEĞİL. Buradaki sayı doğrudan
-    `profiles.daily_goal`e yazılıyor ve uygulamanın her yerinde "gün başına
-    tekrar" olarak okunuyor (ayarlar, günlük tur, seri). Eskiden ekran "5 dk /
-    gün" diyip 5'i hedef olarak yazıyordu: kullanıcı dakika seçtiğini sanıyor,
-    hedef ise tekrar cinsinden ve olduğundan çok küçük kuruluyordu.
-
-    Değerler ayarlardaki ölçekle aynı (10/20/30/50); varsayılan 20 ortadaki.
-  */
   { goal: 10, title: "onboarding.easy" },
   { goal: 20, title: "onboarding.steady" },
   { goal: 50, title: "onboarding.serious" },
 ];
 
 /* Seviye açıklamaları ayar ekranıyla AYNI anahtarlardan: iki yerde iki ayrı
-   cümle görmek, aynı seçimi iki farklı şey sanmaya yol açıyordu. */
+   cümle görmek, aynı seçimi iki farklı şey sanmaya yol açıyordu. Mobil
+   seviye satırını açıklamasız basıyor — o taraftaki eksik, buradaki fazlalık
+   değil: A1 ile B1 arasındaki farkı bilmeyen kullanıcı seçemez. */
 const LEVELS = [
   { id: "A1", desc: "onboarding.i_m_just_starting_out" },
   { id: "A2", desc: "level.a2_desc" },
@@ -65,49 +82,9 @@ const LEVELS = [
   { id: "C1", desc: "level.c1_desc" },
 ];
 
-type Step = 0 | 1 | 2 | 3 | 4;
-
-/**
- * Huni adımlarının ADI — `onboarding_step` olayının `kind`ı.
- *
- * İki şey düzeltildi. Birincisi: liste çağrı yerinde konumsal bir dizi
- * sabitiydi (`["welcome", …][step]`), yani araya bir adım eklendiğinde bütün
- * adlar sessizce kayardı. Artık adım numarasıyla adı yan yana duruyor.
- *
- * İkincisi ve önemlisi: ADLAR ANDROID'LE ÇAKIŞIYORDU. Buradaki 3. adım
- * (günlük hedef) `pace` diye, 1. adım (neden öğreniyorsun) `goal` diye
- * yazılıyordu; Android'de ise günlük hedef adımının adı `goal`. Yönetim
- * panelindeki huni sorgusu (`group by kind`) iki platformu birlikte
- * topluyor, dolayısıyla `goal` kovası webin GÜDÜ adımıyla Android'in GÜNLÜK
- * HEDEF adımını aynı sayıya katıyordu - iki ayrı soru, tek kova.
- *
- * Android referans: günlük hedef `goal`. Webin güdü adımının Android'de
- * karşılığı yok, o yüzden Android'in kelimesini işgal etmiyor; kendi adını
- * (`motivation`) alıyor.
- */
-const STEP_KIND: Record<Step, string> = {
-  0: "welcome",
-  1: "motivation",
-  2: "level",
-  3: "goal",
-  4: "ready",
-};
-
-/**
- * İlk giriş akışı (plan WP-65): dört ekran, her biri tek karar.
- *   1. İsim + kurs (+ ses)   2. Hedef: neden Almanca?
- *   3. Seviye: ölçelim mi, biliyor musun?   4. "Bugünkü planın hazır"
- *
- * Hedef (`profiles.goal`) görev ve içerik önerilerini etkiler; seviye ya
- * yerleştirme testinden (WP-40) ya da kullanıcının kendi seçiminden gelir —
- * iki yolda da karar kullanıcının. Erdi her ekranda rehber; her ekranın
- * ilerleme noktası var ki "daha ne kadar var" belli olsun.
- */
 export function CourseOnboarding({
-  initialName = "",
   signedIn = true,
 }: {
-  initialName?: string;
   /**
    * Oturum var mı. Yoksa kararlar sunucuya YAZILAMAZ (kullanıcı henüz yok) —
    * cihazda saklanıp giriş sonrası taşınıyorlar. Mobilde de sıra bu:
@@ -119,67 +96,149 @@ export function CourseOnboarding({
   const lang = useLang();
   const router = useRouter();
 
+  const [i, setI] = useState(0);
   /**
-   * Dil değişince sayfa TAZELENİYOR: onboarding metinlerinin yarısı sunucu
-   * bileşenlerinden değil ama `getLang()` sunucuda çözüldüğü için üst
-   * kabuk eski dilde kalırdı. Seçim çereze yazılıyor; hesap açıldığında
-   * profile de geçiyor (bkz. lib/onboarding-prefs).
+   * Seçimler adım adına göre: `{ lang, course, level, goal }` — mobildeki
+   * `choices` ile aynı şekil.
+   *
+   * Anlatım dili SEÇİLİ BAŞLIYOR: sunucu sayfayı zaten tarayıcının diline
+   * göre çiziyor (`lib/i18n/server` `fromAcceptLanguage`), yani bu adımda
+   * sorulan şey bir onay. Boş başlatmak, cevabı zaten ekranda olan bir soruda
+   * kullanıcıyı beklemeye zorlardı.
    */
-  function pickLang(next: NativeLang) {
-    if (next === lang) return;
-    track("setting_change", NATIVE_LANGS.indexOf(next), "lang");
-    writeLangCookie(next);
-    // Hesap henüz yok: karar diğer onboarding tercihleriyle birlikte
-    // saklanıyor ve giriş yapılınca profile taşınıyor.
-    saveOnboardingPrefs({ nativeLang: next });
-    /*
-      SEÇİLİ KURS GEÇERSİZ KALABİLİR. Almanca kursu seçtikten sonra arayüzünü
-      Almancaya alan kullanıcıda o kurs listeden düşüyor (kendi dilini
-      öğretmiyoruz). Sessizce bırakılsaydı hiçbir seçenek işaretli görünmez ve
-      kullanıcı "seç" diyemeden takılırdı. Mobildeki `keepCourseValid` ile aynı
-      davranış: ilk geçerli kursa taşı.
-    */
-    const list = onboardingCoursesFor(next);
-    if (!list.some((c) => c.id === course)) {
-      const fallback = list[0]?.id;
-      if (fallback) {
-        setCourse(fallback);
-        setVoice(defaultVoice(fallback));
-        saveOnboardingPrefs({ course: fallback });
-      }
-    }
-    router.refresh();
-  }
-  const [step, setStep] = useState<Step>(0);
-  // Onboarding hunisi: hangi adıma kadar gelindi (WP-80).
-  useEffect(() => {
-    track("onboarding_step", step, STEP_KIND[step] ?? "other");
-  }, [step]);
-  const [name, setName] = useState(initialName);
-  const [course, setCourse] = useState("de");
-  const [voice, setVoice] = useState<VoiceId>(defaultVoice("de"));
-  const [goal, setGoal] = useState<string | null>(null);
-  const [level, setLevel] = useState("A1");
-  const [levelMode, setLevelMode] = useState<"pick" | "measure" | null>(null);
-  const [pace, setPace] = useState<number | null>(null);
+  const [choices, setChoices] = useState<Record<string, string>>(() => ({ lang }));
+  const [pickedLevel, setPickedLevel] = useState<string | null>(null);
   const [saving, setSaving] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  const cleanName = name.trim().replace(/\s+/g, " ");
-  const nameOk = cleanName.length >= 2;
+  const stepKey = STEP_KEYS[i];
+  // Onboarding hunisi: hangi adıma kadar gelindi (WP-80).
+  useEffect(() => {
+    track("onboarding_step", i, stepKey);
+  }, [i, stepKey]);
 
-  async function save(extra: Record<string, unknown>): Promise<boolean> {
-    // Misafir: sunucuda yazılacak bir profil yok. Kararlar cihazda duruyor ve
-    // giriş yapılır yapılmaz profile taşınıyor (components/onboarding-adopt).
+  /* Kurs seçilene kadar listenin ilki ölçü alınıyor: seviye adımının "testle
+     belirle" seçeneği o paritenin verisine bağlı. Sabit "de" yedeği DEĞİL —
+     anadili Almanca olan kullanıcıda Almanca kurs listede yok. */
+  const course = choices.course ?? onboardingCoursesFor(lang)[0]?.id ?? "de";
+
+  const steps: Step[] = [
+    {
+      key: "welcome",
+      mood: "wave",
+      title: t("onboarding.welcome_to_lernomi"),
+      subtitle: t("onboarding.kisa_turlarla_oyun_gibi_ogren_birk"),
+    },
+    {
+      // ANADİL, kurstan ÖNCE: kurs listesi ve sonraki adımların metni buna
+      // bağlı. Karşılamadan sonra duruyor çünkü karşılama ekranında seçim yok.
+      key: "lang",
+      mood: "idle",
+      title: t("onboarding.which_language_should_we_teach"),
+      subtitle: t("onboarding.lessons_and_hints_will_be_in"),
+      options: offeredNativeLangs().map((l) => ({ key: l, label: LANG_LABEL[l] })),
+    },
+    {
+      key: "course",
+      mood: "think",
+      title: t("onboarding.which_course_shall_we_start_with"),
+      subtitle: t("onboarding.languages_available_now"),
+      // Kurs kayıt defterinden türüyor (lib/courses). Anadil elenir (kimse
+      // kendi dilini "öğrenilecek dil" olarak seçmez) ve duraklatılmış lehçe
+      // kursu ilk açılışta sunulmaz — Ayarlar'dan hâlâ seçilebilir.
+      options: onboardingCoursesFor(lang).map((c) => ({
+        key: c.id,
+        label: courseName(c.id, lang),
+        sub: courseSub(c.id, lang),
+      })),
+    },
+    {
+      key: "level",
+      mood: "idle",
+      title: t("onboarding.where_shall_we_start"),
+      subtitle: t("onboarding.you_can_start_at_level_that"),
+      options: [
+        { key: "A1", label: t("onboarding.from_scratch"), sub: t("onboarding.i_m_just_starting_out") },
+        { key: "pick", label: t("onboarding.pick_your_level"), sub: t("onboarding.pick_level_directly") },
+        /*
+          "Testle belirle" yalnız gidilecek bir test varsa. Oturum açıkken
+          gerçek yerleştirme sunucuda puanlanıyor (`/placement`) ve her kursta
+          var; misafirde ise giriş öncesi örnek tur oynatılıyor ve o yalnız
+          verisi olan paritede duruyor. Yoksa seçenek hiç görünmüyor —
+          seçilip boş bir teste düşmektense hiç sunulmamalı.
+        */
+        ...(signedIn || hasDemoPlacement(lang, course)
+          ? [{ key: "test", label: t("onboarding.find_out_with_test"), sub: t("onboarding.kisa_yerlestirme_sinavi") }]
+          : []),
+      ],
+    },
+    {
+      key: "goal",
+      mood: "cheer",
+      title: t("onboarding.what_s_your_daily_goal"),
+      subtitle: t("onboarding.istedigin_zaman_degistirebilirsin"),
+      options: PACES.map((p) => ({
+        key: String(p.goal),
+        label: t(p.title),
+        sub: t("onboarding.reviews_day", { n: p.goal }),
+      })),
+    },
+  ];
+
+  const step = steps[i];
+  const chosen = choices[step.key];
+  const last = i === steps.length - 1;
+  // Seviye adımında "Seviyeni seç" işaretliyse ayrıca bir seviye seçilmeli.
+  const levelPickPending = step.key === "level" && chosen === "pick" && !pickedLevel;
+  const canNext = (!step.options || Boolean(chosen)) && !levelPickPending;
+
+  /**
+   * Anadil seçimi HEMEN uygulanır: sonraki adımların metni ve kurs listesi
+   * ona bağlı, sona bırakılsaydı kullanıcı akışın geri kalanını eski dilde
+   * görürdü. Sayfa tazeleniyor çünkü metinlerin bir kısmı sunucuda çözülüyor.
+   *
+   * Dil değişince seçili kurs geçersiz kalabilir: Almanca kursu seçtikten
+   * sonra arayüzünü Almancaya alan kullanıcıda o kurs listeden düşüyor.
+   * Sessizce bırakılsaydı hiçbir seçenek işaretli görünmez ve kullanıcı
+   * ilerleyemezdi. Mobildeki `pick()` ile aynı davranış: seçimi sil.
+   */
+  function applyLang(next: NativeLang) {
+    setChoices((c) => {
+      const out: Record<string, string> = { ...c, lang: next };
+      if (out.course && !onboardingCoursesFor(next).some((x) => x.id === out.course)) delete out.course;
+      return out;
+    });
+    if (next === lang) return;
+    track("setting_change", NATIVE_LANGS.indexOf(next), "lang");
+    writeLangCookie(next);
+    // Hesap henüz yoksa karar diğer tercihlerle birlikte saklanıyor ve giriş
+    // yapılınca profile taşınıyor (bkz. lib/onboarding-prefs).
+    saveOnboardingPrefs({ nativeLang: next });
+    router.refresh();
+  }
+
+  function pick(key: StepKey, value: string) {
+    setError(null);
+    if (key === "lang") return applyLang(value as NativeLang);
+    setChoices((c) => ({ ...c, [key]: value }));
+  }
+
+  /**
+   * Kararları yazar. Oturum varsa profile, yoksa cihaza.
+   *
+   * SES SEÇİLMİYOR, KURSTAN TÜRÜYOR. Ses seçici bu akıştan kalktı; kursun
+   * varsayılan sesi her zaman o kursun dilinde konuşuyor. Ayrıca yazılıyor ki
+   * kurs değişince sunucudaki ses de onunla gitsin (`resolveVoice`).
+   */
+  async function save(extra: { level: string; dailyGoal?: number }): Promise<boolean> {
+    const voice = defaultVoice(course);
     if (!signedIn) {
       saveOnboardingPrefs({
-        displayName: cleanName,
         course,
         voice,
-        goal: goal ?? undefined,
-        level,
-        ...(pace ? { dailyGoal: pace } : {}),
-        ...(extra as { level?: string }),
+        nativeLang: lang,
+        level: extra.level,
+        ...(extra.dailyGoal ? { dailyGoal: extra.dailyGoal } : {}),
       });
       return true;
     }
@@ -189,7 +248,7 @@ export function CourseOnboarding({
       const res = await fetch("/api/profile", {
         method: "POST",
         headers: { "content-type": "application/json" },
-        body: JSON.stringify({ displayName: cleanName, course, voice, goal, level, ...(pace ? { dailyGoal: pace } : {}), ...extra }),
+        body: JSON.stringify({ course, voice, nativeLang: lang, ...extra }),
       });
       if (!res.ok) throw new Error(String(res.status));
       return true;
@@ -202,303 +261,188 @@ export function CourseOnboarding({
   }
 
   /**
-   * Seviye adımı artık KAYDETMİYOR, günlük hedef adımına geçiyor.
+   * Son adımdan sonra yol ayrılıyor — mobildeki `finish()` ile aynı üç yol.
    *
-   * Mobilde de sıra böyle: kurs → başlangıç noktası → günlük hedef → bitir.
-   * Hedef en sonda çünkü iki seviye yolunun (test / kendin seç) ikisi de
-   * ondan geçmeli; seviye adımında kaydedilseydi test yolunu seçen kullanıcı
-   * hedefi hiç görmezdi.
+   *   test        → yerleştirme (seviye testin sonunda yazılır)
+   *   A1 / pick   → ısınma (misafir) ya da doğrudan öğrenme (oturum var)
    */
-  function toPace() {
-    track("nav", 0, levelMode === "measure" ? "onboarding:level_measure" : "onboarding:level_pick");
-    setStep(3);
-  }
-
-  /** Günlük hedef seçildikten sonra: profil yazılır, yol ayrılır. */
-  async function finishFromPace() {
-    if (levelMode === "measure") {
-      // Profil önce kaydedilir (isim/kurs/hedef); seviye testin sonunda yazılır.
-      if (await save({ level: "A1" })) {
-        track("nav", 0, "onboarding:placement");
-        /* MİSAFİR DE TESTE GİDİYOR. Gerçek yerleştirme sunucuda puanlanıyor ve
-           hesap istiyor; eskiden misafir bu yüzden doğrudan giriş duvarına
-           gönderiliyordu, yani seviyesini bilmediği için testi isteyen kişi
-           ölçülmeden kaydolmak zorundaydı. `/level-test` Android'deki kısa
-           örnek turu oynatıyor, sonucu yerel tercihlere yazıyor ve hesap
-           açılınca seviye profile taşınıyor. */
-        router.push(signedIn ? "/placement" : "/level-test");
-      }
+  async function finish() {
+    const daily = choices.goal ? parseInt(choices.goal, 10) : undefined;
+    if (choices.level === "test") {
+      // Profil önce kaydedilir (kurs/hedef); seviye testin sonunda yazılır.
+      if (!(await save({ level: "A1", dailyGoal: daily }))) return;
+      track("nav", 0, "onboarding:placement");
+      /* MİSAFİR DE TESTE GİDİYOR. Gerçek yerleştirme sunucuda puanlanıyor ve
+         hesap istiyor; `/level-test` mobildeki kısa örnek turu oynatıyor,
+         sonucu yerel tercihlere yazıyor ve hesap açılınca profile taşınıyor. */
+      router.push(signedIn ? "/placement" : "/level-test");
       return;
     }
-    if (!(await save({ level }))) return;
+    const level = choices.level === "pick" ? (pickedLevel ?? "A1") : "A1";
+    if (!(await save({ level, dailyGoal: daily }))) return;
     track("nav", 0, "onboarding:level");
     /*
       MİSAFİR ISINMAYA GİDİYOR. Mobilde "sıfırdan" ve "seviyeni seç"
       yollarının ikisi de giriş duvarından önce beş kelimeden geçiyor; o
       ısınma, hesap açmanın gerekçesi. Isınma seti olmayan paritede adım
       atlanıyor ve doğrudan hesap açılıyor.
+
+      Isınma seti KULLANICININ DİLİNE göre aranıyor. Burada sabit "tr"
+      yazıyordu: arayüzü İngilizce olan kullanıcı Türkçe setin varlığına
+      bakılarak yönlendiriliyordu.
     */
     if (!signedIn) {
-      router.push(hasFirstWords("tr", course) ? "/first-words" : "/login?mode=signup");
+      router.push(hasFirstWords(lang, course) ? "/first-words" : "/login?mode=signup");
       return;
     }
-    setStep(4);
+    router.push("/learn");
+    router.refresh();
   }
 
-  const dots = (
-    <ol className="mb-5 flex items-center gap-2" aria-hidden>
-      {[0, 1, 2, 3, 4].map((i) => (
-        <li key={i} className="h-1.5 flex-1 rounded-full" style={{ background: i <= step ? "var(--color-brand)" : "var(--surface-2)" }} />
-      ))}
-    </ol>
-  );
+  function next() {
+    if (!canNext || saving) return;
+    if (last) return void finish();
+    setI((n) => n + 1);
+  }
 
   return (
-    <main className="mx-auto flex min-h-dvh w-full max-w-xl flex-col justify-center px-4 py-10">
-      <div className="mb-6 flex items-center gap-2.5">
-        <LogoMark size={36} />
-        <div>
-          <h1 className="text-h3">
-            {step === 0
-              ? t("onb.step0_title")
-              : step === 1
-                ? t("onb.step1_title", { lang: courseName(course, lang) })
-                : step === 2
-                  ? t("onb.step2_title")
-                  : step === 3
-                    ? t("onboarding.what_s_your_daily_goal")
-                    : t("onb.step4_title")}
-          </h1>
-          <p className="muted text-caption">{t("onb.step_of", { n: step + 1 })}</p>
-        </div>
-      </div>
-      {dots}
-      <AnimatePresence mode="wait">
-        <motion.div key={step} initial={{ opacity: 0, x: 16 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -16 }} transition={{ duration: 0.2 }}>
-          {step === 0 ? (
-            <>
-              <div className="flex items-start gap-3">
-                <Mascot mood="wave" size={72} stage="onboarding" />
-                <p className="muted text-sm leading-relaxed">{t("onb.intro")}</p>
-              </div>
-              {/*
-                ARAYÜZ DİLİ — mobil onboarding'in ikinci adımının karşılığı
-                (`OnboardingScreen`, "anlatım ve ipuçları bu dilde olacak").
-                Web'de ayrı bir adım değil, bu adımın ilk sorusu: tarayıcının
-                dili zaten seçili geliyor (bkz. lib/i18n/server
-                `fromAcceptLanguage`), yani burada sorulan şey bir onay.
-                Ayrı bir sayfa açmak, cevabı çoğu zaman hazır olan bir soru
-                için bir adım daha eklemek olurdu.
-              */}
-              <h2 className="mb-2 mt-5 font-bold">{t("onboarding.which_language_should_we_teach")}</h2>
-              <div className="flex gap-1.5">
-                {offeredNativeLangs().map((l) => (
-                  <button
-                    key={l}
-                    type="button"
-                    lang={l}
-                    aria-pressed={lang === l}
-                    onClick={() => pickLang(l)}
-                    className={`chip px-3.5 py-2 text-caption ${lang === l ? "chip-active" : ""}`}
-                  >
-                    {LANG_LABEL[l]}
-                  </button>
-                ))}
-              </div>
-              <p className="muted mt-1.5 text-xs">{t("onboarding.lessons_and_hints_will_be_in")}</p>
+    /*
+      Blok DİKEY ORTALI, düğme ekranın dibine yapışık değil: mobilde ekran
+      zaten kısa ve fark etmiyor ama masaüstünde içerik ortada, "Devam et"
+      görünüm alanının en altında kalıyordu.
 
-              <h2 className="mb-2 mt-6 font-bold">{t("onb.what_to_call_you")}</h2>
-              <input value={name} onChange={(e) => setName(e.target.value)} maxLength={60} autoComplete="given-name" placeholder={t("onb.your_name")} aria-label={t("onb.your_name")} className="option w-full px-4 py-3 text-base" />
-              <p className="muted mt-1.5 text-xs">{t("onb.name_note")}</p>
-              <h2 className="mb-2 mt-6 font-bold">{t("onboarding.which_course_shall_we_start_with")}</h2>
-              <div className="grid gap-3 sm:grid-cols-2">
-                {onboardingCoursesFor(lang).map((c) => {
-                  const active = course === c.id;
+      Oturum açıkken üstte daha çok boşluk var: sayfanın kendisi oraya sabit
+      bir "Çıkış yap" şeridi çiziyor (app/setup/page.tsx) ve logo satırı onun
+      altından geçmeli.
+    */
+    <main className={`mx-auto flex min-h-dvh w-full max-w-xl flex-col justify-center px-4 pb-10 ${signedIn ? "pt-20" : "pt-10"}`}>
+      <div className="mb-7 flex items-center gap-3">
+        <LogoMark size={32} />
+        {/* İlerleme şeridi: geçilen adımlar dolu, bulunduğun adım geniş —
+            "kaçtayım" ve "daha ne kadar var" tek bakışta. */}
+        <ol className="flex flex-1 items-center gap-1.5" aria-hidden>
+          {steps.map((s, n) => (
+            <li
+              key={s.key}
+              className="h-1.5 rounded-full transition-all duration-200"
+              style={{ flex: n === i ? "2 1 0%" : "1 1 0%", background: n <= i ? "var(--color-brand)" : "var(--surface-2)" }}
+            />
+          ))}
+        </ol>
+      </div>
+
+      <div>
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={step.key}
+            initial={{ opacity: 0, x: 16 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: -16 }}
+            transition={{ duration: 0.2 }}
+          >
+            <div className="flex items-start gap-3">
+              <Mascot mood={step.mood} size={72} stage="onboarding" />
+              <div>
+                <h1 className="text-h3">{step.title}</h1>
+                <p className="muted mt-1 text-sm leading-relaxed">{step.subtitle}</p>
+              </div>
+            </div>
+
+            {step.options ? (
+              <div className="mt-6 grid gap-3">
+                {step.options.map((o) => {
+                  const active = chosen === o.key;
                   return (
                     <button
-                      key={c.id}
+                      key={o.key}
                       type="button"
-                      onClick={() => {
-                        setCourse(c.id);
-                        setVoice(defaultVoice(c.id));
-                      }}
-                      className={`option relative p-4 text-left ${active ? "option-picked" : ""}`}
+                      aria-pressed={active}
+                      onClick={() => pick(step.key, o.key)}
+                      className={`option flex items-center gap-3 p-4 text-left ${active ? "option-picked" : ""}`}
                     >
-                      {active ? (
-                        <span className="absolute right-3 top-3 flex h-5 w-5 items-center justify-center rounded-full text-white" style={{ background: "var(--color-brand-600)" }}>
-                          <CheckIcon size={13} />
-                        </span>
-                      ) : null}
-                      <p className="font-bold">{courseName(c.id, lang)}</p>
-                      <p className="text-xs font-semibold text-[color:var(--color-brand)]">{courseSub(c.id, lang)}</p>
-                      <p className="muted mt-1.5 text-xs leading-relaxed">{t(c.descKey)}</p>
+                      {/* Radyo işareti: aynı anda tek cevap olduğunu seçeneğin
+                          kendisi söylüyor — mobildeki satırla aynı. */}
+                      <span
+                        className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full border-2"
+                        style={{ borderColor: active ? "var(--color-brand)" : "var(--border)" }}
+                      >
+                        {active ? <span className="h-3 w-3 rounded-full" style={{ background: "var(--color-brand)" }} /> : null}
+                      </span>
+                      <span className="min-w-0">
+                        <span className="block font-bold">{o.label}</span>
+                        {o.sub ? <span className="muted block text-xs leading-relaxed">{o.sub}</span> : null}
+                      </span>
                     </button>
                   );
                 })}
-              </div>
-              <h2 className="mb-2 mt-6 font-bold">{t("onb.which_voice")}</h2>
-              <VoicePicker course={course} value={voice} onChange={setVoice} />
-              <button
-                type="button"
-                onClick={() => {
-                  if (!nameOk) return setError(t("onb.name_required"));
-                  setError(null);
-                  if (course === "gsw-zh" && !goal) setGoal("swiss");
-                  setStep(1);
-                }}
-                className="btn btn-primary mt-7 w-full px-6 py-3.5 text-base"
-              >
-                {t("common.continue_2")}
-              </button>
-            </>
-          ) : null}
 
-          {step === 1 ? (
-            <>
-              <div className="flex items-start gap-3">
-                <Mascot mood="think" size={72} stage="onboarding" />
-                <p className="muted text-sm leading-relaxed">{t("onb.goal_intro")}</p>
-              </div>
-              <div className="mt-5 grid gap-3 sm:grid-cols-2">
-                {GOALS.map((g) => {
-                  const active = goal === g.id;
-                  return (
-                    <button key={g.id} type="button" onClick={() => setGoal(g.id)} className={`option relative p-4 text-left ${active ? "option-picked" : ""}`}>
-                      {active ? (
-                        <span className="absolute right-3 top-3 flex h-5 w-5 items-center justify-center rounded-full text-white" style={{ background: "var(--color-brand-600)" }}>
-                          <CheckIcon size={13} />
-                        </span>
-                      ) : null}
-                      <p className="font-bold">{t(g.title)}</p>
-                      <p className="muted mt-1.5 text-xs leading-relaxed">{t(g.desc)}</p>
-                    </button>
-                  );
-                })}
-              </div>
-              <div className="mt-6 flex gap-2">
-                <button type="button" onClick={() => setStep(0)} className="btn btn-ghost px-4 py-3 text-sm">
-                  {t("common.back")}
-                </button>
-                <button type="button" disabled={!goal} onClick={() => setStep(2)} className="btn btn-primary flex-1 px-6 py-3 text-base disabled:opacity-60">
-                  {t("common.continue_2")}
-                </button>
-              </div>
-            </>
-          ) : null}
-
-          {step === 2 ? (
-            <>
-              <div className="flex items-start gap-3">
-                <Mascot mood="idle" size={72} stage="onboarding" />
-                <p className="muted text-sm leading-relaxed">{t("onb.level_intro")}</p>
-              </div>
-              <div className="mt-5 grid gap-3">
-                <button type="button" onClick={() => setLevelMode("measure")} className={`option p-4 text-left ${levelMode === "measure" ? "option-picked" : ""}`}>
-                  <p className="font-bold">{t("onboarding.kisa_yerlestirme_sinavi")}</p>
-                  <p className="muted mt-1 text-xs">{t("onb.measure_desc")}</p>
-                </button>
-                <button type="button" onClick={() => setLevelMode("pick")} className={`option p-4 text-left ${levelMode === "pick" ? "option-picked" : ""}`}>
-                  <p className="font-bold">{t("onboarding.pick_level_directly")}</p>
-                  <p className="muted mt-1 text-xs">{t("onb.pick_desc")}</p>
-                </button>
-              </div>
-              {levelMode === "pick" ? (
-                <>
-                  <div className="mt-4 grid gap-2 sm:grid-cols-5">
-                    {LEVELS.map((l) => (
-                      <button key={l.id} type="button" onClick={() => setLevel(l.id)} className={`option px-3 py-3 text-sm font-bold ${level === l.id ? "option-correct" : ""}`}>
-                        {l.id}
-                      </button>
-                    ))}
+                {/* "Seviyeni seç" için satır içi seviye seçici (A1–C1) */}
+                {step.key === "level" && chosen === "pick" ? (
+                  <div>
+                    <div className="grid grid-cols-5 gap-2">
+                      {LEVELS.map((l) => (
+                        <button
+                          key={l.id}
+                          type="button"
+                          aria-pressed={pickedLevel === l.id}
+                          onClick={() => setPickedLevel(l.id)}
+                          className={`option px-2 py-3 text-sm font-bold ${pickedLevel === l.id ? "option-picked" : ""}`}
+                        >
+                          {l.id}
+                        </button>
+                      ))}
+                    </div>
+                    <p className="muted mt-2 text-xs leading-relaxed">
+                      {pickedLevel ? `${t(LEVELS.find((l) => l.id === pickedLevel)!.desc)}.` : t("onboarding.pick_level_directly")}
+                    </p>
                   </div>
-                  <p className="muted mt-1.5 text-xs">{t(LEVELS.find((l) => l.id === level)?.desc ?? "")}.</p>
-                </>
-              ) : null}
-              <div className="mt-6 flex gap-2">
-                <button type="button" onClick={() => setStep(1)} className="btn btn-ghost px-4 py-3 text-sm">
-                  {t("common.back")}
-                </button>
-                <button
-                  type="button"
-                  disabled={!levelMode}
-                  onClick={toPace}
-                  className="btn btn-primary flex-1 px-6 py-3 disabled:opacity-60"
-                >
-                  {levelMode === "pick" ? t("onb.continue_with", { level }) : t("common.continue_2")}
-                </button>
+                ) : null}
               </div>
-            </>
-          ) : null}
+            ) : null}
 
-          {step === 3 ? (
-            <>
-              <div className="flex items-start gap-3">
-                <Mascot mood="think" size={72} stage="onboarding" />
-                <p className="muted text-body">
-                  {t("onb.pace_intro")}
-                </p>
-              </div>
-              <div className="mt-5 grid gap-3">
-                {PACES.map((p) => (
-                  <button
-                    key={p.goal}
-                    type="button"
-                    onClick={() => setPace(p.goal)}
-                    className={`option p-4 text-left ${pace === p.goal ? "option-picked" : ""}`}
-                  >
-                    <p className="text-h3">{t(p.title)}</p>
-                    <p className="muted mt-0.5 text-caption">{t("onboarding.reviews_day", { n: p.goal })}</p>
-                  </button>
-                ))}
-              </div>
-              <div className="mt-6 flex gap-2">
-                <button type="button" onClick={() => setStep(2)} className="btn btn-ghost px-4 py-3">
-                  {t("common.back")}
-                </button>
-                <button
-                  type="button"
-                  disabled={saving || !pace}
-                  onClick={() => void finishFromPace()}
-                  className="btn btn-primary flex-1 px-6 py-3 disabled:opacity-60"
-                >
-                  {saving ? t("rounds.saving") : levelMode === "measure" ? t("onb.start_test") : t("common.start")}
-                </button>
-              </div>
-            </>
-          ) : null}
-
-          {step === 4 ? (
-            <>
-              <div className="flex items-start gap-3">
-                <Mascot mood="cheer" size={80} stage="onboarding" />
-                <div>
-                  <p className="font-bold">{t("onb.plan_ready", { name: cleanName })}</p>
-                  <p className="muted mt-1 text-sm leading-relaxed">
-                    {courseName(course, lang)} · {LEVELS.find((l) => l.id === level)?.id} ·{" "}
-                    {t("onb.summary_goal", { goal: goal ? t(GOALS.find((g) => g.id === goal)!.title) : "—" })}
-                  </p>
-                </div>
-              </div>
-              <button
-                type="button"
-                onClick={() => {
-                  router.push("/learn");
-                  router.refresh();
-                }}
-                className="btn btn-primary mt-7 w-full px-6 py-3.5 text-base"
+            {error ? (
+              <p
+                className="mt-4 flex items-center gap-2 rounded-xl px-3 py-2 text-sm"
+                style={{ background: "color-mix(in srgb, var(--color-rose-500) 14%, transparent)", color: "var(--color-rose)" }}
               >
-                {t("land.cta_button")}
-              </button>
-            </>
-          ) : null}
+                <AlertIcon size={16} /> {error}
+              </p>
+            ) : null}
+          </motion.div>
+        </AnimatePresence>
+      </div>
 
-          {error ? (
-            <p className="mt-3 flex items-center gap-2 rounded-xl px-3 py-2 text-sm" style={{ background: "color-mix(in srgb, var(--color-rose-500) 14%, transparent)", color: "var(--color-rose)" }}>
-              <AlertIcon size={16} /> {error}
-            </p>
-          ) : null}
-        </motion.div>
-      </AnimatePresence>
+      <div className="mt-8 flex gap-2">
+        {i > 0 ? (
+          <button type="button" onClick={() => setI((n) => n - 1)} className="btn btn-ghost px-4 py-3 text-sm">
+            {t("common.back")}
+          </button>
+        ) : null}
+        <button
+          type="button"
+          disabled={!canNext || saving}
+          onClick={next}
+          className="btn btn-primary flex-1 px-6 py-3.5 text-base disabled:opacity-60"
+        >
+          {saving ? t("rounds.saving") : t("common.continue_2")}
+        </button>
+      </div>
+
+      {/*
+        KAYITLI KULLANICININ ÇIKIŞI — mobildeki "Zaten hesabım var" ile aynı iş.
+        Bu ekran yalnızca yeni kullanıcıya soru soruyor; kayıtlı biri (yeni
+        cihaz, silip yeniden kurma) bunların hiçbirini yanıtlamak zorunda değil.
+        Oturum açıkken görünmüyor: o durumda çıkış kapısı sayfanın kendisinde
+        (bkz. app/setup/page.tsx `SignOutLink`).
+      */}
+      {!signedIn ? (
+        <p className="muted mt-5 text-center text-sm">
+          {t("auth.already_have_account")}
+          <Link href="/login" className="font-bold" style={{ color: "var(--color-brand)" }}>
+            {t("auth.sign_in")}
+          </Link>
+        </p>
+      ) : null}
     </main>
   );
 }

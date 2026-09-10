@@ -40,7 +40,7 @@
 | Sekme | `nav` (kind = learn/lessons/skills; eski satırlar sıra numarası) | 26 Ağu'da sıra değişti, rapor ada bakar |
 | Katlı bölüm açılması | `panel_open` (weak_detail, sheet:<tablo>, single_game, plan, words_progress) | sahibin panoya taşıyıp katladığı ölçüm kartları görülüyor mu |
 | Tur türü | `session_start kind` = mixed / single:<oyun> / extra | üretim oranı düşükken tek oyun tercihi |
-| Onboarding hunisi | `onboarding_step` (welcome→goal→level→ready) + `placement_finish` | nerede bırakılıyor |
+| Onboarding hunisi | `onboarding_step` (welcome→lang→course→level→goal) + `placement_finish` | nerede bırakılıyor |
 | Koç balonu | `coach_show` (an) | hangi an ne sıklıkta |
 | Sesli okuma | `tts_play` (ekran, açılış başına bir) | dinleme kullanımı |
 | Arama | `search` (words / cheatsheet, sorgu uzunluğu) | keşif |

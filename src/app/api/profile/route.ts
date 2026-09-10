@@ -122,9 +122,13 @@ export async function POST(req: Request) {
     //
     // `coalesce` ile yalnızca ilk kez yazılıyor: sonradan profilden kurs
     // değiştiren biri onboarding'e geri düşmemeli.
-    // Onboarding yalnızca isim de verildiyse bitmiş sayılıyor: aksi hâlde
-    // kursu seçip ismi atlayan biri işareti alıp bir daha sorulmuyordu.
-    if (patch.course && patch.displayName) {
+    //
+    // KOŞULDA İSİM YOK. `patch.course && patch.displayName` yazıyordu, çünkü
+    // onboarding ismi de soruyordu. Ekran artık sormuyor (kayıt formu ve
+    // kimlik sağlayıcısı veriyor) ve o hâliyle koşul HİÇ sağlanamıyordu:
+    // kullanıcı beş adımı bitiriyor, kurs yazılıyor, işaret konmuyor, düzen
+    // onu `/setup`e geri yolluyor — kapalı bir döngü.
+    if (patch.course) {
       patch.courseChosenAt = sql`coalesce(${profiles.courseChosenAt}, now())` as never;
     }
 

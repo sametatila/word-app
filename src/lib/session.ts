@@ -310,9 +310,27 @@ function pickNewWords(
   return chosen.slice(0, limit);
 }
 
+/**
+ * Profili getirir; yoksa oluşturur.
+ *
+ * ADI SONRADAN DA TAMAMLIYOR. Satır yalnız INSERT anında ad yazıyordu, oysa
+ * profil çoğu zaman adı bilmeyen bir yoldan doğuyor (`ensureProfile(userId)`
+ * — örneğin `/api/profile` GET). O sırada `displayName` null kalıyor ve bir
+ * daha hiç dolmuyordu: hesabın adı belliyken profil isimsiz kalıyordu.
+ * Onboarding ismi artık sormadığı için bu boşluğu kapatan tek yer burası.
+ */
 export async function ensureProfile(userId: string, name?: string | null) {
   const [existing] = await db.select().from(profiles).where(eq(profiles.userId, userId));
-  if (existing) return existing;
+  if (existing) {
+    const clean = name?.trim().replace(/\s+/g, " ") ?? "";
+    if (existing.displayName || clean.length < 2) return existing;
+    const [filled] = await db
+      .update(profiles)
+      .set({ displayName: clean.slice(0, 40) })
+      .where(eq(profiles.userId, userId))
+      .returning();
+    return filled ?? existing;
+  }
   const [created] = await db
     .insert(profiles)
     .values({ userId, displayName: name ?? null })
