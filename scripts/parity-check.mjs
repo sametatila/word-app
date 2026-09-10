@@ -939,11 +939,20 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     const i = src.indexOf(fn);
     if (i < 0) return ["bulunamadi: " + fn];
     const j = src.indexOf("\n}", i);
+    /* Satir basina: o dalda gecen DURUM KODLARI + donen sebep. Yalniz sebep
+       dizisini karsilastirmak yetmiyordu - webden `|| st === 403` kosulunu
+       cikaran bir enjeksiyon sirayi bozmadigi icin yakalanmadi. Kodlari da
+       almak kosul degisikligini gorunur yapiyor; kosulun GERI KALANI (biri
+       HttpError, oteki ApiError) bilerek disarida. */
     return src
       .slice(i, j < 0 ? undefined : j)
       .split("\n")
       .filter((l) => /return "/.test(l))
-      .map((l) => l.replace(/.*return "(\w+)".*/, "$1"));
+      .map((l) => {
+        const kodlar = [...l.matchAll(/\b(4\d\d|5\d\d)\b/g)].map((m) => m[1]).join("+") || "-";
+        const sebep = /return "(\w+)"/.exec(l)?.[1] ?? "?";
+        return kodlar + " -> " + sebep;
+      });
   };
   sameList(
     "deneme sinavi hata sirasi",

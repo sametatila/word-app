@@ -3220,3 +3220,46 @@ her denemede sıfırlanıyor.
 duruyor, yani klavye alanı Android'de sistemce açılıyor ve ekran başına
 `KeyboardAvoidingView` gerekmiyor (iki ekran `automaticallyAdjustKeyboardInsets`
 kullanıyor, ikisi de çok satırlı alan taşıyan sohbet yüzeyleri).
+
+### 11.60 Kapı yedek puan üretiyordu — ve iki kapı daha kuruldu
+
+**a) Beceri kitaplığında premium kapısı işini yapmıyordu.** `skillLibrary`in
+`catch`i şöyleydi:
+
+    if (isPremiumRefusal(e)) setGated(true);
+    setFailed(true);
+    … kaba yedek puan …
+    onDone(ok);
+
+Süslü ayraç yok, `return` yok: bayrak konuyor ama akış yedek puan hesabına
+DEVAM ediyor ve `onDone(ok)` uydurma bir sonuç bildiriyordu. Yani kapının
+önlemek için yazıldığı şey - kullanıcıya gerçek olmayan bir not vermek - yine
+oluyordu; kodun kendi yorumu tam bunu yasaklıyor ("uydurma bir yedek puan
+vermek kapıyı görünmez kılar").
+
+Aynı yerde ikinci eksik: adil kullanım kapısı (429 `quota`) hiç ayrılmıyordu.
+`ExamScreen` ikisini baştan beri ayırıyor ve aynı iki sözlük anahtarını
+kullanıyor (`assess.fail_premium`, `assess.fail_quota`); burada yalnız premium
+vardı, yani günlük hakkı dolan kullanıcı da uydurma puan alıyordu. `gated`
+bayrağı `gateNote` metnine çevrildi (iki kapı iki ayrı cümle), kapıda puan
+üretilmiyor ve `onDone` çağrılmıyor - değerlendirilen bir şey yok.
+
+**b) Deneme sınavı hata sınıflandırıcısı kapıya bağlandı.** Web `failOf` ile
+mobil `failReason` aynı kararı veriyor ve iki dosya da aynı gerekçeyi yazıyor
+(403 iki ayrı şey; ikisini birden "oturumun düşmüş" okumak kullanıcıyı boş
+yere giriş ekranına gönderiyor). Kapısı yoktu.
+
+**Kapıyı iki kez ölçtüm ve ilk hâli zayıftı.** İlk sürüm yalnız SEBEP
+DİZİSİNİ karşılaştırıyordu; webden `|| st === 403` koşulunu çıkaran enjeksiyon
+sırayı bozmadığı için yakalanmadı - kapı geçiyordu, oysa sınıflandırma
+değişmişti. Şimdi her karar satırı "geçen durum kodları -> sebep" olarak
+karşılaştırılıyor ve aynı enjeksiyon kırılıyor
+(`401+403 -> unauthorized` ile `401 -> unauthorized`). Koşulun geri kalanı
+bilerek dışarıda: biri `HttpError`, öteki `ApiError`.
+
+**Ölçülüp temiz çıkanlar:** web `assess-client` on ayrı sebep döndürüyor
+(premium, unauthorized, too_long, quota, invalid, not_configured, upstream,
+timeout, aborted, bad_request) ve hepsinin sözlük anahtarı var; `/api/assess`
+gerçekten 403/413/429/502/503 döndürüyor ve istemci hepsini ayırıyor. Mobil
+tarafta kapılar çağrı yerinde ele alınıyor ve `ExamScreen` ikisini de doğru
+ayırıyordu - eksik yalnız `skillLibrary`deydi.
