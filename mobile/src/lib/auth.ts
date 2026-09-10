@@ -28,8 +28,15 @@ export type AuthUser = {
  * "e-postanı doğrula" cümlesini hiç görmüyordu. Giriş ve sosyal giriş uçları
  * `token`ı dolu döndürüyor, yani ayrım tek alanla yapılabiliyor.
  */
+/**
+ * `twoFactor`: parola kabul edildi ama OTURUM AÇILMADI — sunucu ikinci adımı
+ * bekliyor (bkz. lib/auth/server two-factor). Yanıt gövdesinde `token` yok,
+ * yani `session` de false; ikisini ayırt etmeyen bir istemci kullanıcıyı
+ * "e-postanı doğrula" ekranına gönderirdi. Kimliği taşıyan şey kısa ömürlü
+ * imzalı çerez; sonraki iki çağrı (send-otp, verify-otp) onu kullanıyor.
+ */
 export type AuthOutcome =
-  | { ok: true; user: AuthUser | null; session: boolean }
+  | { ok: true; user: AuthUser | null; session: boolean; twoFactor: boolean }
   /**
    * `status`: HTTP durum kodu. Hız sınırına takılan yanıtın GÖVDESİNDE ayırt
    * edici bir kod yok — Better Auth düz bir İngilizce cümle döndürüyor, nginx
@@ -71,6 +78,11 @@ function hasSession(obj: unknown): boolean {
   return typeof token === "string" && token.length > 0;
 }
 
+/** Sunucu ikinci adımı mı bekliyor (bkz. AuthOutcome.twoFactor). */
+function needsTwoFactor(obj: unknown): boolean {
+  return (obj as { twoFactorRedirect?: unknown } | null)?.twoFactorRedirect === true;
+}
+
 async function parse(res: Response): Promise<AuthOutcome> {
   const text = await res.text().catch(() => "");
   let json: unknown = null;
@@ -79,7 +91,7 @@ async function parse(res: Response): Promise<AuthOutcome> {
     const o = (json ?? {}) as { code?: string; message?: string };
     return { ok: false, code: o.code ?? "", message: o.message ?? text.slice(0, 200) ?? t("autherror.something_went_wrong"), status: res.status };
   }
-  return { ok: true, user: userFrom(json), session: hasSession(json) };
+  return { ok: true, user: userFrom(json), session: hasSession(json), twoFactor: needsTwoFactor(json) };
 }
 
 export async function signIn(email: string, password: string, captchaToken?: string | null): Promise<AuthOutcome> {
@@ -325,5 +337,73 @@ export async function deleteAccount(password?: string): Promise<DeleteOutcome> {
     return { ok: false, code: "OTHER", message: message || t("autherror.not_deleted") };
   } catch {
     return { ok: false, code: "NETWORK", message: t("common.connection_failed") };
+  }
+}
+
+/**
+ * İkinci adım kodunu e-postaya gönderir.
+ *
+ * Oturum İSTEMİYOR: bu noktada oturum yok, kimliği giriş yanıtının bıraktığı
+ * kısa ömürlü imzalı çerez taşıyor. Çerez düşmüşse (10 dakika) uç hata
+ * veriyor ve ekran kullanıcıyı girişe geri yolluyor.
+ */
+export async function sendTwoFactorOtp(): Promise<AuthOutcome> {
+  try {
+    return await parse(await post("two-factor/send-otp", {}));
+  } catch {
+    return { ok: false, code: "NETWORK", message: t("common.connection_failed") };
+  }
+}
+
+/**
+ * Kodu doğrular ve oturumu açar. `trustDevice` işaretliyse sunucu cihaza
+ * ayrı bir imzalı çerez bırakıyor ve o cihazda 30 gün kod istemiyor.
+ */
+export async function verifyTwoFactorOtp(code: string, trustDevice: boolean): Promise<AuthOutcome> {
+  try {
+    return await parse(await post("two-factor/verify-otp", { code: code.trim(), trustDevice }));
+  } catch {
+    return { ok: false, code: "NETWORK", message: t("common.connection_failed") };
+  }
+}
+
+/**
+ * İki adımlı doğrulamayı açar. `method: "otp"` AÇIKÇA veriliyor: better-auth'un
+ * varsayılanı kimlik doğrulayıcı uygulama (totp) ve o yol sunucuda kapalı.
+ */
+export async function enableTwoFactor(password: string): Promise<AuthOutcome> {
+  try {
+    return await parse(await post("two-factor/enable", { password, method: "otp" }));
+  } catch {
+    return { ok: false, code: "NETWORK", message: t("common.connection_failed") };
+  }
+}
+
+/** Kapatır. Parola şart — oturumu ele geçiren biri ikinci adımı kaldıramasın. */
+export async function disableTwoFactor(password: string): Promise<AuthOutcome> {
+  try {
+    return await parse(await post("two-factor/disable", { password }));
+  } catch {
+    return { ok: false, code: "NETWORK", message: t("common.connection_failed") };
+  }
+}
+
+/**
+ * Oturumdaki kullanıcıda iki adımlı doğrulama açık mı.
+ *
+ * `getSession` yalnız ekranların kullandığı alanları taşıyor; bu bayrak ayrı
+ * okunuyor ki AuthUser her yeni alan için büyümesin. Hata hâlinde `null`:
+ * ayar kartı "bilmiyorum" durumunda hiçbir şey iddia etmiyor.
+ */
+export async function getTwoFactorEnabled(): Promise<boolean | null> {
+  try {
+    const res = await fetchWithTimeout(`${API_BASE}/api/auth/get-session`, { headers: { accept: "application/json" } });
+    if (!res.ok) return null;
+    const text = await res.text().catch(() => "");
+    if (!text || text === "null") return null;
+    const j = JSON.parse(text) as { user?: { twoFactorEnabled?: unknown } };
+    return j.user?.twoFactorEnabled === true;
+  } catch {
+    return null;
   }
 }

@@ -12,6 +12,8 @@ import { useAuth } from "../lib/AuthContext";
 import { requestPasswordReset, sendVerificationEmail } from "../lib/auth";
 import { fetchServerConfig } from "../lib/serverConfig";
 import { Turnstile } from "../ui/Turnstile";
+import { sendTwoFactorOtp, verifyTwoFactorOtp } from "../lib/auth";
+import { TWO_FACTOR_CODE_DIGITS, TWO_FACTOR_CODE_MINUTES } from "../lib/twoFactor";
 import { openLegal } from "../lib/legal";
 import { googleSignIn, googleSupported } from "../lib/googleAuth";
 import { appleSignIn, appleSupported } from "../lib/appleAuth";
@@ -21,7 +23,7 @@ import { checkPassword } from "../lib/passwordPolicy";
 import { useTheme, spacing, radii, softShadow, type Palette } from "../theme";
 
 type Mode = "signin" | "signup";
-type View2 = "options" | "email" | "forgot" | "verify";
+type View2 = "options" | "email" | "forgot" | "verify" | "twofactor";
 /** Doğrulama ekranına hangi yoldan gelindi: yeni kayıt mı, girişi kesilen hesap mı. */
 type VerifyReason = "new" | "blocked";
 
@@ -65,6 +67,16 @@ export function AuthScreen() {
     nav.reset({ index: 0, routes: [{ name: prime ? "NotifPrime" : "Tabs" }] });
   };
   const { signIn, signUp, socialComplete } = useAuth();
+  /*
+    İKİNCİ ADIM. Parola kabul edildiğinde sunucu oturumu açmıyor; kimliği
+    kısa ömürlü imzalı bir çerez taşıyor ve kod e-postaya gidiyor (bkz.
+    lib/auth sendTwoFactorOtp). Doğrulama bitince oturumu `socialComplete`
+    kuruyor — adı sosyal girişten kalma ama yaptığı iş tam olarak bu:
+    oturumu sunucudan oku, kullanıcıyı yaz, hesabın ayarlarını devral.
+  */
+  const [code, setCode] = useState("");
+  const [trustDevice, setTrustDevice] = useState(false);
+  const [codeBusy, setCodeBusy] = useState(false);
   const [view, setView] = useState<View2>("options");
   const [mode, setMode] = useState<Mode>("signin");
   const [name, setName] = useState("");
@@ -137,6 +149,44 @@ export function AuthScreen() {
     setView("verify");
   }
 
+  /** İkinci adıma geç: kodu iste ve ekranı aç. */
+  async function toTwoFactor() {
+    setCode("");
+    setTrustDevice(false);
+    setResendSent(false);
+    setCooldown(RESEND_COOLDOWN);
+    setError(null);
+    setView("twofactor");
+    const r = await sendTwoFactorOtp();
+    if (!r.ok) setError(t("twofa.expired"));
+  }
+
+  async function doVerifyCode() {
+    if (codeBusy || !code.trim()) return;
+    setCodeBusy(true);
+    setError(null);
+    setResendSent(false);
+    const r = await verifyTwoFactorOtp(code, trustDevice);
+    setCodeBusy(false);
+    if (!r.ok) { setError(translateAuthError(r.code, r.message, r.status)); return; }
+    // Oturum artık var; kullanıcıyı ve hesabın ayarlarını yükle.
+    const done = await socialComplete();
+    if (done) { setPassword(""); void toApp(); return; }
+    setError(t("auth.sign_in_could_not_be_completed"));
+  }
+
+  async function resendCode() {
+    if (codeBusy || cooldown > 0) return;
+    setCodeBusy(true);
+    setError(null);
+    setResendSent(false);
+    const r = await sendTwoFactorOtp();
+    setCodeBusy(false);
+    if (!r.ok) { setError(t("twofa.expired")); return; }
+    setResendSent(true);
+    setCooldown(RESEND_COOLDOWN);
+  }
+
   async function submit() {
     if (busy || captchaBlocked) return;
     const address = email.trim();
@@ -149,6 +199,8 @@ export function AuthScreen() {
     setCaptchaNonce((n) => n + 1);
 
     if (r.ok) {
+      // İkinci adım bekleniyorsa oturum YOK ve bu bir hata değil.
+      if (r.twoFactor) { void toTwoFactor(); return; }
       /*
         Kayıt 200 döndü ama oturum açılmadıysa e-posta doğrulaması bekleniyor
         (bkz. lib/auth AuthOutcome.session). Uygulamaya geçmek yerine doğrulama
@@ -215,13 +267,15 @@ export function AuthScreen() {
     üçlü koşul dördüncü dalda okunmaz hâle geldiği için burada hesaplanıyor.
   */
   const headTitle =
-    view === "verify" ? t(verifyReason === "blocked" ? "verify.title_blocked" : "verify.title")
+    view === "twofactor" ? t("twofa.verify_title")
+      : view === "verify" ? t(verifyReason === "blocked" ? "verify.title_blocked" : "verify.title")
       : view === "forgot" ? t("auth.forgot_your_password")
         : view === "options" ? t("auth.sign_in")
           : mode === "signin" ? t("auth.welcome_back") : t("auth.create_account");
 
   const headSub =
-    view === "verify"
+    view === "twofactor" ? t("twofa.verify_sub", { n: TWO_FACTOR_CODE_MINUTES })
+      : view === "verify"
       ? verifyReason === "blocked"
         ? (verifyEmail ? t("verify.blocked_with_email", { email: verifyEmail }) : t("verify.blocked"))
         : (verifyEmail ? t("verify.sent_with_email", { email: verifyEmail }) : t("verify.sent"))
@@ -234,8 +288,8 @@ export function AuthScreen() {
       {/* Zorunlu giriş duvarı: seçenekler ekranında kapatma YOK (misafir modu yok).
           Yalnız e-posta formundan sağlayıcı listesine geri dönülür. */}
       <View style={{ flexDirection: "row", alignItems: "center", paddingTop: insets.top + spacing.sm, paddingHorizontal: spacing.lg, minHeight: 44 }}>
-        {(view === "email" || view === "verify") && (
-          <PressableScale accessibilityLabel={t("common.back")} hitSlop={4} onPress={() => { setView(view === "verify" ? "email" : "options"); setError(null); }} style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
+        {(view === "email" || view === "verify" || view === "twofactor") && (
+          <PressableScale accessibilityLabel={t("common.back")} hitSlop={4} onPress={() => { setView(view === "email" ? "options" : "email"); setError(null); }} style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
             <ArrowBackIcon color={colors.text} size={24} />
           </PressableScale>
         )}
@@ -303,6 +357,75 @@ export function AuthScreen() {
             )}
             <PressableScale onPress={() => { setView("email"); setResetSent(false); setError(null); }} style={{ alignItems: "center", paddingVertical: spacing.md }}>
               <Text variant="bodyStrong" color={colors.primaryText}>{t("auth.back_to_sign_in")}</Text>
+            </PressableScale>
+          </View>
+        ) : view === "twofactor" ? (
+          <View style={{ gap: spacing.md }}>
+            <TextInput
+              value={code}
+              onChangeText={setCode}
+              autoFocus
+              /*
+                `keyboardType="number-pad"` + `textContentType="oneTimeCode"`:
+                sayı tuş takımı açılıyor ve iOS gelen postadaki kodu kendisi
+                öneriyor (Android'de karşılığı `autoComplete="sms-otp"`, ama
+                kod e-postayla geldiği için orada öneri çıkmaz).
+              */
+              keyboardType="number-pad"
+              textContentType="oneTimeCode"
+              maxLength={TWO_FACTOR_CODE_DIGITS}
+              returnKeyType="go"
+              onSubmitEditing={() => { void doVerifyCode(); }}
+              placeholder={t("twofa.code")}
+              placeholderTextColor={colors.textFaint}
+              style={[input, { textAlign: "center", fontSize: 26, letterSpacing: 10 }]}
+            />
+
+            <PressableScale
+              onPress={() => setTrustDevice(!trustDevice)}
+              accessibilityRole="checkbox"
+              accessibilityState={{ checked: trustDevice }}
+              accessibilityLabel={t("twofa.trust")}
+              style={{ flexDirection: "row", alignItems: "flex-start", gap: spacing.sm, paddingVertical: spacing.xs }}
+            >
+              <View style={{ width: 22, height: 22, borderRadius: 6, borderWidth: 2, borderColor: trustDevice ? colors.primary : colors.border, backgroundColor: trustDevice ? colors.primary : "transparent", alignItems: "center", justifyContent: "center", marginTop: 2 }}>
+                {trustDevice && <Text variant="caption" color={colors.onPrimary}>✓</Text>}
+              </View>
+              <View style={{ flex: 1 }}>
+                <Text variant="bodyStrong">{t("twofa.trust")}</Text>
+                <Text variant="caption" color={colors.textMuted}>{t("twofa.trust_note")}</Text>
+              </View>
+            </PressableScale>
+
+            {resendSent && (
+              <View style={{ backgroundColor: colors.successSoft, borderRadius: radii.md, padding: spacing.md }}>
+                <Text variant="caption" color={colors.successText} accessibilityLiveRegion="polite">{t("twofa.resent")}</Text>
+              </View>
+            )}
+            {error && (
+              <View style={{ backgroundColor: colors.dangerSoft, borderRadius: radii.md, padding: spacing.md }}>
+                <Text variant="caption" color={colors.dangerText}>{error}</Text>
+              </View>
+            )}
+
+            <PressableScale
+              onPress={doVerifyCode}
+              accessibilityLabel={t("twofa.verify")}
+              style={[{ borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: 16, alignItems: "center" }, softShadow(colors.primary, 10)]}
+            >
+              <Text variant="h3" color={colors.onPrimary}>{codeBusy ? "..." : t("twofa.verify")}</Text>
+            </PressableScale>
+
+            <PressableScale
+              onPress={resendCode}
+              disabled={codeBusy || cooldown > 0}
+              accessibilityLabel={t("twofa.resend")}
+              accessibilityState={{ disabled: codeBusy || cooldown > 0 }}
+              style={{ alignItems: "center", paddingVertical: spacing.md, opacity: codeBusy || cooldown > 0 ? 0.6 : 1 }}
+            >
+              <Text variant="bodyStrong" color={colors.primaryText}>
+                {cooldown > 0 ? t("verify.resend_in", { n: cooldown }) : t("twofa.resend")}
+              </Text>
             </PressableScale>
           </View>
         ) : view === "verify" ? (

@@ -35,6 +35,13 @@ export function translateAuthError(code: string, message: string, status = 0): s
     geçilemedi, tekrar denesin.
   */
   if (c === "VERIFICATION_FAILED" || c === "MISSING_RESPONSE") return t("autherror.captcha_failed");
+  /*
+    İkinci adımın kodu: yanlış, süresi dolmuş ve deneme hakkı tükenmiş — üçü
+    de kullanıcı için aynı sonuç. Ayrı metin, kodun hangi sebeple düştüğünü
+    söylemek olurdu.
+  */
+  if (c === "INVALID_CODE" || c === "OTP_HAS_EXPIRED" || c === "TOO_MANY_ATTEMPTS_REQUEST_NEW_CODE")
+    return t("autherror.invalid_code");
   if (c.includes("EMAIL_NOT_VERIFIED") || m.includes("email not verified"))
     return t("autherror.your_email_address_is_not");
   if (c.includes("INVALID_EMAIL_OR_PASSWORD") || m.includes("invalid email or password"))

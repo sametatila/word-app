@@ -5,6 +5,7 @@ import { Text } from "./Text";
 import { PressableScale } from "./PressableScale";
 import { spacing, radii, type Palette } from "../theme";
 import { ChangePassword } from "./ChangePassword";
+import { TwoFactor } from "./TwoFactor";
 import { ActiveSessions } from "./ActiveSessions";
 import { listAccounts, unlinkAccount, type LinkedAccount } from "../lib/accountLinks";
 import { googleLink, googleSupported } from "../lib/googleAuth";
@@ -111,6 +112,9 @@ export function LinkedAccounts({ colors }: { colors: Palette }) {
           zaten burada; ikinci bir istek atmaya gerek yok. Yalnız Google/Apple
           ile girmiş birine "şu anki parolan" sormak anlamsız olurdu. */}
       {accounts.some((a) => a.providerId === "credential") ? <ChangePassword colors={colors} /> : null}
+      {/* İki adımlı doğrulama da parolalı hesaba bağlı: açma ve kapatma parola
+          istiyor ve koruduğu şey zaten parolalı giriş. */}
+      {accounts.some((a) => a.providerId === "credential") ? <TwoFactor colors={colors} /> : null}
 
       {/* Etkin oturumlar HER hesapta: yalnız Google ile giren biri de
           telefonunu kaybedebilir. Parola değiştirmenin aksine bu, giriş

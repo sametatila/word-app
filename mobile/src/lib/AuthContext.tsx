@@ -132,6 +132,13 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
   const signIn = useCallback(async (email: string, password: string, captchaToken?: string | null) => {
     const r = await apiSignIn(email, password, captchaToken);
+    /*
+      İKİ ADIMLI DOĞRULAMA BEKLİYORSA burada hiçbir şey yazılmıyor: oturum
+      yok, `getSession()` de null döner ve kullanıcıyı null'a çekmek ekranı
+      "çıkış yapılmış" saymaya iterdi. Yazma işi ikinci adım bitince
+      (verify-otp) yapılıyor.
+    */
+    if (r.ok && r.twoFactor) return r;
     // Giriş = hesap zaten vardı: akışta seçilenler değil, hesabın kendi ayarları geçerli.
     if (r.ok) { const u = r.user ?? (await getSession()); setUser(u); await adoptAccount(u, false); }
     return r;
