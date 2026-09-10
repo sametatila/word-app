@@ -26,9 +26,16 @@
  *   `fields[].label`                  formun Almanca alan adı
  *   `genre`                           kapalı slug kümesi, arayüz sözlüğünde
  *   `gloss` / `phrases`               `en` alanı zaten dolu, çözücü katlıyor
+ *
+ * SORU KÖKÜ VE BAŞLIK SONRADAN KATILDI. İkisi de "öğrenilen dilde" sayılıp
+ * kapsam dışı bırakılmıştı ve ölçüm bunun yalnız çoğunluk için doğru
+ * olduğunu gösterdi: 4.100 kökün 3.821'i Almanca, 246'sı Türkçe. O 246'sı
+ * İngilizce kursta Türkçe kalıyordu. Ayrımı `isTurkishStem` yapıyor ve
+ * ÇÖZÜCÜDE duruyor — `isProseQuote` ile aynı gerekçe.
  */
 import { writeFileSync, mkdirSync } from "node:fs";
 import { BUNDLED_EXERCISES } from "@/lib/skills";
+import { isTurkishOption, isTurkishStem } from "@/lib/lessons/native";
 
 const DIR = new URL(".", import.meta.url).pathname;
 
@@ -62,6 +69,12 @@ export const KINDS = [
   "free.checklist",
   "build.tr",
   "build.hint",
+  /* EN SONDA ve bilerek: bu ikisi hat 3.426/3.426'yken eklendi ve
+     t-001..t-023 paketlerinin kayması yasak. `rank` KINDS sırasına
+     baktığı için sona eklemek eskileri hiç oynatmıyor. */
+  "question.text",
+  "question.option",
+  "title",
 ] as const;
 
 export type TaskKind = (typeof KINDS)[number];
@@ -106,6 +119,28 @@ export function extractTasks(): TaskRow[] {
   )) {
     const at = `${e.id} · ${e.skill ?? "?"} ${e.level ?? ""}`.trim();
     add("focus", e.focus, at);
+
+    /* Yalnız TÜRKÇE kök ve başlık. Almanca olanlar öğrenilen dilde ve
+       paketlenmiyor; sözlüğe girselerdi 3.821 birim eşleme olurdu. */
+    const title = str(e.title);
+    if (title && isTurkishStem(title)) add("title", title, at);
+    for (const q of (e.questions as Any[]) ?? []) {
+      const text = str(q.text);
+      /* Kökün bağlamı ŞIKLAR: "Hangisi doğru?" tek başına çevrilemez.
+         Doğru şık `de` olarak iliştiriliyor, hepsi `q` olarak. */
+      const opts = ((q.options as unknown[]) ?? []).filter(
+        (o): o is string => typeof o === "string" && Boolean(o.trim()),
+      );
+      const joined = opts.join(" · ") || undefined;
+      if (text && isTurkishStem(text))
+        add("question.text", text, at, str(opts[Number(q.answer ?? 0)]), joined);
+      /* ŞIKLARIN 5.590'ından yalnız 15'i Türkçe ve hepsi dil bilgisi
+         sorularında. Kökü çevirip şıkkı bırakmak, hattın bütün gerekçesini
+         boşa çıkarırdı; bağlam olarak kök ve öteki şıklar iliştiriliyor. */
+      for (const o of opts)
+        if (isTurkishOption(q as { text?: string; options?: string[] }, o))
+          add("question.option", o, at, text, joined);
+    }
 
     for (const b of (e.explanation as Any[]) ?? []) {
       const head = str(b.heading);

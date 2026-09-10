@@ -18,7 +18,7 @@
  */
 import { readFileSync } from "node:fs";
 import { BUNDLED_EXERCISES } from "@/lib/skills";
-import { resolveExercise, isProseQuote, type NativeDict } from "@/lib/lessons/native";
+import { resolveExercise, isProseQuote, isTurkishStem, type NativeDict } from "@/lib/lessons/native";
 import { extractTasks } from "../data/skills/task/make.js";
 
 const dict = JSON.parse(
@@ -58,6 +58,8 @@ const misses = new Map<string, { ex: string; n: number }>();
    maddesi `en` taşımıyordu ve 25 egzersiz birden düşüyordu. */
 const noEn = new Map<string, { de: string; ex: string }>();
 const bad: string[] = [];
+/** Çözüldükten SONRA hâlâ Türkçe görünen kök/şık/başlık → dize, egzersiz. */
+const leftover = new Map<string, string>();
 
 for (const e of list) {
   for (const tr of [e.intro, ...(e.questions ?? []).map((q) => q.explain)]) {
@@ -79,8 +81,28 @@ for (const e of list) {
     if (g.note?.trim() && dict.prose[g.note] === undefined)
       misses.set(g.note, { ex: e.id, n: (misses.get(g.note)?.n ?? 0) + 1 });
   }
-  if (!resolveExercise(dict, e as unknown as { intro: string; questions?: { explain: string }[] }))
+  const out = resolveExercise(
+    dict,
+    e as unknown as { intro: string; questions?: { explain: string }[] },
+  ) as { title?: string; questions?: { text?: string; options?: string[] }[] } | null;
+  if (!out) {
     bad.push(e.id);
+    continue;
+  }
+  /* ÇIKTIDA TÜRKÇE KALDI MI. Soru kökü, şıklar ve başlık uzun süre
+     çözücünün dışındaydı ve o yüzden hiçbir kapı onlara bakmıyordu:
+     4.100 kökün 246'sı Türkçe kalıyordu ve hata yalnız ekranda görünürdü.
+     Sözlükte karşılık yoksa `resolveExercise` zaten `null` döner ve
+     yukarıdaki dal yakalar; bu tarama ise ÖLÇÜTÜN kendisi kayarsa
+     (`isTurkishStem` daralırsa) sessiz kalmayı önlüyor. */
+  const leak = (t?: string) => {
+    if (typeof t === "string" && isTurkishStem(t)) leftover.set(t, e.id);
+  };
+  leak(out.title);
+  for (const q of out.questions ?? []) {
+    leak(q.text);
+    (q.options ?? []).forEach(leak);
+  }
 }
 
 console.log(
@@ -112,4 +134,13 @@ if (bad.length) {
   console.log(`\nHATA: ${bad.length} egzersiz reddedildi: ${bad.slice(0, 10).join(", ")}`);
   process.exit(1);
 }
-console.log("\ntamam: her egzersizin yönergesi ve açıklaması İngilizceye çözülüyor");
+if (leftover.size) {
+  console.log(`\nHATA: çözüldükten sonra ${leftover.size} dize hâlâ Türkçe görünüyor\n`);
+  for (const [text, id] of [...leftover].slice(0, 25))
+    console.log(`  [${id}] ${JSON.stringify(text.slice(0, 90))}`);
+  process.exit(1);
+}
+console.log(
+  "\ntamam: her egzersizin yönergesi, açıklaması, soru kökü, şıkları ve" +
+    " başlığı İngilizceye çözülüyor",
+);

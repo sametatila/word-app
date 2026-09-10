@@ -462,6 +462,49 @@ export const isTurkishStem = (t: string): boolean =>
     .some((w) => !/^\p{Lu}/u.test(w) && (/[ışğ]/.test(w) || TR_WORD.test(w) || TR_SUFFIX.test(w)));
 
 /**
+ * ŞIKLARIN BİRİMİ SORU, dize değil.
+ *
+ * `isTurkishStem` tek tek şıklarda yetmiyor, çünkü Türkçe bir şık hiçbir
+ * işaret taşımayabiliyor: "Afiyet olsun!" ve "Neyi unuttunuz?" içinde ne
+ * ı/ş/ğ var ne de listedeki bir sözcük. İkisi de "„Gute Besserung!“ ne
+ * demek?" sorusunun şıkları ve kardeşleri (`Görüşürüz!`, `Geçmiş olsun!`)
+ * yakalanıyordu — biri çevrilip öteki kalsaydı, hattın önlemeye çalıştığı
+ * yarım çevirinin tam ortası olurdu.
+ *
+ * Ölçüt ŞIK KÜMESİ, tek tek şık değil: kaynak bir sorunun şıklarını tek
+ * dilde yazıyor. Tek tek bakmak iki yönden de yanılıyordu — "Afiyet
+ * olsun!" hiçbir Türkçe işareti taşımadığı için düşüyor, "sofort
+ * auflegen" ve "Liebe Grüße" ise listede olmayan Almanca sözcüklerden
+ * ötürü Türkçe sanılıyordu.
+ *
+ * İki koşuldan biri yetiyor: Türkçe işaretli şık Almanca işaretliden
+ * çoksa, YA DA kök Türkçeyken hiçbir şık Almanca işareti taşımıyorsa.
+ * İkincisi "Afiyet olsun! · Görüşürüz! · Geçmiş olsun!" gibi hepsi büyük
+ * harfle başlayan kümeler için gerekli; birincisi ise Türkçe kökün
+ * ALMANCA şıklarını dışarıda tutuyor — doğru/yanlış sorularında
+ * `Richtig`/`Falsch`, dinlemede `mit dem Zug`.
+ */
+const DE_WORD =
+  /(?<!\p{L})(?:was|wer|wie|wo|wann|warum|welche[rsnm]?|wohin|woher|ist|sind|war|hat|haben|wird|werden|kann|können|soll|sollen|muss|müssen|darf|möchte|gibt|der|die|das|den|dem|des|ein|eine|einen|einem|eines|und|oder|nicht|kein|keine|mit|für|von|zu|im|am|auf|bei|nach|vor|über|sie|er|es|man|ihr|sich|beim|zum|zur|nur|noch|schon|sehr|gut|dann|dort|hier)(?!\p{L})/iu;
+/** Tek başına duran büyük harfli bir sözcük Almanca sayılıyor: `Richtig`. */
+const looksGerman = (t: string): boolean => {
+  const words = t.split(/[^\p{L}'’]+/u).filter(Boolean);
+  if (DE_WORD.test(t)) return true;
+  return words.length === 1 && /^\p{Lu}/u.test(words[0]) && !/[ışğİĞŞ]/.test(words[0]);
+};
+export const hasTurkishOptions = (q: { text?: string; options?: string[] }): boolean => {
+  const opts = (q.options ?? []).filter((o) => typeof o === "string" && o.trim());
+  if (!opts.length) return false;
+  const tr = opts.filter(isTurkishStem).length;
+  const de = opts.filter(looksGerman).length;
+  return tr > de || (de === 0 && typeof q.text === "string" && isTurkishStem(q.text));
+};
+export const isTurkishOption = (
+  q: { text?: string; options?: string[] },
+  option: string,
+): boolean => Boolean(option.trim()) && hasTurkishOptions(q);
+
+/**
  * Beceri egzersizini öğrencinin diline çevirir; bir dize bile eksikse `null`.
  *
  * Hep-ya-hiç, kardeşleriyle aynı gerekçeyle: yarısı Türkçe yarısı İngilizce
@@ -590,7 +633,11 @@ export function resolveExercise<T extends ExerciseShape>(dict: NativeDict, ex: T
             explain: t(q.explain),
             ...(q.text !== undefined ? { text: stem("question.text", q.text) } : {}),
             ...(q.options
-              ? { options: q.options.map((o) => stem("question.option", o) as string) }
+              ? {
+                  options: q.options.map((o) =>
+                    isTurkishOption(q, o) ? (k("question.option", o) as string) : o,
+                  ),
+                }
               : {}),
           })),
         }
