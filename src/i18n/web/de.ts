@@ -609,7 +609,6 @@ export const deWeb: Record<string, string> = {
   "writ.empty_title": "Noch kein bewerteter Text",
   "writ.empty_sub": "Wenn du in einer Schreibübung einen freien Text schreibst, landet er hier: dein Text, die Punktzahl und die Korrekturen zusammen. Schreibst du dieselbe Aufgabe erneut, kannst du beide nebeneinander vergleichen.",
   "writ.go_to_writing": "Zu den Schreibübungen",
-  "writ.delete_confirm": "Diesen Text und seine Bewertung löschen?",
   "writ.kind_sentence": "Satz",
   "writ.kind_roleplay": "Rollenspiel",
   "questw.rewards_ready": "{n} Belohnungen bereit",

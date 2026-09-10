@@ -102,6 +102,27 @@ function sources(dirs, out = []) {
  * Liste yalniz KISALABILIR: bir ucu buraya eklemek, mobilde karsiligi
  * olmadigini BELGELEMEKTIR.
  */
+/* YONTEM DUZEYINDE. Ayni ucun bir YONTEMI tek platformda kalabiliyor ve bu,
+   ucun tamamen tek platformda kalmasi kadar sessiz: `GET /api/skills` webde
+   okunuyordu, mobilde okunmuyordu ve Android'de beceri ilerlemesi cihaza
+   hapsolmustu (web-parity 11.144). Yol duzeyindeki liste bunu goremedi cunku
+   mobil ayni yolu POST icin zaten aniyordu. */
+const WEB_ONLY_METHOD = {
+  "DELETE /api/push/subscribe": "TARAYICI push aboneligi; mobil FCM (/api/push/device)",
+  "PUT /api/push/subscribe": "TARAYICI push aboneligi",
+  "POST /api/push/subscribe": "TARAYICI push aboneligi",
+  "PUT /api/skills": "yerelden sunucuya tasima (web localStorage gecmisi); mobilde tasinacak eski kayit yok",
+  "POST /api/stt": "mobil ayni ucu NATIVE cagiriyor (Kotlin uploadStt) - JS kaynaginda gorunmez",
+  "POST /api/session": "tur ORTASI ilerleme damgasi; mobil ilerlemeyi cevaplarla birlikte /api/answers'a yaziyor",
+  "POST /api/pronounce": "telaffuz puani - karar bekliyor (web-parity 11.139)",
+  "POST /api/assess/queue": "degerlendirme kuyrugu - karar Samet'te (web-parity 11.12)",
+  "GET /api/premium/referral": "mobil ayni kodu /api/premium/status icinden aliyor",
+  "GET /api/challenge": "hayatta kalma modu webe ozel",
+  "POST /api/challenge": "hayatta kalma modu webe ozel",
+  "POST /api/admin/legal": "yonetim panosu",
+  "POST /api/admin/premium": "yonetim panosu",
+};
+
 const WEB_ONLY = {
   "/api/admin/legal": "yonetim panosu — mobilde yok, olmayacak",
   "/api/admin/premium": "yonetim panosu — mobilde yok, olmayacak",
@@ -131,6 +152,39 @@ const webOnly = all.filter((a) => calledIn(webSrc, a) && !calledIn(mobSrc, a));
 const webOnlyUndoc = webOnly.filter((a) => !WEB_ONLY[prefix(a)] && !WEB_ONLY[a]);
 const webOnlyStale = Object.keys(WEB_ONLY).filter((a) => !webOnly.some((x) => prefix(x) === a || x === a));
 
+/* Cagri yerindeki YONTEM: `method: "X"` varsa o, yoksa GET. Pencere cagri
+   ifadesinin sonunda kesiliyor - iki komsu cagri (once GET, sonra POST) ayni
+   pencereye girip birbirinin yontemini gölgelemesin. */
+function yontemler(text, yol) {
+  const out = new Set();
+  let i = 0;
+  while ((i = text.indexOf(yol, i)) >= 0) {
+    let son = text.length;
+    for (const t of [";", "\n\n"]) { const j = text.indexOf(t, i); if (j >= 0 && j < son) son = j; }
+    const w = text.slice(i, Math.min(son, i + 400));
+    const m = w.match(/method:\s*"(GET|POST|PATCH|PUT|DELETE)"/);
+    out.add(m ? m[1] : "GET");
+    i += yol.length;
+  }
+  return out;
+}
+const routeMethods = (f) =>
+  [...fs.readFileSync(f, "utf8").matchAll(/export async function (GET|POST|PATCH|PUT|DELETE)/g)].map((m) => m[1]);
+
+const yontemSatirlari = [];
+for (const ep of all) {
+  const dosya = path.join(ROOT, "src", "app", ep, "route.ts");
+  if (!fs.existsSync(dosya)) continue;
+  const p = prefix(ep);
+  for (const m of routeMethods(dosya)) {
+    if (yontemler(webSrc.join("\n"), p).has(m) && !yontemler(mobSrc.join("\n"), p).has(m)) {
+      yontemSatirlari.push(`${m} ${p}`);
+    }
+  }
+}
+const yontemUndoc = yontemSatirlari.filter((r) => !WEB_ONLY_METHOD[r]);
+const yontemStale = Object.keys(WEB_ONLY_METHOD).filter((r) => !yontemSatirlari.includes(r));
+
 const check = process.argv.includes("--check");
 if (!check) {
   console.log(`${all.length} uç, ${orphans.length} tanesinin repoda çağıranı yok:\n`);
@@ -154,6 +208,17 @@ if (webOnlyUndoc.length) {
   console.error("\nYALNIZ WEBİN ÇAĞIRDIĞI UÇ (mobilde karşılığı yok):");
   for (const a of webOnlyUndoc) console.error(`  ${a}`);
   console.error("\nMobil istemciye bağla ya da `WEB_ONLY` listesine SEBEBİYLE ekle.");
+}
+if (yontemUndoc.length) {
+  bad++;
+  console.error("\nYALNIZ WEBİN ÇAĞIRDIĞI YÖNTEM (mobilde o yöntem yok):");
+  for (const r of yontemUndoc) console.error(`  ${r}`);
+  console.error("\nMobil istemciye bağla ya da `WEB_ONLY_METHOD` listesine SEBEBİYLE ekle.");
+}
+if (yontemStale.length) {
+  bad++;
+  console.error("\nWEB_ONLY_METHOD LİSTESİNDE OLUP ARTIK MOBİLDE DE ÇAĞRILAN YÖNTEM (listeden çıkar):");
+  for (const r of yontemStale) console.error(`  ${r}`);
 }
 if (webOnlyStale.length) {
   bad++;

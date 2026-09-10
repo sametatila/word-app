@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { t } from "../lib/i18n";
-import { View, ScrollView } from "react-native";
+import { Alert, View, ScrollView } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { useNavigation } from "@react-navigation/native";
 import { Text } from "../ui/Text";
@@ -11,7 +11,7 @@ import { AiNotice } from "../ui/AiNotice";
 import { ArrowBackIcon, WriteIcon } from "../ui/icons";
 import { SkeletonCard, SkeletonLine, SkeletonTile } from "../ui/Skeleton";
 import { useAuth } from "../lib/AuthContext";
-import { fetchWritings, type Writing } from "../game/writings";
+import { fetchWritings, deleteWriting, type Writing } from "../game/writings";
 import { useTheme, spacing, radii, type Palette } from "../theme";
 import { CardGrid } from "../ui/CardGrid";
 
@@ -38,7 +38,7 @@ function scoreFill(score: number | null, colors: Palette): string {
   return score >= 70 ? colors.success : score >= 40 ? colors.streak : colors.danger;
 }
 
-function WritingCard({ w, colors, onReport }: { w: Writing; colors: Palette; onReport: (w: Writing) => void }) {
+function WritingCard({ w, colors, onReport, onDelete }: { w: Writing; colors: Palette; onReport: (w: Writing) => void; onDelete: (w: Writing) => void }) {
   const [open, setOpen] = useState(false);
   const score = w.result?.score?.overall ?? null;
   const tone = scoreTone(score, colors);
@@ -55,10 +55,20 @@ function WritingCard({ w, colors, onReport }: { w: Writing; colors: Palette; onR
           </View>
         </View>
         {open && score === null ? <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.sm }}>{t("writings.to_be_graded")}</Text> : null}
-        {open && score !== null ? (
-          <PressableScale onPress={() => onReport(w)} hitSlop={8} accessibilityLabel={t("writings.report_this_feedback")} style={{ alignSelf: "flex-start", marginTop: spacing.sm }}>
-            <Text variant="micro" color={colors.textFaint}>{t("writings.report_this_feedback")}</Text>
-          </PressableScale>
+        {/* SİL — uç aylardır duruyor ve web kartı kullanıyordu; mobilde kendi
+            yazısını silmenin hiçbir yolu yoktu. Açılan kartta duruyor ki
+            listede yanlışlıkla dokunulmasın. */}
+        {open ? (
+          <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.lg, marginTop: spacing.sm }}>
+            {score !== null ? (
+              <PressableScale onPress={() => onReport(w)} hitSlop={8} accessibilityLabel={t("writings.report_this_feedback")}>
+                <Text variant="micro" color={colors.textFaint}>{t("writings.report_this_feedback")}</Text>
+              </PressableScale>
+            ) : null}
+            <PressableScale onPress={() => onDelete(w)} hitSlop={8} accessibilityLabel={t("common.delete")}>
+              <Text variant="micro" color={colors.dangerText}>{t("common.delete")}</Text>
+            </PressableScale>
+          </View>
         ) : null}
         <Text variant="micro" color={colors.textFaint} style={{ marginTop: spacing.sm }}>{w.day}</Text>
       </Card>
@@ -72,6 +82,24 @@ export function WritingsScreen() {
   const nav = useNavigation<{ goBack: () => void }>();
   const { user } = useAuth();
   const [items, setItems] = useState<Writing[] | null>(null);
+
+  /* Silme ONAY İSTİYOR: geri alınamaz ve kullanıcının kendi ürettiği metin.
+     Web de aynı soruyu soruyor (`writ.delete_confirm`). */
+  function askDelete(w: Writing) {
+    Alert.alert(t("writ.delete_confirm"), undefined, [
+      { text: t("common.discard"), style: "cancel" },
+      {
+        text: t("common.delete"),
+        style: "destructive",
+        onPress: () => {
+          /* Satır ÖNCE gidiyor, sunucu sonra: silme başarısızsa liste bir
+             sonraki açılışta zaten doğruyu gösterir ve kullanıcı beklemiyor. */
+          setItems((list) => (list ?? []).filter((x) => x.id !== w.id));
+          void deleteWriting(w.id).catch(() => {});
+        },
+      },
+    ]);
+  }
   const [phase, setPhase] = useState<"loading" | "ready" | "error">("loading");
   const [report, setReport] = useState<Writing | null>(null); // "Bildir" açık olan değerlendirme
   const [attempt, setAttempt] = useState(0);
@@ -127,7 +155,7 @@ export function WritingsScreen() {
         <ScrollView contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingTop: spacing.md, paddingBottom: insets.bottom + spacing.xxl }} showsVerticalScrollIndicator={false}>
           <AiNotice variant="output" style={{ marginBottom: spacing.md }} />
           <CardGrid minItemWidth={420}>
-            {(items ?? []).map((w) => <WritingCard key={w.id} w={w} colors={colors} onReport={setReport} />)}
+            {(items ?? []).map((w) => <WritingCard key={w.id} w={w} colors={colors} onReport={setReport} onDelete={askDelete} />)}
           </CardGrid>
         </ScrollView>
       )}

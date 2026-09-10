@@ -1300,6 +1300,7 @@ export const enBase: Record<string, string> = {
   "writings.to_be_graded": "To be graded.",
   "writings.couldn_t_load_writings": "Couldn't load your writing.",
   "writings.my_writing": "My writing",
+  "writ.delete_confirm": "Delete this text and its assessment?",
   "tier.bronze": "Bronze",
   "tier.silver": "Silver",
   "tier.gold": "Gold",

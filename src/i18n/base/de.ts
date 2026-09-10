@@ -1300,6 +1300,7 @@ export const deBase: Record<string, string> = {
   "writings.to_be_graded": "Wird bewertet.",
   "writings.couldn_t_load_writings": "Deine Texte konnten nicht geladen werden.",
   "writings.my_writing": "Meine Texte",
+  "writ.delete_confirm": "Diesen Text und seine Bewertung löschen?",
   "tier.bronze": "Bronze",
   "tier.silver": "Silber",
   "tier.gold": "Gold",

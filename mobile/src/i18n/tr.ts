@@ -1303,6 +1303,7 @@ export const tr: Record<string, string> = {
   "writings.to_be_graded": "Puanlanacak.",
   "writings.couldn_t_load_writings": "Yazıların yüklenemedi.",
   "writings.my_writing": "Yazılarım",
+  "writ.delete_confirm": "Bu yazı ve değerlendirmesi silinsin mi?",
   "tier.bronze": "Bronz",
   "tier.silver": "Gümüş",
   "tier.gold": "Altın",
