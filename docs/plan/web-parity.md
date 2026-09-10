@@ -549,17 +549,32 @@ ait, ürüne değil. Sayfa `domcontentloaded` ile üç dilde de doğrulandı.)
 ### Bilerek farklı kalanlar
 
 Parite "webde fazla olanı at" demek değil; web'e özgü olanlar mobilin
-düzenine oturtuldu, yerlerini korudular:
+düzenine oturtuldu, yerlerini korudular.
+
+BEŞİNİN HEPSİ KODLA KARŞILAŞTIRILDI (2026-09-10) — kararlar tutuyor, bir
+madde de düzeltildi:
 
 - **Hayatta kalma turu** — mobilde yok, "Daha fazlası" ızgarasında duruyor.
+  Doğrulandı: web `learn-hub` ızgarasında duruyor ve yorumu da bunu söylüyor;
+  mobilde ekran yok. Bu turda §11.25'te yanlışlıkla "yüzey eksiği" diye
+  sınıflandırılmıştı, portlamaya başlamadan önce ölçülüp düzeltildi.
 - **Kelime listesinde seviye süzgeci ve gelişim açılırı** — mobilde yok;
   8.707 kelimelik listede seviye süzgeci mobilde olmayan bir işlev, kaldırmak
-  kayıp olurdu.
+  kayıp olurdu. Doğrulandı: web `word-list` `LEVELS` çipleriyle süzüyor,
+  mobil `WordsScreen` yalnız DURUM süzgeci taşıyor (hepsi/öğreniliyor/…) ve
+  seviyeyi satır başına etiket olarak gösteriyor.
 - **Ayarlarda "Cihaz" bölümü** (ana ekrana ekle) — tarayıcıya özgü, mobilde
   karşılığı olamaz. Görünümle gizliliğin arasında kendi etiketiyle duruyor.
-- **Yapabildiklerim'de beceriye göre alt başlıklar** — mobilde yalnız seviye
-  var; web'de eklenen yapı, eksilen değil.
-- **`/analytics` ve `admin/*`** — iç araçlar, Türkçe kalıyor.
+  Doğrulandı: `profile-form` `settings.app` bölümü, `InstallGuide` açılır
+  kutuda; bileşenin kendi yorumu da "mobilde karşılığı yok, olamaz da" diyor.
+- **Yapabildiklerim'de beceriye göre GRUPLAMA** — DÜZELTİLDİ: eski kayıt
+  "mobilde yalnız seviye var" diyordu, bu artık doğru değil. Mobil
+  `CandoScreen` beceriyi SATIR BAŞINA küçük bir etiketle gösteriyor; web
+  satırları beceri başlıkları altında GRUPLUYOR. Yani fark bilginin varlığı
+  değil, düzeni: web'de eklenen yapı, eksilen değil.
+- **`/analytics` ve `admin/*`** — iç araçlar, Türkçe kalıyor. Doğrulandı:
+  ham metin tarayıcısının atlama listesi ikisini de taşıyor
+  (`scripts/i18n-hardcoded.mjs`).
 
 
 ---
