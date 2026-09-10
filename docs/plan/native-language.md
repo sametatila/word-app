@@ -327,6 +327,23 @@ kalır ve toplu karara bırakılır. Türkçe tarafta da kişi adı örnekleri v
 tıpkı Almanca taraftaki gibi — aşağıdaki 16 parçalık listeyle aynı kararı
 bekliyorlar.
 
+Üçüncü bir durum l-026'da çıktı ve ölçütü keskinleştirdi. Plan
+`de-b1-sprache-akzent`'i "tersine dönen olgu iddiası" diye işaretlemişti:
+"Türkçe ile Almanca akraba diller değil." Ama bu cümle YANLIŞ DEĞİL —
+Türkçe ile Almanca gerçekten akraba değil, öğrenci kim olursa olsun. Sorun
+doğruluk değil İLGİ: İngilizce öğrenciye kendi dili hakkında bir şey
+söylemiyor. Üstelik aynı derste Almanca hedef cümle de aynı iddiayı
+taşıyor ve o alan "çevrilmez"; İngilizcesini tersine çevirseydim ders
+kendi içinde çelişirdi.
+
+O yüzden olduğu gibi çevrildi ve toplu karara bırakıldı. Ölçüt netleşti:
+
+- iddia İngilizce öğrenci için **yanlışsa** → cümle yeniden kurulur;
+- iddia **doğru ama ilgisizse** → çevrilir, karara bırakılır.
+
+İlkini çeviri turu tek başına halledebilir, ikincisini edemez: ikisini
+birden değiştirmek Almanca alanı da değiştirmeyi gerektiriyor.
+
 #### Ana dile bağlılık ALMANCA metinde de var: 16 parça, 6 ders
 
 Yukarıdaki tarama Türkçe `tr()` alanlarınaydı. Almanca `de()` ve
