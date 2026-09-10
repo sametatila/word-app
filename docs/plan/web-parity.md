@@ -5391,3 +5391,23 @@ O sayı kaydetme yanıtından geliyor; mobil ilerlemeyi yalnız cihazda tutuyor
 ders ilerlemesi **sunucuya yazılmıyor** — bu tek başına ayrı bir soru:
 kullanıcı cihaz değiştirdiğinde ders ilerlemesi gidiyor mu? Bir sonraki tur
 bunu ölçecek.
+
+### 11.143 DÜZELTME — mobil ders ilerlemesi sunucuya yazılıyor
+
+§11.142'nin sonunda "mobil ders ilerlemesi sunucuya yazılmıyor gibi görünüyor,
+cihaz değişince gidiyor mu?" diye bir endişe yazmıştım. **Ölçüldü: yanlış.**
+`LessonScreen` ders bitince `/api/lesson`a POST ediyor; yerel AsyncStorage seti
+yalnızca Patika ekranının önbelleği ve `lessonProgress.ts`in kendi başlığı da
+bunu söylüyor. Ucun kendi yorumu da açık: *"telefonda bitirilen ders
+bilgisayarda da bitmiş sayılmalı."* Cihaz değiştiren kullanıcı ilerlemesini
+kaybetmiyor.
+
+Gerçek eksik daha küçüktü ve şimdi kapandı: **yanıt hiç okunmuyordu**. Uç
+`passed`, `nextDays`, `xpGained`, `currentStreak`, `totalXp` döndürüyor; mobil
+çağrıyı yapıp gövdeyi atıyordu, bu yüzden dersin **ne zaman geri geleceği**
+(aralıklı tekrar merdiveni) hiçbir yerde yazmıyordu.
+
+**Yöntem notu:** "yazılmıyor gibi görünüyor" ile "yazılmıyor" arasındaki fark,
+bir `grep` kadar uzaktaydı. Bir sonraki tura devredilen her şüphe, devredilirken
+şüphe olarak işaretlenmeli — burada öyle yapılmıştı ve düzeltme ucuz oldu; ölçüm
+yapılmadan defterde "bulgu" diye dursaydı yanlış bir iş sırası doğururdu.
