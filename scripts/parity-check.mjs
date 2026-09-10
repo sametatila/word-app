@@ -179,6 +179,19 @@ console.log("\n" + C.b + "7. ANADIL EKSENI" + C.off);
   sameList("hazir cift tablosu", pairs(mob), pairs(web));
 }
 
+/* sosyal istemci yuzeyi */
+
+console.log("\n" + C.b + "8. SOSYAL ISTEMCI YUZEYI" + C.off);
+{
+  // İki platform aynı 25 sosyal işlemi ayrı ayrı sarmalıyor. Biri yeni bir uç
+  // eklerken ötekini unutursa o özellik tek platformda kalır ve kimse
+  // söylemez - bu oturumda bulunan `mockAccess` (sunucuda vardı, ucu yoktu)
+  // tam olarak bu sınıftan. İsim kümesi karşılaştırılıyor, imza değil:
+  // parametre adları iki tarafta serbestçe farklı olabilir.
+  const ops = (src) => [...src.matchAll(/^\s*(\w+):\s*\([^)]*\)\s*=>/gm)].map((x) => x[1]);
+  sameSet("islem kumesi", ops(read("mobile/src/api/social.ts")), ops(read("src/lib/social/client.ts")));
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"
