@@ -61,13 +61,41 @@ const TR_TERMS =
 
   Kalan çare Türkçe tarafını büyütmek. Buradakiler ne Almancada ne
   İngilizcede geçiyor; soru eki (`mi`, `mu`, `mü`) ayrı yazıldığı için
-  tek başına da yakalanıyor. Ölçüldü — kanıt sayılan 2.991 açıklıktan
-  tam 3'ü düşüyor ve üçü de yukarıdaki satırlar.
+  tek başına da yakalanıyor.
+
+  Sonradan bir dördüncüsü çıktı: "(hat, saat, tarih, durak)" — bir sefer
+  seferi tarif eden dört Türkçe sözcük. Onu Almanca yapan `hat`ti;
+  Türkçede "sefer hattı", Almancada "sahiptir". Tek bir eşsesli sözcük
+  bütün açıklığı kanıt saymaya yetiyor, o yüzden listeye özel harfi
+  olmayan sık Türkçe adlar da girdi.
+
+  Ölçüldü — kanıt sayılan 2.988 açıklıktan tam 4'ü düşüyor ve dördü de
+  yukarıdaki satırlar; tek bir gerçek Almanca açıklık denetim dışında
+  kalmıyor.
 */
-const TR_PRON =
-  /(?<!\p{L})(?:kendi|kendine|kendini|bunu|onu|şunu|herkes|hepsi|mi|mu|mü|neden|niçin|ancak|hem|üzerine|konusunda|olarak|göre)(?!\p{L})/iu;
+const TR_PLAIN =
+  /(?<!\p{L})(?:kendi|kendine|kendini|bunu|onu|şunu|herkes|hepsi|mi|mu|mü|neden|niçin|ancak|hem|üzerine|konusunda|olarak|göre|saat|tarih|durak|adres|gün|konu|süre|tutar|fiyat|bina|oda|kat|hitap|veda)(?!\p{L})/iu;
+/**
+ * KESME İŞARETİYLE BAĞLANAN TÜRKÇE EK — sözcük listesi değil, yapı.
+ *
+ * "(A2'de Perfekt beklenir)" karma bir açıklık: `Perfekt` Almanca,
+ * gerisi Türkçe. Büyük harf ölçütü onu bütünüyle Almanca saydı ve kapı
+ * Türkçe fiilin de İngilizceye geçmemesini istedi.
+ *
+ * Türkçe yabancı bir ada ek getirirken kesme işareti kullanıyor:
+ * `A2'de`, `Nordkasse'de`, `Jonas'a`. Bu yapı ne Almancada var ne de
+ * İngilizcede — İngilizcenin kısaltmaları (`'s`, `'t`, `'ve`, `'ll`)
+ * listedeki eklerin hiçbiriyle çakışmıyor. Sözcük saymaktan farklı
+ * olarak bu ölçüt yeni kâğıtlarda da çalışır.
+ */
+const TR_SUFFIX =
+  /['’](?:de|da|te|ta|den|dan|ten|tan|ye|ya|yi|yı|yu|yü|nin|nın|nun|nün|in|ın|un|ün|le|la|yle|yla|dir|dır|dur|dür|e|a|i|ı|u|ü)(?!\p{L})/iu;
 const turkish = (t: string): boolean =>
-  /[ışğİĞŞ]/.test(t) || TR_WORDS.test(t) || TR_TERMS.test(t) || TR_PRON.test(t);
+  /[ışğİĞŞ]/.test(t) ||
+  TR_WORDS.test(t) ||
+  TR_TERMS.test(t) ||
+  TR_PLAIN.test(t) ||
+  TR_SUFFIX.test(t);
 const DE_WORDS =
   /(?<!\p{L})(?:der|die|das|ein|eine|einen|einem|ist|sind|war|nicht|kein|keine|und|mit|wir|ich|Sie|du|zu|auf|für|von|dem|den|im|am|bei|nach|vor|über|wie|was|wo|wer|bitte|hier|ja|nein|sehr|gut|noch|schon|aus|um|halb|man|sich|es|habe|hat|haben|werden|wird|wurde|worden|muss|müssen|kann|können|soll|sollen|will|wollen|würde|hätte|wäre)(?!\p{L})/u;
 const EN_WORDS =
