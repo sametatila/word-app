@@ -5,6 +5,7 @@ import Link from "next/link";
 import { QuestionList } from "@/components/skills/quiz";
 import { KindIconFor, KIND_TINT } from "@/components/immersion/unit-pane";
 import { Confetti } from "@/components/celebrate";
+import { ArrowLeftIcon } from "@/components/icons";
 import { Mascot } from "@/components/mascot";
 import type { SkillQuestion } from "@/lib/skills/types";
 import { useT } from "@/lib/i18n/client";
@@ -55,8 +56,16 @@ export function ImmersionQuizPlayer({
   return (
     <div className="mx-auto w-full max-w-2xl px-4 py-6">
       <div className="mb-5 flex items-center gap-3">
-        <Link href="/immersion" aria-label={t("quiz.back_to_path")} className="btn btn-ghost h-9 w-9 shrink-0 text-lg">
-          ←
+        {/* Geri düğmesi 44 - `PageBack` ve Android'in her ekran başlığındaki
+            ölçü. 36 pikselde kalıyordu ve ok da bir bileşen değil düz "←"
+            karakteriydi; ikon ailesinden ayrı düşüyordu. */}
+        <Link
+          href="/immersion"
+          aria-label={t("quiz.back_to_path")}
+          className="pressable flex h-11 w-11 shrink-0 items-center justify-center rounded-tile"
+          style={{ background: "var(--surface-2)", color: "var(--text)" }}
+        >
+          <ArrowLeftIcon size={24} />
         </Link>
         {/* Türün karosu Android'in başlığında var ve Patika listesindeki aynı
             ikon/renk çiftini kullanıyor: kontrol noktası kırmızı, tekrar marka

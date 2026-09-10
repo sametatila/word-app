@@ -107,8 +107,14 @@ export function PlayerShell({
     <div className="mx-auto w-full max-w-2xl">
       <MascotFx />
       <div className="mb-5 flex items-center gap-3">
-        <Link href={back} aria-label={t("common.go_back")} className="btn btn-ghost h-9 w-9 shrink-0">
-          <ArrowLeftIcon size={18} />
+        {/* 44 - `PageBack` ve Android'in ölçüsü; 36'da kalıyordu. */}
+        <Link
+          href={back}
+          aria-label={t("common.go_back")}
+          className="pressable flex h-11 w-11 shrink-0 items-center justify-center rounded-tile"
+          style={{ background: "var(--surface-2)", color: "var(--text)" }}
+        >
+          <ArrowLeftIcon size={24} />
         </Link>
         <div className="min-w-0">
           <div className="flex items-center gap-2">
