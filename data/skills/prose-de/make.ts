@@ -44,7 +44,7 @@ const DIR = new URL(".", import.meta.url).pathname;
 
 export type ProseRow = {
   tr: string;
-  kind: "intro" | "explain";
+  kind: "intro" | "explain" | "gloss.tr";
   /** Kaç egzersizde geçiyor — sıralama buna göre. */
   n: number;
   /** Bağlam: egzersizin kimliği ve becerisi. En çok üç tane. */
@@ -61,6 +61,7 @@ export type ProseRow = {
 };
 
 type Q = { text?: string; options?: string[]; answer?: number; explain?: string };
+type G = { de?: string; tr?: string };
 type Ex = {
   id: string;
   course?: string;
@@ -69,6 +70,8 @@ type Ex = {
   intro?: string;
   text?: string;
   questions?: Q[];
+  gloss?: G[];
+  tasks?: { phrases?: G[] }[];
 };
 
 /** Egzersizin İngilizce yüzeyi: metin, soru kökleri, şıklar. */
@@ -79,12 +82,15 @@ const surfaceOf = (e: Ex): string[] => [
 
 export function extractProse(): ProseRow[] {
   const rows = new Map<string, ProseRow>();
-  const add = (kind: ProseRow["kind"], tr: string | undefined, e: Ex, q?: Q) => {
+  const add = (kind: ProseRow["kind"], tr: string | undefined, e: Ex, q?: Q, word?: string) => {
     if (typeof tr !== "string" || !tr.trim()) return;
     const key = kind + "|" + tr;
     const r = rows.get(key) ?? { tr, kind, n: 0, ctx: [], en: [] };
     r.n++;
     if (r.ctx.length < 3) r.ctx.push(`${e.id} · ${e.skill ?? "?"} ${e.level ?? ""}`.trim());
+    /* Sözlükçe satırında ÖĞRETİLEN kelime yüzeyin başına konuyor: karşılığı
+       yazan taraf onu görmeden yazamaz ("sinema" mı, "sinemaya gitmek" mi). */
+    if (word && !r.en.includes(word)) r.en.unshift(word);
     /* Yüzey BİRİKİYOR: aynı dize birkaç egzersizde geçiyorsa kanıt
        hangisinden gelirse gelsin sayılmalı. Ortak yönergeler ("Metni
        oku ve soruları yanıtla.") onlarca egzersizde geçiyor. */
@@ -99,13 +105,30 @@ export function extractProse(): ProseRow[] {
   for (const e of (BUNDLED_EXERCISES as unknown as Ex[]).filter((x) => x.course === "en")) {
     add("intro", e.intro, e);
     for (const q of e.questions ?? []) add("explain", q.explain, e, q);
+    /* SÖZLÜKÇENİN TÜRKÇE ANLAMI. Kardeş hat (`data/skills/prose`) bunu
+       KAPSAM DIŞINDA bırakıyor ve gerekçesi orada yazılı: `GlossEntry`de
+       `en` alanı zaten var ve Almanca kursta 5.633'ün 5.633'ü dolu —
+       ikinci bir doğruluk kaynağı açmak, ikisi ayrışınca hangisinin doğru
+       olduğunu bilinemez hâle getirir.
+
+       İngilizce kursta o alan 1.207'nin 1.207'sinde BOŞ, yani ortada
+       ayrışacak birinci kaynak yok. O zaman tasarımın kendi varsayılanı
+       geçerli oluyor: anlam hattan gelir. Aynı karar ders ekseninde de
+       verildi ve orada yeşil — `en-a1.json` derslerinin `vocab[].tr`
+       alanı da `data/lessons/prose-de` üzerinden çözülüyor. */
+    for (const g of [...(e.gloss ?? []), ...(e.tasks ?? []).flatMap((t) => t.phrases ?? [])])
+      add("gloss.tr", g.tr, e, undefined, g.de);
   }
 
   /* Sıklık azalan; eşitlikte kısa önce, sonra alfabetik. Sıra KARARLI
      olmak zorunda, yoksa paketler her `make`te kayar ve yazılanlar
      tutmaz. `intro` ÖNCE: kısa yönergeler, dar bağlam. `explain` sona
      kalıyor çünkü hem uzun hem metne bağlı. */
-  const rank = (r: ProseRow) => (r.kind === "explain" ? 1 : 0);
+  /* `gloss.tr` EN SONA ve bu kardeş hattaki `note` ile aynı gerekçe:
+     s-001..s-005 yazılmış paketlerdi. Sözlükçe satırları sıklığa göre
+     araya girseydi beş paketin tamamı kayardı. Sıralamanın BİRİNCİ ölçütü
+     tür olduğu için sona eklemek eskileri hiç oynatmıyor. */
+  const rank = (r: ProseRow) => (r.kind === "gloss.tr" ? 2 : r.kind === "explain" ? 1 : 0);
   return [...rows.values()].sort(
     (a, b) =>
       rank(a) - rank(b) || b.n - a.n || a.tr.length - b.tr.length || a.tr.localeCompare(b.tr, "tr"),

@@ -150,6 +150,13 @@ if (existsSync(`${DIR}out`))
 
         if (flat(de) === flat(r.tr) && TURKISH_LETTER.test(r.tr)) H("karşılık Türkçenin aynısı");
 
+        /* SÖZLÜKÇE KARŞILIĞI CÜMLE DEĞİL. `gloss.tr` bir kelimenin anlamı
+           ("sinema"), açıklaması değil; iki katından uzun bir Almanca
+           yanlış alana yazılmış demektir. Aynı kural ders ekseninde
+           `vocab.tr` için de var. */
+        if (row.kind === "gloss.tr" && de.length > r.tr.length * 2 + 10)
+          H(`karşılık cümleye dönmüş (${r.tr.length} → ${de.length})`);
+
         if (de.length > r.tr.length * 2 + 20 || de.length * 2 + 20 < r.tr.length)
           U(`uzunluk çok sapıyor (${r.tr.length} → ${de.length})`);
       }
