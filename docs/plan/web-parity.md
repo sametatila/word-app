@@ -4312,3 +4312,35 @@ ya da işaret dizgesi ayrışırsa kullanıcının tercihi bir uygulamada okunma
 Genel adlar (`KEY`, `PREFIX`, `MAX`, …) listeden çıkarıldı: `KEY` webde beceri
 ilerlemesinin depolama anahtarı, mobilde onboarding tercihlerininki — aynı ad,
 ayrı iş, ve ad tek başına sözleşme taşımıyor.
+
+### 11.88 Dizi sabitleri: dört fark, biri gerçek
+
+Sabit karşılaştırmasını dizilere de uyguladım: iki ağaçta aynı adı taşıyan
+**22** dizi sabiti var, dördü ayrışıyor. Üçü meşru, biri değildi.
+
+**`ACCOUNT_SCOPED_PREFIXES` — gerçek.** İki liste zaten farklı, çünkü iki
+platform farklı şeyler saklıyor; byte eşitliği burada yanlış ölçü. Doğru ölçü,
+**her platformun kendi yazdığı anahtarların kendi listesinde olup olmadığı**.
+İki tarafın yazdığı `lernomi-*` anahtarlarını çıkarınca `lernomi-avatar` webde
+yazılıyor ama kapsanmıyordu: ortak bilgisayarda A çıkıp B girdiğinde B, A'nın
+şapkasını ve gözlüğünü takmış görünüyordu. Android listesinde baştan beri
+vardı.
+
+**`CHEERS` — varlık farkı.** Maskotun kutlama klipleri: web'de on bir mood
+(idle, happy, cheer, sad, think, wow, sleep, thumbsup, dance, wave, peek),
+mobilde yedi (idle, happy, thumbsup, sad, celebrate, wave, sleep). Mobilde
+`cheer`, `dance`, `think`, `wow`, `peek` klipleri **yok**; `celebrate` webin
+`cheer`inin karşılığı. Kod farkı değil, varlık (asset) farkı — kayda geçti.
+
+**`COURSES` ve `VOICES` — biçim farkı.** `COURSES` içeriği aynı, alan sırası
+farklı. `Course` tipinde tek gerçek fark webin `descKey` alanı — ve o alan
+**hiçbir yerde okunmuyor**: üç kursta da yazılı, üç sözlük anahtarı
+(`onb.course_de/gsw/en`) üç dilde duruyor, kurs seçici `label` + `sub`
+gösteriyor. Ölü alan; yazılmış metni silmek ürün kararı olduğu için
+dokunulmadı, kayda geçti. `VOICES` yalnız alan adında ayrışıyor
+(`noteKey` ↔ `note`).
+
+**Bu yüzden diziler için topyekûn bir kapı EKLENMEDİ.** Sayı ve dizge
+sabitlerinde byte eşitliği doğru kural; dizilerde değil — dördün üçü meşru
+ayrışma. §22'nin elle seçilmiş çiftleri, "burada eşitlik sözleşmedir" denen
+yerleri işaretlediği için daha doğru araç.
