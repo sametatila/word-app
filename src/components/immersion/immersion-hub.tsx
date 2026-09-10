@@ -3,7 +3,8 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { AppHeader } from "@/components/app-header";
-import { useT } from "@/lib/i18n/client";
+import { useT, useLang } from "@/lib/i18n/client";
+import { localeOf } from "@/lib/i18n/dict";
 import { UnitPane, KindIconFor } from "@/components/immersion/unit-pane";
 import { CheckIcon, LockIcon } from "@/components/icons";
 import type { CefrLevel } from "@/lib/skills/types";
@@ -228,6 +229,7 @@ function Featured({
     kapanmıyor, adım şeridinden ve ünite sayfasından tekrar açılıyor.
   */
   const t = useT();
+  const lang = useLang();
   const open = unit.items.filter((i) => i.open && i.href);
   const next = open.find((i) => !i.attempted) ?? open.find((i) => !i.done) ?? open[0] ?? null;
   const href = `/immersion/unit/${unit.index}`;
@@ -292,7 +294,7 @@ function Featured({
           </span>
           <div className="min-w-0">
             <p className="muted text-micro uppercase tracking-wider">
-              {t("path.next", { kind: (t(KIND_KEY[next.kind] ?? "") || next.kind).toUpperCase() })}
+              {t("path.next", { kind: (t(KIND_KEY[next.kind] ?? "") || next.kind).toLocaleUpperCase(localeOf(lang)) })}
             </p>
             <p className="truncate text-strong">{next.title}</p>
           </div>

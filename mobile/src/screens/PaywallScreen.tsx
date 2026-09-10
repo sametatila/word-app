@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { t } from "../lib/i18n";
+import { t, dateLocale } from "../lib/i18n";
 import { View, ScrollView, ActivityIndicator, Linking, Platform, TextInput } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { useNavigation } from "@react-navigation/native";
@@ -334,7 +334,7 @@ export function PaywallScreen() {
 function Section({ title, colors, children }: { title: string; colors: Palette; children: React.ReactNode }) {
   return (
     <View style={{ marginBottom: spacing.lg }}>
-      <Text variant="micro" color={colors.textMuted} style={{ marginBottom: spacing.xs }}>{title.toUpperCase()}</Text>
+      <Text variant="micro" color={colors.textMuted} style={{ marginBottom: spacing.xs }}>{title.toLocaleUpperCase(dateLocale())}</Text>
       <View style={{ backgroundColor: colors.surface, borderRadius: radii.xl, padding: spacing.md, borderWidth: 1, borderColor: colors.hairline }}>
         {children}
       </View>

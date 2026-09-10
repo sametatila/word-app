@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import { t } from "../lib/i18n";
+import { t, dateLocale } from "../lib/i18n";
 import { View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { useNavigation, useRoute, type RouteProp } from "@react-navigation/native";
@@ -389,7 +389,7 @@ export function GameScreen() {
           const tone = isNew ? colors.primary : colors.streak;
           return (
             <View style={{ backgroundColor: tone + "22", borderRadius: radii.pill, paddingHorizontal: 8, paddingVertical: 3 }}>
-              <Text variant="micro" color={onTint(tone, colors)}>{t(isNew ? "session.chip_new" : "session.chip_review").toUpperCase()}</Text>
+              <Text variant="micro" color={onTint(tone, colors)}>{t(isNew ? "session.chip_new" : "session.chip_review").toLocaleUpperCase(dateLocale())}</Text>
             </View>
           );
         })()}

@@ -3,7 +3,7 @@ import { View } from "react-native";
 import { useFocusEffect, useNavigation } from "@react-navigation/native";
 import type { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import type { RootStackParams } from "../navigation/RootStack";
-import { t } from "../lib/i18n";
+import { t, dateLocale } from "../lib/i18n";
 import { Screen } from "../ui/Screen";
 import { Text } from "../ui/Text";
 import { Card } from "../ui/Card";
@@ -171,7 +171,7 @@ export function SkillsScreen() {
                   <suggestion.icon color={colors[suggestion.tint] as string} size={20} />
                 </View>
                 <View style={{ flex: 1 }}>
-                  <Text variant="micro" color={colors[suggestion.tint] as string}>{t("skills.next").toUpperCase()} · {t(suggestion.label).toUpperCase()}</Text>
+                  <Text variant="micro" color={colors[suggestion.tint] as string}>{t("skills.next").toLocaleUpperCase(dateLocale())} · {t(suggestion.label).toLocaleUpperCase(dateLocale())}</Text>
                   <Text variant="bodyStrong" numberOfLines={1}>{suggestion.next.title}</Text>
                   <Text variant="caption" color={colors.textMuted} numberOfLines={2}>
                     {suggestion.ratio === 0
@@ -186,7 +186,7 @@ export function SkillsScreen() {
             <PressableScale onPress={() => setLevel(nextLevel)} style={{ marginBottom: spacing.lg }}>
               <Card padded style={{ flexDirection: "row", alignItems: "center", gap: spacing.md }}>
                 <View style={{ flex: 1 }}>
-                  <Text variant="micro" color={colors.successText}>{t("skills.level_done").toUpperCase()}</Text>
+                  <Text variant="micro" color={colors.successText}>{t("skills.level_done").toLocaleUpperCase(dateLocale())}</Text>
                   <Text variant="caption" color={colors.textMuted} style={{ marginTop: 2 }}>{t("skills.level_done_body", { level: activeLevel, next: nextLevel })}</Text>
                 </View>
                 <ChevronRightIcon color={colors.textFaint} size={20} />

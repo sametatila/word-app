@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { t } from "../lib/i18n";
+import { t, dateLocale } from "../lib/i18n";
 import { View, ScrollView } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import type { NativeStackNavigationProp } from "@react-navigation/native-stack";
@@ -59,7 +59,7 @@ function Featured({ unit, isCurrent, colors, onContinue }: { unit: LearningPathU
             {NextIcon({ color: colors.onPrimary, size: 20 })}
           </View>
           <View style={{ flex: 1 }}>
-            <Text variant="micro" color={colors.textMuted}>{t("path.next", { kind: t(KIND_KEY[next.kind as keyof typeof KIND_KEY] ?? "").toUpperCase() || next.kind.toUpperCase() })}</Text>
+            <Text variant="micro" color={colors.textMuted}>{t("path.next", { kind: t(KIND_KEY[next.kind as keyof typeof KIND_KEY] ?? "").toLocaleUpperCase(dateLocale()) || next.kind.toLocaleUpperCase(dateLocale()) })}</Text>
             <Text variant="bodyStrong" numberOfLines={1}>{next.title}</Text>
           </View>
         </View>

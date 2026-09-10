@@ -2111,6 +2111,50 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   );
 }
 
+/* ── 51. buyuk/kucuk harf cevirisi YEREL olmali ───────────────────────────
+ * Turkcede "i" nin buyugu "İ", "I" degil. Arayuz metnini `toUpperCase()` ile
+ * ya da elle "tr-TR" yazarak cevirmek iki yonde de bozuyor: Turkce arayuzde
+ * "İLERLEME" yerine "ILERLEME", Ingilizce arayuzde "PROMOTION" yerine
+ * "PROMOTİON". Dogru yol yereli calisma aninda sormak (mobil `dateLocale()`,
+ * web `localeOf(lang)`); bu bolum kacaklari sayiyor.
+ *
+ * MUAF olanlar metin degil VERI: kupon/davet kodu (harf buyuklugu kodun
+ * kendisi), bas harf avatari (kisi adi, arayuz dili degil), Almanca govde
+ * islemleri ve ders metni ayiklama (kaynagin dili Turkce, sabit dogru). */
+{
+  const walkUI = (d, out = []) => {
+    for (const e of readdirSync(new URL("../" + d, import.meta.url), { withFileTypes: true })) {
+      const p = d + "/" + e.name;
+      if (e.isDirectory()) { if (!/node_modules|\/content|\/generated|__tests__/.test("/" + p)) walkUI(p, out); }
+      else if (/\.tsx?$/.test(e.name)) out.push(p);
+    }
+    return out;
+  };
+  /* Kisi adinin bas harfi arayuz metni degil; iki tarafta da ayni sekilde
+     "tr-TR" ile buyutuluyor ve oyle kaliyor. */
+  const MUAF = ["mobile/src/ui/PersonAvatar.tsx", "src/components/avatar.tsx"];
+  /* ARANAN sey dar: CEVIRMEN CIKTISINA uygulanan harf cevirisi (metin) ve
+     .tsx icinde elle yazilmis "tr-TR" buyutmesi (arayuzde cizilen sey).
+     Veri uzerindeki `toLowerCase()` (e-posta, kullanici adi, eslestirme)
+     mesru ve aranmiyor - o kadar genis bir kural yalnizca gurultu uretir. */
+  const DESENLER = [
+    /\bt[x]?\((?:[^()]|\([^()]*\))*\)\s*(?:\?\?\s*"[^"]*"\s*)?\.to(?:Locale)?UpperCase\(\s*(?:"tr-TR"|'tr-TR'|)\s*\)/g,
+    /\.toLocaleUpperCase\(\s*(?:"tr-TR"|'tr-TR')\s*\)/g,
+  ];
+  const kacak = [];
+  for (const kok of ["mobile/src", "src"]) {
+    for (const f of walkUI(kok)) {
+      if (MUAF.includes(f)) continue;
+      const src = read(f).replace(/\/\*[\s\S]*?\*\//g, " ").replace(/\/\/[^\n]*/g, " ");
+      for (const re of DESENLER) {
+        if (re === DESENLER[1] && !f.endsWith(".tsx")) continue;
+        for (const m of src.matchAll(re)) kacak.push(f + ": " + m[0].trim().slice(0, 60));
+      }
+    }
+  }
+  sameList("yerelsiz harf cevirisi", kacak.length ? kacak : ["yok"], ["yok"], "bulunan", "beklenen");
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"

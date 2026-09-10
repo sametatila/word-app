@@ -1,5 +1,5 @@
 import React from "react";
-import { t as tx } from "../lib/i18n";
+import { t as tx, dateLocale } from "../lib/i18n";
 import { View } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import type { NativeStackNavigationProp } from "@react-navigation/native-stack";
@@ -72,7 +72,7 @@ export function SectionTitle({ title, right }: { title: string; right?: string }
   const { colors } = useTheme();
   return (
     <View style={{ flexDirection: "row", justifyContent: "space-between", alignItems: "baseline", marginBottom: spacing.sm, marginLeft: 4, marginTop: spacing.lg }}>
-      <Text variant="caption" color={colors.textMuted} style={{ letterSpacing: 0.5 }}>{title.toLocaleUpperCase("tr-TR")}</Text>
+      <Text variant="caption" color={colors.textMuted} style={{ letterSpacing: 0.5 }}>{title.toLocaleUpperCase(dateLocale())}</Text>
       {right ? <Text variant="caption" color={colors.textMuted}>{right}</Text> : null}
     </View>
   );

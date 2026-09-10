@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { t, formatNumber } from "../lib/i18n";
+import { t, formatNumber, dateLocale } from "../lib/i18n";
 import { View } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import type { NativeStackNavigationProp } from "@react-navigation/native-stack";
@@ -95,7 +95,7 @@ function ZoneEdge({ label, tint }: { label: string; tint: string }) {
   return (
     <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.sm, paddingHorizontal: spacing.sm }}>
       <View style={{ flex: 1, height: 1, backgroundColor: tint }} />
-      <Text variant="micro" color={tint}>{label.toLocaleUpperCase("tr-TR")}</Text>
+      <Text variant="micro" color={tint}>{label.toLocaleUpperCase(dateLocale())}</Text>
       <View style={{ flex: 1, height: 1, backgroundColor: tint }} />
     </View>
   );
