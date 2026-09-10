@@ -56,12 +56,41 @@ const warnings: string[] = [];
 const E = (where: string, msg: string) => errors.push(`${where} — ${msg}`);
 const W = (where: string, msg: string) => warnings.push(`${where} — ${msg}`);
 
-const words = (JSON.parse(readFileSync(path.join(ROOT, "data/app/words.json"), "utf8")) as { de: string }[]).map((w) => w.de);
-const pool = new Set(words.map((w) => w.toLocaleLowerCase("de-DE")));
-const inPool = (de: string) => {
-  const bare = de.replace(/^(der|die|das|de|d|s|en|e)\s+/i, "").replace(/\s*\(.*\)\s*/g, "").replace(/…|\.\.\./g, "").trim();
+/*
+  KELİME HAVUZU KURS BAŞINA.
+
+  Havuz denetimi yalnız Almanca havuzu tanıyordu ve İngilizce dersler
+  `l.course === "de"` koşuluyla tamamen ATLANIYORDU - yani İngilizce bir ders
+  kursun kelime havuzunda hiç olmayan kelimeler öğretebilirdi ve hiçbir kapı
+  bunu söylemezdi. İngilizce havuz `data/app/words-en.json` olarak zaten var
+  (JSONL, 7175 kelime, `de` alanı hedef kelimeyi taşıyor - şema ortak).
+
+  Artikel soyma da kursa bağlı: Almancada der/die/das, İngilizcede the/a/an.
+*/
+const readPool = (file: string, jsonl: boolean): string[] => {
+  const raw = readFileSync(path.join(ROOT, file), "utf8");
+  const rows: { de: string }[] = jsonl
+    ? raw.split("\n").filter((l) => l.trim()).map((l) => JSON.parse(l) as { de: string })
+    : (JSON.parse(raw) as { de: string }[]);
+  return rows.map((w) => w.de);
+};
+const POOLS: Record<string, { set: Set<string>; locale: string; article: RegExp }> = {
+  de: {
+    set: new Set(readPool("data/app/words.json", false).map((w) => w.toLocaleLowerCase("de-DE"))),
+    locale: "de-DE",
+    article: /^(der|die|das|de|d|s|en|e)\s+/i,
+  },
+  en: {
+    set: new Set(readPool("data/app/words-en.json", true).map((w) => w.toLocaleLowerCase("en-US"))),
+    locale: "en-US",
+    article: /^(the|a|an)\s+/i,
+  },
+};
+const inPool = (de: string, course = "de") => {
+  const p = POOLS[course] ?? POOLS.de;
+  const bare = de.replace(p.article, "").replace(/\s*\(.*\)\s*/g, "").replace(/…|\.\.\./g, "").trim();
   if (!bare || /\s/.test(bare)) return true; // kalıp/çok kelimeli: havuz karşılaştırması anlamsız
-  return pool.has(bare.toLocaleLowerCase("de-DE"));
+  return p.set.has(bare.toLocaleLowerCase(p.locale));
 };
 const wc = (s: string) => s.trim().split(/\s+/).filter(Boolean).length;
 const multi = (s: string) => /,/.test(s) && !/[…/]/.test(s);
@@ -309,9 +338,9 @@ function checkLessons(list: Lesson[]) {
     for (const v of l.vocab) {
       if (!v.de?.trim() || !v.tr?.trim()) E(w, `vocab eksik: ${JSON.stringify(v)}`);
       if (multi(v.tr)) W(w, `çok anlamlı vocab tr: ${v.de} → "${v.tr}"`);
-      if (l.course === "de" && !inPool(v.de)) out++;
+      if (POOLS[l.course] && !inPool(v.de, l.course)) out++;
     }
-    if (l.course === "de" && l.vocab.length && out / l.vocab.length > 0.34) W(w, `havuz dışı kelime ${out}/${l.vocab.length}`);
+    if (POOLS[l.course] && l.vocab.length && out / l.vocab.length > 0.34) W(w, `havuz dışı kelime ${out}/${l.vocab.length}`);
     for (const p of l.patterns) if (!p.de?.trim() || !p.tr?.trim()) E(w, `pattern eksik: ${JSON.stringify(p)}`);
 
     const steps = l.lecture;
@@ -361,7 +390,8 @@ const kinds = only ? [only] : ["skills", "lessons"];
 if (kinds.includes("skills")) checkSkills(BUNDLED_EXERCISES);
 if (kinds.includes("lessons")) checkLessons(LESSONS);
 
-const counts = `${BUNDLED_EXERCISES.length} egzersiz · ${LESSONS.length} ders · havuz ${words.length} kelime`;
+const poolSizes = Object.entries(POOLS).map(([c, p]) => `${c} ${p.set.size}`).join(" · ");
+const counts = `${BUNDLED_EXERCISES.length} egzersiz · ${LESSONS.length} ders · havuz ${poolSizes}`;
 console.log(`\nİçerik doğrulama — ${kinds.join(", ")} · ${counts}\n`);
 if (errors.length) {
   console.log(`HATA (${errors.length})`);
