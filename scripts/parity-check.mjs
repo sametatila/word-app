@@ -1712,6 +1712,39 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   sameList("monolog degerlendirmesi", monolog("mobile/src/game/skillLibrary.tsx"), monolog("src/components/skills/monologue-player.tsx"));
 }
 
+/* ── 39. ders isabet orani ─────────────────────────────────────────────────
+ * Aynı derste aynı performans iki uygulamada AYNI yuzdeyi vermeli. Uc kural
+ * birlikte belirliyor:
+ *   1. hangi adimlar puanlaniyor (`produce` + `truefalse`),
+ *   2. isabet ne zaman sayiliyor (yalniz ILK denemede),
+ *   3. yuzde formulu.
+ *
+ * Ikincisi ayrismisti: mobil her dogruda sayiyordu, kacinci denemede
+ * oldugundan bagimsiz - ucuncu denemede bilen ogrenci ilk denemede bilenle
+ * ayni yuzdeyi aliyordu. Ekranin kendi olcumu ayrimi zaten biliyor
+ * (`lesson_step` degeri 2/1), puan gormezden geliyordu. */
+{
+  /* `p` ekran/oynatici, `tanim` puanlanan adim yuklemi (mobilde ayri dosyada:
+     `scoredSteps`; webde oynaticinin icinde iki kez yaziliyor). */
+  const oku = (p, kaynak, tanim = p) => {
+    const src = read(p).replace(/\/\*[\s\S]*?\*\//g, " ").replace(/\/\/[^\n]*/g, " ");
+    const tsrc = read(tanim).replace(/\/\*[\s\S]*?\*\//g, " ").replace(/\/\/[^\n]*/g, " ");
+    const sayilan = tsrc.match(/expect\?\.kind === "(\w+)" \|\| s\.expect\?\.kind === "(\w+)"/);
+    /* Formul: 100 * min(dogru, toplam) / toplam */
+    const formul = src.match(/Math\.round\(\(100 \* Math\.min\(([\w.]+), ([\w.]+)\)\) \/ \2\)/);
+    return [
+      "puanlanan=" + (sayilan ? sayilan[1] + "+" + sayilan[2] : "okunamadi"),
+      "formul=" + (formul ? "100*min(d,t)/t" : "okunamadi"),
+      "ilkdeneme=" + (kaynak.test(src) ? "evet" : "HAYIR"),
+    ];
+  };
+  sameList(
+    "ders isabet orani",
+    oku("mobile/src/screens/LessonScreen.tsx", /if \(tries === 0\) setCorrect/, "mobile/src/data/lessons/index.ts"),
+    oku("src/components/lessons/lesson-player.tsx", /ok && isFirstTry\) setCorrectCount/),
+  );
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"
