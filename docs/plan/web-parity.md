@@ -5485,3 +5485,58 @@ mobilde gereksiz. Mobil ilerlemeyi cevaplarla birlikte `/api/answers`a yazıyor;
 cevap yoksa saklanacak ilerleme de yok — `GameScreen`de tur ortası flush yok,
 `answers` yalnızca yüklemede sıfırlanıyor. Web'in ayrı damgası kendi
 toplu-gönderim modelinin gereği.
+
+
+### 11.147 Çevrimdışı biten TUR da kaybolmuyor: cihazda kuyruk
+
+§11.146 egzersizi kurtardı; aynı soruyu günün turu için sorunca daha büyük
+bir kayıp çıktı. `GameScreen.finish()` yazma hatasını **boş bir catch ile**
+yutuyordu ("ölçüm/yazma sessizce düşer"): tur boyunca verilen cevaplar, SRS
+güncellemesi, XP ve seri sunucuya hiç ulaşmıyordu ve kullanıcıya bir şey de
+söylenmiyordu — ekranda puan artıyor, sunucuda hiçbir şey değişmiyor.
+`BossScreen` turu düşürüyordu, `WalkModeScreen` yalnız BELLEKTE tutuyordu
+(uygulama kapanınca gidiyor).
+
+Web bu noktada dikkatli: batch kuyruğa geri konuyor, `saveWarning` ile
+kullanıcıya söyleniyor, 4xx bilerek düşürülüyor, `pagehide`da `sendBeacon`
+gidiyor. Yani bu, mobilin webden geri kaldığı bir yerdi.
+
+**Kuyruk `submitAnswers` içinde**, yani üç çağıranın üçüne birden hizmet
+ediyor. Üç karar:
+
+- **Batch kendi `day`ini taşıyor.** Seri kullanıcının O gününe ait; ertesi
+  gün gönderilen turu bugüne yazmak seriyi yanlış hesaplardı.
+- **Kalıcı hata kuyruğa girmiyor.** Sunucunun asla kabul etmeyeceği bir
+  gövde, kuyruktaki her turu da batırırdı (web aynı ayrımı yapıyor).
+- **401/403 kalıcı SAYILMIYOR.** İlk yazımda "4xx = kalıcı" demiştim; oturum
+  düşmüşken atılan turu silmek, tam da korumaya çalıştığım veriyi atardı.
+  Kullanıcı yeniden girince gidiyor.
+
+**Çift gönderim tuzağı:** `WalkModeScreen` başarısız batch'i belleğe geri
+koyuyordu. Kuyruk gelince ikisi birden çalışıp aynı cevapları İKİ KEZ
+gönderecekti — SRS ve XP çift sayardı. Bellekteki geri koyma kaldırıldı;
+kuyruk tek sahip.
+
+**Sessiz kalan ekran da düzeldi:** özet artık iki durumu ayırıyor — kuyruğa
+alındı (bağlantı dönünce gider) ve sunucu reddetti (gitmeyecek). İki metin
+webde vardı, ortak sözlüğe taşındı.
+
+**Yanında çıkan ikinci hata:** sınav sonucu gönderilemediğinde ekran
+"Sonuç gönderilemedi" derken başlıkta **%0** yazıyordu (`result?.total ?? 0`)
+— yirmi dakika sınav çözen öğrenci sıfır görüyordu. Puan zaten istemcide
+toplanmış durumda; artık yüzde ve bölüm kırılımı çiziliyor. Geçti/kaldı
+YAZILMIYOR: o karar sunucunun, eşik istemcide yok. Web'in yorumu "Android de
+tam bunu yapıyor" diyordu — **yapmıyordu**; kapıyı yazarken karşılaştırma
+yerine yoruma güvenmenin bedeli bu.
+
+**Kapılar:** parity §63 (tur kaydı uyarıları: iki metin iki tarafta da var mı)
+ve §64 (sınav çevrimdışı sonucu: yerel yüzde, bölüm kırılımı, metin, ve
+geçti/kaldı YAZILMAMASI). İkisi de hatayı enjekte ederek sınandı, ikisi de
+yakaladı. Ayrıca beş jest testi: kuyruğa alma, 400'ün girmemesi, 401'in
+silmemesi, bağlantı dönünce boşalma, başarılı gönderimde bekleyenlerin de
+gitmesi. Testlerin sebebi: buradaki hata SESSİZ — ne derleme ne gözle bakma
+gösterir.
+
+**Başka oturumun açık işi:** `autherrorw.invalid_code` şu an ölü anahtar
+(iki adımlı doğrulama paketi yazılıyor, henüz bağlanmadı). Bana ait değil,
+dokunulmadı.
