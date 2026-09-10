@@ -186,8 +186,18 @@ export function WeeklyPlayer() {
     return (
       <section className="card mx-auto w-full max-w-md p-5">
         <div className="flex items-center gap-4">
-          <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full text-xl font-black text-white" style={{ background: tone }}>
-            {result.score}
+          {/* HALKA, dolu daire değil: Android sonuç puanını üç yerde de
+              (tur, yürüyüş, haftalık sınav) halkayla gösteriyor ve halkanın
+              doluluğu puanın kendisi - dolu daire aynı sayıyı taşıyor ama
+              "yüzde kaç" bilgisini görselden düşürüyor. İç daire yüzey
+              renginde, yani halka bir şerit gibi okunuyor. */}
+          <div
+            className="relative h-16 w-16 shrink-0 rounded-full"
+            style={{ background: `conic-gradient(${tone} ${result.score}%, var(--surface-2) ${result.score}% 100%)` }}
+          >
+            <div className="absolute inset-[6px] flex items-center justify-center rounded-full text-lg font-black tabular-nums" style={{ background: "var(--surface)", color: tone }}>
+              {result.score}
+            </div>
           </div>
           <div>
             <h1 className="text-lg font-bold">{t("weekly.your_score")}</h1>

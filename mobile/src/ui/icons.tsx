@@ -232,6 +232,10 @@ export const CompassIcon = ({ color = "#000", size }: P) => (
 export const FlagIcon = ({ color = "#000", size }: P) => (
   <S size={size}><Path d="M6 20V4.5" {...stroke(color)} /><Path d="M6 5c4-2 8 2 12 0v8c-4 2-8-2-12 0" {...stroke(color)} /></S>
 );
+/** Uyarı — web `icons` `AlertIcon` ile aynı çizim (üçgen + ünlem). */
+export const AlertIcon = ({ color = "#000", size }: P) => (
+  <S size={size}><Path d="M12 4.5 21 19H3z" {...stroke(color)} /><Path d="M12 10v3.5M12 16.2v.01" {...stroke(color)} /></S>
+);
 export const GlobeIcon = ({ color = "#000", size }: P) => (
   <S size={size}><Circle cx="12" cy="12" r="8" {...stroke(color)} /><Path d="M4 12h16M12 4a13 13 0 0 1 0 16M12 4a13 13 0 0 0 0 16" {...stroke(color)} /></S>
 );

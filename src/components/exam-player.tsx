@@ -326,14 +326,25 @@ export function ExamPlayer({ level, module }: { level: CefrLevel; module: number
           <>
             <p className="text-3xl font-extrabold tabular-nums">{t("common.pct", { n: offline.pct })}</p>
             <p className="muted mt-1 text-sm font-semibold">{t("exam.saved_offline")}</p>
-            <ul className="mt-3 space-y-1">
+            {/* Kırılım SONUÇ KARTIYLA AYNI çiziliyor (yüzde + şerit): aynı veri
+                iki durumda iki ayrı biçimde okunuyordu, oysa tek fark kaydın
+                gitmemiş olması. Ağırlık yok - onu sunucu veriyor. Android bu
+                iki durumu baştan beri aynı biçimde çiziyor. */}
+            <ul className="mt-3 space-y-2">
               {offline.sections.map((x) => (
-                <li key={x.id} className="flex items-center justify-between text-sm">
-                  <span>
-                    <span lang="de" className="font-semibold">{SECTION_TITLE_DE[x.id]}</span>
-                    <span className="muted"> · {t(SECTION_TITLE_KEYS[x.id])}</span>
-                  </span>
-                  <span className="muted tabular-nums">{t("common.pct", { n: x.pct })}</span>
+                <li key={x.id}>
+                  <div className="flex items-center justify-between text-sm">
+                    <span>
+                      <span lang="de" className="font-semibold">{SECTION_TITLE_DE[x.id]}</span>
+                      <span className="muted"> · {t(SECTION_TITLE_KEYS[x.id])}</span>
+                    </span>
+                    <span className="tabular-nums" style={{ color: x.pct >= 50 ? "var(--color-success)" : "var(--color-danger)" }}>
+                      {t("common.pct", { n: x.pct })}
+                    </span>
+                  </div>
+                  <div className="mt-1 h-1.5 overflow-hidden rounded-full surface-2">
+                    <div className="h-full rounded-full" style={{ width: `${x.pct}%`, background: x.pct >= 50 ? "var(--color-brand)" : "var(--color-danger)" }} />
+                  </div>
                 </li>
               ))}
             </ul>
@@ -947,12 +958,16 @@ function Result({
                 <span className="muted"> · {t(SECTION_TITLE_KEYS[s.id])}</span>
                 <span className="muted text-xs"> {t("exam.weight", { pct: t("common.pct", { n: s.weight }) })}</span>
               </span>
-              <span className="tabular-nums" style={{ color: s.pct >= 50 ? "var(--text)" : "var(--color-rose)" }}>
+              {/* Geçen bölüm YEŞİL: nötr metin rengi, geçen ve kalan bölümü
+                  yalnız kırmızının varlığıyla ayırıyordu - tarama sırasında
+                  "hangi bölümü geçtim" sorusu ancak tek tek yüzde okuyarak
+                  cevaplanıyordu. Android burada iki rengi de kullanıyor. */}
+              <span className="tabular-nums" style={{ color: s.pct >= 50 ? "var(--color-success)" : "var(--color-danger)" }}>
                 {t("common.pct", { n: s.pct })}
               </span>
             </div>
             <div className="mt-1 h-1.5 overflow-hidden rounded-full surface-2">
-              <div className="h-full rounded-full" style={{ width: `${s.pct}%`, background: s.pct >= 50 ? "var(--color-brand)" : "var(--color-rose)" }} />
+              <div className="h-full rounded-full" style={{ width: `${s.pct}%`, background: s.pct >= 50 ? "var(--color-brand)" : "var(--color-danger)" }} />
             </div>
           </li>
         ))}

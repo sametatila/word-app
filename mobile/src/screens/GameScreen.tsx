@@ -7,7 +7,7 @@ import type { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import type { RootStackParams } from "../navigation/RootStack";
 import { Text } from "../ui/Text";
 import { PressableScale } from "../ui/PressableScale";
-import { XIcon, ShareIcon, BoltIcon, FlameIcon } from "../ui/icons";
+import { XIcon, ShareIcon, BoltIcon, FlameIcon, AlertIcon } from "../ui/icons";
 import { shareResult } from "../lib/share";
 import { MascotPop } from "../ui/MascotPop";
 import { AmbientPeek } from "../ui/AmbientMascot";
@@ -355,9 +355,13 @@ export function GameScreen() {
               <Text variant="caption" color={colors.textMuted} style={{ marginTop: 4, textAlign: "center" }}>{t("game.streak_saved_sub", { n: repaired })}</Text>
             </View>
           ) : null}
+          {/* Kutunun rengi ve simgesi webdekiyle aynı: bu bir UYARI, hata
+              değil - tur oynandı, yalnız kaydı bekliyor. Kırmızı çizmek
+              kullanıcıya turu kaybettiğini söylerdi. */}
           {saveWarning ? (
-            <View style={{ width: "100%", borderRadius: radii.lg, backgroundColor: colors.danger + "24", paddingHorizontal: spacing.md, paddingVertical: 12, marginBottom: spacing.lg }}>
-              <Text variant="bodyStrong" color={colors.dangerText} style={{ textAlign: "center" }}>{saveWarning === "dropped" ? t("session.save_failed") : t("session.save_queued")}</Text>
+            <View style={{ width: "100%", flexDirection: "row", alignItems: "center", justifyContent: "center", gap: spacing.sm, borderRadius: radii.lg, backgroundColor: colors.streak + "1f", paddingHorizontal: spacing.md, paddingVertical: 12, marginBottom: spacing.lg }}>
+              <AlertIcon color={colors.streakText} size={16} />
+              <Text variant="bodyStrong" color={colors.streakText} style={{ flex: 1 }}>{saveWarning === "dropped" ? t("session.save_failed") : t("session.save_queued")}</Text>
             </View>
           ) : null}
           <PressableScale onPress={load} style={[{ width: "100%", backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: spacing.lg, alignItems: "center" }, softShadow(colors.primary, 10)]}><Text variant="bodyStrong" color={colors.onPrimary}>{t("game.continue")}</Text></PressableScale>

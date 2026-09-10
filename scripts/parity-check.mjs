@@ -2133,7 +2133,9 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   /* Kisi adinin bas harfi arayuz metni degil; iki tarafta da ayni sekilde
      "tr-TR" ile buyutuluyor ve oyle kaliyor. */
   const MUAF = ["mobile/src/ui/PersonAvatar.tsx", "src/components/avatar.tsx"];
-  const MUAF_KLASOR = ["src/app/admin/"];
+  /* Huni sayfasi da yonetime kapali (`adminGate`) ve yalniz Turkce: metinleri
+     koda gomulu, kullaniciya acik degil - yonetim panosuyla ayni sebep. */
+  const MUAF_KLASOR = ["src/app/admin/", "src/app/(app)/analytics/"];
   /* ARANAN sey dar: CEVIRMEN CIKTISINA uygulanan harf cevirisi (metin) ve
      .tsx icinde elle yazilmis "tr-TR" buyutmesi (arayuzde cizilen sey).
      Veri uzerindeki `toLowerCase()` (e-posta, kullanici adi, eslestirme)
@@ -2141,14 +2143,24 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   /* SAYI/TARIH BICIMI de yerelden gelmeli: `toLocaleString("tr-TR")` bin
      ayracini Ingilizce ve Almanca arayuzde de Turkce kuruyor. Yonetim panosu
      (src/app/admin) disarida: orasi yalniz Turkce ve kullaniciya acik degil. */
+  /* Veritabani LIKE kalibi (`%${q}%`) yuzde BICIMI degil: kapanis suslunun
+     ardindan gelen % onu ayiriyor; ic ice suslu tasiyan LIKE'lar da yalniz
+     veri katmaninda (.ts) yaziliyor ve desen zaten .tsx ile sinirli. */
+  const PCT_TPL = /`\s*%\$\{[^}]*\}(?!%)/g;
+  const TR_UPPER = /\.toLocaleUpperCase\(\s*(?:"tr-TR"|'tr-TR')\s*\)/g;
   const DESENLER = [
     /\.toLocaleString\(\s*["']tr-TR["']/g,
     /* YUZDE BICIMI de yerelden gelmeli: `%{n}` Turkce yazimi koda gomuyor
        ("%62"), Ingilizcede "62%" ve Almancada "62 %" olmasi gerekiyor.
        Dogru yol mobilde `formatPercent(n)`, webde `t("common.pct", { n })`. */
     />\s*%\{/g,
+    /* Sablon dizgisinde de ayni sey: `%${n}` ("%85"). Ilk yazimda yalniz JSX
+       bicimi araniyordu ve tur ozetindeki `%${accuracy}` ile sinav bolum
+       agirligindaki `%${s.weight}` GORUNMUYORDU - ikisi de kullaniciya cikan
+       metindi. */
+    PCT_TPL,
     /\bt[x]?\((?:[^()]|\([^()]*\))*\)\s*(?:\?\?\s*"[^"]*"\s*)?\.to(?:Locale)?UpperCase\(\s*(?:"tr-TR"|'tr-TR'|)\s*\)/g,
-    /\.toLocaleUpperCase\(\s*(?:"tr-TR"|'tr-TR')\s*\)/g,
+    TR_UPPER,
   ];
   const kacak = [];
   for (const kok of ["mobile/src", "src"]) {
@@ -2156,7 +2168,11 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       if (MUAF.includes(f) || MUAF_KLASOR.some((d) => f.startsWith(d))) continue;
       const src = read(f).replace(/\/\*[\s\S]*?\*\//g, " ").replace(/\/\/[^\n]*/g, " ");
       for (const re of DESENLER) {
-        if (re === DESENLER[3] && !f.endsWith(".tsx")) continue;
+        /* Elle yazilmis "tr-TR" buyutmesi yalniz ARAYUZDE (.tsx) kacak; veri
+           katmaninda (.ts) mesru. Desen SIRAYLA degil KENDISIYLE seciliyor:
+           dizinin basina yeni bir desen eklendiginde indis kaymasi bu kurali
+           sessizce baska bir desene uyguluyordu. */
+        if ((re === TR_UPPER || re === PCT_TPL) && !f.endsWith(".tsx")) continue;
         for (const m of src.matchAll(re)) kacak.push(f + ": " + m[0].trim().slice(0, 60));
       }
     }
@@ -2612,6 +2628,36 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     "serbest yazma degerlendirmesi",
     yazma("mobile/src/game/skillQuiz.tsx"),
     yazma("src/components/skills/writing-player.tsx", "src/lib/assess-client.ts"),
+  );
+}
+
+/* ── 68. sinav bolum satirinin bicimi ─────────────────────────────────────
+ * Ayni veri (bolum yuzdesi) iki DURUMDA da ayni okunmali: sonuc kartinda ve
+ * kayit gonderilemediginde. Webde cevrimdisi liste seritsiz ve renksiz duz
+ * bir listeydi, sonuc karti ise seritli - ayni sey iki bicimde. Ayrica gecen
+ * bolum webde notr renkteydi: "hangi bolumu gectim" sorusu ancak yuzdeler tek
+ * tek okunarak cevaplaniyordu. Android iki durumu da ayni cizip iki rengi de
+ * kullaniyor. Sayilar ikiser: normal sonuc + cevrimdisi. */
+{
+  const satir = (p, metin, serit) => {
+    const src = read(p).replace(/\/\*[\s\S]*?\*\//g, " ").replace(/\/\/[^\n]*/g, " ");
+    return [
+      "yuzde rengi=" + (src.match(metin) ?? []).length,
+      "serit=" + (src.match(serit) ?? []).length,
+    ];
+  };
+  sameList(
+    "sinav bolum satiri",
+    satir(
+      "mobile/src/screens/ExamScreen.tsx",
+      /color=\{[sx]\.pct >= 50 \? colors\.successText : colors\.dangerText\}/g,
+      /backgroundColor: [sx]\.pct >= 50 \? colors\.primary : colors\.danger/g,
+    ),
+    satir(
+      "src/components/exam-player.tsx",
+      /color: [sx]\.pct >= 50 \? "var\(--color-success\)" : "var\(--color-danger\)"/g,
+      /background: [sx]\.pct >= 50 \? "var\(--color-brand\)" : "var\(--color-danger\)"/g,
+    ),
   );
 }
 

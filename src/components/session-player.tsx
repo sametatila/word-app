@@ -1355,9 +1355,14 @@ function SummaryCard({
         </div>
 
         <div className="grid grid-cols-3 divide-x" style={{ borderColor: "var(--border)" }}>
-          <Stat label={t("summary.accuracy")} value={`%${accuracy}`} />
+          {/* İki değer de KODA GÖMÜLÜ Türkçe yazıyordu: yüzde "%85" biçiminde
+              (Almanca "85 %", İngilizce "85%" ister) ve seri "5g" - "g" gün
+              demek, yani Almanca ve İngilizce arayüzde anlamsız bir harf.
+              İkisi de sözlükteki ortak biçimlere alındı; Android ikisini de
+              baştan beri sözlükten alıyor (`formatPercent`, `profile.days`). */}
+          <Stat label={t("summary.accuracy")} value={t("common.pct", { n: accuracy })} />
           <Stat label={t("summary.words")} value={String(tally.total)} />
-          <Stat label={t("summary.streak")} value={`${result?.currentStreak ?? 0}g`} />
+          <Stat label={t("summary.streak")} value={t("profile.days", { n: result?.currentStreak ?? 0 })} />
         </div>
 
         {/* Son etap bahisliyse sonucu burada kapanıyor: etap kartı

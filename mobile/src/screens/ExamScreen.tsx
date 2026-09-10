@@ -430,7 +430,10 @@ export function ExamScreen() {
                     sunucudan zaten geliyordu (`weight`). */}
                 <Text variant="body" style={{ flex: 1 }}>
                   {SECTION_DE[s.id]} · {t(SECTION_KEY[s.id])}
-                  <Text variant="micro" color={colors.textMuted}> {t("exam.weight", { pct: `%${s.weight}` })}</Text>
+                  {/* Yüzde biçimi koda gömülüydü ("%40"): Almanca "40 %", İngilizce "40%"
+                      ister ve ortak biçimleyici bunu zaten biliyor. Web aynı satırda
+                      sözlükten alıyor. */}
+                  <Text variant="micro" color={colors.textMuted}> {t("exam.weight", { pct: formatPercent(s.weight) })}</Text>
                 </Text>
                 <Text variant="bodyStrong" color={s.pct >= 50 ? colors.successText : colors.dangerText}>{formatPercent(s.pct)}</Text>
               </View>
