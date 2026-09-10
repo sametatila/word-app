@@ -4,6 +4,7 @@ import { useEffect, useMemo, useState } from "react";
 import { motion } from "framer-motion";
 import { TIER_COLOR, type BadgeRow } from "@/components/achievement-badge";
 import { CheckIcon, TrophyIcon } from "@/components/icons";
+import { EmptyCard } from "@/components/empty-card";
 import { GROUP_LABEL_KEYS, GROUP_ORDER } from "@/lib/achievement-groups";
 import { useT, useLang } from "@/lib/i18n/client";
 import { formatNumber, localeOf, type NativeLang } from "@/lib/i18n/dict";
@@ -43,9 +44,11 @@ export function AchievementWall() {
   const lang = useLang();
   const [board, setBoard] = useState<Board | null>(null);
   const [failed, setFailed] = useState(false);
+  const [attempt, setAttempt] = useState(0);
 
   useEffect(() => {
     let alive = true;
+    setFailed(false);
     (async () => {
       try {
         const res = await fetch("/api/achievements", { cache: "no-store" });
@@ -70,7 +73,7 @@ export function AchievementWall() {
     return () => {
       alive = false;
     };
-  }, []);
+  }, [attempt]);
 
   /**
    * Bitmeye en yakın kilitli rozetler.
@@ -99,7 +102,28 @@ export function AchievementWall() {
   /** En üstteki bölüm: bitmeye yakın olanlar, hepsi bittiyse son kazanılanlar. */
   const lead = upcoming.length ? upcoming : recent;
 
-  if (failed) return null;
+  /*
+   * HATA SESSİZ DEĞİL.
+   *
+   * `return null` duvar profilin İÇİNDEYKEN doğruydu: ikincil bir bölüm, tek
+   * başına ekranı indirmemeli. Duvar artık kendi sayfası ve orada aynı satır
+   * "başlığın altında bomboş sayfa" demek — kullanıcı ekranın bozuk olduğunu
+   * sanıyor. Android sebebi söylüyor ve tekrar denetiyor.
+   */
+  if (failed)
+    return (
+      <EmptyCard
+        icon={TrophyIcon}
+        tint="var(--color-flame)"
+        title={t("achievements.achievements")}
+        text={t("achievements.couldn_t_load_achievements")}
+        action={
+          <button type="button" onClick={() => setAttempt((n) => n + 1)} className="btn btn-ghost px-4 py-2 text-sm">
+            {t("common.try_again")}
+          </button>
+        }
+      />
+    );
 
   if (!board) {
     return (

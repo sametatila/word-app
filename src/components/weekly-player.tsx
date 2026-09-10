@@ -31,9 +31,11 @@ export function WeeklyPlayer() {
   const answers = useRef<Answer[]>([]);
   const [result, setResult] = useState<{ score: number; correct: number; total: number } | null>(null);
   const startedAt = useRef(Date.now());
+  const [attempt, setAttempt] = useState(0);
 
   useEffect(() => {
     let alive = true;
+    setPhase("loading");
     (async () => {
       try {
         const res = await fetch(`/api/weekly?day=${localDay()}`, { cache: "no-store" });
@@ -53,7 +55,7 @@ export function WeeklyPlayer() {
     return () => {
       alive = false;
     };
-  }, []);
+  }, [attempt]);
 
   function start() {
     track("exam_start", 0, "usage");
@@ -96,7 +98,17 @@ export function WeeklyPlayer() {
     return (
       <section className="card mx-auto w-full max-w-md p-5">
         <p className="text-sm">{t("weekly.load_failed")}</p>
-        <Link href="/learn" className="btn btn-ghost mt-3 px-4 py-2 text-sm">
+        {/* YERİNDE TEKRAR DENEME — Android'deki sıra: birincil "tekrar dene",
+            ikincil çıkış. Yalnız çıkış sunmak geçici bir ağ hatasında
+            kullanıcıyı ekrandan atıyordu. */}
+        <button
+          type="button"
+          onClick={() => setAttempt((n) => n + 1)}
+          className="btn btn-primary mt-3 w-full px-4 py-2 text-sm"
+        >
+          {t("weekly.try_again")}
+        </button>
+        <Link href="/learn" className="btn btn-ghost mt-2 block px-4 py-2 text-center text-sm">
           {t("weekly.back_to_learn")}
         </Link>
       </section>

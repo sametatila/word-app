@@ -61,8 +61,10 @@ export function DailyPlayer({ onExit }: { onExit: () => void }) {
   const marks = useRef<boolean[]>([]);
   const startedAt = useRef(Date.now());
   const sent = useRef(false);
+  const [attempt, setAttempt] = useState(0);
 
   useEffect(() => {
+    setStatus("loading");
     (async () => {
       try {
         const res = await fetch(`/api/daily?day=${localDay()}`, { cache: "no-store" });
@@ -76,7 +78,7 @@ export function DailyPlayer({ onExit }: { onExit: () => void }) {
         setStatus("error");
       }
     })();
-  }, []);
+  }, [attempt]);
 
   const finish = useCallback(
     async (finalScore: number, finalTally: { correct: number; total: number }) => {
@@ -148,8 +150,18 @@ export function DailyPlayer({ onExit }: { onExit: () => void }) {
         <div className="p-6 text-center">
           <AlertIcon size={22} />
           <p className="mt-2 text-sm font-bold">{t("daily.couldn_t_load_daily_round")}</p>
-          <button onClick={onExit} className="btn btn-ghost mt-4 px-5 py-2.5 text-sm">
-            {t("common.go_back")}
+          {/* YERİNDE TEKRAR DENEME. Web yalnız "geri dön" diyordu: geçici bir
+              ağ hatası kullanıcıyı ekrandan çıkarıp geri getirmeye zorluyordu.
+              Android birincil düğme olarak tekrar denetiyor, çıkış ikincil. */}
+          <button
+            type="button"
+            onClick={() => setAttempt((n) => n + 1)}
+            className="btn btn-primary mt-4 w-full px-5 py-2.5 text-sm"
+          >
+            {t("daily.try_again")}
+          </button>
+          <button onClick={onExit} className="btn btn-ghost mt-2 px-5 py-2.5 text-sm">
+            {t("common.close")}
           </button>
         </div>
       </Card>
