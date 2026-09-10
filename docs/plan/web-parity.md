@@ -4344,3 +4344,36 @@ dokunulmadı, kayda geçti. `VOICES` yalnız alan adında ayrışıyor
 sabitlerinde byte eşitliği doğru kural; dizilerde değil — dördün üçü meşru
 ayrışma. §22'nin elle seçilmiş çiftleri, "burada eşitlik sözleşmedir" denen
 yerleri işaretlediği için daha doğru araç.
+
+### 11.89 Ses kaydı, ham metin tabanı ve değerlendirme isteği
+
+**`VOICES` ad ayrışması kapandı.** Webde `noteKey`, mobilde `note`. Ad yalnız
+kozmetik değildi: mobilde `note` **başka yerlerde düz metin** taşıyor
+(`skillLibrary`, `rounds`, `native`), burada ise bir **sözlük anahtarı** —
+aynı adın iki işi okuyanı yanıltıyor. Webin adı zaten doğru kalıpta
+(`descKey`, `titleKey`). Ad eşitlenince iki dizi birebir oldu ve
+`check:parity`nin sabit listesine girdi.
+
+**Web ham-metin tabanının 167'si açıldı.** Bileşen ve sayfa dosyalarındaki 90
+dizgeyi tek tek gösterttim (tabanı geçici sıfırlayıp `--check` çalıştırarak).
+Kullanıcıya çıkan **yeni bir kusur çıkmadı**:
+
+| ne | nerede | neden meşru |
+|---|---|---|
+| "Niveauprüfung", "Modulprüfung", "Prüfung A1" | `exam-player` | modül sınavının Almanca havası (§11.87) |
+| `ä ö ü ß` düğmeleri | `cloze-game` | Almanca harf ekleme tuşları |
+| `.replace(/ö/g, …)` | beş oyun | metin katlama, arayüz değil |
+| "cebe alındı", "ekran açıldı → tarayıcı" | `walk-player` | tanılama notları (`note()`) |
+| `Çevir: …`, "en az N kelime" | `translate-game`, `exam-player` | **modele** giden istem; `locale: "tr"` ile tutarlı |
+
+Son satır beklenmedik bir kapı fırsatı verdi.
+
+**Aynı kompozisyon iki uygulamada aynı puanı almalı.** Puanı model veriyor ve
+modele ne söylendiği istekte: görev metni, kısıtlar ve dil. Kısıt listesi
+"en az N kelime" satırını **elle** ekliyor — iki taraftan birinde unutulursa
+aynı yazı bir uygulamada geçer, ötekinde kalır ve sebebi hiçbir yerde
+görünmez. Yeni bölüm sözcüğü sözcüğüne değil **isteğin şeklini** ölçüyor:
+kısıt ifadesi ve `locale`.
+
+Yapay zekâ geri bildiriminin Türkçe olması (`locale?: "tr"` — tipin izin
+verdiği tek değer) iki platformda da aynı; ürün kararı, ayrışma değil.
