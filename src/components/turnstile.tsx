@@ -24,11 +24,18 @@ type TurnstileApi = {
 declare global {
   interface Window {
     turnstile?: TurnstileApi;
-    onloadTurnstileCallback?: () => void;
   }
 }
 
-const SCRIPT_SRC = "https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit";
+/*
+  Adres `render=explicit` TAŞIMIYOR ve bu bilinçli. O kipte Turnstile açılışta
+  `window.onloadTurnstileCallback`ı arıyor; betik `async` yüklendiği için o
+  geri çağrının o an tanımlı olduğu garanti değil ve widget sessizce hiç
+  çizilmiyor (tarayıcıda görüldü: kutu boş, düğme kapalı kalıyor). Sade adresle
+  betik yalnız `.cf-turnstile` sınıflı düğümleri kendiliğinden çiziyor —
+  buradaki kap o sınıfı taşımıyor, yani çizimi yine biz başlatıyoruz.
+*/
+const SCRIPT_SRC = "https://challenges.cloudflare.com/turnstile/v0/api.js";
 
 /** Betik sayfa başına BİR kez yükleniyor; iki form aynı anda açık olabilir. */
 let scriptReady: Promise<void> | null = null;
@@ -37,11 +44,17 @@ function loadScript(): Promise<void> {
   if (scriptReady) return scriptReady;
   scriptReady = new Promise<void>((resolve, reject) => {
     if (window.turnstile) return resolve();
-    window.onloadTurnstileCallback = () => resolve();
     const el = document.createElement("script");
     el.src = SCRIPT_SRC;
-    el.async = true;
-    el.defer = true;
+    /*
+      `async`/`defer` ÖZNİTELİĞİ YOK. Dinamik eklenen bir betik zaten engelleyici
+      değil, ama Turnstile bu iki özniteliğe BAKIYOR ve varsa `ready()` çağrısını
+      hata fırlatarak reddediyor ("Remove async/defer … before using
+      turnstile.ready()"). İlk yazımda ikisi de vardı: `ready()` fırlatıyor,
+      söz hiç çözülmüyor ve widget sessizce çizilmiyordu (tarayıcı konsolunda
+      görüldü). Hazır olma anı zaten `onload`; o an `window.turnstile` dolu.
+    */
+    el.onload = () => resolve();
     el.onerror = () => reject(new Error("turnstile script failed"));
     document.head.appendChild(el);
   });
