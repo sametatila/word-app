@@ -15,17 +15,23 @@
  * Ölçüt SERT: bir parça bile çözülemezse ders reddediliyor. Yarım ders —
  * içinde tek bir Türkçe cümle kalmış İngilizce anlatım — çalışıyor görünen
  * en kötü biçim.
+ *
+ * İKİ ÖLÇÜT VAR ve ikincisi ALAN ADINA HİÇ BAKMIYOR. Birincisi anlatım
+ * parçalarını tek tek çözüyor ve nerede eksik olduğunu söylüyor; ikincisi
+ * dersin TAMAMINI çözüp çıktıyı geziyor — hangi alan olduğu umurunda değil.
+ * Fark, birincinin yalnız BİLDİĞİ alanları görmesi: bir kalıp maddesi tam
+ * o boşluktan kaçtı (sondaki virgül yüzünden çıkarıcı onu hiç görmedi) ve
+ * ders İngilizce açılıp altında Türkçe bir kullanım notu taşıdı.
  */
 import { readFileSync } from "node:fs";
 import { LESSONS } from "@/lib/lessons";
-import { resolveSegments, type NativeDict } from "@/lib/lessons/native";
+import { resolveSegments, resolveLesson, isTurkishStem, type NativeDict } from "@/lib/lessons/native";
 import type { Segment } from "@/lib/lessons/types";
 
 const dict = JSON.parse(
   readFileSync("src/lib/lessons/generated/native-en.json", "utf8"),
 ) as NativeDict;
 
-/** Sözlükçe/kalıp/başlık ayrı hatların işi; burada YALNIZ anlatım denetleniyor. */
 const lessons = LESSONS.filter((l) => l.course === "de");
 
 let segs = 0;
@@ -63,7 +69,46 @@ for (const l of lessons) {
   }
 }
 
-console.log(`ders ${lessons.length} · tr parça ${segs} · çözülen ${ok}`);
+/* ÇIKTI TARAMASI — dersin TAMAMI çözülüyor mu, ve çözüldükten sonra Türkçe
+   kalan var mı.
+
+   Yukarıdaki ölçüt yalnız ANLATIM parçalarına bakıyor ve uzun süre tek
+   ölçüt oydu. Bir kalıp maddesi tam da o boşluktan kaçtı: kaynakta sondaki
+   virgül yüzünden çıkarıcı onu hiç görmedi, sözlüğe girmedi, `resolveLesson`
+   sessizce Türkçesine düştü ve HİÇBİR kapı bunu göremedi — çünkü hepsi aynı
+   çıkarıcıya soruyordu. Alan adına bakan bir ölçüt, ancak BİLDİĞİ alanlar
+   kadar geniş; bu tarama alan adına hiç bakmıyor.
+
+   `match` ATLANIYOR ve bu bir istisna değil, tür farkı: senaryo dallarının
+   eşleştirme kökleri ekranda görünmüyor, öğrencinin SÖYLEDİĞİNE bakıyor ve
+   Türkçe bir kök orada meşru ("teşekkür", Türkçe yolun kendisi). */
+const SKIP = new Set(["match"]);
+const rejected: string[] = [];
+const leftover = new Map<string, string>();
+let strings = 0;
+const walk = (v: unknown, id: string): void => {
+  if (typeof v === "string") {
+    strings++;
+    if (isTurkishStem(v)) leftover.set(v, id);
+    return;
+  }
+  if (Array.isArray(v)) {
+    for (const x of v) walk(x, id);
+    return;
+  }
+  if (v && typeof v === "object")
+    for (const [k, x] of Object.entries(v)) if (!SKIP.has(k)) walk(x, id);
+};
+for (const l of lessons) {
+  const out = resolveLesson(dict, l);
+  if (!out) rejected.push(l.id);
+  else walk(out, l.id);
+}
+
+console.log(
+  `ders ${lessons.length} · tr parça ${segs} · çözülen ${ok} · ` +
+    `çözülen ders ${lessons.length - rejected.length} · taranan dize ${strings}`,
+);
 if (misses.size) {
   const total = [...misses.values()].reduce((a, m) => a + m.n, 0);
   console.log(`\nHATA: ${misses.size} benzersiz dize çözülemedi (${total} parça)\n`);
@@ -71,4 +116,16 @@ if (misses.size) {
     console.log(`  ${String(m.n).padStart(4)}x [${m.lesson}] önce:${m.prev ?? "—"}\n       ${JSON.stringify(text.slice(0, 90))}`);
   process.exit(1);
 }
-console.log("\ntamam: her Türkçe parçanın İngilizcesi var");
+if (rejected.length) {
+  console.log(`\nHATA: ${rejected.length} ders reddedildi: ${rejected.slice(0, 10).join(", ")}`);
+  process.exit(1);
+}
+if (leftover.size) {
+  console.log(`\nHATA: çözüldükten sonra ${leftover.size} dize hâlâ Türkçe görünüyor\n`);
+  for (const [text, id] of [...leftover].slice(0, 25))
+    console.log(`  [${id}] ${JSON.stringify(text.slice(0, 90))}`);
+  process.exit(1);
+}
+console.log(
+  "\ntamam: her Türkçe parçanın İngilizcesi var ve çözülmüş derste Türkçe kalmıyor",
+);
