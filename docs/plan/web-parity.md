@@ -3503,3 +3503,45 @@ kaydediliyordu. Kullanıcıya "sayılmayacak" denip sayılıyordu.
 Bu, bu oturumda beş kez düzeltilen "sessizce düşen alan" sınıfının aynısı ama
 TERS yönde: önceki beşi sunucunun DÖNDÜRDÜĞÜ alanların mobil tipinde
 karşılığı olmamasıydı; bu ikisi mobilin GÖNDERMEDİĞİ alanlar.
+
+### 11.68 Kalan POST uçlarının gövde süpürmesi: eksik yok, iki fark kayda geçti
+
+§11.67'nin ölçümünü bütün POST uçlarına uyguladım - sunucunun gövdeden
+OKUDUĞU alanlar ile iki istemcinin GÖNDERDİĞİ alanlar.
+
+    uç              sunucu okuyor                          sonuç
+    /api/answers    answers day seconds progress wager     mobil: wager yok - BİLEREK
+    /api/skills     id correct score day seconds           EŞİT (beş alanın beşi)
+    /api/weekly     answers day seconds                    EŞİT
+    /api/mock-exam  action paper skill day id answers
+                    open taskIx taskId text secondsLeft    EŞİT
+    /api/session    day progress (POST)                    mobil POST etmiyor - aşağıda
+    /api/exam       (bkz. §11.67)                           iki eksik DÜZELTİLDİ
+
+**`wager` bilerek yok ve zaten yazılı.** `game/session.ts` söylüyor:
+*"`wagerXp` mobilde okunmuyor: bahisli etap mobilde hiç yok"* ve tip alanı
+"sözleşme için" tutuyor. Sözlük anahtarları da yalnız `src/i18n/web/*`
+altında, yani web-only ad alanında - tutarlı.
+
+**`/api/weekly`de `length` bir gövde alanı DEĞİL.** İlk taramam onu alan
+sanmıştı; kaynağa bakınca `raw.length`, yani cevap dizisinin uzunluğu (kırktan
+fazla cevap reddediliyor). Yanlış pozitif, kayda geçsin.
+
+**`/api/session` POST'unu mobil çağırmıyor ve buna gerek de yok.** O uç tek bir
+iş için var: webin toplu gönderiminde BEKLEYEN CEVAP YOKKEN ilerlemeyi
+kaydetmek. Web her partiden sonra `pending.current`ı boşaltıyor, yani "ilerleme
+var ama cevap yok" durumu gerçekten oluşuyor. Mobil ise cevapları BİRİKTİRİYOR
+(`answers.current` yalnız tur başında sıfırlanıyor) ve ilerlemeyi her
+gönderimde yanında taşıyor - kullanıcı bir şey cevapladıysa liste hiç boş
+kalmıyor.
+
+**Ama aynı ölçüm bir DAYANIKLILIK farkı gösterdi.** Web partiler hâlinde
+gönderiyor: çökme hâlinde en çok bir parti kayıp. Mobil tek gönderim yapıyor -
+tur sonunda ya da ekran temizlenirken - yani çökme (temizliğin hiç
+koşmadığı durum) BÜTÜN turu kaybettiriyor. Çift sayım yok, bu doğrulandı:
+`submitted` bayrağı iki yolu da tek gönderime kilitliyor.
+
+Bunu değiştirmedim: mobile aralıklı gönderim eklemek XP'nin NE ZAMAN
+düştüğünü değiştirir ve biriken listeyle birlikte çift sayıma açık kapı
+bırakır (parti boşaltma kuralı da eklenmeli). Ölçüm ve sonucu burada; kararı
+Samet verir.
