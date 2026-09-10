@@ -761,6 +761,13 @@ ilerleme paneli, ilk kelimeler ve ilerleme grafiği. Taban 185 → 180.
 | 6 | Yapabildiklerim / Yazılarım geniş ekranda | **bitti** — `CardGrid`, `CardGrid` artık `as` alıyor |
 | 7 | Mobilde `rounds.tsx` sabit Türkçesi | **bitti** — `rounds.match_first_try` |
 
+Tasarım turunun (§11) açık kalemleri de kapandı: semantik renkler §11.4, misafir
+yerleştirme testi §11.5, rozet kademeleri §11.8, dil bilgisi giriş cümlesi.
+Kod tarafında bekleyen madde kalmadı; 1 ve 2 hesap işi ve Samet'te.
+
+Yeni ve bilerek AÇIK bırakılan tek şey §11.7: beceri kütüphanesinde yön ters
+ve kapatmak ürün kararı istiyor.
+
 ---
 
 ## 11. Tasarım turu — ölçü ölçü karşılaştırma (10 Eyl)
