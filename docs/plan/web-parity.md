@@ -3132,3 +3132,52 @@ kütüphanesi var ve tek sarmalayıcı hepsini kapsıyor; mobilde `Animated`
 sürücüleri tek tek yazılmış, o yüzden sekiz yüzey tercihi tek tek okuyor
 (§11.56). Sonuç aynı: tercih açıkken iki uygulamada da hareket kalkıyor,
 bilgi kalıyor.
+
+### 11.58 Ses cue'ları: §11.15'teki belirsiz erteleme ölçülüp keskinleşti
+
+Erken bir turda "`danger`/`record` SFX cue'ları — üretilen sesi
+doğrulayamam" diye kaydetmiştim. Bu turda ölçtüm ve kayıt hem BÜYÜDÜ hem
+netleşti.
+
+    web    13 cue: micon micoff premium correct wrong tap start stage
+                   perfect record unlock finish danger
+    mobil   7 cue: correct wrong tap micon micoff finish premium
+
+Fark iki değil ALTI cue ve hepsi mobilin SAHİP OLDUĞU yüzeylerde çalıyor:
+
+    start    tur açılışı — web `session-player` (iki yer), `boss-player`,
+             `walk-player`, `challenge-player`. Mobilde GameScreen, BossScreen
+             ve WalkModeScreen var ve üçü de başlarken SESSİZ.
+    stage    etap bitti (`session-player:1146`)
+    perfect  etabın tamamı doğru (`:1146`, `:1308`)
+    record   yeni rekor — `boss-player:139`. Mobil `BossScreen` yalnız
+             `finish`/`wrong` çalıyor, rekoru ayırmıyor.
+    unlock   rozet açıldı (`achievement-unlock`, iki yer) ve görev tamamlandı
+             (`quest-card`). Mobilde ikisi de var.
+    danger   süre azaldı — `boss-player:172`. Mobil patron turu zamanlı ve
+             süre azalınca hiçbir şey duyurmuyor.
+
+**Yeni bilgi bir: dönüşüm ses YAZMAK değil, aritmetik.** Web bu cue'ları
+`arpeggio(frekanslar, aralık, süre, tepe, dalga?)` ve `note(başlangıç, frekans,
+süre, tepe, dalga?)` çağrılarıyla tanımlıyor; mobilin satır biçimi
+`[freq, start, dur, peak, wave, glide, lp, attack, hold, release]`. `arpeggio`
+frekans başına bir satır (`start = i * aralık`), `note` tek satır. Yani tablo
+türetilebilir.
+
+**Yeni bilgi iki: bu altı cue NATIVE kopya gerektirmiyor.** Kotlin ve Swift
+tabloları yalnız EKRAN KAPALI yürüyüş yolu için var (testin kendi başlığı
+söylüyor); ekran açıkken çalan iki yol (WebView köprüsü ve mp3) doğrudan
+`SFX_NOTES`tan besleniyor. Altı cue'nun hepsi ekran AÇIKKEN çalıyor.
+
+**Yine de eklenmedi, sebebi değişti.** Artık "üretemem" değil, iki gerçek
+engel var: (1) hesaplayabilirim ama KULAKLA doğrulayamam - altı yeni sesin
+ailenin geri kalanıyla uyduğunu ancak dinleyen biri söyler; (2)
+`__tests__/sfxNotes.test.ts` `Object.keys(SFX_NOTES)` üzerinden dönüyor ve
+HER türü iki native kopyada arıyor, yani köprüye özgü bir cue eklemek o kapıyı
+kırar. Kapıyı "yürüyüş cue'ları" ile "ekran açık cue'ları" diye ikiye ayırmak
+gerekir - ses tasarımına ait bir karar.
+
+Bu arada fark DONDURULDU: `check:parity`ye "ses cue kümesi" bölümü eklendi ve
+altı cue orada sebebiyle yazılı. Webe yedincisi eklenirse kapı kırılır ve
+karar yeniden verilir; sessizce büyümez. Ters yön de ölçülüyor (mobilde olup
+webde olmayan cue).

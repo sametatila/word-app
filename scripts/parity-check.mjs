@@ -895,6 +895,32 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   sameList("ses kayit defteri", voiceIds("mobile/src/lib/voices.ts"), voiceIds("src/lib/tts/voices.ts"));
 }
 
+/* ── 21. ses cue kumesi ────────────────────────────────────────────────────
+ * Web on uc cue tanimliyor, mobil yedi. Fark ALTI cue ve hepsi mobilin SAHIP
+ * OLDUGU yuzeylerde caliyor (bkz. web-parity 11.58): start (tur/patron/yuruyus
+ * acilisi), stage ve perfect (etap ve kusursuz etap), record (rekor), unlock
+ * (rozet ve gorev), danger (sure azaldi).
+ *
+ * Kapinin isi farki KAPATMAK degil, BUYUMESINI engellemek: alti cue burada
+ * sebebiyle yazili. Webe yedincisi eklenirse kapi kirilir ve karar yeniden
+ * verilir - sessizce buyumez. */
+{
+  const ALLOW = new Set([
+    "start", //   tur acilisi
+    "stage", //   etap bitti
+    "perfect", // etabin tamami dogru
+    "record", //  yeni rekor
+    "unlock", //  rozet / gorev acildi
+    "danger", //  sure azaldi
+  ]);
+  const web = [...read("src/lib/sfx.ts").matchAll(/^\s*\|\s*"(\w+)"$/gm)].map((m) => m[1]);
+  const mob = [...(/export type SfxKind =([^;]+);/.exec(read("mobile/src/lib/sfxNotes.ts"))?.[1] ?? "").matchAll(/"(\w+)"/g)].map((m) => m[1]);
+  const eksik = web.filter((c) => !mob.includes(c) && !ALLOW.has(c));
+  const fazla = mob.filter((c) => !web.includes(c));
+  sameList("ses cue kumesi", eksik.length ? eksik : ["eksik yok"], ["eksik yok"], "mobilde kayitsiz eksik", "beklenen");
+  sameList("ses cue kumesi (ters)", fazla.length ? fazla : ["fazla yok"], ["fazla yok"], "webde olmayan", "beklenen");
+}
+
 /* ── elle yazilmis icerik ciftleri ──────────────────────────────────────────
    Iki dosyanin "birebir ayni kalmali" dedigi ama hicbir kapinin bakmadigi
    veri. Modul temalari tam bu yuzden bes gun ayrisik kaldi (bkz. 11.52):
