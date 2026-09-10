@@ -5647,3 +5647,35 @@ Kapıların kendisi de kod ve aynı sınıf hatayı yapıyor.
 kelime, seri) kuruluyor; Android aynı yerde büyük halka + maskot gösteriyor.
 Bu, sonuç ekranının bütün hiyerarşisini değiştirmek demek — kendi turunda
 ölçülüp yapılacak.
+
+
+### 11.151 Tur özetindeki "zorlandıkların" listesi ve `unknown[]` tipin bedeli
+
+§11.150'de "web özeti üç karo, Android halka" diye not düşmüştüm; o hiyerarşiyi
+ölçerken karşılaştırmanın öteki yönü çıktı: **web'de olup Android'de olmayan**
+bir bölüm var — turda yanlış bilinen kelimelerin listesi ve oradan kelime
+listesine açılan kapı. Mobilde tur bitiyor, hangi kelimede takıldığın hiçbir
+yerde yazmıyordu.
+
+**Altındaki sessiz hata daha ilginç:** `SessionProgress.missed` mobil tipte
+`unknown[]` yazılıydı. Yani alan TANINIYOR (tip derleniyor, kimse şikâyet
+etmiyor) ama içine bakılamıyor: mobil onu ne gönderiyor ne okuyor. Sonuç,
+"sunucu gönderiyor, mobil tipi düşürüyor" sınıfının sinsi bir çeşidi —
+Android'de başlanan yarım tur webde sürdürülünce liste boş geliyordu.
+`unknown[]`, alanı silmekten daha kötü: silinmiş bir alan gözle görünür,
+`unknown[]` sözleşmeye uyuyormuş gibi durur.
+
+Liste artık üç yerde de var: ekranda (altı satır + kalanın sayısı + not +
+"Kelimelerim" kapısı), ilerlemeyle birlikte sunucuya giderken, ve sunucudan
+geri okunurken.
+
+**Webde de bir yerelleştirme hatası:** başlık koda gömülü Türkçeydi
+("Zorlandıkların (3)") — Almanca ve İngilizce arayüzde de öyle yazıyordu.
+Sözlüğe alındı ve iki komşu anahtar (`n_more_words`, `missed_note`) web'e özel
+olmaktan çıkıp ortak sözlüğe taşındı; ham metin tabanı 166'dan **165**'e indi.
+
+**Ölçüldü, ayrışma değil:** bahisli etap satırı (`wagerXp`) webde var,
+mobilde yok - çünkü bahisli etap mekaniği mobilde hiç yok (`session.ts`
+yorumunda yazılı). Tur özetinin halka/karo hiyerarşisi hâlâ açık: web üç
+`Stat` karosu, Android halka + maskot. Bu, sonuç kartının bütününü
+değiştirmek demek ve kendi turunu bekliyor.
