@@ -38,7 +38,7 @@
     "check:endpoints": "node scripts/check-endpoints.mjs --check",
     "check:colors": "node scripts/check-colors.mjs",
     "check:tokens": "node scripts/check-tokens.mjs",
-    "check:pairs": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/check-pairs.ts",
+    "check:pairs": "npm run lessons:apply && npm run lessons:apply-de && tsx --tsconfig scripts/tsconfig.e2e.json scripts/check-pairs.ts",
     "test:legal-db": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/test-legal-db.ts",
     "test:entitlement": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/test-entitlement.ts",
     "grant:premium": "tsx --tsconfig scripts/tsconfig.ops.json scripts/grant-premium.ts",
