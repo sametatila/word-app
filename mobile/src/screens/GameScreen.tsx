@@ -406,7 +406,14 @@ export function GameScreen() {
         confirmLabel={t("common.exit")}
         cancelLabel={t("common.continue_2")}
         destructive
-        onConfirm={() => { back.cancel(); nav.goBack(); }}
+        onConfirm={() => {
+          /* Yarida birakma OLCULUYOR: `session_done` yalnizca bitirenleri
+             sayiyor, yani "kac kisi cikiyor ve nerede cikiyor" Androidde
+             cevapsizdi. Web `session-player` ayni adi ayni degerle yaziyor. */
+          track("session_stop", idxRef.current);
+          back.cancel();
+          nav.goBack();
+        }}
         onCancel={back.cancel}
       />
     </View>

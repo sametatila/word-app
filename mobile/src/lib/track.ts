@@ -64,7 +64,12 @@ export type EventName =
   /* Yerlestirme sonucu uygulandi (value = yuzde, kind = "demo:a1" gibi). */
   | "placement_finish"
   /* Rol yapma denemesi (value = ozet puani, kind = "roleplay"). */
-  | "production_attempt";
+  | "production_attempt"
+  /* Tur YARIDA birakildi (value = kacinci turda) - web `session-player` ile
+     ayni ad. "Kac kisi turu bitirmeden cikiyor ve nerede cikiyor" sorusu
+     Androidde hic cevaplanmiyordu; `session_done` yalnizca bitirenleri
+     sayiyor. */
+  | "session_stop";
 
 /** Analitik tercihi (Gizlilik Politikası §8) — cihazda, varsayılan açık; açılışta yüklenir. */
 const ANALYTICS_KEY = "lernomi:analytics";
