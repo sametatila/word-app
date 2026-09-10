@@ -1113,6 +1113,87 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   kapsam("bildirim turlerinin kapsami (web)", konst("NOTIFICATION_TYPES"), swCases(wc, "function notificationText"));
 }
 
+/* ── 25. ozet ve rozet uclarinin alanlari ──────────────────────────────────
+ * `/api/me` ile `/api/achievements` iki tarafin da okudugu iki uc ve hicbir
+ * kapi bakmiyordu. Ikisinde de olculen ayni sey: sunucunun YAZDIGI alan
+ * kumesi ile istemcinin MODELLEDIGI kume, iki yonde (bkz. 19).
+ *
+ * `/api/me` istisnasi: webin kendi `Me` tipi YOK - sunucu bilesenleri
+ * `ensureProfile`/`getProgress`i dogrudan cagiriyor ve uc yalniz mobil icin
+ * var. O yuzden karsilastirma ucun GOVDESINDEKI anahtarlarla yapiliyor,
+ * ikinci bir tiple degil.
+ *
+ * `/api/achievements` GET govdesi `achievementBoard`dan geliyor
+ * (`AchievementBoard`); mobil tarafta `Achievement` satirin tipi. Satir
+ * alanlari karsilastiriliyor: tahtanin sarmalayici alanlari (`rows`,
+ * `fresh`, `unlockedCount`, `total`) mobilde ayri bir tip degil, cagirma
+ * yerinde aciliyor. */
+{
+  const strip = (x) => x.replace(/\/\*[\s\S]*?\*\//g, " ").replace(/\/\/[^\n]*/g, " ");
+  /* Ucun `NextResponse.json({...})` govdesindeki ILK duzey anahtarlar. */
+  const govde = (p, marker) => {
+    const src = strip(read(p));
+    /* `marker` govdenin ICINDEN bir satir; kapsayan `{` geriye dogru aranir.
+       Ucun ilk `NextResponse.json(`i 401 hata govdesi - onu almamak icin. */
+    const i = src.indexOf(marker);
+    if (i < 0) return ["bulunamadi: " + marker];
+    let k = src.lastIndexOf("{", i);
+    let d = 0;
+    for (let j = k; j < src.length; j++) {
+      if ("{[(".includes(src[j])) d++;
+      else if ("}])".includes(src[j])) {
+        d--;
+        if (d === 0) {
+          const inner = src.slice(k + 1, j);
+          /* Yalniz UST duzey: ic ice nesneler atlanarak taranir. */
+          const out = [];
+          let dd = 0;
+          let buf = "";
+          for (const c of inner) {
+            if ("{[(".includes(c)) dd++;
+            else if ("}])".includes(c)) dd--;
+            if (c === "," && dd === 0) { out.push(buf); buf = ""; } else buf += c;
+          }
+          out.push(buf);
+          /* Kisa yazim da sayilir (`mastered,` gibi): iki nokta arananinca
+             sunucunun gonderdigi alan "eksik" gorunuyordu. */
+          return [...new Set(out.map((x) => (x.match(/^\s*(\w+)\s*(?::|$)/) ?? [])[1]).filter(Boolean))].sort();
+        }
+      }
+    }
+    return ["okunamadi: " + marker];
+  };
+  const typeFields = (p, name) => {
+    const x = strip(read(p));
+    const i = x.indexOf("export type " + name + " =");
+    if (i < 0) return ["bulunamadi: " + name];
+    let k = x.indexOf("{", i);
+    let d = 0;
+    for (let j = k; j < x.length; j++) {
+      if (x[j] === "{") d++;
+      else if (x[j] === "}" && --d === 0) {
+        return [...new Set([...x.slice(k, j + 1).matchAll(/[{;\n]\s*(\w+)\??:/g)].map((m) => m[1]))].sort();
+      }
+    }
+    return ["okunamadi: " + name];
+  };
+  const ciftYon = (baslik, sunucu, istemci) => {
+    const eksik = sunucu.filter((a) => !istemci.includes(a));
+    const fazla = istemci.filter((a) => !sunucu.includes(a));
+    sameList(baslik, eksik.length ? eksik : ["ayrisma yok"], ["ayrisma yok"], "mobilde eksik", "beklenen");
+    sameList(baslik + " (ters)", fazla.length ? fazla : ["ayrisma yok"], ["ayrisma yok"], "mobilde fazla", "beklenen");
+  };
+  ciftYon("/api/me alanlari", govde("src/app/api/me/route.ts", "name: profile.displayName"), typeFields("mobile/src/lib/useMe.ts", "Me"));
+
+  /* Rozet satiri: sunucu tarafinda `AchievementRow` alanlari + tanimdan
+     gelenler (`...def`). Tanim alanlari `AchievementDef`de yaziyor. */
+  const rowWeb = [...new Set([
+    ...typeFields("src/lib/achievements.ts", "AchievementRow"),
+    ...typeFields("src/lib/achievements.ts", "AchievementDef"),
+  ])].filter((a) => !["metric", "titleKey", "hintKey"].includes(a)).sort();
+  ciftYon("rozet satiri alanlari", rowWeb, typeFields("mobile/src/data/achievements.ts", "Achievement"));
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"
