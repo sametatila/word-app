@@ -3,7 +3,7 @@ import { View } from "react-native";
 import { useFocusEffect, useNavigation } from "@react-navigation/native";
 import type { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import type { RootStackParams } from "../navigation/RootStack";
-import { t, dateLocale } from "../lib/i18n";
+import { t, dateLocale, formatPercent } from "../lib/i18n";
 import { Screen } from "../ui/Screen";
 import { Text } from "../ui/Text";
 import { Card } from "../ui/Card";
@@ -14,7 +14,7 @@ import { Skeleton, SkeletonCard, SkeletonLine, textHeight } from "../ui/Skeleton
 import { ReadIcon, ListenIcon, WriteIcon, MicIcon, GrammarIcon, ChevronRightIcon, CheckIcon } from "../ui/icons";
 import { useMe } from "../lib/useMe";
 import { listOwnSkillMeta, type SkillMeta, type SkillKey } from "../data/skills";
-import { getDoneItems } from "../game/lessonProgress";
+import { getDoneItems, getItemScores, syncItemProgress } from "../game/lessonProgress";
 import { loadOnboardingPrefs } from "../lib/onboardingPrefs";
 import { useTheme, spacing, radii, type Palette } from "../theme";
 
@@ -34,7 +34,7 @@ const SKILLS: { key: SkillKey; kind: Kind; label: string; icon: (p: { color: str
   { key: "grammar", kind: "grammar", label: "skills.grammar", icon: GrammarIcon, tint: "streak" },
 ];
 
-function ExerciseRow({ ex, tint, done, isNext, onPress, colors, last }: { ex: SkillMeta; tint: string; done: boolean; isNext: boolean; onPress: () => void; colors: Palette; last: boolean }) {
+function ExerciseRow({ ex, tint, done, score, isNext, onPress, colors, last }: { ex: SkillMeta; tint: string; done: boolean; score?: number; isNext: boolean; onPress: () => void; colors: Palette; last: boolean }) {
   return (
     <PressableScale onPress={onPress} accessibilityLabel={`${ex.title}, ${t("skills.dk", { n: ex.minutes })}`} style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingVertical: 12, borderBottomWidth: last ? 0 : 1, borderBottomColor: colors.hairline }}>
       <View style={{ width: 8, height: 8, borderRadius: 4, backgroundColor: done ? colors.success : tint }} />
@@ -47,6 +47,13 @@ function ExerciseRow({ ex, tint, done, isNext, onPress, colors, last }: { ex: Sk
           {isNext ? <Text variant="caption" color={tint}> · {t("skills.next").toLowerCase()}</Text> : null}
         </Text>
       </View>
+      {/* PUAN ROZETİ — web listesi baştan beri gösteriyor: "bitti" ile "iyi
+          bitti" aynı şey değil ve tekrar çalışma kararı buna bakıyor. */}
+      {score !== undefined ? (
+        <View style={{ paddingHorizontal: 8, paddingVertical: 3, borderRadius: radii.sm, backgroundColor: done ? colors.successSoft : colors.dangerSoft }}>
+          <Text variant="micro" color={done ? colors.successText : colors.dangerText}>{formatPercent(score)}</Text>
+        </View>
+      ) : null}
       {done ? <CheckIcon color={colors.successText} size={18} /> : <ChevronRightIcon color={colors.textFaint} size={20} />}
     </PressableScale>
   );
@@ -69,6 +76,8 @@ export function SkillsScreen() {
   const [prefsRead, setPrefsRead] = useState(false);
   const [level, setLevel] = useState<string | null>(null);
   const [done, setDone] = useState<Set<string>>(() => new Set());
+  /* Egzersiz başına puan — web listesi de rozet olarak gösteriyor. */
+  const [scores, setScores] = useState<Record<string, number>>({});
   useEffect(() => {
     if (meLoading || me) return;
     void loadOnboardingPrefs().then((p) => { setGuestLevel(p.level ?? null); setPrefsRead(true); });
@@ -76,7 +85,14 @@ export function SkillsScreen() {
   // Tamamlanma kümesi her odaklanmada tazelenir: egzersizden dönünce nokta yeşile dönsün.
   useFocusEffect(useCallback(() => {
     let alive = true;
-    void getDoneItems().then((s) => { if (alive) setDone(new Set(s)); });
+    /* SUNUCU DURUMU DA OKUNUYOR. Yerel küme yalnız BU cihazda bitirilenleri
+       biliyordu: webde ya da başka bir telefonda çalışılan egzersizler
+       Android'de hiç bitmemiş görünüyor ve "sıradaki" önerisi baştan
+       başlıyordu. Önce yerel (anında çizilsin), sonra sunucu. */
+    const oku = () => Promise.all([getDoneItems(), getItemScores()]).then(([s, p]) => {
+      if (alive) { setDone(new Set(s)); setScores({ ...p }); }
+    });
+    void oku().then(() => syncItemProgress()).then(oku);
     return () => { alive = false; };
   }, []));
   const activeLevel = level ?? me?.level ?? guestLevel ?? "A1";
@@ -210,7 +226,7 @@ export function SkillsScreen() {
                 </View>
                 <Card padded style={{ paddingVertical: 4 }}>
                   {s.items.map((ex, i) => (
-                    <ExerciseRow key={ex.id} ex={ex} tint={tint} done={done.has(ex.id)} isNext={s.next?.id === ex.id} last={i === s.items.length - 1} colors={colors} onPress={() => open(ex, s.kind)} />
+                    <ExerciseRow key={ex.id} ex={ex} tint={tint} done={done.has(ex.id)} score={scores[ex.id]} isNext={s.next?.id === ex.id} last={i === s.items.length - 1} colors={colors} onPress={() => open(ex, s.kind)} />
                   ))}
                 </Card>
               </View>

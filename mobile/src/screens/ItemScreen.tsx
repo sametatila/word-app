@@ -14,7 +14,7 @@ import { KIND_KEY, type ItemKind } from "../data/unit";
 import { getExercise, type ListeningSegment } from "../data/skills";
 import { QuestionList, GlossPanel, WritingList, type WritingTask } from "../game/skillQuiz";
 import { GrammarBody, SpeakingDrill, MonologueBody, type SpeakingTask } from "../game/skillLibrary";
-import { markItemDone } from "../game/lessonProgress";
+import { markItemDone, recordItemScore } from "../game/lessonProgress";
 import { speakTarget } from "../lib/tts";
 import { API_BASE, fetchWithTimeout } from "../api/client";
 import { bumpStats } from "../lib/statsSignal";
@@ -125,10 +125,13 @@ export function ItemScreen() {
         body: JSON.stringify({ id: exercise.id, correct: c, score, day: todayStr(), seconds: Math.round((Date.now() - startedAt.current) / 1000) }),
       });
       if (res.ok) {
-        const d = (await res.json()) as { xpGained?: number; repeat?: boolean; currentStreak?: number };
+        const d = (await res.json()) as { xpGained?: number; repeat?: boolean; currentStreak?: number; lastScore?: number };
         if (typeof d.xpGained === "number") setEarnedXp(d.xpGained);
         setRepeatNoXp(d.repeat === true && d.xpGained === 0);
         if (typeof d.currentStreak === "number") setStreak(d.currentStreak);
+        /* Puan yerele de yazılıyor: Beceriler listesi rozeti bundan çiziyor
+           ve sunucu durumu bir sonraki açılışta zaten üzerine gelecek. */
+        if (typeof d.lastScore === "number") void recordItemScore(exercise.id, d.lastScore);
         bumpStats(); // XP/seri değişti
       }
     } catch { /* çevrimdışı: yerel işaret yeterli */ }

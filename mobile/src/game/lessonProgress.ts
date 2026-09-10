@@ -5,6 +5,7 @@
  * gerçek track gelene kadar Patika'ya hangi adımın bittiğini söyler.
  */
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import { api } from "../api/client";
 
 const KEY = "lernomi-items-done";
 let cache: Set<string> | null = null;
@@ -29,6 +30,64 @@ export async function markItemDone(id: string): Promise<void> {
 
 export function isItemDoneSync(id: string): boolean {
   return cache?.has(id) ?? false;
+}
+
+/** Egzersiz başına son puan — sunucudan gelen durum, yerelde önbellekli. */
+const SCORE_KEY = "lernomi-item-scores";
+let scoreCache: Record<string, number> | null = null;
+
+export async function getItemScores(): Promise<Record<string, number>> {
+  if (scoreCache) return scoreCache;
+  try {
+    const raw = await AsyncStorage.getItem(SCORE_KEY);
+    scoreCache = raw ? (JSON.parse(raw) as Record<string, number>) : {};
+  } catch {
+    scoreCache = {};
+  }
+  return scoreCache;
+}
+
+/**
+ * SUNUCUDAKİ DURUMU YERELE KATAR.
+ *
+ * Yerel küme yalnız BU cihazda bitirilenleri biliyordu: webde ya da başka bir
+ * telefonda çalışılan egzersizler Android'de hiç bitmemiş görünüyordu ve
+ * "sıradaki" önerisi baştan başlıyordu. Sunucu durumu (`GET /api/skills`)
+ * aylardır duruyor ve mobilde onu okuyan hiçbir şey yoktu (web
+ * `syncSkillProgress` ile okuyor).
+ *
+ * Birleştirme TEK YÖNLÜ değil: sunucudan gelenler yerele ekleniyor, yerelde
+ * olup sunucuda olmayanlar (çevrimdışı bitirilmiş) korunuyor.
+ */
+export async function syncItemProgress(level?: string): Promise<void> {
+  try {
+    const r = await api<{ progress?: Record<string, { correct: number; total: number; lastScore: number | null; lastAt: string }> }>(
+      `/api/skills${level ? `?level=${encodeURIComponent(level)}` : ""}`,
+    );
+    const progress = r?.progress;
+    if (!progress) return;
+    const s = await getDoneItems();
+    const scores = await getItemScores();
+    let degisti = false;
+    for (const [id, v] of Object.entries(progress)) {
+      if (!s.has(id)) { s.add(id); degisti = true; }
+      const puan = v.lastScore ?? (v.total > 0 ? Math.round((100 * v.correct) / v.total) : null);
+      if (puan !== null && scores[id] !== puan) { scores[id] = puan; degisti = true; }
+    }
+    if (!degisti) return;
+    scoreCache = scores;
+    try { await AsyncStorage.setItem(KEY, JSON.stringify([...s])); } catch { /* yut */ }
+    try { await AsyncStorage.setItem(SCORE_KEY, JSON.stringify(scores)); } catch { /* yut */ }
+  } catch { /* çevrimdışı: yerel küme yeterli */ }
+}
+
+/** Egzersiz bitince puanı da yerele yazılır (web `recordSkillResult` karşılığı). */
+export async function recordItemScore(id: string, score: number): Promise<void> {
+  const scores = await getItemScores();
+  if (scores[id] === score) return;
+  scores[id] = score;
+  scoreCache = scores;
+  try { await AsyncStorage.setItem(SCORE_KEY, JSON.stringify(scores)); } catch { /* yut */ }
 }
 
 /**
