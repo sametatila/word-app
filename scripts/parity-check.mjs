@@ -856,6 +856,8 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       .replace(/,\s*([}\]])/g, "$1")
       .replace(/([{[])\s+/g, "$1")
       .replace(/\s+([}\]])/g, "$1")
+      .replace(/([{[])\s+/g, "$1")
+      .replace(/\s+([}\]])/g, "$1")
       .replace(/\s*as const\s*$/, "")
       .trim();
   const val = (p, name) => {
@@ -1423,6 +1425,62 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   ];
   const fmt = (rows) => rows.map(([k, i, t]) => k + ":" + i + "/" + t);
   sameList("akis olay karosu", fmt(mobRows), fmt(webRows));
+}
+
+/* ── 33. kelimenin turu ve cogul notu ──────────────────────────────────────
+ * `typLabel` ve `grammarNote` iki tarafta AYNI kelimeye ayni seyi demeli:
+ * ayrisirlarsa ayni kelime bir uygulamada "isim", otekinde "diger" olur ya da
+ * cogulu iki turlu yazilir. Kurallar mobile yeni kopyalandi (bkz. 11.80) ve
+ * kopya en cok kopyalandigi gun dogrudur.
+ *
+ * Karsilastirma DESENLER uzerinde: her iki govdedeki duzenli ifadeler ve
+ * sozluk anahtarlari sirayla. Ceviri cagrisinin bicimi farkli
+ * (`translate(lang, k)` <-> `t(k)`) ama anahtar ADI ayni, o yuzden anahtarlar
+ * ayri ayri cikariliyor. */
+{
+  const strip = (x) => x.replace(/\/\*[\s\S]*?\*\//g, " ").replace(/\/\/[^\n]*/g, " ");
+  const fn = (p, name) => {
+    const x = strip(read(p));
+    const i = x.indexOf("export function " + name);
+    if (i < 0) return "";
+    const j = x.indexOf("\n}", i);
+    return x.slice(i, j < 0 ? undefined : j);
+  };
+  const keys = (b) => [...b.matchAll(/"(words\.[\w.]+)"/g)].map((m) => m[1]);
+  /* Duzenli ifade govdeleri: `.test(`/`.match(`/`.exec(` ile kullanilanlar ve
+     bir degiskene atananlar. Capa aranmiyor - `typLabel`in mastar eki deseni
+     `^` ile baslamiyor. */
+  const regexes = (b) => [
+    ...[...b.matchAll(/(\/(?:[^/\\\n]|\\.)+\/[gimsuy]*)\s*\.(?:test|match|exec)\(/g)].map((m) => m[1]),
+    ...[...b.matchAll(/=\s*(\/(?:[^/\\\n]|\\.)+\/[gimsuy]*)/g)].map((m) => m[1]),
+  ];
+  for (const [name, wp, mp] of [
+    ["typLabel", "src/components/games/types.ts", "mobile/src/game/wordGrammar.ts"],
+    ["grammarNote", "src/components/games/types.ts", "mobile/src/game/wordGrammar.ts"],
+  ]) {
+    const w = fn(wp, name);
+    const m = fn(mp, name);
+    sameList("dilbilgisi " + name + " anahtarlari", keys(m), keys(w));
+    sameList("dilbilgisi " + name + " desenleri", regexes(m), regexes(w));
+  }
+  /* Umlaut govdesi: webin `lib/german` icindeki islev, mobilde ayni dosyada
+     yerel bir kopya. Harf haritasi ve "au" kurali ayni kalmali. */
+  const um = (p) => {
+    const x = strip(read(p));
+    const i = x.indexOf("function umlautStem");
+    const j = x.indexOf("\n}", i);
+    return x
+      .slice(i, j)
+      .replace(/\s+/g, " ")
+      /* Son virgul ve ayrac ici bosluklar teklenir: iki taraf ayni haritayi
+         farkli bicimlendirmis olabilir, onemli olan degerler. */
+      .replace(/,\s*([}\]])/g, "$1")
+      .replace(/([{[])\s+/g, "$1")
+      .replace(/\s+([}\]])/g, "$1")
+      .replace(/^export /, "")
+      .trim();
+  };
+  sameList("umlaut govdesi", [um("mobile/src/game/wordGrammar.ts")], [um("src/lib/german.ts")]);
 }
 
 console.log(
