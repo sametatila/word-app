@@ -156,14 +156,21 @@ if (existsSync(`${DIR}out`))
         if (a !== b) H(`sayılar uyuşmuyor: «${a}» → «${b}»`);
 
         /*
-          § KAYNAKTAN GELİYOR. Tüzük ve yönetmelik metinleri maddelere
-          "§1", "§3" diye gönderme yapıyor ve 32 dizede geçiyor. Kapı ilk
-          koşuda dördünü "beklenmedik karakter" saydı — kümede yoktu.
-          «» ile aynı hikâye: kaynağın kullandığı bir işaret, yazım kazası
-          değil.
+          KAYNAKTAN GELEN İŞARETLER. Kümeye üç şey sonradan girdi ve
+          üçünde de gerekçe aynı: Türkçe dizede zaten var, İngilizcede de
+          durmak zorunda.
+
+            §   tüzük maddesi — "§1", "§3"; 32 dizede geçiyor
+            á   Çekçe bir soyadı — "Herr Dostál"
+            ²   metrekare — "m²"
+
+          Ölçüldü: kaynağın tamamında kümenin dışında kalan başka
+          karakter YOK (Türkçeye özgü harfler hariç, onlar kasten dışarıda
+          — kanıt açıklıkları `strip` ile zaten çıkarılıyor, geriye kalan
+          Türkçe harf çevrilmemiş demektir).
         */
         for (const ch of strip(en, r.tr))
-          if (!/[ -~ÄÖÜäöüßé·×‚„“”‘’«»–—…→↔€§]/.test(ch))
+          if (!/[ -~ÄÖÜäöüßéá²·×‚„“”‘’«»–—…→↔€§]/.test(ch))
             H(`beklenmedik karakter: «${ch}» (U+${ch.codePointAt(0)?.toString(16).toUpperCase().padStart(4, "0")})`);
 
         for (const span of evidence(r.tr))
