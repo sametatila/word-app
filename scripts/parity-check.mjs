@@ -1392,6 +1392,39 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   sameList("tepki ikonlari", fmt((k) => mob.get(k) ?? fallback), fmt((k) => web.get(k)));
 }
 
+/* ── 32. akis kartinin olay karosu ─────────────────────────────────────────
+ * Kart NEYIN kutlandigini karonun ikonu ve rengiyle soyluyor: seri kilometre
+ * tasi, basarim, lig birinciligi ve ortak gorev aksi halde tipatip ayni
+ * gorunuyor ve fark yalniz cumlenin icinde kaliyor. Iki tarafin tablosu
+ * "birebir" diye yaziliydi ama hicbir kapi bakmiyordu.
+ *
+ * Renk adlari 14. bolumdeki ayni ROLE haritasiyla cevriliyor (web CSS
+ * belirteci, mobil palet alani). `default` dali iki tarafta da var ve
+ * karsilastirmaya "default" adiyla giriyor - tanimadigi olay turunde ikisinin
+ * ayni yedegi cizmesi gerekiyor. */
+{
+  const ROLE = { brand: "primary", mint: "success", rose: "danger", flame: "streak", sky: "info", violet: "accent" };
+  const webSrc = read("src/components/social/feed.tsx");
+  const mobSrc = read("mobile/src/social/FeedList.tsx");
+  const seg = (src, marker) => {
+    const i = src.indexOf(marker);
+    if (i < 0) return "";
+    return src.slice(i, src.indexOf("\n}", i));
+  };
+  const w = seg(webSrc, "function eventTile");
+  const m = seg(mobSrc, "function eventTile");
+  const webRows = [
+    ...[...w.matchAll(/case "(\w+)":\s*return \{ Icon: (\w+Icon), tint: "var\(--color-(\w+)\)" \}/g)].map((x) => [x[1], x[2], ROLE[x[3]] ?? x[3]]),
+    ...[...w.matchAll(/default:\s*return \{ Icon: (\w+Icon), tint: "var\(--color-(\w+)\)" \}/g)].map((x) => ["default", x[1], ROLE[x[2]] ?? x[2]]),
+  ];
+  const mobRows = [
+    ...[...m.matchAll(/case "(\w+)":\s*return \{ icon: (\w+Icon), tint: colors\.(\w+) \}/g)].map((x) => [x[1], x[2], x[3]]),
+    ...[...m.matchAll(/default:\s*return \{ icon: (\w+Icon), tint: colors\.(\w+) \}/g)].map((x) => ["default", x[1], x[2]]),
+  ];
+  const fmt = (rows) => rows.map(([k, i, t]) => k + ":" + i + "/" + t);
+  sameList("akis olay karosu", fmt(mobRows), fmt(webRows));
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"
