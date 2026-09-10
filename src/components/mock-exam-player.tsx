@@ -276,9 +276,13 @@ export function MockExamPlayer({ paper, part }: { paper: MockPaper; part: MockPa
           </div>
         </div>
 
+        {/* Aynı olgu iki ekranda tek cümle: bölüm listesi ve kapak aynı
+            anahtarları kullanıyor (Android `Cover` ve `MockExamsScreen` de
+            öyle). Üç ayrı web anahtarı aynı şeyi ikinci kez yazıyordu. */}
         <p className="muted mt-4 text-xs">
-          {t("mockexam.minutes", { n: part.minutes })} ·{" "}
-          {points ? t("mockexam.n_items", { n: points }) : t("mockexam.not_machine_scored")}
+          {points
+            ? t("mockexams.part_summary", { minutes: part.minutes, n: points })
+            : t("mockexams.part_open", { minutes: part.minutes })}
         </p>
         <p className="muted mt-4 text-xs font-bold tracking-wide">{t("mockexam.rules_title")}</p>
         <p className="muted mt-1 text-xs leading-relaxed">{t("mockexam.rules_body")}</p>
