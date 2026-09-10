@@ -330,7 +330,7 @@ export function MockExamScreen() {
           <>
             {autoNext ? (
               <Card padded style={{ marginBottom: spacing.sm, backgroundColor: colors.dangerSoft }}>
-                <Text variant="caption" color={colors.danger}>{t("mockexam.auto_next")}</Text>
+                <Text variant="caption" color={colors.dangerText}>{t("mockexam.auto_next")}</Text>
               </Card>
             ) : null}
             {resumed && ix === (attempt?.taskIx ?? 0) ? (
@@ -876,7 +876,7 @@ function SpeakingTask({
             <MicIcon color={colors.primary} size={20} />
             <Text variant="bodyStrong" color={colors.primary}>{t("mockexam.speak_start")}</Text>
           </PressableScale>
-          {micOk === false ? <Text variant="caption" color={colors.danger} style={{ marginTop: spacing.xs }}>{t("mockexam.mic_needed")}</Text> : null}
+          {micOk === false ? <Text variant="caption" color={colors.dangerText} style={{ marginTop: spacing.xs }}>{t("mockexam.mic_needed")}</Text> : null}
         </>
       ) : step === "prep" ? (
         <View style={{ marginTop: spacing.md, alignItems: "center" }}>
@@ -895,7 +895,7 @@ function SpeakingTask({
           ) : (
             <View style={{ alignItems: "center" }}>
               <MicIcon color={colors.danger} size={28} />
-              <Text variant="bodyStrong" color={colors.danger} style={{ marginTop: spacing.xs }}>{t("mockexam.speak_now")}</Text>
+              <Text variant="bodyStrong" color={colors.dangerText} style={{ marginTop: spacing.xs }}>{t("mockexam.speak_now")}</Text>
               <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.xs, textAlign: "center", lineHeight: 20 }}>
                 {current?.who === "you" ? current.hint : t("mockexam.solo_hint")}
               </Text>
@@ -953,7 +953,7 @@ function ResultView({
     <View>
       {offline ? (
         <Card padded style={{ marginBottom: spacing.md, backgroundColor: colors.dangerSoft }}>
-          <Text variant="caption" color={colors.danger} style={{ lineHeight: 20 }}>{t(`mockexam.fail_${offline}`)}</Text>
+          <Text variant="caption" color={colors.dangerText} style={{ lineHeight: 20 }}>{t(`mockexam.fail_${offline}`)}</Text>
           <Text variant="micro" color={colors.textMuted} style={{ marginTop: spacing.xs, lineHeight: 18 }}>{t("mockexam.saved_locally")}</Text>
         </Card>
       ) : null}
@@ -1003,7 +1003,7 @@ function ResultView({
           <Text variant="micro" color={colors.textMuted}>{t("mockexam.todo")}</Text>
           <Text variant="body" style={{ marginTop: spacing.xs, lineHeight: 22 }}>{ai.summary}</Text>
           {ai.strengths.length ? (
-            <Text variant="caption" color={colors.success} style={{ marginTop: spacing.sm, lineHeight: 20 }}>
+            <Text variant="caption" color={colors.successText} style={{ marginTop: spacing.sm, lineHeight: 20 }}>
               {t("mockexam.strengths")}: {ai.strengths.join(" · ")}
             </Text>
           ) : null}

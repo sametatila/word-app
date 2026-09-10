@@ -29,6 +29,20 @@ export type Palette = {
   border: string; hairline: string;
   text: string; textMuted: string; textFaint: string;
   success: string; danger: string; streak: string; info: string; accent: string;
+  /**
+   * Aynı anlamların YAZI ağırlığındaki tonları.
+   *
+   * Üsttekiler DOLGU için seçilmiş: beyaz ikon taşıyan karo, ilerleme çubuğu,
+   * rozet zemini. Yazı olarak kullanıldıklarında açık temada ölçüm şöyle
+   * çıkıyor (beyaz üstünde): seri 2.88, başarı 3.55, bilgi 3.61, tehlike
+   * 4.30, vurgu 4.91 — AA eşiği 4.5, yani beşinden dördü kalıyor ve en çok
+   * kullanılanı (başlıktaki seri sayacı) en kötüsü.
+   *
+   * Web bu ayrımı zaten yapıyor: dolgu 500, yazı 600. Buradakiler onun
+   * 600'leri ve ölçümleri 5.20-6.83. Koyu temada ayrım gerekmiyor - oradaki
+   * tonlar yüzey üstünde 8.3-9.7 veriyor, o yüzden aynı değerler.
+   */
+  successText: string; dangerText: string; streakText: string; infoText: string; accentText: string;
   successSoft: string; dangerSoft: string;
   gradientA: [string, string]; gradientB: [string, string]; // yumuşak kart gradyanları
 };
@@ -39,6 +53,7 @@ export const light: Palette = {
   border: "#ece3d8", hairline: "#f1eae0",
   text: "#241a12", textMuted: "#7c6c5d", textFaint: "#b7a695",
   success: "#2f9a61", danger: "#dc3f55", streak: "#b8940f", info: "#1b93ac", accent: "#9256bc",
+  successText: "#237a4c", dangerText: "#b62e43", streakText: "#86690e", infoText: "#16748a", accentText: "#77439d",
   successSoft: "#e2f2e9", dangerSoft: "#fde6ea",
   gradientA: ["#fb8f2a", "#f87612"], gradientB: ["#ffab54", "#db5f08"],
 };
@@ -49,6 +64,9 @@ export const dark: Palette = {
   border: "#3a2e23", hairline: "#2b221a",
   text: "#f6efe6", textMuted: "#a9998a", textFaint: "#7c6c5d",
   success: "#6fd19b", danger: "#f79ba6", streak: "#ddb62c", info: "#6fd1e3", accent: "#cda6e8",
+  // Koyu temada dolgu ve yazı ayrımı gerekmiyor: bu tonlar yüzey üstünde
+  // 8.3-9.7 veriyor. Aynı değerler, ikinci bir ton uydurulmadı.
+  successText: "#6fd19b", dangerText: "#f79ba6", streakText: "#ddb62c", infoText: "#6fd1e3", accentText: "#cda6e8",
   successSoft: "rgba(111,209,155,0.16)", dangerSoft: "rgba(247,155,166,0.16)",
   gradientA: ["#fb8f2a", "#db5f08"], gradientB: ["#f87612", "#8f3a0f"],
 };

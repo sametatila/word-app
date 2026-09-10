@@ -90,7 +90,7 @@ export function LinkedAccounts({ colors }: { colors: Palette }) {
               ) : (
                 <PressableScale onPress={() => void kaldir(p)} disabled={calisiyor} accessibilityRole="button"
                   style={{ paddingHorizontal: spacing.md, paddingVertical: 8, borderRadius: radii.md, backgroundColor: colors.surface2 }}>
-                  <Text variant="caption" color={colors.danger}>{calisiyor ? "…" : t("links.unlink")}</Text>
+                  <Text variant="caption" color={colors.dangerText}>{calisiyor ? "…" : t("links.unlink")}</Text>
                 </PressableScale>
               )
             ) : (

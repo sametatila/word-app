@@ -184,7 +184,7 @@ export function SkillsScreen() {
             <PressableScale onPress={() => setLevel(nextLevel)} style={{ marginBottom: spacing.lg }}>
               <Card padded style={{ flexDirection: "row", alignItems: "center", gap: spacing.md }}>
                 <View style={{ flex: 1 }}>
-                  <Text variant="micro" color={colors.success}>{t("skills.level_done").toUpperCase()}</Text>
+                  <Text variant="micro" color={colors.successText}>{t("skills.level_done").toUpperCase()}</Text>
                   <Text variant="caption" color={colors.textMuted} style={{ marginTop: 2 }}>{t("skills.level_done_body", { level: activeLevel, next: nextLevel })}</Text>
                 </View>
                 <ChevronRightIcon color={colors.textFaint} size={20} />

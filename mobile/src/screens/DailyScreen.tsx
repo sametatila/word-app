@@ -193,7 +193,7 @@ export function DailyScreen() {
           <View style={{ height: "100%", width: `${Math.round((idx / rounds.length) * 100)}%`, backgroundColor: colors.primary, borderRadius: 5 }} />
         </View>
         <View style={{ flexDirection: "row", alignItems: "center", gap: 6 }}>
-          {comboView >= 3 && <View style={{ flexDirection: "row", alignItems: "center", gap: 2 }}><FlameIcon color={colors.streak} size={15} /><Text variant="bodyStrong" color={colors.streak}>{comboView}</Text></View>}
+          {comboView >= 3 && <View style={{ flexDirection: "row", alignItems: "center", gap: 2 }}><FlameIcon color={colors.streak} size={15} /><Text variant="bodyStrong" color={colors.streakText}>{comboView}</Text></View>}
           <View style={{ flexDirection: "row", alignItems: "center", gap: 3 }}><BoltIcon color={colors.primary} size={15} /><Text variant="bodyStrong" color={colors.primary}>{scoreView.toLocaleString("tr-TR")}</Text></View>
         </View>
       </View>

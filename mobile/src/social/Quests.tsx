@@ -151,7 +151,7 @@ export function QuestCard({ q, me, busy, onAct }: { q: QuestView; me: string; bu
           <View style={{ flexDirection: "row", justifyContent: "space-between", marginTop: 8 }}>
             <Text variant="caption" color={colors.primary}>{t("quests.my_xp", { xp: formatXp(q.myXp) })}</Text>
             <Text variant="bodyStrong">{formatXp(q.totalXp)} / {formatXp(q.targetXp)}</Text>
-            <Text variant="caption" color={colors.info}>{q.partner.name?.split(" ")[0] ?? t("quests.partner_short")} {formatXp(q.partnerXp)}</Text>
+            <Text variant="caption" color={colors.infoText}>{q.partner.name?.split(" ")[0] ?? t("quests.partner_short")} {formatXp(q.partnerXp)}</Text>
           </View>
           <PressableScale onPress={() => Alert.alert(t("quests.leave_title"), t("quests.leave_text"), [{ text: t("common.discard"), style: "cancel" }, { text: t("quests.leave"), style: "destructive", onPress: () => void onAct(() => social.questAction(q.id, "cancel")) }])} style={{ alignSelf: "flex-end", marginTop: spacing.sm, paddingHorizontal: 10, paddingVertical: 4, borderRadius: radii.pill, backgroundColor: colors.surface2 }}>
             <Text variant="micro" color={colors.textMuted}>{t("quests.leave_quest")}</Text>

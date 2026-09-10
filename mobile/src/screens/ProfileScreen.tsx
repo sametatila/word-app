@@ -80,7 +80,7 @@ export function ProfileScreen() {
           ) : me ? (
             <View style={{ flexDirection: "row", gap: spacing.md, marginTop: spacing.md }}>
               <View style={{ flexDirection: "row", alignItems: "center", gap: 5, backgroundColor: colors.streak + "22", borderRadius: radii.pill, paddingHorizontal: 12, paddingVertical: 6 }}>
-                <FlameIcon color={colors.streak} size={16} /><Text variant="bodyStrong" color={colors.streak}>{t("profile.days", { n: me.streak })}</Text>
+                <FlameIcon color={colors.streak} size={16} /><Text variant="bodyStrong" color={colors.streakText}>{t("profile.days", { n: me.streak })}</Text>
               </View>
               <View style={{ flexDirection: "row", alignItems: "center", gap: 5, backgroundColor: colors.primarySoft, borderRadius: radii.pill, paddingHorizontal: 12, paddingVertical: 6 }}>
                 <BoltIcon color={colors.primary} size={16} /><Text variant="bodyStrong" color={colors.primary}>{xpLabel} XP</Text>
@@ -134,7 +134,7 @@ export function ProfileScreen() {
               <CrownIcon color="#fff" size={26} />
             </View>
             <View style={{ flex: 1 }}>
-              <Text variant="h3" color={colors.success}>{t("profile.premium_member")}</Text>
+              <Text variant="h3" color={colors.successText}>{t("profile.premium_member")}</Text>
               <Text variant="caption" color={colors.textMuted}>{t("profile.all_features_unlocked_thank_you")}</Text>
             </View>
             <CheckIcon color={colors.success} size={22} />
@@ -187,7 +187,7 @@ export function ProfileScreen() {
         */}
         <PressableScale onPress={() => setConfirmOut(true)} style={{ flexDirection: "row", alignItems: "center", justifyContent: "center", gap: 8, marginTop: spacing.lg, paddingVertical: spacing.md }}>
           <LogoutIcon color={colors.danger} size={20} />
-          <Text variant="bodyStrong" color={colors.danger}>{t("profile.log_out")}</Text>
+          <Text variant="bodyStrong" color={colors.dangerText}>{t("profile.log_out")}</Text>
         </PressableScale>
 
         <PressableScale onPress={() => nav.navigate("DeleteAccount")} accessibilityLabel={t("settings.delete_account")} style={{ alignItems: "center", paddingVertical: spacing.sm }}>

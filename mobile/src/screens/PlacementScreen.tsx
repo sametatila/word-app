@@ -180,7 +180,7 @@ export function PlacementScreen() {
           <Text variant="body" color={colors.textMuted} style={{ marginTop: spacing.xs, marginBottom: spacing.xxl, textAlign: "center" }}>
             {t("placement.result", { total: total, correct: correct })}
           </Text>
-          {saved && <Text variant="bodyStrong" color={colors.success} style={{ marginBottom: spacing.md }}>{t("placement.saved")}</Text>}
+          {saved && <Text variant="bodyStrong" color={colors.successText} style={{ marginBottom: spacing.md }}>{t("placement.saved")}</Text>}
           <PressableScale onPress={applyLevel} style={[{ width: "100%", backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: spacing.lg, alignItems: "center" }, softShadow(colors.primary, 10)]}>
             <Text variant="h3" color="#fff">{t(user ? "placement.set_level" : "placement.understood")}</Text>
           </PressableScale>

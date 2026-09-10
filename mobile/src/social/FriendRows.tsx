@@ -100,7 +100,7 @@ function FriendCard({ f, nudged, onChanged }: { f: FriendRow; nudged: boolean; o
         {f.friendStreak > 0 ? <StatPill icon={HandshakeIcon} label={t("social.days_together", { n: f.friendStreak })} tint={f.streakAtRisk ? colors.streak : colors.success} soft={f.streakAtRisk ? undefined : colors.successSoft} /> : null}
       </View>
       {f.streakAtRisk ? (
-        <Text variant="caption" color={colors.streak} style={{ marginTop: spacing.sm }}>{t("social.costreak_risk")}</Text>
+        <Text variant="caption" color={colors.streakText} style={{ marginTop: spacing.sm }}>{t("social.costreak_risk")}</Text>
       ) : null}
       <View style={{ flexDirection: "row", justifyContent: "space-around", marginTop: spacing.md, paddingTop: spacing.md, borderTopWidth: 1, borderTopColor: colors.hairline }}>
         <ActionTile

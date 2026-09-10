@@ -131,7 +131,7 @@ export function EmptyCard({ icon, tint, title, text, action, onAction }: { icon:
 export function ErrorText({ text }: { text: string | null }) {
   const { colors } = useTheme();
   if (!text) return null;
-  return <Text variant="caption" color={colors.danger} style={{ marginTop: spacing.sm, textAlign: "center" }}>{text}</Text>;
+  return <Text variant="caption" color={colors.dangerText} style={{ marginTop: spacing.sm, textAlign: "center" }}>{text}</Text>;
 }
 
 export function reactionTone(kind: ReactionKind, colors: Palette): string {

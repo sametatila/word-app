@@ -34,7 +34,7 @@ export type GrammarBlock = { heading?: string; tr: string; examples?: { de: stri
 export function GrammarBody({ focus, blocks, colors }: { focus: string; blocks: GrammarBlock[]; colors: Palette }) {
   return (
     <Card padded style={{ marginTop: spacing.md }}>
-      <Text variant="micro" color={colors.streak}>{t("item.grammar_rule")}</Text>
+      <Text variant="micro" color={colors.streakText}>{t("item.grammar_rule")}</Text>
       <Text variant="h3" style={{ marginTop: 4 }}>{focus}</Text>
       {blocks.map((b, i) => (
         <View key={i} style={{ marginTop: spacing.md }}>
@@ -47,7 +47,7 @@ export function GrammarBody({ focus, blocks, colors }: { focus: string; blocks: 
               <View style={{ flex: 1 }}>
                 <Text variant="bodyStrong">{x.de}</Text>
                 <Text variant="caption" color={colors.textMuted}>{x.tr}</Text>
-                {x.note ? <Text variant="micro" color={colors.streak} style={{ marginTop: 2 }}>{x.note}</Text> : null}
+                {x.note ? <Text variant="micro" color={colors.streakText} style={{ marginTop: 2 }}>{x.note}</Text> : null}
               </View>
             </PressableScale>
           ))}
@@ -316,7 +316,7 @@ export function MonologueBody({ mono, level, exerciseId, onDone, colors }: {
       {phase === "record" ? (
         <>
           <View style={{ flexDirection: "row", justifyContent: "space-between", alignItems: "center" }}>
-            <Text variant="micro" color={colors.danger}>● {t("item.mono_recording")}</Text>
+            <Text variant="micro" color={colors.dangerText}>● {t("item.mono_recording")}</Text>
             <Text variant="bodyStrong">{mm(seconds)} / {mm(mono.maxSeconds)}</Text>
           </View>
           {mono.bulletsTr.map((b, i) => <Text key={i} variant="caption" color={colors.textMuted} style={{ marginTop: 4 }}>· {b}</Text>)}

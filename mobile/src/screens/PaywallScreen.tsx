@@ -135,7 +135,7 @@ export function PaywallScreen() {
             <Text variant="display" style={{ marginTop: spacing.md }}>{t("paywall.nomi_premium")}</Text>
             <Text variant="body" color={colors.textMuted} style={{ marginTop: 4, textAlign: "center" }}>{line}</Text>
             {status.bonusDaysPending > 0 ? (
-              <Text variant="caption" color={colors.success} style={{ marginTop: 4, textAlign: "center" }}>
+              <Text variant="caption" color={colors.successText} style={{ marginTop: 4, textAlign: "center" }}>
                 {t("premiumstate.bonus_pending", { n: status.bonusDaysPending })}
               </Text>
             ) : null}
@@ -281,7 +281,7 @@ export function PaywallScreen() {
         </View>
       ) : (
       <View style={{ paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.md, paddingTop: spacing.sm }}>
-        {error ? <Text variant="caption" color={colors.danger} style={{ textAlign: "center", marginBottom: spacing.sm }}>{error}</Text> : null}
+        {error ? <Text variant="caption" color={colors.dangerText} style={{ textAlign: "center", marginBottom: spacing.sm }}>{error}</Text> : null}
         <PressableScale onPress={start} disabled={busy || !pkg} accessibilityRole="button" accessibilityLabel={trial ? t("paywall.start_free_trial") : t("paywall.subscribe")} style={[{ borderRadius: radii.lg, backgroundColor: pkg ? colors.primary : colors.surface2, paddingVertical: 17, alignItems: "center" }, pkg ? softShadow(colors.primary, 12) : {}]}>
           {busy ? <ActivityIndicator color="#fff" /> : <Text variant="h3" color={pkg ? "#fff" : colors.textFaint}>{trial ? t("paywall.start_free_trial") : t("paywall.subscribe")}</Text>}
         </PressableScale>

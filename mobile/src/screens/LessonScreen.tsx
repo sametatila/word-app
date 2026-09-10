@@ -597,7 +597,7 @@ function LectureControls({ expect, tries, input, setInput, onConfirm, onSpeakRep
   if (expect.kind === "repeat") {
     return (
       <View style={{ gap: spacing.sm }}>
-        {tries > 0 && <Text variant="caption" color={colors.danger}>{tx("lesson.try_again", { n: tries })}</Text>}
+        {tries > 0 && <Text variant="caption" color={colors.dangerText}>{tx("lesson.try_again", { n: tries })}</Text>}
         <PressableScale onPress={() => speakTarget(expect.target)} style={{ flexDirection: "row", alignItems: "center", justifyContent: "center", gap: 8, paddingVertical: 10, borderRadius: radii.lg, backgroundColor: colors.surface2 }}>
           <SpeakerIcon color={colors.primary} size={20} /><Text variant="bodyStrong" color={colors.primary}>{expect.target}</Text>
         </PressableScale>
@@ -635,7 +635,7 @@ function LectureControls({ expect, tries, input, setInput, onConfirm, onSpeakRep
   // produce — cümleyi kurup SÖYLEMESİ bekleniyor; yazmak yedek yol.
   return (
     <View style={{ gap: spacing.sm }}>
-      {tries > 0 && <Text variant="caption" color={colors.danger}>{tx("lesson.try_again", { n: tries })}</Text>}
+      {tries > 0 && <Text variant="caption" color={colors.dangerText}>{tx("lesson.try_again", { n: tries })}</Text>}
       {yaziYolu ? (
         <TypedRow value={input} onChange={setInput} onSubmit={onProduce} placeholder={tx("lesson.type_your_answer", { lang: targetLangName() })} colors={colors} />
       ) : (
@@ -702,7 +702,7 @@ function Summary({ lesson, correct, total, next, colors, insets, onBack, onNext 
           <Text variant="caption" color={colors.textMuted}>{tx("lesson.correct_production")}</Text>
         </View>
         <View style={{ flex: 1, backgroundColor: colors.surface, borderRadius: radii.lg, borderWidth: 1, borderColor: colors.hairline, padding: spacing.lg, alignItems: "center" }}>
-          <Text variant="display" color={colors.success}>%{pct}</Text>
+          <Text variant="display" color={colors.successText}>%{pct}</Text>
           <Text variant="caption" color={colors.textMuted}>{tx("lesson.accuracy")}</Text>
         </View>
       </View>

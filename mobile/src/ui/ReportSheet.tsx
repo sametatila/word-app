@@ -60,7 +60,7 @@ export function ReportSheet({ visible, kind, refId, content, onClose }: {
                   );
                 })}
               </View>
-              {state === "error" ? <Text variant="caption" color={colors.danger}>{t("reportsheet.couldn_t_send_try_again")}</Text> : null}
+              {state === "error" ? <Text variant="caption" color={colors.dangerText}>{t("reportsheet.couldn_t_send_try_again")}</Text> : null}
               <View style={{ flexDirection: "row", gap: spacing.md, marginTop: spacing.md }}>
                 <PressableScale onPress={onClose} style={{ flex: 1, borderRadius: radii.lg, backgroundColor: colors.surface2, paddingVertical: 14, alignItems: "center" }}>
                   <Text variant="bodyStrong" color={colors.text}>{t("common.discard")}</Text>
