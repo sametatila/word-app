@@ -52,8 +52,7 @@ export type GrammarText = {
   bool: [string, string];
 };
 
-export function deriveGrammar(unitId: string, lessons: Lesson[], count = 8, text?: GrammarText): SkillQuestion[] {
-  const say: GrammarText = text ?? { orderQuestion: "Soruyu doğru sıraya diz.", orderSentence: "Cümleyi doğru sıraya diz.", bool: ["Richtig", "Falsch"] };
+export function deriveGrammar(unitId: string, lessons: Lesson[], count: number, say: GrammarText): SkillQuestion[] {
   const judges: SkillQuestion[] = [];
   const orders: SkillQuestion[] = [];
 

@@ -6,7 +6,10 @@ import type { ImmersionTrack } from "../src/lib/immersion/types";
 import { buildTrackState, groupComplete } from "../src/lib/immersion/state";
 import { buildUnitBriefs } from "../src/lib/immersion/brief";
 import { deriveQuiz } from "../src/lib/immersion/quiz";
-import { deriveGrammar } from "../src/lib/immersion/grammar";
+import { deriveGrammar, type GrammarText } from "../src/lib/immersion/grammar";
+
+/* Denetim betiği sunucu değil: metinler sabit, kural sayilari olculuyor. */
+const DENEME_METNI: GrammarText = { orderQuestion: "order?", orderSentence: "order.", bool: ["Richtig", "Falsch"] };
 import { LESSONS } from "../src/lib/lessons";
 
 let pass = 0;
@@ -300,11 +303,11 @@ check("gramer adımı ref taşıyor (oynanabilir)", gramerItem?.ref === t.units[
 const gercekA1 = LESSONS.filter((l) => l.course === "de" && l.level === "A1");
 let gramerBos = 0;
 for (let u = 0; u < Math.ceil(gercekA1.length / 4); u++) {
-  const q = deriveGrammar(`de-a1-u${String(u + 1).padStart(2, "0")}`, gercekA1.slice(u * 4, u * 4 + 4));
+  const q = deriveGrammar(`de-a1-u${String(u + 1).padStart(2, "0")}`, gercekA1.slice(u * 4, u * 4 + 4), 8, DENEME_METNI);
   if (!q.length) gramerBos++;
 }
 check("A1'in HER ünitesinde gramer türüyor", gramerBos === 0);
-const örnek = deriveGrammar("de-a1-u02", gercekA1.slice(4, 8));
+const örnek = deriveGrammar("de-a1-u02", gercekA1.slice(4, 8), 8, DENEME_METNI);
 check("gramer türetmesi hüküm İÇERİR", örnek.some((q) => q.kind === "truefalse"));
 check("gramer sorularının şıkkı ya da maddesi var", örnek.every((q) => q.options.length > 0 || (q.items?.length ?? 0) > 0));
 
