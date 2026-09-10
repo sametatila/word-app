@@ -4911,3 +4911,18 @@ edilen satır yakalanıyor.
 §11.104 ve §11.109 ile birlikte üçüncü kez aynı ders: **yanlış negatif iş
 çıkarmıyor, bulguyu gizliyor** — ve gizlediği şey her seferinde gerçek bir
 kullanıcı hatası oldu.
+
+### 11.117 Nabız satırı: çubuk tek başına bir şey söylemiyor
+
+Öğren ekranındaki ortak görev satırı webde yalnız **çubuğu** çiziyordu: kaç XP
+toplandığı, hedefin ne olduğu ve kaç gün kaldığı hiçbir yerde yazmıyordu.
+Çubuk tek başına "ne kadar kaldı" sorusunu cevaplamıyor — anahtar
+(`friendpulse.progress`) taban sözlükte hazırdı ve Android onu kullanıyordu.
+
+Yüklenirken de yer ayrılmıyordu: `!q` yüklemeyi (`undefined`) ve "görev yok"u
+(`null`) aynı sayıyor, cevap gelince satır araya girip altındaki bölümleri
+aşağı itiyordu. Android bunu bilerek ayırıyor. §11.115'in aynı kuralı, bu kez
+tek satırlık bir bileşende.
+
+Ölçülüp **ayrışma çıkmayanlar** (kayda geçsin, tekrar bakılmasın): `Find`,
+`Requests`, `InboxBell`/`useUnread` ve sosyal ayarların geri kalanı.
