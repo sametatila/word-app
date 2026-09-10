@@ -9,10 +9,12 @@ import { user, session, account, verification } from "@/lib/db/auth-schema";
 import { emailConfigured, sendEmail, verificationEmail, resetEmail, passwordChangedEmail, accountExistsEmail } from "@/lib/email";
 import { purgeUserData } from "@/lib/account/purge";
 import { revokeAppleSignIn } from "@/lib/account/apple-revoke";
+import { appleClientSecret, appleRevokeConfigured } from "@/lib/auth/apple";
 import { APIError, createAuthMiddleware } from "better-auth/api";
 import { checkPassword, MIN_PASSWORD_LENGTH, PASSWORD_ERROR_CODE } from "@/lib/auth/password-policy";
 import { redisRateLimitStorage } from "@/lib/auth/rate-limit-store";
 import { clearFailedLogins, isLockedOut, MAX_FAILED_LOGINS, noteFailedLogin } from "@/lib/auth/login-throttle";
+import { captchaPlugins } from "@/lib/auth/captcha";
 
 /**
  * Self-hosted Better Auth. Oturumlar/kullanıcılar KENDİ
@@ -45,6 +47,28 @@ export const googleConfigured = Boolean(process.env.GOOGLE_CLIENT_ID && process.
  * doğrulama da ona bakar — bu yüzden sağlayıcıyı açan tek anahtar bundle kimliği.
  */
 export const appleConfigured = Boolean(process.env.APPLE_BUNDLE_ID);
+
+/**
+ * Services ID — Apple girişinin WEB/TARAYICI akışının kimliği.
+ *
+ * Native akış (iOS) bundle kimliğiyle çalışıyor ve client secret hiç
+ * istemiyor. Tarayıcı akışı ise Apple'ın OAuth ucundan geçiyor ve orada iki
+ * şey şart: ayrı bir Services ID ve .p8 anahtarıyla imzalanmış bir client
+ * secret. Bu yüzden webde ve Android'de Apple düğmesi ancak burası doluyken
+ * anlamlı — yoksa düğme kullanıcıyı Apple'ın hata sayfasına götürürdü.
+ *
+ * Services ID Apple Developer › Identifiers'ta ayrı bir kayıt: birincil App
+ * ID olarak `app.lernomi.ios` seçilir, alan adı doğrulanır ve dönüş adresi
+ * `https://www.lernomi.app/api/auth/callback/apple` yazılır.
+ */
+export const appleServicesId = (process.env.APPLE_SERVICES_ID ?? "").trim();
+
+/**
+ * Web akışı açılabilir mi. Services ID tek başına yetmiyor: client secret
+ * takım kimliği, anahtar kimliği ve .p8 istiyor — iptal (revoke) yolunun
+ * aradığı üçlünün aynısı.
+ */
+export const appleWebConfigured = Boolean(appleServicesId) && appleRevokeConfigured();
 
 /*
  * BURADA ESKİDEN bir `appleDefaults` vardı: apple sağlayıcısı ikinci kez kurulup
@@ -178,15 +202,35 @@ export const auth = betterAuth({
     ...(appleConfigured
       ? {
           apple: {
-            // `appBundleIdentifier` native token'ın beklenen `aud`'u. `clientId`
-            // yalnız web akışı açılırsa (Services ID) anlam kazanır; şimdilik
-            // aynı değer veriliyor çünkü boş bırakılırsa better-auth her açılışta
-            // "missing clientId" uyarısı basıyor. `clientSecret` bilerek boş:
-            // native yolda hiç okunmuyor, web akışı açılırsa buraya gerçek secret
-            // (ve kendi env anahtarı) gelir.
-            clientId: process.env.APPLE_BUNDLE_ID!,
-            clientSecret: "",
+            /*
+              İKİ AKIŞ TEK SAĞLAYICIDA.
+
+              `clientId` tarayıcı akışının kimliği ve better-auth listenin
+              İLKİNİ kullanıyor; native akışta hiç okunmuyor. Web açıkken
+              Services ID başa geçiyor, kapalıyken bundle kimliği duruyor —
+              boş bırakılamaz, better-auth her açılışta "missing clientId"
+              uyarısı basıyor.
+
+              `audience` id token'ın `aud` iddiasının karşılaştırıldığı liste.
+              Native token'ın `aud`'u BUNDLE kimliği, web token'ınki SERVICES
+              ID: ikisi birden yazılmazsa açılan akış diğerini kırar.
+              `appBundleIdentifier` yalnız `audience` boşken devreye giriyor,
+              o yüzden ikisi birlikte duruyor.
+            */
+            clientId: appleWebConfigured ? [appleServicesId, process.env.APPLE_BUNDLE_ID!] : process.env.APPLE_BUNDLE_ID!,
+            /*
+              GETTER, sabit dize DEĞİL. Apple client secret'ı süreli bir JWT
+              (tavan 6 ay) ve better-auth bu alanı her istekte okuyor. Açılışta
+              bir kez üretilseydi uzun ömürlü bir süreçte sessizce süresi dolar,
+              Apple da yalnız "invalid_client" derdi — sebebi hiçbir yerde
+              yazmayan bir arıza. Burada her okumada 5 dakikalık taze bir secret
+              üretiliyor.
+            */
+            get clientSecret() {
+              return appleWebConfigured ? appleClientSecret(Date.now(), { sub: appleServicesId }) : "";
+            },
             appBundleIdentifier: process.env.APPLE_BUNDLE_ID!,
+            ...(appleWebConfigured ? { audience: [appleServicesId, process.env.APPLE_BUNDLE_ID!] } : {}),
             /**
              * better-auth'un apple sağlayıcısı kullanıcıyı HER ZAMAN
              * `emailVerified: false` ile kuruyor (bkz. social-providers/index.mjs,
@@ -343,6 +387,11 @@ export const auth = betterAuth({
     defaultCookieAttributes: { sameSite: "lax" },
     ipAddress: { ipAddressHeaders: ["x-real-ip"] },
   },
+  /**
+   * Bot koruması. Liste anahtarlar tanımlıyken TEK eleman, tanımsızken BOŞ —
+   * kapıyı açan şey env, kod değil (gerekçe: lib/auth/captcha.ts).
+   */
+  plugins: captchaPlugins(),
   /**
    * Parola ölçütü — SUNUCUDA, tek yerde.
    *

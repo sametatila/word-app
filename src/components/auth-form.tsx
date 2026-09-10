@@ -12,7 +12,20 @@ import { legalPath } from "@/lib/legal";
 
 type Mode = "signin" | "signup";
 
-export function AuthForm() {
+/**
+ * Hangi sosyal sağlayıcı çizilecek — SUNUCUDAN geliyor (`app/login/page.tsx`).
+ *
+ * Kapalı bir sağlayıcının düğmesi hiç çizilmemeli: her iki mağaza da çalışmayan
+ * bir düğmeyi "bozuk işlevsellik" sayıyor ve mobil taraf bu kapıyı baştan beri
+ * uyguluyordu (`/api/config`). Web'de Google düğmesi koşulsuz çiziliyordu;
+ * anahtarlar yokken kullanıcı düğmeye basıp hata mesajı alıyordu.
+ *
+ * `apple` NATIVE değil TARAYICI akışını sorar (Services ID + client secret):
+ * webde başka bir yol yok.
+ */
+export type AuthProviders = { google: boolean; apple: boolean };
+
+export function AuthForm({ providers = { google: true, apple: false } }: { providers?: AuthProviders }) {
   const t = useT();
   const lang = useLang();
   const router = useRouter();
@@ -136,6 +149,32 @@ export function AuthForm() {
         </>
       }
     >
+      {/*
+        SIRA BİLİNÇLİ: Apple üstte. Apple'ın kendi yönergesi "Sign in with Apple
+        düğmesi öteki giriş düğmelerinin üstünde ve en az onlar kadar belirgin
+        olsun" diyor; mobil giriş ekranı da aynı sırayı kullanıyor.
+
+        Renk `--text` / `--surface` üzerinden TERS: Apple siyah ya da beyaz
+        düğme istiyor ve bu iki jeton temayla birlikte yer değiştiriyor —
+        aydınlıkta siyah zemin/beyaz yazı, karanlıkta tersi. Sabit siyah
+        yazsaydık koyu temada düğme zemine karışırdı.
+      */}
+      {providers.apple ? (
+        <button
+          type="button"
+          onClick={() => startSocial("apple")}
+          disabled={busy}
+          className="mb-2.5 flex w-full items-center justify-center gap-2.5 rounded-xl px-4 py-3 text-base font-bold disabled:opacity-60"
+          style={{ background: "var(--text)", color: "var(--surface)" }}
+        >
+          <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden fill="currentColor">
+            <path d="M16.365 1.43c0 1.14-.493 2.27-1.177 3.08-.744.9-1.99 1.57-2.987 1.57-.12 0-.23-.02-.3-.03-.01-.06-.04-.22-.04-.39 0-1.15.572-2.27 1.206-2.98.804-.94 2.142-1.64 3.248-1.68.03.13.05.28.05.43zm4.565 15.71c-.03.07-.463 1.58-1.518 3.12-.945 1.34-1.94 2.71-3.43 2.71-1.517 0-1.9-.88-3.63-.88-1.698 0-2.302.91-3.67.91-1.377 0-2.332-1.26-3.428-2.8-1.287-1.82-2.323-4.63-2.323-7.28 0-4.28 2.797-6.55 5.552-6.55 1.448 0 2.675.95 3.6.95.865 0 2.222-1.01 3.85-1.01.618 0 2.828.06 4.273 2.19-.132.09-2.383 1.37-2.383 4.19 0 3.26 2.854 4.42 2.94 4.45z" />
+          </svg>
+          {t("auth.continue_with", { provider: "Apple" })}
+        </button>
+      ) : null}
+
+      {providers.google ? (
       <button
         type="button"
         onClick={() => startSocial("google")}
@@ -151,11 +190,17 @@ export function AuthForm() {
         </svg>
         {t("auth.continue_with", { provider: "Google" })}
       </button>
-      <div className="my-4 flex items-center gap-3">
-        <div className="h-px flex-1" style={{ background: "var(--border)" }} />
-        <span className="muted text-xs font-semibold">{t("authw.or_with_email")}</span>
-        <div className="h-px flex-1" style={{ background: "var(--border)" }} />
-      </div>
+      ) : null}
+
+      {/* Ayırıcı yalnız ayıracak bir şey varken: hiçbir sağlayıcı açık değilse
+          "ya da e-posta ile" cümlesi neyin alternatifi olduğunu söylemiyor. */}
+      {providers.apple || providers.google ? (
+        <div className="my-4 flex items-center gap-3">
+          <div className="h-px flex-1" style={{ background: "var(--border)" }} />
+          <span className="muted text-xs font-semibold">{t("authw.or_with_email")}</span>
+          <div className="h-px flex-1" style={{ background: "var(--border)" }} />
+        </div>
+      ) : null}
 
       <form onSubmit={submit} className="space-y-3">
         {mode === "signup" ? (

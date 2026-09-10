@@ -2,7 +2,7 @@ import Link from "next/link";
 import { getT } from "@/lib/i18n/server";
 import { Suspense } from "react";
 import { redirect } from "next/navigation";
-import { authEnabled, getUserId } from "@/lib/auth/server";
+import { authEnabled, getUserId, googleConfigured, appleWebConfigured } from "@/lib/auth/server";
 import { AuthForm } from "@/components/auth-form";
 import { titleMeta } from "@/lib/page-meta";
 
@@ -31,5 +31,14 @@ export default async function LoginPage() {
   if (userId) redirect("/learn");
 
   // AuthForm useSearchParams okuyor (?next=): Suspense sınırı gerekir.
-  return <Suspense fallback={null}><AuthForm /></Suspense>;
+  /*
+    Sağlayıcılar SUNUCUDA çözülüyor, istemcide değil: `/api/config`e gidip
+    beklemek düğmelerin sonradan belirmesi demek olurdu. Apple için sorulan şey
+    TARAYICI akışı — webde native yol yok.
+  */
+  return (
+    <Suspense fallback={null}>
+      <AuthForm providers={{ google: googleConfigured, apple: appleWebConfigured }} />
+    </Suspense>
+  );
 }

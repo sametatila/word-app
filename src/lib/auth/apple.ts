@@ -43,6 +43,18 @@ const REVOKE_URL = "https://appleid.apple.com/auth/revoke";
 /** Apple client secret'ın azami ömrü 6 ay; biz her kullanımda taze üretiyoruz (5 dk). */
 const SECRET_TTL_SECONDS = 300;
 
+/**
+ * Secret'ın `sub` alanı — hangi kimlik adına imzalandığı.
+ *
+ * İKİ AYRI KİMLİK VAR ve karıştırılırsa Apple yalnız "invalid_client" diyor:
+ *   - Native akış ve iptal (revoke) → uygulamanın BUNDLE kimliği
+ *   - Web/tarayıcı akışı           → SERVICES ID (ayrı bir tanımlayıcı)
+ * Aynı .p8 anahtarı ikisini de imzalıyor, değişen yalnız `sub`.
+ */
+function subjectOf(sub?: string): string {
+  return (sub ?? "").trim() || env("APPLE_BUNDLE_ID");
+}
+
 function env(name: string): string {
   return (process.env[name] ?? "").trim();
 }
@@ -86,18 +98,23 @@ function derToJose(der: Buffer, size = 32): Buffer {
 
 /**
  * Apple'ın istediği client secret: takımın .p8 anahtarıyla ES256 imzalanmış,
- * `aud` = appleid.apple.com, `sub` = bundle kimliği olan kısa ömürlü bir JWT.
+ * `aud` = appleid.apple.com, `sub` = ilgili kimlik olan kısa ömürlü bir JWT.
+ *
+ * `opts.sub` verilmezse bundle kimliği kullanılır (native akış ve iptal). Web
+ * akışı Services ID'yi geçiyor. `opts.ttlSeconds` yalnız uzun ömürlü bir secret
+ * gerektiğinde anlamlı; Apple'ın tavanı 6 ay.
+ *
  * Dışa açık olmasının tek sebebi test edilebilirliği (scripts/test-apple.ts).
  */
-export function appleClientSecret(nowMs = Date.now()): string {
+export function appleClientSecret(nowMs = Date.now(), opts: { sub?: string; ttlSeconds?: number } = {}): string {
   const now = Math.floor(nowMs / 1000);
   const header = { alg: "ES256", kid: env("APPLE_KEY_ID"), typ: "JWT" };
   const payload = {
     iss: env("APPLE_TEAM_ID"),
     iat: now,
-    exp: now + SECRET_TTL_SECONDS,
+    exp: now + (opts.ttlSeconds ?? SECRET_TTL_SECONDS),
     aud: "https://appleid.apple.com",
-    sub: env("APPLE_BUNDLE_ID"),
+    sub: subjectOf(opts.sub),
     jti: randomUUID(),
   };
   const signingInput = `${b64url(Buffer.from(JSON.stringify(header)))}.${b64url(Buffer.from(JSON.stringify(payload)))}`;
