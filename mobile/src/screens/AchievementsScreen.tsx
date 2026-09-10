@@ -19,13 +19,23 @@ function groupLabel(group: string): string {
   return key ? t(key) : group;
 }
 
-function tierColor(tier: Tier, colors: Palette): string {
-  return tier === "bronze" ? "#b08d57" : tier === "silver" ? "#9aa3ad" : tier === "gold" ? colors.streak : colors.accent;
+/**
+ * Kademe rengi — web `components/achievement-badge.tsx` `TIER_COLOR` ile
+ * BİREBİR. Dört değer de ayrışmıştı: gümüş burada mavi-griydi (#9aa3ad) ve
+ * sıcak paletin içinde tek başına soğuk duruyordu, altın ve efsane de
+ * semantik renklere bağlanmıştı.
+ *
+ * Rozetin üstünde beyaz ikon var, yani grafik eşiği 3.0 geçerli. Ölçüm:
+ * bronz 3.09, gümüş 2.56, altın 2.88, efsane 4.91 - üçü sınırda ya da
+ * altında. Ortak değerlerle: 4.44 / 3.79 / 3.62 / 6.83.
+ */
+function tierColor(tier: Tier): string {
+  return tier === "bronze" ? "#a9683c" : tier === "silver" ? "#8a8277" : tier === "gold" ? "#aa8012" : "#77439d";
 }
 
 function Badge({ a, colors }: { a: Achievement; colors: Palette }) {
   const { gridItemWidth } = useLayout();
-  const tc = tierColor(a.tier, colors);
+  const tc = tierColor(a.tier);
   const pct = a.target ? Math.min(100, Math.round((a.done / a.target) * 100)) : 0;
   return (
     <View style={{ width: gridItemWidth, backgroundColor: colors.surface, borderRadius: radii.lg, borderWidth: 1, borderColor: colors.hairline, padding: spacing.md, opacity: a.unlocked ? 1 : 0.92 }}>

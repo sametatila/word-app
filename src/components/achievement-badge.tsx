@@ -49,12 +49,21 @@ import {
  *
  * Gümüş de değişti: #93a3b8 mavi-gri idi ve sıcak paletin içinde tek başına
  * soğuk duruyordu; aynı açıklıkta sıcak bir griye alındı.
+ *
+ * GÜMÜŞ VE ALTIN SONRA BİR KEZ DAHA KOYULAŞTI. Rozetin üstünde BEYAZ ikon
+ * duruyor ve grafik ögesi için eşik 3.0; ölçümde gümüş 2.53, altın 2.38
+ * veriyordu, yani ikon kendi zemininde eriyordu. Sıcak gri ve altın hue'su
+ * korunarak açıklık düşürüldü: gümüş 3.79, altın 3.62. Bronz (4.44) ve
+ * efsane (6.83) zaten geçiyordu, onlara dokunulmadı.
+ *
+ * Aynı dört değer mobilde de duruyor (`AchievementsScreen` `tierColor`);
+ * kademe renkleri kimliğin parçası, iki platformda ayrışmamalı.
  */
 
 export const TIER_COLOR: Record<string, string> = {
   bronze: "#a9683c",
-  silver: "#a8a29a",
-  gold: "#d4a017",
+  silver: "#8a8277",
+  gold: "#aa8012",
   legend: "var(--color-violet)",
 };
 

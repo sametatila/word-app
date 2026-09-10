@@ -867,6 +867,27 @@ Onboarding'in "Testle belirle" dalı artık misafiri `/level-test`e gönderiyor.
 Soru metinleri öğrenme içeriği olduğu için `placement-demo.ts` ham metin
 tarayıcısının içerik listesinde (`first-words.ts` gibi).
 
+### 11.8 Rozet kademe renkleri — ölçüldü ve eşitlendi
+
+Dört kademenin dördü de ayrışmıştı ve rozetin üstünde BEYAZ ikon duruyor,
+yani grafik ögesi eşiği (3.0) geçerli:
+
+| kademe | mobil | | web | | ortak |
+|---|---|---|---|---|---|
+| bronz | #b08d57 | 3.09 | #a9683c | 4.44 | #a9683c |
+| gümüş | #9aa3ad | **2.56** | #a8a29a | **2.53** | #8a8277 (3.79) |
+| altın | #b8940f | **2.88** | #d4a017 | **2.38** | #aa8012 (3.62) |
+| efsane | #9256bc | 4.91 | #77439d | 6.83 | #77439d |
+
+Gümüş ve altın İKİ platformda da eşiğin altındaydı: beyaz ikon kendi
+zemininde eriyordu. Hue korunarak açıklık düşürüldü; bronz ve efsanede web'in
+değeri alındı, o ikisi zaten geçiyordu.
+
+Mobilde gümüş ayrıca mavi-griydi (#9aa3ad) — web bu sorunu bir kez çözüp sıcak
+griye geçmişti, mobil geride kalmıştı. Altın ve efsane de mobilde semantik
+renklere (`streak`, `accent`) bağlıydı, yani anlam renkleri değişince rozetler
+de değişiyordu; artık kendi değerleri var.
+
 ### 11.7 TERS YÖN: beceri kütüphanesinde web ileride
 
 Bu turların çoğu Android'i referans aldı çünkü genelde ileride olan o. Beceri
