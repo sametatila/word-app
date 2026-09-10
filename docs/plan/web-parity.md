@@ -3858,3 +3858,43 @@ başarılı, kimse hata görmüyor — yalnız elli yedi rozet aynı görünüyo
 (`mastered,`) iki nokta arayan desenle görülmüyordu: sunucunun gönderdiği alan
 "mobilde eksik" sayılıyordu. Ayrıca ucun **ilk** `NextResponse.json(`i 401 hata
 gövdesi; kapsayan `{` artık geriye doğru aranıyor.
+
+### 11.76 Rozet duvarı ve sosyal hata kodları
+
+Bir önceki tur mobil rozet duvarını her rozetin kendi ikonuna geçirmişti
+(§11.75). Bu tur webin duvarına bakınca aynı kusurun **webde de** durduğu
+çıktı: ikon haritası `achievement-badge` içinde modül içinde kalıyor, duvar
+(`achievement-wall`) ona ulaşamadığı için her rozete kupa koyuyordu. Yani aynı
+uygulamanın kutlama kartı doğrusunu çiziyor, duvarı çizmiyordu. `BadgeIcon`
+dışa açıldı; ikisi de aynı yerden geçiyor. Tanınmayan ad iki tarafta da
+**yıldıza** düşüyor.
+
+**Duvarın üç eksiği daha** (hepsi webde vardı, mobilde yoktu):
+
+| eksik | ne yapıyor |
+|---|---|
+| ilerleme şeridi | kaçının açıldığı tek bakışta |
+| "sıradaki" bölümü | bitmeye en yakın dört kilitli rozet, grupların üstünde |
+| sunucunun sayaçları | `unlockedCount`/`total` cevapta geliyordu, ekran yeniden sayıyordu |
+
+"Sıradaki" sırası tamamlanma **oranına** göre ve eşitlikte küçük hedef önde —
+webin karşılaştırmasıyla birebir. Hepsi açıldıysa yerini "son kazanılan" alıyor.
+Yerel sayımın sorunu şu: iki sayının aynı kalacağının garantisi yok; satır
+listesi bir gün sayfalanırsa yerel sayım sessizce yanlışa döner.
+
+Grup başlıklarının büyük harfe çevrilmesi de yerele bağlandı: `toUpperCase()`
+Türkçede "i"yi "I" yapıyordu, "İ" değil. Web bunu `localeOf(lang)` ile zaten
+doğru yapıyordu.
+
+**Sosyal hata kodları kapıya bağlandı.** Sunucunun dönebildiği her kodun iki
+istemcide de bir cümlesi olmalı; haritada olmayan kod ikisinde de "bağlantı
+kurulamadı"ya düşüyor ve bu **yanlış teşhis** — kullanıcı sebebini bilmeden
+aynı işlemi tekrar deniyor. Webde tam bu yaşanmış ve `bio_invalid` sonradan
+eklenmiş. Bugün on altı kodun hepsi iki tarafta da eşli; kapı kodları üç
+biçimden topluyor (`new SocialError`, `fail(...)`, doğrudan `error: "..."`) ve
+iki haritayı birbirine karşı da ölçüyor.
+
+**`groupXp` → `formatNumber`.** Geçen tur sosyal katmanda açtığım ad, sayı
+biçiminin dilin bir parçası olduğu düşünülünce yanlış yerdeydi: rozet duvarının
+sayacı da aynı biçimi istiyor ve bunun için sosyal modülü içe alması gerekirdi.
+`lib/i18n`e taşındı ve adı webinkiyle aynı oldu.
