@@ -4639,3 +4639,28 @@ ikinci gerekçesi bu.
 Kalan on altı ad web-özel ve her biri gerekçesiyle kapının listesinde duruyor;
 yenisi çıkarsa kapı kalıyor ve "bunun mobil yüzeyi var mı" sorusu insana
 geliyor.
+
+### 11.99 Beceri listesi ve bitiş kartı: iki sessiz eksik
+
+**Madde sayısı listede yoktu.** Web satırı "tür · süre · N madde" yazıyor;
+mobil "tür · süre" ile kalıyordu — öğrenci egzersizi açmadan ne kadar iş
+olduğunu göremiyordu. Veri zaten elde; `itemCount` kuralı üç satır ve konuşma
+üç biçimde geliyor (söyleyiş görevleri / diyalog turları / tek monolog).
+
+Portta bir tip eksiği çıktı: `dialogue` alanı mobil `SkillExercise` tipinde
+**yoktu** ama veride var (Almanca pakette 212, İngilizcede 13 geçiş). Onsuz
+konuşma alıştırmalarının sayısı yanlış çıkacaktı — tip eksikti, veri değil.
+
+Kural kapıya bağlandı: ayrışırsa aynı egzersiz iki uygulamada başka madde
+sayısı gösterir **ve XP tavanı da kayar** (`xpFor` aynı sayıyı kullanıyor).
+
+**Sıfır XP'nin sebebi söylenmiyordu.** Aynı egzersizi tekrar bitiren kullanıcı
+yalnız "hiçbir şey" görüyordu: XP satırı çıkmıyor, sebebi hiçbir yerde
+yazmıyordu. Sebep sunucunun yanıtında duruyor (`repeat`) ve okunmuyordu; web
+bunu bir satırla söylüyor. **Sessiz sıfır**, kapalı düğmenin sebepsizliğiyle
+aynı sınıf (§11.81) — kullanıcı bir şey olmadığını görüyor ama neden
+olmadığını öğrenemiyor. Seri de aynı yanıttan geliyordu ve okunmuyordu.
+
+Bitiş kartında hâlâ webde olup mobilde olmayan iki şey var ve ikisi de
+§11.11'in sınırında: **çevrimdışı kaydedildi** hâli ve **sıradaki egzersize**
+bağlantı.
