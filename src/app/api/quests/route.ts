@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import { getUserId } from "@/lib/auth/server";
 import { sameOrigin } from "@/lib/auth/origin";
-import { awardActivity } from "@/lib/award";
+import { awardActivity, clampDay } from "@/lib/award";
 import { claimQuest, questBoard } from "@/lib/quests";
 import { ensureProfile } from "@/lib/session";
 import { isNativeLang, DEFAULT_NATIVE } from "@/lib/i18n/dict";
@@ -78,8 +78,18 @@ export async function POST(req: Request) {
   }
 }
 
+/*
+ * Gün istemciden geliyor ve `clampDay` ile SINIRLANIYOR - üç kardeş uç
+ * (daily, session, weekly) baştan beri öyle yapıyor, burası yapmıyordu:
+ * yalnız biçim denetleniyor, tarihin makul olup olmadığına bakılmıyordu.
+ *
+ * Fark önemli çünkü gün yalnız okuma anahtarı değil: görev ödülü
+ * `awardActivity(userId, day, ...)` ile O GÜNE yazılıyor ve günlük istatistik
+ * ile seri oradan hesaplanıyor. Biçimi doğru ama uzak bir tarih göndermek
+ * (bozuk saatli cihaz ya da elle kurulmuş istek) etkinliği başka bir güne
+ * yazdırabiliyordu. `clampDay` sunucunun gününe ±1 gün uzaklıktakini kabul
+ * ediyor, ötesini bugüne çekiyor.
+ */
 function normalizeDay(value: unknown) {
-  return typeof value === "string" && /^\d{4}-\d{2}-\d{2}$/.test(value)
-    ? value
-    : new Date().toISOString().slice(0, 10);
+  return clampDay(value);
 }

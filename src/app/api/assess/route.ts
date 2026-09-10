@@ -13,6 +13,7 @@ import {
 } from "@/lib/assess-prompts";
 import { canAiPractice } from "@/lib/premium/access";
 import { premiumConfig, bumpUsage, getUsage } from "@/lib/premium";
+import { clampDay } from "@/lib/award";
 
 export const dynamic = "force-dynamic";
 
@@ -128,10 +129,21 @@ function parseBody(body: unknown): { req: AssessRequest; day: string; tooLong: b
   const answerText = typeof answer.text === "string" ? answer.text.trim() : "";
   if (!prompt || !answerText) return null;
 
-  const day =
-    typeof b.day === "string" && /^\d{4}-\d{2}-\d{2}$/.test(b.day)
-      ? b.day
-      : new Date().toISOString().slice(0, 10);
+  /*
+   * Gün SINIRLANIYOR, yalnız biçimi denetlenmiyor.
+   *
+   * `day` bir yazma anahtarı: değerlendirme satırı o güne yazılıyor ve
+   * GÜNLÜK KOTA da o günün satırları sayılarak bulunuyor (`lib/assess`).
+   * Biçimi doğru ama her istekte farklı bir tarih göndermek o sayımı hep
+   * sıfır gösterirdi. Yukarıdaki emniyet tavanı sunucunun kendi gününe
+   * baktığı için sınırsız çağrı yine mümkün değildi; yine de asıl kotanın
+   * atlanabilir olması yanlış.
+   *
+   * `clampDay` sunucunun gününe ±1 gün uzaklıktakini kabul ediyor - depodaki
+   * öteki uçların hepsi (answers, daily, session, weekly, exam, mock-exam)
+   * baştan beri böyle yapıyor.
+   */
+  const day = clampDay(b.day);
 
   return {
     tooLong: answerText.length > ASSESS_MAX_CHARS,
