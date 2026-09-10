@@ -439,6 +439,49 @@ Her iki parçadan biri tekrar, ve tekrarlar birkaç kalıpta toplanmış:
 Hat bu yüzden paketleri SIKLIĞA GÖRE sıralıyor (`data/lessons/lecture/`,
 59 paket × 150 dize): **ilk iki paket bütün anlatımın yarısını kapatıyor.**
 
+##### ÇÖZÜCÜ KURULDU (2026-09-10): yazılan İngilizce ilk kez çalışıyor
+
+Beş hattın `out/`u elle yazılmıştı ama HİÇBİRİ uygulamaya girmiyordu —
+`data/lessons/` altında duran, kimsenin okumadığı dosyalardı. Zincir
+artık kapalı:
+
+```
+out/*.json  →  apply.mjs  →  generated/native-en.json  →  native.ts  →  ders sayfası
+```
+
+Üç karar, üçü de gerçek bir tuzaktan çıktı:
+
+1. **Anahtar `make.mjs` ile birebir aynı.** Anlatım hattı 32 dizeyi
+   Almanca kelimeye göre bölüyor; çözücü bölmeyi aynen yapmasa 66
+   satırın yarısı sessizce yanlış kelimeyi söylerdi. Ayraç U+0000 —
+   Türkçe metin boşluk da noktalama da taşıyor.
+2. **Şablon `out/`ta YOK.** `word()` metni çalışma anında kuruyor, yani
+   ekrana çıkan dize hiçbir dosyada durmuyor. Çözücü onu çerçeve
+   desenleriyle tanıyıp üç parçadan yeniden kuruyor. Sıra önemli: önce
+   düz sözlüğe bakılıyor, çünkü içerik dosyalarında elle yazılmış aynı
+   biçimli dizeler de var.
+3. **Yarım ders yok.** Bir parça bile çözülemezse ders TÜMDEN
+   reddediliyor. Aynı ölçüt sayfada da geçerli: ders İngilizceye
+   çevrildiyse can-do köprüsü düşüyor, çünkü `Cando` tipinde İngilizce
+   alan yok.
+
+Kapı (`npm run check:lessons-native`) hatların kendi kapılarının
+göremediğini görüyor: onlar ÇIKARIM üzerinden çalışıyor (`make.mjs`
+düzenli ifadeyle tarıyor), bu GERÇEK ders nesnelerini geziyor.
+**580 ders · 26.375 Türkçe parça · 26.375 çözüldü.** Aradaki 9.082
+parça şablonun ürettiği metin.
+
+###### Çözücü iki yeni kalem gösterdi
+
+Ekrana bakınca hatların kaçırdığı iki küme göründü:
+
+- **Rol yapma senaryosu: 247 dize.** `roleplay` hattı dört alanı
+  kapsıyor (sahne, muhatap, açılış, amaç — 580×4) ama 10 dersin
+  `roleplay.script` dizisi var ve içinde `askTr` (61), `cue` (61),
+  `sayTr` (125) duruyor. Küçük bir küme ama tamamen çevrilmemiş.
+- **Can-do ifadeleri: 121 dize.** `Cando` tipinde yalnız `tr` var.
+  Ders sayfasının özet köprüsü, beceri ekranı ve sertifika bunu
+  okuyor. Şimdilik İngilizce sayfada köprü düşürülüyor.
 ##### BİTTİ (2026-09-10): 8.824/8.824 dize, 17.293/17.293 parça (%100)
 
 Elli dokuz paketin hepsi yazıldı ve kapı sıfır hata, sıfır uyarıyla
