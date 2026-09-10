@@ -131,6 +131,21 @@ function Stat({ icon: Icon, value, label, tint, colors }: { icon: (p: { color: s
  * Gelişim — header'daki seri rozetine dokununca açılır (profil yerine, daha
  * mantıklı). Seri, XP, öğrenilen kelime, süre, seviye ilerlemesi; başarımlara giriş.
  */
+/**
+ * Seviye → renk. Web `progress-view` `LEVEL_COLOR` ile birebir; eşlemenin
+ * kendisi paletin yorumunda yazılı (mint=A1, sky=A2, violet=B1, brand=B2,
+ * rose=C1) ve iki uygulama aynı beş rengi taşıyor.
+ */
+function levelTint(niveau: string, colors: Palette): string {
+  switch (niveau) {
+    case "A1": return colors.success;
+    case "A2": return colors.info;
+    case "B1": return colors.accent;
+    case "C1": return colors.danger;
+    default: return colors.primary;
+  }
+}
+
 export function ProgressScreen() {
   const { colors } = useTheme();
   const { gridItemWidth } = useLayout();
@@ -256,10 +271,14 @@ export function ProgressScreen() {
                     <Text variant="caption" color={colors.text}>{lv.niveau}</Text>
                     <Text variant="micro" color={colors.textMuted}>{t("progress.seen_of_total", { seen: formatNumber(lv.seen), total: formatNumber(lv.total), mastered: formatNumber(lv.mastered) })}</Text>
                   </View>
-                  {/* Koyu bölüm pekişmiş, açık bölüm görülmüş — web ile aynı okuma. */}
+                  {/* Koyu bölüm pekişmiş, açık bölüm görülmüş — web ile aynı okuma.
+                      RENK SEVİYENİN KENDİSİ: paletin kendi yorumunda yazılı olan
+                      eşleme (mint=A1, sky=A2, violet=B1, brand=B2, rose=C1) burada
+                      kullanılmıyordu, beş seviye de yeşil çiziliyordu; web her
+                      seviyeyi kendi rengiyle çiziyor (`progress-view`). */}
                   <View style={{ height: 6, borderRadius: 3, backgroundColor: colors.surface2, overflow: "hidden", marginTop: 4, flexDirection: "row" }}>
-                    <View style={{ width: `${mastPct}%`, backgroundColor: colors.success }} />
-                    <View style={{ width: `${Math.max(0, seenPct - mastPct)}%`, backgroundColor: colors.successSoft }} />
+                    <View style={{ width: `${mastPct}%`, backgroundColor: levelTint(lv.niveau, colors) }} />
+                    <View style={{ width: `${Math.max(0, seenPct - mastPct)}%`, backgroundColor: levelTint(lv.niveau, colors) + "66" }} />
                   </View>
                 </View>
               );

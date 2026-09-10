@@ -2974,6 +2974,39 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   );
 }
 
+/* ── 80. seviye rengi ─────────────────────────────────────────────────────
+ * Paletin kendi yorumu seviyelere renk veriyor (mint=A1, sky=A2, violet=B1,
+ * brand=B2, rose=C1) ve web ilerleme seridini oyle ciziyor. Mobil bes seviyeyi
+ * de YESIL ciziyordu: seviyeler birbirinden yalnizca yazidan ayirt ediliyor,
+ * paletteki bilgi ekranda hic gorunmuyordu. Esleme iki tarafta da ayni
+ * olmali - renk kimlik tasiyorsa iki uygulamada ayni kimligi tasimali. */
+{
+  const esle = (p, re, cev) => {
+    const src = read(p).replace(/\/\*[\s\S]*?\*\//g, " ").replace(/\/\/[^\n]*/g, " ");
+    return [...src.matchAll(re)].map((m) => m[1] + "=" + cev(m[2])).sort();
+  };
+  const mobil = esle(
+    "mobile/src/screens/ProgressScreen.tsx",
+    /case "(A1|A2|B1|B2|C1)": return colors\.([a-z]+);/g,
+    (v) => v,
+  );
+  /* Mobil `default` dali B2'yi tasiyor (birebir yazmak yerine); kapi onu da
+     listeye ekliyor ki iki taraf ayni bes satiri gostersin. */
+  if (mobil.length && !mobil.some((x) => x.startsWith("B2="))) mobil.push("B2=primary");
+  const jetonMobil = { success: "mint", info: "sky", accent: "violet", danger: "rose", primary: "brand" };
+  const web = esle(
+    "src/components/progress-view.tsx",
+    /(A1|A2|B1|B2|C1): "var\(--color-([a-z]+)\)"/g,
+    (v) => v,
+  );
+  sameSet(
+    "seviye renkleri",
+    mobil.map((x) => x.replace(/=(\w+)$/, (_, k) => "=" + (jetonMobil[k] ?? k))).sort(),
+    web,
+    "mobil", "web",
+  );
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"
