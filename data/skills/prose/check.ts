@@ -122,8 +122,11 @@ if (existsSync(`${DIR}out`))
           tırnak ve tire çeşitleri, üç nokta, ok ve birkaç işaret. Dışındaki
           her şey yazım kazasıdır.
         */
-        for (const ch of en)
-          if (!/[\u0020-\u007E\u00C4\u00D6\u00DC\u00E4\u00F6\u00FC\u00DF\u00E9\u00B7\u00D7\u201E\u201C\u201D\u2018\u2019\u2013\u2014\u2026\u2192\u2194]/.test(ch))
+        /* Yazım denetimiyle aynı gerekçe: ALINTININ İÇİ kaynaktan geldiği
+           gibi duruyor. „Frau Yalçın verlässt uns …“ Almanca bir cümle ama
+           içindeki ad Türkçe yazımıyla yazılmış ve öyle kalmak zorunda. */
+        for (const ch of en.replace(/[„"][^„"“”]*[“"]/g, " "))
+          if (!/[\u0020-\u007E\u00C4\u00D6\u00DC\u00E4\u00F6\u00FC\u00DF\u00E9\u00B7\u00D7\u201A\u201E\u201C\u201D\u2018\u2019\u2013\u2014\u2026\u2192\u2194]/.test(ch))
             H(`beklenmedik karakter: «${ch}» (U+${ch.codePointAt(0)?.toString(16).toUpperCase().padStart(4, "0")})`);
 
         /* Türkçe alıntı taşıyorsa İngilizcede de birebir durmalı. Yalnız
