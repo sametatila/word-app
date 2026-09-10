@@ -60,7 +60,18 @@ export function WeeklyPlayer() {
   }, [attempt]);
 
   function start() {
-    track("exam_start", 0, "usage");
+    /*
+     * HAFTALIK SINAV OTURUM OLARAK ÖLÇÜLÜYOR, `exam_start` olarak DEĞİL.
+     *
+     * Burada `track("exam_start", 0, "usage")` yazıyordu ve iki şeyi birden
+     * bozuyordu: (1) sözlüğün sözleşmesi `exam_start` için "kind = sınav
+     * türü:seviye" diyor ("level:B1"), "usage" o biçime hiç uymuyor;
+     * (2) gerçek sınav `exam_start`ı SUNUCUDA yazıyor (`api/exam`), yani
+     * haftalık test aynı seride gerçek sınavlarla karışıyordu. Mobil
+     * `WeeklyScreen` baştan beri `session_start`/`session_done` + kind
+     * "weekly" yazıyor; web de aynı şeyi yazıyor (bkz. web-parity §11.29).
+     */
+    track("session_start", 0, "weekly");
     answers.current = [];
     startedAt.current = Date.now();
     setIndex(0);
@@ -80,6 +91,7 @@ export function WeeklyPlayer() {
       if (!res.ok) throw new Error(String(res.status));
       const r = (await res.json()) as { score: number; correct: number; total: number };
       setResult(r);
+      track("session_done", r.correct, "weekly");
       setPhase("done");
     } catch {
       setPhase("error");

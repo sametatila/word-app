@@ -1914,3 +1914,45 @@ Kalan üçü de sebepleriyle `PLANNED`ta:
     `kind` ile zaten yazıyor; ikisinin sınırı karar istiyor.
   - `premium_gate` — premium kilidine çarpma. Mobil birleşiminde de tanımlı,
     çağıran yok; premium pasif olduğu için bugün ölçülecek bir olay da yok.
+
+### 11.29 Aynı etkinlik, iki ayrı olay: haftalık sınav
+
+§11.28'in ardından olay ve `kind` kümeleri iki platformda karşılaştırıldı.
+(Tarama yalnız SABİT ilk argümanlı `track("ad", …)` çağrılarını görüyor;
+değişken adla yazan yerler kapsam dışı, o yüzden "şu platformda yazılmıyor"
+sonuçları tek tek doğrulandı.)
+
+İki gerçek ayrışma çıktı.
+
+**a) Haftalık sınav — DÜZELTİLDİ.** Mobil `WeeklyScreen` baştan beri
+`session_start`/`session_done` + kind `"weekly"` yazıyor. Web `weekly-player`
+ise `track("exam_start", 0, "usage")` yazıyordu ve bu iki şeyi birden
+bozuyordu:
+
+  1. Sözlüğün sözleşmesi `exam_start` için "kind = sınav türü:seviye" diyor
+     (`"level:B1"`, `"placement:A1"`); `"usage"` o biçime hiç uymuyor.
+  2. GERÇEK sınav `exam_start`ı SUNUCUDA yazıyor (`api/exam`,
+     `${paper.kind}:${level}`), yani haftalık test aynı seride modül ve
+     seviye sınavlarıyla karışıyordu - "kaç sınava girildi" sayısı haftalık
+     testlerle şişiyordu.
+
+Web de artık `session_start`/`session_done` + `"weekly"` yazıyor. Sunucudaki
+`exam_start` yerinde duruyor; o iki platform için de ortak ve sözleşmeye
+uygun.
+
+**b) `kind` sözlüğü ayrışık — KARAR GEREKİYOR.** Aynı olay, iki ayrı sözcük
+dağarcığı:
+
+    tur          Android            web
+    karışık      session            mixed / extra
+    tek oyun     practice           single:<oyun>
+
+Rapor `kind`e göre grupladığında aynı etkinlik platforma göre ayrı kovalara
+düşüyor. Ama burada Android'i referans almak VERİ KAYBETTİRİR: webin
+`single:<oyun>`u hangi oyunun oynandığını taşıyor, Android'in `practice`i
+taşımıyor; `extra` de ek turu ayırıyor.
+
+İki seçenek ve tavsiye: (a) Android webin dağarcığına geçer - bilgi artar,
+mevcut Android serisi kırılır; (b) web Android'e geçer - seriler hizalanır,
+oyun kırılımı kaybolur. Ölçüm (a)'yı işaret ediyor ama mevcut serilerin
+anlamını değiştirmek ürün kararı, o yüzden yapılmadı.
