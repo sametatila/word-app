@@ -104,9 +104,25 @@ const evidence = (row) => {
     return /\s/.test(l) ? true : words.has(l);
   });
 };
+/** Dersin İngilizce yüzeyinde SÖZCÜK olarak geçen özel adlar.
+ *  «Ayşe is my best friend.» cümlesini Almancaya çevirirken ad yerinde
+ *  kalmak zorunda — ses onu öyle söylüyor. Ama «ş» Almanca karakter
+ *  kümesinde yok, o yüzden karakter kuralı adı sızmış Türkçe sanıyordu.
+ *  Ölçüldü: bütün hatta bu durumda 5 satır var, hepsi aynı ad.
+ *  Yalnızca küme DIŞI harf taşıyan sözcükler eleniyor — bu yüzden
+ *  değişiklik hiçbir geçen satırı etkilemiyor, yalnız gevşetiyor. */
+const CHARSET = /[\n -~ÄÖÜäöüßé·×‚„“”‘’«»–—…→↔€]/;
+const surfaceNames = (de, row) => {
+  const words = new Set(lower((row.en ?? []).join(" | ")).match(WORD) ?? []);
+  return (de.match(WORD) ?? []).filter(
+    (w) => [...w].some((ch) => !CHARSET.test(ch)) && words.has(lower(w)),
+  );
+};
+
 const strip = (de, row) => {
   let out = de;
   for (const s of evidence(row)) out = out.split(s).join(" ");
+  for (const s of surfaceNames(out, row)) out = out.split(s).join(" ");
   return out;
 };
 
@@ -137,7 +153,7 @@ if (existsSync(`${DIR}out`))
         if (a !== b) H(`sayılar uyuşmuyor: «${a}» → «${b}»`);
 
         for (const ch of strip(de, row))
-          if (!/[\n -~ÄÖÜäöüßé·×‚„“”‘’«»–—…→↔€]/.test(ch))
+          if (!CHARSET.test(ch))
             H(`beklenmedik karakter: «${ch}» (U+${ch.codePointAt(0).toString(16).toUpperCase().padStart(4, "0")})`);
 
         for (const s of evidence(row))
