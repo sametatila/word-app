@@ -2771,3 +2771,36 @@ Karakter satırının Android'de karşılığı HİÇ YOK ve olmaması doğru - 
 klavye o harfleri uzun basmayla veriyor, ayrıca cevap karşılaştırması umlaut
 katlıyor (`textFold`), yani "ae" yazmak da kabul ediliyor. Webin kendine
 özgü bir yüzeyi ve 36px WCAG asgarisinin üstünde.
+
+### 11.49 Kalan `hitSlop` çağrıları: biri hariç hepsi zaten yeterliydi
+
+§11.48'in açtığı soruyu sonuna kadar sürdüm: mobilde 55 `hitSlop` çağrısı var
+(38'i 4, 10'u 6, 7'si 8), web'de hiçbir denetimde genişleme yoktu. Ama
+ölçüm gösterdi ki genişleme ÇOĞUNLUKLA taşıyıcı değil:
+
+    görünen boyutu 44 ve üstü olan     37   (hitSlop bir incelik, 44 zaten yeterli)
+    görünen boyutu 44 altı olan          1   (skillLibrary, 36 + 8 → 52)
+    boyutu koddan okunamayan            17   (metin bağlantıları, dolgulu satırlar)
+
+Yani geri düğmelerinin, kapatma düğmelerinin, satır ikonlarının `hitSlop`u
+44'ü 52'ye çıkarıyor - hoş ama webin 44'ü de asgariyi geçiyor. Burada
+yapılacak bir şey yok ve 37 yere `hit-8` serpmek gürültü olurdu.
+
+**Okunamayan 17'nin içinden üçü gerçekten geride kalmıştı** ve üçü de satır
+içi mikro denetim - kodu satır satır okuyup doğruladım:
+
+- **Ders baloncuğunun dinle düğmesi** (`lesson-player`): 28px daire,
+  genişleme yok. Mobil karşılığı `hitSlop={8}` taşıyor. `hit-8` ile 44.
+- **"Bu yanıtı bildir"** (`lesson-player`) ve **"Bu geri bildirimi bildir"**
+  (`writings-card`): çıplak 11px yazı, dolgu yok - yani hedefin yüksekliği
+  yazının kendisi kadardı, **WCAG 2.2'nin 24px asgarisinin altında**. Bu bir
+  parite eksiği değil, doğrudan bir erişilebilirlik hatası; üstelik Play'in
+  "yapay zekâ içeriği bildirilebilmeli" politikasını karşılayan denetim.
+  `hit-8` ile ~29. Mobil ikisine de `hitSlop={8}` veriyor.
+
+**Genel bir süpürme denemesi başarısız oldu ve sebebi kayda geçsin:** "küçük
+puntolu, dolgusuz tıklanabilir öğe" arayan bir tarama 47 sonuç verdi ama
+büyük kısmı yanlış - bir düğmenin İÇİNDEKİ açıklama `<span>`ı, düğmenin
+kendisi dolguluyken. Metin taraması hangi öğenin tıklanabilir olduğunu
+bilmiyor; doğrusunu ayırmak DOM gerektirir. O yüzden bu eksen kapıya
+konmadı, üç denetim elle doğrulanıp düzeltildi.

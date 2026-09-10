@@ -1891,7 +1891,9 @@ function LectureBubble({
           whileTap={{ scale: 0.9 }}
           onClick={() => speakSegments(item.segments)}
           aria-label={t("lessonp.listen_again")}
-          className="btn btn-ghost h-7 w-7 shrink-0"
+          /* 28px gorunen daire, `hit-8` ile 44 hedef: mobil karsiligi da
+             `hitSlop={8}` tasiyor (`LessonScreen`). */
+          className="btn btn-ghost hit-8 h-7 w-7 shrink-0"
         >
           <SpeakerIcon size={13} />
         </motion.button>
@@ -1974,7 +1976,10 @@ function Bubble({
         <button
           type="button"
           onClick={() => onReport(turn.content)}
-          className="muted text-micro underline underline-offset-2"
+          /* Yalniz 11px yazi: hedefin yuksekligi yazinin kendisi kadardi,
+             yani WCAG 2.2'nin 24px asgarisinin ALTINDA. `hit-8` ile ~29.
+             Mobil karsiligi da `hitSlop={8}` tasiyor. */
+          className="muted text-micro underline underline-offset-2 hit-8"
         >
           {t("lesson.report_this_answer")}
         </button>
