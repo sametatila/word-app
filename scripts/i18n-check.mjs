@@ -39,6 +39,14 @@ function load(dir, lang) {
   return out;
 }
 
+/** Mobil KAYNAK sözlüğü — `base/*` bundan üretiliyor. */
+function loadMobile(lang) {
+  const src = readFileSync(new URL(`../mobile/src/i18n/${lang}.ts`, import.meta.url), "utf8");
+  const out = new Map();
+  for (const m of src.matchAll(/^\s*"([^"]+)":\s*"((?:[^"\\]|\\.)*)",?\s*$/gm)) out.set(m[1], m[2]);
+  return out;
+}
+
 const placeholders = (s) => [...s.matchAll(/\{(\w+)\}/g)].map((m) => m[1]).sort().join(",");
 
 let bad = 0;
@@ -94,6 +102,34 @@ for (const file of files) {
     }
   }
 }
+/*
+  4. `base/*` GERÇEKTEN mobilden üretilmiş mi.
+
+  Köprü (`scripts/i18n-pull.mjs`) ELLE çalıştırılıyor. Mobil sözlükte bir cümle
+  değişip pull unutulursa - ya da `base/*` elle düzenlenirse - web ile Android
+  aynı anahtarda AYRI cümle gösterir ve hiçbir denetim bunu söylemez. Üç içerik
+  köprüsünün aynı sınıfı `npm run check:dumps` ile kapandı; bu, dördüncüsü.
+
+  Karşılaştırma değere kadar: pull birebir kopyalıyor (ölçüldü, 1158 anahtar ×
+  3 dil, sıfır fark), yani katı eşitlik doğru ölçüt. `web/*` elle yazılıyor ve
+  bu denetimin dışında - orası zaten web'e özel.
+*/
+for (const lang of LANGS) {
+  const base = load("base", lang);
+  const mob = loadMobile(lang);
+  const onlyBase = [...base.keys()].filter((k) => !mob.has(k));
+  const onlyMob = [...mob.keys()].filter((k) => !base.has(k));
+  const differs = [...base.keys()].filter((k) => mob.has(k) && mob.get(k) !== base.get(k));
+  if (onlyBase.length || onlyMob.length || differs.length) {
+    bad++;
+    console.error(`✗ base/${lang} mobil kaynakla aynı değil (npm çalıştır: node scripts/i18n-pull.mjs)`);
+    if (onlyMob.length) console.error(`   tabanda EKSİK (${onlyMob.length}): ${onlyMob.slice(0, 6).join(", ")}`);
+    if (onlyBase.length) console.error(`   tabanda FAZLA (${onlyBase.length}): ${onlyBase.slice(0, 6).join(", ")}`);
+    if (differs.length) console.error(`   DEĞERİ FARKLI (${differs.length}): ${differs.slice(0, 6).join(", ")}`);
+  }
+}
+if (!bad) console.log(`base: mobil kaynakla birebir (${load("base", "tr").size} anahtar × ${LANGS.length} dil)`);
+
 if (dupes.length) {
   bad += dupes.length;
   for (const d of dupes) console.error(`yinelenen anahtar → ${d}`);
