@@ -102,7 +102,21 @@ type Any = Record<string, unknown>;
 const str = (v: unknown): string | undefined =>
   typeof v === "string" && v.trim() ? v : undefined;
 
-export function extractTasks(): TaskRow[] {
+/**
+ * `course` HANGİ YÖNÜ paketlediğini söylüyor.
+ *
+ * Varsayılan `de`: Almanca kursun egzersizleri, yazılacak dil İngilizce —
+ * bu hattın kendi işi. `en` ise kardeş hat için (`data/skills/task-de/`):
+ * İngilizce kursun egzersizleri, yazılacak dil Almanca.
+ *
+ * Yürüyüş İKİ YÖN İÇİN DE AYNI OLMAK ZORUNDA ve o yüzden burada duruyor,
+ * kopyalanmıyor. Kopya alınsaydı bir alan eklendiğinde biri güncellenir
+ * öteki unutulurdu; unutulan tarafta o alan sözlüğe hiç girmez ve
+ * hep-ya-hiç kuralı bütün egzersizi ana diline düşürür — hiçbir yerde
+ * hata görünmeden. Aynı gerekçe `isProseQuote`un çözücüde durmasının da
+ * sebebi.
+ */
+export function extractTasks(course: "de" | "en" = "de"): TaskRow[] {
   const rows = new Map<string, TaskRow>();
   const add = (kind: TaskKind, tr: unknown, ctx: string, de?: string, q?: string) => {
     const t = str(tr);
@@ -117,7 +131,7 @@ export function extractTasks(): TaskRow[] {
   };
 
   for (const e of (BUNDLED_EXERCISES as unknown as Any[]).filter(
-    (x) => ((x.course as string) ?? "de") === "de",
+    (x) => ((x.course as string) ?? "de") === course,
   )) {
     const at = `${e.id} · ${e.skill ?? "?"} ${e.level ?? ""}`.trim();
     add("focus", e.focus, at);
@@ -220,7 +234,11 @@ export function extractTasks(): TaskRow[] {
   );
 }
 
-if (process.argv[1]?.endsWith("make.ts")) {
+/* Ölçüt `task/make.ts` — düz `make.ts` DEĞİL. Kardeş hat
+   (`data/skills/task-de/make.ts`) bu dosyayı içe aktarıyor ve onun da yolu
+   "make.ts" ile bitiyor; gevşek ölçütle o çalıştırıldığında BU hattın
+   paketleyicisi de sessizce koşuyor ve `in/` dizinini yeniden yazıyordu. */
+if (process.argv[1]?.endsWith("task/make.ts")) {
   const rows = extractTasks();
   mkdirSync(`${DIR}in`, { recursive: true });
   mkdirSync(`${DIR}out`, { recursive: true });
