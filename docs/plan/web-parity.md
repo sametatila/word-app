@@ -4926,3 +4926,36 @@ tek satırlık bir bileşende.
 
 Ölçülüp **ayrışma çıkmayanlar** (kayda geçsin, tekrar bakılmasın): `Find`,
 `Requests`, `InboxBell`/`useUnread` ve sosyal ayarların geri kalanı.
+
+### 11.118 Kendi davet kodunu giren kullanıcıya yanlış şey söyleniyordu
+
+`/api/premium/redeem` sebebi doğrudan sözlük anahtarı olarak gönderiyor ve iki
+istemci de tanıdığı sebeplerin listesini **elle** yazıyordu. `self` (kendi
+davet kodu) ikisinde de yoktu: kullanıcı "Kod uygulanamadı, daha sonra tekrar
+dene" görüyordu — oysa yapması gereken belli ve **tekrar denemek hiçbir zaman
+işe yaramayacak**.
+
+**Parity 56** beklenen kümeyi elle yazılmış bir listeden değil **sunucudan**
+türetiyor: promo katmanının `reason` birleşimi + `AttachResult`in kullanıcıya
+dönen değerleri (`ok` ve `unknown_code` hariç — ilki hata değil, ikincisi uçta
+`not_found`a çevriliyor) + hız sınırı. Sunucu yeni bir sebep eklerse iki
+istemci de kapıya takılıyor.
+
+### 11.119 KARAR BEKLİYOR — seviye testi mobilde yalnız kelime ölçüyor
+
+Sunucu **dört aşamalı** bir test veriyor (`PlacementStage`: vocab, grammar,
+reading, listening) ve web dördünü de oynatıyor: seviye aşama içinde
+uyarlanarak yükseliyor (`nextLevel`), okuma ve dinleme kendi metinleriyle
+geliyor. Mobil istemci tipi (`PlacementTest`) **yalnızca `vocab` taşıyor** —
+Android'de seviye testi kelime ölçüyor, öteki üç beceri hiç sorulmuyor ve
+`perSkill` üç alanı boş dönüyor.
+
+Bu, alışılmış yönün tersi: burada **web ileride**. Bir tur içinde kapatılacak
+bir açık da değil — mobil tarafta uyarlanan aşama makinesi, metin oynatıcı ve
+dinleme sesi gerekiyor (kabaca üç ekran + ses yolu). **Samet'in kararı
+bekliyor.**
+
+**Parity 57** açığı kapatmıyor, **büyütmüyor**: sunucunun aşama listesi ile
+"mobilde olan + kayıtlı eksik" kümesi eşleniyor. Sunucu beşinci bir aşama
+eklerse ya da mobil bir aşama kazanırsa kapı kalıyor ve insan bakıyor —
+muafiyetin kapısı kuralı (§11.107) burada da geçerli.
