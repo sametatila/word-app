@@ -194,7 +194,13 @@ export function LearnHub({ data }: { data: LearnHubData }) {
 
       {/* DİĞER ÖĞRENME YOLLARI */}
       <h2 className="muted mb-3 text-h3">{t("learn.more")}</h2>
-      <CardGrid min={380} className="mb-5">
+      {/* MİN DEĞERİ WEB'DE 360, MOBİLDE 380 ve bu bilerek: iki taraf da aynı
+          şeyi istiyor (yer varsa iki sütun) ama ölçüyü farklı şeye karşı
+          alıyor. Mobilde ölçü CİHAZ genişliği; web'de bu sayfa 48rem'de
+          (768 px) sabit ve iki kez 380 artı boşluk 784 ediyor - on altı
+          piksel yüzünden ızgara HER ZAMAN tek sütun kalıyordu. 360 ile iki
+          sütun sığıyor; telefonda kap zaten dar olduğu için tek sütun. */}
+      <CardGrid min={360} className="mb-5">
         <Action
           href="/learn/practice"
           tone="var(--color-brand-500)"
