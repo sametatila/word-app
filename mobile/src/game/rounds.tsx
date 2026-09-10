@@ -410,7 +410,7 @@ function ChoiceRound({ round, word, onDone, colors }: { round: Round; word: Roun
   );
 }
 
-function ArtikelRound({ round, word, onDone, colors }: { round: Round; word: RoundWord; onDone: Done; colors: Palette }) {
+function ArtikelRound({ word, onDone, colors }: { word: RoundWord; onDone: Done; colors: Palette }) {
   const [picked, setPicked] = useState<string | null>(null);
   const [fb, setFb] = useState<Feedback | null>(null);
   function choose(a: string) {
@@ -1083,7 +1083,7 @@ function pickRound(round: Round, onDone: Done, colors: Palette) {
   const word = round.word;
   if (word) {
     if (round.game === "choice" && optionCards(round).length) return <ChoiceRound round={round} word={word} onDone={onDone} colors={colors} />;
-    if (round.game === "artikel" && word.artikel) return <ArtikelRound round={round} word={word} onDone={onDone} colors={colors} />;
+    if (round.game === "artikel" && word.artikel) return <ArtikelRound word={word} onDone={onDone} colors={colors} />;
     if (round.game === "truefalse") return <TrueFalseRound round={round} word={word} onDone={onDone} colors={colors} />;
     if (round.game === "typing") return <TypingRound round={round} word={word} onDone={onDone} colors={colors} />;
     if (round.game === "plural" && optionTexts(round).length) return <PluralRound round={round} word={word} onDone={onDone} colors={colors} />;

@@ -2842,6 +2842,33 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   sameList("tur boru hattinda tip kacisi", olcu(MOBIL), olcu(WEB));
 }
 
+/* ── 75. yalniz simge tasiyan dugmenin ADI var mi ─────────────────────────
+ * Icinde metin olmayan bir dugme, ekran okuyucuda "dugme" diye okunur: ne
+ * yaptigi soylenmez. Web bunu `aria-label` ile, mobil `accessibilityLabel`
+ * ile veriyor ve iki tarafta da SIFIR etiketsiz dugme olmali. Olcum tek
+ * cocugu simge olan dugmelere bakiyor - metinli dugmede ad zaten metnin
+ * kendisi. */
+{
+  const gez = (d, out = []) => {
+    for (const e of readdirSync(new URL("../" + d, import.meta.url), { withFileTypes: true })) {
+      const p = d + "/" + e.name;
+      if (e.isDirectory()) { if (!/node_modules|__tests__/.test("/" + p)) gez(p, out); }
+      else if (e.name.endsWith(".tsx")) out.push(p);
+    }
+    return out;
+  };
+  const say = (kokler, re, etiket) => {
+    let n = 0;
+    for (const k of kokler) for (const f of gez(k)) {
+      for (const m of read(f).matchAll(re)) if (!m[1].includes(etiket)) n++;
+    }
+    return n;
+  };
+  const mobil = say(["mobile/src"], /<PressableScale\b([^>]*)>\s*<[A-Za-z]+Icon\b[^>]*\/>\s*<\/PressableScale>/g, "accessibilityLabel");
+  const web = say(["src/components", "src/app"], /<button\b([^>]*)>\s*<[A-Za-z]+Icon\b[^>]*\/>\s*<\/button>/g, "aria-label");
+  sameList("etiketsiz simge dugmesi", ["adsiz=" + mobil], ["adsiz=" + web]);
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"

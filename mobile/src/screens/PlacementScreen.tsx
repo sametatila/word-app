@@ -112,7 +112,7 @@ export function PlacementScreen() {
       .then((items) => { if (alive) { if (items.length) setReal(items); else setLoadError(true); setLoading(false); } })
       .catch(() => { if (alive) { setLoadError(true); setLoading(false); } });
     return () => { alive = false; };
-  }, [user, attempt]);
+  }, [user, attempt, onboarding]);
 
   const usingReal = !!real;
   const questions = usingReal ? realQuestions(real) : user ? [] : demoQuestions();
@@ -212,7 +212,9 @@ export function PlacementScreen() {
   return (
     <View style={{ flex: 1, backgroundColor: colors.bg, paddingTop: insets.top + spacing.sm, paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.lg }}>
       <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, marginBottom: spacing.xl }}>
-        <PressableScale hitSlop={4} onPress={leave} style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
+        {/* Simge tek başına: ekran okuyucu için adı olmalı - öteki ekranların
+            kapatma düğmeleri baştan beri `common.close` taşıyor. */}
+        <PressableScale hitSlop={4} onPress={leave} accessibilityLabel={t("common.close")} style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
           <XIcon color={colors.textMuted} size={22} />
         </PressableScale>
         <View style={{ flex: 1, height: 10, borderRadius: 5, backgroundColor: colors.surface2, overflow: "hidden" }}>
