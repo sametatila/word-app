@@ -10,7 +10,7 @@ import { Skeleton, SkeletonLine } from "../ui/Skeleton";
 import { useAuth } from "../lib/AuthContext";
 import { api } from "../api/client";
 import { GROUP_ORDER, GROUP_LABEL_KEY, type Achievement, type Tier, type AchGroup } from "../data/achievements";
-import { useTheme, spacing, radii, softShadow, type Palette } from "../theme";
+import { useTheme, spacing, radii, softShadow, TIER_COLOR, type Palette } from "../theme";
 import { useLayout } from "../lib/useLayout";
 
 /** Grup başlığı — sözlükte karşılığı olmayan (sunucudan yeni gelen) grup ham adıyla çizilir. */
@@ -30,7 +30,7 @@ function groupLabel(group: string): string {
  * altında. Ortak değerlerle: 4.44 / 3.79 / 3.62 / 6.83.
  */
 function tierColor(tier: Tier): string {
-  return tier === "bronze" ? "#a9683c" : tier === "silver" ? "#8a8277" : tier === "gold" ? "#aa8012" : "#77439d";
+  return TIER_COLOR[tier] ?? TIER_COLOR.legend;
 }
 
 function Badge({ a, colors }: { a: Achievement; colors: Palette }) {

@@ -127,3 +127,25 @@ export function onTint(tint: string, colors: Palette): string {
   if (tint === colors.accent) return colors.accentText;
   return tint;
 }
+
+/**
+ * Kademe / madalya ölçeği — web `components/achievement-badge.tsx`
+ * `TIER_COLOR` ile BİREBİR aynı dört değer.
+ *
+ * Tema duyarlı DEĞİL ve olmamalı: bronz/gümüş/altın bir kimlik, sıcaklığı
+ * temayla değişmez (web de sabit tutuyor). Üçü de DOLU ZEMİN + BEYAZ içerik
+ * için ölçülmüş - beyazla 4.44 / 3.79 / 3.62, yani grafik ve büyük yazı
+ * eşiği 3.0'ın üstünde. Metin rengi olarak kullanılamazlar: beyaz kart
+ * üstünde aynı değerler 4.44 / 3.79 / 3.62 verir ve normal yazı eşiği 4.5'in
+ * altına düşer.
+ *
+ * Tek kaynak olması gerekiyordu: ölçek iki ekranda ayrı ayrı yazılıydı ve
+ * biri düzeltilirken öteki eski değerlerle kalmıştı (bkz. günün turu sıralama
+ * madalyası, docs/plan/web-parity.md 11.37).
+ */
+export const TIER_COLOR = {
+  bronze: "#a9683c",
+  silver: "#8a8277",
+  gold: "#aa8012",
+  legend: "#77439d",
+} as const;

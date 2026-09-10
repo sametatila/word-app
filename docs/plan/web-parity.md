@@ -2249,3 +2249,56 @@ mobil "der Tisch" diye tek dizge yazıyor. Yani mobil cinsiyeti SORARKEN renk
 kodluyor, ÖĞRETİRKEN kodlamıyor. Bu Android'in yerleşimini değiştirmek
 demek - referans platformun tasarımına dokunmak - o yüzden ölçülüp buraya
 yazıldı, uygulanmadı.
+
+### 11.37 Paletin dışına kaçan renkler: madalya ölçeği ve konfeti
+
+§11.36'daki sınıfı sonuna kadar süpürdüm. Mobilde tema jetonu yerine elle
+yazılı renk kullanan yerler (beyaz/siyah ve avatar çizimi hariç) on dört
+satırdı; üçü gerçek sapma çıktı, kalanı meşru.
+
+**a) Günün turu sıralama madalyası — hem çakışıyordu hem okunmuyordu.**
+
+`DailyScreen.medalColor` üç değeri elle yazıyordu: altın `colors.streak`,
+gümüş `#9aa3ad`, bronz `#b08d57`. İki ayrı sorun:
+
+*Çakışma.* Rozet ekranında (`AchievementsScreen`) aynı bronz/gümüş/altın
+ölçeği daha önce web `TIER_COLOR` ile eşlenmişti - gümüş `#9aa3ad`ten
+`#8a8277`ye çekilmişti, çünkü mavi-gri değer sıcak paletin içinde tek başına
+soğuk duruyordu. Günün turu o düzeltmeden habersiz kalmıştı: tek uygulamada
+iki ayrı madalya ölçeği vardı. Ölçek artık `theme/colors.ts` içinde tek
+kaynak (`TIER_COLOR`, webin dört değeriyle birebir) ve iki ekran ondan
+okuyor - bir daha ayrışamaz.
+
+*Okunmama.* Numara madalya rengiyle YAZILIYORDU. Ölçüm, beyaz kart üstünde:
+
+    altın  2.88      gümüş  2.56      bronz  3.09      (eşik 4.5)
+
+Açık temada ilk üç sıranın numarası okunmuyordu; koyu tema geçiyordu
+(8.84 / 6.72 / 5.56), yani hata yalnız açık temada görünüyordu.
+
+Hue'yu koruyup koyulaştırmak çözmüyor: 4.5'i geçen bir gümüş `#7b746a`
+oluyor ve madalyasız sıralamanın soluk tonundan (`textMuted` `#7c6c5d`,
+5.05) ayırt edilemiyor - ikinci sıra dördüncüyle aynı görünürdü. Uygulamanın
+kendi dili bu iş için DOLU ZEMİN + BEYAZ İÇERİK (seviye rozeti, başarı
+rozeti) ve o ölçekte üçü de geçiyor: beyazla 4.44 / 3.79 / 3.62, büyük-kalın
+yazı ve grafik eşiği 3.0. İlk üç artık dolu daire, dördüncü ve sonrası düz
+soluk numara.
+
+**b) Konfeti renkleri paletin dışındaydı.** `Celebrate.tsx`:
+
+    mobil  #f87612  #fbbf24  #34d399  #60a5fa  #f472b6  #a78bfa
+    web    #eda45d  #ddb62c  #45b87a  #35b2cc  #ae79d4  #ee6b7c
+
+Mobilin ilki marka turuncusu, kalan beşi Tailwind varsayılanı (amber-400,
+emerald-400, blue-400, pink-400, violet-400) - paletin hiçbir basamağı değil
+ve iki tanesi farklı renk AİLESİ: webin turkuazı (sky) yerine düz mavi,
+gülü (rose) yerine pembe. Konfetinin üstünde yazı yok, yani kontrast konusu
+değil; konu kimlik - kutlama kullanıcının ekran görüntüsü aldığı an ve iki
+uygulama farklı renklerle kutluyordu. Liste webin altı değeriyle eşlendi.
+
+**Meşru çıkanlar, dokunulmadı:** `#FA7C13` (avatar dairesinin zemini - Erdi
+çiziminin PNG zeminiyle aynı değer ve webde de aynı satır), `softShadow`un
+sıcak kahve tinti `#5a3418` (gölge rengi, iki temada da aynı olması bilinçli),
+`avatar.ts` şapka varsayılanı (kullanıcının seçtiği aksesuar rengi, palet
+değil), `icons.tsx` / `avatarParts.tsx` / `PersonAvatar.tsx` içindeki çizim
+renkleri (illüstrasyon, tema jetonu değil).

@@ -15,13 +15,24 @@ import type { Round } from "../game/session";
 import { ApiError } from "../api/client";
 import { track } from "../lib/track";
 import { RoundSkeleton } from "../game/RoundSkeleton";
-import { useTheme, spacing, radii, softShadow, type Palette } from "../theme";
+import { useTheme, spacing, radii, softShadow, TIER_COLOR, type Palette } from "../theme";
 import { sfx } from "../lib/sfx";
 
 type Phase = "loading" | "auth" | "error" | "play" | "submitting" | "done";
 
-function medalColor(rank: number, colors: Palette): string {
-  return rank === 1 ? colors.streak : rank === 2 ? "#9aa3ad" : rank === 3 ? "#b08d57" : colors.textMuted;
+/**
+ * İlk üçün madalya rengi — ortak kademe ölçeğinden (`TIER_COLOR`).
+ *
+ * Üç değer burada elle yazılıydı ve rozet ekranındakilerle AYRIŞMIŞTI: gümüş
+ * #9aa3ad (mavi-gri, sıcak paletin içinde tek başına soğuk duruyordu) ve
+ * bronz #b08d57. Aynı çakışma rozet ekranında düzeltilmişti ama burası
+ * gözden kaçmıştı - tek uygulamada iki ayrı bronz/gümüş/altın ölçeği vardı.
+ *
+ * Dördüncü ve sonrası madalyasız: rengi `null` dönüyor, çizim düz soluk
+ * numaraya düşüyor.
+ */
+function medalColor(rank: number): string | null {
+  return rank === 1 ? TIER_COLOR.gold : rank === 2 ? TIER_COLOR.silver : rank === 3 ? TIER_COLOR.bronze : null;
 }
 
 function Board({ rows, colors }: { rows: DailyBoardRow[]; colors: Palette }) {
@@ -29,11 +40,31 @@ function Board({ rows, colors }: { rows: DailyBoardRow[]; colors: Palette }) {
   return (
     <View style={{ gap: spacing.sm, marginTop: spacing.md }}>
       {rows.map((r) => {
-        const mc = medalColor(r.rank, colors);
+        const mc = medalColor(r.rank);
         const initial = ((r.name ?? "?").trim()[0] ?? "?").toUpperCase();
         return (
-          <View key={`${r.rank}-${r.name}`} style={[{ flexDirection: "row", alignItems: "center", gap: spacing.md, borderRadius: radii.lg, paddingHorizontal: spacing.md, paddingVertical: 11, backgroundColor: r.isMe ? colors.primarySoft : colors.surface, borderWidth: 1, borderColor: r.isMe ? colors.primary : colors.hairline }, r.rank <= 3 ? softShadow(mc, 4) : {}]}>
-            <View style={{ width: 26, alignItems: "center" }}><Text variant="h3" color={mc}>{r.rank}</Text></View>
+          <View key={`${r.rank}-${r.name}`} style={[{ flexDirection: "row", alignItems: "center", gap: spacing.md, borderRadius: radii.lg, paddingHorizontal: spacing.md, paddingVertical: 11, backgroundColor: r.isMe ? colors.primarySoft : colors.surface, borderWidth: 1, borderColor: r.isMe ? colors.primary : colors.hairline }, mc ? softShadow(mc, 4) : {}]}>
+            {/*
+              İLK ÜÇ DOLU DAİRE, GERİSİ DÜZ NUMARA.
+              Numara madalya rengiyle YAZILIYORDU ve açık temada üçü de
+              okunmuyordu - ölçüm beyaz kart üstünde altın 2.88, gümüş 2.56,
+              bronz 3.09; normal yazı eşiği 4.5. Hue'yu koruyup koyulaştırmak
+              çözmüyor: okunabilir bir gümüş (#7b746a) madalyasız sıralamanın
+              soluk tonundan (#7c6c5d) ayırt edilemiyor, yani ikinci sıra
+              dördüncüyle aynı görünürdü.
+              Uygulamanın kendi dili dolu zemin + beyaz içerik (seviye rozeti,
+              başarı rozeti) ve o ölçekte üçü de eşiği geçiyor (4.44 / 3.79 /
+              3.62; büyük-kalın yazı ve grafik eşiği 3.0).
+            */}
+            <View style={{ width: 26, alignItems: "center" }}>
+              {mc ? (
+                <View style={{ width: 26, height: 26, borderRadius: 13, alignItems: "center", justifyContent: "center", backgroundColor: mc }}>
+                  <Text variant="bodyStrong" color="#fff">{r.rank}</Text>
+                </View>
+              ) : (
+                <Text variant="h3" color={colors.textMuted}>{r.rank}</Text>
+              )}
+            </View>
             <View style={{ width: 36, height: 36, borderRadius: 18, alignItems: "center", justifyContent: "center", backgroundColor: r.isMe ? colors.primary : colors.surface2 }}>
               <Text variant="bodyStrong" color={r.isMe ? "#fff" : colors.textMuted}>{initial}</Text>
             </View>
