@@ -283,6 +283,7 @@ export const tr: Record<string, string> = {
   "inbox.sign_in_required": "Giriş gerekli",
   "inbox.sign_in": "Giriş yap",
   "inbox.requests_reactions_nudges_quests": "İstekler, tepkiler, dürtmeler, görevler",
+  "item.repeat_note": "Bu egzersizi daha önce tamamlamıştın — XP yalnızca en iyi skorunu geçince eklenir.",
   "item.this_exercise_can_t_be_opened": "Bu alıştırma şu an açılamıyor.",
   "item.content": "İçerik",
   "item.listen_and_understand": "Dinle ve anla",

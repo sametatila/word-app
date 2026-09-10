@@ -280,6 +280,7 @@ export const deBase: Record<string, string> = {
   "inbox.sign_in_required": "Anmeldung nötig",
   "inbox.sign_in": "Anmelden",
   "inbox.requests_reactions_nudges_quests": "Anfragen, Reaktionen, Anstupser, Aufgaben",
+  "item.repeat_note": "Diese Übung hattest du schon — XP gibt es erst, wenn du deine Bestleistung übertriffst.",
   "item.this_exercise_can_t_be_opened": "Diese Übung kann gerade nicht geöffnet werden.",
   "item.content": "Inhalt",
   "item.listen_and_understand": "Hören und verstehen",

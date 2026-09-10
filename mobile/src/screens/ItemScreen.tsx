@@ -97,6 +97,14 @@ export function ItemScreen() {
    * gösteriliyor ve web burada da gösteriyor (`player-shell` beş alan okuyor).
    */
   const [earnedXp, setEarnedXp] = useState(0);
+  /*
+   * SIFIR XP'NİN SEBEBİ SÖYLENİYOR. Aynı egzersizi tekrar bitiren kullanıcı
+   * yalnız "0 XP" (yani hiçbir şey) görüyordu; sebep sunucunun yanıtında
+   * yazılıydı (`repeat`) ve okunmuyordu. Web `player-shell` bunu bir satırla
+   * söylüyor. Sessiz sıfır, kapalı düğmenin sebepsizliğiyle aynı sınıf.
+   */
+  const [repeatNoXp, setRepeatNoXp] = useState(false);
+  const [streak, setStreak] = useState(0);
   const [round, setRound] = useState(0);
 
   const kind = params.kind as ItemKind;
@@ -117,8 +125,10 @@ export function ItemScreen() {
         body: JSON.stringify({ id: exercise.id, correct: c, score, day: todayStr(), seconds: Math.round((Date.now() - startedAt.current) / 1000) }),
       });
       if (res.ok) {
-        const d = (await res.json()) as { xpGained?: number };
+        const d = (await res.json()) as { xpGained?: number; repeat?: boolean; currentStreak?: number };
         if (typeof d.xpGained === "number") setEarnedXp(d.xpGained);
+        setRepeatNoXp(d.repeat === true && d.xpGained === 0);
+        if (typeof d.currentStreak === "number") setStreak(d.currentStreak);
         bumpStats(); // XP/seri değişti
       }
     } catch { /* çevrimdışı: yerel işaret yeterli */ }
@@ -127,6 +137,7 @@ export function ItemScreen() {
   function retry() {
     /* Yeniden denemede eski XP satırı kalmasın: yeni sonuç yeni cevabı bekler. */
     setEarnedXp(0);
+    setRepeatNoXp(false);
     saved.current = false;
     setFinished(false);
     setCorrect(0);
@@ -208,7 +219,13 @@ export function ItemScreen() {
             <Text variant="h2">{exercise.skill === "writing" || exercise.monologue ? t("item.tasks_done") : t("common.n_correct", { correct: correct, total: total })}</Text>
             {/* Kazanılan XP — `GameScreen` ile aynı biçim (`+N XP`). */}
             {earnedXp > 0 ? (
-              <Text variant="h2" color={colors.primaryText}>{`+${earnedXp} XP`}</Text>
+              <View style={{ alignItems: "center", gap: 2 }}>
+                <Text variant="h2" color={colors.primaryText}>{`+${earnedXp} XP`}</Text>
+                {streak > 0 ? <Text variant="caption" color={colors.streakText}>{t("social.days_streak", { n: streak })}</Text> : null}
+              </View>
+            ) : null}
+            {repeatNoXp ? (
+              <Text variant="caption" color={colors.textMuted} style={{ textAlign: "center" }}>{t("item.repeat_note")}</Text>
             ) : null}
             {exercise.skill !== "writing" && !exercise.monologue ? <Text variant="caption" color={colors.textMuted}>{t("item.score_pct", { pct })}</Text> : null}
             <View style={{ flexDirection: "row", gap: spacing.sm, alignSelf: "stretch", marginTop: spacing.sm }}>
