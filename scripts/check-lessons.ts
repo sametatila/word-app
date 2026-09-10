@@ -35,9 +35,21 @@ console.log(`Katalog: ${LESSONS.length} ders\n`);
 
 // ── Katalog bütünlüğü ──
 check("kimlikler benzersiz", new Set(LESSONS.map((l) => l.id)).size === LESSONS.length);
-check("kimlikler kurallı (de-a1-slug)",
-  LESSONS.every((l) => new RegExp(`^${l.course === "gsw-zh" ? "zh" : "de"}-${l.level.toLowerCase()}-[a-z0-9-]+$`).test(l.id)),
-  `(${LESSONS.filter((l) => !new RegExp(`^de-${l.level.toLowerCase()}-[a-z0-9-]+$`).test(l.id)).map((l) => l.id).slice(0, 4).join(", ")})`);
+/*
+  Kimlik ÖNEKİ kursa bağlı: `de-a1-…`, `zh-a1-…`, `en-a1-…`.
+
+  Kural eskiden yalnız iki kursu biliyordu ("gsw-zh ise zh, değilse de") ve
+  İngilizce kurs eklenince `en-a1-hello` gibi DOĞRU kimlikleri hata sayıyordu —
+  dört ders yüzünden kapı kırmızı duruyordu. Aynı sınıf bu depoda başka
+  yerlerde de çıktı (`speechLocale`, sabit `lang="de"`): tek kurs varsayımı,
+  kurs eklenince sessizce yanlışa dönüşüyor.
+*/
+const idPrefix = (course: string) => (course === "gsw-zh" ? "zh" : course);
+const idOk = (l: { id: string; course: string; level: string }) =>
+  new RegExp(`^${idPrefix(l.course)}-${l.level.toLowerCase()}-[a-z0-9-]+$`).test(l.id);
+check("kimlikler kurallı (kurs-seviye-slug)",
+  LESSONS.every(idOk),
+  `(${LESSONS.filter((l) => !idOk(l)).map((l) => l.id).slice(0, 4).join(", ")})`);
 check("kimlikle bulunuyor", findLesson(LESSONS[0].id)?.id === LESSONS[0].id);
 check("kurs süzgeci karıştırmıyor", lessonsFor("gsw-zh").every((l) => l.course === "gsw-zh"));
 
@@ -72,11 +84,19 @@ for (const l of LESSONS) {
     l.lecture.every((s) => s.say.length > 0 && s.say.every((seg) => seg.text.trim().length > 0)),
     "bütün segmentler dolu",
   );
+  /*
+    Segment ya ANADİL ya KURSUN HEDEF DİLİ. Kural eskiden yalnız "tr" ve "de"
+    kabul ediyordu; İngilizce dersler doğru biçimde `en` segmenti taşıyor ve
+    kapı onları hata sayıyordu. Ölçüldü: `de` kursu {de, tr}, `en` kursu
+    {en, tr} kullanıyor - başka dil yok.
+  */
+  const targetLang = l.course === "en" ? "en" : "de";
   ok(
     l.lecture.every((s) =>
-      s.say.every((seg) => seg.lang === "tr" || seg.lang === "de"),
+      s.say.every((seg) => seg.lang === "tr" || seg.lang === targetLang),
     ),
     "segment dilleri geçerli",
+    `(${l.course} → tr/${targetLang})`,
   );
   // Almanca metin Türkçe segmentte durmamalı: seslendirme dili segmentten
   // seçiliyor, karışan dil yanlış sesle okunur. Sezgisel yalnızca Türkçede
