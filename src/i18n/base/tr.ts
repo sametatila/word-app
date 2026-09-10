@@ -807,6 +807,7 @@ export const trBase: Record<string, string> = {
   "rounds.ask_native": "{nativeLang} karşılığı?",
   "rounds.ask_target": "{target} karşılığı?",
   "rounds.got_it": "Bildim",
+  "rounds.cloze_typed": "Yazarak Tamamla",
   "rounds.fill_blank": "Boşluğu doldur",
   "rounds.show_answer": "Cevabı göster",
   "rounds.plural": "Çoğulu?",

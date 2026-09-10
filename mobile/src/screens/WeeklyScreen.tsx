@@ -11,7 +11,7 @@ import { XIcon } from "../ui/icons";
 import { ProgressRing } from "../ui/ProgressRing";
 import { RoundView } from "../game/rounds";
 import { fetchWeekly, submitWeekly, type WeeklyStatus } from "../game/weekly";
-import { todayStr } from "../game/session";
+import { todayStr, type DoneExtra } from "../game/session";
 import type { Round, AnswerOut } from "../game/session";
 import { ApiError } from "../api/client";
 import { track } from "../lib/track";
@@ -62,14 +62,23 @@ export function WeeklyScreen() {
   }
   useEffect(() => { load(); }, []);
 
-  function onDone(ok: boolean, batch?: { wordId: number; correct: boolean }[]) {
+  function onDone(ok: boolean, extra?: DoneExtra) {
+    const batch = extra?.batch;
     const r = rounds[idx];
     const lat = Math.max(0, Date.now() - roundStart.current);
     if (batch && batch.length && r) {
-      for (const b of batch) if (b.wordId) answers.current.push({ wordId: b.wordId, game: r.game, correct: b.correct, latencyMs: lat });
+      /* Yığın turunda hata tipi kelime başına: doğru eşleşenin hatası yok. */
+      for (const b of batch) if (b.wordId) answers.current.push({ wordId: b.wordId, game: r.game, correct: b.correct, latencyMs: lat, ...(b.correct ? {} : { errorType: "meaning" as const }) });
     } else {
       const wordId = r?.word?.id ?? r?.words?.[0]?.id ?? 0;
-      if (wordId && r) answers.current.push({ wordId, game: r.game, correct: ok, latencyMs: lat });
+      if (wordId && r) {
+        answers.current.push({
+          wordId, game: r.game, correct: ok, latencyMs: lat,
+          ...(extra?.errorType ? { errorType: extra.errorType } : {}),
+          ...(extra?.detail ? { detail: extra.detail } : {}),
+          ...(extra?.quality != null ? { quality: extra.quality } : {}),
+        });
+      }
     }
     roundStart.current = Date.now();
     const next = idx + 1;

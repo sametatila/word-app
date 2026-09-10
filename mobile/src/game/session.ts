@@ -1,5 +1,6 @@
 import { api } from "../api/client";
 import { supportsGame } from "../lib/courses";
+import type { ErrorType } from "../lib/errors";
 
 /**
  * GERÇEK oyun oturumu — web API'siyle aynı sözleşme (sunucudan gerçek kelimeler
@@ -45,6 +46,15 @@ export type Round = {
   tail?: string;
   /** translate: kabul edilen başka kuruluşlar. */
   alternatives?: string[];
+  /**
+   * cloze: "type" ise boşluk YAZILARAK dolduruluyor, şıkla değil.
+   *
+   * Sunucu bunu sağlamlığa göre veriyor (`lib/ladder` `clozeTypeChance`:
+   * sağlam kelimede yarı yarıya, oturmuşta dörtte bir) ve web okuyordu; mobil
+   * alanı hiç tanımıyordu, yani zorlaştırma Androidde HİÇ olmuyordu - şıklar
+   * her seferinde çiziliyor ve tur olduğundan kolay geçiyordu.
+   */
+  mode?: "type";
 };
 
 export type SessionMeta = {
@@ -73,7 +83,25 @@ export type AnswerOut = {
   correct: boolean;
   latencyMs: number;
   quality?: number;
+  /**
+   * Hata tipi — web `Answer` ile aynı alan.
+   *
+   * Uç (`/api/answers`, `/api/exam`) bunu baştan beri doğruluyor ve
+   * `lib/error-analytics` hata dökümünü buradan çıkarıyor; mobil hiç
+   * göndermiyordu, yani yalnız Androidde çalışan bir kullanıcının dökümü
+   * boştu ve SRS ağırlığı (`srsWeightFor`) hep 1 sayılıyordu.
+   */
+  errorType?: ErrorType;
   detail?: string;
+};
+
+/** Tur bileşeninin sonuca ekleyebildiği alanlar (bkz. `game/rounds` `Done`). */
+export type DoneExtra = {
+  /** Çok kelimeli tur (eşleştirme): her kelimenin sonucu ayrı. */
+  batch?: { wordId: number; correct: boolean }[];
+  errorType?: ErrorType;
+  detail?: string;
+  quality?: number;
 };
 
 export function todayStr(): string {

@@ -805,6 +805,7 @@ export const en: Record<string, string> = {
   "rounds.ask_native": "In {nativeLang}?",
   "rounds.ask_target": "In {target}?",
   "rounds.got_it": "Got it",
+  "rounds.cloze_typed": "Complete by Typing",
   "rounds.fill_blank": "Fill the blank",
   "rounds.show_answer": "Show answer",
   "rounds.plural": "Plural?",

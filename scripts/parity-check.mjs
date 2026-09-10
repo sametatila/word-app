@@ -549,6 +549,63 @@ console.log("\n" + C.b + "17. CUMLE HAKEMI" + C.off);
   );
 }
 
+/* ── 18. tur -> hata tipi ────────────────────────────────────────────────── */
+/*
+ * Her oyunun YANLIŞ cevabına hangi hata tipini yazdığı iki tarafta aynı olmalı:
+ * `lib/error-analytics` dökümü ve SRS ağırlığı (`srsWeightFor`) bu tipe bakıyor.
+ * Mobil bu turdan önce hiç göndermiyordu (bkz. web-parity §11.19); artık
+ * gönderiyor ve tablonun ayrışmaması gerekiyor.
+ *
+ * `free_sentence` webde var, mobilde oynatıcısı yok (§11.13) - listeye
+ * girmiyor.
+ */
+console.log("\n" + C.b + "18. TUR -> HATA TIPI" + C.off);
+{
+  const OYUN = {
+    artikel: "ArtikelRound",
+    choice: "ChoiceRound",
+    cloze: "ClozeRound",
+    listen: "ListenRound",
+    order: "OrderRound",
+    plural: "PluralRound",
+    scramble: "ScrambleRound",
+    truefalse: "TrueFalseRound",
+    typing: "TypingRound",
+    translate: "TranslateRound",
+  };
+  /* `miss(...)`in ikinci argumani: ya tirnakli tip ya siniflandirici adi. */
+  const tipOf = (metin) => {
+    /* Ucluye de bakiyor: cloze yazarak modda siniflandirici, sikta "meaning". */
+    const u = metin.match(/miss\(\s*[^,]+,\s*typeMode \? (classify\w+)\([^)]*\) : "(\w+)"/s);
+    if (u) return `${u[1]}|${u[2]}`;
+    const m = metin.match(/miss\(\s*[^,]+,\s*(?:"(\w+)"|(classify\w+)\()/s);
+    if (m) return m[1] ?? m[2];
+    const e = metin.match(/errorType: m\.errorType/);
+    return e ? "sentenceMatch" : "?";
+  };
+  const mob = read("mobile/src/game/rounds.tsx");
+  const bolum = (fn) => {
+    const i = mob.indexOf(`function ${fn}(`);
+    if (i < 0) return `${fn} YOK`;
+    const j = mob.indexOf("\nfunction ", i + 1);
+    return mob.slice(i, j < 0 ? undefined : j);
+  };
+  const satirlar = (get) => Object.keys(OYUN).sort().map((g) => `${g}:${get(g)}`);
+  sameList(
+    "tur -> hata tipi",
+    satirlar((g) => tipOf(bolum(OYUN[g]))),
+    satirlar((g) => tipOf(read(`src/components/games/${g}-game.tsx`))),
+  );
+}
+
+  /* cloze `mode` alani: sunucu "type" gonderiyor, iki istemci de okumali. */
+  const clozeMode = (src) => (/round\.mode === "type"/.test(src) ? ["type modu okunuyor"] : ["type modu OKUNMUYOR"]);
+  sameList(
+    "cloze yazarak modu",
+    clozeMode(read("mobile/src/game/rounds.tsx")),
+    clozeMode(read("src/components/games/cloze-game.tsx")),
+  );
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"

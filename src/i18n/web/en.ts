@@ -213,7 +213,6 @@ export const enWeb: Record<string, string> = {
   "plan.review_goal": "goal {n} reviews · new words",
   /* Tur içindeki oyunlar — mobilin `rounds.*` sözlüğünün web'de karşılığı
      olmayan kalemleri, kelime türü etiketleri ve cümle hakeminin kararları. */
-  "rounds.cloze_typed": "Complete by Typing",
   "rounds.write_in_blank": "Fill the blank… ({hint})",
   "rounds.write_sentence_ph": "Write the sentence…",
   "rounds.write_a_sentence_ph": "Write a sentence…",

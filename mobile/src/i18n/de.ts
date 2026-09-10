@@ -805,6 +805,7 @@ export const de: Record<string, string> = {
   "rounds.ask_native": "Auf {nativeLang}?",
   "rounds.ask_target": "Auf {target}?",
   "rounds.got_it": "Gewusst",
+  "rounds.cloze_typed": "Tippend ergänzen",
   "rounds.fill_blank": "Lücke füllen",
   "rounds.show_answer": "Antwort zeigen",
   "rounds.plural": "Plural?",

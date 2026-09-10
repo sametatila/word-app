@@ -213,7 +213,6 @@ export const deWeb: Record<string, string> = {
   "plan.review_goal": "Ziel {n} Wiederholungen · neue Wörter",
   /* Tur içindeki oyunlar — mobilin `rounds.*` sözlüğünün web'de karşılığı
      olmayan kalemleri, kelime türü etiketleri ve cümle hakeminin kararları. */
-  "rounds.cloze_typed": "Tippend ergänzen",
   "rounds.write_in_blank": "Lücke füllen… ({hint})",
   "rounds.write_sentence_ph": "Schreib den Satz…",
   "rounds.write_a_sentence_ph": "Schreib einen Satz…",

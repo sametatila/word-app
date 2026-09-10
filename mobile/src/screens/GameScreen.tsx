@@ -15,7 +15,7 @@ import { ProgressRing } from "../ui/ProgressRing";
 import { Mascot } from "../ui/Mascot";
 import { Celebrate } from "../ui/Celebrate";
 import { RoundView } from "../game/rounds";
-import { fetchSession, submitAnswers, todayStr, PRACTICE_GAMES, type Round, type AnswerOut, type SessionProgress } from "../game/session";
+import { fetchSession, submitAnswers, todayStr, PRACTICE_GAMES, type Round, type AnswerOut, type DoneExtra, type SessionProgress } from "../game/session";
 import { ApiError } from "../api/client";
 import { track } from "../lib/track";
 import { sfx } from "../lib/sfx";
@@ -164,16 +164,25 @@ export function GameScreen() {
     };
   }, []);
 
-  function onDone(ok: boolean, batch?: { wordId: number; correct: boolean }[]) {
+  function onDone(ok: boolean, extra?: DoneExtra) {
+    const batch = extra?.batch;
     if (idxRef.current !== idx) return; // çift "Devam" / geç tıklama koruması
     const r = rounds[idx];
     const lat = Math.max(0, Date.now() - roundStart.current);
     if (batch && batch.length && r) {
       // Çok kelimeli tur (match): her kelimenin SRS'i ayrı yazılır.
-      for (const b of batch) if (b.wordId) answers.current.push({ wordId: b.wordId, game: r.game, correct: b.correct, latencyMs: lat });
+      /* Yığın turunda hata tipi kelime başına: doğru eşleşenin hatası yok. */
+      for (const b of batch) if (b.wordId) answers.current.push({ wordId: b.wordId, game: r.game, correct: b.correct, latencyMs: lat, ...(b.correct ? {} : { errorType: "meaning" as const }) });
     } else {
       const wordId = r?.word?.id ?? r?.words?.[0]?.id ?? 0;
-      if (wordId && r) answers.current.push({ wordId, game: r.game, correct: ok, latencyMs: lat });
+      if (wordId && r) {
+        answers.current.push({
+          wordId, game: r.game, correct: ok, latencyMs: lat,
+          ...(extra?.errorType ? { errorType: extra.errorType } : {}),
+          ...(extra?.detail ? { detail: extra.detail } : {}),
+          ...(extra?.quality != null ? { quality: extra.quality } : {}),
+        });
+      }
     }
     roundsSeen.current += 1;
     if (ok) roundsRight.current += 1;

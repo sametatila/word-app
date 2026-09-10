@@ -1311,12 +1311,14 @@ BOŞ ve SRS'i yalnız doğru/yanlış görüyor.
   hatası artık cümleyi tam yanlış saymıyor. `parity-check` 17. bölümü ve
   `mobile/__tests__/sentenceMatch.test.ts` bunu bağlıyor.
 
-  **2. Cevap yükü — SIRADA.** `AnswerOut`a `errorType` eklenmesi ve
-  `quality`nin gerçekten atanması. Bu, tur bileşenlerinin `onDone(ok: boolean)`
-  sözleşmesini değiştiriyor (`markAnswer`/`onDone` yalnız boolean taşıyor), o
-  yüzden hakem portundan ayrı tutuldu. Hüküm artık mobilde de üretiliyor ama
-  sunucuya yalnız doğru/yanlış gidiyor - yani SRS hâlâ kaba, hata tipi dökümü
-  hâlâ boş.
+  **2. Cevap yükü — YAPILDI.** `AnswerOut`a `errorType` eklendi ve `Done`
+  sözleşmesi `(correct, extra?: DoneExtra)` oldu; on tur web karşılığıyla aynı
+  tipi gönderiyor (`lib/errors` `miss` portu). Çevir turu `quality`yi de
+  gönderiyor. `parity-check` 18. bölümü tur→tip tablosunu karşılaştırıyor.
+
+  Tek fark bilerek kaldı: web ipucu kullanıldığında kaliteyi 3'e kırpıyor,
+  mobilde `HintRow` bunu dışarı bildirmiyor. Kırpma için ipucu durumunun tur
+  bileşenine çıkması gerekiyor - ayrı iş.
 
   **3. Fark vurgusu arayüzü** (webde `TokenDiff`) — 2'den sonra.
 
@@ -1328,3 +1330,23 @@ indirdiği için "at six o'clock" ile "at 5 o'clock" arasındaki fark tek
 karakter ("6" ↔ "5") oluyordu ve hakem bunu YAZIM HATASI sayıp kalite 4
 veriyordu - yanlış saat yazan öğrenci neredeyse doğru sayılıyordu. Rakam ile
 rakam arasındaki fark artık hiçbir zaman yazım hatası değil.
+
+### 11.20 Cloze "yazarak" modu Androidde hiç olmuyordu
+
+Sunucu boşluk doldurma turunu iki biçimde veriyor ve seçim SAĞLAMLIĞA bağlı:
+`lib/session` `mode: Math.random() < clozeTypeChance(strength) ? "type" : undefined`
+(`lib/ladder`: sağlam kelimede yarı yarıya, oturmuşta dörtte bir). Web bunu
+okuyor ve şıkları kaldırıp metin girişi çiziyor.
+
+Mobilin `Round` tipinde `mode` alanı HİÇ YOKTU: alan sessizce düşüyor ve tur
+her seferinde şıklarla çiziliyordu. Yani kademeli zorlaştırma Androidde hiç
+gerçekleşmiyordu - öğrenci sağlam bir kelimeyi yazarak değil tanıyarak
+geçiyordu ve SRS de o kolay kanıtı görüyordu.
+
+Düzeltildi: `mode?: "type"`, yazarak modda metin girişi + kontrol düğmesi,
+katlamalı karşılaştırma (boşluksuz yedekle) ve hata tipi `classifyTyping`.
+Şıklar sunucudan yine geliyor çünkü basamak inişi onlara dönüyor; yalnız
+çizilmiyorlar. `rounds.cloze_typed` anahtarı mobil sözlüğe eklendi ve
+`i18n-pull` ile tabana çekildi (webdeki web-özel kopyası kaldırıldı - artık
+tek kaynak mobil). `parity-check` 18. bölümü iki istemcinin de `mode`u
+okuduğunu denetliyor.

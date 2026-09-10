@@ -1,7 +1,9 @@
 import React, { useEffect, useRef, useState } from "react";
 import { t as tx, nativeLangName, targetLangName } from "../lib/i18n";
 import { foldCase, foldCompare, foldTight } from "../lib/textFold";
-import { matchSentence } from "../lib/sentenceMatch";
+import { matchSentence, type SentenceMatch } from "../lib/sentenceMatch";
+import { classifyOrder, classifyTyping, miss } from "../lib/errors";
+import type { DoneExtra } from "./session";
 import { currentTargetLang } from "../lib/courses";
 import { View, TextInput, ScrollView, Keyboard, Platform, Animated } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
@@ -87,7 +89,16 @@ function ExampleBlock({ de, tr, en, colors }: { de: string | null; tr: string | 
 /** der/die/das renk tonu. */
 const ARTIKEL_TONE: Record<string, string> = { der: "#0284c7", die: "#e11d48", das: "#0d9488" };
 
-type Done = (correct: boolean, batch?: { wordId: number; correct: boolean }[]) => void;
+/**
+ * Turun sonucu. `extra` HATA TİPİNİ ve SRS kalitesini taşıyor.
+ *
+ * Eskiden yalnız `correct` ve çok kelimeli turların yığını vardı: sunucuya
+ * giden cevapta `errorType` HİÇ YOKTU ve `quality` hiç atanmıyordu. Web her
+ * oyunda ikisini de gönderiyor (`lib/errors` `miss`), yani yalnız Androidde
+ * çalışan bir kullanıcının hata tipi dökümü boş kalıyor ve SRS'i cevabı
+ * yalnız doğru/yanlış görüyordu (bkz. web-parity §11.19).
+ */
+type Done = (correct: boolean, extra?: DoneExtra) => void;
 
 /** Cevap sonrası geri bildirim verisi — web VerdictBar'ın taşıdığı bilgi. */
 type Feedback = {
@@ -333,7 +344,7 @@ function ChoiceRound({ round, onDone, colors }: { round: Round; onDone: Done; co
     setFb({ correct: ok, answerDe: withArtikel(word), tr: word.tr, en: word.en, why: ok ? null : whyMeaning(word, o.text) });
   }
   return (
-    <RoundShell sheet={fb ? <FeedbackFooter data={fb} onContinue={() => onDone(fb.correct)} colors={colors} /> : undefined}>
+    <RoundShell sheet={fb ? <FeedbackFooter data={fb} onContinue={() => onDone(fb.correct, miss(fb.correct, "meaning", picked))} colors={colors} /> : undefined}>
       <Prompt label={deSide ? tx("rounds.ask_native", { nativeLang: nativeLangName() }) : tx("rounds.ask_target", { target: targetLangName() })} big={question} speakText={deSide ? question : null} sub={!deSide ? word.en : null} colors={colors} />
       <MascotMid mood={picked ? (picked === answer ? "thumbsup" : "sad") : "idle"} hidden={!!fb} />
       <View style={{ gap: spacing.md }}>
@@ -358,7 +369,7 @@ function ArtikelRound({ round, onDone, colors }: { round: Round; onDone: Done; c
     setFb({ correct: ok, answerDe: withArtikel(word), tr: word.tr, en: word.en, why: ok ? null : whyArticle(word) });
   }
   return (
-    <RoundShell sheet={fb ? <FeedbackFooter data={fb} onContinue={() => onDone(fb.correct)} colors={colors} /> : undefined}>
+    <RoundShell sheet={fb ? <FeedbackFooter data={fb} onContinue={() => onDone(fb.correct, miss(fb.correct, "article", picked))} colors={colors} /> : undefined}>
       <Prompt label={tx("rounds.which_article")} big={word.de} speakText={withArtikel(word)} sub={meaningLine(word)} colors={colors} />
       <MascotMid mood={picked ? (picked === word.artikel ? "thumbsup" : "sad") : "idle"} hidden={!!fb} />
       <View style={{ flexDirection: "row", gap: spacing.md }}>
@@ -384,7 +395,7 @@ function TrueFalseRound({ round, onDone, colors }: { round: Round; onDone: Done;
     setFb({ correct: ok, answerDe: withArtikel(word), tr: word.tr, en: word.en, why: ok ? null : whyMeaning(word, null) });
   }
   return (
-    <RoundShell sheet={fb ? <FeedbackFooter data={fb} onContinue={() => onDone(fb.correct)} colors={colors} /> : undefined}>
+    <RoundShell sheet={fb ? <FeedbackFooter data={fb} onContinue={() => onDone(fb.correct, miss(fb.correct, "meaning", round.claim?.text ?? null))} colors={colors} /> : undefined}>
       <Prompt label={tx("rounds.correct")} big={withArtikel(word)} speakText={withArtikel(word)} sub={round.claim ? meaningLine({ tr: round.claim.text, en: round.claim.sub }) : meaningLine(word)} colors={colors} />
       <MascotMid mood={ans !== null ? (ans === round.isTrue ? "thumbsup" : "sad") : "idle"} hidden={!!fb} />
       <View style={{ flexDirection: "row", gap: spacing.md }}>
@@ -450,7 +461,7 @@ function TypingRound({ round, onDone, colors }: { round: Round; onDone: Done; co
     </View>
   );
   return (
-    <RoundShell footer={inputBlock} sheet={fb ? <FeedbackFooter data={fb} onContinue={() => onDone(fb.correct)} colors={colors} /> : undefined}>
+    <RoundShell footer={inputBlock} sheet={fb ? <FeedbackFooter data={fb} onContinue={() => onDone(fb.correct, miss(fb.correct, classifyTyping(val, [word.de, withArtikel(word), ...(round.alternatives ?? [])]), val))} colors={colors} /> : undefined}>
       <Prompt label={tx("rounds.write_equivalent", { lang: targetLangName() })} big={word.tr} sub={word.en} colors={colors} />
       <MascotMid mood={fb === null ? "idle" : fb.correct ? "thumbsup" : "sad"} hidden={!!fb} />
     </RoundShell>
@@ -461,33 +472,65 @@ function ClozeRound({ round, onDone, colors }: { round: Round; onDone: Done; col
   const opts = (round.options as unknown as string[] | undefined) ?? [];
   const answer = round.answer ?? "";
   const full = fillBlank(round.sentence, answer);
+  const typeMode = round.mode === "type";
   const [picked, setPicked] = useState<string | null>(null);
+  const [val, setVal] = useState("");
   const [fb, setFb] = useState<Feedback | null>(null);
   function choose(o: string) {
     if (picked) return;
-    const ok = o === answer;
+    /* Yazarak modda karşılaştırma katlamalı (web `matchesAnswer` ile aynı
+       ilke): büyük/küçük, noktalama ve boşluksuz yazım bağışlı. */
+    const lang = currentTargetLang();
+    const ok = typeMode
+      ? (!!foldCompare(o, lang) && foldCompare(o, lang) === foldCompare(answer, lang))
+        || (!!foldTight(o, lang) && foldTight(o, lang) === foldTight(answer, lang))
+      : o === answer;
     setPicked(o);
     markAnswer(ok, full); // web: cevapta TAM tamamlanmış cümleyi oku
     // Geri bildirimde de sadece kelimeyi değil TAM cümleyi göster (çeviri anlamlı olsun).
     setFb({ correct: ok, answerDe: full, tr: round.sentenceTr ?? null, en: round.sentenceEn ?? null });
   }
   return (
-    <RoundShell sheet={fb ? <FeedbackFooter data={fb} onContinue={() => onDone(fb.correct)} colors={colors} /> : undefined}>
+    <RoundShell sheet={fb ? <FeedbackFooter data={fb} onContinue={() => onDone(fb.correct, miss(fb.correct, typeMode ? classifyTyping(picked ?? "", [answer]) : "meaning", picked))} colors={colors} /> : undefined}>
       <View style={[{ backgroundColor: colors.surface, borderRadius: radii.xl, padding: spacing.xl, borderWidth: 1, borderColor: colors.hairline, marginBottom: spacing.md }, softShadow("#5a3418", 10)]}>
-        <Text variant="micro" color={colors.textMuted} style={{ textTransform: "uppercase", letterSpacing: 1, marginBottom: spacing.md }}>{tx("rounds.fill_blank")}</Text>
+        <Text variant="micro" color={colors.textMuted} style={{ textTransform: "uppercase", letterSpacing: 1, marginBottom: spacing.md }}>{tx(typeMode ? "rounds.cloze_typed" : "rounds.fill_blank")}</Text>
         <View style={{ flexDirection: "row", alignItems: "flex-start", gap: spacing.sm }}>
           <Text variant="h2" style={{ flex: 1, lineHeight: 32 }}>{round.sentence}</Text>
           <SpeakButton text={round.sentence ?? ""} colors={colors} size={22} />
         </View>
         {round.sentenceTr ? <Text variant="body" color={colors.textMuted} style={{ marginTop: spacing.sm }}>{round.sentenceTr}</Text> : null}
       </View>
-      <MascotMid mood={picked ? (picked === answer ? "thumbsup" : "sad") : "idle"} hidden={!!fb} />
-      <View style={{ gap: spacing.md }}>
-        {opts.map((o) => {
-          const st = picked ? (o === answer ? "correct" : o === picked ? "wrong" : "idle") : "idle";
-          return <OptionButton key={o} text={o} state={st} onPress={() => choose(o)} colors={colors} />;
-        })}
-      </View>
+      <MascotMid mood={picked ? (fb?.correct ? "thumbsup" : "sad") : "idle"} hidden={!!fb} />
+      {/* Yazarak modda şıklar ÇİZİLMİYOR: web de öyle yapıyor, şıkları
+          göstermek zorlaştırmanın kendisini geri alırdı. Şıklar yine
+          sunucudan geliyor çünkü basamak inişi onlara dönüyor. */}
+      {typeMode ? (
+        <View>
+          <TextInput
+            value={val}
+            onChangeText={setVal}
+            autoCapitalize="none"
+            autoCorrect={false}
+            editable={!picked}
+            placeholder={tx("rounds.type")}
+            placeholderTextColor={colors.textFaint}
+            onSubmitEditing={() => { if (val.trim()) choose(val.trim()); }}
+            returnKeyType="done"
+            blurOnSubmit={false}
+            style={{ backgroundColor: colors.surface, borderRadius: radii.lg, borderWidth: 1.5, borderColor: colors.border, paddingHorizontal: spacing.lg, paddingVertical: 16, color: colors.text, fontSize: 18 }}
+          />
+          <PressableScale onPress={() => { if (val.trim()) choose(val.trim()); }} style={[{ marginTop: spacing.md, borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: 15, alignItems: "center" }, softShadow(colors.primary, 8)]}>
+            <Text variant="h3" color="#fff">{tx("common.check")}</Text>
+          </PressableScale>
+        </View>
+      ) : (
+        <View style={{ gap: spacing.md }}>
+          {opts.map((o) => {
+            const st = picked ? (o === answer ? "correct" : o === picked ? "wrong" : "idle") : "idle";
+            return <OptionButton key={o} text={o} state={st} onPress={() => choose(o)} colors={colors} />;
+          })}
+        </View>
+      )}
     </RoundShell>
   );
 }
@@ -507,7 +550,7 @@ function PluralRound({ round, onDone, colors }: { round: Round; onDone: Done; co
     setFb({ correct: ok, answerDe: `die ${answer}`, tr: word.tr, en: word.en, why: ok ? null : whyPlural(answer) });
   }
   return (
-    <RoundShell sheet={fb ? <FeedbackFooter data={fb} onContinue={() => onDone(fb.correct)} colors={colors} /> : undefined}>
+    <RoundShell sheet={fb ? <FeedbackFooter data={fb} onContinue={() => onDone(fb.correct, miss(fb.correct, "plural", picked))} colors={colors} /> : undefined}>
       <Prompt label={tx("rounds.plural")} big={withArtikel(word)} speakText={withArtikel(word)} sub={meaningLine(word)} colors={colors} />
       <MascotMid mood={picked ? (picked === answer ? "thumbsup" : "sad") : "idle"} hidden={!!fb} />
       <View style={{ gap: spacing.md }}>
@@ -587,7 +630,7 @@ function ListenRound({ round, onDone, colors }: { round: Round; onDone: Done; co
     setFb({ correct: ok, answerDe: withArtikel(word), tr: word.tr, en: word.en, why: ok ? null : whyMeaning(word, o.text) });
   }
   return (
-    <RoundShell sheet={fb ? <FeedbackFooter data={fb} onContinue={() => onDone(fb.correct)} colors={colors} /> : undefined}>
+    <RoundShell sheet={fb ? <FeedbackFooter data={fb} onContinue={() => onDone(fb.correct, miss(fb.correct, "listening", picked))} colors={colors} /> : undefined}>
       <View style={[{ backgroundColor: colors.surface, borderRadius: radii.xl, paddingVertical: spacing.xxl, paddingHorizontal: spacing.lg, alignItems: "center", borderWidth: 1, borderColor: colors.hairline, marginBottom: spacing.md }, softShadow("#5a3418", 10)]}>
         <Text variant="micro" color={colors.textMuted} style={{ textTransform: "uppercase", letterSpacing: 1 }}>{tx("rounds.listen_pick_meaning")}</Text>
         {hideWord ? (
@@ -650,7 +693,7 @@ function ScrambleRound({ round, onDone, colors }: { round: Round; onDone: Done; 
   }
   const brd = fb ? (fb.correct ? colors.success : colors.danger) : colors.border;
   return (
-    <RoundShell sheet={fb ? <FeedbackFooter data={fb} onContinue={() => onDone(fb.correct)} colors={colors} /> : undefined}>
+    <RoundShell sheet={fb ? <FeedbackFooter data={fb} onContinue={() => onDone(fb.correct, miss(fb.correct, "spelling", placed.map((x) => x.char).join("")))} colors={colors} /> : undefined}>
       <Prompt label={tx("rounds.order_letters")} big={word.tr} sub={word.en} colors={colors} />
       <MascotMid mood={fb === null ? "idle" : fb.correct ? "thumbsup" : "sad"} hidden={!!fb} />
       <View>
@@ -699,7 +742,7 @@ function OrderRound({ round, onDone, colors }: { round: Round; onDone: Done; col
   }
   const brd = fb ? (fb.correct ? colors.success : colors.danger) : colors.border;
   return (
-    <RoundShell sheet={fb ? <FeedbackFooter data={fb} onContinue={() => onDone(fb.correct)} colors={colors} /> : undefined}>
+    <RoundShell sheet={fb ? <FeedbackFooter data={fb} onContinue={() => onDone(fb.correct, miss(fb.correct, classifyOrder(placed.map((x) => x.text), answer, tail), placed.map((x) => x.text).join(" ")))} colors={colors} /> : undefined}>
       <Prompt label={tx("rounds.put_sentence_in_order")} big={round.sentenceTr ?? word.tr} sub={round.sentenceEn ?? null} colors={colors} />
       <MascotMid mood={fb === null ? "idle" : fb.correct ? "thumbsup" : "sad"} hidden={!!fb} />
       <View>
@@ -734,14 +777,28 @@ function TranslateRound({ round, onDone, colors }: { round: Round; onDone: Done;
    * mobil cevap yükünde `quality` hiç atanmıyor, `errorType` hiç yok
    * (bkz. web-parity §11.19 adım 2 ve 3).
    */
+  const judged = useRef<SentenceMatch | null>(null);
   function check() {
     if (fb) return;
-    const m = matchSentence(val.trim(), s.de, alts, currentTargetLang());
-    const ok = !!val.trim() && m.quality >= 3 && m.verdict !== "order";
+    const typed = val.trim();
+    const m = matchSentence(typed, s.de, alts, currentTargetLang());
+    const ok = !!typed && m.quality >= 3 && m.verdict !== "order";
+    judged.current = m;
     Keyboard.dismiss();
     markAnswer(ok, s.de); // doğru Almanca cümleyi oku
     setFb({ correct: ok, answerDe: s.de, speakDe: s.de, tr: s.tr, en: s.en });
   }
+  /* Yük web `translate-game` ile aynı: kalite hep, hata tipi yalnız yanlışta.
+     Web ipucu kullanıldığında kaliteyi 3'e kırpıyor; mobilde `HintRow` bunu
+     dışarı bildirmiyor, o yüzden kırpma yok (bkz. web-parity §11.19). */
+  const payload = (): DoneExtra => {
+    const m = judged.current;
+    if (!m) return {};
+    return {
+      quality: m.quality,
+      ...(fb?.correct ? {} : { errorType: m.errorType ?? "meaning", detail: val.trim().slice(0, 60) }),
+    };
+  };
   const inputBlock = (
     <View>
       <TextInput
@@ -761,7 +818,7 @@ function TranslateRound({ round, onDone, colors }: { round: Round; onDone: Done;
     </View>
   );
   return (
-    <RoundShell footer={inputBlock} sheet={fb ? <FeedbackFooter data={fb} onContinue={() => onDone(fb.correct)} colors={colors} /> : undefined}>
+    <RoundShell footer={inputBlock} sheet={fb ? <FeedbackFooter data={fb} onContinue={() => onDone(fb.correct, payload())} colors={colors} /> : undefined}>
       <Prompt label={tx("rounds.translate_into", { lang: targetLangName() })} big={s.tr} sub={s.en} colors={colors} />
       <MascotMid mood={fb === null ? "idle" : fb.correct ? "thumbsup" : "sad"} hidden={!!fb} />
     </RoundShell>
@@ -840,7 +897,7 @@ function MatchRound({ round, onDone, colors }: { round: Round; onDone: Done; col
   const batch = words.map((w) => ({ wordId: w.id, correct: !wrongBefore.current.has(w.id) }));
 
   return (
-    <RoundShell sheet={fb ? <FeedbackFooter data={fb} onContinue={() => onDone(fb.correct, batch)} colors={colors} /> : undefined}>
+    <RoundShell sheet={fb ? <FeedbackFooter data={fb} onContinue={() => onDone(fb.correct, { batch })} colors={colors} /> : undefined}>
       <Text variant="micro" color={colors.textMuted} style={{ textTransform: "uppercase", letterSpacing: 1, marginBottom: spacing.md, marginTop: spacing.md, textAlign: "center" }}>{tx("rounds.match")}</Text>
       <MascotMid mood={fb ? (fb.correct ? "happy" : "idle") : "idle"} hidden={!!fb} />
       <View style={{ flexDirection: "row", gap: spacing.md }}>

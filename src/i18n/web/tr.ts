@@ -238,7 +238,6 @@ export const trWeb: Record<string, string> = {
   "plan.review_goal": "hedef {n} tekrar · yeni kelimeler",
   /* Tur içindeki oyunlar — mobilin `rounds.*` sözlüğünün web'de karşılığı
      olmayan kalemleri, kelime türü etiketleri ve cümle hakeminin kararları. */
-  "rounds.cloze_typed": "Yazarak Tamamla",
   "rounds.write_in_blank": "Boşluğa yaz… ({hint})",
   "rounds.write_sentence_ph": "Cümleyi yaz…",
   "rounds.write_a_sentence_ph": "Bir cümle yaz…",
