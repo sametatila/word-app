@@ -45,6 +45,36 @@ const asNative = dict as unknown as NativeDict;
 
 const errors: string[] = [];
 const H = (m: string) => errors.push(`  ${m}`);
+const warnings: string[] = [];
+
+/**
+ * HECE, SÖZCÜK DEĞİL — taramanın bilerek açık bıraktığı dört dize.
+ *
+ * `isTurkishStem` küçük harfle başlayan `ne`, `mu`, `ve` gibi sözcükleri
+ * Türkçe işareti sayıyor. Telaffuz yazımında bunlar sözcük değil HECE
+ * oluyor: `be-NAA-ne`, `SI-ne-me`, `wo-ne`, `ve-rite`. Almanca okura göre
+ * yazılmış doğru bir hece, Türkçe bir işlev sözcüğüyle aynı harfleri
+ * taşıyabiliyor.
+ *
+ * ÖLÇÜT GEVŞETİLMEDİ, çünkü ölçüldü. 139.077 benzersiz kaynak dizede:
+ *   · tireli zinciri tek sözcük sayan kural 7 GERÇEK Türkçe dize kaybediyor
+ *     ("İş-yaşam dengesi", "E-postayı henüz göndermedim.")
+ *   · "iki işaret birden" kuralı 2.428 dize kaybediyor ("Adınız ne?", "ve")
+ * Dördü kurtarmak için bunları ödemek pahalı; ölçütün kendisi ayrıca
+ * çıkarıcının hangi dizeyi çevireceğine karar veren yer — gevşetmek
+ * Türkçenin İngilizce okurun ekranına sızması demek.
+ *
+ * Muafiyet DİZENİN KENDİSİNE bağlı, alana ya da egzersize değil: içerik
+ * değişip dize kalkarsa kapı bunu ölü muafiyet olarak bildiriyor (uyarı,
+ * hata değil — kardeş oturum kütüphane içeriğini hâlâ yazıyor).
+ */
+const EXEMPT = new Map<string, string>([
+  ["Das „a“ allein ist kein „ei“, sondern ein kurzes „e“. „banana“ = be-NAA-ne.", "be-NAA-ne: schwa hecesi"],
+  ["„the“ = de, „children“ = TSCHIL-dren, „cinema“ = SI-ne-me. In allen dreien steckt ein schwacher Vokal.", "SI-ne-me: schwa hecesi"],
+  ["„cup of“ = ka-pof. Auch „want a“ wächst zusammen: wo-ne.", "wo-ne: schwa hecesi"],
+  ["ve-rite your name", "kaynak içeriği: öğrencinin yanlış okuyuşu, çevrilmiyor"],
+]);
+const exemptSeen = new Set<string>();
 
 /* ---- 1. Dersler -------------------------------------------------------- */
 /* Yalnız İNGİLİZCE kurs. Almanca kursu anadili Almanca olan biri almıyor
@@ -57,7 +87,10 @@ let strings = 0;
 const walk = (v: unknown, id: string): void => {
   if (typeof v === "string") {
     strings++;
-    if (isTurkishStem(v)) leftover.set(v, id);
+    if (isTurkishStem(v)) {
+      if (EXEMPT.has(v)) exemptSeen.add(v);
+      else leftover.set(v, id);
+    }
     return;
   }
   if (Array.isArray(v)) {
@@ -87,8 +120,11 @@ const exercises = (BUNDLED_EXERCISES as unknown as (ExerciseShape & { course?: s
   .filter((e) => e.course === "en");
 let exerciseOk = 0;
 for (const e of exercises) {
-  if (resolveExercise(asNative, e)) exerciseOk++;
-  else H(`[egzersiz] çözülemedi: ${e.id}`);
+  const out = resolveExercise(asNative, e);
+  if (out) {
+    exerciseOk++;
+    walk(out, e.id);
+  } else H(`[egzersiz] çözülemedi: ${e.id}`);
 }
 
 /* ---- 3. Deneme kâğıtları ------------------------------------------------ */
@@ -96,15 +132,26 @@ const papers = (MOCK_PAPERS as unknown as (MockShape & { course?: string; id: st
   .filter((p) => p.course === "en");
 let paperOk = 0;
 for (const p of papers) {
-  if (resolveMockPaper(asNative, p)) paperOk++;
-  else H(`[kâğıt] çözülemedi: ${p.id}`);
+  const out = resolveMockPaper(asNative, p);
+  if (out) {
+    paperOk++;
+    walk(out, p.id);
+  } else H(`[kâğıt] çözülemedi: ${p.id}`);
 }
 
 if (leftover.size) {
-  H(`[tarama] çözülen derste ${leftover.size} Türkçe dize kaldı`);
+  H(`[tarama] çözülen içerikte ${leftover.size} Türkçe dize kaldı`);
   for (const [t, id] of [...leftover].slice(0, 10)) H(`    ${id}: ${JSON.stringify(t.slice(0, 60))}`);
 }
 
+for (const [t, why] of EXEMPT) {
+  if (!exemptSeen.has(t)) warnings.push(`  [muafiyet] içerikte yok, silinebilir — ${why}`);
+}
+
+if (warnings.length) {
+  console.log(`\nUYARI (${warnings.length}):`);
+  console.log(warnings.join("\n"));
+}
 if (errors.length) {
   console.log(`\nHATA (${errors.length}):`);
   console.log(errors.slice(0, 40).join("\n"));
