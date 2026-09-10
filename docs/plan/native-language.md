@@ -439,6 +439,43 @@ Her iki parçadan biri tekrar, ve tekrarlar birkaç kalıpta toplanmış:
 Hat bu yüzden paketleri SIKLIĞA GÖRE sıralıyor (`data/lessons/lecture/`,
 59 paket × 150 dize): **ilk iki paket bütün anlatımın yarısını kapatıyor.**
 
+##### BİTTİ (2026-09-10): 8.824/8.824 dize, 17.293/17.293 parça (%100)
+
+Elli dokuz paketin hepsi yazıldı ve kapı sıfır hata, sıfır uyarıyla
+geçiyor. Kapının yakaladığı gerçek kusurlar hep aynı üç yerdeydi ve
+hiçbiri anlam hatası değildi:
+
+- **son noktalama uyuşmazlığı** — iç içe soru cümlelerinde ve alıntının
+  cümle sonunda kaldığı satırlarda. Sınıfı belirleyen şey CÜMLENİN nerede
+  bittiği, alıntının değil.
+- **satır sayısı** — bir paket 149 ya da 148 satır geldi; eksik satır
+  daima noktalama sınıfı komşularıyla aynı olan bir yerdeydi, o yüzden
+  yalnız sayım yakaladı.
+- **aynı karşılık** — iki ayrı Türkçe istemin tek İngilizce karşılığa
+  düşmesi; bu kural bu iş için eklendi ve on beşe yakın gerçek çakışma
+  buldu.
+
+Asıl iş çeviri değildi. Planın başında ölçülen **1.654 ana dile bağlı
+parça** satır satır karara bağlandı ve dört ayrı işleme ayrıldı:
+
+1. **Karşıtlık eriyor** — kaynak Türkçe ile Almancayı karşı karşıya
+   koyuyor ama İngilizce Almanca gibi davranıyor. En kalabalık grup:
+   soru kelimesinin başta olması, `there is`'in iki kelimesi, tarihte
+   sıra sayısı, düzensiz geçmiş, `twice a week`, `to wear`.
+2. **Karşıtlık duruyor, dilin adı değişiyor** — `either … or`,
+   `although`, `that suits you`, emir kipinin yalın hâli.
+3. **İngilizce ayrık kalıyor** — Türkçe ile Almanca aynı, İngilizce
+   değil: `Ich wohne seit …`, meslek adında artikel, `Verspätung`,
+   `sen/siz` ayrımı. Burada karşılık olmayan bir karşıtlığı EKLİYOR.
+4. **Rahatlatma uyarıya dönüyor** — kaynak 'bu sıra sana yabancı
+   gelmeyecek' diyor ama İngilizce öğrenci için tam tersi. `gefallen`,
+   `helfen`, kip fiilinden sonra asıl fiilin yeri, sayıdan sonra çoğul.
+   Bu grup en tehlikelisiydi: çevrilse öğrenciyi yanlış tarafa
+   hazırlardı.
+
+Ölçüt derse değil SATIRA uygulandı: aynı A1 dersinin içinde birinci ve
+dördüncü durumdan satırlar yan yana çıktı.
+
 #### Şablonlar ayrı bir iş ve çok daha küçük
 
 38 dosya bir `word()` yardımcısı tanımlıyor ve 3.040 kez çağırıyor; her
