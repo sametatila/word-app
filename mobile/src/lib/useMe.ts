@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { setCurrentCourse } from "./courses";
-import { adoptServerLang, t } from "./i18n";
+import { adoptServerLang, dateLocale, t } from "./i18n";
 import { loadOnboardingPrefs } from "./onboardingPrefs";
 import { api } from "../api/client";
 import { useAuth } from "./AuthContext";
@@ -140,8 +140,19 @@ export function formatDuration(seconds: number): string {
   return t("time.hours_minutes_short", { h, m: m % 60 });
 }
 
-/** XP'yi kısaltır: 1240 → "1.2k". */
+/**
+ * XP'yi kısaltır: 1240 → "1,2k" (Türkçe/Almanca) ya da "1.2k" (İngilizce).
+ *
+ * Ondalık ayraç SABİT NOKTAYDI (`toFixed`): Türkçe ve Almanca arayüzde de
+ * "1.2k" yazıyordu, oysa iki dilde de ayraç virgül. Binlik ayraçlı kardeşinde
+ * (`api/social` `groupXp`) aynı kusur vardı; ikisi de artık `dateLocale()`
+ * üzerinden arayüz diline bakıyor.
+ *
+ * Kısaltma bilerek: dar bir karonun içinde tam sayı sığmıyor. Webin aynı
+ * karosu tam sayıyı yazıyor (`formatNumber`) - orada ızgara geniş.
+ */
 export function formatXp(xp: number): string {
   if (xp < 1000) return String(xp);
-  return `${(xp / 1000).toFixed(1).replace(/\.0$/, "")}k`;
+  const k = Math.round(xp / 100) / 10;
+  return `${(Number.isInteger(k) ? k : k.toLocaleString(dateLocale(), { minimumFractionDigits: 1, maximumFractionDigits: 1 }))}k`;
 }
