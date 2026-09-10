@@ -223,7 +223,7 @@ contrastRows([
   ["koyu: soluk / kart", D["--text-muted"], D["--surface"]],
 ]);
 
-title("2. BIRINCIL BUTON  (duz marka turuncusu + beyaz yazi)");
+title("2. BIRINCIL BUTON  (acik: 500 + beyaz  ·  koyu: 400 + murekkep, Android gibi)");
 /*
  * Buton kehribar zemin + koyu kahve yazıydı ve 7.94 ölçüyordu. Marka rengi
  * mobil uygulamanın turuncusuna taşınınca (docs/plan/web-parity.md, Şerit T)
@@ -237,8 +237,15 @@ title("2. BIRINCIL BUTON  (duz marka turuncusu + beyaz yazi)");
  */
 acceptedRows([
   ["beyaz / turuncu 400", W, step("brand", 400), 4.5, "T-KARAR-1 (gradyanin acik ucu)"],
-  ["beyaz / turuncu 500", W, step("brand", 500), 4.5, "T-KARAR-1 (btn-primary, chip-active)"],
+  ["beyaz / turuncu 500", W, step("brand", 500), 4.5, "T-KARAR-1 (acik temada btn-primary, chip-active)"],
   ["beyaz / turuncu 600", W, step("brand", 600), 4.5, "T-KARAR-1 (derin panelin acik ucu)"],
+]);
+/* Koyu temada buton artık Android'i izliyor: 400 dolgu + mürekkep yazı. Eskiden
+   burada da beyaz / 500 vardı (2.77) ve ölçülmüyordu bile - bu satır o boşluğu
+   kapatıyor, sapma değil normal bir ölçüm. Açık tema ayrıca ölçülmüyor:
+   oradaki çift (beyaz / 500) yukarıdaki kabul satırının ta kendisi. */
+contrastRows([
+  ["koyu: buton yazisi / dolgu", resolve(dark["--on-brand"], dark), resolve(dark["--brand-fill"], dark)],
 ]);
 contrastRows([
   /* Koyu kahve yazı artık butonda kullanılmıyor ama maskotun kendi eşleşmesi:

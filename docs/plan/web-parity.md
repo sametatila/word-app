@@ -2383,3 +2383,48 @@ kapıyı kırmıyor.
 
 `package.json`da `check:colors`, CI'da "Renk kaynağı" adımı. Elle çağrılan bir
 kapı, kapı değildir.
+
+### 11.40 İki palet ne kadar aynı — ve birincil butonun koyu teması
+
+Mobil paletin 41 değerinden **37'si** web `globals.css`te birebir duruyor.
+Kalan dördü: üçü kademe ölçeği (`#a9683c` / `#8a8277` / `#aa8012` - webde
+`achievement-badge.tsx`te, yani gene web değerleri, sadece CSS'te değil) ve
+biri gerçek ayrım - `#1a1008`, mobilin koyu temadaki `onPrimary`ı.
+
+Yani iki palet fiilen tek palet ve webin `palette-check`i ölçtüğü değerlerle
+mobili de kapsıyor. Tek istisna o dördüncü değerdi ve altından gerçek bir
+ayrım çıktı.
+
+**Birincil buton koyu temada ayrışmıştı.**
+
+    açık tema   web beyaz / #f87612 = 2.77     Android beyaz / #f87612 = 2.77
+    koyu tema   web beyaz / #f87612 = 2.77     Android #1a1008 / #fb8f2a = 8.08
+
+Açık temadaki 2.77 kayıtlı ve kabul edilmiş bir sapma (T-KARAR-1) ve
+gerekçesi yazılı: *"iki uygulamanın birebir aynı görünmesi, bu tek
+eşleşmedeki kontrast kazancının önüne geçti."* Ama o gerekçe KOYU TEMADA
+TUTMUYORDU: Android koyu temada zaten farklı çiziyor - hem dolgu (400, 500
+değil) hem yazı (mürekkep, beyaz değil) - ve 8.08 ölçüyor. Yani iki uygulama
+koyu temada zaten ayrışmıştı ve web, ayrışan tarafta okunmayanı taşıyordu.
+Kabul edilen şey "aynılık" idi; ortada aynılık yoktu.
+
+Sebebi de §11.38'in aynısı: buton `--color-brand-500` yazıyordu, yani sabit
+bir BASAMAK. `--color-brand` koyu temada 400'e geçiyor ve bunu web zaten
+biliyor (koyu blokta yazılı: "mobilin koyu paletiyle aynı basamak"), ama
+buton o jetonu kullanmıyordu.
+
+Düzeltme: iki yeni jeton - `--brand-fill` (açık 500 / koyu 400) ve
+`--on-brand` (açık beyaz / koyu `#1a1008`, Android'in değeri). `.btn-primary`
+artık ikisini kullanıyor. Açık tema DEĞİŞMEDİ; orada iki platform zaten aynı.
+
+Kapı da güncellendi: `palette-check` koyu buton çiftini artık ÖLÇÜYOR (8.08,
+geçer). Eskiden o çift hiç ölçülmüyordu - bölüm yalnız "beyaz / turuncu"
+satırlarını taşıyordu ve koyu temanın kendi çifti kapının görüş alanı
+dışındaydı. Açık tema ayrıca ölçülmüyor, çünkü oradaki çift zaten kabul
+satırının ta kendisi.
+
+**Dokunulmayan, sebebiyle:** `.chip-filter.chip-active` de beyaz / brand-500
+dolu çip. Android'in karşılığı DOLU değil YUMUŞAK çip (`primarySoft` zemin +
+`onPrimarySoft` yazı), yani buradaki fark bir kontrast hatası değil iki ayrı
+çip dili - ve zaten kayıtlı (globals.css, T-KARAR-1 notu). Butonla aynı
+kefeye konamaz.

@@ -252,6 +252,15 @@
    * `.chip-active`) — orada renk taşıyıcı, burada yazı.
    */
   --color-brand: var(--color-brand-700);
+  /*
+   * BİRİNCİL BUTONUN DOLGUSU VE YAZISI — ayrı jetonlar.
+   *
+   * Buton `--color-brand-500`i doğrudan yazıyordu, yani sabit bir basamağı;
+   * `--color-brand` ise temayla değişiyor. Sonuç: koyu temada buton temayı
+   * takip etmiyordu ve Android'den ayrılıyordu (bkz. koyu blok).
+   */
+  --brand-fill: var(--color-brand-500);
+  --on-brand: #ffffff;
   --color-mint: var(--color-mint-600);
   --color-rose: var(--color-rose-600);
   --color-flame: var(--color-flame-600);
@@ -342,6 +351,22 @@
    * olarak da rahat okunuyor.
    */
   --color-brand: var(--color-brand-400);
+  /*
+   * BİRİNCİL BUTON KOYU TEMADA ANDROID GİBİ: 400 dolgu + mürekkep yazı.
+   *
+   * Buton iki temada da beyaz / brand-500 çiziyordu ve 2.77 veriyordu. O
+   * sapma AÇIK temada bilerek kabul edilmişti (T-KARAR-1) ve gerekçesi "iki
+   * uygulama birebir aynı görünsün"dü - ama gerekçe koyu temada TUTMUYORDU:
+   * Android koyu temada zaten farklı çiziyor (`colors.ts` `dark`:
+   * `primary = orange[400]`, `onPrimary = #1a1008`) ve 8.08 ölçüyor. Yani iki
+   * uygulama koyu temada hem dolgu hem yazı olarak zaten ayrışmıştı ve web
+   * ayrışan tarafta okunmayanı taşıyordu.
+   *
+   * Eşleme Android'in değerleriyle: 400 dolgu, `#1a1008` mürekkep, 8.08.
+   * Açık tema değişmedi - orada iki platform zaten aynı (beyaz / 500, 2.77).
+   */
+  --brand-fill: var(--color-brand-400);
+  --on-brand: #1a1008;
   --color-mint: var(--color-mint-300);
   --color-rose: var(--color-rose-300);
   --color-flame: var(--color-flame-300);
@@ -561,12 +586,15 @@
    * görülür biçimde yakıyor; yazıyı #2f1911 yapmak 5.99 veriyor ama mobil
    * açık temada beyaz kullanıyor.
    *
-   * İki temada da aynı: turuncu her iki zeminde de açık kalıyor, yani buton
-   * tema değiştiğinde kimlik değiştirmiyor.
+   * AÇIK TEMANIN ölçümü budur. Koyu temada buton artık Android'i izliyor
+   * (400 dolgu + mürekkep yazı, 8.08); gerekçesi koyu blokta `--brand-fill`
+   * tanımının yanında. Eskiden iki temada da aynıydı ve koyu tarafta 2.77
+   * taşıyordu - hem okunmuyordu hem de "iki uygulama aynı görünsün"
+   * gerekçesini karşılamıyordu, çünkü Android koyu temada zaten farklıydı.
    */
   .btn-primary {
-    color: #ffffff;
-    background-color: var(--color-brand-500);
+    color: var(--on-brand);
+    background-color: var(--brand-fill);
     box-shadow: 0 10px 24px -12px var(--color-brand-700);
   }
   /*
