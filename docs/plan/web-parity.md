@@ -3815,3 +3815,46 @@ tutarsız: yanındaki "öğrenilen kelime" karosu ham sayı (`String(mastered)`,
 gruplama yok). Doğrusu karo genişliğine bakmayı gerektiriyor — dar karoda tam
 sayı taşabilir — o yüzden ölçülmeden değiştirilmedi. Sayı biçiminin kendisi
 (ondalık ayraç) yukarıda düzeltildi, yani kısaltma kalsa da dili doğru.
+
+### 11.75 Rozet kutlaması ve her rozetin kendi ikonu
+
+İki tur önce (§11.72) rozet açılış kutlamasını "yeni yüzey, ürün kararı" diye
+dışarıda bırakmıştım. Sinyal §11.70'te mobile gelmişti; eksik olan yalnız
+karttı. Bu tur yazıldı.
+
+**Kutlama.** Kullanıcı rozeti ancak Başarılar ekranına giderek görüyordu;
+açıldığı **an** hiçbir yerde söylenmiyordu — kutlamanın tek varlık sebebi ise
+o an. Web gibi tek yerde, uygulamanın kökünde duruyor: rozet altı ayrı yerde
+kazanılıyor (kelime turu, ders, beceri, görev ödülü, günün turu, patron) ve
+altısına ayrı kutlama koymak altı yerde unutulur.
+
+Webin üç kuralı da geçerli, biri farklı yolla:
+
+| kural | web | mobil |
+|---|---|---|
+| oyunun ortasını kesme | `lernomi:busy` olayı | **gezgin rotası** (`BUSY_ROUTES`) |
+| toplu açılış tek kart | `MAX_SOLO`/`BATCH_SHOWN` | aynı |
+| her zaman kapatılabilir | dokunuşla ilerler | aynı |
+
+Rotaya bakmak sinyalden **daha sağlam**: sinyali göndermeyi unutan bir ekran
+webde kutlamayı turun ortasında patlatabilir, mobilde patlatamaz. "Görüldü"
+işareti kart **ekrana konduğunda** atılıyor, kontrol anında değil — web'de aynı
+kusur bir kez yaşanmış ve orada da böyle çözülmüştü.
+
+**Her rozetin kendi ikonu.** Kapıya yeni bir bölüm eklerken (`/api/me` ve
+`/api/achievements` alanları) ilk çalıştırmada `icon` çıktı: sunucu her rozet
+satırında ikon adını gönderiyor ve web yirmi dokuz ayrı ikon çiziyor. **Mobil
+alanı hiç tanımıyordu** — tip taşımadığı için sessizce düşüyordu ve rozet
+duvarında elli yedi rozetin hepsi **kupa** görünüyordu; iki rozeti birbirinden
+ayıran tek şey kademe rengiydi. On beş ikon mobil sete eklendi (web gövdeleriyle
+birebir), `ui/achievementIcon` webin `ICONS` haritasının karşılığı oldu.
+Tanınmayan ad kupaya düşüyor, yani sunucu yeni bir ad gönderdiğinde yayımlanmış
+sürümler boş kutu çizmiyor.
+
+Bu, "sessizce düşen alan" sınıfının en pahalı örneği: derleyici susuyor, istek
+başarılı, kimse hata görmüyor — yalnız elli yedi rozet aynı görünüyor.
+
+**Kapı ayıklayıcısında bir kusur daha.** `/api/me` gövdesindeki kısa yazım
+(`mastered,`) iki nokta arayan desenle görülmüyordu: sunucunun gönderdiği alan
+"mobilde eksik" sayılıyordu. Ayrıca ucun **ilk** `NextResponse.json(`i 401 hata
+gövdesi; kapsayan `{` artık geriye doğru aranıyor.
