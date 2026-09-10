@@ -4516,3 +4516,31 @@ eşikleri.
 Ders: "adı aynı olan sabit" varsayımı, adın **tek** olduğu varsayımını gizlice
 taşıyor. Otomatik kapı elle bakım istemiyor diye doğru olduğu anlamına gelmiyor;
 eşleştirmenin kendisi de bir varsayım ve o da ölçülmeli.
+
+### 11.95 Ders özetinde kullanılan kalıp
+
+Rol yapma akışını karşılaştırırken çıktı. İki tarafta da ders üç evreli
+(`lecture` → `roleplay` → `summary`) ve evre adları bile aynı; fark **özette**.
+
+Web özeti konuşmada geçen kalıbı yeşil tikle işaretliyor, geçmeyeni soluk
+bırakıyor ve gerekçesini yanında yazıyor: *"dersin asıl amacı kalıbı
+kullanmak"*. Mobil özeti kalıpları **düz bir liste** olarak yazıyordu — her
+kalıp aynı görünüyor ve öğrenci konuşmada hangisini gerçekten kullandığını
+hiçbir yerden öğrenemiyordu. Dersin geri bildiriminin çekirdeği eksikti.
+
+Kural webin `patternUsed`inin aynısı: gövde çıkarımı ("Ich möchte …" →
+"ich möchte"), en az üç harf, yalnız kullanıcının turları. Konuşma hiç
+olmadıysa (roleplay atlandı) işaret de yok — yanlış bir "yapmadın" damgası
+vurmasın.
+
+Kural iki tarafta ayrı dosyada kopyalandığı için kapıya bağlandı: ayrışırsa
+aynı konuşma bir uygulamada kalıbı kullanmış, ötekinde kullanmamış sayılır.
+
+**Dizge sabitlerinde de belirsizlik temizliği.** §11.94'ün kusurunun aynısı
+dizge bölümünde de duruyordu ("son tanım kazanır"): webde `DISMISS_KEY` iki
+ayrı "kapat" anahtarı, `TOKEN_URL` iki sağlayıcının jeton adresi. İkisi de
+mobilde yok, yani bugün zarar vermiyorlardı — ama aynı tuzak oradaydı. Artık
+karşılaştırmadan çıkıyor ve kayıtlı listede duruyorlar.
+
+**Rol yapma SINAVI** (`/lessons/[id]/exam`) webe özel; mobilde karşılığı yok
+ve bu §11.11'deki oynatıcı sınırının parçası.
