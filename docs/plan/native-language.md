@@ -475,13 +475,25 @@ parça şablonun ürettiği metin.
 
 Ekrana bakınca hatların kaçırdığı iki küme göründü:
 
-- **Rol yapma senaryosu: 247 dize.** `roleplay` hattı dört alanı
-  kapsıyor (sahne, muhatap, açılış, amaç — 580×4) ama 10 dersin
-  `roleplay.script` dizisi var ve içinde `askTr` (61), `cue` (61),
-  `sayTr` (125) duruyor. Küçük bir küme ama tamamen çevrilmemiş.
-- **Can-do ifadeleri: 121 dize.** `Cando` tipinde yalnız `tr` var.
-  Ders sayfasının özet köprüsü, beceri ekranı ve sertifika bunu
-  okuyor. Şimdilik İngilizce sayfada köprü düşürülüyor.
+- **Rol yapma senaryosu: 244 dize — BİTTİ.** `roleplay` hattı dört alanı
+  kapsıyordu (sahne, muhatap, açılış, amaç — 580×4) ve bitmiş
+  görünüyordu; ama on dersin çevrimdışı senaryosu ayrı bir dosyada
+  (`scripts-a1.ts`) ve içinde `askTr` (60), `cue` (61), `sayTr` (123)
+  duruyor. Kardeş hatların taraması KÖRDÜ ve sebebi ilginç: senaryolar
+  iki kısayolla yazılmış — `t(id, ask, askTr, cue, …)` ve
+  `r(match, say, sayTr, …)` — yani Türkçe alanların ADI yok, SIRASI var.
+  Kalem önemsiz değil: senaryolu rol yapma modelin çalışmadığı anda
+  devreye giren akış, yani tam da ağın olmadığı yerde görünen metin.
+- **Can-do ifadeleri: 131 dize — BİTTİ.** `Cando` tipinde yalnız `tr`
+  var; İngilizcesi kendi hattında (`data/lessons/cando/`, anahtar
+  `A1.SPK.1`). Kaynak dosyaya dokunulmadı: 131 çağrının hepsine yedinci
+  bir konumsal argüman eklemek okunaksız olurdu. Kapıya iki kural —
+  BİRİNCİ TEKİL korunuyor ("I can …"; "The learner can…" ekranın sesini
+  değiştirirdi) ve iki ifade tek karşılığa düşemez.
+
+İkisi de kapıdan sıfır hata sıfır uyarıyla geçiyor ve çözücüye bağlı.
+Ders sayfasında can-do köprüsü artık düşürülmüyor, İngilizcesi
+gösteriliyor.
 ##### BİTTİ (2026-09-10): 8.824/8.824 dize, 17.293/17.293 parça (%100)
 
 Elli dokuz paketin hepsi yazıldı ve kapı sıfır hata, sıfır uyarıyla
