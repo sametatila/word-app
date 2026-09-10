@@ -723,7 +723,6 @@ export const deWeb: Record<string, string> = {
   "writp.build_sentence": "Bilde den Satz",
   "writp.useful_phrases": "Hilfreiche Wendungen — antippen, um sie einzufügen:",
   "writp.hide_sample": "Musterlösung ausblenden",
-  "writp.queued": "Dein Text ist gespeichert; er wird bewertet, sobald der Dienst wieder läuft, und du bekommst eine Nachricht.",
   "writp.improve": "Verbessere es: Schau dir die Korrekturen an und versuch es noch mal.",
   "writp.retry_suggest": "Ich würde einen zweiten Versuch empfehlen — kein Zwang, du kannst auch weitermachen.",
   "writp.try_once_more": "Noch einmal versuchen",

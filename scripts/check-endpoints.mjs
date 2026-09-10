@@ -114,7 +114,6 @@ const WEB_ONLY_METHOD = {
   "POST /api/stt": "mobil ayni ucu NATIVE cagiriyor (Kotlin uploadStt) - JS kaynaginda gorunmez",
   "POST /api/session": "tur ORTASI ilerleme damgasi; mobil ilerlemeyi cevaplarla birlikte /api/answers'a yaziyor",
   "POST /api/pronounce": "telaffuz puani - karar bekliyor (web-parity 11.139)",
-  "POST /api/assess/queue": "degerlendirme kuyrugu - karar Samet'te (web-parity 11.12)",
   "GET /api/premium/referral": "mobil ayni kodu /api/premium/status icinden aliyor",
   "GET /api/challenge": "hayatta kalma modu webe ozel",
   "POST /api/challenge": "hayatta kalma modu webe ozel",
@@ -129,7 +128,6 @@ const WEB_ONLY = {
   "/api/push/subscribe": "TARAYICI push aboneligi; mobil FCM ile /api/push/device cagiriyor",
   "/api/premium/referral": "mobil ayni kodu /api/premium/status icinden aliyor (usePremiumStatus().referral.code)",
   "/api/pronounce": "telaffuz PUANI; mobil konusmayi cihazdaki taniyici + spokenMatches ile metin olarak esliyor — web-parity 11.136",
-  "/api/assess/queue": "degerlendirme kuyrugu — mobilde karsiligi yok, karar Samet'te (web-parity 11.12)",
 };
 
 const all = routes().sort();

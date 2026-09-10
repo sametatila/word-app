@@ -2586,6 +2586,35 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   sameSet("ders kayit govdesi", govde("mobile/src/screens/LessonScreen.tsx"), govde("src/components/lessons/lesson-player.tsx"), "mobil", "web");
 }
 
+/* ── 67. serbest yazma gorevi rubrikle puanlaniyor mu ─────────────────────
+ * Mobil kart metni HIC OKUMUYORDU: yeterli kelime yazilinca gorev dogru
+ * sayiliyor, ornek cevap aciliyordu - ogrenci ne yazarsa yazsin tam puan.
+ * Web ayni gorevi bastan beri `/api/assess` rubrigiyle puanliyor. Iki taraf
+ * da ayni govdeyi gondermek ve ayni ucu ayirmak zorunda: premium/kota reddi
+ * ag hatasi degil (uydurma puan verilmez) ve saglayici kapaliyken metin
+ * `/api/assess/queue`e birakilir (kayit defteri §11.12). */
+{
+  /* Web ucu ayri bir istemciden cagiriyor (`assess-client`): iki dosya
+     birlikte okunuyor, yoksa "uc yok" gibi yanlis bir ayrisma cikar. */
+  const yazma = (...yollar) => {
+    const src = yollar.map((p) => read(p)).join("\n").replace(/\/\*[\s\S]*?\*\//g, " ").replace(/\/\/[^\n]*/g, " ");
+    return [
+      "uc=" + (/"\/api\/assess"/.test(src) ? "var" : "yok"),
+      "kind=" + (/kind: "writing"/.test(src) ? "writing" : "yok"),
+      "hedefler=" + (/targets:/.test(src) ? "var" : "yok"),
+      "olcutler=" + (/constraints:/.test(src) ? "var" : "yok"),
+      "egzersiz kimligi=" + (/exerciseId/.test(src) ? "var" : "yok"),
+      "kuyruk=" + (/assess\/queue/.test(src) ? "var" : "yok"),
+      "kapi ayrimi=" + (/premium/i.test(src) && /quota/i.test(src) ? "var" : "yok"),
+    ];
+  };
+  sameList(
+    "serbest yazma degerlendirmesi",
+    yazma("mobile/src/game/skillQuiz.tsx"),
+    yazma("src/components/skills/writing-player.tsx", "src/lib/assess-client.ts"),
+  );
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"

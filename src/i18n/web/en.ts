@@ -723,7 +723,6 @@ export const enWeb: Record<string, string> = {
   "writp.build_sentence": "Build the sentence",
   "writp.useful_phrases": "Phrases that may help — tap to add them to your text:",
   "writp.hide_sample": "Hide the sample answer",
-  "writp.queued": "Your text is saved; it'll be scored when the service is back and you'll get a notification.",
   "writp.improve": "Improve it: look at the corrections and try again.",
   "writp.retry_suggest": "I'd suggest another attempt — no pressure, you can also carry on.",
   "writp.try_once_more": "Try once more",

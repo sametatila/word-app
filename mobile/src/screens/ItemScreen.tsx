@@ -205,7 +205,7 @@ export function ItemScreen() {
           // değerlendirdiği yazmaya başlamadan önce söyleniyor.
           <>
             <AiNotice variant="output" style={{ marginBottom: spacing.md }} />
-            <WritingList key={round} tasks={(exercise.tasks ?? []) as WritingTask[]} onAllDone={recordAndFinish} colors={colors} />
+            <WritingList key={round} tasks={(exercise.tasks ?? []) as WritingTask[]} level={exercise.level} exerciseId={exercise.id} onAllDone={recordAndFinish} colors={colors} />
           </>
         ) : exercise.skill === "speaking" && exercise.monologue ? (
           // Monolog: metin sunucuda rubrikle puanlanıyor (ses gitmiyor).

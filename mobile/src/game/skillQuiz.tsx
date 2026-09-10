@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { t as tx, targetLangName } from "../lib/i18n";
+import { t as tx, targetLangName, formatPercent } from "../lib/i18n";
 import { View, TextInput } from "react-native";
 import { Text } from "../ui/Text";
 import { Card } from "../ui/Card";
@@ -10,6 +10,8 @@ import { currentTargetLang } from "../lib/courses";
 import { foldCompare } from "../lib/textFold";
 import { levenshtein } from "../lib/errors";
 import { haptic } from "../lib/haptics";
+import { api } from "../api/client";
+import { isPremiumRefusal, isQuotaRefusal } from "../lib/premium";
 import { spacing, radii, type Palette } from "../theme";
 import type { Gloss, SkillQuestion } from "../data/skills";
 
@@ -213,7 +215,7 @@ type FormTask = { kind: "form"; prompt: string; facts?: string; fields: { label:
 export type WritingTask = BuildTask | FreeTask | RewriteTask | FormTask;
 
 /** Yazma egzersizi görevleri — de içeriğinde iki tür: build (TR→DE cümle) ve free. */
-export function WritingList({ tasks, onAllDone, colors }: { tasks: WritingTask[]; onAllDone: (correct: number) => void; colors: Palette }) {
+export function WritingList({ tasks, level, exerciseId, onAllDone, colors }: { tasks: WritingTask[]; level: string; exerciseId: string; onAllDone: (correct: number) => void; colors: Palette }) {
   const [results, setResults] = useState<(boolean | null)[]>(() => tasks.map(() => null));
   function settle(i: number, ok: boolean) {
     if (results[i] !== null) return;
@@ -241,7 +243,7 @@ export function WritingList({ tasks, onAllDone, colors }: { tasks: WritingTask[]
         if (t.kind === "build") return <BuildCard key={i} t={t} {...shared} />;
         if (t.kind === "rewrite") return <RewriteCard key={i} t={t} {...shared} />;
         if (t.kind === "form") return <FormCard key={i} t={t} {...shared} />;
-        return <FreeCard key={i} t={t} {...shared} />;
+        return <FreeCard key={i} t={t} level={level} exerciseId={exerciseId} {...shared} />;
       })}
     </View>
   );
@@ -358,11 +360,74 @@ function FormCard({ t, n, done, onSettle, colors }: { t: FormTask; n: number; do
   );
 }
 
-function FreeCard({ t, n, done, onSettle, colors }: { t: FreeTask; n: number; done: boolean; onSettle: (ok: boolean) => void; colors: Palette }) {
+/**
+ * SERBEST YAZMA ARTIK PUANLANIYOR.
+ *
+ * Kart eskiden metni HİÇ okumuyordu: yeterli kelime yazıldığında "gönder"
+ * doğru sayıyor, örnek cevabı açıyor ve görevi bitmiş işaretliyordu. Yani
+ * Android'de yazma egzersizi bir metin kutusuydu; öğrenci ne yazarsa yazsın
+ * (anlamsız bir dizi bile) tam puan alıyordu. Web aynı görevi baştan beri
+ * rubrikle puanlıyor (`skills/writing-player` → `/api/assess`), yüzdeyi,
+ * övgüyü, ipucunu ve düzeltilmiş metni gösteriyor.
+ *
+ * Kapılar ağ hatası DEĞİL: premium ve adil kullanım reddi ayrı söyleniyor,
+ * uydurma puan verilmiyor (`ExamScreen` yazma bölümüyle aynı ayrım).
+ *
+ * Sağlayıcı kapalı ya da ağ yoksa metin `/api/assess/queue`e bırakılıyor -
+ * sunucu servis dönünce puanlıyor ve bildirim gönderiyor. Web bunu yapıyordu,
+ * mobilde metin hiç puanlanmadan kalıyordu (kayıt defteri §11.12).
+ */
+function FreeCard({ t, n, done, level, exerciseId, onSettle, colors }: { t: FreeTask; n: number; done: boolean; level: string; exerciseId: string; onSettle: (ok: boolean) => void; colors: Palette }) {
   const [typed, setTyped] = useState("");
   const [reveal, setReveal] = useState(false);
+  const [busy, setBusy] = useState(false);
+  const [score, setScore] = useState<{ overall: number; praise: string; tip: string; corrected: string } | null>(null);
+  const [note, setNote] = useState<string | null>(null);
+  const [queued, setQueued] = useState(false);
   const words = typed.trim() ? typed.trim().split(/\s+/).length : 0;
   const enough = words >= t.minWords;
+
+  function body() {
+    return {
+      kind: "writing", level,
+      task: { prompt: t.prompt, targets: (t.phrases ?? []).map((p) => p.de), constraints: [...(t.checklist ?? []), `en az ${t.minWords} kelime`] },
+      answer: { text: typed.trim() }, exerciseId, locale: "tr", lang: currentTargetLang(),
+    };
+  }
+
+  async function evaluate() {
+    if (busy || done || !enough) return;
+    setBusy(true);
+    setNote(null);
+    try {
+      const d = await api<{ result: { score?: { overall?: number }; praise_tr?: string; next_tip_tr?: string; corrected?: string } }>("/api/assess", {
+        method: "POST",
+        body: JSON.stringify(body()),
+      });
+      const overall = d.result?.score?.overall ?? 0;
+      setScore({ overall, praise: d.result?.praise_tr ?? "", tip: d.result?.next_tip_tr ?? "", corrected: d.result?.corrected ?? "" });
+      setReveal(true);
+      onSettle(overall >= 60);
+    } catch (e) {
+      if (isPremiumRefusal(e) || isQuotaRefusal(e)) {
+        setNote(tx(isPremiumRefusal(e) ? "assess.fail_premium" : "assess.fail_quota"));
+      } else {
+        /* Sağlayıcı/ağ yok: metin kaybolmasın diye sunucu kuyruğuna bırakılıyor
+           (uç kendi sınırlarını yine uyguluyor). Kuyruk da tutmazsa kullanıcı
+           en azından sebebini görüyor. */
+        setNote(tx("assess.fail_unscored"));
+        try {
+          await api("/api/assess/queue", { method: "POST", body: JSON.stringify(body()) });
+          setQueued(true);
+        } catch { /* kuyruk da yoksa yapacak bir şey yok */ }
+      }
+      /* Puan verilemedi ama görev yapıldı: alıştırma durmuyor (webde de
+         yedek kural aynı kararı veriyor). */
+      setReveal(true);
+      onSettle(true);
+    }
+    setBusy(false);
+  }
   return (
     <Card padded>
       <Text variant="bodyStrong"><Text variant="bodyStrong" color={colors.textMuted}>{n}. </Text>{t.prompt}</Text>
@@ -391,12 +456,27 @@ function FreeCard({ t, n, done, onSettle, colors }: { t: FreeTask; n: number; do
       <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between", marginTop: spacing.sm }}>
         <Text variant="micro" color={enough ? colors.successText : colors.textMuted}>{tx("skillquiz.n_words", { n: words, min: t.minWords })}</Text>
         {!done ? (
-          <PressableScale onPress={() => { if (enough) { setReveal(true); onSettle(true); } }} disabled={!enough}
-            style={{ backgroundColor: enough ? colors.primary : colors.surface2, borderRadius: radii.md, paddingHorizontal: spacing.lg, paddingVertical: 10 }}>
-            <Text variant="bodyStrong" color={enough ? colors.onPrimary : colors.textFaint}>{tx("common.send")}</Text>
+          <PressableScale onPress={evaluate} disabled={!enough || busy}
+            style={{ backgroundColor: enough && !busy ? colors.primary : colors.surface2, borderRadius: radii.md, paddingHorizontal: spacing.lg, paddingVertical: 10 }}>
+            <Text variant="bodyStrong" color={enough && !busy ? colors.onPrimary : colors.textFaint}>{tx(busy ? "item.mono_scoring" : "common.send")}</Text>
           </PressableScale>
         ) : null}
       </View>
+      {score ? (
+        <View style={{ marginTop: spacing.md }}>
+          <Text variant="h3" color={score.overall >= 60 ? colors.successText : colors.text}>{formatPercent(score.overall)}</Text>
+          {score.praise ? <Text variant="body" style={{ marginTop: spacing.xs, lineHeight: 22 }}>{score.praise}</Text> : null}
+          {score.tip ? <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.xs, lineHeight: 20 }}>{score.tip}</Text> : null}
+          {score.corrected ? (
+            <View style={{ marginTop: spacing.sm, backgroundColor: colors.surface2, borderRadius: radii.md, padding: spacing.md }}>
+              <Text variant="micro" color={colors.textMuted} style={{ marginBottom: 4 }}>{tx("item.mono_corrected")}</Text>
+              <Text variant="body" style={{ lineHeight: 22 }}>{score.corrected}</Text>
+            </View>
+          ) : null}
+        </View>
+      ) : null}
+      {note ? <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.sm, lineHeight: 20 }}>{note}</Text> : null}
+      {queued ? <Text variant="caption" color={colors.textMuted} style={{ marginTop: 4, lineHeight: 20 }}>{tx("writp.queued")}</Text> : null}
       {(done || reveal) && t.sample ? (
         <View style={{ marginTop: spacing.md, backgroundColor: colors.successSoft, borderRadius: radii.md, padding: spacing.md }}>
           <Text variant="micro" color={colors.textMuted} style={{ marginBottom: 4 }}>{tx("skillquiz.sample_answer")}</Text>

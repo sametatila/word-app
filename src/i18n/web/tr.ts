@@ -748,7 +748,6 @@ export const trWeb: Record<string, string> = {
   "writp.build_sentence": "Cümleyi kur",
   "writp.useful_phrases": "İşine yarayacak kalıplar — dokununca metnine eklenir:",
   "writp.hide_sample": "Örnek cevabı gizle",
-  "writp.queued": "Metnin kaydedildi; servis açılınca puanlanacak ve bildirim alacaksın.",
   "writp.improve": "Geliştir: düzeltmelere bakıp bir daha dene.",
   "writp.retry_suggest": "Bir daha denemeni öneririm — zorlama yok, devam da edebilirsin.",
   "writp.try_once_more": "Bir daha dene",
