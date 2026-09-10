@@ -85,6 +85,17 @@ export function ItemScreen() {
   const saved = useRef(false);
   const [correct, setCorrect] = useState(0);
   const [finished, setFinished] = useState(false);
+  /*
+   * SUNUCU YANITI OKUNMUYORDU.
+   *
+   * `/api/skills` POST dokuz alan döndürüyor (`xpGained`, `totalXp`,
+   * `currentStreak`, `longestStreak`, `streakRepaired`, `bestCorrect`,
+   * `total`, `lastScore`, `repeat`) ve mobil yanıtı TAMAMEN atıyordu: istek
+   * gönderiliyor, gövde hiç okunmuyordu. Yani alıştırmayı bitiren kullanıcı
+   * kazandığı XP'yi görmüyordu - oysa tur sonunda (`GameScreen`) aynı bilgi
+   * gösteriliyor ve web burada da gösteriyor (`player-shell` beş alan okuyor).
+   */
+  const [earnedXp, setEarnedXp] = useState(0);
   const [round, setRound] = useState(0);
 
   const kind = params.kind as ItemKind;
@@ -100,14 +111,20 @@ export function ItemScreen() {
     saved.current = true;
     void markItemDone(exercise.id);
     try {
-      await fetchWithTimeout(`${API_BASE}/api/skills`, {
+      const res = await fetchWithTimeout(`${API_BASE}/api/skills`, {
         method: "POST", headers: { "content-type": "application/json" },
         body: JSON.stringify({ id: exercise.id, correct: c, score, day: todayStr(), seconds: Math.round((Date.now() - startedAt.current) / 1000) }),
       });
+      if (res.ok) {
+        const d = (await res.json()) as { xpGained?: number };
+        if (typeof d.xpGained === "number") setEarnedXp(d.xpGained);
+      }
     } catch { /* çevrimdışı: yerel işaret yeterli */ }
   }
 
   function retry() {
+    /* Yeniden denemede eski XP satırı kalmasın: yeni sonuç yeni cevabı bekler. */
+    setEarnedXp(0);
     saved.current = false;
     setFinished(false);
     setCorrect(0);
@@ -187,6 +204,10 @@ export function ItemScreen() {
             <Celebrate show={pct >= 70} />
             <Mascot mood={pct >= 70 ? "celebrate" : pct >= 40 ? "happy" : "idle"} size={84} />
             <Text variant="h2">{exercise.skill === "writing" || exercise.monologue ? t("item.tasks_done") : t("common.n_correct", { correct: correct, total: total })}</Text>
+            {/* Kazanılan XP — `GameScreen` ile aynı biçim (`+N XP`). */}
+            {earnedXp > 0 ? (
+              <Text variant="h2" color={colors.primaryText}>{`+${earnedXp} XP`}</Text>
+            ) : null}
             {exercise.skill !== "writing" && !exercise.monologue ? <Text variant="caption" color={colors.textMuted}>{t("item.score_pct", { pct })}</Text> : null}
             <View style={{ flexDirection: "row", gap: spacing.sm, alignSelf: "stretch", marginTop: spacing.sm }}>
               <PressableScale onPress={retry} style={{ flex: 1, backgroundColor: colors.surface2, borderRadius: radii.lg, paddingVertical: 14, alignItems: "center" }}>
