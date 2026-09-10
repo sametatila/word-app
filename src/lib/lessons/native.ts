@@ -113,6 +113,16 @@ export type NativeDict = {
    * gerekçe, aynı çözüm.
    */
   task: Record<string, string>;
+  /**
+   * DENEME KÂĞITLARININ Türkçe yüzü — 60 Almanca kâğıt, 6.627 dize
+   * (`data/mock-exams/prose/out/`). Anahtar `tür + AYRAÇ + tr`.
+   *
+   * Neden ayrı bir sözlük: kâğıtlar `src/lib/mock-exams/` altında duruyor,
+   * ne dersten ne egzersizden çıkıyor. Neden bileşik anahtar: ölçüldü —
+   * yalnız dizeye bakılsa 6.626 girdi olurdu, yani bir Türkçe dize iki
+   * türde iki ayrı şey anlatıyor ve düz anahtar birini sessizce yerdi.
+   */
+  mock: Record<string, string>;
 };
 
 /*

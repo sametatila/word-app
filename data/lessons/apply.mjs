@@ -170,6 +170,24 @@ if (existsSync(taskDir))
   for (const f of readdirSync(taskDir).filter((x) => x.endsWith(".json")).sort())
     for (const r of JSON.parse(readFileSync(taskDir + f, "utf8"))) task[r.kind + SEP + r.tr] = r.en;
 
+/*
+  DENEME KÂĞITLARI — 60 Almanca kâğıdın Türkçe yüzü
+  (`data/mock-exams/prose/out/`, 6.627 dize).
+
+  Anahtar yine `tür + AYRAÇ + tr` ve burada da gerekçesi ölçüldü: yalnız
+  dizeye bakılsa 6.626 girdi olurdu, yani bir Türkçe dize iki ayrı türde
+  iki ayrı şey anlatıyor. Beceri görev metniyle aynı kural.
+
+  Kâğıtlar `BUNDLED_EXERCISES`ten de derslerden de çıkmıyor
+  (`src/lib/mock-exams/`), o yüzden ayrı sözlük: aynı Türkçe cümle sınav
+  kâğıdında ve derste farklı çevrilebilir.
+*/
+const mock = {};
+const mockDir = `${DIR}../mock-exams/prose/out/`;
+if (existsSync(mockDir))
+  for (const f of readdirSync(mockDir).filter((x) => x.endsWith(".json")).sort())
+    for (const r of JSON.parse(readFileSync(mockDir + f, "utf8"))) mock[r.kind + SEP + r.tr] = r.en;
+
 const swap = {};
 const swapEn = {};
 const swapFile = `${DIR}swap/en.json`;
@@ -179,7 +197,7 @@ if (existsSync(swapFile))
     for (const [from, to] of r.en) swapEn[r.lesson + SEP + from] = to;
   }
 
-const data = { lecture, lectureSplit, frames, ordinals, notes, vocab, patterns, meta, roleplay, cando, script, exam, prose, task, swap, swapEn };
+const data = { lecture, lectureSplit, frames, ordinals, notes, vocab, patterns, meta, roleplay, cando, script, exam, prose, task, mock, swap, swapEn };
 
 mkdirSync(OUT, { recursive: true });
 writeFileSync(`${OUT}native-en.json`, `${JSON.stringify(data)}\n`);
@@ -189,6 +207,6 @@ console.log(
   "native-en.json yazıldı\n" +
     `  anlatım ${n(lecture)} (+${n(lectureSplit)} bölünmüş) · çerçeve ${n(frames)} · sıra ${n(ordinals)} · not ${n(notes)}\n` +
     `  sözlükçe ${n(vocab)} · kalıp ${n(patterns)} · ders ${n(meta)} · rol yapma ${n(roleplay)} · can-do ${n(cando)} · senaryo ${n(script)} · sınav ${n(exam)}\n` +
-    `  beceri düz metni ${n(prose)} · görev metni ${n(task)}\n` +
+    `  beceri düz metni ${n(prose)} · görev metni ${n(task)} · deneme kâğıdı ${n(mock)}\n` +
     `  takas ${n(swap)} Almanca + ${n(swapEn)} İngilizce`,
 );
