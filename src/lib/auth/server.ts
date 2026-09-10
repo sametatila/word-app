@@ -11,6 +11,7 @@ import { purgeUserData } from "@/lib/account/purge";
 import { revokeAppleSignIn } from "@/lib/account/apple-revoke";
 import { APIError, createAuthMiddleware } from "better-auth/api";
 import { checkPassword, MIN_PASSWORD_LENGTH, PASSWORD_ERROR_CODE } from "@/lib/auth/password-policy";
+import { redisRateLimitStorage } from "@/lib/auth/rate-limit-store";
 
 /**
  * Self-hosted Better Auth. Oturumlar/kullanıcılar KENDİ
@@ -251,16 +252,26 @@ export const auth = betterAuth({
   },
   /**
    * Hız sınırı. Ölçüldü: sınır yokken /sign-in/email'e art arda 8 yanlış parola
-   * 8 × 401 döndü — parola denemesi sınırsızdı. Sayaç bellekte, yani instance
-   * başına (üretimde üç instance → etkin sınır ~3 katı); sert sınır nginx'te
-   * (/api/auth/sign-in* için limit_req). IP nginx'in koyduğu x-real-ip'ten
-   * okunur: x-forwarded-for'a istemci kendi değerini ekleyebiliyor
-   * ($proxy_add_x_forwarded_for), o başlığa güvenmek sınırı sahte IP ile
-   * aşılabilir kılardı.
+   * 8 × 401 döndü — parola denemesi sınırsızdı. IP nginx'in koyduğu
+   * x-real-ip'ten okunur: x-forwarded-for'a istemci kendi değerini
+   * ekleyebiliyor ($proxy_add_x_forwarded_for), o başlığa güvenmek sınırı
+   * sahte IP ile aşılabilir kılardı.
+   *
+   * SAYAÇ ARTIK ÜÇ INSTANCE'TA ORTAK. Varsayılan depo bellekteydi ve nginx
+   * istekleri üç Node instance'ına dağıttığı için buradaki "dakikada 5"
+   * fiilen "dakikada ~15" oluyordu — sayı doğru görünüyor, üretimde
+   * tutmuyordu. `customStorage` sayacı Redis'e taşıyor; yalnız sayacı,
+   * oturumlar Postgres'te kalıyor (bkz. lib/auth/rate-limit-store).
+   * `REDIS_URL` boşsa `undefined` döner ve Better Auth bellek deposunda
+   * kalır — geliştirmede Redis şartı yok.
+   *
+   * Sert sınır yine nginx'te (limit_req + fail2ban); bu katman onun üstüne
+   * uç bazında incelik ekliyor.
    */
   rateLimit: {
     enabled: process.env.NODE_ENV === "production",
     storage: "memory",
+    customStorage: redisRateLimitStorage(),
     window: 60,
     max: 120,
     customRules: {
