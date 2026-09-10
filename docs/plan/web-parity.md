@@ -5175,3 +5175,24 @@ anahtar" gibi göründü, üçü de yanlış alarmdı: anahtarlar üçnokta içi
 kullanılıyordu (`t(x ? "a" : "b")`) ve `t("…")` deseni onları görmüyor. Anahtar
 kıyaslamasının bilinen kör noktası — dosyadaki tüm `"ns.key"` dizgilerini almak
 doğru yöntem (ölü anahtar kapısında kullanılan yaklaşımın aynısı).
+
+### 11.133 Düğmede "fp.see_meaning" yazıyordu
+
+`translate` bulamadığı anahtarı **olduğu gibi döndürüyor** (`?? key`). İlk
+pratik ekranının **birincil düğmesi** üç anahtarı üçnokta içinde çağırıyordu ve
+üçü de hiçbir sözlükte yoktu: kullanıcı kayıt yolunun ortasında sırayla
+`fp.see_meaning`, `fp.next_word`, `fp.create_account` yazan bir düğme
+görüyordu. Karşılıkları mobil sözlükte hazırdı (`firstpractice.*`).
+
+Kapı görmedi çünkü `i18n-check` anahtarı `t(`in **hemen ardında** arıyordu ve
+`t(x ? "a.b" : "c.d")` biçimini hiç görmüyordu — §11.132'de kendi ölçüm
+yöntemimde fark ettiğim kör noktanın **denetimin kendisinde** de bulunması.
+
+Tarayıcı artık çağrı gövdesindeki bütün düz anahtarları alıyor ve açılır
+açılmaz **aynı hatanın üç örneğini daha** buldu: can-do kartının durum ipucu
+(`cando.proven` / `cando.progressing` / `cando.not_yet`) da hiçbir sözlükte
+yoktu ve ipucunda ham anahtar yazıyordu. Üç anahtar eklendi; mobil aynı bilgiyi
+ekran okuyucuya veriyor — dairenin rengi göreni bilgilendiriyordu, okuyucuya
+hiçbir şey söylenmiyordu.
+
+Kalıp üçüncü kez aynı: **kapının görmediği yer, hatanın biriktiği yer.**
