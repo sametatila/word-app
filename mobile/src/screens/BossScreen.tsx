@@ -113,7 +113,10 @@ export function BossScreen() {
       if (finished.current) return;
       finished.current = true;
       setPhase(won ? "won" : "lost");
-      sfx(won ? "finish" : "wrong");
+      /* Web kazanmayı REKOR sesiyle kutluyor (`boss-player` `record`); mobil
+         sıradan bitiş sesini çalıyordu, yani patronu geçmek günlük turu
+         bitirmekle aynı sesi veriyordu. */
+      sfx(won ? "record" : "wrong");
       bumpStats(); // patron turu bitti
       await flush();
       if (!won) return;
@@ -135,9 +138,20 @@ export function BossScreen() {
   // Geri sayım: 100 ms'de bir, süre bitince tur kapanıyor.
   useEffect(() => {
     if (phase !== "playing") return;
+    /* SON SANİYELERİN TIKI. Sayaç kırmızıya dönüyordu ama SES yoktu: telefona
+       bakmayan kullanıcı süresinin bittiğini hiç duymuyordu. Web saniyede bir
+       kısa uyarı çalıyor (`boss-player` `danger`); aynı eşik, aynı ritim -
+       saniye TAM değişince, yani on tık. */
+    let sonTik = Infinity;
     const timer = setInterval(() => {
       const remaining = (deadline.current - Date.now()) / 1000;
       setLeft(Math.max(0, remaining));
+      const tamSaniye = Math.ceil(remaining);
+      if (remaining > 0 && remaining <= DANGER_SECONDS && tamSaniye !== sonTik) {
+        sonTik = tamSaniye;
+        sfx("danger");
+      }
+      if (remaining > DANGER_SECONDS) sonTik = Infinity;
       if (remaining <= 0) void finish(false, 0);
     }, 100);
     return () => clearInterval(timer);
@@ -153,6 +167,7 @@ export function BossScreen() {
     setIsRecord(false);
     pending.current = [];
     startedAt.current = Date.now();
+    sfx("start"); // turun açılışı — web `boss-player` aynı yerde çalıyor
     track("boss_play", moduleIndex);
     setPhase("playing");
   }

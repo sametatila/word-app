@@ -153,7 +153,7 @@ export function GameScreen() {
          sorusu Androidde hic cevaplanmiyor. */
       if (start > 0) track("session_resume", start);
       if (list.length === 0) { setFinalCorrect(0); setFinalTotal(0); setRepaired(null); setMastered(0); setResult(null); setPhase("done"); }
-      else setPhase("play");
+      else { sfx("start"); setPhase("play"); } // turun açılışı — web `session-player` aynı yerde çalıyor
     } catch (e) {
       setPhase(e instanceof ApiError && e.status === 401 ? "auth" : "error");
     }
@@ -243,7 +243,9 @@ export function GameScreen() {
     setFinalCorrect(totalCorrect);
     setFinalTotal(total);
     setPhase("done");
-    if (total > 0) sfx("finish"); // tamamlanma sesi (Duolingo tarzı bitiş)
+    /* Kapanış sesi BURADA çalmıyor: hangi ses olacağı pekişen kelime sayısına
+       bakıyor ve o sayı sunucu yanıtıyla geliyor. Karar özet açılınca veriliyor
+       (aşağıdaki etki), web de öyle yapıyor (`session-player` özet kartı). */
     const secs = Math.round((Date.now() - startedAt.current) / 1000);
     track("session_done", totalCorrect, "session");
     if (submitted.current) return;
@@ -261,6 +263,20 @@ export function GameScreen() {
       setSaveWarning(isPermanentError(e) ? "dropped" : "queued");
     }
   }
+
+  /*
+   * TURUN KAPANIŞ SESİ — hak edilmişse ayrı.
+   *
+   * Web özet kartı açılırken `perfect`/`finish` ayrımını yapıyor: ikisi de
+   * "bitti" diyor ama aynı tonda değil. Mobil tek ses çalıyordu, yani pekişen
+   * kelimeyle biten tur sıradan turla aynı sesi veriyordu. Ölçüt kutlamayla
+   * aynı, yani ses ile konfeti tek karardan çıkıyor.
+   */
+  const doneDeserved = mastered > 0 || (finalTotal > 0 && Math.round((finalCorrect / finalTotal) * 100) >= 80 && finalTotal >= 4);
+  useEffect(() => {
+    if (phase !== "done" || finalTotal === 0) return;
+    sfx(doneDeserved ? "perfect" : "finish");
+  }, [phase, finalTotal, doneDeserved]);
 
   const pad = { flex: 1, backgroundColor: colors.bg, paddingTop: insets.top + spacing.sm, paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.lg } as const;
 
@@ -294,8 +310,9 @@ export function GameScreen() {
     const total = finalTotal;
     const pct = total ? Math.round((finalCorrect / total) * 100) : 0;
     /* Web'le aynı ölçüt (`session-player` `deserved`): pekişen kelime tek
-       başına yeter, yoksa dört turdan uzun ve %80 üstü bir tur gerekiyor. */
-    const deserved = mastered > 0 || (pct >= 80 && total >= 4);
+       başına yeter, yoksa dört turdan uzun ve %80 üstü bir tur gerekiyor.
+       Kapanış SESİ de bu ölçütten çıkıyor (yukarıdaki etki). */
+    const deserved = doneDeserved;
     return (
       <View style={pad}>
         <View style={{ flexDirection: "row", justifyContent: "flex-end" }}>

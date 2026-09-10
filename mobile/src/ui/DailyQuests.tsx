@@ -12,6 +12,7 @@ import { SkeletonBar, SkeletonLine, SkeletonTile } from "./Skeleton";
 import { useAuth } from "../lib/AuthContext";
 import { PressableScale } from "./PressableScale";
 import { fetchQuests, claimQuest, ALL_DONE_ID, ALL_DONE_XP, type Quest, type QuestBoard } from "../game/quests";
+import { sfx } from "../lib/sfx";
 import { todayStr } from "../game/session";
 import { bumpStats } from "../lib/statsSignal";
 import { track } from "../lib/track";
@@ -128,6 +129,7 @@ export function DailyQuests() {
         /* XP değişti: başlıktaki toplam ve özet tazelensin (bkz. statsSignal). */
         bumpStats();
         track("quest_claim", b.xp);
+        sfx("unlock"); // ödül alındı — web `quest-card` aynı sesi çalıyor
         setFlash(b.xp);
         setTimeout(() => setFlash(0), 2400);
       }

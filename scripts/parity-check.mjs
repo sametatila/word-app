@@ -3047,6 +3047,46 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   sameList("basarim hata kabugu", kabuk("mobile/src/screens/AchievementsScreen.tsx"), kabuk("src/components/achievement-wall.tsx"));
 }
 
+/* ── 83. ses ipuclari: hangi olayin sesi var ──────────────────────────────
+ * Ses bir geri bildirim kanali: telefona bakmayan kullanici (yuruyus modu,
+ * cebteki telefon) olan biteni YALNIZ sesten anliyor. Webde on uc ipucu
+ * vardi, mobilde yedi - turun acilisi, rozet acilisi, sure uyarisi, rekor ve
+ * kusursuz tur MOBILDE YOKTU. Varlik farki sanilmisti (web-parity §11.15) ama
+ * uc calma yolu da nota TABLOSUNDAN sentezliyor; eksik olan satirlardi.
+ *
+ * `stage` webe ozel kaliyor: etap karti mobilde yok. */
+{
+  /* Birlesimin SON satiri noktali virgulle bitiyor; ilk yazimda desen onu
+     kaciriyordu ve iki taraf da kendi son ipucunu kaybediyordu. */
+  const kumeM = new Set([...read("mobile/src/lib/sfxNotes.ts").matchAll(/^  \| "([a-z]+)";?$/gm)].map((m) => m[1]));
+  const kumeW = new Set([...read("src/lib/sfx.ts").matchAll(/^  \| "([a-z]+)";?$/gm)].map((m) => m[1]));
+  kumeW.delete("stage");
+  sameSet("ses ipuclari", [...kumeM].sort(), [...kumeW].sort(), "mobil", "web (stage haric)");
+
+  /* Ipucu VAR olmasi yetmez, CALINMASI da gerek: her ipucunun iki tarafta da
+     en az bir cagri yeri olmali. */
+  const cagrilan = (kokler, re) => {
+    const dosyalar = [];
+    const gez = (d) => {
+      for (const e of readdirSync(new URL("../" + d, import.meta.url), { withFileTypes: true })) {
+        const p = d + "/" + e.name;
+        if (e.isDirectory()) { if (!/node_modules|__tests__/.test("/" + p)) gez(p); }
+        else if (/\.tsx?$/.test(e.name)) dosyalar.push(p);
+      }
+    };
+    for (const k of kokler) gez(k);
+    const set = new Set();
+    for (const f of dosyalar) for (const m of read(f).matchAll(re)) { set.add(m[1]); if (m[2]) set.add(m[2]); }
+    return set;
+  };
+  const cM = cagrilan(["mobile/src"], /sfx\(\s*(?:[a-zA-Z]+ \? )?"([a-z]+)"(?: : "([a-z]+)")?/g);
+  /* Web mikrofon ipuclarini bir sarmalayicidan caliyor (`walkCue`), cunku
+     ekran kapaliyken WebAudio askiya aliniyor; sarmalayici da sayiliyor. */
+  const cW = cagrilan(["src/components", "src/lib"], /(?:play|walkCue|pocketWalkCue)\(\s*(?:[a-zA-Z]+ \? )?"([a-z]+)"(?: : "([a-z]+)")?/g);
+  cW.delete("stage");
+  sameSet("calinan ses ipuclari", [...cM].sort(), [...cW].sort(), "mobil", "web (stage haric)");
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"

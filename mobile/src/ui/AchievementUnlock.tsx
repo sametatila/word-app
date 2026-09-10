@@ -1,4 +1,5 @@
 import React, { useCallback, useEffect, useRef, useState } from "react";
+import { sfx } from "../lib/sfx";
 import { Modal, View, Pressable } from "react-native";
 import { t } from "../lib/i18n";
 import { Text } from "./Text";
@@ -103,6 +104,9 @@ export function AchievementUnlock() {
   const present = useCallback((fresh: Achievement[]) => {
     const sorted = [...fresh].sort((a, b) => (TIER_RANK[a.tier] ?? 9) - (TIER_RANK[b.tier] ?? 9));
     setView(sorted.length > MAX_SOLO ? { kind: "batch", items: sorted } : { kind: "solo", queue: sorted });
+    /* Rozet açılışının SESİ: web açılış kartıyla birlikte çalıyor
+       (`achievement-unlock` `unlock`). Mobilde kart sessiz açılıyordu. */
+    sfx("unlock");
     track("achievement_unlock", sorted.length);
     /* Ekrana konanların hepsi görüldü sayılıyor — toplu kartta sığmayan da
        dahil, çünkü sayısı kartta yazıyor ve kendileri duvarda açık duruyor. */

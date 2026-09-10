@@ -14,7 +14,23 @@
  *  lp: alçak geçiren kesim Hz (0 yok; Q 0.707) — attack: saniye
  *  hold 0: pluck (peak'ten dur sonunda 0.0001'e üstel iniş) · 1: peak'te tut, son `release` saniyede in
  */
-export type SfxKind = "correct" | "wrong" | "tap" | "micon" | "micoff" | "finish" | "premium";
+export type SfxKind =
+  | "correct"
+  | "wrong"
+  | "tap"
+  | "micon"
+  | "micoff"
+  | "finish"
+  | "premium"
+  /* Beş ipucu webde vardı, mobilde YOKTU (web-parity §11.15'te kayıtlıydı):
+     turun açılışı, rozet açılışı, süre azalması, rekor ve kusursuz tur. Varlık
+     farkı sanılıyordu ama üç çalma yolu da bu tablodan sentezliyor - eksik olan
+     nota satırlarıydı. Tarifler web `lib/sfx` içindeki karşılıklarının aynısı. */
+  | "start"
+  | "unlock"
+  | "danger"
+  | "record"
+  | "perfect";
 
 /** Ana kazanç — tüm yollarda aynı (köprü, native, mp3). */
 export const SFX_MASTER = 0.8;
@@ -96,6 +112,38 @@ export const SFX_NOTES: Record<SfxKind, number[][]> = {
     [783.99, 0.24, 0.34, 0.12, 0, 0, 0, 0.03, 0, 0],
     [1046.5, 0.38, 0.46, 0.12, 0, 0, 0, 0.035, 0, 0],
     [1046.5, 0.38, 0.3, 0.025, 2, 0, 1200, 0.02, 0, 0],
+  ],
+  // Turun açılışı: alçaktan yükseğe iki nota — "başlıyoruz" (web `start`).
+  start: [
+    [392.0, 0.0, 0.14, 0.13, 0, 0, 0, 0.004, 0, 0],
+    [587.33, 0.08, 0.14, 0.13, 0, 0, 0, 0.004, 0, 0],
+  ],
+  // Rozet açıldı: parıltı. Aşağıdan yukarı — açılan şey bir kapı (web `unlock`).
+  unlock: [
+    [880.0, 0.0, 0.22, 0.13, 1, 0, 0, 0.004, 0, 0],
+    [1174.66, 0.06, 0.22, 0.13, 1, 0, 0, 0.004, 0, 0],
+    [1318.51, 0.12, 0.22, 0.13, 1, 0, 0, 0.004, 0, 0],
+    [1760.0, 0.18, 0.5, 0.06, 0, 0, 0, 0.004, 0, 0],
+  ],
+  // Süre azalıyor: alçak, kısa uyarı tıkı (web `danger`).
+  danger: [
+    [349.23, 0.0, 0.07, 0.12, 2, 0, 0, 0.004, 0, 0],
+  ],
+  // Rekor: yükselen dörtlü + altında tutulan bir beşli (web `record`).
+  record: [
+    [261.63, 0.0, 0.65, 0.07, 0, 0, 0, 0.004, 0, 0],
+    [523.25, 0.0, 0.24, 0.17, 0, 0, 0, 0.004, 0, 0],
+    [698.46, 0.085, 0.24, 0.17, 0, 0, 0, 0.004, 0, 0],
+    [880.0, 0.17, 0.24, 0.17, 0, 0, 0, 0.004, 0, 0],
+    [1174.66, 0.255, 0.24, 0.17, 0, 0, 0, 0.004, 0, 0],
+  ],
+  // Kusursuz tur: majör üçlü, oktavla taçlanıyor (web `perfect`).
+  perfect: [
+    [523.25, 0.0, 0.2, 0.16, 0, 0, 0, 0.004, 0, 0],
+    [659.25, 0.07, 0.2, 0.16, 0, 0, 0, 0.004, 0, 0],
+    [783.99, 0.14, 0.2, 0.16, 0, 0, 0, 0.004, 0, 0],
+    [1046.5, 0.21, 0.2, 0.16, 0, 0, 0, 0.004, 0, 0],
+    [1567.98, 0.28, 0.35, 0.09, 1, 0, 0, 0.004, 0, 0],
   ],
   // Kısa dokunuş blip'i (scramble/order karo yerleştirme).
   tap: [

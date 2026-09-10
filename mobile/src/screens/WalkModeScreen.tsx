@@ -488,6 +488,7 @@ export function WalkModeScreen() {
     startedAt.current = Date.now();
     tallyRef.current = { correct: 0, total: 0 }; setTally(tallyRef.current);
     unheardWin.current = [];
+    sfx("start"); // yürüyüşün açılışı — web `walk-player` aynı yerde çalıyor
     if (greet) {
       // Kısa TTS karşılama — doğrudan ilk kelimeye dalmadan.
       setVerdict(null); setHeard(""); setGreeting(true); setPhase("speaking");

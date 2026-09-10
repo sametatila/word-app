@@ -55,8 +55,10 @@ describe("SFX nota tablosu iki native kopyada da aynı", () => {
   it("iki native kopya da TÜM türleri taşıyor — yenisi eklenince ikisi birden", () => {
     // Eksik bir tür `default`/`else` dalına düşer ve sessizce "tap" sesi çalar:
     // yanlış ses, hata değil. Sayının kendisi de kilitli ki kopyalar birbirinden
-    // habersiz büyümesin.
-    expect(TURLER.length).toBe(7);
+    // habersiz büyümesin. Yedi → on iki: turun açılışı, rozet açılışı, süre
+    // uyarısı, rekor ve kusursuz tur webde vardı, mobilde yoktu (web-parity
+    // §11.15) — beşi de eklendi ve iki native kopyaya yeniden üretildi.
+    expect(TURLER.length).toBe(12);
     for (const tur of TURLER) {
       expect(kotlin).toContain(`"${tur}" -> listOf(`);
       expect(swift).toContain(`case "${tur}":`);
