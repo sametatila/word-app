@@ -102,7 +102,7 @@ jobs:
       # tümüyle türetilmiş, ayrışmaları ancak dökümün unutulması demek.
       - name: Döküm bütünlüğü
         run: npm run check:dumps
-      # Ana dil ekseninin yedi kapısı. Yedisi de SESSİZ bozulmaya karşı:
+      # Ana dil ekseninin sekiz kapısı. Sekizi de SESSİZ bozulmaya karşı:
       # çözücü bir parçanın karşılığını bulamayınca dersi tümden reddediyor
       # ve `localiseLesson` Türkçeye düşüyor — hiçbir yerde hata görünmüyor,
       # İngilizce kurs yalnızca Türkçe olarak açılıyor. Bir ders düzenlemesi
@@ -152,6 +152,17 @@ jobs:
       # özgü harfleri dışarıda tutuyor: kalan bir `ş` çevrilmemiş metin
       # demek. Tek gevşetme, dersin İngilizce yüzünde SÖZCÜK olarak geçen
       # özel adlar — sesin söylediği ad yerinde kalmak zorunda.
+      #
+      # `check:skills-prose-de` aynı işi beceri egzersizlerinde yapıyor:
+      # İngilizce kursun 189 egzersizinin `intro` ve `explain` alanları,
+      # 739 dize. Kapsam KASTEN dar — kardeşi `check:skills-prose` bütün
+      # egzersizlerden çıkarıp İngilizce yazdırıyor, çünkü anadili
+      # İngilizce olan kullanıcı ALMANCA kursu görüyor; anadili Almanca
+      # olan ise yalnız İngilizce kursu alıyor. Kanıt ölçütü de burada
+      # tahmine dayanmıyor: paket satırı egzersizin İngilizce yüzeyini
+      # (metin, soru kökleri, şıklar) yanında taşıyor ve açıklık orada
+      # birebir varsa çevrilmeden durmak zorunda. Ölçüldü: 555 aday
+      # açıklığın 300'ü yüzeyde.
       - name: Ana dil çözücüsü
         run: |
           npm run check:lessons-native
@@ -162,6 +173,7 @@ jobs:
           npm run check:mock-prose-de
           npm run check:mock-native
           npm run check:lessons-prose-de
+          npm run check:skills-prose-de
       # de→en kelime katmanının kapısı. Örnek cümlenin Almanca çevirisi
       # TÜRETİLEMİYOR ve bu ölçüldü: İngilizce örnek cümleler Almanca cümlenin
       # çevirisi değil, aynı kelime için BAĞIMSIZ yazılmış cümleler
