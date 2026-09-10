@@ -153,6 +153,46 @@ export const PodiumIcon = (p: IconProps) => (
  * inceliyor.
  */
 /** Öğren sekmesi — üst üste yığılmış katmanlar (kelime destesi) */
+/*
+ * PATİKA VE BECERİ SİMGELERİ — çizimleri Android'den.
+ *
+ * Aynı üç kavram (okuma, dinleme, yazma) iki uygulamada İKİ AYRI çizimle
+ * gösteriliyordu: web `BookOpenIcon`/`HeadphonesIcon`/`PenIcon`, Android
+ * kendi `ReadIcon`/`ListenIcon`/`WriteIcon` ailesi. İkisi de aynı şeyi
+ * anlatıyor ama aynı görünmüyordu; simge bir kavramın kimliğiyse iki
+ * uygulamada aynı kimlik olmalı. Öteki aile DURUYOR: başarım rozetleri onu
+ * kullanıyor (Android'de de öyle).
+ */
+/** Tekrar turu — Android `QuizIcon` çizimi (soru işareti taşıyan daire). */
+export const QuizIcon = (p: IconProps) => (
+  <Svg {...p}>
+    <circle cx="12" cy="12" r="9" />
+    <path d="M9 9a3 3 0 114 2.8c-1 .4-1 1-1 2.2M12 17.5v.5" />
+  </Svg>
+);
+
+export const ReadIcon = (p: IconProps) => (
+  <Svg {...p}>
+    <path d="M12 6C9 4 5 4 3 5v13c2-1 6-1 9 1 3-2 7-2 9-1V5c-2-1-6-1-9 1z" />
+    <path d="M12 7v12" />
+  </Svg>
+);
+
+export const ListenIcon = (p: IconProps) => (
+  <Svg {...p}>
+    <path d="M5 13a7 7 0 0114 0" />
+    <rect x="3.5" y="13" width="4" height="7" rx="1.5" />
+    <rect x="16.5" y="13" width="4" height="7" rx="1.5" />
+  </Svg>
+);
+
+export const WriteIcon = (p: IconProps) => (
+  <Svg {...p}>
+    <path d="M4 20l1-4L16 5l3 3L8 19z" />
+    <path d="M14 7l3 3" />
+  </Svg>
+);
+
 export const LearnIcon = (p: IconProps) => (
   <Svg strokeWidth={2} {...p}>
     <path d="M4 7l8-3 8 3-8 3-8-3z" />

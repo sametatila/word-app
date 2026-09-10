@@ -4,15 +4,15 @@ import Link from "next/link";
 import type { ImmersionItemKind } from "@/lib/immersion/types";
 import type { HubItem, HubUnit } from "@/components/immersion/immersion-hub";
 import {
-  BookOpenIcon,
+  ReadIcon,
   CheckIcon,
   ChevronRightIcon,
-  HeadphonesIcon,
+  ListenIcon,
   LearnIcon,
   LockIcon,
-  PenIcon,
-  PuzzleIcon,
-  TargetIcon,
+  WriteIcon,
+  GrammarIcon,
+  QuizIcon,
 } from "@/components/icons";
 import { useT } from "@/lib/i18n/client";
 
@@ -72,17 +72,24 @@ export function KindIconFor({ kind, size = 22 }: { kind: string; size?: number }
   const p = { size } as const;
   switch (kind) {
     case "read":
-      return <BookOpenIcon {...p} />;
+      return <ReadIcon {...p} />;
     case "listen":
-      return <HeadphonesIcon {...p} />;
+      return <ListenIcon {...p} />;
     case "write":
-      return <PenIcon {...p} />;
+      return <WriteIcon {...p} />;
+    /* Dil bilgisi ve tekrar turu simgeleri Android'inkilerle eşitlendi:
+       yapboz ve hedef, aynı iki kavramı başka çizimlerle anlatıyordu. */
     case "grammar":
-      return <PuzzleIcon {...p} />;
+      return <GrammarIcon {...p} />;
     case "quiz":
-      return <TargetIcon {...p} />;
+      return <QuizIcon {...p} />;
     case "checkpoint":
       return <CheckIcon {...p} />;
+    /* Ders türü AÇIKÇA yazılı (varsayılana bırakılmıyor): harita böyle
+       okununca Android'in `unitKind` tablosuyla satır satır karşılaştırılıyor
+       ve tanınmayan tür yine varsayılana düşüyor. */
+    case "lesson":
+      return <LearnIcon {...p} />;
     default:
       return <LearnIcon {...p} />;
   }

@@ -3007,6 +3007,28 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   );
 }
 
+/* ── 81. beceri ve patika turu simgeleri ──────────────────────────────────
+ * Ayni uc kavram (okuma, dinleme, yazma) iki uygulamada IKI AYRI cizimle
+ * gosteriliyordu: web `BookOpen`/`Headphones`/`Pen`, Android kendi
+ * `Read`/`Listen`/`Write` ailesi. Simge bir kavramin kimligiyse iki
+ * uygulamada ayni kimlik olmali - ustelik iki tarafta da her iki aile
+ * mevcut, yani ayrisma bir eksiklikten degil SECIMDEN geliyordu. */
+{
+  const simge = (p, re) => [...read(p).matchAll(re)].map((m) => m[1] + "=" + m[2]).sort();
+  sameSet(
+    "beceri simgeleri",
+    simge("mobile/src/screens/SkillsScreen.tsx", /key: "(reading|listening|writing|speaking|grammar)"[^}]*icon: ([A-Za-z]+Icon)/g),
+    simge("src/components/skills/theme.ts", /^  (reading|listening|writing|speaking|grammar): ([A-Za-z]+Icon),$/gm),
+    "mobil", "web",
+  );
+  sameSet(
+    "patika turu simgeleri",
+    simge("mobile/src/ui/unitKind.tsx", /^  (read|listen|write|grammar|quiz|lesson|checkpoint): \(p\) => <([A-Za-z]+Icon)/gm),
+    simge("src/components/immersion/unit-pane.tsx", /case "(read|listen|write|grammar|quiz|lesson|checkpoint)":\s*\n?\s*return <([A-Za-z]+Icon)/g),
+    "mobil", "web",
+  );
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"
