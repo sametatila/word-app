@@ -66,7 +66,7 @@ function Board({ rows, colors }: { rows: DailyBoardRow[]; colors: Palette }) {
               )}
             </View>
             <View style={{ width: 36, height: 36, borderRadius: 18, alignItems: "center", justifyContent: "center", backgroundColor: r.isMe ? colors.primary : colors.surface2 }}>
-              <Text variant="bodyStrong" color={r.isMe ? "#fff" : colors.textMuted}>{initial}</Text>
+              <Text variant="bodyStrong" color={r.isMe ? colors.onPrimary : colors.textMuted}>{initial}</Text>
             </View>
             <View style={{ flex: 1 }}>
               <Text variant="bodyStrong" color={r.isMe ? colors.primaryText : colors.text}>{r.name ?? t("social.student")}{r.isMe ? t("social.you_paren") : ""}</Text>

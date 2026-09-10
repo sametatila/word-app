@@ -200,7 +200,7 @@ export function DeleteAccountScreen() {
             {error ? <Text variant="bodyStrong" color={colors.dangerText} style={{ marginTop: spacing.sm }}>{error}</Text> : null}
 
             <PressableScale onPress={() => setConfirm(true)} disabled={!ready} accessibilityState={{ disabled: !ready }} style={[{ borderRadius: radii.lg, backgroundColor: ready ? colors.danger : colors.surface2, paddingVertical: 16, alignItems: "center", marginTop: spacing.lg }, ready ? softShadow(colors.danger, 10) : {}]}>
-              <Text variant="h3" color={ready ? "#fff" : colors.textFaint}>{busy ? tx("deleteaccount.deleting") : tx("deleteaccount.permanently_delete_my_account")}</Text>
+              <Text variant="h3" color={ready ? colors.onFill : colors.textFaint}>{busy ? tx("deleteaccount.deleting") : tx("deleteaccount.permanently_delete_my_account")}</Text>
             </PressableScale>
             <PressableScale onPress={() => nav.goBack()} style={{ paddingVertical: spacing.lg, alignItems: "center" }}>
               <Text variant="bodyStrong" color={colors.textMuted}>{tx("common.discard")}</Text>

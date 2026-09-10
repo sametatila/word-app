@@ -74,6 +74,30 @@ const MOBILE_ALLOW = new Map([
  */
 const WHITE_BLACK = /^#(?:fff|ffff|ffffff|ffffff[0-9a-f]{2}|000|0000|000000|000000[0-9a-f]{2})$/i;
 
+/**
+ * DOLGU FARKINDALIĞI — beyaz her yerde masum değil.
+ *
+ * Beyaz yazı sabit bir dolgunun üstünde (marka gradyanı, kademe rengi)
+ * doğru; ANLAMSAL bir dolgunun üstünde yanlış, çünkü o dolgular temayla
+ * basamak değiştiriyor ve koyu temada açılıyorlar - beyaz orada 1.76-2.32
+ * veriyor, grafik eşiği 3.0 bile değil (§11.41). Paletin karşılığı hazır:
+ * `onPrimary` ve `onFill`.
+ *
+ * Kural, satırın ÜSTÜNDEKİ en yakın `backgroundColor`a bakıyor. Sekiz satırlık
+ * pencere ölçülerek seçildi: altı satır sekiz gerçek ihlali kaçırıyordu
+ * (hepsi `<koşul> ? colors.primary : colors.surface` biçiminde dolgular).
+ * Kesin bir çözümleme değil - JSX ağacını çözmüyor - ama bu depoda gürültü
+ * tabanı SIFIR: bugün hiçbir meşru kullanım bu kalıba düşmüyor, o yüzden
+ * istisna listesi de yok.
+ */
+const SEMANTIC_FILL = /backgroundColor:\s*([^,\n}]+)/g;
+const PLAIN_WHITE = /"#fff"|"#ffffff"/;
+
+function fillIsSemantic(fill) {
+  if (/colors\.primary\b/.test(fill)) return true;
+  return /colors\.(success|danger|info|accent|streak)\b/.test(fill);
+}
+
 /* ── tarama ────────────────────────────────────────────────────────────── */
 
 async function sources(root) {
@@ -130,7 +154,17 @@ for (const f of await sources("src")) {
 for (const f of await sources("mobile/src")) {
   if (MOBILE_SKIP.some((s) => f.startsWith(s))) continue;
   const src = stripComments(await readFile(f, "utf8"));
-  src.split("\n").forEach((line, i) => {
+  const lines = src.split("\n");
+  lines.forEach((line, i) => {
+    /* Beyazın üstünde durduğu dolgu anlamsal mı: öyleyse `onPrimary`/`onFill`
+       bekleniyor. Sabit dolgular (gradyan, kademe rengi) beyazı hak ediyor. */
+    const near = lines.slice(Math.max(0, i - 8), i + 1).join("\n");
+    const fills = [...near.matchAll(SEMANTIC_FILL)];
+    const fill = fills.length ? fills[fills.length - 1][1].trim() : "";
+    if (fillIsSemantic(fill) && (PLAIN_WHITE.test(line) || /#ffffff[0-9a-fA-F]{2}/.test(line))) {
+      problems.push(`${f}:${i + 1}  anlamsal dolgu üstünde beyaz (colors.onPrimary / onFill bekleniyordu): ${fill.slice(0, 50)}`);
+      return;
+    }
     for (const hex of line.match(/#[0-9a-fA-F]{3,8}\b/g) ?? []) {
       if (WHITE_BLACK.test(hex)) continue;
       if (MOBILE_ALLOW.has(hex)) continue;

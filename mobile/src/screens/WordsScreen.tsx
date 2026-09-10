@@ -79,7 +79,7 @@ export function WordsScreen() {
             const active = filter === f.key;
             return (
               <PressableScale key={f.key || "all"} onPress={() => setFilter(f.key)} style={{ paddingHorizontal: 14, paddingVertical: 8, borderRadius: radii.pill, backgroundColor: active ? colors.primary : colors.surface2 }}>
-                <Text variant="caption" color={active ? "#fff" : colors.textMuted}>{t(f.label)}</Text>
+                <Text variant="caption" color={active ? colors.onPrimary : colors.textMuted}>{t(f.label)}</Text>
               </PressableScale>
             );
           })}

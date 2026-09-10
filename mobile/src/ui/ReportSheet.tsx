@@ -66,7 +66,7 @@ export function ReportSheet({ visible, kind, refId, content, onClose }: {
                   <Text variant="bodyStrong" color={colors.text}>{t("common.discard")}</Text>
                 </PressableScale>
                 <PressableScale onPress={submit} disabled={!reason || state === "sending"} accessibilityState={{ disabled: !reason }} style={[{ flex: 1, borderRadius: radii.lg, backgroundColor: reason ? colors.primary : colors.surface2, paddingVertical: 14, alignItems: "center" }, reason ? softShadow(colors.primary, 8) : {}]}>
-                  <Text variant="bodyStrong" color={reason ? "#fff" : colors.textFaint}>{state === "sending" ? "..." : t("common.send")}</Text>
+                  <Text variant="bodyStrong" color={reason ? colors.onPrimary : colors.textFaint}>{state === "sending" ? "..." : t("common.send")}</Text>
                 </PressableScale>
               </View>
             </>

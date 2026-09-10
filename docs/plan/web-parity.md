@@ -2475,3 +2475,39 @@ koşulsuz geçiriyor, çünkü marka gradyanının üstündeki katmanlar meşru.
 bir anlamsal dolgunun üstündekini ondan ayırmak, kapının arka planı
 çözmesini gerektirir - bu turda elle ölçüldü (26 satırdan 3'ü), kapıya
 konmadı.
+
+### 11.42 Kapı dolgu farkındalığı kazandı — ve sekiz kaçak daha
+
+§11.41'in sonunda kapının bilinen sınırını yazmıştım: `check:colors` beyazı
+koşulsuz geçiriyordu, çünkü marka gradyanının üstündeki beyaz meşru. Sınırı
+kapatmak için kuralın satırın ÜSTÜNDEKİ en yakın `backgroundColor`a bakması
+yetiyor - ve ölçüm bunun uygulanabilir olduğunu gösterdi: bu depoda gürültü
+tabanı SIFIR. Bugün hiçbir meşru kullanım "anlamsal dolgu + beyaz yazı"
+kalıbına düşmüyor, o yüzden bu kuralın istisna listesi de yok.
+
+Kuralı yazarken §11.41'in kendi taramasının **sekiz ihlali kaçırdığı** çıktı.
+Sebep pencere genişliğiydi: altı satır yetmiyordu. Kaçanların hepsi aynı
+biçimdeydi -
+
+    <View style={{ backgroundColor: canNext ? colors.primary : colors.surface2 }}>
+      ...
+      <Text color={canNext ? "#fff" : colors.textFaint}>
+
+yani dolgu bir ternary ve beyaz dalı tam olarak ANLAMSAL dala denk geliyor.
+Sekizi de düzeltildi: "Devam" (onboarding), "Gönder" (bildirme), "Abone ol"
+ve "Uygula" (ödeme), "Hesabımı kalıcı olarak sil", kelime süzgeci çipi,
+ders ilerleme oku, günün turu sıralamasındaki kendi avatarın.
+
+İkisinin kendi içinde çelişkisi vardı ve teşhisi doğruluyor: ödeme
+ekranındaki iki düğmede bekleme göstergesi zaten `colors.onPrimary`
+kullanıyordu, yanındaki etiket `"#fff"` yazıyordu - aynı düğmede iki ayrı
+kural.
+
+Pencere sekiz satıra çıkarıldı ve kapı yeniden ölçüldü: temiz. Yakaladığı da
+doğrulandı - `WordsScreen`in çip yazısı `"#fff"`e geri alındığında kapı tek
+satırla kırıldı, sonra geri alındı.
+
+Kapının hâlâ kesin bir çözümleme OLMADIĞI kayda geçsin: JSX ağacını çözmüyor,
+"en yakın dolgu" bir sezgi. Yanlış pozitif üretirse çare istisna listesine
+sebebiyle yazmak; yanlış negatif ise pencereyi büyütmek - bu turda tam olarak
+o yapıldı.
