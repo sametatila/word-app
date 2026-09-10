@@ -44,10 +44,22 @@ export type OfflineReply = {
   speak: string;
   /** Söylenen anlaşıldı mı (dal tuttu / kalıp kullanıldı). */
   understood: boolean;
-  /** Mikrofon etiketine düşen Türkçe yönlendirme. */
-  hint: string | null;
+  /** Mikrofon etiketine düşen yönlendirme — ANAHTAR, metin değil (bkz. `Hint`). */
+  hint: Hint | null;
   ended: boolean;
 };
+
+/**
+ * Mikrofon etiketine düşen yönlendirme: ANAHTAR + değişkenler.
+ *
+ * METİN DEĞİL. Bu üç yönlendirme burada Türkçe SABİT yazılıydı ("Kalıbı
+ * kullan: …", "Anlaşılmadı — ör. …", "Sıradaki kalıp: …") ve İngilizce ya da
+ * Almanca arayüzde de Türkçe görünüyordu. Ham metin tarayıcısı da göremiyordu:
+ * `lib/lessons` dizini "ders içeriği" diye atlanıyor, oysa bu dosya MANTIK.
+ * Çeviri gösterildiği yerde yapılıyor (`lesson-player`), koç cümlelerinde ve
+ * fark vurgusunda olduğu gibi.
+ */
+export type Hint = { key: string; vars?: Record<string, string> };
 
 export function hasScript(lesson: Lesson): boolean {
   return Boolean(lesson.roleplay.script?.length);
@@ -59,20 +71,23 @@ function turnById(lesson: Lesson, id: string | null): DialogueTurn | undefined {
 }
 
 /** Açılış: senaryonun ilk turu (açılış repliğiyle aynı) ya da dersin açılışı. */
-export function offlineStart(lesson: Lesson): { state: OfflineState; opening: string; hint: string | null } {
+export function offlineStart(lesson: Lesson): { state: OfflineState; opening: string; hint: Hint | null } {
   const script = lesson.roleplay.script;
   if (script?.length) {
     return {
       state: { turnId: script[0].id, path: [], usedPatterns: [], userTurns: 0, ended: false },
       opening: script[0].ask,
-      hint: script[0].cue,
+      /* Senaryo dalinin `cue`su ICERIKTEN geliyor (ders verisinde yazili),
+         anahtar degil: bos anahtar + `text` degiskeni ile oldugu gibi
+         gosteriliyor. */
+      hint: script[0].cue ? { key: "", vars: { text: script[0].cue } } : null,
     };
   }
   const first = lesson.patterns[0];
   return {
     state: { turnId: null, path: [], usedPatterns: [], userTurns: 0, ended: false },
     opening: lesson.roleplay.opening,
-    hint: first ? `Kalıbı kullan: ${first.de}` : null,
+    hint: first ? { key: "roleplay.hint_use_pattern", vars: { pattern: first.de } } : null,
   };
 }
 
@@ -114,7 +129,7 @@ export function offlineReply(lesson: Lesson, state: OfflineState, said: string):
         content: match.reply.say,
         speak: match.reply.say,
         understood: true,
-        hint: next?.cue ?? null,
+        hint: next?.cue ? { key: "", vars: { text: next.cue } } : null,
         ended,
       };
     }
@@ -124,7 +139,7 @@ export function offlineReply(lesson: Lesson, state: OfflineState, said: string):
       content: say(fb.say, fb.example),
       speak: fb.say,
       understood: false,
-      hint: `Anlaşılmadı — ör. „${fb.example}“`,
+      hint: { key: "roleplay.hint_not_understood", vars: { example: fb.example } },
       ended: false,
     };
   }
@@ -164,7 +179,9 @@ export function offlineReply(lesson: Lesson, state: OfflineState, said: string):
     content: say(body, ended ? undefined : example),
     speak: body,
     understood,
-    hint: ended ? null : `${understood ? "Sıradaki kalıp" : "Bu kalıbı dene"}: ${nextP}`,
+    hint: ended
+      ? null
+      : { key: understood ? "roleplay.hint_next_pattern" : "roleplay.hint_try_pattern", vars: { pattern: nextP } },
     ended,
   };
 }

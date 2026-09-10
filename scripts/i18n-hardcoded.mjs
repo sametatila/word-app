@@ -67,6 +67,21 @@ const SKIP = [
   "app/demo-feedback",
 ].map((p) => path.join(SRC, ...p.split("/")));
 
+/**
+ * ATLANAN DİZİNİN İÇİNDE OLSA DA TARANAN dosyalar.
+ *
+ * `lib/lessons` bütünüyle atlanıyor çünkü ders içeriği orada duruyor — ama o
+ * dizinde MANTIK da var ve mantığın ürettiği metin kullanıcıya görünüyor.
+ * Somut örnek: `offline-roleplay` yapay zekâ kapalıyken mikrofon etiketine
+ * "Kalıbı kullan: …", "Anlaşılmadı — ör. …", "Sıradaki kalıp: …" yazıyordu.
+ * Üçü de İngilizce ve Almanca arayüzde Türkçe görünüyordu ve tarayıcı hiçbirini
+ * göremiyordu: dizin atlanıyor.
+ *
+ * Liste yalnız MANTIK dosyalarını taşıyor, içerik dosyalarını değil. Uzarsa
+ * kapı güçlenir; kısalması bir kör noktayı geri açmak demektir.
+ */
+const FORCE = ["lib/lessons/offline-roleplay.ts"].map((p) => path.join(SRC, ...p.split("/")));
+
 const TURKISH_LETTERS = /[çğışöüÇĞİŞÖÜ]/;
 
 /**
@@ -149,7 +164,7 @@ const SEP = "";
 function walk(dir, out = []) {
   for (const entry of fs.readdirSync(dir)) {
     const p = path.join(dir, entry);
-    if (SKIP.some((s) => p === s || p.startsWith(s + path.sep))) continue;
+    if (!FORCE.includes(p) && SKIP.some((s) => p === s || p.startsWith(s + path.sep))) continue;
     const st = fs.statSync(p);
     if (st.isDirectory()) walk(p, out);
     else if (/\.tsx?$/.test(entry)) out.push(p);

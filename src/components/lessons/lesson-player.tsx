@@ -1,7 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState, useMemo } from "react";
-import { offlineReply, offlineStart, offlineSummary, type OfflineState } from "@/lib/lessons/offline-roleplay";
+import { offlineReply, offlineStart, offlineSummary, type Hint, type OfflineState } from "@/lib/lessons/offline-roleplay";
 import { AiNotice } from "@/components/ai-notice";
 import { track } from "@/lib/track";
 import { AnimatePresence, motion } from "framer-motion";
@@ -231,7 +231,10 @@ export function LessonPlayer({
   const [listening, setListening] = useState(false);
   /** Dinlerken o ana kadar tanınan metin — kullanıcı duyulduğunu görmeli. */
   const [partial, setPartial] = useState("");
-  const [hint, setHint] = useState<string | null>(null);
+  /* Yönlendirme ANAHTAR olarak tutuluyor, metin olarak değil: çeviri
+     gösterildiği yerde yapılıyor (bkz. `offline-roleplay` `Hint`). */
+  const [hintKey, setHintKey] = useState<Hint | null>(null);
+  const hint = hintKey ? (hintKey.key ? t(hintKey.key, hintKey.vars) : (hintKey.vars?.text ?? null)) : null;
   const [handsFree, setHandsFree] = useState(true);
   /** Yazarak cevaplama — varsayılan değil, takılınca açılan çıkış yolu. */
   const [typing, setTyping] = useState(false);
@@ -288,7 +291,7 @@ export function LessonPlayer({
         if (s && !s.configured && !offlineRef.current) {
           const start = offlineStart(lesson);
           setOffline(start.state);
-          setHint(start.hint);
+          setHintKey(start.hint);
         }
       })
       .catch(() => {});
@@ -453,7 +456,7 @@ export function LessonPlayer({
         setPartial("");
         const joined = collected.join(" ").trim();
         if (!joined) return;
-        setHint(null);
+        setHintKey(null);
         onHeard(collected.length === 1 && firstAlternatives?.length ? firstAlternatives : [joined]);
       };
 
@@ -489,7 +492,7 @@ export function LessonPlayer({
         deliver();
       };
       setListening(true);
-      setHint(null);
+      setHintKey(null);
       setPartial("");
       try {
         rec.start();
@@ -504,7 +507,7 @@ export function LessonPlayer({
           silence.current = setTimeout(() => {
             rec.stop();
             setListening(false);
-            setHint(t("lessonp.not_heard"));
+            setHintKey({ key: "lessonp.not_heard" });
           }, SILENCE_MS);
           heard.current = false;
           typeNudge.current = setTimeout(() => {
@@ -830,7 +833,7 @@ export function LessonPlayer({
         stopThinking();
         const r = offlineReply(lesson, state, clean);
         setOffline(r.state);
-        setHint(r.hint);
+        setHintKey(r.hint);
         setTurns([...next, { role: "assistant", content: r.content }]);
         const done = closing || r.ended;
         if (ttsAvailable && r.speak.trim()) {

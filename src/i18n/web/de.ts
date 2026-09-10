@@ -1135,4 +1135,8 @@ export const deWeb: Record<string, string> = {
   "push.rem_costreak_title": "Eure Serie mit {who} reißt heute",
   "push.rem_costreak_body": "Die gemeinsame Kette wird heute Nacht zurückgesetzt. Eine kurze Runde rettet euch beide.",
   "push.rem_costreak_body_named": "{name}, eure Kette mit {who} wird heute Nacht zurückgesetzt. Eine kurze Runde rettet euch beide.",
+  "roleplay.hint_try_pattern": "Probier dieses Muster: {pattern}",
+  "roleplay.hint_next_pattern": "Nächstes Muster: {pattern}",
+  "roleplay.hint_not_understood": "Nicht verstanden — z. B. „{example}“",
+  "roleplay.hint_use_pattern": "Nutze das Muster: {pattern}",
 };

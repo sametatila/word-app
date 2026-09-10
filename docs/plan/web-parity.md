@@ -905,6 +905,41 @@ Senaryo yolunu mobile taşımak bir durum makinesi ve ders verisi okuma demek;
 loop turunun işi değil, ayrıca ölçülmeli. Yön yine TERS (web ileride), §11.7
 ile aynı sınıf.
 
+#### Portun boyutu ölçüldü (bu tur)
+
+  modül            satır   bağımlılık
+  offline-roleplay   180   dialogue, speech.normalizeSpoken, chat-format, courses
+  dialogue           128   yalnız speech.normalizeSpoken
+  normalizeSpoken     ~15  foldNumbers + noktalama (mobilde ikisi de var)
+
+Yani zincir kapalı ve mobilde karşılığı olmayan tek parça `normalizeSpoken`,
+o da on beş satır. `SUGGESTION_MARK` mobilde ZATEN var (`game/roleplay`,
+kendi kopyası).
+
+KRİTİK VERİ: dallanan senaryo 780 dersin 10'unda var (`roleplay.script`).
+Kalan 770 ders zaten `offlineStart`ın İKİNCİ yoluna düşüyor - açılış repliği
+`roleplay.opening`, yönlendirme `patterns[0]` - ve mobil döküm ikisini de
+taşıyor. Yani portun büyük kısmı döküm değişikliği İSTEMİYOR; yalnız o 10 ders
+için `roleplay.script` alanının döküme eklenmesi gerekiyor.
+
+#### Yan bulgu, DÜZELTİLDİ: üç yönlendirme Türkçe sabitti
+
+`offlineStart`/`offlineReply` mikrofon etiketine düşen üç yönlendirmeyi
+Türkçe SABİT yazıyordu: "Kalıbı kullan: …", "Anlaşılmadı — ör. …", "Sıradaki
+kalıp / Bu kalıbı dene: …". İngilizce ve Almanca arayüzde de Türkçe
+görünüyorlardı.
+
+Ham metin tarayıcısı bunları GÖREMİYORDU: `lib/lessons` dizini "ders içeriği"
+diye bütünüyle atlanıyor, oysa bu dosya MANTIK. Kör noktanın kendisi de
+kapatıldı - tarayıcıya `FORCE` listesi eklendi: atlanan dizinin içinde olsa da
+taranan dosyalar. Liste şimdilik tek dosya taşıyor ve yalnız uzayabilir;
+kısalması bir kör noktayı geri açmak demek.
+
+Yönlendirmeler artık ANAHTAR taşıyor (metin değil) ve çeviri gösterildiği
+yerde yapılıyor - koç cümleleri ve fark vurgusundaki kalıbın aynısı. Senaryo
+dallarının `cue`su içerikten geldiği için boş anahtar + `text` değişkeniyle
+olduğu gibi geçiyor.
+
 ### 11.10 Yüzeyi olmayan yazılmış içerik
 
 Tarama üç yerde "yazılmış ama hiçbir ekranda görünmeyen" metin buldu. İkisi

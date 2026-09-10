@@ -1135,4 +1135,8 @@ export const enWeb: Record<string, string> = {
   "push.rem_costreak_title": "Your streak with {who} breaks today",
   "push.rem_costreak_body": "The chain you built together resets tonight. One short round saves you both.",
   "push.rem_costreak_body_named": "{name}, the chain you built with {who} resets tonight. One short round saves you both.",
+  "roleplay.hint_try_pattern": "Try this pattern: {pattern}",
+  "roleplay.hint_next_pattern": "Next pattern: {pattern}",
+  "roleplay.hint_not_understood": "Didn't catch that — e.g. “{example}”",
+  "roleplay.hint_use_pattern": "Use the pattern: {pattern}",
 };

@@ -1160,4 +1160,8 @@ export const trWeb: Record<string, string> = {
   "push.rem_costreak_title": "{who} ile seriniz bugün kırılıyor",
   "push.rem_costreak_body": "Birlikte kurduğunuz zincir bu gece sıfırlanır. Kısa bir tur ikinizi de kurtarır.",
   "push.rem_costreak_body_named": "{name}, {who} ile kurduğunuz zincir bu gece sıfırlanır. Kısa bir tur ikinizi de kurtarır.",
+  "roleplay.hint_try_pattern": "Bu kalıbı dene: {pattern}",
+  "roleplay.hint_next_pattern": "Sıradaki kalıp: {pattern}",
+  "roleplay.hint_not_understood": "Anlaşılmadı — ör. „{example}“",
+  "roleplay.hint_use_pattern": "Kalıbı kullan: {pattern}",
 };
