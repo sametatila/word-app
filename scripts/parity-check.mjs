@@ -2686,6 +2686,27 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   sameList("tur ozeti zorlandiklarin", liste("mobile/src/screens/GameScreen.tsx"), liste("src/components/session-player.tsx"));
 }
 
+/* ── 70. tur ozetinin sonuc halkasi ───────────────────────────────────────
+ * Android ozetin ortasinda halka cizip icine "kac dogru / kac soru" yaziyor;
+ * halkanin dolulugu turun kendisi. Webde halka YOKTU, ayni bilgi asagidaki
+ * karolarda bir sayi olarak duruyordu ve "tur nasil gecti" bir bakista
+ * cevaplanmiyordu. Iki taraf da ayni iceriği tasimali: dogru/toplam + etiket. */
+{
+  const halka = (p, re) => {
+    const src = read(p).replace(/\/\*[\s\S]*?\*\//g, " ").replace(/\/\/[^\n]*/g, " ");
+    return [
+      "halka=" + (re.test(src) ? "var" : "yok"),
+      "dogru bolu toplam=" + (/\{(?:tally\.correct|finalCorrect)\}\/\{(?:tally\.total|total \|\| 0)\}/.test(src) ? "var" : "yok"),
+      "etiket=" + (src.includes('t("game.correct")') ? "var" : "yok"),
+    ];
+  };
+  sameList(
+    "tur ozeti sonuc halkasi",
+    halka("mobile/src/screens/GameScreen.tsx", /<ProgressRing/),
+    halka("src/components/session-player.tsx", /conic-gradient/),
+  );
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"

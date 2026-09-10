@@ -1346,6 +1346,27 @@ function SummaryCard({
               <Mascot mood={deserved ? "cheer" : accuracy >= 60 ? "happy" : "sad"} size={92} />
             )}
           </motion.div>
+          {/*
+            SONUÇ HALKASI. Android tur özetinin ortasında halkayı gösteriyor ve
+            halkanın doluluğu turun kendisi: kaç soru, kaçı doğru. Webde bu
+            yoktu - aynı bilgi yalnız aşağıdaki karoların içinde bir sayı
+            olarak duruyordu ve tur "nasıl geçti" sorusu bir bakışta
+            cevaplanmıyordu. İç daire başlığın zemininde, yani halka bir şerit
+            gibi okunuyor.
+          */}
+          {tally.total > 0 ? (
+            <div
+              className="relative mx-auto mt-3 h-24 w-24 rounded-full"
+              style={{ background: `conic-gradient(#fff ${accuracy}%, rgb(255 255 255 / 0.28) ${accuracy}% 100%)` }}
+            >
+              <div className="brand-gradient-deep absolute inset-[7px] flex flex-col items-center justify-center rounded-full">
+                <span className="text-xl font-black tabular-nums">
+                  {tally.correct}/{tally.total}
+                </span>
+                <span className="text-[11px] opacity-80">{t("game.correct")}</span>
+              </div>
+            </div>
+          ) : null}
           <h2 className="mt-2 text-2xl font-bold">
             {partial ? t("summary.stopped") : t("summary.round_done")}
           </h2>
