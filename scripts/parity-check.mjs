@@ -1504,6 +1504,39 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   sameList("deneme sinavi hedef etiketleri", map("mobile/src/screens/MockExamScreen.tsx"), map("src/components/mock-exam-player.tsx"));
 }
 
+/* ── 35. gramer turetmesinin kurallari ─────────────────────────────────────
+ * Unite gramer alistirmasi IKI TARAFTA DA ders adimlarindan turetiliyor
+ * (hukum adimlari ve uretim hedefleri) ve iki gerceklestirme ayri dosyada
+ * duruyor. Ayrisirlarsa ayni unite iki uygulamada baska sorular verir -
+ * ogrenci webde gecip mobilde kalabilir.
+ *
+ * Olculen sayilar: dizme uzunlugunun alt/ust siniri, hukum/dizme bolusmesi
+ * ve tohum etiketleri. Metinler olculmuyor - ikisi de artik sozlukten
+ * geliyor ve dil basina ayri. */
+{
+  const nums = (p, fn) => {
+    const src = read(p).replace(/\/\*[\s\S]*?\*\//g, " ").replace(/\/\/[^\n]*/g, " ");
+    const i = src.indexOf(fn);
+    if (i < 0) return ["bulunamadi: " + fn];
+    const body = src.slice(i, src.indexOf("\n}", i));
+    return [
+      "alt=" + ((body.match(/length\s*<\s*(\d+)/) ?? [])[1] ?? "?"),
+      "ust=" + ((body.match(/length\s*>\s*(\d+)/) ?? [])[1] ?? "?"),
+      "bolusme=" + ((body.match(/Math\.ceil\(count\s*\/\s*(\d+)\)/) ?? [])[1] ?? "?"),
+      "tohum=" + [...body.matchAll(/\|(judge|order)`/g)].map((m) => m[1]).join("+"),
+      /* Yalniz ternary'nin KUYRUGU: alan adi iki tarafta ayri yazilıyor
+         (`e.answer` <-> `step.expect.answer`), onemli olan hangi sikkin
+         dogru sayildigi. */
+      "yanit=" + ((body.match(/answer:\s*[\w.]+\s*(\?\s*\d+\s*:\s*\d+)/) ?? [])[1] ?? "?").replace(/\s+/g, " ").trim(),
+    ];
+  };
+  sameList(
+    "gramer turetmesi",
+    nums("mobile/src/game/immersionQuiz.ts", "export function deriveGrammar"),
+    nums("src/lib/immersion/grammar.ts", "export function deriveGrammar"),
+  );
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"
