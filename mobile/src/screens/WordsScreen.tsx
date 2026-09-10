@@ -66,7 +66,9 @@ export function WordsScreen() {
       </View>
 
       <View style={{ paddingHorizontal: spacing.lg, gap: spacing.md, paddingBottom: spacing.md }}>
+        {/* Liste CANLI süzülüyor; return tuşunun işi klavyeyi kapatmak. */}
         <TextInput
+          returnKeyType="done"
           value={q}
           onChangeText={setQ}
           placeholder={t("words.search", { target: targetLangName(), nativeLang: nativeLangName() })}

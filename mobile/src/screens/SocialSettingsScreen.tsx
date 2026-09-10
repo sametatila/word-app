@@ -88,7 +88,7 @@ export function SocialSettingsScreen() {
           <>
             <Section title={tx("socialsettings.username")} colors={colors}>
               <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.sm }}>
-                <TextInput value={username} onChangeText={(t) => setUsername(t.toLowerCase())} maxLength={20} autoCapitalize="none" autoCorrect={false} placeholder={tx("socialsettings.username_2")} placeholderTextColor={colors.textFaint} style={[input, { flex: 1 }]} />
+                <TextInput returnKeyType="done" value={username} onChangeText={(t) => setUsername(t.toLowerCase())} maxLength={20} autoCapitalize="none" autoCorrect={false} placeholder={tx("socialsettings.username_2")} placeholderTextColor={colors.textFaint} style={[input, { flex: 1 }]} />
                 <Pill label={tx("common.save")} small disabled={busy || username.trim() === me.username || me.usernameChangeAvailableIn > 0} onPress={() => void save({ username: username.trim() }, tx("socialsettings.username_updated"))} />
               </View>
               <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.sm }}>{tx("socialsettings.username_rule")} {me.usernameChangeAvailableIn > 0 ? tx("socialsettings.username_wait", { n: me.usernameChangeAvailableIn }) : tx("socialsettings.username_cooldown")}</Text>

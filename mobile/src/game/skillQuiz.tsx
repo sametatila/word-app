@@ -115,7 +115,12 @@ function WrittenInput({ q, kind, done, onSettle, colors }: { q: SkillQuestion; k
         </PressableScale>
       ) : null}
       <View style={{ flexDirection: "row", alignItems: "flex-end", gap: spacing.sm }}>
+        {/* KLAVYENIN RETURN TUSU CEVABI GONDERIYOR. Webde bu alan bir
+            `<form onSubmit>` icinde, yani Enter kontrol ediyor; mobilde tus
+            hicbir sey yapmiyordu ve kullanici klavyeyi kapatip dugmeye
+            basmak zorundaydi. Handler dugmenin ta kendisi. */}
         <TextInput value={typed} onChangeText={setTyped} editable={!done} autoCapitalize="none" spellCheck={false}
+          returnKeyType="done" onSubmitEditing={() => { if (typed.trim()) onSettle(written(typed, accept)); }}
           placeholder={tx(kind === "dictation" ? "skillquiz.ph_dictation" : kind === "gapfill" ? "skillquiz.ph_gapfill" : "skillquiz.ph_short")} placeholderTextColor={colors.textFaint}
           style={{ flex: 1, backgroundColor: colors.surface, borderRadius: radii.md, borderWidth: 1.5, borderColor: done ? (ok ? colors.success : colors.danger) : colors.border, paddingHorizontal: spacing.md, paddingVertical: 10, color: colors.text, fontSize: 15 }} />
         {!done ? (

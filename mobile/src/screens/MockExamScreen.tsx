@@ -664,6 +664,7 @@ function ItemView({
                   onChangeText={(v) => onAnswer(item.id, v)}
                   placeholder={task.format === "transform" ? t("mockexam.write_transform") : t("mockexam.write_here")}
                   placeholderTextColor={colors.textFaint}
+                  returnKeyType="done"
                   autoCapitalize="none"
                   autoCorrect={false}
                   style={{ borderRadius: radii.md, backgroundColor: colors.surface2, color: colors.text, paddingHorizontal: spacing.md, paddingVertical: spacing.sm }}

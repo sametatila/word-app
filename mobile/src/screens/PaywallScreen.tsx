@@ -392,6 +392,8 @@ function PromoBox({ colors, onRedeemed }: { colors: Palette; onRedeemed: () => v
   return (
     <Section title={t("promo.title")} colors={colors}>
       <View style={{ flexDirection: "row", gap: spacing.sm, alignItems: "center" }}>
+        {/* Enter = Uygula: webde kod alanı bir form içinde, yani klavyenin
+            return tuşu kodu uyguluyor. Mobilde tuş hiçbir şey yapmıyordu. */}
         <TextInput
           value={code}
           onChangeText={(v) => setCode(v.toUpperCase())}
@@ -399,6 +401,8 @@ function PromoBox({ colors, onRedeemed }: { colors: Palette; onRedeemed: () => v
           placeholderTextColor={colors.textFaint}
           autoCapitalize="characters"
           autoCorrect={false}
+          returnKeyType="done"
+          onSubmitEditing={() => { if (!busy && code.trim()) void apply(); }}
           style={{ flex: 1, backgroundColor: colors.surface2, borderRadius: radii.md, paddingHorizontal: spacing.md, paddingVertical: 10, color: colors.text, letterSpacing: 2 }}
         />
         <PressableScale onPress={apply} disabled={busy || !code.trim()} accessibilityRole="button" accessibilityLabel={t("promo.apply")} style={{ borderRadius: radii.md, backgroundColor: code.trim() ? colors.primary : colors.surface2, paddingHorizontal: spacing.lg, paddingVertical: 11 }}>

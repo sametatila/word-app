@@ -185,6 +185,7 @@ export function SettingsScreen() {
             onChangeText={setName}
             placeholder={t("settings.display_name")}
             placeholderTextColor={colors.textFaint}
+            returnKeyType="done"
             autoCapitalize="words"
             style={{ backgroundColor: colors.surface2, borderRadius: radii.md, paddingHorizontal: spacing.lg, paddingVertical: 13, color: colors.text, fontSize: 16 }}
           />

@@ -187,7 +187,7 @@ export function AuthScreen() {
               </View>
             ) : (
               <>
-                <TextInput value={email} onChangeText={setEmail} placeholder={t("auth.email")} placeholderTextColor={colors.textFaint} keyboardType="email-address" autoCapitalize="none" autoCorrect={false} style={input} />
+                <TextInput returnKeyType="go" onSubmitEditing={() => { if (!resetBusy) void doReset(); }} value={email} onChangeText={setEmail} placeholder={t("auth.email")} placeholderTextColor={colors.textFaint} keyboardType="email-address" autoCapitalize="none" autoCorrect={false} style={input} />
                 {error && (<View style={{ backgroundColor: colors.dangerSoft, borderRadius: radii.md, padding: spacing.md }}><Text variant="caption" color={colors.dangerText}>{error}</Text></View>)}
                 <PressableScale onPress={doReset} accessibilityLabel={t("auth.send_reset_link")} style={[{ borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: 16, alignItems: "center", marginTop: spacing.sm }, softShadow(colors.primary, 10)]}>
                   <Text variant="h3" color={colors.onPrimary}>{resetBusy ? "..." : t("auth.send_reset_link")}</Text>
@@ -204,7 +204,7 @@ export function AuthScreen() {
               <TextInput value={name} onChangeText={setName} placeholder={t("auth.your_name_optional")} placeholderTextColor={colors.textFaint} autoCapitalize="words" style={input} />
             )}
             <TextInput value={email} onChangeText={setEmail} placeholder={t("auth.email")} placeholderTextColor={colors.textFaint} keyboardType="email-address" autoCapitalize="none" autoCorrect={false} style={input} />
-            <TextInput value={password} onChangeText={setPassword} placeholder={t("auth.password_at_least_8_characters")} placeholderTextColor={colors.textFaint} secureTextEntry style={input} />
+            <TextInput returnKeyType="go" onSubmitEditing={() => { if (!busy) void submit(); }} value={password} onChangeText={setPassword} placeholder={t("auth.password_at_least_8_characters")} placeholderTextColor={colors.textFaint} secureTextEntry style={input} />
 
             {error && (
               <View style={{ backgroundColor: colors.dangerSoft, borderRadius: radii.md, padding: spacing.md }}>

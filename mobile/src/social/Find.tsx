@@ -84,7 +84,9 @@ export function Find({ onChanged }: { onChanged?: () => void }) {
     <View>
       <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.sm, backgroundColor: colors.surface2, borderRadius: radii.md, paddingHorizontal: spacing.lg }}>
         <SearchIcon color={colors.textMuted} size={20} />
-        <TextInput value={q} onChangeText={setQ} placeholder={t("find.username_or_name")} placeholderTextColor={colors.textFaint} autoCapitalize="none" autoCorrect={false} style={{ flex: 1, paddingVertical: 13, color: colors.text, fontSize: 16 }} accessibilityLabel={t("find.search_users")} />
+        {/* Arama CANLI (iki harften sonra kendiliginden); return tusunun isi
+            yalnizca klavyeyi kapatmak, o yuzden "search" degil "done". */}
+        <TextInput returnKeyType="done" value={q} onChangeText={setQ} placeholder={t("find.username_or_name")} placeholderTextColor={colors.textFaint} autoCapitalize="none" autoCorrect={false} style={{ flex: 1, paddingVertical: 13, color: colors.text, fontSize: 16 }} accessibilityLabel={t("find.search_users")} />
         {q ? <PressableScale onPress={() => setQ("")} accessibilityLabel={t("find.clear")}><XIcon color={colors.textMuted} size={18} /></PressableScale> : null}
       </View>
       <ErrorText text={err} />

@@ -173,6 +173,7 @@ export function DeleteAccountScreen() {
               <TextInput
                 value={password}
                 onChangeText={setPassword}
+                returnKeyType="done"
                 placeholder={tx("deleteaccount.your_password")}
                 placeholderTextColor={colors.textFaint}
                 secureTextEntry
