@@ -10,11 +10,21 @@
  * gerektirirdi; deneme kâğıdı hattında bayrak işe yaradı çünkü orada iki
  * yönün de kaynağı aynı biçimdeydi.
  *
- * ÖLÇÜLDÜ: 11.210 benzersiz dize, 75 paket.
+ * ÖLÇÜLDÜ: 11.011 benzersiz dize, 74 paket.
  *   say.tr 7437 · hint.tr 826 · vocab.tr 715 · pattern.tr 578 · why.tr 289
- *   titleTr 200 · summary 200 · scene 200 · goal 200 · statement 199
- *   openingTr 197 · partner 169
+ *   titleTr 200 · summary 200 · scene 200 · goal 200 · openingTr 197
+ *   partner 169
  * Ortanca uzunluk 43, en uzun 320.
+ *
+ * `statement` ÇIKARILDI ve gerekçesi hattın kendi verisinde. Doğru/yanlış
+ * adımının `statement` alanı ÖĞRENİLEN dilde: "I have worked here since
+ * three years." — öğrencinin yargılayacağı İngilizce cümle. Çözücü ona
+ * hiç dokunmuyor (`resolveLesson` yalnız `target`, `hint` ve `why`
+ * alanlarını işliyor), yani karşılığı sözlükte hiçbir yere bağlanmaz.
+ * İlk hâlde 199 satır olarak paketlenmişti; yazan taraf onları birebir
+ * kopyalayacaktı ve kapı da bunu göremezdi — Türkçe harf taşımadıkları
+ * için "karşılık Türkçenin aynısı" kuralı susardı. l-003'ü dökerken
+ * görüldü ve kaynağa bakılarak doğrulandı.
  *
  * TÜR SIRASI PAKET SINIRLARINI BELİRLİYOR ve kardeş hatlardaki gerekçe
  * aynı: hat bağlamı dar, kısa satırlarla başlasın; anlatım (`say.tr`)
@@ -35,7 +45,6 @@ const FILES = ["en-a1.json", "en-a2.json"];
 export const KINDS = [
   "partner",
   "openingTr",
-  "statement",
   "titleTr",
   "summary",
   "scene",
@@ -97,10 +106,8 @@ export function extractLessonProse() {
         for (const seg of s.say ?? []) if (seg.lang === "tr") add("say.tr", seg.text, l.id, en);
         const e = s.expect;
         if (!e) continue;
-        if (e.kind === "truefalse") {
-          add("statement", e.statement, l.id, en);
+        if (e.kind === "truefalse")
           for (const w of e.why ?? []) if (w.lang === "tr") add("why.tr", w.text, l.id, en);
-        }
         if (e.kind === "produce") for (const h of e.hint ?? []) if (h.lang === "tr") add("hint.tr", h.text, l.id, en);
       }
       const r = l.roleplay ?? {};
