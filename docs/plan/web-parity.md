@@ -3434,3 +3434,38 @@ ve `getAllKeys` sayıyor). Anahtar sayısı bir elin parmakları kadar.
 `startsWith` ile eşleşiyor, yani `-v1` ve `-migrated` anahtarlarını da
 kapsıyor - eksik silme yok. `lernomi:skills` ise bir CustomEvent adı, depolama
 anahtarı değil (ilk okumada anahtar sanmıştım).
+
+### 11.66 Hesap silme ve tazelik: iki yönde iki eksik
+
+**a) Web hesabı silince cihazda her şey kalıyordu.** Mobil
+`DeleteAccountScreen` silme başarılı olunca `AsyncStorage.clear()` çağırıyor ve
+gerekçesi yazılı ("temiz başlangıç"). Webde bu adım YOKTU: silme başarılı
+olunca yalnız `/`ye yönlendiriliyor ve silinen hesabın avatarı, okuma sesi,
+beceri ve ders ilerlemesi, taslakları ve başlangıç önbelleği tarayıcıda
+kalıyordu - kullanıcı unutulmak istedi, gizlilik politikası da bunu söz
+veriyor.
+
+`forgetDeviceStorage` `session-keeper`a eklendi (önek bilgisi orada duruyor) ve
+silme yolundan çağrılıyor. `localStorage.clear()` DEĞİL, yalnız `lernomi`
+önekli anahtarlar: aynı kökte başka bir şey varsa onu silmek bizim işimiz
+değil.
+
+İki temizliğin ayrımı kayda geçsin: `forgetPreviousAccount` yalnız HESABA ait
+önekleri siliyor ve cihaz tercihlerini bırakıyor (orada iş hesap
+değiştirmek); silmede her şey gidiyor.
+
+**b) "Yapabildiklerim" ekranı bayat kalıyordu.** Veri bir kez, `user` değişince
+yükleniyordu. Ama bu ekranın içeriğini DEĞİŞTİREN şey ders ve alıştırma
+bitirmek: kullanıcı bir konuşmayı tamamlayıp buraya dönünce eski listeyi
+görüyordu ve yenileme yolu yoktu (mobilde çekerek yenileme yalnız
+`MockStatsScreen`de var). Webin karşılığı sunucu bileşeni ve `force-dynamic` -
+oraya her gidişte taze geliyor.
+
+`useFocusEffect` eklendi; kalıp bu depoda zaten kullanılıyor (`SkillsScreen`,
+`MockExamsScreen`).
+
+**Ölçülüp temiz çıkanlar:** veri çeken dokuz mobil ekranın altısı GÖREV ekranı
+(tur, ders, sınav, giriş, ödeme) ve orada çekerek yenileme yanlış olurdu -
+alıştırmanın ortasındasın. `MockExamsScreen` ve `SkillsScreen` odakta yeniden
+çekiyor. `PathScreen`in ana verisi paketten ve yerel işaretlerden geliyor;
+sunucudan çektiği tek şey modül sınavı listesi ve o seviyeye bağlı.

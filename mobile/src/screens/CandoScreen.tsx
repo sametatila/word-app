@@ -1,8 +1,8 @@
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useCallback, useMemo, useState } from "react";
 import { t } from "../lib/i18n";
 import { View, ScrollView } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
-import { useNavigation } from "@react-navigation/native";
+import { useFocusEffect, useNavigation } from "@react-navigation/native";
 import { Text } from "../ui/Text";
 import { Card } from "../ui/Card";
 import { PressableScale } from "../ui/PressableScale";
@@ -41,12 +41,26 @@ export function CandoScreen() {
   const [data, setData] = useState<CandoData | null>(null);
   const [phase, setPhase] = useState<"loading" | "ready" | "error">("loading");
 
-  useEffect(() => {
-    if (!user) { setPhase("error"); return; }
-    let alive = true;
-    fetchCando().then((d) => { if (alive) { setData(d); setPhase("ready"); } }).catch(() => { if (alive) setPhase("error"); });
-    return () => { alive = false; };
-  }, [user]);
+  /*
+   * EKRANA HER DÖNÜŞTE TAZE.
+   *
+   * Veri bir kez, `user` değişince yükleniyordu. Ama bu ekranın içeriğini
+   * DEĞİŞTİREN şey ders ve alıştırma bitirmek: kullanıcı bir konuşmayı
+   * tamamlayıp buraya dönünce eski listeyi görüyordu ve yenileme yolu yoktu
+   * (çekerek yenileme de yok). Webin karşılığı sunucu bileşeni ve
+   * `force-dynamic`, yani oraya her gidişte taze geliyor.
+   *
+   * `useFocusEffect` bu depoda zaten kullanılan kalıp (`SkillsScreen`,
+   * `MockExamsScreen`): sekme/ekran öne gelince yeniden çekiyor.
+   */
+  useFocusEffect(
+    useCallback(() => {
+      if (!user) { setPhase("error"); return; }
+      let alive = true;
+      fetchCando().then((d) => { if (alive) { setData(d); setPhase("ready"); } }).catch(() => { if (alive) setPhase("error"); });
+      return () => { alive = false; };
+    }, [user]),
+  );
 
   const byLevel = useMemo(() => {
     const g: Record<string, CandoItem[]> = {};
