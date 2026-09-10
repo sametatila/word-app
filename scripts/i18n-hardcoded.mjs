@@ -239,7 +239,13 @@ function candidates(raw) {
   const rest = line
     .replace(strings, '""')
     .replace(/\/(?:\\.|\[[^\]]*\]|[^/\n\\<>])+\/[gimsuyd]*/g, " ")
-    .replace(/\{[^{}]*\}/g, " ")
+    /* JSX TASIYAN SUS PARANTEZI SILINMIYOR. Bu desen `{...}` icini komple
+       atiyordu ve tek satirlik kosullu bir JSX ({x ? <span>sen</span> : null})
+       tamamen kayboluyordu - govde metni hicbir kurala dusmuyordu (friends
+       board'un "sen" rozeti boyle kacmisti). Icinde bir etiket acilisi varsa
+       parantez oldugu gibi birakiliyor; asagidaki etiket temizligi zaten
+       govdeyi ayirip cikariyor. */
+    .replace(/\{(?:[^{}<]|<(?![A-Za-z/]))*\}/g, " ")
     .replace(/<[^<>]*>/g, SEP);
   // JSX GOVDE METNINDE NOKTALAMA METNIN KENDISI, kod degil: {ifade},
   // dizgiler ve etiketler zaten cikarildi; geriye kalan "/", "·", "%" gibi

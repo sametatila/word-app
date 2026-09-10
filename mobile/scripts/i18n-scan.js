@@ -187,7 +187,13 @@ function candidates(raw) {
     // olmasaydı JSX'teki "/>" ile "</" arası regex sanılıp aradaki metin yutuluyordu
     // (NotifPrime'ın "Hatırlatma = daha uzun seri" satırı böyle kaçmıştı).
     .replace(/\/(?:\\.|\[[^\]]*\]|[^/\n\\<>])+\/[gimsuyd]*/g, " ")
-    .replace(/\{[^{}]*\}/g, " ")  // {ifade}
+    /* JSX TASIYAN SUS PARANTEZI SILINMIYOR. Bu desen `{...}` icini komple
+       atiyordu ve tek satirlik kosullu bir JSX ({x ? <span>sen</span> : null})
+       tamamen kayboluyordu - govde metni hicbir kurala dusmuyordu (friends
+       board'un "sen" rozeti boyle kacmisti). Icinde bir etiket acilisi varsa
+       parantez oldugu gibi birakiliyor; asagidaki etiket temizligi zaten
+       govdeyi ayirip cikariyor. */
+    .replace(/\{(?:[^{}<]|<(?![A-Za-z/]))*\}/g, " ")  // {ifade}
     .replace(/<[^<>]*>/g, "\u0001"); // etiketler → ayraç
   // JSX GOVDE METNINDE NOKTALAMA METNIN KENDISI, kod degil: {ifade},
   // dizgiler ve etiketler zaten cikarildi; geriye kalan "/", "·", "%" gibi
