@@ -824,6 +824,7 @@ export const tr: Record<string, string> = {
   "requests.cancel_request": "İsteği iptal et",
   "requests.accept": "Kabul et",
   "requests.decline": "Reddet",
+  "rounds.checking": "Kontrol ediliyor…",
   "rounds.a11y_correct": "Doğru cevap",
   "rounds.a11y_wrong": "Yanlış cevap",
   "rounds.answer_is": "Doğrusu: ",

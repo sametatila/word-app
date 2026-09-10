@@ -819,6 +819,7 @@ export const de: Record<string, string> = {
   "requests.cancel_request": "Anfrage zurückziehen",
   "requests.accept": "Annehmen",
   "requests.decline": "Ablehnen",
+  "rounds.checking": "Wird geprüft…",
   "rounds.a11y_correct": "Richtige Antwort",
   "rounds.a11y_wrong": "Falsche Antwort",
   "rounds.answer_is": "Richtig: ",

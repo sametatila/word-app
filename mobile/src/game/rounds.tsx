@@ -6,6 +6,7 @@ import { matchSentence, VERDICT_KEYS, type SentenceMatch } from "../lib/sentence
 import { markKnown } from "./session";
 import { SentenceFeedback, type MarkedToken } from "../ui/TokenDiff";
 import { classifyOrder, classifyTyping, miss } from "../lib/errors";
+import { api } from "../api/client";
 import type { DoneExtra } from "./session";
 import { currentTargetLang } from "../lib/courses";
 import { View, TextInput, ScrollView, Keyboard, Platform, Animated } from "react-native";
@@ -334,6 +335,20 @@ function Prompt({ label, big, sub, speakText, colors }: { label: string; big: st
     </View>
   );
 }
+
+/**
+ * ÇEVİRİ TURUNDA İKİNCİ ŞANS — web `games/translate-game` ile aynı iki sayı.
+ *
+ * Yerel hakem (`lib/sentenceMatch`) kural tabanlı: kabul listesinde olmayan
+ * ama doğru bir çeviri "yanlış" çıkabiliyor. Web bu durumda MODELE soruyor ve
+ * model yeterince yüksek puan verirse cevabı kabul ediyor; mobilde bu yol
+ * HİÇ YOKTU, yani aynı cevap webde doğru, Androidde yanlış sayılıyordu -
+ * üstelik kelimeyi de geriye atıyordu (SRS kalitesi).
+ *
+ * Bekleme kısa tutuluyor: tur akışını tutmayacak kadar.
+ */
+const ASSESS_WAIT_MS = 6000;
+const ASSESS_ACCEPT = 75;
 
 function OptionButton({ text, sub, state, onPress, colors, idleTint }: { text: string; sub?: string | null; state: "idle" | "correct" | "wrong"; onPress: () => void; colors: Palette; idleTint?: string }) {
   const bg = state === "correct" ? colors.successSoft : state === "wrong" ? colors.dangerSoft : colors.surface;
@@ -873,11 +888,43 @@ function TranslateRound({ round, onDone, colors }: { round: Round; onDone: Done;
    * (bkz. web-parity §11.19 adım 2 ve 3).
    */
   const judged = useRef<SentenceMatch | null>(null);
-  function check() {
-    if (fb) return;
+  const [checking, setChecking] = useState(false);
+  async function check() {
+    if (fb || checking) return;
     const typed = val.trim();
-    const m = matchSentence(typed, s.de, alts, currentTargetLang());
-    const ok = !!typed && m.quality >= 3 && m.verdict !== "order";
+    let m = matchSentence(typed, s.de, alts, currentTargetLang());
+    let ok = !!typed && m.quality >= 3 && m.verdict !== "order";
+    /* İKİNCİ ŞANS: yerel hakem "yanlış" dediyse ve cevap üç sözcükten
+       uzunsa modele sorulur. Kabul ederse tur doğru sayılır ve kalite 4
+       olur - web `translate-game` ile aynı eşikler. */
+    if (!ok && m.verdict === "wrong" && typed.split(/\s+/).length >= 3) {
+      setChecking(true);
+      try {
+        const d = await api<{ result?: { score?: { overall?: number; task?: number } } }>(
+          "/api/assess",
+          {
+            method: "POST",
+            timeoutMs: ASSESS_WAIT_MS,
+            body: JSON.stringify({
+              kind: "sentence",
+              level: round.word?.niveau || "A1",
+              task: { prompt: `Çevir: ${s.tr}`, target: s.de },
+              answer: { text: typed },
+              locale: "tr",
+            }),
+          },
+        );
+        const sc = d?.result?.score;
+        if ((sc?.overall ?? 0) >= ASSESS_ACCEPT && (sc?.task ?? 0) >= 3) {
+          ok = true;
+          m = { ...m, verdict: "exact", quality: 4, errorType: undefined };
+        }
+      } catch {
+        /* model yoksa ya da geç kaldıysa yerel hüküm geçerli */
+      } finally {
+        setChecking(false);
+      }
+    }
     judged.current = m;
     Keyboard.dismiss();
     markAnswer(ok, s.de); // doğru Almanca cümleyi oku
@@ -920,8 +967,8 @@ function TranslateRound({ round, onDone, colors }: { round: Round; onDone: Done;
         style={{ backgroundColor: colors.surface, borderRadius: radii.lg, borderWidth: 1.5, borderColor: colors.border, paddingHorizontal: spacing.lg, paddingVertical: 16, color: colors.text, fontSize: 18, minHeight: 88, textAlignVertical: "top" }}
       />
       <HintRow answer={s.de} colors={colors} shown={hintShown} onShow={() => setHintShown(true)} />
-      <PressableScale onPress={check} style={[{ marginTop: spacing.md, borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: 15, alignItems: "center" }, softShadow(colors.primary, 8)]}>
-        <Text variant="h3" color={colors.onPrimary}>{tx("common.check")}</Text>
+      <PressableScale onPress={() => void check()} disabled={checking} style={[{ marginTop: spacing.md, borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: 15, alignItems: "center", opacity: checking ? 0.6 : 1 }, softShadow(colors.primary, 8)]}>
+        <Text variant="h3" color={colors.onPrimary}>{tx(checking ? "rounds.checking" : "common.check")}</Text>
       </PressableScale>
     </View>
   );
