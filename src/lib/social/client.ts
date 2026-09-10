@@ -210,7 +210,10 @@ export function feedText(item: FeedItem, lang: NativeLang): string {
     case "quest_completed":
       return T("social.feed_quest", {
         name: String(p.partnerName ?? T("social.feed_a_friend")),
-        xp: Number(p.targetXp ?? 0),
+        /* Binlik ayraçlı: hemen altındaki `weekly_top` da öyle ve mobil her
+           ikisini de ayraçla yazıyor. Ham sayı olarak "3000 XP" cümlenin
+           içinde iki platformda farklı görünüyordu. */
+        xp: formatNumber(Number(p.targetXp ?? 0), lang),
       });
     case "weekly_top":
       return T("social.feed_weekly", {
@@ -248,7 +251,8 @@ export function notificationText(n: NotificationView, lang: NativeLang): string 
     case "nudge":
       return d.kind === "cheer" ? T("social.notif_cheer", { who }) : T("social.notif_nudge", { who });
     case "quest_invite":
-      return T("social.notif_quest_invite", { who, xp: Number(d.targetXp ?? 0) });
+      /* Ayraçlı — akıştaki aynı sayı gibi (yukarı bkz.) ve mobil ile aynı. */
+      return T("social.notif_quest_invite", { who, xp: formatNumber(Number(d.targetXp ?? 0), lang) });
     case "quest_accepted":
       return T("social.notif_quest_accepted", { who });
     case "quest_completed":
