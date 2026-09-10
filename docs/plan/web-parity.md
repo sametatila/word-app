@@ -5844,3 +5844,29 @@ başına birleşim, kelimeyi zorunlu yapıyor.
 **Hâlâ açık:** mobilin `Round`u tek gövdeli gevşek tip olmayı sürdürüyor.
 Bu tur onun EN PAHALI iki sonucunu kapattı (şık biçimi, kelime varlığı);
 birleşime çevirmek ayrı bir iş.
+
+
+### 11.157 Yüzey envanteri eşit çıktı; erişilebilirlik kapısı ve kendi hatam
+
+**Üç ölçüm, üçü de eşit:**
+
+1. **Yüzey envanteri.** Web'in 39 rotası ile mobilin ekran + sekme kümesi
+   birebir örtüşüyor. Web'de fazladan görünen üçü ölçüldü: `/analytics`
+   (yönetime kapalı huni), `/learn/challenge` (webe özel, yazılı),
+   `/immersion/grammar/[unit]` (mobilde `QuizScreen` çiziyor — gramer de ünite
+   kimliğinden türetiliyor).
+2. **Arkadaşlar merkezi.** Üç sekme, aynı sıra, aynı bileşenler, aynı boş
+   durum: web ve mobil satır satır aynı. Sıralama da öyle (lig + arkadaşlar).
+3. **Değerler için varsayılanlar** (`?? ""`, `?? 0`): taradım, hepsi zararsız
+   arayüz varsayılanı — sunucu verisi gizleyen bir tane çıkmadı.
+
+**Bulunan tek şey erişilebilirlikte:** yalnız simge taşıyan bir düğme ekran
+okuyucuda "düğme" diye okunur. Mobilde bir tane etiketsiz kalmıştı (seviye
+testinin kapatma düğmesi), webde sıfır. parity §75 iki tarafı da sıfırda
+tutuyor — bu, "tasarımı da kontrol et" isteğinin ölçülebilir bir parçası.
+
+**Kendi hatam, açıkça:** önceki iki commit lint HATASIYLA girdi (kullanılmayan
+`round` parametresi ve eksik `onboarding` bağımlılığı). Sebebi şu: lint
+çıktısını `tail -2` ile okuyordum ve o iki satır özet satırıydı — "0 errors"
+demiyordu, kesilmişti. **Kapı zaten söylüyordu; ben kesip okumadım.** Bu turda
+düzeltildi ve tur rutini değişti: lint çıktısı kesilmeden okunuyor.
