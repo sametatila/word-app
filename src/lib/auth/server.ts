@@ -12,6 +12,7 @@ import { revokeAppleSignIn } from "@/lib/account/apple-revoke";
 import { APIError, createAuthMiddleware } from "better-auth/api";
 import { checkPassword, MIN_PASSWORD_LENGTH, PASSWORD_ERROR_CODE } from "@/lib/auth/password-policy";
 import { redisRateLimitStorage } from "@/lib/auth/rate-limit-store";
+import { clearFailedLogins, isLockedOut, noteFailedLogin } from "@/lib/auth/login-throttle";
 
 /**
  * Self-hosted Better Auth. Oturumlar/kullanıcılar KENDİ
@@ -310,6 +311,26 @@ export const auth = betterAuth({
    */
   hooks: {
     before: createAuthMiddleware(async (ctx) => {
+      /**
+       * HESAP BAŞINA KİLİT — parola denenmeden önce.
+       *
+       * IP başına sınır tek bir hesaba yüzlerce IP'den gelen denemeyi
+       * görmüyordu; bu sayaç e-postaya bakıyor (bkz. lib/auth/login-throttle).
+       * Kontrol parola doğrulamasının ÖNÜNDE: kilitliyken doğru parola bile
+       * geçmemeli, yoksa kilit yalnız yanlış tahminleri yavaşlatan bir şey
+       * olur ve elindeki parolayı deneyen saldırganı hiç durdurmaz.
+       */
+      if (ctx.path === "/sign-in/email") {
+        const email = (ctx.body as { email?: unknown } | undefined)?.email;
+        if (typeof email === "string" && email && (await isLockedOut(email))) {
+          throw new APIError("TOO_MANY_REQUESTS", {
+            code: "TOO_MANY_ATTEMPTS",
+            message: "Too many failed sign-in attempts for this account. Try again later.",
+          });
+        }
+        return;
+      }
+
       const GUARDED = ["/sign-up/email", "/reset-password", "/change-password", "/set-password"];
       if (!GUARDED.includes(ctx.path)) return;
       const body = (ctx.body ?? {}) as { password?: unknown; newPassword?: unknown; email?: unknown; name?: unknown };
@@ -337,6 +358,28 @@ export const auth = betterAuth({
               ? "This password is too common or too predictable."
               : "Password must not contain your name or e-mail address.",
       });
+    }),
+    /**
+     * Giriş denemesinin SONUCUNU sayaca yazar (bkz. lib/auth/login-throttle).
+     *
+     * Kanca başarısızlıkta da çalışıyor: uçtan fırlayan `APIError` yakalanıp
+     * `ctx.context.returned`a konuyor ve `after` yine koşuyor (bkz.
+     * better-auth api/dispatch.mjs). Yani gerçek başarısızlıkları sayabiliyoruz,
+     * her denemeyi değil.
+     *
+     * BAŞARININ ÖLÇÜSÜ OTURUM JETONU. Yanıt gövdesinde `token` varsa giriş
+     * olmuştur; hata nesnesinde öyle bir alan yok. Aynı ayrım mobilde de
+     * kullanılıyor (bkz. mobile/src/lib/auth AuthOutcome.session) — durum
+     * koduna bakmaktan sağlam, çünkü kancaya durum kodu gelmiyor.
+     */
+    after: createAuthMiddleware(async (ctx) => {
+      if (ctx.path !== "/sign-in/email") return;
+      const email = (ctx.body as { email?: unknown } | undefined)?.email;
+      if (typeof email !== "string" || !email) return;
+
+      const token = (ctx.context.returned as { token?: unknown } | undefined)?.token;
+      const signedIn = typeof token === "string" && token.length > 0;
+      await (signedIn ? clearFailedLogins(email) : noteFailedLogin(email));
     }),
   },
 });
