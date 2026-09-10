@@ -3393,3 +3393,44 @@ yeniden soruyor (`DISMISS_DAYS`), mobil "şimdi değil"i KALICI işaretliyor.
 İkisi aynı biçimde çözülemez - webin kartı özetin içinde küçük bir kart,
 mobilin ekranı tam ekran; tam ekranı üç hafta sonra tekrar açmak kartı tekrar
 göstermekten çok daha müdahaleci. Politikayı seçmek de aynı karara bağlı.
+
+### 11.65 Ortak telefonda önceki hesabın verisi kalıyordu
+
+Web `components/session-keeper.tsx` kullanıcı kimliği değişince hesaba ait
+`localStorage` anahtarlarını siliyor - sekiz önek, gerekçesi yazılı: ortak
+cihazda bir hesabın verisi ötekine görünmemeli. Hangilerinin CİHAZA ait olduğu
+da yazılı ve bilerek dışarıda (tema, kurulum/bildirim uyarılarının kapatılması,
+eller serbest tercihi).
+
+**Mobilde bu hiç yoktu.** `signOut()` sunucuya çıkış atıyor, itme jetonunu
+siliyor, Google SDK oturumunu kapatıyor, RevenueCat oturumunu ve bellekteki
+premium durumunu temizliyor - `AsyncStorage`a hiç dokunmuyor. Yani aynı
+telefonda A çıkıp B girdiğinde B şunları görüyordu:
+
+    lernomi-avatar          A'nın avatar aksesuarları
+    lernomi-streak          A'nın serisi
+    lernomi-daily/-weekly   A'nın günün turu / haftalık önbelleği
+    lernomi-items-done      A'nın bitirdiği ünite öğeleri
+    lernomi-lesson-resume:  A'nın yarım kalmış dersi
+    lernomi:mock-done       A'nın bitirdiği deneme kâğıtları
+    lernomi:mock-run:       A'nın yarım deneme koşusu
+    lernomi-voice           A'nın okuma sesi (webde de hesaba ait)
+
+Bu, `AuthContext`in kendi yorumunun anlattığı sorunun KALICI katmanı: o yorum
+bellek için yazılmış ("bir sonraki kullanıcı öncekinin yetkisini görmesin") ve
+premium/RevenueCat için çözülmüş; depolama katmanı atlanmıştı.
+
+`lib/accountScope.ts` eklendi ve çıkışta çağrılıyor. Cihazın tercihi olanlar
+webdeki gibi dışarıda: arayüz dili, mikrofon onayı, analitik tercihi, bildirim
+ayarları ve kimlikleri, "ilk açılış görüldü" işareti, misafir onboarding
+tercihleri. Bunlar telefona ait; silinseler kullanıcı her çıkışta baştan kurar.
+
+Bir uygulama ayrıntısı kayda geçsin: silme tek tek yapılıyor çünkü paketin bu
+sürümünün tipinde `multiRemove` YOK (`AsyncStorage.d.ts` yalnız `removeItem`
+ve `getAllKeys` sayıyor). Anahtar sayısı bir elin parmakları kadar.
+
+**Ölçülüp temiz çıkanlar:** mobilde depolama anahtarlarının hepsi `lernomi`
+önekli, öneksiz kalan yok. Webin `lernomi-skills` girdisi bir ÖNEK ve
+`startsWith` ile eşleşiyor, yani `-v1` ve `-migrated` anahtarlarını da
+kapsıyor - eksik silme yok. `lernomi:skills` ise bir CustomEvent adı, depolama
+anahtarı değil (ilk okumada anahtar sanmıştım).

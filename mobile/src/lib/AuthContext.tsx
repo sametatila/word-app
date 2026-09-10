@@ -1,4 +1,5 @@
 import React, { createContext, useCallback, useContext, useEffect, useState } from "react";
+import { forgetAccountScoped } from "./accountScope";
 import { getSession, signIn as apiSignIn, signUp as apiSignUp, signOut as apiSignOut, type AuthUser, type AuthOutcome } from "./auth";
 import { registerPushDevice, unregisterPushDevice } from "./pushDevice";
 import { loadOnboardingPrefs, clearOnboardingPrefs, hasPrefs } from "./onboardingPrefs";
@@ -165,6 +166,17 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
      */
     await billingLogout();
     clearPremium();
+    /*
+     * KALICI KATMAN DA TEMİZLENİYOR.
+     *
+     * Üstteki iki satır BELLEKTEKİ durumu kapatıyor; `AsyncStorage` olduğu gibi
+     * kalıyordu. Yani aynı telefonda A çıkıp B girdiğinde B, A'nın avatarını,
+     * serisini, günün turu/haftalık önbelleğini, yarım dersini ve deneme
+     * koşularını görüyordu - yukarıdaki gerekçenin kalıcı hâli.
+     * Web bunu kimlik değişince yapıyor (`session-keeper`); hangi anahtarların
+     * hesaba, hangilerinin cihaza ait olduğu `lib/accountScope`ta yazılı.
+     */
+    await forgetAccountScoped();
     setUser(null);
   }, []);
 
