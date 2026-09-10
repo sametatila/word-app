@@ -5,7 +5,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "npm run lessons:apply && next build",
+    "build": "npm run lessons:apply && npm run lessons:apply-de && next build",
     "start": "next start",
     "lint": "eslint . --max-warnings 0",
     "typecheck:scripts": "tsc --noEmit -p scripts/tsconfig.e2e.json",
