@@ -6092,3 +6092,23 @@ mikrofon ipuçlarını bir sarmalayıcıdan (`walkCue`) çalıyor — düz `play
 onları görmüyordu.
 
 **`stage` webe özel kalıyor:** etap kartı mobilde yok, ses de olmamalı.
+
+
+### 11.166 Haptik: sözleşme eşit, çağrı biçimi değildi
+
+§11.165'in yöntemini titreşime uyguladım. **Sözleşme eşit çıktı:** üç tür
+(doğru, yanlış, dokunuş), iki tarafta da haptik sarmalayıcısı sesi de çalıyor
+(`haptic` → `sfx`, `vibrate` → `play`), uygulamalar platforma uygun (iOS
+Taptic desenleri ↔ `navigator.vibrate` deseni) — biçim farkı meşru.
+
+**Ayrışan çağrı biçimiydi:** mobilde dört yer ikisini birden yazıyordu
+(`haptic("correct"); sfx("correct")`). Ses iki kez tetikleniyor ve yalnızca
+`sfx` içindeki 120 ms yineleme penceresi sayesinde tek duyuluyordu. Bu,
+**görünmez bir dengeye yaslanan kod**: pencere kısalsa ya da kalksa aynı ses
+üst üste çalar ve sebebi hiçbir yerde yazmaz. Fazlalık çağrılar kalktı, §84
+iki tarafta da sıfır bekliyor.
+
+**Kapı yine kendi hatasını gösterdi:** ilk yazımı sarmalayıcının KENDİ
+yorumundaki örneği (`haptic("correct"); sfx("correct")` diye yazan açıklama)
+gerçek bir çağrı sandı. Yorumlar taranmadan önce atılıyor — bu turda üçüncü
+kez aynı ders: **kapı kaynak metni okuyorsa, kaynağın yorumlarını da okur.**
