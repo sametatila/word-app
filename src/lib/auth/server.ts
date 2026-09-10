@@ -5,7 +5,7 @@ import { unstable_rethrow } from "next/navigation";
 import { betterAuth } from "better-auth";
 import { drizzleAdapter } from "better-auth/adapters/drizzle";
 import { db } from "@/lib/db";
-import { user, session, account, verification } from "@/lib/db/auth-schema";
+import { user, session, account, verification, twoFactor as twoFactorTable } from "@/lib/db/auth-schema";
 import { emailConfigured, sendEmail, verificationEmail, resetEmail, passwordChangedEmail, accountExistsEmail, twoFactorCodeEmail } from "@/lib/email";
 import { purgeUserData } from "@/lib/account/purge";
 import { revokeAppleSignIn } from "@/lib/account/apple-revoke";
@@ -104,7 +104,15 @@ export const auth = betterAuth({
     "https://lernomi.app", "https://www.lernomi.app",
     "https://exfe.me", "https://www.exfe.me",
   ],
-  database: drizzleAdapter(db, { provider: "pg", schema: { user, session, account, verification } }),
+  /*
+    ŞEMA HARİTASI EKLENTİLERİ DE KAPSAMALI. Buradaki liste better-auth'un
+    hangi drizzle tablosunu hangi modele bağlayacağını söylüyor; eklenti bir
+    tablo bekleyip listede bulamazsa açılışta "Drizzle schema mismatch" deyip
+    instance sağlıksız kalıyor. Tablo veritabanında OLSA BİLE — bir kez
+    yaşandı: `drizzle-kit push` tabloyu kurdu, liste eski kaldı ve deploy
+    sağlık kontrolünde iptal oldu (canlıya dokunulmadı).
+  */
+  database: drizzleAdapter(db, { provider: "pg", schema: { user, session, account, verification, twoFactor: twoFactorTable } }),
   emailAndPassword: {
     enabled: true,
     // Doğrulama yalnız SMTP bağlıyken zorunlu: sağlayıcı yokken kayıt olan
