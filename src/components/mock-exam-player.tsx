@@ -254,10 +254,13 @@ export function MockExamPlayer({ paper, part }: { paper: MockPaper; part: MockPa
         <h1 className="mt-1 text-2xl font-bold" lang={paper.course}>{mockSkillLabel(paper.course, part.skill)}</h1>
         <p className="muted mt-1 text-sm">{paper.theme} — {paper.themeTr}</p>
 
+        {/* İki başlık Android'in kapağında var: yönergenin nerede bittiği ve
+            kuralların nerede başladığı yalnız aralıktan okunuyordu. */}
         <div className="mt-4 flex items-start gap-2">
           <SpeakerIcon className="mt-1 size-4 shrink-0" />
           <div>
-            <p className="text-sm leading-relaxed" lang={paper.course}>{part.instruction}</p>
+            <p className="muted text-xs font-bold tracking-wide">{t("mockexam.instructions")}</p>
+            <p className="mt-1 text-sm leading-relaxed" lang={paper.course}>{part.instruction}</p>
             <p className="muted mt-2 text-sm leading-relaxed">{part.instructionTr}</p>
           </div>
         </div>
@@ -266,7 +269,8 @@ export function MockExamPlayer({ paper, part }: { paper: MockPaper; part: MockPa
           {t("mockexam.minutes", { n: part.minutes })} ·{" "}
           {points ? t("mockexam.n_items", { n: points }) : t("mockexam.not_machine_scored")}
         </p>
-        <p className="muted mt-3 text-xs leading-relaxed">{t("mockexam.rules_body")}</p>
+        <p className="muted mt-4 text-xs font-bold tracking-wide">{t("mockexam.rules_title")}</p>
+        <p className="muted mt-1 text-xs leading-relaxed">{t("mockexam.rules_body")}</p>
 
         <button
           type="button"
@@ -306,7 +310,12 @@ export function MockExamPlayer({ paper, part }: { paper: MockPaper; part: MockPa
           <p className="text-sm font-semibold">{t("mockexam.task_of", { n: ix + 1, total: part.tasks.length })}</p>
         </div>
         <div className="flex items-center gap-3">
-          <p className="text-lg font-bold tabular-nums" style={{ color: left < 30 ? "var(--color-danger)" : undefined }}>{mmss(left)}</p>
+          {/* Sayaç GÖREV başına; etiketsiz bir geri sayım "sınavın tamamı bu
+              kadar" diye okunabiliyordu. Android etiketi yazıyor. */}
+          <div className="text-right">
+            <p className="muted text-[10px] font-bold tracking-wide">{t("mockexam.task_time")}</p>
+            <p className="text-lg font-bold tabular-nums" style={{ color: left < 30 ? "var(--color-danger)" : undefined }}>{mmss(left)}</p>
+          </div>
           {/* ÇIKIŞ YOLU YOKTU: sınav başlayınca kullanıcı bitirene kadar
               kapana kısılıyordu, tek çıkış tarayıcının geri düğmesiydi.
               Android'de başlıkta bir kapat düğmesi var ve cevapların
