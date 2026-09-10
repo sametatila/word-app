@@ -4044,3 +4044,38 @@ göndermiyordu. Eklemesi katkısız: iki sütun daha seçiliyor.
 
 **Kural kopyası kapıya bağlandı.** Bir kopya en çok kopyalandığı gün doğrudur;
 sözlük anahtarları, düzenli ifadeler ve umlaut gövdesi artık ölçülüyor.
+
+### 11.81 Ölü bayrak, ölü prop ve kapalı düğmenin sebebi
+
+Aynı taramayı (§11.80) **web** tiplerine uyguladım: iki aday çıktı, biri
+kayıtlı non-work (`pacing`, §11.22), öteki gerçek.
+
+**`reuseOptions` ölü bayraktı.** Eşleştirmede varsayılan kural "her şık en fazla
+bir kez" ve bu bayrak o kuralı kaldırıyor (İngilizce sınavların çoklu
+eşleştirme görevlerinde soru sayısı metin sayısını aşıyor). İçerikte yirmi dört
+görevde yazılı ve mobil dökümüne de doğru geçmiş — ama **iki oynatıcı da onu
+hiç okumuyordu**, yani kural hiçbir yerde görünmüyordu: bir şıkkı ikinci kez
+seçen öğrenci hatasını ancak sonuçta görüyordu.
+
+Kâğıt sınavda bu bilgi zaten var; öğrenci kendi yazdıklarını aynı sayfada
+görüyor. Ekranda her madde ayrı satır olduğu için kayboluyordu. Kullanılmış
+şıklar artık soluk, ama **yine basılabilir**: cevabını taşımak isteyen öğrenci
+engellenmemeli. `reuseOptions` açıkken hiçbir şık solmuyor.
+
+İçerik yazarı açısından asıl kusur buydu: bayrağı yazan kişi bir şey
+yaptığını sanıyordu.
+
+#### Üç küçük fark daha
+
+| ne | nerede | ne yapıldı |
+|---|---|---|
+| Kapalı "Ekle" düğmesinin sebebi | mobil | web `title` balonunda söylüyordu; mobilde balon yok, satır olarak yazıldı |
+| İlişki düğmelerinin ikonu | web | Android pilleri `UserPlusIcon`/`CheckIcon` taşıyor, web düğmeleri çıplaktı |
+| "Bul" listesinde avatar bağlantısı | web | akış ve istek listelerinde avatar profile götürüyor, burada götürmüyordu |
+
+Kapalı düğme özellikle kötüydü: dokunup hata almak bile mümkün değil, çünkü
+düğme kapalı — kullanıcı neden basamadığını hiçbir yoldan öğrenemiyordu.
+
+`find.tsx` `PersonRow` ayrıca `onChanged` propunu **alıyor ama hiç
+kullanmıyordu**; iki çağıran da boşuna geçiriyordu. Aynı sınıfın bileşen
+düzeyindeki hâli.
