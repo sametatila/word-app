@@ -1,0 +1,1097 @@
+{
+ "packet": "w-001",
+ "words": [
+  {
+   "tr": "'{}' demek.{not} Lütfen",
+   "kind": "frame",
+   "n": 28,
+   "ctx": [
+    "28 dosya (B1 b03–b10, B2, C1)"
+   ],
+   "lessons": []
+  },
+  {
+   "tr": "Türkçesi '{}' demek{ — not}. Lütfen",
+   "kind": "frame",
+   "n": 10,
+   "ctx": [
+    "10 dosya (B1 b01–b02, b11–b18)"
+   ],
+   "lessons": []
+  },
+  {
+   "tr": "Altıncı kelimemiz:",
+   "kind": "ordinal",
+   "n": 380,
+   "ctx": [
+    "«Altıncı kelimemiz:» [die Fähigkeit]"
+   ],
+   "lessons": []
+  },
+  {
+   "tr": "Beşinci kelimemiz:",
+   "kind": "ordinal",
+   "n": 380,
+   "ctx": [
+    "«Beşinci kelimemiz:» [die Voraussetzung]"
+   ],
+   "lessons": []
+  },
+  {
+   "tr": "Dördüncü kelimemiz:",
+   "kind": "ordinal",
+   "n": 380,
+   "ctx": [
+    "«Dördüncü kelimemiz:» [die Erfahrung]"
+   ],
+   "lessons": []
+  },
+  {
+   "tr": "İkinci kelimemiz:",
+   "kind": "ordinal",
+   "n": 380,
+   "ctx": [
+    "«İkinci kelimemiz:» [die Stärke]"
+   ],
+   "lessons": []
+  },
+  {
+   "tr": "İlk kelimemiz:",
+   "kind": "ordinal",
+   "n": 380,
+   "ctx": [
+    "«İlk kelimemiz:» [sich bewerben]"
+   ],
+   "lessons": []
+  },
+  {
+   "tr": "Son kelimemiz:",
+   "kind": "ordinal",
+   "n": 380,
+   "ctx": [
+    "«Son kelimemiz:» [die Gelegenheit]"
+   ],
+   "lessons": []
+  },
+  {
+   "tr": "Üçüncü kelimemiz:",
+   "kind": "ordinal",
+   "n": 380,
+   "ctx": [
+    "«Üçüncü kelimemiz:» [der Lebenslauf]"
+   ],
+   "lessons": []
+  },
+  {
+   "tr": "Yedinci kelimemiz:",
+   "kind": "ordinal",
+   "n": 380,
+   "ctx": [
+    "«Yedinci kelimemiz:» [verantwortlich]"
+   ],
+   "lessons": []
+  },
+  {
+   "tr": "hep çoğul kullanılır",
+   "kind": "note",
+   "n": 7,
+   "ctx": [
+    "[die Kosten] 'masraf' demek. «hep çoğul kullanılır»",
+    "[die Zutaten] 'malzemeler' demek. «hep çoğul kullanılır»",
+    "[die Zinsen] 'faiz' demek. «hep çoğul kullanılır»"
+   ],
+   "lessons": [
+    "de-b1-gehalt",
+    "de-b1-rezept-lesen",
+    "de-b1-bank-konto"
+   ]
+  },
+  {
+   "tr": "Ardından tamlayan hâli gelir.",
+   "kind": "note",
+   "n": 2,
+   "ctx": [
+    "[infolge] 'sonucunda' demek. «Ardından tamlayan hâli gelir.»",
+    "[angesichts] '…-in karşısında' demek. «Ardından tamlayan hâli gelir.»"
+   ],
+   "lessons": [
+    "de-b2-schadenersatz",
+    "de-b2-aufgrund-infolge"
+   ]
+  },
+  {
+   "tr": "aynı anlama gelen ikinci sözcük",
+   "kind": "note",
+   "n": 2,
+   "ctx": [
+    "[die Einzelheit] 'ayrıntı' demek. «aynı anlama gelen ikinci sözcük»",
+    "[die Wirklichkeit] 'gerçek' demek. «aynı anlama gelen ikinci sözcük»"
+   ],
+   "lessons": [
+    "de-b1-anzeige-lesen",
+    "de-b1-politik-reden"
+   ]
+  },
+  {
+   "tr": "ayrılabilen bir fiil",
+   "kind": "note",
+   "n": 2,
+   "ctx": [
+    "[umtauschen] 'değiştirmek' demek. «ayrılabilen bir fiil»",
+    "[anschließen] 'bağlamak' demek. «ayrılabilen bir fiil»"
+   ],
+   "lessons": [
+    "de-b1-umtausch",
+    "de-b1-geraet-anschliessen"
+   ]
+  },
+  {
+   "tr": "çoğulu düzensiz",
+   "kind": "note",
+   "n": 2,
+   "ctx": [
+    "[die Frucht] 'meyve' demek. «çoğulu düzensiz»",
+    "[die Fachleute] 'uzmanlar' demek. «çoğulu düzensiz»"
+   ],
+   "lessons": [
+    "de-b1-markt-frisch",
+    "de-b1-experte-fragen"
+   ]
+  },
+  {
+   "tr": "'gut abschneiden' — sınavdan ya da işten iyi çıkmak.",
+   "kind": "note",
+   "n": 1,
+   "ctx": [
+    "[abschneiden] 'sonuç almak' demek. «'gut abschneiden' — sınavdan ya da işten iyi çıkmak.»"
+   ],
+   "lessons": [
+    "de-b2-perfektionismus"
+   ]
+  },
+  {
+   "tr": "Adı konmamış, hafif bir rahatsızlık.",
+   "kind": "note",
+   "n": 1,
+   "ctx": [
+    "[das Unbehagen] 'huzursuzluk' demek. «Adı konmamış, hafif bir rahatsızlık.»"
+   ],
+   "lessons": [
+    "de-b2-als-ob"
+   ]
+  },
+  {
+   "tr": "Almanca referansların klasik övgüsü.",
+   "kind": "note",
+   "n": 1,
+   "ctx": [
+    "[durchsetzungsfähig] 'dediğini yaptırabilen' demek. «Almanca referansların klasik övgüsü.»"
+   ],
+   "lessons": [
+    "de-b2-empfehlung-schreiben"
+   ]
+  },
+  {
+   "tr": "Almanya'da işten ayrılırken verilen resmî değerlendirme.",
+   "kind": "note",
+   "n": 1,
+   "ctx": [
+    "[das Arbeitszeugnis] 'iş referansı' demek. «Almanya'da işten ayrılırken verilen resmî değerlendirme.»"
+   ],
+   "lessons": [
+    "de-b2-networking-b2"
+   ]
+  },
+  {
+   "tr": "Almanya'daki biçim",
+   "kind": "note",
+   "n": 1,
+   "ctx": [
+    "[das Abitur] 'lise diploması' demek. «Almanya'daki biçim»"
+   ],
+   "lessons": [
+    "de-b1-lehre-machen"
+   ]
+  },
+  {
+   "tr": "Arızayı ortadan kaldırmak.",
+   "kind": "note",
+   "n": 1,
+   "ctx": [
+    "[beheben] 'gidermek' demek. «Arızayı ortadan kaldırmak.»"
+   ],
+   "lessons": [
+    "de-b2-hotline"
+   ]
+  },
+  {
+   "tr": "Avusturya ve İsviçre'deki karşılığı",
+   "kind": "note",
+   "n": 1,
+   "ctx": [
+    "[die Matura] 'olgunluk sınavı' demek. «Avusturya ve İsviçre'deki karşılığı»"
+   ],
+   "lessons": [
+    "de-b1-lehre-machen"
+   ]
+  },
+  {
+   "tr": "Avusturya'da doktor muayenehanesi",
+   "kind": "note",
+   "n": 1,
+   "ctx": [
+    "[die Ordination] 'muayenehane' demek. «Avusturya'da doktor muayenehanesi»"
+   ],
+   "lessons": [
+    "de-b1-in-pension"
+   ]
+  },
+  {
+   "tr": "Avusturya'da yaygın biçim",
+   "kind": "note",
+   "n": 1,
+   "ctx": [
+    "[der Pensionist] 'emekli' demek. «Avusturya'da yaygın biçim»"
+   ],
+   "lessons": [
+    "de-b1-in-pension"
+   ]
+  },
+  {
+   "tr": "Aynı olayı hangi sözcüklerle anlattığın.",
+   "kind": "note",
+   "n": 1,
+   "ctx": [
+    "[die Wortwahl] 'sözcük seçimi' demek. «Aynı olayı hangi sözcüklerle anlattığın.»"
+   ],
+   "lessons": [
+    "de-b2-er-sagte"
+   ]
+  },
+  {
+   "tr": "Aynı olayın başka türlü okunması.",
+   "kind": "note",
+   "n": 1,
+   "ctx": [
+    "[die Auslegung] 'yorumlama' demek. «Aynı olayın başka türlü okunması.»"
+   ],
+   "lessons": [
+    "de-b2-vermutungen"
+   ]
+  },
+  {
+   "tr": "aynı sözcüğün eril biçimi 'yönetici' demek",
+   "kind": "note",
+   "n": 1,
+   "ctx": [
+    "[die Leiter] 'el merdiveni' demek. «aynı sözcüğün eril biçimi 'yönetici' demek»"
+   ],
+   "lessons": [
+    "de-b1-werkzeug-leihen"
+   ]
+  },
+  {
+   "tr": "aynı sözcük 'kapı' anlamına da gelir",
+   "kind": "note",
+   "n": 1,
+   "ctx": [
+    "[das Tor] 'gol' demek. «aynı sözcük 'kapı' anlamına da gelir»"
+   ],
+   "lessons": [
+    "de-b1-wettkampf"
+   ]
+  },
+  {
+   "tr": "aynı sözcük 'kuyruk' anlamına da gelir",
+   "kind": "note",
+   "n": 1,
+   "ctx": [
+    "[die Schlange] 'yılan' demek. «aynı sözcük 'kuyruk' anlamına da gelir»"
+   ],
+   "lessons": [
+    "de-b1-tiere-natur"
+   ]
+  },
+  {
+   "tr": "aynı sözcük 'mesaj' anlamına da gelir",
+   "kind": "note",
+   "n": 1,
+   "ctx": [
+    "[die Botschaft] 'büyükelçilik' demek. «aynı sözcük 'mesaj' anlamına da gelir»"
+   ],
+   "lessons": [
+    "de-b1-konsulat"
+   ]
+  },
+  {
+   "tr": "aynı sözcük emekli maaşı anlamına da gelir",
+   "kind": "note",
+   "n": 1,
+   "ctx": [
+    "[die Pension] 'pansiyon' demek. «aynı sözcük emekli maaşı anlamına da gelir»"
+   ],
+   "lessons": [
+    "de-b1-in-pension"
+   ]
+  },
+  {
+   "tr": "aynı sözcük telefon ahizesi anlamına da gelir",
+   "kind": "note",
+   "n": 1,
+   "ctx": [
+    "[der Hörer] 'dinleyici' demek. «aynı sözcük telefon ahizesi anlamına da gelir»"
+   ],
+   "lessons": [
+    "de-b1-alte-technik"
+   ]
+  },
+  {
+   "tr": "Ayrılabilen fiil: önek en sona gider.",
+   "kind": "note",
+   "n": 1,
+   "ctx": [
+    "[eingehen auf] 'değinmek' demek. «Ayrılabilen fiil: önek en sona gider.»"
+   ],
+   "lessons": [
+    "de-b2-praesentation"
+   ]
+  },
+  {
+   "tr": "Az olan bir geliri üstüne ekleyerek yükseltmek.",
+   "kind": "note",
+   "n": 1,
+   "ctx": [
+    "[aufstocken] 'takviye etmek' demek. «Az olan bir geliri üstüne ekleyerek yükseltmek.»"
+   ],
+   "lessons": [
+    "de-b2-nebenjob"
+   ]
+  },
+  {
+   "tr": "bakımlı, biçilmiş çim",
+   "kind": "note",
+   "n": 1,
+   "ctx": [
+    "[der Rasen] 'çim' demek. «bakımlı, biçilmiş çim»"
+   ],
+   "lessons": [
+    "de-b1-natur-erleben"
+   ]
+  },
+  {
+   "tr": "başkasına mesaj iletmek",
+   "kind": "note",
+   "n": 1,
+   "ctx": [
+    "[ausrichten] 'iletmek' demek. «başkasına mesaj iletmek»"
+   ],
+   "lessons": [
+    "de-b1-chefin-gespraech"
+   ]
+  },
+  {
+   "tr": "Bavyera ve Avusturya'daki adı",
+   "kind": "note",
+   "n": 1,
+   "ctx": [
+    "[der Fasching] 'karnaval (güney)' demek. «Bavyera ve Avusturya'daki adı»"
+   ],
+   "lessons": [
+    "de-b1-fest-feiern"
+   ]
+  },
+  {
+   "tr": "Bıraktığın alışkanlığa geri dönme.",
+   "kind": "note",
+   "n": 1,
+   "ctx": [
+    "[der Rückfall] 'nüks' demek. «Bıraktığın alışkanlığa geri dönme.»"
+   ],
+   "lessons": [
+    "de-b2-gewohnheiten"
+   ]
+  },
+  {
+   "tr": "Bilineni sağlamlaştırmak.",
+   "kind": "note",
+   "n": 1,
+   "ctx": [
+    "[festigen] 'pekiştirmek' demek. «Bilineni sağlamlaştırmak.»"
+   ],
+   "lessons": [
+    "de-b2-c1-vorbereitung"
+   ]
+  },
+  {
+   "tr": "Bilmekten bir adım ötesi: kullanabilmek.",
+   "kind": "note",
+   "n": 1,
+   "ctx": [
+    "[beherrschen] 'hâkim olmak' demek. «Bilmekten bir adım ötesi: kullanabilmek.»"
+   ],
+   "lessons": [
+    "de-b2-rueckblick"
+   ]
+  },
+  {
+   "tr": "Bir alana ne yapılabileceğini belirleyen resmî plan.",
+   "kind": "note",
+   "n": 1,
+   "ctx": [
+    "[der Bebauungsplan] 'imar planı' demek. «Bir alana ne yapılabileceğini belirleyen resmî plan.»"
+   ],
+   "lessons": [
+    "de-b2-architektur"
+   ]
+  },
+  {
+   "tr": "bir de 'davranmak' anlamı var",
+   "kind": "note",
+   "n": 1,
+   "ctx": [
+    "[handeln] 'ticaret yapmak' demek. «bir de 'davranmak' anlamı var»"
+   ],
+   "lessons": [
+    "de-b1-selbststaendig"
+   ]
+  },
+  {
+   "tr": "Bir dosyadaki bütün gidip gelen yazılar.",
+   "kind": "note",
+   "n": 1,
+   "ctx": [
+    "[der Schriftverkehr] 'yazışma' demek. «Bir dosyadaki bütün gidip gelen yazılar.»"
+   ],
+   "lessons": [
+    "de-b2-beschwerde-formell"
+   ]
+  },
+  {
+   "tr": "Bir dönem insanı nasıl şekillendirir.",
+   "kind": "note",
+   "n": 1,
+   "ctx": [
+    "[prägen] 'biçimlendirmek' demek. «Bir dönem insanı nasıl şekillendirir.»"
+   ],
+   "lessons": [
+    "de-b2-generationen"
+   ]
+  },
+  {
+   "tr": "Bir durum bildirir, süreç değil.",
+   "kind": "note",
+   "n": 1,
+   "ctx": [
+    "[betriebsbereit] 'çalışmaya hazır' demek. «Bir durum bildirir, süreç değil.»"
+   ],
+   "lessons": [
+    "de-b2-zustandspassiv"
+   ]
+  },
+  {
+   "tr": "bir gecelik kalış",
+   "kind": "note",
+   "n": 1,
+   "ctx": [
+    "[die Übernachtung] 'konaklama' demek. «bir gecelik kalış»"
+   ],
+   "lessons": [
+    "de-b1-unterkunft-suchen"
+   ]
+  },
+  {
+   "tr": "Bir haberi okurken kaynağını sorgulayabilme.",
+   "kind": "note",
+   "n": 1,
+   "ctx": [
+    "[die Medienkompetenz] 'medya okuryazarlığı' demek. «Bir haberi okurken kaynağını sorgulayabilme.»"
+   ],
+   "lessons": [
+    "de-b2-falschmeldung"
+   ]
+  },
+  {
+   "tr": "Bir iddiayı kimin kanıtlamak zorunda olduğu.",
+   "kind": "note",
+   "n": 1,
+   "ctx": [
+    "[die Beweislast] 'ispat yükü' demek. «Bir iddiayı kimin kanıtlamak zorunda olduğu.»"
+   ],
+   "lessons": [
+    "de-b2-schadenersatz"
+   ]
+  },
+  {
+   "tr": "Bir insanın nereden nereye geldiği.",
+   "kind": "note",
+   "n": 1,
+   "ctx": [
+    "[der Werdegang] 'meslek geçmişi' demek. «Bir insanın nereden nereye geldiği.»"
+   ],
+   "lessons": [
+    "de-b2-verabschiedung-kollegen"
+   ]
+  },
+  {
+   "tr": "Bir işte kalemi elinde tutan, yani asıl sorumlu olan kişi.",
+   "kind": "note",
+   "n": 1,
+   "ctx": [
+    "[federführend] 'baş sorumlu' demek. «Bir işte kalemi elinde tutan, yani asıl sorumlu olan kişi.»"
+   ],
+   "lessons": [
+    "de-b2-delegieren"
+   ]
+  },
+  {
+   "tr": "Bir oyunda kimin hangi rolü oynadığı.",
+   "kind": "note",
+   "n": 1,
+   "ctx": [
+    "[die Besetzung] 'oyuncu kadrosu' demek. «Bir oyunda kimin hangi rolü oynadığı.»"
+   ],
+   "lessons": [
+    "de-b2-dessen-deren"
+   ]
+  },
+  {
+   "tr": "Bir sayının kaç ettiğini söyler.",
+   "kind": "note",
+   "n": 1,
+   "ctx": [
+    "[betragen] 'tutmak (sayı)' demek. «Bir sayının kaç ettiğini söyler.»"
+   ],
+   "lessons": [
+    "de-b2-folien"
+   ]
+  },
+  {
+   "tr": "Bir semtte kiranın ne olması gerektiğini gösteren resmî tablo.",
+   "kind": "note",
+   "n": 1,
+   "ctx": [
+    "[der Mietspiegel] 'kira endeksi' demek. «Bir semtte kiranın ne olması gerektiğini gösteren resmî tablo.»"
+   ],
+   "lessons": [
+    "de-b2-wohnungsmarkt"
+   ]
+  },
+  {
+   "tr": "Bir sezonun sonundaki büyük unvan.",
+   "kind": "note",
+   "n": 1,
+   "ctx": [
+    "[die Meisterschaft] 'şampiyona' demek. «Bir sezonun sonundaki büyük unvan.»"
+   ],
+   "lessons": [
+    "de-b2-fotografie"
+   ]
+  },
+  {
+   "tr": "Bir şeyin elde bulunup bulunmadığı.",
+   "kind": "note",
+   "n": 1,
+   "ctx": [
+    "[die Verfügbarkeit] 'kullanılabilirlik' demek. «Bir şeyin elde bulunup bulunmadığı.»"
+   ],
+   "lessons": [
+    "de-b2-partizip-1"
+   ]
+  },
+  {
+   "tr": "Bir tesisin ya da binanın düzenli bakımı.",
+   "kind": "note",
+   "n": 1,
+   "ctx": [
+    "[die Instandhaltung] 'bakım onarım' demek. «Bir tesisin ya da binanın düzenli bakımı.»"
+   ],
+   "lessons": [
+    "de-b2-wartung"
+   ]
+  },
+  {
+   "tr": "Bir türün tamamen kaybolması.",
+   "kind": "note",
+   "n": 1,
+   "ctx": [
+    "[das Aussterben] 'yok oluş' demek. «Bir türün tamamen kaybolması.»"
+   ],
+   "lessons": [
+    "de-b2-weltraum"
+   ]
+  },
+  {
+   "tr": "Birinden kaldıramayacağı bir şeyi beklemek.",
+   "kind": "note",
+   "n": 1,
+   "ctx": [
+    "[zumuten] 'katlanmasını beklemek' demek. «Birinden kaldıramayacağı bir şeyi beklemek.»"
+   ],
+   "lessons": [
+    "de-b2-eskalation"
+   ]
+  },
+  {
+   "tr": "Birinin yerine bakma görevi.",
+   "kind": "note",
+   "n": 1,
+   "ctx": [
+    "[die Stellvertretung] 'vekâlet' demek. «Birinin yerine bakma görevi.»"
+   ],
+   "lessons": [
+    "de-b2-organisation"
+   ]
+  },
+  {
+   "tr": "boyacı anlamına da gelir",
+   "kind": "note",
+   "n": 1,
+   "ctx": [
+    "[der Maler] 'ressam' demek. «boyacı anlamına da gelir»"
+   ],
+   "lessons": [
+    "de-b1-berufe-vorstellen"
+   ]
+  },
+  {
+   "tr": "Bozulmasını önleyecek biçimde saklamak.",
+   "kind": "note",
+   "n": 1,
+   "ctx": [
+    "[konservieren] 'muhafaza etmek' demek. «Bozulmasını önleyecek biçimde saklamak.»"
+   ],
+   "lessons": [
+    "de-b2-museum-fuehrung"
+   ]
+  },
+  {
+   "tr": "Bölümün kimin için yapıldığı.",
+   "kind": "note",
+   "n": 1,
+   "ctx": [
+    "[die Zielgruppe] 'hedef kitle' demek. «Bölümün kimin için yapıldığı.»"
+   ],
+   "lessons": [
+    "de-b2-podcast-b2"
+   ]
+  },
+  {
+   "tr": "büyük, kalabalık için ayrılmış oda",
+   "kind": "note",
+   "n": 1,
+   "ctx": [
+    "[der Saal] 'salon' demek. «büyük, kalabalık için ayrılmış oda»"
+   ],
+   "lessons": [
+    "de-b1-kuchen-backen"
+   ]
+  },
+  {
+   "tr": "ceket ve etekten oluşan takım",
+   "kind": "note",
+   "n": 1,
+   "ctx": [
+    "[das Kostüm] 'döpiyes' demek. «ceket ve etekten oluşan takım»"
+   ],
+   "lessons": [
+    "de-b1-kleidung-kaufen"
+   ]
+  },
+  {
+   "tr": "çiftlik anlamına da gelir",
+   "kind": "note",
+   "n": 1,
+   "ctx": [
+    "[der Hof] 'avlu' demek. «çiftlik anlamına da gelir»"
+   ],
+   "lessons": [
+    "de-b1-natur-erleben"
+   ]
+  },
+  {
+   "tr": "Çocuklukta duyduğun müziğin sende bıraktığı iz.",
+   "kind": "note",
+   "n": 1,
+   "ctx": [
+    "[die Prägung] 'şekillenme' demek. «Çocuklukta duyduğun müziğin sende bıraktığı iz.»"
+   ],
+   "lessons": [
+    "de-b2-musik-analyse"
+   ]
+  },
+  {
+   "tr": "Değer artacak diye alıp bekletme.",
+   "kind": "note",
+   "n": 1,
+   "ctx": [
+    "[die Spekulation] 'spekülasyon' demek. «Değer artacak diye alıp bekletme.»"
+   ],
+   "lessons": [
+    "de-b2-kunstmarkt"
+   ]
+  },
+  {
+   "tr": "Devlet emekliliğinin üstüne işverenin katkısı.",
+   "kind": "note",
+   "n": 1,
+   "ctx": [
+    "[die Betriebsrente] 'işyeri emekliliği' demek. «Devlet emekliliğinin üstüne işverenin katkısı.»"
+   ],
+   "lessons": [
+    "de-b2-rente"
+   ]
+  },
+  {
+   "tr": "Devletin vergiyi almasının resmî fiili.",
+   "kind": "note",
+   "n": 1,
+   "ctx": [
+    "[erheben] 'tahsil etmek' demek. «Devletin vergiyi almasının resmî fiili.»"
+   ],
+   "lessons": [
+    "de-b2-steuern-b2"
+   ]
+  },
+  {
+   "tr": "dilbilgisinde adın cinsi",
+   "kind": "note",
+   "n": 1,
+   "ctx": [
+    "[das Geschlecht] 'cinsiyet' demek. «dilbilgisinde adın cinsi»"
+   ],
+   "lessons": [
+    "de-b1-sprache-akzent"
+   ]
+  },
+  {
+   "tr": "diploma ve sertifikaların toplamı",
+   "kind": "note",
+   "n": 1,
+   "ctx": [
+    "[die Qualifikation] 'nitelik' demek. «diploma ve sertifikaların toplamı»"
+   ],
+   "lessons": [
+    "de-b1-lebenslauf"
+   ]
+  },
+  {
+   "tr": "Doğuştan gelen eğilim.",
+   "kind": "note",
+   "n": 1,
+   "ctx": [
+    "[die Veranlagung] 'yatkınlık' demek. «Doğuştan gelen eğilim.»"
+   ],
+   "lessons": [
+    "de-b2-gewohnheiten"
+   ]
+  },
+  {
+   "tr": "Dönüşlü fiil: kendi görüşünü dile getirmek.",
+   "kind": "note",
+   "n": 1,
+   "ctx": [
+    "[sich äußern] 'görüş bildirmek' demek. «Dönüşlü fiil: kendi görüşünü dile getirmek.»"
+   ],
+   "lessons": [
+    "de-b2-meeting-leiten"
+   ]
+  },
+  {
+   "tr": "dönüşlü kullanıldığında 'dönüş yapmak' demek",
+   "kind": "note",
+   "n": 1,
+   "ctx": [
+    "[melden] 'bildirmek / haber vermek' demek. «dönüşlü kullanıldığında 'dönüş yapmak' demek»"
+   ],
+   "lessons": [
+    "de-b1-absage-bewerbung"
+   ]
+  },
+  {
+   "tr": "Dönüşlü kullanınca 'bağlantı kurmak' olur.",
+   "kind": "note",
+   "n": 1,
+   "ctx": [
+    "[vernetzen] 'ağa bağlamak' demek. «Dönüşlü kullanınca 'bağlantı kurmak' olur.»"
+   ],
+   "lessons": [
+    "de-b2-konferenz"
+   ]
+  },
+  {
+   "tr": "edatla birlikte 'savunmak' anlamına gelir",
+   "kind": "note",
+   "n": 1,
+   "ctx": [
+    "[eintreten] 'girmek; savunmak' demek. «edatla birlikte 'savunmak' anlamına gelir»"
+   ],
+   "lessons": [
+    "de-b1-engagement-buerger"
+   ]
+  },
+  {
+   "tr": "Ekonominin genel gidişatı.",
+   "kind": "note",
+   "n": 1,
+   "ctx": [
+    "[die Konjunktur] 'konjonktür' demek. «Ekonominin genel gidişatı.»"
+   ],
+   "lessons": [
+    "de-b2-inflation"
+   ]
+  },
+  {
+   "tr": "Elde duran, hemen harcanabilir para.",
+   "kind": "note",
+   "n": 1,
+   "ctx": [
+    "[die Liquidität] 'likidite' demek. «Elde duran, hemen harcanabilir para.»"
+   ],
+   "lessons": [
+    "de-b2-selbststaendig"
+   ]
+  },
+  {
+   "tr": "Empatiden farkı: yukarıdan bakar.",
+   "kind": "note",
+   "n": 1,
+   "ctx": [
+    "[das Mitleid] 'acıma' demek. «Empatiden farkı: yukarıdan bakar.»"
+   ],
+   "lessons": [
+    "de-b2-empathie"
+   ]
+  },
+  {
+   "tr": "eril biçimi A1 seviyesinde öğrenildi",
+   "kind": "note",
+   "n": 1,
+   "ctx": [
+    "[die Jugendliche] 'genç kız' demek. «eril biçimi A1 seviyesinde öğrenildi»"
+   ],
+   "lessons": [
+    "de-b1-generationen"
+   ]
+  },
+  {
+   "tr": "eski bir hitap, bugün kibar sayılmıyor",
+   "kind": "note",
+   "n": 1,
+   "ctx": [
+    "[der Ober] 'garson' demek. «eski bir hitap, bugün kibar sayılmıyor»"
+   ],
+   "lessons": [
+    "de-b1-im-gasthaus"
+   ]
+  },
+  {
+   "tr": "Evde konuşulan, ilk öğrenilen dil.",
+   "kind": "note",
+   "n": 1,
+   "ctx": [
+    "[die Herkunftssprache] 'köken dili' demek. «Evde konuşulan, ilk öğrenilen dil.»"
+   ],
+   "lessons": [
+    "de-b2-kulturschock-rueckwaerts"
+   ]
+  },
+  {
+   "tr": "gazetecinin ön çalışması",
+   "kind": "note",
+   "n": 1,
+   "ctx": [
+    "[die Recherche] 'araştırma' demek. «gazetecinin ön çalışması»"
+   ],
+   "lessons": [
+    "de-b1-literatur-lesen"
+   ]
+  },
+  {
+   "tr": "Gazetenin kendi görüşünü açıkladığı yazı.",
+   "kind": "note",
+   "n": 1,
+   "ctx": [
+    "[der Leitartikel] 'başyazı' demek. «Gazetenin kendi görüşünü açıkladığı yazı.»"
+   ],
+   "lessons": [
+    "de-b2-leserbrief"
+   ]
+  },
+  {
+   "tr": "Gece saatlerinde gürültü etmenin resmî adı.",
+   "kind": "note",
+   "n": 1,
+   "ctx": [
+    "[die Ruhestörung] 'huzur bozma' demek. «Gece saatlerinde gürültü etmenin resmî adı.»"
+   ],
+   "lessons": [
+    "de-b2-nachbarschaftsstreit"
+   ]
+  },
+  {
+   "tr": "genelde ev yemeği veren, sade bir yer",
+   "kind": "note",
+   "n": 1,
+   "ctx": [
+    "[das Gasthaus] 'lokanta' demek. «genelde ev yemeği veren, sade bir yer»"
+   ],
+   "lessons": [
+    "de-b1-im-gasthaus"
+   ]
+  },
+  {
+   "tr": "giysi için kullanılır",
+   "kind": "note",
+   "n": 1,
+   "ctx": [
+    "[anhaben] 'üzerinde olmak' demek. «giysi için kullanılır»"
+   ],
+   "lessons": [
+    "de-b1-fest-feiern"
+   ]
+  },
+  {
+   "tr": "Göz kararı ölçülebilecek kadar küçük.",
+   "kind": "note",
+   "n": 1,
+   "ctx": [
+    "[überschaubar] 'idare edilebilir' demek. «Göz kararı ölçülebilecek kadar küçük.»"
+   ],
+   "lessons": [
+    "de-b2-passiversatz-lassen"
+   ]
+  },
+  {
+   "tr": "günlük dilde daha kaba durur",
+   "kind": "note",
+   "n": 1,
+   "ctx": [
+    "[der Dreck] 'pislik' demek. «günlük dilde daha kaba durur»"
+   ],
+   "lessons": [
+    "de-b1-putzen-teilen"
+   ]
+  },
+  {
+   "tr": "günlük işlemler için açılan hesap",
+   "kind": "note",
+   "n": 1,
+   "ctx": [
+    "[das Girokonto] 'vadesiz hesap' demek. «günlük işlemler için açılan hesap»"
+   ],
+   "lessons": [
+    "de-b1-bank-konto"
+   ]
+  },
+  {
+   "tr": "Hava raporunun yağmur ve kar için ortak sözcüğü.",
+   "kind": "note",
+   "n": 1,
+   "ctx": [
+    "[der Niederschlag] 'yağış' demek. «Hava raporunun yağmur ve kar için ortak sözcüğü.»"
+   ],
+   "lessons": [
+    "de-b2-wegen-trotz"
+   ]
+  },
+  {
+   "tr": "Havuzdaki aufhalten 'alıkoymak'; dönüşlüsü 'bir yerde bulunmak'.",
+   "kind": "note",
+   "n": 1,
+   "ctx": [
+    "[sich aufhalten] 'bulunmak (bir yerde)' demek. «Havuzdaki aufhalten 'alıkoymak'; dönüşlüsü 'bir yerde bulunmak'.»"
+   ],
+   "lessons": [
+    "de-b2-soll-angeblich"
+   ]
+  },
+  {
+   "tr": "hayvanlar için kullanılır",
+   "kind": "note",
+   "n": 1,
+   "ctx": [
+    "[fressen] 'yem yemek' demek. «hayvanlar için kullanılır»"
+   ],
+   "lessons": [
+    "de-b1-tiere-natur"
+   ]
+  },
+  {
+   "tr": "hem yapı hem sahne türü",
+   "kind": "note",
+   "n": 1,
+   "ctx": [
+    "[die Oper] 'opera' demek. «hem yapı hem sahne türü»"
+   ],
+   "lessons": [
+    "de-b1-oper-konzert"
+   ]
+  },
+  {
+   "tr": "Her şeyin tıkandığı dar nokta.",
+   "kind": "note",
+   "n": 1,
+   "ctx": [
+    "[der Engpass] 'darboğaz' demek. «Her şeyin tıkandığı dar nokta.»"
+   ],
+   "lessons": [
+    "de-b2-deadline"
+   ]
+  },
+  {
+   "tr": "Herkese aynı anda giden resmî yazı.",
+   "kind": "note",
+   "n": 1,
+   "ctx": [
+    "[das Rundschreiben] 'genelge' demek. «Herkese aynı anda giden resmî yazı.»"
+   ],
+   "lessons": [
+    "de-b2-formeller-brief"
+   ]
+  },
+  {
+   "tr": "hizmet ya da tarife sunan firma",
+   "kind": "note",
+   "n": 1,
+   "ctx": [
+    "[der Anbieter] 'sağlayıcı' demek. «hizmet ya da tarife sunan firma»"
+   ],
+   "lessons": [
+    "de-b1-preis-vergleichen"
+   ]
+  },
+  {
+   "tr": "Hobiye göre daha hafif: sadece vakit geçirme.",
+   "kind": "note",
+   "n": 1,
+   "ctx": [
+    "[der Zeitvertreib] 'vakit geçirme' demek. «Hobiye göre daha hafif: sadece vakit geçirme.»"
+   ],
+   "lessons": [
+    "de-b2-teures-hobby"
+   ]
+  },
+  {
+   "tr": "Hukuken hiç doğmamış sayılan, geçersiz.",
+   "kind": "note",
+   "n": 1,
+   "ctx": [
+    "[unwirksam] 'hükümsüz' demek. «Hukuken hiç doğmamış sayılan, geçersiz.»"
+   ],
+   "lessons": [
+    "de-b2-vertrag-kuendigen"
+   ]
+  },
+  {
+   "tr": "içkinin öne çıktığı sade bir yer",
+   "kind": "note",
+   "n": 1,
+   "ctx": [
+    "[die Kneipe] 'meyhane' demek. «içkinin öne çıktığı sade bir yer»"
+   ],
+   "lessons": [
+    "de-b1-lokal-reklamation"
+   ]
+  }
+ ]
+}
