@@ -116,10 +116,12 @@
     "check:mock-prose": "tsx --tsconfig scripts/tsconfig.e2e.json data/mock-exams/prose/check.ts",
     "check:mock-prose-de": "tsx --tsconfig scripts/tsconfig.e2e.json data/mock-exams/prose/check.ts --de",
     "lessons:apply": "node data/lessons/vocab/triage.mjs && node data/lessons/apply.mjs",
+    "lessons:apply-de": "node data/lessons/apply-de.mjs",
     "report:native": "npm run lessons:apply && tsx --tsconfig scripts/tsconfig.e2e.json scripts/report-native-gaps.ts",
     "check:lessons-native": "npm run lessons:apply && tsx --tsconfig scripts/tsconfig.e2e.json scripts/check-native-lessons.ts",
     "check:skills-native": "npm run lessons:apply && tsx --tsconfig scripts/tsconfig.e2e.json scripts/check-native-skills.ts",
-    "check:mock-native": "npm run lessons:apply && tsx --tsconfig scripts/tsconfig.e2e.json scripts/check-native-mock.ts"
+    "check:mock-native": "npm run lessons:apply && tsx --tsconfig scripts/tsconfig.e2e.json scripts/check-native-mock.ts",
+    "check:native-de": "npm run lessons:apply-de && tsx --tsconfig scripts/tsconfig.e2e.json scripts/check-native-de.ts"
   },
   "dependencies": {
     "better-auth": "^1.7.3",
