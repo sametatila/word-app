@@ -1222,3 +1222,104 @@ yazılır (`data/meanings` hattının deseni).
 `tasks.build.tr` hattın en zor kalemi: Almanca cümlenin ANLAMI ve öğrenci
 onu parçalardan kuruyor. Karşılık "doğru İngilizce" olmakla kalmaz, aynı
 Almanca dizilişi ima etmek zorunda.
+
+### Görev metni hattı BİTTİ — 3.426/3.426 (2026-09-10)
+
+`data/skills/task/` kapandı ve çalışma anına bağlandı: `apply.mjs` →
+`NativeDict.task` → `resolveExercise` → `localiseExercise`. On dokuz alan
+daha çevriliyor.
+
+ANAHTAR `tür + AYRAÇ + tr`. Korpusta tam bir çakışma bulundu ve düz anahtar
+onu sessizce yerdi:
+
+    explanation.examples.tr  "Saat altıda kalkıyorum."  Ich stehe um sechs Uhr auf.
+    build.tr                 "Saat altıda kalkıyorum."  Ich stehe um sechs auf
+
+Aynı Türkçe, farklı Almanca, farklı İngilizce. `lectureSplit` ile aynı
+gerekçe. Tek çakışma — ama tek olması kuralı gereksiz kılmıyor: yiyen
+tarafta kalırdı.
+
+**Kapı yedi kural taşıyor** ve dördü bu hatta özgü. En değerlisi şu:
+söyleyiş ipuçları ÇEVRİLMEZ, YENİDEN YAZILIR. `drill.hint` Almanca sesleri
+TÜRKÇE okunuşla veriyor ("ştu-DİİRT", "MAY-ne"); İngilizce okuyan bunu
+okuyamaz, "shtoo-DEERT", "MY-nuh" gerekir. 210 ipucunun 168'i böyleydi.
+
+**Üç sessiz kusur sınıfı yakalandı, üçü de kapının kendinde:**
+
+1. `\b` sözcük sınırı ASCII harfe göre çalışıyor. `\bortaç\b`, `\büber\b`,
+   `\bçok\b`, `\bönce\b` HİÇ eşleşmiyordu — dört listenin bir bölümü
+   yazıldığı günden beri ölçüm yapmıyordu. Unicode bakışına çevrildi.
+2. Yazım denetimi kaynaktan TAŞINAN sözcüğü de yargılıyordu (`Meter`).
+   Artık yalnız yazanın SEÇTİĞİ sözcüklere bakıyor.
+3. Üç nokta noktalama değil BOŞLUK işareti; yeri dile bağlı ve yanındaki
+   noktalama da onunla birlikte gidiyor.
+
+**Kayma teşhisi üç ölçüte çıktı** (alıntı → sayı → uzunluk korelasyonu),
+çünkü ilk ikisi `build.tr` paketlerinde susuyor: o cümlelerde ne tırnak var
+ne sayı. Üçüncüsü kaymanın YERİNİ değil GÖRÜNDÜĞÜ yeri veriyor ve ileti
+bunu söylüyor — sınandı, gerçek eksik 130'daydı, ölçüt 139'u gösterdi.
+
+### Beceri ekseninde KALAN: ~240 dize (2026-09-10 ölçümü)
+
+Çözülmüş 995 egzersizin tamamı tarandı (yapının her dizesi, alan alan).
+Sonuç: 995/995 çözülüyor, ama hâlâ Türkçe kalan alanlar var. Ölçüm iki
+sınıfı AYIRIYOR, çünkü ilk sezgi ikisini karıştırıyordu:
+
+| kalem | benzersiz | not |
+|---|---:|---|
+| `questions[].text` | 191 | 122'si `dictation`, 48'i `truefalse`, 27'si `order` |
+| `title` | 28 | hepsi yazma egzersizi ("können: yetenek mi, imkân mı?") |
+| `tasks[].stimulus` | 21 | Almanca metnin üstündeki Türkçe çerçeve satırı |
+| `tasks[].source` | 1 | "Neyiniz var?" — öğrencinin Almancaya çevireceği cümle |
+| **toplam** | **~241** | |
+
+BOŞLUK OLMAYAN 137 dize ayrıca sayıldı ve bilerek dışarıda: Türkçe AD
+taşıyan Almanca cümleler (`Sind Sie Frau Yılmaz?`, `Frau Yılmaz` konuşmacı
+adı, `Ayla Yıldız` form cevabı). Bunlar içerik ve kimlik; çevrilmeleri
+egzersizi bozar. Ayıran ölçüt: dizede Almanca/İngilizce bir işlev sözcüğü
+var mı.
+
+### en→de için ELDE NE VAR, NE EKSİK (2026-09-10 ölçümü)
+
+`PAIR_READY.en` bugün BOŞ. Doldurmak için İngilizce konuşanın gördüğü her
+şeyin İngilizce olması gerekiyor. Eksen eksen sayıldı:
+
+| eksen | durum |
+|---|---|
+| Ders anlatımı, sözlükçe, kalıp, başlık, rol yapma, senaryo | ✅ 26.375/26.375 · kapı: `check:lessons-native` |
+| Almanca takas tablosu (öğrenciye söyletilen cümleler) | ✅ 25 + 17 · kapı: `check:lessons-swap` |
+| Modül sınavı kâğıtları | ✅ 1.781/1.781 · bağlı |
+| Can-do ifadeleri | ✅ kaynakta `en` dolu |
+| Beceri düz metni (`intro`, `questions.explain`) | ✅ 3.394/3.394 · bağlı |
+| Beceri görev metni (19 alan) | ✅ 3.426/3.426 · bağlı |
+| Egzersiz sözlükçesi (`gloss`, `phrases`) | ✅ 5.633 katlanıyor |
+| Kelime havuzu | ✅ 8.707/8.707 `en` dolu · kapı: `test:gloss` |
+| Arayüz metinleri | ✅ 1.203 anahtar × 3 dil · kapı: `i18n:check` |
+| **Beceri egzersizlerinin kalanı** | ❌ ~241 dize |
+| **Deneme kâğıtları (60 Almanca kâğıt)** | ❌ 4.920 dize |
+
+**Deneme kâğıtları eksenin EN BÜYÜK kalemi ve bugüne kadar hiç ölçülmemişti.**
+60 Almanca kâğıtta 4.920 benzersiz Türkçe dize (6.366 geçiş):
+
+| alan | benzersiz | ne |
+|---|---:|---|
+| `items[].explain` | 2.168 | cevaptan sonraki gerekçe |
+| `rubric.criteria[]` | 757 | değerlendirme ölçütleri |
+| `promptTr` | 434 | görev yönergesi |
+| `texts[].situation` | 341 | durum tarifi |
+| `exchange[].tr` / `.hint` / `.expect` | 798 | konuşma bölümü |
+| `rubric.points[].tr` | 242 | içerik noktaları |
+| `parts[].instructionTr` · `themeTr` · öteki | 180 | bölüm yönergesi ve tema |
+
+Ders ekseninin sınav hattı (1.781) bunun üçte biri kadardı. Sıra buysa,
+hat deseni aynı: `data/mock-exams/prose/` altında `make` → `in/` → `out/`
+→ `check`, anahtar `alan + AYRAÇ + tr` (kâğıtlar arasında aynı Türkçe
+gerekçe farklı soruda farklı şey anlatabiliyor).
+
+**Ölçüm nasıl yapıldı — ve neden iki kez yapıldı.** İlk sezgi "Türkçeye
+özgü harf ya da Türkçe işlev sözcüğü" idi ve 445 dize buldu. Ama harf
+ölçütü ÖZEL ADLARI yakalıyordu: `Sind Sie Frau Yılmaz?` Almanca bir
+cümledir, `Frau Yılmaz` bir konuşmacı adıdır, `Ayla Yıldız` bir form
+cevabıdır — üçü de İÇERİK ve çevrilmeleri egzersizi bozar. Harf ölçütü
+atıldı, yalnız işlev sözcüğü kaldı; ayrıca `de`, `da`, `ya`, `her` gibi
+Almancada da geçen sözcükler listeden çıkarıldı. 445 → 241.
