@@ -23,8 +23,6 @@ export const trWeb: Record<string, string> = {
    * yani orada da çevrilmiyor. Web bunu anahtara bağladı; mobil tarafın da
    * kapatması gereken bir eksik.
    */
-  "common.hours_minutes": "{h} sa {m} dk",
-  "common.hours": "{h} sa",
   /*
    * Günün görevleri. Etiketler SUNUCUDA Türkçe sabit yazılıydı ve API'den öyle
    * geliyordu — yani mobil uygulama da, arayüzü İngilizce ya da Almanca olsa
@@ -914,9 +912,6 @@ export const trWeb: Record<string, string> = {
   "lang.app_language_sub": "Arayüz, anlatım ve kelime anlamları bu dilde olur; öğrenilecek dil listesi de buna göre değişir.",
   "progw.my_progress": "İlerlemem",
   "lb.weekly": "Haftalık sıralama",
-  "lb.this_week": "Bu haftanın sıralaması",
-  "lb.gap": "Bir üsttekine {xp} XP — bir turluk mesafe.",
-  "lb.at_top": "Zirvedesin. Pazartesi herkes sıfırdan başlıyor.",
   "sharew.head": "Lernomi · {level}",
   "sharew.head_daily": "Lernomi · Günün turu · {level}",
   "sharew.points": "{n} puan",

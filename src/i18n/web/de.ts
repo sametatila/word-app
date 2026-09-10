@@ -14,8 +14,6 @@ export const deWeb: Record<string, string> = {
   "learn.survival": "Überleben",
   "learn.survival_pitch": "40 s · bis die Zeit abläuft",
   /* Süre birimi — bkz. tr.ts notu. */
-  "common.hours_minutes": "{h} Std. {m} Min.",
-  "common.hours": "{h} Std.",
   /* Günün görevleri — sunucuda çözülüyor, bkz. tr.ts notu. */
   "quest.reviews10": "10 Wörter wiederholen",
   "quest.reviews25": "25 Wörter wiederholen",
@@ -889,9 +887,6 @@ export const deWeb: Record<string, string> = {
   "lang.app_language_sub": "Oberfläche, Erklärungen und Wortbedeutungen sind in dieser Sprache; sie bestimmt auch, welche Kurse zur Auswahl stehen.",
   "progw.my_progress": "Mein Fortschritt",
   "lb.weekly": "Wochenrangliste",
-  "lb.this_week": "Die Rangliste dieser Woche",
-  "lb.gap": "{xp} XP bis zum Nächsten — eine Runde Abstand.",
-  "lb.at_top": "Du bist ganz oben. Am Montag fangen alle bei null an.",
   "sharew.head": "Lernomi · {level}",
   "sharew.head_daily": "Lernomi · Tagesrunde · {level}",
   "sharew.points": "{n} Punkte",

@@ -14,8 +14,6 @@ export const enWeb: Record<string, string> = {
   "learn.survival": "Survival",
   "learn.survival_pitch": "40 s · until time runs out",
   /* Süre birimi — bkz. tr.ts notu. */
-  "common.hours_minutes": "{h} h {m} min",
-  "common.hours": "{h} h",
   /* Günün görevleri — sunucuda çözülüyor, bkz. tr.ts notu. */
   "quest.reviews10": "Review 10 words",
   "quest.reviews25": "Review 25 words",
@@ -889,9 +887,6 @@ export const enWeb: Record<string, string> = {
   "lang.app_language_sub": "The interface, explanations and word meanings use this language; it also decides which courses you can take.",
   "progw.my_progress": "My progress",
   "lb.weekly": "Weekly leaderboard",
-  "lb.this_week": "This week's leaderboard",
-  "lb.gap": "{xp} XP to the one above — one round away.",
-  "lb.at_top": "You're on top. Everyone restarts on Monday.",
   "sharew.head": "Lernomi · {level}",
   "sharew.head_daily": "Lernomi · Daily round · {level}",
   "sharew.points": "{n} points",

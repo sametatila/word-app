@@ -135,6 +135,45 @@ if (dupes.length) {
   for (const d of dupes) console.error(`yinelenen anahtar → ${d}`);
 }
 
+/*
+  5. `web/*` içinde ÖLÜ anahtar var mı — çağrılan-ama-yok'un TERSİ.
+
+  Bu denetim "kodda çağrıldı, sözlükte yok"u yakalıyordu; sözlükte durup hiç
+  çağrılmayan anahtarı kimse görmüyordu. Bedeli ölçüldü: web sözlüğü mobil
+  kaynaklı `progress.*` anahtarlarına geçirilince geride kalan dokuz
+  `prog.*`/`progw.*` kopyası ölü kaldı, sonra "yanlışlıkla silinmiş" sanılıp
+  geri kondu ve hiçbir kapı itiraz etmedi (docs/plan/web-parity.md 11.126).
+  Aynı cümlenin iki kopyası tek başına zararsız görünüyor ama biri düzeltilip
+  ötekinin eski kalması için bir yol açıyor.
+
+  ARAMA `t()` ÇAĞRISINA BAKMIYOR, düz metne bakıyor: anahtarların çoğu bir
+  tabloda duruyor (`titleKey: "ach.streak3.title"`) ve sonra çözülüyor. `t()`
+  ile sınırlı bir arama bunların hepsini "ölü" sayardı - yüz sekiz rozet
+  anahtarı dahil. Ölçüldü: düz metin araması on altı aday bırakıyor.
+
+  MUAF olanlar ÇALIŞMA ANINDA kuruluyor ve dosyada tam adıyla hiç geçmiyor;
+  ikisi de kaynağıyla birlikte yazılı:
+    - `band.*`      → `lib/proficiency.ts`: `band.${band}`
+    - `push.rem_*_named` → `lib/push.ts`: `${base}_named`
+  Yeni bir dinamik aile eklenirse buraya da eklenir; liste kısa kalmalı,
+  çünkü her muafiyet kapının gördüğü alanı daraltıyor.
+
+  `base/*` denetlenmiyor: orası mobil sözlükten birebir üretiliyor ve orada
+  kullanılmayan anahtar Android'in kendi meselesi.
+*/
+const DYNAMIC_WEB = [/^band\./, /^push\.rem_.*_named$/];
+{
+  const webKeys = load("web", "tr");
+  const src = files.map((f) => readFileSync(f, "utf8")).join("\n");
+  const dead = [...webKeys.keys()].filter(
+    (k) => !DYNAMIC_WEB.some((re) => re.test(k)) && !src.includes(`"${k}"`) && !src.includes(`'${k}'`) && !src.includes(`${k}\``),
+  );
+  if (dead.length) {
+    bad += dead.length;
+    for (const k of dead) console.error(`web sözlüğünde ÖLÜ anahtar (hiçbir yerde çağrılmıyor) → ${k}`);
+  }
+}
+
 if (missingUse.size) {
   bad += missingUse.size;
   for (const [k, file] of missingUse) console.error(`kod: "${k}" sözlükte yok — ${file}`);
