@@ -1880,6 +1880,35 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   sameList("sozlu metin normalizasyonu", norm("mobile/src/lib/speech.ts"), norm("src/lib/speech.ts"));
 }
 
+/* ── 43. cevrimdisi rol yapma ──────────────────────────────────────────────
+ * Saglayici kapaliyken konusma ders verisinden oynaniyor. Iki gerceklestirme
+ * ayri dosyada; ayrisirlarsa ayni ders bir uygulamada gecilebilir, otekinde
+ * gecilemez (gecme kosulu konusmanin YAPILMASINI istiyor).
+ *
+ * Olculen: kalip esiginin uzunlugu, ozet puan formulu ve KARSI TARAFIN
+ * cumleleri. Cumleler hedef DILE gore secilen bir tabloda: dordu de Almanca
+ * SABITTI ve Ingilizce kursta da Almanca cikiyordu (11.96). */
+{
+  const kural = (p) => {
+    const src = read(p).replace(/\/\*[\s\S]*?\*\//g, " ").replace(/\/\/[^\n]*/g, " ");
+    const fn = (ad) => {
+      const i = src.indexOf(ad);
+      return i < 0 ? "yok" : src.slice(i, src.indexOf("\n}", i)).replace(/\s+/g, " ");
+    };
+    const coach = (() => {
+      const i = src.indexOf("const COACH");
+      if (i < 0) return "yok";
+      return src.slice(i, src.indexOf("\n};", i)).replace(/\s+/g, " ");
+    })();
+    return [
+      "uzunkok=" + ((fn("export function patternUsed").match(/length >= (\d+)/) ?? [])[1] ?? "yok"),
+      "puan=" + ((fn("export function offlineSummary").match(/Math\.round\(\(100 \* \(([^)]+)\)\) \/ ([\w.]+)\)/) ?? []).slice(1).join("/") || "yok"),
+      "koc=" + coach,
+    ];
+  };
+  sameList("cevrimdisi rol yapma", kural("mobile/src/game/offlineRoleplay.ts"), kural("src/lib/lessons/offline-roleplay.ts"));
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"

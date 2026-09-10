@@ -1,3 +1,4 @@
+import type { DialogueTurn } from "../../lib/native";
 /**
  * Ders kataloğu — mobil paket. scripts/dump-lessons-mobile.ts üretir (web'in
  * LESSONS'ından, seviye başına bir JSON). Web dersi koddan okuyor; mobil de
@@ -32,6 +33,13 @@ export type VocabItem = { de: string; tr: string };
 export type PatternItem = { de: string; tr: string };
 export type LessonRoleplay = {
   scene: string; partner: string; opening: string; openingTr: string; goal: string; minTurns?: number;
+  /**
+   * Dallanan senaryo — yalnız 780 dersin 10'unda var. Sağlayıcı kapalıyken
+   * konuşma bundan oynanıyor (`game/offlineRoleplay`); yoksa dersin kalıpları
+   * sırayla isteniyor. Tip `lib/native` içindekiyle aynı (döküm yolu onu
+   * çevirmek için zaten tanıyor).
+   */
+  script?: DialogueTurn[];
 };
 export type Lesson = {
   id: string; level: string; course: string; icon: string;
