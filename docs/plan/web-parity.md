@@ -5001,3 +5001,22 @@ ya da deneme sınavında aynı yerde ne yapılacağı yazıyor.
 (mobil seviye/modülü rota parametresinden biliyor) ama sunucu yeni bir alan
 eklerse liste tutmuyor ve insan "bunu mobil de kullanmalı mı" diye bakıyor.
 `id` tam olarak bu kapı olmadığı için kaybolmuştu.
+
+### 11.123 Sınav sonucu neyi kaçırdığını söylemiyordu
+
+Seviye sınavı mobilde yalnız **yüzde** gösteriyordu: öğrenci "%62" görüp neyi
+kaçırdığını hiç öğrenmiyordu — oysa sınavın **öğreten kısmı tam olarak bu**.
+Web `exam-player` her cevap noktasında kaçanı biriktirip sonuçta doğru
+cevabıyla ve öğrencinin verdiği cevapla birlikte açıyor; mobilde hiçbiri
+yoktu.
+
+Altı cevap noktası da bildiriyor artık (kelime, dilbilgisi, üretim, okuma,
+dinleme, konuşma). Kırılım **kapalı başlıyor** ki puanın önüne geçmesin —
+webdeki karar da bu. Örnek cevap da kâğıtta zaten vardı (`task.sample`) ve hiç
+gösterilmiyordu: yazma bölümünde öğrencinin karşılaştıracağı tek şey oydu.
+
+**Parity 59** iki tarafın hangi bölümler için kayıt açtığını eşliyor. Kapının
+sebebi: kaçanlar merkezî bir yerden değil, **her cevap noktasında elle**
+toplanıyor — unutulan bir bölüm sessizce kırılımın dışında kalır ve kimse fark
+etmez. Okuma ile dinleme iki tarafta da bölüm kimliğini değişkenden alıyor
+(`section: id` / `section: kind`), kapı o deseni tanıyor.
