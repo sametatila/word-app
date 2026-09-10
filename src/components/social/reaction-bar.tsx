@@ -49,7 +49,11 @@ export function ReactionBar({
   const who = s.names.length ? `${s.names.map((n) => n ?? t("social.unnamed")).join(", ")}${s.total > s.names.length ? t("social.and_others", { n: s.total - s.names.length }) : ""}` : "";
 
   return (
-    <div className="mt-2 flex flex-wrap items-center gap-1.5">
+    /* Blok, satır değil: `who` Android'de hapların ALTINDA kendi satırında
+       duruyor (`social/ReactionBar`), webde aynı satıra karışıyordu ve ancak
+       yer kalmayınca alta düşüyordu. Üst boşluk da 8'den 12'ye (spacing.md). */
+    <div className="mt-3">
+      <div className="flex flex-wrap items-center gap-1.5">
       {present.map((k) => (
         <button
           key={k}
@@ -57,10 +61,20 @@ export function ReactionBar({
           disabled={disabled || busy}
           onClick={() => void pick(k)}
           className="chip flex h-7 items-center gap-1 px-2 text-xs"
+          /*
+           * HER TEPKİ KENDİ RENGİNDE. Haplar yalnız SEÇİLİ olan renkliydi,
+           * geri kalanı nötr çipti: akışta hangi tepkinin verildiği renkten
+           * okunmuyordu, oysa Android hepsini kendi tintinde çiziyor.
+           *
+           * Seçili hâl Android'de DOLU zemin + `onFill` yazı; webde daha
+           * güçlü tint olarak kalıyor çünkü ölçüm dolu zemini kaldırmıyor:
+           * açık temada beyaz yazı marka-600 üstünde 3.72 (küçük yazı eşiği
+           * 4.5). Tint üstünde tonun kendisi ikisinde de yüksek kontrast.
+           */
           style={
             s.mine === k
-              ? { background: `color-mix(in srgb, ${REACTION_TONE[k]} 18%, transparent)`, color: REACTION_TONE[k], borderColor: REACTION_TONE[k] }
-              : undefined
+              ? { background: `color-mix(in srgb, ${REACTION_TONE[k]} 22%, transparent)`, color: REACTION_TONE[k], borderColor: REACTION_TONE[k] }
+              : { background: `color-mix(in srgb, ${REACTION_TONE[k]} 13%, transparent)`, color: REACTION_TONE[k], borderColor: "transparent" }
           }
           aria-pressed={s.mine === k}
           aria-label={`${t(REACTION_LABEL_KEYS[k])} ${s.counts[k]}`}
@@ -76,7 +90,7 @@ export function ReactionBar({
             className="chip h-7 px-2.5 text-xs"
             onClick={() => setOpen((o) => !o)}
             aria-expanded={open}
-            aria-label="Tepki ver"
+            aria-label={t("reactionbar.react")}
             disabled={busy}
           >
             {t(s.mine ? "social.reaction_change" : "social.reaction_add")}
@@ -105,8 +119,9 @@ export function ReactionBar({
           ) : null}
         </div>
       ) : null}
-      {who ? <span className="muted text-[11px]">{who}</span> : null}
-      {err ? <span className="text-[11px]" style={{ color: "var(--color-rose)" }}>{err}</span> : null}
+      </div>
+      {who ? <p className="mt-1.5 text-micro" style={{ color: "var(--text-faint)" }}>{who}</p> : null}
+      {err ? <p className="mt-1.5 text-micro" style={{ color: "var(--color-rose)" }}>{err}</p> : null}
     </div>
   );
 }
