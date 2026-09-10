@@ -296,6 +296,9 @@ export function ExamScreen() {
             <Card padded style={{ gap: spacing.sm }}>
               <Text variant="h2" style={{ lineHeight: 30 }}>{paper.cover.titleDe}</Text>
               <Text variant="body" color={colors.textMuted}>{paper.cover.titleTr}</Text>
+              {/* Odak listesinin BAŞLIĞI yoktu: madde madde Almanca-Türkçe
+                  çiftler, ne oldukları söylenmeden duruyordu. */}
+              {paper.cover.focus.length ? <Text variant="micro" color={colors.textMuted} style={{ marginTop: spacing.xs }}>{t("exam.measures_these")}</Text> : null}
               {paper.cover.focus.map((f, i) => (
                 <Text key={i} variant="caption" color={colors.textMuted}>· {f.de} — {f.tr}</Text>
               ))}
@@ -315,6 +318,18 @@ export function ExamScreen() {
           {paper.trial ? (
             <Card padded><Text variant="caption" color={colors.textMuted}>{t("exam.trial_notice")}</Text></Card>
           ) : null}
+          {/*
+            KURALLAR. Geri dönüş olmadığı, ipucu bulunmadığı, cevapların sınav
+            bitmeden gösterilmediği ve GEÇME EŞİĞİ (toplam %70, her bölüm %50)
+            mobilde hiçbir yerde yazmıyordu: öğrenci neyi başarması gerektiğini
+            bilmeden sınava giriyordu. Web kapakta söylüyor.
+          */}
+          <Card padded style={{ gap: spacing.xs, backgroundColor: colors.surface2 }}>
+            <Text variant="bodyStrong">{t("exam.rules")}</Text>
+            <Text variant="caption" color={colors.textMuted} style={{ lineHeight: 20 }}>
+              {t(moduleIx === null ? "exam.rules_level" : "exam.rules_module")} {t("exam.rules_body")}
+            </Text>
+          </Card>
           <PressableScale onPress={() => { startedAt.current = Date.now(); setPhase("bolum"); }} style={[{ backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: 16, alignItems: "center" }, softShadow(colors.primary, 10)]}>
             <Text variant="bodyStrong" color={colors.onPrimary}>{t("exam.start")}</Text>
           </PressableScale>
