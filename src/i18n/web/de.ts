@@ -434,8 +434,6 @@ export const deWeb: Record<string, string> = {
   "lessonp.listening_true_false": "Ich höre zu — sag „richtig“ oder „falsch“",
   "lessonp.tap_to_speak": "Zum Sprechen tippen",
   "lessonp.resumed": "Du machst da weiter, wo du aufgehört hast.",
-  "lessonp.hands_free": "Freihändig",
-  "lessonp.hands_free_on": "Freihändig: an",
   "lessonp.ready_lets_start": "Ich bin bereit, los",
   "lessonp.or_answer_aloud": "…oder antworte laut.",
   "lessonp.start_speaking": "Sprechen beginnen",

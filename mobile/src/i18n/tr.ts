@@ -607,6 +607,8 @@ export const tr: Record<string, string> = {
   "lesson.lesson_complete": "Konuşma bitti",
   "lesson.continue": "Devam →",
   "lesson.listen": "Dinle",
+  "lessonp.hands_free": "Eller serbest",
+  "lessonp.hands_free_on": "Eller serbest: açık",
   "level.a2_desc": "Temel günlük dili biliyorum",
   "level.b1_desc": "Kendimi genel konularda ifade ederim",
   "level.b2_desc": "İş ve toplum dilini anlarım",

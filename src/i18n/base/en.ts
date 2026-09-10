@@ -604,6 +604,8 @@ export const enBase: Record<string, string> = {
   "lesson.lesson_complete": "Speaking complete",
   "lesson.continue": "Continue →",
   "lesson.listen": "Listen",
+  "lessonp.hands_free": "Hands-free",
+  "lessonp.hands_free_on": "Hands-free: on",
   "level.a2_desc": "I know basic everyday language",
   "level.b1_desc": "I can express myself on general topics",
   "level.b2_desc": "I understand work and public language",

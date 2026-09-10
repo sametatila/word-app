@@ -604,6 +604,8 @@ export const deBase: Record<string, string> = {
   "lesson.lesson_complete": "Sprechen beendet",
   "lesson.continue": "Weiter →",
   "lesson.listen": "Anhören",
+  "lessonp.hands_free": "Freihändig",
+  "lessonp.hands_free_on": "Freihändig: an",
   "level.a2_desc": "Ich kann einfache Alltagssprache",
   "level.b1_desc": "Ich kann mich zu allgemeinen Themen ausdrücken",
   "level.b2_desc": "Ich verstehe Berufs- und Öffentlichkeitssprache",

@@ -434,8 +434,6 @@ export const enWeb: Record<string, string> = {
   "lessonp.listening_true_false": "I'm listening — say 'true' or 'false'",
   "lessonp.tap_to_speak": "Tap to speak",
   "lessonp.resumed": "You're picking the conversation up where you left off.",
-  "lessonp.hands_free": "Hands-free",
-  "lessonp.hands_free_on": "Hands-free: on",
   "lessonp.ready_lets_start": "I'm ready, let's start",
   "lessonp.or_answer_aloud": "…or answer out loud.",
   "lessonp.start_speaking": "Start speaking",

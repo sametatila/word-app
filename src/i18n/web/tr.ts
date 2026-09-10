@@ -459,8 +459,6 @@ export const trWeb: Record<string, string> = {
   "lessonp.listening_true_false": "Dinliyorum — 'doğru' ya da 'yanlış' de",
   "lessonp.tap_to_speak": "Konuşmak için dokun",
   "lessonp.resumed": "Konuşmaya kaldığın yerden devam ediyorsun.",
-  "lessonp.hands_free": "Eller serbest",
-  "lessonp.hands_free_on": "Eller serbest: açık",
   "lessonp.ready_lets_start": "Hazırım, başlayalım",
   "lessonp.or_answer_aloud": "…ya da sesli cevap ver.",
   "lessonp.start_speaking": "Konuşmaya başla",

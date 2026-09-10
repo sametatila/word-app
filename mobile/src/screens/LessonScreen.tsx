@@ -1,4 +1,5 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 import { t as tx, targetLangName, formatPercent } from "../lib/i18n";
 import { View, ScrollView, TextInput, ActivityIndicator } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
@@ -18,7 +19,7 @@ import { foldCompare, foldTight } from "../lib/textFold";
 import { sendRoleplay, roleplayConfigured, parseReply, patternUsed, type ChatMsg } from "../game/roleplay";
 import { offlineStart, offlineReply, offlineSummary, type OfflineState, type Hint } from "../game/offlineRoleplay";
 import { markItemDone, loadLessonResume, saveLessonResume, clearLessonResume } from "../game/lessonProgress";
-import { speakTarget } from "../lib/tts";
+import { speakTarget, speakAndWaitVoiced, currentVoiceId } from "../lib/tts";
 import { ensureMicPermission, listenOnce, sttAvailable, stopListening } from "../lib/stt";
 import { spokenMatches } from "../lib/voiceMatch";
 import { currentTargetLang, currentTargetLocale } from "../lib/courses";
@@ -43,6 +44,9 @@ import { track } from "../lib/track";
  *
  * İçerik pakette (findLesson); sonuç /api/lesson'a kaydediliyor.
  */
+
+/** Eller serbest tercihi — web `lesson-player` ile aynı anahtar adı. */
+const HANDSFREE_KEY = "lernomi-lesson-handsfree";
 
 type Phase = "lecture" | "roleplay" | "summary";
 
@@ -106,6 +110,21 @@ export function LessonScreen() {
   const [answered, setAnswered] = useState(false); // doğru/yanlış cevaplandı mı
   const [input, setInput] = useState("");
   const [busy, setBusy] = useState(false);        // roleplay bekleme
+  /*
+   * ELLER SERBEST — mobilde HİÇ YOKTU.
+   *
+   * Web derste kalıcı bir anahtar tutuyor (`lessonp.hands_free`): açıkken her
+   * adımda mikrofona dokunmak gerekmiyor, öğretmen cümlesini bitirir bitirmez
+   * dinleme kendiliğinden başlıyor. Telefonda bu farkın webdekinden BÜYÜK
+   * olması gerekirdi - cihaz masaya dayalıyken her tur için ekrana uzanmak,
+   * konuşma dersinin ritmini kesen tek şey.
+   *
+   * Sıralama yürüyüş modunun kanıtlanmış kalıbı: önce `speakAndWaitVoiced`,
+   * SONRA dinle. `speakTarget` bitişi bildirmiyor ve onunla kurulsaydı
+   * mikrofon öğretmenin sesinin üstüne açılırdı.
+   */
+  const [handsFree, setHandsFree] = useState(true);
+  const handsFreeRef = useRef(true);
   const [roleTurns, setRoleTurns] = useState(0);
   const [roleMsgs, setRoleMsgs] = useState<ChatMsg[]>([]);
   /*
@@ -137,6 +156,12 @@ export function LessonScreen() {
   // Konuşma tanıma durumu. `sttOk === false` tek yer: mikrofon yok ya da izin
   // verilmedi — o zaman yazma alanı açılır, yoksa ders tamamlanamaz hâle gelir.
   const [sttOk, setSttOk] = useState<boolean | null>(null);
+  /* Eller serbest dinlemesi bir söz bitince tetikleniyor: o ana kadar izin
+     düşmüş olabilir, o yüzden durum ref üzerinden okunuyor. */
+  const sttOkRef = useRef<boolean | null>(null);
+  /** Ekran hâlâ açık mı — eller serbest dinlemesi ayrıldıktan sonra açılmasın. */
+  const ekranAcik = useRef(true);
+  useEffect(() => { ekranAcik.current = true; return () => { ekranAcik.current = false; }; }, []);
   const [listening, setListening] = useState(false);
   // "Yazarak cevapla" seçildi mi. Adım başına SIFIRLANMIYOR: bir kez yazmaya
   // geçen öğrenci her adımda o düğmeyi yeniden aramasın.
@@ -151,7 +176,7 @@ export function LessonScreen() {
   // "mikrofon meşgul" hatası veriyor.
   useEffect(() => {
     let alive = true;
-    sttAvailable().then((v) => { if (alive) setSttOk(v); }).catch(() => { if (alive) setSttOk(false); });
+    sttAvailable().then((v) => { if (alive) { setSttOk(v); sttOkRef.current = v; } }).catch(() => { if (alive) { setSttOk(false); sttOkRef.current = false; } });
     /*
      * YAPAY ZEKÂ KAPALIYSA BUNU BAŞTA SÖYLE.
      *
@@ -202,6 +227,17 @@ export function LessonScreen() {
    * de `presentFrom` çağırıyor; olay tek bir yerden ve bir kez yazılıyor,
    * yoksa "baştan başla"ya basan öğrenci iki ders başlangıcı üretirdi.
    */
+  useEffect(() => { handsFreeRef.current = handsFree; }, [handsFree]);
+  useEffect(() => {
+    void AsyncStorage.getItem(HANDSFREE_KEY).then((v) => setHandsFree(v !== "0")).catch(() => setHandsFree(true));
+  }, []);
+  function toggleHandsFree() {
+    const next = !handsFree;
+    setHandsFree(next);
+    void AsyncStorage.setItem(HANDSFREE_KEY, next ? "1" : "0").catch(() => {});
+    if (!next) stopListening();
+  }
+
   const lectureStarted = useRef(false);
   function beginLecture(from: number, resumed: boolean) {
     if (lesson && !lectureStarted.current) {
@@ -227,7 +263,19 @@ export function LessonScreen() {
     setTries(0);
     setAnswered(false);
     const spoken = add.map((b) => (b.role === "teacher" ? targetText(b.segments) : "")).filter(Boolean).join(". ");
-    if (spoken) speakTarget(spoken);
+    const bekleyen = lesson.lecture[k]?.expect;
+    /* Eller serbestken cümle BİTİNCE dinleniyor; kapalıyken eski yol
+       (fire-and-forget) korunuyor, yani hiçbir şey yavaşlamıyor. */
+    if (spoken && handsFreeRef.current && (bekleyen?.kind === "repeat" || bekleyen?.kind === "produce")) {
+      void (async () => {
+        try { await speakAndWaitVoiced(spoken, currentVoiceId()); } catch { /* ses yoksa yazıdan okunur */ }
+        if (!ekranAcik.current || sttOkRef.current === false) return;
+        if (bekleyen.kind === "repeat") void speakRepeat();
+        else void speakProduce();
+      })();
+    } else if (spoken) {
+      speakTarget(spoken);
+    }
     if (k >= lesson.lecture.length) enterRoleplay();
     scrollDown();
   }
@@ -246,7 +294,7 @@ export function LessonScreen() {
   async function dinle(): Promise<string[] | null> {
     if (listening) return null;
     const izin = await ensureMicPermission();
-    if (!izin) { setSttOk(false); return null; }
+    if (!izin) { setSttOk(false); sttOkRef.current = false; return null; }
     setListening(true);
     try {
       return await listenOnce(currentTargetLocale(), 8000);
@@ -519,6 +567,23 @@ export function LessonScreen() {
             {tx(phase === "lecture" ? "lesson.phase_lecture" : phase === "roleplay" ? "lesson.phase_roleplay" : "lesson.phase_summary")} · {lesson.titleTr}
           </Text>
         </View>
+        {/* ELLER SERBEST anahtarı — web başlık şeridinde tutuyor. Mikrofon
+            hiç yoksa çizilmiyor: kapatılacak bir şey yok. */}
+        {sttOk !== false && phase !== "summary" ? (
+          <PressableScale
+            hitSlop={4}
+            onPress={toggleHandsFree}
+            accessibilityRole="switch"
+            accessibilityState={{ checked: handsFree }}
+            accessibilityLabel={tx(handsFree ? "lessonp.hands_free_on" : "lessonp.hands_free")}
+            style={{ flexDirection: "row", alignItems: "center", gap: 4, paddingHorizontal: 10, paddingVertical: 8, borderRadius: radii.pill, backgroundColor: handsFree ? colors.primarySoft : colors.surface2 }}
+          >
+            <MicIcon color={handsFree ? colors.primaryText : colors.textMuted} size={14} />
+            <Text variant="micro" color={handsFree ? colors.primaryText : colors.textMuted}>
+              {tx(handsFree ? "lessonp.hands_free_on" : "lessonp.hands_free")}
+            </Text>
+          </PressableScale>
+        ) : null}
       </View>
       {/* Rol yapma boyunca EKRANDA KALIR — akışta kaybolan tek seferlik bir
           baloncuk, konuşmanın ortasına dönen kullanıcıya hiçbir şey söylemez. */}
