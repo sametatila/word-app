@@ -3029,6 +3029,24 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   );
 }
 
+/* ── 82. basarim duvarinin hata durumu ────────────────────────────────────
+ * Yuklenemeyen bir liste "basligin altinda bombos sayfa" demek: kullanici
+ * ekranin bozuk oldugunu saniyor. Iki taraf da AYNI kabugu cizmeli - kupa
+ * simgesi, baslik, sebep ve tekrar deneme. Mobilde ciplak bir cumle vardi. */
+{
+  const kabuk = (p) => {
+    const src = read(p).replace(/\/\*[\s\S]*?\*\//g, " ").replace(/\/\/[^\n]*/g, " ");
+    return [
+      "kart=" + (/EmptyCard/.test(src) ? "var" : "yok"),
+      "kupa=" + (/TrophyIcon/.test(src) ? "var" : "yok"),
+      "baslik=" + (src.includes('achievements.achievements') ? "var" : "yok"),
+      "sebep=" + (src.includes("achievements.couldn_t_load_achievements") ? "var" : "yok"),
+      "tekrar dene=" + (src.includes("common.try_again") ? "var" : "yok"),
+    ];
+  };
+  sameList("basarim hata kabugu", kabuk("mobile/src/screens/AchievementsScreen.tsx"), kabuk("src/components/achievement-wall.tsx"));
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"

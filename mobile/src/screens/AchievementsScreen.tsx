@@ -5,8 +5,9 @@ import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { useNavigation } from "@react-navigation/native";
 import { Text } from "../ui/Text";
 import { PressableScale } from "../ui/PressableScale";
-import { ArrowBackIcon, CheckIcon } from "../ui/icons";
+import { ArrowBackIcon, CheckIcon, TrophyIcon } from "../ui/icons";
 import { AchievementIcon } from "../ui/achievementIcon";
+import { EmptyCard } from "../social/common";
 import { Skeleton, SkeletonLine } from "../ui/Skeleton";
 import { useAuth } from "../lib/AuthContext";
 import { api } from "../api/client";
@@ -180,11 +181,19 @@ export function AchievementsScreen() {
           ))}
         </ScrollView>
       ) : phase !== "ready" ? (
-        <View style={{ flex: 1, alignItems: "center", justifyContent: "center", gap: spacing.md, paddingHorizontal: spacing.xl }}>
-          <Text variant="body" color={colors.textMuted} style={{ textAlign: "center" }}>{t("achievements.couldn_t_load_achievements")}</Text>
-          <PressableScale onPress={() => setAttempt((n) => n + 1)} style={{ paddingHorizontal: 18, paddingVertical: 10, borderRadius: radii.md, borderWidth: 1.5, borderColor: colors.border }}>
-            <Text variant="bodyStrong" color={colors.primaryText}>{t("common.try_again")}</Text>
-          </PressableScale>
+        /* Hata durumu ÖTEKİ boş durumlarla aynı kabukta: simge karosu, başlık,
+           sebep ve tekrar deneme. Çıplak bir cümle "ekran bozuk" gibi
+           okunuyordu; web aynı yerde kupa simgeli kartı çiziyor
+           (`achievement-wall`). */
+        <View style={{ flex: 1, justifyContent: "center", paddingHorizontal: spacing.lg }}>
+          <EmptyCard
+            icon={TrophyIcon}
+            tint={colors.streak}
+            title={t("achievements.achievements")}
+            text={t("achievements.couldn_t_load_achievements")}
+            action={t("common.try_again")}
+            onAction={() => setAttempt((n) => n + 1)}
+          />
         </View>
       ) : (
       <ScrollView contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.xxl }} showsVerticalScrollIndicator={false}>
