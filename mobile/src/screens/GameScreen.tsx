@@ -174,10 +174,14 @@ export function GameScreen() {
 
   function onDone(ok: boolean, extra?: DoneExtra) {
     const batch = extra?.batch;
+    /* `skip`: cevap kaydedilmeyen tur ("zaten biliyorum"). */
+    const skip = extra?.skip === true;
     if (idxRef.current !== idx) return; // çift "Devam" / geç tıklama koruması
     const r = rounds[idx];
     const lat = Math.max(0, Date.now() - roundStart.current);
-    if (batch && batch.length && r) {
+    if (skip) {
+      /* hiçbir cevap yazılmıyor; tur yalnız ilerliyor */
+    } else if (batch && batch.length && r) {
       // Çok kelimeli tur (match): her kelimenin SRS'i ayrı yazılır.
       /* Yığın turunda hata tipi kelime başına: doğru eşleşenin hatası yok. */
       for (const b of batch) if (b.wordId) answers.current.push({ wordId: b.wordId, game: r.game, correct: b.correct, latencyMs: lat, ...(b.correct ? {} : { errorType: "meaning" as const }) });

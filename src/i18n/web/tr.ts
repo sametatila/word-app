@@ -249,8 +249,6 @@ export const trWeb: Record<string, string> = {
   "rounds.evaluating": "Değerlendiriliyor…",
   "rounds.evaluate": "Değerlendir",
   "rounds.understood": "{word} — anladım",
-  "rounds.already_known": "Bunu zaten biliyorum",
-  "rounds.saving": "Kaydediliyor…",
   "rounds.what_you_heard": "Duyduğun kelime ne demek?",
   "rounds.no_tts": "Cihazın sesli okumayı desteklemiyor — kelime yazıyla gösterildi.",
   "rounds.listen_again": "Tekrar dinle",

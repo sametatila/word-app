@@ -224,8 +224,6 @@ export const deWeb: Record<string, string> = {
   "rounds.evaluating": "Wird bewertet…",
   "rounds.evaluate": "Bewerten",
   "rounds.understood": "{word} — verstanden",
-  "rounds.already_known": "Das kann ich schon",
-  "rounds.saving": "Wird gespeichert…",
   "rounds.what_you_heard": "Was bedeutet das gehörte Wort?",
   "rounds.no_tts": "Dein Gerät kann nicht vorlesen — das Wort steht als Text da.",
   "rounds.listen_again": "Nochmal hören",

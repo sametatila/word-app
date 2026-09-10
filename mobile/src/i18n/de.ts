@@ -830,6 +830,8 @@ export const de: Record<string, string> = {
   "rounds.struggled": "Schwer",
   "rounds.match_first_try": "{n}/{total} Wörter beim ersten Versuch",
   "rounds.you_wrote": "Du hast geschrieben:",
+  "rounds.already_known": "Das kann ich schon",
+  "rounds.saving": "Wird gespeichert…",
   "settings.analytics_sub": "Welche Funktionen genutzt werden; geht an keinen Dritten",
   "settings.settings": "Einstellungen",
   "settings.not_sure_take_placement_test": "Unsicher? Mach den Einstufungstest →",

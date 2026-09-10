@@ -832,6 +832,8 @@ export const enBase: Record<string, string> = {
   "rounds.struggled": "Struggled",
   "rounds.match_first_try": "{n}/{total} words on the first try",
   "rounds.you_wrote": "You wrote:",
+  "rounds.already_known": "I already know this",
+  "rounds.saving": "Saving…",
   "settings.analytics_sub": "Which features get used; never leaves us",
   "settings.settings": "Settings",
   "settings.not_sure_take_placement_test": "Not sure? Take the placement test →",

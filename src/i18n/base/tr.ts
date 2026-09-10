@@ -832,6 +832,8 @@ export const trBase: Record<string, string> = {
   "rounds.struggled": "Zorlandım",
   "rounds.match_first_try": "{n}/{total} kelime ilk denemede",
   "rounds.you_wrote": "Yazdığın:",
+  "rounds.already_known": "Bunu zaten biliyorum",
+  "rounds.saving": "Kaydediliyor…",
   "settings.analytics_sub": "Hangi özelliklerin kullanıldığı; üçüncü tarafa gitmez",
   "settings.settings": "Ayarlar",
   "settings.not_sure_take_placement_test": "Emin değil misin? Seviye testini çöz →",

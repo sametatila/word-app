@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { t as tx, nativeLangName, targetLangName } from "../lib/i18n";
 import { foldCase, foldCompare, foldTight } from "../lib/textFold";
 import { matchSentence, VERDICT_KEYS, type SentenceMatch } from "../lib/sentenceMatch";
+import { markKnown } from "./session";
 import { SentenceFeedback, type MarkedToken } from "../ui/TokenDiff";
 import { classifyOrder, classifyTyping, miss } from "../lib/errors";
 import type { DoneExtra } from "./session";
@@ -591,6 +592,7 @@ function PluralRound({ round, onDone, colors }: { round: Round; onDone: Done; co
 function SelfAssess({ round, onDone, colors }: { round: Round; onDone: Done; colors: Palette }) {
   const word = round.word ?? round.words?.[0];
   const [reveal, setReveal] = useState(false);
+  const [skipping, setSkipping] = useState(false);
   const spoke = useRef(false);
   useEffect(() => {
     if (round.game === "intro" && word && !spoke.current) { spoke.current = true; speakTarget(withArtikel(word)); }
@@ -607,9 +609,31 @@ function SelfAssess({ round, onDone, colors }: { round: Round; onDone: Done; col
       <Text variant="h3" color="#fff">{tx("rounds.show_answer")}</Text>
     </PressableScale>
   ) : (
-    <View style={{ flexDirection: "row", gap: spacing.md }}>
-      <View style={{ flex: 1 }}><OptionButton text={tx("rounds.struggled")} state="idle" onPress={() => onDone(false, { hintUsed: true })} colors={colors} /></View>
-      <View style={{ flex: 1 }}><OptionButton text={tx("rounds.got_it")} state="idle" onPress={() => onDone(true, { hintUsed: true })} colors={colors} /></View>
+    <View style={{ gap: spacing.md }}>
+      <View style={{ flexDirection: "row", gap: spacing.md }}>
+        <View style={{ flex: 1 }}><OptionButton text={tx("rounds.struggled")} state="idle" onPress={() => onDone(false, { hintUsed: true })} colors={colors} /></View>
+        <View style={{ flex: 1 }}><OptionButton text={tx("rounds.got_it")} state="idle" onPress={() => onDone(true, { hintUsed: true })} colors={colors} /></View>
+      </View>
+      {/*
+        "BUNU ZATEN BİLİYORUM" — yalnız YENİ kelime turunda.
+        Web `intro-game`de baştan beri var, mobilde hiç yoktu: bildiği bir
+        kelimeyi gören kullanıcı onu kuyruktan çıkaramıyor, her tekrarında
+        yeniden görüyordu. Kelime pekişmiş sayılıyor ve bu tur için CEVAP
+        KAYDEDİLMİYOR (web `onDone([])` ile aynı).
+      */}
+      {round.game === "intro" ? (
+        <PressableScale
+          disabled={skipping}
+          onPress={async () => {
+            setSkipping(true);
+            await markKnown(word.id);
+            onDone(true, { skip: true });
+          }}
+          style={{ alignSelf: "center", paddingHorizontal: 18, paddingVertical: 10, opacity: skipping ? 0.5 : 1 }}
+        >
+          <Text variant="caption" color={colors.textMuted}>{tx(skipping ? "rounds.saving" : "rounds.already_known")}</Text>
+        </PressableScale>
+      ) : null}
     </View>
   );
   return (

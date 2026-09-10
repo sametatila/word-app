@@ -224,8 +224,6 @@ export const enWeb: Record<string, string> = {
   "rounds.evaluating": "Evaluating…",
   "rounds.evaluate": "Evaluate",
   "rounds.understood": "{word} — got it",
-  "rounds.already_known": "I already know this",
-  "rounds.saving": "Saving…",
   "rounds.what_you_heard": "What does the word you heard mean?",
   "rounds.no_tts": "Your device can't read aloud — the word is shown as text.",
   "rounds.listen_again": "Listen again",

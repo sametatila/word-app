@@ -64,9 +64,13 @@ export function WeeklyScreen() {
 
   function onDone(ok: boolean, extra?: DoneExtra) {
     const batch = extra?.batch;
+    /* `skip`: cevap kaydedilmeyen tur ("zaten biliyorum"). */
+    const skip = extra?.skip === true;
     const r = rounds[idx];
     const lat = Math.max(0, Date.now() - roundStart.current);
-    if (batch && batch.length && r) {
+    if (skip) {
+      /* hiçbir cevap yazılmıyor; tur yalnız ilerliyor */
+    } else if (batch && batch.length && r) {
       /* Yığın turunda hata tipi kelime başına: doğru eşleşenin hatası yok. */
       for (const b of batch) if (b.wordId) answers.current.push({ wordId: b.wordId, game: r.game, correct: b.correct, latencyMs: lat, ...(b.correct ? {} : { errorType: "meaning" as const }) });
     } else {

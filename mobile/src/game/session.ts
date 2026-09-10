@@ -129,6 +129,15 @@ export type DoneExtra = {
   detail?: string;
   quality?: number;
   hintUsed?: boolean;
+  /**
+   * Bu tur için CEVAP KAYDEDİLMESİN.
+   *
+   * "Bunu zaten biliyorum" yolunun gereği: kelime tekrar kuyruğuna girmeden
+   * pekişmiş sayılıyor (`/api/words/known`) ve turun kendisi bir cevap
+   * üretmiyor. Web `intro-game` bunu `onDone([])` ile, yani boş cevap
+   * dizisiyle söylüyor.
+   */
+  skip?: boolean;
 };
 
 export function todayStr(): string {
@@ -218,6 +227,19 @@ export type SubmitResult = {
 
 /** Cevapları sunucuya yazar (SRS + XP + seri güncellenir). `progress` verilirse
     oturum konumu da (index) kaydedilir — kaldığın yerden devam için. */
+/**
+ * "Bunu zaten biliyorum": kelime tekrar kuyruğuna girmeden pekişmiş sayılır.
+ *
+ * Web `intro-game`de baştan beri var, mobilde HİÇ YOKTU: bildiği bir kelimeyi
+ * gören kullanıcı onu kuyruktan çıkaramıyor, her tekrarında yeniden görüyordu.
+ * Hata YUTULUYOR - çevrimdışıysa tur yine ilerliyor (web de öyle yapıyor).
+ */
+export async function markKnown(wordId: number): Promise<void> {
+  try {
+    await api("/api/words/known", { method: "POST", body: JSON.stringify({ wordId }) });
+  } catch { /* çevrimdışı: tur yine ilerler */ }
+}
+
 export function submitAnswers(answers: AnswerOut[], day: string, seconds: number, progress?: SessionProgress): Promise<SubmitResult> {
   return api("/api/answers", { method: "POST", body: JSON.stringify({ answers, day, seconds, ...(progress ? { progress } : {}) }) });
 }

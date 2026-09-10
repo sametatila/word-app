@@ -1507,3 +1507,45 @@ SEBEBİYLE yazılı olacak. Liste yalnız kısalabilir: bir ucu listeye eklemek 
 bağlamamayı BELGELEMEK demek. Denetim iki yönlü - listede olup artık çağrılan
 bir uç da hata veriyor, yani liste bayatlamıyor. Sınandı: `/api/plan` listeden
 çıkarıldığında kapı onu söylüyor.
+
+### 11.25 İstemci-uç sözleşmesi, ters yön
+
+§11.24 "ucun çağıranı var mı" diye sordu; bu madde "hangi İSTEMCİ çağırıyor"
+diye soruyor. Altmış yedi ucun kırkı iki istemcide de kullanılıyor. Kalanlar:
+
+**Yalnız webde (21)** — çoğu doğru durumda: `admin/*` (yönetici panosu),
+`auth/apple/notifications` + `cron/*` + `premium/webhook` (dışarıdan),
+`push/subscribe` (tarayıcı aboneliği; mobil `push/device` kullanıyor),
+`plan` + `premium/consume` (§11.24), `certificate/[id]` (sertifika görüntüsü),
+`errors` + `growth` (web telemetrisi), `premium/referral` (mobil aynı veriyi
+`premium/status` içinden alıyor - eksik değil), `assess/queue` (§11.12),
+`pronounce` (`lib/pronounce-client` çağırıyor; mobil kendi native tanıyıcısını
+kullanıyor).
+
+Üçü GERÇEK yüzey eksiği:
+
+  - **`/api/words/known`** — DÜZELTİLDİ (aşağıda).
+  - **`/api/challenge`** — süreye karşı hayatta kalma turu (`challenge-player`).
+    Mobilde ekran yok; Öğren'deki "günlük tur" bambaşka bir şey (herkese aynı
+    tur, `Daily`). `meta.challengeBest` bu yüzden mobilde anlamsız (§11.22).
+  - **`/api/boss`** — modül patronu (`boss-player`). Mobilde ekran yok.
+
+İkisi de ekran işi, alan ya da bayrak değil; ayrı tur.
+
+**Yalnız mobilde (6)** — hepsi doğru: `account/apple-code` (native Apple
+girişi), `config` (mobil çalışma zamanı ayarı), `me` / `premium/status` /
+`immersion` (web aynı veriyi sunucu bileşeninde doğrudan üretiyor),
+`push/device` (FCM).
+
+#### `/api/words/known` — "Bunu zaten biliyorum"
+
+Web `intro-game`de baştan beri bir düğme var: bildiği bir kelimeyi gören
+kullanıcı onu tekrar kuyruğuna hiç sokmadan pekişmiş sayabiliyor. Mobilde
+HİÇ YOKTU - Android kullanıcısı bildiği kelimeyi her tekrarında yeniden
+görüyordu.
+
+Eklendi: yeni kelime turunda (`intro`) ikinci sıradaki sessiz düğme.
+`markKnown()` ucu çağırıyor, hata yutuluyor (çevrimdışıysa tur yine ilerliyor,
+web de öyle) ve `DoneExtra.skip` ile bu tur için CEVAP KAYDEDİLMİYOR - web
+`onDone([])` ile aynı şeyi söylüyor. Metinler webin cümleleri; anahtarlar
+mobil kaynağa taşındı ve `i18n-pull` ile tabana çekildi.
