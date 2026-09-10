@@ -1595,7 +1595,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   sameList("kursa gomulu sik cifti", hits.length ? hits : ["gomulu cift yok"], ["gomulu cift yok"], "kodda", "beklenen");
 }
 
-/* ── 37. iki tarafta ayni adi tasiyan SAYISAL sabitler ─────────────────────
+/* ── 37. iki tarafta ayni adi tasiyan SABITLER (sayi + dizge) ──────────────
  * 22. bolum LISTELERI karsilastiriyor; tek basina duran sayilar disarida
  * kaliyordu. `DANGER_SECONDS` tam boyle ayrismisti: web 8, mobil 10 - ve
  * mobil yorumu "web ile ayni" DIYORDU, yani ayrisma iki taraftan da
@@ -1607,6 +1607,10 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
  *
  * Icerik/uretilmis dizinler disarida: oradaki sayilar mufredat verisi. */
 {
+  /* Ad tek basina sozlesme tasimayan, iki dosyanin bambaska isler icin
+     kullanabildigi genel adlar. `KEY` webde beceri ilerlemesinin depolama
+     anahtari, mobilde onboarding tercihlerininki - ayni ad, ayri is. */
+  const GENERIC = new Set(["KEY", "PREFIX", "SUFFIX", "MAX", "MIN", "LIMIT", "SIZE", "BASE", "URL", "PATH", "NAME", "TTL", "DELAY", "TIMEOUT", "COUNT", "STEP"]);
   const walk = (d, out = []) => {
     for (const e of readdirSync(new URL("../" + d, import.meta.url), { withFileTypes: true })) {
       const p = d + "/" + e.name;
@@ -1626,9 +1630,27 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   };
   const w = grab("src");
   const m = grab("mobile/src");
-  const ortak = [...w.keys()].filter((k) => m.has(k)).sort();
+  const ortak = [...w.keys()].filter((k) => m.has(k) && !GENERIC.has(k)).sort();
   const ayrisan = ortak.filter((k) => w.get(k) !== m.get(k)).map((k) => k + ": mobil " + m.get(k) + " / web " + w.get(k));
   sameList("ortak sayisal sabitler", ayrisan.length ? ayrisan : ["ayrisma yok (" + ortak.length + ")"], ["ayrisma yok (" + ortak.length + ")"], "ayrisan", "beklenen");
+
+  /* Dizge ve mantiksal sabitler de ayni kuralla. `KEY` gibi genel adlar
+     disarida (bkz. GENERIC): iki dosya ayni adi bambaska bir is icin
+     kullanabiliyor ve ad tek basina sozlesme tasimiyor. */
+  const grabStr = (root) => {
+    const map = new Map();
+    for (const f of walk(root)) {
+      for (const x of read(f).matchAll(/^\s*(?:export\s+)?const ([A-Z][A-Z0-9_]{2,})\s*(?::[^=\n]+)?=\s*("(?:[^"\\\\]|\\\\.)*"|true|false)\s*(?:as const)?\s*;/gm)) {
+        map.set(x[1], x[2]);
+      }
+    }
+    return map;
+  };
+  const ws = grabStr("src");
+  const ms = grabStr("mobile/src");
+  const ortakS = [...ws.keys()].filter((k) => ms.has(k) && !GENERIC.has(k)).sort();
+  const ayrisanS = ortakS.filter((k) => ws.get(k) !== ms.get(k)).map((k) => k + ": mobil " + ms.get(k) + " / web " + ws.get(k));
+  sameList("ortak dizge sabitleri", ayrisanS.length ? ayrisanS : ["ayrisma yok (" + ortakS.length + ")"], ["ayrisma yok (" + ortakS.length + ")"], "ayrisan", "beklenen");
 }
 
 console.log(
