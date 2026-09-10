@@ -984,15 +984,19 @@ Uç kapısı (§11.24) işe yaradığı için aynı fikir "dışa açık ama hi�
 kullanılmayan ad" için de denendi: bütün `src` dosyaları belirteçlere ayrılıp
 her `export`un başka bir dosyada geçip geçmediğine bakıldı.
 
-VAZGEÇİLDİ, iki sebeple:
+VAZGEÇİLDİ: ölçüm gürültülü. 345 aday çıkıyor ve tek başına
+`components/icons.tsx` 47 tanesini veriyor - o dosyanın kullanılmayan ikonları
+BİLEREK duruyor ve zaten §11.14'te yazılı. Kapı, "biliyoruz" diyen uzun bir
+muafiyet listesine dönüşürdü; muafiyet listesi kapının kendisinden uzun
+olduğunda kapı bir şey söylemez.
 
-  1. Ölçüm gürültülü: 346 aday çıktı ve tek başına `components/icons.tsx` 47
-     tanesini veriyor - o dosyanın kullanılmayan ikonları BİLEREK duruyor ve
-     zaten §11.14'te yazılı. Kapı, "biliyoruz" diyen uzun bir muafiyet
-     listesine dönüşürdü.
-  2. Prototipin kendisi güvenilir değildi: `courses.ts`in `CourseId`i dört
-     dosyada geçmesine rağmen listede çıktı, yani belirteç indeksi yanlış
-     sayıyordu. Sayıyı bulgu diye yazmak yanlış olurdu.
+ÖLÇÜM SAĞLAM ÇIKTI - ilk yazdığım gerekçe yanlıştı ve düzeltildi. "Prototip
+güvenilmez, `CourseId` dört dosyada geçmesine rağmen listede çıkıyor" demiştim.
+İki bağımsız uygulama (belirteç indeksi ve ad ad regex) 346/345 ile hemfikir,
+ve `CourseId` tek tek bakıldığında GERÇEKTEN kullanılmıyor: öteki üç geçişin
+ikisi YORUM içinde (`walk-player`, `mock-exams/types`), üçüncüsü ise başka bir
+ad (`lessons/index`te `isCourseId`). Yani sayı doğru, vazgeçme sebebi tek:
+gürültü.
 
 Bu ailenin gerçekten önemli iki kalemi (73 tema ikonu, `MODULE_THEMES`) düz
 yazıyla kayıtlı ve ölçülmüş durumda; otomatik denetim onlara bir şey
