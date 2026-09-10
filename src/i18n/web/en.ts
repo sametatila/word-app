@@ -784,8 +784,6 @@ export const enWeb: Record<string, string> = {
   "writp.exact": "Correct!",
   "writp.spelling_only": "Correct — a small spelling slip",
   "writp.order_only": "Right words, wrong order",
-  "skillsp.empty_level": "There's no library exercise at this level yet. Pick another level or take a look at the mock exams.",
-  "mockexams.n_items_short": "{n} items",
   "coach.plan_morning_1": "Morning, {name}! A few words before the coffee — that's how a day starts.",
   "coach.plan_morning_2": "Up early, {name} — this is the best hour for remembering.",
   "coach.plan_morning_3": "Morning, {name}. Today's plan is short — let's start with the first item.",

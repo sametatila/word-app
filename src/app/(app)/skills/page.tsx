@@ -213,7 +213,7 @@ export default async function SkillsPage({
 
       {!atLevel.length ? (
         <p className="card p-5 text-body" style={{ color: "var(--text-muted)" }}>
-          {t("skillsp.empty_level")}
+          {t("skills.this_course_has_no_reading")}
         </p>
       ) : null}
 
@@ -274,7 +274,7 @@ async function Row({
       <span className="min-w-0 flex-1">
         <span className="block truncate text-strong">{meta.title}</span>
         <span className="muted block text-caption">
-          {t(`genre.${meta.genre}`)} · {t("skills.dk", { n: meta.minutes })} · {t("mockexams.n_items_short", { n: meta.items })}
+          {t(`genre.${meta.genre}`)} · {t("skills.dk", { n: meta.minutes })} · {t("skills.n_items_short", { n: meta.items })}
           {isNext ? (
             <>
               {" · "}

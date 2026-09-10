@@ -784,8 +784,6 @@ export const deWeb: Record<string, string> = {
   "writp.exact": "Richtig!",
   "writp.spelling_only": "Richtig — kleine Abweichung in der Schreibung",
   "writp.order_only": "Richtige Wörter, falsche Reihenfolge",
-  "skillsp.empty_level": "Auf dieser Stufe gibt es noch keine Bibliotheksübung. Wähl eine andere Stufe oder schau bei den Probeprüfungen.",
-  "mockexams.n_items_short": "{n} Aufgaben",
   "coach.plan_morning_1": "Guten Morgen, {name}! Ein paar Wörter vor dem Kaffee — so fängt ein Tag an.",
   "coach.plan_morning_2": "Schon früh dabei, {name} — das ist die beste Stunde fürs Gedächtnis.",
   "coach.plan_morning_3": "Guten Morgen, {name}. Der Plan für heute ist kurz — fangen wir mit dem Ersten an.",
