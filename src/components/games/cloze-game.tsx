@@ -12,6 +12,7 @@ import { SentenceTranslation } from "@/components/meaning-text";
 import { vibrate } from "@/lib/fx";
 import { prefetchGerman } from "@/components/speak-button";
 import { useT, useLang } from "@/lib/i18n/client";
+import { useCourse } from "@/components/app-shell";
 
 /**
  * Yanlış cevaptan sonra doğruyu okumaya geçmeden önceki okuma payı.
@@ -23,6 +24,7 @@ import { useT, useLang } from "@/lib/i18n/client";
 type ClozeRound = Extract<Round, { game: "cloze" }>;
 
 export function ClozeGame({ round, onDone }: GameProps<ClozeRound>) {
+  const course = useCourse();
   const tx = useT();
   const lang = useLang();
   const { word, sentence, sentenceTr, sentenceEn, answer, options } = round;
@@ -162,7 +164,7 @@ export function ClozeGame({ round, onDone }: GameProps<ClozeRound>) {
             autoCapitalize="off"
             autoCorrect="off"
             spellCheck={false}
-            lang="de"
+            lang={course}
             placeholder={tx("rounds.write_in_blank", { hint: meaningOf(word, lang) })}
             className={`card min-h-14 w-full px-4 text-lg outline-none ${
               picked != null && !correct ? "animate-shake border-[color:var(--color-rose)]" : ""

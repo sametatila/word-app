@@ -16,6 +16,7 @@ import type { GameResult } from "@/components/games/types";
 import type { ExamPaper, ExamResult, ExamSectionId, ProduceExamItem, TextItem } from "@/lib/exam-types";
 import { SECTION_ORDER, SECTION_TITLE_KEYS, SECTION_TITLE_DE } from "@/lib/exam-types";
 import { useT } from "@/lib/i18n/client";
+import { useCourse } from "@/components/app-shell";
 import { matchSentence } from "@/lib/sentence-match";
 import type { Round } from "@/lib/types";
 import type { CefrLevel } from "@/lib/skills/types";
@@ -85,6 +86,7 @@ function present(p: ExamPaper): ExamSectionId[] {
 const empty = () => ({ correct: 0, total: 0 });
 
 export function ExamPlayer({ level, module }: { level: CefrLevel; module: number | null }) {
+  const course = useCourse();
   const t = useT();
   const [phase, setPhase] = useState<Phase>("cover");
   const [paper, setPaper] = useState<ExamPaper | null>(null);
@@ -369,10 +371,10 @@ export function ExamPlayer({ level, module }: { level: CefrLevel; module: number
     return (
       <section className="card mx-auto w-full max-w-md p-5">
         {/* uppercase YOK: Türkçe yerelde text-transform "Teil"i "TEİL" yapıyor. */}
-        <p className="muted text-xs font-bold tracking-wide" lang="de">
+        <p className="muted text-xs font-bold tracking-wide" lang={course}>
           Teil {teil} / {list.length}
         </p>
-        <h2 className="mt-1 text-2xl font-bold" lang="de">
+        <h2 className="mt-1 text-2xl font-bold" lang={course}>
           {SECTION_TITLE_DE[section]}
         </h2>
         <p className="text-base font-semibold" style={{ color: "var(--color-brand)" }}>
@@ -457,7 +459,7 @@ export function ExamPlayer({ level, module }: { level: CefrLevel; module: number
             <p className="muted text-xs">
               {g.sheet} · {g.label}
             </p>
-            <p className="mb-4 mt-1 text-xl font-bold" lang="de">
+            <p className="mb-4 mt-1 text-xl font-bold" lang={course}>
               {g.key} <span className="muted">→ ?</span>
             </p>
             {options(g.options, pickGrammar)}
@@ -465,7 +467,7 @@ export function ExamPlayer({ level, module }: { level: CefrLevel; module: number
         ) : (
           <>
             <p className="muted text-xs">Richtig oder falsch? · {t("exam.is_sentence_right")}</p>
-            <p className="mb-4 mt-1 text-xl font-bold leading-snug" lang="de">
+            <p className="mb-4 mt-1 text-xl font-bold leading-snug" lang={course}>
               {g.statement}
             </p>
             {options([`Richtig · ${t("common.correct")}`, `Falsch · ${t("common.wrong")}`], pickGrammar)}
@@ -505,16 +507,16 @@ export function ExamPlayer({ level, module }: { level: CefrLevel; module: number
         <p className="muted text-xs">
           {item.genre ?? item.situation ?? ""} {item.titleTr ? `· ${item.titleTr}` : ""}
         </p>
-        <p className="mb-2 text-sm font-bold" lang="de">
+        <p className="mb-2 text-sm font-bold" lang={course}>
           {item.title}
         </p>
         {item.text ? (
-          <div lang="de" className="mb-3 max-h-56 overflow-y-auto whitespace-pre-line rounded-xl px-3.5 py-3 text-sm leading-relaxed surface-2">
+          <div lang={course} className="mb-3 max-h-56 overflow-y-auto whitespace-pre-line rounded-xl px-3.5 py-3 text-sm leading-relaxed surface-2">
             {item.text}
           </div>
         ) : null}
         {item.segments ? <DialogPlayer segments={item.segments} /> : null}
-        <p className="mt-3 text-sm font-semibold" lang="de">
+        <p className="mt-3 text-sm font-semibold" lang={course}>
           {q.text}
         </p>
         {q.textTr ? <p className="muted mb-3 text-xs">{q.textTr}</p> : <div className="mb-3" />}
@@ -572,7 +574,7 @@ export function ExamPlayer({ level, module }: { level: CefrLevel; module: number
         <p className="muted text-xs">
           {idx + 1}/{paper!.sections.speaking.length} · {item.situation ?? t("exam.read_aloud")}
         </p>
-        <p className="mt-3 text-lg font-bold leading-snug" lang="de">
+        <p className="mt-3 text-lg font-bold leading-snug" lang={course}>
           {item.de}
         </p>
         <p className="muted text-sm">{item.tr}</p>
@@ -622,7 +624,7 @@ export function ExamPlayer({ level, module }: { level: CefrLevel; module: number
       {header}
       <p className="text-sm font-semibold leading-relaxed">{w.task.prompt}</p>
       {w.task.stimulus ? (
-        <div lang="de" className="mt-2 whitespace-pre-line rounded-xl px-3.5 py-3 text-sm leading-relaxed surface-2">
+        <div lang={course} className="mt-2 whitespace-pre-line rounded-xl px-3.5 py-3 text-sm leading-relaxed surface-2">
           {w.task.stimulus}
         </div>
       ) : null}
@@ -645,7 +647,7 @@ export function ExamPlayer({ level, module }: { level: CefrLevel; module: number
             value={writingText}
             onChange={(e) => setWritingText(e.target.value)}
             rows={7}
-            lang="de"
+            lang={course}
             spellCheck={false}
             /* Sabit Almanca yazıyordu; kurs İngilizce olabiliyor ve arayüzün
                üç dili var. Android aynı yerde `exam.write_text` kullanıyor. */
@@ -676,6 +678,7 @@ export function ExamPlayer({ level, module }: { level: CefrLevel; module: number
 
 /** Kâğıdın kapağı: ne ölçülüyor, kaç bölüm, kural ne. */
 function Cover({ level, module, onStart }: { level: CefrLevel; module: number | null; onStart: () => void }) {
+  const course = useCourse();
   const t = useT();
   const [cover, setCover] = useState<{ code: string; titleDe: string; titleTr: string; focus: { de: string; tr: string }[]; trial?: boolean } | null>(null);
   useEffect(() => {
@@ -696,10 +699,10 @@ function Cover({ level, module, onStart }: { level: CefrLevel; module: number | 
     <section className="card mx-auto w-full max-w-md p-5">
       {/* Erdi koç (WP-66): sınav girişinde düşünceli, tek cümle. */}
       <CoachBubble moment="exam_intro" mood="think" size={48} className="mb-3" />
-      <p className="muted text-xs font-semibold uppercase tracking-wide" lang="de">
+      <p className="muted text-xs font-semibold uppercase tracking-wide" lang={course}>
         {module === null ? `${level} · Niveauprüfung` : `Modulprüfung ${cover?.code ?? `${level}.${module + 1}`}`}
       </p>
-      <h1 className="mt-1 text-2xl font-bold leading-tight" lang="de">
+      <h1 className="mt-1 text-2xl font-bold leading-tight" lang={course}>
         {cover?.titleDe ?? (module === null ? `Prüfung ${level}` : `Modul ${module + 1}`)}
       </h1>
       {cover?.titleTr ? <p className="text-base font-semibold" style={{ color: "var(--color-brand)" }}>{cover.titleTr}</p> : null}
@@ -710,7 +713,7 @@ function Cover({ level, module, onStart }: { level: CefrLevel; module: number | 
           <ul className="mt-1.5 space-y-1">
             {cover.focus.map((f, i) => (
               <li key={i} className="text-sm">
-                <span className="font-semibold" lang="de">
+                <span className="font-semibold" lang={course}>
                   {f.de}
                 </span>
                 <span className="muted"> — {f.tr}</span>
@@ -819,6 +822,7 @@ function ProduceCard({
   onChunks: (v: number[]) => void;
   onSubmit: () => void;
 }) {
+  const course = useCourse();
   const t = useT();
   const ref = useRef<HTMLTextAreaElement>(null);
   useEffect(() => {
@@ -839,7 +843,7 @@ function ProduceCard({
 
       {item.mode === "order" ? (
         <>
-          <div className="mt-4 min-h-[3.25rem] rounded-xl px-3 py-2.5 text-base font-semibold surface-2" lang="de">
+          <div className="mt-4 min-h-[3.25rem] rounded-xl px-3 py-2.5 text-base font-semibold surface-2" lang={course}>
             {chunks.length ? (
               <span className="flex flex-wrap gap-1.5">
                 {chunks.map((c, i) => (
@@ -855,7 +859,7 @@ function ProduceCard({
           <div className="mt-3 flex flex-wrap gap-2">
             {item.chunks!.map((c, i) =>
               chunks.includes(i) ? null : (
-                <button key={`${c}-${i}`} type="button" onClick={() => onChunks([...chunks, i])} className="option px-3 py-2 text-sm font-semibold" lang="de">
+                <button key={`${c}-${i}`} type="button" onClick={() => onChunks([...chunks, i])} className="option px-3 py-2 text-sm font-semibold" lang={course}>
                   {c}
                 </button>
               ),
@@ -868,7 +872,7 @@ function ProduceCard({
           value={typed}
           onChange={(e) => onTyped(e.target.value)}
           rows={3}
-          lang="de"
+          lang={course}
           spellCheck={false}
           /* Android: `exam.write_sentence`. */
           placeholder={t("exam.write_sentence")}
@@ -911,6 +915,7 @@ function Result({
   onToggleMisses: () => void;
   writingSample: string | null;
 }) {
+  const course = useCourse();
   const t = useT();
   return (
     <section className="card mx-auto w-full max-w-md p-5">
@@ -935,7 +940,7 @@ function Result({
           <li key={s.id}>
             <div className="flex items-center justify-between text-sm">
               <span>
-                <span lang="de" className="font-semibold">
+                <span lang={course} className="font-semibold">
                   {SECTION_TITLE_DE[s.id]}
                 </span>
                 <span className="muted"> · {t(SECTION_TITLE_KEYS[s.id])}</span>
@@ -962,7 +967,7 @@ function Result({
                   <CheckIcon size={14} />
                 </span>
                 <span>
-                  <span className="block font-semibold" lang="de">
+                  <span className="block font-semibold" lang={course}>
                     {c.de}
                   </span>
                   <span className="muted block text-xs">{c.tr}</span>
@@ -991,12 +996,12 @@ function Result({
                     <span lang="de">{SECTION_TITLE_DE[m.section]}</span> · {t(SECTION_TITLE_KEYS[m.section])}
                   </p>
                   <p className="mt-0.5">{m.prompt}</p>
-                  <p className="mt-1 font-semibold" lang="de" style={{ color: "var(--color-mint)" }}>
+                  <p className="mt-1 font-semibold" lang={course} style={{ color: "var(--color-mint)" }}>
                     {m.answer}
                   </p>
                   {m.given ? (
                     <p className="muted text-xs">
-                      {t("exam.your_answer")} <span lang="de">{m.given}</span>
+                      {t("exam.your_answer")} <span lang={course}>{m.given}</span>
                     </p>
                   ) : null}
                   {m.section === "produce" && m.given ? (
@@ -1015,7 +1020,7 @@ function Result({
       {showMisses && writingSample ? (
         <div className="mt-2 rounded-xl px-3 py-2.5 text-sm surface-2">
           <p className="muted text-xs font-semibold">{t("exam.writing_sample")}</p>
-          <p className="mt-1 whitespace-pre-line text-xs" lang="de">
+          <p className="mt-1 whitespace-pre-line text-xs" lang={course}>
             {writingSample}
           </p>
         </div>

@@ -13,6 +13,7 @@ import { askAssess } from "@/lib/assess-client";
 import { whyFor, type Why } from "@/lib/why";
 import { TokenDiff, TypedTokens } from "@/components/feedback/diff-text";
 import { useT, useLang } from "@/lib/i18n/client";
+import { useCourse } from "@/components/app-shell";
 
 type TranslateRound = Extract<Round, { game: "translate" }>;
 type Status = "idle" | "checking" | "correct" | "wrong";
@@ -43,6 +44,7 @@ const ASSESS_ACCEPT = 75;
  * düşürür (hintUsed).
  */
 export function TranslateGame({ round, onDone }: GameProps<TranslateRound>) {
+  const course = useCourse();
   const tx = useT();
   const lang = useLang();
   // Sınav kâğıdında ipucu düğmesi yok (bkz. no-hints.tsx).
@@ -212,7 +214,7 @@ export function TranslateGame({ round, onDone }: GameProps<TranslateRound>) {
           autoCapitalize="sentences"
           autoCorrect="off"
           spellCheck={false}
-          lang="de"
+          lang={course}
           placeholder={tx("rounds.write_sentence_ph")}
           className={`card min-h-16 w-full resize-none px-4 py-3 text-lg outline-none ${
             status === "wrong" ? "animate-shake border-[color:var(--color-rose)]" : ""

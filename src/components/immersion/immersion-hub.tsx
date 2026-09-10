@@ -174,6 +174,7 @@ export function ImmersionHub({ level, units, currentIndex, doneUnits, totalUnits
                     <span className="block truncate text-strong">
                       {m.code} · {m.titleTr}
                     </span>
+                    {/* `titleDe` adıyla Almanca: modül sınavı planı kursa bağlı değil. */}
                     <span className="muted block truncate text-caption" lang="de">
                       {m.titleDe}
                     </span>

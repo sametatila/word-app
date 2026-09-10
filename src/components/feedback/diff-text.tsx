@@ -3,6 +3,7 @@
 import type { DiffSeg } from "@/lib/why";
 import type { TokenMark } from "@/lib/sentence-match";
 import { useT } from "@/lib/i18n/client";
+import { useCourse } from "@/components/app-shell";
 
 /**
  * Fark vurgusu (plan WP-61) — iki düzey, tek dil:
@@ -21,13 +22,14 @@ import { useT } from "@/lib/i18n/client";
 
 export function CharDiff({ diff }: { diff: { typed: DiffSeg[]; target: DiffSeg[] } }) {
   const t = useT();
+  const course = useCourse();
   const plain = t("diff.typed_vs_answer", {
     typed: diff.typed.map((s) => s.text).join(""),
     answer: diff.target.map((s) => s.text).join(""),
   });
   return (
     <span aria-label={plain}>
-      <span aria-hidden lang="de">
+      <span aria-hidden lang={course}>
         {diff.typed.map((s, i) =>
           s.kind === "extra" ? (
             <s key={i} className="opacity-70">

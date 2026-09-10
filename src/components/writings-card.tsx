@@ -10,6 +10,7 @@ import { AssessmentCard } from "@/components/feedback/assessment-card";
 import { AiNotice } from "@/components/ai-notice";
 import type { Assessment } from "@/lib/assess-prompts";
 import { useT } from "@/lib/i18n/client";
+import { useCourse } from "@/components/app-shell";
 import { ReportDialog } from "@/components/report-dialog";
 
 type Item = {
@@ -35,6 +36,7 @@ const KIND_LABEL_KEYS: Record<string, string> = {
  * Açınca aynı değerlendirme kartı — geri bildirim dili her yerde aynı.
  */
 export function WritingsCard({ showEmpty = false }: { showEmpty?: boolean }) {
+  const course = useCourse();
   const t = useT();
   const [items, setItems] = useState<Item[] | null | undefined>(undefined);
   const [open, setOpen] = useState<number | null>(null);
@@ -145,7 +147,7 @@ export function WritingsCard({ showEmpty = false }: { showEmpty?: boolean }) {
                   {score ?? "…"}
                 </span>
                 <button type="button" onClick={() => setOpen(open === it.id ? null : it.id)} className="min-w-0 flex-1 text-left">
-                  <span className="block truncate text-sm font-semibold" lang="de">
+                  <span className="block truncate text-sm font-semibold" lang={course}>
                     {it.answer}
                   </span>
                   <span className="muted block text-xs">
@@ -172,7 +174,7 @@ export function WritingsCard({ showEmpty = false }: { showEmpty?: boolean }) {
                   </button>
                 </div>
               ) : open === it.id ? (
-                <p className="muted mt-2 text-xs" lang="de">
+                <p className="muted mt-2 text-xs" lang={course}>
                   {it.answer}
                 </p>
               ) : null}

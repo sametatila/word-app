@@ -11,6 +11,7 @@ import { describePerSkill, nextLevel, PLACEMENT_LEVELS, type PlacementAnswer, ty
 import type { PlacementRecord, PlacementTest as Test, TextItem } from "@/lib/placement";
 import type { CefrLevel } from "@/lib/skills/types";
 import { useT, useLang } from "@/lib/i18n/client";
+import { useCourse } from "@/components/app-shell";
 import { formatPercent } from "@/lib/i18n/dict";
 import { localDay } from "@/lib/day";
 
@@ -35,6 +36,7 @@ const STAGE_HINT: Record<PlacementStage, string> = {
  * geçirebilir, "bilmiyorum" geçiremez. Her aşama atlanabilir.
  */
 export function PlacementTest({ initialLast, canRetake, retakeDays }: { initialLast: PlacementRecord | null; canRetake: boolean; retakeDays: number }) {
+  const course = useCourse();
   const t = useT();
   const lang = useLang();
   const router = useRouter();
@@ -272,12 +274,12 @@ export function PlacementTest({ initialLast, canRetake, retakeDays }: { initialL
         {header}
         <p className="muted mb-3 text-xs">{t(STAGE_HINT[stage])}</p>
         {"de" in item ? (
-          <p className="brand-text mb-4 text-2xl font-bold" lang="de">
+          <p className="brand-text mb-4 text-2xl font-bold" lang={course}>
             {item.artikel ? `${item.artikel} ` : ""}
             {item.de}
           </p>
         ) : (
-          <p className="mb-4 text-base" lang="de">
+          <p className="mb-4 text-base" lang={course}>
             <span className="muted text-xs">{item.sheet} · {item.label}</span>
             <br />
             <strong>{item.key}</strong> → ?
@@ -301,7 +303,7 @@ export function PlacementTest({ initialLast, canRetake, retakeDays }: { initialL
       {header}
       <p className="muted mb-2 text-xs">{t(STAGE_HINT[stage])} · {item.level}</p>
       {item.text ? (
-        <div lang="de" className="mb-3 max-h-56 overflow-y-auto rounded-xl px-3.5 py-3 text-sm leading-relaxed surface-2">
+        <div lang={course} className="mb-3 max-h-56 overflow-y-auto rounded-xl px-3.5 py-3 text-sm leading-relaxed surface-2">
           {item.text.split("\n\n").map((p, i) => (
             <p key={i} className={i > 0 ? "mt-2" : ""}>
               {p}
@@ -319,7 +321,7 @@ export function PlacementTest({ initialLast, canRetake, retakeDays }: { initialL
           ))}
         </div>
       ) : null}
-      <p className="mb-3 text-sm font-semibold" lang="de">
+      <p className="mb-3 text-sm font-semibold" lang={course}>
         {q.text}
       </p>
       {options(q.options, q.answer, (c) => answerText(stage, item, qIndex, c))}

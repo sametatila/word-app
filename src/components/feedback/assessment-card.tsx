@@ -6,6 +6,7 @@ import type { Assessment } from "@/lib/assess-prompts";
 import { ERROR_LABEL_KEYS } from "@/lib/errors";
 import { whyLabel } from "@/lib/why";
 import { useT, useLang } from "@/lib/i18n/client";
+import { useCourse } from "@/components/app-shell";
 
 /**
  * Değerlendirme kartı (WP-12; WP-30 yazma ile ortak).
@@ -33,6 +34,7 @@ export function AssessmentCard({
   /** Kelimenin gerçek örnek cümlesi — "böyle de kurulabilirdi". */
   example?: string | null;
 }) {
+  const course = useCourse();
   const t = useT();
   const offline = "offline" in result && result.offline;
   const s = result.score;
@@ -73,7 +75,7 @@ export function AssessmentCard({
         </ul>
       ) : (
         <>
-          <p className="mt-3 text-sm leading-relaxed" lang="de">
+          <p className="mt-3 text-sm leading-relaxed" lang={course}>
             <Highlighted answer={answer} errors={result.errors} />
           </p>
           {result.errors.length ? (
@@ -93,7 +95,7 @@ export function AssessmentCard({
             </ul>
           ) : null}
           {result.corrected && result.corrected.trim() !== answer.trim() ? (
-            <p className="mt-3 rounded-xl px-3 py-2 text-sm surface-2" lang="de">
+            <p className="mt-3 rounded-xl px-3 py-2 text-sm surface-2" lang={course}>
               <span className="muted mr-1 text-xs font-semibold">{t("assess.corrected")}</span>
               <strong>{result.corrected}</strong>
             </p>
@@ -108,7 +110,7 @@ export function AssessmentCard({
       ) : null}
       {result.next_tip_tr ? <p className="muted mt-1 text-sm">{result.next_tip_tr}</p> : null}
       {example ? (
-        <p className="mt-3 text-xs" lang="de">
+        <p className="mt-3 text-xs" lang={course}>
           <span className="muted mr-1 font-semibold">{t("assess.example")}</span>
           {example}
         </p>

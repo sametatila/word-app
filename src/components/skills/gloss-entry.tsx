@@ -28,6 +28,7 @@ export function GlossEntry({ g }: { g: Gloss }) {
       ) : null}
       {g.hd || g.note ? (
         <span className="text-[0.85em] opacity-50">
+          {/* Hochdeutsch köprüsü: alan adıyla Almanca, kurstan bağımsız. */}
           {g.hd ? <span lang="de">HD: {g.hd}</span> : null}
           {g.hd && g.note ? " · " : null}
           {g.note}

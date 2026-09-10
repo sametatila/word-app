@@ -5,6 +5,7 @@ import type { PronounceScore } from "@/lib/pronounce";
 import { PASS_SCORE } from "@/lib/pronounce";
 import { speakGerman } from "@/components/speak-button";
 import { useT } from "@/lib/i18n/client";
+import { useCourse } from "@/components/app-shell";
 
 /**
  * Telaffuz kartı (WP-20): hedef cümle kelime ısı haritası — yeşil tam,
@@ -13,6 +14,7 @@ import { useT } from "@/lib/i18n/client";
  * düzeyi" der: fonem notu değil, anlaşıldı-mı ölçüsü.
  */
 export function PronounceCard({ score, audioUrl, compact = false }: { score: PronounceScore; audioUrl?: string | null; compact?: boolean }) {
+  const course = useCourse();
   const t = useT();
   const tone = (s: PronounceScore["words"][number]["status"]) =>
     s === "ok" ? "var(--color-mint)" : s === "near" ? "var(--color-flame)" : "var(--color-rose)";
@@ -34,7 +36,7 @@ export function PronounceCard({ score, audioUrl, compact = false }: { score: Pro
           </span>
         ) : null}
       </div>
-      <p className="mt-2 flex flex-wrap gap-1.5" lang="de">
+      <p className="mt-2 flex flex-wrap gap-1.5" lang={course}>
         {score.words.map((w, i) => (
           <button
             key={`${w.word}-${i}`}

@@ -9,6 +9,7 @@ import { track } from "@/lib/track";
 import { firstWordsFor, type FirstWord } from "@/lib/first-words";
 import { readOnboardingPrefs } from "@/lib/onboarding-prefs";
 import { useT } from "@/lib/i18n/client";
+import { useCourse } from "@/components/app-shell";
 
 /**
  * Hesap açmadan önce kısa bir ISINMA — beş kelime, sesli, örnekli.
@@ -29,6 +30,7 @@ import { useT } from "@/lib/i18n/client";
 const withArtikel = (w: FirstWord) => (w.artikel ? `${w.artikel} ${w.de}` : w.de);
 
 export function FirstPractice() {
+  const course = useCourse();
   const t = useT();
   const router = useRouter();
   const [words, setWords] = useState<FirstWord[] | null>(null);
@@ -121,7 +123,7 @@ export function FirstPractice() {
           <div className="flex flex-col items-center gap-1.5">
             <p className="text-h2">{w.tr}</p>
             <div className="card mt-1 px-4 py-3">
-              <p className="text-strong" lang="de">
+              <p className="text-strong" lang={course}>
                 {w.ex}
               </p>
               <p className="muted mt-0.5 text-caption">{w.exTr}</p>

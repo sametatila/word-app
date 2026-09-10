@@ -11,6 +11,7 @@ import { Mascot } from "@/components/mascot";
 import { track } from "@/lib/track";
 import type { WeeklyStatus } from "@/lib/weekly";
 import { useT } from "@/lib/i18n/client";
+import { useCourse } from "@/components/app-shell";
 import { localDay } from "@/lib/day";
 
 type Payload = { status: WeeklyStatus; rounds: Round[] };
@@ -24,6 +25,7 @@ type Phase = "loading" | "ready" | "playing" | "saving" | "done" | "empty" | "er
  * düştüyse bunu saklamamak gerekir.
  */
 export function WeeklyPlayer() {
+  const course = useCourse();
   const t = useT();
   const [phase, setPhase] = useState<Phase>("loading");
   const [data, setData] = useState<Payload | null>(null);
@@ -176,7 +178,7 @@ export function WeeklyPlayer() {
             <p className="text-sm font-semibold">{t("weekly.back_in_queue")}</p>
             <ul className="mt-1 flex flex-wrap gap-2">
               {wrong.map((w) => (
-                <li key={w.id} className="chip px-3 py-1 text-xs" lang="de">
+                <li key={w.id} className="chip px-3 py-1 text-xs" lang={course}>
                   {w.artikel ? `${w.artikel} ` : ""}
                   {w.de} <span className="muted ml-1">{w.tr}</span>
                 </li>

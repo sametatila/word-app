@@ -11,6 +11,7 @@ import { AssessmentCard } from "@/components/feedback/assessment-card";
 import { firstExample } from "@/lib/example";
 import { whyFor, type Why } from "@/lib/why";
 import { useT, useLang } from "@/lib/i18n/client";
+import { useCourse } from "@/components/app-shell";
 
 type FreeRound = Extract<Round, { game: "free_sentence" }>;
 type Status = "idle" | "checking" | "done";
@@ -30,6 +31,7 @@ const SPECIAL_CHARS = ["ä", "ö", "ü", "ß"] as const;
  * lapse yok), < 40 → 2. Hata tipi rubriğin ilk hatasından.
  */
 export function FreeSentenceGame({ round, onDone }: GameProps<FreeRound>) {
+  const course = useCourse();
   const t = useT();
   const tx = useT();
   const lang = useLang();
@@ -163,7 +165,7 @@ export function FreeSentenceGame({ round, onDone }: GameProps<FreeRound>) {
               className="chip px-3 py-1.5 text-sm"
               title={t.tr}
             >
-              <strong lang="de">{withArtikel(t)}</strong>
+              <strong lang={course}>{withArtikel(t)}</strong>
               <span className="muted ml-1.5 text-xs">{t.tr}</span>
             </button>
           ))}
@@ -194,7 +196,7 @@ export function FreeSentenceGame({ round, onDone }: GameProps<FreeRound>) {
             autoCapitalize="sentences"
             autoCorrect="off"
             spellCheck={false}
-            lang="de"
+            lang={course}
             placeholder={tx("rounds.write_a_sentence_ph")}
             className="card min-h-20 w-full resize-none px-4 py-3 text-lg outline-none"
           />

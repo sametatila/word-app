@@ -28,6 +28,15 @@ export type Course = {
   /** Konuşma/tanıma için temel dil kodu — aynı dilin lehçeleri bunu paylaşır. */
   targetLang: "de" | "en";
   /**
+   * Sentez ve TANIMA için tam yerel kod — lehçe burada ayrışıyor.
+   *
+   * Mobilde bu alan baştan beri var (`M/src/lib/courses.ts`); web'de yoktu ve
+   * iki oynatıcı `course === "gsw-zh" ? "de-CH" : "de-DE"` yazıyordu. İngilizce
+   * kursta bu, tanıyıcıyı Almancaya kuruyordu: öğrenci İngilizce konuşuyor,
+   * tarayıcı Almanca duyuyordu.
+   */
+  speechLocale: string;
+  /**
    * Kursun adı, ARAYÜZ dilinde. "Almanca öğren" / "Learn German" /
    * "Deutsch lernen" — üçü de aynı kursun adı, üç ayrı okuyucu için.
    *
@@ -81,6 +90,7 @@ export const COURSES: Course[] = [
   {
     id: "de",
     targetLang: "de",
+    speechLocale: "de-DE",
     hasArticles: true,
     label: { tr: "Almanca", en: "German", de: "Deutsch" },
     sub: {
@@ -95,6 +105,7 @@ export const COURSES: Course[] = [
   {
     id: "gsw-zh",
     targetLang: "de",
+    speechLocale: "de-CH",
     hasArticles: true,
     label: { tr: "Zürih Almancası", en: "Zurich German", de: "Züritüütsch" },
     sub: {
@@ -110,6 +121,7 @@ export const COURSES: Course[] = [
   {
     id: "en",
     targetLang: "en",
+    speechLocale: "en-US",
     hasArticles: false,
     label: { tr: "İngilizce", en: "English", de: "Englisch" },
     sub: {
@@ -126,6 +138,11 @@ export const COURSES: Course[] = [
 /** Kursun adı, verilen arayüz dilinde — mobil `targetLangName()` karşılığı. */
 export function courseName(courseId: string | null | undefined, lang: NativeLang): string {
   return courseOrDefault(courseId).label[lang];
+}
+
+/** Kursun konuşma/tanıma yerel kodu — `de-DE`, `de-CH`, `en-US`. */
+export function speechLocaleOf(courseId: string | null | undefined): string {
+  return courseOrDefault(courseId).speechLocale;
 }
 
 /** Kursun alt satırı (lehçe/kapsam), verilen arayüz dilinde. */

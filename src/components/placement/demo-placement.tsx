@@ -9,6 +9,7 @@ import { courseOrDefault } from "@/lib/courses";
 import { readOnboardingPrefs, saveOnboardingPrefs } from "@/lib/onboarding-prefs";
 import { track } from "@/lib/track";
 import { useT, useLang } from "@/lib/i18n/client";
+import { useCourse } from "@/components/app-shell";
 
 /**
  * Giriş öncesi seviye testi — misafir yolu.
@@ -23,6 +24,7 @@ import { useT, useLang } from "@/lib/i18n/client";
  * almıyor; başlıktaki "örnek" eki de bunu söylüyor.
  */
 export function DemoPlacement({ onClose }: { onClose?: () => void }) {
+  const course = useCourse();
   const t = useT();
   const lang = useLang();
   const router = useRouter();
@@ -137,7 +139,7 @@ export function DemoPlacement({ onClose }: { onClose?: () => void }) {
 
       <div className="card p-5">
         <p className="muted mb-2 text-xs font-semibold">{t(q.promptKey)}</p>
-        <p className="mb-4 text-2xl font-bold" lang="de">
+        <p className="mb-4 text-2xl font-bold" lang={course}>
           {q.question}
         </p>
         <div className="grid gap-2">

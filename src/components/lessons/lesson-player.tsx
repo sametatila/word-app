@@ -27,7 +27,7 @@ import { type Expectation, type Lesson, type Segment } from "@/lib/lessons/types
 import { useT, useLang } from "@/lib/i18n/client";
 import { ReportDialog } from "@/components/report-dialog";
 import { translate, type NativeLang } from "@/lib/i18n/dict";
-import { courseName } from "@/lib/courses";
+import { courseName, speechLocaleOf } from "@/lib/courses";
 import { parseJudgment } from "@/lib/voice-intent";
 
 /**
@@ -925,7 +925,7 @@ export function LessonPlayer({
 
   const listenRoleplay = useCallback(async () => {
     await capture(
-      lesson.course === "gsw-zh" ? "de-CH" : "de-DE",
+      speechLocaleOf(lesson.course),
       (alts) => sendRef.current(alts[0] ?? ""),
       true,
     );

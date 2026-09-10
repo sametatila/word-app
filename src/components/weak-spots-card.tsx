@@ -5,6 +5,7 @@ import { SkeletonBar, SkeletonLine } from "@/components/skeleton";
 import { useEffect, useState } from "react";
 import type { ErrorReport } from "@/lib/error-analytics";
 import { useT, useLang } from "@/lib/i18n/client";
+import { useCourse } from "@/components/app-shell";
 import { formatPercent } from "@/lib/i18n/dict";
 
 /**
@@ -14,6 +15,7 @@ import { formatPercent } from "@/lib/i18n/dict";
  * ne bilgi verir ne motive eder.
  */
 export function WeakSpotsCard({ bare = false }: { bare?: boolean } = {}) {
+  const course = useCourse();
   /* Kanca `tx`: aşağıdaki map değişkeni de `t` ve `t()` çağrısını gölgeliyor. */
   const tx = useT();
   const lang = useLang();
@@ -113,7 +115,7 @@ export function WeakSpotsCard({ bare = false }: { bare?: boolean } = {}) {
           <ul className="mt-1.5 flex flex-wrap gap-2">
             {report.confusions.slice(0, 5).map((c) => (
               <li key={`${c.wordId}-${c.with}`} className="chip px-3 py-1.5 text-xs" title={tx("weakw.n_times", { n: c.n })}>
-                <strong lang="de">
+                <strong lang={course}>
                   {c.artikel ? `${c.artikel} ` : ""}
                   {c.de}
                 </strong>

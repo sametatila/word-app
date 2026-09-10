@@ -80,6 +80,19 @@ export function useShell(): ShellData {
 }
 
 /**
+ * Kullanıcının HEDEF dili — `lang` işareti için.
+ *
+ * Kabuğun dışında da çağrılabiliyor (misafir yerleştirme sınavı `(app)`
+ * içinde değil), o yüzden fırlatmıyor: kabuk yoksa varsayılan kurs. Bunun
+ * olmaması yüzünden hedef dildeki metinlerin `lang` işareti kırk dokuz yerde
+ * sabit "de" yazılıydı - İngilizce çalışan kullanıcının ekran okuyucusu
+ * İngilizce kelimeleri Almanca sesletiyordu.
+ */
+export function useCourse(): string {
+  return useContext(ShellContext)?.course ?? "de";
+}
+
+/**
  * Masaüstünde kenar çubuğunun ikinci grubu — telefonda başlıktan ulaşılıyor.
  *
  * Burada bir "Bildirimler" satırı vardı ve `/notifications`e gidiyordu. O adres

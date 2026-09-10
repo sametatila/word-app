@@ -12,7 +12,7 @@ import type { Assessment, AssessLevel, AssessRequest } from "@/lib/assess-prompt
 import { AssessmentCard } from "@/components/feedback/assessment-card";
 import { ERROR_LABEL_KEYS, type ErrorType } from "@/lib/errors";
 import { useT, useLang } from "@/lib/i18n/client";
-import { courseName } from "@/lib/courses";
+import { courseName, speechLocaleOf } from "@/lib/courses";
 import { recognitionCtor, requestMicrophone, type Recognition } from "@/components/microphone";
 import { speakGerman, stopSpeaking } from "@/components/speak-button";
 import { MicIcon } from "@/components/icons";
@@ -158,7 +158,9 @@ export function RoleplayExam({ lesson, cando }: { lesson: Lesson; cando: string[
       return;
     }
     const r = new Ctor();
-    r.lang = lesson.course === "gsw-zh" ? "de-CH" : "de-DE";
+    // Yerel kod kurs kayıt defterinden: elle yazılan ternary İngilizce kursta
+    // tanıyıcıyı Almancaya kuruyordu (bkz. `lib/courses` `speechLocale`).
+    r.lang = speechLocaleOf(lesson.course);
     r.interimResults = true;
     r.maxAlternatives = 1;
     r.continuous = false;
@@ -259,7 +261,7 @@ export function RoleplayExam({ lesson, cando }: { lesson: Lesson; cando: string[
             <p className="muted text-[11px] font-bold uppercase tracking-wide">{t("rpexam.best_sentences")}</p>
             <ul className="mt-1 space-y-1">
               {best.map((s) => (
-                <li key={s} className="rounded-xl px-3 py-2 text-sm surface-2" lang="de">
+                <li key={s} className="rounded-xl px-3 py-2 text-sm surface-2" lang={lesson.course}>
                   {s}
                 </li>
               ))}
@@ -312,7 +314,7 @@ export function RoleplayExam({ lesson, cando }: { lesson: Lesson; cando: string[
             initial={{ opacity: 0, y: 6 }}
             animate={{ opacity: 1, y: 0 }}
             className={`max-w-[88%] rounded-2xl px-3.5 py-2 text-sm leading-relaxed ${t.role === "user" ? "ml-auto brand-gradient text-white" : "surface-2"}`}
-            lang="de"
+            lang={lesson.course}
           >
             {t.content}
           </motion.p>
@@ -342,7 +344,7 @@ export function RoleplayExam({ lesson, cando }: { lesson: Lesson; cando: string[
             }
           }}
           rows={1}
-          lang="de"
+          lang={lesson.course}
           placeholder={
             listening
               ? t("speak.listening")
