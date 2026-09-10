@@ -766,6 +766,7 @@ export const trBase: Record<string, string> = {
   "quiz.how_to_say": "«{pattern}» {target} nasıl denir?",
   "quiz.intro_checkpoint": "Üniteyi bitir: bu ünitenin kelime ve kalıplarını karışık hatırla.",
   "quiz.intro_review": "Bu ünitenin kelime ve kalıplarından karışık hatırlama.",
+  "quiz.intro_grammar": "Bu ünitenin dil bilgisi kurallarından karışık alıştırma.",
   "quiz.passed": "%{pct} — geçtin",
   "quiz.back_to_path": "Patika'ya dön",
   "quiz.review": "TEKRAR",

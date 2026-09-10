@@ -766,6 +766,7 @@ export const enBase: Record<string, string> = {
   "quiz.how_to_say": "How do you say «{pattern}» in {target}?",
   "quiz.intro_checkpoint": "Finish the unit: recall this unit's words and patterns in mixed order.",
   "quiz.intro_review": "Mixed recall from this unit's words and patterns.",
+  "quiz.intro_grammar": "Mixed practice on this unit's grammar rules.",
   "quiz.passed": "{pct}% — passed",
   "quiz.back_to_path": "Back to Path",
   "quiz.review": "REVIEW",

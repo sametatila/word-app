@@ -766,6 +766,7 @@ export const deBase: Record<string, string> = {
   "quiz.how_to_say": "Wie sagt man «{pattern}» auf {target}?",
   "quiz.intro_checkpoint": "Schließe die Einheit ab: Wörter und Muster dieser Einheit gemischt abrufen.",
   "quiz.intro_review": "Gemischtes Abrufen aus den Wörtern und Mustern dieser Einheit.",
+  "quiz.intro_grammar": "Gemischte Übung zu den Grammatikregeln dieser Einheit.",
   "quiz.passed": "{pct} % — bestanden",
   "quiz.back_to_path": "Zurück zum Pfad",
   "quiz.review": "WIEDERHOLUNG",
