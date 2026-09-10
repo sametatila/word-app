@@ -9,6 +9,7 @@ import { lessonsForLevel } from "../data/lessons";
 import { moduleTheme } from "../data/moduleThemes";
 import { t, targetLangName } from "../lib/i18n";
 import { currentCourseId } from "../lib/courses";
+import { MOCK_LABELS } from "../data/exams";
 import type { SkillQuestion } from "../data/skills";
 
 const UNIT_LESSONS = 4;
@@ -127,7 +128,11 @@ export function deriveGrammar(level: string, unitIndex: number, count = 8): Skil
         judges.push({
           kind: "truefalse",
           text: e.statement,
-          options: ["Richtig", "Falsch"],
+          /* Hüküm şıkları KURSUN dilinde: sabit "Richtig/Falsch" İngilizce
+             kursta da Almanca çıkıyordu ve İngilizce derslerde yüz tane hüküm
+             adımı var. Deneme sınavı aynı çifti kursa göre veriyor
+             (`MOCK_LABELS[course].bool`), buraya da oradan geliyor. */
+          options: [...MOCK_LABELS[currentCourseId() === "en" ? "en" : "de"].bool],
           answer: e.answer ? 0 : 1,
           explain: (e.why ?? []).map((w) => w.text).join(" ").replace(/\s+([.,!?;:])/g, "$1").trim(),
         });
