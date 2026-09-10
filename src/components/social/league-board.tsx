@@ -3,7 +3,8 @@
 import Link from "next/link";
 import { useCallback, useEffect, useState } from "react";
 import { Avatar } from "@/components/avatar";
-import { FlameIcon, PodiumIcon, TrophyIcon } from "@/components/icons";
+import { FlagIcon, FlameIcon, PodiumIcon, TrophyIcon } from "@/components/icons";
+import { ReportDialog } from "@/components/report-dialog";
 import { EmptyCard } from "@/components/empty-card";
 import { RowSkeleton } from "@/components/skeleton";
 import { social, tierKey, type LeagueRowView, type LeagueView } from "@/lib/social/client";
@@ -30,6 +31,11 @@ export function LeagueBoard() {
   const [view, setView] = useState<LeagueView | null>(null);
   const [err, setErr] = useState(false);
   const [result, setResult] = useState<LeagueView["result"]>(null);
+  /* Ligdeki kişiler arkadaş DEĞİL: uygunsuz ad bildirimi buradan açılıyor.
+     Sunucu, istemci kitaplığı ve kart zaten hazırdı - eksik olan tek şey
+     düğmeydi, yani yazılmış bir yol hiç kullanılmıyordu. Android aynı satırda
+     basılı tutunca aynı kartı açıyor. */
+  const [report, setReport] = useState<LeagueRowView | null>(null);
 
   useEffect(() => {
     social
@@ -111,6 +117,7 @@ export function LeagueBoard() {
                       ? t("league.demote_zone")
                       : ""
                 }
+                onReport={setReport}
               />
             ))}
           </ol>
@@ -125,6 +132,14 @@ export function LeagueBoard() {
           {view.demote > 0 ? ` · ${t("league.explain_down", { n: view.demote })}` : ""}
         </p>
       </section>
+
+      <ReportDialog
+        open={report !== null}
+        kind="user"
+        refId={report?.userId ?? ""}
+        content={report?.name ?? ""}
+        onClose={() => setReport(null)}
+      />
     </div>
   );
 }
@@ -141,12 +156,14 @@ function LeagueRow({
   zone,
   edge,
   edgeLabel,
+  onReport,
 }: {
   row: LeagueRowView;
   lang: ReturnType<typeof useLang>;
   zone: "up" | "down" | null;
   edge: "up" | "down" | null;
   edgeLabel: string;
+  onReport: (row: LeagueRowView) => void;
 }) {
   const t = useT();
   const tint = zone === "up" ? ZONE_UP : zone === "down" ? ZONE_DOWN : null;
@@ -189,6 +206,17 @@ function LeagueRow({
         <span className="w-16 shrink-0 text-right text-sm font-bold tabular-nums" style={{ color: "var(--color-brand)" }}>
           {formatNumber(row.xp, lang)}
         </span>
+        {row.isMe ? null : (
+          <button
+            type="button"
+            onClick={() => onReport(row)}
+            aria-label={t("leaderboard.report_hint", { name: row.name ?? t("social.student") })}
+            title={t("user.report")}
+            className="faint shrink-0 rounded-lg p-1 hover:text-[color:var(--text-muted)]"
+          >
+            <FlagIcon size={13} />
+          </button>
+        )}
       </li>
       {edge ? (
         <li aria-hidden className="flex items-center gap-2 px-5 py-1">
