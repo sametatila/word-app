@@ -262,7 +262,9 @@ abonelik beyanı kurallarına aykırı.
    *Planlar*), yoksa offering boş kalır.
 
 4. **Entitlement** — **Product catalog → Entitlements** → `+ New entitlement`,
-   identifier **`premium`**.
+   identifier **`lernomi_premium`**.
+   (`premium` kullanılamıyor: RevenueCat yeni projeye örnek bir entitlement
+   kuruyor ve o kimliği tutuyor. Yazım önemsiz, iki tarafın aynı olması önemli.)
    Bu değer `mobile/src/lib/billingConfig.ts` içindeki `entitlementId` ile
    **birebir** aynı olmalı.
    Entitlement'ı açıp **Attach** düğmesiyle dört ürünün (2 platform × 2 süre)

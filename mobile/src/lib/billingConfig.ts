@@ -23,7 +23,12 @@
 export const REVENUECAT = {
   androidKey: "", // "goog_..." — RevenueCat › Project settings › API keys
   iosKey: "",     // "appl_..." — aynı yer, iOS uygulaması
-  entitlementId: "premium",
+  /*
+    RevenueCat'te `premium` kimliğini örnek projeyle gelen entitlement tutuyordu
+    ve ikinci kez kullanılamıyor. Kimliğin yazımı önemsiz, iki tarafın AYNI
+    olması önemli — ürünler de `lernomi_premium_*` olduğu için bu daha tutarlı.
+  */
+  entitlementId: "lernomi_premium",
 };
 
 /** Satın alma yolu açık mı. Yetki ile İLGİSİ YOK (bkz. dosya başı). */
