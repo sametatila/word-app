@@ -162,11 +162,20 @@ export function attachPushListeners(): () => void {
   };
 }
 
-/** Bildirim izni verilmiş mi — ayarlar ekranı durumu buradan okuyabilsin. */
-export async function pushPermissionGranted(): Promise<boolean> {
+/**
+ * Bildirim izni AÇIKÇA REDDEDİLMİŞ mi.
+ *
+ * Ölçüt bilerek "verilmiş mi" değil: iOS'ta henüz sorulmamış durum da
+ * "verilmemiş" sayılır ve ekran açılışında "bildirimler kapalı" demek, hiç
+ * sorulmamış kullanıcıya yanlış bir şey söylemek olurdu. Yalnız REDDEDİLMİŞ
+ * hâl bir çıkmazdır ve kullanıcıya sistem ayarlarını göstermek gerekir.
+ *
+ * Web karşılığı `lib/push-client.ts` `permissionDenied()` ve ölçütü aynı.
+ */
+export async function pushPermissionDenied(): Promise<boolean> {
   try {
     const settings = await notifee.getNotificationSettings();
-    return settings.authorizationStatus === AuthorizationStatus.AUTHORIZED;
+    return settings.authorizationStatus === AuthorizationStatus.DENIED;
   } catch {
     return false;
   }

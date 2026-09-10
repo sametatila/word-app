@@ -14,6 +14,7 @@ import {
   getWeeklyReminder, setWeeklyReminder,
   showTestNotification, openNotificationSettings,
 } from "../lib/notifications";
+import { pushPermissionDenied } from "../lib/pushDevice";
 import { useTheme, spacing, radii, softShadow, type Palette } from "../theme";
 
 const TIMES = ["09:00", "12:00", "15:00", "19:00", "21:00"];
@@ -50,6 +51,16 @@ export function NotificationsScreen() {
     getReminder().then((r) => { if (r) { setDailyOn(true); setDailyTime(r); } });
     getStreakAlert().then(setStreakOn);
     getWeeklyReminder().then(setWeeklyOn);
+    /*
+     * REDDEDİLMİŞ İZİN AÇILIŞTA SÖYLENİYOR.
+     *
+     * `denied` yalnız bir anahtar çevrilip BAŞARISIZ olduktan sonra doğru
+     * oluyordu: izni daha önce reddetmiş ya da sistem ayarlarından kapatmış
+     * kullanıcı ekranı açtığında anahtarları çalışır görüyor, deneyip
+     * başarısız olmadan sebebi öğrenemiyordu. Web bu durumu açılışta
+     * gösteriyor (`PushSettings`), mobil de artık gösteriyor.
+     */
+    pushPermissionDenied().then((d) => { if (d) fail(); });
   }, []);
 
   function fail() { setDenied(true); setMsg(tx("notifications.permission_off")); }
