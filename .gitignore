@@ -36,6 +36,7 @@ dist/
 !data/lessons/prose-de/out/
 !data/skills/prose-de/out/
 !data/skills/task-de/out/
+!data/lessons/cando-de/out/
 # Paketler ve triyaj listesi ÜRETİLİYOR (`make-packets.mjs`, `triage.mjs`) ve
 # kaynaktan her an yeniden kurulabiliyor; repoda durmaları yalnız gürültü.
 # `fix/` ise elle yazılan cümleler — o commit'lenir, `out/` da ondan kuruluyor.
@@ -59,6 +60,7 @@ data/mock-exams/prose/in-de/
 data/lessons/prose-de/in/
 data/skills/prose-de/in/
 data/skills/task-de/in/
+data/lessons/cando-de/in/
 # `apply.mjs` uretiyor; kaynak `out/` dizinleri, bu yalnizca onlarin toplami.
 src/lib/lessons/generated/
 *.tsbuildinfo

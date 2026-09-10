@@ -106,6 +106,7 @@
     "check:lessons-lecture": "node data/lessons/lecture/check.mjs",
     "check:lessons-word": "node data/lessons/word/check.mjs",
     "check:lessons-cando": "node data/lessons/cando/check.mjs",
+    "check:lessons-cando-de": "node data/lessons/cando-de/check.mjs",
     "check:lessons-script": "node data/lessons/script/check.mjs",
     "check:lessons-exam": "tsx --tsconfig scripts/tsconfig.e2e.json data/lessons/exam/check.ts",
     "check:lessons-swap": "tsx --tsconfig scripts/tsconfig.e2e.json data/lessons/swap/check.ts",
