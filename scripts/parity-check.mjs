@@ -224,6 +224,57 @@ console.log("\n" + C.b + "9. TUR TURLERI" + C.off);
   }
 }
 
+/* icerigin tasidigi tur, istemcinin cizdigi tur */
+
+console.log("\n" + C.b + "10. BECERI ICERIGI vs OYNATICI" + C.off);
+{
+  /*
+   * Bu bölüm bir hatadan doğdu: `WritingList` `build` dışındaki her görevi
+   * `FreeCard`a yönlendiriyordu ve `FreeCard`ın gönder düğmesi
+   * `words >= t.minWords` ile açılıyor. Dumpta `rewrite` (189) ve `form` (47)
+   * görevleri var ve ikisinde `minWords` YOK: `undefined` karşılaştırması
+   * daima false, düğme hiç açılmıyor, görev settle edilemiyor. 356 yazma
+   * egzersizinin 190'ı Android'de bitirilemiyordu.
+   *
+   * Kural bu yüzden ADI DEĞİL ALANI ölçüyor: dağıtıcının ismen tanımadığı bir
+   * tür varsayılan dala düşer, o dalın çalışması için gereken alan da o türün
+   * HER örneğinde bulunmak zorundadır. Yazmada varsayılan `FreeCard` ve
+   * `minWords` ister; soruda varsayılan şıklı dal ve `options` ister.
+   */
+  const dump = ["mobile/src/data/skills/exercises.json", "mobile/src/data/skills/exercises-en.json"]
+    .flatMap((f) => JSON.parse(read(f)));
+  const quiz = read("mobile/src/game/skillQuiz.tsx");
+  const named = (re) => new Set([...quiz.matchAll(re)].map((x) => x[1]));
+
+  const taskNamed = named(/t\.kind === "(\w+)"/g);
+  const badTasks = new Set();
+  for (const e of dump) {
+    // Yalnız YAZMA egzersizinin görevleri: konuşma egzersizinin `tasks`ı başka
+    // bir şey (kendi oynatıcısı var, `kind` taşımıyor).
+    if (e.skill !== "writing") continue;
+    for (const t of e.tasks ?? []) {
+      if (taskNamed.has(t.kind)) continue;
+      if (typeof t.minWords !== "number" && typeof t.minWords !== "string") badTasks.add(t.kind);
+    }
+  }
+  if (badTasks.size) {
+    fail("yazma gorevi cizilemez", [...badTasks].map((k) => `${k}: dagitici tanimiyor ve minWords yok -> gonder dugmesi hic acilmaz`));
+  } else pass(`yazma gorev turleri (${[...taskNamed].sort().join(", ")} + varsayilan free)`);
+
+  const qNamed = named(/kind === "(\w+)"/g);
+  const badQ = new Set();
+  for (const e of dump) {
+    for (const q of e.questions ?? []) {
+      const kind = q.kind ?? "mcq";
+      if (qNamed.has(kind)) continue;
+      if (!Array.isArray(q.options) || q.options.length < 2) badQ.add(kind);
+    }
+  }
+  if (badQ.size) {
+    fail("soru cizilemez", [...badQ].map((k) => `${k}: dagitici tanimiyor ve options yok -> sikkli dalda bos cikar`));
+  } else pass("soru turleri (siksiz olanlar ismen taniniyor, kalani options tasiyor)");
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"
