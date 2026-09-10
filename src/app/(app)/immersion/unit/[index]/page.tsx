@@ -54,7 +54,7 @@ export default async function UnitPage({ params }: { params: Promise<{ index: st
 
   return (
     <div className="mx-auto w-full max-w-2xl">
-      <PageBack fallback="/immersion" title={unit.theme} subtitle={`${level} · ${t("common.unit")} ${unit.index}`} />
+      <PageBack fallback="/immersion" title={unit.theme} subtitle={t("unit.header", { level, unit: t("common.unit"), n: unit.index })} />
       <UnitPane unit={unit} level={level} embedded />
     </div>
   );
