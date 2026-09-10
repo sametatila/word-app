@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import { t, dateLocale } from "../lib/i18n";
+import { t, dateLocale, formatNumber } from "../lib/i18n";
 import { View, ScrollView } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { useNavigation } from "@react-navigation/native";
@@ -19,7 +19,7 @@ import { useTheme, spacing, radii, softShadow, TIER_COLOR, type Palette } from "
 import { sfx } from "../lib/sfx";
 import { bumpStats } from "../lib/statsSignal";
 
-type Phase = "loading" | "auth" | "error" | "play" | "submitting" | "done";
+type Phase = "loading" | "auth" | "error" | "play" | "submitting" | "done" | "empty";
 
 /**
  * İlk üçün madalya rengi — ortak kademe ölçeğinden (`TIER_COLOR`).
@@ -119,7 +119,14 @@ export function DailyScreen() {
         return;
       }
       const list = p.rounds ?? [];
-      if (!list.length) { setPhase("done"); return; }
+      /*
+       * BOŞ HAVUZ "OYNADIN" DEĞİL. Tur kurulamadığında ekran `done`a düşüyor
+       * ve kullanıcıya 0/0 puanla "bugünkü turun bitti" diyordu: oynamadığı
+       * bir turdan sıfır aldığını sanıyor. Sebep ayrı ve söylenebilir -
+       * seviyedeki kelime havuzu turu kurmaya yetmiyor. Web bunu ayrı bir
+       * durum olarak taşıyor (`status === "empty"`).
+       */
+      if (!list.length) { setPhase("empty"); return; }
       setRounds(list);
       totalRef.current = list.length;
       setIdx(0);
@@ -180,6 +187,16 @@ export function DailyScreen() {
     );
   }
 
+  if (phase === "empty") {
+    return (
+      <View style={[pad, { alignItems: "center", justifyContent: "center" }]}>
+        <Text variant="h2" style={{ textAlign: "center" }}>{t("daily.none_title")}</Text>
+        <Text variant="body" color={colors.textMuted} style={{ textAlign: "center", marginTop: spacing.sm, lineHeight: 22 }}>{t("daily.none_sub")}</Text>
+        <PressableScale onPress={() => nav.goBack()} style={{ paddingVertical: spacing.lg, marginTop: spacing.xl }}><Text variant="bodyStrong" color={colors.textMuted}>{t("common.close")}</Text></PressableScale>
+      </View>
+    );
+  }
+
   if (phase === "error") {
     return (
       <View style={[pad, { alignItems: "center", justifyContent: "center" }]}>
@@ -202,12 +219,21 @@ export function DailyScreen() {
         <ScrollView contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.xxl }} showsVerticalScrollIndicator={false}>
           <View style={[{ borderRadius: radii.xl, backgroundColor: colors.primary, padding: spacing.xl, alignItems: "center", marginTop: spacing.sm }, softShadow(colors.primary, 12)]}>
             <Text variant="micro" color={colors.onPrimaryMuted} style={{ textTransform: "uppercase", letterSpacing: 1 }}>{t("daily.your_score")}</Text>
-            <Text variant="display" color={colors.onPrimary} style={{ fontSize: 52, marginTop: 4 }}>{scoreRef.current.toLocaleString("tr-TR")}</Text>
+            <Text variant="display" color={colors.onPrimary} style={{ fontSize: 52, marginTop: 4 }}>{formatNumber(scoreRef.current)}</Text>
             <View style={{ flexDirection: "row", gap: spacing.xl, marginTop: spacing.md }}>
               <View style={{ alignItems: "center" }}><Text variant="h3" color={colors.onPrimary}>{correctRef.current}/{total}</Text><Text variant="micro" color={colors.onPrimaryMuted}>{t("daily.correct")}</Text></View>
               <View style={{ alignItems: "center" }}><View style={{ flexDirection: "row", alignItems: "center", gap: 4 }}><FlameIcon color={colors.onPrimary} size={18} /><Text variant="h3" color={colors.onPrimary}>{bestComboRef.current}</Text></View><Text variant="micro" color={colors.onPrimaryMuted}>{t("daily.best_streak")}</Text></View>
             </View>
           </View>
+          {/* SIRAN kaç: tablo zaten altta ama "kaçıncıyım" sorusunun cevabı
+              satır satır aranmamalı. Web sonucun hemen altında söylüyor. */}
+          {board.find((r) => r.isMe) ? (
+            <Text variant="caption" color={colors.textMuted} style={{ textAlign: "center", marginTop: spacing.md }}>
+              {t("daily.your_rank_today", { rank: board.find((r) => r.isMe)!.rank })}
+            </Text>
+          ) : null}
+          {/* Neden tekrar oynanamadığı: web aynı yerde söylüyor. */}
+          <Text variant="micro" color={colors.textFaint} style={{ textAlign: "center", marginTop: spacing.sm, lineHeight: 18 }}>{t("daily.once_a_day")}</Text>
           <Text variant="h3" style={{ marginTop: spacing.xl, marginBottom: 2 }}>{t("daily.today_s_ranking")}</Text>
           <Text variant="caption" color={colors.textMuted}>{t("daily.players_at_your_level")}</Text>
           <Board rows={board} colors={colors} />
@@ -227,7 +253,7 @@ export function DailyScreen() {
         </View>
         <View style={{ flexDirection: "row", alignItems: "center", gap: 6 }}>
           {comboView >= 3 && <View style={{ flexDirection: "row", alignItems: "center", gap: 2 }}><FlameIcon color={colors.streakText} size={15} /><Text variant="bodyStrong" color={colors.streakText}>{comboView}</Text></View>}
-          <View style={{ flexDirection: "row", alignItems: "center", gap: 3 }}><BoltIcon color={colors.primaryText} size={15} /><Text variant="bodyStrong" color={colors.primaryText}>{scoreView.toLocaleString("tr-TR")}</Text></View>
+          <View style={{ flexDirection: "row", alignItems: "center", gap: 3 }}><BoltIcon color={colors.primaryText} size={15} /><Text variant="bodyStrong" color={colors.primaryText}>{formatNumber(scoreView)}</Text></View>
         </View>
       </View>
       <RoundView key={rounds[idx]?.id ?? idx} round={rounds[idx]} onDone={onDone} />

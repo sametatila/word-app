@@ -2133,21 +2133,26 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   /* Kisi adinin bas harfi arayuz metni degil; iki tarafta da ayni sekilde
      "tr-TR" ile buyutuluyor ve oyle kaliyor. */
   const MUAF = ["mobile/src/ui/PersonAvatar.tsx", "src/components/avatar.tsx"];
+  const MUAF_KLASOR = ["src/app/admin/"];
   /* ARANAN sey dar: CEVIRMEN CIKTISINA uygulanan harf cevirisi (metin) ve
      .tsx icinde elle yazilmis "tr-TR" buyutmesi (arayuzde cizilen sey).
      Veri uzerindeki `toLowerCase()` (e-posta, kullanici adi, eslestirme)
      mesru ve aranmiyor - o kadar genis bir kural yalnizca gurultu uretir. */
+  /* SAYI/TARIH BICIMI de yerelden gelmeli: `toLocaleString("tr-TR")` bin
+     ayracini Ingilizce ve Almanca arayuzde de Turkce kuruyor. Yonetim panosu
+     (src/app/admin) disarida: orasi yalniz Turkce ve kullaniciya acik degil. */
   const DESENLER = [
+    /\.toLocaleString\(\s*["']tr-TR["']/g,
     /\bt[x]?\((?:[^()]|\([^()]*\))*\)\s*(?:\?\?\s*"[^"]*"\s*)?\.to(?:Locale)?UpperCase\(\s*(?:"tr-TR"|'tr-TR'|)\s*\)/g,
     /\.toLocaleUpperCase\(\s*(?:"tr-TR"|'tr-TR')\s*\)/g,
   ];
   const kacak = [];
   for (const kok of ["mobile/src", "src"]) {
     for (const f of walkUI(kok)) {
-      if (MUAF.includes(f)) continue;
+      if (MUAF.includes(f) || MUAF_KLASOR.some((d) => f.startsWith(d))) continue;
       const src = read(f).replace(/\/\*[\s\S]*?\*\//g, " ").replace(/\/\/[^\n]*/g, " ");
       for (const re of DESENLER) {
-        if (re === DESENLER[1] && !f.endsWith(".tsx")) continue;
+        if (re === DESENLER[2] && !f.endsWith(".tsx")) continue;
         for (const m of src.matchAll(re)) kacak.push(f + ": " + m[0].trim().slice(0, 60));
       }
     }
