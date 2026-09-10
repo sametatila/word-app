@@ -8,6 +8,7 @@ import { GameSwitch } from "@/components/game-switch";
 import { FitBox } from "@/components/fit-box";
 import { Confetti, CountUp } from "@/components/celebrate";
 import { scoreAnswer } from "@/lib/daily-score";
+import { track } from "@/lib/track";
 import { ShareResult } from "@/components/share-result";
 import { AlertIcon, FlameIcon, SparkIcon } from "@/components/icons";
 import { Mascot } from "@/components/mascot";
@@ -86,6 +87,7 @@ export function DailyPlayer({ onExit }: { onExit: () => void }) {
       // yavaşsa kullanıcı düğmeye iki kez basabiliyor.
       if (sent.current) return;
       sent.current = true;
+      track("session_done", finalTally.correct, "daily");
       const seconds = Math.round((Date.now() - startedAt.current) / 1000);
       try {
         const res = await fetch("/api/daily", {
@@ -196,6 +198,13 @@ export function DailyPlayer({ onExit }: { onExit: () => void }) {
           <button
             onClick={() => {
               startedAt.current = Date.now();
+              /* Günün turu ÖLÇÜLÜYOR. Mobil `DailyScreen` baştan beri
+                 `session_start`/`session_done` yazıyor ve `kind`i "daily"
+                 veriyor; web hiçbir olay yazmıyordu, yani günün turu
+                 raporlarda yalnız Android tarafından görünüyordu. Ayrı bir
+                 `daily_play` olayı YOK: ölçüm zaten `kind` ile ayrışıyor
+                 (bkz. web-parity §11.28). */
+              track("session_start", 0, "daily");
               setStatus("playing");
             }}
             className="btn btn-primary w-full px-5 py-3.5 text-base"

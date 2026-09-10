@@ -1890,3 +1890,27 @@ diye kaydetmek olurdu. İki yönlü denetleniyor ve sınandı: listedeki bir ada
 çağıran çıkarsa test "listeden çıkar" diyor.
 
 Sonuç: `test:events` 71 olay / 138 çağrı ile yeşil.
+
+### 11.28 Günün turu web tarafında HİÇ ölçülmüyordu
+
+§11.27'nin `PLANNED` listesi tek tek incelendi ve dördünden biri gerçek bir
+parite farkı çıktı.
+
+Mobil `DailyScreen` baştan beri `session_start` (kind `"daily"`) ve
+`session_done` (value = doğru sayısı, kind `"daily"`) yazıyor. Web
+`daily-player` HİÇBİR olay yazmıyordu: günün turu raporlarda yalnız Android
+tarafından görünüyordu, yani "günün turu ne kadar oynanıyor" sorusunun cevabı
+sistematik olarak eksikti. Web de aynı iki olayı aynı `kind` ile yazıyor artık.
+
+Ayrı bir `daily_play` olayı YAZILMADI ve sebebi ölçüldü: ölçüm zaten `kind`
+ile ayrışıyor (`session_start kind=daily`), ikinci bir olay aynı turu iki kez
+saymak olurdu. Sözlük girdisi `PLANNED`ta bu gerekçeyle duruyor.
+
+Kalan üçü de sebepleriyle `PLANNED`ta:
+
+  - `start_card` — başlangıç kartı görüntülenmesi. İKİ platformda da
+    ölçülmüyor; ekran görünümü diye bir olay hiç yok. Eşit biçimde eksik.
+  - `speak_self` — söyleyişte asr/self ayrımı. `lesson_step` aynı kararı
+    `kind` ile zaten yazıyor; ikisinin sınırı karar istiyor.
+  - `premium_gate` — premium kilidine çarpma. Mobil birleşiminde de tanımlı,
+    çağıran yok; premium pasif olduğu için bugün ölçülecek bir olay da yok.

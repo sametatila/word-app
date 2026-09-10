@@ -92,10 +92,10 @@ const WRITTEN_ELSEWHERE = new Set<string>(["session_round"]);
   test "listeden çıkar" diyor, yani liste bayatlamıyor.
 */
 const PLANNED: Record<string, string> = {
-  start_card: "başlangıç kartı ölçümü; kart var, olay hiç yazılmadı",
+  start_card: "başlangıç kartı görüntülenmesi; İKİ platformda da ölçülmüyor - ekran görünümü olayı hiç yok",
   daily_play: "günlük tur oynanması; Daily ekranı olayı yazmıyor",
   plan_start: "bugünkü plan satırı parite turunda kaldırıldı (web-parity §11.10)",
-  speak_self: "sesli özdeğerlendirme; yalnız yürüyüş turunda var ve orada yazılmıyor",
+  speak_self: "söyleyişte asr/self ayrımı; `lesson_step` aynı kararı kind ile zaten yazıyor, ikisinin sınırı karar istiyor",
   premium_gate: "premium kilidine çarpma; mobil birleşiminde de tanımlı, çağıran yok",
 };
 
