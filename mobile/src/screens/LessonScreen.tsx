@@ -26,6 +26,7 @@ import { API_BASE } from "../api/client";
 import { todayStr } from "../game/session";
 import { useTheme, spacing, radii, softShadow, type Palette } from "../theme";
 import { sfx } from "../lib/sfx";
+import { track } from "../lib/track";
 
 /**
  * Konuşma oynatıcısı — anlatım → karşılıklı konuşma → özet. Web'in
@@ -42,6 +43,9 @@ import { sfx } from "../lib/sfx";
  */
 
 type Phase = "lecture" | "roleplay" | "summary";
+
+/** Cevabın hangi yoldan geldiği — `lesson_step` kind'ının ikinci parçası. */
+type Via = "mic" | "typed";
 
 /** Anlatım/konuşma akışındaki baloncuk. */
 /** Yapay zekâ yanıtı için bildirme bilgisi: ref = "<lessonId>:<tur>", text = gösterilen metin. */
@@ -153,7 +157,7 @@ export function LessonScreen() {
     if (!lesson) return;
     loadLessonResume(lesson.id).then((r) => {
       if (r && r.cursor < lesson.lecture.length) setResumeOffer({ cursor: r.cursor, correct: r.correct });
-      else presentFrom(0);
+      else beginLecture(0, false);
       setResumeChecked(true);
     });
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -165,6 +169,23 @@ export function LessonScreen() {
     if (cursor > 0 && cursor < lesson.lecture.length) void saveLessonResume(lesson.id, cursor, correct);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [cursor, phase]);
+
+  /**
+   * Ders BAŞLADI - web `lesson-player` ile aynı olay, aynı değer (1 kaldığı
+   * yerden, 0 baştan) ve aynı kind (ders kimliği).
+   *
+   * Üç giriş yolu var (ilk açılış, "kaldığın yerden", "baştan başla") ve üçü
+   * de `presentFrom` çağırıyor; olay tek bir yerden ve bir kez yazılıyor,
+   * yoksa "baştan başla"ya basan öğrenci iki ders başlangıcı üretirdi.
+   */
+  const lectureStarted = useRef(false);
+  function beginLecture(from: number, resumed: boolean) {
+    if (lesson && !lectureStarted.current) {
+      lectureStarted.current = true;
+      track("lesson_start", resumed ? 1 : 0, lesson.id);
+    }
+    presentFrom(from);
+  }
 
   /** cursor'dan itibaren: anlatım baloncuklarını aç, ilk `expect`li adımda dur. */
   function presentFrom(from: number) {
@@ -221,11 +242,12 @@ export function LessonScreen() {
    * değil, kelimeyi ağza alma denemesi. Üçüncü denemeden sonra doğrusu
    * duyurulup geçiliyor ki ders takılmasın.
    */
-  function gradeRepeat(shown: string, ok: boolean) {
+  function gradeRepeat(shown: string, ok: boolean, via: Via) {
     if (expect?.kind !== "repeat") return;
     push({ role: "student", text: shown, ok });
     haptic(ok ? "correct" : "wrong");
     if (ok) {
+      track("lesson_step", tries === 0 ? 2 : 1, `repeat:${via}`);
       speakTarget(expect.target);
       setTimeout(advance, 500);
       scrollDown();
@@ -234,6 +256,10 @@ export function LessonScreen() {
     const t = tries + 1;
     setTries(t);
     if (t >= 3) {
+      /* Adım geçilemedi. Web de sıfırı YALNIZ burada yazıyor: her yanlış
+         denemeye ayrı bir sıfır yazmak, bir adımı üç başarısız adım gibi
+         gösterirdi. */
+      track("lesson_step", 0, `repeat:${via}`);
       push({ role: "teacher", segments: [{ lang: "tr", text: tx("common.answer_is") }, { lang: currentTargetLang() as Segment["lang"], text: expect.target }], tone: "hint" });
       speakTarget(expect.target);
       setTimeout(advance, 900);
@@ -245,7 +271,7 @@ export function LessonScreen() {
     if (expect?.kind !== "repeat") return;
     const duyulan = await dinle();
     if (!duyulan?.length) { if (sttOk !== false) duyulmadi(); return; }
-    gradeRepeat(duyulan[0], spokenMatches(duyulan, [expect.target]));
+    gradeRepeat(duyulan[0], spokenMatches(duyulan, [expect.target]), "mic");
   }
 
   /** Mikrofonsuz yedek: tekrar adımı yazarak da geçilebilir. */
@@ -254,7 +280,7 @@ export function LessonScreen() {
     const text = input.trim();
     if (!text) return;
     setInput("");
-    gradeRepeat(text, matches(text, expect.target));
+    gradeRepeat(text, matches(text, expect.target), "typed");
   }
 
   async function speakProduce() {
@@ -263,7 +289,7 @@ export function LessonScreen() {
     if (!duyulan?.length) { if (sttOk !== false) duyulmadi(); return; }
     // Söylenen cevap tanıyıcı çıktısıyla karşılaştırılıyor (sayı/noktalama
     // katlaması dahil); yazılan cevap düz karşılaştırmadan geçiyor.
-    gradeProduce(duyulan[0], spokenMatches(duyulan, [expect.target, ...(expect.accept ?? [])]));
+    gradeProduce(duyulan[0], spokenMatches(duyulan, [expect.target, ...(expect.accept ?? [])]), "mic");
   }
 
   function submitProduce() {
@@ -271,7 +297,7 @@ export function LessonScreen() {
     const text = input.trim();
     if (!text) return;
     setInput("");
-    gradeProduce(text, matches(text, expect.target, expect.accept));
+    gradeProduce(text, matches(text, expect.target, expect.accept), "typed");
   }
 
   /** Konuşma fazında mikrofon — duyulan replik doğrudan gönderilir. */
@@ -281,10 +307,11 @@ export function LessonScreen() {
     void sendRole(duyulan[0]);
   }
 
-  function gradeProduce(text: string, ok: boolean) {
+  function gradeProduce(text: string, ok: boolean, via: Via) {
     if (expect?.kind !== "produce") return;
     push({ role: "student", text, ok });
     if (ok) {
+      track("lesson_step", tries === 0 ? 2 : 1, `produce:${via}`);
       haptic("correct");
       setCorrect((c) => c + 1);
       push({ role: "teacher", segments: [{ lang: "tr", text: tx(PRAISE_KEYS[correct % PRAISE_KEYS.length]) }] });
@@ -295,6 +322,7 @@ export function LessonScreen() {
       const t = tries + 1;
       setTries(t);
       if (t >= 3) {
+        track("lesson_step", 0, `produce:${via}`);
         // Doğru cevap balonu: dil etiketi KURSTAN gelir. Sabit "de" yazıyordu;
         // çizim `lang !== "tr"` diye baktığı için görünürde bir şey bozulmuyordu
         // ama İngilizce hedefi "Almanca" diye etiketlemek, dile göre dallanan
@@ -313,6 +341,9 @@ export function LessonScreen() {
     if (expect?.kind !== "truefalse" || answered) return;
     setAnswered(true);
     const ok = pick === expect.answer;
+    /* Yol "tap": bu adım iki düğmeyle cevaplanıyor, tek deneme var (`answered`
+       kilidi) ve o yüzden doğru cevap her zaman ilk denemede geliyor. */
+    track("lesson_step", ok ? 2 : 0, "truefalse:tap");
     push({ role: "student", text: tx(pick ? "common.correct" : "common.wrong"), ok });
     haptic(ok ? "correct" : "wrong");
     if (ok) setCorrect((c) => c + 1);
@@ -376,6 +407,10 @@ export function LessonScreen() {
     if (saved) return;
     setSaved(true);
     sfx("finish"); // tamamlanma sesi (özet; saved koruması sayesinde bir kez)
+    /* Puan yüzdesi web ile aynı formül: puanlanan adımlar içinde doğru oranı
+       (`correct` üstten kırpılıyor - konuşma fazı `correct`i artırmıyor ama
+       formül yine de tavanı aşmasın). Geçme kaydı sunucuda. */
+    track("lesson_finish", scoreTotal ? Math.round((100 * Math.min(correct, scoreTotal)) / scoreTotal) : 0, lesson.id);
     void markItemDone(lesson.id);
     void clearLessonResume(lesson.id);
     const seconds = Math.round((Date.now() - startedAt.current) / 1000);
@@ -457,8 +492,8 @@ export function LessonScreen() {
           <Text variant="h2" style={{ textAlign: "center" }}>{tx("lesson.pick_up_where_you_left_off")}</Text>
           <Text variant="body" color={colors.textMuted} style={{ textAlign: "center" }}>{tx("lesson.you_paused_this_lesson_pick_up")}</Text>
           <View style={{ alignSelf: "stretch", gap: spacing.sm }}>
-            <BigButton label={tx("lesson.continue_where_you_left_off")} onPress={() => { const r = resumeOffer; setResumeOffer(null); setCorrect(r.correct); presentFrom(r.cursor); }} colors={colors} />
-            <PressableScale onPress={() => { setResumeOffer(null); void clearLessonResume(lesson.id); presentFrom(0); }}>
+            <BigButton label={tx("lesson.continue_where_you_left_off")} onPress={() => { const r = resumeOffer; setResumeOffer(null); setCorrect(r.correct); beginLecture(r.cursor, true); }} colors={colors} />
+            <PressableScale onPress={() => { setResumeOffer(null); void clearLessonResume(lesson.id); beginLecture(0, false); }}>
               <View style={{ borderRadius: radii.lg, backgroundColor: colors.surface2, paddingVertical: 15, alignItems: "center" }}>
                 <Text variant="h3" color={colors.text}>{tx("lesson.start_over")}</Text>
               </View>

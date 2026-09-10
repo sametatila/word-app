@@ -114,7 +114,12 @@ export const EVENT_NAMES = [
   "client_error", // yakalanmamış istemci hatası (kind = ekran anahtarı, value = 1 hata sınırı / 0 pencere olayı; dakikada en çok bir)
   "panel_open", // katlı bölüm açıldı/kapandı (kind = bölüm: weak_detail | sheet:<tablo> | words_progress | single_game, value = 1 açık / 0 kapalı)
   "lesson_start", // ders başladı (kind = ders kimliği, value = 1 kaldığı yerden / 0 baştan)
-  "lesson_step", // ders adımı sonuçlandı (kind = adım:yol → repeat|produce|truefalse : mic|typed|skip, value = 2 ilk denemede / 1 sonraki denemede / 0 geçilemedi ya da atlandı)
+  /* Ders adımı sonuçlandı. kind = adım:yol → repeat|produce|truefalse :
+     mic|typed|tap|skip. value = 2 ilk denemede doğru / 1 sonraki denemede doğru
+     / 0 geçilemedi ya da atlandı. `tap` doğru/yanlış adımının düğme yolu:
+     eskiden o yol `inputMode`u değiştirmediği için "mic" diye sayılıyordu.
+     `skip` yalnız webde var - Android'de adım atlama düğmesi yok. */
+  "lesson_step",
   "lesson_finish", // ders bitti (kind = ders kimliği, value = puanlı adımlarda doğru yüzdesi; geçme user_lessons'ta)
   "speak_self", // söyleyiş görevinde karar (kind = asr tanıyıcı | self öz-değerlendirme, value = 1 doğru / 0 zorlandı)
   /* Onboarding adımı görüldü. value = adım sırası (platforma göre değişir), kind

@@ -2151,3 +2151,49 @@ gibi bir ad, rol yapma sınavı için de webde-var/Android'de-yok bir yüzeyin
 ayrı sınav yüzeyi yok) kendi olayı gerekirdi. İkisi de §11.29'da kaydedilen
 sınıf: mevcut bir ada zorlamak veri kaybettirir, yenisini uydurmak Sametin
 kararı. Şu an bir raporu bozmuyor - `nav` kovasını okuyan sorgu yok.
+
+### 11.35 Patika dersleri Androidde HİÇ ölçülmüyordu
+
+Ölçüm:
+
+    web    lesson_start 1 · lesson_step 4 çağrı · lesson_finish 1
+    mobil  0 · 0 · 0     (LessonScreen'de tek bir track çağrısı yok)
+
+`LessonScreen` 750 satır ve mobilin patika yüzeyi: anlatım, konuşma, özet.
+Ders bir öğrencinin uygulamada geçirdiği en uzun tek oturum ve Android'de
+hiçbiri kaydedilmiyordu - kaç ders başlandığı, hangi adımda takılındığı, kaç
+tanesinin bittiği yalnız webden sayılabiliyordu. Mobilde track yazan on üç
+ekran var, bu on dördüncüsü değildi.
+
+Web'in dilbilgisi aynen alındı:
+
+    lesson_start   value 1 kaldığı yerden · 0 baştan   kind ders kimliği
+    lesson_step    kind "adım:yol"                     value 2 / 1 / 0
+    lesson_finish  value puanlı adımlarda doğru %      kind ders kimliği
+
+Üç ayrıntı ölçülerek yerleştirildi:
+
+- **Başlangıç tek yerden.** Anlatıma üç giriş yolu var (ilk açılış, "kaldığın
+  yerden", "baştan başla") ve üçü de `presentFrom` çağırıyor. Olay
+  `beginLecture` içinde ve bir kerelik bir ref'le korunuyor; yoksa "baştan
+  başla"ya basan öğrenci iki ders başlangıcı üretirdi.
+- **Sıfır yalnız adım GEÇİLEMEDİĞİNDE.** Web de öyle: her yanlış denemeye
+  ayrı sıfır yazmak bir adımı üç başarısız adım gibi gösterirdi. Mobilde eşik
+  aynı (üçüncü denemeden sonra doğrusu duyurulup geçiliyor).
+- **İlk deneme ayrımı.** `tries === 0` webin `isFirstTry`ıyla aynı şey; iki
+  tarafta da 2 = ilk denemede doğru, 1 = sonraki denemede doğru.
+
+**Webde bulunan yan hata: doğru/yanlış düğmesi "mikrofon" diye sayılıyordu.**
+`inputMode` yalnız yazma yolunda ayarlanıyor; doğru/yanlış adımının iki
+düğmesi `evaluate()`i doğrudan çağırıyor ve `inputMode` "mic" olarak
+kalıyordu. Yani düğmeye basılan her cevap ölçümde sesli söylenmiş gibi
+görünüyordu - "öğrenciler bu adımı konuşarak mı geçiyor" sorusunun cevabı
+sistematik olarak yanlıştı. Düğme yolu artık `tap`; webin sesli cevap yolu
+("veya sesli söyle") duruyor ve hâlâ `mic`. Android'de bu adım yalnız
+düğmeyle cevaplanıyor, orada tek değer `tap`.
+
+**Yüzey farkı, kaydedildi:** webde "adımı atla" düğmesi var (`skipStep`,
+`kind = "<adım>:skip"`), Android'de yok. `skip` bu yüzden mobilde hiç
+yazılmıyor. Düğmenin mobile eklenmesi ölçüm değil ürün kararı - Android
+takılan öğrenciyi üçüncü denemeden sonra kendiliğinden geçiriyor, yani
+atlamanın işlevi zaten karşılanmış durumda.

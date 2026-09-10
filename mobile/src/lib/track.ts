@@ -37,6 +37,14 @@ export type EventName =
      remind_daily · remind_streak · remind_weekly. Sayısal ayarlarda value yeni
      değer, anahtarlarda 1 açık / 0 kapalı, temada 0 açık / 1 koyu / 2 sistem. */
   | "setting_change"
+  /* Ders (patika konuşması) - web `lib/events` ile aynı dilbilgisi:
+     `lesson_start` value 1 kaldığı yerden / 0 baştan, kind ders kimliği;
+     `lesson_step` kind "adım:yol" (repeat|produce|truefalse : mic|typed|tap),
+     value 2 ilk denemede doğru / 1 sonraki denemede doğru / 0 geçilemedi;
+     `lesson_finish` value puanlanan adımlarda doğru yüzdesi, kind ders kimliği. */
+  | "lesson_start"
+  | "lesson_step"
+  | "lesson_finish"
   | "boss_play"
   | "boss_clear";
 

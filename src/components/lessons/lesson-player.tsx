@@ -239,7 +239,15 @@ export function LessonPlayer({
   /** Yazarak cevaplama — varsayılan değil, takılınca açılan çıkış yolu. */
   const [typing, setTyping] = useState(false);
   /** Son cevabın yolu — adım ölçümü için (WP-80): mikrofon mu, yazı mı. */
-  const inputMode = useRef<"mic" | "typed">("mic");
+  /*
+   * Cevabın hangi yoldan geldiği. "tap" SONRADAN EKLENDİ: doğru/yanlış adımı
+   * iki düğmeyle de cevaplanabiliyor ve o yol `inputMode`u hiç değiştirmiyordu,
+   * yani düğmeye basılan her cevap ölçümde "mikrofonla söylendi" diye
+   * sayılıyordu. Sesli cevap yolu (bkz. "veya sesli söyle") duruyor ve hâlâ
+   * "mic"; Android'de bu adım yalnız düğmeyle cevaplanıyor, yani orada tek
+   * değer "tap".
+   */
+  const inputMode = useRef<"mic" | "typed" | "tap">("mic");
   /**
    * Senaryolu (çevrimdışı) konuşma durumu — sohbet sağlayıcısı yokken
    * (WP-04, lib/lessons/offline-roleplay). null = model konuşuyor. Ref de
@@ -1173,6 +1181,7 @@ export function LessonPlayer({
                     type="button"
                     onClick={() => {
                       recognition.current?.abort();
+                      inputMode.current = "tap";
                       evaluate([TRUE_WORD[lang]]);
                     }}
                     className="option px-4 py-3 text-center text-sm font-semibold"
@@ -1183,6 +1192,7 @@ export function LessonPlayer({
                     type="button"
                     onClick={() => {
                       recognition.current?.abort();
+                      inputMode.current = "tap";
                       evaluate([FALSE_WORD[lang]]);
                     }}
                     className="option px-4 py-3 text-center text-sm font-semibold"
