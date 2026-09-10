@@ -869,6 +869,8 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     ["TURKISH_VOICE", "src/lib/tts/voices.ts", "mobile/src/lib/voices.ts"],
     ["VERDICT_KEYS", "src/lib/sentence-match.ts", "mobile/src/lib/sentenceMatch.ts"],
     ["TIER_COLOR", "src/components/achievement-badge.tsx", "mobile/src/theme/colors.ts"],
+    ["ALL_DONE_ID", "src/lib/quests.ts", "mobile/src/game/quests.ts"],
+    ["ALL_DONE_XP", "src/lib/quests.ts", "mobile/src/game/quests.ts"],
   ];
   for (const [name, wp, mp] of PAIRS) sameList("sabit " + name, val(mp, name), val(wp, name));
 
@@ -978,6 +980,31 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       .filter((x) => !x.includes("lib/courses"));
   sameList("ilk kelimeler", lits("mobile/src/data/firstWords.ts"), lits("src/lib/first-words.ts"));
   sameList("demo yerlestirme", lits("mobile/src/data/demoPlacement.ts"), lits("src/lib/placement-demo.ts"));
+}
+
+/* ── 23. gorev panosunun toplu odulu ───────────────────────────────────────
+ * `ALL_DONE_XP` iki tarafta adiyla karsilastiriliyor (bkz. 20) ama WEBIN
+ * KARTI o sabiti ICE ALAMIYOR: `src/lib/quests.ts` `server-only` ve
+ * `quest-card` bir istemci bileseni. Sayi bu yuzden kartin icine ELLE
+ * yazilmis - iki yerde. Sunucudaki odul degistiginde web kullanicisina yanlis
+ * miktar yazar ve hicbir sey uyarmaz.
+ *
+ * Kapi kartin yazdigi iki sayiyi sunucunun sabitiyle karsilastiriyor: rozette
+ * ("+300 XP") ve dugmede (`claim_xp` icindeki `xp`). Mobil sabiti ice aliyor,
+ * o yuzden orada elle yazilmis bir sayi YOK - kapinin bakacagi da yok. */
+{
+  const src = read("src/lib/quests.ts");
+  const m = src.match(/export const ALL_DONE_XP\s*=\s*(\d+)/);
+  const server = m ? m[1] : "okunamadi";
+  const card = read("src/components/quest-card.tsx");
+  /* Kartin toplu odul kutusu: `board.allDone` blogundan sonrasi. Iki sayi da
+     o blokta; oncesindeki `q.xp` gibi degisken degerler zaten sayi degil. */
+  const box = card.slice(card.indexOf("board.allDone"));
+  const written = [
+    (box.match(/\+\{?(\d+)\}? XP/) ?? [])[1] ?? "yok",
+    (box.match(/claim_xp",\s*\{\s*xp:\s*(\d+)\s*\}/) ?? [])[1] ?? "yok",
+  ];
+  sameList("gorev toplu odulu (webin karti)", written, [server, server], "web karti", "sunucu sabiti");
 }
 
 console.log(

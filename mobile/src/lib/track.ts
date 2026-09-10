@@ -46,7 +46,10 @@ export type EventName =
   | "lesson_step"
   | "lesson_finish"
   | "boss_play"
-  | "boss_clear";
+  | "boss_clear"
+  /* Görev ödülü alındı (value = kazanılan XP) — web `lib/events` ile aynı ad.
+     Mobil ödülü alabilir hâle gelene kadar bu adın karşılığı yoktu. */
+  | "quest_claim";
 
 /** Analitik tercihi (Gizlilik Politikası §8) — cihazda, varsayılan açık; açılışta yüklenir. */
 const ANALYTICS_KEY = "lernomi:analytics";

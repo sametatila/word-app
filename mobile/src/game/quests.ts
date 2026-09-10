@@ -7,6 +7,17 @@ export type Quest = { id: string; label: string; href: string; target: number; d
 export type QuestBoard = { quests: Quest[]; allDone: boolean; allClaimed: boolean };
 
 /**
+ * Üçü birden bitirmenin toplu ödülü — `src/lib/quests.ts` ile AYNI iki değer.
+ *
+ * Kimlik sunucunun beklediği `questId`, XP de verdiği miktar. İkisi burada
+ * adlandırılmış duruyor ki ekran 300 sayısını kendi içine gömmesin ve
+ * `check:parity` iki tarafı adıyla karşılaştırabilsin; ayrılırlarsa mobil
+ * kullanıcıya yanlış ödül yazar.
+ */
+export const ALL_DONE_ID = "all";
+export const ALL_DONE_XP = 300;
+
+/**
  * ÖDÜLÜ AL — mobilde bu yol HİÇ YOKTU.
  *
  * `/api/quests` POST ödülü veriyor (`claimQuest`) ve yeni panoyu geri

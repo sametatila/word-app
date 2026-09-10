@@ -170,6 +170,10 @@ export const UserPlusIcon = ({ color = "#000", size }: P) => (
 export const InboxIcon = ({ color = "#000", size }: P) => (
   <S size={size}><Path d="M4 13l2-8h12l2 8v6H4v-6z" {...stroke(color)} /><Path d="M4 13h5a3 3 0 006 0h5" {...stroke(color)} /></S>
 );
+/** Hediye — günün üç görevini birden bitirenin toplu ödülü (web `GiftIcon` ile aynı gövde). */
+export const GiftIcon = ({ color = "#000", size }: P) => (
+  <S size={size}><Rect x="4.5" y="9" width="15" height="10" rx="1.5" {...stroke(color)} /><Path d="M12 9v10M4.5 12.5h15" {...stroke(color)} /><Path d="M12 9c-1.5-.5-4-1-4-3a1.8 1.8 0 0 1 3.5-.5c.4.9.5 2.3.5 3.5zm0 0c1.5-.5 4-1 4-3a1.8 1.8 0 0 0-3.5-.5c-.4.9-.5 2.3-.5 3.5z" {...stroke(color)} /></S>
+);
 
 /* ——— Oyun türleri ———————————————————————————————————————————————————
    Bu yedisi, oyun listesinde anlamı taşımayan ikonların yerine geldi: yazma
