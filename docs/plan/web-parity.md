@@ -4407,3 +4407,33 @@ karşılaştırıyor — ayrışırlarsa aynı cevap bir uygulamada kabul edilir
 **Kendi hatam:** ilk commit yalnızca taban dosyasını taşıdı; `git add` yoluna
 var olmayan bir dosya adı yazdığım için komut hata verdi ve `2>/dev/null` onu
 yuttu, kod indekse hiç girmedi. Ayrı bir commit'le düzeltildi.
+
+### 11.91 Kalan değerlendirme çağrıları: kayıtlı sınır korundu
+
+Webin altı değerlendirme çağrısından mobilde karşılığı olan ikisini (sınav
+yazma §11.89, monolog konuşma) ölçtüm; kalan dördü zaten kayıtlı sınırın
+içinde.
+
+**Monolog isteği tıpatıp aynı** — `kind`, `level`, `task.prompt`
+(`mono.promptTr`), `targets`, kısıt satırı (`${min}–${max} saniye` + varsa
+rubrik ipucu), `answer`, `exerciseId`, `locale`, `lang` — ve geçme eşiği de
+(60). Hiçbir şey bunu tutmuyordu; artık kapıda: aynı kayıt iki uygulamada aynı
+puanı almalı ve "geçti mi" kararı ayrışırsa aynı kayıt bir uygulamada
+egzersizi bitirir, ötekinde bitirmez.
+
+#### Açık kalan sınıra dokunulmadı
+
+Mobilin `skillQuiz` › `FreeCard`ı serbest yazma görevini **modele hiç
+sormuyor**: `words >= minWords` sağlanınca doğru sayıyor ve örnek cevabı
+gösteriyor. Web `writing-player` aynı görevi rubrikle puanlıyor
+(`kind: "writing"`, `targets`, `constraints`).
+
+Bu, §11.11'de kayıtlı sınırın içinde: mobilde tür başına oynatıcı yok, hepsi
+tek ekranda; oradaki not "beş yeni oynatıcı ve elli civarı yeni metin demek,
+yani ürün kararı — 'Android referanstır' kuralı bu alanda körlemesine
+uygulanmasın" diyor. Tek bir kartı modele bağlamak teknik olarak küçük bir iş
+(mobilin kendi `skillLibrary`si konuşma için aynısını zaten yapıyor), ama
+kararı yeniden açmak bana ait değil. Buraya yazıldı ki sonraki tur da
+yeniden keşfetmesin.
+
+Değerlendirme kuyruğu (§11.12) da aynı sınırın parçası ve orada duruyor.
