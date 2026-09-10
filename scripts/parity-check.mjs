@@ -411,6 +411,36 @@ console.log("\n" + C.b + "13. KOPYA BIRLESIMLER" + C.off);
   );
 }
 
+/* ── 14. tepki tonlari ───────────────────────────────────────────────────── */
+/*
+ * Aynı tepki iki platformda aynı renkte çizilmeli. Tepki TÜRLERİ 13. bölümde
+ * zaten karşılaştırılıyordu ama RENKLERİ hiç bakılmıyordu ve `star` webde
+ * marka, mobilde seri rengiydi. Renk adları farklı yazılıyor (web CSS
+ * belirteci, mobil palet alanı), o yüzden ikisi de role çevrilip
+ * karşılaştırılıyor.
+ */
+console.log("\n" + C.b + "14. TEPKI TONLARI" + C.off);
+{
+  const ROLE = { brand: "primary", mint: "success", rose: "danger", flame: "streak", sky: "info", violet: "accent" };
+  const webSrc = read("src/components/social/reaction-icons.tsx");
+  const mobSrc = read("mobile/src/social/common.tsx");
+  const kinds = [...read("src/lib/social/types.ts").matchAll(/export const REACTION_KINDS = \[([^\]]+)\]/g)]
+    .flatMap((m) => [...m[1].matchAll(/"(\w+)"/g)].map((x) => x[1]));
+
+  const webSeg = webSrc.slice(webSrc.indexOf("export const REACTION_TONE"));
+  const web = new Map(
+    [...webSeg.slice(0, webSeg.indexOf("};")).matchAll(/(\w+):\s*"var\(--color-(\w+)\)"/g)].map((m) => [m[1], ROLE[m[2]] ?? m[2]]),
+  );
+
+  const mobSeg = mobSrc.slice(mobSrc.indexOf("export function reactionTone"));
+  const mobBody = mobSeg.slice(0, mobSeg.indexOf("\n}"));
+  const mob = new Map([...mobBody.matchAll(/case "(\w+)":\s*return colors\.(\w+);/g)].map((m) => [m[1], m[2]]));
+  const fallback = (mobBody.match(/default:\s*return colors\.(\w+);/) ?? [])[1];
+
+  const fmt = (get) => kinds.map((k) => `${k}:${get(k) ?? "?"}`);
+  sameList("tepki tonlari", fmt((k) => mob.get(k) ?? fallback), fmt((k) => web.get(k)));
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"

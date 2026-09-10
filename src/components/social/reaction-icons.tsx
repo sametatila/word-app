@@ -26,12 +26,19 @@ export const REACTION_ICON: Record<ReactionKind, (p: IconProps) => React.JSX.Ele
   wow: SparkIcon,
 };
 
+/**
+ * Tepki tonları — Android `social/common` `reactionTone` ile birebir
+ * (brand↔primary, mint↔success, rose↔danger, flame↔streak, sky↔info,
+ * violet↔accent). `star` burada marka rengiydi, Android'de seri rengi: aynı
+ * tepki iki platformda iki renkte çiziliyordu. `scripts/parity-check.mjs`
+ * 14. bölümü ikisini karşılaştırıyor.
+ */
 export const REACTION_TONE: Record<ReactionKind, string> = {
   cheer: "var(--color-brand)",
   fire: "var(--color-flame)",
   heart: "var(--color-rose)",
   strong: "var(--color-violet)",
-  star: "var(--color-brand)",
+  star: "var(--color-flame)",
   wow: "var(--color-sky)",
 };
 
