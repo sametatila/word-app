@@ -404,6 +404,14 @@ export async function buildSession(
    * olanlardan seçiliyor.
    */
   skip: number[] = [],
+  /**
+   * İSTEMCİNİN oynayamadığı oyunlar (bkz. `pickRound` `skipGames`).
+   *
+   * Uç `?skipGames=` ile alıyor ve mobil `free_sentence` gönderiyor: o turun
+   * mobilde oynatıcısı yok. Haftalık sınav aynı şeyi kendi ucunda zaten
+   * yapıyor (`lib/weekly` `WeeklyOpts`).
+   */
+  skipGames: readonly string[] = [],
 ): Promise<SessionPayload> {
   const profile = await ensureProfile(userId);
   const now = new Date();
@@ -641,7 +649,7 @@ export async function buildSession(
     }
   }
 
-  const rounds = composeRounds(dueWords, newWords, pool, native, only);
+  const rounds = composeRounds(dueWords, newWords, pool, native, only, skipGames);
 
   // Yazma turlarında aynı Türkçe anlama sahip diğer Almanca kelimeler de kabul
   // edilir: "hareket etmek, kalkmak" isteminde tek bir doğru cevap dayatmak haksız.
@@ -683,6 +691,14 @@ export async function loadSession(
   only?: PlayableGame,
   /** Bu turda atlanacak kelimeler — bkz. `buildSession`. */
   skip: number[] = [],
+  /**
+   * İSTEMCİNİN oynayamadığı oyunlar (bkz. `pickRound` `skipGames`).
+   *
+   * Uç `?skipGames=` ile alıyor ve mobil `free_sentence` gönderiyor: o turun
+   * mobilde oynatıcısı yok. Haftalık sınav aynı şeyi kendi ucunda zaten
+   * yapıyor (`lib/weekly` `WeeklyOpts`).
+   */
+  skipGames: readonly string[] = [],
 ): Promise<SessionPayload> {
   const profile = await ensureProfile(userId);
 
@@ -703,7 +719,7 @@ export async function loadSession(
     getirilmiyor; mobilde de kural bu (`GameScreen`: pratik `fresh`
     başlar, `resume` okunmaz).
   */
-  if (only) return buildSession(userId, today, extra, false, only, skip);
+  if (only) return buildSession(userId, today, extra, false, only, skip, skipGames);
 
   // "Yeni kelimelerle devam et" bilerek yeni bir tur ister; kayıtlıyı ezer.
   if (!extra) {
@@ -768,7 +784,7 @@ export async function loadSession(
     }
   }
 
-  const built = await buildSession(userId, today, extra, false, undefined, skip);
+  const built = await buildSession(userId, today, extra, false, undefined, skip, skipGames);
   await db
     .insert(sessionState)
     .values({
@@ -968,6 +984,8 @@ function composeRounds(
   pool: (typeof words.$inferSelect)[],
   native: NativeLang,
   only?: PlayableGame,
+  /** İstemcinin oynayamadığı oyunlar (bkz. `pickRound` `skipGames`). */
+  skipGames: readonly string[] = [],
 ): Round[] {
   const rounds: Round[] = [];
   let seq = 0;
@@ -1039,7 +1057,7 @@ function composeRounds(
           // isim, örnek cümlesi olmayan bir kelime) kelime atlanıyor. Zorla
           // başka bir oyuna düşmek, seçimi anlamsız kılardı.
           makeRound(only, item.word, pool, nextId, item.strength, native)
-        : pickRound(item.word, item.strength, pool, recent, nextId, native, item.bias, usage);
+        : pickRound(item.word, item.strength, pool, recent, nextId, native, item.bias, usage, skipGames);
     if (!round) continue;
     rounds.push(round);
     meta.set(round.id, item);
@@ -1116,6 +1134,16 @@ function pickRound(
   bias?: "recognition" | "production",
   /** Oturumda her oyunun kaç kez çıktığı; az çıkan öne alınır. */
   usage?: Map<string, number>,
+  /**
+   * İSTEMCİNİN OYNAYAMADIĞI oyunlar — aday kümeden tamamen çıkarılır.
+   *
+   * `avoid` ile aynı şey değil: `avoid` "arka arkaya gelmesin" diyor ve
+   * gerekirse geri düşüyor, bu ise "bu istemciye hiç göndermeyin" diyor.
+   * Bugünkü tek kullanıcısı mobil: `free_sentence` turunun mobilde oynatıcısı
+   * yok ve tur oraya gittiğinde bilinmeyen oyun dalına düşüp KENDİNİ
+   * ANLATMAYAN bir kart olarak çiziliyordu (bkz. web-parity §11.13).
+   */
+  skipGames?: readonly string[],
 ): Round | null {
   // Basamağa göre aday küme merdivende (lib/ladder.ts): sunucu, istemci ve
   // rapor aynı listeyi okuyor. Gerekçeler orada.
@@ -1124,7 +1152,13 @@ function pickRound(
   // meydan okuma/sınav dalgalarında hiç (hakemi AI, süresi belirsiz) ve
   // sağlayıcı varken — yedek hakem dilbilgisini ölçemiyor, onunla tur kurmak
   // öğrenciye ölçülmeyen bir iş yaptırmak olurdu.
-  if (strength === "strong" && !bias && (usage?.get("free_sentence") ?? 0) < FREE_SENTENCE_PER_SESSION && chatConfigured()) {
+  if (
+    strength === "strong" &&
+    !bias &&
+    (usage?.get("free_sentence") ?? 0) < FREE_SENTENCE_PER_SESSION &&
+    chatConfigured() &&
+    !skipGames?.includes("free_sentence")
+  ) {
     candidates.push("free_sentence");
   }
   // Parçaları ekranda olsa da bu oyunlar öğrenciden bir şey **kurmasını**
@@ -1138,8 +1172,11 @@ function pickRound(
         : candidates;
 
   const banned = new Set(Array.isArray(avoid) ? avoid : [avoid]);
-  const usable = tuned.filter((g) => !banned.has(g));
-  const order = usable.length ? usable : tuned;
+  /* `skipGames` geri düşüşten de muaf: `avoid` boşalınca `tuned`a dönüyor ama
+     oynanamayan oyun hiçbir koşulda geri gelmemeli. */
+  const playable = skipGames?.length ? tuned.filter((g) => !skipGames.includes(g)) : tuned;
+  const usable = playable.filter((g) => !banned.has(g));
+  const order = usable.length ? usable : playable;
 
   // Sıralama iki aşamalı ve ikisi de gerekli:
   //

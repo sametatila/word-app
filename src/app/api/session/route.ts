@@ -4,7 +4,7 @@ import { getUserId } from "@/lib/auth/server";
 import { sameOrigin } from "@/lib/auth/origin";
 import { buildWalk, clearSessionState, loadSession, saveSessionProgress } from "@/lib/session";
 import { parseProgress } from "@/lib/progress";
-import { PLAYABLE_GAMES, type PlayableGame } from "@/lib/types";
+import { GAME_LABEL_KEYS, PLAYABLE_GAMES, type PlayableGame } from "@/lib/types";
 
 export const dynamic = "force-dynamic";
 
@@ -43,10 +43,28 @@ export async function GET(req: Request) {
     .map((x) => Number.parseInt(x, 10))
     .filter((n) => Number.isInteger(n) && n > 0)
     .slice(-SKIP_LIMIT);
+  /*
+    İstemcinin OYNAYAMADIĞI oyunlar: "?skipGames=free_sentence".
+
+    `skip` kelime atlıyor, bu OYUN atlıyor. Mobilin `free_sentence` turunu
+    oynatan bir bileşeni yok; tur oraya gittiğinde bilinmeyen oyun dalına
+    düşüp kendini anlatmayan bir kart olarak çiziliyordu (bkz. web-parity
+    §11.13). Haftalık sınav aynı süzgeci kendi ucunda zaten taşıyor.
+
+    Ayıklama `GAME_LABEL_KEYS` ile: `PLAYABLE_GAMES` TEK OYUN pratiğinin
+    listesi ve `free_sentence` orada yok (o tur tek başına oynanmıyor), yani
+    onunla süzmek istenen adı sessizce düşürürdü. Haftalık uç da aynı kümeye
+    bakıyor. Bilinmeyen ad zararsız: yalnız tanınanlar bir şeyi değiştiriyor.
+  */
+  const skipGames = (url.searchParams.get("skipGames") ?? "")
+    .split(",")
+    .map((x) => x.trim())
+    .filter((g) => g in GAME_LABEL_KEYS)
+    .slice(0, 8);
   try {
     const payload = walk
       ? await buildWalk(userId, today, skip)
-      : await loadSession(userId, today, extra, only, skip);
+      : await loadSession(userId, today, extra, only, skip, skipGames);
     return NextResponse.json(payload);
   } catch (err) {
     console.error("[session]", err);

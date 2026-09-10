@@ -148,11 +148,22 @@ export function todayStr(): string {
 /** Günün turu (gerçek). Oturum yoksa ApiError(401) fırlar — çağıran girişe yönlendirir.
     `game`: tek-oyun pratiği (web'deki oyun seçici — ör. yalnız "artikel").
     `fresh`: "yeni tura başla" — önce kayıtlı turu atar, sonra yenisini kurar. */
+/**
+ * OYNAYAMADIĞIMIZ TUR TÜRLERİ SUNUCUYA SÖYLENİYOR.
+ *
+ * `free_sentence` (AI hakemli serbest cümle) turunun mobilde oynatıcısı yok:
+ * `pickRound` onu tanımıyor ve tur bilinmeyen oyun dalına düşüp kendini
+ * anlatmayan bir "cevabı gör" kartı olarak çiziliyordu. Sunucu bu turu sağlam
+ * kelimelerde ve AI açıkken karışık oturuma koyuyor, yani gerçekten geliyordu.
+ * Haftalık sınav çağrısı aynı süzgeci baştan beri taşıyor (bkz. `game/weekly`).
+ */
+const SKIP_GAMES = "free_sentence";
+
 export async function fetchSession(day = todayStr(), opts?: { extra?: boolean; walk?: boolean; game?: string; fresh?: boolean; skip?: number[] }): Promise<SessionPayload> {
   if (opts?.fresh) { try { await api("/api/session", { method: "DELETE" }); } catch { /* yut */ } }
   // walk devam turları: sorulan kelimeleri hariç tut (sunucu en fazla 200 alır).
   const skip = opts?.skip && opts.skip.length ? `&skip=${opts.skip.slice(-200).join(",")}` : "";
-  const q = `${opts?.extra ? "&extra=1" : ""}${opts?.walk ? "&walk=1" : ""}${opts?.game ? `&game=${opts.game}` : ""}${skip}`;
+  const q = `&skipGames=${SKIP_GAMES}${opts?.extra ? "&extra=1" : ""}${opts?.walk ? "&walk=1" : ""}${opts?.game ? `&game=${opts.game}` : ""}${skip}`;
   return api<SessionPayload>(`/api/session?day=${day}${q}`);
 }
 

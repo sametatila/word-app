@@ -626,6 +626,34 @@ console.log("\n" + C.b + "18. TUR -> HATA TIPI" + C.off);
     Object.keys(IPUCLU).sort().map((g) => `${g}:${ipucu(read(`src/components/games/${g}-game.tsx`))}`),
   );
 
+  /*
+   * Oynanamayan tur turu susturuluyor mu. Sunucu `free_sentence`i karisik
+   * oturuma koyuyor ve mobilde onu cizen bir bilesen yok; istemci ucun
+   * `?skipGames=` suzgecini kullanmiyorsa tur oraya gidiyor (§11.13).
+   */
+  const susturma = (src, re) => (re.test(src) ? "susturuluyor" : "SUSTURULMUYOR");
+  sameList(
+    "free_sentence susturmasi",
+    [susturma(read("mobile/src/game/session.ts"), /skipGames=/)],
+    ["susturuluyor"],
+    "mobil oturum cagrisi",
+    "beklenen",
+  );
+  sameList(
+    "free_sentence susturmasi (haftalik)",
+    [susturma(read("mobile/src/game/weekly.ts"), /skipGames=/)],
+    ["susturuluyor"],
+    "mobil haftalik cagrisi",
+    "beklenen",
+  );
+  sameList(
+    "uc skipGames suzgeci",
+    [susturma(read("src/app/api/session/route.ts"), /skipGames/)],
+    ["susturuluyor"],
+    "oturum ucu",
+    "beklenen",
+  );
+
   /* `assist` alani: sunucu taze kelimenin ardindaki yazma turunda gonderiyor. */
   const asist = (src) => (/round\.assist/.test(src) ? "okunuyor" : "OKUNMUYOR");
   sameList(

@@ -1040,7 +1040,7 @@ dosyaya dokunmak onların yarım işini kırar. Kütüphane oturumu bittiğinde
 eklenecek tek şey: sağlayıcı/ağ hatasında aynı gövdeyi `/api/assess/queue`e
 POST etmek ve `assess.queued` benzeri bir satır göstermek.
 
-### 11.13 `free_sentence` turu mobilde YANLIŞ ÇİZİLİYOR (kayıt, karar gerekiyor)
+### 11.13 `free_sentence` turu mobilde yanlış çiziliyordu — KAPANDI
 
 Sunucu "Cümle Kur" turunu üretiyor (`lib/session` `free_sentence`): iki kelime
 veriliyor, öğrenci onlarla cümle yazıyor, hakem `/api/assess`. Koşullar —
@@ -1080,7 +1080,34 @@ translate, match) + `intro`; web on üçü tanıyor. Fark yalnız `free_sentence
 `speak` de iki tarafta dağıtıcıda yok ama o yalnız yürüyüş modunda üretiliyor
 ve orada kendi oynatıcısı var — sorun değil.
 
-### 11.14 Ders ikonu: alan çalışıyor, ÇİZİMİ iki platformda da yok
+#### Kapanış (bu tur)
+
+Yeniden ölçüldü ve HÂLÂ CANLIYDI: `/api/session` ucunda `skipGames` diye bir
+süzgeç yoktu (yalnız `skip`, o da kelime atlıyor) ve sunucu turu sağlam
+kelimede, AI açıkken, oturumda en çok iki kez karışık tura koyuyor. Mobil
+`pickRound` `free_sentence`i tanımadığı için tur bilinmeyen oyun dalına
+düşüyor ve `SelfAssess` olarak çiziliyordu: kullanıcı "hatırla → cevabı gör →
+zorlandım/anladım" kartı görüyor, hiç cümle yazmıyor ve yazmadığı bir şeyi
+kendi kendine değerlendiriyordu.
+
+Üç seçenekten İKİNCİSİ uygulandı (turu mobile hiç göndermemek), çünkü aynı
+çözüm haftalık sınav ucunda zaten vardı ve kodda kurulu bir kalıptı:
+
+  - `/api/session` artık `?skipGames=` alıyor. Ayıklama `GAME_LABEL_KEYS` ile,
+    `PLAYABLE_GAMES` ile DEĞİL: ikincisi tek-oyun pratiğinin listesi ve
+    `free_sentence` orada yok, onunla süzmek istenen adı sessizce düşürürdü.
+  - Süzgeç `loadSession` → `buildSession` → `composeRounds` → `pickRound`
+    zincirinden geçiyor ve `pickRound`ta İKİ yerde etkili: aday kümeye hiç
+    eklenmiyor, ayrıca `avoid` boşalınca yapılan geri düşüşten de muaf -
+    oynanamayan oyun hiçbir koşulda geri gelmemeli.
+  - Mobil `fetchSession` her çağrıda `skipGames=free_sentence` gönderiyor.
+
+Kapı: `parity-check` 18. bölüm üç şeyi denetliyor - mobil oturum çağrısı,
+mobil haftalık çağrısı ve ucun süzgeci. Biri kalkarsa kapı söylüyor.
+
+Oynatıcı yazmak (birinci seçenek) hâlâ açık bir iş: tur webde var ve AI
+hakemli yazma mobilde hiç yok. Bu kapanış "mobil artık YANLIŞ bir şey
+göstermiyor" demek, "mobil de oynuyor" demek değil.### 11.14 Ders ikonu: alan çalışıyor, ÇİZİMİ iki platformda da yok
 
 `LESSON_ICONS` 65 konu simgesi tanımlıyor ve yorumu ne için olduğunu söylüyor:
 "yol haritasındaki düğüm simgesi — dersin konusunu tek bakışta söylüyor".
