@@ -94,4 +94,24 @@ assert.ok(!spokenMatches(["limitation."], ["limitation period"], "de"), "Almanca
 assert.ok(spokenMatches(["the"], ["the"], "en"), "yalnız tanımlık olan cevap yine eşleşir");
 assert.ok(matchesAnswer("der", ["der"], "de"), "yazılan tek tanımlık da eşleşir");
 
+/*
+ * BOŞLUKSUZ OKUMALAR — tanıyıcı bileşiği bölüyor.
+ *
+ * Mobil (`lib/voiceMatch`) iki ek okuma yapıyordu, web hiç yapmıyordu:
+ * boşlukları atarak ve sayı katlamadan. Havuzda 2313 uzun Almanca bileşik var
+ * ve tanıyıcı bunları ayırıyor.
+ *
+ * İçerme eşiği bu okumalarda ayrı ve 12: boşluk sınırı olmadığı için kısa bir
+ * hedef başka bir kelimenin içinde tesadüfen geçiyor ("was" ⊂ "das Wasser").
+ */
+assert.ok(spokenMatches(["Anruf Beantworter"], ["Anrufbeantworter"], "de"), "bolunmus bilesik birlesince hedefe esit");
+// Tireli başlık ("t shirt" ↔ "T-Shirt") HENÜZ eşleşmiyor: tire webin
+// `normalize` noktalama kümesinde yok ve kümeyi genişletmek `scramble-game`in
+// karo karşılaştırmasıyla çakışıyor (bkz. web-parity §11.18/d).
+assert.ok(!spokenMatches(["t shirt"], ["T-Shirt"], "en"), "tireli baslik: bilinen eksik, d maddesi");
+assert.ok(spokenMatches(["ähm Anruf Beantworter bitte"], ["Anrufbeantworter"], "de"), "bolunme + dolgu: uzun hedefte icerme bagisli");
+assert.ok(!spokenMatches(["das Wasser"], ["was"], "de"), "kisa hedef baska kelimenin icinde gecince DOGRU SAYILMAZ");
+assert.ok(!spokenMatches(["das Geschlecht"], ["schlecht"], "de"), "aynisi: schlecht ⊂ Geschlecht");
+assert.ok(spokenMatches(["die Katze"], ["Katze"], "de"), "normal okuma bozulmadi");
+
 console.log("test:numbers — sözcük/rakam/bileşik/artikel/cümle/kelime/telaffuz/noktalama: tamam");

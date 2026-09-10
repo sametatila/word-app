@@ -1188,21 +1188,30 @@ yoksa üç kategoride birden çift olur.
 ### 11.18 Cevap eşleştirmesi: webin kalan Almanca varsayımları
 
 Ölçüm — mobil eşleştirici dile bakıyor, web büyük ölçüde Almancaya sabitti.
-İkisi bu turda üç noktada eşitlendi (bkz. commit "Web cevap eşleştirmesi dile
-bakıyor"): tanımlık tablosu, tanıyıcı noktalama tablosu, kesme işareti. Kalan
-dört şey ölçüldü ve BİLEREK bırakıldı; sırayla nedenleri:
+İkisi üç noktada eşitlendi (commit "Web cevap eşleştirmesi dile bakıyor"):
+tanımlık tablosu, tanıyıcı noktalama tablosu, kesme işareti. Sonra a ve b de
+port edildi (commit "Boşluksuz okumalar webe de geldi"). Kalan maddeler ve
+nedenleri:
 
-**a) Boşluksuz ikinci okuma (`foldTight`).** Tanıyıcı Almanca bileşikleri
-ayırıyor ("Anrufbeantworter" → "Anruf Beantworter"; havuzda 2313 uzun bileşik)
-ve tireli İngilizce başlıkları boşlukla yazıyor ("t-shirt" → "t shirt").
-Mobil boşlukları tamamen atan bir ikinci okuma yapıyor, web yapmıyor. Port
-edilebilir ve edilmeli - bu turda yapılmadı çünkü tek başına bir tur işi ve
-`normalize`ın noktalama kümesiyle birlikte düşünülmesi gerekiyor (aşağıdaki d).
+**a) Boşluksuz ikinci okuma — PORT EDİLDİ.** Tanıyıcı Almanca bileşikleri
+ayırıyor ("Anrufbeantworter" → "Anruf Beantworter"; havuzda 2313 uzun bileşik).
+Web artık aynı okumayı yapıyor.
 
-**b) Ham harf okuması (`foldLetters`).** Mobilin üçüncü geçişi: sayı katlaması
-YAPILMADAN sıkıştırılmış karşılaştırma. Gerekçesi kayıtlı: tanıyıcı bileşiği
-bölünce ikinci parça sayı sözcüğü olabiliyor ("Fasnacht" → "Fasn acht" →
-katlanmış "fasn 8" artık orijinaline benzemiyor). Webde bu geçiş yok.
+**b) Ham harf okuması — PORT EDİLDİ.** Sayı katlaması YAPILMADAN sıkıştırılmış
+karşılaştırma; webin `normalize`ı sayıya dokunmadığı için karşılığı hazırdı.
+Gerekçesi kayıtlı: tanıyıcı bileşiği bölünce ikinci parça sayı sözcüğü
+olabiliyor ("Fasnacht" → "Fasn acht" → katlanmış "fasn 8" artık orijinaline
+benzemiyor).
+
+**a/b ile birlikte ÇIKAN VE İKİ TARAFTA DA DÜZELTİLEN hata:** bu iki okumada
+boşluk sınırı kalktığı için içerme tehlikeli. Hedef "was", söylenen "das
+Wasser" → sıkıştırılmış biçim hedefi içeriyordu ve yanlış cevap doğru
+sayılıyordu; Android bunu baştan beri yapıyordu. Ders havuzundaki 5164 başlık
+ölçüldü: 3 harf eşiğinde 1310 hedef başka bir başlığın içinde geçiyor, 12
+harfte 22 ("der Chef" ⊂ "die Chefin" gibi türevler). Bu iki okumanın içerme
+eşiği ayrıldı ve 12 yapıldı - bölünmüş bileşik zaten EŞİTLİKLE yakalanıyor,
+içerme yalnız bölünme artı dolgu sözcüğü bir aradayken gerekiyor ve orada
+hedef hep uzun. Referansı düzeltmek gerekti: iki taraf yine eşit.
 
 **c) İngilizce sayı sözcükleri.** Web `lib/german-numbers.ts` yalnız Almanca;
 mobil `lib/numbers.ts` İngilizce ölçek ("two hundred thousand"), bileşik
@@ -1215,8 +1224,14 @@ satır değil: webde `foldNumbers(text)` imzası dilsiz ve `foldSpelling` içind
 parantez ve okları da boşluğa çeviriyor; web `normalize` yalnız `.,!?;:`
 yapıyor. Kümeyi genişletmek TEK BAŞINA GÜVENLİ DEĞİL: `scramble-game` harf
 karolarını birleştirip `normalize` ile karşılaştırıyor ve tireyi boşluğa
-çevirmek "E-Mail" gibi bir başlıkta iki tarafı ayırıyor. Karo oyununun
-karşılaştırması ayrıca düşünülmeli.
+çevirmek "E-Mail" gibi bir başlıkta iki tarafı ayırıyor.
+
+Ölçülebilir sonucu: tireli başlık webde hâlâ eşleşmiyor ("t shirt" ↔
+"T-Shirt"), mobilde eşleşiyor. `test:numbers` bunu BİLİNEN EKSİK olarak
+sınıyor, yani düzeltilince test kırılır ve bu satır güncellenir. Çözüm yolu da
+ölçüldü: mobil karo oyununun karşılaştırmasını `foldTight` ile yapıyor
+(`game/rounds` 618/633), yani webin `scramble-game`i de sıkıştırılmış
+karşılaştırmaya geçirilirse noktalama kümesi güvenle genişletilebilir.
 
 **e) Kısaltmalar - iki platformda da yok.** İngilizce derslerde 338 konuşma
 adımı kısaltma taşıyor (181 repeat, 157 produce: "I'm from Turkey.",

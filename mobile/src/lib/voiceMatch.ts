@@ -85,6 +85,22 @@ function acceptedForms(raw: string): string[] {
 
 const CONTAINS_MIN = 3; // fazla kelime bağışlanır ama yalnız ≥3 harfli hedeflerde
 
+/*
+ * BOŞLUKSUZ OKUMALARDA İÇERME EŞİĞİ AYRI VE YÜKSEK.
+ *
+ * Boşluk sınırı kalktığı için kısa bir hedef başka bir kelimenin İÇİNDE
+ * tesadüfen geçiyor ve yanlış cevap doğru sayılıyor: hedef "was", söylenen
+ * "das Wasser" → sıkıştırılmış biçim hedefi içeriyor. Ders havuzundaki 5164
+ * başlık ölçüldü - 3 harf eşiğinde 1310 hedef başka bir başlığın içinde
+ * geçiyor, 12 harfte 22 (onlar da "der Chef" ⊂ "die Chefin" gibi türevler).
+ *
+ * 12 seçildi çünkü bu okumanın DERDİ uzun bileşikler: tanıyıcı
+ * "Anrufbeantworter"ı bölünce parçaların birleşimi hedefe EŞİT oluyor ve
+ * eşitlik zaten sınanıyor; içerme yalnız bölünme ARTI dolgu sözcüğü aynı
+ * anda olduğunda gerekiyor ve orada hedef hep uzun.
+ */
+const TIGHT_CONTAINS_MIN = 12;
+
 /**
  * Duyulanlardan biri beklenen biçimlerden birine uyuyor mu? Tam eşleşme ya da
  * (hedef ≥3 harf) kelime-sınırlı içerme ("ähm die Katze bitte" → Katze).
@@ -120,9 +136,9 @@ export function spokenMatches(heard: string[], candidates: string[]): boolean {
     if (f) {
       if (forms.some((form) => f === form || (form.length >= CONTAINS_MIN && ` ${f} `.includes(` ${form} `)))) return true;
       const g = sikis(f);
-      if (forms2.some((form) => g === form || (form.length >= CONTAINS_MIN && g.includes(form)))) return true;
+      if (forms2.some((form) => g === form || (form.length >= TIGHT_CONTAINS_MIN && g.includes(form)))) return true;
       const h = ham(said);
-      if (h && forms3.some((form) => h === form || (form.length >= CONTAINS_MIN && h.includes(form)))) return true;
+      if (h && forms3.some((form) => h === form || (form.length >= TIGHT_CONTAINS_MIN && h.includes(form)))) return true;
     }
     // Son okuma: sözlü noktalama adı simgeden geri açılır. YALNIZ tam eşleşme —
     // içerme aranırsa "Hund." → "hund punkt" olur, içinde "punkt" geçer ve

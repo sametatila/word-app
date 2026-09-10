@@ -261,6 +261,22 @@ export function expandPunctuationWords(s: string, lang: TargetLang = currentTarg
  */
 const CONTAINS_MIN = 3;
 
+/*
+ * BOŞLUKSUZ OKUMALARDA İÇERME EŞİĞİ AYRI VE YÜKSEK.
+ *
+ * Boşluk sınırı kalktığı için kısa bir hedef başka bir kelimenin İÇİNDE
+ * tesadüfen geçiyor ve yanlış cevap doğru sayılıyor: hedef "was", söylenen
+ * "das Wasser" → sıkıştırılmış biçim hedefi içeriyor. Ders havuzundaki 5164
+ * başlık ölçüldü - 3 harf eşiğinde 1310 hedef başka bir başlığın içinde
+ * geçiyor, 12 harfte 22 (onlar da "der Chef" ⊂ "die Chefin" gibi türevler).
+ *
+ * 12 seçildi çünkü bu okumanın DERDİ uzun bileşikler: tanıyıcı
+ * "Anrufbeantworter"ı bölünce parçaların birleşimi hedefe EŞİT oluyor ve
+ * eşitlik zaten sınanıyor; içerme yalnız bölünme ARTI dolgu sözcüğü aynı
+ * anda olduğunda gerekiyor ve orada hedef hep uzun.
+ */
+const TIGHT_CONTAINS_MIN = 12;
+
 export function spokenMatches(heard: string[], candidates: string[], lang: TargetLang = currentTargetLang()): boolean {
   const forms = candidates
     .flatMap((c) => acceptedForms(c))
@@ -279,8 +295,43 @@ export function spokenMatches(heard: string[], candidates: string[], lang: Targe
     );
   const exact = (said: string) => !!said && forms.some((form) => said === form);
 
+  /*
+   * BOŞLUKSUZ İKİNCİ OKUMA. Tanıyıcı Almanca bileşikleri ayırıyor
+   * ("Anrufbeantworter" → "Anruf Beantworter"; havuzda 2313 uzun bileşik) ve
+   * tireli İngilizce başlıkları boşlukla yazıyor ("t-shirt" → "t shirt").
+   * Boşlukları tamamen atınca iki yazım da aynı dizeye iniyor. Mobil
+   * `lib/voiceMatch` bu okumayı baştan beri yapıyordu, web yapmıyordu.
+   *
+   * İçerme burada da bağışlı ama boşluk sınırı olmadan: sıkıştırılmış hedef
+   * sıkıştırılmış söylenenin içinde geçiyorsa doğru ("ähm anrufbeantworter"
+   * → "aehmanrufbeantworter" içinde "anrufbeantworter" var).
+   */
+  const tight = (x: string) => x.replace(/\s+/g, "");
+  const formsTight = forms.map(tight);
+  const looseTight = (said: string) => {
+    const g = tight(said);
+    return !!g && formsTight.some((form) => g === form || (form.length >= TIGHT_CONTAINS_MIN && g.includes(form)));
+  };
+
+  /*
+   * ÜÇÜNCÜ OKUMA: SAYI KATLANMADAN sıkıştırma. Tanıyıcı bileşiği bölünce
+   * ikinci parça sayı sözcüğü olabiliyor ("Fasnacht" → "Fasn acht") ve
+   * katlanmış biçim ("fasn 8") artık orijinaline benzemiyor; `normalize`
+   * sayıya dokunmadığı için ham okuma o yolu kapatıyor. Mobil karşılığı
+   * `lib/textFold` `foldLetters`.
+   */
+  const raw3 = (x: string) => normalize(x).replace(/\s+/g, "");
+  const formsRaw = candidates.flatMap((c) => acceptedForms(c)).map(raw3).filter(Boolean);
+  const looseRaw = (said: string) => {
+    const h = raw3(said);
+    return !!h && formsRaw.some((form) => h === form || (form.length >= TIGHT_CONTAINS_MIN && h.includes(form)));
+  };
+
   return heard.some((raw) => {
-    if (loose(foldKeep(raw, lang))) return true;
+    const said = foldKeep(raw, lang);
+    if (loose(said)) return true;
+    if (looseTight(said)) return true;
+    if (looseRaw(raw)) return true;
     const expanded = expandPunctuationWords(raw, lang);
     return expanded !== raw && exact(foldKeep(expanded, lang));
   });
