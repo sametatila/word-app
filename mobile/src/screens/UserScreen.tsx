@@ -130,6 +130,15 @@ export function UserScreen() {
             <StatTile value={formatNumber(data.stats.weeklyXp)} label={t("user.xp_this_week")} color={colors.primaryText} colors={colors} />
             <StatTile value={formatNumber(data.stats.totalXp)} label={t("user.total_xp")} color={colors.successText} colors={colors} />
             <StatTile value={String(data.stats.achievements)} label={t("user.badge")} color={colors.accentText} colors={colors} />
+            {/*
+              EN UZUN SERİ VE SON AKTİF GÜN sunucudan geliyordu ama hiç
+              çizilmiyordu: tip iki alanı da taşıyor (`PublicProfileView`),
+              ekran dördünü gösterip ikisini düşürüyordu. Web profili altısını
+              da yazıyor. "Son aktif" bir arkadaşa dürtme göndermeden önce
+              bakılan şey; onsuz dürtme körlemesine gidiyordu.
+            */}
+            <StatTile value={String(data.stats.longestStreak)} label={t("user.longest_streak")} color={colors.streakText} colors={colors} />
+            <StatTile value={data.stats.lastActiveDay ? new Date(`${data.stats.lastActiveDay}T00:00:00`).toLocaleDateString(dateLocale(), { day: "numeric", month: "short" }) : "—"} label={t("user.last_active")} color={colors.textMuted} colors={colors} />
           </View>
         ) : (
           <View style={{ marginBottom: spacing.lg }}>
