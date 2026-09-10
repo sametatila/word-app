@@ -76,7 +76,7 @@ export function AppHeader({ title, subtitle }: { title: string; subtitle?: strin
             {streak}
           </Link>
         ) : null}
-        <NotificationBell className="muted" />
+        <NotificationBell />
         <Link
           href="/profile"
           prefetch={false}

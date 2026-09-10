@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { BellIcon } from "@/components/icons";
+import { InboxIcon } from "@/components/icons";
 import { useT } from "@/lib/i18n/client";
 
 /**
@@ -13,6 +13,13 @@ import { useT } from "@/lib/i18n/client";
  * Hedefi `/inbox`: rozet gelen kutusunun sayacı ve artık gelen kutusunun kendi
  * adresi var. Önce `/notifications`e gidiyordu — orası bildirim AYARLARI değil
  * ama aynı listeyi ikinci kez çiziyordu; mobilde zil `InboxScreen`e götürüyor.
+ *
+ * İKON VE KAP ANDROID'İN (`social/InboxBell`): gelen kutusu ikonu 44'lük bir
+ * `surface-2` karonun içinde. Web zil ikonu kullanıyordu ve düğme 32 piksel,
+ * kapsız, soluk renkteydi — hem başlıktaki öteki iki hedefle (seri rozeti,
+ * avatar) aynı ağırlıkta değildi hem de 44'lük dokunma hedefinin altındaydı.
+ * Zil ikonu ayrıca yanlış şeyi söylüyor: burası hatırlatma ayarı değil, gelen
+ * kutusu.
  */
 export function NotificationBell({ className = "" }: { className?: string }) {
   const t = useT();
@@ -45,11 +52,17 @@ export function NotificationBell({ className = "" }: { className?: string }) {
     };
   }, []);
   return (
-    <Link href="/inbox" prefetch={false} aria-label={unread ? t("inbox.bell_unread", { n: unread }) : t("inbox.bell")} className={`relative flex h-8 w-8 shrink-0 items-center justify-center rounded-full ${className}`}>
-      <BellIcon size={20} />
+    <Link
+      href="/inbox"
+      prefetch={false}
+      aria-label={unread ? t("inbox.bell_unread", { n: unread }) : t("inbox.bell")}
+      className={`pressable relative flex h-11 w-11 shrink-0 items-center justify-center ${className}`}
+      style={{ borderRadius: "var(--radius-tile)", background: "var(--surface-2)", color: "var(--text)" }}
+    >
+      <InboxIcon size={20} />
       {unread > 0 ? (
         <span
-          className="absolute -right-0.5 -top-0.5 min-w-[16px] rounded-full px-1 text-center text-[10px] font-black leading-4"
+          className="absolute -right-[3px] -top-[3px] min-w-[18px] rounded-full px-1 text-center text-[10px] font-black leading-[18px]"
           /* Sayaç rozeti: parlak kehribar zemin + mürekkep yazı (6.04).
              Beyaz yazı açık temada 5.20 veriyordu ama koyu temada
              `--color-flame` 300'e düşüyor ve 1.49'a iniyordu - okunmuyordu. */
