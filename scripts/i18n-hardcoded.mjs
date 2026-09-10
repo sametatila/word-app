@@ -77,10 +77,33 @@ const SKIP = [
  * Üçü de İngilizce ve Almanca arayüzde Türkçe görünüyordu ve tarayıcı hiçbirini
  * göremiyordu: dizin atlanıyor.
  *
- * Liste yalnız MANTIK dosyalarını taşıyor, içerik dosyalarını değil. Uzarsa
- * kapı güçlenir; kısalması bir kör noktayı geri açmak demektir.
+ * Liste yalnız MANTIK dosyalarını taşıyor, içerik dosyalarını değil
+ * (`content/`, `generated/`, karakterler, replik sabitleri dışarıda kalıyor).
+ * Uzarsa kapı güçlenir; kısalması bir kör noktayı geri açmak demektir.
+ *
+ * ÖLÇÜLDÜ, dosya dosya. Listede yalnız BUGÜN TEMİZ olan mantık dosyaları var
+ * (altısı sıfır dizgi veriyor), yani kapı bedava güçleniyor. Kirli olanlar
+ * BİLEREK dışarıda ve borçları yazılı - hepsi tek seferde eklenirse taban
+ * 173'ten 281'e çıkardı ve kapı anlamını yitirirdi:
+ *
+ *   modules.ts          46   modül adları/açıklamaları (müfredat içeriği)
+ *   module-content.ts   35   bölüm etiketleri + içerik türetme
+ *   roleplay.ts         19   modele giden yönerge metni (kullanıcı görmüyor)
+ *   native-server.ts     4
+ *   log.ts               2
+ *   native.ts            2
+ *
+ * Bunları temizlemek ayrı bir iş: her biri "içerik mi arayüz mü" ayrımı
+ * istiyor. Temizlenen dosya bu listeye eklenir.
  */
-const FORCE = ["lib/lessons/offline-roleplay.ts"].map((p) => path.join(SRC, ...p.split("/")));
+const FORCE = [
+  "lib/lessons/offline-roleplay.ts",
+  "lib/lessons/progress.ts",
+  "lib/lessons/boss.ts",
+  "lib/lessons/module-exam/index.ts",
+  "lib/lessons/index.ts",
+  "lib/lessons/types.ts",
+].map((p) => path.join(SRC, ...p.split("/")));
 
 const TURKISH_LETTERS = /[çğışöüÇĞİŞÖÜ]/;
 
@@ -164,7 +187,14 @@ const SEP = "";
 function walk(dir, out = []) {
   for (const entry of fs.readdirSync(dir)) {
     const p = path.join(dir, entry);
-    if (!FORCE.includes(p) && SKIP.some((s) => p === s || p.startsWith(s + path.sep))) continue;
+    /*
+     * Atlanan bir DİZİNE de inilebiliyor: içinde `FORCE` dosyası varsa
+     * dizinin kendisi atlanamaz, yoksa liste hiç işlemez (ilk yazımda tam
+     * bu oldu - `FORCE` yalnız dosya yolunu karşılaştırıyordu ve dizin
+     * daha önce atlandığı için o dosyaya hiç ulaşılmıyordu).
+     */
+    const forced = FORCE.includes(p) || FORCE.some((f) => f.startsWith(p + path.sep));
+    if (!forced && SKIP.some((s) => p === s || p.startsWith(s + path.sep))) continue;
     const st = fs.statSync(p);
     if (st.isDirectory()) walk(p, out);
     else if (/\.tsx?$/.test(entry)) out.push(p);

@@ -932,8 +932,28 @@ görünüyorlardı.
 Ham metin tarayıcısı bunları GÖREMİYORDU: `lib/lessons` dizini "ders içeriği"
 diye bütünüyle atlanıyor, oysa bu dosya MANTIK. Kör noktanın kendisi de
 kapatıldı - tarayıcıya `FORCE` listesi eklendi: atlanan dizinin içinde olsa da
-taranan dosyalar. Liste şimdilik tek dosya taşıyor ve yalnız uzayabilir;
-kısalması bir kör noktayı geri açmak demek.
+taranan dosyalar.
+
+MEKANİZMA İLK YAZIMDA İŞLEMİYORDU ve bunu ancak sınayarak gördüm: `FORCE`
+yalnız DOSYA yolunu karşılaştırıyordu, ama gezinme atlanan DİZİNDE zaten
+duruyor ve o dosyaya hiç inmiyordu. Yani liste sessizce etkisizdi - kapının
+"eklendi" demesi yetmiyor, yakaladığını görmek gerekiyor. Düzeltildikten
+sonra sınandı: `progress.ts`e ham bir Türkçe dizgi konduğunda kapı
+"progress.ts: 0 → 1" diyor.
+
+Liste yalnız BUGÜN TEMİZ olan mantık dosyalarını taşıyor (altısı sıfır dizgi
+veriyor), yani kapı bedava güçleniyor. Kirli olanlar bilerek dışarıda ve
+borçları betikte yazılı - hepsi birden eklenirse taban 173'ten 281'e çıkardı:
+
+    modules.ts          46   modül adları/açıklamaları (müfredat içeriği)
+    module-content.ts   35   bölüm etiketleri + içerik türetme
+    roleplay.ts         19   modele giden yönerge (kullanıcı görmüyor)
+    native-server.ts     4
+    log.ts               2
+    native.ts            2
+
+Her biri "içerik mi arayüz mü" ayrımı istiyor; temizlenen dosya listeye
+eklenir.
 
 Yönlendirmeler artık ANAHTAR taşıyor (metin değil) ve çeviri gösterildiği
 yerde yapılıyor - koç cümleleri ve fark vurgusundaki kalıbın aynısı. Senaryo
