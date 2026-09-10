@@ -5411,3 +5411,24 @@ Gerçek eksik daha küçüktü ve şimdi kapandı: **yanıt hiç okunmuyordu**. 
 bir `grep` kadar uzaktaydı. Bir sonraki tura devredilen her şüphe, devredilirken
 şüphe olarak işaretlenmeli — burada öyle yapılmıştı ve düzeltme ucuz oldu; ölçüm
 yapılmadan defterde "bulgu" diye dursaydı yanlış bir iş sırası doğururdu.
+
+### 11.144 Beceri ilerlemesi cihaza hapsolmuştu
+
+§11.143'ün tersi: derste sunucu kaynaktı, **beceri egzersizlerinde değildi**.
+Mobilin "bitti" kümesi yalnız **o cihazda** bitirilenleri biliyordu. Sonucu:
+
+- Webde çalışan kullanıcı Android'i açınca liste **hiç dokunulmamış** görünüyor.
+- "Sıradaki egzersiz" önerisi baştan başlıyor — yani öneri de yanlış.
+- Yeni cihaz / yeniden kurulum aynı sonuç.
+
+Sunucu durumu (`GET /api/skills`) aylardır duruyor ve mobilde onu okuyan hiçbir
+şey yoktu (web `syncSkillProgress` ile okuyor). Birleştirme tek yönlü değil:
+sunucudan gelenler yerele ekleniyor, yerelde olup sunucuda olmayanlar
+(çevrimdışı bitirilmiş) korunuyor. Önce yerel çiziliyor, sonra sunucu — liste
+beklemiyor. Puan rozeti de eklendi: "bitti" ile "iyi bitti" aynı şey değil.
+
+**Kapının kör noktası — kayda geçsin:** §11.136'da kurduğum "web çağırıyor,
+mobil çağırmıyor" kuralı bunu **görmedi**, çünkü mobil aynı yolu POST için
+zaten anıyordu. Kural **yolu** eşliyor, **yöntemi** değil. Aynı ucun bir
+yönteminin tek platformda kalması, ucun tamamen tek platformda kalması kadar
+sessiz. Yöntem ayrımını da ölçmek gerekiyor — bir sonraki turun işi.
