@@ -1,5 +1,6 @@
 import React, { useEffect, useMemo, useState } from "react";
-import { t, nativeLangName, targetLangName } from "../lib/i18n";
+import { t, nativeLangName, targetLangName, formatNumber } from "../lib/i18n";
+import { useMe } from "../lib/useMe";
 import { View, TextInput, FlatList } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { useNavigation } from "@react-navigation/native";
@@ -23,6 +24,9 @@ const FILTERS: { key: "" | WordStatus; label: string }[] = [
   { key: "mastered", label: "words.status_mastered" },
 ];
 
+/** Seviye süzgeci — boş "hepsi" demek; uç aynı beş değeri kabul ediyor. */
+const LEVELS = ["", "A1", "A2", "B1", "B2", "C1"];
+
 /* Renkler web `word-list` `statusOf` tonlarıyla aynı rolde: mastered mint,
    familiar sky, learning flame, leech rose, new soluk. */
 function statusColor(s: WordStatus, colors: Palette): string {
@@ -42,6 +46,10 @@ export function WordsScreen() {
   const nav = useNavigation<{ goBack: () => void }>();
   const { user } = useAuth();
   const [q, setQ] = useState("");
+  /* Seviye süzgeci: uç `?level=` destekliyordu (web listesi kullanıyor) ama
+     mobil hiç göndermiyordu - kullanıcı yalnız seviyesindeki kelimeleri
+     ayıramıyordu. */
+  const [level, setLevel] = useState("");
   const [filter, setFilter] = useState<"" | WordStatus>("");
   const [remote, setRemote] = useState<WordRow[] | null>(null);
   const [phase, setPhase] = useState<"loading" | "ready" | "error">("loading");
@@ -55,13 +63,15 @@ export function WordsScreen() {
     const params = new URLSearchParams();
     if (q.trim()) params.set("q", q.trim());
     if (filter) params.set("status", filter);
+    if (level) params.set("level", level);
     api<{ words: WordRow[] }>(`/api/words?${params.toString()}`)
       .then((d) => { if (alive) { setRemote(d.words ?? []); setPhase("ready"); } })
       .catch(() => { if (alive) setPhase("error"); });
     return () => { alive = false; };
-  }, [user, q, filter, attempt]);
+  }, [user, q, filter, level, attempt]);
 
   const list = useMemo(() => remote ?? [], [remote]);
+  const { me } = useMe();
 
   return (
     <View style={{ flex: 1, backgroundColor: colors.bg }}>
@@ -69,7 +79,23 @@ export function WordsScreen() {
         <PressableScale hitSlop={4} onPress={() => nav.goBack()} accessibilityLabel={t("common.back")} style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
           <ArrowBackIcon color={colors.text} size={24} />
         </PressableScale>
-        <Text variant="h2">{t("words.my_words")}</Text>
+        <View style={{ flex: 1 }}>
+          <Text variant="h2">{t("words.my_words")}</Text>
+          {/* İLERLEME ÖZETİ — web listesi başlığın altında yazıyor. Sayılar
+              zaten `useMe` içinde geliyordu (`mastered`, `totalWords`,
+              `dueCount`); mobil hiçbirini göstermiyordu, yani liste "kaç
+              kelime pekişti, kaçı tekrar sırasında" sorusuna cevap
+              vermiyordu. Ek istek yok. */}
+          {me ? (
+            <Text variant="caption" color={colors.textMuted}>
+              {t("words.progress_summary", {
+                mastered: formatNumber(me.mastered),
+                seen: formatNumber(me.totalWords),
+                due: me.dueCount ?? 0,
+              })}
+            </Text>
+          ) : null}
+        </View>
       </View>
 
       <View style={{ paddingHorizontal: spacing.lg, gap: spacing.md, paddingBottom: spacing.md }}>
@@ -83,6 +109,17 @@ export function WordsScreen() {
           autoCapitalize="none"
           style={{ backgroundColor: colors.surface, borderRadius: radii.lg, borderWidth: 1, borderColor: colors.border, paddingHorizontal: spacing.lg, paddingVertical: 12, color: colors.text, fontSize: 15 }}
         />
+        {/* Seviye şeridi — web listesindeki seviye süzgecinin karşılığı. */}
+        <View style={{ flexDirection: "row", gap: spacing.sm, flexWrap: "wrap" }}>
+          {LEVELS.map((lv) => {
+            const active = level === lv;
+            return (
+              <PressableScale key={lv || "all"} onPress={() => setLevel(lv)} style={{ paddingHorizontal: 12, paddingVertical: 7, borderRadius: radii.pill, backgroundColor: active ? colors.info : colors.surface2 }}>
+                <Text variant="caption" color={active ? colors.onFill : colors.textMuted}>{lv || t("words.filter_level")}</Text>
+              </PressableScale>
+            );
+          })}
+        </View>
         <View style={{ flexDirection: "row", gap: spacing.sm }}>
           {FILTERS.map((f) => {
             const active = filter === f.key;

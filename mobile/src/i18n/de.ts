@@ -1155,6 +1155,8 @@ export const de: Record<string, string> = {
   "why.article_plain": "Der Artikel gehört zum Wort; lerne ihn zusammen mit dem Wort.",
   "why.meaning_picked": "„{selected}“ ist die Bedeutung eines anderen Wortes; {word} = {meaning}.",
   "why.plural": "Richtiger Plural: die {plural}. Lerne den Plural zusammen mit dem Wort.",
+  "words.progress_summary": "{mastered} gefestigt · {seen} gesehen · {due} fällig",
+  "words.filter_level": "Niveau",
   "words.status_familiar": "vertraut",
   "words.status_leech": "schwierig",
   "words.due_now": "jetzt fällig",

@@ -1160,6 +1160,8 @@ export const tr: Record<string, string> = {
   "why.article_plain": "Artikel kelimenin parçası; kelimeyle birlikte öğren.",
   "why.meaning_picked": "“{selected}” başka bir kelimenin karşılığı; {word} = {meaning}.",
   "why.plural": "Doğru çoğul: die {plural}. Çoğulu kelimeyle birlikte öğren.",
+  "words.progress_summary": "{mastered} pekişti · {seen} görüldü · {due} tekrar sırada",
+  "words.filter_level": "Seviye",
   "words.status_familiar": "tanıdık",
   "words.status_leech": "zorlanıyorsun",
   "words.due_now": "tekrar zamanı geldi",

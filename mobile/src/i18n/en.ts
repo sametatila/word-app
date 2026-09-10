@@ -1155,6 +1155,8 @@ export const en: Record<string, string> = {
   "why.article_plain": "The article is part of the word; learn it together with the word.",
   "why.meaning_picked": "“{selected}” is another word's meaning; {word} = {meaning}.",
   "why.plural": "Correct plural: die {plural}. Learn the plural with the word.",
+  "words.progress_summary": "{mastered} mastered · {seen} seen · {due} due",
+  "words.filter_level": "Level",
   "words.status_familiar": "familiar",
   "words.status_leech": "struggling",
   "words.due_now": "due for review",
