@@ -102,7 +102,7 @@ jobs:
       # tümüyle türetilmiş, ayrışmaları ancak dökümün unutulması demek.
       - name: Döküm bütünlüğü
         run: npm run check:dumps
-      # Ana dil ekseninin on bir kapısı. On biri de SESSİZ bozulmaya karşı:
+      # Ana dil ekseninin on üç kapısı. On üçü de SESSİZ bozulmaya karşı:
       # çözücü bir parçanın karşılığını bulamayınca dersi tümden reddediyor
       # ve `localiseLesson` Türkçeye düşüyor — hiçbir yerde hata görünmüyor,
       # İngilizce kurs yalnızca Türkçe olarak açılıyor. Bir ders düzenlemesi
@@ -183,6 +183,13 @@ jobs:
       # yeni bir Türkçe alan eklenirse kapı yeşil kalır ve Türkçe doğrudan
       # Alman okurun ekranına çıkar. Tarama alan adına hiç bakmıyor,
       # 102.083 dize geziyor.
+      #
+      # `check:lessons-cando` ile `check:lessons-cando-de` dersin altındaki
+      # "bunu yapabileceksin" köprüsünün iki yönü, 131 ifade. İkisi de
+      # çözücüden GEÇMİYOR: karşılığı olmayan ifade hata vermiyor, sessizce
+      # DÜŞÜYOR — yani eksik bir çeviri ekranda yalnızca kısalık olarak
+      # görünür. Birincisi bugüne kadar hiç CI'da değildi; ikincisi
+      # yazılınca ikisi birlikte alındı.
       - name: Ana dil çözücüsü
         run: |
           npm run check:lessons-native
@@ -196,6 +203,8 @@ jobs:
           npm run check:skills-prose-de
           npm run check:skills-task-de
           npm run check:native-de
+          npm run check:lessons-cando
+          npm run check:lessons-cando-de
       # de→en kelime katmanının kapısı. Örnek cümlenin Almanca çevirisi
       # TÜRETİLEMİYOR ve bu ölçüldü: İngilizce örnek cümleler Almanca cümlenin
       # çevirisi değil, aynı kelime için BAĞIMSIZ yazılmış cümleler
