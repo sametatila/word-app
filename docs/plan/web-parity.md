@@ -1107,7 +1107,9 @@ mobil haftalık çağrısı ve ucun süzgeci. Biri kalkarsa kapı söylüyor.
 
 Oynatıcı yazmak (birinci seçenek) hâlâ açık bir iş: tur webde var ve AI
 hakemli yazma mobilde hiç yok. Bu kapanış "mobil artık YANLIŞ bir şey
-göstermiyor" demek, "mobil de oynuyor" demek değil.### 11.14 Ders ikonu: alan çalışıyor, ÇİZİMİ iki platformda da yok
+göstermiyor" demek, "mobil de oynuyor" demek değil.
+
+### 11.14 Ders ikonu: alan çalışıyor, ÇİZİMİ iki platformda da yok
 
 `LESSON_ICONS` 65 konu simgesi tanımlıyor ve yorumu ne için olduğunu söylüyor:
 "yol haritasındaki düğüm simgesi — dersin konusunu tek bakışta söylüyor".
@@ -1144,10 +1146,30 @@ webde `vibrate(kind)` önce `play(kind)` çağırıyor (masaüstünde titreşim 
 ses tek geri bildirim), mobilde `haptic(kind)` önce haptiği tetikleyip sonra
 `sfx(kind)` çağırıyor. Aynı tasarım, aynada.
 
-Cue kümesi farkı (web 13, mobil 7) çoğunlukla YÜZEY farkı: `danger` ve
-`record` yalnız meydan okuma ve boss oynatıcılarında çalıyor, ikisi de web'e
-özel. `start`, `perfect`, `stage` oturum oynatıcısında çalıyor ve mobilde
-karşılığı yok - küçük bir his farkı, ses dosyası gerektirmiyor.
+Cue kümesi farkı (web 13, mobil 7) çoğunlukla YÜZEY farkı: `start`, `perfect`,
+`stage` oturum oynatıcısında çalıyor ve mobilde karşılığı yok - küçük bir his
+farkı, ses dosyası gerektirmiyor.
+
+`danger` ve `record` bu kayıt yazıldığında "web'e özel" sayılıyordu çünkü
+yalnız meydan okuma ve boss oynatıcılarında çalıyorlardı. BOSS ARTIK MOBİLDE
+DE VAR (§11.25) ve iki cue de mobilde yok, yani ikisi artık gerçek fark:
+
+  - `danger` (son saniyelerde saniyede bir tık) mobil boss ekranında YOK.
+  - `record` (rekor kırıldığında yükselen dörtlü) yerine mobil `finish`
+    çalıyor - eksik ses değil, DAHA AZI: kapanış kadansı, kutlama değil.
+
+İkisini de eklemek teknik olarak açık ve yolu belli: notaları web
+`lib/sfx`ten aynen almak (`record`: 523.25/698.46/880/1174.66 arpej + altta
+tutulan 261.63), `mobile/src/lib/sfxNotes.ts`e yazmak, sonra
+`python3 mobile/scripts/render-sfx.py` ile iki paketin mp3'lerini üretip
+`--kotlin` ve `--swift` çıktılarını native dosyalara yapıştırmak. Bağımlılıklar
+bu makinede HAZIR (numpy 2.5.3, lame /usr/bin/lame) ve
+`mobile/__tests__/sfxNotes.test.ts` üç kopyanın eşitliğini zaten denetliyor.
+
+YAPILMADI çünkü sesin kendisi doğrulanamıyor: üretilen mp3'ü dinleyemem ve
+native tabloları yapıştırmak iki platformun ses yolunu değiştiriyor. Kazanç
+tek ekranda tek ses, riski iki native dosya. Karar Samet'in - notalar ve
+komut yukarıda, iş bir turluk.
 
 GERÇEK BOŞLUK: `unlock`. Web'de rozet açılışının kendi kutlaması var
 (`achievement-unlock`): sıraya alınmış tek rozet kartları, ikiden çoğunda
