@@ -651,7 +651,7 @@ export const tr: Record<string, string> = {
   "path.finish_previous": "Önce önceki üniteyi bitir",
   "path.lessons_done": "{n}/{total} konuşma",
   "path.next": "SIRADAKİ · {kind}",
-  "path.no_units": "Bu kursun konuşma patikası henüz yok; kelime turları ve yürüyüş modu açık.",
+  "path.no_units": "Bu seviyede konuşma patikası henüz yok; kelime turları ve yürüyüş modu açık.",
   "path.now": "ŞU AN",
   "path.path": "Patika",
   "path.module_exam_minutes": "20 dk",

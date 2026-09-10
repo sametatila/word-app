@@ -646,7 +646,7 @@ export const en: Record<string, string> = {
   "path.finish_previous": "Finish the previous unit first",
   "path.lessons_done": "{n}/{total} speaking",
   "path.next": "NEXT · {kind}",
-  "path.no_units": "This course has no speaking path yet; word rounds and walk mode are available.",
+  "path.no_units": "There is no speaking path at this level yet; word rounds and walk mode are available.",
   "path.now": "NOW",
   "path.path": "Path",
   "path.module_exam_minutes": "20 min",

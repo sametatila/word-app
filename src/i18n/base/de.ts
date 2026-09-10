@@ -648,7 +648,7 @@ export const deBase: Record<string, string> = {
   "path.finish_previous": "Beende zuerst die vorherige Einheit",
   "path.lessons_done": "{n}/{total} Sprechen",
   "path.next": "ALS NÄCHSTES · {kind}",
-  "path.no_units": "Für diesen Kurs gibt es noch keinen Sprechpfad; Wortrunden und Gehmodus sind verfügbar.",
+  "path.no_units": "Für dieses Niveau gibt es noch keinen Sprechpfad; Wortrunden und Gehmodus sind verfügbar.",
   "path.now": "JETZT",
   "path.path": "Pfad",
   "path.module_exam_minutes": "20 Min.",

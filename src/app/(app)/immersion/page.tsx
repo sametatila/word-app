@@ -57,10 +57,13 @@ export default async function ImmersionPage() {
     .filter((m): m is { index: number; plan: NonNullable<ReturnType<typeof moduleExamPlan>> } => Boolean(m.plan))
     .map(({ index, plan }) => ({ index, code: plan.code, titleTr: plan.titleTr, titleDe: plan.titleDe }));
 
-  /* DERS PAKETİ OLMAYAN KURSTA ÜNİTE ÜRETİLEMEZ (bugün gsw-zh böyle: diskte
-     hiç dersi yok, bkz. lib/lessons `lessonsFor`). Web bu durumda boş bir
-     Patika çiziyordu; kullanıcı ekranın bozulduğunu sanıyordu. Android sebebi
-     ve çalışan yolları söylüyor (`PathScreen`), web de artık söylüyor. */
+  /* BU SEVİYEDE ÜNİTE YOKSA. İki durum var ve ikisi de canlı: kursun hiç
+     dersi olmayabilir (gsw-zh) ya da dersleri BAZI seviyelerde bitmemiş
+     olabilir - İngilizce kursun bugün A1/A2'de 100'er dersi var, B1/B2/C1'de
+     hiç yok. Metin bu yüzden "bu kursun" değil "bu seviyede" diyor; kursun
+     tamamı yokmuş gibi konuşmak İngilizce öğrencisine yanlış bilgi veriyordu.
+     Web boş bir Patika çiziyordu, Android sebebi söylüyordu; ikisi de artık
+     aynı cümleyi kuruyor. */
   if (!state.units.length) {
     return (
       <div className="mx-auto w-full max-w-3xl">
