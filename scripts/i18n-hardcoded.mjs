@@ -59,7 +59,7 @@ const SKIP = [
   "lib/placement-demo.ts",
   "lib/why-rules.ts",
   "lib/assess-prompts.ts",
-  "lib/german-numbers.ts",
+  "lib/numbers.ts",
   "lib/moderation.ts",
   "app/admin",
   "app/(app)/analytics",

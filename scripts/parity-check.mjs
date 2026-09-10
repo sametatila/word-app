@@ -486,6 +486,26 @@ console.log("\n" + C.b + "15. KONUSMA ESLESTIRME TABLOLARI" + C.off);
   sameList("tanıyıcı noktalama sozcukleri", words(mobSrc), words(webSrc));
 }
 
+/* ── 16. sayi sozcugu modulu ─────────────────────────────────────────────── */
+/*
+ * `src/lib/numbers.ts` ile `mobile/src/lib/numbers.ts` gövdesi BİREBİR aynı
+ * olmalı. Modül karşılaştırma katlamasının içinde: ayrılırsa aynı cevap iki
+ * platformda farklı puan alır ve bunu hiçbir ekran göstermez. Web tarafı
+ * uzun süre yalnız Almanca yapıyordu (eski adı `german-numbers.ts`).
+ *
+ * Başlık yorumu karşılaştırmadan HARİÇ: iki dosya kendi tarafının hikâyesini
+ * anlatıyor. Kod gövdesi ilk bölüm ayracından başlıyor.
+ */
+console.log("\n" + C.b + "16. SAYI SOZCUGU MODULU" + C.off);
+{
+  const body = (p) => {
+    const src = read(p);
+    const i = src.indexOf("/* ─");
+    return (i < 0 ? src : src.slice(i)).trim().split("\n").map((l) => l.trimEnd());
+  };
+  sameList("sayi modulu govdesi", body("mobile/src/lib/numbers.ts"), body("src/lib/numbers.ts"));
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"

@@ -6,32 +6,32 @@
  * içeren kelimeleri (Einsamkeit) BOZMAMALI.
  */
 import assert from "node:assert/strict";
-import { foldNumbers, wordToNumber } from "../src/lib/german-numbers";
+import { foldNumbers, wordToNumber } from "../src/lib/numbers";
 import { foldSpelling, foldTight, spokenMatches, expandPunctuationWords, matchesAnswer } from "../src/components/games/types";
 import { matchSentence } from "../src/lib/sentence-match";
 import { normalizeSpoken } from "../src/lib/speech";
 
 // Tek sözcük → sayı
-assert.equal(wordToNumber("fünf"), 5);
-assert.equal(wordToNumber("fuenf"), 5);
-assert.equal(wordToNumber("zwanzig"), 20);
-assert.equal(wordToNumber("einundzwanzig"), 21);
-assert.equal(wordToNumber("fünfunddreißig"), 35);
-assert.equal(wordToNumber("hundert"), 100);
-assert.equal(wordToNumber("eins"), 1);
+assert.equal(wordToNumber("fünf", "de"), 5);
+assert.equal(wordToNumber("fuenf", "de"), 5);
+assert.equal(wordToNumber("zwanzig", "de"), 20);
+assert.equal(wordToNumber("einundzwanzig", "de"), 21);
+assert.equal(wordToNumber("fünfunddreißig", "de"), 35);
+assert.equal(wordToNumber("hundert", "de"), 100);
+assert.equal(wordToNumber("eins", "de"), 1);
 // Artikel ve sayı içeren kelime SAYI DEĞİL
-assert.equal(wordToNumber("ein"), null, "ein artikeldir, sayı değil");
-assert.equal(wordToNumber("eine"), null);
-assert.equal(wordToNumber("einsamkeit"), null, "sayı içeren kelime çevrilmez");
-assert.equal(wordToNumber("haus"), null);
+assert.equal(wordToNumber("ein", "de"), null, "ein artikeldir, sayı değil");
+assert.equal(wordToNumber("eine", "de"), null);
+assert.equal(wordToNumber("einsamkeit", "de"), null, "sayı içeren kelime çevrilmez");
+assert.equal(wordToNumber("haus", "de"), null);
 
 // Metin içinde
-assert.equal(foldNumbers("um fünf Uhr"), "um 5 Uhr");
-assert.equal(foldNumbers("ich habe zwei Kinder"), "ich habe 2 Kinder");
-assert.equal(foldNumbers("einundzwanzig Jahre"), "21 Jahre");
+assert.equal(foldNumbers("um fünf Uhr", "de"), "um 5 Uhr");
+assert.equal(foldNumbers("ich habe zwei Kinder", "de"), "ich habe 2 Kinder");
+assert.equal(foldNumbers("einundzwanzig Jahre", "de"), "21 Jahre");
 // Artikel korunuyor
-assert.equal(foldNumbers("ein Buch"), "ein Buch");
-assert.equal(foldNumbers("eine Frau und ein Mann"), "eine Frau und ein Mann");
+assert.equal(foldNumbers("ein Buch", "de"), "ein Buch");
+assert.equal(foldNumbers("eine Frau und ein Mann", "de"), "eine Frau und ein Mann");
 
 // Cümle eşleştirme: "fünf" ↔ "5" tam doğru sayılmalı
 assert.equal(matchSentence("Es ist 5 Uhr.", "Es ist fünf Uhr.").verdict, "exact", "rakam ve sözcük eşleşmeli");
@@ -130,5 +130,42 @@ assert.equal(foldTight("auf Wiedersehen", "de"), foldTight("aufWiedersehen", "de
 // `acceptedForms` de dile bakıyor: simge tablosu ve baştaki tanımlık.
 assert.ok(spokenMatches(["door"], ["the door"], "en"), "acceptedForms İngilizce tanımlığı düşürür");
 assert.ok(spokenMatches(["Bekannte"], ["die Bekannte"], "de"), "Almanca tanımlık eskisi gibi");
+
+/*
+ * İNGİLİZCE SAYI SÖZCÜKLERİ — modül `lib/german-numbers`ten `lib/numbers`e
+ * taşındı ve mobil `mobile/src/lib/numbers.ts` ile birebir aynı.
+ *
+ * Web yalnız Almanca yapıyordu: "forty-two" hedefi tanıyıcının yazdığı "42"
+ * ile hiçbir zaman eşleşmiyordu. Almanca tarafta da eksik vardı - çarpımsal
+ * bileşikler ("achthundert", "dreißigtausend") çözülmüyordu.
+ */
+assert.equal(wordToNumber("five", "en"), 5);
+assert.equal(wordToNumber("ninety", "en"), 90);
+assert.equal(wordToNumber("a", "en"), null, "belirsiz artikel sayı değil");
+assert.equal(wordToNumber("an", "en"), null);
+assert.equal(foldNumbers("twenty-one", "en"), "21", "tireli bileşik");
+assert.equal(foldNumbers("twenty one", "en"), "21", "boşluklu bileşik");
+assert.equal(foldNumbers("two hundred", "en"), "200", "ölçek");
+assert.equal(foldNumbers("two hundred and fifty", "en"), "250", "ölçek + kalan");
+assert.equal(foldNumbers("a hundred", "en"), "100", "a hundred");
+assert.equal(foldNumbers("thirty thousand", "en"), "30000");
+assert.equal(foldNumbers("at five o'clock", "en"), "at 5 o'clock", "kesme işareti öncesi sayı çevrilir");
+assert.equal(foldNumbers("one-way street", "en"), "one-way street", "tireli bileşik sayı değil");
+assert.equal(foldNumbers("one's mind", "en"), "one's mind", "kesmeli bileşik sayı değil");
+// Sıra sayıları kardinalden AYRI kanona iniyor: "first" ile "one" aynı olmamalı.
+assert.equal(foldNumbers("the first floor", "en"), "the 1st floor");
+assert.equal(foldNumbers("the 1th floor", "en"), "the 1st floor", "yanlış ek düzelir");
+assert.notEqual(foldNumbers("first", "en"), foldNumbers("one", "en"), "first ≠ one");
+// Almanca çarpımsal bileşikler (web tarafında hiç çözülmüyordu).
+assert.equal(wordToNumber("achthundert", "de"), 800);
+assert.equal(wordToNumber("dreißigtausend", "de"), 30000);
+assert.equal(wordToNumber("zweihundertfünfzig", "de"), 250);
+assert.equal(wordToNumber("Jahrhundert", "de"), null, "Jahrhundert sayı değil");
+assert.equal(wordToNumber("Tausendfüßler", "de"), null);
+// Tanınmayan dilde metin değişmez.
+assert.equal(foldNumbers("five", "tr"), "five");
+// Eşleştirmede: hedef sözcük, söylenen rakam.
+assert.ok(spokenMatches(["42"], ["forty-two"], "en"), "forty-two ↔ 42");
+assert.ok(spokenMatches(["two hundred"], ["200"], "en"), "two hundred ↔ 200");
 
 console.log("test:numbers — sözcük/rakam/bileşik/artikel/cümle/kelime/telaffuz/noktalama: tamam");

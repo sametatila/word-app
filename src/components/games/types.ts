@@ -4,7 +4,7 @@ import { COURSE_KEY, readLocal } from "@/components/speak-button";
 import { glossFor, type GlossWord } from "@/lib/option-label";
 import type { ErrorType } from "@/lib/errors";
 import { umlautStem } from "@/lib/german";
-import { foldNumbers } from "@/lib/german-numbers";
+import { foldNumbers } from "@/lib/numbers";
 import { translate, type NativeLang } from "@/lib/i18n/dict";
 
 export type GameResult = {
@@ -189,7 +189,7 @@ export function foldSpelling(s: string, lang: TargetLang = currentTargetLang()):
   // Sayı sözcüğü → rakam, umlaut katlamadan ÖNCE (fünf ve fuenf ikisi de
   // tanınıyor, sıra aslında önemsiz): "fünf" ↔ "5" eşleşsin. Tanıyıcı sayıyı
   // rakam yazıyor, içerik sözcükle; ikisi de rakama iniyor.
-  return foldNumbers(normalize(s, lang))
+  return foldNumbers(normalize(s, lang), lang)
     .replace(ARTICLES[lang] ?? ARTICLES.de, " ")
     .replace(/ß/g, "ss")
     .replace(/ä/g, "ae")

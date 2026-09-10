@@ -1213,12 +1213,27 @@ eşiği ayrıldı ve 12 yapıldı - bölünmüş bileşik zaten EŞİTLİKLE yak
 içerme yalnız bölünme artı dolgu sözcüğü bir aradayken gerekiyor ve orada
 hedef hep uzun. Referansı düzeltmek gerekti: iki taraf yine eşit.
 
-**c) İngilizce sayı sözcükleri.** Web `lib/german-numbers.ts` yalnız Almanca;
-mobil `lib/numbers.ts` İngilizce ölçek ("two hundred thousand"), bileşik
-("twenty-one") ve sıra sayısı da çözüyor, ayrıca tire/kesme komşuluğuna bakıp
-"one-way street" ile "one's mind"ı sayı saymıyor. Bu bir MODÜL portu, tek
-satır değil: webde `foldNumbers(text)` imzası dilsiz ve `foldSpelling` içinden
-çağrılıyor. Ayrı tur.
+**c) İngilizce sayı sözcükleri — PORT EDİLDİ.** Modül `lib/german-numbers.ts`
+adından `lib/numbers.ts`e taşındı ve mobil `mobile/src/lib/numbers.ts` ile
+birebir aynı: İngilizce ölçek ("two hundred and fifty"), tireli/boşluklu
+bileşik ("twenty-one" / "twenty one"), sıra sayısı ("first" → "1st", kardinal
+kanonundan AYRI) ve tire/kesme komşuluğu koruması ("one-way street",
+"one's mind" sayı sayılmıyor).
+
+Aynı portta Almanca tarafta da bir eksik kapandı: çarpımsal bileşikler
+("achthundert" 800, "dreißigtausend" 30000, "zweihundertfünfzig" 250) webde
+hiç çözülmüyordu; mobilin `deScale`i çözüyor ve "Jahrhundert"/"Tausendfüßler"
+gibi sayı içeren normal sözcükleri bozmuyor.
+
+`parity-check` 16. bölümü iki dosyanın GÖVDESİNİ satır satır karşılaştırıyor
+(başlık yorumu hariç), yani modül bir daha ayrışamaz.
+
+**f) `foldSentence` ve `normalizeSpoken` hâlâ Almancaya sabit.** İkisi de
+`toLocaleLowerCase("de-DE")` yapıyor ve umlaut katlıyor; `lib/sentence-match`
+(cümle kurma/yazma görevleri) ve `lib/speech` bunları kullanıyor. Sayı tarafı
+bu turda dile açıldı ama bu iki katlamaya `"de"` AÇIKÇA geçiliyor - sessizce
+İngilizceye açmak asimetri üretirdi (küçültme Almanca, sayı İngilizce). Mobil
+karşılıkları (`lib/textFold` `foldCompare`, `foldCase`) dile bakıyor. Ayrı tur.
 
 **d) Geniş noktalama kümesi — PORT EDİLDİ.** Küme yalnız `.,!?;:` idi; artık
 mobil `lib/textFold` `PUNCT` ile aynı (tırnak, tire, üç nokta, parantez, ok) ve

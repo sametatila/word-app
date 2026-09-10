@@ -17,7 +17,7 @@
  * için bu liste kısa ve tahmin edilebilir.
  */
 
-import { foldNumbers } from "@/lib/german-numbers";
+import { foldNumbers } from "@/lib/numbers";
 
 /** Öğrencinin bu görevde yapması beklenen, önceden tanımlı sapma. */
 export type SpeechConfusion = {
@@ -74,7 +74,10 @@ export function normalizeSpoken(text: string): string {
   // Sayı sözcükleri rakama: tanıyıcı "fünf"ü "5" yazıyor, içerik "fünf".
   // Umlaut BİLEREK korunuyor (schön/schon farkı bu turun konusu), o yüzden
   // foldNumbers'ın umlaut'lu biçimleri (fünf) de tanıması gerekiyor — tanıyor.
-  return foldNumbers(text.toLocaleLowerCase("de-DE"))
+  /* Dil AÇIKÇA "de": bu iki katlama hâlâ Almancaya sabit (küçültme de-DE,
+     umlaut katlaması) ve dile bağlanması ayrı bir iş - bkz. web-parity §11.18/f.
+     Sayı tarafını sessizce İngilizceye açmak asimetri üretirdi. */
+  return foldNumbers(text.toLocaleLowerCase("de-DE"), "de")
     .replace(PUNCTUATION, " ")
     .replace(/\s+/g, " ")
     .trim();

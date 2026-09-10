@@ -1,5 +1,5 @@
 import { classifyOrder, levenshtein, type ErrorType } from "@/lib/errors";
-import { foldNumbers } from "@/lib/german-numbers";
+import { foldNumbers } from "@/lib/numbers";
 
 /**
  * Cümle eşleştirme — "Çevir" turunun hakemi (plan WP-10).
@@ -44,7 +44,10 @@ export type SentenceMatch = {
 export function foldSentence(s: string): string {
   // Sayı sözcükleri rakama: tanıyıcı/yazan "fünf"ü "5" verebiliyor, hedef
   // "fünf". Cümlede "um fünf Uhr" ↔ "um 5 Uhr" eşleşsin.
-  return foldNumbers(s.toLocaleLowerCase("de-DE"))
+  /* Dil AÇIKÇA "de": bu iki katlama hâlâ Almancaya sabit (küçültme de-DE,
+     umlaut katlaması) ve dile bağlanması ayrı bir iş - bkz. web-parity §11.18/f.
+     Sayı tarafını sessizce İngilizceye açmak asimetri üretirdi. */
+  return foldNumbers(s.toLocaleLowerCase("de-DE"), "de")
     .replace(/ß/g, "ss")
     .replace(/ä/g, "ae")
     .replace(/ö/g, "oe")
