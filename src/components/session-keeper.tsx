@@ -50,6 +50,10 @@ const REFRESH_EVERY_MS = 6 * 60 * 60 * 1000;
  * dışarıda: bunlar telefonun tercihi, hesabın değil.
  */
 const ACCOUNT_SCOPED_PREFIXES = [
+  // Avatar aksesuarları CİHAZDA duruyor (`lib/avatar`) ve hesaba ait: ortak
+  // bilgisayarda B, A'nın şapkasını ve gözlüğünü takmış görünüyordu. Android
+  // listesinde baştan beri vardı (`lib/accountScope`), web listesinde yoktu.
+  "lernomi-avatar",
   "lernomi-course",
   "lernomi-voice",
   "lernomi-skills",
