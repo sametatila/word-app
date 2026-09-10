@@ -3,9 +3,10 @@ import { getSession, signIn as apiSignIn, signUp as apiSignUp, signOut as apiSig
 import { registerPushDevice, unregisterPushDevice } from "./pushDevice";
 import { loadOnboardingPrefs, clearOnboardingPrefs, hasPrefs } from "./onboardingPrefs";
 import { updateProfile } from "./updateProfile";
-import { configureBilling } from "./billing";
+import { billingLogout, configureBilling } from "./billing";
 import { googleSignOut } from "./googleAuth";
 import { bridgeRefresh } from "./ttsBridge";
+import { clearPremium } from "./premium";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { ONBOARDED_KEY } from "./onboarding";
 
@@ -148,6 +149,22 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     // Google SDK oturumunu da kapat ki tekrar girişte hesap seçici açılsın
     // (yoksa önceki hesaba sessizce girilir). Hata olsa da çıkışı sürdür.
     try { await googleSignOut(); } catch { /* yut */ }
+    /*
+     * SATIN ALMA VE YETKİ ÖNBELLEĞİ DE KAPANIYOR.
+     *
+     * İkisi de bu iş için yazılmıştı ("oturum kapanınca çağrılır: bir sonraki
+     * kullanıcı öncekinin yetkisini görmesin") ama çağıran yoktu. Uygulama
+     * çıkışta yeniden başlamıyor - yalnız `user` null'a çekiliyor - yani
+     * bellekteki durum aynen kalıyordu: aynı cihazda A çıkıp B girince B,
+     * sunucudan taze durum gelene kadar A'nın premium'unu görüyordu.
+     * RevenueCat oturumu da A'nın kimliğinde kalıyor ve satın alma
+     * devralınabiliyordu.
+     *
+     * Web'de bu sorun yok çünkü çıkış tam gezinme yapıyor ve istemci durumu
+     * baştan kuruluyor.
+     */
+    await billingLogout();
+    clearPremium();
     setUser(null);
   }, []);
 
