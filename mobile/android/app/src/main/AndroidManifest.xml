@@ -53,6 +53,23 @@
             <action android:name="android.intent.action.MAIN" />
             <category android:name="android.intent.category.LAUNCHER" />
         </intent-filter>
+        <!-- APP LINKS: e-postadaki iki bağlantı uygulamada açılsın.
+             `autoVerify` Android'e alan adındaki .well-known/assetlinks.json'ı
+             okutur; orada BU uygulamanın imza parmak izi yoksa doğrulama
+             başarısız olur ve bağlantı eskisi gibi tarayıcıda açılır — yani
+             eksik beyan bir şeyi bozmuyor, sadece özelliği açmıyor.
+
+             YOLLAR TEK TEK: `/api/auth/*` gibi bir joker Google girişinin
+             dönüş adresini (/api/auth/callback/google) de kapsar ve OAuth
+             dönüşü uygulamaya sıçrayıp girişi kırardı. Sunucudaki iki beyan
+             dosyası da aynı iki yolu sayıyor. -->
+        <intent-filter android:autoVerify="true">
+            <action android:name="android.intent.action.VIEW" />
+            <category android:name="android.intent.category.DEFAULT" />
+            <category android:name="android.intent.category.BROWSABLE" />
+            <data android:scheme="https" android:host="www.lernomi.app" android:path="/reset-password" />
+            <data android:scheme="https" android:host="www.lernomi.app" android:path="/api/auth/verify-email" />
+        </intent-filter>
       </activity>
       <service
         android:name="com.lernomi.speech.LernomiWalkService"

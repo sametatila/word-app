@@ -8,6 +8,15 @@
 	     tarafında jeton üretilmez. -->
 	<key>aps-environment</key>
 	<string>production</string>
+	<!-- Universal Links: e-postadaki sıfırlama ve doğrulama bağlantıları
+	     uygulamada açılsın. iOS, alan adındaki
+	     .well-known/apple-app-site-association dosyasını okuyup bu uygulamanın
+	     kimliğini (takım + paket) orada arıyor; bulamazsa bağlantı eskisi gibi
+	     Safari'de açılır. Yollar sunucudaki beyan dosyasında sayılı. -->
+	<key>com.apple.developer.associated-domains</key>
+	<array>
+		<string>applinks:www.lernomi.app</string>
+	</array>
 	<key>com.apple.developer.applesignin</key>
 	<array>
 		<string>Default</string>
