@@ -5090,3 +5090,35 @@ Kalan beş ölü anahtar silindi — ve biri **gerçek bir eksiği gösteriyordu
 `lb.this_week` ölü duruyordu çünkü sıralama sayfasının alt başlığı hiç
 yazılmamıştı; Android hangi haftaya bakıldığını başlığın altında söylüyor.
 Ölü anahtar, yazılmamış yüzeyin izi çıktı.
+
+### 11.128 Sözlük gölgelemesi: aynı anahtar iki platformda iki cümle
+
+Sözlük `{ ...base, ...web }` diye kuruluyor. Aynı anahtar iki yerde tanımlıysa
+**web kazanıyor** ve base'deki (mobil kaynaklı) metin sessizce gölgeleniyor:
+aynı anahtar webde bir cümle, Android'de başka bir cümle gösteriyor ve hiçbir
+denetim bunu söylemiyordu. §11.102'den beri süren kopya temizliğinin altında
+duran asıl mekanizma buydu.
+
+Ölçüldü: **yirmi sekiz** anahtar iki yerde birden tanımlıydı, **dördünün metni
+farklıydı**. Üçü sözcük farkıydı (web kopyası silindi, Android referans).
+Dördüncüsü gerçekten platforma özel: webde yapay zekâ hakkı dolunca kural
+tabanlı yedek gösteriliyor (`fallbackAssessment`), mobilde puan hiç verilmiyor
+— iki metin de kendi platformunda doğru. Ona **web'e özel bir ad** verildi
+(`assessw.fail_quota`); fark artık görünür, gölgeleme yok.
+
+Kapı **kopyaya** bakıyor, değere değil: aynı metni iki yere yazmak bugün
+zararsız görünse de yarın birini düzeltip ötekini unutmanın yolu. Web'e özel
+bir metin gerekiyorsa web'e özel bir ad alır.
+
+### 11.129 Yürüyüş modunun iki sözlüğü — ölçüldü, ayrışma değil
+
+`walkmode.*` (mobil) ile `walk.*` (web) ilk bakışta aynı ekranın iki kopyası
+gibi duruyor. Ölçüldü: **rol bölünmesi**, kopya değil — `walk.*` iki platformun
+paylaştığı **seslendirme** satırları (base'de), `walkmode.*` mobilin **ekran**
+etiketleri. Mobil `walk.correct_is`, `walk.not_heard`, `walk.mic_silent`
+anahtarlarını `tx()` ile zaten kullanıyor.
+
+Davranış da eşleşiyor: duyulmayan tur iki tarafta da yanlış sayılmıyor ve
+SRS'e yazılmıyor (`UNHEARD_IS_NOT_WRONG` / mobilin aynı dallanması), teslim
+("bilmiyorum") ceza almıyor, ikisi de doğrusunu okuyup devam ediyor. Kayda
+geçiyor ki bir sonraki tur aynı yeri tekrar ölçmesin.
