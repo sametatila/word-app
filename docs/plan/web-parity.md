@@ -813,13 +813,13 @@ referans taraf da düzeldi — bu oturumdaki `textMuted` kararıyla aynı çizgi
   FAZLASI var, üstelik yeni/tekrar çipiyle. Kompozisyon farkı ekran
   genişliğinden geliyor; renkler eşitlendi (seri hapı iki tarafta da gök).
 
-### 11.4 Semantik renklerin bir basamak farkı — ÖLÇÜLDÜ, hizalanmadı
+### 11.4 Semantik renklerin bir basamak farkı — KAPANDI
 
-Web'in semantik renkleri Android'inkinden bir basamak koyu ve bu bilinçli:
+Web'in semantik renkleri Android'inkinden bir basamak koyuydu ve bu bilinçli:
 paletin ölçüm kapısı (`palette-check.mjs`) beyaz kart üstünde metin kontrastı
 istiyor. Ölçüm (metin / beyaz, eşik 4.5):
 
-| rol | mobil | | web | |
+| rol | mobil (dolgu) | | web (yazı) | |
 |---|---|---|---|---|
 | streak / flame | #b8940f | **2.88** | #86690e | 5.20 |
 | success / mint | #2f9a61 | **3.55** | #237a4c | 5.30 |
@@ -827,31 +827,18 @@ istiyor. Ölçüm (metin / beyaz, eşik 4.5):
 | danger / rose | #dc3f55 | **4.30** | #b62e43 | 6.07 |
 | accent / violet | #9256bc | 4.91 | #77439d | 6.83 |
 
-Android'in beşinden dördü metin olarak eşiği geçmiyor. Web'i Android'e çekmek
-bu dört ölçümü birden kırardı, o yüzden YAPILMADI — bu turdaki `textMuted` ve
-çip kararlarıyla aynı çizgi: ölçüm yön tayin ediyor.
+Madde bir süre açık kaldı çünkü iki yön de yanlıştı: web'i Android'e çekmek
+dört ölçümü birden kırardı, Android'i web'e çekmek ise o tonların DOLU ZEMİN
+olarak kullanıldığı yerleri (ikon karoları, ilerleme çubukları) geniş bir
+alanda değiştirirdi.
 
-Ters yön (Android'i web'e çekmek) da bu turda yapılmadı: mobilde bu tonlar
-yalnız metin değil DOLU ZEMİN olarak da kullanılıyor (ikon karoları, ilerleme
-çubukları), yani bir basamak koyulaştırmak Android'in görünümünü geniş bir
-alanda değiştirir ve gözle doğrulanmadan yapılmamalı. Samet'e açık kalem.
-
-**Düzeltme:** bu turun daha erken bir notunda başlıktaki seri hapının rengi
-"iki tarafta aynı" diye geçmişti; yalnız ALFASI eşitlendi, ton bu tablodaki
-farkı taşımaya devam ediyor.
-
-**Rozet kademeleri** de ayrışıyor ve ikisi de temiz değil — beyaz ikon /
-kademe zemini (ikon eşiği 3.0):
-
-| kademe | web | mobil |
-|---|---|---|
-| bronz | #a9683c 4.44 | #b08d57 3.09 |
-| gümüş | #a8a29a **2.53** | #9aa3ad **2.56** |
-| altın | #d4a017 **2.38** | #b8940f **2.88** |
-| efsane | #77439d 6.83 | #9256bc 4.91 |
-
-Gümüş ve altın iki tarafta da geçmiyor; birini ötekine çekmek sorunu taşımak
-olurdu. Dört kademenin de geçtiği bir set seçmek ayrı bir ürün kararı.
+Çözüm üçüncü yoldu ve zaten web'de duruyordu: **dolgu ve yazı ayrı ton**.
+Web açık temada dolgu için 500'ü, yazı için 600'ü kullanıyor. Mobil paletine
+aynı ayrım eklendi (`successText`, `dangerText`, `streakText`, `infoText`,
+`accentText` — değerler web'in 600'leri) ve YALNIZ `<Text>` içinde renk
+taşıyan otuz üç yer çevrildi; ikon, zemin ve kenarlık kullanımları olduğu gibi
+kaldı. Koyu temada ikinci bir ton uydurulmadı: oradaki tonlar yüzey üstünde
+8.3-9.7 veriyor.
 
 ### 11.5 Misafir yerleştirme testi — kapandı
 
