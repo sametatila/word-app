@@ -4982,3 +4982,22 @@ davranışını eksik anlatıyordu ve öğrenci sınava o bilgi olmadan giriyord
 Aynı dalgada bölüm özeti (süre + madde sayısı) de birleşti: webde üç ayrı
 anahtar, mobilde bölüm listesiyle ortak iki anahtar vardı — aynı olgu iki
 ekranda iki ayrı metin.
+
+### 11.122 Seviye sınavı sertifikası mobilde hiç yoktu
+
+Uç aylardır hazırdı — ve **yorumu "bu ucu mobil de çağırıyor" diyordu**
+(`api/certificate/[id]`, dili çerezden değil profilden okuma sebebi tam da
+buydu). Mobilde onu çağıran hiçbir şey yoktu: sınavı geçen Android kullanıcısı
+ödülünü hiç görmüyordu. Sunucu sınav kimliğini zaten döndürüyor, mobil `Result`
+tipi alanı **sessizce düşürüyordu** — yani sertifikaya ulaşmanın yolu da
+kapalıydı.
+
+Sistem tarayıcısında açılmıyor, içeride çiziliyor: oturum çerezle taşınıyor ve
+o çerez uygulamanın kendi ağ katmanında; bağlantıyı tarayıcıya vermek 401
+döndürürdü. Kâğıt SVG olduğu için WebView'e olduğu gibi veriliyor. Geçilmemiş
+ya da deneme sınavında aynı yerde ne yapılacağı yazıyor.
+
+**Parity 58** düşen alanların listesini yazılı tutuyor: tam eşitlik istemiyor
+(mobil seviye/modülü rota parametresinden biliyor) ama sunucu yeni bir alan
+eklerse liste tutmuyor ve insan "bunu mobil de kullanmalı mı" diye bakıyor.
+`id` tam olarak bu kapı olmadığı için kaybolmuştu.
