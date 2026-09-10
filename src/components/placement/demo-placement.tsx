@@ -89,7 +89,7 @@ export function DemoPlacement({ onClose }: { onClose?: () => void }) {
     return (
       <section className="mx-auto flex w-full max-w-md flex-col items-center px-4 py-10 text-center">
         <span
-          className="flex items-center justify-center rounded-full text-white"
+          className="flex items-center justify-center rounded-full on-fill"
           style={{ width: 110, height: 110, background: "var(--color-brand)", fontSize: 40, fontWeight: 800 }}
         >
           {level}

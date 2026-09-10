@@ -91,6 +91,18 @@ const WHITE_BLACK = /^#(?:fff|ffff|ffffff|ffffff[0-9a-f]{2}|000|0000|000000|0000
  * istisna listesi de yok.
  */
 const SEMANTIC_FILL = /backgroundColor:\s*([^,\n}]+)/g;
+
+/**
+ * Webin aynı kuralı. Tema duyarlı jetonlar (`var(--color-brand)` gibi, basamak
+ * numarası OLMADAN) açık temada 600/700, koyu temada 300/400 çiziyor; beyaz
+ * içerik orada 1.76-2.32'ye düşüyor. Karşılığı `--on-fill` jetonu ve `.on-fill`
+ * sınıfı - ikisi de zaten vardı ve tek bir yerde kullanılıyordu (§11.43).
+ * Sabit basamaklı dolgular (`--color-mint-600`) bu kuralın dışında: onlarda
+ * beyaz iki temada da aynı ölçümü veriyor.
+ */
+const WEB_SEM_FILL = /var\(--color-(?:brand|mint|rose|sky|violet|flame|success|danger)\)/;
+const WEB_FILL = /(?:background|background-color)\s*:\s*([^,;\n}]+)/g;
+const WEB_WHITE = /text-white|color:\s*"#fff"|color:\s*"#ffffff"/;
 const PLAIN_WHITE = /"#fff"|"#ffffff"/;
 
 function fillIsSemantic(fill) {
@@ -143,7 +155,17 @@ const problems = [];
 
 for (const f of await sources("src")) {
   const src = stripComments(await readFile(f, "utf8"));
-  src.split("\n").forEach((line, i) => {
+  const lines = src.split("\n");
+  lines.forEach((line, i) => {
+    /* Tema duyarlı dolgunun üstünde beyaz içerik: `--on-fill` bekleniyor. */
+    if (WEB_WHITE.test(line)) {
+      const win = lines.slice(Math.max(0, i - 4), i + 5).join("\n");
+      const fills = [...win.matchAll(WEB_FILL)].map((x) => x[1]);
+      if (fills.some((x) => WEB_SEM_FILL.test(x)) && !WEB_ALLOW.has(f)) {
+        problems.push(`${f}:${i + 1}  tema duyarlı dolgu üstünde beyaz (--on-fill / .on-fill bekleniyordu)`);
+        return;
+      }
+    }
     const m = /(^|[^-a-zA-Z])color:\s*([^,;}]+)/.exec(line);
     if (!m || !STEP.test(m[2])) return;
     if (WEB_ALLOW.has(f)) return;

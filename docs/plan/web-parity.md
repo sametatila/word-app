@@ -2511,3 +2511,45 @@ Kapının hâlâ kesin bir çözümleme OLMADIĞI kayda geçsin: JSX ağacını 
 "en yakın dolgu" bir sezgi. Yanlış pozitif üretirse çare istisna listesine
 sebebiyle yazmak; yanlış negatif ise pencereyi büyütmek - bu turda tam olarak
 o yapıldı.
+
+### 11.43 Aynı hata webde de vardı: on beş yüzey
+
+§11.41'i webde tekrarladım ve sonuç neredeyse birebir aynı çıktı.
+
+Web'in dolgularının ÇOĞU sabit basamak (`--color-mint-500`) ve orada beyaz
+doğru - basamak temayla değişmiyor, ölçüm iki temada aynı. Ama **on beş
+yüzey** tema duyarlı jetonu dolgu olarak kullanıyor (`var(--color-brand)`,
+`--color-mint`, `--color-rose`, `--color-sky` - basamak numarası YOK) ve
+üstüne beyaz koyuyordu. O jetonlar açık temada 600/700, koyu temada 300/400:
+
+    dolgu (koyu tema)    beyaz    mürekkep
+    brand-400 #fb8f2a     2.32      ~7.9
+    mint-300  #6fd19b     1.86     ~10
+    rose-300  #f79ba6     2.06      ~9
+    sky-300   #6fd1e3     1.76     ~10.5
+
+Açık temada hepsi 5.3-6.1 ile geçiyor, yani hata YALNIZ koyu temada görünüyor:
+mikrofon düğmeleri (ders, sınav), ödeme ekranının simge karosu ve düğmesi,
+yerleştirme sınavının harf dairesi, lig tablosunun rozeti, yazma görevinin
+onay işareti, patron turunun sonuç dairesi, yönetim panosunun sekmesi.
+
+**Ve jeton zaten vardı.** `--on-fill` (açık beyaz, koyu `--color-ink-900`)
+`globals.css`te tanımlı ve yorumu mobilin `onFill`ine atıf yapıyor - ama
+TEK bir yerde kullanılıyordu (`empty-card`). Yani §11.41'in mobil hikâyesinin
+aynısı: doğru soyutlama yazılmış, kullanılmamış. Bu turda `.on-fill` yardımcı
+sınıfı eklendi (Tailwind `text-white` yerine geçsin diye) ve on beş yüzey ona
+bağlandı.
+
+İlk denemede jetonu yeniden TANIMLADIM - `globals.css`te zaten vardı ve iki
+kopya oluştu. Ölçüp gördüm, kopyaları geri aldım; mevcut tanım duruyor.
+
+**İki yedek düzeltildi, ayrı bir sebeple.** `intro-game` (artikel rozeti) ve
+`player-shell` (seviye rozeti) dolguyu sabit basamaklardan alıyor ama YEDEĞİ
+`?? "var(--color-brand)"` idi - yani beyaz yazı yalnız yedek yolda okunmuyordu.
+Yedek sabit basamağa (`--color-brand-700`) çekildi; rozetin kendi rengi
+sabit kaldığı için beyaz orada doğru.
+
+Kapı da tamamlandı: `check:colors` artık webin bu kuralını da denetliyor
+(tema duyarlı dolgu + beyaz içerik). Gürültü tabanı burada da SIFIR, istisna
+listesi yok. Yakaladığı doğrulandı - `mic-disclosure` bir satır geri alındığında
+kapı kırıldı, sonra geri alındı.

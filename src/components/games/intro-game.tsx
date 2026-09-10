@@ -78,7 +78,7 @@ export function IntroGame({ round, onDone }: GameProps<IntroRound>) {
         {word.artikel ? (
           <span
             className="mb-2 inline-block rounded-full px-3 py-1 text-sm font-bold text-white"
-            style={{ background: ARTIKEL_TONE[word.artikel] ?? "var(--color-brand)" }}
+            style={{ background: ARTIKEL_TONE[word.artikel] ?? "var(--color-brand-700)" }}
           >
             {word.artikel}
           </span>

@@ -592,6 +592,10 @@
    * taşıyordu - hem okunmuyordu hem de "iki uygulama aynı görünsün"
    * gerekçesini karşılamıyordu, çünkü Android koyu temada zaten farklıydı.
    */
+  /* Tema duyarlı bir dolgunun üstündeki içerik. Sabit dolgularda kullanılmaz. */
+  .on-fill {
+    color: var(--on-fill);
+  }
   .btn-primary {
     color: var(--on-brand);
     background-color: var(--brand-fill);

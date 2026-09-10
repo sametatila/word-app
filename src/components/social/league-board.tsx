@@ -108,7 +108,7 @@ export function LeagueBoard() {
              başlığını koruduğu için yalnız karo eklendi. */
           <div className="flex flex-col items-center gap-2 p-6 text-center">
             <span
-              className="flex items-center justify-center rounded-tile text-white"
+              className="flex items-center justify-center rounded-tile on-fill"
               style={{ width: 52, height: 52, background: "var(--color-sky)" }}
             >
               <PodiumIcon size={26} />

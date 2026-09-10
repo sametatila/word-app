@@ -519,7 +519,7 @@ function FreeTask({
             className="flex w-full items-start gap-2.5 text-left text-sm"
           >
             <span
-              className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-md border text-white"
+              className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-md border on-fill"
               style={{
                 borderColor: checks[i] ? "var(--color-mint)" : "var(--border)",
                 background: checks[i] ? "var(--color-mint)" : "transparent",

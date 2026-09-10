@@ -139,7 +139,7 @@ export function AdminDashboard({ data: d, server: s }: { data: AdminData; server
         {TABS.map((t) => (
           <button key={t} onClick={() => setTab(t)}
             className="rounded-full px-3.5 py-1.5 text-sm font-bold transition"
-            style={tab === t ? { background: "var(--color-brand)", color: "#fff" } : { background: "var(--surface-2)", color: "var(--text-muted)" }}>
+            style={tab === t ? { background: "var(--color-brand)", color: "var(--on-fill)" } : { background: "var(--surface-2)", color: "var(--text-muted)" }}>
             {t}
           </button>
         ))}

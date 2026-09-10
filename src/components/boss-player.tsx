@@ -291,7 +291,7 @@ export function BossPlayer({
           className="mx-auto mb-3 flex h-14 w-14 items-center justify-center rounded-2xl"
           style={{
             background: won ? "var(--color-mint)" : "var(--surface-2)",
-            color: won ? "#fff" : "var(--text-muted)",
+            color: won ? "var(--on-fill)" : "var(--text-muted)",
           }}
         >
           {won ? <TrophyIcon size={26} /> : <ClockIcon size={26} />}

@@ -1223,7 +1223,7 @@ export function LessonPlayer({
                       void capture(langFor(expect), (a) => evaluate(a), false);
                     }}
                     aria-label={t(listening ? "exam.stop_recording" : "lessonp.start_speaking")}
-                    className="flex h-16 w-16 items-center justify-center rounded-full text-white shadow-lg"
+                    className="flex h-16 w-16 items-center justify-center rounded-full on-fill shadow-lg"
                     style={{
                       background: listening ? "var(--color-rose)" : "var(--color-brand)",
                     }}
@@ -1430,7 +1430,7 @@ export function LessonPlayer({
                     }}
                     disabled={busy}
                     aria-label={t(listening ? "exam.stop_recording" : "lessonp.start_speaking")}
-                    className="flex h-16 w-16 items-center justify-center rounded-full text-white shadow-lg disabled:opacity-50"
+                    className="flex h-16 w-16 items-center justify-center rounded-full on-fill shadow-lg disabled:opacity-50"
                     style={{
                       background: listening ? "var(--color-rose)" : "var(--color-brand)",
                     }}

@@ -178,7 +178,7 @@ export function PremiumAdmin({
       </Card>
 
       <div className="sticky bottom-4 mt-6 flex items-center gap-3 rounded-2xl border p-3" style={{ borderColor: "var(--border)", background: "var(--surface)" }}>
-        <button type="button" onClick={save} disabled={busy} className="rounded-xl px-5 py-2.5 text-sm font-bold text-white disabled:opacity-60" style={{ background: "var(--color-brand)" }}>
+        <button type="button" onClick={save} disabled={busy} className="rounded-xl px-5 py-2.5 text-sm font-bold on-fill disabled:opacity-60" style={{ background: "var(--color-brand)" }}>
           Kaydet
         </button>
         <button
@@ -294,7 +294,7 @@ function CodesSection({
             ]);
           }
         }}
-        className="mt-3 rounded-xl px-4 py-2 text-sm font-bold text-white disabled:opacity-60"
+        className="mt-3 rounded-xl px-4 py-2 text-sm font-bold on-fill disabled:opacity-60"
         style={{ background: "var(--color-brand)" }}
       >
         Kod üret

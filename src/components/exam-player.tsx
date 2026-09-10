@@ -585,7 +585,7 @@ export function ExamPlayer({ level, module }: { level: CefrLevel; module: number
               type="button"
               onClick={() => (spk === "rec" ? void stopRec() : void startRec())}
               aria-label={t(spk === "rec" ? "exam.stop_recording" : "exam.start_recording")}
-              className="flex h-20 w-20 items-center justify-center rounded-full text-white"
+              className="flex h-20 w-20 items-center justify-center rounded-full on-fill"
               style={{ background: spk === "rec" ? "var(--color-rose)" : "var(--color-brand)" }}
             >
               <MicIcon size={30} />

@@ -82,7 +82,7 @@ export function PremiumPaywall({
     <div className="mx-auto w-full max-w-xl px-4 pb-12 pt-6">
       <header className="flex flex-col items-center text-center">
         <div
-          className="flex h-20 w-20 items-center justify-center rounded-3xl text-white"
+          className="flex h-20 w-20 items-center justify-center rounded-3xl on-fill"
           style={{ background: "var(--color-brand)", boxShadow: "0 12px 24px -10px var(--color-brand)" }}
         >
           <CrownIcon size={42} />
@@ -252,7 +252,7 @@ function PromoBox({ prefill }: { prefill: string }) {
           type="button"
           onClick={apply}
           disabled={busy || !code.trim()}
-          className="rounded-xl px-4 py-2 text-sm font-bold text-white disabled:opacity-60"
+          className="rounded-xl px-4 py-2 text-sm font-bold on-fill disabled:opacity-60"
           style={{ background: "var(--color-brand)" }}
         >
           {t("promo.apply")}

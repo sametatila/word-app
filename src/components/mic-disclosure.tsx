@@ -65,7 +65,7 @@ export function MicDisclosure({
     >
       <div className="flex flex-col items-center gap-3 text-center">
         <span
-          className="flex h-[72px] w-[72px] items-center justify-center rounded-card text-white shadow-soft"
+          className="flex h-[72px] w-[72px] items-center justify-center rounded-card on-fill shadow-soft"
           style={{ background: "var(--color-brand)" }}
         >
           <MicIcon size={36} />
