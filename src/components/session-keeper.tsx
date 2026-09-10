@@ -62,6 +62,34 @@ const ACCOUNT_SCOPED_PREFIXES = [
   "lernomi:cache:",
 ];
 
+/**
+ * HESAP SİLİNDİ — cihazda hiçbir şey kalmıyor.
+ *
+ * `forgetPreviousAccount` yalnız HESABA ait önekleri siliyor; cihazın kendi
+ * tercihleri (tema, dil, uyarı kapatmaları) bilerek kalıyor çünkü orada iş
+ * hesap değiştirmek. Silmede durum farklı: kullanıcı unutulmak istedi ve
+ * gizlilik politikası da bunu söz veriyor, o yüzden `lernomi` önekli her şey
+ * gidiyor.
+ *
+ * Mobil karşılığı `DeleteAccountScreen` `finishDeleted`: `AsyncStorage.clear()`
+ * ile aynı kararı veriyor ve gerekçesi orada da yazılı ("temiz başlangıç").
+ * Webde bu adım YOKTU: silme başarılı olunca yalnız `/`ye yönlendiriliyor ve
+ * silinen hesabın avatarı, sesi, beceri/ders ilerlemesi, taslakları ve
+ * önbelleği tarayıcıda kalıyordu.
+ *
+ * `localStorage.clear()` DEĞİL: yalnız kendi anahtarlarımız. Aynı kökte başka
+ * bir şey varsa (uzantı, üçüncü taraf) onu silmek bizim işimiz değil.
+ */
+export function forgetDeviceStorage() {
+  if (typeof window === "undefined") return;
+  const doomed: string[] = [];
+  for (let i = 0; i < localStorage.length; i++) {
+    const key = localStorage.key(i);
+    if (key && key.startsWith("lernomi")) doomed.push(key);
+  }
+  for (const key of doomed) localStorage.removeItem(key);
+}
+
 function forgetPreviousAccount() {
   const doomed: string[] = [];
   for (let i = 0; i < localStorage.length; i++) {

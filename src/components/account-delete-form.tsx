@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { forgetDeviceStorage } from "@/components/session-keeper";
 import { AuthNotice, AuthShell, authInputClass } from "@/components/auth-shell";
 import { authApi } from "@/lib/auth/api";
 import { useT } from "@/lib/i18n/client";
@@ -49,6 +50,15 @@ export function AccountDeleteForm({ email }: { email: string | null }) {
       return;
     }
     setDone(true);
+    /*
+      CİHAZDA HİÇBİR ŞEY KALMIYOR.
+      Silme başarılı olunca yalnız yönlendirme vardı: silinen hesabın avatarı,
+      okuma sesi, beceri/ders ilerlemesi, taslakları ve başlangıç önbelleği
+      tarayıcıda kalıyordu - kullanıcı unutulmak istedi, gizlilik politikası da
+      bunu söz veriyor. Mobil karşılığı (`DeleteAccountScreen` `finishDeleted`)
+      aynı kararı baştan beri veriyor.
+    */
+    forgetDeviceStorage();
     setTimeout(() => {
       router.push("/");
       router.refresh();
