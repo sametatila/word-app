@@ -30,5 +30,8 @@ console.log(
 );
 const src = new Map(rows.map((r) => [r.lesson, r]));
 let q = 0, d = 0;
-for (const l of done) (/\?\s*$/.test(src.get(l).opening) ? q++ : d++);
+for (const l of done) {
+  if (/\?\s*$/.test(src.get(l).opening)) q++;
+  else d++;
+}
 console.log(`${done.size}/${rows.length} ders · ${done.size * 4}/${rows.length * 4} dize · açılış: ${q} soru · ${d} nokta`);
