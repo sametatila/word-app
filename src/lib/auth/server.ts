@@ -407,9 +407,23 @@ export const auth = betterAuth({
       const email = (ctx.body as { email?: unknown } | undefined)?.email;
       if (typeof email !== "string" || !email) return;
 
-      const token = (ctx.context.returned as { token?: unknown } | undefined)?.token;
-      const signedIn = typeof token === "string" && token.length > 0;
-      await (signedIn ? clearFailedLogins(email) : noteFailedLogin(email));
+      const returned = ctx.context.returned as { token?: unknown; body?: { code?: unknown } } | undefined;
+      const token = returned?.token;
+      if (typeof token === "string" && token.length > 0) {
+        await clearFailedLogins(email);
+        return;
+      }
+
+      /*
+        DOĞRULANMAMIŞ HESAP SAYILMIYOR. Better Auth parolayı doğrulamayı
+        ÖNCE yapıyor, "e-postan doğrulanmadı" hatasına ancak parola DOĞRUYKEN
+        ulaşılıyor (api/routes/sign-in.mjs). Yani bu bir kaba kuvvet sinyali
+        değil, eksik bir adım; sayaca yazmak, doğrulamayı bekleyen kullanıcıyı
+        birkaç denemeden sonra bir de kilitlerdi.
+      */
+      if (returned?.body?.code === "EMAIL_NOT_VERIFIED") return;
+
+      await noteFailedLogin(email);
     }),
   },
 });
