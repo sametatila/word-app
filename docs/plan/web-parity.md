@@ -5956,3 +5956,28 @@ düzeltti. **Yöntem:** kırmızıyı görünce önce kimin olduğunu ölçüyor
 (`git status`, hata dosyası benim dokunduklarımda mı), sonra karar veriyorum.
 Commit'lerim zaten ayrı bir indeks üzerinden ve yalnız kendi yollarımı
 alıyor, yani onların yarım işi benim commit'ime giremez.
+
+
+### 11.161 Elle yazılmış eşlemeler turu: yazılarım listesi
+
+§11.160'ta gelen kutusunun iki haritasını karşılaştırmak iş görmüştü; aynı
+soruyu öteki elle yazılmış eşlemelere sordum.
+
+**Eşit çıkanlar:** tepki simgeleri ve tonları (zaten §14 kapılı), ünite türü
+haritaları (`unitkind.*`, yedi tür, iki tarafta birebir), gelen kutusu
+yönlendirmesi.
+
+**Yazılarım listesi ayrışıktı.** `/api/assessments` dört tür döndürüyor;
+mobil haritası yalnız `writing` ve `speaking` biliyordu. Cümle kurma turundan
+(`sentence`) ve rol yapmadan (`roleplay`) gelen satırlar **ham anahtarıyla**
+çiziliyordu — ekranda "sentence" yazıyordu. Bu, sözlük eksikliğinden değil
+HARİTA eksikliğinden geliyordu: anahtarlar webde vardı, mobil onları hiç
+sormamıştı.
+
+**Aynı satırda ikinci eksik:** gün yazmıyordu. "Ne zaman yazmıştım" sorusu
+listede cevapsızdı ve satırlar birbirinden ayırt edilemiyordu; web tür ·
+seviye · gün üçlüsünü baştan beri gösteriyor.
+
+**Sınıf hakkında:** bu tur üç ayrı elle yazılmış eşleme ölçüldü, biri
+ayrışıktı. Oran düşük ama bulunanın bedeli yüksek (ekranda ham anahtar
+görmek), ve ölçüm ucuz. §79 iki ölçüyü birden tutuyor.
