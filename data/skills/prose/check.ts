@@ -4,11 +4,16 @@
  *
  * Kurallar kardeş hatlarla aynı aileden; ikisi bu alana özgü:
  *
- * - **Açıklama şıkkı ELE VERMEMELİ.** `explain` cevaptan SONRA gösteriliyor,
- *   yani doğru şıkkı söylemesi sorun değil — ama Almanca şıkkı olduğu gibi
- *   içine almak başka bir şey: öğrenci Almancayı okumadan da doğruyu
- *   görür. Kapı, doğru şıkkın iki kelimeden uzun hâlinin İngilizce
- *   açıklamada birebir geçmesini ölçüyor.
+ * - **Tırnak içindeki KANIT çevrilmez.** Açıklamaların çoğu metinden bir
+ *   cümle alıntılıyor: "„Wir essen um halb acht.“ — 19:30." Öğrencinin
+ *   metinde göreceği şey o cümledir; İngilizcesi "at half past seven"
+ *   deseydi bağ kopardı. Kapı, Türkçedeki her „…“ açıklığının İngilizcede
+ *   BİREBİR durduğunu ölçüyor.
+ *
+ *   İlk yazımda buraya sınav hattının kuralı konmuştu — "doğru şık kökte
+ *   görünmesin". Yanlıştı: `explain` cevaptan SONRA gösteriliyor, öğrenci
+ *   çoktan cevaplamış oluyor ve ele verecek bir şey kalmıyor. Asıl risk
+ *   tersi yöndeydi.
  * - **`intro` yönerge, cümle değil.** Egzersizin başındaki çerçeve
  *   öğrenciye ne yapacağını söylüyor; Türkçesi nokta ile bitmiyorsa
  *   İngilizcesi de bitmemeli — son noktalama pariteleri bunu zaten
@@ -63,9 +68,14 @@ if (existsSync(`${DIR}out`))
         if (end(r.tr) !== end(en)) H(`son noktalama uyuşmuyor: «${end(r.tr)}» → «${end(en)}»`);
         const a = numbers(r.tr).join(","), b = numbers(en).join(",");
         if (a !== b) H(`sayılar uyuşmuyor: «${a}» → «${b}»`);
-        if (row.kind === "explain" && row.a) {
-          const o = flat(row.a);
-          if (o.split(" ").length > 2 && flat(en).includes(o)) H(`doğru şık kökte görünüyor: «${row.a}»`);
+        /* Türkçe alıntı taşıyorsa İngilizcede de birebir durmalı. Yalnız
+           „…“ ve "…" ölçülüyor: '…' Türkçe sözcük vurgulamak için de
+           kullanılıyor ("indem 'nasıl' sorusuna cevap verir"). İçinde
+           Türkçeye özgü harf geçen açıklık da atlanıyor — o alıntı değil,
+           Türkçe bir vurgu. */
+        for (const m of r.tr.matchAll(/[„"]([^„"“”]{2,})[“"]/g)) {
+          if (/[ışğİĞŞ]/.test(m[1])) continue;
+          if (!flat(en).includes(flat(m[1]))) H(`alıntı düşmüş: «${m[1].slice(0, 34)}»`);
         }
         if (en.length > r.tr.length * 2 + 20 || en.length * 2 + 20 < r.tr.length)
           U(`uzunluk çok sapıyor (${r.tr.length} → ${en.length})`);
