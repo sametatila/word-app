@@ -3617,3 +3617,31 @@ alıştırması (`ItemScreen`), ders (`LessonScreen`), yürüyüş
 (`WalkModeScreen`), patron (`BossScreen`), günün turu (`DailyScreen`) ve
 haftalık sınav (`WeeklyScreen`) - yedi yer, çünkü mobilde günün turu ve
 haftalık ayrı ekranlar.
+
+### 11.71 `/api/answers` yanıtı: on bir alan, iki tarafta da tam
+
+§11.70'in kanalı kurulduktan sonra en büyük yanıt sözleşmesini de ölçtüm.
+`/api/answers` on bir alan döndürüyor:
+
+    wagerXp newlyMastered xpGained totalXp currentStreak longestStreak
+    reviewsToday dailyGoal goalReached streakRepaired dueTomorrow
+
+Mobil `SubmitResult` on birinin on birini taşıyor (bu oturumda §11.22'de
+tamamlanmıştı) ve kullanıcıya değen hepsi çiziliyor: kazanılan XP, seri,
+seri onarımı, günlük hedef ve ilerlemesi, bugünkü tekrar, pekişen kelime,
+yarın gelecek tekrar sayısı. `wagerXp` webe özgü (bahisli etap mobilde yok,
+§11.68). `totalXp` ve `longestStreak` bu ekranda çizilmiyor ve gerekmiyor:
+başlıktaki toplam artık sinyalle tazeleniyor (§11.70) ve en uzun seri Gelişim
+ekranında `me`den okunuyor.
+
+**Ölçüm sırasında iki kez kendi yanlış okumamı düzelttim ve ikisi de aynı
+sebepten:** tip tanımını satır penceresiyle kesiyordum. İlk okumada mobilin
+`dueTomorrow`u web tipinde YOK sanmıştım - web `types.ts`ta 316. satırda
+duruyor, penceremin dışında kalmış. İkincisinde `/api/premium/status`ın
+`copy` alanı için aynı şey olmuştu (§11.69). Ders: alan listesini pencereyle
+değil, bloğun sonuna kadar okumak gerekiyor.
+
+`check:parity` bu çifti zaten ölçüyor ("cevap yaniti alanlari") ama YALNIZ
+web→mobil yönünde: mobilde eksik alanı yakalıyor, mobilde FAZLA olanı
+yakalamıyor. Bugün fazlası yok (`dueTomorrow` iki tarafta da var), o yüzden
+kural değiştirilmedi - ama ters yön kapının kör noktası olarak kayda geçsin.
