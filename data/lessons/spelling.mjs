@@ -25,6 +25,11 @@
  * `practice`/`license` (biri ad biri fiil olduğunda değişiyor) ve `check`
  * bilerek DIŞARIDA — yanlış ret yanlış kabulden tehlikeli.
  *
+ * Aynı sebeple listede bilerek GEVŞEK kalan bir madde var: `meter`. Ölçü
+ * birimi olarak Amerikan yazımı (İngilizcesi `metre`) ama ALET adı olarak
+ * İngiliz İngilizcesinde de `meter` (park sayacı, su sayacı). Uyarı yanlış
+ * çıkarsa satır haklıdır, kural değil.
+ *
  * Uyarı verir, hata değil: bir gün gerçekten Amerikan yazımı gereken bir
  * satır çıkarsa (özel ad, alıntı) kapı işi durdurmasın.
  */
@@ -33,7 +38,10 @@ const US = [
   [/\bbehavior(s|al)?\b/gi, "behaviour…"],
   [/\bfavor(s|ed|ite|ites)?\b/gi, "favour…"],
   [/\bneighbor(s|hood|hoods|ing)?\b/gi, "neighbour…"],
-  [/\bhumor(ous|less)?\b/gi, "humour…"],
+  // `humorous` DEĞİL: -our sözcüklerinin türevlerinde u düşer ve İngiliz
+  // İngilizcesi de `humorous` yazar (`humourless` yazar ama `humorous` yazmaz).
+  // Desen bunu bir kez yanlış reddetti; ölçüt sözcüğün kendisi.
+  [/\bhumor(less)?\b/gi, "humour…"],
   [/\bapartments?\b/gi, "flat"],
   [/\bvacations?\b/gi, "holiday"],
   [/\btrash\b|\bgarbage\b/gi, "rubbish"],
