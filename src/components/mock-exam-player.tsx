@@ -103,19 +103,27 @@ function dropLocalRun(paperId: string, skill: string): void {
  * Sunucuya neden ulaşılamadı — üçü üç ayrı şey ve üçü ayrı söylenmeli.
  * Hepsine "bağlantı yok" demek yanlış teşhis koyuyordu.
  */
-type Fail = "not_deployed" | "unauthorized" | "unreachable";
+type Fail = "not_deployed" | "unauthorized" | "locked" | "unreachable";
 const FAIL_KEYS: Record<Fail, string> = {
   not_deployed: "mockexam.fail_not_deployed",
   unauthorized: "mockexam.fail_unauthorized",
+  locked: "mockexam.fail_locked",
   unreachable: "mockexam.fail_unreachable",
 };
 
 class HttpError extends Error {
-  constructor(readonly status: number) { super(String(status)); }
+  constructor(readonly status: number, readonly code: string | null = null) { super(String(status)); }
 }
 function failOf(err: unknown): Fail {
   const st = err instanceof HttpError ? err.status : 0;
   if (st === 404 || st === 501) return "not_deployed";
+  /*
+   * 403 İKİ AYRI ŞEY. Uç hem köken denetimi için ("forbidden") hem de kâğıt
+   * kilitliyken ("premium_required") 403 dönüyor. İkisini birden "oturumun
+   * düşmüş" diye okumak, kilitli kâğıda dokunan kullanıcıyı boş yere giriş
+   * ekranına gönderiyordu - hesabında bir sorun yok, kâğıt açık değil.
+   */
+  if (st === 403 && err instanceof HttpError && err.code === "premium_required") return "locked";
   if (st === 401 || st === 403) return "unauthorized";
   return "unreachable";
 }
@@ -126,7 +134,10 @@ async function post<T>(body: Record<string, unknown>): Promise<T> {
     headers: { "content-type": "application/json" },
     body: JSON.stringify(body),
   });
-  if (!res.ok) throw new HttpError(res.status);
+  if (!res.ok) {
+    const body = (await res.json().catch(() => null)) as { error?: string } | null;
+    throw new HttpError(res.status, body?.error ?? null);
+  }
   return (await res.json()) as T;
 }
 

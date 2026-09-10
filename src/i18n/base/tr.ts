@@ -459,6 +459,7 @@ export const trBase: Record<string, string> = {
   "mockexam.goal_interaction": "Karşılıklı iletişim",
   "mockexam.fail_not_deployed": "Sunucu bu bölümü henüz tanımıyor: uygulama sunucudan yeni. Sınav çalıştı ama puan sunucuda hesaplanamadı.",
   "mockexam.fail_unauthorized": "Oturumun düşmüş görünüyor. Tekrar giriş yaptığında sonuçların kaydedilmeye başlar.",
+  "mockexam.fail_locked": "Bu kâğıt şu an açık değil.",
   "mockexam.fail_unreachable": "Sunucuya ulaşılamadı. Sınav çalıştı ama puan sunucuda hesaplanamadı.",
   "mockexam.saved_locally": "Sonuç bu cihazda saklandı ve listede görünüyor; sunucu istatistiğine girmedi.",
   "mockexam.ai_needs_server": "Değerlendirme sunucuda yapılıyor; şu an sunucuya ulaşılamadığı için kapalı.",

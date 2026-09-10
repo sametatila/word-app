@@ -124,11 +124,19 @@ export type MockScore = {
  * 401 "oturum düşmüş" demek — tekrar giriş yeter; geri kalanı gerçekten
  * ulaşamamak. Hepsine "bağlantı yok" demek yanlış teşhis koyuyordu.
  */
-export type FailReason = "not_deployed" | "unauthorized" | "unreachable";
+export type FailReason = "not_deployed" | "unauthorized" | "locked" | "unreachable";
 
 export function failReason(err: unknown): FailReason {
   if (err instanceof ApiError) {
     if (err.status === 404 || err.status === 501) return "not_deployed";
+    /*
+     * 403 İKİ AYRI ŞEY. Uç hem köken denetimi için ("forbidden") hem de kâğıt
+     * kilitliyken ("premium_required") 403 dönüyor. İkisini birden "oturumun
+     * düşmüş" diye okumak, kilitli kâğıda dokunan kullanıcıyı boş yere giriş
+     * ekranına gönderiyordu - hesabında bir sorun yok, kâğıt açık değil.
+     * `ApiError.message` sunucunun `error` alanını taşıyor (bkz. api/client).
+     */
+    if (err.status === 403 && err.message === "premium_required") return "locked";
     if (err.status === 401 || err.status === 403) return "unauthorized";
   }
   return "unreachable";

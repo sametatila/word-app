@@ -459,6 +459,7 @@ export const enBase: Record<string, string> = {
   "mockexam.goal_interaction": "Interacting",
   "mockexam.fail_not_deployed": "The server does not know this part yet: the app is newer than the server. The exam ran, but it could not be scored on the server.",
   "mockexam.fail_unauthorized": "Your session seems to have expired. Sign in again and your results will be saved.",
+  "mockexam.fail_locked": "This paper isn't unlocked yet.",
   "mockexam.fail_unreachable": "The server could not be reached. The exam ran, but it could not be scored on the server.",
   "mockexam.saved_locally": "The result is stored on this device and shows in the list; it is not in your server statistics.",
   "mockexam.ai_needs_server": "Evaluation happens on the server; it is off right now because the server cannot be reached.",

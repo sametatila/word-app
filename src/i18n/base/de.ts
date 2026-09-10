@@ -459,6 +459,7 @@ export const deBase: Record<string, string> = {
   "mockexam.goal_interaction": "Interaktion",
   "mockexam.fail_not_deployed": "Der Server kennt diesen Teil noch nicht: Die App ist neuer als der Server. Die Prüfung lief, konnte aber nicht auf dem Server ausgewertet werden.",
   "mockexam.fail_unauthorized": "Ihre Sitzung scheint abgelaufen zu sein. Nach erneuter Anmeldung werden Ihre Ergebnisse gespeichert.",
+  "mockexam.fail_locked": "Dieser Bogen ist noch nicht freigeschaltet.",
   "mockexam.fail_unreachable": "Der Server war nicht erreichbar. Die Prüfung lief, konnte aber nicht auf dem Server ausgewertet werden.",
   "mockexam.saved_locally": "Das Ergebnis liegt auf diesem Gerät und erscheint in der Liste; in der Server-Statistik steht es nicht.",
   "mockexam.ai_needs_server": "Die Bewertung erfolgt auf dem Server; sie ist derzeit nicht möglich, weil der Server nicht erreichbar ist.",
