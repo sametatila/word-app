@@ -117,7 +117,14 @@ export const EVENT_NAMES = [
   "lesson_step", // ders adımı sonuçlandı (kind = adım:yol → repeat|produce|truefalse : mic|typed|skip, value = 2 ilk denemede / 1 sonraki denemede / 0 geçilemedi ya da atlandı)
   "lesson_finish", // ders bitti (kind = ders kimliği, value = puanlı adımlarda doğru yüzdesi; geçme user_lessons'ta)
   "speak_self", // söyleyiş görevinde karar (kind = asr tanıyıcı | self öz-değerlendirme, value = 1 doğru / 0 zorlandı)
-  "onboarding_step", // onboarding adımı görüldü (kind = welcome|goal|level|pace|ready, value = adım sırası)
+  /* Onboarding adımı görüldü. value = adım sırası (platforma göre değişir), kind
+     = adımın adı. Android: welcome | lang | course | level | goal. Web:
+     welcome | motivation | level | goal | ready. Ortak kelimeler aynı soruyu
+     anlatıyor - `goal` iki tarafta da GÜNLÜK HEDEF. Webin `pace` adı bu yüzden
+     `goal` oldu ve güdü adımı `motivation`a taşındı: eskiden `goal` kovası iki
+     ayrı soruyu topluyordu. Platforma özgü adımlar (Android lang/course, web
+     motivation/ready) karşılıksız, çünkü akışlar gerçekten farklı. */
+  "onboarding_step",
   // Giriş ÖNCESİ ısınma: hesap açmadan önce oynatılan beş kelime. Huni burada
   // kritik — kaç ziyaretçi ısınmayı görüyor, kaçı sonuna kadar gidiyor, kaçı
   // hesap açıyor. `first_practice` kelime başına (value = sıra),

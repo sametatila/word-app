@@ -2102,3 +2102,52 @@ Yan bulgu: sözlükteki kind listesi eskimişti - `lang` ve üç hatırlatma
 anahtarı yazılıyor ama listede yoktu. Sözlüğü okuyan kişi yazılmayan bir
 kind'ı yazılıyor sanmaz ama yazılan bir kind'ı yok sanır; liste tamamlandı ve
 `value`nun her kind'da ne anlama geldiği de yazıldı.
+
+### 11.34 `nav` ve `onboarding_step`: bir kova iki soruyu topluyordu
+
+**Eşleşen taraf.** Sekme çubuğu ölçümü iki platformda birebir: aynı dört
+anahtar aynı sırada (`learn`, `immersion`, `skills`, `friends`), `value` iki
+tarafta da sekme sırası, ikisi de yalnız sekme GERÇEKTEN değişince yazıyor.
+Burada yapılacak bir şey yok.
+
+**Düzeltilen: `onboarding_step` kind çakışması.** Huni adlarının ölçümü:
+
+    Android  welcome · lang · course · level · goal
+    web      welcome · goal  · level · pace  · ready
+
+`goal` iki platformda İKİ AYRI SORU adlandırıyordu. Android'de günlük hedef
+adımı (10/20/50 tekrar); web'de "neden öğreniyorsun" (iş/günlük/sınav/İsviçre)
+ve günlük hedef `pace` diye yazılıyordu. Yönetim panelindeki huni sorgusu
+(`lib/admin.ts`, `where name='onboarding_step' group by kind`) iki platformu
+birlikte topluyor, dolayısıyla `goal` kovası webin güdü adımıyla Android'in
+günlük hedef adımını aynı sayıya katıyordu.
+
+Kanıt tesadüf değil: webin 3. adımının başlığı ile Android'in `goal` adımının
+başlığı aynı i18n anahtarı (`onboarding.what_s_your_daily_goal`) - aynı soru,
+iki ayrı ad.
+
+Android referans alındı: günlük hedef `goal`. Webin güdü adımının Android'de
+karşılığı yok, o yüzden Android'in kelimesini işgal etmiyor, kendi adını
+(`motivation`) aldı. Kalan ayrım gerçek akış farkı: Android anadili ve kursu
+ayrı adımlarda soruyor, web ikisini karşılama adımına koyup sonda bir "hazır"
+özeti gösteriyor. Akışları eşlemek ayrı bir iş; ölçüm adları artık çakışmıyor.
+
+Yan düzeltme: liste çağrı yerinde konumsal bir dizi sabitiydi
+(`["welcome", …][step]`), araya bir adım eklenince bütün adlar sessizce
+kayardı. Artık `STEP_KIND` haritası - adım numarasıyla adı yan yana.
+
+**Ölçülüp kaydedilen, düzeltilmeyen: webde `nav` aşırı yüklü.** Sözlükte
+`nav` = "sekme açıldı, value = sekme sırası". Android tam olarak bunu yazıyor.
+Web ise altı çağrıda başka şeyler için de kullanıyor: `onboarding:level_pick`,
+`onboarding:level_measure`, `onboarding:placement`, `onboarding:level`
+(onboarding çıkış yolu) ve `roleplay_exam:start` / `roleplay_exam:done` - son
+ikisinde `value` konuşulan replik sayısı, yani sekme sırası değil. Tek kovada
+üç ayrı olay ve üç ayrı `value` anlamı var.
+
+Düzeltilmedi çünkü Android'e eşlemenin yolu bu çağrıları başka bir olaya
+taşımak ve o olayın adını UYDURMAK: onboarding çıkış yolu için `onboarding_done`
+gibi bir ad, rol yapma sınavı için de webde-var/Android'de-yok bir yüzeyin
+(WP-22, `/lessons/[id]/exam` - Android'de rol yapma dersin içinde bir aşama,
+ayrı sınav yüzeyi yok) kendi olayı gerekirdi. İkisi de §11.29'da kaydedilen
+sınıf: mevcut bir ada zorlamak veri kaybettirir, yenisini uydurmak Sametin
+kararı. Şu an bir raporu bozmuyor - `nav` kovasını okuyan sorgu yok.

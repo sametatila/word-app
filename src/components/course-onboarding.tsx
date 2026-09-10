@@ -68,6 +68,32 @@ const LEVELS = [
 type Step = 0 | 1 | 2 | 3 | 4;
 
 /**
+ * Huni adımlarının ADI — `onboarding_step` olayının `kind`ı.
+ *
+ * İki şey düzeltildi. Birincisi: liste çağrı yerinde konumsal bir dizi
+ * sabitiydi (`["welcome", …][step]`), yani araya bir adım eklendiğinde bütün
+ * adlar sessizce kayardı. Artık adım numarasıyla adı yan yana duruyor.
+ *
+ * İkincisi ve önemlisi: ADLAR ANDROID'LE ÇAKIŞIYORDU. Buradaki 3. adım
+ * (günlük hedef) `pace` diye, 1. adım (neden öğreniyorsun) `goal` diye
+ * yazılıyordu; Android'de ise günlük hedef adımının adı `goal`. Yönetim
+ * panelindeki huni sorgusu (`group by kind`) iki platformu birlikte
+ * topluyor, dolayısıyla `goal` kovası webin GÜDÜ adımıyla Android'in GÜNLÜK
+ * HEDEF adımını aynı sayıya katıyordu - iki ayrı soru, tek kova.
+ *
+ * Android referans: günlük hedef `goal`. Webin güdü adımının Android'de
+ * karşılığı yok, o yüzden Android'in kelimesini işgal etmiyor; kendi adını
+ * (`motivation`) alıyor.
+ */
+const STEP_KIND: Record<Step, string> = {
+  0: "welcome",
+  1: "motivation",
+  2: "level",
+  3: "goal",
+  4: "ready",
+};
+
+/**
  * İlk giriş akışı (plan WP-65): dört ekran, her biri tek karar.
  *   1. İsim + kurs (+ ses)   2. Hedef: neden Almanca?
  *   3. Seviye: ölçelim mi, biliyor musun?   4. "Bugünkü planın hazır"
@@ -127,7 +153,7 @@ export function CourseOnboarding({
   const [step, setStep] = useState<Step>(0);
   // Onboarding hunisi: hangi adıma kadar gelindi (WP-80).
   useEffect(() => {
-    track("onboarding_step", step, ["welcome", "goal", "level", "pace", "ready"][step] ?? "other");
+    track("onboarding_step", step, STEP_KIND[step] ?? "other");
   }, [step]);
   const [name, setName] = useState(initialName);
   const [course, setCourse] = useState("de");
