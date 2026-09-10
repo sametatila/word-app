@@ -6,10 +6,16 @@
  * görünüyor. Bu iskelet, gelecek içeriğin şeklini hemen çizerek o boşluğu
  * doldurur.
  */
+/*
+ * YARIÇAP ÖLÇEKTEN. İskelet, yerini tuttuğu şeyin şeklini almalı: burası
+ * Tailwind'in kendi `rounded-xl`ini (12) kullanıyordu, oysa yerini tuttuğu
+ * satır ve kutular ölçeğin 14 ve 20'sinde. İçerik gelince yarıçap zıplıyordu.
+ * Mobil karşılıkları da öyle: `Skeleton` md (14), `SkeletonRows` lg (20).
+ */
 function Skeleton({ className = "", opacity = 1 }: { className?: string; opacity?: number }) {
   return (
     <div
-      className={`animate-pulse rounded-xl ${className}`}
+      className={`animate-pulse rounded-tile ${className}`}
       style={{ background: "var(--surface-2)", opacity }}
     />
   );
@@ -80,7 +86,7 @@ export function RowSkeleton({ rows = 3, height = 56 }: { rows?: number; height?:
       {Array.from({ length: rows }).map((_, i) => (
         <div
           key={i}
-          className="animate-pulse rounded-xl"
+          className="animate-pulse rounded-panel"
           style={{ height, background: "var(--surface-2)", opacity: 1 - i * 0.12 }}
         />
       ))}
