@@ -1658,26 +1658,36 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
    * sinirlari, farkli listelerin sayfa boyu, farkli modlarin esikleri.
    */
   const BELIRSIZ = ["DAILY_LIMIT", "DANGER_SECONDS", "MAX_CHARS", "MAX_TARGET", "MIN_CONFIDENCE", "PAGE_SIZE", "PASS_RATIO"];
+  /* Dizge tarafinin belirsizleri: iki ayri "kapat" anahtari ve iki saglayicinin
+     jeton adresi. Genel adlar (KEY, PREFIX) zaten GENERIC'te. */
+  const BELIRSIZ_DIZGE = ["DISMISS_KEY", "TOKEN_URL"];
   const belirsiz = [...new Set([...wCok, ...mCok])].sort();
   sameSet("belirsiz sabit adlari", belirsiz, BELIRSIZ, "bulunan", "kayitli");
 
   /* Dizge ve mantiksal sabitler de ayni kuralla. `KEY` gibi genel adlar
      disarida (bkz. GENERIC): iki dosya ayni adi bambaska bir is icin
      kullanabiliyor ve ad tek basina sozlesme tasimiyor. */
+  /* Sayisal bolumdeki ayni kural: bir ad bir agacta birden cok DEGERLE
+     tanimliysa karsilastirmaya girmiyor (bkz. 11.94). */
   const grabStr = (root) => {
     const map = new Map();
+    const coklu = new Set();
     for (const f of walk(root)) {
       for (const x of read(f).matchAll(/^\s*(?:export\s+)?const ([A-Z][A-Z0-9_]{2,})\s*(?::[^=\n]+)?=\s*("(?:[^"\\\\]|\\\\.)*"|true|false)\s*(?:as const)?\s*;/gm)) {
+        if (map.has(x[1]) && map.get(x[1]) !== x[2]) coklu.add(x[1]);
         map.set(x[1], x[2]);
       }
     }
-    return map;
+    for (const k of coklu) map.delete(k);
+    return { map, coklu };
   };
-  const ws = grabStr("src");
-  const ms = grabStr("mobile/src");
+  const { map: ws, coklu: wsCok } = grabStr("src");
+  const { map: ms, coklu: msCok } = grabStr("mobile/src");
   const ortakS = [...ws.keys()].filter((k) => ms.has(k) && !GENERIC.has(k)).sort();
   const ayrisanS = ortakS.filter((k) => ws.get(k) !== ms.get(k)).map((k) => k + ": mobil " + ms.get(k) + " / web " + ws.get(k));
   sameList("ortak dizge sabitleri", ayrisanS.length ? ayrisanS : ["ayrisma yok (" + ortakS.length + ")"], ["ayrisma yok (" + ortakS.length + ")"], "ayrisan", "beklenen");
+  const belirsizS = [...new Set([...wsCok, ...msCok])].filter((k) => !GENERIC.has(k)).sort();
+  sameSet("belirsiz dizge sabit adlari", belirsizS, BELIRSIZ_DIZGE, "bulunan", "kayitli");
 }
 
 /* ── 38. sinav yazma bolumunun degerlendirme istegi ────────────────────────
