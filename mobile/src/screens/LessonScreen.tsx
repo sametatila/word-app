@@ -16,6 +16,7 @@ import { Celebrate } from "../ui/Celebrate";
 import { findLesson, scoredSteps, type Lesson, type Segment, type Expectation, type LectureStep } from "../data/lessons";
 import { foldCompare, foldTight } from "../lib/textFold";
 import { sendRoleplay, roleplayConfigured, parseReply, patternUsed, type ChatMsg } from "../game/roleplay";
+import { offlineStart, offlineReply, type OfflineState, type Hint } from "../game/offlineRoleplay";
 import { markItemDone, loadLessonResume, saveLessonResume, clearLessonResume } from "../game/lessonProgress";
 import { speakTarget } from "../lib/tts";
 import { ensureMicPermission, listenOnce, sttAvailable, stopListening } from "../lib/stt";
@@ -107,6 +108,25 @@ export function LessonScreen() {
   const [busy, setBusy] = useState(false);        // roleplay bekleme
   const [roleTurns, setRoleTurns] = useState(0);
   const [roleMsgs, setRoleMsgs] = useState<ChatMsg[]>([]);
+  /*
+   * SAĞLAYICI KAPALIYSA SENARYO YOLU. `null` = model çalışıyor. Web aynı
+   * durumda derse ait senaryoya düşüyor ve konuşma sürüyor; mobil yalnız
+   * "yapay zekâ kapalı" deyip bırakıyordu ve ders GEÇİLEMİYORDU - geçme
+   * koşulu konuşmanın yapılmasını istiyor (bkz. web-parity 11.9).
+   */
+  const [offline, setOffline] = useState<OfflineState | null>(null);
+  const offlineRef = useRef(false);
+  /*
+   * Yönlendirme BALONCUK olarak çiziliyor. Web onu mikrofon etiketine
+   * koyuyor; mobilde o etiket tek satır ve kalıp cümlesi sığmıyor, üstelik
+   * ekranda zaten "ipucu" tonlu baloncuk var. Metin ANAHTARDAN çözülüyor;
+   * boş anahtar "olduğu gibi göster" demek (senaryo dalının kendi `cue`su).
+   */
+  function pushHint(h: Hint | null) {
+    if (!h) return;
+    const text = h.key ? tx(h.key, h.vars) : (h.vars?.text ?? "");
+    if (text) push({ role: "teacher", segments: [{ lang: "tr", text }], tone: "hint" });
+  }
   const [suggestions, setSuggestions] = useState<string[]>([]);
   const [saved, setSaved] = useState(false);
   const [resumeOffer, setResumeOffer] = useState<{ cursor: number; correct: number } | null>(null);
@@ -147,7 +167,10 @@ export function LessonScreen() {
      */
     roleplayConfigured()
       .then((ok) => {
-        if (alive && !ok) push({ role: "teacher", segments: [{ lang: "tr", text: tx("lesson.ai_off") }], tone: "hint" });
+        if (alive && !ok) {
+          offlineRef.current = true;
+          push({ role: "teacher", segments: [{ lang: "tr", text: tx("lesson.ai_off") }], tone: "hint" });
+        }
       })
       .catch(() => {});
     return () => { alive = false; stopListening(); };
@@ -371,9 +394,17 @@ export function LessonScreen() {
     if (!lesson) return;
     setPhase("roleplay");
     void clearLessonResume(lesson.id);
-    const opening = lesson.roleplay.opening;
     setFeed([]);
     push({ role: "teacher", segments: [{ lang: "tr", text: tx("lesson.scene", { scene: lesson.roleplay.scene }) }] });
+    /* Çevrimdışı yolda açılış senaryodan geliyor (ilk turun sorusu); model
+       çalışıyorsa dersin kendi açılış repliği. */
+    let opening = lesson.roleplay.opening;
+    if (offlineRef.current) {
+      const st = offlineStart(lesson);
+      setOffline(st.state);
+      opening = st.opening;
+      pushHint(st.hint);
+    }
     if (opening) {
       push({ role: "teacher", segments: [{ lang: "de", text: opening }, ...(lesson.roleplay.openingTr ? [{ lang: "tr" as const, text: lesson.roleplay.openingTr }] : [])] });
       setRoleMsgs([{ role: "assistant", content: opening }]);
@@ -395,6 +426,22 @@ export function LessonScreen() {
     const turn = roleTurns + 1;
     setRoleTurns(turn);
     scrollDown();
+    /* ÇEVRİMDIŞI: model yok, cevabı senaryo veriyor. Aynı baloncuk, aynı
+       ayrıştırıcı - `[SAY]` satırı yine öneri çipi oluyor. */
+    if (offline) {
+      const r = offlineReply(lesson, offline, text);
+      setOffline(r.state);
+      const parsed = parseReply(r.content);
+      const bodyText = parsed.body || r.content;
+      setRoleMsgs([...next, { role: "assistant", content: bodyText }]);
+      push({ role: "teacher", segments: [{ lang: "de", text: bodyText }] });
+      setSuggestions(parsed.suggestions);
+      pushHint(r.hint);
+      if (r.speak) speakTarget(r.speak);
+      setBusy(false);
+      scrollDown();
+      return;
+    }
     try {
       const reply = await sendRoleplay(lesson.id, next);
       const parsed = parseReply(reply || "…");

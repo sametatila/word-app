@@ -2,9 +2,15 @@
  * Ders kataloğunu mobil pakete döker (seviye başına bir JSON).
  *
  * Web dersi koddan okuyor (findLesson); mobilin de aynı içeriğe ihtiyacı var
- * çünkü /api/lesson yalnızca SONUCU kaydeder, içeriği sunmaz. Çevrimdışı
- * roleplay senaryosu (script) hariç tutulur: mobil konuşmayı /api/roleplay ile
- * yürütür, senaryo sunucuda durur — böylece paket şişmez.
+ * çünkü /api/lesson yalnızca SONUCU kaydeder, içeriği sunmaz.
+ *
+ * ÇEVRİMDIŞI SENARYO ARTIK DÖKÜLÜYOR. Eskiden `script` hariç tutuluyordu
+ * ("mobil konuşmayı /api/roleplay ile yürütür") ve bu, sağlayıcı kapalıyken
+ * Android'de hiçbir konuşma dersinin geçilememesi demekti — geçme koşulu
+ * konuşmanın yapılmasını istiyor. Web o durumda senaryoya düşüyor; mobil de
+ * artık düşüyor (`game/offlineRoleplay`).
+ *
+ * Paket şişmesi ölçüldü: senaryo 780 dersin yalnız 10'unda var.
  */
 import { writeFileSync, mkdirSync } from "node:fs";
 import { join } from "node:path";
@@ -32,15 +38,11 @@ for (const level of LEVELS) {
   const lessons = all
     .filter((l) => l.level === level)
     .map((l) => {
-      // `script` mobil pakete GİRMİYOR (yalnız web oynatıcısı kullanıyor ve
-      // paketi gereksiz büyütüyor); kalan alanlar aynen taşınıyor.
-      const { script: _omitScript, ...roleplay } = l.roleplay as Record<string, unknown>;
-      void _omitScript;
       return {
         id: l.id, level: l.level, course: l.course, icon: l.icon,
         title: l.title, titleTr: l.titleTr, summary: l.summary, minutes: l.minutes,
         focusId: l.focusId, vocab: l.vocab, patterns: l.patterns,
-        lecture: l.lecture, roleplay,
+        lecture: l.lecture, roleplay: l.roleplay,
       };
     });
   // Dersi olmayan seviye için dosya YAZILMIYOR: mobil yükleyici paketleri tek
