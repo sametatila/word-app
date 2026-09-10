@@ -330,6 +330,34 @@ console.log("\n" + C.b + "11. DERS VE DENEME ICERIGI vs OYNATICI" + C.off);
   else pass(`deneme madde turleri (${[...itemKinds].sort().join(", ")})`);
 }
 
+/* unite dugum turleri */
+
+console.log("\n" + C.b + "12. UNITE DUGUM TURLERI" + C.off);
+{
+  /*
+   * Patika ünitesinin düğüm türleri iki tarafta ayrı yazılı: sunucuda
+   * `ImmersionItemKind`, mobilde `ItemKind`. Sunucu üretiyor, mobil çiziyor -
+   * ayrışırlarsa ya çizilmeyen bir düğüm gelir ya hiç gelmeyen bir tür
+   * çizilmeye çalışılır. Bulunduğunda mobilde fazladan bir `speak` vardı:
+   * sunucu onu hiç üretmiyor, mobilin kendi ekranı da dallanmıyordu.
+   *
+   * Sıra önemsiz (küme karşılaştırması): iki dosya türleri farklı düzende
+   * sayıyor ve düzen bir şey ifade etmiyor.
+   */
+  const union = (src, name) => {
+    const i = src.indexOf(`${name} =`);
+    if (i < 0) return [];
+    const seg = src.slice(i, i + 1400);
+    const end = seg.search(/;\s*(\n|$)/);
+    return [...(end > 0 ? seg.slice(0, end) : seg).matchAll(/"([\w-]+)"/g)].map((x) => x[1]);
+  };
+  sameSet(
+    "dugum turleri",
+    union(read("mobile/src/data/unit.ts"), "export type ItemKind"),
+    union(read("src/lib/immersion/types.ts"), "export type ImmersionItemKind"),
+  );
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"
