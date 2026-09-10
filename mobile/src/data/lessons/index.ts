@@ -4,6 +4,7 @@
  * öyle çünkü /api/lesson yalnız SONUCU kaydeder, içeriği sunmaz.
  */
 import { courseOrDefault, currentCourseId } from "../../lib/courses";
+import { nativeLesson } from "../../lib/nativeContent";
 import a1 from "./de-a1.json";
 import enA1 from "./en-a1.json";
 import enA2 from "./en-a2.json";
@@ -74,10 +75,22 @@ const ALL: Lesson[] = Object.values(BY_COURSE).flatMap((byLevel) => Object.value
 const INDEX: Record<string, Lesson> = {};
 for (const l of ALL) INDEX[l.id] = l;
 
+/*
+  ANA DİL BURADA UYGULANIYOR, çağıranda değil.
+
+  Ders içeriğini okuyan her yer (Patika listesi, oynatıcı, ilerleme, tekrar
+  kuyruğu) buradan geçiyor; çeviriyi çağıranlara dağıtmak, birini unutunca
+  aynı dersin bir ekranda İngilizce bir ekranda Türkçe görünmesi demekti.
+  Çeviri gerekmiyorsa (`native_lang` Türkçe) `nativeLesson` nesneyi aynen
+  döndürüyor ve 4,62 MB'lık sözlük hiç açılmıyor.
+*/
 export function lessonsForLevel(level: string, course: string = currentCourseId()): Lesson[] {
-  return bundleFor(course)?.[level] ?? [];
+  return (bundleFor(course)?.[level] ?? []).map(nativeLesson);
 }
-export function findLesson(id: string): Lesson | undefined { return INDEX[id]; }
+export function findLesson(id: string): Lesson | undefined {
+  const l = INDEX[id];
+  return l ? nativeLesson(l) : undefined;
+}
 
 /** Puanlanan adım sayısı — ders kaydının paydası (üretim + doğru/yanlış). */
 export function scoredSteps(l: Lesson): number {

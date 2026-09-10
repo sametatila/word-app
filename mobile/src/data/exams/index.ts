@@ -1,6 +1,7 @@
 import PAPERS from "./papers.json";
 import PAPERS_EN from "./papers-en.json";
 import { courseOrDefault, type CourseId } from "../../lib/courses";
+import { nativeMockPaper, nativeMockText } from "../../lib/nativeContent";
 
 /**
  * Deneme sınavları — elle yazılmış, kendi başına duran sınav kâğıtları.
@@ -185,13 +186,28 @@ export const isOpenTask = (t: MockTask) => t.format === "writing" || t.format ==
  */
 const BY_TARGET: Record<string, MockPaper[]> = { de: ALL, en: ALL_EN };
 
+/*
+  LİSTE ile KÂĞIT farklı davranıyor ve fark bilinçli.
+
+  `mockPapersFor` bir katalog döndürüyor: satırda Almanca tema (`theme`) ve
+  altında ana dildeki karşılığı (`themeTr`) var. Orada hep-ya-hiç kuralı
+  yanlış olurdu — bir dizesi eksik diye kâğıdı listeden gizlemek, sınavı
+  yok saymaktır. O yüzden yalnız o alan eşleniyor.
+
+  `mockPaperById` ise çözülecek kâğıdın kendisi: yönerge, durum tarifi,
+  ölçütler ve gerekçeler birlikte çevrilir ya da hiçbiri çevrilmez.
+*/
 export function mockPapersFor(course: CourseId, level?: string): MockPaper[] {
   const list = BY_TARGET[courseOrDefault(course).targetLang] ?? [];
-  return (level ? list.filter((p) => p.level === level) : list).slice().sort((a, b) => a.no - b.no);
+  return (level ? list.filter((p) => p.level === level) : list)
+    .slice()
+    .sort((a, b) => a.no - b.no)
+    .map((p) => (p.course === "de" ? { ...p, themeTr: nativeMockText("themeTr", p.themeTr) } : p));
 }
 
 export function mockPaperById(id: string): MockPaper | null {
-  return [...ALL, ...ALL_EN].find((p) => p.id === id) ?? null;
+  const p = [...ALL, ...ALL_EN].find((x) => x.id === id);
+  return p ? nativeMockPaper(p) : null;
 }
 
 /** Kursun deneme sınavı KATALOĞU var mı — Öğren sekmesindeki kutucuğun koşulu. */

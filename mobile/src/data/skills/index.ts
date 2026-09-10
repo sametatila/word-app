@@ -6,6 +6,7 @@
  * dolu, sonrakiler "Yakında" (web gerçekliğiyle aynı).
  */
 import { courseOrDefault, currentCourseId } from "../../lib/courses";
+import { nativeExercise } from "../../lib/nativeContent";
 import all from "./exercises.json";
 import allEn from "./exercises-en.json";
 
@@ -60,8 +61,15 @@ function poolFor(course: string): SkillExercise[] {
   return [];
 }
 
+/*
+  ANA DİL BURADA. Egzersizin içeriğini okuyan TEK yol bu; oynatıcılar,
+  puanlama ve kayıt hepsi `getExercise`ten geçiyor. `listMeta` çevirmiyor
+  ve çevirmemeli: liste satırı yalnız `title`/`genre` taşıyor, ikisi de
+  öğrenilen dilde.
+*/
 export function getExercise(id: string, course: string = currentCourseId()): SkillExercise | undefined {
-  return poolFor(course).find((e) => e.id === id);
+  const e = poolFor(course).find((x) => x.id === id);
+  return e ? nativeExercise(e) : undefined;
 }
 
 export type SkillMeta = { id: string; level: string; skill: string; title: string; genre: string; minutes: number };

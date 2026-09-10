@@ -91,13 +91,18 @@ jobs:
       # tasarım ölçekleri için onu yapıyor.
       - name: Tasarım jetonları
         run: npm run check:tokens
-      # Mobil paket kaynakla aynı içeriği taşıyor mu. Üç köprü ELLE
+      # Mobil paket kaynakla aynı içeriği taşıyor mu. DÖRT köprü ELLE
       # çalıştırılıyor: kaynağa yeni bir ders/egzersiz/kâğıt eklenip döküm
       # yenilenmezse mobil o içeriği sessizce taşımaz ve hata ancak ekranda
       # görünür (Patika'da açılamayan ünite, listede olmayan kâğıt).
+      #
+      # Dördüncüsü ANA DİL dökümü ve ölçütü farklı: kimlik değil BAYT
+      # eşitliği. Öteki üçünde metin sürekli değişiyor ve tam eşitlik yarım
+      # kalmış her işte kırmızı yanardı; ana dil dökümünün iki dosyası ise
+      # tümüyle türetilmiş, ayrışmaları ancak dökümün unutulması demek.
       - name: Döküm bütünlüğü
         run: npm run check:dumps
-      # Ana dil ekseninin beş kapısı. Beşi de SESSİZ bozulmaya karşı:
+      # Ana dil ekseninin altı kapısı. Altısı da SESSİZ bozulmaya karşı:
       # çözücü bir parçanın karşılığını bulamayınca dersi tümden reddediyor
       # ve `localiseLesson` Türkçeye düşüyor — hiçbir yerde hata görünmüyor,
       # İngilizce kurs yalnızca Türkçe olarak açılıyor. Bir ders düzenlemesi

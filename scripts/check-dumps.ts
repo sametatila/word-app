@@ -21,6 +21,7 @@ import { LESSONS } from "../src/lib/lessons";
 import { BUNDLED_EXERCISES } from "../src/lib/skills/bundled";
 import { mockPapersFor } from "../src/lib/mock-exams";
 import type { MockLevel } from "../src/lib/mock-exams/types";
+import { buildNativeDump, NATIVE_DUMP_FILES } from "./dump-native-mobile";
 
 const ROOT = path.join(__dirname, "..");
 const read = (p: string) => JSON.parse(readFileSync(path.join(ROOT, p), "utf8")) as unknown;
@@ -77,6 +78,37 @@ compare(
   new Set(LEVELS.flatMap((l) => [...mockPapersFor(l, "de"), ...mockPapersFor(l, "en")]).map((p) => p.id)),
   ids(["mobile/src/data/exams/papers.json", "mobile/src/data/exams/papers-en.json"]),
 );
+
+/*
+  ANA DİL DÖKÜMÜ — burada ölçüt KİMLİK DEĞİL, BAYT EŞİTLİĞİ.
+
+  Ötekilerde gevşek ölçüt doğruydu: içerik metni sürekli değişiyor ve tam
+  eşitlik yarım kalmış her işte kırmızı yanardı. Burada iki dosya da tümüyle
+  TÜRETİLMİŞ (çözücünün kopyası + sözlük), yani kaynakla aynı olmamaları
+  ancak dökümün unutulması demek. Unutulursa mobil eski çözücüyle çalışır ve
+  hata ekranda görünmez: yeni yazılmış bir çeviri sessizce Türkçe kalır.
+*/
+{
+  const want = buildNativeDump();
+  for (const [label, file, body] of [
+    ["ana dil çözücüsü", NATIVE_DUMP_FILES.ts, want.ts],
+    ["ana dil sözlüğü", NATIVE_DUMP_FILES.json, want.json],
+  ] as const) {
+    let have: string | null = null;
+    try {
+      have = readFileSync(path.join(ROOT, file), "utf8");
+    } catch {
+      have = null;
+    }
+    if (have === body) {
+      console.log(`✓ ${label}`);
+      continue;
+    }
+    fails++;
+    console.error(`✗ ${label}: ${have === null ? "dosya yok" : "kaynakla ayrışmış"} (${file})`);
+    console.error("   dokumu yenile: npm run dump:native");
+  }
+}
 
 console.log(fails === 0 ? "\nDOKUMLER KAYNAKLA AYNI\n" : `\n${fails} DOKUM AYRISMASI\n`);
 process.exit(fails === 0 ? 0 : 1);

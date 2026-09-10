@@ -205,7 +205,24 @@ export function enabledCourses(): Course[] {
  */
 export const PAIR_READY: Record<NativeLang, CourseId[]> = {
   tr: ["de", "gsw-zh", "en"],
-  en: [],
+  /*
+    en→de AÇILDI (2026-09-10). Üç katman da tam:
+      kelime      üretimde 8.707/8.707 İngilizce karşılık + örnek çevirisi
+      ders/beceri/deneme  altı kapı yeşil (check:lessons-native,
+                  check:lessons-swap, check:skills-native, check:skills-task,
+                  check:mock-prose, check:mock-native)
+      arayüz      1.203 anahtar × 3 dil (i18n:check)
+
+    gsw-zh BURADA YOK ve bu bir unutma değil: lehçe örnek çevirileri yerelde
+    yazıldı ama üretimde `beispiel_en` 0/8.267. Karşılık var, örnek yok —
+    kelime kartının yarısı İngilizce yarısı boş olurdu.
+  */
+  en: ["de"],
+  /*
+    de→en HENÜZ YOK ve eksik olan VERİ: İngilizce kursun Almanca yüzü hiç
+    yazılmadı. Üretimde `de_gloss` 0/7.175, `beispiel_de` 0/7.175; ders,
+    egzersiz ve kâğıtlarda ~17.800 Türkçe dizenin Almancası yok.
+  */
   de: [],
 };
 
