@@ -1125,6 +1125,11 @@ hizalanıyor. Web'i kırpmak ise düpedüz gerileme olurdu. Karar Samet'in: örn
 cümle tek başına bile eklenmeye değer olabilir (öğrenci için en yararlı alan ve
 uçtan bir kolon uzağa).
 
+**KAPANDI (bkz. §11.167).** Sonraki turlarda uç yedi alanı birden göndermeye
+başladı ve Android satırı açılır ayrıntıyı, örnek cümleyi, tekrar takvimini,
+unutma sayısını ve sülük işaretini kazandı. Yukarıdaki tablo ARTIK GEÇERSİZ;
+iki satır aynı yedi alanı gösteriyor ve `check:parity` §85 bunu ölçüyor.
+
 ### 11.12 Değerlendirme kuyruğu — mobilde yok (kayıt, dosya başkasının açık işi)
 
 `POST /api/assess/queue` sağlayıcı kapalıyken yazılan metni saklıyor ve
@@ -6112,3 +6117,28 @@ iki tarafta da sıfır bekliyor.
 yorumundaki örneği (`haptic("correct"); sfx("correct")` diye yazan açıklama)
 gerçek bir çağrı sandı. Yorumlar taranmadan önce atılıyor — bu turda üçüncü
 kez aynı ders: **kapı kaynak metni okuyorsa, kaynağın yorumlarını da okur.**
+
+
+### 11.167 Eskimiş kayıt: §11.11 çoktan kapanmıştı
+
+Bekleyen "karar Samet'te" maddelerini teker teker ölçmeye başladım (§11.165'te
+biri yanlış teşhis çıkmıştı). İlk sıradaki §11.11 — kelime listesi satırının
+derinliği — **zaten kapanmış**: uç yedi alanı birden gönderiyor, Android satırı
+açılıyor, örnek cümle, tekrar takvimi, unutma sayısı ve sülük işareti hepsi
+yerinde. Kayıt eskimişti ve hâlâ "port edilmedi, karar Samet'in" diyordu.
+
+**Eskimiş kayıt yanlış kayıttan daha tehlikeli:** yanlış kayıt ölçülünce
+düzeltilir, eskimiş kayıt ise "bu iş bekliyor" diye durur ve kimse ona
+dokunmaz. Girdiye kapanış notu eklendi ve §85 kapısı iki satırın aynı yedi
+alanı gösterdiğini artık ölçüyor — kayıt değil kod konuşuyor.
+
+**Kapı yazarken iki kusur çıktı ve ikisi de öğretici:**
+1. İlk yazım alanın adını arıyordu; alan TİPTE geçtiği için satırdan silinse
+   bile "var" diyordu. Ölçü çizim ifadesine taşındı (`\.lapses ?`,
+   `firstExample(`, `{w.niveau}`), yani "tipte var" değil "ekranda var".
+2. `typLabel` iki tarafta farklı sarmalanmış (mobil `grammarLine` içinde);
+   desen ikisini de tanıyor.
+
+**Yan bulgu:** aynı metin iki ayrı anahtarda duruyordu — `words.n_lapses`
+(ortak) ve `wordsw.n_lapses` (web). Web kopyası silindi, kullanım ortak
+anahtara geçti; üç dilde üç satır eksildi.

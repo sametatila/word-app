@@ -3117,6 +3117,32 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   sameList("cift geri bildirim cagrisi", m.length ? m : ["yok"], w.length ? w : ["yok"]);
 }
 
+/* ── 85. kelime listesi satirinin alanlari ────────────────────────────────
+ * Kayit defteri §11.11 bu satiri "web ileride, karar Samet'te" diye
+ * birakmisti: Android satiri duz, web satiri aciliyordu. Sonraki turlarda uc
+ * ve ekran genisletildi ama KAYIT eskidi. Kapi artik iki satirin ayni
+ * alanlari gosterdigini olcuyor - kayit degil kod konusuyor. */
+{
+  const alanlar = (p) => {
+    const src = read(p).replace(/\/\*[\s\S]*?\*\//g, " ").replace(/\/\/[^\n]*/g, " ");
+    return [
+      "ingilizce=" + (/\b(w|r)\.en\b/.test(src) ? "var" : "yok"),
+      /* Mobil ikisini bir yardimciya sarmis (`grammarLine` → `typLabel` +
+         `grammarNote`), web ikisini satirda yan yana yaziyor: aranan sey
+         etiketin kendisi. */
+      "tur ve cogul=" + (/typLabel\(|grammarLine\(/.test(src) ? "var" : "yok"),
+      "ornek cumle=" + (/firstExample\(|ExampleLines/.test(src) ? "var" : "yok"),
+      "tekrar takvimi=" + (/dueLabel/i.test(src) ? "var" : "yok"),
+      /* Alanin TIPTE gecmesi yetmez, CIZILMESI gerek: ilk yazim yalnizca adi
+         ariyordu ve satirdan silinse bile tip tanimi yuzunden "var" diyordu. */
+      "unutma sayisi=" + (/\.lapses \?/.test(src) ? "var" : "yok"),
+      "suluk=" + (/leech/.test(src) ? "var" : "yok"),
+      "seviye=" + (/\{(?:w|r)\.niveau\}/.test(src) ? "var" : "yok"),
+    ];
+  };
+  sameList("kelime satiri alanlari", alanlar("mobile/src/screens/WordsScreen.tsx"), alanlar("src/components/word-list.tsx"));
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"

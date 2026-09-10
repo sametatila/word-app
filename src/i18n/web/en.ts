@@ -880,7 +880,6 @@ export const enWeb: Record<string, string> = {
   "wordsw.due_tomorrow": "review tomorrow",
   "wordsw.due_in_days": "review in {n} days",
   "wordsw.not_studied": "not studied yet",
-  "wordsw.n_lapses": "you struggled {n} times",
   "snd.play_sample": "Play a sample sound",
   "common.listen": "Listen",
   "settings.privacy_policy_short": "Policy",

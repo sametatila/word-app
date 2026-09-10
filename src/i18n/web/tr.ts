@@ -905,7 +905,6 @@ export const trWeb: Record<string, string> = {
   "wordsw.due_tomorrow": "yarın tekrar",
   "wordsw.due_in_days": "{n} gün sonra tekrar",
   "wordsw.not_studied": "henüz çalışılmadı",
-  "wordsw.n_lapses": "{n} kez zorlandın",
   "snd.play_sample": "Örnek sesi dinle",
   "common.listen": "Dinle",
   "settings.privacy_policy_short": "Politika",

@@ -880,7 +880,6 @@ export const deWeb: Record<string, string> = {
   "wordsw.due_tomorrow": "morgen fällig",
   "wordsw.due_in_days": "in {n} Tagen fällig",
   "wordsw.not_studied": "noch nicht geübt",
-  "wordsw.n_lapses": "{n}-mal Mühe gehabt",
   "snd.play_sample": "Beispielton anhören",
   "common.listen": "Anhören",
   "settings.privacy_policy_short": "Richtlinie",

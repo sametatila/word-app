@@ -310,7 +310,7 @@ export function WordList({
                     ) : null}
                     <p className="muted mt-2 text-xs">
                       {dueLabel(r.dueAt, tx) ?? tx("wordsw.not_studied")}
-                      {r.lapses ? ` · ${tx("wordsw.n_lapses", { n: r.lapses })}` : ""}
+                      {r.lapses ? ` · ${tx("words.n_lapses", { n: r.lapses })}` : ""}
                     </p>
                   </motion.div>
                 ) : null}
