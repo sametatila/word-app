@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { StatusBar, View, Dimensions, Platform, Linking } from "react-native";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import { NavigationContainer, DefaultTheme, DarkTheme } from "@react-navigation/native";
@@ -16,7 +16,7 @@ import { loadReduceMotion } from "./src/lib/reduceMotion";
 import { loadLang, useLang } from "./src/lib/i18n";
 import { attachPushListeners } from "./src/lib/pushDevice";
 import { navigationRef } from "./src/lib/pushRoute";
-import { parseDeepLink } from "./src/lib/deepLink";
+import { parseDeepLink, type DeepLinkAction } from "./src/lib/deepLink";
 import { completeEmailVerification } from "./src/lib/auth";
 import { t } from "./src/lib/i18n";
 import { Text } from "./src/ui/Text";
@@ -27,6 +27,8 @@ function Nav() {
   const { user, loading, refresh } = useAuth();
   /** Doğrulama bağlantısı işlenirken gösterilen örtü (bkz. aşağıdaki derin bağlantı kancası). */
   const [verifying, setVerifying] = useState(false);
+  /** Gezgin hazır olmadan gelen derin bağlantı (bkz. onReady). */
+  const pending = useRef<DeepLinkAction>(null);
   const [onboarded, setOnboarded] = useState<boolean | null>(null);
   // Arayüz dili: değiştiğinde tüm ağaç yeniden render edilsin diye tepede
   // dinleniyor (t() modül düzeyinde okuduğu için tek başına tetiklemez).
@@ -50,11 +52,17 @@ function Nav() {
   useEffect(() => {
     let alive = true;
 
+    /*
+      SOĞUK AÇILIŞ YARIŞI. `getInitialURL` gezgin daha kurulmadan çözülüyor;
+      ilk yazımda `isReady()` koruması bağlantıyı sessizce düşürüyordu ve
+      uygulama giriş ekranında kalıyordu (cihazda görüldü). Hazır değilse
+      eylem BEKLETİLİYOR, `NavigationContainer.onReady` onu işliyor.
+    */
     const goReset = (token: string) => {
-      if (!navigationRef.isReady()) return;
+      if (!navigationRef.isReady()) { pending.current = { kind: "reset-password", token }; return; }
       try {
         (navigationRef.navigate as (n: string, p?: object) => void)("ResetPassword", { token });
-      } catch { /* gezgin hazır değilse bağlantı uygulamayı açmakla kalır */ }
+      } catch { /* gezgin bir şekilde hazır değilse bağlantı uygulamayı açmakla kalır */ }
     };
 
     const handle = async (raw: string | null | undefined) => {
@@ -124,7 +132,19 @@ function Nav() {
   return (
     /* Gezgin başvurusu bileşen ağacının dışından gezinmek için: bildirime
        dokunuş bir React olayı değil, sistemden gelen bir çağrı. */
-    <NavigationContainer ref={navigationRef} theme={navTheme}>
+    <NavigationContainer
+      ref={navigationRef}
+      theme={navTheme}
+      onReady={() => {
+        const p = pending.current;
+        pending.current = null;
+        if (p?.kind === "reset-password") {
+          try {
+            (navigationRef.navigate as (n: string, o?: object) => void)("ResetPassword", { token: p.token });
+          } catch { /* yut */ }
+        }
+      }}
+    >
       <StatusBar barStyle={isDark ? "light-content" : "dark-content"} />
       <TtsBridge />
       {/* Zemin TAM GENİŞLİK; okunabilir sütun ekran başına uygulanıyor
