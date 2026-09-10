@@ -4664,3 +4664,31 @@ olmadığını öğrenemiyor. Seri de aynı yanıttan geliyordu ve okunmuyordu.
 Bitiş kartında hâlâ webde olup mobilde olmayan iki şey var ve ikisi de
 §11.11'in sınırında: **çevrimdışı kaydedildi** hâli ve **sıradaki egzersize**
 bağlantı.
+
+### 11.100 Kelime listesi: uç zaten söylüyordu, ekran sormuyordu
+
+Üç eksik, üçü de **mevcut yeteneği kullanmıyordu**.
+
+**Tekrar takvimi ve gerçek durum.** Web listesi her kelimede "tekrar zamanı
+geldi / yarın / N gün sonra", kaç kez zorlanıldığı ve **beş durum** gösteriyor;
+mobil üç durum gösteriyordu. Sebep uçtaydı: `/api/words` yalnız `intervalDays`
+üzerinden türetilmiş üç değerlik bir `status` gönderiyordu, web ise sunucu
+bileşeninde tabloyu doğrudan okuyor. Uç artık `dueAt`, `lapses` ve `leech` de
+gönderiyor; mobil web `word-list` ile aynı eşikleri kullanıyor (leech
+"zorlanıyorsun", üç günü geçen aralık "tanıdık", yirmi bir gün "öğrenildi").
+
+Bunun önemi ölçüde değil öğrenmede: **tekrar tekrar unutulan kelime
+öğrenilenden ayırt edilemiyordu** ve "bu kelime beni zorluyor" bilgisi
+Android'de hiçbir yerde yoktu.
+
+**Seviye süzgeci.** Uç `?level=` destekliyor ve web kullanıyor; mobil hiç
+göndermiyordu. Yetenek vardı, ekran sormuyordu.
+
+**İlerleme özeti.** "{n} pekişti · {n} görüldü · {n} tekrar sırada" satırı
+webde başlığın altında. Sayılar mobilde **zaten geliyordu** (`useMe`:
+`mastered`, `totalWords`, `dueCount`) ve hiçbiri gösterilmiyordu. Ek istek
+yok.
+
+Üçü de aynı kalıbın örneği: **veri ya da yetenek elde, yüzey sormuyor.**
+§11.80'in "sözleşme modellenmiş, yüzey yazılmamış" sınıfının uç tarafındaki
+hâli.
