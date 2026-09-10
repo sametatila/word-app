@@ -306,6 +306,26 @@ de-a1-weh-tun         "Ağrıyan yer özne oluyor, tıpkı Türkçedeki gibi."
                         iddia tutuyor, ama tutması tesadüf, çeviri değil.
 ```
 
+##### Uygulamada iki ayrı işlem çıktı (l-019'da ilk örnekleri yazıldı)
+
+Bu parçalar yazılmaya başlanınca hepsi tek kalıba girmedi; ikiye ayrıldı:
+
+1. **Yanlış olan iddia DÜZELTİLİR.** `de-a1-weh-tun`'daki
+   "Şimdi ilk yol, Türkçeyle aynı mantıkta:" satırı İngilizcede
+   `Now the first way, on the same logic as English:` yazıldı. İddia
+   İngilizcede de tutuyor ("My head hurts") — ama tutması tesadüf, o yüzden
+   cümlenin İNGİLİZCEYE göre yeniden kurulması gerekti. Aynısını tutmayan
+   satırlarda (takmak/giymek, haftada iki kez) iddia tümden düşecek; onlar
+   henüz sıradaki paketlerde.
+2. **Örnek AD olduğu gibi bırakılır.** "Soyadım Yılmaz." satırı
+   `My surname is Yılmaz.` kaldı. Yanlış bir şey söylemiyor — öğrenci her
+   yerden olabilir — ve değiştirmek çeviri değil içerik kararı olurdu.
+
+Yani ölçüt şu: **cümle bir İDDİA taşıyorsa ve iddia İngilizce öğrenci için
+yanlışsa çeviri yetmez**; taşımıyorsa (ad, şehir, örnek cevap) olduğu gibi
+kalır ve toplu karara bırakılır. Türkçe tarafta da kişi adı örnekleri var,
+tıpkı Almanca taraftaki gibi — aşağıdaki 16 parçalık listeyle aynı kararı
+bekliyorlar.
 #### Ana dile bağlılık ALMANCA metinde de var: 16 parça, 6 ders
 
 Yukarıdaki tarama Türkçe `tr()` alanlarınaydı. Almanca `de()` ve
