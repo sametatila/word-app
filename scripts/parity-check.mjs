@@ -441,6 +441,36 @@ console.log("\n" + C.b + "14. TEPKI TONLARI" + C.off);
   sameList("tepki tonlari", fmt((k) => mob.get(k) ?? fallback), fmt((k) => web.get(k)));
 }
 
+/* ── 15. konusma eslestirme tablolari ───────────────────────────────────── */
+/*
+ * Tanımlık ve tanıyıcı-noktalama tabloları iki tarafta iki kopya. Web sabit
+ * Almanca yazılıydı ve İngilizce kursta iki sessiz hata veriyordu (bkz.
+ * `test:numbers`); düzeltildi, ama kopyalar birbirini bilmiyor. Diller ve
+ * karşılık sözcükleri karşılaştırılıyor.
+ */
+console.log("\n" + C.b + "15. KONUSMA ESLESTIRME TABLOLARI" + C.off);
+{
+  const webSrc = read("src/components/games/types.ts");
+  const mobSrc = read("mobile/src/lib/voiceMatch.ts");
+
+  /* `const <ad>: Record<...> = { de: ..., en: ... }` icindeki dil anahtarlari. */
+  const langs = (src, name) => {
+    const seg = src.slice(src.indexOf(`const ${name}`));
+    const body = seg.slice(0, seg.indexOf("\n};"));
+    return [...body.matchAll(/^\s{2}(\w+):/gm)].map((m) => m[1]);
+  };
+  sameList("tanimlik dilleri", langs(mobSrc, "ARTICLES"), langs(webSrc, "ARTICLES"));
+  sameList("tanıyıcı noktalama dilleri", langs(mobSrc, "RECOGNIZER_PUNCT"), langs(webSrc, "RECOGNIZER_PUNCT"));
+
+  /* Karsilik sozcukleri: ` punkt `, ` comma ` gibi. */
+  const words = (src) => {
+    const seg = src.slice(src.indexOf("const RECOGNIZER_PUNCT"));
+    const body = seg.slice(0, seg.indexOf("\n};"));
+    return [...body.matchAll(/"\s([a-z ]+)\s"/g)].map((m) => m[1]);
+  };
+  sameList("tanıyıcı noktalama sozcukleri", words(mobSrc), words(webSrc));
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"

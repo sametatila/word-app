@@ -7,7 +7,7 @@
  */
 import assert from "node:assert/strict";
 import { foldNumbers, wordToNumber } from "../src/lib/german-numbers";
-import { foldSpelling, spokenMatches, expandPunctuationWords } from "../src/components/games/types";
+import { foldSpelling, spokenMatches, expandPunctuationWords, matchesAnswer } from "../src/components/games/types";
 import { matchSentence } from "../src/lib/sentence-match";
 import { normalizeSpoken } from "../src/lib/speech";
 
@@ -65,5 +65,33 @@ assert.ok(spokenMatches(["die Katze."], ["die Katze"]), "sonda nokta olan normal
 // Yanlış cevap noktalama açılımıyla YANLIŞLIKLA doğru olmuyor
 assert.ok(!spokenMatches(["der."], ["die Katze"]), "der. Katze cevabını doğru yapmamalı");
 assert.ok(!spokenMatches(["hund."], ["der Punkt"]), "alakasız kelime + nokta Punkt sayılmamalı");
+
+/*
+ * İNGİLİZCE KURS — eşleştirme dile bakıyor.
+ *
+ * `foldSpelling` sabit `der|die|das` yazılıydı ve yalnız BAŞTAKİ tanımlığı
+ * düşürüyordu; tanıyıcı noktalama tablosu da yalnız Almancaydı. Sonuç
+ * İngilizce kursta iki sessiz hata: "the door" hiçbir zaman "door" ile
+ * eşleşmiyordu ve "limitation period" dendiğinde tanıyıcının yazdığı
+ * "limitation." katlamada "limitation"a inip hedefi bulamıyordu. Mobil
+ * (`lib/voiceMatch`) ikisini de dile göre yapıyor.
+ *
+ * Dil artık parametre; varsayılanı geçerli kurs. Node'da yerel depo yok, o
+ * yüzden üstteki Almanca denetimler varsayılanla çalışıyor ve buradaki
+ * İngilizce denetimler dili açıkça veriyor.
+ */
+assert.ok(spokenMatches(["the door"], ["door"], "en"), "the door → door (tanımlık atılır)");
+assert.ok(spokenMatches(["door"], ["the door"], "en"), "door → the door (hedefteki tanımlık da atılır)");
+assert.ok(spokenMatches(["a book"], ["book"], "en"), "a tanımlığı da atılır");
+assert.ok(spokenMatches(["I am waiting at the bus stop"], ["waiting at bus stop"], "en"), "cümle ortasındaki tanımlık");
+assert.ok(spokenMatches(["limitation."], ["limitation period"], "en"), "period simgesi sözcüğe açılır (asıl hata)");
+assert.ok(spokenMatches([","], ["comma"], "en"), "yalın virgül simgesi comma sayılır");
+assert.equal(foldSpelling("What's your name?", "en"), foldSpelling("whats your name", "en"), "kesme işareti silinir");
+assert.equal(foldSpelling("I'm fine", "en"), foldSpelling("Im fine", "en"));
+// Almanca tablo İngilizce kursta kullanılmıyor, tersi de.
+assert.ok(!spokenMatches(["limitation."], ["limitation period"], "de"), "Almanca kursta period açılmaz");
+// Yalnız tanımlıktan oluşan cevap katlamada boşalıyor; yedek okuma kurtarıyor.
+assert.ok(spokenMatches(["the"], ["the"], "en"), "yalnız tanımlık olan cevap yine eşleşir");
+assert.ok(matchesAnswer("der", ["der"], "de"), "yazılan tek tanımlık da eşleşir");
 
 console.log("test:numbers — sözcük/rakam/bileşik/artikel/cümle/kelime/telaffuz/noktalama: tamam");

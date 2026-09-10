@@ -1,5 +1,5 @@
 import type { Round, RoundWord } from "@/lib/types";
-import { courseName } from "@/lib/courses";
+import { courseName, courseOrDefault } from "@/lib/courses";
 import { COURSE_KEY, readLocal } from "@/components/speak-button";
 import { glossFor, type GlossWord } from "@/lib/option-label";
 import type { ErrorType } from "@/lib/errors";
@@ -93,10 +93,19 @@ export function grammarNote(word: RoundWord, lang: NativeLang): string | null {
   return raw; // fiil çekimleri olduğu gibi
 }
 
-/** Yazım karşılaştırması: büyük/küçük harf ve boşluk toleranslı. */
+/**
+ * Yazım karşılaştırması: büyük/küçük harf ve boşluk toleranslı.
+ *
+ * KESME İŞARETİ SİLİNİYOR, boşluğa çevrilmiyor: "what's" ile "whats" aynı
+ * cevap sayılmalı. Almancada görünmeyen bir kusurdu (kesme oradaki başlıklarda
+ * neredeyse hiç geçmiyor), İngilizce kursta 338 konuşma adımı kısaltma
+ * taşıyor ve tanıyıcı bazen kesmeyi hiç yazmıyor. Mobil `lib/textFold`
+ * `foldCompare` aynı kuralı uyguluyor.
+ */
 export function normalize(s: string): string {
   return s
     .toLocaleLowerCase("de-DE")
+    .replace(/['’´`ʼ]/g, "")
     .replace(/[.,!?;:]/g, " ")
     // Boşluk sadeleştirmesi noktalama temizliğinden SONRA gelmeli: "entweder ...
     // oder" önce yapıldığında çift boşukla kalıyor ve hiçbir yazımla eşleşmiyordu.
@@ -119,25 +128,71 @@ export function normalize(s: string): string {
  * Artikel her iki tarafta da isteğe bağlıdır: kelime "Tür" diye saklanıp
  * artikeli ayrı sütunda dursa bile "die Tür" yazan haklıdır.
  */
-export function foldSpelling(s: string): string {
+type TargetLang = "de" | "en";
+
+/**
+ * Geçerli kursun hedef dili — mobil `lib/courses` `currentTargetLang()`
+ * karşılığı. Eşleştirme işlevleri bunu VARSAYILAN olarak alıyor, yani her
+ * çağıranın dili ayrıca taşımasına gerek yok; kurs seçimi zaten yerelde
+ * duruyor (`COURSE_KEY`) ve sunucuda okunamazsa varsayılan kursa düşüyor.
+ */
+function currentTargetLang(): TargetLang {
+  return courseOrDefault(readLocal(COURSE_KEY)).targetLang;
+}
+
+/**
+ * Hedef dilin tanımlıkları — eşleştirmede atılıyor.
+ *
+ * `der|die|das` SABİT yazılıydı ve yalnız baştaki tanımlığı düşürüyordu:
+ * İngilizce kursta "the" hiç düşmüyordu, yani "the door" hiçbir zaman "door"
+ * ile eşleşmiyordu ve tanımlık cümlenin ortasında da geçiyor ("at the bus
+ * stop"). Mobil `lib/voiceMatch` `ARTICLES` ile aynı tablo ve aynı davranış:
+ * tanımlık nerede olursa olsun atılıyor.
+ */
+const ARTICLES: Record<string, RegExp> = {
+  de: /\b(der|die|das)\b/g,
+  en: /\b(the|an|a)\b/g,
+};
+
+export function foldSpelling(s: string, lang: TargetLang = currentTargetLang()): string {
   // Sayı sözcüğü → rakam, umlaut katlamadan ÖNCE (fünf ve fuenf ikisi de
   // tanınıyor, sıra aslında önemsiz): "fünf" ↔ "5" eşleşsin. Tanıyıcı sayıyı
   // rakam yazıyor, içerik sözcükle; ikisi de rakama iniyor.
   return foldNumbers(normalize(s))
-    .replace(/^(der|die|das)\s+/, "")
+    .replace(ARTICLES[lang] ?? ARTICLES.de, " ")
     .replace(/ß/g, "ss")
     .replace(/ä/g, "ae")
     .replace(/ö/g, "oe")
-    .replace(/ü/g, "ue");
+    .replace(/ü/g, "ue")
+    .replace(/\s+/g, " ")
+    .trim();
 }
 
 /** Yazılan cevap, verilen başlıklardan herhangi biriyle eşleşiyor mu? */
-export function matchesAnswer(typed: string, candidates: string[]): boolean {
-  const target = foldSpelling(typed);
+/**
+ * Katlaması BOŞALAN cevap için yedek okuma.
+ *
+ * Tanımlık artık nerede olursa olsun atıldığı için hedef ya da cevap yalnız
+ * tanımlıksa (`der`, `the`) katlama onu tamamen boşaltıyor ve hiçbir zaman
+ * eşleşmiyor. Boşalırsa tanımlığı silmeyen düz küçültmeye düşülüyor - mobil
+ * `lib/voiceMatch` `foldKeep` ile aynı yedek.
+ */
+function foldKeep(s: string, lang: TargetLang): string {
+  const folded = foldSpelling(s, lang);
+  if (folded) return folded;
+  return (s || "")
+    .toLocaleLowerCase(lang === "de" ? "de-DE" : "en-US")
+    .replace(/[.,!?;:"'’]/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+export function matchesAnswer(typed: string, candidates: string[], lang: TargetLang = currentTargetLang()): boolean {
+  const target = foldKeep(typed, lang);
   if (!target) return false;
   return candidates
     .flatMap((c) => acceptedForms(c))
-    .some((form) => foldSpelling(form) === target);
+    .some((form) => foldKeep(form, lang) === target);
 }
 
 /**
@@ -151,19 +206,37 @@ export function matchesAnswer(typed: string, candidates: string[]): boolean {
  * olarak deneniyor (asıl okuma önce), yani yanlışlıkla nokta eklenen normal
  * bir cevaba zarar vermiyor — fazladan sözcük zaten `spokenMatches`'te bağışlı.
  */
-const RECOGNIZER_PUNCT: Array<[RegExp, string]> = [
-  [/\u2026|\.\.\./g, " punkt "],
-  [/\./g, " punkt "],
-  [/,/g, " komma "],
-  [/\?/g, " fragezeichen "],
-  [/!/g, " ausrufezeichen "],
-  [/:/g, " doppelpunkt "],
-  [/;/g, " semikolon "],
-];
+const RECOGNIZER_PUNCT: Record<string, Array<[RegExp, string]>> = {
+  de: [
+    [/\u2026|\.\.\./g, " punkt "],
+    [/\./g, " punkt "],
+    [/,/g, " komma "],
+    [/\?/g, " fragezeichen "],
+    [/!/g, " ausrufezeichen "],
+    [/:/g, " doppelpunkt "],
+    [/;/g, " semikolon "],
+  ],
+  /*
+   * İNGİLİZCE TABLO EKSİKTİ. Tanıyıcı "period" dendiğinde "." yazıyor ve
+   * havuzda "limitation period", "notice period", "quote" gibi başlıklar var:
+   * "limitation period" → "limitation." → katlamada "limitation" kalıyor ve
+   * cevap hiç eşleşmiyordu. Mobil `lib/voiceMatch` tablosuyla birebir.
+   */
+  en: [
+    [/\u2026|\.\.\./g, " period "],
+    [/\./g, " period "],
+    [/,/g, " comma "],
+    [/\?/g, " question mark "],
+    [/!/g, " exclamation mark "],
+    [/:/g, " colon "],
+    [/;/g, " semicolon "],
+    [/["\u201C\u201D]/g, " quote "],
+  ],
+};
 
-export function expandPunctuationWords(s: string): string {
+export function expandPunctuationWords(s: string, lang: TargetLang = currentTargetLang()): string {
   let out = s;
-  for (const [re, word] of RECOGNIZER_PUNCT) out = out.replace(re, word);
+  for (const [re, word] of RECOGNIZER_PUNCT[lang] ?? RECOGNIZER_PUNCT.de) out = out.replace(re, word);
   return out.replace(/\s+/g, " ").trim();
 }
 
@@ -188,10 +261,10 @@ export function expandPunctuationWords(s: string): string {
  */
 const CONTAINS_MIN = 3;
 
-export function spokenMatches(heard: string[], candidates: string[]): boolean {
+export function spokenMatches(heard: string[], candidates: string[], lang: TargetLang = currentTargetLang()): boolean {
   const forms = candidates
     .flatMap((c) => acceptedForms(c))
-    .map((f) => foldSpelling(f))
+    .map((f) => foldKeep(f, lang))
     .filter(Boolean);
   if (!forms.length) return false;
 
@@ -207,9 +280,9 @@ export function spokenMatches(heard: string[], candidates: string[]): boolean {
   const exact = (said: string) => !!said && forms.some((form) => said === form);
 
   return heard.some((raw) => {
-    if (loose(foldSpelling(raw))) return true;
-    const expanded = expandPunctuationWords(raw);
-    return expanded !== raw && exact(foldSpelling(expanded));
+    if (loose(foldKeep(raw, lang))) return true;
+    const expanded = expandPunctuationWords(raw, lang);
+    return expanded !== raw && exact(foldKeep(expanded, lang));
   });
 }
 

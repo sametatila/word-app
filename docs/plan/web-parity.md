@@ -1184,3 +1184,57 @@ kaybettiriyor:
 Bugün zarar tek kategoriyle sınırlı ve gözle görülür bir hata değil - fazladan
 bir nudge. Seri/haftalık timer'ları kurulmadan önce karar verilmesi gerekiyor,
 yoksa üç kategoride birden çift olur.
+
+### 11.18 Cevap eşleştirmesi: webin kalan Almanca varsayımları
+
+Ölçüm — mobil eşleştirici dile bakıyor, web büyük ölçüde Almancaya sabitti.
+İkisi bu turda üç noktada eşitlendi (bkz. commit "Web cevap eşleştirmesi dile
+bakıyor"): tanımlık tablosu, tanıyıcı noktalama tablosu, kesme işareti. Kalan
+dört şey ölçüldü ve BİLEREK bırakıldı; sırayla nedenleri:
+
+**a) Boşluksuz ikinci okuma (`foldTight`).** Tanıyıcı Almanca bileşikleri
+ayırıyor ("Anrufbeantworter" → "Anruf Beantworter"; havuzda 2313 uzun bileşik)
+ve tireli İngilizce başlıkları boşlukla yazıyor ("t-shirt" → "t shirt").
+Mobil boşlukları tamamen atan bir ikinci okuma yapıyor, web yapmıyor. Port
+edilebilir ve edilmeli - bu turda yapılmadı çünkü tek başına bir tur işi ve
+`normalize`ın noktalama kümesiyle birlikte düşünülmesi gerekiyor (aşağıdaki d).
+
+**b) Ham harf okuması (`foldLetters`).** Mobilin üçüncü geçişi: sayı katlaması
+YAPILMADAN sıkıştırılmış karşılaştırma. Gerekçesi kayıtlı: tanıyıcı bileşiği
+bölünce ikinci parça sayı sözcüğü olabiliyor ("Fasnacht" → "Fasn acht" →
+katlanmış "fasn 8" artık orijinaline benzemiyor). Webde bu geçiş yok.
+
+**c) İngilizce sayı sözcükleri.** Web `lib/german-numbers.ts` yalnız Almanca;
+mobil `lib/numbers.ts` İngilizce ölçek ("two hundred thousand"), bileşik
+("twenty-one") ve sıra sayısı da çözüyor, ayrıca tire/kesme komşuluğuna bakıp
+"one-way street" ile "one's mind"ı sayı saymıyor. Bu bir MODÜL portu, tek
+satır değil: webde `foldNumbers(text)` imzası dilsiz ve `foldSpelling` içinden
+çağrılıyor. Ayrı tur.
+
+**d) Geniş noktalama kümesi.** Mobil `foldCompare` tırnak, tire, köşeli
+parantez ve okları da boşluğa çeviriyor; web `normalize` yalnız `.,!?;:`
+yapıyor. Kümeyi genişletmek TEK BAŞINA GÜVENLİ DEĞİL: `scramble-game` harf
+karolarını birleştirip `normalize` ile karşılaştırıyor ve tireyi boşluğa
+çevirmek "E-Mail" gibi bir başlıkta iki tarafı ayırıyor. Karo oyununun
+karşılaştırması ayrıca düşünülmeli.
+
+**e) Kısaltmalar - iki platformda da yok.** İngilizce derslerde 338 konuşma
+adımı kısaltma taşıyor (181 repeat, 157 produce: "I'm from Turkey.",
+"What's your name?"). Kesme işareti artık iki tarafta da siliniyor, yani
+"I'm" ile "Im" aynı; ama "I am" hâlâ farklı bir dize. Tanıyıcı ya da kullanıcı
+açık biçimi verdiğinde cevap yanlış sayılıyor.
+
+Kaynakta beş `repeat` adımında `accept` alternatifi yazılı (ikisi tam bu
+kısaltma sorunu: "I am waiting at the bus stop."). Ama `accept` repeat'te
+İKİ İSTEMCİDE DE bilerek okunmuyor - web `lesson-player`ın satırı açık:
+`[e.target, ...(e.kind === "produce" ? (e.accept ?? []) : [])]`. Yani o beş
+alternatif ölü veri ve düzeltme yeri istemci değil:
+
+  1. Kısaltma açma tablosu (m→am, re→are, ve→have, ll→will, nt→not) iki
+     tarafın katlamasına girer; deterministik olduğu için iki tarafa da aynı
+     uygulanır ve yanlış pozitif üretmez ("his" kesme taşımadığı için "he is"
+     olmaz). En kapsamlı çözüm, 338 adımı birden düzeltir.
+  2. Ya da o beş adımın `kind`i `produce`a çevrilir - ama repeat "aynısını
+     söyle" demek, paraphrase kabul etmek egzersizin kendisini bozar.
+
+Karar Samet'in; ölçüm 1'i işaret ediyor.
