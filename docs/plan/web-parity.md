@@ -4281,3 +4281,34 @@ ortak sabit yazıldığı an kapıya giriyor; listeye eklemek gerekmiyor.
 
 Bu, "yorumda yazmak drift'i durdurmuyor, ölçüm durduruyor" kuralının üçüncü
 kanıtı — ve ilk ikisinde de yorum, ölçümün yerini almaya çalışmıştı.
+
+### 11.87 Mobil ham-metin tabanının 16'sı tek tek
+
+Web tarafındaki taban (167) çok kalabalık; mobilinki 16 ve tümü elle
+incelenebilir. Hepsini çıkardım — **hiçbiri kusur değil**, ve dördü zaten
+webde de aynı biçimde duruyor:
+
+| dosya | kaç | ne |
+|---|---|---|
+| `lib/courses.ts` | 7 | kurs adları; zaten dil başına (`label.tr/en/de`) — webde de öyle |
+| `lib/native.ts` | 2 | dilbilgisi geri bildiriminin `{}` yer tutuculu kalıpları |
+| `ui/VoicePicker.tsx` | 2 | ses önizlemesinin Almanca/İsviçre Almancası örnek cümleleri |
+| `data/exams/index.ts` | 1 | `MOCK_LABELS[de].skill.listening` = "Hören" — tablonun kendisi |
+| `screens/ExamScreen.tsx` | 1 | `SECTION_DE` tablosu; webde `SECTION_TITLE_DE` olarak birebir var |
+| `lib/i18n.ts`, `OnboardingScreen`, `SettingsScreen` | 3 | "Türkçe" — dil adı kendi dilinde yazılır |
+
+`SECTION_DE` özellikle kasıtlı: modül sınavı bölüm adlarını Almanca **ve**
+çevirisiyle yan yana yazıyor ("Hören · Dinleme") ve webin yorumu gerekçeyi
+söylüyor: "sınav havası kâğıdın dilinden başlıyor". Modül sınavı zaten yalnız
+Almanca kursta açılıyor.
+
+Webin `exam-player`i bu Almanca parçalara `lang="de"` işaretliyor (ekran
+okuyucu Almanca telaffuz etsin); React Native `Text`te karşılığı yok, kayda
+geçti.
+
+**Sabit karşılaştırması dizgelere de genişledi.** Sayısal sabitlerin yanında
+dizge ve mantıksal sabitler de ölçülüyor — bugün yedi çift. Depolama anahtarı
+ya da işaret dizgesi ayrışırsa kullanıcının tercihi bir uygulamada okunmaz olur.
+Genel adlar (`KEY`, `PREFIX`, `MAX`, …) listeden çıkarıldı: `KEY` webde beceri
+ilerlemesinin depolama anahtarı, mobilde onboarding tercihlerininki — aynı ad,
+ayrı iş, ve ad tek başına sözleşme taşımıyor.
