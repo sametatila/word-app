@@ -1,4 +1,5 @@
 import type { Lesson, LectureStep, Segment } from "./types";
+import type { DialogueTurn } from "@/lib/dialogue";
 
 /**
  * Anlatımı öğrencinin ANA DİLİNE çevirir.
@@ -50,6 +51,11 @@ export type NativeDict = {
   roleplay: Record<string, { scene: string; partner: string; openingTr: string; goal: string }>;
   /** Can-do ifadesi — anahtar `A1.SPK.1` biçiminde. */
   cando: Record<string, string>;
+  /**
+   * Çevrimdışı rol yapma senaryosunun Türkçe alanları. Anahtar DİZENİN
+   * KENDİSİ: kaynak konumsal kısayollarla yazıldığı için alanların adı yok.
+   */
+  script: Record<string, string>;
 };
 
 /*
@@ -162,13 +168,44 @@ export function resolveLesson(dict: NativeDict, lesson: Lesson): Lesson | null {
 
   const rp = dict.roleplay[lesson.id];
 
+  /*
+    SENARYO, ROL YAPMANIN İÇİNDE. On dersin `roleplay.script` dizisi var ve
+    içindeki üç alan Türkçe. Buradaki eksik de dersi TÜMDEN düşürüyor:
+    modelin çalışmadığı anda devreye giren akış bu, yani yarım çevrilirse
+    tam da en kırılgan anda Türkçe çıkar.
+  */
+  const src = lesson.roleplay as unknown as { script?: DialogueTurn[] };
+  let script: DialogueTurn[] | undefined;
+  if (src.script) {
+    const turns: DialogueTurn[] = [];
+    for (const t of src.script) {
+      const askTr = dict.script[t.askTr];
+      const cue = dict.script[t.cue];
+      if (askTr === undefined || cue === undefined) return null;
+      const replies: DialogueTurn["replies"] = [];
+      for (const r of t.replies ?? []) {
+        const sayTr = dict.script[r.sayTr];
+        if (sayTr === undefined) return null;
+        replies.push({ ...r, sayTr });
+      }
+      let fallback = t.fallback;
+      if (fallback) {
+        const sayTr = dict.script[fallback.sayTr];
+        if (sayTr === undefined) return null;
+        fallback = { ...fallback, sayTr };
+      }
+      turns.push({ ...t, askTr, cue, replies, fallback });
+    }
+    script = turns;
+  }
+
   return {
     ...lesson,
     titleTr: meta.title,
     summary: meta.summary,
     vocab: lesson.vocab.map((v) => ({ ...v, tr: dict.vocab[lesson.id + SEP + v.de] ?? v.tr })),
     patterns: lesson.patterns.map((p) => ({ ...p, tr: dict.patterns[lesson.id + SEP + p.de] ?? p.tr })),
-    roleplay: rp ? { ...lesson.roleplay, ...rp } : lesson.roleplay,
+    roleplay: { ...lesson.roleplay, ...(rp ?? {}), ...(script ? { script } : {}) },
     lecture,
   };
 }
