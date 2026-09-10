@@ -1,7 +1,8 @@
 # Google Play Console — hedef kitle, içerik derecelendirme ve mağaza listesi (Lernomi)
 
-Console'a girilecek cevaplar ve metinler. Kimlik alanları ve alan adı kesinleşince
-`[[...]]` yer tutucuları doldurulur. Kaynak: uygulamadaki gerçek içerik ve özellikler;
+Console'a girilecek cevaplar ve metinler. Kimlik alanları ve alan adı 2026-09-10'da
+kesinleşti ve dolduruldu; geriye yalnız inceleme hesabının kimliği kaldı
+(`[[TEST_HESABI_*]]`, bkz. `docs/play/console.md`). Kaynak: uygulamadaki gerçek içerik ve özellikler;
 rakip adı, uygulamada olmayan özellik ve abartılı iddia yok (Play "metadata" politikası).
 
 ## 1. Hedef kitle ve içerik (Target audience and content)
@@ -92,8 +93,8 @@ açılır. Hesabını dilediğin an uygulamadan silebilirsin.
 
 Zürih Almancası (Züritüütsch) kursu ve İngilizce kursu da mevcuttur.
 
-Gizlilik politikası: [[SITE]]/privacy
-Kullanım şartları: [[SITE]]/terms
+Gizlilik politikası: https://www.lernomi.app/privacy
+Kullanım şartları: https://www.lernomi.app/terms
 ```
 
 Yasak: "Duolingo", "Babbel" gibi rakip adları; "en iyi", "1 numara" iddiaları; olmayan
@@ -121,9 +122,9 @@ varsa uygulamadaki özelliği anlatır, fiyat ya da vaat içermez.
 | Alan | Değer |
 |---|---|
 | Varsayılan dil | Türkçe (tr-TR); İngilizce çeviri listelemesi sonraki adım |
-| E-posta | `[[DESTEK_E_POSTASI]]` |
-| Web sitesi | `[[SITE]]` |
-| Gizlilik politikası | `[[SITE]]/privacy` |
+| E-posta | `support@lernomi.app` |
+| Web sitesi | `https://www.lernomi.app` |
+| Gizlilik politikası | `https://www.lernomi.app/privacy` |
 | Reklam içerir | Hayır |
 | Uygulama içi satın alma | Premium canlıysa "Evet" |
 

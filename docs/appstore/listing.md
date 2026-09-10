@@ -7,7 +7,8 @@ Play metinlerinden türetildi ama her biri Apple'ın kendi kutusuna göre yenide
 Kaynak yine aynı: uygulamadaki gerçek içerik. Rakip adı, olmayan özellik ve abartılı
 iddia yok (App Review Guidelines 2.3 — "Accurate Metadata").
 
-Kimlik ve alan adı kesinleşince `[[...]]` yer tutucuları doldurulur.
+Kimlik ve alan adı 2026-09-10'da kesinleşti ve dolduruldu; geriye yalnız inceleme
+hesabının kimliği kaldı (`[[TEST_HESABI_*]]`, bkz. `docs/appstore/connect.md`).
 
 ---
 
@@ -232,8 +233,8 @@ silebilirsin.
 
 Arayüz Türkçe, İngilizce ve Almanca.
 
-Gizlilik politikası: [[SITE]]/privacy
-Kullanım şartları: [[SITE]]/terms
+Gizlilik politikası: https://www.lernomi.app/privacy
+Kullanım şartları: https://www.lernomi.app/terms
 ```
 _2036/4000 karakter._
 
@@ -322,8 +323,8 @@ one screen.
 
 The interface is available in Turkish, English and German.
 
-Privacy policy: [[SITE]]/privacy
-Terms of use: [[SITE]]/terms
+Privacy policy: https://www.lernomi.app/privacy
+Terms of use: https://www.lernomi.app/terms
 ```
 _2107/4000 karakter._
 
@@ -419,8 +420,8 @@ einzigen Bildschirm löschen.
 
 Die Oberfläche gibt es auf Türkisch, Englisch und Deutsch.
 
-Datenschutzerklärung: [[SITE]]/privacy
-Nutzungsbedingungen: [[SITE]]/terms
+Datenschutzerklärung: https://www.lernomi.app/privacy
+Nutzungsbedingungen: https://www.lernomi.app/terms
 ```
 _2266/4000 karakter._
 
@@ -471,10 +472,10 @@ görüntüsünü Almanca vitrine koymak 2.3.3'e takılır.
 | Bundle ID | `app.lernomi.ios` |
 | Primary Category | Education |
 | Secondary Category | Reference |
-| Copyright | `2026 [[YAYINCI_ADI]]` — `LEGAL_ENTITY.publisherName` ile aynı |
-| Support URL | `[[SITE]]/support` — **zorunlu**; destek adresi, yanıt süresi ve kanallar orada |
-| Marketing URL | `[[SITE]]` (isteğe bağlı) |
-| Privacy Policy URL | `[[SITE]]/privacy` — **zorunlu** |
+| Copyright | `2026 Musa Atila` — `LEGAL_ENTITY.publisherName` ile aynı |
+| Support URL | `https://www.lernomi.app/support` — **zorunlu**; destek adresi, yanıt süresi ve kanallar orada |
+| Marketing URL | `https://www.lernomi.app` (isteğe bağlı) |
+| Privacy Policy URL | `https://www.lernomi.app/privacy` — **zorunlu** |
 | Uygulama içi satın alma | **Var** — ürünler Connect'te tanımlanır; satın alma akışı RevenueCat bağlanınca açılır |
 | Age Rating | §2 anketinden hesaplanır |
 

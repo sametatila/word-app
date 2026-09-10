@@ -350,7 +350,7 @@ inceleme hesabı ve adımlar App Store Connect'e de girilir. Ek olarak açıklan
 - **Kullanıcı içeriği (Guidelines 1.2):** dördü de var — görünen ad, kullanıcı adı ve
   biyografi moderasyondan geçiyor (filtreleme), her yapay zekâ yanıtının altında ve
   profillerde **Bildir**, profillerde **Engelle**, ve **yayımlanmış iletişim bilgisi**
-  olarak `[[SITE]]/support`. Özel mesajlaşma yok.
+  olarak `https://www.lernomi.app/support`. Özel mesajlaşma yok.
 
   Dördüncüsü 2026-09-09'a kadar EKSİKTİ: destek adresi yalnız gizlilik politikası ve
   şartların içinde geçiyordu, Support URL alanı ise ana sayfayı gösteriyordu ve ana
