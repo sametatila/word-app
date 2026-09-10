@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import { getT } from "@/lib/i18n/server";
+import { getT, getLang } from "@/lib/i18n/server";
 import { unitBriefs } from "@/lib/immersion/brief";
 import { unitQuestions } from "@/lib/immersion/content";
 import { deriveGrammar } from "@/lib/immersion/grammar";
@@ -28,6 +28,7 @@ export const generateMetadata = titleMeta("unitkind.grammar");
 
 export default async function ImmersionGrammarPage({ params }: { params: Promise<{ unit: string }> }) {
   const t = await getT();
+  const lang = await getLang();
   const { unit } = await params;
 
   const authored = unitQuestions(unit);
@@ -39,7 +40,7 @@ export default async function ImmersionGrammarPage({ params }: { params: Promise
   const course = parts.join("-");
   const level = levelRaw.toUpperCase() as CefrLevel;
   const index = Number.parseInt(num ?? "", 10);
-  const brief = course && LEVELS.includes(level) ? unitBriefs(course, level).find((b) => b.index === index) : undefined;
+  const brief = course && LEVELS.includes(level) ? unitBriefs(course, level, lang).find((b) => b.index === index) : undefined;
 
   let questions = authored?.grammar ?? [];
   if (!questions.length && course && LEVELS.includes(level) && Number.isInteger(index)) {

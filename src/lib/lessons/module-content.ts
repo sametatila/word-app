@@ -1,5 +1,6 @@
 import { LESSONS } from "./index";
 import { MODULE_SIZE, moduleTheme } from "./modules";
+import { DEFAULT_NATIVE } from "@/lib/courses";
 import { foldSentence } from "@/lib/sentence-match";
 import type { Lesson, Segment } from "./types";
 
@@ -288,7 +289,11 @@ export function moduleContent(course: string, level: string, index: number): Mod
     course,
     level,
     index,
-    theme: moduleTheme(level, index),
+    /* İçerik şartnamesinin etiketi, EKRAN METNİ DEĞİL: bu alanın hiçbir
+       tüketicisi yok ve modül içeriği dile göre önbelleklenmiyor. Kaynak
+       dilde bırakılıyor — ekranda görünen tema `buildTrack` tarafında
+       öğrencinin diline çevriliyor. */
+    theme: moduleTheme(level, index, DEFAULT_NATIVE),
     lessons,
     focus,
     produce,

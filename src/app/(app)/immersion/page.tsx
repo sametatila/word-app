@@ -49,7 +49,7 @@ export default async function ImmersionPage() {
   // yerleştirme testiyle belirlenir, patika ekranından değiştirilmez.
   const level = profileLevel;
 
-  const track = await loadTrack(course, level, t);
+  const track = await loadTrack(course, level, t, nativeOf(native));
   const completion = await immersionCompletion(user.id, course);
   const state = buildTrackState(track, completion);
 

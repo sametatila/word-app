@@ -1,7 +1,7 @@
 import type { CefrLevel } from "@/lib/skills/types";
 import type { Lesson } from "@/lib/lessons/types";
 import { MODULE_SIZE, moduleTheme } from "@/lib/lessons/modules";
-import { translate, DEFAULT_NATIVE } from "@/lib/i18n/dict";
+import { translate, DEFAULT_NATIVE, type NativeLang } from "@/lib/i18n/dict";
 import { lessonsFor } from "@/lib/lessons/index";
 import { listExerciseMeta, pathMetas, type SkillMeta } from "@/lib/skills/index";
 import { hasAuthoredGrammar } from "./content";
@@ -47,8 +47,13 @@ const SKILL_TITLE_KEY: Record<"read" | "listen" | "write", string> = {
 };
 
 /** Ünite teması — ilk dersinin düştüğü modülden; taşarsa seviye+sıra. */
-function unitTheme(level: CefrLevel, firstLessonIndex: number, fallback: string): string {
-  const theme = moduleTheme(level, Math.floor(firstLessonIndex / MODULE_SIZE));
+function unitTheme(
+  level: CefrLevel,
+  firstLessonIndex: number,
+  fallback: string,
+  lang: NativeLang,
+): string {
+  const theme = moduleTheme(level, Math.floor(firstLessonIndex / MODULE_SIZE), lang);
   return theme || fallback;
 }
 
@@ -76,11 +81,20 @@ export type BuildTrackInput = {
    * Verilmezse Türkçeye düşer — testler ve betikler için.
    */
   t?: (key: string) => string;
+  /**
+   * Ünite TEMASININ dili.
+   *
+   * `t`den ayrı, çünkü tema arayüz sözlüğünde değil müfredat tablosunda
+   * (`MODULE_THEMES`, gerekçesi orada). İkisi de çağıranın dilinden gelir ve
+   * birlikte verilir; verilmezse Türkçe kalır.
+   */
+  lang?: NativeLang;
 };
 
 export function buildTrack(input: BuildTrackInput): ImmersionTrack {
   const { course, level, lessons } = input;
   const t = input.t ?? ((key: string) => translate(DEFAULT_NATIVE, key));
+  const lang = input.lang ?? DEFAULT_NATIVE;
   const groupSize = input.groupSize ?? GROUP_SIZE;
   const levelLower = level.toLowerCase();
   const pools: Record<"read" | "listen" | "write", SkillMeta[]> = {
@@ -137,7 +151,7 @@ export function buildTrack(input: BuildTrackInput): ImmersionTrack {
       group: Math.floor(u / groupSize),
       level,
       course,
-      theme: unitTheme(level, u * UNIT_LESSONS, `${level} · ${t("common.unit")} ${index}`),
+      theme: unitTheme(level, u * UNIT_LESSONS, `${level} · ${t("common.unit")} ${index}`, lang),
       items,
       lessonCount: items.filter((it) => it.kind === "lesson").length,
     });
@@ -152,6 +166,8 @@ export async function loadTrack(
   level: CefrLevel,
   /** Yer tutucu başlıkların dili — çağıranın dili (bkz. BuildTrackInput.t). */
   t?: (key: string) => string,
+  /** Ünite temasının dili (bkz. BuildTrackInput.lang). */
+  lang?: NativeLang,
 ): Promise<ImmersionTrack> {
   const lessons = lessonsFor(course).filter((l) => l.level === level);
   // Yalnız üniteye bağlı egzersizler: havuz liste sırasıyla tüketiliyor ve
@@ -168,5 +184,6 @@ export async function loadTrack(
     listening: byLevel.filter((m) => m.skill === "listening"),
     writing: byLevel.filter((m) => m.skill === "writing"),
     t,
+    lang,
   });
 }

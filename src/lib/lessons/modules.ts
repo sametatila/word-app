@@ -1,3 +1,5 @@
+import { DEFAULT_NATIVE, type NativeLang } from "@/lib/courses";
+
 /**
  * Yol haritasının modül (ünite) katmanı.
  *
@@ -13,6 +15,25 @@
  */
 export const MODULE_SIZE = 10;
 
+/**
+ * Temalar ÜÇ DİLDE ve bu bir arayüz sözlüğü değil.
+ *
+ * Ünite başlığı Patika'nın en görünür metni: hub kartında, ünite sayfasının
+ * başlığında, quiz ve dilbilgisi alt başlığında, modül sınavı satırında.
+ * Tek dilde tutulduğu sürece anadili İngilizce ya da Almanca olan kullanıcı
+ * ekranın ortasında Türkçe bir başlık görüyordu — en→de paritesi açıkken de
+ * böyleydi, yani canlı bir kusurdu.
+ *
+ * `src/i18n`'e KONMADI, çünkü bunlar müfredatın adları: hangi on dersin bir
+ * arada durduğunu söylüyorlar ve ders listesiyle birlikte değişiyorlar
+ * (B1 2026-09-05'te on sekiz modüle çıktığında liste de uzadı). Arayüz
+ * sözlüğüne taşımak, müfredat değiştikçe iki dosyanın ayrışması demek olurdu.
+ * Bunun yerine tek tablo, üç sütun — ve `test:gloss` üç sütunun aynı boyda
+ * kalmasını ölçüyor.
+ *
+ * Kaynak dil Türkçe: eksik bir çeviride başlık KAYBOLMUYOR, Türkçe kalıyor.
+ * Kartın kimliği o başlık; boş bırakmak üniteyi adsız bırakırdı.
+ */
 export const MODULE_THEMES: Record<string, string[]> = {
   A1: [
     "Tanışma ve ben",
@@ -88,17 +109,171 @@ export const MODULE_THEMES: Record<string, string[]> = {
   ],
 };
 
-/** Modül teması — bilinmeyen seviye ya da taşan dilim için boş döner. */
+/** Türkçe listenin ÇEVİRİSİ — sıra ve uzunluk birebir aynı olmak zorunda.
+ *  Kaynak dil (`tr`) burada YOK: karşılığı kendisidir. */
+export const MODULE_THEMES_NATIVE: Partial<Record<NativeLang, Record<string, string[]>>> = {
+  en: {
+    A1: [
+      "Introductions and me",
+      "Family and people",
+      "Food and drink",
+      "Daily routine",
+      "Shopping",
+      "In town",
+      "Home and living",
+      "Free time",
+      "Health and the body",
+      "Communication and a first step into the past",
+    ],
+    A2: [
+      "Talking about the past",
+      "My story",
+      "Health",
+      "Home and neighbourhood",
+      "Working life",
+      "Shopping and services",
+      "Travel",
+      "Celebrations and relationships",
+      "Media and technology",
+      "The city and official business",
+    ],
+    B1: [
+      "The world of work",
+      "Housing and renting",
+      "Mastering connectors",
+      "Relative clauses",
+      "Bureaucracy",
+      "Education and development",
+      "Opinion and debate",
+      "The health system",
+      "Environment and city life",
+      "Feelings and dreams",
+      "Kitchen and table",
+      "Shopping, money and banking",
+      "Journeys and transport",
+      "Body, care and ageing",
+      "Technology and repairs at home",
+      "Professions and working life",
+      "Society, law and migration",
+      "Culture, sport and nature",
+    ],
+    B2: [
+      "Professional communication",
+      "Negotiating and complaining",
+      "The passive in all its forms",
+      "Media and reported speech",
+      "Science and technology",
+      "Society and the economy",
+      "Culture and the arts",
+      "Money and career strategy",
+      "Relationships and psychology",
+      "Formal correspondence and closing",
+    ],
+    C1: [
+      "Elegant business communication",
+      "Modal particles",
+      "Rhetoric and the art of presenting",
+      "Idioms and metaphors",
+      "Press and academic reporting",
+      "Legal and contract language",
+      "Complex structures",
+      "Public debate",
+      "Humour, irony and nuance",
+      "Mastery scenes",
+    ],
+  },
+  de: {
+    A1: [
+      "Vorstellen und ich",
+      "Familie und Menschen",
+      "Essen und Trinken",
+      "Tagesablauf",
+      "Einkaufen",
+      "In der Stadt",
+      "Wohnen und Leben",
+      "Freizeit",
+      "Gesundheit und Körper",
+      "Kommunikation und der erste Schritt in die Vergangenheit",
+    ],
+    A2: [
+      "Von der Vergangenheit erzählen",
+      "Meine Geschichte",
+      "Gesundheit",
+      "Wohnung und Viertel",
+      "Arbeitsleben",
+      "Einkaufen und Dienstleistungen",
+      "Reisen",
+      "Feiern und Beziehungen",
+      "Medien und Technik",
+      "Stadt und Behördengänge",
+    ],
+    B1: [
+      "Arbeitswelt",
+      "Wohnen und Mieten",
+      "Konnektoren meistern",
+      "Relativsätze",
+      "Behörden",
+      "Bildung und Weiterbildung",
+      "Meinung und Diskussion",
+      "Gesundheitssystem",
+      "Umwelt und Stadtleben",
+      "Gefühle und Träume",
+      "Küche und Tisch",
+      "Einkauf, Geld und Bank",
+      "Reise und Verkehr",
+      "Körper, Pflege und Altern",
+      "Technik und Reparatur zu Hause",
+      "Berufe und Berufsleben",
+      "Gesellschaft, Recht und Migration",
+      "Kultur, Sport und Natur",
+    ],
+    B2: [
+      "Professionelle Kommunikation",
+      "Verhandeln und Reklamieren",
+      "Das Passiv in allen Formen",
+      "Medien und indirekte Rede",
+      "Wissenschaft und Technik",
+      "Gesellschaft und Wirtschaft",
+      "Kultur und Kunst",
+      "Geld und Karrierestrategie",
+      "Beziehungen und Psychologie",
+      "Formeller Schriftverkehr und Abschluss",
+    ],
+    C1: [
+      "Eleganter Geschäftston",
+      "Modalpartikeln",
+      "Rhetorik und Präsentationskunst",
+      "Redewendungen und Metaphern",
+      "Presse und akademische Wiedergabe",
+      "Rechts- und Vertragssprache",
+      "Komplexe Strukturen",
+      "Gesellschaftliche Debatte",
+      "Humor, Ironie und Feinheit",
+      "Meisterszenen",
+    ],
+  },
+};
+
 /**
  * Seviyedeki modül sayısı — tema listesinin uzunluğu tek doğru kaynak.
  *
  * B1 on değil ON SEKİZ modül taşıyor; bu sayı çağrı yerlerine elle yazıldığında
- * (`level === "B1" ? 18 : 10`) her yeni seviyede yeniden unutuluyor.
+ * (`level === "B1" ? 18 : 10`) her yeni seviyede yeniden unutuluyor. Sayı
+ * TÜRKÇE listeden okunuyor: çeviri eksik kalsa bile modül sayısı değişmemeli.
  */
 export function moduleCount(level: string): number {
   return MODULE_THEMES[level]?.length ?? 0;
 }
 
-export function moduleTheme(level: string, moduleIdx: number): string {
-  return MODULE_THEMES[level]?.[moduleIdx] ?? "";
+/**
+ * Modül teması — bilinmeyen seviye ya da taşan dilim için boş döner.
+ *
+ * DİL ZORUNLU ARGÜMAN, varsayılanı yok. Varsayılan Türkçe olsaydı yeni bir
+ * çağrı yeri sessizce Türkçe başlık basardı ve bunu hiçbir kapı görmezdi —
+ * bu kusurun ilk hâli tam olarak böyle oluşmuştu.
+ */
+export function moduleTheme(level: string, moduleIdx: number, lang: NativeLang): string {
+  const tr = MODULE_THEMES[level]?.[moduleIdx] ?? "";
+  if (!tr || lang === DEFAULT_NATIVE) return tr;
+  return MODULE_THEMES_NATIVE[lang]?.[level]?.[moduleIdx] ?? tr;
 }

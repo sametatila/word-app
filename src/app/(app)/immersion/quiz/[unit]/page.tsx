@@ -42,7 +42,7 @@ export default async function ImmersionQuizPage({
   const index = Number.parseInt(num ?? "", 10);
   if (!course || !LEVELS.includes(level) || !Number.isInteger(index)) notFound();
 
-  const briefs = unitBriefs(course, level);
+  const briefs = unitBriefs(course, level, lang);
   const brief = briefs.find((b) => b.index === index);
   if (!brief) notFound();
 

@@ -1,4 +1,5 @@
 import type { CefrLevel } from "@/lib/skills/types";
+import type { NativeLang } from "@/lib/courses";
 import type { Lesson, PatternItem, VocabItem } from "@/lib/lessons/types";
 import { lessonsFor } from "@/lib/lessons/index";
 import { MODULE_SIZE, moduleTheme } from "@/lib/lessons/modules";
@@ -33,6 +34,10 @@ export type UnitBrief = {
   needs: { read: number; listen: number; write: number };
 };
 
+/** Temasız dilimin yedek adı ("A1 · Ünite 3"). Üç kelime için sözlük açmıyoruz;
+ *  arayüz sözlüğündeki `common.unit` istemci tarafında, burası sunucu. */
+const UNIT_WORD: Record<NativeLang, string> = { tr: "Ünite", en: "Unit", de: "Einheit" };
+
 function uniq(xs: string[]): string[] {
   return [...new Set(xs)];
 }
@@ -49,7 +54,13 @@ function dedupeBy<T>(xs: T[], key: (x: T) => string): T[] {
 }
 
 /** Saf çekirdek: brief'leri verilen derslerden kurar (buildTrack ile aynı 4'erli bölme). */
-export function buildUnitBriefs(course: string, level: CefrLevel, lessons: Lesson[]): UnitBrief[] {
+export function buildUnitBriefs(
+  course: string,
+  level: CefrLevel,
+  lessons: Lesson[],
+  /** Ünite başlığının dili — öğrencinin anadili. */
+  lang: NativeLang,
+): UnitBrief[] {
   const briefs: UnitBrief[] = [];
   const count = Math.ceil(lessons.length / UNIT_LESSONS);
   const levelLower = level.toLowerCase();
@@ -57,7 +68,9 @@ export function buildUnitBriefs(course: string, level: CefrLevel, lessons: Lesso
   for (let u = 0; u < count; u++) {
     const index = u + 1;
     const unitLessons = lessons.slice(u * UNIT_LESSONS, u * UNIT_LESSONS + UNIT_LESSONS);
-    const theme = moduleTheme(level, Math.floor((u * UNIT_LESSONS) / MODULE_SIZE)) || `${level} · Ünite ${index}`;
+    const theme =
+      moduleTheme(level, Math.floor((u * UNIT_LESSONS) / MODULE_SIZE), lang) ||
+      `${level} · ${UNIT_WORD[lang]} ${index}`;
     briefs.push({
       unitId: `${course}-${levelLower}-u${String(index).padStart(2, "0")}`,
       index,
@@ -76,7 +89,7 @@ export function buildUnitBriefs(course: string, level: CefrLevel, lessons: Lesso
 }
 
 /** DB'siz sarmalayıcı: seviyenin derslerini katalogdan alıp brief'leri kurar. */
-export function unitBriefs(course: string, level: CefrLevel): UnitBrief[] {
+export function unitBriefs(course: string, level: CefrLevel, lang: NativeLang): UnitBrief[] {
   const lessons = lessonsFor(course).filter((l) => l.level === level);
-  return buildUnitBriefs(course, level, lessons);
+  return buildUnitBriefs(course, level, lessons, lang);
 }

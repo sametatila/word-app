@@ -1,4 +1,5 @@
 import { NATIVE_LANGS, type NativeLang } from "@/lib/courses";
+import { MODULE_THEMES, MODULE_THEMES_NATIVE, moduleTheme } from "@/lib/lessons/modules";
 import { exampleGlossFor, glossFor, hasGloss, optionLabel } from "@/lib/option-label";
 
 /**
@@ -66,6 +67,41 @@ for (const l of NATIVE_LANGS as NativeLang[]) {
   const g = glossFor(W.full, l);
   check(`${l}: ana satır dolu`, Boolean(g?.text?.trim()));
 }
+
+/**
+ * MODÜL TEMALARI — Patika'nın en görünür metni.
+ *
+ * Ünite başlığı hub kartında, ünite sayfasında, quiz ve dilbilgisi alt
+ * başlığında ve modül sınavı satırında çıkıyor. Tablo tek dildeyken anadili
+ * İngilizce ya da Almanca olan kullanıcı ekranın ortasında Türkçe bir başlık
+ * görüyordu — en→de paritesi açıkken de böyleydi.
+ *
+ * Ölçüt İKİ TANE. Uzunluk: çeviri listesi Türkçesiyle aynı boyda olmalı,
+ * yoksa `moduleTheme` son modüllerde sessizce Türkçeye düşer (B1 on sekize
+ * çıktığında mobil listede tam bu oldu, sekiz ünite adsız kaldı). Harf:
+ * Türkçeye özgü bir harf kalmışsa o satır çevrilmemiş, kopyalanmıştır.
+ */
+console.log("\nModül temaları üç dilde");
+const TR_LETTER = /[ışğİŞĞ]/;
+for (const lang of ["en", "de"] as const) {
+  const table = MODULE_THEMES_NATIVE[lang] ?? {};
+  for (const [level, tr] of Object.entries(MODULE_THEMES)) {
+    const list = table[level] ?? [];
+    check(`${lang} ${level}: ${tr.length} tema`, list.length === tr.length, `${list.length} yazılmış`);
+    const bad = list.filter((x) => !x.trim() || TR_LETTER.test(x));
+    check(`${lang} ${level}: hepsi çevrilmiş`, bad.length === 0, bad.join(" · "));
+  }
+  check(
+    `${lang}: fazladan seviye yok`,
+    Object.keys(table).every((l) => l in MODULE_THEMES),
+    Object.keys(table).filter((l) => !(l in MODULE_THEMES)).join(" · "),
+  );
+}
+/* Çözücü de ölçülüyor, tablo değil: `tr` kendi kaynağını, ötekiler çeviriyi
+   döndürmeli ve bilinmeyen dilim üçünde de boş. */
+check("tr → kaynak", moduleTheme("A1", 0, "tr") === MODULE_THEMES.A1[0]);
+check("de → çeviri", moduleTheme("A1", 0, "de") === MODULE_THEMES_NATIVE.de?.A1[0]);
+check("taşan dilim boş", moduleTheme("A1", 99, "en") === "");
 
 console.log(fails === 0 ? `\ntamam: hepsi geçti` : `\nKALDI: ${fails}`);
 process.exit(fails === 0 ? 0 : 1);

@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import { getT } from "@/lib/i18n/server";
+import { getT, getLang } from "@/lib/i18n/server";
 import { getUserInfo } from "@/lib/auth/server";
 import { ensureProfile } from "@/lib/session";
 import { loadTrack } from "@/lib/immersion/build";
@@ -30,6 +30,7 @@ export const generateMetadata = titleMeta("nav.path");
 
 export default async function UnitPage({ params }: { params: Promise<{ index: string }> }) {
   const t = await getT();
+  const lang = await getLang();
   const user = await getUserInfo();
   if (!user) return null;
 
@@ -46,7 +47,7 @@ export default async function UnitPage({ params }: { params: Promise<{ index: st
     console.error("[unit] profil okunamadı", err);
   }
 
-  const track = await loadTrack(course, level, t);
+  const track = await loadTrack(course, level, t, lang);
   const completion = await immersionCompletion(user.id, course);
   const units = buildHubUnits(buildTrackState(track, completion));
   const unit = units.find((u) => u.index === index);
