@@ -472,11 +472,11 @@ function TaskView({
       {(task.texts ?? []).map((st) => (
         <div key={st.id} className="space-y-3">
           <Stimulus course={course} st={st} plays={plays} onPlay={onPlay} />
-          {grouped ? itemsOf(st.id).map((it) => <Item key={it.id} course={course} item={it} task={task} value={answers[it.id]} onAnswer={onAnswer} />) : null}
+          {grouped ? itemsOf(st.id).map((it) => <Item key={it.id} course={course} item={it} task={task} value={answers[it.id]} answers={answers} onAnswer={onAnswer} />) : null}
         </div>
       ))}
 
-      {!grouped ? task.items.map((it) => <Item key={it.id} course={course} item={it} task={task} value={answers[it.id]} onAnswer={onAnswer} />) : null}
+      {!grouped ? task.items.map((it) => <Item key={it.id} course={course} item={it} task={task} value={answers[it.id]} answers={answers} onAnswer={onAnswer} />) : null}
 
       {task.format === "writing" ? (
         <OpenTask course={course} task={task} value={open[task.id] ?? ""} score={openScores[task.id]} attemptId={attemptId} onOpen={onOpen} onOpenScore={onOpenScore} />
@@ -513,9 +513,23 @@ function Stimulus({ course, st, plays, onPlay }: { course: MockCourse; st: MockS
   );
 }
 
-function Item({ course, item, task, value, onAnswer }: { course: MockCourse; item: MockItem; task: MockTask; value?: string; onAnswer: (id: string, v: string) => void }) {
+function Item({ course, item, task, value, answers, onAnswer }: { course: MockCourse; item: MockItem; task: MockTask; value?: string; answers: Answers; onAnswer: (id: string, v: string) => void }) {
   const t = useT();
   const [yes, no] = mockBoolLabels(course, task.format);
+  /*
+   * KULLANILMIŞ ŞIKLAR SOLUK. Eşleştirmede varsayılan kural "her şık en fazla
+   * bir kez" ve `reuseOptions` o kuralı kaldırıyor (bkz. lib/mock-exams/types).
+   * Bayrak içerikte yüzlerce görevde YAZILI ama iki oynatıcı da onu hiç
+   * okumuyordu: bir şıkkı ikinci kez seçen öğrenci hatasını ancak sonuçta
+   * görüyordu. Kâğıt sınavda bu bilgi zaten var - öğrenci kendi yazdıklarını
+   * aynı sayfada görüyor; ekranda her madde ayrı satır olduğu için kayboluyor.
+   *
+   * Soluk şık YİNE BASILABİLİR: cevabı taşımak isteyen öğrenci engellenmemeli.
+   */
+  const usedKeys =
+    item.kind === "match" && !task.reuseOptions
+      ? new Set(task.items.filter((i) => i.id !== item.id).map((i) => answers[i.id]).filter(Boolean))
+      : null;
   const chip = (label: string, active: boolean, onClick: () => void, key: string) => (
     <button
       key={key}
@@ -542,7 +556,15 @@ function Item({ course, item, task, value, onAnswer }: { course: MockCourse; ite
           : item.kind === "bool"
             ? <div className="flex gap-2">{chip(yes, value === "true", () => onAnswer(item.id, "true"), "t")}{chip(no, value === "false", () => onAnswer(item.id, "false"), "f")}</div>
             : item.kind === "match"
-              ? <div className="flex flex-wrap gap-2">{(task.options ?? []).map((o) => chip(o.key, value === o.key, () => onAnswer(item.id, o.key), o.key))}</div>
+              ? (
+                <div className="flex flex-wrap gap-2">
+                  {(task.options ?? []).map((o) => (
+                    <span key={o.key} style={{ opacity: usedKeys?.has(o.key) && value !== o.key ? 0.45 : 1 }}>
+                      {chip(o.key, value === o.key, () => onAnswer(item.id, o.key), o.key)}
+                    </span>
+                  ))}
+                </div>
+              )
               : (
                 <input
                   value={value ?? ""}

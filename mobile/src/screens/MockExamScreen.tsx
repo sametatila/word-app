@@ -540,7 +540,7 @@ function TaskView({
           <StimulusView st={st} colors={colors} plays={plays} speaking={speaking} onPlay={onPlay} />
           {grouped
             ? itemsOf(st.id).map((it) => (
-                <ItemView key={it.id} item={it} task={task} bools={bools} value={answers[it.id]} colors={colors} onAnswer={onAnswer} />
+                <ItemView key={it.id} item={it} task={task} bools={bools} value={answers[it.id]} answers={answers} colors={colors} onAnswer={onAnswer} />
               ))
             : null}
         </View>
@@ -548,7 +548,7 @@ function TaskView({
 
       {!grouped
         ? task.items.map((it) => (
-            <ItemView key={it.id} item={it} task={task} bools={bools} value={answers[it.id]} colors={colors} onAnswer={onAnswer} />
+            <ItemView key={it.id} item={it} task={task} bools={bools} value={answers[it.id]} answers={answers} colors={colors} onAnswer={onAnswer} />
           ))
         : null}
 
@@ -609,16 +609,31 @@ function StimulusView({
 }
 
 function ItemView({
-  item, task, bools, value, colors, onAnswer,
+  item, task, bools, value, answers, colors, onAnswer,
 }: {
   item: MockItem;
   task: MockTask;
   bools: [string, string];
   value?: string;
+  answers: Record<string, string>;
   colors: Palette;
   onAnswer: (id: string, v: string) => void;
 }) {
-  const chip = (label: string, active: boolean, onPress: () => void, key?: string) => (
+  /*
+   * KULLANILMIŞ ŞIKLAR SOLUK. Eşleştirmede varsayılan kural "her şık en fazla
+   * bir kez" ve `reuseOptions` o kuralı kaldırıyor (bkz. data/exams). Bayrak
+   * içerikte yüzlerce görevde YAZILI ama iki oynatıcı da onu hiç okumuyordu:
+   * bir şıkkı ikinci kez seçen öğrenci hatasını ancak sonuçta görüyordu.
+   * Kâğıt sınavda bu bilgi zaten var - öğrenci kendi yazdıklarını aynı
+   * sayfada görüyor; ekranda her madde ayrı satır olduğu için kayboluyor.
+   *
+   * Soluk şık YİNE BASILABİLİR: cevabı taşımak isteyen öğrenci engellenmemeli.
+   */
+  const usedKeys =
+    item.kind === "match" && !task.reuseOptions
+      ? new Set(task.items.filter((i) => i.id !== item.id).map((i) => answers[i.id]).filter(Boolean))
+      : null;
+  const chip = (label: string, active: boolean, onPress: () => void, key?: string, dim?: boolean) => (
     <PressableScale
       key={key ?? label}
       onPress={onPress}
@@ -626,6 +641,7 @@ function ItemView({
         paddingVertical: spacing.sm, paddingHorizontal: spacing.md, borderRadius: radii.md,
         backgroundColor: active ? colors.primarySoft : colors.surface2,
         borderWidth: 1, borderColor: active ? colors.primary : "transparent", marginBottom: spacing.xs,
+        opacity: dim ? 0.45 : 1,
       }}
     >
       <Text variant="body" color={active ? colors.primaryText : colors.text}>{label}</Text>
@@ -655,7 +671,7 @@ function ItemView({
             : item.kind === "match"
               ? (
                 <View style={{ flexDirection: "row", flexWrap: "wrap", gap: spacing.sm }}>
-                  {(task.options ?? []).map((o) => chip(o.key, value === o.key, () => onAnswer(item.id, o.key), o.key))}
+                  {(task.options ?? []).map((o) => chip(o.key, value === o.key, () => onAnswer(item.id, o.key), o.key, usedKeys?.has(o.key) && value !== o.key))}
                 </View>
               )
               : (
