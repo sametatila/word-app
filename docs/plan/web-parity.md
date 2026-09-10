@@ -4748,3 +4748,45 @@ ikisinde de yakalanıyor.
 
 §11.96'nın kaydettiği ders bir kez daha: **yanlış negatif iş çıkarmıyor,
 bulguyu gizliyor.**
+
+### 11.105 Rozet duvarı: bilinmeyen grup sessizce düşüyordu
+
+Web duvarı `GROUP_ORDER` üzerinde dönüp her grup için satırları süzüyordu.
+Sunucu listede **olmayan** bir grup gönderirse o rozetler hesaplanıyor,
+açılıyor, sayıya giriyor ve **hiçbir bölümde çıkmıyordu** — hata da vermeden.
+`achievement-groups` dosyası bu kaybın *tanım kopyası* tarafını çözmüştü,
+düşme yolunu değil. Android satırları kovalıyor ve bilinmeyen grubu atmıyor,
+sona ekliyor; **parity 48** iki tarafta da o yolu arıyor.
+
+Duvarın ikinci "Rozetler" başlığı kalktı: sayfanın kendi başlığı zaten
+"Başarımlar" ve aynı şey iki kez yazılıyordu (Android başlığın altına yalnız
+sayıyı koyuyor).
+
+### 11.106 Kelime listesi: uç sayfayı gönderiyordu, ekran istemiyordu
+
+`/api/words` **baştan beri** `page` ve `hasMore` döndürüyor; mobil ikisini de
+atıyordu. Kullanıcı binlerce kelimenin ilk otuzunu görüyor, gerisine ulaşmanın
+hiçbir yolu olmuyordu — liste sonunda "hepsi bu kadar" gibi duruyordu. §11.80
+sınıfının en pahalı örneği: sözleşme tam, yüzey yarım.
+
+**Örnek cümle hiç yoktu.** Web satırı dokununca açılıyor ve örneği çevirisiyle
+gösteriyor; mobil kelime listesi kelimeyi **cümle içinde bir kez bile**
+göstermiyordu. `en`, `beispiel`, `beispielTr`, `beispielEn` uçtan hiç
+gitmiyordu.
+
+**Aralık hatası.** Mobil "tanıdık" eşiğini `dueAt`ten türetiyordu, oysa o
+**kalan gün sayısı**, aralık değil: on günlük aralığı dokuz gün önce görülmüş
+bir kelime "yarın" diye okunup "öğreniyor"a düşüyordu. Uç `intervalDays`
+gönderiyor, eşik artık web ile aynı.
+
+### 11.107 Örnek cümle kuralının basitleştirilmiş kopyası
+
+Mobil `firstExample` yalnız satır sonuna ve `" / "` ayracına bakıyordu. Havuzda
+497 madde numaralı bir derleme ("1. … 2. …"), 53 madde cümleleri **boşluksuz**
+eğik çizgiyle ayırıyor ve kısaltmalar noktayla bitiyor ("vor ca. 6000 Jahren").
+Üçünde de aynı kelime iki uygulamada iki ayrı örnek gösteriyordu — ve bu
+yalnız kelime listesini değil, cümle kuran **turları** da etkiliyordu.
+
+Web kuralı `mobile/src/data/example.ts` olarak taşındı (kısaltma listesi
+içerik olduğu için `SKIP_CONTENT`, karşılığında **parity 49** hem listeyi hem
+üç ayıklama adımını eşliyor — muafiyetin kapısı).
