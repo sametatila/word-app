@@ -455,6 +455,87 @@ YANLIŞ — İngilizce ile Almanca akraba diller. Burada yapılacak şey başka
 bir ülke adı koymak değil, dersin dayandığı olguyu ana dile göre kurmak.
 Dördüncü L1 vakasının (güvence uyarıya dönüyor) Almanca taraftaki eşi.
 
+##### KURULDU (2026-09-10): `data/lessons/swap/` — 6 ders, 25 Almanca + 17 İngilizce
+
+Hat değil KARAR TABLOSU: `en.json` elle yazılıyor, her satırın gerekçesi
+yanında duruyor. Çözücü `swap[(ders, özgün Almanca)]` ve
+`swapEn[(ders, özgün İngilizce)]` sözlüklerinden okuyor.
+
+**Sıra kodda yazılı ve kritik.** `prevTarget` ÖZGÜN Almancayı taşıyor;
+bölünmüş anlatım anahtarları ve şablonun kelime araması ona bakıyor.
+Takas edilmiş dizeyi anahtar yapsaydık 69 satırın karşılığı sessizce
+bulunamazdı. Ekrana giden metin takas edilmiş, anahtar özgün.
+
+**Tanıma HEDEFİ de takas ediliyor.** Ekranda yeni cümle duruyorsa öğrenci
+onu söyleyecek; hedef eski kalsaydı konuşma her seferinde yanlış sayılırdı.
+
+**Takas ATOMİK PARÇAYA uygulanıyor, bitmiş satıra değil.** Şablonun
+kurduğu "It means 'Turkish'. Please say" satırı hiçbir dosyada durmuyor —
+üç parçadan çalışma anında kuruluyor. Bitmiş satıra uygulanan bir takas
+onu hiç yakalayamazdı.
+
+###### Senaryoda BİRİM REPLİK, kelime değil
+
+İlk denemede senaryo "1:1 takasla düzelmiyor, başka bir senaryo gerekiyor"
+diye uyarıya bağlanmıştı. Teşhis yanlıştı: düzelmeyen takasın kendisi
+değil BİRİMİYDİ.
+
+`Türkisch` → `Englisch` tek tek yapılınca konuşma kendini yiyordu —
+muhatap zaten "ich spreche Spanisch und Englisch" diyor ve arkasından
+"Sprichst du auch Englisch?" diye soruyor; İngilizce konuşana sorulacak
+en anlamsız soru. **Replikler birbirini kısıtlıyor**, o yüzden birim
+replik oldu: karşı taraf artık İspanyolcayı soruyor, öğrenci İngilizceyi
+geri soruyor, kapanışta "Danke"nin İngilizcesi isteniyor.
+
+Kural: **takasın birimi, anlamı taşıyan birimdir.** Anlatım satırında
+cümle, diyalogda replik.
+
+###### AYNI DİZE, İKİ DERSTE FARKLI KARAR
+
+"Ich komme aus der Türkei." iki yerde geçiyor ve ikisinde farklı şey:
+
+| ders | rol | karar |
+|---|---|---|
+| `de-a1-hallo` | artikelli ülke kalıbını ÖĞRETEN örnek ("Örnek:" diye sunuluyor) | kalıyor |
+| `de-a1-du-oder-sie` | rol yapmanın yedek örnek cevabı — öğrenciye atfediliyor | takas |
+
+Takas anahtarının derse bağlı olmasının sebebi tam olarak bu.
+
+###### KAPI ARTIK REPOYU TARIYOR (`npm run check:lessons-swap`)
+
+İki ayrı ölçüm yapıyor:
+
+1. **Tablo kaynakla TUTUYOR MU** — her `from` dizesi kaynakta gerçekten
+   duruyor mu? Bir ders düzenlenip dize kayarsa takas sessizce hiçbir şey
+   yapmaz ve öğrenci yine "Ich komme aus der Türkei" der. İki sözlükle
+   ölçülüyor: takassız kopya `from`u görebilsin, takaslı kopya iz kalıp
+   kalmadığını göstersin diye.
+2. **Tablo EKSİK Mİ** — bütün Almanca dersler çözülüp takas uygulandıktan
+   sonra kalan her iz hata. Bilinen iki istisna gerekçesiyle yazılı
+   (`de-a1-hallo`'nun artikel örneği, `de-b1-entweder-oder`'in üçüncü
+   şahıs cümlesi). Yeni bir iz çıkarsa listede olmadığı için durduruyor.
+
+İkincisi bu eksenin **"bitti dendikten sonra bulundu" alışkanlığını**
+kapatan parça — `report:native` envanteri sayıyordu, bu da içeriği.
+
+###### Tarama üç KÖR NOKTA gösterdi, üçü de aynı aileden
+
+Alan adına bakan arama yetmiyor:
+
+- **`fallback.example`** — rol yapmanın yedek örnek cevabı. İki ders daha
+  buradan çıktı (`de-a1-woher`, `de-a1-alter`).
+- **`roleplay.openingTr`** — açılış repliğinin ana dildeki karşılığı.
+  Almancası "Du bist also in Manchester aufgewachsen?" olup altındaki
+  İngilizce "So you grew up in Izmir?" kalıyordu; ikisi birbirini
+  yalanlıyordu. Bu bir BUG'dı, tarama bulmasa görünmezdi.
+- **Almanca cümlenin TÜRKÇE PARÇANIN İÇİNE GÖMÜLÜ olması** —
+  "'Sie spricht sowohl Deutsch als auch Türkisch.' Üçüncüsü:" satırı
+  `lang: "tr"` taşıyor, yani Almanca alanları tarayan hiçbir arama onu
+  göremiyor.
+
+Ayrıca `Türk` tek başına ölçüt olamıyor: Almancada `Tür` kapı demek ve
+`die Türklingel` (kapı zili) taramaya takılıyordu. `Türk(?=[ei])` ayırıyor.
+
 #### Çeviri turu Türkçe tarafın kusurunu görüyor: yanlış dilbilgisi terimi
 
 `l-008` yazılırken iki dize çıktı:
