@@ -1745,6 +1745,41 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   );
 }
 
+/* ── 40. ogrenme uclarina gun GONDERILIYOR mu ──────────────────────────────
+ * Uc `day` gelmezse SUNUCUNUN UTC gunune dusuyor (`clampDay`). Gece yarisina
+ * yakin oynayan kullanicinin cevaplari yanlis gune yaziliyor: gunluk
+ * istatistik ve seri o gunden hesaplaniyor. Kod tabanindaki kural bunu
+ * bastan beri soyluyor ("yerel gun gonderilir") ama hicbir sey tutmuyordu -
+ * yuruyus oynaticisi iki cagrisinda da gunu atliyordu, buyume raporu da.
+ *
+ * Kural: `searchParams.get("day")` okuyan OGRENME uclarina taraycidan giden
+ * her GET adresi `day=` tasimali. Sosyal uclar disarida: haftayi sunucu
+ * belirliyor ve iki istemci de bilerek gun gondermiyor (bkz. 29). */
+{
+  const OGRENME = ["session", "quests", "daily", "weekly", "growth"];
+  const walk = (d, out = []) => {
+    for (const e of readdirSync(new URL("../" + d, import.meta.url), { withFileTypes: true })) {
+      const p = d + "/" + e.name;
+      if (e.isDirectory()) { if (!/node_modules/.test(p)) walk(p, out); }
+      else if (/\.tsx?$/.test(e.name)) out.push(p);
+    }
+    return out;
+  };
+  const eksik = [];
+  for (const f of [...walk("src/components"), ...walk("src/lib")]) {
+    const src = read(f).replace(/\/\*[\s\S]*?\*\//g, " ").replace(/\/\/[^\n]*/g, " ");
+    for (const m of src.matchAll(/["`]\/api\/(\w+)([^"`\n]*)["`]/g)) {
+      if (!OGRENME.includes(m[1])) continue;
+      const kuyruk = m[2];
+      /* Adreste sorgu yoksa govdeyle gonderiliyor olabilir (POST); yalniz
+         SORGULU adresler denetleniyor. */
+      if (!kuyruk.startsWith("?")) continue;
+      if (!kuyruk.includes("day=")) eksik.push(f + " -> /api/" + m[1] + kuyruk.slice(0, 40));
+    }
+  }
+  sameList("ogrenme uclarina gun", eksik.length ? eksik : ["hepsi gun gonderiyor"], ["hepsi gun gonderiyor"], "gun yok", "beklenen");
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"
