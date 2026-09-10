@@ -338,6 +338,26 @@ contrastRows(
   3,
 );
 
+title("12. YUMUSAK ROZET  (vurgu yazisi kendi tintinin ustunde)");
+/*
+ * "Yumuşak rozet": zemin bir vurgunun tinti, yazı da aynı vurgu. Kalıp her
+ * yerde vardı ama iki serbestlik derecesi ölçülmemişti - tintin TABANI ve
+ * ORANI. Ölçüm açık temada:
+ *
+ *   taban tema tokeni (600), %16  ->  4.20-4.36   KALIR
+ *   taban sabit 500,      %16  ->  4.44-4.59   sinirda
+ *   taban sabit 500,      %14  ->  4.54-5.69   gecer
+ *
+ * Koyu temada taban 500 kalınca yazı 300'e çıkıyor ve 6.00-9.30 veriyor.
+ * Kural: TABAN SABİT 500, ORAN %14. Onbir çağrı yeri buna getirildi.
+ */
+contrastRows([["acik", "light", L], ["koyu", "dark", D]].flatMap(([tn, key, T]) =>
+  FAMS.map((fam) => [
+    `${tn}: ${fam} yazisi / kendi %14 tinti`,
+    tone(fam, key),
+    mix(step(fam, 500), 14, T["--surface"]),
+  ])));
+
 title("8. AYRISMA  [GEVSEK — ikon ve etiketle birlikte]");
 for (const [tn, key] of [["acik", "light"], ["koyu", "dark"]]) {
   distinct({ brand: tone("brand", key), streak: tone("flame", key), wrong: tone("rose", key) }, 12, `${tn}: brand / streak / wrong`);

@@ -34,7 +34,7 @@ export function GrammarPlayer({ exercise, backHref }: { exercise: GrammarExercis
       <p className="muted px-1 text-sm">{exercise.intro}</p>
 
       <section className="card mt-3 p-5">
-        <p className="text-[11px] font-bold uppercase tracking-wide" style={{ color: "var(--color-flame-500)" }}>
+        <p className="text-[11px] font-bold uppercase tracking-wide" style={{ color: "var(--color-flame)" }}>
           {t("item.grammar_rule")}
         </p>
         <h2 className="mt-1 text-base font-bold">{exercise.focus}</h2>
@@ -60,7 +60,7 @@ export function GrammarPlayer({ exercise, backHref }: { exercise: GrammarExercis
                         </span>
                         <span className="muted block text-sm">{x.tr}</span>
                         {x.note ? (
-                          <span className="block text-xs font-semibold" style={{ color: "var(--color-flame-500)" }}>
+                          <span className="block text-xs font-semibold" style={{ color: "var(--color-flame)" }}>
                             {x.note}
                           </span>
                         ) : null}

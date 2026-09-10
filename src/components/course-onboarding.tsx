@@ -467,7 +467,7 @@ export function CourseOnboarding({
           ) : null}
 
           {error ? (
-            <p className="mt-3 flex items-center gap-2 rounded-xl px-3 py-2 text-sm" style={{ background: "color-mix(in srgb, var(--color-rose) 12%, transparent)", color: "var(--color-rose)" }}>
+            <p className="mt-3 flex items-center gap-2 rounded-xl px-3 py-2 text-sm" style={{ background: "color-mix(in srgb, var(--color-rose-500) 14%, transparent)", color: "var(--color-rose)" }}>
               <AlertIcon size={16} /> {error}
             </p>
           ) : null}

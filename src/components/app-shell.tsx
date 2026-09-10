@@ -457,13 +457,13 @@ function StatPills({ streak, xp }: { streak: number; xp: number }) {
     <div className="flex items-center gap-2 text-sm font-bold">
       <span
         className="flex items-center gap-1 rounded-full px-2.5 py-1"
-        style={{ background: "color-mix(in srgb, var(--color-flame) 16%, transparent)", color: "var(--color-flame)" }}
+        style={{ background: "color-mix(in srgb, var(--color-flame-500) 14%, transparent)", color: "var(--color-flame)" }}
       >
         <FlameIcon size={15} /> {streak}
       </span>
       <span
         className="flex items-center gap-1 rounded-full px-2.5 py-1"
-        style={{ background: "color-mix(in srgb, var(--color-brand) 14%, transparent)", color: "var(--color-brand)" }}
+        style={{ background: "color-mix(in srgb, var(--color-brand-500) 14%, transparent)", color: "var(--color-brand)" }}
       >
         <SparkIcon size={15} /> {xp}
       </span>

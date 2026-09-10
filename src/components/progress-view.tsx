@@ -236,7 +236,7 @@ export function ActivityProgress({
       <Link href="/profile/achievements" prefetch={false} className="card flex items-center gap-3 p-4">
         <span
           className="flex h-10 w-10 shrink-0 items-center justify-center rounded-tile"
-          style={{ background: "color-mix(in srgb, var(--color-flame-500) 16%, transparent)", color: "var(--color-flame)" }}
+          style={{ background: "color-mix(in srgb, var(--color-flame-500) 14%, transparent)", color: "var(--color-flame)" }}
         >
           <TrophyIcon size={20} />
         </span>

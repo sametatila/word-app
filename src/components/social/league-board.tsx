@@ -209,7 +209,7 @@ function LeagueRow({
           {row.isMe ? (
             <span
               className="ml-2 rounded-full px-1.5 py-0.5 text-[10px] font-bold uppercase tracking-wide"
-              style={{ background: "color-mix(in srgb, var(--color-brand) 16%, transparent)", color: "var(--color-brand)" }}
+              style={{ background: "color-mix(in srgb, var(--color-brand-500) 14%, transparent)", color: "var(--color-brand)" }}
             >
               {t("social.you")}
             </span>

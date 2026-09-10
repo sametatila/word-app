@@ -71,7 +71,7 @@ export function ReportDialog({
         <div className="flex flex-col items-center gap-2 py-4 text-center">
           <span
             className="flex h-12 w-12 items-center justify-center rounded-full"
-            style={{ background: "color-mix(in srgb, var(--color-mint-500) 18%, transparent)", color: "var(--color-mint)" }}
+            style={{ background: "color-mix(in srgb, var(--color-mint-500) 14%, transparent)", color: "var(--color-mint)" }}
           >
             <CheckIcon size={26} />
           </span>

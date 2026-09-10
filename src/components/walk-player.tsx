@@ -1728,7 +1728,7 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
             style={{
               background:
                 capture === "stt"
-                  ? "color-mix(in srgb, var(--color-mint) 16%, transparent)"
+                  ? "color-mix(in srgb, var(--color-mint-500) 14%, transparent)"
                   : "color-mix(in srgb, var(--color-flame) 14%, transparent)",
               color: capture === "stt" ? "var(--color-mint)" : "var(--color-flame)",
             }}
@@ -1755,7 +1755,7 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
               animate={phase === "listening" ? { scale: [1, 1.15, 1] } : {}}
               transition={{ repeat: Infinity, duration: 1.4 }}
               className="flex h-16 w-16 items-center justify-center rounded-full"
-              style={{ background: "color-mix(in srgb, var(--color-mint) 16%, transparent)", color: "var(--color-mint)" }}
+              style={{ background: "color-mix(in srgb, var(--color-mint-500) 14%, transparent)", color: "var(--color-mint)" }}
             >
               <MicIcon size={28} />
             </motion.span>

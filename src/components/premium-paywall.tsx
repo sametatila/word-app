@@ -95,7 +95,7 @@ export function PremiumPaywall({
         {/* Bekleyen hediye her durumda gösteriliyor: kullanıcı kazandığı ama
             henüz başlamamış süreyi göremezse kazandığını bilmez. */}
         {!!status?.bonusDaysPending && (
-          <p className="mt-1 text-sm font-semibold" style={{ color: "var(--color-mint-600)" }}>
+          <p className="mt-1 text-sm font-semibold" style={{ color: "var(--color-mint)" }}>
             {t("premiumstate.bonus_pending", { n: status.bonusDaysPending })}
           </p>
         )}
@@ -186,8 +186,8 @@ function Row({ text, tone }: { text: string; tone: "premium" | "free" }) {
         className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full"
         style={
           tone === "premium"
-            ? { background: "color-mix(in srgb, var(--color-brand) 18%, transparent)", color: "var(--color-brand)" }
-            : { background: "color-mix(in srgb, var(--color-mint-500) 18%, transparent)", color: "var(--color-mint-600)" }
+            ? { background: "color-mix(in srgb, var(--color-brand-500) 14%, transparent)", color: "var(--color-brand)" }
+            : { background: "color-mix(in srgb, var(--color-mint-500) 14%, transparent)", color: "var(--color-mint)" }
         }
       >
         <CheckIcon size={14} />
@@ -326,7 +326,7 @@ function Chip({ text, tone }: { text: string; tone?: "good" }) {
       className="rounded-full px-2.5 py-1 font-semibold"
       style={
         tone === "good"
-          ? { background: "color-mix(in srgb, var(--color-mint-500) 18%, transparent)", color: "var(--color-mint-600)" }
+          ? { background: "color-mix(in srgb, var(--color-mint-500) 14%, transparent)", color: "var(--color-mint)" }
           : { background: "var(--surface-2)" }
       }
     >

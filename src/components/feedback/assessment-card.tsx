@@ -41,7 +41,7 @@ export function AssessmentCard({
   return (
     <section className="card p-4">
       {failure && failure !== "aborted" ? (
-        <p className="mb-3 rounded-xl px-3 py-2 text-xs font-semibold" style={{ background: "color-mix(in srgb, var(--color-flame) 12%, transparent)", color: "var(--color-flame)" }}>
+        <p className="mb-3 rounded-xl px-3 py-2 text-xs font-semibold" style={{ background: "color-mix(in srgb, var(--color-flame-500) 14%, transparent)", color: "var(--color-flame)" }}>
           {t(ASSESS_FAILURE_KEYS[failure])}
         </p>
       ) : null}

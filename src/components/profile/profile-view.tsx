@@ -140,7 +140,7 @@ export function ProfileView({ stats }: { stats: ProfileStats }) {
       {stats.premium ? (
         <div
           className="mb-4 flex items-center gap-3 rounded-card p-4"
-          style={{ background: "color-mix(in srgb, var(--color-mint-500) 16%, transparent)" }}
+          style={{ background: "color-mix(in srgb, var(--color-mint-500) 14%, transparent)" }}
         >
           <span
             className="flex h-12 w-12 shrink-0 items-center justify-center rounded-tile text-white"
@@ -314,7 +314,9 @@ function InviteRow({ last }: { last?: boolean }) {
     >
       <span
         className="flex h-10 w-10 shrink-0 items-center justify-center rounded-tile"
-        style={{ background: "color-mix(in srgb, var(--color-mint-500) 16%, transparent)", color: "var(--color-mint-500)" }}
+        /* Yazı tema duyarlı tokenden: sabit 500 kendi %16 tinti üstünde açık temada
+           2.97 veriyordu, grafik eşiği 3.0 bile değil. Zemin 500 kalıyor. */
+        style={{ background: "color-mix(in srgb, var(--color-mint-500) 14%, transparent)", color: "var(--color-mint)" }}
       >
         <ShareIcon size={20} />
       </span>
