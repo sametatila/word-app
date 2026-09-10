@@ -4377,3 +4377,33 @@ kısıt ifadesi ve `locale`.
 
 Yapay zekâ geri bildiriminin Türkçe olması (`locale?: "tr"` — tipin izin
 verdiği tek değer) iki platformda da aynı; ürün kararı, ayrışma değil.
+
+### 11.90 Çeviri turunda ikinci şans
+
+"Modele giden istek" karşılaştırmasını (§11.89) öteki değerlendirme
+çağrılarına genişletirken çıktı: mobilde **iki** çağrı yeri var (sınav yazma,
+beceri konuşma), webde **altı**. Farkların çoğu webde olup mobilde olmayan
+yüzeyler (`free_sentence` turu §11.13'te kayıtlı, rol yapma sınavı ayrı bir
+ekran). Biri değildi.
+
+**Çeviri turunun ikinci şansı.** Yerel hakem (`lib/sentenceMatch`) kural
+tabanlı: kabul listesinde olmayan ama **doğru** bir çeviri "yanlış" çıkabiliyor.
+Web bu durumda — hüküm "yanlış" ve cevap üç sözcükten uzunsa — modele soruyor ve
+model yeterince yüksek puan verirse cevabı kabul ediyor (kalite 4). Mobilde bu
+yol **hiç yoktu**: aynı cevap webde doğru, Android'de yanlış sayılıyordu ve
+üstelik kelimeyi geriye atıyordu (SRS kalitesi düşüyordu).
+
+Eşikler webinkiyle aynı ada ve değere sahip (`ASSESS_WAIT_MS` 6000,
+`ASSESS_ACCEPT` 75, en az üç sözcük), yani §11.86'da açılan "ortak sayısal
+sabitler" kapısına **kendiliğinden** girdiler — kapının elle bakım istememesi
+ilk meyvesini verdi.
+
+**Ham metin tabanı 16 → 17.** Modele giden istem (`Çevir: …`) ham dizge ve
+webin tabanında da öyle duruyor. Muafiyetin kapısı aynı turda yazıldı:
+"ceviri ikinci sansi" istemi, iki eşiği ve en az sözcük sayısını iki tarafta
+karşılaştırıyor — ayrışırlarsa aynı cevap bir uygulamada kabul edilir,
+ötekinde edilmez ve sebebi hiçbir yerde görünmez.
+
+**Kendi hatam:** ilk commit yalnızca taban dosyasını taşıdı; `git add` yoluna
+var olmayan bir dosya adı yazdığım için komut hata verdi ve `2>/dev/null` onu
+yuttu, kod indekse hiç girmedi. Ayrı bir commit'le düzeltildi.
