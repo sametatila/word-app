@@ -2904,6 +2904,25 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   sameList("cip durum bildirimi", mobilEksik.length ? mobilEksik : ["yok"], eksik.length ? eksik : ["yok"], "mobil", "web");
 }
 
+/* ── 77. seviye testi sonucu kaydedilemediginde ───────────────────────────
+ * On dakikalik testin sonucu kayit dusunce ekrandan silinmemeli: puanlama
+ * SAF bir islev ve sunucu da onu kullaniyor, yani ayni sonucu istemcide
+ * hesaplamak uydurmak degil. Web hata kartina dusup testi yok ediyordu.
+ * Ucu birden gerekiyor: yerel sonuc, kaydedilmedigini SOYLEMEK ve seviyeyi
+ * yine de uygulamak (kabul edilecek satir yoksa profile yazarak). */
+{
+  const kurtarma = (p) => {
+    const src = read(p).replace(/\/\*[\s\S]*?\*\//g, " ").replace(/\/\/[^\n]*/g, " ");
+    return [
+      "yerel sonuc=" + (/scorePlacement\(|estimateLevel\(/.test(src) ? "var" : "yok"),
+      "uyari=" + (src.includes("placement.not_saved") ? "var" : "yok"),
+      "seviye yine de=" + (/api\/profile|updateProfile\(/.test(src) ? "var" : "yok"),
+      "tekrar dene=" + (src.includes("common.try_again") ? "var" : "yok"),
+    ];
+  };
+  sameList("seviye testi kayit kurtarma", kurtarma("mobile/src/screens/PlacementScreen.tsx"), kurtarma("src/components/placement/placement-test.tsx"));
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"

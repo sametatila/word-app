@@ -776,6 +776,7 @@ export const tr: Record<string, string> = {
   "placement.suggested": "öneri",
   "placement.continue_with": "{level} ile devam et",
   "placement.pick_and_continue": "{level} seç ve devam et",
+  "placement.not_saved": "Sonuç sunucuya kaydedilemedi — seviyen yine de ayarlanacak.",
   "placement.retake_in": "Test {n} günde bir alınabiliyor. Bu arada plan seni yönlendirir.",
   "placement.last_taken": "Son alma: {date} · öneri",
   "placement.you_chose": "· seçtiğin {level}",

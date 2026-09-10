@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 import { speakGerman } from "@/components/speak-button";
 import { SpeakerIcon } from "@/components/icons";
 import { track } from "@/lib/track";
-import { describePerSkill, nextLevel, PLACEMENT_LEVELS, type PlacementAnswer, type PlacementStage } from "@/lib/placement-score";
+import { describePerSkill, nextLevel, PLACEMENT_LEVELS, scorePlacement, type PlacementAnswer, type PlacementStage } from "@/lib/placement-score";
 import type { PlacementRecord, PlacementTest as Test, TextItem } from "@/lib/placement";
 import type { CefrLevel } from "@/lib/skills/types";
 import { useT, useLang } from "@/lib/i18n/client";
@@ -40,6 +40,9 @@ export function PlacementTest({ initialLast, canRetake, retakeDays }: { initialL
   const t = useT();
   const lang = useLang();
   const router = useRouter();
+  /* Sonuç sunucuya yazılamadı: puan istemcide hesaplandı, seviye profile
+     ayrıca yazılacak (bkz. `accept`). */
+  const [notSaved, setNotSaved] = useState(false);
   const [phase, setPhase] = useState<Phase>("intro");
   const [test, setTest] = useState<Test | null>(null);
   const [level, setLevel] = useState<CefrLevel>("A1");
@@ -136,14 +139,32 @@ export function PlacementTest({ initialLast, canRetake, retakeDays }: { initialL
       setChosen(data.suggested);
       setPhase("result");
     } catch {
-      setPhase("error");
+      /*
+       * TEST YAPILDI AMA KAYDEDİLEMEDİ.
+       *
+       * Eskiden burada hata kartı çiziliyordu: on dakikalık testin sonucu
+       * ekrandan siliniyor, kullanıcı seviyesini hiç öğrenmiyordu. Puanlama
+       * SAF bir işlev (`scorePlacement`) ve sunucu da onu kullanıyor, yani
+       * aynı sonucu istemcide hesaplamak uydurmak değil. Android bunu baştan
+       * beri yapıyor (`PlacementScreen` yerel tahmine düşüyor); kayıt
+       * kurtarılamadığı için seviye profile ayrıca yazılıyor.
+       */
+      const local = scorePlacement(answers.current);
+      setResult({ id: 0, at: new Date().toISOString(), accepted: null, ...local });
+      setChosen(local.suggested);
+      setNotSaved(true);
+      setPhase("result");
     }
   }
 
   async function accept() {
     if (!result || !chosen) return;
     try {
-      await fetch("/api/placement", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ action: "accept", id: result.id, level: chosen }) });
+      /* Kayıt yoksa (id 0) kabul edilecek bir satır da yok: seviye doğrudan
+         profile yazılıyor - Android'in aynı yerdeki yedeği (`updateProfile`). */
+      await (result.id
+        ? fetch("/api/placement", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ action: "accept", id: result.id, level: chosen }) })
+        : fetch("/api/profile", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ level: chosen }) }));
     } finally {
       router.push("/learn");
       router.refresh();
@@ -195,7 +216,13 @@ export function PlacementTest({ initialLast, canRetake, retakeDays }: { initialL
     return (
       <section className="card mx-auto w-full max-w-md p-5">
         <p className="text-sm">{t("placement.couldn_t_load_test")}</p>
-        <button type="button" onClick={() => setPhase("intro")} className="btn btn-ghost mt-3 px-4 py-2 text-sm">
+        {/* Yerinde tekrar deneme — Android'deki sıra: birincil "tekrar dene",
+            ikincil çıkış (bkz. `weekly-player`). Yalnız çıkış sunmak geçici
+            bir ağ hatasında kullanıcıyı ekrandan atıyordu. */}
+        <button type="button" onClick={() => void start()} className="btn btn-primary mt-3 w-full px-4 py-2 text-sm">
+          {t("common.try_again")}
+        </button>
+        <button type="button" onClick={() => setPhase("intro")} className="btn btn-ghost mt-2 w-full px-4 py-2 text-sm">
           {t("common.back")}
         </button>
       </section>
@@ -208,6 +235,9 @@ export function PlacementTest({ initialLast, canRetake, retakeDays }: { initialL
         <p className="muted mt-1 text-sm">
           {describePerSkill(result.perSkill, t)} · {t("placew.score_line", { pct: formatPercent(result.score, lang), min: minutes })}
         </p>
+        {notSaved ? (
+          <p className="mt-3 text-sm font-semibold" style={{ color: "var(--color-danger)" }}>{t("placement.not_saved")}</p>
+        ) : null}
         <p className="mt-3 text-sm leading-relaxed">{t("placew.median_note")}</p>
         <div className="mt-4 flex flex-wrap gap-2">
           {PLACEMENT_LEVELS.map((l) => (

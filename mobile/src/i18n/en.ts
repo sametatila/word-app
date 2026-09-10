@@ -771,6 +771,7 @@ export const en: Record<string, string> = {
   "placement.suggested": "suggested",
   "placement.continue_with": "Continue with {level}",
   "placement.pick_and_continue": "Pick {level} and continue",
+  "placement.not_saved": "The result couldn't be saved to the server — your level will still be set.",
   "placement.retake_in": "The test can be taken once every {n} days. In the meantime the plan guides you.",
   "placement.last_taken": "Last taken: {date} · suggested",
   "placement.you_chose": "· you chose {level}",

@@ -78,6 +78,8 @@ export function PlacementScreen() {
      `fetchPlacementStatus`). Onboarding'de sorulmuyor - orada zaten ilk kez
      alınıyor ve hesap bile yeni. */
   const [status, setStatus] = useState<PlacementStatus | null>(null);
+  /** Sonuç sunucuya yazılamadı: seviye yine de profile yazılıyor. */
+  const [notSaved, setNotSaved] = useState(false);
   /*
    * SEVİYEYİ KULLANICI SEÇEBİLİYOR.
    *
@@ -133,7 +135,10 @@ export function PlacementScreen() {
       setSubmitting(true);
       finishPlacement(answers.current)
         .then((r) => setResult(r))
-        .catch(() => { /* sunucu hata → yerel tahmin gösterilir */ })
+        /* Sunucu hata → yerel tahmin gösteriliyor AMA bunun söylenmesi şart:
+           kayıt yok demek, sonraki açılışta "son alma" satırının boş olması ve
+           bekleme süresinin işlememesi demek. Web aynı notu gösteriyor. */
+        .catch(() => setNotSaved(true))
         .finally(() => setSubmitting(false));
     }
   }
@@ -253,6 +258,7 @@ export function PlacementScreen() {
               ))}
             </View>
           ) : null}
+          {notSaved ? <Text variant="caption" color={colors.dangerText} style={{ textAlign: "center", marginBottom: spacing.md, lineHeight: 19 }}>{t("placement.not_saved")}</Text> : null}
           {saved && <Text variant="bodyStrong" color={colors.successText} style={{ marginBottom: spacing.md }}>{t("placement.saved")}</Text>}
           <PressableScale onPress={applyLevel} style={[{ width: "100%", backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: spacing.lg, alignItems: "center" }, softShadow(colors.primary, 10)]}>
             <Text variant="h3" color={colors.onPrimary}>

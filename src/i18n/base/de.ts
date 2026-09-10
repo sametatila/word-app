@@ -773,6 +773,7 @@ export const deBase: Record<string, string> = {
   "placement.suggested": "empfohlen",
   "placement.continue_with": "Mit {level} weitermachen",
   "placement.pick_and_continue": "{level} wählen und weitermachen",
+  "placement.not_saved": "Das Ergebnis konnte nicht auf dem Server gespeichert werden — dein Niveau wird trotzdem gesetzt.",
   "placement.retake_in": "Der Test ist alle {n} Tage möglich. Bis dahin führt dich der Plan.",
   "placement.last_taken": "Zuletzt: {date} · Vorschlag",
   "placement.you_chose": "· deine Wahl {level}",
