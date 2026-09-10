@@ -1595,6 +1595,42 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   sameList("kursa gomulu sik cifti", hits.length ? hits : ["gomulu cift yok"], ["gomulu cift yok"], "kodda", "beklenen");
 }
 
+/* ── 37. iki tarafta ayni adi tasiyan SAYISAL sabitler ─────────────────────
+ * 22. bolum LISTELERI karsilastiriyor; tek basina duran sayilar disarida
+ * kaliyordu. `DANGER_SECONDS` tam boyle ayrismisti: web 8, mobil 10 - ve
+ * mobil yorumu "web ile ayni" DIYORDU, yani ayrisma iki taraftan da
+ * gorunmuyordu.
+ *
+ * Bu bolum elle bakim istemiyor: iki agacta `const AD = <sayi>;` bicimindeki
+ * her sabit toplaniyor ve ADI IKISINDE DE gecenler karsilastiriliyor. Yeni
+ * bir ortak sabit yazildigi anda kapiya giriyor.
+ *
+ * Icerik/uretilmis dizinler disarida: oradaki sayilar mufredat verisi. */
+{
+  const walk = (d, out = []) => {
+    for (const e of readdirSync(new URL("../" + d, import.meta.url), { withFileTypes: true })) {
+      const p = d + "/" + e.name;
+      if (e.isDirectory()) { if (!/node_modules|\/content|\/generated|__tests__|\/i18n/.test("/" + p)) walk(p, out); }
+      else if (/\.tsx?$/.test(e.name)) out.push(p);
+    }
+    return out;
+  };
+  const grab = (root) => {
+    const m = new Map();
+    for (const f of walk(root)) {
+      for (const x of read(f).matchAll(/^\s*(?:export\s+)?const ([A-Z][A-Z0-9_]{2,})\s*(?::\s*number\s*)?=\s*(-?\d+(?:\.\d+)?)\s*;/gm)) {
+        m.set(x[1], x[2]);
+      }
+    }
+    return m;
+  };
+  const w = grab("src");
+  const m = grab("mobile/src");
+  const ortak = [...w.keys()].filter((k) => m.has(k)).sort();
+  const ayrisan = ortak.filter((k) => w.get(k) !== m.get(k)).map((k) => k + ": mobil " + m.get(k) + " / web " + w.get(k));
+  sameList("ortak sayisal sabitler", ayrisan.length ? ayrisan : ["ayrisma yok (" + ortak.length + ")"], ["ayrisma yok (" + ortak.length + ")"], "ayrisan", "beklenen");
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"
