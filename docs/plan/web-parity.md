@@ -5895,3 +5895,36 @@ simge düğmelerinin hepsi adlı.
 
 İki yeni ölçü kapıya bağlandı: §75 artık adsız düğme + adsız anahtar sayıyor,
 §76 çip durum bildirimini sayıyor.
+
+
+### 11.159 Yükleme/hata durumları: seviye testi kayıt düşünce testi yok ediyordu
+
+Bu tur "tekrar dene" yolu olan yüzeyleri iki tarafta saydım. Mobilde on dört,
+webde on yedi dosya; kümeler büyük ölçüde örtüşüyor. Üç aday çıktı:
+
+- **`/words`** — yanlış pozitif: web sayfası sunucu bileşeni, istemci isteği
+  yok; hata `error.tsx`e düşüyor ve orada tekrar deneme zaten var. Mimari
+  farkı, açık değil.
+- **Arkadaşlar merkezi** — webde hata metni var, tekrar deneme yok. Küçük;
+  sonraki tura kaldı.
+- **Seviye testi** — gerçek ve büyük.
+
+**Testi bitirmek yazılamayınca web hata kartına düşüyordu:** on dakikalık
+testin sonucu ekrandan siliniyor, kullanıcı seviyesini hiç öğrenmiyordu.
+Android aynı yerde yerel tahmine düşüyor. Web artık `scorePlacement` ile aynı
+sonucu istemcide hesaplıyor — **bu uydurma değil**: puanlama saf bir işlev ve
+sunucu da onu kullanıyor. Kabul edilecek bir kayıt satırı olmadığından seviye
+doğrudan profile yazılıyor; Android'in aynı yerdeki yedeğiyle aynı yol.
+
+**Ve mobil de eksikti:** kaydedilmediğini SÖYLEMİYORDU. Kayıt yok demek,
+sonraki açılışta "son alma" satırının boş kalması ve bekleme süresinin
+işlememesi demek — kullanıcının bunu bilmesi gerekiyor. Not iki tarafa da
+eklendi.
+
+Web'in hata ekranına "tekrar dene" (birincil) eklendi; çıkış ikincil kaldı —
+haftalık sınavda zaten yazılı olan Android sırası. §77 dördünü birden
+ölçüyor.
+
+**Yöntem notu:** bu tur da bir ölçüm ayrışma göstermeyip mimariyle
+açıklandı (`/words`). Böyle bir sonucu "açık" saymamak, kapı yazmamak ve
+sebebini yazmak — listeyi gürültüden koruyan şey bu.
