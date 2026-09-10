@@ -358,6 +358,45 @@ console.log("\n" + C.b + "12. UNITE DUGUM TURLERI" + C.off);
   );
 }
 
+/* kopya birlesimler: kademe, iliski, tepki */
+
+console.log("\n" + C.b + "13. KOPYA BIRLESIMLER" + C.off);
+{
+  /*
+   * Üçü de iki tarafta ayrı ayrı yazılı ve üçü de TELDEN geçiyor: sunucu bu
+   * adları gönderiyor, istemci bu adlara göre renk/etiket/ikon seçiyor. Biri
+   * yeni bir üye kazanırsa öteki onu tanımaz - rozet renksiz, ilişki
+   * durumsuz, tepki etiketsiz kalır.
+   *
+   * `ItemStatus` bilerek DIŞARIDA: web durumu üç ayrı boole ile
+   * (playable/done/attempted/open), mobil tek dizgeyle modelliyor. Aynı
+   * fikrin iki ayrı gösterimi, kopya değil - telde geçen alanlar zaten
+   * boolelar ve ikisi de onları okuyor.
+   */
+  const union = (src, name) => {
+    const i = src.indexOf(name);
+    if (i < 0) return [];
+    const seg = src.slice(i, i + 900);
+    const end = seg.search(/;\s*(\n|$)/);
+    return [...(end > 0 ? seg.slice(0, end) : seg).matchAll(/"([\w-]+)"/g)].map((x) => x[1]);
+  };
+  sameList(
+    "basarim kademeleri",
+    union(read("mobile/src/data/achievements.ts"), "export type Tier ="),
+    union(read("src/lib/achievements.ts"), "export type Tier ="),
+  );
+  sameList(
+    "arkadaslik iliskileri",
+    union(read("mobile/src/api/social.ts"), "export type Relation ="),
+    union(read("src/lib/social/types.ts"), "export type Relation ="),
+  );
+  sameList(
+    "tepki turleri",
+    union(read("mobile/src/api/social.ts"), "export const REACTION_KINDS ="),
+    union(read("src/lib/social/types.ts"), "export const REACTION_KINDS ="),
+  );
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"
