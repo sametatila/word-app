@@ -25,7 +25,15 @@
  */
 import { readFileSync } from "node:fs";
 import { LESSONS } from "@/lib/lessons";
-import { resolveSegments, resolveLesson, isTurkishStem, type NativeDict } from "@/lib/lessons/native";
+import {
+  resolveSegments,
+  resolveLesson,
+  resolveExam,
+  isTurkishStem,
+  type ExamShape,
+  type NativeDict,
+} from "@/lib/lessons/native";
+import { MODULE_EXAMS } from "@/lib/lessons/module-exam";
 import type { Segment } from "@/lib/lessons/types";
 
 const dict = JSON.parse(
@@ -105,9 +113,23 @@ for (const l of lessons) {
   else walk(out, l.id);
 }
 
+/* MODÜL SINAVI da bu eksenin parçası: sözlükteki `exam` tablosu (1.781 dize)
+   `apply.mjs` içinde ders hattıyla birlikte kuruluyor ve `resolveExam` onu
+   okuyor. Ama BUGÜNE KADAR hiçbir kapı `resolveExam`i çalıştırmıyordu —
+   hattın kendi kapısı (`check:lessons-exam`) yalnız yazılanı ölçüyor.
+   Ölçüldü: 58 kâğıt, 6.728 dize, 0 reddedilen, 0 Türkçe. Yani bugün temiz;
+   tarama bunun ÖYLE KALDIĞINI ölçüyor. */
+for (const p of MODULE_EXAMS) {
+  const id = `sınav ${p.level}:${p.index}`;
+  const out = resolveExam(dict, p as unknown as ExamShape);
+  if (!out) rejected.push(id);
+  else walk(out, id);
+}
+
 console.log(
   `ders ${lessons.length} · tr parça ${segs} · çözülen ${ok} · ` +
-    `çözülen ders ${lessons.length - rejected.length} · taranan dize ${strings}`,
+    `modül sınavı ${MODULE_EXAMS.length} · ` +
+    `çözülen ${lessons.length + MODULE_EXAMS.length - rejected.length} · taranan dize ${strings}`,
 );
 if (misses.size) {
   const total = [...misses.values()].reduce((a, m) => a + m.n, 0);
@@ -117,7 +139,7 @@ if (misses.size) {
   process.exit(1);
 }
 if (rejected.length) {
-  console.log(`\nHATA: ${rejected.length} ders reddedildi: ${rejected.slice(0, 10).join(", ")}`);
+  console.log(`\nHATA: ${rejected.length} ders/kâğıt reddedildi: ${rejected.slice(0, 10).join(", ")}`);
   process.exit(1);
 }
 if (leftover.size) {
@@ -127,5 +149,6 @@ if (leftover.size) {
   process.exit(1);
 }
 console.log(
-  "\ntamam: her Türkçe parçanın İngilizcesi var ve çözülmüş derste Türkçe kalmıyor",
+  "\ntamam: her Türkçe parçanın İngilizcesi var; çözülmüş derste ve modül" +
+    " sınavında Türkçe kalmıyor",
 );
