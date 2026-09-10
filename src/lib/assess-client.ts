@@ -38,7 +38,12 @@ export const ASSESS_FAILURE_KEYS: Record<AssessFailure, string> = {
   // bitmiş. Genel hata metniyle göstermek kullanıcıya "bir şey bozuldu" dedirtir.
   premium: "assess.fail_premium",
   not_configured: "assess.fail_not_configured",
-  quota: "assess.fail_quota",
+  /* WEB'E ÖZEL ANAHTAR. Bu satırın metni platforma göre GERÇEKTEN farklı:
+     webde hak dolunca kural tabanlı yedek gösteriliyor (`fallbackAssessment`),
+     mobilde puan hiç verilmiyor. Ama aynı ANAHTAR altında iki metin taşımak
+     sessiz bir gölgeleme demekti (`{...base, ...web}` içinde web kazanıyor);
+     ayrı ad, farkı görünür kılıyor. */
+  quota: "assessw.fail_quota",
   too_long: "assess.fail_too_long",
   timeout: "assess.fail_timeout",
   aborted: "",

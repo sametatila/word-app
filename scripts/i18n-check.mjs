@@ -136,6 +136,33 @@ if (dupes.length) {
 }
 
 /*
+  4b. Bir anahtar HEM `base` HEM `web` içinde tanımlı olmamalı.
+
+  Sözlük `{ ...base, ...web }` diye kuruluyor: aynı anahtar iki yerde tanımlıysa
+  WEB KAZANIYOR ve base'deki (mobil kaynaklı) metin sessizce gölgeleniyor. Aynı
+  anahtar iki platformda iki ayrı cümle gösteriyor ve hiçbir denetim bunu
+  söylemiyordu. Ölçüldü: yirmi sekiz anahtar iki yerde birden tanımlıydı,
+  dördünün metni farklıydı (docs/plan/web-parity.md 11.128).
+
+  Kural KOPYAYA bakıyor, değere değil: aynı metni iki yere yazmak bugün zararsız
+  görünse de yarın birini düzeltip ötekini unutmanın yolu. Web'e özel bir metin
+  gerekiyorsa web'e özel bir AD alır (ör. `assessw.fail_quota`) - o zaman fark
+  görünür olur.
+*/
+{
+  const b = load("base", "tr");
+  const w = load("web", "tr");
+  const golge = [...w.keys()].filter((k) => b.has(k));
+  if (golge.length) {
+    bad += golge.length;
+    for (const k of golge) {
+      const ayni = b.get(k) === w.get(k);
+      console.error(`anahtar HEM base HEM web'de → ${k}${ayni ? " (aynı metin)" : " (METİN FARKLI — web gölgeliyor)"}`);
+    }
+  }
+}
+
+/*
   5. `web/*` içinde ÖLÜ anahtar var mı — çağrılan-ama-yok'un TERSİ.
 
   Bu denetim "kodda çağrıldı, sözlükte yok"u yakalıyordu; sözlükte durup hiç

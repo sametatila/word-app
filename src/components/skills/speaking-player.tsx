@@ -86,7 +86,7 @@ export function SpeakingPlayer({ exercise, backHref }: { exercise: SkillExercise
                hız sınırı ise "çok sık denedin". İkisine aynı cümleyi yazmak
                kullanıcıya yarın açılacak bir şeyi "biraz sonra dene" diye
                anlatıyordu. Kota cümlesi mobil ile ortak. */
-            ? t("assess.fail_quota")
+            ? t("assessw.fail_quota")
             : res.reason === "rate_limited"
               ? t("speakp.rate_limited")
             : t("speakp.send_failed"),
