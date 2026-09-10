@@ -2804,3 +2804,41 @@ büyük kısmı yanlış - bir düğmenin İÇİNDEKİ açıklama `<span>`ı, d�
 kendisi dolguluyken. Metin taraması hangi öğenin tıklanabilir olduğunu
 bilmiyor; doğrusunu ayırmak DOM gerektirir. O yüzden bu eksen kapıya
 konmadı, üç denetim elle doğrulanıp düzeltildi.
+
+### 11.50 Erişilebilirlik etiketleri temiz — ama paylaş düğmesi Türkçe yazıyordu
+
+`accessibilityLabel` ↔ `aria-label` kapsamını ölçtüm: mobilde 92, webde 69
+kullanım. Sayı farkı bir eksik DEĞİL - React Native'de dokunulabilir her
+sarmalayıcı etiket istiyor, HTML'de `<button>` içindeki metin kendiliğinden
+erişilebilir ad oluyor.
+
+Aranan gerçek hata "ikon-only düğme, etiketsiz". Tarama dokuz aday verdi ve
+**dokuzu da yanlış pozitif** çıktı: hepsinde ikonun yanında görünen bir metin
+var (seçili işaretinin altındaki ses adı, "Sonucu paylaş"ın yanındaki bağlantı
+ikonu, doğru/yanlış düğmelerindeki büyük yazı). Yani webde etiketsiz ikon
+düğmesi yok; bu eksen temiz.
+
+**Ama tarama başka bir şey buldu.** `share-result.tsx`teki düğmenin iki
+etiketi elle Türkçe yazılıydı:
+
+    {copied ? <>… Kopyalandı</> : <>… Sonucu paylaş</>}
+
+Arayüzü İngilizce ya da Almanca olan kullanıcı bu düğmede Türkçe okuyordu.
+Dosyanın kendi `tr()` yardımcısı var ama o PAYLAŞILAN METNİ çeviriyor,
+bileşenin arayüzünü değil - yani makine hazırdı, bu iki dizge yanından
+geçmişti.
+
+Adlar Android'den alındı: orada aynı düğme `common.share` ("Paylaş") diyor,
+"Sonucu paylaş" değil. Kopyalandı durumu webe özgü (Web Share API yoksa panoya
+düşülüyor) ve karşılığı iki sözlükte de duran `referral.copied`. Yeni anahtar
+uydurmak gerekmedi.
+
+Cırcırlı taban 171'den **169'a** indi. `--baseline` yalnız gerçekten düştüğü
+için yazıldı; sayı yalnız aşağı iniyor.
+
+**Yan bulgu, kaydedildi:** tabandaki 169'un büyük kısmı Türkçe arayüz metni
+DEĞİL. Tarayıcı Türk alfabesindeki harfleri arıyor ve Almanca umlautlar
+(ä/ö/ü) o kümeyle çakışıyor - yani `voice-picker`ın Almanca örnek cümlesi,
+tur ekranlarının "ä ö ü ß" karakter satırı, `courses.ts`teki "Züritüütsch"
+hep sayılıyor. Bu yüzden taban sıfır değil ve olamaz; asıl iş bu gürültünün
+içindeki gerçek arayüz metinlerini ayırmak - bu turda ikisi ayrıldı.

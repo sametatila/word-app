@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { CheckIcon, LinkIcon } from "@/components/icons";
 import { track } from "@/lib/track";
-import { useLang } from "@/lib/i18n/client";
+import { useLang, useT } from "@/lib/i18n/client";
 import { formatNumber, formatPercent, translate, type NativeLang } from "@/lib/i18n/dict";
 
 /**
@@ -114,6 +114,7 @@ export function ShareResult({
   score?: number;
 }) {
   const lang = useLang();
+  const t = useT();
   const [copied, setCopied] = useState(false);
 
   if (!total) return null;
@@ -171,13 +172,21 @@ export function ShareResult({
       onClick={() => void share()}
       className="btn btn-ghost flex w-full items-center justify-center gap-2 px-5 py-3"
     >
+      {/*
+        Etiketler SÖZLÜKTEN. İkisi de elle Türkçe yazılıydı, yani arayüzü
+        İngilizce ya da Almanca olan kullanıcı bu düğmede Türkçe okuyordu.
+        Ad Android'den: orada aynı düğme `common.share` ("Paylaş") diyor,
+        "Sonucu paylaş" değil. Kopyalandı durumu webe özgü (Web Share API
+        yoksa panoya düşülüyor) ve karşılığı iki sözlükte de duran
+        `referral.copied`.
+      */}
       {copied ? (
         <>
-          <CheckIcon size={17} /> Kopyalandı
+          <CheckIcon size={17} /> {t("referral.copied")}
         </>
       ) : (
         <>
-          <LinkIcon size={17} /> Sonucu paylaş
+          <LinkIcon size={17} /> {t("common.share")}
         </>
       )}
     </button>
