@@ -66,7 +66,7 @@ export function VoicePicker({
               </PressableScale>
             </View>
             <Text variant="caption" color={colors.textMuted}>{t(v.gender === "female" ? "voices.female" : "voices.male")}</Text>
-            <Text variant="caption" color={colors.textFaint}>{t(v.note)}</Text>
+            <Text variant="caption" color={colors.textFaint}>{t(v.noteKey)}</Text>
           </PressableScale>
         );
       })}

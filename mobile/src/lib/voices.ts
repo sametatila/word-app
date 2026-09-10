@@ -45,20 +45,20 @@ export type Voice = {
   /** Etiket değil ANAHTAR eşleşmesi: gösterim voices.female / voices.male ile çevrilir. */
   gender: "female" | "male";
   /** Sözlük anahtarı (voices.*_note). */
-  note: string;
+  noteKey: string;
   course: CourseId;
 };
 
 export const VOICES: Voice[] = [
-  { id: "de-DE-KatjaNeural", label: "Katja", gender: "female", note: "voices.katja_note", course: "de" },
-  { id: "de-DE-ConradNeural", label: "Conrad", gender: "male", note: "voices.conrad_note", course: "de" },
-  { id: "de-CH-LeniNeural", label: "Leni", gender: "female", note: "voices.leni_note", course: "gsw-zh" },
-  { id: "de-CH-JanNeural", label: "Jan", gender: "male", note: "voices.jan_note", course: "gsw-zh" },
+  { id: "de-DE-KatjaNeural", label: "Katja", gender: "female", noteKey: "voices.katja_note", course: "de" },
+  { id: "de-DE-ConradNeural", label: "Conrad", gender: "male", noteKey: "voices.conrad_note", course: "de" },
+  { id: "de-CH-LeniNeural", label: "Leni", gender: "female", noteKey: "voices.leni_note", course: "gsw-zh" },
+  { id: "de-CH-JanNeural", label: "Jan", gender: "male", noteKey: "voices.jan_note", course: "gsw-zh" },
   // İngilizce kursu. Bunlar yokken voicesFor("en") boş dönüyordu ve
   // defaultVoice yedeği devreye girip İngilizce kelimeleri ALMANCA sesle
   // okutuyordu (web kataloğuna eklenmiş ama buraya eklenmemişti).
-  { id: "en-US-JennyNeural", label: "Jenny", gender: "female", note: "voices.jenny_note", course: "en" },
-  { id: "en-US-GuyNeural", label: "Guy", gender: "male", note: "voices.guy_note", course: "en" },
+  { id: "en-US-JennyNeural", label: "Jenny", gender: "female", noteKey: "voices.jenny_note", course: "en" },
+  { id: "en-US-GuyNeural", label: "Guy", gender: "male", noteKey: "voices.guy_note", course: "en" },
 ];
 
 /** Kursun sesleri — seçim ekranı bunu listeler. */
