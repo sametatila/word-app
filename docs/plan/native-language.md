@@ -19,12 +19,19 @@ hangisi"*) durum uzayını üçe katlar, tek bir yeni içerik üretmez.
 | tr → en | ✅ | ✅ | ✅ |
 | **en → de** | ✅ 8707/8707 karşılık + örnek (ÜRETİMDE) | ✅ AÇIK | ✅ AÇIK |
 | ~~en → gsw~~ | KAPSAM DIŞI (2026-09-10 kullanıcı kararı) | — | — |
-| **de → en** | ❌ Almanca karşılık sütunu yok | ❌ | ❌ |
+| **de → en** | ✅ 7175/7175 karşılık + örnek (ÜRETİMDE) | ✅ AÇIK | ✅ AÇIK |
 
 **en→de 2026-09-10'da AÇILDI** — `PAIR_READY.en = ["de"]`, hem web'de hem
 mobilde. Üç katmanın üçü de doğrulandı; kelime katmanı için üretim OKUNDU
 (`de` kursu: 8.707/8.707 İngilizce karşılık, 8.707/8.707 İngilizce örnek
 çevirisi). Beklenen `db:seed` bu parite için geçersizmiş.
+
+**de→en 2026-09-11'de AÇILDI** — `PAIR_READY.de = ["en"]`, hem web'de hem
+mobilde. Kelime katmanı o gün üretime tohumlandı (`db:seed:en`; izin ayrıca
+soruldu, öncesinde `words` tablosunun yedeği alındı): 7.175/7.175 Almanca
+karşılık, 7.175/7.175 örnek cümle çevirisi. İçerik katmanı beş hatta yazıldı
+ve `check:native-de` ile ölçüldü — ders 200/200, egzersiz 189/189, kâğıt
+60/60, can-do 11/11.
 
 **gsw-zh HİÇBİR paritede düşünülmüyor** (kullanıcı kararı, 2026-09-10).
 Kurs `PAIR_READY.tr` içinde canlı kalıyor ve kullanıcıları var; yapılmayacak
@@ -1482,14 +1489,17 @@ Karar ürün kararı: 4,62 MB'lık bir APK büyümesi mi, iki yerde duran bir
 İkinci parite Almanca konuşana İngilizce öğretiyor, yani İNGİLİZCE KURSUN
 Türkçe yüzünün Almancası yazılacak. Bugüne kadar hiç ölçülmemişti.
 
-**Kelime katmanı — üretim okundu, kolon var ama BOŞ:**
+**Kelime katmanı — 2026-09-11'de tohumlandı:**
 
 | kolon | ne | üretimde |
 |---|---|---:|
-| `de_gloss` | İngilizce kelimenin Almanca karşılığı | **0 / 7.175** |
-| `beispiel_de` | örnek cümlenin Almanca çevirisi | **0 / 7.175** |
+| `de_gloss` | İngilizce kelimenin Almanca karşılığı | **7.175 / 7.175** |
+| `beispiel_de` | örnek cümlenin Almanca çevirisi | **7.175 / 7.175** |
 
-Kolonlar şemada duruyor (`words`), yani göç gerekmiyor — yalnız veri yok.
+Kolonlar şemada zaten duruyordu, göç gerekmedi. Karşılıkların 6.801'i kaynak
+satırın başlığından türetildi, 374'ü elle yazılmıştı; örnek çevirilerinin
+tamamı `data/en-de/out`tan geldi ve türetilemiyordu (gerekçe: İngilizce örnek
+cümleler Almanca cümlenin çevirisi değil, bağımsız yazılmış cümleler).
 
 **İçerik katmanı — çıkarıcı sayısı, tahmin değil:**
 
@@ -1517,15 +1527,35 @@ kanıt dili İNGİLİZCE, karakter kümesinde `ÄÖÜäöüß` hedef dilin harfl
 (kaynakta yabancı değil), İngiliz yazımı kuralı da hiç uygulanmaz. Her hattın
 kapısı ayrı yazılacak.
 
-### Kalan iki iş — ikisi de benim elimde değil
+### de→en nasıl bitti (2026-09-11)
 
-1. **Push ve deploy.** `PAIR_READY.en` DOLDURULDU ve beyan ancak canlıya
-   çıkınca gerçek olur. Web push → webhook → deploy; mobil ise mağaza
-   sürümü bekliyor. İkisi arasındaki pencerede web en→de sunar, mobil
-   sunmaz — beyan iki yerde birden dolduruldu ama yayın hızları farklı.
-   Push Samet'te.
-2. **Mobilde hangi yol?** Yukarıdaki tablo iki yolu ve ikisinin de
-   ölçülmüş bedelini veriyor; hangisinin seçileceği ürün kararı.
+Beş hat yazıldı ve beşinin de kapısı CI'da: ders düzyazısı 11.011, beceri
+düz metni 1.725 (sözlükçe dahil), görev metni 1.325, deneme kâğıdı 6.828,
+can-do 131. Bağlama tarafı ayrı bir işti ve ayrı kapısı var
+(`check:native-de`) — yazılanı ölçen kapı, yazılanın uygulamaya VARDIĞINI
+göremiyor.
+
+Bağlarken üç boşluk çıktı ve üçü de aynı sınıftandı — **çözücüden geçmeyen
+metin**:
+
+- **Sözlükçe.** `fold()` Almanca anlamı `gloss.en` alanında arıyordu; o alan
+  Almanca kursta 5.633/5.633 dolu, İngilizce kursta 1.207/1.207 BOŞ. Anlam
+  artık hattan geliyor (`gloss.tr` türü) ve İngilizce yön hiç değişmedi.
+- **Can-do köprüsü.** Hiçbir çözücüye uğramıyor; kendi hattı yazıldı.
+- **Yapabildiklerim ekranı.** Uç ifadeyi hiç çevirmiyordu — bu kusur
+  İngilizce anadil için de vardı ve ikisi birlikte düzeldi.
+
+Mobil için "hangi yol" sorusu da kapandı: **döküm**. `native-de.ts` ve
+`native-de.json` (3,45 MB) kaynaktan dökülüyor, `check:dumps` bayt bayt
+karşılaştırıyor. İkinci bir çözülmüş içerik paketi taşınmadı.
+
+### Kalan tek iş — benim elimde değil
+
+**Push ve deploy.** İki beyan da (`PAIR_READY.en`, `PAIR_READY.de`)
+DOLDURULDU ve beyan ancak canlıya çıkınca gerçek olur. Web push → webhook →
+deploy; mobil ise mağaza sürümü bekliyor. İkisi arasındaki pencerede web
+pariteyi sunar, mobil sunmaz — beyan iki yerde birden dolduruldu ama yayın
+hızları farklı. Push Samet'te.
 
 ### Bu fazda üç kez tekrarlanan ders
 
