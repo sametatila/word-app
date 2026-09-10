@@ -4,7 +4,7 @@ import { View } from "react-native";
 import { REACTION_KINDS, reactionLabel, social, errorText, type ReactionKind, type ReactionSummary } from "../api/social";
 import { Text } from "../ui/Text";
 import { PressableScale } from "../ui/PressableScale";
-import { useTheme, spacing, radii, softShadow } from "../theme";
+import { useTheme, spacing, radii, softShadow, onTint } from "../theme";
 import { ErrorText, ReactionGlyph, reactionTone } from "./common";
 import { haptic } from "../lib/haptics";
 
@@ -41,8 +41,11 @@ export function ReactionBar({ eventId, summary, disabled }: { eventId: number; s
           const tone = reactionTone(k, colors);
           return (
             <PressableScale key={k} onPress={() => void pick(k)} disabled={disabled || busy} accessibilityLabel={`${reactionLabel(k)} ${s.counts[k]}`} style={[{ flexDirection: "row", alignItems: "center", gap: 5, paddingHorizontal: 10, paddingVertical: 6, borderRadius: radii.pill, backgroundColor: mine ? tone : tone + "22" }, mine ? softShadow(tone, 4) : {}]}>
-              <ReactionGlyph kind={k} size={14} colors={colors} color={mine ? "#fff" : undefined} />
-              <Text variant="caption" color={mine ? "#fff" : tone}>{s.counts[k]}</Text>
+              {/* Dolu hâlde `onFill`, tintli hâlde tonun metin varyantı: sabit
+                  beyaz dolu zeminde 1.94-2.88, ton kendi tinti üstünde 2.54-3.58
+                  veriyordu (bkz. `theme/colors.ts`). */}
+              <ReactionGlyph kind={k} size={14} colors={colors} color={mine ? colors.onFill : onTint(tone, colors)} />
+              <Text variant="caption" color={mine ? colors.onFill : onTint(tone, colors)}>{s.counts[k]}</Text>
             </PressableScale>
           );
         })}
@@ -60,7 +63,7 @@ export function ReactionBar({ eventId, summary, disabled }: { eventId: number; s
             const mine = s.mine === k;
             return (
               <PressableScale hitSlop={4} key={k} onPress={() => void pick(k)} accessibilityLabel={reactionLabel(k)} style={[{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: mine ? tone : tone + "22" }, mine ? softShadow(tone, 6) : {}]}>
-                <ReactionGlyph kind={k} size={22} colors={colors} color={mine ? "#fff" : undefined} />
+                <ReactionGlyph kind={k} size={22} colors={colors} color={mine ? colors.onFill : onTint(tone, colors)} />
               </PressableScale>
             );
           })}

@@ -14,7 +14,7 @@ import { SkeletonLine, SkeletonTile } from "../ui/Skeleton";
 import { PersonAvatar } from "../ui/PersonAvatar";
 import { PressableScale } from "../ui/PressableScale";
 import { UserPlusIcon, HandshakeIcon, BellIcon, TargetIcon, CheckIcon, FlameIcon, InboxIcon, LockIcon, ChevronRightIcon } from "../ui/icons";
-import { useTheme, spacing } from "../theme";
+import { useTheme, spacing, onTint } from "../theme";
 import type { Palette } from "../theme/colors";
 import { EmptyCard, ErrorText, IconTile, Pill, ReactionGlyph, ScreenHeader, reactionTone, type IconCmp } from "../social/common";
 import { setUnreadGlobal } from "../social/useUnread";
@@ -105,7 +105,7 @@ export function InboxScreen() {
                         <ReactionGlyph kind={reaction} size={18} colors={colors} />
                       </View>
                     ) : n.actor ? (
-                      <View style={{ width: 34, height: 34, borderRadius: 17, alignItems: "center", justifyContent: "center", backgroundColor: tint + "22" }}>{React.createElement(icon, { color: tint, size: 18 })}</View>
+                      <View style={{ width: 34, height: 34, borderRadius: 17, alignItems: "center", justifyContent: "center", backgroundColor: tint + "22" }}>{React.createElement(icon, { color: onTint(tint, colors), size: 18 })}</View>
                     ) : <ChevronRightIcon color={colors.textFaint} size={20} />}
                     {!n.read ? <View style={{ width: 8, height: 8, borderRadius: 4, backgroundColor: colors.primary }} /> : null}
                   </PressableScale>

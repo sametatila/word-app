@@ -13,7 +13,7 @@ import { ArrowBackIcon, BoltIcon, CheckIcon, ChevronRightIcon, FlameIcon, LearnI
 import { Mascot } from "../ui/Mascot";
 import { SkeletonBar, SkeletonCard, SkeletonLine, SkeletonTile } from "../ui/Skeleton";
 import { useMe, formatXp, formatDuration } from "../lib/useMe";
-import { useTheme, spacing, radii, softShadow, type Palette } from "../theme";
+import { useTheme, spacing, radii, softShadow, onTint, type Palette } from "../theme";
 import { useLayout } from "../lib/useLayout";
 
 function Stat({ icon: Icon, value, label, tint, colors }: { icon: (p: { color: string; size: number }) => React.ReactElement; value: string; label: string; tint: string; colors: Palette }) {
@@ -21,7 +21,7 @@ function Stat({ icon: Icon, value, label, tint, colors }: { icon: (p: { color: s
   return (
     <Card padded style={{ width: gridItemWidth, gap: 6 }}>
       <View style={{ width: 38, height: 38, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: tint + "22" }}>
-        <Icon color={tint} size={20} />
+        <Icon color={onTint(tint, colors)} size={20} />
       </View>
       <Text variant="h1" color={colors.text}>{value}</Text>
       <Text variant="caption" color={colors.textMuted}>{label}</Text>

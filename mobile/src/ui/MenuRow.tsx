@@ -3,7 +3,7 @@ import { View } from "react-native";
 import { Text } from "./Text";
 import { PressableScale } from "./PressableScale";
 import { ChevronRightIcon } from "./icons";
-import { spacing, radii, type Palette } from "../theme";
+import { spacing, radii, onTint, type Palette } from "../theme";
 
 /**
  * Menü satırı — renkli ikon kutusu, etiket, sağda şevron.
@@ -44,7 +44,7 @@ export function MenuRow({
       }}
     >
       <View style={{ width: 38, height: 38, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: tint + "22" }}>
-        <Icon color={tint} size={20} />
+        <Icon color={onTint(tint, colors)} size={20} />
       </View>
       <Text variant="bodyStrong" style={{ flex: 1 }}>{label}</Text>
       <ChevronRightIcon color={colors.textFaint} size={20} />

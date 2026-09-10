@@ -92,3 +92,25 @@ export const dark: Palette = {
   successSoft: "rgba(111,209,155,0.16)", dangerSoft: "rgba(247,155,166,0.16)",
   gradientA: ["#fb8f2a", "#db5f08"], gradientB: ["#f87612", "#8f3a0f"],
 };
+
+/**
+ * Bir dolgu renginin KENDİ %13 tinti üstünde okunacak karşılığı.
+ *
+ * Uygulama boyunca aynı kalıp var: zemin `tint + "22"`, içerik de `tint`.
+ * Açık temada bu okunmuyor - ölçüm: turuncu 2.42, kehribar 2.54, yeşil 3.06,
+ * turkuaz 3.10, kırmızı 3.58; AA yazı için 4.5, grafik için 3.0 istiyor, yani
+ * ilk ikisi grafik eşiğini bile tutmuyor. Metin varyantlarıyla aynı yerde
+ * 4.57-6.61. Koyu temada iki değer zaten aynı, orada hiçbir şey değişmiyor.
+ *
+ * Tanınmayan bir renk (ör. `textMuted`) olduğu gibi dönüyor: bu eşleme bir
+ * düzeltme, bir dönüşüm değil.
+ */
+export function onTint(tint: string, colors: Palette): string {
+  if (tint === colors.primary) return colors.onPrimarySoft;
+  if (tint === colors.success) return colors.successText;
+  if (tint === colors.danger) return colors.dangerText;
+  if (tint === colors.streak) return colors.streakText;
+  if (tint === colors.info) return colors.infoText;
+  if (tint === colors.accent) return colors.accentText;
+  return tint;
+}

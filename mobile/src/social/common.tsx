@@ -9,7 +9,7 @@ import { Text } from "../ui/Text";
 import { Card } from "../ui/Card";
 import { PressableScale } from "../ui/PressableScale";
 import { ArrowBackIcon, HeartIcon, StarIcon, PartyIcon, SparkIcon, FlameIcon, BoltIcon } from "../ui/icons";
-import { useTheme, spacing, radii, softShadow } from "../theme";
+import { useTheme, spacing, radii, softShadow, onTint } from "../theme";
 import type { Palette } from "../theme/colors";
 import type { ReactionKind } from "../api/social";
 
@@ -85,17 +85,21 @@ export function IconTile({ icon: Icon, tint, size = 42, solid = false, iconSize 
     <View style={[{ width: size, height: size, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: solid ? tint : tint + "22" }, solid ? softShadow(tint, 6) : {}]}>
       {/* Dolu karonun ikonu `onFill`: sabit beyaz koyu temada okunmuyordu
           (1.76-2.76, grafik eşiği 3.0). Bkz. `theme/colors.ts`. */}
-      <Icon color={solid ? colors.onFill : tint} size={iconSize ?? Math.round(size * 0.5)} />
+      <Icon color={solid ? colors.onFill : onTint(tint, colors)} size={iconSize ?? Math.round(size * 0.5)} />
     </View>
   );
 }
 
 /** Pill rozet: seri / XP / ortak seri gibi küçük sayılar (Profil'deki gibi). */
 export function StatPill({ icon: Icon, label, tint, soft }: { icon?: IconCmp; label: string; tint: string; soft?: string }) {
+  const { colors } = useTheme();
+  /* Yazı ve ikon dolgu renginin METİN varyantında: kendi tinti üstünde dolgu
+     rengi açık temada 2.42-3.58 veriyor (bkz. `theme/colors.ts` `onTint`). */
+  const ink = onTint(tint, colors);
   return (
     <View style={{ flexDirection: "row", alignItems: "center", gap: 5, backgroundColor: soft ?? tint + "22", borderRadius: radii.pill, paddingHorizontal: 10, paddingVertical: 5 }}>
-      {Icon ? <Icon color={tint} size={14} /> : null}
-      <Text variant="caption" color={tint}>{label}</Text>
+      {Icon ? <Icon color={ink} size={14} /> : null}
+      <Text variant="caption" color={ink}>{label}</Text>
     </View>
   );
 }

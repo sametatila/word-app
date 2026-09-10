@@ -10,7 +10,7 @@ import { Card } from "../ui/Card";
 import { PersonAvatar } from "../ui/PersonAvatar";
 import { PressableScale } from "../ui/PressableScale";
 import { FlameIcon, HandshakeIcon, TargetIcon, BoltIcon, BellIcon, PartyIcon, XIcon, ChevronRightIcon } from "../ui/icons";
-import { useTheme, spacing, radii } from "../theme";
+import { useTheme, spacing, radii, onTint } from "../theme";
 import { SkeletonCard, SkeletonLine, SkeletonPill, SkeletonTile } from "../ui/Skeleton";
 import { StatPill, type IconCmp } from "./common";
 
@@ -62,7 +62,7 @@ function ActionTile({ icon: Icon, label, tint, onPress, disabled }: { icon: Icon
   return (
     <PressableScale onPress={onPress} disabled={disabled} accessibilityLabel={label} style={{ alignItems: "center", gap: 4, opacity: disabled ? 0.4 : 1 }}>
       <View style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: tint + "22" }}>
-        <Icon color={tint} size={20} />
+        <Icon color={onTint(tint, colors)} size={20} />
       </View>
       <Text variant="micro" color={colors.textMuted}>{label}</Text>
     </PressableScale>
