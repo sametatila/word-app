@@ -1105,3 +1105,30 @@ ses). Bu turun kuralı Android'i referans alıyor ve burada ileride olan WEB.
 Karar Samet'in; not, kutlamanın Android'de en çok işe yarayacağı yeri de
 söylüyor - rozetler oturum sonunda açılıyor ve mobil oturum özeti zaten
 `Celebrate` bileşenini kullanıyor.
+
+### 11.16 Maskot: iki klip ve iki ekran webde var, Androidde yok
+
+Kullanılan mood'lar ölçüldü (bildirilen değil — webde `dance` ve `peek`
+tanımlı ama hiçbir yerde çağrılmıyor, yani onlar fark sayılmaz):
+
+    web    cheer happy idle sad sleep think thumbsup wave wow   (9)
+    mobil  celebrate happy idle sad sleep thumbsup wave         (7)
+
+`celebrate` mobilin `cheer`i, yani gerçek fark iki klip: **`think`** ve
+**`wow`**.
+
+Bu bir klip eksiği olmaktan önce bir YÜZEY eksiği: webin `think`i kullandığı
+iki yerde mobilde maskot HİÇ YOK — kurs onboardingi (iki adımda) ve haftalık
+sınavın giriş ekranı. `wow` ise tanıtım turunda (`intro-game`) kelime
+açılmadan önce duruyor; mobilin tanıtım turu (`rounds` `SelfAssess`)
+maskotsuz.
+
+PORT EDİLMEDİ ve sebebi tek cümleyle: mobile maskot koymak, mobilde OLMAYAN
+bir ifade istiyor. Mevcut yedi klipten biriyle (idle/wave) koymak webin
+anlatmak istediği şeyi anlatmaz - `think` "düşünüyorum", `wow` "bak şuna"
+diyor. Yani iş kod değil ÇİZİM: iki yeni `.webp` (`think`, `wow`) ve sonra üç
+satır. Android referans olduğu için webden kırpmak da yanlış olurdu; karar
+Samet'in.
+
+Not: `Mascot` bilinmeyen mood'da `idle`a düşüyor, yani bugün sessiz bir hata
+yok - eksik olan ifade, kırık olan bir şey değil.
