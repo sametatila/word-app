@@ -691,31 +691,53 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     const j = src.indexOf(end, i + start.length);
     return src.slice(i, j < 0 ? undefined : j);
   };
-  /* Web `Round` union'i ile mobil `Round` tipindeki alan adlari. */
+  /*
+   * Web `Round` birlesimi ile mobil `Round` tipindeki alan adlari.
+   *
+   * Yorumlar ONCE atiliyor ve alanlar SATIR BASINA bagli DEGIL: webin
+   * birlesiminin bir kismi tek satirda yazilmis (`| { id: string; game:
+   * "match"; words: RoundWord[] }`) ve satir basi arayan eski desen o
+   * uyelerin alanlarini HIC gormuyordu - `words` ile `direction` iki tarafta
+   * da varken "mobilde fazla" gorunuyordu. Ayirici artik `{` ya da `;` ya da
+   * satir sonu.
+   */
   const alanlar = (metin) =>
-    [...new Set([...metin.matchAll(/^\s+(\w+)\??:/gm)].map((m) => m[1]))]
+    [...new Set(
+      [...metin
+        .replace(/\/\*[\s\S]*?\*\//g, " ")
+        .replace(/\/\/[^\n]*/g, " ")
+        .matchAll(/[{;\n]\s*(\w+)\??:/g)].map((m) => m[1]),
+    )]
       .filter((a) => !["id", "game"].includes(a))
       .sort();
   const webRound = alanlar(seg(web, "export type Round =", "\nexport type Answer = {")).filter((a) => !["partners", "level"].includes(a));
   const mobRound = alanlar(seg(mob, "export type Round = {", "\n};"));
   const yok = (l) => (l.length ? l : ["eksik yok"]);
-  sameList(
-    "tur alanlari",
-    yok(webRound.filter((a) => !mobRound.includes(a))),
-    ["eksik yok"],
-    "mobilde eksik",
-    "beklenen",
-  );
+  /*
+   * IKI YON. Kapi bugune kadar yalniz web -> mobil yonune bakiyordu: mobilde
+   * FAZLA olan bir alani hic yakalamiyordu. Fazlasi da bir hata - sunucunun
+   * gondermedigi bir alani modellemek, onu okuyan ekranin her seferinde
+   * `undefined` gormesi demek ve derleyici bunu soylemez. Olcumde uc olu alan
+   * cikti (`blank`, `correctOrder`, `prompt`: hicbiri sunucuda yok, hicbiri
+   * mobilde okunmuyordu) ve iki yerde `as unknown as` kacisi vardi - `answer`
+   * `order` turunda dizi, `sentence` `translate` turunda nesne. Ucu de
+   * temizlendikten sonra iki yon de bos, o yuzden istisna listesi YOK. */
+  const ciftYon = (baslik, web, mob) => {
+    sameList(baslik, yok(web.filter((a) => !mob.includes(a))), ["eksik yok"], "mobilde eksik", "beklenen");
+    const fazla = mob.filter((a) => !web.includes(a));
+    sameList(baslik + " (ters)", fazla.length ? fazla : ["fazla yok"], ["fazla yok"], "mobilde fazla", "beklenen");
+  };
+  ciftYon("tur alanlari", webRound, mobRound);
 
   /* Oturum meta alanlari. `pacing`, `leeches` ve `challengeBest` hicbir
      istemcide okunmuyor (web dahil) - ayri bir konu, bkz. §11.22. */
   const metaWeb = alanlar(seg(web, "  meta: {", "\n  };")).filter((a) => !["meta", "pacing", "leeches", "challengeBest"].includes(a));
   const metaMob = alanlar(seg(mob, "export type SessionMeta = {", "\n};"));
-  sameList("meta alanlari", yok(metaWeb.filter((a) => !metaMob.includes(a))), ["eksik yok"], "mobilde eksik", "beklenen");
+  ciftYon("meta alanlari", metaWeb, metaMob);
   /* Cevap yaniti: web `AnswerResult` ile mobil `SubmitResult`. */
   const resWeb = alanlar(seg(web, "export type AnswerResult = {", "\n};"));
   const resMob = alanlar(seg(mob, "export type SubmitResult = {", "\n};"));
-  sameList("cevap yaniti alanlari", yok(resWeb.filter((a) => !resMob.includes(a))), ["eksik yok"], "mobilde eksik", "beklenen");
+  ciftYon("cevap yaniti alanlari", resWeb, resMob);
 
 }
 
