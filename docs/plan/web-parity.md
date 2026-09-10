@@ -2014,3 +2014,45 @@ sorusuyla döngüye sokuyor ve turun "bittiği" anın hangisi olduğu (yirmi tur
 mu, kullanıcı vazgeçtiğinde mi) bir tanım kararı; webde o karar `askContinue`
 öncesine konmuş. Aynı kararı mobilde kendi başıma vermek, iki platformda
 farklı anlamda bir sayı üretme riski taşıyordu.
+
+### 11.32 Yürüyüş NASIL bitti — Androidde cevaplanamayan soru
+
+`walk_*` olay ailesinin iki platformdaki tam dökümü:
+
+    web (components/walk-player.tsx)      mobil (screens/WalkModeScreen.tsx)
+    walk_start                            walk_start
+    walk_end   (sebep kodu 1-6)           —
+    walk_listen (kind: tarayıcı yolu)     —
+    walk_switch                           —
+    walk_capture                          —
+
+Yani Androidde "kaç yürüyüş başladı" biliniyordu, "nasıl bitti" bilinmiyordu:
+başlayan turların hepsi açık uçlu kalıyordu ve terk oranı yalnız webden
+ölçülebiliyordu. Yürüyüş modu mobilin öne çıkan özelliği olduğu için ölçümün
+eksik olduğu taraf tam da en çok kullanılan taraftı.
+
+`walk_end` mobile eklendi, sebep kodları web `lib/events` tablosuyla birebir:
+
+    1  kullanıcı "hayır" dedi (cevapsız bırakılan soru da buraya düşer)
+    2  tur kalmadı
+    3  duyulmama sınırı aşıldı (UNHEARD_LIMIT)
+    6  elle duraklatıldı / ekrandan çıkıldı (bildirimden durdurma dahil)
+
+4 (mikrofona ulaşılamadı) ve 5 (ekran kapandı, kayıt yolu yok) webin tarayıcı
+yollarına özgü; native tarafta karşılıkları yok, o yüzden mobilde hiç
+yazılmıyor — kodların anlamı aynı kaldı, kullanılmayanlar boş kaldı.
+
+Kod 1'in "cevapsız" durumu da kapsaması bir ölçümün sonucu: web `askContinue`
+yalnız `"yes" | "no"` dönüyor, yani cevaplanmayan soru orada da "hayır"a
+düşüyor. Ayrı bir kod uydurmak iki platformda farklı anlamda sayı üretirdi.
+
+Bitiş bir kez yazılıyor (`walkEnded` ref): iki yol birden tetiklenirse -
+duyulmama sınırı ekranı kapatırken - tek tur iki bitiş sayısı üretmez.
+
+**Eklenmeyen: `walk_listen`.** Webin `kind` değerleri tarayıcı yoluna özgü
+(`browser:${outcome}`, `stt:premium`); mobilin native STT yolları için yeni bir
+kelime dağarcığı uydurmak gerekirdi. Bu, §11.29'da kaydedilen sınıfın aynısı -
+mevcut değerlerden birine zorlamak veri kaybettirir, yenisini uydurmak da
+Sametin kararı. `walk_switch` / `walk_capture` ise gerçekten tarayıcıya özgü
+mekanikler (ekran kapanınca devir, echoCancellation) ve mobilde karşılıkları
+yok; eksik değil, konusuz.

@@ -27,6 +27,11 @@ export type EventName =
   | "purchase_done"
   /* Modul patronu - web `lib/events` ile ayni adlar: `boss_play` degeri modul
      sirasi, `boss_clear` degeri kalan saniye. */
+  /* Yürüyüş NASIL bitti (value = sebep kodu, web `lib/events` ile aynı tablo):
+     1 kullanıcı "hayır" dedi · 2 tur kalmadı · 3 duyulmama sınırı aşıldı
+     6 elle duraklatıldı / çıkıldı. 4 (mikrofona ulaşılamadı) ve 5 (ekran
+     kapandı, kayıt yolu yok) webin tarayıcı yollarına özgü. */
+  | "walk_end"
   | "boss_play"
   | "boss_clear";
 

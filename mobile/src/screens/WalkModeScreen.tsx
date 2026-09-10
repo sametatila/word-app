@@ -113,6 +113,24 @@ export function WalkModeScreen() {
   const startedAt = useRef(Date.now());
   const wordStart = useRef(Date.now());
   const unheardWin = useRef<boolean[]>([]);
+  /**
+   * Yürüyüşün bitiş SEBEBİ bir kez yazılıyor.
+   *
+   * Web `walk-player` bu olayı baştan beri yazıyor ve sözlükteki yorum sebebi
+   * söylüyor: "yürüyüş nasıl bitti" sorusu ancak buradan cevaplanıyor, tahminle
+   * değil. Mobil yalnız `walk_start` yazıyordu, yani Android tarafında hiçbir
+   * yürüyüşün nasıl bittiği bilinmiyordu (bkz. web-parity §11.32).
+   *
+   * Kod tablosu websitesiyle aynı; bir kez yazılıyor çünkü bitiş yolları
+   * birbirini çağırıyor (`askContinue` → `finishDone`).
+   */
+  const walkEnded = useRef(false);
+  function endWalk(reason: number) {
+    if (walkEnded.current) return;
+    walkEnded.current = true;
+    track("walk_end", reason);
+  }
+
   const tallyRef = useRef({ correct: 0, total: 0 });
   const manualResolve = useRef<((v: boolean | "skip") => void) | null>(null);
   const pulse = useRef(new Animated.Value(0)).current;
@@ -362,6 +380,7 @@ export function WalkModeScreen() {
       if (unheardWin.current.length > UNHEARD_WINDOW) unheardWin.current.shift();
       if (unheardWin.current.filter(Boolean).length >= UNHEARD_LIMIT) {
         setVerdict("unheard"); setPhase("judging");
+        endWalk(3);
         await sayNative(tx("walk.mic_silent"));
         setKeepAwake(false); stopWalkService();
         if (alive()) setPhase("stopped");
@@ -520,6 +539,7 @@ export function WalkModeScreen() {
         void runLoop(wr, 0);
         return;
       }
+      endWalk(2);
       await sayNative(tx("walk.no_more")); setNoMore(true); finishDone();
     } catch { finishDone(); }
   }
@@ -537,13 +557,19 @@ export function WalkModeScreen() {
     }
     if (!alive()) return;
     if (yes === true) { await sayNative(tx("walk.continuing")); await continueTour(alive); }
-    else { if (yes === false) await sayNative(tx("walk.goodbye")); finishDone(); }
+    else {
+      /* Cevap alınamadıysa da 1: webin `askContinue`ı yalnız "yes"|"no"
+         döndürüyor ve cevapsız soruyu "no" sayıyor, yani aynı kod. */
+      endWalk(1);
+      if (yes === false) await sayNative(tx("walk.goodbye"));
+      finishDone();
+    }
   }
 
-  function stopAndLeave() { runToken.current++; stopListening(); setKeepAwake(false); stopWalkService(); nav.goBack(); }
+  function stopAndLeave() { endWalk(6); runToken.current++; stopListening(); setKeepAwake(false); stopWalkService(); nav.goBack(); }
   // Bildirimdeki "Durdur": mikrofon kapanır, biriken cevaplar yazılır, tur özeti gösterilir.
   const stopFromNotification = useRef<() => void>(() => {});
-  stopFromNotification.current = () => { runToken.current++; stopListening(); flush(true); finishDone(); };
+  stopFromNotification.current = () => { endWalk(6); runToken.current++; stopListening(); flush(true); finishDone(); };
   useEffect(() => onWalkStop(() => stopFromNotification.current()), []);
 
   /**
