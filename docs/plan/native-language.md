@@ -326,6 +326,7 @@ yanlışsa çeviri yetmez**; taşımıyorsa (ad, şehir, örnek cevap) olduğu g
 kalır ve toplu karara bırakılır. Türkçe tarafta da kişi adı örnekleri var,
 tıpkı Almanca taraftaki gibi — aşağıdaki 16 parçalık listeyle aynı kararı
 bekliyorlar.
+
 #### Ana dile bağlılık ALMANCA metinde de var: 16 parça, 6 ders
 
 Yukarıdaki tarama Türkçe `tr()` alanlarınaydı. Almanca `de()` ve
