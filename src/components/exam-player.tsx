@@ -648,7 +648,7 @@ export function ExamPlayer({ level, module }: { level: CefrLevel; module: number
 /** Kâğıdın kapağı: ne ölçülüyor, kaç bölüm, kural ne. */
 function Cover({ level, module, onStart }: { level: CefrLevel; module: number | null; onStart: () => void }) {
   const t = useT();
-  const [cover, setCover] = useState<{ code: string; titleDe: string; titleTr: string; focus: { de: string; tr: string }[] } | null>(null);
+  const [cover, setCover] = useState<{ code: string; titleDe: string; titleTr: string; focus: { de: string; tr: string }[]; trial?: boolean } | null>(null);
   useEffect(() => {
     if (module === null) return;
     let alive = true;
@@ -689,6 +689,18 @@ function Cover({ level, module, onStart }: { level: CefrLevel; module: number | 
             ))}
           </ul>
         </div>
+      ) : null}
+
+      {/* SONUCUN SAYILMAYACAĞI BAŞLAMADAN ÖNCE SÖYLENİYOR. Web bunu yalnız
+          sonuç satırında söylüyordu, yani kullanıcı yirmi dakikayı harcadıktan
+          SONRA öğreniyordu. Android kapakta uyarıyor. */}
+      {cover?.trial ? (
+        <p
+          className="mt-4 rounded-xl px-3.5 py-3 text-xs leading-relaxed"
+          style={{ background: "var(--color-danger-soft)", color: "var(--color-danger)" }}
+        >
+          {t("exam.trial_notice")}
+        </p>
       ) : null}
 
       <div className="mt-4 rounded-xl px-3.5 py-3 text-xs leading-relaxed surface-2">

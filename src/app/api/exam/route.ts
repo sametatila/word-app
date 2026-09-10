@@ -3,7 +3,7 @@ import { clampDay } from "@/lib/award";
 import { getUserId } from "@/lib/auth/server";
 import { sameOrigin } from "@/lib/auth/origin";
 import { ensureProfile, submitAnswers } from "@/lib/session";
-import { buildExam, examHistory, finishExam, type ExamSubmission, type ExamSectionId } from "@/lib/exam";
+import { buildExam, examHistory, finishExam, modulePrereq, type ExamSubmission, type ExamSectionId } from "@/lib/exam";
 import { moduleExamPlan } from "@/lib/lessons/module-exam";
 import { track } from "@/lib/events";
 import { cleanDetail, isErrorType } from "@/lib/errors";
@@ -35,9 +35,22 @@ export async function GET(req: Request) {
   const mod = url.searchParams.get("module");
   if (level && mod !== null) {
     const plan = moduleExamPlan(level, Number(mod));
+    /*
+     * DENEME BİLGİSİ DE KAPAKTA. Modülün konuşmaları yeterince geçilmediyse
+     * sonuç sayılmıyor; bunu yalnız sınav bittikten sonra söylemek sırayı
+     * ters çeviriyordu — kullanıcı sayılmayacağını bilmeden girip yirmi
+     * dakika harcıyordu. Android kapakta uyarıyor.
+     *
+     * Yanıt bu yüzden kullanıcıya bağlı ve önbellek bir saatten bir dakikaya
+     * indi: bayrak, kullanıcı modülün son konuşmasını bitirdiği anda
+     * değişiyor ve bir saat eski kalması "hâlâ deneme" demek olurdu. Uç yine
+     * KÂĞIDI ÜRETMİYOR, o yüzden kapağı açmak haftanın kâğıdını harcamıyor.
+     */
+    const profile = await ensureProfile(userId);
+    const trial = plan ? !(await modulePrereq(userId, profile?.course ?? "de", level as CefrLevel, Number(mod))) : false;
     return NextResponse.json(
-      { cover: plan ? { code: plan.code, titleDe: plan.titleDe, titleTr: plan.titleTr, focus: plan.focus } : null },
-      { headers: { "cache-control": "private, max-age=3600" } },
+      { cover: plan ? { code: plan.code, titleDe: plan.titleDe, titleTr: plan.titleTr, focus: plan.focus, trial } : null },
+      { headers: { "cache-control": "private, max-age=60" } },
     );
   }
   /*

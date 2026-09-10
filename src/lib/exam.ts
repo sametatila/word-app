@@ -107,7 +107,12 @@ export function examKindKey(kind: ExamKind, level: CefrLevel, module: number | n
   return kind === "module" ? `module:${level}:${module ?? 0}` : `level:${level}`;
 }
 
-async function modulePrereq(userId: string, course: string, level: CefrLevel, module: number): Promise<boolean> {
+/**
+ * Modülün konuşmalarının yeterince geçilip geçilmediği. Geçilmediyse kâğıt
+ * "deneme" olur ve sonucu sayılmaz — kullanıcıya bunu BAŞLAMADAN önce
+ * söyleyebilmek için kapak ucu da bunu soruyor (bkz. api/exam GET).
+ */
+export async function modulePrereq(userId: string, course: string, level: CefrLevel, module: number): Promise<boolean> {
   const chunk = LESSONS.filter((l) => l.course === course && l.level === level).slice(module * MODULE_SIZE, (module + 1) * MODULE_SIZE);
   if (!chunk.length) return false;
   const rows = await db
