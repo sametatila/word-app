@@ -234,5 +234,7 @@ export async function weakRules(userId: string, limit = 3): Promise<string[]> {
 
 /** Katalogdaki toplam ders sayısı — ilerleme çubuğu için. */
 export function lessonCount(course: string): number {
-  return LESSONS.filter((l) => l.course === (course === "gsw-zh" ? "gsw-zh" : "de")).length;
+  // Kurs TAM eşleşiyor: ilerleme paydası İngilizce öğrenci için Almanca ders
+  // sayısını veriyordu (bkz. lib/lessons/index `lessonsFor`).
+  return LESSONS.filter((l) => l.course === course).length;
 }

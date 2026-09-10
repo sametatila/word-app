@@ -53,7 +53,9 @@ export async function candoSummary(userId: string, course: string): Promise<Cand
       if (isDone) done.set(id, (done.get(id) ?? 0) + 1);
     }
   };
-  for (const l of LESSONS.filter((l) => l.course === (course === "gsw-zh" ? "gsw-zh" : "de"))) bump(candoForLesson(l), passedLessons.has(l.id));
+  // Kurs TAM eşleşiyor: İngilizce öğrencinin "yapabildiklerim" sayacı Almanca
+  // derslerden doluyordu (bkz. lib/lessons/index `lessonsFor`).
+  for (const l of LESSONS.filter((l) => l.course === course)) bump(candoForLesson(l), passedLessons.has(l.id));
   for (const m of metas) bump(candoForExercise(m), doneExercises.has(m.id));
 
   const items: CandoEvidence[] = CANDO.filter((c) => !c.retired).map((c) => {

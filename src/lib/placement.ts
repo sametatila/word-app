@@ -78,7 +78,16 @@ export async function buildPlacement(course: string): Promise<PlacementTest> {
     grammar[level] = []; // dilbilgisi kaldırıldı (2026-08); immersion'da yeniden
   }
 
-  const pool = BUNDLED_EXERCISES.filter((e) => (e.course ?? "de") === (course === "gsw-zh" ? "gsw-zh" : "de"));
+  /*
+   * YERLEŞTİRME METİNLERİ KURSUN KENDİSİNDEN.
+   *
+   * Süzgeç `course === "gsw-zh" ? "gsw-zh" : "de"` yazılıydı: İngilizce kursa
+   * giren bir öğrenci seviye tespitini ALMANCA okuma ve dinleme metinleriyle
+   * yapıyordu - ölçtüğü şey öğrenmek istediği dil değildi. `lessonsFor` bu
+   * kalıbı çoktan bıraktı (bkz. lib/lessons/index), burası kalmıştı.
+   * Seviyede metin yoksa `textFor` zaten null dönüp o bölümü atlıyor.
+   */
+  const pool = BUNDLED_EXERCISES.filter((e) => (e.course ?? "de") === course);
   const textFor = (skill: "reading" | "listening", level: CefrLevel): TextItem | null => {
     const list = pool.filter((e) => e.skill === skill && e.level === level);
     const ex = shuffle(list)[0];
