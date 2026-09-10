@@ -1091,8 +1091,6 @@ export const deWeb: Record<string, string> = {
   "sessionw.wager_won": "Wette aufgegangen · +{xp} XP",
   "sessionw.wager_lost": "Wette verloren · {xp} XP",
   "sessionw.n_mastered": "{n} Wörter gefestigt",
-  "sessionw.streak_saved": "Deine Serie wurde gerettet",
-  "sessionw.streak_saved_sub": "Du hast einen Tag ausgelassen — die Serie läuft ab {n} Tagen weiter. Das geht einmal im Monat.",
   "sessionw.due_tomorrow": "Morgen sind {n} Wörter fällig.",
   "sessionw.n_more_words": "+{n} weitere Wörter",
   "sessionw.missed_note": "Die kommen bald von selbst wieder — du musst nichts weiter tun.",

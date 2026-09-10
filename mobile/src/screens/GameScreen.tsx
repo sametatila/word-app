@@ -7,7 +7,7 @@ import type { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import type { RootStackParams } from "../navigation/RootStack";
 import { Text } from "../ui/Text";
 import { PressableScale } from "../ui/PressableScale";
-import { XIcon, ShareIcon, BoltIcon } from "../ui/icons";
+import { XIcon, ShareIcon, BoltIcon, FlameIcon } from "../ui/icons";
 import { shareResult } from "../lib/share";
 import { MascotPop } from "../ui/MascotPop";
 import { AmbientPeek } from "../ui/AmbientMascot";
@@ -44,6 +44,8 @@ export function GameScreen() {
   const [idx, setIdx] = useState(0);
   const [finalCorrect, setFinalCorrect] = useState(0);
   const [finalTotal, setFinalTotal] = useState(0);
+  // Seri onarıldıysa kalınan gün sayısı; onarım yoksa null (bkz. finish).
+  const [repaired, setRepaired] = useState<number | null>(null);
   const [combo, setCombo] = useState(0);
   const [pop, setPop] = useState(0);
   const answers = useRef<AnswerOut[]>([]);
@@ -120,7 +122,7 @@ export function GameScreen() {
       startedAt.current = Date.now();
       roundStart.current = Date.now();
       track("session_start", 0, onlyGame ? "practice" : "session");
-      if (list.length === 0) { setFinalCorrect(0); setFinalTotal(0); setPhase("done"); }
+      if (list.length === 0) { setFinalCorrect(0); setFinalTotal(0); setRepaired(null); setPhase("done"); }
       else setPhase("play");
     } catch (e) {
       setPhase(e instanceof ApiError && e.status === 401 ? "auth" : "error");
@@ -193,7 +195,12 @@ export function GameScreen() {
     track("session_done", totalCorrect, "session");
     if (submitted.current) return;
     submitted.current = true;
-    try { if (answers.current.length) await submitAnswers(answers.current, day.current, secs, progressNow()); } catch { /* ölçüm/yazma sessizce düşer */ }
+    try {
+      if (answers.current.length) {
+        const r = await submitAnswers(answers.current, day.current, secs, progressNow());
+        if (r?.streakRepaired) setRepaired(r.currentStreak);
+      }
+    } catch { /* ölçüm/yazma sessizce düşer */ }
   }
 
   const pad = { flex: 1, backgroundColor: colors.bg, paddingTop: insets.top + spacing.sm, paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.lg } as const;
@@ -240,9 +247,21 @@ export function GameScreen() {
             <Text variant="micro" color={colors.textMuted}>{t("game.correct")}</Text>
           </ProgressRing>
           <Text variant="h1" style={{ marginTop: spacing.xl }}>{t(total ? "common.round_done" : "game.done_no_more")}</Text>
-          <Text variant="body" color={colors.textMuted} style={{ marginTop: spacing.xs, marginBottom: spacing.xxl, textAlign: "center" }}>
+          <Text variant="body" color={colors.textMuted} style={{ marginTop: spacing.xs, marginBottom: repaired === null ? spacing.xxl : spacing.lg, textAlign: "center" }}>
             {t(total ? "game.saved" : "game.nothing_to_review")}
           </Text>
+          {/* Kaybedildiği sanılan seri geri alındıysa bunu söylemek şart:
+              sessiz bir onarım, kullanıcının ekranda gördüğü sayıyı
+              açıklanamaz hâle getirir. Web aynı kutuyu çiziyor. */}
+          {repaired !== null ? (
+            <View style={{ width: "100%", borderRadius: radii.lg, backgroundColor: colors.streak + "24", paddingHorizontal: spacing.md, paddingVertical: 12, marginBottom: spacing.xxl }}>
+              <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "center", gap: 6 }}>
+                <FlameIcon color={colors.streakText} size={16} />
+                <Text variant="bodyStrong" color={colors.streakText}>{t("game.streak_saved")}</Text>
+              </View>
+              <Text variant="caption" color={colors.textMuted} style={{ marginTop: 4, textAlign: "center" }}>{t("game.streak_saved_sub", { n: repaired })}</Text>
+            </View>
+          ) : null}
           <PressableScale onPress={load} style={[{ width: "100%", backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: spacing.lg, alignItems: "center" }, softShadow(colors.primary, 10)]}><Text variant="bodyStrong" color="#fff">{t("game.continue")}</Text></PressableScale>
           {total > 0 && (
             <PressableScale onPress={() => shareResult(finalCorrect, total)} style={{ width: "100%", borderRadius: radii.lg, paddingVertical: spacing.lg, alignItems: "center", flexDirection: "row", justifyContent: "center", gap: 8, marginTop: spacing.md, borderWidth: 1.5, borderColor: colors.border }}>

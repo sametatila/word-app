@@ -202,6 +202,8 @@ export const enBase: Record<string, string> = {
   "game.saved": "Your progress is saved.",
   "game.try_again": "Try again",
   "game.couldn_t_load_round": "Couldn't load the round",
+  "game.streak_saved": "Your streak was saved",
+  "game.streak_saved_sub": "You missed a day — the streak continues from {n} days. This works once a month.",
   "game.quit_round": "Quit round",
   "game.quit_round_2": "Quit round?",
   "games.article_race": "Article Race",

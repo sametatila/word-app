@@ -1116,8 +1116,6 @@ export const trWeb: Record<string, string> = {
   "sessionw.wager_won": "Bahis tuttu · +{xp} XP",
   "sessionw.wager_lost": "Bahis yandı · {xp} XP",
   "sessionw.n_mastered": "{n} kelime pekişti",
-  "sessionw.streak_saved": "Serin kurtarıldı",
-  "sessionw.streak_saved_sub": "Bir gün ara vermiştin — seri {n} günden devam ediyor. Bu hak ayda bir kez işler.",
   "sessionw.due_tomorrow": "Yarın {n} kelimenin tekrarı var.",
   "sessionw.n_more_words": "+{n} kelime daha",
   "sessionw.missed_note": "Bunlar yakında tekrar karşına çıkacak — ayrıca bir şey yapmana gerek yok.",

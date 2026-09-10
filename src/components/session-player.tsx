@@ -1421,9 +1421,9 @@ function SummaryCard({
               className="flex items-center justify-center gap-1.5 text-sm font-bold"
               style={{ color: "var(--color-flame)" }}
             >
-              <FlameIcon size={16} /> {t("sessionw.streak_saved")}
+              <FlameIcon size={16} /> {t("game.streak_saved")}
             </p>
-            <p className="muted mt-1 text-xs">{t("sessionw.streak_saved_sub", { n: result.currentStreak })}</p>
+            <p className="muted mt-1 text-xs">{t("game.streak_saved_sub", { n: result.currentStreak })}</p>
           </div>
         ) : null}
 

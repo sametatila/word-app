@@ -200,6 +200,8 @@ export const de: Record<string, string> = {
   "game.saved": "Dein Fortschritt ist gespeichert.",
   "game.try_again": "Erneut versuchen",
   "game.couldn_t_load_round": "Runde konnte nicht geladen werden",
+  "game.streak_saved": "Deine Serie wurde gerettet",
+  "game.streak_saved_sub": "Du hast einen Tag ausgelassen — die Serie läuft ab {n} Tagen weiter. Das geht einmal im Monat.",
   "game.quit_round": "Runde verlassen",
   "game.quit_round_2": "Runde verlassen?",
   "games.article_race": "Artikel-Rennen",

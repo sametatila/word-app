@@ -125,8 +125,19 @@ export function practiceGamesFor(course: string | null | undefined) {
   return PRACTICE_GAMES.filter((g) => supportsGame(course, g.game));
 }
 
+/**
+ * Oturum sonucunun ekrana yansıyan kısmı.
+ *
+ * Uç bundan çok daha fazlasını döndürüyor (XP, ustalaşan kelimeler, yarınki
+ * tekrar sayısı); burada yalnız SÖYLENMEZSE anlaşılmayacak olan alan var.
+ * Seri onarımı böyle bir alan: kullanıcı bir gün kaçırdığını biliyor ve
+ * sayacın sıfırlanmasını bekliyor — sıfırlanmadığını görüp sebebini
+ * öğrenemezse rakam açıklanamaz hâle geliyor.
+ */
+export type SubmitResult = { streakRepaired: boolean; currentStreak: number };
+
 /** Cevapları sunucuya yazar (SRS + XP + seri güncellenir). `progress` verilirse
     oturum konumu da (index) kaydedilir — kaldığın yerden devam için. */
-export async function submitAnswers(answers: AnswerOut[], day: string, seconds: number, progress?: SessionProgress): Promise<void> {
-  await api("/api/answers", { method: "POST", body: JSON.stringify({ answers, day, seconds, ...(progress ? { progress } : {}) }) });
+export function submitAnswers(answers: AnswerOut[], day: string, seconds: number, progress?: SessionProgress): Promise<SubmitResult> {
+  return api("/api/answers", { method: "POST", body: JSON.stringify({ answers, day, seconds, ...(progress ? { progress } : {}) }) });
 }

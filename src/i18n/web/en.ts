@@ -1091,8 +1091,6 @@ export const enWeb: Record<string, string> = {
   "sessionw.wager_won": "Bet paid off · +{xp} XP",
   "sessionw.wager_lost": "Bet lost · {xp} XP",
   "sessionw.n_mastered": "{n} words mastered",
-  "sessionw.streak_saved": "Your streak was saved",
-  "sessionw.streak_saved_sub": "You missed a day — the streak continues from {n} days. This works once a month.",
   "sessionw.due_tomorrow": "{n} words are due tomorrow.",
   "sessionw.n_more_words": "+{n} more words",
   "sessionw.missed_note": "These will come back around soon — you don't need to do anything else.",

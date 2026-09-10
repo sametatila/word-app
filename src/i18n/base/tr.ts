@@ -202,6 +202,8 @@ export const trBase: Record<string, string> = {
   "game.saved": "İlerlemen kaydedildi.",
   "game.try_again": "Tekrar dene",
   "game.couldn_t_load_round": "Tur yüklenemedi",
+  "game.streak_saved": "Serin kurtarıldı",
+  "game.streak_saved_sub": "Bir gün ara vermiştin — seri {n} günden devam ediyor. Bu hak ayda bir kez işler.",
   "game.quit_round": "Turdan çık",
   "game.quit_round_2": "Turdan çık?",
   "games.article_race": "Artikel Yarışı",
