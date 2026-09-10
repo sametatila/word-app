@@ -89,6 +89,30 @@ function sources(dirs, out = []) {
   return out;
 }
 
+/**
+ * WEB CAGIRIYOR AMA MOBIL CAGIRMIYOR — sebebiyle.
+ *
+ * `ALLOW` "her ucun BIR cagirani var mi" diye soruyor; bu liste onun parite
+ * hâli: "her ucun IKI cagirani var mi". Bir uc yalniz webden cagriliyorsa ya
+ * bunun bir sebebi vardir (yonetim panosu, cron, magaza, tarayiciya ozel
+ * tasima) ya da Android'de o yuzey HIC YOK - ve ikincisi sessizce oluyor.
+ * Olculdugunde iki gercek ornek cikti: `/api/errors` (zayif noktalar karti,
+ * web-parity 11.135'te kapatildi) ve `/api/growth` (asagida).
+ *
+ * Liste yalniz KISALABILIR: bir ucu buraya eklemek, mobilde karsiligi
+ * olmadigini BELGELEMEKTIR.
+ */
+const WEB_ONLY = {
+  "/api/admin/legal": "yonetim panosu — mobilde yok, olmayacak",
+  "/api/admin/premium": "yonetim panosu — mobilde yok, olmayacak",
+  "/api/challenge": "hayatta kalma modu webe ozel (bkz. learn/challenge sayfasi ve mobile pushRoute yorumu)",
+  "/api/push/subscribe": "TARAYICI push aboneligi; mobil FCM ile /api/push/device cagiriyor",
+  "/api/premium/referral": "mobil ayni kodu /api/premium/status icinden aliyor (usePremiumStatus().referral.code)",
+  "/api/pronounce": "telaffuz PUANI; mobil konusmayi cihazdaki taniyici + spokenMatches ile metin olarak esliyor — web-parity 11.136",
+  "/api/assess/queue": "degerlendirme kuyrugu — mobilde karsiligi yok, karar Samet'te (web-parity 11.12)",
+  "/api/growth": "gelisim paneli (yetkinlik, sekiz haftalik seri, kilometre taslari, haftalik ozet) mobilde yok — web-parity 11.136",
+};
+
 const all = routes().sort();
 const src = sources(["src", "scripts", "mobile/src", "mobile/scripts"]);
 /* Dinamik parça (`[id]`) çağıranda değişken olarak duruyor: önek aranıyor. */
@@ -98,6 +122,15 @@ const called = (api) => src.some((t) => t.includes(prefix(api)));
 const orphans = all.filter((a) => !called(a));
 const undocumented = orphans.filter((a) => !ALLOW[a]);
 const stale = Object.keys(ALLOW).filter((a) => !orphans.includes(a));
+
+/* Web kaynagi ile mobil kaynagi AYRI okunuyor: "iki cagiran" sorusu ancak
+   boyle sorulabiliyor. */
+const webSrc = sources(["src"]);
+const mobSrc = sources(["mobile/src"]);
+const calledIn = (list, api) => list.some((t) => t.includes(prefix(api)));
+const webOnly = all.filter((a) => calledIn(webSrc, a) && !calledIn(mobSrc, a));
+const webOnlyUndoc = webOnly.filter((a) => !WEB_ONLY[prefix(a)] && !WEB_ONLY[a]);
+const webOnlyStale = Object.keys(WEB_ONLY).filter((a) => !webOnly.some((x) => prefix(x) === a || x === a));
 
 const check = process.argv.includes("--check");
 if (!check) {
@@ -116,6 +149,17 @@ if (stale.length) {
   bad++;
   console.error("\nLİSTEDE OLUP ARTIK ÇAĞRILAN UÇ (listeden çıkar):");
   for (const a of stale) console.error(`  ${a}`);
+}
+if (webOnlyUndoc.length) {
+  bad++;
+  console.error("\nYALNIZ WEBİN ÇAĞIRDIĞI UÇ (mobilde karşılığı yok):");
+  for (const a of webOnlyUndoc) console.error(`  ${a}`);
+  console.error("\nMobil istemciye bağla ya da `WEB_ONLY` listesine SEBEBİYLE ekle.");
+}
+if (webOnlyStale.length) {
+  bad++;
+  console.error("\nWEB_ONLY LİSTESİNDE OLUP ARTIK MOBİLDE DE ÇAĞRILAN UÇ (listeden çıkar):");
+  for (const a of webOnlyStale) console.error(`  ${a}`);
 }
 if (!bad) console.log(check ? `tamam: ${all.length} uç, ${orphans.length} belgelenmiş çağıransız` : "\nHEPSİ YAZILI\n");
 process.exit(bad ? 1 : 0);
