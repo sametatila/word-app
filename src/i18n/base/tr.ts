@@ -902,6 +902,7 @@ export const trBase: Record<string, string> = {
   "skillquiz.questions": "Sorular",
   "skillquiz.word_count": "({n} kelime)",
   "skillquiz.n_words": "{n} / {min} kelime",
+  "skills.n_items_short": "{n} madde",
   "skills.aciklama": "Okuma, dinleme, yazma, konuşma ve dil bilgisi",
   "skills.skills": "Beceriler",
   "skills.listening": "Dinleme",

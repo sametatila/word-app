@@ -1960,6 +1960,32 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   sameSet("olcum paritesi (yalniz web istemcisinde)", eksik, WEB_OZEL, "bulunan", "kayitli");
 }
 
+/* ── 45. beceri egzersizinin madde sayisi ──────────────────────────────────
+ * Liste satiri "3 madde" yaziyor ve XP hesabi da ayni sayiyi kullaniyor
+ * (`xpFor`). Konusma UC bicimde geliyor - soyleyis gorevleri, diyalog turlari
+ * ya da tek monolog - ve ucu ayri sayiliyor; kural iki tarafta ayri dosyada
+ * kopyalanmis. Ayrisirsa ayni egzersiz iki uygulamada baska madde sayisi
+ * gosterir ve XP tavani da kayar. */
+{
+  const kural = (p) => {
+    const src = read(p).replace(/\/\*[\s\S]*?\*\//g, " ").replace(/\/\/[^\n]*/g, " ");
+    const i = src.indexOf("export function itemCount");
+    if (i < 0) return ["bulunamadi"];
+    const body = src.slice(i, src.indexOf("\n}", i)).replace(/\s+/g, " ");
+    const dal = (re) => (body.match(re) ?? [])[1] ?? "yok";
+    return [
+      /* Mobil tipte alanlar istege bagli, o yuzden `?.` ve `?? 0` var;
+         SAYILAN sey ayni (gorev listesinin uzunlugu). Karsilastirmada
+         isaretler atiliyor. */
+      "yazma=" + dal(/skill === "writing"\) return ([\w.?\[\] ]+?)(?:;| \?\?)/).replace(/\?\./g, "."),
+      "konusma_diyalog=" + (/dialogue/.test(body) ? "var" : "yok"),
+      "konusma_monolog=" + (/monologue/.test(body) ? "1" : "yok"),
+      "varsayilan=" + (/questions/.test(body) ? "questions" : "yok"),
+    ];
+  };
+  sameList("beceri madde sayisi", kural("mobile/src/data/skills/index.ts"), kural("src/lib/skills/meta.ts"));
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"

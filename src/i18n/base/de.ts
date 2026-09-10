@@ -902,6 +902,7 @@ export const deBase: Record<string, string> = {
   "skillquiz.questions": "Fragen",
   "skillquiz.word_count": "({n} Wörter)",
   "skillquiz.n_words": "{n} / {min} Wörter",
+  "skills.n_items_short": "{n} Aufgaben",
   "skills.aciklama": "Lesen, Hören, Schreiben, Sprechen und Grammatik",
   "skills.skills": "Skills",
   "skills.listening": "Hören",

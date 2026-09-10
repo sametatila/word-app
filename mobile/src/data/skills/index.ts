@@ -30,6 +30,8 @@ export type SkillExercise = {
   focus?: string;
   explanation?: { heading?: string; tr: string; examples?: { de: string; tr: string; note?: string }[] }[];
   monologue?: { promptTr: string; bulletsTr: string[]; targets: Gloss[]; minSeconds: number; maxSeconds: number; sampleDe: string; rubricHint?: string };
+  /** Konuşma alıştırmasının tur listesi (A1-A2); madde sayısı buradan. */
+  dialogue?: unknown[];
 };
 
 const ALL = all as SkillExercise[];
@@ -72,7 +74,21 @@ export function getExercise(id: string, course: string = currentCourseId()): Ski
   return e ? nativeExercise(e) : undefined;
 }
 
-export type SkillMeta = { id: string; level: string; skill: string; title: string; genre: string; minutes: number };
+export type SkillMeta = { id: string; level: string; skill: string; title: string; genre: string; minutes: number; items: number };
+
+/**
+ * Egzersizin MADDE sayısı — web `lib/skills/meta` `itemCount` ile aynı kural.
+ *
+ * Liste satırı bunu yazıyor ("3 madde"): öğrenci açmadan önce ne kadar iş
+ * olduğunu görüyor. Mobil listede hiç yoktu, oysa veri elde ve kural üç
+ * satır. Konuşma üç biçimde gelir - söyleyiş görevleri, diyalog turları ya
+ * da tek monolog - ve üçü ayrı sayılır.
+ */
+export function itemCount(ex: SkillExercise): number {
+  if (ex.skill === "writing") return ex.tasks?.length ?? 0;
+  if (ex.skill === "speaking") return ex.dialogue ? ex.dialogue.length : ex.monologue ? 1 : (ex.tasks?.length ?? 0);
+  return ex.questions?.length ?? 0;
+}
 
 /**
  * Havuz İKİYE AYRILDI ve iki taraf birbirinin egzersizini görmüyor.
@@ -89,7 +105,7 @@ export type SkillMeta = { id: string; level: string; skill: string; title: strin
  * Beceriler'in içeriğine taşardı ve ayrım sessizce bozulurdu.
  */
 function metaOf(e: SkillExercise): SkillMeta {
-  return { id: e.id, level: e.level, skill: e.skill, title: e.title, genre: e.genre, minutes: e.minutes };
+  return { id: e.id, level: e.level, skill: e.skill, title: e.title, genre: e.genre, minutes: e.minutes, items: itemCount(e) };
 }
 
 function listMeta(
