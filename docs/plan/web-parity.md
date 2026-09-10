@@ -2842,3 +2842,47 @@ DEĞİL. Tarayıcı Türk alfabesindeki harfleri arıyor ve Almanca umlautlar
 tur ekranlarının "ä ö ü ß" karakter satırı, `courses.ts`teki "Züritüütsch"
 hep sayılıyor. Bu yüzden taban sıfır değil ve olamaz; asıl iş bu gürültünün
 içindeki gerçek arayüz metinlerini ayırmak - bu turda ikisi ayrıldı.
+
+### 11.51 Tabandaki 169 ayıklandı: bileşen tarafında gerçek çeviri borcu YOK
+
+§11.50'de tabanın büyük kısmının Almanca umlaut gürültüsü olduğunu yazmıştım.
+Bu turda ayrımı ölçtüm. Önce kaba bölme:
+
+    bileşen / sayfa   55 dizgi / 30 dosya
+    lib + api        102 dizgi / 54 dosya
+    öbür              12 dizgi /  3 dosya
+
+Sonra gürültüyü ayırmak için TÜRKÇEYE ÖZGÜ harfleri kullandım: `ı ş ğ ç İ Ş
+Ğ Ç` Almancada YOK, yani bir dizge bunlardan birini taşıyorsa gerçekten
+Türkçedir. Bu ayrım umlaut yanılgısını tümden eledi.
+
+İlk tarama 267 sonuç verdi ve büyük kısmı yanlıştı - çünkü satır satır
+"yorum mu" bakmak `{/* … */}` bloklarının ortasını kaçırıyor (aynı hatayı
+§11.42'de `check:colors`ta yapıp düzeltmiştim; burada tekrarladım). Yorumlar
+düzgün ayıklanıp yönetim panosu, demo sayfaları ve `console.*` satırları da
+çıkarılınca liste **25**'e indi. Yirmi beşin hepsini tek tek okudum ve
+hepsi meşru:
+
+- `lesson-player` `TRUE_WORD` / `FALSE_WORD` (doğru/richtig/true …):
+  tanıyıcının dile göre beklediği KELİME. Sözlükten gelemez, üç dilin üçü de
+  yazılı.
+- `walk-player` `note("cebe alındı")` ve üç kardeşi: teşhis paneline yazılan
+  geliştirici izi (`setDiag`), kullanıcı arayüzü değil.
+- `roleplay-exam` `constraints: ["yardım yok"]`: yapay zekâya GİDEN istemin
+  parçası, ekrana çıkan metin değil.
+- `legal-shell`: kendi ÜÇ DİLLİ tablosunu taşıyor (tr/en/de tam çeviri).
+  `t()` sözlüğünden geçmiyor ve geçmemesi bilinçli - hukuk metinlerinin
+  çevresi metinlerin kendisiyle birlikte duruyor.
+- `app-shell` `useShell yalnız AppShell içinde…`: geliştirici hatası.
+- `screen-diag`: geliştirici katmanı.
+- `layout.tsx` + `opengraph-image.tsx`: sitenin kök meta verisi ve OG
+  görseli.
+
+Yani §11.50'de düzelttiğim iki dizge, bileşen tarafındaki tek gerçek çeviri
+borcuymuş. Kalan 169 bir borç listesi değil, bir kabul listesi.
+
+**Kaydedilen tek açık soru:** kök meta verisi (site başlığı, açıklama, OG
+görseli) yalnız Türkçe. Sayfa başlıkları `titleMeta` ile çevrilirken kök
+sabit kalıyor. Bu bir hata değil - Türkiye pazarı için birincil dil Türkçe ve
+kök meta verisi SEO'ya ait bir karar - ama üç dilli bir arayüzün kökünün tek
+dilli olması Sametin görmesi gereken bir seçim. Değiştirmedim.
