@@ -1,0 +1,177 @@
+[
+ {
+  "lesson": "de-b2-datenschutz",
+  "sceneEn": "You are discussing with a service provider's agent how your data is used: what is stored, who it is passed to, how long it is kept and what you can object to.",
+  "partnerEn": "an agent who knows the rules but does not want to go into detail",
+  "openingEn": "You have a question about data protection? In principle we of course comply with all requirements. What exactly would you like to know?",
+  "goalEn": "Which data is stored, who it is shared with and how long it is kept have been found out, and an objection has been put."
+ },
+ {
+  "lesson": "de-b2-weltraum",
+  "sceneEn": "You and a friend are arguing about how far climate measures should reach into everyday life. Justify your view, answer the other side's objection and meet on common ground.",
+  "partnerEn": "a friend who finds the measures excessive but does care about nature",
+  "openingEn": "Bans on everything — and the threatened forest doesn't grow any faster for it. Do you really think that's right?",
+  "goalEn": "Both sides have justified their view, the objections have been answered and common ground has been found."
+ },
+ {
+  "lesson": "de-b2-medizin-fortschritt",
+  "sceneEn": "You are telling an acquaintance about a medical advance you heard of: what was found, how and how far it was tested, what it means for whom and what to be careful about.",
+  "partnerEn": "an acquaintance who is hopeful but wary of hype",
+  "openingEn": "I heard about that — apparently it has all been tested already. Is that really true?",
+  "goalEn": "What the advance is, how it was tested and what it means for whom have been described, and a warning against the hype has been given."
+ },
+ {
+  "lesson": "de-b2-technikfrust",
+  "sceneEn": "Your computer keeps freezing and you are asking a friend who knows about technology for help. Describe the problem, say when it happens, say what you have tried and repeat the fix in your own words.",
+  "partnerEn": "a patient friend who always asks 'have you restarted it' first",
+  "openingEn": "Wait, slowly. When does it freeze — always, or only with certain programs?",
+  "goalEn": "The problem has been described, what was tried has been said and the fix has been learnt and repeated back."
+ },
+ {
+  "lesson": "de-b2-zukunftstechnologien",
+  "sceneEn": "You and an acquaintance are arguing about the future of a new technology. Keep apart what is certain, what is likely and what is only hearsay; justify your own prediction and say where you might be wrong.",
+  "partnerEn": "an excitable acquaintance who believes every new claim at once",
+  "openingEn": "In five years nobody will be driving themselves, they say. Do you believe that too?",
+  "goalEn": "The certain, the likely and the hearsay have been separated, your own prediction has been justified and where you might be wrong has been said."
+ },
+ {
+  "lesson": "de-b2-wegen-trotz",
+  "sceneEn": "An event you were going to has been cancelled because of the weather. Talk to the organiser: find out why it was cancelled, ask whether anything can still go ahead, and discuss a new date or a refund.",
+  "partnerEn": "a sorry organiser trying to come up with a solution",
+  "openingEn": "We had to cancel because of the storm — I really am sorry. Had you already set off?",
+  "goalEn": "The reason for the cancellation has been found out and a conclusion has been reached about a new date or a refund."
+ },
+ {
+  "lesson": "de-b2-aufgrund-infolge",
+  "sceneEn": "An authority's service has been suspended and you have rung for information. Ask the grounds for the decision, find out how long it will last, describe how it affects you and ask for an alternative.",
+  "partnerEn": "an official who speaks formally and repeats the rules",
+  "openingEn": "In view of the current situation the service has been suspended for the time being. What is it about in your case?",
+  "goalEn": "The grounds and length of the decision have been found out, the effect has been described and an alternative or an exception has been discussed."
+ },
+ {
+  "lesson": "de-b2-inflation",
+  "sceneEn": "You and an acquaintance are talking about the cost of living: where you feel it most, what you have changed, what is different from last year. Use concrete examples.",
+  "partnerEn": "an acquaintance who gives their own examples and makes comparisons",
+  "openingEn": "I looked at the receipt yesterday and couldn't believe it. Where do you notice it most?",
+  "goalEn": "Where the cost of living is felt most and the habits that have changed have been described on both sides."
+ },
+ {
+  "lesson": "de-b2-wohnungsmarkt",
+  "sceneEn": "You and an acquaintance are talking about the housing market: why rents have risen so far, what the difference is between the centre and the country, what can be done. Make the link with clauses of proportion.",
+  "partnerEn": "an acquaintance who tells their own flat-hunting story and is keen on solutions",
+  "openingEn": "I've been looking for four months and still found nothing. What's actually behind it?",
+  "goalEn": "The reason rents have risen has been explained with clauses of proportion and at least one solution has been discussed."
+ },
+ {
+  "lesson": "de-b2-arbeitsmarkt",
+  "sceneEn": "You are talking to the manager of a business that cannot find staff: which posts are open, why they cannot be filled, what has been tried and what could be done.",
+  "partnerEn": "a tired business manager looking for a solution",
+  "openingEn": "We've been looking for a year — the post simply cannot be filled. Have you any idea why that is?",
+  "goalEn": "Which posts are open and why has been discussed, what has been tried has been found out and at least one suggestion has been made."
+ },
+ {
+  "lesson": "de-b2-ehrenamt-b2",
+  "sceneEn": "You are talking to a representative of a voluntary organisation: what exactly the organisation does, how it manages it, how you could contribute and how much time it takes.",
+  "partnerEn": "a representative who loves describing the work and is looking for new volunteers",
+  "openingEn": "How nice that you ask! Most people have no idea how much here runs unpaid. What are you interested in?",
+  "goalEn": "What the organisation does and how it manages it have been found out, and a concrete step has been settled on how and for how long you would contribute."
+ },
+ {
+  "lesson": "de-b2-generationen",
+  "sceneEn": "You and an acquaintance from a different generation are arguing about an issue between the generations (work ethic, technology, housing). Say what each side is right about, name the prejudices and find common ground.",
+  "partnerEn": "an acquaintance who defends their own generation but is open to listening",
+  "openingEn": "Your generation wants everything at once, that's the problem. Or do you see it differently?",
+  "goalEn": "What each generation is right about has been said, the prejudices have been named and common ground has been found."
+ },
+ {
+  "lesson": "de-b2-landflucht",
+  "sceneEn": "You and an acquaintance are arguing about whether it is better to live in the city or the country. Link the advantages of each with clauses of proportion, justify your own preference and concede one of their points.",
+  "partnerEn": "an acquaintance who is seriously thinking of moving to the country",
+  "openingEn": "I'm seriously thinking of moving to the country. But everyone says I'd regret it. What do you think?",
+  "goalEn": "The advantages of both sides have been linked with clauses of proportion, your preference has been justified and one of their points has been conceded."
+ },
+ {
+  "lesson": "de-b2-steuern-b2",
+  "sceneEn": "You and an acquaintance are arguing about where public money should be spent: what should get more, where cuts could be made, who benefits. Justify your view.",
+  "partnerEn": "an acquaintance who questions every item and asks for examples",
+  "openingEn": "I pay a good deal of tax every month and see little of it. What is the money actually spent on?",
+  "goalEn": "Where the money goes has been discussed with examples, the case for spending more on one item has been justified and agreement has been reached on one point."
+ },
+ {
+  "lesson": "de-b2-wahl",
+  "sceneEn": "You and an acquaintance are talking about a coming election: what has been promised, what the polls show, what you expect and what you decide on. Keep the promises, the polls and your own prediction apart.",
+  "partnerEn": "an undecided acquaintance who does not know which promise to believe",
+  "openingEn": "They all promise the same thing and in the end nothing gets done. What do you decide on, then?",
+  "goalEn": "The promises, the polls and your own prediction have been separated and a concrete test for deciding has been given."
+ },
+ {
+  "lesson": "de-b2-roman",
+  "sceneEn": "You are recommending a novel you have read to a friend: what it is about, what the narrator is like, what it does well and who it suits. Introduce the book with relative clauses.",
+  "partnerEn": "a friend who is put off by thick books and needs persuading",
+  "openingEn": "Six hundred pages? Tell me in one sentence what it's about — then I'll decide.",
+  "goalEn": "The subject and the strength of the book have been described and your friend has decided whether to read it."
+ },
+ {
+  "lesson": "de-b2-dessen-deren",
+  "sceneEn": "You and a friend are talking about works you love: which book's ending, which film's music, which band's lyrics moved you. Introduce each in one sentence with a relative clause of possession.",
+  "partnerEn": "a curious friend who gives their own examples too",
+  "openingEn": "I like asking this: is there a book whose ending really floored you?",
+  "goalEn": "At least two works have been introduced with relative clauses of possession and why they moved you has been described."
+ },
+ {
+  "lesson": "de-b2-theater",
+  "sceneEn": "You are coming out of the theatre and giving your verdict on the play to the person beside you: what you think of the staging, the acting and the set, what you did not like and whether you would recommend it anyway.",
+  "partnerEn": "a theatregoer who loved the play and is curious about your objections",
+  "openingEn": "I thought that was magnificent — the set especially. How did you like it?",
+  "goalEn": "A separate judgement has been given on the staging, the acting and the set, and whether to recommend it has been said."
+ },
+ {
+  "lesson": "de-b2-museum-fuehrung",
+  "sceneEn": "You are guiding a small group round a museum. Say where the tour began, introduce one work (when it was made, from which period), answer a question and lead the tour on to the next room.",
+  "partnerEn": "a curious visitor who asks for detail",
+  "openingEn": "Excuse me — do you know when this painting was actually made?",
+  "goalEn": "When a work was made and its period have been described, a question has been answered and the tour has been led on to the next stop."
+ },
+ {
+  "lesson": "de-b2-musik-analyse",
+  "sceneEn": "You and a friend are talking about why music affects people. Describe a piece that moves you, say how it has its effect with a clause of means, and listen to their example too.",
+  "partnerEn": "a friend who knows about music and gives technical detail too",
+  "openingEn": "Some pieces lodge in my memory straight away — and I don't quite know why. Do you know that feeling?",
+  "goalEn": "A piece that moves you has been described, how it has its effect has been explained and the other person's example has been discussed too."
+ },
+ {
+  "lesson": "de-b2-fotografie",
+  "sceneEn": "You are coming out of a match and giving your verdict with the supporter beside you: who played better, whether the referee's decisions were right, whether the defeat was deserved and what happens in the title race.",
+  "partnerEn": "a supporter defending their own team and angry with the referee",
+  "openingEn": "Did you see that? Without the referee we'd have won that match — or do you see it differently?",
+  "goalEn": "The course of the match and the referee's decisions have been judged and whether the defeat was deserved has been argued."
+ },
+ {
+  "lesson": "de-b2-architektur",
+  "sceneEn": "An old building in your area is to be demolished and replaced with a new one. You and a neighbour are arguing: should the building be preserved, what do the planning rules say, what could the alternative be.",
+  "partnerEn": "a practical neighbour who is in favour of the new building",
+  "openingEn": "The old house has stood empty for years. Why shouldn't it just be pulled down?",
+  "goalEn": "Whether the building is worth preserving has been justified from both sides and an alternative has been discussed."
+ },
+ {
+  "lesson": "de-b2-festival",
+  "sceneEn": "You are telling a friend about the festival you went to: which performance was the best, what the atmosphere was like, what was hard and whether you would go again.",
+  "partnerEn": "a friend thinking of going who asks practical questions",
+  "openingEn": "I'm thinking of going next year. Was it worth it — honestly?",
+  "goalEn": "The best performance, the atmosphere and the difficulties have been described, and whether you would go again has been said."
+ },
+ {
+  "lesson": "de-b2-kabarett",
+  "sceneEn": "You are planning a holiday and taking advice: which region is supposedly worth seeing, what you are not sure is true, what you are guessing yourself. Keep what you heard apart from what you guess.",
+  "partnerEn": "a friend who has not been but repeats what an acquaintance told them",
+  "openingEn": "Everyone says the coast there is supposed to be completely unspoilt. Do you really believe that?",
+  "goalEn": "What was heard and what is guessed have been given separately and a conclusion has been reached about whether to go."
+ },
+ {
+  "lesson": "de-b2-kunstmarkt",
+  "sceneEn": "You and an acquaintance are arguing about the price of works of art: does it make sense to pay millions for a painting, what sets the value, what you would pay for. Make the link with clauses of proportion.",
+  "partnerEn": "an acquaintance who finds the art market absurd and asks for examples",
+  "openingEn": "Two million for a picture anyone could copy — can you explain that to me?",
+  "goalEn": "What sets the value has been argued, both sides have given reasons and a shared test has been discussed."
+ }
+]
