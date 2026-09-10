@@ -54,6 +54,20 @@ jobs:
       # aşar ve burası kırılır; listede olmayan her kural zaten hata.
       - name: ESLint
         run: npm run lint
+      # Kontrast kapısı. `scripts/palette-check.mjs` on iki bölümde ölçüm
+      # yapıyor ve bu oturumda dört bölüm EKLENDİ - hepsi gerçek hatalardan
+      # doğdu: kehribar dolu zemin üstünde beyaz yazı 2.88, koyu temada sayaç
+      # rozeti 1.49, dolu vurgu karosunun ikonu 1.49-2.06. Kapı CI'da hiç
+      # çalışmıyordu; elle çağrılan bir kapı, kapı değildir.
+      - name: Palet kontrastı
+        run: node scripts/palette-check.mjs
+      # Kayıt defteri paritesi: web ve mobil aynı sabit listelerin iki
+      # kopyasını taşıyor (kurslar, oyunlar, başarım grupları, sınav bölüm
+      # sırası, deneme becerileri, CEFR seviyeleri). Kopyalar sessizce
+      # ayrışıyor: `speechLocale` mobilde vardı webde yoktu ve web İngilizce
+      # kursta konuşmayı Almanca dinliyordu.
+      - name: Kayıt defteri paritesi
+        run: npm run check:parity
       # Premium kurallarının birim testi — veritabanı istemiyor. Paket ilerlemesi,
       # yapılandırma doğrulaması ve paywall metinlerinin üç sözlükte de bulunması.
       # Bu sınıfın tamamı ancak gerçek para akarken fark edilirdi.
