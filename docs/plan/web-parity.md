@@ -1457,3 +1457,53 @@ tipte duruyor ve sebebi yorumda.
 
 KAPI: `parity-check` 19. bölümü artık üç yüzeyi karşılaştırıyor - tur alanları,
 oturum meta alanları ve cevap yanıtı alanları.
+
+### 11.24 Çağıranı olmayan uçlar — ve kapısı
+
+§11.22'deki sınıfın kardeşi: orada sunucu bir alan gönderiyor ve istemci
+tanımıyordu; burada bir UÇ var ve hiç kimse çağırmıyor. İkisi de sessiz:
+derleme geçiyor, lint geçiyor, tipler tutuyor.
+
+Altmış yedi ucun hepsi tarandı (yorumlar hariç — uç yolları yorumlarda da
+geçiyor ve yorumdaki atıf çağıran değil). Dokuz ucun repoda çağıranı yok;
+yedisi DIŞARIDAN çağrılıyor ve doğru durumda:
+
+    /api/auth/apple/notifications   Apple sunucudan sunucuya
+    /api/cron/reminders             systemd timer (+ cron-call.sh, repo dışı)
+    /api/cron/streak-alert          systemd timer (deploy sonrası kurulacak)
+    /api/cron/summary               systemd timer
+    /api/cron/weekly-reminder       systemd timer (deploy sonrası kurulacak)
+    /api/cron/assess                systemd timer
+    /api/premium/webhook/[[...]]    mağaza (Play/RevenueCat)
+
+Kalan ikisi gerçekten çağıransız:
+
+**`/api/plan`** — zaten belgeliydi (ucun kendi yorumunda ve §7'de): tek
+istemcisi Öğren sekmesindeki "bugünkü plan" satırıydı, mobilde karşılığı
+olmadığı için parite turunda kaldırıldı. `lib/plan` ve uç duruyor, e2e
+`buildPlan`i doğrudan deniyor. Yeni bir bulgu değil; kayıtta kalıyor.
+
+**`/api/premium/consume`** — YENİ BULGU. Tur başına kotayı sayan TEK yer:
+yorumu "kotanın birimi kullanıcıya söylenen şey olmalı" diyor ve cepte
+yürüyüşü "günde N TUR" diye sayıyor. Çağıranı olmadığı için `pocket_walk`,
+`weekly_exam`, `speaking` ve `writing` sayaçları HİÇ ARTMIYOR.
+
+Bugün zarar yok ve sebebi ölçüldü: ücretsiz katmanda `pocketWalksPerDay` sıfır,
+yani `canPocketWalk` sayaca bakmadan önce `premium_only` ile kesiyor; premium
+tarafta `fairUse` aynı hiç artmayan sayaca bakıyor ama premium pasif. Yani
+kilit bugün doğru çalışıyor, SAYAÇ çalışmıyor. Premium açıldığında adil
+kullanım tavanı hiç dolmaz.
+
+Çağrı-başına sayılan kotalar ayrı ve çalışıyor: `/api/tts`, `/api/stt` ve
+`/api/assess` kendi `bumpUsage`larını çağırıyor (`tts_calls`,
+`pocket_walk_words`, `ai_assess_calls`).
+
+Ucu bağlamak ürün kararı - bağlanınca tavan gerçekten dolmaya başlar. Kayıt
+burada; kapı da eklendi.
+
+KAPI: `scripts/check-endpoints.mjs` (+ `npm run check:endpoints`, CI'da "Uç
+çağıranları"). Her uç ya kaynakta çağrılıyor olacak ya da betikteki listede
+SEBEBİYLE yazılı olacak. Liste yalnız kısalabilir: bir ucu listeye eklemek onu
+bağlamamayı BELGELEMEK demek. Denetim iki yönlü - listede olup artık çağrılan
+bir uç da hata veriyor, yani liste bayatlamıyor. Sınandı: `/api/plan` listeden
+çıkarıldığında kapı onu söylüyor.

@@ -68,6 +68,13 @@ jobs:
       # kursta konuşmayı Almanca dinliyordu.
       - name: Kayıt defteri paritesi
         run: npm run check:parity
+      # Her ucun bir çağıranı var mı. Uç yazılıp istemciye bağlanmadığında
+      # derleme geçiyor, lint geçiyor, uç sessizce çürüyor: `/api/plan`ın
+      # istemcisi bir parite turunda kaldırılmıştı, `/api/premium/consume`
+      # tur başına kotayı sayan tek yer ve çağıranı hiç olmadı. Çağıranı
+      # repoda olmayan uçlar betikteki listede SEBEBİYLE yazılı.
+      - name: Uç çağıranları
+        run: npm run check:endpoints
       # Mobil paket kaynakla aynı içeriği taşıyor mu. Üç köprü ELLE
       # çalıştırılıyor: kaynağa yeni bir ders/egzersiz/kâğıt eklenip döküm
       # yenilenmezse mobil o içeriği sessizce taşımaz ve hata ancak ekranda

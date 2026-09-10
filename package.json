@@ -33,6 +33,7 @@
     "check:en-de": "node data/en-de/check.mjs",
     "check:dumps": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/check-dumps.ts",
     "check:parity": "node scripts/parity-check.mjs",
+    "check:endpoints": "node scripts/check-endpoints.mjs --check",
     "check:pairs": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/check-pairs.ts",
     "test:legal-db": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/test-legal-db.ts",
     "test:entitlement": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/test-entitlement.ts",
