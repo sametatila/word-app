@@ -18,7 +18,7 @@ import {
   CheckIcon,
 } from "@/components/icons";
 import { getT, getLang } from "@/lib/i18n/server";
-import { courseName, courseSub, coursesForNative } from "@/lib/courses";
+import { courseName, courseSub, onboardingCoursesFor } from "@/lib/courses";
 import { legalPath } from "@/lib/legal";
 
 /* Adlar oyunların kendi anahtarlarından: tanıtım sayfası ile turun içi aynı
@@ -139,7 +139,13 @@ export default async function Home() {
         </section>
 
         <section className="mb-12 grid gap-4 sm:grid-cols-2">
-          {coursesForNative(lang).map((c, i) => (
+          {/* YENİ ZİYARETÇİYE SUNULAN kurslar. Liste `coursesForNative` idi ve
+              duraklatılmış lehçe kursunu da (gsw-zh) reklam ediyordu: kayıt
+              olan kullanıcı onboarding'de onu bulamıyordu, çünkü orası
+              `onboardingCoursesFor` kullanıyor. Sayfa "ücretsiz başla"nın hemen
+              altında duruyor, yani bu kartlar bir teklif - tutulmayacak bir
+              teklif olmamalı. */}
+          {onboardingCoursesFor(lang).map((c, i) => (
             <Reveal key={c.id} delay={i * 0.08}>
               <div className="card h-full p-6">
                 <div className="flex items-baseline gap-2">
