@@ -225,7 +225,7 @@ de() segment       8.486   ← hedef dil, çevrilmez
 titleTr + summary  1.160   ← BİTTİ, bkz. aşağısı
 vocab girdisi      4.640   ← havuzda karşılığı olan 4.621, ama bkz. aşağısı
 patterns girdisi   1.292   ← %0,3 · kalıp cümleler havuzda yok, elle
-roleplay (4 alan)  2.320   ← İngilizcesi 0 · bkz. aşağısı
+roleplay (4 alan)  2.320   ← BİTTİ, bkz. aşağısı
 ```
 
 Elle yazılacak: **en az 21.000 dize**. Bunun %83'ü tek bir alan: `lecture`.
@@ -395,6 +395,54 @@ gerçekten yanlış karşılık verirdi, %61'inde gereksiz yere okundu. Ama
 tersini yapmanın maliyeti çok daha yüksekti — 258 yanlış karşılık sessizce
 yüklenirdi ve hiçbir kapı görmezdi. `data/meanings/contains.mjs` notundaki
 ilkeyle aynı: yanlış ret yanlış kabulden ucuz.
+
+**roleplay BİTTİ (580/580 ders · 2.320/2.320 dize · 0 hata, 0 uyarı).**
+24 paket, `data/lessons/roleplay/`. Seviye dağılımı:
+
+```
+A1 100/100 ✓   A2 100/100 ✓   B1 180/180 ✓   B2 100/100 ✓   C1 100/100 ✓
+```
+
+Kapının iki alana özgü kuralı yazarken üç kez iş gördü:
+
+- **`openingEn` ↔ `opening` noktalama denkliği.** 580 açılışın 548'i soru,
+  32'si nokta ve nokta ile bitenler B1'den sonra yoğunlaşıyor — çünkü
+  partner orada artık yalnız soru sormuyor, POZİSYON ALIYOR
+  ("Also ich bleibe beim Auto — überzeug mich mal"). Kural iki kez
+  yakaladı: bir kez ben dolaylı soru yazıp nokta koyduğumda, bir kez
+  `?` düşürdüğümde.
+- **Sayı denkliği.** 580 açılışın SIFIRINDA rakam var; sayı geçen her yerde
+  harfle yazılmış ("Notruf eins eins zwei", "achtundvierzig Euro",
+  "Fünfhundert Lektionen"). Bu ders tasarımı: açılış öğrencinin DUYACAĞI
+  cümle ve sayıyı sesli okumak dersin parçası. Kuralın bu alandaki gerçek
+  işlevi "değeri koru" değil, **"rakam sokma"**.
+- **`partner` nokta ile bitmemeli** — öbek, cümle değil.
+
+**Ana dile bağlı üç yer bulundu ve düzeltildi:**
+
+```
+de-c1-falsche-freunde-idiome  "bir TÜRKÇE deyimi anlat"  → "an English idiom"
+de-c1-wortspiele              "TÜRKÇEDE karşılığı var mı" → "an equivalent in English"
+(m-011 başlığı)               "Türkçeyle tuzaklar"        → "Traps from English"
+```
+
+Dördüncü bir yer VAR ama düzeltilmedi: `de-b1-als-wenn`in Almanca açılışı
+"Du bist also in Izmir aufgewachsen?" diyor. `openingEn` bir ÇEVİRİ alanı
+ve öğrencinin duyacağı cümleyi karşılamak zorunda; İzmir'i değiştirmek
+çeviriyi duyulanla uyuşmaz hâle getirirdi. Bu, yukarıdaki "Almanca metinde
+de ana dil bağı" kaleminin parçası ve içerik kararı olarak açık duruyor.
+
+**Kaynakta üç `id`, içeriğiyle uyuşmuyor** (Almanca başlıklar uyuşuyor,
+yani `id`'ler ilk taslaktan kalmış):
+
+```
+de-b2-weltraum    → Die bedrohte Vielfalt      (iklim)
+de-b2-fotografie  → Der entscheidende Moment   (maç)
+de-b2-kabarett    → Angeblich sehenswert       (tatil tavsiyesi)
+```
+
+Rol yapma alanları içeriğe göre yazıldı. `id` değiştirilirse mobil bundle
+ve ilerleme kayıtları etkilenir — karar ayrı.
 
 **roleplay SAYILDI: 1.160 değil 2.320 dize.** Bu belge kalemi
 "scene + goal" diye yazmıştı; blok açılınca DÖRT Türkçe alan çıktı:

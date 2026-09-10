@@ -1,0 +1,177 @@
+[
+ {
+  "lesson": "de-c1-als-ob-c1",
+  "sceneEn": "There is something in a team that everyone knows about and nobody talks about. Name the situation, say what ignoring it does, acknowledge the other person's discomfort and tie the conversation to a step.",
+  "partnerEn": "a colleague uncomfortable with raising it who prefers to say everything is fine",
+  "openingEn": "Does it really have to be now? We're getting along quite well, aren't we?",
+  "goalEn": "The unspoken matter has been named, the consequence of ignoring it has been said and a concrete step has been settled."
+ },
+ {
+  "lesson": "de-c1-konzessiv",
+  "sceneEn": "You are defending a contested decision. Accept the other side's objection about cost, say why the decision is right in spite of it, soften your own wording at one point and draw a line.",
+  "partnerEn": "an opponent who puts the cost first and talks in figures",
+  "openingEn": "The costs are three times the estimate. How do you still propose to defend that?",
+  "goalEn": "The objection has been accepted, the decision has been justified in spite of it and a limit or condition has been set."
+ },
+ {
+  "lesson": "de-c1-hypothesen",
+  "sceneEn": "The other person is making a strong claim. Assume for a moment that it is true, look at the consequences together, show where it collapses and say which part of the assumption still stands.",
+  "partnerEn": "a debater confident in their claim and willing to play the hypothesis game",
+  "openingEn": "Let's assume for the sake of it that I'm right. What would be so bad about that?",
+  "goalEn": "The claim has been accepted hypothetically, its consequences have been examined together and the part that still stands has been named."
+ },
+ {
+  "lesson": "de-c1-migrationsdebatte",
+  "sceneEn": "Someone asks you where you are 'originally' from and the question wears you down. Name the assumption behind it, describe your own belonging from both sides, state your limit without blaming them and end the conversation constructively.",
+  "partnerEn": "a well-meaning acquaintance who does not know why the question is wearing",
+  "openingEn": "I don't mean it badly — but where are you originally from?",
+  "goalEn": "The assumption behind the question has been named, the belonging has been described from both sides and the conversation has been ended constructively without blame."
+ },
+ {
+  "lesson": "de-c1-klimadebatte",
+  "sceneEn": "You and an acquaintance are arguing about responsibility for the climate: the individual or the system. Name the shifting of responsibility, say what an individual step does and does not do, show the conflict of aims and meet on a shared test.",
+  "partnerEn": "an acquaintance who puts everything down to individual behaviour",
+  "openingEn": "If everyone starts with themselves, the problem is solved. Or are you just making excuses?",
+  "goalEn": "Individual and systemic responsibility have been separated, the conflict of aims has been shown and a shared test has been agreed."
+ },
+ {
+  "lesson": "de-c1-bildungsdebatte",
+  "sceneEn": "You are arguing about the education system at a parents' evening. Say what was neglected in the past with unreal conditions, separate what can be done today, accept the other side's objection and leave a concrete suggestion.",
+  "partnerEn": "a parent who defends the system and thinks looking back is pointless",
+  "openingEn": "If only, if only — what good does that do us? Tell me instead what we should do now.",
+  "goalEn": "The past neglect has been stated with unreal conditions, what can be done today has been separated and a concrete suggestion has been left."
+ },
+ {
+  "lesson": "de-c1-ethik-ki",
+  "sceneEn": "You are arguing about whether a decision should be left to artificial intelligence. Separate in your language the qualities attributed to the machine, ask who the responsibility is imputed to, say where you draw the line and propose a shared rule.",
+  "partnerEn": "a colleague who argues the system decides better than a person",
+  "openingEn": "The system decides more objectively than any of us. Why shouldn't we leave it to that?",
+  "goalEn": "The qualities attributed to the machine have been separated in language, who bears the responsibility has been discussed and a shared rule on the limit has been proposed."
+ },
+ {
+  "lesson": "de-c1-generationenvertrag",
+  "sceneEn": "You are arguing with someone from another generation about pensions and the burden of contributions. Say who loses out and how, accept the other side's fair point, hold your own point nevertheless and propose a fair test.",
+  "partnerEn": "an acquaintance who defends their own generation's due and knows the figures",
+  "openingEn": "We paid in for forty years. Do you want to call that into question now?",
+  "goalEn": "Who loses out and how has been said, the other side's fair point has been accepted and a fair test has been proposed."
+ },
+ {
+  "lesson": "de-c1-meinungsfreiheit",
+  "sceneEn": "Something someone said in a discussion has drawn a reaction. Separate freedom of expression from insult, say where the other side is right, justify where you draw the line and look for a shared test.",
+  "partnerEn": "a debater who calls every criticism censorship and rejects the idea of a limit",
+  "openingEn": "Surely one is still allowed to say anything. Or do you want to lay down rules as well now?",
+  "goalEn": "Freedom of expression and insult have been separated, the point where the other side is right has been said and a shared test has been sought."
+ },
+ {
+  "lesson": "de-c1-zukunftsvision",
+  "sceneEn": "You are designing a scenario for 2050 at a workshop. Build the scenario in the unreal mood, say which step has to start today, meet the 'utopian' objection and tie the design to a concrete first step.",
+  "partnerEn": "a participant who dismisses every imaginative idea as unrealistic",
+  "openingEn": "A fine vision — but that's pure utopia. What do you propose to start with?",
+  "goalEn": "The scenario has been built in the unreal mood, the 'utopian' objection has been met and the design has been tied to a concrete first step from today."
+ },
+ {
+  "lesson": "de-c1-ironie",
+  "sceneEn": "A colleague made an ironic remark after the meeting and you are not sure what they meant. Say what you heard, ask what they meant, state your own view plainly and clear the matter up.",
+  "partnerEn": "a colleague with a dry wit who avoids saying things directly",
+  "openingEn": "Well, that went brilliantly today. Didn't you think so too?",
+  "goalEn": "What the ironic remark meant has come out and both sides have stated their view plainly."
+ },
+ {
+  "lesson": "de-c1-sarkasmus-grenze",
+  "sceneEn": "A joke you made in a meeting has upset someone. Talk to them: accept how it landed, explain what you meant, take the remark back and talk about what happens next — without getting defensive.",
+  "partnerEn": "a colleague who was upset but does not want to make a thing of it",
+  "openingEn": "It's all right. But honestly, in front of everyone it was a bit much — did you notice?",
+  "goalEn": "How the joke landed has been accepted, the remark has been taken back and something has been said about what happens next."
+ },
+ {
+  "lesson": "de-c1-wortspiele",
+  "sceneEn": "A friend has made a play on words in German and you did not get it. Say you did not, work it out together, discuss whether there is an equivalent in English and give an example from your own language.",
+  "partnerEn": "a friend who loves wordplay and enjoys explaining",
+  "openingEn": "You have to let that one melt on your tongue. Can you see where the double meaning is?",
+  "goalEn": "The wordplay has been worked out together, the limit of translation has been discussed and the learner has given an example from their own language."
+ },
+ {
+  "lesson": "de-c1-regionale-kultur",
+  "sceneEn": "An acquaintance is talking in clichés about your country or the area you live in. Accept where the cliché comes from, describe what you have observed, object politely to the sweeping judgement and put a question back to them.",
+  "partnerEn": "an acquaintance who means no harm but talks in clichés",
+  "openingEn": "People are much more open where you're from than here in the north, aren't they?",
+  "goalEn": "The source of the cliché has been accepted, your own observation has been described and the sweeping judgement has been politely objected to."
+ },
+ {
+  "lesson": "de-c1-dialekte-hoeren",
+  "sceneEn": "You are talking to someone from another region and you do not understand some of their words. Say so politely, ask what they mean, describe the usage where you live and keep the conversation going.",
+  "partnerEn": "an acquaintance who speaks in their own dialect and gladly explains when asked",
+  "openingEn": "Would you like a Semmel? Or do you call it something else where you're from?",
+  "goalEn": "The words not understood have been asked about and learnt, your own regional usage has been described and the conversation has been kept going."
+ },
+ {
+  "lesson": "de-c1-duzen-siezen-c1",
+  "sceneEn": "You are in a new working environment and someone offers to move to first-name terms. Respond to the offer, ask what the custom is there, state your own preference politely and leave the relationship easy.",
+  "partnerEn": "a colleague who wants an informal atmosphere and takes the offer as natural",
+  "openingEn": "We don't really use Sie here. Shall we stick with du?",
+  "goalEn": "The offer has been answered, the custom of the place has been found out and your own preference has been given politely."
+ },
+ {
+  "lesson": "de-c1-komplimente-c1",
+  "sceneEn": "A colleague has pulled off something difficult. Give them credit — concrete, measured and without overdoing it. If they play it down, insist, ask what they learnt and end the conversation warmly.",
+  "partnerEn": "a colleague who struggles to take praise and plays it down at once",
+  "openingEn": "Oh, that was nothing special. Anyone could have managed it, couldn't they?",
+  "goalEn": "Concrete and measured credit has been given, the playing-down has been met and the conversation has been ended warmly."
+ },
+ {
+  "lesson": "de-c1-peinlichkeiten",
+  "sceneEn": "You said the wrong thing at a party and the room went cold. Accept the gaffe, apologise without trying to save yourself, close the subject and start the conversation again.",
+  "partnerEn": "a host who noticed the gaffe and is trying to smooth it over",
+  "openingEn": "No drama — but that was a bit unfortunate just now. Shall we simply put it behind us?",
+  "goalEn": "The gaffe has been accepted, an apology has been made without getting defensive and the conversation has been started again."
+ },
+ {
+  "lesson": "de-c1-deutscher-humor",
+  "sceneEn": "You and a friend are comparing the humour of two cultures: what is laughed at, what is not, how dry humour works and why a joke dies in translation. Give an example from your own language.",
+  "partnerEn": "a friend who defends their own humour and asks for examples",
+  "openingEn": "Give me an example: what do people laugh at where you're from, and what never here?",
+  "goalEn": "The humour of the two cultures has been compared with examples and why a joke does not survive translation has been explained."
+ },
+ {
+  "lesson": "de-c1-kulturschock-fein",
+  "sceneEn": "You are explaining to a newcomer what is different here: punctuality, direct criticism, sparing praise. Name it without judging, describe your own beginning and give them a concrete piece of advice.",
+  "partnerEn": "a newcomer who takes some of the behaviour for rudeness",
+  "openingEn": "Are people here always so blunt? Yesterday someone corrected me in front of everyone — was that meant unkindly?",
+  "goalEn": "The cultural difference has been named without judgement, your own experience has been described and a concrete piece of advice has been given to the newcomer."
+ },
+ {
+  "lesson": "de-c1-krisensitzung",
+  "sceneEn": "A problem has grown and you are chairing the crisis meeting. Sum the situation up in one sentence, say which measures will be taken, share out who does what and give the time of the next review.",
+  "partnerEn": "a panicking team member who keeps listing new problems",
+  "openingEn": "Reports are coming in from everywhere. What do we start with?",
+  "goalEn": "The situation has been summed up, the measures and responsibilities have been shared out and the time of the next review has been given."
+ },
+ {
+  "lesson": "de-c1-improvisation",
+  "sceneEn": "On the day of the event the main solution has failed. Suggest a stopgap, state its limits honestly, say how long it will hold and give a date for the permanent fix.",
+  "partnerEn": "a manager who is relieved and inclined to treat the stopgap as permanent",
+  "openingEn": "So it's working again now? Then we can just leave it like that, can't we?",
+  "goalEn": "A stopgap has been suggested, its limits and how long it will hold have been stated honestly and a date has been given for the permanent fix."
+ },
+ {
+  "lesson": "de-c1-vermittlung",
+  "sceneEn": "Two people are misunderstanding each other and you are in the middle. Unpack a culturally loaded phrase, tell both sides what was meant, clear the misunderstanding up and hand the conversation back to them.",
+  "partnerEn": "an offended party who takes the other side's phrasing for rudeness",
+  "openingEn": "He said it was 'not bad'. Am I to take that as praise or as criticism?",
+  "goalEn": "The loaded phrase has been explained, the misunderstanding has been cleared up and the conversation has been handed back to them."
+ },
+ {
+  "lesson": "de-c1-grosse-rede",
+  "sceneEn": "You are going to speak on an important occasion. Build an opening that catches the audience, line up three points, use an image, meet one objection in advance and finish with a sentence that stays with them.",
+  "partnerEn": "a friend who listens to your speech beforehand and gives feedback",
+  "openingEn": "Try the opening out on me — how do you begin?",
+  "goalEn": "An opening, three points, an image and a resonant close have been built, and your friend has given their feedback."
+ },
+ {
+  "lesson": "de-c1-verhandlungsfinale",
+  "sceneEn": "You are in the last round of a long negotiation. Put your final offer softly, offer an improvement on one point, meet the other side's last request and close the deal with a handshake — or end it politely.",
+  "partnerEn": "a tough but fair negotiator who asks for one more thing at the last moment",
+  "openingEn": "One more thing, then I'll sign: could you come towards me on the term?",
+  "goalEn": "The final offer has been made, the last request has been met and the negotiation has been closed with an agreement or a polite ending."
+ }
+]

@@ -1,0 +1,37 @@
+[
+ {
+  "lesson": "de-c1-pruefungssimulation",
+  "sceneEn": "You are in a C1 exam simulation: give a short talk, answer the two questions that follow and gather what you said into one sentence at the end. The examiner may remind you of the criteria.",
+  "partnerEn": "an impartial examiner who keeps the time and reminds you of the criteria",
+  "openingEn": "You have two minutes to speak, then two questions. Your subject, please?",
+  "goalEn": "A short talk has been given, two questions have been answered and what was said has been gathered into one sentence."
+ },
+ {
+  "lesson": "de-c1-mentoring-c1",
+  "sceneEn": "Someone just starting to learn German is asking you for advice. Describe your own road, separate what worked from what did not, set a realistic expectation and send them off with a concrete first step.",
+  "partnerEn": "an eager but impatient new learner who asks how long it takes",
+  "openingEn": "How long did it take you? And be honest — what could I have spared myself?",
+  "goalEn": "Your own road has been described, what worked and what did not have been separated and the new learner has been given a concrete first step."
+ },
+ {
+  "lesson": "de-c1-zweisprachig-leben",
+  "sceneEn": "Someone is asking you what it is like to live in two languages. Describe how you change with the language, separate what is lost from what is gained, correct a misunderstanding and justify why it is a richness.",
+  "partnerEn": "a well-meaning acquaintance who takes bilingualism for a lack",
+  "openingEn": "Doesn't one feel a bit torn — between two languages like that?",
+  "goalEn": "What living in two languages feels like has been described, the loss and the gain have been separated and the case for it being a richness has been made."
+ },
+ {
+  "lesson": "de-c1-sprachwandel",
+  "sceneEn": "An acquaintance says the language is deteriorating. Separate change from decline, give a historical example, accept the point where they are right and propose a shared test.",
+  "partnerEn": "an acquaintance troubled by loanwords who says it was better before",
+  "openingEn": "Just listen to it — not a sentence left without English. Isn't that decline?",
+  "goalEn": "Change and decline have been separated, a historical example has been given and a shared test has been proposed."
+ },
+ {
+  "lesson": "de-c1-finale",
+  "sceneEn": "You are having a last review with your teacher at the end of C1: how the road has gone, which moment was the turning point, what you can do now, what the language has come to mean to you and what comes next.",
+  "partnerEn": "an honest and warm teacher who has followed you from the start",
+  "openingEn": "Five hundred lessons. Before we close: which moment was the turning point for you?",
+  "goalEn": "The turning point has been described, what you can now do has been listed, what the language means has been said and the next goal has been given."
+ }
+]
