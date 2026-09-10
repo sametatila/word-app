@@ -79,10 +79,30 @@ const spans = (t) => {
   for (const m of String(t).matchAll(/\(([^()]{2,})\)/g)) out.push(m[1]);
   return out;
 };
-/** Kanıt = dersin İngilizce yüzeyinde birebir geçen açıklık. */
+/* Yüzeydeki SÖZCÜKLER. Apostroflu biçim tek parça sayılıyor (`i've`),
+   çünkü alt-dize aramasında Türkçe «ve» tam oradan kanıt çıkıyordu. */
+const WORD = /\p{L}+(?:'\p{L}+)*/gu;
+
+/** Kanıt = dersin İngilizce yüzeyinde birebir geçen açıklık.
+ *
+ *  TEK SÖZCÜKLÜK açıklık yüzeyde SÖZCÜK olarak geçmeli, alt-dize olarak
+ *  değil. Ölçüldü: alt-dize aramasıyla kanıt sayılan 129 açıklığın 5'i
+ *  başka bir sözcüğün içinden geliyordu — «ve» `i've` içinde, «ny»
+ *  `sunny` içinde, «en» `seven` içinde. Bunlar Türkçe; kanıt sayılınca
+ *  kapı onların Almancada AYNEN kalmasını dayatıyor, o da karakter
+ *  kuralıyla çelişiyor (docstring'in başındaki kavga). Sözcük ölçütü
+ *  124'ünü koruyor: «to», «in», «at», «on», «by», «is», «an», «of» gibi
+ *  dersin öğrettiği işlev sözcükleri kanıt olarak kalıyor.
+ *
+ *  Çok sözcüklü açıklıkta alt-dize yeterli — o boyda rastlantı yok. */
 const evidence = (row) => {
   const surface = lower((row.en ?? []).join(" | "));
-  return spans(row.tr).filter((s) => surface.includes(lower(s)));
+  const words = new Set(surface.match(WORD) ?? []);
+  return spans(row.tr).filter((s) => {
+    const l = lower(s);
+    if (!surface.includes(l)) return false;
+    return /\s/.test(l) ? true : words.has(l);
+  });
 };
 const strip = (de, row) => {
   let out = de;
