@@ -59,13 +59,15 @@ export function WritingsScreen() {
   const [items, setItems] = useState<Writing[] | null>(null);
   const [phase, setPhase] = useState<"loading" | "ready" | "error">("loading");
   const [report, setReport] = useState<Writing | null>(null); // "Bildir" açık olan değerlendirme
+  const [attempt, setAttempt] = useState(0);
 
   useEffect(() => {
     if (!user) { setPhase("error"); return; }
     let alive = true;
+    setPhase("loading");
     fetchWritings().then((it) => { if (alive) { setItems(it); setPhase("ready"); } }).catch(() => { if (alive) setPhase("error"); });
     return () => { alive = false; };
-  }, [user]);
+  }, [user, attempt]);
 
   return (
     <View style={{ flex: 1, backgroundColor: colors.bg }}>
@@ -92,9 +94,19 @@ export function WritingsScreen() {
           ))}
         </ScrollView>
       ) : phase === "error" || (items && items.length === 0) ? (
+        /* YÜKLENEMEDİ ile BOŞ AYRI ŞEY. İkisine de "henüz değerlendirilmiş
+           yazın yok" yazılıyordu: ağı kopan kullanıcıya, yazdığı metinlerin
+           yok olduğu söyleniyordu. */
         <View style={{ flex: 1, alignItems: "center", justifyContent: "center", gap: spacing.lg, paddingHorizontal: spacing.xl }}>
           <View style={{ width: 80, height: 80, borderRadius: 24, backgroundColor: colors.primarySoft, alignItems: "center", justifyContent: "center" }}><WriteIcon color={colors.primary} size={36} /></View>
-          <Text variant="body" color={colors.textMuted} style={{ textAlign: "center" }}>{t("writings.no_graded_writing_yet_do_writing")}</Text>
+          <Text variant="body" color={colors.textMuted} style={{ textAlign: "center" }}>
+            {t(phase === "error" ? "writings.couldn_t_load_writings" : "writings.no_graded_writing_yet_do_writing")}
+          </Text>
+          {phase === "error" && user ? (
+            <PressableScale onPress={() => setAttempt((n) => n + 1)} style={{ paddingHorizontal: 18, paddingVertical: 10, borderRadius: radii.md, borderWidth: 1.5, borderColor: colors.border }}>
+              <Text variant="bodyStrong" color={colors.primary}>{t("common.try_again")}</Text>
+            </PressableScale>
+          ) : null}
         </View>
       ) : (
         <ScrollView contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingTop: spacing.md, paddingBottom: insets.bottom + spacing.xxl }} showsVerticalScrollIndicator={false}>

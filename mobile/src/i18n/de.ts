@@ -1118,6 +1118,7 @@ export const de: Record<string, string> = {
   "writings.report_this_feedback": "Bewertung melden",
   "writings.no_graded_writing_yet_do_writing": "Du hast noch keine bewerteten Texte. Mach eine Schreibübung und lass sie bewerten — sie erscheint hier.",
   "writings.to_be_graded": "Wird bewertet.",
+  "writings.couldn_t_load_writings": "Deine Texte konnten nicht geladen werden.",
   "writings.my_writing": "Meine Texte",
   "time.minutes_short": "{m} Min.",
   "time.hours_minutes_short": "{h} Std. {m} Min.",

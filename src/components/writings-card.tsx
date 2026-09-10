@@ -4,6 +4,7 @@ import Link from "next/link";
 import { CardGrid } from "@/components/layout";
 import { useEffect, useState } from "react";
 import { PenIcon } from "@/components/icons";
+import { EmptyCard } from "@/components/empty-card";
 import { SkeletonLine } from "@/components/skeleton";
 import { AssessmentCard } from "@/components/feedback/assessment-card";
 import { AiNotice } from "@/components/ai-notice";
@@ -38,9 +39,11 @@ export function WritingsCard({ showEmpty = false }: { showEmpty?: boolean }) {
   const [items, setItems] = useState<Item[] | null | undefined>(undefined);
   const [open, setOpen] = useState<number | null>(null);
   const [reported, setReported] = useState<Item | null>(null);
+  const [attempt, setAttempt] = useState(0);
 
   useEffect(() => {
     let alive = true;
+    setItems(undefined);
     (async () => {
       try {
         const res = await fetch("/api/assessments", { cache: "no-store" });
@@ -54,7 +57,7 @@ export function WritingsCard({ showEmpty = false }: { showEmpty?: boolean }) {
     return () => {
       alive = false;
     };
-  }, []);
+  }, [attempt]);
 
   async function remove(id: number) {
     if (!confirm(t("writ.delete_confirm"))) return;
@@ -92,7 +95,28 @@ export function WritingsCard({ showEmpty = false }: { showEmpty?: boolean }) {
     başka hiçbir şey çıkmıyor. Orada boşluğun kendisi bir cevap değil, bir
     soru — "burada ne olacaktı?".
   */
-  if (!items || !items.length) return showEmpty ? <WritingsEmpty /> : null;
+  /*
+   * YÜKLENEMEDİ ile BOŞ AYRI ŞEY.
+   *
+   * `!items` hem "istek başarısız" (null) hem "hiç yazı yok" (boş dizi)
+   * demekti ve ikisine de "henüz değerlendirilmiş yazın yok" yazılıyordu:
+   * ağı kopan kullanıcıya, yazdığı metinlerin yok olduğu söyleniyordu.
+   */
+  if (items === null)
+    return showEmpty ? (
+      <EmptyCard
+        icon={PenIcon}
+        tint="var(--color-sky)"
+        title={t("writings.my_writing")}
+        text={t("writings.couldn_t_load_writings")}
+        action={
+          <button type="button" onClick={() => setAttempt((n) => n + 1)} className="btn btn-ghost px-4 py-2 text-sm">
+            {t("common.try_again")}
+          </button>
+        }
+      />
+    ) : null;
+  if (!items.length) return showEmpty ? <WritingsEmpty /> : null;
 
   return (
     <section id="writings" className="card p-5">

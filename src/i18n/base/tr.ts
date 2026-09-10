@@ -1120,6 +1120,7 @@ export const trBase: Record<string, string> = {
   "writings.report_this_feedback": "Değerlendirmeyi bildir",
   "writings.no_graded_writing_yet_do_writing": "Henüz değerlendirilmiş yazın yok. Yazma alıştırması yapıp değerlendirt — buraya gelir.",
   "writings.to_be_graded": "Puanlanacak.",
+  "writings.couldn_t_load_writings": "Yazıların yüklenemedi.",
   "writings.my_writing": "Yazılarım",
   "time.minutes_short": "{m} dk",
   "time.hours_minutes_short": "{h}s {m}dk",
