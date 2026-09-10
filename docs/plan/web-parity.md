@@ -5981,3 +5981,29 @@ seviye · gün üçlüsünü baştan beri gösteriyor.
 **Sınıf hakkında:** bu tur üç ayrı elle yazılmış eşleme ölçüldü, biri
 ayrışıktı. Oran düşük ama bulunanın bedeli yüksek (ekranda ham anahtar
 görmek), ve ölçüm ucuz. §79 iki ölçüyü birden tutuyor.
+
+
+### 11.162 Renk de kimliktir: ilerleme şeridi ve paletteki yazılı eşleme
+
+Eşleme taramasını sürdürdüm. **Eşit çıkanlar:** başarım simgeleri (29 ad, iki
+tarafta birebir), rozet basamağı renkleri, ünite türü simgeleri.
+
+**Ayrışan:** ilerleme ekranındaki seviye şeridi. Web her seviyeyi kendi
+rengiyle çiziyor (görülen %40 saydam, pekişen tam ton); mobil beş seviyeyi de
+yeşil çiziyordu. İlginç olan şu: eşleme zaten **mobilin kendi paletinin
+yorumunda yazılı** ("mint=doğru/A1, rose=yanlış/C1, sky=A2, violet=B1") — yani
+bilgi vardı, ekran onu kullanmıyordu. Renk burada süs değil kimlik: beş çubuk
+aynı renkteyken seviyeler yalnızca yazıdan ayırt ediliyor.
+
+§80 eşlemeyi jeton adlarını çevirerek karşılaştırıyor (mobil `success` ↔ web
+`mint`), çünkü iki palette aynı renk iki ayrı adla duruyor.
+
+**Paralel oturum, aynı dakikada aynı yerde:** §38 kapısı (sınav yazma
+değerlendirme isteği) bu tur kırmızıya döndü — web `locale: "tr"` alanını
+sekiz çağrı yerinden birden kaldırmıştı (`a85566ad`: değerlendirme artık
+öğrencinin dilinde, dili sunucu profilden okuyor). Mobil tarafı da aynı
+oturum düzeltirken ben ölçüyordum; kapı ikisi de bitince yeşile döndü.
+**Ders:** kırmızı bir kapı her zaman "bir şey bozuldu" demek değil — bazen
+"iki taraftan biri henüz gelmedi" demek. Ölçüp kimin işi olduğunu görmek,
+düzeltmeye atılmaktan önce geliyor; yoksa aynı satırı iki oturum iki kez
+yazar.
