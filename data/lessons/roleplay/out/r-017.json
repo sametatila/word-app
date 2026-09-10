@@ -1,0 +1,177 @@
+[
+ {
+  "lesson": "de-b2-passiv-perfekt",
+  "sceneEn": "You are in the weekly status meeting with your boss. Report which jobs have been completed, which are still waiting and why, in the past passive; give dates for the rest.",
+  "partnerEn": "a department head who wants short answers and asks for dates",
+  "openingEn": "I haven't much time — tell me briefly: what has been done this week and what hasn't?",
+  "goalEn": "The finished and unfinished jobs have been listed, the reason for the delay has been given and dates have been set for the rest."
+ },
+ {
+  "lesson": "de-b2-passiv-modal",
+  "sceneEn": "You are at the enquiries desk of an authority asking which steps your application has to go through: what must be submitted, what will be examined, how long it takes, which document has to be approved.",
+  "partnerEn": "an official who explains the rules in the language of the regulations",
+  "openingEn": "We have your application. Before it can be processed, though, something still has to be cleared up — do you know what is missing?",
+  "goalEn": "The missing document has been found out, the order and length of the steps have been made clear and it has been said when a decision will come."
+ },
+ {
+  "lesson": "de-b2-zustandspassiv",
+  "sceneEn": "You are talking to a building attendant: which door opens when, what is open now, which entrance is permanently closed. Ask and explain, keeping the process apart from the state.",
+  "partnerEn": "a building attendant who knows the rules by heart and speaks briefly",
+  "openingEn": "You're at the wrong door — the main entrance is closed today. Where are you trying to get to?",
+  "goalEn": "Which entrance is open, which is closed and when the doors are opened have all been found out."
+ },
+ {
+  "lesson": "de-b2-passiversatz-lassen",
+  "sceneEn": "A colleague is proposing a new working arrangement. Say what in the proposal can be done, what has to be sorted out and what is not possible, and reach a shared conclusion.",
+  "partnerEn": "a colleague attached to their proposal but willing to hear objections",
+  "openingEn": "I've had an idea: we move the meeting to Monday morning. Can that be done?",
+  "goalEn": "The workable and unworkable parts of the proposal have been separated, the point to be sorted out has been named and a shared conclusion has been reached."
+ },
+ {
+  "lesson": "de-b2-herstellung",
+  "sceneEn": "You are on a tour of a chocolate factory. Ask about the steps of production in order, sum one step up in your own words and ask about a detail you are curious about.",
+  "partnerEn": "a factory guide who loves the work and loves giving detail",
+  "openingEn": "Welcome! We're right at the beginning of production here. Do you know how cocoa gets to us in the first place?",
+  "goalEn": "The steps of production have been learnt in order, one step has been summed up by the learner and a question of detail has been answered."
+ },
+ {
+  "lesson": "de-b2-restaurierung",
+  "sceneEn": "You are on a city tour asking the guide how the old centre was restored: what was repaired, what could be preserved, which building is listed, when the work finished.",
+  "partnerEn": "a city guide who loves the history and gives detail",
+  "openingEn": "You can see it best from here: this row of houses was completely renovated three years ago. Does anything strike you?",
+  "goalEn": "What was repaired, what was preserved and when the work finished have all been found out."
+ },
+ {
+  "lesson": "de-b2-unfallbericht",
+  "sceneEn": "You witnessed an accident and you are giving a statement to a police officer: what you saw, in what order it happened, who raised the alarm, what happened next. Tell the events in order and objectively.",
+  "partnerEn": "a police officer taking notes and asking for the date and time",
+  "openingEn": "You saw the accident? Then let's start at the beginning: what exactly happened first?",
+  "goalEn": "The events have been told in order, who did what has been said and contact details have been given at the end of the statement."
+ },
+ {
+  "lesson": "de-b2-rezept-profi",
+  "sceneEn": "You are learning the tricks of a difficult recipe from a chef: ask how each thing has to be cooked, what must not be done and how you tell when it is ready.",
+  "partnerEn": "a chef who is in a hurry but likes to teach",
+  "openingEn": "So you want to try it yourself? Good. First tell me: what do you start with?",
+  "goalEn": "The cooking steps, one thing to avoid and how to tell when it is ready have all been learnt."
+ },
+ {
+  "lesson": "de-b2-wartung",
+  "sceneEn": "You are discussing the service on your car with the mechanic: find out what absolutely has to be done, what can wait, what it will cost and when it will be ready.",
+  "partnerEn": "an honest mechanic who is in a hurry",
+  "openingEn": "I've had a look underneath. Two things are due, one of them urgent — do you want both done?",
+  "goalEn": "The essential and the postponable jobs have been separated, the price has been found out and a collection time has been settled."
+ },
+ {
+  "lesson": "de-b2-organisation",
+  "sceneEn": "The two of you are sharing the preparations for a street party. List what has to be done in the impersonal passive, discuss who takes on what and tie the running order to a date.",
+  "partnerEn": "an eager but disorganised neighbour who keeps throwing in new ideas",
+  "openingEn": "Right, I've made a list already — it has got rather long, though. What shall we start with?",
+  "goalEn": "The jobs have been listed, who takes on what has been shared out and the running order has been tied to a date."
+ },
+ {
+  "lesson": "de-b2-schlagzeilen",
+  "sceneEn": "You and a friend are discussing today's headline. Say in your own words what the headline says, point out what it does not say, and discuss whether the story is overstated.",
+  "partnerEn": "a friend inclined to believe the headline but open to persuasion",
+  "openingEn": "Have you seen this? 'Rents up by thirty per cent' — thirty! Where is this going to end?",
+  "goalEn": "What the headline says and what it does not say have been separated and a shared conclusion has been reached about whether it is overstated."
+ },
+ {
+  "lesson": "de-b2-er-sagte",
+  "sceneEn": "You are passing on a piece of news you heard to a friend. Give who said what in the reporting mood, name your source and put your own opinion in a separate sentence.",
+  "partnerEn": "a friend who questions the source and asks what you think",
+  "openingEn": "Hang on — are you saying that, or did someone else say it? That's a difference.",
+  "goalEn": "The source and the content have been given in the reporting mood and the speaker's own opinion has been stated separately."
+ },
+ {
+  "lesson": "de-b2-soll-angeblich",
+  "sceneEn": "A rumour is going round at work. Talking to a colleague, keep apart what you heard, what you know and what you are only guessing, and decide how to deal with the rumour.",
+  "partnerEn": "a colleague eager to spread the rumour straight away",
+  "openingEn": "Have you heard? The department is supposedly going to be closed. Do you know anything more definite?",
+  "goalEn": "What was heard, what is known and what is guessed have been separated and it has been settled how to deal with the rumour."
+ },
+ {
+  "lesson": "de-b2-interview",
+  "sceneEn": "You are doing a short interview with someone for a local paper. Ask the reason, press further on one answer, insist politely against an evasive answer and get their approval by summing up what they said in your own words.",
+  "partnerEn": "a measured interviewee who avoids some questions",
+  "openingEn": "Five minutes, I'm afraid that's all I have. So what's the occasion for your interview?",
+  "goalEn": "The reason has been asked, one answer has been pressed further and what was said has been summed up and confirmed."
+ },
+ {
+  "lesson": "de-b2-leserbrief",
+  "sceneEn": "You are responding to a piece in a newspaper and talking to its author. Say where you agree, give the grounds for your objection and leave a concrete suggestion at the end.",
+  "partnerEn": "an author who defends the piece but is open to a good argument",
+  "openingEn": "You've read my piece and you want to disagree — go ahead. Where shall we start?",
+  "goalEn": "The point of agreement and the objection have been given separately, the objection has been justified and a concrete suggestion has been left."
+ },
+ {
+  "lesson": "de-b2-doku",
+  "sceneEn": "You are telling a friend about the documentary you watched yesterday: what it shows, which scene shook you, what the film lacks and who you would recommend it to.",
+  "partnerEn": "a friend who does not like documentaries and needs persuading",
+  "openingEn": "A documentary? Honestly, I usually fall asleep in those. What was so special about it?",
+  "goalEn": "The subject, the most striking scene and the shortcoming of the documentary have been described, and your friend has decided whether to watch it."
+ },
+ {
+  "lesson": "de-b2-podcast-b2",
+  "sceneEn": "You are recording your own podcast episode and you have a guest. Open the episode, introduce your guest, ask two questions and finish with a closing line.",
+  "partnerEn": "an excitable podcast guest who gives long answers",
+  "openingEn": "Thanks for the invitation! Tell us briefly: who is your podcast actually meant for?",
+  "goalEn": "The episode has been opened, the guest introduced, at least two questions asked and the episode finished with a closing line."
+ },
+ {
+  "lesson": "de-b2-pressefreiheit",
+  "sceneEn": "You are discussing the role of the press with an acquaintance. Keep apart what you know, what you have heard and what you guess, state your view carefully but clearly, and answer their objection.",
+  "partnerEn": "an acquaintance who distrusts the media and asks for examples",
+  "openingEn": "I haven't believed the media for a long time. Why should I trust what's written there at all?",
+  "goalEn": "What is known, heard and guessed have been separated, the view has been given with reasons and the objection has been answered."
+ },
+ {
+  "lesson": "de-b2-influencer",
+  "sceneEn": "You and a friend are arguing about the line between advertising and genuine opinion on social media: what has to be labelled, who stays credible, what you trust.",
+  "partnerEn": "a friend who defends the people they follow",
+  "openingEn": "She always says she uses it herself. Why shouldn't I believe her?",
+  "goalEn": "The line between advertising and genuine opinion has been discussed with examples and a shared test of what to trust has been reached."
+ },
+ {
+  "lesson": "de-b2-falschmeldung",
+  "sceneEn": "An acquaintance is telling you a story you know to be false. Restate the claim in your own words, question the source, set the truth against it and show how it could be checked.",
+  "partnerEn": "an acquaintance who shared the story and does not give up easily",
+  "openingEn": "It was everywhere! Are you telling me they all just made it up?",
+  "goalEn": "The claim has been restated, the source questioned, the truth set against it and a way of checking has been shown."
+ },
+ {
+  "lesson": "de-b2-partizip-1",
+  "sceneEn": "You and an acquaintance are discussing a trend that has grown in recent years (screen time, rents, the cost of travel — whichever you choose). Describe what is rising, what is falling and what you have noticed yourself.",
+  "partnerEn": "an acquaintance who is keen on figures and asks for examples",
+  "openingEn": "Something's struck me lately: everything is getting dearer, but nobody talks about the running costs. What do you observe?",
+  "goalEn": "The rising and falling trends have been described with examples and the two of you have met on a shared observation."
+ },
+ {
+  "lesson": "de-b2-partizip-2",
+  "sceneEn": "A new method is being proposed at work. Ask how it was developed, whether it has been tested and what results were obtained; then give your own assessment.",
+  "partnerEn": "a project lead who defends the method and can give detail",
+  "openingEn": "The newly developed method saves us a third of the time. Where do you see the problem?",
+  "goalEn": "How the method was developed and tested has been found out and the learner's assessment has been given with reasons."
+ },
+ {
+  "lesson": "de-b2-ki-alltag",
+  "sceneEn": "You and a colleague are arguing about how much room artificial intelligence should have in your work: what can be automated, what should not be, and where the responsibility stays.",
+  "partnerEn": "a colleague keen on AI who sees no limits",
+  "openingEn": "I have almost everything drafted for me now — it saves an enormous amount of time. Where would you draw the line?",
+  "goalEn": "The work that can and should not be automated has been separated and where the responsibility stays has been discussed."
+ },
+ {
+  "lesson": "de-b2-studie",
+  "sceneEn": "You are telling a friend about a study you read: what it found, how many people took part, how reliable the result is and what you think.",
+  "partnerEn": "a friend who is sceptical of studies and asks about the method",
+  "openingEn": "Studies say something different every year. How many people were even in it?",
+  "goalEn": "The finding, the method and the sample of the study have been described and a shared conclusion has been reached about how reliable it is."
+ },
+ {
+  "lesson": "de-b2-experiment",
+  "sceneEn": "You are explaining a simple experiment that can be done at home: what is needed, how it is done, what is measured and why the result is surprising. Describe each step with a clause of means.",
+  "partnerEn": "a curious listener who questions every step",
+  "openingEn": "An experiment in the kitchen? All right — but first tell me: what exactly is it meant to find out?",
+  "goalEn": "The aim, the steps and the result of the experiment have been described, and the listener could sum it up in their own words."
+ }
+]
