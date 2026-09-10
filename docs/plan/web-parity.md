@@ -5286,3 +5286,25 @@ yani kapı olmasa sunucunun ekleyeceği yeni bir biçim Android'de öneriyi
 `check-endpoints` onu `WEB_ONLY` listesinden düşürmemi istedi; gölgeleme kapısı
 (§11.128) da yeni eklenen altı anahtarın web kopyasını. İkisi de doğru
 zamanda, doğru şeyi söyledi.
+
+### 11.138 Gelişim panelinin ikinci parçası — ve kapının kendi yanlış pozitifi
+
+Sekiz haftalık seri ile kilometre taşları taşındı; panel tamamlandı. Ayrıntı
+kapalı geliyor (web de öyle): yukarıdaki çubuklar "neredeyim" sorusuna zaten
+cevap veriyor.
+
+Çizgi web `Spark` ile aynı geometride ve **parity 62** dört ölçüyü eşliyor —
+en önemlisi **ölçülmemiş haftanın çizgiyi kesmesi**: boşluğu sıfır saymak,
+ölçüm yapılmamış bir haftayı "puanın dibe vurdu" diye çizerdi.
+
+**Kapının ilk hâli yanlış pozitif verdi:** kesmeyi ararken webin biçimini
+(`if (!c)`) değil mobilinkini (`if (v === null)`) tanıyordu. İkisi de aynı
+şeyi yapıyor — çizgiyi koparıyor — ve desen artık ona bakıyor. §11.104'ün
+kuralı kapının kendisine de uygulanıyor: **yanlış pozitif iş çıkarmıyor,
+gerçek ayrışmayı gizliyor.**
+
+**Bu turda görülen, bana ait olmayan kırmızı kapı:** `check-endpoints --check`
+`/api/turnstile` için kalıyor — çağıranı yok ve `ALLOW`da yazılı değil. Uç
+başka bir oturumun commit'iyle geldi (127ade48, "Apple ile Giriş webde") ve
+o işin ortasında; benim değişikliklerim hiçbir uç dosyasına dokunmadı. Karar
+o oturumun: ya bir istemciye bağlanacak ya sebebiyle listeye yazılacak.
