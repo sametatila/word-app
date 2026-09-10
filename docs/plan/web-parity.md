@@ -149,7 +149,7 @@ sayfanın içine sıkıştırılmış · **farklı** = var ama kurgusu/yerleşim
 | `PlacementScreen` | `/placement` | **yakın** | |
 | `PaywallScreen` | `/premium` | **yakın** | |
 | `DeleteAccountScreen` | `/account/delete` | **yakın** | |
-| `OnboardingScreen` | `/setup` | **yakın** | ENVANTER DÜZELTMESİ (8 Eyl): web `/setup` tek sayfalık form DEĞİL, zaten dört adımlı bir sihirbazdı (isim+kurs+ses → amaç → seviye → hazır). Eksik olan tek adım günlük hedefti; `1e0…` ile geldi ve akış beş adım oldu. Web'de fazladan bir **amaç** adımı var (İş / Günlük hayat / Sınav / İsviçre), mobilde yok |
+| `OnboardingScreen` | `/setup` | **eş** | Akış artık BİREBİR aynı beş ekran: `welcome → lang → course → level → goal`, her ekranda tek karar. Web'in üç fazlalığı düştü — ad (kayıt formu zaten soruyor), ses seçici (kurstan türüyor), amaç adımı (`profiles.goal` hiçbir yerde okunmuyordu). "Hazır" özeti de kalktı: oturum açık kullanıcı son adımdan doğrudan `/learn`e gidiyor |
 | `FirstPracticeScreen` | `/first-words` | **yakın** | İlk 5 kelime, kayıt öncesi. `11bbbe3` ile geldi; kelime listesi mobil `firstWords.ts` ile birebir |
 | `NotifPrimeScreen` | `push-optin` bileşeni | **gömülü** | |
 | `AuthScreen` | `/login` | **yakın** | |
@@ -2128,21 +2128,33 @@ iki ayrı ad.
 
 Android referans alındı: günlük hedef `goal`. Webin güdü adımının Android'de
 karşılığı yok, o yüzden Android'in kelimesini işgal etmiyor, kendi adını
-(`motivation`) aldı. Kalan ayrım gerçek akış farkı: Android anadili ve kursu
-ayrı adımlarda soruyor, web ikisini karşılama adımına koyup sonda bir "hazır"
-özeti gösteriyor. Akışları eşlemek ayrı bir iş; ölçüm adları artık çakışmıyor.
+(`motivation`) aldı.
+
+**Sonra: akışlar da eşlendi.** O sıradaki not "akışları eşlemek ayrı bir iş"
+diyordu; o iş yapıldı. Web onboarding'i mobilin beş ekranına taşındı ve
+`motivation` adımı hiç kalmadı:
+
+    Android  welcome · lang · course · level · goal
+    web      welcome · lang · course · level · goal
+
+Artık yalnız adlar değil SIRA da aynı, yani huni sorgusu iki platformu adım
+adım karşılaştırılabilir hâlde topluyor. Yönetim panosundaki liste de buna
+göre düzeltildi (`ONB_ORDER`): eskiden webin akışını yansıtıyordu, `ready`
+yalnız webde vardı ve mobilin `lang`/`course` adımları panoda hiç görünmüyordu.
 
 Yan düzeltme: liste çağrı yerinde konumsal bir dizi sabitiydi
 (`["welcome", …][step]`), araya bir adım eklenince bütün adlar sessizce
-kayardı. Artık `STEP_KIND` haritası - adım numarasıyla adı yan yana.
+kayardı. Adlar artık `STEP_KEYS` dizisinde ve adım o dizinin indisi - ad ile
+adım tek yerde.
 
 **Ölçülüp kaydedilen, düzeltilmeyen: webde `nav` aşırı yüklü.** Sözlükte
 `nav` = "sekme açıldı, value = sekme sırası". Android tam olarak bunu yazıyor.
-Web ise altı çağrıda başka şeyler için de kullanıyor: `onboarding:level_pick`,
-`onboarding:level_measure`, `onboarding:placement`, `onboarding:level`
-(onboarding çıkış yolu) ve `roleplay_exam:start` / `roleplay_exam:done` - son
-ikisinde `value` konuşulan replik sayısı, yani sekme sırası değil. Tek kovada
-üç ayrı olay ve üç ayrı `value` anlamı var.
+Web ise dört çağrıda başka şeyler için de kullanıyor: `onboarding:placement`,
+`onboarding:level` (onboarding çıkış yolu) ve `roleplay_exam:start` /
+`roleplay_exam:done` - son ikisinde `value` konuşulan replik sayısı, yani sekme
+sırası değil. Tek kovada üç ayrı olay ve üç ayrı `value` anlamı var. (Altı
+çağrıydı: `onboarding:level_pick` ve `onboarding:level_measure` akış mobile
+eşlenirken düştü, seviye adımı artık ayrı bir ara adıma geçmiyor.)
 
 Düzeltilmedi çünkü Android'e eşlemenin yolu bu çağrıları başka bir olaya
 taşımak ve o olayın adını UYDURMAK: onboarding çıkış yolu için `onboarding_done`
@@ -4202,3 +4214,34 @@ tohum etiketleri ve hangi şıkkın doğru sayıldığı.
   oturumdan önce oluyor — yapısal fark, eksik değil.
 - `quiz.this_unit_has_no_questions_yet`: web boş ünitede `notFound()` çağırıyor.
   Patika boş bir quize bağlantı vermediği için bugün ulaşılamaz; kayda geçti.
+
+### 11.85 Hangi kapı neyi göremiyor
+
+§11.84'ün iki kusuru farklı sebeplerle gizlenmişti; bu tur onu kapıya çevirdim.
+
+**Türkçe cümleler zaten sayılıyordu — kabul edilmiş borç olarak.** Projede
+`scripts/i18n-hardcoded.mjs` diye bir cırcır var (taban 169 dizgi / 87 dosya)
+ve `src/lib/immersion/grammar.ts` orada **2** ile yazılıydı. Yani kusur
+görünmezdi değil, **kabul edilmişti**. Düzeltirken Türkçeyi varsayılan olarak
+bıraktığım için taban da düşmüyordu; parametreyi zorunlu yaptım, iki dizge
+modülden çıktı, taban **167**'ye indi.
+
+**Almanca şık çifti hiçbir kapıda yoktu.** `["Richtig", "Falsch"]` Türkçe harf
+taşımıyor (`i18n-hardcoded` atlıyor) ve sözlük anahtarı değil (`i18n:check`
+atlıyor). Böyle bir kusurun tek imzası, kurs diline ait bir sözcük çiftinin
+**kodda** geçmesi. Yeni bölüm dört çifti (`Richtig/Falsch`, `Ja/Nein`,
+`True/False`, `Yes/No`) içerik ve tablo dosyaları dışında arıyor; yorumlar
+ayıklanıyor, çünkü gerekçesini yazmak kapıyı kırmamalı.
+
+#### Taramanın kalanı
+
+`src/lib` genelinde Türkçeye özgü harf taraması 3347 ham eşleşme verdi;
+daraltınca geriye kod (içerik değil) dosyalarından altı grup kaldı ve hepsi
+meşru çıktı:
+
+| dosya | ne |
+|---|---|
+| `chat-providers`, `native-server`, `plan`, `stt`, `tts/*` | sunucu günlüğü / hata metni, kullanıcıya çıkmıyor |
+| `courses.ts` | kurs adları zaten dil başına (`label.tr/en/de`) |
+| `speech-rules.ts` | kurallar **Türkçe konuşanın** Almancada yaptığı hatalar; tabanda yazılı |
+| `module-exam/*`, `confusables`, `first-words`, `characters` | Türkçe içerik verisi, çeviri yolu `nativeExamText` üzerinden |
