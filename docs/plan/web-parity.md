@@ -1145,3 +1145,42 @@ Samet'in.
 
 Not: `Mascot` bilinmeyen mood'da `idle`a düşüyor, yani bugün sessiz bir hata
 yok - eksik olan ifade, kırık olan bir şey değil.
+
+### 11.17 Aynı hatırlatma iki kanaldan gidebilir (günlük)
+
+11.x'teki tercih onarımından sonra (bkz. commit "Mobil bildirim anahtarları
+sunucudaki tercihi de yazıyor") anahtarın KAPALI yönü artık doğru çalışıyor:
+kapatınca sunucu da susuyor. AÇIK yönde bir soru kaldı.
+
+Ölçüm — üç kategorinin sunucu tarafı bugün nerede:
+
+    lernomi-cron-reminders    KURULU     her gün 18:00 UTC   -> /api/cron/reminders
+    lernomi-cron-streak       KURULMADI  (AGENTS.md)         -> /api/cron/streak-alert
+    lernomi-cron-weekly       KURULMADI  (AGENTS.md)         -> /api/cron/weekly-reminder
+
+`findReminderTargets` tarayıcı aboneliğini VEYA mobil cihaz jetonunu yeterli
+sayıyor. Yani günlük hatırlatmayı uygulamadan açan kullanıcı iki bildirim
+alıyor: notifee'nin seçtiği saatte kurduğu yerel bildirim ve sunucunun aynı
+gün attığı push. Seri ve haftalık kategorilerde timer henüz kurulmadığı için
+bugün çift yok, ama kurulunca aynı şey olacak.
+
+Metinler de bir değil, ve fark tesadüf değil: sunucu `push.rem_streak_*`
+anahtarlarını kullanıyor ve içine tekrar sayısı, rakip adı, ortak seri gibi
+gerçek veriyi koyuyor; mobilin yerel metni sabit (`notif.streak_body`).
+
+DÜZELTİLMEDİ, çünkü hangi kanalın kazanacağı ürün kararı ve ikisi de bir şey
+kaybettiriyor:
+
+  a) Yerel kalsın, sunucu mobil jetonuna atmasın. Çevrimdışı da çalışır ve
+     Android'in bugünkü davranışı bu (referans o). Ama sunucunun zengin
+     metnini ve sayılarını kaybeder, ayrıca sunucunun "bu kullanıcı yerelde
+     kuruyor" diye bileceği bir alan yok - şema işi.
+  b) Sunucu kazansın, mobil yerel zamanlamayı bıraksın. Metin zenginleşir ve
+     web ile birebir aynı olur; ama bildirim FCM'e ve canlı jetona bağlanır,
+     uçakta ya da jeton yenilenirken hiç gelmez.
+  c) İkisi kalsın, gövde farklılaşsın (yerel "hadi başla", sunucu "37 kelime
+     bekliyor"). Çift bildirim kalır; en kötüsü.
+
+Bugün zarar tek kategoriyle sınırlı ve gözle görülür bir hata değil - fazladan
+bir nudge. Seri/haftalık timer'ları kurulmadan önce karar verilmesi gerekiyor,
+yoksa üç kategoride birden çift olur.
