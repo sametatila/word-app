@@ -3545,3 +3545,43 @@ Bunu değiştirmedim: mobile aralıklı gönderim eklemek XP'nin NE ZAMAN
 düştüğünü değiştirir ve biriken listeyle birlikte çift sayıma açık kapı
 bırakır (parti boşaltma kuralı da eklenmeli). Ölçüm ve sonucu burada; kararı
 Samet verir.
+
+### 11.69 Yanıt yönü: bir uçta gövde hiç okunmuyordu
+
+§11.67-68 isteği ölçtü; bu tur yanıtı ölçtüm - sunucunun DÖNDÜRDÜĞÜ alanlar
+ile iki istemcinin OKUDUĞU alanlar.
+
+    uç                     sunucu döndürüyor   web okuyor   mobil okuyor
+    /api/skills (POST)     9                   5            0   ← bulgu
+    /api/me                15                  (sunucu bil.)  15  EŞİT
+    /api/premium/status    10                  10           10  EŞİT
+
+**Bulgu: `/api/skills` yanıtı mobilde HİÇ okunmuyordu.** İstek gönderiliyor,
+gövde hiç açılmıyordu (`await fetchWithTimeout(...)`, `.json()` yok). Sunucu
+dokuz alan döndürüyor: `xpGained, totalXp, currentStreak, longestStreak,
+streakRepaired, bestCorrect, total, lastScore, repeat`.
+
+Kullanıcıya değen sonuç: beceri alıştırmasını bitiren kişi **kazandığı XP'yi
+görmüyordu**. Oysa aynı bilgi tur sonunda gösteriliyor (`GameScreen`,
+`+N XP`) ve web burada da gösteriyor (`player-shell` beş alan okuyor, ayrıca
+`lernomi:stats` olayıyla başlıktaki XP/seriyi anında güncelliyor).
+
+`xpGained` okunup sonuç kartına eklendi, `GameScreen` ile aynı biçimde;
+"yeniden dene"de sıfırlanıyor.
+
+**Okunmayan kalan alanlar, sebepleriyle:**
+
+- `repeat` — web "bu alıştırmayı daha önce tamamlamıştın, XP yalnız en iyi
+  skorunu geçince eklenir" notunu gösteriyor. Mobile eklenmedi çünkü metnin
+  anahtarı (`skillp.repeat_note`) YALNIZ `src/i18n/web/*` altında, yani
+  web-only ad alanında. Mobile taşımak yeni bir paylaşılan anahtar demek ve
+  köprünün yönü mobil → web; ayrı bir iş.
+- `lastScore` — sunucunun yetkili puanı. Mobil yerel `score`unu kaydediyor;
+  ikisi normalde aynı, ayrıştıklarında sunucu haklı. Değiştirmek yerel
+  işaretleme sırasını da etkiliyor.
+- `streakRepaired` — bu uçta İKİ platform da okumuyor (`GameScreen`
+  `/api/answers` yanıtında okuyor). Tutarsız değil: seri onarımı tur
+  sonucunda bildiriliyor.
+- `totalXp` / `currentStreak` — mobilde başlığı güncelleyecek bir kanal yok
+  (`useMe` bir kez çekiyor, geçersizleme yolu yok); web bunu bir CustomEvent
+  ile yapıyor. Mimari bir ek; ölçüm burada.
