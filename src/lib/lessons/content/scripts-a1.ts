@@ -136,7 +136,7 @@ export const A1_SCRIPTS: Record<string, DialogueTurn[]> = {
       r(["deutsch", "englisch", "lieber", "bitte", "weiter", "türkisch", "tuerkisch"], "Gut, dann bleiben wir bei Deutsch. Wie sagt man Danke auf Türkisch?", "Güzel, o zaman Almanca devam. Türkçede Danke nasıl deniyor?", "t6", ["Ja, ich spreche …"]),
     ], { say: "Deutsch oder Englisch?", sayTr: "Almanca mı İngilizce mi?", example: "Deutsch, bitte." }),
     t("t6", "Wie sagt man Danke auf Türkisch?", "Türkçede Danke nasıl deniyor?", "Türkçesini söyle ve kısaca açıkla", [
-      r(["teşekkür", "tesekkur", "sagt", "man", "danke", "türkisch", "tuerkisch"], "Schön, das merke ich mir! Danke für das Gespräch — bis bald!", "Güzel, bunu aklımda tutarım! Sohbet için teşekkürler — görüşürüz!", undefined, ["Sprichst du Deutsch?"]),
+      r(["teşekkür", "tesekkur", "thank", "thanks", "sagt", "man", "danke", "türkisch", "tuerkisch", "englisch"], "Schön, das merke ich mir! Danke für das Gespräch — bis bald!", "Güzel, bunu aklımda tutarım! Sohbet için teşekkürler — görüşürüz!", undefined, ["Sprichst du Deutsch?"]),
     ], { say: "Wie sagt man das auf Türkisch?", sayTr: "Bu Türkçede nasıl deniyor?", example: "Auf Türkisch sagt man teşekkürler." }),
   ],
 
