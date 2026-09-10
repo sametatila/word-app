@@ -50,8 +50,10 @@ const UNHEARD_LIMIT = 3;
 
 const mapWord = (w: { id: number; de: string; tr: string; artikel?: string | null; en?: string | null }): WalkWord =>
   ({ id: w.id, de: w.de, tr: w.tr, artikel: (w.artikel as Artikel | null) ?? undefined, en: w.en ?? null });
+/* Süzgeç ile ünlem AYRI iki iddia: süzgeç değişirse ünlem sessizce yalan
+   söylemeye başlar. Tek geçişte hem eleme hem dönüştürme yapılıyor. */
 const mapRounds = (rs: Round[]): WalkRound[] =>
-  rs.filter((r) => r.word).map((r) => ({ word: mapWord(r.word!), kind: r.game === "intro" ? "intro" : "speak" }));
+  rs.flatMap((r) => (r.word ? [{ word: mapWord(r.word), kind: r.game === "intro" ? "intro" as const : "speak" as const }] : []));
 
 /**
  * Yürüyüş modu — web `components/walk-player.tsx` akışının birebir mobil karşılığı.

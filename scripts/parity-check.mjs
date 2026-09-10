@@ -2825,15 +2825,21 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
  * Web ayni seyi oyun basina ayri tiplerle soyluyor (`Round` birlesimi), yani
  * orada kacisa gerek yok. Iki taraf da SIFIR tasimali. */
 {
-  const kacis = (yollar) => yollar.map((p) => {
+  const kacis = (yollar, re) => yollar.map((p) => {
     const src = read(p).replace(/\/\*[\s\S]*?\*\//g, " ").replace(/\/\/[^\n]*/g, " ");
-    return (src.match(/as unknown as/g) ?? []).length;
+    return (src.match(re) ?? []).length;
   }).reduce((a, b) => a + b, 0);
-  sameList(
-    "tur boru hattinda tip kacisi",
-    ["mobil=" + kacis(["mobile/src/game/rounds.tsx", "mobile/src/game/session.ts"])],
-    ["web=" + kacis(["src/components/session-player.tsx", "src/lib/types.ts", "src/lib/session.ts"])].map((x) => x.replace("web=", "mobil=")),
-  );
+  const MOBIL = ["mobile/src/game/rounds.tsx", "mobile/src/game/session.ts"];
+  const WEB = ["src/components/session-player.tsx", "src/lib/types.ts", "src/lib/session.ts"];
+  /* Iki kacis bicimi de sayiliyor. Ikincisi `round.word!`: tip "olmayabilir"
+     diyor, kod "vardir" diye kestiriyor. Sekiz tur bileseni boyle yaziyordu;
+     sunucu kelimesiz bir tur uretse sonuc derleme hatasi degil, calisma
+     aninda bos ekran olurdu. */
+  const olcu = (yollar) => [
+    "birlesim kacisi=" + kacis(yollar, /as unknown as/g),
+    "unlem=" + kacis(yollar, /\bround\.[a-zA-Z]+!/g),
+  ];
+  sameList("tur boru hattinda tip kacisi", olcu(MOBIL), olcu(WEB));
 }
 
 console.log(

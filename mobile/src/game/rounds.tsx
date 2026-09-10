@@ -380,8 +380,7 @@ function OptionButton({ text, sub, state, onPress, colors, idleTint }: { text: s
   );
 }
 
-function ChoiceRound({ round, onDone, colors }: { round: Round; onDone: Done; colors: Palette }) {
-  const word = round.word!;
+function ChoiceRound({ round, word, onDone, colors }: { round: Round; word: RoundWord; onDone: Done; colors: Palette }) {
   const deSide = round.direction === "de-tr";
   const question = deSide ? withArtikel(word) : word.tr;
   const answer = deSide ? word.tr : withArtikel(word);
@@ -411,8 +410,7 @@ function ChoiceRound({ round, onDone, colors }: { round: Round; onDone: Done; co
   );
 }
 
-function ArtikelRound({ round, onDone, colors }: { round: Round; onDone: Done; colors: Palette }) {
-  const word = round.word!;
+function ArtikelRound({ round, word, onDone, colors }: { round: Round; word: RoundWord; onDone: Done; colors: Palette }) {
   const [picked, setPicked] = useState<string | null>(null);
   const [fb, setFb] = useState<Feedback | null>(null);
   function choose(a: string) {
@@ -436,8 +434,7 @@ function ArtikelRound({ round, onDone, colors }: { round: Round; onDone: Done; c
   );
 }
 
-function TrueFalseRound({ round, onDone, colors }: { round: Round; onDone: Done; colors: Palette }) {
-  const word = round.word!;
+function TrueFalseRound({ round, word, onDone, colors }: { round: Round; word: RoundWord; onDone: Done; colors: Palette }) {
   const [ans, setAns] = useState<boolean | null>(null);
   const [fb, setFb] = useState<Feedback | null>(null);
   useAutoSpeak(withArtikel(word), round.id); // Almanca = soru → mount'ta oku
@@ -485,8 +482,7 @@ function HintRow({ answer, colors, shown, onShow }: { answer: string; colors: Pa
   );
 }
 
-function TypingRound({ round, onDone, colors }: { round: Round; onDone: Done; colors: Palette }) {
-  const word = round.word!;
+function TypingRound({ round, word, onDone, colors }: { round: Round; word: RoundWord; onDone: Done; colors: Palette }) {
   const [val, setVal] = useState("");
   /* Sunucu bu turu taze kelimenin ardına koyduysa ipucu baştan açık (web
      `typing-game` `hintShown` başlangıcı da `round.assist`). */
@@ -603,8 +599,7 @@ function ClozeRound({ round, onDone, colors }: { round: Round; onDone: Done; col
   );
 }
 
-function PluralRound({ round, onDone, colors }: { round: Round; onDone: Done; colors: Palette }) {
-  const word = round.word!;
+function PluralRound({ round, word, onDone, colors }: { round: Round; word: RoundWord; onDone: Done; colors: Palette }) {
   const answer = typeof round.answer === "string" ? round.answer : "";
   const opts = optionTexts(round);
   const [picked, setPicked] = useState<string | null>(null);
@@ -709,8 +704,7 @@ function Tile({ label, onPress, dim, colors }: { label: string; onPress?: () => 
   );
 }
 
-function ListenRound({ round, onDone, colors }: { round: Round; onDone: Done; colors: Palette }) {
-  const word = round.word!;
+function ListenRound({ round, word, onDone, colors }: { round: Round; word: RoundWord; onDone: Done; colors: Palette }) {
   const [picked, setPicked] = useState<string | null>(null);
   const [fb, setFb] = useState<Feedback | null>(null);
   const [audible, setAudible] = useState<boolean | null>(null);
@@ -756,8 +750,7 @@ function ListenRound({ round, onDone, colors }: { round: Round; onDone: Done; co
   );
 }
 
-function ScrambleRound({ round, onDone, colors }: { round: Round; onDone: Done; colors: Palette }) {
-  const word = round.word!;
+function ScrambleRound({ round, word, onDone, colors }: { round: Round; word: RoundWord; onDone: Done; colors: Palette }) {
   const target = React.useMemo(() => Array.from(word.de).filter((c) => c !== " "), [word.de]);
   // Harf döşemeleri boşluksuz diziliyor; karşılaştırma da boşluksuz biçimde.
   const compareTarget = React.useMemo(() => foldTight(word.de, currentTargetLang()), [word.de]);
@@ -821,8 +814,7 @@ function ScrambleRound({ round, onDone, colors }: { round: Round; onDone: Done; 
   );
 }
 
-function OrderRound({ round, onDone, colors }: { round: Round; onDone: Done; colors: Palette }) {
-  const word = round.word!;
+function OrderRound({ round, word, onDone, colors }: { round: Round; word: RoundWord; onDone: Done; colors: Palette }) {
   const answer = Array.isArray(round.answer) ? round.answer : [];
   const tail = round.tail ?? "";
   const full = [...answer, tail].filter(Boolean).join(" ");
@@ -1076,16 +1068,30 @@ function MatchRound({ round, onDone, colors }: { round: Round; onDone: Done; col
 
 const INTERACTIVE = new Set(["choice", "artikel", "truefalse", "typing", "cloze", "plural", "listen", "scramble", "order", "translate", "match"]);
 
+/**
+ * KELİME TİPTEN GELİYOR, ÜNLEMDEN DEĞİL.
+ *
+ * Sekiz tur bileşeni `round.word!` yazıyordu: tip "olmayabilir" diyor, kod
+ * "vardır" diye kestiriyordu. Sunucu bir gün kelimesiz bir tur üretse (ya da
+ * bir alan adı değişse) sonuç derleme hatası DEĞİL, çalışma anında boş bir
+ * ekran ya da çökme olurdu. Web bunu oyun başına ayrı tiplerle söylüyor
+ * (`Round` birleşimi: `choice` turunun `word`ü zorunlu). Mobil tek gövdeli
+ * tipi koruyor ama kelimeyi dağıtıcıda BİR KEZ sınayıp bileşene ayrı bir
+ * özellik olarak veriyor — bileşenin içinde artık ünlem yok.
+ */
 function pickRound(round: Round, onDone: Done, colors: Palette) {
-  if (round.game === "choice" && optionCards(round).length) return <ChoiceRound round={round} onDone={onDone} colors={colors} />;
-  if (round.game === "artikel" && round.word?.artikel) return <ArtikelRound round={round} onDone={onDone} colors={colors} />;
-  if (round.game === "truefalse") return <TrueFalseRound round={round} onDone={onDone} colors={colors} />;
-  if (round.game === "typing") return <TypingRound round={round} onDone={onDone} colors={colors} />;
+  const word = round.word;
+  if (word) {
+    if (round.game === "choice" && optionCards(round).length) return <ChoiceRound round={round} word={word} onDone={onDone} colors={colors} />;
+    if (round.game === "artikel" && word.artikel) return <ArtikelRound round={round} word={word} onDone={onDone} colors={colors} />;
+    if (round.game === "truefalse") return <TrueFalseRound round={round} word={word} onDone={onDone} colors={colors} />;
+    if (round.game === "typing") return <TypingRound round={round} word={word} onDone={onDone} colors={colors} />;
+    if (round.game === "plural" && optionTexts(round).length) return <PluralRound round={round} word={word} onDone={onDone} colors={colors} />;
+    if (round.game === "listen" && optionCards(round).length) return <ListenRound round={round} word={word} onDone={onDone} colors={colors} />;
+    if (round.game === "scramble") return <ScrambleRound round={round} word={word} onDone={onDone} colors={colors} />;
+    if (round.game === "order" && round.tokens?.length && Array.isArray(round.answer) && round.answer.length) return <OrderRound round={round} word={word} onDone={onDone} colors={colors} />;
+  }
   if (round.game === "cloze" && optionTexts(round).length) return <ClozeRound round={round} onDone={onDone} colors={colors} />;
-  if (round.game === "plural" && optionTexts(round).length) return <PluralRound round={round} onDone={onDone} colors={colors} />;
-  if (round.game === "listen" && optionCards(round).length) return <ListenRound round={round} onDone={onDone} colors={colors} />;
-  if (round.game === "scramble" && round.word) return <ScrambleRound round={round} onDone={onDone} colors={colors} />;
-  if (round.game === "order" && round.tokens?.length && Array.isArray(round.answer) && round.answer.length) return <OrderRound round={round} onDone={onDone} colors={colors} />;
   if (round.game === "translate" && typeof round.sentence === "object" && round.sentence) return <TranslateRound round={round} onDone={onDone} colors={colors} />;
   if (round.game === "match" && (round.words?.length ?? 0) >= 2) return <MatchRound round={round} onDone={onDone} colors={colors} />;
   return <SelfAssess round={round} onDone={onDone} colors={colors} />;
