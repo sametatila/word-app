@@ -4461,3 +4461,28 @@ Sonuç: ders bitiş yüzdesi ve `lesson_finish` ölçümü artık iki uygulamada
 sayılıyor, yüzde formülü. Yüklem mobilde ayrı dosyada (`data/lessons`
 `scoredSteps`), webde oynatıcının içinde iki kez yazılı; kapı ikisini de kendi
 yerinden okuyor.
+
+### 11.93 Yürüyüşte gün: sessizce sunucunun UTC günü
+
+Yürüyüş modunu karşılaştırırken tur kuyruğu, duyulmama eşikleri
+(`UNHEARD_WINDOW` 4, `UNHEARD_LIMIT` 3 — ikisi de §11.86'nın otomatik sayısal
+kapısında) ve bitiş sebep tablosu eşit çıktı. **Adres eşit değildi.**
+
+Web yürüyüş oynatıcısı iki fetch'inde de `/api/session?walk=1` diyordu — `day`
+yok. Uç gün gelmezse `clampDay` **sunucunun UTC gününe** düşüyor. Sonuç: UTC+3'te
+01:30'da yürüyenin cevapları düne, UTC-5'te 21:00'de yürüyenin cevapları yarına
+yazılıyordu — ve günlük istatistik ile seri o günden hesaplanıyor.
+
+Kod tabanının kuralı bunu baştan beri söylüyor ("yerel gün gönderilir,
+sunucunun UTC günü gece çalışanı yanlış güne yazar"); aynı sayfanın oturum
+oynatıcısı ve mobilin yürüyüşü zaten öyle yapıyor. Yalnız bu iki çağrı dışarıda
+kalmış.
+
+Taramada ikinci bir tane çıktı: `/api/growth` da günü okuyup UTC'ye düşüyor ve
+`progress-panel` göndermiyordu — gece yarısına yakın açılan büyüme raporu bir
+gün kaymış seriyle çiziliyordu.
+
+**Kapı:** `searchParams.get("day")` okuyan öğrenme uçlarına (session, quests,
+daily, weekly, growth) tarayıcıdan giden her **sorgulu** adres `day=` taşımalı.
+Sosyal uçlar dışarıda: haftayı sunucu belirliyor ve iki istemci de bilerek gün
+göndermiyor (§11.77'de ölçüldü).
