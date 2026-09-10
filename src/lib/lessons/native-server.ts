@@ -171,6 +171,33 @@ export async function nativeCando(
 }
 
 /**
+ * Can-do ifadesinin TEK tek çevirisi — Yapabildiklerim listesi için.
+ *
+ * `nativeCando` ile aynı sözlük, BAŞKA bir kural: orada karşılığı olmayan
+ * ifade DÜŞÜYOR, çünkü ders sayfasının altındaki köprü bir özet ve eksik
+ * madde orada yalnızca kısalık. Yapabildiklerim ekranı öyle değil: satırın
+ * kimliği ifadenin KENDİSİ ve yanında kullanıcının kanıt sayacı duruyor.
+ * Satırı düşürmek kullanıcının ilerlemesini gizler, seviye sayaçlarını da
+ * tutarsız bırakır — o yüzden burada Türkçeye düşmek doğru geri düşüş.
+ *
+ * `nativeExamText` ve `nativeMockText` ile aynı biçim: eşleyici dönüyor,
+ * sözlük bir kez açılıyor ve çağıran her satır için yeniden beklemiyor.
+ */
+export async function nativeCandoText(
+  lang: NativeLang | null | undefined,
+): Promise<(id: string, tr: string) => string> {
+  if (!lang || lang === DEFAULT_NATIVE) return (_id, tr) => tr;
+  if (lang === "de") {
+    const de = await deDict();
+    if (!de) return (_id, tr) => tr;
+    return (id, tr) => de.cando[id] ?? tr;
+  }
+  const dict = await nativeDict();
+  if (!dict) return (_id, tr) => tr;
+  return (id, tr) => dict.cando[id] ?? tr;
+}
+
+/**
  * Modül sınavı kâğıdını ana dile çevirir; çeviremezse kâğıdı OLDUĞU GİBİ döner.
  *
  * Ders çözücüsüyle aynı geri düşüş: yarım değil, tümden Türkçe. Kâğıt
