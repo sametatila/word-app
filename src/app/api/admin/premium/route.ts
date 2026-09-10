@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import { adminGate } from "@/lib/admin";
 import { sameOrigin } from "@/lib/auth/origin";
-import { savePremiumConfig, premiumConfig, grantPremiumDays, revokeEntitlement, resolveEntitlement } from "@/lib/premium";
+import { savePremiumConfig, premiumConfig, grantPremiumDays, revokeEntitlement, findPremiumAccount } from "@/lib/premium";
 import { createCodes, listCodes, setCodeDisabled } from "@/lib/premium/promo";
 import { topReferrers } from "@/lib/premium/referral";
 
@@ -66,6 +66,19 @@ export async function POST(req: Request) {
         await setCodeDisabled(Number(body.id), Boolean(body.disabled));
         return NextResponse.json({ ok: true });
       }
+      /*
+        HESAP ARAMA — yazma değil, ama aynı kapının arkasında: kimin premium
+        olduğu ve kimin verdiği kişisel veri, herkese açık bir uç olamaz.
+
+        Salt okunur olması ÖNEMLİ: `findPremiumAccount` `resolveEntitlement`
+        çağırmıyor, çünkü o fonksiyon bekleyen bonusun penceresini başlatıyor.
+        Bir hesaba BAKMAK, o hesabın hediye saatini çalıştırmamalı.
+      */
+      case "find_user": {
+        const account = await findPremiumAccount(String(body.query ?? ""));
+        if (!account) return NextResponse.json({ error: "not_found" }, { status: 404 });
+        return NextResponse.json({ ok: true, account });
+      }
       case "grant_days": {
         const userId = String(body.userId ?? "");
         const days = Number(body.days ?? 0);
@@ -73,13 +86,15 @@ export async function POST(req: Request) {
           return NextResponse.json({ error: "bad_input" }, { status: 400 });
         }
         await grantPremiumDays(userId, days, { actor: gate.email, note: (body.note as string) || null });
-        return NextResponse.json({ ok: true, entitlement: await resolveEntitlement(userId) });
+        // Yazmadan SONRAKİ hâli dönüyor: panel kendi hesabını tutmak zorunda
+        // kalmasın. Aynı kaydı iki yerde hesaplamak, ikisinin ayrışması demek.
+        return NextResponse.json({ ok: true, account: await findPremiumAccount(userId) });
       }
       case "revoke": {
         const userId = String(body.userId ?? "");
         if (!userId) return NextResponse.json({ error: "bad_input" }, { status: 400 });
         await revokeEntitlement(userId, gate.email, (body.note as string) || undefined);
-        return NextResponse.json({ ok: true });
+        return NextResponse.json({ ok: true, account: await findPremiumAccount(userId) });
       }
       default:
         return NextResponse.json({ error: "unknown_action" }, { status: 400 });

@@ -35,6 +35,7 @@ export {
   type BonusSource,
 } from "./entitlement";
 export { checkQuota, getUsage, bumpUsage, levelKey, type QuotaCheck, type Period } from "./quota";
+export { findPremiumAccount, type PremiumAccount } from "./account";
 
 /**
  * Premium mi — SICAK YOL.
