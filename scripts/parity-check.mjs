@@ -112,6 +112,46 @@ console.log("\n" + C.b + "3. BASARIM GRUPLARI" + C.off);
   sameList("grup sirasi", grab(read("mobile/src/data/achievements.ts")), grab(read("src/lib/achievement-groups.ts")));
 }
 
+/* sinav bolum sirasi */
+
+console.log("\n" + C.b + "4. SINAV BOLUM SIRASI" + C.off);
+{
+  // Sıra AKIŞI belirliyor: mobil bölümleri bu sırayla yürütüyor, sunucu bu
+  // sırayla puanlıyor. Ayrışırlarsa öğrenci bir bölümü çözerken puanı
+  // başkasının hanesine yazılır. Mobil kopyası `ExamScreen` içinde ve
+  // yorumu zaten "sunucudaki SECTION_ORDER ile aynı" diyor - o söz artık
+  // ölçülüyor.
+  const grab = (src) => {
+    const m = src.match(/SECTION_ORDER[^=]*=\s*\[(.*?)\];/s);
+    return m ? [...m[1].matchAll(/"(\w+)"/g)].map((x) => x[1]) : [];
+  };
+  sameList("bolum sirasi", grab(read("mobile/src/screens/ExamScreen.tsx")), grab(read("src/lib/exam-types.ts")));
+}
+
+/* deneme sinavi becerileri */
+
+console.log("\n" + C.b + "5. DENEME SINAVI BECERILERI" + C.off);
+{
+  const grab = (src) => {
+    const m = src.match(/type MockSkill =([^;]+);/s);
+    return m ? [...m[1].matchAll(/"(\w+)"/g)].map((x) => x[1]) : [];
+  };
+  sameList("beceri sirasi", grab(read("mobile/src/data/exams/index.ts")), grab(read("src/lib/mock-exams/types.ts")));
+}
+
+/* CEFR seviyeleri */
+
+console.log("\n" + C.b + "6. CEFR SEVIYELERI" + C.off);
+{
+  const grabW = read("src/lib/placement-score.ts").match(/PLACEMENT_LEVELS[^=]*=\s*\[(.*?)\];/s);
+  const grabM = read("mobile/src/screens/SettingsScreen.tsx").match(/const LEVELS = \[(.*?)\];/s);
+  sameList(
+    "seviye listesi",
+    grabM ? [...grabM[1].matchAll(/"(\w+)"/g)].map((x) => x[1]) : [],
+    grabW ? [...grabW[1].matchAll(/"(\w+)"/g)].map((x) => x[1]) : [],
+  );
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"
