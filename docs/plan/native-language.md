@@ -1367,21 +1367,41 @@ Almancada da geçen sözcükler listeden çıkarıldı. 445 → 241.
 
 ## Faz 3 nerede durdu (2026-09-10)
 
-**Almanca kursun Türkçe yüzü baştan sona İngilizceye çözülüyor.** Beş kapı
+**Almanca kursun Türkçe yüzü baştan sona İngilizceye çözülüyor.** Altı kapı
 CI'da "Ana dil çözücüsü" adımında, hepsi yeşil:
 
 | kapı | ne ölçüyor | sayı |
 |---|---|---|
-| `check:lessons-native` | ders anlatımı, sözlükçe, kalıp, rol yapma, senaryo, sınav | 26.375/26.375 |
+| `check:lessons-native` | ders anlatımı, sözlükçe, kalıp, rol yapma, senaryo, sınav — çözülmüş çıktı | 26.375/26.375 |
 | `check:lessons-swap` | öğrenciye söyletilen Almanca cümleler | 25 + 17 |
 | `check:skills-native` | çözülmüş egzersiz çıktısında Türkçe kaldı mı | 995/995 |
-| `check:skills-task` | beceri görev metni (27 tür) | 3.715/3.715 |
-| `check:mock-prose` | deneme kâğıtları (11 tür) | 6.627/6.627 |
+| `check:skills-task` | beceri görev metni, YAZILAN (27 tür) | 3.715/3.715 |
+| `check:mock-prose` | deneme kâğıtları, YAZILAN (11 tür) | 6.627/6.627 |
+| `check:mock-native` | çözülmüş deneme kâğıdı — yazılan uygulamaya varıyor mu | 60/60 |
 
-İlk üçü sözlüğü yeniden kurup yazılanın UYGULAMAYA ULAŞTIĞINI ölçüyor,
-son ikisi YAZILANI ölçüyor. Ayrım kasıtlı: bir hat tamamlanabilir ve yine
-de çözücüye bağlanmamış olabilir; iki soruyu tek kapıya sormak, birini
-sessizce cevapsız bırakır.
+Kapılar İKİ SORU soruyor ve ayrım kasıtlı: `-native` ekliler sözlüğü
+yeniden kurup yazılanın UYGULAMAYA ULAŞTIĞINI ölçüyor, ötekiler
+YAZILANI. Bir hat tamamlanabilir ve yine de çözücüye bağlanmamış olabilir.
+
+**Bunun bedeli aynı gün ölçüldü.** `data/mock-exams/prose/` 6.627/6.627
+yazılmıştı ve `check:mock-prose` yeşildi, ama `apply.mjs` o dizini hiç
+okumuyordu: 6.627 dizenin SIFIRI uygulamaya ulaşıyordu. Yazılanı ölçen
+kapı bunu göremez, çünkü sorduğu soru bu değil. `check:mock-native`
+eklendikten sonra aynı boşluk bir daha sessiz kalamaz.
+
+### Web taraması: başka boşluk yok (2026-09-10)
+
+Türkçe alan gösteren her dosya, çözücü çağıran her dosyayla karşılaştırıldı.
+Fark eden dosyaların tamamı istemci bileşeni ve hepsi zaten çevrilmiş
+nesneyi sunucu sayfasından prop olarak alıyor. Tek gerçek boşluk çıktı ve
+düzeltildi: `/api/mock-exam` `finish` yanlış maddelerin `explain`
+cümlelerini KAYNAK kâğıttan okuyup modele gerekçe olarak veriyordu —
+cevabın dili doğru, dayanağı Türkçeydi.
+
+Patika kancasındaki `titleTr` ayrıca bakıldı: web onu HİÇ çizmiyor
+(`immersion-hub` yalnız Almanca `title` gösteriyor), `/api/immersion`
+üzerinden yalnız mobile gidiyor. `genre` de bakıldı ve Türkçe değil —
+26 benzersiz değerin hepsi makine anahtarı (`dialogue`, `formal`, `phone`).
 
 ### Kalan üç iş — üçü de benim elimde değil
 
