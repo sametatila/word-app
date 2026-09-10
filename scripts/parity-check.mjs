@@ -1243,6 +1243,131 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   sameSet("sosyal hata haritalari", [...mob], [...web].filter((c) => c !== "failed"));
 }
 
+/* ── 27. sosyal istemci yuzeyi (yol + yontem + istek govdesi) ──────────────
+ * Iki `social` nesnesi yirmi bes cagriyi ayni adla tasiyor. Bugune kadar
+ * yalniz CEVAP tipleri olculuyordu (bkz. 24); ISTEK tarafi - yol, HTTP
+ * yontemi ve govdedeki alanlar - hic olculmuyordu. Bir tarafa alan eklenip
+ * otekine eklenmezse sunucu onu sessizce dusuruyor: derleme kirilmiyor,
+ * istek 200 donuyor, yalnizca o ayar hic uygulanmiyor.
+ *
+ * Karsilastirma metin uzerinde: `call<...>` / `api<...>` tip parametreleri
+ * atiliyor (iki tarafta ayri tip ADLARI olabilir, sozlesme ayni), `json(` ile
+ * `j(` ortak `BODY(` adina cekiliyor, bosluk tekleniyor. Geriye yol dizgesi,
+ * yontem ve govde ifadesi kaliyor - degisen her sey ayrisma. */
+{
+  const strip = (x) => x.replace(/\/\*[\s\S]*?\*\//g, " ").replace(/\/\/[^\n]*/g, " ");
+  /* `fn<...>(` -> `CALL(`; acili ayraclar ELLE dengeleniyor cunku tip
+     parametresinin icinde virgul de `{}` de olabiliyor. */
+  const dropGenerics = (x, fn) => {
+    let out = "";
+    let i = 0;
+    for (;;) {
+      const k = x.indexOf(fn + "<", i);
+      if (k < 0) { out += x.slice(i); break; }
+      out += x.slice(i, k) + "CALL";
+      let j = k + fn.length;
+      let d = 0;
+      for (; j < x.length; j++) {
+        if (x[j] === "<") d++;
+        else if (x[j] === ">" && --d === 0) { j++; break; }
+      }
+      i = j;
+    }
+    return out.split(fn + "(").join("CALL(");
+  };
+  const sigs = (p, fn) => {
+    const x = dropGenerics(strip(read(p)), fn);
+    const i = x.indexOf("export const social = {");
+    if (i < 0) return {};
+    let k = x.indexOf("{", i);
+    let d = 0;
+    let end = -1;
+    for (let j = k; j < x.length; j++) {
+      if (x[j] === "{") d++;
+      else if (x[j] === "}" && --d === 0) { end = j; break; }
+    }
+    const body = x.slice(k + 1, end);
+    const out = {};
+    d = 0;
+    let buf = "";
+    const parts = [];
+    for (const c of body) {
+      if ("{[(".includes(c)) d++;
+      else if ("}])".includes(c)) d--;
+      if (c === "," && d === 0) { parts.push(buf); buf = ""; } else buf += c;
+    }
+    parts.push(buf);
+    for (const part of parts) {
+      const m = part.match(/^\s*(\w+)\s*:/);
+      if (!m) continue;
+      out[m[1]] = part.slice(part.indexOf(":") + 1).replace(/\bjson\(/g, "BODY(").replace(/\bj\(/g, "BODY(").replace(/\s+/g, " ").trim();
+    }
+    return out;
+  };
+  const w = sigs("src/lib/social/client.ts", "call");
+  const m = sigs("mobile/src/api/social.ts", "api");
+  sameSet("sosyal istemci cagri adlari", Object.keys(m), Object.keys(w));
+  const ayrisan = Object.keys(w).filter((k) => k in m && w[k] !== m[k]);
+  sameList("sosyal istemci cagri govdeleri", ayrisan.length ? ayrisan : ["ayrisma yok"], ["ayrisma yok"], "ayrisan", "beklenen");
+}
+
+/* ── 28. sosyal gorunum tiplerinin alanlari ────────────────────────────────
+ * 24. bolum ADI AYNI olan bes tipi olcuyordu. Sosyal katmanin geri kalan on
+ * bir tipi iki tarafta AYRI ADLA duruyor (webde `...View` soneki) ve o yuzden
+ * hicbir kapiya girmiyordu - oysa hepsi ayni ucun cevabi.
+ *
+ * `BoardView` istisnasi: web satiri tipin ICINDE yaziyor, mobil `BoardRow`
+ * diye ayirmis. Ikisi ayni sozlesme, o yuzden mobil tarafta iki tipin alanlari
+ * birlestiriliyor. */
+{
+  const strip = (x) => x.replace(/\/\*[\s\S]*?\*\//g, " ").replace(/\/\/[^\n]*/g, " ");
+  const block = (src, name) => {
+    const x = strip(src);
+    const i = x.indexOf("export type " + name + " =");
+    if (i < 0) return null;
+    let k = x.indexOf("{", i);
+    if (k < 0) return null;
+    let d = 0;
+    for (let j = k; j < x.length; j++) {
+      if (x[j] === "{") d++;
+      else if (x[j] === "}" && --d === 0) return x.slice(k, j + 1);
+    }
+    return null;
+  };
+  const flds = (src, ...names) => {
+    const all = [];
+    for (const n of names) {
+      const b = block(src, n);
+      if (b === null) return ["bulunamadi: " + n];
+      all.push(...[...b.matchAll(/[{;\n]\s*(\w+)\??:/g)].map((mm) => mm[1]));
+    }
+    return [...new Set(all)].sort();
+  };
+  const wc = read("src/lib/social/client.ts");
+  const mo = read("mobile/src/api/social.ts");
+  /* [web adi, mobil adlari...] */
+  const PAIRS = [
+    ["SocialMeView", ["SocialMe"]],
+    ["FriendsView", ["FriendsView"]],
+    ["PendingView", ["PendingView"]],
+    ["SearchHitView", ["SearchHit"]],
+    ["SuggestionView", ["Suggestion"]],
+    ["BoardView", ["BoardView", "BoardRow"]],
+    ["LeagueRowView", ["LeagueRow"]],
+    ["LeagueView", ["LeagueView"]],
+    ["NotificationView", ["NotificationView"]],
+    ["PublicProfileView", ["PublicProfileView"]],
+  ];
+  for (const [wn, mns] of PAIRS) {
+    const w = flds(wc, wn);
+    const m = flds(mo, ...mns);
+    const eksik = w.filter((a) => !m.includes(a));
+    const fazla = m.filter((a) => !w.includes(a));
+    sameList("sosyal " + wn + " alanlari", eksik.length ? eksik : ["ayrisma yok"], ["ayrisma yok"], "mobilde eksik", "beklenen");
+    sameList("sosyal " + wn + " alanlari (ters)", fazla.length ? fazla : ["ayrisma yok"], ["ayrisma yok"], "mobilde fazla", "beklenen");
+  }
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"
