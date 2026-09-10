@@ -4,7 +4,7 @@ import { View } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import type { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import type { RootStackParams } from "../navigation/RootStack";
-import { social, formatXp, tierName, type LeagueRow, type LeagueView } from "../api/social";
+import { social, groupXp, tierName, type LeagueRow, type LeagueView } from "../api/social";
 import { Text } from "../ui/Text";
 import { Card } from "../ui/Card";
 import { ReportSheet } from "../ui/ReportSheet";
@@ -131,7 +131,7 @@ function LeagueRowCard({ row, zone, onOpen, onReport }: { row: LeagueRow; zone: 
           </View>
         ) : null}
       </View>
-      <Text variant="h3" color={row.isMe ? colors.primaryText : colors.text}>{formatXp(row.xp)}</Text>
+      <Text variant="h3" color={row.isMe ? colors.primaryText : colors.text}>{groupXp(row.xp)}</Text>
       <Text variant="micro" color={colors.textMuted}>XP</Text>
     </PressableScale>
   );
@@ -149,7 +149,7 @@ function ResultCard({ result, onDismiss }: { result: NonNullable<LeagueView["res
         <IconTile icon={TrophyIcon} tint={tint} />
         <View style={{ flex: 1 }}>
           <Text variant="h3">{t(up ? "league.result_promoted" : down ? "league.result_demoted" : "league.result_stayed", { league: tierName(result.nextTier) })}</Text>
-          <Text variant="caption" color={colors.textMuted}>{t("league.result_rank", { rank: result.rank, xp: formatXp(result.xp) })}</Text>
+          <Text variant="caption" color={colors.textMuted}>{t("league.result_rank", { rank: result.rank, xp: groupXp(result.xp) })}</Text>
         </View>
       </View>
       <Pill label={t("league.result_go")} onPress={onDismiss} tone="primary" block />

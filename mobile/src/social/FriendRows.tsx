@@ -4,7 +4,7 @@ import { Alert, View } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import type { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import type { RootStackParams } from "../navigation/RootStack";
-import { social, errorText, formatXp, type FriendRow } from "../api/social";
+import { social, errorText, groupXp, type FriendRow } from "../api/social";
 import { Text } from "../ui/Text";
 import { Card } from "../ui/Card";
 import { PersonAvatar } from "../ui/PersonAvatar";
@@ -95,7 +95,7 @@ function FriendCard({ f, nudged, onChanged }: { f: FriendRow; nudged: boolean; o
         <ChevronRightIcon color={colors.textFaint} size={20} />
       </PressableScale>
       <View style={{ flexDirection: "row", flexWrap: "wrap", gap: 6, marginTop: spacing.md }}>
-        <StatPill icon={BoltIcon} label={t("social.xp_this_week", { xp: formatXp(f.weeklyXp) })} tint={colors.primary} soft={colors.primarySoft} />
+        <StatPill icon={BoltIcon} label={t("social.xp_this_week", { xp: groupXp(f.weeklyXp) })} tint={colors.primary} soft={colors.primarySoft} />
         {f.currentStreak > 0 ? <StatPill icon={FlameIcon} label={t("social.days", { n: f.currentStreak })} tint={colors.streak} /> : null}
         {f.friendStreak > 0 ? <StatPill icon={HandshakeIcon} label={t("social.days_together", { n: f.friendStreak })} tint={f.streakAtRisk ? colors.streak : colors.success} soft={f.streakAtRisk ? undefined : colors.successSoft} /> : null}
       </View>

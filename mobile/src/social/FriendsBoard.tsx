@@ -4,7 +4,7 @@ import { View } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import type { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import type { RootStackParams } from "../navigation/RootStack";
-import { social, formatXp, type BoardView } from "../api/social";
+import { social, groupXp, type BoardView } from "../api/social";
 import { Text } from "../ui/Text";
 import { Card } from "../ui/Card";
 import { SkeletonLine, SkeletonRows } from "../ui/Skeleton";
@@ -54,7 +54,7 @@ export function FriendsBoard({ compact = false }: { compact?: boolean }) {
                   <FlameIcon color={colors.streakText} size={12} /><Text variant="micro" color={colors.textMuted}>{t("social.days_streak", { n: r.streak })}</Text>
                 </View>
               </View>
-              <Text variant="h3" color={r.isMe ? colors.primaryText : colors.text}>{formatXp(r.xp)}</Text>
+              <Text variant="h3" color={r.isMe ? colors.primaryText : colors.text}>{groupXp(r.xp)}</Text>
               <Text variant="micro" color={colors.textMuted}>XP</Text>
             </PressableScale>
           );
@@ -62,7 +62,7 @@ export function FriendsBoard({ compact = false }: { compact?: boolean }) {
       </View>
       {me && gap > 0 ? (
         <Card padded style={{ marginTop: spacing.md, alignItems: "center", backgroundColor: colors.primarySoft, borderColor: colors.primary }}>
-          <Text variant="bodyStrong" color={colors.primaryText}>{t("friendsboard.gap", { name: above?.name?.split(" ")[0] ?? t("friendsboard.the_one_above"), xp: formatXp(gap) })}</Text>
+          <Text variant="bodyStrong" color={colors.primaryText}>{t("friendsboard.gap", { name: above?.name?.split(" ")[0] ?? t("friendsboard.the_one_above"), xp: groupXp(gap) })}</Text>
         </Card>
       ) : null}
     </View>

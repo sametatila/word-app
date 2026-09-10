@@ -5,7 +5,7 @@ import { useNavigation, useRoute, type RouteProp } from "@react-navigation/nativ
 import type { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import type { RootStackParams } from "../navigation/RootStack";
-import { social, errorText, formatXp, type PublicProfileView, type Relation } from "../api/social";
+import { social, errorText, groupXp, type PublicProfileView, type Relation } from "../api/social";
 import { ApiError } from "../api/client";
 import { useAuth } from "../lib/AuthContext";
 import { Text } from "../ui/Text";
@@ -127,8 +127,8 @@ export function UserScreen() {
         {data.stats ? (
           <View style={{ flexDirection: "row", flexWrap: "wrap", gap: spacing.md, marginBottom: spacing.lg }}>
             <StatTile value={String(data.stats.currentStreak)} label={t("user.day_streak")} color={colors.streakText} colors={colors} />
-            <StatTile value={formatXp(data.stats.weeklyXp)} label={t("user.xp_this_week")} color={colors.primaryText} colors={colors} />
-            <StatTile value={formatXp(data.stats.totalXp)} label={t("user.total_xp")} color={colors.successText} colors={colors} />
+            <StatTile value={groupXp(data.stats.weeklyXp)} label={t("user.xp_this_week")} color={colors.primaryText} colors={colors} />
+            <StatTile value={groupXp(data.stats.totalXp)} label={t("user.total_xp")} color={colors.successText} colors={colors} />
             <StatTile value={String(data.stats.achievements)} label={t("user.badge")} color={colors.accentText} colors={colors} />
           </View>
         ) : (
