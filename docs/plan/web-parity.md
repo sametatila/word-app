@@ -6242,3 +6242,30 @@ söyler. **Ölçüm bir kaydı ancak yanlışsa çürütür; bu kayıt doğru.**
 yanlış teşhisti (§11.15, §11.11, §11.119), biri kısmen kapandı (§11.139), biri
 gerçekten bekliyor (§11.16 — çizim). Oran şunu söylüyor: **"karar bekliyor"
 etiketi zamanla çürüyor** ve düzenli olarak yeniden ölçülmesi gerekiyor.
+
+
+### 11.171 Ölçüm turu: dört yüzey eşit, kapının kör noktası kapandı
+
+Bu tur dört yüzeyi karşılaştırdım ve **dördü de eşit çıktı**: deneme sınavı
+istatistikleri (süren sınavlar, beceri, seviye, son denemeler), profil menüsü
+(sekiz satır, davet dahil), ayarlar (31 ortak anahtar) ve hesap bölümü
+(bağlı hesaplar + etkin oturumlar, iki tarafta da aynı iç içe yapı).
+
+Ayarlardaki fark yalnız platforma ait: webde "ana ekrana ekle" (PWA), kısa
+birim etiketleri ve birleşik gizlilik satırı; mobilde oturum açmadan
+kullanılabildiği için "giriş yap ve kaydet". Kapı yazmadım — muafiyet listesi
+ölçülen şeyden uzun olurdu ve **muafiyet kapının borcudur** (§11.168).
+
+**Asıl bulgu kendi ölçüm yöntemimdeydi.** Bu turda üç kez üst üste aynı hataya
+düştüm: `t("...")` arayan bir grep, ekranların çoğunun kullandığı iki biçimi
+GÖRMÜYOR — üçlü ifade (`t(copied ? "a" : "b")`) ve sabit tablo
+(`{ label: "settings.theme_system" }`). Üçünde de "mobilde yok" sandım, üçü de
+vardı.
+
+Bu yalnız benim ölçümümün değil, **mobil i18n kapısının da kör noktasıydı**:
+eksik anahtar denetimi yalnız `t()` çağrılarına bakıyordu, yani tablo
+anahtarının yanlış yazılması ekranda ham anahtar olarak çıkar ve kapı susardı.
+Denetim `label`/`labelKey`/`titleKey`/`subKey`/`promptKey` alanlarını da
+okuyor artık; hata enjekte edilerek sınandı. (Web'in eşdeğer denetimi bu
+biçimi zaten tanıyordu — §11.143'teki ölü anahtar taraması tablo anahtarlarını
+da sayıyor.)

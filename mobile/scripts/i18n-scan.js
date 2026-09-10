@@ -296,6 +296,16 @@ function eksikAnahtarlar() {
         if (!sozluk.has(k[1])) out.push({ key: k[1], file: path.relative(ROOT, file) });
       }
     }
+    /*
+     * TABLO ANAHTARLARI da denetleniyor. Ekranların çoğu etiketleri bir sabit
+     * tabloda tutuyor (`{ key: "system", label: "settings.theme_system" }`) ve
+     * `t()` çağrısı o tabloyu okuyor — yani anahtar hiçbir `t("...")` içinde
+     * geçmiyor. Yalnız çağrıya bakan bir denetim bu anahtarların yanlış
+     * yazılmasını GÖRMÜYORDU: ekranda ham anahtar çıkar, kapı susar.
+     */
+    for (const m of src.matchAll(/\b(?:label|labelKey|titleKey|subKey|promptKey)\s*:\s*"([a-z][\w]*(?:\.[\w]+)+)"/g)) {
+      if (!sozluk.has(m[1])) out.push({ key: m[1], file: path.relative(ROOT, file) });
+    }
   }
   return out;
 }
