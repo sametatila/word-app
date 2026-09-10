@@ -78,6 +78,10 @@ export function PlacementScreen() {
     // Oturumlu kullanıcıda gerçek test gelmezse "örnek" sorulara DÜŞÜLMEZ (uydurma sonuç
     // seviyeyi yanlış ayarlardı); hata gösterilir, tekrar denenir. Misafir (onboarding)
     // yerleşik soru setini kullanır — o akışın gerçek testi budur.
+    /* Test BASLADI — web `placement-test` ile aynı ad ve aynı kind biçimi.
+       Mobil yalnız bitişi yazıyordu, yani "kaç kişi başlayıp bıraktı"
+       hesaplanamıyordu: huninin payı eksikti. */
+    track("exam_start", 0, "placement:A1");
     startPlacement()
       .then((items) => { if (alive) { if (items.length) setReal(items); else setLoadError(true); setLoading(false); } })
       .catch(() => { if (alive) { setLoadError(true); setLoading(false); } });

@@ -69,7 +69,11 @@ export type EventName =
      ayni ad. "Kac kisi turu bitirmeden cikiyor ve nerede cikiyor" sorusu
      Androidde hic cevaplanmiyordu; `session_done` yalnizca bitirenleri
      sayiyor. */
-  | "session_stop";
+  | "session_stop"
+  /* Sinav/test BASLADI (kind = "placement:A1" gibi). Web yerlestirme testi
+     baslarken yaziyor; mobil yalniz BITISI yaziyordu, yani "kac kisi
+     baslayip birakti" hesaplanamiyordu - huninin payi eksikti. */
+  | "exam_start";
 
 /** Analitik tercihi (Gizlilik Politikası §8) — cihazda, varsayılan açık; açılışta yüklenir. */
 const ANALYTICS_KEY = "lernomi:analytics";
