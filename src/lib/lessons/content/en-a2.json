@@ -3588,7 +3588,7 @@
   ],
   "roleplay": {
    "scene": "Bir dil kursunda yeni tanıştığın Emma sana çocukluğunu soruyor.",
-   "partner": "Emma",
+   "partner": "Emma, dil kursunda yeni tanıştığın biri",
    "opening": "So, where did you grow up?",
    "openingTr": "Peki, nerede büyüdün?",
    "goal": "Öğrenci nerede büyüdüğünü söyler, küçükken neler yaptığını used to ile anlatır ve bir hatırasını (oyuncak, komşu ya da arkadaş) paylaşırsa konuşma başarılıdır.",
@@ -35929,7 +35929,10 @@
       "lang": "tr",
       "text": "Merhaba! Bugün seni yurt dışında bir restorana götürüyorum. Masaya oturduğun andan hesabı ödediğin ana kadar gereken cümleleri öğreneceğiz: menü istemek, garsona tavsiye sormak, alerjini söylemek ve hesabı istemek."
      }
-    ]
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
    },
    {
     "say": [
