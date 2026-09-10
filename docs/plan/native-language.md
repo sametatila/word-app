@@ -1157,3 +1157,68 @@ Kaynak `data/app/words-*.json` (JSONL) ve `data/skills/`; tohumlama
 `scripts/seed-*.ts`. Çeviriler **doğal** olmak zorunda: sözlük karşılığı değil,
 o dilde nasıl söyleniyorsa öyle. Üretim parti parti ve her parti ölçülerek
 yazılır (`data/meanings` hattının deseni).
+
+---
+
+## Beceri ekseni — düz metin hattı BİTTİ, ikinci kalem ÖLÇÜLDÜ (2026-09-10)
+
+`data/skills/prose/` hattı 3.394 dizeyle kapandı ve çalışma anına bağlandı
+(`apply.mjs` → `NativeDict.prose` → `resolveExercise` → `localiseExercise` →
+`/immersion/skill/[id]`). Kapsanan alanlar: `intro` ve `questions[].explain`.
+
+Üç şey öğrenildi ve üçü de sayı:
+
+1. **Plan 3.705 tahmin etmişti, ölçüm 5.268 buldu, sınıflandırma 3.383'e
+   indirdi.** Aradaki 1.885 satır çeviri DEĞİL: metinden alınmış bir cümle
+   ("„Fünf Minuten.“") ve İngilizcesi kendisi. Ölçüt (`isProseQuote`)
+   çözücüde duruyor, paketleyici oradan çağırıyor — iki kopya olsaydı biri
+   daraldığında öteki dizeyi "yazılacak" sayardı ve hep-ya-hiç kuralı bütün
+   egzersizi sessizce Türkçeye düşürürdü.
+
+2. **Sözlükçe çevrilmiyor, KATLANIYOR.** `Gloss.en` zaten doluydu ama
+   oynatıcı üç satır çiziyordu: Almanca, TÜRKÇE, soluk İngilizce. İngilizce
+   okuyan için ters. Katlama `tr`yi `en` ile değiştirip `en`i düşürüyor.
+   Katlamayı yazınca 25 egzersiz birden reddedildi: kütüphane yazma
+   egzersizlerinin `phrases` maddelerinin 125'inde `en` HİÇ yazılmamıştı —
+   alan opsiyonel olduğu için hiçbir denetim istememişti.
+
+3. **Yazılmış olmak yetmiyor.** Hattın kendi kapısı yazılanı ölçer;
+   yazılanın uygulamaya VARDIĞINI ölçen ikinci bir kapı gerekiyor
+   (`check:skills-native`, 995 egzersizin hepsini çözücüden geçiriyor).
+   Bu boşluk bir kez canlıya çıktı — `derived.json` .gitignore'daydı,
+   sunucu derlemesi sözlüğü 4.640 yerine 714 maddeyle kurdu ve İngilizce
+   kurs sessizce Türkçe açıldı.
+
+### Sıradaki kalem: görev metinleri — 3.426 benzersiz dize
+
+`intro`/`explain` beceri ekseninin YARISIYDI. Ölçüm (2026-09-10, yalnız
+`course: "de"`, 995 egzersiz):
+
+| alan | dize | alan | dize |
+|---|---:|---|---:|
+| `tasks.build.tr` | 605 | `explanation.tr` | 75 |
+| `tasks.build.hint` | 589 | `explanation.heading` | 74 |
+| `tasks.free.checklist` | 547 | `tasks.drill.tr` | 70 |
+| `explanation.examples.tr` | 215 | `tasks.drill.hint` | 70 |
+| `tasks.rewrite.why` | 190 | `tasks.drill.confusions.fix` | 70 |
+| `tasks.rewrite.prompt` | 184 | `monologue.bulletsTr` | 59 |
+| `tasks.reply.checklist` | 156 | `monologue.targets.tr` | 58 |
+| `explanation.examples.note` | 147 | `tasks.form.facts` | 47 |
+| `tasks.free.prompt` | 129 | `tasks.form.prompt` | 46 |
+| `tasks.reply.prompt` | 40 | `focus` | 25 |
+| `monologue.promptTr` | 15 | `monologue.rubricHint` | 15 |
+| | | **toplam** | **3.426** |
+
+ÖLÇÜMDE ÜÇ YANLIŞ POZİTİF ÇIKTI ve hattın kapsamından düştüler:
+
+- `genre` — Türkçe DEĞİL. Kapalı bir slug kümesi ("email", "ad") ve arayüz
+  sözlüğünde çevriliyor. Tip yorumu bayattı ("Türkçe: E-posta, İlan") ve
+  var olmayan bir boşluk arattı; yorum düzeltildi.
+- `tasks.form.fields[].label` — Almanca ("Name", "Land"), formun kendisi.
+- `stimulus` / `sample` / `source` — Almanca uyaran ve örnek cevap.
+  Öğrencinin okuyacağı hedef dil metni; çevrilirse egzersiz ölçtüğü şeyi
+  ölçmez.
+
+`tasks.build.tr` hattın en zor kalemi: Almanca cümlenin ANLAMI ve öğrenci
+onu parçalardan kuruyor. Karşılık "doğru İngilizce" olmakla kalmaz, aynı
+Almanca dizilişi ima etmek zorunda.
