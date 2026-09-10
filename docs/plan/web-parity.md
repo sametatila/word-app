@@ -5374,3 +5374,20 @@ kapalıyken eski yol (fire-and-forget) korunuyor, yani hiçbir şey yavaşlamıy
 **Cihazda doğrulanmadı:** ses zamanlaması bu ortamda çalıştırılamıyor. Kod
 yolu, aynı depoda çalışan ve sahada denenmiş yürüyüş modu sıralamasının
 aynısı; yine de ilk gerçek cihaz denemesinde bakılacak yer burası.
+
+### 11.142 Ders özeti: kelimeler ve düzeltmeler toplu
+
+**Dersin kelimeleri** kâğıtta zaten vardı (`lesson.vocab`) ve mobil özet onu
+hiç göstermiyordu — dersin dili kapanışta toplu görünmeli. §11.80 sınıfı.
+
+**Düzeltmeler** konuşma sırasında her balonun altında tek tek geçiyor ve akışta
+kayboluyordu; kapanışta hepsi bir arada durmalı — dersin öğrettiği şey tam
+olarak bunlar. Aynı kural ve aynı ayrıştırıcı (`parseReply`) iki tarafta.
+
+**Ölçüldü, taşınmadı — sıradaki iş:** web özeti dersin **ne zaman geri
+geleceğini** de yazıyor (`lessonp.next_in_days`, aralıklı tekrar merdiveni).
+O sayı kaydetme yanıtından geliyor; mobil ilerlemeyi yalnız cihazda tutuyor
+(`markItemDone` → AsyncStorage) ve sunucu yanıtını hiç görmüyor. Yani mobil
+ders ilerlemesi **sunucuya yazılmıyor** — bu tek başına ayrı bir soru:
+kullanıcı cihaz değiştirdiğinde ders ilerlemesi gidiyor mu? Bir sonraki tur
+bunu ölçecek.
