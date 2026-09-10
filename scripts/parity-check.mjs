@@ -1691,6 +1691,25 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     ];
   };
   sameList("ceviri ikinci sansi", ikinciSans("mobile/src/game/rounds.tsx"), ikinciSans("src/components/games/translate-game.tsx"));
+
+  /* Monolog (konusma) degerlendirmesi: ayni kayit iki uygulamada ayni puani
+     almali. Istek sekli tikatipina ayni yazilmis - kisit satiri sure araligini
+     ELLE kuruyor ve hedefler listesi ayni alandan geliyor. Gecme esigi de
+     olculuyor: puani aldiktan sonra "gecti mi" karari ayrisirsa ayni kayit
+     bir uygulamada egzersizi bitirir, otekinde bitirmez. */
+  const monolog = (p) => {
+    const src = read(p).replace(/\/\*[\s\S]*?\*\//g, " ").replace(/\/\/[^\n]*/g, " ");
+    const i = src.indexOf("async function evaluate");
+    const body = i < 0 ? "" : src.slice(i, src.indexOf("\n  }", i));
+    const al = (re) => (body.match(re) ?? [])[1];
+    return [
+      "istem=" + (al(/prompt:\s*([\w.]+)/) ?? "yok"),
+      "hedef=" + (al(/targets:\s*([\w.]+)\.map/) ?? "yok"),
+      "kisit=" + (al(/constraints:\s*\[(`[^`]*`)/) ?? "yok").replace(/\$\{[^}]*\}/g, "${}"),
+      "esik=" + (al(/overall\s*>=\s*(\d+)/) ?? al(/score\s*>=\s*(\d+)/) ?? "yok"),
+    ];
+  };
+  sameList("monolog degerlendirmesi", monolog("mobile/src/game/skillLibrary.tsx"), monolog("src/components/skills/monologue-player.tsx"));
 }
 
 console.log(
