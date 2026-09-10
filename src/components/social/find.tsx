@@ -80,7 +80,7 @@ export function Find({ onChanged }: { onChanged?: () => void }) {
         ) : hits.length ? (
           <ol className="card divide-y divide-[color:var(--border)] overflow-hidden">
             {hits.map((h) => (
-              <PersonRow key={h.userId} user={h} note={`${h.level}${h.currentStreak ? ` · ${t("social.days_streak", { n: h.currentStreak })}` : ""}`} onChanged={onChanged}>
+              <PersonRow key={h.userId} user={h} note={`${h.level}${h.currentStreak ? ` · ${t("social.days_streak", { n: h.currentStreak })}` : ""}`}>
                 <UserAction userId={h.userId} relation={h.relation} compact onChange={onChanged} />
               </PersonRow>
             ))}
@@ -101,7 +101,6 @@ export function Find({ onChanged }: { onChanged?: () => void }) {
                   user={s}
                   note={s.reason === "mutual" ? t("social.mutual", { n: s.mutual }) : s.reason === "level" ? t("find.same_level", { level: s.level }) : t("find.active_week")}
                   streak={s.currentStreak}
-                  onChanged={onChanged}
                 >
                   <UserAction userId={s.userId} relation="none" compact onChange={onChanged} />
                 </PersonRow>
@@ -125,14 +124,24 @@ function PersonRow({
   user: { userId: string; name: string | null; username: string | null };
   note: string;
   streak?: number;
-  onChanged?: () => void;
   children: React.ReactNode;
 }) {
   const t = useT();
   const href = user.username ? `/u/${user.username}` : null;
   return (
     <li className="flex items-center gap-3 px-4 py-3" style={{ borderColor: "var(--border)" }}>
-      <Avatar userId={user.userId} name={user.name} size={40} />
+      {/* Avatar da profile götürüyor: akış ve istek listelerinde öyle, burada
+          değildi - "avatara bas" öğrenen kullanıcı bu listede karşılık
+          bulamıyordu. Ekran okuyucudan gizli, çünkü hemen yanındaki ad aynı
+          yere gidiyor ve adsız ikinci bir durak eklemesin. Android `Find` de
+          ikisini birden basılabilir yapıp avatarı aynı gerekçeyle gizliyor. */}
+      {href ? (
+        <Link href={href} prefetch={false} aria-hidden tabIndex={-1} className="shrink-0">
+          <Avatar userId={user.userId} name={user.name} size={40} />
+        </Link>
+      ) : (
+        <Avatar userId={user.userId} name={user.name} size={40} />
+      )}
       <div className="min-w-0 flex-1">
         <p className="truncate text-sm font-bold">
           {href ? <Link href={href} prefetch={false}>{user.name ?? t("social.unnamed")}</Link> : (user.name ?? t("social.unnamed"))}
