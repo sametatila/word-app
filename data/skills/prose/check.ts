@@ -114,6 +114,18 @@ if (existsSync(`${DIR}out`))
         if (end(r.tr) !== end(en)) H(`son noktalama uyuşmuyor: «${end(r.tr)}» → «${end(en)}»`);
         const a = numbers(r.tr).join(","), b = numbers(en).join(",");
         if (a !== b) H(`sayılar uyuşmuyor: «${a}» → «${b}»`);
+        /*
+          BEKLENMEDİK KARAKTER. "The text describes the路 of the luggage"
+          satırı bütün kuralları geçti — noktalama tuttu, sayı tuttu, alıntı
+          yoktu — ama içinde yanlışlıkla yazılmış bir Çince karakter vardı.
+          İngilizce satırda beklenen küme dar: ASCII, Almanca umlautlar,
+          tırnak ve tire çeşitleri, üç nokta, ok ve birkaç işaret. Dışındaki
+          her şey yazım kazasıdır.
+        */
+        for (const ch of en)
+          if (!/[\u0020-\u007E\u00C4\u00D6\u00DC\u00E4\u00F6\u00FC\u00DF\u00E9\u00B7\u00D7\u201E\u201C\u201D\u2018\u2019\u2013\u2014\u2026\u2192\u2194]/.test(ch))
+            H(`beklenmedik karakter: «${ch}» (U+${ch.codePointAt(0)?.toString(16).toUpperCase().padStart(4, "0")})`);
+
         /* Türkçe alıntı taşıyorsa İngilizcede de birebir durmalı. Yalnız
            „…“ ve "…" ölçülüyor: '…' Türkçe sözcük vurgulamak için de
            kullanılıyor ("indem 'nasıl' sorusuna cevap verir"). */
