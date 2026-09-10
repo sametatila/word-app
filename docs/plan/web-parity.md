@@ -1956,3 +1956,30 @@ taşımıyor; `extra` de ek turu ayırıyor.
 mevcut Android serisi kırılır; (b) web Android'e geçer - seriler hizalanır,
 oyun kırılımı kaybolur. Ölçüm (a)'yı işaret ediyor ama mevcut serilerin
 anlamını değiştirmek ürün kararı, o yüzden yapılmadı.
+
+### 11.30 `share` olayının kind'ı: tur sonucu webde ayrışmıyordu
+
+§11.29'un bıraktığı üçüncü ayrışma ölçüldü. Dört paylaşım yolu var ve üçü
+eşit, biri değildi:
+
+    yol           Android                            web
+    davet         share kind=invite                  share kind=invite      ✓
+    profil        share kind=profile                 share kind=profile     ✓
+    TUR SONUCU    share kind=result, value=doğru      track("share") — kind
+                                                     ve değer YOK
+    seri          share kind=streak, value=gün        yüzey yok (§11.10)
+
+Webin kind'sız çağrısı raporda ayrışmıyordu: davet ve profil paylaşımları
+kendi kind'ıyla dururken tur sonucu "boş kind" kovasına düşüyor ve kaç
+doğruyla paylaşıldığı hiç kaydedilmiyordu. Web de artık
+`share` kind=`result`, değer = doğru sayısı yazıyor - mobil `lib/share`
+`shareResult` ile birebir.
+
+Doğru sayısı `marks` dizisinden çıkarılıyor (`marks.filter(Boolean).length`);
+`total` ayrı bir alan ve mobil de DEĞER olarak doğru sayısını gönderiyor, o
+yüzden aynı anlam.
+
+`streak` yolu webde yok ve bu §11.10'da kayıtlı: `share.streak` metinleri üç
+dilde yazılı ama hiçbir ekranda düğme yok - iki platformda birden eksik değil,
+mobilde `shareStreak()` var ama çağıranı yok. Yani o satır bu maddeyle
+kapanmıyor.

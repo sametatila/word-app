@@ -119,7 +119,19 @@ export function ShareResult({
   if (!total) return null;
 
   async function share() {
-    track("share");
+    /*
+     * KIND VE DEĞER MOBİLLE AYNI. Burada yalnız `track("share")` yazıyordu:
+     * kind boş, değer boş. Mobil `lib/share` `shareResult` baştan beri
+     * `track("share", correct, "result")` yazıyor, yani paylaşımın hangi
+     * yoldan geldiği (sonuç / davet / profil) ve kaç doğruyla paylaşıldığı
+     * ölçülüyor. Webin kind'sız çağrısı raporda ayrışmıyordu - davet ve
+     * profil paylaşımları kendi kind'ıyla dururken tur sonucu "boş kind"
+     * kovasına düşüyordu (bkz. web-parity §11.30).
+     *
+     * Doğru sayısı `marks`tan geliyor; `total` ayrı bir alan ve mobil de
+     * değer olarak DOĞRU sayısını gönderiyor.
+     */
+    track("share", marks.filter(Boolean).length, "result");
     const text = buildShareText({
       marks,
       total,
