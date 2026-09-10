@@ -5,7 +5,7 @@ import { SkeletonBar, SkeletonCard, SkeletonLine } from "../ui/Skeleton";
 import { useNavigation } from "@react-navigation/native";
 import type { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import type { RootStackParams } from "../navigation/RootStack";
-import { t } from "../lib/i18n";
+import { t, formatPercent } from "../lib/i18n";
 import { Text } from "../ui/Text";
 import { Card } from "../ui/Card";
 import { PressableScale } from "../ui/PressableScale";
@@ -152,7 +152,7 @@ export function MockStatsScreen() {
                 <View key={s.skill} style={{ marginTop: spacing.sm }}>
                   <View style={{ flexDirection: "row", justifyContent: "space-between", alignItems: "baseline" }}>
                     <Text variant="body">{skillOf(s.skill)}</Text>
-                    <Text variant="bodyStrong" color={s.pct >= 60 ? colors.successText : colors.dangerText}>%{s.pct}</Text>
+                    <Text variant="bodyStrong" color={s.pct >= 60 ? colors.successText : colors.dangerText}>{formatPercent(s.pct)}</Text>
                   </View>
                   <View style={{ height: 4, borderRadius: 2, backgroundColor: colors.surface2, marginTop: 4 }}>
                     <View style={{ height: 4, borderRadius: 2, width: `${s.pct}%`, backgroundColor: s.pct >= 60 ? colors.success : colors.danger }} />
@@ -182,7 +182,7 @@ export function MockStatsScreen() {
                     <Text variant="body">{label(r.paperId)} · {skillOf(r.skill, r.paperId)}</Text>
                     <Text variant="micro" color={colors.textMuted}>{t("mockexam.score", { correct: r.correct, total: r.total })}</Text>
                   </View>
-                  <Text variant="bodyStrong" color={r.passed ? colors.successText : colors.dangerText}>%{r.score}</Text>
+                  <Text variant="bodyStrong" color={r.passed ? colors.successText : colors.dangerText}>{formatPercent(r.score)}</Text>
                 </View>
               ))}
             </Card>

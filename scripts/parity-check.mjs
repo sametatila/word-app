@@ -2143,6 +2143,10 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
      (src/app/admin) disarida: orasi yalniz Turkce ve kullaniciya acik degil. */
   const DESENLER = [
     /\.toLocaleString\(\s*["']tr-TR["']/g,
+    /* YUZDE BICIMI de yerelden gelmeli: `%{n}` Turkce yazimi koda gomuyor
+       ("%62"), Ingilizcede "62%" ve Almancada "62 %" olmasi gerekiyor.
+       Dogru yol mobilde `formatPercent(n)`, webde `t("common.pct", { n })`. */
+    />\s*%\{/g,
     /\bt[x]?\((?:[^()]|\([^()]*\))*\)\s*(?:\?\?\s*"[^"]*"\s*)?\.to(?:Locale)?UpperCase\(\s*(?:"tr-TR"|'tr-TR'|)\s*\)/g,
     /\.toLocaleUpperCase\(\s*(?:"tr-TR"|'tr-TR')\s*\)/g,
   ];
@@ -2152,7 +2156,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       if (MUAF.includes(f) || MUAF_KLASOR.some((d) => f.startsWith(d))) continue;
       const src = read(f).replace(/\/\*[\s\S]*?\*\//g, " ").replace(/\/\/[^\n]*/g, " ");
       for (const re of DESENLER) {
-        if (re === DESENLER[2] && !f.endsWith(".tsx")) continue;
+        if (re === DESENLER[3] && !f.endsWith(".tsx")) continue;
         for (const m of src.matchAll(re)) kacak.push(f + ": " + m[0].trim().slice(0, 60));
       }
     }

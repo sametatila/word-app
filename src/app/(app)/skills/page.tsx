@@ -301,7 +301,7 @@ async function Row({
             color: done ? "var(--color-mint)" : "var(--color-flame)",
           }}
         >
-          %{score}
+          {t("common.pct", { n: score })}
         </span>
       ) : null}
       {done ? (

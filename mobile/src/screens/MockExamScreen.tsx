@@ -2,7 +2,7 @@ import React, { useCallback, useEffect, useMemo, useRef, useState } from "react"
 import { View, ScrollView, TextInput, ActivityIndicator } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { useNavigation, useRoute, type RouteProp } from "@react-navigation/native";
-import { t } from "../lib/i18n";
+import { t, formatPercent } from "../lib/i18n";
 import { Text } from "../ui/Text";
 import { Card } from "../ui/Card";
 import { PressableScale } from "../ui/PressableScale";
@@ -783,7 +783,7 @@ function OpenResult({ score, colors }: { score: OpenScore; colors: Palette }) {
   }
   return (
     <View style={{ marginTop: spacing.md }}>
-      <Text variant="h3" color={score.score >= 60 ? colors.successText : colors.dangerText}>%{score.score}</Text>
+      <Text variant="h3" color={score.score >= 60 ? colors.successText : colors.dangerText}>{formatPercent(score.score)}</Text>
       {score.praise ? <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.xs, lineHeight: 20 }}>{score.praise}</Text> : null}
       {score.tip ? <Text variant="body" style={{ marginTop: spacing.xs, lineHeight: 22 }}>{score.tip}</Text> : null}
       {(score.errors ?? []).slice(0, 5).map((e, i) => (
@@ -1016,7 +1016,7 @@ function ResultView({
         <Card padded style={{ marginBottom: spacing.md }}>
           <Text variant="micro" color={colors.textMuted}>{t("mockexam.result")}</Text>
           <View style={{ flexDirection: "row", alignItems: "flex-end", justifyContent: "space-between", marginTop: spacing.xs }}>
-            <Text variant="h1" color={score.passed ? colors.successText : colors.dangerText}>%{score.pct}</Text>
+            <Text variant="h1" color={score.passed ? colors.successText : colors.dangerText}>{formatPercent(score.pct)}</Text>
             <Text variant="bodyStrong">{t("mockexam.score", { correct: score.correct, total: score.total })}</Text>
           </View>
           <Text variant="bodyStrong" color={score.passed ? colors.successText : colors.dangerText} style={{ marginTop: spacing.sm }}>

@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import { t } from "../lib/i18n";
+import { t, formatPercent } from "../lib/i18n";
 import { View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { useNavigation } from "@react-navigation/native";
@@ -179,7 +179,7 @@ export function WeeklyScreen() {
               oynanmamış bir sınavdan kalınmış gibi okunuyordu. */}
           {done ? (
             <ProgressRing size={160} stroke={15} pct={score} track={colors.surface2} from={colors.gradientA[0]} to={colors.gradientA[1]}>
-              <Text variant="display" color={colors.primaryText}>%{score}</Text>
+              <Text variant="display" color={colors.primaryText}>{formatPercent(score)}</Text>
               <Text variant="micro" color={colors.textMuted}>{t("weekly.score")}</Text>
             </ProgressRing>
           ) : null}

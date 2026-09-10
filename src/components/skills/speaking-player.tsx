@@ -186,7 +186,7 @@ export function SpeakingPlayer({ exercise, backHref }: { exercise: SkillExercise
               ) : (
                 <XIcon size={18} className="text-[color:var(--color-rose)]" />
               )}
-              <span className="font-bold">%{score.overall}</span>
+              <span className="font-bold">{t("common.pct", { n: score.overall })}</span>
               <span className="muted text-xs">{t("item.heard", { text: score.transcript || "—" })}</span>
             </div>
 

@@ -1,5 +1,5 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
-import { t as tx, targetLangName } from "../lib/i18n";
+import { t as tx, targetLangName, formatPercent } from "../lib/i18n";
 import { View, ScrollView, TextInput, ActivityIndicator } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { useNavigation, useRoute, type RouteProp } from "@react-navigation/native";
@@ -821,7 +821,7 @@ function Summary({ lesson, correct, total, next, roleMsgs, colors, insets, onBac
           <Text variant="caption" color={colors.textMuted}>{tx("lesson.correct_production")}</Text>
         </View>
         <View style={{ flex: 1, backgroundColor: colors.surface, borderRadius: radii.lg, borderWidth: 1, borderColor: colors.hairline, padding: spacing.lg, alignItems: "center" }}>
-          <Text variant="display" color={colors.successText}>%{pct}</Text>
+          <Text variant="display" color={colors.successText}>{formatPercent(pct)}</Text>
           <Text variant="caption" color={colors.textMuted}>{tx("lesson.accuracy")}</Text>
         </View>
       </View>

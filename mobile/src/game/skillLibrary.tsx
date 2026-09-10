@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { View, TextInput } from "react-native";
-import { t } from "../lib/i18n";
+import { t, formatPercent } from "../lib/i18n";
 import { Text } from "../ui/Text";
 import { Card } from "../ui/Card";
 import { PressableScale } from "../ui/PressableScale";
@@ -402,7 +402,7 @@ export function MonologueBody({ mono, level, exerciseId, onDone, colors }: {
         <>
           {result ? (
             <>
-              <Text variant="h2">%{result.overall}</Text>
+              <Text variant="h2">{formatPercent(result.overall)}</Text>
               {result.praise ? <Text variant="body" style={{ marginTop: spacing.sm, lineHeight: 22 }}>{result.praise}</Text> : null}
               {result.tip ? <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.sm, lineHeight: 20 }}>{result.tip}</Text> : null}
               {result.corrected ? (

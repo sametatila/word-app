@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useState } from "react";
-import { t } from "../lib/i18n";
+import { t, formatPercent } from "../lib/i18n";
 import { View, ScrollView } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { useFocusEffect, useNavigation } from "@react-navigation/native";
@@ -135,7 +135,7 @@ export function MockExamsScreen() {
             ) : overallPct !== null ? (
               <View style={{ alignItems: "flex-end" }}>
                 <Text variant="micro" color={colors.textMuted}>{t("mockexams.word_coverage")}</Text>
-                <Text variant="h1">%{overallPct}</Text>
+                <Text variant="h1">{formatPercent(overallPct)}</Text>
               </View>
             ) : null}
           </View>

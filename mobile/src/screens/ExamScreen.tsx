@@ -3,7 +3,7 @@ import { View, ScrollView, TextInput } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { SkeletonCard, SkeletonLine } from "../ui/Skeleton";
 import { useNavigation, useRoute, type RouteProp } from "@react-navigation/native";
-import { t } from "../lib/i18n";
+import { t, formatPercent } from "../lib/i18n";
 import { Text } from "../ui/Text";
 import { Card } from "../ui/Card";
 import { PressableScale } from "../ui/PressableScale";
@@ -350,7 +350,7 @@ export function ExamScreen() {
           <Card padded style={{ alignItems: "center", gap: spacing.sm }}>
             <Celebrate show={!!result?.passed} />
             <Mascot mood={result?.passed ? "celebrate" : "idle"} size={90} />
-            <Text variant="h1">%{pct}</Text>
+            <Text variant="h1">{formatPercent(pct)}</Text>
             <Text variant="bodyStrong" color={result?.passed ? colors.successText : colors.textMuted}>
               {result ? (result.passed ? t("exam.passed") : t("exam.not_passed")) : t("exam.saved_offline")}
             </Text>
@@ -416,7 +416,7 @@ export function ExamScreen() {
                   {SECTION_DE[s.id]} · {t(SECTION_KEY[s.id])}
                   <Text variant="micro" color={colors.textMuted}> {t("exam.weight", { pct: `%${s.weight}` })}</Text>
                 </Text>
-                <Text variant="bodyStrong" color={s.pct >= 50 ? colors.successText : colors.dangerText}>%{s.pct}</Text>
+                <Text variant="bodyStrong" color={s.pct >= 50 ? colors.successText : colors.dangerText}>{formatPercent(s.pct)}</Text>
               </View>
               <View style={{ height: 6, borderRadius: 3, backgroundColor: colors.surface2, overflow: "hidden" }}>
                 <View style={{ height: "100%", width: `${s.pct}%`, backgroundColor: s.pct >= 50 ? colors.primary : colors.danger, borderRadius: 3 }} />
@@ -865,7 +865,7 @@ function Write({ w, level, colors, pad, onDone }: { w: WritingItem; level: strin
           <Text variant="caption" color={colors.textMuted} style={{ lineHeight: 19 }}>{gateNote}</Text>
         ) : score !== null ? (
           <>
-            <Text variant="bodyStrong" color={score >= 60 ? colors.successText : colors.dangerText}>%{score}</Text>
+            <Text variant="bodyStrong" color={score >= 60 ? colors.successText : colors.dangerText}>{formatPercent(score)}</Text>
             <PressableScale onPress={() => onDone(score >= 60, score)} style={{ backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: 14, alignItems: "center" }}>
               <Text variant="bodyStrong" color={colors.onPrimary}>{t("item.finish")}</Text>
             </PressableScale>
