@@ -286,7 +286,6 @@ export function ExamPlayer({ level, module }: { level: CefrLevel; module: number
       level: level as AssessLevel,
       task: { prompt: item.task.prompt, constraints: [...item.task.checklist, `en az ${item.task.minWords} kelime`] },
       answer: { text },
-      locale: "tr",
     };
     const ai = await askAssess(req);
     const out = ai.ok ? ai.result : fallbackAssessment(req, t);

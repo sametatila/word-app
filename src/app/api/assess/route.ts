@@ -162,7 +162,6 @@ function parseBody(body: unknown): { req: AssessRequest; day: string; tooLong: b
         transcript: list(answer.transcript),
       },
       exerciseId: text(b.exerciseId, 40) || undefined,
-      locale: "tr",
       // Hedef dil: istemci vermezse Almanca (tarihsel varsayılan). İngilizce
       // kütüphane egzersizleri (2026-09) "en" gönderir; tip zaten alanı
       // taşıyordu ama route hiç okumuyordu, yani İngilizce metin Almanca

@@ -296,7 +296,7 @@ async function assessOpen(userId: string, body: Record<string, unknown>) {
   const day = clampDay(typeof body.day === "string" ? body.day : undefined);
   // Değerlendirme kâğıdın dilinde yapılıyor: İngilizce bir yazma görevi
   // "Almanca öğretmeni" kimliğiyle okunursa rubrik olmayan yapıları arar.
-  const req = { ...assessTaskFor(task, text.slice(0, MAX_OPEN_CHARS)), level: paper.level as AssessLevel, exerciseId: taskId, locale: "tr" as const, lang: paper.course };
+  const req = { ...assessTaskFor(task, text.slice(0, MAX_OPEN_CHARS)), level: paper.level as AssessLevel, exerciseId: taskId, lang: paper.course };
   const outcome = await assess(userId, req, day, (r) => recordAiUsage(userId, { kind: "assess", ...r }));
 
   const scores = (row.openScores ?? {}) as Record<string, unknown>;

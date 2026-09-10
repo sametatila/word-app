@@ -181,7 +181,6 @@ export function MonologuePlayer({ exercise, backHref }: { exercise: SpeakingMono
       },
       answer: { text, transcript: [text] },
       exerciseId: exercise.id,
-      locale: "tr",
       lang,
     };
     const ai = await askAssess(req);

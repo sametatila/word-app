@@ -383,7 +383,6 @@ function FreeTask({
       },
       answer: { text: text.trim() },
       exerciseId,
-      locale: "tr",
       lang,
     };
   }
@@ -624,7 +623,6 @@ function SentenceTask({ task, level, onDone }: { task: SentenceTaskData; level: 
       level: level as AssessLevel,
       task: { prompt: task.prompt ?? `Bu kelimelerle bir cümle kur: ${task.words.map((w) => w.de).join(", ")}`, targets: task.words.map((w) => w.de) },
       answer: { text: typed },
-      locale: "tr",
       lang,
     };
     const ai = await askAssess(req);

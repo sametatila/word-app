@@ -72,7 +72,6 @@ export function FreeSentenceGame({ round, onDone }: GameProps<FreeRound>) {
         targets: targets.map((t) => t.de),
       },
       answer: { text: typed },
-      locale: "tr",
     };
     const ai = await askAssess(req, { signal: abort.current.signal });
     if (ai.ok) {

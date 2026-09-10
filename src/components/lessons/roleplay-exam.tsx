@@ -137,7 +137,6 @@ export function RoleplayExam({ lesson, cando }: { lesson: Lesson; cando: string[
       },
       answer: { text: said.join("\n"), transcript: said },
       exerciseId: `${lesson.id}:exam`,
-      locale: "tr",
     };
     const ai = await askAssess(req);
     if (ai.ok) setResult(ai.result);

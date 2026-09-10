@@ -1,3 +1,4 @@
+import { DEFAULT_NATIVE, type NativeLang } from "@/lib/courses";
 import { ERROR_TYPES, isErrorType, type ErrorType } from "@/lib/errors";
 
 /**
@@ -43,7 +44,16 @@ export type AssessRequest = {
   answer: AssessAnswer;
   /** Egzersiz kimliği — kayıt ve gelişim grafiği için. */
   exerciseId?: string;
-  locale?: "tr";
+  /**
+   * GERİ BİLDİRİMİN dili — öğrencinin ana dili, öğrendiği dil değil.
+   *
+   * Eskiden `locale?: "tr"` yazıyordu ve hiçbir yerde OKUNMUYORDU: istem
+   * Türkçe sabitti, yani anadili İngilizce ya da Almanca olan kullanıcı
+   * yazma/konuşma değerlendirmesini Türkçe alıyordu. Alan artık okunuyor
+   * ve `assess()` onu kullanıcının profilinden dolduruyor — istemci
+   * söylemiyor, sunucu biliyor.
+   */
+  native?: NativeLang;
   /**
    * Değerlendirilen ÜRETİMİN dili. Verilmezse Almanca — bugüne kadarki tek
    * hedef dil oydu ve mevcut çağıranların hiçbiri bu alanı yazmıyor.
@@ -137,10 +147,21 @@ const KIND_BRIEF: Record<AssessKind, string> = {
  * İstemdeki şema + toleranslı ayrıştırıcı (`parseAssessment`) hepsinde aynı
  * çalışıyor; geçersiz çıktı 502 ile dürüstçe geri çevriliyor.
  */
-export function assessSystemPrompt(kind: AssessKind, level: AssessLevel, lang: "de" | "en" = "de"): string {
+/** Geri bildirimin yazılacağı dilin adı — istemin kendi dili (Türkçe) içinde. */
+const FEEDBACK_LANG: Record<NativeLang, string> = { tr: "Türkçe", en: "İngilizce", de: "Almanca" };
+
+export function assessSystemPrompt(
+  kind: AssessKind,
+  level: AssessLevel,
+  lang: "de" | "en" = "de",
+  native: NativeLang = DEFAULT_NATIVE,
+): string {
   const dil = lang === "en" ? "İngilizce" : "Almanca";
+  const anadil = FEEDBACK_LANG[native];
   const beklenti = lang === "en" ? LEVEL_EXPECTATIONS_EN[level] : LEVEL_EXPECTATIONS[level];
-  return `Sen ${dil} öğrenen Türk öğrencilerin yazılı ve sözlü üretimini değerlendiren deneyimli bir ${dil} öğretmenisin. Öğrencinin seviyesi CEFR ${level}.
+  return `Sen ${dil} öğrenen öğrencilerin yazılı ve sözlü üretimini değerlendiren deneyimli bir ${dil} öğretmenisin. Öğrencinin seviyesi CEFR ${level} ve ana dili ${anadil}.
+
+GERİ BİLDİRİM DİLİ: ${anadil}. "why_tr", "praise_tr" ve "next_tip_tr" alanlarını YALNIZ ${anadil} yaz; alan adlarındaki "_tr" eki tarihseldir, dili belirtmez. Alıntıladığın ${dil} sözcük ve cümleler kendi dilinde kalır.
 
 ${KIND_BRIEF[kind]}
 
@@ -158,16 +179,16 @@ ${level} SEVİYESİNDEN BEKLENEN: ${beklenti}
 RUBRİK (her ölçüt 0–4):
 - task: görev karşılandı mı — DİLBİLGİSİNDEN BAĞIMSIZ: istenen içeriğin hepsi varsa hatalı yazılmış olsa da 4, biri eksikse 3, yarısı varsa 2, çok azı 1, konu dışı/boş 0. Hataları grammar ölçer, task ölçmez. Tersi de geçerli: konu dışı bir metinde task 0 olur ama grammar/vocab/structure metnin KENDİ kalitesine göre puanlanır (doğru yazılmış konu dışı metin: task 0, grammar 4). Konu dışı cümleleri errors listesine "meaning" diye yazma; bunu next_tip_tr'de söyle.
 - grammar: dilbilgisi doğruluğu seviyeye göre. 4 hatasız ya da seviyenin üstünde yapı denemesinde tek küçük hata, 3 anlamı bozmayan 1–2 hata, 2 birkaç hata ama anlaşılır, 1 sık hata, 0 anlaşılmaz.
-- vocab: kelime seçimi ve çeşitlilik. Yanlış kelime, Türkçeden birebir çeviri, seviyeye göre fakir dağarcık puan düşürür.
+- vocab: kelime seçimi ve çeşitlilik. Yanlış kelime, ana dilden (${anadil}) birebir çeviri, seviyeye göre fakir dağarcık puan düşürür.
 - structure: cümle kurma ve bağlama (cümle için: kelime sırası ve cümlenin bütünlüğü; metin için: akış, bağlaçlar, kayıt).
 
-HATA LİSTESİ: her gerçek hata için bir madde. "wrong" alanı öğrencinin metninden BİREBİR kopya (değiştirme, kısaltma), "fix" doğru biçim, "why_tr" Türkçe tek cümle gerekçe — kuralı söyle, sadece doğrusunu değil ("Dativ ister çünkü 'mit' her zaman Dativ alır"). type şu listeden: ${ERROR_TYPES.join(", ")}.
+HATA LİSTESİ: her gerçek hata için bir madde. "wrong" alanı öğrencinin metninden BİREBİR kopya (değiştirme, kısaltma), "fix" doğru biçim, "why_tr" ${anadil} tek cümle gerekçe — kuralı söyle, sadece doğrusunu değil ("Dativ ister çünkü 'mit' her zaman Dativ alır"). type şu listeden: ${ERROR_TYPES.join(", ")}.
 - article: yanlış/eksik artikel. plural: çoğul biçim. case: hâl (Dativ/Akkusativ/Genitiv) hatası. verb_position: çekimli fiilin yeri — ana cümlede ikinci sırada değilse VE yan cümlede (weil, dass, wenn…) sonda değilse. conjugation: fiil çekimi/zaman. spelling: yazım (büyük harf dâhil; konuşma dökümünde sayma). meaning: yanlış kelime/anlam. word_order: fiil dışı öğelerin sırası. pronunciation: yalnız konuşmada. listening: kullanma.
 - Doğru olanı hata yazma: bir hata yazmadan önce cümleyi baştan sona yeniden oku; doğru cümleye hata yazmak, hatayı kaçırmaktan daha kötüdür ("und man kann leicht einen Job finden" doğrudur; "Zweitens sind die Verkehrsmittel gut" doğrudur). Emin değilsen yazma. Üslup tercihini hata sayma (und/oder, deshalb/darum gibi eşdeğer seçimler, "daha doğal olurdu" düzeyindeki öneriler); gerekiyorsa next_tip_tr'de söyle.
 
 corrected: öğrencinin metninin düzeltilmiş hâli — anlamı ve yapısını koru, yeniden yazma. Hata yoksa metni olduğu gibi ver.
-praise_tr: Türkçe, tek cümle, somut: neyi iyi yaptı (kalıp, yapı, kelime). Boş övgü yok.
-next_tip_tr: Türkçe, tek cümle: bir sonraki denemede yapacağı EN önemli tek şey.
+praise_tr: ${anadil}, tek cümle, somut: neyi iyi yaptı (kalıp, yapı, kelime). Boş övgü yok.
+next_tip_tr: ${anadil}, tek cümle: bir sonraki denemede yapacağı EN önemli tek şey.
 
 ÇIKTI: yalnızca aşağıdaki JSON, başka hiçbir şey (açıklama, markdown, kod bloğu yok). JSON dizelerinin İÇİNDE çift tırnak (") KULLANMA — kelime alıntılarken „…“ ya da tek tırnak kullan: "why_tr":"„Tisch“ eril bir isimdir". Aksi hâlde çıktı okunamaz.
 {"score":{"task":0,"grammar":0,"vocab":0,"structure":0},"errors":[{"wrong":"","type":"","fix":"","why_tr":""}],"corrected":"","praise_tr":"","next_tip_tr":""}`;

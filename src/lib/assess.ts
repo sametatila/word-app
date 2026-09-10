@@ -1,5 +1,6 @@
 import "server-only";
 import { langOf } from "@/lib/social/notify";
+import { DEFAULT_NATIVE } from "@/lib/courses";
 import { translate } from "@/lib/i18n/dict";
 import { createHash } from "node:crypto";
 import { and, desc, eq, gte, isNotNull, isNull, sql } from "drizzle-orm";
@@ -58,6 +59,10 @@ export function assessHash(req: AssessRequest): string {
       // `undefined` JSON'dan düştüğü için Almanca isteklerin özeti DEĞİŞMİYOR,
       // yani mevcut önbellek geçerli kalıyor; yalnız İngilizce kendi anahtarını alıyor.
       g: req.lang,
+      // Geri bildirim dili de önbelleğin parçası: aynı cevabın Türkçe ve
+      // Almanca değerlendirmesi aynı satır değil. Türkçe `undefined` olarak
+      // düşüyor (aşağıdaki kural), yani bugüne kadarki önbellek geçerli kalıyor.
+      n: req.native === DEFAULT_NATIVE ? undefined : req.native,
     }),
   );
   return h.digest("hex").slice(0, 40);
@@ -73,7 +78,11 @@ export async function assess(
   if (!chatConfigured()) return { ok: false, reason: "not_configured" };
 
   const text = req.answer.text.trim().slice(0, ASSESS_MAX_CHARS);
-  const clean: AssessRequest = { ...req, answer: { ...req.answer, text } };
+  /* GERİ BİLDİRİM DİLİNİ SUNUCU BİLİYOR, istemci değil. Eskiden istekte
+     `locale: "tr"` sabiti vardı ve hiç okunmuyordu; anadili İngilizce ya da
+     Almanca olan kullanıcı yazma ve konuşma değerlendirmesini Türkçe
+     alıyordu. Profil tek doğruluk kaynağı. */
+  const clean: AssessRequest = { ...req, native: await langOf(userId), answer: { ...req.answer, text } };
   const hash = assessHash(clean);
 
   // Önbellek: aynı kullanıcının aynı cevabı — "bir daha dene"de değişmemiş
@@ -111,7 +120,7 @@ export async function assess(
   let raw: string;
   try {
     raw = await completeChat(
-      assessSystemPrompt(clean.kind, clean.level, clean.lang),
+      assessSystemPrompt(clean.kind, clean.level, clean.lang, clean.native),
       [{ role: "user", content: assessUserMessage(clean) }],
       ASSESS_MAX_TOKENS,
       reportAndRemember,
@@ -209,11 +218,14 @@ export async function runAssessQueue(limit = 20): Promise<{ pending: number; don
       task: { prompt: "Serbest yazma görevi (gecikmeli değerlendirme: görev metni yok, metni kendi başına değerlendir)." },
       answer: { text: row.answer },
       exerciseId: row.exerciseId ?? undefined,
-      locale: "tr",
+      /* Geri bildirim öğrencinin dilinde. Kuyrukta dil saklanmıyor; kaydın
+         sahibinden okunuyor. Kullanıcı bu arada dilini değiştirdiyse yeni
+         dilinde geliyor — kart o dilde açılacağı için doğrusu da bu. */
+      native: await langOf(row.userId),
     };
     let provider: string | null = null;
     try {
-      const raw = await completeChat(assessSystemPrompt(req.kind, req.level, req.lang), [{ role: "user", content: assessUserMessage(req) }], ASSESS_MAX_TOKENS, (r) => {
+      const raw = await completeChat(assessSystemPrompt(req.kind, req.level, req.lang, req.native), [{ role: "user", content: assessUserMessage(req) }], ASSESS_MAX_TOKENS, (r) => {
         if (r.ok) provider = `${r.provider}/${r.model}`;
       });
       const result = parseAssessment(raw, row.answer, req.kind);
