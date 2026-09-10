@@ -4854,3 +4854,28 @@ anahtarlara geçti.
 "Daha fazla" düğmesi ayrıca **ne açtığını söylemiyordu**; açılan şey engelleme
 ve şikayet. Android iki durumu da adıyla yazıyor ("Engelle / Şikayet et" ↔
 "Gizle"), web de artık öyle.
+
+### 11.113 Akışta iki olay türü karosuz kalıyordu
+
+`friend_streak` ve `league_up` `ACTIVITY_TYPES` listesinde var ama **iki
+tarafta da** `eventTile`ın `default` dalına düşüyordu. Karonun tek işi "ne
+kutlanıyor" sorusunu bir bakışta cevaplamak — ve tam da bu iki olayda
+yapmıyordu, ikisi de genel bir kıvılcımla çiziliyordu.
+
+İkisine de kendi karosu verildi (ortak seri kalp, lig yükselişi taç).
+**Parity 54** iki tarafı hem birbirine hem **paylaşılan listeye** bağlıyor:
+§11.111'in dersi burada da geçerli — `default` dalı varken yeni bir tür
+sessizce yanlış çiziliyor ve hiçbir kapı görmüyor.
+
+### 11.114 Tepki satırında boş ad: tip aynı görünüyordu, değildi
+
+Sunucu adsız kullanıcıyı `null` gönderiyor (`social/reactions`) ve web yedek
+metni arayüz dilinde yazıyor. Mobil tipi `names: string[]` diyordu: `join`
+boşluk basıyor ve tepki satırı **"Ali, , ve 2 kişi"** çıkıyordu.
+
+Bulgunun asıl değeri kapıda: §26 sosyal tiplerin **alan adlarını** eşliyor,
+tiplerini değil — ad kümesi aynı olduğu için bu ayrışma görünmüyordu.
+**Parity 55** artık *null alınabilirliği* ölçüyor. Tam tip eşliği bilerek
+ölçülmüyor: mobil kendi kısayollarını kullanıyor ve o karşılaştırma gürültü
+üretip gerçek bulguyu gizlerdi (§11.104, §11.109) — ama "bu alan boş
+gelebilir mi" sorusu iki tarafta aynı cevabı vermek zorunda.
