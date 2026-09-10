@@ -57,6 +57,23 @@ export function LinkedAccounts({ googleEnabled }: { googleEnabled: boolean }) {
     return () => { alive = false; };
   }, []);
 
+  /*
+   * BAĞLANDI DENİYOR. Kaldırma zaten bir ileti gösteriyordu ama bağlama
+   * göstermiyordu: kullanıcı sağlayıcıya gidip geri dönüyor ve karşısında
+   * sessiz bir sayfa buluyordu — satırın durumunun değiştiğini fark etmesi
+   * gerekiyordu. Android iki işlemi de sözle onaylıyor.
+   *
+   * İz adresten hemen siliniyor; sayfa tazelenince eski bir onay yeniden
+   * çıkmasın.
+   */
+  useEffect(() => {
+    const url = new URL(window.location.href);
+    if (!url.searchParams.get("linked")) return;
+    setMsg(t("links.linked"));
+    url.searchParams.delete("linked");
+    window.history.replaceState(null, "", url.pathname + url.search + url.hash);
+  }, [t]);
+
   async function bagla(provider: string) {
     setBusy(provider);
     setMsg(null);
@@ -64,7 +81,9 @@ export function LinkedAccounts({ googleEnabled }: { googleEnabled: boolean }) {
       const res = await fetch("/api/auth/link-social", {
         method: "POST",
         headers: { "content-type": "application/json" },
-        body: JSON.stringify({ provider, callbackURL: "/profile/settings" }),
+        // Dönüş adresine BİR İZ bırakılıyor: sağlayıcıdan dönen kullanıcıya
+        // bağlantının kurulduğu söylenebilsin diye (aşağıdaki effect).
+        body: JSON.stringify({ provider, callbackURL: `/profile/settings?linked=${provider}#social` }),
       });
       const data = (await res.json().catch(() => null)) as { url?: string } | null;
       // Sağlayıcıya YÖNLENDİRME: better-auth izin ekranının adresini döndürüyor,
