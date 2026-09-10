@@ -39,5 +39,6 @@
  { "lesson": "de-c1-sprachwandel", "de": "Wandel ist kein Verfall.", "en": "change is not decline" },
  { "lesson": "de-c1-sprachwandel", "de": "Die Norm folgt dem Gebrauch.", "en": "the norm follows usage" },
  { "lesson": "de-c1-finale", "de": "Der Gipfel ist erreicht, aber der Weg geht weiter.", "en": "a closing metaphor" },
- { "lesson": "de-c1-finale", "de": "Diese Sprache ist ein Zuhause.", "en": "language as a home" }
+ { "lesson": "de-c1-finale", "de": "Diese Sprache ist ein Zuhause.", "en": "language as a home" },
+ { "lesson": "de-a1-sprachen", "de": "Nein, aber ich lerne Deutsch.", "en": "says you do not speak it yet but are learning" }
 ]

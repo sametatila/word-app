@@ -309,7 +309,21 @@ export function resolveLesson(dict: NativeDict, lesson: Lesson): Lesson | null {
     script = turns;
   }
 
-  return {
+  /* SÖZLÜKÇE VE KALIP DA HEP-YA-HİÇ. Eskiden ikisi de `?? v.tr` ile sessizce
+     Türkçesine düşüyordu ve bu bir kez gerçekten oldu: biçimlendirici bir
+     kalıp maddesini üç satıra açıp sonuna virgül koyunca çıkarıcı onu
+     görmedi, sözlüğe hiç girmedi, HİÇBİR kapı fark etmedi ve ders
+     İngilizce açılıp altında Türkçe bir kullanım notu taşıdı. Eksik anahtar
+     artık dersi düşürüyor — çevrilmemiş bir ders, yarım çevrilmişten
+     iyidir. (Çıkarıcı da düzeltildi: `data/lessons/vocab/extract.mjs`.) */
+  let miss = false;
+  const look = (table: Record<string, string>, key: string, fallback: string): string => {
+    const en = table[key];
+    if (en === undefined) miss = true;
+    return en ?? fallback;
+  };
+
+  const out = {
     ...lesson,
     titleTr: meta.title,
     summary: meta.summary,
@@ -318,9 +332,12 @@ export function resolveLesson(dict: NativeDict, lesson: Lesson): Lesson | null {
     vocab: lesson.vocab.map((v) => ({
       ...v,
       de: sw(v.de),
-      tr: swapEn(dict, lesson.id, dict.vocab[lesson.id + SEP + v.de] ?? v.tr),
+      tr: swapEn(dict, lesson.id, look(dict.vocab, lesson.id + SEP + v.de, v.tr)),
     })),
-    patterns: lesson.patterns.map((p) => ({ ...p, tr: dict.patterns[lesson.id + SEP + p.de] ?? p.tr })),
+    patterns: lesson.patterns.map((p) => ({
+      ...p,
+      tr: look(dict.patterns, lesson.id + SEP + p.de, p.tr),
+    })),
     roleplay: {
       ...lesson.roleplay,
       ...(rp ?? {}),
@@ -333,6 +350,7 @@ export function resolveLesson(dict: NativeDict, lesson: Lesson): Lesson | null {
     },
     lecture,
   };
+  return miss ? null : out;
 }
 
 /**

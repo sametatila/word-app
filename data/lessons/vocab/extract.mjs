@@ -32,7 +32,14 @@ export function extractVocab(block = "vocab") {
         lesson = m[1];
         continue;
       }
-      for (const v of m[2].matchAll(/\{\s*de:\s*"([^"]+)",\s*tr:\s*"([^"]*)"\s*\}/g))
+      /* SONDAKİ VİRGÜL. Uzun bir madde satıra sığmayınca biçimlendirici onu
+         üç satıra açıyor ve `tr` değerinin ardına virgül koyuyor:
+         `{\n  de: "…",\n  tr: "…",\n}`. Virgülü beklemeyen desen o maddeyi
+         GÖRMÜYORDU — ne paketlenir, ne çevrilir, ne de kapı fark eder;
+         `resolveLesson` sessizce Türkçesine düşerdi. Bir kalıp tam olarak
+         böyle kayboldu (de-a1-sprachen, "Nein, aber ich lerne Deutsch.").
+         Ölçüldü: 4.640 sözlükçe maddesi değişmiyor, kalıp 1.291 → 1.292. */
+      for (const v of m[2].matchAll(/\{\s*de:\s*"([^"]+)",\s*tr:\s*"([^"]*)"\s*,?\s*\}/g))
         rows.push({ lesson, file: f, de: v[1], tr: v[2] });
     }
   }
