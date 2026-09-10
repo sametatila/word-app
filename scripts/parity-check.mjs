@@ -913,7 +913,10 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     "unlock", //  rozet / gorev acildi
     "danger", //  sure azaldi
   ]);
-  const web = [...read("src/lib/sfx.ts").matchAll(/^\s*\|\s*"(\w+)"$/gm)].map((m) => m[1]);
+  /* Sondaki `;` ISTEGE BAGLI: birlesimin SON uyesi `| "danger";` biciminde ve
+     onu atlayan ilk surum on ucun on ikisini karsilastiriyordu - enjeksiyon
+     denemesi bu yuzden yakalanmadi, kapi yanlis sebeple geciyordu. */
+  const web = [...read("src/lib/sfx.ts").matchAll(/^\s*\|\s*"(\w+)";?$/gm)].map((m) => m[1]);
   const mob = [...(/export type SfxKind =([^;]+);/.exec(read("mobile/src/lib/sfxNotes.ts"))?.[1] ?? "").matchAll(/"(\w+)"/g)].map((m) => m[1]);
   const eksik = web.filter((c) => !mob.includes(c) && !ALLOW.has(c));
   const fazla = mob.filter((c) => !web.includes(c));
