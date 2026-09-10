@@ -6,7 +6,7 @@ import { Avatar } from "@/components/avatar";
 import { FlagIcon, FlameIcon, PodiumIcon, TrophyIcon } from "@/components/icons";
 import { ReportDialog } from "@/components/report-dialog";
 import { EmptyCard } from "@/components/empty-card";
-import { RowSkeleton } from "@/components/skeleton";
+import { RowSkeleton, SkeletonCard, SkeletonLine, SkeletonPill } from "@/components/skeleton";
 import { social, tierKey, type LeagueRowView, type LeagueView } from "@/lib/social/client";
 import { useT, useLang } from "@/lib/i18n/client";
 import { formatNumber } from "@/lib/i18n/dict";
@@ -66,7 +66,25 @@ export function LeagueBoard() {
         text={t("social.err_offline")}
       />
     );
-  if (!view) return <RowSkeleton rows={6} height={48} />;
+  /* İSKELET GERÇEK DÜZENİN ÖLÇÜSÜNDE. Eskiden altı düz blok çiziliyordu ve
+     tablo başlığının (lig adı + kalan gün) yeri hiç ayrılmıyordu: veri gelince
+     liste aşağı kayıyordu. Mobil `LeagueBoard` da başlık satırını ayrı ayırıp
+     satırları gerçek yükseklikte çiziyor. */
+  if (!view)
+    return (
+      <div className="flex flex-col gap-3">
+        <SkeletonCard>
+          <div className="flex items-center justify-between gap-3">
+            <div className="min-w-0 flex-1">
+              <SkeletonLine variant="bodyStrong" width={140} />
+              <SkeletonLine variant="caption" width="70%" className="mt-1" />
+            </div>
+            <SkeletonPill width={68} height={20} />
+          </div>
+        </SkeletonCard>
+        <RowSkeleton rows={6} height={52} />
+      </div>
+    );
 
   return (
     <div className="flex flex-col gap-3">

@@ -5,7 +5,7 @@ import { EmptyCard } from "@/components/empty-card";
 import { InboxIcon } from "@/components/icons";
 import { useEffect, useState } from "react";
 import { Avatar } from "@/components/avatar";
-import { RowSkeleton } from "@/components/skeleton";
+import { SkeletonLine, SkeletonTile } from "@/components/skeleton";
 import { errorText, notificationText, social, timeAgo, type NotificationView } from "@/lib/social/client";
 import { ReactionGlyph } from "./reaction-icons";
 import type { ReactionKind } from "@/lib/social/types";
@@ -63,7 +63,23 @@ export function Inbox() {
     void load(null);
   }, []);
 
-  if (items === null) return <RowSkeleton rows={5} height={60} />;
+  /* İskelet satırın GERÇEK yapısında: yuvarlak avatar, altında iki metin
+     satırı. Düz altmış piksellik bloklar veri gelince yerinden oynuyordu.
+     Mobil `InboxScreen` de aynı parçaları kullanıyor. */
+  if (items === null)
+    return (
+      <ol aria-hidden className="card divide-y divide-[color:var(--border)] overflow-hidden">
+        {Array.from({ length: 5 }).map((_, i) => (
+          <li key={i} className="flex items-center gap-3 px-4 py-3" style={{ opacity: 1 - i * 0.12 }}>
+            <SkeletonTile size={36} className="rounded-full" />
+            <span className="min-w-0 flex-1">
+              <SkeletonLine variant="body" width={`${72 - i * 6}%`} />
+              <SkeletonLine variant="micro" width={64} className="mt-1" />
+            </span>
+          </li>
+        ))}
+      </ol>
+    );
   if (!items.length) {
     return (
       <>
