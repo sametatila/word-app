@@ -1273,3 +1273,47 @@ alternatif ölü veri ve düzeltme yeri istemci değil:
      söyle" demek, paraphrase kabul etmek egzersizin kendisini bozar.
 
 Karar Samet'in; ölçüm 1'i işaret ediyor.
+
+### 11.19 Cümle hakemi ve cevap yükü: web ileride, Android geride
+
+Bu ölçüm §11.18(f) için mobil karşılığı ararken çıktı ve yön TERS: burada web
+ileride. Ölçülenler:
+
+**a) Çevir turunun hükmü.** Web `lib/sentence-match` üç katmanlı bir hakem:
+katlama, en uzun ortak alt dizi ile kelime hizalama, sonra karar. Sonuç
+`exact | spelling | order | wrong` ve SRS kalitesi 5 / 4 / 3 / 1, artı kelime
+kelime işaret (`missing`, `extra`, `moved`, `typo`) — ekranda fark vurgusu
+buradan çıkıyor. Mobil `game/rounds` `TranslateRound` ise İKİLİ:
+`foldCompare(val) === foldCompare(s.de)` ya da alternatiflerden biri; başka
+hiçbir şey yok.
+
+Sonucu iki yerde görünüyor: (1) bir harf yazım hatası Androidde tam yanlış
+sayılıyor ve kelime lapse ediyor, webde kalite 4 alıyor ve kelime düşmüyor;
+(2) sıra hatası Androidde "yanlış", webde kalite 3 ve "kelimeler doğru, cümle
+kurulamamış" mesajı.
+
+**b) Cevap yükü.** Mobil `game/session` `AnswerOut` şu alanları taşıyor:
+`wordId, game, correct, latencyMs, quality?, detail?`. `quality` TANIMLI ama
+mobilde HİÇBİR YERDE atanmıyor (ölçüldü: tek geçtiği yer tip tanımı).
+`errorType` ise hiç yok — web `Answer` tipinde var, uç
+(`/api/answers`, `/api/exam`) doğruluyor ve `lib/error-analytics` onu
+kullanıyor. Yani yalnız Androidde çalışan bir kullanıcının hata tipi dökümü
+BOŞ ve SRS'i yalnız doğru/yanlış görüyor.
+
+PORT EDİLMEDİ, çünkü üç ayrı katman gerekiyor ve sırası önemli:
+  1. Saf hakemin portu: `lib/sentence-match` mobilin bağımlılıklarına uygun
+     (`levenshtein` mobilde `game/skillQuiz` içinde yerel bir kopya olarak
+     var, `classifyOrder` hiç yok). Kapıya bağlanabilir - modül saf.
+  2. `AnswerOut`a `errorType` eklenmesi ve `quality`nin gerçekten atanması;
+     bu, tur bileşenlerinin `onDone(ok: boolean)` sözleşmesini değiştiriyor
+     (`markAnswer`/`onDone` yalnız boolean taşıyor).
+  3. Fark vurgusu arayüzü (webde `TokenDiff`).
+
+1 ve 2 olmadan 3 anlamsız; 2 olmadan 1 yalnız ekranı düzeltir, SRS'i
+düzeltmez. Sıra bu yüzden 1 → 2 → 3 ve her biri kendi turunu istiyor.
+
+Yan bulgu, web tarafında DÜZELTİLDİ: katlama sayı sözcüklerini rakama
+indirdiği için "at six o'clock" ile "at 5 o'clock" arasındaki fark tek
+karakter ("6" ↔ "5") oluyordu ve hakem bunu YAZIM HATASI sayıp kalite 4
+veriyordu - yanlış saat yazan öğrenci neredeyse doğru sayılıyordu. Rakam ile
+rakam arasındaki fark artık hiçbir zaman yazım hatası değil.

@@ -1,5 +1,6 @@
 import { classifyOrder, levenshtein, type ErrorType } from "@/lib/errors";
 import { foldNumbers } from "@/lib/numbers";
+import type { TargetLang } from "@/lib/courses";
 
 /**
  * Cümle eşleştirme — "Çevir" turunun hakemi (plan WP-10).
@@ -40,31 +41,45 @@ export type SentenceMatch = {
   matched: string;
 };
 
-/** Katlama: karşılaştırma için; ekranda hep orijinal metin gösterilir. */
-export function foldSentence(s: string): string {
+/**
+ * Katlama: karşılaştırma için; ekranda hep orijinal metin gösterilir.
+ *
+ * DİLE BAKIYOR. Küçültme `de-DE` ve umlaut katlaması SABİTTİ: İngilizce
+ * kursta "five" sayı olarak katlanmıyordu ("um fünf Uhr" ↔ "um 5 Uhr" çalışıp
+ * "at five o'clock" ↔ "at 5 o'clock" çalışmıyordu) ve küçültme yanlış yerel
+ * ile yapılıyordu. Mobil `lib/textFold` `foldCase` karşılığı.
+ */
+export function foldSentence(s: string, lang: TargetLang = "de"): string {
   // Sayı sözcükleri rakama: tanıyıcı/yazan "fünf"ü "5" verebiliyor, hedef
   // "fünf". Cümlede "um fünf Uhr" ↔ "um 5 Uhr" eşleşsin.
-  /* Dil AÇIKÇA "de": bu iki katlama hâlâ Almancaya sabit (küçültme de-DE,
-     umlaut katlaması) ve dile bağlanması ayrı bir iş - bkz. web-parity §11.18/f.
-     Sayı tarafını sessizce İngilizceye açmak asimetri üretirdi. */
-  return foldNumbers(s.toLocaleLowerCase("de-DE"), "de")
-    .replace(/ß/g, "ss")
-    .replace(/ä/g, "ae")
-    .replace(/ö/g, "oe")
-    .replace(/ü/g, "ue")
+  const lower = foldNumbers(s.toLocaleLowerCase(lang === "de" ? "de-DE" : "en-US"), lang);
+  const folded =
+    lang === "de"
+      ? lower.replace(/ß/g, "ss").replace(/ä/g, "ae").replace(/ö/g, "oe").replace(/ü/g, "ue")
+      : lower;
+  return folded
     .replace(/[.,!?;:„“”"'’()–—-]/g, " ")
     .replace(/\s+/g, " ")
     .trim();
 }
 
 const tokens = (s: string) => s.split(/\s+/).filter(Boolean);
-const foldTokens = (s: string) => tokens(foldSentence(s));
+const foldTokens = (s: string, lang: TargetLang) => tokens(foldSentence(s, lang));
 /** Orijinal kelimeler, noktalama atılmış — ekranda işaretlenecek parçalar. */
 const showTokens = (s: string) => tokens(s.replace(/[.,!?;:„“”"()]/g, " "));
 
-/** Yazım hatası toleransı: kelime uzunluğuna göre 1–2 harf. */
+/**
+ * Yazım hatası toleransı: kelime uzunluğuna göre 1–2 harf.
+ *
+ * SAYILAR MUAF. Katlama sayı sözcüklerini rakama indiriyor, dolayısıyla
+ * "at six o'clock" ile "at 5 o'clock" tek karakterlik bir fark ("6" ↔ "5")
+ * hâline geliyordu ve yazım hatası sayılıyordu: öğrenci yanlış saati yazıp
+ * kalite 4 (yazım) alıyordu, oysa yanlış olan şey cümlenin BİLGİSİ. Rakam
+ * ile rakam arasındaki fark hiçbir zaman yazım hatası değildir.
+ */
 function nearlySame(a: string, b: string): boolean {
   if (a === b) return false;
+  if (/^\d+(st|nd|rd|th)?$/.test(a) || /^\d+(st|nd|rd|th)?$/.test(b)) return false;
   const tol = Math.max(a.length, b.length) >= 6 ? 2 : 1;
   return levenshtein(a, b) <= tol;
 }
@@ -91,9 +106,9 @@ function lcs(a: string[], b: string[]): [number, number][] {
   return pairs;
 }
 
-function compare(typedRaw: string, targetRaw: string) {
-  const t = foldTokens(targetRaw);
-  const u = foldTokens(typedRaw);
+function compare(typedRaw: string, targetRaw: string, lang: TargetLang) {
+  const t = foldTokens(targetRaw, lang);
+  const u = foldTokens(typedRaw, lang);
   const targetMarks: TokenMark[] = new Array(t.length).fill("missing");
   const typedMarks: TokenMark[] = new Array(u.length).fill("extra");
   for (const [i, j] of lcs(t, u)) {
@@ -140,12 +155,12 @@ function compare(typedRaw: string, targetRaw: string) {
  * aynı, eksik/fazla/yazım yok, sıra farklı) → yanlış. Karma durumlar (hem
  * sıra hem yazım) sıraya sayılır: kelimeler bilinmiş, cümle kurulamamış.
  */
-export function matchSentence(typed: string, target: string, alternatives: string[] = []): SentenceMatch {
+export function matchSentence(typed: string, target: string, alternatives: string[] = [], lang: TargetLang = "de"): SentenceMatch {
   const candidates = [target, ...alternatives.filter((a) => a && a.trim())];
   const typedShown = showTokens(typed);
   let best: { cand: string; c: ReturnType<typeof compare> } | null = null;
   for (const cand of candidates) {
-    const c = compare(typed, cand);
+    const c = compare(typed, cand, lang);
     if (!best || c.score > best.c.score) best = { cand, c };
   }
   const { cand, c } = best!;

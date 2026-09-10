@@ -18,6 +18,7 @@
  */
 
 import { foldNumbers } from "@/lib/numbers";
+import type { TargetLang } from "@/lib/courses";
 
 /** Öğrencinin bu görevde yapması beklenen, önceden tanımlı sapma. */
 export type SpeechConfusion = {
@@ -70,14 +71,11 @@ const PUNCTUATION = /[.,!?;:„“”"'`´()[\]…]/g;
  * toleransı için ö'yü o'ya indirger; burada aynısını yapmak turun ölçtüğü tek
  * şeyi yok ederdi — schön ile schon arasındaki fark bu turun konusu.
  */
-export function normalizeSpoken(text: string): string {
+export function normalizeSpoken(text: string, lang: TargetLang = "de"): string {
   // Sayı sözcükleri rakama: tanıyıcı "fünf"ü "5" yazıyor, içerik "fünf".
   // Umlaut BİLEREK korunuyor (schön/schon farkı bu turun konusu), o yüzden
   // foldNumbers'ın umlaut'lu biçimleri (fünf) de tanıması gerekiyor — tanıyor.
-  /* Dil AÇIKÇA "de": bu iki katlama hâlâ Almancaya sabit (küçültme de-DE,
-     umlaut katlaması) ve dile bağlanması ayrı bir iş - bkz. web-parity §11.18/f.
-     Sayı tarafını sessizce İngilizceye açmak asimetri üretirdi. */
-  return foldNumbers(text.toLocaleLowerCase("de-DE"), "de")
+  return foldNumbers(text.toLocaleLowerCase(lang === "de" ? "de-DE" : "en-US"), lang)
     .replace(PUNCTUATION, " ")
     .replace(/\s+/g, " ")
     .trim();
@@ -131,7 +129,7 @@ export function judgeSpeech(
   confusions: SpeechConfusion[] = [],
   confidences: number[] = [],
 ): SpeechVerdict {
-  const heardList = alternatives.map(normalizeSpoken).filter(Boolean);
+  const heardList = alternatives.map((a) => normalizeSpoken(a)).filter(Boolean);
   if (!heardList.length) return { kind: "unheard" };
 
   const goal = normalizeSpoken(target);
@@ -162,7 +160,7 @@ export function judgeSpeech(
     for (const heard of heardList) {
       const heardWords = new Set(wordsOf(heard));
       const hit = confusion.heard
-        .map(normalizeSpoken)
+        .map((x) => normalizeSpoken(x))
         .some((variant) => variant && (heard === variant || heardWords.has(variant)));
       if (!hit) continue;
       // Doğru biçim de duyulmuşsa bu bir hata değil, tanıyıcının fazladan

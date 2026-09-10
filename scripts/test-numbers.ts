@@ -8,7 +8,7 @@
 import assert from "node:assert/strict";
 import { foldNumbers, wordToNumber } from "../src/lib/numbers";
 import { foldSpelling, foldTight, spokenMatches, expandPunctuationWords, matchesAnswer } from "../src/components/games/types";
-import { matchSentence } from "../src/lib/sentence-match";
+import { matchSentence, foldSentence } from "../src/lib/sentence-match";
 import { normalizeSpoken } from "../src/lib/speech";
 
 // Tek sözcük → sayı
@@ -167,5 +167,24 @@ assert.equal(foldNumbers("five", "tr"), "five");
 // Eşleştirmede: hedef sözcük, söylenen rakam.
 assert.ok(spokenMatches(["42"], ["forty-two"], "en"), "forty-two ↔ 42");
 assert.ok(spokenMatches(["two hundred"], ["200"], "en"), "two hundred ↔ 200");
+
+/*
+ * CÜMLE VE KONUŞMA KATLAMASI DA DİLE BAKIYOR (§11.18/f).
+ *
+ * `foldSentence` ve `normalizeSpoken` küçültmeyi `de-DE` ile yapıyor ve umlaut
+ * katlıyordu; sayı tarafı da bu yüzden İngilizcede çalışmıyordu. Umlaut
+ * katlaması İngilizcede YAPILMAMALI - "naive" ile "naïve" ayrı sözcük değil
+ * ama katlama İngilizce metinde hiçbir işe yaramıyor ve sırayı bozuyor.
+ */
+assert.equal(foldSentence("At five o'clock", "en"), "at 5 o clock", "İngilizce sayı sözcüğü katlanır");
+assert.equal(foldSentence("um fünf Uhr", "de"), "um 5 uhr", "Almanca eskisi gibi");
+assert.equal(foldSentence("Grüße", "de"), "gruesse", "Almanca umlaut katlanır");
+assert.equal(matchSentence("At five o'clock", "At 5 o'clock", [], "en").verdict, "exact", "sayı biçimi farkı tam doğru");
+// Rakam farkı yazım hatası DEĞİL: katlama sayıyı rakama indiriyor ve "6" ↔ "5"
+// tek karakterlik fark oluyordu, yanlış saat kalite 4 (yazım) alıyordu.
+assert.equal(matchSentence("At six o'clock", "At 5 o'clock", [], "en").verdict, "wrong", "yanlış sayı yazım hatası değil");
+assert.equal(matchSentence("um sechs Uhr", "um 5 Uhr", [], "de").verdict, "wrong", "Almancada da");
+assert.equal(matchSentence("Ich gehe ins Kinno", "Ich gehe ins Kino", [], "de").verdict, "spelling", "harf hatası yazım kalır");
+assert.equal(normalizeSpoken("at five o'clock", "en"), normalizeSpoken("at 5 o'clock", "en"));
 
 console.log("test:numbers — sözcük/rakam/bileşik/artikel/cümle/kelime/telaffuz/noktalama: tamam");

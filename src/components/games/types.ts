@@ -1,5 +1,5 @@
 import type { Round, RoundWord } from "@/lib/types";
-import { courseName, courseOrDefault } from "@/lib/courses";
+import { courseName, courseOrDefault, type TargetLang } from "@/lib/courses";
 import { COURSE_KEY, readLocal } from "@/components/speak-button";
 import { glossFor, type GlossWord } from "@/lib/option-label";
 import type { ErrorType } from "@/lib/errors";
@@ -159,8 +159,6 @@ export function foldTight(s: string, lang: TargetLang = currentTargetLang()): st
  * Artikel her iki tarafta da isteğe bağlıdır: kelime "Tür" diye saklanıp
  * artikeli ayrı sütunda dursa bile "die Tür" yazan haklıdır.
  */
-type TargetLang = "de" | "en";
-
 /**
  * Geçerli kursun hedef dili — mobil `lib/courses` `currentTargetLang()`
  * karşılığı. Eşleştirme işlevleri bunu VARSAYILAN olarak alıyor, yani her

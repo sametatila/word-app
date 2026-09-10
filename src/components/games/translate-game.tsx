@@ -14,6 +14,7 @@ import { whyFor, type Why } from "@/lib/why";
 import { TokenDiff, TypedTokens } from "@/components/feedback/diff-text";
 import { useT, useLang } from "@/lib/i18n/client";
 import { useCourse } from "@/components/app-shell";
+import { targetLangOf } from "@/lib/courses";
 
 type TranslateRound = Extract<Round, { game: "translate" }>;
 type Status = "idle" | "checking" | "correct" | "wrong";
@@ -81,7 +82,7 @@ export function TranslateGame({ round, onDone }: GameProps<TranslateRound>) {
     const typed = value.trim();
     if (!typed) return;
     const latencyMs = Date.now() - started.current;
-    let m = matchSentence(typed, sentence.de, alternatives);
+    let m = matchSentence(typed, sentence.de, alternatives, targetLangOf(course));
     let accepted = m.quality >= 3 && m.verdict !== "order";
     let quality: number = m.quality;
 

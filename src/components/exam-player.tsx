@@ -17,6 +17,7 @@ import type { ExamPaper, ExamResult, ExamSectionId, ProduceExamItem, TextItem } 
 import { SECTION_ORDER, SECTION_TITLE_KEYS, SECTION_TITLE_DE } from "@/lib/exam-types";
 import { useT } from "@/lib/i18n/client";
 import { useCourse } from "@/components/app-shell";
+import { targetLangOf } from "@/lib/courses";
 import { matchSentence } from "@/lib/sentence-match";
 import type { Round } from "@/lib/types";
 import type { CefrLevel } from "@/lib/skills/types";
@@ -250,7 +251,7 @@ export function ExamPlayer({ level, module }: { level: CefrLevel; module: number
     const item = paper!.sections.produce[idx];
     const answer = item.mode === "order" ? chunks.map((i) => item.chunks![i]).join(" ") : typed.trim();
     if (!answer) return;
-    const m = matchSentence(answer, item.de, item.accept);
+    const m = matchSentence(answer, item.de, item.accept, targetLangOf(course));
     // Sınavda sıra hatası doğru sayılmaz: ölçülen şey tam olarak sıra.
     const correct = m.verdict === "exact" || m.verdict === "spelling";
     if (correct) score.current.produce.correct++;
@@ -1006,7 +1007,7 @@ function Result({
                   ) : null}
                   {m.section === "produce" && m.given ? (
                     <p className="mt-1 text-xs">
-                      <TokenDiff tokens={matchSentence(m.given, m.answer).target} />
+                      <TokenDiff tokens={matchSentence(m.given, m.answer, [], targetLangOf(course)).target} />
                     </p>
                   ) : null}
                   {m.why ? <p className="muted mt-1 text-xs">{m.why}</p> : null}

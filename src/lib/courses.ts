@@ -14,6 +14,9 @@
 
 export type CourseId = "de" | "gsw-zh" | "en";
 
+/** Kursun ÖĞRETTİĞİ dil — karşılaştırma katlamaları buna bakıyor. */
+export type TargetLang = "de" | "en";
+
 /**
  * Kullanıcının anadili — arayüz ve anlatım dili. Kurs (hedef dil) ile birlikte
  * pariteyi kurar. Mobildeki NativeLang ile aynı küme.
@@ -287,5 +290,10 @@ export function acceptsNativeLang(value: string): boolean {
  * "sınav yok" demek; varsayılan kursun kâğıtlarını göstermek daha az kırık.
  */
 export function mockCourseOf(id: string | null | undefined): "de" | "en" {
+  return courseOrDefault(id).targetLang;
+}
+
+/** Kursun hedef dili — mobil `lib/courses` `currentTargetLang()` karşılığı. */
+export function targetLangOf(id: string | null | undefined): TargetLang {
   return courseOrDefault(id).targetLang;
 }

@@ -1,6 +1,7 @@
 import { matchReply, usedTargets, type DialogueReply, type DialogueTurn } from "@/lib/dialogue";
 import { normalizeSpoken } from "@/lib/speech";
 import { SUGGESTION_MARK } from "@/lib/chat-format";
+import { targetLangOf, type TargetLang } from "@/lib/courses";
 import type { Lesson } from "./types";
 
 /**
@@ -82,11 +83,11 @@ export function offlineStart(lesson: Lesson): { state: OfflineState; opening: st
  * kelimeler ("komme"). Dört harften uzun kökler varsa hepsi aranır; yoksa
  * ("Und dir?") kısa kelimelerin tamamı tam kelime olarak aranır.
  */
-export function patternUsed(pattern: string, said: string): boolean {
-  const haystack = normalizeSpoken(said);
+export function patternUsed(pattern: string, said: string, lang: TargetLang = "de"): boolean {
+  const haystack = normalizeSpoken(said, lang);
   if (!haystack) return false;
   const words = haystack.split(" ");
-  const stems = normalizeSpoken(pattern.replace(/…|\.\.\./g, " "))
+  const stems = normalizeSpoken(pattern.replace(/…|\.\.\./g, " "), lang)
     .split(" ")
     .filter(Boolean);
   const long = stems.filter((s) => s.length >= 4);
@@ -144,7 +145,7 @@ export function offlineReply(lesson: Lesson, state: OfflineState, said: string):
   const used = new Set(state.usedPatterns);
   let understood = false;
   for (const p of patterns) {
-    if (!used.has(p) && patternUsed(p, said)) {
+    if (!used.has(p) && patternUsed(p, said, targetLangOf(lesson.course))) {
       used.add(p);
       understood = true;
     }
