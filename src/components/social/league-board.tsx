@@ -76,7 +76,7 @@ export function LeagueBoard() {
         <SkeletonCard>
           <div className="flex items-center justify-between gap-3">
             <div className="min-w-0 flex-1">
-              <SkeletonLine variant="bodyStrong" width={140} />
+              <SkeletonLine variant="strong" width={140} />
               <SkeletonLine variant="caption" width="70%" className="mt-1" />
             </div>
             <SkeletonPill width={68} height={20} />

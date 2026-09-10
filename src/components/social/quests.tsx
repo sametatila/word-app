@@ -159,7 +159,7 @@ export function QuestsSkeleton() {
         <SkeletonBar height={12} />
         <div className="mt-2 flex justify-between">
           <SkeletonLine variant="caption" width={62} />
-          <SkeletonLine variant="bodyStrong" width={78} />
+          <SkeletonLine variant="strong" width={78} />
           <SkeletonLine variant="caption" width={62} />
         </div>
         <div className="mt-2 flex justify-end">

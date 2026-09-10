@@ -49,7 +49,7 @@ export function CandoCard({ bare = false }: { bare?: boolean } = {}) {
       <section role="status" aria-busy="true" aria-label={t("cando.loading")} className={bare ? "" : "card p-5"}>
         {bare ? null : (
           <div className="flex items-baseline justify-between gap-3">
-            <SkeletonLine variant="bodyStrong" width={150} />
+            <SkeletonLine variant="strong" width={150} />
             <SkeletonLine variant="caption" width={72} />
           </div>
         )}

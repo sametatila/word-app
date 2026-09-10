@@ -110,7 +110,7 @@ export function QuestCard() {
         className="card mx-auto mt-4 w-full max-w-md overflow-hidden"
       >
         <div className="flex items-center justify-between gap-3 border-b px-5 py-3.5" style={{ borderColor: "var(--border)" }}>
-          <SkeletonLine variant="bodyStrong" width={130} />
+          <SkeletonLine variant="strong" width={130} />
           <SkeletonLine variant="caption" width={92} />
         </div>
         {[0, 1, 2].map((i) => (

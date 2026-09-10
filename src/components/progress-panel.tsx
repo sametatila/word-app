@@ -53,7 +53,7 @@ export function ProgressPanel() {
     return (
       <section role="status" aria-busy="true" aria-label={t("progp.loading")} className="card p-4">
         <div className="flex items-baseline justify-between gap-3">
-          <SkeletonLine variant="bodyStrong" width={150} />
+          <SkeletonLine variant="strong" width={150} />
           <SkeletonLine variant="caption" width={88} />
         </div>
         <SkeletonLine variant="body" width="92%" className="mt-1.5" />

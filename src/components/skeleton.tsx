@@ -106,8 +106,20 @@ export function RowSkeleton({ rows = 3, height = 56 }: { rows?: number; height?:
  * değişirse iskelet de değişiyor.
  */
 
-/** Tipografi ölçeğinin punto ve satır yükseklikleri — globals.css `@theme` ile aynı. */
-const TEXT: Record<string, [size: number, lineHeight: number]> = {
+/**
+ * Tipografi ölçeğinin punto ve satır yükseklikleri — globals.css `@theme` ile aynı.
+ *
+ * `Record<string, …>` YAZILMIYOR ve sebebi somut: öyleyken `keyof typeof TEXT`
+ * `string`e çöküyordu, yani derleyici hem ölçekte OLMAYAN bir ad kabul ediyor
+ * (`variant="bodyStrong"` — mobilin adı, webde karşılığı `strong`) hem de
+ * `TEXT[variant]`i asla undefined olamaz sayıyordu. İki koruma birden
+ * kapanmıştı; üretimde on çağrı yerinde iskelet çizilirken sayfa
+ * "undefined is not iterable" ile düşüyordu (2026-09-10).
+ *
+ * `satisfies` ile tablo hem denetleniyor hem anahtarlar SABİT kalıyor:
+ * ölçekte olmayan bir ad artık derlenmiyor.
+ */
+const TEXT = {
   display: [32, 1.15],
   h1: [26, 1.2],
   h2: [20, 1.3],
@@ -116,12 +128,19 @@ const TEXT: Record<string, [size: number, lineHeight: number]> = {
   strong: [15, 1.5],
   caption: [12.5, 1.4],
   micro: [11, 1.35],
-};
+} satisfies Record<string, [size: number, lineHeight: number]>;
 export type TextVariant = keyof typeof TEXT;
 
 /** Bir metin satırının gerçek yüksekliği (px) — iskelet ölçüsü buradan. */
 export function textHeight(variant: TextVariant): number {
-  const [size, lh] = TEXT[variant];
+  /*
+    YEDEK DAVRANIŞ. Tip artık ölçek dışı bir adı derlemiyor, ama bu değer
+    başka bir yerden (eski bir yapı, dinamik bir dizgi) gelirse iskelet
+    SAYFAYI DÜŞÜRMEMELİ: yerini tuttuğu içerik yüklenirken çizilen bir şeyin
+    bütün ekranı hata sınırına atması, çözdüğü sorundan büyük.
+  */
+  const pair = TEXT[variant] ?? TEXT.body;
+  const [size, lh] = pair;
   return Math.round(size * lh);
 }
 

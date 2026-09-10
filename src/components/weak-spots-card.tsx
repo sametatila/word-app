@@ -53,7 +53,7 @@ export function WeakSpotsCard({ bare = false }: { bare?: boolean } = {}) {
         className={bare ? "" : "card p-5"}
       >
         <div className="flex items-baseline justify-between gap-3">
-          <SkeletonLine variant={bare ? "micro" : "bodyStrong"} width={120} />
+          <SkeletonLine variant={bare ? "micro" : "strong"} width={120} />
           <SkeletonLine variant="caption" width={96} />
         </div>
         <ul className="mt-2 space-y-2">

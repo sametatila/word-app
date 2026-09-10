@@ -76,7 +76,7 @@ export function WritingsCard({ showEmpty = false }: { showEmpty?: boolean }) {
   if (items === undefined)
     return (
       <section role="status" aria-busy="true" aria-label={t("writ.loading")} className="card p-5">
-        <SkeletonLine variant="bodyStrong" width={130} />
+        <SkeletonLine variant="strong" width={130} />
         <SkeletonLine variant="micro" width="60%" className="mt-1" />
         <div className="mt-3 space-y-2">
           {[0, 1].map((i) => (

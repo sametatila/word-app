@@ -33,11 +33,11 @@ export function FriendPulse() {
       <div aria-hidden className="card mx-auto mt-4 flex w-full max-w-md items-center gap-3 px-4 py-3">
         <SkeletonTile size={32} className="rounded-full" />
         <div className="min-w-0 flex-1">
-          <SkeletonLine variant="bodyStrong" width="72%" />
+          <SkeletonLine variant="strong" width="72%" />
           <SkeletonBar height={8} className="mt-1" />
           <SkeletonLine variant="micro" width="45%" className="mt-1" />
         </div>
-        <SkeletonLine variant="bodyStrong" width={34} />
+        <SkeletonLine variant="strong" width={34} />
       </div>
     );
   if (!q) return null;

@@ -11,7 +11,7 @@ export default function Loading() {
       <SkeletonLine variant="h2" width={160} />
       <section className="card p-4">
         <div className="flex items-baseline justify-between">
-          <SkeletonLine variant="bodyStrong" width={120} />
+          <SkeletonLine variant="strong" width={120} />
           <SkeletonLine variant="caption" width={64} />
         </div>
         {/* On dört günün çubukları: ritim şeridinin yeri. */}
@@ -28,7 +28,7 @@ export default function Loading() {
       </section>
       <section className="card p-4">
         <div className="flex items-baseline justify-between">
-          <SkeletonLine variant="bodyStrong" width={140} />
+          <SkeletonLine variant="strong" width={140} />
           <SkeletonLine variant="caption" width={72} />
         </div>
         <div className="mt-3 flex gap-1.5">
