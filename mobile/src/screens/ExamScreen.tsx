@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState, useCallback } from "react";
-import { View, ScrollView, TextInput, ActivityIndicator } from "react-native";
+import { View, ScrollView, TextInput } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
+import { SkeletonCard, SkeletonLine } from "../ui/Skeleton";
 import { useNavigation, useRoute, type RouteProp } from "@react-navigation/native";
 import { t } from "../lib/i18n";
 import { Text } from "../ui/Text";
@@ -226,8 +227,31 @@ export function ExamScreen() {
 
   if (phase === "yukleniyor" || !paper) {
     return (
-      <View style={{ flex: 1, backgroundColor: colors.bg, alignItems: "center", justifyContent: "center" }}>
-        <ActivityIndicator color={colors.primaryText} />
+      /*
+        SPINNER YERİNE İSKELET — kâğıdın KAPAK yapısında.
+        `ui/Skeleton`ın kuralı bu ("düz spinner yerine içeriğin ŞEKLİNİ ve
+        YÜKSEKLİĞİNİ gösterir"); ortada dönen bir çark vardı ve kapak gelince
+        iki kart birden beliriyordu. Webin karşılığı `exam-player` yükleme
+        yer tutucusunu (`animate-pulse`) zaten çiziyor.
+      */
+      <View style={{ flex: 1, backgroundColor: colors.bg }}>
+        {header}
+        <View style={{ padding: spacing.lg, gap: spacing.md }}>
+          <SkeletonCard style={{ gap: spacing.sm }}>
+            <SkeletonLine variant="h2" width="80%" />
+            <SkeletonLine variant="body" width="60%" />
+            {[0, 1, 2].map((i) => (
+              <SkeletonLine key={i} variant="caption" width={i === 2 ? "55%" : "85%"} />
+            ))}
+          </SkeletonCard>
+          <SkeletonCard style={{ gap: spacing.xs }}>
+            <SkeletonLine variant="bodyStrong" width={110} />
+            {[0, 1, 2, 3].map((i) => (
+              <SkeletonLine key={i} variant="caption" width="70%" />
+            ))}
+            <SkeletonLine variant="caption" width={90} style={{ marginTop: spacing.xs }} />
+          </SkeletonCard>
+        </View>
       </View>
     );
   }

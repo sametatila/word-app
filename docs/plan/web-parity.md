@@ -3321,3 +3321,32 @@ Boş durum eklendi. Ne bileşen ne metin uyduruldu: `EmptyCard` mobilde zaten
 sekiz yerde kullanılıyor ve metnin anahtarı (`cando.sign_in_and_finish_lessons_and`)
 mobil sözlükte DURUYORDU - webin aynı yerde gösterdiği cümle, mobilde
 çevrilmiş ama hiç çağrılmamış.
+
+### 11.63 Yükleme göstergesi: iki ekran kendi kuralını çiğniyordu
+
+`ui/Skeleton`ın başlığı kuralı yazıyor: *"düz spinner yerine içeriğin ŞEKLİNİ
+ve YÜKSEKLİĞİNİ gösterir… iskeleti gerçek bileşenle AYNI kaplardan kur"*, ve
+rozet ekranı bu dönüşümü daha önce yapmıştı (gerekçesi kayıtlı: içerik gelince
+rozetler ortadan yukarı sıçramasın).
+
+Ölçüm: mobilde `ActivityIndicator` kullanan yedi dosya var. Dördü doğru
+kullanıyor - üçü düğme içinde (`AuthScreen` "...", `PaywallScreen`,
+`LessonScreen`) biri ilerlemede. **İkisi SAYFA yükleme durumu olarak ortada
+dönen bir çark gösteriyordu** ve ikisinin de web karşılığı iskelet çiziyor:
+
+    ExamScreen      → web `exam-player` yükleme yer tutucusu (animate-pulse)
+    MockStatsScreen → web `app/(app)/mock-exams/stats/loading.tsx`
+
+İkisi de kendi içeriğinin yapısında iskelete çevrildi: sınav kapağı (başlık +
+alt başlık + odak satırları, sonra bölüm listesi ve süre) ve istatistik
+sayfası (beceri kartı çubuklarıyla, seviye kartı, son denemeler).
+
+**Yan bulgu: webin yorumu yanlıştı.** `mock-exams/stats/loading.tsx`in başlığı
+*"Mobil `MockStatsScreen` aynı anda kendi iskeletini çiziyor"* diyordu - oysa
+o ekran çark gösteriyordu. Kayıt kodu değil niyeti anlatıyordu; artık ikisi
+aynı şeyi söylüyor.
+
+**Bırakılan, sebebiyle:** `MockExamScreen`in çarkı PUANLAMA adımında ve
+yanında "puanlanıyor" yazıyor - orada henüz bir içerik ŞEKLİ yok, sunucu
+hesaplıyor. İskelet olmayan bir şeyin yerini tutamaz; bu bir ilerleme
+göstergesi, yer tutucu değil.

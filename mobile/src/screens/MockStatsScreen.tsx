@@ -1,6 +1,7 @@
 import React, { useCallback, useEffect, useState } from "react";
-import { View, ScrollView, ActivityIndicator, RefreshControl } from "react-native";
+import { View, ScrollView, RefreshControl } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
+import { SkeletonBar, SkeletonCard, SkeletonLine } from "../ui/Skeleton";
 import { useNavigation } from "@react-navigation/native";
 import type { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import type { RootStackParams } from "../navigation/RootStack";
@@ -85,7 +86,49 @@ export function MockStatsScreen() {
         refreshControl={<RefreshControl refreshing={busy && !!data} onRefresh={() => void load()} tintColor={colors.primary} />}
       >
         {busy && !data ? (
-          <View style={{ paddingTop: spacing.xxl, alignItems: "center" }}><ActivityIndicator color={colors.primaryText} /></View>
+          /*
+            SPINNER YERİNE İSKELET — sayfanın gerçek yapısında.
+            `ui/Skeleton`ın kuralı bu ("düz spinner yerine içeriğin ŞEKLİNİ ve
+            YÜKSEKLİĞİNİ gösterir") ve rozet ekranı bu dönüşümü daha önce
+            yapmıştı. Burada ortada dönen bir çark vardı: veri gelince üç kart
+            birden beliriyor ve içerik yukarı sıçrıyordu. Webin karşılığı
+            (`app/(app)/mock-exams/stats/loading.tsx`) zaten iskelet çiziyor ve
+            yorumu "mobil aynı anda kendi iskeletini çiziyor" DİYORDU - artık
+            doğru.
+          */
+          <View>
+            <SkeletonCard style={{ marginBottom: spacing.md }}>
+              <SkeletonLine variant="micro" width={90} />
+              {[0, 1, 2, 3].map((i) => (
+                <View key={i} style={{ marginTop: spacing.sm }}>
+                  <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
+                    <SkeletonLine variant="body" width={110} />
+                    <SkeletonLine variant="bodyStrong" width={44} />
+                  </View>
+                  <SkeletonBar height={4} style={{ marginTop: 4 }} />
+                  <SkeletonLine variant="micro" width={130} style={{ marginTop: 2 }} />
+                </View>
+              ))}
+            </SkeletonCard>
+            <SkeletonCard style={{ marginBottom: spacing.md }}>
+              <SkeletonLine variant="micro" width={80} />
+              {[0, 1, 2].map((i) => (
+                <View key={i} style={{ flexDirection: "row", justifyContent: "space-between", marginTop: spacing.sm }}>
+                  <SkeletonLine variant="body" width={40} />
+                  <SkeletonLine variant="bodyStrong" width={90} />
+                </View>
+              ))}
+            </SkeletonCard>
+            <SkeletonCard>
+              <SkeletonLine variant="micro" width={70} />
+              {[0, 1, 2].map((i) => (
+                <View key={i} style={{ marginTop: spacing.sm }}>
+                  <SkeletonLine variant="body" width="70%" />
+                  <SkeletonLine variant="micro" width={120} style={{ marginTop: 2 }} />
+                </View>
+              ))}
+            </SkeletonCard>
+          </View>
         ) : !data || data.attempts === 0 ? (
           <>
             {data?.running?.length ? <Running data={data} colors={colors} nav={nav} label={label} skillOf={skillOf} /> : null}
