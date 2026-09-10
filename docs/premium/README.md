@@ -165,6 +165,12 @@ abonelik beyanı kurallarına aykırı.
 
 ### 3.2 Play Console (Android)
 
+> **ÖN KOŞUL — bu bölüm bir yapı yüklenmeden AÇILMAZ.** Play, abonelik
+> ürünlerini ancak imzalı bir AAB en az bir sürüm kanalına (en hızlısı
+> *Internal testing*) yüklendikten sonra gösteriyor. Menüde *Subscriptions*
+> soluk ya da boş görünüyorsa sebebi budur, hesap ya da yetki değil. iOS'ta
+> böyle bir kısıt yok: App Store Connect'te uygulama kaydı yeterli.
+
 1. **Monetise → Products → Subscriptions → Create subscription**
    - Product ID `premium_monthly` → *base plan* `monthly-autorenew`,
      billing period **P1M**, **auto-renewing**
