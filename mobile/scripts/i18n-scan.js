@@ -57,12 +57,22 @@ const CODEY = /[(){}[\]<>=;/\\|&$*+"'`~^%@#]/;
  */
 const SKIP_ASCII = ["data/firstWords.ts", "lib/courses.ts"].map((p) => path.join(SRC, ...p.split("/")));
 
+/**
+ * TİRE PARÇALARI SÖZCÜK DEĞİL. Sözlükte dilbilgisi kuralları var ve içlerinde
+ * ek/ön ek parçaları geçiyor ("be-/ver-/-ieren ohne ge-"). Düz bölme onları
+ * sözcük sanıyor ve yabancı kümeyi zehirliyor: "ver" Almanca sözcük sayıldığı
+ * için "Tepki ver" gibi bir metin ham metin olarak HİÇ görünmüyordu (web
+ * tarafında ölçüldü, aynı satır aynı parçayı üretiyor). İki yanında da tire
+ * olmayan sözcükler alınıyor.
+ */
 function dictTokens(lang) {
   const f = path.join(SRC, "i18n", `${lang}.ts`);
   const set = new Set();
   if (!fs.existsSync(f)) return set;
   for (const m of fs.readFileSync(f, "utf8").matchAll(/^\s*"[^"]+":\s*"((?:[^"\\]|\\.)*)",?\s*$/gm)) {
-    for (const w of m[1].toLocaleLowerCase("tr").match(/[a-zçğıöşü]+/g) ?? []) if (w.length > 2) set.add(w);
+    for (const w of m[1].toLocaleLowerCase("tr").match(/(?<![-a-zçğıöşü])[a-zçğıöşü]+(?![-a-zçğıöşü])/g) ?? []) {
+      if (w.length > 2) set.add(w);
+    }
   }
   return set;
 }
