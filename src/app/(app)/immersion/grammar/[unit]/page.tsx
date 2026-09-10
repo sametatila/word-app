@@ -3,6 +3,7 @@ import { getT } from "@/lib/i18n/server";
 import { unitBriefs } from "@/lib/immersion/brief";
 import { unitQuestions } from "@/lib/immersion/content";
 import { deriveGrammar } from "@/lib/immersion/grammar";
+import { mockBoolLabels } from "@/lib/mock-exams/types";
 import { lessonsFor } from "@/lib/lessons/index";
 import type { CefrLevel } from "@/lib/skills/types";
 import { ImmersionQuizPlayer } from "@/components/immersion/quiz-player";
@@ -43,7 +44,11 @@ export default async function ImmersionGrammarPage({ params }: { params: Promise
   let questions = authored?.grammar ?? [];
   if (!questions.length && course && LEVELS.includes(level) && Number.isInteger(index)) {
     const dersler = lessonsFor(course).filter((l) => l.level === level);
-    questions = deriveGrammar(unit, dersler.slice((index - 1) * 4, (index - 1) * 4 + 4));
+    questions = deriveGrammar(unit, dersler.slice((index - 1) * 4, (index - 1) * 4 + 4), 8, {
+      orderQuestion: t("quiz.order_question"),
+      orderSentence: t("quiz.order_sentence"),
+      bool: mockBoolLabels(course === "en" ? "en" : "de", "truefalse"),
+    });
   }
   if (!questions.length) notFound();
 

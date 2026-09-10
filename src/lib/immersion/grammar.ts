@@ -31,7 +31,29 @@ import { seededShuffle } from "@/lib/shuffle";
  * Elle yazılmış içerik varsa oynatıcı ONU tercih eder (`unitQuestions`);
  * bu türetme yalnız boş kalan üniteler için devreye girer.
  */
-export function deriveGrammar(unitId: string, lessons: Lesson[], count = 8): SkillQuestion[] {
+/**
+ * Dizme sorusunun yönergesi — çağırandan gelir.
+ *
+ * İki cümle burada TÜRKÇE GÖMÜLÜYDÜ: İngilizce ya da Almanca arayüzde de
+ * "Cümleyi doğru sıraya diz." çıkıyordu. Sözlük anahtarları (`quiz.order_*`)
+ * taban sözlükte zaten duruyor ve mobil onları kullanıyor; web sunucu
+ * tarafında `t()` olmadığı için `deriveQuiz`in kalıbı izleniyor - metin
+ * dışarıdan veriliyor.
+ */
+export type GrammarText = {
+  orderQuestion: string;
+  orderSentence: string;
+  /**
+   * Hüküm şıkları — KURSUN dilinde. `["Richtig", "Falsch"]` sabitti ve
+   * İngilizce kursta da Almanca çıkıyordu; İngilizce derslerde yüz tane hüküm
+   * adımı var. Deneme sınavı aynı çifti `MOCK_LABELS[course].bool` ile
+   * kursuna göre veriyor, buraya da oradan geliyor.
+   */
+  bool: [string, string];
+};
+
+export function deriveGrammar(unitId: string, lessons: Lesson[], count = 8, text?: GrammarText): SkillQuestion[] {
+  const say: GrammarText = text ?? { orderQuestion: "Soruyu doğru sıraya diz.", orderSentence: "Cümleyi doğru sıraya diz.", bool: ["Richtig", "Falsch"] };
   const judges: SkillQuestion[] = [];
   const orders: SkillQuestion[] = [];
 
@@ -41,7 +63,7 @@ export function deriveGrammar(unitId: string, lessons: Lesson[], count = 8): Ski
         judges.push({
           kind: "truefalse",
           text: step.expect.statement,
-          options: ["Richtig", "Falsch"],
+          options: say.bool,
           answer: step.expect.answer ? 0 : 1,
           explain: flatten(step.expect.why),
         });
@@ -52,9 +74,7 @@ export function deriveGrammar(unitId: string, lessons: Lesson[], count = 8): Ski
         if (parts.length < 4 || parts.length > 8) continue;
         orders.push({
           kind: "order",
-          text: step.expect.target.endsWith("?")
-            ? "Soruyu doğru sıraya diz."
-            : "Cümleyi doğru sıraya diz.",
+          text: step.expect.target.endsWith("?") ? say.orderQuestion : say.orderSentence,
           options: [],
           answer: 0,
           items: parts,
