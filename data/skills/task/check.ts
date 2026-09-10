@@ -200,7 +200,19 @@ if (existsSync(`${DIR}out`))
 
         if (en.length > r.tr.length * 2 + 20 || en.length * 2 + 20 < r.tr.length)
           U(`uzunluk çok sapıyor (${r.tr.length} → ${en.length})`);
-        for (const h of usSpelling(strip(en, r.tr, row.de))) U(`Amerikan yazımı ${h}`);
+        /* YAZIM DENETİMİ YALNIZ YAZANIN SEÇTİĞİ SÖZCÜKLERE BAKAR.
+           Satırların içinde tırnaksız Almanca örnek dizileri var —
+           "eine Stunde lang, zwei Meter hoch, drei Kilometer weit" — ve
+           `Meter` Amerikan yazımı sanılıp uyarı üretiyordu. Oysa o sözcük
+           TÜRKÇE satırda da aynen duruyor: yazan onu seçmedi, taşıdı.
+           Kaynakta geçen her sözcük denetimin dışında; kalanlar yazanın
+           kendi tercihi ve orada uyarı anlamlı. */
+        const carried = new Set(r.tr.split(/[^\p{L}-]+/u).filter(Boolean));
+        const chosen = strip(en, r.tr, row.de)
+          .split(/([^\p{L}-]+)/u)
+          .filter((w) => !carried.has(w))
+          .join(" ");
+        for (const h of usSpelling(chosen)) U(`Amerikan yazımı ${h}`);
       }
       written.set(key, en);
     }
