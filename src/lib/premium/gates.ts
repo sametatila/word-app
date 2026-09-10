@@ -172,8 +172,8 @@ export const DEFAULT_PREMIUM_CONFIG: PremiumConfig = {
     maxRewards: 0,
   },
   plans: {
-    productMonthly: "premium_monthly",
-    productYearly: "premium_yearly",
+    productMonthly: "lernomi_premium_monthly",
+    productYearly: "lernomi_premium_yearly",
     trialDays: 30,
     prices: [
       // Yıllık aylığın 12 katı değil ~6 katı: yıllığa geçiş hem nakit akışını

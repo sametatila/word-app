@@ -1162,7 +1162,7 @@ export const entitlements = pgTable("entitlements", {
   storeProvider: text("store_provider"),
   /** ios | android | web — satın almanın yapıldığı yer (iptal yönergesi buna göre). */
   storePlatform: text("store_platform"),
-  /** Mağazadaki ürün kimliği (premium_monthly / premium_yearly). */
+  /** Mağazadaki ürün kimliği (lernomi_premium_monthly / lernomi_premium_yearly). */
   storeProduct: text("store_product"),
   /** trial | active | grace | canceled | expired | refunded | paused */
   storeState: text("store_state"),

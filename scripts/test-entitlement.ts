@@ -82,7 +82,7 @@ const storeEvent = (userId: string, over: Partial<StoreEvent> = {}): StoreEvent 
   state: "active",
   expiresAt: new Date(Date.now() + 30 * 86_400_000),
   platform: "android",
-  productId: "premium_monthly",
+  productId: "lernomi_premium_monthly",
   ref: "orig-1",
   paid: true,
   ...over,

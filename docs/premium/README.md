@@ -132,12 +132,25 @@ abonelik beyanı kurallarına aykırı.
 
 ### 3.1 App Store Connect (iOS)
 
+> **ÜRÜN KİMLİĞİ TEK KULLANIMLIK.** Apple bir kimliği silsen bile serbest
+> bırakmıyor: aynı adla yeniden oluşturmaya çalışınca "already being used by
+> another subscription" diyor. Yani yanlış kurulmuş bir aboneliği silip
+> düzeltmek YOK — kimlik yanarsa yenisini seçmek ve kodu ona göre güncellemek
+> gerekiyor (`src/lib/premium/gates.ts` → `plans.productMonthly/Yearly`).
+>
+> Bu bir kez yaşandı: `premium_monthly` / `premium_yearly` seviye sırasını
+> düzeltmek için silindi ve iki kimlik birden yandı. **Seviye sırası silmeden
+> değişiyor** — Subscriptions listesindeki *Edit* düğmesi yeterli.
+
 1. **My Apps → Lernomi → Subscriptions** → **Create** bir *Subscription Group*:
    ad `Lernomi Premium`. (Aynı gruptaki ürünler arasında kullanıcı yükseltme /
    düşürme yapabiliyor; aylık ve yıllık **aynı** grupta olmalı.)
-2. Gruba iki abonelik ekle:
-   - Product ID `premium_monthly`, süre **1 Month**
-   - Product ID `premium_yearly`, süre **1 Year**
+2. Gruba iki abonelik ekle. **Seviye sırası baştan doğru kurulmalı** (silmeden
+   düzeltilebilir ama kimlik yakmamak için baştan doğru kur): üst seviye
+   YÜKSELTME sayılıyor ve anında gerçekleşiyor, alt/aynı seviye dönem sonunu
+   bekliyor. İçerik ikisinde aynı olduğu için ayrım süre — yıllık üstte:
+   - **Level 1** · Product ID `lernomi_premium_yearly`, süre **1 Year**
+   - **Level 2** · Product ID `lernomi_premium_monthly`, süre **1 Month**
    Ürün kimlikleri panelde yazılı olanla aynı olmalı (`/admin/premium` →
    *Planlar*), yoksa RevenueCat offering'i boş döner.
 3. **Fiyat**: her ürün için *Subscription Prices* → önce **taban ülke** (US)
@@ -172,9 +185,9 @@ abonelik beyanı kurallarına aykırı.
 > böyle bir kısıt yok: App Store Connect'te uygulama kaydı yeterli.
 
 1. **Monetise → Products → Subscriptions → Create subscription**
-   - Product ID `premium_monthly` → *base plan* `monthly-autorenew`,
+   - Product ID `lernomi_premium_monthly` → *base plan* `monthly-autorenew`,
      billing period **P1M**, **auto-renewing**
-   - Product ID `premium_yearly` → *base plan* `yearly-autorenew`,
+   - Product ID `lernomi_premium_yearly` → *base plan* `yearly-autorenew`,
      billing period **P1Y**, **auto-renewing**
 2. Her base plan için **Offer** ekle: *Free trial*, süre **P1M**, uygunluk
    *New customers only*.
@@ -244,7 +257,7 @@ abonelik beyanı kurallarına aykırı.
 
 3. **Ürünler** — **Product catalog → Products**:
    `+ New` → **Import Products** (mağazadan okur) ya da `+ New product` ile elle.
-   İki uygulama için de `premium_monthly` ve `premium_yearly` görünmeli.
+   İki uygulama için de `lernomi_premium_monthly` ve `lernomi_premium_yearly` görünmeli.
    Ürün kimlikleri panelde yazılı olanla aynı olmalı (`/admin/premium` →
    *Planlar*), yoksa offering boş kalır.
 
@@ -258,8 +271,8 @@ abonelik beyanı kurallarına aykırı.
 5. **Offering** — **Product catalog → Offerings** → `+ New`, identifier
    **`default`**. İçine gir, **+ Add package** ile iki paket ekle; **Identifier**
    alanı serbest metin değil, süreye göre bir **açılır liste**:
-   - *Monthly* (RevenueCat'in ayırdığı kimlik: `$rc_monthly`) → `premium_monthly`
-   - *Annual* (`$rc_annual`) → `premium_yearly`
+   - *Monthly* (RevenueCat'in ayırdığı kimlik: `$rc_monthly`) → `lernomi_premium_monthly`
+   - *Annual* (`$rc_annual`) → `lernomi_premium_yearly`
 
    Sonra bu offering'i projenin **Default Offering**'i yap. Paywall fiyatları
    buradan okuyor; offering boşsa ya da varsayılan değilse fiyat gösterilemez.
