@@ -101,6 +101,15 @@ export function translateAuthError(input: unknown, lang: NativeLang = DEFAULT_NA
     return t("autherrorw.token_expired");
   if (status === 429 || code.includes("TOO_MANY") || msg.includes("rate limit"))
     return t("autherror.too_many");
+  /*
+    Bot koruması üç koddan biriyle düşüyor: başlık hiç yok (400
+    MISSING_RESPONSE), Cloudflare jetonu reddetti (403 VERIFICATION_FAILED),
+    doğrulama servisine ulaşılamadı (500 UNKNOWN_ERROR). Üçü de kullanıcı için
+    aynı şey — doğrulama geçilemedi, tekrar denensin. 403 kuralının ÜSTÜNDE
+    duruyor, yoksa "bu işlem için yetkin yok" yazardı.
+  */
+  if (code === "VERIFICATION_FAILED" || code === "MISSING_RESPONSE")
+    return t("autherror.captcha_failed");
   if (status === 403 || code.includes("FORBIDDEN"))
     return t("autherrorw.forbidden");
   if (msg.includes("failed to fetch") || msg.includes("networkerror") || msg.includes("load failed"))

@@ -15,12 +15,24 @@ export type AuthResult<T> = AuthOk<T> | AuthFail;
 export async function authApi<T = Record<string, unknown>>(
   path: string,
   body?: Record<string, unknown>,
+  /**
+   * Turnstile jetonu. Bot koruması açıkken kayıt, giriş ve sıfırlama isteği
+   * bu başlık olmadan 400 dönüyor (bkz. lib/auth/captcha.ts). Koruma kapalıysa
+   * başlık hiç okunmuyor, yani parametre boş geçilebilir.
+   */
+  captchaToken?: string | null,
 ): Promise<AuthResult<T>> {
   let res: Response;
   try {
     res = await fetch(`/api/auth/${path}`, {
       method: body === undefined ? "GET" : "POST",
-      headers: body === undefined ? undefined : { "content-type": "application/json" },
+      headers:
+        body === undefined
+          ? undefined
+          : {
+              "content-type": "application/json",
+              ...(captchaToken ? { "x-captcha-response": captchaToken } : {}),
+            },
       body: body === undefined ? undefined : JSON.stringify(body),
       credentials: "same-origin",
       cache: "no-store",

@@ -5,6 +5,7 @@ import { redirect } from "next/navigation";
 import { authEnabled, getUserId, googleConfigured, appleWebConfigured } from "@/lib/auth/server";
 import { AuthForm } from "@/components/auth-form";
 import { titleMeta } from "@/lib/page-meta";
+import { turnstileSiteKey } from "@/lib/auth/captcha";
 
 export const dynamic = "force-dynamic";
 
@@ -38,7 +39,10 @@ export default async function LoginPage() {
   */
   return (
     <Suspense fallback={null}>
-      <AuthForm providers={{ google: googleConfigured, apple: appleWebConfigured }} />
+      <AuthForm
+        providers={{ google: googleConfigured, apple: appleWebConfigured }}
+        turnstileSiteKey={turnstileSiteKey}
+      />
     </Suspense>
   );
 }

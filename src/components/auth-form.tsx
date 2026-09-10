@@ -9,6 +9,8 @@ import { isEmailNotVerified, translateAuthError } from "@/lib/auth/errors";
 import { checkPassword, MIN_PASSWORD_LENGTH } from "@/lib/auth/password-policy";
 import { useT, useLang } from "@/lib/i18n/client";
 import { legalPath } from "@/lib/legal";
+import { Turnstile } from "@/components/turnstile";
+import { CAPTCHA_ACTION } from "@/lib/auth/captcha-action";
 
 type Mode = "signin" | "signup";
 
@@ -25,7 +27,19 @@ type Mode = "signin" | "signup";
  */
 export type AuthProviders = { google: boolean; apple: boolean };
 
-export function AuthForm({ providers = { google: true, apple: false } }: { providers?: AuthProviders }) {
+export function AuthForm({
+  providers = { google: true, apple: false },
+  /**
+   * Turnstile genel anahtarı; boşsa bot koruması kapalı ve widget hiç
+   * çizilmiyor. Değer sunucudan geliyor (bkz. login/page.tsx) — istemcide
+   * okunamaz, çünkü sunucu eklentisiyle AYNI env değişkenine bağlı olması
+   * gerekiyor: biri açık biri kapalıyken giriş kırılır.
+   */
+  turnstileSiteKey = "",
+}: {
+  providers?: AuthProviders;
+  turnstileSiteKey?: string;
+}) {
   const t = useT();
   const lang = useLang();
   const router = useRouter();
@@ -39,6 +53,14 @@ export function AuthForm({ providers = { google: true, apple: false } }: { provi
   const [password, setPassword] = useState("");
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  /*
+    Bot koruması. Jeton TEK KULLANIMLIK: her gönderimden sonra `captchaNonce`
+    artıyor, widget sıfırlanıyor ve yenisi geliyor. Jeton gelene kadar
+    gönderim düğmesi kapalı — sunucu jetonsuz isteği zaten reddediyor, boşuna
+    bir tur atmanın anlamı yok.
+  */
+  const [captchaToken, setCaptchaToken] = useState<string | null>(null);
+  const [captchaNonce, setCaptchaNonce] = useState(0);
   /*
     Sunucudaki kuralın AYNISI (lib/auth/password-policy) — burada yalnız anında
     geri bildirim için çalışıyor, kapı sunucuda. İki taraf tek modülü paylaştığı
@@ -59,7 +81,7 @@ export function AuthForm({ providers = { google: true, apple: false } }: { provi
         // olarak yazılıyor. Varsayılan da bu, ama ana ekrana eklenmiş
         // uygulamada oturumun kapanmaması bu tek bayrağa bağlı olduğu için
         // açıkça yazılıyor — sessizce değişmesi "her açılışta giriş" demek.
-        const res = await authApi("sign-in/email", { email, password, rememberMe: true });
+        const res = await authApi("sign-in/email", { email, password, rememberMe: true }, captchaToken);
         if (!res.ok) {
           // Doğrulanmamış hesap bir hata değil, eksik bir adım: kullanıcıyı oraya al.
           if (isEmailNotVerified(res)) {
@@ -74,11 +96,11 @@ export function AuthForm({ providers = { google: true, apple: false } }: { provi
         return;
       }
 
-      const res = await authApi<SignUpResponse>("sign-up/email", {
-        email,
-        password,
-        name: name.trim() || email.split("@")[0],
-      });
+      const res = await authApi<SignUpResponse>(
+        "sign-up/email",
+        { email, password, name: name.trim() || email.split("@")[0] },
+        captchaToken,
+      );
       if (!res.ok) {
         setError(translateAuthError(res, lang));
         return;
@@ -95,6 +117,8 @@ export function AuthForm({ providers = { google: true, apple: false } }: { provi
       }
     } finally {
       setBusy(false);
+      // Harcanmış jetonun yerine yenisi: ikinci deneme aynı jetonla giderse 403 alır.
+      setCaptchaNonce((n) => n + 1);
     }
   }
 
@@ -256,9 +280,25 @@ export function AuthForm({ providers = { google: true, apple: false } }: { provi
 
         {error ? <AuthNotice tone="error">{error}</AuthNotice> : null}
 
+        {turnstileSiteKey ? (
+          <div className="space-y-2">
+            <Turnstile
+              siteKey={turnstileSiteKey}
+              action={CAPTCHA_ACTION}
+              resetSignal={captchaNonce}
+              onToken={setCaptchaToken}
+            />
+            {captchaToken ? null : (
+              <p className="muted text-center text-xs" aria-live="polite">
+                {t("auth.captcha_wait")}
+              </p>
+            )}
+          </div>
+        ) : null}
+
         <button
           type="submit"
-          disabled={busy}
+          disabled={busy || (Boolean(turnstileSiteKey) && !captchaToken)}
           className="btn btn-primary w-full px-5 py-3.5 disabled:opacity-60"
         >
           {busy ? t("authw.wait") : t(mode === "signin" ? "auth.sign_in" : "auth.sign_up")}

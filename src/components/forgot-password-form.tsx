@@ -6,25 +6,32 @@ import { AuthNotice, AuthShell, authInputClass } from "@/components/auth-shell";
 import { authApi } from "@/lib/auth/api";
 import { translateAuthError } from "@/lib/auth/errors";
 import { useT, useLang } from "@/lib/i18n/client";
+import { Turnstile } from "@/components/turnstile";
+import { CAPTCHA_ACTION } from "@/lib/auth/captcha-action";
 
-export function ForgotPasswordForm() {
+export function ForgotPasswordForm({ turnstileSiteKey = "" }: { turnstileSiteKey?: string }) {
   const t = useT();
   const lang = useLang();
   const [email, setEmail] = useState("");
   const [busy, setBusy] = useState(false);
   const [sent, setSent] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  /* Bot koruması — gerekçe ve tek kullanımlık jeton notu: auth-form.tsx. */
+  const [captchaToken, setCaptchaToken] = useState<string | null>(null);
+  const [captchaNonce, setCaptchaNonce] = useState(0);
 
   async function submit(e: React.FormEvent) {
     e.preventDefault();
     if (busy) return;
     setBusy(true);
     setError(null);
-    const res = await authApi("request-password-reset", {
-      email,
-      redirectTo: `${window.location.origin}/reset-password`,
-    });
+    const res = await authApi(
+      "request-password-reset",
+      { email, redirectTo: `${window.location.origin}/reset-password` },
+      captchaToken,
+    );
     setBusy(false);
+    setCaptchaNonce((n) => n + 1);
     if (!res.ok) {
       setError(translateAuthError(res, lang));
       return;
@@ -71,9 +78,24 @@ export function ForgotPasswordForm() {
             className={authInputClass}
           />
           {error ? <AuthNotice tone="error">{error}</AuthNotice> : null}
+          {turnstileSiteKey ? (
+            <div className="space-y-2">
+              <Turnstile
+                siteKey={turnstileSiteKey}
+                action={CAPTCHA_ACTION}
+                resetSignal={captchaNonce}
+                onToken={setCaptchaToken}
+              />
+              {captchaToken ? null : (
+                <p className="muted text-center text-xs" aria-live="polite">
+                  {t("auth.captcha_wait")}
+                </p>
+              )}
+            </div>
+          ) : null}
           <button
             type="submit"
-            disabled={busy}
+            disabled={busy || (Boolean(turnstileSiteKey) && !captchaToken)}
             className="btn btn-primary w-full px-5 py-3.5 disabled:opacity-60"
           >
             {t(busy ? "authw.sending" : "auth.send_reset_link")}
