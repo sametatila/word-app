@@ -672,7 +672,7 @@ So I have changed my mind, {{29}} not in the direction people expect. The materi
               options: ["How much she has learnt about shopping", "How difficult the recipes were", "How many people were in the group"],
               answer: 0,
               explain:
-                "Ayşe pişirmenin kolay olduğunu söyleyip sürprizi adlandırıyor: «how much I have learnt about buying». Tarif zorluğu tersine çevriliyor, grup büyüklüğü kayıtta hiç geçmiyor.",
+                "Ayse pişirmenin kolay olduğunu söyleyip sürprizi adlandırıyor: «how much I have learnt about buying». Tarif zorluğu tersine çevriliyor, grup büyüklüğü kayıtta hiç geçmiyor.",
             },
             {
               kind: "mcq",
