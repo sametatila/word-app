@@ -65,6 +65,13 @@ jobs:
       # DÜŞÜLMEZ, kelime turdan çıkar.
       - name: Anadil ekseni
         run: npm run test:gloss
+      # Lig kapanışının kuralları: kaç kişi yükselir/düşer ve kimin akıbeti ne.
+      # Bu kapı zamanlama yüzünden var — kapanış YALNIZ pazartesi, yalnız
+      # veritabanıyla ve yalnız bir haftalık veri birikmişken çalışıyor, yani
+      # yanlış bir kural elle denenerek görülemez; bir hafta sonra gerçek
+      # kullanıcıların tablosunda görülür ve geri alınamaz.
+      - name: Lig kuralları
+        run: npm run test:league
       # Sözlük kapısı + ham metin kapısı. Birincisi üç dilin anahtar kümesini ve
       # yer tutucularını karşılaştırıyor; ikincisi sözlüğe HİÇ GİRMEMİŞ Türkçe
       # metni sayıyor (cırcırlı taban, yalnız aşağı iner). İkincisi olmadan

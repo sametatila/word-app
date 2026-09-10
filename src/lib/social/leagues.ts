@@ -40,6 +40,32 @@ const MOVE_SHARE = 0.2;
 const MAX_PROMOTE = 7;
 const MAX_DEMOTE = 5;
 
+/**
+ * Bir kişinin hafta sonundaki akıbeti — SAF kural, veritabanı yok.
+ *
+ * Kapanışın içinde tek satırlık bir üçlü koşuldu ve hiçbir yerden
+ * sınanamıyordu: kapanış yalnız pazartesi, yalnız veritabanıyla çalışıyor.
+ * Ayrı durunca birim testi yazılabiliyor (scripts/test-league.ts) — yükselen
+ * ve düşenin kim olduğu bu ürünün en görünür kararı, elle denenerek
+ * doğrulanamaz.
+ *
+ * Hiç XP toplamayan yükselemez: en alt ligin dışında düşer, en altta kalır.
+ */
+export function outcomeFor(input: {
+  xp: number;
+  rank: number;
+  size: number;
+  tier: number;
+  promote: number;
+  demote: number;
+}): LeagueOutcome {
+  const { xp, rank, size, tier, promote, demote } = input;
+  if (xp <= 0) return tier > 0 ? "demoted" : "stayed";
+  if (promote > 0 && rank <= promote) return "promoted";
+  if (demote > 0 && rank > size - demote) return "demoted";
+  return "stayed";
+}
+
 export type LeagueRow = {
   rank: number;
   userId: string;
@@ -226,10 +252,7 @@ export async function closeLeagueWeek(lastWeek: string): Promise<void> {
 
     const rows = ranked.map((r, i) => {
       const rank = i + 1;
-      // Hiç XP toplamayan yükselemez; en alt ligin dışında düşer.
-      const outcome: LeagueOutcome =
-        r.xp <= 0 ? (g.tier > 0 ? "demoted" : "stayed") : rank <= promote ? "promoted" : demote > 0 && rank > ranked.length - demote ? "demoted" : "stayed";
-      return { ...r, rank, outcome };
+      return { ...r, rank, outcome: outcomeFor({ xp: r.xp, rank, size: ranked.length, tier: g.tier, promote, demote }) };
     });
 
     const values = sql.join(
