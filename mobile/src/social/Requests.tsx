@@ -1,9 +1,13 @@
 import React, { useState } from "react";
+import { useNavigation } from "@react-navigation/native";
+import type { NativeStackNavigationProp } from "@react-navigation/native-stack";
+import type { RootStackParams } from "../navigation/RootStack";
 import { t } from "../lib/i18n";
 import { View } from "react-native";
 import { social, errorText, timeAgo, type PendingView } from "../api/social";
 import { Text } from "../ui/Text";
 import { Card } from "../ui/Card";
+import { PressableScale } from "../ui/PressableScale";
 import { PersonAvatar } from "../ui/PersonAvatar";
 import { SkeletonCard, SkeletonLine, SkeletonPill, SkeletonTile } from "../ui/Skeleton";
 import { useTheme, spacing } from "../theme";
@@ -50,6 +54,7 @@ export function RequestCardSkeleton() {
 
 function RequestCard({ r, incoming, onChanged }: { r: PendingView; incoming: boolean; onChanged: () => void }) {
   const { colors } = useTheme();
+  const nav = useNavigation<NativeStackNavigationProp<RootStackParams>>();
   const [busy, setBusy] = useState(false);
   const [err, setErr] = useState<string | null>(null);
   async function act(fn: () => Promise<unknown>) {
@@ -61,7 +66,19 @@ function RequestCard({ r, incoming, onChanged }: { r: PendingView; incoming: boo
   return (
     <Card padded style={{ marginBottom: spacing.md }}>
       <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md }}>
-        <PersonAvatar userId={r.user.userId} name={r.user.name} size={48} />
+        {/*
+          PROFİLE GİDEN YOL YOKTU. İstek kartından kişinin profiline
+          bakılamıyordu: kullanıcı kimi kabul ettiğini görmeden karar
+          veriyordu. Web satırı baştan beri açıyor. Yol AVATAR — akış kartının
+          kuralı (`FeedList`) ve iki uygulamada da aynı.
+        */}
+        {r.user.username ? (
+          <PressableScale hitSlop={4} accessibilityLabel={r.user.name ?? t("social.unnamed")} onPress={() => nav.navigate("User", { username: r.user.username! })}>
+            <PersonAvatar userId={r.user.userId} name={r.user.name} size={48} />
+          </PressableScale>
+        ) : (
+          <PersonAvatar userId={r.user.userId} name={r.user.name} size={48} />
+        )}
         <View style={{ flex: 1 }}>
           <Text variant="h3" numberOfLines={1}>{r.user.name ?? t("social.unnamed")}</Text>
           <Text variant="caption" color={colors.textMuted}>{r.user.username ? `@${r.user.username} · ` : ""}{r.user.level} · {timeAgo(r.createdAt)}</Text>
