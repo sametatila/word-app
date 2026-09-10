@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { useCachedJson } from "@/lib/use-cached";
-import { CardSkeleton } from "@/components/skeleton";
+import { SkeletonBar, SkeletonLine, SkeletonTile } from "@/components/skeleton";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { CheckIcon, GiftIcon, TargetIcon } from "@/components/icons";
@@ -102,7 +102,34 @@ export function QuestCard() {
     }
   }
 
-  if (board === undefined) return <CardSkeleton height={150} label={t("dailyquests.daily_quests")} />;
+  /* İskelet kartın GERÇEK yapısında: başlık şeridi ve altında üç görev satırı
+     (yuvarlak sayaç, etiket, ilerleme çizgisi). Göz kararı yazılmış 150
+     pikselin tutmadığı yerde, iskeletin önlemesi gereken sarsıntıyı iskeletin
+     kendisi üretiyordu. */
+  if (board === undefined)
+    return (
+      <section
+        aria-hidden
+        role="status"
+        aria-busy="true"
+        aria-label={t("dailyquests.daily_quests")}
+        className="card mx-auto mt-4 w-full max-w-md overflow-hidden"
+      >
+        <div className="flex items-center justify-between gap-3 border-b px-5 py-3.5" style={{ borderColor: "var(--border)" }}>
+          <SkeletonLine variant="bodyStrong" width={130} />
+          <SkeletonLine variant="caption" width={92} />
+        </div>
+        {[0, 1, 2].map((i) => (
+          <div key={i} className="flex items-center gap-3 px-5 py-3" style={{ opacity: 1 - i * 0.12 }}>
+            <SkeletonTile size={28} className="rounded-full" />
+            <div className="min-w-0 flex-1">
+              <SkeletonLine variant="body" width={`${70 - i * 8}%`} />
+              <SkeletonBar height={6} className="mt-1.5" />
+            </div>
+          </div>
+        ))}
+      </section>
+    );
   if (!board) return null;
 
   const claimable = board.quests.filter((q) => q.done >= q.target && !q.claimed).length;

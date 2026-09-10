@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { CardSkeleton } from "@/components/skeleton";
+import { SkeletonBar, SkeletonLine } from "@/components/skeleton";
 import { useEffect, useState } from "react";
 import type { ErrorReport } from "@/lib/error-analytics";
 import { useT, useLang } from "@/lib/i18n/client";
@@ -39,7 +39,34 @@ export function WeakSpotsCard({ bare = false }: { bare?: boolean } = {}) {
     };
   }, []);
 
-  if (report === undefined) return <CardSkeleton height={bare ? 140 : 200} label={tx("weak.loading")} />;
+  /* İskelet kartın gerçek yapısında: başlık + pencere bilgisi, altında üç
+     satır (etiket, sayı ve altında ince ilerleme çizgisi). Yükseklik göz
+     kararı yazılıyordu ve tutmadığında kart veri gelince zıplıyordu. */
+  if (report === undefined)
+    return (
+      <section
+        role="status"
+        aria-busy="true"
+        aria-label={tx("weak.loading")}
+        className={bare ? "" : "card p-5"}
+      >
+        <div className="flex items-baseline justify-between gap-3">
+          <SkeletonLine variant={bare ? "micro" : "bodyStrong"} width={120} />
+          <SkeletonLine variant="caption" width={96} />
+        </div>
+        <ul className="mt-2 space-y-2">
+          {[0, 1, 2].map((i) => (
+            <li key={i} style={{ opacity: 1 - i * 0.12 }}>
+              <div className="flex items-center justify-between gap-3">
+                <SkeletonLine variant="body" width={`${52 - i * 6}%`} />
+                <SkeletonLine variant="caption" width={56} />
+              </div>
+              <SkeletonBar height={6} className="mt-1" />
+            </li>
+          ))}
+        </ul>
+      </section>
+    );
   if (!report || (!report.types.length && !report.weakRules.length)) return null;
   const top = report.types.slice(0, 3);
 
