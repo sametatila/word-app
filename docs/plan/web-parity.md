@@ -5216,3 +5216,23 @@ silindi. İki kapı arka arkaya kendi işini yaptı.
 **Ders:** bir yüzeyi karşı platforma taşırken metnin *varlığı* kadar
 *bulunduğu sözlük* de kontrol edilmeli. Bu turdan sonra o kontrol elle değil,
 kapıda.
+
+### 11.135 Zayıf noktalar kartı mobilde hiç yoktu
+
+Uç (`/api/errors`) ve rapor katmanı (`lib/error-analytics`) aylardır duruyor,
+web profilinde bir kart onu okuyor — **Android'de onu çağıran hiçbir şey
+yoktu**. Yani "neyi yanlış yapıyorum" sorusunun cevabı tek platformdaydı.
+§11.80'in en pahalı örneklerinden biri: sözleşme uçtan uca yazılı, yüzey hiç
+yazılmamış.
+
+Üstelik **kendi eklemem bir çıkmaz yaratmıştı**: §11.122'de sınav sonucuna
+taşıdığım ipucu "zayıf bölüm için profilde 'Zayıf noktaların' var" diyor ve
+mobilde **olmayan** bir yeri gösteriyordu.
+
+**Bulma yöntemi yeni ve tekrarlanabilir:** sunucunun uçlarından hangilerini
+webin çağırıp mobilin çağırmadığını ölçtüm. Dokuz çıktı, yedisi meşru —
+yönetim panosu (2), cron, mağaza webhook'u, tarayıcı push'u (mobil FCM
+kullanıyor, ayrı uç), webe özel hayatta kalma modu. Kalan ikisi:
+`/api/errors` (bu bölüm) ve `/api/assess/queue` (§11.12'de Samet'in kararı
+bekliyor). `check-endpoints` "her ucun bir çağıranı var mı" diye soruyor; bu
+ölçüm onun parite hâli — **"her ucun İKİ çağıranı var mı"**.
