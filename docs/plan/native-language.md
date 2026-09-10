@@ -488,8 +488,48 @@ tr(`Türkçesi '${w.tr}' demek…`)           → `w.en` alanı + şablonun İng
 tr("deyin.")                              → zaten düz dizelerde
 ```
 
-Yani ~10 karar 9.120 parçayı kapatıyor. Ama `w.en` YOK: `VocabItem` tipine
-eklenmesi ve yardımcının İngilizce dalının yazılması gerekiyor — kod fazı.
+Yani ~10 karar 9.120 parçayı kapatıyor.
+
+##### ÖLÇÜLDÜ ve BİTTİ (2026-09-10): 193 dize, kod fazı gerekmedi
+
+Tahmin iki yerde şaştı ve ikisi de lehte çıktı:
+
+1. **`w.en` zaten hazır.** Plan onu eksik sayıyordu ama sözlükçe hattı
+   (`data/lessons/vocab/`) 4.640 maddenin hepsini `{lesson, de, en}` diye
+   yazmış. 3.040 `word()` çağrısının 3.040'ı bu kümede — **eksik sıfır.**
+   `VocabItem` tipine alan eklemeye de gerek yok: çağrılar `vocab`
+   dizisine referans vermiyor, `{ de, tr }` sözlüğünü yerinde yazıyor,
+   yani anahtar `(lesson, de)` çağrı yerinde zaten duruyor.
+
+2. **Ama NOT diye üçüncü bir argüman var ve hiç sayılmamıştı.** 193 çağrı
+   üçüncü argümanla geliyor, 183'ü benzersiz. Şablonun içine gömülü
+   oldukları için `lecture/make.mjs`'in düz dize taraması onları hiç
+   görmedi ve anlatım `out/`'unda tek biri bile yok. 15–64 karakterlik
+   gerçek öğretim içeriği:
+
+   ```
+   [entlassen]  işveren yapar; çalışanın kendi ayrılması bu değil
+   [die Kosten] hep çoğul kullanılır
+   [die Leiter] aynı sözcüğün eril biçimi 'yönetici' demek
+   ```
+
+Toplam: **8 sıra sözcüğü + 2 çerçeve + 183 not = 193 dize.** Kendi hattı
+kuruldu (`data/lessons/word/`, kardeşlerinin deseni) ve iki pakette
+yazıldı; kapı 0 hata 0 uyarı veriyor.
+
+Kapıya bu alana özgü iki kural eklendi:
+
+- **Çerçevede `{}` yer tutucusu korunur.** Düşerse şablon çalışır ama
+  cümle kelimeyi hiç söylemez — çalışan bir dersin içinde sessiz bir
+  boşluk, ekranda hiç görünmez.
+- **Sekiz sıra sözcüğü sekiz AYRI karşılık ister.** İkisi aynı olursa
+  öğrenci kaçıncı kelimede olduğunu duymaz; kaynak sırayı bilerek
+  söylüyor.
+
+İki not İngilizcede kaynaktan daha az iş yapıyor ve bu kaçınılmaz:
+'kadın biçimi -in ekiyle kurulur' Almanca dilbilgisini anlatıyor,
+İngilizcede öğrencinin kendi dilinden bir dayanağı yok. Çevrildiler ama
+düşürülmediler — dersin verdiği bilgi orada.
 
 #### Aynı Türkçe dize iki İngilizce karşılık isteyebiliyor
 
