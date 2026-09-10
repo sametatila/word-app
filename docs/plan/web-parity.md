@@ -4959,3 +4959,26 @@ bekliyor.**
 "mobilde olan + kayıtlı eksik" kümesi eşleniyor. Sunucu beşinci bir aşama
 eklerse ya da mobil bir aşama kazanırsa kapı kalıyor ve insan bakıyor —
 muafiyetin kapısı kuralı (§11.107) burada da geçerli.
+
+### 11.120 Deneme sınavı: mikrofonsuz konuşma yolu mobilde yoktu
+
+Konuşma bölümünün **tek girişi** mikrofondu: izni reddeden ya da cihazında
+tanıma çalışmayan kullanıcı "mikrofon gerekli" uyarısında **kalıyor** ve
+bölümü hiç bitiremiyordu. Oysa yazılı döküm yolu **aynı bileşende zaten var**
+(`done` adımı) ve değerlendirme metin üzerinden çalışıyor — web ikinci bir
+düğmeyle o yolu açıyordu. §11.80'in bir örneği daha: yetenek elde, kapı yok.
+
+Döküm kutusunun ipucu metni de mikrofon açılamadığında artık ayrı şeyi
+söylüyor; genel döküm notu o durumda yanlış şeyi anlatıyordu.
+
+### 11.121 Giriş metni davranışı yarım anlatıyordu
+
+`mockexams.intro` iki sözlükte iki ayrı sürümdü ve **mobildeki eksik olanı**:
+süre dolunca sıradaki göreve otomatik geçildiğini ve bitmiş göreve
+dönülemediğini söylemiyordu. İkisi de mobil `MockExamScreen`de **uygulanmış**
+kurallar (`advance`, `mockexam.no_back`) — yani metin, uygulamanın kendi
+davranışını eksik anlatıyordu ve öğrenci sınava o bilgi olmadan giriyordu.
+
+Aynı dalgada bölüm özeti (süre + madde sayısı) de birleşti: webde üç ayrı
+anahtar, mobilde bölüm listesiyle ortak iki anahtar vardı — aynı olgu iki
+ekranda iki ayrı metin.
