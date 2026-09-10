@@ -1,6 +1,5 @@
 import "server-only";
 import { captcha } from "better-auth/plugins";
-import { CAPTCHA_ACTION } from "@/lib/auth/captcha-action";
 
 /**
  * Bot koruması — Cloudflare Turnstile.
@@ -39,6 +38,17 @@ export const turnstileConfigured = Boolean(turnstileSiteKey && secretKey);
 export { CAPTCHA_ACTION } from "@/lib/auth/captcha-action";
 
 /**
+ * `action` SUNUCUDA DAYATILMIYOR ve bu bilinçli.
+ *
+ * Eklentinin `expectedAction`ı, doğrulama yanıtındaki `action` alanını
+ * beklenenle karşılaştırıyor. Ürün genelinde tek bir widget bağlamı var, yani
+ * kazandırdığı şey bugün sıfır; kaybettirebileceği şey ise bütün girişin
+ * kapanması — alan beklendiği gibi dönmezse doğrulama 403 verir ve bu ancak
+ * gerçek anahtarlarla üretimde görülür. Etiket yine de widget'ta duruyor:
+ * Cloudflare panelindeki dökümü bölüyor.
+ */
+
+/**
  * ALAN ADI LİSTESİ BİLEREK YOK. Turnstile'ın kendi panelinde zaten bir alan
  * adı listesi var ve asıl kapı orası; koda ikinci bir liste yazmak, nginx'in
  * server_name'leri (www.lernomi.app, lernomi.app, exfe.me) değiştiğinde
@@ -51,7 +61,6 @@ export function captchaPlugins() {
       provider: "cloudflare-turnstile",
       secretKey,
       endpoints: ["/sign-up/email", "/sign-in/email", "/request-password-reset"],
-      expectedAction: CAPTCHA_ACTION,
     }),
   ];
 }

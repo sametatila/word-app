@@ -29,9 +29,10 @@ export async function GET(request: Request) {
   const theme = THEMES.has(asked) ? asked : "auto";
 
   /*
-    Değerler JSON.stringify ile gömülüyor: ikisi de bizim denetimimizde ama
-    sayfaya dize olarak giren her şeyin kaçışı tek yerde durmalı, yoksa
-    yarın env'den gelen bir değer sessizce script'i kırar.
+    Gömülen üç değerin üçü de dar bir kümeden geliyor: site anahtarı
+    Cloudflare'ın ürettiği alfanümerik dize, eylem sabit, tema üç değerden
+    biri (yukarıda süzülüyor). Yine de hiçbiri script'in içine değil,
+    özniteliğe yazılıyor.
   */
   const html = `<!doctype html>
 <html>
@@ -44,36 +45,48 @@ export async function GET(request: Request) {
 </style>
 </head>
 <body>
-<div id="box"></div>
-<script src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit" async defer></script>
+<!--
+  ÖRTÜK ÇİZİM (data-* öznitelikleri), açık render DEĞİL. İlk yazım
+  \`render=explicit\` + \`onloadTurnstileCallback\` kullanıyordu ve widget hiç
+  çizilmiyordu: api.js \`async\` yükleniyor, yani geri çağrıyı tanımlayan satır
+  daha çalışmadan çalışabiliyor ve Turnstile çağıracak bir şey bulamıyor
+  (emülatörde boş sayfa olarak görüldü). Öznitelikli biçimde geri çağrılar
+  ADLARIYLA aranıyor ve arama çizim anında yapılıyor — sıra tuzağı kalmıyor.
+-->
+<div id="box" class="cf-turnstile"
+     data-sitekey="${turnstileSiteKey}"
+     data-action="${CAPTCHA_ACTION}"
+     data-theme="${theme}"
+     data-callback="lernomiToken"
+     data-expired-callback="lernomiExpired"
+     data-error-callback="lernomiError"></div>
 <script>
   (function () {
-    var id = null;
     function send(msg) {
       if (window.ReactNativeWebView) window.ReactNativeWebView.postMessage(JSON.stringify(msg));
     }
+    window.lernomiToken = function (token) { send({ type: "token", token: token }); };
+    window.lernomiExpired = function () { send({ type: "expired" }); };
+    // \`true\`: hatayı Turnstile'ın kendi arayüzü göstersin, sayfa çökmesin.
+    window.lernomiError = function () { send({ type: "error" }); return true; };
     // Uygulama jetonu harcadıktan sonra buradan yenisini istiyor.
-    window.lernomiReset = function () { if (id !== null && window.turnstile) window.turnstile.reset(id); };
-    window.onloadTurnstileCallback = function () {
-      id = window.turnstile.render("#box", {
-        sitekey: ${JSON.stringify(turnstileSiteKey)},
-        action: ${JSON.stringify(CAPTCHA_ACTION)},
-        theme: ${JSON.stringify(theme)},
-        callback: function (token) { send({ type: "token", token: token }); },
-        "expired-callback": function () { send({ type: "expired" }); },
-        "error-callback": function () { send({ type: "error" }); return true; },
-      });
-      send({ type: "ready" });
-    };
+    window.lernomiReset = function () { if (window.turnstile) window.turnstile.reset("#box"); };
   })();
 </script>
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 </body>
 </html>`;
 
   return new NextResponse(html, {
     headers: {
       "content-type": "text/html; charset=utf-8",
-      "cache-control": "public, max-age=300",
+      /*
+        KISA ÖNBELLEK. Sayfa iki kilobayt ama site anahtarını taşıyor: anahtar
+        değiştiğinde eski kopyayı tutan istemcinin ürettiği jetonlar reddedilir
+        ve o kullanıcı giriş yapamaz. Bir dakika, bu pencereyi kapatacak kadar
+        kısa; her açılışta yeniden indirmeyi engelleyecek kadar uzun.
+      */
+      "cache-control": "public, max-age=60",
     },
   });
 }

@@ -25,7 +25,6 @@ import { useTheme } from "../theme";
 type Injectable = { injectJavaScript: (script: string) => void };
 
 type Message =
-  | { type: "ready" }
   | { type: "token"; token: string }
   | { type: "expired" }
   | { type: "error" };
