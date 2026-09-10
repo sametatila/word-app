@@ -494,6 +494,51 @@ Ekrana bakınca hatların kaçırdığı iki küme göründü:
 İkisi de kapıdan sıfır hata sıfır uyarıyla geçiyor ve çözücüye bağlı.
 Ders sayfasında can-do köprüsü artık düşürülmüyor, İngilizcesi
 gösteriliyor.
+
+###### Envanter artık SAYILIYOR (`npm run report:native`)
+
+Üç kalem de aynı biçimde bulundu: bir şey bitmiş sayıldı, sonra ekrana
+bakınca hâlâ Türkçe duran bir yer görüldü. Bunu bitirmek için rapor
+yazıldı — kaynakları geziyor, her kalemde kaç benzersiz Türkçe dize
+olduğunu ve o kalemin bir çeviri hattı olup olmadığını söylüyor:
+
+```
+kalem               benzersiz  kapsanan  hat
+ders anlatımı       11620      11620     lecture + word
+can-do ifadeleri    131        131       cando
+modül sınavı        2070       289       — HAT YOK
+
+kalan: 1781 benzersiz dize
+```
+
+Anlatım satırı ÇÖZÜCÜYLE sayılıyor, düz eşleşmeyle değil: şablonun
+ürettiği 2.865 dize hiçbir `out/` dosyasında durmuyor ve düz eşleşme
+sayılsaydı bitmiş bir kalem eksik görünürdü.
+
+#### Kalan tek kalem: MODÜL SINAVI (1.781 dize)
+
+58 kâğıt, on üç ayrı alan. Büyükten küçüğe:
+
+```
+listening.turns.tr   408   dinleme diyaloğunun replik çevirileri
+canDo.tr             289   geçince açılan yapabilirlik satırları  → EN VAR
+focus.tr             263   ölçülen yapının ne işe yaradığı
+writing.checklist    245   yazma görevinin denetim listesi
+listening.q.tr       174   dinleme sorularının Türkçesi
+reading.q.tr         136   okuma sorularının Türkçesi
+speaking.situation   116   konuşma maddesinin durumu
+speaking.tr          115   söylenecek cümlenin Türkçesi
+plan.titleTr          58 · listening.situation 58 · reading.titleTr 58
+writing.prompt        58 · listening.titleTr   57 · reading.genre    37
+```
+
+**`ExamCando.en` ZATEN VAR ve dolu** — 290'ın 290'ı. Kâğıtları yazan
+taraf İngilizceyi baştan düşünmüş ve tipin içine koymuş; kalemin
+tamamı sıfırdan yazılmayacak. Kalan 1.781 dize on iki alanda.
+
+Kalemin kendine özgü bir zorluğu var: **soru kökünün Türkçesi cevabı
+vermemeli.** `ExamQuestion.tr` Almanca kökün karşılığı ve şıklar Almanca
+kalıyor; çeviri şıkkı ele verirse soru ölçmeyi bırakır.
 ##### BİTTİ (2026-09-10): 8.824/8.824 dize, 17.293/17.293 parça (%100)
 
 Elli dokuz paketin hepsi yazıldı ve kapı sıfır hata, sıfır uyarıyla
