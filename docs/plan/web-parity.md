@@ -5711,3 +5711,38 @@ gerekecek, o gün ItemScreen'in `dialogue` dalı yazılmalı.
 iOS yapılandırmasının geri kalanı ölçüldü ve tam: mikrofon ve konuşma tanıma
 açıklamaları, arka planda ses + uzak bildirim kipleri, Apple ile giriş
 yetkisi, universal links, APNs ortamı, Google iOS istemcisi.
+
+
+### 11.153 Sunucunun verdiği alanları kim okumuyor: uç uç tarama
+
+Bu tur yöntem şuydu: her `/api/*` ucunun yanıt anahtarlarını çıkar, mobil
+kaynakta o adın geçip geçmediğine bak. Dört aday çıktı, ikisi gerçek:
+
+| Uç | Okunmayan alan | Sonuç |
+|---|---|---|
+| `/api/placement` | `canRetake`, `retakeDays` | **gerçek açık** |
+| `/api/premium/redeem` | `retryAfter` | web de okumuyor — eşit |
+| `/api/pronounce` | `hasWordTiming` | mobil ucu hiç çağırmıyor (§11.139) |
+| `/api/stt` | `confidence` | mobil STT'yi NATIVE çağırıyor, JS görmüyor |
+
+**Bekleme süresi bir kural ve kapıyı İSTEMCİ tutuyor.** Test 30 günde bir
+alınabiliyor; sunucu bunu yalnız bildiriyor, `start`/`finish` üzerinde
+zorlamıyor. Web tutuyordu, mobil hiç sormuyordu: Android'de test istenildiği
+kadar tekrarlanabiliyor ve her bitiş yeni kayıt yazıp seviyeyi
+değiştirebiliyordu. Sık tekrarın seviye tahminini "ezber"e çevirmesi kuralın
+yazılı sebebi.
+
+**Aynı ekranda ikinci açık:** `accept` hangi seviyenin kabul edildiğini AYRICA
+alıyor — yani "önerine katılmıyorum, B1'den başlayacağım" baştan beri
+mümkündü. Mobil her zaman öneriyi uyguluyordu. Beş seviye çip olarak geldi,
+öneri işaretli, düğme metni seçime göre değişiyor.
+
+**Tarama yöntemi hakkında:** kaba bir eşleşme (ad geçiyor mu) ve bu haliyle
+bile iki gerçek bulgu verdi. Kusuru şu: alan adı mobilde BAŞKA bir bağlamda
+geçiyorsa "okunuyor" sayar. Kapıya dönüştürmedim — yanlış pozitif üretme
+eğilimi yüksek, ve bir turluk taramanın değeri zaten alındı. Betik
+scratchpad'de kaldı, tekrarlanabilir.
+
+**Bir yan ayrıntı:** durum isteği testle PARALEL gidiyor. Sıralı yapmak
+ekranın açılışını iki gecikme kadar yavaşlatırdı ve bekleme süresi dolmuş
+kullanıcı (çoğunluk) bunu her seferinde öderdi.
