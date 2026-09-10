@@ -393,6 +393,68 @@ Türkçe sözlük istemi, ve Almanca örnek cümlenin kendisi. İlk ikisi çevir
 turunda görülüyor, üçüncüsü GÖRÜLMÜYOR — çünkü o alan "çevrilmez" diye
 işaretli. Bu 16 parça ayrıca listelenip karara bağlanmalı.
 
+##### YENİDEN SAYILDI (2026-09-10): 16 değil 29 parça, 6 ders
+
+İlk tarama yalnız `say` ve `opening` alanlarına bakmıştı. `target`, `hint`,
+`why`, `vocab.de` ve rol yapma SENARYOSU eklenince sayı iki katına çıktı —
+senaryo hattının kendisi de zaten aynı sebeple geç bulunmuştu (kaynak
+konumsal kısayollarla yazılmış, alan adı yok):
+
+```
+de-a1-alter           3   "Ich bin in Izmir geboren"
+de-a1-hallo           7   "Ich komme aus der Türkei" · "… aus Istanbul" · "… aus Ankara"
+de-a1-sprachen       12   "Türkisch" (say/target/vocab) · "Ich spreche Türkisch und
+                          ein bisschen Deutsch" · senaryonun beş repliği
+de-a1-woher           2   "Ich komme aus der Türkei." · "Ich wohne in Izmir."
+de-b1-als-wenn        3   "Als ich ein Kind war, wohnten wir in Izmir" + rol yapma açılışı
+de-b1-sprache-akzent  2   "Türkisch und Deutsch sind nicht verwandt"
+```
+
+`de-a2-paket`'in "die Türklingel"i taramaya takılıyor ama yanlış pozitif:
+kapı zili, Türkiye değil.
+
+##### AYIRT EDİCİ ÖLÇÜT: kişi olgusu mu, öğrencinin kendi cevabı mı
+
+Tarama sınav hattında da isabet veriyor — "Nuray Aydın, İzmir doğumlu",
+"İzmir'de işletme okudum", "Türkiyeliyim. Şimdi Köln'de oturuyorum."
+Bunlar **DEĞİŞMEYECEK** ve sebebi ölçütü tanımlıyor:
+
+- **Kişi olgusu.** Diyalogdaki biri Türkiyeli. Almanya'da bu gerçekçi bir
+  kişi ve öğrenciden o cümleyi kurması istenmiyor — okuduğu metinde
+  geçiyor, o kadar. Kalır.
+- **Öğrencinin kendi örnek cevabı.** "Woher kommst du?" sorusuna model
+  cevap olarak "Ich komme aus der Türkei". Burada öğrenciye kendisi için
+  YANLIŞ olan bir cümle öğretiliyor. Ana dile bağlı.
+
+İkisi aynı kelimeleri taşıyor ama biri içerik, öteki varsayım. Tarama
+ayıramaz; ayıran şey cümlenin dersteki ROLÜ.
+
+##### Kurulacak katman: `de` takası, çözümden SONRA
+
+Mekanizma çözücüde zaten var — `vocab` gibi `(ders, Almanca)` anahtarlı
+bir sözlük yeter: `swap[ders + AYRAÇ + de] = yeni Almanca`.
+
+**SIRA KRİTİK.** Anlatım sözlüğünün bölünmüş anahtarları adımda ÖNCE gelen
+Almanca parçaya bakıyor (`lectureSplit`). Almancayı önce takas edersek
+anahtar değişir ve 69 satırın karşılığı sessizce bulunamaz. Doğru sıra:
+
+```
+1. Türkçe → İngilizce çöz   (özgün Almancayla, anahtarlar tutar)
+2. Almancayı takas et       (artık kimse o dizeyi anahtar olarak kullanmıyor)
+```
+
+**İngilizce taraf da takas ister.** Yazılmış İngilizce satırların on beşi
+Almanca örneği ALINTILIYOR: "Example: 'I come from Turkey.' In German:",
+"It means 'Turkish'. Please say", "Last: 'Turkish and German are not
+related languages.'" Almanca değişince bunların da değişmesi gerekiyor —
+yani takas iki taraflı ve `lecture/out/` dosyalarına dokunuyor.
+
+**Bir parça takas değil DÜZELTME istiyor.** `de-b1-sprache-akzent`'in
+"Türkisch und Deutsch sind nicht verwandt" cümlesi İngilizce öğrenci için
+YANLIŞ — İngilizce ile Almanca akraba diller. Burada yapılacak şey başka
+bir ülke adı koymak değil, dersin dayandığı olguyu ana dile göre kurmak.
+Dördüncü L1 vakasının (güvence uyarıya dönüyor) Almanca taraftaki eşi.
+
 #### Çeviri turu Türkçe tarafın kusurunu görüyor: yanlış dilbilgisi terimi
 
 `l-008` yazılırken iki dize çıktı:
@@ -506,14 +568,15 @@ olduğunu ve o kalemin bir çeviri hattı olup olmadığını söylüyor:
 kalem               benzersiz  kapsanan  hat
 ders anlatımı       11620      11620     lecture + word
 can-do ifadeleri    131        131       cando
-modül sınavı        2070       289       — HAT YOK
+modül sınavı        2070       2070      exam          ← 2026-09-10'te kapandı
 
-kalan: 1781 benzersiz dize
+kalan: 0 benzersiz dize
 ```
 
 Anlatım satırı ÇÖZÜCÜYLE sayılıyor, düz eşleşmeyle değil: şablonun
 ürettiği 2.865 dize hiçbir `out/` dosyasında durmuyor ve düz eşleşme
-sayılsaydı bitmiş bir kalem eksik görünürdü.
+sayılsaydı bitmiş bir kalem eksik görünürdü. Sınav satırı iki kaynağı
+birden sayıyor (`exam` hattı + kaynakta zaten dolu olan `en` alanları).
 
 #### Kalan tek kalem: MODÜL SINAVI (1.781 dize)
 
@@ -539,6 +602,85 @@ tamamı sıfırdan yazılmayacak. Kalan 1.781 dize on iki alanda.
 Kalemin kendine özgü bir zorluğu var: **soru kökünün Türkçesi cevabı
 vermemeli.** `ExamQuestion.tr` Almanca kökün karşılığı ve şıklar Almanca
 kalıyor; çeviri şıkkı ele verirse soru ölçmeyi bırakır.
+
+##### BİTTİ (2026-09-10): 1.781/1.781 dize, on iki paket, kapı temiz
+
+Kapı bu alan için üç kural taşıyor: son noktalama pariteleri, sayı
+pariteleri ve **şık sızıntısı** — İngilizce soru kökü Almanca şıklardan
+birini iki kelimeden uzun biçimde içeriyorsa hata. Üçü de sıfır.
+
+Hat yazılırken üç karar çıktı ve üçü de kâğıdın Almanca yarısıyla Türkçe
+yarısı arasındaki hiyerarşiyi gösteriyor:
+
+1. **Özel adlar ALMANCA kâğıdı izliyor.** "Bay Yalçın" → "Mr Yalcin",
+   "Bayan Aydın" → "Ms Aydin", "Ayşe" → "Ayse". Türkçe soru kökü adı
+   Türkçe yazımıyla yazmış ama öğrencinin önündeki dinleme metni Almanca
+   ve orada "Herr Yalcin" duruyor. Soru "Yalçın" deseydi öğrenci
+   ölçülmeyen bir eşleştirme yapmak zorunda kalırdı.
+
+2. **Sayı biçimi TÜRKÇEYİ izliyor.** Kaynak Almanca "am fünfzehnten Mai"
+   yazsa da Türkçe "15 Mayıs'ta" yazmışsa İngilizce de "15 May" oluyor;
+   Türkçe "on iki numaradan" yazmışsa Almanca "Wohnung zwölf" olsa bile
+   İngilizce "flat twelve" kalıyor. Rakamla yazılmış sayı öğrencinin
+   gözünde harfle yazılmış olandan farklı bir şey ve kâğıdı yazan taraf
+   bu ayrımı Türkçede bilerek yapmış. Telefon, peron ve oda numarası
+   ("0157 88 44 21", "15:10'da, 8. perondan", "214 numara") bu yüzden
+   olduğu gibi duruyor: miktar değil kimlik, ve dinleme sorusunun ölçtüğü
+   şey tam da öğrencinin onları doğru yakalayıp yakalamadığı.
+
+3. **`canDo` ve `writing.phrases` hattın DIŞINDA.** İkisinin de `en`
+   alanı kaynakta zaten dolu (290/290 ve 290/290). Aynı şey için ikinci
+   bir doğruluk kaynağı açmak, ayrıştıkları gün hangisinin doğru olduğunu
+   bilinemez hâle getirirdi.
+
+##### BEŞİNCİ L1 VAKASI: karşıtlık Türkçede eriyor, İngilizcede duruyor
+
+Dördü daha önce yazılmıştı ve hepsinde Türkçe kaynak İngilizceden fazlasını
+söyleyebiliyordu. Beşincisi ters yönde ve C1.7'de çıktı.
+
+Ines öne konmuş niteleyiciyi açıyor. Almancası **iki ayrı yapı** söylüyor:
+
+```
+öne konmuş ortaç   die dem Antrag beizufügenden Unterlagen
+açılmış hâli       die Unterlagen, die dem Antrag beigefügt werden müssen
+```
+
+Türkçe ikisini de "başvuruya eklenmesi gereken belgeler" diye çeviriyor —
+çünkü Türkçede ikisi AYNI yapı. Satır kendini tekrar ediyor gibi duruyor
+ve öğretmesi gereken farkı gösteremiyor. İngilizcede fark duruyor:
+"the documents to be attached" ile "the documents that have to be
+attached" iki ayrı yapı.
+
+Bu yüzden İngilizce satır Türkçeyi kelimesi kelimesine izlemedi, dersin
+ÖĞRETTİĞİ karşıtlığı izledi. Kural: **çeviri kaynağın kusurunu miras
+almaz** — kaynak dilin yapamadığı bir ayrımı hedef dil yapabiliyorsa,
+ders o ayrımı öğretiyorsa, hedef dil onu yapar.
+
+##### ÇÖZÜCÜYE BAĞLANDI: `resolveExam` (2026-09-10)
+
+Yazılan 1.781 dize hiçbir yere gitmiyordu — `lecture`de olduğu gibi.
+Zincir: `apply.mjs` → `exam` sözlüğü → `resolveExam` → `localiseExam`.
+
+**Çevrilen yalnız orta sütun.** Kâğıt üç dilli ve üçünün rolü ayrı:
+Almanca ölçülen dil, Türkçe/İngilizce öğrencinin dili, şıklar Almanca.
+`titleDe`, replik `de`si, soru kökünün `de`si, şıklar, okuma metni ve
+örnek cevap olduğu gibi kalıyor — onları çevirmek sınavı ortadan
+kaldırırdı.
+
+Dört çağrı yeri çıktı ve **üçü görünmezdi**:
+
+| yer | neden görünmedi |
+|---|---|
+| `buildExam` | — modül kâğıdının kendisi, tek açık olan |
+| seviye sınavının konuşma havuzu | maddeleri modül kâğıtlarından geliyor ve orada `plan` boş; tek kâğıtlık çeviri oraya hiç ulaşmıyordu |
+| sertifika SVG'si | `titleTr` ve yapabilirlik satırları; `examCando` ayrı bir çağrıydı ve çevrilmemiş ikinci kopya döndürüyordu |
+| modül listeleri | uç (`/api/exam?level=`) ve Patika ekranı |
+
+**Liste satırlarında hep-ya-hiç YOK, bilerek.** `resolveExam` bir alan
+bile eksikse kâğıdı reddediyor: yarım bir sınav kâğıdı, öğrencinin
+okuduğu yönergeye güvenemediği bir kâğıt. Liste satırı öyle değil —
+kimliği ALMANCA başlık ve o yanında zaten duruyor. Karşılığı olmayan bir
+alt başlık leke, satırı düşürmek ise o modülün sınavını gizler.
 ##### BİTTİ (2026-09-10): 8.824/8.824 dize, 17.293/17.293 parça (%100)
 
 Elli dokuz paketin hepsi yazıldı ve kapı sıfır hata, sıfır uyarıyla
