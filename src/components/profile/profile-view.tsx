@@ -175,7 +175,7 @@ export function ProfileView({ stats }: { stats: ProfileStats }) {
       )}
 
       {/* menü — mobildeki satırların karşılığı */}
-      <nav className="card px-4" aria-label="Profil">
+      <nav className="card px-4" aria-label={t("profile.profile")}>
         {/*
           MENÜNÜN KURALI: burada duran şey ya KİMLİĞİN ya da BAŞKALARIYLA
           İLİŞKİN; kendi ölçün /profile/progress sayfasında. Mobil profil
