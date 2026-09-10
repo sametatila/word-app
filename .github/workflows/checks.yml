@@ -162,6 +162,18 @@ jobs:
           npm run check:mock-prose-de
           npm run check:mock-native
           npm run check:lessons-prose-de
+      # de→en kelime katmanının kapısı. Örnek cümlenin Almanca çevirisi
+      # TÜRETİLEMİYOR ve bu ölçüldü: İngilizce örnek cümleler Almanca cümlenin
+      # çevirisi değil, aynı kelime için BAĞIMSIZ yazılmış cümleler
+      # («pflegen» Almancada hasta anneye bakmak, İngilizcede hemşirelerin
+      # hasta bakması). Devralınsaydı kullanıcı cümleyle ilgisiz bir çeviri
+      # görürdü — eksik çevirinin en kötü biçimi, çünkü görünürde çalışır.
+      # Kapı iki şeyi birden ölçüyor: 7.175 karşılık ve 7.175 cümle. En
+      # önemli kuralı, Almanca karşılığın cümlede GEÇMESİ — geçmiyorsa
+      # çeviri o kelimeyi örneklemiyor demektir. Öbür üç düzyazı kapısıyla
+      # aynı gerekçeyle hat 7175/7175'e ulaşana kadar dışarıda tutuldu.
+      - name: en→de örnek cümleleri
+        run: npm run check:en-de
       # Premium kurallarının birim testi — veritabanı istemiyor. Paket ilerlemesi,
       # yapılandırma doğrulaması ve paywall metinlerinin üç sözlükte de bulunması.
       # Bu sınıfın tamamı ancak gerçek para akarken fark edilirdi.
