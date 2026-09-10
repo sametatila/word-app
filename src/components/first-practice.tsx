@@ -68,7 +68,13 @@ export function FirstPractice() {
   if (!words || !w) return null;
 
   const last = idx + 1 >= words.length;
-  const label = t(!seen ? "fp.see_meaning" : last ? "fp.create_account" : "fp.next_word");
+  /* ÜÇ ANAHTAR HİÇBİR SÖZLÜKTE YOKTU (`fp.*`) ve `translate` bulamadığı
+     anahtarı OLDUĞU GİBİ döndürüyor: düğmede sırayla "fp.see_meaning",
+     "fp.next_word", "fp.create_account" yazıyordu - hem de kayıt yolunun
+     ortasında. Karşılıkları mobil sözlükte hazırdı (`firstpractice.*`).
+     Kapı görmedi çünkü `i18n-check`in tarayıcısı üçnokta içindeki anahtarı
+     tanımıyordu; o boşluk da bu commit'te kapandı. */
+  const label = t(!seen ? "firstpractice.see_meaning" : last ? "firstpractice.create_account" : "firstpractice.next_word");
 
   function primary() {
     if (!seen) {
@@ -138,7 +144,7 @@ export function FirstPractice() {
         {seen && last ? <CheckIcon size={20} /> : null}
         {label}
       </button>
-      <p className="muted mt-3 text-center text-caption">{t("firstw.account_soon")}</p>
+      <p className="muted mt-3 text-center text-caption">{t("firstpractice.save_note")}</p>
     </main>
   );
 }

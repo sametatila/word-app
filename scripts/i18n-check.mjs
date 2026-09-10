@@ -78,6 +78,20 @@ for (const dir of ["base", "web"]) {
 */
 const KEY_CALL = /\b(?:t|tx|tt|translate)\(\s*(?:[A-Za-z_$][\w$]*\s*,\s*)?"([a-z][\w]*(?:\.[\w]+)+)"/g;
 
+/*
+  UCNOKTA ICINDEKI ANAHTAR. Ustteki desen anahtari `t(`in HEMEN ardinda
+  ariyor ve `t(x ? "a.b" : "c.d")` bicimini hic gormuyor. Bedeli olculdu:
+  ilk pratik ekraninin birincil dugmesi uc anahtari boyle cagiriyordu, ucu de
+  hicbir sozlukte yoktu ve `translate` bulamadigi anahtari OLDUGU GIBI
+  donduruyor - kullanici kayit yolunun ortasinda "fp.see_meaning" yazan bir
+  dugme goruyordu (docs/plan/web-parity.md 11.133).
+
+  Ikinci desen `t(` ile kapanan parantez arasindaki BUTUN duz anahtarlari
+  aliyor. Cagri govdesi tek satirda; cok satirli cagrilar ustteki desene
+  kaliyor ve bugune dek oyle bir kacak cikmadi.
+*/
+const KEY_CALL_TERNARY = /\b(?:t|tx|tt|translate)\(([^()\n]*)\)/g;
+
 const known = new Set();
 for (const dir of ["base", "web"]) for (const k of load(dir, "tr").keys()) known.add(k);
 
@@ -95,10 +109,15 @@ for (const r of roots) walk(new URL(`../${r}`, import.meta.url).pathname);
 const missingUse = new Map();
 for (const file of files) {
   const src = readFileSync(file, "utf8");
-  for (const m of src.matchAll(KEY_CALL)) {
-    if (!known.has(m[1])) {
+  const gorulen = [];
+  for (const m of src.matchAll(KEY_CALL)) gorulen.push(m[1]);
+  for (const m of src.matchAll(KEY_CALL_TERNARY)) {
+    for (const k of m[1].matchAll(/"([a-z][\w]*(?:\.[\w]+)+)"/g)) gorulen.push(k[1]);
+  }
+  for (const k of gorulen) {
+    if (!known.has(k)) {
       const rel = file.slice(file.indexOf("/src/") + 1);
-      if (!missingUse.has(m[1])) missingUse.set(m[1], rel);
+      if (!missingUse.has(k)) missingUse.set(k, rel);
     }
   }
 }

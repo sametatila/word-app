@@ -939,7 +939,6 @@ export const enWeb: Record<string, string> = {
   "instw.why": "Opens full screen like an app, one tap to get in.",
   "instw.full_steps": "All the steps live under Profile → “Install as an app”.",
   "common.add": "Add",
-  "firstw.account_soon": "You'll create your account in a moment so your progress is saved.",
   "lessonw.turns": "{n} / {total} turns",
   "writew.task_n": "Task {n} / {total}",
   "writew.fields_ok": "{n} / {total} fields correct",

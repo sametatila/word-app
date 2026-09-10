@@ -964,7 +964,6 @@ export const trWeb: Record<string, string> = {
   "instw.why": "Uygulama gibi tam ekran açılır, tek dokunuşla girersin.",
   "instw.full_steps": "Adımların tamamı Profil → “Uygulama olarak kur” altında duruyor.",
   "common.add": "Ekle",
-  "firstw.account_soon": "Öğrendiklerini kaydetmek için birazdan hesabını açacaksın.",
   "lessonw.turns": "{n} / {total} tur",
   "writew.task_n": "Görev {n} / {total}",
   "writew.fields_ok": "{n} / {total} alan doğru",

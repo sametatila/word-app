@@ -939,7 +939,6 @@ export const deWeb: Record<string, string> = {
   "instw.why": "Öffnet sich wie eine App im Vollbild, ein Tipp genügt.",
   "instw.full_steps": "Alle Schritte stehen unter Profil → „Als App installieren“.",
   "common.add": "Hinzufügen",
-  "firstw.account_soon": "Gleich legst du dein Konto an, damit dein Fortschritt gespeichert wird.",
   "lessonw.turns": "{n} / {total} Runden",
   "writew.task_n": "Aufgabe {n} / {total}",
   "writew.fields_ok": "{n} / {total} Felder richtig",

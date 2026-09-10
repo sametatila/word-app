@@ -30,7 +30,10 @@ function Row({ it, colors }: { it: CandoItem; colors: Palette }) {
   const tint = it.state === "proven" ? colors.success : it.state === "progressing" ? colors.primary : colors.textFaint;
   return (
     <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingVertical: 10 }}>
-      <View style={{ width: 26, height: 26, borderRadius: 13, alignItems: "center", justifyContent: "center", backgroundColor: it.state === "proven" ? colors.successSoft : colors.surface2 }}>
+      {/* DURUM EKRAN OKUYUCUYA DA SÖYLENİYOR. Daire rengi ve içindeki sayı
+          göreni bilgilendiriyor, ekran okuyucu kullanıcısına hiçbir şey
+          söylemiyordu. Web aynı bilgiyi ipucu metniyle veriyor. */}
+      <View accessibilityLabel={t(it.state === "proven" ? "cando.proven" : it.state === "progressing" ? "cando.progressing" : "cando.not_yet")} style={{ width: 26, height: 26, borderRadius: 13, alignItems: "center", justifyContent: "center", backgroundColor: it.state === "proven" ? colors.successSoft : colors.surface2 }}>
         {it.state === "proven" ? <CheckIcon color={colors.successText} size={15} /> : <Text variant="micro" color={tint}>{it.total ? `${it.done}/${it.total}` : ""}</Text>}
       </View>
       <View style={{ flex: 1 }}>
