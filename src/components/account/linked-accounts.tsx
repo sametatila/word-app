@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { SettingRow } from "@/components/setting-row";
 import { ChangePassword } from "@/components/account/change-password";
 import { ActiveSessions } from "@/components/account/active-sessions";
+import { TwoFactor } from "@/components/account/two-factor";
 import { useT } from "@/lib/i18n/client";
 
 /**
@@ -177,6 +178,11 @@ export function LinkedAccounts({ googleEnabled }: { googleEnabled: boolean }) {
           `credential` yoksa (yalnız Google/Apple ile girmiş biri) form hiç
           çizilmiyor — olmayan bir parolayı sormak anlamsız olurdu. */}
       {bagliMi("credential") ? <ChangePassword /> : null}
+
+      {/* İki adımlı doğrulama da parolalı hesaba bağlı: açma ve kapatma
+          parola istiyor (better-auth zorunlu tutuyor) ve ikinci adımın
+          koruduğu şey zaten parolalı giriş. */}
+      {bagliMi("credential") ? <TwoFactor /> : null}
 
       {/* Etkin oturumlar HER hesapta: yalnız Google ile giren biri de
           telefonunu kaybedebilir. Parola değiştirmenin aksine bu, giriş

@@ -110,6 +110,19 @@ export function translateAuthError(input: unknown, lang: NativeLang = DEFAULT_NA
   */
   if (code === "VERIFICATION_FAILED" || code === "MISSING_RESPONSE")
     return t("autherror.captcha_failed");
+  /*
+    İKİNCİ ADIMIN KODU. Yanlış, süresi dolmuş ve deneme hakkı tükenmiş —
+    kullanıcı için üçü de aynı: bu kod işe yaramaz, yenisini iste. Ayrı
+    metinler yazmak, saldırgana kodun hangi sebeple düştüğünü de söylerdi.
+    `INVALID_TWO_FACTOR_COOKIE` burada DEĞİL: o "giriş denemen düştü"
+    demek ve ekran onu ayrıca karşılıyor (bkz. two-factor-form).
+  */
+  if (
+    code === "INVALID_CODE" ||
+    code === "OTP_HAS_EXPIRED" ||
+    code === "TOO_MANY_ATTEMPTS_REQUEST_NEW_CODE"
+  )
+    return t("autherror.invalid_code");
   if (status === 403 || code.includes("FORBIDDEN"))
     return t("autherrorw.forbidden");
   if (msg.includes("failed to fetch") || msg.includes("networkerror") || msg.includes("load failed"))

@@ -63,6 +63,17 @@ export async function authApi<T = Record<string, unknown>>(
   return { ok: true, data: (json ?? {}) as T };
 }
 
+/**
+ * Girişin YANITI oturum açıldığını göstermeyebilir: iki adımlı doğrulama
+ * açıkken sunucu oturumu kurmuyor, `twoFactorRedirect` dönüyor ve kısa ömürlü
+ * imzalı bir çerez bırakıyor (better-auth two-factor). Bunu okumayan bir
+ * istemci "giriş başarılı" deyip uygulamaya geçer ve her istek 401 alır.
+ */
+export type SignInResponse = {
+  token?: string | null;
+  twoFactorRedirect?: boolean;
+};
+
 export type SignUpResponse = {
   token?: string | null;
   user?: { id?: string; email?: string; emailVerified?: boolean };

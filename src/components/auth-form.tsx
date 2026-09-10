@@ -4,7 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import { AuthNotice, AuthShell, authInputClass } from "@/components/auth-shell";
-import { authApi, type SignUpResponse } from "@/lib/auth/api";
+import { authApi, type SignInResponse, type SignUpResponse } from "@/lib/auth/api";
 import { isEmailNotVerified, translateAuthError } from "@/lib/auth/errors";
 import { checkPassword, MIN_PASSWORD_LENGTH } from "@/lib/auth/password-policy";
 import { useT, useLang } from "@/lib/i18n/client";
@@ -81,7 +81,7 @@ export function AuthForm({
         // olarak yazılıyor. Varsayılan da bu, ama ana ekrana eklenmiş
         // uygulamada oturumun kapanmaması bu tek bayrağa bağlı olduğu için
         // açıkça yazılıyor — sessizce değişmesi "her açılışta giriş" demek.
-        const res = await authApi("sign-in/email", { email, password, rememberMe: true }, captchaToken);
+        const res = await authApi<SignInResponse>("sign-in/email", { email, password, rememberMe: true }, captchaToken);
         if (!res.ok) {
           // Doğrulanmamış hesap bir hata değil, eksik bir adım: kullanıcıyı oraya al.
           if (isEmailNotVerified(res)) {
@@ -89,6 +89,15 @@ export function AuthForm({
             return;
           }
           setError(translateAuthError(res, lang));
+          return;
+        }
+        /*
+          İKİ ADIMLI DOĞRULAMA AÇIKSA burada oturum YOK: sunucu parolayı kabul
+          etti ama oturumu kurmadı, ikinci adımı bekliyor. Uygulamaya geçmek
+          401 duvarı demek olurdu.
+        */
+        if (res.data?.twoFactorRedirect) {
+          router.push(`/two-factor?next=${encodeURIComponent(next)}`);
           return;
         }
         router.push(next);
