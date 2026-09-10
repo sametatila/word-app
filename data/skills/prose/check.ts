@@ -53,7 +53,15 @@ const numbers = (t: string): string[] =>
  */
 const TR_WORDS =
   /\b(bir|ve|ile|için|değil|demek|var|yok|olur|olunur|olmak|gibi|daha|çok|ama|yani|kadar|sonra|önce)\b/i;
-const turkish = (t: string): boolean => /[ışğİĞŞ]/.test(t) || TR_WORDS.test(t);
+/*
+  Dilbilgisi TERİMLERİ de Türkçe ve tırnak içinde geçiyor: „sein + zu +
+  mastar“ gibi formüller yarısı Almanca yarısı Türkçe. Almanca yarısı
+  olumlu ölçüte takılıyor, Türkçe yarısı da çevrilmek zorunda — o yüzden
+  terimler ayrıca listeleniyor. Özel harf taşıyanlar (sıfat, çoğul, hâl)
+  zaten yakalanıyor; buraya yalnız düz harfli olanlar giriyor.
+*/
+const TR_TERMS = /\b(mastar|ortaç|isim|fiil|zamir|özne|nesne|tekil|edat|kip|ek)\b/i;
+const turkish = (t: string): boolean => /[ışğİĞŞ]/.test(t) || TR_WORDS.test(t) || TR_TERMS.test(t);
 
 /**
  * Açıklık ALMANCA ya da İNGİLİZCE görünüyor mu? Kural ancak öyleyse
