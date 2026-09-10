@@ -9,16 +9,19 @@ import type { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { Text } from "../ui/Text";
 import { PressableScale } from "../ui/PressableScale";
 import { XIcon } from "../ui/icons";
+import { Chip } from "../ui/Chip";
 import { ChoiceGame, type ChoiceRound } from "../game/ChoiceGame";
 import { RoundSkeleton } from "../game/RoundSkeleton";
 import { demoPlacementFor, estimateLevel } from "../data/demoPlacement";
 import {
   startPlacement,
+  fetchPlacementStatus,
   finishPlacement,
   acceptPlacement,
   type PlacementVocab,
   type PlacementAnswer,
   type PlacementRecord,
+  type PlacementStatus,
 } from "../game/placement";
 import { useAuth } from "../lib/AuthContext";
 import { updateProfile } from "../lib/updateProfile";
@@ -26,6 +29,9 @@ import { saveOnboardingPrefs } from "../lib/onboardingPrefs";
 import type { RootStackParams } from "../navigation/RootStack";
 import { useTheme, spacing, radii, softShadow } from "../theme";
 import { sfx } from "../lib/sfx";
+
+/** Kullanıcının seçebileceği seviyeler — web `PLACEMENT_LEVELS` ile aynı. */
+const CHOOSABLE = ["A1", "A2", "B1", "B2", "C1"] as const;
 
 const withArtikel = (a: string | null, de: string) => (a ? `${a} ${de}` : de);
 
@@ -68,6 +74,20 @@ export function PlacementScreen() {
   const [result, setResult] = useState<PlacementRecord | null>(null);
   const [submitting, setSubmitting] = useState(false);
   const [saved, setSaved] = useState(false);
+  /* Bekleme süresi: sunucu bunu bildiriyor ama ZORLAMIYOR (bkz.
+     `fetchPlacementStatus`). Onboarding'de sorulmuyor - orada zaten ilk kez
+     alınıyor ve hesap bile yeni. */
+  const [status, setStatus] = useState<PlacementStatus | null>(null);
+  /*
+   * SEVİYEYİ KULLANICI SEÇEBİLİYOR.
+   *
+   * Sunucu öneriyi veriyor ama `accept` HANGİ seviyeyi kabul ettiğini ayrıca
+   * alıyor (`acceptPlacement(id, level)`) - yani "önerine katılmıyorum, ben
+   * B1'den başlayacağım" baştan beri mümkündü. Mobil her zaman öneriyi
+   * uyguluyordu; kendi seviyesini bilen kullanıcının burada söyleyecek sözü
+   * yoktu. Web beş seviyeyi çip olarak gösteriyor (`placement-test`).
+   */
+  const [chosen, setChosen] = useState<string | null>(null);
   const answers = useRef<PlacementAnswer[]>([]);
 
   useEffect(() => {
@@ -82,6 +102,12 @@ export function PlacementScreen() {
        Mobil yalnız bitişi yazıyordu, yani "kaç kişi başlayıp bıraktı"
        hesaplanamıyordu: huninin payı eksikti. */
     track("exam_start", 0, "placement:A1");
+    if (!onboarding) {
+      /* Durum test İSTEĞİNDEN önce gelmiyor: iki istek paralel gidiyor ve
+         bekleme süresi doluysa ekran soruları hiç göstermeden kapanıyor.
+         Sıralı yapmak açılışı iki gecikme kadar yavaşlatırdı. */
+      fetchPlacementStatus().then((st) => { if (alive) setStatus(st); }).catch(() => { /* durum yoksa test yine açılır */ });
+    }
     startPlacement()
       .then((items) => { if (alive) { if (items.length) setReal(items); else setLoadError(true); setLoading(false); } })
       .catch(() => { if (alive) { setLoadError(true); setLoading(false); } });
@@ -93,7 +119,7 @@ export function PlacementScreen() {
   const total = questions.length;
   const done = idx >= total;
   // Önerilen seviye: gerçek modda sunucudan (result), yoksa yerel tahmin.
-  const level = result?.suggested ?? estimateLevel(correct);
+  const level = chosen ?? result?.suggested ?? estimateLevel(correct);
 
   function onDone(ok: boolean) {
     const q = questions[idx];
@@ -121,7 +147,7 @@ export function PlacementScreen() {
     if (onboarding) await saveOnboardingPrefs({ level });
     if (user) {
       try {
-        if (result) await acceptPlacement(result.id, result.suggested);
+        if (result) await acceptPlacement(result.id, level);
         else await updateProfile({ level });
       } catch { /* yut: yine de kapat */ }
     }
@@ -156,6 +182,33 @@ export function PlacementScreen() {
 
   if (loading) return <RoundSkeleton label />;
 
+  /*
+   * BEKLEME SÜRESİ DOLMADIYSA TEST AÇILMIYOR.
+   *
+   * Test 30 günde bir alınabiliyor; sunucu bunu yalnız BİLDİRİYOR, kapıyı
+   * istemci tutuyor. Mobil hiç sormadığı için Android'de test istenildiği
+   * kadar tekrarlanabiliyor ve her bitiş seviyeyi yeniden yazabiliyordu.
+   * Web aynı yerde son almayı ve kalan süreyi söylüyor (`placement-test`).
+   */
+  if (user && status && !status.canRetake) {
+    const last = status.last;
+    return (
+      <View style={{ flex: 1, backgroundColor: colors.bg, alignItems: "center", justifyContent: "center", gap: spacing.md, padding: spacing.xl }}>
+        <Text variant="h2" style={{ textAlign: "center" }}>{t("placement.title")}</Text>
+        {last ? (
+          <Text variant="caption" color={colors.textMuted} style={{ textAlign: "center", lineHeight: 20 }}>
+            {t("placement.last_taken", { date: last.at.slice(0, 10) })} {last.suggested}
+            {last.accepted ? ` ${t("placement.you_chose", { level: last.accepted })}` : ""}
+          </Text>
+        ) : null}
+        <Text variant="body" color={colors.textMuted} style={{ textAlign: "center", lineHeight: 22 }}>{t("placement.retake_in", { n: status.retakeDays })}</Text>
+        <PressableScale onPress={leave} style={[{ paddingHorizontal: 22, paddingVertical: 12, borderRadius: radii.lg, backgroundColor: colors.primary }, softShadow(colors.primary, 8)]}>
+          <Text variant="bodyStrong" color={colors.onPrimary}>{t("common.close")}</Text>
+        </PressableScale>
+      </View>
+    );
+  }
+
   return (
     <View style={{ flex: 1, backgroundColor: colors.bg, paddingTop: insets.top + spacing.sm, paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.lg }}>
       <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, marginBottom: spacing.xl }}>
@@ -189,9 +242,22 @@ export function PlacementScreen() {
           <Text variant="body" color={colors.textMuted} style={{ marginTop: spacing.xs, marginBottom: spacing.xxl, textAlign: "center" }}>
             {t("placement.result", { total: total, correct: correct })}
           </Text>
+          {/* Beş seviye: öneri işaretli, seçim kullanıcının. Yalnız oturumlu
+              kullanıcıda - misafir akışında kabul edilecek bir kayıt yok. */}
+          {user && result ? (
+            <View style={{ flexDirection: "row", flexWrap: "wrap", justifyContent: "center", gap: spacing.sm, marginBottom: spacing.lg }}>
+              {CHOOSABLE.map((l) => (
+                <Chip key={l} label={l === result.suggested ? `${l} · ${t("placement.suggested")}` : l} active={level === l} onPress={() => setChosen(l)} />
+              ))}
+            </View>
+          ) : null}
           {saved && <Text variant="bodyStrong" color={colors.successText} style={{ marginBottom: spacing.md }}>{t("placement.saved")}</Text>}
           <PressableScale onPress={applyLevel} style={[{ width: "100%", backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: spacing.lg, alignItems: "center" }, softShadow(colors.primary, 10)]}>
-            <Text variant="h3" color={colors.onPrimary}>{t(user ? "placement.set_level" : "placement.understood")}</Text>
+            <Text variant="h3" color={colors.onPrimary}>
+              {user && result
+                ? t(level === result.suggested ? "placement.continue_with" : "placement.pick_and_continue", { level: String(level) })
+                : t(user ? "placement.set_level" : "placement.understood")}
+            </Text>
           </PressableScale>
           <PressableScale onPress={leave} style={{ width: "100%", borderRadius: radii.lg, paddingVertical: spacing.lg, alignItems: "center", marginTop: spacing.sm }}>
             <Text variant="bodyStrong" color={colors.textMuted}>{t("common.close")}</Text>

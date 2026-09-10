@@ -2707,6 +2707,48 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   );
 }
 
+/* ── 71. seviye testinin yeniden alma suresi ──────────────────────────────
+ * Test 30 gunde bir alinabiliyor. Sunucu bunu yalniz BILDIRIYOR (`GET
+ * /api/placement` → canRetake, retakeDays), kapiyi ISTEMCI tutuyor. Mobil
+ * durumu hic sormuyordu: Androidde test istenildigi kadar tekrarlanabiliyor
+ * ve her bitis seviyeyi yeniden yazabiliyordu - sik tekrar seviye tahminini
+ * "ezber"e cevirir. Iki taraf da ayni ucu sorup ayni ucu tutmali. */
+{
+  const kapi = (p) => {
+    const src = read(p).replace(/\/\*[\s\S]*?\*\//g, " ").replace(/\/\/[^\n]*/g, " ");
+    return [
+      "durum=" + (/canRetake/.test(src) ? "var" : "yok"),
+      "kalan gun=" + (src.includes("placement.retake_in") ? "var" : "yok"),
+      "son alma=" + (src.includes("placement.last_taken") ? "var" : "yok"),
+      "secilen seviye=" + (src.includes("placement.you_chose") ? "var" : "yok"),
+    ];
+  };
+  sameList("seviye testi bekleme suresi", kapi("mobile/src/screens/PlacementScreen.tsx"), kapi("src/components/placement/placement-test.tsx"));
+}
+
+/* ── 72. seviye testi sonucunda seviyeyi KULLANICI seciyor ────────────────
+ * Sunucu oneriyi veriyor ama `accept` hangi seviyenin kabul edildigini AYRICA
+ * aliyor: "onerine katilmiyorum, B1'den baslayacagim" bastan beri mumkundu.
+ * Mobil her zaman oneriyi uyguluyordu - kendi seviyesini bilen kullanicinin
+ * burada soyleyecek sozu yoktu. Iki taraf da bes seviyeyi gostermeli, oneriyi
+ * isaretlemeli ve SECILENI kabul etmeli. */
+{
+  const secim = (p, kabul) => {
+    const src = read(p).replace(/\/\*[\s\S]*?\*\//g, " ").replace(/\/\/[^\n]*/g, " ");
+    return [
+      "bes seviye=" + (/\["A1", "A2", "B1", "B2", "C1"\]|PLACEMENT_LEVELS\.map/.test(src) ? "var" : "yok"),
+      "oneri isareti=" + (src.includes("placement.suggested") ? "var" : "yok"),
+      "dugme metni=" + (src.includes("placement.continue_with") && src.includes("placement.pick_and_continue") ? "var" : "yok"),
+      "secileni kabul=" + (kabul.test(src) ? "var" : "yok"),
+    ];
+  };
+  sameList(
+    "seviye testi seviye secimi",
+    secim("mobile/src/screens/PlacementScreen.tsx", /acceptPlacement\(result\.id, level\)/),
+    secim("src/components/placement/placement-test.tsx", /action: "accept"[\s\S]{0,120}?chosen|level: chosen/),
+  );
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"

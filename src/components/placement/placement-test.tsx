@@ -175,7 +175,7 @@ export function PlacementTest({ initialLast, canRetake, retakeDays }: { initialL
             {t("common.start")}
           </button>
         ) : (
-          <p className="muted mt-4 text-sm">{t("placew.retake_in", { n: retakeDays })}</p>
+          <p className="muted mt-4 text-sm">{t("placement.retake_in", { n: retakeDays })}</p>
         )}
         <Link href="/profile" className="btn btn-ghost mt-2 w-full px-5 py-3 text-sm">
           {t("common.discard")}
@@ -213,7 +213,7 @@ export function PlacementTest({ initialLast, canRetake, retakeDays }: { initialL
           {PLACEMENT_LEVELS.map((l) => (
             <button key={l} type="button" onClick={() => setChosen(l)} className={`chip px-3 py-1.5 text-sm font-bold ${chosen === l ? "chip-active" : ""}`} aria-pressed={chosen === l}>
               {l}
-              {l === result.suggested ? <span className="muted ml-1 text-xs font-semibold">{t("plc.suggested")}</span> : null}
+              {l === result.suggested ? <span className="muted ml-1 text-xs font-semibold">{t("placement.suggested")}</span> : null}
             </button>
           ))}
         </div>
