@@ -1051,3 +1051,29 @@ Bugünkü hâl ölçüldü, uydurulmadı: mobil dağıtıcı on bir oyunu tanıy
 translate, match) + `intro`; web on üçü tanıyor. Fark yalnız `free_sentence`.
 `speak` de iki tarafta dağıtıcıda yok ama o yalnız yürüyüş modunda üretiliyor
 ve orada kendi oynatıcısı var — sorun değil.
+
+### 11.14 Ders ikonu: alan çalışıyor, ÇİZİMİ iki platformda da yok
+
+`LESSON_ICONS` 65 konu simgesi tanımlıyor ve yorumu ne için olduğunu söylüyor:
+"yol haritasındaki düğüm simgesi — dersin konusunu tek bakışta söylüyor".
+İçerik de bunu dolduruyor (780 dersin hepsinde bir `icon` var).
+
+ALAN ÖLÜ DEĞİL: `lib/cando-map` onu okuyup dersi bir can-do temasına
+(social/service/work) yerleştiriyor ve `check-content` değerin kayıt
+defterinde olduğunu doğruluyor. Sınıflandırmayı sunucu yaptığı için iki
+platform da aynı gruplamayı görüyor.
+
+ÇİZİLMEYEN kısım görsel olan: Patika düğümü hem webde hem Androidde öğenin
+TÜRÜNÜ gösteriyor (kitap/kulaklık/kalem), dersin KONUSUNU değil. Yani burada
+parite YOK DEĞİL - iki platform eşit biçimde eksik.
+
+Web'de bu iş için 73 tema ikonu bileşeni yazılmış (`BabyIcon`, `BreadIcon`,
+`BusIcon`…) ve hiçbiri hiçbir bileşende kullanılmıyor. Paket boyutuna etkisi
+yok (tek tek export, paketleyici eliyor); maliyeti okunabilirlik. SİLİNMEDİ:
+kayıt defterinin yorumu bu bileşenlerin o liste için yazıldığını söylüyor,
+yani planlanmış bir işin yarısı.
+
+BAĞLAMAK PORT DEĞİL, TASARIM İŞİ: webde eksik olan tek şey ad→bileşen
+haritası, ama Androidde o 60 küsur ikonun kendisi yok (mobil ikon kümesi 50
+ve tamamı arayüz ikonu). Android referans olduğu için webe tek taraflı eklemek
+de yeni bir ayrışma yaratırdı. Karar Samet'in.
