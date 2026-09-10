@@ -3937,3 +3937,42 @@ tek geri bildirim".
 Bölüm numaralarından ikisi **çift yazılmıştı** (18 ve 19 ikişer kez) ve dosya
 kendi yorumlarında numarayla atıf yapıyor — hangi bölüme bakılacağı belirsizdi.
 Sondaki dokuz bölüm kaydırıldı, üç çapraz başvuru düzeltildi.
+
+### 11.78 "Boş" ile "yüklenemedi" ayrımı ve istek kartı
+
+§11.77'de akışta bulduğum kusuru (ağ hatası boş duruma düşüyor, kullanıcı
+sebebini öğrenemiyor) bütün sosyal ekranlarda taradım. Bir tane daha çıktı ve
+o **iki platformda birden** duruyordu.
+
+**Arkadaş tablosu.** `.catch(() => setBoard({ rows: [], start: "", daysLeft: 0 }))`
+— hata boş bir tabloya çevriliyor ve kart tam altındaki "henüz yarışacak kimse
+yok"a düşüyordu. Arkadaşı olan kullanıcı, ağ koptuğunda arkadaşlarının
+kaybolduğunu görüyor ve sebebini hiç öğrenmiyordu. Lig sekmesi aynı durumu
+baştan beri ayrı bir kartla söylüyor; iki sekme artık aynı.
+
+Taramada temiz çıkanlar, sebepleriyle:
+
+| yüzey | durum |
+|---|---|
+| `LeagueBoard` / `league-board` | `err` boolean + ayrı kart — doğru örüntü, ikisinde de |
+| `Quests`, `InboxScreen`, `UserScreen` | hata metni boş kartın **yanında** çiziliyor |
+| `Find` (öneriler), `FriendPulse` | hata görünmez ama ikisi de ikincil kutu; yokluğu veri diye okunmuyor ve iki platformda aynı |
+
+#### İstek kartı: iki fark
+
+**Profile giden yol yoktu (mobil).** Kart ad, kullanıcı adı ve seviyeyi yazıyor
+ama profile hiçbir yol taşımıyordu: kullanıcı **kimi kabul ettiğini görmeden**
+karar veriyordu. Web satırı baştan beri açıyor. Yol avatar — akış kartının
+kuralı ve iki uygulamada da aynı.
+
+**Başlıkta sayı yoktu (web).** Android `SectionTitle` sağda kaç istek olduğunu
+yazıyor; listeye bakmadan bilinmesi gereken tek şey o.
+
+**Bağlantı addaydı (web).** Aynı uygulamanın akış kartı bunu avatardan yapıyor
+ve gerekçesi orada yazılı: adın altı çizili hâli, adın kendisinin bir düğme
+olduğunu söylemiyor ve erişilebilir ad bulanık kalıyor. İki liste artık aynı
+kuralı izliyor.
+
+Ayrıca zil (`InboxBell` / `notification-bell`) ölçüldü: ikon, 44'lük karo,
+`surface-2` zemin, "9+" eşiği, kehribar zemin + mürekkep yazı, dakikalık
+tazeleme ve öne gelince tazeleme — hepsi eşit. Değişiklik gerekmedi.
