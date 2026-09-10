@@ -4790,3 +4790,36 @@ yalnız kelime listesini değil, cümle kuran **turları** da etkiliyordu.
 Web kuralı `mobile/src/data/example.ts` olarak taşındı (kısaltma listesi
 içerik olduğu için `SKIP_CONTENT`, karşılığında **parity 49** hem listeyi hem
 üç ayıklama adımını eşliyor — muafiyetin kapısı).
+
+### 11.108 Ayarlar: günde yeni kelime mobilde hiç yoktu
+
+`updateProfile` alanı baştan beri taşıyor, `/api/profile` kabul ediyor (0–40)
+— eksik olan hem mevcut değeri gönderen uç alanı hem de onu çizen yüzeydi.
+Kullanıcı **günlük yükü belirleyen iki ayardan birini** yalnızca webden
+değiştirebiliyordu. §11.80'in bir örneği daha: sözleşme uçtan uca yazılı,
+ekran hiç sormuyor.
+
+Çip aralığı ucun kırpmasıyla aynı ve **parity 50** üçünü (uç, web
+kaydırıcısı, mobil çipleri) yan yana tutuyor: yüzey sunucunun kabul etmediği
+bir sayı teklif ederse kullanıcı seçtiğini kaydedilmiş sanıyor, sunucu
+sessizce kırpıyor ve ekran bir sonraki açılışta başka bir sayı gösteriyor.
+
+Üç açıklama satırı da yalnız webdeydi — tekrar zamanlarının nasıl
+hesaplandığı, kurs değişince kelimelerin taşındığı ama öteki kursun
+**silinmediği**, ve seviyeyi yalnızca kullanıcının değiştirdiği. Üçü de
+düğmeye basmadan önce bilinmesi gereken şeyler.
+
+### 11.109 Büyük harf çevirisi yerelsizdi
+
+Türkçede "i" nin büyüğü **"İ"**, "I" değil. Yedi yerde arayüz metni ya
+`toUpperCase()` ile ya da elle yazılmış `"tr-TR"` ile büyütülüyordu ve hata
+**iki yönde birden** çalışıyordu: Türkçe arayüzde "ILERLEME", İngilizce ve
+Almanca arayüzde "PROMOTİON". İkisi (sosyal bölüm başlığı `SectionTitle` ve
+lig kuşak etiketi) bütün sosyal ekranları etkiliyordu.
+
+Kural zaten yazılıydı (`achievement-wall`: "Büyük harfe çevirme YEREL"),
+uygulanmamıştı. **Parity 51** artık kaçakları sayıyor ve kapsamı bilerek dar:
+çevirmen çıktısına uygulanan harf çevirisi ve `.tsx` içinde elle yazılmış
+`"tr-TR"` büyütmesi. Veri üzerindeki `toLowerCase()` (e-posta, kullanıcı adı,
+eşleştirme) meşru ve aranmıyor — o kadar geniş bir kural yalnızca gürültü
+üretip **gerçek bulguyu gizlerdi** (§11.104).
