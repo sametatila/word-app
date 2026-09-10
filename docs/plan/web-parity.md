@@ -5746,3 +5746,39 @@ scratchpad'de kaldı, tekrarlanabilir.
 **Bir yan ayrıntı:** durum isteği testle PARALEL gidiyor. Sıralı yapmak
 ekranın açılışını iki gecikme kadar yavaşlatırdı ve bekleme süresi dolmuş
 kullanıcı (çoğunluk) bunu her seferinde öderdi.
+
+
+### 11.154 Ters yönlü tarama: istek gövdeleri ve "gün" yazma anahtarı
+
+§11.153 yanıt alanlarını taradı; bu tur aynı şeyi ters yönde yaptım — her ucun
+istek gövdesindeki anahtarları iki platformdan çıkarıp karşılaştırdım. Üç satır
+çıktı, biri gerçek:
+
+- `/api/answers` "yalnız web: progress, wager" — **yanlış pozitif**: mobil
+  `progress`i koşullu yayılımla gönderiyor (`...(progress ? { progress } : {})`)
+  ve çıkarıcı üçlü ifadeyi tanımıyor. `wager` gerçekten web'e özel (bahisli
+  etap mobilde yok, yazılı).
+- `/api/skills` "yalnız web: id, correct, score, day, seconds" — **yanlış
+  pozitif**: çıkarıcı aynı ucun iki ayrı çağrısını (PUT `{records}` ve POST)
+  tek kümede topluyor. Mobil POST'u beş alanın hepsini gönderiyor.
+- `/api/assess` — **gerçek**.
+
+**`day` bir YAZMA anahtarı.** Değerlendirme satırı o güne yazılıyor ve günlük
+kota o günün satırları sayılarak bulunuyor; uçtaki yorum bunu açıkça söylüyor.
+Web baştan beri gönderiyordu, mobil **dört çağrı yerinin hiçbirinde**
+göndermiyordu. Sonuç: UTC+3'te gece yarısı ile 03:00 arasında yapılan her
+değerlendirme dünkü güne düşüyor, kota da yanlış güne sayılıyordu — §11.148'de
+web'de bulduğum ders hatasının aynısı, bu kez ters tarafta.
+
+**Kapı sınıfı tutuyor (parity §73):** `clampDay(body.day)` yazan her uç "gün
+isteyen uç" sayılıyor (dokuz uç) ve iki tarafın da o uca gün göndermesi
+bekleniyor.
+
+**Kapının ilk yazımı yanlış pozitif verdi** ve düzeltmesi öğretici: ölçü çağrı
+YERİ başınaydı, `/api/mock-exam` `save` çağrısını "gün göndermiyor" diye
+işaretledi. İki sebep birden: aynı ucun bazı eylemleri gün istemiyor, ve web
+çağrıyı bir yardımcıdan (`post`) geçirdiği için uç adı çağrı yerinde hiç
+geçmiyor — yani web tarafı "eksiği yok" görünüyordu, çünkü kapı onun
+çağrılarını hiç görmüyordu. Ölçü uca taşındı: bir ucun yazma çağrılarından en
+az biri gün taşıyorsa o platform gönderiyor sayılıyor. **Bir kapının iki
+tarafı farklı görebilmesi, kapının kendisini yanıltıcı yapar.**
