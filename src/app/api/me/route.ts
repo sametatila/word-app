@@ -40,6 +40,11 @@ export async function GET() {
         longestStreak: profile.longestStreak,
         xp: profile.totalXp,
         dailyGoal: profile.dailyGoal,
+        /* GÜNDE YENİ KELİME. Uç bunu göndermiyordu, yani mobil ayarlar ekranı
+           kullanıcının kaç yeni kelime istediğini OKUYAMIYORDU - `updateProfile`
+           alanı baştan beri yazabiliyor ve `/api/profile` kabul ediyor
+           (0-40), ama ekran mevcut değeri bilmediği için hiç çizemiyordu. */
+        newPerDay: profile.newPerDay,
         mastered,
         totalWords,
         seconds: progress?.seconds ?? 0,

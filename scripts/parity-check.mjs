@@ -2080,6 +2080,37 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   sameList("ornek cumle kurali", kural("mobile/src/data/example.ts"), kural("src/lib/example.ts"));
 }
 
+/* ── 50. gunde yeni kelime siniri ─────────────────────────────────────────
+ * Uc degeri 0-40 arasina kirpiyor (`/api/profile`). Web kaydiricisi ve mobil
+ * cip listesi ayni araligi teklif etmek zorunda: yuzey sunucunun kabul
+ * etmedigi bir sayi teklif ederse kullanici sectigini kaydedilmis saniyor,
+ * sunucu sessizce kirpiyor ve ekran bir sonraki acilista baska bir sayi
+ * gosteriyor. Ucu de burada yan yana. */
+{
+  const src = read("src/app/api/profile/route.ts");
+  const m = src.match(/clampInt\(body\.newPerDay,\s*(\d+),\s*(\d+)\)/);
+  const uc = m ? [m[1], m[2]] : ["?", "?"];
+  const web = read("src/components/profile-form.tsx");
+  const wm = web.match(/label=\{t\("settings\.new_per_day"\)\}[\s\S]{0,200}?min=\{(\d+)\}[\s\S]{0,80}?max=\{(\d+)\}/);
+  const mob = read("mobile/src/screens/SettingsScreen.tsx");
+  const mm = mob.match(/const NEW_PER_DAY = \[([^\]]*)\]/);
+  const sayilar = mm ? mm[1].split(",").map((x) => Number(x.trim())) : [];
+  sameList(
+    "gunde yeni kelime araligi",
+    ["alt=" + Math.min(...sayilar), "ust=" + Math.max(...sayilar)],
+    ["alt=" + uc[0], "ust=" + uc[1]],
+    "mobil cipleri",
+    "uc kirpmasi",
+  );
+  sameList(
+    "gunde yeni kelime araligi (web)",
+    wm ? ["alt=" + wm[1], "ust=" + wm[2]] : ["kaydirici bulunamadi"],
+    ["alt=" + uc[0], "ust=" + uc[1]],
+    "web kaydiricisi",
+    "uc kirpmasi",
+  );
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"

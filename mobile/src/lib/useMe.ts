@@ -24,6 +24,8 @@ export type Me = {
   /** Günlük alışkanlık döngüsü (/api/me; canlı değilse tanımsız). */
   reviewsToday?: number;
   newToday?: number;
+  /** Günde yeni kelime hedefi — ayarlar ekranı bunu çiziyor. */
+  newPerDay?: number;
   dueCount?: number;
   /** Tekrar kuyruğu ve seviye kırılımı — uç `getProgress`ten geçiriyor. */
   upcoming?: number;

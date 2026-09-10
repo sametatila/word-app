@@ -27,6 +27,12 @@ import { openLegal } from "../lib/legal";
 import { APP_VERSION } from "../version";
 
 const GOALS = [10, 20, 30, 50];
+/**
+ * Günde yeni kelime seçenekleri — uç 0-40 arasını kabul ediyor
+ * (`/api/profile` `clampInt(body.newPerDay, 0, 40)`), web kaydırıcısı da aynı
+ * aralıkta. Sıfır meşru bir seçim: "yeni kelime istemiyorum, yalnız tekrar".
+ */
+const NEW_PER_DAY = [0, 5, 10, 15, 20, 30, 40];
 // Diller KENDİ adlarıyla yazılır: arayüz yanlış dildeyken bile kullanıcı kendi
 // dilini tanıyıp seçebilsin diye (çevrilirse tam da aradığı satırı okuyamaz).
 const LANG_LABEL: Record<NativeLang, string> = { tr: "Türkçe", en: "English", de: "Deutsch" };
@@ -87,6 +93,15 @@ export function SettingsScreen() {
 
   const [name, setName] = useState(me?.name ?? user?.name ?? "");
   const [goal, setGoal] = useState<number>(me?.dailyGoal ?? 20);
+  /*
+   * GÜNDE YENİ KELİME — mobilde HİÇ YOKTU.
+   *
+   * `updateProfile` alanı baştan beri taşıyor ve `/api/profile` kabul ediyor;
+   * eksik olan tek şey hem mevcut değeri gönderen uç alanı hem de onu çizen
+   * yüzeydi. Kullanıcı günde kaç yeni kelime göreceğini yalnız webden
+   * ayarlayabiliyordu - oysa bu, günlük yükü belirleyen iki ayardan biri.
+   */
+  const [newPerDay, setNewPerDay] = useState<number>(me?.newPerDay ?? 10);
   const [level, setLevel] = useState<string>(me?.level ?? "A1");
   const [course, setCourse] = useState<string>(me?.course ?? "de");
   const [voice, setVoice] = useState<VoiceId>(defaultVoice(me?.course ?? "de"));
@@ -109,6 +124,7 @@ export function SettingsScreen() {
       hydrated.current = true;
       setName((n) => n || me.name || user?.name || "");
       setGoal(me.dailyGoal);
+      setNewPerDay(me.newPerDay ?? 10);
       setLevel(me.level);
       setCourse(me.course ?? "de");
       void loadVoicePref(me.course ?? "de").then(setVoice);
@@ -146,7 +162,7 @@ export function SettingsScreen() {
     if (!user) { nav.navigate("Auth"); return; }
     setBusy(true);
     setMsg(null);
-    const ok = await updateProfile({ displayName: name.trim() || undefined, dailyGoal: goal, level });
+    const ok = await updateProfile({ displayName: name.trim() || undefined, dailyGoal: goal, newPerDay, level });
     setBusy(false);
     /*
      * HANGİ ayar değişti — web `profile-form` ile aynı kural: olay yalnız
@@ -160,6 +176,7 @@ export function SettingsScreen() {
       const cleanName = name.trim();
       if (cleanName !== (me?.name ?? "")) track("setting_change", 0, "name");
       if (goal !== me?.dailyGoal) track("setting_change", goal, "daily_goal");
+      if (newPerDay !== me?.newPerDay) track("setting_change", newPerDay, "new_per_day");
       if (level !== me?.level) track("setting_change", 0, "level");
       await refresh();
       setMsgOk(true);
@@ -217,12 +234,20 @@ export function SettingsScreen() {
               </PressableScale>
             );
           })}
+          {/* Kurs değiştirmenin ne yaptığı: kelimeler ve kuyruk taşınıyor, öteki
+              kurs SİLİNMİYOR. Web bunu yazıyordu, mobil yazmıyordu - ve bu,
+              düğmeye basmadan önce bilinmesi gereken bir şey. */}
+          <Text variant="micro" color={colors.textFaint} style={{ marginTop: spacing.sm }}>{t("settings.course_switch_note")}</Text>
         </Section>
 
         <Section title={t("settings.level")} colors={colors}>
           <View style={{ flexDirection: "row", flexWrap: "wrap", gap: spacing.sm }}>
             {LEVELS.map((l) => <Chip key={l} label={l} active={level === l} onPress={() => setLevel(l)} />)}
           </View>
+          {/* Seviyenin kendiliğinden değişmediği söyleniyor: kullanıcı bir
+              yerleştirme sınavından sonra seviyesinin "düşürüleceğini"
+              sanmasın. Web aynı satırı taşıyor. */}
+          <Text variant="micro" color={colors.textFaint} style={{ marginTop: spacing.sm }}>{t("settings.only_you_change_level")}</Text>
           <PressableScale onPress={() => nav.navigate("Placement")} style={{ marginTop: spacing.md, alignSelf: "flex-start" }}>
             <Text variant="bodyStrong" color={colors.primaryText}>{t("settings.not_sure_take_placement_test")}</Text>
           </PressableScale>
@@ -232,6 +257,13 @@ export function SettingsScreen() {
           <View style={{ flexDirection: "row", flexWrap: "wrap", gap: spacing.sm }}>
             {Array.from(new Set([...GOALS, goal])).sort((a, b) => a - b).map((g) => <Chip key={g} label={String(g)} active={goal === g} onPress={() => setGoal(g)} />)}
           </View>
+          <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.md, marginBottom: spacing.sm, marginLeft: 4 }}>{t("settings.new_per_day")}</Text>
+          <View style={{ flexDirection: "row", flexWrap: "wrap", gap: spacing.sm }}>
+            {Array.from(new Set([...NEW_PER_DAY, newPerDay])).sort((a, b) => a - b).map((n) => <Chip key={n} label={String(n)} active={newPerDay === n} onPress={() => setNewPerDay(n)} />)}
+          </View>
+          {/* Hedefi ayarlayan kişinin merak ettiği tek şey o sayının neyi
+              belirlediği; web de notu kaydırıcıların altına koyuyor. */}
+          <Text variant="micro" color={colors.textFaint} style={{ marginTop: spacing.md }}>{t("settings.srs_note")}</Text>
         </Section>
 
         <Section title={t("settings.reading_voice")} colors={colors}>

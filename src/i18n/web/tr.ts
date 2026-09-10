@@ -180,9 +180,7 @@ export const trWeb: Record<string, string> = {
   "settings.account": "HESAP",
   "settings.app": "UYGULAMA",
   "settings.daily_goal_short": "Günlük tekrar hedefi",
-  "settings.new_per_day": "Günde yeni kelime",
   "settings.reviews_unit": "tekrar",
-  "settings.words_unit": "kelime",
   "settings.saving": "Kaydediliyor…",
   "settings.privacy_and_terms": "Gizlilik ve şartlar",
   "settings.privacy_and_terms_sub": "Hangi veriyi neden işlediğimiz, hakların",
@@ -192,9 +190,6 @@ export const trWeb: Record<string, string> = {
   "level.b1_desc": "Kendimi genel konularda ifade ederim",
   "level.b2_desc": "İş ve toplum dilini anlarım",
   "level.c1_desc": "Akademik ve soyut dile hâkimim",
-  "settings.only_you_change_level": "Seviyeni yalnızca sen değiştirirsin.",
-  "settings.srs_note": "Tekrar zamanları cevabının hızına ve doğruluğuna göre kendiliğinden hesaplanır.",
-  "settings.course_switch_note": "Kelimeler ve tekrar kuyruğun yeni kursa geçer. Diğer kurs silinmez.",
   /* Kelime turu — etap, bahis ve özet ekranları. Mobil `GameScreen` daha
      sade olduğu için bu anahtarların çoğu web'e özel. */
   "session.preparing": "Bugünkü çalışman hazırlanıyor…",
