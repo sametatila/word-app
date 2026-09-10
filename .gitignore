@@ -39,6 +39,8 @@ data/lessons/meta/in/
 data/lessons/roleplay/in/
 data/lessons/lecture/in/
 data/lessons/word/in/
+# `apply.mjs` uretiyor; kaynak `out/` dizinleri, bu yalnizca onlarin toplami.
+src/lib/lessons/generated/
 *.tsbuildinfo
 next-env.d.ts
 

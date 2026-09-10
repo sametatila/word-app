@@ -94,7 +94,10 @@
     "check:lessons-patterns": "node data/lessons/patterns/check.mjs",
     "check:lessons-meta": "node data/lessons/meta/check.mjs",
     "check:lessons-roleplay": "node data/lessons/roleplay/check.mjs",
-    "check:lessons-lecture": "node data/lessons/lecture/check.mjs"
+    "check:lessons-lecture": "node data/lessons/lecture/check.mjs",
+    "check:lessons-word": "node data/lessons/word/check.mjs",
+    "lessons:apply": "node data/lessons/apply.mjs",
+    "check:lessons-native": "npm run lessons:apply && tsx --tsconfig scripts/tsconfig.e2e.json scripts/check-native-lessons.ts"
   },
   "dependencies": {
     "better-auth": "^1.7.3",
