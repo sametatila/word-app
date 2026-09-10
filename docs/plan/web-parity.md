@@ -4692,3 +4692,59 @@ yok.
 Üçü de aynı kalıbın örneği: **veri ya da yetenek elde, yüzey sormuyor.**
 §11.80'in "sözleşme modellenmiş, yüzey yazılmamış" sınıfının uç tarafındaki
 hâli.
+
+### 11.101 İlerleme ekranı: sunucu hesaplıyordu, uç göndermiyordu
+
+`getProgress` seviye kırılımını, ileri tarihli tekrarları ve leech sayısını
+zaten **aynı sorguda** hesaplıyor; `/api/me` yalnız toplamları gönderiyordu.
+Mobil ilerleme ekranı "hangi seviyede kaç kelime", "kaçı ileri tarihe
+planlandı", "kaçında zorlanıyorum" sorularının hiçbirini cevaplayamıyordu —
+ek sorgu olmadan üçü de eklendi ve web `progress-view`daki iki kart mobile
+taşındı (seviye çubuğu: koyu pekişmiş, açık görülmüş; tekrar kuyruğu).
+
+**Etkinlik şeridi** de yalnız webdeydi. "Dün çalıştım mı, hafta sonları
+düşüyor muyum" günlük alışkanlığı değiştiren soru; cevabı bir platformda
+yoktu. `daily_stats` satırları uçtan gün + tekrar sayısı olarak gidiyor
+(satırın geri kalanı mobilde kullanılmıyor, özet ucu sık çağrılıyor).
+
+Isı basamakları elle kopyalanmış bir tablo olduğu için `HEAT_RAMP` adıyla iki
+tarafta aynı biçimde yazıldı ve **parity 46** karşılaştırıyor; `STRIP_DAYS`
+ile `STRIP_FLOOR_PCT` zaten 37'ye giriyor. Aynı çalışmanın iki uygulamada
+başka yoğunlukta görünmesi, grafiği hiç olmamasından kötü yapardı.
+
+### 11.102 Aynı metnin iki sözlükte iki kopyası
+
+`prog.*`/`progw.*` ve `candow.*` altındaki dokuz + iki anahtar, mobil
+sözlükteki cümlelerin **birebir ikinci kopyasıydı**. i18n köprüsü mobil
+sözlüğü `src/i18n/base/*`'a çektiği için web zaten aynı anahtarları
+kullanabiliyordu; iki kopya yalnız birinin düzeltilip ötekinin eski kalması
+için bir yol açıyordu. Web tarafı mobil kaynaklı anahtarlara geçti, kopyalar
+silindi.
+
+### 11.103 Yapabildiklerim: eşleme yanlış anahtarla yazılmış
+
+`/api/cando` beceriyi CEFR koduyla gönderiyor (`RD`, `LS`, `WR`, `SPK`, `GR`
+— `lib/cando` `CandoSkill`), mobil tablo ise uzun adlarla yazılmıştı
+(`reading`, `listening`). Arama **her satırda** boşa düşüyor ve ifadenin
+altında çeviri yerine ham kod ("RD") yazıyordu. Tip `string` olduğu için ne
+`tsc` ne `lint` görüyordu — **parity 47** iki tabloyu satır satır eşliyor.
+
+Aynı ekranda kanıt kuralı ("bir ifade ... en az iki ... tamamlayınca kanıtlı
+sayılır") yalnız webde yazılıydı: mobil kullanıcı tikin ne zaman geleceğini
+bilmeden listeye bakıyordu.
+
+### 11.104 İki tarayıcının ortak kör noktası
+
+Seviye özetindeki `{b.proven}/{b.total} ifade` **hiçbir kurala düşmüyordu**.
+Sebep: `{ifade}` ve etiketler çıkarıldıktan sonra geriye kalan `/` işareti
+`CODEY`'e takılıyor ve parça **kod** sayılıyordu. Aynı boşluk web
+tarayıcısında da vardı (ölçüldü: enjekte edilen aynı satırı o da görmüyordu).
+
+Kural artık **yapısal işarete** bakıyor: parantez, eşittir, noktalı virgül
+gibi bir şey duruyorsa parça koddur (`if (!izin)`) ve olduğu gibi sınanıyor;
+yalnız metin noktalaması kalmışsa temizlenip metin olarak sınanıyor. İki
+tarafta da yeni yanlış pozitif yok (166 / 17 aynı) ve enjekte edilen satır
+ikisinde de yakalanıyor.
+
+§11.96'nın kaydettiği ders bir kez daha: **yanlış negatif iş çıkarmıyor,
+bulguyu gizliyor.**
