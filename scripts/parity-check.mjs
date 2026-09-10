@@ -1620,20 +1620,46 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     }
     return out;
   };
+  /*
+   * AYNI AD BIR AGACTA IKI KEZ GECEBILIYOR ve o zaman "adi ayni olan sabit"
+   * artik tek bir sey degil: `DANGER_SECONDS` webde hem `boss-player`da
+   * (patron turu, mobilin `BossScreen`iyle eslesen) hem `challenge-player`da
+   * (mobilde KARSILIGI OLMAYAN sure-kazanma modu) yazili ve ikisinin dogru
+   * degeri farkli. Once bu bolum "son tanimi" aliyordu ve yanlis ciftle
+   * karsilastirip web tarafinda bir ayar degistirtti (11.86'nin duzeltmesi:
+   * 11.94).
+   *
+   * Kural: bir ad bir agacta BIRDEN COK yerde tanimliysa karsilastirmaya
+   * girmiyor, ayri bir satirda "belirsiz" diye bildiriliyor - hangi ciftin
+   * kastedildigini kapi bilemez, insan bilir.
+   */
   const grab = (root) => {
     const m = new Map();
+    const coklu = new Set();
     for (const f of walk(root)) {
       for (const x of read(f).matchAll(/^\s*(?:export\s+)?const ([A-Z][A-Z0-9_]{2,})\s*(?::\s*number\s*)?=\s*(-?\d+(?:\.\d+)?)\s*;/gm)) {
+        if (m.has(x[1]) && m.get(x[1]) !== x[2]) coklu.add(x[1]);
         m.set(x[1], x[2]);
       }
     }
-    return m;
+    for (const k of coklu) m.delete(k);
+    return { m, coklu };
   };
-  const w = grab("src");
-  const m = grab("mobile/src");
+  const { m: w, coklu: wCok } = grab("src");
+  const { m, coklu: mCok } = grab("mobile/src");
   const ortak = [...w.keys()].filter((k) => m.has(k) && !GENERIC.has(k)).sort();
   const ayrisan = ortak.filter((k) => w.get(k) !== m.get(k)).map((k) => k + ": mobil " + m.get(k) + " / web " + w.get(k));
   sameList("ortak sayisal sabitler", ayrisan.length ? ayrisan : ["ayrisma yok (" + ortak.length + ")"], ["ayrisma yok (" + ortak.length + ")"], "ayrisan", "beklenen");
+  /*
+   * BELIRSIZLER SESSIZCE DUSMESIN. Karsilastirmadan cikan her ad burada
+   * yazili duruyor; yenisi cikarsa kapi kaliyor ve insan bakiyor - cunku
+   * "ayni adin iki isi" ya mesru bir tesaduftur ya da adlandirma hatasidir,
+   * ikisini kapi ayirt edemez. Bugunku yedisi de mesru: farkli uclarin hiz
+   * sinirlari, farkli listelerin sayfa boyu, farkli modlarin esikleri.
+   */
+  const BELIRSIZ = ["DAILY_LIMIT", "DANGER_SECONDS", "MAX_CHARS", "MAX_TARGET", "MIN_CONFIDENCE", "PAGE_SIZE", "PASS_RATIO"];
+  const belirsiz = [...new Set([...wCok, ...mCok])].sort();
+  sameSet("belirsiz sabit adlari", belirsiz, BELIRSIZ, "bulunan", "kayitli");
 
   /* Dizge ve mantiksal sabitler de ayni kuralla. `KEY` gibi genel adlar
      disarida (bkz. GENERIC): iki dosya ayni adi bambaska bir is icin
