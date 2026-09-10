@@ -21,7 +21,7 @@
  * offering) adım adım: `docs/premium/README.md` §3.
  */
 export const REVENUECAT = {
-  androidKey: "", // "goog_..." — RevenueCat › Project settings › API keys
+  androidKey: "goog_XYloUOSfZOEOfcpvDUbLwXXjSVl",
   iosKey: "appl_EBBnjnnBSAkxNbLcwmPQDgMIVWL",
   /*
     RevenueCat'te `premium` kimliğini örnek projeyle gelen entitlement tutuyordu

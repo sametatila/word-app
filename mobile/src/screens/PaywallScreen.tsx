@@ -49,18 +49,32 @@ export function PaywallScreen() {
   const { colors } = useTheme();
   const insets = useSafeAreaInsets();
   const nav = useNavigation<{ goBack: () => void }>();
-  const live = billingAvailable();
+  /*
+    `configured` = anahtar var mı; `storeOpen` = gerçekten satılacak bir şey var mı.
+
+    İkisi eskiden aynıydı ve arada sessiz bir boşluk kalıyordu: anahtar dolu ama
+    offering o platform için ürün döndürmüyorsa ekran plansız ve düğmesi sönük
+    bir iskelet olarak kalıyordu — kullanıcı neden satın alamadığını hiçbir
+    yerden öğrenemiyordu. Android anahtarı Play ürünleri açılmadan girildiğinde
+    tam olarak bu oluyor, ama aynı şey bozuk bir offering ya da mağaza
+    kesintisinde de oluyor. Paket listesi BOŞ dönerse artık "mağaza henüz açık
+    değil" metnine düşülüyor: sebebi ne olursa olsun söylenen şey doğru.
+
+    `pkgs === null` yükleniyor demek, boş demek değil — o durumda iskelet kalıyor.
+  */
+  const configured = billingAvailable();
   // Durum SUNUCUDAN: kapsam metinleri, sınırlar, davet kodu ve "zaten premium
   // miyim" sorusunun cevabı. Mağaza SDK'sı yalnız fiyat ve satın alma için.
   const { status, refresh } = usePremiumStatus();
   const [pkgs, setPkgs] = useState<PurchasesPackage[] | null>(null);
+  const storeOpen = configured && (pkgs === null || pkgs.length > 0);
   const [selected, setSelected] = useState<string | null>(null);
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     track("paywall_view", 0, "mobile");
-    if (!live) { setPkgs([]); return; }
+    if (!configured) { setPkgs([]); return; }
     let alive = true;
     void getPackages().then((p) => {
       if (!alive) return;
@@ -69,7 +83,7 @@ export function PaywallScreen() {
       setSelected(sorted[0]?.identifier ?? null);
     });
     return () => { alive = false; };
-  }, [live]);
+  }, [configured]);
 
   const pkg = pkgs?.find((p) => p.identifier === selected);
   const trial = freeTrialOf(pkg);
@@ -226,7 +240,7 @@ export function PaywallScreen() {
           </Text>
         </View>
 
-        {!live ? (
+        {!storeOpen ? (
           <View style={{ borderRadius: radii.lg, backgroundColor: colors.surface2, padding: spacing.lg, gap: 6 }}>
             <Text variant="bodyStrong">{t("paywall.store_not_open")}</Text>
             <Text variant="caption" color={colors.textMuted} style={{ lineHeight: 19 }}>{t("paywall.store_not_open_sub")}</Text>
@@ -271,7 +285,7 @@ export function PaywallScreen() {
         {status?.referral ? <ReferralBox colors={colors} referral={status.referral} /> : null}
       </ScrollView>
 
-      {!live ? (
+      {!storeOpen ? (
         // Mağaza kapalı: satın alma çubuğu yok ama şartlar bağlantısı kalıyor —
         // sayfanın hukuki metne açılan tek kapısı orası.
         <View style={{ paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.md, paddingTop: spacing.sm, alignItems: "center" }}>
