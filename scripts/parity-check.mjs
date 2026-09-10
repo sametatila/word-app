@@ -1537,6 +1537,64 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   );
 }
 
+/* ── 36. kurs diline ait sabit sik cifti ───────────────────────────────────
+ * `["Richtig", "Falsch"]` KODA gomuluyken Ingilizce kursta da Almanca
+ * cikiyordu (bkz. 11.84) ve HICBIR kapi bunu goremiyordu: Turkce harf
+ * tasimadigi icin `i18n-hardcoded` atliyor, sozluk anahtari olmadigi icin
+ * `i18n:check` atliyor.
+ *
+ * Kural: bu ciftler yalniz ICERIK dosyalarinda ve kendi tablolarinda
+ * (`MOCK_LABELS`) yazili olabilir; kodda gecerlerse kurs dili sabitlenmis
+ * demektir. Yorumlar ayiklaniyor - gerekcesini yazmak kapiyi kirmamali. */
+{
+  const PAIRS = [["Richtig", "Falsch"], ["Ja", "Nein"], ["True", "False"], ["Yes", "No"]];
+  const SKIP = /\/(content|data|i18n|mock-exams|generated|__tests__)\//;
+  const walk = (d, out = []) => {
+    for (const e of readdirSync(new URL("../" + d, import.meta.url), { withFileTypes: true })) {
+      const p = d + "/" + e.name;
+      if (e.isDirectory()) { if (!/node_modules/.test(p)) walk(p, out); }
+      else if (/\.tsx?$/.test(e.name)) out.push(p);
+    }
+    return out;
+  };
+  /* Yorumlar satir sayisini koruyarak silinir (satir numarasi anlamli kalsin). */
+  const strip = (src) => {
+    let out = "";
+    let i = 0;
+    let mode = 0;
+    while (i < src.length) {
+      const c = src[i];
+      const n = src[i + 1];
+      if (mode === 0) {
+        if (c === "/" && n === "/") { mode = 1; i += 2; continue; }
+        if (c === "/" && n === "*") { mode = 2; i += 2; continue; }
+        out += c;
+        i++;
+      } else if (mode === 1) {
+        if (c === "\n") { mode = 0; out += c; }
+        i++;
+      } else {
+        if (c === "*" && n === "/") { mode = 0; i += 2; continue; }
+        if (c === "\n") out += c;
+        i++;
+      }
+    }
+    return out;
+  };
+  const hits = [];
+  for (const root of ["src", "mobile/src"]) {
+    for (const f of walk(root)) {
+      if (SKIP.test("/" + f + "/")) continue;
+      const src = strip(read(f));
+      for (const [a, b] of PAIRS) {
+        const re = new RegExp('"' + a + '"\\s*,\\s*"' + b + '"');
+        if (re.test(src)) hits.push(f + ' ["' + a + '", "' + b + '"]');
+      }
+    }
+  }
+  sameList("kursa gomulu sik cifti", hits.length ? hits : ["gomulu cift yok"], ["gomulu cift yok"], "kodda", "beklenen");
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"
