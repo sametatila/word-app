@@ -70,6 +70,33 @@ export function routeFromPush(url: string): PushRoute | null {
   return null;
 }
 
+/**
+ * UYGULAMA İÇİ adres → ekran. `routeFromPush`tan AYRI, çünkü iki farklı küme:
+ * o sunucunun BİLDİRİMDE gönderdiği adresleri çeviriyor, bu ise sunucunun
+ * yanıt gövdesinde verdiği yönlendirmeleri (`nextStep.href`).
+ *
+ * Dört biçim var ve hepsi `lib/proficiency-data` `nextStep`ten geliyor:
+ * `/learn/game`, `/immersion`, `/immersion/skill/<id>`, `/lessons/<id>`.
+ * `check:parity` sunucunun ürettiği biçimlerle burayı eşliyor — yeni bir
+ * biçim eklenirse mobil onu sessizce yutmasın (tanınmayan adres `null`
+ * dönüyor ve çağıran düğmeyi hiç çizmiyor).
+ */
+export function routeFromHref(href: string): PushRoute | null {
+  if (!href) return null;
+  const path = href.split("?")[0];
+  if (path === "/learn/game") return { name: "Game" };
+  if (path.startsWith("/immersion/skill/")) {
+    const id = decodeURIComponent(path.slice("/immersion/skill/".length));
+    return id ? { name: "Item", params: { id, kind: "skill", title: "" } } : null;
+  }
+  if (path.startsWith("/immersion")) return { name: "Tabs", params: { screen: "Path" } };
+  if (path.startsWith("/lessons/")) {
+    const id = decodeURIComponent(path.slice("/lessons/".length));
+    return id ? { name: "Lesson", params: { id } } : null;
+  }
+  return null;
+}
+
 export function navigateFromPush(url: string): void {
   const route = routeFromPush(url);
   if (!route || !navigationRef.isReady()) return;

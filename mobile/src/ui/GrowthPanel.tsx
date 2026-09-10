@@ -1,0 +1,147 @@
+import React, { useEffect, useState } from "react";
+import { View } from "react-native";
+import { useNavigation } from "@react-navigation/native";
+import type { NativeStackNavigationProp } from "@react-navigation/native-stack";
+import type { RootStackParams } from "../navigation/RootStack";
+import { routeFromHref } from "../lib/pushRoute";
+import { t } from "../lib/i18n";
+import { api } from "../api/client";
+import { todayStr } from "../game/session";
+import { Text } from "./Text";
+import { Card } from "./Card";
+import { PressableScale } from "./PressableScale";
+import { SkeletonBar, SkeletonLine } from "./Skeleton";
+import { useTheme, spacing, radii, type Palette } from "../theme";
+
+/**
+ * Gelişim paneli — "neredeyim" ve "şimdi ne yapmalıyım".
+ *
+ * MOBILDE HİÇ YOKTU. `/api/growth` ve rapor katmanı aylardır duruyor, web
+ * profilinde bir panel onu okuyor; Android'de çağıran hiçbir şey yoktu
+ * (web-parity 11.136).
+ *
+ * Bu ilk parça panelin ÖLÇÜM yüzünü taşıyor: seviye + kanıt sayısı, haftalık
+ * özet cümlesi, altı beceride yeterlik (şimdi, dört hafta önceye göre değişim,
+ * bant) ve önerilen sıradaki adım. Sekiz haftalık seri grafikleri ile
+ * kilometre taşları ayrı bir turda gelecek — panelin webdeki hâlinde de onlar
+ * kapalı bir ayrıntı bölümünde duruyor.
+ *
+ * Gün İSTEMCİNİN yerel günü: uç gün gelmezse sunucunun UTC gününe düşüyor ve
+ * gece yarısına yakın açılan rapor bir gün kaymış seriyle çiziliyor.
+ */
+type Prof = { skill: string; label: string; now: number | null; before: number | null; band: string | null };
+type NextStep = { skill: string; label: string; reason: string; href: string; title: string; minutes: number };
+type Growth = {
+  level: string;
+  evidenceCount: number;
+  proficiency: Prof[];
+  next: NextStep | null;
+  summary: { text: string };
+};
+
+function tone(now: number | null, colors: Palette): string {
+  if (now === null) return colors.surface2;
+  if (now >= 75) return colors.success;
+  if (now >= 45) return colors.primary;
+  return colors.danger;
+}
+
+export function GrowthPanel() {
+  const { colors } = useTheme();
+  const nav = useNavigation<NativeStackNavigationProp<RootStackParams>>();
+  const [data, setData] = useState<Growth | null | undefined>(undefined);
+
+  useEffect(() => {
+    let alive = true;
+    api<Partial<Growth>>(`/api/growth?day=${todayStr()}`)
+      .then((g) => {
+        if (!alive) return;
+        /* Gövde doğrulanıyor: 200 dönen ama biçimi tutmayan bir cevapta
+           `proficiency.map` patlıyor ve panel değil bütün ekran iniyor.
+           Web aynı denetimi yapıyor. */
+        setData(Array.isArray(g?.proficiency) ? (g as Growth) : null);
+      })
+      .catch(() => { if (alive) setData(null); });
+    return () => { alive = false; };
+  }, []);
+
+  if (data === undefined) {
+    return (
+      <Card padded style={{ marginBottom: spacing.lg, gap: spacing.sm }}>
+        <SkeletonLine variant="bodyStrong" width={150} />
+        <SkeletonLine variant="caption" width="90%" />
+        {[0, 1, 2, 3].map((i) => (
+          <View key={i} style={{ gap: 4 }}>
+            <SkeletonLine variant="micro" width="60%" />
+            <SkeletonBar height={6} />
+          </View>
+        ))}
+      </Card>
+    );
+  }
+  if (!data) return null;
+  /* Hiç ölçüm yoksa panel görünmüyor: "ölçülmedi" yazan altı çubuk, yeni
+     kullanıcıya kendi eksikliğini gösteren bir liste demek (web de öyle). */
+  if (!data.proficiency.some((p) => p.now !== null)) return null;
+
+  const step = data.next;
+  const route = step ? routeFromHref(step.href) : null;
+
+  return (
+    <Card padded style={{ marginBottom: spacing.lg, gap: spacing.sm }}>
+      <View style={{ flexDirection: "row", alignItems: "baseline", justifyContent: "space-between", gap: spacing.sm }}>
+        <Text variant="bodyStrong">{t("progress.progress")} · {data.level}</Text>
+        <Text variant="micro" color={colors.textMuted}>{t("progp.window", { n: data.evidenceCount })}</Text>
+      </View>
+
+      {data.summary?.text ? <Text variant="caption" color={colors.text} style={{ lineHeight: 20 }}>{data.summary.text}</Text> : null}
+
+      {data.proficiency.map((p) => {
+        const delta = p.now !== null && p.before !== null ? p.now - p.before : null;
+        return (
+          <View key={p.skill} style={{ gap: 4 }}>
+            <View style={{ flexDirection: "row", alignItems: "baseline", justifyContent: "space-between", gap: spacing.sm }}>
+              <Text variant="micro" color={colors.text}>{p.label}</Text>
+              <Text variant="micro" color={colors.textMuted}>
+                {p.now === null ? t("assess.not_measured") : (
+                  <>
+                    {p.now}
+                    {/* Değişim yalnızca dört hafta önce de ölçüm VARSA
+                        gösteriliyor: yokluğu sıfır saymak, yeni başlayan
+                        herkese "hiç ilerlemedin" demek olurdu. */}
+                    {delta !== null && delta !== 0 ? (
+                      <Text variant="micro" color={delta > 0 ? colors.successText : colors.dangerText}>
+                        {" "}{delta > 0 ? "+" : "−"}{Math.abs(delta)}
+                      </Text>
+                    ) : null}
+                    {p.band ? <Text variant="micro" color={colors.textMuted}>  {t(`band.${p.band}`)}</Text> : null}
+                  </>
+                )}
+              </Text>
+            </View>
+            <View style={{ height: 6, borderRadius: 3, backgroundColor: colors.surface2, overflow: "hidden" }}>
+              <View style={{ height: "100%", width: `${p.now ?? 0}%`, backgroundColor: tone(p.now, colors), borderRadius: 3 }} />
+            </View>
+          </View>
+        );
+      })}
+
+      {/* Önerilen adım ölçümün hemen altında: "buradasın" ile "şunu yap"
+          arasında bir ekran mesafesi olmamalı (web aynı yerde tutuyor).
+          Adres tanınmıyorsa düğme HİÇ çizilmiyor - hiçbir yere gitmeyen bir
+          düğme, olmayan düğmeden kötü. */}
+      {step && route ? (
+        <PressableScale
+          onPress={() => (nav.navigate as (n: string, p?: object) => void)(route.name, route.params)}
+          style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, marginTop: spacing.xs, borderRadius: radii.md, backgroundColor: colors.surface2, paddingHorizontal: spacing.md, paddingVertical: 10 }}
+        >
+          <View style={{ flex: 1 }}>
+            <Text variant="caption" color={colors.text}>{t("skills.next")}: {step.title}</Text>
+            <Text variant="micro" color={colors.textMuted} numberOfLines={1}>{step.reason} · {t("skills.dk", { n: step.minutes })}</Text>
+          </View>
+          <Text variant="micro" color={colors.primaryText}>{t("common.start")}</Text>
+        </PressableScale>
+      ) : null}
+    </Card>
+  );
+}

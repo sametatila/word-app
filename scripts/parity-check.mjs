@@ -2453,6 +2453,24 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   sameSet("sinav kacan bolumleri", tam("mobile/src/screens/ExamScreen.tsx"), tam("src/components/exam-player.tsx"), "mobil", "web");
 }
 
+/* ── 61. onerilen adimin adresi mobilde taniniyor mu ──────────────────────
+ * Sunucu "siradaki adim"i bir WEB ADRESIYLE veriyor (`nextStep.href`) ve
+ * mobil onu ekrana cevirmek zorunda (`routeFromHref`). Taninmayan adres
+ * `null` donuyor ve dugme hic cizilmiyor - yani sunucu yeni bir bicim
+ * uretirse Android'de oneri SESSIZCE KAYBOLUR. Kapi iki tarafi esliyor. */
+{
+  const sunucu = [...new Set(
+    [...read("src/lib/proficiency-data.ts").matchAll(/href:\s*[`"]([^`"$]*)/g)].map((m) => {
+      const p = m[1].replace(/\/$/, "");
+      return p.startsWith("/immersion/skill") ? "/immersion/skill/" : p.startsWith("/lessons") ? "/lessons/" : p;
+    }),
+  )].filter(Boolean).sort();
+  const mobil = [...new Set(
+    [...read("mobile/src/lib/pushRoute.ts").matchAll(/path\s*(?:===|\.startsWith\()\s*"([^"]+)"/g)].map((m) => m[1]),
+  )].filter((p) => /^\/(learn\/game|immersion|lessons)/.test(p)).sort();
+  sameSet("onerilen adim adresleri", mobil, sunucu, "mobil esleyici", "sunucu");
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"

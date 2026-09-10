@@ -12,6 +12,7 @@ import { PressableScale } from "../ui/PressableScale";
 import { ArrowBackIcon, BoltIcon, CheckIcon, ChevronRightIcon, FlameIcon, LearnIcon, PodiumIcon, TrophyIcon, WriteIcon } from "../ui/icons";
 import { Mascot } from "../ui/Mascot";
 import { WeakSpots } from "../ui/WeakSpots";
+import { GrowthPanel } from "../ui/GrowthPanel";
 import { SkeletonBar, SkeletonCard, SkeletonLine, SkeletonTile } from "../ui/Skeleton";
 import { useMe, formatXp, formatDuration } from "../lib/useMe";
 import { useTheme, spacing, radii, softShadow, onTint, type Palette } from "../theme";
@@ -287,6 +288,10 @@ export function ProgressScreen() {
         {/* ZAYIF NOKTALAR. Uç ve rapor katmanı aylardır duruyordu, web
             profilinde bir kart onu okuyordu, mobilde çağıran hiçbir şey yoktu.
             Yeri web ile aynı: gelişim kutusunun içinde (`progress-panel`). */}
+        {/* Ölçüm bloğu web ile aynı sırada: önce "neredeyim + ne yapmalıyım",
+            sonra "neyi yanlış yapıyorum" (`progress-panel` içinde de
+            `WeakSpotsCard` panelin altında duruyor). */}
+        <GrowthPanel />
         <WeakSpots />
 
         <Card padded style={{ paddingVertical: 0 }}>

@@ -159,10 +159,6 @@ export const trWeb: Record<string, string> = {
    * sözcüklerdi ("başlangıç" | "gelişiyor" | …), yani tip sistemi bir dili
    * dayatıyordu. Artık kararlı kimlik + sözlük.
    */
-  "band.beginner": "başlangıç",
-  "band.developing": "gelişiyor",
-  "band.solid": "sağlam",
-  "band.mastered": "ustalaştı",
   "growth.first_good_writing": "İlk 70+ puanlı yazı",
   "growth.first_lesson": "İlk konuşma rol yapmayla tamamlandı",
   "growth.last_week": "Geçen hafta: {parts}.",
@@ -273,7 +269,6 @@ export const trWeb: Record<string, string> = {
   "assess.vocab": "Kelime",
   "assess.corrected": "Düzeltilmiş:",
   "assess.example": "Örnek cümle:",
-  "assess.not_measured": "ölçülmedi",
   "assess.overall_score": "Genel puan {n}",
   "assess.fail_not_configured": "AI değerlendirmesi şu an kapalı — temel kontrol gösteriliyor.",
   "assessw.fail_quota": "Bugünlük AI değerlendirme hakkın doldu — temel kontrol gösteriliyor.",
@@ -882,7 +877,6 @@ export const trWeb: Record<string, string> = {
   "sharew.daily_cta": "Aynı sorular {level} seviyesindeki herkese aynı. Sen de dene:",
   "snd.game_sounds": "Oyun sesleri",
   "snd.game_sounds_sub": "Telaffuz sesi ayrı — bu kapalıyken de çalışır",
-  "progp.window": "son 30 gün · {n} ölçüm",
   "growth.p_answers": "{n} cevap",
   "growth.p_exercises": "{n} egzersiz",
   "growth.p_lessons": "{n} konuşma",

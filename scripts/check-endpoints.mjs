@@ -110,7 +110,6 @@ const WEB_ONLY = {
   "/api/premium/referral": "mobil ayni kodu /api/premium/status icinden aliyor (usePremiumStatus().referral.code)",
   "/api/pronounce": "telaffuz PUANI; mobil konusmayi cihazdaki taniyici + spokenMatches ile metin olarak esliyor — web-parity 11.136",
   "/api/assess/queue": "degerlendirme kuyrugu — mobilde karsiligi yok, karar Samet'te (web-parity 11.12)",
-  "/api/growth": "gelisim paneli (yetkinlik, sekiz haftalik seri, kilometre taslari, haftalik ozet) mobilde yok — web-parity 11.136",
 };
 
 const all = routes().sort();
