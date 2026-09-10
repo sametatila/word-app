@@ -13,6 +13,7 @@
 import { LESSONS, lessonsFor, findLesson } from "../src/lib/lessons";
 import { scoredSteps, type Lesson } from "../src/lib/lessons/types";
 import { roleplayPrompt } from "../src/lib/lessons/roleplay";
+import { courseOrDefault } from "../src/lib/courses";
 
 let fails = 0;
 let warns = 0;
@@ -140,9 +141,15 @@ for (const l of LESSONS) {
     const e = s.expect as { statement: string; why: { text: string }[]; answer: boolean };
     ok(e.statement.trim().length > 0, "doğru/yanlış cümlesi dolu");
     ok(e.why.length > 0, "doğru/yanlış gerekçesi dolu");
-    // Cümle, adımın söylediği metinde geçmeli — öğrenci neyi yargılayacağını duymalı.
+    /* Cümle, adımın söylediği metinde geçmeli — öğrenci neyi yargılayacağını
+       duymalı. PARÇANIN DİLİ KURSTAN geliyor: ölçüt `lang === "de"` yazılıydı
+       ve İngilizce kursun parçaları `en` etiketli, yani kural o kursun 200
+       dersinde HİÇ geçemiyordu — içerik kusuru değil, kapının kendisi iki kurs
+       varken görünmeyen bir varsayım taşıyordu (`hasModuleExams` ve
+       `targetLang` ile aynı sınıf). */
+    const tag = courseOrDefault(l.course).targetLang;
     ok(
-      s.say.some((seg) => seg.lang === "de" && seg.text.includes(e.statement.replace(/[.?!]$/, "").slice(0, 12))),
+      s.say.some((seg) => seg.lang === tag && seg.text.includes(e.statement.replace(/[.?!]$/, "").slice(0, 12))),
       "yargılanan cümle seste geçiyor",
     );
   }
