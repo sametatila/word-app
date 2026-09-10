@@ -1060,6 +1060,16 @@ export const enWeb: Record<string, string> = {
   "email.reset.body": "Tap the link below to reset your password. If you did not ask for this, ignore this e-mail.",
   "email.reset.cta": "Reset my password",
   "email.reset.text": "Lernomi password reset\n\nTo reset your password: {url}\n\nIf you did not ask for this, ignore it.",
+  "email.changed.subject": "Lernomi — your password was changed",
+  "email.changed.heading": "Your password was changed",
+  "email.changed.body": "The password for your Lernomi account was just reset, and every open session was signed out. If that was you, there is nothing to do. If it wasn't, set a new password right away.",
+  "email.changed.cta": "This wasn't me — reset my password",
+  "email.changed.text": "Lernomi — your password was changed\n\nYour account password was just reset and every open session was signed out. If that wasn't you, set a new password right away: {url}",
+  "email.exists.subject": "Lernomi — you already have an account",
+  "email.exists.heading": "You already have an account",
+  "email.exists.body": "Someone tried to create a new account with this address, but you already have a Lernomi account here. If you don't remember your password, you can reset it below. If that wasn't you, there is nothing to do — your account is untouched.",
+  "email.exists.cta": "Reset my password",
+  "email.exists.text": "Lernomi — you already have an account\n\nSomeone tried to create a new account with this address. If you don't remember your password, reset it: {url}\n\nIf that wasn't you, there is nothing to do.",
   "email.fallback_link": "If the button does not work: {url}",
 
   /*

@@ -1060,6 +1060,16 @@ export const deWeb: Record<string, string> = {
   "email.reset.body": "Tippe auf den Link unten, um dein Passwort zurückzusetzen. Wenn du das nicht angefragt hast, ignoriere diese E-Mail.",
   "email.reset.cta": "Passwort zurücksetzen",
   "email.reset.text": "Lernomi Passwort zurücksetzen\n\nZum Zurücksetzen deines Passworts: {url}\n\nWenn du das nicht angefragt hast, ignoriere es.",
+  "email.changed.subject": "Lernomi — dein Passwort wurde geändert",
+  "email.changed.heading": "Dein Passwort wurde geändert",
+  "email.changed.body": "Das Passwort deines Lernomi-Kontos wurde gerade zurückgesetzt, und alle offenen Sitzungen wurden abgemeldet. Wenn du das warst, musst du nichts tun. Wenn nicht, vergib sofort ein neues Passwort.",
+  "email.changed.cta": "Das war ich nicht — Passwort zurücksetzen",
+  "email.changed.text": "Lernomi — dein Passwort wurde geändert\n\nDein Kontopasswort wurde gerade zurückgesetzt und alle offenen Sitzungen wurden abgemeldet. Wenn du das nicht warst, vergib sofort ein neues Passwort: {url}",
+  "email.exists.subject": "Lernomi — du hast bereits ein Konto",
+  "email.exists.heading": "Du hast bereits ein Konto",
+  "email.exists.body": "Mit dieser Adresse wurde versucht, ein neues Konto anzulegen, aber du hast hier schon ein Lernomi-Konto. Wenn du dein Passwort nicht mehr weißt, kannst du es unten zurücksetzen. Warst du das nicht, musst du nichts tun — dein Konto bleibt unverändert.",
+  "email.exists.cta": "Passwort zurücksetzen",
+  "email.exists.text": "Lernomi — du hast bereits ein Konto\n\nMit dieser Adresse wurde versucht, ein neues Konto anzulegen. Wenn du dein Passwort nicht mehr weißt, setz es zurück: {url}\n\nWarst du das nicht, musst du nichts tun.",
   "email.fallback_link": "Wenn der Button nicht funktioniert: {url}",
 
   /*

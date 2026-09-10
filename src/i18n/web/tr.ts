@@ -1085,6 +1085,16 @@ export const trWeb: Record<string, string> = {
   "email.reset.body": "Parolanı sıfırlamak için aşağıdaki bağlantıya dokun. İstemediysen bu e-postayı yok say.",
   "email.reset.cta": "Parolamı sıfırla",
   "email.reset.text": "Lernomi parola sıfırlama\n\nParolanı sıfırlamak için: {url}\n\nİstemediysen yok say.",
+  "email.changed.subject": "Lernomi — parolan değiştirildi",
+  "email.changed.heading": "Parolan değiştirildi",
+  "email.changed.body": "Lernomi hesabının parolası az önce sıfırlandı ve açık olan bütün oturumlar kapatıldı. Bunu sen yaptıysan yapman gereken bir şey yok. Sen yapmadıysan hemen yeni bir parola belirle.",
+  "email.changed.cta": "Bu ben değilsem, parolamı sıfırla",
+  "email.changed.text": "Lernomi — parolan değiştirildi\n\nHesabının parolası az önce sıfırlandı ve açık olan bütün oturumlar kapatıldı. Bunu sen yapmadıysan hemen yeni bir parola belirle: {url}",
+  "email.exists.subject": "Lernomi — bu adreste zaten hesabın var",
+  "email.exists.heading": "Zaten bir hesabın var",
+  "email.exists.body": "Bu adresle yeni bir hesap açılmaya çalışıldı, ama burada zaten bir Lernomi hesabın var. Parolanı hatırlamıyorsan aşağıdan sıfırlayabilirsin. Bu deneme sen değilsen yapman gereken bir şey yok; hesabın olduğu gibi duruyor.",
+  "email.exists.cta": "Parolamı sıfırla",
+  "email.exists.text": "Lernomi — bu adreste zaten hesabın var\n\nBu adresle yeni bir hesap açılmaya çalışıldı. Parolanı hatırlamıyorsan sıfırla: {url}\n\nDeneme sen değilsen yapman gereken bir şey yok.",
   "email.fallback_link": "Düğme çalışmazsa: {url}",
 
   /*

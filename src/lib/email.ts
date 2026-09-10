@@ -96,3 +96,38 @@ export function resetEmail(url: string, lang: NativeLang = DEFAULT_NATIVE): { su
     text: tr("email.reset.text", { url }),
   };
 }
+
+/**
+ * "Parolan değiştirildi" — sıfırlama tamamlandıktan SONRA gidiyor.
+ *
+ * Hesap devralmanın kullanıcıya görünen tek erken uyarısı bu. Sıfırlamayı
+ * yapan saldırgansa kullanıcı bunu ancak bu postadan öğrenir; bu yüzden
+ * eylem düğmesi yeniden sıfırlamaya götürüyor — "ben değilsem hemen geri al"
+ * yolu tek dokunuş uzakta olsun.
+ */
+export function passwordChangedEmail(resetUrl: string, lang: NativeLang = DEFAULT_NATIVE): { subject: string; html: string; text: string } {
+  const tr = (k: string, vars?: Record<string, string | number>) => translate(lang, k, vars);
+  return {
+    subject: tr("email.changed.subject"),
+    html: template(lang, tr("email.changed.heading"), tr("email.changed.body"), tr("email.changed.cta"), resetUrl),
+    text: tr("email.changed.text", { url: resetUrl }),
+  };
+}
+
+/**
+ * "Bu adreste zaten hesabın var" — var olan bir e-postayla kayıt denenince.
+ *
+ * Kayıt ucu hesabın varlığını SIZDIRMIYOR: var olan adrese de yeni kayıtmış
+ * gibi 200 dönüyor (better-auth sign-up.mjs, sentetik yanıt). Doğru karar,
+ * ama tek başına bırakıldığında kullanıcı hiç gelmeyecek bir doğrulama
+ * postası bekliyordu. OWASP'ın önerdiği çıkış yolu bu: ekranda hiçbir şey
+ * değişmez, gerçek adresin SAHİBİNE durumu anlatan bir posta gider.
+ */
+export function accountExistsEmail(resetUrl: string, lang: NativeLang = DEFAULT_NATIVE): { subject: string; html: string; text: string } {
+  const tr = (k: string, vars?: Record<string, string | number>) => translate(lang, k, vars);
+  return {
+    subject: tr("email.exists.subject"),
+    html: template(lang, tr("email.exists.heading"), tr("email.exists.body"), tr("email.exists.cta"), resetUrl),
+    text: tr("email.exists.text", { url: resetUrl }),
+  };
+}

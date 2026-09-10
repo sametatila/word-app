@@ -6,7 +6,7 @@ import { betterAuth } from "better-auth";
 import { drizzleAdapter } from "better-auth/adapters/drizzle";
 import { db } from "@/lib/db";
 import { user, session, account, verification } from "@/lib/db/auth-schema";
-import { emailConfigured, sendEmail, verificationEmail, resetEmail } from "@/lib/email";
+import { emailConfigured, sendEmail, verificationEmail, resetEmail, passwordChangedEmail, accountExistsEmail } from "@/lib/email";
 import { purgeUserData } from "@/lib/account/purge";
 import { revokeAppleSignIn } from "@/lib/account/apple-revoke";
 import { APIError, createAuthMiddleware } from "better-auth/api";
@@ -109,6 +109,36 @@ export const auth = betterAuth({
      * OWASP ASVS 3.3.1 ve NIST SP 800-63B'nin doğrudan istediği davranış.
      */
     revokeSessionsOnPasswordReset: true,
+    /**
+     * "Parolan değiştirildi" bildirimi — sıfırlama tamamlandıktan sonra.
+     *
+     * Hesabı ele geçirilen kullanıcının bunu öğrenebileceği tek erken uyarı
+     * bu. Saldırgan parolayı sıfırlarsa kurban ancak bu postayla haberdar
+     * oluyor; postanın düğmesi de yeniden sıfırlamaya götürüyor, yani geri
+     * alma yolu tek dokunuş uzakta.
+     *
+     * Sessiz: gönderim başarısız olursa sıfırlama yine geçerli (sendEmail
+     * kendi içinde yutuyor). Parola değişmişken 500 dönmek, kullanıcıyı
+     * "değişti mi değişmedi mi" belirsizliğinde bırakırdı.
+     */
+    onPasswordReset: async ({ user: u }) => {
+      const { subject, html, text } = passwordChangedEmail(`${BASE_URL}/forgot-password`, await getLang());
+      await sendEmail(u.email, subject, html, text);
+    },
+    /**
+     * Var olan bir e-postayla kayıt denendi.
+     *
+     * Kayıt ucu hesabın varlığını bilerek SIZDIRMIYOR: aynı 200'ü ve sentetik
+     * kullanıcıyı döndürüyor (better-auth sign-up.mjs). Doğru karar, ama tek
+     * başına bırakılınca kullanıcı hiç gelmeyecek bir doğrulama postası
+     * bekliyordu — ekranda "doğrulama gönderdik" yazıyor, kutusuna hiçbir şey
+     * düşmüyordu. OWASP'ın önerdiği çıkış yolu: ekran değişmez, adresin
+     * SAHİBİNE durumu anlatan bir posta gider.
+     */
+    onExistingUserSignUp: async ({ user: u }) => {
+      const { subject, html, text } = accountExistsEmail(`${BASE_URL}/forgot-password`, await getLang());
+      await sendEmail(u.email, subject, html, text);
+    },
     sendResetPassword: async ({ user: u, url }) => {
       // Dil isteğin kendisinden: dil çerezi, yoksa tarayıcının Accept-Language'i
       // (bkz. lib/i18n/server). Profil okumak burada işe yaramaz — sıfırlama
