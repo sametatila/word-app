@@ -5067,3 +5067,26 @@ boşluktan geçti. Ölçüldü: düz metinle çağrılmayan 522 web anahtarı va
 büyük çoğunluğu dinamik aile (`ach.*` rozet kimliğinden kuruluyor), yani
 kuralın kendisi dikkatli kurulmalı — gürültülü bir kapı §11.109'un dersine
 göre bulguyu gizler. Sıradaki turun ilk işi.
+
+### 11.127 Ölü sözlük anahtarı kapısı
+
+§11.126'nın açık bıraktığı iş. `i18n-check` "kodda çağrıldı, sözlükte yok"u
+yakalıyordu; **tersini** — sözlükte durup hiç çağrılmayanı — kimse görmüyordu
+ve olay tam o boşluktan geçti.
+
+Kuralın şekli ölçümle bulundu, tahminle değil:
+
+- `t()` çağrılarına bakan bir arama **522 anahtarı** ölü sayıyordu. Sebep:
+  anahtarların çoğu bir tabloda duruyor (`titleKey: "ach.streak3.title"`) ve
+  sonra çözülüyor — yüz sekiz rozet anahtarı dahil. Böyle bir kapı §11.109'un
+  dersine göre yalnızca gürültü üretip gerçek bulguyu gizlerdi.
+- **Düz metin** araması (anahtar adı kaynakta herhangi bir yerde geçiyor mu)
+  on altı aday bıraktı. Dördü çalışma anında kuruluyor ve dosyada tam adıyla
+  hiç geçmiyor: `band.*` (`lib/proficiency`: `` `band.${band}` ``) ve
+  `push.rem_*_named` (`lib/push`: `` `${base}_named` ``). İkisi de kaynağıyla
+  birlikte muaf yazıldı.
+
+Kalan beş ölü anahtar silindi — ve biri **gerçek bir eksiği gösteriyordu**:
+`lb.this_week` ölü duruyordu çünkü sıralama sayfasının alt başlığı hiç
+yazılmamıştı; Android hangi haftaya bakıldığını başlığın altında söylüyor.
+Ölü anahtar, yazılmamış yüzeyin izi çıktı.
