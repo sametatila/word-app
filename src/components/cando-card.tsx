@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { CardSkeleton } from "@/components/skeleton";
+import { SkeletonLine, SkeletonPill } from "@/components/skeleton";
 import { EmptyCard } from "@/components/empty-card";
 import { CheckIcon } from "@/components/icons";
 import { CANDO_LEVELS, CANDO_SKILL_LABEL_KEYS, type Cando } from "@/lib/cando";
@@ -41,7 +41,31 @@ export function CandoCard({ bare = false }: { bare?: boolean } = {}) {
     };
   }, []);
 
-  if (data === undefined) return <CardSkeleton height={bare ? 180 : 220} label={t("cando.loading")} />;
+  /* İskelet kartın gerçek yapısında: başlık satırı, kural cümlesi, beş
+     seviye çipi ve üç ifade satırı. Göz kararı yükseklik (220/180) seviye
+     çiplerinin yerini hiç ayırmıyordu. */
+  if (data === undefined)
+    return (
+      <section role="status" aria-busy="true" aria-label={t("cando.loading")} className={bare ? "" : "card p-5"}>
+        {bare ? null : (
+          <div className="flex items-baseline justify-between gap-3">
+            <SkeletonLine variant="bodyStrong" width={150} />
+            <SkeletonLine variant="caption" width={72} />
+          </div>
+        )}
+        <SkeletonLine variant="micro" width="80%" className="mt-1" />
+        <div className="mt-3 flex gap-1.5">
+          {[0, 1, 2, 3, 4].map((i) => (
+            <SkeletonPill key={i} width={44} height={28} />
+          ))}
+        </div>
+        <div className="mt-3 space-y-2">
+          {[0, 1, 2].map((i) => (
+            <SkeletonLine key={i} variant="body" width={`${88 - i * 10}%`} />
+          ))}
+        </div>
+      </section>
+    );
   /* VERİ YOKKEN SESSİZ KALMIYOR. Kart kendi sayfasında da çiziliyor ve orada
      `null` dönmek, başlığın altında boş bir sayfa bırakıyordu: hiç ders
      bitirmemiş kullanıcı ekranın bozuk olduğunu sanıyordu. Android sebebi

@@ -4,7 +4,7 @@ import Link from "next/link";
 import { CardGrid } from "@/components/layout";
 import { useEffect, useState } from "react";
 import { PenIcon } from "@/components/icons";
-import { CardSkeleton } from "@/components/skeleton";
+import { SkeletonLine } from "@/components/skeleton";
 import { AssessmentCard } from "@/components/feedback/assessment-card";
 import { AiNotice } from "@/components/ai-notice";
 import type { Assessment } from "@/lib/assess-prompts";
@@ -66,7 +66,23 @@ export function WritingsCard({ showEmpty = false }: { showEmpty?: boolean }) {
     }
   }
 
-  if (items === undefined) return <CardSkeleton height={160} label={t("writ.loading")} />;
+  /* İskelet kartın gerçek yapısında: başlık, alt satır ve iki kayıt yeri.
+     Göz kararı 160 piksel, kayıt sayısına göre tutmuyordu. */
+  if (items === undefined)
+    return (
+      <section role="status" aria-busy="true" aria-label={t("writ.loading")} className="card p-5">
+        <SkeletonLine variant="bodyStrong" width={130} />
+        <SkeletonLine variant="micro" width="60%" className="mt-1" />
+        <div className="mt-3 space-y-2">
+          {[0, 1].map((i) => (
+            <div key={i} className="rounded-panel p-3 surface-2" style={{ opacity: 1 - i * 0.12 }}>
+              <SkeletonLine variant="caption" width={104} />
+              <SkeletonLine variant="body" width="88%" className="mt-1.5" />
+            </div>
+          ))}
+        </div>
+      </section>
+    );
   /*
     Boş durum, kartın nerede durduğuna göre değişiyor.
 
