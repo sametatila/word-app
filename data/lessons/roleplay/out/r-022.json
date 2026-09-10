@@ -1,0 +1,177 @@
+[
+ {
+  "lesson": "de-c1-vortrag-uni",
+  "sceneEn": "You are defending your work at a colloquium. Raise the strongest objection yourself first, then answer it; concede one point where the examiner is right and still hold your thesis.",
+  "partnerEn": "a well-prepared examiner who criticises the method",
+  "openingEn": "With respect — your sample does not support the conclusion. How do you meet that objection?",
+  "goalEn": "The strongest objection has been raised first and answered, one point has been conceded and the thesis has been held."
+ },
+ {
+  "lesson": "de-c1-fachdiskussion",
+  "sceneEn": "An expert is putting a claim to you in very compressed sentences. Get the phrase you did not follow unpacked, simplify it in your own words, ask what the premise is and say where a distinction has to be drawn.",
+  "partnerEn": "an expert who talks fast and technically and resists simplifying",
+  "openingEn": "The assumption underlying the method is, put briefly, trivial. Do you see it differently?",
+  "goalEn": "The compressed phrase has been unpacked, the claim has been simplified and it has been said which part of the premise is contested."
+ },
+ {
+  "lesson": "de-c1-populaerwissenschaft",
+  "sceneEn": "You are explaining your specialist subject to a wide audience for a podcast. Build an analogy, say where the analogy breaks down, give a rule of thumb and answer the presenter's question by simplifying.",
+  "partnerEn": "a curious podcast presenter who keeps summing up with 'so you mean'",
+  "openingEn": "Please explain it to me so that I can pass it on over dinner this evening — is that possible?",
+  "goalEn": "An analogy has been built, its limit has been named, a rule of thumb has been given and the presenter has summed the subject up correctly in their own words."
+ },
+ {
+  "lesson": "de-c1-zitat",
+  "sceneEn": "Your words have been quoted in a text but taken out of context. Talk to the author: report exactly what you said, show where it has been distorted, ask for a correction and say how it should be attributed.",
+  "partnerEn": "an author who defends the quotation as accurate but is open to listening",
+  "openingEn": "I quoted you word for word — you can check. Where exactly do you see the problem?",
+  "goalEn": "The whole of what was said has been reported, the distortion has been shown and a correction has been agreed."
+ },
+ {
+  "lesson": "de-c1-podiumsdiskussion",
+  "sceneEn": "You are on a panel on a contested subject and you have to balance your speaking time against the other side's claims. Take the floor, concede where they are right, draw a distinction and hand back with a short closing sentence.",
+  "partnerEn": "a panel guest who runs on and keeps interrupting",
+  "openingEn": "I'll be brief — really brief: the figures simply do not bear out your position. Would you like to answer that?",
+  "goalEn": "The other side's fair point has been conceded, their claim has been distinguished and the floor has been handed back with a short closing sentence."
+ },
+ {
+  "lesson": "de-c1-vertragsklauseln",
+  "sceneEn": "There are clauses you do not understand in a contract you are about to sign. Ask the other side: what each clause means, how long the term is, what happens on a delay and which clause you want changed.",
+  "partnerEn": "a company representative who defends the contract and calls it a standard clause",
+  "openingEn": "This is our standard contract — everyone signs it as it is. Which clause is worrying you?",
+  "goalEn": "The clauses not understood have been explained, the term and the consequence of delay have been made clear and at least one change has been requested."
+ },
+ {
+  "lesson": "de-c1-agb",
+  "sceneEn": "The terms and conditions of a service contain a clause that excludes liability entirely. Talk to customer services: say in your own words what the clause says, say why it is too wide and state what you are asking for.",
+  "partnerEn": "a customer services manager with limited authority who treats the clause as standard",
+  "openingEn": "The clause is in our terms and conditions and is therefore taken as agreed. What are you getting at?",
+  "goalEn": "The meaning of the clause has been put in your own words, why it is too wide has been stated and a concrete demand has been made."
+ },
+ {
+  "lesson": "de-c1-miete-recht",
+  "sceneEn": "A fault in your flat has gone unrepaired for months. Talk to the landlord: report the fault and how long it has lasted, set a deadline for the repair, raise a claim for a rent reduction and ask for written confirmation.",
+  "partnerEn": "a landlord who avoids responsibility and calls it a small thing",
+  "openingEn": "It's a trifle, surely. Do you really want to cut the rent over that?",
+  "goalEn": "The fault and its duration have been reported, a deadline has been set, a reduction has been claimed and written confirmation has been asked for."
+ },
+ {
+  "lesson": "de-c1-arbeitsrecht",
+  "sceneEn": "A colleague has had a formal warning and is in a panic. Pass on what you heard from a solicitor, keep your own view separate, say which step has to be taken by when and calm them down.",
+  "partnerEn": "a panicking colleague who is thinking of resigning at once",
+  "openingEn": "I'll just resign myself before they throw me out. Or what did your solicitor say?",
+  "goalEn": "The solicitor's view has been reported in the reporting mood, the speaker's own view has been kept separate and the first step has been given with its date."
+ },
+ {
+  "lesson": "de-c1-datenschutz-c1",
+  "sceneEn": "You are asking a service provider how your data is processed. Ask which data is processed for what purpose and whether it is passed to third parties; withdraw your consent and make a request for erasure.",
+  "partnerEn": "a data protection officer reading from the text who avoids detail",
+  "openingEn": "The processing is carried out on the basis of your consent. What information do you need specifically?",
+  "goalEn": "The data processed and its purposes have been found out, third-party transfer has been asked about, consent has been withdrawn and erasure has been requested."
+ },
+ {
+  "lesson": "de-c1-polizei-aussage",
+  "sceneEn": "You are giving a statement about an incident you witnessed. Give what you saw yourself in the plain indicative and what you heard from others in the reporting mood; mark clearly what you do not remember and have your statement put on record.",
+  "partnerEn": "an officer who wants definite answers and presses for detail",
+  "openingEn": "Only what you saw yourself, please. So: what exactly did you observe?",
+  "goalEn": "What was seen and what was heard have been reported separately, the gaps in memory have been marked clearly and the statement has been put on record."
+ },
+ {
+  "lesson": "de-c1-versicherungsfall",
+  "sceneEn": "The insurer has refused your claim. Talk to the representative: find out the grounds for the refusal, say which point you accept, hold your claim nevertheless and state the next step.",
+  "partnerEn": "an insurance representative who defends the grounds and does not give way easily",
+  "openingEn": "The case has been examined: the obligation was not met, so there is no entitlement. What would you like to object to?",
+  "goalEn": "The grounds for refusal have been found out, the point accepted has been said, the claim has been held and the next step has been stated."
+ },
+ {
+  "lesson": "de-c1-buergschaft",
+  "sceneEn": "Someone close is asking you to stand surety for them. Talk it through together: in what case you would be liable, how great the risk is, on what condition you could accept, or why you are refusing.",
+  "partnerEn": "someone close who trusts you, plays down the risk and will not let it go",
+  "openingEn": "It's only a formality, the bank just wants to see it. You'll never actually have to pay — or don't you believe me?",
+  "goalEn": "The consequences of standing surety have been described, the risk has been discussed and the acceptance or refusal has been stated clearly with reasons."
+ },
+ {
+  "lesson": "de-c1-einspruch",
+  "sceneEn": "You are going to appeal against a decision from an authority but the deadline is closing in. Talk to the enquiries desk: ask how to lodge an appeal that protects the deadline, find out by when the grounds must be complete and ask for confirmation.",
+  "partnerEn": "an official strict on procedure who gives you a form number",
+  "openingEn": "The deadline expires in two days. Have you got your grounds ready, then?",
+  "goalEn": "How to lodge a deadline-protecting appeal has been found out, the final date for the grounds has been made clear and confirmation has been promised."
+ },
+ {
+  "lesson": "de-c1-gericht",
+  "sceneEn": "You watched a court hearing and you are reporting it to someone who was not there. Give who said what in the reporting mood, state the court's decision separately, keep your own impression apart and describe what happens next.",
+  "partnerEn": "an acquaintance who is curious about the outcome and has taken a side",
+  "openingEn": "And? Did they believe him or not? Tell me from the beginning.",
+  "goalEn": "What was said has been reported in the reporting mood, the court's decision has been given separately, the personal impression has been kept apart and the next step has been described."
+ },
+ {
+  "lesson": "de-c1-partizipial",
+  "sceneEn": "You and a colleague are going over a formal text. Unpack one long phrase and say in your own words what it says, then compress a passage yourself and argue about which version reads better.",
+  "partnerEn": "a colleague who defends the compressed style and says formal texts are like that",
+  "openingEn": "The sentence is perfectly clear. What exactly don't you understand about it?",
+  "goalEn": "One phrase has been unpacked, one passage has been compressed and a shared conclusion has been reached about which reads better."
+ },
+ {
+  "lesson": "de-c1-gerundiv",
+  "sceneEn": "You are at a project handover meeting. List the jobs that have to be done, the risks that must not be underestimated and the decisions still waiting; say which is urgent and complete the handover.",
+  "partnerEn": "a colleague taking the project on who wants detail and asks about priority",
+  "openingEn": "Before you go: what is the one thing I must on no account underestimate?",
+  "goalEn": "The jobs to be done and the risks have been listed, the priority has been stated and the handover has been completed."
+ },
+ {
+  "lesson": "de-c1-schachtelsatz",
+  "sceneEn": "A friend cannot make sense of a formal letter and is asking for your help. Find the core of the sentence together, break it into parts, rebuild it in your own words and say clearly what the letter is asking for.",
+  "partnerEn": "a friend afraid of formal letters who keeps starting the sentence again",
+  "openingEn": "I've read the sentence five times now. Can you just tell me what they want from me?",
+  "goalEn": "The core of the sentence has been found, the text has been rebuilt in one plain sentence and what the letter asks for has been said clearly."
+ },
+ {
+  "lesson": "de-c1-nominal-verbal",
+  "sceneEn": "You and a colleague are going over a text and you think it is too heavy. Show which sentences should be made plainer, say the reworked version and accept where it has to stay formal.",
+  "partnerEn": "a colleague who takes the formal style as a mark of seriousness",
+  "openingEn": "If we rewrite it like that, doesn't it sound less serious straight away? Where exactly does the style bother you?",
+  "goalEn": "The sentences to be made plainer have been shown, their reworked versions have been given and it has been agreed where the text stays formal."
+ },
+ {
+  "lesson": "de-c1-apposition",
+  "sceneEn": "You are introducing two people to each other at an event. Introduce each with parenthetical asides (who they are, what they do, what they are known for), find a subject in common and leave them to talk.",
+  "partnerEn": "a guest being introduced who adds things about themselves",
+  "openingEn": "I don't think we've met yet. Would you introduce us briefly?",
+  "goalEn": "Both people have been introduced with parenthetical asides, a subject in common has been found and the conversation has been handed over to them."
+ },
+ {
+  "lesson": "de-c1-verweiswoerter",
+  "sceneEn": "You are deciding between two options. Sum both up briefly, refer back to one of them with reference words, say which you prefer and why, and leave one point for later.",
+  "partnerEn": "a colleague who could argue either side and pushes you to give reasons",
+  "openingEn": "So: first the quick way, second the thorough one. Which do you argue for?",
+  "goalEn": "Both options have been summed up, the preference has been justified with reference words and one point has been deliberately left for later."
+ },
+ {
+  "lesson": "de-c1-ellipse",
+  "sceneEn": "A notice is too long and has to be cut. Show what can go, defend what has to stay, give the shortened version and check that it is still clear.",
+  "partnerEn": "a colleague who thinks every sentence is necessary and resists cutting",
+  "openingEn": "If we cut that, nobody will understand it any more. What exactly do you want to strike out?",
+  "goalEn": "What can go has been shown, what has to stay has been defended and the clarity of the shortened version has been checked together."
+ },
+ {
+  "lesson": "de-c1-doppeldeutig",
+  "sceneEn": "You are asked about something you cannot yet explain. Answer without lying and without promising anything; when they press, state your limit openly and say when you will be able to talk.",
+  "partnerEn": "an insistent colleague who will not leave without an answer",
+  "openingEn": "Just say yes or no. Is the department being closed?",
+  "goalEn": "An answer has been given without lying or promising, the limit has been stated openly and it has been said when you can talk."
+ },
+ {
+  "lesson": "de-c1-textsorten",
+  "sceneEn": "You have to describe the same event to two different people: first to a formal superior, then to a close friend. Say the same content in two registers and name the difference yourself.",
+  "partnerEn": "a listener who plays first the formal superior and then the close friend",
+  "openingEn": "Officially first, please: what has occurred?",
+  "goalEn": "The same content has been told in two registers and the difference between them has been named."
+ },
+ {
+  "lesson": "de-c1-praezision",
+  "sceneEn": "A text has some wrong word choices and you are talking to its author. Explain which word is wrong and why, suggest the right one, listen to the author's objection and settle the final version together.",
+  "partnerEn": "an author who thinks word choice does not matter and says it is clear enough",
+  "openingEn": "It's the same thing, surely — scheinbar, anscheinend, where's the difference?",
+  "goalEn": "The difference between the words has been explained with an example, the right one has been suggested and the final version of the text has been settled together."
+ }
+]
