@@ -71,8 +71,22 @@ export default async function CourseSelectPage() {
           bağlantı ilk ekranda hiç görünmüyor, kullanıcı kaydırmak zorunda
           kalıyordu — yani çıkış yine pratikte yoktu.
         */
-        <div className="fixed right-0 top-0 z-10 p-3">
-          <SignOutLink email={user.email} />
+        <div className="pointer-events-none fixed inset-x-0 top-0 z-10">
+          {/*
+            SİHİRBAZIN SÜTUNUNA HİZALI. Önce `fixed right-0` idi ve görünüm
+            alanının köşesine yapışıyordu: geniş ekranda içerik sütununun çok
+            dışına düşüyor, sayfanın hiçbir şeyiyle hizalanmıyordu. Ölçüler
+            `CourseOnboarding`in kendi kabıyla aynı (`max-w-xl px-4`).
+
+            Şerit tam genişlikte ama `pointer-events-none`: görünmez bir bant
+            sihirbazın üst kısmındaki tıklamaları yutmasın. Yalnız düğmenin
+            kendisi tıklanabilir.
+          */}
+          <div className="mx-auto flex w-full max-w-xl justify-end px-4 py-3">
+            <span className="pointer-events-auto">
+              <SignOutLink email={user.email} />
+            </span>
+          </div>
         </div>
       ) : null}
     </>
