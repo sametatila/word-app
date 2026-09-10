@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 import { GameShell } from "./game-shell";
 import { useNoHints } from "./no-hints";
 import { useRoundExit } from "./use-round-exit";
-import { normalize, withArtikel, type GameProps, type GameResult , meaningOf } from "./types";
+import { foldTight, withArtikel, type GameProps, type GameResult , meaningOf } from "./types";
 import { seededShuffle } from "@/lib/shuffle";
 import type { Round } from "@/lib/types";
 import { vibrate } from "@/lib/fx";
@@ -49,7 +49,11 @@ export function ScrambleGame({ round, onDone }: GameProps<ScrambleRound>) {
   const { word } = round;
 
   const targetLetters = useMemo(() => Array.from(word.de).filter((c) => c !== " "), [word.de]);
-  const compareTarget = useMemo(() => normalize(word.de.replace(/\s+/g, "")), [word.de]);
+  // Harf döşemeleri boşluksuz diziliyor; karşılaştırma da boşluksuz biçimde.
+  // `normalize` artık tireyi de boşluğa çeviriyor (bkz. `games/types` PUNCT) ve
+  // düz karşılaştırma iki tarafa aynı boşluğu koyduğu için tesadüfen çalışıyordu;
+  // sıkıştırılmış biçim bunu kurala bağlıyor. Mobil `game/rounds` da böyle.
+  const compareTarget = useMemo(() => foldTight(word.de), [word.de]);
 
   const [pool, setPool] = useState<Tile[]>(() => makePool(word.de, round.id));
   const [placed, setPlaced] = useState<Tile[]>([]);
@@ -89,7 +93,7 @@ export function ScrambleGame({ round, onDone }: GameProps<ScrambleRound>) {
     if (resolvedRef.current) return;
     resolvedRef.current = true;
 
-    const isCorrect = normalize(placed.map((t) => t.char).join("")) === compareTarget;
+    const isCorrect = foldTight(placed.map((t) => t.char).join("")) === compareTarget;
     const latencyMs = Date.now() - started.current;
     setStatus(isCorrect ? "correct" : "wrong");
     // Harfler tamamlanınca kelime okunuyor: bulmaca yazımı çalıştırıyor ama

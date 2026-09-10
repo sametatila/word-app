@@ -1220,18 +1220,23 @@ mobil `lib/numbers.ts` İngilizce ölçek ("two hundred thousand"), bileşik
 satır değil: webde `foldNumbers(text)` imzası dilsiz ve `foldSpelling` içinden
 çağrılıyor. Ayrı tur.
 
-**d) Geniş noktalama kümesi.** Mobil `foldCompare` tırnak, tire, köşeli
-parantez ve okları da boşluğa çeviriyor; web `normalize` yalnız `.,!?;:`
-yapıyor. Kümeyi genişletmek TEK BAŞINA GÜVENLİ DEĞİL: `scramble-game` harf
-karolarını birleştirip `normalize` ile karşılaştırıyor ve tireyi boşluğa
-çevirmek "E-Mail" gibi bir başlıkta iki tarafı ayırıyor.
+**d) Geniş noktalama kümesi — PORT EDİLDİ.** Küme yalnız `.,!?;:` idi; artık
+mobil `lib/textFold` `PUNCT` ile aynı (tırnak, tire, üç nokta, parantez, ok) ve
+simge tablosu da geldi (`%`→prozent/percent, `€`→euro, `&`→und/and).
 
-Ölçülebilir sonucu: tireli başlık webde hâlâ eşleşmiyor ("t shirt" ↔
-"T-Shirt"), mobilde eşleşiyor. `test:numbers` bunu BİLİNEN EKSİK olarak
-sınıyor, yani düzeltilince test kırılır ve bu satır güncellenir. Çözüm yolu da
-ölçüldü: mobil karo oyununun karşılaştırmasını `foldTight` ile yapıyor
-(`game/rounds` 618/633), yani webin `scramble-game`i de sıkıştırılmış
-karşılaştırmaya geçirilirse noktalama kümesi güvenle genişletilebilir.
+Tire en önemli eksikti: tanıyıcı "t-shirt" yerine "t shirt", "U-Bahn" yerine
+"U Bahn" yazıyor ve havuzda 142 İngilizce, 14 Almanca tireli başlık var -
+hiçbiri eşleşmiyordu.
+
+Blokçu sanılan şey ölçünce blokçu çıkmadı: `scramble-game` karo dizilişini ve
+hedefi AYNI `normalize`dan geçiriyor, yani küme genişleyince iki tarafa aynı
+boşluk giriyor ve eşitlik bozulmuyordu. Yine de kurala bağlandı - iki taraf da
+`foldTight` ile karşılaştırılıyor (mobil `game/rounds` 618/633 de böyle), böylece
+noktalama kümesi bir daha değiştiğinde karo oyunu tesadüfe kalmıyor.
+
+Aynı ölçümde `acceptedForms` da Almancaya sabit çıktı: `normalize`ı dilsiz
+çağırıyordu (simge tablosu Almanca geliyordu) ve baştaki tanımlığı
+`der|die|das` ile düşürüyordu. Dile bağlandı.
 
 **e) Kısaltmalar - iki platformda da yok.** İngilizce derslerde 338 konuşma
 adımı kısaltma taşıyor (181 repeat, 157 produce: "I'm from Turkey.",

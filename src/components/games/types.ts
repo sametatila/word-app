@@ -94,23 +94,54 @@ export function grammarNote(word: RoundWord, lang: NativeLang): string | null {
 }
 
 /**
- * Yazım karşılaştırması: büyük/küçük harf ve boşluk toleranslı.
- *
  * KESME İŞARETİ SİLİNİYOR, boşluğa çevrilmiyor: "what's" ile "whats" aynı
  * cevap sayılmalı. Almancada görünmeyen bir kusurdu (kesme oradaki başlıklarda
  * neredeyse hiç geçmiyor), İngilizce kursta 338 konuşma adımı kısaltma
- * taşıyor ve tanıyıcı bazen kesmeyi hiç yazmıyor. Mobil `lib/textFold`
- * `foldCompare` aynı kuralı uyguluyor.
+ * taşıyor ve tanıyıcı bazen kesmeyi hiç yazmıyor.
  */
-export function normalize(s: string): string {
-  return s
-    .toLocaleLowerCase("de-DE")
-    .replace(/['’´`ʼ]/g, "")
-    .replace(/[.,!?;:]/g, " ")
+const APOSTROPHE = /['’´`\u02BC]/g;
+
+/**
+ * Diğer işaretler BOŞLUĞA çevrilir, silinmez: "A/B" iki sözcüktür, "AB" değil.
+ *
+ * Küme yalnız `.,!?;:` idi. Tire en önemli eksiğiydi: tanıyıcı "t-shirt"
+ * yerine "t shirt", "U-Bahn" yerine "U Bahn" yazıyor ve havuzda 142 İngilizce,
+ * 14 Almanca tireli başlık var - hiçbiri eşleşmiyordu. Üç nokta da öyle,
+ * içerikte "My name is …" duruyor ve kimse onu söylemiyor. Mobil
+ * `lib/textFold` `PUNCT` ile aynı küme.
+ */
+const PUNCT = /[.,!?;:"…—–\-+/()[\]{}≠→„“”»«]/g;
+
+/**
+ * Simge → sözcük. İçerikte simge HİÇ geçmiyor (hepsi "Euro", "Prozent" diye
+ * yazılı) ama kullanıcı yazarken "5€", "%20" kullanıyor ve tanıyıcı da bazen
+ * simge üretiyor. Simgeyi noktalama sayıp atmak yanlış olurdu: "%20" ile "20"
+ * aynı şey değil. Sözcüğe açmak iki tarafı ortak biçimde buluşturuyor.
+ * Mobil `lib/textFold` `SYMBOLS` ile aynı tablo.
+ */
+const SYMBOLS: Record<string, Record<string, string>> = {
+  de: { "%": " prozent ", "€": " euro ", "$": " dollar ", "£": " pfund ", "&": " und ", "°": " grad " },
+  en: { "%": " percent ", "€": " euro ", "$": " dollar ", "£": " pound ", "&": " and ", "°": " degrees " },
+};
+const SYMBOL_RE = /[%€$£&°]/g;
+
+/** Yazım karşılaştırması: büyük/küçük harf, noktalama ve boşluk toleranslı. */
+export function normalize(s: string, lang: TargetLang = currentTargetLang()): string {
+  const table = SYMBOLS[lang] ?? SYMBOLS.de;
+  return (s || "")
+    .toLocaleLowerCase(lang === "de" ? "de-DE" : "en-US")
+    .replace(SYMBOL_RE, (c) => table[c] ?? " ")
+    .replace(APOSTROPHE, "")
+    .replace(PUNCT, " ")
     // Boşluk sadeleştirmesi noktalama temizliğinden SONRA gelmeli: "entweder ...
     // oder" önce yapıldığında çift boşukla kalıyor ve hiçbir yazımla eşleşmiyordu.
     .replace(/\s+/g, " ")
     .trim();
+}
+
+/** Boşluksuz karşılaştırma biçimi — mobil `lib/textFold` `foldTight`. */
+export function foldTight(s: string, lang: TargetLang = currentTargetLang()): string {
+  return normalize(s, lang).replace(/\s+/g, "");
 }
 
 /**
@@ -158,7 +189,7 @@ export function foldSpelling(s: string, lang: TargetLang = currentTargetLang()):
   // Sayı sözcüğü → rakam, umlaut katlamadan ÖNCE (fünf ve fuenf ikisi de
   // tanınıyor, sıra aslında önemsiz): "fünf" ↔ "5" eşleşsin. Tanıyıcı sayıyı
   // rakam yazıyor, içerik sözcükle; ikisi de rakama iniyor.
-  return foldNumbers(normalize(s))
+  return foldNumbers(normalize(s, lang))
     .replace(ARTICLES[lang] ?? ARTICLES.de, " ")
     .replace(/ß/g, "ss")
     .replace(/ä/g, "ae")
@@ -191,7 +222,7 @@ export function matchesAnswer(typed: string, candidates: string[], lang: TargetL
   const target = foldKeep(typed, lang);
   if (!target) return false;
   return candidates
-    .flatMap((c) => acceptedForms(c))
+    .flatMap((c) => acceptedForms(c, lang))
     .some((form) => foldKeep(form, lang) === target);
 }
 
@@ -279,7 +310,7 @@ const TIGHT_CONTAINS_MIN = 12;
 
 export function spokenMatches(heard: string[], candidates: string[], lang: TargetLang = currentTargetLang()): boolean {
   const forms = candidates
-    .flatMap((c) => acceptedForms(c))
+    .flatMap((c) => acceptedForms(c, lang))
     .map((f) => foldKeep(f, lang))
     .filter(Boolean);
   if (!forms.length) return false;
@@ -320,8 +351,8 @@ export function spokenMatches(heard: string[], candidates: string[], lang: Targe
    * sayıya dokunmadığı için ham okuma o yolu kapatıyor. Mobil karşılığı
    * `lib/textFold` `foldLetters`.
    */
-  const raw3 = (x: string) => normalize(x).replace(/\s+/g, "");
-  const formsRaw = candidates.flatMap((c) => acceptedForms(c)).map(raw3).filter(Boolean);
+  const raw3 = (x: string) => foldTight(x, lang);
+  const formsRaw = candidates.flatMap((c) => acceptedForms(c, lang)).map(raw3).filter(Boolean);
   const looseRaw = (said: string) => {
     const h = raw3(said);
     return !!h && formsRaw.some((form) => h === form || (form.length >= TIGHT_CONTAINS_MIN && h.includes(form)));
@@ -353,15 +384,17 @@ export function spokenMatches(heard: string[], candidates: string[], lang: Targe
  * sözlük biçimini ezberlemeyi ölçer. Burada başlıktan bütün makul yazımlar
  * üretilir; herhangi biri doğru sayılır.
  */
-export function acceptedForms(raw: string): string[] {
+export function acceptedForms(raw: string, lang: TargetLang = currentTargetLang()): string[] {
   const out = new Set<string>();
 
   const add = (value: string) => {
-    const base = normalize(value).replace(/[()]/g, " ").replace(/\s+/g, " ").trim();
+    const base = normalize(value, lang).replace(/[()]/g, " ").replace(/\s+/g, " ").trim();
     if (!base) return;
     out.add(base);
-    // Artikel isteğe bağlı: "die Bekannte" de "Bekannte" de kabul.
-    const noArticle = base.replace(/^(der|die|das)\s+/, "");
+    /* Artikel isteğe bağlı: "die Bekannte" de "Bekannte" de kabul. Tablo dile
+       göre; `der|die|das` sabit yazılıydı ve İngilizce başlıkta "the" hiç
+       düşmüyordu (bkz. `ARTICLES`). */
+    const noArticle = base.replace(new RegExp(`^(${lang === "en" ? "the|an|a" : "der|die|das"})\\s+`), "");
     out.add(noArticle);
     // Dönüşlü zamir isteğe bağlı ve yeri serbest: sözlükte "setzen (sich)"
     // yazsa da öğrenci "sich setzen" ya da yalnızca "setzen" yazabilmeli.

@@ -7,7 +7,7 @@
  */
 import assert from "node:assert/strict";
 import { foldNumbers, wordToNumber } from "../src/lib/german-numbers";
-import { foldSpelling, spokenMatches, expandPunctuationWords, matchesAnswer } from "../src/components/games/types";
+import { foldSpelling, foldTight, spokenMatches, expandPunctuationWords, matchesAnswer } from "../src/components/games/types";
 import { matchSentence } from "../src/lib/sentence-match";
 import { normalizeSpoken } from "../src/lib/speech";
 
@@ -105,13 +105,30 @@ assert.ok(matchesAnswer("der", ["der"], "de"), "yazılan tek tanımlık da eşle
  * hedef başka bir kelimenin içinde tesadüfen geçiyor ("was" ⊂ "das Wasser").
  */
 assert.ok(spokenMatches(["Anruf Beantworter"], ["Anrufbeantworter"], "de"), "bolunmus bilesik birlesince hedefe esit");
-// Tireli başlık ("t shirt" ↔ "T-Shirt") HENÜZ eşleşmiyor: tire webin
-// `normalize` noktalama kümesinde yok ve kümeyi genişletmek `scramble-game`in
-// karo karşılaştırmasıyla çakışıyor (bkz. web-parity §11.18/d).
-assert.ok(!spokenMatches(["t shirt"], ["T-Shirt"], "en"), "tireli baslik: bilinen eksik, d maddesi");
+assert.ok(spokenMatches(["t shirt"], ["T-Shirt"], "en"), "tireli baslik bosluklu yaziliyor");
+assert.ok(spokenMatches(["U Bahn"], ["U-Bahn"], "de"), "Almanca tireli baslik da");
 assert.ok(spokenMatches(["ähm Anruf Beantworter bitte"], ["Anrufbeantworter"], "de"), "bolunme + dolgu: uzun hedefte icerme bagisli");
 assert.ok(!spokenMatches(["das Wasser"], ["was"], "de"), "kisa hedef baska kelimenin icinde gecince DOGRU SAYILMAZ");
 assert.ok(!spokenMatches(["das Geschlecht"], ["schlecht"], "de"), "aynisi: schlecht ⊂ Geschlecht");
 assert.ok(spokenMatches(["die Katze"], ["Katze"], "de"), "normal okuma bozulmadi");
+
+/*
+ * NOKTALAMA KÜMESİ VE SİMGELER — mobil `lib/textFold` ile eşitlendi.
+ *
+ * Küme yalnız `.,!?;:` idi. Tire en önemli eksiğiydi: tanıyıcı "t-shirt"
+ * yerine "t shirt" yazıyor ve havuzda 142 İngilizce, 14 Almanca tireli başlık
+ * var. Simge tablosu da yoktu: içerik "Euro"/"Prozent" diye yazıyor, kullanıcı
+ * "5€"/"%20" yazıyor.
+ */
+assert.equal(foldSpelling("A/B", "de"), "a b", "eğik çizgi boşluğa döner, silinmez");
+assert.ok(spokenMatches(["5 Euro"], ["5€"], "de"), "simge sözcüğe açılır (Almanca)");
+assert.ok(spokenMatches(["20 percent"], ["20%"], "en"), "simge sözcüğe açılır (İngilizce)");
+assert.ok(spokenMatches(["My name is"], ["My name is …"], "en"), "üç nokta atılır");
+// Karo oyunu: iki taraf da sıkıştırılmış biçimde karşılaştırılıyor.
+assert.equal(foldTight("E-Mail", "de"), foldTight("EMail", "de"), "tireli başlık karo dizilişiyle eşit");
+assert.equal(foldTight("auf Wiedersehen", "de"), foldTight("aufWiedersehen", "de"), "boşluklu başlık da");
+// `acceptedForms` de dile bakıyor: simge tablosu ve baştaki tanımlık.
+assert.ok(spokenMatches(["door"], ["the door"], "en"), "acceptedForms İngilizce tanımlığı düşürür");
+assert.ok(spokenMatches(["Bekannte"], ["die Bekannte"], "de"), "Almanca tanımlık eskisi gibi");
 
 console.log("test:numbers — sözcük/rakam/bileşik/artikel/cümle/kelime/telaffuz/noktalama: tamam");

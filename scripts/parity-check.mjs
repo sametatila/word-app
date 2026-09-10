@@ -462,6 +462,21 @@ console.log("\n" + C.b + "15. KONUSMA ESLESTIRME TABLOLARI" + C.off);
   sameList("tanimlik dilleri", langs(mobSrc, "ARTICLES"), langs(webSrc, "ARTICLES"));
   sameList("tanıyıcı noktalama dilleri", langs(mobSrc, "RECOGNIZER_PUNCT"), langs(webSrc, "RECOGNIZER_PUNCT"));
 
+  /* Noktalama kumesi ve simge tablosu: web `games/types`, mobil `lib/textFold`. */
+  const foldSrc = read("mobile/src/lib/textFold.ts");
+  const reOf = (src, name) => {
+    const m = src.match(new RegExp(`(?:export )?const ${name}(?::[^=]+)? = (/[^\\n]*/[a-z]*);`));
+    return m ? m[1] : `${name} YOK`;
+  };
+  sameList("noktalama kumesi", [reOf(foldSrc, "PUNCT")], [reOf(webSrc, "PUNCT")]);
+  sameList("kesme isareti kumesi", [reOf(foldSrc, "APOSTROF")], [reOf(webSrc, "APOSTROPHE")]);
+  const symbols = (src) => {
+    const seg = src.slice(src.indexOf("const SYMBOLS"));
+    const body = seg.slice(0, seg.indexOf("\n};"));
+    return [...body.matchAll(/"([^"]+)":\s"([^"]+)\s"/g)].map((m) => `${m[1]}=${m[2]}`);
+  };
+  sameList("simge tablosu", symbols(foldSrc), symbols(webSrc));
+
   /* Karsilik sozcukleri: ` punkt `, ` comma ` gibi. */
   const words = (src) => {
     const seg = src.slice(src.indexOf("const RECOGNIZER_PUNCT"));
