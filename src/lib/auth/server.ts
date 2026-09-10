@@ -150,6 +150,21 @@ export const auth = betterAuth({
   emailVerification: {
     sendOnSignUp: true,
     autoSignInAfterVerification: true,
+    /**
+     * Doğrulama jetonunun ömrü — varsayılan 1 saatten 30 dakikaya indirildi.
+     *
+     * Sebep `autoSignInAfterVerification` ile birleşince ortaya çıkıyor: jeton
+     * imzalı bir JWT, veritabanında tutulmuyor ve KULLANILDIKTAN SONRA
+     * GEÇERSİZLEŞMİYOR. Yani doğrulama bağlantısı, ömrü boyunca tekrar
+     * tekrar kullanılabilen bir GİRİŞ bağlantısı: iletilen ya da paylaşılan
+     * bir e-posta o süre boyunca hesabı açıyor.
+     *
+     * Otomatik girişi kapatmak da bir seçenekti; o zaman kullanıcı doğrulayıp
+     * bir de elle giriş yapacaktı. Pencereyi yarıya indirmek, kayıt akışını
+     * bozmadan aynı riski küçültüyor. Posta gecikirse "tekrar gönder" hem
+     * webde hem mobilde bir dokunuş uzakta.
+     */
+    expiresIn: 30 * 60,
     sendVerificationEmail: async ({ user: u, url }) => {
       // Kayıt anında profil henüz yok; dilin tek güvenilir kaynağı istek.
       const { subject, html, text } = verificationEmail(url, await getLang());
