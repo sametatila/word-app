@@ -92,6 +92,11 @@ jobs:
       # aynı şeyi 995 beceri egzersizi için yapıyor (düz metin, görev metni ve
       # katlanan sözlükçe); `check:skills-task` ise görev metni hattının
       # yazılanını denetliyor.
+      #
+      # BEŞİNCİ KAPI HENÜZ BURADA DEĞİL. `check:mock-prose` deneme kâğıdı
+      # hattını ölçüyor ve o hat yazılıyor (150/6627). Kapsam kuralı yüzünden
+      # bugün KIRMIZI döner; hat bitince buraya eklenecek. Yarım bir hattı
+      # CI'ya koymak kapıyı kapı olmaktan çıkarır — kırmızıya alışılır.
       # Üçü de üretilen sözlüğü BAŞTAN kurup çalışma anındaki nesneler
       # üzerinde çalışıyor: hattın kendi kapısı yazılanı ölçer, bunlar
       # yazılanın uygulamaya VARDIĞINI ölçer. Aradaki boşluk bir kez zaten
