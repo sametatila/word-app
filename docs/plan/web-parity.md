@@ -5575,3 +5575,34 @@ yakaladı. §66'nın ilk yazımı iki YANLIŞ ayrışma gösterdi: web'in `slice
 sabiti (sayı arayan desen) ve nesne kısayol yazımı (`seconds` ile
 `seconds: secs` aynı alan). İkisi de kapının kusuruydu, kodun değil —
 düzeltilmeden bırakılsa gerçek bulguları gürültüye gömerdi.
+
+
+### 11.149 Serbest yazma görevi Android'de hiç okunmuyordu (ve §11.12 kapandı)
+
+Değerlendirme kuyruğunu ölçerken çıktı ve kuyruktan büyük bir hataydı.
+`skillQuiz` `FreeCard` metni **hiç göndermiyordu**: `words >= minWords` olunca
+"gönder" düğmesi `onSettle(true)` çağırıyor, örnek cevabı açıyor, görevi
+bitmiş sayıyordu. Yani Android'de yazma egzersizi bir metin kutusuydu —
+anlamsız bir harf dizisi de tam puan alıyordu. Web aynı görevi baştan beri
+rubrikle puanlıyor (`skills/writing-player` → `/api/assess`), yüzdeyi, övgüyü,
+ipucunu ve düzeltilmiş metni gösteriyor.
+
+**Bu, "sözleşme var, yüzey bağlamamış" sınıfının en pahalı örneği:** uç
+aylardır çalışıyor, mobil ekranda AI uyarısı (`AiNotice variant="output"`)
+bile çiziliyordu — yani ekran kullanıcıya "bunu yapay zekâ değerlendirecek"
+diyor, arkada hiçbir şey değerlendirmiyordu.
+
+Port edilen üç davranış webin ayrımlarıyla aynı: rubrik puanı ≥60 ile görev
+doğru; premium/kota reddi ağ hatası değil (uydurma puan yok); sağlayıcı ya da
+ağ yoksa metin `/api/assess/queue`e bırakılıyor.
+
+**§11.12 kapandı.** Kuyruğun mobile eklenmemesinin sebebi kararsızlık değil,
+dosyanın başka bir oturumun açık işi olmasıydı; o iş commit edildi. Uç artık
+iki taraftan çağrılıyor ve `WEB_ONLY` + `WEB_ONLY_METHOD` listelerinden düştü
+— kapı bunu yine kendisi söyledi ("listede olup artık mobilde de çağrılan uç").
+
+**Kapı:** parity §67 iki tarafın istek gövdesini (kind, targets, constraints,
+exerciseId), kuyruk çağrısını ve kapı ayrımını karşılaştırıyor. İlk yazımı
+webde "uç yok" diye yanlış ayrışma gösterdi: web `/api/assess`i ayrı bir
+istemciden çağırıyor (`assess-client`), o yüzden kapı iki dosyayı birlikte
+okuyor.
