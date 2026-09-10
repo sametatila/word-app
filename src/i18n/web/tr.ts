@@ -218,8 +218,6 @@ export const trWeb: Record<string, string> = {
   "plan.lesson_review": "Konuşma tekrarı: {title}",
   "plan.weak_spot": "Zayıf nokta: {type}",
   "plan.weak_spot_detail": "son 14 günde {n} hata · {game} turu",
-  "plan.weekly_short": "Haftanın kısa kontrolü",
-  "plan.weekly_exam": "Haftanın kullanım sınavı",
   "plan.review_waiting": "{n} tekrar bekliyor · yeni kelimeler",
   "plan.review_goal": "hedef {n} tekrar · yeni kelimeler",
   /* Tur içindeki oyunlar — mobilin `rounds.*` sözlüğünün web'de karşılığı
@@ -400,7 +398,6 @@ export const trWeb: Record<string, string> = {
   "exam.items_and_time": "{n} madde · kalan süre {time}",
   "exam.start_section": "Bölüme başla",
   "exam.is_sentence_right": "Bu cümle doğru mu?",
-  "exam.pronunciation": "Söyleyiş",
   "exam.read_aloud": "Cümleyi yüksek sesle oku.",
   "exam.stop_recording": "Kaydı bitir",
   "exam.start_recording": "Kaydı başlat",

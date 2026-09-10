@@ -212,7 +212,7 @@ export function onLangChange(fn: () => void): () => void {
 /**
  * Çeviri. `vars` verilirse `{ad}` yer tutucuları doldurulur.
  *
- *   t("home.greeting", { name: "Ada" })   // "Merhaba Ada"
+ *   t("learn.greeting_named", { name: "Ada" })   // "Merhaba Ada"
  */
 export function t(key: string, vars?: Record<string, string | number>): string {
   const raw = DICTS[lang]?.[key] ?? DICTS[DEFAULT_NATIVE]?.[key] ?? key;

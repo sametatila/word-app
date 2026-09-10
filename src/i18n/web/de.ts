@@ -193,8 +193,6 @@ export const deWeb: Record<string, string> = {
   "plan.lesson_review": "Gesprächswiederholung: {title}",
   "plan.weak_spot": "Schwachstelle: {type}",
   "plan.weak_spot_detail": "{n} Fehler in den letzten 14 Tagen · {game}-Runde",
-  "plan.weekly_short": "Kurzer Wochencheck",
-  "plan.weekly_exam": "Wochen-Anwendungstest",
   "plan.review_waiting": "{n} Wiederholungen warten · neue Wörter",
   "plan.review_goal": "Ziel {n} Wiederholungen · neue Wörter",
   /* Tur içindeki oyunlar — mobilin `rounds.*` sözlüğünün web'de karşılığı
@@ -375,7 +373,6 @@ export const deWeb: Record<string, string> = {
   "exam.items_and_time": "{n} Aufgaben · {time} übrig",
   "exam.start_section": "Teil starten",
   "exam.is_sentence_right": "Stimmt dieser Satz?",
-  "exam.pronunciation": "Aussprache",
   "exam.read_aloud": "Lies den Satz laut vor.",
   "exam.stop_recording": "Aufnahme beenden",
   "exam.start_recording": "Aufnahme starten",

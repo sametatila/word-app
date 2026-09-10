@@ -261,7 +261,42 @@ if (mode === "--baseline") {
   process.exit(0);
 }
 
+/**
+ * SOZLUKTE OLMAYAN ANAHTAR — `t()` bulamadigini OLDUGU GIBI donduruyor.
+ *
+ * Web tarafinda bu denetim vardi (`scripts/i18n-check.mjs`), mobilde HIC
+ * YOKTU: yanlis yazilan ya da web sozlugunden kopyalanan bir anahtar ekranda
+ * ham hâliyle ("plan.weekly_exam") yaziyor ve hicbir sey itiraz etmiyor.
+ * Olculdu: dort anahtar boyle duruyordu, ucu bu oturumda web yuzeyi mobile
+ * tasinirken girmisti (docs/plan/web-parity.md 11.134).
+ *
+ * Arama cagri govdesinin TAMAMINA bakiyor: `t(x ? "a.b" : "c.d")` bicimi
+ * webde tam olarak bu yuzden kacmisti (11.133).
+ */
+function eksikAnahtarlar() {
+  const sozluk = new Set();
+  const tr = fs.readFileSync(path.join(SRC, "i18n", "tr.ts"), "utf8");
+  for (const m of tr.matchAll(/^\s*"([^"]+)":/gm)) sozluk.add(m[1]);
+  const out = [];
+  for (const file of walk(SRC)) {
+    if (file.includes(path.sep + "i18n" + path.sep)) continue;
+    const src = fs.readFileSync(file, "utf8");
+    for (const m of src.matchAll(/\b(?:t|tx|tt)\(([^()\n]*)\)/g)) {
+      for (const k of m[1].matchAll(/"([a-z][\w]*(?:\.[\w]+)+)"/g)) {
+        if (!sozluk.has(k[1])) out.push({ key: k[1], file: path.relative(ROOT, file) });
+      }
+    }
+  }
+  return out;
+}
+
 if (mode === "--check") {
+  const eksik = eksikAnahtarlar();
+  if (eksik.length) {
+    console.error("Sozlukte OLMAYAN anahtarlar (ekranda ham hâliyle yazarlar):");
+    for (const e of eksik) console.error(`  ${e.key} — ${e.file}`);
+    process.exit(1);
+  }
   if (!fs.existsSync(BASELINE)) {
     console.error("taban yok; once: node scripts/i18n-scan.js --baseline");
     process.exit(2);

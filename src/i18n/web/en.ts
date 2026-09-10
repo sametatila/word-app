@@ -193,8 +193,6 @@ export const enWeb: Record<string, string> = {
   "plan.lesson_review": "Conversation review: {title}",
   "plan.weak_spot": "Weak spot: {type}",
   "plan.weak_spot_detail": "{n} mistakes in the last 14 days · {game} round",
-  "plan.weekly_short": "This week's quick check",
-  "plan.weekly_exam": "This week's usage exam",
   "plan.review_waiting": "{n} reviews waiting · new words",
   "plan.review_goal": "goal {n} reviews · new words",
   /* Tur içindeki oyunlar — mobilin `rounds.*` sözlüğünün web'de karşılığı
@@ -375,7 +373,6 @@ export const enWeb: Record<string, string> = {
   "exam.items_and_time": "{n} items · {time} left",
   "exam.start_section": "Start the section",
   "exam.is_sentence_right": "Is this sentence right?",
-  "exam.pronunciation": "Pronunciation",
   "exam.read_aloud": "Read the sentence aloud.",
   "exam.stop_recording": "Stop recording",
   "exam.start_recording": "Start recording",
