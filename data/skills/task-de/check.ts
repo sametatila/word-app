@@ -17,6 +17,13 @@
  *   hattan geliyor, içeriği kursun hedef dili belirliyor) ve açıklık orada
  *   birebir varsa kanıttır.
  *
+ *   YÜZEYE `q` GİRMİYOR ve bu ilk pakette ölçüldü. `q` üst bağlam —
+ *   çoğu zaman TÜRKÇE bir başlık ("Geçmiş için have + üçüncü hâl",
+ *   "„var“ demek: there is / there are"). Yüzeye katılınca oradaki Türkçe
+ *   parçalar kanıt sayılıyordu ve kapı onların Almancada AYNEN kalmasını
+ *   dayatıyordu — yani karakter kuralıyla kavga ediyordu. Yanlış kabul
+ *   burada yanlış retten tehlikeli: satırı Türkçe bırakmayı zorluyor.
+ *
  * - **Söyleyiş ipucu ÇEVRİLMEZ, YENİDEN YAZILIR.** `drill.hint` ve
  *   `drill.fix` İngilizce sesleri TÜRKÇE okunuşla yazıyor. Almanca okuyan
  *   biri onları okuyamaz; Almanca ses değerleriyle yeniden yazılmaları
@@ -66,7 +73,7 @@ const WORD = /\p{L}+(?:'\p{L}+)*/gu;
  *  içinden kanıt sayardı ve kapı Türkçe bir parçanın Almancada aynen
  *  kalmasını dayatırdı. */
 const evidence = (row: TaskRow): string[] => {
-  const surface = lower([row.de, row.q].filter(Boolean).join(" | "));
+  const surface = lower(row.de ?? "");
   const words = new Set(surface.match(WORD) ?? []);
   return spans(row.tr).filter((s) => {
     const l = lower(s);
@@ -80,7 +87,7 @@ const CHARSET = /[\n -~ÄÖÜäöüßé·×‚„“”‘’«»–—…→↔
 /** Yüzeyde SÖZCÜK olarak geçen özel adlar — küme dışı harf taşısalar da
  *  yerinde kalmak zorundalar ("Ayla Yıldız" formda birebir aranıyor). */
 const surfaceNames = (de: string, row: TaskRow): string[] => {
-  const words = new Set(lower([row.de, row.q].filter(Boolean).join(" | ")).match(WORD) ?? []);
+  const words = new Set(lower(row.de ?? "").match(WORD) ?? []);
   return (de.match(WORD) ?? []).filter(
     (w) => [...w].some((ch) => !CHARSET.test(ch)) && words.has(lower(w)),
   );

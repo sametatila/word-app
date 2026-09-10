@@ -29,7 +29,7 @@ const spans = (t) => {
   return out;
 };
 const evidence = (row) => {
-  const surface = lower([row.de, row.q].filter(Boolean).join(" | "));
+  const surface = lower(row.de ?? "");
   const words = new Set(surface.match(WORD) ?? []);
   return spans(row.tr).filter((s) => {
     const l = lower(s);
