@@ -53,7 +53,7 @@ type BossPayload = {
   maxSeconds: number;
 };
 
-/** Son saniyeler — sayaç kırmızıya döner. Web `DANGER_SECONDS` ile aynı. */
+/** Son saniyeler — sayaç kırmızıya döner. Web `DANGER_SECONDS` ile aynı (kapı: `check:parity` "ortak sayisal sabitler"). */
 const DANGER_SECONDS = 10;
 
 type Phase = "loading" | "error" | "ready" | "playing" | "won" | "lost";

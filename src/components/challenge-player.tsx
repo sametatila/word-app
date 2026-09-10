@@ -22,8 +22,16 @@ const FAST_BONUS_MS = 1500; // 3,5 saniyenin altında cevaplandıysa ek
 const PENALTY_MS = 4000; // yanlış cevap
 const FAST_LIMIT_MS = 3500;
 const MAX_SECONDS = 75; // süre sonsuza uzamasın
-/** Sayacın kırmızıya döndüğü ve saniyede bir uyarı tıkının başladığı eşik. */
-const DANGER_SECONDS = 8;
+/**
+ * Sayacın kırmızıya döndüğü ve saniyede bir uyarı tıkının başladığı eşik.
+ *
+ * 8'di; Android aynı adla 10 kullanıyor ve oradaki yorum "web ile aynı"
+ * DİYORDU — yani ayrışma iki taraftan da görünmüyordu. Ölçüm ikisini
+ * karşılaştırınca çıktı. Android'in değeri alındı: son saniyelerin kaç saniye
+ * olduğu iki uygulamada aynı olmalı, aynı turu iki cihazda oynayan aynı anda
+ * gerilmeli.
+ */
+const DANGER_SECONDS = 10;
 
 /** Üst üste doğrularda puan çarpanı — asıl heyecan burada. */
 function multiplier(combo: number): number {
