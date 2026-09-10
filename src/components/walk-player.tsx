@@ -430,7 +430,14 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
       // walk=1: sunucu yürüyüşe özel TEMİZ kuyruğu kuruyor (tam 20 tur, kelime
       // başına tek "speak", araya birkaç yeni; bkz. buildWalk) ve session_state'e
       // dokunmuyor. Client tarafı benzersizleştirme (eski walkQueue) artık gereksiz.
-      const res = await fetch("/api/session?walk=1", {
+      /*
+        GÜN İSTEMCİNİN YEREL GÜNÜ. Adres `day` taşımıyordu ve uç, gün gelmezse
+        SUNUCUNUN UTC gününe düşüyor (`clampDay`). Gece yarısına yakın yürüyen
+        kullanıcının cevapları yanlış güne yazılıyordu: günlük istatistik ve
+        seri o günden hesaplanıyor. Aynı sayfanın oturum oynatıcısı ve mobilin
+        yürüyüşü baştan beri yerel günü gönderiyor.
+      */
+      const res = await fetch(`/api/session?day=${localDay()}&walk=1`, {
         cache: "no-store",
         signal: AbortSignal.timeout(NET_TIMEOUT_MS),
       });
@@ -976,7 +983,7 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
   const fetchSession = useCallback(async (): Promise<SessionPayload | null> => {
     try {
       const skip = [...askedIds.current].join(",");
-      const res = await fetch(`/api/session?walk=1${skip ? `&skip=${skip}` : ""}`, {
+      const res = await fetch(`/api/session?day=${localDay()}&walk=1${skip ? `&skip=${skip}` : ""}`, {
         cache: "no-store",
         signal: AbortSignal.timeout(NET_TIMEOUT_MS),
       });

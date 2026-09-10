@@ -7,6 +7,7 @@ import { WeakSpotsCard } from "@/components/weak-spots-card";
 import { useCachedJson } from "@/lib/use-cached";
 import type { GrowthReport, WeekPoint } from "@/lib/growth";
 import { useT } from "@/lib/i18n/client";
+import { localDay } from "@/lib/day";
 import { bandKey } from "@/lib/proficiency";
 
 /**
@@ -34,7 +35,10 @@ import { bandKey } from "@/lib/proficiency";
  */
 export function ProgressPanel() {
   const t = useT();
-  const { data } = useCachedJson<GrowthReport>("growth", "/api/growth", (body) => {
+  /* Gün istemcinin YEREL günü: uç gün gelmezse sunucunun UTC gününe düşüyor
+     ve gece yarısına yakın açılan rapor bir gün kaymış seriyle çiziliyordu.
+     Öteki öğrenme uçlarının hepsi yerel günü gönderiyor. */
+  const { data } = useCachedJson<GrowthReport>("growth", `/api/growth?day=${localDay()}`, (body) => {
     const g = body as Partial<GrowthReport>;
     // 200 dönen ama biçimi tutmayan bir cevapta kör dönüşüm bütün profili
     // hata sınırına düşürüyordu; kart kendini gizlemeli, ekranı indirmemeli.
