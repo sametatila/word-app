@@ -95,6 +95,8 @@ export function ExamScreen() {
 
   const [paper, setPaper] = useState<Paper | null>(null);
   const [err, setErr] = useState<string | null>(null);
+  /* Yükleme hatası GEÇİCİ olabilir; bkz. hata ekranındaki "tekrar dene". */
+  const [attempt, setAttempt] = useState(0);
   const [phase, setPhase] = useState<"yukleniyor" | "kapak" | "bolum" | "sonuc">("yukleniyor");
   const [secIdx, setSecIdx] = useState(0);
   const [left, setLeft] = useState(0);
@@ -110,6 +112,7 @@ export function ExamScreen() {
 
   useEffect(() => {
     let cancelled = false;
+    setErr(null);
     api<{ paper: Paper }>("/api/exam", {
       method: "POST",
       body: JSON.stringify({ action: "start", level, module: moduleIx, day: todayStr() }),
@@ -129,7 +132,8 @@ export function ExamScreen() {
       })
       .catch((e: Error) => !cancelled && setErr(e.message || t("exam.could_not_load")));
     return () => { cancelled = true; };
-  }, [level, moduleIx]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [level, moduleIx, attempt]);
 
   /**
    * Sınavı kapatır. `sent` koruması yüzünden birden çok kez çağrılması
@@ -205,7 +209,17 @@ export function ExamScreen() {
       <View style={{ flex: 1, backgroundColor: colors.bg, alignItems: "center", justifyContent: "center", gap: spacing.lg, padding: spacing.xl }}>
         <Mascot mood="sad" size={90} />
         <Text variant="body" color={colors.textMuted} style={{ textAlign: "center" }}>{err}</Text>
-        <PressableScale onPress={() => nav.goBack()}><Text variant="bodyStrong" color={colors.primaryText}>{t("item.go_back")}</Text></PressableScale>
+        {/*
+          TEKRAR DENE — ekran yalnız "geri dön" sunuyordu.
+          Sınav kâğıdı isteği geçici bir ağ kesintisiyle de düşebilir ve o
+          durumda kullanıcının tek çıkışı sınavdan ÇIKMAKTI; haftanın kâğıdı
+          böyle harcanabiliyordu. Kalıp `AchievementsScreen`den: sayaç artıyor,
+          yükleme etkisi yeniden koşuyor.
+        */}
+        <PressableScale onPress={() => setAttempt((n) => n + 1)} style={{ paddingHorizontal: 18, paddingVertical: 10, borderRadius: radii.md, borderWidth: 1.5, borderColor: colors.border }}>
+          <Text variant="bodyStrong" color={colors.primaryText}>{t("common.try_again")}</Text>
+        </PressableScale>
+        <PressableScale onPress={() => nav.goBack()}><Text variant="bodyStrong" color={colors.textMuted}>{t("item.go_back")}</Text></PressableScale>
       </View>
     );
   }
