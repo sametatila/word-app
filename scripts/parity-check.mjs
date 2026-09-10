@@ -1838,6 +1838,48 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   sameList("kalip kullanildi mi", kural("mobile/src/game/roleplay.ts"), kural("src/components/lessons/lesson-player.tsx"));
 }
 
+/* ── 42. niyet eslestirme (dialogue) ───────────────────────────────────────
+ * Kapali temali senaryoda ogrencinin soyledigi, dallarin `match` koklerine
+ * gore eslestiriliyor - model gerekmiyor. Kural mobile YENI kopyalandi
+ * (cevrimdisi rol yapma portunun ilk adimi) ve bir kopya en cok kopyalandigi
+ * gun dogrudur.
+ *
+ * Olculen: kisa kok siniri, kok arama kurali ve puanlama. Ayrisirsa ayni
+ * cumle bir uygulamada dali tutar, otekinde tutmaz - yani ayni ders bir
+ * tarafta ilerler, otekinde tikanir. */
+{
+  const kural = (p, fn) => {
+    const src = read(p).replace(/\/\*[\s\S]*?\*\//g, " ").replace(/\/\/[^\n]*/g, " ");
+    const i = src.indexOf(fn);
+    const body = i < 0 ? "" : src.slice(i, src.indexOf("\n}", i)).replace(/\s+/g, " ");
+    return body;
+  };
+  const say = [
+    "kisasinir=" + ((read("mobile/src/game/dialogue.ts").match(/WHOLE_WORD_MAX = (\d+)/) ?? [])[1] ?? "yok"),
+    "contains=" + kural("mobile/src/game/dialogue.ts", "function contains").replace(/\breply\.match \?\? \[\]/, "reply.match"),
+    "match=" + kural("mobile/src/game/dialogue.ts", "export function matchReply").replace(/\(reply\.match \?\? \[\]\)/, "reply.match"),
+    "used=" + kural("mobile/src/game/dialogue.ts", "export function usedTargets"),
+  ];
+  const web = [
+    "kisasinir=" + ((read("src/lib/dialogue.ts").match(/WHOLE_WORD_MAX = (\d+)/) ?? [])[1] ?? "yok"),
+    "contains=" + kural("src/lib/dialogue.ts", "function contains"),
+    "match=" + kural("src/lib/dialogue.ts", "export function matchReply"),
+    "used=" + kural("src/lib/dialogue.ts", "export function usedTargets"),
+  ];
+  sameList("niyet eslestirme", say, web);
+
+  /* Sozlu metnin normalizasyonu: iki tarafta ayni noktalama kumesi ve ayni
+     kucultme yerelı. Umlaut BILEREK korunuyor (schön/schon). */
+  const norm = (p) => {
+    const src = read(p).replace(/\/\*[\s\S]*?\*\//g, " ").replace(/\/\/[^\n]*/g, " ");
+    return [
+      "noktalama=" + ((src.match(/const PUNCTUATION = (\/[^\n]+\/g)/) ?? [])[1] ?? "yok"),
+      "govde=" + ((src.match(/export function normalizeSpoken[\s\S]*?return ([\s\S]*?);\s*\n\}/) ?? [])[1] ?? "yok").replace(/\s+/g, " ").replace(/lang === "de"/, "DE"),
+    ];
+  };
+  sameList("sozlu metin normalizasyonu", norm("mobile/src/lib/speech.ts"), norm("src/lib/speech.ts"));
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"
