@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { StatusBar, View, Dimensions, Platform } from "react-native";
+import { StatusBar, View, Dimensions, Platform, Linking } from "react-native";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import { NavigationContainer, DefaultTheme, DarkTheme } from "@react-navigation/native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
@@ -16,15 +16,65 @@ import { loadReduceMotion } from "./src/lib/reduceMotion";
 import { loadLang, useLang } from "./src/lib/i18n";
 import { attachPushListeners } from "./src/lib/pushDevice";
 import { navigationRef } from "./src/lib/pushRoute";
+import { parseDeepLink } from "./src/lib/deepLink";
+import { completeEmailVerification } from "./src/lib/auth";
+import { t } from "./src/lib/i18n";
+import { Text } from "./src/ui/Text";
 import { AchievementUnlock } from "./src/ui/AchievementUnlock";
 
 function Nav() {
   const { colors, isDark } = useTheme();
-  const { user, loading } = useAuth();
+  const { user, loading, refresh } = useAuth();
+  /** Doğrulama bağlantısı işlenirken gösterilen örtü (bkz. aşağıdaki derin bağlantı kancası). */
+  const [verifying, setVerifying] = useState(false);
   const [onboarded, setOnboarded] = useState<boolean | null>(null);
   // Arayüz dili: değiştiğinde tüm ağaç yeniden render edilsin diye tepede
   // dinleniyor (t() modül düzeyinde okuduğu için tek başına tetiklemez).
   useLang();
+
+  /*
+    DERİN BAĞLANTI — e-postadaki iki bağlantı uygulamada açıldığında.
+
+    Sunucu yalnız uygulamanın karşılayabildiği iki yolu iddia ediyor
+    (bkz. .well-known dosyaları): sıfırlama ve doğrulama. Burada da yalnız
+    o ikisi tanınıyor; tanınmayan adres sessizce yok sayılıyor ve uygulama
+    normal açılışını sürdürüyor.
+
+    Köken denetimi `parseDeepLink`te: bağlantı DIŞARIDAN geliyor ve yabancı
+    bir adresten gelen "doğrula" çağrısı, uygulamanın bizim olmayan bir
+    sunucuya oturum açtırması demek olurdu.
+
+    İki giriş noktası var ve ikisi de gerekli: uygulama KAPALIYKEN gelen
+    bağlantı `getInitialURL`den, AÇIKKEN gelen olay dinleyicisinden.
+  */
+  useEffect(() => {
+    let alive = true;
+
+    const goReset = (token: string) => {
+      if (!navigationRef.isReady()) return;
+      try {
+        (navigationRef.navigate as (n: string, p?: object) => void)("ResetPassword", { token });
+      } catch { /* gezgin hazır değilse bağlantı uygulamayı açmakla kalır */ }
+    };
+
+    const handle = async (raw: string | null | undefined) => {
+      const action = parseDeepLink(raw);
+      if (!action || !alive) return;
+
+      if (action.kind === "reset-password") { goReset(action.token); return; }
+
+      // Doğrulamayı uygulama tamamlıyor: better-auth yönlendirme boyunca oturum
+      // çerezini RN'in kavanozuna yazıyor, yani kullanıcı burada girmiş oluyor.
+      setVerifying(true);
+      await completeEmailVerification(action.url);
+      await refresh();
+      if (alive) setVerifying(false);
+    };
+
+    void Linking.getInitialURL().then(handle);
+    const sub = Linking.addEventListener("url", (e) => { void handle(e.url); });
+    return () => { alive = false; sub.remove(); };
+  }, [refresh]);
 
   /*
     Uzak bildirim dinleyicileri (FCM): jeton yenileme, ön planda gelen bildirimi
@@ -89,6 +139,13 @@ function Nav() {
           ve altısına ayrı kutlama koymak altı yerde unutulur (web de kabukta
           tek kart tutuyor). Kendisi akış ekranlarını kesmiyor. */}
       <AchievementUnlock />
+      {/* Doğrulama sürerken ekranı bir an boş bırakmamak için örtü: ağ çağrısı
+          ve oturum tazelemesi bitene kadar duruyor. */}
+      {verifying ? (
+        <View style={{ position: "absolute", inset: 0, alignItems: "center", justifyContent: "center", backgroundColor: colors.bg }}>
+          <Text variant="h3">{t("verify.checking")}</Text>
+        </View>
+      ) : null}
     </NavigationContainer>
   );
 }

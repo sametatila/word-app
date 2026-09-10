@@ -244,6 +244,42 @@ export async function changePassword(currentPassword: string, newPassword: strin
   }
 }
 
+/**
+ * Parola sıfırlamayı TAMAMLAR — e-postadaki bağlantı uygulamada açıldığında.
+ *
+ * Jeton tek kullanımlık ve sunucuda tutuluyor; başarı hâlinde better-auth
+ * kullanıcının BÜTÜN oturumlarını düşürüyor (revokeSessionsOnPasswordReset),
+ * yani bu çağrı bir oturum açmıyor. Çağıran kullanıcıyı girişe alıyor.
+ */
+export async function resetPassword(token: string, newPassword: string): Promise<AuthOutcome> {
+  try {
+    return await parse(await post("reset-password", { token, newPassword }));
+  } catch {
+    return { ok: false, code: "NETWORK", message: t("common.connection_failed") };
+  }
+}
+
+/**
+ * Doğrulama bağlantısını UYGULAMA açar.
+ *
+ * Adres better-auth'un kendi ucu ve bir yönlendirmeyle bitiyor; RN'in fetch'i
+ * yönlendirmeyi izliyor ve yol boyunca yazılan oturum çerezi uygulamanın
+ * kavanozuna düşüyor (`autoSignInAfterVerification` açık). Yani doğrulama
+ * bittiğinde kullanıcı UYGULAMADA girmiş oluyor — tarayıcıda doğrulayıp geri
+ * dönme adımı ortadan kalkıyor.
+ *
+ * Adres `parseDeepLink` tarafından kendi alan adımıza sabitlenmiş olarak
+ * geliyor; burada ikinci bir köken denetimi yapılmıyor çünkü tek çağıran o.
+ */
+export async function completeEmailVerification(url: string): Promise<boolean> {
+  try {
+    const res = await fetchWithTimeout(url, { headers: { accept: "application/json" } });
+    return res.ok;
+  } catch {
+    return false;
+  }
+}
+
 /** Hesaba bağlı sağlayıcılar (credential = e-posta/parola, google …). */
 export async function listAccounts(): Promise<{ providerId: string }[]> {
   try {

@@ -17,6 +17,7 @@ import { FirstPracticeScreen } from "../screens/FirstPracticeScreen";
 import { NotifPrimeScreen } from "../screens/NotifPrimeScreen";
 import { UnitScreen } from "../screens/UnitScreen";
 import { AuthScreen } from "../screens/AuthScreen";
+import { ResetPasswordScreen } from "../screens/ResetPasswordScreen";
 import { WordsScreen } from "../screens/WordsScreen";
 import { AchievementsScreen } from "../screens/AchievementsScreen";
 import { ProgressScreen } from "../screens/ProgressScreen";
@@ -63,6 +64,8 @@ export type RootStackParams = {
   Lesson: { id: string };
   Quiz: { itemId: string; level: string; unitIndex: number; kind: string; theme: string };
   Auth: undefined;
+  /** E-postadaki sıfırlama bağlantısı uygulamada açıldığında (bkz. lib/deepLink). */
+  ResetPassword: { token?: string };
   Words: undefined;
   Achievements: undefined;
   Progress: undefined;
@@ -114,6 +117,7 @@ export function RootStack({ initialRoute }: { initialRoute: keyof RootStackParam
       <Stack.Screen name="Lesson" component={LessonScreen} options={{ animation: "slide_from_bottom" }} />
       <Stack.Screen name="Quiz" component={QuizScreen} options={{ animation: "slide_from_bottom" }} />
       <Stack.Screen name="Auth" component={AuthScreen} options={{ animation: "slide_from_bottom" }} />
+      <Stack.Screen name="ResetPassword" component={ResetPasswordScreen} options={{ animation: "slide_from_bottom" }} />
       <Stack.Screen name="Words" component={WordsScreen} layout={wideColumnLayout} />
       <Stack.Screen name="Achievements" component={AchievementsScreen} layout={wideColumnLayout} />
       <Stack.Screen name="Progress" component={ProgressScreen} options={{ animation: "slide_from_bottom" }} layout={wideColumnLayout} />
