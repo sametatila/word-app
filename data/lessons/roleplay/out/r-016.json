@@ -1,0 +1,177 @@
+[
+ {
+  "lesson": "de-b1-natur-erleben",
+  "sceneEn": "You went out into the countryside at the weekend. You are telling a friend about the day: where you went, what you did, whether it was worth it.",
+  "partnerEn": "a slightly envious friend who spent the weekend indoors",
+  "openingEn": "You were outdoors? I sat inside all day — how was it?",
+  "goalEn": "The course of the day has been told in order and whether it was worth it has been said."
+ },
+ {
+  "lesson": "de-b1-wetter-extrem",
+  "sceneEn": "The weather turned suddenly on a walk. You and a friend are discussing what has changed and what you should do.",
+  "partnerEn": "a walking companion who is cold and wants to turn back",
+  "openingEn": "It's getting colder and colder — shall we turn back or carry on?",
+  "goalEn": "The change in the weather has been described with comparisons and a shared decision has been made."
+ },
+ {
+  "lesson": "de-b1-tiere-natur",
+  "sceneEn": "You are in a wildlife park describing the animals you see to a friend: which one eats what, which one is dangerous.",
+  "partnerEn": "a curious friend who is a little wary of animals",
+  "openingEn": "What's that back there? Is it dangerous?",
+  "goalEn": "At least two animals have been described with relative clauses and what they eat has been said."
+ },
+ {
+  "lesson": "de-b1-freizeit-planen",
+  "sceneEn": "You and a friend are planning the weekend: what you will do, when, and for how much. Put your suggestions politely.",
+  "partnerEn": "a friend who objects to every suggestion but comes round in the end",
+  "openingEn": "So, the weekend — have you got anything on?",
+  "goalEn": "At least three suggestions have been made, one has been settled and the time and place have been fixed."
+ },
+ {
+  "lesson": "de-b1-b1-abschluss",
+  "sceneEn": "You have finished B1. You are having a final review with your teacher: what you have achieved, what you still find hard, what you will do next.",
+  "partnerEn": "a proud teacher who has followed you through a hundred and eighty lessons",
+  "openingEn": "That was the last lesson at B1. Tell me honestly — what can you do today that you couldn't at the start?",
+  "goalEn": "The gains and the remaining difficulties have been given in balance and a next goal has been set."
+ },
+ {
+  "lesson": "de-b2-praesentation",
+  "sceneEn": "You are opening your presentation at a team meeting. State your aim, announce the plan of the talk, say when the audience may ask questions and move on to the first section.",
+  "partnerEn": "an interested department head who cuts in with questions",
+  "openingEn": "Before you begin: how much time have you allowed, and do you want questions as we go or at the end?",
+  "goalEn": "The aim of the talk, the plan and the arrangement for questions have been announced, and the first section has been reached."
+ },
+ {
+  "lesson": "de-b2-folien",
+  "sceneEn": "You are talking a colleague through the chart of the quarterly results: which way the trend is going, what stands out, what the reason might be. Describe the figures in the past passive.",
+  "partnerEn": "a colleague who questions the figures and asks for sources",
+  "openingEn": "I see quite a jump here in May. Where does that come from — and have the figures been checked yet?",
+  "goalEn": "The trend, the striking point and the likely reason have been described, and how the figures were verified has been said."
+ },
+ {
+  "lesson": "de-b2-meeting-leiten",
+  "sceneEn": "You are chairing a team meeting. Open the agenda, steer the discussion, listen if there is an objection, minute the decision and close the meeting with a summary.",
+  "partnerEn": "a team member inclined to stray from the point who has an objection",
+  "openingEn": "Before we start: can we bring the last item forward? It's time-critical for me.",
+  "goalEn": "The agenda has been worked through, a decision has been minuted and the meeting has been closed with a summary."
+ },
+ {
+  "lesson": "de-b2-protokoll",
+  "sceneEn": "You and a colleague are going over the minutes of yesterday's meeting: which decisions were taken, who said what, which item is missing. Report what was said in reported speech.",
+  "partnerEn": "a meticulous colleague who traces every item back to its source",
+  "openingEn": "I've skimmed the minutes. Something's missing at point three — what exactly was decided there?",
+  "goalEn": "The decisions taken have been reported, the missing item has been found and it has been settled how the minutes will be corrected."
+ },
+ {
+  "lesson": "de-b2-rueckfragen",
+  "sceneEn": "Your presentation is over and you are in the question round. Repeat the question in your own words, put one question off politely, correct a misunderstanding and close the round.",
+  "partnerEn": "a listener asking hard but fair questions",
+  "openingEn": "Thank you for the talk. A question first: you say the method saves time — what figures are you basing that on?",
+  "goalEn": "The questions have been handled, one has been put off, a misunderstanding has been corrected and the round has been closed."
+ },
+ {
+  "lesson": "de-b2-smalltalk-business",
+  "sceneEn": "You have met a senior manager in the lift and you have six floors. Open a short conversation, bring up a small matter in passing and close politely before you reach your floor.",
+  "partnerEn": "a polite senior manager who is in a hurry",
+  "openingEn": "Good morning! You're in early today. Is everything all right in your team?",
+  "goalEn": "A short conversation has been had, a matter has been raised in passing and it has been closed with a non-committal word."
+ },
+ {
+  "lesson": "de-b2-delegieren",
+  "sceneEn": "In a busy week you are sharing out the work with your team: what can be done this week, what has to wait and who takes on what.",
+  "partnerEn": "a team member who says their capacity is full",
+  "openingEn": "Before you hand things out: I've still got two things from last week. What really has priority?",
+  "goalEn": "The priority has been set, who takes on what has been shared out and a new date has been given for what was put off."
+ },
+ {
+  "lesson": "de-b2-deadline",
+  "sceneEn": "You are discussing the delivery date with a client. Say what is possible on what condition, name one exception, offer to speed the process up if need be and agree a date.",
+  "partnerEn": "an insistent but reasonable client who wants the date brought forward",
+  "openingEn": "We'd need it a week earlier. Is that feasible — and if so, on what conditions?",
+  "goalEn": "What is possible on what condition has been said, one exception has been named and a delivery date has been agreed."
+ },
+ {
+  "lesson": "de-b2-homeoffice-regeln",
+  "sceneEn": "You are discussing the remote working arrangement with HR: how many days a week you can work from home, which days you must be in the office, how availability is defined.",
+  "partnerEn": "an HR specialist who knows the rules by heart and is wary of flexibility",
+  "openingEn": "You wanted to talk about the home working policy. First tell me: how do you picture the week?",
+  "goalEn": "How many days will be worked from home, the office requirement and the availability condition have all been made clear."
+ },
+ {
+  "lesson": "de-b2-konferenz",
+  "sceneEn": "You are in the break at a specialist conference and you go up to one of the panel speakers. Introduce yourself and your field, ask about something they said on the panel and suggest a concrete step to keep in touch.",
+  "partnerEn": "a speaker who has just presented and responds with interest",
+  "openingEn": "You were in hall two just now, weren't you? What brought you to this subject?",
+  "goalEn": "You have introduced yourselves, learnt each other's fields and settled on a concrete step for keeping in touch."
+ },
+ {
+  "lesson": "de-b2-verhandeln",
+  "sceneEn": "You are negotiating the price of the annual contract with a supplier. Put your offer in the subjunctive, ask for a concession, respond to the counter-offer and agree on a figure or a condition.",
+  "partnerEn": "an experienced sales manager who does not discount easily",
+  "openingEn": "Our offer is forty-eight euros a unit. What did you have in mind?",
+  "goalEn": "Offers have been exchanged and a price or a condition has been agreed."
+ },
+ {
+  "lesson": "de-b2-beschwerde-formell",
+  "sceneEn": "You are on the phone to a customer services manager making a formal complaint: what you are referring to, what the problem is, what you are demanding and what deadline you are setting.",
+  "partnerEn": "a polite customer services manager who avoids taking responsibility",
+  "openingEn": "You've written to us already, haven't you? Just tell me briefly what it's about.",
+  "goalEn": "The subject and grounds of the complaint have been given, a concrete demand and a deadline have been stated and the other side has said what they will do."
+ },
+ {
+  "lesson": "de-b2-hotline",
+  "sceneEn": "The internet has been down for three days and you have rung technical support. Describe the fault, say what you have tried, ask when it will be fixed and get a solution or an engineer's appointment.",
+  "partnerEn": "a support agent reading from a script who asks the standard questions first",
+  "openingEn": "Technical support, my name is Weber. Please describe the fault to me — how long has it been going on?",
+  "goalEn": "The fault has been described, what was tried has been said and a solution or an engineer's appointment has been settled."
+ },
+ {
+  "lesson": "de-b2-schadenersatz",
+  "sceneEn": "You are talking to a representative of a removals firm: your things were damaged in the move. Describe what happened, say where the responsibility lies, state your claim with a figure and find out about the process.",
+  "partnerEn": "a company representative who shares out the responsibility and asks for paperwork",
+  "openingEn": "I have your damage claim in front of me. Please tell me: what exactly happened?",
+  "goalEn": "The damage has been described, the responsibility has been discussed, a claim with a figure has been put and the process has been explained."
+ },
+ {
+  "lesson": "de-b2-kompromiss",
+  "sceneEn": "Two sides have got stuck on a joint project: you will not move on the date, they will not move on the budget. Say where you think they are right, state your own limit, offer a concession and agree a shared solution.",
+  "partnerEn": "a project partner with fair grounds who is open to compromise",
+  "openingEn": "We're going round in circles. Tell me honestly: where can you really not give way?",
+  "goalEn": "Both sides' limits have been stated, a concession has been offered and a solution both sides accept has been agreed."
+ },
+ {
+  "lesson": "de-b2-eskalation",
+  "sceneEn": "An angry customer is ringing you: the delivery is late for the third time. First acknowledge how they feel, bring the matter back to the facts, explain what happened and offer a solution.",
+  "partnerEn": "a customer who raises their voice but is not in the wrong",
+  "openingEn": "This is the third time now! I really have had enough of excuses — what are you going to do?",
+  "goalEn": "The anger has been acknowledged, the matter has been brought back to the facts and a concrete solution the customer accepts has been settled."
+ },
+ {
+  "lesson": "de-b2-vertrag-kuendigen",
+  "sceneEn": "You have rung a gym's customer line and you want to cancel your membership. Give notice, state the date, answer the offers to keep you firmly and ask for written confirmation.",
+  "partnerEn": "a customer adviser offering a discount and a freeze to keep you",
+  "openingEn": "It's a shame you want to leave. May I ask what the reason is? Perhaps we can find a solution.",
+  "goalEn": "Notice has been given, the date has been made clear, the offers to keep you have been declined and written confirmation has been promised."
+ },
+ {
+  "lesson": "de-b2-nachbarschaftsstreit",
+  "sceneEn": "Your upstairs neighbour makes noise almost every night until late. State the facts without blame, say what you want, suggest a time limit together and settle it without going to the management.",
+  "partnerEn": "a neighbour who is defensive at first and then reasonable",
+  "openingEn": "You wanted to speak to me? If it's about the music — we're not having a party every evening, are we?",
+  "goalEn": "The facts have been given without blame, a time limit has been suggested and a solution has been agreed without going to the building management."
+ },
+ {
+  "lesson": "de-b2-reklamation-b2",
+  "sceneEn": "The same device has broken for the third time and you are in the shop. List in order what has been done so far, say the device is unusable, ask for a replacement or a refund and bring it to a conclusion.",
+  "partnerEn": "a shop assistant who suggests another repair and consults a manager when you insist",
+  "openingEn": "You've been here before, haven't you? Let me send it in once more, that's the quickest way.",
+  "goalEn": "The repairs carried out have been listed, the offer of another repair has been declined and a conclusion has been reached on a replacement or a refund."
+ },
+ {
+  "lesson": "de-b2-feedbackgespraech",
+  "sceneEn": "You are giving a team member difficult feedback: the deliveries are constantly late. First acknowledge how careful and willing they are, pass on your observation without making it personal, make a suggestion and leave the decision to them.",
+  "partnerEn": "a team member who is defensive at first and then listens",
+  "openingEn": "You wanted to talk? If it's about the deadlines again — I'm stuck on three deliveries myself.",
+  "goalEn": "The appreciation and the observation have been given separately, a suggestion has been made and what they will do has been settled together."
+ }
+]
