@@ -21,12 +21,16 @@ function normalizeDay(v: unknown): string {
 export async function GET(req: Request) {
   const userId = await getUserId();
   if (!userId) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
-  const day = normalizeDay(new URL(req.url).searchParams.get("day"));
+  const url = new URL(req.url);
+  const day = normalizeDay(url.searchParams.get("day"));
+  /* İstemci çizemediği tur türlerini söylüyor (bkz. lib/weekly `WeeklyOpts`).
+     Bilinmeyen ad zararsız: yalnız tanınanlar bir şeyi değiştiriyor. */
+  const skipGames = (url.searchParams.get("skipGames") ?? "").split(",").filter(Boolean).slice(0, 8);
   try {
     const profile = await ensureProfile(userId);
     const status = await weeklyStatus(userId, day);
     if (status.done) return NextResponse.json({ status, rounds: [] }, { headers: { "cache-control": "no-store" } });
-    const exam = await buildWeeklyExam(userId, profile.course, profile.level, day);
+    const exam = await buildWeeklyExam(userId, profile.course, profile.level, day, { skipGames });
     return NextResponse.json({ status: { ...status, short: exam.short }, rounds: exam.rounds }, { headers: { "cache-control": "no-store" } });
   } catch (err) {
     console.error("[weekly]", err);

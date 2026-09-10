@@ -22,7 +22,12 @@ export type WeeklyResult = { week: string; score: number; correct: number; total
 
 /** Durum + (yapılmadıysa) sınav turları. */
 export function fetchWeekly(day = todayStr()): Promise<WeeklyPayload> {
-  return api<WeeklyPayload>(`/api/weekly?day=${day}`);
+  /* `free_sentence` MOBİLDE ÇİZİLEMİYOR: tur dağıtıcısında karşılığı yok ve
+     öz-değerlendirme kartına düşüyordu - görev söylenmiyor, cevabı yanlış
+     türle kaydediliyordu. Sunucu bu bayrakla kendi `typing` yedeğine düşüyor
+     (sağlayıcı kapalıyken uyguladığı ikamenin aynısı). Oyun eklendiğinde bu
+     parametre kaldırılır. */
+  return api<WeeklyPayload>(`/api/weekly?day=${day}&skipGames=free_sentence`);
 }
 
 /** Cevapları yazar; hafta içinde ikinci gönderim kaydedilmez (tek hak). */

@@ -1025,7 +1025,19 @@ kartı çıkıyor: görev söylenmiyor, ikinci kelime hiç kullanılmıyor. Üst
 öz-değerlendirmenin cevabı `/api/answers`e `free_sentence` cevabı olarak
 yazılıyor; SRS hiç sorulmamış bir alıştırmanın sonucunu kaydediyor.
 
-Üç yol var ve seçim ürün kararı:
+HAFTALIK SINAVDA DURUM DAHA AĞIRDI ve orası KAPATILDI. `GAME_PLAN` on beşin
+ikisini `free_sentence` yapıyor ve bu rastlantısal değil, sabit: sağlayıcı
+açıkken HER haftalık sınavın iki sorusu mobilde yanlış soruluyordu. Çözüm
+sunucuda zaten vardı — sağlayıcı kapalıyken uygulanan `typing` ikamesi.
+İstemci artık çizemediğini söylüyor (`/api/weekly?skipGames=free_sentence`) ve
+sunucu o yedeğe düşüyor; sınav on beş tur kalıyor, oyun mobile eklendiğinde
+parametre kaldırılır.
+
+NORMAL OTURUM yolu duruyor: orada `free_sentence` `pickGame` içinde, altı
+parametreli `buildSession`ın derinliğinde seçiliyor ve aynı bayrağı oraya
+taşımak imzayı büyütüyor. Ayrıca oradaki koşullar dar (yalnız `strong` kelime,
+oturumda en çok iki, meydan okuma dalgalarında hiç), yani haftalık sınavın
+kesinliği yok. Üç yol var ve seçim ürün kararı:
   1. SUNUCU SUSTURSUN — istemci neyi çizebildiğini söylesin (`?can=` gibi) ve
      `free_sentence` yalnız onu bilen istemciye gitsin. En temizi ama sözleşme
      değişikliği.

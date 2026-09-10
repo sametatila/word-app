@@ -85,7 +85,22 @@ async function recentlyExamined(userId: string, week: string): Promise<Set<numbe
   return out;
 }
 
-export async function buildWeeklyExam(userId: string, course: string, level: string, day: string): Promise<WeeklyExam> {
+/**
+ * İSTEMCİNİN ÇİZEMEDİĞİ TUR TÜRLERİ.
+ *
+ * `GAME_PLAN` on beşin ikisini "Cümle Kur" (`free_sentence`) yapıyor ve bu
+ * rastlantısal değil, sabit. Mobil tur dağıtıcısında o oyunun karşılığı yok
+ * (bkz. docs/plan/web-parity §11.13): tur öz-değerlendirme kartına düşüyor,
+ * öğrenciye görev hiç söylenmiyor ve cevabı `free_sentence` cevabı olarak
+ * kaydediliyor - yani her hafta iki soru yanlış soruluyor.
+ *
+ * İstemci kendi eksiğini söylüyor; sunucu da ZATEN VAR OLAN yedeğe düşüyor
+ * (sağlayıcı kapalıyken uygulanan `typing` ikamesi). Sınav on beş tur kalıyor.
+ * Oyun mobile eklendiğinde istemci bu bayrağı göndermeyi bırakır.
+ */
+export type WeeklyOpts = { skipGames?: readonly string[] };
+
+export async function buildWeeklyExam(userId: string, course: string, level: string, day: string, opts?: WeeklyOpts): Promise<WeeklyExam> {
   const week = weekStart(day);
   // Sınav soruları da anadilde sorulur; `makeRound` anadili zorunlu istiyor.
   const native = nativeOf((await ensureProfile(userId))?.nativeLang);
@@ -121,7 +136,7 @@ export async function buildWeeklyExam(userId: string, course: string, level: str
   const rounds: Round[] = [];
   let seq = 0;
   const nextId = () => `w${++seq}`;
-  const ai = chatConfigured();
+  const ai = chatConfigured() && !opts?.skipGames?.includes("free_sentence");
   chosen.forEach((row, i) => {
     const word = toRoundWord(row.w, false);
     const wanted = GAME_PLAN[i] ?? "typing";
