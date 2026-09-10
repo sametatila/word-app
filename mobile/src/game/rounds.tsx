@@ -4,8 +4,7 @@ import { firstExample } from "../data/example";
 import { t as tx, nativeLangName, targetLangName } from "../lib/i18n";
 import { foldCase, foldCompare, foldTight } from "../lib/textFold";
 import { matchSentence, VERDICT_KEYS, type SentenceMatch } from "../lib/sentenceMatch";
-import { markKnown } from "./session";
-import { todayStr } from "./session";
+import { markKnown, optionCards, optionTexts, todayStr } from "./session";
 import { SentenceFeedback, type MarkedToken } from "../ui/TokenDiff";
 import { classifyOrder, classifyTyping, miss } from "../lib/errors";
 import { api } from "../api/client";
@@ -403,7 +402,7 @@ function ChoiceRound({ round, onDone, colors }: { round: Round; onDone: Done; co
       <Prompt label={deSide ? tx("rounds.ask_native", { nativeLang: nativeLangName() }) : tx("rounds.ask_target", { target: targetLangName() })} big={question} speakText={deSide ? question : null} sub={!deSide ? word.en : null} colors={colors} />
       <MascotMid mood={picked ? (picked === answer ? "thumbsup" : "sad") : "idle"} hidden={!!fb} />
       <View style={{ gap: spacing.md }}>
-        {(round.options ?? []).map((o) => {
+        {optionCards(round).map((o) => {
           const st = picked ? (o.text === answer ? "correct" : o.text === picked ? "wrong" : "idle") : "idle";
           return <OptionButton key={o.text} text={o.text} sub={o.sub} state={st} onPress={() => choose(o)} colors={colors} />;
         })}
@@ -537,7 +536,7 @@ function TypingRound({ round, onDone, colors }: { round: Round; onDone: Done; co
 }
 
 function ClozeRound({ round, onDone, colors }: { round: Round; onDone: Done; colors: Palette }) {
-  const opts = (round.options as unknown as string[] | undefined) ?? [];
+  const opts = optionTexts(round);
   const answer = typeof round.answer === "string" ? round.answer : "";
   const sentence = typeof round.sentence === "string" ? round.sentence : "";
   const full = fillBlank(sentence, answer);
@@ -607,7 +606,7 @@ function ClozeRound({ round, onDone, colors }: { round: Round; onDone: Done; col
 function PluralRound({ round, onDone, colors }: { round: Round; onDone: Done; colors: Palette }) {
   const word = round.word!;
   const answer = typeof round.answer === "string" ? round.answer : "";
-  const opts = (round.options as unknown as string[] | undefined) ?? [];
+  const opts = optionTexts(round);
   const [picked, setPicked] = useState<string | null>(null);
   const [fb, setFb] = useState<Feedback | null>(null);
   useAutoSpeak(withArtikel(word), round.id); // tekil hâli mount'ta oku
@@ -748,7 +747,7 @@ function ListenRound({ round, onDone, colors }: { round: Round; onDone: Done; co
       </View>
       <MascotMid mood={picked ? (picked === word.tr ? "thumbsup" : "sad") : "idle"} hidden={!!fb} />
       <View style={{ gap: spacing.md }}>
-        {(round.options ?? []).map((o) => {
+        {optionCards(round).map((o) => {
           const st = picked ? (o.text === word.tr ? "correct" : o.text === picked ? "wrong" : "idle") : "idle";
           return <OptionButton key={o.text} text={o.text} sub={o.sub} state={st} onPress={() => choose(o)} colors={colors} />;
         })}
@@ -1078,13 +1077,13 @@ function MatchRound({ round, onDone, colors }: { round: Round; onDone: Done; col
 const INTERACTIVE = new Set(["choice", "artikel", "truefalse", "typing", "cloze", "plural", "listen", "scramble", "order", "translate", "match"]);
 
 function pickRound(round: Round, onDone: Done, colors: Palette) {
-  if (round.game === "choice" && round.options?.length) return <ChoiceRound round={round} onDone={onDone} colors={colors} />;
+  if (round.game === "choice" && optionCards(round).length) return <ChoiceRound round={round} onDone={onDone} colors={colors} />;
   if (round.game === "artikel" && round.word?.artikel) return <ArtikelRound round={round} onDone={onDone} colors={colors} />;
   if (round.game === "truefalse") return <TrueFalseRound round={round} onDone={onDone} colors={colors} />;
   if (round.game === "typing") return <TypingRound round={round} onDone={onDone} colors={colors} />;
-  if (round.game === "cloze" && (round.options as unknown as string[])?.length) return <ClozeRound round={round} onDone={onDone} colors={colors} />;
-  if (round.game === "plural" && (round.options as unknown as string[])?.length) return <PluralRound round={round} onDone={onDone} colors={colors} />;
-  if (round.game === "listen" && round.options?.length) return <ListenRound round={round} onDone={onDone} colors={colors} />;
+  if (round.game === "cloze" && optionTexts(round).length) return <ClozeRound round={round} onDone={onDone} colors={colors} />;
+  if (round.game === "plural" && optionTexts(round).length) return <PluralRound round={round} onDone={onDone} colors={colors} />;
+  if (round.game === "listen" && optionCards(round).length) return <ListenRound round={round} onDone={onDone} colors={colors} />;
   if (round.game === "scramble" && round.word) return <ScrambleRound round={round} onDone={onDone} colors={colors} />;
   if (round.game === "order" && round.tokens?.length && Array.isArray(round.answer) && round.answer.length) return <OrderRound round={round} onDone={onDone} colors={colors} />;
   if (round.game === "translate" && typeof round.sentence === "object" && round.sentence) return <TranslateRound round={round} onDone={onDone} colors={colors} />;

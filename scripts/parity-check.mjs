@@ -2813,6 +2813,29 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   );
 }
 
+/* ── 74. tur boru hattinda tip kacisi ─────────────────────────────────────
+ * `as unknown as` bir sozlesme kacisi: tip yanlis oldugunu soylemek yerine
+ * susturuluyor. Tur boru hattinda tam bir ornegi vardi - sunucu `cloze` ve
+ * `plural` turlarinda sikleri DUZ DIZGE gonderiyor (o turlarda ikinci dil
+ * satiri yok), `choice` ve `listen` turlarinda NESNE; mobil tipi yalnizca
+ * nesneyi biliyordu ve iki cagri yeri kacisla gecistiriyordu. Alan bicimi
+ * degisirse hata derlemede degil CALISMA ANINDA cikardi - hem de sessizce:
+ * sik listesi bos gorunur ve tur "kendini degerlendir"e duserdi.
+ *
+ * Web ayni seyi oyun basina ayri tiplerle soyluyor (`Round` birlesimi), yani
+ * orada kacisa gerek yok. Iki taraf da SIFIR tasimali. */
+{
+  const kacis = (yollar) => yollar.map((p) => {
+    const src = read(p).replace(/\/\*[\s\S]*?\*\//g, " ").replace(/\/\/[^\n]*/g, " ");
+    return (src.match(/as unknown as/g) ?? []).length;
+  }).reduce((a, b) => a + b, 0);
+  sameList(
+    "tur boru hattinda tip kacisi",
+    ["mobil=" + kacis(["mobile/src/game/rounds.tsx", "mobile/src/game/session.ts"])],
+    ["web=" + kacis(["src/components/session-player.tsx", "src/lib/types.ts", "src/lib/session.ts"])].map((x) => x.replace("web=", "mobil=")),
+  );
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"

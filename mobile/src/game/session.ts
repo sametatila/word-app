@@ -25,13 +25,37 @@ export type RoundWord = {
 
 export type Option = { text: string; sub: string | null };
 
+/** Nesne şıklar (`choice`, `listen`). Dizge şıklı turlarda boş döner. */
+export function optionCards(round: { options?: Option[] | string[] }): Option[] {
+  const o = round.options ?? [];
+  return typeof o[0] === "object" ? (o as Option[]) : [];
+}
+
+/** Dizge şıklar (`cloze`, `plural`). Nesne şıklı turlarda boş döner. */
+export function optionTexts(round: { options?: Option[] | string[] }): string[] {
+  const o = round.options ?? [];
+  return typeof o[0] === "string" ? (o as string[]) : [];
+}
+
 /** Web Round union'ının pratik hâli — her oyun kendi alanlarını okur. */
 export type Round = {
   id: string;
   game: string;
   word?: RoundWord;
   words?: RoundWord[];
-  options?: Option[];
+  /**
+   * ŞIKLAR İKİ BİÇİMDE GELİYOR ve tip ikisini de söylemek zorunda.
+   *
+   * `choice`/`listen` turunda şık bir NESNE (`{ text, sub }` — ikinci satır
+   * anlam), `cloze`/`plural` turunda ise DÜZ DİZGE: o turlarda şıklar Almanca
+   * biçimler, ikinci dil satırı yok (sunucu tarafı `lib/session` içinde
+   * yazılı). Web bunu oyun başına ayrı tiplerle söylüyor (`Round` birleşimi);
+   * mobil tek gövdeli tip kullandığı için burada birleşim duruyordu — ama tip
+   * yalnız `Option[]` diyordu ve iki çağrı yeri `as unknown as string[]` ile
+   * kaçıyordu. Kaçış, alan biçimi değişirse hatayı derlemede DEĞİL çalışma
+   * anında gösterirdi.
+   */
+  options?: Option[] | string[];
   direction?: "de-tr" | "tr-de";
   /**
    * Cümle. `translate` turunda NESNE (`{ tr, de, en }`), cloze/scramble/intro
