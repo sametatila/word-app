@@ -559,6 +559,7 @@ export const tr: Record<string, string> = {
   "exam.write_sentence": "Cümleyi yaz",
   "exam.write_text": "Metnini buraya yaz",
   "exam.evaluating": "Değerlendiriliyor…",
+  "exam.speak_text_note": "Bu bölüm söylediğin kelimeleri eşliyor; söyleyiş kalitesi ölçülmüyor.",
   "exam.speak_missed": "Tam anlaşılmadı",
   "exam.preparing": "Kâğıt hazırlanıyor…",
   "exam.speed_round_link": "Oyun: hız turu · modülün kelimeleri, 60 sn",

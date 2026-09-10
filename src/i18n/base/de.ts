@@ -556,6 +556,7 @@ export const deBase: Record<string, string> = {
   "exam.write_sentence": "Schreib den Satz",
   "exam.write_text": "Schreib deinen Text hier",
   "exam.evaluating": "Wird ausgewertet …",
+  "exam.speak_text_note": "Dieser Teil vergleicht die gesagten Wörter; die Aussprache wird nicht bewertet.",
   "exam.speak_missed": "Nicht ganz verstanden",
   "exam.preparing": "Der Bogen wird vorbereitet…",
   "exam.speed_round_link": "Spiel: Speedrunde · die Wörter des Moduls, 60 s",

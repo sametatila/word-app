@@ -556,6 +556,7 @@ export const enBase: Record<string, string> = {
   "exam.write_sentence": "Write the sentence",
   "exam.write_text": "Write your text here",
   "exam.evaluating": "Evaluating…",
+  "exam.speak_text_note": "This section matches the words you said; pronunciation quality isn't measured.",
   "exam.speak_missed": "Not quite understood",
   "exam.preparing": "Getting the paper ready…",
   "exam.speed_round_link": "Game: speed round · the module's words, 60 s",

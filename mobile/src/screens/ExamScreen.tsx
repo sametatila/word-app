@@ -817,7 +817,18 @@ function Speak({ it, colors, pad, onDone }: { it: SpeakingItem; colors: Palette;
         <Text variant="body" color={colors.textMuted}>{it.tr}</Text>
         {heard ? <Text variant="caption" color={colors.textMuted}>{t("speak.heard")}: {heard}</Text> : null}
         {phase === "done" ? (
-          <Text variant="bodyStrong" color={ok ? colors.successText : colors.dangerText}>{ok ? t("speak.correct") : t("exam.speak_missed")}</Text>
+          <>
+            <Text variant="bodyStrong" color={ok ? colors.successText : colors.dangerText}>{ok ? t("speak.correct") : t("exam.speak_missed")}</Text>
+            {/*
+              ÖLÇÜLEN ŞEY SÖYLENİYOR. Bu bölüm cihazdaki tanıyıcının METNİNİ
+              eşliyor (`spokenMatches`), yani "doğru kelimeleri söyledin mi";
+              webin aynı bölümü klibi sağlayıcıya gönderip SÖYLEYİŞİ puanlıyor.
+              İki ölçüm de aynı `speakingScore` alanına yazılıyor ve hangisinin
+              yazıldığı kullanıcıya hiçbir yerde söylenmiyordu (web-parity
+              §11.139; hangi ölçümün kalacağı ayrı bir karar).
+            */}
+            <Text variant="micro" color={colors.textFaint} style={{ lineHeight: 17 }}>{t("exam.speak_text_note")}</Text>
+          </>
         ) : null}
         {tip ? <Text variant="body" style={{ backgroundColor: colors.surface2, borderRadius: radii.md, padding: spacing.sm, lineHeight: 20 }}>{tip}</Text> : null}
         {phase === "rec" ? (

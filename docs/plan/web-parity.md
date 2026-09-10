@@ -5350,6 +5350,11 @@ ise webin de mobil gibi bir yedeği olmalı (ağ yokken 0 yerine metin eşlemesi
 çünkü şu hâliyle aynı sınav iki platformda iki farklı şeyi ölçüyor ve bunu
 kullanıcıya söyleyen bir yer yok.
 
+**Yarısı kapandı (bkz. §11.169).** "Kullanıcıya söyleyen bir yer yok" kısmı
+düzeldi: mobil sonuçta ne ölçtüğünü artık yazıyor (kelime eşlemesi, söyleyiş
+değil). Webin arıza yolu zaten söylüyordu (`exam.audio_failed_retry/skip` +
+yerinde tekrar). Karar bekleyen tek şey ÖLÇÜMÜN KENDİSİ.
+
 ### 11.140 Yüzde biçimi Türkçe yazımı koda gömüyordu
 
 On üç yerde puan `%{n}` diye yazılıyordu — Türkçe yazım ("%62") koda gömülü,
@@ -6180,3 +6185,32 @@ veriyordu (`lib/native-de.ts` içindeki `t(...)` i18n değil, ders içeriğinin
 eşleme tablosunda bir arama). Web'deki eşdeğer denetimin aynı dosya için aynı
 muafiyeti zaten vardı; mobil tarafına da yazıldı. **İki kapı aynı kuralı
 uyguluyorsa aynı istisnaları da taşımalı.**
+
+
+### 11.169 Konuşma puanı: kararı bekleyen kısım ile bekletmeyen kısım
+
+§11.139 üç şeyi bir arada tutuyordu ve hepsi "Samet'in kararı" etiketiyle
+duruyordu. Ayırdım:
+
+1. **Hangi ölçüm kullanılacak** (sağlayıcıdan söyleyiş puanı ↔ cihazdaki
+   tanıyıcının metin eşlemesi) — gerçekten ürün kararı: sağlayıcı klip başına
+   ücretli, ve mikrofon aynı anda ya tanıyıcıya ya kaydediciye verilebiliyor.
+   **Bekliyor.**
+2. **Web'in arıza yolu** — kayıt "ağ yoksa madde 0 sayılıyor ve kullanıcıya
+   söylenmiyor" diyordu. Ölçtüm: **söylüyor** (iki deneme hakkı, yerinde
+   "tekrar dene", ve ikinci denemede de olmazsa "atlanıyor" metni). Kaydın bu
+   cümlesi yanlıştı.
+3. **Mobilin ne ölçtüğünü söylemesi** — bu gerçekten eksikti ve karar
+   gerektirmiyordu. Sonuç satırının altına tek cümle eklendi: bu bölüm
+   söylenen kelimeleri eşliyor, söyleyiş kalitesi ölçülmüyor.
+
+Aynı `speakingScore` alanına iki farklı ölçüm yazılıyor olması sürüyor; ama
+artık **kullanıcı hangisini gördüğünü biliyor**. Karar geldiğinde bu cümle ya
+kalkar (mobil de söyleyişi ölçerse) ya da webe de bir eşi yazılır.
+
+**Yöntem notu:** "karar bekliyor" etiketi bir maddeyi bütünüyle
+dondurabiliyor. Üç turdur aynı şeyi görüyorum — §11.15 (ses ipuçları) yanlış
+teşhisti, §11.11 eskimişti, §11.119'un tahmini fazlaydı. Bu turda madde
+gerçekten karar gerektiriyordu ama **içindeki üç işten ikisi
+gerektirmiyordu**. Karar bekleyen bir kayıt, kararla ilgisi olmayan alt işleri
+de birlikte bekletiyor.
