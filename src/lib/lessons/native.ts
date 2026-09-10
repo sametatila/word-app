@@ -81,6 +81,22 @@ export type NativeDict = {
    * Almanca cümle değiştiği anda yalan söylemeye başlar.
    */
   swapEn: Record<string, string>;
+  /**
+   * BECERİ EGZERSİZLERİNİN düz metni — `intro` ve `questions[].explain`.
+   * Anahtar dizenin kendisi (`data/skills/prose/out/`).
+   *
+   * Ders ekseninden ayrı bir sözlük çünkü kaynağı da ayrı: bu dizeler
+   * `BUNDLED_EXERCISES`ten çıkıyor, derslerden değil. Aynı Türkçe cümle iki
+   * eksende farklı çevrilebilir ve tek sözlüğe konsalar biri ötekini ezerdi.
+   *
+   * ALINTILAR BURADA YOK ve olmamalı: 1.885 `explain` satırı düz Türkçe
+   * değil, metinden alınmış bir cümle ("„Fünf Minuten.“") ve İngilizcesi
+   * kendisi. Onları birim eşleme olarak sözlüğe koymak dosyayı yarı yarıya
+   * büyütür ve hiçbir karar taşımaz — çözücü `isProseQuote` ile tanıyıp
+   * olduğu gibi geçiriyor. Paketleyici de AYNI işlevi çağırıyor, yani iki
+   * taraf ayrışamıyor.
+   */
+  prose: Record<string, string>;
 };
 
 /*
@@ -369,4 +385,66 @@ export type ExamShape = {
   reading: { titleTr: string; genre: string; questions: { tr: string }[] };
   speaking: { situation: string; tr: string }[];
   writing: { prompt: string; checklist: string[]; phrases: { tr: string; en?: string }[] };
+};
+
+/**
+ * ALINTI SATIRI — çevrilmeyen `explain`.
+ *
+ * Açıklamaların büyük kısmı Türkçe düzyazı DEĞİL: metinden alınmış Almanca
+ * (İngilizce kursta İngilizce) bir cümle, tırnak içinde. "„Fünf Minuten.“"
+ * satırının İngilizcesi yine "„Fünf Minuten.“" — kanıt cümlesi çevrilmez,
+ * çünkü öğrencinin metinde göreceği şey odur.
+ *
+ * Ölçüt DAR: dizenin TAMAMI tek bir tırnak açıklığı olacak, içinde başka
+ * tırnak geçmeyecek, sonunda en fazla bir nokta olacak. "„X“ ve Murat'ın
+ * sorusu …" gibi alıntıyla BAŞLAYIP Türkçe devam eden satırlar (34 tane)
+ * geçiş sayılmıyor.
+ *
+ * BURADA duruyor, `data/skills/prose/make.ts`te değil: paketleyici ile
+ * çözücü aynı ölçütü kullanmak ZORUNDA. Ayrı iki kopya olsaydı biri
+ * daraldığında öteki dizeyi "yazılacak" sayar, sözlükte karşılığı olmaz ve
+ * hep-ya-hiç kuralı bütün egzersizi Türkçeye düşürürdü — hiçbir yerde hata
+ * görünmeden.
+ */
+export const isProseQuote = (t: string): boolean =>
+  /^\s*[„"“']([^„"“”']+)[”“"']\s*\.?\s*$/.test(t);
+
+/**
+ * Beceri egzersizini öğrencinin diline çevirir; bir dize bile eksikse `null`.
+ *
+ * Hep-ya-hiç, kardeşleriyle aynı gerekçeyle: yarısı Türkçe yarısı İngilizce
+ * bir egzersiz, tümü Türkçe olandan daha kötü — öğrenci hangi dilde
+ * okuyacağını bilemiyor ve açıklamanın çevrilmemiş yarısı tam da anlamadığı
+ * için okuduğu yer oluyor.
+ *
+ * Yalnız iki alan: `intro` ve `questions[].explain`. Soru kökü, şıklar ve
+ * metnin kendisi ÖĞRENİLEN dilde — çevrilmemeli. `gloss` de burada yok:
+ * `Gloss` tipinde `en` alanı zaten dolu (4.945/4.945) ve oynatıcılar onu
+ * kendileri okuyor.
+ */
+export function resolveExercise<T extends ExerciseShape>(dict: NativeDict, ex: T): T | null {
+  let failed = false;
+  const t = (s: string): string => {
+    if (!s.trim() || isProseQuote(s)) return s;
+    const en = dict.prose[s];
+    if (en === undefined) failed = true;
+    return en ?? s;
+  };
+
+  const out = {
+    ...ex,
+    intro: t(ex.intro),
+    ...(ex.questions ? { questions: ex.questions.map((q) => ({ ...q, explain: t(q.explain) })) } : {}),
+  };
+  return failed ? null : (out as T);
+}
+
+/**
+ * `resolveExercise`in dokunduğu alanlar. `SkillExercise`ten ALMIYORUZ —
+ * `ExamShape` ile aynı gerekçe: çözücü tarayıcıda da derleniyor, beceri
+ * tipleri ise sunucu tarafının ağır ağacını çekiyor.
+ */
+export type ExerciseShape = {
+  intro: string;
+  questions?: { explain: string }[];
 };

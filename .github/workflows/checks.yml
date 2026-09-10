@@ -74,18 +74,25 @@ jobs:
       # görünür (Patika'da açılamayan ünite, listede olmayan kâğıt).
       - name: Döküm bütünlüğü
         run: npm run check:dumps
-      # Ana dil ekseninin iki kapısı. İkisi de SESSİZ bozulmaya karşı:
+      # Ana dil ekseninin üç kapısı. Üçü de SESSİZ bozulmaya karşı:
       # çözücü bir parçanın karşılığını bulamayınca dersi tümden reddediyor
       # ve `localiseLesson` Türkçeye düşüyor — hiçbir yerde hata görünmüyor,
       # İngilizce kurs yalnızca Türkçe olarak açılıyor. Bir ders düzenlemesi
       # tek bir dizeyi kaydırdığında bu olabiliyor. `check:lessons-native`
       # sözlüğü baştan kurup 580 dersin her Türkçe parçasını çözüyor;
       # `check:lessons-swap` Almanca takas tablosunun kaynakla tuttuğunu ve
-      # karara bağlanmamış bir iz kalmadığını ölçüyor.
+      # karara bağlanmamış bir iz kalmadığını ölçüyor; `check:skills-native`
+      # aynı şeyi 995 beceri egzersizinin yönergesi ve açıklaması için yapıyor.
+      # Üçü de üretilen sözlüğü BAŞTAN kurup çalışma anındaki nesneler
+      # üzerinde çalışıyor: hattın kendi kapısı yazılanı ölçer, bunlar
+      # yazılanın uygulamaya VARDIĞINI ölçer. Aradaki boşluk bir kez zaten
+      # canlıya çıktı (`derived.json` .gitignore'daydı, sunucu derlemesi
+      # sözlüğü eksik kurdu, İngilizce kurs sessizce Türkçe açıldı).
       - name: Ana dil çözücüsü
         run: |
           npm run check:lessons-native
           npm run check:lessons-swap
+          npm run check:skills-native
       # Premium kurallarının birim testi — veritabanı istemiyor. Paket ilerlemesi,
       # yapılandırma doğrulaması ve paywall metinlerinin üç sözlükte de bulunması.
       # Bu sınıfın tamamı ancak gerçek para akarken fark edilirdi.

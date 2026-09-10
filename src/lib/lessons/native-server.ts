@@ -1,6 +1,13 @@
 import "server-only";
 import type { Lesson } from "./types";
-import { resolveLesson, resolveExam, type NativeDict, type ExamShape } from "./native";
+import {
+  resolveLesson,
+  resolveExam,
+  resolveExercise,
+  type NativeDict,
+  type ExamShape,
+  type ExerciseShape,
+} from "./native";
 import { DEFAULT_NATIVE, type NativeLang } from "@/lib/courses";
 
 /**
@@ -136,4 +143,34 @@ export async function nativeExamText(
   const dict = await nativeDict();
   if (!dict) return (tr) => tr;
   return (tr) => dict.exam[tr] ?? tr;
+}
+
+/**
+ * Beceri egzersizini ana dile çevirir; çeviremezse egzersizi OLDUĞU GİBİ döner.
+ *
+ * Kardeşleriyle aynı geri düşüş. Çevrilen yalnız iki alan: `intro` (ne
+ * yapacağını söyleyen çerçeve) ve `questions[].explain` (cevaptan sonraki
+ * gerekçe). Metin, soru kökü ve şıklar ÖĞRENİLEN dilde ve öyle kalıyor —
+ * egzersizin ölçtüğü şey onlar.
+ *
+ * Çağıran TEK yer var: `/immersion/skill/[id]` sayfası. `getExercise` bu
+ * işi kendisi yapmıyor çünkü öteki üç çağıranı (puanlama, kayıt, rol yapma
+ * uç noktası) düz metni HİÇ kullanmıyor; oralarda çeviri boşa yüklenen bir
+ * 1,7 MB sözlük olurdu.
+ */
+export async function localiseExercise<T extends ExerciseShape>(
+  ex: T,
+  lang: NativeLang | null | undefined,
+): Promise<T> {
+  if (!lang || lang === DEFAULT_NATIVE || lang !== "en") return ex;
+  const dict = await nativeDict();
+  if (!dict) return ex;
+  const out = resolveExercise(dict, ex);
+  if (!out) {
+    // `de` kursunun egzersizlerinin hepsi çözülüyor (kapı: check:skills-prose).
+    // Buraya düşen egzersiz başka bir kurstan geliyor demektir.
+    console.warn("[native] egzersiz çevrilemedi, Türkçe kalıyor");
+    return ex;
+  }
+  return out;
 }

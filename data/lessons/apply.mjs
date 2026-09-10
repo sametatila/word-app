@@ -132,6 +132,25 @@ for (const r of read("exam")) exam[r.tr] = r.en;
   İngilizce taraf da dönüyor: Almancayı alıntılayan satır, altındaki cümle
   değişince yalan söylemeye başlar.
 */
+/*
+  BECERİ EGZERSİZLERİNİN düz metni — `intro` ve `questions[].explain`.
+  Kaynağı ders hattının DIŞINDA (`data/skills/prose/out/`), o yüzden
+  `read()` değil kendi okuyucusu var.
+
+  Ayrı bir sözlük çünkü ayrı bir eksen: bu dizeler `BUNDLED_EXERCISES`ten
+  çıkıyor, derslerden değil. Aynı Türkçe cümle iki eksende farklı
+  çevrilebilir ve tek sözlükte biri ötekini sessizce ezerdi.
+
+  ALINTILAR (1.885 satır) burada YOK: karşılıkları kendileri ve çözücü
+  onları `isProseQuote` ile tanıyıp geçiriyor. Aynı işlevi paketleyici de
+  çağırıyor, yani "yazılacak" ile "sözlükte olması gereken" ayrışamıyor.
+*/
+const prose = {};
+const proseDir = `${DIR}../skills/prose/out/`;
+if (existsSync(proseDir))
+  for (const f of readdirSync(proseDir).filter((x) => x.endsWith(".json")).sort())
+    for (const r of JSON.parse(readFileSync(proseDir + f, "utf8"))) prose[r.tr] = r.en;
+
 const swap = {};
 const swapEn = {};
 const swapFile = `${DIR}swap/en.json`;
@@ -141,7 +160,7 @@ if (existsSync(swapFile))
     for (const [from, to] of r.en) swapEn[r.lesson + SEP + from] = to;
   }
 
-const data = { lecture, lectureSplit, frames, ordinals, notes, vocab, patterns, meta, roleplay, cando, script, exam, swap, swapEn };
+const data = { lecture, lectureSplit, frames, ordinals, notes, vocab, patterns, meta, roleplay, cando, script, exam, prose, swap, swapEn };
 
 mkdirSync(OUT, { recursive: true });
 writeFileSync(`${OUT}native-en.json`, `${JSON.stringify(data)}\n`);
@@ -151,5 +170,6 @@ console.log(
   "native-en.json yazıldı\n" +
     `  anlatım ${n(lecture)} (+${n(lectureSplit)} bölünmüş) · çerçeve ${n(frames)} · sıra ${n(ordinals)} · not ${n(notes)}\n` +
     `  sözlükçe ${n(vocab)} · kalıp ${n(patterns)} · ders ${n(meta)} · rol yapma ${n(roleplay)} · can-do ${n(cando)} · senaryo ${n(script)} · sınav ${n(exam)}\n` +
+    `  beceri düz metni ${n(prose)}\n` +
     `  takas ${n(swap)} Almanca + ${n(swapEn)} İngilizce`,
 );

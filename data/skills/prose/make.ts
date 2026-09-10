@@ -30,23 +30,17 @@ import { BUNDLED_EXERCISES } from "@/lib/skills";
 const DIR = new URL(".", import.meta.url).pathname;
 
 /**
- * ALINTI SATIRI — çeviri istemeyen `explain`.
+ * ALINTI SATIRI — çeviri istemeyen `explain`. Ölçüt ÇÖZÜCÜDE yazılı
+ * (`isProseQuote`, src/lib/lessons/native.ts) ve buraya oradan geliyor.
  *
- * Açıklamaların büyük kısmı Türkçe düzyazı DEĞİL: metinden alınmış Almanca
- * (İngilizce kursta İngilizce) bir cümle, tırnak içinde. "„Fünf Minuten.“"
- * satırının İngilizcesi yine "„Fünf Minuten.“" — kanıt cümlesi çevrilmez,
- * çünkü öğrencinin metinde göreceği şey odur.
- *
- * Ölçüt DAR tutuldu: dizenin TAMAMI tek bir tırnak açıklığı olacak, içinde
- * başka tırnak geçmeyecek, sonunda en fazla bir nokta olacak. Böylece
- * "„X“ ve Murat'ın sorusu …" gibi alıntıyla BAŞLAYIP Türkçe devam eden
- * satırlar geçiş sayılmıyor — 34 tanesi var ve hepsi yazılacak listede.
- *
- * Yanlış geçiş yanlış redden tehlikeli: geçiş sayılan bir satır kimseye
- * sorulmadan olduğu gibi kalır. O yüzden ölçüt gevşetilmemeli.
+ * Neden orada: paketleyici ile çözücü aynı ölçütü kullanmak zorunda.
+ * Burada ikinci bir kopya dursaydı, biri daraldığında öteki dizeyi
+ * "yazılacak" sayardı; sözlükte karşılığı olmaz ve hep-ya-hiç kuralı bütün
+ * egzersizi Türkçeye düşürürdü — hiçbir yerde hata görünmeden. Gerekçenin
+ * tamamı çözücüdeki açıklamada.
  */
-export const isQuote = (t: string): boolean =>
-  /^\s*[„"“']([^„"“”']+)[”“"']\s*\.?\s*$/.test(t);
+export { isProseQuote as isQuote } from "@/lib/lessons/native";
+import { isProseQuote } from "@/lib/lessons/native";
 
 export type ProseRow = {
   tr: string;
@@ -96,10 +90,10 @@ export function extractProse(): ProseRow[] {
 }
 
 /** Yazılacak satırlar — alıntılar dışarıda. */
-export const proseWork = (): ProseRow[] => extractProse().filter((r) => !isQuote(r.tr));
+export const proseWork = (): ProseRow[] => extractProse().filter((r) => !isProseQuote(r.tr));
 
 /** Alıntı satırları: karşılıkları KENDİLERİ. Sözlüğe birim eşleme olarak giriyor. */
-export const proseQuotes = (): ProseRow[] => extractProse().filter((r) => isQuote(r.tr));
+export const proseQuotes = (): ProseRow[] => extractProse().filter((r) => isProseQuote(r.tr));
 
 if (process.argv[1]?.endsWith("make.ts")) {
   const rows = proseWork();

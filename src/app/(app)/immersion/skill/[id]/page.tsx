@@ -11,6 +11,9 @@ import { SpeakingPlayer } from "@/components/skills/speaking-player";
 import { MonologuePlayer } from "@/components/skills/monologue-player";
 import { GrammarPlayer } from "@/components/skills/grammar-player";
 import { titleMeta } from "@/lib/page-meta";
+import { ensureProfile } from "@/lib/session";
+import { localiseExercise } from "@/lib/lessons/native-server";
+import { isNativeLang } from "@/lib/i18n/dict";
 
 export const dynamic = "force-dynamic";
 
@@ -42,8 +45,23 @@ export default async function ImmersionSkillPage({
   searchParams?: Promise<Record<string, string | string[] | undefined>>;
 }) {
   const { id } = await params;
-  const exercise = await getExercise(id);
-  if (!exercise) notFound();
+  const source = await getExercise(id);
+  if (!source) notFound();
+
+  /* YÖNERGE VE AÇIKLAMA öğrencinin dilinde. Metin, soru kökü ve şıklar
+     öğrenilen dilde kalıyor — egzersizin ölçtüğü şey onlar. Çeviri BURADA,
+     `getExercise`te değil: öteki üç çağıran (puanlama, kayıt, rol yapma uç
+     noktası) düz metni hiç kullanmıyor ve orada 1,7 MB sözlük boşa yüklenir.
+     Hep-ya-hiç: bir dize bile eksikse egzersiz tümüyle Türkçe kalıyor. */
+  let exercise = source;
+  try {
+    const userId = await getUserId();
+    const profile = userId ? await ensureProfile(userId) : null;
+    const lang = isNativeLang(profile?.nativeLang) ? profile.nativeLang : null;
+    exercise = await localiseExercise(source, lang);
+  } catch (err) {
+    console.error("[skill] ana dil çözülemedi", err);
+  }
   // Aynı oynatıcıya iki yerden giriliyor; "geri" nereden gelindiyse oraya
   // dönmeli, yoksa Beceriler'den giren kullanıcı Patika'ya düşüyor.
   const from = (await searchParams)?.from;
