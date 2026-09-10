@@ -1167,6 +1167,10 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     }
     return ["okunamadi: " + marker];
   };
+  /* UST DUZEY alanlar; ic ice nesneler ATLANIR - govde ayiklayicisi da ust
+     duzey okuyor ve `levels` gibi bir alanin SATIR alanlari ("niveau",
+     "seen", ...) orada gorunmuyor. Ikisini ayni duzeyde tutmak sart, yoksa
+     ic ice her alan "mobilde fazla" cikar. */
   const typeFields = (p, name) => {
     const x = strip(read(p));
     const i = x.indexOf("export type " + name + " =");
@@ -1176,7 +1180,17 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     for (let j = k; j < x.length; j++) {
       if (x[j] === "{") d++;
       else if (x[j] === "}" && --d === 0) {
-        return [...new Set([...x.slice(k, j + 1).matchAll(/[{;\n]\s*(\w+)\??:/g)].map((m) => m[1]))].sort();
+        const govde = x.slice(k + 1, j);
+        const out = [];
+        let dd = 0;
+        let buf = "";
+        for (const c of govde) {
+          if ("{[(".includes(c)) dd++;
+          else if ("}])".includes(c)) dd--;
+          if (c === ";" && dd === 0) { out.push(buf); buf = ""; } else buf += c;
+        }
+        out.push(buf);
+        return [...new Set(out.map((seg) => (seg.match(/^\s*(\w+)\??\s*:/) ?? [])[1]).filter(Boolean))].sort();
       }
     }
     return ["okunamadi: " + name];

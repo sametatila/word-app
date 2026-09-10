@@ -1,5 +1,5 @@
 import React from "react";
-import { t } from "../lib/i18n";
+import { t, dateLocale, formatNumber } from "../lib/i18n";
 import { View, ScrollView } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { useNavigation } from "@react-navigation/native";
@@ -139,6 +139,45 @@ export function ProgressScreen() {
           görünüyor, yani statü işareti — yeri profil. Aynı ekrana iki giriş
           olmasın diye kart değil satır kaldı.
         */}
+        {/*
+          SEVİYE KIRILIMI VE TEKRAR KUYRUĞU. Üçü de `/api/me` yanıtında
+          geliyor (sunucu `getProgress` içinde zaten hesaplıyor, ek sorgu
+          yok) ve mobil hiçbirini göstermiyordu: "hangi seviyede kaç kelime",
+          "kaçı ileri tarihe planlandı", "kaçında zorlanıyorum" sorularının
+          hiçbiri cevaplanmıyordu. Web ilerleme sayfası üçünü de gösteriyor.
+        */}
+        {me?.levels?.length ? (
+          <Card padded style={{ marginBottom: spacing.lg }}>
+            <Text variant="micro" color={colors.textMuted} style={{ marginBottom: spacing.sm }}>{t("progress.by_level").toLocaleUpperCase(dateLocale())}</Text>
+            {me.levels.map((lv) => {
+              const seenPct = lv.total ? Math.round((100 * lv.seen) / lv.total) : 0;
+              const mastPct = lv.total ? Math.round((100 * lv.mastered) / lv.total) : 0;
+              return (
+                <View key={lv.niveau} style={{ marginBottom: spacing.sm }}>
+                  <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
+                    <Text variant="caption" color={colors.text}>{lv.niveau}</Text>
+                    <Text variant="micro" color={colors.textMuted}>{t("progress.seen_of_total", { seen: formatNumber(lv.seen), total: formatNumber(lv.total), mastered: formatNumber(lv.mastered) })}</Text>
+                  </View>
+                  {/* Koyu bölüm pekişmiş, açık bölüm görülmüş — web ile aynı okuma. */}
+                  <View style={{ height: 6, borderRadius: 3, backgroundColor: colors.surface2, overflow: "hidden", marginTop: 4, flexDirection: "row" }}>
+                    <View style={{ width: `${mastPct}%`, backgroundColor: colors.success }} />
+                    <View style={{ width: `${Math.max(0, seenPct - mastPct)}%`, backgroundColor: colors.successSoft }} />
+                  </View>
+                </View>
+              );
+            })}
+          </Card>
+        ) : null}
+
+        {me ? (
+          <Card padded style={{ marginBottom: spacing.lg, gap: 4 }}>
+            <Text variant="micro" color={colors.textMuted} style={{ marginBottom: 2 }}>{t("progress.review_queue").toLocaleUpperCase(dateLocale())}</Text>
+            <Text variant="caption" color={colors.text}>{t("progress.due_now", { n: me.dueCount ?? 0 })}</Text>
+            <Text variant="caption" color={colors.textMuted}>{t("progress.upcoming", { n: me.upcoming ?? 0 })}</Text>
+            {me.leeches ? <Text variant="caption" color={colors.dangerText}>{t("progress.leeches", { n: me.leeches })}</Text> : null}
+          </Card>
+        ) : null}
+
         <Card padded style={{ paddingVertical: 0 }}>
           <MenuRow icon={CheckIcon} label={t("profile.what_can_i_do")} tint={colors.success} colors={colors} onPress={() => nav.navigate("Cando")} />
           <MenuRow icon={WriteIcon} label={t("profile.my_posts")} tint={colors.info} colors={colors} onPress={() => nav.navigate("Writings")} last />

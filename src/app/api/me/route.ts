@@ -46,6 +46,16 @@ export async function GET() {
         reviewsToday: todayStat?.reviews ?? 0,
         newToday: todayStat?.newWords ?? 0,
         dueCount: progress?.dueNow ?? 0,
+        /*
+         * TEKRAR KUYRUĞU VE SEVİYE KIRILIMI. `getProgress` üçünü de zaten
+         * hesaplıyor (ek sorgu yok) ama uç yalnız toplamları gönderiyordu:
+         * mobil ilerleme ekranı "hangi seviyede kaç kelime", "kaçı ileri
+         * tarihe planlandı" ve "kaçında zorlanıyorum" sorularının hiçbirini
+         * cevaplayamıyordu. Web ilerleme sayfası üçünü de gösteriyor.
+         */
+        upcoming: progress?.upcoming ?? 0,
+        leeches: progress?.leeches ?? 0,
+        levels: progress?.levels ?? [],
       },
       { headers: { "cache-control": "no-store" } },
     );

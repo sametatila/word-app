@@ -25,6 +25,10 @@ export type Me = {
   reviewsToday?: number;
   newToday?: number;
   dueCount?: number;
+  /** Tekrar kuyruğu ve seviye kırılımı — uç `getProgress`ten geçiriyor. */
+  upcoming?: number;
+  leeches?: number;
+  levels?: { niveau: string; total: number; seen: number; mastered: number; familiar: number; learning: number }[];
 };
 
 /**
