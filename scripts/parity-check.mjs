@@ -13,7 +13,7 @@
  * Node'da tek başına çalışmalı. Biçim değişip liste okunamazsa betik sessizce
  * geçmiyor, boş liste olarak KALIYOR.
  */
-import { readFileSync } from "node:fs";
+import { readFileSync, readdirSync } from "node:fs";
 
 const ESC = String.fromCharCode(27);
 const C = { ok: ESC + "[32m", bad: ESC + "[31m", b: ESC + "[1m", off: ESC + "[0m", dim: ESC + "[2m" };
@@ -1192,6 +1192,55 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     ...typeFields("src/lib/achievements.ts", "AchievementDef"),
   ])].filter((a) => !["metric", "titleKey", "hintKey"].includes(a)).sort();
   ciftYon("rozet satiri alanlari", rowWeb, typeFields("mobile/src/data/achievements.ts", "Achievement"));
+}
+
+/* ── 26. sosyal hata kodlarinin karsiligi ──────────────────────────────────
+ * Sunucunun donebildigi HER hata kodunun iki istemcide de bir cumlesi olmali.
+ * Haritada olmayan kod ikisinde de "baglanti kurulamadi"ya dusuyor - yanlis
+ * teshis: kullanici sebebini bilmeden ayni islemi tekrar deniyor. Webde tam
+ * bu yasandi ve `bio_invalid` sonradan eklendi (bkz. lib/social/client
+ * yorumu); kod eklenirken haritalarin unutulmasini bir sey engellemiyordu.
+ *
+ * Kodlar uc yerden toplaniyor: `new SocialError("...")`, `fail("...")` ve
+ * dogrudan yazilan `error: "..."`. `failed` yalnizca WEBIN haritasinda:
+ * sunucu kodu degil, istemcinin kendi ag hatasi sentinel'i (mobilde
+ * `ApiError` olmayan her sey ayni yere dusuyor). */
+{
+  const dirs = ["src/app/api/social", "src/lib/social"];
+  const codes = new Set();
+  const walk = (d, out = []) => {
+    for (const e of readdirSync(new URL("../" + d, import.meta.url), { withFileTypes: true })) {
+      if (e.isDirectory()) walk(d + "/" + e.name, out);
+      else if (e.name.endsWith(".ts")) out.push(d + "/" + e.name);
+    }
+    return out;
+  };
+  for (const d of dirs) {
+    for (const f of walk(d)) {
+      const src = read(f);
+      for (const m of src.matchAll(/new SocialError\(\s*"([a-z_]+)"/g)) codes.add(m[1]);
+      for (const m of src.matchAll(/\bfail\(\s*"([a-z_]+)"/g)) codes.add(m[1]);
+      for (const m of src.matchAll(/error:\s*"([a-z_]+)"/g)) codes.add(m[1]);
+    }
+  }
+  const harita = (p, name) => {
+    const src = read(p);
+    const i = src.indexOf("const " + name);
+    if (i < 0) return new Set(["bulunamadi: " + name]);
+    const blok = src.slice(i, src.indexOf("};", i));
+    return new Set([...blok.matchAll(/^\s*(\w+):/gm)].map((m) => m[1]));
+  };
+  const mob = harita("mobile/src/api/social.ts", "ERROR_KEY");
+  const web = harita("src/lib/social/client.ts", "ERROR_KEYS");
+  const sunucu = [...codes].sort();
+  const eksik = (m) => {
+    const e = sunucu.filter((c) => !m.has(c));
+    return e.length ? e : ["kapsam tam"];
+  };
+  sameList("sosyal hata kodlari (mobil)", eksik(mob), ["kapsam tam"], "eslenmeyen", "beklenen");
+  sameList("sosyal hata kodlari (web)", eksik(web), ["kapsam tam"], "eslenmeyen", "beklenen");
+  /* Iki haritanin kendisi de ayni olmali; tek fark webin `failed` sentinel'i. */
+  sameSet("sosyal hata haritalari", [...mob], [...web].filter((c) => c !== "failed"));
 }
 
 console.log(
