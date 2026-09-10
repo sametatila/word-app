@@ -57,7 +57,7 @@ export function WordProgress({
     <div className="space-y-4">
       {/* CEFR seviyeleri */}
       <section className="card p-5">
-        <h2 className="mb-4 font-bold">{t("prog.by_level")}</h2>
+        <h2 className="mb-4 font-bold">{t("progress.by_level")}</h2>
         <div className="space-y-4">
           {levels.map((l, i) => {
             const pct = l.total ? (l.seen / l.total) * 100 : 0;
@@ -67,7 +67,7 @@ export function WordProgress({
                 <div className="mb-1.5 flex items-baseline justify-between text-sm">
                   <span className="font-semibold">{l.niveau}</span>
                   <span className="muted text-xs">
-                    {t("progw.seen_of_total", { seen: l.seen, total: l.total, mastered: l.mastered })}
+                    {t("progress.seen_of_total", { seen: l.seen, total: l.total, mastered: l.mastered })}
                   </span>
                 </div>
                 <div className="relative h-3 w-full overflow-hidden rounded-full surface-2">
@@ -91,19 +91,19 @@ export function WordProgress({
           })}
         </div>
         <p className="muted mt-4 text-xs">
-          {t("prog.bar_note", { seen: totalSeen, total: totalWords })}
+          {t("progress.bar_note", { seen: totalSeen, total: totalWords })}
         </p>
       </section>
 
       <section className="card p-5">
-          <h2 className="mb-3 font-bold">{t("prog.review_queue")}</h2>
+          <h2 className="mb-3 font-bold">{t("progress.review_queue")}</h2>
           <div className="flex items-center gap-4">
             <Donut value={dueNow} total={Math.max(1, dueNow + upcoming)} />
             <div className="text-sm">
-              <p>{t("progw.due_now", { n: dueNow })}</p>
-              <p className="muted mt-1">{t("progw.upcoming", { n: upcoming })}</p>
+              <p>{t("progress.due_now", { n: dueNow })}</p>
+              <p className="muted mt-1">{t("progress.upcoming", { n: upcoming })}</p>
               {leeches > 0 ? (
-                <p className="mt-1 text-[color:var(--color-rose)]">{t("progw.leeches", { n: leeches })}</p>
+                <p className="mt-1 text-[color:var(--color-rose)]">{t("progress.leeches", { n: leeches })}</p>
               ) : null}
             </div>
           </div>
@@ -308,6 +308,22 @@ function KpiCard({
 /** Şeritteki gün sayısı — iki tam hafta, hafta sonu ritmi görünsün diye. */
 const STRIP_DAYS = 14;
 
+/**
+ * Çalışılan en düşük günün taban yüksekliği (yüzde) — üstüne oran biniyor.
+ * Tabansız bırakılırsa bir tekrar yapılan gün sıfır piksel çiziliyor ve
+ * "hiç çalışmadım" ile aynı görünüyor.
+ */
+const STRIP_FLOOR_PCT = 14;
+
+/**
+ * Isı basamakları — [eşik, karışım yüzdesi]; son satır eşiksiz tavan.
+ *
+ * Mobil `ActivityStrip` ile AYNI tablo (`check:parity` ikisini
+ * karşılaştırıyor); ayrılırlarsa aynı çalışma iki platformda farklı
+ * yoğunlukta görünür.
+ */
+const HEAT_RAMP: [number, number][] = [[8, 28], [16, 50], [32, 72], [Infinity, 100]];
+
 /*
   İki harf, tek harf değil. Tek harfle şerit "P C C P P S Ç" oluyor ve bu
   okunmuyor: Pazartesi, Perşembe ve Pazar aynı harfe, Cuma ile Cumartesi de
@@ -362,9 +378,9 @@ function ActivityStrip({ byDay, today }: { byDay: Map<string, DayRow>; today: st
   return (
     <section className="card px-4 py-3.5">
       <div className="mb-2.5 flex items-baseline justify-between gap-3">
-        <h2 className="text-sm font-bold">{t("prog.last_two_weeks")}</h2>
+        <h2 className="text-sm font-bold">{t("progress.last_two_weeks")}</h2>
         <p className="muted text-xs font-semibold tabular-nums">
-          {t("social.days", { n: active })} · {t("prog.n_reviews", { n: formatNumber(total, lang) })}
+          {t("social.days", { n: active })} · {t("progress.n_reviews", { n: formatNumber(total, lang) })}
         </p>
       </div>
 
@@ -372,7 +388,7 @@ function ActivityStrip({ byDay, today }: { byDay: Map<string, DayRow>; today: st
         {days.map((d, i) => {
           const isToday = d.day === today;
           // Çalışılan en düşük gün bile görünür olmalı: %14 taban, üstüne oran.
-          const pct = d.reviews > 0 ? 14 + Math.round((d.reviews / peak) * 86) : 0;
+          const pct = d.reviews > 0 ? STRIP_FLOOR_PCT + Math.round((d.reviews / peak) * (100 - STRIP_FLOOR_PCT)) : 0;
           return (
             <div key={d.day} className="flex min-w-0 flex-1 items-end" style={{ height: "100%" }}>
               {d.reviews > 0 ? (
@@ -380,13 +396,13 @@ function ActivityStrip({ byDay, today }: { byDay: Map<string, DayRow>; today: st
                   initial={{ height: 0 }}
                   animate={{ height: `${pct}%` }}
                   transition={{ delay: i * 0.02, type: "spring", stiffness: 180, damping: 22 }}
-                  title={`${d.day}: ${t("prog.n_reviews", { n: d.reviews })}`}
+                  title={`${d.day}: ${t("progress.n_reviews", { n: d.reviews })}`}
                   className={`w-full rounded-[3px] ${isToday ? "brand-gradient" : ""}`}
                   style={isToday ? undefined : { background: heatColor(d.reviews) }}
                 />
               ) : (
                 <div
-                  title={`${d.day}: çalışılmadı`}
+                  title={`${d.day}: ${t("progress.no_study")}`}
                   className="w-full rounded-full surface-2"
                   style={{ height: 3 }}
                 />
@@ -416,10 +432,8 @@ function ActivityStrip({ byDay, today }: { byDay: Map<string, DayRow>; today: st
 
 function heatColor(count: number) {
   if (count <= 0) return "var(--surface-2)";
-  if (count < 8) return "color-mix(in srgb, var(--color-brand) 28%, var(--surface-2))";
-  if (count < 16) return "color-mix(in srgb, var(--color-brand) 50%, var(--surface-2))";
-  if (count < 32) return "color-mix(in srgb, var(--color-brand) 72%, var(--surface-2))";
-  return "var(--color-brand)";
+  const mix = HEAT_RAMP.find(([esik]) => count < esik)?.[1] ?? 100;
+  return `color-mix(in srgb, var(--color-brand) ${mix}%, var(--surface-2))`;
 }
 
 function Donut({ value, total }: { value: number; total: number }) {

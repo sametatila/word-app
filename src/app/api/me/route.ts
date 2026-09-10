@@ -56,6 +56,14 @@ export async function GET() {
         upcoming: progress?.upcoming ?? 0,
         leeches: progress?.leeches ?? 0,
         levels: progress?.levels ?? [],
+        /*
+         * ETKINLIK SERIDI. `getProgress` son 55 gunun `daily_stats`
+         * satirlarini zaten cekiyor; uc bunlardan yalniz gun ve tekrar
+         * sayisini gonderiyor (satirin geri kalani mobilde kullanilmiyor,
+         * ozet ucu de sik cagriliyor). Mobil `ActivityStrip` bu seriden
+         * kendi penceresini kesiyor - web `progress-view` ile ayni.
+         */
+        days: (progress?.days ?? []).map((d) => ({ day: String(d.day), reviews: d.reviews })),
       },
       { headers: { "cache-control": "no-store" } },
     );

@@ -14,7 +14,103 @@ import { Mascot } from "../ui/Mascot";
 import { SkeletonBar, SkeletonCard, SkeletonLine, SkeletonTile } from "../ui/Skeleton";
 import { useMe, formatXp, formatDuration } from "../lib/useMe";
 import { useTheme, spacing, radii, softShadow, onTint, type Palette } from "../theme";
+import { todayStr } from "../game/session";
 import { useLayout } from "../lib/useLayout";
+
+/** Şeritteki gün sayısı — iki tam hafta, hafta sonu ritmi görünsün diye. */
+const STRIP_DAYS = 14;
+
+/**
+ * Çalışılan en düşük günün taban yüksekliği (yüzde) — üstüne oran biniyor.
+ * Tabansız bırakılırsa bir tekrar yapılan gün sıfır piksel çiziliyor ve
+ * "hiç çalışmadım" ile aynı görünüyor.
+ */
+const STRIP_FLOOR_PCT = 14;
+
+/**
+ * Isı basamakları — [eşik, karışım yüzdesi]; son satır eşiksiz tavan.
+ *
+ * Web `progress-view` ile AYNI tablo (`check:parity` ikisini karşılaştırıyor);
+ * ayrılırlarsa aynı çalışma iki platformda farklı yoğunlukta görünür.
+ */
+const HEAT_RAMP: [number, number][] = [[8, 28], [16, 50], [32, 72], [Infinity, 100]];
+
+/**
+ * Gün kısaltmaları yerelden üretiliyor; hafta pazartesiyle başlıyor
+ * (2024-01-01 bir pazartesi). İki harf, tek harf değil: tek harfle şerit
+ * "P C C P P S Ç" oluyor ve Pazartesi/Perşembe/Pazar aynı harfe düşüyor.
+ */
+function weekdayNames(): string[] {
+  const fmt = new Intl.DateTimeFormat(dateLocale(), { weekday: "short" });
+  return Array.from({ length: 7 }, (_, i) => fmt.format(new Date(Date.UTC(2024, 0, 1 + i))));
+}
+
+/**
+ * Son iki haftanın çalışma ritmi — web `ActivityStrip` ile aynı okuma.
+ *
+ * Mobilde bu şerit HİÇ YOKTU: "dün çalıştım mı, hafta sonları düşüyor muyum"
+ * sorusunun cevabı yalnız webde vardı, oysa günlük alışkanlığı değiştiren
+ * soru bu. Sütun yüksekliği o günün tekrar sayısı, pencerenin en yoğun
+ * gününe göre ölçekleniyor; çalışılmayan gün ince bir taban çizgisi bırakıyor
+ * - boşluk da bir bilgi, ama sütunlar hizasını kaybetmemeli.
+ */
+function ActivityStrip({ rows, today, colors }: { rows: { day: string; reviews: number }[]; today: string; colors: Palette }) {
+  const byDay = new Map(rows.map((r) => [r.day, r.reviews]));
+  const end = new Date(`${today}T00:00:00Z`);
+  const days: { day: string; reviews: number; weekday: number }[] = [];
+  for (let i = STRIP_DAYS - 1; i >= 0; i--) {
+    const d = new Date(end);
+    d.setUTCDate(d.getUTCDate() - i);
+    const key = d.toISOString().slice(0, 10);
+    days.push({ day: key, reviews: byDay.get(key) ?? 0, weekday: (d.getUTCDay() + 6) % 7 });
+  }
+  const peak = Math.max(1, ...days.map((d) => d.reviews));
+  const active = days.filter((d) => d.reviews > 0).length;
+  const total = days.reduce((s, d) => s + d.reviews, 0);
+  const names = weekdayNames();
+
+  return (
+    <Card padded style={{ marginBottom: spacing.lg }}>
+      <View style={{ flexDirection: "row", alignItems: "baseline", justifyContent: "space-between", gap: spacing.md, marginBottom: spacing.sm }}>
+        <Text variant="bodyStrong">{t("progress.last_two_weeks")}</Text>
+        <Text variant="micro" color={colors.textMuted}>
+          {t("social.days", { n: active })} · {t("progress.n_reviews", { n: formatNumber(total) })}
+        </Text>
+      </View>
+
+      <View style={{ height: 44, flexDirection: "row", alignItems: "flex-end", gap: 3 }}>
+        {days.map((d) => {
+          const pct = d.reviews > 0 ? STRIP_FLOOR_PCT + Math.round((d.reviews / peak) * (100 - STRIP_FLOOR_PCT)) : 0;
+          const mix = HEAT_RAMP.find(([esik]) => d.reviews < esik)?.[1] ?? 100;
+          const label = d.reviews > 0 ? t("progress.n_reviews", { n: d.reviews }) : t("progress.no_study");
+          return d.reviews > 0 ? (
+            /* Karışımı webdeki `color-mix` gibi kuruyoruz: alttaki `surface2`
+               dolgusunun üstüne aynı yüzdede saydam marka rengi. */
+            <View key={d.day} accessibilityLabel={`${d.day}: ${label}`} style={{ flex: 1, height: `${pct}%`, borderRadius: 3, backgroundColor: colors.surface2, overflow: "hidden" }}>
+              <View style={{ flex: 1, backgroundColor: colors.primary, opacity: mix / 100 }} />
+            </View>
+          ) : (
+            <View key={d.day} accessibilityLabel={`${d.day}: ${label}`} style={{ flex: 1, height: 3, borderRadius: 3, backgroundColor: colors.surface2 }} />
+          );
+        })}
+      </View>
+
+      {/* Gün harfleri hafta sonu düşüşünü görünür kılıyor. Bugün koyu, geri kalanı silik. */}
+      <View style={{ flexDirection: "row", gap: 3, marginTop: 6 }}>
+        {days.map((d) => (
+          <Text
+            key={d.day}
+            variant="micro"
+            color={d.day === today ? colors.text : colors.textMuted}
+            style={{ flex: 1, textAlign: "center", opacity: d.day !== today && d.weekday >= 5 ? 0.6 : 1 }}
+          >
+            {names[d.weekday]}
+          </Text>
+        ))}
+      </View>
+    </Card>
+  );
+}
 
 function Stat({ icon: Icon, value, label, tint, colors }: { icon: (p: { color: string; size: number }) => React.ReactElement; value: string; label: string; tint: string; colors: Palette }) {
   const { gridItemWidth } = useLayout();
@@ -166,6 +262,13 @@ export function ProgressScreen() {
                 </View>
               );
             })}
+            {/* Şeridin iki tonu ne demek — web aynı notu taşıyor. */}
+            <Text variant="micro" color={colors.textMuted} style={{ marginTop: 4 }}>
+              {t("progress.bar_note", {
+                seen: formatNumber(me.levels.reduce((a, l) => a + l.seen, 0)),
+                total: formatNumber(me.levels.reduce((a, l) => a + l.total, 0)),
+              })}
+            </Text>
           </Card>
         ) : null}
 
@@ -177,6 +280,8 @@ export function ProgressScreen() {
             {me.leeches ? <Text variant="caption" color={colors.dangerText}>{t("progress.leeches", { n: me.leeches })}</Text> : null}
           </Card>
         ) : null}
+
+        {me?.days ? <ActivityStrip rows={me.days} today={todayStr()} colors={colors} /> : null}
 
         <Card padded style={{ paddingVertical: 0 }}>
           <MenuRow icon={CheckIcon} label={t("profile.what_can_i_do")} tint={colors.success} colors={colors} onPress={() => nav.navigate("Cando")} />

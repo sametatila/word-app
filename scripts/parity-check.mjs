@@ -2000,6 +2000,22 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   sameList("beceri madde sayisi", kural("mobile/src/data/skills/index.ts"), kural("src/lib/skills/meta.ts"));
 }
 
+/* ── 46. etkinlik seridi: isi basamaklari ve pencere ───────────────────────
+ * Son iki haftanin calisma ritmi iki tarafta AYRI dosyada cizilliyor. Gun
+ * sayisi ve taban yuzdesi adlandirilmis sabit oldugu icin 37 zaten
+ * karsilastiriyor; ISI TABLOSU dizi oldugu icin oraya girmiyor ve elle
+ * kopyalanmis durumda. Ayrisirsa ayni calisma iki uygulamada baska
+ * yogunlukta gorunur - "bu hafta daha mi az calistim" sorusuna iki ayri
+ * cevap veren bir grafik, hic olmayandan kotudur. */
+{
+  const rampa = (p) => {
+    const src = read(p);
+    const m = src.match(/const HEAT_RAMP[^=]*=\s*(\[[^;]*\])\s*;/);
+    return m ? [m[1].replace(/\s+/g, "")] : ["bulunamadi: " + p];
+  };
+  sameList("isi basamaklari", rampa("mobile/src/screens/ProgressScreen.tsx"), rampa("src/components/progress-view.tsx"));
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"

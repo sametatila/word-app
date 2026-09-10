@@ -29,6 +29,8 @@ export type Me = {
   upcoming?: number;
   leeches?: number;
   levels?: { niveau: string; total: number; seen: number; mastered: number; familiar: number; learning: number }[];
+  /** Son 55 günün çalışma satırları — etkinlik şeridi kendi penceresini keser. */
+  days?: { day: string; reviews: number }[];
 };
 
 /**
