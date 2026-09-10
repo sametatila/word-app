@@ -69,7 +69,18 @@ type Any = Record<string, unknown>;
 const str = (v: unknown): string | undefined =>
   typeof v === "string" && v.trim() ? v : undefined;
 
-export function extractMock(): MockRow[] {
+/**
+ * @param course Hangi kursun kâğıtları — yani hangi PARİTE.
+ *
+ *   "de"  Almanca kâğıtlar → Türkçe alanların İNGİLİZCESİ yazılacak (en→de)
+ *   "en"  İngilizce kâğıtlar → Türkçe alanların ALMANCASI yazılacak (de→en)
+ *
+ * Aynı çıkarıcı, çünkü kâğıtların YAPISI aynı: iki kursta da `promptTr`
+ * görev yönergesi, `explain` gerekçe, `situation` durum tarifi. Değişen
+ * yalnız hangi dilin yazılacağı ve o karar paketleyicide değil kapıda
+ * (`check.ts` hangi dizini okuyorsa onun kuralları geçerli).
+ */
+export function extractMock(course: "de" | "en" = "de"): MockRow[] {
   const rows = new Map<string, MockRow>();
   const add = (kind: MockKind, tr: unknown, ctx: string, de?: string, q?: string) => {
     const t = str(tr);
@@ -83,7 +94,7 @@ export function extractMock(): MockRow[] {
     rows.set(key, r);
   };
 
-  for (const p of (MOCK_PAPERS as unknown as Any[]).filter((x) => ((x.course as string) ?? "de") === "de")) {
+  for (const p of (MOCK_PAPERS as unknown as Any[]).filter((x) => ((x.course as string) ?? "de") === course)) {
     const paper = `${p.id} ${p.level ?? ""}`.trim();
     add("themeTr", p.themeTr, paper);
 
@@ -146,16 +157,22 @@ export function extractMock(): MockRow[] {
 }
 
 if (process.argv[1]?.endsWith("make.ts")) {
-  const rows = extractMock();
-  mkdirSync(`${DIR}in`, { recursive: true });
-  mkdirSync(`${DIR}out`, { recursive: true });
+  /* Kurs argümanla: `make.ts en` İngilizce kâğıtları paketler ve çıktısı
+     `in-de/` altına düşer — dizin adı YAZILACAK DİLİ söylüyor, okunan
+     kursu değil. `in/` (Almanca kâğıtlar → İngilizce) tarihsel adıyla
+     kalıyor; yeniden adlandırmak 45 paketi ve iki kapıyı oynatırdı. */
+  const course = (process.argv[2] === "en" ? "en" : "de") as "de" | "en";
+  const suffix = course === "en" ? "-de" : "";
+  const rows = extractMock(course);
+  mkdirSync(`${DIR}in${suffix}`, { recursive: true });
+  mkdirSync(`${DIR}out${suffix}`, { recursive: true });
   const SIZE = 150;
   let n = 0;
   for (let i = 0; i < rows.length; i += SIZE) {
     n++;
     const name = `m-${String(n).padStart(3, "0")}`;
     writeFileSync(
-      `${DIR}in/${name}.json`,
+      `${DIR}in${suffix}/${name}.json`,
       `${JSON.stringify({ packet: name, words: rows.slice(i, i + SIZE) }, null, 1)}\n`,
     );
   }
