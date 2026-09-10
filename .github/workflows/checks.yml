@@ -102,7 +102,7 @@ jobs:
       # tümüyle türetilmiş, ayrışmaları ancak dökümün unutulması demek.
       - name: Döküm bütünlüğü
         run: npm run check:dumps
-      # Ana dil ekseninin altı kapısı. Altısı da SESSİZ bozulmaya karşı:
+      # Ana dil ekseninin yedi kapısı. Yedisi de SESSİZ bozulmaya karşı:
       # çözücü bir parçanın karşılığını bulamayınca dersi tümden reddediyor
       # ve `localiseLesson` Türkçeye düşüyor — hiçbir yerde hata görünmüyor,
       # İngilizce kurs yalnızca Türkçe olarak açılıyor. Bir ders düzenlemesi
@@ -140,6 +140,18 @@ jobs:
       # harfler ise kasten kümenin dışında — kalan bir `ş` çevrilmemiş
       # metin demek (m-039'da kâğıttaki «Ayse» ile gerekçedeki "Ayşe"nin
       # ayrıştığı böyle görüldü).
+      #
+      # `check:lessons-prose-de` ders düzyazısının Almancasını ölçüyor:
+      # 580 dersin Türkçe her parçası — partner, açılış, başlık, özet, sahne,
+      # hedef, gerekçe, örüntü, sözcük, ipucu ve anlatım — 11.011 dize.
+      # Öbür ikisiyle aynı gerekçeyle hat 11011/11011'e ulaşana kadar
+      # BİLEREK dışarıda tutuldu. Kendi kapısı üç şeyi birden savunuyor:
+      # son noktalama (kayan bir satır burada yakalanıyor — bir paket
+      # 149 dize gelince hizalama bozuluyor ve sessizce yanlış derse
+      # yazılıyordu), sayılar, ve karakter kümesi. Küme kuralı Türkçeye
+      # özgü harfleri dışarıda tutuyor: kalan bir `ş` çevrilmemiş metin
+      # demek. Tek gevşetme, dersin İngilizce yüzünde SÖZCÜK olarak geçen
+      # özel adlar — sesin söylediği ad yerinde kalmak zorunda.
       - name: Ana dil çözücüsü
         run: |
           npm run check:lessons-native
@@ -149,6 +161,7 @@ jobs:
           npm run check:mock-prose
           npm run check:mock-prose-de
           npm run check:mock-native
+          npm run check:lessons-prose-de
       # Premium kurallarının birim testi — veritabanı istemiyor. Paket ilerlemesi,
       # yapılandırma doğrulaması ve paywall metinlerinin üç sözlükte de bulunması.
       # Bu sınıfın tamamı ancak gerçek para akarken fark edilirdi.
