@@ -93,12 +93,12 @@ export function CandoCard({ bare = false }: { bare?: boolean } = {}) {
       {bare ? null : (
         <div className="flex items-baseline justify-between">
           <h2 className="font-bold">{t("lessonp.i_can").replace(":", "")}</h2>
-          <span className="muted text-xs font-semibold">{t("candow.n_proven", { n: provenTotal })}</span>
+          <span className="muted text-xs font-semibold">{t("cando.n_proven", { n: provenTotal })}</span>
         </div>
       )}
       <p className="muted text-xs">
-        {t("candow.rule")}
-        {bare ? ` ${t("candow.n_proven", { n: provenTotal })}.` : ""}
+        {t("cando.rule")}
+        {bare ? ` ${t("cando.n_proven", { n: provenTotal })}.` : ""}
       </p>
       {/* Beş seviye çipi telefonda kartın genişliğini aşıyor ve sonuncusu
           (C1) kesiliyordu: kaydırma olmadığı için ulaşılamaz bir sekmeydi.

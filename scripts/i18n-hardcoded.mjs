@@ -241,7 +241,20 @@ function candidates(raw) {
     .replace(/\/(?:\\.|\[[^\]]*\]|[^/\n\\<>])+\/[gimsuyd]*/g, " ")
     .replace(/\{[^{}]*\}/g, " ")
     .replace(/<[^<>]*>/g, SEP);
-  for (const piece of rest.split(SEP)) out.push(piece);
+  // JSX GOVDE METNINDE NOKTALAMA METNIN KENDISI, kod degil: {ifade},
+  // dizgiler ve etiketler zaten cikarildi; geriye kalan "/", "·", "%" gibi
+  // isaretler kullanicinin ekranda gordugu ayraclar. Birakilinca
+  // `asciiTurkish` CODEY'e takilip parcayi kod saniyor ve "{a}/{b} ifade"
+  // gibi bir satir HICBIR kurala dusmuyordu (CandoScreen seviye ozeti boyle
+  // kacmisti; mobil tarayicida ayni kural, bkz. mobile/scripts/i18n-scan.js).
+  //
+  // Ayrim YAPISAL isaretlere bakiyor: parantez, esittir, noktali virgul gibi
+  // bir sey duruyorsa parca koddur ("if (!izin)") ve oldugu gibi birakiliyor.
+  // Yalniz metin noktalamasi kalmissa temizleniyor.
+  const STRUCT = /[(){}[\]<>=;\\|&$*+"'`~^@#]/;
+  for (const piece of rest.split(SEP)) {
+    out.push(STRUCT.test(piece) ? piece : piece.replace(/[^\p{L}\p{N}\s]+/gu, " "));
+  }
   const CODE = /\.\w+\(/;
   return out.map((s) => s.trim()).filter((s) => s && !CODE.test(s));
 }

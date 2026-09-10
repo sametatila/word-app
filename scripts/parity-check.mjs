@@ -2016,6 +2016,27 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   sameList("isi basamaklari", rampa("mobile/src/screens/ProgressScreen.tsx"), rampa("src/components/progress-view.tsx"));
 }
 
+/* ── 47. yapabildiklerim: beceri kodu -> etiket anahtari ──────────────────
+ * `/api/cando` beceriyi CEFR koduyla gonderiyor (RD/LS/WR/SPK/GR) ve iki
+ * taraf da kodu kendi tablosundan cevirmek zorunda. Mobil tablo UZUN ADLARLA
+ * yaziliydi ("reading"), yani arama her satirda bosa dusuyor ve ifadenin
+ * altinda ceviri yerine ham kod yaziyordu - tip `string` oldugu icin ne tsc
+ * ne lint goruyordu. Kapi iki tabloyu satir satir esliyor. */
+{
+  const tablo = (p, ad) => {
+    const src = read(p).replace(/\/\*[\s\S]*?\*\//g, " ").replace(/\/\/[^\n]*/g, " ");
+    const i = src.indexOf(ad);
+    if (i < 0) return ["bulunamadi: " + ad];
+    const govde = src.slice(src.indexOf("{", i), src.indexOf("}", i) + 1);
+    return [...govde.matchAll(/(\w+)\s*:\s*"([^"]+)"/g)].map((m) => m[1] + "=" + m[2]).sort();
+  };
+  sameList(
+    "cando beceri etiketleri",
+    tablo("mobile/src/screens/CandoScreen.tsx", "const SKILL_KEY"),
+    tablo("src/lib/cando.ts", "const CANDO_SKILL_LABEL_KEYS"),
+  );
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"

@@ -15,8 +15,16 @@ import { CardGrid } from "../ui/CardGrid";
 import { EmptyCard } from "../social/common";
 
 const LEVELS = ["A1", "A2", "B1", "B2", "C1"];
-/** Beceri -> sözlük anahtarı (Patika tür adlarıyla ortak). */
-const SKILL_KEY: Record<string, string> = { reading: "unitkind.read", listening: "unitkind.listen", writing: "unitkind.write", speaking: "unitkind.speaking", grammar: "unitkind.grammar", vocab: "unitkind.vocab" };
+/**
+ * Beceri KODU -> sözlük anahtarı — web `CANDO_SKILL_LABEL_KEYS` ile aynı beş
+ * satır (`check:parity` karşılaştırıyor).
+ *
+ * Eşleme uzun adlarla ("reading", "listening") yazılıydı, oysa `/api/cando`
+ * beceriyi CEFR koduyla gönderiyor (`RD`, `LS`, `WR`, `SPK`, `GR` - bkz.
+ * `lib/cando` `CandoSkill`). Yani arama HER SATIRDA boşa düşüyor ve ifadenin
+ * altında çeviri yerine ham kod ("RD") yazıyordu.
+ */
+const SKILL_KEY: Record<string, string> = { RD: "skills.reading", LS: "skills.listening", WR: "skills.writing", SPK: "skills.speaking", GR: "skills.grammar" };
 
 function Row({ it, colors }: { it: CandoItem; colors: Palette }) {
   const tint = it.state === "proven" ? colors.success : it.state === "progressing" ? colors.primary : colors.textFaint;
@@ -128,6 +136,16 @@ export function CandoScreen() {
         <View style={{ flex: 1, alignItems: "center", justifyContent: "center", paddingHorizontal: spacing.xl }}><Text variant="body" color={colors.textMuted} style={{ textAlign: "center" }}>{t("cando.sign_in_and_finish_lessons_and")}</Text></View>
       ) : (
         <ScrollView contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.xxl }} showsVerticalScrollIndicator={false}>
+          {/*
+            KANIT KURALI. "Kanıtlı" ne demek yalnız webde yazıyordu
+            (`cando-card`): mobilde kullanıcı tikin ne zaman geleceğini
+            bilmeden listeye bakıyordu. Ölçüt görünmeyince liste bir aynadan
+            çok bir bilmeceye benziyor.
+          */}
+          <Text variant="micro" color={colors.textMuted} style={{ marginTop: spacing.sm }}>
+            {t("cando.rule")} {t("cando.n_proven", { n: (data?.items ?? []).filter((i) => i.state === "proven").length })}.
+          </Text>
+
           {/* seviye özeti */}
           <Card style={{ marginTop: spacing.sm, marginBottom: spacing.lg }}>
             {LEVELS.filter((lv) => data?.byLevel?.[lv]?.total).map((lv) => {
@@ -136,7 +154,7 @@ export function CandoScreen() {
                 <View key={lv} style={{ marginBottom: spacing.sm }}>
                   <View style={{ flexDirection: "row", justifyContent: "space-between", marginBottom: 4 }}>
                     <Text variant="bodyStrong">{lv}</Text>
-                    <Text variant="caption" color={colors.textMuted}>{b.proven}/{b.total} ifade</Text>
+                    <Text variant="caption" color={colors.textMuted}>{t("cando.proven_of_total", { proven: b.proven, total: b.total })}</Text>
                   </View>
                   <View style={{ height: 7, borderRadius: 4, backgroundColor: colors.surface2, overflow: "hidden" }}>
                     <View style={{ height: "100%", width: `${Math.max(2, pct)}%`, backgroundColor: colors.success, borderRadius: 4 }} />
