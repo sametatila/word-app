@@ -81,8 +81,14 @@ export function SpeakingPlayer({ exercise, backHref }: { exercise: SkillExercise
       setReason(
         res.reason === "not_configured"
           ? t("speakp.scoring_off")
-          : res.reason === "rate_limited" || res.reason === "quota"
-            ? t("speakp.rate_limited")
+          : res.reason === "quota"
+            /* Kota ve hız sınırı AYNI ŞEY DEĞİL: kota günlük hakkın dolması,
+               hız sınırı ise "çok sık denedin". İkisine aynı cümleyi yazmak
+               kullanıcıya yarın açılacak bir şeyi "biraz sonra dene" diye
+               anlatıyordu. Kota cümlesi mobil ile ortak. */
+            ? t("assess.fail_quota")
+            : res.reason === "rate_limited"
+              ? t("speakp.rate_limited")
             : t("speakp.send_failed"),
       );
       setPhase("failed");

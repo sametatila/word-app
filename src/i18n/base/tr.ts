@@ -1129,6 +1129,7 @@ export const trBase: Record<string, string> = {
   "paywall.store_not_open": "Mağaza aboneliği henüz açılmadı",
   "paywall.store_not_open_sub": "Premium'a bugün davet ödülüyle ya da promo koduyla geçebilirsin — ikisi de aşağıda.",
   "assess.fail_premium": "Yapay zekâ değerlendirmesi Premium'a özel; ücretsiz hakkın bu dönem için doldu. Profilden Premium'a bakabilirsin.",
+  "assess.fail_quota": "Bugünkü yapay zekâ değerlendirme hakkın doldu; yarın yeniden açılıyor.",
   "league.tier_bronze": "Bronz Lig",
   "league.tier_silver": "Gümüş Lig",
   "league.tier_gold": "Altın Lig",

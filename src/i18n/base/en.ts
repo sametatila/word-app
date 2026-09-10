@@ -1129,6 +1129,7 @@ export const enBase: Record<string, string> = {
   "paywall.store_not_open": "Store subscriptions aren't open yet",
   "paywall.store_not_open_sub": "You can get Premium today with an invite reward or a promo code — both are below.",
   "assess.fail_premium": "AI feedback is part of Premium; your free allowance for this period is used up. You can look at Premium in your profile.",
+  "assess.fail_quota": "You've used today's AI feedback allowance; it resets tomorrow.",
   "league.tier_bronze": "Bronze League",
   "league.tier_silver": "Silver League",
   "league.tier_gold": "Gold League",

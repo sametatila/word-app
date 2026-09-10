@@ -16,7 +16,7 @@ import { ensureMicPermission, listenOnce } from "../lib/stt";
 import { spokenMatches } from "../lib/voiceMatch";
 import { currentTargetLocale } from "../lib/courses";
 import { api } from "../api/client";
-import { isPremiumRefusal } from "../lib/premium";
+import { isPremiumRefusal, isQuotaRefusal } from "../lib/premium";
 import { todayStr } from "../game/session";
 import type { Round } from "../game/session";
 import type { RootStackParams } from "../navigation/RootStack";
@@ -582,6 +582,10 @@ function Write({ w, level, colors, pad, onDone }: { w: WritingItem; level: strin
       // görünmez kılar: kullanıcı yapay zekâ değerlendirmesinin hakkının
       // bittiğini hiç öğrenmez ve aldığı puanın gerçek olduğunu sanır.
       if (isPremiumRefusal(e)) { setGateNote(t("assess.fail_premium")); setScore(null); }
+      // Adil kullanım hakkının dolması da bir kapı: 429'u ağ hatası sayıp
+      // kelime sayısından puan uydurmak, kullanıcıya gerçek olmayan bir not
+      // vermek demekti - üstteki kapıda kaçınılan hatanın aynısı.
+      else if (isQuotaRefusal(e)) { setGateNote(t("assess.fail_quota")); setScore(null); }
       // Sağlayıcı yoksa ya da ağ yoksa sınav durmaz: kelime sayısı ölçütüyle
       // geçici puan verilir, sunucu yine kendi sınırlarını uygular.
       else setScore(wordCount >= w.task.minWords ? 70 : 40);

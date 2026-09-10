@@ -139,3 +139,15 @@ export function isPremiumRefusal(e: unknown): boolean {
   const err = e as { status?: number; message?: string } | null;
   return err?.status === 403 && err?.message === "premium_required";
 }
+
+/**
+ * Adil kullanım hakkı doldu mu (429 `quota`).
+ *
+ * Premium kapısından AYRI: kapı "bu senin katmanında yok" der, bu ise "var
+ * ama bugünlük bitti". İkisi de bir KAPI, ikisi de ağ hatası DEĞİL - ve
+ * ikisinde de uydurma bir yedek puan vermek kapıyı görünmez kılar.
+ */
+export function isQuotaRefusal(e: unknown): boolean {
+  const err = e as { status?: number; message?: string } | null;
+  return err?.status === 429 || err?.message === "quota";
+}

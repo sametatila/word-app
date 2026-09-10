@@ -1127,6 +1127,7 @@ export const de: Record<string, string> = {
   "paywall.store_not_open": "Das Store-Abo ist noch nicht freigeschaltet",
   "paywall.store_not_open_sub": "Premium bekommst du heute über eine Einladungsprämie oder einen Promo-Code — beides steht unten.",
   "assess.fail_premium": "KI-Feedback gehört zu Premium; dein kostenloses Kontingent für diesen Zeitraum ist aufgebraucht. Im Profil kannst du dir Premium ansehen.",
+  "assess.fail_quota": "Dein heutiges Kontingent für KI-Feedback ist aufgebraucht; morgen gibt es wieder neues.",
   "league.tier_bronze": "Bronze-Liga",
   "league.tier_silver": "Silber-Liga",
   "league.tier_gold": "Gold-Liga",
