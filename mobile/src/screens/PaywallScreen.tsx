@@ -141,7 +141,14 @@ export function PaywallScreen() {
     return (
       <View style={{ flex: 1, backgroundColor: colors.bg }}>
         {close}
-        <ScrollView contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.xl }}>
+        {/*
+        KLAVYE ACIKKEN ILK DOKUNUS DUGMEYE GITMELI.
+        `keyboardShouldPersistTaps` verilmemişti: promo kodu yazan kullanıcı
+        "Uygula"ya bastığında ilk dokunuş yalnız klavyeyi kapatıyor, kodu
+        uygulamak için ikinci kez basmak gerekiyordu. On iki kaydırılabilir
+        yüzeyin on ikisi bunu veriyor, bu ekran tek istisnaydı.
+      */}
+      <ScrollView keyboardShouldPersistTaps="handled" contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.xl }}>
           <View style={{ alignItems: "center", marginTop: spacing.sm, marginBottom: spacing.lg }}>
             <View style={[{ width: 84, height: 84, borderRadius: radii.xl, alignItems: "center", justifyContent: "center", backgroundColor: colors.primary }, softShadow(colors.primary, 12)]}>
               <CrownIcon color={colors.onPrimary} size={44} />
