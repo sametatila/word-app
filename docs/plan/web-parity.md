@@ -4125,3 +4125,37 @@ Mobil tip taramasında (§11.80) kalan yedi alan (`weekStart`, `completedAt`,
 `usernameChangedAt`, `wagerXp`, `taskId`, `taskNo`, `byTask`) **iki tarafta da**
 çizilmiyor — parite farkı değil. `byTask` bir gün ikinci bir kırılım paneli
 olabilir; bugün `byGoal` yeterli sayıldı.
+
+### 11.83 Şıkkın sonucu ekran okuyucuya söylenmiyordu
+
+§11.82'nin aracını ters yönde çalıştırdım: taban sözlükte olup **yalnız
+mobilde** çağrılan anahtarlar. 274 aday; `walkmode` (31) ve `notifprime` (10)
+gibi kümeler mobil-özgü ekranlar, `lesson` ve `item` mobilin kendi akışları.
+`rounds` kümesindeki iki tanesi gerçekti.
+
+**`rounds.a11y_correct` ve `rounds.a11y_wrong` webde hiç çağrılmıyordu.**
+Ölçüm şunu gösterdi: yedi oyunun **beşinde** şıkkın doğru mu yanlış mı olduğu
+yalnız **renkle** anlatılıyor; ikisinde simge var ama simgenin erişilebilir adı
+yok (`icons.tsx` `aria-hidden="true"` veriyor). Yani cevabını verdikten sonra
+şıklara dönen ekran okuyucu kullanıcısı hangisinin doğru olduğunu hiçbir yoldan
+öğrenemiyordu. Sonuç şeridi (`round-sheet`) `aria-live` ile hükmü söylüyor ama
+hangi **şıkkın** doğru olduğunu söylemiyor.
+
+Android'de bu iş tek bir paylaşılan düğmede çözülü (`game/rounds`
+`OptionButton`): her oyunda hem simge hem `accessibilityHint`. Webde ortak bir
+düğme yok, o yüzden ortak olan işaret: `OptionMark` — simge + `role="img"` +
+erişilebilir ad. Beş oyuna eklendi, ikisinde elle yazılmış simgelerin yerini
+aldı. Renk körlüğü için de kazanç: beş oyunda artık simge de var.
+
+#### Ölçülüp iş çıkmayanlar
+
+**`speak` turu** mobilde ekranda çiziliyor, webde hiç çizilmiyor — ve bu doğru:
+`composeWalk` dışında hiçbir yerde üretilmiyor, yani normal oturumda böyle bir
+tur yok. Webin `types.ts`'teki "ekran oyunlarının hiçbiri bunu render etmez"
+notu eksiksiz.
+
+`rounds.got_it` / `rounds.struggled` / `rounds.show_answer` da o turun
+parçaları; `rounds.hint` (web) ile `rounds.show_hint` (mobil) ise aynı düğmenin
+iki ayrı anahtarı — metin aynı, yalnız ad ayrışmış. Bugün ikisi de doğru
+çalışıyor, tek zararı sözlükte iki satır; birleştirmek yayımlanmış mobil
+sürümleri kırar, o yüzden dokunulmadı.
