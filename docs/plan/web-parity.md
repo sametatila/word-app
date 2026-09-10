@@ -3098,3 +3098,37 @@ Aynı sebeple `i18n:check` şu an kırmızı (18 dizge / taban 14) ve TABAN
 YENİLENMEDİ: fazladan dört dizge o iki izlenmeyen dosyada, benim
 değişikliğim sıfır dizge ekliyor. Başka bir oturumun yarım işini cırcıra
 yazmak, onların borcunu benim kapımdan geçirmek olurdu.
+
+### 11.57 Webin azaltılmış hareket bloğu framer-motion'ı hiç kapsamıyordu
+
+§11.56'da mobili bağladım; bu turda webin kendi kapsamını ölçtüm ve simetrik
+bir boşluk çıktı.
+
+`globals.css`teki blok iyi yazılmış: `[data-stagger]` çocukları yerinde
+gösteriliyor, `.animate-shake`/`.animate-glow` duruyor, `.pressable:active`
+ölçeği kalkıyor ve sonunda genel bir süpürge var -
+`*, *::before, *::after { animation-duration: 0.01ms; transition-duration: 0.01ms }`.
+Blok CSS animasyonlarının hepsini kesiyor.
+
+**Ama framer-motion CSS geçişi KULLANMIYOR.** Satır içi `transform`u kendi
+zamanlayıcısıyla sürüyor, yani o süpürge ona hiç dokunmuyor. Ölçüm:
+
+    framer-motion kullanan bileşen        49
+    tercihi okuyan (useStill/reducedMotion) 8
+    `whileTap` ölçeği (JS, CSS ile kapatılamaz)  11 çağrı / 7 dosya
+
+Yani ders oynatıcısının mikrofon düğmesi, dinleme turunun düğmesi, sıralama ve
+karıştırma karoları, doğru/yanlış düğmeleri, hoparlör - tercihi açık olan
+kullanıcıda hepsi basınca hâlâ küçülüyordu.
+
+Düzeltme tek yerden: `MotionProvider` (`MotionConfig reducedMotion="user"`)
+kök yerleşime eklendi. Kütüphane tercihi kendisi okuyup dönüşüm ve düzen
+animasyonlarını atlıyor, hareket İÇERMEYEN opaklık geçişlerini bırakıyor.
+Kırk dokuz dosyaya `useStill()` serpmek yerine bir sarmalayıcı - ve yeni bir
+bileşen eklendiğinde kimsenin bir şey hatırlamasına gerek yok.
+
+İki platformun çözümü bu yüzden farklı biçimde: webde tek bir animasyon
+kütüphanesi var ve tek sarmalayıcı hepsini kapsıyor; mobilde `Animated`
+sürücüleri tek tek yazılmış, o yüzden sekiz yüzey tercihi tek tek okuyor
+(§11.56). Sonuç aynı: tercih açıkken iki uygulamada da hareket kalkıyor,
+bilgi kalıyor.

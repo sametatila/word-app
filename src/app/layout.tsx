@@ -3,6 +3,7 @@ import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import { getLang } from "@/lib/i18n/server";
 import { LangProvider } from "@/lib/i18n/client";
+import { MotionProvider } from "@/components/motion-provider";
 
 /**
  * Paylaşılan bağlantının nasıl göründüğü.
@@ -137,7 +138,11 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
       </head>
       <body className="min-h-dvh antialiased">
-        <LangProvider lang={lang}>{children}</LangProvider>
+        {/* Hareket tercihi framer-motion'a da geçsin: CSS medya sorgusu
+            kütüphanenin satır içi animasyonlarını kesmiyor. */}
+        <LangProvider lang={lang}>
+          <MotionProvider>{children}</MotionProvider>
+        </LangProvider>
       </body>
     </html>
   );
