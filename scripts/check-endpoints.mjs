@@ -111,7 +111,6 @@ const WEB_ONLY_METHOD = {
   "DELETE /api/push/subscribe": "TARAYICI push aboneligi; mobil FCM (/api/push/device)",
   "PUT /api/push/subscribe": "TARAYICI push aboneligi",
   "POST /api/push/subscribe": "TARAYICI push aboneligi",
-  "PUT /api/skills": "yerelden sunucuya tasima (web localStorage gecmisi); mobilde tasinacak eski kayit yok",
   "POST /api/stt": "mobil ayni ucu NATIVE cagiriyor (Kotlin uploadStt) - JS kaynaginda gorunmez",
   "POST /api/session": "tur ORTASI ilerleme damgasi; mobil ilerlemeyi cevaplarla birlikte /api/answers'a yaziyor",
   "POST /api/pronounce": "telaffuz puani - karar bekliyor (web-parity 11.139)",

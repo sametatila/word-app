@@ -14,7 +14,7 @@ import { KIND_KEY, type ItemKind } from "../data/unit";
 import { getExercise, type ListeningSegment } from "../data/skills";
 import { QuestionList, GlossPanel, WritingList, type WritingTask } from "../game/skillQuiz";
 import { GrammarBody, SpeakingDrill, MonologueBody, type SpeakingTask } from "../game/skillLibrary";
-import { markItemDone, recordItemScore } from "../game/lessonProgress";
+import { markItemDone, recordItemScore, queueItemRecord } from "../game/lessonProgress";
 import { speakTarget } from "../lib/tts";
 import { API_BASE, fetchWithTimeout } from "../api/client";
 import { bumpStats } from "../lib/statsSignal";
@@ -134,7 +134,12 @@ export function ItemScreen() {
         if (typeof d.lastScore === "number") void recordItemScore(exercise.id, d.lastScore);
         bumpStats(); // XP/seri değişti
       }
-    } catch { /* çevrimdışı: yerel işaret yeterli */ }
+    } catch {
+      /* ÇEVRİMDIŞI: sonuç kuyruğa alınıyor ve bir sonraki bağlantıda
+         taşınıyor. Eskiden yalnız yerel işaret kalıyordu ve sunucu bu
+         egzersizi HİÇ öğrenmiyordu - cihaz değişince gidiyordu. */
+      void queueItemRecord(exercise.id, c, total);
+    }
   }
 
   function retry() {

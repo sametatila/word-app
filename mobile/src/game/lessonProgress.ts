@@ -36,6 +36,37 @@ export function isItemDoneSync(id: string): boolean {
 const SCORE_KEY = "lernomi-item-scores";
 let scoreCache: Record<string, number> | null = null;
 
+/**
+ * ÇEVRİMDIŞI BİTİRİLENİN KENDİ KAYDI.
+ *
+ * Egzersiz bitince sonuç sunucuya yazılıyor, ama ağ yoksa o istek düşüyor ve
+ * bir daha DENENMİYORDU: kullanıcı metroda çalıştığı egzersizi cihaz
+ * değiştirince kaybediyordu. Sunucuya taşımak için `correct`/`total` gerekiyor
+ * (`PUT /api/skills` bunları istiyor); yalnız puan yetmiyor.
+ */
+const PENDING_KEY = "lernomi-items-pending";
+type PendingRecord = { id: string; correct: number; total: number; at: string };
+let pendingCache: Record<string, PendingRecord> | null = null;
+
+async function getPending(): Promise<Record<string, PendingRecord>> {
+  if (pendingCache) return pendingCache;
+  try {
+    const raw = await AsyncStorage.getItem(PENDING_KEY);
+    pendingCache = raw ? (JSON.parse(raw) as Record<string, PendingRecord>) : {};
+  } catch {
+    pendingCache = {};
+  }
+  return pendingCache;
+}
+
+/** Sunucuya yazılamayan sonuç — bir sonraki bağlantıda taşınacak. */
+export async function queueItemRecord(id: string, correct: number, total: number): Promise<void> {
+  const q = await getPending();
+  q[id] = { id, correct, total, at: new Date().toISOString() };
+  pendingCache = q;
+  try { await AsyncStorage.setItem(PENDING_KEY, JSON.stringify(q)); } catch { /* yut */ }
+}
+
 export async function getItemScores(): Promise<Record<string, number>> {
   if (scoreCache) return scoreCache;
   try {
@@ -61,6 +92,16 @@ export async function getItemScores(): Promise<Record<string, number>> {
  */
 export async function syncItemProgress(level?: string): Promise<void> {
   try {
+    /* ÖNCE BEKLEYENLER GİDİYOR. Web aynı ucu (`PUT /api/skills`) yerel
+       geçmişini taşımak için kullanıyor; mobilde taşınacak şey çevrimdışı
+       bitirilmiş egzersizler. Uç idempotent (en iyi sonucu tutuyor), o yüzden
+       yeniden gönderim zararsız. */
+    const bekleyen = Object.values(await getPending());
+    if (bekleyen.length) {
+      await api("/api/skills", { method: "PUT", body: JSON.stringify({ records: bekleyen.slice(0, 200) }) });
+      pendingCache = {};
+      try { await AsyncStorage.removeItem(PENDING_KEY); } catch { /* yut */ }
+    }
     const r = await api<{ progress?: Record<string, { correct: number; total: number; lastScore: number | null; lastAt: string }> }>(
       `/api/skills${level ? `?level=${encodeURIComponent(level)}` : ""}`,
     );
