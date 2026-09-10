@@ -1389,19 +1389,43 @@ okumuyordu: 6.627 dizenin SIFIRI uygulamaya ulaşıyordu. Yazılanı ölçen
 kapı bunu göremez, çünkü sorduğu soru bu değil. `check:mock-native`
 eklendikten sonra aynı boşluk bir daha sessiz kalamaz.
 
-### Web taraması: başka boşluk yok (2026-09-10)
+### Web taraması: iki boşluk çıktı, ikisi de kapandı (2026-09-10)
 
-Türkçe alan gösteren her dosya, çözücü çağıran her dosyayla karşılaştırıldı.
-Fark eden dosyaların tamamı istemci bileşeni ve hepsi zaten çevrilmiş
-nesneyi sunucu sayfasından prop olarak alıyor. Tek gerçek boşluk çıktı ve
-düzeltildi: `/api/mock-exam` `finish` yanlış maddelerin `explain`
-cümlelerini KAYNAK kâğıttan okuyup modele gerekçe olarak veriyordu —
-cevabın dili doğru, dayanağı Türkçeydi.
+**Birinci tarama — ÇAĞIRAN taraması.** Türkçe alan gösteren her dosya,
+çözücü çağıran her dosyayla karşılaştırıldı. Fark eden dosyaların tamamı
+istemci bileşeni ve hepsi zaten çevrilmiş nesneyi sunucu sayfasından prop
+olarak alıyor. Bir boşluk çıktı: `/api/mock-exam` `finish`, yanlış
+maddelerin `explain` cümlelerini KAYNAK kâğıttan okuyup modele gerekçe
+olarak veriyordu — cevabın dili doğru, dayanağı Türkçeydi.
 
 Patika kancasındaki `titleTr` ayrıca bakıldı: web onu HİÇ çizmiyor
 (`immersion-hub` yalnız Almanca `title` gösteriyor), `/api/immersion`
 üzerinden yalnız mobile gidiyor. `genre` de bakıldı ve Türkçe değil —
 26 benzersiz değerin hepsi makine anahtarı (`dialogue`, `formal`, `phone`).
+
+**İkinci tarama — ÇIKTI taraması, ve asıl bulan bu oldu.** Çağıran
+taraması doğru yerde çözücünün çağrıldığını gösteriyor ama çözücünün o
+nesnenin TAMAMINI kapsadığını göstermiyor. `check:mock-native`e "çözülmüş
+kâğıdın her dizesine bak, alan adına bakmadan" ölçütü eklendi ve ilk
+koşuşunda **408 dize** buldu: metinlerin `gloss` sözlükçeleri hiç
+katlanmıyordu. Ölçüldü — 857 maddenin 857'sinde `en` dolu, yani yazılacak
+hiçbir şey yoktu, yalnız hangi sütunun gösterileceği seçilmemişti.
+
+**Ders alınan:** "çözücü çağrılıyor mu" ile "çözücü her şeyi kapsıyor mu"
+AYRI iki soru ve ilkine bakan bir tarama ikincisini hiç görmüyor. Alan
+adına bakan her ölçüt, ancak BİLDİĞİ alanlar kadar geniş.
+
+**Yan bulgu — `isTurkishStem`de iki kusur.** Taramanın son bir dizesi
+gerçek bir yanlış pozitifti: "address the 'a one-off cost' argument"
+içindeki `'a`, Türkçe yönelme eki sanılıyordu. Düzeltilirken ikincisi
+çıktı: ek ölçütü SÖZCÜK düzeyinde çalışıyor ve büyük harfli sözcükleri
+eliyordu, yani `Jonas'ın`, `Hamburg'da`, `Türkiye'den` gibi ASIL hedefini
+hiç görmüyordu. Yeni kural bütün dizede arıyor ve kesme işaretinden önce
+boşluk olmamasını şart koşuyor; ölçüldü, 95.188 benzersiz dizede **29
+kazanıyor, 0 kaybediyor**.
+
+Yazılıp hiç çalışmayan bir kural, kapının en sessiz kusuru: liste doluyor,
+ölçüm hiç değişmiyor. Bu hatta ikinci kez oldu (ilki `\b`nin ASCII olması).
 
 ### MOBİL: İngilizce yüz hiç yok (2026-09-10 ölçümü)
 
