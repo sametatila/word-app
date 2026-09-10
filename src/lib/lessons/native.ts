@@ -56,6 +56,13 @@ export type NativeDict = {
    * KENDİSİ: kaynak konumsal kısayollarla yazıldığı için alanların adı yok.
    */
   script: Record<string, string>;
+  /**
+   * Modül sınavı kâğıtlarının Türkçe alanları — anahtar yine dizenin kendisi.
+   *
+   * `canDo` ve `writing.phrases` BURADA YOK: ikisinde de `en` alanı kaynakta
+   * ZATEN dolu (290/290). Çözücü onları sözlükten değil kaynaktan okuyor.
+   */
+  exam: Record<string, string>;
 };
 
 /*
@@ -209,3 +216,81 @@ export function resolveLesson(dict: NativeDict, lesson: Lesson): Lesson | null {
     lecture,
   };
 }
+
+/**
+ * Modül sınavı kâğıdını öğrencinin ana diline çevirir.
+ *
+ * Kâğıt ÜÇ dilli bir nesne ve üçünün rolü ayrı: Almanca ölçülen dil, Türkçe
+ * (ya da İngilizce) öğrencinin dili, şıklar Almanca. Çevrilen yalnız orta
+ * sütun — `titleDe`, replik `de`si, soru kökünün `de`si, şıklar, okuma metni
+ * ve örnek cevap OLDUĞU GİBİ kalıyor. Sınav Almanca ölçüyor; onları çevirmek
+ * sınavı ortadan kaldırırdı.
+ *
+ * `canDo` ve `writing.phrases` sözlükten GEÇMİYOR: ikisinin de `en` alanı
+ * kaynakta zaten dolu. Aynı şey için iki doğruluk kaynağı tutmak, ayrıştıkları
+ * gün hangisinin doğru olduğunu bilinemez hâle getirir.
+ *
+ * Ders çözücüsüyle aynı kural: HEP YA HİÇ. Tek bir yönerge Türkçe kalırsa
+ * kâğıt reddediliyor — yarı Türkçe bir sınav kâğıdı, öğrencinin okuduğu
+ * yönergeye güvenemediği bir kâğıttır.
+ */
+export function resolveExam<T extends ExamShape>(dict: NativeDict, plan: T): T | null {
+  let failed = false;
+  const t = (s: string): string => {
+    const en = dict.exam[s];
+    if (en === undefined) failed = true;
+    return en ?? s;
+  };
+  const en = (g: { en?: string; tr: string }): string => {
+    if (!g.en?.trim()) failed = true;
+    return g.en ?? g.tr;
+  };
+
+  const out = {
+    ...plan,
+    titleTr: t(plan.titleTr),
+    focus: plan.focus.map((f) => ({ ...f, tr: t(f.tr) })),
+    canDo: plan.canDo.map((c) => ({ ...c, tr: en(c) })),
+    listening: {
+      ...plan.listening,
+      titleTr: t(plan.listening.titleTr),
+      situation: t(plan.listening.situation),
+      turns: plan.listening.turns.map((x) => ({ ...x, tr: t(x.tr) })),
+      questions: plan.listening.questions.map((q) => ({ ...q, tr: t(q.tr) })),
+    },
+    reading: {
+      ...plan.reading,
+      titleTr: t(plan.reading.titleTr),
+      genre: t(plan.reading.genre),
+      questions: plan.reading.questions.map((q) => ({ ...q, tr: t(q.tr) })),
+    },
+    speaking: plan.speaking.map((s) => ({ ...s, situation: t(s.situation), tr: t(s.tr) })),
+    writing: {
+      ...plan.writing,
+      prompt: t(plan.writing.prompt),
+      checklist: plan.writing.checklist.map(t),
+      phrases: plan.writing.phrases.map((g) => ({ ...g, tr: en(g) })),
+    },
+  };
+  return failed ? null : (out as T);
+}
+
+/**
+ * `resolveExam`in dokunduğu alanlar. Tipi `ModuleExamPlan`den ALMIYORUZ:
+ * çözücü tarayıcıda da derlenen bir modül, sınav tipleri ise sunucu tarafının
+ * ağır ağacını (`skills/types`) çekiyor. Yapısal tanım ikisini ayrı tutuyor.
+ */
+export type ExamShape = {
+  titleTr: string;
+  focus: { tr: string }[];
+  canDo: { tr: string; en?: string }[];
+  listening: {
+    titleTr: string;
+    situation: string;
+    turns: { tr: string }[];
+    questions: { tr: string }[];
+  };
+  reading: { titleTr: string; genre: string; questions: { tr: string }[] };
+  speaking: { situation: string; tr: string }[];
+  writing: { prompt: string; checklist: string[]; phrases: { tr: string; en?: string }[] };
+};

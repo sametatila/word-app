@@ -1,7 +1,8 @@
 import { NextResponse } from "next/server";
 import { getUserId, getUserInfo } from "@/lib/auth/server";
 import { ensureProfile } from "@/lib/session";
-import { examById, examCando, SECTION_TITLE_KEYS, SECTION_TITLE_DE, type ExamSectionId } from "@/lib/exam";
+import { examById, SECTION_TITLE_KEYS, SECTION_TITLE_DE, type ExamSectionId } from "@/lib/exam";
+import { localiseExam } from "@/lib/lessons/native-server";
 import { translate, formatPercent, isNativeLang, DEFAULT_NATIVE } from "@/lib/i18n/dict";
 import { moduleExamPlan } from "@/lib/lessons/module-exam";
 
@@ -34,12 +35,18 @@ export async function GET(_req: Request, ctx: { params: Promise<{ id: string }> 
   // profilden: bu ucu mobil de çağırıyor ve orada web çerezimiz yok.
   const lang = isNativeLang(profile.nativeLang) ? profile.nativeLang : DEFAULT_NATIVE;
   const name = esc(profile.displayName ?? info?.name ?? translate(lang, "social.student"));
-  const plan = exam.module === null ? undefined : moduleExamPlan(exam.level, exam.module);
+  /* Sertifikanın Almanca yüzü sabit; altındaki karşılık öğrencinin dilinde.
+     `canDo` kâğıdın kendisinden okunuyor — `examCando` ayrı bir çağrı olsaydı
+     çevrilmemiş bir ikinci kopya döndürürdü. */
+  const plan = await localiseExam(
+    exam.module === null ? undefined : moduleExamPlan(exam.level, exam.module),
+    lang,
+  );
   const kicker = exam.kind === "level" ? `${exam.level} · Niveauprüfung` : `Modulprüfung ${plan?.code ?? `${exam.level}.${(exam.module ?? 0) + 1}`}`;
   const title = plan ? plan.titleDe : exam.kind === "level" ? `Prüfung ${exam.level}` : `Modul ${(exam.module ?? 0) + 1}`;
   const subtitle = plan ? plan.titleTr : "";
   const date = exam.at.slice(0, 10);
-  const cando = examCando(exam.level, exam.module).slice(0, 5);
+  const cando = (plan?.canDo ?? []).slice(0, 5);
 
   const rowTop = 330;
   const rows = exam.sections

@@ -12,6 +12,7 @@ import {
   type ProduceItem as LessonProduceItem,
 } from "@/lib/lessons/module-content";
 import { moduleExamPlan, type ExamCando, type ModuleExamPlan } from "@/lib/lessons/module-exam";
+import { localiseExam } from "@/lib/lessons/native-server";
 import { makeRound, toRoundWord, weekStart , ensureProfile } from "@/lib/session";
 import { seededShuffle } from "@/lib/shuffle";
 import { BUNDLED_EXERCISES } from "@/lib/skills/bundled";
@@ -221,7 +222,9 @@ export async function buildExam(userId: string, course: string, level: CefrLevel
   const seed = `${userId}|${examKindKey(kind, level, module)}|${weekStart(today)}`;
   const c = COUNTS[kind];
   const trial = kind === "module" ? !(await modulePrereq(userId, course, level, module!)) : false;
-  const plan = kind === "module" ? moduleExamPlan(level, module!) : undefined;
+  /* Kâğıdın Türkçe yarısı öğrencinin ana dilinde: yönerge, durum, replik
+     karşılığı ve soru kökünün altı. Almanca yarısı — ölçülen şey — sabit. */
+  const plan = await localiseExam(kind === "module" ? moduleExamPlan(level, module!) : undefined, native);
   const content = kind === "module" ? moduleContent(course, level, module!) : null;
 
   // Kelime: modül kelimeleri (ders başlıkları) ya da seviyenin sık kelimeleri.
@@ -314,8 +317,14 @@ export async function buildExam(userId: string, course: string, level: CefrLevel
       // beceri düğümü yok) ve zaten yalnız A1 ile B1'de vardı — A2/B2/C1
       // seviye sınavları sessizce konuşmasız kalıyordu. Modül kâğıtları elle
       // yazılmış ve her seviyede fazlasıyla madde taşıyor.
-      const havuz = Array.from({ length: moduleCount(level) }, (_, i) => moduleExamPlan(level, i + 1))
-        .flatMap((p) => (p ? p.speaking.map((sp, i) => ({ ...sp, code: p.code, i })) : []));
+      /* Seviye sınavının konuşma maddeleri modül kâğıtlarından geliyor, yani
+         `plan` boşken de ana dile çevrilmeleri gerekiyor — yukarıdaki tek
+         kâğıtlık çeviri buraya ulaşmıyor. */
+      const havuz = (
+        await Promise.all(
+          Array.from({ length: moduleCount(level) }, (_, i) => localiseExam(moduleExamPlan(level, i + 1), native)),
+        )
+      ).flatMap((p) => (p ? p.speaking.map((sp, i) => ({ ...sp, code: p.code, i })) : []));
       for (const sp of seededShuffle(havuz, `${seed}|speaking`)) {
         if (speaking.length >= c.speaking) break;
         speaking.push({ id: `s:${sp.code}:${sp.i}`, de: sp.de, tr: sp.tr, situation: sp.situation });

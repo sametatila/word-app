@@ -93,7 +93,19 @@ for (const r of read("script")) script[r.tr] = r.en;
 const cando = {};
 for (const r of read("cando")) cando[r.id] = r.en;
 
-const data = { lecture, lectureSplit, frames, ordinals, notes, vocab, patterns, meta, roleplay, cando, script };
+/**
+ * Modül sınavı kâğıtları. Anahtar dizenin kendisi: aynı Türkçe on üç ayrı
+ * alanda geçebiliyor (replik, soru kökü, ölçüt, yönerge) ve hepsinde aynı
+ * şeyi söylüyor — çıkarıcı da zaten `tr`ye göre tekilleştiriyor.
+ *
+ * `canDo` BURADA YOK ve olmamalı: `ExamCando` tipinde `en` alanı zaten var
+ * ve 290'ın 290'ı dolu. İkinci bir doğruluk kaynağı açmak, ikisi ayrışınca
+ * hangisinin doğru olduğunu bilinemez hâle getirirdi.
+ */
+const exam = {};
+for (const r of read("exam")) exam[r.tr] = r.en;
+
+const data = { lecture, lectureSplit, frames, ordinals, notes, vocab, patterns, meta, roleplay, cando, script, exam };
 
 mkdirSync(OUT, { recursive: true });
 writeFileSync(`${OUT}native-en.json`, `${JSON.stringify(data)}\n`);
@@ -102,5 +114,5 @@ const n = (o) => Object.keys(o).length;
 console.log(
   "native-en.json yazıldı\n" +
     `  anlatım ${n(lecture)} (+${n(lectureSplit)} bölünmüş) · çerçeve ${n(frames)} · sıra ${n(ordinals)} · not ${n(notes)}\n` +
-    `  sözlükçe ${n(vocab)} · kalıp ${n(patterns)} · ders ${n(meta)} · rol yapma ${n(roleplay)} · can-do ${n(cando)} · senaryo ${n(script)}`,
+    `  sözlükçe ${n(vocab)} · kalıp ${n(patterns)} · ders ${n(meta)} · rol yapma ${n(roleplay)} · can-do ${n(cando)} · senaryo ${n(script)} · sınav ${n(exam)}`,
 );

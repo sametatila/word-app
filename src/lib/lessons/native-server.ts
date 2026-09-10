@@ -1,6 +1,6 @@
 import "server-only";
 import type { Lesson } from "./types";
-import { resolveLesson, type NativeDict } from "./native";
+import { resolveLesson, resolveExam, type NativeDict, type ExamShape } from "./native";
 import { DEFAULT_NATIVE, type NativeLang } from "@/lib/courses";
 
 /**
@@ -95,4 +95,45 @@ export async function nativeCando(
   const dict = await nativeDict();
   if (!dict) return null;
   return ids.map((id) => dict.cando[id]).filter((t): t is string => Boolean(t));
+}
+
+/**
+ * Modül sınavı kâğıdını ana dile çevirir; çeviremezse kâğıdı OLDUĞU GİBİ döner.
+ *
+ * Ders çözücüsüyle aynı geri düşüş: yarım değil, tümden Türkçe. Kâğıt
+ * Almancayı ölçmeye devam ediyor — çevrilen yalnız yönergeler, durumlar ve
+ * soru köklerinin altındaki karşılık.
+ */
+export async function localiseExam<T extends ExamShape>(
+  plan: T | undefined,
+  lang: NativeLang | null | undefined,
+): Promise<T | undefined> {
+  if (!plan || !lang || lang === DEFAULT_NATIVE || lang !== "en") return plan;
+  const dict = await nativeDict();
+  if (!dict) return plan;
+  const out = resolveExam(dict, plan);
+  if (!out) {
+    console.warn("[native] sınav kâğıdı çevrilemedi, Türkçe kalıyor");
+    return plan;
+  }
+  return out;
+}
+
+/**
+ * Sınav kâğıdının TEK bir Türkçe alanını çeviren eşleyici — liste satırları
+ * için. Bütün kâğıdı çözmek gerekmeyen yerlerde kullanılıyor.
+ *
+ * BURADA HEP-YA-HİÇ YOK, bilerek. `resolveExam` bir alan bile eksikse kâğıdı
+ * reddediyor çünkü yarım bir sınav kâğıdı öğrencinin yönergeye güvenemediği
+ * bir kâğıt. Liste satırı öyle değil: satırın kimliği ALMANCA başlık
+ * (`titleDe`) ve o yanında zaten duruyor. Karşılığı bulunamayan bir alt
+ * başlık lekedir; satırı düşürmek ise o modülün sınavını gizler.
+ */
+export async function nativeExamText(
+  lang: NativeLang | null | undefined,
+): Promise<(tr: string) => string> {
+  if (!lang || lang === DEFAULT_NATIVE || lang !== "en") return (tr) => tr;
+  const dict = await nativeDict();
+  if (!dict) return (tr) => tr;
+  return (tr) => dict.exam[tr] ?? tr;
 }

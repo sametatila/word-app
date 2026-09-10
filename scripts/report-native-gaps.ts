@@ -97,11 +97,15 @@ const uniq = (xs: Iterable<string | undefined | null>) => {
   }
   const u = uniq(texts);
   /*
-    `ExamCando.en` ZATEN VAR ve doluydu: kâğıtları yazan taraf İngilizceyi
-    baştan düşünmüş. Kapsanan sayısı bu yüzden sıfır değil — kalemin
-    tamamı sıfırdan yazılmayacak.
+    İki kaynak birden sayılıyor. `ExamCando.en` ZATEN VARDI ve doluydu —
+    kâğıtları yazan taraf İngilizceyi baştan düşünmüş; `writing.phrases`
+    de öyle. Geri kalan her şey `exam` hattından geliyor. Bir dizeyi iki
+    kaynak da karşılıyorsa bir kez sayılıyor.
   */
-  rows.push({ kalem: "modül sınavı", benzersiz: u.size, hat: null, kapsanan: candoEn ? uniq(plans.flatMap((p) => p.canDo.filter((c) => c.en?.trim()).map((c) => c.tr))).size : 0 });
+  const cando = uniq(plans.flatMap((p) => p.canDo.filter((c) => c.en?.trim()).map((c) => c.tr)));
+  let covered = 0;
+  for (const tr of u) if (dict?.exam?.[tr] !== undefined || cando.has(tr)) covered++;
+  rows.push({ kalem: "modül sınavı", benzersiz: u.size, hat: "exam", kapsanan: candoEn ? covered : 0 });
 }
 
 // ── Rapor ─────────────────────────────────────────────────────────────

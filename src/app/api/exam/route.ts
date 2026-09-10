@@ -5,6 +5,8 @@ import { sameOrigin } from "@/lib/auth/origin";
 import { ensureProfile, submitAnswers } from "@/lib/session";
 import { buildExam, examHistory, finishExam, modulePrereq, type ExamSubmission, type ExamSectionId } from "@/lib/exam";
 import { moduleExamPlan, hasModuleExams } from "@/lib/lessons/module-exam";
+import { localiseExam, nativeExamText } from "@/lib/lessons/native-server";
+import { nativeOf } from "@/lib/courses";
 import { track } from "@/lib/events";
 import { cleanDetail, isErrorType } from "@/lib/errors";
 import { GAME_LABEL_KEYS, type Answer, type GameId } from "@/lib/types";
@@ -37,7 +39,10 @@ export async function GET(req: Request) {
     const profile = await ensureProfile(userId);
     /* Modül sınavı planları Almanca yazılmış ve kurs boyutu yok (bkz.
        `hasModuleExams`): kursu olmayan kullanıcıya kapak da gösterilmiyor. */
-    const plan = hasModuleExams(profile.course ?? "de") ? moduleExamPlan(level, Number(mod)) : undefined;
+    const plan = await localiseExam(
+      hasModuleExams(profile.course ?? "de") ? moduleExamPlan(level, Number(mod)) : undefined,
+      nativeOf(profile.nativeLang),
+    );
     /*
      * DENEME BİLGİSİ DE KAPAKTA. Modülün konuşmaları yeterince geçilmediyse
      * sonuç sayılmıyor; bunu yalnız sınav bittikten sonra söylemek sırayı
@@ -64,10 +69,11 @@ export async function GET(req: Request) {
    */
   if (level) {
     const listProfile = await ensureProfile(userId);
+    const t = await nativeExamText(nativeOf(listProfile.nativeLang));
     const modules = (hasModuleExams(listProfile.course ?? "de") ? [...Array(21).keys()] : [])
       .map((i) => ({ index: i, plan: moduleExamPlan(level, i) }))
       .filter((m) => m.plan)
-      .map(({ index, plan }) => ({ index, code: plan!.code, titleDe: plan!.titleDe, titleTr: plan!.titleTr }));
+      .map(({ index, plan }) => ({ index, code: plan!.code, titleDe: plan!.titleDe, titleTr: t(plan!.titleTr) }));
     return NextResponse.json({ modules }, { headers: { "cache-control": "private, max-age=3600" } });
   }
   try {

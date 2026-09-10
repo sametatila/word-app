@@ -9,6 +9,8 @@ import { ImmersionHub } from "@/components/immersion/immersion-hub";
 import { AppHeader } from "@/components/app-header";
 import { buildHubUnits } from "@/lib/immersion/hub";
 import { moduleExamPlan, hasModuleExams } from "@/lib/lessons/module-exam";
+import { nativeExamText } from "@/lib/lessons/native-server";
+import { nativeOf } from "@/lib/courses";
 import { titleMeta } from "@/lib/page-meta";
 
 export const dynamic = "force-dynamic";
@@ -30,13 +32,18 @@ export default async function ImmersionPage() {
 
   let profileLevel: CefrLevel = "A1";
   let course = "de";
+  let native: string | null = null;
   try {
     const profile = await ensureProfile(user.id, user.name);
     if (LEVELS.includes(profile.level as CefrLevel)) profileLevel = profile.level as CefrLevel;
     course = profile.course;
+    native = profile.nativeLang;
   } catch (err) {
     console.error("[immersion] profil okunamadı", err);
   }
+  // Modül sınavı satırlarının alt başlığı öğrencinin dilinde; üst satır
+  // (Almanca modül adı) kâğıdın kimliği ve değişmiyor.
+  const examText = await nativeExamText(nativeOf(native));
 
   // CEFR seçimi buradan YAPILAMAZ — kullanıcı kendi seviyesindedir; seviye
   // yerleştirme testiyle belirlenir, patika ekranından değiştirilmez.
@@ -55,7 +62,7 @@ export default async function ImmersionPage() {
   const moduleExams = (hasModuleExams(course) ? [...Array(21).keys()] : [])
     .map((i) => ({ index: i, plan: moduleExamPlan(level, i) }))
     .filter((m): m is { index: number; plan: NonNullable<ReturnType<typeof moduleExamPlan>> } => Boolean(m.plan))
-    .map(({ index, plan }) => ({ index, code: plan.code, titleTr: plan.titleTr, titleDe: plan.titleDe }));
+    .map(({ index, plan }) => ({ index, code: plan.code, titleTr: examText(plan.titleTr), titleDe: plan.titleDe }));
 
   /* BU SEVİYEDE ÜNİTE YOKSA. İki durum var ve ikisi de canlı: kursun hiç
      dersi olmayabilir (gsw-zh) ya da dersleri BAZI seviyelerde bitmemiş
