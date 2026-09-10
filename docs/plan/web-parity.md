@@ -5143,3 +5143,20 @@ orası yalnız Türkçe ve kullanıcıya açık değil).
 **Ölçüldü, ayrışma değil:** `LearnScreen` ↔ `learn-hub` eşleşiyor; tek fark
 "hayatta kalma" modu ve o zaten web'e özel olarak yazılı (`learn/challenge`
 sayfası ve `pushRoute` yorumu). Tekrar ölçülmesin diye kayda geçti.
+
+### 11.131 Haftalık sınav kurallar sorulmadan başlıyordu
+
+Mobil doğrudan ilk soruya giriyordu. Söylenmeyenler: **yalnız yazarak, ipucu
+yok, tek hak** ve — en önemlisi — **yanlış bilinen kelimenin tekrar kuyruğuna
+döneceği**. Sınav bir ölçüm ve ölçümün kuralı önceden bilinmeli; §11.124'ün
+aynı dersi, bu kez haftalık sınavda. Web bir tanıtım adımı gösteriyordu.
+
+Sınav kurulamadığında sonuç ekranı **%0'lık bir halka** çiziyordu: "şu an sınav
+yok" başlığının üstünde sıfır puan, oynanmamış bir sınavdan kalınmış gibi
+okunuyordu — §11.130'un aynı hatası (boş havuz "oynadın" diye okunuyor), bu kez
+görsel olarak.
+
+Pratik ekranı da ne olduğunu söylemiyordu: turun kendi kelimelerinden
+kurulduğu, oyun türünün sabit kaldığı ve pratiğin **kaldığı yerden sürmediği**
+yalnız webdeydi. Üçü de mobilde uygulanan davranış — `GameScreen`in yükleme
+yorumu bunu ayrıntısıyla anlatıyor, ekran kullanıcıya hiç söylemiyordu.
