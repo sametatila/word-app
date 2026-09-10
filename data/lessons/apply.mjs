@@ -105,7 +105,24 @@ for (const r of read("cando")) cando[r.id] = r.en;
 const exam = {};
 for (const r of read("exam")) exam[r.tr] = r.en;
 
-const data = { lecture, lectureSplit, frames, ordinals, notes, vocab, patterns, meta, roleplay, cando, script, exam };
+/*
+  ALMANCA TAKASI — hat değil KARAR TABLOSU (`swap/en.json`, elle yazılıyor).
+  Ders öğrenciye kendisi hakkında bir cümle söyletiyorsa ("Ich bin in Izmir
+  geboren") o cümle Türk öğrenciye göre kurulmuş; İngilizce konuşan için
+  yanlış. Diyalogdaki bir KİŞİNİN Türkiyeli olması ise içerik ve kalır.
+  İngilizce taraf da dönüyor: Almancayı alıntılayan satır, altındaki cümle
+  değişince yalan söylemeye başlar.
+*/
+const swap = {};
+const swapEn = {};
+const swapFile = `${DIR}swap/en.json`;
+if (existsSync(swapFile))
+  for (const r of JSON.parse(readFileSync(swapFile, "utf8"))) {
+    for (const [from, to] of r.de) swap[r.lesson + SEP + from] = to;
+    for (const [from, to] of r.en) swapEn[r.lesson + SEP + from] = to;
+  }
+
+const data = { lecture, lectureSplit, frames, ordinals, notes, vocab, patterns, meta, roleplay, cando, script, exam, swap, swapEn };
 
 mkdirSync(OUT, { recursive: true });
 writeFileSync(`${OUT}native-en.json`, `${JSON.stringify(data)}\n`);
@@ -114,5 +131,6 @@ const n = (o) => Object.keys(o).length;
 console.log(
   "native-en.json yazıldı\n" +
     `  anlatım ${n(lecture)} (+${n(lectureSplit)} bölünmüş) · çerçeve ${n(frames)} · sıra ${n(ordinals)} · not ${n(notes)}\n` +
-    `  sözlükçe ${n(vocab)} · kalıp ${n(patterns)} · ders ${n(meta)} · rol yapma ${n(roleplay)} · can-do ${n(cando)} · senaryo ${n(script)} · sınav ${n(exam)}`,
+    `  sözlükçe ${n(vocab)} · kalıp ${n(patterns)} · ders ${n(meta)} · rol yapma ${n(roleplay)} · can-do ${n(cando)} · senaryo ${n(script)} · sınav ${n(exam)}\n` +
+    `  takas ${n(swap)} Almanca + ${n(swapEn)} İngilizce`,
 );

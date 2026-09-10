@@ -1,0 +1,56 @@
+[
+  {
+    "lesson": "de-a1-woher",
+    "why": "Adım 19 cevabı ÖĞRENCİYE atfediyor: 'Ülke söylüyorsan … şehir söylüyorsan … dersin.' Örnek değil, öğrencinin kendi cümlesi. Artikelli ülke kalıbı (aus der Türkei) bu derste öğretilmiyor — de-a1-hallo'da öğretiliyor ve orası olduğu gibi duruyor.",
+    "de": [
+      ["Ich komme aus der Türkei.", "Ich komme aus England."],
+      ["Ich wohne in Izmir.", "Ich wohne in Manchester."]
+    ],
+    "en": []
+  },
+  {
+    "lesson": "de-a1-alter",
+    "why": "'Üçüncü kalıbımız DOĞUM YERİN için' — cümle öğrencinin kendi doğum yeri. Şehir ortada, 'geboren' sonda: yapı değişmiyor.",
+    "de": [
+      ["Ich bin in Izmir geboren.", "Ich bin in Manchester geboren."],
+      ["Ich bin in Izmir geboren", "Ich bin in Manchester geboren"]
+    ],
+    "en": []
+  },
+  {
+    "lesson": "de-a1-sprachen",
+    "why": "Ders öğrenciye KENDİ dillerini saymayı öğretiyor; 'Türkisch' hem sözlükçe maddesi hem de cevabın içinde. İngilizce konuşana Türkçe bildiğini söyletmek dersin amacını tersine çeviriyor. Sözlükçe karşılığı da birlikte dönüyor, yoksa kart 'Englisch → Turkish' derdi.",
+    "de": [
+      ["Türkisch", "Englisch"],
+      ["Ja, ich spreche Türkisch und ein bisschen Deutsch.", "Ja, ich spreche Englisch und ein bisschen Deutsch."],
+      ["Ich spreche Türkisch und ein bisschen Deutsch", "Ich spreche Englisch und ein bisschen Deutsch"]
+    ],
+    "en": [
+      ["Turkish", "English"],
+      ["It means 'Turkish'. Please say", "It means 'English'. Please say"],
+      ["That is, 'Yes, I speak Turkish and a little German.'", "That is, 'Yes, I speak English and a little German.'"]
+    ]
+  },
+  {
+    "lesson": "de-b1-als-wenn",
+    "why": "Rol yapma açılışı öğrenciye bir OLGU söylüyor: 'Du bist also in Izmir aufgewachsen?' Model, öğrencinin çocukluğunu nerede geçirdiğini iddia ediyor. Anlatımdaki tekrar cümlesi de aynı biyografiyi kuruyor.",
+    "de": [
+      ["Als ich ein Kind war, wohnten wir in Izmir", "Als ich ein Kind war, wohnten wir in Manchester"],
+      ["Du bist also in Izmir aufgewachsen? Wie war deine Kindheit dort? Erzähl mal von damals.", "Du bist also in Manchester aufgewachsen? Wie war deine Kindheit dort? Erzähl mal von damals."]
+    ],
+    "en": [
+      ["a one-off event or period in the past: 'Als ich ein Kind war, wohnten wir in Izmir.' Childhood is a single period → als.", "a one-off event or period in the past: 'Als ich ein Kind war, wohnten wir in Manchester.' Childhood is a single period → als."]
+    ]
+  },
+  {
+    "lesson": "de-b1-sprache-akzent",
+    "why": "TAKAS DEĞİL DÜZELTME. 'Türkisch und Deutsch sind nicht verwandt' İngilizce öğrenci için YANLIŞ: İngilizce ile Almanca akraba diller. Alıştırmanın ölçtüğü şey çoğul öznede yüklem sıfatının çekilmemesi ve o iki cümlede de aynı; olumsuzluk kalkınca ölçüm bozulmuyor, hatta cümle öğrenciye işine yarayan bir olgu söylüyor.",
+    "de": [
+      ["Türkisch und Deutsch sind nicht verwandt.", "Englisch und Deutsch sind verwandt."],
+      ["Türkisch und Deutsch sind nicht verwandt", "Englisch und Deutsch sind verwandt"]
+    ],
+    "en": [
+      ["Last: 'Turkish and German are not related languages.'", "Last: 'English and German are related languages.'"]
+    ]
+  }
+]

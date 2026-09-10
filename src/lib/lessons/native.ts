@@ -63,6 +63,24 @@ export type NativeDict = {
    * ZATEN dolu (290/290). Çözücü onları sözlükten değil kaynaktan okuyor.
    */
   exam: Record<string, string>;
+  /**
+   * ALMANCA takas tablosu — `(ders, özgün Almanca)` → yeni Almanca.
+   *
+   * Çeviri değil KARAR. Ders öğrenciye kendisi hakkında bir cümle
+   * söyletiyorsa ("Ich bin in Izmir geboren", "Ich spreche Türkisch") o cümle
+   * Türk öğrenciye göre kurulmuş demektir; İngilizce konuşan için yanlış.
+   * Diyalogdaki BİR KİŞİNİN Türkiyeli olması ise içerik ve olduğu gibi kalır
+   * — ayıran şey cümlenin dersteki rolü. Tablo: `data/lessons/swap/en.json`.
+   */
+  swap: Record<string, string>;
+  /**
+   * İngilizce taraftaki eşi — `(ders, özgün İngilizce)` → yeni İngilizce.
+   *
+   * Almanca değişince onu ALINTILAYAN İngilizce satır da değişmeli:
+   * "Last: 'Turkish and German are not related languages.'" satırı, altındaki
+   * Almanca cümle değiştiği anda yalan söylemeye başlar.
+   */
+  swapEn: Record<string, string>;
 };
 
 /*
@@ -87,6 +105,17 @@ function fill(frame: string, word: string, note: string | null): string {
     .replace("{ — not}", note ? ` — ${note}` : "");
 }
 
+/**
+ * İngilizce takası — sözlükten okunan her ATOMİK parçaya uygulanıyor.
+ *
+ * Şablonun kurduğu satır (`It means 'Turkish'. Please say`) hiçbir dosyada
+ * durmuyor; üç parçadan çalışma anında kuruluyor. Takas bitmiş satıra
+ * uygulansaydı o satırı hiç yakalayamazdı — parçaya uygulanınca kelime
+ * karşılığı daha kurulmadan dönüyor.
+ */
+const swapEn = (dict: NativeDict, lesson: string, en: string): string =>
+  dict.swapEn[lesson + SEP + en] ?? en;
+
 /** Tek bir Türkçe parçanın İngilizcesi; bulunamazsa `null`. */
 function resolveText(
   dict: NativeDict,
@@ -95,11 +124,11 @@ function resolveText(
   prevTarget: string | null,
 ): string | null {
   const split = prevTarget ? dict.lectureSplit[text + SEP + prevTarget] : undefined;
-  if (split !== undefined) return split;
+  if (split !== undefined) return swapEn(dict, lesson, split);
   const plain = dict.lecture[text];
-  if (plain !== undefined) return plain;
+  if (plain !== undefined) return swapEn(dict, lesson, plain);
   const ordinal = dict.ordinals[text];
-  if (ordinal !== undefined) return ordinal;
+  if (ordinal !== undefined) return swapEn(dict, lesson, ordinal);
 
   for (const f of [FRAME_A, FRAME_B]) {
     const m = f.re.exec(text);
@@ -111,7 +140,7 @@ function resolveText(
     if (note !== null && noteEn === null) return null;
     const frame = dict.frames[f.tr];
     if (frame === undefined) return null;
-    return fill(frame, word, noteEn);
+    return fill(frame, swapEn(dict, lesson, word), noteEn === null ? null : swapEn(dict, lesson, noteEn));
   }
   return null;
 }
@@ -132,7 +161,14 @@ export function resolveSegments(
   let prevTarget: string | null = null;
   for (const s of segs) {
     if (s.lang !== "tr") {
-      out.push(s);
+      /*
+        SIRA KRİTİK: `prevTarget` ÖZGÜN Almancayı taşıyor, takas edilmişi
+        değil. Bölünmüş anlatım anahtarları (`lectureSplit`) ve şablonun
+        kelime araması ona bakıyor; takas edilmiş dizeyi anahtar yapsaydık
+        69 satırın karşılığı sessizce bulunamazdı. Ekrana giden metin
+        takas edilmiş, anahtar özgün.
+      */
+      out.push({ ...s, text: dict.swap[lesson + SEP + s.text] ?? s.text });
       prevTarget = s.text;
       continue;
     }
@@ -155,11 +191,21 @@ export function resolveLesson(dict: NativeDict, lesson: Lesson): Lesson | null {
   const meta = dict.meta[lesson.id];
   if (!meta) return null;
 
+  /** Almanca takası — `(ders, özgün)` → yeni. Yoksa dize olduğu gibi döner. */
+  const sw = (de: string): string => dict.swap[lesson.id + SEP + de] ?? de;
+
   const lecture: LectureStep[] = [];
   for (const step of lesson.lecture ?? []) {
     const say = resolveSegments(dict, lesson.id, step.say);
     if (!say) return null;
     let expect = step.expect;
+    /*
+      TANIMA HEDEFİ de takas ediliyor: ekranda yeni cümle duruyorsa öğrenci
+      onu söyleyecek, eskisini değil. Hedef takas edilmezse öğrenci ekranda
+      gördüğünü söyler ve konuşma her seferinde yanlış sayılır.
+    */
+    if (expect && "target" in expect && typeof expect.target === "string")
+      expect = { ...expect, target: sw(expect.target) };
     if (expect && "hint" in expect && expect.hint) {
       const hint = resolveSegments(dict, lesson.id, expect.hint);
       if (!hint) return null;
@@ -193,15 +239,15 @@ export function resolveLesson(dict: NativeDict, lesson: Lesson): Lesson | null {
       for (const r of t.replies ?? []) {
         const sayTr = dict.script[r.sayTr];
         if (sayTr === undefined) return null;
-        replies.push({ ...r, sayTr });
+        replies.push({ ...r, sayTr, say: sw(r.say) });
       }
       let fallback = t.fallback;
       if (fallback) {
         const sayTr = dict.script[fallback.sayTr];
         if (sayTr === undefined) return null;
-        fallback = { ...fallback, sayTr };
+        fallback = { ...fallback, sayTr, say: sw(fallback.say) };
       }
-      turns.push({ ...t, askTr, cue, replies, fallback });
+      turns.push({ ...t, ask: sw(t.ask), askTr, cue, replies, fallback });
     }
     script = turns;
   }
@@ -210,9 +256,20 @@ export function resolveLesson(dict: NativeDict, lesson: Lesson): Lesson | null {
     ...lesson,
     titleTr: meta.title,
     summary: meta.summary,
-    vocab: lesson.vocab.map((v) => ({ ...v, tr: dict.vocab[lesson.id + SEP + v.de] ?? v.tr })),
+    /* Arama ÖZGÜN Almancayla, gösterilen takas edilmiş: anahtar `v.de`nin
+       eski hâli, kart üstündeki kelime yenisi. */
+    vocab: lesson.vocab.map((v) => ({
+      ...v,
+      de: sw(v.de),
+      tr: swapEn(dict, lesson.id, dict.vocab[lesson.id + SEP + v.de] ?? v.tr),
+    })),
     patterns: lesson.patterns.map((p) => ({ ...p, tr: dict.patterns[lesson.id + SEP + p.de] ?? p.tr })),
-    roleplay: { ...lesson.roleplay, ...(rp ?? {}), ...(script ? { script } : {}) },
+    roleplay: {
+      ...lesson.roleplay,
+      ...(rp ?? {}),
+      ...(lesson.roleplay?.opening ? { opening: sw(lesson.roleplay.opening) } : {}),
+      ...(script ? { script } : {}),
+    },
     lecture,
   };
 }
