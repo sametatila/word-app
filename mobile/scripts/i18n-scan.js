@@ -58,6 +58,21 @@ const CODEY = /[(){}[\]<>=;/\\|&$*+"'`~^%@#]/;
 const SKIP_ASCII = ["data/firstWords.ts", "lib/courses.ts"].map((p) => path.join(SRC, ...p.split("/")));
 
 /**
+ * İÇERİK DOSYALARI — Türkçesi ARAYÜZ METNİ DEĞİL, müfredatın kendisi.
+ *
+ * `SKIP_ASCII` yalnız ASCII kuralından muaf tutuyor; bu liste kesin sayımdan
+ * da muaf. Gerekçe: bu dosyadaki Türkçe çevrilecek bir arayüz dizgesi değil,
+ * kursun ne öğrettiğini anlatan veri - "Bürokrasi", "Mutfak ve sofra" gibi
+ * modül başlıkları. Sözlüğe taşımak yanlış olurdu: aynı müfredat webde de
+ * `lib/lessons/modules.ts` içinde aynı biçimde duruyor ve iki kopya
+ * `check:parity` ile karşılaştırılıyor.
+ *
+ * Liste DAR tutuluyor: yalnız başlığında içerik olduğu yazılı, saf veri
+ * dosyaları. Bir dosyaya arayüz metni girme ihtimali varsa buraya yazılmaz.
+ */
+const SKIP_CONTENT = ["data/moduleThemes.ts"].map((p) => path.join(SRC, ...p.split("/")));
+
+/**
  * TİRE PARÇALARI SÖZCÜK DEĞİL. Sözlükte dilbilgisi kuralları var ve içlerinde
  * ek/ön ek parçaları geçiyor ("be-/ver-/-ieren ohne ge-"). Düz bölme onları
  * sözcük sanıyor ve yabancı kümeyi zehirliyor: "ver" Almanca sözcük sayıldığı
@@ -172,6 +187,7 @@ function scan() {
       if (ticks % 2 === 1) inTemplate = !inTemplate;
       if (wasInside) return;
       const asciiSkipped = SKIP_ASCII.some((x) => file === x);
+      if (SKIP_CONTENT.some((x) => file === x)) return; // müfredat verisi
       for (const text of candidates(line)) {
         if (TURKISH_LETTERS.test(text)) {
           (hard[rel] ??= []).push({ line: i + 1, text });

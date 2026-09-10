@@ -719,6 +719,39 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
 
 }
 
+/* ── modul temalari ─────────────────────────────────────────────────────────
+   Patika ünitelerinin adı. İki kopya elle tutuluyor: webde
+   `lib/lessons/modules.ts` `MODULE_THEMES` (seviyeye göre), mobilde
+   `data/moduleThemes.ts` (kursa VE seviyeye göre). Webin tablosu Almanca
+   kursu anlatıyor, o yüzden karşılaştırma mobilin `de` dalıyla.
+
+   Ölçülen sessiz ayrışma buydu: web B1'i 2026-09-05'te on sekiz modüle
+   genişletti, mobil listede on tema kaldı. `de-b1.json` 180 ders taşıyor
+   (18 modül), yani Patika'nın 11-18. üniteleri adını bulamayıp jenerik
+   etikete düşüyordu - içerik yerindeydi, adı yoktu. */
+{
+  const web = read("src/lib/lessons/modules.ts");
+  const mob = read("mobile/src/data/moduleThemes.ts");
+  /* `seg` bu betikte blok-yerel bir yardımcı; burada da aynı işi yapan bir
+     kopya duruyor (küçük ve iki satır - paylaşmak için yukarı taşımak
+     dosyanın sırasını bozardı). */
+  const cut = (src, start, end) => {
+    const i = src.indexOf(start);
+    if (i < 0) return "";
+    const j = src.indexOf(end, i + start.length);
+    return src.slice(i, j < 0 ? undefined : j);
+  };
+  const webBlock = cut(web, "export const MODULE_THEMES", "\n};");
+  const mobDe = cut(mob, "  de: {", "\n  },");
+  const arr = (src, level) => {
+    const m = new RegExp(level + ":\\s*\\[([\\s\\S]*?)\\]").exec(src);
+    return m ? [...m[1].matchAll(/"([^"]+)"/g)].map((x) => x[1]) : [];
+  };
+  for (const level of ["A1", "A2", "B1", "B2", "C1"]) {
+    sameList("modul temalari " + level, arr(mobDe, level), arr(webBlock, level));
+  }
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"

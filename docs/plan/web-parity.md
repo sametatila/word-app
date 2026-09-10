@@ -2886,3 +2886,47 @@ görseli) yalnız Türkçe. Sayfa başlıkları `titleMeta` ile çevrilirken kö
 sabit kalıyor. Bu bir hata değil - Türkiye pazarı için birincil dil Türkçe ve
 kök meta verisi SEO'ya ait bir karar - ama üç dilli bir arayüzün kökünün tek
 dilli olması Sametin görmesi gereken bir seçim. Değiştirmedim.
+
+### 11.52 Patika'nın 11-18. üniteleri Androidde adsızdı
+
+Mobil tarafta aynı harf süzgecini uyguladım. Mobilin tabanı (123 dizgi / 11
+dosya) ayrıştı:
+
+    data/moduleThemes.ts   54   müfredat: modül başlıkları
+    data/firstWords.ts     40   öğretilen kelimelerin Türkçe karşılıkları
+    lib/numbers.ts         10   sayı sözcükleri
+    lib/courses.ts          7   dil adları (webin 7'siyle aynı)
+    data/demoPlacement.ts   5   demo yerleştirme içeriği
+    ui/VoicePicker.tsx      2   Almanca örnek cümle (webin 2'siyle aynı)
+    dört dosya              5   "Türkçe" (x3, dil adı kendi dilinde), "Hören" (x2)
+
+Yani mobilin 123'ü de webin 169'u gibi bir kabul listesi - arayüz borcu yok.
+Beş arayüz dosyası dizgesinin hepsi meşru: dil adları kendi dilinde yazılır
+(kural `SettingsScreen`de yazılı: arayüz yanlış dildeyken bile kullanıcı
+kendi dilini tanıyabilsin) ve "Hören" bir Almanca sınav bölümü adı.
+
+**Ama ayıklama sırasında canlı bir hata çıktı.** `moduleThemes.ts`in web
+karşılığı `lib/lessons/modules.ts` ve iki kopya elle tutuluyor. Web B1'i
+**2026-09-05'te on sekiz modüle genişletmiş** (kapsanmayan 1059 B1 maddesi
+kümelendi, bkz. `docs/plan/b1-yeniden-kurgu.md`); mobil listede on tema
+kalmıştı. Oysa `mobile/src/data/lessons/de-b1.json` **180 ders** taşıyor,
+yani on sekiz modül: Patika'nın 11-18. üniteleri adını bulamayıp
+`immersionTrack`in jenerik yedeğine ("B1 Ünite 11") düşüyordu. İçerik
+yerindeydi, adı yoktu - sekiz ünite adsız açılıyordu.
+
+Sekiz tema mobile birebir taşındı ve `check:parity`ye beş bölüm eklendi
+(A1-C1 modül temaları). Doğrulandı: bir temayı elle bozunca kapı kırıldı,
+sonra geri alındı. Karşılaştırma mobilin `de` dalıyla, çünkü webin tablosu
+kurs boyutu TAŞIMIYOR - mobilde `de`/`en` var, webde yalnız seviye. `en`in
+A1/A2 listeleri bugün `de` ile birebir aynı olduğu için görünür etkisi yok,
+ama İngilizce kursunun temaları ayrıştığı gün web Almanca temaları gösterir.
+Bu kayda geçti; webe kurs boyutu eklemek ayrı bir iş.
+
+**Cırcırlı taban 123'ten 69'a indi** - ama düşüş bir borç ödemesi değil,
+tanım düzeltmesi. Tarayıcıya `SKIP_CONTENT` listesi eklendi ve
+`moduleThemes.ts` oraya girdi: dosyanın başlığında "kursun MÜFREDATINI
+anlatır, arayüz metni değil" yazılı, sözlüğe taşımak yanlış olurdu ve aynı
+müfredat webde de aynı biçimde duruyor. Liste DAR: yalnız başlığında içerik
+olduğu yazılı, saf veri dosyaları. `firstWords`/`numbers`/`demoPlacement` de
+aynı sınıfa giriyor ama bu turda taşınmadı - biri taşınıp ötekiler
+bırakılmasın diye hepsi birlikte, ayrı bir turda değerlendirilecek.
