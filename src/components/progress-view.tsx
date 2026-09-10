@@ -232,18 +232,14 @@ export function ActivityProgress({
         </div>
       </section>
 
-      {/* Başarımlar satırı — mobilde de ilerlemenin altında, kendi ekranına. */}
-      <Link href="/profile/achievements" prefetch={false} className="card flex items-center gap-3 p-4">
-        <span
-          className="flex h-10 w-10 shrink-0 items-center justify-center rounded-tile"
-          style={{ background: "color-mix(in srgb, var(--color-flame-500) 14%, transparent)", color: "var(--color-flame)" }}
-        >
-          <TrophyIcon size={20} />
-        </span>
-        <span className="flex-1 text-strong">{t("progress.achievements")}</span>
-        <ChevronRightIcon size={20} className="faint shrink-0" />
-      </Link>
-
+      {/*
+        BAŞARIMLAR SATIRI BURADAN KALDIRILDI. Yorumu "mobilde de ilerlemenin
+        altında" diyordu ve bu artık doğru değil: Android onu bilerek
+        kaldırmış ve gerekçesini yazmış (`ProgressScreen`) — rozet sayısı
+        herkese açık profilde görünüyor, yani statü işareti ve yeri profil;
+        aynı ekrana iki giriş olmasın diye. Web'de de profil satırı duruyor
+        (`profile/profile-view`), yani ekran erişilebilir kalıyor.
+      */}
       <ActivityStrip byDay={byDay} today={today} />
     </div>
   );
