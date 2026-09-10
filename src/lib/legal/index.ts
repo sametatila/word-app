@@ -239,6 +239,26 @@ export const LEGAL_PATHS = {
  *   5. Uygulama ikonu ve açılış ekranı markalı
  *   6. Cihaz sınama listesi koşuldu
  *   7. `LEGAL_VERSION` → "1.1", `LEGAL_EFFECTIVE_DATE` → o gün, kayıt düşüldü
+ *   8. PANELDE de açıldı — aşağıyı oku, bu satır sekizinci kapı ve en sinsisi
+ *
+ * SEKİZİNCİ KAPI: BURADAKİ BAYRAK TEK BAŞINA YETMEYEBİLİR.
+ *
+ * Hukuki yapılandırma panelden düzenlenebiliyor ve kayıt kodun ÖNÜNE geçiyor:
+ * `parseLegalConfig` `ios`u `bool(pf.ios, d.platforms.ios)` ile okuyor, yani
+ * `app_settings["legal.config"]` satırı varsa oradaki değer kazanıyor
+ * (bkz. lib/legal/shape.ts). Satır, panelden HERHANGİ bir alan bir kez
+ * kaydedildiğinde doğuyor — platformla ilgisi olmayan bir alan bile olsa —
+ * ve `platforms.ios`u o günkü hâliyle donduruyor.
+ *
+ * Sonucu: biri yayından önce panelden destek e-postasını değiştirirse, iOS
+ * günü buradaki bayrağı açmak canlı sayfayı DEĞİŞTİRMEZ ve hiçbir yerde hata
+ * görünmez. Aynı şey `visibleProcessors` üzerinden Apple alıcı satırlarını da
+ * kapalı tutar, yani gizlilik politikası eksik kalır.
+ *
+ * ÖLÇÜLDÜ (2026-09-10): üretimde `app_settings` tamamen BOŞ ve
+ * `legal_documents` 0 satır — bugün her şey kod varsayılanından geliyor, yani
+ * bayrak bugün tek başına çalışır. Kapı, o günün korunacağını varsaymamak için
+ * yazıldı.
  *
  * Metin tarafında yarım iş KALMADI: şartların 7b maddesi (üç dilde) Apple ile
  * girişi zaten `hasIos()` arkasında sayıyor. Bayrak tek satır.
