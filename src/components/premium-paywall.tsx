@@ -126,8 +126,10 @@ export function PremiumPaywall({
                   <span className="text-sm font-bold">{p.region}</span>
                   <span className="text-sm">
                     {p.monthly} · {p.yearly}
+                    {/* 500 değil 600: beyaz yazı 500 üstünde 3.55, 11 piksellik
+                        yazı için eşik 4.5. 600'de 5.30. */}
                     {p.yearlySavePct > 0 && (
-                      <span className="ml-2 rounded-full px-2 py-0.5 text-[11px] font-bold text-white" style={{ background: "var(--color-mint-500)" }}>
+                      <span className="ml-2 rounded-full px-2 py-0.5 text-[11px] font-bold text-white" style={{ background: "var(--color-mint-600)" }}>
                         −{p.yearlySavePct}%
                       </span>
                     )}

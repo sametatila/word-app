@@ -307,6 +307,22 @@ contrastRows([
   ["murekkep / sayac rozeti (flame 500)", step("ink", 900), step("flame", 500)],
 ]);
 
+title("10. PUAN DAIRELERI  (dolu zemin + beyaz yazi, iki temada da sabit 600)");
+/*
+ * Yazılarım ve haftalık sınavın puan dairesi tema duyarlı `--color-mint` gibi
+ * bir tokeni dolu ZEMİN olarak kullanıyordu; koyu temada o token 300'e düşüyor
+ * ve beyaz yazı 1.86 / 2.06 / 1.49'a iniyordu. Basamak sabitlendi.
+ *
+ * Mobil karşılığı ayrı bir tasarım (dolu daire değil, %13 tint + renkli yazı)
+ * ve orada ölçüm `theme/colors.ts` metin varyantlarıyla yapılıyor.
+ */
+contrastRows([
+  ["beyaz / puan dairesi mint 600", W, step("mint", 600)],
+  ["beyaz / puan dairesi flame 600", W, step("flame", 600)],
+  ["beyaz / puan dairesi rose 600", W, step("rose", 600)],
+  ["beyaz / indirim rozeti mint 600", W, step("mint", 600)],
+]);
+
 title("8. AYRISMA  [GEVSEK — ikon ve etiketle birlikte]");
 for (const [tn, key] of [["acik", "light"], ["koyu", "dark"]]) {
   distinct({ brand: tone("brand", key), streak: tone("flame", key), wrong: tone("rose", key) }, 12, `${tn}: brand / streak / wrong`);

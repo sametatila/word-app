@@ -154,7 +154,9 @@ export function WeeklyPlayer() {
     const byWord = new Map<number, boolean>();
     for (const a of answers.current) byWord.set(a.wordId, (byWord.get(a.wordId) ?? true) && a.correct);
     const wrong = (data?.rounds ?? []).map(wordOf).filter((w) => byWord.get(w.id) === false);
-    const tone = result.score >= 80 ? "var(--color-mint)" : result.score >= 60 ? "var(--color-flame)" : "var(--color-rose)";
+    /* Basamak sabit: beyaz yazılı dolu daire koyu temada 300'e düşünce
+       okunmuyordu (bkz. `writings-card`). 600'de iki temada da geçiyor. */
+    const tone = result.score >= 80 ? "var(--color-mint-600)" : result.score >= 60 ? "var(--color-flame-600)" : "var(--color-rose-600)";
     return (
       <section className="card mx-auto w-full max-w-md p-5">
         <div className="flex items-center gap-4">

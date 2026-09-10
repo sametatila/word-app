@@ -18,8 +18,23 @@ import { CardGrid } from "../ui/CardGrid";
 /** Tür -> sözlük anahtarı. */
 const KIND_KEY: Record<string, string> = { writing: "unitkind.write", speaking: "unitkind.speaking" };
 
+/**
+ * Puan kutusunun YAZI rengi.
+ *
+ * Dolgu renkleri (`success`/`streak`/`danger`) kendi %13 tintlerinin üstünde
+ * okunmuyordu: ölçüm açık temada 3.06 / 2.54 / 3.58 - kehribar büyük yazı
+ * eşiği 3.0'ı bile tutmuyor. Metin varyantları aynı yerde 4.43 / 4.36 / 4.93.
+ * Kutunun ZEMİNİ dolgu renginden kalmaya devam ediyor (aşağıda `+ "22"`);
+ * ayrım zaten bunun için var.
+ */
 function scoreTone(score: number | null, colors: Palette): string {
   if (score === null) return colors.textMuted;
+  return score >= 70 ? colors.successText : score >= 40 ? colors.streakText : colors.dangerText;
+}
+
+/** Puan kutusunun ZEMİNİ - dolgu ailesinin tam parlaklığı. */
+function scoreFill(score: number | null, colors: Palette): string {
+  if (score === null) return colors.surface2;
   return score >= 70 ? colors.success : score >= 40 ? colors.streak : colors.danger;
 }
 
@@ -31,7 +46,7 @@ function WritingCard({ w, colors, onReport }: { w: Writing; colors: Palette; onR
     <PressableScale onPress={() => setOpen((o) => !o)}>
       <Card padded style={{ marginBottom: spacing.md }}>
         <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md }}>
-          <View style={{ width: 48, height: 48, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: score === null ? colors.surface2 : tone + "22" }}>
+          <View style={{ width: 48, height: 48, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: score === null ? colors.surface2 : scoreFill(score, colors) + "22" }}>
             <Text variant="h3" color={tone}>{score ?? "…"}</Text>
           </View>
           <View style={{ flex: 1 }}>

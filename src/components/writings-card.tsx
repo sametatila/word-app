@@ -129,7 +129,15 @@ export function WritingsCard({ showEmpty = false }: { showEmpty?: boolean }) {
       <CardGrid as="ul" min={380} className="mt-3">
         {items.map((it) => {
           const score = it.result?.score.overall ?? null;
-          const tone = score === null ? "var(--text-muted)" : score >= 70 ? "var(--color-mint)" : score >= 40 ? "var(--color-flame)" : "var(--color-rose)";
+          /*
+           * BASAMAK SABİT (600), TEMAYA GÖRE DEĞİŞEN TOKEN DEĞİL.
+           *
+           * `--color-mint` koyu temada 300'e düşüyor ve beyaz yazı taşıyan
+           * dolu bir daire orada okunmuyordu: ölçüm 1.86 / 2.06 / 1.49 - AA'nın
+           * 4.5'i bir yana, büyük yazı için istediği 3.0 bile değil. Sabit
+           * 600'de iki temada da 5.30 / 5.20 / 6.07.
+           */
+          const tone = score === null ? "var(--text-muted)" : score >= 70 ? "var(--color-mint-600)" : score >= 40 ? "var(--color-flame-600)" : "var(--color-rose-600)";
           return (
             <li key={it.id} className="rounded-xl px-3 py-2.5 surface-2">
               <div className="flex items-center gap-3">
