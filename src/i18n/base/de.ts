@@ -604,6 +604,7 @@ export const deBase: Record<string, string> = {
   "lesson.lesson_complete": "Sprechen beendet",
   "lesson.continue": "Weiter →",
   "lesson.listen": "Anhören",
+  "lessonp.next_in_days": "Dieses Gespräch kommt in {n} Tagen wieder.",
   "lessonp.words_of_lesson": "Die Wörter dieses Gesprächs",
   "lessonp.corrections": "Korrekturen aus dem Gespräch",
   "lessonp.no_corrections": "Im Gespräch war nichts zu korrigieren.",

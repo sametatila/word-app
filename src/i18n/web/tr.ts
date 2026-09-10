@@ -478,7 +478,6 @@ export const trWeb: Record<string, string> = {
   "lessonp.patterns": "Kalıplar",
   "lessonp.i_can": "Yapabildiklerim:",
   "lessonp.min_turns_note": "Konuşmanın sayılması için sohbette en az {n} kez söz alman gerekiyor — kalıplar ancak kullanılınca oturuyor.",
-  "lessonp.next_in_days": "Bu konuşma {n} gün sonra tekrar karşına çıkacak.",
   "lessonp.back_to_conversation": "Konuşmaya dön",
   "lessonp.exam_hint": "Aynı sahne, yardım yok, 5 tur, puanlı",
   "lessonp.try_as_exam": "Sınav olarak dene",

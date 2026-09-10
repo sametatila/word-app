@@ -604,6 +604,7 @@ export const trBase: Record<string, string> = {
   "lesson.lesson_complete": "Konuşma bitti",
   "lesson.continue": "Devam →",
   "lesson.listen": "Dinle",
+  "lessonp.next_in_days": "Bu konuşma {n} gün sonra tekrar karşına çıkacak.",
   "lessonp.words_of_lesson": "Bu konuşmanın kelimeleri",
   "lessonp.corrections": "Konuşmadaki düzeltmeler",
   "lessonp.no_corrections": "Konuşmada hiç düzeltme gerekmedi.",

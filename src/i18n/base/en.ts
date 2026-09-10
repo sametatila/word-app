@@ -604,6 +604,7 @@ export const enBase: Record<string, string> = {
   "lesson.lesson_complete": "Speaking complete",
   "lesson.continue": "Continue →",
   "lesson.listen": "Listen",
+  "lessonp.next_in_days": "This conversation comes back in {n} days.",
   "lessonp.words_of_lesson": "The words in this conversation",
   "lessonp.corrections": "Corrections from the conversation",
   "lessonp.no_corrections": "Nothing needed correcting in the conversation.",

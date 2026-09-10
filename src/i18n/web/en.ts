@@ -453,7 +453,6 @@ export const enWeb: Record<string, string> = {
   "lessonp.patterns": "Patterns",
   "lessonp.i_can": "What I can do:",
   "lessonp.min_turns_note": "For the conversation to count you need to speak at least {n} times — patterns only stick once you use them.",
-  "lessonp.next_in_days": "This conversation comes back in {n} days.",
   "lessonp.back_to_conversation": "Back to the conversation",
   "lessonp.exam_hint": "Same scene, no help, 5 turns, scored",
   "lessonp.try_as_exam": "Try it as an exam",

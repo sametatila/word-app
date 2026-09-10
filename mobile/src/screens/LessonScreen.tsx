@@ -123,6 +123,8 @@ export function LessonScreen() {
    * SONRA dinle. `speakTarget` bitişi bildirmiyor ve onunla kurulsaydı
    * mikrofon öğretmenin sesinin üstüne açılırdı.
    */
+  /** Dersin bir sonraki tekrarı kaç gün sonra — kayıt yanıtından. */
+  const [nextDays, setNextDays] = useState<number | null>(null);
   const [handsFree, setHandsFree] = useState(true);
   const handsFreeRef = useRef(true);
   const [roleTurns, setRoleTurns] = useState(0);
@@ -529,11 +531,19 @@ export function LessonScreen() {
     void clearLessonResume(lesson.id);
     const seconds = Math.round((Date.now() - startedAt.current) / 1000);
     try {
-      await fetchWithTimeout(`${API_BASE}/api/lesson`, {
+      const res = await fetchWithTimeout(`${API_BASE}/api/lesson`, {
         method: "POST",
         headers: { "content-type": "application/json" },
         body: JSON.stringify({ lessonId: lesson.id, correct, roleplayDone: roleDone, day: todayStr(), seconds }),
       });
+      /* YANIT OKUNUYOR. Uç `passed`, `nextDays`, `xpGained`, `currentStreak`
+         ve `totalXp` döndürüyor; mobil hiçbirini okumuyordu ve dersin NE ZAMAN
+         geri geleceği (aralıklı tekrar merdiveni) bu yüzden hiçbir yerde
+         yazmıyordu. Web özetin altında söylüyor. */
+      if (res.ok) {
+        const d = (await res.json()) as { nextDays?: number };
+        if (typeof d?.nextDays === "number") setNextDays(d.nextDays);
+      }
     } catch { /* çevrimdışı: yerel işaret yeterli, sunucu sonra */ }
   }
 
@@ -614,7 +624,7 @@ export function LessonScreen() {
           </View>
         </>
       ) : phase === "summary" ? (
-        <Summary lesson={lesson} correct={correct} total={scoreTotal} next={nextLesson} roleMsgs={roleMsgs} colors={colors} insets={insets}
+        <Summary lesson={lesson} correct={correct} total={scoreTotal} next={nextLesson} roleMsgs={roleMsgs} nextDays={nextDays} colors={colors} insets={insets}
           onBack={() => nav.goBack()}
           onNext={nextLesson ? () => nav.replace("Lesson", { id: nextLesson.id }) : undefined} />
       ) : resumeOffer ? (
@@ -867,8 +877,8 @@ function RoleplayControls({ input, setInput, busy, onSend, onSpeak, suggestions,
   );
 }
 
-function Summary({ lesson, correct, total, next, roleMsgs, colors, insets, onBack, onNext }: {
-  lesson: Lesson; correct: number; total: number; next: Lesson | null; roleMsgs: ChatMsg[]; colors: Palette;
+function Summary({ lesson, correct, total, next, roleMsgs, nextDays, colors, insets, onBack, onNext }: {
+  lesson: Lesson; correct: number; total: number; next: Lesson | null; roleMsgs: ChatMsg[]; nextDays: number | null; colors: Palette;
   insets: { bottom: number }; onBack: () => void; onNext?: () => void;
 }) {
   const pct = total ? Math.round((correct / total) * 100) : 100;
@@ -952,6 +962,15 @@ function Summary({ lesson, correct, total, next, roleMsgs, colors, insets, onBac
         </View>
       ) : roleMsgs.length > 1 ? (
         <Text variant="caption" color={colors.successText} style={{ alignSelf: "stretch", marginTop: spacing.lg }}>{tx("lessonp.no_corrections")}</Text>
+      ) : null}
+
+      {/* DERS NE ZAMAN GERİ GELECEK. Aralıklı tekrar merdiveni sunucuda
+          hesaplanıyor ve kayıt yanıtında geliyordu; mobil yanıtı hiç
+          okumadığı için bu satır yoktu. */}
+      {nextDays !== null ? (
+        <Text variant="caption" color={colors.textMuted} style={{ alignSelf: "stretch", marginTop: spacing.lg, lineHeight: 20 }}>
+          {tx("lessonp.next_in_days", { n: nextDays })}
+        </Text>
       ) : null}
 
       <View style={{ alignSelf: "stretch", marginTop: spacing.xl, gap: spacing.sm }}>
