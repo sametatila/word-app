@@ -351,7 +351,10 @@ function checkLessons(list: Lesson[]) {
       const sw = `${w} adım ${i + 1}`;
       if (!s.say?.length) E(sw, "say boş");
       for (const seg of s.say ?? []) {
-        if (seg.lang === "de" && trLetters(seg.text)) E(sw, `Almanca parçada Türkçe harf: "${seg.text}"`);
+        /* HEDEF DİLDEKİ parçada Türkçe harf. Kural `seg.lang === "de"` diye
+           yazılıydı ve İngilizce parçaları hiç denetlemiyordu; oysa sezgisel
+           dilden bağımsız - ı/İ/ğ/Ğ/ş/Ş ne Almancada ne İngilizcede var. */
+        if (seg.lang !== "tr" && trLetters(seg.text)) E(sw, `hedef dildeki parçada Türkçe harf: "${seg.text}"`);
       }
       const x = s.expect;
       if (!x) return;
