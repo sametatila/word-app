@@ -4245,3 +4245,39 @@ meşru çıktı:
 | `courses.ts` | kurs adları zaten dil başına (`label.tr/en/de`) |
 | `speech-rules.ts` | kurallar **Türkçe konuşanın** Almancada yaptığı hatalar; tabanda yazılı |
 | `module-exam/*`, `confusables`, `first-words`, `characters` | Türkçe içerik verisi, çeviri yolu `nativeExamText` üzerinden |
+
+### 11.86 Kendi kırdığım kapı ve yorumların ikinci yalanı
+
+**Önce kendi hatam.** §11.80'de eklediğim `wordGrammar` içindeki harf haritası
+(`{ a: "ä", o: "ö", … }`) mobil `i18n-scan`i kırmıştı: tarayıcı tek harfli
+dizgeleri çevrilmemiş metin sanıyor ve sayım 16'dan 20'ye çıkmıştı. Bu tur
+yakalayıp kapattım.
+
+Çözüm sayıyı büyütmek olmadı: harf tablosu arayüz metni değil, biçim kuralı.
+`umlautStem` webdeki gibi `lib/german.ts`e taşındı — **aynı yer, aynı ad** — ve
+o dosya `SKIP_CONTENT`e girdi. Listenin kendi kuralı gereği muafiyetin bir
+kapısı olmalı: `check:parity` "umlaut govdesi" gövdeyi webinkiyle dizge dizge
+karşılaştırıyor. Web tarafında aynı dört harf zaten ham metin tabanında yazılı
+(`german.ts: 4`), yani iki taraf aynı yanlış pozitifi aynı şekilde kayda
+geçiriyor.
+
+**Sonra yorumun ikinci yalanı.** §11.82'de webin bir yorumu "mobilde de var"
+diyordu ve yanlıştı. Bu tur aynısı ters yönde çıktı: mobil `BossScreen`
+
+```ts
+/** Son saniyeler — sayaç kırmızıya döner. Web `DANGER_SECONDS` ile aynı. */
+const DANGER_SECONDS = 10;
+```
+
+Web'de o sabit **8**'di. Yorum parite iddia ediyor, ölçüm yok, ayrışma iki
+taraftan da görünmüyor. Fark yalnız görsel de değil: webde bu eşik saniyede bir
+"danger" tıkını da başlatıyor. Android'in değeri alındı.
+
+**Kalıcı sonuç:** ortak sayısal sabitler artık **elle bakım istemeyen** bir
+bölümde. 22. bölüm listeleri karşılaştırıyordu; tek başına duran sayılar
+dışarıda kalıyordu. Yeni bölüm iki ağaçtaki her `const AD = <sayı>;` sabitini
+toplayıp adı ikisinde de geçenleri karşılaştırıyor — bugün 24 çift. Yeni bir
+ortak sabit yazıldığı an kapıya giriyor; listeye eklemek gerekmiyor.
+
+Bu, "yorumda yazmak drift'i durdurmuyor, ölçüm durduruyor" kuralının üçüncü
+kanıtı — ve ilk ikisinde de yorum, ölçümün yerini almaya çalışmıştı.
