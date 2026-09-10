@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { grammarLine } from "./wordGrammar";
+import { firstExample } from "../data/example";
 import { t as tx, nativeLangName, targetLangName } from "../lib/i18n";
 import { foldCase, foldCompare, foldTight } from "../lib/textFold";
 import { matchSentence, VERDICT_KEYS, type SentenceMatch } from "../lib/sentenceMatch";
@@ -50,13 +51,6 @@ function norm(s: string): string {
 /** Anlam satırı: Türkçe + (varsa) İngilizce ayırt edici. */
 function meaningLine(w: { tr: string; en: string | null }): string {
   return w.en ? `${w.tr} · ${w.en}` : w.tr;
-}
-
-/** İlk örnek cümle — numaralı liste / bölmeler sadeleştirilir. */
-function firstExample(s: string | null | undefined): string | null {
-  if (!s) return null;
-  const t = (s.split(/\n|\s+\/\s+/)[0] ?? "").replace(/^\s*\d+[.)]\s*/, "").trim();
-  return t || null;
 }
 
 /** İpucu iskeleti (web skeleton): her kelimede ilk harf + her 3. harf açık, gerisi "_". */

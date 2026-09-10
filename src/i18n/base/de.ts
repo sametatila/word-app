@@ -1188,6 +1188,7 @@ export const deBase: Record<string, string> = {
   "words.due_tomorrow": "morgen fällig",
   "words.due_in_days": "in {n} Tagen fällig",
   "words.not_studied": "noch nicht geübt",
+  "words.load_more": "Mehr anzeigen",
   "words.n_lapses": "{n}-mal Mühe gehabt",
   "words.typ_noun": "Nomen",
   "words.typ_verb": "Verb",

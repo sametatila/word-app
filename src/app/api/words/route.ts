@@ -48,6 +48,15 @@ export async function GET(req: Request) {
         de: words.de,
         artikel: words.artikel,
         tr: words.tr,
+        /* İngilizce karşılık ve örnek cümle üçlüsü: web listesi satırda
+           "tr · en" yazıyor ve açılan ayrıntıda örneği gösteriyor, çünkü
+           sunucu bileşeninde tabloyu doğrudan okuyor. Mobilin tek kaynağı bu
+           uç ve dördü de hiç gönderilmiyordu - Android listesi ne İngilizce
+           karşılığı ne de tek bir örnek cümleyi gösterebiliyordu. */
+        en: words.en,
+        beispiel: words.beispiel,
+        beispielTr: words.beispielTr,
+        beispielEn: words.beispielEn,
         niveau: words.niveau,
         /* Tür ve çoğul kalıbı da gidiyor: web listesi bunları sunucu
            bileşeninde doğrudan tablodan okuyup yazıyor, mobilin tek kaynağı
@@ -78,10 +87,20 @@ export async function GET(req: Request) {
       de: r.de,
       artikel: r.artikel,
       tr: r.tr,
+      en: r.en,
+      beispiel: r.beispiel,
+      beispielTr: r.beispielTr,
+      beispielEn: r.beispielEn,
       niveau: r.niveau,
       typ: r.typ,
       formen: r.formen,
       dueAt: r.intervalDays == null ? null : (r.dueAt ? new Date(r.dueAt).toISOString() : null),
+      /* ARALIK DA GİDİYOR. Web listesi "tanıdık" (aralık ≥ 3 gün) ile
+         "öğreniyor" ayrımını `intervalDays` üzerinden yapıyor; mobil bu alan
+         gelmediği için aralığı `dueAt`ten türetiyordu ve o KALAN gün sayısı,
+         aralık değil: on günlük aralığı dokuz gün önce görülmüş bir kelime
+         "yarın" diye okunup "öğreniyor"a düşüyordu. */
+      intervalDays: r.intervalDays,
       lapses: r.lapses ?? 0,
       leech: r.leech ?? false,
       status: r.intervalDays == null ? "new" : r.intervalDays >= 21 ? "mastered" : "learning",

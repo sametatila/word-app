@@ -1188,6 +1188,7 @@ export const trBase: Record<string, string> = {
   "words.due_tomorrow": "yarın tekrar",
   "words.due_in_days": "{n} gün sonra tekrar",
   "words.not_studied": "henüz çalışılmadı",
+  "words.load_more": "Daha fazla göster",
   "words.n_lapses": "{n} kez zorlandın",
   "words.typ_noun": "isim",
   "words.typ_verb": "fiil",

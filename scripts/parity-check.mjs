@@ -2058,6 +2058,28 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   );
 }
 
+/* ── 49. ornek cumle kurali ───────────────────────────────────────────────
+ * Havuzdaki `beispiel` alani 497 maddede numarali bir derleme ("1. … 2. …"),
+ * 53 maddede cumleler bosluksuz egik cizgiyle ayrilmis. Web bunlari tek
+ * cumleye indiriyor ve nokta ile biten kisaltmalari ("vor ca. 6000 Jahren")
+ * cumle sonu saymiyor; mobil kopyasi yalnizca satir sonuna bakiyordu ve ayni
+ * kelime iki uygulamada iki ayri ornek gosteriyordu. Kural artik iki tarafta
+ * ayni; kapi hem kisaltma listesini hem ayiklama adimlarini esliyor. */
+{
+  const kural = (p) => {
+    const src = read(p).replace(/\/\*[\s\S]*?\*\//g, " ").replace(/\/\/[^\n]*/g, " ");
+    const i = src.indexOf("ABBREVIATIONS = new Set(");
+    const liste = i < 0 ? ["bulunamadi"] : [...src.slice(i, src.indexOf("]", i)).matchAll(/"([^"]+)"/g)].map((m) => m[1]).sort();
+    return [
+      "kisaltma=" + liste.join(","),
+      "tek harf kisaltma=" + (/m\[1\]\.length === 1/.test(src) ? "var" : "yok"),
+      "madde numarasi=" + (/split\(\/\\s\+\\d\+\\\.\\s\+\//.test(src) ? "var" : "yok"),
+      "egik cizgi=" + (/\(\[\.!\?\]\)\\s\*\\\/\\s\*/.test(src) ? "var" : "yok"),
+    ];
+  };
+  sameList("ornek cumle kurali", kural("mobile/src/data/example.ts"), kural("src/lib/example.ts"));
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"

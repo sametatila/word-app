@@ -1186,6 +1186,7 @@ export const en: Record<string, string> = {
   "words.due_tomorrow": "review tomorrow",
   "words.due_in_days": "review in {n} days",
   "words.not_studied": "not studied yet",
+  "words.load_more": "Show more",
   "words.n_lapses": "you struggled {n} times",
   "words.typ_noun": "noun",
   "words.typ_verb": "verb",

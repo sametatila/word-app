@@ -81,6 +81,7 @@ const SKIP_CONTENT = [
   "data/firstWords.ts", //  ısınma kelimeleri + Türkçe karşılıkları — `check:parity` "ilk kelimeler"
   "data/demoPlacement.ts", // demo yerleştirme maddeleri — `check:parity` "demo yerlestirme"
   "lib/numbers.ts", //      sayı sözcükleri — `check:parity` "sayi modulu govdesi"
+  "data/example.ts", //     cümle sonu saymayan kısaltmalar — `check:parity` "ornek cumle kurali"
   // REDDEDİLEN parolalar ("şifre", "galatasaray") — kullanıcıya gösterilen metin
   // değil, süzgecin konusu. Ekrandaki uyarılar sözlükte (autherror.password_*).
   // Kapısı: `check:parity` "sabit COMMON" ve "sabit MIN_PASSWORD_LENGTH".

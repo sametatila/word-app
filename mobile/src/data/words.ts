@@ -13,7 +13,14 @@ export type WordRow = {
   /** Tür ("Nomen"/"Verb"/...) ve çoğul kalıbı — `ui/wordGrammar` ile etikete çevrilir. */
   typ: string;
   formen: string | null;
+  /** İngilizce karşılık — satırda Türkçenin yanında ayraçla. */
+  en?: string | null;
+  beispiel?: string | null;
+  beispielTr?: string | null;
+  beispielEn?: string | null;
   status: WordStatus;
+  /** SRS aralığı (gün) — "tanıdık" eşiği buna bakıyor. */
+  intervalDays?: number | null;
   /** Tekrar takvimi — uç yeni gönderiyor; eski sürümlerde yok. */
   dueAt?: string | null;
   lapses?: number;
@@ -32,13 +39,7 @@ export function statusOf(w: WordRow): WordStatus {
   if (w.leech) return "leech";
   if (w.status === "new") return "new";
   if (w.status === "mastered") return "mastered";
-  return w.dueAt && intervalOf(w) >= 3 ? "familiar" : "learning";
-}
-
-/** Aralık gün cinsinden - uç `intervalDays` göndermiyor, `dueAt`ten türetiliyor. */
-function intervalOf(w: WordRow): number {
-  if (!w.dueAt) return 0;
-  return Math.max(0, Math.round((new Date(w.dueAt).getTime() - Date.now()) / 86400000));
+  return (w.intervalDays ?? 0) >= 3 ? "familiar" : "learning";
 }
 
 /**
