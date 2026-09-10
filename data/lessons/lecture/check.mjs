@@ -83,8 +83,6 @@ for (const key of written.keys())
   Anahtar kapının göremediği bir çakışma bu: satırların anahtarı ayrı,
   çakışan şey karşılık.
 */
-const glossDe = (r) =>
-  r.de ?? ((src.get(K(r))?.ctx ?? []).join(" ").match(/\[([^\]]+)\]/) || [])[1] ?? "?";
 const byEn = new Map();
 for (const [key, en] of written) {
   const tr = key.split("\u0000")[0];
