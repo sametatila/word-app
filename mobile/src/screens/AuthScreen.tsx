@@ -16,7 +16,7 @@ import { sendTwoFactorOtp, verifyTwoFactorOtp } from "../lib/auth";
 import { TWO_FACTOR_CODE_DIGITS, TWO_FACTOR_CODE_MINUTES } from "../lib/twoFactor";
 import { openLegal } from "../lib/legal";
 import { googleSignIn, googleSupported } from "../lib/googleAuth";
-import { appleSignIn, appleSupported } from "../lib/appleAuth";
+import { appleSignIn, appleSupported, appleWebSignIn } from "../lib/appleAuth";
 import { notifPrimeNeeded } from "../lib/notifications";
 import { isEmailNotVerified, translateAuthError } from "../lib/authErrors";
 import { checkPassword } from "../lib/passwordPolicy";
@@ -129,7 +129,14 @@ export function AuthScreen() {
       if (!alive) return;
       setProvidersOn({
         google: c.providers.google && googleSupported(),
-        apple: c.providers.apple && appleSupported(),
+        /*
+          İKİ AYRI KAPI. iOS'ta native akış var ve sunucudaki `apple` bayrağına
+          bakıyor. Android'de native yol YOK; oradaki düğme tarayıcı akışına
+          gidiyor ve o da ayrı bir sunucu kapısı istiyor (`appleWeb` — Services
+          ID + client secret). Tek bayrağa bakılsaydı Android'de Apple'ın hata
+          sayfasına götüren bir düğme çizilirdi.
+        */
+        apple: appleSupported() ? c.providers.apple : c.providers.appleWeb,
       });
       setCaptchaOn(Boolean(c.turnstileSiteKey));
     });
@@ -242,7 +249,23 @@ export function AuthScreen() {
     if (socialBusy || (provider !== "google" && provider !== "apple")) return;
     setSocialBusy(provider);
     setError(null);
-    // İkisi de NATIVE: sistem ekranı → idToken → better-auth. WebView yok (Google
+    /*
+      ANDROID'DE APPLE: TARAYICI YOLU ve sonucu BURADAN DÖNMÜYOR.
+
+      Apple'ın Android SDK'sı olmadığı için giriş sistem tarayıcısında
+      tamamlanıyor; uygulamaya dönüş `/auth/app?ott=…` derin bağlantısıyla
+      oluyor ve oturumu App.tsx kuruyor. Burada `socialComplete()` çağırmak,
+      kullanıcı daha tarayıcıya bile geçmeden "giriş tamamlanamadı" demek
+      olurdu. Düğme yalnız serbest bırakılıyor: kullanıcı tarayıcıya gidiyor,
+      döndüğünde uygulama zaten girmiş oluyor.
+    */
+    if (provider === "apple" && !appleSupported()) {
+      const opened = await appleWebSignIn();
+      setSocialBusy(null);
+      if (!opened.ok) setError(opened.message);
+      return;
+    }
+    // Kalan ikisi NATIVE: sistem ekranı → idToken → better-auth. WebView yok (Google
     // embedded WebView OAuth'u engelliyor + cihaz hesaplarını göstermiyordu; Apple
     // tarafında da sistem ekranı zorunlu).
     const r = provider === "apple" ? await appleSignIn() : await googleSignIn();

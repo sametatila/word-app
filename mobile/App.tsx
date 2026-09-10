@@ -19,7 +19,7 @@ import { flushPendingAnswers } from "./src/game/session";
 import { flushPendingLessons } from "./src/game/lessonProgress";
 import { navigationRef } from "./src/lib/pushRoute";
 import { parseDeepLink, type DeepLinkAction } from "./src/lib/deepLink";
-import { completeEmailVerification } from "./src/lib/auth";
+import { completeEmailVerification, verifyOneTimeToken } from "./src/lib/auth";
 import { t } from "./src/lib/i18n";
 import { Text } from "./src/ui/Text";
 import { AchievementUnlock } from "./src/ui/AchievementUnlock";
@@ -72,6 +72,23 @@ function Nav() {
       if (!action || !alive) return;
 
       if (action.kind === "reset-password") { goReset(action.token); return; }
+
+      /*
+        TARAYICIDAN DEVİR. Android'de Apple girişi sistem tarayıcısında
+        tamamlanıyor ve oturum çerezi oraya yazılıyor; uygulamanın kavanozu
+        ayrı. Sunucu o oturumdan tek kullanımlık bir token üretip bizi buraya
+        yolluyor, token da burada uygulamanın kendi oturumuna çevriliyor.
+
+        Aynı bekleme perdesi kullanılıyor (`setVerifying`): kullanıcı
+        tarayıcıdan dönüyor ve uygulama bir an boş görünmemeli.
+      */
+      if (action.kind === "auth-handoff") {
+        setVerifying(true);
+        await verifyOneTimeToken(action.token);
+        await refresh();
+        if (alive) setVerifying(false);
+        return;
+      }
 
       // Doğrulamayı uygulama tamamlıyor: better-auth yönlendirme boyunca oturum
       // çerezini RN'in kavanozuna yazıyor, yani kullanıcı burada girmiş oluyor.

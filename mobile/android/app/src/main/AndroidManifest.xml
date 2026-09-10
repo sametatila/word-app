@@ -69,6 +69,12 @@
             <category android:name="android.intent.category.BROWSABLE" />
             <data android:scheme="https" android:host="www.lernomi.app" android:path="/reset-password" />
             <data android:scheme="https" android:host="www.lernomi.app" android:path="/api/auth/verify-email" />
+            <!-- Tarayıcıda tamamlanan girişin uygulamaya dönüş adresi (Apple,
+                 Android). `/auth/handoff` tek kullanımlık bir token üretip
+                 buraya yönlendiriyor; uygulama token'ı oturuma çeviriyor
+                 (bkz. lib/deepLink, App.tsx). Uygulama kurulu değilse aynı
+                 adres tarayıcıda bir sayfa çiziyor, kullanıcı çıkmazda kalmıyor. -->
+            <data android:scheme="https" android:host="www.lernomi.app" android:path="/auth/app" />
         </intent-filter>
       </activity>
       <service

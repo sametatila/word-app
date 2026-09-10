@@ -1,6 +1,7 @@
-import { Platform } from "react-native";
+import { Linking, Platform } from "react-native";
 import appleAuth from "@invertase/react-native-apple-authentication";
-import { signInAppleNative, updateUserName, sendAppleAuthorizationCode } from "./auth";
+import { signInAppleNative, updateUserName, sendAppleAuthorizationCode, signInSocial } from "./auth";
+import { API_BASE } from "../api/client";
 import { sameEmail, tokenEmail } from "./accountLinks";
 import { t } from "./i18n";
 import type { AuthOutcome } from "./auth";
@@ -126,6 +127,37 @@ export async function appleLink(expectEmail: string | null): Promise<AuthOutcome
     if (code === appleAuth.Error.CANCELED) {
       return { ok: false, code: "CANCELLED", message: t("autherror.cancelled") };
     }
+    return { ok: false, code: "APPLE", message: t("autherror.apple_failed") };
+  }
+}
+
+/**
+ * Apple ile Giriş — TARAYICI yolu (Android).
+ *
+ * Apple'ın Android SDK'sı yok; oradaki tek seçenek Apple'ın OAuth ucu. İki
+ * karar var ve ikisi de bilinçli:
+ *
+ * SİSTEM TARAYICISI, gömülü WebView DEĞİL. Gömülü WebView çerez kavanozunu
+ * uygulamayla paylaşırdı ve devir hiç gerekmezdi — ama OAuth'u gömülü
+ * WebView'de çalıştırmak artık önerilmiyor (sağlayıcılar engelliyor) ve
+ * kullanıcı tarayıcıdaki mevcut Apple oturumundan yararlanamaz, her seferinde
+ * Apple ID'sini ve iki adımlı doğrulamasını elle geçerdi. Sistem tarayıcısında
+ * zaten girişli bir kullanıcı için bu akış tek dokunuş.
+ *
+ * SONUÇ BURADAN DÖNMÜYOR. Fonksiyon yalnız tarayıcının AÇILDIĞINI söylüyor;
+ * giriş orada tamamlanıyor ve uygulamaya `/auth/app?ott=…` derin bağlantısıyla
+ * dönüyor (bkz. lib/deepLink, App.tsx). Çağıran taraf bu yüzden sonucu
+ * beklememeli — bekleseydi kullanıcı tarayıcıdayken ekran kilitli kalırdı.
+ */
+export async function appleWebSignIn(): Promise<AuthOutcome> {
+  try {
+    const url = await signInSocial("apple", `${API_BASE}/auth/handoff`);
+    if (!url) return { ok: false, code: "APPLE", message: t("autherror.apple_failed") };
+    const can = await Linking.canOpenURL(url);
+    if (!can) return { ok: false, code: "APPLE", message: t("autherror.apple_failed") };
+    await Linking.openURL(url);
+    return { ok: true, user: null, session: false, twoFactor: false };
+  } catch {
     return { ok: false, code: "APPLE", message: t("autherror.apple_failed") };
   }
 }

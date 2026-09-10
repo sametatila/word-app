@@ -15,7 +15,12 @@ import { api } from "../api/client";
  */
 export type ServerConfig = {
   auth: boolean;
-  providers: { google: boolean; apple: boolean };
+  /**
+   * `apple` NATIVE akış (iOS), `appleWeb` TARAYICI akışı (Android).
+   * Android'de Apple'ın native yolu yok; oradaki düğme ancak sunucuda Services
+   * ID tanımlıyken anlamlı, yoksa kullanıcıyı Apple'ın hata sayfasına götürür.
+   */
+  providers: { google: boolean; apple: boolean; appleWeb: boolean };
   turnstileSiteKey: string;
 };
 
@@ -27,11 +32,11 @@ export async function fetchServerConfig(): Promise<ServerConfig> {
     const c = await api<Partial<ServerConfig>>("/api/config");
     cached = {
       auth: c.auth !== false,
-      providers: { google: Boolean(c.providers?.google), apple: Boolean(c.providers?.apple) },
+      providers: { google: Boolean(c.providers?.google), apple: Boolean(c.providers?.apple), appleWeb: Boolean(c.providers?.appleWeb) },
       turnstileSiteKey: typeof c.turnstileSiteKey === "string" ? c.turnstileSiteKey : "",
     };
   } catch {
-    cached = { auth: true, providers: { google: false, apple: false }, turnstileSiteKey: "" };
+    cached = { auth: true, providers: { google: false, apple: false, appleWeb: false }, turnstileSiteKey: "" };
   }
   return cached;
 }

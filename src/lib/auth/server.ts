@@ -10,6 +10,7 @@ import { emailConfigured, sendEmail, verificationEmail, resetEmail, passwordChan
 import { purgeUserData } from "@/lib/account/purge";
 import { revokeAppleSignIn } from "@/lib/account/apple-revoke";
 import { appleClientSecret, appleRevokeConfigured } from "@/lib/auth/apple";
+import { oneTimeToken } from "better-auth/plugins/one-time-token";
 import { APIError, createAuthMiddleware } from "better-auth/api";
 import { checkPassword, MIN_PASSWORD_LENGTH, PASSWORD_ERROR_CODE } from "@/lib/auth/password-policy";
 import { redisRateLimitStorage } from "@/lib/auth/rate-limit-store";
@@ -403,6 +404,30 @@ export const auth = betterAuth({
    */
   plugins: [
     ...captchaPlugins(),
+    /**
+     * TEK KULLANIMLIK TOKEN — tarayıcıda açılan girişi UYGULAMAYA devretmek için.
+     *
+     * NEDEN GEREKLİ. Apple'ın Android'de native yolu yok; oradaki tek seçenek
+     * tarayıcı akışı. Ama akış bitince oturum çerezi TARAYICIYA yazılıyor,
+     * uygulamaya değil. Gömülü bir WebView kullanılsaydı çerez kavanozu ortak
+     * olurdu ve devir hiç gerekmezdi — ama OAuth'u gömülü WebView'de
+     * çalıştırmak önerilmiyor: sağlayıcılar engelliyor ve kullanıcı
+     * tarayıcıdaki mevcut oturumundan yararlanamadığı için her seferinde
+     * Apple ID'sini elle yazıyor.
+     *
+     * Akış bu yüzden sistem tarayıcısında çalışıyor; sonunda `/auth/handoff`
+     * kısa ömürlü ve TEK KULLANIMLIK bir token üretip uygulamaya veriyor,
+     * uygulama da onu `/one-time-token/verify` ile kendi oturumuna çeviriyor.
+     *
+     * `storeToken: "hashed"`: veritabanında token'ın kendisi değil özeti
+     * duruyor — bir dökümü ele geçiren onu kullanamaz.
+     *
+     * `disableClientRequest: true`: token yalnız SUNUCUDAN istenebilir
+     * (`auth.api.generateOneTimeToken`). Tarayıcıdan bir fetch ile
+     * üretilebilseydi, oturumu olan herhangi bir sayfa o oturumu
+     * devredilebilir bir dizgeye çevirebilirdi.
+     */
+    oneTimeToken({ expiresIn: 3, storeToken: "hashed", disableClientRequest: true }),
     /**
      * İKİ ADIMLI DOĞRULAMA — isteğe bağlı, e-posta koduyla.
      *

@@ -146,6 +146,26 @@ export async function signInSocial(provider: string, callbackURL: string): Promi
 }
 
 /**
+ * Tarayıcıda açılmış oturumu UYGULAMAYA alır (tek kullanımlık token).
+ *
+ * Android'de Apple girişi sistem tarayıcısında tamamlanıyor ve oturum çerezi
+ * oraya yazılıyor; uygulamanın kavanozu ayrı. `/auth/handoff` o oturumdan
+ * kısa ömürlü bir token üretip `/auth/app?ott=…` adresine yönlendiriyor,
+ * uygulama bağlantıyı yakalayıp token'ı burada oturuma çeviriyor.
+ *
+ * Uç çerezi KENDİSİ yazıyor (`setSessionCookie`), yani dönüş sonrası
+ * uygulamanın istekleri oturumlu — e-posta girişiyle birebir aynı hâl.
+ * Token tek kullanımlık: ikinci deneme "Invalid token" döner.
+ */
+export async function verifyOneTimeToken(token: string): Promise<AuthOutcome> {
+  try {
+    return await parse(await post("one-time-token/verify", { token }));
+  } catch {
+    return { ok: false, code: "NETWORK", message: t("common.connection_failed") };
+  }
+}
+
+/**
  * NATIVE Google girişi (idToken akışı). Cihaz hesap seçiciden alınan idToken'ı
  * better-auth'a gönderir (POST sign-in/social, `{ idToken: { token } }`). WebView
  * YOK — embedded WebView OAuth'u Google engelliyor ve cihazın Google hesaplarını

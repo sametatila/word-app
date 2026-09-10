@@ -3,9 +3,10 @@ import { API_BASE } from "../api/client";
 /**
  * Gelen bağlantıyı uygulamanın anladığı bir eyleme çevirir.
  *
- * İki bağlantı iddia ediliyor (bkz. sunucudaki .well-known dosyaları):
+ * Üç bağlantı iddia ediliyor (bkz. sunucudaki .well-known dosyaları):
  *   - `/reset-password?token=…`     → uygulama içinde yeni parola ekranı
  *   - `/api/auth/verify-email?token=…` → doğrulamayı uygulama tamamlasın
+ *   - `/auth/app?ott=…`             → tarayıcıda açılan girişi devral
  *
  * NEDEN SADECE İKİSİ: iddia edilen her yolu uygulamanın KARŞILAMASI gerekiyor.
  * Karşılanmayan bir yol, bağlantının tarayıcıda açılmasından kötü — uygulama
@@ -22,6 +23,12 @@ import { API_BASE } from "../api/client";
 export type DeepLinkAction =
   | { kind: "reset-password"; token: string }
   | { kind: "verify-email"; url: string }
+  /**
+   * Tarayıcıda tamamlanan girişin uygulamaya devri (`/auth/handoff` buraya
+   * yönlendiriyor). Android'de Apple girişinin dönüş yolu: token tek
+   * kullanımlık ve 3 dakika yaşıyor, uygulama onu oturuma çeviriyor.
+   */
+  | { kind: "auth-handoff"; token: string }
   | null;
 
 /** Eski APK'ler exfe.me'ye bakıyor; ikisi de bizim (bkz. trustedOrigins). */
@@ -43,6 +50,16 @@ export function parseDeepLink(raw: string | null | undefined): DeepLinkAction {
     // Jetonsuz sıfırlama bağlantısının uygulamada yapacağı bir şey yok;
     // ekran "bağlantı geçersiz" diyecek, o yüzden yine de içeri alınıyor.
     return { kind: "reset-password", token: token ?? "" };
+  }
+
+  if (url.pathname === "/auth/app") {
+    /*
+      Token yoksa yapacak bir şey yok: `/auth/handoff` onu her zaman koyuyor,
+      koymadıysa akış zaten yarıda kalmış demektir. Bağlantıyı içeri almak
+      kullanıcıyı boş bir ekranda bırakırdı.
+    */
+    const ott = url.searchParams.get("ott");
+    return ott ? { kind: "auth-handoff", token: ott } : null;
   }
 
   if (url.pathname === "/api/auth/verify-email") {
