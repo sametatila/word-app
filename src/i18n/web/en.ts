@@ -980,4 +980,9 @@ export const enWeb: Record<string, string> = {
   "push.rem_costreak_title": "Your streak with {who} breaks today",
   "push.rem_costreak_body": "The chain you built together resets tonight. One short round saves you both.",
   "push.rem_costreak_body_named": "{name}, the chain you built with {who} resets tonight. One short round saves you both.",
+  "email.twofactor.subject": "Lernomi — your sign-in code",
+  "email.twofactor.heading": "Your sign-in code",
+  "email.twofactor.body": "Someone is signing in to your Lernomi account. Enter the code below on the sign-in screen.",
+  "email.twofactor.note": "The code expires shortly and works only once. If you did not try to sign in, someone else has your password: change it now.",
+  "email.twofactor.text": "Your Lernomi sign-in code: {code}\n\nThe code expires shortly and works only once. If you did not try to sign in, change your password now.",
 };

@@ -980,4 +980,9 @@ export const deWeb: Record<string, string> = {
   "push.rem_costreak_title": "Eure Serie mit {who} reißt heute",
   "push.rem_costreak_body": "Die gemeinsame Kette wird heute Nacht zurückgesetzt. Eine kurze Runde rettet euch beide.",
   "push.rem_costreak_body_named": "{name}, eure Kette mit {who} wird heute Nacht zurückgesetzt. Eine kurze Runde rettet euch beide.",
+  "email.twofactor.subject": "Lernomi — dein Anmeldecode",
+  "email.twofactor.heading": "Dein Anmeldecode",
+  "email.twofactor.body": "Jemand meldet sich bei deinem Lernomi-Konto an. Gib den folgenden Code im Anmeldefenster ein.",
+  "email.twofactor.note": "Der Code läuft bald ab und gilt nur einmal. Wenn du dich nicht anmelden wolltest, kennt jemand anderes dein Passwort: ändere es sofort.",
+  "email.twofactor.text": "Dein Lernomi-Anmeldecode: {code}\n\nDer Code läuft bald ab und gilt nur einmal. Wenn du dich nicht anmelden wolltest, ändere dein Passwort sofort.",
 };

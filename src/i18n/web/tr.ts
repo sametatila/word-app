@@ -1005,4 +1005,9 @@ export const trWeb: Record<string, string> = {
   "push.rem_costreak_title": "{who} ile seriniz bugün kırılıyor",
   "push.rem_costreak_body": "Birlikte kurduğunuz zincir bu gece sıfırlanır. Kısa bir tur ikinizi de kurtarır.",
   "push.rem_costreak_body_named": "{name}, {who} ile kurduğunuz zincir bu gece sıfırlanır. Kısa bir tur ikinizi de kurtarır.",
+  "email.twofactor.subject": "Lernomi — giriş kodun",
+  "email.twofactor.heading": "Giriş kodun",
+  "email.twofactor.body": "Lernomi hesabına giriş yapılıyor. Aşağıdaki kodu giriş ekranına yaz.",
+  "email.twofactor.note": "Kod kısa sürede geçersiz olur ve yalnız bir kez kullanılabilir. Giriş yapmayı sen denemediysen parolan başkasının elinde demektir: hemen değiştir.",
+  "email.twofactor.text": "Lernomi giriş kodun: {code}\n\nKod kısa sürede geçersiz olur ve yalnız bir kez kullanılabilir. Giriş yapmayı sen denemediysen parolanı hemen değiştir.",
 };

@@ -111,6 +111,25 @@ function template(lang: NativeLang, heading: string, body: string, cta: string, 
   </div></body></html>`;
 }
 
+/**
+ * Kod şablonu — düğmesiz.
+ *
+ * Öteki postalar bir bağlantıya götürüyor; bu posta KODUN KENDİSİNİ taşıyor.
+ * Bağlantı koymamak bilinçli: giriş kodunu tıklanabilir bir adresin arkasına
+ * saklamak, kullanıcıyı tam da oltalamanın taklit ettiği harekete alıştırır.
+ * Kod büyük ve seçilebilir duruyor, gerisi metin.
+ */
+function codeTemplate(lang: NativeLang, heading: string, body: string, code: string, note: string): string {
+  return `<!doctype html><html lang="${lang}"><body style="margin:0;background:#faf9f5;font-family:-apple-system,Segoe UI,sans-serif;color:#141413">
+  <div style="max-width:480px;margin:0 auto;padding:32px 24px">
+    <div style="font-size:22px;font-weight:800;color:#c87318;margin-bottom:16px">Lernomi</div>
+    <h1 style="font-size:20px;margin:0 0 12px">${heading}</h1>
+    <p style="font-size:15px;line-height:1.6;color:#555;margin:0 0 20px">${body}</p>
+    <div style="font-size:32px;font-weight:800;letter-spacing:8px;background:#fff;border:1px solid #e6e4dd;border-radius:12px;padding:18px 12px;text-align:center">${code}</div>
+    <p style="font-size:12px;color:#999;margin:24px 0 0;line-height:1.6">${note}</p>
+  </div></body></html>`;
+}
+
 /*
   E-POSTALAR DA ARAYÜZ. Doğrulama ve parola sıfırlama metinleri Türkçe SABİT
   yazılıydı: arayüzü İngilizce ya da Almanca olan kullanıcı, hesabını açan ilk
@@ -167,5 +186,22 @@ export function accountExistsEmail(resetUrl: string, lang: NativeLang = DEFAULT_
     subject: tr("email.exists.subject"),
     html: template(lang, tr("email.exists.heading"), tr("email.exists.body"), tr("email.exists.cta"), resetUrl),
     text: tr("email.exists.text", { url: resetUrl }),
+  };
+}
+
+/**
+ * İkinci adım kodu — parola doğrulandıktan SONRA gidiyor.
+ *
+ * Kod tek kullanımlık ve kısa ömürlü; süresi ve deneme hakkı sunucudaki
+ * eklenti yapılandırmasında (bkz. lib/auth/server two-factor). Metin ayrıca
+ * "bunu sen istemediysen parolan başkasının elinde" uyarısını taşıyor: kodu
+ * beklemeyen bir kullanıcı için bu postanın kendisi bir ihlal alarmıdır.
+ */
+export function twoFactorCodeEmail(code: string, lang: NativeLang = DEFAULT_NATIVE): { subject: string; html: string; text: string } {
+  const tr = (k: string, vars?: Record<string, string | number>) => translate(lang, k, vars);
+  return {
+    subject: tr("email.twofactor.subject"),
+    html: codeTemplate(lang, tr("email.twofactor.heading"), tr("email.twofactor.body"), code, tr("email.twofactor.note")),
+    text: tr("email.twofactor.text", { code }),
   };
 }

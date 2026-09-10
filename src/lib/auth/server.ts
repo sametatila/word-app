@@ -6,7 +6,7 @@ import { betterAuth } from "better-auth";
 import { drizzleAdapter } from "better-auth/adapters/drizzle";
 import { db } from "@/lib/db";
 import { user, session, account, verification } from "@/lib/db/auth-schema";
-import { emailConfigured, sendEmail, verificationEmail, resetEmail, passwordChangedEmail, accountExistsEmail } from "@/lib/email";
+import { emailConfigured, sendEmail, verificationEmail, resetEmail, passwordChangedEmail, accountExistsEmail, twoFactorCodeEmail } from "@/lib/email";
 import { purgeUserData } from "@/lib/account/purge";
 import { revokeAppleSignIn } from "@/lib/account/apple-revoke";
 import { appleClientSecret, appleRevokeConfigured } from "@/lib/auth/apple";
@@ -15,6 +15,8 @@ import { checkPassword, MIN_PASSWORD_LENGTH, PASSWORD_ERROR_CODE } from "@/lib/a
 import { redisRateLimitStorage } from "@/lib/auth/rate-limit-store";
 import { clearFailedLogins, isLockedOut, MAX_FAILED_LOGINS, noteFailedLogin } from "@/lib/auth/login-throttle";
 import { captchaPlugins } from "@/lib/auth/captcha";
+import { twoFactor } from "better-auth/plugins";
+import { TWO_FACTOR_ALLOWED_ATTEMPTS, TWO_FACTOR_CODE_DIGITS, TWO_FACTOR_CODE_MINUTES } from "@/lib/auth/two-factor-config";
 
 /**
  * Self-hosted Better Auth. Oturumlar/kullanıcılar KENDİ
@@ -391,7 +393,49 @@ export const auth = betterAuth({
    * Bot koruması. Liste anahtarlar tanımlıyken TEK eleman, tanımsızken BOŞ —
    * kapıyı açan şey env, kod değil (gerekçe: lib/auth/captcha.ts).
    */
-  plugins: captchaPlugins(),
+  plugins: [
+    ...captchaPlugins(),
+    /**
+     * İKİ ADIMLI DOĞRULAMA — isteğe bağlı, e-posta koduyla.
+     *
+     * Parola tek başına yeterli olduğu sürece, sızmış bir parola hesabın
+     * tamamı demek. Bu ikinci adım kullanıcının POSTA KUTUSUNU da şart
+     * koşuyor: parolayı bilen ama kutuya erişemeyen biri giremiyor.
+     *
+     * KİMLİK DOĞRULAYICI UYGULAMA (TOTP) KAPALI. Sebep dürüstlük: TOTP'un
+     * kurtarma yolu yedek kodlardır ve better-auth yedek kodları yalnız TOTP
+     * kaydıyla birlikte üretiyor. İkisini birden açmak, kullanıcıya
+     * saklaması gereken bir kod listesi ve ayrı bir uygulama yükü getirirdi.
+     * E-posta yolunda kurtarma zaten kullanıcının kutusu.
+     *
+     * BUNUN KARŞILIĞINDA: posta kutusunu kaybeden kullanıcı hesabını da
+     * kaybeder. Aynı şey parola sıfırlama için de geçerli olduğundan
+     * durum bugünkünden kötü değil, ama arayüz bunu açıkça söylüyor
+     * (twofa.mail_warning).
+     *
+     * Açma ve kapama PAROLA istiyor (better-auth zorunlu tutuyor): oturumu
+     * ele geçiren biri ikinci adımı sessizce kaldıramasın.
+     */
+    twoFactor({
+      issuer: "Lernomi",
+      totpOptions: { disable: true },
+      otpOptions: {
+        period: TWO_FACTOR_CODE_MINUTES,
+        digits: TWO_FACTOR_CODE_DIGITS,
+        allowedAttempts: TWO_FACTOR_ALLOWED_ATTEMPTS,
+        /*
+          Kod veritabanında ÖZETLENEREK duruyor. Düz metin saklamak, tek
+          kullanımlık kodu okuyabilen herkesin (döküm, yedek, log) o anki
+          girişi tamamlayabilmesi demekti.
+        */
+        storeOTP: "hashed",
+        sendOTP: async ({ user, otp }) => {
+          const { subject, html, text } = twoFactorCodeEmail(otp, await getLang());
+          await sendEmail(user.email, subject, html, text);
+        },
+      },
+    }),
+  ],
   /**
    * Parola ölçütü — SUNUCUDA, tek yerde.
    *
