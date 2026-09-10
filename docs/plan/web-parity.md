@@ -3181,3 +3181,42 @@ Bu arada fark DONDURULDU: `check:parity`ye "ses cue kümesi" bölümü eklendi v
 altı cue orada sebebiyle yazılı. Webe yedincisi eklenirse kapı kırılır ve
 karar yeniden verilir; sessizce büyümez. Ters yön de ölçülüyor (mobilde olup
 webde olmayan cue).
+
+### 11.59 Klavye ve hata durumları: dört bulgu
+
+**a) Klavyenin return tuşu hiçbir şey yapmıyordu.** Ölçüm: mobilde on üç
+dosyada `TextInput` var ve return tuşuna tepki veren yalnız ikisiydi
+(`rounds.tsx`). Webde aynı alanlar `<form onSubmit>` içinde, yani Enter cevabı
+kontrol ediyor / girişi yapıyor. Mobilde tuş ölüydü; kullanıcı klavyeyi
+kapatıp düğmeye basmak zorundaydı.
+
+Dokuz tek satırlık alan bağlandı. **Eylem verenler:** skillQuiz kısa cevap
+(Enter = Kontrol et, handler düğmenin ta kendisi), promo kodu (= Uygula),
+AuthScreen şifre (= giriş/kayıt) ve şifre sıfırlama e-postası (= bağlantı
+gönder), DeleteAccount şifre. **Yalnız klavyeyi kapatanlar:** Find ve
+WordsScreen aramaları (liste canlı süzülüyor, arama tuşuna gerek yok),
+SocialSettings kullanıcı adı, Settings ad, MockExam kısa cevap.
+
+ÇOK SATIRLI alanlara dokunulmadı ve dokunulmamalı: orada return tuşu satır
+atlamak için (ExamScreen yazma, LessonScreen, skillLibrary, skillQuiz cümle
+alanları, SocialSettings biyografi, rounds serbest cümle).
+
+**b) Promo kodunda ilk dokunuş kayboluyordu.** `PaywallScreen`in
+kaydırılabilir yüzeyi `keyboardShouldPersistTaps` vermiyordu: kod yazan
+kullanıcı "Uygula"ya bastığında ilk dokunuş yalnız klavyeyi kapatıyor, kodu
+uygulamak için ikinci kez basmak gerekiyordu. Metinsel girdi taşıyan on iki
+kaydırılabilir yüzeyin on ikisi bunu veriyor - bu ekran tek istisnaydı.
+
+**c) Sınav yüklenemezse çıkmaktan başka yol yoktu.** İstek atan sekiz mobil
+ekranın beşi tekrar deneme sunuyor, üçü sunmuyordu. İkisi için bu doğru:
+`PathScreen`in `catch`i bilinçli sessiz (bölüm gösterilmiyor; webin patika
+kabuğu da tekrar deneme sunmuyor) ve Paywall paket listesi aynı sınıfta.
+`ExamScreen` gerçek eksikti - kâğıt isteği geçici bir kesintiyle düşerse tek
+çıkış sınavdan ÇIKMAKTI ve haftanın kâğıdı böyle harcanabiliyordu. Kalıp
+`AchievementsScreen`den: sayaç artıyor, yükleme etkisi yeniden koşuyor, hata
+her denemede sıfırlanıyor.
+
+**d) Ölçülüp temiz çıkan:** `windowSoftInputMode="adjustResize"` manifestte
+duruyor, yani klavye alanı Android'de sistemce açılıyor ve ekran başına
+`KeyboardAvoidingView` gerekmiyor (iki ekran `automaticallyAdjustKeyboardInsets`
+kullanıyor, ikisi de çok satırlı alan taşıyan sohbet yüzeyleri).
