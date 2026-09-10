@@ -10,7 +10,7 @@ import { PressableScale } from "../ui/PressableScale";
 import { Mascot } from "../ui/Mascot";
 import { Celebrate } from "../ui/Celebrate";
 import { CertificateSheet } from "../ui/CertificateSheet";
-import { XIcon, SpeakerIcon } from "../ui/icons";
+import { XIcon, SpeakerIcon, CheckIcon } from "../ui/icons";
 import { RoundView } from "../game/rounds";
 import { written } from "../game/skillQuiz";
 import { speakTarget } from "../lib/tts";
@@ -55,7 +55,10 @@ type Paper = {
   module: number | null;
   trial: boolean;
   seconds: number;
-  cover: { code: string; titleDe: string; titleTr: string; focus: { de: string; tr: string }[] } | null;
+  /* `canDo` SUNUCUDAN GELİYORDU ve burada düşüyordu (bkz. `lib/exam` kapak
+     gövdesi): sınavın sonunda "artık şunları yapabiliyorsun" listesi mobilde
+     hiç görünmüyordu - oysa sonucun anlamı puan değil, kazanılan iş. */
+  cover: { code: string; titleDe: string; titleTr: string; focus: { de: string; tr: string }[]; canDo?: { de: string; tr: string; en: string }[] } | null;
   sections: {
     vocab: Round[]; grammar: GrammarItem[]; produce: ProduceItem[];
     reading: TextItem[]; listening: TextItem[]; speaking: SpeakingItem[]; writing: WritingItem[];
@@ -404,11 +407,43 @@ export function ExamScreen() {
           ) : null}
           {result ? <CertificateSheet examId={result.id} visible={certOpen} onClose={() => setCertOpen(false)} /> : null}
           {result?.sections.map((s) => (
-            <Card key={s.id} padded style={{ flexDirection: "row", justifyContent: "space-between" }}>
-              <Text variant="body">{SECTION_DE[s.id]} · {t(SECTION_KEY[s.id])}</Text>
-              <Text variant="bodyStrong" color={s.pct >= 50 ? colors.successText : colors.dangerText}>%{s.pct}</Text>
+            <Card key={s.id} padded style={{ gap: 6 }}>
+              <View style={{ flexDirection: "row", justifyContent: "space-between", alignItems: "baseline" }}>
+                {/* AĞIRLIK da yazıyor: geçme kuralı "her bölüm ≥ %50" diyor ama
+                    toplamı hangi bölümün taşıdığı ağırlıktan okunuyor ve alan
+                    sunucudan zaten geliyordu (`weight`). */}
+                <Text variant="body" style={{ flex: 1 }}>
+                  {SECTION_DE[s.id]} · {t(SECTION_KEY[s.id])}
+                  <Text variant="micro" color={colors.textMuted}> {t("exam.weight", { pct: `%${s.weight}` })}</Text>
+                </Text>
+                <Text variant="bodyStrong" color={s.pct >= 50 ? colors.successText : colors.dangerText}>%{s.pct}</Text>
+              </View>
+              <View style={{ height: 6, borderRadius: 3, backgroundColor: colors.surface2, overflow: "hidden" }}>
+                <View style={{ height: "100%", width: `${s.pct}%`, backgroundColor: s.pct >= 50 ? colors.primary : colors.danger, borderRadius: 3 }} />
+              </View>
             </Card>
           ))}
+          {/*
+            YAPABİLİRLİK LİSTESİ. Kâğıdın kapağı bunu taşıyor (`cover.canDo`)
+            ve mobil tipi alanı düşürdüğü için liste hiç görünmüyordu. Sonucun
+            anlamı puan değil kazanılan iş; sertifikanın gösterilme sebebi de
+            bu (bkz. `api/certificate`).
+          */}
+          {paper?.cover?.canDo?.length ? (
+            <Card padded style={{ gap: spacing.sm, backgroundColor: colors.surface2 }}>
+              <Text variant="bodyStrong">{t(result?.passed ? "exam.now_you_can" : "exam.this_measured")}</Text>
+              {paper.cover.canDo.map((c, i) => (
+                <View key={i} style={{ flexDirection: "row", gap: spacing.sm }}>
+                  <CheckIcon color={result?.passed ? colors.successText : colors.textMuted} size={14} />
+                  <View style={{ flex: 1 }}>
+                    <Text variant="caption" style={{ lineHeight: 19 }}>{c.de}</Text>
+                    <Text variant="micro" color={colors.textMuted}>{c.tr}</Text>
+                    <Text variant="micro" color={colors.textFaint}>{c.en}</Text>
+                  </View>
+                </View>
+              ))}
+            </Card>
+          ) : null}
           <PressableScale onPress={() => nav.goBack()} style={[{ backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: 16, alignItems: "center" }, softShadow(colors.primary, 10)]}>
             <Text variant="bodyStrong" color={colors.onPrimary}>{t("item.go_back")}</Text>
           </PressableScale>
