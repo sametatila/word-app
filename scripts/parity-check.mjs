@@ -192,6 +192,38 @@ console.log("\n" + C.b + "8. SOSYAL ISTEMCI YUZEYI" + C.off);
   sameSet("islem kumesi", ops(read("mobile/src/api/social.ts")), ops(read("src/lib/social/client.ts")));
 }
 
+/* tur turleri: sunucu ne uretiyor, mobil ne cizebiliyor */
+
+console.log("\n" + C.b + "9. TUR TURLERI" + C.off);
+{
+  /*
+   * Sunucu istemciyi tanımıyor: `Round["game"]` birleşimindeki her tür mobile
+   * de gidebiliyor. Mobilin dağıtıcısında karşılığı olmayan tür sessizce
+   * öz-değerlendirme kartına düşüyor - görev söylenmiyor ve cevap YANLIŞ TÜRLE
+   * kaydediliyor. Haftalık sınavda bu her hafta iki soruydu (bkz. §11.13).
+   *
+   * İki tür bilerek dışarıda ve ikisinin de gerekçesi burada duruyor; listeye
+   * yeni bir ad eklemek gerekiyorsa o ad için de bir cümle yazılmalı.
+   */
+  const KNOWN_GAPS = {
+    free_sentence: "AI puanlı yazma turu; mobilde oynatıcısı yok. Haftalık sınav `?skipGames` ile susturuyor, normal oturum yolu §11.13'te açık.",
+    speak: "Yalnız yürüyüş modunda üretiliyor ve orada kendi oynatıcısı var; genel dağıtıcıya hiç düşmüyor.",
+  };
+  const web = [...(read("src/lib/types.ts").match(/export type GameId =(.*?);/s)?.[1] ?? "").matchAll(/"(\w+)"/g)].map((x) => x[1]);
+  const mob = [...read("mobile/src/game/rounds.tsx").matchAll(/round\.game === "(\w+)"/g)].map((x) => x[1]);
+  const missing = [...new Set(web)].filter((g) => !mob.includes(g));
+  const unexplained = missing.filter((g) => !(g in KNOWN_GAPS));
+  if (!web.length || !mob.length) fail("tur turleri okunamadi", [`web ${web.length}, mobil ${mob.length}`]);
+  else if (unexplained.length) {
+    fail("mobilde cizilemeyen tur", [
+      ...unexplained.map((g) => `${g}: gerekcesi yok - ya oynatici ekle ya KNOWN_GAPS'e sebebiyle yaz`),
+    ]);
+  } else {
+    pass(`sunucu ${new Set(web).size} tur, mobil ${new Set(mob).size} tanıyor`);
+    for (const g of missing) console.log("         " + C.dim + `bilinen boşluk ${g}: ${KNOWN_GAPS[g]}` + C.off);
+  }
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"
