@@ -3755,3 +3755,63 @@ commit'ine (`55fcfc9a`) karıştı — ortak indeks tehlikesi ters yönden ısı
 Anahtarlar doğru ve commit'li, geri alınacak bir şey yok; ama `GIT_INDEX_FILE`
 yordamı yalnız BENİM commit'imi korur, dosyaların başkasının commit'ine
 karışmasını engellemez.
+
+### 11.74 Sosyal katman: sayı biçimleri ve kapıya bağlanması
+
+Sosyal katman on iki uç ve beş ortak tip taşıyor; **hiçbir kapı bakmıyordu**.
+Ölçüm iki sonuç verdi: yapı şaşırtıcı biçimde eşit, **sayı biçimleri değil**.
+
+#### Eşit çıkanlar (artık kapıda)
+
+Beş tipin (`PublicUser`, `FriendRow`, `ReactionSummary`, `FeedItem`,
+`QuestView`) alan kümesi iki yönde de birebir. Üç cümle tablosunun `case`
+kümesi de aynı — adlar farklı olsa bile:
+
+| web | mobil | tur |
+|---|---|---|
+| `feedText` | `feedPhrase` | 7 |
+| `describeShort` | `reactionTarget` | 6 |
+| `notificationText` | `notificationText` | 9 |
+
+Yirmi iki yeni ölçüm bağlandı; ayrıca iki tablonun sunucunun `ACTIVITY_TYPES`
+ve `NOTIFICATION_TYPES` listesini **tam** kapsadığı da ölçülüyor: kapsamayan
+tür sessizce varsayılan cümleye düşüyor ve kimse fark etmiyor. `reactionTarget`
+`friend_streak` taşımıyor ama iki tarafta da taşımıyor — tepki verilebilen
+olaylar `lib/social/reactions.ts` ile sınırlı, ortak seri onların arasında yok.
+
+#### Sayı biçimi: üç ayrı kusur
+
+**1. Mobilin binlik ayracı sabit noktaydı.** `formatXp` (api/social)
+`replace(..., ".")` yapıyordu: İngilizce arayüzde 1240 "1.240" çıkıyordu,
+oysa en-US'ta "1,240". Aynı kusur bir kez tarihlerde yaşanmış ve `dateLocale()`
+tam bunun için açılmıştı — sayı biçimi de artık oradan geliyor.
+
+**2. Kısaltılmış XP'nin ondalık ayracı da sabit noktaydı.** `formatXp`
+(lib/useMe) `toFixed(1)` ile "1.2k" yazıyordu; Türkçe ve Almanca'da ayraç
+virgül. Yuvarlak sayıda ondalık göstermeme davranışı korundu (2000 → "2k").
+
+**3. Webde iki sayı ham basılıyordu.** `feedText` `quest_completed` ve
+`notificationText` `quest_invite` `Number(...)` yazıyordu, oysa **hemen
+yanlarındaki** `weekly_top` `formatNumber` ile ayraçlı yazıyor ve mobil üçünü
+de ayraçlı yazıyor. Aynı cümle, aynı anahtar, aynı veri — iki platformda
+farklı görünüyordu.
+
+**Ad çakışması da çözüldü.** İki ayrı modülde `formatXp` adıyla iki ayrı
+davranış vardı: biri binlik ayraç (1240 → "1.240"), öteki kısaltma
+(1240 → "1.2k"). Hangi modülden geldiğine bakmayan okuyucuyu yanıltıyordu;
+sosyal olan `groupXp` oldu, altı çağıran dosya yeni ada geçti.
+
+#### Kayda geçen, değiştirilmeyen iki tasarım farkı
+
+**Web kenar çubuğunda XP rozeti var, mobil başlığında yok.** Web `StatPills`
+seri + XP çiziyor, mobil `AppHeader` yalnız seri. Bu bir yerleşim farkı: webin
+kenar çubuğu her zaman görünür ve yeri var, mobil başlığı dört öğeyle
+(seri, gelen kutusu, avatar) zaten dolu. Rozeti mobile eklemek başlığı
+sıkıştırır, webden çıkarmak bilgi kaybı olur.
+
+**Mobil ilerleme karosu XP'yi kısaltıyor, web tam yazıyor.** Aynı dört karolu
+ızgarada mobil "12,5k", web "12.450" gösteriyor. Mobilin kendi içinde de
+tutarsız: yanındaki "öğrenilen kelime" karosu ham sayı (`String(mastered)`,
+gruplama yok). Doğrusu karo genişliğine bakmayı gerektiriyor — dar karoda tam
+sayı taşabilir — o yüzden ölçülmeden değiştirilmedi. Sayı biçiminin kendisi
+(ondalık ayraç) yukarıda düzeltildi, yani kısaltma kalsa da dili doğru.
