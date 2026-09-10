@@ -11,6 +11,7 @@ import { AppleIcon, ArrowBackIcon, BoltIcon, GoogleIcon, MailIcon } from "../ui/
 import { useAuth } from "../lib/AuthContext";
 import { requestPasswordReset, sendVerificationEmail } from "../lib/auth";
 import { fetchServerConfig } from "../lib/serverConfig";
+import { Turnstile } from "../ui/Turnstile";
 import { openLegal } from "../lib/legal";
 import { googleSignIn, googleSupported } from "../lib/googleAuth";
 import { appleSignIn, appleSupported } from "../lib/appleAuth";
@@ -101,6 +102,15 @@ export function AuthScreen() {
   // değildir. İkisinin de ayrıca bir CİHAZ kapısı var: sunucu açık dese bile Apple
   // iOS 13 altında/Android'de, Google da iOS istemcisi koda girmemişken çizilmez.
   const [providersOn, setProvidersOn] = useState({ google: false, apple: false });
+  /*
+    BOT KORUMASI. Sunucudaki anahtarla birlikte açılıp kapanıyor: açıkken kayıt,
+    giriş ve sıfırlama isteği jetonsuz reddediliyor, kapalıyken widget hiç
+    çizilmiyor. Jeton TEK KULLANIMLIK — her denemeden sonra `captchaNonce`
+    artıyor ve widget sıfırlanıyor.
+  */
+  const [captchaOn, setCaptchaOn] = useState(false);
+  const [captchaToken, setCaptchaToken] = useState<string | null>(null);
+  const [captchaNonce, setCaptchaNonce] = useState(0);
   useEffect(() => {
     let alive = true;
     void fetchServerConfig().then((c) => {
@@ -109,9 +119,13 @@ export function AuthScreen() {
         google: c.providers.google && googleSupported(),
         apple: c.providers.apple && appleSupported(),
       });
+      setCaptchaOn(Boolean(c.turnstileSiteKey));
     });
     return () => { alive = false; };
   }, []);
+
+  /** Doğrulama bekleniyorsa gönderim düğmeleri kapalı. */
+  const captchaBlocked = captchaOn && !captchaToken;
 
   /** Doğrulama ekranına geç. Adres dondurulur, geri sayım ve bildirimler sıfırlanır. */
   function toVerify(address: string, reason: VerifyReason) {
@@ -124,12 +138,15 @@ export function AuthScreen() {
   }
 
   async function submit() {
-    if (busy) return;
+    if (busy || captchaBlocked) return;
     const address = email.trim();
     setBusy(true);
     setError(null);
-    const r = mode === "signin" ? await signIn(address, password) : await signUp(name, address, password);
+    const r = mode === "signin"
+      ? await signIn(address, password, captchaToken)
+      : await signUp(name, address, password, captchaToken);
     setBusy(false);
+    setCaptchaNonce((n) => n + 1);
 
     if (r.ok) {
       /*
@@ -160,11 +177,12 @@ export function AuthScreen() {
   }
 
   async function doReset() {
-    if (resetBusy || !email.trim()) return;
+    if (resetBusy || captchaBlocked || !email.trim()) return;
     setResetBusy(true);
     setError(null);
-    await requestPasswordReset(email.trim());
+    await requestPasswordReset(email.trim(), captchaToken);
     setResetBusy(false);
+    setCaptchaNonce((n) => n + 1);
     setResetSent(true); // güvenlik: e-posta kayıtlı olmasa da aynı onay
   }
 
@@ -268,7 +286,17 @@ export function AuthScreen() {
               <>
                 <TextInput returnKeyType="go" onSubmitEditing={() => { if (!resetBusy) void doReset(); }} value={email} onChangeText={setEmail} placeholder={t("auth.email")} placeholderTextColor={colors.textFaint} keyboardType="email-address" autoCapitalize="none" autoCorrect={false} style={input} />
                 {error && (<View style={{ backgroundColor: colors.dangerSoft, borderRadius: radii.md, padding: spacing.md }}><Text variant="caption" color={colors.dangerText}>{error}</Text></View>)}
-                <PressableScale onPress={doReset} accessibilityLabel={t("auth.send_reset_link")} style={[{ borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: 16, alignItems: "center", marginTop: spacing.sm }, softShadow(colors.primary, 10)]}>
+                {captchaOn && (
+                  <>
+                    <Turnstile resetSignal={captchaNonce} onToken={setCaptchaToken} />
+                    {!captchaToken && (
+                      <Text variant="caption" color={colors.textMuted} style={{ textAlign: "center" }} accessibilityLiveRegion="polite">
+                        {t("auth.captcha_wait")}
+                      </Text>
+                    )}
+                  </>
+                )}
+                <PressableScale onPress={doReset} disabled={captchaBlocked} accessibilityLabel={t("auth.send_reset_link")} style={[{ borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: 16, alignItems: "center", marginTop: spacing.sm, opacity: captchaBlocked ? 0.6 : 1 }, softShadow(colors.primary, 10)]}>
                   <Text variant="h3" color={colors.onPrimary}>{resetBusy ? "..." : t("auth.send_reset_link")}</Text>
                 </PressableScale>
               </>
@@ -359,7 +387,17 @@ export function AuthScreen() {
               </View>
             )}
 
-            <PressableScale onPress={submit} style={[{ borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: 16, alignItems: "center", marginTop: spacing.sm }, softShadow(colors.primary, 10)]}>
+            {captchaOn && (
+              <>
+                <Turnstile resetSignal={captchaNonce} onToken={setCaptchaToken} />
+                {!captchaToken && (
+                  <Text variant="caption" color={colors.textMuted} style={{ textAlign: "center" }} accessibilityLiveRegion="polite">
+                    {t("auth.captcha_wait")}
+                  </Text>
+                )}
+              </>
+            )}
+            <PressableScale onPress={submit} disabled={captchaBlocked} style={[{ borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: 16, alignItems: "center", marginTop: spacing.sm, opacity: captchaBlocked ? 0.6 : 1 }, softShadow(colors.primary, 10)]}>
               <Text variant="h3" color={colors.onPrimary}>{busy ? "..." : mode === "signin" ? t("auth.sign_in") : t("auth.create_account")}</Text>
             </PressableScale>
 

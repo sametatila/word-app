@@ -15,8 +15,9 @@ type Ctx = {
   user: AuthUser | null;
   /** Oturum ilk kez okunuyor (açılış): ekran kararı bunu bekler. */
   loading: boolean;
-  signIn: (email: string, password: string) => Promise<AuthOutcome>;
-  signUp: (name: string, email: string, password: string) => Promise<AuthOutcome>;
+  /** `captchaToken`: bot koruması açıkken zorunlu (bkz. lib/auth post). */
+  signIn: (email: string, password: string, captchaToken?: string | null) => Promise<AuthOutcome>;
+  signUp: (name: string, email: string, password: string, captchaToken?: string | null) => Promise<AuthOutcome>;
   signOut: () => Promise<void>;
   refresh: () => Promise<void>;
   /** Sosyal giriş WebView'i bitince: oturumu tazele + onboarding prefs'i uygula. */
@@ -129,8 +130,8 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   // olduğundan reload köprüyü kimlikli yapar → Katja/Conrad/Emel yeni kurulumda da çalışır.
   useEffect(() => { if (user?.id) bridgeRefresh(true); }, [user?.id]);
 
-  const signIn = useCallback(async (email: string, password: string) => {
-    const r = await apiSignIn(email, password);
+  const signIn = useCallback(async (email: string, password: string, captchaToken?: string | null) => {
+    const r = await apiSignIn(email, password, captchaToken);
     // Giriş = hesap zaten vardı: akışta seçilenler değil, hesabın kendi ayarları geçerli.
     if (r.ok) { const u = r.user ?? (await getSession()); setUser(u); await adoptAccount(u, false); }
     return r;
@@ -149,8 +150,8 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
    * ve bekleyen onboarding seçimleri boşuna harcanırdı. Şimdi seçimler
    * cihazda kalıyor, kullanıcı doğrulayıp girince devrediliyor.
    */
-  const signUp = useCallback(async (name: string, email: string, password: string) => {
-    const r = await apiSignUp(name, email, password);
+  const signUp = useCallback(async (name: string, email: string, password: string, captchaToken?: string | null) => {
+    const r = await apiSignUp(name, email, password, captchaToken);
     if (r.ok && r.session) { const u = r.user ?? (await getSession()); setUser(u); await adoptAccount(u, true); }
     return r;
   }, [adoptAccount]);

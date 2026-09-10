@@ -28,6 +28,13 @@ export function translateAuthError(code: string, message: string, status = 0): s
     HTML) görüyordu — web'de aynı eşleme baştan vardı.
   */
   if (status === 429 || m.includes("too many requests")) return t("autherror.too_many");
+  /*
+    Bot koruması üç koddan biriyle düşüyor: başlık hiç yok (MISSING_RESPONSE),
+    Cloudflare jetonu reddetti (VERIFICATION_FAILED) ya da doğrulama servisine
+    ulaşılamadı (UNKNOWN_ERROR). Kullanıcı için üçü de aynı: doğrulama
+    geçilemedi, tekrar denesin.
+  */
+  if (c === "VERIFICATION_FAILED" || c === "MISSING_RESPONSE") return t("autherror.captcha_failed");
   if (c.includes("EMAIL_NOT_VERIFIED") || m.includes("email not verified"))
     return t("autherror.your_email_address_is_not");
   if (c.includes("INVALID_EMAIL_OR_PASSWORD") || m.includes("invalid email or password"))

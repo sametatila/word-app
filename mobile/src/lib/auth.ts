@@ -38,12 +38,23 @@ export type AuthOutcome =
    */
   | { ok: false; code: string; message: string; status?: number };
 
-async function post(path: string, body: Record<string, unknown>): Promise<Response> {
+/**
+ * `captchaToken`: Turnstile jetonu. Bot koruması açıkken kayıt, giriş ve
+ * sıfırlama isteği bu başlık olmadan 400 dönüyor; kapalıyken başlık hiç
+ * okunmuyor. Açık mı kapalı mı sorusunun cevabı `/api/config` (bkz.
+ * lib/serverConfig `turnstileSiteKey`).
+ */
+async function post(path: string, body: Record<string, unknown>, captchaToken?: string | null): Promise<Response> {
   return fetch(`${API_BASE}/api/auth/${path}`, {
     method: "POST",
     // `origin` elle: RN bu başlığı koymuyor, Better Auth'un CSRF kontrolü ise
     // çerez taşıyan POST'ta onu şart koşuyor (bkz. api/client.ts'teki uzun not).
-    headers: { "content-type": "application/json", accept: "application/json", origin: API_BASE },
+    headers: {
+      "content-type": "application/json",
+      accept: "application/json",
+      origin: API_BASE,
+      ...(captchaToken ? { "x-captcha-response": captchaToken } : {}),
+    },
     body: JSON.stringify(body),
   });
 }
@@ -71,17 +82,17 @@ async function parse(res: Response): Promise<AuthOutcome> {
   return { ok: true, user: userFrom(json), session: hasSession(json) };
 }
 
-export async function signIn(email: string, password: string): Promise<AuthOutcome> {
+export async function signIn(email: string, password: string, captchaToken?: string | null): Promise<AuthOutcome> {
   try {
-    return await parse(await post("sign-in/email", { email, password, rememberMe: true }));
+    return await parse(await post("sign-in/email", { email, password, rememberMe: true }, captchaToken));
   } catch {
     return { ok: false, code: "NETWORK", message: t("common.connection_failed") };
   }
 }
 
-export async function signUp(name: string, email: string, password: string): Promise<AuthOutcome> {
+export async function signUp(name: string, email: string, password: string, captchaToken?: string | null): Promise<AuthOutcome> {
   try {
-    return await parse(await post("sign-up/email", { email, password, name: name.trim() || email.split("@")[0] }));
+    return await parse(await post("sign-up/email", { email, password, name: name.trim() || email.split("@")[0] }, captchaToken));
   } catch {
     return { ok: false, code: "NETWORK", message: t("common.connection_failed") };
   }
@@ -196,9 +207,9 @@ export async function sendAppleAuthorizationCode(code: string): Promise<boolean>
  * web'deki /reset-password sayfasında tamamlanır — mobil ayrı sayfa gerektirmez.
  * Güvenlik: e-posta kayıtlı olmasa bile true döneriz (hesap sızdırmamak için).
  */
-export async function requestPasswordReset(email: string): Promise<boolean> {
+export async function requestPasswordReset(email: string, captchaToken?: string | null): Promise<boolean> {
   try {
-    const res = await post("request-password-reset", { email, redirectTo: "https://www.lernomi.app/reset-password" });
+    const res = await post("request-password-reset", { email, redirectTo: "https://www.lernomi.app/reset-password" }, captchaToken);
     return res.ok;
   } catch {
     return false;

@@ -7,7 +7,17 @@ import { api } from "../api/client";
  * sağlayıcı yokken düğmeyi çizmek, iOS'ta çalışmayan bir "Apple ile devam et"
  * demek olur ve inceleme onu bozuk işlevsellik sayar.
  */
-export type ServerConfig = { auth: boolean; providers: { google: boolean; apple: boolean } };
+/**
+ * `turnstileSiteKey`: bot koruması açıksa Turnstile'ın genel anahtarı, kapalıysa
+ * boş dize. Boşken uygulama doğrulama kutusunu HİÇ çizmiyor; doluyken kayıt,
+ * giriş ve sıfırlama isteklerine jeton iliştirmek ZORUNLU (sunucu jetonsuz
+ * isteği reddediyor).
+ */
+export type ServerConfig = {
+  auth: boolean;
+  providers: { google: boolean; apple: boolean };
+  turnstileSiteKey: string;
+};
 
 let cached: ServerConfig | null = null;
 
@@ -18,9 +28,10 @@ export async function fetchServerConfig(): Promise<ServerConfig> {
     cached = {
       auth: c.auth !== false,
       providers: { google: Boolean(c.providers?.google), apple: Boolean(c.providers?.apple) },
+      turnstileSiteKey: typeof c.turnstileSiteKey === "string" ? c.turnstileSiteKey : "",
     };
   } catch {
-    cached = { auth: true, providers: { google: false, apple: false } };
+    cached = { auth: true, providers: { google: false, apple: false }, turnstileSiteKey: "" };
   }
   return cached;
 }
