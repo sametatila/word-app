@@ -3685,3 +3685,73 @@ ayrı yere kutlama koymak altı yerde unutulur). Mobilde rozet açılış kutlam
 HİÇ YOK - kullanıcı rozeti ancak Başarılar ekranına giderek görüyor. Sinyal
 artık mobilde de var (§11.70), yani kart eklenebilir; ama bu yeni bir yüzey ve
 kutlamanın ne zaman kesmemesi gerektiği (webin üç kuralı) ürün kararı.
+
+### 11.73 Görev panosunun üç eksiği + tur tipinin iki yanlışı
+
+Bir önceki tur toplu ödülü "yeni yüzey" diye dışarıda bırakmıştı (§11.72).
+Yanlış karardı: yeni yüzey değil, panonun eksik parçası. Günün üçünü de
+bitiren Android kullanıcısı sunucunun verdiği **300 XP'yi hiç alamıyordu**
+ve pano `allDone` ile `allClaimed` alanlarını baştan beri taşıyordu — yine
+"sözleşme modellenmiş, düğme yazılmamış".
+
+Kapatılan üç eksik:
+
+- **Toplu ödül kutusu.** Web kartıyla aynı: hediye ikonu, alındıysa
+  "+300 XP", alınmadıysa düğme. `ALL_DONE_ID` ve `ALL_DONE_XP` mobil tarafta
+  da adlandırıldı ki ekran 300 sayısını içine gömmesin.
+- **Başlıktaki "tamam" KODA GÖMÜLÜ Türkçeydi** (`{n}/{m} tamam`): İngilizce
+  ve Almanca hesapta da Türkçe çıkıyordu. `i18n:check` bunu göremez — sözcük
+  Türkçeye özgü harf taşımıyor, tarayıcının ayırt edicisi o. Yerine webin iki
+  durumu geldi: bekleyen ödül varsa sayısı, yoksa "gece yarısı yenilenir".
+- **`href` bağlanmamıştı.** Alan tipte vardı, hiçbir şey okumuyordu; satır
+  dokunulamazdı. Webin kartı bu yönlendirmeyi asıl işi sayıyor (ölçümde
+  beceriler bölümünü yedi kullanıcıdan biri açmış). Eşleme adres değil
+  KİMLİK üzerinden: webin `/immersion` sayfası mobilde ikiye ayrılmış
+  (Patika = dersler, Beceriler = kütüphane), tek adres ikisini gösteremiyor.
+  Learn'e giden altı görev dokunulmaz — kutular zaten Learn'in içinde.
+
+Ayrıca `quest_claim` olayı mobil ad listesinde YOKTU (webde vardı): ödül
+alınabilir hâle gelene kadar karşılığı da yoktu. Ses yok — `unlock` cue'su
+mobilin yedi sesinin arasında değil (§11.15).
+
+**Webin kartı sabiti içe ALAMIYOR** (`lib/quests` `server-only`), sayıyı elle
+yazıyor. Yeni bir kapı bölümü kartın yazdığı iki sayıyı sunucunun sabitiyle
+ölçüyor; ayrılırlarsa web kullanıcısına yanlış miktar yazar.
+
+#### Tur tipi: iki `as unknown as` kaçışı ve üç ölü alan
+
+Kapının kör noktasını (§11.71: "ters yön ölçülmüyor") kapatmaya çalışırken
+gürültü tabanı beş alan çıktı. Ölçüm ikisinin **ayıklayıcı kusuru**, üçünün
+**gerçek ölü alan** olduğunu gösterdi:
+
+- `words` ve `direction` iki tarafta da var; webin birleşiminin o iki üyesi
+  TEK SATIRDA yazılmış ve satır başı arayan desen onları hiç görmüyordu.
+  Ayıklayıcı artık `{`/`;`/satır sonu ayırıcısıyla çalışıyor ve yorumları
+  önce atıyor.
+- `blank`, `correctOrder`, `prompt` sunucuda hiç yok ve mobilde hiç
+  okunmuyordu — silindi. `prompt` yakın bir adın gölgesiydi: `ChoiceGame`in
+  KENDİ `ChoiceRound` tipinde bir `prompt` var (yerleştirme sınavı onu
+  kullanıyor), oturum turunun alanıyla ilgisi yok.
+
+Temizlik sırasında iki alanın **tipi yanlış** çıktı; ikisi de `as unknown as`
+ile kaçırılıyordu:
+
+| alan | sunucu | mobil tip (eski) |
+|---|---|---|
+| `answer` | `order`da `string[]`, cloze/plural'da `string` | yalnız `string` |
+| `sentence` | `translate`da `{ tr, de, en }`, cloze/scramble'da `string` | yalnız `string` |
+
+İkisi de birleşim oldu, dört okuma yeri `typeof`/`Array.isArray` ile
+daraltıldı. Kaçış çalışıyordu ama tip sözleşmeyi yanlış anlatıyor ve bir
+sonraki okuyanı yanlış yönlendiriyordu.
+
+Sonuç: üç bölümün de ters yönü kapıya bağlandı, **istisna listesi yok**.
+Ters yönün gerçekten yakaladığı, mobil tipe bir alan eklenip denendi.
+
+#### Aynı ağaçta çalışan öteki oturum
+
+Bu turda yazdığım `mobile/src/i18n/*` değişiklikleri başka bir oturumun
+commit'ine (`55fcfc9a`) karıştı — ortak indeks tehlikesi ters yönden ısırdı.
+Anahtarlar doğru ve commit'li, geri alınacak bir şey yok; ama `GIT_INDEX_FILE`
+yordamı yalnız BENİM commit'imi korur, dosyaların başkasının commit'ine
+karışmasını engellemez.
