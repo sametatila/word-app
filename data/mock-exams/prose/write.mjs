@@ -1,5 +1,7 @@
 /**
- * Paketi yazar: `node data/mock-exams/prose/write.mjs <paket> < satirlar.txt`
+ * Paketi yazar: `node data/mock-exams/prose/write.mjs <paket> [--de] < satirlar.txt`
+ * Bir satır bir dize; çok satırlı dizeler için ayraç `%%` (aşağıda).
+ * `--de` Almanca tarafı yazar (`in-de/` → `out-de/`).
  *
  * Anahtar paket dosyasından kopyalanıyor; yazan taraf yalnız metni veriyor.
  * Sözlükçe hattında anahtarı elle yazınca elli maddenin otuz altısı
@@ -43,8 +45,21 @@ const DIR = new URL(".", import.meta.url).pathname;
 const packet = process.argv[2];
 if (!packet) throw new Error("paket adı gerekli");
 
-const src = JSON.parse(readFileSync(`${DIR}in/${packet}.json`, "utf8"));
-const lines = readFileSync(0, "utf8").split("\n").map((l) => l.trim()).filter(Boolean);
+/* İKİ PARİTE. `--de` Almanca tarafı yazar (`in-de/` → `out-de/`); bayraksız
+   İngilizce tarafı (`in/` → `out/`). Kapı da aynı bayrağı alıyor. */
+const SUFFIX = process.argv.includes("--de") ? "-de" : "";
+
+const src = JSON.parse(readFileSync(`${DIR}in${SUFFIX}/${packet}.json`, "utf8"));
+const raw = readFileSync(0, "utf8");
+
+/* ÇOK SATIRLI DİZE. Tek başına `%%` duran bir satır varsa kayıt ayracı O
+   olur ve satır sonları dizenin İÇİNDE kalır; boş satır da korunur, çünkü
+   kaynakta paragraf ayracı o. `%%` yoksa eski davranış aynen sürüyor.
+   Gerek OLDU: İngilizce kursun 6.828 dizesinde 86 satır sonu var (ilan,
+   e-posta taslağı, tablo) ve bir satır bir dize kuralı orada çalışmaz. */
+const lines = /^%%$/m.test(raw)
+  ? raw.split(/^%%$/m).map((r) => r.replace(/^\s+|\s+$/g, "")).filter(Boolean)
+  : raw.split("\n").map((l) => l.trim()).filter(Boolean);
 
 if (lines.length !== src.words.length) {
   const flat = (t) => String(t).replace(/[„“”‚‘’]/g, '"').replace(/\s+/g, " ").trim();
@@ -97,9 +112,9 @@ if (lines.length !== src.words.length) {
 }
 
 const out = src.words.map((w, i) => ({ tr: w.tr, kind: w.kind, en: lines[i] }));
-mkdirSync(`${DIR}out`, { recursive: true });
+mkdirSync(`${DIR}out${SUFFIX}`, { recursive: true });
 writeFileSync(
-  `${DIR}out/${packet}.json`,
+  `${DIR}out${SUFFIX}/${packet}.json`,
   `[\n${out
     .map((r) => ` { "tr": ${JSON.stringify(r.tr)}, "kind": ${JSON.stringify(r.kind)}, "en": ${JSON.stringify(r.en)} }`)
     .join(",\n")}\n]\n`,

@@ -1,6 +1,32 @@
 /**
- * Deneme kâğıdı metinlerinin İngilizcesini denetler:
- *   `npx tsx --tsconfig scripts/tsconfig.e2e.json data/mock-exams/prose/check.ts [paket|all]`
+ * Deneme kâğıdı metinlerinin ANA DİL karşılığını denetler:
+ *   `… data/mock-exams/prose/check.ts [paket|all] [--de]`
+ *
+ * İKİ PARİTE, TEK KAPI. `--de` bayrağı Almanca tarafa geçiriyor:
+ *
+ *   (bayraksız)  Almanca kâğıtlar → `out/`     yazılan dil İNGİLİZCE  (en→de)
+ *   --de         İngilizce kâğıtlar → `out-de/` yazılan dil ALMANCA   (de→en)
+ *
+ * Kuralların ÇOĞU ortak ve olmak zorunda: son noktalama, sayı pariteti,
+ * kanıtın hayatta kalması, mükerrer satır, kapsam, uzunluk sapması. Bunlar
+ * dilden bağımsız ve ikinci bir dosyaya kopyalansalardı ayrışırlardı — bu
+ * hatta o ders zaten alındı.
+ *
+ * DİLE BAĞLI OLAN ÜÇ ŞEY ayrıldı:
+ *   yazım        İngiliz yazımı kuralı yalnız İngilizce tarafta çalışır;
+ *                Almanca çıktıya uygulanması anlamsız
+ *   karakter     Almanca taraf da aynı kümeyi kullanıyor (`ÄÖÜäöüß` zaten
+ *                içinde) ama SATIR SONU eklendi: İngilizce kursun 6.828
+ *                dizesinin 86 satır sonu var, Almanca kursunkilerde yoktu
+ *   ileti        "İngilizcesi yok" / "Almancası yok"
+ *
+ * KANIT ÖLÇÜTÜ İKİ TARAFTA DA AYNI ve bu şimdilik bilinçli bir eksik.
+ * `foreign()` Almanca/İngilizce işlev sözcüğüne ve büyük harfli ada bakıyor;
+ * İngilizce kâğıtlarda alıntılanan bir öbek ("«train ticket» için") ikisini
+ * de taşımayabilir ve kanıt sayılmaz. Ölçüt GENİŞLETİLMEDİ çünkü henüz tek
+ * satır yazılmadı: bu hatta yanlış ret dört kez ölçülerek düzeltildi ve
+ * veriye bakmadan kural yazmak tam da o hataydı. İlk paketler yazılınca
+ * ölçülüp genişletilecek.
  *
  * Ortak kurallar kardeş hatların aynısı — son noktalama, sayı, karakter
  * kümesi, Almanca kanıtın korunması, uzunluk sapması, İngiliz yazımı,
@@ -22,7 +48,14 @@ import { extractMock, type MockRow } from "./make.js";
 import { usSpelling } from "../../lessons/spelling.mjs";
 
 const DIR = new URL(".", import.meta.url).pathname;
-const ARG = (process.argv[2] || "all").toLowerCase();
+const args = process.argv.slice(2).filter((a) => a !== "--de");
+/** Hangi taraf: yazılan dil. */
+const SIDE: "en" | "de" = process.argv.includes("--de") ? "de" : "en";
+/** Okunan kurs — yazılan dilin KARŞITI: Almanca kâğıt İngilizce yazdırır. */
+const COURSE: "de" | "en" = SIDE === "de" ? "en" : "de";
+const OUT = SIDE === "de" ? "out-de" : "out";
+const LANG = SIDE === "de" ? "Almanca" : "İngilizce";
+const ARG = (args[0] || "all").toLowerCase();
 
 const errors: string[] = [];
 const warnings: string[] = [];
@@ -130,13 +163,13 @@ const strip = (en: string, tr: string): string => {
   return out;
 };
 
-const src = new Map(extractMock().map((r) => [r.kind + "|" + r.tr, r]));
+const src = new Map(extractMock(COURSE).map((r) => [r.kind + "|" + r.tr, r]));
 
-if (existsSync(`${DIR}out`))
-  for (const f of readdirSync(`${DIR}out`).filter((x) => x.endsWith(".json"))) {
+if (existsSync(`${DIR}${OUT}`))
+  for (const f of readdirSync(`${DIR}${OUT}`).filter((x) => x.endsWith(".json"))) {
     const packet = f.replace(/\.json$/, "");
     if (ARG !== "all" && packet !== ARG) continue;
-    for (const r of JSON.parse(readFileSync(`${DIR}out/${f}`, "utf8")) as {
+    for (const r of JSON.parse(readFileSync(`${DIR}${OUT}/${f}`, "utf8")) as {
       tr: string;
       kind: string;
       en?: string;
@@ -170,11 +203,11 @@ if (existsSync(`${DIR}out`))
           Türkçe harf çevrilmemiş demektir).
         */
         for (const ch of strip(en, r.tr))
-          if (!/[ -~ÄÖÜäöüßéá²·×‚„“”‘’«»–—…→↔€§]/.test(ch))
+          if (!/[\n -~ÄÖÜäöüßéá²·×‚„“”‘’«»–—…→↔€§]/.test(ch))
             H(`beklenmedik karakter: «${ch}» (U+${ch.codePointAt(0)?.toString(16).toUpperCase().padStart(4, "0")})`);
 
         for (const span of evidence(r.tr))
-          if (!flat(en).includes(flat(span))) H(`Almanca kanıt düşmüş: «${span.slice(0, 34)}»`);
+          if (!flat(en).includes(flat(span))) H(`kâğıt kanıtı düşmüş: «${span.slice(0, 34)}»`);
 
         if (flat(en) === flat(r.tr) && turkish(r.tr)) H("karşılık Türkçenin aynısı");
 
@@ -186,14 +219,17 @@ if (existsSync(`${DIR}out`))
         if (en.length > r.tr.length * 2 + 20 || en.length * 2 + 20 < r.tr.length)
           U(`uzunluk çok sapıyor (${r.tr.length} → ${en.length})`);
 
-        /* Yazım denetimi yalnız yazanın SEÇTİĞİ sözcüklere bakıyor:
-           kaynaktan taşınan Almanca örnekler (Meter, Kilometer) yargılanmaz. */
-        const carried = new Set(r.tr.split(/[^\p{L}-]+/u).filter(Boolean));
-        const chosen = strip(en, r.tr)
-          .split(/([^\p{L}-]+)/u)
-          .filter((w) => !carried.has(w))
-          .join(" ");
-        for (const h of usSpelling(chosen)) U(`Amerikan yazımı ${h}`);
+        /* Yazım denetimi yalnız İNGİLİZCE tarafta ve yalnız yazanın SEÇTİĞİ
+           sözcüklerde: kaynaktan taşınan Almanca örnekler (Meter, Kilometer)
+           yargılanmaz. Almanca çıktıya İngiliz yazımı kuralı uygulanmaz. */
+        if (SIDE === "en") {
+          const carried = new Set(r.tr.split(/[^\p{L}-]+/u).filter(Boolean));
+          const chosen = strip(en, r.tr)
+            .split(/([^\p{L}-]+)/u)
+            .filter((w) => !carried.has(w))
+            .join(" ");
+          for (const h of usSpelling(chosen)) U(`Amerikan yazımı ${h}`);
+        }
       }
       written.set(key, en);
     }
@@ -201,10 +237,10 @@ if (existsSync(`${DIR}out`))
 
 let coverage: { rows: number; missing: number } | null = null;
 if (ARG === "all") {
-  const rows = extractMock();
+  const rows = extractMock(COURSE);
   const missing = rows.filter((r) => !written.has(r.kind + "|" + r.tr)).length;
   coverage = { rows: rows.length, missing };
-  if (missing) errors.push(`  [kapsam] ${missing} dizenin İngilizcesi yok`);
+  if (missing) errors.push(`  [kapsam] ${missing} dizenin ${LANG}sı yok`);
 }
 
 if (errors.length) {
