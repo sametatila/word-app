@@ -1839,3 +1839,22 @@ tetikleyemez. Yalnız Almanca bir egzersiz İngilizce karşılıksız eklenirse
 kırmızı olur - ki bugünkü standart tam olarak bunu yasaklıyor.
 
 Üç ders etiketine DOKUNULMADI; onlar hâlâ içeriği yazan tarafın kararı.
+
+#### Taban baştan sona denetlendi
+
+On iki kalemin hepsi bugünkü sayıyla karşılaştırıldı:
+
+    8 kalem   TAM EŞİT       ratchet sağlıklı çalışıyor (108, 133, 48, 33,
+                             31, 44, 10 ve `en yok` 0)
+    2 kalem   BAYAT          borcu ödenmiş, tavan yüksek kalmış:
+                             `skills: en yok` 1209 → 0
+                             `skills: intro Türkçe olmalı; Almanca harf var` 2 → 0
+    3 kalem   AŞIM           üç ders etiketi; İngilizce kursun payı (yukarıda)
+
+İkinci bayat kalem de indirildi: kural Türkçe olması gereken bir tanıtım
+metninde Almanca harf arıyor (`intro Türkçe olmalı`) ve bugün hiç tetiklemiyor.
+İki uyarılık tavan küçük ama aynı sınıf - ödenmiş bir borcun tavanı, geri
+büyümeye açık kapı.
+
+Artık tabandaki her kalem ya bugünkü sayıya EŞİT ya da yazılı bir karar
+bekliyor. Sonraki denetim bu tabloyu yeniden üretip karşılaştırabilir.
