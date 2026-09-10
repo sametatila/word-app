@@ -81,12 +81,14 @@ export function translateAuthError(input: unknown, lang: NativeLang = DEFAULT_NA
     return t("autherrorw.account_not_linked");
   if (code.includes("USER_NOT_FOUND") || msg.includes("user not found"))
     return t("autherror.no_account_was_found_for_this");
+  if (code.includes("PASSWORD_TOO_COMMON")) return t("autherror.password_too_common");
+  if (code.includes("PASSWORD_CONTAINS_IDENTITY")) return t("autherror.password_contains_identity");
   if (
     code.includes("PASSWORD_TOO_SHORT") ||
     msg.includes("password is too short") ||
-    msg.includes("at least 8")
+    msg.includes("at least")
   )
-    return t("autherror.password_must_be_at_least_8");
+    return t("autherror.password_min_length");
   if (code.includes("INVALID_TOKEN") || code.includes("TOKEN_EXPIRED") || msg.includes("token"))
     return t("autherrorw.token_expired");
   if (status === 429 || code.includes("TOO_MANY") || msg.includes("rate limit"))

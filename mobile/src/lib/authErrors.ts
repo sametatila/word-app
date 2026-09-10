@@ -17,8 +17,10 @@ export function translateAuthError(code: string, message: string): string {
     return t("autherror.this_email_is_already_registered");
   if (c.includes("USER_NOT_FOUND") || m.includes("user not found"))
     return t("autherror.no_account_was_found_for_this");
+  if (c.includes("PASSWORD_TOO_COMMON")) return t("autherror.password_too_common");
+  if (c.includes("PASSWORD_CONTAINS_IDENTITY")) return t("autherror.password_contains_identity");
   if (c.includes("PASSWORD_TOO_SHORT") || m.includes("password is too short") || m.includes("too short"))
-    return t("autherror.password_must_be_at_least_8");
+    return t("autherror.password_min_length");
   if (c.includes("INVALID_EMAIL") || m.includes("invalid email"))
     return t("autherror.enter_valid_email_address");
   return message || t("autherror.something_went_wrong_try_again");

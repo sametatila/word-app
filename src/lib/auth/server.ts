@@ -9,6 +9,8 @@ import { user, session, account, verification } from "@/lib/db/auth-schema";
 import { emailConfigured, sendEmail, verificationEmail, resetEmail } from "@/lib/email";
 import { purgeUserData } from "@/lib/account/purge";
 import { revokeAppleSignIn } from "@/lib/account/apple-revoke";
+import { APIError, createAuthMiddleware } from "better-auth/api";
+import { checkPassword, MIN_PASSWORD_LENGTH, PASSWORD_ERROR_CODE } from "@/lib/auth/password-policy";
 
 /**
  * Self-hosted Better Auth. Oturumlar/kullanıcılar KENDİ
@@ -81,7 +83,12 @@ export const auth = betterAuth({
     // kullanıcı doğrulama e-postası bekleyip kilitlenmesin. Sosyal giriş
     // (Google) sağlayıcıdan `emailVerified: true` geldiği için bundan etkilenmez.
     requireEmailVerification: emailConfigured,
-    minPasswordLength: 8,
+    /*
+      8'den 10'a çıkarıldı. Better Auth bu sayıyı kendi de sınıyor ve aşağıdaki
+      kanca ile AYNI olmak zorunda: ayrışırsa iki farklı hata metni çıkar ve
+      kullanıcı hangisinin doğru olduğunu bilemez.
+    */
+    minPasswordLength: MIN_PASSWORD_LENGTH,
     sendResetPassword: async ({ user: u, url }) => {
       // Dil isteğin kendisinden: dil çerezi, yoksa tarayıcının Accept-Language'i
       // (bkz. lib/i18n/server). Profil okumak burada işe yaramaz — sıfırlama
@@ -225,6 +232,48 @@ export const auth = betterAuth({
     // Çapraz-köken gezinmelerde (e-posta/bildirim bağlantısı) çerez gitsin diye lax.
     defaultCookieAttributes: { sameSite: "lax" },
     ipAddress: { ipAddressHeaders: ["x-real-ip"] },
+  },
+  /**
+   * Parola ölçütü — SUNUCUDA, tek yerde.
+   *
+   * Kural istemcide de gösterilebilir ama orada DURDURULAMAZ: kayıt ucu
+   * doğrudan çağrılabiliyor. Bu yüzden dört yolun dördü de burada süzülüyor —
+   * kayıt, sıfırlama, değiştirme ve sosyal hesaba parola ekleme. Biri
+   * atlanırsa kural o yoldan delinir ve delik hiçbir yerde görünmez.
+   *
+   * `/reset-password` gövdesi yalnız yeni parolayı taşıyor, kimlik kuralı
+   * orada çalışamıyor; uzunluk ve yaygınlık her yolda çalışıyor.
+   */
+  hooks: {
+    before: createAuthMiddleware(async (ctx) => {
+      const GUARDED = ["/sign-up/email", "/reset-password", "/change-password", "/set-password"];
+      if (!GUARDED.includes(ctx.path)) return;
+      const body = (ctx.body ?? {}) as { password?: unknown; newPassword?: unknown; email?: unknown; name?: unknown };
+      const password = typeof body.password === "string" ? body.password : typeof body.newPassword === "string" ? body.newPassword : "";
+      if (!password) return; // alan yoksa Better Auth kendi doğrulamasını yapsın
+
+      const problem = checkPassword(password, {
+        email: typeof body.email === "string" ? body.email : undefined,
+        name: typeof body.name === "string" ? body.name : undefined,
+      });
+      if (!problem) return;
+
+      /*
+        Mesaj İNGİLİZCE ve makine okunur bir kodla birlikte gidiyor: kullanıcıya
+        gösterilecek metin istemcide `translateAuthError` ile üç dilden birine
+        çevriliyor. Sunucuda Türkçe cümle üretmek arayüzün öbür iki dilini
+        kırardı (aynı karar lib/premium/gates.ts'te de alınmıştı).
+      */
+      throw new APIError("BAD_REQUEST", {
+        code: PASSWORD_ERROR_CODE[problem],
+        message:
+          problem === "too_short"
+            ? `Password must be at least ${MIN_PASSWORD_LENGTH} characters.`
+            : problem === "too_common"
+              ? "This password is too common or too predictable."
+              : "Password must not contain your name or e-mail address.",
+      });
+    }),
   },
 });
 

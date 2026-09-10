@@ -158,6 +158,7 @@ jobs:
       - name: Birim testleri
         run: |
           npm run test:apple
+          npm run test:password
           npm run test:award
           npm run test:coach-lines
           npm run test:events

@@ -26,6 +26,7 @@
     "test:rules": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/test-rules.ts",
     "test:why": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/test-why.ts",
     "test:apple": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/test-apple.ts",
+    "test:password": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/test-password.ts",
     "test:premium": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/test-premium.ts",
     "test:legal": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/test-legal.ts",
     "test:gloss": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/test-gloss.ts",

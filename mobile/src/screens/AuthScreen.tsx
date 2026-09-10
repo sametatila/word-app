@@ -16,6 +16,7 @@ import { googleSignIn, googleSupported } from "../lib/googleAuth";
 import { appleSignIn, appleSupported } from "../lib/appleAuth";
 import { notifPrimeNeeded } from "../lib/notifications";
 import { translateAuthError } from "../lib/authErrors";
+import { checkPassword } from "../lib/passwordPolicy";
 import { useTheme, spacing, radii, softShadow, type Palette } from "../theme";
 
 type Mode = "signin" | "signup";
@@ -63,6 +64,12 @@ export function AuthScreen() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  /*
+    Sunucudaki kuralın kopyası (lib/passwordPolicy) — burada yalnız anında geri
+    bildirim için, kapı sunucuda. Web ile aynı listeyi taşıdığı `check:parity`
+    ile ölçülüyor; ayrışırsa alan yeşil görünür ve gönderince sunucu reddeder.
+  */
+  const passwordProblem = checkPassword(password, { email, name });
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [socialBusy, setSocialBusy] = useState<string | null>(null);
@@ -204,7 +211,29 @@ export function AuthScreen() {
               <TextInput value={name} onChangeText={setName} placeholder={t("auth.your_name_optional")} placeholderTextColor={colors.textFaint} autoCapitalize="words" style={input} />
             )}
             <TextInput value={email} onChangeText={setEmail} placeholder={t("auth.email")} placeholderTextColor={colors.textFaint} keyboardType="email-address" autoCapitalize="none" autoCorrect={false} style={input} />
-            <TextInput returnKeyType="go" onSubmitEditing={() => { if (!busy) void submit(); }} value={password} onChangeText={setPassword} placeholder={t("auth.password_at_least_8_characters")} placeholderTextColor={colors.textFaint} secureTextEntry style={input} />
+            <TextInput returnKeyType="go" onSubmitEditing={() => { if (!busy) void submit(); }} value={password} onChangeText={setPassword} placeholder={t("auth.password_min_hint")} placeholderTextColor={colors.textFaint} secureTextEntry style={input} />
+            {/* Canlı geri bildirim YALNIZ kayıtta: girişte var olan bir parolayı
+                yargılamak anlamsız ve "parolan zayıf" demek orada yanlış mesaj.
+                Aynı ayrım webde de var. `accessibilityLiveRegion` ekran
+                okuyucunun değişimi duyurmasını sağlıyor. */}
+            {mode === "signup" && password.length > 0 && (
+              <Text
+                variant="caption"
+                color={passwordProblem ? colors.dangerText : colors.successText}
+                accessibilityLiveRegion="polite"
+                style={{ marginTop: -spacing.xs }}
+              >
+                {passwordProblem
+                  ? t(
+                      passwordProblem === "too_short"
+                        ? "autherror.password_min_length"
+                        : passwordProblem === "too_common"
+                          ? "autherror.password_too_common"
+                          : "autherror.password_contains_identity",
+                    )
+                  : t("auth.password_ok")}
+              </Text>
+            )}
 
             {error && (
               <View style={{ backgroundColor: colors.dangerSoft, borderRadius: radii.md, padding: spacing.md }}>

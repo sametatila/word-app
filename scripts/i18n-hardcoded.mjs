@@ -61,6 +61,10 @@ const SKIP = [
   "lib/assess-prompts.ts",
   "lib/numbers.ts",
   "lib/moderation.ts",
+  // Yaygın parola listesi: `şifre`, `türkiye`, `galatasaray` gibi dizeler
+  // kullanıcıya GÖSTERİLEN metin değil, REDDEDİLEN parolalar. Aynı sınıf
+  // `lib/moderation.ts` ile — süzgecin konusu, arayüzün metni değil.
+  "lib/auth/password-policy.ts",
   "app/admin",
   "app/(app)/analytics",
   "app/demo-games",

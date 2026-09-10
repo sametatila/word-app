@@ -6,6 +6,7 @@ import { useRouter, useSearchParams } from "next/navigation";
 import { AuthNotice, AuthShell, authInputClass } from "@/components/auth-shell";
 import { authApi, type SignUpResponse } from "@/lib/auth/api";
 import { isEmailNotVerified, translateAuthError } from "@/lib/auth/errors";
+import { checkPassword, MIN_PASSWORD_LENGTH } from "@/lib/auth/password-policy";
 import { useT, useLang } from "@/lib/i18n/client";
 import { legalPath } from "@/lib/legal";
 
@@ -25,6 +26,12 @@ export function AuthForm() {
   const [password, setPassword] = useState("");
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  /*
+    Sunucudaki kuralın AYNISI (lib/auth/password-policy) — burada yalnız anında
+    geri bildirim için çalışıyor, kapı sunucuda. İki taraf tek modülü paylaştığı
+    için ayrışamıyorlar; mobilde kopya var ve `check:parity` onu ölçüyor.
+  */
+  const passwordProblem = checkPassword(password, { email, name });
 
   async function submit(e: React.FormEvent) {
     e.preventDefault();
@@ -174,11 +181,33 @@ export function AuthForm() {
           onChange={(e) => setPassword(e.target.value)}
           type="password"
           required
-          minLength={8}
-          placeholder={t("auth.password_at_least_8_characters")}
+          minLength={MIN_PASSWORD_LENGTH}
+          placeholder={t("auth.password_min_hint")}
           autoComplete={mode === "signin" ? "current-password" : "new-password"}
           className={authInputClass}
+          aria-describedby={mode === "signup" && password ? "password-hint" : undefined}
         />
+        {/* Canlı geri bildirim YALNIZ kayıtta: girişte parolayı yargılamak
+            anlamsız (kural değişmiş olabilir ve kullanıcı zaten var olan bir
+            parolayı yazıyor), üstelik "parolan zayıf" demek giriş ekranında
+            yanlış bir mesaj. Aynı ayrım mobilde de var. */}
+        {mode === "signup" && password ? (
+          <div id="password-hint" aria-live="polite">
+            {/* Uydurma renk token'ı YOK: aynı ekrandaki gönderim hatası da
+                `AuthNotice` kullanıyor, ton ve kontrast oradan geliyor. */}
+            <AuthNotice tone={passwordProblem ? "error" : "success"}>
+              {passwordProblem
+                ? t(
+                    passwordProblem === "too_short"
+                      ? "autherror.password_min_length"
+                      : passwordProblem === "too_common"
+                        ? "autherror.password_too_common"
+                        : "autherror.password_contains_identity",
+                  )
+                : t("auth.password_ok")}
+            </AuthNotice>
+          </div>
+        ) : null}
 
         {error ? <AuthNotice tone="error">{error}</AuthNotice> : null}
 
