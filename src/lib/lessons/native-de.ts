@@ -31,11 +31,13 @@ export type DeDict = {
   lesson: Record<string, string>;
   /** Beceri egzersizlerinin düz metni — anahtar DÜZ `tr`. */
   prose: Record<string, string>;
-  /** Beceri egzersizlerinin görev metni — anahtar `tür + AYRAÇ + tr`.
-   *  HENÜZ BOŞ: `data/skills/task-de/` yazılmadı. */
+  /** Beceri egzersizlerinin görev metni — anahtar `tür + AYRAÇ + tr`. */
   task: Record<string, string>;
   /** Deneme kâğıtları — anahtar `mockKey` ile aynı. */
   mock: Record<string, string>;
+  /** Can-do ifadeleri — anahtar `id` (`A1.SPK.1`). ÇÖZÜCÜDEN GEÇMİYOR:
+   *  ders sayfasının altındaki köprü bunu ayrı okuyor (`nativeCando`). */
+  cando: Record<string, string>;
 };
 
 /** Ders sözlüğünün anahtarı. Çıkarıcı da (`prose-de/make.mjs`) bunu kuruyor. */

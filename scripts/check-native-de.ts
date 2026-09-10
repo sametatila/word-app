@@ -25,6 +25,7 @@ import { LESSONS } from "@/lib/lessons";
 import { BUNDLED_EXERCISES } from "@/lib/skills";
 import { MOCK_PAPERS } from "@/lib/mock-exams";
 import { resolveEnLesson, type DeDict } from "@/lib/lessons/native-de";
+import { candoForLesson } from "@/lib/cando-map";
 import {
   resolveExercise,
   resolveMockPaper,
@@ -144,6 +145,18 @@ if (leftover.size) {
   for (const [t, id] of [...leftover].slice(0, 10)) H(`    ${id}: ${JSON.stringify(t.slice(0, 60))}`);
 }
 
+/* ---- 4. Can-do köprüsü -------------------------------------------------- */
+/* ÇÖZÜCÜDEN GEÇMİYOR: `nativeCando` sözlüğün ayrı bir alanını okuyor ve
+   karşılığı olmayan ifadeyi DÜŞÜRÜYOR — yani eksik bir ifade hata değil,
+   sessiz bir boşluk olarak görünür. Ders sayfasının altındaki köprü o
+   yüzden burada ayrıca sayılıyor. */
+const candoIds = [...new Set(lessons.flatMap((l) => candoForLesson(l)))].sort();
+let candoOk = 0;
+for (const id of candoIds) {
+  if (dict.cando[id]) candoOk++;
+  else H(`[can-do] karşılığı yok: ${id}`);
+}
+
 for (const [t, why] of EXEMPT) {
   if (!exemptSeen.has(t)) warnings.push(`  [muafiyet] içerikte yok, silinebilir — ${why}`);
 }
@@ -159,8 +172,8 @@ if (errors.length) {
 }
 console.log(
   `\nözet: ders ${lessonOk}/${lessons.length} · egzersiz ${exerciseOk}/${exercises.length} · ` +
-    `kâğıt ${paperOk}/${papers.length} · taranan dize ${strings}\n` +
+    `kâğıt ${paperOk}/${papers.length} · can-do ${candoOk}/${candoIds.length} · taranan dize ${strings}\n` +
     `sözlük: ders ${Object.keys(dict.lesson).length} · beceri ${Object.keys(dict.prose).length} · ` +
-    `kâğıt ${Object.keys(dict.mock).length}`,
+    `kâğıt ${Object.keys(dict.mock).length} · can-do ${Object.keys(dict.cando).length}`,
 );
 process.exit(errors.length ? 1 : 0);

@@ -22,12 +22,13 @@
  *   prose   `data/skills/prose-de/out/`       anahtar DÜZ `tr`
  *   task    `data/skills/task-de/out/`        anahtar `tür + AYRAÇ + tr`
  *   mock    `data/mock-exams/prose/out-de/`   anahtar `tür + AYRAÇ + tr`
+ *   cando   `data/lessons/cando-de/out/`      anahtar `id` (`A1.SPK.1`)
  *
- * `task` HENÜZ YAZILMADI ve dizin yok; sözlükte boş duruyor. Boş bırakmak
- * bilinçli: `resolveExercise` alanı OKUYOR ve yoksa çöküyor, varsa da
- * hiçbir egzersiz çözülmüyor — yani beceri ekseni Almanca tarafta hâlâ
- * kapalı ve kapı bunu kırmızı gösteriyor. Ölçüldü: İngilizce kursun 189
- * egzersizinin görev alanlarında 1.202 tekil Türkçe dize var.
+ * `cando` ÇÖZÜCÜDEN GEÇMİYOR ve bu yüzden kendi hattı var: dersin
+ * altındaki "bunu yapabileceksin" köprüsü `nativeCando` ile ayrı
+ * okunuyor, hep-ya-hiç kuralına girmiyor ve karşılığı olmayan ifade
+ * DÜŞÜYOR. Almanca bir listenin ortasındaki tek Türkçe madde, yarım
+ * çevirinin en görünür hâli.
  *
  * `prose` DÜZ ANAHTAR ve bu ölçüldü: 739 satırın 739'u benzersiz `tr`,
  * yani çakışma yok. Düz tutmanın kazancı büyük — çözücü tarafında
@@ -84,7 +85,11 @@ for (const r of read(`${DIR}../skills/task-de/out/`)) task[r.kind + SEP + r.tr] 
 const mock = {};
 for (const r of read(`${DIR}../mock-exams/prose/out-de/`)) mock[r.kind + SEP + r.tr] = value(r);
 
-const data = { lesson, prose, task, mock };
+/* Tek düz anahtar: `id`. Kardeş hattın (`cando/out/`) biçimiyle aynı. */
+const cando = {};
+for (const r of read(`${DIR}cando-de/out/`)) cando[r.id] = value(r);
+
+const data = { lesson, prose, task, mock, cando };
 
 mkdirSync(OUT, { recursive: true });
 writeFileSync(`${OUT}native-de.json`, `${JSON.stringify(data)}\n`);
@@ -92,5 +97,6 @@ writeFileSync(`${OUT}native-de.json`, `${JSON.stringify(data)}\n`);
 const n = (o) => Object.keys(o).length;
 console.log(
   "native-de.json yazıldı\n" +
-    `  ders düzyazısı ${n(lesson)} · beceri düz metni ${n(prose)} · görev metni ${n(task)} · deneme kâğıdı ${n(mock)}`,
+    `  ders düzyazısı ${n(lesson)} · beceri düz metni ${n(prose)} · görev metni ${n(task)} · ` +
+    `deneme kâğıdı ${n(mock)} · can-do ${n(cando)}`,
 );

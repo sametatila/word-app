@@ -11,6 +11,7 @@ import {
   type ExerciseShape,
   type MockShape,
 } from "./native";
+import { resolveEnLesson, deKey, type DeDict } from "./native-de";
 import { DEFAULT_NATIVE, type NativeLang } from "@/lib/courses";
 
 /**
@@ -44,6 +45,37 @@ async function nativeDict(): Promise<NativeDict | null> {
 }
 
 /**
+ * ALMANCA sözlük — anadili Almanca olan kullanıcı için, aynı gecikmeli yükleme.
+ *
+ * NEDEN İKİNCİ BİR SÖZLÜK. `native-en.json` Almanca kursun Türkçesini
+ * İngilizceye çeviriyor; bu ise İngilizce kursun Türkçesini Almancaya.
+ * İki yönün kaynağı da şekli de başka (bkz. `data/lessons/apply-de.mjs`)
+ * ve bir kullanıcı ikisini birden kullanmıyor: Türkçe kullanan hiçbirini,
+ * anadili İngilizce olan yalnız birincisini, anadili Almanca olan yalnız
+ * ikincisini açıyor. Tek dosyada birleştirmek her isteğe okunmayan yarıyı
+ * bindirirdi.
+ */
+let cacheDe: DeDict | null | undefined;
+
+async function deDict(): Promise<DeDict | null> {
+  if (cacheDe !== undefined) return cacheDe;
+  try {
+    const mod = await import("./generated/native-de.json");
+    cacheDe = (mod.default ?? mod) as unknown as DeDict;
+  } catch (err) {
+    console.error("[native] Almanca sözlük yüklenemedi — `npm run lessons:apply-de` çalıştırıldı mı?", err);
+    cacheDe = null;
+  }
+  return cacheDe;
+}
+
+/* `resolveExercise` ve `resolveMockPaper` `NativeDict` bekliyor ama yalnız
+   `prose` ile `mock` alanlarına dokunuyorlar; `DeDict`in o iki alanı aynı
+   adı ve aynı anahtar biçimini taşıyor, eksik alanlar hiç okunmuyor.
+   Kapı bunu gerçek içerik üzerinde ölçüyor: `scripts/check-native-de.ts`. */
+const asNative = (dict: DeDict): NativeDict => dict as unknown as NativeDict;
+
+/**
  * Dersi öğrencinin ana diline çevirir; çeviremezse dersi OLDUĞU GİBİ döner.
  *
  * Geri düşüş bilinçli ve yarım ders DEĞİL: `resolveLesson` hep-ya-hiç
@@ -57,7 +89,20 @@ async function nativeDict(): Promise<NativeDict | null> {
  */
 export async function localiseLesson(lesson: Lesson, lang: NativeLang | null | undefined): Promise<Lesson> {
   if (!lang || lang === DEFAULT_NATIVE) return lesson;
-  if (lang !== "en") return lesson;
+  if (lang === "de") {
+    /* AYRI ÇÖZÜCÜ, ayrı sözlük: İngilizce kursun dersleri kendi kendine
+       yeten JSON, `resolveLesson`ın beklediği şablon yapısı yok. */
+    const de = await deDict();
+    if (!de) return lesson;
+    const out = resolveEnLesson(de, lesson);
+    if (!out) {
+      // İngilizce kursun 200 dersinin hepsi çözülüyor (kapı: check:native-de).
+      // Buraya düşen ders başka bir kurstan geliyor demektir.
+      console.warn(`[native] ders Almancaya çevrilemedi, Türkçe kalıyor: ${lesson.id}`);
+      return lesson;
+    }
+    return out;
+  }
   const dict = await nativeDict();
   if (!dict) return lesson;
   const out = resolveLesson(dict, lesson);
@@ -82,7 +127,20 @@ export async function nativeTitle(
   lessonId: string,
   lang: NativeLang | null | undefined,
 ): Promise<string | null> {
-  if (!lang || lang === DEFAULT_NATIVE || lang !== "en") return null;
+  if (!lang || lang === DEFAULT_NATIVE) return null;
+  if (lang === "de") {
+    /* ALMANCA SÖZLÜKTE `meta` YOK ve olmasına gerek de yok: başlık ders
+       düzyazısı hattında `titleTr` türüyle zaten duruyor, anahtarı METNİN
+       KENDİSİ. Dersi id'den bulup başlığını sormak, sözlüğe ikinci bir
+       indeks eklemekten ucuz — `findLesson` zaten bellekte duran diziye
+       bakıyor. Ders paketi yalnız bu dalda yükleniyor. */
+    const de = await deDict();
+    if (!de) return null;
+    const { findLesson } = await import("./index");
+    const titleTr = findLesson(lessonId)?.titleTr;
+    if (!titleTr) return null;
+    return de.lesson[deKey("titleTr", titleTr)] ?? null;
+  }
   const dict = await nativeDict();
   return dict?.meta[lessonId]?.title ?? null;
 }
@@ -101,7 +159,12 @@ export async function nativeCando(
   ids: string[],
   lang: NativeLang | null | undefined,
 ): Promise<string[] | null> {
-  if (!lang || lang === DEFAULT_NATIVE || lang !== "en") return null;
+  if (!lang || lang === DEFAULT_NATIVE) return null;
+  if (lang === "de") {
+    const de = await deDict();
+    if (!de) return null;
+    return ids.map((id) => de.cando[id]).filter((t): t is string => Boolean(t));
+  }
   const dict = await nativeDict();
   if (!dict) return null;
   return ids.map((id) => dict.cando[id]).filter((t): t is string => Boolean(t));
@@ -118,6 +181,10 @@ export async function localiseExam<T extends ExamShape>(
   plan: T | undefined,
   lang: NativeLang | null | undefined,
 ): Promise<T | undefined> {
+  /* ALMANCA DALI YOK ve bu bir eksik değil: modül sınavı yalnız Almanca
+     kursta var (`hasModuleExams`, kurs `en` ise false). Anadili Almanca
+     olan kullanıcı yalnız İngilizce kursu alıyor, yani buraya bir plan
+     hiç gelmiyor. Gelirse Türkçe kalıyor — kardeşleriyle aynı geri düşüş. */
   if (!plan || !lang || lang === DEFAULT_NATIVE || lang !== "en") return plan;
   const dict = await nativeDict();
   if (!dict) return plan;
@@ -142,6 +209,7 @@ export async function localiseExam<T extends ExamShape>(
 export async function nativeExamText(
   lang: NativeLang | null | undefined,
 ): Promise<(tr: string) => string> {
+  /* `localiseExam` ile aynı gerekçe: modül sınavı Almanca kursa ait. */
   if (!lang || lang === DEFAULT_NATIVE || lang !== "en") return (tr) => tr;
   const dict = await nativeDict();
   if (!dict) return (tr) => tr;
@@ -165,7 +233,18 @@ export async function localiseExercise<T extends ExerciseShape>(
   ex: T,
   lang: NativeLang | null | undefined,
 ): Promise<T> {
-  if (!lang || lang === DEFAULT_NATIVE || lang !== "en") return ex;
+  if (!lang || lang === DEFAULT_NATIVE) return ex;
+  if (lang === "de") {
+    const de = await deDict();
+    if (!de) return ex;
+    const out = resolveExercise(asNative(de), ex);
+    if (!out) {
+      // İngilizce kursun 189 egzersizinin hepsi çözülüyor (kapı: check:native-de).
+      console.warn("[native] egzersiz Almancaya çevrilemedi, Türkçe kalıyor");
+      return ex;
+    }
+    return out;
+  }
   const dict = await nativeDict();
   if (!dict) return ex;
   const out = resolveExercise(dict, ex);
@@ -195,7 +274,18 @@ export async function localiseMockPaper<T extends MockShape>(
   paper: T,
   lang: NativeLang | null | undefined,
 ): Promise<T> {
-  if (!lang || lang === DEFAULT_NATIVE || lang !== "en") return paper;
+  if (!lang || lang === DEFAULT_NATIVE) return paper;
+  if (lang === "de") {
+    const de = await deDict();
+    if (!de) return paper;
+    const out = resolveMockPaper(asNative(de), paper);
+    if (!out) {
+      // İngilizce kursun 60 kâğıdının hepsi çözülüyor (kapı: check:native-de).
+      console.warn("[native] deneme kâğıdı Almancaya çevrilemedi, Türkçe kalıyor");
+      return paper;
+    }
+    return out;
+  }
   const dict = await nativeDict();
   if (!dict) return paper;
   const out = resolveMockPaper(dict, paper);
@@ -222,7 +312,12 @@ export async function localiseMockPaper<T extends MockShape>(
 export async function nativeMockText(
   lang: NativeLang | null | undefined,
 ): Promise<(kind: string, tr: string) => string> {
-  if (!lang || lang === DEFAULT_NATIVE || lang !== "en") return (_kind, tr) => tr;
+  if (!lang || lang === DEFAULT_NATIVE) return (_kind, tr) => tr;
+  if (lang === "de") {
+    const de = await deDict();
+    if (!de) return (_kind, tr) => tr;
+    return (kind, tr) => de.mock[mockKey(kind, tr)] ?? tr;
+  }
   const dict = await nativeDict();
   if (!dict) return (_kind, tr) => tr;
   return (kind, tr) => dict.mock[mockKey(kind, tr)] ?? tr;
