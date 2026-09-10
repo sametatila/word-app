@@ -898,8 +898,6 @@ export const enWeb: Record<string, string> = {
   "sessionw.combo": "{n} in a row",
   "sessionw.wager_won": "Bet paid off · +{xp} XP",
   "sessionw.wager_lost": "Bet lost · {xp} XP",
-  "sessionw.n_more_words": "+{n} more words",
-  "sessionw.missed_note": "These will come back around soon — you don't need to do anything else.",
   "questw.xp_earned": "+{xp} XP earned",
   "wordsw.prev": "← Previous",
   "wordsw.next": "Next →",

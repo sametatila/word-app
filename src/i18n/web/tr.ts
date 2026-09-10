@@ -923,8 +923,6 @@ export const trWeb: Record<string, string> = {
   "sessionw.combo": "{n} üst üste",
   "sessionw.wager_won": "Bahis tuttu · +{xp} XP",
   "sessionw.wager_lost": "Bahis yandı · {xp} XP",
-  "sessionw.n_more_words": "+{n} kelime daha",
-  "sessionw.missed_note": "Bunlar yakında tekrar karşına çıkacak — ayrıca bir şey yapmana gerek yok.",
   "questw.xp_earned": "+{xp} XP kazandın",
   "wordsw.prev": "← Önceki",
   "wordsw.next": "Sonraki →",

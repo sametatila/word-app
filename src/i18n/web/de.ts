@@ -898,8 +898,6 @@ export const deWeb: Record<string, string> = {
   "sessionw.combo": "{n} in Folge",
   "sessionw.wager_won": "Wette aufgegangen · +{xp} XP",
   "sessionw.wager_lost": "Wette verloren · {xp} XP",
-  "sessionw.n_more_words": "+{n} weitere Wörter",
-  "sessionw.missed_note": "Die kommen bald von selbst wieder — du musst nichts weiter tun.",
   "questw.xp_earned": "+{xp} XP verdient",
   "wordsw.prev": "← Zurück",
   "wordsw.next": "Weiter →",

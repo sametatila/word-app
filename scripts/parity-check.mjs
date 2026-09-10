@@ -2661,6 +2661,31 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   );
 }
 
+/* ── 69. tur ozetinde "zorlandiklarin" listesi ────────────────────────────
+ * Web tur bitince o turda yanlis bilinen kelimeleri listeliyor ve kelime
+ * listesine kapi aciyor. Mobilde bu liste HIC yoktu: tur bitiyor, hangi
+ * kelimede takildigin hicbir yerde yazmiyordu. Dahasi `SessionProgress`in
+ * `missed` alani mobil tipte `unknown[]` idi - sunucu saklıyor, mobil ne
+ * gonderiyor ne okuyor; yani Androidde baslanan tur webde surdurulunce liste
+ * bos geliyordu. Alti satir siniri ve kelime listesine kapi iki tarafta da
+ * ayni. */
+{
+  const liste = (p) => {
+    const src = read(p).replace(/\/\*[\s\S]*?\*\//g, " ").replace(/\/\/[^\n]*/g, " ");
+    return [
+      "baslik=" + (src.includes("session.missed_title") ? "var" : "yok"),
+      "sinir=" + ((src.match(/missed(?:\.current)?\.slice\(0, (\d+)\)/) ?? [])[1] ?? "yok"),
+      "kalani say=" + (src.includes("session.n_more_words") ? "var" : "yok"),
+      "not=" + (src.includes("session.missed_note") ? "var" : "yok"),
+      "kelime listesi kapisi=" + (src.includes("words.my_words") ? "var" : "yok"),
+      /* Liste SUNUCUYA da gidiyor: yarim kalan tur oteki cihazda surerken
+         zorlanilan kelimeler kaybolmasin. */
+      "ilerlemede=" + (/missed: missed\.current/.test(src) ? "var" : "yok"),
+    ];
+  };
+  sameList("tur ozeti zorlandiklarin", liste("mobile/src/screens/GameScreen.tsx"), liste("src/components/session-player.tsx"));
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"

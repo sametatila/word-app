@@ -1451,8 +1451,11 @@ function SummaryCard({
 
         {missed.length ? (
           <div className="px-6 pt-4">
+            {/* Başlık KODA GÖMÜLÜ Türkçeydi: Almanca ve İngilizce arayüzde de
+                "Zorlandıkların" yazıyordu. Sözlüğe alındı ve Android de aynı
+                anahtarı kullanıyor. */}
             <p className="muted mb-2 text-xs font-semibold uppercase tracking-wide">
-              Zorlandıkların ({missed.length})
+              {t("session.missed_title", { n: missed.length })}
             </p>
             <ul className="space-y-1.5">
               {missed.slice(0, 6).map((w) => (
@@ -1473,7 +1476,7 @@ function SummaryCard({
               ))}
             </ul>
             {missed.length > 6 ? (
-              <p className="muted mt-2 text-center text-xs">{t("sessionw.n_more_words", { n: missed.length - 6 })}</p>
+              <p className="muted mt-2 text-center text-xs">{t("session.n_more_words", { n: missed.length - 6 })}</p>
             ) : null}
             {/*
               Kelime listesinin GİRİŞİ burası.
@@ -1484,7 +1487,7 @@ function SummaryCard({
               olarak bu ekran — bağlantı da o yüzden burada.
             */}
             <p className="muted mt-2 text-center text-xs">
-              {t("sessionw.missed_note")}{" "}
+              {t("session.missed_note")}{" "}
               <Link href="/words?status=learning" className="font-semibold underline-offset-2 hover:underline">
                 {t("words.my_words")}
               </Link>

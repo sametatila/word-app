@@ -99,14 +99,30 @@ export type SessionMeta = {
   coverage?: { mastered: number; total: number };
 };
 
-/** Yarım remaining turun sunucudaki durumu — kaldığın yerden devam için. */
-export type ResumeState = { index: number; correct: number; total: number; xp: number; missed: unknown[] };
+/** Yarım kalan turun sunucudaki durumu — kaldığın yerden devam için. */
+/** Tur özetinde gösterilen, o turda yanlış bilinen kelime — web `MissedWord`. */
+export type MissedWord = { id: number; de: string; tr: string; en: string | null };
+
+export type ResumeState = {
+  index: number; correct: number; total: number; xp: number;
+  /* `unknown[]` yazılıydı: alan tanınıyor ama içine bakılamıyordu, yani
+     zorlanılan kelimeler mobilde HİÇBİR yerde kullanılamıyordu. */
+  missed: MissedWord[];
+};
 
 export type SessionPayload = { rounds: Round[]; resume: ResumeState | null; meta: SessionMeta };
 
 /** Oturum ilerlemesi — cevaplarla birlikte gidip `session_state.index`'i ilerletir
     (böylece kapatıp açınca tur baştan tekrar oynanmaz ve çift sayılmaz). */
-export type SessionProgress = { index: number; correct: number; total: number; xp: number };
+/**
+ * Turun sunucuda tutulan ilerlemesi.
+ *
+ * `missed` MOBİLDE TİPTEN DÜŞÜYORDU: sunucu bu alanı saklıyor ve web yarım
+ * kalan turu sürdürürken zorlanılan kelimeleri oradan geri alıyor. Mobil
+ * göndermediği için Androidde başlanan bir tur webde sürdürüldüğünde liste
+ * boş geliyordu; mobilde de hiç gösterilmiyordu.
+ */
+export type SessionProgress = { index: number; correct: number; total: number; xp: number; missed: MissedWord[] };
 
 export type AnswerOut = {
   wordId: number;
@@ -228,7 +244,7 @@ export function practiceGamesFor(course: string | null | undefined) {
  *
  * Mobil tipte yalnız üç alan vardı ve geri kalanı sessizce düşüyordu; oturum
  * özeti bu yüzden kazanılan XP'yi, günlük hedefi, pekişen kelimeyi ve yarına
- * remaining tekrarı HİÇ göstermiyordu (web `session-player` dördünü de gösteriyor).
+ * kalan tekrarı HİÇ göstermiyordu (web `session-player` dördünü de gösteriyor).
  * Bkz. web-parity §11.23.
  *
  * `wagerXp` mobilde okunmuyor: bahisli etap mobilde hiç yok.

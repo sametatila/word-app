@@ -15,7 +15,7 @@ import { ProgressRing } from "../ui/ProgressRing";
 import { Mascot } from "../ui/Mascot";
 import { Celebrate } from "../ui/Celebrate";
 import { RoundView } from "../game/rounds";
-import { fetchSession, submitAnswers, isPermanentError, todayStr, PRACTICE_GAMES, type Round, type AnswerOut, type DoneExtra, type SessionMeta, type SessionProgress, type SubmitResult } from "../game/session";
+import { fetchSession, submitAnswers, isPermanentError, todayStr, PRACTICE_GAMES, type Round, type AnswerOut, type DoneExtra, type SessionMeta, type SessionProgress, type SubmitResult, type MissedWord } from "../game/session";
 import { ApiError } from "../api/client";
 import { bumpStats } from "../lib/statsSignal";
 import { track } from "../lib/track";
@@ -77,6 +77,9 @@ export function GameScreen() {
   const idxRef = useRef(0);
   // Yarım kalan turdan devam ederken önceki (sunucudaki) sayaç tabanı.
   const resumeBase = useRef({ correct: 0, total: 0, xp: 0 });
+  /* O turda yanlış bilinen kelimeler — özetin altındaki liste ve sunucuya
+     giden ilerleme bunu taşıyor (web `session-player` `missed`). */
+  const missed = useRef<MissedWord[]>([]);
   // Gösterim TUR-bazlı: üstteki sayaç idx/rounds.length (tur) sayıyor; done da tur saysın.
   // (answers KELİME sayar — match turu 1 tur ama 4 kelime; SRS için doğru, ama done'da 20→24
   //  gösterirdi. roundsSeen/Right yalnız gösterim için; SRS/XP hâlâ answers'tan.)
@@ -102,6 +105,7 @@ export function GameScreen() {
       correct: resumeBase.current.correct + roundsRight.current,
       total: resumeBase.current.total + roundsSeen.current,
       xp: resumeBase.current.xp,
+      missed: missed.current,
     };
   }
 
@@ -134,6 +138,9 @@ export function GameScreen() {
       const r = onlyGame ? null : p.resume;
       const start = r && r.index > 0 && r.index < list.length ? r.index : 0;
       resumeBase.current = { correct: r?.correct ?? 0, total: r?.total ?? 0, xp: r?.xp ?? 0 };
+      /* Yarım kalan tur başka bir cihazda sürdürülüyor olabilir: zorlanılan
+         kelimeler sunucudan geri geliyor, sıfırdan başlamıyor. */
+      missed.current = r?.missed ?? [];
       setRounds(list);
       setMeta(p.meta ?? null);
       idxRef.current = start;
@@ -185,6 +192,13 @@ export function GameScreen() {
     };
   }, []);
 
+  /* Web ile aynı kural: artikel varsa kelimenin önüne yazılıyor (özette
+     "der Tisch" okunuyor) ve aynı kelime iki kez listelenmiyor. */
+  function noteMissed(w?: { id: number; de: string; artikel: string | null; tr: string; en: string | null }) {
+    if (!w || missed.current.some((m) => m.id === w.id)) return;
+    missed.current.push({ id: w.id, de: w.artikel ? `${w.artikel} ${w.de}` : w.de, tr: w.tr, en: w.en });
+  }
+
   function onDone(ok: boolean, extra?: DoneExtra) {
     const batch = extra?.batch;
     /* `skip`: cevap kaydedilmeyen tur ("zaten biliyorum"). */
@@ -198,8 +212,10 @@ export function GameScreen() {
       // Çok kelimeli tur (match): her kelimenin SRS'i ayrı yazılır.
       /* Yığın turunda hata tipi kelime başına: doğru eşleşenin hatası yok. */
       for (const b of batch) if (b.wordId) answers.current.push({ wordId: b.wordId, game: r.game, correct: b.correct, latencyMs: lat, ...(b.correct ? {} : { errorType: "meaning" as const }) });
+      for (const b of batch) if (!b.correct) noteMissed(r.words?.find((w) => w.id === b.wordId));
     } else {
       const wordId = r?.word?.id ?? r?.words?.[0]?.id ?? 0;
+      if (!ok && r) noteMissed(r.word ?? r.words?.[0]);
       if (wordId && r) {
         answers.current.push({
           wordId, game: r.game, correct: ok, latencyMs: lat,
@@ -365,6 +381,34 @@ export function GameScreen() {
             </View>
           ) : null}
           <PressableScale onPress={load} style={[{ width: "100%", backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: spacing.lg, alignItems: "center" }, softShadow(colors.primary, 10)]}><Text variant="bodyStrong" color={colors.onPrimary}>{t("game.continue")}</Text></PressableScale>
+          {/*
+            ZORLANDIKLARIN. Web özetin altında o turda yanlış bilinen kelimeleri
+            listeliyor ve kelime listesine kapı açıyor; mobilde bu liste HİÇ
+            yoktu - tur bitiyor, hangi kelimede takıldığın hiçbir yerde
+            yazmıyordu. Altı satırla sınırlı: sonuç ekranı bir kelime listesine
+            dönüşmemeli, gerisi "Kelimelerim"de.
+          */}
+          {missed.current.length ? (
+            <View style={{ width: "100%", marginTop: spacing.lg }}>
+              <Text variant="micro" color={colors.textMuted} style={{ marginBottom: spacing.sm }}>{t("session.missed_title", { n: missed.current.length })}</Text>
+              {missed.current.slice(0, 6).map((w) => (
+                <View key={w.id} style={{ flexDirection: "row", alignItems: "baseline", justifyContent: "space-between", gap: spacing.md, backgroundColor: colors.surface2, borderRadius: radii.md, paddingHorizontal: spacing.md, paddingVertical: 8, marginBottom: 6 }}>
+                  <Text variant="bodyStrong" style={{ flexShrink: 1 }}>{w.de}</Text>
+                  <View style={{ flexShrink: 1, alignItems: "flex-end" }}>
+                    <Text variant="caption" color={colors.textMuted} numberOfLines={1}>{w.tr}</Text>
+                    {w.en ? <Text variant="micro" color={colors.textFaint} numberOfLines={1}>{w.en}</Text> : null}
+                  </View>
+                </View>
+              ))}
+              {missed.current.length > 6 ? (
+                <Text variant="micro" color={colors.textMuted} style={{ textAlign: "center", marginTop: 2 }}>{t("session.n_more_words", { n: missed.current.length - 6 })}</Text>
+              ) : null}
+              <Text variant="micro" color={colors.textMuted} style={{ textAlign: "center", marginTop: spacing.sm, lineHeight: 18 }}>{t("session.missed_note")}</Text>
+              <PressableScale onPress={() => nav.navigate("Words")} style={{ alignSelf: "center", marginTop: spacing.xs, paddingVertical: 6 }}>
+                <Text variant="bodyStrong" color={colors.primaryText}>{t("words.my_words")}</Text>
+              </PressableScale>
+            </View>
+          ) : null}
           {/* Ertesi güne dair somut bir sayı — yarın uygulamayı açmak için bir
               sebep. Web özetin altında aynı satırı gösteriyor. */}
           {result && result.dueTomorrow > 0 ? (
