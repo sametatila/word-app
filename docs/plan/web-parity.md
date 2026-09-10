@@ -2969,3 +2969,45 @@ webin 7'siyle aynı), `VoicePicker`ın Almanca örnek cümleleri (2), üç dosya
 "Türkçe" (dil adı kendi dilinde) ve iki yerde "Hören" (Almanca sınav bölümü
 adı). Bu sayı artık gerçekten bir taban: her satırı bilinen ve gerekçesi
 yazılı.
+
+### 11.54 Aynı soruyu web tarafına sordum: iki gövde çifti daha kapısız
+
+`check:parity`nin gövde karşılaştırmaları neyi kapsıyordu: sayı sözcüğü
+modülü, cümle hakemi, `errors` saf yardımcıları. Bu oturumda mobile taşınan
+öteki gövdeleri ve webin "mobil ile BİREBİR" dediği dosyaları taradım.
+
+**a) Deneme sınavı cevap katlaması — kapısı yoktu.**
+`src/lib/mock-exams/scoring.ts` ile `mobile/src/game/mockExam.ts` içindeki
+`foldAnswer` aynı kural olmak zorunda ve iki dosya da bunu yazıyor. Sonucu
+mobil dosyanın yorumunda duruyor: *ayrılırlarsa öğrenci ekranda DOĞRU görünen
+bir cevabın sunucuda yanlış sayıldığını görür.* Kesme işareti kuralının
+eklenmesi tam bu hataydı - İngilizce boşluk doldurmada doğru cevap yanlış
+sayılıyordu.
+
+Bugün eşit. Kapı eklendi ve yalnızca işlevin GÖVDESİNİ karşılaştırıyor: iki
+dosyanın geri kalanı tamamen farklı (biri sunucu puanlaması, öteki mobil
+oturum çağrıları). Doğrulandı - mobilden kesme işareti satırını silince kapı
+kırıldı ve eksik satır çıktıda göründü.
+
+**b) Yürüyüş modunun ses tablosu — asimetrik kapı.**
+Webin `lib/sfx.ts` `WALK_NOTES`u, mobil `SFX_NOTES`in üç girdisinin
+(micon/micoff/premium) kopyası ve web dosyası bunu kendisi yazıyor. İlginç
+olan şu: MOBİL tarafta tablonun üç kopyasını (Kotlin, Swift, mp3) koruyan bir
+kapı VAR (`mobile/__tests__/sfxNotes.test.ts`), WEB kopyasını koruyan yoktu.
+Yani nota tablosu değişince üç native çıktı kırılıp haber veriyor, web
+sessizce eski sesi çalmaya devam ediyordu.
+
+Bugün eşit. Üç ikili için sayı sayı kapı eklendi; bir frekansı bozunca
+kırıldığı doğrulandı.
+
+Kapıyı yazarken bir ölçüm hatası yaptım ve düzelttim: ilk sürüm nota
+satırlarını ayıklarken dizinin AÇILIŞ ayracını da bir satır sanıyordu ve ilk
+alan `NaN` çıkıyordu. İki tarafta aynı çıktığı için karşılaştırma yine
+doğruydu ama ilk sayıdaki bir ayrımı gizleyebilirdi - ayıklama başlık
+ayracından sonra başlatıldı ve ilk alanı değiştiren bir enjeksiyonla yeniden
+doğrulandı.
+
+**Kapı gerekmeyenler:** `mobile/src/lib/voiceMatch.ts` ve `textFold.ts`in web
+karşılığı YOK - web aynı işi tanıyıcı yolunun içinde yapıyor, ayrı bir modül
+değil. `stt.ts`teki "birebir" ise Azure kotasının yuvarlanmasıyla ilgili,
+platformlar arası bir iddia değil.

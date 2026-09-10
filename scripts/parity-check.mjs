@@ -752,6 +752,65 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   }
 }
 
+/* ── 18. deneme sinavi cevap katlamasi ─────────────────────────────────────
+ * `src/lib/mock-exams/scoring.ts` ile `mobile/src/game/mockExam.ts` icindeki
+ * `foldAnswer` AYNI kural olmak zorunda ve bunu iki dosya da yaziyor. Sonucu
+ * mobil dosyanin yorumunda: ayrilirlarsa ogrenci EKRANDA DOGRU gorunen bir
+ * cevabin sunucuda yanlis sayildigini gorur - kesme isareti kuralinin
+ * eklenmesi tam bu hataydi (Ingilizce bosluk doldurmada dogru cevap yanlis
+ * sayiliyordu).
+ *
+ * Kapisi yoktu. Karsilastirma yalnizca islevin GOVDESI: iki dosyanin geri
+ * kalani tamamen farkli (biri sunucu puanlamasi, oteki mobil oturum
+ * cagrilari). */
+{
+  const fold = (p) => {
+    const src = read(p);
+    const i = src.indexOf("export function foldAnswer");
+    if (i < 0) return ["foldAnswer bulunamadi: " + p];
+    const j = src.indexOf("\n}", i);
+    return src
+      .slice(i, j < 0 ? undefined : j + 2)
+      .split("\n")
+      .map((l) => l.trimEnd());
+  };
+  sameList("cevap katlamasi", fold("mobile/src/game/mockExam.ts"), fold("src/lib/mock-exams/scoring.ts"));
+}
+
+/* ── 19. yuruyus modunun ses tablosu ───────────────────────────────────────
+ * Webin `lib/sfx.ts` `WALK_NOTES` tablosu, mobil `lib/sfxNotes.ts`
+ * `SFX_NOTES`in uc girdisinin (micon / micoff / premium) KOPYASI ve web
+ * dosyasi bunu kendisi yaziyor ("mobil ile BIREBIR ayni... govdesi
+ * sfxNotes.tsteki nota tablosundan KOPYALANDI").
+ *
+ * Mobil tarafta tablonun uc kopyasini (Kotlin, Swift, mp3) koruyan bir kapi
+ * VAR (`mobile/__tests__/sfxNotes.test.ts`); WEB kopyasini koruyan yoktu.
+ * Yani nota tablosu degistiginde uc native cikti kirilip haber veriyor, web
+ * sessizce eski sesi calmaya devam ediyordu.
+ *
+ * Karsilastirma sayi sayi: her ikili icin nota satirlari. */
+{
+  const rows = (src, table, cue) => {
+    const t = src.indexOf(table);
+    if (t < 0) return ["tablo bulunamadi: " + table];
+    const head = "\n  " + cue + ": [";
+    const i = src.indexOf(head, t);
+    if (i < 0) return [cue + " bulunamadi"];
+    const j = src.indexOf("\n  ],", i);
+    /* Aramaya baslik ayracindan SONRA basliyoruz: acilis `[`si de bir satir
+       sanilirsa ilk alan NaN cikiyor (iki tarafta ayni cikiyor, yani
+       karsilastirma yine dogru ama ilk sayidaki bir ayrimi gizleyebilirdi). */
+    return [...src.slice(i + head.length, j).matchAll(/\[([^\]]+)\]/g)].map((m) =>
+      m[1].split(",").map((x) => String(Number(x.trim()))).join(","),
+    );
+  };
+  const web = read("src/lib/sfx.ts");
+  const mob = read("mobile/src/lib/sfxNotes.ts");
+  for (const cue of ["micon", "micoff", "premium"]) {
+    sameList("yuruyus sesi " + cue, rows(mob, "SFX_NOTES", cue), rows(web, "WALK_NOTES", cue));
+  }
+}
+
 /* ── elle yazilmis icerik ciftleri ──────────────────────────────────────────
    Iki dosyanin "birebir ayni kalmali" dedigi ama hicbir kapinin bakmadigi
    veri. Modul temalari tam bu yuzden bes gun ayrisik kaldi (bkz. 11.52):
