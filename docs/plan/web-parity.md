@@ -5020,3 +5020,31 @@ sebebi: kaçanlar merkezî bir yerden değil, **her cevap noktasında elle**
 toplanıyor — unutulan bir bölüm sessizce kırılımın dışında kalır ve kimse fark
 etmez. Okuma ile dinleme iki tarafta da bölüm kimliğini değişkenden alıyor
 (`section: id` / `section: kind`), kapı o deseni tanıyor.
+
+### 11.124 Sınav kapağı: geçme eşiği hiçbir yerde yazmıyordu
+
+Geri dönüş olmadığı, ipucu bulunmadığı, cevapların sınav bitmeden
+gösterilmediği ve **geçme eşiği** (toplam %70, her bölüm %50) mobilde hiçbir
+yerde yazmıyordu: öğrenci **neyi başarması gerektiğini bilmeden** sınava
+giriyordu. Odak listesinin başlığı da yoktu — madde madde Almanca/Türkçe
+çiftler, ne oldukları söylenmeden duruyordu.
+
+**Ölçüldü, ayrışma değil:** webin kapağı bölüm listesini göstermiyor çünkü
+kâğıt o aşamada henüz çekilmemiş (`start` çekiyor) — aynı bilgiyi kural satırı
+veriyor ("Yedi bölüm, 45 dakika"). Yeniden yapılandırmaya değer bir açık değil.
+
+### 11.125 Sonucun anlamı puan değil, kazanılan iş
+
+Kâğıdın kapağı **`canDo`** listesini taşıyor (`lib/exam`) ve mobil `cover`
+tipi alanı **sessizce düşürüyordu**: "artık şunları yapabiliyorsun" listesi
+mobilde hiç görünmüyordu. Sertifika ucunun kendi yorumu da aynı şeyi söylüyor:
+*"%78 bir hafta sonra hiçbir şey ifade etmiyor"* — sonucun anlamı puan değil,
+kazanılan iş.
+
+Bölüm satırı artık **ağırlığı** ve kendi çubuğunu da yazıyor: geçme kuralı
+"her bölüm ≥ %50" diyor ama toplamı hangi bölümün taşıdığı ağırlıktan
+okunuyor, ve alan sunucudan zaten geliyordu.
+
+§11.122 ile aynı kalıbın üçüncü örneği: **sunucu gönderiyor, mobil tipi
+düşürüyor, yüzey hiç bilmiyor.** Parity 58'in düşen-alan listesi bu yüzden
+sonuç tipinde tutuluyor — ama kapak tipinde henüz böyle bir kapı yok.
