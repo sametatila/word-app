@@ -3898,3 +3898,42 @@ iki haritayı birbirine karşı da ölçüyor.
 biçiminin dilin bir parçası olduğu düşünülünce yanlış yerdeydi: rozet duvarının
 sayacı da aynı biçimi istiyor ve bunun için sosyal modülü içe alması gerekirdi.
 `lib/i18n`e taşındı ve adı webinkiyle aynı oldu.
+
+### 11.77 Sosyal katmanın istek tarafı ve çizim tabloları
+
+Sosyal katmanın **cevap** tipleri §11.74'te kapıya girmişti; bu tur geri kalan
+üç yüzey ölçüldü ve hepsi kapıya bağlandı — toplam **elli iki yeni ölçüm**.
+
+**İstek tarafı hiç ölçülmüyordu.** İki `social` nesnesi yirmi beş çağrıyı aynı
+adla taşıyor ama yol, HTTP yöntemi ve gövdedeki alanlar hiçbir kapıya
+girmiyordu. Bir tarafa alan eklenip ötekine eklenmezse sunucu onu sessizce
+düşürüyor: derleme kırılmıyor, istek 200 dönüyor, yalnızca o ayar hiç
+uygulanmıyor. Yirmi beşinin de yolu, yöntemi ve gövdesi bugün aynı.
+
+**Görünüm tipleri ad yüzünden dışarıda kalmış.** §11.74'ün bölümü yalnız **adı
+aynı** olan beş tipi ölçüyordu; geri kalan on tip webde `...View` sonekiyle
+duruyor ve ayrı adlı oldukları için hiçbir kapıya girmiyorlardı — oysa hepsi
+aynı ucun cevabı. `BoardView` istisnası kayıtlı: web satırı tipin içinde
+yazıyor, mobil `BoardRow` diye ayırmış.
+
+**İki çizim tablosu da ölçülmüyordu.** Tepki *rengi* (§14) ve tepki *türleri*
+(§13) kapıdaydı ama **ikonu** değildi; akış kartının **olay karosu** (ikon +
+renk) da "birebir" diye yazılıydı, kimse bakmıyordu. İkisi de eşit çıktı;
+ikisi de artık ölçülüyor. Renk adları 14. bölümdeki aynı rol haritasıyla
+çevriliyor (brand↔primary, flame↔streak, rose↔danger, sky↔info,
+violet↔accent, mint↔success).
+
+#### Tek gerçek kusur: boş akışta görünmeyen ağ hatası
+
+Mobil `FeedList` ilk yükleme başarısız olunca `catch` içinde listeyi boş diziye
+çekiyor (yoksa iskelet sonsuza kadar dönerdi) ve akış tam **boş duruma**
+düşüyordu — orada hata metni hiç çizilmiyordu. Kullanıcı "akışın henüz boş"
+görüyor, ağın koptuğunu hiç öğrenmiyordu; arkadaşı olan biri için bu, olmayan
+bir boşluk. Web aynı kararı yorumunda yazılı taşıyor: "liste yokken ağ hatası
+tek geri bildirim".
+
+#### Kapının kendi bakımı
+
+Bölüm numaralarından ikisi **çift yazılmıştı** (18 ve 19 ikişer kez) ve dosya
+kendi yorumlarında numarayla atıf yapıyor — hangi bölüme bakılacağı belirsizdi.
+Sondaki dokuz bölüm kaydırıldı, üç çapraz başvuru düzeltildi.
