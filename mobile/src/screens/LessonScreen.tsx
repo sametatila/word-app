@@ -15,7 +15,7 @@ import { Mascot } from "../ui/Mascot";
 import { Celebrate } from "../ui/Celebrate";
 import { findLesson, scoredSteps, type Lesson, type Segment, type Expectation, type LectureStep } from "../data/lessons";
 import { foldCompare, foldTight } from "../lib/textFold";
-import { sendRoleplay, parseReply, type ChatMsg } from "../game/roleplay";
+import { sendRoleplay, roleplayConfigured, parseReply, type ChatMsg } from "../game/roleplay";
 import { markItemDone, loadLessonResume, saveLessonResume, clearLessonResume } from "../game/lessonProgress";
 import { speakTarget } from "../lib/tts";
 import { ensureMicPermission, listenOnce, sttAvailable, stopListening } from "../lib/stt";
@@ -127,6 +127,24 @@ export function LessonScreen() {
   useEffect(() => {
     let alive = true;
     sttAvailable().then((v) => { if (alive) setSttOk(v); }).catch(() => { if (alive) setSttOk(false); });
+    /*
+     * YAPAY ZEKÂ KAPALIYSA BUNU BAŞTA SÖYLE.
+     *
+     * Yapılandırma yoksa sunucu 503 dönüyor ve her tur genel `catch`e düşüp
+     * "bağlantı sorunu" yazıyordu — yanlış teşhis: bağlantı yerinde, sohbet
+     * yapılandırılmamış. Kullanıcı aynı yanlış cümleyi her denemede yeniden
+     * görüyordu. Durumu okuyan yardımcı (`roleplayConfigured`) yazılmıştı ama
+     * çağıran yoktu.
+     *
+     * Web bu durumda derse ait SENARYOYA düşüyor (`lib/lessons/offline-roleplay`)
+     * ve konuşma çalışmaya devam ediyor; o yolun mobile taşınması ayrı bir iş.
+     * Burada yapılan yalnız doğruyu söylemek.
+     */
+    roleplayConfigured()
+      .then((ok) => {
+        if (alive && !ok) push({ role: "teacher", segments: [{ lang: "tr", text: tx("lesson.ai_off") }], tone: "hint" });
+      })
+      .catch(() => {});
     return () => { alive = false; stopListening(); };
   }, []);
 

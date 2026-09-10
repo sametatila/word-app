@@ -533,6 +533,7 @@ export const tr: Record<string, string> = {
   "lesson.you_paused_this_lesson_pick_up": "Bu konuşmaya ara vermiştin. Kaldığın adımdan sürdür ya da baştan başla.",
   "lesson.report_this_answer": "Bu yanıtı bildir",
   "lesson.connection_problem": "[Bağlantı sorunu — tekrar dener misin?]",
+  "lesson.ai_off": "Yapay zekâ sohbeti şu an kullanılamıyor; birazdan tekrar dene.",
   "lesson.lesson_complete": "Konuşma bitti",
   "lesson.continue": "Devam →",
   "lesson.listen": "Dinle",

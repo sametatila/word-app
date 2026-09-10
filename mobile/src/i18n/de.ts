@@ -528,6 +528,7 @@ export const de: Record<string, string> = {
   "lesson.you_paused_this_lesson_pick_up": "Du hattest diese Sprechübung pausiert. Mach beim letzten Schritt weiter oder fang von vorn an.",
   "lesson.report_this_answer": "Diese Antwort melden",
   "lesson.connection_problem": "[Verbindungsproblem — noch einmal versuchen?]",
+  "lesson.ai_off": "Das KI-Gespräch ist gerade nicht verfügbar; versuch es später noch einmal.",
   "lesson.lesson_complete": "Sprechen beendet",
   "lesson.continue": "Weiter →",
   "lesson.listen": "Anhören",

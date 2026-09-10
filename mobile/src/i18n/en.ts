@@ -528,6 +528,7 @@ export const en: Record<string, string> = {
   "lesson.you_paused_this_lesson_pick_up": "You paused this speaking practice. Pick up where you left off or start over.",
   "lesson.report_this_answer": "Report this answer",
   "lesson.connection_problem": "[Connection problem — want to try again?]",
+  "lesson.ai_off": "The AI conversation isn't available right now; try again shortly.",
   "lesson.lesson_complete": "Speaking complete",
   "lesson.continue": "Continue →",
   "lesson.listen": "Listen",
