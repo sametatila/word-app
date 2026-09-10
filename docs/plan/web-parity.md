@@ -5782,3 +5782,40 @@ geçmiyor — yani web tarafı "eksiği yok" görünüyordu, çünkü kapı onun
 çağrılarını hiç görmüyordu. Ölçü uca taşındı: bir ucun yazma çağrılarından en
 az biri gün taşıyorsa o platform gönderiyor sayılıyor. **Bir kapının iki
 tarafı farklı görebilmesi, kapının kendisini yanıltıcı yapar.**
+
+
+### 11.155 Ölçüm alanları eşit çıktı; asıl bulgu tipteki kaçıştı
+
+Bu tur `errorType` / `quality` / `hintUsed` / `detail` sınıfını taradım —
+§11.30'larda mobilin hiç göndermediği alanlar bunlardı. **Hepsi eşit:** iki
+taraf da aynı beş hata tipini (`article`, `plural`, `spelling`, `meaning`,
+`listening`) aynı yerlerde üretiyor, `classifyTyping`/`classifyOrder` iki
+tarafta da var, `hintUsed` karşılıklı yerlerde doluyor. `ERROR_TYPES` listesi
+zaten §-kapılı.
+
+Mobil `errors.ts` webinkinden dört şey eksik (`ERROR_LABEL_KEYS`, `errorLabel`,
+`ERROR_TARGET_GAME`, `srsWeightFor`) ama bu **doğru**: ilk ikisi etiket, mobil
+onları sunucudan alıyor (`/api/errors` `label`/`href` döndürüyor, `WeakSpots`
+onu çiziyor); son ikisi sunucu tarafı puanlama. Kopyalamak drift üretirdi.
+
+**Asıl bulgu şıkların tipinde.** Sunucu şıkları iki biçimde gönderiyor:
+`choice`/`listen` nesne (`{text, sub}`), `cloze`/`plural` düz dizge (o
+turlarda ikinci dil satırı yok). Mobil tipi yalnız nesneyi biliyordu ve iki
+çağrı yeri `as unknown as string[]` ile geçiştiriyordu.
+
+**Kaçışın bedeli, hatanın nereye düşeceği:** alan biçimi değişirse derleme
+susar, çalışma anında şık listesi boş görünür ve tur "kendini değerlendir"e
+düşer — yani kullanıcı kendi puanını verir ve SRS ona göre yazılır. Sessiz
+bozulmanın en pahalı biçimi. Web aynı şeyi oyun başına ayrı tiplerle söylüyor
+(`Round` birleşimi), orada kaçış yok.
+
+**Yapılmadı, ölçüldü:** mobilin `Round`u hâlâ tek gövdeli gevşek bir tip; web
+oyun başına birleşim kullanıyor. Birleşime çevirmek `rounds`, `GameScreen`,
+`WalkMode`, `Weekly`, `Boss` dosyalarını birden değiştirir. Şimdilik iki
+yardımcı ve §74 (`as unknown as` sayısı sıfır) bu sınıfı tutuyor; birleşim
+kendi turunu bekliyor.
+
+**Ölçüldü, ayrışma değil:** `free_sentence` turu mobilde oynanamıyor ama
+mobil bunu `skipGames` ile hem günlük tura hem haftalık sınava söylüyor —
+sunucu o turu hiç üretmiyor. Yani "oynatıcısı yok" bir açık değil, yazılı bir
+sözleşme.
