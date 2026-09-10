@@ -2534,6 +2534,58 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   sameList("sinav cevrimdisi sonucu", cevrimdisi("mobile/src/screens/ExamScreen.tsx"), cevrimdisi("src/components/exam-player.tsx"));
 }
 
+/* ── 65. haftalik sinav gonderilemediginde ────────────────────────────────
+ * Haftada TEK hak var. Sonuc yazilamayinca web hata kartina dusup puani
+ * ekrandan siliyordu, mobil puani gosteriyor ama KAYDEDILMEDIGINI
+ * soylemiyordu - ikisi de kullaniciyi hakkini harcadigi sanisina birakiyor.
+ * Iki taraf da ayni ucu tutmak zorunda: yerel puan + acik uyari. */
+{
+  const bicim = (p) => {
+    const src = read(p).replace(/\/\*[\s\S]*?\*\//g, " ").replace(/\/\/[^\n]*/g, " ");
+    return [
+      "yerel puan=" + (/filter\(\(a\) => a\.correct\)\.length/.test(src) ? "var" : "yok"),
+      "uyari=" + (src.includes("weekly.not_sent") ? "var" : "yok"),
+      "sonuc ekrani=" + (/setNotSent\(true\)[\s\S]{0,200}?setPhase\("done"\)|setNotSent\(true\);[\s\S]{0,80}?\}\s*setPhase\("done"\)/.test(src) ? "var" : "yok"),
+    ];
+  };
+  sameList("haftalik sinav gonderilemedi", bicim("mobile/src/screens/WeeklyScreen.tsx"), bicim("src/components/weekly-player.tsx"));
+}
+
+/* ── 66. cevrimdisi bitirilen dersin kuyrugu ──────────────────────────────
+ * Ders bitince sonuc `/api/lesson`a yaziliyor; ag yokken iki tarafta da
+ * DUSUYORDU. Yerel isaret Patika'yi bitmis gosteriyor, sunucu dersi hic
+ * ogrenmiyor: XP yok, tekrar merdiveni yok, cihaz degisince ders geri
+ * geliyor. Iki kuyruk ayri teknolojide (AsyncStorage / localStorage) ama
+ * ayni sozlesmeyi tutmak zorunda: ayni depolama anahtari, kendi gunu,
+ * ders basina tek kayit ve 4xx'in kuyruga girmemesi. */
+{
+  const kuyruk = (p) => {
+    const src = read(p).replace(/\/\*[\s\S]*?\*\//g, " ").replace(/\/\/[^\n]*/g, " ");
+    return [
+      "anahtar=" + ((src.match(/"(lernomi-lessons-pending)"/) ?? [])[1] ?? "yok"),
+      "gun=" + (/day:/.test(src) ? "var" : "yok"),
+      "ders basina tek=" + (/filter\(\(x\) => x\.lessonId !== item\.lessonId\)/.test(src) ? "var" : "yok"),
+      "sinir=" + ((src.match(/slice\(-(\d+)\)/) ?? [])[1] ?? "yok"),
+      "kalani birak=" + (/slice\(i\)/.test(src) ? "var" : "yok"),
+    ];
+  };
+  sameList("ders sonucu kuyrugu", kuyruk("mobile/src/game/lessonProgress.ts"), kuyruk("src/lib/lesson-queue.ts"));
+
+  /* Gonderim govdesi de esit olmali: web `day` ve `seconds`i HIC
+     gondermiyordu - her ders sunucuda sifir saniye goruluyor ve gece
+     yarisindan sonra bitirilen ders serinin yanlis gunune yaziliyordu. */
+  const govde = (p) => {
+    const src = read(p).replace(/\/\*[\s\S]*?\*\//g, " ").replace(/\/\/[^\n]*/g, " ");
+    const i = src.indexOf("const payload = {");
+    if (i < 0) return ["payload bulunamadi"];
+    const govde = src.slice(i, src.indexOf("}", i) + 1);
+    /* Kisayol yazim da sayiliyor (`seconds` ile `seconds: secs` ayni alan);
+       yalnizca iki nokta arayan bir desen yanlis ayrisma gosterirdi. */
+    return ["lessonId", "correct", "roleplayDone", "day", "seconds"].filter((k) => new RegExp("\\b" + k + "\\s*[:,}]").test(govde)).sort();
+  };
+  sameSet("ders kayit govdesi", govde("mobile/src/screens/LessonScreen.tsx"), govde("src/components/lessons/lesson-player.tsx"), "mobil", "web");
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"

@@ -122,6 +122,57 @@ export async function syncItemProgress(level?: string): Promise<void> {
   } catch { /* çevrimdışı: yerel küme yeterli */ }
 }
 
+/**
+ * ÇEVRİMDIŞI BİTİRİLEN DERS.
+ *
+ * Ders bitince sonuç `/api/lesson`a yazılıyor; ağ yoksa istek düşüyor ve bir
+ * daha DENENMİYORDU. Yerel işaret (`markItemDone`) Patika'yı bitmiş
+ * gösteriyor ama sunucu dersi hiç öğrenmiyor: XP verilmiyor, aralıklı tekrar
+ * merdiveni kurulmuyor, kullanıcı cihaz değiştirince ders geri geliyor.
+ * Beceri egzersizlerinde aynı boşluk kuyrukla kapandı (`queueItemRecord`);
+ * ders de aynı yolu izliyor.
+ *
+ * `day` KAYITLA BİRLİKTE saklanıyor: seri kullanıcının O gününe ait, ertesi
+ * gün gönderilen dersi bugüne yazmak seriyi yanlış hesaplardı.
+ */
+const LESSON_KEY = "lernomi-lessons-pending";
+export type PendingLesson = { lessonId: string; correct: number; roleplayDone: boolean; day: string; seconds: number };
+
+export async function queueLessonResult(item: PendingLesson): Promise<void> {
+  try {
+    const raw = await AsyncStorage.getItem(LESSON_KEY);
+    const list = raw ? (JSON.parse(raw) as PendingLesson[]) : [];
+    /* Aynı ders iki kez bitirilmişse sonuncusu kalıyor: uç en iyi denemeyi
+       tutuyor ama iki kayıt göndermenin de bir faydası yok. */
+    const kalan = list.filter((x) => x.lessonId !== item.lessonId);
+    kalan.push(item);
+    await AsyncStorage.setItem(LESSON_KEY, JSON.stringify(kalan.slice(-20)));
+  } catch { /* depolama yoksa yapacak bir şey yok */ }
+}
+
+/** Bekleyen ders sonuçlarını gönderir; biri düşerse kalanı kuyrukta bırakır. */
+export async function flushPendingLessons(): Promise<void> {
+  let list: PendingLesson[] = [];
+  try {
+    const raw = await AsyncStorage.getItem(LESSON_KEY);
+    list = raw ? (JSON.parse(raw) as PendingLesson[]) : [];
+  } catch { return; }
+  if (!list.length) return;
+  const kalan: PendingLesson[] = [];
+  for (const [i, item] of list.entries()) {
+    try {
+      await api("/api/lesson", { method: "POST", body: JSON.stringify(item) });
+    } catch {
+      kalan.push(...list.slice(i));
+      break;
+    }
+  }
+  try {
+    if (kalan.length) await AsyncStorage.setItem(LESSON_KEY, JSON.stringify(kalan));
+    else await AsyncStorage.removeItem(LESSON_KEY);
+  } catch { /* yut */ }
+}
+
 /** Egzersiz bitince puanı da yerele yazılır (web `recordSkillResult` karşılığı). */
 export async function recordItemScore(id: string, score: number): Promise<void> {
   const scores = await getItemScores();

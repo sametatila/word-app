@@ -32,6 +32,8 @@ export function WeeklyPlayer() {
   const [index, setIndex] = useState(0);
   const answers = useRef<Answer[]>([]);
   const [result, setResult] = useState<{ score: number; correct: number; total: number } | null>(null);
+  /** Sonuç sunucuya yazılamadı: puan ekranda, kayıt yok. */
+  const [notSent, setNotSent] = useState(false);
   const startedAt = useRef(Date.now());
   const [attempt, setAttempt] = useState(0);
 
@@ -94,7 +96,17 @@ export function WeeklyPlayer() {
       track("session_done", r.correct, "weekly");
       setPhase("done");
     } catch {
-      setPhase("error");
+      /* SINAV YAPILDI AMA GÖNDERİLEMEDİ. Eskiden burada "yüklenemedi" hata
+         kartı çiziliyordu: on dakikalık sınavın puanı ekrandan siliniyordu.
+         Puan zaten istemcide; Android tam bunu yapıyor - yerel doğrulukla
+         gösterip kaydedilmediğini SÖYLÜYOR. Söylemek şart: haftada tek hak
+         var ve kaydedilmemiş bir sınav "yapıldı" görünürse kullanıcı hakkını
+         harcadığını sanır. */
+      const total = answers.current.length;
+      const correct = answers.current.filter((a) => a.correct).length;
+      setResult({ score: total ? Math.round((100 * correct) / total) : 0, correct, total });
+      setNotSent(true);
+      setPhase("done");
     }
   }
 
@@ -185,6 +197,11 @@ export function WeeklyPlayer() {
             </p>
           </div>
         </div>
+        {notSent ? (
+          <p className="mt-3 text-sm font-semibold" style={{ color: "var(--color-danger)" }}>
+            {t("weekly.not_sent")}
+          </p>
+        ) : null}
         {wrong.length ? (
           <div className="mt-4">
             <p className="text-sm font-semibold">{t("weekly.back_in_queue")}</p>

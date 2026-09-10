@@ -16,6 +16,7 @@ import { loadReduceMotion } from "./src/lib/reduceMotion";
 import { loadLang, useLang } from "./src/lib/i18n";
 import { attachPushListeners } from "./src/lib/pushDevice";
 import { flushPendingAnswers } from "./src/game/session";
+import { flushPendingLessons } from "./src/game/lessonProgress";
 import { navigationRef } from "./src/lib/pushRoute";
 import { parseDeepLink, type DeepLinkAction } from "./src/lib/deepLink";
 import { completeEmailVerification } from "./src/lib/auth";
@@ -100,7 +101,7 @@ function Nav() {
     ikinci turu hiç oynamasa da metroda çözdüğü tur sunucuya ulaşıyor.
     Oturum yoksa denenmiyor - 401 kuyruğu silmiyor ama boşuna istek de atmayalım.
   */
-  useEffect(() => { if (user) void flushPendingAnswers(); }, [user]);
+  useEffect(() => { if (user) { void flushPendingAnswers(); void flushPendingLessons(); } }, [user]);
 
   // İlk açılış akışı bir kez gösterilir; görüldüğü yerelde tutulur.
   useEffect(() => {

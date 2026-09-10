@@ -18,7 +18,7 @@ import { findLesson, scoredSteps, type Lesson, type Segment, type Expectation, t
 import { foldCompare, foldTight } from "../lib/textFold";
 import { sendRoleplay, roleplayConfigured, parseReply, patternUsed, type ChatMsg } from "../game/roleplay";
 import { offlineStart, offlineReply, offlineSummary, type OfflineState, type Hint } from "../game/offlineRoleplay";
-import { markItemDone, loadLessonResume, saveLessonResume, clearLessonResume } from "../game/lessonProgress";
+import { markItemDone, queueLessonResult, loadLessonResume, saveLessonResume, clearLessonResume } from "../game/lessonProgress";
 import { speakTarget, speakAndWaitVoiced, currentVoiceId } from "../lib/tts";
 import { ensureMicPermission, listenOnce, sttAvailable, stopListening } from "../lib/stt";
 import { spokenMatches } from "../lib/voiceMatch";
@@ -530,12 +530,16 @@ export function LessonScreen() {
     void markItemDone(lesson.id);
     void clearLessonResume(lesson.id);
     const seconds = Math.round((Date.now() - startedAt.current) / 1000);
+    const payload = { lessonId: lesson.id, correct, roleplayDone: roleDone, day: todayStr(), seconds };
     try {
       const res = await fetchWithTimeout(`${API_BASE}/api/lesson`, {
         method: "POST",
         headers: { "content-type": "application/json" },
-        body: JSON.stringify({ lessonId: lesson.id, correct, roleplayDone: roleDone, day: todayStr(), seconds }),
+        body: JSON.stringify(payload),
       });
+      /* Sunucu gövdeyi reddettiyse (4xx) kuyruğa almanın anlamı yok; ağ ya da
+         sunucu kaynaklı bir düşüş ise sonuç bekletiliyor. */
+      if (!res.ok && res.status >= 500) await queueLessonResult(payload);
       /* YANIT OKUNUYOR. Uç `passed`, `nextDays`, `xpGained`, `currentStreak`
          ve `totalXp` döndürüyor; mobil hiçbirini okumuyordu ve dersin NE ZAMAN
          geri geleceği (aralıklı tekrar merdiveni) bu yüzden hiçbir yerde
@@ -544,7 +548,12 @@ export function LessonScreen() {
         const d = (await res.json()) as { nextDays?: number };
         if (typeof d?.nextDays === "number") setNextDays(d.nextDays);
       }
-    } catch { /* çevrimdışı: yerel işaret yeterli, sunucu sonra */ }
+    } catch {
+      /* ÇEVRİMDIŞI: yerel işaret Patika'yı bitmiş gösteriyor ama sunucu dersi
+         hiç öğrenmiyordu - XP yok, tekrar merdiveni yok, cihaz değiştirince
+         ders geri geliyordu. Sonuç kendi günüyle kuyruğa alınıyor. */
+      await queueLessonResult(payload);
+    }
   }
 
   const nextLesson = useMemo(() => {

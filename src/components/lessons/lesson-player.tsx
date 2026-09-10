@@ -29,6 +29,8 @@ import { ReportDialog } from "@/components/report-dialog";
 import { translate, type NativeLang } from "@/lib/i18n/dict";
 import { courseName, speechLocaleOf } from "@/lib/courses";
 import { parseJudgment } from "@/lib/voice-intent";
+import { localDay } from "@/lib/day";
+import { flushPendingLessons, queueLessonResult } from "@/lib/lesson-queue";
 
 /**
  * Ders oynatıcısı — anlatım, konuşma pratiği, özet.
@@ -260,6 +262,15 @@ export function LessonPlayer({
   }, [offline]);
 
   const [saved, setSaved] = useState<{ passed: boolean; nextDays: number } | null>(null);
+  /* Dersin süresi: `/api/lesson` `seconds` alanını istiyor ve web onu HİÇ
+     göndermiyordu - her ders sunucuda sıfır saniye görünüyordu (mobil baştan
+     beri gönderiyor). Aynı istekte `day` de eksikti: kullanıcının yerel günü
+     yerine sunucunun günü işleniyordu, yani gece yarısından sonra bitirilen
+     ders serinin yanlış gününe yazılıyordu. */
+  const startedAt = useRef(Date.now());
+  /* Önceki oturumda gönderilemeyen ders sonuçları: ekran açılır açılmaz
+     denenmeleri yeter, kullanıcı bir şey yapmıyor. */
+  useEffect(() => { void flushPendingLessons(); }, []);
   const [resumed, setResumed] = useState(false);
 
   const ttsAvailable = useSpeechAvailable();
@@ -1000,15 +1011,19 @@ export function LessonPlayer({
       track("production_attempt", offlineSummary(lesson, offlineRef.current).score, "roleplay");
     }
     try {
+      const payload = {
+        lessonId: lesson.id,
+        correct: correctCount,
+        roleplayDone,
+        day: localDay(),
+        seconds: Math.round((Date.now() - startedAt.current) / 1000),
+      };
       const res = await fetch("/api/lesson", {
         method: "POST",
         headers: { "content-type": "application/json" },
-        body: JSON.stringify({
-          lessonId: lesson.id,
-          correct: correctCount,
-          roleplayDone,
-        }),
+        body: JSON.stringify(payload),
       });
+      if (!res.ok && res.status >= 500) queueLessonResult(payload);
       if (res.ok) {
         const data = (await res.json()) as {
           passed: boolean;
@@ -1028,7 +1043,15 @@ export function LessonPlayer({
         );
       }
     } catch {
-      // Kayıt başarısızsa özet yine gösteriliyor.
+      /* ÇEVRİMDIŞI: özet yine gösteriliyor ama sonuç artık kaybolmuyor -
+         kendi günüyle kuyruğa alınıyor ve sonraki açılışta gidiyor. */
+      queueLessonResult({
+        lessonId: lesson.id,
+        correct: correctCount,
+        roleplayDone,
+        day: localDay(),
+        seconds: Math.round((Date.now() - startedAt.current) / 1000),
+      });
     }
   }
 

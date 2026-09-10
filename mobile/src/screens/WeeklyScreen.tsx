@@ -29,6 +29,7 @@ export function WeeklyScreen() {
   const [phase, setPhase] = useState<Phase>("loading");
   const [rounds, setRounds] = useState<Round[]>([]);
   const [idx, setIdx] = useState(0);
+  const [notSent, setNotSent] = useState(false);
   const [result, setResult] = useState<{ score: number; correct: number; total: number } | null>(null);
   const [status, setStatus] = useState<WeeklyStatus | null>(null);
 
@@ -112,10 +113,13 @@ export function WeeklyScreen() {
       const res = await submitWeekly(answers.current, day.current, secs);
       setResult({ score: res.score, correct: res.correct, total: res.total });
     } catch {
-      // sunucuya yazılamadıysa yerel doğrulukla göster
+      /* Sunucuya yazılamadıysa yerel doğrulukla gösteriliyor - AMA bunun
+         söylenmesi şart: haftada tek hak var ve kaydedilmemiş bir sınav
+         "yapıldı" görünürse kullanıcı hakkını harcadığını sanır. */
       const total = answers.current.length;
       const correct = answers.current.filter((a) => a.correct).length;
       setResult({ score: total ? Math.round((100 * correct) / total) : 0, correct, total });
+      setNotSent(true);
     }
     setPhase("done");
   }
@@ -189,6 +193,7 @@ export function WeeklyScreen() {
           </Text>
           {/* Sınavın haftada bir olduğu ve sonrakinin ne zaman geleceği: web
               aynı yerde söylüyor, mobilde hiç yazmıyordu. */}
+          {notSent ? <Text variant="caption" color={colors.dangerText} style={{ textAlign: "center", marginBottom: spacing.md, lineHeight: 19 }}>{t("weekly.not_sent")}</Text> : null}
           {done ? <Text variant="micro" color={colors.textFaint} style={{ textAlign: "center", marginBottom: spacing.lg, lineHeight: 18 }}>{t("weekly.once_a_week")}</Text> : null}
           <PressableScale onPress={() => nav.goBack()} style={[{ width: "100%", backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: spacing.lg, alignItems: "center" }, softShadow(colors.primary, 8)]}><Text variant="bodyStrong" color={colors.onPrimary}>{t("common.finish")}</Text></PressableScale>
         </View>
