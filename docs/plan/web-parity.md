@@ -3350,3 +3350,46 @@ aynı şeyi söylüyor.
 yanında "puanlanıyor" yazıyor - orada henüz bir içerik ŞEKLİ yok, sunucu
 hesaplıyor. İskelet olmayan bir şeyin yerini tutamaz; bu bir ilerleme
 göstergesi, yer tutucu değil.
+
+### 11.64 Bildirim izni: reddedilen izin sessizce yutuluyordu
+
+**Düzeltilen.** `NotifPrimeScreen`de "Hatırlat" düğmesi şöyleydi:
+
+    try { await enableDailyReminder(time); } catch { /* izin reddi olsa da devam */ }
+    await markNotifPrimed();
+    toApp();
+
+`enableDailyReminder` izin alınamazsa `false` DÖNÜYOR (`NotificationsScreen`
+dönüşü kullanıyor) ama burada hem dönüş atılıyor hem hata yutuluyordu.
+Kullanıcı basıyor, sistem reddediyor, ekran yine de "gösterildi" işaretini
+yazıp uygulamaya geçiyordu. Sonuç iki kat kötü: kullanıcı hatırlatmanın AÇIK
+olduğunu sanıyor VE ekran bir daha hiç gelmiyor (işaret kalıcı), yani yanlış
+inanç kalıcı hâle geliyor.
+
+Artık reddedilen izin düğmenin hemen üstünde söyleniyor
+(`notifications.permission_off` - `NotificationsScreen`dekiyle aynı anahtar)
+ve işaret YAZILMIYOR, yani ekran bir sonraki açılışta yeniden gelebilir. Web
+aynı durumu ayrı gösteriyor (`PushSettings` reddedilen izni açılışta söylüyor).
+
+**Ölçülüp KAYDEDİLEN, değiştirilmeyen: izin NE ZAMAN isteniyor.**
+
+    web    oturum özetinin içinde — tur bitti, XP göründü, seri ekranda
+    mobil  girişin hemen ardından — kullanıcı henüz hiçbir şey yapmadı
+
+Web'in kendi yorumu bu farkı bir HATA olarak tanımlıyor: *"Girişte ya da ilk
+açılışta sorulan izin, henüz hiçbir şey yaşamamış birine 'seni rahatsız
+edebilir miyim' demektir ve reddedilir; reddedilen izin tarayıcıda kalıcıdır -
+ikinci bir şans yoktur."* Android 13+ için de aynısı geçerli (iki ret =
+"bir daha sorma").
+
+Mobilin ekranı yine de bir PRIMING ekranı - sistem diyaloğundan önce değeri
+anlatıyor, saat seçtiriyor ve atlanabiliyor - yani çıplak bir sistem sorusu
+değil. Ama zamanlaması webin yanlış dediği an. Bunu tek başıma taşımadım:
+priming ekranını girişten oturum sonrasına almak hunideki sırayı değiştirir ve
+yanlış karar KALICI olarak reddedilmiş bir izne mal olur. Samet'in kararı.
+
+İkinci ayrım da kayda geçti: web kartı reddedilirse yirmi bir gün sonra
+yeniden soruyor (`DISMISS_DAYS`), mobil "şimdi değil"i KALICI işaretliyor.
+İkisi aynı biçimde çözülemez - webin kartı özetin içinde küçük bir kart,
+mobilin ekranı tam ekran; tam ekranı üç hafta sonra tekrar açmak kartı tekrar
+göstermekten çok daha müdahaleci. Politikayı seçmek de aynı karara bağlı.

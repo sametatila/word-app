@@ -32,6 +32,8 @@ export function NotifPrimeScreen() {
   const nav = useNavigation<NativeStackNavigationProp<RootStackParams>>();
   const [time, setTime] = useState("20:00");
   const [busy, setBusy] = useState(false);
+  /* İzin REDDEDİLDİYSE söylenmesi gerekiyor; bkz. `enable`. */
+  const [denied, setDenied] = useState(false);
 
   const toApp = () => nav.reset({ index: 0, routes: [{ name: "Tabs" }] });
 
@@ -39,7 +41,27 @@ export function NotifPrimeScreen() {
     if (busy) return;
     setBusy(true);
     track("notif_prime", 1, time);
-    try { await enableDailyReminder(time); } catch { /* izin reddi olsa da devam */ }
+    /*
+     * İZİN REDDİ SESSİZCE YUTULUYORDU.
+     *
+     * `enableDailyReminder` izin alınamazsa `false` dönüyor (`NotificationsScreen`
+     * dönüşü kullanıyor) ama burada hem dönüş atılıyor hem de hata yutuluyordu:
+     * kullanıcı "Hatırlat"a basıyor, sistem reddediyor, ekran yine de
+     * `markNotifPrimed()` yazıp uygulamaya geçiyordu. Sonuç iki kat kötü -
+     * kullanıcı hatırlatmanın AÇIK olduğunu sanıyor ve ekran bir daha hiç
+     * gelmiyor (işaret kalıcı), yani yanlış inanç kalıcı hâle geliyor.
+     *
+     * Artık reddedilen izin söyleniyor ve işaret YAZILMIYOR: ekran bir sonraki
+     * açılışta yeniden gelebilir. Web aynı durumu ayrı ayrı gösteriyor
+     * (`PushSettings` reddedilen izni açılışta söylüyor).
+     */
+    let ok = false;
+    try { ok = await enableDailyReminder(time); } catch { ok = false; }
+    if (!ok) {
+      setDenied(true);
+      setBusy(false);
+      return;
+    }
     await markNotifPrimed();
     toApp();
   }
@@ -77,6 +99,13 @@ export function NotifPrimeScreen() {
         </View>
       </View>
 
+      {/* Reddedilen izin, düğmenin HEMEN ÜSTÜNDE: kullanıcı basınca ne olduğunu
+          aynı yerde görüyor. Metin `NotificationsScreen`dekiyle aynı anahtar. */}
+      {denied ? (
+        <Text variant="caption" color={colors.dangerText} style={{ textAlign: "center", marginBottom: spacing.sm, lineHeight: 18 }}>
+          {tx("notifications.permission_off")}
+        </Text>
+      ) : null}
       <PressableScale onPress={enable} accessibilityRole="button" accessibilityLabel={tx("notifprime.turn_on_daily_reminder")} style={[{ borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: 17, alignItems: "center" }, softShadow(colors.primary, 10)]}>
         <Text variant="h3" color={colors.onPrimary}>{busy ? "..." : tx("notifprime.remind_me_once_day")}</Text>
       </PressableScale>
