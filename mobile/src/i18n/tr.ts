@@ -1176,6 +1176,9 @@ export const tr: Record<string, string> = {
   "diff.typo": "yazım",
   "session.chip_new": "yeni",
   "session.chip_review": "tekrar",
+  "session.goal_reached": "Günlük hedefi tamamladın",
   "level.mastered_count": "{n} kelime pekişti",
   "level.mastered_none": "kelimeler pekiştikçe burada birikecek",
+  "sessionw.due_tomorrow": "Yarın {n} kelimenin tekrarı var.",
+  "sessionw.n_mastered": "{n} kelime pekişti",
 };

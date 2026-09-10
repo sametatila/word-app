@@ -15,7 +15,7 @@ import { ProgressRing } from "../ui/ProgressRing";
 import { Mascot } from "../ui/Mascot";
 import { Celebrate } from "../ui/Celebrate";
 import { RoundView } from "../game/rounds";
-import { fetchSession, submitAnswers, todayStr, PRACTICE_GAMES, type Round, type AnswerOut, type DoneExtra, type SessionMeta, type SessionProgress } from "../game/session";
+import { fetchSession, submitAnswers, todayStr, PRACTICE_GAMES, type Round, type AnswerOut, type DoneExtra, type SessionMeta, type SessionProgress, type SubmitResult } from "../game/session";
 import { ApiError } from "../api/client";
 import { track } from "../lib/track";
 import { sfx } from "../lib/sfx";
@@ -52,6 +52,9 @@ export function GameScreen() {
   const [repaired, setRepaired] = useState<number | null>(null);
   // Bu turda pekişen kelime sayısı; kutlama eşiği buna da bakıyor.
   const [mastered, setMastered] = useState(0);
+  /* Sunucu yanıtının tamamı: özet XP, günlük hedef ve yarına kalan tekrarı
+     buradan okuyor (web `session-player` de aynısını yapıyor). */
+  const [result, setResult] = useState<SubmitResult | null>(null);
   const [combo, setCombo] = useState(0);
   const [pop, setPop] = useState(0);
   const answers = useRef<AnswerOut[]>([]);
@@ -129,7 +132,7 @@ export function GameScreen() {
       startedAt.current = Date.now();
       roundStart.current = Date.now();
       track("session_start", 0, onlyGame ? "practice" : "session");
-      if (list.length === 0) { setFinalCorrect(0); setFinalTotal(0); setRepaired(null); setMastered(0); setPhase("done"); }
+      if (list.length === 0) { setFinalCorrect(0); setFinalTotal(0); setRepaired(null); setMastered(0); setResult(null); setPhase("done"); }
       else setPhase("play");
     } catch (e) {
       setPhase(e instanceof ApiError && e.status === 401 ? "auth" : "error");
@@ -217,6 +220,7 @@ export function GameScreen() {
         const r = await submitAnswers(answers.current, day.current, secs, progressNow());
         if (r?.streakRepaired) setRepaired(r.currentStreak);
         if (r?.newlyMastered) setMastered(r.newlyMastered);
+        if (r) setResult(r);
       }
     } catch { /* ölçüm/yazma sessizce düşer */ }
   }
@@ -284,6 +288,40 @@ export function GameScreen() {
           <Text variant="body" color={colors.textMuted} style={{ marginTop: spacing.xs, marginBottom: repaired === null ? spacing.xxl : spacing.lg, textAlign: "center" }}>
             {t(total ? "game.saved" : "game.nothing_to_review")}
           </Text>
+          {/* Kazanılan XP: webde özetin en üstündeki sayı (`session-player`
+              `+{xp} XP`). Mobilde HİÇ gösterilmiyordu - alan `SubmitResult`
+              tipinde yoktu ve sessizce düşüyordu (bkz. web-parity §11.23). */}
+          {result && result.xpGained > 0 ? (
+            <Text variant="h2" color={colors.primaryText} style={{ marginBottom: spacing.md }}>{`+${result.xpGained} XP`}</Text>
+          ) : null}
+
+          {/* Günlük hedef çubuğu + ulaşıldıysa satırı. Web aynı kutuyu çiziyor. */}
+          {result && result.dailyGoal > 0 ? (
+            <View style={{ width: "100%", marginBottom: spacing.lg }}>
+              <View style={{ flexDirection: "row", justifyContent: "space-between", marginBottom: 6 }}>
+                <Text variant="caption" color={colors.textMuted}>{t("learn.daily_goal")}</Text>
+                <Text variant="caption" color={colors.textMuted}>{`${result.reviewsToday} / ${result.dailyGoal}`}</Text>
+              </View>
+              <View style={{ height: 8, borderRadius: 4, backgroundColor: colors.surface2, overflow: "hidden" }}>
+                <View style={{ height: "100%", width: `${Math.min(100, Math.round((result.reviewsToday / result.dailyGoal) * 100))}%`, backgroundColor: colors.success, borderRadius: 4 }} />
+              </View>
+              {result.goalReached ? (
+                <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "center", gap: 6, marginTop: spacing.sm }}>
+                  <FlameIcon color={colors.successText} size={16} />
+                  <Text variant="bodyStrong" color={colors.successText}>{t("session.goal_reached")}</Text>
+                </View>
+              ) : null}
+            </View>
+          ) : null}
+
+          {/* Pekişen kelime: seviye rozeti yerine gerçekten kazanılmış olan şey.
+              Mobil bu sayıyı yalnız kutlama eşiği için kullanıyor, göstermiyordu. */}
+          {mastered > 0 ? (
+            <View style={{ width: "100%", borderRadius: radii.lg, backgroundColor: colors.success + "24", paddingHorizontal: spacing.md, paddingVertical: 12, marginBottom: spacing.lg }}>
+              <Text variant="bodyStrong" color={colors.successText} style={{ textAlign: "center" }}>{t("sessionw.n_mastered", { n: mastered })}</Text>
+            </View>
+          ) : null}
+
           {/* Kaybedildiği sanılan seri geri alındıysa bunu söylemek şart:
               sessiz bir onarım, kullanıcının ekranda gördüğü sayıyı
               açıklanamaz hâle getirir. Web aynı kutuyu çiziyor. */}
@@ -297,6 +335,11 @@ export function GameScreen() {
             </View>
           ) : null}
           <PressableScale onPress={load} style={[{ width: "100%", backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: spacing.lg, alignItems: "center" }, softShadow(colors.primary, 10)]}><Text variant="bodyStrong" color="#fff">{t("game.continue")}</Text></PressableScale>
+          {/* Ertesi güne dair somut bir sayı — yarın uygulamayı açmak için bir
+              sebep. Web özetin altında aynı satırı gösteriyor. */}
+          {result && result.dueTomorrow > 0 ? (
+            <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.md, textAlign: "center" }}>{t("sessionw.due_tomorrow", { n: result.dueTomorrow })}</Text>
+          ) : null}
           {total > 0 && (
             <PressableScale onPress={() => shareResult(finalCorrect, total)} style={{ width: "100%", borderRadius: radii.lg, paddingVertical: spacing.lg, alignItems: "center", flexDirection: "row", justifyContent: "center", gap: 8, marginTop: spacing.md, borderWidth: 1.5, borderColor: colors.border }}>
               <ShareIcon color={colors.text} size={19} /><Text variant="bodyStrong" color={colors.text}>{t("common.share")}</Text>

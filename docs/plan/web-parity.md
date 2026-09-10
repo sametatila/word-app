@@ -1431,3 +1431,29 @@ parite değil "yazılmış ama bağlanmamış":
     bindirilmiş ama hiçbir bileşen okumuyor. Mobilde hayatta kalma turu da yok.
 
 Üçü de ürün kararı istiyor: gösterilecek mi, yoksa paketten çıkarılacak mı.
+
+### 11.23 Oturum özeti: dört satır Androidde hiç yoktu
+
+§11.22'deki sınıfın beşinci örneği, bu kez CEVAP YANITINDA. Web `AnswerResult`
+on bir alan taşıyor; mobil `SubmitResult` yalnız üçünü tanıyordu
+(`streakRepaired`, `currentStreak`, `newlyMastered`) ve geri kalanı sessizce
+düşüyordu. Sonuç: oturum özeti dört şeyi HİÇ göstermiyordu, oysa sunucu
+sayıları gönderiyordu ve web dördünü de gösteriyor:
+
+    xpGained                 kazanılan XP        -> özetin en üstündeki sayı
+    reviewsToday/dailyGoal   günlük hedef        -> çubuk + "hedefi tamamladın"
+    newlyMastered            pekişen kelime      -> mobilde yalnız kutlama
+                                                    eşiği için kullanılıyordu,
+                                                    ekranda yazmıyordu
+    dueTomorrow              yarına kalan tekrar -> "yarın N kelimenin tekrarı var"
+
+Dördü de eklendi; metinler webin kendi cümleleri (anahtarlar web-özelden mobil
+kaynağa taşındı, `i18n-pull` ile tabana çekildi, webdeki kopyalar kaldırıldı -
+yani iki platform artık aynı cümleyi kuruyor, iki ayrı çeviri değil).
+
+`wagerXp` alan olarak eklendi ama OKUNMUYOR: bahisli etap mobilde hiç yok
+(ölçüldü - mobil kaynağında "wager" hiç geçmiyor). Sözleşme tam olsun diye
+tipte duruyor ve sebebi yorumda.
+
+KAPI: `parity-check` 19. bölümü artık üç yüzeyi karşılaştırıyor - tur alanları,
+oturum meta alanları ve cevap yanıtı alanları.

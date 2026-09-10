@@ -1173,6 +1173,9 @@ export const deBase: Record<string, string> = {
   "diff.typo": "Schreibung",
   "session.chip_new": "neu",
   "session.chip_review": "Wdh.",
+  "session.goal_reached": "Tagesziel geschafft",
   "level.mastered_count": "{n} Wörter gefestigt",
   "level.mastered_none": "hier sammeln sich die gefestigten Wörter",
+  "sessionw.due_tomorrow": "Morgen sind {n} Wörter fällig.",
+  "sessionw.n_mastered": "{n} Wörter gefestigt",
 };

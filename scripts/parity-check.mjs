@@ -684,6 +684,11 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   const metaWeb = alanlar(seg(web, "  meta: {", "\n  };")).filter((a) => !["meta", "pacing", "leeches", "challengeBest"].includes(a));
   const metaMob = alanlar(seg(mob, "export type SessionMeta = {", "\n};"));
   sameList("meta alanlari", yok(metaWeb.filter((a) => !metaMob.includes(a))), ["eksik yok"], "mobilde eksik", "beklenen");
+  /* Cevap yaniti: web `AnswerResult` ile mobil `SubmitResult`. */
+  const resWeb = alanlar(seg(web, "export type AnswerResult = {", "\n};"));
+  const resMob = alanlar(seg(mob, "export type SubmitResult = {", "\n};"));
+  sameList("cevap yaniti alanlari", yok(resWeb.filter((a) => !resMob.includes(a))), ["eksik yok"], "mobilde eksik", "beklenen");
+
 }
 
 console.log(

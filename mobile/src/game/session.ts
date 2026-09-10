@@ -189,11 +189,31 @@ export function practiceGamesFor(course: string | null | undefined) {
  * sayacın sıfırlanmasını bekliyor — sıfırlanmadığını görüp sebebini
  * öğrenemezse rakam açıklanamaz hâle geliyor.
  */
+/**
+ * `/api/answers` yanıtı — web `AnswerResult` ile aynı alanlar.
+ *
+ * Mobil tipte yalnız üç alan vardı ve geri kalanı sessizce düşüyordu; oturum
+ * özeti bu yüzden kazanılan XP'yi, günlük hedefi, pekişen kelimeyi ve yarına
+ * kalan tekrarı HİÇ göstermiyordu (web `session-player` dördünü de gösteriyor).
+ * Bkz. web-parity §11.23.
+ *
+ * `wagerXp` mobilde okunmuyor: bahisli etap mobilde hiç yok.
+ */
 export type SubmitResult = {
   streakRepaired: boolean;
   currentStreak: number;
   /** Bu turda pekişme eşiğini geçen kelime sayısı — kutlama eşiği buna bakıyor. */
   newlyMastered: number;
+  xpGained: number;
+  totalXp: number;
+  longestStreak: number;
+  reviewsToday: number;
+  dailyGoal: number;
+  goalReached: boolean;
+  /** Yarın tekrar zamanı gelen kelime sayısı. */
+  dueTomorrow: number;
+  /** Bahisli etabın puan farkı — mobilde bahis yok, alan sözleşme için var. */
+  wagerXp: number;
 };
 
 /** Cevapları sunucuya yazar (SRS + XP + seri güncellenir). `progress` verilirse

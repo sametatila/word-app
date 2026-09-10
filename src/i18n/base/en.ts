@@ -1173,6 +1173,9 @@ export const enBase: Record<string, string> = {
   "diff.typo": "spelling",
   "session.chip_new": "new",
   "session.chip_review": "review",
+  "session.goal_reached": "You hit your daily goal",
   "level.mastered_count": "{n} words mastered",
   "level.mastered_none": "words collect here as they stick",
+  "sessionw.due_tomorrow": "{n} words are due tomorrow.",
+  "sessionw.n_mastered": "{n} words mastered",
 };
