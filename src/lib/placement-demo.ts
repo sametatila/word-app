@@ -39,7 +39,31 @@ const TR_DE: PlacementQ[] = [
   { id: "p8", level: "B2", promptKey: "placement.fill_blank", question: "Das Projekt, ___ wir arbeiten, ist wichtig.", answer: "an dem", options: ["an dem", "auf dem", "in dem", "mit dem"] },
 ];
 
-const BY_PAIR: Record<string, PlacementQ[]> = { "tr-de": TR_DE };
+
+/* İngilizce anadil için TEK FARK anlam sorusu. Öteki yedi soru Almanca
+   dilbilgisi ölçüyor: soru da şıklar da Almanca, yani anadilden bağımsız.
+   Türetiliyor, kopyalanmıyor — kopya olsaydı biri düzeltilip öteki
+   unutulurdu ve iki parite aynı testi ölçmez olurdu. */
+const EN_DE: PlacementQ[] = TR_DE.map((q) =>
+  q.id === "p3" ? { ...q, answer: "water", options: ["water", "bread", "milk", "door"] } : q,
+);
+
+/* Almanca anadil, İNGİLİZCE kurs: sorular İngilizce, anlam şıkları Almanca.
+   Aynı beceri sırası: çekim, artikel, anlam, geçmiş zaman, edat, koşul,
+   bağlaç, ilgi cümlesi — seviye dağılımı da aynı (A1×3, A2×2, B1×2, B2×1),
+   çünkü `estimateLevel` eşikleri sekiz soruya göre. */
+const DE_EN: PlacementQ[] = [
+  { id: "p1", level: "A1", promptKey: "placement.fill_blank", question: "My name ___ Emma.", answer: "is", options: ["is", "am", "are", "be"] },
+  { id: "p2", level: "A1", promptKey: "placement.right_article", question: "___ sun is very bright today.", answer: "The", options: ["The", "A", "An", "Some"] },
+  { id: "p3", level: "A1", promptKey: "rounds.ask_native", question: "the water", answer: "Wasser", options: ["Wasser", "Brot", "Milch", "Tür"] },
+  { id: "p4", level: "A2", promptKey: "placement.fill_blank", question: "Yesterday I ___ at the cinema.", answer: "was", options: ["was", "am", "have", "were"] },
+  { id: "p5", level: "A2", promptKey: "placement.right_preposition", question: "I am interested ___ music.", answer: "in", options: ["in", "on", "at", "with"] },
+  { id: "p6", level: "B1", promptKey: "placement.fill_blank", question: "If I ___ time, I would travel.", answer: "had", options: ["had", "have", "would have", "having"] },
+  { id: "p7", level: "B1", promptKey: "placement.right_conjunction", question: "I stay at home ___ it is raining.", answer: "because", options: ["because", "although", "however", "despite"] },
+  { id: "p8", level: "B2", promptKey: "placement.fill_blank", question: "The project ___ we are working is important.", answer: "on which", options: ["on which", "in which", "at which", "with which"] },
+];
+
+const BY_PAIR: Record<string, PlacementQ[]> = { "tr-de": TR_DE, "en-de": EN_DE, "de-en": DE_EN };
 
 function setFor(nativeLang: string, course: string): PlacementQ[] | undefined {
   const own = BY_PAIR[`${nativeLang}-${course}`];
