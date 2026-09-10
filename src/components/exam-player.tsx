@@ -112,6 +112,8 @@ export function ExamPlayer({ level, module }: { level: CefrLevel; module: number
   const speakingScores = useRef<number[]>([]);
   const [busy, setBusy] = useState(false);
   const [result, setResult] = useState<ExamResult | null>(null);
+  /** Gönderilemeyen sonucun yerel özeti — hata ekranında gösteriliyor. */
+  const [offline, setOffline] = useState<{ pct: number; sections: { id: ExamSectionId; pct: number }[] } | null>(null);
   const score = useRef<Record<ExamSectionId, { correct: number; total: number }>>({
     vocab: empty(), grammar: empty(), produce: empty(), reading: empty(), listening: empty(), speaking: empty(), writing: empty(),
   });
@@ -200,6 +202,17 @@ export function ExamPlayer({ level, module }: { level: CefrLevel; module: number
       setResult((await res.json()) as ExamResult);
       setPhase("result");
     } catch {
+      /* SONUÇ GÖNDERİLEMEDİ AMA SINAV YAPILDI. Eskiden burada yalnız bir hata
+         kartı çiziliyordu ve yirmi dakikalık emek ekrandan silinip gidiyordu.
+         Puan zaten istemcide hesaplanmış durumda; Android de tam bunu yapıyor:
+         yüzdeyi gösterip "sonuç gönderilemedi" diyor. Geçti/kaldı YAZILMIYOR,
+         o kararı sunucu veriyor. */
+      const total = sections.reduce((a, x) => a + x.total, 0);
+      const correct = sections.reduce((a, x) => a + x.correct, 0);
+      setOffline({
+        pct: total ? Math.round((correct / total) * 100) : 0,
+        sections: sections.map((x) => ({ id: x.id, pct: x.total ? Math.round((x.correct / x.total) * 100) : 0 })),
+      });
       setPhase("error");
     }
   }
@@ -310,7 +323,25 @@ export function ExamPlayer({ level, module }: { level: CefrLevel; module: number
   if (phase === "error") {
     return (
       <section className="card mx-auto w-full max-w-md p-5">
-        <p className="text-sm">{t("exam.load_or_save_failed")}</p>
+        {offline ? (
+          <>
+            <p className="text-3xl font-extrabold tabular-nums">{t("common.pct", { n: offline.pct })}</p>
+            <p className="muted mt-1 text-sm font-semibold">{t("exam.saved_offline")}</p>
+            <ul className="mt-3 space-y-1">
+              {offline.sections.map((x) => (
+                <li key={x.id} className="flex items-center justify-between text-sm">
+                  <span>
+                    <span lang="de" className="font-semibold">{SECTION_TITLE_DE[x.id]}</span>
+                    <span className="muted"> · {t(SECTION_TITLE_KEYS[x.id])}</span>
+                  </span>
+                  <span className="muted tabular-nums">{t("common.pct", { n: x.pct })}</span>
+                </li>
+              ))}
+            </ul>
+          </>
+        ) : (
+          <p className="text-sm">{t("exam.load_or_save_failed")}</p>
+        )}
         <Link href="/immersion" className="btn btn-ghost mt-3 px-4 py-2 text-sm">
           {t("exam.back_to_path")}
         </Link>
