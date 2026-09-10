@@ -1513,7 +1513,7 @@ bir uç da hata veriyor, yani liste bayatlamıyor. Sınandı: `/api/plan` listed
 §11.24 "ucun çağıranı var mı" diye sordu; bu madde "hangi İSTEMCİ çağırıyor"
 diye soruyor. Altmış yedi ucun kırkı iki istemcide de kullanılıyor. Kalanlar:
 
-**Yalnız webde (21)** — çoğu doğru durumda: `admin/*` (yönetici panosu),
+**Yalnız webde (21)** — çoğu doğru durumda (biri de bilerek: hayatta kalma): `admin/*` (yönetici panosu),
 `auth/apple/notifications` + `cron/*` + `premium/webhook` (dışarıdan),
 `push/subscribe` (tarayıcı aboneliği; mobil `push/device` kullanıyor),
 `plan` + `premium/consume` (§11.24), `certificate/[id]` (sertifika görüntüsü),
@@ -1526,11 +1526,16 @@ kullanıyor).
 
   - **`/api/words/known`** — DÜZELTİLDİ (aşağıda).
   - **`/api/challenge`** — süreye karşı hayatta kalma turu (`challenge-player`).
-    Mobilde ekran yok; Öğren'deki "günlük tur" bambaşka bir şey (herkese aynı
-    tur, `Daily`). `meta.challengeBest` bu yüzden mobilde anlamsız (§11.22).
-  - **`/api/boss`** — modül patronu (`boss-player`). PORT EDİLDİ, aşağıda.
-
-Hayatta kalma turu ekran işi, alan ya da bayrak değil; ayrı tur.
+    Mobilde ekran yok ve OLMAMASI KARAR: yukarıdaki "Bilerek farklı kalanlar"
+    listesinin ilk maddesi, web `learn-hub` yorumu da aynısını söylüyor
+    ("hayatta kalma mobilde YOK - web'e özel bir mod"). Bu madde ilk yazıldığında
+    "yüzey eksiği" diye sınıflandırılmıştı; YANLIŞTI, düzeltildi. Portlamaya
+    başlanmadan önce ölçüldü ve karar bulundu. `meta.challengeBest` mobilde bu
+    yüzden anlamsız (§11.22) - eksik değil, karşılığı yok.
+  - **`/api/boss`** — modül patronu (`boss-player`). Mobilde ekran YOKTU ve
+    olmaması bir karar DEĞİLDİ (ne "bilerek farklı" listesinde ne web
+    yorumlarında böyle bir not var; webin kendi yorumu yalnız GİRİŞİN yerini
+    tartışıyor). PORT EDİLDİ, aşağıda.
 
 #### `/api/boss` — modül patronu (hız turu)
 
@@ -1561,6 +1566,12 @@ görünüyor.
 
 Yirmi beş sözlük anahtarı web-özelden mobil kaynağa taşındı ve `i18n-pull` ile
 tabana çekildi (taban 1203); webdeki kopyalar kaldırıldı.
+
+Sunucunun bu turda ürettiği yedi oyun türü (choice, artikel, listen, typing,
+truefalse, scramble, cloze) ölçüldü ve yedisi de mobil `pickRound`ta var, yani
+"içerik istemcinin çizemediği bir tür gönderiyor" sınıfına düşmüyor. Boss
+turlarında cloze her zaman ŞIKLI: `mode` yalnız `buildSession`da veriliyor,
+`makeRound`ta değil.
 
 **Yalnız mobilde (6)** — hepsi doğru: `account/apple-code` (native Apple
 girişi), `config` (mobil çalışma zamanı ayarı), `me` / `premium/status` /
