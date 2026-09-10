@@ -4581,3 +4581,38 @@ beri taşıyordu.
   Falsch` ile aynı sınıf (§11.84): Türkçe harf taşımadığı için
   `i18n-hardcoded` görmüyor, sözlük anahtarı olmadığı için `i18n:check`
   görmüyor.
+
+### 11.97 Ölçüm pariteси: hangi olay hangi tarafta atılıyor
+
+Yeni bir karşılaştırma ekseni: iki tarafın **istemciden** attığı olay adları.
+Sunucudan atılanlar (`share`) zaten iki platforma da yazılıyor, o yüzden
+ayrım yalnız istemci çağrılarında anlamlı.
+
+Web istemcisinden atılıp mobilde hiç atılmayan **yirmi iki** ad çıktı. Beşinin
+mobil yüzeyi vardı ve soru gerçekten cevapsız kalıyordu:
+
+| olay | Android'de cevapsız kalan soru |
+|---|---|
+| `session_resume` | baştan mı başladı, devam mı etti |
+| `session_stop` | kaç kişi turu bitirmeden çıkıyor, nerede çıkıyor |
+| `first_practice_done` | kaç kişi ilk pratiği bitiriyor (huni adımının kendisi) |
+| `placement_finish` | kaç kişi seviyesini yerleştirmeye göre ayarlıyor |
+| `production_attempt` | konuşmada kalıpların kaçı kullanıldı |
+
+Hiçbiri yeni yüzey istemedi — beşinin de olayı yazılacak yeri zaten vardı
+(`session_stop` için çıkış onayı, `placement_finish` için "uygula" düğmesi).
+
+**Kalan on yedisi web-özel** ve gerekçeleri kayıtlı: tarayıcı ölçüm katmanı
+(`page_view`, `time_spent`, `panel_open`, `push_open`, `invite_open`),
+PWA/tarayıcı yolları (`install_prompt`, `push_optin`, `client_error`),
+mikrofon yolu tanılamaları (`walk_capture`, `walk_listen`, `walk_switch`),
+mobilde karşılığı olmayan mod (`challenge_play`) ve mobilde farklı çizilen
+yüzeyler — `sound_toggle` (mobilde ses anahtarı yok, sistem sesi kullanılıyor),
+`coach_show` (koç baloncuğu yok), `feedback_why_opened` (mobil "neden"i
+**her zaman** gösteriyor, açma eylemi yok), `stage_done` (mobilde etap
+duraklaması yok).
+
+**Tarayıcımın bir kusuru:** `exam_start` önce eksik göründü, oysa webin tek
+geçtiği yer bir **yorum** satırıydı ("Burada `track("exam_start", …)`
+yazıyordu"). Yorum ayıklamayan bir tarama yanlış pozitif üretiyor — §11.85'te
+kapıya yazdığım kuralın (yorumlar ayıklanmalı) aynısı, bu kez ölçüm aracında.
