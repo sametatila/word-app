@@ -169,6 +169,12 @@ function candidates(raw) {
   for (const m of line.matchAll(strings)) out.push(m[1] ?? m[2] ?? m[3] ?? "");
   const rest = line
     .replace(strings, '""')       // dizgiler zaten sayıldı
+    // Geriye bakışlı regex sabitleri ÖNCE: gövdelerinde `<` var (`(?<!`, `(?<=`)
+    // ve aşağıdaki genel desen `<`'i JSX sanıp bunları atlıyordu. Sonucu:
+    // `DE_WORD` (Almanca sözcük listesi: können, müssen, für) çevrilmemiş TÜRKÇE
+    // metin olarak sayılıyordu — tarayıcı ö/ü görüp Türkçe sanıyor. `/(?<` ile
+    // başlayan bir dilim JSX olamaz, o yüzden burada güvenle elenebiliyor.
+    .replace(/\/\(\?<[!=][^\n]*?\/[gimsuyd]*/g, " ")
     // Regex sabitleri (/ç/g, /[A-ZÇĞİÖŞÜ]/) kod, metin değil. Gövdede < ve > YASAK:
     // olmasaydı JSX'teki "/>" ile "</" arası regex sanılıp aradaki metin yutuluyordu
     // (NotifPrime'ın "Hatırlatma = daha uzun seri" satırı böyle kaçmıştı).

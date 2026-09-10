@@ -1,9 +1,10 @@
 {
-  "total": 14,
+  "total": 16,
   "files": {
     "src/data/exams/index.ts": 1,
     "src/lib/courses.ts": 7,
     "src/lib/i18n.ts": 1,
+    "src/lib/native.ts": 2,
     "src/screens/ExamScreen.tsx": 1,
     "src/screens/OnboardingScreen.tsx": 1,
     "src/screens/SettingsScreen.tsx": 1,
