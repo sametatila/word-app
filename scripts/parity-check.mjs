@@ -1909,6 +1909,57 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   sameList("cevrimdisi rol yapma", kural("mobile/src/game/offlineRoleplay.ts"), kural("src/lib/lessons/offline-roleplay.ts"));
 }
 
+/* ── 44. olcum paritesi: istemciden atilan olaylar ─────────────────────────
+ * Sunucudan atilan olaylar iki platforma da yaziliyor; ISTEMCIDEN atilanlar
+ * platforma ozgu. Webin istemcisinden atilip mobilde hic atilmayan bir ad,
+ * Androidde cevapsiz kalan bir soru demek - bes tanesi tam boyleydi
+ * (11.97). Kalanlar web-ozel ve burada YAZILI: yenisi cikarsa kapi kaliyor
+ * ve insan "bunun mobil yuzeyi var mi" diye bakiyor.
+ *
+ * Yorumlar ayiklaniyor: webin bir yorumunda gecen `track("exam_start", ...)`
+ * ornegi taramada yanlis pozitif uretmisti. */
+{
+  const strip = (x) => x.replace(/\/\*[\s\S]*?\*\//g, " ").replace(/\/\/[^\n]*/g, " ");
+  const walk = (d, out = []) => {
+    for (const e of readdirSync(new URL("../" + d, import.meta.url), { withFileTypes: true })) {
+      const p = d + "/" + e.name;
+      if (e.isDirectory()) { if (!/node_modules|\/content|\/generated|__tests__/.test("/" + p)) walk(p, out); }
+      else if (/\.tsx?$/.test(e.name)) out.push(p);
+    }
+    return out;
+  };
+  const atilan = (dirs, extra = []) => {
+    const set = new Set();
+    for (const d of dirs) for (const f of walk(d)) for (const m of strip(read(f)).matchAll(/\btrack\(\s*"([a-z_]+)"/g)) set.add(m[1]);
+    for (const f of extra) for (const m of strip(read(f)).matchAll(/\btrack\(\s*"([a-z_]+)"/g)) set.add(m[1]);
+    return set;
+  };
+  const sunucu = atilan(["src/app/api", "src/lib"]);
+  const web = atilan(["src/components", "src/app"]);
+  const mob = atilan(["mobile/src"], ["mobile/App.tsx"]);
+  /* Web istemcisine ozgu olmasi MESRU olanlar; her biri bir yuzey farki. */
+  const WEB_OZEL = [
+    "challenge_play", //        sure-kazanma modu mobilde yok
+    "client_error", //          Next hata siniri
+    "coach_show", //            koc baloncugu mobilde yok
+    "feedback_why_opened", //   mobil "neden"i her zaman gosteriyor, acma eylemi yok
+    "install_prompt", //        PWA kurulum onerisi
+    "invite_open", //           tarayici olcum katmani
+    "page_view", //             tarayici olcum katmani
+    "panel_open", //            tarayici olcum katmani
+    "push_open", //             tarayici olcum katmani
+    "push_optin", //            tarayici bildirim istemi
+    "sound_toggle", //          mobilde ses anahtari yok (sistem sesi)
+    "stage_done", //            mobilde etap duraklamasi yok
+    "time_spent", //            tarayici olcum katmani
+    "walk_capture", //          tarayici mikrofon yolu tanilamasi
+    "walk_listen", //           tarayici mikrofon yolu tanilamasi
+    "walk_switch", //           tarayici mikrofon yolu tanilamasi
+  ];
+  const eksik = [...web].filter((n) => !mob.has(n) && !sunucu.has(n)).sort();
+  sameSet("olcum paritesi (yalniz web istemcisinde)", eksik, WEB_OZEL, "bulunan", "kayitli");
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"
