@@ -52,7 +52,19 @@ export type EventName =
   | "quest_claim"
   /* Rozet acildi (value = rozet sayisi) - web `lib/events` ile ayni ad.
      Mobilde kutlama olmadigi surece bu adin karsiligi da yoktu. */
-  | "achievement_unlock";
+  | "achievement_unlock"
+  /* Yarim kalan turdan DEVAM (value = kacinci turdan) - web `session-player`
+     ile ayni ad. Mobil yalniz `session_start` yaziyordu, yani "bastan mi
+     basladi, devam mi etti" sorusu Androidde hic cevaplanmiyordu. */
+  | "session_resume"
+  /* Ilk pratik BITTI (value = kelime sayisi). Mobil her kelimede
+     `first_practice` yaziyordu ama tamamlanmayi hic yazmiyordu - huni
+     adiminin kendisi olculmuyordu. */
+  | "first_practice_done"
+  /* Yerlestirme sonucu uygulandi (value = yuzde, kind = "demo:a1" gibi). */
+  | "placement_finish"
+  /* Rol yapma denemesi (value = ozet puani, kind = "roleplay"). */
+  | "production_attempt";
 
 /** Analitik tercihi (Gizlilik Politikası §8) — cihazda, varsayılan açık; açılışta yüklenir. */
 const ANALYTICS_KEY = "lernomi:analytics";

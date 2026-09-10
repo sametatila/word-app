@@ -16,7 +16,7 @@ import { Celebrate } from "../ui/Celebrate";
 import { findLesson, scoredSteps, type Lesson, type Segment, type Expectation, type LectureStep } from "../data/lessons";
 import { foldCompare, foldTight } from "../lib/textFold";
 import { sendRoleplay, roleplayConfigured, parseReply, patternUsed, type ChatMsg } from "../game/roleplay";
-import { offlineStart, offlineReply, type OfflineState, type Hint } from "../game/offlineRoleplay";
+import { offlineStart, offlineReply, offlineSummary, type OfflineState, type Hint } from "../game/offlineRoleplay";
 import { markItemDone, loadLessonResume, saveLessonResume, clearLessonResume } from "../game/lessonProgress";
 import { speakTarget } from "../lib/tts";
 import { ensureMicPermission, listenOnce, sttAvailable, stopListening } from "../lib/stt";
@@ -472,6 +472,10 @@ export function LessonScreen() {
        (`correct` üstten kırpılıyor - konuşma fazı `correct`i artırmıyor ama
        formül yine de tavanı aşmasın). Geçme kaydı sunucuda. */
     track("lesson_finish", scoreTotal ? Math.round((100 * Math.min(correct, scoreTotal)) / scoreTotal) : 0, lesson.id);
+    /* Senaryolu konuşmanın puanı: kalıpların kaçı kullanıldı. Web
+       `lesson-player` aynı adı aynı değerle yazıyor; mobilde çevrimdışı yol
+       yeni geldiği için ölçüm de şimdi geliyor. */
+    if (offline) track("production_attempt", offlineSummary(lesson, offline).score, "roleplay");
     bumpStats(); // ders bitti: XP/seri değişti
     void markItemDone(lesson.id);
     void clearLessonResume(lesson.id);

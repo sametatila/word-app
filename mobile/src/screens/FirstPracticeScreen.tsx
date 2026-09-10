@@ -53,7 +53,15 @@ export function FirstPracticeScreen() {
   function primary() {
     haptic("tap");
     if (!seen) { setSeen(true); return; }
-    if (last) { nav.reset({ index: 0, routes: [{ name: "Auth" }] }); return; }
+    if (last) {
+      /* Huni adiminin KENDISI olculuyor: her kelimede `first_practice`
+         yaziliyordu ama tamamlanma hic yazilmiyordu, yani "kac kisi ilk
+         pratigi bitirdi" sorusu Androidde cevapsizdi. Web `first-practice`
+         ayni adi ayni degerle yaziyor. */
+      track("first_practice_done", words.length);
+      nav.reset({ index: 0, routes: [{ name: "Auth" }] });
+      return;
+    }
     setIdx((n) => n + 1);
   }
 

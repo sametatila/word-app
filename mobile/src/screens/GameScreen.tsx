@@ -133,6 +133,10 @@ export function GameScreen() {
       startedAt.current = Date.now();
       roundStart.current = Date.now();
       track("session_start", 0, onlyGame ? "practice" : "session");
+      /* Yarim kalan turdan devam edildiyse ayrica yaziliyor: web
+         `session-player` da oyle. Yoksa "bastan mi basladi, devam mi etti"
+         sorusu Androidde hic cevaplanmiyor. */
+      if (start > 0) track("session_resume", start);
       if (list.length === 0) { setFinalCorrect(0); setFinalTotal(0); setRepaired(null); setMastered(0); setResult(null); setPhase("done"); }
       else setPhase("play");
     } catch (e) {
