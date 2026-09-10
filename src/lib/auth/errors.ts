@@ -69,6 +69,14 @@ export function translateAuthError(input: unknown, lang: NativeLang = DEFAULT_NA
     return t("autherror.your_email_address_is_not");
   if (code.includes("INVALID_EMAIL_OR_PASSWORD") || msg.includes("invalid email or password"))
     return t("autherror.email_or_password_is_wrong");
+  /*
+    Parola DEĞİŞTİRME akışında "şu anki parolan" yanlışsa better-auth
+    INVALID_PASSWORD döndürüyor — giriş akışının INVALID_EMAIL_OR_PASSWORD'ünden
+    ayrı bir kod. Eşlenmediği için ekranda ham İngilizce "Invalid password"
+    görünüyordu.
+  */
+  if (code === "INVALID_PASSWORD" || msg === "invalid password")
+    return t("autherror.password_wrong");
   if (code.includes("USER_ALREADY_EXISTS") || msg.includes("already exists"))
     return t("autherror.this_email_is_already_registered");
   /*

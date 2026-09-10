@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { SettingRow } from "@/components/setting-row";
+import { ChangePassword } from "@/components/account/change-password";
 import { useT } from "@/lib/i18n/client";
 
 /**
@@ -169,6 +170,12 @@ export function LinkedAccounts({ googleEnabled }: { googleEnabled: boolean }) {
         {t("links.hint")}
       </p>
       {msg ? <p className="mt-2 px-1 text-xs font-semibold">{msg}</p> : null}
+
+      {/* Parola değiştirme YALNIZ parolası olan hesapta. Bu bileşen zaten
+          sağlayıcı listesini okuyor, ikinci bir istek atmaya gerek yok;
+          `credential` yoksa (yalnız Google/Apple ile girmiş biri) form hiç
+          çizilmiyor — olmayan bir parolayı sormak anlamsız olurdu. */}
+      {bagliMi("credential") ? <ChangePassword /> : null}
     </section>
   );
 }
