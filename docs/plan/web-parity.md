@@ -3976,3 +3976,35 @@ kuralı izliyor.
 Ayrıca zil (`InboxBell` / `notification-bell`) ölçüldü: ikon, 44'lük karo,
 `surface-2` zemin, "9+" eşiği, kehribar zemin + mürekkep yazı, dakikalık
 tazeleme ve öne gelince tazeleme — hepsi eşit. Değişiklik gerekmedi.
+
+### 11.79 Yüzde işareti, geçmiş görev satırı ve kişi profilinin iki eksik karosu
+
+**Yüzde işareti koda gömülüydü (mobil).** İşaretin yeri dile göre değişiyor —
+Türkçe "%45", İngilizce "45%", Almanca "45 %" — ve iki sosyal yüzey
+`${q.pct}%` yazıyordu: ortak görevin geçmiş satırı ve arkadaş nabzının
+yüzdesi. Doğru uygulaması zaten vardı ama `LevelBadge` içinde modül içinde
+duruyordu; `lib/i18n`e taşındı ve adı webinkiyle aynı oldu (`formatPercent`).
+Sözlükteki `{pct}%` yazan anahtarlara **dokunulmadı**: onlarda işaret her dilin
+kendi dizgesinde duruyor (`"%{pct}"` / `"{pct} %"`) ve zaten doğru.
+
+Bu, `formatNumber` (§11.76) ile birlikte ikinci taşınma: sayı biçiminin her
+parçası artık tek bir yerde ve iki uygulamada aynı adı taşıyor.
+
+**Geçmiş ortak görev satırı (web).** Başarısız haftada yalnızca yüzde vardı.
+Yüzdenin **paydası** hedef ve o satırın solunda yazıyor ("Ali ile 3.000 XP");
+**payı** ise hiçbir yerde yoktu. Android ikisini birden yazıyor.
+
+**Kişi profilinde iki karo eksikti (mobil).** Sunucu `stats.longestStreak` ve
+`stats.lastActiveDay` gönderiyor, tip ikisini de taşıyor — ekran dördünü çizip
+ikisini düşürüyordu. Web altısını da yazıyor. "Son aktif" bir arkadaşa dürtme
+göndermeden önce bakılan şey; onsuz dürtme körlemesine gidiyordu.
+
+Aynı sınıfın bu turdaki üçüncü örneği: **sözleşme modellenmiş, yüzey
+yazılmamış**. Kapı bu sınıfı tipler düzeyinde yakalıyor (§11.77'de
+`PublicProfileView` iki yönde de eşit çıkmıştı) ama tipin bir alanının
+**çizilip çizilmediğini** ölçmüyor — bu, kapının bilinen sınırı.
+
+**Not:** `mobile/src/screens/AuthScreen.tsx` şu an başka bir oturumun yarım
+işini taşıyor (e-posta doğrulama arayüzü: içe alımlar ve durum eklenmiş, henüz
+kullanılmıyor) ve mobil `lint` on bir hata veriyor. Benim dosyalarım temiz;
+o dosyaya dokunulmadı.
