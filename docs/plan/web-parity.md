@@ -5308,3 +5308,35 @@ gerçek ayrışmayı gizliyor.**
 başka bir oturumun commit'iyle geldi (127ade48, "Apple ile Giriş webde") ve
 o işin ortasında; benim değişikliklerim hiçbir uç dosyasına dokunmadı. Karar
 o oturumun: ya bir istemciye bağlanacak ya sebebiyle listeye yazılacak.
+
+### 11.139 KARAR BEKLİYOR — konuşma puanı iki platformda başka şey ölçüyor
+
+§11.136'da bulunan ayrışmanın ölçümü. Seviye sınavının konuşma bölümünde:
+
+- **Web** klibi kaydedip `/api/pronounce`a gönderiyor: gerçek **söyleyiş**
+  değerlendirmesi (sağlayıcıdan, kelime zamanlamasıyla). Ağ ya da sağlayıcı
+  yoksa madde **0 sayılıyor** — iki denemede de sürerse sınav durmuyor ama
+  puan gitmiş oluyor.
+- **Mobil** cihazdaki tanıyıcının **metnini** `spokenMatches` ile eşliyor:
+  "doğru kelimeleri söyledi mi". Çevrimdışı da çalışıyor, ücretsiz, ama
+  söyleyişi hiç ölçmüyor.
+
+Aynı kâğıt, aynı `speakingScore` alanı, **farklı ölçüm**.
+
+**Altyapı hazır:** mobil zaten ham 16 kHz mono WAV kaydediyor
+(`Native.startRecording`/`stopRecording`) ve yükleme yolu var; ekran AÇIK
+olduğu için RN `fetch` + `FormData` yeterli (native yükleyici yalnız
+ekran-kapalı yürüyüş modu için gerekliydi). Yani "evet" denirse iş küçük.
+
+**Ama bu mekanik bir parite düzeltmesi değil, ürün kararı:**
+1. Mikrofon aynı anda ya tanıyıcıya ya kaydediciye verilebiliyor — ikisi
+   birden olmaz. Yani seçim "ya söyleyiş ölçülür ya çevrimdışı çalışır".
+2. Sağlayıcı **paralı** ve klip başına ücretli; sınavın konuşma bölümü her
+   maddede bir klip demek.
+3. Webin bugünkü davranışı (ağ yoksa 0) mobil için kabul edilebilir mi ayrı
+   bir soru — Android kullanıcısı sınava metroda giriyor olabilir.
+
+**Samet'in kararı.** Karar "evet" ise mobil web ile aynı yola geçer; "hayır"
+ise webin de mobil gibi bir yedeği olmalı (ağ yokken 0 yerine metin eşlemesi),
+çünkü şu hâliyle aynı sınav iki platformda iki farklı şeyi ölçüyor ve bunu
+kullanıcıya söyleyen bir yer yok.
