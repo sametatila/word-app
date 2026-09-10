@@ -96,8 +96,11 @@ function RequestRow({ r, incoming, onChanged }: { r: PendingView; incoming: bool
           </button>
         </div>
       ) : (
-        <button className="btn btn-ghost h-8 px-3 text-xs" disabled={busy} onClick={() => void act(() => social.remove(r.user.userId))}>
-          {t("common.discard")}
+        /* Etiket "Vazgeç" idi ve gönderilmiş istekler listesinde neyden
+           vazgeçildiğini söylemiyordu. Android aynı düğmeye "İsteği iptal et"
+           diyor; anahtar taban sözlükte hazırdı. */
+        <button className="btn btn-ghost h-8 shrink-0 whitespace-nowrap px-3 text-xs" disabled={busy} onClick={() => void act(() => social.remove(r.user.userId))}>
+          {t("requests.cancel_request")}
         </button>
       )}
     </li>
