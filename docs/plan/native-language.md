@@ -536,6 +536,74 @@ Alan adına bakan arama yetmiyor:
 Ayrıca `Türk` tek başına ölçüt olamıyor: Almancada `Tür` kapı demek ve
 `die Türklingel` (kapı zili) taramaya takılıyordu. `Türk(?=[ei])` ayırıyor.
 
+#### ÜRETİMDE ÖZELLİK SESSİZCE KAPALIYDI (bulundu 2026-09-10)
+
+Takas katmanı bitince dağıtım zinciri baştan sona doğrulandı ve zincirin
+ortası kopuk çıktı.
+
+Sözlükçenin **4.640 maddesinin 3.926'sı** `data/lessons/vocab/derived.json`
+dosyasında ve o dosya **`.gitignore`'un 39. satırında**. Sunucudaki build
+onu bulamıyor:
+
+```
+sözlükçe 4640 → 714
+çözülen  26375 → 23977      (2.311 dize açıkta)
+```
+
+Çözücü hep-ya-hiç çalıştığı için o dizelerin geçtiği dersleri TÜMDEN
+reddediyor, `localiseLesson` da Türkçeye düşüyor. Yani **İngilizce kurs
+üretimde hiç açılmıyordu.**
+
+##### Hatayı gizleyen şey, hatayı önlemek için konmuş tasarımdı
+
+`native-server.ts` sözlüğü bulamazsa özelliği sessizce kapatıyor. Bu
+BİLEREK konmuştu ve gerekçesi de yazılıydı: "eksik sözlük yüzünden ders
+sayfasının açılmaması, çeviriden çok daha kötü." Doğru bir karar — ama
+tam olarak bu karar, eksik sözlüğü görünmez yaptı. Hiçbir yerde hata
+yoktu; İngilizce kurs yalnızca Türkçe olarak açılıyordu.
+
+Ders şu: **"eksikse kendini kapat" bir çalışma-anı politikası olabilir,
+ama build-anı politikası olamaz.** Çalışma anında düşmek kullanıcıyı
+korur; build anında sessizce eksik üretmek yalnızca hatayı saklar.
+
+##### Üç katmanlı düzeltme
+
+1. **Dosya commit'lenmedi, ÜRETİLİYOR.** `triage.mjs` onu
+   `data/app/words.json`tan (depoda, 3,1 MB) deterministik kuruyor.
+   Türetilebilen bir dosyayı commit'lemek iki kopyayı ayrışmaya bırakırdı
+   — `seed-db-snapshot-sync` ile aynı gerekçe. `lessons:apply` artık önce
+   triage'ı çalıştırıyor; `deploy.sh` `npm run build` dediği için zincir
+   sunucuya kadar kapanıyor.
+2. **`apply.mjs` artık PATLIYOR.** `existsSync` ile atlamak sessiz
+   bozulmanın kaynağıydı: eksik girdiyle yarım sözlük üretmek, hiç
+   üretmemekten kötü.
+3. **CI'ya iki kapı eklendi.** Depoda hiçbir `check:lessons-*`
+   çalışmıyordu ve `npx next build` `lessons:apply`i atladığı için sözlük
+   CI'da hiç kurulmuyordu. Bir ders düzenlemesi tek bir dizeyi
+   kaydırdığında aynı sessiz düşüş tekrar olurdu.
+
+##### Etkilenen kullanıcı: SIFIR (ölçüldü, varsayılmadı)
+
+```
+native_lang   kullanıcı
+(null)        10
+tr             2
+en             0
+```
+
+Hata GİZİLDİ — kimseye dokunmadı çünkü henüz İngilizce ana dilli kullanıcı
+yok. Bu onu önemsiz yapmıyor, tersine: **ilk İngilizce kullanıcıya
+çarpacaktı** ve o kullanıcı "çeviri yok" diye değil "uygulama Türkçe"
+diye bildirirdi.
+
+Aynı sınıf başka yerde var mı diye tarandı: `src/` altında tek bir
+üretilen artefakt dinamik olarak yükleniyor (`native-en.json`) ve
+`existsSync`le sessizce atlanan başka bir girdi yok.
+
+**`PAIR_READY` en→de için hâlâ açılmıyor.** Düzeltme yerelde duruyor;
+üretime gitmesi push'a bağlı (Samet) ve ayrıca üretim veritabanına
+tohumlama kararı bekliyor.
+
 #### Çeviri turu Türkçe tarafın kusurunu görüyor: yanlış dilbilgisi terimi
 
 `l-008` yazılırken iki dize çıktı:
