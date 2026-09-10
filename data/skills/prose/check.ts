@@ -55,6 +55,27 @@ const TR_WORDS =
   /\b(bir|ve|ile|için|değil|demek|var|yok|olur|olunur|olmak|gibi|daha|çok|ama|yani|kadar|sonra|önce)\b/i;
 const turkish = (t: string): boolean => /[ışğİĞŞ]/.test(t) || TR_WORDS.test(t);
 
+/**
+ * Açıklık ALMANCA ya da İNGİLİZCE görünüyor mu? Kural ancak öyleyse
+ * işletiliyor.
+ *
+ * Olumsuz ölçüt tek başına yetmedi: "Önce „siz misiniz“, sonra ad…"
+ * satırındaki açıklıklarda ne Türkçeye özgü harf var ne de listedeki bir
+ * işlev sözcüğü — ama ikisi de Türkçe. Olumlu ölçüt eklenince kural
+ * yalnız TANIDIĞI dilde çalışıyor.
+ *
+ * İki ölçüt BİRLİKTE kullanılıyor ve sonuç kasten temkinli: tanıyamadığı
+ * bir alıntıyı zorlamıyor. Burada kapı tek savunma hattı değil — yazan
+ * taraf kuralı zaten biliyor ve kapının işi kaymayı yakalamak. Yanlış ret
+ * ise doğru yazılmış bir satırı elle kurcalatıyor ve her turda tekrar
+ * ediyor.
+ */
+const DE_WORDS =
+  /\b(der|die|das|ein|eine|einen|ist|sind|war|nicht|kein|keine|und|mit|wir|ich|Sie|du|zu|auf|für|von|dem|den|im|am|bei|nach|vor|über|wie|was|wo|wer|bitte|hier|ja|nein|sehr|gut|noch|schon|aus|um|halb|man|sich|es)\b/;
+const EN_WORDS = /\b(the|is|are|was|were|you|your|a|an|of|to|in|and|it|that|for|we|I|my|please|do|does|not)\b/;
+const foreign = (t: string): boolean =>
+  DE_WORDS.test(t) || EN_WORDS.test(t) || /[A-ZÄÖÜ][a-zäöüß]{2,}/.test(t);
+
 /** Karşılaştırma için sadeleştirme — tırnak ve boşluk çeşitleri eşitlenir. */
 const flat = (t: string): string =>
   String(t).replace(/[„“”‚‘’'"]/g, "'").replace(/\s+/g, " ").trim();
@@ -89,7 +110,7 @@ if (existsSync(`${DIR}out`))
            „…“ ve "…" ölçülüyor: '…' Türkçe sözcük vurgulamak için de
            kullanılıyor ("indem 'nasıl' sorusuna cevap verir"). */
         for (const m of r.tr.matchAll(/[„"]([^„"“”]{2,})[“"]/g)) {
-          if (turkish(m[1])) continue;
+          if (turkish(m[1]) || !foreign(m[1])) continue;
           if (!flat(en).includes(flat(m[1]))) H(`alıntı düşmüş: «${m[1].slice(0, 34)}»`);
         }
         if (en.length > r.tr.length * 2 + 20 || en.length * 2 + 20 < r.tr.length)
