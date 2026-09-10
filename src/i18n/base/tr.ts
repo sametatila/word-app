@@ -2,6 +2,12 @@
  * Yenilemek için: node scripts/i18n-pull.mjs
  * Web'e özel anahtarlar src/i18n/web/tr.ts içinde. */
 export const trBase: Record<string, string> = {
+  "achu.tier_unlocked": "{tier} rozet açıldı",
+  "achu.n_unlocked": "{n} rozet açıldı",
+  "achu.n_more": "+{n} rozet daha",
+  "achu.and_n_more": "ve {n} tane daha",
+  "achu.batch_note": "Bugüne kadar yaptığın işin karşılığı. Hepsi profilinde duruyor.",
+  "achu.tap_to_continue": "Devam etmek için dokun",
   "achievements.achievements": "Başarımlar",
   "achievements.earned_count": "{n}/{total} kazanıldı",
   "achievements.earned": "Kazanıldı",
@@ -1139,6 +1145,10 @@ export const trBase: Record<string, string> = {
   "writings.to_be_graded": "Puanlanacak.",
   "writings.couldn_t_load_writings": "Yazıların yüklenemedi.",
   "writings.my_writing": "Yazılarım",
+  "tier.bronze": "Bronz",
+  "tier.silver": "Gümüş",
+  "tier.gold": "Altın",
+  "tier.legend": "Efsane",
   "time.minutes_short": "{m} dk",
   "time.hours_minutes_short": "{h}s {m}dk",
   "settings.group_account": "Hesap",

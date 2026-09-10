@@ -2,6 +2,12 @@
  * Yenilemek için: node scripts/i18n-pull.mjs
  * Web'e özel anahtarlar src/i18n/web/de.ts içinde. */
 export const deBase: Record<string, string> = {
+  "achu.tier_unlocked": "{tier}-Abzeichen freigeschaltet",
+  "achu.n_unlocked": "{n} Abzeichen freigeschaltet",
+  "achu.n_more": "+{n} weitere Abzeichen",
+  "achu.and_n_more": "und {n} weitere",
+  "achu.batch_note": "Das ist das Ergebnis deiner bisherigen Arbeit. Alle liegen in deinem Profil.",
+  "achu.tap_to_continue": "Zum Fortfahren tippen",
   "achievements.achievements": "Erfolge",
   "achievements.earned_count": "{n}/{total} erhalten",
   "achievements.earned": "Erhalten",
@@ -1139,6 +1145,10 @@ export const deBase: Record<string, string> = {
   "writings.to_be_graded": "Wird bewertet.",
   "writings.couldn_t_load_writings": "Deine Texte konnten nicht geladen werden.",
   "writings.my_writing": "Meine Texte",
+  "tier.bronze": "Bronze",
+  "tier.silver": "Silber",
+  "tier.gold": "Gold",
+  "tier.legend": "Legende",
   "time.minutes_short": "{m} Min.",
   "time.hours_minutes_short": "{h} Std. {m} Min.",
   "settings.group_account": "Konto",

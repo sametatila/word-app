@@ -2,6 +2,12 @@
  * Yenilemek için: node scripts/i18n-pull.mjs
  * Web'e özel anahtarlar src/i18n/web/en.ts içinde. */
 export const enBase: Record<string, string> = {
+  "achu.tier_unlocked": "{tier} badge unlocked",
+  "achu.n_unlocked": "{n} badges unlocked",
+  "achu.n_more": "+{n} more badges",
+  "achu.and_n_more": "and {n} more",
+  "achu.batch_note": "This is what your work so far adds up to. They all live in your profile.",
+  "achu.tap_to_continue": "Tap to continue",
   "achievements.achievements": "Achievements",
   "achievements.earned_count": "{n}/{total} earned",
   "achievements.earned": "Earned",
@@ -1139,6 +1145,10 @@ export const enBase: Record<string, string> = {
   "writings.to_be_graded": "To be graded.",
   "writings.couldn_t_load_writings": "Couldn't load your writing.",
   "writings.my_writing": "My writing",
+  "tier.bronze": "Bronze",
+  "tier.silver": "Silver",
+  "tier.gold": "Gold",
+  "tier.legend": "Legend",
   "time.minutes_short": "{m} min",
   "time.hours_minutes_short": "{h}h {m}m",
   "settings.group_account": "Account",

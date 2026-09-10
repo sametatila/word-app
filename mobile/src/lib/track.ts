@@ -49,7 +49,10 @@ export type EventName =
   | "boss_clear"
   /* Görev ödülü alındı (value = kazanılan XP) — web `lib/events` ile aynı ad.
      Mobil ödülü alabilir hâle gelene kadar bu adın karşılığı yoktu. */
-  | "quest_claim";
+  | "quest_claim"
+  /* Rozet acildi (value = rozet sayisi) - web `lib/events` ile ayni ad.
+     Mobilde kutlama olmadigi surece bu adin karsiligi da yoktu. */
+  | "achievement_unlock";
 
 /** Analitik tercihi (Gizlilik Politikası §8) — cihazda, varsayılan açık; açılışta yüklenir. */
 const ANALYTICS_KEY = "lernomi:analytics";

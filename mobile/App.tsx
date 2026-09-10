@@ -16,6 +16,7 @@ import { loadReduceMotion } from "./src/lib/reduceMotion";
 import { loadLang, useLang } from "./src/lib/i18n";
 import { attachPushListeners } from "./src/lib/pushDevice";
 import { navigationRef } from "./src/lib/pushRoute";
+import { AchievementUnlock } from "./src/ui/AchievementUnlock";
 
 function Nav() {
   const { colors, isDark } = useTheme();
@@ -84,6 +85,10 @@ function Nav() {
       <View style={{ flex: 1, backgroundColor: colors.bg }}>
         <RootStack initialRoute={initialRoute} />
       </View>
+      {/* Rozet kutlaması TEK YERDE, kökte: rozet altı ayrı yerde kazanılıyor
+          ve altısına ayrı kutlama koymak altı yerde unutulur (web de kabukta
+          tek kart tutuyor). Kendisi akış ekranlarını kesmiyor. */}
+      <AchievementUnlock />
     </NavigationContainer>
   );
 }
