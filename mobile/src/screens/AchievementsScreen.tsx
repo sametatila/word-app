@@ -57,7 +57,9 @@ function Badge({ a, colors }: { a: Achievement; colors: Palette }) {
           <View style={{ height: 5, borderRadius: 3, backgroundColor: colors.surface2, overflow: "hidden" }}>
             <View style={{ height: "100%", width: `${pct}%`, backgroundColor: tc, borderRadius: 3 }} />
           </View>
-          <Text variant="micro" color={colors.textMuted} style={{ marginTop: 3 }}>{a.done}/{a.target}</Text>
+          {/* Sayilar yerelden gecirilyor: bin ayraci Turkcede nokta, Ingilizcede
+              virgul - web duvari bastan beri boyle yaziyor. */}
+          <Text variant="micro" color={colors.textMuted} style={{ marginTop: 3 }}>{formatNumber(a.done)}/{formatNumber(a.target)}</Text>
         </View>
       )}
     </View>

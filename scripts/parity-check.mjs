@@ -2037,6 +2037,27 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   );
 }
 
+/* ── 48. rozet duvari: bilinmeyen grup atilmiyor ──────────────────────────
+ * Sunucu `GROUP_ORDER`da OLMAYAN bir grup gonderirse o rozetler hesaplanip
+ * aciliyor ve sayiya giriyor; duvar listenin uzerinde donuyorsa hicbir
+ * bolumde CIKMIYOR ve hata da vermiyor. Iki taraf da satirlari kovalayip
+ * bilinmeyen grubu sona eklemek zorunda; kapi ikisinde de o dusme yolunu
+ * ariyor. */
+{
+  const kova = (p) => {
+    const src = read(p).replace(/\/\*[\s\S]*?\*\//g, " ").replace(/\/\/[^\n]*/g, " ");
+    return [
+      "GROUP_ORDER ile kuruluyor=" + (/new Map<[^>]*>\(GROUP_ORDER\.map/.test(src) ? "evet" : "hayir"),
+      "bilinmeyen grup ekleniyor=" + (/else\s+g\.set\(/.test(src) ? "evet" : "hayir"),
+    ];
+  };
+  sameList(
+    "rozet grup kovalari",
+    kova("mobile/src/screens/AchievementsScreen.tsx"),
+    kova("src/components/achievement-wall.tsx"),
+  );
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"

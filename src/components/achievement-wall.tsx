@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { BadgeIcon, TIER_COLOR, type BadgeRow } from "@/components/achievement-badge";
 import { CheckIcon, TrophyIcon } from "@/components/icons";
 import { EmptyCard } from "@/components/empty-card";
-import { GROUP_LABEL_KEYS, GROUP_ORDER } from "@/lib/achievement-groups";
+import { GROUP_LABEL_KEYS, GROUP_ORDER, type Group } from "@/lib/achievement-groups";
 import { useT, useLang } from "@/lib/i18n/client";
 import { formatNumber, localeOf, type NativeLang } from "@/lib/i18n/dict";
 
@@ -103,6 +103,26 @@ export function AchievementWall() {
   const lead = upcoming.length ? upcoming : recent;
 
   /*
+   * GRUPLAR SATIRLARDAN KOVALANIYOR, listeden değil.
+   *
+   * Duvar `GROUP_ORDER` üzerinde dönüyor ve her grup için satırları
+   * süzüyordu: sunucu listede OLMAYAN bir grup gönderirse o rozetler
+   * hesaplanıyor, açılıyor, sayıya giriyor ama hiçbir bölümde ÇIKMIYORDU -
+   * hata da vermiyor. `achievement-groups` dosyası bu kaybın tanım
+   * kopyasını çözmüştü, düşme yolunu değil. Android satırları kovalıyor ve
+   * bilinmeyen grubu atmıyor, sona ekliyor.
+   */
+  const groups = useMemo(() => {
+    const g = new Map<string, Row[]>(GROUP_ORDER.map((k) => [k, []]));
+    for (const r of board?.rows ?? []) {
+      const bucket = g.get(r.group);
+      if (bucket) bucket.push(r);
+      else g.set(r.group, [r]);
+    }
+    return [...g.entries()].filter(([, rows]) => rows.length);
+  }, [board]);
+
+  /*
    * HATA SESSİZ DEĞİL.
    *
    * `return null` duvar profilin İÇİNDEYKEN doğruydu: ikincil bir bölüm, tek
@@ -128,9 +148,6 @@ export function AchievementWall() {
   if (!board) {
     return (
       <section className="card p-5">
-        <h2 className="mb-3 flex items-center gap-2 font-bold">
-          <TrophyIcon size={18} /> {t("achw.badges")}
-        </h2>
         <div className="grid grid-cols-4 gap-2 sm:grid-cols-6">
           {Array.from({ length: 8 }, (_, i) => (
             <div key={i} className="h-[78px] animate-pulse rounded-2xl" style={{ background: "var(--surface-2)" }} />
@@ -141,18 +158,16 @@ export function AchievementWall() {
   }
 
   const pct = Math.round((board.unlockedCount / Math.max(1, board.total)) * 100);
-  const leadLabel = t(upcoming.length ? "skills.next" : "achw.recent");
+  const leadLabel = t(upcoming.length ? "skills.next" : "achievements.recent");
 
   return (
     <div>
-      <div className="mb-1 flex items-baseline justify-between">
-        <h2 className="flex items-center gap-2 font-bold">
-          <TrophyIcon size={18} /> {t("achw.badges")}
-        </h2>
-        <span className="muted text-xs font-semibold tabular-nums">
-          {formatNumber(board.unlockedCount, lang)} / {formatNumber(board.total, lang)}
-        </span>
-      </div>
+      {/* Sayfanın kendi başlığı zaten "Başarımlar" (bkz. `PageBack`); duvarın
+          ikinci bir "Rozetler" başlığı aynı şeyi iki kez söylüyordu. Android
+          başlığın altına yalnız sayıyı yazıyor. */}
+      <p className="muted mb-1 text-caption tabular-nums">
+        {t("achievements.earned_count", { n: formatNumber(board.unlockedCount, lang), total: formatNumber(board.total, lang) })}
+      </p>
 
       <div className="h-1.5 overflow-hidden rounded-full" style={{ background: "var(--surface-2)" }}>
         <motion.div
@@ -165,11 +180,11 @@ export function AchievementWall() {
 
       {/* Önce "sıradaki", sonra mobildeki grup sırası. */}
       <Section label={leadLabel} rows={lead} lang={lang} t={t} />
-      {GROUP_ORDER.map((g) => (
+      {groups.map(([g, rows]) => (
         <Section
           key={g}
-          label={GROUP_LABEL_KEYS[g] ? t(GROUP_LABEL_KEYS[g]) : g}
-          rows={board.rows.filter((r) => r.group === g)}
+          label={GROUP_LABEL_KEYS[g as Group] ? t(GROUP_LABEL_KEYS[g as Group]) : g}
+          rows={rows}
           lang={lang}
           t={t}
         />
