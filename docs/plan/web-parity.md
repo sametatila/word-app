@@ -4960,6 +4960,10 @@ bir açık da değil — mobil tarafta uyarlanan aşama makinesi, metin oynatıc
 dinleme sesi gerekiyor (kabaca üç ekran + ses yolu). **Samet'in kararı
 bekliyor.**
 
+**KAPANDI (bkz. §11.168).** Tahmin fazlaydı: gereken parçaların hepsi mobilde
+zaten vardı (şıklı tur bileşeni, metin bloğu, TTS). Eklenen şey tip,
+düzleştirme ve sorunun üstündeki bağlam bloğuydu. §57 kapısı artık muafiyetsiz.
+
 **Parity 57** açığı kapatmıyor, **büyütmüyor**: sunucunun aşama listesi ile
 "mobilde olan + kayıtlı eksik" kümesi eşleniyor. Sunucu beşinci bir aşama
 eklerse ya da mobil bir aşama kazanırsa kapı kalıyor ve insan bakıyor —
@@ -6142,3 +6146,37 @@ alanı gösterdiğini artık ölçüyor — kayıt değil kod konuşuyor.
 **Yan bulgu:** aynı metin iki ayrı anahtarda duruyordu — `words.n_lapses`
 (ortak) ve `wordsw.n_lapses` (web). Web kopyası silindi, kullanım ortak
 anahtara geçti; üç dilde üç satır eksildi.
+
+
+### 11.168 Seviye testinin dört aşaması — "üç ekran gerekiyor" tahmini fazlaydı
+
+Bekleyen maddeleri ölçmeye devam: sıradaki §11.119, Android'de seviye testinin
+yalnız kelime ölçmesi. Kayıt "uyarlanan aşama makinesi, metin oynatıcı ve
+dinleme sesi gerekiyor (kabaca üç ekran + ses yolu), Samet'in kararı bekliyor"
+diyordu.
+
+**Ölçünce tahmin fazla çıktı.** Gereken parçaların hepsi mobilde zaten vardı:
+şıklı tur bileşeni (`ChoiceGame`), metin bloğu ve TTS. Eklenen şey üç parçaydı
+— tip (dört aşama), maddelerin tek sıraya düzleştirilmesi ve sorunun üstündeki
+bağlam bloğu.
+
+**Bir tasarım ayrımı korundu:** okuma sorusunun üstünde metin duruyor,
+dinlemede metin **görünmüyor** — bölümler sesli okunuyor. Dinleme ölçümünün
+anlamı bu; metni gösterirsek okuma ölçmüş oluruz. Web aynı ayrımı yapıyor.
+
+**Uyarlanabilirlik bilerek alınmadı:** web aşama içinde seviye atlıyor
+(`nextLevel`), mobil bütün maddeleri soruyor. Bu, Android'in kelime aşamasında
+baştan beri yaptığı şey; puanlama sunucuda cevap başına seviyeye baktığı için
+sonuç daha doğru oluyor, bedeli testin uzaması. Ayrışma değil, yazılı bir
+seçim.
+
+**§57 muafiyetten kurtuldu:** kapı "mobilde olan + kayıtlı eksik" diye
+ölçüyordu; artık sunucunun aşama listesiyle mobil tipin alanları birebir
+karşılaştırılıyor. **Muafiyet, kapının kendi borcudur** — kapanınca silinmeli,
+yoksa kapı sonsuza kadar eksik bir gerçeği doğrular.
+
+**Yan iş:** mobil i18n kapısı başka bir oturumun dosyasında yanlış pozitif
+veriyordu (`lib/native-de.ts` içindeki `t(...)` i18n değil, ders içeriğinin
+eşleme tablosunda bir arama). Web'deki eşdeğer denetimin aynı dosya için aynı
+muafiyeti zaten vardı; mobil tarafına da yazıldı. **İki kapı aynı kuralı
+uyguluyorsa aynı istisnaları da taşımalı.**
