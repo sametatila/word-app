@@ -8,7 +8,7 @@ import { RowSkeleton } from "@/components/skeleton";
 import { errorText, social } from "@/lib/social/client";
 import type { FriendRow, QuestView } from "@/lib/social/types";
 import { useT, useLang } from "@/lib/i18n/client";
-import { formatNumber } from "@/lib/i18n/dict";
+import { formatNumber, formatPercent } from "@/lib/i18n/dict";
 
 /**
  * Ortak görevler. Bu haftanın görevi üstte (davet ya da ilerleme çubuğu),
@@ -111,8 +111,14 @@ export function Quests({ friends, onChanged, me }: { friends: FriendRow[]; onCha
                 <span className="min-w-0 flex-1 truncate">
                   {t("quests.past_row", { name: q.partner.name ?? t("social.unnamed_short"), xp: formatNumber(q.targetXp, lang) })}
                 </span>
-                <span className="text-xs font-bold" style={{ color: q.status === "completed" ? "var(--color-mint)" : "var(--text-muted)" }}>
-                  {q.status === "completed" ? t("quests.completed") : t("common.pct", { n: q.pct })}
+                {/* Başarısız haftada TOPLANAN XP de yazıyor: yalnız yüzde,
+                    "hedefin ne kadarına yaklaştık" sorusunu yarım cevaplıyor -
+                    yüzdenin paydası hedef ve o satırın solunda duruyor, payı
+                    ise hiçbir yerde yoktu. Android ikisini birden yazıyor. */}
+                <span className="shrink-0 text-xs font-bold tabular-nums" style={{ color: q.status === "completed" ? "var(--color-mint)" : "var(--text-muted)" }}>
+                  {q.status === "completed"
+                    ? t("quests.completed")
+                    : `${formatPercent(q.pct, lang)} · ${formatNumber(q.totalXp, lang)} XP`}
                 </span>
               </li>
             ))}
