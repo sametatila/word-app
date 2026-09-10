@@ -924,6 +924,34 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   sameList("ses cue kumesi (ters)", fazla.length ? fazla : ["fazla yok"], ["fazla yok"], "webde olmayan", "beklenen");
 }
 
+/* ── 22. deneme sinavi hata siniflandiricisi ───────────────────────────────
+ * Web `components/mock-exam-player.tsx` `failOf` ile mobil
+ * `game/mockExam.ts` `failReason` AYNI karari veriyor ve iki dosya da ayni
+ * gerekceyi yaziyor: 403 iki ayri sey (koken denetimi ve kilitli kagit) ve
+ * ikisini birden "oturumun dusmus" okumak kullaniciyi bos yere giris ekranina
+ * gonderiyor. Kapisi yoktu.
+ *
+ * Karsilastirma yalniz KARAR SATIRLARI: durum kodu -> sebep esleme. Govdenin
+ * geri kalani iki tarafta farkli (biri HttpError, oteki ApiError). */
+{
+  const rules = (p, fn) => {
+    const src = read(p);
+    const i = src.indexOf(fn);
+    if (i < 0) return ["bulunamadi: " + fn];
+    const j = src.indexOf("\n}", i);
+    return src
+      .slice(i, j < 0 ? undefined : j)
+      .split("\n")
+      .filter((l) => /return "/.test(l))
+      .map((l) => l.replace(/.*return "(\w+)".*/, "$1"));
+  };
+  sameList(
+    "deneme sinavi hata sirasi",
+    rules("mobile/src/game/mockExam.ts", "export function failReason"),
+    rules("src/components/mock-exam-player.tsx", "function failOf"),
+  );
+}
+
 /* ── elle yazilmis icerik ciftleri ──────────────────────────────────────────
    Iki dosyanin "birebir ayni kalmali" dedigi ama hicbir kapinin bakmadigi
    veri. Modul temalari tam bu yuzden bes gun ayrisik kaldi (bkz. 11.52):
