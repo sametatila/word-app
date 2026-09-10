@@ -75,6 +75,14 @@ jobs:
       # repoda olmayan uçlar betikteki listede SEBEBİYLE yazılı.
       - name: Uç çağıranları
         run: npm run check:endpoints
+      # Renk KAYNAĞI kapısı. `palette-check` paletin kendisini ölçüyor ama
+      # bileşenlerin onu nasıl kullandığını görmüyor: üç web ekranı sabit
+      # basamağı metin rengi yapmış (koyu temada 2.83-3.24) ve mobilde iki
+      # yerde renk paletin dışından geliyordu (artikel tonları, günün turu
+      # madalyası; altı ölçümden altısı sınırın altında). Üçü de derleme,
+      # lint ve kontrast kapısından geçiyordu.
+      - name: Renk kaynağı
+        run: npm run check:colors
       # Mobil paket kaynakla aynı içeriği taşıyor mu. Üç köprü ELLE
       # çalıştırılıyor: kaynağa yeni bir ders/egzersiz/kâğıt eklenip döküm
       # yenilenmezse mobil o içeriği sessizce taşımaz ve hata ancak ekranda

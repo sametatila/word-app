@@ -2344,3 +2344,42 @@ jetondu. `--color-flame` + %14 ile açık temada 4.55, koyu temada 9.31 -
 YANLIŞ - basamak dolgu için, anlamsal jeton metin için. Sapma her seferinde
 tek bir ternary'nin bir yanında duruyordu, yani gözle bakan biri "jeton
 kullanılmış" diye geçiyordu.
+
+### 11.39 Kör noktaya kapı: `check:colors`
+
+Son üç bölümdeki beş hata (§11.36 artikel tonları, §11.37 madalya ölçeği,
+§11.38 üç web ternary'si) ortak bir boşluktan geçti: `palette-check.mjs`
+paletin KENDİSİNİ ölçüyor - kontrast, ayrışma - ve `globals.css`ten okuyor;
+bileşenlerin o paleti nasıl KULLANDIĞINI hiç görmüyor. Beşi de derleme, lint
+ve kontrast kapısının üçünden birden geçti.
+
+`scripts/check-colors.mjs` iki kuralı denetliyor:
+
+- **Web:** metin rengi ANLAMSAL jetondan gelmeli (`--color-mint`), sabit
+  BASAMAKTAN değil (`--color-mint-600`). Basamak dolgu için: temayla
+  değişmediği için koyu temada koyu kartın üstünde koyu yazı bırakıyor.
+- **Mobil:** renk tema jetonundan (`colors.*`) gelmeli, ham onaltılıktan değil.
+
+Ölçüm önce yapıldı, kapı sonra: kural bugün on iki istisna bırakıyor ve
+hepsi SEBEBİYLE yazılı - üç web satırı (sabit dolgu üstünde sabit yazı; sayaç
+rozetinde anlamsal jeton koyu temada 1.49 veriyordu, o yüzden bilerek sabit)
+ve dokuz mobil değeri (gölge tinti, avatar zemini, varsayılan şapka rengi,
+altı konfeti değeri). Yani gürültü tabanı on iki satır, hepsi bir kabul
+kaydı. Beyaz ve siyah - saydamlıkları dahil (`#ffffffcc`) - hiç sayılmıyor:
+marka gradyanının üstündeki yarı saydam katman bir jeton değil, zemin iki
+temada da aynı. Çizim dosyaları (`icons`, `avatarParts`, `PersonAvatar`) ve
+`theme/` dizini kapsam dışı.
+
+Kapının GERÇEKTEN ölçtüğü doğrulandı, iki tarafa birer ihlal enjekte
+edilerek: `PathScreen`e ham `#e11d48` ve `writings-card`a
+`color: var(--color-rose-600)` - ikisini de yakaladı, çıkış kodu 2. Sonra
+geri alındı.
+
+Yorum ayıklama bir kez düzeltildi: satır satır "yorum mu" bakmak yetmiyordu,
+`{/* ... */}` bloğunun ortasındaki satırlar düz metinle başlıyor ve §11.37
+kaydında geçen ölçüm değerleri (`#7b746a`, `#7c6c5d`) ihlal sayılıyordu. Şimdi
+yorumlar satır sayısı korunarak boşluğa çevriliyor - yani kaydın kendisi
+kapıyı kırmıyor.
+
+`package.json`da `check:colors`, CI'da "Renk kaynağı" adımı. Elle çağrılan bir
+kapı, kapı değildir.
