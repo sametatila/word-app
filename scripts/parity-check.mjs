@@ -774,7 +774,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   }
 }
 
-/* ── 18. deneme sinavi cevap katlamasi ─────────────────────────────────────
+/* ── 20. deneme sinavi cevap katlamasi ─────────────────────────────────────
  * `src/lib/mock-exams/scoring.ts` ile `mobile/src/game/mockExam.ts` icindeki
  * `foldAnswer` AYNI kural olmak zorunda ve bunu iki dosya da yaziyor. Sonucu
  * mobil dosyanin yorumunda: ayrilirlarsa ogrenci EKRANDA DOGRU gorunen bir
@@ -799,7 +799,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   sameList("cevap katlamasi", fold("mobile/src/game/mockExam.ts"), fold("src/lib/mock-exams/scoring.ts"));
 }
 
-/* ── 19. yuruyus modunun ses tablosu ───────────────────────────────────────
+/* ── 21. yuruyus modunun ses tablosu ───────────────────────────────────────
  * Webin `lib/sfx.ts` `WALK_NOTES` tablosu, mobil `lib/sfxNotes.ts`
  * `SFX_NOTES`in uc girdisinin (micon / micoff / premium) KOPYASI ve web
  * dosyasi bunu kendisi yaziyor ("mobil ile BIREBIR ayni... govdesi
@@ -833,7 +833,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   }
 }
 
-/* ── 20. ayni adi tasiyan sabitler ─────────────────────────────────────────
+/* ── 22. ayni adi tasiyan sabitler ─────────────────────────────────────────
  * Iki tarafta AYNI ADLA duran sabit listeler. Otuz bolum elle eklenmisti;
  * bu bolum listeyi LISTELEYEREK bulundu: iki agacta ayni `export const AD`
  * arandi (23 esleme) ve kapida hic gecmeyenler ayrildi (18). Bugun degeri
@@ -921,7 +921,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   sameList("ses kayit defteri", voiceIds("mobile/src/lib/voices.ts"), voiceIds("src/lib/tts/voices.ts"));
 }
 
-/* ── 21. ses cue kumesi ────────────────────────────────────────────────────
+/* ── 23. ses cue kumesi ────────────────────────────────────────────────────
  * Web on uc cue tanimliyor, mobil yedi. Fark ALTI cue ve hepsi mobilin SAHIP
  * OLDUGU yuzeylerde caliyor (bkz. web-parity 11.58): start (tur/patron/yuruyus
  * acilisi), stage ve perfect (etap ve kusursuz etap), record (rekor), unlock
@@ -950,7 +950,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   sameList("ses cue kumesi (ters)", fazla.length ? fazla : ["fazla yok"], ["fazla yok"], "webde olmayan", "beklenen");
 }
 
-/* ── 22. deneme sinavi hata siniflandiricisi ───────────────────────────────
+/* ── 24. deneme sinavi hata siniflandiricisi ───────────────────────────────
  * Web `components/mock-exam-player.tsx` `failOf` ile mobil
  * `game/mockExam.ts` `failReason` AYNI karari veriyor ve iki dosya da ayni
  * gerekceyi yaziyor: 403 iki ayri sey (koken denetimi ve kilitli kagit) ve
@@ -1004,8 +1004,8 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   sameList("demo yerlestirme", lits("mobile/src/data/demoPlacement.ts"), lits("src/lib/placement-demo.ts"));
 }
 
-/* ── 23. gorev panosunun toplu odulu ───────────────────────────────────────
- * `ALL_DONE_XP` iki tarafta adiyla karsilastiriliyor (bkz. 20) ama WEBIN
+/* ── 25. gorev panosunun toplu odulu ───────────────────────────────────────
+ * `ALL_DONE_XP` iki tarafta adiyla karsilastiriliyor (bkz. 22) ama WEBIN
  * KARTI o sabiti ICE ALAMIYOR: `src/lib/quests.ts` `server-only` ve
  * `quest-card` bir istemci bileseni. Sayi bu yuzden kartin icine ELLE
  * yazilmis - iki yerde. Sunucudaki odul degistiginde web kullanicisina yanlis
@@ -1029,7 +1029,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   sameList("gorev toplu odulu (webin karti)", written, [server, server], "web karti", "sunucu sabiti");
 }
 
-/* ── 24. sosyal katmanin alanlari ve cumle tablolari ───────────────────────
+/* ── 26. sosyal katmanin alanlari ve cumle tablolari ───────────────────────
  * Sosyal katman on iki uc ve bes ortak tip; hicbir kapi bakmiyordu. Iki sey
  * olculuyor:
  *
@@ -1113,7 +1113,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   kapsam("bildirim turlerinin kapsami (web)", konst("NOTIFICATION_TYPES"), swCases(wc, "function notificationText"));
 }
 
-/* ── 25. ozet ve rozet uclarinin alanlari ──────────────────────────────────
+/* ── 27. ozet ve rozet uclarinin alanlari ──────────────────────────────────
  * `/api/me` ile `/api/achievements` iki tarafin da okudugu iki uc ve hicbir
  * kapi bakmiyordu. Ikisinde de olculen ayni sey: sunucunun YAZDIGI alan
  * kumesi ile istemcinin MODELLEDIGI kume, iki yonde (bkz. 19).
@@ -1194,7 +1194,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   ciftYon("rozet satiri alanlari", rowWeb, typeFields("mobile/src/data/achievements.ts", "Achievement"));
 }
 
-/* ── 26. sosyal hata kodlarinin karsiligi ──────────────────────────────────
+/* ── 28. sosyal hata kodlarinin karsiligi ──────────────────────────────────
  * Sunucunun donebildigi HER hata kodunun iki istemcide de bir cumlesi olmali.
  * Haritada olmayan kod ikisinde de "baglanti kurulamadi"ya dusuyor - yanlis
  * teshis: kullanici sebebini bilmeden ayni islemi tekrar deniyor. Webde tam
@@ -1243,9 +1243,9 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   sameSet("sosyal hata haritalari", [...mob], [...web].filter((c) => c !== "failed"));
 }
 
-/* ── 27. sosyal istemci yuzeyi (yol + yontem + istek govdesi) ──────────────
+/* ── 29. sosyal istemci yuzeyi (yol + yontem + istek govdesi) ──────────────
  * Iki `social` nesnesi yirmi bes cagriyi ayni adla tasiyor. Bugune kadar
- * yalniz CEVAP tipleri olculuyordu (bkz. 24); ISTEK tarafi - yol, HTTP
+ * yalniz CEVAP tipleri olculuyordu (bkz. 26); ISTEK tarafi - yol, HTTP
  * yontemi ve govdedeki alanlar - hic olculmuyordu. Bir tarafa alan eklenip
  * otekine eklenmezse sunucu onu sessizce dusuruyor: derleme kirilmiyor,
  * istek 200 donuyor, yalnizca o ayar hic uygulanmiyor.
@@ -1311,8 +1311,8 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   sameList("sosyal istemci cagri govdeleri", ayrisan.length ? ayrisan : ["ayrisma yok"], ["ayrisma yok"], "ayrisan", "beklenen");
 }
 
-/* ── 28. sosyal gorunum tiplerinin alanlari ────────────────────────────────
- * 24. bolum ADI AYNI olan bes tipi olcuyordu. Sosyal katmanin geri kalan on
+/* ── 30. sosyal gorunum tiplerinin alanlari ────────────────────────────────
+ * 26. bolum ADI AYNI olan bes tipi olcuyordu. Sosyal katmanin geri kalan on
  * bir tipi iki tarafta AYRI ADLA duruyor (webde `...View` soneki) ve o yuzden
  * hicbir kapiya girmiyordu - oysa hepsi ayni ucun cevabi.
  *
@@ -1366,6 +1366,30 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     sameList("sosyal " + wn + " alanlari", eksik.length ? eksik : ["ayrisma yok"], ["ayrisma yok"], "mobilde eksik", "beklenen");
     sameList("sosyal " + wn + " alanlari (ters)", fazla.length ? fazla : ["ayrisma yok"], ["ayrisma yok"], "mobilde fazla", "beklenen");
   }
+}
+
+/* ── 31. tepki ikonlari ────────────────────────────────────────────────────
+ * 14. bolum tepkilerin RENGINI olcuyor, 13. bolum turlerini; CIZIMI hicbir
+ * kapiya girmiyordu. Ayni tepkinin iki platformda ayni ikonu olmali - renk
+ * bir kez ayrismisti (`star`), ikon da ayrisabilir ve fark yalniz ekran
+ * goruntusunde gorunur.
+ *
+ * Web `REACTION_ICON` bir tablo, mobil `ReactionGlyph` bir `switch`; ikisi de
+ * tur -> bilesen ADI olarak okunuyor. Mobilin `default` dali `wow` (turler
+ * sirasindaki son uye), webin tablosunda karsiligi acikca yaziyor. */
+{
+  const kinds = [...read("src/lib/social/types.ts").matchAll(/export const REACTION_KINDS = \[([^\]]+)\]/g)]
+    .flatMap((m) => [...m[1].matchAll(/"(\w+)"/g)].map((x) => x[1]));
+  const webSrc = read("src/components/social/reaction-icons.tsx");
+  const webSeg = webSrc.slice(webSrc.indexOf("export const REACTION_ICON"));
+  const web = new Map([...webSeg.slice(0, webSeg.indexOf("};")).matchAll(/(\w+):\s*(\w+Icon)/g)].map((m) => [m[1], m[2]]));
+  const mobSrc = read("mobile/src/social/common.tsx");
+  const mobSeg = mobSrc.slice(mobSrc.indexOf("export function ReactionGlyph"));
+  const mobBody = mobSeg.slice(0, mobSeg.indexOf("\n}"));
+  const mob = new Map([...mobBody.matchAll(/case "(\w+)":\s*return <(\w+Icon)/g)].map((m) => [m[1], m[2]]));
+  const fallback = (mobBody.match(/default:\s*return <(\w+Icon)/) ?? [])[1];
+  const fmt = (get) => kinds.map((k) => k + ":" + (get(k) ?? "?"));
+  sameList("tepki ikonlari", fmt((k) => mob.get(k) ?? fallback), fmt((k) => web.get(k)));
 }
 
 console.log(
