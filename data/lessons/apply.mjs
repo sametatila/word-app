@@ -59,11 +59,30 @@ for (const r of read("word")) {
   else notes[r.tr] = r.en;
 }
 
-/** Sözlükçe: `(ders, Almanca)` → İngilizce karşılık. Türetilenler + elle yazılanlar. */
+/*
+  Sözlükçe: `(ders, Almanca)` → İngilizce karşılık. İki kaynak:
+
+  - `derived.json` — 3.926 madde, `triage.mjs` `data/app/words.json`tan
+    türetiyor. REPODA DURMUYOR (gitignore) ve durmamalı: türetilebilen bir
+    dosyayı commit'lemek iki kopyayı ayrışmaya bırakır.
+  - `out/` — 714 madde, elle yazılmış. Havuzun karşılığı dersin anlamıyla
+    ayrıştığı yerler.
+
+  EKSİKSE PATLIYOR, sessizce eksik sözlük üretmiyor. Bir zamanlar
+  `existsSync` ile atlanıyordu ve sonuç şuydu: sunucudaki build `derived`i
+  bulamıyor, sözlükçe 4.640 yerine 714 madde oluyor, 2.311 dize
+  çözülemiyor, çözücü dersleri TÜMDEN reddediyor ve İngilizce kurs sessizce
+  Türkçeye düşüyor. Hiçbir yerde hata görünmüyordu — özelliğin "sözlük
+  yoksa kendini kapat" tasarımı tam da bu durumu gizliyor.
+*/
 const vocab = {};
 const derived = `${DIR}vocab/derived.json`;
-if (existsSync(derived))
-  for (const r of JSON.parse(readFileSync(derived, "utf8"))) vocab[r.lesson + SEP + r.de] = r.en;
+if (!existsSync(derived))
+  throw new Error(
+    "data/lessons/vocab/derived.json yok — `node data/lessons/vocab/triage.mjs` çalıştırılmalı " +
+      "(npm run lessons:apply bunu zaten yapıyor)",
+  );
+for (const r of JSON.parse(readFileSync(derived, "utf8"))) vocab[r.lesson + SEP + r.de] = r.en;
 for (const r of read("vocab")) vocab[r.lesson + SEP + r.de] = r.en;
 
 /** Kalıp notu ve ders başlığı/özeti — anahtarları kendi hatlarından geliyor. */
