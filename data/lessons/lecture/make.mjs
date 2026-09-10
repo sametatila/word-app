@@ -59,7 +59,11 @@ export function extractLecture() {
         r.ctx.add(
           step.map((x, j) => (j === i ? `«${x.s}»` : x.kind === "de" ? `[${x.s}]` : x.s)).join(" "),
         );
-        for (const x of step) if (x.kind === "de") r.de.add(x.s);
+        // YALNIZ ÖNCEKİ Almanca parça. Sözlük istemi ("Türkçesi … demek")
+        // kendinden ÖNCE gelen kelimeyi tanımlıyor; adımdaki bütün Almancayı
+        // toplamak aynı dizeyi üç kez sordurmuştu ("Danach", "Danach trinke
+        // ich Tee", "Danach trinke ich Tee." → üç ayrı satır, tek kelime).
+        if (step[i - 1]?.kind === "de") r.de.add(step[i - 1].s);
         rows.set(t, r);
       }
     }
