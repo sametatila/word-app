@@ -3297,3 +3297,27 @@ kalmadı.
 `WritingsScreen` ele alıyor (hata durumu + tekrar deneme var);
 `/api/assess`in on sebebini web istemcisi tek tek ayırıyor ve mobil kapıları
 çağrı yerinde ayırıyor (bkz. §11.60).
+
+### 11.62 Boş durumlar: on iki web yüzeyi, sekiz mobil yüzey, bir gerçek eksik
+
+Web `EmptyCard`ı on iki dosyada kullanıyor, mobilin karşılığı
+(`social/common.tsx` `EmptyCard`) sekizde. Farkı tek tek okudum:
+
+    web-only          mobil karşılığı              durum
+    achievement-wall  AchievementsScreen           EŞİT - webin boş kartı
+                                                   YÜKLENEMEDİ hâli için ve
+                                                   mobilde de hata + tekrar
+                                                   deneme var
+    writings-card     WritingsScreen               EŞİT - kendi boş metni var
+    session-player    GameScreen                   EŞİT - `game.nothing_to_review`
+    cando-card        CandoScreen                  EKSİK
+
+`CandoScreen` yalnız `loading` / `error` / `ready` biliyordu. Veri gelip de
+içi boşsa (henüz ders/alıştırma bitirilmemiş) iki süzgeç de hiçbir şey
+döndürüyor ve kullanıcı yalnız başlığı görüyordu: bir şeyin yüklenmediğini mi,
+yapacak bir şey olmadığını mı anlayamıyor.
+
+Boş durum eklendi. Ne bileşen ne metin uyduruldu: `EmptyCard` mobilde zaten
+sekiz yerde kullanılıyor ve metnin anahtarı (`cando.sign_in_and_finish_lessons_and`)
+mobil sözlükte DURUYORDU - webin aynı yerde gösterdiği cümle, mobilde
+çevrilmiş ama hiç çağrılmamış.

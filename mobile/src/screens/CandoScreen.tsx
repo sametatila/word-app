@@ -12,6 +12,7 @@ import { useAuth } from "../lib/AuthContext";
 import { fetchCando, type CandoData, type CandoItem } from "../game/cando";
 import { useTheme, spacing, radii, type Palette } from "../theme";
 import { CardGrid } from "../ui/CardGrid";
+import { EmptyCard } from "../social/common";
 
 const LEVELS = ["A1", "A2", "B1", "B2", "C1"];
 /** Beceri -> sözlük anahtarı (Patika tür adlarıyla ortak). */
@@ -92,6 +93,23 @@ export function CandoScreen() {
             </View>
           ))}
         </ScrollView>
+      ) : phase === "ready" && !(data?.items ?? []).length ? (
+        /*
+          BOŞ DURUM — ekran bomboş açılıyordu.
+          Veri gelip de içi boşsa (henüz ders/alıştırma bitirilmemiş) iki
+          süzgeç de hiçbir şey döndürüyor ve kullanıcı yalnız başlığı görüyordu:
+          bir şeyin yüklenmediğini mi, yapacak bir şey olmadığını mı
+          anlayamıyor. Web aynı durumda `EmptyCard` gösteriyor (`cando-card`)
+          ve metni bu; anahtar mobil sözlükte de duruyordu, kullanılmıyordu.
+        */
+        <View style={{ paddingHorizontal: spacing.lg, paddingTop: spacing.sm }}>
+          <EmptyCard
+            icon={CheckIcon}
+            tint={colors.success}
+            title={t("cando.what_i_can_do")}
+            text={t("cando.sign_in_and_finish_lessons_and")}
+          />
+        </View>
       ) : phase === "error" ? (
         <View style={{ flex: 1, alignItems: "center", justifyContent: "center", paddingHorizontal: spacing.xl }}><Text variant="body" color={colors.textMuted} style={{ textAlign: "center" }}>{t("cando.sign_in_and_finish_lessons_and")}</Text></View>
       ) : (
