@@ -70,8 +70,8 @@
  * iOS yayın gününde ikisi de değişecek (→ "1.1" ve o günün tarihi); ne
  * yazılacağı ve kaydın metni IOS_LAUNCH_ENTRY'de hazır bekliyor.
  */
-export const LEGAL_EFFECTIVE_DATE = "2026-09-09";
-export const LEGAL_VERSION = "1.0";
+export const LEGAL_EFFECTIVE_DATE = "2026-09-10";
+export const LEGAL_VERSION = "1.0.1";
 
 export const LEGAL_ENTITY = {
   /** Veri sorumlusu: amaç ve araçlara karar veren gerçek kişi (AB'de yerleşik). */
@@ -338,6 +338,30 @@ const IOS_LAUNCH_ENTRY: LegalChangelogEntry = {
 export const LEGAL_CHANGELOG: readonly LegalChangelogEntry[] = [
   // Bayrak kapalıyken bu kayıt listede YOK; açıldığı gün kendiliğinden başa gelir.
   ...(LEGAL_PLATFORMS.ios ? [IOS_LAUNCH_ENTRY] : []),
+  {
+    /*
+      YAMA SÜRÜMÜ: yalnız anlatım değişti, hak ya da yükümlülük değişmedi —
+      bu yüzden ikinci basamak değil yama basamağı (bkz. dosya başındaki kural).
+
+      Tarih SABİT, `LEGAL_EFFECTIVE_DATE`e bağlı DEĞİL: o değişken en yeni
+      sürümün tarihini taşıyor ve iOS yayın günü ileri alınacak. Bağlansaydı bu
+      kayıt da o gün kendiliğinden ileri kayardı, yani okuyucuya "1.0.1 o gün
+      yayımlandı" derdi.
+    */
+    version: "1.0.1",
+    date: "2026-09-10",
+    changes: {
+      tr: [
+        "Yalnız anlatım: gizlilik politikası artık birinci çoğul konuşmuyor (\"işleriz\", \"sunucularımız\"). Veri sorumlusu tek bir gerçek kişi olduğu için metin ya veri sorumlusunu adıyla anıyor ya da edilgen anlatım kullanıyor. Hak ve yükümlülükler aynı kaldı.",
+      ],
+      en: [
+        "Wording only: the privacy policy no longer speaks in the first person plural (\"we process\", \"our servers\"). A single natural person is the controller, so the text now names the controller or uses the passive voice. No rights or obligations changed.",
+      ],
+      de: [
+        "Nur sprachlich: Die Datenschutzerklärung spricht nicht mehr in der Wir-Form (\"wir verarbeiten\", \"unsere Server\"). Verantwortlicher ist eine einzelne natürliche Person, daher nennt der Text jetzt den Verantwortlichen oder verwendet das Passiv. Rechte und Pflichten sind unverändert.",
+      ],
+    },
+  },
   {
     version: "1.0",
     date: "2026-09-09",

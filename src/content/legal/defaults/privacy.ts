@@ -24,7 +24,7 @@ export const PRIVACY_DEFAULT: Record<"tr" | "en" | "de", LegalDocDefault> = {
     description: "Lernomi'nin hangi verileri, neden ve ne kadar süreyle işlediği; KVKK ve GDPR kapsamındaki hakların; hesap silme.",
     summary: [
       "Lernomi bir dil öğrenme uygulaması: Almanca, Zürih Almancası ve İngilizce.",
-      "Hesabını yürütmek için e-posta ve adını, öğrenmeni izlemek için ilerleme verini işleriz.",
+      "Hesabını yürütmek için e-postan ve adın, öğrenmeni izlemek için ilerleme verin işlenir.",
       "Yürüyüş modunda mikrofon sesin, açık rızanla, konuşmanı yazıya çevirmek için gönderilir. Ses kaydı saklanmaz.",
       "Reklam, reklam kimliği ve üçüncü taraf takip yok.",
       "Hesabını dilediğin an uygulamadan ya da web'den silebilirsin.",
@@ -36,11 +36,11 @@ Bu politika kapsamındaki kişisel verilerin sorumlusu, 6698 sayılı Kişisel V
 
 {{entityBlock:controller:contact}}
 
-Uygulamayı mağazalarda yayımlayan ve abonelik tahsilatını yürüten taraf ayrı bir kişidir. Yayıncı, veri sorumlusunun talimatı dışında kişisel veri işlemez; Play Console üzerinden eriştiği sipariş, abonelik ve yorum verisi bakımından **veri işleyen** sıfatını taşır ve aramızda bu kapsamda bir işleme sözleşmesi bulunur (GDPR m.28, KVKK m.12).
+Uygulamayı mağazalarda yayımlayan ve abonelik tahsilatını yürüten taraf ayrı bir kişidir. Yayıncı, veri sorumlusunun talimatı dışında kişisel veri işlemez; Play Console üzerinden eriştiği sipariş, abonelik ve yorum verisi bakımından **veri işleyen** sıfatını taşır ve taraflar arasında bu kapsamda bir işleme sözleşmesi bulunur (GDPR m.28, KVKK m.12).
 
 {{entityBlock:publisher}}
 
-Sunucularımız {{hosting}} üzerinde çalışır; veriler orada saklanır. Veri sorumlusu Türkiye'de yerleşik değildir; Türkiye'den yapılacak başvurular ve Kurumla yazışma için yukarıda bilgileri verilen veri sorumlusu temsilcisi belirlenmiştir. Temsilcinin belirlenmesi veri sorumlusunun kendi sorumluluğunu ortadan kaldırmaz.
+Sunucular {{hosting}} üzerinde çalışır; veriler orada saklanır. Veri sorumlusu Türkiye'de yerleşik değildir; Türkiye'den yapılacak başvurular ve Kurumla yazışma için yukarıda bilgileri verilen veri sorumlusu temsilcisi belirlenmiştir. Temsilcinin belirlenmesi veri sorumlusunun kendi sorumluluğunu ortadan kaldırmaz.
 
 **Toplama yöntemi ve hukuki sebep (KVKK m.10):** Veriler, kayıt ve ayar formları, uygulama içi etkileşimler ve mikrofon aracılığıyla elektronik ortamda, otomatik ya da kısmen otomatik yollarla toplanır; her veri için hukuki sebep 3. bölümdeki tabloda verilmiştir.
 
@@ -48,9 +48,9 @@ Sunucularımız {{hosting}} üzerinde çalışır; veriler orada saklanır. Veri
 
 - **Türkiye'deki kullanıcılar:** KVKK ve ikincil mevzuatı (Aydınlatma Yükümlülüğü Tebliği, Veri Sorumlusuna Başvuru Tebliği, yurt dışına aktarım usulleri).
 - **AB/AEA'daki kullanıcılar:** Veri sorumlusu Almanya'da yerleşik olduğundan GDPR m.3(1) gereği GDPR ve Alman veri koruma mevzuatı (BDSG); Birleşik Krallık'ta ayrıca UK GDPR ve Data Protection Act 2018. Bu politikadaki hukuki dayanaklar GDPR m.6 ile eşlenmiştir. Veri sorumlusu Birlik içinde yerleşik olduğu için GDPR m.27 kapsamında ayrıca bir AB temsilcisi atanması gerekmez.
-- **Diğer ülkeler:** Yerel veri koruma hukukundan doğan haklar saklıdır (10. bölüm). Kişisel verini satmayız ve davranışsal reklam için paylaşmayız.
+- **Diğer ülkeler:** Yerel veri koruma hukukundan doğan haklar saklıdır (10. bölüm). Lernomi kişisel verini satmaz ve davranışsal reklam için paylaşmaz.
 
-## 3. Hangi verileri, neden işliyoruz
+## 3. Hangi veriler, neden işleniyor
 
 | Veri | Nereden | Amaç | Hukuki dayanak (KVKK / GDPR) | Saklama |
 |---|---|---|---|---|
@@ -68,13 +68,13 @@ Sunucularımız {{hosting}} üzerinde çalışır; veriler orada saklanır. Veri
 | Bildirim izni ve hatırlatma saati | Sen | Yerel hatırlatmalar (cihazda planlanır, sunucuya gitmez) | Rıza | Cihazda |
 | Satın alma ve abonelik durumu | Uygulama mağazası / RevenueCat | Premium özellikleri açmak | Sözleşmenin ifası; yasal yükümlülük (muhasebe) | Hesap süresince; mali kayıtlar yasal süre boyunca |
 | İçerik bildirimlerin | Sen ("Bildir") | Uygunsuz yapay zekâ yanıtlarını incelemek | Meşru menfaat (güvenli hizmet) | İnceleme kapanana kadar |
-| Bize yazdığın destek ve hak talepleri | Sen | Talebi cevaplamak, yasal kayıt | Yasal yükümlülük (KVKK m.13, GDPR m.12) | Talep kapandıktan sonra 2 yıl |
+| Yazdığın destek ve hak talepleri | Sen | Talebi cevaplamak, yasal kayıt | Yasal yükümlülük (KVKK m.13, GDPR m.12) | Talep kapandıktan sonra 2 yıl |
 
-**Toplamadıklarımız:** konum, rehber, takvim, fotoğraf, reklam kimliği, cihaz kimliği, çökme raporu, özel nitelikli kişisel veri. Lernomi reklam göstermez, üçüncü taraf analitik ya da takip SDK'sı içermez, veri satmaz.
+**Toplanmayanlar:** konum, rehber, takvim, fotoğraf, reklam kimliği, cihaz kimliği, çökme raporu, özel nitelikli kişisel veri. Lernomi reklam göstermez, üçüncü taraf analitik ya da takip SDK'sı içermez, veri satmaz.
 
 ## 4. Mikrofon ve ses kayıtları
 
-Yürüyüş modunda Türkçe ipucunu duyar, Almancasını söylersin. Ekran açıkken tanıma, cihazın kendi konuşma tanıma servisiyle yapılır. Bu servisin sesi cihazda mı işlediği yoksa işletim sistemi sağlayıcısının (Google ya da Apple) sunucularına mı gönderdiği cihaza, dile ve cihaz ayarlarına göre değişir ve o sağlayıcının kendi şartlarına tabidir; bu yol bizim sunucumuzdan geçmez. Ekran kapalıyken ya da telefon cebindeyken ses, 16 kHz mono kayıt olarak sunucumuza gönderilir ve aşağıdaki konuşma tanıma sağlayıcılarından birine iletilir. Ses dosyası sunucuda ya da sağlayıcıda saklanmaz; yalnız tanınan metin, beklenen kelime ve klip süresi kullanım kaydına yazılır.
+Yürüyüş modunda Türkçe ipucunu duyar, Almancasını söylersin. Ekran açıkken tanıma, cihazın kendi konuşma tanıma servisiyle yapılır. Bu servisin sesi cihazda mı işlediği yoksa işletim sistemi sağlayıcısının (Google ya da Apple) sunucularına mı gönderdiği cihaza, dile ve cihaz ayarlarına göre değişir ve o sağlayıcının kendi şartlarına tabidir; bu yol Lernomi sunucusundan geçmez. Ekran kapalıyken ya da telefon cebindeyken ses, 16 kHz mono kayıt olarak Lernomi sunucusuna gönderilir ve aşağıdaki konuşma tanıma sağlayıcılarından birine iletilir. Ses dosyası sunucuda ya da sağlayıcıda saklanmaz; yalnız tanınan metin, beklenen kelime ve klip süresi kullanım kaydına yazılır.
 
 - Mikrofon yalnız sen yürüyüş modunu başlatınca açılır; sürekli bir bildirim görünür ve uygulamadan durdurabilirsin.
 - Ekran kapalıyken kayıt, işletim sisteminin bu iş için öngördüğü arka plan yoluyla yapılır: Android'de mikrofon tipli ön plan servisi{{ifIos}}, iOS'ta arka plan ses oturumu{{/ifIos}}. Sistemin mikrofon göstergesi açık kalır.
@@ -99,11 +99,11 @@ Aralıklı tekrar planı, günlük tur içeriği, seviye önerisi ve haftalık s
 
 ## 5. Yapay zekâ ile işlenen metinler
 
-Konuşma pratiği (rol yapma), yazma görevleri ve sınav cevapların, geri bildirim üretmek için dil modeli sağlayıcılarına gönderilir. Gönderilen şey yalnız senin yazdığın/söylediğin metin ve konuşmanın senaryosudur; ad ya da e-posta gönderilmez. Sağlayıcılar, verileri model eğitiminde kullanmamayı taahhüt eden API şartlarıyla ve veri işleme sözleşmeleriyle çalışır. Yapay zekâ karakterlerinin gerçek kişi olmadığı uygulamada açıkça belirtilir (AB Yapay Zekâ Tüzüğü m.50 şeffaflık). Yanıtlar hata içerebilir; her yanıtın altındaki "Bildir" ile bize iletebilirsin, bildirimler insan tarafından incelenir. Lernomi hakkında yalnız otomatik işlemeye dayanan, hukuki sonuç doğuran bir karar vermez.
+Konuşma pratiği (rol yapma), yazma görevleri ve sınav cevapların, geri bildirim üretmek için dil modeli sağlayıcılarına gönderilir. Gönderilen şey yalnız senin yazdığın/söylediğin metin ve konuşmanın senaryosudur; ad ya da e-posta gönderilmez. Sağlayıcılar, verileri model eğitiminde kullanmamayı taahhüt eden API şartlarıyla ve veri işleme sözleşmeleriyle çalışır. Yapay zekâ karakterlerinin gerçek kişi olmadığı uygulamada açıkça belirtilir (AB Yapay Zekâ Tüzüğü m.50 şeffaflık). Yanıtlar hata içerebilir; her yanıtın altındaki "Bildir" ile bildirebilirsin, bildirimler insan tarafından incelenir. Lernomi hakkında yalnız otomatik işlemeye dayanan, hukuki sonuç doğuran bir karar vermez.
 
 ## 6. Verinin ulaştığı hizmet sağlayıcılar ve yurt dışına aktarım
 
-Aşağıdaki sağlayıcılar yalnız belirtilen amaçla ve yalnız o iş için gereken veriyle çalışır; hiçbiri veriyi kendi amaçları için kullanamaz. Sunucularımız Almanya'dadır. Türkiye'den AB'ye ve AB'den ABD/Birleşik Krallık'a yapılan aktarımlarda kullanılan güvence son sütundadır: KVKK m.9 kapsamında Kurul'un ilan ettiği standart sözleşme ve GDPR Bölüm V kapsamında standart sözleşme hükümleri ya da yeterlilik kararı.
+Aşağıdaki sağlayıcılar yalnız belirtilen amaçla ve yalnız o iş için gereken veriyle çalışır; hiçbiri veriyi kendi amaçları için kullanamaz. Sunucular Almanya'dadır. Türkiye'den AB'ye ve AB'den ABD/Birleşik Krallık'a yapılan aktarımlarda kullanılan güvence son sütundadır: KVKK m.9 kapsamında Kurul'un ilan ettiği standart sözleşme ve GDPR Bölüm V kapsamında standart sözleşme hükümleri ya da yeterlilik kararı.
 
 {{processorsTable}}
 
@@ -111,7 +111,7 @@ Verilerin kamu kurumlarına aktarımı yalnız yasal bir zorunluluk ya da yetkil
 
 ## 7. Çerezler ve yerel depolama
 
-Web'de yalnız zorunlu oturum çerezi kullanılır (giriş yaptığını hatırlamak için, 30 gün); bu nedenle çerez onay bandı yoktur. Pazarlama ya da takip çerezi kullanmayız. Tarayıcı ve uygulama yerel depolamasında tema, ses ve bildirim tercihleri, avatar seçimi ve yarım kalan konuşma gibi bilgiler tutulur; bunlar cihazından çıkmaz.
+Web'de yalnız zorunlu oturum çerezi kullanılır (giriş yaptığını hatırlamak için, 30 gün); bu nedenle çerez onay bandı yoktur. Pazarlama ya da takip çerezi kullanılmaz. Tarayıcı ve uygulama yerel depolamasında tema, ses ve bildirim tercihleri, avatar seçimi ve yarım kalan konuşma gibi bilgiler tutulur; bunlar cihazından çıkmaz.
 
 ## 8. Ürün analitiği ve kapatma
 
@@ -126,7 +126,7 @@ Ayarlar › Gizlilik bölümündeki "Kullanım verisi gönder" anahtarıyla bunu
 
 ## 8a. Ticari elektronik ileti
 
-Sana yalnız hizmetle ilgili iletiler göndeririz: e-posta doğrulama, parola sıfırlama, hesap ve güvenlik bildirimleri, izin verdiğin hatırlatmalar. 6563 sayılı Kanun kapsamında ticari elektronik ileti göndermeyiz; ileride pazarlama iletisi göndermek istersek İleti Yönetim Sistemi (İYS) üzerinden ayrıca onayını alırız ve her iletide ret yolu bulunur.
+Sana yalnız hizmetle ilgili iletiler gönderilir: e-posta doğrulama, parola sıfırlama, hesap ve güvenlik bildirimleri, izin verdiğin hatırlatmalar. 6563 sayılı Kanun kapsamında ticari elektronik ileti gönderilmez; ileride pazarlama iletisi gönderilmek istenirse İleti Yönetim Sistemi (İYS) üzerinden ayrıca onayın alınır ve her iletide ret yolu bulunur.
 
 ## 9. Saklama süreleri
 
@@ -134,7 +134,7 @@ Sana yalnız hizmetle ilgili iletiler göndeririz: e-posta doğrulama, parola s�
 - Konuşma pratiği kayıtları (söylediğin cümle ve model yanıtı): 30 gün, sonra kendiliğinden silinir.
 - Ses kayıtları: saklanmaz.
 - Oturum kayıtları (IP, cihaz tanımı): oturum süresince, en çok 30 gün.
-- Mali kayıtlar (abonelik faturaları): Türk Ticaret Kanunu ve Vergi Usul Kanunu'nun öngördüğü süre (10 yıl), yalnız Google Play'in bize ilettiği kadarıyla.
+- Mali kayıtlar (abonelik faturaları): Türk Ticaret Kanunu ve Vergi Usul Kanunu'nun öngördüğü süre (10 yıl), yalnız Google Play'in ilettiği kadarıyla.
 - Hak talepleri yazışmaları: talep kapandıktan sonra 2 yıl.
 - Sunucu yedekleri: silinen veriler yedeklerden en geç {{backupRetentionDays}} gün içinde düşer; yedekler yalnız felaket kurtarma için kullanılır, silinen hesap yedekten geri yüklenmez.
 
@@ -150,9 +150,9 @@ KVKK m.11 ve GDPR m.15-22 uyarınca şunları isteyebilirsin:
 - Verilerin üçüncü kişilere aktarılması hâlinde düzeltme ve silmenin onlara bildirilmesini istemek,
 - Zarara uğraman hâlinde tazminat talep etmek.
 
-**Başvuru:** KVKK kapsamındaki talepler için {{privacyEmailTr}}, GDPR ve UK GDPR kapsamındaki talepler için {{privacyEmailEu}} adresine yaz; kimliğini doğrulamak için hesabındaki e-posta adresinden yazman yeterlidir. Türkiye'de KVKK Veri Sorumlusuna Başvuru Usul ve Esasları Hakkında Tebliğ uyarınca ıslak imzalı yazılı başvuru, güvenli elektronik imzalı başvuru ya da hesabında kayıtlı e-posta adresinden başvuru da yapılabilir. Talepleri en geç 30 gün içinde ücretsiz sonuçlandırırız; GDPR kapsamında bu süre gerekirse iki ay uzatılabilir ve sana bildirilir.
+**Başvuru:** KVKK kapsamındaki talepler için {{privacyEmailTr}}, GDPR ve UK GDPR kapsamındaki talepler için {{privacyEmailEu}} adresine yaz; kimliğini doğrulamak için hesabındaki e-posta adresinden yazman yeterlidir. Türkiye'de KVKK Veri Sorumlusuna Başvuru Usul ve Esasları Hakkında Tebliğ uyarınca ıslak imzalı yazılı başvuru, güvenli elektronik imzalı başvuru ya da hesabında kayıtlı e-posta adresinden başvuru da yapılabilir. Talepler en geç 30 gün içinde ücretsiz sonuçlandırılır; GDPR kapsamında bu süre gerekirse iki ay uzatılabilir ve sana bildirilir.
 
-**Şikâyet:** Türkiye'de Kişisel Verileri Koruma Kurulu'na (kvkk.gov.tr). AB'de veri sorumlusunun yetkili denetim otoritesi, yerleşim yerine göre Kuzey Ren-Vestfalya Eyalet Veri Koruma ve Bilgi Edinme Görevlisi'dir (LDI NRW). GDPR m.77 uyarınca kendi ülkendeki otoriteye de başvurabilirsin. Birleşik Krallık'ta ICO. Önce bize yazmanı rica ederiz, çoğu talebi doğrudan çözebiliriz.
+**Şikâyet:** Türkiye'de Kişisel Verileri Koruma Kurulu'na (kvkk.gov.tr). AB'de veri sorumlusunun yetkili denetim otoritesi, yerleşim yerine göre Kuzey Ren-Vestfalya Eyalet Veri Koruma ve Bilgi Edinme Görevlisi'dir (LDI NRW). GDPR m.77 uyarınca kendi ülkendeki otoriteye de başvurabilirsin. Birleşik Krallık'ta ICO. Şikâyetten önce veri sorumlusuna yazman yeterli olabilir; taleplerin çoğu doğrudan çözülür.
 
 ## 11. Hesabını ve verilerini silme
 
@@ -160,22 +160,22 @@ Hesabını iki yoldan silebilirsin: uygulamada **Profil › Ayarlar › Hesap �
 
 ## 12. Çocuklar
 
-Lernomi 18 yaşından küçükler için tasarlanmamıştır ve onlardan bilerek veri toplamaz; kullanım şartları hesap açmayı 18 yaş ve üzeriyle sınırlar (bkz. şartlar §3). İçerik yetişkin öğrencilere ve resmî dil sınavı hazırlığına yöneliktir; uygulamada açık uçlu yapay zekâ konuşması ve kullanıcı etkileşimi bulunduğundan çocuk kitlesine uygun değildir. 18 yaşından küçük birinin hesap açtığını fark edersek hesabı ve verileri sileriz; ebeveynler {{privacyEmailTr}} adresine yazabilir.
+Lernomi 18 yaşından küçükler için tasarlanmamıştır ve onlardan bilerek veri toplamaz; kullanım şartları hesap açmayı 18 yaş ve üzeriyle sınırlar (bkz. şartlar §3). İçerik yetişkin öğrencilere ve resmî dil sınavı hazırlığına yöneliktir; uygulamada açık uçlu yapay zekâ konuşması ve kullanıcı etkileşimi bulunduğundan çocuk kitlesine uygun değildir. 18 yaşından küçük birinin hesap açtığı fark edilirse hesap ve veriler silinir; ebeveynler {{privacyEmailTr}} adresine yazabilir.
 
 ## 13. Güvenlik
 
-Tüm bağlantılar HTTPS ile şifrelenir. Parolalar geri döndürülemez özet olarak saklanır. Sunucuya erişim anahtarla sınırlıdır; giriş denemeleri hız sınırına tabidir. Hesap silme gibi yıkıcı işlemler parola ya da yeni bir oturum ister. Kişisel verileri etkileyen bir ihlalde KVKK (72 saat içinde Kurul'a) ve GDPR m.33-34 uyarınca bildirim yaparız ve seni bilgilendiririz.
+Tüm bağlantılar HTTPS ile şifrelenir. Parolalar geri döndürülemez özet olarak saklanır. Sunucuya erişim anahtarla sınırlıdır; giriş denemeleri hız sınırına tabidir. Hesap silme gibi yıkıcı işlemler parola ya da yeni bir oturum ister. Kişisel verileri etkileyen bir ihlalde KVKK (72 saat içinde Kurul'a) ve GDPR m.33-34 uyarınca bildirim yapılır ve sen bilgilendirilirsin.
 
 ## 14. Değişiklikler
 
-Politikayı değiştirdiğimizde bu sayfadaki yürürlük tarihi ve sürüm güncellenir; işleme amaçlarını genişleten bir değişiklikte uygulama içinde bilgilendirir ve gerekiyorsa yeniden onay isteriz. Sorular için: {{privacyEmailTr}}.`,
+Politika değiştiğinde bu sayfadaki yürürlük tarihi ve sürüm güncellenir; işleme amaçlarını genişleten bir değişiklikte uygulama içinde bilgilendirme yapılır ve gerekiyorsa yeniden onay istenir. Sorular için: {{privacyEmailTr}}.`,
   },
   en: {
     title: "Privacy Policy",
     description: "What data Lernomi processes, why and for how long; your rights under GDPR and Turkish data protection law; deleting your account.",
     summary: [
       "Lernomi is a language learning app: German, Zurich German and English.",
-      "We process your e-mail and name to run your account, and your progress data to track your learning.",
+      "Your e-mail and name are processed to run your account, and your progress data to track your learning.",
       "In walk mode, with your explicit consent, microphone audio is sent to be transcribed. The recording is not kept.",
       "No ads, no advertising identifier, no third-party tracking.",
       "You can delete your account at any time, from the app or the web.",
@@ -187,11 +187,11 @@ The controller of the personal data covered by this policy, within the meaning o
 
 {{entityBlock:controller:contact}}
 
-The app is published in the app stores and the subscription revenue is collected by a different person. The publisher processes no personal data except on the controller's instructions; for the order, subscription and review data they access through the Play Console they act as a **processor**, and a processing agreement between us covers this (Art. 28 GDPR, Art. 12 KVKK).
+The app is published in the app stores and the subscription revenue is collected by a different person. The publisher processes no personal data except on the controller's instructions; for the order, subscription and review data they access through the Play Console they act as a **processor**, and a processing agreement between the parties covers this (Art. 28 GDPR, Art. 12 KVKK).
 
 {{entityBlock:publisher}}
 
-Our servers run on {{hosting}}; the data is stored there. The controller is not established in Türkiye; for applications made from Türkiye and for correspondence with the Turkish authority, the representative identified above has been designated. Designating a representative does not remove the controller's own responsibility.
+The servers run on {{hosting}}; the data is stored there. The controller is not established in Türkiye; for applications made from Türkiye and for correspondence with the Turkish authority, the representative identified above has been designated. Designating a representative does not remove the controller's own responsibility.
 
 **Collection method and legal ground (KVKK Art. 10):** Data is collected electronically, by automated or partly automated means, through registration and settings forms, in-app interactions and the microphone; the legal ground for each item is given in the table in section 3.
 
@@ -199,9 +199,9 @@ Our servers run on {{hosting}}; the data is stored there. The controller is not 
 
 - **Users in Türkiye:** KVKK and its secondary legislation (Communiqué on the Obligation to Inform, Communiqué on Applications to the Data Controller, rules on transfers abroad).
 - **Users in the EU/EEA:** because the controller is established in Germany, the GDPR applies by virtue of Art. 3(1) GDPR, together with German data protection law (BDSG); in the United Kingdom, the UK GDPR and the Data Protection Act 2018 also apply. The legal grounds in this policy are mapped to Art. 6 GDPR. As the controller is established within the Union, no separate EU representative under Art. 27 GDPR is required.
-- **Other countries:** rights under local data protection law are reserved (section 10). We do not sell your personal data and do not share it for behavioural advertising.
+- **Other countries:** rights under local data protection law are reserved (section 10). Lernomi does not sell your personal data and does not share it for behavioural advertising.
 
-## 3. What data we process and why
+## 3. What data is processed and why
 
 | Data | Source | Purpose | Legal ground (KVKK / GDPR) | Retention |
 |---|---|---|---|---|
@@ -219,13 +219,13 @@ Our servers run on {{hosting}}; the data is stored there. The controller is not 
 | Notification permission and reminder time | You | Local reminders (scheduled on the device, not sent to the server) | Consent | On the device |
 | Purchase and subscription state | App store / RevenueCat | Unlocking Premium features | Performance of a contract; legal obligation (accounting) | For the life of the account; financial records for the statutory period |
 | Your content reports | You ("Report") | Reviewing inappropriate AI answers | Legitimate interest (a safe service) | Until the review closes |
-| Support messages and rights requests you send us | You | Answering the request, statutory record | Legal obligation (KVKK Art. 13, GDPR Art. 12) | 2 years after the request closes |
+| Support messages and rights requests you send | You | Answering the request, statutory record | Legal obligation (KVKK Art. 13, GDPR Art. 12) | 2 years after the request closes |
 
-**What we do not collect:** location, contacts, calendar, photos, advertising identifier, device identifier, crash reports, special categories of personal data. Lernomi shows no ads, contains no third-party analytics or tracking SDK, and sells no data.
+**What is not collected:** location, contacts, calendar, photos, advertising identifier, device identifier, crash reports, special categories of personal data. Lernomi shows no ads, contains no third-party analytics or tracking SDK, and sells no data.
 
 ## 4. Microphone and audio recordings
 
-In walk mode you hear a prompt in your own language and say the target-language word. While the screen is on, recognition is performed by the device's own speech recognition service. Whether that service processes the audio on the device or sends it to the operating system provider's servers (Google or Apple) depends on the device, the language and the device settings, and is governed by that provider's own terms; this path does not go through our server. While the screen is off or the phone is in your pocket, audio is sent to our server as a 16 kHz mono recording and passed to one of the speech recognition providers listed below. The audio file is not stored on our server or at the provider; only the recognised text, the expected word and the clip length are written to the usage record.
+In walk mode you hear a prompt in your own language and say the target-language word. While the screen is on, recognition is performed by the device's own speech recognition service. Whether that service processes the audio on the device or sends it to the operating system provider's servers (Google or Apple) depends on the device, the language and the device settings, and is governed by that provider's own terms; this path does not go through the Lernomi server. While the screen is off or the phone is in your pocket, audio is sent to the Lernomi server as a 16 kHz mono recording and passed to one of the speech recognition providers listed below. The audio file is not stored on the server or at the provider; only the recognised text, the expected word and the clip length are written to the usage record.
 
 - The microphone opens only when you start walk mode; a persistent notification is shown and you can stop it from the app.
 - While the screen is off, recording runs through the background mechanism the operating system provides for this: a microphone-type foreground service on Android{{ifIos}}, a background audio session on iOS{{/ifIos}}. The system microphone indicator stays on.
@@ -250,11 +250,11 @@ The spaced repetition schedule, the content of the daily round, the level sugges
 
 ## 5. Texts processed by AI
 
-Your speaking practice (roleplay), writing tasks and exam answers are sent to language model providers in order to generate feedback. What is sent is only the text you wrote or said and the scenario of the speaking practice; your name and e-mail are not sent. The providers operate under API terms and data processing agreements in which they undertake not to use the data for model training. The app states clearly that AI characters are not real people (transparency under Art. 50 of the EU AI Act). Answers can contain mistakes; you can send them to us with the "Report" button under each answer, and reports are reviewed by a human. Lernomi makes no decision about you that is based solely on automated processing and produces a legal effect.
+Your speaking practice (roleplay), writing tasks and exam answers are sent to language model providers in order to generate feedback. What is sent is only the text you wrote or said and the scenario of the speaking practice; your name and e-mail are not sent. The providers operate under API terms and data processing agreements in which they undertake not to use the data for model training. The app states clearly that AI characters are not real people (transparency under Art. 50 of the EU AI Act). Answers can contain mistakes; you can flag them with the "Report" button under each answer, and reports are reviewed by a human. Lernomi makes no decision about you that is based solely on automated processing and produces a legal effect.
 
 ## 6. Service providers that receive data, and transfers abroad
 
-The providers below work only for the stated purpose and only with the data that task requires; none of them may use the data for their own purposes. Our servers are in Germany. The safeguard used for transfers from Türkiye to the EU and from the EU to the USA/United Kingdom is in the last column: the standard contract published by the Turkish Board under KVKK Art. 9, and standard contractual clauses or an adequacy decision under Chapter V GDPR.
+The providers below work only for the stated purpose and only with the data that task requires; none of them may use the data for their own purposes. The servers are in Germany. The safeguard used for transfers from Türkiye to the EU and from the EU to the USA/United Kingdom is in the last column: the standard contract published by the Turkish Board under KVKK Art. 9, and standard contractual clauses or an adequacy decision under Chapter V GDPR.
 
 {{processorsTable}}
 
@@ -262,7 +262,7 @@ Data is transferred to public authorities only where there is a legal obligation
 
 ## 7. Cookies and local storage
 
-On the web only the strictly necessary session cookie is used (to remember that you are signed in, for 30 days); for that reason there is no cookie consent banner. We use no marketing or tracking cookies. Browser and app local storage holds things like theme, sound and notification preferences, avatar choice and an unfinished speaking practice; these never leave your device.
+On the web only the strictly necessary session cookie is used (to remember that you are signed in, for 30 days); for that reason there is no cookie consent banner. No marketing or tracking cookies are used. Browser and app local storage holds things like theme, sound and notification preferences, avatar choice and an unfinished speaking practice; these never leave your device.
 
 ## 8. Product analytics and switching them off
 
@@ -277,7 +277,7 @@ You can switch this off with the "Send usage data" toggle under Settings › Pri
 
 ## 8a. Commercial electronic messages
 
-We send you only service-related messages: e-mail verification, password reset, account and security notices, and the reminders you allowed. We send no commercial electronic messages within the meaning of Turkish Law no. 6563; if we ever want to send marketing messages, we will obtain your separate consent through the Turkish Message Management System (İYS) and every message will carry an opt-out.
+You receive only service-related messages: e-mail verification, password reset, account and security notices, and the reminders you allowed. No commercial electronic messages within the meaning of Turkish Law no. 6563 are sent; if marketing messages are ever sent, your separate consent will first be obtained through the Turkish Message Management System (İYS) and every message will carry an opt-out.
 
 ## 9. Retention periods
 
@@ -285,7 +285,7 @@ We send you only service-related messages: e-mail verification, password reset, 
 - Speaking practice logs (the sentence you said and the model's reply): 30 days, then deleted automatically.
 - Audio recordings: not kept.
 - Session records (IP, device description): for the life of the session, at most 30 days.
-- Financial records (subscription invoices): the period required by the Turkish Commercial Code and the Tax Procedure Law (10 years), and only to the extent Google Play passes them to us.
+- Financial records (subscription invoices): the period required by the Turkish Commercial Code and the Tax Procedure Law (10 years), and only to the extent Google Play passes them on.
 - Correspondence about rights requests: 2 years after the request closes.
 - Server backups: deleted data drops out of the backups within {{backupRetentionDays}} days at the latest; backups are used only for disaster recovery, and a deleted account is never restored from a backup.
 
@@ -301,9 +301,9 @@ Under KVKK Art. 11 and Art. 15-22 GDPR you may ask to:
 - request that corrections and erasure be notified to third parties to whom the data was transferred,
 - claim compensation if you suffer damage.
 
-**Making a request:** write to {{privacyEmailEu}} for requests under the GDPR or UK GDPR, or to {{privacyEmailTr}} for requests under Turkish data protection law (KVKK); writing from the e-mail address on your account is enough to verify your identity. In Türkiye, under the Communiqué on the Procedures for Applications to the Data Controller, you may also apply in writing with a wet signature, with a qualified electronic signature, or from the e-mail address registered on your account. We resolve requests free of charge within 30 days at the latest; under the GDPR this period may be extended by two months where necessary, and you will be told.
+**Making a request:** write to {{privacyEmailEu}} for requests under the GDPR or UK GDPR, or to {{privacyEmailTr}} for requests under Turkish data protection law (KVKK); writing from the e-mail address on your account is enough to verify your identity. In Türkiye, under the Communiqué on the Procedures for Applications to the Data Controller, you may also apply in writing with a wet signature, with a qualified electronic signature, or from the e-mail address registered on your account. Requests are resolved free of charge within 30 days at the latest; under the GDPR this period may be extended by two months where necessary, and you will be told.
 
-**Complaints:** in Türkiye to the Personal Data Protection Board (kvkk.gov.tr). In the EU the controller's competent supervisory authority is, by place of establishment, the State Commissioner for Data Protection and Freedom of Information of North Rhine-Westphalia (LDI NRW). Under Art. 77 GDPR you may also complain to the authority in your own country. In the United Kingdom, the ICO. We would ask you to write to us first; we can resolve most requests directly.
+**Complaints:** in Türkiye to the Personal Data Protection Board (kvkk.gov.tr). In the EU the controller's competent supervisory authority is, by place of establishment, the State Commissioner for Data Protection and Freedom of Information of North Rhine-Westphalia (LDI NRW). Under Art. 77 GDPR you may also complain to the authority in your own country. In the United Kingdom, the ICO. Please write to the controller first; most requests can be resolved directly.
 
 ## 11. Deleting your account and your data
 
@@ -311,22 +311,22 @@ You can delete your account in two ways: in the app under **Profile › Settings
 
 ## 12. Children
 
-Lernomi is not designed for people under 18 and does not knowingly collect data from them; the terms of use limit account creation to people aged 18 and over (see terms, clause 3). The content is aimed at adult learners and at official language exam preparation; because the app contains open-ended AI conversation and user interaction, it is not suitable for a child audience. If we discover that someone under 18 has created an account, we delete the account and the data; parents can write to {{privacyEmailEu}}.
+Lernomi is not designed for people under 18 and does not knowingly collect data from them; the terms of use limit account creation to people aged 18 and over (see terms, clause 3). The content is aimed at adult learners and at official language exam preparation; because the app contains open-ended AI conversation and user interaction, it is not suitable for a child audience. If someone under 18 is found to have created an account, the account and the data are deleted; parents can write to {{privacyEmailEu}}.
 
 ## 13. Security
 
-All connections are encrypted with HTTPS. Passwords are stored as irreversible hashes. Access to the server is limited to keys; sign-in attempts are rate limited. Destructive operations such as account deletion require a password or a fresh session. In the event of a breach affecting personal data we notify the authorities (in Türkiye the Board within 72 hours) under KVKK and Art. 33-34 GDPR, and we inform you.
+All connections are encrypted with HTTPS. Passwords are stored as irreversible hashes. Access to the server is limited to keys; sign-in attempts are rate limited. Destructive operations such as account deletion require a password or a fresh session. In the event of a breach affecting personal data the authorities are notified (in Türkiye the Board within 72 hours) under KVKK and Art. 33-34 GDPR, and you are informed.
 
 ## 14. Changes
 
-When we change this policy, the effective date and version on this page are updated; for a change that broadens the purposes of processing we inform you in the app and, where necessary, ask for consent again. Questions: {{privacyEmailEu}}.`,
+When this policy changes, the effective date and version on this page are updated; for a change that broadens the purposes of processing you are informed in the app and, where necessary, asked for consent again. Questions: {{privacyEmailEu}}.`,
   },
   de: {
     title: "Datenschutzerklärung",
     description: "Welche Daten Lernomi verarbeitet, warum und wie lange; deine Rechte nach DSGVO und türkischem Datenschutzrecht; Konto löschen.",
     summary: [
       "Lernomi ist eine Sprachlern-App: Deutsch, Zürichdeutsch und Englisch.",
-      "Wir verarbeiten deine E-Mail-Adresse und deinen Namen für dein Konto und deine Fortschrittsdaten für dein Lernen.",
+      "Deine E-Mail-Adresse und dein Name werden für dein Konto verarbeitet, deine Fortschrittsdaten für dein Lernen.",
       "Im Gehmodus wird Mikrofon-Audio mit deiner ausdrücklichen Einwilligung zur Verschriftlichung gesendet. Die Aufnahme wird nicht gespeichert.",
       "Keine Werbung, keine Werbe-ID, kein Tracking durch Dritte.",
       "Du kannst dein Konto jederzeit löschen, in der App oder im Web.",
@@ -338,11 +338,11 @@ Verantwortlicher für die von dieser Erklärung erfassten personenbezogenen Date
 
 {{entityBlock:controller:contact}}
 
-Die App wird von einer anderen Person in den App-Stores veröffentlicht, die auch die Abonnementeinnahmen vereinnahmt. Der Herausgeber verarbeitet personenbezogene Daten ausschließlich auf Weisung des Verantwortlichen; für die über die Play Console zugänglichen Bestell-, Abonnement- und Rezensionsdaten handelt er als **Auftragsverarbeiter**, und zwischen uns besteht dazu ein Auftragsverarbeitungsvertrag (Art. 28 DSGVO, Art. 12 KVKK).
+Die App wird von einer anderen Person in den App-Stores veröffentlicht, die auch die Abonnementeinnahmen vereinnahmt. Der Herausgeber verarbeitet personenbezogene Daten ausschließlich auf Weisung des Verantwortlichen; für die über die Play Console zugänglichen Bestell-, Abonnement- und Rezensionsdaten handelt er als **Auftragsverarbeiter**, und zwischen den Parteien besteht dazu ein Auftragsverarbeitungsvertrag (Art. 28 DSGVO, Art. 12 KVKK).
 
 {{entityBlock:publisher}}
 
-Unsere Server laufen bei {{hosting}}; dort werden die Daten gespeichert. Der Verantwortliche ist nicht in der Türkei niedergelassen; für Anträge aus der Türkei und für die Korrespondenz mit der türkischen Behörde ist der oben genannte Vertreter benannt. Die Benennung eines Vertreters berührt die eigene Verantwortlichkeit des Verantwortlichen nicht.
+Die Server laufen bei {{hosting}}; dort werden die Daten gespeichert. Der Verantwortliche ist nicht in der Türkei niedergelassen; für Anträge aus der Türkei und für die Korrespondenz mit der türkischen Behörde ist der oben genannte Vertreter benannt. Die Benennung eines Vertreters berührt die eigene Verantwortlichkeit des Verantwortlichen nicht.
 
 **Art der Erhebung und Rechtsgrundlage (Art. 10 KVKK):** Die Daten werden elektronisch, automatisiert oder teilweise automatisiert über Registrierungs- und Einstellungsformulare, Interaktionen in der App und das Mikrofon erhoben; die Rechtsgrundlage für jede Angabe steht in der Tabelle in Abschnitt 3.
 
@@ -350,9 +350,9 @@ Unsere Server laufen bei {{hosting}}; dort werden die Daten gespeichert. Der Ver
 
 - **Nutzer in der Türkei:** KVKK und seine Durchführungsvorschriften (Mitteilung zur Informationspflicht, Mitteilung zu Anträgen an den Verantwortlichen, Regeln zur Übermittlung ins Ausland).
 - **Nutzer in der EU/im EWR:** Da der Verantwortliche in Deutschland niedergelassen ist, gilt die DSGVO nach Art. 3 Abs. 1 DSGVO zusammen mit dem BDSG; im Vereinigten Königreich gelten zusätzlich die UK GDPR und der Data Protection Act 2018. Die Rechtsgrundlagen dieser Erklärung sind Art. 6 DSGVO zugeordnet. Da der Verantwortliche in der Union niedergelassen ist, ist kein gesonderter EU-Vertreter nach Art. 27 DSGVO erforderlich.
-- **Andere Länder:** Rechte aus dem örtlichen Datenschutzrecht bleiben vorbehalten (Abschnitt 10). Wir verkaufen deine personenbezogenen Daten nicht und geben sie nicht für verhaltensbasierte Werbung weiter.
+- **Andere Länder:** Rechte aus dem örtlichen Datenschutzrecht bleiben vorbehalten (Abschnitt 10). Lernomi verkauft deine personenbezogenen Daten nicht und gibt sie nicht für verhaltensbasierte Werbung weiter.
 
-## 3. Welche Daten wir verarbeiten und warum
+## 3. Welche Daten verarbeitet werden und warum
 
 | Daten | Herkunft | Zweck | Rechtsgrundlage (KVKK / DSGVO) | Speicherdauer |
 |---|---|---|---|---|
@@ -370,13 +370,13 @@ Unsere Server laufen bei {{hosting}}; dort werden die Daten gespeichert. Der Ver
 | Benachrichtigungsberechtigung und Erinnerungszeit | Du | Lokale Erinnerungen (auf dem Gerät geplant, nicht an den Server gesendet) | Einwilligung | Auf dem Gerät |
 | Kauf- und Abonnementstatus | App-Store / RevenueCat | Freischalten der Premium-Funktionen | Erfüllung eines Vertrags; rechtliche Verpflichtung (Buchhaltung) | Für die Dauer des Kontos; Finanzunterlagen für die gesetzliche Frist |
 | Deine Inhaltsmeldungen | Du ("Melden") | Prüfung unangemessener KI-Antworten | Berechtigtes Interesse (sicherer Dienst) | Bis zum Abschluss der Prüfung |
-| Support-Nachrichten und Rechteanfragen an uns | Du | Beantwortung der Anfrage, gesetzliche Dokumentation | Rechtliche Verpflichtung (Art. 13 KVKK, Art. 12 DSGVO) | 2 Jahre nach Abschluss der Anfrage |
+| Support-Nachrichten und Rechteanfragen | Du | Beantwortung der Anfrage, gesetzliche Dokumentation | Rechtliche Verpflichtung (Art. 13 KVKK, Art. 12 DSGVO) | 2 Jahre nach Abschluss der Anfrage |
 
-**Was wir nicht erheben:** Standort, Kontakte, Kalender, Fotos, Werbe-ID, Geräte-ID, Absturzberichte, besondere Kategorien personenbezogener Daten. Lernomi zeigt keine Werbung, enthält kein Analyse- oder Tracking-SDK Dritter und verkauft keine Daten.
+**Was nicht erhoben wird:** Standort, Kontakte, Kalender, Fotos, Werbe-ID, Geräte-ID, Absturzberichte, besondere Kategorien personenbezogener Daten. Lernomi zeigt keine Werbung, enthält kein Analyse- oder Tracking-SDK Dritter und verkauft keine Daten.
 
 ## 4. Mikrofon und Audioaufnahmen
 
-Im Gehmodus hörst du eine Vorgabe in deiner Sprache und sprichst das Wort in der Zielsprache. Bei eingeschaltetem Bildschirm übernimmt die Erkennung der geräteeigene Spracherkennungsdienst. Ob dieser Dienst das Audio auf dem Gerät verarbeitet oder an die Server des Betriebssystemanbieters (Google oder Apple) sendet, hängt vom Gerät, von der Sprache und von den Geräteeinstellungen ab und richtet sich nach den Bedingungen dieses Anbieters; über unseren Server läuft dieser Weg nicht. Bei ausgeschaltetem Bildschirm oder wenn das Telefon in der Tasche steckt, wird das Audio als 16-kHz-Mono-Aufnahme an unseren Server gesendet und an einen der unten aufgeführten Spracherkennungsanbieter weitergegeben. Die Audiodatei wird weder auf dem Server noch beim Anbieter gespeichert; nur der erkannte Text, das erwartete Wort und die Cliplänge werden im Nutzungsdatensatz festgehalten.
+Im Gehmodus hörst du eine Vorgabe in deiner Sprache und sprichst das Wort in der Zielsprache. Bei eingeschaltetem Bildschirm übernimmt die Erkennung der geräteeigene Spracherkennungsdienst. Ob dieser Dienst das Audio auf dem Gerät verarbeitet oder an die Server des Betriebssystemanbieters (Google oder Apple) sendet, hängt vom Gerät, von der Sprache und von den Geräteeinstellungen ab und richtet sich nach den Bedingungen dieses Anbieters; über den Lernomi-Server läuft dieser Weg nicht. Bei ausgeschaltetem Bildschirm oder wenn das Telefon in der Tasche steckt, wird das Audio als 16-kHz-Mono-Aufnahme an den Lernomi-Server gesendet und an einen der unten aufgeführten Spracherkennungsanbieter weitergegeben. Die Audiodatei wird weder auf dem Server noch beim Anbieter gespeichert; nur der erkannte Text, das erwartete Wort und die Cliplänge werden im Nutzungsdatensatz festgehalten.
 
 - Das Mikrofon wird nur geöffnet, wenn du den Gehmodus startest; eine dauerhafte Benachrichtigung ist sichtbar, und du kannst ihn aus der App beenden.
 - Bei ausgeschaltetem Bildschirm läuft die Aufnahme über den Mechanismus, den das Betriebssystem dafür vorsieht: unter Android ein Vordergrunddienst vom Typ "Mikrofon"{{ifIos}}, unter iOS eine Hintergrund-Audiositzung{{/ifIos}}. Die System-Mikrofonanzeige bleibt an.
@@ -401,11 +401,11 @@ Der Wiederholungsplan, der Inhalt der Tagesrunde, der Niveauvorschlag und die Wo
 
 ## 5. Von KI verarbeitete Texte
 
-Deine Sprechpraxis (Rollenspiel), Schreibaufgaben und Prüfungsantworten werden zur Erzeugung von Rückmeldungen an Anbieter von Sprachmodellen gesendet. Gesendet wird nur der von dir geschriebene oder gesprochene Text und das Szenario der Sprechübung; Name und E-Mail-Adresse werden nicht gesendet. Die Anbieter arbeiten unter API-Bedingungen und Auftragsverarbeitungsverträgen, in denen sie zusagen, die Daten nicht für Modelltraining zu verwenden. Die App weist deutlich darauf hin, dass KI-Figuren keine echten Personen sind (Transparenz nach Art. 50 der KI-Verordnung der EU). Antworten können Fehler enthalten; du kannst sie uns über die Schaltfläche "Melden" unter jeder Antwort mitteilen, und Meldungen werden von einem Menschen geprüft. Lernomi trifft über dich keine ausschließlich auf automatisierter Verarbeitung beruhende Entscheidung mit rechtlicher Wirkung.
+Deine Sprechpraxis (Rollenspiel), Schreibaufgaben und Prüfungsantworten werden zur Erzeugung von Rückmeldungen an Anbieter von Sprachmodellen gesendet. Gesendet wird nur der von dir geschriebene oder gesprochene Text und das Szenario der Sprechübung; Name und E-Mail-Adresse werden nicht gesendet. Die Anbieter arbeiten unter API-Bedingungen und Auftragsverarbeitungsverträgen, in denen sie zusagen, die Daten nicht für Modelltraining zu verwenden. Die App weist deutlich darauf hin, dass KI-Figuren keine echten Personen sind (Transparenz nach Art. 50 der KI-Verordnung der EU). Antworten können Fehler enthalten; du kannst sie über die Schaltfläche "Melden" unter jeder Antwort melden, und Meldungen werden von einem Menschen geprüft. Lernomi trifft über dich keine ausschließlich auf automatisierter Verarbeitung beruhende Entscheidung mit rechtlicher Wirkung.
 
 ## 6. Dienstleister, die Daten erhalten, und Übermittlung ins Ausland
 
-Die folgenden Anbieter arbeiten nur zum angegebenen Zweck und nur mit den für diese Aufgabe erforderlichen Daten; keiner von ihnen darf die Daten für eigene Zwecke verwenden. Unsere Server stehen in Deutschland. Die für Übermittlungen aus der Türkei in die EU und aus der EU in die USA bzw. das Vereinigte Königreich verwendete Garantie steht in der letzten Spalte: der von der türkischen Behörde nach Art. 9 KVKK veröffentlichte Standardvertrag sowie Standardvertragsklauseln oder ein Angemessenheitsbeschluss nach Kapitel V DSGVO.
+Die folgenden Anbieter arbeiten nur zum angegebenen Zweck und nur mit den für diese Aufgabe erforderlichen Daten; keiner von ihnen darf die Daten für eigene Zwecke verwenden. Die Server stehen in Deutschland. Die für Übermittlungen aus der Türkei in die EU und aus der EU in die USA bzw. das Vereinigte Königreich verwendete Garantie steht in der letzten Spalte: der von der türkischen Behörde nach Art. 9 KVKK veröffentlichte Standardvertrag sowie Standardvertragsklauseln oder ein Angemessenheitsbeschluss nach Kapitel V DSGVO.
 
 {{processorsTable}}
 
@@ -413,7 +413,7 @@ Eine Übermittlung an Behörden erfolgt nur bei einer rechtlichen Verpflichtung 
 
 ## 7. Cookies und lokale Speicherung
 
-Im Web wird nur das unbedingt erforderliche Sitzungs-Cookie verwendet (um zu merken, dass du angemeldet bist, 30 Tage); deshalb gibt es kein Cookie-Banner. Marketing- oder Tracking-Cookies setzen wir nicht ein. In der lokalen Speicherung von Browser und App liegen Angaben wie Design-, Ton- und Benachrichtigungseinstellungen, Avatar-Auswahl und eine unterbrochene Sprechübung; diese verlassen dein Gerät nicht.
+Im Web wird nur das unbedingt erforderliche Sitzungs-Cookie verwendet (um zu merken, dass du angemeldet bist, 30 Tage); deshalb gibt es kein Cookie-Banner. Marketing- oder Tracking-Cookies werden nicht eingesetzt. In der lokalen Speicherung von Browser und App liegen Angaben wie Design-, Ton- und Benachrichtigungseinstellungen, Avatar-Auswahl und eine unterbrochene Sprechübung; diese verlassen dein Gerät nicht.
 
 ## 8. Produktanalyse und Abschalten
 
@@ -428,7 +428,7 @@ Um zu verstehen, welche Funktionen genutzt werden, schreibt Lernomi kurze Nutzun
 
 ## 8a. Kommerzielle elektronische Nachrichten
 
-Wir senden dir nur dienstbezogene Nachrichten: E-Mail-Bestätigung, Passwort-Reset, Konto- und Sicherheitshinweise sowie die von dir erlaubten Erinnerungen. Kommerzielle elektronische Nachrichten im Sinne des türkischen Gesetzes Nr. 6563 versenden wir nicht; sollten wir künftig Marketingnachrichten senden wollen, holen wir deine gesonderte Zustimmung über das türkische Nachrichtenverwaltungssystem (İYS) ein, und jede Nachricht enthält eine Abmeldemöglichkeit.
+Du erhältst nur dienstbezogene Nachrichten: E-Mail-Bestätigung, Passwort-Reset, Konto- und Sicherheitshinweise sowie die von dir erlaubten Erinnerungen. Kommerzielle elektronische Nachrichten im Sinne des türkischen Gesetzes Nr. 6563 werden nicht versendet; sollten künftig Marketingnachrichten versendet werden, wird zuvor deine gesonderte Zustimmung über das türkische Nachrichtenverwaltungssystem (İYS) eingeholt, und jede Nachricht enthält eine Abmeldemöglichkeit.
 
 ## 9. Speicherfristen
 
@@ -436,7 +436,7 @@ Wir senden dir nur dienstbezogene Nachrichten: E-Mail-Bestätigung, Passwort-Res
 - Protokolle der Sprechpraxis (dein Satz und die Antwort des Modells): 30 Tage, danach automatische Löschung.
 - Audioaufnahmen: werden nicht gespeichert.
 - Sitzungsdatensätze (IP, Gerätebezeichnung): für die Dauer der Sitzung, höchstens 30 Tage.
-- Finanzunterlagen (Abonnementrechnungen): die vom türkischen Handelsgesetzbuch und vom Steuerverfahrensgesetz vorgesehene Frist (10 Jahre), und nur soweit Google Play sie uns übermittelt.
+- Finanzunterlagen (Abonnementrechnungen): die vom türkischen Handelsgesetzbuch und vom Steuerverfahrensgesetz vorgesehene Frist (10 Jahre), und nur soweit Google Play sie übermittelt.
 - Schriftwechsel zu Rechteanfragen: 2 Jahre nach Abschluss der Anfrage.
 - Server-Backups: gelöschte Daten fallen spätestens innerhalb von {{backupRetentionDays}} Tagen aus den Backups heraus; Backups dienen nur der Notfallwiederherstellung, und ein gelöschtes Konto wird nie aus einem Backup wiederhergestellt.
 
@@ -452,9 +452,9 @@ Nach Art. 11 KVKK und Art. 15-22 DSGVO kannst du verlangen:
 - dass Berichtigung und Löschung den Dritten mitgeteilt werden, an die die Daten übermittelt wurden,
 - Schadensersatz, wenn dir ein Schaden entstanden ist.
 
-**Antragstellung:** Schreibe für Anträge nach DSGVO oder UK GDPR an {{privacyEmailEu}} und für Anträge nach türkischem Datenschutzrecht (KVKK) an {{privacyEmailTr}}; zur Identitätsprüfung genügt es, von der E-Mail-Adresse deines Kontos zu schreiben. In der Türkei kannst du nach der Mitteilung über das Verfahren für Anträge an den Verantwortlichen den Antrag auch schriftlich mit eigenhändiger Unterschrift, mit qualifizierter elektronischer Signatur oder von der in deinem Konto hinterlegten E-Mail-Adresse aus stellen. Wir bearbeiten Anträge kostenlos innerhalb von höchstens 30 Tagen; nach der DSGVO kann diese Frist bei Bedarf um zwei Monate verlängert werden, worüber wir dich informieren.
+**Antragstellung:** Schreibe für Anträge nach DSGVO oder UK GDPR an {{privacyEmailEu}} und für Anträge nach türkischem Datenschutzrecht (KVKK) an {{privacyEmailTr}}; zur Identitätsprüfung genügt es, von der E-Mail-Adresse deines Kontos zu schreiben. In der Türkei kannst du nach der Mitteilung über das Verfahren für Anträge an den Verantwortlichen den Antrag auch schriftlich mit eigenhändiger Unterschrift, mit qualifizierter elektronischer Signatur oder von der in deinem Konto hinterlegten E-Mail-Adresse aus stellen. Anträge werden kostenlos innerhalb von höchstens 30 Tagen bearbeitet; nach der DSGVO kann diese Frist bei Bedarf um zwei Monate verlängert werden, worüber du informiert wirst.
 
-**Beschwerde:** in der Türkei bei der Behörde zum Schutz personenbezogener Daten (kvkk.gov.tr). In der EU ist die zuständige Aufsichtsbehörde des Verantwortlichen nach dem Ort der Niederlassung die Landesbeauftragte für Datenschutz und Informationsfreiheit Nordrhein-Westfalen (LDI NRW). Nach Art. 77 DSGVO kannst du dich auch an die Behörde in deinem eigenen Land wenden. Im Vereinigten Königreich beim ICO. Wir bitten dich, dich zuerst an uns zu wenden; die meisten Anliegen können wir direkt lösen.
+**Beschwerde:** in der Türkei bei der Behörde zum Schutz personenbezogener Daten (kvkk.gov.tr). In der EU ist die zuständige Aufsichtsbehörde des Verantwortlichen nach dem Ort der Niederlassung die Landesbeauftragte für Datenschutz und Informationsfreiheit Nordrhein-Westfalen (LDI NRW). Nach Art. 77 DSGVO kannst du dich auch an die Behörde in deinem eigenen Land wenden. Im Vereinigten Königreich beim ICO. Bitte wende dich zuerst an den Verantwortlichen; die meisten Anliegen lassen sich direkt lösen.
 
 ## 11. Konto und Daten löschen
 
@@ -462,14 +462,14 @@ Du kannst dein Konto auf zwei Wegen löschen: in der App unter **Profil › Eins
 
 ## 12. Kinder
 
-Lernomi ist nicht für Personen unter 18 Jahren gestaltet und erhebt von ihnen wissentlich keine Daten. Die Nutzungsbedingungen beschränken die Kontoerstellung auf Personen ab 18 Jahren (siehe Nutzungsbedingungen, Ziffer 3). Die Inhalte richten sich an erwachsene Lernende und an die Vorbereitung auf offizielle Sprachprüfungen; da die App offene KI-Gespräche und Interaktion zwischen Nutzern enthält, ist sie für ein kindliches Publikum nicht geeignet. Erfahren wir, dass eine Person unter 18 Jahren ein Konto erstellt hat, löschen wir Konto und Daten; Eltern können an {{privacyEmailEu}} schreiben.
+Lernomi ist nicht für Personen unter 18 Jahren gestaltet und erhebt von ihnen wissentlich keine Daten. Die Nutzungsbedingungen beschränken die Kontoerstellung auf Personen ab 18 Jahren (siehe Nutzungsbedingungen, Ziffer 3). Die Inhalte richten sich an erwachsene Lernende und an die Vorbereitung auf offizielle Sprachprüfungen; da die App offene KI-Gespräche und Interaktion zwischen Nutzern enthält, ist sie für ein kindliches Publikum nicht geeignet. Wird bekannt, dass eine Person unter 18 Jahren ein Konto erstellt hat, werden Konto und Daten gelöscht; Eltern können an {{privacyEmailEu}} schreiben.
 
 ## 13. Sicherheit
 
-Alle Verbindungen sind mit HTTPS verschlüsselt. Passwörter werden als nicht umkehrbare Hashes gespeichert. Der Zugriff auf den Server ist auf Schlüssel beschränkt; Anmeldeversuche unterliegen einer Ratenbegrenzung. Für zerstörende Vorgänge wie die Kontolöschung sind ein Passwort oder eine frische Sitzung erforderlich. Bei einer Verletzung des Schutzes personenbezogener Daten benachrichtigen wir die Behörden (in der Türkei die Behörde innerhalb von 72 Stunden) nach KVKK und Art. 33-34 DSGVO und informieren dich.
+Alle Verbindungen sind mit HTTPS verschlüsselt. Passwörter werden als nicht umkehrbare Hashes gespeichert. Der Zugriff auf den Server ist auf Schlüssel beschränkt; Anmeldeversuche unterliegen einer Ratenbegrenzung. Für zerstörende Vorgänge wie die Kontolöschung sind ein Passwort oder eine frische Sitzung erforderlich. Bei einer Verletzung des Schutzes personenbezogener Daten werden die Behörden (in der Türkei die Behörde innerhalb von 72 Stunden) nach KVKK und Art. 33-34 DSGVO benachrichtigt und du wirst informiert.
 
 ## 14. Änderungen
 
-Wenn wir diese Erklärung ändern, werden Gültigkeitsdatum und Version auf dieser Seite aktualisiert; bei einer Änderung, die die Verarbeitungszwecke erweitert, informieren wir in der App und holen erforderlichenfalls erneut eine Einwilligung ein. Fragen: {{privacyEmailEu}}.`,
+Wenn sich diese Erklärung ändert, werden Gültigkeitsdatum und Version auf dieser Seite aktualisiert; bei einer Änderung, die die Verarbeitungszwecke erweitert, wird in der App informiert und erforderlichenfalls erneut eine Einwilligung eingeholt. Fragen: {{privacyEmailEu}}.`,
   },
 };
