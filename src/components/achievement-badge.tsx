@@ -129,6 +129,20 @@ export type BadgeRow = {
   unlocked: boolean;
 };
 
+/**
+ * Rozetin KENDİ ikonu, adından.
+ *
+ * Harita modül içinde kalıyordu ve rozet duvarı (`achievement-wall`) ona
+ * ulaşamadığı için her rozete `TrophyIcon` çiziyordu: sunucunun her satırda
+ * gönderdiği `icon` alanı duvarda hiç kullanılmıyordu ve kırk yedi rozet
+ * birbirinin aynısı görünüyordu. Kutlama kartı baştan beri doğrusunu
+ * çiziyordu; artık ikisi de buradan geçiyor.
+ */
+export function BadgeIcon({ name, size }: { name: string; size?: number }) {
+  const Icon = ICONS[name] ?? StarIcon;
+  return <>{Icon({ size })}</>;
+}
+
 export function AchievementBadge({
   row,
   size = 58,
@@ -140,7 +154,6 @@ export function AchievementBadge({
   onClick?: () => void;
   selected?: boolean;
 }) {
-  const Icon = ICONS[row.icon] ?? StarIcon;
   const color = TIER_COLOR[row.tier] ?? "var(--color-brand)";
   const pct = row.target > 0 ? Math.min(100, Math.round((row.done / row.target) * 100)) : 0;
 
@@ -167,10 +180,10 @@ export function AchievementBadge({
         }}
       >
         {row.unlocked ? (
-          <Icon size={Math.round(size * 0.45)} />
+          <BadgeIcon name={row.icon} size={Math.round(size * 0.45)} />
         ) : (
           <>
-            <Icon size={Math.round(size * 0.4)} />
+            <BadgeIcon name={row.icon} size={Math.round(size * 0.4)} />
             <span
               className="absolute -bottom-1 -right-1 flex h-5 w-5 items-center justify-center rounded-full"
               style={{ background: "var(--surface)", color: "var(--text-muted)" }}

@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo, useState } from "react";
 import { motion } from "framer-motion";
-import { TIER_COLOR, type BadgeRow } from "@/components/achievement-badge";
+import { BadgeIcon, TIER_COLOR, type BadgeRow } from "@/components/achievement-badge";
 import { CheckIcon, TrophyIcon } from "@/components/icons";
 import { EmptyCard } from "@/components/empty-card";
 import { GROUP_LABEL_KEYS, GROUP_ORDER } from "@/lib/achievement-groups";
@@ -225,7 +225,11 @@ function AchievementCard({
             : { background: "var(--surface-2)", color: "var(--text-faint)" }
         }
       >
-        <TrophyIcon size={24} />
+        {/* Rozetin KENDİ ikonu: sunucu her satırda `icon` gönderiyor ve
+            kutlama kartı baştan beri onu çiziyordu; duvar haritaya
+            ulaşamadığı için hepsine kupa koyuyordu — kırk yedi rozet
+            birbirinin aynısı görünüyordu. */}
+        <BadgeIcon name={row.icon} size={24} />
       </span>
       <p className="mt-2 text-strong">{row.title}</p>
       <p className="muted mt-0.5 text-micro">{row.hint}</p>

@@ -15,8 +15,9 @@ import {
  * kutlamada da elli yedi rozetin hepsi KUPA görünüyordu - iki rozeti
  * birbirinden ayıran tek şey kademe rengiydi.
  *
- * Tanınmayan ad kupaya düşüyor: sunucu yeni bir ikon adı gönderdiğinde
- * yayımlanmış sürümler boş kutu çizmesin.
+ * Tanınmayan ad YILDIZA düşüyor - webin `BadgeIcon` fallback'iyle aynı: sunucu
+ * yeni bir ikon adı gönderdiğinde yayımlanmış sürümler boş kutu çizmesin ve
+ * iki uygulama aynı yedeği göstersin.
  */
 const ICONS: Record<string, (p: { color?: string; size?: number }) => React.ReactElement> = {
   BookIcon, BookOpenIcon, CalendarIcon, ChatIcon, CheckIcon, CompassIcon, FlagIcon,
@@ -26,6 +27,6 @@ const ICONS: Record<string, (p: { color?: string; size?: number }) => React.Reac
 };
 
 export function AchievementIcon({ name, color, size }: { name: string; color: string; size: number }) {
-  const Icon = ICONS[name] ?? TrophyIcon;
+  const Icon = ICONS[name] ?? StarIcon;
   return <Icon color={color} size={size} />;
 }
