@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
+import { grammarLine } from "./wordGrammar";
 import { t as tx, nativeLangName, targetLangName } from "../lib/i18n";
 import { foldCase, foldCompare, foldTight } from "../lib/textFold";
 import { matchSentence, VERDICT_KEYS, type SentenceMatch } from "../lib/sentenceMatch";
@@ -517,6 +518,9 @@ function TypingRound({ round, onDone, colors }: { round: Round; onDone: Done; co
   return (
     <RoundShell footer={inputBlock} sheet={fb ? <FeedbackFooter data={fb} onContinue={() => onDone(fb.correct, { ...miss(fb.correct, classifyTyping(val, [word.de, withArtikel(word), ...(round.alternatives ?? [])]), val), hintUsed: hintShown })} colors={colors} /> : undefined}>
       <Prompt label={tx("rounds.write_equivalent", { lang: targetLangName() })} big={word.tr} sub={word.en} colors={colors} />
+      {/* Yazma turunda da tür/çoğul: web `typing-game` aynı satırı çiziyor ve
+          artikeli olan bir ismi yazarken çoğulunu bilmek işin parçası. */}
+      <Text variant="caption" color={colors.textMuted} style={{ textAlign: "center", marginTop: -spacing.sm, marginBottom: spacing.md }}>{grammarLine(word, word.tr)}</Text>
       <MascotMid mood={fb === null ? "idle" : fb.correct ? "thumbsup" : "sad"} hidden={!!fb} />
     </RoundShell>
   );
@@ -669,6 +673,13 @@ function SelfAssess({ round, onDone, colors }: { round: Round; onDone: Done; col
   return (
     <RoundShell footer={footer}>
       <Prompt label={tx(round.game === "intro" ? "rounds.new_word" : "rounds.recall")} big={withArtikel(word)} speakText={withArtikel(word)} sub={typeof round.sentence === "string" ? round.sentence : null} colors={colors} />
+      {/*
+        TÜR VE ÇOĞUL. Sunucu her kelimede `typ` ve `formen` gönderiyor ve web
+        bunu yeni kelime turunda baştan beri yazıyor; mobil iki alanı da hiç
+        okumuyordu. Öğrenci Android'de bir kelimenin isim mi fiil mi olduğunu
+        ve çoğulunun ne olduğunu HİÇ görmüyordu - kelimenin yarısı eksikti.
+      */}
+      <Text variant="caption" color={colors.textMuted} style={{ textAlign: "center", marginTop: -spacing.sm, marginBottom: spacing.md }}>{grammarLine(word, word.tr)}</Text>
       {reveal ? (
         <View style={{ backgroundColor: colors.surface, borderRadius: radii.lg, borderWidth: 1, borderColor: colors.hairline, padding: spacing.lg }}>
           <Text variant="h3">{meaningLine(word)}</Text>
