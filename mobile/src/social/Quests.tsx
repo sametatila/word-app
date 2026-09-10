@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { t, formatNumber } from "../lib/i18n";
+import { t, formatNumber, formatPercent } from "../lib/i18n";
 import { Alert, View } from "react-native";
 import { social, errorText, type FriendRow, type QuestView } from "../api/social";
 import { Text } from "../ui/Text";
@@ -63,7 +63,7 @@ export function Quests({ friends, me, onChanged }: { friends: FriendRow[]; me: s
                 <IconTile icon={done ? CheckIcon : TargetIcon} tint={done ? colors.success : colors.textMuted} solid={done} />
                 <View style={{ flex: 1 }}>
                   <Text variant="bodyStrong" numberOfLines={1}>{t("quests.past_row", { name: q.partner.name ?? t("social.unnamed_short"), xp: formatNumber(q.targetXp) })}</Text>
-                  <Text variant="micro" color={colors.textMuted}>{done ? t("quests.completed") : `${q.pct}% · ${formatNumber(q.totalXp)} XP`}</Text>
+                  <Text variant="micro" color={colors.textMuted}>{done ? t("quests.completed") : `${formatPercent(q.pct)} · ${formatNumber(q.totalXp)} XP`}</Text>
                 </View>
                 <PersonAvatar userId={q.partner.userId} name={q.partner.name} size={32} />
               </Card>

@@ -126,6 +126,23 @@ export function formatNumber(n: number): string {
   return Math.round(n).toLocaleString(dateLocale());
 }
 
+/**
+ * Yüzde — işaretin YERİ dile göre değişiyor: Türkçe "%45", İngilizce "45%",
+ * Almanca "45 %". Web karşılığı `lib/i18n/dict` `formatPercent` ve o da aynı
+ * üç biçimi veriyor (orada sözlükteki `common.pct` üzerinden).
+ *
+ * `LevelBadge` içinde modül içinde duruyordu; iki sosyal yüzey ise işareti
+ * KODA GÖMÜLÜ yazıyordu (`${pct}%`), yani Türkçe ve Almanca arayüzde de
+ * İngilizce biçim çıkıyordu. Tek yeri burası.
+ */
+export function formatPercent(pct: number): string {
+  try {
+    return new Intl.NumberFormat(dateLocale(), { style: "percent", maximumFractionDigits: 0 }).format(pct / 100);
+  } catch {
+    return `${Math.round(pct)}%`;
+  }
+}
+
 export function currentLang(): NativeLang {
   return lang;
 }

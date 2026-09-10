@@ -1,7 +1,7 @@
 import React from "react";
 import { View } from "react-native";
 import { Text } from "./Text";
-import { t, dateLocale } from "../lib/i18n";
+import { t, formatPercent } from "../lib/i18n";
 import { useTheme, radii } from "../theme";
 
 /**
@@ -32,15 +32,6 @@ function toneOf(level: string, colors: ReturnType<typeof useTheme>["colors"]): s
   }
 }
 
-/** Yüzde biçimi yerelden: Türkçe "%45", Almanca "45 %". */
-function pctLabel(pct: number): string {
-  try {
-    return new Intl.NumberFormat(dateLocale(), { style: "percent", maximumFractionDigits: 0 }).format(pct / 100);
-  } catch {
-    return `${Math.round(pct)}%`;
-  }
-}
-
 export function LevelBadge({ level, mastered, total, compact = false }: { level: string; mastered: number; total: number; compact?: boolean }) {
   const { colors } = useTheme();
   const tone = toneOf(level, colors);
@@ -60,7 +51,7 @@ export function LevelBadge({ level, mastered, total, compact = false }: { level:
         </View>
         {!compact && total > 0 ? (
           <Text variant="caption" color={colors.textMuted}>
-            {pct < 1 && mastered > 0 ? t("common.pct_lt1") : pctLabel(pct)}
+            {pct < 1 && mastered > 0 ? t("common.pct_lt1") : formatPercent(pct)}
           </Text>
         ) : null}
       </View>

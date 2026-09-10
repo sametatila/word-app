@@ -5,7 +5,7 @@ import type { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import type { RootStackParams } from "../navigation/RootStack";
 import { goFriends } from "../lib/goFriends";
 import { social, type QuestView } from "../api/social";
-import { t, formatNumber } from "../lib/i18n";
+import { t, formatNumber, formatPercent } from "../lib/i18n";
 import { useAuth } from "../lib/AuthContext";
 import { Text } from "../ui/Text";
 import { Card } from "../ui/Card";
@@ -69,7 +69,7 @@ export function FriendPulse() {
             </View>
           )}
         </View>
-        {!invited ? <Text variant="h3" color={colors.primaryText}>{q.pct}%</Text> : <ArrowRightIcon color={colors.textFaint} size={20} />}
+        {!invited ? <Text variant="h3" color={colors.primaryText}>{formatPercent(q.pct)}</Text> : <ArrowRightIcon color={colors.textFaint} size={20} />}
       </Card>
     </PressableScale>
   );
