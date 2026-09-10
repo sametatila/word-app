@@ -5048,3 +5048,22 @@ okunuyor, ve alan sunucudan zaten geliyordu.
 §11.122 ile aynı kalıbın üçüncü örneği: **sunucu gönderiyor, mobil tipi
 düşürüyor, yüzey hiç bilmiyor.** Parity 58'in düşen-alan listesi bu yüzden
 sonuç tipinde tutuluyor — ama kapak tipinde henüz böyle bir kapı yok.
+
+### 11.126 Sözlük kopyaları geri geldi — ve neden geri geldiği
+
+§11.102'de silinen dokuz `prog.*`/`progw.*` anahtarı, paralel bir oturum
+tarafından **geri kondu** (9bcc0256): silinmelerini kazara sanmış, çünkü bu
+depoda commit'ler ayrı bir `GIT_INDEX_FILE` ile kuruluyor ve commit edilen
+içerik çalışma ağacına yansımıyor. Teşhis ettiği tehlike gerçek; ama o
+commit'in sebebi o değildi — silme bilinçliydi.
+
+Ölçüldü: dokuzunun da kodda **sıfır kullanımı** var (web `progress-view`
+mobil kaynaklı `progress.*` anahtarlarını kullanıyor). Yani geri konan
+anahtarlar ölü. İkinci kez silindi, commit mesajı sebebi yazıyor.
+
+**Açık kalan kapı:** `i18n-check` "çağrılan ama sözlükte yok"u yakalıyor,
+tersini — **sözlükte var ama hiç çağrılmıyor** — yakalamıyor. Bu olay tam da o
+boşluktan geçti. Ölçüldü: düz metinle çağrılmayan 522 web anahtarı var ve
+büyük çoğunluğu dinamik aile (`ach.*` rozet kimliğinden kuruluyor), yani
+kuralın kendisi dikkatli kurulmalı — gürültülü bir kapı §11.109'un dersine
+göre bulguyu gizler. Sıradaki turun ilk işi.
