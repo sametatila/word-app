@@ -48,6 +48,8 @@ export type NativeDict = {
    * konuşuyor.
    */
   roleplay: Record<string, { scene: string; partner: string; openingTr: string; goal: string }>;
+  /** Can-do ifadesi — anahtar `A1.SPK.1` biçiminde. */
+  cando: Record<string, string>;
 };
 
 /*

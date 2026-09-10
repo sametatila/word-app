@@ -76,3 +76,23 @@ export async function nativeTitle(
   const dict = await nativeDict();
   return dict?.meta[lessonId]?.title ?? null;
 }
+
+/**
+ * Can-do ifadelerinin ana dildeki karşılıkları.
+ *
+ * `Cando` tipinde yalnız `tr` var; İngilizcesi kendi hattında
+ * (`data/lessons/cando/`) duruyor ve anahtarı `id` (`A1.SPK.1`). Kaynak
+ * dosyaya yedinci bir konumsal argüman eklemek yerine dışarıdan bağlandı.
+ *
+ * Karşılığı olmayan ifade DÜŞÜYOR — İngilizce bir listenin ortasında tek
+ * bir Türkçe madde, yarım çevirinin en görünür hâli.
+ */
+export async function nativeCando(
+  ids: string[],
+  lang: NativeLang | null | undefined,
+): Promise<string[] | null> {
+  if (!lang || lang === DEFAULT_NATIVE || lang !== "en") return null;
+  const dict = await nativeDict();
+  if (!dict) return null;
+  return ids.map((id) => dict.cando[id]).filter((t): t is string => Boolean(t));
+}

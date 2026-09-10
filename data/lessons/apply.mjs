@@ -82,7 +82,11 @@ const roleplay = {};
 for (const r of read("roleplay"))
   roleplay[r.lesson] = { scene: r.sceneEn, partner: r.partnerEn, openingTr: r.openingEn, goal: r.goalEn };
 
-const data = { lecture, lectureSplit, frames, ordinals, notes, vocab, patterns, meta, roleplay };
+/** Can-do ifadeleri — anahtar `id` (`A1.SPK.1`), kaynakta zaten var. */
+const cando = {};
+for (const r of read("cando")) cando[r.id] = r.en;
+
+const data = { lecture, lectureSplit, frames, ordinals, notes, vocab, patterns, meta, roleplay, cando };
 
 mkdirSync(OUT, { recursive: true });
 writeFileSync(`${OUT}native-en.json`, `${JSON.stringify(data)}\n`);
@@ -91,5 +95,5 @@ const n = (o) => Object.keys(o).length;
 console.log(
   "native-en.json yazıldı\n" +
     `  anlatım ${n(lecture)} (+${n(lectureSplit)} bölünmüş) · çerçeve ${n(frames)} · sıra ${n(ordinals)} · not ${n(notes)}\n` +
-    `  sözlükçe ${n(vocab)} · kalıp ${n(patterns)} · ders ${n(meta)} · rol yapma ${n(roleplay)}`,
+    `  sözlükçe ${n(vocab)} · kalıp ${n(patterns)} · ders ${n(meta)} · rol yapma ${n(roleplay)} · can-do ${n(cando)}`,
 );

@@ -96,6 +96,7 @@
     "check:lessons-roleplay": "node data/lessons/roleplay/check.mjs",
     "check:lessons-lecture": "node data/lessons/lecture/check.mjs",
     "check:lessons-word": "node data/lessons/word/check.mjs",
+    "check:lessons-cando": "node data/lessons/cando/check.mjs",
     "lessons:apply": "node data/lessons/apply.mjs",
     "check:lessons-native": "npm run lessons:apply && tsx --tsconfig scripts/tsconfig.e2e.json scripts/check-native-lessons.ts"
   },

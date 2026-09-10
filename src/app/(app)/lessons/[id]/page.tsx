@@ -8,7 +8,7 @@ import { nextLesson } from "@/lib/lessons/progress";
 import { candoForLesson } from "@/lib/cando-map";
 import { candoById } from "@/lib/cando";
 import { titleMeta } from "@/lib/page-meta";
-import { localiseLesson, nativeTitle } from "@/lib/lessons/native-server";
+import { localiseLesson, nativeTitle, nativeCando } from "@/lib/lessons/native-server";
 import { isNativeLang } from "@/lib/i18n/dict";
 
 export const dynamic = "force-dynamic";
@@ -35,14 +35,10 @@ export default async function LessonPage({ params }: { params: Promise<{ id: str
     const profile = await ensureProfile(userId);
     const lang = isNativeLang(profile?.nativeLang) ? profile.nativeLang : null;
     lesson = await localiseLesson(source, lang);
-    /*
-      YARIM SAYFA YOK. Ders İngilizceye çevrildiyse can-do köprüsü DÜŞÜYOR:
-      `Cando` tipinde İngilizce alan yok (121 ifade, ayrı bir kalem) ve
-      İngilizce bir sayfanın altında tek bir Türkçe cümle, yarım çevirinin
-      en görünür hâli. Köprü zaten isteğe bağlı — dosyanın kendi kuralı:
-      "okunamazsa köprü yok, ders açılır".
-    */
-    if (lesson !== source) extras.cando = [];
+    // Can-do köprüsü de ana dilde: `Cando` tipinde yalnız `tr` var, İngilizcesi
+    // kendi hattında duruyor (`data/lessons/cando/`, anahtar `A1.SPK.1`).
+    const cando = await nativeCando(candoForLesson(source), lang);
+    if (cando) extras.cando = cando;
     const n = await nextLesson(userId, profile.course, profile.level);
     if (n && n.lesson.id !== lesson.id) {
       const titleTr = (await nativeTitle(n.lesson.id, lang)) ?? n.lesson.titleTr;
