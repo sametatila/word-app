@@ -338,6 +338,79 @@ Türkçe sözlük istemi, ve Almanca örnek cümlenin kendisi. İlk ikisi çevir
 turunda görülüyor, üçüncüsü GÖRÜLMÜYOR — çünkü o alan "çevrilmez" diye
 işaretli. Bu 16 parça ayrıca listelenip karara bağlanmalı.
 
+#### `lecture` SAYILDI: 17.369 çağrı ama 8.824 dize (2026-09-10)
+
+17.369 rakamı doğru — ama o `tr()` ÇAĞRISI sayısı, yazılacak DİZE sayısı
+değil. Ayrıştırıldı:
+
+```
+tr() çağrısı        17.369
+  düz dizeli        17.293   → BENZERSİZ 8.788 (%50,8)
+  şablon (`${…}`)      76   → kod, aşağıya bak
+```
+
+Her iki parçadan biri tekrar, ve tekrarlar birkaç kalıpta toplanmış:
+**287 dize tek başına 8.792 parçayı (%51) karşılıyor.**
+
+```
+2.116x "deyin."          347x "Tekrar edin:"      326x "Örnek:"
+1.797x "Tekrar dene."    345x "cümlesi doğru mu?" 341x "Doğru mu yanlış mı:"
+```
+
+Hat bu yüzden paketleri SIKLIĞA GÖRE sıralıyor (`data/lessons/lecture/`,
+59 paket × 150 dize): **ilk iki paket bütün anlatımın yarısını kapatıyor.**
+
+#### Şablonlar ayrı bir iş ve çok daha küçük
+
+38 dosya bir `word()` yardımcısı tanımlıyor ve 3.040 kez çağırıyor; her
+çağrı 3 `tr()` parçası üretiyor → çalışma anında 9.120 parça daha.
+Çevirisi 9.120 dize DEĞİL:
+
+```
+tr(`${n} kelimemiz:`)                     → 8 sıra sözcüğü (İlk … Son, her biri 380x)
+tr(`Türkçesi '${w.tr}' demek…`)           → `w.en` alanı + şablonun İngilizcesi
+tr("deyin.")                              → zaten düz dizelerde
+```
+
+Yani ~10 karar 9.120 parçayı kapatıyor. Ama `w.en` YOK: `VocabItem` tipine
+eklenmesi ve yardımcının İngilizce dalının yazılması gerekiyor — kod fazı.
+
+#### Aynı Türkçe dize iki İngilizce karşılık isteyebiliyor
+
+Paketlere Almanca bağlam eklendikten sonra çıktı: 8.788 dizenin 63'ü birden
+çok Almanca kelimeyle eşleşiyor, 33'ü sözlük istemi.
+
+```
+"Türkçesi 'yüz' demek"   → hundert   VE  das Gesicht
+"Türkçesi 'son' demek"   → letzte    VE  das Ende
+"Türkçesi 'açmak' demek" → öffnen, aufmachen  VE  anmachen
+```
+
+Türkçe kurtuluyor çünkü 'yüz' de çok anlamlı; İngilizcede 'a hundred' ile
+'face' aynı sözcük değil. O 33 satır Almanca kelimeye göre bölündü
+(33 → 69 satır) ve hattın anahtarı `(tr, de)` oldu. Bölünmeyenler
+("deyin.", "Örnek:") yüzlerce kelimeyle eşleşiyor ama çevirileri bağlamdan
+bağımsız.
+
+**Toplam: 8.824 satır, 17.293 parçayı kapatıyor.**
+
+#### Kapının bu alana özgü kuralı: SON NOKTALAMA
+
+Parçalar arka arkaya SESLİ okunuyor ve aralarına Almanca kelimeler giriyor.
+Son karakter cümlenin nerede bittiğini söylüyor:
+
+```
+«.»  %35,1  bitmiş cümle
+«:»  %35,0  ARDINDAN Almanca kelime geliyor
+yok  %21,2  cümle Almanca kelimenin İÇİNDEN devam ediyor
+«?»   %8,6  soru
+```
+
+Üçüncüsü yapısal: Türkçe cümle Almanca kelimeyi SARIYOR —
+`tr("… Lütfen") de("hallo") tr("deyin.")`. İngilizcede kelime sona gider
+ama sarma korunabilir: **"Please say" + hallo + "after me."** Son noktalama
+eşitliği bu yapıyı ayakta tutan tek ölçüt ve kapıya hata olarak yazıldı.
+
 **Sonuç: `lecture` üç ayrı iş.**
 
 ```
