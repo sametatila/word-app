@@ -56,6 +56,14 @@ export async function GET(req: Request) {
         typ: words.typ,
         formen: words.formen,
         intervalDays: userWords.intervalDays,
+        /* Tekrar takvimi de gidiyor: web listesi "tekrar zamanı geldi",
+           "3 gün sonra" ve kaç kez unutulduğunu yazıyor, çünkü sunucu
+           bileşeninde tabloyu doğrudan okuyor. Mobilin tek kaynağı bu uç ve
+           üç alan hiç gönderilmiyordu - Android listesi kelimenin ne zaman
+           geleceğini ve zorlandığını söyleyemiyordu. */
+        dueAt: userWords.dueAt,
+        lapses: userWords.lapses,
+        leech: userWords.leech,
       })
       .from(words)
       .leftJoin(userWords, and(eq(userWords.wordId, words.id), eq(userWords.userId, userId)))
@@ -73,6 +81,9 @@ export async function GET(req: Request) {
       niveau: r.niveau,
       typ: r.typ,
       formen: r.formen,
+      dueAt: r.intervalDays == null ? null : (r.dueAt ? new Date(r.dueAt).toISOString() : null),
+      lapses: r.lapses ?? 0,
+      leech: r.leech ?? false,
       status: r.intervalDays == null ? "new" : r.intervalDays >= 21 ? "mastered" : "learning",
     }));
 

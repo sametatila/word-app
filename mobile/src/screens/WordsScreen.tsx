@@ -11,7 +11,7 @@ import { useLayout } from "../lib/useLayout";
 import { Skeleton, SkeletonLine, SkeletonTile, textHeight } from "../ui/Skeleton";
 import { useAuth } from "../lib/AuthContext";
 import { api } from "../api/client";
-import { STATUS_KEY, type WordRow, type WordStatus } from "../data/words";
+import { STATUS_KEY, statusOf, dueLabelKey, type WordRow, type WordStatus } from "../data/words";
 import { grammarLine } from "../game/wordGrammar";
 import { useTheme, spacing, radii, type Palette } from "../theme";
 
@@ -23,8 +23,14 @@ const FILTERS: { key: "" | WordStatus; label: string }[] = [
   { key: "mastered", label: "words.status_mastered" },
 ];
 
+/* Renkler web `word-list` `statusOf` tonlarıyla aynı rolde: mastered mint,
+   familiar sky, learning flame, leech rose, new soluk. */
 function statusColor(s: WordStatus, colors: Palette): string {
-  return s === "mastered" ? colors.success : s === "learning" ? colors.info : colors.textMuted;
+  if (s === "leech") return colors.danger;
+  if (s === "mastered") return colors.success;
+  if (s === "familiar") return colors.info;
+  if (s === "learning") return colors.streak;
+  return colors.textMuted;
 }
 
 export function WordsScreen() {
@@ -129,7 +135,9 @@ export function WordsScreen() {
           )
         }
         renderItem={({ item: w }) => {
-          const sc = statusColor(w.status, colors);
+          const st = statusOf(w);
+          const sc = statusColor(st, colors);
+          const due = dueLabelKey(w.dueAt);
           return (
             // Çok sütunda satır paydan payını alsın; tek sütunda `flex` VERİLMEZ,
             // FlatList'in dikey kabında yüksekliği doldurmaya çalışırdı.
@@ -139,13 +147,21 @@ export function WordsScreen() {
                 <Text variant="caption" color={colors.textMuted}>{w.tr}</Text>
                 {/* Tür ve çoğul — web listesi de aynı satırı yazıyor. */}
                 <Text variant="micro" color={colors.textFaint}>{grammarLine(w, w.tr)}</Text>
+                {/* TEKRAR TAKVİMİ: ne zaman geleceği ve kaç kez zorlanıldığı.
+                    Web listesi ikisini de yazıyor; mobil yalnız durumu
+                    gösteriyordu, yani "bu kelime beni zorluyor" bilgisi
+                    hiçbir yerde yoktu. */}
+                <Text variant="micro" color={colors.textFaint}>
+                  {t(due.key, due.n === undefined ? undefined : { n: due.n })}
+                  {w.lapses ? ` · ${t("words.n_lapses", { n: w.lapses })}` : ""}
+                </Text>
               </View>
               <SpeakButton text={w.artikel ? `${w.artikel} ${w.de}` : w.de} size={34} />
               <View style={{ backgroundColor: colors.surface2, borderRadius: radii.sm, paddingHorizontal: 7, paddingVertical: 2 }}>
                 <Text variant="micro" color={colors.textMuted}>{w.niveau}</Text>
               </View>
               <View style={{ width: 9, height: 9, borderRadius: 5, backgroundColor: sc }} />
-              <Text variant="micro" color={sc}>{t(STATUS_KEY[w.status])}</Text>
+              <Text variant="micro" color={sc}>{t(STATUS_KEY[st])}</Text>
             </View>
           );
         }}
