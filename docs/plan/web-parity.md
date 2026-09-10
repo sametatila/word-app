@@ -952,8 +952,31 @@ borçları betikte yazılı - hepsi birden eklenirse taban 173'ten 281'e çıkar
     log.ts               2
     native.ts            2
 
-Her biri "içerik mi arayüz mü" ayrımı istiyor; temizlenen dosya listeye
-eklenir.
+AYRIM YAPILDI (altısının hepsi tek tek okundu) ve sonuç şu: HİÇBİRİ
+kullanıcıya görünen bir yerelleştirme hatası değil. Beşinde Türkçe olması
+DOĞRU, altıncısı ölü:
+
+    log.ts             2   sunucu logu (`[roleplay-log] yazılamadı`) - tabandaki
+                           173 dizginin çoğu da aynı sınıf
+    native-server.ts   4   sunucu logu (`[native] ders çevrilemedi…`)
+    native.ts          2   TÜRKÇE İÇERİĞİ TANIYAN çerçeve deseni; Türkçe
+                           kalmalı, yoksa desen içeriği bulamaz
+    module-content.ts 35   `LEAD_INS` - içerikten yönergeyi kırpan Türkçe
+                           desen listesi; aynı sebep
+    roleplay.ts       19   modele giden yönerge metni, kullanıcı görmüyor
+    modules.ts        46   `MODULE_THEMES` - ÇAĞIRANI YOK (src, scripts, mobil
+                           ve data'da tek kullanım yok; aynı dosyadaki
+                           `MODULE_SIZE` beş yerden kullanılıyor, yani ölü olan
+                           dosya değil o sabit). Yani Türkçeliği bugün kimseye
+                           görünmüyor; yüzey gelirse anahtar gerekir.
+
+Bu yüzden hiçbiri temizlenmedi ve `FORCE`a da eklenmedi: eklemek tabanı 173'ten
+281'e çıkarır ve kapı, gerçek hatayı gürültünün içinde saklardı. Ayrım burada
+yazılı, yani sonraki okuyucu altı dosyayı yeniden okumak zorunda değil.
+
+`MODULE_THEMES`in çağıranı olmaması "yazılmış ama bağlanmamış" ailesine
+(§11.10) ait bir kalem; yol haritasının modül katmanı için yazılmış, bugün
+modül adları başka yerden geliyor (`moduleExamPlan`).
 
 Yönlendirmeler artık ANAHTAR taşıyor (metin değil) ve çeviri gösterildiği
 yerde yapılıyor - koç cümleleri ve fark vurgusundaki kalıbın aynısı. Senaryo
