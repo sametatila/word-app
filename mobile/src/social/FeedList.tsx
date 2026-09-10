@@ -91,7 +91,22 @@ export function FeedList({ onFindFriends }: { onFindFriends?: () => void }) {
   useEffect(() => { void load(null); }, [load]);
 
   if (items === null) return <View>{[0, 1, 2].map((i) => <FeedCardSkeleton key={i} />)}</View>;
-  if (!items.length) return <EmptyCard icon={SparkIcon} tint={colors.primary} title={t("feedlist.your_feed_is_still_empty")} text={t("feedlist.empty_text")} action={onFindFriends ? t("feedlist.find_friends") : undefined} onAction={onFindFriends} />;
+  /*
+   * BOŞ DURUMDA DA HATA GÖRÜNÜYOR.
+   *
+   * İlk yükleme başarısız olunca `catch` listeyi boş diziye çekiyor (yoksa
+   * iskelet sonsuza kadar dönerdi) ve akış tam bu dala düşüyordu: kullanıcı
+   * "akışın henüz boş" görüyor, ağın koptuğunu HİÇ öğrenmiyordu. Liste
+   * yokken hata metni tek geri bildirim; web aynı kararı yazılı taşıyor
+   * (`components/social/feed`).
+   */
+  if (!items.length)
+    return (
+      <View>
+        <EmptyCard icon={SparkIcon} tint={colors.primary} title={t("feedlist.your_feed_is_still_empty")} text={t("feedlist.empty_text")} action={onFindFriends ? t("feedlist.find_friends") : undefined} onAction={onFindFriends} />
+        <ErrorText text={err} />
+      </View>
+    );
   return (
     <View>
       {items.map((it) => <FeedCard key={it.id} item={it} />)}
