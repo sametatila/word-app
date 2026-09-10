@@ -854,6 +854,9 @@ function Write({ w, level, colors, pad, onDone }: { w: WritingItem; level: strin
           kind: "writing", level,
           task: { prompt: w.task.prompt, constraints: [...w.task.checklist, `en az ${w.task.minWords} kelime`] },
           answer: { text: typed.trim() }, locale: "tr",
+          /* `day` YAZMA anahtarı (satır + günlük kota); gönderilmezse sunucunun
+             UTC günü işliyor. Web `assess-client` baştan beri gönderiyor. */
+          day: todayStr(),
         }),
       });
       setScore(d.result?.score?.overall ?? null);

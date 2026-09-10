@@ -2749,6 +2749,70 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   );
 }
 
+/* ── 73. "gun" YAZMA anahtari gonderiliyor mu ─────────────────────────────
+ * Bir ucun `clampDay(body.day)` yazmasi sunun isareti: satir O GUNE yaziliyor
+ * ve gunluk sayimlar (kota, seri, gorev) o gunun satirlarindan cikiyor. Gun
+ * gonderilmezse SUNUCUNUN gunu (UTC) isliyor - gece yarisindan sonra yapilan
+ * is dunku gune dusuyor. `/api/assess` tam boyleydi: web bastan beri
+ * gonderiyordu, mobil dort cagri yerinin hicbirinde gondermiyordu.
+ *
+ * Olculen sey CAGRI YERI degil UC: bir ucun yazma cagrilarindan en az biri gun
+ * tasiyorsa o platform "gonderiyor" sayiliyor. Cagri yeri basina olcmek yanlis
+ * pozitif uretiyordu - ayni ucun bazi eylemleri (mock-exam `save`) gun
+ * istemiyor, ve web cagriyi bir yardimcidan (`post`) geciriyor, yani uc adi
+ * cagri yerinde hic gecmiyor. */
+{
+  const gunIsteyen = [];
+  const gez = (yol) => {
+    for (const e of readdirSync(new URL("../src/app" + yol, import.meta.url), { withFileTypes: true })) {
+      if (e.isDirectory()) gez(yol + "/" + e.name);
+      else if (e.name === "route.ts" && /clampDay\(/.test(read("src/app" + yol + "/route.ts"))) gunIsteyen.push(yol);
+    }
+  };
+  gez("/api");
+
+  const gunGonderenler = (kokler) => {
+    const dosyalar = [];
+    const yurut = (d) => {
+      for (const e of readdirSync(new URL("../" + d, import.meta.url), { withFileTypes: true })) {
+        const p = d + "/" + e.name;
+        if (e.isDirectory()) { if (!/node_modules|__tests__|\/data\//.test("/" + p)) yurut(p); }
+        else if (/\.tsx?$/.test(e.name)) dosyalar.push(p);
+      }
+    };
+    for (const k of kokler) yurut(k);
+    const gonderen = new Set();
+    const cagiran = new Set();
+    for (const f of dosyalar) {
+      const src = read(f).replace(/\/\*[\s\S]*?\*\//g, " ").replace(/\/\/[^\n]*/g, " ");
+      for (const uc of gunIsteyen) {
+        let i = -1;
+        while ((i = src.indexOf(uc, i + 1)) >= 0) {
+          const pencere = src.slice(i, i + 900);
+          if (!/JSON\.stringify\(\{/.test(pencere)) continue;
+          cagiran.add(uc);
+          if (/\bday\b/.test(pencere)) gonderen.add(uc);
+        }
+      }
+    }
+    return { gonderen, cagiran };
+  };
+  const m = gunGonderenler(["mobile/src"]);
+  const w = gunGonderenler(["src/components", "src/lib", "src/app/(app)"]);
+  /* Yalniz IKI TARAFIN DA cagirdigi uclar karsilastiriliyor: bir tarafta hic
+     cagrilmayan uc bu bolumun sorusu degil (onu check:endpoints tutuyor). */
+  const ortak = gunIsteyen.filter((u) => m.cagiran.has(u) && w.cagiran.has(u));
+  const eksikMobil = ortak.filter((u) => !m.gonderen.has(u) && w.gonderen.has(u));
+  const eksikWeb = ortak.filter((u) => !w.gonderen.has(u) && m.gonderen.has(u));
+  sameList(
+    "gun anahtari tasiyan uclar",
+    eksikMobil.length ? eksikMobil.map((u) => u + " (mobil gondermiyor)") : ["yok"],
+    eksikWeb.length ? eksikWeb.map((u) => u + " (web gondermiyor)") : ["yok"],
+    "mobil eksigi",
+    "web eksigi",
+  );
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"

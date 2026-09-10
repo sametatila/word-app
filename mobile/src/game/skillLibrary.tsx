@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
+import { todayStr } from "./session";
 import { View, TextInput } from "react-native";
 import { t, formatPercent } from "../lib/i18n";
 import { Text } from "../ui/Text";
@@ -266,6 +267,10 @@ export function MonologueBody({ mono, level, exerciseId, onDone, colors }: {
           kind: "speaking", level,
           task: { prompt: mono.promptTr, targets: mono.targets.map((x) => x.de), constraints: [`${mono.minSeconds}–${mono.maxSeconds} saniye`, ...(mono.rubricHint ? [mono.rubricHint] : [])] },
           answer: { text, transcript: [text] }, exerciseId, locale: "tr", lang: currentTargetLang(),
+          /* `day` YAZMA anahtarı: satır o güne yazılıyor, günlük kota da o günün
+             satırlarından sayılıyor. Gönderilmezse sunucunun UTC günü işliyor ve
+             gece yarısından sonraki değerlendirme dünkü güne düşüyor. */
+          day: todayStr(),
         }),
       });
       const overall = d.result?.score?.overall ?? 0;

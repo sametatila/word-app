@@ -5,6 +5,7 @@ import { t as tx, nativeLangName, targetLangName } from "../lib/i18n";
 import { foldCase, foldCompare, foldTight } from "../lib/textFold";
 import { matchSentence, VERDICT_KEYS, type SentenceMatch } from "../lib/sentenceMatch";
 import { markKnown } from "./session";
+import { todayStr } from "./session";
 import { SentenceFeedback, type MarkedToken } from "../ui/TokenDiff";
 import { classifyOrder, classifyTyping, miss } from "../lib/errors";
 import { api } from "../api/client";
@@ -905,6 +906,12 @@ function TranslateRound({ round, onDone, colors }: { round: Round; onDone: Done;
               task: { prompt: `Çevir: ${s.tr}`, target: s.de },
               answer: { text: typed },
               locale: "tr",
+              /* `day` bir YAZMA anahtarı: değerlendirme satırı o güne yazılıyor ve günlük
+              kota o günün satırları sayılarak bulunuyor (bkz. api/assess `parseBody`).
+              Mobil göndermiyordu, yani sunucunun UTC günü işliyordu: gece yarısından
+              sonra yapılan değerlendirme dünkü güne düşüyor ve kota da yanlış güne
+              sayılıyordu. Web `assess-client` baştan beri gönderiyor. */
+              day: todayStr(),
             }),
           },
         );
