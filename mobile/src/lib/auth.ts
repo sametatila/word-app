@@ -41,7 +41,9 @@ export type AuthOutcome =
 async function post(path: string, body: Record<string, unknown>): Promise<Response> {
   return fetch(`${API_BASE}/api/auth/${path}`, {
     method: "POST",
-    headers: { "content-type": "application/json", accept: "application/json" },
+    // `origin` elle: RN bu başlığı koymuyor, Better Auth'un CSRF kontrolü ise
+    // çerez taşıyan POST'ta onu şart koşuyor (bkz. api/client.ts'teki uzun not).
+    headers: { "content-type": "application/json", accept: "application/json", origin: API_BASE },
     body: JSON.stringify(body),
   });
 }

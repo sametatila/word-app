@@ -86,6 +86,21 @@ export async function api<T = unknown>(path: string, init?: ApiInit): Promise<T>
       signal: ctl?.signal as RequestInit["signal"],
       headers: {
         accept: "application/json",
+        /*
+          ORIGIN ELLE EKLENIYOR. Tarayıcı bu başlığı kendisi koyar; React
+          Native koymaz. Better Auth'un CSRF kontrolü ise ÇEREZ TAŞIYAN her
+          POST'ta onu şart koşuyor ve yoksa isteği MISSING_OR_NULL_ORIGIN ile
+          reddediyor (api/middlewares/origin-check). Cihazda görüldü
+          2026-09-10: parola değiştirme ekranda "Missing or null Origin"
+          diyordu.
+
+          Güvenliği ZAYIFLATMIYOR: kontrolün amacı BAŞKA bir sitenin
+          tarayıcıdaki çerezle bize istek attırmasını engellemek. Native
+          uygulama tarayıcı değil ve zaten istediği başlığı koyabilir; burada
+          yapılan, kendi kökenimizi kendi istemcimizden doğru bildirmek.
+          `API_BASE` uygulamaya gömülü ve `trustedOrigins` listesinde.
+        */
+        origin: API_BASE,
         ...(init?.body ? { "content-type": "application/json" } : {}),
         ...(init?.headers ?? {}),
       },
