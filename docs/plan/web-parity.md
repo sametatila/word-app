@@ -5819,3 +5819,28 @@ kendi turunu bekliyor.
 mobil bunu `skipGames` ile hem günlük tura hem haftalık sınava söylüyor —
 sunucu o turu hiç üretmiyor. Yani "oynatıcısı yok" bir açık değil, yazılı bir
 sözleşme.
+
+
+### 11.156 Ünlem de bir kaçış: sekiz tur bileşeni ve yürüyüş kuyruğu
+
+§11.155'te `as unknown as`i kaldırırken ikinci kaçış biçimi göze çarptı:
+`const word = round.word!;` — sekiz tur bileşeninde. Tip "olmayabilir" diyor,
+kod "vardır" diye kestiriyor. İkisi arasındaki farkı yalnız çalışma anı
+gösterir ve orada da sessiz: kelimesiz bir tur boş ekran çizer.
+
+Çözüm **cast değil**: kelime dağıtıcıda bir kez sınanıp bileşene ayrı bir
+özellik olarak veriliyor. `round as WordRound` yazmak da aynı susturma
+olurdu — kapı onu yakalamazdı ama hata yine çalışma anına kalırdı.
+
+Yürüyüş modunda aynı kalıbın daha ince bir biçimi vardı:
+`rs.filter((r) => r.word).map((r) => ... r.word! ...)`. Süzgeç ve ünlem
+**ayrı iki iddia**: biri değişirse öteki sessizce yalan söylemeye başlar. Tek
+geçişe (`flatMap`) indirildi.
+
+**Kapı iki biçimi birden sayıyor** (§74: birleşim kaçışı + ünlem), ikisi de
+iki tarafta sıfır. Web'de sıfır olmasının sebebi disiplin değil TİP: oyun
+başına birleşim, kelimeyi zorunlu yapıyor.
+
+**Hâlâ açık:** mobilin `Round`u tek gövdeli gevşek tip olmayı sürdürüyor.
+Bu tur onun EN PAHALI iki sonucunu kapattı (şık biçimi, kelime varlığı);
+birleşime çevirmek ayrı bir iş.
