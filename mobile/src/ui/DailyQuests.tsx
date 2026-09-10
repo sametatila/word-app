@@ -6,11 +6,14 @@ import { Card } from "./Card";
 import { CheckIcon, BoltIcon } from "./icons";
 import { SkeletonBar, SkeletonLine, SkeletonTile } from "./Skeleton";
 import { useAuth } from "../lib/AuthContext";
-import { fetchQuests, type Quest } from "../game/quests";
+import { PressableScale } from "./PressableScale";
+import { fetchQuests, claimQuest, type Quest } from "../game/quests";
+import { todayStr } from "../game/session";
+import { bumpStats } from "../lib/statsSignal";
 import { useTheme, spacing, radii, softShadow, type Palette } from "../theme";
 import { CardGrid } from "./CardGrid";
 
-function QuestRow({ q, colors }: { q: Quest; colors: Palette }) {
+function QuestRow({ q, colors, onClaim, busy }: { q: Quest; colors: Palette; onClaim: () => void; busy: boolean }) {
   const pct = q.target ? Math.min(100, Math.round((q.done / q.target) * 100)) : 0;
   const complete = q.done >= q.target;
   return (
@@ -26,10 +29,21 @@ function QuestRow({ q, colors }: { q: Quest; colors: Palette }) {
           </View>
           <Text variant="micro" color={colors.textMuted} style={{ marginTop: 3 }}>{Math.min(q.done, q.target)}/{q.target}</Text>
         </View>
-        <View style={{ alignItems: "flex-end" }}>
-          <Text variant="bodyStrong" color={complete ? colors.successText : colors.primaryText}>+{q.xp}</Text>
-          <Text variant="micro" color={colors.textMuted}>XP</Text>
-        </View>
+        {/*
+          ÖDÜLÜ AL. Tamamlanmış ve alınmamış görevde düğme; alınmışsa yalnız
+          kazanılan XP yazıyor. Web aynı üç durumu çiziyor (`quest-card`):
+          alındı → "+N XP", tamam → "al" düğmesi, sürüyor → ilerleme.
+        */}
+        {complete && !q.claimed ? (
+          <PressableScale onPress={onClaim} disabled={busy} accessibilityRole="button" style={{ backgroundColor: colors.primary, borderRadius: radii.md, paddingHorizontal: spacing.md, paddingVertical: 9, opacity: busy ? 0.6 : 1 }}>
+            <Text variant="caption" color={colors.onPrimary}>{busy ? "…" : t("dailyquests.claim_xp", { xp: q.xp })}</Text>
+          </PressableScale>
+        ) : (
+          <View style={{ alignItems: "flex-end" }}>
+            <Text variant="bodyStrong" color={complete ? colors.successText : colors.primaryText}>+{q.xp}</Text>
+            <Text variant="micro" color={colors.textMuted}>XP</Text>
+          </View>
+        )}
       </View>
     </Card>
   );
@@ -67,6 +81,23 @@ export function DailyQuests() {
   const { colors } = useTheme();
   const { user } = useAuth();
   const [quests, setQuests] = useState<Quest[] | null>(null);
+  /** Hangi görevin ödülü alınıyor (çift dokunuşu engeller). */
+  const [claiming, setClaiming] = useState<string | null>(null);
+
+  async function claim(questId: string) {
+    if (claiming) return;
+    setClaiming(questId);
+    try {
+      const b = await claimQuest(questId, todayStr());
+      setQuests(b.quests ?? []);
+      /* XP değişti: başlıktaki toplam ve özet tazelensin (bkz. statsSignal). */
+      if (b.xp > 0) bumpStats();
+    } catch {
+      /* çevrimdışı: pano olduğu gibi kalıyor, kullanıcı yeniden deneyebilir */
+    } finally {
+      setClaiming(null);
+    }
+  }
 
   useEffect(() => {
     if (!user) { setQuests([]); return; }
@@ -94,7 +125,7 @@ export function DailyQuests() {
         <Text variant="h3" color={colors.textMuted}>{t("dailyquests.daily_quests")}</Text>
         <Text variant="caption" color={colors.textMuted}>{doneCount}/{quests.length} tamam</Text>
       </View>
-      <CardGrid minItemWidth={380}>{quests.map((q) => <QuestRow key={q.id} q={q} colors={colors} />)}</CardGrid>
+      <CardGrid minItemWidth={380}>{quests.map((q) => <QuestRow key={q.id} q={q} colors={colors} busy={claiming === q.id} onClaim={() => void claim(q.id)} />)}</CardGrid>
     </View>
   );
 }

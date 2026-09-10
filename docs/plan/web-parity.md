@@ -3645,3 +3645,43 @@ değil, bloğun sonuna kadar okumak gerekiyor.
 web→mobil yönünde: mobilde eksik alanı yakalıyor, mobilde FAZLA olanı
 yakalamıyor. Bugün fazlası yok (`dueTomorrow` iki tarafta da var), o yüzden
 kural değiştirilmedi - ama ters yön kapının kör noktası olarak kayda geçsin.
+
+### 11.72 Günün görevlerinin ÖDÜLÜ Androidde hiç alınamıyordu
+
+`lernomi:stats`ın kalan yayıncılarını ararken web `quest-card`ın ne yaptığına
+baktım ve ödül yolunun mobilde HİÇ OLMADIĞI çıktı.
+
+    web    GET /api/quests → pano · POST /api/quests {questId, day} → ödül
+    mobil  GET /api/quests → pano · POST YOK
+
+Mobil tip zaten tam: `Quest` `xp` ve `claimed` alanlarını, `QuestBoard`
+`allClaimed`ı taşıyor. Yani sözleşme modellenmiş, alacak DÜĞME yazılmamış.
+Kullanıcı günün görevini bitiriyor, satır "tamam" görünüyor ve XP hiç
+alınmıyor - hesabına hiç geçmiyor. Web baştan beri alıyor.
+
+Eklenenler:
+
+- `game/quests.ts` `claimQuest(questId, day)` - aynı uç, POST. `questId: "all"`
+  üçü birden bitince açılan toplu ödül; sunucu aynı yerden veriyor.
+- `ui/DailyQuests.tsx` `QuestRow` artık üç durumu çiziyor, webdeki gibi:
+  alındı → "+N XP", tamam → "al" düğmesi, sürüyor → ilerleme sayısı. Çift
+  dokunuş `claiming` ile kilitli, çevrimdışında pano bozulmuyor.
+- Ödül alınınca `bumpStats()` - başlıktaki toplam ve özet tazelensin (§11.70).
+
+**Sözlük köprüsü de kullanıldı.** Webin düğme metni `questw.claim_xp` ve o ad
+alanı WEB-ONLY (`src/i18n/web/*`). Mobile taşımak yerine paylaşılan bir
+anahtar açtım: `dailyquests.claim_xp` mobilin üç sözlüğüne yazıldı (tr/en/de)
+ve `node scripts/i18n-pull.mjs` ile `src/i18n/base/*`e çekildi - köprünün
+yönü mobil → web, tersi değil.
+
+**Toplu ödül (üçü birden, +300 XP) eklenmedi:** webin o satırı `quests.all_three_done`
+ve `questw.claim_xp` ile çiziliyor ve mobilde o kutunun karşılığı hiç yok
+(mobil panosu üç satırdan ibaret). Kutuyu eklemek yeni bir yüzey demek; ödül
+yolunun kendisi (`questId: "all"`) hazır, yalnız düğmesi yok.
+
+**Kayda geçen ikinci gözlem:** web rozet açılışını uygulama kabuğunda tek bir
+kartla kutluyor ve tetikleyicisi `lernomi:stats` (gerekçesi orada yazılı: altı
+ayrı yere kutlama koymak altı yerde unutulur). Mobilde rozet açılış kutlaması
+HİÇ YOK - kullanıcı rozeti ancak Başarılar ekranına giderek görüyor. Sinyal
+artık mobilde de var (§11.70), yani kart eklenebilir; ama bu yeni bir yüzey ve
+kutlamanın ne zaman kesmemesi gerektiği (webin üç kuralı) ürün kararı.
