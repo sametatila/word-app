@@ -38,22 +38,24 @@ export function SignOutLink({ email, className }: { email?: string | null; class
   }
 
   return (
-    <p className={className}>
-      {/* Hangi hesapla girildiği YAZILIYOR: kullanıcı çoğu zaman yanlış hesapla
-          girdiği için çıkmak istiyor ve adresi görmeden emin olamıyor. */}
-      {/* E-posta dar ekranda gizli: başlıkta ve sabit köşede yer yok, taşarsa
-          çıkış düğmesini ekran dışına itiyor. Geniş ekranda görünüyor çünkü
-          "hangi hesap" sorusu çoğu zaman çıkışın sebebi. */}
-      {email ? <span className="muted hidden sm:inline">{email}</span> : null}
-      {email ? <span className="muted hidden sm:inline"> · </span> : null}
+    /*
+      GÖRÜNÜM `btn btn-ghost`: ilk hâli altı çizili düz metindi ve başlıkta tema
+      düğmesiyle birincil düğmenin arasında yamalı duruyordu. Aynı satırdaki üç
+      öge aynı dili konuşmalı.
+    */
+    <span className={`inline-flex items-center gap-2 ${className ?? ""}`}>
+      {/* E-posta dar ekranda gizli: başlıkta yeri yok, taşarsa düğmeyi ekran
+          dışına itiyor. Geniş ekranda duruyor çünkü "hangi hesap" sorusu çoğu
+          zaman çıkışın sebebi. */}
+      {email ? <span className="muted hidden text-xs sm:inline">{email}</span> : null}
       <button
         type="button"
         onClick={() => void out()}
         disabled={busy}
-        className="underline underline-offset-4 disabled:opacity-60"
+        className="btn btn-ghost px-3 py-2.5 text-sm disabled:opacity-60"
       >
         {t("profile.log_out")}
       </button>
-    </p>
+    </span>
   );
 }

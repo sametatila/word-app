@@ -71,7 +71,7 @@ export default async function CourseSelectPage() {
           bağlantı ilk ekranda hiç görünmüyor, kullanıcı kaydırmak zorunda
           kalıyordu — yani çıkış yine pratikte yoktu.
         */
-        <div className="fixed right-0 top-0 z-10 p-4 text-xs">
+        <div className="fixed right-0 top-0 z-10 p-3">
           <SignOutLink email={user.email} />
         </div>
       ) : null}

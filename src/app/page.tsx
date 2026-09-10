@@ -97,7 +97,19 @@ export default async function Home() {
             kaydırması gerekiyordu, yani pratikte yine görünmüyordu. Hesap
             durumunun yeri başlık.
           */}
-          {signedIn ? <SignOutLink className="text-xs" /> : null}
+          {signedIn ? (
+            <SignOutLink />
+          ) : (
+            /*
+              GİRİŞ YAP bağlantısı YOKTU ve eksikliği çıkıştan sonra ortaya
+              çıkıyordu: `startHref` oturumsuzken `/setup`e gidiyor (misafir
+              onboarding'i, bilinçli), yani hesabı olan kullanıcının kendi
+              hesabına dönecek hiçbir kapısı kalmıyordu.
+            */
+            <Link href="/login" className="btn btn-ghost px-3 py-2.5 text-sm">
+              {t("auth.sign_in")}
+            </Link>
+          )}
           <Link href={startHref} className="btn btn-primary px-4 py-2.5 text-sm">
             {t(signedIn ? "land.cta_continue" : "common.start")}
           </Link>
@@ -256,9 +268,6 @@ export default async function Home() {
           <Link href={legalPath("support", lang)} prefetch={false} className="underline-offset-4 hover:underline">{t("land.support")}</Link>
           <Link href="/account/delete" prefetch={false} className="underline-offset-4 hover:underline">{t("land.delete_account")}</Link>
         </div>
-        {/* Vitrinde de çıkış: kurulumu yarıda bırakan kullanıcı buraya dönüyor
-            ve uygulamanın içine giremediği için Profil ekranına da ulaşamıyor. */}
-        {signedIn ? <SignOutLink className="mt-4" /> : null}
       </footer>
     </div>
   );
