@@ -74,7 +74,7 @@ const numbers = (t: string): string[] =>
    aynı gerekçelerle. İkisi BİRLİKTE kullanılıyor: kural yalnız tanıdığı
    dilde çalışıyor, tanıyamadığı açıklığı zorlamıyor. */
 const TR_WORDS =
-  /\b(bir|ve|ile|için|değil|demek|var|yok|olur|olunur|olmak|gibi|daha|çok|ama|yani|kadar|sonra|önce|hâli|biçim|biçimi|yerine|zaman|yer|yön|memleket|ülkesi)\b/i;
+  /\b(bir|ve|ile|için|değil|demek|var|yok|olur|olunur|olmak|gibi|daha|çok|ama|yani|kadar|sonra|önce|hâli|biçim|biçimi|yerine|zaman|yer|yön|memleket|ülkesi|nerede|yoktu|ya)\b/i;
 const TR_TERMS = /\b(mastar|ortaç|isim|fiil|zamir|özne|nesne|tekil|çoğul|edat|kip|ek|sıfat|zarf)\b/i;
 /* KARIŞIK AÇIKLIKLAR — Almanca terim ile Türkçe açıklama aynı parantezin
    içinde. Üç tane çıktı ve üçü de listeye bir sözcük ekletti:
@@ -85,7 +85,19 @@ const TR_TERMS = /\b(mastar|ortaç|isim|fiil|zamir|özne|nesne|tekil|çoğul|eda
 
    O satırlarda kural artık Almanca terimin korunduğunu ölçmüyor. Sonuncuda
    kayıp yok: "Türkei" formun CEVABI olduğu için kanıt listesine oradan
-   giriyor ve korunması ayrıca ölçülüyor. */
+   giriyor ve korunması ayrıca ölçülüyor.
+
+   `nerede` ve `yoktu` ise BÜYÜK HARF sezgisi yüzünden listede. Ölçüt
+   Almanca ismi yakalamak için var (`[A-ZÄÖÜ][a-zäöüß]{2,}`) ama cümle
+   başındaki her Türkçe sözcüğü de yakalıyor. Bütün korpus tarandı: yalnız
+   bu ölçüte dayanan 129 açıklığın 127'si gerçekten Almanca, ikisi Türkçe
+   — „Nerede“ ve „Yoktu“. Sezgiyi daraltmak 127'yi kaybettirirdi, iki
+   sözcük eklemek hiçbir şey kaybettirmiyor.
+
+   `ya` da aynı aileden: "(sofern ya da es sei denn)" gibi açıklıklarda
+   Almanca seçenekler TÜRKÇE bir bağlaçla ayrılıyor ve "es" açıklığı yabancı
+   saydırıyor. Almanca metinde tek başına `ya` sözcüğü yok, o yüzden ölçüt
+   bir şey kaybetmiyor. */
 const turkish = (t: string): boolean => /[ışğİĞŞ]/.test(t) || TR_WORDS.test(t) || TR_TERMS.test(t);
 const DE_WORDS =
   /\b(der|die|das|ein|eine|einen|einem|ist|sind|war|nicht|kein|keine|und|mit|wir|ich|Sie|du|zu|auf|für|von|dem|den|im|am|bei|nach|vor|über|wie|was|wo|wer|bitte|hier|ja|nein|sehr|gut|noch|schon|aus|um|halb|man|sich|es|habe|hat|haben|werden|wird|wurde|worden|muss|müssen|kann|können|könnte|soll|sollen|will|wollen|darf|dürfen|mag|mögen|möchte|möchten|würde|würden|hätte|wäre|zurück)\b/;
