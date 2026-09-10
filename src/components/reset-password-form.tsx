@@ -6,6 +6,7 @@ import { useRouter } from "next/navigation";
 import { AuthNotice, AuthShell, authInputClass } from "@/components/auth-shell";
 import { authApi } from "@/lib/auth/api";
 import { translateAuthError } from "@/lib/auth/errors";
+import { checkPassword, MIN_PASSWORD_LENGTH } from "@/lib/auth/password-policy";
 import { useT, useLang } from "@/lib/i18n/client";
 
 export function ResetPasswordForm({ token }: { token: string | null }) {
@@ -14,6 +15,14 @@ export function ResetPasswordForm({ token }: { token: string | null }) {
   const router = useRouter();
   const [password, setPassword] = useState("");
   const [confirm, setConfirm] = useState("");
+  /*
+    Kayıt formundaki kuralın AYNISI (lib/auth/password-policy) — burada da
+    yalnız anında geri bildirim için, kapı sunucuda. Kimlik (e-posta/ad)
+    VERİLMİYOR: sıfırlama gövdesi yalnız yeni parolayı ve jetonu taşıyor,
+    sunucu da o yolda kimlik kuralını çalıştıramıyor. Burada sormak, sunucunun
+    reddetmeyeceği bir şeyi reddetmek olurdu.
+  */
+  const passwordProblem = checkPassword(password);
   const [busy, setBusy] = useState(false);
   const [done, setDone] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -58,7 +67,7 @@ export function ResetPasswordForm({ token }: { token: string | null }) {
   return (
     <AuthShell
       title={t("authw.set_new_password")}
-      subtitle={done ? undefined : t("authw.at_least_8")}
+      subtitle={done ? undefined : t("authw.password_rule", { n: MIN_PASSWORD_LENGTH })}
       footer={
         <Link href="/login" className="underline-offset-4 hover:underline">
           {t("auth.back_to_sign_in")}
@@ -76,7 +85,7 @@ export function ResetPasswordForm({ token }: { token: string | null }) {
             onChange={(e) => setPassword(e.target.value)}
             type="password"
             required
-            minLength={8}
+            minLength={MIN_PASSWORD_LENGTH}
             placeholder={t("authw.new_password")}
             autoComplete="new-password"
             autoFocus
@@ -87,11 +96,29 @@ export function ResetPasswordForm({ token }: { token: string | null }) {
             onChange={(e) => setConfirm(e.target.value)}
             type="password"
             required
-            minLength={8}
+            minLength={MIN_PASSWORD_LENGTH}
             placeholder={t("authw.new_password_again")}
             autoComplete="new-password"
             className={authInputClass}
           />
+          {/* Canlı geri bildirim — kayıt formundaki kutunun aynısı
+              (components/auth-form). Eskiden yoktu: kullanıcı yaygın bir parola
+              yazıp gönderiyor, kuralı ancak sunucunun reddinden öğreniyordu. */}
+          {password ? (
+            <div id="reset-password-hint" aria-live="polite">
+              <AuthNotice tone={passwordProblem ? "error" : "success"}>
+                {passwordProblem
+                  ? t(
+                      passwordProblem === "too_short"
+                        ? "autherror.password_min_length"
+                        : passwordProblem === "too_common"
+                          ? "autherror.password_too_common"
+                          : "autherror.password_contains_identity",
+                    )
+                  : t("auth.password_ok")}
+              </AuthNotice>
+            </div>
+          ) : null}
           {error ? <AuthNotice tone="error">{error}</AuthNotice> : null}
           <button
             type="submit"
