@@ -5928,3 +5928,31 @@ haftalık sınavda zaten yazılı olan Android sırası. §77 dördünü birden
 **Yöntem notu:** bu tur da bir ölçüm ayrışma göstermeyip mimariyle
 açıklandı (`/words`). Böyle bir sonucu "açık" saymamak, kapı yazmamak ve
 sebebini yazmak — listeyi gürültüden koruyan şey bu.
+
+
+### 11.160 Gelen kutusu haritaları ve başka bir oturumun kırmızısı
+
+Sunucu dokuz bildirim türü gönderiyor. İki harita var — tür → simge ve tür →
+gidilen yer — ve ikisi de iki tarafta ELLE yazılıyor. Karşılaştırdım:
+yönlendirme eşitti, simge haritasında `league_up` iki tarafta da genel gelen
+kutusu simgesine düşüyordu. Bu satırın **aktörü de yok** (avatar çizilmiyor),
+yani ekranda satırın neyle ilgili olduğunu söyleyen hiçbir şey kalmıyor. İki
+tarafa da kürsü simgesi eklendi.
+
+Arkadaşlar merkezinde (§11.159'da not ettiğim küçük iş) webde hata metni vardı
+ama tekrar deneme yolu yoktu; eklendi.
+
+**parity §78** iki haritayı da ölçüyor. Kapının ilk yazımı yine kendi hatasını
+gösterdi: sabit uzunlukta bir pencere kullanıyordu ve yönlendirme haritası
+KOMŞU işlevden bir `case` çalıyordu (`friend_milestone`). Pencere işlevin
+kendisiyle sınırlandı. Bu, §73'te öğrendiğim şeyin aynısı — sabit pencere
+kapıyı yanıltır.
+
+**Paralel oturum notu:** bu turda web `tsc` beş hatayla, sonra web `lint` bir
+uyarıyla, sonra mobil `tsc` bir hatayla kırmızı gördüm — hiçbiri benim
+dosyalarımda değildi (`lessons/modules`, `immersion/*`, `deepLink`
+auth-handoff). Başka bir oturum aynı ağaçta çalışıyor ve dakikalar içinde
+düzeltti. **Yöntem:** kırmızıyı görünce önce kimin olduğunu ölçüyorum
+(`git status`, hata dosyası benim dokunduklarımda mı), sonra karar veriyorum.
+Commit'lerim zaten ayrı bir indeks üzerinden ve yalnız kendi yollarımı
+alıyor, yani onların yarım işi benim commit'ime giremez.
