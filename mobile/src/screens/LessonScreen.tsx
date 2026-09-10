@@ -15,7 +15,7 @@ import { Mascot } from "../ui/Mascot";
 import { Celebrate } from "../ui/Celebrate";
 import { findLesson, scoredSteps, type Lesson, type Segment, type Expectation, type LectureStep } from "../data/lessons";
 import { foldCompare, foldTight } from "../lib/textFold";
-import { sendRoleplay, roleplayConfigured, parseReply, type ChatMsg } from "../game/roleplay";
+import { sendRoleplay, roleplayConfigured, parseReply, patternUsed, type ChatMsg } from "../game/roleplay";
 import { markItemDone, loadLessonResume, saveLessonResume, clearLessonResume } from "../game/lessonProgress";
 import { speakTarget } from "../lib/tts";
 import { ensureMicPermission, listenOnce, sttAvailable, stopListening } from "../lib/stt";
@@ -498,7 +498,7 @@ export function LessonScreen() {
           </View>
         </>
       ) : phase === "summary" ? (
-        <Summary lesson={lesson} correct={correct} total={scoreTotal} next={nextLesson} colors={colors} insets={insets}
+        <Summary lesson={lesson} correct={correct} total={scoreTotal} next={nextLesson} roleMsgs={roleMsgs} colors={colors} insets={insets}
           onBack={() => nav.goBack()}
           onNext={nextLesson ? () => nav.replace("Lesson", { id: nextLesson.id }) : undefined} />
       ) : resumeOffer ? (
@@ -751,8 +751,8 @@ function RoleplayControls({ input, setInput, busy, onSend, onSpeak, suggestions,
   );
 }
 
-function Summary({ lesson, correct, total, next, colors, insets, onBack, onNext }: {
-  lesson: Lesson; correct: number; total: number; next: Lesson | null; colors: Palette;
+function Summary({ lesson, correct, total, next, roleMsgs, colors, insets, onBack, onNext }: {
+  lesson: Lesson; correct: number; total: number; next: Lesson | null; roleMsgs: ChatMsg[]; colors: Palette;
   insets: { bottom: number }; onBack: () => void; onNext?: () => void;
 }) {
   const pct = total ? Math.round((correct / total) * 100) : 100;
@@ -778,12 +778,29 @@ function Summary({ lesson, correct, total, next, colors, insets, onBack, onNext 
       {lesson.patterns?.length ? (
         <View style={{ alignSelf: "stretch", marginTop: spacing.lg, backgroundColor: colors.surface, borderRadius: radii.lg, borderWidth: 1, borderColor: colors.hairline, padding: spacing.lg }}>
           <Text variant="micro" color={colors.textMuted} style={{ marginBottom: spacing.sm }}>{tx("lesson.patterns_you_learned")}</Text>
-          {lesson.patterns.map((p, i) => (
-            <View key={i} style={{ flexDirection: "row", gap: spacing.sm, marginBottom: 6, alignItems: "flex-start" }}>
-              <Text variant="bodyStrong" color={colors.text}>{p.de}</Text>
-              <Text variant="caption" color={colors.textMuted} style={{ flex: 1 }}>{p.tr}</Text>
-            </View>
-          ))}
+          {/*
+            KULLANILAN KALIP İŞARETLİ. Liste düzdü: her kalıp aynı görünüyordu
+            ve öğrenci konuşmada hangisini gerçekten kullandığını hiçbir yerden
+            öğrenemiyordu - oysa dersin asıl amacı kalıbı KULLANMAK, yalnız
+            görmek değil. Web özeti bunu baştan beri işaretliyor
+            (`lesson-player`, aynı `patternUsed` kuralı). Konuşma hiç
+            olmadıysa (roleplay atlandı) işaret de yok: yanlış bir "yapmadın"
+            damgası vurmasın.
+          */}
+          {lesson.patterns.map((p, i) => {
+            const used = roleMsgs.length > 1 && patternUsed(p.de, roleMsgs);
+            return (
+              <View key={i} style={{ flexDirection: "row", gap: spacing.sm, marginBottom: 6, alignItems: "flex-start", opacity: roleMsgs.length > 1 && !used ? 0.6 : 1 }}>
+                {roleMsgs.length > 1 ? (
+                  <View style={{ width: 16, alignItems: "center" }}>
+                    {used ? <CheckIcon color={colors.successText} size={14} /> : null}
+                  </View>
+                ) : null}
+                <Text variant="bodyStrong" color={used ? colors.successText : colors.text}>{p.de}</Text>
+                <Text variant="caption" color={colors.textMuted} style={{ flex: 1 }}>{p.tr}</Text>
+              </View>
+            );
+          })}
         </View>
       ) : null}
 

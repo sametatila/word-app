@@ -75,3 +75,17 @@ export function parseReply(text: string): ParsedReply {
   }
   return { body: body.join("\n").trim(), corrections, suggestions };
 }
+
+/**
+ * Kalıbın gövdesi ("Ich möchte …" → "ich möchte") konuşma turunda geçiyor mu.
+ *
+ * Web `lessons/lesson-player` `patternUsed` ile AYNI kural. Ders özeti buna
+ * göre kalıbı işaretliyor: dersin asıl amacı kalıbı KULLANMAK, yalnız görmek
+ * değil - mobil özeti kalıpları düz bir liste olarak yazıyordu ve öğrenci
+ * hangisini gerçekten kullandığını hiçbir yerden öğrenemiyordu.
+ */
+export function patternUsed(pattern: string, msgs: ChatMsg[]): boolean {
+  const stem = pattern.split(/…|\.\.\./)[0].replace(/[^\p{L}\p{N}' ]/gu, " ").trim().toLowerCase();
+  if (stem.length < 3) return false;
+  return msgs.some((m) => m.role === "user" && m.content.toLowerCase().includes(stem));
+}

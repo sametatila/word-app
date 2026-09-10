@@ -1816,6 +1816,28 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   sameList("ogrenme uclarina gun", eksik.length ? eksik : ["hepsi gun gonderiyor"], ["hepsi gun gonderiyor"], "gun yok", "beklenen");
 }
 
+/* ── 41. kalip kullanildi mi ───────────────────────────────────────────────
+ * Dersin asil amaci kalibi KULLANMAK, yalniz gormek degil; ozet bunu
+ * isaretliyor. Kural iki tarafta ayri dosyada kopyalanmis: govde cikarimi
+ * ("Ich möchte …" -> "ich möchte"), en az uzunluk ve hangi turlarin
+ * taranacagi. Ayrisirsa ayni konusma bir uygulamada kalibi kullanmis, otekinde
+ * kullanmamis sayilir. */
+{
+  const kural = (p) => {
+    const src = read(p).replace(/\/\*[\s\S]*?\*\//g, " ").replace(/\/\/[^\n]*/g, " ");
+    const i = src.indexOf("function patternUsed");
+    if (i < 0) return ["bulunamadi"];
+    const body = src.slice(i, src.indexOf("\n}", i)).replace(/\s+/g, " ");
+    return [
+      "govde=" + ((body.match(/split\((\/[^)]+\/)\)/) ?? [])[1] ?? "yok"),
+      "temizlik=" + ((body.match(/replace\((\/\[\^[^)]+\/gu)/) ?? [])[1] ?? "yok"),
+      "enaz=" + ((body.match(/length < (\d+)/) ?? [])[1] ?? "yok"),
+      "rol=" + ((body.match(/role === "(\w+)"/) ?? [])[1] ?? "yok"),
+    ];
+  };
+  sameList("kalip kullanildi mi", kural("mobile/src/game/roleplay.ts"), kural("src/components/lessons/lesson-player.tsx"));
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"
