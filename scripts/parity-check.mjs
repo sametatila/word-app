@@ -2277,6 +2277,63 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   }
 }
 
+/* ── 56. kod bozdurma hata sebepleri ──────────────────────────────────────
+ * `/api/premium/redeem` sebebi DOGRUDAN sozluk anahtari olarak gonderiyor ve
+ * iki istemci de tanidigi sebeplerin listesini ELLE yaziyor; tanimadigi sebep
+ * "daha sonra tekrar dene"ye dusuyor. `self` (kendi davet kodu) tam olarak
+ * boyle kacmisti: kullanicinin yapmasi gereken belli ve tekrar denemek hicbir
+ * zaman ise yaramayacak, ama iki istemci de genel mesaji yaziyordu.
+ *
+ * Beklenen kume SUNUCUDAN turetiliyor: promo katmaninin `reason` birlesimi +
+ * `AttachResult`in kullaniciya donen degerleri (`ok` ve `unknown_code` yok -
+ * ilki hata degil, ikincisi ucta `not_found`a cevriliyor) + hiz siniri. */
+{
+  const birlesim = (p, imza) => {
+    const src = read(p);
+    const i = src.indexOf(imza);
+    if (i < 0) return [];
+    return [...src.slice(i, src.indexOf(";", i)).matchAll(/"([a-z_]+)"/g)].map((m) => m[1]);
+  };
+  const sunucu = [...new Set([
+    ...birlesim("src/lib/premium/promo.ts", 'reason: "not_found"'),
+    ...birlesim("src/lib/premium/referral.ts", "type AttachResult ="),
+    "rate_limited",
+  ])].filter((x) => x !== "ok" && x !== "unknown_code").sort();
+  const liste = (p, imza) => {
+    const src = read(p);
+    const i = src.indexOf(imza);
+    if (i < 0) return ["bulunamadi: " + imza];
+    return [...src.slice(i, src.indexOf("]", i)).matchAll(/"([a-z_]+)"/g)].map((m) => m[1]).sort();
+  };
+  sameSet("promo hata sebepleri (mobil)", liste("mobile/src/screens/PaywallScreen.tsx", "const PROMO_ERRORS"), sunucu, "mobil", "sunucu");
+  sameSet("promo hata sebepleri (web)", liste("src/components/premium-paywall.tsx", "const known ="), sunucu, "web", "sunucu");
+}
+
+/* ── 57. seviye testi asamalari ───────────────────────────────────────────
+ * Sunucu DORT asamali bir test veriyor (`PlacementStage`) ve web dordunu de
+ * oynatiyor. Mobil istemci tipi yalnizca `vocab` tasiyor: Android'de seviye
+ * testi KELIME olcuyor, dilbilgisi/okuma/dinleme hic sorulmuyor ve `perSkill`
+ * uc alanini bos donduruyor.
+ *
+ * Bu bir tur icinde kapatilacak bir acik degil (uyarlanan asama makinesi,
+ * metin oynatici ve dinleme sesi gerekiyor); docs/plan/web-parity.md 11.119'da
+ * kayitli ve Samet'in karari bekliyor. Kapinin isi acigi BUYUTMEMEK: sunucu
+ * besinci bir asama eklerse ya da mobil bir asama kazanirsa burasi kaliyor ve
+ * insan bakiyor. */
+{
+  const sunucu = (() => {
+    const m = read("src/lib/placement-score.ts").match(/type PlacementStage =([^;]*);/);
+    return m ? [...m[1].matchAll(/"([a-z]+)"/g)].map((x) => x[1]).sort() : ["bulunamadi"];
+  })();
+  const mobil = (() => {
+    const m = read("mobile/src/game/placement.ts").match(/type PlacementTest = \{([^}]*)\}/);
+    return m ? [...m[1].matchAll(/(\w+)\s*:/g)].map((x) => x[1]).sort() : ["bulunamadi"];
+  })();
+  /* Mobilde OLMAYAN asamalar - kayitli acik. */
+  const KAYITLI_EKSIK = ["grammar", "listening", "reading"];
+  sameSet("seviye testi asamalari (sunucu)", sunucu, [...mobil, ...KAYITLI_EKSIK].sort(), "sunucu", "mobil + kayitli eksik");
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"

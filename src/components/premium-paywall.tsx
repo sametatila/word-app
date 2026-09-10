@@ -225,7 +225,9 @@ function PromoBox({ prefill }: { prefill: string }) {
         setTimeout(() => window.location.reload(), 1200);
       } else {
         // Sunucunun sebebi doğrudan anahtar adı; bilinmeyen sebep genel mesaja düşer.
-        const known = ["not_found", "already", "used_up", "expired", "disabled", "rate_limited"];
+        // `self` = kendi davet kodu; sunucu bunu `attachReferral`dan gönderiyor
+        // ve iki istemci de tanımıyordu, yani "daha sonra tekrar dene" diyordu.
+        const known = ["not_found", "already", "used_up", "expired", "disabled", "rate_limited", "self"];
         const key = known.includes(data.error ?? "") ? `promo.${data.error}` : "promo.failed";
         setMsg({ ok: false, text: t(key) });
       }

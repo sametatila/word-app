@@ -387,6 +387,7 @@ export const tr: Record<string, string> = {
   "promo.disabled": "Bu kod artık geçerli değil.",
   "promo.referral_linked": "Davet bağlantısı tanındı. Premium'a abone olduğunda seni davet eden kişi de 1 hafta kazanacak.",
   "promo.rate_limited": "Çok fazla deneme yapıldı. Biraz sonra tekrar dene.",
+  "promo.self": "Bu senin kendi davet kodun; başka birinin kodunu kullanman gerekiyor.",
   "promo.failed": "Kod uygulanamadı. Daha sonra tekrar dene.",
   "referral.title": "Arkadaşını davet et",
   "referral.explain": "Davet ettiğin kişi Premium'a abone olup ilk ödemesini yaptığında sana {days} gün Premium veriyoruz. Ödüller birikir ve üst üste eklenir.",

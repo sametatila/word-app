@@ -382,6 +382,7 @@ export const de: Record<string, string> = {
   "promo.disabled": "Dieser Code ist nicht mehr gültig.",
   "promo.referral_linked": "Einladungslink erkannt. Wenn du Premium abonnierst, bekommt auch die einladende Person eine Woche.",
   "promo.rate_limited": "Zu viele Versuche. Probiere es später noch einmal.",
+  "promo.self": "Das ist dein eigener Einladungscode; du brauchst den von jemand anderem.",
   "promo.failed": "Der Code konnte nicht eingelöst werden. Versuche es später.",
   "referral.title": "Freunde einladen",
   "referral.explain": "Wenn jemand, den du einlädst, Premium abonniert und die erste Zahlung leistet, bekommst du {days} Tage Premium. Die Belohnungen summieren sich.",

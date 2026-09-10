@@ -421,8 +421,15 @@ function PromoBox({ colors, onRedeemed }: { colors: Palette; onRedeemed: () => v
   );
 }
 
-/** Sunucunun sebebi doğrudan anahtar adı; tanımadığımız sebep genel mesaja düşer. */
-const PROMO_ERRORS = ["not_found", "already", "used_up", "expired", "disabled", "rate_limited"];
+/**
+ * Sunucunun sebebi doğrudan anahtar adı; tanımadığımız sebep genel mesaja düşer.
+ *
+ * `self` EKSİKTİ: kendi davet kodunu giren kullanıcı "Kod uygulanamadı, daha
+ * sonra tekrar dene" görüyordu — oysa yapması gereken belli ve tekrar denemek
+ * hiçbir zaman işe yaramayacak. Sunucu bu sebebi `attachReferral` üzerinden
+ * gönderiyor (`AttachResult`); iki istemci de tanımıyordu.
+ */
+const PROMO_ERRORS = ["not_found", "already", "used_up", "expired", "disabled", "rate_limited", "self"];
 function promoErrorKey(reason: string | undefined): string {
   return PROMO_ERRORS.includes(reason ?? "") ? `promo.${reason}` : "promo.failed";
 }

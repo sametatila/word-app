@@ -382,6 +382,7 @@ export const en: Record<string, string> = {
   "promo.disabled": "This code is no longer valid.",
   "promo.referral_linked": "Invite link recognised. When you subscribe to Premium, whoever invited you also earns a week.",
   "promo.rate_limited": "Too many attempts. Try again in a little while.",
+  "promo.self": "That is your own invite code; you need someone else's.",
   "promo.failed": "The code could not be applied. Try again later.",
   "referral.title": "Invite a friend",
   "referral.explain": "When someone you invite subscribes to Premium and makes their first payment, you get {days} days of Premium. Rewards add up.",
