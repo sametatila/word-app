@@ -88,8 +88,30 @@ function ExampleBlock({ de, tr, en, colors }: { de: string | null; tr: string | 
   );
 }
 
-/** der/die/das renk tonu. */
-const ARTIKEL_TONE: Record<string, string> = { der: "#0284c7", die: "#e11d48", das: "#0d9488" };
+/**
+ * der / die / das renk tonu — PALETTEN, sabit değerden değil.
+ *
+ * Üç değer elle yazılı Tailwind varsayılanıydı (#0284c7 / #e11d48 / #0d9488)
+ * ve üç ayrı sorun çıkarıyordu:
+ *
+ *   1. Uygulamanın paletinde yoklardı. Web aynı üç rolü palet basamağından
+ *      alıyor (`intro-game`: sky-600 / rose-600 / mint-600), yani aynı artikel
+ *      iki uygulamada iki ayrı renkti - "das" mobilde teal, webde mint yeşili.
+ *   2. Tema duyarlı değillerdi. Tek değer hem açık hem koyu temada
+ *      çiziliyordu; web koyu temada 300 basamağına geçiyor.
+ *   3. Kontrast eşiğini geçmiyorlardı. Ton burada SEÇENEK METNİ olarak
+ *      kullanılıyor (bkz. `OptionButton` `fg`), yani okunabilirlik eşiği 4.5.
+ *      Ölçüm: der açık kartta 4.10, das açık kartta 3.74, die koyu kartta
+ *      3.66 - altısının üçü sınırın altında. Paletin değerleriyle altısı da
+ *      geçiyor (5.30 - 9.74).
+ *
+ * Renk burada TEK taşıyıcı (seçeneğin yanında rengi açıklayan etiket yok), o
+ * yüzden webin `palette-check` betiğindeki KATI eşiğin konusu; palet
+ * basamakları o eşikle birlikte ölçülüyor.
+ */
+function artikelTone(a: string, colors: Palette): string {
+  return a === "der" ? colors.infoText : a === "die" ? colors.dangerText : a === "das" ? colors.successText : colors.primaryText;
+}
 
 /**
  * Turun sonucu. `extra` HATA TİPİNİ ve SRS kalitesini taşıyor.
@@ -390,7 +412,7 @@ function ArtikelRound({ round, onDone, colors }: { round: Round; onDone: Done; c
       <View style={{ flexDirection: "row", gap: spacing.md }}>
         {["der", "die", "das"].map((a) => {
           const st = picked ? (a === word.artikel ? "correct" : a === picked ? "wrong" : "idle") : "idle";
-          return <View key={a} style={{ flex: 1 }}><OptionButton text={a} state={st} idleTint={ARTIKEL_TONE[a]} onPress={() => choose(a)} colors={colors} /></View>;
+          return <View key={a} style={{ flex: 1 }}><OptionButton text={a} state={st} idleTint={artikelTone(a, colors)} onPress={() => choose(a)} colors={colors} /></View>;
         })}
       </View>
     </RoundShell>

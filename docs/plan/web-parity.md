@@ -2197,3 +2197,55 @@ düğmeyle cevaplanıyor, orada tek değer `tap`.
 yazılmıyor. Düğmenin mobile eklenmesi ölçüm değil ürün kararı - Android
 takılan öğrenciyi üçüncü denemeden sonra kendiliğinden geçiriyor, yani
 atlamanın işlevi zaten karşılanmış durumda.
+
+### 11.36 `production_attempt` temiz çıktı; artikel renkleri Androidde paletin dışındaydı
+
+**Ölçülen ve temiz çıkan: `production_attempt`.** Olay İSTEMCİDE değil
+SUNUCUDA yazılıyor (`lib/assess.ts`, hem doğrudan hem kuyruk yolunda) ve dört
+üretim türünü `productionKind` ile etiketliyor. İki platformun üretim
+görevleri de aynı uçtan (`/api/assess`) geçtiği için Android'in ayrı bir
+yazıcıya ihtiyacı yok - sayı zaten iki platformu birlikte topluyor. Webdeki
+tek istemci çağrısı çevrimdışı rol yapma özetine ait
+(`lib/lessons/offline-roleplay`), o yol Android'de yok ve zaten kayıtlı.
+Burada yapılacak bir şey çıkmadı.
+
+**Bulunan tasarım hatası: `ARTIKEL_TONE` elle yazılı Tailwind varsayılanıydı.**
+`mobile/src/game/rounds.tsx` içinde üç değer sabitti:
+
+    der #0284c7   die #e11d48   das #0d9488
+
+Üç ayrı sorun:
+
+1. **Uygulamanın paletinde yoklar.** Web aynı üç rolü palet basamağından
+   alıyor (`intro-game`: sky-600 / rose-600 / mint-600 → #16748a / #b62e43 /
+   #237a4c). Yani aynı artikel iki uygulamada iki ayrı renkti ve "das" mobilde
+   TEAL, webde MİNT YEŞİLİydi - farklı bir renk ailesi.
+2. **Tema duyarlı değiller.** Tek değer hem açık hem koyu temada çiziliyordu;
+   web koyu temada 300 basamağına geçiyor (#6fd1e3 / #f79ba6 / #6fd19b).
+3. **Kontrast eşiğini geçmiyorlar.** Ton burada seçenek METNİ olarak
+   kullanılıyor (`OptionButton` `fg`), yani WCAG eşiği 4.5. Ölçüm:
+
+        şimdiki                             palet değerleriyle
+        der  açık 4.10  koyu 4.19           açık 5.39  koyu 9.74
+        die  açık 4.70  koyu 3.66           açık 6.07  koyu 8.34
+        das  açık 3.74  koyu 4.59           açık 5.30  koyu 9.22
+
+   Altı ölçümün üçü sınırın altındaydı; palet değerleriyle altısı da geçiyor.
+
+Renk burada TEK taşıyıcı - seçeneğin yanında rengi açıklayan bir etiket yok -
+yani webin `palette-check` betiğindeki KATI eşiğin (ΔE ≥ 20) konusu. Palet
+basamakları o eşikle birlikte ölçülüyor, elle yazılı değerler hiçbir ölçümden
+geçmiyordu.
+
+Düzeltme: renkler tema jetonlarından türüyor (`colors.infoText` /
+`dangerText` / `successText`). Mobil paletin bu üç jetonu web değerleriyle
+zaten birebir aynı (açık: #16748a / #b62e43 / #237a4c, koyu: #6fd1e3 /
+#f79ba6 / #6fd19b), yani jetona bağlamak hem web ile eşliyor hem temayı
+düzeltiyor hem eşiği geçiyor.
+
+**Kaydedilen gözlem, değiştirilmedi:** web yeni kelime turunda artikeli
+RENKLİ BİR ROZET olarak da gösteriyor (`intro-game`, dolu zemin + beyaz yazı);
+mobil "der Tisch" diye tek dizge yazıyor. Yani mobil cinsiyeti SORARKEN renk
+kodluyor, ÖĞRETİRKEN kodlamıyor. Bu Android'in yerleşimini değiştirmek
+demek - referans platformun tasarımına dokunmak - o yüzden ölçülüp buraya
+yazıldı, uygulanmadı.
