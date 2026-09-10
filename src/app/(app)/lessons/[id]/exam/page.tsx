@@ -33,7 +33,7 @@ export default async function LessonExamPage({ params }: { params: Promise<{ id:
     const en = await nativeCando(candoForLesson(source), lang);
     if (en) cando = en;
   } catch (err) {
-    console.error("[rpexam] profil okunamadı", err);
+    console.error("[rpexam]", err);
   }
   return <RoleplayExam lesson={lesson} cando={cando} />;
 }

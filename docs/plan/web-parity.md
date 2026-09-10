@@ -994,3 +994,20 @@ büyütmeyi ve satıra açılır bir ayrıntı eklemeyi gerektiriyor — yani AN
 hizalanıyor. Web'i kırpmak ise düpedüz gerileme olurdu. Karar Samet'in: örnek
 cümle tek başına bile eklenmeye değer olabilir (öğrenci için en yararlı alan ve
 uçtan bir kolon uzağa).
+
+### 11.12 Değerlendirme kuyruğu — mobilde yok (kayıt, dosya başkasının açık işi)
+
+`POST /api/assess/queue` sağlayıcı kapalıyken yazılan metni saklıyor ve
+`/api/cron/assess` servis dönünce puanlıyor. Web'in BECERİ yazma oynatıcısı
+(`skills/writing-player`) bunu çağırıyor ve kullanıcıya "metnin kaydedildi,
+servis açılınca puanlanacak" diyor. Mobilin karşılığı çağırmıyor: sağlayıcı
+kapalıyken yazılan metin hiç puanlanmıyor.
+
+İki tarafın SINAV oynatıcısı bu konuda EŞİT — ikisi de kuyruğa almıyor, yalnız
+yedek puan gösteriyor. Fark yalnız beceri yazma yüzeyinde.
+
+PORT EDİLMEDİ: mobildeki tek çağrı yeri `mobile/src/game/skillLibrary.tsx` ve
+o dosya şu an başka bir oturumun açık işi (beceri kütüphanesi portu). Aynı
+dosyaya dokunmak onların yarım işini kırar. Kütüphane oturumu bittiğinde
+eklenecek tek şey: sağlayıcı/ağ hatasında aynı gövdeyi `/api/assess/queue`e
+POST etmek ve `assess.queued` benzeri bir satır göstermek.

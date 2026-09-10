@@ -588,7 +588,13 @@ function Write({ w, level, colors, pad, onDone }: { w: WritingItem; level: strin
       else if (isQuotaRefusal(e)) { setGateNote(t("assess.fail_quota")); setScore(null); }
       // Sağlayıcı yoksa ya da ağ yoksa sınav durmaz: kelime sayısı ölçütüyle
       // geçici puan verilir, sunucu yine kendi sınırlarını uygular.
-      else setScore(wordCount >= w.task.minWords ? 70 : 40);
+      //
+      // AMA BU PUANIN GEÇİCİ OLDUĞU SÖYLENİYOR. Çıplak bir sayı gerçek bir
+      // değerlendirme gibi okunuyordu: kullanıcı metninin okunduğunu sanıp
+      // 70'i hak edilmiş sayıyordu. Web aynı yerde kural tabanlı yedeği
+      // ÖLÇÜT LİSTESİYLE gösteriyor, yani yedek olduğu görünüyor; mobilde
+      // görünmüyordu.
+      else { setGateNote(t("assess.fail_offline")); setScore(wordCount >= w.task.minWords ? 70 : 40); }
     }
     setBusy(false);
   }
