@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { EmptyCard } from "@/components/empty-card";
-import { FlameIcon, HandshakeIcon, PodiumIcon, SparkIcon, TargetIcon, TrophyIcon } from "@/components/icons";
+import { CrownIcon, FlameIcon, HandshakeIcon, HeartIcon, PodiumIcon, SparkIcon, TargetIcon, TrophyIcon } from "@/components/icons";
 import { useCallback, useEffect, useState } from "react";
 import { Avatar } from "@/components/avatar";
 import { SkeletonCard, SkeletonLine, SkeletonPill, SkeletonTile } from "@/components/skeleton";
@@ -32,6 +32,13 @@ function eventTile(type: string): { Icon: (p: { size?: number }) => React.JSX.El
       return { Icon: TargetIcon, tint: "var(--color-brand)" };
     case "weekly_top":
       return { Icon: PodiumIcon, tint: "var(--color-sky)" };
+    /* Bu ikisi `ACTIVITY_TYPES`ta var ve iki tarafta da `default`a düşüyordu:
+       ortak seri ve lig yükselişi akışta genel bir kıvılcımla çiziliyor,
+       yani karo türü söyleme işini tam da bu iki olayda yapmıyordu. */
+    case "friend_streak":
+      return { Icon: HeartIcon, tint: "var(--color-mint)" };
+    case "league_up":
+      return { Icon: CrownIcon, tint: "var(--color-violet)" };
     default:
       return { Icon: SparkIcon, tint: "var(--color-brand)" };
   }

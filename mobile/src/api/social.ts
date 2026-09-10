@@ -24,7 +24,10 @@ export type FriendRow = PublicUser & {
   friendActiveToday: boolean;
   since: string;
 };
-export type ReactionSummary = { counts: Partial<Record<ReactionKind, number>>; total: number; mine: ReactionKind | null; names: string[] };
+/** `names`: adsiz kullanici `null` gelir (sunucu `social/reactions` boyle
+    yaziyor) - yedek metin ARAYUZDE, kullanicinin dilinde. Tip `string[]`
+    yaziliydi ve `join` bosluk basiyordu: "Ali, , ve 2 kisi". */
+export type ReactionSummary = { counts: Partial<Record<ReactionKind, number>>; total: number; mine: ReactionKind | null; names: (string | null)[] };
 export type FeedItem = { id: number; type: string; payload: Record<string, unknown>; createdAt: string; user: PublicUser; reactions: ReactionSummary; isMine: boolean };
 export type QuestView = {
   id: number; status: "invited" | "active" | "completed" | "failed" | "cancelled"; weekStart: string; targetXp: number; partner: PublicUser;

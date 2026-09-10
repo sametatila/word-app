@@ -2200,6 +2200,83 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   );
 }
 
+/* ── 54. akis olay karolari ───────────────────────────────────────────────
+ * Karonun tek isi "NE kutlaniyor" sorusunu bir bakista cevaplamak. Iki taraf
+ * da tur -> karo eslemesini elle yaziyor ve `default` dali var: `ACTIVITY_TYPES`
+ * listesindeki `friend_streak` ile `league_up` ikisinde de o dala dusuyordu,
+ * yani karo isini tam da bu iki olayda yapmiyordu. Kapi hem iki tarafi
+ * birbirine hem de PAYLASILAN LISTEYE bagliyor: yeni bir olay turu eklenince
+ * sessizce genel kivilcima dusmesin. */
+{
+  const liste = (() => {
+    const m = read("src/lib/social/types.ts").match(/ACTIVITY_TYPES = \[([^\]]*)\]/);
+    return m ? [...m[1].matchAll(/"([^"]+)"/g)].map((x) => x[1]).sort() : ["bulunamadi"];
+  })();
+  const daller = (p, imza) => {
+    const src = read(p).replace(/\/\*[\s\S]*?\*\//g, " ").replace(/\/\/[^\n]*/g, " ");
+    const i = src.indexOf(imza);
+    if (i < 0) return ["bulunamadi: " + imza];
+    const govde = src.slice(i, src.indexOf("\n}", i));
+    return [...new Set([...govde.matchAll(/case "([a-z_]+)":/g)].map((m) => m[1]))].sort();
+  };
+  sameSet("akis karolari (mobil)", daller("mobile/src/social/FeedList.tsx", "function eventTile"), liste, "mobil", "ACTIVITY_TYPES");
+  sameSet("akis karolari (web)", daller("src/components/social/feed.tsx", "function eventTile"), liste, "web", "ACTIVITY_TYPES");
+}
+
+/* ── 55. sosyal tiplerde NULL alinabilirlik ───────────────────────────────
+ * 26. bolum alan ADLARINI esliyor, tiplerini degil. `ReactionSummary.names`
+ * webde `(string | null)[]` (adsiz kullanici `null` gelir, bkz.
+ * `social/reactions`), mobilde `string[]` yaziliydi: `join` bosluk basiyor
+ * ve tepki satiri "Ali, , ve 2 kisi" cikiyordu. Ad kumesi ayni oldugu icin
+ * hicbir kapi gormuyordu.
+ *
+ * Burada yalnizca NULL ALINABILIRLIK olculuyor (tam tip degil): mobil kendi
+ * kisayollarini kullaniyor ve tam tip esligi gurultu uretirdi, ama "bu alan
+ * bos gelebilir mi" sorusu iki tarafta ayni cevabi vermek zorunda. */
+{
+  const govde = (src, name) => {
+    const x = src.replace(/\/\*[\s\S]*?\*\//g, " ").replace(/\/\/[^\n]*/g, " ");
+    const i = x.indexOf("export type " + name + " =");
+    if (i < 0) return "";
+    let k = x.indexOf("{", i);
+    if (k < 0) return "";
+    let d = 0;
+    for (let j = k; j < x.length; j++) {
+      if (x[j] === "{") d++;
+      else if (x[j] === "}" && --d === 0) return x.slice(k + 1, j);
+    }
+    return "";
+  };
+  /* Alanlari UST DUZEYDE ayirir (ic ice nesne/dizi atlanir) ve her biri icin
+     "bos gelebilir mi" bayragini dondurur: `?` ya da `| null`/`| undefined`. */
+  const bosluk = (src, name) => {
+    const b = govde(src, name);
+    if (!b) return ["bulunamadi: " + name];
+    const parts = [];
+    let d = 0;
+    let buf = "";
+    for (const c of b) {
+      if ("{[(".includes(c)) d++;
+      else if ("}])".includes(c)) d--;
+      if ((c === ";" || c === ",") && d === 0) { parts.push(buf); buf = ""; } else buf += c;
+    }
+    parts.push(buf);
+    const out = [];
+    for (const seg of parts) {
+      const m = seg.match(/^\s*(\w+)(\??)\s*:([\s\S]*)$/);
+      if (!m) continue;
+      const bos = m[2] === "?" || /\|\s*(null|undefined)/.test(m[3]);
+      out.push(m[1] + "=" + (bos ? "bos olabilir" : "dolu"));
+    }
+    return out.sort();
+  };
+  const wt = read("src/lib/social/types.ts");
+  const mt = read("mobile/src/api/social.ts");
+  for (const n of ["PublicUser", "FriendRow", "ReactionSummary", "FeedItem", "QuestView"]) {
+    sameList("sosyal " + n + " bosluk", bosluk(mt, n), bosluk(wt, n), "mobil", "web");
+  }
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"

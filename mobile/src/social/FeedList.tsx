@@ -10,7 +10,7 @@ import { Card } from "../ui/Card";
 import { SkeletonCard, SkeletonLine, SkeletonPill, SkeletonTile } from "../ui/Skeleton";
 import { PersonAvatar } from "../ui/PersonAvatar";
 import { PressableScale } from "../ui/PressableScale";
-import { FlameIcon, TrophyIcon, HandshakeIcon, TargetIcon, PodiumIcon, SparkIcon } from "../ui/icons";
+import { FlameIcon, TrophyIcon, HandshakeIcon, HeartIcon, CrownIcon, TargetIcon, PodiumIcon, SparkIcon } from "../ui/icons";
 import { useTheme, spacing } from "../theme";
 import type { Palette } from "../theme/colors";
 import { EmptyCard, ErrorText, IconTile, Pill, type IconCmp } from "./common";
@@ -23,7 +23,12 @@ function eventTile(type: string, colors: Palette): { icon: IconCmp; tint: string
     case "achievement": return { icon: TrophyIcon, tint: colors.accent };
     case "friend_joined": return { icon: HandshakeIcon, tint: colors.success };
     case "quest_completed": return { icon: TargetIcon, tint: colors.primary };
+    /* Bu ikisi `ACTIVITY_TYPES`ta var ve iki tarafta da `default`a düşüyordu:
+       ortak seri ve lig yükselişi akışta genel bir kıvılcımla çiziliyor,
+       yani karo türü söyleme işini tam da bu iki olayda yapmıyordu. */
     case "weekly_top": return { icon: PodiumIcon, tint: colors.info };
+    case "friend_streak": return { icon: HeartIcon, tint: colors.success };
+    case "league_up": return { icon: CrownIcon, tint: colors.accent };
     default: return { icon: SparkIcon, tint: colors.primary };
   }
 }
