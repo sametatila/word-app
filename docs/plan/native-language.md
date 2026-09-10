@@ -344,6 +344,23 @@ O yüzden olduğu gibi çevrildi ve toplu karara bırakıldı. Ölçüt netleşt
 İlkini çeviri turu tek başına halledebilir, ikincisini edemez: ikisini
 birden değiştirmek Almanca alanı da değiştirmeyi gerektiriyor.
 
+Dördüncü durum l-048'de çıktı ve yönü ilk kez ters: şimdiye kadarki
+tersine çevirmelerin hepsi bir KARŞITLIĞI eritiyordu (Türkçe şöyle,
+Almanca böyle → İngilizce de Almanca gibi, karşıtlık kalmıyor). Bu
+satırda ise Türkçe ile Almanca gerçekten aynı, ayrık olan İngilizce:
+
+> "Fiil şimdiki zamanda kalıyor, çünkü durum hâlâ sürüyor. Türkçede
+> 'oturuyorum' deriz, aynı mantık." — [Ich wohne seit … hier]
+
+Türkçe "oturuyorum" der, Almanca `Ich wohne` der; İngilizce ise
+`I have lived here since …` der ve şimdiki zamanı kullanamaz. Yani
+BENZERLİK iddiası İngilizce öğrenci için farka dönüşüyor. Ölçüt aynı
+kalıyor — iddia yanlışsa cümle yeniden kurulur — ama düzeltmenin yönü
+tersine dönüyor: karşıtlığı silmek değil, olmayan bir karşıtlığı
+EKLEMEK gerekiyor. Yazılan karşılık farkı açıkça söylüyor, çünkü
+öğrenci kendi dilinin alışkanlığını Almancaya taşırsa tam burada
+hata yapar.
+
 #### Ana dile bağlılık ALMANCA metinde de var: 16 parça, 6 ders
 
 Yukarıdaki tarama Türkçe `tr()` alanlarınaydı. Almanca `de()` ve
