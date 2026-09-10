@@ -17,6 +17,16 @@
  * açıklığı neredeyse hiç yok (cümleler kısa ve tırnaksız), o yüzden orada
  * tek çalışan ölçüt bu — t-017'de eksik satırı yalnız o buldu.
  *
+ * ÜÇÜNCÜ ÖLÇÜT UZUNLUK KORELASYONU ve o da dilden bağımsız: bir satır
+ * eksikse o noktadan sonra her İngilizce satır BİR SONRAKİ Türkçenin
+ * karşılığıdır, yani kayık hizaya uzunluk olarak daha çok benzer. Üç satır
+ * üst üste böyleyse kayma orada GÖRÜNÜR olmuştur — başlangıcı daha yukarıda
+ * olabilir ve ileti bunu söylüyor. t-019'da gerçek eksik 130. satırdaydı,
+ * ölçüt 139'u gösterdi: aradaki dokuz satır birbirine yakın uzunlukta uzun
+ * cümlelerdi, sinyal ancak kısa ipuçları başlayınca yükseldi. Yine de
+ * yaklaşık bir yer, hiç yerden iyidir; ilk iki ölçüt orada susmuştu — 58. satırdan sonra hiç sayı yok, `build.tr` cümlelerinde de
+ * alıntı yok — eksik satırı yalnız bu bulurdu.
+ *
  * ALINTI ÖLÇÜTÜ DAR: açıklık ancak TARTIŞMASIZ Almanca görünüyorsa (ä/ß
  * taşıyor ya da büyük harfle başlayan bir sözcüğü var) kullanılıyor. İlk yazımda ölçüt
  * yalnız Türkçeye özgü harfleri atlıyordu ve t-004'te YANLIŞ satırı
@@ -45,18 +55,44 @@ if (lines.length !== src.words.length) {
   const german = (s) => /[äßÄ]/.test(s) || /[A-ZÄÖÜ][a-zäöüß]{2,}/.test(s);
   const nums = (t) => [...String(t).matchAll(/(?<!\p{L})\d+/gu)].map((m) => m[0]).join(",");
   let at = null;
+  let why = "";
   for (let i = 0; i < src.words.length && at === null; i++) {
-    if (nums(src.words[i].tr) !== nums(lines[i] ?? "")) at = i;
+    if (nums(src.words[i].tr) !== nums(lines[i] ?? "")) {
+      at = i;
+      why = "sayı";
+    }
     for (const s of spans(src.words[i].tr)) {
       if (/[ışğİĞŞ]/.test(s) || !german(s)) continue;
-      if (!flat(lines[i] ?? "").includes(flat(s))) at = i;
+      if (!flat(lines[i] ?? "").includes(flat(s))) {
+        at = i;
+        why = "kanıt";
+      }
     }
   }
+  /* Uzunluk korelasyonu: kayık hizanın üç satır üst üste daha iyi oturduğu
+     ilk yer. Eşik (12 karakter) gürültüyü eliyor; çeviri uzunluğu tek
+     satırda kolayca sapıyor, üç satırda sapmıyor. */
+  if (at === null)
+    for (let i = 0; i + 3 < src.words.length && at === null; i++) {
+      let n = 0;
+      for (let k = 0; k < 3; k++) {
+        const en = (lines[i + k] ?? "").length;
+        const same = Math.abs(en - String(src.words[i + k].tr).length);
+        const next = Math.abs(en - String(src.words[i + k + 1]?.tr ?? "").length);
+        if (next + 12 < same) n++;
+      }
+      if (n === 3) {
+        at = i;
+        why = "uzunluk";
+      }
+    }
+
   throw new Error(
     `${packet}: ${src.words.length} satır bekleniyor, ${lines.length} geldi` +
       (at === null
         ? ""
-        : `\n  kayma ${at + 1}. satırda başlıyor:\n    tr: ${src.words[at].tr}\n    en: ${lines[at] ?? "(yok)"}`),
+        : `\n  kayma ${why === "uzunluk" ? `en geç ${at + 1}. satırda GÖRÜNÜR oluyor (uzunluk ölçütü — başlangıcı daha yukarıda olabilir)` : `${at + 1}. satırda başlıyor (${why} ölçütü)`}:` +
+          `\n    tr: ${src.words[at].tr}\n    en: ${lines[at] ?? "(yok)"}`),
   );
 }
 
