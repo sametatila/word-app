@@ -306,6 +306,13 @@ Play'in Veri Güvenliği beyanıyla (`docs/play/data-safety.md`) aynı gerçeği
 Apple'ın kategorileriyle. **Hiçbir veri türü izleme (tracking) için kullanılmıyor** —
 reklam kimliği toplanmıyor, üçüncü taraf reklam ya da analitik SDK'sı yok.
 
+Yedi tür var ve `mobile/ios/Lernomi/PrivacyInfo.xcprivacy` ile BİREBİR aynı olmak
+zorunda; manifest pakette gidiyor ve Apple ikisini karşılaştırabiliyor. Device ID
+2026-09-10'da eklendi: uzak bildirim o gün açıldı ve cihaz başına bir kayıt jetonu
+saklanmaya başladı (`device_tokens`). Apple'ın örnekleri IDFA/IDFV olduğu için bu
+tartışmalı bir kutu; Play'in tanımı Firebase installation ID'yi açıkça oraya yazdığı
+için iki mağazanın aynı şeyi söylemesi tercih edildi.
+
 | Apple kategorisi | Toplanıyor | Kimliğe bağlı | Amaç |
 |---|---|---|---|
 | Contact Info › Email Address | Evet | Evet | App Functionality |
@@ -313,6 +320,7 @@ reklam kimliği toplanmıyor, üçüncü taraf reklam ya da analitik SDK'sı yok
 | User Content › Audio Data | **Hayır** (geçici işlenir, saklanmaz) | — | — |
 | User Content › Other User Content (yazdığın ve söylediğin metinler) | Evet | Evet | App Functionality |
 | Identifiers › User ID | Evet | Evet | App Functionality |
+| Identifiers › Device ID (bildirim jetonu) | **Evet** | Evet | App Functionality |
 | Usage Data › Product Interaction | Evet | Evet | Analytics (ayarlardan kapatılabilir) |
 | Purchases › Purchase History | Evet | Evet | App Functionality |
 | Diagnostics | Hayır | — | — |

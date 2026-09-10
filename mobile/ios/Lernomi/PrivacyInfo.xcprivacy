@@ -80,6 +80,24 @@
 			<false/>
 		</dict>
 		<dict>
+			<!-- Uzak bildirim (FCM) 2026-09-10'da açıldı: cihaz başına bir kayıt
+			     jetonu saklanıyor (`device_tokens`) ve Google'a gidiyor. Apple'ın
+			     örnekleri IDFA/IDFV ve jeton uygulama örneğine bağlı, ama Play'in
+			     tanımı Firebase installation ID'yi açıkça bu kutuya yazıyor;
+			     iki mağazanın aynı şeyi söylemesi için burada da beyan ediliyor.
+			     Reklam kimliği toplanmıyor. -->
+			<key>NSPrivacyCollectedDataType</key>
+			<string>NSPrivacyCollectedDataTypeDeviceID</string>
+			<key>NSPrivacyCollectedDataTypeLinked</key>
+			<true/>
+			<key>NSPrivacyCollectedDataTypePurposes</key>
+			<array>
+				<string>NSPrivacyCollectedDataTypePurposeAppFunctionality</string>
+			</array>
+			<key>NSPrivacyCollectedDataTypeTracking</key>
+			<false/>
+		</dict>
+		<dict>
 			<key>NSPrivacyCollectedDataType</key>
 			<string>NSPrivacyCollectedDataTypeProductInteraction</string>
 			<key>NSPrivacyCollectedDataTypeLinked</key>
