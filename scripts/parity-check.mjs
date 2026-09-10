@@ -1481,7 +1481,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       .replace(/^export /, "")
       .trim();
   };
-  sameList("umlaut govdesi", [um("mobile/src/game/wordGrammar.ts")], [um("src/lib/german.ts")]);
+  sameList("umlaut govdesi", [um("mobile/src/lib/german.ts")], [um("src/lib/german.ts")]);
 }
 
 /* ── 34. deneme sinavi hedef etiketleri ────────────────────────────────────

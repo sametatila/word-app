@@ -1,4 +1,5 @@
 import { t } from "../lib/i18n";
+import { umlautStem } from "../lib/german";
 
 /**
  * Notun okuduğu ALANLAR kadarı — `RoundWord` da `WordRow` da bunu karşılıyor.
@@ -18,20 +19,6 @@ type GrammarWord = { de: string; artikel: string | null; typ: string; formen: st
  * isim mi fiil mi olduğunu ve çoğulunun ne olduğunu hiç görmüyordu.
  */
 
-/** Umlautlu gövde — web `lib/german` `umlautStem` ile aynı. */
-function umlautStem(stem: string): string {
-  // "au" ikili ünlüsü tek parça umlautlanır: Haus → Häuser, Baum → Bäume.
-  const au = stem.toLowerCase().lastIndexOf("au");
-  if (au >= 0) {
-    const upper = stem[au] === stem[au].toUpperCase();
-    return `${stem.slice(0, au)}${upper ? "Äu" : "äu"}${stem.slice(au + 2)}`;
-  }
-  const matches = [...stem.matchAll(/[aouAOU]/g)];
-  const last = matches[matches.length - 1];
-  if (!last || last.index === undefined) return stem;
-  const map: Record<string, string> = { a: "ä", o: "ö", u: "ü", A: "Ä", O: "Ö", U: "Ü" };
-  return stem.slice(0, last.index) + map[last[0]] + stem.slice(last.index + 1);
-}
 
 /**
  * Tür etiketi. `typ` alanı her zaman dolu değil; Türkçe karşılığın mastar eki

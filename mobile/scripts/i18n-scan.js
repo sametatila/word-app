@@ -85,6 +85,9 @@ const SKIP_CONTENT = [
   // değil, süzgecin konusu. Ekrandaki uyarılar sözlükte (autherror.password_*).
   // Kapısı: `check:parity` "sabit COMMON" ve "sabit MIN_PASSWORD_LENGTH".
   "lib/passwordPolicy.ts",
+  // Umlaut harf tablosu ({ a: "ä", ... }) — arayüz metni değil, biçim kuralı.
+  // Kapısı: `check:parity` "umlaut govdesi" (gövde webinkiyle dizge dizge).
+  "lib/german.ts",
 ].map((p) => path.join(SRC, ...p.split("/")));
 
 /**
