@@ -140,7 +140,7 @@ export function SocialSettingsScreen() {
             </Section>
           </>
         )}
-        {msg ? <Text variant="caption" color={ok ? colors.success : colors.danger} style={{ marginTop: spacing.lg, textAlign: "center" }}>{msg}</Text> : null}
+        {msg ? <Text variant="caption" color={ok ? colors.successText : colors.dangerText} style={{ marginTop: spacing.lg, textAlign: "center" }}>{msg}</Text> : null}
       </ScrollView>
     </View>
   );

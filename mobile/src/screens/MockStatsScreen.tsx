@@ -109,7 +109,7 @@ export function MockStatsScreen() {
                 <View key={s.skill} style={{ marginTop: spacing.sm }}>
                   <View style={{ flexDirection: "row", justifyContent: "space-between", alignItems: "baseline" }}>
                     <Text variant="body">{skillOf(s.skill)}</Text>
-                    <Text variant="bodyStrong" color={s.pct >= 60 ? colors.success : colors.danger}>%{s.pct}</Text>
+                    <Text variant="bodyStrong" color={s.pct >= 60 ? colors.successText : colors.dangerText}>%{s.pct}</Text>
                   </View>
                   <View style={{ height: 4, borderRadius: 2, backgroundColor: colors.surface2, marginTop: 4 }}>
                     <View style={{ height: 4, borderRadius: 2, width: `${s.pct}%`, backgroundColor: s.pct >= 60 ? colors.success : colors.danger }} />
@@ -139,7 +139,7 @@ export function MockStatsScreen() {
                     <Text variant="body">{label(r.paperId)} · {skillOf(r.skill, r.paperId)}</Text>
                     <Text variant="micro" color={colors.textMuted}>{t("mockexam.score", { correct: r.correct, total: r.total })}</Text>
                   </View>
-                  <Text variant="bodyStrong" color={r.passed ? colors.success : colors.danger}>%{r.score}</Text>
+                  <Text variant="bodyStrong" color={r.passed ? colors.successText : colors.dangerText}>%{r.score}</Text>
                 </View>
               ))}
             </Card>

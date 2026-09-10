@@ -98,8 +98,8 @@ export function ProfileScreen() {
         */}
         {me ? (
           <View style={{ flexDirection: "row", flexWrap: "wrap", gap: spacing.md, marginBottom: spacing.lg }}>
-            <StatTile value={String(me.streak)} label={t("profile.day_streak")} color={colors.streak} colors={colors} />
-            <StatTile value={String(me.xp).replace(/\B(?=(\d{3})+(?!\d))/g, ".")} label={t("profile.total_xp")} color={colors.success} colors={colors} />
+            <StatTile value={String(me.streak)} label={t("profile.day_streak")} color={colors.streakText} colors={colors} />
+            <StatTile value={String(me.xp).replace(/\B(?=(\d{3})+(?!\d))/g, ".")} label={t("profile.total_xp")} color={colors.successText} colors={colors} />
           </View>
         ) : (
           // Kısa "yükleniyor" kartı yerine ızgaranın kendi iskeleti: dört karo
@@ -137,7 +137,7 @@ export function ProfileScreen() {
               <Text variant="h3" color={colors.successText}>{t("profile.premium_member")}</Text>
               <Text variant="caption" color={colors.textMuted}>{t("profile.all_features_unlocked_thank_you")}</Text>
             </View>
-            <CheckIcon color={colors.success} size={22} />
+            <CheckIcon color={colors.successText} size={22} />
           </View>
         ) : (
           <PressableScale onPress={() => nav.navigate("Paywall")} style={[{ borderRadius: radii.xl, backgroundColor: colors.primary, padding: spacing.lg, flexDirection: "row", alignItems: "center", gap: spacing.md, marginBottom: spacing.lg }, softShadow(colors.primary, 10)]}>
@@ -186,7 +186,7 @@ export function ProfileScreen() {
           kolay bulunur.
         */}
         <PressableScale onPress={() => setConfirmOut(true)} style={{ flexDirection: "row", alignItems: "center", justifyContent: "center", gap: 8, marginTop: spacing.lg, paddingVertical: spacing.md }}>
-          <LogoutIcon color={colors.danger} size={20} />
+          <LogoutIcon color={colors.dangerText} size={20} />
           <Text variant="bodyStrong" color={colors.dangerText}>{t("profile.log_out")}</Text>
         </PressableScale>
 

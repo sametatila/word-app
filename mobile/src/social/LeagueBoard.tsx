@@ -126,7 +126,7 @@ function LeagueRowCard({ row, zone, onOpen, onReport }: { row: LeagueRow; zone: 
         </Text>
         {row.streak > 0 ? (
           <View style={{ flexDirection: "row", alignItems: "center", gap: 4 }}>
-            <FlameIcon color={colors.streak} size={12} />
+            <FlameIcon color={colors.streakText} size={12} />
             <Text variant="micro" color={colors.textMuted}>{t("social.days_streak", { n: row.streak })}</Text>
           </View>
         ) : null}

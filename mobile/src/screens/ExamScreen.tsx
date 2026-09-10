@@ -264,7 +264,7 @@ export function ExamScreen() {
             <Celebrate show={!!result?.passed} />
             <Mascot mood={result?.passed ? "celebrate" : "idle"} size={90} />
             <Text variant="h1">%{pct}</Text>
-            <Text variant="bodyStrong" color={result?.passed ? colors.success : colors.textMuted}>
+            <Text variant="bodyStrong" color={result?.passed ? colors.successText : colors.textMuted}>
               {result ? (result.passed ? t("exam.passed") : t("exam.not_passed")) : t("exam.saved_offline")}
             </Text>
             {result?.trial ? <Text variant="caption" color={colors.textMuted}>{t("exam.trial_notice")}</Text> : null}
@@ -272,7 +272,7 @@ export function ExamScreen() {
           {result?.sections.map((s) => (
             <Card key={s.id} padded style={{ flexDirection: "row", justifyContent: "space-between" }}>
               <Text variant="body">{SECTION_DE[s.id]} · {t(SECTION_KEY[s.id])}</Text>
-              <Text variant="bodyStrong" color={s.pct >= 50 ? colors.success : colors.danger}>%{s.pct}</Text>
+              <Text variant="bodyStrong" color={s.pct >= 50 ? colors.successText : colors.dangerText}>%{s.pct}</Text>
             </Card>
           ))}
           <PressableScale onPress={() => nav.goBack()} style={[{ backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: 16, alignItems: "center" }, softShadow(colors.primary, 10)]}>
@@ -537,7 +537,7 @@ function Speak({ it, colors, pad, onDone }: { it: SpeakingItem; colors: Palette;
         <Text variant="body" color={colors.textMuted}>{it.tr}</Text>
         {heard ? <Text variant="caption" color={colors.textMuted}>{t("speak.heard")}: {heard}</Text> : null}
         {phase === "done" ? (
-          <Text variant="bodyStrong" color={ok ? colors.success : colors.danger}>{ok ? t("speak.correct") : t("exam.speak_missed")}</Text>
+          <Text variant="bodyStrong" color={ok ? colors.successText : colors.dangerText}>{ok ? t("speak.correct") : t("exam.speak_missed")}</Text>
         ) : null}
         {tip ? <Text variant="body" style={{ backgroundColor: colors.surface2, borderRadius: radii.md, padding: spacing.sm, lineHeight: 20 }}>{tip}</Text> : null}
         {phase === "rec" ? (
@@ -610,7 +610,7 @@ function Write({ w, level, colors, pad, onDone }: { w: WritingItem; level: strin
           <Text variant="caption" color={colors.textMuted} style={{ lineHeight: 19 }}>{gateNote}</Text>
         ) : score !== null ? (
           <>
-            <Text variant="bodyStrong" color={score >= 60 ? colors.success : colors.danger}>%{score}</Text>
+            <Text variant="bodyStrong" color={score >= 60 ? colors.successText : colors.dangerText}>%{score}</Text>
             <PressableScale onPress={() => onDone(score >= 60, score)} style={{ backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: 14, alignItems: "center" }}>
               <Text variant="bodyStrong" color={colors.onPrimary}>{t("item.finish")}</Text>
             </PressableScale>

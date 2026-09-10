@@ -117,7 +117,7 @@ export function UnitPane({ index, level, theme, items: gelenItems, embedded = fa
                   </View>
                   {it.done ? (
                     <View style={{ width: 26, height: 26, borderRadius: 13, backgroundColor: colors.successSoft, alignItems: "center", justifyContent: "center" }}>
-                      <CheckIcon color={colors.success} size={16} />
+                      <CheckIcon color={colors.successText} size={16} />
                     </View>
                   ) : it.current ? (
                     <View style={{ backgroundColor: colors.primarySoft, borderRadius: radii.pill, paddingHorizontal: 10, paddingVertical: 4 }}>

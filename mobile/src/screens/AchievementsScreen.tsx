@@ -46,7 +46,7 @@ function Badge({ a, colors }: { a: Achievement; colors: Palette }) {
       <Text variant="micro" color={colors.textMuted} style={{ marginTop: 2 }}>{a.hint}</Text>
       {a.unlocked ? (
         <View style={{ flexDirection: "row", alignItems: "center", gap: 4, marginTop: spacing.sm }}>
-          <CheckIcon color={colors.success} size={14} /><Text variant="micro" color={colors.successText}>{t("achievements.earned")}</Text>
+          <CheckIcon color={colors.successText} size={14} /><Text variant="micro" color={colors.successText}>{t("achievements.earned")}</Text>
         </View>
       ) : (
         <View style={{ marginTop: spacing.sm }}>

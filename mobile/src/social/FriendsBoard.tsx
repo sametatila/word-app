@@ -51,7 +51,7 @@ export function FriendsBoard({ compact = false }: { compact?: boolean }) {
               <View style={{ flex: 1 }}>
                 <Text variant="bodyStrong" color={r.isMe ? colors.primaryText : colors.text} numberOfLines={1}>{r.name ?? t("social.student")}{r.isMe ? t("social.you_paren") : ""}</Text>
                 <View style={{ flexDirection: "row", alignItems: "center", gap: 4 }}>
-                  <FlameIcon color={colors.streak} size={12} /><Text variant="micro" color={colors.textMuted}>{t("social.days_streak", { n: r.streak })}</Text>
+                  <FlameIcon color={colors.streakText} size={12} /><Text variant="micro" color={colors.textMuted}>{t("social.days_streak", { n: r.streak })}</Text>
                 </View>
               </View>
               <Text variant="h3" color={r.isMe ? colors.primaryText : colors.text}>{formatXp(r.xp)}</Text>

@@ -27,7 +27,7 @@ function QuestRow({ q, colors }: { q: Quest; colors: Palette }) {
           <Text variant="micro" color={colors.textMuted} style={{ marginTop: 3 }}>{Math.min(q.done, q.target)}/{q.target}</Text>
         </View>
         <View style={{ alignItems: "flex-end" }}>
-          <Text variant="bodyStrong" color={complete ? colors.success : colors.primaryText}>+{q.xp}</Text>
+          <Text variant="bodyStrong" color={complete ? colors.successText : colors.primaryText}>+{q.xp}</Text>
           <Text variant="micro" color={colors.textMuted}>XP</Text>
         </View>
       </View>

@@ -80,8 +80,8 @@ export function ChoiceGame({ round, onDone }: { round: ChoiceRound; onDone: (cor
               style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between", backgroundColor: bg, borderColor: border, borderWidth: 1.5, borderRadius: radii.lg, paddingVertical: spacing.lg, paddingHorizontal: spacing.lg }}
             >
               <Text variant="bodyStrong" color={fg}>{opt}</Text>
-              {reveal && isAnswer && <CheckIcon color={colors.success} size={22} />}
-              {reveal && isPicked && !isAnswer && <XIcon color={colors.danger} size={22} />}
+              {reveal && isAnswer && <CheckIcon color={colors.successText} size={22} />}
+              {reveal && isPicked && !isAnswer && <XIcon color={colors.dangerText} size={22} />}
             </PressableScale>
           );
         })}

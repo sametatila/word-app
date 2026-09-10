@@ -217,7 +217,7 @@ export function PaywallScreen() {
         ) : null}
 
         <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, marginBottom: spacing.xl, paddingHorizontal: 4 }}>
-          <ExamIcon color={colors.accent} size={22} />
+          <ExamIcon color={colors.accentText} size={22} />
           {/* Sınav vaadi yalnız gerçekten deneme sınavı OLAN kursta. Katalog
               boşken (bugünkü durum) CEFR vaadi tek başına doğru olanı;
               olmayan bir sınavın sözü verilmiyor. */}
@@ -391,7 +391,7 @@ function PromoBox({ colors, onRedeemed }: { colors: Palette; onRedeemed: () => v
           {busy ? <ActivityIndicator color="#fff" /> : <Text variant="bodyStrong" color={code.trim() ? "#fff" : colors.textFaint}>{t("promo.apply")}</Text>}
         </PressableScale>
       </View>
-      {msg ? <Text variant="caption" color={msg.ok ? colors.success : colors.danger} style={{ marginTop: spacing.sm }}>{msg.text}</Text> : null}
+      {msg ? <Text variant="caption" color={msg.ok ? colors.successText : colors.dangerText} style={{ marginTop: spacing.sm }}>{msg.text}</Text> : null}
     </Section>
   );
 }

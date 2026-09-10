@@ -144,8 +144,8 @@ export function SpeakingDrill({ tasks, onAllDone, colors }: { tasks: SpeakingTas
       {verdict !== "idle" && verdict !== "listening" ? (
         <View style={{ marginTop: spacing.md }}>
           <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.sm }}>
-            {verdict === "ok" ? <CheckIcon color={colors.success} size={18} /> : <XIcon color={colors.danger} size={18} />}
-            <Text variant="bodyStrong" color={verdict === "ok" ? colors.success : colors.danger}>
+            {verdict === "ok" ? <CheckIcon color={colors.successText} size={18} /> : <XIcon color={colors.dangerText} size={18} />}
+            <Text variant="bodyStrong" color={verdict === "ok" ? colors.successText : colors.dangerText}>
               {t(verdict === "ok" ? "item.speak_ok" : verdict === "unheard" ? "item.speak_unheard" : "item.speak_miss")}
             </Text>
           </View>
@@ -346,7 +346,7 @@ export function MonologueBody({ mono, level, exerciseId, onDone, colors }: {
               <View style={{ flexDirection: "row", flexWrap: "wrap", gap: 6, marginTop: spacing.sm }}>
                 {used.map((x) => (
                   <View key={x.de} style={{ backgroundColor: x.used ? colors.successSoft : colors.surface2, borderRadius: radii.pill, paddingHorizontal: spacing.sm, paddingVertical: 5 }}>
-                    <Text variant="micro" color={x.used ? colors.success : colors.textMuted}>{x.used ? "✓ " : ""}{x.de}</Text>
+                    <Text variant="micro" color={x.used ? colors.successText : colors.textMuted}>{x.used ? "✓ " : ""}{x.de}</Text>
                   </View>
                 ))}
               </View>
@@ -361,7 +361,7 @@ export function MonologueBody({ mono, level, exerciseId, onDone, colors }: {
               {mono.bulletsTr.map((b, i) => (
                 <PressableScale key={i} onPress={() => setChecks(checks.map((c, j) => (j === i ? !c : c)))} style={{ flexDirection: "row", alignItems: "center", gap: spacing.sm, marginTop: spacing.sm }}>
                   <View style={{ width: 22, height: 22, borderRadius: 6, borderWidth: 1.5, borderColor: checks[i] ? colors.success : colors.border, backgroundColor: checks[i] ? colors.successSoft : colors.surface, alignItems: "center", justifyContent: "center" }}>
-                    {checks[i] ? <CheckIcon color={colors.success} size={14} /> : null}
+                    {checks[i] ? <CheckIcon color={colors.successText} size={14} /> : null}
                   </View>
                   <Text variant="body" style={{ flex: 1 }}>{b}</Text>
                 </PressableScale>

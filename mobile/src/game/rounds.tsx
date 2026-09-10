@@ -307,8 +307,8 @@ function OptionButton({ text, sub, state, onPress, colors, idleTint }: { text: s
           <Text variant="bodyStrong" color={fg}>{text}</Text>
           {sub ? <Text variant="caption" color={colors.textMuted}>{sub}</Text> : null}
         </View>
-        {state === "correct" && <CheckIcon color={colors.success} size={22} />}
-        {state === "wrong" && <XIcon color={colors.danger} size={22} />}
+        {state === "correct" && <CheckIcon color={colors.successText} size={22} />}
+        {state === "wrong" && <XIcon color={colors.dangerText} size={22} />}
       </PressableScale>
     </Animated.View>
   );

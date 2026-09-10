@@ -45,7 +45,7 @@ function ExerciseRow({ ex, tint, done, isNext, onPress, colors, last }: { ex: Sk
           {isNext ? <Text variant="caption" color={tint}> · {t("skills.next").toLowerCase()}</Text> : null}
         </Text>
       </View>
-      {done ? <CheckIcon color={colors.success} size={18} /> : <ChevronRightIcon color={colors.textFaint} size={20} />}
+      {done ? <CheckIcon color={colors.successText} size={18} /> : <ChevronRightIcon color={colors.textFaint} size={20} />}
     </PressableScale>
   );
 }

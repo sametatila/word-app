@@ -35,7 +35,7 @@ export function ReportSheet({ visible, kind, refId, content, onClose }: {
           {state === "done" ? (
             <View style={{ alignItems: "center", gap: spacing.sm, paddingVertical: spacing.md }}>
               <View style={{ width: 56, height: 56, borderRadius: 28, backgroundColor: colors.successSoft, alignItems: "center", justifyContent: "center" }}>
-                <CheckIcon color={colors.success} size={28} />
+                <CheckIcon color={colors.successText} size={28} />
               </View>
               <Text variant="h3">{t("reportsheet.reported")}</Text>
               <Text variant="caption" color={colors.textMuted} style={{ textAlign: "center" }}>{t("reportsheet.thanks_we_ll_look_into_it")}</Text>

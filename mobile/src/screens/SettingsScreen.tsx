@@ -330,7 +330,7 @@ export function SettingsScreen() {
             {t("settings.signin_to_save")}
           </Text>
         )}
-        {msg && <Text variant="bodyStrong" color={msgOk ? colors.success : colors.danger} style={{ marginTop: spacing.lg, textAlign: "center" }}>{msg}</Text>}
+        {msg && <Text variant="bodyStrong" color={msgOk ? colors.successText : colors.dangerText} style={{ marginTop: spacing.lg, textAlign: "center" }}>{msg}</Text>}
 
         <PressableScale onPress={save} style={[{ borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: 16, alignItems: "center", marginTop: spacing.xl }, softShadow(colors.primary, 10)]}>
           <Text variant="h3" color="#fff">{busy ? "..." : t(user ? "common.save" : "settings.signin_and_save")}</Text>

@@ -89,7 +89,7 @@ export function QuizScreen() {
             <Celebrate show={!!passed} />
             <Mascot mood={passed ? "celebrate" : "idle"} size={84} />
             <Text variant="h2">{t("common.n_correct", { correct: correct, total: total })}</Text>
-            <Text variant="caption" color={passed ? colors.success : colors.textMuted}>{t(passed ? "quiz.passed" : "quiz.try_more", { pct })}</Text>
+            <Text variant="caption" color={passed ? colors.successText : colors.textMuted}>{t(passed ? "quiz.passed" : "quiz.try_more", { pct })}</Text>
             <View style={{ flexDirection: "row", gap: spacing.sm, alignSelf: "stretch", marginTop: spacing.sm }}>
               <PressableScale onPress={retry} style={{ flex: 1, backgroundColor: colors.surface2, borderRadius: radii.lg, paddingVertical: 14, alignItems: "center" }}>
                 <Text variant="bodyStrong" color={colors.text}>{t("quiz.try_again")}</Text>

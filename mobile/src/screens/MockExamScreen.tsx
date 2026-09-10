@@ -304,7 +304,7 @@ export function MockExamScreen() {
         {phase === "gorev" ? (
           <View style={{ alignItems: "flex-end" }}>
             <Text variant="micro" color={colors.textMuted}>{t("mockexam.task_time")}</Text>
-            <Text variant="bodyStrong" color={left < 30 ? colors.danger : colors.text}>{mmss(left)}</Text>
+            <Text variant="bodyStrong" color={left < 30 ? colors.dangerText : colors.text}>{mmss(left)}</Text>
           </View>
         ) : null}
       </View>
@@ -720,7 +720,7 @@ function WritingTask({
         placeholderTextColor={colors.textFaint}
         style={{ marginTop: spacing.md, minHeight: 180, borderRadius: radii.md, backgroundColor: colors.surface2, color: colors.text, padding: spacing.md, textAlignVertical: "top" }}
       />
-      <Text variant="micro" color={need && n < need ? colors.textMuted : colors.success} style={{ marginTop: spacing.xs }}>
+      <Text variant="micro" color={need && n < need ? colors.textMuted : colors.successText} style={{ marginTop: spacing.xs }}>
         {need ? `${n} / ${need} ${t("mockexam.words_unit")}` : `${n} ${t("mockexam.words_unit")}`}
       </Text>
 
@@ -746,7 +746,7 @@ function OpenResult({ score, colors }: { score: OpenScore; colors: Palette }) {
   }
   return (
     <View style={{ marginTop: spacing.md }}>
-      <Text variant="h3" color={score.score >= 60 ? colors.success : colors.danger}>%{score.score}</Text>
+      <Text variant="h3" color={score.score >= 60 ? colors.successText : colors.dangerText}>%{score.score}</Text>
       {score.praise ? <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.xs, lineHeight: 20 }}>{score.praise}</Text> : null}
       {score.tip ? <Text variant="body" style={{ marginTop: spacing.xs, lineHeight: 22 }}>{score.tip}</Text> : null}
       {(score.errors ?? []).slice(0, 5).map((e, i) => (
@@ -894,7 +894,7 @@ function SpeakingTask({
             </>
           ) : (
             <View style={{ alignItems: "center" }}>
-              <MicIcon color={colors.danger} size={28} />
+              <MicIcon color={colors.dangerText} size={28} />
               <Text variant="bodyStrong" color={colors.dangerText} style={{ marginTop: spacing.xs }}>{t("mockexam.speak_now")}</Text>
               <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.xs, textAlign: "center", lineHeight: 20 }}>
                 {current?.who === "you" ? current.hint : t("mockexam.solo_hint")}
@@ -962,10 +962,10 @@ function ResultView({
         <Card padded style={{ marginBottom: spacing.md }}>
           <Text variant="micro" color={colors.textMuted}>{t("mockexam.result")}</Text>
           <View style={{ flexDirection: "row", alignItems: "flex-end", justifyContent: "space-between", marginTop: spacing.xs }}>
-            <Text variant="h1" color={score.passed ? colors.success : colors.danger}>%{score.pct}</Text>
+            <Text variant="h1" color={score.passed ? colors.successText : colors.dangerText}>%{score.pct}</Text>
             <Text variant="bodyStrong">{t("mockexam.score", { correct: score.correct, total: score.total })}</Text>
           </View>
-          <Text variant="bodyStrong" color={score.passed ? colors.success : colors.danger} style={{ marginTop: spacing.sm }}>
+          <Text variant="bodyStrong" color={score.passed ? colors.successText : colors.dangerText} style={{ marginTop: spacing.sm }}>
             {score.passed ? t("mockexam.passed") : t("mockexam.failed")}
           </Text>
           <Text variant="micro" color={colors.textMuted}>{t("mockexam.pass_note", { pct: MOCK_PASS_PCT })}</Text>
@@ -985,7 +985,7 @@ function ResultView({
               <View key={g.goal} style={{ marginTop: spacing.sm }}>
                 <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
                   <Text variant="body">{t(`mockexam.goal_${g.goal}`)}</Text>
-                  <Text variant="bodyStrong" color={pct >= 70 ? colors.success : pct >= 50 ? colors.text : colors.danger}>
+                  <Text variant="bodyStrong" color={pct >= 70 ? colors.successText : pct >= 50 ? colors.text : colors.dangerText}>
                     {g.correct}/{g.total}
                   </Text>
                 </View>
@@ -1070,7 +1070,7 @@ function ResultView({
                 <Card key={it.id} padded style={{ marginBottom: spacing.sm }}>
                   <View style={{ flexDirection: "row", gap: spacing.sm }}>
                     <View style={{ width: 24, height: 24, borderRadius: 12, alignItems: "center", justifyContent: "center", backgroundColor: ok ? colors.successSoft : colors.dangerSoft }}>
-                      {ok ? <CheckIcon color={colors.success} size={16} /> : <XIcon color={colors.danger} size={16} />}
+                      {ok ? <CheckIcon color={colors.successText} size={16} /> : <XIcon color={colors.dangerText} size={16} />}
                     </View>
                     <View style={{ flex: 1 }}>
                       <Text variant="bodyStrong" style={{ lineHeight: 22 }}>{it.no}. {it.text}</Text>
@@ -1083,7 +1083,7 @@ function ResultView({
                           {t("mockexam.your_answer")}: {givenLabel}
                         </Text>
                       ) : null}
-                      <Text variant="caption" color={ok ? colors.success : colors.text} style={{ marginTop: spacing.xs }}>
+                      <Text variant="caption" color={ok ? colors.successText : colors.text} style={{ marginTop: spacing.xs }}>
                         {t("mockexam.correct_answer")}: {scored?.expected ?? ""}
                       </Text>
                       <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.xs, lineHeight: 20 }}>{it.explain}</Text>

@@ -107,7 +107,7 @@ function ChoiceInput({ q, done, onSettle, colors }: { q: SkillQuestion; done: bo
           <PressableScale key={oi} onPress={() => { if (done) return; setPick(oi); onSettle(isAnswer); }}
             style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between", gap: spacing.sm, paddingHorizontal: spacing.md, paddingVertical: 12, borderRadius: radii.md, borderWidth: 1.5, borderColor: bc, backgroundColor: bg, opacity: done && !isAnswer && pick !== oi ? 0.55 : 1 }}>
             <Text variant="body" color={colors.text} style={{ flex: 1 }}>{opt}</Text>
-            {done && isAnswer ? <CheckIcon color={colors.success} size={18} /> : done && pick === oi ? <XIcon color={colors.danger} size={18} /> : null}
+            {done && isAnswer ? <CheckIcon color={colors.successText} size={18} /> : done && pick === oi ? <XIcon color={colors.dangerText} size={18} /> : null}
           </PressableScale>
         );
       })}
@@ -295,7 +295,7 @@ function FreeCard({ t, n, done, onSettle, colors }: { t: FreeTask; n: number; do
         placeholder={tx("skillquiz.write_your_answer_in", { lang: targetLangName() })} placeholderTextColor={colors.textFaint}
         style={{ marginTop: spacing.md, minHeight: 100, textAlignVertical: "top", backgroundColor: colors.surface, borderRadius: radii.md, borderWidth: 1.5, borderColor: colors.border, padding: spacing.md, color: colors.text, fontSize: 15, lineHeight: 22 }} />
       <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between", marginTop: spacing.sm }}>
-        <Text variant="micro" color={enough ? colors.success : colors.textMuted}>{tx("skillquiz.n_words", { n: words, min: t.minWords })}</Text>
+        <Text variant="micro" color={enough ? colors.successText : colors.textMuted}>{tx("skillquiz.n_words", { n: words, min: t.minWords })}</Text>
         {!done ? (
           <PressableScale onPress={() => { if (enough) { setReveal(true); onSettle(true); } }} disabled={!enough}
             style={{ backgroundColor: enough ? colors.primary : colors.surface2, borderRadius: radii.md, paddingHorizontal: spacing.lg, paddingVertical: 10 }}>

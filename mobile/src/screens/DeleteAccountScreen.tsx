@@ -32,7 +32,7 @@ function LossRow({ text, colors }: { text: string; colors: Palette }) {
   return (
     <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingVertical: 8 }}>
       <View style={{ width: 28, height: 28, borderRadius: radii.sm, alignItems: "center", justifyContent: "center", backgroundColor: colors.dangerSoft }}>
-        <XIcon color={colors.danger} size={16} />
+        <XIcon color={colors.dangerText} size={16} />
       </View>
       <Text variant="body" style={{ flex: 1 }}>{text}</Text>
     </View>
@@ -124,7 +124,7 @@ export function DeleteAccountScreen() {
     return (
       <View style={{ flex: 1, backgroundColor: colors.bg, alignItems: "center", justifyContent: "center", padding: spacing.xl, gap: spacing.md }}>
         <View style={{ width: 72, height: 72, borderRadius: 36, backgroundColor: colors.successSoft, alignItems: "center", justifyContent: "center" }}>
-          <CheckIcon color={colors.success} size={34} />
+          <CheckIcon color={colors.successText} size={34} />
         </View>
         <Text variant="h2" style={{ textAlign: "center" }}>{tx("deleteaccount.your_account_is_deleted")}</Text>
         <Text variant="body" color={colors.textMuted} style={{ textAlign: "center" }}>{tx("deleteaccount.your_data_is_gone_it_was_good_to")}</Text>

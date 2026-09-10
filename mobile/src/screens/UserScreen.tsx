@@ -121,15 +121,15 @@ export function UserScreen() {
               ) : null}
             </View>
           ) : null}
-          {msg ? <Text variant="caption" color={ok ? colors.success : colors.danger} style={{ marginTop: spacing.sm }}>{msg}</Text> : null}
+          {msg ? <Text variant="caption" color={ok ? colors.successText : colors.dangerText} style={{ marginTop: spacing.sm }}>{msg}</Text> : null}
         </Card>
 
         {data.stats ? (
           <View style={{ flexDirection: "row", flexWrap: "wrap", gap: spacing.md, marginBottom: spacing.lg }}>
-            <StatTile value={String(data.stats.currentStreak)} label={t("user.day_streak")} color={colors.streak} colors={colors} />
+            <StatTile value={String(data.stats.currentStreak)} label={t("user.day_streak")} color={colors.streakText} colors={colors} />
             <StatTile value={formatXp(data.stats.weeklyXp)} label={t("user.xp_this_week")} color={colors.primaryText} colors={colors} />
-            <StatTile value={formatXp(data.stats.totalXp)} label={t("user.total_xp")} color={colors.success} colors={colors} />
-            <StatTile value={String(data.stats.achievements)} label={t("user.badge")} color={colors.accent} colors={colors} />
+            <StatTile value={formatXp(data.stats.totalXp)} label={t("user.total_xp")} color={colors.successText} colors={colors} />
+            <StatTile value={String(data.stats.achievements)} label={t("user.badge")} color={colors.accentText} colors={colors} />
           </View>
         ) : (
           <View style={{ marginBottom: spacing.lg }}>
