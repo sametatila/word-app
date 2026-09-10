@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { EmptyCard } from "@/components/empty-card";
-import { BellIcon, CheckIcon, ChevronRightIcon, FlameIcon, HandshakeIcon, InboxIcon, TargetIcon, UserPlusIcon } from "@/components/icons";
+import { BellIcon, CheckIcon, ChevronRightIcon, FlameIcon, HandshakeIcon, InboxIcon, PodiumIcon, TargetIcon, UserPlusIcon } from "@/components/icons";
 import { useEffect, useState } from "react";
 import { Avatar } from "@/components/avatar";
 import { SkeletonLine, SkeletonTile } from "@/components/skeleton";
@@ -58,6 +58,11 @@ function tileFor(n: NotificationView): { Icon: (p: { size?: number }) => React.J
       return { Icon: CheckIcon, tint: "var(--color-mint)" };
     case "friend_milestone":
       return { Icon: FlameIcon, tint: "var(--color-flame)" };
+    /* Lig yükselişi de kendi simgesini hak ediyor: genel gelen kutusu
+       simgesi satırın neyle ilgili olduğunu söylemiyordu ve bu satırın
+       aktörü de yok, yani başka bir ipucu da yok. */
+    case "league_up":
+      return { Icon: PodiumIcon, tint: "var(--color-violet)" };
     default:
       return { Icon: InboxIcon, tint: "var(--color-brand)" };
   }

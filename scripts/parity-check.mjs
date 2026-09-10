@@ -2923,6 +2923,28 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   sameList("seviye testi kayit kurtarma", kurtarma("mobile/src/screens/PlacementScreen.tsx"), kurtarma("src/components/placement/placement-test.tsx"));
 }
 
+/* ── 78. gelen kutusu: tur → simge ve tur → gidilen yer ───────────────────
+ * Sunucu dokuz bildirim turu gonderiyor. Iki tarafin da AYNI turleri
+ * tanimasi gerekiyor: taninmayan tur genel bir simgeye ve akisa dusuyor,
+ * yani satir neyle ilgili oldugunu soylemiyor ve dokununca baska yere
+ * goturuyor. `league_up` boyleydi - aktoru de olmadigi icin ekranda hicbir
+ * ipucu kalmiyordu. */
+{
+  const kume = (p, blok) => {
+    const src = read(p).replace(/\/\*[\s\S]*?\*\//g, " ").replace(/\/\/[^\n]*/g, " ");
+    const i = src.indexOf(blok);
+    if (i < 0) return ["bulunamadi"];
+    /* Pencere islevin KENDISIYLE sinirli: sabit uzunluktaki bir pencere
+       komsu islevin `case`lerini de yutuyordu (yonlendirme haritasi, simge
+       haritasindan `friend_milestone` calmisti). */
+    const son = src.indexOf("\n}", i);
+    const govde = src.slice(i, son < 0 ? i + 1400 : son);
+    return [...new Set([...govde.matchAll(/case "([a-z_]+)"/g)].map((m) => m[1]))].sort();
+  };
+  sameSet("gelen kutusu simgeleri", kume("mobile/src/screens/InboxScreen.tsx", "function tileFor"), kume("src/components/social/inbox.tsx", "function tileFor"), "mobil", "web");
+  sameSet("gelen kutusu yonlendirmesi", kume("mobile/src/screens/InboxScreen.tsx", "function open("), kume("src/components/social/inbox.tsx", "function hrefFor"), "mobil", "web");
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"

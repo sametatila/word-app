@@ -206,7 +206,17 @@ export function FriendsHub({ me, initialTab }: { me: SocialMeView; initialTab: H
       </nav>
 
       <div className="mt-3">
-        {err ? <p className="mb-2 text-caption" style={{ color: "var(--color-rose)" }}>{err}</p> : null}
+        {/* Hata metninin yanında YERİNDE tekrar deneme: Android burada bir
+            "tekrar dene" düğmesi gösteriyor (`FriendsScreen`) ve geçici bir
+            ağ hatasında kullanıcının sekmeyi terk etmesi gerekmiyor. */}
+        {err ? (
+          <div className="mb-2 flex items-center gap-2">
+            <p className="text-caption" style={{ color: "var(--color-danger)" }}>{err}</p>
+            <button type="button" onClick={() => void reload()} className="chip px-3 py-1 text-caption">
+              {t("friends.try_again")}
+            </button>
+          </div>
+        ) : null}
         {tab === "friends" ? (
           data === null ? (
             <PersonRowSkeleton rows={3} />

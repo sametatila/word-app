@@ -13,7 +13,7 @@ import { Card } from "../ui/Card";
 import { SkeletonLine, SkeletonTile } from "../ui/Skeleton";
 import { PersonAvatar } from "../ui/PersonAvatar";
 import { PressableScale } from "../ui/PressableScale";
-import { UserPlusIcon, HandshakeIcon, BellIcon, TargetIcon, CheckIcon, FlameIcon, InboxIcon, LockIcon, ChevronRightIcon } from "../ui/icons";
+import { UserPlusIcon, HandshakeIcon, BellIcon, TargetIcon, CheckIcon, FlameIcon, InboxIcon, LockIcon, ChevronRightIcon, PodiumIcon } from "../ui/icons";
 import { useTheme, spacing, onTint } from "../theme";
 import type { Palette } from "../theme/colors";
 import { EmptyCard, ErrorText, IconTile, Pill, ReactionGlyph, ScreenHeader, reactionTone, type IconCmp } from "../social/common";
@@ -28,6 +28,9 @@ function tileFor(n: NotificationView, colors: Palette): { icon: IconCmp; tint: s
     case "quest_invite": case "quest_accepted": return { icon: TargetIcon, tint: colors.primary };
     case "quest_completed": return { icon: CheckIcon, tint: colors.success };
     case "friend_milestone": return { icon: FlameIcon, tint: colors.streak };
+    /* Lig yükselişinin aktörü yok: simge, satırın neyle ilgili olduğunu
+       söyleyen tek şey (web `inbox` ile aynı karo). */
+    case "league_up": return { icon: PodiumIcon, tint: colors.accent };
     default: return { icon: InboxIcon, tint: colors.primary };
   }
 }
