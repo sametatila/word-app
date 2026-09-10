@@ -2334,6 +2334,48 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   sameSet("seviye testi asamalari (sunucu)", sunucu, [...mobil, ...KAYITLI_EKSIK].sort(), "sunucu", "mobil + kayitli eksik");
 }
 
+/* ── 58. sinav sonucunun alanlari ─────────────────────────────────────────
+ * Sunucu `ExamResult` donduruyor; mobil ekran kendi dar `Result` tipini elle
+ * yaziyor ve yazmadigi alan SESSIZCE dusuyor. `id` tam olarak boyle kaybolmus
+ * ve sertifikaya ulasmanin yolunu kapatmisti (11.122).
+ *
+ * Kapi tam esitlik istemiyor - mobil bazi alanlari zaten baska yerden
+ * biliyor - ama DUSEN alanlarin listesi burada yazili: sunucu yeni bir alan
+ * eklerse liste tutmuyor, kapi kaliyor ve insan "bunu mobil de kullanmali mi"
+ * diye bakiyor. */
+{
+  const ustDuzey = (p, name) => {
+    const x = read(p).replace(/\/\*[\s\S]*?\*\//g, " ").replace(/\/\/[^\n]*/g, " ");
+    const i = x.indexOf("type " + name + " =");
+    if (i < 0) return ["bulunamadi: " + name];
+    let k = x.indexOf("{", i);
+    let d = 0;
+    let son = -1;
+    for (let j = k; j < x.length; j++) {
+      if (x[j] === "{") d++;
+      else if (x[j] === "}" && --d === 0) { son = j; break; }
+    }
+    if (son < 0) return ["okunamadi: " + name];
+    const govde = x.slice(k + 1, son);
+    const parcalar = [];
+    let dd = 0;
+    let buf = "";
+    for (const c of govde) {
+      if ("{[(".includes(c)) dd++;
+      else if ("}])".includes(c)) dd--;
+      if ((c === ";" || c === ",") && dd === 0) { parcalar.push(buf); buf = ""; } else buf += c;
+    }
+    parcalar.push(buf);
+    return [...new Set(parcalar.map((seg) => (seg.match(/^\s*(\w+)\??\s*:/) ?? [])[1]).filter(Boolean))].sort();
+  };
+  const web = ustDuzey("src/lib/exam-types.ts", "ExamResult");
+  const mobil = ustDuzey("mobile/src/screens/ExamScreen.tsx", "Result");
+  /* Mobilin BILEREK almadiklari: seviye ve modul rota parametresinde, tur
+     ondan tureniyor, tarih de sonuc ekraninda kullanilmiyor. */
+  const KAYITLI_DUSEN = ["at", "kind", "level", "module"];
+  sameSet("sinav sonucu alanlari", web, [...mobil, ...KAYITLI_DUSEN].sort(), "sunucu", "mobil + kayitli dusen");
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"
