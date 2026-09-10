@@ -356,6 +356,20 @@ console.log("\n" + C.b + "12. UNITE DUGUM TURLERI" + C.off);
     union(read("mobile/src/data/unit.ts"), "export type ItemKind"),
     union(read("src/lib/immersion/types.ts"), "export type ImmersionItemKind"),
   );
+
+  /*
+   * İKİNCİ KOPYA DA ÖLÇÜLÜYOR. `ui/unitKind` bir zamanlar kendi `ItemKind`ını
+   * yazıyordu ve o kopya ölü bir `speak` taşımaya devam etti - birinci kopya
+   * düzeltilirken bu bölüm onu görmedi, çünkü yalnız `data/unit`e bakıyordu.
+   * Artık `unitKind` tipi `data/unit`ten alıyor; kural da bunu ölçüyor, yani
+   * biri yeniden kendi birleşimini yazarsa kapı söylüyor.
+   */
+  const kindSrc = read("mobile/src/ui/unitKind.tsx");
+  if (/export type ItemKind\s*=/.test(kindSrc)) {
+    fail("ui/unitKind kendi birlesimini yaziyor", ["tip `data/unit`ten alinmali; ikinci kopya sessizce ayrisiyor"]);
+  } else if (!/import type \{ ItemKind \}/.test(kindSrc)) {
+    fail("ui/unitKind tipi nereden aliyor belirsiz", ["`import type { ItemKind } from \"../data/unit\"` bekleniyor"]);
+  } else pass("ui/unitKind tek tanimi kullaniyor");
 }
 
 /* kopya birlesimler: kademe, iliski, tepki */

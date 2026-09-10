@@ -1,5 +1,6 @@
 import React from "react";
-import { LearnIcon, ReadIcon, ListenIcon, WriteIcon, MicIcon, GrammarIcon, QuizIcon, CheckIcon } from "./icons";
+import { LearnIcon, ReadIcon, ListenIcon, WriteIcon, GrammarIcon, QuizIcon, CheckIcon } from "./icons";
+import type { ItemKind } from "../data/unit";
 import type { Palette } from "../theme";
 
 /**
@@ -14,14 +15,18 @@ import type { Palette } from "../theme";
  * Web karşılığı `src/components/immersion/unit-pane.tsx` içinde tek yerde;
  * sekiz türün rengi iki platformda birebir aynı.
  */
-export type ItemKind = "lesson" | "read" | "listen" | "write" | "speak" | "grammar" | "quiz" | "checkpoint";
-
+/*
+  TÜR BİRLEŞİMİ TEK YERDEN. Burada üçüncü bir kopya vardı ve içinde ölü bir
+  `speak` taşıyordu: sunucu o türü hiç üretmiyor (bkz. `data/unit`). Dosyanın
+  kendi notu iki kopyanın sessizce ayrıştığını anlatıyor; üçüncüsü de aynı
+  yoldaydı. Artık `data/unit` içindeki tek tanım kullanılıyor, yani sunucunun
+  kümesi değiştiğinde derleyici burayı da zorluyor.
+*/
 export const KIND_TINT: Record<ItemKind, keyof Palette> = {
   lesson: "primary",
   read: "info",
   listen: "accent",
   write: "success",
-  speak: "primary",
   grammar: "streak",
   quiz: "primary",
   checkpoint: "danger",
@@ -32,7 +37,6 @@ const ICONS: Record<ItemKind, (p: { color: string; size: number }) => React.Reac
   read: (p) => <ReadIcon {...p} />,
   listen: (p) => <ListenIcon {...p} />,
   write: (p) => <WriteIcon {...p} />,
-  speak: (p) => <MicIcon {...p} />,
   grammar: (p) => <GrammarIcon {...p} />,
   quiz: (p) => <QuizIcon {...p} />,
   checkpoint: (p) => <CheckIcon {...p} />,
