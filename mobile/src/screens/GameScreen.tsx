@@ -46,6 +46,8 @@ export function GameScreen() {
   const [finalTotal, setFinalTotal] = useState(0);
   // Seri onarıldıysa kalınan gün sayısı; onarım yoksa null (bkz. finish).
   const [repaired, setRepaired] = useState<number | null>(null);
+  // Bu turda pekişen kelime sayısı; kutlama eşiği buna da bakıyor.
+  const [mastered, setMastered] = useState(0);
   const [combo, setCombo] = useState(0);
   const [pop, setPop] = useState(0);
   const answers = useRef<AnswerOut[]>([]);
@@ -122,7 +124,7 @@ export function GameScreen() {
       startedAt.current = Date.now();
       roundStart.current = Date.now();
       track("session_start", 0, onlyGame ? "practice" : "session");
-      if (list.length === 0) { setFinalCorrect(0); setFinalTotal(0); setRepaired(null); setPhase("done"); }
+      if (list.length === 0) { setFinalCorrect(0); setFinalTotal(0); setRepaired(null); setMastered(0); setPhase("done"); }
       else setPhase("play");
     } catch (e) {
       setPhase(e instanceof ApiError && e.status === 401 ? "auth" : "error");
@@ -199,6 +201,7 @@ export function GameScreen() {
       if (answers.current.length) {
         const r = await submitAnswers(answers.current, day.current, secs, progressNow());
         if (r?.streakRepaired) setRepaired(r.currentStreak);
+        if (r?.newlyMastered) setMastered(r.newlyMastered);
       }
     } catch { /* ölçüm/yazma sessizce düşer */ }
   }
@@ -234,14 +237,30 @@ export function GameScreen() {
   if (phase === "done") {
     const total = finalTotal;
     const pct = total ? Math.round((finalCorrect / total) * 100) : 0;
+    /* Web'le aynı ölçüt (`session-player` `deserved`): pekişen kelime tek
+       başına yeter, yoksa dört turdan uzun ve %80 üstü bir tur gerekiyor. */
+    const deserved = mastered > 0 || (pct >= 80 && total >= 4);
     return (
       <View style={pad}>
         <View style={{ flexDirection: "row", justifyContent: "flex-end" }}>
           <PressableScale hitSlop={4} onPress={() => nav.goBack()} accessibilityLabel={t("common.back")} style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}><XIcon color={colors.textMuted} size={22} /></PressableScale>
         </View>
         <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-          <Celebrate show={total > 0 && pct >= 60} />
-          {total > 0 ? <Mascot mood={pct >= 60 ? "celebrate" : "happy"} size={104} /> : <Mascot mood="idle" size={104} />}
+          {/*
+            KUTLAMA EŞİĞİ WEB'İN KURALI. Burada `pct >= 60` yazıyordu, yani
+            neredeyse her tur konfeti patlıyordu; web aynı ekranda daha yüksek
+            ve GEREKÇELİ bir eşik kullanıyor (`session-player` `deserved`):
+            "her seferinde patlarsa değersizleşir" ve "kelime pekiştirmek,
+            oturum doğruluğunun aksine gerçekten kazanılmış bir şey". İki
+            platformun aynı anı farklı sıklıkta kutlaması bir tasarım
+            ayrışmasıydı; ölçüt tek oldu.
+          */}
+          <Celebrate show={deserved} />
+          {/* Üç hâl, webdeki gibi (`session-player` özet kartı): hak edilmiş
+              turda kutlama, geçer turda mutlu, altında ÜZGÜN. Burada ikinci
+              hâl yoktu - %59 alan öğrenci de mutlu maskot görüyordu, yani
+              maskot hiçbir şey söylemiyordu. */}
+          {total > 0 ? <Mascot mood={deserved ? "celebrate" : pct >= 60 ? "happy" : "sad"} size={104} /> : <Mascot mood="idle" size={104} />}
           <ProgressRing size={150} stroke={14} pct={pct} track={colors.surface2} from={colors.gradientA[0]} to={colors.gradientA[1]}>
             <Text variant="display" color={colors.primaryText}>{finalCorrect}/{total || 0}</Text>
             <Text variant="micro" color={colors.textMuted}>{t("game.correct")}</Text>

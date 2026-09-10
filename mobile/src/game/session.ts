@@ -134,7 +134,12 @@ export function practiceGamesFor(course: string | null | undefined) {
  * sayacın sıfırlanmasını bekliyor — sıfırlanmadığını görüp sebebini
  * öğrenemezse rakam açıklanamaz hâle geliyor.
  */
-export type SubmitResult = { streakRepaired: boolean; currentStreak: number };
+export type SubmitResult = {
+  streakRepaired: boolean;
+  currentStreak: number;
+  /** Bu turda pekişme eşiğini geçen kelime sayısı — kutlama eşiği buna bakıyor. */
+  newlyMastered: number;
+};
 
 /** Cevapları sunucuya yazar (SRS + XP + seri güncellenir). `progress` verilirse
     oturum konumu da (index) kaydedilir — kaldığın yerden devam için. */
