@@ -135,7 +135,17 @@ export function pickCoachLine(moment: CoachMoment, vars: CoachVars = {}, lang: N
   return fillCoachLine(translate(lang, lines[i]), vars);
 }
 
-/** Günün saatine göre plan selamı. */
+/**
+ * Günün saatine göre plan selamı.
+ *
+ * BUGÜN ÇAĞRILMIYOR ve bu bir eksik değil: selam "bugünkü plan" satırı için
+ * yazılmıştı, o satır da mobilde karşılığı olmadığı için Öğren sekmesinden
+ * bilerek kaldırıldı (bkz. `learn/learn-hub.tsx`). Üç anın on beş cümlesi
+ * (`coach.plan_*`) yerinde duruyor ki yüzey geri gelirse yeniden yazılmasın.
+ *
+ * Buraya yazılmasının sebebi: ölü dışa aktarım taramasında her seferinde
+ * çıkıyor ve "web'de eksik bir selam var" diye okunmaya açık. Değil.
+ */
 export function planMoment(hour: number = new Date().getHours()): CoachMoment {
   if (hour < 12) return "plan_morning";
   if (hour < 18) return "plan_day";
