@@ -38,6 +38,23 @@ const end = (t: string): string => {
 /** Harfe bitişik olmayan sayılar; A1, B2 gibi kodlar miktar değildir. */
 const numbers = (t: string): string[] =>
   [...String(t).matchAll(/(?<!\p{L})\d+/gu)].map((m) => m[0]).sort();
+/**
+ * Açıklık TÜRKÇE mi? Öyleyse alıntı değil, vurgudur ve çevrilir.
+ *
+ * İlk ölçüt yalnız Türkçeye özgü harflere bakıyordu (ı, ş, ğ, İ) ve
+ * "Almancada gecikme „sahip olunur“" satırında yanıldı: o açıklıkta özel
+ * harf yok ama Türkçe. Kapalı bir işlev sözcüğü listesi eklendi.
+ *
+ * Liste eksik kalabilir ve o zaman kapı yanlışlıkla "alıntı düşmüş" der —
+ * yani YANLIŞ RET. Bu hattaki takas kasten bu yönde: yanlış ret bir satırı
+ * elle bakmaya zorlar, yanlış kabul ise kanıt cümlesinin sessizce
+ * çevrilmesine izin verirdi (`contains-checker-tradeoffs`in tersi yön,
+ * çünkü burada yanlış kabulün bedeli daha yüksek).
+ */
+const TR_WORDS =
+  /\b(bir|ve|ile|için|değil|demek|var|yok|olur|olunur|olmak|gibi|daha|çok|ama|yani|kadar|sonra|önce)\b/i;
+const turkish = (t: string): boolean => /[ışğİĞŞ]/.test(t) || TR_WORDS.test(t);
+
 /** Karşılaştırma için sadeleştirme — tırnak ve boşluk çeşitleri eşitlenir. */
 const flat = (t: string): string =>
   String(t).replace(/[„“”‚‘’'"]/g, "'").replace(/\s+/g, " ").trim();
@@ -70,11 +87,9 @@ if (existsSync(`${DIR}out`))
         if (a !== b) H(`sayılar uyuşmuyor: «${a}» → «${b}»`);
         /* Türkçe alıntı taşıyorsa İngilizcede de birebir durmalı. Yalnız
            „…“ ve "…" ölçülüyor: '…' Türkçe sözcük vurgulamak için de
-           kullanılıyor ("indem 'nasıl' sorusuna cevap verir"). İçinde
-           Türkçeye özgü harf geçen açıklık da atlanıyor — o alıntı değil,
-           Türkçe bir vurgu. */
+           kullanılıyor ("indem 'nasıl' sorusuna cevap verir"). */
         for (const m of r.tr.matchAll(/[„"]([^„"“”]{2,})[“"]/g)) {
-          if (/[ışğİĞŞ]/.test(m[1])) continue;
+          if (turkish(m[1])) continue;
           if (!flat(en).includes(flat(m[1]))) H(`alıntı düşmüş: «${m[1].slice(0, 34)}»`);
         }
         if (en.length > r.tr.length * 2 + 20 || en.length * 2 + 20 < r.tr.length)
