@@ -33,7 +33,12 @@ export function Requests({
     <div className="flex flex-col gap-4">
       {showIn ? (
         <section>
-          <h3 className="muted mb-2 px-1 text-xs font-bold uppercase tracking-wide">{t("requests.incoming")}</h3>
+          {/* Sayı başlıkta: Android `SectionTitle` sağ tarafta kaç istek
+              olduğunu yazıyor ve listeye bakmadan bilinmesi gereken tek şey o. */}
+          <div className="mb-2 flex items-baseline justify-between px-1">
+            <h3 className="muted text-xs font-bold uppercase tracking-wide">{t("requests.incoming")}</h3>
+            <span className="muted text-xs font-bold tabular-nums">{incoming.length}</span>
+          </div>
           <ol className="card divide-y divide-[color:var(--border)] overflow-hidden">
             {incoming.map((r) => (
               <RequestRow key={r.friendshipId} r={r} incoming onChanged={onChanged} />
@@ -43,7 +48,12 @@ export function Requests({
       ) : null}
       {showOut ? (
         <section>
-          <h3 className="muted mb-2 px-1 text-xs font-bold uppercase tracking-wide">{t("requests.sent")}</h3>
+          {/* Sayı başlıkta: Android `SectionTitle` sağ tarafta kaç istek
+              olduğunu yazıyor ve listeye bakmadan bilinmesi gereken tek şey o. */}
+          <div className="mb-2 flex items-baseline justify-between px-1">
+            <h3 className="muted text-xs font-bold uppercase tracking-wide">{t("requests.sent")}</h3>
+            <span className="muted text-xs font-bold tabular-nums">{outgoing.length}</span>
+          </div>
           <ol className="card divide-y divide-[color:var(--border)] overflow-hidden">
             {outgoing.map((r) => (
               <RequestRow key={r.friendshipId} r={r} incoming={false} onChanged={onChanged} />
@@ -73,12 +83,24 @@ function RequestRow({ r, incoming, onChanged }: { r: PendingView; incoming: bool
     }
   }
   const href = r.user.username ? `/u/${r.user.username}` : null;
+  const name = r.user.name ?? t("social.unnamed");
   return (
     <li className="flex items-center gap-3 px-4 py-3" style={{ borderColor: "var(--border)" }}>
-      <Avatar userId={r.user.userId} name={r.user.name} size={40} />
+      {/* Profile giden tek yol AVATAR — akış kartının kuralı (`feed.tsx`) ve
+          Android'in kuralı da o. Bağlantı addaydı: aynı uygulamanın iki
+          listesinde aynı iş iki ayrı yerden yapılıyordu ve adın altı çizili
+          hâli, adın kendisinin bir düğme olduğunu söylemiyordu. Bağlantının
+          erişilebilir adı kişinin adı. */}
+      {href ? (
+        <Link href={href} prefetch={false} aria-label={name} className="shrink-0">
+          <Avatar userId={r.user.userId} name={r.user.name} size={40} />
+        </Link>
+      ) : (
+        <Avatar userId={r.user.userId} name={r.user.name} size={40} />
+      )}
       <div className="min-w-0 flex-1">
         <p className="truncate text-sm font-bold">
-          {href ? <Link href={href} prefetch={false}>{r.user.name ?? t("social.unnamed")}</Link> : (r.user.name ?? t("social.unnamed"))}
+          {name}
           {r.user.username ? <span className="muted ml-1.5 text-xs font-normal">@{r.user.username}</span> : null}
         </p>
         <p className="muted text-[11px]">
