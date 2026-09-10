@@ -68,6 +68,37 @@ if (existsSync(`${DIR}out`))
 for (const key of written.keys())
   if (!src.has(key)) errors.push(`  [pakete ait değil] ${JSON.stringify(key.split("\u0000")[0].slice(0, 46))}`);
 
+/*
+  AYNI KARŞILIK, AYRI KELİME. Sözlük isteminin İngilizcesi Almanca
+  kelimenin karşılığıdır; iki AYRI Türkçe istem aynı İngilizceye düşerse
+  öğrenci iki farklı Almanca kelimeyi tek karşılıkla duyar ve ayıramaz.
+  Gerçek örnek: 'harf' [der Buchstabe] ve 'mektup' [der Brief] ikisi de
+  «letter» yazılmıştı; ilki 'letter of the alphabet' oldu.
+
+  Aynı Türkçe istemin birden çok Almanca kelimeye bölünmüş satırları
+  (bilet → Ticket/Fahrschein/Fahrkarte) KUSUR DEĞİL: orada Almancası
+  gerçekten eşanlamlı ve Türkçesi de tek kelime. O yüzden ölçüt Türkçenin
+  FARKLI olması.
+
+  Anahtar kapının göremediği bir çakışma bu: satırların anahtarı ayrı,
+  çakışan şey karşılık.
+*/
+const glossDe = (r) =>
+  r.de ?? ((src.get(K(r))?.ctx ?? []).join(" ").match(/\[([^\]]+)\]/) || [])[1] ?? "?";
+const byEn = new Map();
+for (const [key, en] of written) {
+  const tr = key.split("\u0000")[0];
+  if (!/demek(\.| —|$)/.test(tr)) continue;
+  const k = en.toLowerCase();
+  (byEn.get(k) ?? byEn.set(k, []).get(k)).push({ tr, de: key.split("\u0000")[1] });
+}
+for (const [en, group] of byEn) {
+  if (group.length < 2) continue;
+  if (new Set(group.map((g) => g.tr)).size < 2) continue;
+  const shown = group.map((g) => `${JSON.stringify(g.tr.slice(0, 34))}${g.de ? ` (${g.de})` : ""}`);
+  warnings.push(`  [aynı karşılık] «${en}» — ayrı istemler: ${shown.join(" / ")}`);
+}
+
 let coverage = null;
 if (ARG === "all") {
   const rows = [...src.values()];
