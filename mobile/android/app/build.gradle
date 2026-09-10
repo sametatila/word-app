@@ -147,7 +147,17 @@ android {
         applicationId "com.lernomi.learn"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 1
+        /*
+          versionCode HER YÜKLEMEDE ARTAR ve geri alınamaz: Play, daha önce
+          yüklenmiş her koddan büyük bir kod istiyor. Bu yüzden bir sürüm
+          yayından kaldırılsa bile kodu geri kullanılamaz.
+
+          2'ye çıkarıldı çünkü 1 numaralı paket 2026-09-09'da derlenmişti ve
+          Play'e yüklenmiş olabilir; yüklenmediyse de 2'den başlamanın kullanıcıya
+          görünen bir etkisi yok. versionName ayrı bir eksen, o kullanıcıya
+          görünüyor ve ürün sürümünü anlatıyor.
+        */
+        versionCode 2
         versionName "1.0.0"
     }
     signingConfigs {
