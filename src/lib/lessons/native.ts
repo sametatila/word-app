@@ -42,6 +42,12 @@ export type NativeDict = {
   vocab: Record<string, string>;
   patterns: Record<string, string>;
   meta: Record<string, { title: string; summary: string }>;
+  /**
+   * Rol yapma sahnesi. `openingTr` Almanca açılış repliğinin ANA DİLDEKİ
+   * karşılığı — Almanca replik (`opening`) olduğu gibi kalıyor, model onu
+   * konuşuyor.
+   */
+  roleplay: Record<string, { scene: string; partner: string; openingTr: string; goal: string }>;
 };
 
 /*
@@ -152,12 +158,15 @@ export function resolveLesson(dict: NativeDict, lesson: Lesson): Lesson | null {
     lecture.push({ ...step, say, expect });
   }
 
+  const rp = dict.roleplay[lesson.id];
+
   return {
     ...lesson,
     titleTr: meta.title,
     summary: meta.summary,
     vocab: lesson.vocab.map((v) => ({ ...v, tr: dict.vocab[lesson.id + SEP + v.de] ?? v.tr })),
     patterns: lesson.patterns.map((p) => ({ ...p, tr: dict.patterns[lesson.id + SEP + p.de] ?? p.tr })),
+    roleplay: rp ? { ...lesson.roleplay, ...rp } : lesson.roleplay,
     lecture,
   };
 }

@@ -72,7 +72,17 @@ for (const r of read("patterns")) patterns[r.lesson + SEP + r.de] = r.en;
 const meta = {};
 for (const r of read("meta")) meta[r.lesson] = { title: r.titleEn, summary: r.summaryEn };
 
-const data = { lecture, lectureSplit, frames, ordinals, notes, vocab, patterns, meta };
+/*
+  Rol yapma dört alan taşıyor ve biri kaymıştır: `openingEn`, Almanca
+  `opening` repliğinin ANA DİLDEKİ karşılığı, yani kaynakta `openingTr`
+  olan alanın yerini alıyor. Almanca replik olduğu gibi kalıyor — model
+  onu konuşuyor.
+*/
+const roleplay = {};
+for (const r of read("roleplay"))
+  roleplay[r.lesson] = { scene: r.sceneEn, partner: r.partnerEn, openingTr: r.openingEn, goal: r.goalEn };
+
+const data = { lecture, lectureSplit, frames, ordinals, notes, vocab, patterns, meta, roleplay };
 
 mkdirSync(OUT, { recursive: true });
 writeFileSync(`${OUT}native-en.json`, `${JSON.stringify(data)}\n`);
@@ -81,5 +91,5 @@ const n = (o) => Object.keys(o).length;
 console.log(
   "native-en.json yazıldı\n" +
     `  anlatım ${n(lecture)} (+${n(lectureSplit)} bölünmüş) · çerçeve ${n(frames)} · sıra ${n(ordinals)} · not ${n(notes)}\n` +
-    `  sözlükçe ${n(vocab)} · kalıp ${n(patterns)} · ders ${n(meta)}`,
+    `  sözlükçe ${n(vocab)} · kalıp ${n(patterns)} · ders ${n(meta)} · rol yapma ${n(roleplay)}`,
 );
