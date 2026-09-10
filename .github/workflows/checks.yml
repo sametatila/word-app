@@ -176,6 +176,15 @@ jobs:
       # DÜŞÜLMEZ, kelime turdan çıkar.
       - name: Anadil ekseni
         run: npm run test:gloss
+      # Yaş derecelendirmesi beyanı ↔ içerik. App Store anketine verilen her cevap
+      # bir BEYAN ve beyan verildiği an içerik üretiminin sınırı oluyor. Kapı
+      # olmadan bu sınır yalnız bir belgede yazılı kalır ve ders yazan kişi o
+      # belgeyi okumaz: "cinsel içerik yok" diyen uygulamaya öyle bir metin
+      # eklendiğinde beyan sessizce yalan olur. Kurulurken üç yanlış eşleşme
+      # yakaladı ve düzeltti (`weinen`≠Wein, `Wetter`≠Wette, `intimidating`≠intim),
+      # bir de yanlış dost: "Vierte Gewalt" basın demek, şiddet değil.
+      - name: Yaş derecelendirmesi
+        run: npm run check:age-rating
       # Lig kapanışının kuralları: kaç kişi yükselir/düşer ve kimin akıbeti ne.
       # Bu kapı zamanlama yüzünden var — kapanış YALNIZ pazartesi, yalnız
       # veritabanıyla ve yalnız bir haftalık veri birikmişken çalışıyor, yani

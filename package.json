@@ -46,6 +46,7 @@
     "content:confusables": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/confusables.ts",
     "test:pronounce": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/test-pronounce.ts",
     "test:content": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/check-content.ts",
+    "check:age-rating": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/check-age-rating.ts",
     "test:exams": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/check-exams.ts",
     "test:mock-exams": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/check-mock-exams.ts",
     "audit:mock-exams": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/audit-mock-exams.ts",
