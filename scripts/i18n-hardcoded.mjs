@@ -111,13 +111,24 @@ const SKIP_ASCII = [
   "components/screen-diag.tsx",
 ].map((p) => path.join(SRC, ...p.split("/")));
 
-/** Sözlükten sözcük kümesi — `"anahtar": "metin"` satırlarını okur. */
+/**
+ * Sözlükten sözcük kümesi — `"anahtar": "metin"` satırlarını okur.
+ *
+ * TİRE PARÇALARI ALINMIYOR. Sözlükte dilbilgisi kuralları var ve içlerinde
+ * ek/ön ek parçaları geçiyor ("be-/ver-/-ieren ohne ge-"). Bunlar sözcük
+ * değil ama düz bölme onları sözcük sanıyordu ve yabancı kümeyi
+ * zehirliyordu: "ver" Almanca sözcük sayıldığı için "Tepki ver" ham metin
+ * olarak HİÇ görünmüyordu - tarayıcı onu bir yıl boyunca kaçırdı. İki yanında
+ * da tire olmayan sözcükler alınıyor.
+ */
 function dictTokens(files) {
   const set = new Set();
   for (const f of files) {
     if (!fs.existsSync(f)) continue;
     for (const m of fs.readFileSync(f, "utf8").matchAll(/^\s*"[^"]+":\s*"((?:[^"\\]|\\.)*)",?\s*$/gm)) {
-      for (const w of m[1].toLocaleLowerCase("tr").match(/[a-zçğıöşü]+/g) ?? []) if (w.length > 2) set.add(w);
+      for (const w of m[1].toLocaleLowerCase("tr").match(/(?<![-a-zçğıöşü])[a-zçğıöşü]+(?![-a-zçğıöşü])/g) ?? []) {
+        if (w.length > 2) set.add(w);
+      }
     }
   }
   return set;
