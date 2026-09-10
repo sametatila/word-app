@@ -9,6 +9,11 @@ import type { RootStackParams } from "../navigation/RootStack";
  * uygulamaya gidiyor ve iki taraf da aynı yeri açmalı. Burası o adresi mobil
  * ekrana çeviriyor. Tanınmayan adres uygulamayı açmakla yetiniyor: bilinmeyen
  * bir yola atlamaktansa ana ekranda kalmak iyidir.
+ *
+ * Eşleme `__tests__/pushRoute.test.ts` ile bağlı: test sunucu kaynağındaki
+ * bütün `url:` değerlerini tarıyor ve her birinin buradan bir ekran
+ * döndürdüğünü doğruluyor. Sunucuya karşılığı olmayan bir adres eklenirse
+ * bildirim sessizce ana ekrana düşmüyor, test kırılıyor.
  */
 export const navigationRef = createNavigationContainerRef<RootStackParams>();
 
@@ -22,32 +27,57 @@ function friendTab(v: string | null): FriendTab | undefined {
   return (FRIEND_TABS as readonly string[]).includes(v) ? (v as FriendTab) : ALIAS[v];
 }
 
-export function navigateFromPush(url: string): void {
-  if (!url || !navigationRef.isReady()) return;
+/**
+ * `/learn` ALT YOLLARI — kendi ekranı olanlar.
+ *
+ * Eskiden `/learn` ile başlayan her adres sekmelere gidiyordu ve haftalık
+ * sınav hatırlatması bunun tek gerçek kurbanıydı: sunucu `/learn/weekly`
+ * gönderiyor (bkz. `lib/push` haftalık tur), webde sınav sayfası açılıyor,
+ * mobilde ana ekran açılıyordu — bildirimin çağırdığı şey bir dokunuş daha
+ * uzaktı. Kardeş yollar da aynı sınıftan olduğu için birlikte eşlendi.
+ *
+ * `/learn/challenge` burada YOK, çünkü mobilde karşılığı olan bir ekran yok;
+ * o adres sekmelere düşmeye devam ediyor.
+ */
+const LEARN_SUB = {
+  weekly: "Weekly",
+  daily: "Daily",
+  practice: "Practice",
+  walk: "Walk",
+} as const satisfies Record<string, keyof RootStackParams>;
+
+export type PushRoute = { name: keyof RootStackParams; params?: object };
+
+/** Adresten ekran — gezgine dokunmaz, o yüzden testten doğrudan çağrılabilir. */
+export function routeFromPush(url: string): PushRoute | null {
+  if (!url) return null;
   const [path, query = ""] = url.split("?");
   const tab = new URLSearchParams(query).get("tab");
+  if (path.startsWith("/u/")) {
+    const username = decodeURIComponent(path.slice(3));
+    return username ? { name: "User", params: { username } } : null;
+  }
+  if (path.startsWith("/friends")) {
+    const known = friendTab(tab);
+    return { name: "Tabs", params: { screen: "Friends", params: known ? { tab: known } : undefined } };
+  }
+  if (path.startsWith("/leaderboard")) return { name: "Leaderboard" };
+  if (path.startsWith("/inbox")) return { name: "Inbox" };
+  if (path.startsWith("/learn")) {
+    const sub = path.slice("/learn/".length).split("/")[0];
+    return { name: sub in LEARN_SUB ? LEARN_SUB[sub as keyof typeof LEARN_SUB] : "Tabs" };
+  }
+  return null;
+}
+
+export function navigateFromPush(url: string): void {
+  const route = routeFromPush(url);
+  if (!route || !navigationRef.isReady()) return;
   try {
-    if (path.startsWith("/u/")) {
-      const username = decodeURIComponent(path.slice(3));
-      if (username) navigationRef.navigate("User", { username });
-      return;
-    }
-    if (path.startsWith("/friends")) {
-      const known = friendTab(tab);
-      navigationRef.navigate("Tabs", { screen: "Friends", params: known ? { tab: known } : undefined });
-      return;
-    }
-    if (path.startsWith("/leaderboard")) {
-      navigationRef.navigate("Leaderboard");
-      return;
-    }
-    if (path.startsWith("/inbox")) {
-      navigationRef.navigate("Inbox");
-      return;
-    }
-    if (path.startsWith("/learn")) {
-      navigationRef.navigate("Tabs");
-    }
+    /* Ekran adı çalışma zamanında seçiliyor; `navigate`in aşırı yüklemeleri
+       sabit ada bağlı, o yüzden tek bir gevşek imzayla çağrılıyor. Adlar
+       `LEARN_SUB`ta `keyof RootStackParams` ile zaten sınanıyor. */
+    (navigationRef.navigate as (name: string, params?: object) => void)(route.name, route.params);
   } catch {
     /* gezgin hazır değilse dokunuş uygulamayı açmakla kalır */
   }
