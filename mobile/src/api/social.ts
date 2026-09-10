@@ -1,5 +1,5 @@
 import { api, ApiError } from "./client";
-import { t, dateLocale } from "../lib/i18n";
+import { t, dateLocale, formatNumber } from "../lib/i18n";
 
 /**
  * Sosyal API istemcisi — web'deki lib/social/client.ts'in aynası. Tipler
@@ -116,20 +116,6 @@ export function errorText(err: unknown): string {
   return t(key ?? "social.err_offline");
 }
 
-/**
- * Binlik ayraçlı XP — arayüz DİLİNDE.
- *
- * Ayraç SABİT NOKTAYDI (`.replace(...,".")`): İngilizce arayüzde 1240 "1.240"
- * çıkıyordu, oysa en-US'ta "1,240" olmalı. Tarihlerde aynı kusur bir kez
- * yaşandı ve `dateLocale()` onun için açılmıştı (bkz. lib/i18n) - sayı
- * biçimi de aynı yerden geliyor artık. Web karşılığı `formatNumber(n, lang)`
- * ve o da `toLocaleString` kullanıyor.
- *
- * Ad da değişti: `lib/useMe` içinde AYNI ADLA başka bir işlev var ve o
- * KISALTIYOR (1240 → "1.2k"). İki ayrı davranışın tek adı taşıması, hangi
- * modülden geldiğine bakmayan okuyucuyu yanıltıyordu.
- */
-export const groupXp = (n: number) => Math.round(n).toLocaleString(dateLocale());
 
 export function timeAgo(iso: string, now = Date.now()): string {
   const s = Math.max(0, Math.round((now - Date.parse(iso)) / 1000));
@@ -154,8 +140,8 @@ function feedPhrase(type: string, p: Record<string, unknown>): string {
     case "streak_milestone": return t("social.feed_streak", { n: Number(p.days ?? 0) });
     case "achievement": return t("social.feed_badge", { badge: String(p.title ?? t("social.feed_a_badge")) });
     case "friend_joined": return t("social.feed_friend", { name: String(p.friendName ?? t("social.feed_someone")) });
-    case "quest_completed": return t("social.feed_quest", { name: String(p.partnerName ?? t("social.feed_a_friend")), xp: groupXp(Number(p.targetXp ?? 0)) });
-    case "weekly_top": return t("social.feed_weekly", { rank: Number(p.rank ?? 0), xp: groupXp(Number(p.xp ?? 0)) });
+    case "quest_completed": return t("social.feed_quest", { name: String(p.partnerName ?? t("social.feed_a_friend")), xp: formatNumber(Number(p.targetXp ?? 0)) });
+    case "weekly_top": return t("social.feed_weekly", { rank: Number(p.rank ?? 0), xp: formatNumber(Number(p.xp ?? 0)) });
     case "friend_streak": return t("social.feed_costreak", { name: String(p.friendName ?? t("social.feed_a_friend")), n: Number(p.days ?? 0) });
     case "league_up": return t("social.feed_league", { league: tierName(Number(p.tier ?? 0)) });
     default: return t("social.feed_default");
@@ -188,7 +174,7 @@ export function notificationText(n: NotificationView): string {
     case "friend_accepted": return t("social.notif_friend_accepted", { who });
     case "reaction": return t("social.notif_reaction", { who, item: reactionTarget(String(d.eventType ?? ""), payload) });
     case "nudge": return d.kind === "cheer" ? t("social.notif_cheer", { who }) : t("social.notif_nudge", { who });
-    case "quest_invite": return t("social.notif_quest_invite", { who, xp: groupXp(Number(d.targetXp ?? 0)) });
+    case "quest_invite": return t("social.notif_quest_invite", { who, xp: formatNumber(Number(d.targetXp ?? 0)) });
     case "quest_accepted": return t("social.notif_quest_accepted", { who });
     case "quest_completed": return t("social.notif_quest_done", { who });
     case "league_up": return t("social.notif_league_up", { league: tierName(Number(payload.tier ?? 0)) });

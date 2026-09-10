@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { t } from "../lib/i18n";
+import { t, formatNumber } from "../lib/i18n";
 import { Alert, View } from "react-native";
-import { social, errorText, groupXp, type FriendRow, type QuestView } from "../api/social";
+import { social, errorText, type FriendRow, type QuestView } from "../api/social";
 import { Text } from "../ui/Text";
 import { Card } from "../ui/Card";
 import { SkeletonBar, SkeletonCard, SkeletonLine, SkeletonPill, SkeletonTile } from "../ui/Skeleton";
@@ -43,7 +43,7 @@ export function Quests({ friends, me, onChanged }: { friends: FriendRow[]; me: s
                   <PersonAvatar userId={f.userId} name={f.name} size={44} />
                   <View style={{ flex: 1 }}>
                     <Text variant="h3" numberOfLines={1}>{f.name ?? t("social.unnamed")}</Text>
-                    <Text variant="caption" color={colors.textMuted}>{t("social.xp_this_week", { xp: groupXp(f.weeklyXp) })}</Text>
+                    <Text variant="caption" color={colors.textMuted}>{t("social.xp_this_week", { xp: formatNumber(f.weeklyXp) })}</Text>
                   </View>
                   <Pill label={t("quests.invite")} small disabled={busy} onPress={() => void act(() => social.inviteQuest(f.userId))} />
                 </Card>
@@ -62,8 +62,8 @@ export function Quests({ friends, me, onChanged }: { friends: FriendRow[]; me: s
               <Card key={q.id} padded style={{ marginBottom: spacing.md, flexDirection: "row", alignItems: "center", gap: spacing.md, borderColor: done ? colors.success : colors.hairline }}>
                 <IconTile icon={done ? CheckIcon : TargetIcon} tint={done ? colors.success : colors.textMuted} solid={done} />
                 <View style={{ flex: 1 }}>
-                  <Text variant="bodyStrong" numberOfLines={1}>{t("quests.past_row", { name: q.partner.name ?? t("social.unnamed_short"), xp: groupXp(q.targetXp) })}</Text>
-                  <Text variant="micro" color={colors.textMuted}>{done ? t("quests.completed") : `${q.pct}% · ${groupXp(q.totalXp)} XP`}</Text>
+                  <Text variant="bodyStrong" numberOfLines={1}>{t("quests.past_row", { name: q.partner.name ?? t("social.unnamed_short"), xp: formatNumber(q.targetXp) })}</Text>
+                  <Text variant="micro" color={colors.textMuted}>{done ? t("quests.completed") : `${q.pct}% · ${formatNumber(q.totalXp)} XP`}</Text>
                 </View>
                 <PersonAvatar userId={q.partner.userId} name={q.partner.name} size={32} />
               </Card>
@@ -124,7 +124,7 @@ export function QuestCard({ q, me, busy, onAct }: { q: QuestView; me: string; bu
           <Text variant="caption" color={colors.textMuted}>{t("quests.with_partner", { name: q.partner.name ?? t("social.your_friend"), remaining: q.daysLeft === 1 ? t("social.last_day") : t("social.days_left", { n: q.daysLeft }) })}</Text>
         </View>
         <View style={{ alignItems: "flex-end" }}>
-          <Text variant="h2" color={colors.primaryText}>{groupXp(q.targetXp)}</Text>
+          <Text variant="h2" color={colors.primaryText}>{formatNumber(q.targetXp)}</Text>
           <Text variant="micro" color={colors.textMuted}>{t("quests.target_xp")}</Text>
         </View>
       </View>
@@ -149,9 +149,9 @@ export function QuestCard({ q, me, busy, onAct }: { q: QuestView; me: string; bu
             <View style={{ width: `${Math.round(q.pct * (1 - myShare))}%`, backgroundColor: colors.info }} />
           </View>
           <View style={{ flexDirection: "row", justifyContent: "space-between", marginTop: 8 }}>
-            <Text variant="caption" color={colors.primaryText}>{t("quests.my_xp", { xp: groupXp(q.myXp) })}</Text>
-            <Text variant="bodyStrong">{groupXp(q.totalXp)} / {groupXp(q.targetXp)}</Text>
-            <Text variant="caption" color={colors.infoText}>{q.partner.name?.split(" ")[0] ?? t("quests.partner_short")} {groupXp(q.partnerXp)}</Text>
+            <Text variant="caption" color={colors.primaryText}>{t("quests.my_xp", { xp: formatNumber(q.myXp) })}</Text>
+            <Text variant="bodyStrong">{formatNumber(q.totalXp)} / {formatNumber(q.targetXp)}</Text>
+            <Text variant="caption" color={colors.infoText}>{q.partner.name?.split(" ")[0] ?? t("quests.partner_short")} {formatNumber(q.partnerXp)}</Text>
           </View>
           <PressableScale onPress={() => Alert.alert(t("quests.leave_title"), t("quests.leave_text"), [{ text: t("common.discard"), style: "cancel" }, { text: t("quests.leave"), style: "destructive", onPress: () => void onAct(() => social.questAction(q.id, "cancel")) }])} style={{ alignSelf: "flex-end", marginTop: spacing.sm, paddingHorizontal: 10, paddingVertical: 4, borderRadius: radii.pill, backgroundColor: colors.surface2 }}>
             <Text variant="micro" color={colors.textMuted}>{t("quests.leave_quest")}</Text>

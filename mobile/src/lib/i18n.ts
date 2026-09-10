@@ -113,6 +113,19 @@ export function dateLocale(): string {
   return DATE_LOCALE[lang] ?? "en-US";
 }
 
+/**
+ * Binlik ayraçlı sayı, arayüz DİLİNDE — web `lib/i18n/dict` `formatNumber` ile
+ * aynı iş, aynı ad.
+ *
+ * Burada duruyor çünkü sayı biçimi dilin bir parçası ve tek bir yeri olmalı:
+ * ayraç bir kez `api/social` içinde sabit noktayla yazılmıştı ve İngilizce
+ * arayüzde 1240 "1.240" çıkıyordu. Kısaltan kardeşi (`lib/useMe` `formatXp`,
+ * 1240 → "1,2k") ayrı bir iş yapıyor ve ayrı duruyor.
+ */
+export function formatNumber(n: number): string {
+  return Math.round(n).toLocaleString(dateLocale());
+}
+
 export function currentLang(): NativeLang {
   return lang;
 }
