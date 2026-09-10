@@ -2,12 +2,12 @@
 
 import Link from "next/link";
 import { EmptyCard } from "@/components/empty-card";
-import { InboxIcon } from "@/components/icons";
+import { BellIcon, CheckIcon, ChevronRightIcon, FlameIcon, HandshakeIcon, InboxIcon, TargetIcon, UserPlusIcon } from "@/components/icons";
 import { useEffect, useState } from "react";
 import { Avatar } from "@/components/avatar";
 import { SkeletonLine, SkeletonTile } from "@/components/skeleton";
 import { errorText, notificationText, social, timeAgo, type NotificationView } from "@/lib/social/client";
-import { ReactionGlyph } from "./reaction-icons";
+import { REACTION_TONE, ReactionGlyph } from "./reaction-icons";
 import type { ReactionKind } from "@/lib/social/types";
 import { useT, useLang } from "@/lib/i18n/client";
 
@@ -27,6 +27,46 @@ function hrefFor(n: NotificationView): string {
     default:
       return "/friends?tab=feed";
   }
+}
+
+/**
+ * Bildirim türü → ikon karosu — Android `InboxScreen` `tileFor` ile birebir
+ * (info→sky, success→mint, streak→flame, primary→brand).
+ *
+ * Aktörü OLMAYAN satır (lig yükselişi) webde boş gri bir daire çiziyordu:
+ * satır neyle ilgili olduğunu hiç söylemiyordu. Aktörü olan satırda da tür
+ * hiç görünmüyordu - avatar kimi gösteriyor, neyi değil.
+ */
+function tileFor(n: NotificationView): { Icon: (p: { size?: number }) => React.JSX.Element; tint: string } {
+  switch (n.type) {
+    case "friend_request":
+      return { Icon: UserPlusIcon, tint: "var(--color-sky)" };
+    case "friend_accepted":
+      return { Icon: HandshakeIcon, tint: "var(--color-mint)" };
+    case "nudge":
+      return { Icon: BellIcon, tint: "var(--color-flame)" };
+    case "quest_invite":
+    case "quest_accepted":
+      return { Icon: TargetIcon, tint: "var(--color-brand)" };
+    case "quest_completed":
+      return { Icon: CheckIcon, tint: "var(--color-mint)" };
+    case "friend_milestone":
+      return { Icon: FlameIcon, tint: "var(--color-flame)" };
+    default:
+      return { Icon: InboxIcon, tint: "var(--color-brand)" };
+  }
+}
+
+/** 34'lük yuvarlak tint kabı — satırın sağ ucundaki tür/tepki simgesi. */
+function RowGlyph({ tint, children }: { tint: string; children: React.ReactNode }) {
+  return (
+    <span
+      className="flex h-[34px] w-[34px] shrink-0 items-center justify-center rounded-full"
+      style={{ background: `color-mix(in srgb, ${tint} 13%, transparent)`, color: tint }}
+    >
+      {children}
+    </span>
+  );
 }
 
 /**
@@ -71,11 +111,12 @@ export function Inbox() {
       <ol aria-hidden className="card divide-y divide-[color:var(--border)] overflow-hidden">
         {Array.from({ length: 5 }).map((_, i) => (
           <li key={i} className="flex items-center gap-3 px-4 py-3" style={{ opacity: 1 - i * 0.12 }}>
-            <SkeletonTile size={36} className="rounded-full" />
+            <SkeletonTile size={40} className="rounded-full" />
             <span className="min-w-0 flex-1">
               <SkeletonLine variant="body" width={`${72 - i * 6}%`} />
               <SkeletonLine variant="micro" width={64} className="mt-1" />
             </span>
+            <SkeletonTile size={34} className="rounded-full" />
           </li>
         ))}
       </ol>
@@ -95,18 +136,46 @@ export function Inbox() {
   return (
     <div className="flex flex-col gap-2">
       <ol className="card divide-y divide-[color:var(--border)] overflow-hidden">
-        {items.map((n) => (
-          <li key={n.id} style={{ borderColor: "var(--border)", background: n.read ? undefined : "color-mix(in srgb, var(--color-brand) 7%, transparent)" }}>
-            <Link href={hrefFor(n)} prefetch={false} className="flex items-center gap-3 px-4 py-3">
-              {n.actor ? <Avatar userId={n.actor.userId} name={n.actor.name} size={36} /> : <span className="h-9 w-9 rounded-full" style={{ background: "var(--surface-2)" }} />}
-              <span className="min-w-0 flex-1">
-                <span className="block text-sm leading-snug">{notificationText(n, lang)}</span>
-                <span className="muted block text-[11px]">{timeAgo(n.createdAt, lang)}</span>
-              </span>
-              {n.type === "reaction" && typeof n.detail.reaction === "string" ? <ReactionGlyph kind={n.detail.reaction as ReactionKind} size={18} /> : null}
-            </Link>
-          </li>
-        ))}
+        {items.map((n) => {
+          const { Icon, tint } = tileFor(n);
+          const reaction = n.type === "reaction" && typeof n.detail.reaction === "string" ? (n.detail.reaction as ReactionKind) : null;
+          return (
+            <li key={n.id} style={{ borderColor: "var(--border)" }}>
+              <Link href={hrefFor(n)} prefetch={false} className="flex items-center gap-3 px-4 py-3">
+                {n.actor ? (
+                  <Avatar userId={n.actor.userId} name={n.actor.name} size={40} />
+                ) : (
+                  <span
+                    className="flex h-10 w-10 shrink-0 items-center justify-center"
+                    style={{ borderRadius: "var(--radius-tile)", background: `color-mix(in srgb, ${tint} 13%, transparent)`, color: tint }}
+                  >
+                    <Icon size={20} />
+                  </span>
+                )}
+                <span className="min-w-0 flex-1">
+                  {/* Okunmamış satır KALIN. Tek işaret satırın arka planıydı ve
+                      Android okunmamışı yazı ağırlığı + nokta ile söylüyor. */}
+                  <span className={`block ${n.read ? "text-body" : "text-strong"}`}>{notificationText(n, lang)}</span>
+                  <span className="block text-micro" style={{ color: "var(--text-faint)" }}>{timeAgo(n.createdAt, lang)}</span>
+                </span>
+                {reaction ? (
+                  <RowGlyph tint={REACTION_TONE[reaction]}>
+                    <ReactionGlyph kind={reaction} size={18} />
+                  </RowGlyph>
+                ) : n.actor ? (
+                  <RowGlyph tint={tint}>
+                    <Icon size={18} />
+                  </RowGlyph>
+                ) : (
+                  <span className="shrink-0" style={{ color: "var(--text-faint)" }}>
+                    <ChevronRightIcon size={20} />
+                  </span>
+                )}
+                {!n.read ? <span className="h-2 w-2 shrink-0 rounded-full" style={{ background: "var(--color-brand)" }} /> : null}
+              </Link>
+            </li>
+          );
+        })}
       </ol>
       {cursor ? (
         <button className="btn btn-ghost h-9 text-xs" disabled={busy} onClick={() => void load(cursor)}>
