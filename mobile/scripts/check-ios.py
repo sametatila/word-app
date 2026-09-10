@@ -72,6 +72,15 @@ BUILD_FILE_SAYISI = {
     ".swift": 1, ".m": 1, ".mp3": 1, ".xcassets": 1, ".storyboard": 1, ".xcprivacy": 1,
     ".plist": 0, ".entitlements": 0, ".strings": 0,
 }
+# DOSYA ADINA göre istisna — uzantı kuralından ÖNCE bakılır.
+#
+# `.plist` için genel kural 0 ve doğru: Info.plist pakete Resources fazından
+# değil, INFOPLIST_FILE derleme ayarından giriyor. GoogleService-Info.plist ise
+# tam TERSİ — Firebase onu çalışma anında ANA PAKETTEN okuyor, yani Resources
+# fazında bulunmak zorunda. Uzantıya bakan kural bu dosyayı hatalı sayıyordu.
+BUILD_FILE_SAYISI_DOSYA = {
+    "GoogleService-Info.plist": 1,
+}
 # Hangi uzantı hangi fazda olmalı. Kaynak kod derlenir, gerisi pakete kopyalanır.
 BEKLENEN_FAZ = {
     ".swift": "Sources", ".m": "Sources",
@@ -129,7 +138,9 @@ def check_pbxproj():
     # bu yüzden "bir fazda GEÇEN" kayıtlar üzerinden yapılıyor.
     sayac = collections.Counter(ref for uuid, ref in BUILD_FILE.findall(src) if uuid in fazdaki)
     for uuid, yol in sorted(yollar.items(), key=lambda kv: kv[1]):
-        bekleniyor = BUILD_FILE_SAYISI.get(os.path.splitext(yol)[1])
+        bekleniyor = BUILD_FILE_SAYISI_DOSYA.get(os.path.basename(yol))
+        if bekleniyor is None:
+            bekleniyor = BUILD_FILE_SAYISI.get(os.path.splitext(yol)[1])
         if bekleniyor is None:
             continue
         var = sayac.get(uuid, 0)

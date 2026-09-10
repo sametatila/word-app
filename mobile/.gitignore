@@ -83,4 +83,7 @@ android/app/upload.keystore
 # Firebase yapılandırması (uzak bildirim) — proje anahtarlarını taşır, repoda tutulmaz.
 # Android eklentisi bu dosya varsa uygulanıyor; yoksa uygulama push'suz derleniyor.
 android/app/google-services.json
-ios/GoogleService-Info.plist
+# iOS karşılığı — hedefin İÇİNDE duruyor (ios/Lernomi/), kök ios/ altında değil.
+# Eski kural kök yolu yazıyordu ve hiçbir zaman eşleşmedi; dosya eklendiğinde
+# git onu izlenmeyen değil, EKLENEBİLİR olarak gösteriyordu.
+ios/**/GoogleService-Info.plist
