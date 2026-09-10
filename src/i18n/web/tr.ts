@@ -181,7 +181,6 @@ export const trWeb: Record<string, string> = {
      sade olduğu için bu anahtarların çoğu web'e özel. */
   "session.preparing": "Bugünkü çalışman hazırlanıyor…",
   "session.lets_go": "Hadi başlayalım",
-  "session.save_failed": "Bu turun cevapları kaydedilemedi. Tur devam ediyor.",
   "session.expired": "Oturumun sona ermiş",
   "session.expired_sub": "İlerlemen kayıtlı — girince kaldığın yerden devam edersin.",
   "session.load_failed": "Kelimeler yüklenemedi",
@@ -249,7 +248,6 @@ export const trWeb: Record<string, string> = {
   "common.pct": "%{n}",
   "diff.typed_vs_answer": "Yazılan: {typed}. Doğrusu: {answer}.",
   "common.listen_pronunciation": "Telaffuzu dinle",
-  "session.save_queued": "Cevapların kaydedilemiyor — bağlantın döndüğünde otomatik gönderilecek.",
   "session.today_summary": "Bugün {reviews} tekrar · {news} yeni kelime · seri {streak} gün",
   "session.continue_with_new": "Yeni kelimelerle devam et",
   "stage.counter": "Etap {n} / {total}",

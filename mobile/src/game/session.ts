@@ -1,4 +1,5 @@
-import { api } from "../api/client";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import { api, ApiError } from "../api/client";
 import { supportsGame } from "../lib/courses";
 import type { ErrorType } from "../lib/errors";
 
@@ -98,7 +99,7 @@ export type SessionMeta = {
   coverage?: { mastered: number; total: number };
 };
 
-/** Yarım kalan turun sunucudaki durumu — kaldığın yerden devam için. */
+/** Yarım remaining turun sunucudaki durumu — kaldığın yerden devam için. */
 export type ResumeState = { index: number; correct: number; total: number; xp: number; missed: unknown[] };
 
 export type SessionPayload = { rounds: Round[]; resume: ResumeState | null; meta: SessionMeta };
@@ -227,7 +228,7 @@ export function practiceGamesFor(course: string | null | undefined) {
  *
  * Mobil tipte yalnız üç alan vardı ve geri kalanı sessizce düşüyordu; oturum
  * özeti bu yüzden kazanılan XP'yi, günlük hedefi, pekişen kelimeyi ve yarına
- * kalan tekrarı HİÇ göstermiyordu (web `session-player` dördünü de gösteriyor).
+ * remaining tekrarı HİÇ göstermiyordu (web `session-player` dördünü de gösteriyor).
  * Bkz. web-parity §11.23.
  *
  * `wagerXp` mobilde okunmuyor: bahisli etap mobilde hiç yok.
@@ -264,6 +265,76 @@ export async function markKnown(wordId: number): Promise<void> {
   } catch { /* çevrimdışı: tur yine ilerler */ }
 }
 
-export function submitAnswers(answers: AnswerOut[], day: string, seconds: number, progress?: SessionProgress): Promise<SubmitResult> {
-  return api("/api/answers", { method: "POST", body: JSON.stringify({ answers, day, seconds, ...(progress ? { progress } : {}) }) });
+/**
+ * CEVAPLAR KAYBOLMUYOR.
+ *
+ * Yazma başarısız olduğunda çağıranların hepsi hatayı yutuyordu ("sessizce
+ * düşer") ve tur boyunca verilen cevaplar — SRS güncellemesi, XP, seri —
+ * SUNUCUYA HİÇ ULAŞMIYORDU. Kullanıcıya da bir şey söylenmiyordu: ekranda
+ * puan artıyor, sunucuda hiçbir şey değişmiyor. Web aynı yerde batch'i
+ * kuyruğa geri koyup bağlantı dönünce yeniden gönderiyor
+ * (`session-player` `flush`).
+ *
+ * Kuyruk CİHAZDA: uygulama kapansa bile duruyor. `day` batch'le birlikte
+ * saklanıyor çünkü seri kullanıcının O GÜNÜNE ait; ertesi gün gönderilen
+ * cevabın bugüne yazılması seriyi yanlış hesaplardı.
+ *
+ * KALICI HATA KUYRUĞA GİRMİYOR: sunucunun asla kabul etmeyeceği bir istek
+ * (biçim hatası), kuyruktaki her turu da batırırdı — web aynı ayrımı yapıyor
+ * (`session-player` 4xx'te `dropped`). Ama 401/403 KALICI DEĞİL: oturum
+ * düşmüşken atılan bir tur, kullanıcı yeniden girince gönderilebilir; onu
+ * "sunucu reddetti" sayıp silmek, tam da korumaya çalıştığımız veriyi atardı.
+ */
+export function isPermanentError(e: unknown): boolean {
+  if (!(e instanceof ApiError)) return false;
+  if (e.status === 401 || e.status === 403 || e.status === 408 || e.status === 429) return false;
+  return e.status >= 400 && e.status < 500;
+}
+const ANSWER_QUEUE_KEY = "lernomi-answer-queue";
+type QueuedAnswers = { answers: AnswerOut[]; day: string; seconds: number };
+
+async function queueAnswers(item: QueuedAnswers): Promise<void> {
+  try {
+    const raw = await AsyncStorage.getItem(ANSWER_QUEUE_KEY);
+    const list = raw ? (JSON.parse(raw) as QueuedAnswers[]) : [];
+    list.push(item);
+    /* Kuyruk sınırlı: eski turlar SRS için zaten değerini yitiriyor ve
+       sınırsız büyüyen bir kuyruk depolamayı şişirir. */
+    await AsyncStorage.setItem(ANSWER_QUEUE_KEY, JSON.stringify(list.slice(-20)));
+  } catch { /* depolama yoksa yapacak bir şey yok */ }
+}
+
+/** Bekleyen cevapları gönderir; biri düşerse kalanı kuyrukta bırakır. */
+export async function flushPendingAnswers(): Promise<void> {
+  let list: QueuedAnswers[] = [];
+  try {
+    const raw = await AsyncStorage.getItem(ANSWER_QUEUE_KEY);
+    list = raw ? (JSON.parse(raw) as QueuedAnswers[]) : [];
+  } catch { return; }
+  if (!list.length) return;
+  const remaining: QueuedAnswers[] = [];
+  for (const [i, item] of list.entries()) {
+    try {
+      await api("/api/answers", { method: "POST", body: JSON.stringify(item) });
+    } catch (e) {
+      /* Kalıcı hata düşürülüyor; ötekiler kuyrukta kalıyor ve sıradakiler
+         denenmiyor (ağ yoksa hepsi düşer, boşuna istek atılmasın). */
+      if (!isPermanentError(e)) { remaining.push(...list.slice(i)); break; }
+    }
+  }
+  try {
+    if (remaining.length) await AsyncStorage.setItem(ANSWER_QUEUE_KEY, JSON.stringify(remaining));
+    else await AsyncStorage.removeItem(ANSWER_QUEUE_KEY);
+  } catch { /* yut */ }
+}
+
+export async function submitAnswers(answers: AnswerOut[], day: string, seconds: number, progress?: SessionProgress): Promise<SubmitResult> {
+  try {
+    const r = await api<SubmitResult>("/api/answers", { method: "POST", body: JSON.stringify({ answers, day, seconds, ...(progress ? { progress } : {}) }) });
+    void flushPendingAnswers(); // bağlantı var: bekleyenler de gitsin
+    return r;
+  } catch (e) {
+    if (!isPermanentError(e)) await queueAnswers({ answers, day, seconds });
+    throw e;
+  }
 }

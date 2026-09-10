@@ -157,7 +157,6 @@ export const deWeb: Record<string, string> = {
   /* Kelime turu — bkz. tr.ts notu. */
   "session.preparing": "Deine heutige Runde wird vorbereitet…",
   "session.lets_go": "Los geht's",
-  "session.save_failed": "Die Antworten dieser Runde konnten nicht gespeichert werden. Die Runde läuft weiter.",
   "session.expired": "Deine Sitzung ist abgelaufen",
   "session.expired_sub": "Dein Fortschritt ist gespeichert — melde dich an und mach dort weiter.",
   "session.load_failed": "Die Wörter konnten nicht geladen werden",
@@ -224,7 +223,6 @@ export const deWeb: Record<string, string> = {
   "common.pct": "{n} %",
   "diff.typed_vs_answer": "Geschrieben: {typed}. Richtig: {answer}.",
   "common.listen_pronunciation": "Aussprache anhören",
-  "session.save_queued": "Deine Antworten lassen sich nicht speichern — sie gehen automatisch raus, sobald du wieder online bist.",
   "session.today_summary": "Heute {reviews} Wiederholungen · {news} neue Wörter · {streak} Tage Serie",
   "session.continue_with_new": "Mit neuen Wörtern weitermachen",
   "stage.counter": "Etappe {n} / {total}",

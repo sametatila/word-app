@@ -2503,6 +2503,37 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   sameList("gelisim serisi geometrisi", geo("mobile/src/ui/GrowthPanel.tsx"), geo("src/components/progress-panel.tsx"));
 }
 
+/* ── 63. tur kaydi dusunce kullaniciya ne deniyor ─────────────────────────
+ * Cevaplar sunucuya yazilamadiginda EKRAN SUSMAMALI: puan artmis gorunur,
+ * sunucuda hicbir sey degismez. Iki taraf da AYNI IKI durumu ayirmak
+ * zorunda - kuyruga alindi (baglanti donunce gider) ve sunucu reddetti
+ * (gitmeyecek); tek bir "kaydedilemedi" metni ikisini birbirine karistirir.
+ * Mobilde bu metinler hic yoktu (`GameScreen` catch bloku bostu). */
+{
+  const uyari = (p) => {
+    const src = read(p).replace(/\/\*[\s\S]*?\*\//g, " ").replace(/\/\/[^\n]*/g, " ");
+    return ["session.save_failed", "session.save_queued"].filter((k) => src.includes(k)).sort();
+  };
+  sameSet("tur kaydi uyarilari", uyari("mobile/src/screens/GameScreen.tsx"), uyari("src/components/session-player.tsx"), "mobil", "web");
+}
+
+/* ── 64. sinav sonucu gonderilemediginde ──────────────────────────────────
+ * Yirmi dakikalik sinavin puani ISTEMCIDE zaten toplandi. Kayit dusunce
+ * ekran onu gostermeli (yuzde + bolum kirilimi); mobil burada %0 yaziyordu.
+ * GECTI/KALDI yazilmiyor: o karari sunucu veriyor, esik istemcide yok. */
+{
+  const cevrimdisi = (p) => {
+    const src = read(p).replace(/\/\*[\s\S]*?\*\//g, " ").replace(/\/\/[^\n]*/g, " ");
+    return [
+      "yerel yuzde=" + (/setOffline\(/.test(src) ? "var" : "yok"),
+      "bolum kirilimi=" + (/sections:\s*sections\.map\(/.test(src) ? "var" : "yok"),
+      "metin=" + (src.includes("exam.saved_offline") ? "var" : "yok"),
+      "gecti kaldi=" + (/offline[\s\S]{0,400}?exam\.(passed|not_passed)/.test(src) ? "var" : "yok"),
+    ];
+  };
+  sameList("sinav cevrimdisi sonucu", cevrimdisi("mobile/src/screens/ExamScreen.tsx"), cevrimdisi("src/components/exam-player.tsx"));
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"

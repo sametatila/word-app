@@ -119,6 +119,16 @@ export function ExamScreen() {
   const [secIdx, setSecIdx] = useState(0);
   const [left, setLeft] = useState(0);
   const [result, setResult] = useState<Result | null>(null);
+  /*
+   * SONUÇ GÖNDERİLEMEDİĞİNDE PUAN YİNE GÖSTERİLİYOR.
+   *
+   * Kayıt düşünce ekran "Sonuç gönderilemedi" diyor ama başlıkta %0 yazıyordu
+   * (`result?.total ?? 0`): yirmi dakika sınav çözen öğrenci sıfır görüyordu.
+   * Puan zaten istemcide toplanmış durumda (`score.current`), web tam olarak
+   * bunu çiziyor (`exam-player` `offline`). Geçti/kaldı YAZILMIYOR - o kararı
+   * sunucu veriyor ve bölüm eşiği burada bilinmiyor.
+   */
+  const [offline, setOffline] = useState<{ pct: number; sections: { id: SectionId; pct: number }[] } | null>(null);
   const [certOpen, setCertOpen] = useState(false);
   const [showMisses, setShowMisses] = useState(false);
   const misses = useRef<Miss[]>([]);
@@ -195,6 +205,12 @@ export function ExamScreen() {
       setResult(d.result);
     } catch {
       setResult(null);
+      const total = sections.reduce((a, x) => a + x.total, 0);
+      const correct = sections.reduce((a, x) => a + x.correct, 0);
+      setOffline({
+        pct: total ? Math.round((100 * correct) / total) : 0,
+        sections: sections.map((x) => ({ id: x.id, pct: x.total ? Math.round((100 * x.correct) / x.total) : 0 })),
+      });
     }
     setPhase("sonuc");
   }, [paper, level, moduleIx]);
@@ -342,7 +358,7 @@ export function ExamScreen() {
   }
 
   if (phase === "sonuc") {
-    const pct = result?.total ?? 0;
+    const pct = result?.total ?? offline?.pct ?? 0;
     return (
       <View style={{ flex: 1, backgroundColor: colors.bg }}>
         {header}
@@ -423,6 +439,18 @@ export function ExamScreen() {
               </View>
             </Card>
           ))}
+          {/* Çevrimdışı kırılım: ağırlık yok (onu sunucu veriyor), yüzde var. */}
+          {!result && offline ? offline.sections.map((s) => (
+            <Card key={s.id} padded style={{ gap: 6 }}>
+              <View style={{ flexDirection: "row", justifyContent: "space-between", alignItems: "baseline" }}>
+                <Text variant="body" style={{ flex: 1 }}>{SECTION_DE[s.id]} · {t(SECTION_KEY[s.id])}</Text>
+                <Text variant="bodyStrong" color={s.pct >= 50 ? colors.successText : colors.dangerText}>{formatPercent(s.pct)}</Text>
+              </View>
+              <View style={{ height: 6, borderRadius: 3, backgroundColor: colors.surface2, overflow: "hidden" }}>
+                <View style={{ height: "100%", width: `${s.pct}%`, backgroundColor: s.pct >= 50 ? colors.primary : colors.danger, borderRadius: 3 }} />
+              </View>
+            </Card>
+          )) : null}
           {/*
             YAPABİLİRLİK LİSTESİ. Kâğıdın kapağı bunu taşıyor (`cover.canDo`)
             ve mobil tipi alanı düşürdüğü için liste hiç görünmüyordu. Sonucun

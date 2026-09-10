@@ -157,7 +157,6 @@ export const enWeb: Record<string, string> = {
   /* Kelime turu — bkz. tr.ts notu. */
   "session.preparing": "Getting today's session ready…",
   "session.lets_go": "Let's go",
-  "session.save_failed": "This round's answers couldn't be saved. The round continues.",
   "session.expired": "Your session has expired",
   "session.expired_sub": "Your progress is saved — sign in and pick up where you left off.",
   "session.load_failed": "Words couldn't be loaded",
@@ -224,7 +223,6 @@ export const enWeb: Record<string, string> = {
   "common.pct": "{n}%",
   "diff.typed_vs_answer": "You wrote: {typed}. The answer: {answer}.",
   "common.listen_pronunciation": "Listen to the pronunciation",
-  "session.save_queued": "Your answers can't be saved — they'll go out automatically when you're back online.",
   "session.today_summary": "Today {reviews} reviews · {news} new words · {streak}-day streak",
   "session.continue_with_new": "Continue with new words",
   "stage.counter": "Stage {n} / {total}",

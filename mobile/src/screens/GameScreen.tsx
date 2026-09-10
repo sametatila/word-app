@@ -15,7 +15,7 @@ import { ProgressRing } from "../ui/ProgressRing";
 import { Mascot } from "../ui/Mascot";
 import { Celebrate } from "../ui/Celebrate";
 import { RoundView } from "../game/rounds";
-import { fetchSession, submitAnswers, todayStr, PRACTICE_GAMES, type Round, type AnswerOut, type DoneExtra, type SessionMeta, type SessionProgress, type SubmitResult } from "../game/session";
+import { fetchSession, submitAnswers, isPermanentError, todayStr, PRACTICE_GAMES, type Round, type AnswerOut, type DoneExtra, type SessionMeta, type SessionProgress, type SubmitResult } from "../game/session";
 import { ApiError } from "../api/client";
 import { bumpStats } from "../lib/statsSignal";
 import { track } from "../lib/track";
@@ -56,6 +56,14 @@ export function GameScreen() {
   /* Sunucu yanıtının tamamı: özet XP, günlük hedef ve yarına kalan tekrarı
      buradan okuyor (web `session-player` de aynısını yapıyor). */
   const [result, setResult] = useState<SubmitResult | null>(null);
+  /*
+   * KAYIT UYARISI. Tur biterken yazma düşerse eskiden hiçbir şey söylenmiyordu
+   * ("sessizce düşer"): ekranda puan artıyor, sunucuda hiçbir şey değişmiyordu.
+   * Artık iki durum ayrı söyleniyor — kuyruğa alındı ("queued", bağlantı
+   * dönünce gidecek) ve sunucu reddetti ("dropped", gitmeyecek). Web aynı iki
+   * metni gösteriyor (`session-player` `saveWarning`).
+   */
+  const [saveWarning, setSaveWarning] = useState<null | "queued" | "dropped">(null);
   const [combo, setCombo] = useState(0);
   const [pop, setPop] = useState(0);
   const answers = useRef<AnswerOut[]>([]);
@@ -224,6 +232,7 @@ export function GameScreen() {
     track("session_done", totalCorrect, "session");
     if (submitted.current) return;
     submitted.current = true;
+    setSaveWarning(null);
     try {
       if (answers.current.length) {
         const r = await submitAnswers(answers.current, day.current, secs, progressNow());
@@ -232,7 +241,9 @@ export function GameScreen() {
         if (r?.newlyMastered) setMastered(r.newlyMastered);
         if (r) setResult(r);
       }
-    } catch { /* ölçüm/yazma sessizce düşer */ }
+    } catch (e) {
+      setSaveWarning(isPermanentError(e) ? "dropped" : "queued");
+    }
   }
 
   const pad = { flex: 1, backgroundColor: colors.bg, paddingTop: insets.top + spacing.sm, paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.lg } as const;
@@ -342,6 +353,11 @@ export function GameScreen() {
                 <Text variant="bodyStrong" color={colors.streakText}>{t("game.streak_saved")}</Text>
               </View>
               <Text variant="caption" color={colors.textMuted} style={{ marginTop: 4, textAlign: "center" }}>{t("game.streak_saved_sub", { n: repaired })}</Text>
+            </View>
+          ) : null}
+          {saveWarning ? (
+            <View style={{ width: "100%", borderRadius: radii.lg, backgroundColor: colors.danger + "24", paddingHorizontal: spacing.md, paddingVertical: 12, marginBottom: spacing.lg }}>
+              <Text variant="bodyStrong" color={colors.dangerText} style={{ textAlign: "center" }}>{saveWarning === "dropped" ? t("session.save_failed") : t("session.save_queued")}</Text>
             </View>
           ) : null}
           <PressableScale onPress={load} style={[{ width: "100%", backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: spacing.lg, alignItems: "center" }, softShadow(colors.primary, 10)]}><Text variant="bodyStrong" color={colors.onPrimary}>{t("game.continue")}</Text></PressableScale>

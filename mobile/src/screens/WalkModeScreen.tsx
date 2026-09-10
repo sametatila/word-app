@@ -161,7 +161,10 @@ export function WalkModeScreen() {
     if (!pending.length) return;
     answers.current = [];
     const secs = Math.round((Date.now() - startedAt.current) / 1000);
-    void submitAnswers(pending, day.current, final ? secs : 0).catch(() => { answers.current = pending.concat(answers.current); });
+    /* Başarısız batch BELLEĞE geri konmuyor: `submitAnswers` onu cihazdaki
+       kuyruğa yazıyor ve bağlantı dönünce kendisi gönderiyor. İkisini birden
+       yapmak aynı cevapları İKİ KEZ gönderirdi - SRS ve XP çift sayardı. */
+    void submitAnswers(pending, day.current, final ? secs : 0).catch(() => { /* kuyruğa alındı */ });
   }
 
   // Walk kuyruğunu yükle (walk=1). Resume YOK — her yürüyüş taze due kelimelerle başlar.

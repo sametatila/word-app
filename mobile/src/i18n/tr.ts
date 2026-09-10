@@ -944,6 +944,8 @@ export const tr: Record<string, string> = {
   "resetpw.done": "Parolan güncellendi. Yeni parolanla giriş yapabilirsin.",
   "resetpw.invalid": "Bağlantının süresi dolmuş ya da geçersiz. Yeni bir sıfırlama bağlantısı iste.",
   "verify.checking": "E-postan doğrulanıyor…",
+  "session.save_failed": "Bu turun cevapları kaydedilemedi. Tur devam ediyor.",
+  "session.save_queued": "Cevapların kaydedilemiyor — bağlantın döndüğünde otomatik gönderilecek.",
   "sessions.title": "Etkin oturumlar",
   "sessions.sub": "Hesabına şu anda hangi cihazlardan girilmiş.",
   "sessions.this_device": "Bu cihaz",

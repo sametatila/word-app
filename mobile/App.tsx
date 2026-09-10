@@ -15,6 +15,7 @@ import { track, loadAnalyticsPref } from "./src/lib/track";
 import { loadReduceMotion } from "./src/lib/reduceMotion";
 import { loadLang, useLang } from "./src/lib/i18n";
 import { attachPushListeners } from "./src/lib/pushDevice";
+import { flushPendingAnswers } from "./src/game/session";
 import { navigationRef } from "./src/lib/pushRoute";
 import { parseDeepLink, type DeepLinkAction } from "./src/lib/deepLink";
 import { completeEmailVerification } from "./src/lib/auth";
@@ -91,6 +92,15 @@ function Nav() {
     bir hesaba yazılıyor ve o hesap giriş yapılana kadar belli değil.
   */
   useEffect(() => attachPushListeners(), []);
+
+  /*
+    ÇEVRİMDIŞI KALAN CEVAPLAR. Ağ yokken bitirilen turun cevapları cihazda
+    kuyruğa alınıyor (`session` `queueAnswers`); bir sonraki tur atılana kadar
+    orada beklerdi. Giriş yapılmış her açılışta kuyruk boşaltılıyor: kullanıcı
+    ikinci turu hiç oynamasa da metroda çözdüğü tur sunucuya ulaşıyor.
+    Oturum yoksa denenmiyor - 401 kuyruğu silmiyor ama boşuna istek de atmayalım.
+  */
+  useEffect(() => { if (user) void flushPendingAnswers(); }, [user]);
 
   // İlk açılış akışı bir kez gösterilir; görüldüğü yerelde tutulur.
   useEffect(() => {

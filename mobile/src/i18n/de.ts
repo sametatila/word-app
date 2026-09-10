@@ -939,6 +939,8 @@ export const de: Record<string, string> = {
   "resetpw.done": "Dein Passwort wurde aktualisiert. Du kannst dich jetzt damit anmelden.",
   "resetpw.invalid": "Der Link ist abgelaufen oder ungültig. Fordere einen neuen Link an.",
   "verify.checking": "Deine E-Mail wird bestätigt…",
+  "session.save_failed": "Die Antworten dieser Runde konnten nicht gespeichert werden. Die Runde läuft weiter.",
+  "session.save_queued": "Deine Antworten lassen sich nicht speichern — sie gehen automatisch raus, sobald du wieder online bist.",
   "sessions.title": "Aktive Sitzungen",
   "sessions.sub": "Die Geräte, auf denen dein Konto gerade angemeldet ist.",
   "sessions.this_device": "Dieses Gerät",

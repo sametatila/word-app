@@ -103,7 +103,8 @@ export function BossScreen() {
     try {
       await submitAnswers(batch, todayStr(), secs);
     } catch {
-      /* çevrimdışıysa bu turun cevapları kaybolur (web de aynı) */
+      /* Çevrimdışıysa batch cihazdaki kuyruğa alındı (`submitAnswers`);
+         bağlantı dönünce kendisi gidiyor. Web burada turu kaybediyor. */
     }
   }, []);
 

@@ -939,6 +939,8 @@ export const en: Record<string, string> = {
   "resetpw.done": "Your password was updated. You can sign in with it now.",
   "resetpw.invalid": "The link has expired or is invalid. Ask for a new reset link.",
   "verify.checking": "Verifying your email…",
+  "session.save_failed": "This round's answers couldn't be saved. The round continues.",
+  "session.save_queued": "Your answers can't be saved — they'll go out automatically when you're back online.",
   "sessions.title": "Active sessions",
   "sessions.sub": "The devices your account is currently signed in on.",
   "sessions.this_device": "This device",
