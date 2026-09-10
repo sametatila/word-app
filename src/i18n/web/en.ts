@@ -136,9 +136,11 @@ export const enWeb: Record<string, string> = {
   "ach.quests20.title": "Day closer",
   "ach.quests20.hint": "Finish all three daily quests on 20 days",
   /* Yetkinlik/gelişim — bkz. tr.ts notu. */
+  "growth.first_exam": "First exam taken: {score} points",
   "growth.first_good_writing": "First piece of writing scoring 70+",
   "growth.first_lesson": "First conversation completed with its role play",
   "growth.last_week": "Last week: {parts}.",
+  "growth.first_placement": "Placement test: {level} recommended",
   "growth.last_week_empty": "No study last week — start this week with a short round.",
   "proficiency.not_measured": "{skill} {level} not measured yet",
   "proficiency.grammar_practice": "Grammar practice",

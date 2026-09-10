@@ -144,7 +144,7 @@ export async function growthReport(
   // Kilometre taşları — ilk'ler.
   const milestones: { at: string; text: string }[] = [];
   const [firstExam] = await db.select({ at: exams.createdAt, score: exams.score }).from(exams).where(eq(exams.userId, userId)).orderBy(asc(exams.createdAt)).limit(1);
-  if (firstExam) milestones.push({ at: firstExam.at.toISOString().slice(0, 10), text: `İlk kullanım sınavı: ${firstExam.score} puan` });
+  if (firstExam) milestones.push({ at: firstExam.at.toISOString().slice(0, 10), text: translate(lang, "growth.first_exam", { score: firstExam.score }) });
   const [firstGoodWriting] = await db
     .select({ at: assessments.createdAt })
     .from(assessments)
@@ -155,7 +155,7 @@ export async function growthReport(
   const [firstLesson] = await db.select({ at: userLessons.lastAt }).from(userLessons).where(and(eq(userLessons.userId, userId), eq(userLessons.roleplayDone, true))).orderBy(asc(userLessons.lastAt)).limit(1);
   if (firstLesson) milestones.push({ at: firstLesson.at.toISOString().slice(0, 10), text: translate(lang, "growth.first_lesson") });
   const [firstPlacement] = await db.select({ day: events.day, kind: events.kind }).from(events).where(and(eq(events.userId, userId), eq(events.name, "placement_finish"))).orderBy(asc(events.createdAt)).limit(1);
-  if (firstPlacement) milestones.push({ at: String(firstPlacement.day), text: `Seviye testi: ${firstPlacement.kind ?? "?"} önerildi` });
+  if (firstPlacement) milestones.push({ at: String(firstPlacement.day), text: translate(lang, "growth.first_placement", { level: firstPlacement.kind ?? "?" }) });
   milestones.sort((a, b) => a.at.localeCompare(b.at));
 
   const summary = await weeklySummary(userId, today, series, lang);

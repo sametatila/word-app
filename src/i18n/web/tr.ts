@@ -159,9 +159,11 @@ export const trWeb: Record<string, string> = {
    * sözcüklerdi ("başlangıç" | "gelişiyor" | …), yani tip sistemi bir dili
    * dayatıyordu. Artık kararlı kimlik + sözlük.
    */
+  "growth.first_exam": "İlk kullanım sınavı: {score} puan",
   "growth.first_good_writing": "İlk 70+ puanlı yazı",
   "growth.first_lesson": "İlk konuşma rol yapmayla tamamlandı",
   "growth.last_week": "Geçen hafta: {parts}.",
+  "growth.first_placement": "Seviye testi: {level} önerildi",
   "growth.last_week_empty": "Geçen hafta çalışma yok — bu hafta küçük bir turla başla.",
   "proficiency.not_measured": "{skill} {level} henüz ölçülmedi",
   "proficiency.grammar_practice": "Dilbilgisi çalışması",
