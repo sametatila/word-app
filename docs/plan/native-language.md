@@ -18,7 +18,7 @@ hangisi"*) durum uzayını üçe katlar, tek bir yeni içerik üretmez.
 | tr → gsw | ✅ | ✅ | ✅ |
 | tr → en | ✅ | ✅ | ✅ |
 | **en → de** | ✅ 8707/8707 karşılık + örnek (ÜRETİMDE) | ✅ AÇIK | ✅ AÇIK |
-| **en → gsw** | ⚠️ karşılık ✅, örnek çevirisi 0/8266 | ❌ | ❌ |
+| ~~en → gsw~~ | KAPSAM DIŞI (2026-09-10 kullanıcı kararı) | — | — |
 | **de → en** | ❌ Almanca karşılık sütunu yok | ❌ | ❌ |
 
 **en→de 2026-09-10'da AÇILDI** — `PAIR_READY.en = ["de"]`, hem web'de hem
@@ -26,8 +26,11 @@ mobilde. Üç katmanın üçü de doğrulandı; kelime katmanı için üretim OK
 (`de` kursu: 8.707/8.707 İngilizce karşılık, 8.707/8.707 İngilizce örnek
 çevirisi). Beklenen `db:seed` bu parite için geçersizmiş.
 
-gsw-zh beyana GİRMEDİ: lehçe örnek çevirileri yerelde yazıldı ama üretimde
-`beispiel_en` 0/8.267 — karşılık var, örnek yok.
+**gsw-zh HİÇBİR paritede düşünülmüyor** (kullanıcı kararı, 2026-09-10).
+Kurs `PAIR_READY.tr` içinde canlı kalıyor ve kullanıcıları var; yapılmayacak
+olan ona YENİ iş harcamak — lehçe örnek çevirilerini üretime uygulamak,
+`beispiel_en` boşluğunu kapatmak, gsw'yi parite adayı olarak raporlamak.
+Yön en→de ve de→en.
 
 ## Ölçülen eksikler (2026-09-09)
 
@@ -137,7 +140,11 @@ belirsiz artikelin üç biçimi var), `was für en` → `was für en/e/es`,
 
 **Kalan adım — üretime uygulama.** `npm run zurich:apply` (ya da `db:seed`)
 üretim veritabanına yazar; AGENTS.md gereği bu ayrıca sorulur. Uygulandığında
-`check:pairs` en→gsw paritesini "!" ile işaretleyecek.
+`check:pairs` en→gsw paritesini "!" ile işaretleyecekti.
+
+**BU ADIM ARTIK ATILMIYOR** (2026-09-10): gsw kapsam dışı. Yazılan 8.267
+cümle `data/zurich/beispiel/out/` altında duruyor ve silinmiyor — kullanıcı
+yeniden isterse hat olduğu gibi çalışır. Ama gündeme getirilmez.
 
 ### 2. words · Almanca karşılık + örnek — BİTTİ (146/146 paket, 7.175 cümle)
 
@@ -1510,20 +1517,14 @@ kanıt dili İNGİLİZCE, karakter kümesinde `ÄÖÜäöüß` hedef dilin harfl
 (kaynakta yabancı değil), İngiliz yazımı kuralı da hiç uygulanmaz. Her hattın
 kapısı ayrı yazılacak.
 
-### Kalan dört iş — dördü de benim elimde değil
+### Kalan iki iş — ikisi de benim elimde değil
 
 1. **Push ve deploy.** `PAIR_READY.en` DOLDURULDU ve beyan ancak canlıya
    çıkınca gerçek olur. Web push → webhook → deploy; mobil ise mağaza
    sürümü bekliyor. İkisi arasındaki pencerede web en→de sunar, mobil
    sunmaz — beyan iki yerde birden dolduruldu ama yayın hızları farklı.
    Push Samet'te.
-2. **gsw örnek çevirileri üretime.** Yerelde 8.267/8.267 yazılı, üretimde
-   `beispiel_en` 0. Uygulanınca en→gsw de beyana girebilir. Üretim
-   veritabanına yazma; ayrıca sorulur.
-3. **de→gsw bir parite mi?** Züritüütsch hattı 2026-08-24'te durduruldu.
-   Almanca konuşan birine Züritüütsch öğretmek ayrı bir ürün kararı;
-   `PAIR_READY`ye eklenip eklenmeyeceği kod sorusu değil.
-4. **Mobilde hangi yol?** Yukarıdaki tablo iki yolu ve ikisinin de
+2. **Mobilde hangi yol?** Yukarıdaki tablo iki yolu ve ikisinin de
    ölçülmüş bedelini veriyor; hangisinin seçileceği ürün kararı.
 
 ### Bu fazda üç kez tekrarlanan ders
