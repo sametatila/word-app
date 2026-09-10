@@ -978,6 +978,26 @@ yazılı, yani sonraki okuyucu altı dosyayı yeniden okumak zorunda değil.
 (§11.10) ait bir kalem; yol haritasının modül katmanı için yazılmış, bugün
 modül adları başka yerden geliyor (`moduleExamPlan`).
 
+#### Bu aile için KAPI DENENDİ ve VAZGEÇİLDİ
+
+Uç kapısı (§11.24) işe yaradığı için aynı fikir "dışa açık ama hiçbir yerden
+kullanılmayan ad" için de denendi: bütün `src` dosyaları belirteçlere ayrılıp
+her `export`un başka bir dosyada geçip geçmediğine bakıldı.
+
+VAZGEÇİLDİ, iki sebeple:
+
+  1. Ölçüm gürültülü: 346 aday çıktı ve tek başına `components/icons.tsx` 47
+     tanesini veriyor - o dosyanın kullanılmayan ikonları BİLEREK duruyor ve
+     zaten §11.14'te yazılı. Kapı, "biliyoruz" diyen uzun bir muafiyet
+     listesine dönüşürdü.
+  2. Prototipin kendisi güvenilir değildi: `courses.ts`in `CourseId`i dört
+     dosyada geçmesine rağmen listede çıktı, yani belirteç indeksi yanlış
+     sayıyordu. Sayıyı bulgu diye yazmak yanlış olurdu.
+
+Bu ailenin gerçekten önemli iki kalemi (73 tema ikonu, `MODULE_THEMES`) düz
+yazıyla kayıtlı ve ölçülmüş durumda; otomatik denetim onlara bir şey
+katmıyordu. Kapı yazılmadı, karar burada.
+
 Yönlendirmeler artık ANAHTAR taşıyor (metin değil) ve çeviri gösterildiği
 yerde yapılıyor - koç cümleleri ve fark vurgusundaki kalıbın aynısı. Senaryo
 dallarının `cue`su içerikten geldiği için boş anahtar + `text` değişkeniyle
