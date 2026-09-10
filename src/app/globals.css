@@ -334,7 +334,10 @@
   --color-success-soft: color-mix(in srgb, var(--color-mint-500) 14%, var(--surface));
   --color-danger-soft: color-mix(in srgb, var(--color-rose-500) 14%, var(--surface));
 
-  --shadow-soft-sm: 0 4px 10px -2px rgb(90 52 24 / 0.14); /* mobil elevation 6 */
+  /* Opaklık 0.14 yazılıydı; mobil formülün sabiti 0.16 ve öteki iki basamak
+     onu kullanıyor. Tek basamağın ayrı bir değer taşımasının yazılı bir
+     sebebi yoktu - türetildiği formüle eşitlendi (bkz. web-parity 11.46). */
+  --shadow-soft-sm: 0 4px 10px -2px rgb(90 52 24 / 0.16); /* mobil elevation 6 */
   --shadow-soft: 0 7px 16px -4px rgb(90 52 24 / 0.16); /* mobil elevation 10 */
   --shadow-soft-lg: 0 11px 26px -6px rgb(90 52 24 / 0.16); /* mobil elevation 16 */
   /* Sonuç katmanı YUKARI doğru gölge veriyor: altındaki içerikten

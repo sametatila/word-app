@@ -95,11 +95,37 @@ for (const [k, want] of Object.entries(WANT_SPACING)) {
   if (v !== want) problems.push(`boşluk ${k}: mobil ${v} · Tailwind karşılığı olan değer ${want} (0.25rem katı)`);
 }
 
+/* ── gölge ─────────────────────────────────────────────────────────────────
+   Mobil `softShadow(color, elevation)` iOS'ta üç sabit kullanıyor: y ofseti
+   yüksekliğin 0.7'si, bulanıklık 1.6'sı, opaklık 0.16. Web aynı formülü ÜÇ
+   BASAMAĞA DONDURMUŞ halde taşıyor (`--shadow-soft-sm/-soft/-soft-lg`,
+   sırasıyla elevation 6/10/16) ve formül değişirse webin donmuş değerleri
+   sessizce eskiyor - ölçülen tam olarak bu.
+
+   `spread` (-2/-4/-6px) ve CSS bulanıklığının iOS `shadowRadius`ıyla birebir
+   olmayan anlamı kapsam dışı: ikisi de webe özgü ve kayıtlı bir yaklaşım.
+   KOYU tema da kapsam dışı - orada gölge bilerek siyah ve daha opak, çünkü
+   sıcak kahve bir gölge koyu zeminde görünmüyor (gerekçe `globals.css`te). */
+const shadowFn = /shadowOffset: \{ width: 0, height: elevation \* ([\d.]+) \}, shadowOpacity: ([\d.]+), shadowRadius: elevation \* ([\d.]+)/.exec(mob);
+if (!shadowFn) {
+  problems.push("gölge: mobil `softShadow` formülü okunamadı (imza değişmiş olabilir)");
+} else {
+  const [, yF, opacity, blurF] = shadowFn;
+  for (const [name, elevation] of [["shadow-soft-sm", 6], ["shadow-soft", 10], ["shadow-soft-lg", 16]]) {
+    const raw = cssVar(name);
+    const m = /^0 (\d+)px (\d+)px -\d+px rgb\([^/]+\/ ([\d.]+)\)$/.exec(raw ?? "");
+    if (!m) { problems.push(`gölge ${name}: web değeri çözülemedi (${raw})`); continue; }
+    eq(`gölge ${name} y`, Math.round(elevation * Number(yF)), Number(m[1]));
+    eq(`gölge ${name} bulanıklık`, Math.round(elevation * Number(blurF)), Number(m[2]));
+    eq(`gölge ${name} opaklık`, Number(opacity), Number(m[3]));
+  }
+}
+
 if (problems.length) {
   console.error("check:tokens — tasarım ölçekleri ayrışmış:");
   for (const p of problems) console.error("  " + p);
   console.error("\nMobil kaynak, web ona uyar. Ayrım bilinçliyse betikteki eşleme tablosuna SEBEBİYLE yaz.");
 } else {
-  console.log(`check:tokens — tipografi (${TYPE.length}), yarıçap (${RADII.length}) ve boşluk (${Object.keys(WANT_SPACING).length}) ölçekleri iki platformda birebir: tamam`);
+  console.log(`check:tokens — tipografi (${TYPE.length}), yarıçap (${RADII.length}), boşluk (${Object.keys(WANT_SPACING).length}) ve gölge (3 basamak) ölçekleri iki platformda birebir: tamam`);
 }
 process.exit(problems.length);

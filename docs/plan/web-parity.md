@@ -2635,3 +2635,48 @@ cinsinden karşılaştırıyordu ve h1'i ayrışmış gösteriyordu: -0.3px @ 26
 yuvarlama - piksel cinsinden farkı 0.012px. Karşılaştırma piksele çevrildi ve
 toleransı 0.05px oldu; ölçünün birimi neyse karşılaştırma da o birimde
 olmalı.
+
+### 11.46 Gölge formülü: bir basamak kendi türetiminden sapmıştı
+
+§11.45'in kapsamadığı iki jeton ailesini ölçtüm.
+
+**Gölge — ölçülebilir, ve bir sapma çıktı.** Mobil `softShadow(color,
+elevation)` iOS'ta üç sabitle çalışıyor: y ofseti yüksekliğin 0.7'si,
+bulanıklık 1.6'sı, opaklık 0.16. Web aynı formülü üç basamağa dondurmuş
+halde taşıyor. Türetimi elle yürüttüm:
+
+    elevation  y = 0.7e   bulanıklık = 1.6e   web değeri
+    6          4.2 → 4     9.6 → 10           0 4px 10px … / 0.14   <-- opaklık
+    10         7.0 → 7    16.0 → 16           0 7px 16px … / 0.16
+    16        11.2 → 11   25.6 → 26           0 11px 26px … / 0.16
+
+`--shadow-soft-sm` opaklığı 0.14 yazıyordu; formülün sabiti 0.16 ve öteki iki
+basamak onu kullanıyor. Tek basamağın ayrı bir değer taşımasının yazılı bir
+sebebi yoktu - görsel etkisi küçük ama kod kendi belgelediği türetime
+uymuyordu, ki bu tam olarak "sayı doğru mu" sorusunu cevaplanamaz yapan şey.
+Formüle eşitlendi.
+
+Kapıya eklendi: `check:tokens` artık mobil `softShadow`un ÜÇ SABİTİNİ kaynaktan
+okuyup üç basamağı yeniden türetiyor. Yani formül değişirse webin donmuş
+değerleri sessizce eskimiyor. Doğrulandı - mobil opaklık 0.2'ye ve bulanıklık
+çarpanı 1.8'e çekildiğinde altı ölçüm birden kırıldı, sonra geri alındı.
+
+Kapsam dışı bırakılan iki şey, sebebiyle: `spread` (-2/-4/-6px) ve CSS
+bulanıklığının iOS `shadowRadius`ıyla birebir olmayan anlamı - ikisi de webe
+özgü, kayıtlı bir yaklaşım. Koyu tema gölgeleri de kapsam dışı: orada gölge
+bilerek siyah ve daha opak (0.4/0.45/0.5), çünkü sıcak kahve bir gölge koyu
+zeminde görünmüyor.
+
+**Satır yüksekliği — karşılaştırılamıyor, kaydedildi.** Web sekiz varyantın
+hepsine satır yüksekliği veriyor (1.15 … 1.5); mobil `typography` HİÇ
+vermiyor, React Native punto başına yazı tipinin kendi metriğinden
+hesaplıyor. Bu zaten `globals.css`te yazılı bir platform farkı ve bir sayı
+karşılaştırmasına dönüşemez.
+
+Yan gözlem, düzeltilmedi: mobilde satır yüksekliği çağrı yerlerinde elle
+veriliyor ve tek tip değil - gövde metni için 21 ve 22 (15 punto üstünde 1.40
+ve 1.47), açıklama metni için 20 (12.5 punto üstünde 1.60, webin caption'ı
+1.40). Bunlar uzun paragraflar için tek tek verilmiş üstünü örtmeler, ölçeğin
+parçası değil. Ölçeğe taşımak metin yoğunluğunu her ekranda değiştirir ve
+sonucu yalnız iki uygulamayı yan yana görerek yargılanabilir - Sametin
+kararı, benim ölçebileceğim bir şey değil.
