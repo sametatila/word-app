@@ -106,8 +106,22 @@ const walk = (dir) => {
 };
 for (const r of roots) walk(new URL(`../${r}`, import.meta.url).pathname);
 
+/*
+  YEREL `t` YARDIMCISI OLAN DOSYALAR.
+
+  Tarayıcı `t("a.b")` biçimini arıyor ve bir dosya kendi içinde `t` adında
+  BAŞKA bir yardımcı tanımlarsa (ör. içerik sözlüğünden okuyan bir arama)
+  onun ilk argümanı da anahtar sanılıyor. `native-de.ts` böyle: `t("vocab.tr",
+  v.tr)` bir çeviri anahtarı değil, alan adı.
+
+  Muafiyet DOSYA düzeyinde ve gerekçeli; asıl çözüm yerel yardımcının adını
+  çevirmenden ayırmak (o dosya başka bir oturumun elinde).
+*/
+const YEREL_T = ["lib/lessons/native-de.ts"];
+
 const missingUse = new Map();
 for (const file of files) {
+  if (YEREL_T.some((y) => file.replace(/\\/g, "/").endsWith(y))) continue;
   const src = readFileSync(file, "utf8");
   const gorulen = [];
   for (const m of src.matchAll(KEY_CALL)) gorulen.push(m[1]);
