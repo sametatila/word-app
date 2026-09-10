@@ -68,6 +68,12 @@ jobs:
       # kursta konuşmayı Almanca dinliyordu.
       - name: Kayıt defteri paritesi
         run: npm run check:parity
+      # Mobil paket kaynakla aynı içeriği taşıyor mu. Üç köprü ELLE
+      # çalıştırılıyor: kaynağa yeni bir ders/egzersiz/kâğıt eklenip döküm
+      # yenilenmezse mobil o içeriği sessizce taşımaz ve hata ancak ekranda
+      # görünür (Patika'da açılamayan ünite, listede olmayan kâğıt).
+      - name: Döküm bütünlüğü
+        run: npm run check:dumps
       # Premium kurallarının birim testi — veritabanı istemiyor. Paket ilerlemesi,
       # yapılandırma doğrulaması ve paywall metinlerinin üç sözlükte de bulunması.
       # Bu sınıfın tamamı ancak gerçek para akarken fark edilirdi.
