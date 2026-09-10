@@ -5606,3 +5606,44 @@ exerciseId), kuyruk çağrısını ve kapı ayrımını karşılaştırıyor. İ
 webde "uç yok" diye yanlış ayrışma gösterdi: web `/api/assess`i ayrı bir
 istemciden çağırıyor (`assess-client`), o yüzden kapı iki dosyayı birlikte
 okuyor.
+
+
+### 11.150 Tasarım denetimi: aynı veri iki uygulamada iki ayrı biçimde
+
+Bu tur ölçüm konusu BİÇİMDİ. Dört ayrışma çıktı, dördü de "aynı şey iki yerde
+başka türlü okunuyor" sınıfından.
+
+- **Tur kaydı uyarısı** mobilde kırmızıydı. Ama bu bir uyarı, hata değil: tur
+  oynandı, yalnız kaydı bekliyor. Kırmızı çizmek kullanıcıya turu kaybettiğini
+  söyler. Web'in flame tonu ve uyarı simgesi alındı; simge mobilde YOKTU,
+  `AlertIcon` web çizimiyle birebir eklendi.
+- **Sınav bölüm satırı** webde iki durumda iki biçimdeydi: sonuç kartı şeritli,
+  çevrimdışı kırılım şeritsiz düz liste. Üstelik geçen bölüm nötr renkteydi —
+  "hangi bölümü geçtim" sorusu ancak yüzdeler tek tek okunarak
+  cevaplanıyordu. Android ikisini de aynı çiziyor; web ona getirildi (§68).
+- **Haftalık sınav puanı** webde dolu daireydi. Android üç sonuç yüzeyinde de
+  (tur, yürüyüş, haftalık) halka kullanıyor ve halkanın doluluğu puanın
+  kendisi; dolu daire aynı sayıyı taşıyor ama "yüzde kaç" bilgisini görselden
+  düşürüyor.
+
+**Ve biçim ölçerken iki yerelleştirme hatası çıktı:**
+
+- Web tur özeti `%${accuracy}` ve `${streak}g` yazıyordu. İlki Türkçe yüzde
+  yazımını koda gömüyor (Almanca "85 %", İngilizce "85%"), ikincisi ise "gün"
+  kısaltmasını: Almanca ve İngilizce arayüzde ekranda **"5g"** yazıyordu.
+- Mobil sınav bölüm ağırlığı da yüzdeyi koda gömüyordu (`%${s.weight}`).
+
+**Kapının kör noktası tam oradaydı:** §51 yüzde biçimini yalnız JSX yazımında
+arıyordu (`>%{`), şablon dizgisini değil. İki hata da bu yüzden aylarca
+görünmedi. Desen eklendi; veritabanı LIKE kalıbı (`%${q}%`) ayrı tutuluyor,
+yoksa kapı gerçek bulguları gürültüye gömerdi.
+
+**Aynı düzeltmede sessiz bir kapı hatası daha:** ".tsx ile sınırla" kuralı
+`DESENLER[3]` indisine bakıyordu; listenin başına yeni bir desen eklemek onu
+sessizce BAŞKA bir desene uyguluyordu. Desenler artık adlarıyla seçiliyor.
+Kapıların kendisi de kod ve aynı sınıf hatayı yapıyor.
+
+**Ölçüldü, bu tur dokunulmadı:** web tur özeti üç `Stat` karosuyla (doğruluk,
+kelime, seri) kuruluyor; Android aynı yerde büyük halka + maskot gösteriyor.
+Bu, sonuç ekranının bütün hiyerarşisini değiştirmek demek — kendi turunda
+ölçülüp yapılacak.
