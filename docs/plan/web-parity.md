@@ -1290,6 +1290,10 @@ Karar Samet'in; not, kutlamanın Android'de en çok işe yarayacağı yeri de
 söylüyor - rozetler oturum sonunda açılıyor ve mobil oturum özeti zaten
 `Celebrate` bileşenini kullanıyor.
 
+**KAPANDI (bkz. §11.170).** Kutlama sonraki turlarda mobile geldi (aynı
+eşik, aynı iki düzen, aynı "görüldü" bildirimi) ve eksik olan `unlock` sesi
+§11.165'te eklendi. `check:parity` §86 beş ölçüyü birden tutuyor.
+
 ### 11.16 Maskot: iki klip ve iki ekran webde var, Androidde yok
 
 Kullanılan mood'lar ölçüldü (bildirilen değil — webde `dance` ve `peek`
@@ -6214,3 +6218,27 @@ teşhisti, §11.11 eskimişti, §11.119'un tahmini fazlaydı. Bu turda madde
 gerçekten karar gerektiriyordu ama **içindeki üç işten ikisi
 gerektirmiyordu**. Karar bekleyen bir kayıt, kararla ilgisi olmayan alt işleri
 de birlikte bekletiyor.
+
+
+### 11.170 Rozet kutlaması da kapanmıştı; maskot klipleri gerçekten çizim işi
+
+Kayıtlı maddeleri taramayı sürdürdüm.
+
+**§11.15 (rozet açılış kutlaması) — kapanmış.** Mobilde kutlama var: aynı
+`MAX_SOLO` eşiği, tekli kuyruk ve toplu kart, "görüldü" bildirimi, ve
+§11.165'te eklenen `unlock` sesi. Kayıt hâlâ "mobilde HİÇ YOK, mobil ses
+kümesinde `unlock` cue'su bile yok" diyordu — **iki cümlesi de artık
+yanlıştı**. §86 kapısı beş ölçüyü tutuyor, yani kayıt bir daha eskimeyecek:
+kutlamanın bir parçası düşerse kapı söyler.
+
+**§11.16 (maskotun `think` ve `wow` klipleri) — gerçekten çizim işi.**
+Ölçtüm: web `think`i altı yerde kullanıyor, mobilde o yüzeylerin ikisinde
+(kurs onboardingi, haftalık sınav girişi) maskot hiç yok. Mevcut yedi klipten
+biriyle doldurmak mümkün ama kaydın gerekçesi hâlâ geçerli: `think`
+"düşünüyorum", `wow` "bak şuna" diyor; `idle`/`wave` ile koymak yanlış şeyi
+söyler. **Ölçüm bir kaydı ancak yanlışsa çürütür; bu kayıt doğru.**
+
+**Dört turluk taramanın toplamı:** beş kayıtlı maddeden üçü kapanmıştı ya da
+yanlış teşhisti (§11.15, §11.11, §11.119), biri kısmen kapandı (§11.139), biri
+gerçekten bekliyor (§11.16 — çizim). Oran şunu söylüyor: **"karar bekliyor"
+etiketi zamanla çürüyor** ve düzenli olarak yeniden ölçülmesi gerekiyor.

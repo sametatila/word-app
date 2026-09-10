@@ -3139,6 +3139,26 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   sameList("kelime satiri alanlari", alanlar("mobile/src/screens/WordsScreen.tsx"), alanlar("src/components/word-list.tsx"));
 }
 
+/* ── 86. rozet acilis kutlamasi ───────────────────────────────────────────
+ * Rozet acilisinin kendi ani var: siraya alinmis tek kartlar, ikiden cogunda
+ * TOPLU kart, kapatilabilir ve sesli. Kayit defteri §11.15 bunu "mobilde HIC
+ * YOK, karar Samet'in" diye birakmisti; sonraki turlarda mobil kutlamayi
+ * kazandi ama KAYIT eskidi. Kapi dort olcuyu birden tutuyor - kutlamanin
+ * hangi parcasi dusarse dussun burasi kirmiziya doner. */
+{
+  const kutlama = (p) => {
+    const src = read(p).replace(/\/\*[\s\S]*?\*\//g, " ").replace(/\/\/[^\n]*/g, " ");
+    return [
+      "tekli esik=" + ((src.match(/MAX_SOLO = (\d+)/) ?? [])[1] ?? "yok"),
+      "toplu kart=" + (/kind: "batch"/.test(src) ? "var" : "yok"),
+      "sira=" + (/kind: "solo", queue/.test(src) ? "var" : "yok"),
+      "ses=" + (/(?:sfx|play)\("unlock"\)/.test(src) ? "var" : "yok"),
+      "gorulduyu bildir=" + (/seen:/.test(src) ? "var" : "yok"),
+    ];
+  };
+  sameList("rozet acilis kutlamasi", kutlama("mobile/src/ui/AchievementUnlock.tsx"), kutlama("src/components/achievement-unlock.tsx"));
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"
