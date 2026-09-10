@@ -18,6 +18,7 @@ import { mockStats } from "@/lib/mock-exams/stats";
 import type { AssessLevel } from "@/lib/assess-prompts";
 import { isNativeLang, DEFAULT_NATIVE } from "@/lib/i18n/dict";
 import { ensureProfile } from "@/lib/session";
+import { localiseMockPaper } from "@/lib/lessons/native-server";
 
 export const dynamic = "force-dynamic";
 
@@ -340,12 +341,6 @@ async function finish(userId: string, body: Record<string, unknown>) {
   const score = scorePart(row.paperId, row.skill as MockSkill, merged);
   if (!score) return NextResponse.json({ error: "bad_request" }, { status: 400 });
 
-  // Açıklamalar geri bildirime gidiyor; kâğıttan okunuyor, istemciden değil.
-  const paper = mockPaperById(row.paperId)!;
-  const part = findPart(paper, row.skill as MockSkill)!;
-  const explains: Record<string, string> = {};
-  for (const t of part.tasks) for (const it of t.items) explains[it.id] = it.explain;
-
   /*
     Geri bildirim doğrudan ekrana çıkıyor, o yüzden kullanıcının dilinde
     üretiliyor. Dil ÇEREZDEN değil profilden: bu ucu mobil de çağırıyor ve
@@ -353,6 +348,17 @@ async function finish(userId: string, body: Record<string, unknown>) {
   */
   const profile = await ensureProfile(userId).catch(() => null);
   const lang = isNativeLang(profile?.nativeLang) ? profile.nativeLang : DEFAULT_NATIVE;
+
+  /* Açıklamalar geri bildirime gidiyor; kâğıttan okunuyor, istemciden değil.
+     KÂĞIT ÖNCE ÇEVRİLİYOR: `explain` maddenin neden yanlış olduğunu söyleyen
+     cümledir ve modele GEREKÇE olarak veriliyor. Kaynaktan okunsaydı
+     İngilizce konuşan kullanıcının geri bildirimi Türkçe gerekçeler üstüne
+     kurulurdu — cevabın dili doğru olur, dayanağı yabancı kalırdı. */
+  const source = mockPaperById(row.paperId)!;
+  const paper = await localiseMockPaper(source, lang);
+  const part = findPart(paper, row.skill as MockSkill)!;
+  const explains: Record<string, string> = {};
+  for (const t of part.tasks) for (const it of t.items) explains[it.id] = it.explain;
   const ai = await mockFeedback(
     score,
     explains,
