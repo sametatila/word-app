@@ -7,6 +7,7 @@ import { characterFor } from "./characters";
 import { EXAM_TURNS } from "./roleplay-const";
 import type { SpeakingDialogueExercise } from "@/lib/skills/types";
 import { dialogueDone, targetsUsed } from "@/lib/dialogue";
+import { DEFAULT_NATIVE, type NativeLang } from "@/lib/courses";
 
 /**
  * Rol yapma — dersin son ve asıl parçası.
@@ -88,9 +89,41 @@ function targetLang(course: string | undefined): { name: string; dialect: string
   return { name: "Almanca", dialect: "Standart Almanca (Hochdeutsch) konuşuyorsun.", chars: "Almanca (ä ö ü ß) " };
 }
 
-export function roleplayPrompt(lesson: Lesson, opts?: { phase?: RoleplayPhase; mode?: RoleplayMode }): string {
+/**
+ * ÖĞRENCİNİN ana dilinin adı ve harfleri.
+ *
+ * `targetLang`ın ikizi, öteki eksende. İstem baştan sona "Türkçe" yazıyordu ve
+ * bu üç yerde ekrana çıkıyordu: tıkanınca verilen açıklama, düzeltmedeki kural
+ * etiketi ve güvenlik notu. Anadili İngilizce ya da Almanca olan öğrenci
+ * tıkandığında TÜRKÇE yardım alıyordu — dersin en çok konuşulan yerinde.
+ *
+ * Harf uyarısı ana dile de gerekiyor: model öğrencinin dilinde bir not
+ * yazarken o dilin harflerini doğru yazmalı.
+ */
+function nativeLang(native: NativeLang): { name: string; chars: string } {
+  if (native === "en") return { name: "İngilizce", chars: "" };
+  if (native === "de") return { name: "Almanca", chars: "Almanca (ä ö ü ß)" };
+  return { name: "Türkçe", chars: "Türkçe (ç ğ ı ö ş ü)" };
+}
+
+/** Hedef ve ana dilin harf uyarıları — boş olanı düşer, ikisi de boşsa satır yok. */
+function charsNote(tgt: string, nat: string): string {
+  const parts = [tgt.trim(), nat.trim()].filter(Boolean);
+  return parts.length ? `${parts.join(" ve ")} harfleri doğru yaz.` : "";
+}
+
+export function roleplayPrompt(
+  lesson: Lesson,
+  opts?: {
+    phase?: RoleplayPhase;
+    mode?: RoleplayMode;
+    /** Öğrencinin ana dili — yardım ve düzeltme etiketi bu dilde. */
+    native?: NativeLang;
+  },
+): string {
   const phase: RoleplayPhase = opts?.phase ?? "develop";
-  if (opts?.mode === "exam") return examPrompt(lesson, phase);
+  const nat = nativeLang(opts?.native ?? DEFAULT_NATIVE);
+  if (opts?.mode === "exam") return examPrompt(lesson, phase, opts?.native ?? DEFAULT_NATIVE);
   const tgt = targetLang(lesson.course);
   const dialect = tgt.dialect;
 
@@ -103,7 +136,7 @@ export function roleplayPrompt(lesson: Lesson, opts?: { phase?: RoleplayPhase; m
   const patterns = lesson.patterns.map((p) => `- ${p.de} — ${p.tr}`).join("\n");
   const vocab = lesson.vocab.map((v) => `${v.de} (${v.tr})`).join(", ");
 
-  return `Sen bir ${tgt.name} dersinin konuşma pratiği bölümündesin. Öğrencinin ana dili Türkçe, seviyesi ${lesson.level}. ${dialect}
+  return `Sen bir ${tgt.name} dersinin konuşma pratiği bölümündesin. Öğrencinin ana dili ${nat.name}, seviyesi ${lesson.level}. ${dialect}
 
 ROLÜN
 Adın ${who.name}. ${lesson.roleplay.partner} rolündesin — ${who.note}.
@@ -196,7 +229,7 @@ Düzeltme yazarken:
 - Öğrencinin söylemediği kelimeleri ekleme, anlamını değiştirme. Düzeltme onun
   cümlesinin doğru hâli olmalı, başka bir cümle değil.
 - Tek satırda ver: ${CORRECTION_MARK} ile başla, yanlışı ve doğrusunu yaz, sonuna
-  Türkçe KURALIN ADINI ekle — açıklama cümlesi değil, etiket.
+  ${nat.name} KURALIN ADINI ekle — açıklama cümlesi değil, etiket.
   Örnek: "Am Wochenende ich gehe → Am Wochenende gehe ich (V2-Regel)".
   Kuralın adından emin değilsen hiç yazma; yanlış gerekçe düzeltmeden kötüdür.
 - Düzeltme satırlarından sonra rolüne dönüp konuşmayı sürdür.
@@ -204,7 +237,7 @@ Düzeltme yazarken:
 GÜVENLİK SINIRLARI — sahne ne olursa olsun
 Cinsel içerik, şiddet, nefret söylemi, kendine zarar, uyuşturucu ve yasa dışı
 işler hakkında içerik ÜRETME; öğrenci o yöne çekerse rolünde kalarak kibarca
-konuyu sahneye geri getir (Türkçe kısa bir not eklemen gerekiyorsa ekle).
+konuyu sahneye geri getir (${nat.name} kısa bir not eklemen gerekiyorsa ekle).
 Öğrenciden kişisel veri isteme (adres, telefon, parola, kart). Gerçek bir
 kişiymişsin gibi davran ama gerçek kişilerin adına konuşma. Bir dil dersi
 karakterisin; tıbbi, hukuki ya da mali tavsiye verme.
@@ -231,7 +264,7 @@ NASIL KONUŞURSUN
 - Her turu aynı kalıba dökme. Bazen kısa bir yorum, bazen kendinle ilgili bir
   cümle, bazen doğrudan soru. Turların hepsi "övgü + soru" olursa konuşma
   kalıba dönüşüyor.
-- Öğrenci Türkçe yazarsa ya da tıkanırsa, cevabına MUTLAKA Türkçe bir
+- Öğrenci ${nat.name} yazarsa ya da tıkanırsa, cevabına MUTLAKA ${nat.name} bir
   açıklamayla başla, sonra ${tgt.name} diline dön.
 - Yıldız, tire, madde işareti gibi biçimlendirme kullanma; düz metin yaz.
   Rol metnin sesli okunuyor — okunduğunda doğal duyacak cümleler kur.
@@ -248,7 +281,7 @@ CEVABIN EN SONUNDA ÜÇ ÖNERİ (her seferinde yaz)
   cümle yazmak öneri değil dolgu oluyor.
 - Öneri satırlarına açıklama, tırnak, numara ekleme.
 
-Karakter bütünlüğüne dikkat et: ${tgt.chars}ve Türkçe (ç ğ ı ö ş ü) harfleri doğru yaz.
+Karakter bütünlüğüne dikkat et: ${charsNote(tgt.chars, nat.chars)}
 ${phaseBlock(phase)}`;
 }
 
@@ -295,8 +328,9 @@ düzeltme satırını yine yaz.`;
  * görse de düzeltmez (puanlama sonra, bütün konuşma üstünde). Türkçe yardım
  * da yok: tıkanan öğrenciye kısa, basit Almanca ile yeniden sorar.
  */
-function examPrompt(lesson: Lesson, phase: RoleplayPhase): string {
+function examPrompt(lesson: Lesson, phase: RoleplayPhase, native: NativeLang): string {
   const tgt = targetLang(lesson.course);
+  const nat = nativeLang(native);
   const dialect = lesson.course === "gsw-zh" ? "Züritüütsch (Zürih Almancası) konuşuyorsun." : tgt.dialect;
   const who = characterFor(lesson, lessonIndexInLevel(lesson));
   return `Sen bir ${tgt.name} KONUŞMA SINAVINDA öğrencinin muhatabısın. Öğrencinin seviyesi ${lesson.level}. ${dialect}
@@ -320,12 +354,12 @@ Gerçek kişilerin adına konuşma; tıbbi, hukuki ya da mali tavsiye verme.
 SINAV KURALLARI — bunlara kesinlikle uy
 - YARDIM ETME: kalıp önerme, doğru cümleyi söyleme, "şöyle de" deme.
 - DÜZELTME YAZMA: öğrencinin hatasını görsen de düzeltme, yorumlama; rolünde kal ve söylediğine cevap ver. Anlaşılmayan bir şey söylerse gerçek bir muhatap gibi kısa, basit ${tgt.name} ile yeniden sor.
-- TÜRKÇE KULLANMA: öğrenci Türkçe konuşsa bile ${tgt.name} cevap ver.
+- ANA DİLİ KULLANMA: öğrenci ${nat.name} konuşsa bile ${tgt.name} cevap ver.
 - ${CORRECTION_MARK} ya da ${SUGGESTION_MARK} işaretli satır YAZMA; yalnız rol metnin.
 - Kısa konuş: en fazla 2 cümle, sonunda bir soru. ${lesson.level} seviyesinde kal.
 - Sahneyi ilerlet: her turda yeni bir ayrıntı, aynı soruyu tekrar sorma. Övgü cümleleri yok.
 - Yıldız, tire, madde işareti yok; düz metin. Rol metnin sesli okunuyor.
-${tgt.chars}harfleri doğru yaz.${
+${charsNote(tgt.chars, "")}${
     phase === "wrapup"
       ? `
 
@@ -355,6 +389,8 @@ export async function* streamRoleplay(
   /** Her denemenin muhasebesi — başarısız olanlar dâhil. */
   report?: CallReport,
   mode: RoleplayMode = "practice",
+  /** Öğrencinin ana dili — yardım ve düzeltme etiketi bu dilde. */
+  native: NativeLang = DEFAULT_NATIVE,
 ): AsyncGenerator<string> {
   // Sahnenin nerede olduğunu tur sayısı söylüyor: ders bir sohbet uygulaması
   // değil ve "yeterince konuşuldu"nun kararını öğrenciye bırakmak konuşmayı
@@ -363,22 +399,27 @@ export async function* streamRoleplay(
   const limit = mode === "exam" ? EXAM_TURNS : lesson.roleplay.minTurns;
   const phase: RoleplayPhase =
     userTurns >= limit ? "closing" : userTurns >= limit - 1 ? "wrapup" : userTurns <= 1 ? "open" : "develop";
-  const system = roleplayPrompt(lesson, { phase, mode });
+  const system = roleplayPrompt(lesson, { phase, mode, native });
   yield* streamSystem(system, messages, onMeta, report);
 }
 
 /**
  * Beceri diyaloğu istemi (WP-23): tema + hedef kalıplar, senaryodaki açılış
  * sorusuyla aynı sahne. Alıştırma istemine göre daha kısa: düzeltme yok
- * (diyalog anlama/akış çalışması; düzeltme dersin işi), Türkçe yardım
+ * (diyalog anlama/akış çalışması; düzeltme dersin işi), ANA DİLDE yardım
  * yalnız tıkanınca. Her tur en fazla iki cümle + soru; kapanışta veda.
  */
-export function dialoguePrompt(ex: SpeakingDialogueExercise, closing: boolean): string {
+export function dialoguePrompt(
+  ex: SpeakingDialogueExercise,
+  closing: boolean,
+  native: NativeLang = DEFAULT_NATIVE,
+): string {
   const theme = ex.theme!;
   const tgt = targetLang(ex.course);
+  const nat = nativeLang(native);
   const dialect = ex.course === "gsw-zh" ? "Züritüütsch (Zürih Almancası) konuşuyorsun; öğrenci Hochdeutsch cevap verirse düzeltme, sürdür." : tgt.dialect;
   const targets = ex.targets.map((t) => `- ${t.de} — ${t.tr}`).join("\n");
-  return `Sen bir ${tgt.name} konuşma alıştırmasında öğrencinin muhatabısın. Öğrencinin ana dili Türkçe, seviyesi ${ex.level}. ${dialect}
+  return `Sen bir ${tgt.name} konuşma alıştırmasında öğrencinin muhatabısın. Öğrencinin ana dili ${nat.name}, seviyesi ${ex.level}. ${dialect}
 
 ROLÜN: ${theme.role}.
 SAHNE: ${ex.intro}
@@ -390,7 +431,7 @@ ${targets}
 GÜVENLİK SINIRLARI — sahne ne olursa olsun
 Cinsel içerik, şiddet, nefret söylemi, kendine zarar, uyuşturucu ve yasa dışı
 işler hakkında içerik ÜRETME; öğrenci o yöne çekerse rolünde kalarak kibarca
-konuyu sahneye geri getir (Türkçe kısa bir not eklemen gerekiyorsa ekle).
+konuyu sahneye geri getir (${nat.name} kısa bir not eklemen gerekiyorsa ekle).
 Öğrenciden kişisel veri isteme (adres, telefon, parola, kart). Gerçek bir
 kişiymişsin gibi davran ama gerçek kişilerin adına konuşma. Bir dil dersi
 karakterisin; tıbbi, hukuki ya da mali tavsiye verme.
@@ -400,9 +441,9 @@ KURALLAR
 - Öğrencinin söylediğine cevap ver; genel övgü yok. Sahneyi her turda ilerlet, aynı soruyu tekrar sorma.
 - Öğrenci senaryoda olmayan bir şey söylese de anla ve devam et (ör. "Cappuccino, aber ohne Zucker").
 - Dilbilgisi hatasını DÜZELTME; bu bir anlama/akış alıştırması. ${CORRECTION_MARK} satırı yazma.
-- Öğrenci Türkçe konuşur ya da tıkanırsa: tek cümle Türkçe yardım, sonra ${tgt.name} soru.
+- Öğrenci ${nat.name} konuşur ya da tıkanırsa: tek cümle ${nat.name} yardım, sonra ${tgt.name} soru.
 - Öneri satırı (${SUGGESTION_MARK}) YAZMA: küçük modeller işaret satırını gövdeye karıştırıyordu, öğrencinin ipucu için senaryo örneği var.
-- Düz metin; yıldız, tire, madde işareti yok. ${tgt.chars}harfleri doğru yaz.${closing ? `
+- Düz metin; yıldız, tire, madde işareti yok. ${charsNote(tgt.chars, nat.chars)}${closing ? `
 
 KAPANIŞ TURU — hedefe ulaşıldı: sahneyi doğal biçimde kapat, kısa veda (en fazla 2 cümle). SORU SORMA.` : ""}`;
 }
@@ -412,10 +453,12 @@ export async function* streamDialogue(
   messages: RoleplayTurn[],
   onMeta?: (meta: ProviderMeta) => void,
   report?: CallReport,
+  /** Öğrencinin ana dili — tıkanınca verilen yardım bu dilde. */
+  native: NativeLang = DEFAULT_NATIVE,
 ): AsyncGenerator<string> {
   const said = messages.filter((m) => m.role === "user").map((m) => m.content);
   const closing = dialogueDone(said.length, targetsUsed(ex.targets, said).length);
-  yield* streamSystem(dialoguePrompt(ex, closing), messages, onMeta, report);
+  yield* streamSystem(dialoguePrompt(ex, closing, native), messages, onMeta, report);
 }
 
 /** Ortak akış: sağlayıcı zinciri, ilk parça gelmeden düşerse yedeğe geçer. */

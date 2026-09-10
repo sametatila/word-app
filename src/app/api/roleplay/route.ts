@@ -7,6 +7,8 @@ import { streamDialogue, streamRoleplay, type RoleplayMode, type RoleplayTurn } 
 import { MAX_HISTORY } from "@/lib/lessons/roleplay-const";
 import { getExercise } from "@/lib/skills";
 import { logRoleplayTurn } from "@/lib/lessons/log";
+import { langOf } from "@/lib/social/notify";
+import { localiseExercise, localiseLesson } from "@/lib/lessons/native-server";
 import { recordAiUsage } from "@/lib/ai-usage";
 
 export const dynamic = "force-dynamic";
@@ -75,9 +77,25 @@ export async function POST(req: Request) {
   const mode: RoleplayMode = rawMode === "exam" ? "exam" : "practice";
   // Beceri diyaloğu (WP-23): ders yerine temalı egzersiz; senaryo istemcide yedek.
   const dialogue = typeof exerciseId === "string" ? await getExercise(exerciseId) : undefined;
-  const dialogueEx = dialogue && dialogue.skill === "speaking" && "dialogue" in dialogue && dialogue.theme ? dialogue : undefined;
-  const lesson = typeof lessonId === "string" ? findLesson(lessonId) : undefined;
-  if (!lesson && !dialogueEx) return NextResponse.json({ error: "bad_lesson" }, { status: 400 });
+  const dialogueRaw = dialogue && dialogue.skill === "speaking" && "dialogue" in dialogue && dialogue.theme ? dialogue : undefined;
+  const lessonRaw = typeof lessonId === "string" ? findLesson(lessonId) : undefined;
+  if (!lessonRaw && !dialogueRaw) return NextResponse.json({ error: "bad_lesson" }, { status: 400 });
+
+  /**
+   * ÖĞRENCİNİN DİLİ İKİ YERE BİRDEN GİRİYOR.
+   *
+   * İstem ana dili bildiriyor ve tıkanınca yardım o dilde geliyordu — ama
+   * "Türkçe" sabitti: anadili İngilizce ya da Almanca olan öğrenci dersin en
+   * çok konuşulan yerinde Türkçe açıklama alıyordu.
+   *
+   * İkincisi sahnenin kendisi: model kalıpları ve kelimeleri `p.tr`/`v.tr`
+   * ile görüyor, yani dersin ANA DİL yüzüyle. Ham ders verilseydi model
+   * Türkçe bir referans listesine bakıp öğrenciye başka bir dilde yardım
+   * etmeye çalışırdı. Çözülemeyen ders olduğu gibi geçiyor (hep-ya-hiç).
+   */
+  const native = await langOf(userId);
+  const lesson = lessonRaw ? await localiseLesson(lessonRaw, native) : undefined;
+  const dialogueEx = dialogueRaw ? await localiseExercise(dialogueRaw, native) : undefined;
   const logId = lesson?.id ?? dialogueEx!.id;
 
   const messages = parseMessages(raw);
@@ -102,8 +120,8 @@ export async function POST(req: Request) {
           // onu sessizce atladığı için, kaydedilmeyen bir hata hiç olmamış
           // gibi duruyordu.
           const gen = lesson
-            ? streamRoleplay(lesson, messages, (m) => (meta = m), (r) => recordAiUsage(userId, { kind: "roleplay", ...r }), mode)
-            : streamDialogue(dialogueEx!, messages, (m) => (meta = m), (r) => recordAiUsage(userId, { kind: "roleplay", ...r }));
+            ? streamRoleplay(lesson, messages, (m) => (meta = m), (r) => recordAiUsage(userId, { kind: "roleplay", ...r }), mode, native)
+            : streamDialogue(dialogueEx!, messages, (m) => (meta = m), (r) => recordAiUsage(userId, { kind: "roleplay", ...r }), native);
           for await (const delta of gen) {
             full += delta;
             controller.enqueue(encoder.encode(delta));
