@@ -5122,3 +5122,24 @@ Davranış da eşleşiyor: duyulmayan tur iki tarafta da yanlış sayılmıyor v
 SRS'e yazılmıyor (`UNHEARD_IS_NOT_WRONG` / mobilin aynı dallanması), teslim
 ("bilmiyorum") ceza almıyor, ikisi de doğrusunu okuyup devam ediyor. Kayda
 geçiyor ki bir sonraki tur aynı yeri tekrar ölçmesin.
+
+### 11.130 Günün turu: boş havuz "oynadın" diye okunuyordu
+
+Tur kurulamadığında (seviyedeki kelime havuzu yetmiyor) mobil ekran doğrudan
+`done`a düşüyordu: kullanıcıya **0/0 puanla** "bugünkü turun bitti" deniyordu —
+oynamadığı bir turdan sıfır aldığını sanıyor. Sebep ayrı ve söylenebilir; web
+bunu ayrı bir durum olarak taşıyor (`status === "empty"`). §11.86'nın "yanlış
+teşhis" sınıfı.
+
+Sonuç ekranı artık sıralamadaki **yerini** de söylüyor (tablo altta ama
+"kaçıncıyım" satır satır aranmamalı) ve **neden tekrar oynanamadığını**
+yazıyor. İkisi de webde vardı.
+
+Puan iki yerde `toLocaleString("tr-TR")` ile yazılıyordu: bin ayracı İngilizce
+ve Almanca arayüzde de Türkçe kuruluyordu. §11.109'un aynı hatası, bu kez
+sayıda — **parity 51** artık bu deseni de arıyor (yönetim panosu dışarıda:
+orası yalnız Türkçe ve kullanıcıya açık değil).
+
+**Ölçüldü, ayrışma değil:** `LearnScreen` ↔ `learn-hub` eşleşiyor; tek fark
+"hayatta kalma" modu ve o zaten web'e özel olarak yazılı (`learn/challenge`
+sayfası ve `pushRoute` yorumu). Tekrar ölçülmesin diye kayda geçti.
