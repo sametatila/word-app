@@ -864,6 +864,7 @@ export const de: Record<string, string> = {
   "skillquiz.ph_short": "Kurze Antwort…",
   "skillquiz.questions": "Fragen",
   "skillquiz.word_count": "({n} Wörter)",
+  "skillquiz.n_words": "{n} / {min} Wörter",
   "skills.aciklama": "Lesen, Hören, Schreiben, Sprechen und Grammatik",
   "skills.skills": "Skills",
   "skills.listening": "Hören",

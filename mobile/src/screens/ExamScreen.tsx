@@ -572,7 +572,7 @@ function Write({ w, level, colors, pad, onDone }: { w: WritingItem; level: strin
         method: "POST",
         body: JSON.stringify({
           kind: "writing", level,
-          task: { prompt: w.task.prompt, constraints: [...w.task.checklist, `en az ${w.task.minWords} wordCount`] },
+          task: { prompt: w.task.prompt, constraints: [...w.task.checklist, `en az ${w.task.minWords} kelime`] },
           answer: { text: typed.trim() }, locale: "tr",
         }),
       });

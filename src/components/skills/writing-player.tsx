@@ -500,7 +500,7 @@ function FreeTask({
           className="text-xs font-bold"
           style={{ color: enough ? "var(--color-mint)" : "var(--text-muted)" }}
         >
-          {t("writew.n_words", { n: words, min: task.minWords })}
+          {t("skillquiz.n_words", { n: words, min: task.minWords })}
         </span>
       </div>
 

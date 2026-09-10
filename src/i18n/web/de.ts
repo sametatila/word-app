@@ -1122,7 +1122,6 @@ export const deWeb: Record<string, string> = {
   "firstw.account_soon": "Gleich legst du dein Konto an, damit dein Fortschritt gespeichert wird.",
   "lessonw.turns": "{n} / {total} Runden",
   "writew.task_n": "Aufgabe {n} / {total}",
-  "writew.n_words": "{n} / {min} Wörter",
   "writew.fields_ok": "{n} / {total} Felder richtig",
   "placew.retake_in": "Der Test ist alle {n} Tage möglich. Bis dahin führt dich der Plan.",
   "placew.suggestion": "Unser Vorschlag: {level}",

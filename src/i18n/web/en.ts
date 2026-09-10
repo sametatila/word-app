@@ -1122,7 +1122,6 @@ export const enWeb: Record<string, string> = {
   "firstw.account_soon": "You'll create your account in a moment so your progress is saved.",
   "lessonw.turns": "{n} / {total} turns",
   "writew.task_n": "Task {n} / {total}",
-  "writew.n_words": "{n} / {min} words",
   "writew.fields_ok": "{n} / {total} fields correct",
   "placew.retake_in": "The test can be taken once every {n} days. In the meantime the plan guides you.",
   "placew.suggestion": "Our suggestion: {level}",

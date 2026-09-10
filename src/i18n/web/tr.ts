@@ -1147,7 +1147,6 @@ export const trWeb: Record<string, string> = {
   "firstw.account_soon": "Öğrendiklerini kaydetmek için birazdan hesabını açacaksın.",
   "lessonw.turns": "{n} / {total} tur",
   "writew.task_n": "Görev {n} / {total}",
-  "writew.n_words": "{n} / {min} kelime",
   "writew.fields_ok": "{n} / {total} alan doğru",
   "placew.retake_in": "Test {n} günde bir alınabiliyor. Bu arada plan seni yönlendirir.",
   "placew.suggestion": "Önerimiz: {level}",

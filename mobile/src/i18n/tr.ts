@@ -869,6 +869,7 @@ export const tr: Record<string, string> = {
   "skillquiz.ph_short": "Kısa cevap…",
   "skillquiz.questions": "Sorular",
   "skillquiz.word_count": "({n} kelime)",
+  "skillquiz.n_words": "{n} / {min} kelime",
   "skills.aciklama": "Okuma, dinleme, yazma, konuşma ve dil bilgisi",
   "skills.skills": "Beceriler",
   "skills.listening": "Dinleme",

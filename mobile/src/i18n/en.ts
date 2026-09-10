@@ -864,6 +864,7 @@ export const en: Record<string, string> = {
   "skillquiz.ph_short": "Short answer…",
   "skillquiz.questions": "Questions",
   "skillquiz.word_count": "({n} words)",
+  "skillquiz.n_words": "{n} / {min} words",
   "skills.aciklama": "Reading, listening, writing, speaking and grammar",
   "skills.skills": "Skills",
   "skills.listening": "Listening",
