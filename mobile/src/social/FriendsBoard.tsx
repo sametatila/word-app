@@ -24,7 +24,17 @@ export function FriendsBoard({ compact = false }: { compact?: boolean }) {
   const { colors } = useTheme();
   const nav = useNavigation<NativeStackNavigationProp<RootStackParams>>();
   const [board, setBoard] = useState<BoardView | null>(null);
-  useEffect(() => { social.board().then(setBoard).catch(() => setBoard({ rows: [], start: "", daysLeft: 0 })); }, []);
+  const [err, setErr] = useState(false);
+  useEffect(() => { social.board().then(setBoard).catch(() => setErr(true)); }, []);
+  /*
+   * AĞ HATASI "KİMSE YOK" DEĞİL.
+   *
+   * Hata boş bir tabloya çevriliyordu (`rows: []`) ve kart tam altındaki
+   * "henüz yarışacak kimse yok"a düşüyordu: arkadaşı olan kullanıcı, ağ
+   * koptuğunda arkadaşlarının kaybolduğunu görüyordu. Lig sekmesi aynı
+   * durumu ayrı bir kartla söylüyor (`LeagueBoard`), iki sekme artık aynı.
+   */
+  if (err) return <EmptyCard icon={PodiumIcon} tint={colors.info} title={t("leaderboard.couldn_t_load_leaderboard")} text={t("social.err_offline")} />;
   // Satır iskeleti gerçek satırla aynı yükseklikte (40 arma + 12+12 dolgu).
   if (!board) {
     return (
