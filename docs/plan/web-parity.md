@@ -874,6 +874,35 @@ Onboarding'in "Testle belirle" dalı artık misafiri `/level-test`e gönderiyor.
 Soru metinleri öğrenme içeriği olduğu için `placement-demo.ts` ham metin
 tarayıcısının içerik listesinde (`first-words.ts` gibi).
 
+### 11.9 Mobilde eksik: yapay zekâ kapalıyken senaryo yolu
+
+Konuşma dersinin sohbeti yapılandırılmamışsa (`/api/roleplay` `configured:false`)
+iki platform farklı davranıyor:
+
+- **Web** derse ait SENARYOYA düşüyor (`lib/lessons/offline-roleplay`): açılış
+  repliği, ipucu ve dallanan bir tur akışı ders verisinden okunuyor, yani
+  konuşma çalışmaya devam ediyor.
+- **Mobil** böyle bir yola sahip değil. Eskiden her tur genel `catch`e düşüp
+  "bağlantı sorunu" yazıyordu — yanlış teşhis; artık doğrusu söyleniyor
+  (`lesson.ai_off`) ama ders yine de yapılamıyor.
+
+Senaryo yolunu mobile taşımak bir durum makinesi ve ders verisi okuma demek;
+loop turunun işi değil, ayrıca ölçülmeli. Yön yine TERS (web ileride), §11.7
+ile aynı sınıf.
+
+### 11.10 Yüzeyi olmayan yazılmış içerik
+
+Tarama üç yerde "yazılmış ama hiçbir ekranda görünmeyen" metin buldu. İkisi
+kapatıldı (deneme sınavı sözlükçesi, lig satırındaki bildirim); geriye ikisi
+kaldı ve ikisi de EKSİK PARİTE DEĞİL, iki platformda birden yok:
+
+- `share.streak` (üç dil) + mobil `shareStreak()` — seri paylaşma. Hiçbir
+  ekranda düğme yok. Eklemek hizalama değil ürün kararı: düğme profile mi,
+  seri hapına mı, sonuç ekranına mı?
+- `coach.plan_*` (on beş cümle, üç dil) + `planMoment()` — "bugünkü plan"
+  selamı. O satır mobilde karşılığı olmadığı için web'den bilerek kaldırıldı
+  (§ Öğren). Cümleler yüzey geri gelirse yeniden yazılmasın diye duruyor.
+
 ### 11.8 Rozet kademe renkleri — ölçüldü ve eşitlendi
 
 Dört kademenin dördü de ayrışmıştı ve rozetin üstünde BEYAZ ikon duruyor,
