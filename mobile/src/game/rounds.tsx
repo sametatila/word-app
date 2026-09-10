@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { t as tx, nativeLangName, targetLangName } from "../lib/i18n";
 import { foldCase, foldCompare, foldTight } from "../lib/textFold";
+import { matchSentence } from "../lib/sentenceMatch";
 import { currentTargetLang } from "../lib/courses";
 import { View, TextInput, ScrollView, Keyboard, Platform, Animated } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
@@ -718,11 +719,25 @@ function TranslateRound({ round, onDone, colors }: { round: Round; onDone: Done;
   const alts = round.alternatives ?? [];
   const [val, setVal] = useState("");
   const [fb, setFb] = useState<Feedback | null>(null);
-  const sn = (x: string) => foldCompare(x, currentTargetLang());
+  /*
+   * HÜKÜM ÜÇ KATMANLI HAKEMDEN (`lib/sentenceMatch`), ikili karşılaştırmadan
+   * değil.
+   *
+   * Eskiden `foldCompare(val) === foldCompare(s.de)` idi: TEK HARF yazım
+   * hatası cümleyi tam yanlış sayıyor ve kelimeyi lapse ettiriyordu. Web aynı
+   * turda baştan beri hakemi kullanıyor ve kabul kuralı şu (bkz.
+   * `components/games/translate-game`): kalite 3'ten büyük veya eşit VE hüküm
+   * "sıra" değil. Yani yazım hatası kabul (kalite 4), sıra hatası kabul değil
+   * ama kelime lapse etmiyor (kalite 3).
+   *
+   * Kalitenin sunucuya gönderilmesi ve fark vurgusu arayüzü ayrı işler -
+   * mobil cevap yükünde `quality` hiç atanmıyor, `errorType` hiç yok
+   * (bkz. web-parity §11.19 adım 2 ve 3).
+   */
   function check() {
     if (fb) return;
-    const t = sn(val);
-    const ok = !!t && (t === sn(s.de) || alts.some((a) => sn(a) === t));
+    const m = matchSentence(val.trim(), s.de, alts, currentTargetLang());
+    const ok = !!val.trim() && m.quality >= 3 && m.verdict !== "order";
     Keyboard.dismiss();
     markAnswer(ok, s.de); // doğru Almanca cümleyi oku
     setFb({ correct: ok, answerDe: s.de, speakDe: s.de, tr: s.tr, en: s.en });

@@ -506,6 +506,49 @@ console.log("\n" + C.b + "16. SAYI SOZCUGU MODULU" + C.off);
   sameList("sayi modulu govdesi", body("mobile/src/lib/numbers.ts"), body("src/lib/numbers.ts"));
 }
 
+/* ── 17. cumle hakemi ────────────────────────────────────────────────────── */
+/*
+ * `src/lib/sentence-match.ts` ile `mobile/src/lib/sentenceMatch.ts` gövdesi
+ * aynı olmalı: hüküm (exact/spelling/order/wrong) ve SRS kalitesi buradan
+ * çıkıyor, ayrılırsa aynı cevap iki platformda farklı puan alır. Mobil bu
+ * porta kadar ikili karşılaştırma yapıyordu (bkz. web-parity §11.19).
+ *
+ * İthalat satırları HARİÇ: yol takma adları ve dil kaynağı iki tarafta farklı
+ * (web `@/lib/courses` `TargetLang` tipi, mobil `currentTargetLang()`).
+ * Saf yardımcılar da karşılaştırılıyor - mobil kopyası web `lib/errors`in
+ * yalnız saf parçasını taşıyor.
+ */
+console.log("\n" + C.b + "17. CUMLE HAKEMI" + C.off);
+{
+  const body = (p) => {
+    const src = read(p);
+    const i = src.indexOf("/**\n * Cümle eşleştirme");
+    return (i < 0 ? src : src.slice(i))
+      .split("\n")
+      .map((l) => l.trimEnd())
+      .filter((l) => !/^import /.test(l))
+      /* Dil parametresinin TİPİ iki tarafta farkli yazili; davranis ayni. */
+      .map((l) => l.replace(/lang: (?:TargetLang|string)( = (?:"de"|currentTargetLang\(\)))?/g, "lang"));
+  };
+  sameList("hakem govdesi", body("mobile/src/lib/sentenceMatch.ts"), body("src/lib/sentence-match.ts"));
+
+  /* Saf yardimcilar: adlandirilmis islev govdesi. */
+  const fn = (src, name) => {
+    const i = src.indexOf(`export function ${name}`);
+    if (i < 0) return [`${name} YOK`];
+    return src.slice(i, src.indexOf("\n}", i)).split("\n").map((l) => l.trimEnd());
+  };
+  const webErr = read("src/lib/errors.ts");
+  const mobErr = read("mobile/src/lib/errors.ts");
+  sameList("levenshtein", fn(mobErr, "levenshtein"), fn(webErr, "levenshtein"));
+  sameList("classifyOrder", fn(mobErr, "classifyOrder"), fn(webErr, "classifyOrder"));
+  sameList(
+    "hata tipleri",
+    [...read("mobile/src/lib/errors.ts").matchAll(/^\s{2}"(\w+)",$/gm)].map((m) => m[1]),
+    [...webErr.matchAll(/^\s{2}"(\w+)",$/gm)].map((m) => m[1]),
+  );
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"

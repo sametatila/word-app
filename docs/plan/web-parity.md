@@ -1300,17 +1300,28 @@ mobilde HİÇBİR YERDE atanmıyor (ölçüldü: tek geçtiği yer tip tanımı)
 kullanıyor. Yani yalnız Androidde çalışan bir kullanıcının hata tipi dökümü
 BOŞ ve SRS'i yalnız doğru/yanlış görüyor.
 
-PORT EDİLMEDİ, çünkü üç ayrı katman gerekiyor ve sırası önemli:
-  1. Saf hakemin portu: `lib/sentence-match` mobilin bağımlılıklarına uygun
-     (`levenshtein` mobilde `game/skillQuiz` içinde yerel bir kopya olarak
-     var, `classifyOrder` hiç yok). Kapıya bağlanabilir - modül saf.
-  2. `AnswerOut`a `errorType` eklenmesi ve `quality`nin gerçekten atanması;
-     bu, tur bileşenlerinin `onDone(ok: boolean)` sözleşmesini değiştiriyor
-     (`markAnswer`/`onDone` yalnız boolean taşıyor).
-  3. Fark vurgusu arayüzü (webde `TokenDiff`).
+Üç ayrı katman gerekiyordu ve sırası önemli:
 
-1 ve 2 olmadan 3 anlamsız; 2 olmadan 1 yalnız ekranı düzeltir, SRS'i
-düzeltmez. Sıra bu yüzden 1 → 2 → 3 ve her biri kendi turunu istiyor.
+  **1. Saf hakemin portu — YAPILDI.** `mobile/src/lib/sentenceMatch.ts` web
+  kopyasıyla gövde gövde aynı; saf yardımcılar `mobile/src/lib/errors.ts`e
+  alındı (web `lib/errors`in yalnız saf parçası: tip birleşimi, `levenshtein`,
+  `classifyOrder`). `levenshtein`in `game/skillQuiz` içindeki ÜÇÜNCÜ kopyası
+  da kaldırıldı. `TranslateRound` artık hakemi kullanıyor ve kabul kuralı web
+  ile birebir: `quality >= 3 && verdict !== "order"`. Yani tek harf yazım
+  hatası artık cümleyi tam yanlış saymıyor. `parity-check` 17. bölümü ve
+  `mobile/__tests__/sentenceMatch.test.ts` bunu bağlıyor.
+
+  **2. Cevap yükü — SIRADA.** `AnswerOut`a `errorType` eklenmesi ve
+  `quality`nin gerçekten atanması. Bu, tur bileşenlerinin `onDone(ok: boolean)`
+  sözleşmesini değiştiriyor (`markAnswer`/`onDone` yalnız boolean taşıyor), o
+  yüzden hakem portundan ayrı tutuldu. Hüküm artık mobilde de üretiliyor ama
+  sunucuya yalnız doğru/yanlış gidiyor - yani SRS hâlâ kaba, hata tipi dökümü
+  hâlâ boş.
+
+  **3. Fark vurgusu arayüzü** (webde `TokenDiff`) — 2'den sonra.
+
+2 olmadan 1 yalnız hükmü düzeltir, SRS'i düzeltmez; bu yüzden 1 tek başına da
+değerli (yazım hatası artık lapse ettirmiyor) ama iş yarım.
 
 Yan bulgu, web tarafında DÜZELTİLDİ: katlama sayı sözcüklerini rakama
 indirdiği için "at six o'clock" ile "at 5 o'clock" arasındaki fark tek
