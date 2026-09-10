@@ -280,6 +280,16 @@ export const auth = betterAuth({
       "/sign-up/email": { window: 3600, max: 5 },
       "/request-password-reset": { window: 3600, max: 3 },
       "/reset-password": { window: 3600, max: 5 },
+      /*
+        Doğrulama postası ucu KİMLİK İSTEMİYOR ve doğrulanmamış herhangi bir
+        adrese posta gönderiyor: kuralsız bırakılırsa bir kurbanın gelen
+        kutusunu doldurmanın ve SMTP kotasını tüketmenin yolu. Better Auth'un
+        kendi varsayılanı vardı (60 saniyede 3) ama o instance başına
+        sayıyordu ve nginx'in auth bloğu bu ucu hiç kapsamıyordu — ikisi de
+        kapatıldı. Web arayüzünde zaten 60 saniyelik geri sayım var, yani
+        gerçek kullanıcı bu tavana çarpmıyor.
+      */
+      "/send-verification-email": { window: 3600, max: 5 },
     },
   },
   advanced: {
