@@ -42,6 +42,30 @@ const end = (t: string): string => {
   const m = String(t).trim().slice(-1);
   return /[.!?:…,;]/.test(m) ? m : "—";
 };
+/**
+ * Üç nokta bu hatta NOKTALAMA DEĞİL, BOŞLUK İŞARETİ.
+ *
+ * `monologue.targets.tr` cümle başlangıçları veriyor ve „…“ öğrencinin
+ * devam edeceği yeri gösteriyor. Yeri DİLE bağlı: Türkçe fiili sona attığı
+ * için boşluk ortada kalıyor ("Benim ölçütüm … olurdu"), İngilizce fiili
+ * ortada tuttuğu için sona düşüyor ("My criterion would be …"). İkisi de
+ * doğru; son noktalama pariteti bunu hata sanıyordu.
+ *
+ * BOŞLUĞA YAPIŞIK NOKTALAMA DA ONUNLA GİDİYOR. İlk yazımda yalnız üç nokta
+ * atılıyordu ve dokuz satır düştü; ikisi de gerçek dil farkıydı:
+ *
+ *   "… lehine olan şu: …"      → "What speaks for … is that …"
+ *   "Bu doğru olsa da …"       → "Although that is true, …"
+ *
+ * Türkçe boşluğu iki nokta ve bir işaret zamiriyle açıyor ("şu: …"),
+ * İngilizce bir bağlaçla ("that …"); Türkçe yan cümleyi ekle bitirip
+ * boşluğu arkasına koyuyor, İngilizce virgülle. Aynı bilgi, farklı dizim —
+ * boşluğun yanındaki noktalama da boşluğun parçası.
+ *
+ * Ölçüt yalnız Türkçe satır „…“ taşıyorsa işliyor. Taşımıyorsa
+ * İngilizceye SONRADAN eklenmiş bir üç nokta hâlâ hata.
+ */
+const slots = (t: string): string => t.replace(/[\s:,;]*…[\s:,;]*/g, "");
 /** Harfe bitişik olmayan sayılar; A1, B2 gibi kodlar miktar değildir. */
 const numbers = (t: string): string[] =>
   [...String(t).matchAll(/(?<!\p{L})\d+/gu)].map((m) => m[0]).sort();
@@ -125,7 +149,8 @@ if (existsSync(`${DIR}out`))
       const en = String(r.en ?? "").trim();
       if (!en) H("karşılık boş");
       else if (row) {
-        if (end(r.tr) !== end(en)) H(`son noktalama uyuşmuyor: «${end(r.tr)}» → «${end(en)}»`);
+        const [eTr, eEn] = r.tr.includes("…") ? [slots(r.tr), slots(en)] : [r.tr, en];
+        if (end(eTr) !== end(eEn)) H(`son noktalama uyuşmuyor: «${end(eTr)}» → «${end(eEn)}»`);
         const a = numbers(r.tr).join(","), b = numbers(en).join(",");
         if (a !== b) H(`sayılar uyuşmuyor: «${a}» → «${b}»`);
 
