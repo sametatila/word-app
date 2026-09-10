@@ -17,13 +17,17 @@ hangisi"*) durum uzayını üçe katlar, tek bir yeni içerik üretmez.
 | tr → de | ✅ | ✅ | ✅ |
 | tr → gsw | ✅ | ✅ | ✅ |
 | tr → en | ✅ | ✅ | ✅ |
-| **en → de** | ✅ (8707/8707 İngilizce karşılık) | ✅ çözülüyor (yerelde) | ✅ çözülüyor (yerelde) |
+| **en → de** | ✅ 8707/8707 karşılık + örnek (ÜRETİMDE) | ✅ AÇIK | ✅ AÇIK |
 | **en → gsw** | ⚠️ karşılık ✅, örnek çevirisi 0/8266 | ❌ | ❌ |
 | **de → en** | ❌ Almanca karşılık sütunu yok | ❌ | ❌ |
 
-en→de'nin beceri ve ders sütunu 2026-09-10'da yeşile döndü ama `PAIR_READY`
-hâlâ boş: yazılanların hepsi YERELDE ve beyan ancak deploy'dan sonra
-doldurulur (aşağıda "Faz 3 nerede durdu").
+**en→de 2026-09-10'da AÇILDI** — `PAIR_READY.en = ["de"]`, hem web'de hem
+mobilde. Üç katmanın üçü de doğrulandı; kelime katmanı için üretim OKUNDU
+(`de` kursu: 8.707/8.707 İngilizce karşılık, 8.707/8.707 İngilizce örnek
+çevirisi). Beklenen `db:seed` bu parite için geçersizmiş.
+
+gsw-zh beyana GİRMEDİ: lehçe örnek çevirileri yerelde yazıldı ama üretimde
+`beispiel_en` 0/8.267 — karşılık var, örnek yok.
 
 ## Ölçülen eksikler (2026-09-09)
 
@@ -1466,13 +1470,56 @@ içerik bilerek pakete gömülü, çevrimdışı çalışması gerekiyor.
 Karar ürün kararı: 4,62 MB'lık bir APK büyümesi mi, iki yerde duran bir
 çözücü mü, yoksa mobilde en→de'nin şimdilik kapalı kalması mı.
 
+### de→en — ÖLÇÜLDÜ: ~33.700 dize (2026-09-10)
+
+İkinci parite Almanca konuşana İngilizce öğretiyor, yani İNGİLİZCE KURSUN
+Türkçe yüzünün Almancası yazılacak. Bugüne kadar hiç ölçülmemişti.
+
+**Kelime katmanı — üretim okundu, kolon var ama BOŞ:**
+
+| kolon | ne | üretimde |
+|---|---|---:|
+| `de_gloss` | İngilizce kelimenin Almanca karşılığı | **0 / 7.175** |
+| `beispiel_de` | örnek cümlenin Almanca çevirisi | **0 / 7.175** |
+
+Kolonlar şemada duruyor (`words`), yani göç gerekmiyor — yalnız veri yok.
+
+**İçerik katmanı — çıkarıcı sayısı, tahmin değil:**
+
+| hat | birim | dize |
+|---|---|---:|
+| deneme kâğıdı | 60 İngilizce kâğıt | **6.828** (46 paket, `in-de/` kuruldu) |
+| ders anlatımı | 200 ders | ~8.515 benzersiz parça (9.986 geçiş) |
+| ders başlığı/özeti | 200 ders | 400 |
+| ders sözlükçesi | | 1.000 |
+| ders kalıp notu | | 600 |
+| beceri egzersizi | 189 egzersiz | ~2.240 |
+| **içerik toplamı** | | **~19.600** |
+
+**Toplam ~33.700 dize.** Karşılaştırma: en→de'nin sözlüğü 40.000 girdi ve
+haftalar sürdü.
+
+**Bir ürün gerçeği:** İngilizce kursun bugün 200 dersi var (A1 tam, A2'nin
+ilk modülü); B1/B2/C1'de hiç ders yok. de→en açıldığında Almanca konuşan
+kullanıcı A1–A2 görecek, üstü "Yakında". Deneme kâğıtları beş seviyede de
+tam. Bu bir engel değil ama beyanla birlikte bilinmesi gereken bir şey.
+
+**Hat deseni aynı, kurallar AYNA DEĞİL.** `extractMock` kurs argümanı aldı
+ve iki pariteye birden hizmet ediyor. Ama kapı kopyalanamaz: Almanca tarafta
+kanıt dili İNGİLİZCE, karakter kümesinde `ÄÖÜäöüß` hedef dilin harfleri
+(kaynakta yabancı değil), İngiliz yazımı kuralı da hiç uygulanmaz. Her hattın
+kapısı ayrı yazılacak.
+
 ### Kalan dört iş — dördü de benim elimde değil
 
-1. **Push ve deploy.** Yazılanların tamamı yerelde. `PAIR_READY.en`
-   doldurulmadan önce kod canlıda olmalı, yoksa beyan yalan olur:
-   uygulama İngilizce sözlüğü olmayan bir sürüm sunar. Push Samet'te.
-2. **`npm run db:seed` — en→de kelime katmanı.** Üretim veritabanına
-   yazma; ayrıca sorulur ve henüz cevap gelmedi.
+1. **Push ve deploy.** `PAIR_READY.en` DOLDURULDU ve beyan ancak canlıya
+   çıkınca gerçek olur. Web push → webhook → deploy; mobil ise mağaza
+   sürümü bekliyor. İkisi arasındaki pencerede web en→de sunar, mobil
+   sunmaz — beyan iki yerde birden dolduruldu ama yayın hızları farklı.
+   Push Samet'te.
+2. **gsw örnek çevirileri üretime.** Yerelde 8.267/8.267 yazılı, üretimde
+   `beispiel_en` 0. Uygulanınca en→gsw de beyana girebilir. Üretim
+   veritabanına yazma; ayrıca sorulur.
 3. **de→gsw bir parite mi?** Züritüütsch hattı 2026-08-24'te durduruldu.
    Almanca konuşan birine Züritüütsch öğretmek ayrı bir ürün kararı;
    `PAIR_READY`ye eklenip eklenmeyeceği kod sorusu değil.
