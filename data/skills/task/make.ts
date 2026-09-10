@@ -143,7 +143,17 @@ export function extractTasks(): TaskRow[] {
         add("build.hint", t.hint, at, de);
       } else if (k === "form") {
         add("form.prompt", t.prompt, at);
-        add("form.facts", t.facts, at, undefined, p);
+        /* FORMUN CEVAPLARI DA KANIT. `facts` öğrencinin forma yazacağı
+           bilgiyi Türkçe anlatıyor; alanların `answer`ı ise ALMANCA ve
+           birebir eşleşme isteniyor. Ad Türkçe yazımıyla saklanmışsa
+           ("Ayla Yıldız", "Emre Şahin") İngilizce anlatım da onu aynen
+           taşımak zorunda — "Yildiz" yazan öğrenci formu geçemez. Kapı bunu
+           ölçebilsin diye cevaplar satıra iliştiriliyor. */
+        const answers = ((t.fields as Any[]) ?? [])
+          .map((f) => str(f.answer))
+          .filter((x): x is string => Boolean(x))
+          .join(" · ");
+        add("form.facts", t.facts, at, answers || undefined, p);
       } else if (k === "rewrite") {
         add("rewrite.prompt", t.prompt, at, str(t.source));
         add("rewrite.why", t.why, at, `${str(t.source) ?? ""} → ${de ?? ""}`.trim(), p);

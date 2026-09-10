@@ -74,12 +74,18 @@ const numbers = (t: string): string[] =>
    aynı gerekçelerle. İkisi BİRLİKTE kullanılıyor: kural yalnız tanıdığı
    dilde çalışıyor, tanıyamadığı açıklığı zorlamıyor. */
 const TR_WORDS =
-  /\b(bir|ve|ile|için|değil|demek|var|yok|olur|olunur|olmak|gibi|daha|çok|ama|yani|kadar|sonra|önce|hâli|biçim|biçimi|yerine|zaman|yer|yön)\b/i;
+  /\b(bir|ve|ile|için|değil|demek|var|yok|olur|olunur|olmak|gibi|daha|çok|ama|yani|kadar|sonra|önce|hâli|biçim|biçimi|yerine|zaman|yer|yön|memleket|ülkesi)\b/i;
 const TR_TERMS = /\b(mastar|ortaç|isim|fiil|zamir|özne|nesne|tekil|çoğul|edat|kip|ek|sıfat|zarf)\b/i;
-/* `yer` ve `yön` listede çünkü KARIŞIK açıklıklar var: "(Dativ, yer)" ve
-   "(Akkusativ, yön)". Almanca terim ile Türkçe açıklama aynı parantezin
-   içinde. Bütün korpusta yalnız iki tane; o iki satırda kural artık
-   "Dativ"in korunduğunu ölçmüyor, karşılığında "yer" çevrilebiliyor. */
+/* KARIŞIK AÇIKLIKLAR — Almanca terim ile Türkçe açıklama aynı parantezin
+   içinde. Üç tane çıktı ve üçü de listeye bir sözcük ekletti:
+
+     "(Dativ, yer)"                    yer
+     "(Akkusativ, yön)"                yön
+     "(memleket ülkesi Türkei)"        memleket, ülkesi
+
+   O satırlarda kural artık Almanca terimin korunduğunu ölçmüyor. Sonuncuda
+   kayıp yok: "Türkei" formun CEVABI olduğu için kanıt listesine oradan
+   giriyor ve korunması ayrıca ölçülüyor. */
 const turkish = (t: string): boolean => /[ışğİĞŞ]/.test(t) || TR_WORDS.test(t) || TR_TERMS.test(t);
 const DE_WORDS =
   /\b(der|die|das|ein|eine|einen|einem|ist|sind|war|nicht|kein|keine|und|mit|wir|ich|Sie|du|zu|auf|für|von|dem|den|im|am|bei|nach|vor|über|wie|was|wo|wer|bitte|hier|ja|nein|sehr|gut|noch|schon|aus|um|halb|man|sich|es|habe|hat|haben|werden|wird|wurde|worden|muss|müssen|kann|können|könnte|soll|sollen|will|wollen|darf|dürfen|mag|mögen|möchte|möchten|würde|würden|hätte|wäre|zurück)\b/;
@@ -104,12 +110,27 @@ const foreign = (t: string): boolean =>
 const flat = (t: string): string =>
   String(t).replace(/[„“”‚‘’'"]/g, "'").replace(/\s+/g, " ").trim();
 
-/** Almanca kanıt açıklıkları: „…“ ve (…). Türkçe olanlar elenir. */
-const evidence = (t: string): string[] => {
+/**
+ * Almanca kanıt açıklıkları: „…“ ve (…). Türkçe olanlar elenir.
+ *
+ * `form.facts` satırlarında ÜÇÜNCÜ bir kaynak var: formun kendi cevapları
+ * (`row.de`, „·“ ile ayrılmış). Tırnak taşımıyorlar ama kanıt olmaları
+ * tırnaktan bağımsız — öğrenci onları forma birebir yazacak. Adlar Türkçe
+ * yazımıyla saklanmış ("Ayla Yıldız", "Emre Şahin") ve İngilizce anlatım da
+ * onları aynen taşımak zorunda; "Yildiz" yazan öğrenci formu geçemez.
+ *
+ * Bu, sınav hattındaki "özel adlar ALMANCA kâğıdı izler" kuralının aynısı,
+ * yalnız burada Almanca kâğıt Türkçe yazımı seçmiş. Kural değişmiyor,
+ * cevabı değişiyor.
+ */
+const evidence = (t: string, de?: string): string[] => {
   const out: string[] = [];
   for (const m of t.matchAll(/[„"]([^„"“”]{2,})[“"]/g)) out.push(m[1]);
   for (const m of t.matchAll(/\(([^()]{2,})\)/g)) out.push(m[1]);
-  return out.filter((s) => !turkish(s) && foreign(s));
+  const spans = out.filter((s) => !turkish(s) && foreign(s));
+  for (const a of (de ?? "").split(" · "))
+    if (a.length > 1 && flat(t).includes(flat(a))) spans.push(a);
+  return spans;
 };
 
 /**
@@ -123,9 +144,9 @@ const evidence = (t: string): string[] => {
  * ad („Frau Yalçın“) korunur, İngilizceye kopyalanmış bir Türkçe öbek
  * korunmaz.
  */
-const strip = (en: string, tr: string): string => {
+const strip = (en: string, tr: string, de?: string): string => {
   let out = en;
-  for (const span of evidence(tr)) out = out.split(span).join(" ");
+  for (const span of evidence(tr, de)) out = out.split(span).join(" ");
   return out;
 };
 
@@ -154,18 +175,18 @@ if (existsSync(`${DIR}out`))
         const a = numbers(r.tr).join(","), b = numbers(en).join(",");
         if (a !== b) H(`sayılar uyuşmuyor: «${a}» → «${b}»`);
 
-        for (const ch of strip(en, r.tr))
+        for (const ch of strip(en, r.tr, row.de))
           if (!/[ -~ÄÖÜäöüßé·×‚„“”‘’–—…→↔]/.test(ch))
             H(`beklenmedik karakter: «${ch}» (U+${ch.codePointAt(0)?.toString(16).toUpperCase().padStart(4, "0")})`);
 
-        for (const span of evidence(r.tr))
+        for (const span of evidence(r.tr, row.de))
           if (!flat(en).includes(flat(span))) H(`Almanca kanıt düşmüş: «${span.slice(0, 34)}»`);
 
         /* SÖYLEYİŞ İPUCU. Türkçe okunuşla yazılmış bir ipucu İngilizce
            tarafta olduğu gibi kalırsa satır çevrilmemiştir. Ölçüt yalnız
            Türkçeye ÖZGÜ harfler; ä/ö/ü Almancadır ve kalabilir. */
         if (row.kind === "drill.hint" || row.kind === "drill.fix") {
-          const left = [...strip(en, r.tr)].filter((c) => /[ışğİĞŞçÇ]/.test(c));
+          const left = [...strip(en, r.tr, row.de)].filter((c) => /[ışğİĞŞçÇ]/.test(c));
           if (left.length) H(`Türkçe okunuş kalmış: «${[...new Set(left)].join("")}»`);
         }
 
@@ -179,7 +200,7 @@ if (existsSync(`${DIR}out`))
 
         if (en.length > r.tr.length * 2 + 20 || en.length * 2 + 20 < r.tr.length)
           U(`uzunluk çok sapıyor (${r.tr.length} → ${en.length})`);
-        for (const h of usSpelling(strip(en, r.tr))) U(`Amerikan yazımı ${h}`);
+        for (const h of usSpelling(strip(en, r.tr, row.de))) U(`Amerikan yazımı ${h}`);
       }
       written.set(key, en);
     }
