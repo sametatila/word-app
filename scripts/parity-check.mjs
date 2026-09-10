@@ -46,6 +46,18 @@ function sameSet(title, a, b, labelA = "mobil", labelB = "web") {
   fail(title, ["yalniz " + labelA + ": " + (onlyA.join(", ") || "-"), "yalniz " + labelB + ": " + (onlyB.join(", ") || "-")]);
 }
 
+/**
+ * Bir kaynakta `prop === "x"` ya da `prop !== "x"` biçiminde ADIYLA geçen
+ * türler.
+ *
+ * İki biçimi de sayıyor, çünkü `LessonScreen` `produce`u
+ * `expect?.kind !== "produce"` ile ayırıyor ve yalnız `===` arayan bir tarama
+ * onu GÖRMEZ - kapı yanlışlıkla geçerdi. Kaçırmanın yönü önemli: burada
+ * yanlış "geçer" demek hatayı gizlemek olur.
+ */
+const named = (src, prop) =>
+  new Set([...src.matchAll(new RegExp(`${prop}\\s*[!=]==\\s*"(\\w+)"`, "g"))].map((x) => x[1]));
+
 /* kurs kayit defteri */
 
 /** Kurs bloklarını `id` -> alan haritası olarak çıkarır. */
@@ -244,9 +256,8 @@ console.log("\n" + C.b + "10. BECERI ICERIGI vs OYNATICI" + C.off);
   const dump = ["mobile/src/data/skills/exercises.json", "mobile/src/data/skills/exercises-en.json"]
     .flatMap((f) => JSON.parse(read(f)));
   const quiz = read("mobile/src/game/skillQuiz.tsx");
-  const named = (re) => new Set([...quiz.matchAll(re)].map((x) => x[1]));
 
-  const taskNamed = named(/t\.kind === "(\w+)"/g);
+  const taskNamed = named(quiz, "t\\.kind");
   const badTasks = new Set();
   for (const e of dump) {
     // Yalnız YAZMA egzersizinin görevleri: konuşma egzersizinin `tasks`ı başka
@@ -261,7 +272,7 @@ console.log("\n" + C.b + "10. BECERI ICERIGI vs OYNATICI" + C.off);
     fail("yazma gorevi cizilemez", [...badTasks].map((k) => `${k}: dagitici tanimiyor ve minWords yok -> gonder dugmesi hic acilmaz`));
   } else pass(`yazma gorev turleri (${[...taskNamed].sort().join(", ")} + varsayilan free)`);
 
-  const qNamed = named(/kind === "(\w+)"/g);
+  const qNamed = named(quiz, "kind");
   const badQ = new Set();
   for (const e of dump) {
     for (const q of e.questions ?? []) {
@@ -273,6 +284,50 @@ console.log("\n" + C.b + "10. BECERI ICERIGI vs OYNATICI" + C.off);
   if (badQ.size) {
     fail("soru cizilemez", [...badQ].map((k) => `${k}: dagitici tanimiyor ve options yok -> sikkli dalda bos cikar`));
   } else pass("soru turleri (siksiz olanlar ismen taniniyor, kalani options tasiyor)");
+}
+
+/* ders anlatimi ve deneme sinavi maddeleri */
+
+console.log("\n" + C.b + "11. DERS VE DENEME ICERIGI vs OYNATICI" + C.off);
+{
+  /*
+   * 10. bölümün aynı kuralı iki içerik daha için: ders anlatımının ADIM
+   * BEKLENTİLERİ ve deneme sınavının MADDE türleri. İkisinde de varsayılan dal
+   * yok - tanınmayan tür ya hiç çizilmez ya yanlış çizilir, o yüzden ölçüt
+   * basit: içerikte geçen her tür oynatıcıda ADIYLA geçmek zorunda.
+   */
+  const kinds = (files, walk) => {
+    const out = new Set();
+    for (const f of files) {
+      const d = JSON.parse(read(f));
+      for (const row of Array.isArray(d) ? d : [d]) walk(row, out);
+    }
+    return out;
+  };
+
+  const lessonFiles = ["de-a1", "de-a2", "de-b1", "de-b2", "de-c1", "en-a1", "en-a2"]
+    .map((n) => `mobile/src/data/lessons/${n}.json`)
+    .filter((f) => { try { read(f); return true; } catch { return false; } });
+  const expectKinds = kinds(lessonFiles, (l, out) => {
+    for (const st of l.lecture ?? []) if (st.expect?.kind) out.add(st.expect.kind);
+  });
+  const lessonNamed = named(read("mobile/src/screens/LessonScreen.tsx"), "kind");
+  const missingExpect = [...expectKinds].filter((k) => !lessonNamed.has(k));
+  if (!expectKinds.size) fail("anlatim beklentileri okunamadi", [`${lessonFiles.length} dosya`]);
+  else if (missingExpect.length) fail("anlatim beklentisi cizilemez", missingExpect.map((k) => `${k}: LessonScreen tanimiyor`));
+  else pass(`anlatim beklentileri (${[...expectKinds].sort().join(", ")})`);
+
+  const itemKinds = kinds(["mobile/src/data/exams/papers.json", "mobile/src/data/exams/papers-en.json"], (p, out) => {
+    for (const part of p.parts ?? []) for (const t of part.tasks ?? []) for (const it of t.items ?? []) if (it.kind) out.add(it.kind);
+  });
+  const mockNamed = new Set([
+    ...named(read("mobile/src/game/mockExam.ts"), "item\\.kind"),
+    ...named(read("mobile/src/screens/MockExamScreen.tsx"), "kind"),
+  ]);
+  const missingItem = [...itemKinds].filter((k) => !mockNamed.has(k));
+  if (!itemKinds.size) fail("deneme maddeleri okunamadi", []);
+  else if (missingItem.length) fail("deneme maddesi cizilemez", missingItem.map((k) => `${k}: oynatici tanimiyor`));
+  else pass(`deneme madde turleri (${[...itemKinds].sort().join(", ")})`);
 }
 
 console.log(
