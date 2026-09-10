@@ -36,7 +36,7 @@ export const enBase: Record<string, string> = {
   "auth.your_progress_is_saved_and": "Your progress is saved and follows you across devices.",
   "auth.sign_up": "Sign up",
   "auth.terms_of_use": "Terms of Use",
-  "auth.legal_notice": "By continuing you accept:",
+  "auth.legal_notice": "I am over 18 and I accept:",
   "auth.password_at_least_8_characters": "Password (at least 8 characters)",
   "auth.forgot_your_password": "Forgot your password?",
   "auth.continue_with": "Continue with {provider}",

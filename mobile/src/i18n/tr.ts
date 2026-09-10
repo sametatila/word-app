@@ -39,7 +39,7 @@ export const tr: Record<string, string> = {
   "auth.your_progress_is_saved_and": "İlerlemen kaydolur, cihazlar arası devam eder.",
   "auth.sign_up": "Kayıt ol",
   "auth.terms_of_use": "Kullanım Şartları",
-  "auth.legal_notice": "Devam ederek aşağıdakileri kabul etmiş olursun:",
+  "auth.legal_notice": "18 yaşından büyüğüm ve şunları kabul ediyorum:",
   "auth.password_at_least_8_characters": "Parola (en az 8 karakter)",
   "auth.forgot_your_password": "Parolanı mı unuttun?",
   "auth.continue_with": "{provider} ile devam et",

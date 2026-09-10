@@ -36,7 +36,7 @@ export const deBase: Record<string, string> = {
   "auth.your_progress_is_saved_and": "Dein Fortschritt wird gespeichert und geräteübergreifend fortgesetzt.",
   "auth.sign_up": "Registrieren",
   "auth.terms_of_use": "Nutzungsbedingungen",
-  "auth.legal_notice": "Mit dem Fortfahren akzeptierst du:",
+  "auth.legal_notice": "Ich bin über 18 und akzeptiere:",
   "auth.password_at_least_8_characters": "Passwort (mindestens 8 Zeichen)",
   "auth.forgot_your_password": "Passwort vergessen?",
   "auth.continue_with": "Weiter mit {provider}",
