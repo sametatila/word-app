@@ -1,0 +1,177 @@
+[
+ {
+  "lesson": "de-b1-berufe-vorstellen",
+  "sceneEn": "You are at a careers day at a school. You introduce three occupations to the young people, describing what each one does and what it requires.",
+  "partnerEn": "a curious student who does not know which career to choose",
+  "openingEn": "I really don't know what to be — what do people in your job actually do?",
+  "goalEn": "At least three occupations have been described by what they involve, and the training needed for each has been given."
+ },
+ {
+  "lesson": "de-b1-lehre-machen",
+  "sceneEn": "You are talking to a careers adviser: an apprenticeship or university, which documents are needed, what you think is worth it.",
+  "partnerEn": "an adviser who knows both paths and is trying to make the decision easier",
+  "openingEn": "You're caught between two paths, aren't you? Which appeals to you more — an apprenticeship or a degree?",
+  "goalEn": "The two paths have been compared, a decision has been given with reasons and the documents needed have been found out."
+ },
+ {
+  "lesson": "de-b1-experte-fragen",
+  "sceneEn": "You have rung an institute to get an expert opinion on something. You ask what you want to know with indirect questions and arrange an appointment.",
+  "partnerEn": "an expert who answers briefly but explains when pressed",
+  "openingEn": "Institute for Research, good afternoon. What can I help you with?",
+  "goalEn": "At least three questions have been asked indirectly and a meeting has been arranged."
+ },
+ {
+  "lesson": "de-b1-buero-alltag",
+  "sceneEn": "You are in a short office meeting. You list the week's jobs, ask who is doing what, and share out what is left.",
+  "partnerEn": "a colleague willing to take jobs on but short of time",
+  "openingEn": "Right, a quick run through the week — what's all needed by Friday?",
+  "goalEn": "The jobs have been listed, who is doing what has been asked and the remaining jobs have been shared out."
+ },
+ {
+  "lesson": "de-b1-arbeitsrecht",
+  "sceneEn": "You have been dismissed and gone to a trade union adviser. You describe what happened in order, ask about your rights and find out what to do.",
+  "partnerEn": "a calm union adviser who knows the rights well",
+  "openingEn": "Do sit down. Please tell me — when were you given notice?",
+  "goalEn": "The events have been described in order, the rights have been asked about and a next step has been settled."
+ },
+ {
+  "lesson": "de-b1-chefin-gespraech",
+  "sceneEn": "You are in a short meeting with your manager. You describe a problem in the team, suggest a solution and discuss how the decision will be announced.",
+  "partnerEn": "a manager who speaks briefly and wants reasons",
+  "openingEn": "You wanted to speak to me — what is it about?",
+  "goalEn": "The problem has been described, a suggestion has been put politely and a next step has been settled."
+ },
+ {
+  "lesson": "de-b1-stellensuche",
+  "sceneEn": "A friend is looking for work and asking how you found yours. You describe the process in order: what you did first, what happened next.",
+  "partnerEn": "a friend starting the same road who asks about every step",
+  "openingEn": "You managed it — how did it actually go for you?",
+  "goalEn": "The process has been described in at least four steps and with two layers of the past."
+ },
+ {
+  "lesson": "de-b1-projekt-praesentieren",
+  "sceneEn": "You are presenting the results of a project to a small team. You give both sides of every figure and answer the objections in a balanced way.",
+  "partnerEn": "a team member who distrusts figures and asks for sources",
+  "openingEn": "Before you start — where do these figures actually come from?",
+  "goalEn": "The source has been explained, both sides of at least two figures have been given and one objection has been answered."
+ },
+ {
+  "lesson": "de-b1-selbststaendig",
+  "sceneEn": "You are describing your business idea to a business adviser: what you will make, who you will sell it to, and the aim behind each decision.",
+  "partnerEn": "a supportive business adviser who questions the risks",
+  "openingEn": "Tell me about your idea — what exactly do you want to set up?",
+  "goalEn": "The business idea has been described, the aim of at least three decisions has been given and one risk has been discussed."
+ },
+ {
+  "lesson": "de-b1-arbeitszufriedenheit",
+  "sceneEn": "You and a colleague are talking over your lunch break: is the work tiring, is it dull, what would you change.",
+  "partnerEn": "a colleague who complains about the job but does not think of leaving",
+  "openingEn": "Be honest — do you actually still enjoy the work?",
+  "goalEn": "The good and the hard sides of the job have been given and one thing you would change has been voiced."
+ },
+ {
+  "lesson": "de-b1-migration",
+  "sceneEn": "You are on the introductions round at a language course. You describe where you came from, what the early days were like and what has changed.",
+  "partnerEn": "a curious fellow student who tells their own story too",
+  "openingEn": "Let's introduce ourselves briefly — would you like to tell us how you came to be here?",
+  "goalEn": "Your arrival, the early difficulties and how things are today have been told in order."
+ },
+ {
+  "lesson": "de-b1-konsulat",
+  "sceneEn": "You are at the consulate. You find out which documents are needed, whether your diploma is recognised and how long it takes, with indirect questions.",
+  "partnerEn": "a consulate official dealing with a crowd but giving clear information",
+  "openingEn": "Next, please. What is it about?",
+  "goalEn": "The documents needed, the recognition of the qualification and the timescale have been found out and a next step has been settled."
+ },
+ {
+  "lesson": "de-b1-sprache-akzent",
+  "sceneEn": "You and a friend are talking about being bilingual: which is easier, where you use which language, what you find hard.",
+  "partnerEn": "a curious friend who grew up with one language",
+  "openingEn": "Do you actually think in German, or in your mother tongue?",
+  "goalEn": "The two languages have been compared on at least three counts and one difficulty has been described."
+ },
+ {
+  "lesson": "de-b1-minderheit-mehrheit",
+  "sceneEn": "You and a friend are arguing about whose voice gets heard in society. Give both sides of every view with paired conjunctions.",
+  "partnerEn": "a friend with firm views who is still open to listening",
+  "openingEn": "I think it gets talked about too much — do you see it that way too?",
+  "goalEn": "Both sides of at least three views have been given and common ground has been found."
+ },
+ {
+  "lesson": "de-b1-politik-reden",
+  "sceneEn": "You and a friend are discussing a current issue. Put your view in a subordinate clause and use the pattern of doubt when you disagree.",
+  "partnerEn": "a friend who thinks differently from you but enjoys an argument",
+  "openingEn": "Have you heard what was decided yesterday? Honestly, I think it's wrong.",
+  "goalEn": "A view has been given with reasons and an opposing view has been answered with the pattern of doubt."
+ },
+ {
+  "lesson": "de-b1-vor-gericht",
+  "sceneEn": "You are telling a friend about a court case you read about in the paper: what happened, who said what, what was decided.",
+  "partnerEn": "a friend who has not heard the story and asks for detail",
+  "openingEn": "What happened there? I only saw the headline.",
+  "goalEn": "The incident, the proceedings and the decision have been told in order and impersonally."
+ },
+ {
+  "lesson": "de-b1-verbrechen-melden",
+  "sceneEn": "You witnessed an incident in the street. You describe to the police what you saw: who you saw, what they did, when it happened.",
+  "partnerEn": "a police officer taking the description down and wanting detail",
+  "openingEn": "You saw something? Please describe the person to me.",
+  "goalEn": "The person and the incident have been described with relative clauses and the timing has been given."
+ },
+ {
+  "lesson": "de-b1-regeln-verstehen",
+  "sceneEn": "You have read the rules for using a building. You explain to a newcomer what is allowed, what is restricted and what the exception is.",
+  "partnerEn": "someone who finds the rules long and is looking for the exception",
+  "openingEn": "So many rules — what actually applies here?",
+  "goalEn": "At least three rules have been explained impersonally and one exception has been given."
+ },
+ {
+  "lesson": "de-b1-religion-frieden",
+  "sceneEn": "You are talking to someone from a very different background from your own. You accept the differences but look for common ground.",
+  "partnerEn": "an acquaintance who is distant at first and then opens up",
+  "openingEn": "We come from completely different worlds — can that even work?",
+  "goalEn": "At least two differences have been accepted and at least one thing in common has been found."
+ },
+ {
+  "lesson": "de-b1-engagement-buerger",
+  "sceneEn": "There is a problem in your area and you want to do something about it. You and a neighbour discuss what could be done and the aim of each step.",
+  "partnerEn": "a neighbour who has tried before and lost hope",
+  "openingEn": "We tried that years ago — do you really believe it will get anywhere?",
+  "goalEn": "At least three steps have been suggested, the aim of each has been given and the neighbour has taken one on."
+ },
+ {
+  "lesson": "de-b1-oper-konzert",
+  "sceneEn": "You went to a concert last night. You describe the hall, the piece that was played and how the evening went to a friend.",
+  "partnerEn": "a friend who is a stranger to classical music but curious",
+  "openingEn": "You were at the opera yesterday? How was it — is it worth it?",
+  "goalEn": "The venue and the piece have been described, how the evening went has been told and a recommendation has been given."
+ },
+ {
+  "lesson": "de-b1-literatur-lesen",
+  "sceneEn": "A friend is asking for a book recommendation. You describe the last one you read, tell them what it is about and say why you liked it.",
+  "partnerEn": "a friend who is put off by long books but wants to read",
+  "openingEn": "I need something to read — have you got a tip for me?",
+  "goalEn": "The book has been described, what it is about has been told and the reason for recommending it has been given."
+ },
+ {
+  "lesson": "de-b1-fest-feiern",
+  "sceneEn": "You are describing a day you spent at carnival: what you did beforehand, what happened during it, how it ended.",
+  "partnerEn": "a friend who has never been to a carnival and asks about every detail",
+  "openingEn": "Carnival — I've never been to one. How does a day like that go?",
+  "goalEn": "The before, during and after of the day have been told with conjunctions of time."
+ },
+ {
+  "lesson": "de-b1-sport-treiben",
+  "sceneEn": "You have gone to a sports club for information. You ask which sports there are, the times and the fee, and say what you would like to try.",
+  "partnerEn": "an energetic coach who wants to sign everyone up for something",
+  "openingEn": "Welcome! Are you looking for something in particular, or would you like to have a look round first?",
+  "goalEn": "The sports and the conditions have been found out and a trial session has been arranged."
+ },
+ {
+  "lesson": "de-b1-wettkampf",
+  "sceneEn": "You are telling a friend who missed yesterday's match about it: what happened, who did what, what the result was.",
+  "partnerEn": "a friend who missed the match, does not want to know the result but cannot resist",
+  "openingEn": "Don't tell me! … No, go on, tell me. How did it end?",
+  "goalEn": "How the match went and the result have been described and at least two incidents have been given impersonally."
+ }
+]
