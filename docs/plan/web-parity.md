@@ -5870,3 +5870,28 @@ tutuyor — bu, "tasarımı da kontrol et" isteğinin ölçülebilir bir parças
 çıktısını `tail -2` ile okuyordum ve o iki satır özet satırıydı — "0 errors"
 demiyordu, kesilmişti. **Kapı zaten söylüyordu; ben kesip okumadım.** Bu turda
 düzeltildi ve tur rutini değişti: lint çıktısı kesilmeden okunuyor.
+
+
+### 11.158 Erişilebilirlik ikinci tur: metinsiz denetimlerin adı ve durumu
+
+§11.157'de simge düğmelerini ölçtüm; bu tur aynı soruyu öteki metinsiz
+denetimlere sordum.
+
+**İki `Switch` adsızdı** (bildirim ayarları, sosyal ayarlar). Yaygın yanılgı
+şu: anahtarın yanındaki başlık orada duruyor, "zaten okunur". Okunmuyor —
+React Native o ilişkiyi kendiliğinden kurmuyor, ekran okuyucu "açık anahtar"
+deyip geçiyor. Üçüncü anahtar (kullanım verisi) baştan beri doğruydu, yani
+kural biliniyordu ama iki yerde uygulanmamıştı.
+
+**Web'de iki çip durumunu bildirmiyordu.** Sebebi yapısal ve öğretici: mobil
+çipi TEK bileşen (`ui/Chip`), durum orada bir kez yazılıyor ve çağrı yerinde
+unutulamaz; web her çağrı yerinde kendi `aria-pressed`ini yazıyor — 35 çip
+kullanımının 33'ünde yazılmış, ikisinde unutulmuş. **Merkezîleştirilmiş
+bileşen bir erişilebilirlik kuralını da merkezîleştirir.**
+
+**Ölçüldü, sorun yok:** dokunma hedefleri (44'ün altında `hitSlop`suz düğme
+yok), roller ve durumlar (50 `accessibilityRole`, 19 durum bildirimi), web'in
+simge düğmelerinin hepsi adlı.
+
+İki yeni ölçü kapıya bağlandı: §75 artık adsız düğme + adsız anahtar sayıyor,
+§76 çip durum bildirimini sayıyor.
