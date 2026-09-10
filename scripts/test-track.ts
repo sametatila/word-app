@@ -205,15 +205,28 @@ const qpool = {
   vocab: Array.from({ length: 8 }, (_, k) => ({ de: `w${k}`, tr: `t${k}` })),
   patterns: Array.from({ length: 5 }, (_, k) => ({ de: `De${k}`, tr: `Tr${k}` })),
 };
-const quiz = deriveQuiz(briefs[0], qpool, 6);
+/*
+  METİN ÇAĞIRANDAN GELİYOR. `deriveQuiz` soru cümlelerini kendi kurmuyor:
+  arayüz dilinde çevrilmiş üç parçayı alıyor (bkz. `(app)/immersion/quiz`).
+  Test onları burada sabit veriyor ki ölçtüğü şey ÇEVİRİ değil YAPI olsun —
+  kalıp soruları sonda mı, tekrar soruları araya giriyor mu, seçenekler
+  benzersiz mi. Eskiden Türkçe cümleyi `quiz.ts` kuruyordu ve test o cümleyi
+  arıyordu; cümle çağırana taşınınca test sessizce kırmızıya döndü.
+*/
+const say = {
+  whatMeans: (word: string) => `«${word}» ne demek?`,
+  howToSay: (pattern: string) => `«${pattern}» Almanca nasıl denir?`,
+  fromEarlier: "önceki ünitelerden tekrar",
+};
+const quiz = deriveQuiz(briefs[0], qpool, 6, undefined, say);
 check("quiz 6 soru üretir", quiz.length === 6);
 check("kelime sorusu de→tr, doğru cevap vocab tr", quiz[0].text.includes("Hallo") && quiz[0].options[quiz[0].answer] === "merhaba");
 check("son 2 soru kalıp (tr→de)", quiz.slice(-2).every((q) => q.text.includes("nasıl denir")));
 check("kalıp sorusunda doğru cevap de kalıbı", quiz[4].options[quiz[4].answer] === "Ich heiße …");
 check("hiçbir distraktör doğru cevaba eşit değil", quiz.every((q) => q.options.filter((_, idx) => idx !== q.answer).every((o) => o !== q.options[q.answer])));
 check("options benzersiz", quiz.every((q) => new Set(q.options).size === q.options.length));
-check("deterministik (aynı girdi → aynı quiz)", JSON.stringify(deriveQuiz(briefs[0], qpool, 6)) === JSON.stringify(quiz));
-check("checkpoint daha uzun (count=12 → 5 vocab + 2 kalıp = 7, brief küçük)", deriveQuiz(briefs[0], qpool, 12).length === Math.min(12, briefs[0].vocab.length + 2));
+check("deterministik (aynı girdi → aynı quiz)", JSON.stringify(deriveQuiz(briefs[0], qpool, 6, undefined, say)) === JSON.stringify(quiz));
+check("checkpoint daha uzun (count=12 → 5 vocab + 2 kalıp = 7, brief küçük)", deriveQuiz(briefs[0], qpool, 12, undefined, say).length === Math.min(12, briefs[0].vocab.length + 2));
 
 // ---- birikimli tekrar (önceki ünitelerin kelimeleri quiz'e karışır) ----
 // Ünite 3 gibi davranan sahte bir brief: kendi kelimeleri x0..x5, geçmişi r0..r19.
@@ -222,16 +235,16 @@ const reviewPool = {
   vocab: Array.from({ length: 20 }, (_, k) => ({ de: `r${k}`, tr: `tr${k}` })),
   patterns: [] as { de: string; tr: string }[],
 };
-const cum = deriveQuiz(laterBrief, qpool, 12, reviewPool);
+const cum = deriveQuiz(laterBrief, qpool, 12, reviewPool, say);
 const backQ = cum.filter((q) => q.explain?.includes("önceki ünitelerden tekrar"));
 check("tekrar havuzu verilince geçmişten soru gelir (12 → 4)", backQ.length === 4);
 check("tekrar soruları geçmiş kelimelerden (r ile başlar)", backQ.every((q) => /«r\d+»/.test(q.text)));
 check("tekrar soruları bu ünitenin kelimesi değil", backQ.every((q) => !/«x\d+»/.test(q.text)));
 check("tekrar soruları bloklanmıyor (araya giriyor)", cum.findIndex((q) => q.explain?.includes("tekrar")) < cum.length - backQ.length);
 check("tekrar seçimi geçmişe yayılıyor (hepsi aynı yerden değil)", new Set(backQ.map((q) => q.text)).size === backQ.length);
-check("birikimli quiz de deterministik", JSON.stringify(deriveQuiz(laterBrief, qpool, 12, reviewPool)) === JSON.stringify(cum));
-check("farklı ünite farklı tekrar seti", JSON.stringify(deriveQuiz({ ...laterBrief, index: 7 }, qpool, 12, reviewPool)) !== JSON.stringify(cum));
-check("ünite 1'de tekrar yok (geçmiş boş) → eski davranış", JSON.stringify(deriveQuiz(briefs[0], qpool, 6, { vocab: [], patterns: [] })) === JSON.stringify(quiz));
+check("birikimli quiz de deterministik", JSON.stringify(deriveQuiz(laterBrief, qpool, 12, reviewPool, say)) === JSON.stringify(cum));
+check("farklı ünite farklı tekrar seti", JSON.stringify(deriveQuiz({ ...laterBrief, index: 7 }, qpool, 12, reviewPool, say)) !== JSON.stringify(cum));
+check("ünite 1'de tekrar yok (geçmiş boş) → eski davranış", JSON.stringify(deriveQuiz(briefs[0], qpool, 6, { vocab: [], patterns: [] }, say)) === JSON.stringify(quiz));
 check("soru metni tekrar olduğunu ele vermiyor", backQ.every((q) => q.text.startsWith("«") && q.text.endsWith("» ne demek?")));
 
 /*
