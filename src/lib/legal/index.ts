@@ -400,6 +400,7 @@ const PURPOSES = {
   distribution: { tr: "Uygulama dağıtımı ve abonelik ödemeleri", en: "App distribution and subscription payments", de: "App-Vertrieb und Abonnementzahlungen" },
   subscriptionState: { tr: "Abonelik durumu yönetimi", en: "Subscription state management", de: "Verwaltung des Abonnementstatus" },
   transactionalMail: { tr: "Doğrulama ve parola sıfırlama e-postaları", en: "Verification and password reset e-mails", de: "Bestätigungs- und Passwort-Reset-E-Mails" },
+  pushDelivery: { tr: "Bildirim gönderimi", en: "Push notification delivery", de: "Zustellung von Push-Benachrichtigungen" },
 } as const satisfies Record<string, Trio>;
 
 const DATA_KINDS = {
@@ -416,6 +417,11 @@ const DATA_KINDS = {
   purchase: { tr: "Satın alma bilgisi", en: "Purchase information", de: "Kaufinformationen" },
   userAndPurchase: { tr: "Kullanıcı kimliği, satın alma bilgisi", en: "User id, purchase information", de: "Nutzer-ID, Kaufinformationen" },
   email: { tr: "E-posta adresi", en: "E-mail address", de: "E-Mail-Adresse" },
+  pushToken: {
+    tr: "Cihaz bildirim jetonu, bildirimin başlığı ve metni",
+    en: "Device notification token, the notification's title and text",
+    de: "Geräte-Token für Benachrichtigungen, Titel und Text der Benachrichtigung",
+  },
 } as const satisfies Record<string, Trio>;
 
 const REGIONS = {
@@ -451,6 +457,7 @@ const OCCASIONS = {
   androidAndSubscription: { tr: "Android uygulaması ve abonelik", en: "Android app and subscription", de: "Android-App und Abonnement" },
   iosAndSubscription: { tr: "iOS uygulaması ve abonelik", en: "iOS app and subscription", de: "iOS-App und Abonnement" },
   premiumEnabled: { tr: "Premium abonelik açılınca", en: "Once a Premium subscription is active", de: "Sobald ein Premium-Abonnement aktiv ist" },
+  pushAllowed: { tr: "Bildirimlere izin verilirse", en: "If notifications are allowed", de: "Wenn Benachrichtigungen erlaubt sind" },
 } as const satisfies Record<string, Trio>;
 
 export type Processor = {
@@ -507,6 +514,13 @@ export const PROCESSORS: Processor[] = [
   { name: "Cerebras", purpose: "llm", data: "texts", region: "us", safeguard: "scc" },
   { name: "Google (Sign-In)", purpose: "googleSignIn", data: "googleIdentity", region: "us", safeguard: "scc", when: "googleSignInChosen" },
   { name: "Google Play", purpose: "distribution", data: "purchase", region: "us", safeguard: "scc", when: "androidAndSubscription" },
+  /*
+    Firebase Cloud Messaging 2026-09-10'da açıldı ve o güne kadar bu satır DOĞRU
+    biçimde yoktu: uzak bildirim yapılandırılmamıştı, web push ise kendi
+    sunucumuzda (VAPID) ve üçüncü tarafa uğramıyor. Sunucu kimlik bilgileri
+    girildiği an cihaz jetonu ve bildirimin metni Google'a gitmeye başladı.
+  */
+  { name: "Google (Firebase Cloud Messaging)", purpose: "pushDelivery", data: "pushToken", region: "us", safeguard: "scc", when: "pushAllowed" },
   ...(LEGAL_PLATFORMS.ios ? IOS_PROCESSORS : []),
   { name: "RevenueCat", purpose: "subscriptionState", data: "userAndPurchase", region: "us", safeguard: "scc", when: "premiumEnabled" },
   /*

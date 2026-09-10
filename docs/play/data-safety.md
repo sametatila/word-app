@@ -35,12 +35,18 @@ Sütunlar Console'daki sırayla: toplanıyor / paylaşılıyor / geçici işleme
 | Uygulama etkinliği › Diğer eylemler (arkadaşlık istekleri, tepkiler, dürtmeler, ortak görevler, engellemeler) | Evet | Hayır | Hayır | İsteğe bağlı | Uygulama işlevi (sosyal özellikler) |
 | Uygulama bilgisi ve performans › Diğer (ekran genişliği, platform etiketi) | Evet | Hayır | Hayır | İsteğe bağlı (kapatılabilir) | Analitik |
 | Finansal bilgi › Satın alma geçmişi | Evet | Evet (RevenueCat, Google Play) | Hayır | İsteğe bağlı | Uygulama işlevi (abonelik) |
-| Konum, kişiler, takvim, fotoğraf/video, sağlık, cihaz veya diğer kimlikler, çökme günlükleri, tanılama | Hayır | Hayır | — | — | Toplanmıyor |
+| Cihaz veya diğer kimlikler › Cihaz bildirim jetonu | **Evet** | **Evet** (Google — Firebase Cloud Messaging) | Hayır | İsteğe bağlı (bildirim izni) | Uygulama işlevi (bildirim gönderimi) |
+| Konum, kişiler, takvim, fotoğraf/video, sağlık, çökme günlükleri, tanılama | Hayır | Hayır | — | — | Toplanmıyor |
 
 Notlar:
 - "Geçici işleme" yalnız ses kaydı için: ses tanıma bitince silinir, hiçbir yerde saklanmaz.
 - Google ile giriş: Google, hesap kimliği/ad/e-posta'yı bize verir (Google'a bizden veri gitmez). Console'da bu, "Kişisel bilgi" toplama satırlarıyla karşılanır.
-- Reklam SDK'sı, üçüncü taraf analitik ve çökme raporlama yok; "Cihaz veya diğer kimlikler" hayır.
+- Reklam SDK'sı, üçüncü taraf analitik ve çökme raporlama yok.
+- **"Cihaz veya diğer kimlikler" 2026-09-10'da HAYIR'dan EVET'e döndü.** Uzak bildirim
+  (Firebase Cloud Messaging) o gün açıldı; cihaz başına bir kayıt jetonu saklanıyor
+  (`device_tokens`) ve Google'a gidiyor. Play'in kendi tanımı bu kutuya *Firebase
+  installation ID*'yi açıkça yazıyor, yani jeton buraya girer. Reklam kimliği hâlâ
+  toplanmıyor. Bildirim izni verilmezse jeton hiç üretilmiyor, o yüzden isteğe bağlı.
 - Analitik olayları kapalı sözlükten gelir, serbest metin taşımaz; Ayarlar › Gizlilik'ten kapatılabilir.
 
 ## Güvenlik uygulamaları
