@@ -62,7 +62,7 @@ export function QuizScreen() {
         </PressableScale>
         <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.sm, flex: 1 }}>
           <View style={{ width: 34, height: 34, borderRadius: radii.sm, backgroundColor: isCheckpoint ? colors.danger : colors.primary, alignItems: "center", justifyContent: "center" }}>
-            {isCheckpoint ? <CheckIcon color="#fff" size={18} /> : <QuizIcon color="#fff" size={18} />}
+            {isCheckpoint ? <CheckIcon color={colors.onPrimary} size={18} /> : <QuizIcon color={colors.onPrimary} size={18} />}
           </View>
           <View style={{ flex: 1 }}>
             <Text variant="micro" color={colors.textMuted}>{t("quiz.header", { kind: t(isGrammar ? "quiz.grammar" : isCheckpoint ? "quiz.checkpoint" : "quiz.review"), unit: t("common.unit"), n: params.unitIndex })}</Text>

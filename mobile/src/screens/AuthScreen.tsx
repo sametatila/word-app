@@ -143,7 +143,7 @@ export function AuthScreen() {
       <ScrollView contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.xxl }} keyboardShouldPersistTaps="handled" showsVerticalScrollIndicator={false}>
         <View style={{ alignItems: "center", marginTop: spacing.sm, marginBottom: spacing.xl }}>
           <View style={[{ width: 72, height: 72, borderRadius: radii.xl, alignItems: "center", justifyContent: "center", backgroundColor: colors.primary }, softShadow(colors.primary, 12)]}>
-            <BoltIcon color="#fff" size={38} />
+            <BoltIcon color={colors.onPrimary} size={38} />
           </View>
           <Text variant="display" style={{ marginTop: spacing.md }}>
             {view === "forgot" ? t("auth.forgot_your_password") : view === "options" ? t("auth.sign_in") : mode === "signin" ? t("auth.welcome_back") : t("auth.create_account")}
@@ -190,7 +190,7 @@ export function AuthScreen() {
                 <TextInput value={email} onChangeText={setEmail} placeholder={t("auth.email")} placeholderTextColor={colors.textFaint} keyboardType="email-address" autoCapitalize="none" autoCorrect={false} style={input} />
                 {error && (<View style={{ backgroundColor: colors.dangerSoft, borderRadius: radii.md, padding: spacing.md }}><Text variant="caption" color={colors.dangerText}>{error}</Text></View>)}
                 <PressableScale onPress={doReset} accessibilityLabel={t("auth.send_reset_link")} style={[{ borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: 16, alignItems: "center", marginTop: spacing.sm }, softShadow(colors.primary, 10)]}>
-                  <Text variant="h3" color="#fff">{resetBusy ? "..." : t("auth.send_reset_link")}</Text>
+                  <Text variant="h3" color={colors.onPrimary}>{resetBusy ? "..." : t("auth.send_reset_link")}</Text>
                 </PressableScale>
               </>
             )}
@@ -213,7 +213,7 @@ export function AuthScreen() {
             )}
 
             <PressableScale onPress={submit} style={[{ borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: 16, alignItems: "center", marginTop: spacing.sm }, softShadow(colors.primary, 10)]}>
-              <Text variant="h3" color="#fff">{busy ? "..." : mode === "signin" ? t("auth.sign_in") : t("auth.create_account")}</Text>
+              <Text variant="h3" color={colors.onPrimary}>{busy ? "..." : mode === "signin" ? t("auth.sign_in") : t("auth.create_account")}</Text>
             </PressableScale>
 
             {mode === "signin" && (

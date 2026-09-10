@@ -17,7 +17,7 @@ function QuestRow({ q, colors }: { q: Quest; colors: Palette }) {
     <Card padded style={{ marginBottom: spacing.md, borderWidth: 1, borderColor: complete ? colors.success : colors.hairline }}>
       <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md }}>
         <View style={[{ width: 42, height: 42, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: complete ? colors.success : colors.primarySoft }, complete ? softShadow(colors.success, 6) : {}]}>
-          {complete ? <CheckIcon color="#fff" size={22} /> : <BoltIcon color={colors.primaryText} size={20} />}
+          {complete ? <CheckIcon color={colors.onFill} size={22} /> : <BoltIcon color={colors.primaryText} size={20} />}
         </View>
         <View style={{ flex: 1 }}>
           <Text variant="bodyStrong">{q.label}</Text>

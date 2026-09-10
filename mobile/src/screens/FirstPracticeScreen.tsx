@@ -88,8 +88,8 @@ export function FirstPracticeScreen() {
       </View>
 
       <PressableScale onPress={primary} accessibilityRole="button" accessibilityLabel={t(!seen ? "firstpractice.see_meaning" : last ? "firstpractice.create_account" : "firstpractice.next_word")} style={[{ borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: 17, alignItems: "center", flexDirection: "row", justifyContent: "center", gap: 8 }, softShadow(colors.primary, 10)]}>
-        {seen && last && <CheckIcon color="#fff" size={20} />}
-        <Text variant="h3" color="#fff">{t(!seen ? "firstpractice.see_meaning" : last ? "firstpractice.create_account" : "firstpractice.next_word")}</Text>
+        {seen && last && <CheckIcon color={colors.onPrimary} size={20} />}
+        <Text variant="h3" color={colors.onPrimary}>{t(!seen ? "firstpractice.see_meaning" : last ? "firstpractice.create_account" : "firstpractice.next_word")}</Text>
       </PressableScale>
       <Text variant="caption" color={colors.textMuted} style={{ textAlign: "center", marginTop: spacing.md }}>
         {t("firstpractice.save_note")}

@@ -239,7 +239,7 @@ export function GameScreen() {
         <Text variant="display" style={{ textAlign: "center" }}>{t("game.sign_in_to_save_your_progress")}</Text>
         <Text variant="body" color={colors.textMuted} style={{ textAlign: "center", marginTop: spacing.md, marginBottom: spacing.xxl }}>{t("game.sign_in_to_study_your_own_words")}</Text>
         <PressableScale onPress={() => { nav.goBack(); nav.navigate("Auth"); }} style={[{ width: "100%", backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: 16, alignItems: "center" }, softShadow(colors.primary, 10)]}>
-          <Text variant="h3" color="#fff">{t("game.sign_in_sign_up")}</Text>
+          <Text variant="h3" color={colors.onPrimary}>{t("game.sign_in_sign_up")}</Text>
         </PressableScale>
         <PressableScale onPress={() => nav.goBack()} style={{ paddingVertical: spacing.lg, marginTop: spacing.sm }}><Text variant="bodyStrong" color={colors.textMuted}>{t("common.close")}</Text></PressableScale>
       </View>
@@ -251,7 +251,7 @@ export function GameScreen() {
       <View style={[pad, { alignItems: "center", justifyContent: "center" }]}>
         <Text variant="h2" style={{ textAlign: "center" }}>{t("game.couldn_t_load_round")}</Text>
         <Text variant="body" color={colors.textMuted} style={{ textAlign: "center", marginTop: spacing.sm, marginBottom: spacing.xxl }}>{t("game.check_your_connection_and_try")}</Text>
-        <PressableScale onPress={load} style={[{ backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: 15, paddingHorizontal: spacing.xxl, alignItems: "center" }, softShadow(colors.primary, 8)]}><Text variant="h3" color="#fff">{t("game.try_again")}</Text></PressableScale>
+        <PressableScale onPress={load} style={[{ backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: 15, paddingHorizontal: spacing.xxl, alignItems: "center" }, softShadow(colors.primary, 8)]}><Text variant="h3" color={colors.onPrimary}>{t("game.try_again")}</Text></PressableScale>
         <PressableScale onPress={() => nav.goBack()} style={{ paddingVertical: spacing.lg, marginTop: spacing.sm }}><Text variant="bodyStrong" color={colors.textMuted}>{t("common.close")}</Text></PressableScale>
       </View>
     );
@@ -338,7 +338,7 @@ export function GameScreen() {
               <Text variant="caption" color={colors.textMuted} style={{ marginTop: 4, textAlign: "center" }}>{t("game.streak_saved_sub", { n: repaired })}</Text>
             </View>
           ) : null}
-          <PressableScale onPress={load} style={[{ width: "100%", backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: spacing.lg, alignItems: "center" }, softShadow(colors.primary, 10)]}><Text variant="bodyStrong" color="#fff">{t("game.continue")}</Text></PressableScale>
+          <PressableScale onPress={load} style={[{ width: "100%", backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: spacing.lg, alignItems: "center" }, softShadow(colors.primary, 10)]}><Text variant="bodyStrong" color={colors.onPrimary}>{t("game.continue")}</Text></PressableScale>
           {/* Ertesi güne dair somut bir sayı — yarın uygulamayı açmak için bir
               sebep. Web özetin altında aynı satırı gösteriyor. */}
           {result && result.dueTomorrow > 0 ? (

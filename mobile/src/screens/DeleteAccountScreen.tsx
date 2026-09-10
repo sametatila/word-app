@@ -164,7 +164,7 @@ export function DeleteAccountScreen() {
             <Text variant="h3">{tx("deleteaccount.sign_in_again_first")}</Text>
             <Text variant="caption" color={colors.textMuted} style={{ lineHeight: 20 }}>{tx("deleteaccount.for_security_deleting_your")}</Text>
             <PressableScale onPress={reauthAndRetry} disabled={busy} style={[{ borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: 14, alignItems: "center", marginTop: spacing.xs }, softShadow(colors.primary, 8)]}>
-              <Text variant="bodyStrong" color="#fff">{busy ? "..." : tx(freshProvider === "apple" ? "deleteaccount.sign_in_with_apple_again_and" : "deleteaccount.sign_in_with_google_again_and")}</Text>
+              <Text variant="bodyStrong" color={colors.onPrimary}>{busy ? "..." : tx(freshProvider === "apple" ? "deleteaccount.sign_in_with_apple_again_and" : "deleteaccount.sign_in_with_google_again_and")}</Text>
             </PressableScale>
           </Card>
         ) : (
@@ -192,7 +192,7 @@ export function DeleteAccountScreen() {
 
             <PressableScale onPress={() => setAgree((a) => !a)} accessibilityRole="checkbox" accessibilityState={{ checked: agree }} style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingVertical: spacing.md, marginTop: spacing.sm }}>
               <View style={{ width: 26, height: 26, borderRadius: radii.sm, borderWidth: 2, borderColor: agree ? colors.danger : colors.border, backgroundColor: agree ? colors.danger : "transparent", alignItems: "center", justifyContent: "center" }}>
-                {agree ? <CheckIcon color="#fff" size={16} /> : null}
+                {agree ? <CheckIcon color={colors.onFill} size={16} /> : null}
               </View>
               <Text variant="body" style={{ flex: 1 }}>{tx("deleteaccount.i_understand_my_data_will_be")}</Text>
             </PressableScale>

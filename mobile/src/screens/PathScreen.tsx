@@ -38,7 +38,7 @@ function Featured({ unit, isCurrent, colors, onContinue }: { unit: LearningPathU
     <Card style={{ marginBottom: spacing.lg, borderColor: colors.primary, borderWidth: 2 }}>
       <View style={{ flexDirection: "row", gap: spacing.md, alignItems: "center" }}>
         <View style={[{ width: 54, height: 54, borderRadius: radii.md, backgroundColor: unit.complete ? colors.success : colors.primary, alignItems: "center", justifyContent: "center" }, softShadow(colors.primary, 8)]}>
-          {unit.complete ? <CheckIcon color="#fff" size={26} /> : <Text variant="h1" color="#fff">{unit.index}</Text>}
+          {unit.complete ? <CheckIcon color={colors.onPrimary} size={26} /> : <Text variant="h1" color={colors.onPrimary}>{unit.index}</Text>}
         </View>
         <View style={{ flex: 1 }}>
           <Text variant="micro" color={colors.primaryText}>{t(isCurrent ? "path.now" : "common.unit")} · {t("common.unit")} {unit.index}</Text>
@@ -56,7 +56,7 @@ function Featured({ unit, isCurrent, colors, onContinue }: { unit: LearningPathU
       {next && NextIcon && (
         <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, marginTop: spacing.md, padding: spacing.md, borderRadius: radii.lg, backgroundColor: colors.surface2 }}>
           <View style={{ width: 44, height: 44, borderRadius: radii.md, backgroundColor: colors.primary, alignItems: "center", justifyContent: "center" }}>
-            {NextIcon({ color: "#fff", size: 20 })}
+            {NextIcon({ color: colors.onPrimary, size: 20 })}
           </View>
           <View style={{ flex: 1 }}>
             <Text variant="micro" color={colors.textMuted}>{t("path.next", { kind: t(KIND_KEY[next.kind as keyof typeof KIND_KEY] ?? "").toUpperCase() || next.kind.toUpperCase() })}</Text>

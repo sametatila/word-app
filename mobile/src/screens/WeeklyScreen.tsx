@@ -119,7 +119,7 @@ export function WeeklyScreen() {
       <View style={[pad, { alignItems: "center", justifyContent: "center" }]}>
         <Text variant="display" style={{ textAlign: "center" }}>{t("weekly.sign_in_for_weekly_quiz")}</Text>
         <Text variant="body" color={colors.textMuted} style={{ textAlign: "center", marginTop: spacing.md, marginBottom: spacing.xxl }}>{t("weekly.test_what_you_ve_learned_once")}</Text>
-        <PressableScale onPress={() => { nav.goBack(); nav.navigate("Auth"); }} style={[{ width: "100%", backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: 16, alignItems: "center" }, softShadow(colors.primary, 10)]}><Text variant="h3" color="#fff">{t("weekly.sign_in_sign_up")}</Text></PressableScale>
+        <PressableScale onPress={() => { nav.goBack(); nav.navigate("Auth"); }} style={[{ width: "100%", backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: 16, alignItems: "center" }, softShadow(colors.primary, 10)]}><Text variant="h3" color={colors.onPrimary}>{t("weekly.sign_in_sign_up")}</Text></PressableScale>
         <PressableScale onPress={() => nav.goBack()} style={{ paddingVertical: spacing.lg, marginTop: spacing.sm }}><Text variant="bodyStrong" color={colors.textMuted}>{t("common.close")}</Text></PressableScale>
       </View>
     );
@@ -129,7 +129,7 @@ export function WeeklyScreen() {
     return (
       <View style={[pad, { alignItems: "center", justifyContent: "center" }]}>
         <Text variant="h2" style={{ textAlign: "center" }}>{t("weekly.couldn_t_load_weekly_quiz")}</Text>
-        <PressableScale onPress={load} style={[{ marginTop: spacing.xl, backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: 15, paddingHorizontal: spacing.xxl, alignItems: "center" }, softShadow(colors.primary, 8)]}><Text variant="h3" color="#fff">{t("weekly.try_again")}</Text></PressableScale>
+        <PressableScale onPress={load} style={[{ marginTop: spacing.xl, backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: 15, paddingHorizontal: spacing.xxl, alignItems: "center" }, softShadow(colors.primary, 8)]}><Text variant="h3" color={colors.onPrimary}>{t("weekly.try_again")}</Text></PressableScale>
         <PressableScale onPress={() => nav.goBack()} style={{ paddingVertical: spacing.lg, marginTop: spacing.sm }}><Text variant="bodyStrong" color={colors.textMuted}>{t("common.close")}</Text></PressableScale>
       </View>
     );
@@ -152,7 +152,7 @@ export function WeeklyScreen() {
           <Text variant="body" color={colors.textMuted} style={{ marginTop: spacing.xs, marginBottom: spacing.xxl, textAlign: "center" }}>
             {done ? t("weekly.done_sub", { total: result?.total ?? 0, correct: result?.correct ?? 0 }) : t("weekly.none_sub")}
           </Text>
-          <PressableScale onPress={() => nav.goBack()} style={[{ width: "100%", backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: spacing.lg, alignItems: "center" }, softShadow(colors.primary, 8)]}><Text variant="bodyStrong" color="#fff">{t("common.finish")}</Text></PressableScale>
+          <PressableScale onPress={() => nav.goBack()} style={[{ width: "100%", backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: spacing.lg, alignItems: "center" }, softShadow(colors.primary, 8)]}><Text variant="bodyStrong" color={colors.onPrimary}>{t("common.finish")}</Text></PressableScale>
         </View>
       </View>
     );

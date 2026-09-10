@@ -292,7 +292,7 @@ function FeedbackFooter({ data, onContinue, colors }: { data: Feedback; onContin
         {speakText ? <SpeakButton text={speakText} colors={colors} size={20} /> : null}
       </View>
       <PressableScale onPress={onContinue} style={[{ borderRadius: radii.lg, backgroundColor: ok ? colors.success : colors.primary, paddingVertical: 15, alignItems: "center" }, softShadow(ok ? colors.success : colors.primary, 8)]}>
-        <Text variant="h3" color="#fff">{tx("common.continue")}</Text>
+        <Text variant="h3" color={colors.onPrimary}>{tx("common.continue")}</Text>
       </PressableScale>
     </View>
   );
@@ -503,7 +503,7 @@ function TypingRound({ round, onDone, colors }: { round: Round; onDone: Done; co
       />
       <HintRow answer={word.de} colors={colors} shown={hintShown} onShow={() => setHintShown(true)} />
       <PressableScale onPress={check} style={[{ marginTop: spacing.md, borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: 15, alignItems: "center" }, softShadow(colors.primary, 8)]}>
-        <Text variant="h3" color="#fff">{tx("common.check")}</Text>
+        <Text variant="h3" color={colors.onPrimary}>{tx("common.check")}</Text>
       </PressableScale>
     </View>
   );
@@ -567,7 +567,7 @@ function ClozeRound({ round, onDone, colors }: { round: Round; onDone: Done; col
             style={{ backgroundColor: colors.surface, borderRadius: radii.lg, borderWidth: 1.5, borderColor: colors.border, paddingHorizontal: spacing.lg, paddingVertical: 16, color: colors.text, fontSize: 18 }}
           />
           <PressableScale onPress={() => { if (val.trim()) choose(val.trim()); }} style={[{ marginTop: spacing.md, borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: 15, alignItems: "center" }, softShadow(colors.primary, 8)]}>
-            <Text variant="h3" color="#fff">{tx("common.check")}</Text>
+            <Text variant="h3" color={colors.onPrimary}>{tx("common.check")}</Text>
           </PressableScale>
         </View>
       ) : (
@@ -628,7 +628,7 @@ function SelfAssess({ round, onDone, colors }: { round: Round; onDone: Done; col
   if (!word) return <View style={{ flex: 1 }} />;
   const footer = !reveal ? (
     <PressableScale onPress={() => setReveal(true)} style={[{ borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: 16, alignItems: "center" }, softShadow(colors.primary, 8)]}>
-      <Text variant="h3" color="#fff">{tx("rounds.show_answer")}</Text>
+      <Text variant="h3" color={colors.onPrimary}>{tx("rounds.show_answer")}</Text>
     </PressableScale>
   ) : (
     <View style={{ gap: spacing.md }}>
@@ -708,7 +708,7 @@ function ListenRound({ round, onDone, colors }: { round: Round; onDone: Done; co
         <Text variant="micro" color={colors.textMuted} style={{ textTransform: "uppercase", letterSpacing: 1 }}>{tx("rounds.listen_pick_meaning")}</Text>
         {hideWord ? (
           <PressableScale accessibilityLabel={tx("item.listen")} onPress={() => { setReplays((n) => n + 1); speakTarget(withArtikel(word)); }} style={[{ width: 84, height: 84, borderRadius: 42, backgroundColor: colors.primary, alignItems: "center", justifyContent: "center", marginTop: spacing.lg }, softShadow(colors.primary, 12)]}>
-            <SpeakerIcon color="#fff" size={38} />
+            <SpeakerIcon color={colors.onPrimary} size={38} />
           </PressableScale>
         ) : (
           <View style={{ flexDirection: "row", alignItems: "center", gap: 6, marginTop: spacing.sm }}>
@@ -902,7 +902,7 @@ function TranslateRound({ round, onDone, colors }: { round: Round; onDone: Done;
       />
       <HintRow answer={s.de} colors={colors} shown={hintShown} onShow={() => setHintShown(true)} />
       <PressableScale onPress={check} style={[{ marginTop: spacing.md, borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: 15, alignItems: "center" }, softShadow(colors.primary, 8)]}>
-        <Text variant="h3" color="#fff">{tx("common.check")}</Text>
+        <Text variant="h3" color={colors.onPrimary}>{tx("common.check")}</Text>
       </PressableScale>
     </View>
   );

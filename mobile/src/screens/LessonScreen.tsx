@@ -542,7 +542,7 @@ function BubbleView({ b, colors, onReport }: { b: Bubble; colors: Palette; onRep
     return (
       <View style={{ alignSelf: "flex-end", maxWidth: "84%", marginBottom: spacing.md, flexDirection: "row", alignItems: "center", gap: 6 }}>
         <View style={[{ borderRadius: radii.lg, paddingVertical: 11, paddingHorizontal: spacing.md, backgroundColor: b.ok === false ? colors.danger : colors.primary }, softShadow(colors.primary, 6)]}>
-          <Text variant="body" color="#fff">{b.text}</Text>
+          <Text variant="body" color={colors.onPrimary}>{b.text}</Text>
         </View>
       </View>
     );
@@ -671,14 +671,14 @@ function LectureControls({ expect, tries, input, setInput, onConfirm, onSpeakRep
         <View style={{ flex: 1 }}>
           <PressableScale onPress={() => onTrueFalse(true)}>
             <View style={[{ borderRadius: radii.lg, backgroundColor: colors.success, paddingVertical: 15, alignItems: "center", flexDirection: "row", justifyContent: "center", gap: 8 }, softShadow(colors.success, 8)]}>
-              <CheckIcon color="#fff" size={22} /><Text variant="h3" color="#fff">{tx("lesson.correct")}</Text>
+              <CheckIcon color={colors.onFill} size={22} /><Text variant="h3" color={colors.onFill}>{tx("lesson.correct")}</Text>
             </View>
           </PressableScale>
         </View>
         <View style={{ flex: 1 }}>
           <PressableScale onPress={() => onTrueFalse(false)}>
             <View style={[{ borderRadius: radii.lg, backgroundColor: colors.danger, paddingVertical: 15, alignItems: "center", flexDirection: "row", justifyContent: "center", gap: 8 }, softShadow(colors.danger, 8)]}>
-              <XIcon color="#fff" size={22} /><Text variant="h3" color="#fff">{tx("lesson.wrong")}</Text>
+              <XIcon color={colors.onFill} size={22} /><Text variant="h3" color={colors.onFill}>{tx("lesson.wrong")}</Text>
             </View>
           </PressableScale>
         </View>

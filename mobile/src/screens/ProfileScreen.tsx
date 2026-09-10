@@ -131,7 +131,7 @@ export function ProfileScreen() {
         {premium ? (
           <View style={{ borderRadius: radii.xl, backgroundColor: colors.successSoft, padding: spacing.lg, flexDirection: "row", alignItems: "center", gap: spacing.md, marginBottom: spacing.lg }}>
             <View style={{ width: 46, height: 46, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.success }}>
-              <CrownIcon color="#fff" size={26} />
+              <CrownIcon color={colors.onFill} size={26} />
             </View>
             <View style={{ flex: 1 }}>
               <Text variant="h3" color={colors.successText}>{t("profile.premium_member")}</Text>

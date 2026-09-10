@@ -111,7 +111,7 @@ export function NotificationsScreen() {
       <ScrollView contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.xxl }} showsVerticalScrollIndicator={false}>
         <View style={{ alignItems: "center", marginTop: spacing.md, marginBottom: spacing.lg }}>
           <View style={[{ width: 72, height: 72, borderRadius: radii.xl, alignItems: "center", justifyContent: "center", backgroundColor: colors.info }, softShadow(colors.info, 10)]}>
-            <BellIcon color="#fff" size={36} />
+            <BellIcon color={colors.onFill} size={36} />
           </View>
           <Text variant="h2" style={{ marginTop: spacing.md }}>{tx("notifications.reminders")}</Text>
           <Text variant="body" color={colors.textMuted} style={{ marginTop: 4, textAlign: "center" }}>{tx("notifications.gentle_nudges_to_keep_your")}</Text>
@@ -136,7 +136,7 @@ export function NotificationsScreen() {
 
         {denied && (
           <PressableScale onPress={openNotificationSettings} style={[{ marginTop: spacing.md, borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: 14, alignItems: "center" }, softShadow(colors.primary, 8)]}>
-            <Text variant="bodyStrong" color="#fff">{tx("notifications.open_notification_settings")}</Text>
+            <Text variant="bodyStrong" color={colors.onPrimary}>{tx("notifications.open_notification_settings")}</Text>
           </PressableScale>
         )}
 

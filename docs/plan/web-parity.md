@@ -2428,3 +2428,50 @@ dolu çip. Android'in karşılığı DOLU değil YUMUŞAK çip (`primarySoft` ze
 `onPrimarySoft` yazı), yani buradaki fark bir kontrast hatası değil iki ayrı
 çip dili - ve zaten kayıtlı (globals.css, T-KARAR-1 notu). Butonla aynı
 kefeye konamaz.
+
+### 11.41 Dolu yüzeylerde beyaz yazı: Androidin kendi jetonu kullanılmıyordu
+
+§11.40 web butonunu Android'e eşledi. Aynı soruyu Android'in kendisine
+sorunca daha büyüğü çıktı: **mobilde dolu bir vurgu yüzeyine yazı koyan 60
+yer `"#fff"` yazıyordu**, oysa palet bu iş için iki jeton taşıyor
+(`onPrimary`, `onFill`) ve ikisi de yalnız on yerde kullanılıyordu.
+
+Vurgu dolguları tema ile BASAMAK DEĞİŞTİRİYOR: koyu temada açılıyorlar.
+Beyaz yazının koyu temadaki ölçümü:
+
+    dolgu            beyaz    mürekkep (#1a1008)
+    primary #fb8f2a   2.32      8.08
+    success #6fd19b   1.86     10.05
+    danger  #f79ba6   2.06      9.09
+    streak  #ddb62c   1.94      9.63
+    info    #6fd1e3   1.76     10.62
+    accent  #cda6e8   2.06      9.11
+
+Yani koyu temada bu altmış yüzeyin yazısı grafik eşiği olan 3.0'ı bile
+tutmuyordu - "Devam", "Kontrol et", "Kaydet", ödeme ekranının düğmeleri,
+yerleştirme sınavının puan dairesi. Jeton zaten vardı ve gerekçesi
+`colors.ts`te yazılıydı ("Aynı fikir `onPrimary` ile zaten vardı, dolu karo
+onu kullanmıyordu") - eksik olan kullanımdı.
+
+Dönüştürme dolguya BAKARAK yapıldı, kör değiştirme değil: her `"#fff"` için
+en yakın `backgroundColor` bulundu; `colors.primary` ise `onPrimary`,
+öteki anlamsal tonlarsa `onFill`, sabit bir dolgu (kademe rengi, marka
+gradyanı, `#ffffff2e` katmanları, avatar çizimi) ise DOKUNULMADI. 60 satır
+değişti, 26 yarı saydam beyazdan yalnız 3'ü anlamsal dolgu üstündeydi.
+
+**Yeni jeton: `onPrimaryMuted`.** O üç satır günün turu skor kartındaydı:
+başlık `onPrimary`ye geçince altındaki etiketler `#ffffffcc` kalıyordu, yani
+aynı kartın başlığı okunurken etiketi okunmuyordu (koyu temada 1.97).
+Mürekkebin %80 saydamı 5.69 veriyor.
+
+**Kaydedilen, düzeltilmeyen:** aynı etiket AÇIK temada da 2.27 veriyor.
+Bu, T-KARAR-1'in doğrudan sonucu - açık temada dolu turuncu üstünde beyaz
+yazı bilerek kabul edilmiş bir sapma (2.77) ve soluk hâli ondan daha iyi
+olamaz. Açık temayı düzeltmek o kararı bozmak demek, o yüzden ölçüm buraya
+yazıldı ve değer değiştirilmedi.
+
+**`check:colors`un bilinen sınırı:** kapı `#ffffffcc` gibi saydam beyazları
+koşulsuz geçiriyor, çünkü marka gradyanının üstündeki katmanlar meşru. Solid
+bir anlamsal dolgunun üstündekini ondan ayırmak, kapının arka planı
+çözmesini gerektirir - bu turda elle ölçüldü (26 satırdan 3'ü), kapıya
+konmadı.

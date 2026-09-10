@@ -51,7 +51,7 @@ function ListeningBody({ segments, colors }: { segments: ListeningSegment[]; col
     <>
       <Card style={{ alignItems: "center", marginTop: spacing.md, paddingVertical: spacing.xl }}>
         <PressableScale accessibilityLabel={t("item.listen")} onPress={() => speakTarget(full)} style={[{ width: 80, height: 80, borderRadius: 40, backgroundColor: colors.accent, alignItems: "center", justifyContent: "center" }, softShadow(colors.accent, 12)]}>
-          <SpeakerIcon color="#fff" size={34} />
+          <SpeakerIcon color={colors.onFill} size={34} />
         </PressableScale>
         <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.md }}>{t("item.listen_and_understand")}</Text>
       </Card>

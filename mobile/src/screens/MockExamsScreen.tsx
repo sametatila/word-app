@@ -264,7 +264,7 @@ function PaperCard({ paper, states, locked, showPlans, onOpen, onPlans }: { pape
       </View>
       {locked && showPlans ? (
         <PressableScale onPress={onPlans} style={{ marginTop: spacing.md, borderRadius: radii.md, backgroundColor: colors.primary, paddingVertical: 12, alignItems: "center" }}>
-          <Text variant="bodyStrong" color="#fff">{t("gate.see_plans")}</Text>
+          <Text variant="bodyStrong" color={colors.onPrimary}>{t("gate.see_plans")}</Text>
         </PressableScale>
       ) : null}
     </Card>

@@ -53,7 +53,7 @@ export function NotifPrimeScreen() {
     <View style={{ flex: 1, backgroundColor: colors.bg, paddingTop: insets.top + spacing.lg, paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.lg }}>
       <View style={{ flex: 1, alignItems: "center", justifyContent: "center", gap: spacing.lg }}>
         <View style={[{ width: 88, height: 88, borderRadius: radii.xl, alignItems: "center", justifyContent: "center", backgroundColor: colors.primary }, softShadow(colors.primary, 12)]}>
-          <BellIcon color="#fff" size={44} />
+          <BellIcon color={colors.onPrimary} size={44} />
         </View>
         <Text variant="display" style={{ textAlign: "center" }}>{tx("notifprime.keep_your_streak")}</Text>
         <Text variant="body" color={colors.textMuted} style={{ textAlign: "center", lineHeight: 23, paddingHorizontal: spacing.md }}>
@@ -78,7 +78,7 @@ export function NotifPrimeScreen() {
       </View>
 
       <PressableScale onPress={enable} accessibilityRole="button" accessibilityLabel={tx("notifprime.turn_on_daily_reminder")} style={[{ borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: 17, alignItems: "center" }, softShadow(colors.primary, 10)]}>
-        <Text variant="h3" color="#fff">{busy ? "..." : tx("notifprime.remind_me_once_day")}</Text>
+        <Text variant="h3" color={colors.onPrimary}>{busy ? "..." : tx("notifprime.remind_me_once_day")}</Text>
       </PressableScale>
       <PressableScale onPress={skip} accessibilityRole="button" accessibilityLabel={tx("notifprime.not_now")} style={{ alignItems: "center", paddingVertical: spacing.md, marginTop: 4 }}>
         <Text variant="bodyStrong" color={colors.textMuted}>{tx("notifprime.maybe_later")}</Text>

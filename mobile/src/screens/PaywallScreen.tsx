@@ -130,7 +130,7 @@ export function PaywallScreen() {
         <ScrollView contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.xl }}>
           <View style={{ alignItems: "center", marginTop: spacing.sm, marginBottom: spacing.lg }}>
             <View style={[{ width: 84, height: 84, borderRadius: radii.xl, alignItems: "center", justifyContent: "center", backgroundColor: colors.primary }, softShadow(colors.primary, 12)]}>
-              <CrownIcon color="#fff" size={44} />
+              <CrownIcon color={colors.onPrimary} size={44} />
             </View>
             <Text variant="display" style={{ marginTop: spacing.md }}>{t("paywall.nomi_premium")}</Text>
             <Text variant="body" color={colors.textMuted} style={{ marginTop: 4, textAlign: "center" }}>{line}</Text>
@@ -181,7 +181,7 @@ export function PaywallScreen() {
       <ScrollView contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingBottom: spacing.md }} showsVerticalScrollIndicator={false}>
         <View style={{ alignItems: "center", marginTop: spacing.sm, marginBottom: spacing.xl }}>
           <View style={[{ width: 84, height: 84, borderRadius: radii.xl, alignItems: "center", justifyContent: "center", backgroundColor: colors.primary }, softShadow(colors.primary, 12)]}>
-            <CrownIcon color="#fff" size={44} />
+            <CrownIcon color={colors.onPrimary} size={44} />
           </View>
           <Text variant="display" style={{ marginTop: spacing.md }}>{t("paywall.nomi_premium")}</Text>
           <Text variant="body" color={colors.textMuted} style={{ marginTop: 4, textAlign: "center" }}>{t("paywall.unlimited_learning_full_exam")}</Text>
@@ -283,7 +283,7 @@ export function PaywallScreen() {
       <View style={{ paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.md, paddingTop: spacing.sm }}>
         {error ? <Text variant="caption" color={colors.dangerText} style={{ textAlign: "center", marginBottom: spacing.sm }}>{error}</Text> : null}
         <PressableScale onPress={start} disabled={busy || !pkg} accessibilityRole="button" accessibilityLabel={trial ? t("paywall.start_free_trial") : t("paywall.subscribe")} style={[{ borderRadius: radii.lg, backgroundColor: pkg ? colors.primary : colors.surface2, paddingVertical: 17, alignItems: "center" }, pkg ? softShadow(colors.primary, 12) : {}]}>
-          {busy ? <ActivityIndicator color="#fff" /> : <Text variant="h3" color={pkg ? "#fff" : colors.textFaint}>{trial ? t("paywall.start_free_trial") : t("paywall.subscribe")}</Text>}
+          {busy ? <ActivityIndicator color={colors.onPrimary} /> : <Text variant="h3" color={pkg ? "#fff" : colors.textFaint}>{trial ? t("paywall.start_free_trial") : t("paywall.subscribe")}</Text>}
         </PressableScale>
         {/* Abonelik politikası (Play ve App Store): süre, fiyat, yenileme ve iptal yolu
             satın almadan önce görünür. İptal yolu mağazaya göre ayrı metin. */}
@@ -388,7 +388,7 @@ function PromoBox({ colors, onRedeemed }: { colors: Palette; onRedeemed: () => v
           style={{ flex: 1, backgroundColor: colors.surface2, borderRadius: radii.md, paddingHorizontal: spacing.md, paddingVertical: 10, color: colors.text, letterSpacing: 2 }}
         />
         <PressableScale onPress={apply} disabled={busy || !code.trim()} accessibilityRole="button" accessibilityLabel={t("promo.apply")} style={{ borderRadius: radii.md, backgroundColor: code.trim() ? colors.primary : colors.surface2, paddingHorizontal: spacing.lg, paddingVertical: 11 }}>
-          {busy ? <ActivityIndicator color="#fff" /> : <Text variant="bodyStrong" color={code.trim() ? "#fff" : colors.textFaint}>{t("promo.apply")}</Text>}
+          {busy ? <ActivityIndicator color={colors.onPrimary} /> : <Text variant="bodyStrong" color={code.trim() ? "#fff" : colors.textFaint}>{t("promo.apply")}</Text>}
         </PressableScale>
       </View>
       {msg ? <Text variant="caption" color={msg.ok ? colors.successText : colors.dangerText} style={{ marginTop: spacing.sm }}>{msg.text}</Text> : null}
@@ -417,8 +417,8 @@ function ReferralBox({ colors, referral }: { colors: Palette; referral: { code: 
           <Text variant="h3" style={{ letterSpacing: 4 }}>{referral.code}</Text>
         </View>
         <PressableScale onPress={() => void shareInvite(referral.code)} accessibilityRole="button" accessibilityLabel={t("referral.copy_link")} style={{ borderRadius: radii.md, backgroundColor: colors.primary, paddingHorizontal: spacing.lg, paddingVertical: 11, flexDirection: "row", alignItems: "center", gap: 6 }}>
-          <ShareIcon color="#fff" size={16} />
-          <Text variant="bodyStrong" color="#fff">{t("common.share")}</Text>
+          <ShareIcon color={colors.onPrimary} size={16} />
+          <Text variant="bodyStrong" color={colors.onPrimary}>{t("common.share")}</Text>
         </PressableScale>
       </View>
 

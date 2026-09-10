@@ -640,7 +640,7 @@ export function WalkModeScreen() {
               {tx("walkmode.intro_text", { nativeLang: nativeLangName(), target: targetLangName() })}
             </Text>
             <PressableScale onPress={() => { void beginWalk(); }} style={[{ alignSelf: "stretch", borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: 16, alignItems: "center", marginTop: spacing.md }, softShadow(colors.primary, 10)]}>
-              <Text variant="h3" color="#fff">{tx("common.start")}</Text>
+              <Text variant="h3" color={colors.onPrimary}>{tx("common.start")}</Text>
             </PressableScale>
             <PressableScale onPress={() => setDisclosure(true)} hitSlop={6} accessibilityRole="link" style={{ paddingVertical: spacing.xs }}>
               <Text variant="caption" color={colors.textMuted} style={{ textDecorationLine: "underline" }}>{tx("walkmode.about_microphone_and_voice_data")}</Text>
@@ -665,7 +665,7 @@ export function WalkModeScreen() {
               {tx(noMore ? "walkmode.done_no_more_sub" : "walkmode.done_saved")}
             </Text>
             {!noMore && (
-              <PressableScale onPress={newTour} style={[{ width: "100%", backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: spacing.lg, alignItems: "center" }, softShadow(colors.primary, 10)]}><Text variant="bodyStrong" color="#fff">{tx("walkmode.continue")}</Text></PressableScale>
+              <PressableScale onPress={newTour} style={[{ width: "100%", backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: spacing.lg, alignItems: "center" }, softShadow(colors.primary, 10)]}><Text variant="bodyStrong" color={colors.onPrimary}>{tx("walkmode.continue")}</Text></PressableScale>
             )}
             {tally.total > 0 && (
               <PressableScale onPress={() => shareResult(tally.correct, tally.total)} style={{ width: "100%", borderRadius: radii.lg, paddingVertical: spacing.lg, alignItems: "center", flexDirection: "row", justifyContent: "center", gap: 8, marginTop: spacing.md, borderWidth: 1.5, borderColor: colors.border }}>
@@ -681,7 +681,7 @@ export function WalkModeScreen() {
           <Text variant="h2" style={{ textAlign: "center" }}>{tx("walkmode.i_paused_round")}</Text>
           <Text variant="body" color={colors.textMuted} style={{ textAlign: "center" }}>{tx("walkmode.i_haven_t_heard_you_for_while")}</Text>
           <PressableScale onPress={() => { unheardWin.current = []; void runLoop(rounds, idx); }} style={[{ alignSelf: "stretch", borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: 16, alignItems: "center" }, softShadow(colors.primary, 10)]}>
-            <Text variant="h3" color="#fff">{tx("walkmode.continue")}</Text>
+            <Text variant="h3" color={colors.onPrimary}>{tx("walkmode.continue")}</Text>
           </PressableScale>
           <PressableScale onPress={() => nav.goBack()} style={{ paddingVertical: spacing.sm }}>
             <Text variant="bodyStrong" color={colors.textMuted}>{tx("common.finish")}</Text>
@@ -693,7 +693,7 @@ export function WalkModeScreen() {
           <Text variant="h2" style={{ textAlign: "center" }}>{tx("walkmode.microphone_needed")}</Text>
           <Text variant="body" color={colors.textMuted} style={{ textAlign: "center" }}>{tx("walkmode.walk_mode_works_by_voice_allow")}</Text>
           <PressableScale onPress={() => start(rounds)} style={[{ alignSelf: "stretch", borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: 16, alignItems: "center" }, softShadow(colors.primary, 10)]}>
-            <Text variant="h3" color="#fff">{tx("walkmode.allow_and_start")}</Text>
+            <Text variant="h3" color={colors.onPrimary}>{tx("walkmode.allow_and_start")}</Text>
           </PressableScale>
           <PressableScale onPress={() => nav.goBack()} style={{ paddingVertical: spacing.sm }}>
             <Text variant="bodyStrong" color={colors.textMuted}>{tx("common.discard")}</Text>

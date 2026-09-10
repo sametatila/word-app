@@ -112,7 +112,7 @@ export function AvatarScreen() {
         </Group>
 
         <PressableScale onPress={save} style={[{ borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: 16, alignItems: "center", marginTop: spacing.xxl }, softShadow(colors.primary, 10)]}>
-          <Text variant="h3" color="#fff">{t("common.save")}</Text>
+          <Text variant="h3" color={colors.onPrimary}>{t("common.save")}</Text>
         </PressableScale>
       </ScrollView>
     </View>

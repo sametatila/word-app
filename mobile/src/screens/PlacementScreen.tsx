@@ -127,7 +127,7 @@ export function PlacementScreen() {
       <View style={{ flex: 1, backgroundColor: colors.bg, alignItems: "center", justifyContent: "center", gap: spacing.md, padding: spacing.xl }}>
         <Text variant="body" color={colors.textMuted} style={{ textAlign: "center" }}>{t("placement.no_demo")}</Text>
         <PressableScale onPress={leave} style={[{ paddingHorizontal: 22, paddingVertical: 12, borderRadius: radii.lg, backgroundColor: colors.primary }, softShadow(colors.primary, 8)]}>
-          <Text variant="bodyStrong" color="#fff">{t("common.close")}</Text>
+          <Text variant="bodyStrong" color={colors.onPrimary}>{t("common.close")}</Text>
         </PressableScale>
       </View>
     );
@@ -138,7 +138,7 @@ export function PlacementScreen() {
       <View style={{ flex: 1, backgroundColor: colors.bg, alignItems: "center", justifyContent: "center", gap: spacing.md, padding: spacing.xl }}>
         <Text variant="body" color={colors.textMuted} style={{ textAlign: "center" }}>{t("placement.couldn_t_load_test")}</Text>
         <PressableScale onPress={() => setAttempt((n) => n + 1)} style={[{ paddingHorizontal: 22, paddingVertical: 12, borderRadius: radii.lg, backgroundColor: colors.primary }, softShadow(colors.primary, 8)]}>
-          <Text variant="bodyStrong" color="#fff">{t("common.try_again")}</Text>
+          <Text variant="bodyStrong" color={colors.onPrimary}>{t("common.try_again")}</Text>
         </PressableScale>
         <PressableScale onPress={leave} style={{ paddingVertical: spacing.sm }}><Text variant="bodyStrong" color={colors.textMuted}>{t("common.close")}</Text></PressableScale>
       </View>
@@ -174,7 +174,7 @@ export function PlacementScreen() {
       ) : (
         <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
           <View style={[{ width: 110, height: 110, borderRadius: 55, alignItems: "center", justifyContent: "center", backgroundColor: colors.primary }, softShadow(colors.primary, 14)]}>
-            <Text variant="display" color="#fff" style={{ fontSize: 40 }}>{level}</Text>
+            <Text variant="display" color={colors.onPrimary} style={{ fontSize: 40 }}>{level}</Text>
           </View>
           <Text variant="h1" style={{ marginTop: spacing.xl }}>{t("placement.your_level", { level: level })}</Text>
           <Text variant="body" color={colors.textMuted} style={{ marginTop: spacing.xs, marginBottom: spacing.xxl, textAlign: "center" }}>
@@ -182,7 +182,7 @@ export function PlacementScreen() {
           </Text>
           {saved && <Text variant="bodyStrong" color={colors.successText} style={{ marginBottom: spacing.md }}>{t("placement.saved")}</Text>}
           <PressableScale onPress={applyLevel} style={[{ width: "100%", backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: spacing.lg, alignItems: "center" }, softShadow(colors.primary, 10)]}>
-            <Text variant="h3" color="#fff">{t(user ? "placement.set_level" : "placement.understood")}</Text>
+            <Text variant="h3" color={colors.onPrimary}>{t(user ? "placement.set_level" : "placement.understood")}</Text>
           </PressableScale>
           <PressableScale onPress={leave} style={{ width: "100%", borderRadius: radii.lg, paddingVertical: spacing.lg, alignItems: "center", marginTop: spacing.sm }}>
             <Text variant="bodyStrong" color={colors.textMuted}>{t("common.close")}</Text>

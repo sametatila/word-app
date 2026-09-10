@@ -230,7 +230,7 @@ export function BossScreen() {
           ) : null}
           {best !== null ? <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.md, textAlign: "center" }}>{t("bossw.best_left", { n: best })}</Text> : null}
           <PressableScale onPress={start} style={[{ marginTop: spacing.lg, borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: 15, alignItems: "center" }, softShadow(colors.primary, 8)]}>
-            <Text variant="h3" color="#fff">{t(best !== null ? "boss.beat_record" : "boss.enter")}</Text>
+            <Text variant="h3" color={colors.onPrimary}>{t(best !== null ? "boss.beat_record" : "boss.enter")}</Text>
           </PressableScale>
           <PressableScale onPress={exit} style={{ marginTop: spacing.sm, paddingVertical: 12, alignItems: "center" }}>
             <Text variant="bodyStrong" color={colors.textMuted}>{t("bossw.back_to_path")}</Text>
@@ -266,7 +266,7 @@ export function BossScreen() {
           ) : null}
           {!won ? <Text variant="caption" color={colors.textMuted} style={{ textAlign: "center", marginTop: spacing.md }}>{t("bossw.still_counted")}</Text> : null}
           <PressableScale onPress={start} style={[{ marginTop: spacing.lg, borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: 15, alignItems: "center" }, softShadow(colors.primary, 8)]}>
-            <Text variant="h3" color="#fff">{t(won ? "bossw.play_again" : "common.try_again")}</Text>
+            <Text variant="h3" color={colors.onPrimary}>{t(won ? "bossw.play_again" : "common.try_again")}</Text>
           </PressableScale>
           <PressableScale onPress={exit} style={{ marginTop: spacing.sm, paddingVertical: 12, alignItems: "center" }}>
             <Text variant="bodyStrong" color={colors.textMuted}>{t("bossw.back_to_path")}</Text>
