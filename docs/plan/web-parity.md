@@ -4008,3 +4008,39 @@ yazılmamış**. Kapı bu sınıfı tipler düzeyinde yakalıyor (§11.77'de
 işini taşıyor (e-posta doğrulama arayüzü: içe alımlar ve durum eklenmiş, henüz
 kullanılmıyor) ve mobil `lint` on bir hata veriyor. Benim dosyalarım temiz;
 o dosyaya dokunulmadı.
+
+### 11.80 Kelimenin türü ve çoğulu — Android'de hiç yoktu
+
+§11.79'un sonunda "kapı tipleri ölçüyor ama alanın çizilip çizilmediğini
+ölçmüyor" diye yazdığım sınırı sistemli aramaya çevirdim: mobil API tiplerinin
+her alanını alıp `mobile/src` içinde başka hiçbir yerde geçmeyenleri listeledim.
+On sekiz aday çıktı; çoğu meşru (`href` §11.73'te kimlikle değiştirildi,
+`wagerXp` web-only, `payload` tip dosyasının kendi içinde okunuyor). Biri
+değildi.
+
+**`typ` ve `formen`.** Sunucu her kelimede türü (Nomen/Verb/…) ve çoğul
+kalıbını gönderiyor, tip ikisini de taşıyor, mobil **ikisini de hiç
+okumuyordu**. Web bunu üç yerde yazıyor: yeni kelime turu, yazma turu, kelime
+listesi. Android'de öğrenci bir kelimenin isim mi fiil mi olduğunu ve çoğulunun
+ne olduğunu hiçbir yerde görmüyordu — kelimenin yarısı eksikti.
+
+`game/wordGrammar` webin `components/games/types.ts` içindeki iki işlevle
+birebir aynı kuralları taşıyor:
+
+| ham veri | ekranda |
+|---|---|
+| `(Sg.)` | çoğulu yok |
+| `(Pl.)` | yalnızca çoğul |
+| `¨-er` + artikel | çoğul: die Häuser |
+| fiil çekimi | olduğu gibi |
+
+`typ` boş gelirse Türkçe karşılığın mastar eki (-mek/-mak) fiili ele veriyor —
+webin yedeği de o. Umlaut gövdesi (`Haus` → `Häus`) web `lib/german`
+`umlautStem` ile aynı; "au" ikili ünlüsü tek parça umlautlanıyor.
+
+**Kelime listesi ucu da eksikti.** Web listesi bu iki alanı sunucu bileşeninde
+doğrudan tablodan okuyor; mobilin tek kaynağı `/api/words` ve uç ikisini de
+göndermiyordu. Eklemesi katkısız: iki sütun daha seçiliyor.
+
+**Kural kopyası kapıya bağlandı.** Bir kopya en çok kopyalandığı gün doğrudur;
+sözlük anahtarları, düzenli ifadeler ve umlaut gövdesi artık ölçülüyor.
