@@ -64,7 +64,15 @@ export const TIER_COLOR: Record<string, string> = {
   bronze: "#a9683c",
   silver: "#8a8277",
   gold: "#aa8012",
-  legend: "var(--color-violet)",
+  /* SABİT, tema duyarlı jeton DEĞİL - öteki üçü gibi.
+     `var(--color-violet)` yazılıydı ve koyu temada 300'e düşüyordu: rozet dolu
+     zemin + BEYAZ ikon taşıyor, ölçüm açık temada 6.83 ama koyu temada 3.24 -
+     dördün en kötüsü ve grafik eşiğinin (3.0) hemen üstünde. Üstelik bu tablo
+     kendi yorumunda "kimlik" diyor ve kimlik temayla dönmez: mobil karşılığı
+     (`theme/colors.ts` `TIER_COLOR`) dördünü de sabit tutuyor, yani koyu
+     temada efsane rozeti iki uygulamada iki ayrı mordu. Değer açık temada
+     zaten çözülen `violet-600`. */
+  legend: "#77439d",
 };
 
 /**

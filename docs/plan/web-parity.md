@@ -3011,3 +3011,46 @@ doğrulandı.
 karşılığı YOK - web aynı işi tanıyıcı yolunun içinde yapıyor, ayrı bir modül
 değil. `stt.ts`teki "birebir" ise Azure kotasının yuvarlanmasıyla ilgili,
 platformlar arası bir iddia değil.
+
+### 11.55 Kapının kendi kapsamını ölçtüm: on beş sabit çifti kapısız, ikisi ayrışmış
+
+`check:parity`nin otuz bölümü elle eklenmişti. Bu turda listeyi LİSTELEDİM:
+iki ağaçta aynı adla duran `export const AD` sabitleri arandı - **23 eşleşme**
+bulundu ve **18'i** kapıda hiç geçmiyordu. Sonra on sekizin değerleri
+karşılaştırıldı: **on ikisi eşit** (yani sessizce doğru duruyorlardı),
+**altısı** ayrı çıktı. Altının dördü biçim farkıydı (son virgul, `as const`,
+webin `pkg.version` ifadesi - o zaten `version:check`in konusu), **ikisi
+gerçek**:
+
+**a) Efsane rozeti koyu temada iki uygulamada iki ayrı mordu.** Web
+`TIER_COLOR`ın üç değeri sabit hex, dördüncüsü `var(--color-violet)` yazılıydı
+- yani tema duyarlı. Rozet dolu zemin + BEYAZ ikon taşıyor:
+
+    beyaz / violet-600 #77439d (açık tema)  6.83
+    beyaz / violet-300 #ae79d4 (koyu tema)  3.24   ← dördün en kötüsü
+
+Tablonun kendi yorumu bu dört değere "kimlik" diyor ve kimlik temayla dönmez;
+mobil karşılığı dördünü de sabit tutuyor. Web'in değeri açık temada zaten
+`violet-600`e çözülüyordu, o yüzden sabitlemek açık temayı hiç değiştirmedi -
+koyu temayı Android'e eşledi.
+
+**b) Ölü `speak` ünite türü webde duruyordu.** `ImmersionItemKind` yedi tür
+sayıyor ve `speak` içinde yok - ne sunucu üretiyor ne yerel kurucu. Ama
+`unit-pane.tsx`in üç tablosu `Record<string, …>` yazılıydı, yani derleyici
+fazlalığı GÖRMÜYORDU ve `speak` üç yerde (sözlük anahtarı, renk, ikon
+dallanması) duruyordu. Mobil bunu daha önce temizleyip tabloyu `data/unit`teki
+tek tanıma bağlamıştı; web de artık öyle - `Record<ImmersionItemKind, …>`,
+yani sunucunun kümesi değişince derleyici burayı zorluyor. Sözlük anahtarı
+`unitkind.speaking` DURUYOR: Yapabildiklerim ve Yazılarım onu beceri adı
+olarak kullanıyor.
+
+Kapıya üç bölüm eklendi: on beş sabit çifti (metin normalize edilerek),
+`KIND_TINT`in ANAHTAR kümesi (değerler bilerek farklı biçimde - webde CSS
+değişkeni, mobilde palet jeton adı) ve ses kayıt defteri (kimlik + kurs;
+etiket/not anahtarları iki tarafta farklı olabilir ama hangi ses hangi kursta
+sorusu aynı cevabı vermeli).
+
+Normalize ederken bir tuzağa düştüm ve düzelttim: ilk sürüm yorumları
+ayıklamıyordu, yani (a)'daki gerekçeyi web dosyasına yazmak kapıyı kırdı.
+Yorum ayıklaması artık normalize adımının parçası - iki taraf aynı kararı
+kendi diliyle anlatabilir.

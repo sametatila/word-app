@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import type { ImmersionItemKind } from "@/lib/immersion/types";
 import type { HubItem, HubUnit } from "@/components/immersion/immersion-hub";
 import {
   BookOpenIcon,
@@ -9,7 +10,6 @@ import {
   HeadphonesIcon,
   LearnIcon,
   LockIcon,
-  MicIcon,
   PenIcon,
   PuzzleIcon,
   TargetIcon,
@@ -34,25 +34,34 @@ import { useT } from "@/lib/i18n/client";
  * ölçütü iki yerde de aynı.
  */
 
+/*
+  ÖLÜ `speak` TÜRÜ ATILDI ve tablolar SUNUCUNUN birleşimine bağlandı.
+  `ImmersionItemKind` yedi tür sayıyor ve `speak` içinde yok - ne sunucu
+  üretiyor ne de yerel kurucu. Üç tablo `Record<string, …>` yazılıydı, yani
+  derleyici fazlalığı görmüyordu ve `speak` yıllarca üç yerde duruyordu.
+  Mobil karşılığı bunu daha önce temizleyip `data/unit`teki tek tanıma
+  bağlamıştı (bkz. `ui/unitKind.tsx` notu); web de artık öyle - kümesi
+  değişince derleyici burayı zorluyor.
+  Sözlük anahtarı `unitkind.speaking` DURUYOR: Yapabildiklerim ve Yazılarım
+  ekranları onu beceri adı olarak kullanıyor.
+*/
 /** Tür → sözlük anahtarı; etiket kullanım anında çözülüyor (mobil `KIND_KEY`). */
-const KIND_KEY: Record<string, string> = {
+const KIND_KEY: Record<ImmersionItemKind, string> = {
   lesson: "unitkind.lesson",
   read: "unitkind.read",
   listen: "unitkind.listen",
   write: "unitkind.write",
-  speak: "unitkind.speaking",
   grammar: "unitkind.grammar",
   quiz: "unitkind.quiz",
   checkpoint: "unitkind.checkpoint",
 };
 
 /** Tür → renk. Mobil `KIND_TINT` ile birebir. */
-export const KIND_TINT: Record<string, string> = {
+export const KIND_TINT: Record<ImmersionItemKind, string> = {
   lesson: "var(--color-brand-500)",
   read: "var(--color-sky-500)",
   listen: "var(--color-violet-500)",
   write: "var(--color-mint-500)",
-  speak: "var(--color-brand-500)",
   grammar: "var(--color-flame-500)",
   quiz: "var(--color-brand-500)",
   checkpoint: "var(--color-rose-500)",
@@ -68,8 +77,6 @@ export function KindIconFor({ kind, size = 22 }: { kind: string; size?: number }
       return <HeadphonesIcon {...p} />;
     case "write":
       return <PenIcon {...p} />;
-    case "speak":
-      return <MicIcon {...p} />;
     case "grammar":
       return <PuzzleIcon {...p} />;
     case "quiz":

@@ -811,6 +811,90 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   }
 }
 
+/* ── 20. ayni adi tasiyan sabitler ─────────────────────────────────────────
+ * Iki tarafta AYNI ADLA duran sabit listeler. Otuz bolum elle eklenmisti;
+ * bu bolum listeyi LISTELEYEREK bulundu: iki agacta ayni `export const AD`
+ * arandi (23 esleme) ve kapida hic gecmeyenler ayrildi (18). Bugun degeri
+ * ayni olan on bes cifti buraya baglandi - kalan uc ayri sebeple disarida
+ * (asagida).
+ *
+ * Karsilastirma metin uzerinde ve normalize ediliyor: bosluklar teklenir, son
+ * virgul ve `as const` atilir. Deger ifadesi olarak yazilmis olanlar (webin
+ * `pkg.version`u gibi) buraya girmez. */
+{
+  /* Normalize: yorumlar atilir (iki taraf ayni karari kendi diliyle
+     anlatiyor), bosluk teklenir, son virgul ve ayraclarin ici kirpilir,
+     `as const` atilir. Yorum ayiklamasi SART: aksi halde bir tarafa gerekce
+     yazmak kapiyi kiriyor. */
+  const norm = (v) =>
+    v
+      .replace(/\/\*[\s\S]*?\*\//g, " ")
+      .replace(/\/\/[^\n]*/g, " ")
+      .replace(/\s+/g, " ")
+      .replace(/,\s*([}\]])/g, "$1")
+      .replace(/([{[])\s+/g, "$1")
+      .replace(/\s+([}\]])/g, "$1")
+      .replace(/\s*as const\s*$/, "")
+      .trim();
+  const val = (p, name) => {
+    const src = read(p);
+    const i = src.indexOf("export const " + name);
+    if (i < 0) return ["bulunamadi: " + name + " @ " + p];
+    let k = src.indexOf("=", i) + 1;
+    const start = k;
+    let depth = 0;
+    for (; k < src.length; k++) {
+      const c = src[k];
+      if ("[{(".includes(c)) depth++;
+      else if ("]})".includes(c)) depth--;
+      else if (c === ";" && depth <= 0) break;
+    }
+    return [norm(src.slice(start, k))];
+  };
+  const PAIRS = [
+    ["DEFAULT_AVATAR", "src/lib/avatar.ts", "mobile/src/lib/avatar.ts"],
+    ["DEFAULT_NATIVE", "src/lib/courses.ts", "mobile/src/lib/courses.ts"],
+    ["DETAIL_MAX", "src/lib/errors.ts", "mobile/src/lib/errors.ts"],
+    ["ERROR_TYPES", "src/lib/errors.ts", "mobile/src/lib/errors.ts"],
+    ["SPELLING_TOLERANCE", "src/lib/errors.ts", "mobile/src/lib/errors.ts"],
+    ["GLASSES", "src/components/avatar-parts.tsx", "mobile/src/ui/avatarParts.tsx"],
+    ["HATS", "src/components/avatar-parts.tsx", "mobile/src/ui/avatarParts.tsx"],
+    ["HAT_COLORS", "src/components/avatar-parts.tsx", "mobile/src/ui/avatarParts.tsx"],
+    ["MUSTACHES", "src/components/avatar-parts.tsx", "mobile/src/ui/avatarParts.tsx"],
+    ["LEAGUE_TIERS", "src/lib/social/types.ts", "mobile/src/api/social.ts"],
+    ["MOCK_LABELS", "src/lib/mock-exams/types.ts", "mobile/src/data/exams/index.ts"],
+    ["MOCK_PASS_PCT", "src/lib/mock-exams/types.ts", "mobile/src/data/exams/index.ts"],
+    ["TURKISH_VOICE", "src/lib/tts/voices.ts", "mobile/src/lib/voices.ts"],
+    ["VERDICT_KEYS", "src/lib/sentence-match.ts", "mobile/src/lib/sentenceMatch.ts"],
+    ["TIER_COLOR", "src/components/achievement-badge.tsx", "mobile/src/theme/colors.ts"],
+  ];
+  for (const [name, wp, mp] of PAIRS) sameList("sabit " + name, val(mp, name), val(wp, name));
+
+  /* KIND_TINT yalniz ANAHTAR kumesi: webde CSS degiskeni, mobilde palet jeton
+     ADI duruyor (sonradan cozuluyor). Degerler bilerek farkli bicimde, kume
+     ayni olmali - bir unite turu eklenip oteki tarafta unutulursa renksiz
+     kalir. */
+  const keys = (p, name) => {
+    const src = read(p);
+    const i = src.indexOf("export const " + name);
+    if (i < 0) return ["bulunamadi"];
+    const j = src.indexOf("\n};", i);
+    return [...src.slice(i, j).matchAll(/^\s{2}(\w+):/gm)].map((m) => m[1]).sort();
+  };
+  sameList(
+    "unite turu tonlari (anahtar)",
+    keys("mobile/src/ui/unitKind.tsx", "KIND_TINT"),
+    keys("src/components/immersion/unit-pane.tsx", "KIND_TINT"),
+  );
+
+  /* Ses kayit defteri: kimlik + kurs. Etiket ve not anahtarlari iki tarafta
+     ayni olmak zorunda degil (web notu dogrudan yaziyor, mobil sozlukten
+     cekiyor), ama HANGI ses HANGI kursta sorusu ayni cevabi vermeli. */
+  const voiceIds = (p) =>
+    [...read(p).matchAll(/id: "([^"]+)"[^}]*?course: "([^"]+)"/g)].map((m) => m[1] + ":" + m[2]).sort();
+  sameList("ses kayit defteri", voiceIds("mobile/src/lib/voices.ts"), voiceIds("src/lib/tts/voices.ts"));
+}
+
 /* ── elle yazilmis icerik ciftleri ──────────────────────────────────────────
    Iki dosyanin "birebir ayni kalmali" dedigi ama hicbir kapinin bakmadigi
    veri. Modul temalari tam bu yuzden bes gun ayrisik kaldi (bkz. 11.52):
