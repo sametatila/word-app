@@ -44,7 +44,7 @@ import { isProseQuote } from "@/lib/lessons/native";
 
 export type ProseRow = {
   tr: string;
-  kind: "intro" | "explain";
+  kind: "intro" | "explain" | "note";
   /** Kaç egzersizde geçiyor — sıralama buna göre. */
   n: number;
   /** Bağlam: egzersizin kimliği ve becerisi. En çok üç tane. */
@@ -59,7 +59,16 @@ export type ProseRow = {
 };
 
 type Q = { text?: string; options?: string[]; answer?: number; explain?: string };
-type Ex = { id: string; skill?: string; level?: string; intro?: string; questions?: Q[] };
+type G = { de?: string; note?: string };
+type Ex = {
+  id: string;
+  skill?: string;
+  level?: string;
+  intro?: string;
+  questions?: Q[];
+  gloss?: G[];
+  tasks?: { phrases?: G[] }[];
+};
 
 export function extractProse(): ProseRow[] {
   const rows = new Map<string, ProseRow>();
@@ -80,12 +89,27 @@ export function extractProse(): ProseRow[] {
     const at = `${e.id} · ${e.skill ?? "?"} ${e.level ?? ""}`.trim();
     add("intro", e.intro, at);
     for (const q of e.questions ?? []) add("explain", q.explain, at, q);
+    /* Sözlükçe NOTU — "kadın biçimi", "ilaç için". `Gloss.en` karşılığın
+       kendisini taşıyor ama notu taşımıyor, o yüzden not bu hatta. On bir
+       tane var ve yirmi iki egzersizde geçiyor; çevrilmezlerse çözücü o
+       yirmi ikisini hep-ya-hiç kuralıyla tümden Türkçeye düşürür. */
+    for (const g of [...(e.gloss ?? []), ...(e.tasks ?? []).flatMap((t) => t.phrases ?? [])])
+      add("note", g.note, `${at} · ${g.de ?? ""}`.trim());
   }
 
-  // Sıklık azalan; eşitlikte kısa önce, sonra alfabetik — sıra KARARLI
-  // olmalı, yoksa paketler her `make`te kayar ve yazılanlar tutmaz.
+  /* Sıklık azalan; eşitlikte kısa önce, sonra alfabetik — sıra KARARLI
+     olmalı, yoksa paketler her `make`te kayar ve yazılanlar tutmaz.
+
+     `note` EN SONA: hat 3.383 satırla bitmişti ve p-001..p-022 yazılmış
+     paketlerdi. Notlar sıklığa göre araya girseydi yirmi iki paketin
+     tamamı kayardı — kapsam denetimi metne göre çalıştığı için yanlış
+     yanıt vermezdi ama `write.mjs` ile `in/` hizası bozulurdu. Sıralamanın
+     BİRİNCİ ölçütü olarak tür eklemek eskileri hiç oynatmıyor: hepsi
+     aynı sınıfta. */
+  const rank = (r: ProseRow) => (r.kind === "note" ? 1 : 0);
   return [...rows.values()].sort(
-    (a, b) => b.n - a.n || a.tr.length - b.tr.length || a.tr.localeCompare(b.tr, "tr"),
+    (a, b) =>
+      rank(a) - rank(b) || b.n - a.n || a.tr.length - b.tr.length || a.tr.localeCompare(b.tr, "tr"),
   );
 }
 

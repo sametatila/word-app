@@ -240,11 +240,11 @@ export const deC1P5: SkillExercise[] = [
         ],
         minWords: 120,
         phrases: [
-          { de: "Lange habe ich geglaubt, dass …", tr: "Uzun süre … olduğuna inandım" },
-          { de: "Widerlegt hat das …", tr: "Bunu çürüten şey … oldu" },
-          { de: "Erst nach Jahren habe ich verstanden, …", tr: "Ancak yıllar sonra anladım …" },
-          { de: "So lange gedauert hat es, weil …", tr: "Bu kadar uzun sürmesinin nedeni …" },
-          { de: "Was bleibt, ist …", tr: "Geriye kalan …" },
+          { de: "Lange habe ich geglaubt, dass …", tr: "Uzun süre … olduğuna inandım", en: "For a long time I believed that …" },
+          { de: "Widerlegt hat das …", tr: "Bunu çürüten şey … oldu", en: "What disproved it was …" },
+          { de: "Erst nach Jahren habe ich verstanden, …", tr: "Ancak yıllar sonra anladım …", en: "Only years later did I understand …" },
+          { de: "So lange gedauert hat es, weil …", tr: "Bu kadar uzun sürmesinin nedeni …", en: "It took so long because …" },
+          { de: "Was bleibt, ist …", tr: "Geriye kalan …", en: "What remains is …" },
         ],
         sample:
           "Lange habe ich geglaubt, dass Missverständnisse an mangelnder Genauigkeit liegen. Wer präzise " +

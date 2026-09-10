@@ -230,11 +230,11 @@ export const deB1P2: SkillExercise[] = [
         ],
         minWords: 60,
         phrases: [
-          { de: "Ich bin dafür, allerdings …", tr: "Yanayım, ancak …" },
-          { de: "Erstens … Zweitens …", tr: "Birincisi … İkincisi …" },
-          { de: "Das Gegenargument verstehe ich.", tr: "Karşı argümanı anlıyorum." },
-          { de: "Deshalb mein Vorschlag: …", tr: "Bu yüzden önerim: …" },
-          { de: "Man sollte zuerst …", tr: "Önce … yapmalı" },
+          { de: "Ich bin dafür, allerdings …", tr: "Yanayım, ancak …", en: "I'm in favour, however …" },
+          { de: "Erstens … Zweitens …", tr: "Birincisi … İkincisi …", en: "Firstly … Secondly …" },
+          { de: "Das Gegenargument verstehe ich.", tr: "Karşı argümanı anlıyorum.", en: "I understand the counter-argument." },
+          { de: "Deshalb mein Vorschlag: …", tr: "Bu yüzden önerim: …", en: "So here's my suggestion: …" },
+          { de: "Man sollte zuerst …", tr: "Önce … yapmalı", en: "First of all one should …" },
         ],
         sample:
           "Ich bin dafür, allerdings nicht an zehn Plätzen gleichzeitig. Erstens gibt es Menschen, die den ganzen " +

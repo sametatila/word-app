@@ -229,11 +229,11 @@ export const deB2P3: SkillExercise[] = [
         ],
         minWords: 90,
         phrases: [
-          { de: "Der Streit wird gern als … geführt.", tr: "Tartışma çoğu zaman … olarak yürütülür" },
-          { de: "Beide Seiten haben Argumente.", tr: "İki tarafın da argümanı var." },
-          { de: "Ansprüche wiegen nicht gleich, wenn …", tr: "… ise talepler eşit ağırlıkta değildir" },
-          { de: "Deshalb: …", tr: "Bu yüzden: …" },
-          { de: "Eine Maßnahme reicht für den Anfang: …", tr: "Başlangıç için tek bir önlem yeter: …" },
+          { de: "Der Streit wird gern als … geführt.", tr: "Tartışma çoğu zaman … olarak yürütülür", en: "The dispute is often framed as …" },
+          { de: "Beide Seiten haben Argumente.", tr: "İki tarafın da argümanı var.", en: "Both sides have arguments." },
+          { de: "Ansprüche wiegen nicht gleich, wenn …", tr: "… ise talepler eşit ağırlıkta değildir", en: "Claims do not carry equal weight when …" },
+          { de: "Deshalb: …", tr: "Bu yüzden: …", en: "So: …" },
+          { de: "Eine Maßnahme reicht für den Anfang: …", tr: "Başlangıç için tek bir önlem yeter: …", en: "One measure is enough to start with: …" },
         ],
         sample:
           "Auf zwei Metern Gehweg treffen an einem normalen Dienstagmorgen mehr Ansprüche aufeinander als auf " +

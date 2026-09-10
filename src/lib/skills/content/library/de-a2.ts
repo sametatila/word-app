@@ -225,11 +225,11 @@ export const deA2: SkillExercise[] = [
         ],
         minWords: 40,
         phrases: [
-          { de: "Seit … mache ich …", tr: "…'den beri … yapıyorum" },
-          { de: "Am Anfang war es …", tr: "Başta … idi" },
-          { de: "Inzwischen …", tr: "Artık …" },
-          { de: "Hast du Lust, …?", tr: "… ister misin?" },
-          { de: "Melde dich, wenn …", tr: "… olursa haber ver" },
+          { de: "Seit … mache ich …", tr: "…'den beri … yapıyorum", en: "I've been doing … since …" },
+          { de: "Am Anfang war es …", tr: "Başta … idi", en: "At the start it was …" },
+          { de: "Inzwischen …", tr: "Artık …", en: "By now …" },
+          { de: "Hast du Lust, …?", tr: "… ister misin?", en: "Do you fancy …?" },
+          { de: "Melde dich, wenn …", tr: "… olursa haber ver", en: "Let me know if …" },
         ],
         sample:
           "Hallo Jana, ich habe eine Neuigkeit: Seit drei Wochen singe ich in einem Chor. Eine Kollegin hat mich mitgenommen. " +

@@ -197,11 +197,11 @@ export const deA1P3: SkillExercise[] = [
         ],
         minWords: 25,
         phrases: [
-          { de: "Sehr geehrte Frau …,", tr: "Sayın … Hanım," },
-          { de: "Wir möchten … bleiben.", tr: "… kalmak istiyoruz." },
-          { de: "Ist die Wohnung … frei?", tr: "Daire … boş mu?" },
-          { de: "Was kostet eine Nacht?", tr: "Bir gece ne kadar?" },
-          { de: "Freundliche Grüße", tr: "Saygılarımla" },
+          { de: "Sehr geehrte Frau …,", tr: "Sayın … Hanım,", en: "Dear Ms …," },
+          { de: "Wir möchten … bleiben.", tr: "… kalmak istiyoruz.", en: "We'd like to stay …" },
+          { de: "Ist die Wohnung … frei?", tr: "Daire … boş mu?", en: "Is the flat free …?" },
+          { de: "Was kostet eine Nacht?", tr: "Bir gece ne kadar?", en: "How much is one night?" },
+          { de: "Freundliche Grüße", tr: "Saygılarımla", en: "Kind regards" },
         ],
         sample:
           "Sehr geehrte Frau Kunz, wir möchten im Juli eine Woche in Ihrer Ferienwohnung bleiben. " +

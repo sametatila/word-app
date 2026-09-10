@@ -203,11 +203,11 @@ export const deA1P2: SkillExercise[] = [
         ],
         minWords: 25,
         phrases: [
-          { de: "Ich verkaufe …", tr: "… satıyorum" },
-          { de: "Er ist … Jahre alt.", tr: "… yaşında." },
-          { de: "Der Preis ist … Euro.", tr: "Fiyatı … Euro." },
-          { de: "Du kannst ihn … abholen.", tr: "Onu … gelip alabilirsin." },
-          { de: "Bitte schreib mir eine Nachricht!", tr: "Lütfen bana mesaj yaz!" },
+          { de: "Ich verkaufe …", tr: "… satıyorum", en: "I'm selling …" },
+          { de: "Er ist … Jahre alt.", tr: "… yaşında.", en: "It's … years old." },
+          { de: "Der Preis ist … Euro.", tr: "Fiyatı … Euro.", en: "The price is … euros." },
+          { de: "Du kannst ihn … abholen.", tr: "Onu … gelip alabilirsin.", en: "You can pick it up …" },
+          { de: "Bitte schreib mir eine Nachricht!", tr: "Lütfen bana mesaj yaz!", en: "Please send me a message!" },
         ],
         sample:
           "Ich verkaufe meinen Schreibtisch. Er ist braun und sehr groß. Der Tisch ist drei Jahre alt und noch sehr gut. " +

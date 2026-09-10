@@ -242,11 +242,11 @@ export const deC1P3: SkillExercise[] = [
         ],
         minWords: 120,
         phrases: [
-          { de: "In einem Punkt stimme ich zu: …", tr: "Bir noktada katılıyorum: …" },
-          { de: "Der Schluss daraus ist trotzdem falsch.", tr: "Yine de çıkarılan sonuç yanlış." },
-          { de: "… lässt sich leicht zeigen.", tr: "… kolayca gösterilebilir." },
-          { de: "Man könnte einwenden, dass …", tr: "Şu itiraz edilebilir: …" },
-          { de: "Ich räume ein, dass …", tr: "… olduğunu kabul ediyorum" },
+          { de: "In einem Punkt stimme ich zu: …", tr: "Bir noktada katılıyorum: …", en: "On one point I agree: …" },
+          { de: "Der Schluss daraus ist trotzdem falsch.", tr: "Yine de çıkarılan sonuç yanlış.", en: "The conclusion drawn from it is still wrong." },
+          { de: "… lässt sich leicht zeigen.", tr: "… kolayca gösterilebilir.", en: "… can easily be shown." },
+          { de: "Man könnte einwenden, dass …", tr: "Şu itiraz edilebilir: …", en: "One might object that …" },
+          { de: "Ich räume ein, dass …", tr: "… olduğunu kabul ediyorum", en: "I concede that …" },
         ],
         sample:
           "Sehr geehrte Redaktion,\n\n" +

@@ -417,10 +417,22 @@ export const isProseQuote = (t: string): boolean =>
  * okuyacağını bilemiyor ve açıklamanın çevrilmemiş yarısı tam da anlamadığı
  * için okuduğu yer oluyor.
  *
- * Yalnız iki alan: `intro` ve `questions[].explain`. Soru kökü, şıklar ve
- * metnin kendisi ÖĞRENİLEN dilde — çevrilmemeli. `gloss` de burada yok:
- * `Gloss` tipinde `en` alanı zaten dolu (4.945/4.945) ve oynatıcılar onu
- * kendileri okuyor.
+ * Düz metin iki alan: `intro` ve `questions[].explain`. Soru kökü, şıklar,
+ * metnin kendisi ve Almanca uyaranlar (`stimulus`, `sample`, `source`)
+ * ÖĞRENİLEN dilde — çevrilmemeli.
+ *
+ * SÖZLÜKÇE ÇEVRİLMİYOR, KATLANIYOR. `Gloss` tipinde `en` alanı zaten dolu
+ * (3.577/3.577) ama oynatıcı ikisini birden çiziyor: kalın Almanca, yanında
+ * TÜRKÇE karşılık, altında soluk İngilizce. İngilizce konuşan biri için bu
+ * ters — asıl satır dipnotta, anlamadığı dil önde. Katlama `tr`yi `en` ile
+ * değiştirip `en`i düşürüyor; ekranda "Wohnung · flat" kalıyor, satır
+ * sayısı da azalıyor. Aynısı yazma görevlerinin `phrases` alanına da
+ * uygulanıyor (o da `Gloss`).
+ *
+ * `note` katlanamıyor — Türkçe ve `Gloss`ta İngilizcesi yok; sözlükten
+ * geliyor (`kind: "note"`, on bir madde). Çevrilmemiş bir not, kelimenin
+ * hemen altında duran Türkçe bir cümledir ve yarım çevirinin en görünür
+ * hâlidir; o yüzden hep-ya-hiç kuralına dahil.
  */
 export function resolveExercise<T extends ExerciseShape>(dict: NativeDict, ex: T): T | null {
   let failed = false;
@@ -431,10 +443,24 @@ export function resolveExercise<T extends ExerciseShape>(dict: NativeDict, ex: T
     return en ?? s;
   };
 
+  /* `tasks` YAPISAL TİPTE DEĞİL, burada okunuyor. `WritingTask` bir birlik
+     ve kollarının çoğunda `phrases` yok; `{ phrases?: … }` zayıf tip olduğu
+     için TypeScript "ortak alanı yok" diyip `SkillExercise`i şekle
+     uydurmuyordu. Alanı şekilden çıkarıp burada okumak, şekli de dürüst
+     tutuyor: çözücünün SÖZ VERDİĞİ alanlar `intro`, `questions` ve `gloss`. */
+  const tasks = (ex as { tasks?: { phrases?: GlossShape[] }[] }).tasks;
+
+  const fold = <G extends GlossShape>(g: G): G => {
+    if (!g.en?.trim()) failed = true;
+    return { ...g, tr: g.en ?? g.tr, en: undefined, ...(g.note ? { note: t(g.note) } : {}) };
+  };
+
   const out = {
     ...ex,
     intro: t(ex.intro),
     ...(ex.questions ? { questions: ex.questions.map((q) => ({ ...q, explain: t(q.explain) })) } : {}),
+    ...(ex.gloss ? { gloss: ex.gloss.map(fold) } : {}),
+    ...(tasks ? { tasks: tasks.map((k) => (k.phrases ? { ...k, phrases: k.phrases.map(fold) } : k)) } : {}),
   };
   return failed ? null : (out as T);
 }
@@ -447,4 +473,8 @@ export function resolveExercise<T extends ExerciseShape>(dict: NativeDict, ex: T
 export type ExerciseShape = {
   intro: string;
   questions?: { explain: string }[];
+  gloss?: GlossShape[];
 };
+
+/** `Gloss`un katlamayı ilgilendiren üç alanı. */
+export type GlossShape = { tr: string; en?: string; note?: string };

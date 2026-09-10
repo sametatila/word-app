@@ -219,11 +219,11 @@ export const deA2P3: SkillExercise[] = [
         ],
         minWords: 40,
         phrases: [
-          { de: "Ich kenne das Gefühl.", tr: "Bu duyguyu bilirim." },
-          { de: "Bei mir hat … geholfen.", tr: "Bende … işe yaradı." },
-          { de: "Am Anfang war es schwer.", tr: "Başta zordu." },
-          { de: "Mein Tipp ist: …", tr: "Benim tavsiyem: …" },
-          { de: "Viel Glück!", tr: "Bol şans!" },
+          { de: "Ich kenne das Gefühl.", tr: "Bu duyguyu bilirim.", en: "I know that feeling." },
+          { de: "Bei mir hat … geholfen.", tr: "Bende … işe yaradı.", en: "… helped me." },
+          { de: "Am Anfang war es schwer.", tr: "Başta zordu.", en: "It was hard at the start." },
+          { de: "Mein Tipp ist: …", tr: "Benim tavsiyem: …", en: "My tip is: …" },
+          { de: "Viel Glück!", tr: "Bol şans!", en: "Good luck!" },
         ],
         sample:
           "Hallo, ich kenne das Gefühl sehr gut. Vor einem Jahr bin ich in diese Stadt gezogen und am Anfang " +

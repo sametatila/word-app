@@ -252,11 +252,11 @@ export const deB2: SkillExercise[] = [
         ],
         minWords: 90,
         phrases: [
-          { de: "mit Interesse habe ich gelesen, dass …", tr: "… okuduğumu ilgiyle belirtmek isterim" },
-          { de: "Ihre Gründe kann ich nachvollziehen, allerdings …", tr: "Gerekçenizi anlıyorum, ancak …" },
-          { de: "Besonders betroffen sind …", tr: "Bundan en çok … etkileniyor" },
-          { de: "Ich möchte deshalb vorschlagen, …", tr: "Bu yüzden … önermek istiyorum" },
-          { de: "Über eine kurze Rückmeldung wäre ich dankbar.", tr: "Kısa bir geri dönüş için minnettar olurum." },
+          { de: "mit Interesse habe ich gelesen, dass …", tr: "… okuduğumu ilgiyle belirtmek isterim", en: "I read with interest that …" },
+          { de: "Ihre Gründe kann ich nachvollziehen, allerdings …", tr: "Gerekçenizi anlıyorum, ancak …", en: "I can follow your reasoning, however …" },
+          { de: "Besonders betroffen sind …", tr: "Bundan en çok … etkileniyor", en: "… are affected most" },
+          { de: "Ich möchte deshalb vorschlagen, …", tr: "Bu yüzden … önermek istiyorum", en: "I would therefore like to suggest …" },
+          { de: "Über eine kurze Rückmeldung wäre ich dankbar.", tr: "Kısa bir geri dönüş için minnettar olurum.", en: "I'd be grateful for a brief reply." },
         ],
         sample:
           "Sehr geehrte Damen und Herren,\n\n" +

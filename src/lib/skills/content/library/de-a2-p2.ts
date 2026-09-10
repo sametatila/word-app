@@ -207,11 +207,11 @@ export const deA2P2: SkillExercise[] = [
         ],
         minWords: 40,
         phrases: [
-          { de: "Ich habe … gefunden.", tr: "… buldum." },
-          { de: "Auf Ihrem Ausweis steht …", tr: "Kimliğinizde … yazıyor" },
-          { de: "In der Börse sind …", tr: "Cüzdanın içinde … var" },
-          { de: "Sie können … abholen.", tr: "… gelip alabilirsiniz." },
-          { de: "Sie erreichen mich unter …", tr: "Bana … numarasından ulaşabilirsiniz." },
+          { de: "Ich habe … gefunden.", tr: "… buldum.", en: "I've found …" },
+          { de: "Auf Ihrem Ausweis steht …", tr: "Kimliğinizde … yazıyor", en: "Your ID says …" },
+          { de: "In der Börse sind …", tr: "Cüzdanın içinde … var", en: "There is … in the purse" },
+          { de: "Sie können … abholen.", tr: "… gelip alabilirsiniz.", en: "You can pick … up." },
+          { de: "Sie erreichen mich unter …", tr: "Bana … numarasından ulaşabilirsiniz.", en: "You can reach me on …" },
         ],
         sample:
           "Sehr geehrte Frau Doblinger, ich habe gestern Abend im Stadtpark eine schwarze Geldbörse gefunden. " +

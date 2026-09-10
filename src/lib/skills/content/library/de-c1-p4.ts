@@ -242,11 +242,11 @@ export const deC1P4: SkillExercise[] = [
         ],
         minWords: 120,
         phrases: [
-          { de: "Erst mal: Ich freue mich für dich.", tr: "Öncelikle: senin adına sevindim." },
-          { de: "Ich sage dir einen Punkt, und dann lasse ich es.", tr: "Tek bir noktayı söyleyeyim, sonra bırakıyorum." },
-          { de: "Du weißt ja selbst am besten, …", tr: "Sen zaten en iyi bilirsin …" },
-          { de: "Das kann ich nicht beurteilen.", tr: "Bunu değerlendiremem." },
-          { de: "Ruf mich mal an, wenn …", tr: "… olunca bir ara beni ara" },
+          { de: "Erst mal: Ich freue mich für dich.", tr: "Öncelikle: senin adına sevindim.", en: "First of all: I'm happy for you." },
+          { de: "Ich sage dir einen Punkt, und dann lasse ich es.", tr: "Tek bir noktayı söyleyeyim, sonra bırakıyorum.", en: "I'll make one point and then I'll leave it." },
+          { de: "Du weißt ja selbst am besten, …", tr: "Sen zaten en iyi bilirsin …", en: "You know best yourself …" },
+          { de: "Das kann ich nicht beurteilen.", tr: "Bunu değerlendiremem.", en: "I can't judge that." },
+          { de: "Ruf mich mal an, wenn …", tr: "… olunca bir ara beni ara", en: "Give me a ring when …" },
         ],
         sample:
           "Hey Su,\n\n" +

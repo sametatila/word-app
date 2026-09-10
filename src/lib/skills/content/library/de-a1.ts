@@ -198,11 +198,11 @@ export const deA1: SkillExercise[] = [
         checklist: ["Nerede olduğunu yaz", "Havayı anlat", "Her gün yaptığın bir şeyi yaz", "Ne zaman döndüğünü söyle ve vedalaş"],
         minWords: 25,
         phrases: [
-          { de: "Viele Grüße aus …", tr: "…'den selamlar" },
-          { de: "Hier ist es …", tr: "Burası …" },
-          { de: "Jeden Tag …", tr: "Her gün …" },
-          { de: "Am … komme ich zurück.", tr: "… günü dönüyorum." },
-          { de: "Bis bald!", tr: "Yakında görüşürüz!" },
+          { de: "Viele Grüße aus …", tr: "…'den selamlar", en: "Greetings from …" },
+          { de: "Hier ist es …", tr: "Burası …", en: "It's … here" },
+          { de: "Jeden Tag …", tr: "Her gün …", en: "Every day …" },
+          { de: "Am … komme ich zurück.", tr: "… günü dönüyorum.", en: "I'm coming back on …" },
+          { de: "Bis bald!", tr: "Yakında görüşürüz!", en: "See you soon!" },
         ],
         sample:
           "Hallo Ali, viele Grüße aus Italien! Ich bin mit meiner Familie am Meer. Das Wetter ist super, jeden Tag scheint die Sonne. " +

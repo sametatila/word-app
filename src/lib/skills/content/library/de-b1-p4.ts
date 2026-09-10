@@ -228,11 +228,11 @@ export const deB1P4: SkillExercise[] = [
         ],
         minWords: 60,
         phrases: [
-          { de: "Ich bin seit … Mitglied.", tr: "… yıldır üyeyim." },
-          { de: "Meine Situation hat sich geändert.", tr: "Durumum değişti." },
-          { de: "Deshalb möchte ich fragen, ob …", tr: "Bu yüzden … olup olmadığını sormak istiyorum" },
-          { de: "Eine Bescheinigung wird mitgeschickt.", tr: "Bir belge ekte gönderiliyor." },
-          { de: "Für eine kurze Rückmeldung wäre ich dankbar.", tr: "Kısa bir dönüş için minnettar olurum." },
+          { de: "Ich bin seit … Mitglied.", tr: "… yıldır üyeyim.", en: "I've been a member for …" },
+          { de: "Meine Situation hat sich geändert.", tr: "Durumum değişti.", en: "My situation has changed." },
+          { de: "Deshalb möchte ich fragen, ob …", tr: "Bu yüzden … olup olmadığını sormak istiyorum", en: "So I'd like to ask whether …" },
+          { de: "Eine Bescheinigung wird mitgeschickt.", tr: "Bir belge ekte gönderiliyor.", en: "A certificate is enclosed." },
+          { de: "Für eine kurze Rückmeldung wäre ich dankbar.", tr: "Kısa bir dönüş için minnettar olurum.", en: "I'd be grateful for a brief reply." },
         ],
         sample:
           "Sehr geehrte Frau Reinhardt, mein Name ist Kerem Aksoy, ich bin seit vier Jahren Mitglied im Turnverein " +

@@ -241,11 +241,11 @@ export const deC1P2: SkillExercise[] = [
         ],
         minWords: 120,
         phrases: [
-          { de: "Was passiert ist: …", tr: "Ne oldu: …" },
-          { de: "Die Abwägung war damals vertretbar.", tr: "O günkü tercih savunulabilirdi." },
-          { de: "Wir hätten … bemerken können.", tr: "… fark edebilirdik." },
-          { de: "Rückblickend zeigt sich, dass …", tr: "Geriye bakınca … görülüyor" },
-          { de: "Daraus folgen zwei Konsequenzen: …", tr: "Bundan iki sonuç çıkıyor: …" },
+          { de: "Was passiert ist: …", tr: "Ne oldu: …", en: "What happened: …" },
+          { de: "Die Abwägung war damals vertretbar.", tr: "O günkü tercih savunulabilirdi.", en: "The judgement made at the time was defensible." },
+          { de: "Wir hätten … bemerken können.", tr: "… fark edebilirdik.", en: "We could have noticed …" },
+          { de: "Rückblickend zeigt sich, dass …", tr: "Geriye bakınca … görülüyor", en: "In hindsight it turns out that …" },
+          { de: "Daraus folgen zwei Konsequenzen: …", tr: "Bundan iki sonuç çıkıyor: …", en: "Two consequences follow from this: …" },
         ],
         sample:
           "Nachbetrachtung: Ausfall der Anmeldung am vierzehnten September\n\n" +

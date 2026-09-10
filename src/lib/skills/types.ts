@@ -97,7 +97,11 @@ type ExerciseBase = {
   level: CefrLevel;
   /** Almanca başlık. */
   title: string;
-  /** Tür etiketi, Türkçe: "E-posta", "İlan", "Haber", "Diyalog"… */
+  /**
+   * Tür etiketi — kapalı bir SLUG kümesi ("email", "ad", "dialogue"…),
+   * arayüz sözlüğünde `genre.<slug>` anahtarıyla çevriliyor. Eskiden
+   * doğrudan Türkçe yazılıyordu; artık öyle değil.
+   */
   genre: string;
   /** Türkçe tek cümlelik bağlam/yönerge. */
   intro: string;

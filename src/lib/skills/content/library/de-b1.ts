@@ -243,11 +243,11 @@ export const deB1: SkillExercise[] = [
         ],
         minWords: 60,
         phrases: [
-          { de: "Ich habe Ihre Anzeige … gelesen.", tr: "İlanınızı … okudum." },
-          { de: "Ich interessiere mich für …", tr: "… ile ilgileniyorum" },
-          { de: "Zurzeit arbeite ich als …", tr: "Şu anda … olarak çalışıyorum" },
-          { de: "Dienstags hätte ich Zeit.", tr: "Salı günleri vaktim olur." },
-          { de: "Über eine Antwort würde ich mich freuen.", tr: "Cevabınızı beklerim." },
+          { de: "Ich habe Ihre Anzeige … gelesen.", tr: "İlanınızı … okudum.", en: "I read your advertisement …" },
+          { de: "Ich interessiere mich für …", tr: "… ile ilgileniyorum", en: "I'm interested in …" },
+          { de: "Zurzeit arbeite ich als …", tr: "Şu anda … olarak çalışıyorum", en: "At the moment I work as …" },
+          { de: "Dienstags hätte ich Zeit.", tr: "Salı günleri vaktim olur.", en: "I'd be free on Tuesdays." },
+          { de: "Über eine Antwort würde ich mich freuen.", tr: "Cevabınızı beklerim.", en: "I look forward to your reply." },
         ],
         sample:
           "Sehr geehrte Damen und Herren,\n\n" +

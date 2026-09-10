@@ -241,11 +241,11 @@ export const deB2P4: SkillExercise[] = [
         ],
         minWords: 90,
         phrases: [
-          { de: "Ich bin für den Antrag, aber …", tr: "Öneriye katılıyorum, ama …" },
-          { de: "Zwei Gründe sprechen dafür.", tr: "Bunun iki gerekçesi var." },
-          { de: "Je …, desto …", tr: "Ne kadar …, o kadar …" },
-          { de: "Einen Einwand nehme ich ernst: …", tr: "Bir itirazı ciddiye alıyorum: …" },
-          { de: "Mein Vorschlag: …", tr: "Önerim: …" },
+          { de: "Ich bin für den Antrag, aber …", tr: "Öneriye katılıyorum, ama …", en: "I'm in favour of the motion, but …" },
+          { de: "Zwei Gründe sprechen dafür.", tr: "Bunun iki gerekçesi var.", en: "There are two reasons for it." },
+          { de: "Je …, desto …", tr: "Ne kadar …, o kadar …", en: "The more …, the more …" },
+          { de: "Einen Einwand nehme ich ernst: …", tr: "Bir itirazı ciddiye alıyorum: …", en: "I take one objection seriously: …" },
+          { de: "Mein Vorschlag: …", tr: "Önerim: …", en: "My suggestion: …" },
         ],
         sample:
           "Ich bin für den Antrag, aber nicht in dieser Form. Zwei Gründe sprechen dafür. Erstens tragen im " +

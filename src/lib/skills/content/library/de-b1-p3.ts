@@ -225,11 +225,11 @@ export const deB1P3: SkillExercise[] = [
         ],
         minWords: 60,
         phrases: [
-          { de: "Angefangen hat es mit …", tr: "Her şey … ile başladı" },
-          { de: "Ich hätte nie gedacht, dass …", tr: "… olacağını hiç düşünmezdim" },
-          { de: "Es dauert …, und das ist der Punkt.", tr: "… sürüyor, mesele de tam bu." },
-          { de: "Seitdem …", tr: "O zamandan beri …" },
-          { de: "Ich würde es jedem empfehlen, der …", tr: "… olan herkese tavsiye ederdim" },
+          { de: "Angefangen hat es mit …", tr: "Her şey … ile başladı", en: "It all started with …" },
+          { de: "Ich hätte nie gedacht, dass …", tr: "… olacağını hiç düşünmezdim", en: "I'd never have thought that …" },
+          { de: "Es dauert …, und das ist der Punkt.", tr: "… sürüyor, mesele de tam bu.", en: "It takes …, and that's the point." },
+          { de: "Seitdem …", tr: "O zamandan beri …", en: "Ever since then …" },
+          { de: "Ich würde es jedem empfehlen, der …", tr: "… olan herkese tavsiye ederdim", en: "I'd recommend it to anyone who …" },
         ],
         sample:
           "Angefangen hat es mit einer Kiste. Vor drei Jahren habe ich darin vierzig Briefe von meiner Großmutter " +

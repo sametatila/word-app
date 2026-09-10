@@ -237,11 +237,11 @@ export const deB2P5: SkillExercise[] = [
         ],
         minWords: 90,
         phrases: [
-          { de: "In der ersten Woche geht es nur darum, dass …", tr: "İlk hafta yalnız … ile ilgilidir" },
-          { de: "Gewöhne ihn an …", tr: "Onu …'e alıştır" },
-          { de: "Rechne damit, dass …", tr: "… olacağını hesaba kat" },
-          { de: "Melde alles, wovor …", tr: "…'den korktuğu her şeyi bildir" },
-          { de: "Sprich mit jemandem, der …", tr: "… olan biriyle konuş" },
+          { de: "In der ersten Woche geht es nur darum, dass …", tr: "İlk hafta yalnız … ile ilgilidir", en: "The first week is only about …" },
+          { de: "Gewöhne ihn an …", tr: "Onu …'e alıştır", en: "Get him used to …" },
+          { de: "Rechne damit, dass …", tr: "… olacağını hesaba kat", en: "Expect that …" },
+          { de: "Melde alles, wovor …", tr: "…'den korktuğu her şeyi bildir", en: "Report everything he's afraid of" },
+          { de: "Sprich mit jemandem, der …", tr: "… olan biriyle konuş", en: "Talk to someone who …" },
         ],
         sample:
           "Anleitung für neue Welpenpaten\n\n" +

@@ -203,11 +203,11 @@ export const deA1P5: SkillExercise[] = [
         ],
         minWords: 25,
         phrases: [
-          { de: "Herzlichen Glückwunsch zu …!", tr: "… için tebrikler!" },
-          { de: "Ich freue mich sehr für dich.", tr: "Senin için çok seviniyorum." },
-          { de: "Wie lange arbeitest du …?", tr: "Ne kadar çalışıyorsun …?" },
-          { de: "Können wir … feiern?", tr: "… kutlayabilir miyiz?" },
-          { de: "Ich habe ab … Zeit.", tr: "… saatinden itibaren vaktim var." },
+          { de: "Herzlichen Glückwunsch zu …!", tr: "… için tebrikler!", en: "Congratulations on …!" },
+          { de: "Ich freue mich sehr für dich.", tr: "Senin için çok seviniyorum.", en: "I'm really happy for you." },
+          { de: "Wie lange arbeitest du …?", tr: "Ne kadar çalışıyorsun …?", en: "How long do you work …?" },
+          { de: "Können wir … feiern?", tr: "… kutlayabilir miyiz?", en: "Can we celebrate …?" },
+          { de: "Ich habe ab … Zeit.", tr: "… saatinden itibaren vaktim var.", en: "I'm free from … onwards." },
         ],
         sample:
           "Hallo Marie, herzlichen Glückwunsch zur neuen Stelle! Ich freue mich sehr für dich. " +

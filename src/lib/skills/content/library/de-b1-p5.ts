@@ -224,11 +224,11 @@ export const deB1P5: SkillExercise[] = [
         ],
         minWords: 60,
         phrases: [
-          { de: "Hier das Wichtigste:", tr: "En önemlisi şu:" },
-          { de: "Um … zu …, brauchst du nur …", tr: "… için sadece … gerekiyor" },
-          { de: "…, damit …", tr: "… olsun diye …" },
-          { de: "Falls etwas kaputtgeht, …", tr: "Bir şey bozulursa …" },
-          { de: "Schreib mir einfach, statt lange zu überlegen.", tr: "Uzun uzun düşünmek yerine bana yaz." },
+          { de: "Hier das Wichtigste:", tr: "En önemlisi şu:", en: "Here's the main thing:" },
+          { de: "Um … zu …, brauchst du nur …", tr: "… için sadece … gerekiyor", en: "To …, all you need is …" },
+          { de: "…, damit …", tr: "… olsun diye …", en: "…, so that …" },
+          { de: "Falls etwas kaputtgeht, …", tr: "Bir şey bozulursa …", en: "If something breaks, …" },
+          { de: "Schreib mir einfach, statt lange zu überlegen.", tr: "Uzun uzun düşünmek yerine bana yaz.", en: "Just write to me instead of puzzling over it." },
         ],
         sample:
           "Liebe Nour, danke, dass du das machst! Hier das Wichtigste. Um die Pflanzen zu gießen, brauchst du nur " +

@@ -251,11 +251,11 @@ export const deC1: SkillExercise[] = [
         ],
         minWords: 120,
         phrases: [
-          { de: "Maßgeblich war für die Jury, dass …", tr: "Jüri için belirleyici olan …" },
-          { de: "Die Arbeit überzeugt vor allem durch …", tr: "Çalışma özellikle … ile ikna ediyor" },
-          { de: "Das schmälert nicht …", tr: "Bu, … değerini azaltmaz" },
-          { de: "Ausschlaggebend war schließlich …", tr: "Sonuçta belirleyici olan …" },
-          { de: "Die Jury spricht den Preis … zu.", tr: "Jüri ödülü …'ya verir." },
+          { de: "Maßgeblich war für die Jury, dass …", tr: "Jüri için belirleyici olan …", en: "What was decisive for the jury was that …" },
+          { de: "Die Arbeit überzeugt vor allem durch …", tr: "Çalışma özellikle … ile ikna ediyor", en: "The work convinces above all through …" },
+          { de: "Das schmälert nicht …", tr: "Bu, … değerini azaltmaz", en: "That does not diminish …" },
+          { de: "Ausschlaggebend war schließlich …", tr: "Sonuçta belirleyici olan …", en: "In the end the deciding factor was …" },
+          { de: "Die Jury spricht den Preis … zu.", tr: "Jüri ödülü …'ya verir.", en: "The jury awards the prize to …" },
         ],
         sample:
           "Maßgeblich war für die Jury nicht die Größe des Publikums, sondern die Frage, ob eine Arbeit Menschen " +

@@ -220,11 +220,11 @@ export const deA2P4: SkillExercise[] = [
         ],
         minWords: 40,
         phrases: [
-          { de: "Am … hat … stattgefunden.", tr: "… tarihinde … gerçekleşti." },
-          { de: "… Personen haben teilgenommen.", tr: "… kişi katıldı." },
-          { de: "Ein Problem gab es auch: …", tr: "Bir sorun da yaşandı: …" },
-          { de: "Nächstes Mal …", tr: "Bir dahaki sefere …" },
-          { de: "Vielen Dank an …", tr: "… teşekkür ederiz." },
+          { de: "Am … hat … stattgefunden.", tr: "… tarihinde … gerçekleşti.", en: "… took place on …" },
+          { de: "… Personen haben teilgenommen.", tr: "… kişi katıldı.", en: "… people took part." },
+          { de: "Ein Problem gab es auch: …", tr: "Bir sorun da yaşandı: …", en: "There was one problem too: …" },
+          { de: "Nächstes Mal …", tr: "Bir dahaki sefere …", en: "Next time …" },
+          { de: "Vielen Dank an …", tr: "… teşekkür ederiz.", en: "Many thanks to …" },
         ],
         sample:
           "Am Sonntag, dem vierzehnten Mai, hat unsere erste gemeinsame Fahrradtour stattgefunden. " +

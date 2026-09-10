@@ -213,11 +213,11 @@ export const deA2P5: SkillExercise[] = [
         ],
         minWords: 40,
         phrases: [
-          { de: "Es tut mir leid, dass …", tr: "… için üzgünüm" },
-          { de: "Bei mir hat sich viel verändert.", tr: "Bende çok şey değişti." },
-          { de: "Und wie geht es dir?", tr: "Peki sen nasılsın?" },
-          { de: "Möchtest du uns besuchen?", tr: "Bizi ziyaret etmek ister misin?" },
-          { de: "Ich vermisse dich!", tr: "Seni özlüyorum!" },
+          { de: "Es tut mir leid, dass …", tr: "… için üzgünüm", en: "I'm sorry that …" },
+          { de: "Bei mir hat sich viel verändert.", tr: "Bende çok şey değişti.", en: "A lot has changed for me." },
+          { de: "Und wie geht es dir?", tr: "Peki sen nasılsın?", en: "And how are you?" },
+          { de: "Möchtest du uns besuchen?", tr: "Bizi ziyaret etmek ister misin?", en: "Would you like to visit us?" },
+          { de: "Ich vermisse dich!", tr: "Seni özlüyorum!", en: "I miss you!" },
         ],
         sample:
           "Liebe Ayşe, seit sechs Monaten habe ich dir nicht geschrieben, das tut mir leid. " +

@@ -200,11 +200,11 @@ export const deA1P4: SkillExercise[] = [
         ],
         minWords: 25,
         phrases: [
-          { de: "Der Laden liegt …", tr: "Dükkân … konumunda" },
-          { de: "Mir gefällt besonders …", tr: "Özellikle … hoşuma gidiyor" },
-          { de: "Nur … ist nicht so gut.", tr: "Yalnız … pek iyi değil." },
-          { de: "Ich kann … empfehlen.", tr: "… tavsiye edebilirim." },
-          { de: "Ich gebe … von fünf Sternen.", tr: "Beş yıldız üzerinden … veriyorum." },
+          { de: "Der Laden liegt …", tr: "Dükkân … konumunda", en: "The shop is …" },
+          { de: "Mir gefällt besonders …", tr: "Özellikle … hoşuma gidiyor", en: "I particularly like …" },
+          { de: "Nur … ist nicht so gut.", tr: "Yalnız … pek iyi değil.", en: "Only … isn't so good." },
+          { de: "Ich kann … empfehlen.", tr: "… tavsiye edebilirim.", en: "I can recommend …" },
+          { de: "Ich gebe … von fünf Sternen.", tr: "Beş yıldız üzerinden … veriyorum.", en: "I give it … out of five stars." },
         ],
         sample:
           "Die Bäckerei Sonne liegt am Marktplatz, direkt neben der Apotheke. Das Brot ist immer frisch und die " +

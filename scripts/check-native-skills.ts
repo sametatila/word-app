@@ -25,7 +25,15 @@ const dict = JSON.parse(
 ) as NativeDict;
 
 type Q = { explain?: string };
-type Ex = { id: string; course?: string; intro?: string; questions?: Q[] };
+type G = { de?: string; tr?: string; en?: string; note?: string };
+type Ex = {
+  id: string;
+  course?: string;
+  intro?: string;
+  questions?: Q[];
+  gloss?: G[];
+  tasks?: { phrases?: G[] }[];
+};
 
 /* Almanca kurs. İngilizce kursun egzersizlerinde de Türkçe yönerge var ama
    İngilizce konuşan biri İngilizce kursu almıyor — o eksen `PAIR_READY`de
@@ -34,7 +42,14 @@ const list = (BUNDLED_EXERCISES as unknown as Ex[]).filter((e) => (e.course ?? "
 
 let strings = 0;
 let quotes = 0;
+let glosses = 0;
 const misses = new Map<string, { ex: string; n: number }>();
+/* Sözlükçe KATLANIYOR, çevrilmiyor: `tr` yerine `en` konuyor. Karşılığı
+   olmayan bir madde egzersizi tümden reddettiriyor ve bu "reddedildi"
+   listesinde sebebi görünmüyor — o yüzden ayrıca sayılıyor. Bir kez
+   yaşandı: kütüphanenin 25 yazma egzersizinde `phrases` alanının 125
+   maddesi `en` taşımıyordu ve 25 egzersiz birden düşüyordu. */
+const noEn = new Map<string, { de: string; ex: string }>();
 const bad: string[] = [];
 
 for (const e of list) {
@@ -51,14 +66,26 @@ for (const e of list) {
       misses.set(tr, m);
     }
   }
+  for (const g of [...(e.gloss ?? []), ...(e.tasks ?? []).flatMap((t) => t.phrases ?? [])]) {
+    glosses++;
+    if (!g.en?.trim()) noEn.set(g.tr ?? g.de ?? "?", { de: g.de ?? "?", ex: e.id });
+    if (g.note?.trim() && dict.prose[g.note] === undefined)
+      misses.set(g.note, { ex: e.id, n: (misses.get(g.note)?.n ?? 0) + 1 });
+  }
   if (!resolveExercise(dict, e as unknown as { intro: string; questions?: { explain: string }[] }))
     bad.push(e.id);
 }
 
 console.log(
   `egzersiz ${list.length} · çevrilecek dize ${strings} · alıntı (geçiş) ${quotes} · ` +
-    `çözülen egzersiz ${list.length - bad.length}`,
+    `katlanan sözlükçe ${glosses} · çözülen egzersiz ${list.length - bad.length}`,
 );
+
+if (noEn.size) {
+  console.log(`\nHATA: ${noEn.size} sözlükçe maddesinin \`en\` karşılığı yok\n`);
+  for (const [tr, m] of [...noEn].slice(0, 25)) console.log(`  [${m.ex}] ${m.de} — ${tr}`);
+  process.exit(1);
+}
 
 if (misses.size) {
   const total = [...misses.values()].reduce((a, m) => a + m.n, 0);
