@@ -6,6 +6,7 @@ export const de: Record<string, string> = {
   "achu.and_n_more": "und {n} weitere",
   "achu.batch_note": "Das ist das Ergebnis deiner bisherigen Arbeit. Alle liegen in deinem Profil.",
   "achu.tap_to_continue": "Zum Fortfahren tippen",
+  "achievements.recent": "Zuletzt verdient",
   "achievements.achievements": "Erfolge",
   "achievements.earned_count": "{n}/{total} erhalten",
   "achievements.earned": "Erhalten",

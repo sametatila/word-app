@@ -11,6 +11,7 @@ export const tr: Record<string, string> = {
   "achu.and_n_more": "ve {n} tane daha",
   "achu.batch_note": "Bugüne kadar yaptığın işin karşılığı. Hepsi profilinde duruyor.",
   "achu.tap_to_continue": "Devam etmek için dokun",
+  "achievements.recent": "Son kazanılan",
   "achievements.achievements": "Başarımlar",
   "achievements.earned_count": "{n}/{total} kazanıldı",
   "achievements.earned": "Kazanıldı",

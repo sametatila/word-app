@@ -8,6 +8,7 @@ export const enBase: Record<string, string> = {
   "achu.and_n_more": "and {n} more",
   "achu.batch_note": "This is what your work so far adds up to. They all live in your profile.",
   "achu.tap_to_continue": "Tap to continue",
+  "achievements.recent": "Recently earned",
   "achievements.achievements": "Achievements",
   "achievements.earned_count": "{n}/{total} earned",
   "achievements.earned": "Earned",

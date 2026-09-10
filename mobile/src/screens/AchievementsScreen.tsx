@@ -1,5 +1,5 @@
 import React, { useEffect, useMemo, useState } from "react";
-import { t } from "../lib/i18n";
+import { t, dateLocale, formatNumber } from "../lib/i18n";
 import { View, ScrollView } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { useNavigation } from "@react-navigation/native";
@@ -64,12 +64,30 @@ function Badge({ a, colors }: { a: Achievement; colors: Palette }) {
   );
 }
 
+type Board = { rows: Achievement[]; unlockedCount: number; total: number };
+
+/** "Sıradaki" bölümünde kaç rozet gösterilir — web `achievement-wall` ile aynı. */
+const NEXT_COUNT = 4;
+
+/** Küçük büyük-harf etiket + rozet ızgarası; grup bölümleri ve "sıradaki" aynı kabı kullanıyor. */
+function Section({ label, rows, colors }: { label: string; rows: Achievement[]; colors: Palette }) {
+  if (!rows.length) return null;
+  return (
+    <View style={{ marginTop: spacing.lg }}>
+      <Text variant="caption" color={colors.textMuted} style={{ marginBottom: spacing.sm, marginLeft: 4 }}>{label.toLocaleUpperCase(dateLocale())}</Text>
+      <View style={{ flexDirection: "row", flexWrap: "wrap", gap: spacing.md }}>
+        {rows.map((a) => <Badge key={a.id} a={a} colors={colors} />)}
+      </View>
+    </View>
+  );
+}
+
 export function AchievementsScreen() {
   const { colors } = useTheme();
   const insets = useSafeAreaInsets();
   const nav = useNavigation<{ goBack: () => void }>();
   const { user } = useAuth();
-  const [remote, setRemote] = useState<Achievement[] | null>(null);
+  const [board, setBoard] = useState<Board | null>(null);
   const [phase, setPhase] = useState<"loading" | "ready" | "error">("loading");
   const [attempt, setAttempt] = useState(0);
 
@@ -78,14 +96,49 @@ export function AchievementsScreen() {
     if (!user) { setPhase("error"); return; }
     let alive = true;
     setPhase("loading");
-    api<{ rows: Achievement[] }>("/api/achievements")
-      .then((d) => { if (alive) { if (Array.isArray(d?.rows)) { setRemote(d.rows); setPhase("ready"); } else setPhase("error"); } })
+    api<Partial<Board>>("/api/achievements")
+      .then((d) => {
+        if (!alive) return;
+        /* Gövde körü körüne kabul edilmiyor: biçimi tutmayan bir cevapta
+           sayaçlar `undefined` olur ve ilerleme şeridi NaN genişlik alırdı.
+           Web de aynı denetimi yapıyor (`achievement-wall`). */
+        if (Array.isArray(d?.rows) && typeof d.total === "number" && typeof d.unlockedCount === "number") {
+          setBoard({ rows: d.rows, unlockedCount: d.unlockedCount, total: d.total });
+          setPhase("ready");
+        } else setPhase("error");
+      })
       .catch(() => { if (alive) setPhase("error"); });
     return () => { alive = false; };
   }, [user, attempt]);
 
-  const list = useMemo(() => remote ?? [], [remote]);
-  const earned = list.filter((a) => a.unlocked).length;
+  const list = useMemo(() => board?.rows ?? [], [board]);
+  /*
+   * SAYAÇLAR SUNUCUDAN. Eskiden `list.filter(unlocked).length` ile yeniden
+   * sayılıyordu; sunucu `unlockedCount` ve `total`ı zaten gönderiyor ve iki
+   * sayının aynı kalacağının garantisi yok (satır listesi bir gün
+   * sayfalanırsa yerel sayım sessizce yanlışa döner). Web sunucununkini
+   * kullanıyor.
+   */
+  const earned = board?.unlockedCount ?? 0;
+  const total = board?.total ?? 0;
+  const pct = total ? Math.round((earned / total) * 100) : 0;
+
+  /**
+   * Bitmeye en yakın kilitli rozetler — web `achievement-wall` ile AYNI sıra.
+   *
+   * Sıra tamamlanma ORANINA göre: "48/50" ile "480/500" aynı oranda ama
+   * ilkinin kalanı iki, ikincisinin yirmi. Eşitlikte küçük hedef öne alınıyor.
+   */
+  const upcoming = useMemo(
+    () => list.filter((a) => !a.unlocked).sort((a, b) => b.done / b.target - a.done / a.target || a.target - b.target).slice(0, NEXT_COUNT),
+    [list],
+  );
+  /** Hepsi açıldıysa "sıradaki" diye bir şey kalmaz; en son kazanılanlar gelir. */
+  const recent = useMemo(
+    () => list.filter((a) => a.unlocked && a.unlockedAt).sort((a, b) => ((a.unlockedAt ?? "") < (b.unlockedAt ?? "") ? 1 : -1)).slice(0, NEXT_COUNT),
+    [list],
+  );
+  const lead = upcoming.length ? upcoming : recent;
   // Grup kovaları sunucudaki sırayla açılıyor; listede OLMAYAN bir grup gelirse
   // atılmıyor, sona ekleniyor. Eski hâli üç grup biliyordu ve dördüncüsü geldiğinde
   // etiketi `undefined` olup ekranı çökertiyordu.
@@ -107,7 +160,7 @@ export function AchievementsScreen() {
         </PressableScale>
         <View style={{ flex: 1 }}>
           <Text variant="h2">{t("achievements.achievements")}</Text>
-          {phase === "ready" ? <Text variant="caption" color={colors.textMuted}>{t("achievements.earned_count", { n: earned, total: list.length })}</Text> : null}
+          {phase === "ready" ? <Text variant="caption" color={colors.textMuted}>{t("achievements.earned_count", { n: formatNumber(earned), total: formatNumber(total) })}</Text> : null}
         </View>
       </View>
 
@@ -133,13 +186,15 @@ export function AchievementsScreen() {
         </View>
       ) : (
       <ScrollView contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.xxl }} showsVerticalScrollIndicator={false}>
+        {/* Kaçının açıldığı TEK BAKIŞTA: web duvarı bu şeridi baştan beri
+            çiziyor, mobilde yalnız başlıktaki sayı vardı. */}
+        <View style={{ height: 6, borderRadius: 3, backgroundColor: colors.surface2, overflow: "hidden", marginTop: spacing.sm }}>
+          <View style={{ height: "100%", width: `${pct}%`, backgroundColor: colors.primary, borderRadius: 3 }} />
+        </View>
+        {/* Önce "sıradaki" (hepsi açıldıysa "son kazanılan"), sonra gruplar. */}
+        <Section label={t(upcoming.length ? "skills.next" : "achievements.recent")} rows={lead} colors={colors} />
         {groups.map(([gk, rows]) => (
-          <View key={gk} style={{ marginTop: spacing.lg }}>
-            <Text variant="caption" color={colors.textMuted} style={{ marginBottom: spacing.sm, marginLeft: 4 }}>{groupLabel(gk).toUpperCase()}</Text>
-            <View style={{ flexDirection: "row", flexWrap: "wrap", gap: spacing.md }}>
-              {rows.map((a) => <Badge key={a.id} a={a} colors={colors} />)}
-            </View>
-          </View>
+          <Section key={gk} label={groupLabel(gk)} rows={rows} colors={colors} />
         ))}
       </ScrollView>
       )}
