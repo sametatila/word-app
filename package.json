@@ -111,6 +111,7 @@
     "check:lessons-swap": "tsx --tsconfig scripts/tsconfig.e2e.json data/lessons/swap/check.ts",
     "check:lessons-prose-de": "node data/lessons/prose-de/check.mjs",
     "check:skills-prose": "tsx --tsconfig scripts/tsconfig.e2e.json data/skills/prose/check.ts",
+    "check:skills-prose-de": "tsx --tsconfig scripts/tsconfig.e2e.json data/skills/prose-de/check.ts",
     "check:skills-task": "tsx --tsconfig scripts/tsconfig.e2e.json data/skills/task/check.ts",
     "check:mock-prose": "tsx --tsconfig scripts/tsconfig.e2e.json data/mock-exams/prose/check.ts",
     "check:mock-prose-de": "tsx --tsconfig scripts/tsconfig.e2e.json data/mock-exams/prose/check.ts --de",
