@@ -3469,3 +3469,37 @@ oraya her gidişte taze geliyor.
 alıştırmanın ortasındasın. `MockExamsScreen` ve `SkillsScreen` odakta yeniden
 çekiyor. `PathScreen`in ana verisi paketten ve yerel işaretlerden geliyor;
 sunucudan çektiği tek şey modül sınavı listesi ve o seviyeye bağlı.
+
+### 11.67 Sınav bitişinde iki alan hiç gönderilmiyordu
+
+Bu turda ölçümü ters yöne çevirdim: sunucunun gövdeden OKUDUĞU alanlarla
+istemcilerin GÖNDERDİĞİ alanları karşılaştırdım. `check-endpoints` her ucun
+bir çağıranı olduğunu ölçüyor ama gövdenin İÇİNE bakmıyor - ve orada iki
+gerçek eksik çıktı.
+
+`/api/exam` `action:"finish"` okuduğu alanlar: `action, day, level, module,
+seconds, sections, speakingScore, trial, vocabAnswers, writingScore`.
+
+    web   action day level module seconds sections speakingScore trial vocabAnswers writingScore
+    mobil action day level module seconds sections speakingScore   —        —        writingScore
+
+**a) `vocabAnswers` hiç gitmiyordu.** Sunucu bu alanı SRS'e yazıyor ve kodun
+kendi yorumu bunu söylüyor: *"Kelime cevapları SRS'e: sınav da bir tekrar
+(hatalar tipleriyle)."* Mobil göndermediği için Android'de sınavda YANLIŞ
+bilinen kelimeler tekrar kuyruğuna hiç girmiyordu - sınav öğrenmeye geri
+beslenmiyordu. Web baştan beri gönderiyor.
+
+Toplama `RoundView`ın bu oturumda genişletilen `onDone(correct, extra)`
+imzasından geliyor: `extra.quality`, `errorType`, `detail` doğrudan sunucunun
+süzgecine denk düşüyor. Üç kural web ile aynı: "bunu zaten biliyorum" (skip)
+yolunda cevap KAYDEDİLMİYOR, çok kelimeli tur (eşleştirme) `batch` ile her
+kelimeyi ayrı bildiriyor, `wordId` yoksa satır atlanıyor.
+
+**b) `trial` hiç gitmiyordu.** Kapak zaten biliyor - `paper.trial` ekranda
+uyarı olarak çiziliyor ("bu sonuç sayılmayacak") - ama geri gönderilmiyordu,
+yani DENEME sayılması gereken sınav sunucuda GERÇEK sonuç olarak
+kaydediliyordu. Kullanıcıya "sayılmayacak" denip sayılıyordu.
+
+Bu, bu oturumda beş kez düzeltilen "sessizce düşen alan" sınıfının aynısı ama
+TERS yönde: önceki beşi sunucunun DÖNDÜRDÜĞÜ alanların mobil tipinde
+karşılığı olmamasıydı; bu ikisi mobilin GÖNDERMEDİĞİ alanlar.

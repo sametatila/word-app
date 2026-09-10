@@ -109,6 +109,16 @@ export function ExamScreen() {
   const speakScores = useRef<number[]>([]);
   const writeScore = useRef<number | null>(null);
   const startedAt = useRef(Date.now());
+  /*
+   * KELİME CEVAPLARI SUNUCUYA GİDİYOR.
+   *
+   * `/api/exam` `finish` gövdesinde `vocabAnswers` okuyor ve gelenleri SRS'e
+   * yazıyor ("sınav da bir tekrar (hatalar tipleriyle)"). Mobil bu alanı HİÇ
+   * göndermiyordu: sınavda yanlış bilinen kelimeler tekrar kuyruğuna
+   * girmiyordu, yani sınav öğrenmeye geri beslenmiyordu. Web baştan beri
+   * gönderiyor (`exam-player` `vocabAnswers.current`).
+   */
+  const vocabAnswers = useRef<Record<string, unknown>[]>([]);
   const sent = useRef(false);
 
   useEffect(() => {
@@ -154,7 +164,12 @@ export function ExamScreen() {
         method: "POST",
         body: JSON.stringify({
           action: "finish", level, module: moduleIx, day: todayStr(),
-          sections, speakingScore: sp, writingScore: writeScore.current,
+          /* `trial` de eksikti: kapak zaten biliyor (`paper.trial`, aşağıda
+             uyarı olarak çiziliyor) ama geri gönderilmiyordu, yani DENEME
+             sayılması gereken sınav GERÇEK sonuç olarak kaydediliyordu. */
+          trial: paper.trial,
+          sections, vocabAnswers: vocabAnswers.current,
+          speakingScore: sp, writingScore: writeScore.current,
           seconds: Math.round((Date.now() - startedAt.current) / 1000),
         }),
       });
@@ -353,6 +368,7 @@ export function ExamScreen() {
         onSpeakScore={(p) => speakScores.current.push(p)}
         onWriteScore={(p) => { writeScore.current = p; }}
         onTick={(c) => { score.current[active].correct = c; }}
+        onVocabAnswer={(a) => vocabAnswers.current.push(a)}
         onDone={(c) => sectionDone(active, c)}
       />
     </View>
@@ -362,10 +378,12 @@ export function ExamScreen() {
 /* ─────────────────────────── bölümler ─────────────────────────── */
 
 function SectionBody({
-  id, paper, colors, insets, onDone, onTick, onSpeakScore, onWriteScore,
+  id, paper, colors, insets, onDone, onTick, onSpeakScore, onWriteScore, onVocabAnswer,
 }: {
   id: SectionId; paper: Paper; colors: Palette; insets: { bottom: number };
   onDone: (correct: number) => void;
+  /** Kelime turunun tek tek cevapları — SRS'e gidiyor (bkz. `vocabAnswers`). */
+  onVocabAnswer: (a: Record<string, unknown>) => void;
   /** Her maddeden sonra: süre dolarsa yarım bölümün doğruları da sayılsın. */
   onTick: (correct: number) => void;
   onSpeakScore: (p: number) => void;
@@ -386,7 +404,31 @@ function SectionBody({
     const r = paper.sections.vocab[idx];
     return (
       <View style={{ flex: 1 }}>
-        <RoundView key={r.id} round={r} onDone={(ok) => advance(ok, paper.sections.vocab.length)} />
+        <RoundView
+          key={r.id}
+          round={r}
+          onDone={(ok, extra) => {
+            /* Sunucunun süzgeci `wordId`, `game` ve `correct` istiyor; ötekiler
+               isteğe bağlı. "Bunu zaten biliyorum" (skip) yolunda cevap
+               KAYDEDİLMİYOR - web de öyle. Çok kelimeli tur (eşleştirme)
+               `batch` ile her kelimeyi ayrı bildiriyor. */
+            if (!extra?.skip) {
+              if (extra?.batch?.length) {
+                for (const b of extra.batch) onVocabAnswer({ wordId: b.wordId, game: r.game, correct: b.correct });
+              } else if (r.word?.id != null) {
+                onVocabAnswer({
+                  wordId: r.word.id,
+                  game: r.game,
+                  correct: ok,
+                  quality: extra?.quality,
+                  errorType: extra?.errorType,
+                  detail: extra?.detail,
+                });
+              }
+            }
+            advance(ok, paper.sections.vocab.length);
+          }}
+        />
       </View>
     );
   }
