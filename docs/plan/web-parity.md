@@ -1752,3 +1752,35 @@ Eklendi: yeni kelime turunda (`intro`) ikinci sıradaki sessiz düğme.
 web de öyle) ve `DoneExtra.skip` ile bu tur için CEVAP KAYDEDİLMİYOR - web
 `onDone([])` ile aynı şeyi söylüyor. Metinler webin cümleleri; anahtarlar
 mobil kaynağa taşındı ve `i18n-pull` ile tabana çekildi.
+
+### 11.26 ZORUNLU İÇERİK KAPISI ANA DALDA KIRMIZI (oturumlar arası bulgu)
+
+Bu bir parite maddesi değil; kapı kapsamı ölçülürken çıktı ve kaydedilmeden
+geçilemez.
+
+`data/content/SPEC.md` ilk satırında şunu söylüyor: bütün öğretici içerik
+"**tek bir doğrulayıcıdan** geçer: `npm run test:content`" ve "doğrulayıcı
+yeşil olmadan içerik depoya girmez". Ölçüldü:
+
+  1. `test:content` CI'da HİÇ ÇALIŞMIYOR. `checks.yml`in çalıştırdığı 24
+     adımın içinde yok; kural yalnız yazının kendisine dayanıyor.
+  2. Ve bugün KIRMIZI. Uyarı bütçesi üç etikette aşılmış:
+
+         lessons: çok anlamlı vocab tr      188 > 81   (iki kattan fazla)
+         lessons: lecture N adım (N–N)       31 > 25
+         lessons: havuz dışı kelime N/N       5 > 4
+
+     Taban dosyasına son dokunan commit `0915c59f` (beceri kütüphanesi), yani
+     borç ÇALIŞMA AĞACINDA değil, ana dalda duruyor.
+
+CI'ya EKLENMEDİ: kırmızı bir kapıyı CI'ya koymak ana dalı herkes için anında
+kırmızıya çevirir - içerik üreten paralel oturumlar dâhil. Sıra tersi olmalı:
+önce borç ya kapatılır ya `--baseline` ile BİLİNÇLİ kabul edilir (SPEC'in
+kendi sözcüğü), sonra adım eklenir. Bu bir ürün/içerik kararı ve içeriği yazan
+tarafın kararı.
+
+Öneri, sırasıyla: (a) `npm run test:content -- lessons` ile üç etiketin
+hangi derslerden geldiğini çıkar, (b) "çok anlamlı vocab tr" 81'den 188'e
+neden çıktı - yeni derslerin sözlükçesi mi yoksa kuralın kendisi mi
+sıkılaştı, (c) karar verilince `checks.yml`e "İçerik doğrulaması" adımı ekle;
+o adım eklenmeden SPEC'in birinci cümlesi yalnız bir niyet.
