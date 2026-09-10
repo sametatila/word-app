@@ -83,6 +83,14 @@ jobs:
       # lint ve kontrast kapısından geçiyordu.
       - name: Renk kaynağı
         run: npm run check:colors
+      # Tasarım ölçekleri iki platformda aynı mı. Tipografi, yarıçap ve boşluk
+      # elle hizalanmış ve gerekçeleri yazılı ama hiçbir şey ölçmüyordu:
+      # mobilde `radii.lg`yi 20'den 18'e çeken bir düzenleme webi sessizce
+      # ayırır ve hata ancak iki ekranı yan yana koyan biri fark ederse
+      # görünür. `check:parity` kayıt defterleri için ne yapıyorsa bu betik
+      # tasarım ölçekleri için onu yapıyor.
+      - name: Tasarım jetonları
+        run: npm run check:tokens
       # Mobil paket kaynakla aynı içeriği taşıyor mu. Üç köprü ELLE
       # çalıştırılıyor: kaynağa yeni bir ders/egzersiz/kâğıt eklenip döküm
       # yenilenmezse mobil o içeriği sessizce taşımaz ve hata ancak ekranda

@@ -2595,3 +2595,43 @@ eşik yazmayı düşündüm; doğru cevap kapının kendisinde değildi -
 bileşenleri ona eşitlemek hem kuralı hem ölçümü tek noktaya bağlıyor.
 Ailelere göre eşik, kontrast matematiğini ikinci bir betiğe kopyalamak
 demek olurdu.
+
+### 11.45 Tipografi ve yarıçap eşleşiyordu — ama hiçbir şey ölçmüyordu
+
+Renk ekseninden çıkıp tipografiye geçtim ve bu kez sapma bulamadım. Sekiz
+punto varyantının hepsi birebir:
+
+    display 32/800/-0.5px · h1 26/800/-0.3px · h2 20/700 · h3 16/700
+    body 15/500 · bodyStrong 15/700 · caption 12.5/600 · micro 11/700/+0.4px
+
+Web bunları `--text-*` jetonlarında aynı değerlerle taşıyor ve yorumları
+mobilin piksel karşılığını yazıyor (`/* mobil: -0.5px @ 32 */`). Yarıçap da
+aynı - adlar bilerek farklı (mobilin `sm/md/lg/xl/xxl`si Tailwind'in kendi
+`rounded-*` adlarıyla çakışıyordu, web adları NEREDE kullanıldıklarını
+söylüyor: chip 10, tile 14, panel 20, card 26, float 34) ama sayılar
+mobildekiyle aynı. Boşluk ölçeği de öyle: 4/8/12/16/20/28/40, Tailwind'in
+0.25rem tabanında 1/2/3/4/5/7/10.
+
+**Bulunan eksik ölçüm değildi, ÖLÇEN yoktu.** Bu hizalama tamamen elle
+yapılmış ve gerekçesi yazılı, ama hiçbir kapı bakmıyordu: mobilde `radii.lg`yi
+20'den 18'e çeken bir düzenleme webi sessizce ayırır ve hata ancak iki ekranı
+yan yana koyan biri fark ederse görünür. `check:parity` kayıt defterleri
+(kurslar, oyunlar, seviyeler) için bu işi yapıyor; tasarım ölçekleri için
+karşılığı yoktu.
+
+`scripts/check-tokens.mjs`: `mobile/src/theme/tokens.ts`i okuyup
+`globals.css`teki jetonlarla karşılaştırıyor - yirmi ölçüm (8 punto + ağırlık
++ harf aralığı, 5 yarıçap, 7 boşluk). Yön mobil → web, çünkü Android en
+ileride olan taraf. Ad eşlemeleri (`bodyStrong`→`strong`, `sm`→`chip` …)
+betikte sebebiyle yazılı. `package.json`da `check:tokens`, CI'da "Tasarım
+jetonları" adımı.
+
+Kapının ölçtüğü doğrulandı: mobil `radii.lg` 18'e ve `h2` puntosu 21'e
+çekildiğinde ikisini de yakaladı (çıkış kodu 2), sonra geri alındı.
+
+**Bir yanlış pozitifi ölçüm düzeltti.** İlk hâli harf aralıklarını `em`
+cinsinden karşılaştırıyordu ve h1'i ayrışmış gösteriyordu: -0.3px @ 26 =
+-0.011538em, web ise -0.012em yazıyor. Bu gerçek bir ayrım değil, üç haneye
+yuvarlama - piksel cinsinden farkı 0.012px. Karşılaştırma piksele çevrildi ve
+toleransı 0.05px oldu; ölçünün birimi neyse karşılaştırma da o birimde
+olmalı.

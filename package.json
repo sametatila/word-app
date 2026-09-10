@@ -35,6 +35,7 @@
     "check:parity": "node scripts/parity-check.mjs",
     "check:endpoints": "node scripts/check-endpoints.mjs --check",
     "check:colors": "node scripts/check-colors.mjs",
+    "check:tokens": "node scripts/check-tokens.mjs",
     "check:pairs": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/check-pairs.ts",
     "test:legal-db": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/test-legal-db.ts",
     "test:entitlement": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/test-entitlement.ts",
