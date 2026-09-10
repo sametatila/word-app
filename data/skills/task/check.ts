@@ -70,12 +70,22 @@ const slots = (t: string): string => t.replace(/[\s:,;]*…[\s:,;]*/g, "");
 const numbers = (t: string): string[] =>
   [...String(t).matchAll(/(?<!\p{L})\d+/gu)].map((m) => m[0]).sort();
 
+/*
+  SÖZCÜK SINIRI \b DEĞİL. JavaScript'te `\b` ASCII harfe göre çalışıyor ve
+  Türkçe/Almanca harflerle biten ya da başlayan girdiler HİÇ eşleşmiyordu:
+  `\bortaç\b` "(ist + ortaç)" içinde tutmuyor (ç, `\b` için harf değil),
+  `\büber\b`, `\bçok\b`, `\bönce\b`, `\bözne\b` de aynı sebeple ölü
+  girdilerdi. Bir kural yazılıp hiç çalışmaması, kapının en sessiz kusuru:
+  liste doluyor, ölçüm hiç değişmiyor.
+
+  Yerine Unicode bakışı: (?<!\p{L}) … (?!\p{L}) ve /u bayrağı.
+*/
 /* Açıklık Türkçe mi / yabancı mı — `data/skills/prose/check.ts`in aynısı,
    aynı gerekçelerle. İkisi BİRLİKTE kullanılıyor: kural yalnız tanıdığı
    dilde çalışıyor, tanıyamadığı açıklığı zorlamıyor. */
 const TR_WORDS =
-  /\b(bir|ve|ile|için|değil|demek|var|yok|olur|olunur|olmak|gibi|daha|çok|ama|yani|kadar|sonra|önce|hâli|biçim|biçimi|yerine|zaman|yer|yön|memleket|ülkesi|nerede|yoktu|ya)\b/i;
-const TR_TERMS = /\b(mastar|ortaç|isim|fiil|zamir|özne|nesne|tekil|çoğul|edat|kip|ek|sıfat|zarf)\b/i;
+  /(?<!\p{L})(?:bir|ve|ile|için|değil|demek|var|yok|olur|olunur|olmak|gibi|daha|çok|ama|yani|kadar|sonra|önce|hâli|biçim|biçimi|yerine|zaman|yer|yön|memleket|ülkesi|nerede|yoktu|ya)(?!\p{L})/iu;
+const TR_TERMS = /(?<!\p{L})(?:mastar|ortaç|isim|fiil|zamir|özne|nesne|tekil|çoğul|edat|kip|ek|sıfat|zarf)(?!\p{L})/iu;
 /* KARIŞIK AÇIKLIKLAR — Almanca terim ile Türkçe açıklama aynı parantezin
    içinde. Üç tane çıktı ve üçü de listeye bir sözcük ekletti:
 
@@ -100,8 +110,8 @@ const TR_TERMS = /\b(mastar|ortaç|isim|fiil|zamir|özne|nesne|tekil|çoğul|eda
    bir şey kaybetmiyor. */
 const turkish = (t: string): boolean => /[ışğİĞŞ]/.test(t) || TR_WORDS.test(t) || TR_TERMS.test(t);
 const DE_WORDS =
-  /\b(der|die|das|ein|eine|einen|einem|ist|sind|war|nicht|kein|keine|und|mit|wir|ich|Sie|du|zu|auf|für|von|dem|den|im|am|bei|nach|vor|über|wie|was|wo|wer|bitte|hier|ja|nein|sehr|gut|noch|schon|aus|um|halb|man|sich|es|habe|hat|haben|werden|wird|wurde|worden|muss|müssen|kann|können|könnte|soll|sollen|will|wollen|darf|dürfen|mag|mögen|möchte|möchten|würde|würden|hätte|wäre|zurück)\b/;
-const EN_WORDS = /\b(the|is|are|was|were|you|your|a|an|of|to|in|and|it|that|for|we|I|my|please|do|does|not)\b/;
+  /(?<!\p{L})(?:der|die|das|ein|eine|einen|einem|ist|sind|war|nicht|kein|keine|und|mit|wir|ich|Sie|du|zu|auf|für|von|dem|den|im|am|bei|nach|vor|über|wie|was|wo|wer|bitte|hier|ja|nein|sehr|gut|noch|schon|aus|um|halb|man|sich|es|habe|hat|haben|werden|wird|wurde|worden|muss|müssen|kann|können|könnte|soll|sollen|will|wollen|darf|dürfen|mag|mögen|möchte|möchten|würde|würden|hätte|wäre|zurück)(?!\p{L})/u;
+const EN_WORDS = /(?<!\p{L})(?:the|is|are|was|were|you|your|a|an|of|to|in|and|it|that|for|we|I|my|please|do|does|not)(?!\p{L})/u;
 /*
   ö VE ü ALMANCAYI İŞARETLEMEZ. İlk yazımda ölçüt `[äöüßÄÖÜ]` idi ve iki
   Türkçe açıklığı Almanca sandı: „en büyük“ ve „gelseydi, görecektik“.
