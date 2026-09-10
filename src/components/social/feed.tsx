@@ -2,14 +2,40 @@
 
 import Link from "next/link";
 import { EmptyCard } from "@/components/empty-card";
-import { SparkIcon } from "@/components/icons";
+import { FlameIcon, HandshakeIcon, PodiumIcon, SparkIcon, TargetIcon, TrophyIcon } from "@/components/icons";
 import { useCallback, useEffect, useState } from "react";
 import { Avatar } from "@/components/avatar";
-import { RowSkeleton } from "@/components/skeleton";
+import { SkeletonCard, SkeletonLine, SkeletonPill, SkeletonTile } from "@/components/skeleton";
 import { errorText, feedText, social, timeAgo } from "@/lib/social/client";
 import type { FeedItem } from "@/lib/social/types";
 import { ReactionBar } from "./reaction-bar";
 import { useT, useLang } from "@/lib/i18n/client";
+
+/**
+ * Olay türü → ikon karosu — Android `social/FeedList` `eventTile` ile birebir
+ * (streak→flame, accent→violet, success→mint, primary→brand, info→sky).
+ *
+ * Kart NEYİN kutlandığını hiç söylemiyordu: seri kilometre taşı, başarım, lig
+ * birinciliği ve ortak görev webde tıpatıp aynı görünüyordu ve fark yalnız
+ * cümlenin içindeydi. Android türü kartın sağ üstünde bir karoyla söylüyor,
+ * yani akış göz gezdirilerek de okunuyor.
+ */
+function eventTile(type: string): { Icon: (p: { size?: number }) => React.JSX.Element; tint: string } {
+  switch (type) {
+    case "streak_milestone":
+      return { Icon: FlameIcon, tint: "var(--color-flame)" };
+    case "achievement":
+      return { Icon: TrophyIcon, tint: "var(--color-violet)" };
+    case "friend_joined":
+      return { Icon: HandshakeIcon, tint: "var(--color-mint)" };
+    case "quest_completed":
+      return { Icon: TargetIcon, tint: "var(--color-brand)" };
+    case "weekly_top":
+      return { Icon: PodiumIcon, tint: "var(--color-sky)" };
+    default:
+      return { Icon: SparkIcon, tint: "var(--color-brand)" };
+  }
+}
 
 /**
  * Arkadaş akışı. Yalnız kilometre taşları düşer; her satırda tepki çubuğu.
@@ -43,7 +69,32 @@ export function Feed({ onFindFriends }: { onFindFriends?: () => void }) {
     void load(null);
   }, [load]);
 
-  if (items === null) return <RowSkeleton rows={4} height={84} />;
+  /* İskelet gerçek kartın parçalarında: 44 avatar, iki metin satırı, tür
+     karosu, cümle ve tepki hapları. Düz 84 piksellik bloklar veri gelince
+     kartı yerinden oynatıyordu; mobil `FeedCardSkeleton` de aynı parçalar. */
+  if (items === null)
+    return (
+      <div className="flex flex-col gap-3">
+        {[0, 1, 2].map((i) => (
+          <SkeletonCard key={i}>
+            <div className="flex items-center gap-3">
+              <SkeletonTile size={44} className="rounded-full" />
+              <div className="min-w-0 flex-1">
+                <SkeletonLine variant="h3" width="55%" />
+                <SkeletonLine variant="caption" width={64} />
+              </div>
+              <SkeletonTile size={40} />
+            </div>
+            <SkeletonLine variant="body" width="90%" className="mt-3" />
+            <div className="mt-3 flex gap-1.5">
+              <SkeletonPill width={62} height={27} />
+              <SkeletonPill width={62} height={27} />
+              <SkeletonPill width={44} height={27} />
+            </div>
+          </SkeletonCard>
+        ))}
+      </div>
+    );
   if (!items.length) {
     return (
       <>
@@ -65,7 +116,7 @@ export function Feed({ onFindFriends }: { onFindFriends?: () => void }) {
   }
   /* Boş durumda da hata görünmeli: liste yokken ağ hatası tek geri bildirim. */
   return (
-    <div className="flex flex-col gap-2">
+    <div className="flex flex-col gap-3">
       {items.map((it) => (
         <FeedCard key={it.id} item={it} />
       ))}
@@ -83,27 +134,35 @@ export function FeedCard({ item }: { item: FeedItem }) {
   const t = useT();
   const lang = useLang();
   const name = item.user.name ?? t("social.unnamed");
+  const { Icon, tint } = eventTile(item.type);
+  /* Kendi olayında profil bağlantısı yok: kendi profilini açmak bir yere
+     gitmek değil. Android da yalnız başkasının avatarını basılabilir yapıyor. */
+  const linked = Boolean(item.user.username) && !item.isMine;
   return (
-    <article className="card px-4 py-3">
-      <div className="flex items-start gap-3">
-        {item.user.username ? (
-          /* Avatar `aria-hidden`, ad da burada bağlantı DEĞİL: bu bağlantının
-             erişilebilir bir adı hiç yoktu ve ekran okuyucu yalnız "bağlantı"
-             diyordu. Profile giden tek yol da bu. */
+    <article className="card p-4">
+      {/* Ad bu kartta bağlantı DEĞİL, profile giden tek yol avatar; bağlantının
+          erişilebilir adı da o yüzden kişinin adı. */}
+      <div className="flex items-center gap-3">
+        {linked ? (
           <Link href={`/u/${item.user.username}`} prefetch={false} aria-label={name} className="shrink-0">
-            <Avatar userId={item.user.userId} name={item.user.name} size={40} />
+            <Avatar userId={item.user.userId} name={item.user.name} size={44} />
           </Link>
         ) : (
-          <Avatar userId={item.user.userId} name={item.user.name} size={40} />
+          <Avatar userId={item.user.userId} name={item.user.name} size={44} />
         )}
         <div className="min-w-0 flex-1">
-          <p className="text-sm leading-snug">
-            <span className="font-bold">{item.isMine ? t("social.you") : name}</span> {feedText(item, lang)}
-          </p>
-          <p className="muted mt-0.5 text-[11px]">{timeAgo(item.createdAt, lang)}</p>
-          <ReactionBar eventId={item.id} summary={item.reactions} disabled={item.isMine} />
+          <p className="truncate text-h3">{item.isMine ? t("social.you") : name}</p>
+          <p className="muted text-caption">{timeAgo(item.createdAt, lang)}</p>
         </div>
+        <span
+          className="flex h-10 w-10 shrink-0 items-center justify-center"
+          style={{ borderRadius: "var(--radius-tile)", background: `color-mix(in srgb, ${tint} 13%, transparent)`, color: tint }}
+        >
+          <Icon size={20} />
+        </span>
       </div>
+      <p className="mt-3 text-body">{feedText(item, lang)}</p>
+      <ReactionBar eventId={item.id} summary={item.reactions} disabled={item.isMine} />
     </article>
   );
 }
