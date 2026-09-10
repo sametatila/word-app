@@ -1077,3 +1077,31 @@ BAĞLAMAK PORT DEĞİL, TASARIM İŞİ: webde eksik olan tek şey ad→bileşen
 haritası, ama Androidde o 60 küsur ikonun kendisi yok (mobil ikon kümesi 50
 ve tamamı arayüz ikonu). Android referans olduğu için webe tek taraflı eklemek
 de yeni bir ayrışma yaratırdı. Karar Samet'in.
+
+### 11.15 Ses tabloları ölçüldü; rozet kutlaması webde var, Androidde yok
+
+`lib/sfx` yorumu "yürüyüş modunun üç sesi — mobille birebir aynı tablo" diyor.
+İDDİA ÖLÇÜLDÜ ve doğru: `micon` (4 nota), `micoff` (4), `premium` (6) — her
+satır, her frekans, her zamanlama iki tarafta aynı.
+
+Geri bildirim sesleri de simetrik ve ikisi de kendi sıralamasını yorumluyor:
+webde `vibrate(kind)` önce `play(kind)` çağırıyor (masaüstünde titreşim yok,
+ses tek geri bildirim), mobilde `haptic(kind)` önce haptiği tetikleyip sonra
+`sfx(kind)` çağırıyor. Aynı tasarım, aynada.
+
+Cue kümesi farkı (web 13, mobil 7) çoğunlukla YÜZEY farkı: `danger` ve
+`record` yalnız meydan okuma ve boss oynatıcılarında çalıyor, ikisi de web'e
+özel. `start`, `perfect`, `stage` oturum oynatıcısında çalıyor ve mobilde
+karşılığı yok - küçük bir his farkı, ses dosyası gerektirmiyor.
+
+GERÇEK BOŞLUK: `unlock`. Web'de rozet açılışının kendi kutlaması var
+(`achievement-unlock`): sıraya alınmış tek rozet kartları, ikiden çoğunda
+toplu kart, kapatılabilir, sesli. Android'de böyle bir an HİÇ YOK - rozet
+yalnız Başarımlar tahtasında dolu görünüyor ve mobil ses kümesinde `unlock`
+cue'su bile yok.
+
+PORT EDİLMEDİ: kutlama bir özellik (kuyruk mantığı, iki kart düzeni, yeni bir
+ses). Bu turun kuralı Android'i referans alıyor ve burada ileride olan WEB.
+Karar Samet'in; not, kutlamanın Android'de en çok işe yarayacağı yeri de
+söylüyor - rozetler oturum sonunda açılıyor ve mobil oturum özeti zaten
+`Celebrate` bileşenini kullanıyor.
