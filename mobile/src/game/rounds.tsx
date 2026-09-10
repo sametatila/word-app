@@ -896,7 +896,6 @@ function TranslateRound({ round, onDone, colors }: { round: Round; onDone: Done;
               level: round.word?.niveau || "A1",
               task: { prompt: `Çevir: ${s.tr}`, target: s.de },
               answer: { text: typed },
-              locale: "tr",
               /* `day` bir YAZMA anahtarı: değerlendirme satırı o güne yazılıyor ve günlük
               kota o günün satırları sayılarak bulunuyor (bkz. api/assess `parseBody`).
               Mobil göndermiyordu, yani sunucunun UTC günü işliyordu: gece yarısından

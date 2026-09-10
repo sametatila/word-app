@@ -392,7 +392,7 @@ function FreeCard({ t, n, done, level, exerciseId, onSettle, colors }: { t: Free
     return {
       kind: "writing", level,
       task: { prompt: t.prompt, targets: (t.phrases ?? []).map((p) => p.de), constraints: [...(t.checklist ?? []), `en az ${t.minWords} kelime`] },
-      answer: { text: typed.trim() }, exerciseId, locale: "tr", lang: currentTargetLang(),
+      answer: { text: typed.trim() }, exerciseId, lang: currentTargetLang(),
       /* `day` YAZMA anahtarı: değerlendirme satırı o güne yazılıyor ve günlük
          kota o günün satırlarından sayılıyor. Kuyruğa giden gövde de aynı günü
          taşıyor - servis üç gün sonra dönse bile metin yazıldığı güne yazılır. */

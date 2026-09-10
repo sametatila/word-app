@@ -50,7 +50,8 @@ const S = (
   expectSpans?: string[],
 ): Sample => ({
   id,
-  req: { kind, level, task: { prompt, ...extra }, answer: { text }, locale: "tr" },
+  /* Örnekler Türkçe geri bildirim bekliyor: insan puanları da Türkçe yazıldı. */
+  req: { kind, level, task: { prompt, ...extra }, answer: { text }, native: "tr" },
   human,
   expectErrors,
   expectSpans,

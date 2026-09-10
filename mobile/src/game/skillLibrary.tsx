@@ -266,7 +266,7 @@ export function MonologueBody({ mono, level, exerciseId, onDone, colors }: {
         body: JSON.stringify({
           kind: "speaking", level,
           task: { prompt: mono.promptTr, targets: mono.targets.map((x) => x.de), constraints: [`${mono.minSeconds}–${mono.maxSeconds} saniye`, ...(mono.rubricHint ? [mono.rubricHint] : [])] },
-          answer: { text, transcript: [text] }, exerciseId, locale: "tr", lang: currentTargetLang(),
+          answer: { text, transcript: [text] }, exerciseId, lang: currentTargetLang(),
           /* `day` YAZMA anahtarı: satır o güne yazılıyor, günlük kota da o günün
              satırlarından sayılıyor. Gönderilmezse sunucunun UTC günü işliyor ve
              gece yarısından sonraki değerlendirme dünkü güne düşüyor. */
