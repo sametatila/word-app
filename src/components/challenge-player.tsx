@@ -25,13 +25,12 @@ const MAX_SECONDS = 75; // süre sonsuza uzamasın
 /**
  * Sayacın kırmızıya döndüğü ve saniyede bir uyarı tıkının başladığı eşik.
  *
- * 8'di; Android aynı adla 10 kullanıyor ve oradaki yorum "web ile aynı"
- * DİYORDU — yani ayrışma iki taraftan da görünmüyordu. Ölçüm ikisini
- * karşılaştırınca çıktı. Android'in değeri alındı: son saniyelerin kaç saniye
- * olduğu iki uygulamada aynı olmalı, aynı turu iki cihazda oynayan aynı anda
- * gerilmeli.
+ * BU MOD SÜREYİ KAZANDIRIYOR (başlangıç kısa, doğru cevap süre ekliyor), o
+ * yüzden eşik patron turundan daha dar: orada süre yalnız azalıyor ve son on
+ * saniye gerçekten son on saniye. Mobilde bu modun karşılığı YOK; adı aynı
+ * olan sabit `boss-player` içinde ve o ikisi zaten eşit (10).
  */
-const DANGER_SECONDS = 10;
+const DANGER_SECONDS = 8;
 
 /** Üst üste doğrularda puan çarpanı — asıl heyecan burada. */
 function multiplier(combo: number): number {
