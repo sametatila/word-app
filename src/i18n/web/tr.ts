@@ -635,8 +635,6 @@ export const trWeb: Record<string, string> = {
   "writ.empty_title": "Henüz değerlendirilmiş yazın yok",
   "writ.empty_sub": "Yazma alıştırmalarında serbest bir metin yazdığında buraya düşüyor: metnin, aldığı puan ve düzeltmeler bir arada duruyor. Aynı görevi tekrar yazdığında ikisini yan yana görebilirsin.",
   "writ.go_to_writing": "Yazma alıştırmalarına git",
-  "writ.kind_sentence": "Cümle",
-  "writ.kind_roleplay": "Rol yapma",
   "questw.rewards_ready": "{n} ödül hazır",
   "questw.claim_xp": "+{xp} XP al",
   "whyrule.case.dativ-praep": "mit/aus/bei/nach/von/zu/seit her zaman Dativ ister",

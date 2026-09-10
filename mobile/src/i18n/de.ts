@@ -1307,6 +1307,8 @@ export const de: Record<string, string> = {
   "words.status_mastered": "Gefestigt",
   "words.status_new": "Neu",
   "words.couldn_t_load_your_words": "Wörter konnten nicht geladen werden.",
+  "writ.kind_sentence": "Satz",
+  "writ.kind_roleplay": "Rollenspiel",
   "writings.report_this_feedback": "Bewertung melden",
   "writings.no_graded_writing_yet_do_writing": "Du hast noch keine bewerteten Texte. Mach eine Schreibübung und lass sie bewerten — sie erscheint hier.",
   "writings.to_be_graded": "Wird bewertet.",

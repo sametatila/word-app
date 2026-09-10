@@ -610,8 +610,6 @@ export const enWeb: Record<string, string> = {
   "writ.empty_title": "No graded writing yet",
   "writ.empty_sub": "When you write a free text in a writing exercise it lands here: your text, its score and the corrections all together. Write the same task again and you can compare the two side by side.",
   "writ.go_to_writing": "Go to the writing exercises",
-  "writ.kind_sentence": "Sentence",
-  "writ.kind_roleplay": "Role play",
   "questw.rewards_ready": "{n} rewards ready",
   "questw.claim_xp": "Claim +{xp} XP",
   "whyrule.case.dativ-praep": "mit/aus/bei/nach/von/zu/seit always take the dative",

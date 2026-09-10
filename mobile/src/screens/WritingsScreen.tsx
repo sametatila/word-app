@@ -16,7 +16,18 @@ import { useTheme, spacing, radii, type Palette } from "../theme";
 import { CardGrid } from "../ui/CardGrid";
 
 /** Tür -> sözlük anahtarı. */
-const KIND_KEY: Record<string, string> = { writing: "unitkind.write", speaking: "unitkind.speaking" };
+/*
+ * DÖRT TÜR. Liste yalnız `writing` ve `speaking` biliyordu; `sentence`
+ * (cümle kurma turunun değerlendirmesi) ve `roleplay` (rol yapma) satırları
+ * ham anahtarlarıyla ("sentence") çiziliyordu - kullanıcı ne olduğunu
+ * anlamıyordu. Web dördünü de adlandırıyor (`writings-card`).
+ */
+const KIND_KEY: Record<string, string> = {
+  writing: "exam.sec_writing",
+  sentence: "writ.kind_sentence",
+  speaking: "exam.sec_speaking",
+  roleplay: "writ.kind_roleplay",
+};
 
 /**
  * Puan kutusunun YAZI rengi.
@@ -50,7 +61,10 @@ function WritingCard({ w, colors, onReport, onDelete }: { w: Writing; colors: Pa
             <Text variant="h3" color={tone}>{score ?? "…"}</Text>
           </View>
           <View style={{ flex: 1 }}>
-            <Text variant="bodyStrong">{t(KIND_KEY[w.kind] ?? "") || w.kind} · {w.level}</Text>
+            {/* GÜN de yazıyor: "ne zaman yazmıştım" sorusunun cevabı listede
+                olmalı, yoksa satırlar birbirinden ayırt edilemiyor (web aynı
+                üçlüyü gösteriyor: tür · seviye · gün). */}
+            <Text variant="bodyStrong">{t(KIND_KEY[w.kind] ?? "") || w.kind} · {w.level} · {w.day}</Text>
             <Text variant="caption" color={colors.textMuted} numberOfLines={open ? undefined : 2}>{w.answer}</Text>
           </View>
         </View>

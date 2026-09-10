@@ -2945,6 +2945,35 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   sameSet("gelen kutusu yonlendirmesi", kume("mobile/src/screens/InboxScreen.tsx", "function open("), kume("src/components/social/inbox.tsx", "function hrefFor"), "mobil", "web");
 }
 
+/* ── 79. yazilarim listesinde tur adlari ──────────────────────────────────
+ * `/api/assessments` dort tur dondurüyor: writing, sentence, speaking,
+ * roleplay. Mobil listesi yalniz ikisini biliyordu; otekiler HAM ANAHTARIYLA
+ * ("sentence") ciziliyordu - kullanici satirin ne oldugunu anlamiyordu.
+ * Iki tarafin haritasi ayni turleri ve AYNI sozluk anahtarlarini tasimali. */
+{
+  const harita = (p, ad) => {
+    const src = read(p).replace(/\/\*[\s\S]*?\*\//g, " ").replace(/\/\/[^\n]*/g, " ");
+    const i = src.indexOf(ad);
+    if (i < 0) return ["bulunamadi"];
+    const govde = src.slice(i, src.indexOf("};", i));
+    return [...govde.matchAll(/([a-z]+):\s*"([^"]+)"/g)].map((m) => m[1] + "=" + m[2]).sort();
+  };
+  /* Satirin ust cizgisi ayni ucluyu tasimali: tur, seviye, GUN. Gun mobilde
+     yoktu - "ne zaman yazmistim" sorusu listede cevapsizdi. */
+  const ucLu = (p, re) => (re.test(read(p)) ? ["tur+seviye+gun"] : ["eksik"]);
+  sameList(
+    "yazilarim satir basligi",
+    ucLu("mobile/src/screens/WritingsScreen.tsx", /w\.level\} · \{w\.day\}/),
+    ucLu("src/components/writings-card.tsx", /it\.level\} · \{it\.day\}/),
+  );
+  sameSet(
+    "yazilarim tur adlari",
+    harita("mobile/src/screens/WritingsScreen.tsx", "const KIND_KEY"),
+    harita("src/components/writings-card.tsx", "const KIND_LABEL_KEYS"),
+    "mobil", "web",
+  );
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"

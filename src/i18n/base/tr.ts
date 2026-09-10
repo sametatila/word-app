@@ -1309,6 +1309,8 @@ export const trBase: Record<string, string> = {
   "words.status_mastered": "Pekişti",
   "words.status_new": "Yeni",
   "words.couldn_t_load_your_words": "Kelimeler yüklenemedi.",
+  "writ.kind_sentence": "Cümle",
+  "writ.kind_roleplay": "Rol yapma",
   "writings.report_this_feedback": "Değerlendirmeyi bildir",
   "writings.no_graded_writing_yet_do_writing": "Henüz değerlendirilmiş yazın yok. Yazma alıştırması yapıp değerlendirt — buraya gelir.",
   "writings.to_be_graded": "Puanlanacak.",

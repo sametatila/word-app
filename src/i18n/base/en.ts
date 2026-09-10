@@ -1309,6 +1309,8 @@ export const enBase: Record<string, string> = {
   "words.status_mastered": "Mastered",
   "words.status_new": "New",
   "words.couldn_t_load_your_words": "Couldn't load your words.",
+  "writ.kind_sentence": "Sentence",
+  "writ.kind_roleplay": "Role play",
   "writings.report_this_feedback": "Report this feedback",
   "writings.no_graded_writing_yet_do_writing": "No graded writing yet. Do a writing exercise and get it graded — it'll show up here.",
   "writings.to_be_graded": "To be graded.",
