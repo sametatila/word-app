@@ -9,6 +9,7 @@ import { Card } from "../ui/Card";
 import { PressableScale } from "../ui/PressableScale";
 import { Mascot } from "../ui/Mascot";
 import { Celebrate } from "../ui/Celebrate";
+import { CertificateSheet } from "../ui/CertificateSheet";
 import { XIcon, SpeakerIcon } from "../ui/icons";
 import { RoundView } from "../game/rounds";
 import { written } from "../game/skillQuiz";
@@ -61,7 +62,10 @@ type Paper = {
   };
 };
 
-type Result = { total: number; passed: boolean; trial: boolean; sections: { id: SectionId; pct: number; weight: number }[] };
+/* `id` SUNUCUDAN GELİYORDU ve burada düşüyordu: sertifika ucu sınav kimliğiyle
+   adresleniyor (`/api/certificate/<id>`) ve alan olmadan sertifikaya ulaşmanın
+   yolu yoktu (bkz. `ExamResult` `id`). */
+type Result = { id: number; total: number; passed: boolean; trial: boolean; sections: { id: SectionId; pct: number; weight: number }[] };
 
 /**
  * Sınav ekranı — modül ve seviye sınavı.
@@ -102,6 +106,7 @@ export function ExamScreen() {
   const [secIdx, setSecIdx] = useState(0);
   const [left, setLeft] = useState(0);
   const [result, setResult] = useState<Result | null>(null);
+  const [certOpen, setCertOpen] = useState(false);
   const score = useRef<Record<SectionId, { correct: number; total: number }>>({
     vocab: { correct: 0, total: 0 }, grammar: { correct: 0, total: 0 }, produce: { correct: 0, total: 0 },
     reading: { correct: 0, total: 0 }, listening: { correct: 0, total: 0 }, speaking: { correct: 0, total: 0 }, writing: { correct: 0, total: 0 },
@@ -321,6 +326,21 @@ export function ExamScreen() {
             </Text>
             {result?.trial ? <Text variant="caption" color={colors.textMuted}>{t("exam.trial_notice")}</Text> : null}
           </Card>
+          {/*
+            SERTİFİKA. Uç aylardır hazırdı ve yorumu "bu ucu mobil de çağırıyor"
+            diyordu, ama mobilde onu çağıran hiçbir şey yoktu: sınavı geçen
+            Android kullanıcısı ödülünü hiç görmüyordu. Web sonuç kartının
+            altında açıyor; geçilmemiş ya da deneme sınavında ise aynı yerde
+            ne yapılacağını söylüyor.
+          */}
+          {result?.passed && !result.trial ? (
+            <PressableScale onPress={() => setCertOpen(true)} style={[{ backgroundColor: colors.success, borderRadius: radii.lg, paddingVertical: 16, alignItems: "center" }, softShadow(colors.success, 10)]}>
+              <Text variant="bodyStrong" color={colors.onFill}>{t("exam.open_certificate")}</Text>
+            </PressableScale>
+          ) : result ? (
+            <Text variant="caption" color={colors.textMuted} style={{ lineHeight: 19 }}>{t("exam.weak_section_hint")}</Text>
+          ) : null}
+          {result ? <CertificateSheet examId={result.id} visible={certOpen} onClose={() => setCertOpen(false)} /> : null}
           {result?.sections.map((s) => (
             <Card key={s.id} padded style={{ flexDirection: "row", justifyContent: "space-between" }}>
               <Text variant="body">{SECTION_DE[s.id]} · {t(SECTION_KEY[s.id])}</Text>

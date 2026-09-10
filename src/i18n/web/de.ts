@@ -442,8 +442,6 @@ export const deWeb: Record<string, string> = {
   "exam.missed_n": "{n} Aufgaben, die du verpasst hast",
   "exam.your_answer": "Deine Antwort:",
   "exam.writing_sample": "Schreibteil · Musterlösung",
-  "exam.open_certificate": "Zertifikat öffnen",
-  "exam.weak_section_hint": "Für einen schwachen Teil findest du im Profil „Deine Schwachstellen“ und „Bester nächster Schritt“.",
   "mockfb.summary": "{correct} von {total} Aufgaben richtig ({pct}).",
   "mockfb.hardest": "Am schwersten fiel dir: {goal} ({pct}).",
   "mockfb.balanced": "Das Ergebnis ist über alle Ziele hinweg ausgeglichen.",

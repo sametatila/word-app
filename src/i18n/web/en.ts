@@ -442,8 +442,6 @@ export const enWeb: Record<string, string> = {
   "exam.missed_n": "{n} items you missed",
   "exam.your_answer": "Your answer:",
   "exam.writing_sample": "Writing section · sample answer",
-  "exam.open_certificate": "Open the certificate",
-  "exam.weak_section_hint": "For a weak section, your profile has “Your weak spots” and “Best next step”.",
   "mockfb.summary": "{correct} of {total} items correct ({pct}).",
   "mockfb.hardest": "Where you struggled most: {goal} ({pct}).",
   "mockfb.balanced": "The result is even across all the goals.",

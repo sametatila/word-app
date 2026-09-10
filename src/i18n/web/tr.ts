@@ -467,8 +467,6 @@ export const trWeb: Record<string, string> = {
   "exam.missed_n": "Kaçırdığın {n} madde",
   "exam.your_answer": "Senin cevabın:",
   "exam.writing_sample": "Yazma bölümü · örnek cevap",
-  "exam.open_certificate": "Sertifikayı aç",
-  "exam.weak_section_hint": "Zayıf bölüm için profilde “Zayıf noktaların” ve “Sıradaki en iyi adım” var.",
   "mockfb.summary": "{total} maddenin {correct} tanesi doğru ({pct}).",
   "mockfb.hardest": "En çok zorlandığın yer: {goal} ({pct}).",
   "mockfb.balanced": "Hedeflerin tamamında dengeli bir sonuç var.",
