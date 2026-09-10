@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { Avatar } from "@/components/avatar";
 import { SettingRow, Switch } from "@/components/setting-row";
+import { SkeletonLine } from "@/components/skeleton";
 import { errorText, social, type SocialMeView } from "@/lib/social/client";
 import type { PublicUser, Visibility } from "@/lib/social/types";
 import { useT, useLang } from "@/lib/i18n/client";
@@ -162,8 +163,11 @@ export function SocialSettings({ initial, course = "de", bare = false }: { initi
 
       <div className="border-t px-4 py-3" style={{ borderColor: "var(--border)" }}>
         <p className="text-sm font-bold">{t("socialsettings.blocked_title")}</p>
+        {/* "Yükleniyor" yazısı yerine satırın yeri: liste gelince başlığın
+            altı yerinden oynamıyor. Android aynı yerde iskelet satırı
+            çiziyor (`SocialSettingsScreen`). */}
         {blocked === null ? (
-          <p className="muted mt-1 text-xs">{t("social.loading")}</p>
+          <SkeletonLine variant="caption" width="60%" className="mt-1" />
         ) : blocked.length ? (
           <ol className="mt-2 divide-y divide-[color:var(--border)]">
             {blocked.map((b) => (
