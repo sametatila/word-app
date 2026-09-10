@@ -69,7 +69,7 @@ export function AvatarEditor() {
               <button
                 key={col}
                 type="button"
-                aria-label={`Şapka rengi ${col}`}
+                aria-label={`${t("avatar.hat_color")} ${col}`}
                 aria-pressed={cfg.hatColor === col}
                 onClick={() => setCfg((c) => ({ ...c, hatColor: col }))}
                 className="pressable h-11 w-11 rounded-full"
