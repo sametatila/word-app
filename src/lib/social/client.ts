@@ -55,6 +55,11 @@ export const ERROR_KEYS: Record<string, string> = {
   username_invalid: "social.err_username_invalid",
   username_taken: "social.err_username_taken",
   username_cooldown: "social.err_username_cooldown",
+  // Sunucu biyografideki bağlantı/iletişim bilgisi/küfür için bu kodu
+  // dönüyordu ama haritada yoktu: kod `failed`e düşüyor ve kullanıcı
+  // "Bağlantı kurulamadı" görüyordu. Sebebini bilmeden aynı metni tekrar
+  // tekrar kaydetmeye çalışıyordu. Mobil baştan beri doğru cümleyi veriyor.
+  bio_invalid: "social.err_bio_invalid",
   week_over: "social.err_week_over",
   bad_request: "social.err_bad_request",
   database: "social.err_database",
