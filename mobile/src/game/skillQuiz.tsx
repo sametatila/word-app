@@ -213,7 +213,11 @@ export function GlossPanel({ gloss, colors }: { gloss: Gloss[]; colors: Palette 
 
 type BuildTask = { kind: "build"; tr: string; answer: string; alternatives?: string[]; hint?: string };
 type FreeTask = { kind: "free"; prompt: string; stimulus?: string; checklist: string[]; minWords: number; phrases: Gloss[]; sample: string };
-export type WritingTask = BuildTask | FreeTask;
+/** Yeniden yaz: verilen cümleyi başka biçimde (resmî, olumsuz, geçmiş). */
+type RewriteTask = { kind: "rewrite"; prompt: string; source: string; answer: string; alternatives?: string[]; why?: string };
+/** Form doldur: her alan ayrı bir cevap. */
+type FormTask = { kind: "form"; prompt: string; facts?: string; fields: { label: string; answer: string; accept?: string[] }[] };
+export type WritingTask = BuildTask | FreeTask | RewriteTask | FormTask;
 
 /** Yazma egzersizi görevleri — de içeriğinde iki tür: build (TR→DE cümle) ve free. */
 export function WritingList({ tasks, onAllDone, colors }: { tasks: WritingTask[]; onAllDone: (correct: number) => void; colors: Palette }) {
@@ -227,11 +231,25 @@ export function WritingList({ tasks, onAllDone, colors }: { tasks: WritingTask[]
   return (
     <View style={{ marginTop: spacing.lg, gap: spacing.md }}>
       <Text variant="h3">{tx("skillquiz.tasks")}</Text>
-      {tasks.map((t, i) =>
-        t.kind === "build"
-          ? <BuildCard key={i} t={t} n={i + 1} done={results[i] !== null} onSettle={(ok) => settle(i, ok)} colors={colors} />
-          : <FreeCard key={i} t={t} n={i + 1} done={results[i] !== null} onSettle={(ok) => settle(i, ok)} colors={colors} />,
-      )}
+      {/*
+        DÖRT TÜR AYRI ÇİZİLİYOR.
+
+        Eskiden `build` dışındaki her şey `FreeCard`a gidiyordu ve tip de iki
+        türü biliyordu ("içerikte iki tür var" varsayımı). İçerik ölçüldü:
+        dumpta `form` (47) ve `rewrite` (189) de var ve ikisinde `minWords`
+        YOK. `FreeCard`ın gönder düğmesi `words >= t.minWords` ile açılıyor,
+        undefined ile karşılaştırma daima false — düğme hiç açılmıyor, görev
+        settle edilemiyor, `onAllDone` hiç çağrılmıyordu. Sonuç: 356 yazma
+        egzersizinin 190'ı Android'de BİTİRİLEMİYORDU. Web ikisini de kendi
+        yüzeyiyle çiziyor (`skills/writing-player`).
+      */}
+      {tasks.map((t, i) => {
+        const shared = { n: i + 1, done: results[i] !== null, onSettle: (ok: boolean) => settle(i, ok), colors };
+        if (t.kind === "build") return <BuildCard key={i} t={t} {...shared} />;
+        if (t.kind === "rewrite") return <RewriteCard key={i} t={t} {...shared} />;
+        if (t.kind === "form") return <FormCard key={i} t={t} {...shared} />;
+        return <FreeCard key={i} t={t} {...shared} />;
+      })}
     </View>
   );
 }
@@ -259,6 +277,89 @@ function BuildCard({ t, n, done, onSettle, colors }: { t: BuildTask; n: number; 
           {!ok ? <Text variant="caption" color={colors.textMuted}>{tx("common.answer_is")} <Text variant="caption" color={colors.text} style={{ fontWeight: "700" }}>{t.answer}</Text></Text> : null}
           {t.hint ? <Text variant="caption" color={colors.textMuted} style={{ marginTop: 4 }}>{t.hint}</Text> : null}
         </View>
+      ) : null}
+    </Card>
+  );
+}
+
+/**
+ * Yeniden yaz — yapısı `BuildCard` ile aynı, tek fark KAYNAK cümlenin de
+ * gösterilmesi: öğrenci onu dönüştürüyor. Web'in karşılığı
+ * `skills/writing-player` içindeki `rewrite` dalı.
+ */
+function RewriteCard({ t, n, done, onSettle, colors }: { t: RewriteTask; n: number; done: boolean; onSettle: (ok: boolean) => void; colors: Palette }) {
+  const [typed, setTyped] = useState("");
+  const accept = [t.answer, ...(t.alternatives ?? [])];
+  const ok = done && written(typed, accept);
+  return (
+    <Card padded>
+      <Text variant="bodyStrong"><Text variant="bodyStrong" color={colors.textMuted}>{n}. </Text>{t.prompt}</Text>
+      <View style={{ marginTop: spacing.sm, backgroundColor: colors.surface2, borderRadius: radii.md, padding: spacing.md }}>
+        <Text variant="body" color={colors.text} style={{ lineHeight: 22 }}>{t.source}</Text>
+      </View>
+      <View style={{ marginTop: spacing.md, flexDirection: "row", alignItems: "flex-end", gap: spacing.sm }}>
+        <TextInput value={typed} onChangeText={setTyped} editable={!done} multiline autoCapitalize="sentences"
+          placeholder={tx("skillquiz.write_sentence", { lang: targetLangName() })} placeholderTextColor={colors.textFaint}
+          style={{ flex: 1, minHeight: 44, backgroundColor: colors.surface, borderRadius: radii.md, borderWidth: 1.5, borderColor: done ? (ok ? colors.success : colors.danger) : colors.border, paddingHorizontal: spacing.md, paddingVertical: 10, color: colors.text, fontSize: 15 }} />
+        {!done ? (
+          <PressableScale onPress={() => { if (typed.trim()) onSettle(written(typed, accept)); }} disabled={!typed.trim()}
+            style={{ backgroundColor: typed.trim() ? colors.primary : colors.surface2, borderRadius: radii.md, paddingHorizontal: spacing.lg, paddingVertical: 11 }}>
+            <Text variant="bodyStrong" color={typed.trim() ? colors.onPrimary : colors.textFaint}>{tx("skillquiz.check")}</Text>
+          </PressableScale>
+        ) : null}
+      </View>
+      {done ? (
+        <View style={{ marginTop: spacing.sm }}>
+          {!ok ? <Text variant="caption" color={colors.textMuted}>{tx("common.answer_is")} <Text variant="caption" color={colors.text} style={{ fontWeight: "700" }}>{t.answer}</Text></Text> : null}
+          {t.why ? <Text variant="caption" color={colors.textMuted} style={{ marginTop: 4 }}>{t.why}</Text> : null}
+        </View>
+      ) : null}
+    </Card>
+  );
+}
+
+/**
+ * Form doldur — her alan AYRI cevap, hepsi doğruysa görev doğru.
+ *
+ * Alan etiketi hedef dilde ("Name", "Wohnort") ve yer tutucu olarak da o
+ * kullanılıyor: ayrıca bir sözlük anahtarı gerekmiyor. `facts` senaryonun
+ * bilgileri (Türkçe); öğrenci onlara bakıp alanları hedef dilde yazıyor.
+ */
+function FormCard({ t, n, done, onSettle, colors }: { t: FormTask; n: number; done: boolean; onSettle: (ok: boolean) => void; colors: Palette }) {
+  const [vals, setVals] = useState<string[]>(() => t.fields.map(() => ""));
+  const okOf = (i: number) => written(vals[i] ?? "", [t.fields[i].answer, ...(t.fields[i].accept ?? [])]);
+  const filled = vals.every((v) => v.trim());
+  return (
+    <Card padded>
+      <Text variant="bodyStrong"><Text variant="bodyStrong" color={colors.textMuted}>{n}. </Text>{t.prompt}</Text>
+      {t.facts ? (
+        <View style={{ marginTop: spacing.sm, backgroundColor: colors.surface2, borderRadius: radii.md, padding: spacing.md }}>
+          <Text variant="caption" color={colors.text} style={{ lineHeight: 20 }}>{t.facts}</Text>
+        </View>
+      ) : null}
+      <View style={{ marginTop: spacing.md, gap: spacing.sm }}>
+        {t.fields.map((f, i) => {
+          const ok = done && okOf(i);
+          return (
+            <View key={f.label}>
+              <Text variant="micro" color={colors.textMuted} style={{ marginBottom: 3 }}>{f.label}</Text>
+              <TextInput value={vals[i]} onChangeText={(v) => setVals((p) => p.map((x, k) => (k === i ? v : x)))} editable={!done}
+                placeholder={f.label} placeholderTextColor={colors.textFaint}
+                style={{ minHeight: 44, backgroundColor: colors.surface, borderRadius: radii.md, borderWidth: 1.5, borderColor: done ? (ok ? colors.success : colors.danger) : colors.border, paddingHorizontal: spacing.md, paddingVertical: 10, color: colors.text, fontSize: 15 }} />
+              {done && !ok ? (
+                <Text variant="caption" color={colors.textMuted} style={{ marginTop: 3 }}>
+                  {tx("common.answer_is")} <Text variant="caption" color={colors.text} style={{ fontWeight: "700" }}>{f.answer}</Text>
+                </Text>
+              ) : null}
+            </View>
+          );
+        })}
+      </View>
+      {!done ? (
+        <PressableScale onPress={() => { if (filled) onSettle(t.fields.every((_, i) => okOf(i))); }} disabled={!filled}
+          style={{ marginTop: spacing.md, alignSelf: "flex-end", backgroundColor: filled ? colors.primary : colors.surface2, borderRadius: radii.md, paddingHorizontal: spacing.lg, paddingVertical: 11 }}>
+          <Text variant="bodyStrong" color={filled ? colors.onPrimary : colors.textFaint}>{tx("skillquiz.check")}</Text>
+        </PressableScale>
       ) : null}
     </Card>
   );
