@@ -11156,3 +11156,32 @@ deneme sınavı (`mock-exam-player` ↔ `MockExamScreen`), seviye sınavı
 (`walk-player` ↔ `WalkModeScreen`). Son üçü özellikle dikkat istiyor: sınavın
 **bölüm sonu** ile **kâğıt sonu** ayrı iki sonuç ve oturumun içinde etap
 kartları var.
+
+## §11.339 — Sonuç duyurusu: üç yüzey daha; kalan üçü çok durumlu
+
+Haftalık sınav, deneme sınavı ve rol yapma sınavı kapandı — §223 artık **sekiz
+yüzey × iki platform = on altı ölçüt** okuyor. Kalan üç yüzey: seviye sınavı
+(`exam-player` ↔ `ExamScreen`), oturum (`session-player` ↔ `GameScreen`) ve
+yürüyüş (`walk-player` ↔ `WalkModeScreen`). Üçü de **çok durumlu** — sınavın
+bölüm sonu ile kâğıt sonu ayrı iki sonuç, oturumun içinde etap kartları var —
+ve bilerek en sona bırakıldı.
+
+**Kapı bu turda iki kez kendi kusurunu gösterdi ve ikincisi öğreticiydi.**
+
+Üç web dosyasında aynı kart sınıfı üç–beş kez geçiyor (giriş, hata, sonuç).
+"Dosyada bir yerde `role="status"` var" demek komşuyu ölçmek olurdu: rol
+yanlış dala kaysa kapı yine yeşil kalırdı. İlk düzeltmem bir **karakter
+penceresi** koydu (roldan sonra 400 karakter içinde sonucu işaretleyen dize
+aranıyor) — ve kapı **kendi kendine kırmızı oldu**, çünkü gerçek mesafe 547
+çıktı: araya uzun bir `CoachBubble` satırı giriyor.
+
+Pencere tahmin etmek yerine ölçüm ters çevrildi: **sonucu işaretleyen dizeden
+geri gidip ondan hemen önce açılan kabın etiketine** bakılıyor. Böylece ne
+pencere tahmini kalıyor ne de "dosyada bir yerde" gevşekliği. Enjeksiyonla iki
+durum ayrı ayrı doğrulandı: rolü silmek **ve** rolü yanlış dala taşımak —
+ikincisi dosya geneline bakan bir desenin kaçıracağı tam durum.
+
+Bu, aynı dersin bu turlardaki dördüncü biçimi: §184 komşu satırı ölçtü, §208
+420 karakterlik pencere komşuyu gördü, §11.333 `[^)]*` ilk parantezde durdu,
+şimdi 400 karakterlik pencere yetmedi. Ortak kural artık net: **pencere
+yerine yapı** — sınır bir mesafe değil, bir düğüm olmalı.
