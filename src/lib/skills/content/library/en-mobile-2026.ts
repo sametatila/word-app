@@ -123,7 +123,7 @@ export const enMobile2026: SkillExercise[] = [
       },
       {
         "de": "free",
-        "tr": "boş, müsait"
+        "tr": "boş / müsait"
       },
       {
         "de": "flat",
@@ -911,7 +911,7 @@ export const enMobile2026: SkillExercise[] = [
     "gloss": [
       {
         "de": "arrived",
-        "tr": "vardık, geldik"
+        "tr": "vardık / geldik"
       },
       {
         "de": "balcony",
@@ -927,7 +927,7 @@ export const enMobile2026: SkillExercise[] = [
       },
       {
         "de": "cost",
-        "tr": "tuttu, mal oldu"
+        "tr": "tuttu / mal oldu"
       },
       {
         "de": "stayed",
@@ -1124,7 +1124,7 @@ export const enMobile2026: SkillExercise[] = [
       },
       {
         "de": "nervous",
-        "tr": "gergin, tedirgin"
+        "tr": "gergin / tedirgin"
       },
       {
         "de": "a little",
@@ -1524,11 +1524,11 @@ export const enMobile2026: SkillExercise[] = [
       },
       {
         "de": "late",
-        "tr": "geç, gecikmeli"
+        "tr": "geç / gecikmeli"
       },
       {
         "de": "to leave",
-        "tr": "kalkmak, ayrılmak"
+        "tr": "kalkmak / ayrılmak"
       },
       {
         "de": "ticket machine",
@@ -2229,7 +2229,7 @@ export const enMobile2026: SkillExercise[] = [
       },
       {
         "de": "I'm from",
-        "tr": "...'lıyım, ...'dan geliyorum"
+        "tr": "...'lıyım / ...'dan geliyorum"
       },
       {
         "de": "a student",
@@ -2361,7 +2361,7 @@ export const enMobile2026: SkillExercise[] = [
       },
       {
         "de": "free",
-        "tr": "boş, vakti olan"
+        "tr": "boş / vakti olan"
       },
       {
         "de": "to start",
@@ -2470,7 +2470,7 @@ export const enMobile2026: SkillExercise[] = [
       },
       {
         "de": "uncle",
-        "tr": "amca, dayı"
+        "tr": "amca / dayı"
       },
       {
         "de": "hair",
@@ -2482,7 +2482,7 @@ export const enMobile2026: SkillExercise[] = [
       },
       {
         "de": "kind",
-        "tr": "nazik, iyi kalpli"
+        "tr": "nazik / iyi kalpli"
       },
       {
         "de": "together",
@@ -2822,7 +2822,7 @@ export const enMobile2026: SkillExercise[] = [
       },
       {
         "de": "to fit",
-        "tr": "uymak, olmak"
+        "tr": "uymak / olmak"
       },
       {
         "de": "to return",
@@ -3875,7 +3875,7 @@ export const enMobile2026: SkillExercise[] = [
     "gloss": [
       {
         "de": "resident",
-        "tr": "oturan kişi, mahalle sakini"
+        "tr": "oturan kişi / mahalle sakini"
       },
       {
         "de": "notice",
@@ -4557,7 +4557,7 @@ export const enMobile2026: SkillExercise[] = [
       },
       {
         "de": "include",
-        "tr": "içermek, dahil olmak"
+        "tr": "içermek / dahil olmak"
       },
       {
         "de": "check-in",
@@ -4565,7 +4565,7 @@ export const enMobile2026: SkillExercise[] = [
       },
       {
         "de": "cost",
-        "tr": "tutmak, etmek"
+        "tr": "tutmak / etmek"
       },
       {
         "de": "arrive",
@@ -4973,7 +4973,7 @@ export const enMobile2026: SkillExercise[] = [
       },
       {
         "de": "port",
-        "tr": "giriş, port"
+        "tr": "giriş / port"
       },
       {
         "de": "free",
@@ -5479,7 +5479,7 @@ export const enMobile2026: SkillExercise[] = [
     "gloss": [
       {
         "de": "post",
-        "tr": "yazı, gönderi"
+        "tr": "yazı / gönderi"
       },
       {
         "de": "for the first time",

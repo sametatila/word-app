@@ -32,13 +32,13 @@ export const a2U20: SkillExercise[] = [
     genre: "article",
     intro: "İltifat etme rehberi. Hangisi hoş, hangisi fazla kişisel?",
     gloss: [
-      { de: "edel", tr: "zarif, kaliteli", en: "elegant" },
+      { de: "edel", tr: "zarif / kaliteli", en: "elegant" },
       { de: "schlicht", tr: "sade", en: "plain" },
       { de: "attraktiv", tr: "çekici", en: "attractive" },
       { de: "talentiert", tr: "yetenekli", en: "talented" },
       { de: "humorvoll", tr: "espritüel", en: "humorous" },
       { de: "modisch", tr: "modaya uygun", en: "fashionable" },
-      { de: "lässig", tr: "rahat, havalı", en: "casual" },
+      { de: "lässig", tr: "rahat / havalı", en: "casual" },
     ],
     minutes: 4,
     text:
@@ -170,7 +170,7 @@ export const a2U20: SkillExercise[] = [
       { de: "absichtlich", tr: "bilerek", en: "on purpose" },
       { de: "vergeben", tr: "affetmek", en: "to forgive" },
       { de: "gemein", tr: "kırıcı", en: "mean" },
-      { de: "vorwerfen", tr: "suçlamak, başa kakmak", en: "to reproach" },
+      { de: "vorwerfen", tr: "suçlamak / başa kakmak", en: "to reproach" },
     ],
     minutes: 3,
     segments: [
@@ -303,7 +303,7 @@ export const a2U20: SkillExercise[] = [
       { de: "passen", tr: "uymak", en: "to fit" },
       { de: "gefallen", tr: "hoşuna gitmek", en: "to please" },
       { de: "modisch", tr: "modaya uygun", en: "fashionable" },
-      { de: "lässig", tr: "rahat, havalı", en: "casual" },
+      { de: "lässig", tr: "rahat / havalı", en: "casual" },
     ],
     minutes: 6,
     tasks: [
@@ -348,7 +348,7 @@ export const a2U20: SkillExercise[] = [
       { de: "beleidigt", tr: "gücenmiş", en: "offended" },
       { de: "absichtlich", tr: "bilerek", en: "on purpose" },
       { de: "vergeben", tr: "affetmek", en: "to forgive" },
-      { de: "gemein", tr: "kırıcı, kötü", en: "mean" },
+      { de: "gemein", tr: "kırıcı / kötü", en: "mean" },
       { de: "die Umarmung", tr: "sarılma", en: "hug" },
     ],
     minutes: 8,

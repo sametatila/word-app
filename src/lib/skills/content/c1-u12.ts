@@ -32,8 +32,8 @@ export const c1U12: SkillExercise[] = [
     genre: "guide",
     intro: "Özet yazma dili: hangi fiil ne kadar iddia taşıyor?",
     gloss: [
-      { de: "nahelegen", tr: "düşündürmek, işaret etmek", en: "to suggest" },
-      { de: "aufzeigen", tr: "göstermek, ortaya koymak", en: "to demonstrate" },
+      { de: "nahelegen", tr: "düşündürmek / işaret etmek", en: "to suggest" },
+      { de: "aufzeigen", tr: "göstermek / ortaya koymak", en: "to demonstrate" },
       { de: "sich stützen auf", tr: "dayanmak", en: "to be based on" },
       { de: "untermauern", tr: "kanıtlarla desteklemek", en: "to underpin" },
       { de: "die Fragestellung", tr: "araştırma sorusu", en: "research question" },
@@ -113,7 +113,7 @@ export const c1U12: SkillExercise[] = [
     intro: "Bilimi sadeleştirmek: hangi kayıp kabul edilebilir, hangisi değil?",
     gloss: [
       { de: "vereinfachen", tr: "basitleştirmek", en: "to simplify" },
-      { de: "anschaulich", tr: "somut, canlı", en: "vivid" },
+      { de: "anschaulich", tr: "somut / canlı", en: "vivid" },
       { de: "die Faustregel", tr: "kaba kural", en: "rule of thumb" },
       { de: "zugänglich", tr: "erişilebilir", en: "accessible" },
       { de: "greifbar", tr: "elle tutulur", en: "tangible" },

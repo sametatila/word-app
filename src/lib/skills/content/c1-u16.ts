@@ -36,7 +36,7 @@ export const c1U16: SkillExercise[] = [
     intro: "Ortaç öbeği ne yapıyor? Bir ilgi cümlesinin sıkıştırılmış hâli.",
     gloss: [
       { de: "verdichten", tr: "yoğunlaştırmak", en: "to condense" },
-      { de: "auflösen", tr: "çözmek, açmak", en: "to unpack" },
+      { de: "auflösen", tr: "çözmek / açmak", en: "to unpack" },
       { de: "das Attribut", tr: "niteleyici", en: "modifier" },
       { de: "vorangestellt", tr: "öne konmuş", en: "preposed" },
       { de: "umfangreich", tr: "kapsamlı", en: "extensive" },
@@ -120,8 +120,8 @@ export const c1U16: SkillExercise[] = [
     gloss: [
       { de: "der Nominalstil", tr: "isim üslubu", en: "nominal style" },
       { de: "umwandeln", tr: "dönüştürmek", en: "to convert" },
-      { de: "schwerfällig", tr: "ağır, hantal", en: "ponderous" },
-      { de: "sperrig", tr: "hantal, ele avuca sığmaz", en: "unwieldy" },
+      { de: "schwerfällig", tr: "ağır / hantal", en: "ponderous" },
+      { de: "sperrig", tr: "hantal / ele avuca sığmaz", en: "unwieldy" },
       { de: "umformulieren", tr: "yeniden ifade etmek", en: "to rephrase" },
       { de: "beeinträchtigen", tr: "olumsuz etkilemek", en: "to impair" },
       { de: "der Kern", tr: "çekirdek", en: "core" },

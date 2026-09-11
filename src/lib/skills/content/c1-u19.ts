@@ -39,7 +39,7 @@ export const c1U19: SkillExercise[] = [
     intro: "Varsayım dili: bir görüşü benimsemeden sonuna kadar götürmek.",
     gloss: [
       { de: "die Hypothese", tr: "varsayım", en: "hypothesis" },
-      { de: "unterstellen", tr: "varsaymak, isnat etmek", en: "to assume, to impute" },
+      { de: "unterstellen", tr: "varsaymak / isnat etmek", en: "to assume, to impute" },
       { de: "der Gedankengang", tr: "düşünce zinciri", en: "line of thought" },
       { de: "zutreffen", tr: "geçerli olmak", en: "to hold true" },
       { de: "hypothetisch", tr: "varsayımsal", en: "hypothetical" },
@@ -198,10 +198,10 @@ export const c1U19: SkillExercise[] = [
     intro: "Aidiyet: iki şey aynı anda doğru olabilir mi?",
     gloss: [
       { de: "die Zugehörigkeit", tr: "aidiyet", en: "belonging" },
-      { de: "die Teilhabe", tr: "katılım, pay sahipliği", en: "participation" },
-      { de: "die Zuschreibung", tr: "atfetme, yakıştırma", en: "ascription" },
+      { de: "die Teilhabe", tr: "katılım / pay sahipliği", en: "participation" },
+      { de: "die Zuschreibung", tr: "atfetme / yakıştırma", en: "ascription" },
       { de: "ausgrenzen", tr: "dışlamak", en: "to exclude" },
-      { de: "beheimatet", tr: "yerleşik, yurt edinmiş", en: "at home" },
+      { de: "beheimatet", tr: "yerleşik / yurt edinmiş", en: "at home" },
       { de: "die Abstammung", tr: "soy", en: "descent" },
       { de: "sich niederlassen", tr: "yerleşmek", en: "to settle" },
     ],
@@ -275,7 +275,7 @@ export const c1U19: SkillExercise[] = [
     intro: "Eğitim tartışması: kaçırılmış zamanın dili.",
     gloss: [
       { de: "die Chancengleichheit", tr: "fırsat eşitliği", en: "equality of opportunity" },
-      { de: "die Weiche", tr: "makas, yön belirleyen nokta", en: "switch point" },
+      { de: "die Weiche", tr: "makas / yön belirleyen nokta", en: "switch point" },
       { de: "versäumen", tr: "kaçırmak", en: "to miss" },
       { de: "überfällig", tr: "çoktan gecikmiş", en: "overdue" },
       { de: "umdenken", tr: "yeniden düşünmek", en: "to rethink" },

@@ -176,7 +176,7 @@ export const a2U23: SkillExercise[] = [
       { de: "das Mikrofon", tr: "mikrofon", en: "microphone" },
       { de: "die Website", tr: "internet sitesi", en: "website" },
       { de: "der Link", tr: "bağlantı", en: "link" },
-      { de: "sich eintragen", tr: "kaydolmak, adını yazmak", en: "to sign up" },
+      { de: "sich eintragen", tr: "kaydolmak / adını yazmak", en: "to sign up" },
       { de: "sich abmelden", tr: "çıkış yapmak", en: "to log out" },
       { de: "unverständlich", tr: "anlaşılmaz", en: "unintelligible" },
       { de: "mitschreiben", tr: "not almak", en: "to take notes" },

@@ -39,7 +39,7 @@ export const c1U23: SkillExercise[] = [
     intro: "Doğrudan eleştiri, kısık övgü — ve ikisinin birleşimi.",
     gloss: [
       { de: "die Direktheit", tr: "doğrudanlık", en: "directness" },
-      { de: "sparsam", tr: "cimri, ölçülü", en: "sparing" },
+      { de: "sparsam", tr: "cimri / ölçülü", en: "sparing" },
       { de: "befremdlich", tr: "yadırgatıcı", en: "off-putting" },
       { de: "gewöhnungsbedürftig", tr: "alışmak gereken", en: "takes getting used to" },
       { de: "die Konfrontation", tr: "yüzleşme", en: "confrontation" },
@@ -284,7 +284,7 @@ export const c1U23: SkillExercise[] = [
       { de: "sich behelfen", tr: "idare etmek", en: "to make do" },
       { de: "die Zwischenlösung", tr: "ara çözüm", en: "interim solution" },
       { de: "notdürftig", tr: "derme çatma", en: "makeshift" },
-      { de: "labil", tr: "kararsız, oynak", en: "unstable" },
+      { de: "labil", tr: "kararsız / oynak", en: "unstable" },
     ],
     minutes: 6,
     segments: [

@@ -36,7 +36,7 @@ export const c1U15: SkillExercise[] = [
     intro: "Resmî itiraz: neden gerekçeden önce tarih gelir?",
     gloss: [
       { de: "fristwahrend", tr: "süreyi koruyan", en: "within the deadline" },
-      { de: "der Bescheid", tr: "resmî karar, tebligat", en: "official decision" },
+      { de: "der Bescheid", tr: "resmî karar / tebligat", en: "official decision" },
       { de: "die Begründung", tr: "gerekçe", en: "statement of grounds" },
       { de: "nachreichen", tr: "sonradan sunmak", en: "to submit subsequently" },
       { de: "die Aufhebung", tr: "iptal", en: "annulment" },
@@ -273,7 +273,7 @@ export const c1U15: SkillExercise[] = [
     genre: "meeting",
     intro: "Duruşma sahnesi. İfade nasıl kaydediliyor, karar nasıl bildiriliyor?",
     gloss: [
-      { de: "die Kammer", tr: "heyet, daire", en: "chamber" },
+      { de: "die Kammer", tr: "heyet / daire", en: "chamber" },
       { de: "die Verhandlung", tr: "duruşma", en: "hearing" },
       { de: "aussagen", tr: "ifade vermek", en: "to testify" },
       { de: "das Urteil", tr: "karar", en: "judgment" },

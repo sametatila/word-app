@@ -111,7 +111,7 @@ export const a2U25: SkillExercise[] = [
       { de: "sonntags", tr: "pazarları", en: "on Sundays" },
       { de: "der Bäcker", tr: "fırıncı", en: "baker" },
       { de: "ungerecht", tr: "adaletsiz", en: "unfair" },
-      { de: "anständig", tr: "düzgün, dürüst", en: "decent" },
+      { de: "anständig", tr: "düzgün / dürüst", en: "decent" },
       { de: "zudem", tr: "ayrıca", en: "moreover" },
       { de: "pro", tr: "başına", en: "per" },
     ],
@@ -249,7 +249,7 @@ export const a2U25: SkillExercise[] = [
       { de: "sogar", tr: "hatta", en: "even" },
       { de: "außerdem", tr: "ayrıca", en: "besides" },
       { de: "fast", tr: "neredeyse", en: "almost" },
-      { de: "selbst", tr: "kendisi, bizzat", en: "myself" },
+      { de: "selbst", tr: "kendisi / bizzat", en: "myself" },
     ],
     minutes: 3,
     segments: [

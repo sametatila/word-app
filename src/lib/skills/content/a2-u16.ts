@@ -42,7 +42,7 @@ export const a2U16: SkillExercise[] = [
       { de: "das Verkehrsmittel", tr: "ulaşım aracı", en: "means of transport" },
       { de: "der Hinweg", tr: "gidiş yolu", en: "the way there" },
       { de: "die Unterkunft", tr: "konaklama", en: "accommodation" },
-      { de: "die Abreise", tr: "dönüş, ayrılış", en: "departure" },
+      { de: "die Abreise", tr: "dönüş / ayrılış", en: "departure" },
     ],
     minutes: 4,
     text:

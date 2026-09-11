@@ -119,7 +119,7 @@ export const c1U21: SkillExercise[] = [
     genre: "essay",
     intro: "Şakanın hükmü kimde? Almanca deyimin kendisi cevap veriyor.",
     gloss: [
-      { de: "ankommen", tr: "karşı tarafa varmak, tutmak", en: "to land, to go down" },
+      { de: "ankommen", tr: "karşı tarafa varmak / tutmak", en: "to land, to go down" },
       { de: "die Zielscheibe", tr: "hedef tahtası", en: "target" },
       { de: "bloßstellen", tr: "mahcup etmek", en: "to expose, to humiliate" },
       { de: "zurücknehmen", tr: "geri almak", en: "to retract" },
@@ -195,7 +195,7 @@ export const c1U21: SkillExercise[] = [
     intro: "Kelime oyunu çeviride ölüyor. Bu kimin eksiği?",
     gloss: [
       { de: "das Wortspiel", tr: "kelime oyunu", en: "wordplay" },
-      { de: "der doppelte Boden", tr: "çift dip, ikinci anlam", en: "double meaning" },
+      { de: "der doppelte Boden", tr: "çift dip / ikinci anlam", en: "double meaning" },
       { de: "der Kalauer", tr: "ucuz kelime şakası", en: "pun, groaner" },
       { de: "gelingen", tr: "başarılı olmak", en: "to succeed" },
       { de: "interpretieren", tr: "yorumlamak", en: "to interpret" },
@@ -274,11 +274,11 @@ export const c1U21: SkillExercise[] = [
     gloss: [
       { de: "das Klischee", tr: "klişe", en: "cliché" },
       { de: "das Augenzwinkern", tr: "göz kırpma", en: "wink" },
-      { de: "zugeknöpft", tr: "ketum, kapalı", en: "reserved" },
+      { de: "zugeknöpft", tr: "ketum / kapalı", en: "reserved" },
       { de: "der Landstrich", tr: "yöre", en: "region" },
       { de: "pauschal", tr: "toptan", en: "sweeping" },
       { de: "die Sitte", tr: "âdet", en: "custom" },
-      { de: "der Kult", tr: "kült, tapınma", en: "cult" },
+      { de: "der Kult", tr: "kült / tapınma", en: "cult" },
     ],
     minutes: 5,
     segments: [

@@ -42,7 +42,7 @@ export const c1U08: SkillExercise[] = [
       { de: "bewegend", tr: "dokunaklı", en: "moving" },
       { de: "das Zitat", tr: "alıntı", en: "quotation" },
       { de: "die Weisheit", tr: "bilgelik", en: "wisdom" },
-      { de: "der Abschnitt", tr: "bölüm, dönem", en: "chapter" },
+      { de: "der Abschnitt", tr: "bölüm / dönem", en: "chapter" },
     ],
     minutes: 7,
     text:
@@ -116,10 +116,10 @@ export const c1U08: SkillExercise[] = [
     genre: "essay",
     intro: "Münazara üstüne bir yazı. Kabul etmek neden güçlendirir?",
     gloss: [
-      { de: "zugegeben", tr: "kabul, itiraf edeyim", en: "admittedly" },
+      { de: "zugegeben", tr: "kabul / itiraf edeyim", en: "admittedly" },
       { de: "einräumen", tr: "kabul etmek", en: "to concede" },
       { de: "die Streitfrage", tr: "tartışma konusu", en: "the point at issue" },
-      { de: "stichhaltig", tr: "sağlam, tutarlı", en: "cogent" },
+      { de: "stichhaltig", tr: "sağlam / tutarlı", en: "cogent" },
       { de: "unterm Strich", tr: "nihayetinde", en: "at the end of the day" },
       { de: "rechtfertigen", tr: "haklı çıkarmak", en: "to justify" },
       { de: "sich berufen", tr: "dayanak göstermek", en: "to invoke" },

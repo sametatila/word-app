@@ -36,8 +36,8 @@ export const a2U19: SkillExercise[] = [
     genre: "article",
     intro: "Yıl boyunca hangi kutlamalar var, hangisi resmî tatil?",
     gloss: [
-      { de: "das Fest", tr: "bayram, kutlama", en: "festival" },
-      { de: "staatlich", tr: "devlete ait, resmî", en: "official, state" },
+      { de: "das Fest", tr: "bayram / kutlama", en: "festival" },
+      { de: "staatlich", tr: "devlete ait / resmî", en: "official, state" },
       { de: "der Weihnachtsbaum", tr: "yılbaşı ağacı", en: "Christmas tree" },
       { de: "schmücken", tr: "süslemek", en: "to decorate" },
       { de: "die Laterne", tr: "fener", en: "lantern" },

@@ -38,7 +38,7 @@ export const c1U20: SkillExercise[] = [
     genre: "essay",
     intro: "Makine karar verirse sorumluluk kime yazılır?",
     gloss: [
-      { de: "zurechnen", tr: "atfetmek, yüklemek", en: "to attribute" },
+      { de: "zurechnen", tr: "atfetmek / yüklemek", en: "to attribute" },
       { de: "die Instanz", tr: "merci", en: "authority, entity" },
       { de: "haftbar", tr: "sorumlu (hukuken)", en: "liable" },
       { de: "der Vorsatz", tr: "kasıt", en: "intent" },

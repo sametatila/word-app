@@ -38,7 +38,7 @@ export const c1U11: SkillExercise[] = [
       { de: "der Wortlaut", tr: "metnin lafzı", en: "wording" },
       { de: "zuschreiben", tr: "atfetmek", en: "to attribute" },
       { de: "übereinstimmen", tr: "örtüşmek", en: "to match" },
-      { de: "entnehmen", tr: "çıkarmak, anlamak", en: "to gather from" },
+      { de: "entnehmen", tr: "çıkarmak / anlamak", en: "to gather from" },
       { de: "vertuschen", tr: "örtbas etmek", en: "to cover up" },
     ],
     minutes: 7,
@@ -112,7 +112,7 @@ export const c1U11: SkillExercise[] = [
     genre: "article",
     intro: "Bir ajans haberi. Hangi cümle olgu, hangisi aktarım?",
     gloss: [
-      { de: "der Sachverhalt", tr: "olgu, vaka", en: "the facts of the case" },
+      { de: "der Sachverhalt", tr: "olgu / vaka", en: "the facts of the case" },
       { de: "dementieren", tr: "yalanlamak", en: "to deny" },
       { de: "die Quellenlage", tr: "kaynak durumu", en: "state of the sources" },
       { de: "vorliegen", tr: "mevcut olmak", en: "to be available" },

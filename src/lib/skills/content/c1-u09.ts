@@ -281,7 +281,7 @@ export const c1U09: SkillExercise[] = [
       { de: "einen Bären aufbinden", tr: "kafaya atmak", en: "to pull someone's leg" },
       { de: "im Trüben fischen", tr: "bulanık suda balık avlamak", en: "to fish in troubled waters" },
       { de: "auf Wolke sieben schweben", tr: "bulutların üstünde olmak", en: "to be on cloud nine" },
-      { de: "eiskalt", tr: "buz gibi, acımasız", en: "ice-cold" },
+      { de: "eiskalt", tr: "buz gibi / acımasız", en: "ice-cold" },
       { de: "blauäugig", tr: "saf", en: "naive" },
       { de: "der Lichtblick", tr: "umut ışığı", en: "ray of hope" },
       { de: "schwarzmalen", tr: "karamsarlık yaymak", en: "to paint a bleak picture" },

@@ -42,7 +42,7 @@ export const a2U22: SkillExercise[] = [
       { de: "beantworten", tr: "cevaplamak", en: "to answer" },
       { de: "erneut", tr: "yeniden", en: "again" },
       { de: "nerven", tr: "sinir etmek", en: "to annoy" },
-      { de: "sich absprechen", tr: "sözleşmek, kararlaştırmak", en: "to coordinate" },
+      { de: "sich absprechen", tr: "sözleşmek / kararlaştırmak", en: "to coordinate" },
     ],
     minutes: 4,
     text:
@@ -113,7 +113,7 @@ export const a2U22: SkillExercise[] = [
       { de: "das Interview", tr: "söyleşi", en: "interview" },
       { de: "nützlich", tr: "faydalı", en: "useful" },
       { de: "plaudern", tr: "çene çalmak", en: "to chat away" },
-      { de: "erwähnen", tr: "anmak, değinmek", en: "to mention" },
+      { de: "erwähnen", tr: "anmak / değinmek", en: "to mention" },
       { de: "stundenlang", tr: "saatlerce", en: "for hours" },
     ],
     minutes: 4,

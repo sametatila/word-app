@@ -201,7 +201,7 @@ export const c1U14: SkillExercise[] = [
       { de: "einlegen", tr: "(itiraz) sunmak", en: "to lodge" },
       { de: "rechtens", tr: "hukuka uygun", en: "lawful" },
       { de: "eingestehen", tr: "kabul etmek", en: "to admit" },
-      { de: "der Verband", tr: "sendika, birlik", en: "union, association" },
+      { de: "der Verband", tr: "sendika / birlik", en: "union, association" },
     ],
     minutes: 5,
     segments: [

@@ -94,12 +94,12 @@ export const a2U15: SkillExercise[] = [
     gloss: [
       { de: "der Flohmarkt", tr: "bitpazarı", en: "flea market" },
       { de: "gebraucht", tr: "ikinci el", en: "second-hand" },
-      { de: "ausmisten", tr: "ayıklamak, elden çıkarmak", en: "to clear out" },
+      { de: "ausmisten", tr: "ayıklamak / elden çıkarmak", en: "to clear out" },
       { de: "rostig", tr: "paslı", en: "rusty" },
       { de: "das Brettspiel", tr: "kutu oyunu", en: "board game" },
       { de: "der Hocker", tr: "tabure", en: "stool" },
-      { de: "einzeln", tr: "tek tek, ayrı", en: "individually" },
-      { de: "die Menge", tr: "miktar, yığın", en: "amount" },
+      { de: "einzeln", tr: "tek tek / ayrı", en: "individually" },
+      { de: "die Menge", tr: "miktar / yığın", en: "amount" },
     ],
     minutes: 4,
     text:
@@ -319,7 +319,7 @@ export const a2U15: SkillExercise[] = [
     intro: "Bitpazarı ilanına yaz: neyi istiyorsun, ne kadar veriyorsun, ne zaman geliyorsun?",
     gloss: [
       { de: "gebraucht", tr: "ikinci el", en: "second-hand" },
-      { de: "einzeln", tr: "tek tek, ayrı", en: "individually" },
+      { de: "einzeln", tr: "tek tek / ayrı", en: "individually" },
       { de: "der Hocker", tr: "tabure", en: "stool" },
       { de: "das Brettspiel", tr: "kutu oyunu", en: "board game" },
       { de: "abholen", tr: "gelip almak", en: "to pick up" },

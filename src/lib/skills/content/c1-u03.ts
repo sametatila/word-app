@@ -38,9 +38,9 @@ export const c1U03: SkillExercise[] = [
       { de: "das Alleinstellungsmerkmal", tr: "ayırt edici özellik", en: "unique selling point" },
       { de: "skalieren", tr: "ölçeklenmek", en: "to scale" },
       { de: "der Bedarf", tr: "ihtiyaç", en: "demand" },
-      { de: "belegen", tr: "belgelemek, kanıtlamak", en: "to substantiate" },
+      { de: "belegen", tr: "belgelemek / kanıtlamak", en: "to substantiate" },
       { de: "die Überzeugungskraft", tr: "ikna gücü", en: "persuasive power" },
-      { de: "zünden", tr: "tutmak, etkisini göstermek", en: "to catch on" },
+      { de: "zünden", tr: "tutmak / etkisini göstermek", en: "to catch on" },
     ],
     minutes: 7,
     text:
@@ -119,7 +119,7 @@ export const c1U03: SkillExercise[] = [
     gloss: [
       { de: "schlichten", tr: "arabuluculuk etmek", en: "to mediate" },
       { de: "die Gegenseite", tr: "karşı taraf", en: "the other side" },
-      { de: "der Standpunkt", tr: "duruş, görüş", en: "position" },
+      { de: "der Standpunkt", tr: "duruş / görüş", en: "position" },
       { de: "sich festfahren", tr: "tıkanmak", en: "to reach a deadlock" },
       { de: "die Annäherung", tr: "yakınlaşma", en: "rapprochement" },
       { de: "beschwichtigen", tr: "yatıştırmak", en: "to placate" },
@@ -196,7 +196,7 @@ export const c1U03: SkillExercise[] = [
     genre: "dialogue",
     intro: "Aynı cümle, tek parçacık farkı. Davet mi, baskı mı?",
     gloss: [
-      { de: "die Aufforderung", tr: "çağrı, talep", en: "request" },
+      { de: "die Aufforderung", tr: "çağrı / talep", en: "request" },
       { de: "der Widerspruch", tr: "karşı çıkma", en: "contradiction" },
       { de: "bekräftigen", tr: "pekiştirmek", en: "to affirm" },
       { de: "die Ermunterung", tr: "yüreklendirme", en: "encouragement" },
@@ -277,7 +277,7 @@ export const c1U03: SkillExercise[] = [
       { de: "locker", tr: "rahat", en: "relaxed" },
       { de: "gewissermaßen", tr: "bir bakıma", en: "in a way" },
       { de: "sich erweisen", tr: "olduğu anlaşılmak", en: "to turn out" },
-      { de: "bewirken", tr: "sağlamak, etkisini yaratmak", en: "to bring about" },
+      { de: "bewirken", tr: "sağlamak / etkisini yaratmak", en: "to bring about" },
     ],
     minutes: 5,
     segments: [
