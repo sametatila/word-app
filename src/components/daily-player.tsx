@@ -143,10 +143,16 @@ export function DailyPlayer({ onExit }: { onExit: () => void }) {
     else setIndex(index + 1);
   }
 
+  /* BEKLEME KENDINI DUYURUYOR. Bu dal ekranin TAMAMINI kaplayip "hazirlaniyor"
+     yaziyor ama canli bolge degildi: ekran okuyucu kullanan biri dugmeye
+     basip hicbir sey duymuyor, ekranin dondugunu mu yoksa hazirlandigini mi
+     bilemiyordu. `aria-busy` tek basina yetmez - o "bu bolge guncelleniyor"
+     der, MONTE EDILDIGINDE hicbir sey okutmaz; okutan `role="status"`.
+     Android karsiligi `accessibilityLiveRegion="polite"`. */
   if (status === "loading" || status === "submitting") {
     return (
       <Card>
-        <p className="muted py-8 text-center text-body">{t("daily.preparing")}</p>
+        <p role="status" aria-busy="true" className="muted py-8 text-center text-body">{t("daily.preparing")}</p>
       </Card>
     );
   }

@@ -221,10 +221,16 @@ export function ChallengePlayer({ onExit }: { onExit: () => void }) {
     else setIndex((i) => i + 1);
   }
 
+  /* BEKLEME KENDINI DUYURUYOR. Bu dal ekranin TAMAMINI kaplayip "hazirlaniyor"
+     yaziyor ama canli bolge degildi: ekran okuyucu kullanan biri dugmeye
+     basip hicbir sey duymuyor, ekranin dondugunu mu yoksa hazirlandigini mi
+     bilemiyordu. `aria-busy` tek basina yetmez - o "bu bolge guncelleniyor"
+     der, MONTE EDILDIGINDE hicbir sey okutmaz; okutan `role="status"`.
+     Android karsiligi `accessibilityLiveRegion="polite"`. */
   if (status === "loading")
     return (
       <Frame>
-        <p className="muted text-center text-body">{t("challenge.preparing")}</p>
+        <p role="status" aria-busy="true" className="muted text-center text-body">{t("challenge.preparing")}</p>
       </Frame>
     );
 

@@ -324,9 +324,15 @@ export function ExamPlayer({ level, module }: { level: CefrLevel; module: number
 
   if (phase === "cover") return <Cover level={level} module={module} onStart={() => void start()} />;
 
+  /* BEKLEME KENDINI DUYURUYOR. Bu dal ekranin TAMAMINI kaplayip "hazirlaniyor"
+     yaziyor ama canli bolge degildi: ekran okuyucu kullanan biri dugmeye
+     basip hicbir sey duymuyor, ekranin dondugunu mu yoksa hazirlandigini mi
+     bilemiyordu. `aria-busy` tek basina yetmez - o "bu bolge guncelleniyor"
+     der, MONTE EDILDIGINDE hicbir sey okutmaz; okutan `role="status"`.
+     Android karsiligi `accessibilityLiveRegion="polite"`. */
   if (phase === "loading" || phase === "finishing") {
     return (
-      <section className="card mx-auto w-full max-w-md p-5" aria-busy>
+      <section role="status" aria-busy="true" className="card mx-auto w-full max-w-md p-5">
         <p className="muted text-body">{t(phase === "loading" ? "exam.preparing" : "item.mono_scoring")}</p>
         <div className="mt-3 h-10 animate-pulse rounded-tile surface-2" />
       </section>

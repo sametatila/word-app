@@ -993,10 +993,13 @@ function Screen({ fills, header, children }: { fills?: boolean; header?: boolean
   );
 }
 
+/* Oturum hazirlanirken ekranin tamamini kaplayan bekleme: canli bolge
+   degildi, yani ekran okuyucu kullanan biri "hazirlaniyor"i hic duymuyordu.
+   Android karsiligi `accessibilityLiveRegion="polite"`. */
 function LoadingCard() {
   const t = useT();
   return (
-    <div className="mx-auto flex w-full max-w-2xl flex-1 items-center justify-center">
+    <div role="status" aria-busy="true" className="mx-auto flex w-full max-w-2xl flex-1 items-center justify-center">
       <div className="flex flex-col items-center gap-3">
         <motion.div
           className="brand-gradient h-12 w-12 rounded-tile"

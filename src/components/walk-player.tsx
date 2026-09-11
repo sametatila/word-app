@@ -1614,7 +1614,13 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
       (rounds[index] && rounds[index].game !== "intro" ? 1 : 0),
   );
 
-  if (status === "loading") return <Frame><p className="muted">{t("walk.preparing")}</p></Frame>;
+  /* BEKLEME KENDINI DUYURUYOR. Bu dal ekranin TAMAMINI kaplayip "hazirlaniyor"
+     yaziyor ama canli bolge degildi: ekran okuyucu kullanan biri dugmeye
+     basip hicbir sey duymuyor, ekranin dondugunu mu yoksa hazirlandigini mi
+     bilemiyordu. `aria-busy` tek basina yetmez - o "bu bolge guncelleniyor"
+     der, MONTE EDILDIGINDE hicbir sey okutmaz; okutan `role="status"`.
+     Android karsiligi `accessibilityLiveRegion="polite"`. */
+  if (status === "loading") return <Frame role="status" busy><p className="muted">{t("walk.preparing")}</p></Frame>;
 
   if (status === "error")
     return (
@@ -1953,10 +1959,10 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
  * bolge acmak olurdu. Sonucu duyuran yalniz bitis dali. Ayni kalip
  * `boss-player`da da var.
  */
-function Frame({ children, role }: { children: React.ReactNode; role?: "status" }) {
+function Frame({ children, role, busy }: { children: React.ReactNode; role?: "status"; busy?: boolean }) {
   return (
     <div className="mx-auto w-full max-w-md">
-      <div role={role} className="card p-6">{children}</div>
+      <div role={role} aria-busy={busy ? "true" : undefined} className="card p-6">{children}</div>
     </div>
   );
 }
