@@ -80,8 +80,21 @@ export function deriveQuiz(brief: UnitBrief, pool: { vocab: VocabItem[]; pattern
     const { options, answer } = placeAnswer(v.tr, pickDistractors(v.tr, trPool, i), i);
     qs.push({ kind: "mcq", text: t("quiz.what_means", { word: v.de }), options, answer, explain: `${v.de} = ${v.tr}.` });
   }
+  /* KALIP SORUSUNUN YÖNÜ KURSA BAĞLI. Almanca kursta kalıbın `tr` alanı
+     çeviri ("Ich heiße …" → "adım …"), yani "nasıl denir?" doğru bir üretim
+     sorusu. İngilizce kursta `tr` bir KULLANIM NOTU ("adını söylerken
+     kullanılır") ve aynı soru "«adını söylerken kullanılır» İngilizce nasıl
+     denir?" diye okunuyordu. Orada soru tersine dönüyor; web tarafı da öyle
+     (bkz. `src/lib/immersion/quiz.ts` `PatternAsk`). */
+  const meaning = currentCourseId() === "en";
+  const trPatternPool = pool.patterns.map((p) => p.tr);
   for (let j = 0; j < patTarget && qs.length < count; j++) {
     const p = brief.patterns[j];
+    if (meaning) {
+      const { options, answer } = placeAnswer(p.tr, pickDistractors(p.tr, trPatternPool, j), j);
+      qs.push({ kind: "mcq", text: t("quiz.what_means", { word: p.de }), options, answer, explain: `${p.de} = ${p.tr}` });
+      continue;
+    }
     const { options, answer } = placeAnswer(p.de, pickDistractors(p.de, dePatternPool, j), j);
     qs.push({ kind: "mcq", text: t("quiz.how_to_say", { pattern: p.tr, target: targetLangName() }), options, answer, explain: `${p.tr} → ${p.de}` });
   }

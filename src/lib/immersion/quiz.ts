@@ -69,12 +69,28 @@ export type QuizText = {
   fromEarlier: string;
 };
 
+/**
+ * Kalıp sorusunun YÖNÜ kursa bağlı.
+ *
+ * Almanca kursta kalıbın `tr` alanı ÇEVİRİ ("Ich heiße …" → "adım …"), yani
+ * "«adım …» Almanca nasıl denir?" doğru bir üretim sorusu. İngilizce kursta
+ * ise `tr` bir KULLANIM NOTU ("adını söylerken kullanılır") ve aynı soru
+ * "«adını söylerken kullanılır» İngilizce nasıl denir?" diye okunuyordu —
+ * not çevrilecek bir ifade değil.
+ *
+ * `"meaning"` yönünde soru tersine dönüyor: hedef dildeki cümle soruluyor,
+ * şıklar notlar oluyor ("«My name is …» ne demek?"). İki yön de aynı iki
+ * arayüz metnini kullanıyor, yeni sözlük anahtarı gerekmiyor.
+ */
+export type PatternAsk = "production" | "meaning";
+
 export function deriveQuiz(
   brief: UnitBrief,
   pool: QuizPool,
   count = 8,
   review?: QuizPool,
   text?: QuizText,
+  patternAsk: PatternAsk = "production",
 ): SkillQuestion[] {
   const say: QuizText = text ?? {
     whatMeans: (w) => `«${w}»?`,
@@ -109,8 +125,14 @@ export function deriveQuiz(
   });
   qs.push(...interleave(own, back));
 
+  const trPatternPool = pool.patterns.map((p) => p.tr);
   for (let j = 0; j < patTarget && qs.length < count; j++) {
     const p = brief.patterns[j];
+    if (patternAsk === "meaning") {
+      const { options, answer } = placeAnswer(p.tr, pickDistractors(p.tr, trPatternPool, j), j);
+      qs.push({ kind: "mcq", text: say.whatMeans(p.de), options, answer, explain: `${p.de} = ${p.tr}` });
+      continue;
+    }
     const { options, answer } = placeAnswer(p.de, pickDistractors(p.de, dePatternPool, j), j);
     qs.push({ kind: "mcq", text: say.howToSay(p.tr), options, answer, explain: `${p.tr} → ${p.de}` });
   }
