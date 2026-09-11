@@ -19,3 +19,15 @@ export const TWO_FACTOR_CODE_DIGITS = 6;
 
 /** Yanlış kod denemesi hakkı; aşılınca giriş denemesi baştan başlar. */
 export const TWO_FACTOR_ALLOWED_ATTEMPTS = 5;
+
+/**
+ * "Bu cihazda kod sorma" işaretinin ömrü, GÜN.
+ *
+ * Bu sayı buraya yazılana kadar HİÇBİR yerde yazılı değildi: better-auth'un
+ * `trustDeviceMaxAge` varsayılanı (30 gün) kullanılıyordu ve kullanıcıya
+ * söylenen cümle ("bu cihazda 30 gün kod sorulmaz") o varsayılanın DOĞRU
+ * kalmasına güveniyordu. Kütüphane varsayılanını değiştirse ekran eski süreyi
+ * söylemeye devam ederdi ve hiçbir şey uyarmazdı. Artık eklentiye açıkça
+ * geçiliyor ve cümle de buradan besleniyor.
+ */
+export const TWO_FACTOR_TRUST_DAYS = 30;

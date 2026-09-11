@@ -17,7 +17,7 @@ import { redisRateLimitStorage } from "@/lib/auth/rate-limit-store";
 import { clearFailedLogins, isLockedOut, MAX_FAILED_LOGINS, noteFailedLogin } from "@/lib/auth/login-throttle";
 import { captchaPlugins } from "@/lib/auth/captcha";
 import { twoFactor } from "better-auth/plugins";
-import { TWO_FACTOR_ALLOWED_ATTEMPTS, TWO_FACTOR_CODE_DIGITS, TWO_FACTOR_CODE_MINUTES } from "@/lib/auth/two-factor-config";
+import { TWO_FACTOR_ALLOWED_ATTEMPTS, TWO_FACTOR_CODE_DIGITS, TWO_FACTOR_CODE_MINUTES, TWO_FACTOR_TRUST_DAYS } from "@/lib/auth/two-factor-config";
 
 /**
  * Self-hosted Better Auth. Oturumlar/kullanıcılar KENDİ
@@ -452,6 +452,9 @@ export const auth = betterAuth({
     twoFactor({
       issuer: "Lernomi",
       totpOptions: { disable: true },
+      /* Güvenilen cihazın ömrü AÇIKÇA veriliyor: varsayılana bırakıldığında
+         ekrandaki söz kütüphane varsayılanına bağlı kalıyordu. */
+      trustDeviceMaxAge: TWO_FACTOR_TRUST_DAYS * 24 * 60 * 60,
       otpOptions: {
         period: TWO_FACTOR_CODE_MINUTES,
         digits: TWO_FACTOR_CODE_DIGITS,

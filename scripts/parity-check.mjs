@@ -3452,7 +3452,12 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       "en iyi cumleler=" + (/rpexam\.best_sentences/.test(src) ? "var" : "yok"),
       "en sik hata=" + (/rpexam\.most_common/.test(src) ? "var" : "yok"),
       "yapabilirlik=" + (/lessonp\.i_can/.test(src) ? "var" : "yok"),
-      "esik 60=" + (/>= 60/.test(src) ? "var" : "yok"),
+      /* ESKIDEN `/>= 60/` ARANIYORDU. Esik sabite tasininca bu satir iki
+         tarafta da "yok" uretecek ve karsilastirma yesil kalacakti - §144'un
+         tuzagi. Artik hem sayinin KENDISI hem de ekranin sabiti kullanip
+         kullanmadigi okunuyor; mutlak olcut §186-187'de. */
+      "esik=" + sabit("EXAM_PASS_SCORE"),
+      "esik kaynaktan=" + (/>= EXAM_PASS_SCORE/.test(src) ? "var" : "yok"),
       "giris dugmesi=" + (/lessonp\.try_as_exam/.test(src) ? "var" : "yok"),
     ];
   };
@@ -7031,7 +7036,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   );
 }
 
-/* ── 184-185. politika sayisi CUMLENIN ICINDE yaziliydi ───────────────────
+/* ── 184-187. politika sayisi CUMLENIN ICINDE yaziliydi ───────────────────
  * §183'un sorusunun ("sayi kac yerde yazili") sozluge uzanan hali. Iki kural
  * kodda TEK sabitti ama kullaniciya SOYLEYEN cumle sayiyi duz metin olarak
  * tasiyordu:
@@ -7041,6 +7046,14 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
  *         dizge.
  *   185 - kullanici adi bekleme suresi (`USERNAME_CHANGE_COOLDOWN_DAYS`):
  *         "14 gunde bir degisir" ve hata cumlesi - yine on iki dizge.
+ *   186 - guvenilen cihazin omru (`TWO_FACTOR_TRUST_DAYS`): "bu cihazda 30
+ *         gun kod sorulmaz". Bu sayi HICBIR yerde yazili degildi - cumle
+ *         better-auth'un `trustDeviceMaxAge` VARSAYILANINA guveniyordu.
+ *         Kutuphane varsayilani degisse ekran eski sureyi soylemeye devam
+ *         ederdi. Artik eklentiye acikca geciliyor.
+ *   187 - rol yapma sinavinin gecme esigi (`EXAM_PASS_SCORE`): iki platformun
+ *         ekrani `overall >= 60` diye elle karsilastiriyordu ve esigi soyleyen
+ *         cumle ("esigin altinda (60)") alti dizgede ayrica yaziliydi.
  *
  * Sabit degisseydi kural degisir, cumle ESKI SAYIYI soylemeye devam ederdi:
  * form "en az 10 karakter" der, sunucu on ikiyi isterdi; kullanici neyi
@@ -7082,6 +7095,18 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
         "mobile/src/api/social.ts", "mobile/src/screens/SocialSettingsScreen.tsx",
       ],
     },
+    {
+      ad: "guvenilen cihaz omru",
+      anahtarlar: ["twofa.trust_note"],
+      gecis: /n:\s*TWO_FACTOR_TRUST_DAYS/,
+      cagiranlar: ["src/components/two-factor-form.tsx", "mobile/src/screens/AuthScreen.tsx"],
+    },
+    {
+      ad: "rol yapma gecme esigi",
+      anahtarlar: ["rpexam.below_threshold"],
+      gecis: /n:\s*EXAM_PASS_SCORE/,
+      cagiranlar: ["src/components/lessons/roleplay-exam.tsx", "mobile/src/screens/RoleplayExamScreen.tsx"],
+    },
   ];
 
   for (const pol of POLITIKALAR) {
@@ -7112,6 +7137,31 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       "beklenen",
     );
   }
+
+  /* 186'nin ikinci yarisi: cumle dogru sayiyi sorsa bile SUNUCU sayiyi
+     eklentiye vermiyorsa soz yine kutuphane varsayilanina bagli kalir. */
+  const sunucu = sil(read("src/lib/auth/server.ts"));
+  sameList(
+    "guvenilen cihaz omru eklentiye geciliyor",
+    ["trustDeviceMaxAge=" + (/trustDeviceMaxAge: TWO_FACTOR_TRUST_DAYS \* 24 \* 60 \* 60/.test(sunucu) ? "sabitten" : "VARSAYILANA BIRAKILMIS")],
+    ["trustDeviceMaxAge=sabitten"],
+    "bulunan",
+    "beklenen",
+  );
+
+  /* 187'nin ikinci yarisi: cumle sabitten beslense de KARARI veren
+     karsilastirma elle yazilmis bir sayiysa ikisi ayrisabilir - kullanici
+     "gecti" yazan bir ekranda gecmemis sayilir. */
+  sameList(
+    "rol yapma esigi kararda da kaynaktan",
+    [
+      "web=" + (/overall >= EXAM_PASS_SCORE/.test(sil(read("src/components/lessons/roleplay-exam.tsx"))) ? "kaynaktan" : "elle yazili"),
+      "mobil=" + (/overall >= EXAM_PASS_SCORE/.test(sil(read("mobile/src/screens/RoleplayExamScreen.tsx"))) ? "kaynaktan" : "elle yazili"),
+    ],
+    ["web=kaynaktan", "mobil=kaynaktan"],
+    "bulunan",
+    "beklenen",
+  );
 }
 
 console.log(

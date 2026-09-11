@@ -6,7 +6,7 @@ import { useRouter, useSearchParams } from "next/navigation";
 import { AuthNotice, AuthShell, authInputClass } from "@/components/auth-shell";
 import { authApi } from "@/lib/auth/api";
 import { translateAuthError } from "@/lib/auth/errors";
-import { TWO_FACTOR_CODE_DIGITS, TWO_FACTOR_CODE_MINUTES } from "@/lib/auth/two-factor-config";
+import { TWO_FACTOR_CODE_DIGITS, TWO_FACTOR_CODE_MINUTES, TWO_FACTOR_TRUST_DAYS } from "@/lib/auth/two-factor-config";
 import { useT, useLang } from "@/lib/i18n/client";
 
 /** Yeni kod istemeden önce beklenecek süre; sıfırlama ekranıyla aynı. */
@@ -132,7 +132,7 @@ export function TwoFactorForm() {
             />
             <span>
               {t("twofa.trust")}
-              <span className="muted block text-xs leading-snug">{t("twofa.trust_note")}</span>
+              <span className="muted block text-xs leading-snug">{t("twofa.trust_note", { n: TWO_FACTOR_TRUST_DAYS })}</span>
             </span>
           </label>
 

@@ -741,7 +741,7 @@ export const en: Record<string, string> = {
   "rpexam.scoring_note": "All {n} turns are being judged against the rubric.",
   "rpexam.service_down": "The conversation service isn't reachable right now; the exam can't run on a script (it wouldn't count).",
   "rpexam.passed": "passed",
-  "rpexam.below_threshold": "below the threshold (60)",
+  "rpexam.below_threshold": "below the threshold ({n})",
   "rpexam.best_sentences": "Your best sentences",
   "rpexam.most_common": "Most common:",
   "rpexam.no_errors": "The rubric found no errors.",
@@ -1822,7 +1822,7 @@ export const en: Record<string, string> = {
   "twofa.resend": "Send the code again",
   "twofa.resent": "A new code is on its way.",
   "twofa.trust": "Remember this device",
-  "twofa.trust_note": "No code on this device for 30 days. Leave off on a shared computer.",
+  "twofa.trust_note": "No code on this device for {n} days. Leave off on a shared computer.",
   "twofa.expired": "This sign-in attempt has expired. Please sign in again.",
   "autherror.invalid_code": "That code is wrong or has expired.",
 };

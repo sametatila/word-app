@@ -12,3 +12,6 @@ export const TWO_FACTOR_CODE_MINUTES = 5;
 
 /** Kodun hane sayısı. */
 export const TWO_FACTOR_CODE_DIGITS = 6;
+
+/** "Bu cihazda kod sorma" işaretinin ömrü, GÜN — yalnız ekranda söylenen söz için. */
+export const TWO_FACTOR_TRUST_DAYS = 30;

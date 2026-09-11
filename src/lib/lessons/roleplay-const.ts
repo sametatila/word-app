@@ -5,6 +5,16 @@
 export const EXAM_TURNS = 5;
 export const EXAM_SECONDS = 180;
 
+/**
+ * Geçme eşiği — bütünsel puan yüzdesi.
+ *
+ * Sayı hiçbir yerde sabit değildi: iki platformun ekranı `overall >= 60` diye
+ * ELLE karşılaştırıyordu ve eşiği söyleyen cümle ("eşiğin altında (60)") altı
+ * sözlük dizgesinde ayrıca yazılıydı. Sekiz yer; biri değişse ötekiler
+ * sessizce eski kalır, kullanıcı geçtiğini sandığı bir sınavı geçemezdi.
+ */
+export const EXAM_PASS_SCORE = 60;
+
 /** Rol yapmada bir dersin isteyebileceği en çok tur (bkz. LessonRoleplay.minTurns). */
 export const MAX_MIN_TURNS = 9;
 

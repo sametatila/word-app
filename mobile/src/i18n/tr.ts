@@ -746,7 +746,7 @@ export const tr: Record<string, string> = {
   "rpexam.scoring_note": "{n} turun tamamı rubrikle değerlendiriliyor.",
   "rpexam.service_down": "Konuşma servisi şu an ulaşılamıyor; sınav senaryolu konuşmayla yapılamaz (ölçüm sayılmaz).",
   "rpexam.passed": "geçti",
-  "rpexam.below_threshold": "eşiğin altında (60)",
+  "rpexam.below_threshold": "eşiğin altında ({n})",
   "rpexam.best_sentences": "En iyi cümlelerin",
   "rpexam.most_common": "En çok:",
   "rpexam.no_errors": "Rubrik hata bulmadı.",
@@ -1827,7 +1827,7 @@ export const tr: Record<string, string> = {
   "twofa.resend": "Kodu tekrar gönder",
   "twofa.resent": "Yeni kod gönderildi.",
   "twofa.trust": "Bu cihazı hatırla",
-  "twofa.trust_note": "Bu cihazda 30 gün kod sorulmaz. Ortak bilgisayarda işaretleme.",
+  "twofa.trust_note": "Bu cihazda {n} gün kod sorulmaz. Ortak bilgisayarda işaretleme.",
   "twofa.expired": "Bu giriş denemesinin süresi doldu. Baştan giriş yap.",
   "autherror.invalid_code": "Kod yanlış ya da süresi dolmuş.",
 };

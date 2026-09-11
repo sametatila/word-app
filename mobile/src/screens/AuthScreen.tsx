@@ -13,7 +13,7 @@ import { requestPasswordReset, sendVerificationEmail } from "../lib/auth";
 import { fetchServerConfig } from "../lib/serverConfig";
 import { Turnstile } from "../ui/Turnstile";
 import { sendTwoFactorOtp, verifyTwoFactorOtp } from "../lib/auth";
-import { TWO_FACTOR_CODE_DIGITS, TWO_FACTOR_CODE_MINUTES } from "../lib/twoFactor";
+import { TWO_FACTOR_CODE_DIGITS, TWO_FACTOR_CODE_MINUTES, TWO_FACTOR_TRUST_DAYS } from "../lib/twoFactor";
 import { openLegal } from "../lib/legal";
 import { googleSignIn, googleSupported } from "../lib/googleAuth";
 import { appleSignIn, appleSupported, appleWebSignIn } from "../lib/appleAuth";
@@ -417,7 +417,7 @@ export function AuthScreen() {
               </View>
               <View style={{ flex: 1 }}>
                 <Text variant="bodyStrong">{t("twofa.trust")}</Text>
-                <Text variant="caption" color={colors.textMuted}>{t("twofa.trust_note")}</Text>
+                <Text variant="caption" color={colors.textMuted}>{t("twofa.trust_note", { n: TWO_FACTOR_TRUST_DAYS })}</Text>
               </View>
             </PressableScale>
 

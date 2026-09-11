@@ -29,9 +29,11 @@ import { useTheme, spacing, radii, softShadow, cardShadow, type Palette } from "
 import { track } from "../lib/track";
 import type { RootStackParams } from "../navigation/RootStack";
 
-/** Web `lib/lessons/roleplay-const` ile aynı iki sayı. */
+/** Web `lib/lessons/roleplay-const` ile aynı üç sayı. */
 export const EXAM_TURNS = 5;
 export const EXAM_SECONDS = 180;
+/** Geçme eşiği — bütünsel puan yüzdesi; eşiği SÖYLEYEN cümle de bundan besleniyor. */
+export const EXAM_PASS_SCORE = 60;
 
 type Turn = { role: "user" | "assistant"; content: string };
 type Phase = "intro" | "talk" | "scoring" | "result" | "error";
@@ -283,7 +285,7 @@ export function RoleplayExamScreen() {
     for (const e of result?.errors ?? []) byType.set(e.type, (byType.get(e.type) ?? 0) + 1);
     const topErrors = [...byType].sort((a, b) => b[1] - a[1]).slice(0, 2);
     const overall = result?.score.overall ?? 0;
-    const passed = overall >= 60;
+    const passed = overall >= EXAM_PASS_SCORE;
     return (
       <ScrollView style={{ flex: 1, backgroundColor: colors.bg }} contentContainerStyle={pad}>
         <Back nav={nav} colors={colors} />
@@ -297,7 +299,7 @@ export function RoleplayExamScreen() {
           ) : null}
           <Text variant="h1" style={{ marginTop: spacing.md }}>{tx("rpexam.title")}</Text>
           <Text variant="caption" color={colors.textMuted} style={{ marginTop: 2, textAlign: "center" }}>
-            {lesson.title} · {tx("lessonp.n_turns", { n: userTurns })}{result ? ` · ${tx(passed ? "rpexam.passed" : "rpexam.below_threshold")}` : ""}
+            {lesson.title} · {tx("lessonp.n_turns", { n: userTurns })}{result ? ` · ${tx(passed ? "rpexam.passed" : "rpexam.below_threshold", { n: EXAM_PASS_SCORE })}` : ""}
           </Text>
         </View>
 

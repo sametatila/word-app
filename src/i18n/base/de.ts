@@ -743,7 +743,7 @@ export const deBase: Record<string, string> = {
   "rpexam.scoring_note": "Alle {n} Beiträge werden nach dem Raster bewertet.",
   "rpexam.service_down": "Der Gesprächsdienst ist gerade nicht erreichbar; die Prüfung lässt sich nicht per Skript ablegen (sie würde nicht zählen).",
   "rpexam.passed": "bestanden",
-  "rpexam.below_threshold": "unter der Schwelle (60)",
+  "rpexam.below_threshold": "unter der Schwelle ({n})",
   "rpexam.best_sentences": "Deine besten Sätze",
   "rpexam.most_common": "Am häufigsten:",
   "rpexam.no_errors": "Das Raster hat keine Fehler gefunden.",
@@ -1824,7 +1824,7 @@ export const deBase: Record<string, string> = {
   "twofa.resend": "Code noch einmal senden",
   "twofa.resent": "Ein neuer Code ist unterwegs.",
   "twofa.trust": "Dieses Gerät merken",
-  "twofa.trust_note": "30 Tage lang kein Code auf diesem Gerät. Auf gemeinsam genutzten Rechnern aus lassen.",
+  "twofa.trust_note": "{n} Tage lang kein Code auf diesem Gerät. Auf gemeinsam genutzten Rechnern aus lassen.",
   "twofa.expired": "Dieser Anmeldeversuch ist abgelaufen. Bitte melde dich erneut an.",
   "autherror.invalid_code": "Der Code ist falsch oder abgelaufen.",
 };

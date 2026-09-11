@@ -6,7 +6,7 @@ import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import type { Lesson } from "@/lib/lessons/types";
 import { parseReply } from "@/lib/chat-format";
-import { EXAM_SECONDS, EXAM_TURNS } from "@/lib/lessons/roleplay-const";
+import { EXAM_PASS_SCORE, EXAM_SECONDS, EXAM_TURNS } from "@/lib/lessons/roleplay-const";
 import { askAssess, fallbackAssessment, type AssessFailure, type FallbackAssessment } from "@/lib/assess-client";
 import type { Assessment, AssessLevel, AssessRequest } from "@/lib/assess-prompts";
 import { AssessmentCard } from "@/components/feedback/assessment-card";
@@ -253,7 +253,7 @@ export function RoleplayExam({ lesson, cando }: { lesson: Lesson; cando: string[
     const byType = new Map<ErrorType, number>();
     for (const e of result.errors) byType.set(e.type, (byType.get(e.type) ?? 0) + 1);
     const topErrors = [...byType].sort((a, b) => b[1] - a[1]).slice(0, 2);
-    const passed = result.score.overall >= 60;
+    const passed = result.score.overall >= EXAM_PASS_SCORE;
     return (
       <section className="card mx-auto w-full max-w-md p-5">
         <CoachBubble moment={passed ? "exam_pass" : "exam_fail"} mood={passed ? "cheer" : "sad"} vars={{ pct: result.score.overall, level: lesson.level }} size={56} className="mb-3" />
@@ -262,7 +262,7 @@ export function RoleplayExam({ lesson, cando }: { lesson: Lesson; cando: string[
         </h1>
         <p className="muted mt-1 text-xs">
           {lesson.title} · {t("lessonp.n_turns", { n: userTurns })} ·{" "}
-          {passed ? t("rpexam.passed") : t("rpexam.below_threshold")}
+          {passed ? t("rpexam.passed") : t("rpexam.below_threshold", { n: EXAM_PASS_SCORE })}
         </p>
         <div className="mt-3">
           <AssessmentCard answer={said.join("\n")} result={result} failure={failure} example={null} />

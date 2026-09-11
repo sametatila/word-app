@@ -9248,3 +9248,42 @@ içine girdi ve §182 artık onu da sunucuyla karşılaştırıyor.
 dosyasında rakam kaldı mı" ve "her çağıran sabiti geçiriyor mu". Kapının
 kendisi de tekrar etmesin diye tablo dönülüyor — düzelttiğim şeyin aynısını
 kapının içinde yapmak tuhaf olurdu. Sekiz enjeksiyonun sekizi yakalandı.
+
+## §11.282 — Güvenilen cihazın süresi hiçbir yerde yazılı değildi
+
+Taramanın ikinci turu, iki bulgu. Birincisi cinsi bakımından yeni: sayı iki
+yerde değil, **sıfır yerde** yazılıydı.
+
+"Bu cihazda 30 gün kod sorulmaz" cümlesi altı sözlük dizgesinde duruyordu ve
+kodda bu süreyi belirleyen hiçbir sabit yoktu — süre better-auth'un
+`trustDeviceMaxAge` **varsayılanıydı** (2.592.000 sn = 30 gün) ve uygulama onu
+hiç geçmiyordu. Yani ekrandaki söz, bir kütüphanenin varsayılanının doğru
+kalmasına güveniyordu. Kütüphane sürümüyle birlikte varsayılan değişse ekran
+eski süreyi söylemeye devam eder, hiçbir kapı uyarmazdı.
+
+`TWO_FACTOR_TRUST_DAYS` `lib/auth/two-factor-config` içine girdi (kod süresi
+ve hane sayısının yanına — o dosya tam da bu gerekçeyle kurulmuştu), eklentiye
+**açıkça** geçiliyor ve cümle `{n}` ile oradan besleniyor. Mobilde ayna
+`lib/twoFactor` içinde, karşılaştırmasını mevcut "ortak sayısal sabitler"
+kapısı zaten yapıyor.
+
+## §11.283 — Rol yapma sınavının geçme eşiği sekiz yerde yazılıydı
+
+İkinci bulgu klasik sınıftan ama kararı doğrudan etkiliyordu: eşik hiçbir
+yerde sabit değildi. İki platformun ekranı `overall >= 60` diye **elle**
+karşılaştırıyor, eşiği söyleyen cümle ("eşiğin altında (60)") altı sözlük
+dizgesinde ayrıca yazılıydı. Sekiz yer. Biri değişse kullanıcı, ekranın
+söylediği eşiği geçtiği hâlde geçemezdi.
+
+`EXAM_PASS_SCORE` `lib/lessons/roleplay-const` içine girdi (`EXAM_TURNS` ve
+`EXAM_SECONDS` ile aynı dosya), mobil ekran kendi aynasını tutuyor; hem karar
+hem cümle oradan besleniyor.
+
+**Var olan §97 bu değişiklikte sessizce körleşecekti.** Kapı `/>= 60/` diye
+arıyordu; eşik sabite taşınınca iki tarafta da "yok" üretip karşılaştırmayı
+yeşil bırakacaktı — §144'ün tuzağının aynısı, bu sefer önceden görüldü. Satır
+ikiye ayrıldı: sayının kendisi ve ekranın sabiti kullanıp kullanmadığı.
+
+**§186-187** aynı politika tablosuna eklendi; ayrıca iki mutlak ölçüt:
+sunucunun `trustDeviceMaxAge`i sabitten geçirdiği, ve rol yapma kararının
+(yalnız cümlenin değil) sabitten okuduğu. Altı enjeksiyonun altısı yakalandı.
