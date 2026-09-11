@@ -5075,6 +5075,41 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   );
 }
 
+/* ── 144. gunluk hedef araligi ────────────────────────────────────────────
+ * §50'nin ikizi, bir alan otede. Uc gunluk hedefi 5-120 arasina kirpiyor
+ * (`/api/profile`) ve web kaydiricisi o araligi veriyor; mobil cip listesi
+ * [10, 20, 30, 50] idi, yani Android kullanicisi 5'i de 120'yi de
+ * SECEMIYORDU. Yuzey sunucunun kabul ettiginden DAR bir aralik teklif
+ * edince kullanici o hedefleri hic bilmiyor - sessiz bir eksiklik, cunku
+ * ortada hata mesaji da yok.
+ *
+ * Olculen: mobil cip listesinin ucu ile ucun kirpmasi ve web kaydiricisinin
+ * ucu ayni mi. */
+{
+  const src = read("src/app/api/profile/route.ts");
+  const m = src.match(/clampInt\(body\.dailyGoal,\s*(\d+),\s*(\d+)\)/);
+  const uc = m ? [m[1], m[2]] : ["?", "?"];
+  const web = read("src/components/profile-form.tsx");
+  const wm = web.match(/label=\{t\("settings\.daily_goal_short"\)\}[\s\S]{0,200}?min=\{(\d+)\}[\s\S]{0,80}?max=\{(\d+)\}/);
+  const mob = read("mobile/src/screens/SettingsScreen.tsx");
+  const mm = mob.match(/const GOALS = \[([^\]]*)\]/);
+  const sayilar = mm ? mm[1].split(",").map((x) => Number(x.trim())) : [];
+  sameList(
+    "gunluk hedef araligi (mobil cipleri)",
+    ["alt=" + Math.min(...sayilar), "ust=" + Math.max(...sayilar)],
+    ["alt=" + uc[0], "ust=" + uc[1]],
+    "mobil cipleri",
+    "uc kirpmasi",
+  );
+  sameList(
+    "gunluk hedef araligi (web kaydiricisi)",
+    ["alt=" + (wm?.[1] ?? "?"), "ust=" + (wm?.[2] ?? "?")],
+    ["alt=" + uc[0], "ust=" + uc[1]],
+    "web kaydiricisi",
+    "uc kirpmasi",
+  );
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"

@@ -7926,3 +7926,28 @@ anahtarı iki tarafta birebir aynı (mobildeki "test bildirimi gönder" yalnız
 `__DEV__` derlemesinde, yani ürün yüzeyi değil), ve oyun sesleri anahtarı
 webde Bildirimler altında, Android'de Ayarlar'da — webin yerleşimi yazılı bir
 gerekçe taşıyor ("ne zaman rahatsız edilirim ayarı"), ikisi de erişilebilir.
+
+### 11.238 Android'de günlük hedef dört sayıdan ibaretti
+
+§50 "günde yeni kelime" için şu kuralı koymuş: **yüzey, sunucunun kabul
+ettiği aralığı teklif etmek zorunda.** Aynı ekranın bir alan üstü o kuralı
+tutmuyordu.
+
+Uç günlük hedefi **5-120** arasına kırpıyor (`/api/profile`) ve web kaydırıcısı
+o aralığı veriyor. Mobil çip listesi ise `[10, 20, 30, 50]` idi: Android
+kullanıcısı **5'i de 120'yi de seçemiyordu** — sunucunun ve öteki platformun
+kabul ettiği hedeflerin çoğu telefonda yoktu. Ortada hata mesajı da yok, çünkü
+seçenek hiç gösterilmiyor: sessiz bir eksiklik.
+
+Liste aralığı kapsayan bir merdivene çevrildi: `[5, 10, 15, 20, 30, 40, 60, 80,
+100, 120]` — **altta sık, üstte seyrek.** Günlük hedefini 5'ten 20'ye çeken
+kullanıcı ince ayar istiyor, 100'den 120'ye çeken istemiyor; beşer beşer yirmi
+dört çip telefonda bir çip duvarı olurdu. Ekranın "mevcut değeri her zaman
+göster" davranışı da duruyor, yani webden girilmiş 115 gibi bir değer çip
+olarak görünmeye devam ediyor.
+
+**§144** §50'nin ikizi: mobil çip listesinin ucu, web kaydırıcısının ucu ve
+ucun kırpması yan yana. Üç enjeksiyonun üçü de yakalandı — sonuncusu ikisini
+birden düşürdü (kırpma değişirse iki yüzey de ayrışır), yani kapı
+"sunucu ne diyorsa o" kuralını ölçüyor, iki yüzeyin birbirine benzemesini
+değil.

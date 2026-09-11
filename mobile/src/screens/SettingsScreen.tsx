@@ -27,7 +27,19 @@ import { hasMicConsent, setMicConsent } from "../lib/micConsent";
 import { openLegal } from "../lib/legal";
 import { APP_VERSION } from "../version";
 
-const GOALS = [10, 20, 30, 50];
+/**
+ * Günlük hedef seçenekleri — uç 5-120 arasını kabul ediyor
+ * (`/api/profile` `clampInt(body.dailyGoal, 5, 120)`) ve web kaydırıcısı da
+ * o aralığı veriyor. Liste [10, 20, 30, 50] idi: Android kullanıcısı 5'i de
+ * 120'yi de SEÇEMİYORDU, yani sunucunun ve öteki platformun kabul ettiği
+ * hedeflerin çoğu telefonda yoktu. `NEW_PER_DAY` aynı kuralı zaten tutuyor
+ * (bkz. parity §50).
+ *
+ * Merdiven altta sık, üstte seyrek: günlük hedefini 5'ten 20'ye çeken kullanıcı
+ * ince ayar istiyor, 100'den 120'ye çeken kullanıcı istemiyor. Yirmi dört çip
+ * (5'ten 120'ye beşer beşer) telefonda bir çip duvarı olurdu.
+ */
+const GOALS = [5, 10, 15, 20, 30, 40, 60, 80, 100, 120];
 /**
  * Günde yeni kelime seçenekleri — uç 0-40 arasını kabul ediyor
  * (`/api/profile` `clampInt(body.newPerDay, 0, 40)`), web kaydırıcısı da aynı
