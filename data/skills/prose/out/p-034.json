@@ -1,0 +1,372 @@
+[
+ {
+  "tr": "„Don't move him! That is a danger.“",
+  "kind": "explain",
+  "en": "„Don't move him! That is a danger.“"
+ },
+ {
+  "tr": "„And I'll send you a message every day!“",
+  "kind": "explain",
+  "en": "„And I'll send you a message every day!“"
+ },
+ {
+  "tr": "„A man is on the ground. He doesn't move.“",
+  "kind": "explain",
+  "en": "„A man is on the ground. He doesn't move.“"
+ },
+ {
+  "tr": "„No, I didn't finish it. I do it tonight.“",
+  "kind": "explain",
+  "en": "„No, I didn't finish it. I do it tonight.“"
+ },
+ {
+  "tr": "„July is good. I'll write you the address.“",
+  "kind": "explain",
+  "en": "„July is good. I'll write you the address.“"
+ },
+ {
+  "tr": "Diş hekiminde. Ne zaman ağrıyor, sebebi ne?",
+  "kind": "intro",
+  "en": "At the dentist's. When does it hurt, and what is the cause?"
+ },
+ {
+  "tr": "„No, I didn't finish. I have two hours today.“",
+  "kind": "explain",
+  "en": "„No, I didn't finish. I have two hours today.“"
+ },
+ {
+  "tr": "Postanede mektup ve paket. Hangi fiyat neye ait?",
+  "kind": "intro",
+  "en": "A letter and a parcel at the post office. Which price belongs to what?"
+ },
+ {
+  "tr": "„You shouldn't smoke.“ — en kısa öğüt, tek fiille.",
+  "kind": "explain",
+  "en": "„You shouldn't smoke.“ — the shortest advice, with a single verb."
+ },
+ {
+  "tr": "Sağlıklı yaşam öğütleri. Ne yapmalı, ne yapmamalı?",
+  "kind": "intro",
+  "en": "Advice for healthy living. What should you do, what should you not?"
+ },
+ {
+  "tr": "A1'in son yazma egzersizi: düzensiz geçmiş ve veda.",
+  "kind": "intro",
+  "en": "The last writing task of A1: the irregular past and a farewell."
+ },
+ {
+  "tr": "Önce mektup, sonra pul, sonra paket, en son toplam.",
+  "kind": "explain",
+  "en": "First the letter, then the stamp, then the parcel, last the total."
+ },
+ {
+  "tr": "Önce genel soru, sonra iş, sonra yer, en son ulaşım.",
+  "kind": "explain",
+  "en": "First the general question, then the work, then the place, last the transport."
+ },
+ {
+  "tr": "„Sorry, I can't hear you. Can you speak more slowly?“",
+  "kind": "explain",
+  "en": "„Sorry, I can't hear you. Can you speak more slowly?“"
+ },
+ {
+  "tr": "İnternet ve uygulama konuşuluyor. Parola neden sorun?",
+  "kind": "intro",
+  "en": "The internet and an app are the subject. Why is the password a problem?"
+ },
+ {
+  "tr": "Önce soru, sonra şikâyet, sonra ayrıntı, en son tedavi.",
+  "kind": "explain",
+  "en": "First the question, then the complaint, then the detail, last the treatment."
+ },
+ {
+  "tr": "„My password doesn't work too.“ — yeni bir tane istiyor.",
+  "kind": "explain",
+  "en": "„My password doesn't work too.“ — he asks for a new one."
+ },
+ {
+  "tr": "E-posta kalıplarını yaz. Sonunda e-posta formunu doldur.",
+  "kind": "intro",
+  "en": "Write the phrases of an email. At the end, fill in the email form."
+ },
+ {
+  "tr": "Önce bağlantı, sonra haber, sonra öğüt, en son yeni gün.",
+  "kind": "explain",
+  "en": "First getting through, then the news, then the advice, last the new day."
+ },
+ {
+  "tr": "„Then it is two euros.“ — bir euro pul, dokuz euro paket.",
+  "kind": "explain",
+  "en": "„Then it is two euros.“ — one euro is the stamp, nine the parcel."
+ },
+ {
+  "tr": "Geçmişte „olmak“ fiili. „was“ ve „were“ art arda geçiyor.",
+  "kind": "intro",
+  "en": "The verb „be“ in the past. „was“ and „were“ come one after the other."
+ },
+ {
+  "tr": "Önce ayrılık, sonra söz, sonra davet, en son kesin tarih.",
+  "kind": "explain",
+  "en": "First the parting, then the promise, then the invitation, last the fixed date."
+ },
+ {
+  "tr": "Acil bir durum. Emirler art arda geliyor — kim ne yapıyor?",
+  "kind": "intro",
+  "en": "An emergency. The orders come one after the other — who does what?"
+ },
+ {
+  "tr": "Kısa bir e-posta. Soru ne, sorun ne, geçen hafta ne olmuş?",
+  "kind": "intro",
+  "en": "A short email. What is the question, what the problem, what was last week?"
+ },
+ {
+  "tr": "„Then let's meet again in July.“ — yaz genel, temmuz kesin.",
+  "kind": "explain",
+  "en": "„Then let's meet again in July.“ — the summer is vague, July is fixed."
+ },
+ {
+  "tr": "„You should sleep eight hours.“ — beş ve altı şu anki hâli.",
+  "kind": "explain",
+  "en": "„You should sleep eight hours.“ — five and six is how it is now."
+ },
+ {
+  "tr": "Önce davet, sonra ret, sonra erteleme, en son buluşma yeri.",
+  "kind": "explain",
+  "en": "First the invitation, then the refusal, then the delay, last the meeting place."
+ },
+ {
+  "tr": "„Yesterday I was at home all day.“ — İrlanda geçen haftaydı.",
+  "kind": "explain",
+  "en": "„Yesterday I was at home all day.“ — Ireland was last week."
+ },
+ {
+  "tr": "Eczanede ilaç alınıyor. Günde kaç kez, ne kadar, kime uygun?",
+  "kind": "intro",
+  "en": "Medicine is bought at the chemist's. How many times a day, how much, and for whom?"
+ },
+ {
+  "tr": "„…but the people were friendly.“ — çoğul özne „were“ istiyor.",
+  "kind": "explain",
+  "en": "„…but the people were friendly.“ — a plural subject takes „were“."
+ },
+ {
+  "tr": "„Call me tomorrow and tell me.“ — gelmeyecek, yalnız arayacak.",
+  "kind": "explain",
+  "en": "„Call me tomorrow and tell me.“ — he is not coming, he is only calling."
+ },
+ {
+  "tr": "„I use the internet for my class.“ — video kız kardeşinin işi.",
+  "kind": "explain",
+  "en": "„I use the internet for my class.“ — the video is her sister's doing."
+ },
+ {
+  "tr": "Eczane ve rapor cümlelerini yaz. Sonunda eczane fişini doldur.",
+  "kind": "intro",
+  "en": "Write sentences for the chemist's and for calling in sick. At the end, fill in the chemist's slip."
+ },
+ {
+  "tr": "Öğüt ve acil çağrı yaz. „should“ kural değil tavsiye söylüyor.",
+  "kind": "intro",
+  "en": "Write advice and an emergency call. „should“ states no rule, only advice."
+ },
+ {
+  "tr": "„You should sleep more.“ — „should“ sonrası fiil eksiz kalıyor.",
+  "kind": "explain",
+  "en": "„You should sleep more.“ — after „should“ the verb stays bare."
+ },
+ {
+  "tr": "Geçmiş zamanı yaz. Olumsuzda ve soruda fiil ilk hâline dönüyor.",
+  "kind": "intro",
+  "en": "Write the past. In the negative and in questions the verb goes back to its base form."
+ },
+ {
+  "tr": "İşe rapor bildiriliyor. Bugün ne oluyor, yarın ne, öbür gün ne?",
+  "kind": "intro",
+  "en": "Calling in sick at work. What happens today, what tomorrow, what the day after?"
+ },
+ {
+  "tr": "Önce yardım çağrısı, sonra ambulans, sonra uyarı, en son ceket.",
+  "kind": "explain",
+  "en": "First the call for help, then the ambulance, then the warning, last the jacket."
+ },
+ {
+  "tr": "„I'm not feeling well. I can't come to work today.“ — ilacı var.",
+  "kind": "explain",
+  "en": "„I'm not feeling well. I can't come to work today.“ — he does have medicine."
+ },
+ {
+  "tr": "İki kişi hafta sonunu anlatıyor. Kim nereye gitti, kim ne yaptı?",
+  "kind": "intro",
+  "en": "Two people talk about the weekend. Who went where, who did what?"
+ },
+ {
+  "tr": "Mesajlaşma anlatılıyor. Hangi durumda mesaj, hangisinde telefon?",
+  "kind": "intro",
+  "en": "Texting is the subject. When a message, and when a call?"
+ },
+ {
+  "tr": "„But I'll call you every week.“ — her gün mesaj atacak olan Kaan.",
+  "kind": "explain",
+  "en": "„But I'll call you every week.“ — the one texting every day is Kaan."
+ },
+ {
+  "tr": "A1'in son metni: bir veda. Sonra ne olacak, ne zaman görüşülecek?",
+  "kind": "intro",
+  "en": "The last text of A1: a farewell. What comes next, and when do they meet?"
+ },
+ {
+  "tr": "Geçen hafta sonu anlatılıyor. Düzensiz geçmiş biçimlerini yakala.",
+  "kind": "intro",
+  "en": "Last weekend is told. Catch the irregular past forms."
+ },
+ {
+  "tr": "„But for bad news I always call.“ — kötü haber mesajla verilmiyor.",
+  "kind": "explain",
+  "en": "„But for bad news I always call.“ — bad news is not given by message."
+ },
+ {
+  "tr": "Geçmişte soru sorma. Dikkat: „did“ varken fiil ilk hâline dönüyor.",
+  "kind": "intro",
+  "en": "Asking questions in the past. Careful: with „did“ the verb goes back to its base form."
+ },
+ {
+  "tr": "„I went to the mountains with two friends.“ — büyükanne pazar günü.",
+  "kind": "explain",
+  "en": "„I went to the mountains with two friends.“ — the grandmother comes on Sunday."
+ },
+ {
+  "tr": "„Twenty minutes a day is good.“ — üç, yürüme koşma yüzmenin sayısı.",
+  "kind": "explain",
+  "en": "„Twenty minutes a day is good.“ — three is the number of walking, running and swimming."
+ },
+ {
+  "tr": "„Yes, full. Books and a plastic box.“ — kâğıt ve fotoğraf mektupta.",
+  "kind": "explain",
+  "en": "„Yes, full. Books and a plastic box.“ — the paper and the photo are in the letter."
+ },
+ {
+  "tr": "Bir arkadaş öğüt veriyor. „should“ ve „shouldn't“ art arda geliyor.",
+  "kind": "intro",
+  "en": "A friend gives advice. „should“ and „shouldn't“ come one after the other."
+ },
+ {
+  "tr": "Diş ağrısını iki biçimde de yaz. Sonunda diş hekimi formunu doldur.",
+  "kind": "intro",
+  "en": "Write the toothache in both ways. At the end, fill in the dentist's form."
+ },
+ {
+  "tr": "„Then you shouldn't drink coffee after six! Try water or light tea.“",
+  "kind": "explain",
+  "en": "„Then you shouldn't drink coffee after six! Try water or light tea.“"
+ },
+ {
+  "tr": "„Good. Twelve euros together, please.“ — iki artı dokuz artı iki pul.",
+  "kind": "explain",
+  "en": "„Good. Twelve euros together, please.“ — two plus nine plus two stamps."
+ },
+ {
+  "tr": "Geçmişte „olmak“ fiilini yaz. Tek fiilin iki biçimi var: was ve were.",
+  "kind": "intro",
+  "en": "Write „be“ in the past. One verb, two forms: was and were."
+ },
+ {
+  "tr": "„Can you send me a new one?“ — „one“ burada „password“ yerine geçiyor.",
+  "kind": "explain",
+  "en": "„Can you send me a new one?“ — „one“ stands for „password“ here."
+ },
+ {
+  "tr": "„I didn't win, but it was good.“ — „didn't“ sonrası „win“ ilk hâlinde.",
+  "kind": "explain",
+  "en": "„I didn't win, but it was good.“ — after „didn't“, „win“ is in its base form."
+ },
+ {
+  "tr": "„I know. I am here after four years.“ — her yıl gelmek öğüdün kendisi.",
+  "kind": "explain",
+  "en": "„I know. I am here after four years.“ — coming every year is the advice itself."
+ },
+ {
+  "tr": "„I went to a farm near the mountains.“ — anne babayı ziyaret eden Nil.",
+  "kind": "explain",
+  "en": "„I went to a farm near the mountains.“ — the one visiting her parents is Nil."
+ },
+ {
+  "tr": "Telefon cümlelerini yaz. Telefonda kendini „this is“ ile tanıtıyorsun.",
+  "kind": "intro",
+  "en": "Write sentences for the phone. On the phone you introduce yourself with „this is“."
+ },
+ {
+  "tr": "„Can I speak to Mr. Demir, please?“ — „speak to“ birine konuşmak demek.",
+  "kind": "explain",
+  "en": "„Can I speak to Mr. Demir, please?“ — „speak to“ means to talk to somebody."
+ },
+ {
+  "tr": "„Don't come tomorrow. Come on Thursday.“ — yarın yalnız telefon edecek.",
+  "kind": "explain",
+  "en": "„Don't come tomorrow. Come on Thursday.“ — tomorrow he only calls."
+ },
+ {
+  "tr": "„On Sunday I visited my grandmother.“ — düzenli geçmiş: visit → visited.",
+  "kind": "explain",
+  "en": "„On Sunday I visited my grandmother.“ — the regular past: visit → visited."
+ },
+ {
+  "tr": "„The app is the same website, only smaller.“ — daha küçük ama aynı site.",
+  "kind": "explain",
+  "en": "„The app is the same website, only smaller.“ — smaller, but the same site."
+ },
+ {
+  "tr": "„The weather was cold but the people were friendly.“ — güneşli olan göl.",
+  "kind": "explain",
+  "en": "„The weather was cold but the people were friendly.“ — the sunny place was the lake."
+ },
+ {
+  "tr": "„Where did you go last weekend?“ — „did“ varken fiil „go“, „went“ değil.",
+  "kind": "explain",
+  "en": "„Where did you go last weekend?“ — with „did“ the verb is „go“, not „went“."
+ },
+ {
+  "tr": "Telefonda kendini tanıtma. Dikkat: yüz yüze „I am“, telefonda „this is“.",
+  "kind": "intro",
+  "en": "Introducing yourself on the phone. Careful: face to face „I am“, on the phone „this is“."
+ },
+ {
+  "tr": "Önce dün, sonra geçen hafta, sonra o haftanın akşamı, en son arkadaşları.",
+  "kind": "explain",
+  "en": "First yesterday, then last week, then the evening of that week, last his friends."
+ },
+ {
+  "tr": "„I use the internet for my class.“ — „the internet“ hep „the“ ile geliyor.",
+  "kind": "explain",
+  "en": "„I use the internet for my class.“ — „the internet“ always comes with „the“."
+ },
+ {
+  "tr": "„I have a toothache. My tooth hurts since two days.“ — aynı şey iki kalıpla.",
+  "kind": "explain",
+  "en": "„I have a toothache. My tooth hurts since two days.“ — the same thing with two patterns."
+ },
+ {
+  "tr": "„I have a headache. Can I have some medicine, please?“ — su ilacı içmek için.",
+  "kind": "explain",
+  "en": "„I have a headache. Can I have some medicine, please?“ — the water is for taking it."
+ },
+ {
+  "tr": "„Good! At seven, in the café next to the park.“ — iki saat, cevabın gecikmesi.",
+  "kind": "explain",
+  "en": "„Good! At seven, in the café next to the park.“ — two hours is how late the reply came."
+ },
+ {
+  "tr": "„I eat a big dinner at ten in the evening.“ — hafif akşam yemeği öğüdün kendisi.",
+  "kind": "explain",
+  "en": "„I eat a big dinner at ten in the evening.“ — the light dinner is the advice itself."
+ },
+ {
+  "tr": "„Three times: morning, afternoon and evening.“ — bir tanedir her seferde, altı fiyat.",
+  "kind": "explain",
+  "en": "„Three times: morning, afternoon and evening.“ — one each time, six is the price."
+ },
+ {
+  "tr": "„I didn't watch TV in the evening — I was too tired.“ — „didn't“ sonrası fiil ilk hâlinde.",
+  "kind": "explain",
+  "en": "„I didn't watch TV in the evening — I was too tired.“ — after „didn't“ the verb is in its base form."
+ }
+]

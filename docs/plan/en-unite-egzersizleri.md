@@ -60,8 +60,7 @@ mi çıkacağına yazar karar verir.
 
 | Seviye | Ünite | Durum |
 |---|---|---|
-| A1 | 1–21 | **yazıldı** (2026-09-11/12) |
-| A1 | 22–25 | bekliyor |
+| **A1** | **1–25** | **TAM** (2026-09-11/12) — 150 egzersiz, 150/150 yuva |
 | A2 · B1 · B2 · C1 | 1–25 | bekliyor |
 
 **A1 ünite 1 (2026-09-11).** Dört dersi Hello! · How are you? · I am, you
@@ -233,6 +232,32 @@ ve karşılık bunu söylüyor.
 Ayrıldığı yer ise „can't“: Türkçe ipucu "olumsuzu tek sözcük" diyor,
 Almanca „kann nicht“ ise ayrı yazılıyor — yani büzülme İngilizcenin kendi
 işi. Almanca karşılık bunu karşıtlık olarak veriyor.
+
+**A1 ünite 22–25 — SEVİYE KAPANDI (2026-09-12).** Ünite 22 At the
+pharmacy · Calling in sick · Friendly advice · Emergency; ünite 23
+Healthy living · At the dentist · On the phone · Texting a friend;
+ünite 24 A short email · Online and apps · At the post office ·
+Yesterday I was; ünite 25 The -ed past · Did you...? · My last weekend ·
+Staying in touch. Yirmi dört egzersiz.
+
+**EN A1: 25 ünite, 150 egzersiz, 150/150 yuva dolu, 0 boş.** Ünite dışı
+ölçüm %0,0 — kalan tek belirteç bir diyaloğun ilk sözcüğü olan özel ad.
+
+Son ünite kapanışı içeriğin kendisinde de duruyor: A1'in son dinleme
+metni bir veda („See you soon! Life is long.“) ve son yazma görevi
+„Let's meet again.“ ile bitiyor.
+
+Almanca eksende bu turun yeniden ölçümü GEÇMİŞ ZAMANIN KİŞİYE
+BAĞLILIĞI. Türkçe ipucu "„I“ ile „was“ geliyor; Türkçede gövde
+değişmezdi, burada değişiyor" diyor. Almanca okuyan için o güçlük YOK —
+Almanca da „ich war“ / „du warst“ diye değişiyor. Buna karşılık „you“nun
+hem tekil hem çoğul için „were“ alması Almanca okuyan için YENİ, çünkü
+Almanca orada „du warst“ ile „ihr wart“ı ayırıyor. Aynı satırın iki
+yarısı iki dile göre ters yönde çalışıyor ve Almanca karşılık ikisini de
+söylüyor.
+
+Düzenli fiilin kişiye göre değişmemesi de öyle: Türkçe için sıradan,
+Almanca için fark („arbeitete“ / „arbeitetest“).
 
 ## Tamamlanma ölçütü
 

@@ -1,0 +1,422 @@
+[
+ {
+  "tr": "Eczane fişini doldur.",
+  "kind": "form.prompt",
+  "de": "Fülle den Apothekenbeleg aus."
+ },
+ {
+  "tr": "E-posta formunu doldur.",
+  "kind": "form.prompt",
+  "de": "Fülle das E-Mail-Formular aus."
+ },
+ {
+  "tr": "Diş hekimi formunu doldur.",
+  "kind": "form.prompt",
+  "de": "Fülle das Zahnarztformular aus."
+ },
+ {
+  "tr": "Hafta sonu formunu doldur.",
+  "kind": "form.prompt",
+  "de": "Fülle das Wochenendformular aus."
+ },
+ {
+  "tr": "Tablet; baş ağrısı; günde üç kez; altı euro.",
+  "kind": "form.facts",
+  "de": "Tabletten; Kopfschmerzen; dreimal am Tag; sechs Euro."
+ },
+ {
+  "tr": "Anna'ya; soru: hangi web sitesi; parola çalışmıyor; sonda teşekkür.",
+  "kind": "form.facts",
+  "de": "An Anna; Frage: welche Website; das Passwort geht nicht; am Ende ein Dank."
+ },
+ {
+  "tr": "Diş ağrısı; iki gündür; soğuk suyla acıyor; bir hafta sonra tekrar.",
+  "kind": "form.facts",
+  "de": "Zahnschmerzen; seit zwei Tagen; tut bei kaltem Wasser weh; in einer Woche wieder."
+ },
+ {
+  "tr": "Dağlar; cumartesi trenle; nehir ve çiftlik görüldü; pazar büyükanne.",
+  "kind": "form.facts",
+  "de": "Die Berge; am Samstag mit dem Zug; Fluss und Bauernhof gesehen; am Sonntag die Großmutter."
+ },
+ {
+  "tr": "Evdeydim.",
+  "kind": "build.tr",
+  "de": "Ich war zu Hause."
+ },
+ {
+  "tr": "Acıyor mu?",
+  "kind": "build.tr",
+  "de": "Tut es weh?"
+ },
+ {
+  "tr": "Yorgundun.",
+  "kind": "build.tr",
+  "de": "Du warst müde."
+ },
+ {
+  "tr": "Bitirdin mi?",
+  "kind": "build.tr",
+  "de": "Bist du fertig geworden?"
+ },
+ {
+  "tr": "Alo, ben Ela.",
+  "kind": "build.tr",
+  "de": "Hallo, hier ist Ela."
+ },
+ {
+  "tr": "Dün çalıştım.",
+  "kind": "build.tr",
+  "de": "Ich habe gestern gearbeitet."
+ },
+ {
+  "tr": "Sevgili Anna,",
+  "kind": "build.tr",
+  "de": "Liebe Anna,"
+ },
+ {
+  "tr": "Bir sorum var.",
+  "kind": "build.tr",
+  "de": "Ich habe eine Frage."
+ },
+ {
+  "tr": "Diş ağrım var.",
+  "kind": "build.tr",
+  "de": "Ich habe Zahnschmerzen."
+ },
+ {
+  "tr": "Dişim ağrıyor.",
+  "kind": "build.tr",
+  "de": "Mein Zahn tut weh."
+ },
+ {
+  "tr": "Günde kaç kez?",
+  "kind": "build.tr",
+  "de": "Wie oft am Tag?"
+ },
+ {
+  "tr": "Ne yapmalıyım?",
+  "kind": "build.tr",
+  "de": "Was soll ich tun?"
+ },
+ {
+  "tr": "Nereye gittin?",
+  "kind": "build.tr",
+  "de": "Wohin bist du gegangen?"
+ },
+ {
+  "tr": "Dağlara gittim.",
+  "kind": "build.tr",
+  "de": "Ich bin in die Berge gefahren."
+ },
+ {
+  "tr": "Dün evde miydin?",
+  "kind": "build.tr",
+  "de": "Warst du gestern zu Hause?"
+ },
+ {
+  "tr": "Meyve yemelisin.",
+  "kind": "build.tr",
+  "de": "Du solltest Obst essen."
+ },
+ {
+  "tr": "Şimdi konuşamam.",
+  "kind": "build.tr",
+  "de": "Ich kann jetzt nicht reden."
+ },
+ {
+  "tr": "Bir nehir gördüm.",
+  "kind": "build.tr",
+  "de": "Ich habe einen Fluss gesehen."
+ },
+ {
+  "tr": "Bugün işe gelemem.",
+  "kind": "build.tr",
+  "de": "Ich kann heute nicht zur Arbeit kommen."
+ },
+ {
+  "tr": "İyi hissetmiyorum.",
+  "kind": "build.tr",
+  "de": "Ich fühle mich nicht gut."
+ },
+ {
+  "tr": "Kahve içmemelisin.",
+  "kind": "build.tr",
+  "de": "Du solltest keinen Kaffee trinken."
+ },
+ {
+  "tr": "Yakında görüşürüz!",
+  "kind": "build.tr",
+  "de": "Bis bald!"
+ },
+ {
+  "tr": "Bir ambulans çağır!",
+  "kind": "build.tr",
+  "de": "Ruf einen Krankenwagen!"
+ },
+ {
+  "tr": "Çok teşekkür ederim.",
+  "kind": "build.tr",
+  "de": "Vielen Dank."
+ },
+ {
+  "tr": "Daha çok uyumalısın.",
+  "kind": "build.tr",
+  "de": "Du solltest mehr schlafen."
+ },
+ {
+  "tr": "Televizyon izlemedim.",
+  "kind": "build.tr",
+  "de": "Ich habe nicht ferngesehen."
+ },
+ {
+  "tr": "Hadi tekrar buluşalım.",
+  "kind": "build.tr",
+  "de": "Lass uns wieder treffen."
+ },
+ {
+  "tr": "Yardıma ihtiyacım var.",
+  "kind": "build.tr",
+  "de": "Ich brauche Hilfe."
+ },
+ {
+  "tr": "Geçen hafta sonu ne yaptın?",
+  "kind": "build.tr",
+  "de": "Was hast du letztes Wochenende gemacht?"
+ },
+ {
+  "tr": "Sana bir mesaj göndereceğim.",
+  "kind": "build.tr",
+  "de": "Ich schicke dir eine Nachricht."
+ },
+ {
+  "tr": "Bu mektubu göndermek istiyorum.",
+  "kind": "build.tr",
+  "de": "Ich möchte diesen Brief schicken."
+ },
+ {
+  "tr": "İki pul alabilir miyim, lütfen?",
+  "kind": "build.tr",
+  "de": "Kann ich bitte zwei Briefmarken haben?"
+ },
+ {
+  "tr": "İnterneti her gün kullanıyorum.",
+  "kind": "build.tr",
+  "de": "Ich benutze jeden Tag das Internet."
+ },
+ {
+  "tr": "Kusura bakma, seni duyamıyorum.",
+  "kind": "build.tr",
+  "de": "Entschuldigung, ich höre dich nicht."
+ },
+ {
+  "tr": "Bay Demir ile konuşabilir miyim?",
+  "kind": "build.tr",
+  "de": "Kann ich Herrn Demir sprechen?"
+ },
+ {
+  "tr": "Biraz ilaç alabilir miyim, lütfen?",
+  "kind": "build.tr",
+  "de": "Kann ich bitte ein Medikament haben?"
+ },
+ {
+  "tr": "„you“ ile hep „were“, tek kişi için bile.",
+  "kind": "build.hint",
+  "de": "Mit „you“ steht immer „were“, auch für eine Person. Deutsch trennt: du warst, ihr wart."
+ },
+ {
+  "tr": "Veda kalıbı; özne yok ve „soon“ sonda duruyor.",
+  "kind": "build.hint",
+  "de": "Eine Abschiedsformel; kein Subjekt, und „soon“ steht am Ende — wie „bis bald“."
+ },
+ {
+  "tr": "„go“ düzensiz: geçmişi „went“ ve „-ed“ almıyor.",
+  "kind": "build.hint",
+  "de": "„go“ ist unregelmäßig: die Vergangenheit heißt „went“ und nimmt kein „-ed“ — wie gehen und ging."
+ },
+ {
+  "tr": "„to work“ hedef; „work“ önünde artikel almıyor.",
+  "kind": "build.hint",
+  "de": "„to work“ nennt das Ziel, und „work“ steht ohne Artikel — anders als deutsch „zur Arbeit“."
+ },
+ {
+  "tr": "„help“ sayılamaz: „a help“ olmaz, çoğulu da yok.",
+  "kind": "build.hint",
+  "de": "„help“ ist nicht zählbar: „a help“ geht nicht und einen Plural gibt es nicht — wie die Hilfe."
+ },
+ {
+  "tr": "„fruit“ sayılamaz: önünde artikel yok, çoğulu da yok.",
+  "kind": "build.hint",
+  "de": "„fruit“ ist nicht zählbar: kein Artikel davor und kein Plural — wie das Obst."
+ },
+ {
+  "tr": "„should“ sonrası eksiz fiil; „more“ cümlenin sonunda.",
+  "kind": "build.hint",
+  "de": "Nach „should“ steht das Verb ohne Endung; „more“ steht am Satzende."
+ },
+ {
+  "tr": "„shouldn't“ yasak değil tavsiye: „mustn't“ten yumuşak.",
+  "kind": "build.hint",
+  "de": "„shouldn't“ ist kein Verbot, sondern ein Rat: weicher als „mustn't“ — wie „solltest nicht“."
+ },
+ {
+  "tr": "„the internet“ hep „the“ ile geliyor, tek bir şey gibi.",
+  "kind": "build.hint",
+  "de": "„the internet“ steht immer mit „the“, wie ein einziges Ding — deutsch „das Internet“."
+ },
+ {
+  "tr": "İki „do“ var: ilki soruyu kuran „did“, ikincisi asıl fiil.",
+  "kind": "build.hint",
+  "de": "Zweimal „do“: das erste ist das fragende „did“, das zweite das Vollverb. Das Deutsche hat dafür kein Gegenstück."
+ },
+ {
+  "tr": "Soruda da aynı: „did“ geçmişi taşıyor, fiil eksiz kalıyor.",
+  "kind": "build.hint",
+  "de": "In der Frage genauso: „did“ trägt die Vergangenheit, das Verb bleibt ohne Endung."
+ },
+ {
+  "tr": "„toothache“ tek sözcük ve önünde „a“ var — „headache“ gibi.",
+  "kind": "build.hint",
+  "de": "„toothache“ ist ein Wort und hat „a“ davor — wie „headache“. Deutsch steht „Zahnschmerzen“ im Plural und ohne Artikel."
+ },
+ {
+  "tr": "Soruda „should“ özneden öne geçiyor; „do“ burada asıl fiil.",
+  "kind": "build.hint",
+  "de": "In der Frage rückt „should“ vor das Subjekt; „do“ ist hier das Vollverb."
+ },
+ {
+  "tr": "E-posta hep „Dear“ ile başlıyor ve sonrasına virgül geliyor.",
+  "kind": "build.hint",
+  "de": "Eine E-Mail beginnt immer mit „Dear“, danach folgt ein Komma — wie „Liebe Anna,“."
+ },
+ {
+  "tr": "Sahiplik „have“ ile; „question“ sayılabilir, önünde „a“ var.",
+  "kind": "build.hint",
+  "de": "Der Besitz mit „have“; „question“ ist zählbar und hat „a“ davor."
+ },
+ {
+  "tr": "„again“ cümlenin sonunda. A1'in son cümlesi bir sözle bitiyor.",
+  "kind": "build.hint",
+  "de": "„again“ steht am Satzende. Der letzte Satz von A1 endet mit einem Versprechen."
+ },
+ {
+  "tr": "„call“ burada telefon etmek; sesli harfle başladığı için „an“.",
+  "kind": "build.hint",
+  "de": "„call“ heißt hier anrufen; weil das nächste Wort mit einem Vokal beginnt, steht „an“."
+ },
+ {
+  "tr": "İki tane olduğu için çoğul: stamps. „please“ sonda ve virgülle.",
+  "kind": "build.hint",
+  "de": "Weil es zwei sind, steht der Plural: stamps. „please“ steht am Ende, mit Komma davor."
+ },
+ {
+  "tr": "Soruda „were“ öne geçiyor; „did“ hiç girmiyor, çünkü fiil „be“.",
+  "kind": "build.hint",
+  "de": "In der Frage rückt „were“ nach vorn; „did“ kommt gar nicht vor, weil das Verb „be“ ist — wie „warst du“."
+ },
+ {
+  "tr": "„see“ de düzensiz: saw. Bu biçimleri tek tek öğrenmek gerekiyor.",
+  "kind": "build.hint",
+  "de": "Auch „see“ ist unregelmäßig: saw. Diese Formen muss man einzeln lernen, wie sehen und sah."
+ },
+ {
+  "tr": "İki nesne art arda: send + kime + neyi. „I'll“ burada söz verme.",
+  "kind": "build.hint",
+  "de": "Zwei Objekte hintereinander: send + wem + was, wie „schick mir eine Nachricht“. „I'll“ ist hier ein Versprechen."
+ },
+ {
+  "tr": "Organ özne olunca fiil „hurt“ ve üçüncü tekil kişide „-s“ alıyor.",
+  "kind": "build.hint",
+  "de": "Ist das Körperteil das Subjekt, heißt das Verb „hurt“ und bekommt in der dritten Person Singular ein „-s“ — wie „tut weh“."
+ },
+ {
+  "tr": "„hear“ duymak, „listen“ dinlemek. Telefonda sorun duymakla ilgili.",
+  "kind": "build.hint",
+  "de": "„hear“ heißt hören, „listen“ zuhören. Am Telefon liegt das Problem beim Hören."
+ },
+ {
+  "tr": "„would like“ sonrası „to“ + fiil; postanede en kibar istek biçimi.",
+  "kind": "build.hint",
+  "de": "Nach „would like“ kommt „to“ + Verb; auf der Post die höflichste Form der Bitte. Deutsch braucht dort kein „zu“."
+ },
+ {
+  "tr": "„I“ ile „was“ geliyor. Türkçede gövde değişmezdi, burada değişiyor.",
+  "kind": "build.hint",
+  "de": "Mit „I“ steht „was“. Das Verb ändert sich nach der Person — genau wie deutsch „ich war“ und „du warst“."
+ },
+ {
+  "tr": "„times“ sayılabilir, o yüzden „how many“. Günde demek için „a day“.",
+  "kind": "build.hint",
+  "de": "„times“ ist zählbar, deshalb „how many“. Für „am Tag“ steht „a day“, wo das Deutsche mit „wie oft“ auskommt."
+ },
+ {
+  "tr": "Telefonda „this is“, yüz yüze „I am“. Türkçede ikisi de aynı cümle.",
+  "kind": "build.hint",
+  "de": "Am Telefon „this is“, von Angesicht zu Angesicht „I am“ — genau wie deutsch „hier ist“ gegenüber „ich bin“."
+ },
+ {
+  "tr": "„very much“ cümlenin sonunda; „thank you“ nesnesini doğrudan alıyor.",
+  "kind": "build.hint",
+  "de": "„very much“ steht am Satzende; „thank you“ nimmt sein Objekt direkt."
+ },
+ {
+  "tr": "İkramda ve istekte „some“; „medicine“ sayılamaz, „a medicine“ olmaz.",
+  "kind": "build.hint",
+  "de": "Beim Anbieten und Bitten steht „some“; „medicine“ ist nicht zählbar, „a medicine“ geht nicht."
+ },
+ {
+  "tr": "„talk“ karşılıklı konuşmak; „speak“ daha resmî. Mesajda „talk“ doğal.",
+  "kind": "build.hint",
+  "de": "„talk“ heißt miteinander reden, „speak“ ist förmlicher. In einer Nachricht klingt „talk“ natürlich."
+ },
+ {
+  "tr": "Düzensiz fiil bile „did“ varken ilk hâline dönüyor: go, „went“ değil.",
+  "kind": "build.hint",
+  "de": "Selbst ein unregelmäßiges Verb kehrt bei „did“ in die Grundform zurück: go, nicht „went“."
+ },
+ {
+  "tr": "Düzenli fiil geçmişte „-ed“ alır: work → worked. Kişiye göre değişmez.",
+  "kind": "build.hint",
+  "de": "Ein regelmäßiges Verb bekommt „-ed“: work → worked. Es ändert sich nicht nach der Person, anders als im Deutschen."
+ },
+ {
+  "tr": "Kişiyle konuşmak „speak to“; „speak with“ de duyulur ama bu daha yaygın.",
+  "kind": "build.hint",
+  "de": "Mit jemandem sprechen heißt „speak to“; „speak with“ hört man auch, aber dies ist häufiger. Deutsch steht dort „mit“."
+ },
+ {
+  "tr": "Soru „does“ ile ve fiil eksiz kalıyor: does it hurt, „does it hurts“ değil.",
+  "kind": "build.hint",
+  "de": "Die Frage mit „does“, und das Verb bleibt ohne Endung: does it hurt, nicht „does it hurts“."
+ },
+ {
+  "tr": "Geçmişlik „didn't“e taşınıyor ve fiil ilk hâline dönüyor: watch, „watched“ değil.",
+  "kind": "build.hint",
+  "de": "Die Vergangenheit wandert in „didn't“, und das Verb kehrt in die Grundform zurück: watch, nicht „watched“. Das Deutsche kennt diesen Wechsel nicht."
+ },
+ {
+  "tr": "Şu anki hâl olduğu için „-ing“: am not feeling. Geniş zamanla „I don't feel well“ de doğru.",
+  "kind": "build.hint",
+  "de": "Weil es den Augenblick meint, steht „-ing“: am not feeling. Mit dem einfachen Präsens ist „I don't feel well“ ebenso richtig."
+ },
+ {
+  "tr": "Vedanın sırası: doğru sıraya koy.",
+  "kind": "question.text",
+  "de": "Die Reihenfolge des Abschieds: bring sie in die richtige Ordnung."
+ },
+ {
+  "tr": "Mesajların sırası: doğru sıraya koy.",
+  "kind": "question.text",
+  "de": "Die Reihenfolge der Nachrichten: bring sie in die richtige Ordnung."
+ },
+ {
+  "tr": "Yapılanların sırası: doğru sıraya koy.",
+  "kind": "question.text",
+  "de": "Die Reihenfolge der Handlungen: bring sie in die richtige Ordnung."
+ },
+ {
+  "tr": "Sorulan soruların sırası: doğru sıraya koy.",
+  "kind": "question.text",
+  "de": "Die Reihenfolge der gestellten Fragen: bring sie in die richtige Ordnung."
+ }
+]
