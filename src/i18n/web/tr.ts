@@ -9,6 +9,8 @@
  * anahtar sessizce mobilden ayrışır.
  */
 export const trWeb: Record<string, string> = {
+  /* Rozet kutlamasi: mobilde "dokun", webde fare ve klavye de var. */
+  "achuw.click_to_continue": "Devam etmek için tıkla",
   /*
    * Kahraman kartındaki iki rozet. Mobilde bu iki metin ekranın İÇİNDE sabit
    * yazılı (`M/src/screens/LearnScreen.tsx`) — yani orada da çevrilmiyor.
@@ -169,7 +171,6 @@ export const trWeb: Record<string, string> = {
   "settings.app": "UYGULAMA",
   "settings.daily_goal_short": "Günlük tekrar hedefi",
   "settings.reviews_unit": "tekrar",
-  "settings.saving": "Kaydediliyor…",
   "settings.privacy_and_terms": "Gizlilik ve şartlar",
   "settings.privacy_and_terms_sub": "Hangi veriyi neden işlediğimiz, hakların",
   "settings.add_to_home": "Ana ekrana ekle",

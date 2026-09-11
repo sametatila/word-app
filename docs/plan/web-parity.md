@@ -8341,3 +8341,27 @@ bir mutlak ölçütle "iki taraf da sormuyor" hâlini yakalıyor ve sınav/denem
 yerleştirmede onay kutusunu açan düğmenin varlığını da denetliyor — kutu olup
 düğmesi olmayan bir onay kullanıcıyı yine kapanda bırakır. Altı enjeksiyonun
 altısı da yakalandı.
+
+## §11.253 — Tam ekran kutlamanın klavyeyle çıkışı yoktu
+
+Rozet kutlaması ekranı tam kaplıyor. Android'de `Modal`: kendi penceresini
+açıyor, geri tuşu kapatıyor, TalkBack arkayı görmüyor. Web'de aynı ekran düz
+bir `fixed inset-0` katmanıydı:
+
+- arkadaki düğmeler sekmeyle geziliyor, ekran okuyucu arka sayfayı okumaya
+  devam ediyordu (diyalog değildi),
+- odak kutlamaya hiç taşınmıyordu, yani kutlama okunmuyordu bile,
+- kartı kapatmanın **tek yolu fareyle tıklamaktı**.
+
+Bileşenin kendi başındaki üçüncü kural "her zaman kapatılabilir" diyor — bu
+kural klavyede tutmuyordu. Katman artık `role="dialog" aria-modal`, açılınca
+odak kutlamaya taşınıyor, kapanınca **geldiği yere geri dönüyor**, Esc/Enter/
+boşluk ilerletiyor.
+
+Yanında bir metin ayrışması: web "Devam etmek için **dokun**" diyordu. Fiil
+web'de yanlış; anahtar web'e özel (`achuw.click_to_continue`) olarak ayrıldı,
+Android'in metni kendi girdi biçimi için doğru kaldı.
+
+**§159** dört şeyi ölçüyor: diyalog rolü, odağın taşınması, klavyeyle kapatma
+ve mobilde geri tuşu + arka planın gizlenmesi. Dört enjeksiyonun dördü de
+yakalandı.

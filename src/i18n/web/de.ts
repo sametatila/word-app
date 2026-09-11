@@ -9,6 +9,7 @@
  * anahtar sessizce mobilden ayrışır.
  */
 export const deWeb: Record<string, string> = {
+  "achuw.click_to_continue": "Zum Fortfahren klicken",
   /* Kahraman kartındaki iki rozet — mobilde henüz sabit yazılı (bkz. tr.ts). */
   /* Web'e özel mod. */
   /* Süre birimi — bkz. tr.ts notu. */
@@ -146,7 +147,6 @@ export const deWeb: Record<string, string> = {
   "settings.app": "APP",
   "settings.daily_goal_short": "Tägliches Wiederholungsziel",
   "settings.reviews_unit": "Wiederholungen",
-  "settings.saving": "Wird gespeichert…",
   "settings.privacy_and_terms": "Datenschutz und Bedingungen",
   "settings.privacy_and_terms_sub": "Welche Daten wir warum verarbeiten, deine Rechte",
   "settings.add_to_home": "Zum Startbildschirm",

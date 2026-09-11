@@ -5709,6 +5709,34 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   );
 }
 
+/* ── 159. tam ekran kutlama kapatilabilir mi ──────────────────────────────
+ * Rozet kutlamasi ekrani tam kapliyor. Androidde `Modal`: kendi penceresini
+ * aciyor, geri tusu kapatiyor (`onRequestClose`) ve TalkBack arkayi
+ * gormuyor. Webde ayni ekran duz bir `fixed inset-0` katmaniydi - arkadaki
+ * dugmeler sekmeyle geziliyordu, ekran okuyucu arka sayfayi okumaya devam
+ * ediyordu ve karti kapatmanin TEK yolu fareyle tiklamakti. Bilesenin kendi
+ * dokumanindaki 3. kural ("her zaman kapatilabilir") klavyede tutmuyordu.
+ *
+ * Olculen dort sey: diyalog rolu, odagin kutlamaya tasinmasi, klavyeyle
+ * kapatma ve mobilde geri tusu + arka planin gizlenmesi. */
+{
+  const strip = (x) => x.replace(/\/\*[\s\S]*?\*\//g, " ").replace(/(^|[^:"'`\\])\/\/.*$/gm, "$1");
+  const w = strip(read("src/components/achievement-unlock.tsx")).replace(/\s+/g, " ");
+  const m = strip(read("mobile/src/ui/AchievementUnlock.tsx")).replace(/\s+/g, " ");
+  const web = [
+    "rol=" + (/role="dialog"/.test(w) && /aria-modal="true"/.test(w) ? "diyalog" : "yok"),
+    "odak=" + (/\.focus\(\)/.test(w) ? "kutlamada" : "arkada"),
+    "kapatma=" + (/"Escape"/.test(w) ? "klavye+isaret" : "yalniz isaret"),
+  ];
+  const mob = [
+    "rol=" + (/accessibilityViewIsModal/.test(m) && /<Modal[\s]/.test(m) ? "diyalog" : "yok"),
+    /* RN `Modal` odagi kendi penceresine tasiyor: ayri bir cagri gerekmiyor. */
+    "odak=" + (/<Modal[\s]/.test(m) ? "kutlamada" : "arkada"),
+    "kapatma=" + (/onRequestClose=/.test(m) ? "klavye+isaret" : "yalniz isaret"),
+  ];
+  sameList("kutlama kapatilabilir", mob, web);
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"

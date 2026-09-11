@@ -57,6 +57,8 @@ export function AchievementUnlock() {
   /** Meşgulken beklemeye alınanlar. */
   const held = useRef<Fresh[] | null>(null);
   const running = useRef(false);
+  /** Kutlama kutusu — açılınca odak buraya taşınıyor. */
+  const overlay = useRef<HTMLDivElement>(null);
   const timer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   /**
@@ -165,6 +167,37 @@ export function AchievementUnlock() {
     return () => clearTimeout(t);
   }, [shownId, advance]);
 
+  /**
+   * ODAK KUTLAMAYA GİRİYOR, ÇIKARKEN GERİ DÖNÜYOR.
+   *
+   * Kutlama ekranı tam kaplıyordu ama web'de bir diyalog DEĞİLDİ: arkadaki
+   * düğmeler hâlâ sekmeyle geziliyor, ekran okuyucu arkadaki sayfayı
+   * okumaya devam ediyor ve karta tek çıkış YOLU fareyle tıklamaktı. Yani
+   * yukarıdaki 3. kural ("her zaman kapatılabilir") klavyede tutmuyordu.
+   * Android'de böyle değil: `Modal` kendi penceresini açıyor, geri tuşu
+   * kapatıyor (`onRequestClose`) ve TalkBack arkayı görmüyor.
+   *
+   * Bağımlılık `shown` (boolean), `view` değil: sıradaki rozete geçerken
+   * etki yeniden çalışıp odağı bir ileri bir geri taşırdı.
+   */
+  const shown = !busy && !!view;
+  useEffect(() => {
+    if (!shown) return;
+    const geri = document.activeElement as HTMLElement | null;
+    overlay.current?.focus();
+    const onKey = (e: KeyboardEvent) => {
+      // Esc kapatır; Enter/boşluk "dokun"un klavye karşılığı.
+      if (e.key !== "Escape" && e.key !== "Enter" && e.key !== " ") return;
+      e.preventDefault();
+      advance();
+    };
+    window.addEventListener("keydown", onKey);
+    return () => {
+      window.removeEventListener("keydown", onKey);
+      geri?.focus?.();
+    };
+  }, [shown, advance]);
+
   if (busy || !view) return null;
 
   return (
@@ -175,7 +208,12 @@ export function AchievementUnlock() {
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
         onClick={advance}
-        className="fixed inset-0 z-50 flex items-center justify-center px-6"
+        ref={overlay}
+        tabIndex={-1}
+        role="dialog"
+        aria-modal="true"
+        aria-label={tt("achievements.achievements")}
+        className="fixed inset-0 z-50 flex items-center justify-center px-6 outline-none"
         style={{
           background: "color-mix(in srgb, var(--bg) 72%, transparent)",
           backdropFilter: "blur(4px)",
@@ -253,7 +291,10 @@ function Hint() {
   const t = useT();
   return (
     <p className="muted mt-4 text-[11px] font-semibold uppercase tracking-wide opacity-70">
-      {t("achu.tap_to_continue")}
+      {/* Web'de "dokun" yanlış fiil: fare ve klavye de var. Anahtar web'e
+          özel (`achuw.`), yani ayrışma görünür duruyor — Android'in metni
+          kendi girdi biçimi için doğru. */}
+      {t("achuw.click_to_continue")}
     </p>
   );
 }
