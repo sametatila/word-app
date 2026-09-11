@@ -1,0 +1,542 @@
+[
+ {
+  "tr": "Randevu ve öğüt cümlelerini yaz.",
+  "kind": "intro",
+  "de": "Schreibe Sätze zu Termin und Rat."
+ },
+ {
+  "tr": "Altı aylık bir ağrı. Üç hekim, üç ayrı cevap.",
+  "kind": "intro",
+  "de": "Ein Schmerz seit sechs Monaten. Drei Ärzte, drei verschiedene Antworten."
+ },
+ {
+  "tr": "On yıl önce ve şimdi. Ne değişti, ne aynı kaldı?",
+  "kind": "intro",
+  "de": "Vor zehn Jahren und heute. Was hat sich geändert, was ist gleich geblieben?"
+ },
+ {
+  "tr": "İki kişi ne zamandır burada olduklarını konuşuyor.",
+  "kind": "intro",
+  "de": "Zwei Personen sprechen darüber, seit wann sie hier sind."
+ },
+ {
+  "tr": "Üç hedef anlatılıyor. Hangisi umut, hangisi hayal?",
+  "kind": "intro",
+  "de": "Drei Ziele werden genannt. Welches ist eine Hoffnung, welches ein Traum?"
+ },
+ {
+  "tr": "Süre ve başlangıcı yaz. Sonunda hayat kartını doldur.",
+  "kind": "intro",
+  "de": "Schreibe Dauer und Anfangspunkt. Am Ende füllst du die Lebenskarte aus."
+ },
+ {
+  "tr": "Randevu değiştiriliyor. Hangi gün kalıyor, hangisi iptal?",
+  "kind": "intro",
+  "de": "Ein Termin wird verlegt. Welcher Tag bleibt, welcher wird abgesagt?"
+ },
+ {
+  "tr": "Şikâyeti ve süresini yaz. Sonunda şikâyet formunu doldur.",
+  "kind": "intro",
+  "de": "Schreibe die Beschwerde und ihre Dauer. Am Ende füllst du das Beschwerdeformular aus."
+ },
+ {
+  "tr": "Üç çanta karşılaştırılıyor. Kısa sıfat mı, uzun sıfat mı?",
+  "kind": "intro",
+  "de": "Drei Taschen werden verglichen. Kurzes Adjektiv oder langes?"
+ },
+ {
+  "tr": "Karşılaştırma yaz. Kısa sıfat „-er“, uzun sıfat „more“ alıyor.",
+  "kind": "intro",
+  "de": "Schreibe Vergleiche. Kurze Adjektive nehmen „-er“, lange „more“ — das Deutsche nimmt immer „-er“."
+ },
+ {
+  "tr": "Üç küçük sözcüğün yeri farklı. Ve geleceğin iki biçimini ayır.",
+  "kind": "intro",
+  "de": "Drei kleine Wörter stehen an verschiedenen Stellen. Und trenne die zwei Formen der Zukunft."
+ },
+ {
+  "tr": "Hayatın en güzel günü anlatılıyor. Üstünlük biçimlerini yakala.",
+  "kind": "intro",
+  "de": "Der schönste Tag des Lebens wird erzählt. Achte auf die Superlative."
+ },
+ {
+  "tr": "Hekimde şikâyet anlatılıyor. Ne kadar zamandır, ne kadar ciddi?",
+  "kind": "intro",
+  "de": "Beim Arzt wird eine Beschwerde geschildert. Seit wann, und wie ernst?"
+ },
+ {
+  "tr": "İşte bir rapor bekleniyor. „already“, „yet“ ve „just“ üçü de geçiyor.",
+  "kind": "intro",
+  "de": "Bei der Arbeit wird ein Bericht erwartet. „already“, „yet“ und „just“ kommen alle drei vor."
+ },
+ {
+  "tr": "Arkadaş öğüdü. „should“ ve „shouldn't“ hekim dilinde de aynı işi görüyor.",
+  "kind": "intro",
+  "de": "Rat von einer Freundin. „should“ und „shouldn't“ leisten auch in der Arztsprache dasselbe."
+ },
+ {
+  "tr": "İki gelecek biçimi yan yana. Hangi karar önceden verilmiş, hangisi şimdi?",
+  "kind": "intro",
+  "de": "Zwei Formen der Zukunft nebeneinander. Welche Entscheidung ist alt, welche fällt jetzt?"
+ },
+ {
+  "tr": "Umutları ve değişimi yaz. „anymore“ değişeni, „still“ değişmeyeni söylüyor.",
+  "kind": "intro",
+  "de": "Schreibe Hoffnungen und Veränderung. „anymore“ nennt das Geänderte, „still“ das Gebliebene."
+ },
+ {
+  "tr": "Bir hayat hikâyesi. „since“ ve „for“ art arda geçiyor — hangisi süre, hangisi başlangıç?",
+  "kind": "intro",
+  "de": "Eine Lebensgeschichte. „since“ und „for“ kommen nacheinander vor — welches nennt die Dauer, welches den Anfang?"
+ },
+ {
+  "tr": "„Almost… I haven't finished the last part yet.“",
+  "kind": "explain",
+  "de": "„Almost… I haven't finished the last part yet.“"
+ },
+ {
+  "tr": "„Now I work at home.“ — büyük ofis on yıl öncesi.",
+  "kind": "explain",
+  "de": "„Now I work at home.“ — das große Büro war vor zehn Jahren."
+ },
+ {
+  "tr": "„I'd like to work abroad for one year. Not longer…“",
+  "kind": "explain",
+  "de": "„I'd like to work abroad for one year. Not longer…“"
+ },
+ {
+  "tr": "Üç hedef sırayla, sonra başarının kendi tanımı geliyor.",
+  "kind": "explain",
+  "de": "Drei Ziele der Reihe nach, dann kommt die eigene Bestimmung von Erfolg."
+ },
+ {
+  "tr": "Önce mektup, sonra okuma, sonra anne, en son kız kardeş.",
+  "kind": "explain",
+  "de": "Zuerst der Brief, dann das Lesen, dann die Mutter, zuletzt die Schwester."
+ },
+ {
+  "tr": "„But the brown one is wider…“ — kısa sıfat: wide → wider.",
+  "kind": "explain",
+  "de": "„But the brown one is wider…“ — kurzes Adjektiv: wide → wider."
+ },
+ {
+  "tr": "„I used to want a big career. I don't want that anymore.“",
+  "kind": "explain",
+  "de": "„I used to want a big career. I don't want that anymore.“"
+ },
+ {
+  "tr": "„I still read every night…“ — „still“ değişmeyeni söylüyor.",
+  "kind": "explain",
+  "de": "„I still read every night…“ — „still“ nennt das, was geblieben ist."
+ },
+ {
+  "tr": "„Sixty euros. The black one is forty.“ — yirmi aradaki fark.",
+  "kind": "explain",
+  "de": "„Sixty euros. The black one is forty.“ — zwanzig ist der Unterschied."
+ },
+ {
+  "tr": "„You should go to the doctor.“ — „should“ sonrası fiil eksiz.",
+  "kind": "explain",
+  "de": "„You should go to the doctor.“ — nach „should“ steht das Verb ohne Endung."
+ },
+ {
+  "tr": "„I have lived here for eleven years.“ — „for“ süreyi söylüyor.",
+  "kind": "explain",
+  "de": "„I have lived here for eleven years.“ — „for“ nennt die Dauer."
+ },
+ {
+  "tr": "„My dream is to write a book.“ — seyahat artık yapılmayan şey.",
+  "kind": "explain",
+  "de": "„My dream is to write a book.“ — das Reisen ist das, was nicht mehr stattfindet."
+ },
+ {
+  "tr": "„Warm tea with lemon. My grandmother's advice — and it works.“",
+  "kind": "explain",
+  "de": "„Warm tea with lemon. My grandmother's advice — and it works.“"
+ },
+ {
+  "tr": "„We decided that last week.“ — o yüzden „going to“ kullanıyor.",
+  "kind": "explain",
+  "de": "„We decided that last week.“ — deshalb steht „going to“."
+ },
+ {
+  "tr": "„…I have had the pain for two weeks…“ — süre olduğu için „for“.",
+  "kind": "explain",
+  "de": "„…I have had the pain for two weeks…“ — weil es die Dauer ist, steht „for“."
+ },
+ {
+  "tr": "„In this city? Since March.“ — iki ay işte, on bir yıl Mert'in.",
+  "kind": "explain",
+  "de": "„In this city? Since March.“ — zwei Monate gelten der Arbeit, elf Jahre Mert."
+ },
+ {
+  "tr": "„Which one is better?“ — „good“ düzensiz: better, „gooder“ yok.",
+  "kind": "explain",
+  "de": "„Which one is better?“ — „good“ ist unregelmäßig: better, „gooder“ gibt es nicht."
+ },
+ {
+  "tr": "„You shouldn't drink coffee with a fever! You should avoid it.“",
+  "kind": "explain",
+  "de": "„You shouldn't drink coffee with a fever! You should avoid it.“"
+ },
+ {
+  "tr": "Önce süre, sonra gelişim, sonra hekimler, en son bugünkü çözüm.",
+  "kind": "explain",
+  "de": "Zuerst die Dauer, dann der Verlauf, dann die Ärzte, zuletzt die heutige Lösung."
+ },
+ {
+  "tr": "Önce istek, sonra soru, sonra yeni gün, en son eskisinin iptali.",
+  "kind": "explain",
+  "de": "Zuerst die Bitte, dann die Frage, dann der neue Tag, zuletzt die Absage des alten."
+ },
+ {
+  "tr": "Önce soru, sonra yapılmış olan, sonra az önce olan, en son plan.",
+  "kind": "explain",
+  "de": "Zuerst die Frage, dann das Erledigte, dann das gerade Geschehene, zuletzt der Plan."
+ },
+ {
+  "tr": "„I have had a cold for a week.“ — iki saat işte dayanabildiği süre.",
+  "kind": "explain",
+  "de": "„I have had a cold for a week.“ — zwei Stunden hält er bei der Arbeit durch."
+ },
+ {
+  "tr": "„I promise I won't be late on Sunday.“ — söz vermek hep „will“ ile.",
+  "kind": "explain",
+  "de": "„I promise I won't be late on Sunday.“ — ein Versprechen steht immer mit „will“."
+ },
+ {
+  "tr": "„You have worked here for three years…“ — beş saat bugünkü çalışma.",
+  "kind": "explain",
+  "de": "„You have worked here for three years…“ — fünf Stunden ist die Arbeit von heute."
+ },
+ {
+  "tr": "„The third one asked the right question…“ — ilki yalnız „rest“ dedi.",
+  "kind": "explain",
+  "de": "„The third one asked the right question…“ — der erste sagte nur „rest“."
+ },
+ {
+  "tr": "„Third, my dream is to open a small shop.“ — ötekiler umut ve istek.",
+  "kind": "explain",
+  "de": "„Third, my dream is to open a small shop.“ — die anderen sind Hoffnung und Wunsch."
+ },
+ {
+  "tr": "„a company abroad wanted me for a new job“ — mektup o haberi getiriyor.",
+  "kind": "explain",
+  "de": "„a company abroad wanted me for a new job“ — der Brief bringt diese Nachricht."
+ },
+ {
+  "tr": "„I have worked at the school for two months.“ — süre olduğu için „for“.",
+  "kind": "explain",
+  "de": "„I have worked at the school for two months.“ — weil es die Dauer ist, steht „for“."
+ },
+ {
+  "tr": "Önce iki plan, sonra birincisi, sonra ikincisi, en son kuralın kendisi.",
+  "kind": "explain",
+  "de": "Zuerst die beiden Pläne, dann der erste, dann der zweite, zuletzt die Regel selbst."
+ },
+ {
+  "tr": "„I don't travel anymore — or almost not.“ — „anymore“ değişimi söylüyor.",
+  "kind": "explain",
+  "de": "„I don't travel anymore — or almost not.“ — „anymore“ nennt die Veränderung."
+ },
+ {
+  "tr": "„Since Monday. It started in the evening.“ — başlangıç noktası: „since“.",
+  "kind": "explain",
+  "de": "„Since Monday. It started in the evening.“ — der Anfangspunkt: „since“."
+ },
+ {
+  "tr": "„Since nine this morning. For five hours!“ — biri başlangıç, öteki süre.",
+  "kind": "explain",
+  "de": "„Since nine this morning. For five hours!“ — das eine nennt den Anfang, das andere die Dauer."
+ },
+ {
+  "tr": "„…but I haven't found a good job yet.“ — „yet“ henüz olmadığını söylüyor.",
+  "kind": "explain",
+  "de": "„…but I haven't found a good job yet.“ — „yet“ sagt, dass es noch nicht so weit ist."
+ },
+ {
+  "tr": "„We have known each other for nine years now.“ — on bir kasaba, on şehir.",
+  "kind": "explain",
+  "de": "„We have known each other for nine years now.“ — elf gelten dem Ort, zehn der Stadt."
+ },
+ {
+  "tr": "„The job was more important than my old one…“ — uzun sıfat „more“ istiyor.",
+  "kind": "explain",
+  "de": "„The job was more important than my old one…“ — das lange Adjektiv verlangt „more“."
+ },
+ {
+  "tr": "„I've had a cough for three days.“ — ateş pazartesiden beri, ayrı bir süre.",
+  "kind": "explain",
+  "de": "„I've had a cough for three days.“ — das Fieber besteht seit Montag, eine eigene Dauer."
+ },
+ {
+  "tr": "„Next year I'm going to look for work abroad.“ — önceden yapılmış bir plan.",
+  "kind": "explain",
+  "de": "„Next year I'm going to look for work abroad.“ — ein Plan, der vorher gefasst wurde."
+ },
+ {
+  "tr": "„My knee has hurt since March. That is six months.“ — aynı süre iki biçimde.",
+  "kind": "explain",
+  "de": "„My knee has hurt since March. That is six months.“ — dieselbe Dauer in zwei Formen."
+ },
+ {
+  "tr": "„You should rest for a week.“ — vitaminler zararsız ama asıl ilaç dinlenmek.",
+  "kind": "explain",
+  "de": "„You should rest for a week.“ — Vitamine schaden nicht, aber das eigentliche Mittel ist Ruhe."
+ },
+ {
+  "tr": "„…it is cheaper than the big places in the centre.“ — kısa sıfat „-er“ alıyor.",
+  "kind": "explain",
+  "de": "„…it is cheaper than the big places in the centre.“ — das kurze Adjektiv nimmt „-er“."
+ },
+ {
+  "tr": "„First, I'm going to visit my sister on Sunday.“ — karar geçen hafta verilmiş.",
+  "kind": "explain",
+  "de": "„First, I'm going to visit my sister on Sunday.“ — die Entscheidung fiel letzte Woche."
+ },
+ {
+  "tr": "„I have already written four pages, but I haven't finished the last part yet.“",
+  "kind": "explain",
+  "de": "„I have already written four pages, but I haven't finished the last part yet.“"
+ },
+ {
+  "tr": "„Then I moved to the city because I wanted to study.“ — fabrika anne babanın işi.",
+  "kind": "explain",
+  "de": "„Then I moved to the city because I wanted to study.“ — die Fabrik war die Arbeit der Eltern."
+ },
+ {
+  "tr": "„…it is worse when I sit for hours.“ — spordan sonra olması başlangıçtaki hâliydi.",
+  "kind": "explain",
+  "de": "„…it is worse when I sit for hours.“ — nach dem Sport war es am Anfang so."
+ },
+ {
+  "tr": "„Thursday is better. Half past eight is fine.“ — çarşamba teklif edildi ama alınmadı.",
+  "kind": "explain",
+  "de": "„Thursday is better. Half past eight is fine.“ — der Mittwoch wurde angeboten, aber nicht genommen."
+ },
+ {
+  "tr": "„And yes, the flat was more expensive.“ — kız kardeşin sorusu son cümlede cevaplanıyor.",
+  "kind": "explain",
+  "de": "„And yes, the flat was more expensive.“ — die Frage der Schwester wird im letzten Satz beantwortet."
+ },
+ {
+  "tr": "şu anda",
+  "kind": "gloss.tr",
+  "de": "im Moment"
+ },
+ {
+  "tr": "neredeyse",
+  "kind": "gloss.tr",
+  "de": "fast"
+ },
+ {
+  "tr": "kahverengi",
+  "kind": "gloss.tr",
+  "de": "braun"
+ },
+ {
+  "tr": "eş",
+  "kind": "gloss.tr",
+  "de": "Ehefrau"
+ },
+ {
+  "tr": "hâl",
+  "kind": "gloss.tr",
+  "de": "Zustand"
+ },
+ {
+  "tr": "tür",
+  "kind": "gloss.tr",
+  "de": "Art"
+ },
+ {
+  "tr": "fark",
+  "kind": "gloss.tr",
+  "de": "Unterschied"
+ },
+ {
+  "tr": "hâlâ",
+  "kind": "gloss.tr",
+  "de": "noch"
+ },
+ {
+  "tr": "masa",
+  "kind": "gloss.tr",
+  "de": "Schreibtisch"
+ },
+ {
+  "tr": "artık",
+  "kind": "gloss.tr",
+  "de": "nicht mehr"
+ },
+ {
+  "tr": "bölüm",
+  "kind": "gloss.tr",
+  "de": "Teil"
+ },
+ {
+  "tr": "hedef",
+  "kind": "gloss.tr",
+  "de": "Ziel"
+ },
+ {
+  "tr": "kalın",
+  "kind": "gloss.tr",
+  "de": "dick"
+ },
+ {
+  "tr": "rapor",
+  "kind": "gloss.tr",
+  "de": "Bericht"
+ },
+ {
+  "tr": "ağrılı",
+  "kind": "gloss.tr",
+  "de": "wund"
+ },
+ {
+  "tr": "başarı",
+  "kind": "gloss.tr",
+  "de": "Erfolg"
+ },
+ {
+  "tr": "en iyi",
+  "kind": "gloss.tr",
+  "de": "am besten"
+ },
+ {
+  "tr": "fırsat",
+  "kind": "gloss.tr",
+  "de": "Gelegenheit"
+ },
+ {
+  "tr": "merkez",
+  "kind": "gloss.tr",
+  "de": "Zentrum"
+ },
+ {
+  "tr": "pratik",
+  "kind": "gloss.tr",
+  "de": "praktisch"
+ },
+ {
+  "tr": "umarım",
+  "kind": "gloss.tr",
+  "de": "hoffentlich"
+ },
+ {
+  "tr": "az önce",
+  "kind": "gloss.tr",
+  "de": "gerade eben"
+ },
+ {
+  "tr": "fabrika",
+  "kind": "gloss.tr",
+  "de": "Fabrik"
+ },
+ {
+  "tr": "kariyer",
+  "kind": "gloss.tr",
+  "de": "Karriere"
+ },
+ {
+  "tr": "hastalık",
+  "kind": "gloss.tr",
+  "de": "Krankheit"
+ },
+ {
+  "tr": "umarım …",
+  "kind": "gloss.tr",
+  "de": "ich hoffe, …"
+ },
+ {
+  "tr": "yüzünden",
+  "kind": "gloss.tr",
+  "de": "wegen"
+ },
+ {
+  "tr": "üç gündür",
+  "kind": "gloss.tr",
+  "de": "seit drei Tagen"
+ },
+ {
+  "tr": "üç yıldır",
+  "kind": "gloss.tr",
+  "de": "seit drei Jahren"
+ },
+ {
+  "tr": "ateşim var",
+  "kind": "gloss.tr",
+  "de": "ich habe Fieber"
+ },
+ {
+  "tr": "başı dönen",
+  "kind": "gloss.tr",
+  "de": "schwindelig"
+ },
+ {
+  "tr": "daha kolay",
+  "kind": "gloss.tr",
+  "de": "leichter"
+ },
+ {
+  "tr": "…'de doğdum",
+  "kind": "gloss.tr",
+  "de": "ich bin in … geboren"
+ },
+ {
+  "tr": "bir bakayım",
+  "kind": "gloss.tr",
+  "de": "lassen Sie mich nachsehen"
+ },
+ {
+  "tr": "birbirimizi",
+  "kind": "gloss.tr",
+  "de": "einander"
+ },
+ {
+  "tr": "geri aramak",
+  "kind": "gloss.tr",
+  "de": "zurückrufen"
+ },
+ {
+  "tr": "haber vermek",
+  "kind": "gloss.tr",
+  "de": "Bescheid geben"
+ },
+ {
+  "tr": "marttan beri",
+  "kind": "gloss.tr",
+  "de": "seit März"
+ },
+ {
+  "tr": "ayakta durmak",
+  "kind": "gloss.tr",
+  "de": "stehen"
+ },
+ {
+  "tr": "…-den daha ucuz",
+  "kind": "gloss.tr",
+  "de": "billiger als …"
+ },
+ {
+  "tr": "boğazım ağrıyor",
+  "kind": "gloss.tr",
+  "de": "mein Hals tut weh"
+ },
+ {
+  "tr": "…-den daha önemli",
+  "kind": "gloss.tr",
+  "de": "wichtiger als …"
+ },
+ {
+  "tr": "daha erken bir şey",
+  "kind": "gloss.tr",
+  "de": "etwas Früheres"
+ },
+ {
+  "tr": "randevumu değiştirmek",
+  "kind": "gloss.tr",
+  "de": "meinen Termin verlegen"
+ }
+]

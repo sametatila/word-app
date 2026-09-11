@@ -61,8 +61,8 @@ mi çıkacağına yazar karar verir.
 | Seviye | Ünite | Durum |
 |---|---|---|
 | **A1** | **1–25** | **TAM** (2026-09-11/12) — 150 egzersiz, 150/150 yuva |
-| A2 | 1–3 | **yazıldı** (2026-09-12) — 18 egzersiz |
-| A2 | 4–25 | bekliyor |
+| A2 | 1–6 | **yazıldı** (2026-09-12) — 36 egzersiz, 36/150 yuva |
+| A2 | 7–25 | bekliyor |
 | B1 · B2 · C1 | 1–25 | bekliyor |
 
 **A1 ünite 1 (2026-09-11).** Dört dersi Hello! · How are you? · I am, you
@@ -288,6 +288,56 @@ Almanca eksende iki satır açıldı. „ago“ sayıdan SONRA geliyor, Almanca
 „vor zwei Tagen“ ise ÖNCE — yön ters. Ve „so“ bir yalancı dost: İngilizce
 „so“ Almanca „also“ demek, Almanca „so“ değil; karşılık bunu adıyla
 söylüyor.
+
+**A2 ünite 4–6 (2026-09-12).** Ünite 4 Since and for · Already, yet, just ·
+A life story · Will and going to; ünite 5 Hopes and plans · Comparatives ·
+Superlatives · Then and now; ünite 6 Symptoms · Making an appointment ·
+Giving advice · How long have you had it?. On sekiz egzersiz; ünite dışı
+ölçüm %0,0. A2 yuvalarının 36'sı dolu.
+
+Bu üç ünite Almanca eksende hattın en verimli turlarından birini verdi,
+çünkü üçü de tam olarak Almancanın BAŞKA türlü çözdüğü yerlere basıyor.
+
+`since`/`for` ayrımı bunların başında geliyor. Türkçe ipucu "başlangıç
+noktası mı süre mi" diye ayırıyor; Almanca okuyan için bu ayrım YENİ,
+çünkü Almanca „seit“ İKİSİNİ birden karşılıyor — „seit Montag“ da „seit
+drei Tagen“ de aynı edat. Yani satır Türkçe okuyan için hatırlatma,
+Almanca okuyan için haber; karşılık bunu adıyla söylüyor.
+
+Aynı ünitede ikinci bir yeniden ölçüm var ve ters yönde: süre anlatan
+İngilizce cümle present perfect istiyor („I have lived here for three
+years“), Almanca ise ŞİMDİKİ zaman kullanıyor („ich wohne hier seit drei
+Jahren“). Türkçe de şimdiki zaman diyor, yani burada Türkçe ile Almanca
+aynı tarafta ve İngilizce yalnız. Karşılık bunu "Deutsch nimmt wie das
+Türkische das Präsens" diye kuruyor — iki dili karşılaştırmadan güçlüğü
+anlatmak mümkün değil.
+
+`will`/`going to` ayrımında ise yeniden ölçüm satırı KÜÇÜLTÜYOR: Almanca
+bu ayrımı hiç yapmıyor, „ich werde“ hem önceden kurulmuş planı hem o anda
+verilmiş kararı taşıyor. Karşılık bunu bir cümleyle ekliyor, çünkü Almanca
+okuyan "bende de böyle bir ayrım var" diye yanlış eşleme kurabilir.
+
+Ünite 5'in karşılaştırma yükü tam tersi: İngilizce kısa sıfata „-er“,
+uzun sıfata „more“ veriyor; Almanca ise HER sıfata „-er“ takıyor
+(„wichtiger“, hiçbir zaman „mehr wichtig“ değil). Yani „importanter“
+hatası Almanca okuyan için Türkçe okuyandan DAHA yakın bir tuzak, ve
+karşılık bunu uyarı olarak yazıyor. Buna karşılık „good → better → the
+best“ tam parite („gut → besser → der beste“) ve „the“ zorunluluğu
+Almancadaki artikelle eşleşiyor.
+
+Ünite 6'nın şikâyet kalıbı da parite çıktı: „I have a fever“ = „ich habe
+Fieber“, „my throat is sore“ = „mein Hals tut weh“ — iki dilin ikisi de
+aynı iki kalıbı taşıyor. Ayrıldığı yer `already`/`yet` yerleşimi:
+„already“ yardımcı ile asıl fiil arasına giriyor ve Almanca „schon“ da
+tam orada duruyor, ama „yet“ hep cümle SONUNDA ve Almanca „noch nicht“
+cümle ortasında kalıyor.
+
+İçerik tarafında ölçüm on bir sözlükçe maddesi ekletti („at the moment“,
+„part“, „easier“, „flat“, „almost“, „less“, „brown“ …) ve bir soru
+şıkkını yeniden yazdırdı: „less“ yalnız şıkta geçiyordu, metinde değil —
+sözlükçeye eklemek yanlış olurdu, çünkü sözlükçe metnin sözlükçesi.
+Bir doğru/yanlış kökü de değişti: „another city“ metinde hiç geçmiyordu,
+„outside this city“ geçiyor.
 
 ## Tamamlanma ölçütü
 

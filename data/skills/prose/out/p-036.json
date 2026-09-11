@@ -1,0 +1,322 @@
+[
+ {
+  "tr": "Randevu ve öğüt cümlelerini yaz.",
+  "kind": "intro",
+  "en": "Write sentences for an appointment and for advice."
+ },
+ {
+  "tr": "Altı aylık bir ağrı. Üç hekim, üç ayrı cevap.",
+  "kind": "intro",
+  "en": "A pain that has lasted six months. Three doctors, three different answers."
+ },
+ {
+  "tr": "„Almost… I haven't finished the last part yet.“",
+  "kind": "explain",
+  "en": "„Almost… I haven't finished the last part yet.“"
+ },
+ {
+  "tr": "On yıl önce ve şimdi. Ne değişti, ne aynı kaldı?",
+  "kind": "intro",
+  "en": "Ten years ago and now. What changed, what stayed the same?"
+ },
+ {
+  "tr": "„Now I work at home.“ — büyük ofis on yıl öncesi.",
+  "kind": "explain",
+  "en": "„Now I work at home.“ — the big office was ten years ago."
+ },
+ {
+  "tr": "İki kişi ne zamandır burada olduklarını konuşuyor.",
+  "kind": "intro",
+  "en": "Two people talk about how long they have been here."
+ },
+ {
+  "tr": "Üç hedef anlatılıyor. Hangisi umut, hangisi hayal?",
+  "kind": "intro",
+  "en": "Three goals are named. Which one is a hope, which one a dream?"
+ },
+ {
+  "tr": "„I'd like to work abroad for one year. Not longer…“",
+  "kind": "explain",
+  "en": "„I'd like to work abroad for one year. Not longer…“"
+ },
+ {
+  "tr": "Süre ve başlangıcı yaz. Sonunda hayat kartını doldur.",
+  "kind": "intro",
+  "en": "Write the length and the starting point. At the end, fill in the life card."
+ },
+ {
+  "tr": "Üç hedef sırayla, sonra başarının kendi tanımı geliyor.",
+  "kind": "explain",
+  "en": "Three goals in order, then her own definition of success."
+ },
+ {
+  "tr": "Önce mektup, sonra okuma, sonra anne, en son kız kardeş.",
+  "kind": "explain",
+  "en": "First the letter, then the reading, then the mother, last the sister."
+ },
+ {
+  "tr": "„But the brown one is wider…“ — kısa sıfat: wide → wider.",
+  "kind": "explain",
+  "en": "„But the brown one is wider…“ — a short adjective: wide → wider."
+ },
+ {
+  "tr": "„I used to want a big career. I don't want that anymore.“",
+  "kind": "explain",
+  "en": "„I used to want a big career. I don't want that anymore.“"
+ },
+ {
+  "tr": "Randevu değiştiriliyor. Hangi gün kalıyor, hangisi iptal?",
+  "kind": "intro",
+  "en": "An appointment is being moved. Which day stays, which one is cancelled?"
+ },
+ {
+  "tr": "Şikâyeti ve süresini yaz. Sonunda şikâyet formunu doldur.",
+  "kind": "intro",
+  "en": "Write the complaint and how long it has lasted. At the end, fill in the symptom form."
+ },
+ {
+  "tr": "Üç çanta karşılaştırılıyor. Kısa sıfat mı, uzun sıfat mı?",
+  "kind": "intro",
+  "en": "Three bags are compared. A short adjective or a long one?"
+ },
+ {
+  "tr": "„I still read every night…“ — „still“ değişmeyeni söylüyor.",
+  "kind": "explain",
+  "en": "„I still read every night…“ — „still“ names what has stayed."
+ },
+ {
+  "tr": "„Sixty euros. The black one is forty.“ — yirmi aradaki fark.",
+  "kind": "explain",
+  "en": "„Sixty euros. The black one is forty.“ — twenty is the difference."
+ },
+ {
+  "tr": "„You should go to the doctor.“ — „should“ sonrası fiil eksiz.",
+  "kind": "explain",
+  "en": "„You should go to the doctor.“ — after „should“ the verb stays bare."
+ },
+ {
+  "tr": "„I have lived here for eleven years.“ — „for“ süreyi söylüyor.",
+  "kind": "explain",
+  "en": "„I have lived here for eleven years.“ — „for“ gives the length."
+ },
+ {
+  "tr": "„My dream is to write a book.“ — seyahat artık yapılmayan şey.",
+  "kind": "explain",
+  "en": "„My dream is to write a book.“ — the travelling is what no longer happens."
+ },
+ {
+  "tr": "„Warm tea with lemon. My grandmother's advice — and it works.“",
+  "kind": "explain",
+  "en": "„Warm tea with lemon. My grandmother's advice — and it works.“"
+ },
+ {
+  "tr": "„We decided that last week.“ — o yüzden „going to“ kullanıyor.",
+  "kind": "explain",
+  "en": "„We decided that last week.“ — that is why he uses „going to“."
+ },
+ {
+  "tr": "Karşılaştırma yaz. Kısa sıfat „-er“, uzun sıfat „more“ alıyor.",
+  "kind": "intro",
+  "en": "Write comparisons. Short adjectives take „-er“, long ones take „more“."
+ },
+ {
+  "tr": "Üç küçük sözcüğün yeri farklı. Ve geleceğin iki biçimini ayır.",
+  "kind": "intro",
+  "en": "Three little words sit in different places. And keep the two futures apart."
+ },
+ {
+  "tr": "„…I have had the pain for two weeks…“ — süre olduğu için „for“.",
+  "kind": "explain",
+  "en": "„…I have had the pain for two weeks…“ — it is a length, so „for“."
+ },
+ {
+  "tr": "„In this city? Since March.“ — iki ay işte, on bir yıl Mert'in.",
+  "kind": "explain",
+  "en": "„In this city? Since March.“ — two months belong to the job, eleven years to Mert."
+ },
+ {
+  "tr": "„Which one is better?“ — „good“ düzensiz: better, „gooder“ yok.",
+  "kind": "explain",
+  "en": "„Which one is better?“ — „good“ is irregular: better, there is no „gooder“."
+ },
+ {
+  "tr": "„You shouldn't drink coffee with a fever! You should avoid it.“",
+  "kind": "explain",
+  "en": "„You shouldn't drink coffee with a fever! You should avoid it.“"
+ },
+ {
+  "tr": "Hayatın en güzel günü anlatılıyor. Üstünlük biçimlerini yakala.",
+  "kind": "intro",
+  "en": "The best day of a life is told. Catch the superlatives."
+ },
+ {
+  "tr": "Hekimde şikâyet anlatılıyor. Ne kadar zamandır, ne kadar ciddi?",
+  "kind": "intro",
+  "en": "A complaint is described at the doctor's. How long, and how serious?"
+ },
+ {
+  "tr": "Önce süre, sonra gelişim, sonra hekimler, en son bugünkü çözüm.",
+  "kind": "explain",
+  "en": "First the length, then how it developed, then the doctors, last today's answer."
+ },
+ {
+  "tr": "Önce istek, sonra soru, sonra yeni gün, en son eskisinin iptali.",
+  "kind": "explain",
+  "en": "First the request, then the question, then the new day, last the cancelling of the old one."
+ },
+ {
+  "tr": "Önce soru, sonra yapılmış olan, sonra az önce olan, en son plan.",
+  "kind": "explain",
+  "en": "First the question, then what is done, then what just happened, last the plan."
+ },
+ {
+  "tr": "„I have had a cold for a week.“ — iki saat işte dayanabildiği süre.",
+  "kind": "explain",
+  "en": "„I have had a cold for a week.“ — two hours is how long he lasts at work."
+ },
+ {
+  "tr": "„I promise I won't be late on Sunday.“ — söz vermek hep „will“ ile.",
+  "kind": "explain",
+  "en": "„I promise I won't be late on Sunday.“ — a promise always takes „will“."
+ },
+ {
+  "tr": "„You have worked here for three years…“ — beş saat bugünkü çalışma.",
+  "kind": "explain",
+  "en": "„You have worked here for three years…“ — five hours is today's work."
+ },
+ {
+  "tr": "„The third one asked the right question…“ — ilki yalnız „rest“ dedi.",
+  "kind": "explain",
+  "en": "„The third one asked the right question…“ — the first only said „rest“."
+ },
+ {
+  "tr": "„Third, my dream is to open a small shop.“ — ötekiler umut ve istek.",
+  "kind": "explain",
+  "en": "„Third, my dream is to open a small shop.“ — the others are a hope and a wish."
+ },
+ {
+  "tr": "İşte bir rapor bekleniyor. „already“, „yet“ ve „just“ üçü de geçiyor.",
+  "kind": "intro",
+  "en": "A report is due at work. „already“, „yet“ and „just“ all turn up."
+ },
+ {
+  "tr": "„a company abroad wanted me for a new job“ — mektup o haberi getiriyor.",
+  "kind": "explain",
+  "en": "„a company abroad wanted me for a new job“ — the letter brings that news."
+ },
+ {
+  "tr": "„I have worked at the school for two months.“ — süre olduğu için „for“.",
+  "kind": "explain",
+  "en": "„I have worked at the school for two months.“ — it is a length, so „for“."
+ },
+ {
+  "tr": "Önce iki plan, sonra birincisi, sonra ikincisi, en son kuralın kendisi.",
+  "kind": "explain",
+  "en": "First the two plans, then the first, then the second, last the rule itself."
+ },
+ {
+  "tr": "„I don't travel anymore — or almost not.“ — „anymore“ değişimi söylüyor.",
+  "kind": "explain",
+  "en": "„I don't travel anymore — or almost not.“ — „anymore“ names the change."
+ },
+ {
+  "tr": "„Since Monday. It started in the evening.“ — başlangıç noktası: „since“.",
+  "kind": "explain",
+  "en": "„Since Monday. It started in the evening.“ — the starting point: „since“."
+ },
+ {
+  "tr": "„Since nine this morning. For five hours!“ — biri başlangıç, öteki süre.",
+  "kind": "explain",
+  "en": "„Since nine this morning. For five hours!“ — one gives the start, the other the length."
+ },
+ {
+  "tr": "„…but I haven't found a good job yet.“ — „yet“ henüz olmadığını söylüyor.",
+  "kind": "explain",
+  "en": "„…but I haven't found a good job yet.“ — „yet“ says it has not happened so far."
+ },
+ {
+  "tr": "„We have known each other for nine years now.“ — on bir kasaba, on şehir.",
+  "kind": "explain",
+  "en": "„We have known each other for nine years now.“ — eleven belongs to the town, ten to the city."
+ },
+ {
+  "tr": "Arkadaş öğüdü. „should“ ve „shouldn't“ hekim dilinde de aynı işi görüyor.",
+  "kind": "intro",
+  "en": "Advice from a friend. „should“ and „shouldn't“ do the same job in medical talk."
+ },
+ {
+  "tr": "İki gelecek biçimi yan yana. Hangi karar önceden verilmiş, hangisi şimdi?",
+  "kind": "intro",
+  "en": "The two futures side by side. Which decision is old, which one is made now?"
+ },
+ {
+  "tr": "„The job was more important than my old one…“ — uzun sıfat „more“ istiyor.",
+  "kind": "explain",
+  "en": "„The job was more important than my old one…“ — the long adjective needs „more“."
+ },
+ {
+  "tr": "„I've had a cough for three days.“ — ateş pazartesiden beri, ayrı bir süre.",
+  "kind": "explain",
+  "en": "„I've had a cough for three days.“ — the fever has lasted since Monday, a length of its own."
+ },
+ {
+  "tr": "„Next year I'm going to look for work abroad.“ — önceden yapılmış bir plan.",
+  "kind": "explain",
+  "en": "„Next year I'm going to look for work abroad.“ — a plan made beforehand."
+ },
+ {
+  "tr": "Umutları ve değişimi yaz. „anymore“ değişeni, „still“ değişmeyeni söylüyor.",
+  "kind": "intro",
+  "en": "Write hopes and change. „anymore“ names what changed, „still“ what stayed."
+ },
+ {
+  "tr": "„My knee has hurt since March. That is six months.“ — aynı süre iki biçimde.",
+  "kind": "explain",
+  "en": "„My knee has hurt since March. That is six months.“ — the same length in two forms."
+ },
+ {
+  "tr": "„You should rest for a week.“ — vitaminler zararsız ama asıl ilaç dinlenmek.",
+  "kind": "explain",
+  "en": "„You should rest for a week.“ — vitamins do no harm, but the real medicine is rest."
+ },
+ {
+  "tr": "„…it is cheaper than the big places in the centre.“ — kısa sıfat „-er“ alıyor.",
+  "kind": "explain",
+  "en": "„…it is cheaper than the big places in the centre.“ — the short adjective takes „-er“."
+ },
+ {
+  "tr": "„First, I'm going to visit my sister on Sunday.“ — karar geçen hafta verilmiş.",
+  "kind": "explain",
+  "en": "„First, I'm going to visit my sister on Sunday.“ — the decision was made last week."
+ },
+ {
+  "tr": "„I have already written four pages, but I haven't finished the last part yet.“",
+  "kind": "explain",
+  "en": "„I have already written four pages, but I haven't finished the last part yet.“"
+ },
+ {
+  "tr": "„Then I moved to the city because I wanted to study.“ — fabrika anne babanın işi.",
+  "kind": "explain",
+  "en": "„Then I moved to the city because I wanted to study.“ — the factory was the parents' work."
+ },
+ {
+  "tr": "„…it is worse when I sit for hours.“ — spordan sonra olması başlangıçtaki hâliydi.",
+  "kind": "explain",
+  "en": "„…it is worse when I sit for hours.“ — after sport was how it started."
+ },
+ {
+  "tr": "„Thursday is better. Half past eight is fine.“ — çarşamba teklif edildi ama alınmadı.",
+  "kind": "explain",
+  "en": "„Thursday is better. Half past eight is fine.“ — Wednesday was offered but not taken."
+ },
+ {
+  "tr": "„And yes, the flat was more expensive.“ — kız kardeşin sorusu son cümlede cevaplanıyor.",
+  "kind": "explain",
+  "en": "„And yes, the flat was more expensive.“ — the sister's question is answered in the last sentence."
+ },
+ {
+  "tr": "Bir hayat hikâyesi. „since“ ve „for“ art arda geçiyor — hangisi süre, hangisi başlangıç?",
+  "kind": "intro",
+  "en": "A life story. „since“ and „for“ come one after the other — which gives the length, which the start?"
+ }
+]

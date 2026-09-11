@@ -1,0 +1,307 @@
+[
+ {
+  "tr": "Hayat kartını doldur.",
+  "kind": "form.prompt",
+  "de": "Fülle die Lebenskarte aus."
+ },
+ {
+  "tr": "Şikâyet formunu doldur.",
+  "kind": "form.prompt",
+  "de": "Fülle das Beschwerdeformular aus."
+ },
+ {
+  "tr": "Karşılaştırma kartını doldur.",
+  "kind": "form.prompt",
+  "de": "Fülle die Vergleichskarte aus."
+ },
+ {
+  "tr": "Ateş var; boğaz ağrılı; öksürük üç gündür; ateş pazartesiden beri.",
+  "kind": "form.facts",
+  "de": "Fieber vorhanden; Hals wund; Husten seit drei Tagen; Fieber seit Montag."
+ },
+ {
+  "tr": "Siyah çanta kırk euro; kahverengi çanta altmış euro; kahverengi daha geniş; kahverengi seçildi.",
+  "kind": "form.facts",
+  "de": "Schwarze Tasche vierzig Euro; braune Tasche sechzig Euro; die braune ist breiter; die braune wurde gewählt."
+ },
+ {
+  "tr": "Kuzeyde küçük bir kasabada doğdu; on bir yıl orada; üniversite için şehre taşındı; dokuz yıldır eşini tanıyor.",
+  "kind": "form.facts",
+  "de": "In einer kleinen Stadt im Norden geboren; elf Jahre dort; für die Universität in die Stadt gezogen; kennt seine Frau seit neun Jahren."
+ },
+ {
+  "tr": "İki cümleyi „than“ ile birleştir.",
+  "kind": "rewrite.prompt",
+  "de": "Verbinde die beiden Sätze mit „than“."
+ },
+ {
+  "tr": "Kısa sıfat „-er“ alıyor ve iki taraf „than“ ile bağlanıyor; ikinci cümlenin olumsuzu düşüyor.",
+  "kind": "rewrite.why",
+  "de": "Das kurze Adjektiv nimmt „-er“ und beide Seiten werden mit „than“ verbunden; die Verneinung des zweiten Satzes fällt weg."
+ },
+ {
+  "tr": "Ateşim var.",
+  "kind": "build.tr",
+  "de": "Ich habe Fieber."
+ },
+ {
+  "tr": "Dinlenmelisin.",
+  "kind": "build.tr",
+  "de": "Du solltest dich ausruhen."
+ },
+ {
+  "tr": "Hâlâ buradayım.",
+  "kind": "build.tr",
+  "de": "Ich bin noch hier."
+ },
+ {
+  "tr": "Boğazım ağrıyor.",
+  "kind": "build.tr",
+  "de": "Mein Hals tut weh."
+ },
+ {
+  "tr": "Çoktan bitirdim.",
+  "kind": "build.tr",
+  "de": "Ich bin schon fertig."
+ },
+ {
+  "tr": "Ne zamandır var?",
+  "kind": "build.tr",
+  "de": "Seit wann hast du das?"
+ },
+ {
+  "tr": "Hangisi daha iyi?",
+  "kind": "build.tr",
+  "de": "Welche ist besser?"
+ },
+ {
+  "tr": "Henüz bitirmedim.",
+  "kind": "build.tr",
+  "de": "Ich bin noch nicht fertig."
+ },
+ {
+  "tr": "İki haftadır var.",
+  "kind": "build.tr",
+  "de": "Ich habe das seit zwei Wochen."
+ },
+ {
+  "tr": "Artık bitirdin mi?",
+  "kind": "build.tr",
+  "de": "Bist du inzwischen fertig?"
+ },
+ {
+  "tr": "Ne zamandır buradasın?",
+  "kind": "build.tr",
+  "de": "Seit wann bist du hier?"
+ },
+ {
+  "tr": "Artık seyahat etmiyorum.",
+  "kind": "build.tr",
+  "de": "Ich reise nicht mehr."
+ },
+ {
+  "tr": "Ben bir kasabada doğdum.",
+  "kind": "build.tr",
+  "de": "Ich bin in einer Kleinstadt geboren."
+ },
+ {
+  "tr": "Hayatımın en güzel günü.",
+  "kind": "build.tr",
+  "de": "Der schönste Tag meines Lebens."
+ },
+ {
+  "tr": "Üç gündür öksürüğüm var.",
+  "kind": "build.tr",
+  "de": "Ich habe seit drei Tagen Husten."
+ },
+ {
+  "tr": "Bu ötekinden daha önemli.",
+  "kind": "build.tr",
+  "de": "Das ist wichtiger als das andere."
+ },
+ {
+  "tr": "Hayalim bir dükkân açmak.",
+  "kind": "build.tr",
+  "de": "Mein Traum ist es, einen Laden zu eröffnen."
+ },
+ {
+  "tr": "Otobüs trenden daha ucuz.",
+  "kind": "build.tr",
+  "de": "Der Bus ist billiger als der Zug."
+ },
+ {
+  "tr": "Daha erken bir şey var mı?",
+  "kind": "build.tr",
+  "de": "Haben Sie etwas Früheres?"
+ },
+ {
+  "tr": "Üç yıldır burada yaşıyorum.",
+  "kind": "build.tr",
+  "de": "Ich wohne seit drei Jahren hier."
+ },
+ {
+  "tr": "Umarım yurt dışında çalışırım.",
+  "kind": "build.tr",
+  "de": "Ich hoffe, im Ausland zu arbeiten."
+ },
+ {
+  "tr": "Geç kalmayacağıma söz veriyorum.",
+  "kind": "build.tr",
+  "de": "Ich verspreche, dass ich nicht zu spät komme."
+ },
+ {
+  "tr": "Marttan beri burada çalışıyorum.",
+  "kind": "build.tr",
+  "de": "Ich arbeite seit März hier."
+ },
+ {
+  "tr": "Randevumu değiştirmek istiyorum.",
+  "kind": "build.tr",
+  "de": "Ich möchte meinen Termin verlegen."
+ },
+ {
+  "tr": "Pazar günü kardeşimi ziyaret edeceğim.",
+  "kind": "build.tr",
+  "de": "Am Sonntag werde ich meine Schwester besuchen."
+ },
+ {
+  "tr": "Cuma günkü randevumu iptal etmem gerekiyor.",
+  "kind": "build.tr",
+  "de": "Ich muss meinen Termin am Freitag absagen."
+ },
+ {
+  "tr": "Önceden yapılmış plan: „going to“.",
+  "kind": "build.hint",
+  "de": "Ein vorher gefasster Plan: „going to“. Das Deutsche macht diesen Unterschied nicht."
+ },
+ {
+  "tr": "„need“ sonrası „to“ + fiil. Gün „on“ ile.",
+  "kind": "build.hint",
+  "de": "Nach „need“ kommt „to“ + Verb; das Deutsche braucht dort kein „zu“. Der Tag mit „on“."
+ },
+ {
+  "tr": "„dream“ burada isim; yüklem „is to“ + fiil.",
+  "kind": "build.hint",
+  "de": "„dream“ ist hier ein Substantiv; das Prädikat lautet „is to“ + Verb."
+ },
+ {
+  "tr": "Nesne „it“ zorunlu; süre „for“ ile geliyor.",
+  "kind": "build.hint",
+  "de": "Das Objekt „it“ ist Pflicht; die Dauer kommt mit „for“."
+ },
+ {
+  "tr": "Söz vermek hep „will“ ile; olumsuzu „won't“.",
+  "kind": "build.hint",
+  "de": "Ein Versprechen steht immer mit „will“; die Verneinung ist „won't“."
+ },
+ {
+  "tr": "„anymore“ olumsuzla birlikte ve cümlenin sonunda.",
+  "kind": "build.hint",
+  "de": "„anymore“ steht mit der Verneinung und am Satzende — anders als deutsch „nicht mehr“ mitten im Satz."
+ },
+ {
+  "tr": "Hâlâ sürüyor: „have had“. Süre olduğu için „for“.",
+  "kind": "build.hint",
+  "de": "Es dauert noch an: „have had“. Für die Dauer steht „for“; Deutsch nimmt das Präsens."
+ },
+ {
+  "tr": "„rest“ burada fiil; isim olarak da aynı yazılıyor.",
+  "kind": "build.hint",
+  "de": "„rest“ ist hier ein Verb; als Substantiv schreibt es sich gleich."
+ },
+ {
+  "tr": "„good“ düzensiz: better. „the best“ de aynı kökten.",
+  "kind": "build.hint",
+  "de": "„good“ ist unregelmäßig: better — wie gut und besser. „the best“ gehört zur selben Reihe."
+ },
+ {
+  "tr": "Doğmak edilgen kuruluyor: „was born“. „I born“ olmaz.",
+  "kind": "build.hint",
+  "de": "Geboren werden steht im Passiv: „was born“, wie „ich wurde geboren“. „I born“ gibt es nicht."
+ },
+ {
+  "tr": "Telefonda en kibar istek biçimi; „I want“ kaba kaçar.",
+  "kind": "build.hint",
+  "de": "Am Telefon die höflichste Form der Bitte; „I want“ klingt grob."
+ },
+ {
+  "tr": "„already“ yardımcı fiil ile asıl fiil ARASINA giriyor.",
+  "kind": "build.hint",
+  "de": "„already“ steht ZWISCHEN Hilfsverb und Vollverb — an derselben Stelle wie deutsch „schon“."
+ },
+ {
+  "tr": "Şikâyette „have“ ile: I have a fever, a cough, a cold.",
+  "kind": "build.hint",
+  "de": "Bei Beschwerden mit „have“: I have a fever, a cough, a cold — wie „ich habe Fieber“."
+ },
+ {
+  "tr": "„yet“ yalnız olumsuzda ve soruda, hep cümlenin SONUNDA.",
+  "kind": "build.hint",
+  "de": "„yet“ steht nur in Verneinung und Frage, und immer am SATZENDE — anders als deutsch „noch nicht“."
+ },
+ {
+  "tr": "Üstünlükte „the“ zorunlu: the best, the most important.",
+  "kind": "build.hint",
+  "de": "Im Superlativ ist „the“ Pflicht: the best, the most important — wie „der beste“."
+ },
+ {
+  "tr": "„hope“ sonrası „to“ + fiil. „abroad“ önünde edat almıyor.",
+  "kind": "build.hint",
+  "de": "Nach „hope“ kommt „to“ + Verb, wie deutsch „hoffen, zu …“. Vor „abroad“ steht keine Präposition."
+ },
+ {
+  "tr": "„how long“ süreyi soruyor; „be“ fiilinin bu biçimi „been“.",
+  "kind": "build.hint",
+  "de": "„how long“ fragt nach der Dauer; diese Form von „be“ heißt „been“."
+ },
+ {
+  "tr": "BAŞLANGIÇ noktası olduğu için „since“. Ay adı büyük harfle.",
+  "kind": "build.hint",
+  "de": "Weil es der ANFANGSPUNKT ist, steht „since“. Das deutsche „seit“ deckt beides ab, das Englische trennt. Der Monatsname großgeschrieben."
+ },
+ {
+  "tr": "„still“ „be“ fiilinden SONRA geliyor; ana fiilde önce gelirdi.",
+  "kind": "build.hint",
+  "de": "„still“ steht NACH dem Verb „be“ — wie deutsch „ich bin noch“. Bei einem Vollverb stünde es davor."
+ },
+ {
+  "tr": "Burada organ özne ve „sore“ sıfat; „hurt“ ile de kurulabilirdi.",
+  "kind": "build.hint",
+  "de": "Hier ist das Körperteil das Subjekt und „sore“ ein Adjektiv; mit „hurt“ ginge es auch."
+ },
+ {
+  "tr": "„cheap“ kısa: „-er“ alıyor. Karşılaştırma „than“ ile bağlanıyor.",
+  "kind": "build.hint",
+  "de": "„cheap“ ist kurz: es nimmt „-er“, wie deutsch „billiger“. Der Vergleich wird mit „than“ verbunden."
+ },
+ {
+  "tr": "„anything“ soruda; sıfat isimden SONRA geliyor: anything earlier.",
+  "kind": "build.hint",
+  "de": "„anything“ steht in der Frage; das Adjektiv kommt DAHINTER: anything earlier — wie „etwas Früheres“."
+ },
+ {
+  "tr": "Soruda da „yet“ sonda. „already“ olsaydı şaşkınlık anlamı katardı.",
+  "kind": "build.hint",
+  "de": "Auch in der Frage steht „yet“ hinten. Mit „already“ klänge Überraschung mit."
+ },
+ {
+  "tr": "„important“ uzun: „more“ istiyor. „importanter“ diye bir sözcük yok.",
+  "kind": "build.hint",
+  "de": "„important“ ist lang: es verlangt „more“. „importanter“ gibt es nicht — Achtung, das Deutsche hängt auch hier „-er“ an: wichtiger."
+ },
+ {
+  "tr": "Hekimin ilk sorusu. „had“ iki kez geçiyor gibi görünüyor ama biri yardımcı.",
+  "kind": "build.hint",
+  "de": "Die erste Frage des Arztes. „had“ scheint zweimal dazustehen, aber eines davon ist das Hilfsverb."
+ },
+ {
+  "tr": "SÜRE olduğu için „for“. Türkçe şimdiki zaman diyor, İngilizce „have lived“.",
+  "kind": "build.hint",
+  "de": "Weil es die DAUER ist, steht „for“. Deutsch sagt wie das Türkische Präsens: ich wohne seit drei Jahren, englisch „have lived“."
+ },
+ {
+  "tr": "Hedeflerin sırası: doğru sıraya koy.",
+  "kind": "question.text",
+  "de": "Die Reihenfolge der Ziele: bring sie in die richtige Ordnung."
+ }
+]
