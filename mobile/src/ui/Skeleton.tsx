@@ -105,9 +105,20 @@ export function SkeletonPill({ width = 96, height = 28, style }: { width?: ViewS
 /**
  * Kart kabuğu — gerçek Card'ın kendisi, içi iskelet. Kenarlık, köşe, gölge ve
  * dolgu birebir aynı olduğu için yükseklik gerçeğiyle eşleşir.
+ *
+ * EKRAN OKUYUCUYA "MEŞGUL" DİYOR. İskelet yalnız GÖRSEL bir işaretti: sesli
+ * okuyucu kullanan biri boş bir ekran duyuyor, uygulamanın çalışıp
+ * çalışmadığını bilemiyordu. Webin aynı bileşeni bunu baştan beri söylüyor
+ * (`components/skeleton` `SkeletonCard`: `role="status" aria-busy`); düzeltme
+ * KÖKTE, çünkü on iki yükleme ekranı bu iki bileşenden geçiyor — tek tek
+ * etiket koymak on iki ayrı unutma fırsatı demekti.
  */
-export function SkeletonCard({ children, style, padded = true }: { children?: React.ReactNode; style?: ViewStyle; padded?: boolean }) {
-  return <Card padded={padded} style={style}>{children}</Card>;
+export function SkeletonCard({ children, style, padded = true, label }: { children?: React.ReactNode; style?: ViewStyle; padded?: boolean; label?: string }) {
+  return (
+    <Card padded={padded} style={style} accessibilityRole="progressbar" accessibilityState={{ busy: true }} accessibilityLabel={label}>
+      {children}
+    </Card>
+  );
 }
 
 /** Alt alta eşit yükseklikte bloklar (sıralama satırları, kelime satırları). */
@@ -115,7 +126,15 @@ export function SkeletonRows({ count = 6, height = 66, gap = spacing.sm, radius 
   count?: number; height?: number; gap?: number; radius?: number; style?: ViewStyle;
 }) {
   return (
-    <View style={[{ gap }, style]}>
+    <View
+      style={[{ gap }, style]}
+      /* SÜS OLAN GİZLENİYOR, DUYURAN KAP. Satırların kendisi okunacak bir şey
+         değil; "meşgul" haberini kabın (`SkeletonCard`) vermesi yeterli, her
+         satırın ayrı ayrı duyurulması gürültü olurdu. Web tam bunu yapıyor:
+         satır iskeletleri `aria-hidden`, kap `role="status"`. */
+      accessibilityElementsHidden
+      importantForAccessibility="no-hide-descendants"
+    >
       {Array.from({ length: count }, (_, i) => <Skeleton key={i} height={height} radius={radius} />)}
     </View>
   );

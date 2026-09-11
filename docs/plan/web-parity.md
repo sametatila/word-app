@@ -8131,3 +8131,29 @@ Bu turda iki tarama daha yapıldı ve **ikisi de temiz çıktı** — yazmaya de
   çıktı, beşi de **yanlış alarm**: `combo >= 3` ile `EASE_AFTER_MISSES = 3`
   aynı sayı ama ayrı şeyler, `MODULE_SIZE = 10` ile soru sayısı da öyle.
   Sayının eşitliği anlamın eşitliği değil; tarama burada duruyor.
+
+### 11.246 İskeletin sessizliği: düzeltme ekranda değil kökte
+
+Aynı eksik iki turda iki ayrı ekranda çıktı (§11.241 ilerleme çubuğu, §11.245
+yazdıklarım iskeleti), o yüzden üçüncüyü aramak yerine **köke** bakıldı:
+mobilin iskelet bileşenlerinde **hiçbir erişilebilirlik özelliği yoktu.**
+İskelet yalnız görsel bir işaretti; sesli okuyucu kullanan biri boş bir ekran
+duyuyor, uygulamanın çalışıp çalışmadığını bilemiyordu. On iki yükleme ekranı
+bu bileşenlerden geçiyor — tek tek etiket koymak on iki ayrı unutma fırsatı
+demekti.
+
+Web'in çözümü **iki parçalı** ve doğru olan o: **kap duyuruyor**
+(`SkeletonCard`: `role="status" aria-busy`), **süs olan gizleniyor** (satır,
+çizgi, karo iskeletleri `aria-hidden`) — her satırın ayrı ayrı duyurulması
+gürültü olurdu. Mobil de artık öyle: `SkeletonCard` "meşgul" diyor ve etiket
+alabiliyor, `SkeletonRows` gizli.
+
+**§152** kap ile süsü ayrı ayrı ölçüyor. Bileşen adları iki tarafta farklı
+(`SkeletonRows` / `RowSkeleton`), o yüzden ad değil **rol** eşleniyor.
+
+Kapının ilk hâli dosyanın tamamına bakıyordu ve iki mobil enjeksiyonu da
+kaçırdı: özellik iki bileşende de geçtiği için birinden silmek yetmiyordu.
+Bileşen bazına inince **hemen bir şey buldu** — ve bulduğu şey benim yeni
+eklediğim hataydı: `SkeletonRows`a da "duyur" demiştim, oysa web orayı
+gizliyor. Yani kapı, düzeltmenin kendisini düzeltti. Dört enjeksiyonun dördü
+de son hâlde yakalandı.

@@ -5366,6 +5366,43 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   sameList("yazdiklarim ekrani", yaz("mobile/src/screens/WritingsScreen.tsx"), yaz("src/components/writings-card.tsx"));
 }
 
+/* ── 152. iskelet ekran okuyucuya ne diyor ────────────────────────────────
+ * Ayni eksik iki turda iki ayri ekranda cikinca (§11.241 ilerleme cubugu,
+ * §11.245 yazdiklarim iskeleti) tek tek degil KOKTEN bakildi: mobilin
+ * iskelet bilesenlerinde hicbir erisilebilirlik ozelligi yoktu. Iskelet yalniz
+ * GORSEL bir isaretti; sesli okuyucu kullanan biri bos bir ekran duyuyor,
+ * uygulamanin calisip calismadigini bilemiyordu.
+ *
+ * Webin cozumu iki parcali ve dogru olan o: KAP duyuruyor (`SkeletonCard`:
+ * `role="status" aria-busy`), SUS OLAN gizleniyor (satir/cizgi/karo
+ * iskeletleri `aria-hidden`) - her satirin ayri ayri duyurulmasi gurultu
+ * olurdu. Mobil de artik oyle.
+ *
+ * Olculen: kap duyuruyor mu ve sus gizleniyor mu. Bilesen ADLARI iki tarafta
+ * ayri (`SkeletonRows` / `RowSkeleton`), o yuzden ad degil ROL esleniyor. */
+{
+  const strip = (x) => x.replace(/\/\*[\s\S]*?\*\//g, " ").replace(/(^|[^:"'`\\])\/\/.*$/gm, "$1");
+  const govde = (src, ad) => {
+    const i = src.indexOf("function " + ad);
+    if (i < 0) return "";
+    const j = src.indexOf("function ", i + 9);
+    return src.slice(i, j < 0 ? src.length : j);
+  };
+  const mobSrc = strip(read("mobile/src/ui/Skeleton.tsx")).replace(/\s+/g, " ");
+  const webSrc = strip(read("src/components/skeleton.tsx")).replace(/\s+/g, " ");
+  const mob = [
+    "kap duyuruyor=" + (/accessibilityState=\{\{ busy: true \}\}/.test(govde(mobSrc, "SkeletonCard")) ? "evet" : "hayir"),
+    "kap etiket alabiliyor=" + (/accessibilityLabel=\{label\}/.test(govde(mobSrc, "SkeletonCard")) ? "evet" : "hayir"),
+    "sus gizli=" + (/accessibilityElementsHidden/.test(govde(mobSrc, "SkeletonRows")) ? "evet" : "hayir"),
+  ];
+  const web = [
+    "kap duyuruyor=" + (/aria-busy="true"/.test(govde(webSrc, "SkeletonCard")) ? "evet" : "hayir"),
+    "kap etiket alabiliyor=" + (/aria-label=\{label\}/.test(govde(webSrc, "SkeletonCard")) ? "evet" : "hayir"),
+    "sus gizli=" + (/aria-hidden/.test(govde(webSrc, "RowSkeleton")) ? "evet" : "hayir"),
+  ];
+  sameList("iskelet erisilebilirligi", mob, web);
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"
