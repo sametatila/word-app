@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { DAILY_QUOTAS } from "@/lib/quotas";
 import { getUserId } from "@/lib/auth/server";
 import { sameOrigin } from "@/lib/auth/origin";
 import { sttProviders } from "@/lib/chat-providers";
@@ -24,7 +25,7 @@ const MAX_TARGET = 200;
  * Kota koruması: klip boyutu sınırı burada, günlük istek sınırı `ai_usage`
  * sayacıyla (kullanıcı başına 120/gün; assess ile aynı düşünce).
  */
-const DAILY_LIMIT = 120;
+const DAILY_LIMIT = DAILY_QUOTAS.pronounceRequests;
 
 export async function POST(req: Request) {
   if (!sameOrigin(req)) return NextResponse.json({ error: "forbidden" }, { status: 403 });

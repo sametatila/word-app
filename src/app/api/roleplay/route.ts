@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { DAILY_QUOTAS } from "@/lib/quotas";
 import { getUserId } from "@/lib/auth/server";
 import { sameOrigin } from "@/lib/auth/origin";
 import { chatConfigured, type ProviderMeta } from "@/lib/chat-providers";
@@ -27,7 +28,7 @@ const MAX_CHARS = 2000;
  * tüketip herkese "sohbet kapalı" gösterebilmesi bir istismar yoluydu. Sınır
  * cömert: dürüst ağır kullanım ~100-150 turdur.
  */
-const ROLEPLAY_DAILY_LIMIT = 300;
+const ROLEPLAY_DAILY_LIMIT = DAILY_QUOTAS.roleplayTurns;
 
 /**
  * Rol yapma ucu — dersin konuşma bölümü.

@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { DAILY_QUOTAS } from "@/lib/quotas";
 import { getUserId } from "@/lib/auth/server";
 import { sameOrigin } from "@/lib/auth/origin";
 import { sttProviders, type SttMode } from "@/lib/chat-providers";
@@ -15,7 +16,7 @@ export const maxDuration = 30;
 /** Kabul edilen en büyük klip — bir kelimelik cevap birkaç yüz kilobayt. */
 const MAX_BYTES = 2_000_000;
 /** Kullanıcı başına günlük STT isteği (başarısızlar dâhil); pronounce'ın 120'si bunun içinde sayılır. */
-const DAILY_LIMIT = 400;
+const DAILY_LIMIT = DAILY_QUOTAS.sttRequests;
 
 /**
  * Konuşmayı yazıya çevirme.

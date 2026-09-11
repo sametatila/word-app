@@ -43,6 +43,7 @@
  */
 import { SPEECH_LOG_RETENTION_DAYS } from "@/lib/lessons/log-const";
 import { SESSION_MAX_DAYS } from "@/lib/auth/session-config";
+import { DAILY_QUOTAS } from "@/lib/quotas";
 /**
  * Yürürlük tarihi ve sürüm. İkisi de EN YENİ değişikliği anlatır ve
  * LEGAL_CHANGELOG'un ilk kaydıyla aynı olmak zorundadır — kapı
@@ -160,10 +161,10 @@ export const LEGAL_ENTITY = {
 
 /** Adil kullanım sınırları — koddaki gerçek kotalar (route dosyalarındaki sabitler). */
 export const FAIR_USE = {
-  roleplayTurnsPerDay: 300,
-  sttRequestsPerDay: 400,
-  pronounceRequestsPerDay: 120,
-  reportsPerDay: 20,
+  roleplayTurnsPerDay: DAILY_QUOTAS.roleplayTurns,
+  sttRequestsPerDay: DAILY_QUOTAS.sttRequests,
+  pronounceRequestsPerDay: DAILY_QUOTAS.pronounceRequests,
+  reportsPerDay: DAILY_QUOTAS.reports,
 } as const;
 
 export type LegalField = keyof typeof LEGAL_ENTITY;

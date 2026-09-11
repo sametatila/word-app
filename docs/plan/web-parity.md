@@ -9365,3 +9365,36 @@ engellerdi. Liste artık `Object.keys(LEGAL_ENTITY)`den türetiliyor.
    duruyordu). Kapı artık konuya uyan her satırı ayrı okuyor. **Bir
    enjeksiyonun yakalanmaması, kapının sağlam olduğunu değil, enjeksiyonun
    doğru yere düşüp düşmediğini önce doğrulamak gerektiğini gösteriyor.**
+
+## §11.286 — Kullanım şartlarındaki adil kullanım sınırları uçların kopyasıydı
+
+Şartlar sayfası dört günlük sınır söylüyor: konuşma pratiği 300 tur, sunucu
+konuşma tanıma 400 istek, telaffuz puanı 120 istek, içerik bildirimi 20.
+Sayılar `lib/legal` içindeki `FAIR_USE` tablosundan geliyordu ve tablo, dört
+uç dosyasındaki yerel sabitlerin **elle tutulmuş kopyasıydı** — tablonun kendi
+yorumu bile "route dosyalarındaki sabitler" diyordu. Yani zorunluluğu yazan
+bir cümle vardı, ölçen bir şey yoktu.
+
+Kullanıcı için sonucu: şartlar sayfası bir sınır söyler, uç başkasını uygular
+ve 429 metinde yazandan önce gelir. Sözleşmede yazılı bir sayı olduğu için bu
+yalnız tutarsızlık değil.
+
+Kaynak `lib/quotas` içindeki `DAILY_QUOTAS`; dört uç oradan okuyor, `FAIR_USE`
+oradan türetiliyor. `FAIR_USE_KEYS` de (§11.285'teki `ENTITY_KEYS` gibi) elle
+yazılmış ikinci bir listeydi, artık tablodan türetiliyor.
+
+**`DAILY_LIMIT` "belirsiz sabit adları" listesinden çıktı ve çıkış sebebi
+kaydedilmeye değer.** O liste, aynı adın bir ağaçta farklı değerlerle geçtiği
+adları tutuyor ve gerekçesi "ya meşru bir tesadüftür ya adlandırma hatasıdır,
+kapı ayırt edemez" diyor. `DAILY_LIMIT` üç uçta üç ayrı sayıyla duruyordu
+(400, 120, 20) ve meşru tesadüf sayılmıştı. Oysa üç sayı da şartlarda yazılı
+birer sözdü: belirsizliğin bir kısmı tesadüf değil, **tek kaynağın
+eksikliğiydi**. Kaynak açılınca ad tek değere işaret etti ve liste kendiliğinden
+daraldı — kapı da bunu "kayıtlı ama artık bulunmuyor" diye bildirdi, yani
+liste sessizce bayatlamadı.
+
+**Kapı (test-legal)** üç şey soruyor: tablo kaynakla aynı mı, tablo ile kaynak
+aynı sayıda alan taşıyor mu (kaynağa eklenen bir kota metinde hiç söylenmezse
+görünür), ve her uç sınırı kaynaktan mı okuyor. Sonuncusu iki kalıpla: sabitin
+adı uçtan uca aynı olmadığı için (`ROLEPLAY_DAILY_LIMIT` da var) elle yazılmış
+sayı taraması ada değil **biçime** bakıyor. Dört enjeksiyonun dördü yakalandı.

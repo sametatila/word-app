@@ -1,4 +1,4 @@
-import { existsSync } from "node:fs";
+import { existsSync, readFileSync } from "node:fs";
 import { PRIVACY_DEFAULT } from "@/content/legal/defaults/privacy";
 import { TERMS_DEFAULT } from "@/content/legal/defaults/terms";
 import { SUPPORT_DEFAULT } from "@/content/legal/defaults/support";
@@ -6,6 +6,7 @@ import type { LegalDocDefault } from "@/content/legal/defaults/types";
 import { unbalancedConditionals, unknownTokens } from "@/lib/legal/markdown";
 import { SPEECH_LOG_RETENTION_DAYS } from "@/lib/lessons/log-const";
 import { SESSION_MAX_DAYS } from "@/lib/auth/session-config";
+import { DAILY_QUOTAS } from "@/lib/quotas";
 import {
   LEGAL_CHANGELOG,
   LEGAL_ENTITY,
@@ -15,6 +16,7 @@ import {
   LEGAL_VERSION,
   LEGAL_VOCAB,
   ALL_PROCESSORS,
+  FAIR_USE,
   processorRow,
   type LegalDoc,
 } from "@/lib/legal";
@@ -197,6 +199,65 @@ console.log("\nSaklama süreleri");
       const plain = lines.flatMap((l) => [...l.matchAll(PLAIN_DAYS)].map((m) => m[0]));
       check(`${label} · ${locale}: satırda düz sayı kalmadı`, plain.length === 0, plain.join(", "));
     }
+  }
+}
+
+/**
+ * ADİL KULLANIM: METİNDEKİ SINIR İLE UCUN UYGULADIĞI SINIR.
+ *
+ * `FAIR_USE` tablosu dört uç dosyasındaki yerel sabitlerin ELLE tutulmuş
+ * kopyasıydı — tablonun kendi yorumu bile "route dosyalarındaki sabitler"
+ * diyordu, yani zorunluluğu yazan bir cümle vardı, ölçen bir şey yoktu.
+ * Kullanıcı için sonucu şu olurdu: şartlar sayfası bir sınır söyler, uç
+ * başkasını uygular ve 429 metinde yazandan önce gelir.
+ *
+ * Kaynak artık `lib/quotas`; uçlar oradan okuyor ve `FAIR_USE` oradan
+ * türetiliyor. Kapı iki şeyi soruyor: tablo kaynakla aynı mı (türetme
+ * bozulduysa görünür) ve her uç sayıyı kaynaktan mı okuyor.
+ */
+console.log("\nAdil kullanım");
+{
+  const ENDPOINTS: { path: string; field: keyof typeof DAILY_QUOTAS }[] = [
+    { path: "src/app/api/roleplay/route.ts", field: "roleplayTurns" },
+    { path: "src/app/api/stt/route.ts", field: "sttRequests" },
+    { path: "src/app/api/pronounce/route.ts", field: "pronounceRequests" },
+    { path: "src/app/api/reports/route.ts", field: "reports" },
+  ];
+  const PAIRS: [keyof typeof FAIR_USE, keyof typeof DAILY_QUOTAS][] = [
+    ["roleplayTurnsPerDay", "roleplayTurns"],
+    ["sttRequestsPerDay", "sttRequests"],
+    ["pronounceRequestsPerDay", "pronounceRequests"],
+    ["reportsPerDay", "reports"],
+  ];
+  for (const [legalKey, quotaKey] of PAIRS) {
+    check(
+      `${legalKey}: tablo kaynakla aynı`,
+      FAIR_USE[legalKey] === DAILY_QUOTAS[quotaKey],
+      `${FAIR_USE[legalKey]} ≠ ${DAILY_QUOTAS[quotaKey]}`,
+    );
+  }
+  /* Tablonun alan kümesi de kaynakla eşleşmeli: kaynağa yeni bir kota eklenip
+     tabloya eklenmezse metin o sınırı hiç söylemez. */
+  check(
+    "tablo ile kaynak aynı sayıda alan taşıyor",
+    Object.keys(FAIR_USE).length === Object.keys(DAILY_QUOTAS).length,
+    `${Object.keys(FAIR_USE).length} ≠ ${Object.keys(DAILY_QUOTAS).length}`,
+  );
+  for (const { path, field } of ENDPOINTS) {
+    const src = existsSync(path) ? readFileSync(path, "utf8") : "";
+    /* Ad, üst dizinle birlikte: dördü de "route.ts" olursa çıktı hangi ucun
+       düştüğünü söylemez. */
+    const name = path.split("/").slice(-2).join("/");
+    check(`${name}: dosya var`, src.length > 0);
+    /* Yorumlar ayıklanır: gerekçe metnindeki ad "okuyor" sayılmasın. */
+    const code = src.replace(/\/\*[\s\S]*?\*\//g, " ").replace(/\/\/[^\n]*/g, " ");
+    check(`${name}: sınırı kaynaktan okuyor`, new RegExp(`DAILY_QUOTAS\\.${field}\\b`).test(code));
+    /* Ve elle yazılmış bir sayıya geri dönmemiş: sınırın SAYISI dosyada
+       kalmamalı. Mutlak ölçüt; "iki taraf aynı mı" diye sormak yetmez. */
+    /* Sabitin ADI uçtan uca aynı değil (`ROLEPLAY_DAILY_LIMIT` da var), o
+       yüzden kalıp ada değil BİÇİME bakıyor: herhangi bir `..._LIMIT = sayı`. */
+    const plain = /[A-Z_]*LIMIT\s*=\s*\d/.test(code);
+    check(`${name}: elle yazılmış sınır kalmadı`, !plain);
   }
 }
 

@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { DAILY_QUOTAS } from "@/lib/quotas";
 import { and, eq, gte, sql } from "drizzle-orm";
 import { getUserId } from "@/lib/auth/server";
 import { sameOrigin } from "@/lib/auth/origin";
@@ -23,7 +24,7 @@ export const dynamic = "force-dynamic";
  */
 const KINDS = new Set(["roleplay", "assessment", "user"]);
 const REASONS = new Set(["inappropriate", "offensive", "wrong", "impersonation", "other"]);
-const DAILY_LIMIT = 20;
+const DAILY_LIMIT = DAILY_QUOTAS.reports;
 const MAX_CONTENT = 4000;
 
 export async function POST(req: Request) {

@@ -1684,10 +1684,16 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
    * BELIRSIZLER SESSIZCE DUSMESIN. Karsilastirmadan cikan her ad burada
    * yazili duruyor; yenisi cikarsa kapi kaliyor ve insan bakiyor - cunku
    * "ayni adin iki isi" ya mesru bir tesaduftur ya da adlandirma hatasidir,
-   * ikisini kapi ayirt edemez. Bugunku yedisi de mesru: farkli uclarin hiz
-   * sinirlari, farkli listelerin sayfa boyu, farkli modlarin esikleri.
+   * ikisini kapi ayirt edemez. Bugunku altisi da mesru: farkli listelerin
+   * sayfa boyu, farkli modlarin esikleri, farkli metinlerin uzunluk tavani.
+   *
+   * `DAILY_LIMIT` BU LISTEDEN CIKTI ve cikis sebebi kaydedilmeye deger: uc
+   * ayri ucta ayni adla ayri sayilar duruyordu (400, 120, 20) ve bu "mesru
+   * tesaduf" sayilmisti. Oysa uc sayi da kullanim sartlarinda YAZILI bir
+   * sozdu; kaynak `lib/quotas` olunca ad artik tek degere isaret ediyor.
+   * Yani belirsizligin bir kismi tesaduf degil, tek kaynagin eksikligiydi.
    */
-  const BELIRSIZ = ["DAILY_LIMIT", "DANGER_SECONDS", "MAX_CHARS", "MAX_TARGET", "MIN_CONFIDENCE", "PAGE_SIZE", "PASS_RATIO"];
+  const BELIRSIZ = ["DANGER_SECONDS", "MAX_CHARS", "MAX_TARGET", "MIN_CONFIDENCE", "PAGE_SIZE", "PASS_RATIO"];
   /* Dizge tarafinin belirsizleri: iki ayri "kapat" anahtari ve iki saglayicinin
      jeton adresi. Genel adlar (KEY, PREFIX) zaten GENERIC'te. */
   const BELIRSIZ_DIZGE = ["DISMISS_KEY", "TOKEN_URL"];

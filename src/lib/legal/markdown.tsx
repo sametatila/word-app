@@ -1,6 +1,6 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
-import { LEGAL_ENTITY, LEGAL_PATHS, isLegalPlaceholder, isLegalOmitted, legalPath, type LegalLocale } from "./index";
+import { FAIR_USE, LEGAL_ENTITY, LEGAL_PATHS, isLegalPlaceholder, isLegalOmitted, legalPath, type LegalLocale } from "./index";
 import { platformText, visibleProcessors, type LegalConfig } from "./shape";
 
 /**
@@ -35,7 +35,8 @@ import { platformText, visibleProcessors, type LegalConfig } from "./shape";
  */
 const ENTITY_KEYS = Object.keys(LEGAL_ENTITY) as (keyof typeof LEGAL_ENTITY)[];
 
-const FAIR_USE_KEYS = ["roleplayTurnsPerDay", "sttRequestsPerDay", "pronounceRequestsPerDay", "reportsPerDay"] as const;
+/* `ENTITY_KEYS` ile aynı gerekçe: liste elle yazılmıyor, tablodan türetiliyor. */
+const FAIR_USE_KEYS = Object.keys(FAIR_USE) as (keyof typeof FAIR_USE)[];
 const ENTITY_BLOCKS = ["controller", "controller:contact", "publisher"] as const;
 const LINK_KEYS = Object.keys(LEGAL_PATHS) as (keyof typeof LEGAL_PATHS)[];
 
