@@ -1,0 +1,477 @@
+[
+ {
+  "tr": "Mutfakta bir gün. Aynı anda kaç iş sürüyor?",
+  "kind": "intro",
+  "de": "Ein Tag in der Küche. Wie viele Dinge laufen gleichzeitig?"
+ },
+ {
+  "tr": "Düzensiz geçmişi yaz. Sonunda kayıp eşya formunu doldur.",
+  "kind": "intro",
+  "de": "Schreibe die unregelmäßige Vergangenheit. Am Ende füllst du das Fundbüroformular aus."
+ },
+ {
+  "tr": "İki geçmişi bir arada yaz: süren iş ve onun içindeki an.",
+  "kind": "intro",
+  "de": "Schreibe beide Vergangenheiten zusammen: die laufende Handlung und den Augenblick darin."
+ },
+ {
+  "tr": "Bir bilgisayar hikâyesi. Zaman ifadelerini sırayla yakala.",
+  "kind": "intro",
+  "de": "Eine Geschichte über einen Computer. Achte auf die Zeitangaben der Reihe nach."
+ },
+ {
+  "tr": "Bir çocukluk anlatısı. Eskiden ne vardı, sonra ne değişti?",
+  "kind": "intro",
+  "de": "Eine Kindheitserzählung. Was war früher, und was hat sich dann geändert?"
+ },
+ {
+  "tr": "İki sözcüğün farkı anlatılıyor. Kim hâlâ orada, kim döndü?",
+  "kind": "intro",
+  "de": "Der Unterschied zweier Wörter wird erklärt. Wer ist noch dort, wer ist zurück?"
+ },
+ {
+  "tr": "Geçmiş hakkında sorular. Her soru başka bir şeyi öğreniyor.",
+  "kind": "intro",
+  "de": "Fragen über die Vergangenheit. Jede Frage erfährt etwas anderes."
+ },
+ {
+  "tr": "Bir kazayı anlat ve geçmişi sor. Sonunda kaza formunu doldur.",
+  "kind": "intro",
+  "de": "Erzähle von einem Unfall und frage nach der Vergangenheit. Am Ende füllst du das Unfallformular aus."
+ },
+ {
+  "tr": "Uzun bir günün anlatısı. Sıralama sözcükleri hikâyeyi taşıyor.",
+  "kind": "intro",
+  "de": "Die Erzählung eines langen Tages. Die Reihenfolgewörter tragen die Geschichte."
+ },
+ {
+  "tr": "Küçük bir kaza anlatılıyor. Ne oldu, ne kadar ciddi, sonrası ne?",
+  "kind": "intro",
+  "de": "Ein kleiner Unfall wird erzählt. Was ist passiert, wie schlimm, und was kommt danach?"
+ },
+ {
+  "tr": "Bir tatil anlat. Sıralama sözcükleri cümleleri birbirine bağlıyor.",
+  "kind": "intro",
+  "de": "Erzähle von einem Urlaub. Die Reihenfolgewörter verbinden die Sätze miteinander."
+ },
+ {
+  "tr": "Eski alışkanlıklar konuşuluyor. „used to“nun üç biçimi de geçiyor.",
+  "kind": "intro",
+  "de": "Es geht um frühere Gewohnheiten. Alle drei Formen von „used to“ kommen vor."
+ },
+ {
+  "tr": "Eski alışkanlıkları yaz. Olumluda „used“, olumsuz ve soruda „use“.",
+  "kind": "intro",
+  "de": "Schreibe frühere Gewohnheiten. Im Aussagesatz „used“, in Verneinung und Frage „use“."
+ },
+ {
+  "tr": "Kaybolan bir telefonun hikâyesi. Ne zaman ne oldu, sırasıyla takip et.",
+  "kind": "intro",
+  "de": "Die Geschichte eines verlorenen Handys. Verfolge der Reihe nach, wann was geschah."
+ },
+ {
+  "tr": "Deneyim sor ve anlat. Son görev „been“ ile „gone“ arasındaki farkı ölçüyor.",
+  "kind": "intro",
+  "de": "Frage nach Erfahrungen und erzähle davon. Die letzte Aufgabe misst den Unterschied zwischen „been“ und „gone“."
+ },
+ {
+  "tr": "İki kişi dün ne yaptıklarını konuşuyor. Hangi iş sürüyordu, hangisi bir andı?",
+  "kind": "intro",
+  "de": "Zwei Personen sprechen über gestern. Welche Handlung lief, welche war ein Augenblick?"
+ },
+ {
+  "tr": "Deneyimler konuşuluyor. Dikkat: „has gone“ hâlâ orada, „has been“ döndü demek.",
+  "kind": "intro",
+  "de": "Es geht um Erfahrungen. Achtung: „has gone“ heißt noch dort, „has been“ heißt zurückgekehrt."
+ },
+ {
+  "tr": "Bir tatil anlatısı. Sıralama sözcüklerini takip et: first, then, after that, finally.",
+  "kind": "intro",
+  "de": "Eine Urlaubserzählung. Verfolge die Reihenfolgewörter: first, then, after that, finally."
+ },
+ {
+  "tr": "„No fire, only smoke.“ — komşu duman gördü.",
+  "kind": "explain",
+  "de": "„No fire, only smoke.“ — die Nachbarin hat den Rauch gesehen."
+ },
+ {
+  "tr": "„First“, „then“ ve „one day“ sırayı açıkça veriyor.",
+  "kind": "explain",
+  "de": "„First“, „then“ und „one day“ nennen die Reihenfolge ausdrücklich."
+ },
+ {
+  "tr": "„At nine I was sleeping!“ — sekizde yemek pişiriyordu.",
+  "kind": "explain",
+  "de": "„At nine I was sleeping!“ — um acht hat sie gekocht."
+ },
+ {
+  "tr": "„I used to play football, but I didn't use to like it.“",
+  "kind": "explain",
+  "de": "„I used to play football, but I didn't use to like it.“"
+ },
+ {
+  "tr": "„I have never been abroad.“ — yurt dışına giden kardeşi.",
+  "kind": "explain",
+  "de": "„I have never been abroad.“ — ins Ausland fährt ihr Bruder."
+ },
+ {
+  "tr": "Önce baba, sonra anne, sonra kendisi, en son kız kardeşi.",
+  "kind": "explain",
+  "de": "Zuerst der Vater, dann die Mutter, dann sie selbst, zuletzt ihre Schwester."
+ },
+ {
+  "tr": "„In the bin. We ate bread and cheese.“ — pirinç çöpe gitti.",
+  "kind": "explain",
+  "de": "„In the bin. We ate bread and cheese.“ — der Reis ist im Müll gelandet."
+ },
+ {
+  "tr": "„Two weeks ago, I think.“ — „ago“ hep geçmişe doğru sayıyor.",
+  "kind": "explain",
+  "de": "„Two weeks ago, I think.“ — „ago“ zählt immer in die Vergangenheit."
+ },
+ {
+  "tr": "„But my neighbour heard me and she came fast.“ — Ali yalnızdı.",
+  "kind": "explain",
+  "de": "„But my neighbour heard me and she came fast.“ — Ali war allein."
+ },
+ {
+  "tr": "„I have been to Italy twice.“ — „been“ gidip döndüğünü söylüyor.",
+  "kind": "explain",
+  "de": "„I have been to Italy twice.“ — „been“ sagt, dass er hin und zurück war."
+ },
+ {
+  "tr": "„Because my father was the coach!“ — sevmediğini iki kez söylüyor.",
+  "kind": "explain",
+  "de": "„Because my father was the coach!“ — dass er es nicht mochte, sagt er zweimal."
+ },
+ {
+  "tr": "„First I got up at six.“ — otobüs ikinci, kitap bekleme sırasında.",
+  "kind": "explain",
+  "de": "„First I got up at six.“ — der Bus kommt als Zweites, das Buch beim Warten."
+ },
+ {
+  "tr": "„I have moved four times in my life.“ — deneyim anlatan bir kalıp.",
+  "kind": "explain",
+  "de": "„I have moved four times in my life.“ — eine Wendung, die Erfahrung nennt."
+ },
+ {
+  "tr": "„Where did you go last month?“ — „did“ varken fiil ilk hâlinde: go.",
+  "kind": "explain",
+  "de": "„Where did you go last month?“ — steht „did“ da, bleibt das Verb in der Grundform: go."
+ },
+ {
+  "tr": "„But at the same time the sun was shining…“ — üç iş birlikte sürüyor.",
+  "kind": "explain",
+  "de": "„But at the same time the sun was shining…“ — drei Handlungen laufen zugleich."
+ },
+ {
+  "tr": "„My sister has visited six countries.“ — iki, annenin Almanya sayısı.",
+  "kind": "explain",
+  "de": "„My sister has visited six countries.“ — zwei ist die Zahl der Deutschlandreisen der Mutter."
+ },
+ {
+  "tr": "„We stayed at a small hotel for five days.“ — iki saat uçağın rötarı.",
+  "kind": "explain",
+  "de": "„We stayed at a small hotel for five days.“ — zwei Stunden war die Verspätung des Flugzeugs."
+ },
+ {
+  "tr": "„Last week I lost all my work on it.“ — iki gün önce bilgisayarı aldı.",
+  "kind": "explain",
+  "de": "„Last week I lost all my work on it.“ — vor zwei Tagen hat er den Computer gekauft."
+ },
+ {
+  "tr": "„My sister used to play with her doll…“ — futbol ve kütüphane yazarın.",
+  "kind": "explain",
+  "de": "„My sister used to play with her doll…“ — Fußball und Bibliothek gehören dem Erzähler."
+ },
+ {
+  "tr": "„Yes, when I was a child. I used to play every day.“ — futbol Mert'in.",
+  "kind": "explain",
+  "de": "„Yes, when I was a child. I used to play every day.“ — Fußball war Merts Sache."
+ },
+ {
+  "tr": "„At eight? I was cooking.“ — dokuzda uyuyordu, sabah otobüs bekliyordu.",
+  "kind": "explain",
+  "de": "„At eight? I was cooking.“ — um neun schlief sie, am Morgen wartete sie auf den Bus."
+ },
+ {
+  "tr": "„Because my friend was working. He came on Thursday.“ — başta yalnızdı.",
+  "kind": "explain",
+  "de": "„Because my friend was working. He came on Thursday.“ — am Anfang war er allein."
+ },
+ {
+  "tr": "„I used to play every day.“ — olumluda „used“, olumsuz ve soruda „use“.",
+  "kind": "explain",
+  "de": "„I used to play every day.“ — im Aussagesatz „used“, in Verneinung und Frage „use“."
+ },
+ {
+  "tr": "„I was waiting for the bus in the rain.“ — sürmekte olan iş, arka plan.",
+  "kind": "explain",
+  "de": "„I was waiting for the bus in the rain.“ — die laufende Handlung, der Hintergrund."
+ },
+ {
+  "tr": "„At first I didn't like it.“ — „at first“ sonradan değiştiğini söylüyor.",
+  "kind": "explain",
+  "de": "„At first I didn't like it.“ — „at first“ sagt, dass es sich später geändert hat."
+ },
+ {
+  "tr": "„Ninety-two! And he was still working.“ — Ela yetmiş diye tahmin ediyor.",
+  "kind": "explain",
+  "de": "„Ninety-two! And he was still working.“ — Ela rät auf siebzig."
+ },
+ {
+  "tr": "„I bought a small bag for the phone.“ — telefonu bulundu, yenisini almadı.",
+  "kind": "explain",
+  "de": "„I bought a small bag for the phone.“ — das Handy wurde gefunden, ein neues kaufte er nicht."
+ },
+ {
+  "tr": "„My father has gone to Germany — he is away this week.“ — yani hâlâ orada.",
+  "kind": "explain",
+  "de": "„My father has gone to Germany — he is away this week.“ — er ist also noch dort."
+ },
+ {
+  "tr": "„While I was working, it was raining all day.“ — iki iş aynı anda sürüyor.",
+  "kind": "explain",
+  "de": "„While I was working, it was raining all day.“ — zwei Handlungen laufen gleichzeitig."
+ },
+ {
+  "tr": "„No, I haven't. But I want to go.“ — kısa cevap yardımcı fiili tekrarlıyor.",
+  "kind": "explain",
+  "de": "„No, I haven't. But I want to go.“ — die Kurzantwort wiederholt das Hilfsverb."
+ },
+ {
+  "tr": "„Only three days. After that I stayed with a friend.“ — on gün bütün tatil.",
+  "kind": "explain",
+  "de": "„Only three days. After that I stayed with a friend.“ — zehn Tage war der ganze Urlaub."
+ },
+ {
+  "tr": "Anlatım sırası olayların sırası değil: en yeni olay ilk cümlede söyleniyor.",
+  "kind": "explain",
+  "de": "Die Reihenfolge der Erzählung ist nicht die der Ereignisse: das jüngste steht im ersten Satz."
+ },
+ {
+  "tr": "„Last week I lost my phone on the bus.“ — istasyon telefonu geri aldığı yer.",
+  "kind": "explain",
+  "de": "„Last week I lost my phone on the bus.“ — am Bahnhof hat er es zurückbekommen."
+ },
+ {
+  "tr": "„I fell on the stairs yesterday and I hurt my arm.“ — doktor „no break“ diyor.",
+  "kind": "explain",
+  "de": "„I fell on the stairs yesterday and I hurt my arm.“ — der Arzt sagt „no break“."
+ },
+ {
+  "tr": "„Somebody brought a phone yesterday,“ she said. — kadın yalnız haberi veriyor.",
+  "kind": "explain",
+  "de": "„Somebody brought a phone yesterday,“ she said. — die Frau gibt nur die Nachricht weiter."
+ },
+ {
+  "tr": "Önce soru, sonra cevap, sonra karşı taraf kendini anlatıyor, en son yeni soru.",
+  "kind": "explain",
+  "de": "Zuerst die Frage, dann die Antwort, dann erzählt die andere Seite von sich, zuletzt eine neue Frage."
+ },
+ {
+  "tr": "Dört sıralama sözcüğü dört adımı işaretliyor: first, then, after that, finally.",
+  "kind": "explain",
+  "de": "Vier Reihenfolgewörter markieren vier Schritte: first, then, after that, finally."
+ },
+ {
+  "tr": "En eski olay iki hafta önce, en yenisi bu sabah. Zaman ifadeleri sırayı veriyor.",
+  "kind": "explain",
+  "de": "Das älteste Ereignis liegt zwei Wochen zurück, das jüngste ist heute Morgen. Die Zeitangaben geben die Reihenfolge."
+ },
+ {
+  "tr": "„my brother has gone to London — he is away this week“ — „gone“ hâlâ orada demek.",
+  "kind": "explain",
+  "de": "„my brother has gone to London — he is away this week“ — „gone“ heißt, er ist noch dort."
+ },
+ {
+  "tr": "„While I was cooking, the phone rang…“ — „while“ süren işi, geçmiş zaman anı taşıyor.",
+  "kind": "explain",
+  "de": "„While I was cooking, the phone rang…“ — „while“ trägt die laufende Handlung, die Vergangenheit den Augenblick."
+ },
+ {
+  "tr": "„I grew up in a small village near the sea.“ — ilkokul yan kasabada, şehir sonra geliyor.",
+  "kind": "explain",
+  "de": "„I grew up in a small village near the sea.“ — die Grundschule lag im Nachbarort, die Stadt kam später."
+ },
+ {
+  "tr": "„While I was cooking, the phone rang and I answered.“ — pişirmek arka plan, telefon bir an.",
+  "kind": "explain",
+  "de": "„While I was cooking, the phone rang and I answered.“ — das Kochen ist der Hintergrund, das Telefon ein Augenblick."
+ },
+ {
+  "tr": "güney",
+  "kind": "gloss.tr",
+  "de": "Süden"
+ },
+ {
+  "tr": "bavul",
+  "kind": "gloss.tr",
+  "de": "Koffer"
+ },
+ {
+  "tr": "bindi",
+  "kind": "gloss.tr",
+  "de": "stieg ein"
+ },
+ {
+  "tr": "çaldı",
+  "kind": "gloss.tr",
+  "de": "klingelte"
+ },
+ {
+  "tr": "duman",
+  "kind": "gloss.tr",
+  "de": "Rauch"
+ },
+ {
+  "tr": "gölge",
+  "kind": "gloss.tr",
+  "de": "Schatten"
+ },
+ {
+  "tr": "tatil",
+  "kind": "gloss.tr",
+  "de": "Urlaub"
+ },
+ {
+  "tr": "hafıza",
+  "kind": "gloss.tr",
+  "de": "Erinnerung"
+ },
+ {
+  "tr": "sohbet",
+  "kind": "gloss.tr",
+  "de": "Gespräch"
+ },
+ {
+  "tr": "eskiden",
+  "kind": "gloss.tr",
+  "de": "früher"
+ },
+ {
+  "tr": "iki kez",
+  "kind": "gloss.tr",
+  "de": "zweimal"
+ },
+ {
+  "tr": "İtalyan",
+  "kind": "gloss.tr",
+  "de": "italienisch"
+ },
+ {
+  "tr": "ne oldu",
+  "kind": "gloss.tr",
+  "de": "was ist passiert"
+ },
+ {
+  "tr": "seyahat",
+  "kind": "gloss.tr",
+  "de": "Reise"
+ },
+ {
+  "tr": "vah vah",
+  "kind": "gloss.tr",
+  "de": "du Ärmster"
+ },
+ {
+  "tr": "öğretmek",
+  "kind": "gloss.tr",
+  "de": "unterrichten"
+ },
+ {
+  "tr": "ben …-ken",
+  "kind": "gloss.tr",
+  "de": "während ich …"
+ },
+ {
+  "tr": "bu yüzden",
+  "kind": "gloss.tr",
+  "de": "deshalb"
+ },
+ {
+  "tr": "yaralanma",
+  "kind": "gloss.tr",
+  "de": "Verletzung"
+ },
+ {
+  "tr": "geçenlerde",
+  "kind": "gloss.tr",
+  "de": "neulich"
+ },
+ {
+  "tr": "neyse ki …",
+  "kind": "gloss.tr",
+  "de": "zum Glück …"
+ },
+ {
+  "tr": "yere düştü",
+  "kind": "gloss.tr",
+  "de": "fiel herunter"
+ },
+ {
+  "tr": "…'de kaldık",
+  "kind": "gloss.tr",
+  "de": "wir haben in … gewohnt"
+ },
+ {
+  "tr": "bekliyordum",
+  "kind": "gloss.tr",
+  "de": "ich wartete"
+ },
+ {
+  "tr": "…'de büyüdüm",
+  "kind": "gloss.tr",
+  "de": "ich bin in … aufgewachsen"
+ },
+ {
+  "tr": "iki gün önce",
+  "kind": "gloss.tr",
+  "de": "vor zwei Tagen"
+ },
+ {
+  "tr": "… satın aldım",
+  "kind": "gloss.tr",
+  "de": "ich habe … gekauft"
+ },
+ {
+  "tr": "…'i kaybettim",
+  "kind": "gloss.tr",
+  "de": "ich habe … verloren"
+ },
+ {
+  "tr": "hiç … etmedim",
+  "kind": "gloss.tr",
+  "de": "ich habe nie …"
+ },
+ {
+  "tr": "ne yapıyordun",
+  "kind": "gloss.tr",
+  "de": "was hast du gemacht"
+ },
+ {
+  "tr": "hiç … ettin mi",
+  "kind": "gloss.tr",
+  "de": "hast du jemals …"
+ },
+ {
+  "tr": "anlamına gelmek",
+  "kind": "gloss.tr",
+  "de": "bedeuten"
+ },
+ {
+  "tr": "ne kadar kaldın",
+  "kind": "gloss.tr",
+  "de": "wie lange bist du geblieben"
+ },
+ {
+  "tr": "eskiden … ederdim",
+  "kind": "gloss.tr",
+  "de": "früher habe ich … gemacht"
+ },
+ {
+  "tr": "eskiden … etmezdim",
+  "kind": "gloss.tr",
+  "de": "früher habe ich … nicht gemacht"
+ }
+]

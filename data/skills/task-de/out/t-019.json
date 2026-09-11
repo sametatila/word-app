@@ -1,0 +1,322 @@
+[
+ {
+  "tr": "Kaza formunu doldur.",
+  "kind": "form.prompt",
+  "de": "Fülle das Unfallformular aus."
+ },
+ {
+  "tr": "Çocukluk kartını doldur.",
+  "kind": "form.prompt",
+  "de": "Fülle die Kindheitskarte aus."
+ },
+ {
+  "tr": "Kayıp eşya formunu doldur.",
+  "kind": "form.prompt",
+  "de": "Fülle das Fundbüroformular aus."
+ },
+ {
+  "tr": "Merdivende düşme; kol; evde; iki hafta ağır iş yok.",
+  "kind": "form.facts",
+  "de": "Sturz auf der Treppe; Arm; zu Hause; zwei Wochen keine schwere Arbeit."
+ },
+ {
+  "tr": "Telefon; otobüste; geçen hafta; istasyonda bulundu.",
+  "kind": "form.facts",
+  "de": "Handy; im Bus; letzte Woche; am Bahnhof gefunden."
+ },
+ {
+  "tr": "Deniz kenarında küçük bir köy; anaokulu köyde; ilkokul yan kasabada; on yaşında şehre taşındı.",
+  "kind": "form.facts",
+  "de": "Ein kleines Dorf am Meer; Kindergarten im Dorf; Grundschule im Nachbarort; mit zehn in die Stadt gezogen."
+ },
+ {
+  "tr": "İki cümleyi „while“ ile birleştir.",
+  "kind": "rewrite.prompt",
+  "de": "Verbinde die beiden Sätze mit „while“."
+ },
+ {
+  "tr": "Yanlışı düzelt: „been“ mi „gone“ mu?",
+  "kind": "rewrite.prompt",
+  "de": "Berichtige den Fehler: „been“ oder „gone“?"
+ },
+ {
+  "tr": "„while“ SÜREN işi başlatıyor; içindeki an düz geçmiş zamanla geliyor.",
+  "kind": "rewrite.why",
+  "de": "„while“ leitet die LAUFENDE Handlung ein; der Augenblick darin steht im einfachen Präteritum. Das Deutsche hat für diesen Unterschied keine eigene Form."
+ },
+ {
+  "tr": "„gone“ hâlâ orada demek; cümle „evde“ dediği için döndüğünü anlatan „been“ gerekiyor.",
+  "kind": "rewrite.why",
+  "de": "„gone“ heißt noch dort; weil der Satz „zu Hause“ sagt, braucht es „been“, das die Rückkehr nennt. Deutsch sagt in beiden Fällen nur „war“."
+ },
+ {
+  "tr": "Ne oldu?",
+  "kind": "build.tr",
+  "de": "Was ist passiert?"
+ },
+ {
+  "tr": "İki gün önce.",
+  "kind": "build.tr",
+  "de": "Vor zwei Tagen."
+ },
+ {
+  "tr": "Ne yapıyordun?",
+  "kind": "build.tr",
+  "de": "Was hast du gemacht?"
+ },
+ {
+  "tr": "Ne kadar kaldın?",
+  "kind": "build.tr",
+  "de": "Wie lange bist du geblieben?"
+ },
+ {
+  "tr": "Bir köyde büyüdüm.",
+  "kind": "build.tr",
+  "de": "Ich bin in einem Dorf aufgewachsen."
+ },
+ {
+  "tr": "O Londra'ya gitti.",
+  "kind": "build.tr",
+  "de": "Er ist nach London gefahren."
+ },
+ {
+  "tr": "Otobüsü bekliyordum.",
+  "kind": "build.tr",
+  "de": "Ich habe auf den Bus gewartet."
+ },
+ {
+  "tr": "Biletleri getirdin mi?",
+  "kind": "build.tr",
+  "de": "Hast du die Karten mitgebracht?"
+ },
+ {
+  "tr": "Sen beklerken ne oldu?",
+  "kind": "build.tr",
+  "de": "Was ist passiert, während du gewartet hast?"
+ },
+ {
+  "tr": "Neyse ki ciddi değildi.",
+  "kind": "build.tr",
+  "de": "Zum Glück war es nicht schlimm."
+ },
+ {
+  "tr": "Yeni bir telefon aldım.",
+  "kind": "build.tr",
+  "de": "Ich habe ein neues Handy gekauft."
+ },
+ {
+  "tr": "Eskiden futbol oynardım.",
+  "kind": "build.tr",
+  "de": "Früher habe ich Fußball gespielt."
+ },
+ {
+  "tr": "Hiç yurt dışına çıkmadım.",
+  "kind": "build.tr",
+  "de": "Ich war noch nie im Ausland."
+ },
+ {
+  "tr": "İtalya'ya iki kez gittim.",
+  "kind": "build.tr",
+  "de": "Ich war zweimal in Italien."
+ },
+ {
+  "tr": "Beş gün bir otelde kaldık.",
+  "kind": "build.tr",
+  "de": "Wir haben fünf Tage in einem Hotel gewohnt."
+ },
+ {
+  "tr": "Eskiden kahveyi sevmezdim.",
+  "kind": "build.tr",
+  "de": "Früher mochte ich keinen Kaffee."
+ },
+ {
+  "tr": "Hiç yurt dışına çıktın mı?",
+  "kind": "build.tr",
+  "de": "Warst du schon einmal im Ausland?"
+ },
+ {
+  "tr": "Eskiden gitar çalar mıydın?",
+  "kind": "build.tr",
+  "de": "Hast du früher Gitarre gespielt?"
+ },
+ {
+  "tr": "Geçen yaz Antalya'ya gittim.",
+  "kind": "build.tr",
+  "de": "Letzten Sommer bin ich nach Antalya gefahren."
+ },
+ {
+  "tr": "Hava sıcaktı ve plaj güzeldi.",
+  "kind": "build.tr",
+  "de": "Das Wetter war heiß und der Strand war schön."
+ },
+ {
+  "tr": "Telefonumu otobüste kaybettim.",
+  "kind": "build.tr",
+  "de": "Ich habe mein Handy im Bus verloren."
+ },
+ {
+  "tr": "Yorgundum, bu yüzden eve gittim.",
+  "kind": "build.tr",
+  "de": "Ich war müde, deshalb bin ich nach Hause gegangen."
+ },
+ {
+  "tr": "Sen aradığında yemek pişiriyordum.",
+  "kind": "build.tr",
+  "de": "Ich habe gekocht, als du angerufen hast."
+ },
+ {
+  "tr": "Önce yürüdüm, sonra otobüse bindim.",
+  "kind": "build.tr",
+  "de": "Zuerst bin ich gelaufen, dann habe ich den Bus genommen."
+ },
+ {
+  "tr": "Merdivende düştüm ve kolumu incittim.",
+  "kind": "build.tr",
+  "de": "Ich bin auf der Treppe gestürzt und habe mir den Arm verletzt."
+ },
+ {
+  "tr": "„never“ zaten olumsuz; ayrıca „not“ konmuyor.",
+  "kind": "build.hint",
+  "de": "„never“ ist schon verneinend; ein zusätzliches „not“ kommt nicht dazu — wie „nie“."
+ },
+ {
+  "tr": "„buy“ düzensiz: bought. Kişiye göre değişmiyor.",
+  "kind": "build.hint",
+  "de": "„buy“ ist unregelmäßig: bought. Es ändert sich nicht nach der Person, anders als deutsch „kaufte“ und „kauftest“."
+ },
+ {
+  "tr": "„grow up“ iki parçalı ve „grow“ düzensiz: grew.",
+  "kind": "build.hint",
+  "de": "„grow up“ hat zwei Teile und „grow“ ist unregelmäßig: grew — wie „aufwachsen“ und „wuchs auf“."
+ },
+ {
+  "tr": "„luckily“ cümlenin başında ve virgülle ayrılıyor.",
+  "kind": "build.hint",
+  "de": "„luckily“ steht am Satzanfang und wird mit Komma abgetrennt — wie „zum Glück“."
+ },
+ {
+  "tr": "„you“ ile hep „were“; „doing“ süren işi söylüyor.",
+  "kind": "build.hint",
+  "de": "Mit „you“ steht immer „were“; „doing“ nennt die laufende Handlung."
+ },
+ {
+  "tr": "Soruda da aynı: „did“ varken „use“, „used“ değil.",
+  "kind": "build.hint",
+  "de": "In der Frage genauso: steht „did“ da, heißt es „use“, nicht „used“."
+ },
+ {
+  "tr": "İki tekil özne, iki „was“. „weather“ hep „the“ ile.",
+  "kind": "build.hint",
+  "de": "Zwei Subjekte im Singular, zweimal „was“. „weather“ steht immer mit „the“ — wie „das Wetter“."
+ },
+ {
+  "tr": "Otelde kalmak „stay at“ ile; süre „for“ ile geliyor.",
+  "kind": "build.hint",
+  "de": "Im Hotel wohnen heißt „stay at“; die Dauer kommt mit „for“, wo das Deutsche gar nichts setzt."
+ },
+ {
+  "tr": "„ago“ sayıdan SONRA gelir ve hep geçmişe doğru sayar.",
+  "kind": "build.hint",
+  "de": "„ago“ steht HINTER der Zahl und zählt immer in die Vergangenheit — umgekehrt als deutsch „vor zwei Tagen“."
+ },
+ {
+  "tr": "Süre sorusu „how long“; „did“ varken fiil eksiz: stay.",
+  "kind": "build.hint",
+  "de": "Die Frage nach der Dauer mit „how long“; steht „did“ da, bleibt das Verb endungslos: stay."
+ },
+ {
+  "tr": "Zaman ifadesi sonda: „last summer“. „go“ düzensiz: went.",
+  "kind": "build.hint",
+  "de": "Die Zeitangabe steht hinten: „last summer“. Deutsch stellt sie gern nach vorn. „go“ ist unregelmäßig: went."
+ },
+ {
+  "tr": "Gidip dönmüş olmak „have been to“; sayı cümlenin sonunda.",
+  "kind": "build.hint",
+  "de": "Hin und zurück gewesen sein heißt „have been to“; die Zahl steht am Satzende. Das Deutsche sagt in beiden Fällen nur „war“."
+ },
+ {
+  "tr": "Olumsuzda „didn't“ geçmişi taşıyor ve „used“ → „use“ olur.",
+  "kind": "build.hint",
+  "de": "In der Verneinung trägt „didn't“ die Vergangenheit, und „used“ wird zu „use“."
+ },
+ {
+  "tr": "Süren iş: „was“ + „-ing“. „wait“ nesnesini „for“ ile alıyor.",
+  "kind": "build.hint",
+  "de": "Die laufende Handlung: „was“ + „-ing“. „wait“ nimmt sein Objekt mit „for“, wie „warten auf“."
+ },
+ {
+  "tr": "„did“ varken fiil ilk hâline dönüyor: bring, „brought“ değil.",
+  "kind": "build.hint",
+  "de": "Steht „did“ da, kehrt das Verb in die Grundform zurück: bring, nicht „brought“."
+ },
+ {
+  "tr": "„lose“ düzensiz: lost. Araç için „on the bus“ — içinde demek.",
+  "kind": "build.hint",
+  "de": "„lose“ ist unregelmäßig: lost. Beim Verkehrsmittel steht „on the bus“ und meint darin — deutsch „im Bus“."
+ },
+ {
+  "tr": "„so“ sonucu söylüyor; „because“ ise sebebi. İkisi ters yönde.",
+  "kind": "build.hint",
+  "de": "„so“ nennt die Folge, „because“ den Grund. Achtung, falscher Freund: englisch „so“ ist deutsch „also“, nicht „so“."
+ },
+ {
+  "tr": "„has gone“ hâlâ orada demek. Dönmüş olsaydı „has been“ olurdu.",
+  "kind": "build.hint",
+  "de": "„has gone“ heißt, er ist noch dort. Wäre er zurück, hieße es „has been“. Im Deutschen macht das Verb diesen Unterschied nicht."
+ },
+ {
+  "tr": "Soru bir ANI soruyor („happened“), „while“ arka planı veriyor.",
+  "kind": "build.hint",
+  "de": "Die Frage gilt einem AUGENBLICK („happened“), „while“ liefert den Hintergrund."
+ },
+ {
+  "tr": "Süren iş „was cooking“, içindeki an „called“. İkisi ayrı biçimde.",
+  "kind": "build.hint",
+  "de": "Die laufende Handlung ist „was cooking“, der Augenblick darin „called“. Zwei verschiedene Formen, die das Deutsche nicht unterscheidet."
+ },
+ {
+  "tr": "„ever“ özne ile fiil arasına giriyor. „abroad“ önünde edat almıyor.",
+  "kind": "build.hint",
+  "de": "„ever“ steht zwischen Subjekt und Verb. Vor „abroad“ kommt keine Präposition — anders als deutsch „ins Ausland“."
+ },
+ {
+  "tr": "„fall“ düzensiz: fell. „hurt“ın geçmişi de „hurt“ — hiç değişmiyor.",
+  "kind": "build.hint",
+  "de": "„fall“ ist unregelmäßig: fell. Die Vergangenheit von „hurt“ ist wieder „hurt“ — ein Verb, das sich gar nicht ändert, gibt es im Deutschen nicht."
+ },
+ {
+  "tr": "„used to“ artık olmayan bir alışkanlık söylüyor; sonrası eksiz fiil.",
+  "kind": "build.hint",
+  "de": "„used to“ nennt eine Gewohnheit, die es nicht mehr gibt; danach steht das Verb endungslos. Deutsch behilft sich mit „früher“."
+ },
+ {
+  "tr": "„first“ ve „then“ virgülle ayrılıyor; her ikisinde de özne tekrarlanıyor.",
+  "kind": "build.hint",
+  "de": "„first“ und „then“ werden mit Komma abgetrennt, und das Subjekt wird beide Male wiederholt — anders als deutsch „dann nahm ich“."
+ },
+ {
+  "tr": "„what“ burada özne, o yüzden „did“ girmiyor: „What did happen?“ denmiyor.",
+  "kind": "build.hint",
+  "de": "„what“ ist hier das Subjekt, deshalb kommt kein „did“ dazu: „What did happen?“ sagt man nicht."
+ },
+ {
+  "tr": "Olayların sırası: doğru sıraya koy.",
+  "kind": "question.text",
+  "de": "Die Reihenfolge der Ereignisse: bring sie in die richtige Ordnung."
+ },
+ {
+  "tr": "Günün sırası: doğru sıraya koy.",
+  "kind": "question.text",
+  "de": "Die Reihenfolge des Tages: bring sie in die richtige Ordnung."
+ },
+ {
+  "tr": "Tatilin sırası: doğru sıraya koy.",
+  "kind": "question.text",
+  "de": "Die Reihenfolge des Urlaubs: bring sie in die richtige Ordnung."
+ },
+ {
+  "tr": "Anlatımın sırası: doğru sıraya koy.",
+  "kind": "question.text",
+  "de": "Die Reihenfolge der Erzählung: bring sie in die richtige Ordnung."
+ }
+]

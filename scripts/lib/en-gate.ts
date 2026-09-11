@@ -34,6 +34,7 @@ ok okay oh hi hello hey bye please thanks thank sorry mr mrs ms dr o'clock am pm
 monday tuesday wednesday thursday friday saturday sunday january february march april may june july august
 september october november december euro euros pound pounds dollar dollars percent
 true false right wrong cannot mine yours hers ours theirs anything everything anyone everyone someone nobody
+somebody anybody everybody
 metre metres meter meters km kg cm litre litres liter liters kilo kilos minutes hours euro
 children men women people feet teeth`.split(/\s+/).filter(Boolean));
 
@@ -95,7 +96,17 @@ export function enStems(w: string): string[] {
     out.push(con, EN_IRREGULAR[con] ?? con);
     if (w.endsWith("n't")) out.push(w.slice(0, -3), EN_IRREGULAR[w.slice(0, -3)] ?? w.slice(0, -3));
   }
-  if (w.endsWith("'s")) out.push(w.slice(0, -2));
+  /* İYELİK EKİ GÖVDEYİ GİZLİYOR. "writer's" → "writer" → "write": ilk
+     adım yetmiyor, çünkü türetme ekleri yalnız ham belirtece uygulanıyordu
+     ve `-er` kuralı apostroflu biçimde hiç çalışmıyordu. Kökün kendi
+     gövdeleri de listeye giriyor. */
+  if (w.endsWith("'s")) {
+    const base = w.slice(0, -2);
+    out.push(base);
+    if (base.endsWith("er")) out.push(base.slice(0, -2), base.slice(0, -1));
+    if (base.endsWith("ies")) out.push(base.slice(0, -3) + "y");
+    if (base.endsWith("s")) out.push(base.slice(0, -1));
+  }
   if (w.endsWith("ies")) out.push(w.slice(0, -3) + "y");
   if (w.endsWith("es")) out.push(w.slice(0, -2));
   if (w.endsWith("s")) out.push(w.slice(0, -1));

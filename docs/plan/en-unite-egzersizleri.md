@@ -61,7 +61,9 @@ mi çıkacağına yazar karar verir.
 | Seviye | Ünite | Durum |
 |---|---|---|
 | **A1** | **1–25** | **TAM** (2026-09-11/12) — 150 egzersiz, 150/150 yuva |
-| A2 · B1 · B2 · C1 | 1–25 | bekliyor |
+| A2 | 1–3 | **yazıldı** (2026-09-12) — 18 egzersiz |
+| A2 | 4–25 | bekliyor |
+| B1 · B2 · C1 | 1–25 | bekliyor |
 
 **A1 ünite 1 (2026-09-11).** Dört dersi Hello! · How are you? · I am, you
 are · Where are you from?. Altı egzersiz: iki okuma ("Three names",
@@ -258,6 +260,34 @@ söylüyor.
 
 Düzenli fiilin kişiye göre değişmemesi de öyle: Türkçe için sıradan,
 Almanca için fark („arbeitete“ / „arbeitetest“).
+
+**A2 ünite 1–3 (2026-09-12).** Ünite 1 Irregular verbs · What were you
+doing? · When and while · A year ago, last week; ünite 2 Telling a story ·
+I used to... · My childhood · A holiday I remember; ünite 3 What
+happened? · Asking about the past · Have you ever...? · Been and gone.
+On sekiz egzersiz; ünite dışı ölçüm %0,0.
+
+A2'nin ölçüsü A1'den farklı ve içerik ona uyuyor: okuma metni 100–180
+kelime (A1'de 60–120), cümleler iki zamanı bir arada taşıyabiliyor.
+
+Ölçüm makinesinde iki eksik kapandı. Birincisi: „somebody“, „anybody“ ve
+„everybody“ serbest işlev sözcüğü listesinde yoktu, oysa „someone“,
+„anyone“ ve „everyone“ vardı — aynı sınıfın yarısı eksikti. İkincisi:
+iyelik eki gövdeyi gizliyordu, „writer's“ ancak „writer“a inebiliyor ama
+oradan „write“a gidemiyordu, çünkü türetme kuralları yalnız ham belirtece
+uygulanıyordu. İkisi de `lib/en-gate.ts`te düzeltildi ve
+`check:libvocab` çıktısı değişmedi.
+
+İçerik tarafında kapının kendi kuralı işledi: dört sözlükçe maddesi
+mastar biçimindeydi („get in“, „fall asleep“, „fall down“, „ring“) ama
+metin düzensiz geçmişi kullanıyor („got in“, „fell asleep“, „fell down“,
+„rang“). `check-content.ts` bunu yakalıyor ve gerekçesi orada yazılı:
+düzensiz fiilde sözlükçe METNİN kullandığı biçimi vermeli.
+
+Almanca eksende iki satır açıldı. „ago“ sayıdan SONRA geliyor, Almanca
+„vor zwei Tagen“ ise ÖNCE — yön ters. Ve „so“ bir yalancı dost: İngilizce
+„so“ Almanca „also“ demek, Almanca „so“ değil; karşılık bunu adıyla
+söylüyor.
 
 ## Tamamlanma ölçütü
 
