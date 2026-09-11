@@ -1,0 +1,317 @@
+[
+ {
+  "tr": "İş gününü doldur.",
+  "kind": "form.prompt",
+  "de": "Fülle den Arbeitstag aus."
+ },
+ {
+  "tr": "İade formunu doldur.",
+  "kind": "form.prompt",
+  "de": "Fülle das Rückgabeformular aus."
+ },
+ {
+  "tr": "Alışveriş formunu doldur.",
+  "kind": "form.prompt",
+  "de": "Fülle das Einkaufsformular aus."
+ },
+ {
+  "tr": "Kazak; kırmızı; otuz dolar; düğmesi kirli.",
+  "kind": "form.facts",
+  "de": "Pullover; rot; dreißig Dollar; der Knopf ist schmutzig."
+ },
+ {
+  "tr": "Mavi gömlek; büyük beden; yirmi dolar; kartla ödeme.",
+  "kind": "form.facts",
+  "de": "Blaues Hemd; große Größe; zwanzig Dollar; Zahlung mit Karte."
+ },
+ {
+  "tr": "Sekizde başlar; öğlen ofiste yemek; öğleden sonra toplantı; beşte biter.",
+  "kind": "form.facts",
+  "de": "Fängt um acht an; mittags Essen im Büro; nachmittags eine Besprechung; hört um fünf auf."
+ },
+ {
+  "tr": "Rengi cümleye ekle: red.",
+  "kind": "rewrite.prompt",
+  "de": "Füge dem Satz die Farbe hinzu: red."
+ },
+ {
+  "tr": "Yanlışı düzelt: „many“ mi „much“ mu?",
+  "kind": "rewrite.prompt",
+  "de": "Berichtige den Fehler: „many“ oder „much“?"
+ },
+ {
+  "tr": "Sıfat „a“ ile isim arasına giriyor ve çoğulda bile değişmez: two red cars.",
+  "kind": "rewrite.why",
+  "de": "Das Adjektiv steht zwischen „a“ und dem Substantiv und bleibt sogar im Plural gleich: two red cars. Das Deutsche beugt dort: zwei rote Autos."
+ },
+ {
+  "tr": "„apple“ sayılabilir, o yüzden „many“. Sayılamayanda „much“: how much water.",
+  "kind": "rewrite.why",
+  "de": "„apple“ ist zählbar, deshalb „many“. Bei Unzählbarem „much“: how much water."
+ },
+ {
+  "tr": "Beğendim.",
+  "kind": "build.tr",
+  "de": "Es gefällt mir."
+ },
+ {
+  "tr": "On dolar.",
+  "kind": "build.tr",
+  "de": "Das macht zehn Dollar."
+ },
+ {
+  "tr": "Çok büyük.",
+  "kind": "build.tr",
+  "de": "Das ist zu groß."
+ },
+ {
+  "tr": "Bu ne renk?",
+  "kind": "build.tr",
+  "de": "Welche Farbe hat das?"
+ },
+ {
+  "tr": "Kalmayacağım.",
+  "kind": "build.tr",
+  "de": "Ich werde nicht bleiben."
+ },
+ {
+  "tr": "Kaç elman var?",
+  "kind": "build.tr",
+  "de": "Wie viele Äpfel hast du?"
+ },
+ {
+  "tr": "Sana yakışıyor.",
+  "kind": "build.tr",
+  "de": "Es steht dir."
+ },
+ {
+  "tr": "Bunlar ne kadar?",
+  "kind": "build.tr",
+  "de": "Was kosten die hier?"
+ },
+ {
+  "tr": "Ne düşünüyorsun?",
+  "kind": "build.tr",
+  "de": "Was denkst du?"
+ },
+ {
+  "tr": "Kırmızı bir araba.",
+  "kind": "build.tr",
+  "de": "Ein rotes Auto."
+ },
+ {
+  "tr": "Okumayı seviyorum.",
+  "kind": "build.tr",
+  "de": "Ich lese gern."
+ },
+ {
+  "tr": "Bir gömlek arıyorum.",
+  "kind": "build.tr",
+  "de": "Ich suche ein Hemd."
+ },
+ {
+  "tr": "Deneme kabini nerede?",
+  "kind": "build.tr",
+  "de": "Wo ist die Umkleidekabine?"
+ },
+ {
+  "tr": "Seyahat edecek misin?",
+  "kind": "build.tr",
+  "de": "Wirst du verreisen?"
+ },
+ {
+  "tr": "Yeterince vaktim yok.",
+  "kind": "build.tr",
+  "de": "Ich habe nicht genug Zeit."
+ },
+ {
+  "tr": "Ne kadar su istiyorsun?",
+  "kind": "build.tr",
+  "de": "Wie viel Wasser möchtest du?"
+ },
+ {
+  "tr": "Saat kaçta açıyorsunuz?",
+  "kind": "build.tr",
+  "de": "Um wie viel Uhr öffnen Sie?"
+ },
+ {
+  "tr": "Annemi ziyaret edeceğim.",
+  "kind": "build.tr",
+  "de": "Ich werde meine Mutter besuchen."
+ },
+ {
+  "tr": "Cuma günü toplantım var.",
+  "kind": "build.tr",
+  "de": "Am Freitag habe ich eine Besprechung."
+ },
+ {
+  "tr": "Bu annem için bir hediye.",
+  "kind": "build.tr",
+  "de": "Das ist ein Geschenk für meine Mutter."
+ },
+ {
+  "tr": "Otobüs ne zaman kalkıyor?",
+  "kind": "build.tr",
+  "de": "Wann fährt der Bus ab?"
+ },
+ {
+  "tr": "Bunu değiştirebilir miyim?",
+  "kind": "build.tr",
+  "de": "Kann ich das umtauschen?"
+ },
+ {
+  "tr": "Film izlemeyi sever misin?",
+  "kind": "build.tr",
+  "de": "Siehst du gern Filme?"
+ },
+ {
+  "tr": "Saat sekizde işe başlarım.",
+  "kind": "build.tr",
+  "de": "Ich fange um acht mit der Arbeit an."
+ },
+ {
+  "tr": "Üstümde deneyebilir miyim?",
+  "kind": "build.tr",
+  "de": "Kann ich es anprobieren?"
+ },
+ {
+  "tr": "Fikir sorusu „do“ ile ve „think“ eksiz kalıyor.",
+  "kind": "build.hint",
+  "de": "Die Frage nach der Meinung mit „do“, und „think“ bleibt ohne Endung."
+ },
+ {
+  "tr": "Saatte „at“. „work“ burada isim, önünde „the“ yok.",
+  "kind": "build.hint",
+  "de": "Bei der Uhrzeit „at“. „work“ ist hier ein Substantiv und steht ohne Artikel — anders als deutsch „zur Arbeit“."
+ },
+ {
+  "tr": "Üç parça: am + going to + fiil. Fiil hiç çekilmez.",
+  "kind": "build.hint",
+  "de": "Drei Teile: am + going to + Verb. Das Verb wird nie gebeugt; das Deutsche kommt mit zweien aus."
+ },
+ {
+  "tr": "„open“ burada fiil. Soru „do“ ile, çünkü „be“ değil.",
+  "kind": "build.hint",
+  "de": "„open“ ist hier ein Verb. Die Frage mit „do“, weil es nicht „be“ ist."
+ },
+ {
+  "tr": "Nesne „it“ zorunlu: İngilizcede fiil nesnesiz kalmaz.",
+  "kind": "build.hint",
+  "de": "Das Objekt „it“ ist Pflicht: im Englischen bleibt das Verb nicht ohne Objekt, wie deutsch „es gefällt mir“."
+ },
+ {
+  "tr": "„what colour“ birlikte soruyor; sonra „is it“ geliyor.",
+  "kind": "build.hint",
+  "de": "„what colour“ fragt als Einheit; danach kommt „is it“."
+ },
+ {
+  "tr": "Belli bir kabin olduğu için „the“. Soru sözcüğü başta.",
+  "kind": "build.hint",
+  "de": "Weil es eine bestimmte Kabine ist, steht „the“. Das Fragewort steht vorn."
+ },
+ {
+  "tr": "Olumsuzluk „not“ „am“den hemen sonra: am not going to.",
+  "kind": "build.hint",
+  "de": "Die Verneinung „not“ steht direkt hinter „am“: am not going to."
+ },
+ {
+  "tr": "„water“ sayılamaz: „how much“ ve tekil, „waters“ olmaz.",
+  "kind": "build.hint",
+  "de": "„water“ ist nicht zählbar: „how much“ und Singular, „waters“ gibt es nicht."
+ },
+ {
+  "tr": "Fiyatta özne „it“ zorunlu; sayı tek başına cümle olmaz.",
+  "kind": "build.hint",
+  "de": "Beim Preis ist das Subjekt „it“ Pflicht; eine Zahl allein ist kein Satz."
+ },
+ {
+  "tr": "Çoğulda „are“ ve „these“. Tekilde „is“ ve „this“ olurdu.",
+  "kind": "build.hint",
+  "de": "Im Plural „are“ und „these“. Im Singular wären es „is“ und „this“."
+ },
+ {
+  "tr": "„apple“ sayılabilir, o yüzden „how many“ ve çoğul: apples.",
+  "kind": "build.hint",
+  "de": "„apple“ ist zählbar, deshalb „how many“ und der Plural: apples."
+ },
+ {
+  "tr": "Özne giysinin kendisi: „it suits you“, „you suit it“ değil.",
+  "kind": "build.hint",
+  "de": "Subjekt ist das Kleidungsstück selbst: „it suits you“, nicht „you suit it“ — wie deutsch „es steht dir“."
+ },
+ {
+  "tr": "„like“ sonrası fiil „-ing“ alır. Nesne olmadan da cümle tam.",
+  "kind": "build.hint",
+  "de": "Nach „like“ bekommt das Verb ein „-ing“. Auch ohne Objekt ist der Satz vollständig."
+ },
+ {
+  "tr": "Kime olduğu „for“ ile: a gift for my mother, for her birthday.",
+  "kind": "build.hint",
+  "de": "Für wen, das sagt „for“: a gift for my mother, for her birthday."
+ },
+ {
+  "tr": "Soru „do“ ile; genel bir şeyden söz edildiği için çoğul: films.",
+  "kind": "build.hint",
+  "de": "Die Frage mit „do“; weil es um etwas Allgemeines geht, steht der Plural: films."
+ },
+ {
+  "tr": "„exchange“ malı malla değiştirmek; para iadesi „return“ ile olur.",
+  "kind": "build.hint",
+  "de": "„exchange“ heißt Ware gegen Ware; das Geld zurück gibt es mit „return“."
+ },
+ {
+  "tr": "„too“ şikâyet taşıyor: gereğinden büyük. „very big“ şikâyet değil.",
+  "kind": "build.hint",
+  "de": "„too“ trägt eine Beschwerde: größer als nötig, wie deutsch „zu groß“. „very big“ ist keine Beschwerde."
+ },
+ {
+  "tr": "„look for“ aramak demek ve „for“ düşmez. Şu an sürdüğü için „-ing“.",
+  "kind": "build.hint",
+  "de": "„look for“ heißt suchen und „for“ fällt nicht weg. Weil es gerade läuft, steht „-ing“; dafür hat das Deutsche keine eigene Form."
+ },
+ {
+  "tr": "Sahiplik „have“ ile, gün „on“ ile. Toplantının önünde „a“ gerekiyor.",
+  "kind": "build.hint",
+  "de": "Der Besitz mit „have“, der Tag mit „on“. Vor der Besprechung braucht es „a“, wie deutsch „eine“."
+ },
+ {
+  "tr": "Zamir „it“ iki parçanın ARASINA girer: try it on. „try on it“ yanlış.",
+  "kind": "build.hint",
+  "de": "Das Pronomen „it“ steht ZWISCHEN den Teilen: try it on. „try on it“ ist falsch; deutsch ebenso: zieh es an."
+ },
+ {
+  "tr": "Soruda „be“ öne geçiyor: you are → are you. „going to“ yerinde kalıyor.",
+  "kind": "build.hint",
+  "de": "In der Frage rückt „be“ nach vorn: you are → are you. „going to“ bleibt, wo es ist."
+ },
+ {
+  "tr": "Üçüncü tekil kişide „do“ → „does“ ve fiil eksiz kalır: leave, leaves değil.",
+  "kind": "build.hint",
+  "de": "In der dritten Person Singular wird „do“ zu „does“ und das Verb bleibt ohne Endung: leave, nicht leaves."
+ },
+ {
+  "tr": "„enough“ isimden ÖNCE gelir: enough time. Sıfattan sonra gelirdi: good enough.",
+  "kind": "build.hint",
+  "de": "„enough“ steht VOR dem Substantiv: enough time. Nach einem Adjektiv stünde es dahinter: good enough — wie deutsch „genug Zeit“ und „gut genug“."
+ },
+ {
+  "tr": "Renk isimden ÖNCE: a red car. Türkçedeki sırayla aynı, ama sıfat hiç çekilmez.",
+  "kind": "build.hint",
+  "de": "Die Farbe steht VOR dem Substantiv: a red car, dieselbe Reihenfolge wie im Deutschen. Aber das Adjektiv wird nie gebeugt: „ein rotes Auto“ hat eine Endung, „a red car“ nicht."
+ },
+ {
+  "tr": "Kaan'ın saydığı sıra: doğru sıraya koy.",
+  "kind": "question.text",
+  "de": "Die Reihenfolge, in der Kaan zählt: bring sie in die richtige Ordnung."
+ },
+ {
+  "tr": "Nil'in anlattığı sıra: doğru sıraya koy.",
+  "kind": "question.text",
+  "de": "Die Reihenfolge in der Erzählung von Nil: bring sie in die richtige Ordnung."
+ },
+ {
+  "tr": "Ali'nin anlattığı sıra: doğru sıraya koy.",
+  "kind": "question.text",
+  "de": "Die Reihenfolge in der Erzählung von Ali: bring sie in die richtige Ordnung."
+ }
+]

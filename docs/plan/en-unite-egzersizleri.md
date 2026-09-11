@@ -60,8 +60,8 @@ mi çıkacağına yazar karar verir.
 
 | Seviye | Ünite | Durum |
 |---|---|---|
-| A1 | 1–9 | **yazıldı** (2026-09-11) |
-| A1 | 10–25 | bekliyor |
+| A1 | 1–12 | **yazıldı** (2026-09-11) |
+| A1 | 13–25 | bekliyor |
 | A2 · B1 · B2 · C1 | 1–25 | bekliyor |
 
 **A1 ünite 1 (2026-09-11).** Dört dersi Hello! · How are you? · I am, you
@@ -151,6 +151,25 @@ tam da yasak olan „than“a itiyor; „a kilo of apples“taki „of“un Alma
 karşılığı hiç yok („ein Kilo Äpfel“); sıklık zarfı İngilizcede ana
 fiilden önce, Almancada sonra geliyor („I always drink“ / „ich trinke
 immer“). Dördü de çeviri değil, Almancaya karşı yeniden ölçüm.
+
+**A1 ünite 10–12 (2026-09-11).** Ünite 10 A work day · After work ·
+Weekend plans · What time …?; ünite 11 Buying clothes · Size and
+fitting · Colours · Asking prices; ünite 12 I like it · Exchange and
+return · Choosing a gift · How many, how much. On sekiz egzersiz; ünite
+dışı ölçüm %0,0. Patika'nın EN A1 yuvalarının 72'si dolu.
+
+Almanca eksende bu turun yeniden ölçümü SIFAT ÇEKİMİ. Türkçe ipucu
+"renk isimden önce gelir, Türkçedeki sırayla aynı, ama sıfat hiç
+çekilmez" diyor ve Türkçe okuyan için ikinci yarı zaten doğal —
+Türkçe de çekmiyor. Almanca okuyan için ise TAM TERSİ: „ein rotes Auto“,
+„zwei rote Autos“. Almanca karşılık sırayı Almancayla eşliyor, çekimi ise
+karşıtlık olarak veriyor.
+
+Karşı yönde iki satır da parite çıktı ve bu da kayda değer: „it suits
+you“ Almanca „es steht dir“le bire bir aynı yapıda, „enough time“ ile
+„good enough“ da „genug Zeit“ ve „gut genug“la. Yeniden ölçüm bunları
+büyütmüyor, „genau wie im Deutschen“ diyerek öğrenciye kolaylık
+gösteriyor.
 
 ## Tamamlanma ölçütü
 

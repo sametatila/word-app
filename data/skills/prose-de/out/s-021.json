@@ -1,0 +1,542 @@
+[
+ {
+  "tr": "Bir kazak iade ediliyor. Değişim mi, para iadesi mi?",
+  "kind": "intro",
+  "de": "Ein Pullover wird zurückgegeben. Umtausch oder Geld zurück?"
+ },
+ {
+  "tr": "İndirim ilanını oku: hangi renk var, hangi fiyattan?",
+  "kind": "intro",
+  "de": "Lies die Anzeige zum Ausverkauf: welche Farben es gibt und zu welchem Preis?"
+ },
+ {
+  "tr": "Ali iş sonrasını anlatıyor. Neyi seviyor, neyi sevmiyor?",
+  "kind": "intro",
+  "de": "Ali erzählt vom Feierabend. Was mag er, was mag er nicht?"
+ },
+ {
+  "tr": "Mağaza cümlelerini yaz. Sonunda alışveriş formunu doldur.",
+  "kind": "intro",
+  "de": "Schreibe die Sätze für den Laden. Am Ende füllst du das Einkaufsformular aus."
+ },
+ {
+  "tr": "Doğum günü hediyesi seçiliyor. Hangi fikir neden eleniyor?",
+  "kind": "intro",
+  "de": "Ein Geburtstagsgeschenk wird ausgesucht. Welche Idee fällt warum weg?"
+ },
+ {
+  "tr": "Beğeni ve iade cümlelerini yaz. Sonunda iade formunu doldur.",
+  "kind": "intro",
+  "de": "Schreibe Sätze zum Gefallen und zur Rückgabe. Am Ende füllst du das Rückgabeformular aus."
+ },
+ {
+  "tr": "Nil renkleri anlatıyor. Hangi renk işe, hangisi hafta sonuna?",
+  "kind": "intro",
+  "de": "Nil erzählt von Farben. Welche Farbe für die Arbeit, welche fürs Wochenende?"
+ },
+ {
+  "tr": "Mağazada gömlek alınıyor. Renk, beden ve fiyat art arda geliyor.",
+  "kind": "intro",
+  "de": "Im Laden wird ein Hemd gekauft. Farbe, Größe und Preis kommen nacheinander."
+ },
+ {
+  "tr": "Renk ve fiyat yaz. Renk sıfatı isimden önce gelir ve hiç çekilmez.",
+  "kind": "intro",
+  "de": "Schreibe Farbe und Preis. Das Farbadjektiv steht vor dem Substantiv und wird nie gebeugt."
+ },
+ {
+  "tr": "Ceket deneniyor. Beden ve renk iki kez değişiyor — sonuncuyu yakala.",
+  "kind": "intro",
+  "de": "Eine Jacke wird anprobiert. Größe und Farbe wechseln zweimal — merke dir die letzte."
+ },
+ {
+  "tr": "Bir ceket üzerine fikir soruluyor. Beğeni cümleleri art arda geliyor.",
+  "kind": "intro",
+  "de": "Zu einer Jacke wird nach der Meinung gefragt. Die Sätze des Gefallens kommen nacheinander."
+ },
+ {
+  "tr": "İş gününü ve sevdiklerini yaz. „like“ sonrası fiil yine „-ing“ alıyor.",
+  "kind": "intro",
+  "de": "Schreibe über den Arbeitstag und das, was du magst. Nach „like“ bekommt das Verb wieder ein „-ing“."
+ },
+ {
+  "tr": "Miktar sorularını yaz. Sayılabilene „how many“, sayılamayana „how much“.",
+  "kind": "intro",
+  "de": "Schreibe Fragen nach der Menge. Bei Zählbarem „how many“, bei Unzählbarem „how much“."
+ },
+ {
+  "tr": "Bir dükkânın saatleri soruluyor. Açılış, kapanış, otobüs — hepsi ayrı saatte.",
+  "kind": "intro",
+  "de": "Nach den Zeiten eines Ladens wird gefragt. Öffnung, Schließung, Bus — jedes zu einer anderen Zeit."
+ },
+ {
+  "tr": "Bir iş günü baştan sona. İş kaçta başlıyor, kaçta bitiyor, sonrası ne oluyor?",
+  "kind": "intro",
+  "de": "Ein Arbeitstag von vorn bis hinten. Wann beginnt die Arbeit, wann endet sie, was kommt danach?"
+ },
+ {
+  "tr": "İki kişi hafta sonu planını konuşuyor. Gelecek kalıbının üç biçimi de geçiyor.",
+  "kind": "intro",
+  "de": "Zwei Personen sprechen über ihre Wochenendpläne. Alle drei Formen der Zukunft kommen vor."
+ },
+ {
+  "tr": "Geleceği yaz. Üç parça var ve olumsuzu ile sorusu parçaları oynatarak kuruluyor.",
+  "kind": "intro",
+  "de": "Schreibe die Zukunft. Sie hat drei Teile, und Verneinung und Frage entstehen, indem man die Teile verschiebt."
+ },
+ {
+  "tr": "Kaan yemek için miktar hesaplıyor. Hangi şey sayılabiliyor, hangisi sayılamıyor?",
+  "kind": "intro",
+  "de": "Kaan rechnet die Mengen fürs Essen aus. Was ist zählbar, was nicht?"
+ },
+ {
+  "tr": "„You don't have many jackets. — Only two.“",
+  "kind": "explain",
+  "de": "„You don't have many jackets. — Only two.“"
+ },
+ {
+  "tr": "„Only two, and both are black.“ — yenisi mavi.",
+  "kind": "explain",
+  "de": "„Only two, and both are black.“ — die neue ist blau."
+ },
+ {
+  "tr": "„I don't have much time — the store closes at six.“",
+  "kind": "explain",
+  "de": "„I don't have much time — the store closes at six.“"
+ },
+ {
+  "tr": "Ödediği kadar: „Thirty dollars… Here is your money.“",
+  "kind": "explain",
+  "de": "So viel, wie sie bezahlt hat: „Thirty dollars… Here is your money.“"
+ },
+ {
+  "tr": "„Tomorrow is my mother's birthday.“ — iyelik „-'s“ ile.",
+  "kind": "explain",
+  "de": "„Tomorrow is my mother's birthday.“ — der Besitz mit „-'s“."
+ },
+ {
+  "tr": "„I'm going to visit my parents.“ — şehirde yürüyen Kaan.",
+  "kind": "explain",
+  "de": "„I'm going to visit my parents.“ — in der Stadt spazieren geht Kaan."
+ },
+ {
+  "tr": "„It's too small. What size is it?“ — büyük olan gri ceket.",
+  "kind": "explain",
+  "de": "„It's too small. What size is it?“ — groß ist die graue Jacke."
+ },
+ {
+  "tr": "„On Friday I meet my friends.“ — pazartesi parkta yürüyor.",
+  "kind": "explain",
+  "de": "„On Friday I meet my friends.“ — montags geht er im Park spazieren."
+ },
+ {
+  "tr": "„On Sunday we are closed.“ — cuma açık, on otobüsün saati.",
+  "kind": "explain",
+  "de": "„On Sunday we are closed.“ — freitags offen, zehn ist die Zeit des Busses."
+ },
+ {
+  "tr": "„Jackets: black or blue.“ — yeşil ve sarı kazakların rengi.",
+  "kind": "explain",
+  "de": "„Jackets: black or blue.“ — grün und gelb sind die Farben der Pullover."
+ },
+ {
+  "tr": "„It's eighty dollars.“ — bu yüzden Kaan daha ucuzunu istiyor.",
+  "kind": "explain",
+  "de": "„It's eighty dollars.“ — deshalb möchte Kaan eine billigere."
+ },
+ {
+  "tr": "„Our store is open every day.“ — her gün açık, yani pazar da.",
+  "kind": "explain",
+  "de": "„Our store is open every day.“ — jeden Tag offen, also auch sonntags."
+ },
+ {
+  "tr": "„The office opens early, at eight.“ — dokuz dükkânın açılışı.",
+  "kind": "explain",
+  "de": "„The office opens early, at eight.“ — neun ist die Öffnung des Ladens."
+ },
+ {
+  "tr": "„What do you think?“ — fikir sorusu „do“ ile; „how“ ile değil.",
+  "kind": "explain",
+  "de": "„What do you think?“ — die Frage nach der Meinung mit „do“, nicht mit „how“."
+ },
+ {
+  "tr": "„How much is it? Ninety dollars.“ — iki, Sena'nın ceket sayısı.",
+  "kind": "explain",
+  "de": "„How much is it? Ninety dollars.“ — zwei ist die Zahl der Jacken von Sena."
+ },
+ {
+  "tr": "Önce iş, sonra sevdikleri, sonra cuma, en son hafta sonu planı.",
+  "kind": "explain",
+  "de": "Zuerst die Arbeit, dann das, was er mag, dann der Freitag, zuletzt der Wochenendplan."
+ },
+ {
+  "tr": "„I don't like watching television. I prefer reading or walking.“",
+  "kind": "explain",
+  "de": "„I don't like watching television. I prefer reading or walking.“"
+ },
+ {
+  "tr": "„We open at nine and we close at seven.“ — sekiz ofisin açılışı.",
+  "kind": "explain",
+  "de": "„We open at nine and we close at seven.“ — acht ist die Öffnung des Büros."
+ },
+ {
+  "tr": "„I don't have enough cheese.“ — patates bir kilo, zaman iki saat.",
+  "kind": "explain",
+  "de": "„I don't have enough cheese.“ — Kartoffeln ein Kilo, Zeit zwei Stunden."
+ },
+ {
+  "tr": "Önce kendi rengi, sonra iş, sonra hafta sonu, en son kız kardeşi.",
+  "kind": "explain",
+  "de": "Zuerst ihre eigene Farbe, dann die Arbeit, dann das Wochenende, zuletzt ihre Schwester."
+ },
+ {
+  "tr": "„No, it suits you. It is perfect.“ — büyük olmadığını da söylüyor.",
+  "kind": "explain",
+  "de": "„No, it suits you. It is perfect.“ — er sagt damit auch, dass sie nicht zu groß ist."
+ },
+ {
+  "tr": "„This black jacket is forty dollars.“ — seksen ilk ceketin fiyatı.",
+  "kind": "explain",
+  "de": "„This black jacket is forty dollars.“ — achtzig ist der Preis der ersten Jacke."
+ },
+ {
+  "tr": "„For work I wear white or gray.“ — kırmızı ve sarı hafta sonu için.",
+  "kind": "explain",
+  "de": "„For work I wear white or gray.“ — Rot und Gelb sind fürs Wochenende."
+ },
+ {
+  "tr": "„A ring is beautiful, but it is very expensive.“ — güzel ama pahalı.",
+  "kind": "explain",
+  "de": "„A ring is beautiful, but it is very expensive.“ — schön, aber teuer."
+ },
+ {
+  "tr": "„How much are these shoes? Thirty dollars.“ — çoğulda „are“ geliyor.",
+  "kind": "explain",
+  "de": "„How much are these shoes? Thirty dollars.“ — im Plural steht „are“."
+ },
+ {
+  "tr": "„I am not going to be late!“ — gelecek olumsuzu „not“ „am“den sonra.",
+  "kind": "explain",
+  "de": "„I am not going to be late!“ — in der verneinten Zukunft steht „not“ hinter „am“."
+ },
+ {
+  "tr": "„I'm looking for a shirt.“ — ceket deneme kabininin yanında duruyor.",
+  "kind": "explain",
+  "de": "„I'm looking for a shirt.“ — die Jacke liegt neben der Umkleidekabine."
+ },
+ {
+  "tr": "„It's too big. Have you got a small size?“ — küçüğünü sonra istiyor.",
+  "kind": "explain",
+  "de": "„It's too big. Have you got a small size?“ — die kleine verlangt sie danach."
+ },
+ {
+  "tr": "„She has a green car and a green jacket.“ — renk sıfatı isimden önce.",
+  "kind": "explain",
+  "de": "„She has a green car and a green jacket.“ — das Farbadjektiv steht vor dem Substantiv."
+ },
+ {
+  "tr": "„I start work at eight and I finish at five.“ — sekiz başlangıç saati.",
+  "kind": "explain",
+  "de": "„I start work at eight and I finish at five.“ — acht ist die Anfangszeit."
+ },
+ {
+  "tr": "„I'd like to come tomorrow… Tomorrow is Friday.“ — iki cevap da doğru.",
+  "kind": "explain",
+  "de": "„I'd like to come tomorrow… Tomorrow is Friday.“ — beide Antworten stimmen."
+ },
+ {
+  "tr": "„I have a few onions, but not many.“ — „a few“ birkaç demek, çok değil.",
+  "kind": "explain",
+  "de": "„I have a few onions, but not many.“ — „a few“ heißt ein paar, nicht viele."
+ },
+ {
+  "tr": "„I have a meeting on Friday with a new group.“ — gün adından önce „on“.",
+  "kind": "explain",
+  "de": "„I have a meeting on Friday with a new group.“ — vor dem Tagesnamen steht „on“."
+ },
+ {
+  "tr": "„I don't have many ideas.“ — sayılabilen şeyde olumsuzda „many“ geliyor.",
+  "kind": "explain",
+  "de": "„I don't have many ideas.“ — bei Zählbarem steht in der Verneinung „many“."
+ },
+ {
+  "tr": "„Nothing special. I'm going to read, watch a film and walk in the city.“",
+  "kind": "explain",
+  "de": "„Nothing special. I'm going to read, watch a film and walk in the city.“"
+ },
+ {
+  "tr": "„It's gray. Black is only in a small size now.“ — siyah olan küçük geldi.",
+  "kind": "explain",
+  "de": "„It's gray. Black is only in a small size now.“ — die schwarze war zu klein."
+ },
+ {
+  "tr": "„Then I'm going to buy the shirt and the sweater.“ — ayakkabı çok pahalı.",
+  "kind": "explain",
+  "de": "„Then I'm going to buy the shirt and the sweater.“ — die Schuhe sind zu teuer."
+ },
+ {
+  "tr": "„My favorite is blue, but I don't buy blue shirts.“ — seviyor ama almıyor.",
+  "kind": "explain",
+  "de": "„My favorite is blue, but I don't buy blue shirts.“ — sie mag es, kauft es aber nicht."
+ },
+ {
+  "tr": "„Today I am going to cook for six people.“ — iki saatin ve litrenin sayısı.",
+  "kind": "explain",
+  "de": "„Today I am going to cook for six people.“ — zwei ist die Zahl der Stunden und der Liter."
+ },
+ {
+  "tr": "„I'm going to visit my parents.“ — gelecek üç parçalı: am + going to + fiil.",
+  "kind": "explain",
+  "de": "„I'm going to visit my parents.“ — die Zukunft hat drei Teile: am + going to + Verb."
+ },
+ {
+  "tr": "„No, I'm going to take the bus.“ — soru arabayı soruyor, cevap otobüs diyor.",
+  "kind": "explain",
+  "de": "„No, I'm going to take the bus.“ — die Frage gilt dem Auto, die Antwort nennt den Bus."
+ },
+ {
+  "tr": "Önce istek, sonra fiş, sonra karar, en son para. İade hep bu sırayla gidiyor.",
+  "kind": "explain",
+  "de": "Zuerst der Wunsch, dann der Kassenbon, dann die Entscheidung, zuletzt das Geld. Eine Rückgabe läuft immer so."
+ },
+ {
+  "tr": "„How much time do I have? Two hours.“ — „time“ sayılamaz, o yüzden „how much“.",
+  "kind": "explain",
+  "de": "„How much time do I have? Two hours.“ — „time“ ist nicht zählbar, deshalb „how much“."
+ },
+ {
+  "tr": "Önce dükkânın saati sorulur ve söylenir, sonra otobüsünki. Aynı kalıp iki kez.",
+  "kind": "explain",
+  "de": "Zuerst wird nach der Zeit des Ladens gefragt und geantwortet, dann nach der des Busses. Dieselbe Wendung zweimal."
+ },
+ {
+  "tr": "„Can I try it on?“ — zamir „it“ iki parçanın ARASINA giriyor, „try on it“ olmaz.",
+  "kind": "explain",
+  "de": "„Can I try it on?“ — das Pronomen „it“ steht ZWISCHEN den beiden Teilen, „try on it“ geht nicht."
+ },
+ {
+  "tr": "„My favorite is blue, but I don't buy blue shirts.“ — yeşil kız kardeşinin rengi.",
+  "kind": "explain",
+  "de": "„My favorite is blue, but I don't buy blue shirts.“ — Grün ist die Farbe ihrer Schwester."
+ },
+ {
+  "tr": "„this yellow sweater is cheap — only ten dollars“ — yirmi gömlek, altmış ayakkabı.",
+  "kind": "explain",
+  "de": "„this yellow sweater is cheap — only ten dollars“ — zwanzig das Hemd, sechzig die Schuhe."
+ },
+ {
+  "tr": "„Buy a red sweater… I think that is a good idea.“ — yüzük pahalı, çikolata özel değil.",
+  "kind": "explain",
+  "de": "„Buy a red sweater… I think that is a good idea.“ — der Ring ist teuer, die Schokolade nichts Besonderes."
+ },
+ {
+  "tr": "„I like reading, and I don't like listening to the radio.“ — iki cümle karşıt duruyor.",
+  "kind": "explain",
+  "de": "„I like reading, and I don't like listening to the radio.“ — die beiden Sätze stehen gegeneinander."
+ },
+ {
+  "tr": "„I'd like to return this and get my money back.“ — satıcı renk öneriyor, Ela istemiyor.",
+  "kind": "explain",
+  "de": "„I'd like to return this and get my money back.“ — der Verkäufer bietet eine Farbe an, Ela will sie nicht."
+ },
+ {
+  "tr": "Önce zaman, sonra patates, sonra peynir, en son para. Sayılamayan ile sayılabilen birbirini izliyor.",
+  "kind": "explain",
+  "de": "Zuerst die Zeit, dann die Kartoffeln, dann der Käse, zuletzt das Geld. Unzählbares und Zählbares wechseln sich ab."
+ },
+ {
+  "tr": "bence",
+  "kind": "gloss.tr",
+  "de": "meiner Meinung nach"
+ },
+ {
+  "tr": "sana yakışıyor",
+  "kind": "gloss.tr",
+  "de": "es steht dir"
+ },
+ {
+  "tr": "üstünde denemek",
+  "kind": "gloss.tr",
+  "de": "anprobieren"
+ },
+ {
+  "tr": "geri",
+  "kind": "gloss.tr",
+  "de": "zurück"
+ },
+ {
+  "tr": "özel",
+  "kind": "gloss.tr",
+  "de": "besonders"
+ },
+ {
+  "tr": "park",
+  "kind": "gloss.tr",
+  "de": "Park"
+ },
+ {
+  "tr": "araba",
+  "kind": "gloss.tr",
+  "de": "Auto"
+ },
+ {
+  "tr": "favori",
+  "kind": "gloss.tr",
+  "de": "Lieblingsfarbe"
+ },
+ {
+  "tr": "görmek",
+  "kind": "gloss.tr",
+  "de": "sehen"
+ },
+ {
+  "tr": "kapalı",
+  "kind": "gloss.tr",
+  "de": "geschlossen"
+ },
+ {
+  "tr": "sormak",
+  "kind": "gloss.tr",
+  "de": "fragen"
+ },
+ {
+  "tr": "zavallı",
+  "kind": "gloss.tr",
+  "de": "arm"
+ },
+ {
+  "tr": "bir sürü",
+  "kind": "gloss.tr",
+  "de": "eine Menge"
+ },
+ {
+  "tr": "dinlemek",
+  "kind": "gloss.tr",
+  "de": "hören auf"
+ },
+ {
+  "tr": "başka bir",
+  "kind": "gloss.tr",
+  "de": "ein anderer"
+ },
+ {
+  "tr": "bir parça",
+  "kind": "gloss.tr",
+  "de": "ein Stück"
+ },
+ {
+  "tr": "çok değil",
+  "kind": "gloss.tr",
+  "de": "nicht viele"
+ },
+ {
+  "tr": "yeterince",
+  "kind": "gloss.tr",
+  "de": "genug"
+ },
+ {
+  "tr": "… arıyorum",
+  "kind": "gloss.tr",
+  "de": "ich suche …"
+ },
+ {
+  "tr": "… edeceğim",
+  "kind": "gloss.tr",
+  "de": "ich werde …"
+ },
+ {
+  "tr": "bu ne renk",
+  "kind": "gloss.tr",
+  "de": "welche Farbe hat das"
+ },
+ {
+  "tr": "kaç tane …",
+  "kind": "gloss.tr",
+  "de": "wie viele …"
+ },
+ {
+  "tr": "ne kadar …",
+  "kind": "gloss.tr",
+  "de": "wie viel …"
+ },
+ {
+  "tr": "yardım etmek",
+  "kind": "gloss.tr",
+  "de": "helfen"
+ },
+ {
+  "tr": "… etmeyeceğim",
+  "kind": "gloss.tr",
+  "de": "ich werde nicht …"
+ },
+ {
+  "tr": "öğleden sonra",
+  "kind": "gloss.tr",
+  "de": "am Nachmittag"
+ },
+ {
+  "tr": "… edecek misin",
+  "kind": "gloss.tr",
+  "de": "wirst du …"
+ },
+ {
+  "tr": "bunlar ne kadar",
+  "kind": "gloss.tr",
+  "de": "was kosten die"
+ },
+ {
+  "tr": "deniz kenarında",
+  "kind": "gloss.tr",
+  "de": "am Meer"
+ },
+ {
+  "tr": "ne düşünüyorsun",
+  "kind": "gloss.tr",
+  "de": "was denkst du"
+ },
+ {
+  "tr": "özel bir şey yok",
+  "kind": "gloss.tr",
+  "de": "nichts Besonderes"
+ },
+ {
+  "tr": "kırmızı bir araba",
+  "kind": "gloss.tr",
+  "de": "ein rotes Auto"
+ },
+ {
+  "tr": "okumayı seviyorum",
+  "kind": "gloss.tr",
+  "de": "ich lese gern"
+ },
+ {
+  "tr": "paramı geri almak",
+  "kind": "gloss.tr",
+  "de": "mein Geld zurückbekommen"
+ },
+ {
+  "tr": "… günü toplantım var",
+  "kind": "gloss.tr",
+  "de": "am … habe ich eine Besprechung"
+ },
+ {
+  "tr": "deneme kabini nerede",
+  "kind": "gloss.tr",
+  "de": "wo ist die Umkleidekabine"
+ },
+ {
+  "tr": "saat …'de işe başlarım",
+  "kind": "gloss.tr",
+  "de": "ich fange um … mit der Arbeit an"
+ },
+ {
+  "tr": "bunu değiştirebilir miyim",
+  "kind": "gloss.tr",
+  "de": "kann ich das umtauschen"
+ },
+ {
+  "tr": "üstümde deneyebilir miyim",
+  "kind": "gloss.tr",
+  "de": "kann ich es anprobieren"
+ }
+]
