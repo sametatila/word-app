@@ -125,6 +125,11 @@ export function ChoiceGame({ round, onDone }: GameProps<ChoiceRound>) {
               key={`${opt.text}-${i}`}
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
+              /* SECTIGIN SIK: `aria-pressed`. Cevaptan sonra dogru/yanlis
+                 `OptionMark`in erisilebilir adiyla soyleniyor, ama HANGISINI
+                 sectigin yalnizca zemin renginden okunuyordu. Android
+                 karsiligi `OptionButton` `chosen` (bkz. game/rounds). */
+              aria-pressed={picked === opt.text}
               transition={{ delay: i * 0.05 }}
               disabled={picked != null}
               onClick={() => choose(opt)}

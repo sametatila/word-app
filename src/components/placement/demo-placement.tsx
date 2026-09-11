@@ -4,6 +4,7 @@ import { useRouter } from "next/navigation";
 import { useMemo, useState } from "react";
 import { motion } from "framer-motion";
 import { XIcon } from "@/components/icons";
+import { OptionMark } from "@/components/games/option-mark";
 import { demoPlacementFor, estimateLevel } from "@/lib/placement-demo";
 import { courseOrDefault } from "@/lib/courses";
 import { readOnboardingPrefs, saveOnboardingPrefs } from "@/lib/onboarding-prefs";
@@ -149,14 +150,19 @@ export function DemoPlacement({ onClose }: { onClose?: () => void }) {
               type="button"
               initial={{ opacity: 0, y: 6 }}
               animate={{ opacity: 1, y: 0 }}
+              /* Hangisini sectigin ve hukmun kendisi yalnizca ZEMIN
+                 RENGINDEN okunuyordu. Android'in ornek yerlestirmesi
+                 (`ChoiceGame` `reveal`) simgeyi de ciziyor. */
+              aria-pressed={picked === o}
               transition={{ delay: i * 0.04 }}
               disabled={picked !== null}
               onClick={() => pick(o)}
-              className={`option px-3.5 py-3 text-left text-strong ${
+              className={`option flex items-center justify-between gap-2 px-3.5 py-3 text-left text-strong ${
                 picked === null ? "" : o === q.answer ? "option-correct" : picked === o ? "option-wrong" : ""
               }`}
             >
               {o}
+              <OptionMark state={picked === null ? null : o === q.answer ? "correct" : picked === o ? "wrong" : null} />
             </motion.button>
           ))}
         </div>

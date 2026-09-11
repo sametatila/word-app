@@ -140,6 +140,12 @@ export function MatchGame({ round, onDone }: GameProps<MatchRound>) {
                 type="button"
                 initial={{ opacity: 0, x: -12 }}
                 animate={{ opacity: 1, x: 0, scale: pulseId === w.id ? [1, 1.1, 1] : 1 }}
+                /* ESLESTIRMEDE SECIM: once soldan birini seciyorsun, sonra
+                   sagdan karsiligini. O ARADAKI secim yalnizca halka
+                   (`ring-2`) ile anlatiliyordu - ekran okuyucu kullanan biri
+                   hangisini bekletmekte oldugunu bilmiyordu. Android
+                   karsiligi `MatchCard` `selected: state === "sel"`. */
+                aria-pressed={isSelected}
                 transition={{ delay: i * 0.05, duration: 0.28 }}
                 disabled={isMatched}
                 onClick={() => chooseLeft(w.id)}
@@ -170,6 +176,7 @@ export function MatchGame({ round, onDone }: GameProps<MatchRound>) {
                 type="button"
                 initial={{ opacity: 0, x: 12 }}
                 animate={{ opacity: 1, x: 0, scale: pulseId === item.wordId ? [1, 1.1, 1] : 1 }}
+                aria-pressed={isSelected}
                 transition={{ delay: i * 0.05, duration: 0.28 }}
                 disabled={isMatched}
                 onClick={() => chooseRight(i)}

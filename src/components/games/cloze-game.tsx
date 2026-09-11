@@ -5,6 +5,7 @@ import { whyFor } from "@/lib/why";
 import { classifyTyping, miss } from "@/lib/errors";
 import { AnimatePresence, motion } from "framer-motion";
 import { GameShell } from "./game-shell";
+import { OptionMark } from "./option-mark";
 import { useRoundExit } from "./use-round-exit";
 import { matchesAnswer, type GameProps, type GameResult , meaningOf } from "./types";
 import type { Round } from "@/lib/types";
@@ -201,14 +202,26 @@ export function ClozeGame({ round, onDone }: GameProps<ClozeRound>) {
               key={`${opt}-${i}`}
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
+              /* SECTIGIN SIK: `aria-pressed`. Cevaptan sonra dogru/yanlis
+                 `OptionMark`in erisilebilir adiyla soyleniyor, ama HANGISINI
+                 sectigin yalnizca zemin renginden okunuyordu. Android
+                 karsiligi `OptionButton` `chosen` (bkz. game/rounds). */
+              aria-pressed={picked === opt}
               transition={{ delay: i * 0.05 }}
               disabled={picked != null}
               onClick={() => choose(opt)}
-              className={`option flex min-h-14 items-center justify-center px-4 py-3 text-center text-body ${state} ${
+              className={`option flex min-h-14 items-center justify-center gap-2 px-4 py-3 text-center text-body ${state} ${
                 picked === opt && !isAnswer ? "animate-shake" : ""
               }`}
             >
               {opt}
+              {/* DOGRU/YANLIS SIMGESI EKSIKTI. `option-mark` yazildiginda
+                  bosluk oyununun SIK dali atlanmisti: dogruluk yalnizca
+                  zeminin yesil/kirmiziligindan okunuyordu - renk koru biri
+                  ve ekran okuyucu kullanan biri hukmu HIC gormuyordu. Bes
+                  kardes oyunun hepsinde bu isaret var; Android'de de
+                  `OptionButton` simgeyi ciziyor. */}
+              <OptionMark state={picked == null ? null : isAnswer ? "correct" : picked === opt ? "wrong" : null} />
             </motion.button>
           );
         })}

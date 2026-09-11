@@ -311,6 +311,10 @@ export function PlacementTest({ initialLast, canRetake, retakeDays }: { initialL
           type="button"
           initial={{ opacity: 0, y: 6 }}
           animate={{ opacity: 1, y: 0 }}
+          /* OLCUM KIPI: dogruluk aciklanmaz, bu yuzden tek bilgi SECIM ve o da
+             yalnizca zemin renginden okunuyordu. Android karsiligi
+             `ChoiceGame` `reveal={false}` dali. */
+          aria-pressed={picked === i}
           transition={{ delay: i * 0.04 }}
           disabled={picked !== null}
           onClick={() => {
