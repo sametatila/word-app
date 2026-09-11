@@ -10396,3 +10396,78 @@ Mobil katalog dosyasının yorumları bu ölçümle düzeltildi; eski sayıları
 söylüyorlardı (kütüphane "160 tane: 60 okuma, 60 dinleme, 40 yazma" yazıyordu,
 gerçek 125 = beş becerinin her biri 25; İngilizce "A1/A2'nin 64 egzersizi"
 yazıyordu, gerçek 94).
+
+## §11.318 — Yarıçap ölçeğinin borcu sayılmaya başladı (167 → 88)
+
+`globals.css`'in "YARIÇAP ÖLÇEĞİ" bloğu beş basamağı ve **adların neden
+Tailwind'inkilerden farklı seçildiğini** yazıyor: Tailwind'in `rounded-lg`'sini
+ezmek "depodaki her `rounded-lg`'yi 8px'ten 20px'e sıçratırdı — hiçbiri gözden
+geçirilmeden". Yani gözden geçirme işi **bilerek ertelenmişti** ve erteleneni
+sayan bir şey yoktu.
+
+Ölçüm: `rounded-full` (mobil `radii.pill`, meşru) dışında **167 kullanım ölçek
+dışıydı** — `rounded-xl` 90, `rounded-2xl` 34, `rounded-lg` 33, `rounded-3xl` 4,
+`rounded-md` 4, `rounded-sm` 2. Mobil aynı ölçeğe birebir uyuyor
+(`radii` sm/md/lg/xl/xxl = chip/tile/panel/card/float), yani bu tek taraflı bir
+sapmaydı.
+
+Bu turda 79'u çevrildi (167 → 88), rol adına göre:
+
+- **ikon karosu** (h-12/h-14/h-20 kareler) → `rounded-tile`, mobil `radii.md`
+- **rozet ve satır içi etiket** → `rounded-chip`, mobil `radii.sm`
+- **iç panel, uyarı bloğu, liste satırı, buton** → `rounded-panel`, mobil `radii.lg`
+- **kartın kendisi ve kart iskeletleri** → `rounded-card`, mobil `radii.xl`
+  (mobil `SkeletonCard` doğrudan `Card`'ı sarıyor, yani iskeletin yarıçapı
+  kartın yarıçapı)
+- **giriş alanı / textarea** → `rounded-tile` (ölçeğin kendi tanımı: "ikon
+  karosu, giriş alanı, geri düğmesi")
+
+Kalan 88, `check:radius` ile **dosya başına taban** olarak kayıtlı —
+`i18n-hardcoded` ile aynı kalıp: artış hata, azalma serbest (tabanı düşürerek).
+Tek seferde hepsini çevirmek her yuvanın hangi rolde olduğuna bakmadan
+yapılamaz, o yüzden borç tur tur düşecek.
+
+İki kullanım **kayıtlı istisna**, sebepleriyle: 20 px'lik onay kutusu
+(`chip` 10 kareyi daireye çevirir ve daire radyo düğmesi demek; mobil de orada
+6 yazıyor) ve saç teli kalınlığındaki adım çubuğu (mobil aynı çubuğa 3 yazıyor).
+Kapı ölü istisnayı da bildiriyor — `check:colors`ta bu gerçek bir bulguydu
+(§11.316), aynı denetim buraya da kondu ve enjeksiyonla doğrulandı.
+
+## §11.319 — Aynı uygulamada üç farklı sohbet balonu
+
+Uygulamada üç sohbet balonu var: koç balonu, ders balonları ve rol yapma
+sınavı. Üçü de aynı şeyi yapıyor, ama biçimleri üç ayrıydı:
+
+| | gövde | kuyruk köşesi |
+|---|---|---|
+| mobil koç | `radii.lg` 20 | `radii.sm` 10 |
+| mobil ders | `radii.lg` 20 | **yok** |
+| mobil rol yapma | `radii.lg` 20 | **yok** |
+| web (üçü) | `rounded-2xl` **16** | `rounded-bl-sm` **4** / `-md` **6** |
+
+Mobilde kuyruk köşesini yalnız koç balonu yapıyordu; web üçünde de yapıyordu
+ama hem gövde hem kuyruk ölçek dışı değerlerdeydi. Dolgu da ayrışıktı: web
+`px-3.5 py-2` (14/8), mobil 12/10–11.
+
+Üçü tek biçime bağlandı — gövde panel (20), kuyruk chip (10), dolgu 12/10 —
+ve yön mobilin kendi koç balonu oldu, çünkü o zaten ölçeğe oturuyordu.
+Kapı §212 biçimi ölçüyor: webde sınıf adlarını, mobilde `borderRadius`
+değerlerini.
+
+## §11.320 — Rubrik geçme notu yedi yerde elle yazılıydı
+
+Serbest yazma ve monolog "doğru/yanlış" değil rubrikle ölçülüyor ve o tur
+**60**'ta geçilmiş sayılıyor — beceri egzersizinin bütününü "bitti" sayan
+`SKILL_DONE_PCT`ten (70) ayrı bir karar. Sayı yedi yerde elle yazılıydı: web'de
+iki oynatıcı (üç satır), mobilde dört yer (karar, puan rengi, tavsiye satırı).
+İkisi ayrışsaydı aynı metin bir platformda geçmiş, öbüründe kalmış sayılırdı.
+
+`RUBRIC_PASS_PCT` iki platformda aynı adla tanımlandı; §211 çağrı yerlerini
+okuyor ve **yedinciyi kapı buldu** (`writing-player` tavsiye satırında `< 60`),
+ben altı sanıyordum.
+
+**Kapımın kendi kusurunu repo'nun meta-kapısı yakaladı.** §211'i
+`/RUBRIC_PASS_PCT/.test(src)` diye yazmıştım; "kapilarda onek eslesmesi" kapısı
+(§118/§119 sınıfı: listeyi değil listenin kendisini ölçmek) bunu anında ihlal
+olarak bildirdi — `RUBRIC_PASS_PCT2` diye yeniden adlandırılan bir sabit hâlâ
+"var" sayılırdı. Desen `\b` ile sınırlandı.
