@@ -830,6 +830,12 @@ function OrderRound({ round, word, onDone, colors }: { round: Round; word: Round
   const pool = React.useMemo(() => (round.tokens ?? []).map((text, id) => ({ id, text })), [round.tokens]);
   const [placed, setPlaced] = useState<{ id: number; text: string }[]>([]);
   const [fb, setFb] = useState<Feedback | null>(null);
+  /* İPUCU YOKTU. Web dizme turunda "ipucu" düğmesi veriyor ve bedelini
+     kaydediyor (`hintUsed` → SRS kalitesi kırpılıyor); Androidde düğme hiç
+     yoktu, yani tıkanan öğrencinin tek çıkışı turu yanlış bitirmekti.
+     Sınavda görünmüyor (bkz. `game/noHints`). */
+  const [hintUsed, setHintUsed] = useState(false);
+  const noHints = useNoHints();
   const usedIds = new Set(placed.map((t) => t.id));
   function tap(t: { id: number; text: string }) {
     if (fb || usedIds.has(t.id) || placed.length >= answer.length) return;
@@ -844,9 +850,18 @@ function OrderRound({ round, word, onDone, colors }: { round: Round; word: Round
       speakTarget(t.text); // web: her yerleştirilen kelimeyi oku
     }
   }
+  /** İpucu sıradaki doğru kelimeyi yerleştirir — cümleyi çözmez, tıkanmayı açar. */
+  function useHint() {
+    if (fb || placed.length >= answer.length) return;
+    const needed = answer[placed.length];
+    const token = pool.find((t) => !usedIds.has(t.id) && t.text === needed);
+    if (!token) return;
+    setPlaced((prev) => [...prev, token]);
+    setHintUsed(true);
+  }
   const brd = fb ? (fb.correct ? colors.success : colors.danger) : colors.border;
   return (
-    <RoundShell sheet={fb ? <FeedbackFooter data={fb} onContinue={() => onDone(fb.correct, miss(fb.correct, classifyOrder(placed.map((x) => x.text), answer, tail), placed.map((x) => x.text).join(" ")))} colors={colors} /> : undefined}>
+    <RoundShell sheet={fb ? <FeedbackFooter data={fb} onContinue={() => onDone(fb.correct, { ...miss(fb.correct, classifyOrder(placed.map((x) => x.text), answer, tail), placed.map((x) => x.text).join(" ")), hintUsed })} colors={colors} /> : undefined}>
       <Prompt label={tx("rounds.put_sentence_in_order")} big={round.sentenceTr ?? word.tr} sub={round.sentenceEn ?? null} colors={colors} />
       <MascotMid mood={fb === null ? "idle" : fb.correct ? "thumbsup" : "sad"} hidden={!!fb} />
       <View>
@@ -856,6 +871,13 @@ function OrderRound({ round, word, onDone, colors }: { round: Round; word: Round
         <View style={{ flexDirection: "row", flexWrap: "wrap", gap: 8 }}>
           {pool.map((t) => <Tile key={t.id} label={t.text} dim={usedIds.has(t.id)} onPress={() => tap(t)} colors={colors} />)}
         </View>
+        {!fb && !noHints ? (
+          <View style={{ flexDirection: "row", gap: spacing.sm, marginTop: spacing.lg }}>
+            <PressableScale onPress={useHint} disabled={placed.length >= answer.length} style={{ backgroundColor: colors.surface2, borderRadius: radii.pill, paddingHorizontal: 18, paddingVertical: 9, opacity: placed.length >= answer.length ? 0.4 : 1 }}>
+              <Text variant="caption" color={colors.textMuted}>{tx("rounds.hint")}</Text>
+            </PressableScale>
+          </View>
+        ) : null}
       </View>
     </RoundShell>
   );
