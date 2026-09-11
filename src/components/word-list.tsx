@@ -211,6 +211,9 @@ export function WordList({
           value={term}
           onChange={(e) => setTerm(e.target.value)}
           placeholder={tx("words.search", { target: courseName(course, lang), nativeLang: LANG_LABEL[lang] })}
+          /* Arama kutusu Android ile aynı: ilk harfi büyütmüyor (aranan sözcük
+             İngilizce de olabilir ve sunucu küçük harfe indiriyor). */
+          autoCapitalize="none"
           className="option w-full px-4 py-3 text-base outline-none focus:border-[color:var(--color-brand)]"
         />
         {/* İKİ AYRI ŞERİT — Android'deki gibi. Tek şeritte, aralarında ince

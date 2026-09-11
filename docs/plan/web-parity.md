@@ -9119,3 +9119,29 @@ tekrarıydı:
    geçiyordu. Artık her dosyada kaç alanın ipucu taşıdığı sayılıyor.
 
 Beş enjeksiyonun beşi son hâlde yakalandı.
+
+## §11.277 — Telefonda web başka bir klavye açıyordu
+
+Web telefonda da kullanılıyor (ana ekrana eklenebilen PWA) ve aynı alanlar
+orada **başka davranıyordu**:
+
+| alan | Android | web (öncesi) |
+|---|---|---|
+| giriş adı | kelime başları büyük | büyütmüyor |
+| giriş e-postası | büyütmüyor, düzeltme kapalı | ilk harfi büyütüyor, düzeltme açık |
+| profil adı | kelime başları büyük | büyütmüyor |
+| kelime araması | büyütmüyor | ilk harfi büyütüyor |
+
+Küçük ama her girişi etkiliyor: "Ahmet" yerine "ahmet" kaydedilmesi ya da
+e-postanın "Ali@…" diye başlaması kullanıcıyı geri dönüp düzeltmeye zorluyor —
+ve e-postada bu, hesabın bulunamamasına kadar gidiyor. Dördü de Android'in
+davranışına eşlendi; sıfırlama ekranındaki e-posta da aynı ipucunu aldı.
+
+Eş çıkanlar: iki adımlı doğrulama kodu (`inputMode="numeric"` + Android'de
+`number-pad`), promosyon kodu (`characters` iki tarafta), kullanıcı adı
+(`none` + düzeltme kapalı iki tarafta).
+
+**§181** dört alanın davranışını çift olarak ve mutlak ölçütle denetliyor.
+Ölçüm alanın **kendi etiketine** bakıyor — dosyadaki başka bir alanın
+özniteliği ölçülenin yerine geçmesin diye (§180'de iki kez yaşanan hata). Beş
+enjeksiyonun beşi yakalandı.

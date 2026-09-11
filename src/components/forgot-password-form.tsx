@@ -75,6 +75,8 @@ export function ForgotPasswordForm({ turnstileSiteKey = "" }: { turnstileSiteKey
             placeholder={t("auth.email")}
             autoComplete="email"
             autoFocus
+            autoCapitalize="none"
+            spellCheck={false}
             className={authInputClass}
           />
           {error ? <AuthNotice tone="error">{error}</AuthNotice> : null}

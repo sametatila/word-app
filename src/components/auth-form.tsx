@@ -243,6 +243,12 @@ export function AuthForm({
             placeholder={t("auth.your_name_optional")}
             /* Sınır profil formuyla aynı: uç adı 40'a kırpıyor. */
             maxLength={40}
+            /* KLAVYE DAVRANIŞI ANDROID İLE AYNI. Telefonda web de kullanılıyor
+               (PWA) ve alanlar orada başka davranıyordu: ad ilk harfi büyük
+               yazmıyor, e-posta ilk harfi BÜYÜK yazıyor ve düzeltmeye
+               açıktı. Android baştan beri ada `words`, e-postaya `none` +
+               düzeltme kapalı diyor. */
+            autoCapitalize="words"
             autoComplete="name"
             className={authInputClass}
           />
@@ -253,6 +259,8 @@ export function AuthForm({
           type="email"
           required
           placeholder={t("auth.email")}
+          autoCapitalize="none"
+          spellCheck={false}
           autoComplete="email"
           className={authInputClass}
         />

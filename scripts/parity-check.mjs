@@ -6960,6 +6960,60 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   sameList("web otomatik doldurma", web, beklenen, "bulunan", "beklenen");
 }
 
+/* ── 181. klavye davranisi ────────────────────────────────────────────────
+ * Web telefonda da kullaniliyor (PWA) ve orada ayni alanlar BASKA
+ * davraniyordu: ad ilk harfi buyutmuyor, e-posta ve arama kutusu ilk harfi
+ * BUYUTUYOR ve duzeltmeye acikti. Android bastan beri ada `words`, e-postaya
+ * ve aramaya `none` diyor.
+ *
+ * Kucuk ama her girisi etkiliyor: "Ahmet" yerine "ahmet" yazilmasi ya da
+ * e-postanin "Ali@..." diye baslamasi kullaniciyi geri donup duzeltmeye
+ * zorluyor. Sayisal alanlar ve promosyon kodu zaten esti (`inputMode`,
+ * `autoCapitalize="characters"`).
+ *
+ * Olculen: dort alanin buyuk harf davranisi iki platformda ayni mi. */
+{
+  const strip = (x) => x.replace(/\/\*[\s\S]*?\*\//g, (m) => m.replace(/[^\n]/g, " ")).replace(/(^|[^:"'`\\])\/\/.*$/gm, "$1");
+  /* Alanin KENDI etiketine bakiliyor: dosyada baska bir alanin ozniteligi
+     olculen alanin yerine gecmesin (§180'in dersi). */
+  const etiket = (yol, deger) => {
+    const src = strip(read(yol));
+    const i = src.indexOf(`value={${deger}}`);
+    if (i < 0) return "";
+    const bas = src.lastIndexOf("<", i);
+    let derinlik = 0, tirnak = "";
+    for (let j = bas; j < src.length; j++) {
+      const c = src[j];
+      if (tirnak) { if (c === tirnak && src[j - 1] !== "\\") tirnak = ""; continue; }
+      if (c === '"' || c === "'" || c === "`") { tirnak = c; continue; }
+      if (c === "{") derinlik++;
+      else if (c === "}") derinlik--;
+      else if (c === ">" && derinlik === 0) return src.slice(bas, j + 1).replace(/\s+/g, " ");
+    }
+    return "";
+  };
+  const buyuk = (tag) => (tag.match(/autoCapitalize="(\w+)"/) ?? [])[1] ?? "yok";
+  const CIFT = [
+    ["giris adi", ["src/components/auth-form.tsx", "name"], ["mobile/src/screens/AuthScreen.tsx", "name"]],
+    ["giris e-postasi", ["src/components/auth-form.tsx", "email"], ["mobile/src/screens/AuthScreen.tsx", "email"]],
+    ["profil adi", ["src/components/profile-form.tsx", "displayName"], ["mobile/src/screens/SettingsScreen.tsx", "name"]],
+    ["kelime aramasi", ["src/components/word-list.tsx", "term"], ["mobile/src/screens/WordsScreen.tsx", "q"]],
+  ];
+  sameList(
+    "klavye buyuk harf davranisi",
+    CIFT.map(([ad, , [my, md]]) => ad + "=" + buyuk(etiket(my, md))),
+    CIFT.map(([ad, [wy, wd]]) => ad + "=" + buyuk(etiket(wy, wd))),
+  );
+  /* Iki taraf birden "yok" olursa esitlik saglanir: mutlak olcut de var. */
+  sameList(
+    "buyuk harf davranisi yazili",
+    CIFT.map(([ad, [wy, wd], [my, md]]) => ad + "=" + (buyuk(etiket(wy, wd)) !== "yok" && buyuk(etiket(my, md)) !== "yok" ? "yazili" : "eksik")),
+    CIFT.map(([ad]) => ad + "=yazili"),
+    "bulunan",
+    "beklenen",
+  );
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"

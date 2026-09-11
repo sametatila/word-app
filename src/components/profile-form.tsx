@@ -155,6 +155,9 @@ export function ProfileForm({
            TUTTUĞUNDAN ÇOK da. */
         maxLength={40}
         placeholder={t("settings.display_name")}
+        /* Ad alanı Android ile aynı: kelime başlarını büyütüyor (bkz.
+           `screens/SettingsScreen`). */
+        autoCapitalize="words"
         className="option w-full px-4 py-3 text-base outline-none focus:border-[color:var(--color-brand)]"
         />
       </label>
