@@ -8958,3 +8958,41 @@ kendi içindeydi.
 
 **§175** iki şeyi ölçüyor: eşiğin tanımının tek yerde olması ve arayüzde satır
 içi bir kopyasının kalmaması. Üç enjeksiyonun üçü de yakalandı.
+
+## §11.272 — Turun cevabı Android'de duyurulmuyordu
+
+Bu tur üç tarama temiz çıktı ve dördüncüsü en çok kullanılan yüzeyde bir
+eksik buldu.
+
+**Temiz çıkanlar** (kayda geçsin, bir daha aranmasın):
+
+- **Aynı cümle iki anahtarda**: sözlükte 41 çift var ama hiçbiri kusur değil.
+  Bir kısmı yapısal (`.one` tekil kardeşleri Türkçede zaten aynı), bir kısmı
+  kursa göre ikizlenmiş sınav stratejisi (`mockhow_de.*` / `mockhow_en.*` —
+  dördü ipucu sözcükleri yüzünden gerçekten farklı, dördü dilden bağımsız
+  olduğu için aynı), gerisi rastlantısal kısa etiket ("Gelen kutusu", "Modül
+  sınavı"). İkisini tek anahtara indirmek, ilgisiz iki yüzeyi birbirine
+  bağlamak olurdu: birinin metni değişince ötekinin de değişmesi *istenmeyen*
+  bir şey.
+- **Web'e özel sözlükte olup mobilin çağırdığı anahtar**: sıfır. (Bu sınıf bu
+  oturumda üç kez elle bulunmuştu; mobil `i18n:check` artık tutuyor.)
+- **Yer tutucusu doldurulmayan çağrı**: sıfır. Ekranda `{n}` yazan bir yer yok.
+
+**Bulgu:** her kelime turunun sonunda çıkan geri bildirim şeridi — "Doğru!" ya
+da "Cevap: …", gerekçe ve anlam — web'de `role="status" aria-live="polite"`
+taşıyor, mobilde **hiç taşımıyordu.** Ekran okuyucu kullanan biri cevabının
+doğru mu yanlış mı olduğunu öğrenmiyordu; renk, ikon ve maskot yalnız görene
+bir şey söylüyor. Hem de uygulamanın en çok kullanılan yüzeyinde.
+
+§157'nin taraması bunu kaçırdı ve sebebi öğretici: orada geçici **mesaj
+durumları** arandı (`setMsg`, `setFlash`), buradaki biçim ayrı — bir `Feedback`
+nesnesi ve onu çizen ayrı bir bileşen. **Aynı kusur, başka kalıpta.** Bir
+sınıfı bir kalıpta aramak, o sınıfı taradığını sanmaya yol açıyor.
+
+Bu turda eklediğim serbest cümle turunun sonuç satırı da aynı eksiği taşıyordu
+(o şerit `FeedbackFooter`dan geçmiyor, kendi bloğunu çiziyor) — ikisi birlikte
+kapatıldı.
+
+**§176** iki platformun geri bildirim şeridini ve serbest cümle sonucunu
+ölçüyor; ölçüm bileşenin kendi gövdesine bakıyor, dosyanın başka yerindeki bir
+duyuru onu yeşil yapmıyor. Üç enjeksiyonun üçü yakalandı.

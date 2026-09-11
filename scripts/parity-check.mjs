@@ -6671,6 +6671,52 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   sameList("pekismis esiginin satir ici kopyasi", kopya.length ? kopya : ["yok"], ["yok"], "bulunan", "beklenen");
 }
 
+/* ── 176. turun cevabi duyuruluyor mu ─────────────────────────────────────
+ * Uygulamanin EN COK KULLANILAN yuzeyi: her kelime turunun sonunda cikan
+ * geri bildirim seridi ("Dogru!" ya da "Cevap: …", gerekce, anlam). Webde bu
+ * serit `role="status" aria-live="polite"` tasiyor; mobilde HIC tasimiyordu -
+ * ekran okuyucu kullanan biri cevabinin dogru mu yanlis mi oldugunu
+ * ogrenmiyordu. Renk, ikon ve maskot yalniz GORENE bir sey soyluyor.
+ *
+ * §157'nin taramasi bunu kacirdi ve sebebi ogretici: orada gecici MESAJ
+ * durumlari arandi (`setMsg`, `setFlash`), buradaki bicim ayri - bir
+ * `Feedback` nesnesi ve onu cizen ayri bir bilesen. Ayni kusur, baska
+ * kaliptaydi.
+ *
+ * Olculen: iki platformun geri bildirim seridinin de duyurmasi ve serbest
+ * cumle turunun sonuc satirinin duyurmasi (o serit FeedbackFooter'dan
+ * gecmiyor, kendi blogunu ciziyor). */
+{
+  const strip = (x) => x.replace(/\/\*[\s\S]*?\*\//g, (m) => m.replace(/[^\n]/g, " ")).replace(/(^|[^:"'`\\])\/\/.*$/gm, "$1");
+  /* Bilesenin govdesi: dosyada baska bir yerdeki duyuru bunu yesil yapmasin. */
+  const govde = (yol, imza) => {
+    const src = strip(read(yol));
+    const i = src.indexOf(imza);
+    if (i < 0) return "";
+    const j = src.indexOf("\nfunction ", i + imza.length);
+    return src.slice(i, j < 0 ? src.length : j).replace(/\s+/g, " ");
+  };
+  const mobSerit = govde("mobile/src/game/rounds.tsx", "function FeedbackFooter(");
+  const webSerit = strip(read("src/components/games/round-sheet.tsx")).replace(/\s+/g, " ");
+  const mobSerbest = govde("mobile/src/game/rounds.tsx", "function FreeSentenceRound(");
+  const webSerbest = strip(read("src/components/games/free-sentence-game.tsx")).replace(/\s+/g, " ");
+
+  const mob = [
+    "geri bildirim seridi=" + (/accessibilityLiveRegion="polite"/.test(mobSerit) ? "duyuruyor" : "sessiz"),
+    /* Webde serbest cumle turu sonucu GameShell'in seridinden geciyor; mobilde
+       kendi blogu var, o yuzden iki tarafta ayri yerde olculuyor. */
+    "serbest cumle sonucu=" + (/accessibilityLiveRegion="polite"/.test(mobSerbest) ? "duyuruyor" : "sessiz"),
+  ];
+  const web = [
+    "geri bildirim seridi=" + (/role="status" aria-live="polite"/.test(webSerit) ? "duyuruyor" : "sessiz"),
+    "serbest cumle sonucu=" + (/<GameShell[\s/>]/.test(webSerbest) && /role="status" aria-live="polite"/.test(webSerit) ? "duyuruyor" : "sessiz"),
+  ];
+  sameList("tur geri bildirimi duyurusu", mob, web);
+  const beklenen = ["geri bildirim seridi=duyuruyor", "serbest cumle sonucu=duyuruyor"];
+  sameList("mobil tur geri bildirimi", mob, beklenen, "bulunan", "beklenen");
+  sameList("web tur geri bildirimi", web, beklenen, "bulunan", "beklenen");
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"

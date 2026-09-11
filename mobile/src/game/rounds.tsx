@@ -275,7 +275,14 @@ function FeedbackFooter({ data, onContinue, colors }: { data: Feedback; onContin
   const tone = ok ? colors.success : colors.danger;
   const speakText = data.speakDe ?? data.answerDe ?? undefined;
   return (
-    <View style={[{ gap: spacing.sm, backgroundColor: colors.surface, borderRadius: radii.xl, padding: spacing.md }, softShadow(tone, 16)]}>
+    /* SONUÇ DUYURULUYOR. Turun cevabı ("Doğru!" ya da "Cevap: …", gerekçesi
+       ve anlamı) yalnız GÖRSEL bir değişiklikti: renk, ikon ve maskot. Ekran
+       okuyucu kullanan biri cevabının doğru mu yanlış mı olduğunu HİÇ
+       öğrenmiyordu — hem de uygulamanın en çok kullanılan yüzeyinde. Web aynı
+       şeridi baştan beri duyuruyor (`round-sheet`: `role="status"
+       aria-live="polite"`). §157'nin taraması bunu kaçırmıştı: orada geçici
+       MESAJ durumları (`setMsg`) aranmıştı, buradaki biçim ayrı. */
+    <View accessibilityLiveRegion="polite" style={[{ gap: spacing.sm, backgroundColor: colors.surface, borderRadius: radii.xl, padding: spacing.md }, softShadow(tone, 16)]}>
       {/* Web VerdictBar: kompakt yatay şerit — maskot + tek akan satır (etiket +
           kalın Almanca cevap + · Türkçe), yanlışta ikinci küçük satır (neden). */}
       <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.sm, backgroundColor: ok ? colors.successSoft : colors.dangerSoft, borderRadius: radii.lg, borderWidth: 1.5, borderColor: tone, paddingVertical: spacing.sm, paddingHorizontal: spacing.sm, minHeight: 60 }}>
@@ -680,7 +687,7 @@ function FreeSentenceRound({ round, word, onDone, colors }: { round: Round; word
         ))}
       </View>
       {result && outcome ? (
-        <View style={{ paddingHorizontal: spacing.lg, gap: spacing.sm }}>
+        <View accessibilityLiveRegion="polite" style={{ paddingHorizontal: spacing.lg, gap: spacing.sm }}>
           <Text variant="bodyStrong" color={outcome.correct ? colors.successText : colors.dangerText}>
             {tx(outcome.correct ? "rounds.nice_sentence" : "rounds.look_again")} — {tx("rounds.score")} {result.score.overall}
             {"offline" in result && result.offline ? ` · ${tx("rounds.basic_check")}` : ""}
