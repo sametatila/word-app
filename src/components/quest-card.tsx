@@ -104,8 +104,17 @@ export function QuestCard() {
      kendisi üretiyordu. */
   if (board === undefined)
     return (
+      /*
+        `aria-hidden` KALKTI — canlı bölgeyi kendi elimizle iptal ediyordu.
+        Aynı etikette hem `aria-hidden` hem `role="status"`, `aria-busy` ve
+        `aria-label` vardı: `aria-hidden` ögeyi erişilebilirlik ağacından
+        TAMAMEN çıkarır, yani duyuru hiç ateşlenmiyor ve etiket hiç
+        okunmuyordu. §152'nin "yükleme duyurulsun" düzeltmesi bu kartta
+        yazıldığı gün ölüydü ve §156'nın kapısı bunu göremiyordu: o kapı
+        dosyada `aria-busy="true"` GEÇİYOR MU diye soruyor, ULAŞILABİLİR mi
+        diye değil.
+      */
       <section
-        aria-hidden
         role="status"
         aria-busy="true"
         aria-label={t("dailyquests.daily_quests")}
