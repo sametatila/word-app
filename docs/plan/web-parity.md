@@ -10515,3 +10515,70 @@ mobilde jeton yerine sayı, mobilde ölçek dışı sayı.
 `globals.css`'teki ölçek yorumu da düzeltildi — "hiçbiri gözden geçirilmeden"
 diyen cümle artık gözden geçirmenin yapıldığını ve kapının onu tuttuğunu
 söylüyor.
+
+## §11.322 — Tipografi ölçeği: 1243 yuvanın 291'i çevrildi, gerisi sayılıyor
+
+`globals.css`'in "TİPOGRAFİ ÖLÇEĞİ" bloğu durumu kendi cümlesiyle anlatıyor:
+mobilde her metin `<Text variant="…">` ile yazılıyor ve **serbest punto yok**;
+web'de ise punto her sayfada yeniden seçiliyordu ve "aynı işi gören iki başlık
+iki ayrı boyutta çıkıyordu". Sekiz basamaklı ölçek bunu kapatmak için yazıldı,
+`check:tokens` iki platformda birebir aynı olduğunu doğruluyor — ama aynı blok
+"ekranlar şerit şerit buraya taşınıyor" da diyor. Taşıma sürüyordu ve
+**taşınmayanı sayan bir şey yoktu** (§11.318'in yarıçaptaki durumuyla aynı).
+
+Ölçüm: jetonlar 237 yerde, Tailwind varsayılanları ve serbest puntolar
+**1243** yerde. Ölçekte 14 px yok (`text-sm` 504 kullanım, mobilde karşılığı
+15), 12 px yok (`text-xs` 461, mobilde 12.5), 18 px ve 24 px hiçbir basamağa
+karşılık gelmiyor.
+
+Bu turda 291'i çevrildi (1243 → 943): yönetim panoları (122), tüm serbest
+puntolar (`text-[11px]` 56, `text-[10px]` 13, `text-[15px]` 7, `text-[13px]` 4)
+ve üçten az kullanımı olan 49 dosya. Kalanı `check:type` tabanında.
+
+Çevirme mekanik değil, çünkü jeton puntoyu **ve ağırlığı** birlikte taşıyor:
+`text-sm font-bold` → `strong` (15/700), yalnız `text-sm` → `body` (15/500),
+`text-xs` büyük harfle → `micro` (11/700), ağırlıklı `text-xs` → `caption`
+(12.5/600). Büyük harfli etiketin 11 px olması bir seçim değil, uygulamanın
+kendi çoğunluğu: `text-micro uppercase` 9 + `text-[11px] uppercase` 9 karşı
+`text-caption uppercase` 2.
+
+**Kapımın ilk hâli seksen kullanımı hiç görmüyordu.** Desenin sonuna `\b`
+koymuştum; `text-[11px]`in sonundaki `]`den sonra `"` geliyor ve ikisi de
+kelime karakteri olmadığı için `\b` orada tutmuyor. Bunu ancak seksenini birden
+çevirip **sayacın yalnız 2 düştüğünü** görünce anladım. `(?![\w-])` ile
+düzeltildi. Bu turlarda kaçıncı "kapı komşuyu/hiçbir şeyi ölçüyor" vakası
+olduğu artık ayrı bir sınıf sayılabilir (§184, §208, §11.312).
+
+**Toplu çevirme satır satır çalıştığı için iki dallı satırlarda yarım kalıyordu.**
+`compact ? "text-xs" : "text-sm"` gibi yedi satırda bir dal jetona geçip öteki
+Tailwind'de kalmıştı ve aynı satırdaki ağırlık sınıfı da silinmişti — yani iki
+dal iki ayrı ölçekten okuyor hâle gelmişti. Yedisi de elle eşitlendi; "jeton
+sınıfı ile ölçek dışı sınıf AYNI satırda" taraması sıfır veriyor.
+
+Kayıtlı istisna listesi bugün **boş** ve bu da bir sonuç: `screen-diag`in
+`text-[11px]`i "geliştirici katmanı" diye muaf tutulmuştu, sonra o satır da
+ölçeğe geçti ve kapı istisnanın karşılıksız kaldığını bildirdi. Muafiyet
+gerekmiyordu. Ölü istisna denetimi üçüncü turda üçüncü kez işe yaradı
+(`check:colors` §11.316, `check:radius` §11.321, şimdi `check:type`).
+
+## §11.323 — Boşluk ölçeği: kapı YAZILMADI, sebebi kayda değer
+
+Aynı denetim boşluk ekseninde denendi ve **yazılmaması gerektiği** ortaya çıktı.
+
+`globals.css` "boşluk ölçeğine ayrı token GEREKMİYOR: mobilin `spacing`i
+(4/8/12/16/20/28/40) Tailwind'in 0.25rem tabanına birebir oturuyor" diyor.
+Bu cümle ölçeğin **eşlemesi** hakkında ve doğru; kullanım disiplini hakkında
+bir şey söylemiyor.
+
+Ölçüm: mobilde jeton kullanımı ~1611, ham sayı ~430 ve bunların ~320'si ölçek
+dışı (6 → 83 kez, 10 → 41, 14 → 40, 15 → 34, ayrıca 2/3/5/9/11/13/17/18/22).
+Yani **referans platformun kendisi** ölçeğin dışında yazıyor — ve çoğu bilinçli
+optik ayar (bir rozeti hizalayan `marginTop: 2`, sıkı bir satırdaki `gap: 6`,
+48 px'lik bir düğmeyi veren `paddingVertical: 15`).
+
+Yarıçapta durum tersiydi: orada belgelenmiş beş basamak vardı ve mobil ona
+**birebir** uyuyordu, yani sapma tek taraflıydı ve ölçülebilirdi. Burada bir
+kapı 320 bilinçli ayarı ihlal diye bildirirdi; niyeti okuması gerekir ve
+"niyeti okuması gereken kapı yazılmaz" (§11.254'ün dersi). Ayrışma varsa
+yüzey yüzey, karşılığına bakarak bulunur — sohbet balonlarının dolgusunda
+(§11.319) böyle bulundu.
