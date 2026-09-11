@@ -49,9 +49,7 @@ export function ActiveSessions({ colors }: { colors: Palette }) {
   const satirlar: ActiveSession[] = result.state === "ok" ? result.rows : [];
 
   return (
-    <View style={{ marginTop: spacing.md, gap: spacing.sm }}>
-      <Text variant="bodyStrong">{t("sessions.title")}</Text>
-
+    <View style={{ gap: spacing.sm }}>
       {satirlar.map((s, i) => (
         <View
           key={s.id}
@@ -92,7 +90,8 @@ export function ActiveSessions({ colors }: { colors: Palette }) {
         </PressableScale>
       </View>
 
-      {msg ? <Text variant="caption" color={colors.text}>{msg}</Text> : null}
+      {/* Sonuç duyuruluyor — bkz. `profile-form` içindeki not. */}
+      {msg ? <Text accessibilityLiveRegion="polite" variant="caption" color={colors.text}>{msg}</Text> : null}
     </View>
   );
 }

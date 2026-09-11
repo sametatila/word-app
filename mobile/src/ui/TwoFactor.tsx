@@ -61,7 +61,7 @@ export function TwoFactor({ colors }: { colors: Palette }) {
 
   if (!open) {
     return (
-      <View style={{ marginTop: spacing.md, gap: spacing.xs }}>
+      <View style={{ gap: spacing.xs }}>
         {note ? (
           <View style={{ backgroundColor: colors.successSoft, borderRadius: radii.md, padding: spacing.md }}>
             <Text variant="caption" color={colors.successText}>{note}</Text>
@@ -69,7 +69,6 @@ export function TwoFactor({ colors }: { colors: Palette }) {
         ) : null}
         <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md }}>
           <View style={{ flex: 1 }}>
-            <Text variant="bodyStrong">{t("twofa.title")}</Text>
             <Text variant="caption" color={colors.textMuted}>
               {t(enabled ? "twofa.on_sub" : "twofa.off_sub")}
             </Text>
@@ -89,8 +88,7 @@ export function TwoFactor({ colors }: { colors: Palette }) {
   }
 
   return (
-    <View style={{ marginTop: spacing.md, gap: spacing.sm }}>
-      <Text variant="bodyStrong">{t("twofa.title")}</Text>
+    <View style={{ gap: spacing.sm }}>
       {enabled ? null : (
         <View style={{ backgroundColor: colors.dangerSoft, borderRadius: radii.md, padding: spacing.md }}>
           <Text variant="caption" color={colors.dangerText}>{t("twofa.mail_warning")}</Text>

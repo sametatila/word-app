@@ -1,13 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { View, Platform } from "react-native";
 import { t } from "../lib/i18n";
 import { Text } from "./Text";
 import { PressableScale } from "./PressableScale";
 import { spacing, radii, type Palette } from "../theme";
-import { ChangePassword } from "./ChangePassword";
-import { TwoFactor } from "./TwoFactor";
-import { ActiveSessions } from "./ActiveSessions";
-import { listAccounts, unlinkAccount, type LinkedAccount } from "../lib/accountLinks";
+import { unlinkAccount, type LinkedAccount } from "../lib/accountLinks";
 import { googleLink, googleSupported } from "../lib/googleAuth";
 import { appleLink, appleSupported } from "../lib/appleAuth";
 import { useAuth } from "../lib/AuthContext";
@@ -26,17 +23,20 @@ const etiket = (p: string) => (AD[p] && AD[p].includes(".") ? t(AD[p]) : (AD[p] 
  * SON YÖNTEM SÖKÜLEMEZ: sunucu da reddediyor ama düğme hiç gösterilmiyor —
  * yapılamayacak bir şeyi teklif edip hatayla geri çevirmek daha kötü.
  */
-export function LinkedAccounts({ colors }: { colors: Palette }) {
+export function LinkedAccounts({
+  colors,
+  accounts,
+  onChanged,
+}: {
+  colors: Palette;
+  /** Bağlı yöntemler; `null` henüz gelmedi demek. Listeyi EKRAN okuyor. */
+  accounts: LinkedAccount[] | null;
+  /** Bağlama/kaldırma sonrası listeyi tazelemesi için ekrana haber. */
+  onChanged: () => void | Promise<void>;
+}) {
   const { user, refresh } = useAuth();
-  const [accounts, setAccounts] = useState<LinkedAccount[] | null>(null);
   const [busy, setBusy] = useState<string | null>(null);
   const [msg, setMsg] = useState<string | null>(null);
-
-  useEffect(() => {
-    let alive = true;
-    listAccounts().then((a) => { if (alive) setAccounts(a); });
-    return () => { alive = false; };
-  }, []);
 
   async function bagla(provider: "google" | "apple") {
     setBusy(provider);
@@ -46,7 +46,7 @@ export function LinkedAccounts({ colors }: { colors: Palette }) {
     const r = provider === "google" ? await googleLink(user?.email ?? null) : await appleLink(user?.email ?? null);
     setBusy(null);
     if (r.ok) {
-      setAccounts(await listAccounts());
+      await onChanged();
       await refresh();
       setMsg(t("links.linked"));
       return;
@@ -64,7 +64,7 @@ export function LinkedAccounts({ colors }: { colors: Palette }) {
     const r = await unlinkAccount(provider);
     setBusy(null);
     if (r === "ok") {
-      setAccounts(await listAccounts());
+      await onChanged();
       setMsg(t("links.unlinked"));
       return;
     }
@@ -108,21 +108,8 @@ export function LinkedAccounts({ colors }: { colors: Palette }) {
           </View>
         );
       })}
-      <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.xs }}>{t("links.hint")}</Text>
-      {msg ? <Text variant="caption" color={colors.text}>{msg}</Text> : null}
+      {msg ? <Text accessibilityLiveRegion="polite" variant="caption" color={colors.text}>{msg}</Text> : null}
 
-      {/* Parola değiştirme YALNIZ parolası olan hesapta. Sağlayıcı listesi
-          zaten burada; ikinci bir istek atmaya gerek yok. Yalnız Google/Apple
-          ile girmiş birine "şu anki parolan" sormak anlamsız olurdu. */}
-      {accounts.some((a) => a.providerId === "credential") ? <ChangePassword colors={colors} /> : null}
-      {/* İki adımlı doğrulama da parolalı hesaba bağlı: açma ve kapatma parola
-          istiyor ve koruduğu şey zaten parolalı giriş. */}
-      {accounts.some((a) => a.providerId === "credential") ? <TwoFactor colors={colors} /> : null}
-
-      {/* Etkin oturumlar HER hesapta: yalnız Google ile giren biri de
-          telefonunu kaybedebilir. Parola değiştirmenin aksine bu, giriş
-          yöntemine bağlı değil. */}
-      <ActiveSessions colors={colors} />
     </View>
   );
 }

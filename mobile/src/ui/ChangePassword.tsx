@@ -61,7 +61,7 @@ export function ChangePassword({ colors }: { colors: Palette }) {
 
   if (!open) {
     return (
-      <View style={{ marginTop: spacing.md, gap: spacing.xs }}>
+      <View style={{ gap: spacing.xs }}>
         {done ? (
           <View style={{ backgroundColor: colors.successSoft, borderRadius: radii.md, padding: spacing.md }}>
             <Text variant="caption" color={colors.successText}>{t("changepw.done")}</Text>
@@ -69,7 +69,6 @@ export function ChangePassword({ colors }: { colors: Palette }) {
         ) : null}
         <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md }}>
           <View style={{ flex: 1 }}>
-            <Text variant="bodyStrong">{t("changepw.title")}</Text>
             <Text variant="caption" color={colors.textMuted}>{t("changepw.sub")}</Text>
           </View>
           <PressableScale
@@ -86,8 +85,7 @@ export function ChangePassword({ colors }: { colors: Palette }) {
   }
 
   return (
-    <View style={{ marginTop: spacing.md, gap: spacing.sm }}>
-      <Text variant="bodyStrong">{t("changepw.title")}</Text>
+    <View style={{ gap: spacing.sm }}>
       <TextInput
         value={current} onChangeText={setCurrent} secureTextEntry
         placeholder={t("changepw.current")} placeholderTextColor={colors.textFaint} style={input}
