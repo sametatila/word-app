@@ -196,11 +196,19 @@ export const DEFAULT_PREMIUM_CONFIG: PremiumConfig = {
 };
 
 /**
- * Kilitlenen yetenekler — paywall ve kilit metinlerinin tek listesi.
+ * Kilitlenen yetenekler — ANAHTARLARI sözleşme, değerleri değil.
  *
- * `gate` alanı telemetriye giden ad (`premium_gate` olayının `kind`'ı) ve aynı
- * zamanda kota anahtarı ön eki. Buraya eklenen her yetenek üç platformda da
- * aynı adla ölçülüyor.
+ * Anahtar üç şey birden: telemetriye giden ad (`premium_gate` olayının
+ * `kind`'ı), kota anahtarı ön eki ve `PremiumGate` tipinin kendisi. Buraya
+ * eklenen her yetenek üç platformda da aynı adla ölçülüyor.
+ *
+ * DEĞERLER ARAYÜZE GİTMİYOR ve gitmemeli. Türkçe yazılı duruyorlar ve hiçbir
+ * bileşen onları okumuyor (ölçüldü: `PREMIUM_GATES` yalnız bu dosya, `index`
+ * ve bir yorumda geçiyor) — paywall'ın söylediği her satır ANAHTAR + PARAMETRE
+ * olarak dönüyor (hemen aşağıda, `premiumScopeLines`), çeviri katmanı istemcide
+ * kalıyor. Buradaki metinler yalnız okuyan insana "bu kapı neydi" diyen
+ * etiketler. Biri bunları ekrana basarsa arayüzü Almanca olan kullanıcı Türkçe
+ * görür; o yüzden yeni bir kapı eklerken metni buraya değil sözlüğe yaz.
  */
 export const PREMIUM_GATES = {
   mock_exam: "Deneme sınavları",
