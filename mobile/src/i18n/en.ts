@@ -1162,6 +1162,8 @@ export const en: Record<string, string> = {
   "summary.accuracy": "Accuracy",
   "summary.words": "Words",
   "summary.streak": "Streak",
+  "summary.stopped": "That's it for now",
+  "summary.back_to_round": "Back to the round",
   "session.save_failed": "This round's answers couldn't be saved. The round continues.",
   "session.save_queued": "Your answers can't be saved — they'll go out automatically when you're back online.",
   "sessions.title": "Active sessions",

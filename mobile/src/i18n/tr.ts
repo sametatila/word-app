@@ -1167,6 +1167,8 @@ export const tr: Record<string, string> = {
   "summary.accuracy": "Doğruluk",
   "summary.words": "Kelime",
   "summary.streak": "Seri",
+  "summary.stopped": "Buraya kadar",
+  "summary.back_to_round": "Tura geri dön",
   "session.save_failed": "Bu turun cevapları kaydedilemedi. Tur devam ediyor.",
   "session.save_queued": "Cevapların kaydedilemiyor — bağlantın döndüğünde otomatik gönderilecek.",
   "sessions.title": "Etkin oturumlar",

@@ -181,10 +181,7 @@ export const trWeb: Record<string, string> = {
   "session.load_failed_sub": "Birkaç saniye sonra tekrar denemek genelde yetiyor.",
   "session.offline": "İnternet bağlantısı yok",
   "session.offline_sub": "Bağlantını kontrol et.",
-  "summary.stopped": "Buraya kadar",
-  "summary.round_done": "Tur tamamlandı",
   "summary.scheduled": "Tekrar planına alındı",
-  "summary.back_to_round": "Tura geri dön",
   /* Oyun adları (web'e özel üçü) ve günlük plan metinleri. Plan sunucuda
      kuruluyor, o yüzden çeviri de orada. */
   "games.intro": "Yeni Kelime",
@@ -228,8 +225,6 @@ export const trWeb: Record<string, string> = {
   "weekly.load_failed": "Sınav şu an yüklenemedi. Biraz sonra tekrar dene.",
   "weekly.back_to_learn": "Öğren'e dön",
   "weekly.start_round": "Tura başla",
-  "weekly.your_score": "Kullanım skorun",
-  "weekly.week_n": "hafta {n}",
   "challenge.back_to_normal": "Normal tura dön",
   "walk.title": "Yürürken",
   "walk.paused": "Duraklatıldı",

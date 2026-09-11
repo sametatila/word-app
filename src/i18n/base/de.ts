@@ -1164,6 +1164,8 @@ export const deBase: Record<string, string> = {
   "summary.accuracy": "Trefferquote",
   "summary.words": "Wörter",
   "summary.streak": "Serie",
+  "summary.stopped": "Bis hierher",
+  "summary.back_to_round": "Zurück zur Runde",
   "session.save_failed": "Die Antworten dieser Runde konnten nicht gespeichert werden. Die Runde läuft weiter.",
   "session.save_queued": "Deine Antworten lassen sich nicht speichern — sie gehen automatisch raus, sobald du wieder online bist.",
   "sessions.title": "Aktive Sitzungen",
