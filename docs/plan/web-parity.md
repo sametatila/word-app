@@ -8314,3 +8314,30 @@ Ayrıca bu turda paralel oturumun ayarlar bölümü yeniden düzenlemesiyle
 derleme hatasından çıktı ve geri alındı. Ortak ağaçta **yedek al-geri yükle**
 yöntemi yalnız kendi dosyalarımda güvenli; onların dokunduğu dosyalar bu
 turun commit'ine alınmadı.
+
+## §11.252 — Geri alınamayan adımın önünde bir soru olmalı
+
+Android'de yıkıcı ya da geri alınamayan her adımın önünde `ConfirmDialog`
+duruyor. Web'de altı adımın **üçünde** yoktu ve ikisi bundan da kötüydü:
+
+- **Sınav ve yerleştirmede çıkış düğmesi bile yoktu.** Test başlayınca tek
+  çıkış tarayıcının geri düğmesiydi; yani kullanıcı bitirene kadar kapanda
+  kalıyordu. Aynı kapan deneme sınavında daha önce kapatılmıştı — bu iki
+  yüzey o turda gözden kaçmış.
+- **Yürüyüş modunda "Bitir" tek dokunuşta turu kapatıyordu.** Android aynı
+  yerde soruyor, çünkü yürüyüşte ekrana bakılmıyor ve kazara basmak kolay.
+- **Hesap silmede** formun iki kapısı (parola + onay kutusu) vardı ama düğme
+  doğrudan siliyordu. Android üçüncü bir adım daha soruyor; sebebi şu: ilk
+  iki kapı sayfaya GİRERKEN geçiliyor, karar düğmeye basıldığı an veriliyor.
+
+Dikkat çeken yan: **metinlerin hepsi zaten ortak sözlükte duruyordu**
+(`exam.quit_title`, `exam.quit_body`, `plc.quit_title`, `plc.quit_body`,
+`walkmode.end_walk`, `walkmode.back_message`, `deleteaccount.we_re_asking_*`).
+Yani eksik olan çeviri değil, çeviriyi kullanan yüzeydi — sözlükte çağıransız
+duran bir anahtar, yapılmamış bir işin en sessiz izi.
+
+**§158** altı çifti anahtarla ölçüyor (benzer cümle değil, aynı anahtar), ayrı
+bir mutlak ölçütle "iki taraf da sormuyor" hâlini yakalıyor ve sınav/deneme/
+yerleştirmede onay kutusunu açan düğmenin varlığını da denetliyor — kutu olup
+düğmesi olmayan bir onay kullanıcıyı yine kapanda bırakır. Altı enjeksiyonun
+altısı da yakalandı.

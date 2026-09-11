@@ -7,6 +7,7 @@ import { motion } from "framer-motion";
 import { COURSE_KEY, readLocal, speakSegments, stopSpeaking, type SpeechSegment } from "@/components/speak-button";
 import { useT, useLang } from "@/lib/i18n/client";
 import { MicDisclosure } from "@/components/mic-disclosure";
+import { ConfirmDialog } from "@/components/confirm-dialog";
 import { hasMicConsent, setMicConsent } from "@/lib/mic-consent";
 import type { NativeLang } from "@/lib/i18n/dict";
 import { courseName } from "@/lib/courses";
@@ -350,6 +351,8 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
    * mikrofon çalışıyor, ama kullanıcı cebe koyunca ne ışık ne kazara dokunma.
    */
   const [screenDark, setScreenDark] = useState(false);
+  /** Tur ortasında "Bitir" onayı açık mı. */
+  const [quit, setQuit] = useState(false);
   /** Karanlık katmandan çıkış: kısa sürede üç dokunuş (cepte kazara açılmasın). */
   const darkTaps = useRef<number[]>([]);
   /**
@@ -1862,7 +1865,22 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
       <button onClick={pause} className={`btn btn-ghost ${browserRef.current ? "mt-2" : "mt-6"} w-full px-5 py-4 text-base`}>
         {t("walk.pause")}
       </button>
-      <button onClick={leave} className="btn btn-ghost mt-2 w-full px-5 py-3">
+      {/* TUR ORTASINDA SORULUYOR. "Bitir" tek dokunuşta turu kapatıyordu;
+          Android aynı yerde soruyor ("Bu tur yarım kalır; öğrendiklerin
+          kaydedilir") çünkü yürüyüşte düğmeye kazara basmak kolay ve tur
+          sesli sürdüğü için ekrana bakılmıyor. Bitmiş turun "Bitir"i
+          sorulmuyor: orada bitirecek bir şey kalmadı -- Android'de de
+          koşul `inSession`. */}
+      <ConfirmDialog
+        open={quit}
+        title={t("walkmode.end_walk")}
+        message={t("walkmode.back_message")}
+        confirmLabel={t("common.finish")}
+        destructive
+        onConfirm={() => { setQuit(false); leave(); }}
+        onCancel={() => setQuit(false)}
+      />
+      <button onClick={() => setQuit(true)} className="btn btn-ghost mt-2 w-full px-5 py-3">
         {t("common.finish")}
       </button>
     </Frame>

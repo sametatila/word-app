@@ -1,13 +1,15 @@
 "use client";
 
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { GameSwitch } from "@/components/game-switch";
 import { NoHints } from "@/components/games/no-hints";
 import { FitBox } from "@/components/fit-box";
 import { speakGerman, stopSpeaking } from "@/components/speak-button";
-import { SpeakerIcon, MicIcon, CheckIcon } from "@/components/icons";
+import { SpeakerIcon, MicIcon, CheckIcon, XIcon } from "@/components/icons";
+import { ConfirmDialog } from "@/components/confirm-dialog";
 import { AssessmentCard } from "@/components/feedback/assessment-card";
 import { TokenDiff } from "@/components/feedback/diff-text";
 import { askAssess, fallbackAssessment, type FallbackAssessment } from "@/lib/assess-client";
@@ -89,10 +91,13 @@ const empty = () => ({ correct: 0, total: 0 });
 export function ExamPlayer({ level, module }: { level: CefrLevel; module: number | null }) {
   const course = useCourse();
   const t = useT();
+  const router = useRouter();
   const [phase, setPhase] = useState<Phase>("cover");
   const [paper, setPaper] = useState<ExamPaper | null>(null);
   const [section, setSection] = useState<ExamSectionId>("vocab");
   const [left, setLeft] = useState(0);
+  /** Sınavdan çıkış onayı açık mı. */
+  const [quit, setQuit] = useState(false);
   const [idx, setIdx] = useState(0);
   const [qIdx, setQIdx] = useState(0);
   const [picked, setPicked] = useState<number | null>(null);
@@ -405,13 +410,38 @@ export function ExamPlayer({ level, module }: { level: CefrLevel; module: number
   const doneItems = section === "reading" || section === "listening" ? qIdx : idx;
   const header = (
     <div className="mb-3">
-      <div className="flex items-center justify-between text-xs font-semibold">
+      {/* ÇIKIŞ YOLU YOKTU: sınav başlayınca kullanıcı bitirene kadar kapana
+          kısılıyordu, tek çıkış tarayıcının geri düğmesiydi -- deneme
+          sınavında kapatılan aynı kapan (bkz. `mock-exam-player`). Android'de
+          başlıkta kapat düğmesi var ve "cevapların kaydedilmiyor" diye
+          soruyor; metin sözlükte duruyordu, web'de onu kullanan yoktu.
+          Burada uyarı DOĞRU: deneme sınavının tersine bu sınav ara kayıt
+          tutmuyor, çıkan baştan başlar. */}
+      <ConfirmDialog
+        open={quit}
+        title={t("exam.quit_title")}
+        message={t("exam.quit_body")}
+        confirmLabel={t("common.exit")}
+        destructive
+        onConfirm={() => { setQuit(false); router.push("/immersion"); }}
+        onCancel={() => setQuit(false)}
+      />
+      <div className="flex items-center justify-between gap-3 text-xs font-semibold">
         <span>
           Teil {teil}/{list.length} · <span lang="de">{SECTION_TITLE_DE[section]}</span>
         </span>
         <span className="tabular-nums" style={{ color: left < 120 ? "var(--color-rose)" : undefined }}>
           {mm}:{ss}
         </span>
+        <button
+          type="button"
+          onClick={() => setQuit(true)}
+          aria-label={t("exam.quit_title")}
+          className="pressable flex h-8 w-8 shrink-0 items-center justify-center rounded-tile"
+          style={{ background: "var(--surface-2)" }}
+        >
+          <XIcon size={16} />
+        </button>
       </div>
       <div className="mt-1.5 h-1 overflow-hidden rounded-full surface-2">
         <div

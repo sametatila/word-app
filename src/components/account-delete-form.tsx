@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { forgetDeviceStorage } from "@/components/session-keeper";
 import { AuthNotice, AuthShell, authInputClass } from "@/components/auth-shell";
+import { ConfirmDialog } from "@/components/confirm-dialog";
 import { authApi } from "@/lib/auth/api";
 import { useT } from "@/lib/i18n/client";
 
@@ -28,6 +29,14 @@ export function AccountDeleteForm({ email }: { email: string | null }) {
   const [error, setError] = useState<string | null>(null);
   const [needsFresh, setNeedsFresh] = useState(false);
   const [done, setDone] = useState(false);
+  /**
+   * SON KEZ SORULUYOR. Formun iki kapısı (parola + onay kutusu) vardı ama
+   * düğmeye basıldığı anda hesap gidiyordu. Android'de aynı yerde üçüncü bir
+   * adım var ve sebebi şu: ilk iki kapı sayfaya GİRERKEN geçiliyor, silme
+   * kararı ise düğmeye basıldığı an veriliyor -- arada geçen sürede fikir
+   * değişmiş olabilir. Geri alınamayan tek eylem bu.
+   */
+  const [confirm, setConfirm] = useState(false);
 
   useEffect(() => {
     authApi<Account[]>("list-accounts").then((r) => {
@@ -35,8 +44,14 @@ export function AccountDeleteForm({ email }: { email: string | null }) {
     });
   }, []);
 
-  async function submit(e: React.FormEvent) {
+  function submit(e: React.FormEvent) {
     e.preventDefault();
+    if (busy || !agree) return;
+    setConfirm(true);
+  }
+
+  async function run() {
+    setConfirm(false);
     if (busy || !agree) return;
     setBusy(true);
     setError(null);
@@ -119,6 +134,17 @@ export function AccountDeleteForm({ email }: { email: string | null }) {
         <li>{t("deleteaccount.your_account_and_your_email")}</li>
       </ul>
       <p className="muted mb-4 text-xs">{t("deleteaccount.subscription_cancel_play")}</p>
+
+      <ConfirmDialog
+        open={confirm}
+        title={t("deleteaccount.we_re_asking_one_last_time")}
+        message={t("deleteaccount.your_account_and_all_your_data")}
+        confirmLabel={t("deleteaccount.yes_delete")}
+        cancelLabel={t("common.discard")}
+        destructive
+        onConfirm={() => void run()}
+        onCancel={() => setConfirm(false)}
+      />
 
       <form onSubmit={submit} className="space-y-3">
         {hasPassword ? (

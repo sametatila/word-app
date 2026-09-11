@@ -5,7 +5,8 @@ import { useRouter } from "next/navigation";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { speakGerman } from "@/components/speak-button";
-import { SpeakerIcon } from "@/components/icons";
+import { SpeakerIcon, XIcon } from "@/components/icons";
+import { ConfirmDialog } from "@/components/confirm-dialog";
 import { track } from "@/lib/track";
 import { describePerSkill, nextLevel, PLACEMENT_LEVELS, scorePlacement, type PlacementAnswer, type PlacementStage } from "@/lib/placement-score";
 import type { PlacementRecord, PlacementTest as Test, TextItem } from "@/lib/placement";
@@ -53,6 +54,8 @@ export function PlacementTest({ initialLast, canRetake, retakeDays }: { initialL
   const answers = useRef<PlacementAnswer[]>([]);
   const stageAnswers = useRef<{ correct: number; total: number }>({ correct: 0, total: 0 });
   const [result, setResult] = useState<PlacementRecord | null>(null);
+  /** Testten çıkış onayı açık mı. */
+  const [quit, setQuit] = useState(false);
   const [chosen, setChosen] = useState<CefrLevel | null>(null);
   const startedAt = useRef(Date.now());
 
@@ -263,10 +266,37 @@ export function PlacementTest({ initialLast, canRetake, retakeDays }: { initialL
       <span>
         {t(STAGE_TITLE_KEYS[stage])} · <span className="muted">{stage === "vocab" || stage === "grammar" ? level : ""}</span>
       </span>
-      <button type="button" onClick={() => leaveStage(stage)} className="muted underline-offset-2 hover:underline">
-        {t("plc.skip_stage")}
-      </button>
+      <div className="flex items-center gap-3">
+        <button type="button" onClick={() => leaveStage(stage)} className="muted underline-offset-2 hover:underline">
+          {t("plc.skip_stage")}
+        </button>
+        {/* ÇIKIŞ YOLU YOKTU: test başlayınca tek çıkış tarayıcının geri
+            düğmesiydi -- aynı kapan sınavda da vardı (bkz. `mock-exam-player`).
+            Android'de başlıkta bir kapat düğmesi var ve "cevapların
+            kaydedilmiyor" diye sorup çıkıyor; metin zaten sözlükte duruyordu,
+            web'de onu kullanan hiçbir şey yoktu. */}
+        <button
+          type="button"
+          onClick={() => setQuit(true)}
+          aria-label={t("plc.quit_title")}
+          className="pressable flex h-8 w-8 shrink-0 items-center justify-center rounded-tile"
+          style={{ background: "var(--surface-2)" }}
+        >
+          <XIcon size={16} />
+        </button>
+      </div>
     </div>
+  );
+  const quitDialog = (
+    <ConfirmDialog
+      open={quit}
+      title={t("plc.quit_title")}
+      message={t("plc.quit_body")}
+      confirmLabel={t("common.exit")}
+      destructive
+      onConfirm={() => { setQuit(false); router.push("/profile"); }}
+      onCancel={() => setQuit(false)}
+    />
   );
   const dontKnow = (onPick: () => void) => (
     <button type="button" onClick={onPick} className="btn btn-ghost mt-2 w-full px-4 py-2.5 text-sm">
@@ -301,6 +331,7 @@ export function PlacementTest({ initialLast, canRetake, retakeDays }: { initialL
     if (!item) return null;
     return (
       <section className="card mx-auto w-full max-w-md p-5">
+        {quitDialog}
         {header}
         <p className="muted mb-3 text-xs">{t(STAGE_HINT[stage])}</p>
         {"de" in item ? (
@@ -330,6 +361,7 @@ export function PlacementTest({ initialLast, canRetake, retakeDays }: { initialL
   const q = item.questions[qIndex];
   return (
     <section className="card mx-auto w-full max-w-md p-5">
+      {quitDialog}
       {header}
       <p className="muted mb-2 text-xs">{t(STAGE_HINT[stage])} · {item.level}</p>
       {item.text ? (

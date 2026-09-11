@@ -5640,6 +5640,75 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   );
 }
 
+/* ── 158. geri alinamayan adim once soruluyor mu ──────────────────────────
+ * Android'de yikici ya da geri alinamayan her adimin onunde `ConfirmDialog`
+ * duruyor: sinavi birakma, yerlestirmeyi birakma, yuruyusu bitirme, turdan
+ * cikma, cikis yapma, hesap silme. Webde yedisinden UCU yoktu ve iki tanesi
+ * daha kotusuydu: sinav ile yerlestirmede cikis DUGMESI bile yoktu, yani
+ * kullanici bitirene kadar kapana kisiliyordu (ayni kapan deneme sinavinda
+ * daha once kapatilmisti).
+ *
+ * Metinler zaten ORTAK SOZLUKTE duruyordu (`exam.quit_title`, `plc.quit_*`,
+ * `walkmode.end_walk`) - yani eksik olan ceviri degil, ceviriyi kullanan
+ * yuzeydi. Kapi anahtarla olcuyor: iki tarafta da AYNI cumlenin sorulmasi
+ * gerekiyor, benzerinin degil. */
+{
+  const strip = (x) => x.replace(/\/\*[\s\S]*?\*\//g, " ").replace(/(^|[^:"'`\\])\/\/.*$/gm, "$1");
+  /* `ConfirmDialog` blogunun icindeki baslik anahtari: dosyanin baska
+     yerindeki ayni dizgi sayilmasin diye acilis etiketinden kapanisina kadar
+     olan dilime bakiliyor. */
+  const sorulan = (yol) => {
+    const src = strip(read(yol));
+    const out = [];
+    const re = /<ConfirmDialog[\s>]/g;
+    for (const m of src.matchAll(re)) {
+      const dilim = src.slice(m.index, src.indexOf("/>", m.index) + 2);
+      const b = dilim.match(/title=\{t[x]?\("([a-z0-9_.]+)"\)\}/);
+      if (b) out.push(b[1]);
+    }
+    return out.sort();
+  };
+  const CIFT = [
+    ["sinavi birakma", "mobile/src/screens/ExamScreen.tsx", "src/components/exam-player.tsx"],
+    ["deneme sinavini birakma", "mobile/src/screens/MockExamScreen.tsx", "src/components/mock-exam-player.tsx"],
+    ["yerlestirmeyi birakma", "mobile/src/screens/PlacementScreen.tsx", "src/components/placement/placement-test.tsx"],
+    ["yuruyusu bitirme", "mobile/src/screens/WalkModeScreen.tsx", "src/components/walk-player.tsx"],
+    ["cikis yapma", "mobile/src/screens/ProfileScreen.tsx", "src/components/profile/profile-view.tsx"],
+    ["hesap silme", "mobile/src/screens/DeleteAccountScreen.tsx", "src/components/account-delete-form.tsx"],
+  ];
+  sameList(
+    "geri alinamayan adim soruluyor",
+    CIFT.map(([ad, m]) => ad + "=" + (sorulan(m).join("+") || "sormuyor")),
+    CIFT.map(([ad, , w]) => ad + "=" + (sorulan(w).join("+") || "sormuyor")),
+  );
+  /* Iki taraf da sormazsa esitlik saglanirdi (bkz. §157 notu): mutlak olcut. */
+  sameList(
+    "onay kutusu her iki tarafta",
+    CIFT.map(([ad, m, w]) => ad + "=" + (sorulan(m).length && sorulan(w).length ? "var" : "eksik")),
+    CIFT.map(([ad]) => ad + "=var"),
+    "bulunan",
+    "beklenen",
+  );
+
+  /* Sinav ve yerlestirmede bir de CIKIS DUGMESI olmali: onay kutusu olup onu
+     acan dugme olmazsa kullanici yine kapanda kalir. */
+  const acan = (yol, anahtar) => {
+    const src = strip(read(yol)).replace(/\s+/g, " ");
+    return new RegExp('aria-label=\\{t\\("' + anahtar + '"\\)\\}').test(src) ? "dugme var" : "dugme yok";
+  };
+  sameList(
+    "cikis dugmesi",
+    [
+      "sinav=" + acan("src/components/exam-player.tsx", "exam.quit_title"),
+      "deneme=" + acan("src/components/mock-exam-player.tsx", "mockexam.quit_title"),
+      "yerlestirme=" + acan("src/components/placement/placement-test.tsx", "plc.quit_title"),
+    ],
+    ["sinav=dugme var", "deneme=dugme var", "yerlestirme=dugme var"],
+    "bulunan",
+    "beklenen",
+  );
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"
