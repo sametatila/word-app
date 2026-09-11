@@ -1,0 +1,927 @@
+[
+ {
+  "tr": "İtiraz",
+  "kind": "titleTr",
+  "de": "Der Widerspruch"
+ },
+ {
+  "tr": "Belgeler",
+  "kind": "titleTr",
+  "de": "Die Unterlagen"
+ },
+ {
+  "tr": "Vergi beyanı",
+  "kind": "titleTr",
+  "de": "Die Steuererklärung"
+ },
+ {
+  "tr": "Resmî yazışma",
+  "kind": "titleTr",
+  "de": "Amtlicher Schriftverkehr"
+ },
+ {
+  "tr": "Sıra ve bekleme",
+  "kind": "titleTr",
+  "de": "Warten, bis man dran ist"
+ },
+ {
+  "tr": "Sırada beklerken olanları sırayla anlatmayı öğretir.",
+  "kind": "summary",
+  "de": "Vermittelt, wie man der Reihe nach erzählt, was beim Warten passiert ist."
+ },
+ {
+  "tr": "Hangi belgenin istendiğini yan cümleyle ayırmayı öğretir.",
+  "kind": "summary",
+  "de": "Vermittelt, wie man mit einem Nebensatz unterscheidet, welches Dokument verlangt wird."
+ },
+ {
+  "tr": "Resmî bir mektubun iskeletini öğretir; bağlaçlar paragrafları birbirine bağlar.",
+  "kind": "summary",
+  "de": "Vermittelt den Aufbau eines amtlichen Briefes; die Konnektoren verbinden die Absätze."
+ },
+ {
+  "tr": "Bir karara itiraz etmeyi öğretir; fiilden sonra -ing mi to mu geldiğini seçtirir.",
+  "kind": "summary",
+  "de": "Vermittelt, wie man gegen eine Entscheidung Widerspruch einlegt, und lässt wählen, ob nach dem Verb -ing oder to steht."
+ },
+ {
+  "tr": "Vergi beyanını konuşmayı öğretir: bu yıl ne yaptığın ile geçen yıl ne yaptığın ayrı zamanlarla söylenir.",
+  "kind": "summary",
+  "de": "Vermittelt, wie man über die Steuererklärung spricht: was du dieses Jahr und was du letztes Jahr gemacht hast, steht in verschiedenen Zeiten."
+ },
+ {
+  "tr": "her belgeyi tek tek soran, titiz bir muhasebeci",
+  "kind": "partner",
+  "de": "ein genauer Steuerberater, der nach jedem Beleg einzeln fragt"
+ },
+ {
+  "tr": "listeyi elinde tutan, tek tek kontrol eden bir görevli",
+  "kind": "partner",
+  "de": "ein Mitarbeiter mit der Liste in der Hand, der alles einzeln prüft"
+ },
+ {
+  "tr": "kararı savunan ama itiraz yolunu da anlatan bir görevli",
+  "kind": "partner",
+  "de": "eine Mitarbeiterin, die die Entscheidung verteidigt, aber auch den Weg zum Widerspruch erklärt"
+ },
+ {
+  "tr": "resmî yazışmayı iyi bilen, doğrudan konuşan bir arkadaş",
+  "kind": "partner",
+  "de": "eine Freundin, die den amtlichen Schriftverkehr gut kennt und direkt redet"
+ },
+ {
+  "tr": "aynı işlemi yapacak, ne kadar süreceğini merak eden bir arkadaş",
+  "kind": "partner",
+  "de": "ein Freund, der denselben Vorgang vor sich hat und wissen will, wie lange es dauert"
+ },
+ {
+  "tr": "Ne kadar beklemek zorunda kaldın?",
+  "kind": "openingTr",
+  "de": "Wie lange musstest du warten?"
+ },
+ {
+  "tr": "Mektubunu okudum. Tam olarak ne istiyorsun?",
+  "kind": "openingTr",
+  "de": "Ich habe deinen Brief gelesen. Was genau willst du?"
+ },
+ {
+  "tr": "Dosyanız tam değil. Hangi belgeleri gönderdiniz?",
+  "kind": "openingTr",
+  "de": "Ihre Akte ist nicht vollständig. Welche Unterlagen haben Sie geschickt?"
+ },
+ {
+  "tr": "Başvurunuz reddedildi. Nasıl yardımcı olabilirim?",
+  "kind": "openingTr",
+  "de": "Ihr Antrag wurde abgelehnt. Wie kann ich helfen?"
+ },
+ {
+  "tr": "Bu yılla başlayalım. Şimdiye kadar ne beyan ettiniz?",
+  "kind": "openingTr",
+  "de": "Fangen wir mit diesem Jahr an. Was haben Sie bisher angegeben?"
+ },
+ {
+  "tr": "Başvurun reddedildi ve itiraz etmek için kurumu aradın. Kararın nedenini sor, elindeki kanıtı söyle ve itiraz hakkını kullan.",
+  "kind": "scene",
+  "de": "Dein Antrag wurde abgelehnt und du hast angerufen, um Widerspruch einzulegen. Frag nach dem Grund, nenne deine Belege und nutze dein Recht auf Widerspruch."
+ },
+ {
+  "tr": "Vergi beyanı için bir muhasebeciyle konuşuyorsun. Bu yıl ne yaptığını, geçen yıl ne yaptığını ve hangi belgeleri sakladığını anlat.",
+  "kind": "scene",
+  "de": "Du sprichst mit einem Steuerberater über deine Erklärung. Erzähl, was du dieses Jahr und was du letztes Jahr gemacht hast und welche Belege du aufbewahrt hast."
+ },
+ {
+  "tr": "Yazdığın resmî mektubu bir arkadaşın okudu ve fikrini söylüyor. Mektubun amacını, neden yazdığını ve nasıl kapattığını anlat; onun önerilerini de dinle.",
+  "kind": "scene",
+  "de": "Eine Freundin hat deinen amtlichen Brief gelesen und sagt ihre Meinung. Erklär den Zweck, warum du geschrieben hast und wie du geschlossen hast; hör dir ihre Vorschläge an."
+ },
+ {
+  "tr": "Resmî bir yerde uzun süre beklemek zorunda kaldın ve bir arkadaşın nasıl geçtiğini soruyor. Olayları sırayla anlat: neyi önceden yapmıştın, sonra ne oldu.",
+  "kind": "scene",
+  "de": "Du musstest in einer Behörde lange warten und ein Freund fragt, wie es war. Erzähl der Reihe nach: was du vorher gemacht hattest und was dann geschah."
+ },
+ {
+  "tr": "Bir belgen eksik çıktı ve kurumu aradın. Hangi belgenin eksik olduğunu, hangisini gönderdiğini ve hangisinin çevrilmesi gerektiğini yan cümlelerle netleştir.",
+  "kind": "scene",
+  "de": "Eine Unterlage von dir fehlte und du hast bei der Behörde angerufen. Klär mit Nebensätzen, welches Dokument fehlt, welches du geschickt hast und welches übersetzt werden muss."
+ },
+ {
+  "tr": "Mektubun amacını, bir çekince bağlacıyla kurulmuş cümleni ve kapanışını anlattıysan konuşma başarılı sayılır.",
+  "kind": "goal",
+  "de": "Das Gespräch gilt als gelungen, wenn du den Zweck des Briefes, einen Satz mit einem Konnektor der Einschränkung und deinen Schluss erklärt hast."
+ },
+ {
+  "tr": "Bu yılı ve geçen yılı doğru zamanlarla ayırdıysan ve belgelerin durumunu söylediysen konuşma başarılı sayılır.",
+  "kind": "goal",
+  "de": "Das Gespräch gilt als gelungen, wenn du dieses und letztes Jahr in den richtigen Zeiten getrennt und den Stand deiner Belege genannt hast."
+ },
+ {
+  "tr": "Ret nedenini sorduysan, kanıtını söylediysen ve itiraz hakkını doğru kalıplarla kullandıysan konuşma başarılı sayılır.",
+  "kind": "goal",
+  "de": "Das Gespräch gilt als gelungen, wenn du nach dem Ablehnungsgrund gefragt, deine Belege genannt und dein Widerspruchsrecht mit den richtigen Wendungen genutzt hast."
+ },
+ {
+  "tr": "Gönderdiğin ve eksik olan belgeleri yan cümlelerle ayırdıysan ve ne yapman gerektiğini öğrendiysen konuşma başarılı sayılır.",
+  "kind": "goal",
+  "de": "Das Gespräch gilt als gelungen, wenn du geschickte und fehlende Unterlagen mit Nebensätzen unterschieden und erfahren hast, was du tun musst."
+ },
+ {
+  "tr": "Olayları doğru sırayla anlattıysan, en az bir kez önce olanı geriye aldıysan ve toplam süreyi söylediysen konuşma başarılı sayılır.",
+  "kind": "goal",
+  "de": "Das Gespräch gilt als gelungen, wenn du die Ereignisse in der richtigen Reihenfolge erzählt, mindestens einmal das Frühere zurückgesetzt und die Gesamtdauer genannt hast."
+ },
+ {
+  "tr": "yanıt",
+  "kind": "vocab.tr",
+  "de": "Antwort"
+ },
+ {
+  "tr": "hak",
+  "kind": "vocab.tr",
+  "de": "Recht"
+ },
+ {
+  "tr": "asıl",
+  "kind": "vocab.tr",
+  "de": "Original"
+ },
+ {
+  "tr": "konu",
+  "kind": "vocab.tr",
+  "de": "Betreff"
+ },
+ {
+  "tr": "zarf",
+  "kind": "vocab.tr",
+  "de": "Umschlag"
+ },
+ {
+  "tr": "eksik",
+  "kind": "vocab.tr",
+  "de": "fehlend"
+ },
+ {
+  "tr": "gelir",
+  "kind": "vocab.tr",
+  "de": "Einkommen"
+ },
+ {
+  "tr": "kayıt",
+  "kind": "vocab.tr",
+  "de": "Beleg"
+ },
+ {
+  "tr": "sabır",
+  "kind": "vocab.tr",
+  "de": "Geduld"
+ },
+ {
+  "tr": "talep",
+  "kind": "vocab.tr",
+  "de": "Anliegen"
+ },
+ {
+  "tr": "yıllık",
+  "kind": "vocab.tr",
+  "de": "jährlich"
+ },
+ {
+  "tr": "gerekli",
+  "kind": "vocab.tr",
+  "de": "erforderlich"
+ },
+ {
+  "tr": "çevirmek",
+  "kind": "vocab.tr",
+  "de": "übersetzen"
+ },
+ {
+  "tr": "paragraf",
+  "kind": "vocab.tr",
+  "de": "Absatz"
+ },
+ {
+  "tr": "sıra fişi",
+  "kind": "vocab.tr",
+  "de": "Wartenummer"
+ },
+ {
+  "tr": "kanıtlamak",
+  "kind": "vocab.tr",
+  "de": "beweisen"
+ },
+ {
+  "tr": "beyan etmek",
+  "kind": "vocab.tr",
+  "de": "angeben"
+ },
+ {
+  "tr": "ısrar etmek",
+  "kind": "vocab.tr",
+  "de": "bestehen auf"
+ },
+ {
+  "tr": "itiraz etmek",
+  "kind": "vocab.tr",
+  "de": "Widerspruch einlegen"
+ },
+ {
+  "tr": "saygılarımla",
+  "kind": "vocab.tr",
+  "de": "mit freundlichen Grüßen"
+ },
+ {
+  "tr": "sıra / kuyruk",
+  "kind": "vocab.tr",
+  "de": "Schlange"
+ },
+ {
+  "tr": "düşmek / mahsup etmek",
+  "kind": "vocab.tr",
+  "de": "abziehen / absetzen"
+ },
+ {
+  "tr": "hakkı söyler",
+  "kind": "pattern.tr",
+  "de": "nennt das Recht"
+ },
+ {
+  "tr": "mektubu kapatır",
+  "kind": "pattern.tr",
+  "de": "schließt den Brief"
+ },
+ {
+  "tr": "mektubun amacını açar",
+  "kind": "pattern.tr",
+  "de": "nennt den Zweck des Briefes"
+ },
+ {
+  "tr": "ısrarı -ing ile söyler",
+  "kind": "pattern.tr",
+  "de": "nennt das Beharren mit -ing"
+ },
+ {
+  "tr": "bitmiş bir yılı anlatır",
+  "kind": "pattern.tr",
+  "de": "erzählt von einem abgeschlossenen Jahr"
+ },
+ {
+  "tr": "süren yılın işini anlatır",
+  "kind": "pattern.tr",
+  "de": "erzählt von der Arbeit des laufenden Jahres"
+ },
+ {
+  "tr": "bir işin yapılıp yapılmadığını sorar",
+  "kind": "pattern.tr",
+  "de": "fragt, ob etwas gemacht wurde"
+ },
+ {
+  "tr": "hangi belge olduğunu yan cümleyle söyler",
+  "kind": "pattern.tr",
+  "de": "sagt mit einem Nebensatz, welches Dokument gemeint ist"
+ },
+ {
+  "tr": "Yanlış. Yıl belli ve bitmiş:",
+  "kind": "why.tr",
+  "de": "Falsch. Das Jahr ist genannt und vorbei:"
+ },
+ {
+  "tr": "Yanlış. Bu fiilden sonra edat ve -ing gelir:",
+  "kind": "why.tr",
+  "de": "Falsch. Nach diesem Verb stehen eine Präposition und -ing:"
+ },
+ {
+  "tr": "Doğru. Zamir yan cümlenin nesnesi olduğu için düşebiliyor; hangi kopya olduğu hâlâ belli.",
+  "kind": "why.tr",
+  "de": "Richtig. Das Pronomen ist Objekt des Nebensatzes und darf wegfallen; welche Kopie gemeint ist, bleibt klar."
+ },
+ {
+  "tr": "Doğru. Çekince bağlacı bir cümle alıyor ve iki yarı da tam bir cümle; resmî mektubun tonu da böyle korunuyor.",
+  "kind": "why.tr",
+  "de": "Richtig. Der Konnektor der Einschränkung nimmt einen Satz, und beide Hälften sind vollständig; so bleibt auch der Ton des amtlichen Briefes erhalten."
+ },
+ {
+  "tr": "Bu kalıptan sonra mastar gelir:",
+  "kind": "hint.tr",
+  "de": "Nach dieser Wendung steht der Infinitiv:"
+ },
+ {
+  "tr": "Karar fiilinden sonra mastar gelir:",
+  "kind": "hint.tr",
+  "de": "Nach dem Verb der Entscheidung steht der Infinitiv:"
+ },
+ {
+  "tr": "Bu fiilden sonra edat ve -ing gelir:",
+  "kind": "hint.tr",
+  "de": "Nach diesem Verb stehen eine Präposition und -ing:"
+ },
+ {
+  "tr": "Ay bitmedi, o yüzden present perfect:",
+  "kind": "hint.tr",
+  "de": "Der Monat ist nicht vorbei, deshalb Present Perfect:"
+ },
+ {
+  "tr": "Yıl bitmedi, o yüzden present perfect:",
+  "kind": "hint.tr",
+  "de": "Das Jahr ist nicht vorbei, deshalb Present Perfect:"
+ },
+ {
+  "tr": "Bu kapanış kalıbından sonra -ing gelir:",
+  "kind": "hint.tr",
+  "de": "Nach dieser Schlusswendung steht -ing:"
+ },
+ {
+  "tr": "Ay belli ve bitmiş, o yüzden past simple:",
+  "kind": "hint.tr",
+  "de": "Der Monat ist genannt und vorbei, deshalb Past Simple:"
+ },
+ {
+  "tr": "Nesne durumunda zamir düşebilir. Dosya için",
+  "kind": "hint.tr",
+  "de": "Als Objekt darf das Pronomen wegfallen. Für die Mappe sagen wir"
+ },
+ {
+  "tr": "hak",
+  "kind": "say.tr",
+  "de": "Recht"
+ },
+ {
+  "tr": "ısrar",
+  "kind": "say.tr",
+  "de": "Beharren"
+ },
+ {
+  "tr": "konu,",
+  "kind": "say.tr",
+  "de": "Betreff,"
+ },
+ {
+  "tr": "belge,",
+  "kind": "say.tr",
+  "de": "Dokument,"
+ },
+ {
+  "tr": "çekince",
+  "kind": "say.tr",
+  "de": "Einschränkung"
+ },
+ {
+  "tr": "kapanış",
+  "kind": "say.tr",
+  "de": "Schluss"
+ },
+ {
+  "tr": "bitmiş yıl",
+  "kind": "say.tr",
+  "de": "abgeschlossenes Jahr"
+ },
+ {
+  "tr": "Sıra fişine",
+  "kind": "say.tr",
+  "de": "Die Wartenummer heißt"
+ },
+ {
+  "tr": "beyan etmek,",
+  "kind": "say.tr",
+  "de": "angeben,"
+ },
+ {
+  "tr": "Beklemek için",
+  "kind": "say.tr",
+  "de": "Für warten sagen wir"
+ },
+ {
+  "tr": "Saygılar için",
+  "kind": "say.tr",
+  "de": "Für Grüße sagen wir"
+ },
+ {
+  "tr": "daha gündelik,",
+  "kind": "say.tr",
+  "de": "eher alltäglich,"
+ },
+ {
+  "tr": "İstediğin şeye",
+  "kind": "say.tr",
+  "de": "Das, was du willst, heißt"
+ },
+ {
+  "tr": "gelen cevaba ise",
+  "kind": "say.tr",
+  "de": "und die Antwort, die kommt, heißt"
+ },
+ {
+  "tr": "oturulan yere ise",
+  "kind": "say.tr",
+  "de": "und der Platz, an dem man sitzt, heißt"
+ },
+ {
+  "tr": "İstenen belge için",
+  "kind": "say.tr",
+  "de": "Für das verlangte Dokument sagen wir"
+ },
+ {
+  "tr": "mektup. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Brief. Sprich nach:"
+ },
+ {
+  "tr": "Metnin her bloğuna",
+  "kind": "say.tr",
+  "de": "Jeder Block des Textes heißt"
+ },
+ {
+  "tr": "Özetleyelim: karar",
+  "kind": "say.tr",
+  "de": "Fassen wir zusammen: Entscheidung"
+ },
+ {
+  "tr": "para kazanmaya ise",
+  "kind": "say.tr",
+  "de": "und Geld verdienen heißt"
+ },
+ {
+  "tr": "Bir şeyi kanıtlamak",
+  "kind": "say.tr",
+  "de": "Etwas beweisen wird mit"
+ },
+ {
+  "tr": "çağrılan sayıya ise",
+  "kind": "say.tr",
+  "de": "und die aufgerufene Zahl heißt"
+ },
+ {
+  "tr": "eksik olan için ise",
+  "kind": "say.tr",
+  "de": "und für das, was fehlt"
+ },
+ {
+  "tr": "Özetleyelim: açılış",
+  "kind": "say.tr",
+  "de": "Fassen wir zusammen: Einstieg"
+ },
+ {
+  "tr": "Sakladığın belgelere",
+  "kind": "say.tr",
+  "de": "Die Papiere, die du aufbewahrst, heißen"
+ },
+ {
+  "tr": "yıllık olan için ise",
+  "kind": "say.tr",
+  "de": "und für das Jährliche"
+ },
+ {
+  "tr": "Devlete ödenen paraya",
+  "kind": "say.tr",
+  "de": "Das Geld, das an den Staat geht, heißt"
+ },
+ {
+  "tr": "sana gelen sıraya ise",
+  "kind": "say.tr",
+  "de": "und wenn du dran bist, heißt das"
+ },
+ {
+  "tr": "Beklemeyi bilen kişiye",
+  "kind": "say.tr",
+  "de": "Wer warten kann, heißt"
+ },
+ {
+  "tr": "Beklerken gereken şeye",
+  "kind": "say.tr",
+  "de": "Was man beim Warten braucht, heißt"
+ },
+ {
+  "tr": "Kayıtları sakladın mı?",
+  "kind": "say.tr",
+  "de": "Hast du die Belege aufbewahrt?"
+ },
+ {
+  "tr": "Özetleyelim: süren yıl",
+  "kind": "say.tr",
+  "de": "Fassen wir zusammen: laufendes Jahr"
+ },
+ {
+  "tr": "Bir başvuruyu reddetmek",
+  "kind": "say.tr",
+  "de": "Einen Antrag ablehnen wird mit"
+ },
+ {
+  "tr": "İşlem yapılan pencereye",
+  "kind": "say.tr",
+  "de": "Der Schalter, an dem bearbeitet wird, heißt"
+ },
+ {
+  "tr": "başka dile aktarmaya ise",
+  "kind": "say.tr",
+  "de": "und in eine andere Sprache übertragen heißt"
+ },
+ {
+  "tr": "Kapanışta iki kalıp var:",
+  "kind": "say.tr",
+  "de": "Für den Schluss gibt es zwei Wendungen:"
+ },
+ {
+  "tr": "Belgenin ikinci nüshasına",
+  "kind": "say.tr",
+  "de": "Die zweite Ausfertigung des Dokuments heißt"
+ },
+ {
+  "tr": "sahip olduğun yetkiye ise",
+  "kind": "say.tr",
+  "de": "und die Befugnis, die du hast, heißt"
+ },
+ {
+  "tr": "Yıl BİTTİYSE past simple:",
+  "kind": "say.tr",
+  "de": "Ist das Jahr VORBEI, steht Past Simple:"
+ },
+ {
+  "tr": "Sonra numaramı çağırdılar.",
+  "kind": "say.tr",
+  "de": "Dann haben sie meine Nummer aufgerufen."
+ },
+ {
+  "tr": "Süresi geçmemiş belge için",
+  "kind": "say.tr",
+  "de": "Für ein Dokument, das noch gilt, sagen wir"
+ },
+ {
+  "tr": "Geçen yıl da beyan etmiştim.",
+  "kind": "say.tr",
+  "de": "Letztes Jahr habe ich es auch angegeben."
+ },
+ {
+  "tr": "Oturmadan önce fiş almıştım.",
+  "kind": "say.tr",
+  "de": "Bevor ich mich setzte, hatte ich eine Nummer gezogen."
+ },
+ {
+  "tr": "Sıranı beklemek sabır ister.",
+  "kind": "say.tr",
+  "de": "Zu warten, bis man dran ist, braucht Geduld."
+ },
+ {
+  "tr": "Bir masrafı gelirden çıkarmak",
+  "kind": "say.tr",
+  "de": "Eine Ausgabe vom Einkommen abziehen heißt"
+ },
+ {
+  "tr": "çekince bildirir ve cümle alır,",
+  "kind": "say.tr",
+  "de": "nennt eine Einschränkung und nimmt einen Satz,"
+ },
+ {
+  "tr": "mektubu koyduğun kâğıt kaba ise",
+  "kind": "say.tr",
+  "de": "und die Papierhülle, in die der Brief kommt, heißt"
+ },
+ {
+  "tr": "Gişe kalabalıktı ama masa boştu.",
+  "kind": "say.tr",
+  "de": "Am Schalter war viel los, aber der Tisch war frei."
+ },
+ {
+  "tr": "Onu yıllık ödemeden düşebilirsin.",
+  "kind": "say.tr",
+  "de": "Du kannst es von der jährlichen Zahlung abziehen."
+ },
+ {
+  "tr": "Gönderdiğim kopya geçerli değildi.",
+  "kind": "say.tr",
+  "de": "Die Kopie, die ich geschickt habe, war nicht gültig."
+ },
+ {
+  "tr": "Şimdi bir karara itiraz edeceksin.",
+  "kind": "say.tr",
+  "de": "Jetzt legst du gegen eine Entscheidung Widerspruch ein."
+ },
+ {
+  "tr": "Yeniden inceleme isteme hakkım var.",
+  "kind": "say.tr",
+  "de": "Ich habe das Recht, eine erneute Prüfung zu verlangen."
+ },
+ {
+  "tr": "asıl. İlk kalıbımız da bu. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Original. Das ist auch unsere erste Wendung. Sprich nach:"
+ },
+ {
+  "tr": "İki kez yazmama rağmen cevap almadım.",
+  "kind": "say.tr",
+  "de": "Obwohl ich zweimal geschrieben habe, kam keine Antwort."
+ },
+ {
+  "tr": "Şimdi bir muhasebeciyle konuşacaksın.",
+  "kind": "say.tr",
+  "de": "Jetzt sprichst du mit einem Steuerberater."
+ },
+ {
+  "tr": "gelir. İlk kalıbımız da bu. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Einkommen. Das ist auch unsere erste Wendung. Sprich nach:"
+ },
+ {
+  "tr": "Pasaportum geçerli ama bir belge eksik.",
+  "kind": "say.tr",
+  "de": "Mein Pass ist gültig, aber ein Papier fehlt."
+ },
+ {
+  "tr": "Şimdi sıra sende: Bu ay vergiyi ödedim.",
+  "kind": "say.tr",
+  "de": "Jetzt bist du dran: Diesen Monat habe ich die Steuer bezahlt."
+ },
+ {
+  "tr": "Bir tane daha: Dosyayı görme hakkım var.",
+  "kind": "say.tr",
+  "de": "Noch eins: Ich habe das Recht, die Akte zu sehen."
+ },
+ {
+  "tr": "İlk kalıbımız mektubu açıyor. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Unsere erste Wendung öffnet den Brief. Sprich nach:"
+ },
+ {
+  "tr": "Son kalıbımız hakkı söylüyor. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Unsere letzte Wendung nennt das Recht. Sprich nach:"
+ },
+ {
+  "tr": "Ayrımı zaman ifadesi yapıyor, fiil değil.",
+  "kind": "say.tr",
+  "de": "Den Unterschied macht die Zeitangabe, nicht das Verb."
+ },
+ {
+  "tr": "Bir tane daha: Dosyamı alan adam yeniydi.",
+  "kind": "say.tr",
+  "de": "Noch eins: Der Mann, der meine Akte genommen hat, war neu."
+ },
+ {
+  "tr": "Reddettiler ama cevapta nedeni yazıyordu.",
+  "kind": "say.tr",
+  "de": "Sie haben abgelehnt, aber in der Antwort stand der Grund."
+ },
+ {
+  "tr": "Her gerekli belge tek bir dosyaya giriyor.",
+  "kind": "say.tr",
+  "de": "Jedes erforderliche Dokument kommt in eine einzige Mappe."
+ },
+ {
+  "tr": "Hesabımla ilgili bir talep için yazıyorum.",
+  "kind": "say.tr",
+  "de": "Ich schreibe mit einem Anliegen zu meinem Konto."
+ },
+ {
+  "tr": "Sabırlı ol, çünkü itiraz haftalar sürüyor.",
+  "kind": "say.tr",
+  "de": "Sei geduldig, denn der Widerspruch dauert Wochen."
+ },
+ {
+  "tr": "denir ve vergi işinde hep çoğul kullanılır.",
+  "kind": "say.tr",
+  "de": "genannt und steht in Steuersachen immer im Plural."
+ },
+ {
+  "tr": "denir; resmî listelerde hep bu kelime geçer.",
+  "kind": "say.tr",
+  "de": "genannt; in amtlichen Listen steht immer dieses Wort."
+ },
+ {
+  "tr": "Kopyayı İngilizceye çevirmek zorunda kaldım.",
+  "kind": "say.tr",
+  "de": "Ich musste die Kopie ins Englische übersetzen lassen."
+ },
+ {
+  "tr": "Şimdi sen kur: Getirdiğim dosya çok inceydi.",
+  "kind": "say.tr",
+  "de": "Jetzt du: Die Mappe, die ich mitgebracht habe, war zu dünn."
+ },
+ {
+  "tr": "Israr fiilinden sonra ise edat ve -ing gelir:",
+  "kind": "say.tr",
+  "de": "Nach dem Verb des Beharrens stehen dagegen eine Präposition und -ing:"
+ },
+ {
+  "tr": "Onu kontrol eden kadın daha fazlasını istedi.",
+  "kind": "say.tr",
+  "de": "Die Frau, die es geprüft hat, wollte mehr."
+ },
+ {
+  "tr": "Şimdi sen kur: Ödemeyi mart ayında gönderdim.",
+  "kind": "say.tr",
+  "de": "Jetzt du: Ich habe die Zahlung im März geschickt."
+ },
+ {
+  "tr": "Bir tane daha: Bu yıl her şeyi beyan ettin mi?",
+  "kind": "say.tr",
+  "de": "Noch eins: Hast du dieses Jahr alles angegeben?"
+ },
+ {
+  "tr": "Bir tane daha: Ben vardığımda mola vermişlerdi.",
+  "kind": "say.tr",
+  "de": "Noch eins: Als ich ankam, hatten sie eine Pause gemacht."
+ },
+ {
+  "tr": "Şimdi eksik bir belgeyi telefonda konuşacaksın.",
+  "kind": "say.tr",
+  "de": "Jetzt besprichst du am Telefon ein fehlendes Dokument."
+ },
+ {
+  "tr": "Şimdi sen kur: Altıdan önce gişeyi kapatmışlardı.",
+  "kind": "say.tr",
+  "de": "Jetzt du: Vor sechs hatten sie den Schalter geschlossen."
+ },
+ {
+  "tr": "Son kalıbımız mektubu kapatıyor. Saygılarımla için",
+  "kind": "say.tr",
+  "de": "Unsere letzte Wendung schließt den Brief. Für mit freundlichen Grüßen sagen wir"
+ },
+ {
+  "tr": "Şimdi sıra sende: Gönderdikleri mektup Almancaydı.",
+  "kind": "say.tr",
+  "de": "Jetzt bist du dran: Der Brief, den sie geschickt haben, war auf Deutsch."
+ },
+ {
+  "tr": "İkinci kalıbımız ısrarı anlatıyor. Israr etmek için",
+  "kind": "say.tr",
+  "de": "Unsere zweite Wendung nennt das Beharren. Für darauf bestehen sagen wir"
+ },
+ {
+  "tr": "ise adını bildiğin kişiye yazılan resmî kapanıştır.",
+  "kind": "say.tr",
+  "de": "dagegen ist der amtliche Schluss an eine Person, deren Namen du kennst."
+ },
+ {
+  "tr": "İtiraz etmek demek. İlk kalıbımız da bu. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Das heißt Widerspruch einlegen. Das ist auch unsere erste Wendung. Sprich nach:"
+ },
+ {
+  "tr": "Sıra demek ve Britanya'da çok kullanılır. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Das heißt Schlange und wird in Großbritannien viel benutzt. Sprich nach:"
+ },
+ {
+  "tr": "Şimdi bir arkadaşına o günkü beklemeyi anlatacaksın.",
+  "kind": "say.tr",
+  "de": "Jetzt erzählst du einem Freund von diesem Warten."
+ },
+ {
+  "tr": "Bu ikisi karışınca cümle hem yanlış hem sert duyulur.",
+  "kind": "say.tr",
+  "de": "Verwechselt man die beiden, ist der Satz falsch und klingt zugleich schroff."
+ },
+ {
+  "tr": "Daha az kazanıyorum, o yüzden daha az vergi ödüyorum.",
+  "kind": "say.tr",
+  "de": "Ich verdiene weniger, deshalb zahle ich weniger Steuern."
+ },
+ {
+  "tr": "Şimdi bir resmî mektubu birlikte gözden geçireceksin.",
+  "kind": "say.tr",
+  "de": "Jetzt geht ihr zusammen einen amtlichen Brief durch."
+ },
+ {
+  "tr": "İkinci kalıbımız bitmiş bir yılı anlatıyor. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Unsere zweite Wendung erzählt von einem abgeschlossenen Jahr. Sprich nach:"
+ },
+ {
+  "tr": "Bir tane daha: Sizden haber almayı dört gözle bekliyorum.",
+  "kind": "say.tr",
+  "de": "Noch eins: Ich freue mich darauf, von Ihnen zu hören."
+ },
+ {
+  "tr": "Şimdi sen kur: Her sayfayı kontrol etmekte ısrar ettiler.",
+  "kind": "say.tr",
+  "de": "Jetzt du: Sie haben darauf bestanden, jede Seite zu prüfen."
+ },
+ {
+  "tr": "Şimdi sıra sende: Beni çağırmadan önce formu doldurmuştum.",
+  "kind": "say.tr",
+  "de": "Jetzt bist du dran: Bevor sie mich aufriefen, hatte ich das Formular ausgefüllt."
+ },
+ {
+  "tr": "Şimdi dersin kuralı. Karar fiillerinden sonra mastar gelir:",
+  "kind": "say.tr",
+  "de": "Jetzt die Regel der Lektion. Nach Verben der Entscheidung steht der Infinitiv:"
+ },
+ {
+  "tr": "Şimdi sıra sende: Daha fazla kanıt göndermeye karar verdim.",
+  "kind": "say.tr",
+  "de": "Jetzt bist du dran: Ich habe mich entschieden, mehr Belege zu schicken."
+ },
+ {
+  "tr": "Şimdi sen kur: Mektubu gönderdim. Ancak kimse cevap vermedi.",
+  "kind": "say.tr",
+  "de": "Jetzt du: Ich habe den Brief geschickt. Jedoch hat niemand geantwortet."
+ },
+ {
+  "tr": "Şimdi sıra sende: Formu göndermeme rağmen hiçbir şey değişmedi.",
+  "kind": "say.tr",
+  "de": "Jetzt bist du dran: Obwohl ich das Formular geschickt habe, hat sich nichts geändert."
+ },
+ {
+  "tr": "kişiler için. Yan cümle ismin hemen arkasına gelir, sonuna değil.",
+  "kind": "say.tr",
+  "de": "für Personen. Der Nebensatz kommt direkt hinter das Nomen, nicht ans Satzende."
+ },
+ {
+  "tr": "Şimdi dersin kuralı. Hangi belgeden söz ettiğini yan cümle söyler:",
+  "kind": "say.tr",
+  "de": "Jetzt die Regel der Lektion. Welches Dokument gemeint ist, sagt der Nebensatz:"
+ },
+ {
+  "tr": "Şimdi dersin kuralı. Resmî mektupta paragraflar bağlaçlarla bağlanır:",
+  "kind": "say.tr",
+  "de": "Jetzt die Regel der Lektion. Im amtlichen Brief werden die Absätze mit Konnektoren verbunden:"
+ },
+ {
+  "tr": "denir; aynı kelime hastanede 'hasta' anlamına da gelir ve bağlam ayırır.",
+  "kind": "say.tr",
+  "de": "genannt; dasselbe Wort heißt im Krankenhaus auch «Patient», und der Zusammenhang entscheidet."
+ },
+ {
+  "tr": "Şimdi dersin kuralı. İçinde bulunduğun yıl HENÜZ BİTMEDİYSE present perfect:",
+  "kind": "say.tr",
+  "de": "Jetzt die Regel der Lektion. Ist das laufende Jahr NOCH NICHT VORBEI, steht Present Perfect:"
+ },
+ {
+  "tr": "Merhaba! Bugün resmî bir mektup yazmayı öğreneceğiz: konu satırı, talep, kapanış.",
+  "kind": "say.tr",
+  "de": "Hallo! Heute lernen wir, einen amtlichen Brief zu schreiben: Betreffzeile, Anliegen, Schluss."
+ },
+ {
+  "tr": "Bekleme anlatısı baştan sona sıradır: önce ne olmuştu, sonra ne oldu. Hazır mısın?",
+  "kind": "say.tr",
+  "de": "Beim Erzählen vom Warten geht es von Anfang bis Ende um die Reihenfolge: was vorher passiert war und was dann geschah. Bist du bereit?"
+ },
+ {
+  "tr": "noktadan sonra gelir ve iki cümleyi bağlar. Bağlaç olmadan mektup madde listesine döner.",
+  "kind": "say.tr",
+  "de": "steht nach dem Punkt und verbindet zwei Sätze. Ohne Konnektoren wird der Brief zu einer Stichpunktliste."
+ },
+ {
+  "tr": "Resmî mektubun iskeleti hep aynı ve paragrafları birbirine bağlayan şey bağlaçlar. Hazır mısın?",
+  "kind": "say.tr",
+  "de": "Der Aufbau des amtlichen Briefes ist immer gleich, und was die Absätze verbindet, sind die Konnektoren. Bist du bereit?"
+ },
+ {
+  "tr": "Merhaba! Bugün belgeleri konuşmayı öğreneceğiz: hangisi asıl, hangisi kopya, hangisi çevrilecek.",
+  "kind": "say.tr",
+  "de": "Hallo! Heute sprechen wir über Unterlagen: welches das Original ist, welches die Kopie, welches übersetzt wird."
+ },
+ {
+  "tr": "Merhaba! Bugün sırada beklemeyi anlatmayı öğreneceğiz: fiş almak, numara beklemek, gişeye gitmek.",
+  "kind": "say.tr",
+  "de": "Hallo! Heute lernen wir, vom Warten zu erzählen: eine Nummer ziehen, auf sie warten, an den Schalter gehen."
+ },
+ {
+  "tr": "Merhaba! Bugün vergi beyanını konuşmayı öğreneceğiz: ne kazandın, neyi beyan ettin, hangi belgeyi sakladın.",
+  "kind": "say.tr",
+  "de": "Hallo! Heute sprechen wir über die Steuererklärung: was du verdient, was du angegeben und welche Belege du aufbewahrt hast."
+ },
+ {
+  "tr": "Merhaba! Bu modülün son dersi: bir karara itiraz etmek. Neye dayanıyorsun, neyi kanıtlayabilirsin, hakkın ne.",
+  "kind": "say.tr",
+  "de": "Hallo! Die letzte Lektion dieses Moduls: gegen eine Entscheidung Widerspruch einlegen. Worauf du dich stützt, was du beweisen kannst, welches Recht du hast."
+ },
+ {
+  "tr": "Bir dosyada on belge varsa hepsinin adı 'the document'; hangisinden söz ettiğini yan cümle söyler. Hazır mısın?",
+  "kind": "say.tr",
+  "de": "Liegen zehn Papiere in einer Mappe, heißen alle 'the document'; welches gemeint ist, sagt der Nebensatz. Bist du bereit?"
+ },
+ {
+  "tr": "Burada iki zaman yan yana duruyor: bu yıl henüz bitmedi, geçen yıl bitti. İngilizce ikisini ayrı söylüyor. Hazır mısın?",
+  "kind": "say.tr",
+  "de": "Hier stehen zwei Zeiten nebeneinander: dieses Jahr ist noch nicht vorbei, letztes Jahr schon. Das Englische sagt beide verschieden. Bist du bereit?"
+ },
+ {
+  "tr": "İtiraz dilinde iki fiil ailesi yan yana geliyor: biri mastar ister, öteki -ing. Karıştırmak cümleyi bozuyor. Hazır mısın?",
+  "kind": "say.tr",
+  "de": "In der Sprache des Widerspruchs stehen zwei Verbfamilien nebeneinander: die eine verlangt den Infinitiv, die andere -ing. Sie zu verwechseln zerstört den Satz. Bist du bereit?"
+ },
+ {
+  "tr": "Elimdeki kanıtla bunu ispatlayabilirim ve bu benim hakkım.",
+  "kind": "say.tr",
+  "de": "Mit den Belegen, die ich habe, kann ich es beweisen, und das ist mein Recht."
+ }
+]
