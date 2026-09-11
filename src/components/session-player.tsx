@@ -1387,8 +1387,14 @@ function SummaryCard({
               </div>
             </div>
           ) : null}
+          {/* BASLIK ORTAK ANAHTARDAN. Web `summary.round_done` ("Tur
+              tamamlandi"), Android `common.round_done` ("Tur bitti!") diyordu:
+              ayni ekran iki farkli cumle yaziyordu ve anahtar webde yalniz
+              webde duruyordu. Ortak olan kullaniliyor; "buraya kadar" dali da
+              ortak kumeye tasindi, cunku Android'in de erken durdurma yolu
+              var (`stage.enough`). */}
           <h2 className="mt-2 text-h1">
-            {partial ? t("summary.stopped") : t("summary.round_done")}
+            {partial ? t("summary.stopped") : t("common.round_done")}
           </h2>
           <p className="mt-1 text-body opacity-90">
             +<CountUp value={xp} /> XP

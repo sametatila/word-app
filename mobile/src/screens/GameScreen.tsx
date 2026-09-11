@@ -58,6 +58,11 @@ export function GameScreen() {
   /* Oturum meta bilgisi: başlıktaki seviye rozeti bundan besleniyor. */
   const [meta, setMeta] = useState<SessionMeta | null>(null);
   const [idx, setIdx] = useState(0);
+  /* ERKEN DURDURMA. Etap kartindaki "simdilik yeter" turu bitiriyor ama
+     ozet yine "Tur bitti!" yaziyordu - kullanici turu BITIRMEDI, durdurdu.
+     Web bu ayrimi tasiyor (`session-player` `stoppedEarly` -> `partial`) ve
+     birincil dugmenin adi da degisiyor: yeni tur degil, TURA GERI DON. */
+  const stoppedEarly = useRef(false);
   const [finalCorrect, setFinalCorrect] = useState(0);
   const [finalTotal, setFinalTotal] = useState(0);
   // Seri onarıldıysa kalınan gün sayısı; onarım yoksa null (bkz. finish).
@@ -129,6 +134,9 @@ export function GameScreen() {
   }
 
   async function load(opts?: { extra?: boolean }) {
+    /* Yeni tur, temiz sayfa: onceki turu durdurmus olmak bu turun ozetini
+       etkilemez (web `session-player` da bayragi yuklemede sifirliyor). */
+    stoppedEarly.current = false;
     setPhase("loading");
     try {
       /*
@@ -436,7 +444,7 @@ export function GameScreen() {
           stageStart.current = { index: idx, correct: roundsRight.current, total: roundsSeen.current, xp: xpEstimate.current };
           setPhase("play");
         }}
-        onStop={() => { track("session_stop", idx); void finish(); }}
+        onStop={() => { track("session_stop", idx); stoppedEarly.current = true; void finish(); }}
       />
     );
   }
@@ -514,7 +522,7 @@ export function GameScreen() {
             <Text variant="micro" color={colors.textMuted}>{t("game.correct")}</Text>
           </ProgressRing>
           {/* TURUN SONUCU DUYURULUYOR (bkz. web-parity 11.337). */}
-          <Text accessibilityLiveRegion="polite" variant="h1" style={{ marginTop: spacing.xl }}>{t(total ? "common.round_done" : "game.done_no_more")}</Text>
+          <Text accessibilityLiveRegion="polite" variant="h1" style={{ marginTop: spacing.xl }}>{t(total ? (stoppedEarly.current ? "summary.stopped" : "common.round_done") : "game.done_no_more")}</Text>
           <Text variant="body" color={colors.textMuted} style={{ marginTop: spacing.xs, marginBottom: repaired === null ? spacing.xxl : spacing.lg, textAlign: "center" }}>
             {t(total ? "game.saved" : "game.nothing_to_review")}
           </Text>
@@ -641,7 +649,7 @@ export function GameScreen() {
             sayısı birincil düğmenin ALTINDA kalıyordu, yani turu bitiren
             kullanıcı onları hiç görmeden devam ediyordu.
           */}
-          <PressableScale onPress={() => void load()} style={[{ width: "100%", backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: spacing.lg, alignItems: "center" }, softShadow(colors.primary, 10)]}><Text variant="bodyStrong" color={colors.onPrimary}>{t("game.continue")}</Text></PressableScale>
+          <PressableScale onPress={() => void load()} style={[{ width: "100%", backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: spacing.lg, alignItems: "center" }, softShadow(colors.primary, 10)]}><Text variant="bodyStrong" color={colors.onPrimary}>{t(stoppedEarly.current ? "summary.back_to_round" : "game.continue")}</Text></PressableScale>
           {/*
             HAYATTA KALMA TURU — web özetin düğme grubunda aynı yerde duruyor
             (devam · hayatta kalma · bitir). Mobilde mod vardı ama YALNIZ
