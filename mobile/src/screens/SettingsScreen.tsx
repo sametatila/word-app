@@ -37,6 +37,14 @@ const NEW_PER_DAY = [0, 5, 10, 15, 20, 30, 40];
 // Diller KENDİ adlarıyla yazılır: arayüz yanlış dildeyken bile kullanıcı kendi
 // dilini tanıyıp seçebilsin diye (çevrilirse tam da aradığı satırı okuyamaz).
 const LANG_LABEL: Record<NativeLang, string> = { tr: "Türkçe", en: "English", de: "Deutsch" };
+/** Seviye açıklamaları — web `profile-form` `LEVELS` ile aynı anahtarlar. */
+const LEVEL_DESC_KEY: Record<string, string> = {
+  A1: "onboarding.i_m_just_starting_out",
+  A2: "level.a2_desc",
+  B1: "level.b1_desc",
+  B2: "level.b2_desc",
+  C1: "level.c1_desc",
+};
 const LEVELS = ["A1", "A2", "B1", "B2", "C1"];
 /** Tema seçenekleri — etiket ANAHTAR tutar, çeviri render sırasında çözülür. */
 const THEME_OPTIONS: { key: ThemeMode; label: string }[] = [
@@ -249,10 +257,15 @@ export function SettingsScreen() {
           <View style={{ flexDirection: "row", flexWrap: "wrap", gap: spacing.sm }}>
             {LEVELS.map((l) => <Chip key={l} label={l} active={level === l} onPress={() => setLevel(l)} />)}
           </View>
-          {/* Seviyenin kendiliğinden değişmediği söyleniyor: kullanıcı bir
-              yerleştirme sınavından sonra seviyesinin "düşürüleceğini"
-              sanmasın. Web aynı satırı taşıyor. */}
-          <Text variant="micro" color={colors.textFaint} style={{ marginTop: spacing.sm }}>{t("settings.only_you_change_level")}</Text>
+          {/* SEÇİLİ SEVİYENİN AÇIKLAMASI + seviyenin kendiliğinden değişmediği.
+              Dört açıklama sözlükte duruyordu (`level.*_desc`) ama mobilde
+              yalnız onboarding'de okunuyordu: ayarlarda seviye "A1…C1" diye
+              görünüyor, hangi seviyenin ne anlama geldiği yazmıyordu. Web
+              ikisini AYNI cümlede veriyor ("<açıklama>. Bu düğmeyi senden
+              başkası çevirmiyor") ve mobil de artık öyle. */}
+          <Text variant="micro" color={colors.textFaint} style={{ marginTop: spacing.sm, lineHeight: 18 }}>
+            {t(LEVEL_DESC_KEY[level] ?? "onboarding.i_m_just_starting_out")}. {t("settings.only_you_change_level")}
+          </Text>
           <PressableScale onPress={() => nav.navigate("Placement")} style={{ marginTop: spacing.md, alignSelf: "flex-start" }}>
             <Text variant="bodyStrong" color={colors.primaryText}>{t("settings.not_sure_take_placement_test")}</Text>
           </PressableScale>

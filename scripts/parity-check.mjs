@@ -5048,6 +5048,33 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   sameList("yuzde isareti sozlukten", kodaGomulu.length ? kodaGomulu : ["yok"], ["yok"], "koda gomulu", "beklenen");
 }
 
+/* ── 143. ayarlarda seviye aciklamasi ─────────────────────────────────────
+ * Dort seviye aciklamasi sozlukte duruyordu (`level.*_desc`) ve mobilde yalniz
+ * onboarding'de okunuyordu: ayarlarda seviye "A1…C1" diye gorunuyor, hangi
+ * seviyenin ne anlama geldigi yazmiyordu. Web aciklamayi "bu dugmeyi senden
+ * baskasi cevirmiyor" cumlesinin basina koyarak zaten gosteriyordu; mobil de
+ * artik ayni cumleyi kuruyor.
+ *
+ * (Bu turda once webe IKINCI bir aciklama satiri eklemistim - orada zaten bir
+ * tane vardi ve ben yalniz `title` niteligini gormustum. Kapinin kendisi
+ * yakaladi: enjeksiyon yesil kalinca dosyada desenin IKI kez gectigi ortaya
+ * cikti. Yinelenen satir geri alindi.)
+ *
+ * Olculen: seciliye gore acilan aciklama ve anahtar tablosu. */
+{
+  const strip = (x) => x.replace(/\/\*[\s\S]*?\*\//g, " ").replace(/(^|[^:"'`\\])\/\/.*$/gm, "$1");
+  const tablo = (yol) => {
+    const src = strip(read(yol));
+    return [...new Set([...src.matchAll(/"((?:level\.\w+_desc)|onboarding\.i_m_just_starting_out)"/g)].map((m) => m[1]))].sort();
+  };
+  const gorunur = (yol, desen) => (desen.test(strip(read(yol))) ? "var" : "yok");
+  sameList(
+    "ayarlarda seviye aciklamasi",
+    [...tablo("mobile/src/screens/SettingsScreen.tsx"), "gorunur satir=" + gorunur("mobile/src/screens/SettingsScreen.tsx", /LEVEL_DESC_KEY\[level\]/)],
+    [...tablo("src/components/profile-form.tsx"), "gorunur satir=" + gorunur("src/components/profile-form.tsx", /LEVELS\.find\(\(l\) => l\.id === level\)\?\.descKey/)],
+  );
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"

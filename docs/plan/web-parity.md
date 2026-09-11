@@ -7898,3 +7898,31 @@ kendisine değil **neyi saydığına** bakmak.
 
 Üç enjeksiyon: mobilin işareti geri gömülse, webin kutusu gömse, ve düzen
 yüzdesi değişse (yanlış alarm vermemeli) — üçü de doğru davrandı.
+
+### 11.237 Ayarlarda seviye "A1…C1"den ibaretti
+
+Dört seviye açıklaması sözlükte duruyordu (`level.*_desc`) ama mobilde yalnız
+onboarding'de okunuyordu: **Ayarlar'da seviye "A1…C1" diye görünüyor, hangi
+seviyenin ne anlama geldiği yazmıyordu.** Web açıklamayı "bu düğmeyi senden
+başkası çevirmiyor" cümlesinin başına koyarak zaten gösteriyor; mobil de artık
+aynı cümleyi kuruyor.
+
+Bu turun asıl dersi **kendi hatamda**: önce webde açıklamanın yalnız `title`
+niteliğinde olduğunu gördüm ("dokunmatikte hover yok") ve webe **ikinci bir
+açıklama satırı** ekledim. Oysa orada zaten bir tane vardı, on satır aşağıda.
+Yinelenen satırı yazdım, sonra **kapının kendisi yakaladı**: web tarafını
+bozmaya çalıştığım enjeksiyon yeşil kaldı, çünkü desen dosyada **iki kez**
+geçiyordu. Yinelenen satır geri alındı; webde bu turda hiçbir değişiklik yok.
+
+Bir kapının enjeksiyona *yeşil* cevap vermesi çoğu zaman kapının kusurudur —
+bu kez düzeltilen şeyin kendisinin kusuru olduğunu gösterdi.
+
+**§143** seçiliye göre açılan açıklamayı ve anahtar tablosunu ölçüyor; üç
+enjeksiyonun üçü de (webin satırı, mobilin satırı, bir anahtarın kayması)
+yakalandı.
+
+Bu turda iki şey de ölçülüp **dokunulmadı**: bildirim ekranının üç hatırlatma
+anahtarı iki tarafta birebir aynı (mobildeki "test bildirimi gönder" yalnız
+`__DEV__` derlemesinde, yani ürün yüzeyi değil), ve oyun sesleri anahtarı
+webde Bildirimler altında, Android'de Ayarlar'da — webin yerleşimi yazılı bir
+gerekçe taşıyor ("ne zaman rahatsız edilirim ayarı"), ikisi de erişilebilir.
