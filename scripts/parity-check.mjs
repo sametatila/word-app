@@ -4681,6 +4681,47 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   );
 }
 
+/* ── 134. sinav sayaci ────────────────────────────────────────────────────
+ * Seviye sinavinin suresi Androidde her saniye bir SAYICI azaltarak
+ * isliyordu ve `setInterval` uygulama arka plana alininca duruyor: kullanici
+ * uygulamadan cikip donunce sayac biraktigi yerden devam ediyordu, yani kirk
+ * bes dakikalik sinav istenildigi kadar uzatilabiliyordu. Sure sinavin
+ * KISITI ve o kisit Androidde delinebiliyordu. Web bastan beri gecen sureyi
+ * duvar saatinden hesapliyor.
+ *
+ * Ikinci fark: son iki dakikada sayac webde kirmiziya donuyor, Androidde
+ * sonuna kadar ayni renkteydi - "sure bitiyor" uyarisi hic verilmiyordu.
+ *
+ * DENEME KAGIDI BILEREK FARKLI: orada butce GOREV basina ve kalan saniye
+ * kaydediliyor (`secondsLeft`), yani birakip donmek surdurmek demek. Iki
+ * platform da orada ayni sayici kalibini kullaniyor ve asagida ayrica
+ * olculuyor - "hepsi duvar saati olsun" demek o tasarimi bozardi. */
+{
+  const strip = (x) => x.replace(/\/\*[\s\S]*?\*\//g, " ").replace(/(^|[^:"'`\\])\/\/.*$/gm, "$1");
+  const mobSinav = strip(read("mobile/src/screens/ExamScreen.tsx"));
+  const webSinav = strip(read("src/components/exam-player.tsx"));
+  const kaynak = (src) =>
+    /seconds \??\.?\s*(?:\?\? 0\s*)?\) - Math\.floor\(\(Date\.now\(\) - startedAt/.test(src.replace(/\s+/g, " ")) ||
+    /paper\.seconds - Math\.floor\(\(Date\.now\(\) - startedAt/.test(src)
+      ? "duvar saati"
+      : "sayici";
+  const uyari = (src) => {
+    const m = src.match(/left < (\d+)/);
+    return m ? "esik=" + m[1] : "uyari yok";
+  };
+  sameList("sinav sayaci", [kaynak(mobSinav), uyari(mobSinav)], [kaynak(webSinav), uyari(webSinav)]);
+
+  /* Deneme kagidinda iki taraf da GOREV butcesini sayiciyla isletiyor ve
+     kalan saniyeyi kaydediyor; kalip birebir ayni olmali. */
+  const mobKagit = strip(read("mobile/src/screens/MockExamScreen.tsx"));
+  const webKagit = strip(read("src/components/mock-exam-player.tsx"));
+  const kagit = (src) => [
+    "sayici=" + (/setLeft\(\(s\) => \(s <= 1 \? 0 : s - 1\)\)/.test(src) ? "var" : "yok"),
+    "kalan kaydediliyor=" + (/secondsLeft: left/.test(src) ? "evet" : "hayir"),
+  ];
+  sameList("deneme kagidi sayaci", kagit(mobKagit), kagit(webKagit));
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"

@@ -7634,3 +7634,31 @@ Kapı ilk hâlinde iki enjeksiyonu da **kaçırdı**: `<ConfirmDialog` deseni Ö
 olarak eşleşiyordu ve yeniden adlandırılmış `<ConfirmDialog2`'yi hâlâ "onay
 var" sayıyordu. Ad sınırı eklendi. **Ölçünün komşusunu ölçmenin on üçüncü
 biçimi** — bu kez "komşu", ölçülen adın kendi öneki.
+
+### 11.227 Sınav süresi uygulamadan çıkınca duruyordu
+
+Seviye sınavının süresi Android'de her saniye bir **sayıcıyı** bir azaltarak
+işliyordu. `setInterval` uygulama arka plana alınınca duruyor: kullanıcı
+uygulamadan çıkıp dönünce sayaç **bıraktığı yerden** devam ediyordu. Yani kırk
+beş dakikalık sınav istenildiği kadar uzatılabiliyordu — süre sınavın kısıtı
+ve Android'de o kısıt delinebiliyordu.
+
+Web başından beri geçen süreyi duvar saatinden hesaplıyor (`exam-player`:
+`paper.seconds - elapsed`). Android artık aynısını yapıyor; `startedAt` kapaktaki
+BAŞLA'da damgalanıyor ve arka plandan dönüşte ilk saniye beklenmeden
+düzeltiliyor.
+
+İkinci fark aynı satırdaydı: **son iki dakikada** sayaç webde kırmızıya
+dönüyor, Android'de sonuna kadar aynı renkteydi — "süre bitiyor" uyarısı hiç
+verilmiyordu. Aynı eşik (120 sn) kondu.
+
+**Deneme kâğıdı bilerek farklı ve öyle kalıyor:** orada bütçe **görev** başına
+ve kalan saniye kaydediliyor (`secondsLeft`), yani bırakıp dönmek sürdürmek
+demek. İki platform da orada aynı sayıcı kalıbını kullanıyor; "hepsi duvar
+saati olsun" demek o tasarımı bozardı. §134 ikisini ayrı ayrı ölçüyor.
+
+Bu turda **enjeksiyonun kendisi hatalıydı** ve bunu not etmek gerekiyor:
+eşiği değiştirmek için yaptığım arama `left < 120`yi önce **yorumun içinde**
+buldu (orada webe atıf var), kodda değil. Kapı doğru çalışıyordu; ölçtüğüm
+şey yanlıştı. Kodu hedefleyen iki enjeksiyonla tekrarlandı, ikisi de
+yakalandı.

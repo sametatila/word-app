@@ -240,11 +240,25 @@ export function ExamScreen() {
      KARTINDA DA İŞLER: web sayacı orada durdurmuyor (`exam-player` yalnız
      kapak/sonuç/hata fazlarını dışarıda bırakıyor) ve durdurmak Android'de
      sınavı kolaylaştırırdı - bölümler arasında sınırsız okuma süresi. */
+  /*
+   * SAYAÇ DUVAR SAATİNDEN, SAYICIDAN DEĞİL.
+   *
+   * Süre her saniye bir sayıcıyı bir azaltarak işliyordu ve `setInterval`
+   * uygulama arka plana alınınca duruyor: kullanıcı uygulamadan çıkıp
+   * dönünce sayaç bıraktığı yerden devam ediyordu. Yani kırk beş dakikalık
+   * sınav istenildiği kadar uzatılabiliyordu — sürenin kendisi sınavın
+   * kısıtı ve Android'de o kısıt delinebiliyordu. Web başından beri geçen
+   * SÜREYİ hesaplıyor (`exam-player`: `paper.seconds - elapsed`), yani arka
+   * planda geçen zaman da sayılıyor. `startedAt` kapaktaki BAŞLA'da
+   * damgalanıyor.
+   */
   useEffect(() => {
     if (phase !== "bolum" && phase !== "bolumGiris") return;
-    const id = setInterval(() => setLeft((n) => Math.max(0, n - 1)), 1000);
+    const tick = () => setLeft(Math.max(0, (paper?.seconds ?? 0) - Math.floor((Date.now() - startedAt.current) / 1000)));
+    tick(); // arka plandan dönüşte ilk saniyeyi beklemeden düzeltilir
+    const id = setInterval(tick, 1000);
     return () => clearInterval(id);
-  }, [phase]);
+  }, [phase, paper]);
 
   useEffect(() => {
     if ((phase === "bolum" || phase === "bolumGiris") && left === 0) void finishExam();
@@ -274,7 +288,10 @@ export function ExamScreen() {
         <Text variant="micro" color={colors.textMuted}>
           {paper?.cover ? `${paper.cover.code} · ${paper.cover.titleTr}` : t("exam.level_exam", { level })}
         </Text>
-        <Text variant="h3">{phase === "bolum" ? `${mm}:${ss}` : t("exam.title")}</Text>
+        {/* Son iki dakika KIRMIZI — web sayacı aynı eşikte renklendiriyor
+            (`exam-player`: `left < 120`). Androidde sayaç sonuna kadar aynı
+            renkteydi, yani "süre bitiyor" uyarısı hiç verilmiyordu. */}
+        <Text variant="h3" color={phase === "bolum" && left < 120 ? colors.dangerText : undefined}>{phase === "bolum" ? `${mm}:${ss}` : t("exam.title")}</Text>
       </View>
     </View>
   );
