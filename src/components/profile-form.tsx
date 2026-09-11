@@ -278,6 +278,14 @@ export function ProfileForm({
                   className={`option px-1 py-2.5 text-strong ${
                     level === l.id ? "option-correct" : ""
                   }`}
+                  /* SEVİYE AÇIKLAMASI erişilebilir adda. Beş çip iki
+                     karakterlik etiketler ("A1".."C1") ve açıklama yalnız
+                     `title=` balonundaydı: dokunmatikte hiç açılmıyor, yani
+                     telefondan seviye seçen kullanıcı "B1 ne demek"
+                     sorusunun cevabını göremiyordu. Açıklamayı görünür
+                     yazmak beş satır ekler (yorumun dediği 230 piksel geri
+                     gelir), o yüzden erişilebilir ad. */
+                  aria-label={`${l.label} — ${t(l.descKey)}`}
                   title={t(l.descKey)}
                 >
                   {l.label}

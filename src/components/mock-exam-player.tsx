@@ -540,11 +540,17 @@ function Item({ course, item, task, value, answers, onAnswer }: { course: MockCo
     item.kind === "match" && !task.reuseOptions
       ? new Set(task.items.filter((i) => i.id !== item.id).map((i) => answers[i.id]).filter(Boolean))
       : null;
-  const chip = (label: string, active: boolean, onClick: () => void, key: string) => (
+  const chip = (label: string, active: boolean, onClick: () => void, key: string, hint?: string) => (
     <button
       key={key}
       type="button"
       onClick={onClick}
+      /* "BU ŞIK BAŞKA MADDEDE KULLANILDI" notu DÜĞMENİN kendi adında.
+         Not sarmalayıcı `<span>`in `title=`inde duruyordu: span odaklanamaz,
+         yani ekran okuyucu oraya hiç uğramıyor ve dokunmatikte ipucu balonu
+         hiç açılmıyor. Android notu doğrudan basılabilir ögeye veriyor
+         (`MockExamScreen` `accessibilityHint`). */
+      aria-label={hint ? `${label} — ${hint}` : undefined}
       /* SEÇİLİ DURUMU DUYURULUYOR. Şık seçilince yalnız zemin ve kenarlık
          değişiyordu: ekran okuyucu kullanan öğrenci hangi şıkkı işaretlediğini
          hiçbir şekilde duymuyordu — sınavda cevabını doğrulayamamak demek.
@@ -581,10 +587,15 @@ function Item({ course, item, task, value, answers, onAnswer }: { course: MockCo
                   {(task.options ?? []).map((o) => (
                     <span
                       key={o.key}
-                      title={usedKeys?.has(o.key) && value !== o.key ? t("mockexam.option_used") : undefined}
                       style={{ opacity: usedKeys?.has(o.key) && value !== o.key ? 0.45 : 1 }}
                     >
-                      {chip(o.key, value === o.key, () => onAnswer(item.id, o.key), o.key)}
+                      {chip(
+                        o.key,
+                        value === o.key,
+                        () => onAnswer(item.id, o.key),
+                        o.key,
+                        usedKeys?.has(o.key) && value !== o.key ? t("mockexam.option_used") : undefined,
+                      )}
                     </span>
                   ))}
                 </div>

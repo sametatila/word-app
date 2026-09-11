@@ -1724,10 +1724,13 @@ export function LessonPlayer({
                 <button
                   type="button"
                   onClick={() => router.push(`/lessons/${lesson.id}/exam`)}
-                  className="btn btn-ghost flex-1 py-3 text-body"
-                  title={t("lessonp.exam_hint")}
+                  className="btn btn-ghost flex-1 flex-col gap-0.5 py-3 text-body"
                 >
                   {t("lessonp.try_as_exam")}
+                  {/* İPUCU GÖRÜNÜR. `title=` balonunda duruyordu, yani
+                      dokunmatikte hiç açılmıyordu; Android aynı düğmenin
+                      altına ikinci satır olarak yazıyor (`LessonScreen`). */}
+                  <span className="muted text-micro">{t("lessonp.exam_hint")}</span>
                 </button>
               ) : null}
               {roleplayDone && extras.next ? (
@@ -1735,7 +1738,6 @@ export function LessonPlayer({
                   type="button"
                   onClick={() => router.push(`/lessons/${extras.next!.id}`)}
                   className="btn btn-primary flex-1 py-3 text-body"
-                  title={`${extras.next.title} · ${extras.next.titleTr}`}
                 >
                   {t("lesson.next_speaking", { title: extras.next.title })}
                 </button>

@@ -216,7 +216,13 @@ function LeagueRow({
           ) : null}
         </span>
         {row.streak > 0 ? (
-          <span className="flex shrink-0 items-center gap-1 text-caption tabular-nums" style={{ color: "var(--color-flame)" }} title={t("social.days_streak", { n: row.streak })}>
+          <span
+            /* Çıplak sayı + alev simgesi ekran okuyucuya "5" diye okunuyordu;
+               cümle `title=` balonundaydı, yani dokunmatikte de yoktu. */
+            aria-label={t("social.days_streak", { n: row.streak })}
+            className="flex shrink-0 items-center gap-1 text-caption tabular-nums"
+            style={{ color: "var(--color-flame)" }}
+          >
             <FlameIcon size={13} />
             {row.streak}
           </span>

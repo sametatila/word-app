@@ -293,6 +293,8 @@ export function GlossPanel({ gloss }: { gloss: Gloss[] }) {
                 key={g.de}
                 type="button"
                 onClick={() => speakGerman(g.de)}
+                /* Erişilebilir ad da veriliyor: `title` yalnız fareyle açılır. */
+                aria-label={t("common.listen_pronunciation")}
                 title={t("common.listen_pronunciation")}
                 className="chip px-3 py-1.5 text-caption"
               >

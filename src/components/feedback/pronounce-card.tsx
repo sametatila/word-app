@@ -42,6 +42,17 @@ export function PronounceCard({ score, audioUrl, compact = false }: { score: Pro
             key={`${w.word}-${i}`}
             type="button"
             onClick={() => speakGerman(w.word)}
+            /* KELİMENİN HÜKMÜ erişilebilir addan da okunuyor. Metin yalnız
+               `title=` ipucu balonundaydı: dokunmatikte hiç açılmıyor, yani
+               "duyulmadı" ya da "duyulan: X" bilgisi telefondan bakan
+               kullanıcıya ulaşmıyordu. */
+            aria-label={
+              w.status === "ok"
+                ? t("pron.word_ok")
+                : w.heard
+                  ? t("pron.word_heard", { heard: w.heard })
+                  : t("pron.word_missing")
+            }
             title={
               w.status === "ok"
                 ? t("pron.word_ok")

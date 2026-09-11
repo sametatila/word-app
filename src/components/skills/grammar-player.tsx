@@ -51,6 +51,10 @@ export function GrammarPlayer({ exercise, backHref }: { exercise: GrammarExercis
                       type="button"
                       onClick={() => speakGerman(x.de)}
                       className="flex w-full items-start gap-2 text-left"
+                      /* Android aynı düğmeye `accessibilityLabel` veriyor
+                         (`skillLibrary`); webde metin yalnız `title=` ipucu
+                         balonundaydı, yani dokunmatikte ve klavyede yoktu. */
+                      aria-label={t("item.listen_example")}
                       title={t("item.listen_example")}
                     >
                       <SpeakerIcon size={16} className="mt-0.5 shrink-0" style={{ color: "var(--color-brand)" }} />
