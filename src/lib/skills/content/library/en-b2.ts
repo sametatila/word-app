@@ -28,7 +28,7 @@ export const enB2: SkillExercise[] = [
       { de: "threshold", tr: "eşik" },
       { de: "sample", tr: "örneklem" },
       { de: "punish", tr: "cezalandırmak" },
-      { de: "honest", tr: "dürüst" },
+      { de: "dishonest", tr: "dürüst olmayan" },
     ],
     minutes: 9,
     text:

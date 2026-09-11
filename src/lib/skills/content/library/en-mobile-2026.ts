@@ -1800,7 +1800,7 @@ export const enMobile2026: SkillExercise[] = [
         "tr": "on buçuk"
       },
       {
-        "de": "How much is it?",
+        "de": "How much …?",
         "tr": "Ne kadar?"
       }
     ],
@@ -2035,8 +2035,8 @@ export const enMobile2026: SkillExercise[] = [
         "tr": "ceket"
       },
       {
-        "de": "size",
-        "tr": "beden"
+        "de": "small",
+        "tr": "küçük beden"
       },
       {
         "de": "medium",
@@ -3855,7 +3855,7 @@ export const enMobile2026: SkillExercise[] = [
         "tr": "balıkçı"
       },
       {
-        "de": "grow up",
+        "de": "grew up",
         "tr": "büyümek"
       },
       {

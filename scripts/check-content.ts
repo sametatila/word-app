@@ -200,8 +200,28 @@ function checkSkills(list: SkillExercise[]) {
           : e.skill === "grammar"
             ? [...e.explanation.flatMap((b) => (b.examples ?? []).map((x) => x.de)), ...e.questions.flatMap((q) => [q.text, ...(q.options ?? []), ...(q.accept ?? []), ...(q.items ?? [])])].join(" ")
             : "";
-    const inText = (word: string) =>
-      english ? text.toLowerCase().includes(word.toLowerCase().replace(/^(to|the|a|an) /, "").split(" (")[0]) : contains(text, word);
+    /* İNGİLİZCE EŞLEŞTİRME ÇEKİME DUYARLI OLMAK ZORUNDA.
+       Sözlükçe SÖZLÜK biçimini verir ("get married"), metin çekimli
+       biçimi kullanır ("are getting married") — ikisi de doğru. Eski
+       ölçüt düz alt-dize arıyordu ve "İngilizce çekim ekleri kısa"
+       varsayımına dayanıyordu; ek kısa ama GÖVDE değişiyor:
+       close→closing (e düşer), busy→busiest (y→i), get→getting (ünsüz
+       ikizleşir). Ölçüldü: 10 uyarının yedisi bu yüzden çıkıyordu.
+
+       Yeni ölçüt sözcük sözcük desen kuruyor ve BİTİŞİKLİĞİ koruyor:
+       "book a taxi" → /\bbook\w*\s+a\s+taxi\w*\b/ → "booked a taxi"
+       eşleşir, ama "How much is it?" sözcükleri metne dağılmışsa
+       eşleşmez. Sondaki `e` seçimli, sondaki `y` [yi] olur.
+       Düzensiz fiil (grow→grew) hâlâ eşleşmez ve eşleşmemeli: orada
+       sözlükçe metnin kullandığı biçimi vermelidir. */
+    const enStem = (w: string) =>
+      w.replace(/[^\w'’-]/g, "").replace(/e$/, "e?").replace(/y$/, "[yi]") + "\\w*";
+    const inText = (word: string) => {
+      if (!english) return contains(text, word);
+      const parts = word.toLowerCase().replace(/^(to|the|a|an) /, "").split(/\s+/).filter(Boolean);
+      if (!parts.length) return true;
+      return new RegExp("\\b" + parts.map(enStem).join("\\s+"), "i").test(text);
+    };
     for (const g of e.gloss ?? []) {
       if (!g.de?.trim() || !g.tr?.trim()) E(w, `gloss eksik: ${JSON.stringify(g)}`);
       if (multi(g.tr)) W(w, `çok anlamlı tr: ${g.de} → "${g.tr}"`);
