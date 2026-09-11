@@ -1,6 +1,6 @@
 # WP-74 — İngilizce ders kapsamı B1–C1
 
-**Durum:** sürüyor (B1 TAM, B2 TAM; C1 açıldı, modül 1 yarıda — 205/300 ders) · **Sahip:** Claude · **Açılış:** 2026-09-11
+**Durum:** sürüyor (B1 TAM, B2 TAM; C1 modül 1 TAM — 210/300 ders) · **Sahip:** Claude · **Açılış:** 2026-09-11
 
 ## Kusur
 
@@ -440,10 +440,25 @@ can-do'suna düşüyor.
 içeriği kaç ayrı biçimde söyleyebildiğin ve hangisini neden seçtiğin. On
 ifade de bu yüzden «kurabilirim» değil çoğu yerde «seçebilirim» diyor.
 
-**C1 modül 1 — Kayıt ve ton (ilk yarı).** Beş ders: aynı şey üç kayıtta,
-söylenmeyeni bırakmak, ağırlığı sona atmak, resmî dilek, imtiyazın tonu.
-Modülün ekseni seçimin kendisi; ilk ders bunu doğrudan konu ediyor ve
-seviyenin tezini söylüyor: en kesin cümle her zaman en güçlü cümle değildir.
+**C1 modül 1 — Kayıt ve ton (2026-09-11). TAM.** On ders: aynı şey üç
+kayıtta, söylenmeyeni bırakmak, ağırlığı sona atmak, resmî dilek,
+imtiyazın tonu, yerleşik eşdizim, hükmü aktarma fiili taşır, kip nüansı,
+eksiltili övgü, metni bir arada tutmak.
+
+Modülün ekseni SEÇİMİN KENDİSİ ve ilk ders bunu doğrudan konu ediyor:
+seviyenin tezi «en kesin cümle her zaman en güçlü cümle değildir».
+Eşdizim dersi bunu en açık söylüyor — eşdizim bir dilbilgisi kuralı değil
+bir alışkanlıktır, yanlışı anlaşılır ama kulağa yabancı gelir; sözlük
+bunu söylemez, kullanım söyler. Aktarma fiili dersi ise C1'in en sessiz
+aracını gösteriyor: `said`, `claimed` ve `conceded` aynı içeriği üç ayrı
+hükme çevirir ve hiçbiri yorum diye işaretlenmez.
+
+İroni dersi tek yönlü değil: kurmak kadar DUYMAK da öğretiliyor ve
+ikisinden zor olanı duymak. Son ders modülü kapatırken ölçeği büyütüyor —
+`this`, `such` ve `the latter` cümleyi değil metni bağlıyor, yanlış yere
+gönderirlerse okur cümleyi değil paragrafı kaybediyor.
+
+C1.GR.11-20'nin onu da modül içinde bir kez kullanılıyor (ölçüldü, 10/10).
 
 ## Tamamlanma ölçütü
 
