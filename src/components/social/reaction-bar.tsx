@@ -90,6 +90,7 @@ export function ReactionBar({
             className="chip h-7 px-2.5 text-xs"
             onClick={() => setOpen((o) => !o)}
             aria-expanded={open}
+            data-panel="reactions"
             aria-label={t("reactionbar.react")}
             disabled={busy}
           >

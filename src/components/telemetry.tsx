@@ -131,13 +131,16 @@ export function Telemetry() {
   }, []);
 
   // Katlı bölümler: aria-expanded taşıyan düğmeye dokunuş. Anahtar
-  // `data-panel`ten; yoksa bilinen başlıklardan (sahibin bileşenlerine
-  // dokunmadan ölçmek için — yeni bölüm eklerken data-panel ver).
+  // `data-panel`ten gelir; taşımayan bölüm ölçülmez (bkz. aşağıdaki not).
   useEffect(() => {
     const onClick = (e: MouseEvent) => {
       const el = (e.target as Element | null)?.closest?.("[aria-expanded]") as HTMLElement | null;
       if (!el) return;
-      const key = el.dataset.panel ?? panelKeyFromText(el.textContent ?? "");
+      /* AD YALNIZ `data-panel`DEN. Eskiden başlık METNİNDEN de çıkarılıyordu
+         ve tablo Türkçe yazılıydı: İngilizce ya da Almanca arayüzde hiçbir
+         panel eşleşmiyor, olay hiç yazılmıyordu. Ölçümün dile bağlı olması,
+         ölçümün olmaması demek. */
+      const key = el.dataset.panel;
       if (!key) return;
       track("panel_open", el.getAttribute("aria-expanded") === "true" ? 0 : 1, key);
     };
@@ -148,16 +151,4 @@ export function Telemetry() {
   return null;
 }
 
-const PANEL_TEXT: [RegExp, string][] = [
-  [/Nerede zayıfım|Ayrıntıyı kapat/, "weak_detail"],
-  [/Tek oyuna odaklan/, "single_game"],
-  [/Sıradaki|SIRADAKİ/, "plan"],
-  [/İlerleme|Pekişen|grafik/i, "words_progress"],
-];
 
-function panelKeyFromText(text: string): string | null {
-  const t = text.trim();
-  if (!t) return null;
-  for (const [re, key] of PANEL_TEXT) if (re.test(t)) return key;
-  return null;
-}

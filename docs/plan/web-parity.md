@@ -8729,3 +8729,33 @@ belgeliyordu. Satır düştü.
 **§168** iki platformun da üç sonucu aynı adla ve aynı değerlerle yazmasını,
 ve panelin okuduğu adın değişmemesini denetliyor. Dört enjeksiyonun dördü de
 yakalandı.
+
+## §11.265 — Panel ölçümü yalnız Türkçe arayüzde çalışıyordu
+
+Muafiyet listelerini tek tek doğrulama turu. Sekiz satırın yedisi doğru çıktı
+(`install_prompt` PWA'ya özel, `purchase_*` yalnız mağazada, `walk_capture`
+tarayıcının `getUserMedia` kısıtı, `feedback_why_opened` iki tarafta da hep
+null olan kural bağı). Biri yanlıştı: **`panel_open`**.
+
+Olay hangi katlı bölümün açıldığını yazıyor ve adı iki yoldan çıkarıyordu:
+`data-panel` özniteliği, yoksa başlığın **metni**. Metin tablosu Türkçe
+yazılıydı ("Nerede zayıfım", "Tek oyuna odaklan", "Sıradaki") ve uygulamada
+hiçbir panel `data-panel` taşımıyordu — yani İngilizce ya da Almanca arayüzde
+hiçbir eşleşme olmuyor, olay **hiç yazılmıyordu**. Ölçümün dile bağlı olması,
+o dillerde ölçümün olmaması demek; üretimdeki 46 satırın hepsi Türkçe
+arayüzden.
+
+Dört katlı bölüme (`Disclosure`, kelime listesi ilerleme grafiği, başkasının
+profilindeki ek eylemler, tepki çubuğu) arayüz dilinden bağımsız ad kondu ve
+metin tablosu kalktı.
+
+**§169** iki şeyi ölçüyor: ölçüm katmanının yalnız `data-panel` okuması ve
+`aria-expanded` taşıyan her düğmenin bir adı olması — adsız bir bölüm sessizce
+ölçülmez. Dört enjeksiyonun dördü de yakalandı.
+
+Yan not (düzeltilmedi, kayda geçti): **mobilde derin bağlantı hiç yok.**
+`Linking.getInitialURL` ya da navigasyonun `linking` yapılandırması yok; davet
+bağlantısı Android'de uygulamayı değil siteyi açıyor. Bu yüzden `invite_open`
+gerçekten web'e özel — ama sebebi "tarayıcı ölçüm katmanı" değil, Android'in o
+kapıyı hiç açmaması. Uzak push da bağlı olmadığı için bugün etkisi sınırlı;
+ikisi birlikte ele alınmalı.

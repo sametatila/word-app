@@ -373,7 +373,7 @@ export function ProfileForm({
               bir işin yönergesi — zaten kurmuş olan kullanıcı her ayar açılışında
               onu geçmek zorunda kalıyordu. */}
           <div className="p-5">
-            <Disclosure title={t("settings.add_to_home")} hint={t("settings.add_to_home_hint")}>
+            <Disclosure panel="install_guide" title={t("settings.add_to_home")} hint={t("settings.add_to_home_hint")}>
               <InstallGuide tone="plain" />
             </Disclosure>
           </div>

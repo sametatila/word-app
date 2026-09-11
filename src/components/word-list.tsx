@@ -172,6 +172,7 @@ export function WordList({
             type="button"
             onClick={() => setShowProgress((v) => !v)}
             aria-expanded={showProgress}
+            data-panel="words_progress"
             className="flex w-full items-center gap-3 px-4 py-3 text-left"
           >
             <span className="min-w-0 flex-1">

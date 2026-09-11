@@ -156,7 +156,7 @@ export function ProgressPanel() {
           zaten cevap veriyor, aşağısı cevabı beğenmeyip "neden" diye soran
           için. */}
       <div className="mt-3 border-t pt-2" style={{ borderColor: "var(--border)" }}>
-        <Disclosure title={t("progp.how_am_i_doing")} hint={t("progp.n_weeks", { n: data.weeks.length })}>
+        <Disclosure panel="growth" title={t("progp.how_am_i_doing")} hint={t("progp.n_weeks", { n: data.weeks.length })}>
           <div className="space-y-3">
             <div className="grid grid-cols-2 gap-2.5">
               <Spark title={t("exam.sec_writing")} points={data.series.writing} max={100} color="var(--color-brand)" />

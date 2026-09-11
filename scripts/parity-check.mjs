@@ -6296,6 +6296,69 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   );
 }
 
+/* ── 169. panel olcumu arayuz DILINE bagli olmamali ───────────────────────
+ * `panel_open` hangi katli bolumun acildigini yaziyor. Ad iki yoldan
+ * cikariliyordu: `data-panel` ozniteligi, YOKSA basligin METNI. Metin tablosu
+ * TURKCE yaziliydi ("Nerede zayifim", "Tek oyuna odaklan", "Siradaki") ve
+ * hicbir panel `data-panel` tasimiyordu - yani Ingilizce ya da Almanca
+ * arayuzde hicbir eslesme olmuyor, olay HIC yazilmiyordu. Olcumun dile bagli
+ * olmasi, o dillerde olcumun olmamasi demek.
+ *
+ * Dort katli bolume ad kondu, metin tablosu kalkti. Kapi iki sey olcuyor:
+ * olcum katmaninin yalniz `data-panel` okumasi ve `aria-expanded` tasiyan her
+ * dugmenin bir adi olmasi - adsiz bir bolum sessizce olculmez. */
+{
+  const strip = (x) => x.replace(/\/\*[\s\S]*?\*\//g, (m) => m.replace(/[^\n]/g, " ")).replace(/(^|[^:"'`\\])\/\/.*$/gm, "$1");
+  const tele = strip(read("src/components/telemetry.tsx")).replace(/\s+/g, " ");
+  sameList(
+    "panel adi nereden",
+    [
+      "kaynak=" + (/const key = el\.dataset\.panel;/.test(tele) ? "oznitelik" : "metin"),
+      "metin tablosu=" + (/PANEL_TEXT\b/.test(tele) ? "duruyor" : "yok"),
+    ],
+    ["kaynak=oznitelik", "metin tablosu=yok"],
+    "bulunan",
+    "beklenen",
+  );
+
+  const gezTsx = (d, out = []) => {
+    for (const e of readdirSync(new URL("../" + d, import.meta.url), { withFileTypes: true })) {
+      const yol = d + "/" + e.name;
+      if (e.isDirectory()) { if (!/node_modules|__tests__|\/admin/.test("/" + yol)) gezTsx(yol, out); }
+      else if (e.name.endsWith(".tsx")) out.push(yol);
+    }
+    return out;
+  };
+  const etiketSonu = (src, bas) => {
+    let derinlik = 0, tirnak = "";
+    for (let j = bas; j < src.length; j++) {
+      const c = src[j];
+      if (tirnak) { if (c === tirnak && src[j - 1] !== "\\") tirnak = ""; continue; }
+      if (c === '"' || c === "'" || c === "`") { tirnak = c; continue; }
+      if (c === "{") derinlik++;
+      else if (c === "}") derinlik--;
+      else if (c === ">" && derinlik === 0) return j;
+    }
+    return -1;
+  };
+  const adsiz = [];
+  for (const yol of [...gezTsx("src/components"), ...gezTsx("src/app")]) {
+    if (yol.endsWith("telemetry.tsx")) continue;
+    const src = strip(read(yol));
+    for (const m of src.matchAll(/aria-expanded=/g)) {
+      const bas = src.lastIndexOf("<", m.index);
+      const son = etiketSonu(src, bas);
+      if (son < 0) continue;
+      const tag = src.slice(bas, son + 1);
+      /* `Disclosure` kendi `data-panel`ini iceriden veriyor: cagri yerinde
+         `panel` adi yeterli. */
+      if (/data-panel/.test(tag) || /panel=\{?["{]/.test(tag)) continue;
+      adsiz.push(`${yol}:${src.slice(0, m.index).split("\n").length}`);
+    }
+  }
+  sameList("adsiz katli bolum", adsiz.length ? adsiz : ["yok"], ["yok"], "bulunan", "beklenen");
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"

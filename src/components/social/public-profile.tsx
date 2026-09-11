@@ -95,7 +95,7 @@ export function PublicProfile({ data, me }: { data: PublicProfileView; me: strin
             {/* Etiket AÇIK: "Daha fazla" ne olduğunu söylemiyordu ve açılan
                 şey engelleme/şikayet gibi geri dönüşü olan bir seçim değil.
                 Android iki durumu da adıyla yazıyor. */}
-            <button className="muted ml-auto text-[11px]" onClick={() => setMore((m) => !m)} aria-expanded={more}>
+            <button className="muted ml-auto text-[11px]" onClick={() => setMore((m) => !m)} aria-expanded={more} data-panel="profile_more">
               {t(more ? "user.hide" : "user.block_or_report")}
             </button>
           </div>

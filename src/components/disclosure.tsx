@@ -23,6 +23,7 @@ import { ChevronRightIcon } from "@/components/icons";
 export function Disclosure({
   title,
   hint,
+  panel,
   defaultOpen = false,
   children,
   className = "",
@@ -30,6 +31,15 @@ export function Disclosure({
   title: string;
   /** Başlığın sağındaki kısa özet — açmadan önce içeride ne olduğunu söyler. */
   hint?: string;
+  /**
+   * Ölçüm adı (`panel_open` olayının `kind`i).
+   *
+   * Ölçüm katmanı panelin adını BAŞLIK METNİNDEN çıkarıyordu ve tablo Türkçe
+   * yazılıydı: İngilizce ya da Almanca arayüzde hiçbir panel eşleşmiyor, olay
+   * hiç yazılmıyordu — yani "hangi panel açılıyor" sorusu yalnız Türkçe
+   * kullanıcılar için cevaplanıyordu. Ad artık arayüz dilinden bağımsız.
+   */
+  panel?: string;
   defaultOpen?: boolean;
   children: React.ReactNode;
   className?: string;
@@ -42,6 +52,7 @@ export function Disclosure({
         type="button"
         onClick={() => setOpen((o) => !o)}
         aria-expanded={open}
+        data-panel={panel}
         className="flex w-full items-center gap-3 py-1 text-left"
       >
         <span className="flex-1 text-sm font-bold">{title}</span>
