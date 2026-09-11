@@ -12033,3 +12033,42 @@ gerçek mesafe **1306** çıktı: `chip` yardımcısı çağrı yerinden çok uz
 Ölçü **iki ayrı olguya** çevrildi — yardımcı erişilebilir adı `hint`ten kuruyor
 mu, ve çağrı yeri o metni geçiriyor mu. Pencere tahmin etmek, pencere
 tuzağının aynısı.
+
+## §11.357 — `aria-hidden` bilgiyi saklıyordu: biri kapının kör noktası
+
+`aria-hidden` bir ögeyi erişilebilirlik ağacından **tamamen** çıkarır — rol,
+ad, canlı bölge dahil. Kırk beş kullanımın kırk üçü meşru (iskeletler,
+konfeti, maskot, gradyanlar, adlı düğmelerin içindeki simgeler); ikisi bilgi
+saklıyordu.
+
+### 1. Günlük görevler kartının duyurusu yazıldığı gün ölüydü
+
+İskelet bölümü aynı etikette hem `aria-hidden` hem `role="status"`,
+`aria-busy="true"` ve `aria-label` taşıyordu. `aria-hidden` kazanır: **duyuru
+hiç ateşlenmiyor, etiket hiç okunmuyordu**. §152'nin "yükleme duyurulsun"
+düzeltmesi bu kartta hiç çalışmamıştı.
+
+Ve §156'nın kapısı bunu **göremiyordu**: o kapı dosyada `aria-busy="true"`
+**geçiyor mu** diye soruyor, **ulaşılabilir mi** diye değil. Kapının kör
+noktası tam buydu — "işaret var" ile "işaret işe yarıyor" ayrı sorular.
+
+### 2. Beceri satırının "bitti" durumu iki platformda da sessizdi
+
+Durumu taşıyan üç şeyin üçü de okunamıyordu: nokta (webde `aria-hidden`,
+Android'de etiketsiz), onay simgesi (`icons.tsx` varsayılanı `aria-hidden`) ve
+puan rozeti — hepsi renk ve simge. Satırın adı ise yalnız başlık + süreydi.
+Yani **hangi alıştırmanın bitmiş olduğu** sesli okuyucu kullanan biri için hiç
+okunamıyordu.
+
+İki platform kendi kalıbıyla düzeltildi: Android durumu **satırın adına**
+ekliyor (`accessibilityLabel`), web **onay simgesine** ad veriyor
+(`option-mark` kalıbı: simgeye rol ve ad verilince `aria-hidden` varsayılanı
+eziliyor). Kapı **yer değil varlık** ölçüyor — ikisi de o platformun doğru
+kalıbı.
+
+### Kapı: ağaç genelinde mutlak ölçüt
+
+§239 `src` altındaki bütün `.tsx` dosyalarını tarıyor: hiçbir öge aynı
+etikette `aria-hidden` ile bir ad/rol/canlı bölge taşımamalı.
+`aria-hidden={false}` bunun dışında — o, simgenin varsayılanını bilinçli
+olarak ezen kalıp.

@@ -7306,6 +7306,88 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     "beklenen",
   );
 
+  /* -- 239. `aria-hidden` BILGIYI SAKLIYOR MU ---------------------------
+   *
+   * Iki sey cikti ve ikisi de ayni sinif: `aria-hidden` bir ogeyi
+   * erisilebilirlik agacindan TAMAMEN cikarir, yani icindeki her sey
+   * kaybolur - rol, ad, canli bolge dahil.
+   *
+   *  1. GUNLUK GOREVLER KARTININ iskelet bolumu ayni etikette hem
+   *     `aria-hidden` hem `role="status"`, `aria-busy="true"` ve
+   *     `aria-label` tasiyordu. `aria-hidden` kazanir: duyuru HIC
+   *     atesleniyordu, etiket HIC okunmuyordu. §152'nin "yukleme duyurulsun"
+   *     duzeltmesi bu kartta yazildigi gun oluydu ve §156'nin kapisi bunu
+   *     goremiyordu - o kapi dosyada `aria-busy="true"` GECIYOR MU diye
+   *     soruyor, ULASILABILIR mi diye degil. Kapinin kor noktasi buydu.
+   *  2. BECERI SATIRININ "bitti" durumu iki platformda da sessizdi: nokta
+   *     (`aria-hidden` / etiketsiz), onay simgesi (`icons.tsx` varsayilani
+   *     `aria-hidden`) ve puan rozeti durumu yalniz RENK ve simgeyle
+   *     anlatiyordu; satirin adi ise baslik + sureydi. Hangi alistirmanin
+   *     bitmis oldugu sesli okuyucu kullanan biri icin HIC okunamiyordu.
+   *
+   * Olcut mutlak ve agac genelinde: hicbir oge ayni etikette `aria-hidden`
+   * ile bir ad/rol/canli bolge tasimamali. `aria-hidden={false}` bunun
+   * DISINDA - o, simgenin varsayilanini bilincli olarak ezen kalip
+   * (`option-mark`). */
+  {
+    const acilisSonu = (blok) => {
+      let derinlik = 0, tirnak = null;
+      for (let i = 0; i < blok.length; i++) {
+        const c = blok[i];
+        if (tirnak) { if (c === tirnak && blok[i - 1] !== "\\") tirnak = null; continue; }
+        if (c === '"' || c === "'" || c === "`") { tirnak = c; continue; }
+        if (c === "{") derinlik++;
+        else if (c === "}") derinlik--;
+        else if (c === ">" && derinlik === 0) return i;
+      }
+      return -1;
+    };
+    /** `src` altindaki butun `.tsx` dosyalari. */
+    const tsxler = (dizin, cikti = []) => {
+      for (const e of readdirSync(new URL("../" + dizin, import.meta.url), { withFileTypes: true })) {
+        if (e.isDirectory()) tsxler(dizin + "/" + e.name, cikti);
+        else if (e.name.endsWith(".tsx")) cikti.push(dizin + "/" + e.name);
+      }
+      return cikti;
+    };
+    const celiskili = [];
+    for (const yol of tsxler("src")) {
+      const src = sil(read(yol));
+      for (const m of src.matchAll(/<[A-Za-z][A-Za-z0-9.]*\b/g)) {
+        const son = acilisSonu(src.slice(m.index));
+        if (son < 0) continue;
+        const etiket = src.slice(m.index, m.index + son + 1);
+        if (!/\baria-hidden\b/.test(etiket)) continue;
+        if (/aria-hidden=\{false\}/.test(etiket)) continue;
+        if (!/role="(?:status|alert)"|aria-busy|aria-live|aria-label=/.test(etiket)) continue;
+        celiskili.push(yol + ":" + (src.slice(0, m.index).split("\n").length));
+      }
+    }
+    sameList(
+      "aria-hidden ad/rol ile ayni etikette degil",
+      ["celiskili oge=" + celiskili.length + (celiskili.length ? " (" + celiskili.join(", ") + ")" : "")],
+      ["celiskili oge=0"],
+      "bulunan",
+      "beklenen",
+    );
+
+    /* Beceri satirinin "bitti" durumu iki platformda da duyuruluyor. */
+    const bw = sil(read("src/app/(app)/skills/page.tsx"));
+    const bm = sil(read("mobile/src/screens/SkillsScreen.tsx"));
+    /* YER DEGIL VARLIK olculuyor: Android durumu SATIRIN adina ekliyor
+       (`accessibilityLabel`), web onay SIMGESINE ad veriyor - ikisi de o
+       platformun kendi kalibi ve ikisi de dogru. Ortak olan sey, durumun
+       okunabilir olmasi. */
+    const bitti = (src, desen) => "durum duyurusu=" + (desen.test(src) ? "var" : "YOK");
+    sameList(
+      "beceri satirinin bitti durumu duyuruluyor",
+      [bitti(bm, /\$\{done \? `, \$\{t\("common\.completed"\)\}` : ""\}/)],
+      [bitti(bw, /aria-label=\{t\("common\.completed"\)\}/)],
+      "mobil",
+      "web",
+    );
+  }
+
   /* -- 238. KONUSMA: kayit penceresi ve monologun hazirlik ekrani --------
    *
    * Uc sey cikti:
