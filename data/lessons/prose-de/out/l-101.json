@@ -1,0 +1,1037 @@
+[
+ {
+  "tr": "Taşınmış olmalı",
+  "kind": "titleTr",
+  "de": "Es muss verlegt worden sein"
+ },
+ {
+  "tr": "Değiştirilen şey",
+  "kind": "titleTr",
+  "de": "Was geändert wurde"
+ },
+ {
+  "tr": "Kontrol edilseydi",
+  "kind": "titleTr",
+  "de": "Wäre es geprüft worden"
+ },
+ {
+  "tr": "Öyle görünüyor ki",
+  "kind": "titleTr",
+  "de": "Es scheint so zu sein"
+ },
+ {
+  "tr": "Hiçbir yerde yazmıyor",
+  "kind": "titleTr",
+  "de": "Nirgends steht es"
+ },
+ {
+  "tr": "Bir arızanın geçmişini çözmeyi öğretir; edilgen kip bileşimi yapanı söylemeden çıkarım yapar.",
+  "kind": "summary",
+  "de": "Vermittelt, wie man die Vorgeschichte einer Störung klärt; Modalverb und Passiv zusammen ziehen einen Schluss, ohne den Handelnden zu nennen."
+ },
+ {
+  "tr": "Kural metnine dayanarak itiraz etmeyi öğretir; olumsuz zarf başa gelince devrik yapı iddiayı sertleştirir.",
+  "kind": "summary",
+  "de": "Vermittelt, wie man sich auf den Regeltext beruft; steht ein negatives Adverb am Anfang, verschärft die Inversion die Behauptung."
+ },
+ {
+  "tr": "Bir çözümlemenin kaçırılan yolunu konuşmayı öğretir; sonuç geçmişte kalırsa would have, bugüne uzanırsa would.",
+  "kind": "summary",
+  "de": "Vermittelt, wie man über den verpassten Weg einer Auswertung spricht; bleibt die Folge in der Vergangenheit, steht would have, reicht sie bis heute, steht would."
+ },
+ {
+  "tr": "Değişikliğin tam yerini göstermeyi öğretir; yarık cümle edilgen bir kaydın hangi parçasının değiştiğini ayırır.",
+  "kind": "summary",
+  "de": "Vermittelt, wie man die genaue Stelle einer Änderung zeigt; der Spaltsatz trennt heraus, welcher Teil einer passiven Aufzeichnung geändert wurde."
+ },
+ {
+  "tr": "Kesin olmayan bir teşhisi söylemeyi öğretir; yumuşatıcı bağlayıcılar edilgen bir çıkarımı iddia olmaktan çıkarır.",
+  "kind": "summary",
+  "de": "Vermittelt, wie man eine unsichere Diagnose sagt; die abschwächenden Konnektoren machen aus einem passiven Schluss eine Beobachtung statt einer Behauptung."
+ },
+ {
+  "tr": "kesin cevap isteyen, tereddüdü sevmeyen bir müşteri",
+  "kind": "partner",
+  "de": "eine Kundin, die eine klare Antwort will und kein Zögern mag"
+ },
+ {
+  "tr": "kuralı geniş yorumlayan, metne bakmak istemeyen bir yetkili",
+  "kind": "partner",
+  "de": "ein Zuständiger, der die Regel weit auslegt und nicht in den Text sehen will"
+ },
+ {
+  "tr": "sorumluyu bulmaya odaklanmış, adım adım soran bir ekip üyesi",
+  "kind": "partner",
+  "de": "ein Teammitglied, das den Schuldigen sucht und Schritt für Schritt nachfragt"
+ },
+ {
+  "tr": "bütün kaydın değiştiğini sanan, ayrıntıyı soran bir meslektaş",
+  "kind": "partner",
+  "de": "eine Kollegin, die glaubt, die ganze Aufzeichnung sei geändert, und nach Einzelheiten fragt"
+ },
+ {
+  "tr": "çözümlemeyi yeniden yapmak isteyen, nedeni merak eden bir meslektaş",
+  "kind": "partner",
+  "de": "ein Kollege, der die Auswertung wiederholen will und den Grund wissen möchte"
+ },
+ {
+  "tr": "Peki bunu kim yapmayı unuttu?",
+  "kind": "openingTr",
+  "de": "Und wer hat vergessen, das zu machen?"
+ },
+ {
+  "tr": "Bütün kayıt yeniden mi yazıldı?",
+  "kind": "openingTr",
+  "de": "Wurde die ganze Aufzeichnung neu geschrieben?"
+ },
+ {
+  "tr": "Başka bir deney işe yarar mıydı?",
+  "kind": "openingTr",
+  "de": "Hätte ein weiterer Versuch geholfen?"
+ },
+ {
+  "tr": "O kuralı herkes bilir, değil mi?",
+  "kind": "openingTr",
+  "de": "Diese Regel kennt doch jeder, oder?"
+ },
+ {
+  "tr": "Bana sadece nesinin bozuk olduğunu söyle. Söyleyebilir misin?",
+  "kind": "openingTr",
+  "de": "Sag mir einfach, was daran kaputt ist. Kannst du das?"
+ },
+ {
+  "tr": "Bir arızanın nedeni hakkında kesin olmayan bir teşhisin var. Gözlemini, duyduğunu ve sınırlı bakışını yumuşatıcı bağlayıcılarla söyle.",
+  "kind": "scene",
+  "de": "Du hast eine unsichere Diagnose zur Ursache einer Störung. Sag deine Beobachtung, das Gehörte und deine begrenzte Sicht mit abschwächenden Konnektoren."
+ },
+ {
+  "tr": "Bir çözümlemenin sonucu belirsiz kaldı ve nedenini konuşuyorsunuz. Geçmişte kalan bir sonucu ve bugüne uzanan bir sonucu ayrı ayrı söyle.",
+  "kind": "scene",
+  "de": "Das Ergebnis einer Auswertung blieb unklar und ihr sprecht über den Grund. Nenn getrennt eine Folge in der Vergangenheit und eine, die bis heute reicht."
+ },
+ {
+  "tr": "Bir kayıtta değişiklik bulundu ve meslektaşınla hangi parçanın değiştiğini konuşuyorsun. Değişen bütünü, tek parçayı ve eksik olanı ayrı ayrı söyle.",
+  "kind": "scene",
+  "de": "In einer Aufzeichnung wurde eine Änderung gefunden und du besprichst mit einer Kollegin, welcher Teil geändert wurde. Nenn getrennt das geänderte Ganze, das einzelne Stück und das Fehlende."
+ },
+ {
+  "tr": "Bir kuralın seni bağlamadığını savunuyorsun ve dayanağın metnin kendisi. Metinde olmayanı, nadir olanı ve ne zaman yapıldığını devrik cümlelerle söyle.",
+  "kind": "scene",
+  "de": "Du verteidigst, dass eine Regel dich nicht bindet, und dein Beleg ist der Text selbst. Sag mit Inversionen, was nicht im Text steht, was selten ist und wann es gemacht wurde."
+ },
+ {
+  "tr": "Bir arızanın nedenini ekiple çözmeye çalışıyorsun. Neye emin olduğunu, neyi imkânsız gördüğünü ve neyin yapılmamış olduğunu kimseyi işaret etmeden söyle.",
+  "kind": "scene",
+  "de": "Du versuchst mit dem Team die Ursache einer Störung zu klären. Sag ohne auf jemanden zu zeigen, wobei du sicher bist, was du ausschließt und was nicht gemacht wurde."
+ },
+ {
+  "tr": "Metinde olmayanı, nadirliği ve zamanı üç ayrı devrik cümleyle söylediysen konuşma başarılı sayılır.",
+  "kind": "goal",
+  "de": "Das Gespräch gilt als gelungen, wenn du das im Text Fehlende, die Seltenheit und den Zeitpunkt in drei verschiedenen Inversionen gesagt hast."
+ },
+ {
+  "tr": "Değişen bütünü, tek parçayı ve eksik olanı üç ayrı yarık cümleyle söylediysen konuşma başarılı sayılır.",
+  "kind": "goal",
+  "de": "Das Gespräch gilt als gelungen, wenn du das geänderte Ganze, das einzelne Stück und das Fehlende in drei verschiedenen Spaltsätzen gesagt hast."
+ },
+ {
+  "tr": "Bir gözlemi, bir duyumu ve sınırlı bir bakışı üç ayrı yumuşatıcıyla söylediysen konuşma başarılı sayılır.",
+  "kind": "goal",
+  "de": "Das Gespräch gilt als gelungen, wenn du eine Beobachtung, ein Gehörtes und eine begrenzte Sicht mit drei verschiedenen Abschwächungen gesagt hast."
+ },
+ {
+  "tr": "Edilgen bir çıkarımı, edilgen bir reddi ve bir eksiği üç ayrı kiple söylediysen konuşma başarılı sayılır.",
+  "kind": "goal",
+  "de": "Das Gespräch gilt als gelungen, wenn du einen passiven Schluss, eine passive Zurückweisung und eine Lücke mit drei verschiedenen Modalverben gesagt hast."
+ },
+ {
+  "tr": "açı",
+  "kind": "vocab.tr",
+  "de": "Blickwinkel"
+ },
+ {
+  "tr": "depo",
+  "kind": "vocab.tr",
+  "de": "Lager"
+ },
+ {
+  "tr": "etken",
+  "kind": "vocab.tr",
+  "de": "Faktor"
+ },
+ {
+  "tr": "fazla",
+  "kind": "vocab.tr",
+  "de": "Überschuss"
+ },
+ {
+  "tr": "idame",
+  "kind": "vocab.tr",
+  "de": "Instandhaltung"
+ },
+ {
+  "tr": "ihlal",
+  "kind": "vocab.tr",
+  "de": "Verstoß"
+ },
+ {
+  "tr": "ihmal",
+  "kind": "vocab.tr",
+  "de": "Fahrlässigkeit"
+ },
+ {
+  "tr": "motor",
+  "kind": "vocab.tr",
+  "de": "Motor"
+ },
+ {
+  "tr": "öncül",
+  "kind": "vocab.tr",
+  "de": "Prämisse"
+ },
+ {
+  "tr": "yedek",
+  "kind": "vocab.tr",
+  "de": "Rücklage"
+ },
+ {
+  "tr": "aksama",
+  "kind": "vocab.tr",
+  "de": "Störung"
+ },
+ {
+  "tr": "atlama",
+  "kind": "vocab.tr",
+  "de": "Auslassung"
+ },
+ {
+  "tr": "atölye",
+  "kind": "vocab.tr",
+  "de": "Werkstatt"
+ },
+ {
+  "tr": "çökmek",
+  "kind": "vocab.tr",
+  "de": "einstürzen"
+ },
+ {
+  "tr": "sıkmak",
+  "kind": "vocab.tr",
+  "de": "festziehen"
+ },
+ {
+  "tr": "tedbir",
+  "kind": "vocab.tr",
+  "de": "Vorkehrung"
+ },
+ {
+  "tr": "bağıntı",
+  "kind": "vocab.tr",
+  "de": "Zusammenhang"
+ },
+ {
+  "tr": "çıkarım",
+  "kind": "vocab.tr",
+  "de": "Schlussfolgerung"
+ },
+ {
+  "tr": "denence",
+  "kind": "vocab.tr",
+  "de": "Hypothese"
+ },
+ {
+  "tr": "kesinti",
+  "kind": "vocab.tr",
+  "de": "Ausfallzeit"
+ },
+ {
+  "tr": "değişken",
+  "kind": "vocab.tr",
+  "de": "Variable"
+ },
+ {
+  "tr": "envanter",
+  "kind": "vocab.tr",
+  "de": "Bestandsliste"
+ },
+ {
+  "tr": "salınmak",
+  "kind": "vocab.tr",
+  "de": "schwingen"
+ },
+ {
+  "tr": "sıkışmak",
+  "kind": "vocab.tr",
+  "de": "klemmen"
+ },
+ {
+  "tr": "döndürmek",
+  "kind": "vocab.tr",
+  "de": "drehen"
+ },
+ {
+  "tr": "gevşetmek",
+  "kind": "vocab.tr",
+  "de": "lockern"
+ },
+ {
+  "tr": "hizalamak",
+  "kind": "vocab.tr",
+  "de": "abgleichen"
+ },
+ {
+  "tr": "değiştirge",
+  "kind": "vocab.tr",
+  "de": "Parameter"
+ },
+ {
+  "tr": "bakış açısı",
+  "kind": "vocab.tr",
+  "de": "Perspektive"
+ },
+ {
+  "tr": "fazla mesai",
+  "kind": "vocab.tr",
+  "de": "Überstunden"
+ },
+ {
+  "tr": "kayıt satırı",
+  "kind": "vocab.tr",
+  "de": "Eintrag"
+ },
+ {
+  "tr": "yerleştirmek",
+  "kind": "vocab.tr",
+  "de": "einschieben"
+ },
+ {
+  "tr": "ayarını yapmak",
+  "kind": "vocab.tr",
+  "de": "kalibrieren"
+ },
+ {
+  "tr": "güvence önlemi",
+  "kind": "vocab.tr",
+  "de": "Schutzvorkehrung"
+ },
+ {
+  "tr": "kilidini açmak",
+  "kind": "vocab.tr",
+  "de": "entriegeln"
+ },
+ {
+  "tr": "eski hâline getirme",
+  "kind": "vocab.tr",
+  "de": "Wiederherstellung"
+ },
+ {
+  "tr": "eksik olanı başa alır",
+  "kind": "pattern.tr",
+  "de": "holt das Fehlende nach vorn"
+ },
+ {
+  "tr": "değişen bütünü başa taşır",
+  "kind": "pattern.tr",
+  "de": "bringt das geänderte Ganze an den Anfang"
+ },
+ {
+  "tr": "edilgen çıkarımı yumuşatır",
+  "kind": "pattern.tr",
+  "de": "schwächt den passiven Schluss ab"
+ },
+ {
+  "tr": "kaynağa yaslayıp yumuşatır",
+  "kind": "pattern.tr",
+  "de": "stützt sich auf eine Quelle und schwächt ab"
+ },
+ {
+  "tr": "nadirliği devrikle vurgular",
+  "kind": "pattern.tr",
+  "de": "hebt die Seltenheit mit Inversion hervor"
+ },
+ {
+  "tr": "tek bir parçayı öne çıkarır",
+  "kind": "pattern.tr",
+  "de": "hebt ein einzelnes Stück hervor"
+ },
+ {
+  "tr": "edilgen bir çıkarımı emin söyler",
+  "kind": "pattern.tr",
+  "de": "sagt einen passiven Schluss mit Sicherheit"
+ },
+ {
+  "tr": "metinde olmayanı devrikle söyler",
+  "kind": "pattern.tr",
+  "de": "sagt mit Inversion, was nicht im Text steht"
+ },
+ {
+  "tr": "ne zaman olduğunu devrikle söyler",
+  "kind": "pattern.tr",
+  "de": "sagt mit Inversion, wann es geschah"
+ },
+ {
+  "tr": "bakış açısını sınırlayıp yumuşatır",
+  "kind": "pattern.tr",
+  "de": "begrenzt die Perspektive und schwächt ab"
+ },
+ {
+  "tr": "edilgen bir çıkarımı imkânsız görür",
+  "kind": "pattern.tr",
+  "de": "schließt einen passiven Schluss aus"
+ },
+ {
+  "tr": "Doğru. Kimin yapmadığı söylenmiyor; edilgen kip yalnız işin olmadığını söylüyor.",
+  "kind": "why.tr",
+  "de": "Richtig. Wer es nicht gemacht hat, wird nicht genannt; das passive Modalverb sagt nur, dass die Arbeit nicht geschehen ist."
+ },
+ {
+  "tr": "Doğru. Tek bir parça seçilmiş ve geri kalanının tuttuğu da aynı cümleyle söylenmiş.",
+  "kind": "why.tr",
+  "de": "Richtig. Ein einzelnes Stück ist ausgewählt, und derselbe Satz sagt zugleich, dass der Rest stimmt."
+ },
+ {
+  "tr": "Doğru. Bilgi bir kaynağa yaslanıyor ve konuşan kişi onu kendi gözlemi gibi sunmuyor.",
+  "kind": "why.tr",
+  "de": "Richtig. Die Information stützt sich auf eine Quelle, und die sprechende Person gibt sie nicht als eigene Beobachtung aus."
+ },
+ {
+  "tr": "Eksik olanı başa almak için",
+  "kind": "hint.tr",
+  "de": "Um das Fehlende nach vorn zu holen"
+ },
+ {
+  "tr": "Bakış açısını sınırlamak için",
+  "kind": "hint.tr",
+  "de": "Um die Perspektive zu begrenzen"
+ },
+ {
+  "tr": "Zamanı devrikle söylemek için",
+  "kind": "hint.tr",
+  "de": "Um den Zeitpunkt mit Inversion zu sagen"
+ },
+ {
+  "tr": "Edilgen bütünü başa taşımak için",
+  "kind": "hint.tr",
+  "de": "Um das passive Ganze nach vorn zu bringen"
+ },
+ {
+  "tr": "Edilgen çıkarımı yumuşatmak için",
+  "kind": "hint.tr",
+  "de": "Um den passiven Schluss abzuschwächen"
+ },
+ {
+  "tr": "Kaynağa yaslayıp yumuşatmak için",
+  "kind": "hint.tr",
+  "de": "Um sich auf eine Quelle zu stützen und abzuschwächen"
+ },
+ {
+  "tr": "Nadirliği devrikle vurgulamak için",
+  "kind": "hint.tr",
+  "de": "Um die Seltenheit mit Inversion hervorzuheben"
+ },
+ {
+  "tr": "Edilgen bir çıkarımı emin söylemek için",
+  "kind": "hint.tr",
+  "de": "Um einen passiven Schluss mit Sicherheit zu sagen"
+ },
+ {
+  "tr": "Metinde olmayanı devrikle söylemek için",
+  "kind": "hint.tr",
+  "de": "Um mit Inversion zu sagen, was nicht im Text steht"
+ },
+ {
+  "tr": "duyum",
+  "kind": "say.tr",
+  "de": "Gehörtes"
+ },
+ {
+  "tr": "duyum,",
+  "kind": "say.tr",
+  "de": "Gehörtes,"
+ },
+ {
+  "tr": "gözlem,",
+  "kind": "say.tr",
+  "de": "Beobachtung,"
+ },
+ {
+  "tr": "nadirlik",
+  "kind": "say.tr",
+  "de": "Seltenheit"
+ },
+ {
+  "tr": "edilgen ret",
+  "kind": "say.tr",
+  "de": "passive Zurückweisung"
+ },
+ {
+  "tr": "Aşağı almaya",
+  "kind": "say.tr",
+  "de": "Nach unten nehmen heißt"
+ },
+ {
+  "tr": "İçine sokmaya",
+  "kind": "say.tr",
+  "de": "Hineinstecken heißt"
+ },
+ {
+  "tr": "sınırlı bakış",
+  "kind": "say.tr",
+  "de": "begrenzte Sicht"
+ },
+ {
+  "tr": "bakılan yöne ise",
+  "kind": "say.tr",
+  "de": "und die Richtung, in die man schaut, heißt"
+ },
+ {
+  "tr": "Gerekenden artana",
+  "kind": "say.tr",
+  "de": "Was über das Nötige hinausgeht, heißt"
+ },
+ {
+  "tr": "kilidi açmaya ise",
+  "kind": "say.tr",
+  "de": "und das Schloss öffnen heißt"
+ },
+ {
+  "tr": "Değeri değişebilene",
+  "kind": "say.tr",
+  "de": "Was seinen Wert ändern kann, heißt"
+ },
+ {
+  "tr": "kurala uymamaya ise",
+  "kind": "say.tr",
+  "de": "und sich nicht an die Regel halten heißt"
+ },
+ {
+  "tr": "Özetleyelim: gözlem",
+  "kind": "say.tr",
+  "de": "Fassen wir zusammen: Beobachtung"
+ },
+ {
+  "tr": "Aynı hizaya getirmeye",
+  "kind": "say.tr",
+  "de": "Auf dieselbe Linie bringen heißt"
+ },
+ {
+  "tr": "Eksik olan şey fazla.",
+  "kind": "say.tr",
+  "de": "Was fehlt, ist der Überschuss."
+ },
+ {
+  "tr": "Gevşek hâle getirmeye",
+  "kind": "say.tr",
+  "de": "Locker machen heißt"
+ },
+ {
+  "tr": "Malın saklandığı yere",
+  "kind": "say.tr",
+  "de": "Der Ort, an dem die Ware aufbewahrt wird, heißt"
+ },
+ {
+  "tr": "Zarardan uzak tutmaya",
+  "kind": "say.tr",
+  "de": "Vor Schaden bewahren heißt"
+ },
+ {
+  "tr": "Depo atölyenin yanında.",
+  "kind": "say.tr",
+  "de": "Das Lager ist neben der Werkstatt."
+ },
+ {
+  "tr": "Hizmetin durduğu süreye",
+  "kind": "say.tr",
+  "de": "Die Zeit, in der der Dienst steht, heißt"
+ },
+ {
+  "tr": "işin yapıldığı yere ise",
+  "kind": "say.tr",
+  "de": "und der Ort, an dem gearbeitet wird, heißt"
+ },
+ {
+  "tr": "Hareketi sağlayan aygıta",
+  "kind": "say.tr",
+  "de": "Das Gerät, das die Bewegung erzeugt, heißt"
+ },
+ {
+  "tr": "ondan varılan sonuca ise",
+  "kind": "say.tr",
+  "de": "und der daraus gezogene Schluss heißt"
+ },
+ {
+  "tr": "Özetleyelim: metinde yok",
+  "kind": "say.tr",
+  "de": "Fassen wir zusammen: steht nicht im Text"
+ },
+ {
+  "tr": "Sıkıca çevirip oturtmaya",
+  "kind": "say.tr",
+  "de": "Fest drehen und sitzen lassen heißt"
+ },
+ {
+  "tr": "Tutmayan şey envanterdi.",
+  "kind": "say.tr",
+  "de": "Was nicht gestimmt hat, war die Bestandsliste."
+ },
+ {
+  "tr": "İhmal bir ihlale dönüştü.",
+  "kind": "say.tr",
+  "de": "Aus der Fahrlässigkeit wurde ein Verstoß."
+ },
+ {
+  "tr": "Ayarlanabilen sabit değere",
+  "kind": "say.tr",
+  "de": "Der einstellbare feste Wert heißt"
+ },
+ {
+  "tr": "Özetleyelim: edilgen bütün",
+  "kind": "say.tr",
+  "de": "Fassen wir zusammen: passives Ganzes"
+ },
+ {
+  "tr": "saldırıya açık noktaya ise",
+  "kind": "say.tr",
+  "de": "und die für Angriffe offene Stelle heißt"
+ },
+ {
+  "tr": "Bir eksen etrafında dönmeye",
+  "kind": "say.tr",
+  "de": "Sich um eine Achse bewegen heißt"
+ },
+ {
+  "tr": "bir noktadan sallanmaya ise",
+  "kind": "say.tr",
+  "de": "und von einem Punkt aus pendeln heißt"
+ },
+ {
+  "tr": "İhtiyaç için ayrılmış olana",
+  "kind": "say.tr",
+  "de": "Was für den Bedarf zurückgelegt ist, heißt"
+ },
+ {
+  "tr": "Kendi ağırlığıyla yıkılmaya",
+  "kind": "say.tr",
+  "de": "Unter dem eigenen Gewicht zusammenfallen heißt"
+ },
+ {
+  "tr": "Motor yarı hızda çalışıyor.",
+  "kind": "say.tr",
+  "de": "Der Motor läuft mit halber Drehzahl."
+ },
+ {
+  "tr": "Bilinen her açığı koruyoruz.",
+  "kind": "say.tr",
+  "de": "Wir sichern jede bekannte Schwachstelle."
+ },
+ {
+  "tr": "edilgen bir bütünü öne alır,",
+  "kind": "say.tr",
+  "de": "holt ein passives Ganzes nach vorn,"
+ },
+ {
+  "tr": "Özetleyelim: edilgen çıkarım",
+  "kind": "say.tr",
+  "de": "Fassen wir zusammen: passiver Schluss"
+ },
+ {
+  "tr": "iki ölçüm arasındaki bağa ise",
+  "kind": "say.tr",
+  "de": "und die Verbindung zwischen zwei Messungen heißt"
+ },
+ {
+  "tr": "Kartı kapıda yerleştiriyoruz.",
+  "kind": "say.tr",
+  "de": "Wir schieben die Karte am Tor ein."
+ },
+ {
+  "tr": "kıpırdayamaz hâle gelmeye ise",
+  "kind": "say.tr",
+  "de": "und unbeweglich werden heißt"
+ },
+ {
+  "tr": "Önceden alınan koruyucu önleme",
+  "kind": "say.tr",
+  "de": "Die im Voraus getroffene Schutzmaßnahme heißt"
+ },
+ {
+  "tr": "Sayıları her cuma hizalıyoruz.",
+  "kind": "say.tr",
+  "de": "Wir gleichen die Zahlen jeden Freitag ab."
+ },
+ {
+  "tr": "Bakılan yere göre oluşan görüşe",
+  "kind": "say.tr",
+  "de": "Die Sicht, die vom Standort abhängt, heißt"
+ },
+ {
+  "tr": "Çıkarımın dayandığı ilk yargıya",
+  "kind": "say.tr",
+  "de": "Das erste Urteil, auf dem ein Schluss ruht, heißt"
+ },
+ {
+  "tr": "Elde ne varsa hepsinin dökümüne",
+  "kind": "say.tr",
+  "de": "Die Aufstellung von allem, was da ist, heißt"
+ },
+ {
+  "tr": "Yapılması gerekeni savsaklamaya",
+  "kind": "say.tr",
+  "de": "Das Nötige vernachlässigen heißt"
+ },
+ {
+  "tr": "Yedek fazla mesaiyi karşılıyor.",
+  "kind": "say.tr",
+  "de": "Die Rücklage deckt die Überstunden."
+ },
+ {
+  "tr": "Bir şeyi çalışır durumda tutmaya",
+  "kind": "say.tr",
+  "de": "Etwas in Betrieb halten heißt"
+ },
+ {
+  "tr": "Sınanmak üzere kurulan varsayıma",
+  "kind": "say.tr",
+  "de": "Die Annahme, die geprüft werden soll, heißt"
+ },
+ {
+  "tr": "Vidayı gevşetip paneli açıyoruz.",
+  "kind": "say.tr",
+  "de": "Wir lockern die Schraube und entriegeln die Platte."
+ },
+ {
+  "tr": "Yazılması gerekirken yazılmayana",
+  "kind": "say.tr",
+  "de": "Was geschrieben werden müsste und fehlt, heißt"
+ },
+ {
+  "tr": "Denence başka bir açıdan işliyor.",
+  "kind": "say.tr",
+  "de": "Die Hypothese trägt aus einem anderen Blickwinkel."
+ },
+ {
+  "tr": "Kapı sıkıştığında raflar çöküyor.",
+  "kind": "say.tr",
+  "de": "Wenn die Tür klemmt, stürzen die Regale ein."
+ },
+ {
+  "tr": "Kol dönebiliyor ve salınabiliyor.",
+  "kind": "say.tr",
+  "de": "Der Arm kann sich drehen und schwingen."
+ },
+ {
+  "tr": "Tek bir atlama denetimi durdurdu.",
+  "kind": "say.tr",
+  "de": "Eine einzige Auslassung hat die Prüfung gestoppt."
+ },
+ {
+  "tr": "Bakım geçen hafta yapılmış olamaz.",
+  "kind": "say.tr",
+  "de": "Die Wartung kann letzte Woche nicht gemacht worden sein."
+ },
+ {
+  "tr": "bozulanı eski hâline döndürmeye ise",
+  "kind": "say.tr",
+  "de": "und Beschädigtes in den alten Zustand bringen heißt"
+ },
+ {
+  "tr": "Düzenli olarak yapılan koruyucu işe",
+  "kind": "say.tr",
+  "de": "Die regelmäßige Schutzarbeit heißt"
+ },
+ {
+  "tr": "Bir değiştirge bağıntıyı değiştirdi.",
+  "kind": "say.tr",
+  "de": "Ein Parameter hat den Zusammenhang verändert."
+ },
+ {
+  "tr": "Birinin basıncı indirmesi gerekirdi.",
+  "kind": "say.tr",
+  "de": "Jemand hätte den Druck senken sollen."
+ },
+ {
+  "tr": "Şimdi sen kur: Tutmayan şey yedekti.",
+  "kind": "say.tr",
+  "de": "Jetzt du: Was nicht gestimmt hat, war die Rücklage."
+ },
+ {
+  "tr": "Bir tane daha: Eksik olan şey makbuz.",
+  "kind": "say.tr",
+  "de": "Noch eins: Was fehlt, ist die Quittung."
+ },
+ {
+  "tr": "Görünüşe göre cıvata iki kez sıkılmış.",
+  "kind": "say.tr",
+  "de": "Anscheinend wurde die Schraube zweimal festgezogen."
+ },
+ {
+  "tr": "Öncül yanlış olsaydı çıkarım tutmazdı.",
+  "kind": "say.tr",
+  "de": "Wäre die Prämisse falsch gewesen, hätte die Schlussfolgerung nicht gehalten."
+ },
+ {
+  "tr": "Şimdi kaçırılan bir yolu konuşacaksın.",
+  "kind": "say.tr",
+  "de": "Jetzt sprichst du über einen verpassten Weg."
+ },
+ {
+  "tr": "İdame eski hâline getirmeden daha ucuz.",
+  "kind": "say.tr",
+  "de": "Die Instandhaltung kostet weniger als die Wiederherstellung."
+ },
+ {
+  "tr": "Şimdi bir arızanın geçmişini çözeceksin.",
+  "kind": "say.tr",
+  "de": "Jetzt klärst du die Vorgeschichte einer Störung."
+ },
+ {
+  "tr": "Ancak kesintiden sonra harekete geçtiler.",
+  "kind": "say.tr",
+  "de": "Erst nach der Ausfallzeit haben sie gehandelt."
+ },
+ {
+  "tr": "Son kalıbımız zamanı söylüyor. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Unsere letzte Wendung nennt den Zeitpunkt. Wiederhole:"
+ },
+ {
+  "tr": "Şimdi sıra sende: Değiştirilen şey tarih.",
+  "kind": "say.tr",
+  "de": "Jetzt bist du dran: Was geändert wurde, ist das Datum."
+ },
+ {
+  "tr": "Bir tedbir nadiren bu kadar işe yaramıştır.",
+  "kind": "say.tr",
+  "de": "Selten war eine Vorkehrung so nützlich."
+ },
+ {
+  "tr": "olağan sürenin üstüne eklenen çalışmaya ise",
+  "kind": "say.tr",
+  "de": "und die Arbeit über die übliche Zeit hinaus heißt"
+ },
+ {
+  "tr": "İkinci kalıbımız kaynağa yaslıyor. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Unsere zweite Wendung stützt sich auf eine Quelle. Wiederhole:"
+ },
+ {
+  "tr": "Şimdi sıra sende: Değer bilinseydi beklerdik.",
+  "kind": "say.tr",
+  "de": "Jetzt bist du dran: Wäre der Wert bekannt gewesen, hätten wir gewartet."
+ },
+ {
+  "tr": "Şimdi kesin olmayan bir teşhisi söyleyeceksin.",
+  "kind": "say.tr",
+  "de": "Jetzt sagst du eine unsichere Diagnose."
+ },
+ {
+  "tr": "Bir bakış açısından tartışmalı biçimde yeterli.",
+  "kind": "say.tr",
+  "de": "Aus einer Perspektive ist es wohl ausreichend."
+ },
+ {
+  "tr": "Değişken sabitlenseydi sonuç bugün açık olurdu.",
+  "kind": "say.tr",
+  "de": "Wäre die Variable festgelegt worden, wäre das Ergebnis heute klar."
+ },
+ {
+  "tr": "Şimdi kural metnine dayanarak itiraz edeceksin.",
+  "kind": "say.tr",
+  "de": "Jetzt berufst du dich auf den Regeltext."
+ },
+ {
+  "tr": "İkinci kalıbımız nadirliği vurguluyor. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Unsere zweite Wendung hebt die Seltenheit hervor. Wiederhole:"
+ },
+ {
+  "tr": "Son kalıbımız eksik olanı başa alıyor. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Unsere letzte Wendung holt das Fehlende nach vorn. Wiederhole:"
+ },
+ {
+  "tr": "Şimdi sen kur: Kontrol pazartesi yapılmış olamaz.",
+  "kind": "say.tr",
+  "de": "Jetzt du: Die Prüfung kann am Montag nicht gemacht worden sein."
+ },
+ {
+  "tr": "Şimdi sıra sende: Geçen hafta taşınmış görünüyor.",
+  "kind": "say.tr",
+  "de": "Jetzt bist du dran: Es scheint letzte Woche verlegt worden zu sein."
+ },
+ {
+  "tr": "Bir tane daha: Birinin vanayı kapatması gerekirdi.",
+  "kind": "say.tr",
+  "de": "Noch eins: Jemand hätte das Ventil schließen sollen."
+ },
+ {
+  "tr": "Son kalıbımız bakış açısını sınırlıyor. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Unsere letzte Wendung begrenzt die Perspektive. Wiederhole:"
+ },
+ {
+  "tr": "Şimdi bir kayıtta neyin değiştiğini göstereceksin.",
+  "kind": "say.tr",
+  "de": "Jetzt zeigst du, was in einer Aufzeichnung geändert wurde."
+ },
+ {
+  "tr": "ise yapılmamış olan. İlk ikisi yapanı hiç söylemez.",
+  "kind": "say.tr",
+  "de": "das Nichtgetane. Die ersten beiden nennen den Handelnden überhaupt nicht."
+ },
+ {
+  "tr": "Son kalıbımız yapılmamış olanı söylüyor. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Unsere letzte Wendung nennt das Nichtgetane. Wiederhole:"
+ },
+ {
+  "tr": "Şimdi sen kur: Görünüşe göre panel iki kez açılmış.",
+  "kind": "say.tr",
+  "de": "Jetzt du: Anscheinend wurde die Platte zweimal geöffnet."
+ },
+ {
+  "tr": "Bir tane daha: Ancak gecikmeden sonra cevap verdiler.",
+  "kind": "say.tr",
+  "de": "Noch eins: Erst nach der Verzögerung haben sie geantwortet."
+ },
+ {
+  "tr": "Şimdi sıra sende: Kusura güncelleme yol açmış olmalı.",
+  "kind": "say.tr",
+  "de": "Jetzt bist du dran: Der Fehler muss durch das Update verursacht worden sein."
+ },
+ {
+  "tr": "Şimdi sen kur: Deney yapılsaydı cevap bugün açık olurdu.",
+  "kind": "say.tr",
+  "de": "Jetzt du: Wäre der Versuch gemacht worden, wäre die Antwort heute klar."
+ },
+ {
+  "tr": "Bir tane daha: Örneklem daha büyük olsaydı sonuç tutardı.",
+  "kind": "say.tr",
+  "de": "Noch eins: Wäre die Stichprobe größer gewesen, hätte das Ergebnis gehalten."
+ },
+ {
+  "tr": "İkinci kalıbımız tek bir parçayı öne çıkarıyor. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Unsere zweite Wendung hebt ein einzelnes Stück hervor. Wiederhole:"
+ },
+ {
+  "tr": "İşleyişin bozulması demek. İlk kalıbımız da bu. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Das heißt, dass der Ablauf gestört ist. Das ist auch unsere erste Wendung. Wiederhole:"
+ },
+ {
+  "tr": "Sonucu etkileyen şey demek. İlk kalıbımız da bu. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Das heißt, was das Ergebnis beeinflusst. Das ist auch unsere erste Wendung. Wiederhole:"
+ },
+ {
+  "tr": "Şimdi sen kur: Bir kontrol nadiren bu kadar işe yaramıştır.",
+  "kind": "say.tr",
+  "de": "Jetzt du: Selten war eine Prüfung so nützlich."
+ },
+ {
+  "tr": "Bir tane daha: Bir bakış açısından tartışmalı biçimde güvenli.",
+  "kind": "say.tr",
+  "de": "Noch eins: Aus einer Perspektive ist es wohl sicher."
+ },
+ {
+  "tr": "Deftere düşülen tek satır demek. İlk kalıbımız da bu. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Das heißt die einzelne Zeile im Buch. Das ist auch unsere erste Wendung. Wiederhole:"
+ },
+ {
+  "tr": "Ölçüsünü doğru değere getirmek demek. İlk kalıbımız da bu. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Das heißt das Maß auf den richtigen Wert bringen. Das ist auch unsere erste Wendung. Wiederhole:"
+ },
+ {
+  "tr": "Zararı önlemek için konan koruma demek. İlk kalıbımız da bu. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Das heißt der Schutz gegen Schaden. Das ist auch unsere erste Wendung. Wiederhole:"
+ },
+ {
+  "tr": "Şimdi dersin kuralı. Kip ile edilgen birleşince üç parça üst üste biner:",
+  "kind": "say.tr",
+  "de": "Jetzt die Regel der Lektion. Treffen Modalverb und Passiv zusammen, liegen drei Teile übereinander:"
+ },
+ {
+  "tr": "Şimdi sıra sende: Bir kontrolün isteğe bağlı olduğu hiçbir yerde yazmıyor.",
+  "kind": "say.tr",
+  "de": "Jetzt bist du dran: Nirgends steht, dass eine Prüfung freiwillig ist."
+ },
+ {
+  "tr": "ise sınırlı bir bakış demektir. Üçü de yanlış çıkarsa seni yalancı duruma düşürmez.",
+  "kind": "say.tr",
+  "de": "heißt eine begrenzte Sicht. Erweist sich eines der drei als falsch, stehst du nicht als Lügner da."
+ },
+ {
+  "tr": "Şimdi dersin kuralı. Edilgen çıkarım yumuşatıcıyla birleşince iddia olmaktan çıkar:",
+  "kind": "say.tr",
+  "de": "Jetzt die Regel der Lektion. Verbindet sich ein passiver Schluss mit einer Abschwächung, ist er keine Behauptung mehr:"
+ },
+ {
+  "tr": "Edilgen bir çıkarım tek başına iddiadır; yumuşatıcı bağlayıcı onu gözleme çevirir. Hazır mısın?",
+  "kind": "say.tr",
+  "de": "Ein passiver Schluss allein ist eine Behauptung; der abschwächende Konnektor macht daraus eine Beobachtung. Bist du bereit?"
+ },
+ {
+  "tr": "hepsi özneyle yardımcı fiili yer değiştirtir. Kural tartışmasında bu yapı iddiayı sertleştirir.",
+  "kind": "say.tr",
+  "de": "sie alle tauschen Subjekt und Hilfsverb. Im Streit um eine Regel verschärft diese Konstruktion die Behauptung."
+ },
+ {
+  "tr": "ise bugüne taşır. Çözümlemede ikincisi daha ağırdır, çünkü belirsizliğin hâlâ sürdüğünü söyler.",
+  "kind": "say.tr",
+  "de": "holt sie in die Gegenwart. In der Auswertung wiegt die zweite schwerer, denn sie sagt, dass die Unsicherheit noch andauert."
+ },
+ {
+  "tr": "ise tek bir parçayı seçer. Kayıt dilinde ikincisi bir iddiadır: geri kalanı değişmedi demektir.",
+  "kind": "say.tr",
+  "de": "wählt dagegen ein einzelnes Stück. In der Protokollsprache ist die zweite Form eine Behauptung: der Rest ist unverändert."
+ },
+ {
+  "tr": "Merhaba! Bugün değişikliğin tam yerini göstermeyi öğreneceğiz: ne değişti, hangi parça, ne eksik.",
+  "kind": "say.tr",
+  "de": "Hallo! Heute lernen wir, die genaue Stelle einer Änderung zu zeigen: was geändert wurde, welcher Teil, was fehlt."
+ },
+ {
+  "tr": "Bilimsel yazıda bu cümleler suçlama değil sınama aracıdır; farkı sonuç yarısı kuruyor. Hazır mısın?",
+  "kind": "say.tr",
+  "de": "Im wissenschaftlichen Text sind diese Sätze keine Schuldzuweisung, sondern ein Mittel der Prüfung; den Unterschied baut die Folgehälfte. Bist du bereit?"
+ },
+ {
+  "tr": "Edilgen bir kayıtta «değiştirildi» demek yetmez; hangi parçanın değiştiğini yarık cümle ayırır. Hazır mısın?",
+  "kind": "say.tr",
+  "de": "In einer passiven Aufzeichnung genügt «wurde geändert» nicht; welcher Teil geändert wurde, trennt der Spaltsatz heraus. Bist du bereit?"
+ },
+ {
+  "tr": "Merhaba! Bugün kesin olmayan bir teşhisi söylemeyi öğreneceğiz: ne olmuş görünüyor, neye göre, hangi açıdan.",
+  "kind": "say.tr",
+  "de": "Hallo! Heute lernen wir, eine unsichere Diagnose zu sagen: was geschehen zu sein scheint, wonach, aus welchem Blickwinkel."
+ },
+ {
+  "tr": "Bu itirazın gücü kelimelerden değil yapıdan geliyor: olumsuz zarf başa gelince cümle devriliyor. Hazır mısın?",
+  "kind": "say.tr",
+  "de": "Die Kraft dieses Einwands kommt nicht von den Wörtern, sondern vom Bau: steht ein negatives Adverb am Anfang, kippt der Satz. Bist du bereit?"
+ },
+ {
+  "tr": "Merhaba! Bugün bir arızanın geçmişini çözmeyi öğreneceğiz: ne olmuş olmalı, ne olmuş olamaz, ne yapılmalıydı.",
+  "kind": "say.tr",
+  "de": "Hallo! Heute lernen wir, die Vorgeschichte einer Störung zu klären: was geschehen sein muss, was nicht geschehen sein kann, was hätte getan werden sollen."
+ },
+ {
+  "tr": "Merhaba! Bugün kural metnine dayanarak itiraz etmeyi öğreneceğiz: metinde ne yazmıyor, ne nadir, ne zaman yapıldı.",
+  "kind": "say.tr",
+  "de": "Hallo! Heute lernen wir, sich auf den Regeltext zu berufen: was nicht im Text steht, was selten ist, wann es gemacht wurde."
+ },
+ {
+  "tr": "Burada kip ile edilgen bir araya geliyor ve sonuç şu: çıkarım yapıyorsun ama kimseyi işaret etmiyorsun. Hazır mısın?",
+  "kind": "say.tr",
+  "de": "Hier treffen Modalverb und Passiv zusammen, und das Ergebnis ist: du ziehst einen Schluss, zeigst aber auf niemanden. Bist du bereit?"
+ },
+ {
+  "tr": "Merhaba! Bugün bir çözümlemenin kaçırılan yolunu konuşmayı öğreneceğiz: bilinseydi ne olurdu, bugün ne farklı olurdu.",
+  "kind": "say.tr",
+  "de": "Hallo! Heute lernen wir, über den verpassten Weg einer Auswertung zu sprechen: was wäre gewesen, was wäre heute anders."
+ }
+]

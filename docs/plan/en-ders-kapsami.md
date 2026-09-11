@@ -1,6 +1,6 @@
 # WP-74 — İngilizce ders kapsamı B1–C1
 
-**Durum:** sürüyor (B1 TAM; B2 modül 3 yarıda, 125/300 ders) · **Sahip:** Claude · **Açılış:** 2026-09-11
+**Durum:** sürüyor (B1 TAM; B2 modül 1-3 bitti, 130/300 ders) · **Sahip:** Claude · **Açılış:** 2026-09-11
 
 ## Kusur
 
@@ -262,6 +262,23 @@ term» diye bir tekrar yazılsaydı kapı reddederdi, çünkü «violation» iç
 «violate» geçmiyor. Buna karşılık `enforce`/«enforcement», `reimburse`/
 «reimbursement» ve `perform`/«performance» geçiyor — isimleştirme dersinin
 üç kalıbı o üç fiille kuruldu, `violate` ayrı bir tekrar hedefine kondu.
+
+**B2 modül 3 — Edilgenin bütün hâlleri (2026-09-11).** On ders: aktarıldığı
+kadarıyla, tamamlandığında, sürecin kaydı, yapılmış olacak, ki kontrol
+edilmişti, değiştirilen şey, hiçbir yerde yazmıyor, taşınmış olmalı, kontrol
+edilseydi, öyle görünüyor ki.
+
+Modülün teması bir alan değil bir YAPI — B1 modül 3'ün (bağlaç ustalığı)
+yaptığının aynısı. Her ders edilgenin başka bir hâlini gösteriyor: aktarım
+kalıbı, ortaç öbeği, isimleştirme, gelecekte edilgen, edilgen ilgi cümlesi,
+edilgen yarık cümle, edilgen kip bileşimi. «Bitmiş olacak» ile «bitirilmiş
+olacak» aynı takvimi anlatıyor ama biri yapanı taşıyor öteki taşımıyor.
+
+Bu modülde İngilizce havuzun B2 sınırı görüldü: 400 kelimelik B2 katmanının
+ilk 240'ı yazıldıktan sonra teknik yönde havuz seyrekleşti ve kelime
+listeleri ancak altı ayrı sorguyla dolduruldu. Bu bir kusur değil bir ölçüm:
+kalan 160 kelime için sorgu sayısı artacak, konu seçimi havuza göre
+daralacak.
 
 ## Tamamlanma ölçütü
 
