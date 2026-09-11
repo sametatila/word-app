@@ -17,7 +17,7 @@ import { TokenDiff, TypedTokens } from "@/components/feedback/diff-text";
 import { levenshtein } from "@/lib/errors";
 import { useT, useLang } from "@/lib/i18n/client";
 import { courseName } from "@/lib/courses";
-import { RUBRIC_PASS_PCT } from "@/lib/score-bands";
+import { RUBRIC_PASS_PCT, SCORE_MID_PCT, SKILL_DONE_PCT } from "@/lib/score-bands";
 
 type BuildTaskData = Extract<WritingTask, { kind: "build" }>;
 type FreeTaskData = Extract<WritingTask, { kind: "free" }>;
@@ -559,7 +559,11 @@ function FreeTask({
           ) : null}
           {aiScore !== null && aiScore < RUBRIC_PASS_PCT ? (
             <p className="text-caption" style={{ color: "var(--color-flame)" }}>
-              {t(aiScore >= 40 ? "writp.improve" : "writp.retry_suggest")}
+              {/* Orta bant SABITTEN. Sayi iki platformda da elle `40`
+                  yaziliydi, oysa ikisinde de ayni adla duruyor
+                  (`SCORE_MID_PCT`) - ikisi de yanlis oldugu icin
+                  karsilastirmali bir kapi bunu goremezdi. */}
+              {t(aiScore >= SCORE_MID_PCT ? "writp.improve" : "writp.retry_suggest")}
             </p>
           ) : null}
           <div className="flex items-center gap-3">
@@ -629,7 +633,10 @@ function SentenceTask({ task, level, onDone }: { task: SentenceTaskData; level: 
     const ai = await askAssess(req);
     if (ai.ok) {
       setResult(ai.result);
-      setOk(ai.result.score.overall >= 70);
+      /* Cumle gorevinin gecme notu da sabitten (`SKILL_DONE_PCT`); dosyanin
+         kendi yorumu "genel puan >= 70" diyordu ama sayi kodda elle
+         yaziliydi. */
+      setOk(ai.result.score.overall >= SKILL_DONE_PCT);
     } else {
       const fb = fallbackAssessment(req, t);
       setResult(fb);

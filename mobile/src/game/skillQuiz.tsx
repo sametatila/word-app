@@ -18,7 +18,7 @@ import { isPremiumRefusal, isQuotaRefusal, notePremiumGate } from "../lib/premiu
 import { assessFailKey } from "../lib/assessFail";
 import { spacing, radii, type Palette } from "../theme";
 import type { Gloss, SkillQuestion } from "../data/skills";
-import { RUBRIC_PASS_PCT } from "../lib/learningRules";
+import { RUBRIC_PASS_PCT, SCORE_MID_PCT } from "../lib/learningRules";
 
 /**
  * Beceri soruları — web'in quiz.tsx'inin mobil karşılığı. sınav kâğıdı gibi
@@ -624,7 +624,9 @@ function FreeCard({ t, n, done, level, exerciseId, onSettle, colors }: { t: Free
       ) : null}
       {score && score.overall < RUBRIC_PASS_PCT ? (
         <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.sm, lineHeight: 20 }}>
-          {tx(score.overall >= 40 ? "writp.improve" : "writp.retry_suggest")}
+          {/* Orta bant sabitten (`SCORE_MID_PCT`); sayi iki platformda da
+              elle yaziliydi. */}
+          {tx(score.overall >= SCORE_MID_PCT ? "writp.improve" : "writp.retry_suggest")}
         </Text>
       ) : null}
       {/* "Puan verilemedi" satırı duyuruluyor: gönder düğmesine basan
