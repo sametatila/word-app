@@ -251,7 +251,20 @@ function checkSkills(list: SkillExercise[]) {
         if (kind === "gapfill" || kind === "short_answer" || kind === "dictation" || kind === "produce") {
           if (!q.accept?.length) E(qw, `${kind}: accept boş`);
           for (const a of q.accept ?? []) if (trLetters(a)) E(qw, `${kind}: accept içinde Türkçe harf "${a}"`);
-          if (kind === "short_answer" && (q.accept ?? []).some((a) => wc(a) > 5)) W(qw, "short_answer: kabul edilen cevap > 5 kelime");
+          /* Kabul listesinde UZUN bir karşılık kusur değil, HOŞGÖRÜDÜR.
+             Oynatıcı `accept.some(...)` ile eşleştiriyor (quiz.tsx
+             `written`), yani uzun bir seçenek kimseyi zorlamıyor, yalnız
+             daha çok cevabı kabul ediyor. Öğrenciyi gerçekten zorlayan
+             tek şey GÖSTERİLEN cevabın uzun olması: `accept[0]` hem model
+             cevap olarak basılıyor hem de seslendiriliyor.
+
+             ÖLÇÜLDÜ (2026-09-11): 567 short_answer sorusunun 108'i eski
+             ölçütle uyarı veriyordu; hiçbirinde ne gösterilen cevap
+             (accept[0]) ne de en kısa kabul 5 kelimeyi aşıyor. Yani
+             108'inin hepsi yanlış alarmdı ve "düzeltmek" uzun seçeneği
+             silmek, yani soruyu öğrenci aleyhine SIKILAŞTIRMAK olurdu. */
+          if (kind === "short_answer" && wc(q.accept?.[0] ?? "") > 5)
+            W(qw, "short_answer: gösterilen cevap > 5 kelime");
           if (kind === "gapfill" && !/___/.test(q.text)) W(qw, "gapfill: soruda ___ boşluğu yok");
           if (kind === "dictation" && e.skill === "listening" && !e.segments.some((s) => s.text.includes(q.accept![0]))) W(qw, "dictation: cümle bölümlerde geçmiyor");
         } else if (kind === "order") {
