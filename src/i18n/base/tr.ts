@@ -967,6 +967,8 @@ export const trBase: Record<string, string> = {
   "sessions.need_fresh": "Cihaz listesini görmek için yeniden giriş yapman gerekiyor. Diğer cihazlardan çıkmak yine de çalışıyor.",
   "sessions.load_failed": "Oturumlar yüklenemedi.",
   "sessions.unknown_device": "Bilinmeyen cihaz",
+  "snd.game_sounds": "Oyun sesleri",
+  "snd.game_sounds_sub": "Telaffuz sesi ayrı — bu kapalıyken de çalışır",
   "settings.analytics_sub": "Hangi özelliklerin kullanıldığı; üçüncü tarafa gitmez",
   "settings.settings": "Ayarlar",
   "settings.not_sure_take_placement_test": "Emin değil misin? Seviye testini çöz →",

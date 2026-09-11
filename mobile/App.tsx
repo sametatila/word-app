@@ -13,6 +13,7 @@ import { loadVoicePref } from "./src/lib/tts";
 import { TtsBridge } from "./src/lib/ttsBridge";
 import { track, loadAnalyticsPref } from "./src/lib/track";
 import { attachTelemetry, screenChanged } from "./src/lib/telemetry";
+import { loadSoundPref } from "./src/lib/sfx";
 import { loadReduceMotion } from "./src/lib/reduceMotion";
 import { loadLang, useLang } from "./src/lib/i18n";
 import { attachPushListeners } from "./src/lib/pushDevice";
@@ -134,6 +135,8 @@ function Nav() {
       .then(() => migrateReminderIds())
       .then(() => loadVoicePref())
       .then(() => loadAnalyticsPref())
+      /* Oyun sesleri tercihi — ilk sesten ÖNCE okunmalı. */
+      .then(() => loadSoundPref())
       // "Hareketi azalt" sistem tercihi — animasyon kararı veren her yer bunu
       // senkron okuyor, o yüzden ilk çizimden önce yüklenmesi gerekiyor.
       .then(() => loadReduceMotion())

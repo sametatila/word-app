@@ -847,8 +847,6 @@ export const trWeb: Record<string, string> = {
   "sharew.pct_correct": "{pct} doğru",
   "sharew.streak_short": "{n} seri",
   "sharew.daily_cta": "Aynı sorular {level} seviyesindeki herkese aynı. Sen de dene:",
-  "snd.game_sounds": "Oyun sesleri",
-  "snd.game_sounds_sub": "Telaffuz sesi ayrı — bu kapalıyken de çalışır",
   "growth.p_answers": "{n} cevap",
   "growth.p_exercises": "{n} egzersiz",
   "growth.p_lessons": "{n} konuşma",

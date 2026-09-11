@@ -822,8 +822,6 @@ export const enWeb: Record<string, string> = {
   "sharew.pct_correct": "{pct} correct",
   "sharew.streak_short": "{n} streak",
   "sharew.daily_cta": "The same questions go to everyone at level {level}. Give it a try:",
-  "snd.game_sounds": "Game sounds",
-  "snd.game_sounds_sub": "Pronunciation audio is separate — it works even with this off",
   "growth.p_answers": "{n} answers",
   "growth.p_exercises": "{n} exercises",
   "growth.p_lessons": "{n} conversations",

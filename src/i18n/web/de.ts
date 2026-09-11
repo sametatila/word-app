@@ -822,8 +822,6 @@ export const deWeb: Record<string, string> = {
   "sharew.pct_correct": "{pct} richtig",
   "sharew.streak_short": "{n} Serie",
   "sharew.daily_cta": "Dieselben Fragen bekommt jede und jeder auf Niveau {level}. Probier es aus:",
-  "snd.game_sounds": "Spielgeräusche",
-  "snd.game_sounds_sub": "Die Aussprache ist davon getrennt — sie läuft auch, wenn das aus ist",
   "growth.p_answers": "{n} Antworten",
   "growth.p_exercises": "{n} Übungen",
   "growth.p_lessons": "{n} Gespräche",

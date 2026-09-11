@@ -1964,9 +1964,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     "install_prompt", //        PWA kurulum onerisi
     "invite_open", //           tarayici olcum katmani
     "panel_open", //            tarayici olcum katmani
-    "push_open", //             tarayici olcum katmani
     "push_optin", //            tarayici bildirim istemi
-    "sound_toggle", //          mobilde ses anahtari yok (sistem sesi)
     "stage_done", //            mobilde etap duraklamasi yok
     "walk_capture", //          tarayici mikrofon yolu tanilamasi
     "walk_listen", //           tarayici mikrofon yolu tanilamasi
@@ -3234,6 +3232,29 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     "ekran olcumu",
     [...olcum(["mobile/src/lib/telemetry.ts", "mobile/App.tsx"]), "bagli=" + bagli("mobile/App.tsx", /attachTelemetry\(\)/)],
     [...olcum(["src/components/telemetry.tsx", "src/app/error.tsx"]), "bagli=" + bagli("src/components/app-shell.tsx", /<Telemetry/)],
+  );
+}
+
+/* ── 91. oyun sesleri anahtari ────────────────────────────────────────────
+ * Sesleri susturmanin tek yolu telefonu kismak olmamali: bu TTS'i de susturur,
+ * yani sessiz bir yerde calismak isteyen kullanici TELAFFUZU da kaybeder.
+ * Web ikisini ayiriyor ("telaffuz sesi ayri - bu kapaliyken de calisir") ve
+ * mobilde anahtarin kendisi YOKTU. Ayrim iki tarafta da ayni: bayrak yalniz
+ * kisa efektleri kapatiyor. */
+{
+  const ses = (yollar) => {
+    const src = yollar.map((p) => read(p)).join("\n").replace(/\/\*[\s\S]*?\*\//g, " ").replace(/\/\/[^\n]*/g, " ");
+    return [
+      "tercih=" + (/soundEnabled\(/.test(src) ? "var" : "yok"),
+      "ayar satiri=" + (src.includes("snd.game_sounds") ? "var" : "yok"),
+      "olcum=" + (/track\("sound_toggle"/.test(src) ? "var" : "yok"),
+      "efekt kapisi=" + (/if \(!soundOn\) return|!soundEnabled\(\)/.test(src) ? "var" : "yok"),
+    ];
+  };
+  sameList(
+    "oyun sesleri anahtari",
+    ses(["mobile/src/lib/sfx.ts", "mobile/src/screens/SettingsScreen.tsx"]),
+    ses(["src/lib/sfx.ts", "src/components/sound-settings.tsx"]),
   );
 }
 

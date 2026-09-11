@@ -1,4 +1,5 @@
 import Sound from "react-native-sound";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 import { NativeModules, Platform } from "react-native";
 import { bridgeReady, bridgeSfx, type SfxKind } from "./ttsBridge";
 import { SFX_NOTES } from "./sfxNotes";
@@ -28,6 +29,30 @@ const SFX_DUR: Record<string, number> = Object.fromEntries(
  * sessizce yutulur (haptik yine çalışır).
  */
 try { Sound.setCategory("Playback", false); } catch { /* yut */ }
+
+/**
+ * OYUN SESLERİ AÇIK MI — web `lib/sfx` `soundEnabled` ile aynı tercih.
+ *
+ * Mobilde böyle bir anahtar YOKTU: sesleri susturmanın tek yolu telefonu
+ * kısmaktı ve bu TTS'i de susturuyordu - yani sessiz bir yerde çalışmak
+ * isteyen kullanıcı telaffuzu da kaybediyordu. Web ikisini ayırıyor ("telaffuz
+ * sesi ayrı — bu kapalıyken de çalışır") ve aynı ayrım burada da geçerli:
+ * bu bayrak YALNIZ kısa efektleri kapatıyor, `speakTarget` etkilenmiyor.
+ *
+ * Tercih AÇILIŞTA okunuyor (`loadSoundPref`); okunmadan önce varsayılan açık.
+ */
+const SOUND_KEY = "lernomi:sound";
+let soundOn = true;
+
+export async function loadSoundPref(): Promise<boolean> {
+  try { soundOn = (await AsyncStorage.getItem(SOUND_KEY)) !== "off"; } catch { soundOn = true; }
+  return soundOn;
+}
+export function soundEnabled(): boolean { return soundOn; }
+export async function setSoundEnabled(on: boolean): Promise<void> {
+  soundOn = on;
+  try { if (on) await AsyncStorage.removeItem(SOUND_KEY); else await AsyncStorage.setItem(SOUND_KEY, "off"); } catch { /* yut */ }
+}
 
 const cache: Record<string, Sound | null | undefined> = {};
 const fileName = (name: string) => (Platform.OS === "android" ? name : `${name}.mp3`);
@@ -100,6 +125,7 @@ let lastAt = 0;
 // gecikme native Handler'la (ekran-kapalı da çalışır). Böylece her koşulda tek tek çalarlar.
 let busyUntil = 0;
 export function sfx(kind: SfxKind): void {
+  if (!soundOn) return; // kullanıcı kapattı: efektler susuyor, konuşma sesi değil
   const now = Date.now();
   if (kind === lastKind && now - lastAt < 120) return; // aynı sesi kısa sürede çift çalma (dedupe)
   lastKind = kind; lastAt = now;

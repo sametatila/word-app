@@ -86,6 +86,13 @@ export type EventName =
    * (üç saniyeden kısası yazılmıyor: yanlışlıkla açılan ekran veri değil
    * gürültü) · `client_error` yakalanmamış hata, dakikada en çok bir.
    */
+  /* Oyun sesleri açıldı/kapandı (value 1/0) — web `sound-settings` ile aynı ad.
+     Mobilde anahtarın kendisi de yoktu (bkz. `lib/sfx` `soundEnabled`). */
+  | "sound_toggle"
+  /* Bildirimden açılış — web `telemetry` `?src=push` ile yazıyor; mobilde üç
+     dokunuş yolu var (arka plan, ön plan, kapalıyken) ve üçü de tek yerden
+     geçiyor (`pushRoute` `navigateFromPush`). */
+  | "push_open"
   | "page_view"
   | "time_spent"
   | "client_error";

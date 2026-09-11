@@ -965,6 +965,8 @@ export const de: Record<string, string> = {
   "sessions.need_fresh": "Melde dich neu an, um die Geräteliste zu sehen. Das Abmelden auf anderen Geräten funktioniert trotzdem.",
   "sessions.load_failed": "Die Sitzungen konnten nicht geladen werden.",
   "sessions.unknown_device": "Unbekanntes Gerät",
+  "snd.game_sounds": "Spielgeräusche",
+  "snd.game_sounds_sub": "Die Aussprache ist davon getrennt — sie läuft auch, wenn das aus ist",
   "settings.analytics_sub": "Welche Funktionen genutzt werden; geht an keinen Dritten",
   "settings.settings": "Einstellungen",
   "settings.not_sure_take_placement_test": "Unsicher? Mach den Einstufungstest →",

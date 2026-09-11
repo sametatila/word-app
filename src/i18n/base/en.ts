@@ -967,6 +967,8 @@ export const enBase: Record<string, string> = {
   "sessions.need_fresh": "Sign in again to see the device list. Signing out on other devices still works.",
   "sessions.load_failed": "The sessions could not be loaded.",
   "sessions.unknown_device": "Unknown device",
+  "snd.game_sounds": "Game sounds",
+  "snd.game_sounds_sub": "Pronunciation audio is separate — it works even with this off",
   "settings.analytics_sub": "Which features get used; never leaves us",
   "settings.settings": "Settings",
   "settings.not_sure_take_placement_test": "Not sure? Take the placement test →",

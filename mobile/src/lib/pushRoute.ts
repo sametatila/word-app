@@ -1,3 +1,4 @@
+import { track } from "./track";
 import { createNavigationContainerRef } from "@react-navigation/native";
 import type { RootStackParams } from "../navigation/RootStack";
 
@@ -98,6 +99,9 @@ export function routeFromHref(href: string): PushRoute | null {
 }
 
 export function navigateFromPush(url: string): void {
+  /* Bildirimden açılış ölçülüyor: "kaç kişi bildirimden dönüyor" sorusu
+     web tarafında baştan beri cevaplı, Androidde hiç sayılmıyordu. */
+  track("push_open");
   const route = routeFromPush(url);
   if (!route || !navigationRef.isReady()) return;
   try {

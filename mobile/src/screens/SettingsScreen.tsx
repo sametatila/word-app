@@ -22,6 +22,7 @@ import { coursesForNative, offeredNativeLangs, NATIVE_LANGS, type NativeLang } f
 import { currentLang, setLang } from "../lib/i18n";
 import { useTheme, spacing, radii, softShadow, type Palette, type ThemeMode } from "../theme";
 import { analyticsEnabled, setAnalyticsEnabled, track } from "../lib/track";
+import { soundEnabled, setSoundEnabled } from "../lib/sfx";
 import { hasMicConsent, setMicConsent } from "../lib/micConsent";
 import { openLegal } from "../lib/legal";
 import { APP_VERSION } from "../version";
@@ -110,6 +111,10 @@ export function SettingsScreen() {
   /** İletinin TONU ayrı tutuluyor: metne bakarak renk seçmek çeviride kırılır. */
   const [msgOk, setMsgOk] = useState(true);
   const [analytics, setAnalytics] = useState(analyticsEnabled());
+  /* Oyun sesleri: efektler için ayrı anahtar. Telaffuz sesi buna BAĞLI DEĞİL —
+     sessiz bir yerde çalışmak isteyen kullanıcı telefonu kısınca konuşmayı da
+     kaybediyordu; web ikisini baştan beri ayırıyor (`sound-settings`). */
+  const [sounds, setSounds] = useState(soundEnabled());
   const [uiLang, setUiLang] = useState<NativeLang>(currentLang());
   const [micConsent, setMicConsentState] = useState<boolean | null>(null);
   useEffect(() => { void hasMicConsent().then(setMicConsentState); }, []);
@@ -285,6 +290,19 @@ export function SettingsScreen() {
         </Section>
 
         <Section title={t("settings.appearance")} colors={colors}>
+          <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingBottom: 12 }}>
+            <View style={{ flex: 1 }}>
+              <Text variant="bodyStrong">{t("snd.game_sounds")}</Text>
+              <Text variant="caption" color={colors.textMuted}>{t("snd.game_sounds_sub")}</Text>
+            </View>
+            <Switch
+              value={sounds}
+              onValueChange={(v) => { setSounds(v); void setSoundEnabled(v); track("sound_toggle", v ? 1 : 0); }}
+              accessibilityLabel={t("snd.game_sounds")}
+              trackColor={{ true: colors.primary, false: colors.surface2 }}
+              thumbColor="#fff"
+            />
+          </View>
           <View style={{ flexDirection: "row", backgroundColor: colors.surface2, borderRadius: radii.md, padding: 4 }}>
             {THEME_OPTIONS.map((o) => {
               const active = mode === o.key;
