@@ -180,12 +180,15 @@ export function PremiumPaywall({
             tavanı olan bir şeyi "sınırsız" diye sunmak iki mağazanın da beyan
             kuralına aykırı.
           */}
-          <p className="muted mt-4 text-caption leading-relaxed">
-            <strong className="mr-1">{t("paywall.fair_use_title")}:</strong>
-            {t("plan.pro_walk_cap", { n: fairUse.pocketWalksPerDay })} · {t("plan.pro_ai", { n: fairUse.aiPracticePerDay })}
-            {" "}
-            {t(supportsMockExams(course) ? "paywall.content_is_built_around_cefr_a1" : "paywall.content_is_built_around_cefr")}
-          </p>
+          <div className="muted mt-4 space-y-1 text-caption leading-relaxed">
+            <p>
+              <strong className="mr-1">{t("paywall.fair_use_title")}:</strong>
+              {t("plan.pro_walk_cap", { n: fairUse.pocketWalksPerDay })} · {t("plan.pro_ai", { n: fairUse.aiPracticePerDay })}
+            </p>
+            {/* İçerik vaadi AYRI satır: adil kullanım tavanlarıyla aynı cümlede
+                birleşince iki ayrı konu tek bir cümle gibi okunuyordu. */}
+            <p>{t(supportsMockExams(course) ? "paywall.content_is_built_around_cefr_a1" : "paywall.content_is_built_around_cefr")}</p>
+          </div>
         </>
       )}
 
