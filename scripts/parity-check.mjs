@@ -7275,6 +7275,70 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     "beklenen",
   );
 
+  /* ── 224. kip yuzeyleri: odak, Escape ve duyuru ─────────────────────
+   * Bu eksen ikisinde de ZATEN yapilmisti ve olcum bunu dogruladi - kapi
+   * gerilemeyi tutmak icin yazildi:
+   *
+   *   mobil bes kip (rozet, sertifika, onay, mikrofon, bildir) hepsi
+   *     `accessibilityViewIsModal` + `onRequestClose` tasiyor
+   *   web uc kipi yerel `<dialog>` + `showModal()` ile aciyor (odak tuzagi ve
+   *     Escape tarayicidan), dorduncusu (`achievement-unlock`) elle:
+   *     `role="dialog" aria-modal`, odagi aliyor, Escape'i dinliyor ve
+   *     kapanista odagi GERI VERIYOR
+   *
+   * Web'in `<dialog>` kullanmayan tek yuzeyi yuruyusun KARANLIK ORTUSU ve
+   * orada iki kusur vardi: kendini duyurmuyordu ve klavye icin cikis yoktu
+   * (cikis uc dokunus; ortu her seyi kapatiyor ve tiklamalari yutuyor, yani
+   * WCAG 2.1.2 anlaminda bir klavye tuzagi). Ortu WEB'E OZEL - mobilde ekran
+   * gercekten kapaniyor - o yuzden olcut mutlak, karsilastirma degil. */
+  {
+    const mobKipler = [
+      ["rozet", "mobile/src/ui/AchievementUnlock.tsx"],
+      ["sertifika", "mobile/src/ui/CertificateSheet.tsx"],
+      ["onay", "mobile/src/ui/ConfirmDialog.tsx"],
+      ["mikrofon", "mobile/src/ui/MicDisclosure.tsx"],
+      ["bildir", "mobile/src/ui/ReportSheet.tsx"],
+    ];
+    const eksik = [];
+    for (const [ad, f] of mobKipler) {
+      const src = sil(read(f));
+      if (!/accessibilityViewIsModal/.test(src) || !/onRequestClose/.test(src)) eksik.push(ad);
+    }
+    const webDialog = ["confirm-dialog", "mic-disclosure", "report-dialog"].filter(
+      (ad) => !/showModal\(\)/.test(sil(read("src/components/" + ad + ".tsx"))),
+    );
+    const webRozet = sil(read("src/components/achievement-unlock.tsx"));
+    const webYuruyus = sil(read("src/components/walk-player.tsx"));
+    sameList(
+      "kip yuzeyleri: odak, Escape ve duyuru",
+      [
+        "mobil kip sayisi=" + mobKipler.length,
+        "mobil eksik=" + (eksik.length ? eksik.join(", ") : "yok"),
+        "web showModal eksik=" + (webDialog.length ? webDialog.join(", ") : "yok"),
+        "web rozet elle=" + (/role="dialog"/.test(webRozet) && /aria-modal/.test(webRozet) && /geri\?\.focus\?\.\(\)/.test(webRozet) ? "odak+Escape+geri" : "EKSIK"),
+        /* PENCERE DEGIL YAPI (11.339'un kurali): `role="status"` ile
+           `walk.dark_listening` arasina uzun bir gerekce yorumu girdi ve 200
+           karakterlik pencere yetmedi - ayni tuzagin BESINCI bicimi. Isaretten
+           geri gidip ondan hemen once acilan `<div`in etiketine bakiliyor. */
+        "web karanlik ortu duyurusu=" + (() => {
+          const j = webYuruyus.indexOf("walk.dark_listening");
+          if (j < 0) return "ISARET YOK";
+          const k = webYuruyus.lastIndexOf("<div", j);
+          if (k < 0) return "KAP YOK";
+          return /role="status"/.test(webYuruyus.slice(k, webYuruyus.indexOf(">", k) + 1)) ? "var" : "YOK";
+        })(),
+        "web karanlik ortu Escape=" + (/e\.key !== "Escape"[\s\S]{0,80}exitDark\(\)/.test(webYuruyus) ? "var" : "YOK"),
+      ],
+      [
+        "mobil kip sayisi=5", "mobil eksik=yok", "web showModal eksik=yok",
+        "web rozet elle=odak+Escape+geri",
+        "web karanlik ortu duyurusu=var", "web karanlik ortu Escape=var",
+      ],
+      "bulunan",
+      "beklenen",
+    );
+  }
+
   /* ── 223. turun SONUCU duyuruluyor mu ───────────────────────────────
    * Bir tur bitince kart soru listesinin YERINE geliyor: sorular kayboluyor,
    * yerine puan ve yargi ("gectin" / "biraz daha calis") beliriyor. Sesli
