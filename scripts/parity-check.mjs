@@ -4391,6 +4391,57 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   sameList("haftalik sinav sonucu", sira(mob, 1), sira(web, 0));
 }
 
+/* ── 128. gunluk turun tanitimi ───────────────────────────────────────────
+ * Android turu DOGRUDAN baslatiyordu: kullanici ne oynayacagini, kac soru
+ * oldugunu, TEK HAK oldugunu ve herkesin ayni turu oynadigini hicbir yerde
+ * okumadan kendini ilk sorunun icinde buluyordu. Web ayni yerde bir tanitim
+ * karti gosteriyor ve bugunun tablosunu da oraya koyuyor - "kime
+ * yetisiyorum" sorusu oynamaya iten seyin kendisi. Mobilin kendi duzeni
+ * haftalik sinavda zaten boyle (`WeeklyScreen` `ready`); gunluk tur tek
+ * istisnaydi.
+ *
+ * Olculen: ekranin fazlari ve tanitim kartinin bolum sirasi. `session_start`
+ * artik iki tarafta da BASLA'ya basinca yaziliyor - ekrani acan herkesi
+ * "basladi" saymak huninin ilk adimini oldugundan buyuk gosteriyordu. */
+{
+  const mobSrc = read("mobile/src/screens/DailyScreen.tsx");
+  const webSrc = read("src/components/daily-player.tsx");
+  const faz = (src, re) => (src.match(re)?.[1] ?? "").match(/"(\w+)"/g)?.map((x) => x.slice(1, -1)).sort() ?? [];
+  /* Adlar bir yerde ayri: web oynanan fazi "playing", mobil "play" diyor ve
+     mobilde bir de "auth" var (webde oturum ROTA duzeyinde cozuluyor). */
+  const mob = faz(mobSrc, /type Phase = ([^;]+);/).filter((x) => x !== "auth").map((x) => (x === "play" ? "playing" : x));
+  const web = faz(webSrc, /type Status = ([^;]+);/).map((x) => (x === "play" ? "playing" : x));
+  sameList("gunluk tur fazlari", mob.sort(), web.sort());
+
+  const BOLUM = [
+    ["ust satir", /daily\.daily_round/, /daily\.daily_round/],
+    ["baslik", /daily\.same_words/, /daily\.same_words/],
+    ["tanitim", /daily\.pitch/, /daily\.pitch/],
+    ["basla", /common\.start/, /common\.start/],
+    ["sonra", /common\.later/, /common\.later/],
+    ["bugunun tablosu", /daily\.today_s_ranking/, /daily\.today_s_ranking/],
+  ];
+  const dilim = (src, bas, son) => {
+    const i = src.indexOf(bas);
+    const j = src.indexOf(son, i);
+    return i < 0 ? "" : src.slice(i, j < 0 ? src.length : j);
+  };
+  const sira = (src, ix) =>
+    BOLUM.map(([ad, ...d]) => [ad, src.search(d[ix])])
+      .filter(([, i]) => i >= 0)
+      .sort((a, b) => a[1] - b[1])
+      .map(([ad]) => ad);
+  sameList(
+    "gunluk tur tanitimi",
+    sira(dilim(mobSrc, 'if (phase === "ready") {', '\n  if (phase === "empty")'), 1),
+    sira(dilim(webSrc, 'if (status === "ready" && data) {', "\n  if (status ==="), 0),
+  );
+
+  /* `session_start` tanitim ekraninda DEGIL, BASLA dugmesinde yazilmali. */
+  const nerede = (src) => (/session_start", 0, "daily"\)/.test(src) ? (/(onPress|onClick)=\{\(\) => \{[^}]*session_start", 0, "daily"/.test(src.replace(/\n/g, " ")) ? "basla dugmesinde" : "baska yerde") : "hic yazilmiyor");
+  sameList("gunluk tur olcum ani", [nerede(mobSrc)], [nerede(webSrc)]);
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"

@@ -44,7 +44,7 @@ type Payload = {
   board: Board;
 };
 
-type Status = "loading" | "ready" | "playing" | "done" | "error" | "empty";
+type Status = "loading" | "ready" | "playing" | "submitting" | "done" | "error" | "empty";
 
 export function DailyPlayer({ onExit }: { onExit: () => void }) {
   const t = useT();
@@ -87,6 +87,10 @@ export function DailyPlayer({ onExit }: { onExit: () => void }) {
       // yavaşsa kullanıcı düğmeye iki kez basabiliyor.
       if (sent.current) return;
       sent.current = true;
+      /* GÖNDERİLİRKEN ekranda bir şey olmalı: son tur donmuş hâlde duruyordu
+         ve ağ yavaşsa kullanıcı düğmenin işe yaramadığını sanıyordu. Android
+         aynı anda yükleme iskeletini gösteriyor (`DailyScreen` `submitting`). */
+      setStatus("submitting");
       track("session_done", finalTally.correct, "daily");
       const seconds = Math.round((Date.now() - startedAt.current) / 1000);
       try {
@@ -138,7 +142,7 @@ export function DailyPlayer({ onExit }: { onExit: () => void }) {
     else setIndex(index + 1);
   }
 
-  if (status === "loading") {
+  if (status === "loading" || status === "submitting") {
     return (
       <Card>
         <p className="muted py-8 text-center text-sm">{t("daily.preparing")}</p>

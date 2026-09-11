@@ -19,7 +19,7 @@ import { useTheme, spacing, radii, softShadow, TIER_COLOR, type Palette } from "
 import { sfx } from "../lib/sfx";
 import { bumpStats } from "../lib/statsSignal";
 
-type Phase = "loading" | "auth" | "error" | "play" | "submitting" | "done" | "empty";
+type Phase = "loading" | "auth" | "error" | "ready" | "play" | "submitting" | "done" | "empty";
 
 /**
  * İlk üçün madalya rengi — ortak kademe ölçeğinden (`TIER_COLOR`).
@@ -136,10 +136,18 @@ export function DailyScreen() {
       setRounds(list);
       totalRef.current = list.length;
       setIdx(0);
-      startedAt.current = Date.now();
-      roundStart.current = Date.now();
-      track("session_start", 0, "daily");
-      setPhase("play");
+      /*
+       * TANITIM EKRANI — web `daily-player` `status === "ready"`.
+       *
+       * Android turu DOĞRUDAN başlatıyordu: kullanıcı ne oynayacağını, kaç
+       * soru olduğunu, tek hak olduğunu ve herkesin aynı turu oynadığını
+       * hiçbir yerde okumadan ilk sorunun içinde buluyordu. Haftalık sınavda
+       * mobilin kendi düzeni zaten böyle (`WeeklyScreen` `ready`), günlük tur
+       * tek istisnaydı. `session_start` de artık BAŞLA'ya basınca yazılıyor:
+       * eskiden ekranı açan herkes "başladı" sayılıyordu ve huninin ilk
+       * adımı olduğundan büyük görünüyordu.
+       */
+      setPhase("ready");
     } catch (e) {
       setPhase(e instanceof ApiError && e.status === 401 ? "auth" : "error");
     }
@@ -189,6 +197,35 @@ export function DailyScreen() {
         <Text variant="body" color={colors.textMuted} style={{ textAlign: "center", marginTop: spacing.md, marginBottom: spacing.xxl }}>{t("daily.play_same_round_as_everyone_and")}</Text>
         <PressableScale onPress={() => { nav.goBack(); nav.navigate("Auth"); }} style={[{ width: "100%", backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: 16, alignItems: "center" }, softShadow(colors.primary, 10)]}><Text variant="h3" color={colors.onPrimary}>{t("daily.sign_in_sign_up")}</Text></PressableScale>
         <PressableScale onPress={() => nav.goBack()} style={{ paddingVertical: spacing.lg, marginTop: spacing.sm }}><Text variant="bodyStrong" color={colors.textMuted}>{t("common.close")}</Text></PressableScale>
+      </View>
+    );
+  }
+
+  if (phase === "ready") {
+    return (
+      <View style={pad}>
+        <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={{ flexGrow: 1, justifyContent: "center", paddingBottom: spacing.xl }}>
+          <Text variant="caption" color={colors.textMuted} style={{ textAlign: "center" }}>{t("daily.daily_round")}</Text>
+          <Text variant="h1" style={{ textAlign: "center", marginTop: 2 }}>{t("daily.same_words")}</Text>
+          <Text variant="body" color={colors.textMuted} style={{ textAlign: "center", marginTop: spacing.md, lineHeight: 22 }}>{t("daily.pitch", { n: rounds.length })}</Text>
+          <PressableScale
+            onPress={() => { startedAt.current = Date.now(); roundStart.current = Date.now(); track("session_start", 0, "daily"); setPhase("play"); }}
+            style={[{ width: "100%", backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: 16, alignItems: "center", marginTop: spacing.xxl }, softShadow(colors.primary, 10)]}
+          >
+            <Text variant="h3" color={colors.onPrimary}>{t("common.start")}</Text>
+          </PressableScale>
+          <PressableScale onPress={() => nav.goBack()} style={{ paddingVertical: spacing.lg, marginTop: spacing.sm }}><Text variant="bodyStrong" color={colors.textMuted}>{t("common.later")}</Text></PressableScale>
+          {/* Bugünün tablosu turdan ÖNCE de duruyor: web aynı kartın altında
+              gösteriyor ve "kime yetişiyorum" sorusu oynamaya iten şeyin
+              kendisi. Tek satırsa (yalnız kendisi) çizilmiyor. */}
+          {board.length > 1 ? (
+            <View style={{ marginTop: spacing.xxl }}>
+              <Text variant="h3" style={{ marginBottom: 2 }}>{t("daily.today_s_ranking")}</Text>
+              <Text variant="caption" color={colors.textMuted}>{t("daily.players_at_your_level")}</Text>
+              <Board rows={board} colors={colors} />
+            </View>
+          ) : null}
+        </ScrollView>
       </View>
     );
   }

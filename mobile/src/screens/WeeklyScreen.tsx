@@ -154,7 +154,9 @@ export function WeeklyScreen() {
         >
           <Text variant="h3" color={colors.onPrimary}>{t("common.start")}</Text>
         </PressableScale>
-        <PressableScale onPress={() => nav.goBack()} style={{ paddingVertical: spacing.lg, marginTop: spacing.sm }}><Text variant="bodyStrong" color={colors.textMuted}>{t("common.close")}</Text></PressableScale>
+        {/* "Sonra", "Kapat" değil: düğme sınavı ERTELİYOR, hak duruyor. Web
+            aynı yerde aynı sözü söylüyor (`weekly-player`). */}
+        <PressableScale onPress={() => nav.goBack()} style={{ paddingVertical: spacing.lg, marginTop: spacing.sm }}><Text variant="bodyStrong" color={colors.textMuted}>{t("common.later")}</Text></PressableScale>
       </View>
     );
   }

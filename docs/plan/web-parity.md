@@ -7450,3 +7450,32 @@ birden çok turda çıkabiliyor).
 puan başlığı webde `weekly.your_score`, mobilde halkanın altındaki
 `weekly.score`; çıkış webde "Öğren'e dön", mobilde "Bitir". Üç enjeksiyonun
 üçü de yakalandı.
+
+### 11.219 Günlük tur Android'de hiçbir şey söylemeden başlıyordu
+
+Günlük tur Android'de **doğrudan** başlıyordu: kullanıcı ne oynayacağını, kaç
+soru olduğunu, **tek hak** olduğunu ve seviyesindeki herkesle aynı turu
+oynadığını hiçbir yerde okumadan kendini ilk sorunun içinde buluyordu. Web
+aynı yerde bir tanıtım kartı gösteriyor ve **bugünün tablosunu** da oraya
+koyuyor — "kime yetişiyorum" sorusu oynamaya iten şeyin kendisi ve tur
+bitmeden görünmüyordu.
+
+Mobilin kendi düzeni haftalık sınavda zaten böyle (`WeeklyScreen` `ready`);
+günlük tur tek istisnaydı. Aynı kart Android'e kondu: üst satır · başlık ·
+tanıtım · Başla · Sonra · bugünün tablosu.
+
+Yanında iki düzeltme daha:
+
+- **`session_start` artık BAŞLA'ya basınca yazılıyor** (iki tarafta da).
+  Android'de ekranı AÇAN herkes "başladı" sayılıyordu; huninin ilk adımı
+  olduğundan büyük görünüyor ve tamamlama oranı olduğundan küçük çıkıyordu.
+- **Web'e `submitting` fazı eklendi.** Skor gönderilirken son tur donmuş
+  hâlde ekranda duruyordu ve ağ yavaşsa kullanıcı düğmenin işe yaramadığını
+  sanıyordu; Android aynı anda yükleme iskeletini gösteriyor.
+
+Bir de tek kelimelik bir hizalama: tanıtımın ikincil düğmesi mobilde "Kapat"
+diyordu, webde "Sonra". Düğme sınavı/turu **erteliyor**, hak duruyor — ikisi
+de artık "Sonra" (`common.later`, haftalık sınavda da).
+
+**§128** üç şeyi ölçüyor: ekranın fazları, tanıtım kartının bölüm sırası ve
+`session_start`in hangi anda yazıldığı. Dört enjeksiyonun dördü de yakalandı.
