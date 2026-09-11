@@ -626,6 +626,30 @@ verilmemiş oluyor.
 
 C1.GR.11-20'nin onu da modül içinde bir kez kullanılıyor (ölçüldü, 10/10).
 
+**C1 modül 9 — Ekonomi ve strateji (2026-09-11).** On ders: aynı rakamın
+üç adı, parayı kim kaybediyor, şeffaflık istemek, faiz tartışması,
+maliyet sözlüğü, bilançoyu aktarmak, tahmin ne kadar kesin, yeşil
+aklama, strateji raporunu bağlamak, teklifin söylemediği.
+
+Modülün ekseni ADIN SORUMLULUK DAĞITMASI. Modül 8'de ad kapsam
+belirliyordu; burada doğrudan fatura kesiyor: «ekonomik daralma» geçici
+bir dalgayı anlatıp kimseyi sorumlu tutmuyor, «durgunluk» yapısal bir
+tıkanmayı anlatıp bir politikayı sorumlu tutuyor. Maliyet dersi aynı şeyi
+karar üzerinden gösteriyor — marjinal maliyeti hesaplayan devam ediyor,
+fırsat maliyetini hesaplayan durabiliyor.
+
+İki ders C1'in araçlarını KORUMA olarak kullanıyor. Şeffaflık dersinde
+çekimsiz fiil bir üslup değil bir siper: «ben istiyorum» diyen ifşacı,
+kurumun gözünde savı değil kendisi oluyor. Aktarma dersinde fiil bir
+hukuk iddiası — alleges ile proves arasını karıştıran cümle iftira
+olabiliyor.
+
+Kapanış dersi eksiltmeyi bir risk devri sayıyor: işletme modeli
+adlandırılmadığında risk sessizce karşı tarafa geçiyor, ve bir teklifi
+okumak adlandırılmayanı aramak oluyor.
+
+C1.GR.11-20'nin onu da modül içinde bir kez kullanılıyor (ölçüldü, 10/10).
+
 ## Tamamlanma ölçütü
 
 - `LESSONS` içinde `course: "en"` için B1/B2/C1 100'er ders

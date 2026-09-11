@@ -1,0 +1,1947 @@
+[
+ {
+  "tr": "krizi doğal afet sayan, «piyasa böyle işliyor» diyen biri",
+  "kind": "partner",
+  "de": "jemand, der die Krise für eine Naturkatastrophe hält und sagt «so funktionieren Märkte»"
+ },
+ {
+  "tr": "her tahmini söz sayan, «yani kazanacağız» diyen bir müşteri",
+  "kind": "partner",
+  "de": "ein Kunde, der jede Prognose für ein Versprechen hält und sagt «wir verdienen also»"
+ },
+ {
+  "tr": "rakamı tek doğru sayan, «sayı sayıdır» diyen bir iş arkadaşı",
+  "kind": "partner",
+  "de": "ein Kollege, der die Zahl für die einzige Wahrheit hält und sagt «eine Zahl ist eine Zahl»"
+ },
+ {
+  "tr": "metni eksiksiz sayan, «her şey yazıyor» diyen bir iş arkadaşı",
+  "kind": "partner",
+  "de": "eine Kollegin, die den Text für vollständig hält und sagt «es steht alles drin»"
+ },
+ {
+  "tr": "faizi tek araç sayan, «başka ne yapabilirlerdi» diyen bir iktisatçı",
+  "kind": "partner",
+  "de": "ein Ökonom, der den Zins für das einzige Mittel hält und fragt «was hätten sie sonst tun sollen»"
+ },
+ {
+  "tr": "her söylentiyi kesin bilgi sayan, «demek yapmış» diyen bir iş arkadaşı",
+  "kind": "partner",
+  "de": "ein Kollege, der jedes Gerücht für gesichertes Wissen hält und sagt «er hat es also getan»"
+ },
+ {
+  "tr": "yalnız harcanmışa bakan, «bu kadar para gitti, bırakamayız» diyen biri",
+  "kind": "partner",
+  "de": "jemand, der nur auf das Ausgegebene sieht und sagt «so viel Geld ist weg, wir können nicht aufhören»"
+ },
+ {
+  "tr": "her bildirimi kişisel husumet sayan, «kime kızgınsın» diyen bir yönetici",
+  "kind": "partner",
+  "de": "ein Vorgesetzter, der jede Meldung für persönlichen Groll hält und fragt «auf wen bist du wütend»"
+ },
+ {
+  "tr": "iddiayı olduğu gibi savunan, «raporumuz ödül aldı» diyen bir iş arkadaşı",
+  "kind": "partner",
+  "de": "eine Kollegin, die die Aussage unbesehen verteidigt und sagt «unser Bericht wurde ausgezeichnet»"
+ },
+ {
+  "tr": "her ölçütü kendi pazarına taşıyan, «bizde de böyle olur» diyen bir bölge müdürü",
+  "kind": "partner",
+  "de": "ein Regionalleiter, der jeden Maßstab auf seinen Markt überträgt und sagt «bei uns ist das genauso»"
+ },
+ {
+  "tr": "Burada kime kızgınsın?",
+  "kind": "openingTr",
+  "de": "Auf wen bist du hier wütend?"
+ },
+ {
+  "tr": "Demek yapmış, öyle mi?",
+  "kind": "openingTr",
+  "de": "Er hat es also getan, ja?"
+ },
+ {
+  "tr": "Sayı sayıdır, değil mi?",
+  "kind": "openingTr",
+  "de": "Eine Zahl ist eine Zahl, oder?"
+ },
+ {
+  "tr": "Her şey yazıyor, değil mi?",
+  "kind": "openingTr",
+  "de": "Es steht alles drin, oder?"
+ },
+ {
+  "tr": "Yani kazanacağız, öyle mi?",
+  "kind": "openingTr",
+  "de": "Wir verdienen also, ja?"
+ },
+ {
+  "tr": "Başka ne yapabilirlerdi ki?",
+  "kind": "openingTr",
+  "de": "Was hätten sie denn sonst tun sollen?"
+ },
+ {
+  "tr": "Raporumuz ödül aldı, değil mi?",
+  "kind": "openingTr",
+  "de": "Unser Bericht wurde ausgezeichnet, oder?"
+ },
+ {
+  "tr": "Piyasa böyle işliyor, değil mi?",
+  "kind": "openingTr",
+  "de": "So funktionieren Märkte, oder?"
+ },
+ {
+  "tr": "Bizim pazarda da olur, değil mi?",
+  "kind": "openingTr",
+  "de": "Bei uns im Markt geht das auch, oder?"
+ },
+ {
+  "tr": "Bu kadar para gitti, şimdi bırakamayız değil mi?",
+  "kind": "openingTr",
+  "de": "So viel Geld ist weg, jetzt können wir nicht aufhören, oder?"
+ },
+ {
+  "tr": "Yeşil aklama",
+  "kind": "titleTr",
+  "de": "Grüngewaschen"
+ },
+ {
+  "tr": "Faiz tartışması",
+  "kind": "titleTr",
+  "de": "Die Zinsdebatte"
+ },
+ {
+  "tr": "Maliyet sözlüğü",
+  "kind": "titleTr",
+  "de": "Das Wörterbuch der Kosten"
+ },
+ {
+  "tr": "Şeffaflık istemek",
+  "kind": "titleTr",
+  "de": "Offenlegung fordern"
+ },
+ {
+  "tr": "Bilançoyu aktarmak",
+  "kind": "titleTr",
+  "de": "Die Bücher wiedergeben"
+ },
+ {
+  "tr": "Aynı rakamın üç adı",
+  "kind": "titleTr",
+  "de": "Drei Namen für eine Zahl"
+ },
+ {
+  "tr": "Teklifin söylemediği",
+  "kind": "titleTr",
+  "de": "Was die Ausschreibung verschweigt"
+ },
+ {
+  "tr": "Parayı kim kaybediyor",
+  "kind": "titleTr",
+  "de": "Wer das Geld verliert"
+ },
+ {
+  "tr": "Tahmin ne kadar kesin",
+  "kind": "titleTr",
+  "de": "Wie sicher ist die Prognose"
+ },
+ {
+  "tr": "Strateji raporunu bağlamak",
+  "kind": "titleTr",
+  "de": "Das Strategiepapier zusammenhalten"
+ },
+ {
+  "tr": "İhale metninde düşen öğeyi öğretir; söylenmeyen şey çoğu zaman riski kimin taşıyacağıdır.",
+  "kind": "summary",
+  "de": "Lehrt das weggelassene Glied im Ausschreibungstext; was ungesagt bleibt, ist meist, wer das Risiko trägt."
+ },
+ {
+  "tr": "Şeffaflık talebini kalıplaşmış biçimle kurmayı öğretir; talebi kişiden ayıran biçim ifşacıyı da korur.",
+  "kind": "summary",
+  "de": "Lehrt, die Forderung nach Offenlegung in fester Form zu bauen; die Form, die die Forderung von der Person trennt, schützt auch die meldende Person."
+ },
+ {
+  "tr": "Maliyet konuşmasının yerleşik eşdizimlerini öğretir; hangi maliyet adı seçilirse karar da o adla verilir.",
+  "kind": "summary",
+  "de": "Lehrt die festen Wortverbindungen des Redens über Kosten; welcher Kostenname gewählt wird, so fällt auch die Entscheidung."
+ },
+ {
+  "tr": "Finansal tahmini aktarırken kipin koyduğu mesafeyi öğretir; kesin tahmin bir kez tutmazsa bütün analizi götürür.",
+  "kind": "summary",
+  "de": "Lehrt den Abstand, den das Modalverb beim Wiedergeben einer Finanzprognose setzt; eine bestimmte Prognose reißt die ganze Analyse mit, wenn sie einmal nicht eintrifft."
+ },
+ {
+  "tr": "Aynı ekonomik rakamın basında ve modelde başka ad aldığını öğretir; ad seçimi kimin sorumlu olacağını da belirler.",
+  "kind": "summary",
+  "de": "Lehrt, dass dieselbe Wirtschaftszahl in der Presse und im Modell anders heißt; die Wahl des Namens bestimmt auch, wer verantwortlich ist."
+ },
+ {
+  "tr": "Mali bir suçlamayı aktarırken hükmü fiile yüklemeyi öğretir; iddia etmekle kanıtlamak arasındaki fark fiilde durur.",
+  "kind": "summary",
+  "de": "Lehrt, beim Wiedergeben eines Finanzvorwurfs das Urteil ins Verb zu legen; der Unterschied zwischen Behaupten und Beweisen steht im Verb."
+ },
+ {
+  "tr": "Kurumsal dürüstlük iddialarını alayla eleştirmeyi öğretir; iddianın kendi sözcüğü eleştirinin en sağlam dayanağı olur.",
+  "kind": "summary",
+  "de": "Lehrt, Aussagen über Unternehmensredlichkeit mit Spott zu kritisieren; das eigene Wort der Aussage wird zur festesten Stütze der Kritik."
+ },
+ {
+  "tr": "Uzun bir strateji raporunu bağlayan adresleri öğretir; her ölçüt başka bir pazarda başka sonuç verdiği için bağ zorunlu.",
+  "kind": "summary",
+  "de": "Lehrt die Adressen, die ein langes Strategiepapier zusammenhalten; weil jeder Maßstab in jedem Markt anders wirkt, ist die Bindung zwingend."
+ },
+ {
+  "tr": "Para politikası tartışmasında ödün vererek karşı çıkmayı öğretir; aracın işe yaradığını teslim etmeyen itiraz dinlenmiyor.",
+  "kind": "summary",
+  "de": "Lehrt, in der geldpolitischen Debatte mit Zugeständnis zu widersprechen; ein Einwand, der die Wirkung des Mittels nicht einräumt, wird nicht gehört."
+ },
+ {
+  "tr": "Kriz anlatısında kimi başa aldığını seçmeyi öğretir; kurumu başa almak insanları siler, bizi başa almak sorumluluğu geri getirir.",
+  "kind": "summary",
+  "de": "Lehrt, in der Krisenerzählung zu wählen, wen man voranstellt; die Institution voranzustellen löscht die Menschen, uns voranzustellen holt die Verantwortung zurück."
+ },
+ {
+  "tr": "Bir çeyrek raporundaki rakamı önce basının, sonra modelin diliyle anlatıyorsun. İki adı da kur ve her adın kimi sorumlu tuttuğunu söyle.",
+  "kind": "scene",
+  "de": "Du gibst eine Zahl aus dem Quartalsbericht erst in der Sprache der Presse, dann in der des Modells wieder. Bilde beide Namen und sag, wen jeder Name verantwortlich macht."
+ },
+ {
+  "tr": "Bir banka kurtarmasını anlatıyorsun ve kararı verenleri rakamların arkasına saklamak istemiyorsun. Rakamı, yeri ve bizi başa alan üç cümle kur.",
+  "kind": "scene",
+  "de": "Du erzählst von einer Bankenrettung und willst die Entscheidenden nicht hinter Zahlen verstecken. Bilde drei Sätze, die die Zahl, den Ort und uns voranstellen."
+ },
+ {
+  "tr": "Bir ihale metnini iş arkadaşına anlatıyorsun ve riski kimin taşıyacağının yazılmadığını göstermek istiyorsun. Üç cümlede birer öğe düşür ve adlandırılmayanı söyle.",
+  "kind": "scene",
+  "de": "Du erklärst einer Kollegin einen Ausschreibungstext und willst zeigen, dass nicht geschrieben steht, wer das Risiko trägt. Lass in drei Sätzen je ein Glied weg und sag, was nicht benannt wird."
+ },
+ {
+  "tr": "Bir yatırım tahminini müşteriye anlatıyorsun ve söz vermiş duruma düşmek istemiyorsun. Üç ayrı kip derecesi kur ve her birinde verinin ne kadarına dayandığını söyle.",
+  "kind": "scene",
+  "de": "Du erklärst einem Kunden eine Anlageprognose und willst nicht in die Lage geraten, etwas versprochen zu haben. Bilde drei Modalstufen und sag bei jeder, auf wie viel Daten sie sich stützt."
+ },
+ {
+  "tr": "Şirketteki bir mali usulsüzlüğü arkadaşına aktarıyorsun ve kimseyi kanıtsız suçlamak istemiyorsun. İki aktarmayı iki ayrı fiille söyle ve kanıtın kimde olduğunu söyle.",
+  "kind": "scene",
+  "de": "Du gibst einem Freund eine Finanzunregelmäßigkeit in der Firma wieder und willst niemanden ohne Beweis beschuldigen. Sag die beiden Wiedergaben mit zwei verschiedenen Verben und sag, bei wem der Beweis liegt."
+ },
+ {
+  "tr": "Bir strateji raporunu sözlü olarak özetliyorsun ve dinleyen ölçütleri kendi pazarına uygulayacak. Yukarı, aşağı ve geri gönderme adresleriyle üç bölümü birbirine bağla.",
+  "kind": "scene",
+  "de": "Du fasst ein Strategiepapier mündlich zusammen, und die Zuhörerin überträgt die Maßstäbe auf ihren eigenen Markt. Verbinde drei Abschnitte mit Adressen nach oben, nach unten und zurück."
+ },
+ {
+  "tr": "Şirketinde bir usulsüzlüğü bildirmek istiyorsun ve talebi kendi adına değil bir ölçü adına söylemek istiyorsun. İsteği, olmasaydıyı ve koşulu kalıplaşmış biçimlerle kur.",
+  "kind": "scene",
+  "de": "Du willst in deiner Firma eine Unregelmäßigkeit melden und die Forderung nicht in deinem Namen, sondern im Namen eines Maßstabs sagen. Bilde die Forderung, das Wäre-nicht und die Bedingung in festen Formen."
+ },
+ {
+  "tr": "Faiz kararı üstüne bir tartışmadasın ve aracın işe yaradığını inkâr etmeden bedelini söylemek istiyorsun. Ödünü üç ayrı yerde ver ve her seferinde asıl savını sonra söyle.",
+  "kind": "scene",
+  "de": "Du bist in einer Debatte über den Zinsentscheid und willst den Preis nennen, ohne die Wirkung des Mittels zu leugnen. Setze das Zugeständnis an drei verschiedene Stellen und sag deine eigentliche These jedes Mal danach."
+ },
+ {
+  "tr": "Şirketinin sürdürülebilirlik iddiası ile gördüklerin arasındaki farkı anlatıyorsun ve açıkça suçlamak istemiyorsun. Üç cümlede eksilterek eleştir ve şirketin kendi sözcüklerini kullan.",
+  "kind": "scene",
+  "de": "Du beschreibst den Unterschied zwischen der Nachhaltigkeitsaussage deiner Firma und dem, was du siehst, und willst nicht offen beschuldigen. Kritisiere in drei Sätzen mit Auslassung und benutze die Wörter der Firma selbst."
+ },
+ {
+  "tr": "Bir projeyi sürdürüp sürdürmemeyi tartışıyorsun ve hangi maliyeti hesapladığını açıkça söylemek istiyorsun. Devam maliyetini, vazgeçme maliyetini ve duyuruyu üç ayrı eşdizimle adlandır.",
+  "kind": "scene",
+  "de": "Du diskutierst, ob ein Projekt weitergeführt wird, und willst offen sagen, welche Kosten du rechnest. Benenne die Fortführungskosten, die Verzichtskosten und die Ankündigung mit drei verschiedenen Wortverbindungen."
+ },
+ {
+  "tr": "Rakamı, yeri ve bizi başa alan üç ayrı cümle kurduysan konuşma başarılı sayılır.",
+  "kind": "goal",
+  "de": "Das Gespräch gilt als geschafft, wenn du drei Sätze gebaut hast, die die Zahl, den Ort und uns voranstellen."
+ },
+ {
+  "tr": "Üç cümlede birer öğe düşürdüysen ve adlandırılmayan riski söylediysen konuşma başarılı sayılır.",
+  "kind": "goal",
+  "de": "Das Gespräch gilt als geschafft, wenn du in drei Sätzen je ein Glied weggelassen und das unbenannte Risiko gesagt hast."
+ },
+ {
+  "tr": "Aynı rakamı iki kayıtta adlandırdıysan ve her adın sorumlusunu söylediysen konuşma başarılı sayılır.",
+  "kind": "goal",
+  "de": "Das Gespräch gilt als geschafft, wenn du dieselbe Zahl in zwei Registern benannt und die verantwortliche Seite jedes Namens gesagt hast."
+ },
+ {
+  "tr": "Üç ayrı kip derecesiyle anlattıysan ve her birinin veri dayanağını söylediysen konuşma başarılı sayılır.",
+  "kind": "goal",
+  "de": "Das Gespräch gilt als geschafft, wenn du in drei Modalstufen erzählt und bei jeder die Datengrundlage gesagt hast."
+ },
+ {
+  "tr": "İki aktarmayı iki ayrı fiille söylediysen ve kanıtın kimde olduğunu söylediysen konuşma başarılı sayılır.",
+  "kind": "goal",
+  "de": "Das Gespräch gilt als geschafft, wenn du die beiden Wiedergaben mit zwei Verben gesagt und gesagt hast, bei wem der Beweis liegt."
+ },
+ {
+  "tr": "Üç cümlede eksilterek eleştirdiysen ve şirketin kendi sözcüklerini kullandıysan konuşma başarılı sayılır.",
+  "kind": "goal",
+  "de": "Das Gespräch gilt als geschafft, wenn du in drei Sätzen mit Auslassung kritisiert und die Wörter der Firma selbst benutzt hast."
+ },
+ {
+  "tr": "Devam maliyetini, vazgeçme maliyetini ve duyuruyu üç ayrı eşdizimle adlandırdıysan konuşma başarılı sayılır.",
+  "kind": "goal",
+  "de": "Das Gespräch gilt als geschafft, wenn du die Fortführungskosten, die Verzichtskosten und die Ankündigung mit drei Wortverbindungen benannt hast."
+ },
+ {
+  "tr": "Doğru. Ödün başa çekilmiş ve eksik ondan sonra açıkça söylenmiş.",
+  "kind": "why.tr",
+  "de": "Richtig. Das Zugeständnis ist vorangezogen und der Mangel danach offen genannt."
+ },
+ {
+  "tr": "Doğru. «might» iddiayı uzakta tutuyor; cümle bir uyarı olarak kalıyor.",
+  "kind": "why.tr",
+  "de": "Richtig. «might» hält die Behauptung auf Abstand; der Satz bleibt eine Warnung."
+ },
+ {
+  "tr": "Doğru. Cümle önce yalanlıyor, sonra aynı şeyi daha kibar bir adla doğruluyor.",
+  "kind": "why.tr",
+  "de": "Richtig. Der Satz verneint zuerst und bestätigt dann dasselbe unter einem höflicheren Namen."
+ },
+ {
+  "tr": "Doğru. Biri hesabın, öteki duyurunun eşdizimi; edilgen fiiller de o yüzden ayrı.",
+  "kind": "why.tr",
+  "de": "Richtig. Das eine ist die Wortverbindung der Rechnung, das andere die der Ankündigung; darum sind auch die Passivformen verschieden."
+ },
+ {
+  "tr": "Doğru. Biri görüntüyle oynamak, öteki parayı almak; ikisi ayrı suç ve ayrı kanıt ister.",
+  "kind": "why.tr",
+  "de": "Richtig. Das eine spielt mit dem Anschein, das andere nimmt das Geld; zwei verschiedene Taten und zwei verschiedene Beweise."
+ },
+ {
+  "tr": "Doğru. Fiil çekilmemiş; talep kişiye değil sürece bağlanmış ve ifşacı görünmez kalıyor.",
+  "kind": "why.tr",
+  "de": "Richtig. Das Verb ist nicht gebeugt; die Forderung hängt am Verfahren, nicht an einer Person, und die meldende Person bleibt unsichtbar."
+ },
+ {
+  "tr": "Doğru. Biri ölçülen bir değeri adlandırıyor, öteki o değeri bir sıraya yerleştiren anlatıyı.",
+  "kind": "why.tr",
+  "de": "Richtig. Das eine benennt einen gemessenen Wert, das andere die Erzählung, die diesen Wert in eine Reihe stellt."
+ },
+ {
+  "tr": "iki eylemi ayırır",
+  "kind": "pattern.tr",
+  "de": "trennt zwei Handlungen"
+ },
+ {
+  "tr": "sayıyı anlatıdan ayırır",
+  "kind": "pattern.tr",
+  "de": "trennt Zahl und Erzählung"
+ },
+ {
+  "tr": "tahmini duyurudan ayırır",
+  "kind": "pattern.tr",
+  "de": "trennt Schätzung und Ankündigung"
+ },
+ {
+  "tr": "ödünü başa alıp bedeli söyler",
+  "kind": "pattern.tr",
+  "de": "stellt das Zugeständnis voran und nennt den Preis"
+ },
+ {
+  "tr": "aynı rakamı iki kayıtta söyler",
+  "kind": "pattern.tr",
+  "de": "sagt dieselbe Zahl in zwei Registern"
+ },
+ {
+  "tr": "olmasaydıyı denetim savında kurar",
+  "kind": "pattern.tr",
+  "de": "baut das Wäre-nicht in der Aufsichtsthese"
+ },
+ {
+  "tr": "nesneyi başa alıp yüklemi sona atar",
+  "kind": "pattern.tr",
+  "de": "holt das Objekt nach vorn und schiebt das Prädikat ans Ende"
+ },
+ {
+  "tr": "kılıf",
+  "kind": "vocab.tr",
+  "de": "Vorwand"
+ },
+ {
+  "tr": "ifşacı",
+  "kind": "vocab.tr",
+  "de": "Hinweisgeberin"
+ },
+ {
+  "tr": "parasal",
+  "kind": "vocab.tr",
+  "de": "monetär"
+ },
+ {
+  "tr": "gri alan",
+  "kind": "vocab.tr",
+  "de": "Grauzone"
+ },
+ {
+  "tr": "külfetli",
+  "kind": "vocab.tr",
+  "de": "umständlich"
+ },
+ {
+  "tr": "deflasyon",
+  "kind": "vocab.tr",
+  "de": "Deflation"
+ },
+ {
+  "tr": "durgunluk",
+  "kind": "vocab.tr",
+  "de": "Stagnation"
+ },
+ {
+  "tr": "para arzı",
+  "kind": "vocab.tr",
+  "de": "Geldmenge"
+ },
+ {
+  "tr": "amortisman",
+  "kind": "vocab.tr",
+  "de": "Amortisation"
+ },
+ {
+  "tr": "ödeme gücü",
+  "kind": "vocab.tr",
+  "de": "Zahlungsfähigkeit"
+ },
+ {
+  "tr": "tarafından",
+  "kind": "vocab.tr",
+  "de": "vonseiten"
+ },
+ {
+  "tr": "usulsüzlük",
+  "kind": "vocab.tr",
+  "de": "Fehlverhalten"
+ },
+ {
+  "tr": "değer kaybı",
+  "kind": "vocab.tr",
+  "de": "Abwertung"
+ },
+ {
+  "tr": "genişletici",
+  "kind": "vocab.tr",
+  "de": "expansiv"
+ },
+ {
+  "tr": "kayırma ağı",
+  "kind": "vocab.tr",
+  "de": "Seilschaft"
+ },
+ {
+  "tr": "kısıtlayıcı",
+  "kind": "vocab.tr",
+  "de": "restriktiv"
+ },
+ {
+  "tr": "konsorsiyum",
+  "kind": "vocab.tr",
+  "de": "Konsortium"
+ },
+ {
+  "tr": "onay süreci",
+  "kind": "vocab.tr",
+  "de": "Genehmigungsverfahren"
+ },
+ {
+  "tr": "risk iştahı",
+  "kind": "vocab.tr",
+  "de": "Risikobereitschaft"
+ },
+ {
+  "tr": "yokluğundan",
+  "kind": "vocab.tr",
+  "de": "mangels"
+ },
+ {
+  "tr": "aşırı borçlu",
+  "kind": "vocab.tr",
+  "de": "überschuldet"
+ },
+ {
+  "tr": "ihale süreci",
+  "kind": "vocab.tr",
+  "de": "Ausschreibungsverfahren"
+ },
+ {
+  "tr": "itibar riski",
+  "kind": "vocab.tr",
+  "de": "Reputationsrisiko"
+ },
+ {
+  "tr": "kayırmacılık",
+  "kind": "vocab.tr",
+  "de": "Vetternwirtschaft"
+ },
+ {
+  "tr": "pazara nüfuz",
+  "kind": "vocab.tr",
+  "de": "Marktdurchdringung"
+ },
+ {
+  "tr": "reel ekonomi",
+  "kind": "vocab.tr",
+  "de": "Realwirtschaft"
+ },
+ {
+  "tr": "rekabet gücü",
+  "kind": "vocab.tr",
+  "de": "Wettbewerbsfähigkeit"
+ },
+ {
+  "tr": "tekel konumu",
+  "kind": "vocab.tr",
+  "de": "Monopolstellung"
+ },
+ {
+  "tr": "yeşil aklama",
+  "kind": "vocab.tr",
+  "de": "Greenwashing"
+ },
+ {
+  "tr": "açığa çıkarma",
+  "kind": "vocab.tr",
+  "de": "Offenlegung"
+ },
+ {
+  "tr": "maliyet aşımı",
+  "kind": "vocab.tr",
+  "de": "Kostenüberschreitung"
+ },
+ {
+  "tr": "numara yapmak",
+  "kind": "vocab.tr",
+  "de": "vortäuschen"
+ },
+ {
+  "tr": "pazarlık kozu",
+  "kind": "vocab.tr",
+  "de": "Verhandlungsmasse"
+ },
+ {
+  "tr": "sistemik risk",
+  "kind": "vocab.tr",
+  "de": "Systemrisiko"
+ },
+ {
+  "tr": "ticaret açığı",
+  "kind": "vocab.tr",
+  "de": "Handelsdefizit"
+ },
+ {
+  "tr": "çifte standart",
+  "kind": "vocab.tr",
+  "de": "Doppelmoral"
+ },
+ {
+  "tr": "işletme modeli",
+  "kind": "vocab.tr",
+  "de": "Betreibermodell"
+ },
+ {
+  "tr": "menfaat temini",
+  "kind": "vocab.tr",
+  "de": "Vorteilsannahme"
+ },
+ {
+  "tr": "nominal olarak",
+  "kind": "vocab.tr",
+  "de": "nominal"
+ },
+ {
+  "tr": "politika faizi",
+  "kind": "vocab.tr",
+  "de": "Leitzins"
+ },
+ {
+  "tr": "sermaye kaçışı",
+  "kind": "vocab.tr",
+  "de": "Kapitalflucht"
+ },
+ {
+  "tr": "tasarruf oranı",
+  "kind": "vocab.tr",
+  "de": "Sparquote"
+ },
+ {
+  "tr": "temerrüt riski",
+  "kind": "vocab.tr",
+  "de": "Ausfallrisiko"
+ },
+ {
+  "tr": "beklenen getiri",
+  "kind": "vocab.tr",
+  "de": "erwartete Rendite"
+ },
+ {
+  "tr": "bildirim birimi",
+  "kind": "vocab.tr",
+  "de": "Meldestelle"
+ },
+ {
+  "tr": "fırsat maliyeti",
+  "kind": "vocab.tr",
+  "de": "Opportunitätskosten"
+ },
+ {
+  "tr": "fiyat anlaşması",
+  "kind": "vocab.tr",
+  "de": "Preisabsprache"
+ },
+ {
+  "tr": "fiyat istikrarı",
+  "kind": "vocab.tr",
+  "de": "Preisstabilität"
+ },
+ {
+  "tr": "hedef çatışması",
+  "kind": "vocab.tr",
+  "de": "Zielkonflikt"
+ },
+ {
+  "tr": "kurtarma paketi",
+  "kind": "vocab.tr",
+  "de": "Rettungspaket"
+ },
+ {
+  "tr": "ödeme gücü olan",
+  "kind": "vocab.tr",
+  "de": "zahlungsfähig"
+ },
+ {
+  "tr": "ölçek ekonomisi",
+  "kind": "vocab.tr",
+  "de": "Skaleneffekt"
+ },
+ {
+  "tr": "para politikası",
+  "kind": "vocab.tr",
+  "de": "Geldpolitik"
+ },
+ {
+  "tr": "riskten kaçınma",
+  "kind": "vocab.tr",
+  "de": "Risikoscheu"
+ },
+ {
+  "tr": "yatırım döngüsü",
+  "kind": "vocab.tr",
+  "de": "Investitionszyklus"
+ },
+ {
+  "tr": "zimmete geçirme",
+  "kind": "vocab.tr",
+  "de": "Unterschlagung"
+ },
+ {
+  "tr": "ekonomik daralma",
+  "kind": "vocab.tr",
+  "de": "Abschwung"
+ },
+ {
+  "tr": "içeriden ticaret",
+  "kind": "vocab.tr",
+  "de": "Insiderhandel"
+ },
+ {
+  "tr": "kara para aklama",
+  "kind": "vocab.tr",
+  "de": "Geldwäsche"
+ },
+ {
+  "tr": "marjinal maliyet",
+  "kind": "vocab.tr",
+  "de": "Grenzkosten"
+ },
+ {
+  "tr": "pazar doygunluğu",
+  "kind": "vocab.tr",
+  "de": "Marktsättigung"
+ },
+ {
+  "tr": "sermaye ihtiyacı",
+  "kind": "vocab.tr",
+  "de": "Kapitalbedarf"
+ },
+ {
+  "tr": "yetki suistimali",
+  "kind": "vocab.tr",
+  "de": "Amtsmissbrauch"
+ },
+ {
+  "tr": "yükselen ekonomi",
+  "kind": "vocab.tr",
+  "de": "Schwellenland"
+ },
+ {
+  "tr": "maliye politikası",
+  "kind": "vocab.tr",
+  "de": "Fiskalpolitik"
+ },
+ {
+  "tr": "konjonktür döngüsü",
+  "kind": "vocab.tr",
+  "de": "Konjunkturzyklus"
+ },
+ {
+  "tr": "konjonktür karşıtı",
+  "kind": "vocab.tr",
+  "de": "antizyklisch"
+ },
+ {
+  "tr": "spekülasyon balonu",
+  "kind": "vocab.tr",
+  "de": "Spekulationsblase"
+ },
+ {
+  "tr": "zimmetine geçirmek",
+  "kind": "vocab.tr",
+  "de": "unterschlagen"
+ },
+ {
+  "tr": "mercek altına almak",
+  "kind": "vocab.tr",
+  "de": "unter die Lupe nehmen"
+ },
+ {
+  "tr": "şeffaflık eksikliği",
+  "kind": "vocab.tr",
+  "de": "Intransparenz"
+ },
+ {
+  "tr": "fiyatın altına inmek",
+  "kind": "vocab.tr",
+  "de": "unterbieten"
+ },
+ {
+  "tr": "piyasa başarısızlığı",
+  "kind": "vocab.tr",
+  "de": "Marktversagen"
+ },
+ {
+  "tr": "tasarruf potansiyeli",
+  "kind": "vocab.tr",
+  "de": "Sparpotenzial"
+ },
+ {
+  "tr": "yanıltıcı etiketleme",
+  "kind": "vocab.tr",
+  "de": "Etikettenschwindel"
+ },
+ {
+  "tr": "muhasebe sahtekarlığı",
+  "kind": "vocab.tr",
+  "de": "Bilanzfälschung"
+ },
+ {
+  "tr": "haksız kazanç sağlamak",
+  "kind": "vocab.tr",
+  "de": "sich bereichern"
+ },
+ {
+  "tr": "sonradan çıkan maliyetler",
+  "kind": "vocab.tr",
+  "de": "Folgekosten"
+ },
+ {
+  "tr": "finansal düzenleyici kurum",
+  "kind": "vocab.tr",
+  "de": "Finanzaufsicht"
+ },
+ {
+  "tr": "İki eylemi ayırmak için",
+  "kind": "hint.tr",
+  "de": "Um zwei Handlungen zu trennen"
+ },
+ {
+  "tr": "Ödünü başa alıp bedeli söylemek için",
+  "kind": "hint.tr",
+  "de": "Um das Zugeständnis voranzustellen und den Preis zu nennen"
+ },
+ {
+  "tr": "Olmasaydıyı denetim savında kurmak için",
+  "kind": "hint.tr",
+  "de": "Um das Wäre-nicht in der Aufsichtsthese zu bauen"
+ },
+ {
+  "tr": "Sayıyı anlatıdan ayırmak için iki yarı kurulur:",
+  "kind": "hint.tr",
+  "de": "Um Zahl und Erzählung zu trennen, werden zwei Hälften gebaut:"
+ },
+ {
+  "tr": "Aynı rakamı iki kayıtta söylemek için iki yer adı yeter:",
+  "kind": "hint.tr",
+  "de": "Um dieselbe Zahl in zwei Registern zu sagen, genügen zwei Ortsangaben:"
+ },
+ {
+  "tr": "Tahmini duyurudan ayırmak için iki edilgen fiil kullanılır:",
+  "kind": "hint.tr",
+  "de": "Um Schätzung und Ankündigung zu trennen, werden zwei Passivformen verwendet:"
+ },
+ {
+  "tr": "Nesneyi başa alıp yüklemi sona atmak için virgül kullanılır:",
+  "kind": "hint.tr",
+  "de": "Um das Objekt voranzustellen und das Prädikat ans Ende zu schieben, wird ein Komma verwendet:"
+ },
+ {
+  "tr": "durma",
+  "kind": "say.tr",
+  "de": "Aufhören"
+ },
+ {
+  "tr": "anlatı",
+  "kind": "say.tr",
+  "de": "Erzählung"
+ },
+ {
+  "tr": "duyuru",
+  "kind": "say.tr",
+  "de": "Ankündigung"
+ },
+ {
+  "tr": "yapısal",
+  "kind": "say.tr",
+  "de": "strukturell"
+ },
+ {
+  "tr": "belirsiz",
+  "kind": "say.tr",
+  "de": "unbestimmt"
+ },
+ {
+  "tr": "tek senaryo",
+  "kind": "say.tr",
+  "de": "ein Szenario"
+ },
+ {
+  "tr": "Parayı kısan yöne",
+  "kind": "say.tr",
+  "de": "Die Richtung, die das Geld knapp hält, heißt"
+ },
+ {
+  "tr": "Özetleyelim: devam",
+  "kind": "say.tr",
+  "de": "Fassen wir zusammen: Weitermachen"
+ },
+ {
+  "tr": "Özetleyelim: rakam",
+  "kind": "say.tr",
+  "de": "Fassen wir zusammen: Zahl"
+ },
+ {
+  "tr": "Suçu ad dağıtıyor.",
+  "kind": "say.tr",
+  "de": "Die Schuld verteilt der Name."
+ },
+ {
+  "tr": "Yükü fiil taşıyor.",
+  "kind": "say.tr",
+  "de": "Die Last trägt das Verb."
+ },
+ {
+  "tr": "Bütçenin aşılmasına",
+  "kind": "say.tr",
+  "de": "Dass das Budget überschritten wird, heißt"
+ },
+ {
+  "tr": "Özetleyelim: geçici",
+  "kind": "say.tr",
+  "de": "Fassen wir zusammen: vorübergehend"
+ },
+ {
+  "tr": "Yakınları kayırmaya",
+  "kind": "say.tr",
+  "de": "Angehörige zu bevorzugen heißt"
+ },
+ {
+  "tr": "Ağır ve yorucu olana",
+  "kind": "say.tr",
+  "de": "Was schwer und mühsam ist, heißt"
+ },
+ {
+  "tr": "Parayla ilgili olana",
+  "kind": "say.tr",
+  "de": "Was das Geld betrifft, heißt"
+ },
+ {
+  "tr": "İznin alınma sürecine",
+  "kind": "say.tr",
+  "de": "Das Verfahren, in dem die Erlaubnis eingeholt wird, heißt"
+ },
+ {
+  "tr": "Kişiyi biçim koruyor.",
+  "kind": "say.tr",
+  "de": "Die Person schützt die Form."
+ },
+ {
+  "tr": "Pazarı adres taşıyor.",
+  "kind": "say.tr",
+  "de": "Den Markt trägt die Adresse."
+ },
+ {
+  "tr": "Zararı biri imzaladı.",
+  "kind": "say.tr",
+  "de": "Den Verlust hat jemand unterschrieben."
+ },
+ {
+  "tr": "bir rakamı fail yapar,",
+  "kind": "say.tr",
+  "de": "macht eine Zahl zum Täter,"
+ },
+ {
+  "tr": "Ayrıntısıyla incelemeye",
+  "kind": "say.tr",
+  "de": "Etwas in allen Einzelheiten zu prüfen heißt"
+ },
+ {
+  "tr": "Kararı eşdizim veriyor.",
+  "kind": "say.tr",
+  "de": "Die Entscheidung trifft die Wortverbindung."
+ },
+ {
+  "tr": "Kurala aykırı davranışa",
+  "kind": "say.tr",
+  "de": "Ein Verhalten gegen die Regel heißt"
+ },
+ {
+  "tr": "bilginin gizlenmesine ise",
+  "kind": "say.tr",
+  "de": "und das Verbergen von Wissen heißt"
+ },
+ {
+  "tr": "bunu yapabilen kuruma ise",
+  "kind": "say.tr",
+  "de": "und wer das kann, heißt"
+ },
+ {
+  "tr": "Özetleyelim: verinin çoğu",
+  "kind": "say.tr",
+  "de": "Fassen wir zusammen: die meisten Daten"
+ },
+ {
+  "tr": "Pazarda tek satıcı olmaya",
+  "kind": "say.tr",
+  "de": "Auf dem Markt der einzige Anbieter zu sein heißt"
+ },
+ {
+  "tr": "Sözcük onlara geri döndü.",
+  "kind": "say.tr",
+  "de": "Das Wort kam zu ihnen zurück."
+ },
+ {
+  "tr": "Uzun süre yerinde saymaya",
+  "kind": "say.tr",
+  "de": "Lange auf der Stelle zu treten heißt"
+ },
+ {
+  "tr": "Borcun ödenmeme ihtimaline",
+  "kind": "say.tr",
+  "de": "Die Möglichkeit, dass die Schuld nicht bezahlt wird, heißt"
+ },
+ {
+  "tr": "Pazarın artık büyümemesine",
+  "kind": "say.tr",
+  "de": "Dass der Markt nicht mehr wächst, heißt"
+ },
+ {
+  "tr": "Özetleyelim: bedeli söyleme",
+  "kind": "say.tr",
+  "de": "Fassen wir zusammen: den Preis nennen"
+ },
+ {
+  "tr": "parayı bollaştıran yöne ise",
+  "kind": "say.tr",
+  "de": "und die Richtung, die das Geld reichlich macht, heißt"
+ },
+ {
+  "tr": "Yatırım için gereken paraya",
+  "kind": "say.tr",
+  "de": "Das Geld, das eine Investition braucht, heißt"
+ },
+ {
+  "tr": "Gerçek nedeni örten bahaneye",
+  "kind": "say.tr",
+  "de": "Die Ausrede, die den wahren Grund verdeckt, heißt"
+ },
+ {
+  "tr": "içeriden bildiren kişiye ise",
+  "kind": "say.tr",
+  "de": "und wer von innen meldet, heißt"
+ },
+ {
+  "tr": "piyasadaki toplam paraya ise",
+  "kind": "say.tr",
+  "de": "und das gesamte Geld im Markt heißt"
+ },
+ {
+  "tr": "Riskten uzak durma eğilimine",
+  "kind": "say.tr",
+  "de": "Die Neigung, das Risiko zu meiden, heißt"
+ },
+ {
+  "tr": "Bir yatırımdan umulan kazanca",
+  "kind": "say.tr",
+  "de": "Der Gewinn, den man von einer Anlage erhofft, heißt"
+ },
+ {
+  "tr": "Dinlenmeyi ödün kazandırıyor.",
+  "kind": "say.tr",
+  "de": "Gehört zu werden verschafft das Zugeständnis."
+ },
+ {
+  "tr": "döngünün tersine çalışana ise",
+  "kind": "say.tr",
+  "de": "und was gegen den Zyklus arbeitet, heißt"
+ },
+ {
+  "tr": "Ekonominin iniş çıkış ritmine",
+  "kind": "say.tr",
+  "de": "Der Rhythmus von Auf und Ab der Wirtschaft heißt"
+ },
+ {
+  "tr": "Vazgeçilen seçeneğin değerine",
+  "kind": "say.tr",
+  "de": "Der Wert der aufgegebenen Möglichkeit heißt"
+ },
+ {
+  "tr": "adın zedelenme tehlikesine ise",
+  "kind": "say.tr",
+  "de": "und die Gefahr, dass der Name Schaden nimmt, heißt"
+ },
+ {
+  "tr": "Borcunu vadesinde ödeyebilmeye",
+  "kind": "say.tr",
+  "de": "Seine Schuld zum Termin zahlen zu können heißt"
+ },
+ {
+  "tr": "İhbarın yapıldığı resmî birime",
+  "kind": "say.tr",
+  "de": "Die amtliche Stelle, bei der gemeldet wird, heißt"
+ },
+ {
+  "tr": "Kip onu analiz olarak tutuyor.",
+  "kind": "say.tr",
+  "de": "Das Modalverb hält es als Analyse."
+ },
+ {
+  "tr": "Para arzı parasal bir sorudur.",
+  "kind": "say.tr",
+  "de": "Die Geldmenge ist eine monetäre Frage."
+ },
+ {
+  "tr": "risk almaya istekli olmaya ise",
+  "kind": "say.tr",
+  "de": "und bereit zu sein, Risiko zu nehmen, heißt"
+ },
+ {
+  "tr": "Riskten kaçınma kışın artıyor.",
+  "kind": "say.tr",
+  "de": "Die Risikoscheu wächst im Winter."
+ },
+ {
+  "tr": "Kimse işletmeciyi adlandırmadı.",
+  "kind": "say.tr",
+  "de": "Niemand hat den Betreiber benannt."
+ },
+ {
+  "tr": "paranın değerinin düşmesine ise",
+  "kind": "say.tr",
+  "de": "und der Wertverlust des Geldes heißt"
+ },
+ {
+  "tr": "Şimdi bir tahmini aktaracaksın.",
+  "kind": "say.tr",
+  "de": "Jetzt gibst du eine Prognose wieder."
+ },
+ {
+  "tr": "verinin çoğunun işaret ettiğini,",
+  "kind": "say.tr",
+  "de": "worauf die meisten Daten deuten,"
+ },
+ {
+  "tr": "Gizli kalanın açığa çıkarılmasına",
+  "kind": "say.tr",
+  "de": "Das Verborgene ans Licht zu bringen heißt"
+ },
+ {
+  "tr": "Kendine ait olmayan parayı almaya",
+  "kind": "say.tr",
+  "de": "Geld zu nehmen, das einem nicht gehört, heißt"
+ },
+ {
+  "tr": "Pazarlıkta elde tutulan üstünlüğe",
+  "kind": "say.tr",
+  "de": "Der Vorteil, den man in der Verhandlung behält, heißt"
+ },
+ {
+  "tr": "rakibin altında fiyat vermeye ise",
+  "kind": "say.tr",
+  "de": "und unter dem Preis des Mitbewerbers anzubieten heißt"
+ },
+ {
+  "tr": "rakiplerle yarışabilme gücüne ise",
+  "kind": "say.tr",
+  "de": "und die Kraft, mit Mitbewerbern zu bestehen, heißt"
+ },
+ {
+  "tr": "Ürünü olduğundan başka göstermeye",
+  "kind": "say.tr",
+  "de": "Ein Produkt anders darzustellen, als es ist, heißt"
+ },
+ {
+  "tr": "birikebilecek olanın toplamına ise",
+  "kind": "say.tr",
+  "de": "und die Summe dessen, was sich sparen ließe, heißt"
+ },
+ {
+  "tr": "Emanet paranın üstüne oturulmasına",
+  "kind": "say.tr",
+  "de": "Anvertrautes Geld einzubehalten heißt"
+ },
+ {
+  "tr": "hızla büyüyen ülke ekonomisine ise",
+  "kind": "say.tr",
+  "de": "und die rasch wachsende Volkswirtschaft heißt"
+ },
+ {
+  "tr": "Paranın ülkeyi hızla terk etmesine",
+  "kind": "say.tr",
+  "de": "Dass das Geld rasch das Land verlässt, heißt"
+ },
+ {
+  "tr": "henüz kanıtlanmamış bir savı taşır,",
+  "kind": "say.tr",
+  "de": "trägt eine noch unbewiesene Behauptung,"
+ },
+ {
+  "tr": "İthalatın ihracattan fazla olmasına",
+  "kind": "say.tr",
+  "de": "Dass die Einfuhr die Ausfuhr übersteigt, heißt"
+ },
+ {
+  "tr": "karşılığında çıkar kabul etmeye ise",
+  "kind": "say.tr",
+  "de": "und dafür einen Vorteil anzunehmen heißt"
+ },
+ {
+  "tr": "olmayanı varmış gibi göstermeye ise",
+  "kind": "say.tr",
+  "de": "und Nichtvorhandenes als vorhanden auszugeben heißt"
+ },
+ {
+  "tr": "Görevini kullanarak kazanç sağlamaya",
+  "kind": "say.tr",
+  "de": "Aus dem Amt Gewinn zu ziehen heißt"
+ },
+ {
+  "tr": "Suçtan gelen parayı temiz göstermeye",
+  "kind": "say.tr",
+  "de": "Geld aus einer Tat als sauber auszugeben heißt"
+ },
+ {
+  "tr": "Devletin vergi ve harcama kararlarına",
+  "kind": "say.tr",
+  "de": "Die Steuer- und Ausgabenentscheidungen des Staates heißen"
+ },
+ {
+  "tr": "fiyatların genel olarak düşmesine ise",
+  "kind": "say.tr",
+  "de": "und der allgemeine Rückgang der Preise heißt"
+ },
+ {
+  "tr": "Gelirin ne kadarının biriktirildiğine",
+  "kind": "say.tr",
+  "de": "Wie viel des Einkommens gespart wird, heißt"
+ },
+ {
+  "tr": "yatırımın zamanla geri ödenmesine ise",
+  "kind": "say.tr",
+  "de": "und dass sich die Investition mit der Zeit zurückzahlt, heißt"
+ },
+ {
+  "tr": "yetkiyi kendi çıkarına kullanmaya ise",
+  "kind": "say.tr",
+  "de": "und die Befugnis zum eigenen Vorteil zu nutzen heißt"
+ },
+ {
+  "tr": "Şimdi bir şeffaflık talebi kuracaksın.",
+  "kind": "say.tr",
+  "de": "Jetzt baust du eine Forderung nach Offenlegung."
+ },
+ {
+  "tr": "Şimdi faiz tartışmasını sürdüreceksin.",
+  "kind": "say.tr",
+  "de": "Jetzt führst du die Zinsdebatte weiter."
+ },
+ {
+  "tr": "Şimdi maliyet sözlüğünü kullanacaksın.",
+  "kind": "say.tr",
+  "de": "Jetzt benutzt du das Wörterbuch der Kosten."
+ },
+ {
+  "tr": "Birinin tarafından anlamına gelen öbeğe",
+  "kind": "say.tr",
+  "de": "Die Wendung, die von jemandem her bedeutet, heißt"
+ },
+ {
+  "tr": "borcunu taşıyamayacak durumda olana ise",
+  "kind": "say.tr",
+  "de": "und wer seine Schuld nicht mehr tragen kann, heißt"
+ },
+ {
+  "tr": "büyüdükçe birim maliyetin düşmesine ise",
+  "kind": "say.tr",
+  "de": "und dass mit der Größe die Stückkosten sinken, heißt"
+ },
+ {
+  "tr": "Fiyatın gerçek değerden kopup şişmesine",
+  "kind": "say.tr",
+  "de": "Dass der Preis sich vom wahren Wert löst und aufbläht, heißt"
+ },
+ {
+  "tr": "iki hedefin birbirini engellemesine ise",
+  "kind": "say.tr",
+  "de": "und dass zwei Ziele einander behindern, heißt"
+ },
+ {
+  "tr": "işin sonradan getirdiği harcamalara ise",
+  "kind": "say.tr",
+  "de": "und die Ausgaben, die eine Sache später bringt, heißen"
+ },
+ {
+  "tr": "Nominal olarak fiyat istikrarı korundu.",
+  "kind": "say.tr",
+  "de": "Nominal blieb die Preisstabilität erhalten."
+ },
+ {
+  "tr": "ölçütün hangi pazarda geçerli olduğunu,",
+  "kind": "say.tr",
+  "de": "in welchem Markt der Maßstab gilt,"
+ },
+ {
+  "tr": "Üretimin ve işin gerçekten döndüğü alana",
+  "kind": "say.tr",
+  "de": "Der Bereich, in dem Herstellung und Arbeit wirklich laufen, heißt"
+ },
+ {
+  "tr": "Burada kayırmacılık yok, kayırma ağı var.",
+  "kind": "say.tr",
+  "de": "Hier gibt es keine Vetternwirtschaft, hier gibt es eine Seilschaft."
+ },
+ {
+  "tr": "Çifte standart yalnız aşağıdan görünüyor.",
+  "kind": "say.tr",
+  "de": "Die Doppelmoral sieht man nur von unten."
+ },
+ {
+  "tr": "Merkez bankasının belirlediği temel faize",
+  "kind": "say.tr",
+  "de": "Der Grundzins, den die Zentralbank festlegt, heißt"
+ },
+ {
+  "tr": "Şimdi teklifin söylemediğini okuyacaksın.",
+  "kind": "say.tr",
+  "de": "Jetzt liest du, was die Ausschreibung verschweigt."
+ },
+ {
+  "tr": "bir işi birlikte alan şirket birliğine ise",
+  "kind": "say.tr",
+  "de": "und der Firmenverbund, der einen Auftrag gemeinsam annimmt, heißt"
+ },
+ {
+  "tr": "Fiyatların genel düzeyinin sabit kalmasına",
+  "kind": "say.tr",
+  "de": "Dass das allgemeine Preisniveau gleich bleibt, heißt"
+ },
+ {
+  "tr": "Şimdi bir strateji raporunu bağlayacaksın.",
+  "kind": "say.tr",
+  "de": "Jetzt hältst du ein Strategiepapier zusammen."
+ },
+ {
+  "tr": "Amortisman beklenen getiriden önce geliyor.",
+  "kind": "say.tr",
+  "de": "Die Amortisation kommt vor der erwarteten Rendite."
+ },
+ {
+  "tr": "birbirini kollayan tanıdıklar çevresine ise",
+  "kind": "say.tr",
+  "de": "und der Kreis von Bekannten, die einander decken, heißt"
+ },
+ {
+  "tr": "İçeriden ticaret kara para aklama değildir.",
+  "kind": "say.tr",
+  "de": "Insiderhandel ist keine Geldwäsche."
+ },
+ {
+  "tr": "İşin kim tarafından ve nasıl işletileceğine",
+  "kind": "say.tr",
+  "de": "Wer und wie den Betrieb führt, heißt"
+ },
+ {
+  "tr": "Şimdi aynı rakamı iki kayıtta anlatacaksın.",
+  "kind": "say.tr",
+  "de": "Jetzt gibst du dieselbe Zahl in zwei Registern wieder."
+ },
+ {
+  "tr": "Gri alan, kılıfın varsaydığını iddia ediyor.",
+  "kind": "say.tr",
+  "de": "Die Grauzone behauptet, was der Vorwand voraussetzt."
+ },
+ {
+  "tr": "Rakiplerin gizlice fiyat üstünde anlaşmasına",
+  "kind": "say.tr",
+  "de": "Dass Mitbewerber sich heimlich über den Preis einigen, heißt"
+ },
+ {
+  "tr": "Ölçek ekonomisi sermaye ihtiyacını düşürüyor.",
+  "kind": "say.tr",
+  "de": "Der Skaleneffekt senkt den Kapitalbedarf."
+ },
+ {
+  "tr": "Son kalıbımız iki eylemi ayırıyor. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Unsere letzte Wendung trennt zwei Handlungen. Sprich nach:"
+ },
+ {
+  "tr": "Şimdi kurumsal iddiayı alayla eleştireceksin.",
+  "kind": "say.tr",
+  "de": "Jetzt kritisierst du die Unternehmensaussage mit Spott."
+ },
+ {
+  "tr": "batan kurumu kurtarmak için ayrılan paraya ise",
+  "kind": "say.tr",
+  "de": "und das Geld, das zur Rettung eines fallenden Hauses bereitsteht, heißt"
+ },
+ {
+  "tr": "Hedef çatışması kaldı, külfetli ifade kalmadı.",
+  "kind": "say.tr",
+  "de": "Der Zielkonflikt blieb, die umständliche Formulierung nicht."
+ },
+ {
+  "tr": "Yükselen bir ekonomide pazarlık kozu zamandır.",
+  "kind": "say.tr",
+  "de": "In einem Schwellenland ist die Zeit die Verhandlungsmasse."
+ },
+ {
+  "tr": "Her yetki suistimalini mercek altına alıyorlar.",
+  "kind": "say.tr",
+  "de": "Sie nehmen jeden Amtsmissbrauch unter die Lupe."
+ },
+ {
+  "tr": "yasal ile yasak arasındaki belirsiz bölgeye ise",
+  "kind": "say.tr",
+  "de": "und der unbestimmte Bereich zwischen erlaubt und verboten heißt"
+ },
+ {
+  "tr": "Şimdi bir krizi üç ayrı sorumluyla anlatacaksın.",
+  "kind": "say.tr",
+  "de": "Jetzt erzählst du eine Krise mit drei Verantwortlichen."
+ },
+ {
+  "tr": "Şimdi sen kur: Ölçek ekonomisi fiyatı düşürüyor.",
+  "kind": "say.tr",
+  "de": "Bilde du jetzt: Der Skaleneffekt senkt den Preis."
+ },
+ {
+  "tr": "Piyasanın kendi başına doğru sonucu üretememesine",
+  "kind": "say.tr",
+  "de": "Dass der Markt allein nicht das richtige Ergebnis hervorbringt, heißt"
+ },
+ {
+  "tr": "Şimdi bir mali suçlamayı iki fiille aktaracaksın.",
+  "kind": "say.tr",
+  "de": "Jetzt gibst du einen Finanzvorwurf mit zwei Verben wieder."
+ },
+ {
+  "tr": "Aynı davranışı kimine serbest kimine yasak saymaya",
+  "kind": "say.tr",
+  "de": "Dasselbe Verhalten den einen zu erlauben und den anderen zu verbieten heißt"
+ },
+ {
+  "tr": "içeriden öğrenilen bilgiyle alım satım yapmaya ise",
+  "kind": "say.tr",
+  "de": "und mit Wissen von innen zu handeln heißt"
+ },
+ {
+  "tr": "Şimdi sen kur: Burada iltimas yok, kayırma ağı var.",
+  "kind": "say.tr",
+  "de": "Bilde du jetzt: Hier gibt es keine Begünstigung, hier gibt es eine Seilschaft."
+ },
+ {
+  "tr": "Aşırı borçlu bir devlet sermaye kaçışından korkuyor.",
+  "kind": "say.tr",
+  "de": "Ein überschuldeter Staat fürchtet die Kapitalflucht."
+ },
+ {
+  "tr": "bir şeyin eksikliği yüzünden anlamına gelen öbeğe ise",
+  "kind": "say.tr",
+  "de": "und die Wendung, die wegen des Fehlens von etwas bedeutet, heißt"
+ },
+ {
+  "tr": "geçici bir dalgayı anlatır ve kimseyi sorumlu tutmaz,",
+  "kind": "say.tr",
+  "de": "beschreibt eine vorübergehende Welle und macht niemanden verantwortlich,"
+ },
+ {
+  "tr": "yalnız üretimi düşünür ve devam etmeyi kolaylaştırır,",
+  "kind": "say.tr",
+  "de": "denkt nur an die Herstellung und erleichtert das Weitermachen,"
+ },
+ {
+  "tr": "İkinci kalıbımız sayıyı anlatıdan ayırıyor. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Unsere zweite Wendung trennt Zahl und Erzählung. Sprich nach:"
+ },
+ {
+  "tr": "Merhaba! Bugün ihale metninde düşen öğeyi öğreneceğiz.",
+  "kind": "say.tr",
+  "de": "Hallo! Heute lernen wir das weggelassene Glied im Ausschreibungstext."
+ },
+ {
+  "tr": "Bankanın değer kaybı dediğine reel ekonomi zarar diyor.",
+  "kind": "say.tr",
+  "de": "Was die Bank Abwertung nennt, nennt die Realwirtschaft Verlust."
+ },
+ {
+  "tr": "bir kurumun çöküşünün bütün sistemi tehdit etmesine ise",
+  "kind": "say.tr",
+  "de": "und dass der Fall eines Hauses das ganze System bedroht, heißt"
+ },
+ {
+  "tr": "İkinci kalıbımız tahmini duyurudan ayırıyor. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Unsere zweite Wendung trennt Schätzung und Ankündigung. Sprich nach:"
+ },
+ {
+  "tr": "Bir tane daha: Hedef çatışması kaldı, son tarih kalmadı.",
+  "kind": "say.tr",
+  "de": "Noch eins: Der Zielkonflikt blieb, die Frist nicht."
+ },
+ {
+  "tr": "Deflasyon bir sayıdır, konjonktür döngüsü bir anlatıdır.",
+  "kind": "say.tr",
+  "de": "Deflation ist eine Zahl, der Konjunkturzyklus eine Erzählung."
+ },
+ {
+  "tr": "Konsorsiyum inşa ediyor, işletme modelini adlandırmıyor.",
+  "kind": "say.tr",
+  "de": "Das Konsortium baut, das Betreibermodell benennt es nicht."
+ },
+ {
+  "tr": "Şimdi dersin kuralı. Ekonomi haberinde ad SÜREYİ söyler:",
+  "kind": "say.tr",
+  "de": "Jetzt die Regel der Lektion. In der Wirtschaftsnachricht sagt der Name die DAUER:"
+ },
+ {
+  "tr": "Şimdi sıra sende: Kampanya özenliydi, denetim pek değil.",
+  "kind": "say.tr",
+  "de": "Jetzt bist du dran: Die Kampagne war sorgfältig, die Prüfung weniger."
+ },
+ {
+  "tr": "Şehrin tarafından ilgi yokluğundan hiçbir şey ilerlemedi.",
+  "kind": "say.tr",
+  "de": "Mangels Interesse vonseiten der Stadt bewegte sich nichts."
+ },
+ {
+  "tr": "Şimdi sıra sende: Marjinal maliyet sabit maliyet değildir.",
+  "kind": "say.tr",
+  "de": "Jetzt bist du dran: Grenzkosten sind keine Fixkosten."
+ },
+ {
+  "tr": "Şimdi sıra sende: Yatırım döngüsü oran düşmeden dönebilir.",
+  "kind": "say.tr",
+  "de": "Jetzt bist du dran: Der Investitionszyklus dreht womöglich, bevor die Quote fällt."
+ },
+ {
+  "tr": "Zarar numarası yapmak kazancı zimmetine geçirmek değildir.",
+  "kind": "say.tr",
+  "de": "Einen Verlust vorzutäuschen heißt nicht, einen Gewinn zu unterschlagen."
+ },
+ {
+  "tr": "Bir tane daha: Deflasyon bir sayıdır, tahmin bir anlatıdır.",
+  "kind": "say.tr",
+  "de": "Noch eins: Deflation ist eine Zahl, die Prognose eine Erzählung."
+ },
+ {
+  "tr": "enflasyondan arındırılmamış haliyle anlamına gelen öbeğe ise",
+  "kind": "say.tr",
+  "de": "und die Wendung, die ohne Abzug der Teuerung bedeutet, heißt"
+ },
+ {
+  "tr": "Kurtarma paketinin arkasında bir spekülasyon balonu duruyor.",
+  "kind": "say.tr",
+  "de": "Hinter dem Rettungspaket steht eine Spekulationsblase."
+ },
+ {
+  "tr": "Şimdi sen kur: Konsorsiyum inşa ediyor, riski adlandırmıyor.",
+  "kind": "say.tr",
+  "de": "Bilde du jetzt: Das Konsortium baut, das Risiko benennt es nicht."
+ },
+ {
+  "tr": "Şimdi sen kur: Gri alan, bahanenin varsaydığını iddia ediyor.",
+  "kind": "say.tr",
+  "de": "Bilde du jetzt: Die Grauzone behauptet, was die Ausrede voraussetzt."
+ },
+ {
+  "tr": "Yüksek tasarruf potansiyeli ödeme gücü anlamına gelmeyebilir.",
+  "kind": "say.tr",
+  "de": "Ein hohes Sparpotenzial bedeutet womöglich keine Zahlungsfähigkeit."
+ },
+ {
+  "tr": "Konjonktür karşıtı olsa da, maliye politikası çok geç geliyor.",
+  "kind": "say.tr",
+  "de": "Wenn auch antizyklisch, kommt die Fiskalpolitik zu spät."
+ },
+ {
+  "tr": "Şimdi dersin kuralı. Mali suçlamada fiil bir HUKUK iddiasıdır:",
+  "kind": "say.tr",
+  "de": "Jetzt die Regel der Lektion. Im Finanzvorwurf ist das Verb ein RECHTSANSPRUCH:"
+ },
+ {
+  "tr": "Şimdi dersin kuralı. Strateji raporunda adres bir PAZAR taşır:",
+  "kind": "say.tr",
+  "de": "Jetzt die Regel der Lektion. Im Strategiepapier trägt die Adresse einen MARKT:"
+ },
+ {
+  "tr": "Bir pazarda pay kazanmak demek. İlk kalıbımız da bu. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Das heißt, in einem Markt Anteil zu gewinnen. Das ist auch unsere erste Wendung. Sprich nach:"
+ },
+ {
+  "tr": "Bir rakamın adı, o rakamın kimin sorunu sayılacağını da söyler.",
+  "kind": "say.tr",
+  "de": "Der Name einer Zahl sagt auch, wessen Problem sie sein soll."
+ },
+ {
+  "tr": "Şimdi dersin kuralı. İhale metninde eksiltme bir RİSK devridir:",
+  "kind": "say.tr",
+  "de": "Jetzt die Regel der Lektion. Im Ausschreibungstext ist die Auslassung eine RISIKOÜBERTRAGUNG:"
+ },
+ {
+  "tr": "Şimdi sıra sende: Basın açıklamasında düşüş, modelde durgunluk.",
+  "kind": "say.tr",
+  "de": "Jetzt bist du dran: In der Pressemitteilung ein Rückgang, im Modell Stagnation."
+ },
+ {
+  "tr": "İkinci kalıbımız olmasaydıyı denetim savında kuruyor. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Unsere zweite Wendung baut das Wäre-nicht in der Aufsichtsthese. Sprich nach:"
+ },
+ {
+  "tr": "Kimse haksız kazanç sağlamak istemedi, bu bir menfaat teminiydi.",
+  "kind": "say.tr",
+  "de": "Niemand wollte sich bereichern, es war eine Vorteilsannahme."
+ },
+ {
+  "tr": "Kip, tahmini bir söz olmaktan çıkarıp bir analiz hâline getirir.",
+  "kind": "say.tr",
+  "de": "Das Modalverb macht aus der Prognose statt eines Versprechens eine Analyse."
+ },
+ {
+  "tr": "Sistemik riski sigortalıyoruz, ticaret açığını sigortalamıyoruz.",
+  "kind": "say.tr",
+  "de": "Das Systemrisiko versichern wir, das Handelsdefizit nicht."
+ },
+ {
+  "tr": "Şimdi dersin kuralı. Maliyet sözlüğünde eşdizim KARARI da verir:",
+  "kind": "say.tr",
+  "de": "Jetzt die Regel der Lektion. Im Wörterbuch der Kosten trifft die Wortverbindung auch die ENTSCHEIDUNG:"
+ },
+ {
+  "tr": "Teknik bir tartışmada ödün, itirazın duyulabilmesinin koşuludur.",
+  "kind": "say.tr",
+  "de": "In einer fachlichen Debatte ist das Zugeständnis die Bedingung dafür, dass der Einwand gehört wird."
+ },
+ {
+  "tr": "Bir tane daha: Konjonktür karşıtı olsa da, bütçe çok geç geliyor.",
+  "kind": "say.tr",
+  "de": "Noch eins: Wenn auch antizyklisch, kommt der Haushalt zu spät."
+ },
+ {
+  "tr": "ise kanıtı da üstlenir. İkisini karıştıran cümle iftira olabilir.",
+  "kind": "say.tr",
+  "de": "dagegen übernimmt auch den Beweis. Ein Satz, der beide verwechselt, kann eine Verleumdung sein."
+ },
+ {
+  "tr": "Sonradan çıkan maliyetler tahmin edilir, maliyet aşımı duyurulur.",
+  "kind": "say.tr",
+  "de": "Folgekosten werden geschätzt, eine Kostenüberschreitung wird angekündigt."
+ },
+ {
+  "tr": "Bir mali suçlamayı aktaran kişi, kanıtın kimde olduğunu da söyler.",
+  "kind": "say.tr",
+  "de": "Wer einen Finanzvorwurf wiedergibt, sagt auch, bei wem der Beweis liegt."
+ },
+ {
+  "tr": "İkinci kalıbımız nesneyi başa alıp yüklemi sona atıyor. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Unsere zweite Wendung holt das Objekt nach vorn und schiebt das Prädikat ans Ende. Sprich nach:"
+ },
+ {
+  "tr": "Strateji raporunda adres, ölçütün hangi pazara ait olduğunu taşır.",
+  "kind": "say.tr",
+  "de": "Im Strategiepapier trägt die Adresse, zu welchem Markt der Maßstab gehört."
+ },
+ {
+  "tr": "Yatırımın iniş çıkış dönemi demek. İlk kalıbımız da bu. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Das heißt die Auf- und Abphase der Investition. Das ist auch unsere erste Wendung. Sprich nach:"
+ },
+ {
+  "tr": "Çevreci görünüp öyle olmamak demek. İlk kalıbımız da bu. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Das heißt, grün zu wirken und es nicht zu sein. Das ist auch unsere erste Wendung. Sprich nach:"
+ },
+ {
+  "tr": "Kriz anlatısında özne seçimi, faturanın kime kesileceğini de seçer.",
+  "kind": "say.tr",
+  "de": "In der Krisenerzählung wählt die Wahl des Subjekts auch, wem die Rechnung gestellt wird."
+ },
+ {
+  "tr": "Hangi maliyeti hesapladığın, hangi kararı vereceğini önceden söyler.",
+  "kind": "say.tr",
+  "de": "Welche Kosten du rechnest, sagt vorher, welche Entscheidung du triffst."
+ },
+ {
+  "tr": "Şimdi sen kur: Kurtarmanın arkasında bir spekülasyon balonu duruyor.",
+  "kind": "say.tr",
+  "de": "Bilde du jetzt: Hinter der Rettung steht eine Spekulationsblase."
+ },
+ {
+  "tr": "Ekonominin küçülmeye başlaması demek. İlk kalıbımız da bu. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Das heißt, dass die Wirtschaft zu schrumpfen beginnt. Das ist auch unsere erste Wendung. Sprich nach:"
+ },
+ {
+  "tr": "İşin rekabetle verildiği süreç demek. İlk kalıbımız da bu. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Das heißt das Verfahren, in dem ein Auftrag im Wettbewerb vergeben wird. Das ist auch unsere erste Wendung. Sprich nach:"
+ },
+ {
+  "tr": "Şimdi dersin kuralı. Denetim dilinde çekimsiz fiil bir koruma sağlar:",
+  "kind": "say.tr",
+  "de": "Jetzt die Regel der Lektion. In der Aufsichtssprache bietet das ungebeugte Verb Schutz:"
+ },
+ {
+  "tr": "Şimdi dersin kuralı. Kriz cümlesinde başa alınan şey sorumluyu kurar:",
+  "kind": "say.tr",
+  "de": "Jetzt die Regel der Lektion. Im Krisensatz stiftet das Vorangestellte die verantwortliche Seite:"
+ },
+ {
+  "tr": "Şimdi dersin kuralı. Kurumsal alay iddianın kendi sözcüğüyle kurulur:",
+  "kind": "say.tr",
+  "de": "Jetzt die Regel der Lektion. Der Spott im Unternehmen wird mit dem eigenen Wort der Aussage gebaut:"
+ },
+ {
+  "tr": "Defterleri kasten yanlış tutmak demek. İlk kalıbımız da bu. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Das heißt, die Bücher absichtlich falsch zu führen. Das ist auch unsere erste Wendung. Sprich nach:"
+ },
+ {
+  "tr": "Piyasayı denetleyen resmî kurum demek. İlk kalıbımız da bu. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Das heißt die amtliche Stelle, die den Markt beaufsichtigt. Das ist auch unsere erste Wendung. Sprich nach:"
+ },
+ {
+  "tr": "Şeffaflık eksikliği olmasaydı hiçbir bildirim birimine gerek kalmazdı.",
+  "kind": "say.tr",
+  "de": "Ohne Intransparenz bräuchte es keine Meldestelle."
+ },
+ {
+  "tr": "Şimdi sen kur: Yüksek tasarruf oranı ödeme gücü anlamına gelmeyebilir.",
+  "kind": "say.tr",
+  "de": "Bilde du jetzt: Eine hohe Sparquote bedeutet womöglich keine Zahlungsfähigkeit."
+ },
+ {
+  "tr": "Şimdi sıra sende: Yukarıdaki pazara nüfuz aşağıda bir riske dönüşüyor.",
+  "kind": "say.tr",
+  "de": "Jetzt bist du dran: Die Marktdurchdringung oben wird unten zu einem Risiko."
+ },
+ {
+  "tr": "Biçim burada yalnız bir üslup değil; talebi taşıyanı koruyan bir siper.",
+  "kind": "say.tr",
+  "de": "Die Form ist hier nicht nur ein Stil; sie ist eine Deckung für die Person, die die Forderung trägt."
+ },
+ {
+  "tr": "Genişletici bir adım, sonradan kısıtlayıcı olsa da, zaman kazandırıyor.",
+  "kind": "say.tr",
+  "de": "Ein expansiver Schritt, auch wenn er später restriktiv wird, verschafft Zeit."
+ },
+ {
+  "tr": "Merhaba! Bugün kriz anlatısında kimi başa aldığını seçmeyi öğreneceğiz.",
+  "kind": "say.tr",
+  "de": "Hallo! Heute lernen wir, in der Krisenerzählung zu wählen, wen wir voranstellen."
+ },
+ {
+  "tr": "Merhaba! Bugün maliyet konuşmasının yerleşik eşdizimlerini öğreneceğiz.",
+  "kind": "say.tr",
+  "de": "Hallo! Heute lernen wir die festen Wortverbindungen des Redens über Kosten."
+ },
+ {
+  "tr": "O rekabet gücü, belirtildiği gibi, önceki bir sayfanın tekel konumudur.",
+  "kind": "say.tr",
+  "de": "Jene Wettbewerbsfähigkeit ist, wie angemerkt, die Monopolstellung einer früheren Seite."
+ },
+ {
+  "tr": "Bir birim daha üretmenin maliyeti demek. İlk kalıbımız da bu. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Das heißt die Kosten, eine Einheit mehr herzustellen. Das ist auch unsere erste Wendung. Sprich nach:"
+ },
+ {
+  "tr": "Bir tane daha: Borç numarası yapmak kazancı zimmetine geçirmek değildir.",
+  "kind": "say.tr",
+  "de": "Noch eins: Eine Schuld vorzutäuschen heißt nicht, einen Gewinn zu unterschlagen."
+ },
+ {
+  "tr": "Her ifşacının, usulsüzlük örtbas edilmeden önce dinlenmesini istiyorlar.",
+  "kind": "say.tr",
+  "de": "Sie verlangen, dass jede Hinweisgeberin gehört werde, bevor das Fehlverhalten begraben wird."
+ },
+ {
+  "tr": "Şimdi dersin kuralı. Tahminde kip senin değil MODELİN mesafesini söyler:",
+  "kind": "say.tr",
+  "de": "Jetzt die Regel der Lektion. In der Prognose sagt das Modalverb nicht deinen, sondern den Abstand des MODELLS:"
+ },
+ {
+  "tr": "Şimdi sen kur: Bakanlığın değer kaybı dediğine reel ekonomi zarar diyor.",
+  "kind": "say.tr",
+  "de": "Bilde du jetzt: Was das Ministerium Abwertung nennt, nennt die Realwirtschaft Verlust."
+ },
+ {
+  "tr": "Yanıltıcı etiketleme, dediler, üstelik itibar riskine karşı iyi geliyor.",
+  "kind": "say.tr",
+  "de": "Etikettenschwindel, sagten sie, und dazu gut gegen das Reputationsrisiko."
+ },
+ {
+  "tr": "Bir rakip bizim altımıza inebiliyorsa hiçbir fiyat anlaşması işe yaramaz.",
+  "kind": "say.tr",
+  "de": "Kann ein Mitbewerber uns unterbieten, hilft keine Preisabsprache."
+ },
+ {
+  "tr": "Merhaba! Bugün uzun bir strateji raporunu bağlayan adresleri öğreneceğiz.",
+  "kind": "say.tr",
+  "de": "Hallo! Heute lernen wir die Adressen, die ein langes Strategiepapier zusammenhalten."
+ },
+ {
+  "tr": "Şimdi sıra sende: Açığın yaptığı şey bir piyasa başarısızlığını gizlemek.",
+  "kind": "say.tr",
+  "de": "Jetzt bist du dran: Was das Defizit tut, ist ein Marktversagen zu verbergen."
+ },
+ {
+  "tr": "Şimdi sıra sende: Politika işe yarasa da politika faizi gençleri vuruyor.",
+  "kind": "say.tr",
+  "de": "Jetzt bist du dran: So sehr die Politik wirkt, der Leitzins trifft die Jungen."
+ },
+ {
+  "tr": "Alay burada iddiayı çürütmüyor; iddianın kendi sözcüğünü ona geri veriyor.",
+  "kind": "say.tr",
+  "de": "Der Spott widerlegt hier die Aussage nicht; er gibt ihr ihr eigenes Wort zurück."
+ },
+ {
+  "tr": "Bir tane daha: Sonradan çıkan maliyetler tahmin edilir, gecikme duyurulur.",
+  "kind": "say.tr",
+  "de": "Noch eins: Folgekosten werden geschätzt, eine Verzögerung wird angekündigt."
+ },
+ {
+  "tr": "Bir tane daha: Yanıltıcı etiketleme, dediler, üstelik markaya iyi geliyor.",
+  "kind": "say.tr",
+  "de": "Noch eins: Etikettenschwindel, sagten sie, und dazu gut für die Marke."
+ },
+ {
+  "tr": "Devletin gelirinden fazla harcaması demek. İlk kalıbımız da bu. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Das heißt, dass der Staat mehr ausgibt, als er einnimmt. Das ist auch unsere erste Wendung. Sprich nach:"
+ },
+ {
+  "tr": "Merhaba! Bugün şeffaflık talebini kalıplaşmış biçimle kurmayı öğreneceğiz.",
+  "kind": "say.tr",
+  "de": "Hallo! Heute lernen wir, die Forderung nach Offenlegung in fester Form zu bauen."
+ },
+ {
+  "tr": "Şimdi sen kur: Sessizlik olmasaydı hiçbir bildirim birimine gerek kalmazdı.",
+  "kind": "say.tr",
+  "de": "Bilde du jetzt: Ohne Schweigen bräuchte es keine Meldestelle."
+ },
+ {
+  "tr": "Merhaba! Bugün kurumsal dürüstlük iddialarını alayla eleştirmeyi öğreneceğiz.",
+  "kind": "say.tr",
+  "de": "Hallo! Heute lernen wir, Aussagen über Unternehmensredlichkeit mit Spott zu kritisieren."
+ },
+ {
+  "tr": "Merhaba! Bugün finansal tahmini aktarırken kipin koyduğu mesafeyi öğreneceğiz.",
+  "kind": "say.tr",
+  "de": "Hallo! Heute lernen wir den Abstand, den das Modalverb beim Wiedergeben einer Finanzprognose setzt."
+ },
+ {
+  "tr": "Bir tane daha: Ticaret açığını sigortalıyoruz, sistemik riski sigortalamıyoruz.",
+  "kind": "say.tr",
+  "de": "Noch eins: Das Handelsdefizit versichern wir, das Systemrisiko nicht."
+ },
+ {
+  "tr": "Merhaba! Bugün mali bir suçlamayı aktarırken hükmü fiile yüklemeyi öğreneceğiz.",
+  "kind": "say.tr",
+  "de": "Hallo! Heute lernen wir, beim Wiedergeben eines Finanzvorwurfs das Urteil ins Verb zu legen."
+ },
+ {
+  "tr": "Şimdi sıra sende: Finansal düzenleyici kurum raporun eksiksiz olmasını istiyor.",
+  "kind": "say.tr",
+  "de": "Jetzt bist du dran: Die Finanzaufsicht verlangt, dass der Bericht vollständig sei."
+ },
+ {
+  "tr": "Bir tane daha: Bir rakip bizim altımıza inebiliyorsa hiçbir anlaşma işe yaramaz.",
+  "kind": "say.tr",
+  "de": "Noch eins: Kann ein Mitbewerber uns unterbieten, hilft keine Absprache."
+ },
+ {
+  "tr": "ise vazgeçileni hesaba katar ve durmayı mümkün kılar. İki hesap, iki ayrı karar.",
+  "kind": "say.tr",
+  "de": "dagegen rechnet das Aufgegebene mit und macht das Aufhören möglich. Zwei Rechnungen, zwei Entscheidungen."
+ },
+ {
+  "tr": "Merkez bankasının para üstündeki kararları demek. İlk kalıbımız da bu. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Das heißt die Entscheidungen der Zentralbank über das Geld. Das ist auch unsere erste Wendung. Sprich nach:"
+ },
+ {
+  "tr": "Şimdi dersin kuralı. Para politikası tartışmasında ödün bir YETKİNLİK işaretidir:",
+  "kind": "say.tr",
+  "de": "Jetzt die Regel der Lektion. In der geldpolitischen Debatte ist das Zugeständnis ein Zeichen von FACHKUNDE:"
+ },
+ {
+  "tr": "ise bizi. İlk cümlede kimse karar vermemiştir; ikincisinde kararı biz vermişizdir.",
+  "kind": "say.tr",
+  "de": "dagegen uns. Im ersten Satz hat niemand entschieden; im zweiten haben wir entschieden."
+ },
+ {
+  "tr": "Şimdi sen kur: O üstünlük, belirtildiği gibi, önceki bir sayfanın tekel konumudur.",
+  "kind": "say.tr",
+  "de": "Bilde du jetzt: Jener Vorsprung ist, wie angemerkt, die Monopolstellung einer früheren Seite."
+ },
+ {
+  "tr": "Şimdi sıra sende: İhale süreci bir biçim olarak kalır, denetim bir gecikme olarak.",
+  "kind": "say.tr",
+  "de": "Jetzt bist du dran: Das Ausschreibungsverfahren bleibt als Form, die Prüfung als Verzögerung."
+ },
+ {
+  "tr": "Merhaba! Bugün para politikası tartışmasında ödün vererek karşı çıkmayı öğreneceğiz.",
+  "kind": "say.tr",
+  "de": "Hallo! Heute lernen wir, in der geldpolitischen Debatte mit Zugeständnis zu widersprechen."
+ },
+ {
+  "tr": "Şimdi sıra sende: Biri sahtekarlık iddia ediyor, öteki zimmete geçirmeyi kanıtlıyor.",
+  "kind": "say.tr",
+  "de": "Jetzt bist du dran: Die eine behauptet Betrug, die andere beweist Unterschlagung."
+ },
+ {
+  "tr": "Merhaba! Bugün aynı ekonomik rakamın basında ve modelde başka ad aldığını öğreneceğiz.",
+  "kind": "say.tr",
+  "de": "Hallo! Heute lernen wir, dass dieselbe Wirtschaftszahl in der Presse und im Modell anders heißt."
+ },
+ {
+  "tr": "Şimdi sen kur: Genişletici bir hamle, sonradan kısıtlayıcı olsa da, zaman kazandırıyor.",
+  "kind": "say.tr",
+  "de": "Bilde du jetzt: Ein expansiver Zug, auch wenn er später restriktiv wird, verschafft Zeit."
+ },
+ {
+  "tr": "Bir tane daha: Her bildirimin, usulsüzlük örtbas edilmeden önce dinlenmesini istiyorlar.",
+  "kind": "say.tr",
+  "de": "Noch eins: Sie verlangen, dass jede Meldung gehört werde, bevor das Fehlverhalten begraben wird."
+ },
+ {
+  "tr": "Ödeme gücü olan bir şirket yine de temerrüt riski taşıyabilir ve risk iştahını yitirebilir.",
+  "kind": "say.tr",
+  "de": "Eine zahlungsfähige Firma kann dennoch ein Ausfallrisiko tragen und ihre Risikobereitschaft verlieren."
+ },
+ {
+  "tr": "Kurumu başa almak insanları siliyor, bizi başa almak sorumluluğu geri getiriyor. Hazır mısın?",
+  "kind": "say.tr",
+  "de": "Die Institution voranzustellen löscht die Menschen, uns voranzustellen holt die Verantwortung zurück. Bist du bereit?"
+ },
+ {
+  "tr": "ise hangi varsayımla yazıldığını söyler. Adres düşerse bir pazarın dersi bütün şirkete uygulanır.",
+  "kind": "say.tr",
+  "de": "dagegen sagt, unter welcher Annahme es geschrieben wurde. Fällt die Adresse, wird die Lehre eines Marktes auf die ganze Firma angewandt."
+ },
+ {
+  "tr": "ise yapısal bir tıkanmayı anlatır ve bir politikayı sorumlu tutar. Aynı rakam, iki ayrı sorumluluk.",
+  "kind": "say.tr",
+  "de": "dagegen beschreibt eine strukturelle Blockade und macht eine Politik verantwortlich. Dieselbe Zahl, zwei Verantwortlichkeiten."
+ },
+ {
+  "tr": "Kesin tahmin bir kez tutmazsa bütün analizi götürüyor; kip analizi tahminden ayırıyor. Hazır mısın?",
+  "kind": "say.tr",
+  "de": "Eine bestimmte Prognose reißt die ganze Analyse mit, wenn sie einmal nicht eintrifft; das Modalverb trennt die Analyse von der Prognose. Bist du bereit?"
+ },
+ {
+  "tr": "ise yalnız bir senaryonun verdiğini anlatır. Kipsiz tahmin bir söz olur ve sözler tutulmak zorundadır.",
+  "kind": "say.tr",
+  "de": "dagegen beschreibt, was nur ein Szenario ergibt. Eine Prognose ohne Modalverb wird ein Versprechen, und Versprechen müssen gehalten werden."
+ },
+ {
+  "tr": "Bir tane daha: Ödeme gücü olan bir banka yine de temerrüt riski taşıyabilir ve risk iştahını yitirebilir.",
+  "kind": "say.tr",
+  "de": "Noch eins: Eine zahlungsfähige Bank kann dennoch ein Ausfallrisiko tragen und ihre Risikobereitschaft verlieren."
+ },
+ {
+  "tr": "dersen talep kimsenin talebi olmaz. «Ben istiyorum» diyen ifşacı, kurumun gözünde savı değil kendisi olur.",
+  "kind": "say.tr",
+  "de": "sagst, gehört die Forderung niemandem. Eine Hinweisgeberin, die «ich will» sagt, ist in den Augen des Hauses nicht ihre These, sondern sie selbst."
+ },
+ {
+  "tr": "Hangi maliyet adı seçilirse karar da o adla veriliyor; yanlış ad yanlış kararı meşru kılıyor. Hazır mısın?",
+  "kind": "say.tr",
+  "de": "Welcher Kostenname gewählt wird, so fällt auch die Entscheidung; ein falscher Name rechtfertigt eine falsche Entscheidung. Bist du bereit?"
+ },
+ {
+  "tr": "Talebi kişiden ayıran biçim ifşacıyı da koruyor: talep kimseye ait değilse kimse hedef olmaz. Hazır mısın?",
+  "kind": "say.tr",
+  "de": "Die Form, die die Forderung von der Person trennt, schützt auch die meldende Person: gehört die Forderung niemandem, wird niemand zur Zielscheibe. Bist du bereit?"
+ },
+ {
+  "tr": "Aracın işe yaradığını teslim etmeyen itiraz dinlenmiyor; ödün burada teknik yetkinlik işareti. Hazır mısın?",
+  "kind": "say.tr",
+  "de": "Ein Einwand, der die Wirkung des Mittels nicht einräumt, wird nicht gehört; das Zugeständnis ist hier ein Zeichen von Fachkunde. Bist du bereit?"
+ },
+ {
+  "tr": "Ad seçimi kimin sorumlu olacağını da belirliyor: geçici bir dalga mı, yapısal bir durgunluk mu. Hazır mısın?",
+  "kind": "say.tr",
+  "de": "Die Wahl des Namens bestimmt auch, wer verantwortlich ist: eine vorübergehende Welle oder eine strukturelle Stagnation. Bist du bereit?"
+ },
+ {
+  "tr": "İddia etmekle kanıtlamak arasındaki fark fiilde duruyor; yanlış fiil bir insanı hükümsüz mahkûm eder. Hazır mısın?",
+  "kind": "say.tr",
+  "de": "Der Unterschied zwischen Behaupten und Beweisen steht im Verb; ein falsches Verb verurteilt einen Menschen ohne Urteil. Bist du bereit?"
+ },
+ {
+  "tr": "dediğinde karşındaki senin mekanizmayı bildiğini anlar. Aracı tümden reddeden cümle, teknik bir masada hiç duyulmaz.",
+  "kind": "say.tr",
+  "de": "versteht dein Gegenüber, dass du den Mechanismus kennst. Ein Satz, der das Mittel ganz ablehnt, wird an einem fachlichen Tisch gar nicht gehört."
+ },
+ {
+  "tr": "Her ölçüt başka bir pazarda başka sonuç veriyor; adres yoksa bir pazarın dersi bütün şirkete uygulanıyor. Hazır mısın?",
+  "kind": "say.tr",
+  "de": "Jeder Maßstab wirkt in jedem Markt anders; ohne Adresse wird die Lehre eines Marktes auf die ganze Firma angewandt. Bist du bereit?"
+ },
+ {
+  "tr": "İddianın kendi sözcüğü eleştirinin en sağlam dayanağı oluyor; çünkü kimse kendi sözcüğünü inkâr edemiyor. Hazır mısın?",
+  "kind": "say.tr",
+  "de": "Das eigene Wort der Aussage wird zur festesten Stütze der Kritik; denn niemand kann sein eigenes Wort leugnen. Bist du bereit?"
+ },
+ {
+  "tr": "hiç kimsenin kendine yakıştırmadığı bir sözcüktür; onu bir eksiltmenin yanına koyduğunda kurum kendi diline yakalanmış olur.",
+  "kind": "say.tr",
+  "de": "ist ein Wort, das sich niemand selbst zuschreibt; stellt man es neben eine Auslassung, ist das Haus in seiner eigenen Sprache gefangen."
+ },
+ {
+  "tr": "Söylenmeyen şey çoğu zaman riski kimin taşıyacağıdır; bu modülün son dersinde eksiltmeyi para tarafından okuyoruz. Hazır mısın?",
+  "kind": "say.tr",
+  "de": "Was ungesagt bleibt, ist meist, wer das Risiko trägt; in der letzten Lektion dieses Moduls lesen wir die Auslassung von der Geldseite her. Bist du bereit?"
+ },
+ {
+  "tr": "dendiğinde işletmenin kime kalacağı yazılmamış olur ve risk sessizce karşı tarafa geçer. Bir teklifi okumak, adlandırılmayanı aramaktır.",
+  "kind": "say.tr",
+  "de": "ist nicht geschrieben, wem der Betrieb zufällt, und das Risiko geht still auf die andere Seite über. Eine Ausschreibung zu lesen heißt, das Unbenannte zu suchen."
+ }
+]

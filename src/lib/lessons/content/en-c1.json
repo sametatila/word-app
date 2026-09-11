@@ -38738,5 +38738,4727 @@
    "goal": "Üç cümlede birer öğe düşürdüysen ve eksik kalan sözü adlandırdıysan konuşma başarılı sayılır.",
    "minTurns": 8
   }
+ },
+ {
+  "id": "en-c1-three-names-for-one-number",
+  "level": "C1",
+  "course": "en",
+  "icon": "chart",
+  "title": "Three names for one number",
+  "titleTr": "Aynı rakamın üç adı",
+  "summary": "Aynı ekonomik rakamın basında ve modelde başka ad aldığını öğretir; ad seçimi kimin sorumlu olacağını da belirler.",
+  "minutes": 12,
+  "focusId": "Register shift in naming an economic figure",
+  "vocab": [
+   {
+    "de": "downturn",
+    "tr": "ekonomik daralma"
+   },
+   {
+    "de": "stagnation",
+    "tr": "durgunluk"
+   },
+   {
+    "de": "deflation",
+    "tr": "deflasyon"
+   },
+   {
+    "de": "business cycle",
+    "tr": "konjonktür döngüsü"
+   },
+   {
+    "de": "devaluation",
+    "tr": "değer kaybı"
+   },
+   {
+    "de": "real economy",
+    "tr": "reel ekonomi"
+   },
+   {
+    "de": "in nominal terms",
+    "tr": "nominal olarak"
+   },
+   {
+    "de": "price stability",
+    "tr": "fiyat istikrarı"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "In the press release it is a downturn; in the model, stagnation.",
+    "tr": "aynı rakamı iki kayıtta söyler"
+   },
+   {
+    "de": "Deflation is a number; the business cycle is a story.",
+    "tr": "sayıyı anlatıdan ayırır"
+   },
+   {
+    "de": "What the bank calls a devaluation, the real economy calls a loss.",
+    "tr": "iki adı karşı karşıya koyar"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Bugün aynı ekonomik rakamın basında ve modelde başka ad aldığını öğreneceğiz."
+     },
+     {
+      "lang": "tr",
+      "text": "Ad seçimi kimin sorumlu olacağını da belirliyor: geçici bir dalga mı, yapısal bir durgunluk mu. Hazır mısın?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "downturn"
+     },
+     {
+      "lang": "tr",
+      "text": "Ekonominin küçülmeye başlaması demek. İlk kalıbımız da bu. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "In the press release it is a downturn; in the model, stagnation."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "In the press release it is a downturn; in the model, stagnation."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Uzun süre yerinde saymaya"
+     },
+     {
+      "lang": "en",
+      "text": "stagnation"
+     },
+     {
+      "lang": "tr",
+      "text": "fiyatların genel olarak düşmesine ise"
+     },
+     {
+      "lang": "en",
+      "text": "deflation"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İkinci kalıbımız sayıyı anlatıdan ayırıyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "Deflation is a number; the business cycle is a story."
+     },
+     {
+      "lang": "tr",
+      "text": "Deflasyon bir sayıdır, konjonktür döngüsü bir anlatıdır."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Deflation is a number; the business cycle is a story."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Ekonominin iniş çıkış ritmine"
+     },
+     {
+      "lang": "en",
+      "text": "business cycle"
+     },
+     {
+      "lang": "tr",
+      "text": "paranın değerinin düşmesine ise"
+     },
+     {
+      "lang": "en",
+      "text": "devaluation"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son kalıbımız iki adı karşı karşıya koyuyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "What the bank calls a devaluation, the real economy calls a loss."
+     },
+     {
+      "lang": "tr",
+      "text": "Bankanın değer kaybı dediğine reel ekonomi zarar diyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "What the bank calls a devaluation, the real economy calls a loss."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi dersin kuralı. Ekonomi haberinde ad SÜREYİ söyler:"
+     },
+     {
+      "lang": "en",
+      "text": "downturn"
+     },
+     {
+      "lang": "tr",
+      "text": "geçici bir dalgayı anlatır ve kimseyi sorumlu tutmaz,"
+     },
+     {
+      "lang": "en",
+      "text": "stagnation"
+     },
+     {
+      "lang": "tr",
+      "text": "ise yapısal bir tıkanmayı anlatır ve bir politikayı sorumlu tutar. Aynı rakam, iki ayrı sorumluluk."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sıra sende: Basın açıklamasında düşüş, modelde durgunluk."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "In the press release it is a dip; in the model, stagnation.",
+     "accept": [
+      "In the press release it is a pause; in the model, stagnation.",
+      "In the press release it is a downturn; in the model, stagnation."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Aynı rakamı iki kayıtta söylemek için iki yer adı yeter:"
+      },
+      {
+       "lang": "en",
+       "text": "In the press release it is a dip; in the model, stagnation."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kontrol. Şu cümle doğru mu?"
+     },
+     {
+      "lang": "en",
+      "text": "Deflation is a number; the business cycle is a story."
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "Deflation is a number; the business cycle is a story.",
+     "answer": true,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Doğru. Biri ölçülen bir değeri adlandırıyor, öteki o değeri bir sıraya yerleştiren anlatıyı."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Üretimin ve işin gerçekten döndüğü alana"
+     },
+     {
+      "lang": "en",
+      "text": "real economy"
+     },
+     {
+      "lang": "tr",
+      "text": "enflasyondan arındırılmamış haliyle anlamına gelen öbeğe ise"
+     },
+     {
+      "lang": "en",
+      "text": "in nominal terms"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "In nominal terms, price stability held."
+     },
+     {
+      "lang": "tr",
+      "text": "Nominal olarak fiyat istikrarı korundu."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "In nominal terms, price stability held."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Fiyatların genel düzeyinin sabit kalmasına"
+     },
+     {
+      "lang": "en",
+      "text": "price stability"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sen kur: Bakanlığın değer kaybı dediğine reel ekonomi zarar diyor."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "What the ministry calls a devaluation, the real economy calls a loss.",
+     "accept": [
+      "What the report calls a devaluation, the real economy calls a loss.",
+      "What the bank calls a devaluation, the real economy calls a loss."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "İki adı karşı karşıya koymak için"
+      },
+      {
+       "lang": "en",
+       "text": "What … calls … calls"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "What the ministry calls a devaluation, the real economy calls a loss."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir rakamın adı, o rakamın kimin sorunu sayılacağını da söyler."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The name assigns the blame."
+     },
+     {
+      "lang": "tr",
+      "text": "Suçu ad dağıtıyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The name assigns the blame."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir tane daha: Deflasyon bir sayıdır, tahmin bir anlatıdır."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "Deflation is a number; the forecast is a story.",
+     "accept": [
+      "Deflation is a number; the outlook is a story.",
+      "Deflation is a number; the business cycle is a story."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Sayıyı anlatıdan ayırmak için iki yarı kurulur:"
+      },
+      {
+       "lang": "en",
+       "text": "Deflation is a number; the forecast is a story."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Özetleyelim: geçici"
+     },
+     {
+      "lang": "en",
+      "text": "downturn"
+     },
+     {
+      "lang": "tr",
+      "text": "yapısal"
+     },
+     {
+      "lang": "en",
+      "text": "stagnation"
+     },
+     {
+      "lang": "tr",
+      "text": "anlatı"
+     },
+     {
+      "lang": "en",
+      "text": "business cycle"
+     },
+     {
+      "lang": "tr",
+      "text": "Şimdi aynı rakamı iki kayıtta anlatacaksın."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Bir çeyrek raporundaki rakamı önce basının, sonra modelin diliyle anlatıyorsun. İki adı da kur ve her adın kimi sorumlu tuttuğunu söyle.",
+   "partner": "rakamı tek doğru sayan, «sayı sayıdır» diyen bir iş arkadaşı",
+   "opening": "A number is a number, isn't it?",
+   "openingTr": "Sayı sayıdır, değil mi?",
+   "goal": "Aynı rakamı iki kayıtta adlandırdıysan ve her adın sorumlusunu söylediysen konuşma başarılı sayılır.",
+   "minTurns": 8
+  }
+ },
+ {
+  "id": "en-c1-who-loses-the-money",
+  "level": "C1",
+  "course": "en",
+  "icon": "money",
+  "title": "Who loses the money",
+  "titleTr": "Parayı kim kaybediyor",
+  "summary": "Kriz anlatısında kimi başa aldığını seçmeyi öğretir; kurumu başa almak insanları siler, bizi başa almak sorumluluğu geri getirir.",
+  "minutes": 12,
+  "focusId": "Fronting in talk about financial crisis",
+  "vocab": [
+   {
+    "de": "budget deficit",
+    "tr": "bütçe açığı"
+   },
+   {
+    "de": "market failure",
+    "tr": "piyasa başarısızlığı"
+   },
+   {
+    "de": "bailout package",
+    "tr": "kurtarma paketi"
+   },
+   {
+    "de": "speculative bubble",
+    "tr": "spekülasyon balonu"
+   },
+   {
+    "de": "systemic risk",
+    "tr": "sistemik risk"
+   },
+   {
+    "de": "trade deficit",
+    "tr": "ticaret açığı"
+   },
+   {
+    "de": "over-indebted",
+    "tr": "aşırı borçlu"
+   },
+   {
+    "de": "capital flight",
+    "tr": "sermaye kaçışı"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "What the budget deficit does is hide a market failure.",
+    "tr": "eylemi başa taşır"
+   },
+   {
+    "de": "Behind the bailout package stands a speculative bubble.",
+    "tr": "yer öbeğini başa alır"
+   },
+   {
+    "de": "The systemic risk we insure; the trade deficit we do not.",
+    "tr": "iki nesneyi başa alıp ikiye böler"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Bugün kriz anlatısında kimi başa aldığını seçmeyi öğreneceğiz."
+     },
+     {
+      "lang": "tr",
+      "text": "Kurumu başa almak insanları siliyor, bizi başa almak sorumluluğu geri getiriyor. Hazır mısın?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "budget deficit"
+     },
+     {
+      "lang": "tr",
+      "text": "Devletin gelirinden fazla harcaması demek. İlk kalıbımız da bu. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "What the budget deficit does is hide a market failure."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "What the budget deficit does is hide a market failure."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Piyasanın kendi başına doğru sonucu üretememesine"
+     },
+     {
+      "lang": "en",
+      "text": "market failure"
+     },
+     {
+      "lang": "tr",
+      "text": "batan kurumu kurtarmak için ayrılan paraya ise"
+     },
+     {
+      "lang": "en",
+      "text": "bailout package"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İkinci kalıbımız yer öbeğini başa alıyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "Behind the bailout package stands a speculative bubble."
+     },
+     {
+      "lang": "tr",
+      "text": "Kurtarma paketinin arkasında bir spekülasyon balonu duruyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Behind the bailout package stands a speculative bubble."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Fiyatın gerçek değerden kopup şişmesine"
+     },
+     {
+      "lang": "en",
+      "text": "speculative bubble"
+     },
+     {
+      "lang": "tr",
+      "text": "bir kurumun çöküşünün bütün sistemi tehdit etmesine ise"
+     },
+     {
+      "lang": "en",
+      "text": "systemic risk"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son kalıbımız iki nesneyi başa alıp ikiye bölüyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "The systemic risk we insure; the trade deficit we do not."
+     },
+     {
+      "lang": "tr",
+      "text": "Sistemik riski sigortalıyoruz, ticaret açığını sigortalamıyoruz."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The systemic risk we insure; the trade deficit we do not."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi dersin kuralı. Kriz cümlesinde başa alınan şey sorumluyu kurar:"
+     },
+     {
+      "lang": "en",
+      "text": "What the budget deficit does"
+     },
+     {
+      "lang": "tr",
+      "text": "bir rakamı fail yapar,"
+     },
+     {
+      "lang": "en",
+      "text": "The systemic risk we insure"
+     },
+     {
+      "lang": "tr",
+      "text": "ise bizi. İlk cümlede kimse karar vermemiştir; ikincisinde kararı biz vermişizdir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sıra sende: Açığın yaptığı şey bir piyasa başarısızlığını gizlemek."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "What the deficit does is hide a market failure.",
+     "accept": [
+      "What the shortfall does is hide a market failure.",
+      "What the budget deficit does is hide a market failure."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Eylemi başa taşımak için"
+      },
+      {
+       "lang": "en",
+       "text": "What … does is"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "What the deficit does is hide a market failure."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kontrol. Şu cümle doğru mu?"
+     },
+     {
+      "lang": "en",
+      "text": "Behind the bailout package stands a speculative bubble."
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "Behind the bailout package stands a speculative bubble.",
+     "answer": true,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Doğru. Yer öbeği başa alınmış; asıl neden sona düşünce daha ağır duyuluyor."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İthalatın ihracattan fazla olmasına"
+     },
+     {
+      "lang": "en",
+      "text": "trade deficit"
+     },
+     {
+      "lang": "tr",
+      "text": "borcunu taşıyamayacak durumda olana ise"
+     },
+     {
+      "lang": "en",
+      "text": "over-indebted"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "An over-indebted state fears capital flight."
+     },
+     {
+      "lang": "tr",
+      "text": "Aşırı borçlu bir devlet sermaye kaçışından korkuyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "An over-indebted state fears capital flight."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Paranın ülkeyi hızla terk etmesine"
+     },
+     {
+      "lang": "en",
+      "text": "capital flight"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sen kur: Kurtarmanın arkasında bir spekülasyon balonu duruyor."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "Behind the rescue stands a speculative bubble.",
+     "accept": [
+      "Behind the loan stands a speculative bubble.",
+      "Behind the bailout package stands a speculative bubble."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Yer öbeğini başa almak için"
+      },
+      {
+       "lang": "en",
+       "text": "Behind"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "Behind the rescue stands a speculative bubble."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Kriz anlatısında özne seçimi, faturanın kime kesileceğini de seçer."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "Someone signed the loss."
+     },
+     {
+      "lang": "tr",
+      "text": "Zararı biri imzaladı."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Someone signed the loss."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir tane daha: Ticaret açığını sigortalıyoruz, sistemik riski sigortalamıyoruz."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "The trade deficit we insure; the systemic risk we do not.",
+     "accept": [
+      "The debt we insure; the systemic risk we do not.",
+      "The systemic risk we insure; the trade deficit we do not."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "İki nesneyi başa alıp ikiye bölmek için noktalı virgül kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "The trade deficit we insure; the systemic risk we do not."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Özetleyelim: rakam"
+     },
+     {
+      "lang": "en",
+      "text": "What the budget deficit does"
+     },
+     {
+      "lang": "tr",
+      "text": "yer"
+     },
+     {
+      "lang": "en",
+      "text": "Behind the bailout package"
+     },
+     {
+      "lang": "tr",
+      "text": "biz"
+     },
+     {
+      "lang": "en",
+      "text": "The systemic risk we insure"
+     },
+     {
+      "lang": "tr",
+      "text": "Şimdi bir krizi üç ayrı sorumluyla anlatacaksın."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Bir banka kurtarmasını anlatıyorsun ve kararı verenleri rakamların arkasına saklamak istemiyorsun. Rakamı, yeri ve bizi başa alan üç cümle kur.",
+   "partner": "krizi doğal afet sayan, «piyasa böyle işliyor» diyen biri",
+   "opening": "That's just how markets work, isn't it?",
+   "openingTr": "Piyasa böyle işliyor, değil mi?",
+   "goal": "Rakamı, yeri ve bizi başa alan üç ayrı cümle kurduysan konuşma başarılı sayılır.",
+   "minTurns": 8
+  }
+ },
+ {
+  "id": "en-c1-demanding-disclosure",
+  "level": "C1",
+  "course": "en",
+  "icon": "law",
+  "title": "Demanding disclosure",
+  "titleTr": "Şeffaflık istemek",
+  "summary": "Şeffaflık talebini kalıplaşmış biçimle kurmayı öğretir; talebi kişiden ayıran biçim ifşacıyı da korur.",
+  "minutes": 12,
+  "focusId": "Subjunctive in demands for disclosure",
+  "vocab": [
+   {
+    "de": "financial regulator",
+    "tr": "finansal düzenleyici kurum"
+   },
+   {
+    "de": "disclosure",
+    "tr": "açığa çıkarma"
+   },
+   {
+    "de": "lack of transparency",
+    "tr": "şeffaflık eksikliği"
+   },
+   {
+    "de": "reporting office",
+    "tr": "bildirim birimi"
+   },
+   {
+    "de": "whistleblower",
+    "tr": "ifşacı"
+   },
+   {
+    "de": "misconduct",
+    "tr": "usulsüzlük"
+   },
+   {
+    "de": "abuse of power",
+    "tr": "yetki suistimali"
+   },
+   {
+    "de": "scrutinize",
+    "tr": "mercek altına almak"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "The financial regulator demands that the disclosure be complete.",
+    "tr": "isteği kalıplaşmış biçimle kurar"
+   },
+   {
+    "de": "Were it not for the lack of transparency, no reporting office would be needed.",
+    "tr": "olmasaydıyı denetim savında kurar"
+   },
+   {
+    "de": "They ask that every whistleblower be heard before the misconduct is buried.",
+    "tr": "koşulu kalıpla kurar"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Bugün şeffaflık talebini kalıplaşmış biçimle kurmayı öğreneceğiz."
+     },
+     {
+      "lang": "tr",
+      "text": "Talebi kişiden ayıran biçim ifşacıyı da koruyor: talep kimseye ait değilse kimse hedef olmaz. Hazır mısın?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "financial regulator"
+     },
+     {
+      "lang": "tr",
+      "text": "Piyasayı denetleyen resmî kurum demek. İlk kalıbımız da bu. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "The financial regulator demands that the disclosure be complete."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The financial regulator demands that the disclosure be complete."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Gizli kalanın açığa çıkarılmasına"
+     },
+     {
+      "lang": "en",
+      "text": "disclosure"
+     },
+     {
+      "lang": "tr",
+      "text": "bilginin gizlenmesine ise"
+     },
+     {
+      "lang": "en",
+      "text": "lack of transparency"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İkinci kalıbımız olmasaydıyı denetim savında kuruyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "Were it not for the lack of transparency, no reporting office would be needed."
+     },
+     {
+      "lang": "tr",
+      "text": "Şeffaflık eksikliği olmasaydı hiçbir bildirim birimine gerek kalmazdı."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Were it not for the lack of transparency, no reporting office would be needed."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İhbarın yapıldığı resmî birime"
+     },
+     {
+      "lang": "en",
+      "text": "reporting office"
+     },
+     {
+      "lang": "tr",
+      "text": "içeriden bildiren kişiye ise"
+     },
+     {
+      "lang": "en",
+      "text": "whistleblower"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son kalıbımız koşulu kalıpla kuruyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "They ask that every whistleblower be heard before the misconduct is buried."
+     },
+     {
+      "lang": "tr",
+      "text": "Her ifşacının, usulsüzlük örtbas edilmeden önce dinlenmesini istiyorlar."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "They ask that every whistleblower be heard before the misconduct is buried."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi dersin kuralı. Denetim dilinde çekimsiz fiil bir koruma sağlar:"
+     },
+     {
+      "lang": "en",
+      "text": "that every whistleblower be heard"
+     },
+     {
+      "lang": "tr",
+      "text": "dersen talep kimsenin talebi olmaz. «Ben istiyorum» diyen ifşacı, kurumun gözünde savı değil kendisi olur."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sıra sende: Finansal düzenleyici kurum raporun eksiksiz olmasını istiyor."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "The financial regulator demands that the report be complete.",
+     "accept": [
+      "The financial regulator demands that the file be complete.",
+      "The financial regulator demands that the disclosure be complete."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "İsteği kalıplaşmış biçimle kurmak için"
+      },
+      {
+       "lang": "en",
+       "text": "demands that … be"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "The financial regulator demands that the report be complete."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kontrol. Şu cümle doğru mu?"
+     },
+     {
+      "lang": "en",
+      "text": "They ask that every whistleblower be heard before the misconduct is buried."
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "They ask that every whistleblower be heard before the misconduct is buried.",
+     "answer": true,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Doğru. Fiil çekilmemiş; talep kişiye değil sürece bağlanmış ve ifşacı görünmez kalıyor."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Kurala aykırı davranışa"
+     },
+     {
+      "lang": "en",
+      "text": "misconduct"
+     },
+     {
+      "lang": "tr",
+      "text": "yetkiyi kendi çıkarına kullanmaya ise"
+     },
+     {
+      "lang": "en",
+      "text": "abuse of power"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "They scrutinize every abuse of power."
+     },
+     {
+      "lang": "tr",
+      "text": "Her yetki suistimalini mercek altına alıyorlar."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "They scrutinize every abuse of power."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Ayrıntısıyla incelemeye"
+     },
+     {
+      "lang": "en",
+      "text": "scrutinize"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sen kur: Sessizlik olmasaydı hiçbir bildirim birimine gerek kalmazdı."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "Were it not for the silence, no reporting office would be needed.",
+     "accept": [
+      "Were it not for the secrecy, no reporting office would be needed.",
+      "Were it not for the lack of transparency, no reporting office would be needed."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Olmasaydıyı denetim savında kurmak için"
+      },
+      {
+       "lang": "en",
+       "text": "were it not for"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "Were it not for the silence, no reporting office would be needed."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Biçim burada yalnız bir üslup değil; talebi taşıyanı koruyan bir siper."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The form shields the person."
+     },
+     {
+      "lang": "tr",
+      "text": "Kişiyi biçim koruyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The form shields the person."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir tane daha: Her bildirimin, usulsüzlük örtbas edilmeden önce dinlenmesini istiyorlar."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "They ask that every report be heard before the misconduct is buried.",
+     "accept": [
+      "They ask that every case be heard before the misconduct is buried.",
+      "They ask that every whistleblower be heard before the misconduct is buried."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Koşulu kalıpla kurmak için"
+      },
+      {
+       "lang": "en",
+       "text": "ask that … be heard"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "They ask that every report be heard before the misconduct is buried."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Özetleyelim: istek"
+     },
+     {
+      "lang": "en",
+      "text": "demands that … be"
+     },
+     {
+      "lang": "tr",
+      "text": "olmasaydı"
+     },
+     {
+      "lang": "en",
+      "text": "were it not for"
+     },
+     {
+      "lang": "tr",
+      "text": "koşul"
+     },
+     {
+      "lang": "en",
+      "text": "ask that … be heard"
+     },
+     {
+      "lang": "tr",
+      "text": "Şimdi bir şeffaflık talebi kuracaksın."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Şirketinde bir usulsüzlüğü bildirmek istiyorsun ve talebi kendi adına değil bir ölçü adına söylemek istiyorsun. İsteği, olmasaydıyı ve koşulu kalıplaşmış biçimlerle kur.",
+   "partner": "her bildirimi kişisel husumet sayan, «kime kızgınsın» diyen bir yönetici",
+   "opening": "Who are you angry with here?",
+   "openingTr": "Burada kime kızgınsın?",
+   "goal": "İsteği, olmasaydıyı ve koşulu üç ayrı kalıplaşmış biçimle kurduysan konuşma başarılı sayılır.",
+   "minTurns": 8
+  }
+ },
+ {
+  "id": "en-c1-the-interest-rate-debate",
+  "level": "C1",
+  "course": "en",
+  "icon": "clock",
+  "title": "The interest rate debate",
+  "titleTr": "Faiz tartışması",
+  "summary": "Para politikası tartışmasında ödün vererek karşı çıkmayı öğretir; aracın işe yaradığını teslim etmeyen itiraz dinlenmiyor.",
+  "minutes": 12,
+  "focusId": "Concessive clauses in monetary policy",
+  "vocab": [
+   {
+    "de": "monetary policy",
+    "tr": "para politikası"
+   },
+   {
+    "de": "key interest rate",
+    "tr": "politika faizi"
+   },
+   {
+    "de": "expansionary",
+    "tr": "genişletici"
+   },
+   {
+    "de": "restrictive",
+    "tr": "kısıtlayıcı"
+   },
+   {
+    "de": "countercyclical",
+    "tr": "konjonktür karşıtı"
+   },
+   {
+    "de": "fiscal policy",
+    "tr": "maliye politikası"
+   },
+   {
+    "de": "money supply",
+    "tr": "para arzı"
+   },
+   {
+    "de": "monetary",
+    "tr": "parasal"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "Much as the monetary policy works, the key interest rate hurts the young.",
+    "tr": "ödünü başa alıp bedeli söyler"
+   },
+   {
+    "de": "An expansionary step, albeit restrictive later, buys time.",
+    "tr": "ödünü araya sıkıştırır"
+   },
+   {
+    "de": "Albeit countercyclical, the fiscal policy arrives too late.",
+    "tr": "ödünü başa çekip eksiği gösterir"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Bugün para politikası tartışmasında ödün vererek karşı çıkmayı öğreneceğiz."
+     },
+     {
+      "lang": "tr",
+      "text": "Aracın işe yaradığını teslim etmeyen itiraz dinlenmiyor; ödün burada teknik yetkinlik işareti. Hazır mısın?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "monetary policy"
+     },
+     {
+      "lang": "tr",
+      "text": "Merkez bankasının para üstündeki kararları demek. İlk kalıbımız da bu. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "Much as the monetary policy works, the key interest rate hurts the young."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Much as the monetary policy works, the key interest rate hurts the young."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merkez bankasının belirlediği temel faize"
+     },
+     {
+      "lang": "en",
+      "text": "key interest rate"
+     },
+     {
+      "lang": "tr",
+      "text": "parayı bollaştıran yöne ise"
+     },
+     {
+      "lang": "en",
+      "text": "expansionary"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İkinci kalıbımız ödünü araya sıkıştırıyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "An expansionary step, albeit restrictive later, buys time."
+     },
+     {
+      "lang": "tr",
+      "text": "Genişletici bir adım, sonradan kısıtlayıcı olsa da, zaman kazandırıyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "An expansionary step, albeit restrictive later, buys time."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Parayı kısan yöne"
+     },
+     {
+      "lang": "en",
+      "text": "restrictive"
+     },
+     {
+      "lang": "tr",
+      "text": "döngünün tersine çalışana ise"
+     },
+     {
+      "lang": "en",
+      "text": "countercyclical"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son kalıbımız ödünü başa çekip eksiği gösteriyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "Albeit countercyclical, the fiscal policy arrives too late."
+     },
+     {
+      "lang": "tr",
+      "text": "Konjonktür karşıtı olsa da, maliye politikası çok geç geliyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Albeit countercyclical, the fiscal policy arrives too late."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi dersin kuralı. Para politikası tartışmasında ödün bir YETKİNLİK işaretidir:"
+     },
+     {
+      "lang": "en",
+      "text": "albeit restrictive later"
+     },
+     {
+      "lang": "tr",
+      "text": "dediğinde karşındaki senin mekanizmayı bildiğini anlar. Aracı tümden reddeden cümle, teknik bir masada hiç duyulmaz."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sıra sende: Politika işe yarasa da politika faizi gençleri vuruyor."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "Much as the policy works, the key interest rate hurts the young.",
+     "accept": [
+      "Much as the tool works, the key interest rate hurts the young.",
+      "Much as the monetary policy works, the key interest rate hurts the young."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Ödünü başa alıp bedeli söylemek için"
+      },
+      {
+       "lang": "en",
+       "text": "Much as"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "Much as the policy works, the key interest rate hurts the young."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kontrol. Şu cümle doğru mu?"
+     },
+     {
+      "lang": "en",
+      "text": "Albeit countercyclical, the fiscal policy arrives too late."
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "Albeit countercyclical, the fiscal policy arrives too late.",
+     "answer": true,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Doğru. Ödün başa çekilmiş ve eksik ondan sonra açıkça söylenmiş."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Devletin vergi ve harcama kararlarına"
+     },
+     {
+      "lang": "en",
+      "text": "fiscal policy"
+     },
+     {
+      "lang": "tr",
+      "text": "piyasadaki toplam paraya ise"
+     },
+     {
+      "lang": "en",
+      "text": "money supply"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The money supply is a monetary question."
+     },
+     {
+      "lang": "tr",
+      "text": "Para arzı parasal bir sorudur."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The money supply is a monetary question."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Parayla ilgili olana"
+     },
+     {
+      "lang": "en",
+      "text": "monetary"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sen kur: Genişletici bir hamle, sonradan kısıtlayıcı olsa da, zaman kazandırıyor."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "An expansionary move, albeit restrictive later, buys time.",
+     "accept": [
+      "An expansionary cut, albeit restrictive later, buys time.",
+      "An expansionary step, albeit restrictive later, buys time."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Ödünü araya sıkıştırmak için"
+      },
+      {
+       "lang": "en",
+       "text": "albeit"
+      },
+      {
+       "lang": "tr",
+       "text": "iki virgül arasına girer:"
+      },
+      {
+       "lang": "en",
+       "text": "An expansionary move, albeit restrictive later, buys time."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Teknik bir tartışmada ödün, itirazın duyulabilmesinin koşuludur."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The concession earns the hearing."
+     },
+     {
+      "lang": "tr",
+      "text": "Dinlenmeyi ödün kazandırıyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The concession earns the hearing."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir tane daha: Konjonktür karşıtı olsa da, bütçe çok geç geliyor."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "Albeit countercyclical, the budget arrives too late.",
+     "accept": [
+      "Albeit countercyclical, the plan arrives too late.",
+      "Albeit countercyclical, the fiscal policy arrives too late."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Ödünü başa çekip eksiği göstermek için"
+      },
+      {
+       "lang": "en",
+       "text": "Albeit"
+      },
+      {
+       "lang": "tr",
+       "text": "yeter:"
+      },
+      {
+       "lang": "en",
+       "text": "Albeit countercyclical, the budget arrives too late."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Özetleyelim: bedeli söyleme"
+     },
+     {
+      "lang": "en",
+      "text": "Much as"
+     },
+     {
+      "lang": "tr",
+      "text": "araya çekince"
+     },
+     {
+      "lang": "en",
+      "text": "albeit"
+     },
+     {
+      "lang": "tr",
+      "text": "eksiği gösterme"
+     },
+     {
+      "lang": "en",
+      "text": "Albeit countercyclical"
+     },
+     {
+      "lang": "tr",
+      "text": "Şimdi faiz tartışmasını sürdüreceksin."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Faiz kararı üstüne bir tartışmadasın ve aracın işe yaradığını inkâr etmeden bedelini söylemek istiyorsun. Ödünü üç ayrı yerde ver ve her seferinde asıl savını sonra söyle.",
+   "partner": "faizi tek araç sayan, «başka ne yapabilirlerdi» diyen bir iktisatçı",
+   "opening": "What else could they have done?",
+   "openingTr": "Başka ne yapabilirlerdi ki?",
+   "goal": "Ödünü üç ayrı yerde verip her seferinde asıl savını sonra söylediysen konuşma başarılı sayılır.",
+   "minTurns": 8
+  }
+ },
+ {
+  "id": "en-c1-the-vocabulary-of-cost",
+  "level": "C1",
+  "course": "en",
+  "icon": "office",
+  "title": "The vocabulary of cost",
+  "titleTr": "Maliyet sözlüğü",
+  "summary": "Maliyet konuşmasının yerleşik eşdizimlerini öğretir; hangi maliyet adı seçilirse karar da o adla verilir.",
+  "minutes": 12,
+  "focusId": "Collocation in the vocabulary of cost",
+  "vocab": [
+   {
+    "de": "marginal cost",
+    "tr": "marjinal maliyet"
+   },
+   {
+    "de": "opportunity cost",
+    "tr": "fırsat maliyeti"
+   },
+   {
+    "de": "follow-up costs",
+    "tr": "sonradan çıkan maliyetler"
+   },
+   {
+    "de": "cost overrun",
+    "tr": "maliyet aşımı"
+   },
+   {
+    "de": "economy of scale",
+    "tr": "ölçek ekonomisi"
+   },
+   {
+    "de": "capital requirement",
+    "tr": "sermaye ihtiyacı"
+   },
+   {
+    "de": "amortization",
+    "tr": "amortisman"
+   },
+   {
+    "de": "expected return",
+    "tr": "beklenen getiri"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "A marginal cost is not an opportunity cost.",
+    "tr": "iki eşdizimi karşı karşıya koyar"
+   },
+   {
+    "de": "Follow-up costs are estimated; a cost overrun is announced.",
+    "tr": "tahmini duyurudan ayırır"
+   },
+   {
+    "de": "An economy of scale lowers the capital requirement.",
+    "tr": "iki eşdizimi tek cümlede bağlar"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Bugün maliyet konuşmasının yerleşik eşdizimlerini öğreneceğiz."
+     },
+     {
+      "lang": "tr",
+      "text": "Hangi maliyet adı seçilirse karar da o adla veriliyor; yanlış ad yanlış kararı meşru kılıyor. Hazır mısın?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "marginal cost"
+     },
+     {
+      "lang": "tr",
+      "text": "Bir birim daha üretmenin maliyeti demek. İlk kalıbımız da bu. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "A marginal cost is not an opportunity cost."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "A marginal cost is not an opportunity cost."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Vazgeçilen seçeneğin değerine"
+     },
+     {
+      "lang": "en",
+      "text": "opportunity cost"
+     },
+     {
+      "lang": "tr",
+      "text": "işin sonradan getirdiği harcamalara ise"
+     },
+     {
+      "lang": "en",
+      "text": "follow-up costs"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İkinci kalıbımız tahmini duyurudan ayırıyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "Follow-up costs are estimated; a cost overrun is announced."
+     },
+     {
+      "lang": "tr",
+      "text": "Sonradan çıkan maliyetler tahmin edilir, maliyet aşımı duyurulur."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Follow-up costs are estimated; a cost overrun is announced."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bütçenin aşılmasına"
+     },
+     {
+      "lang": "en",
+      "text": "cost overrun"
+     },
+     {
+      "lang": "tr",
+      "text": "büyüdükçe birim maliyetin düşmesine ise"
+     },
+     {
+      "lang": "en",
+      "text": "economy of scale"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son kalıbımız iki eşdizimi tek cümlede bağlıyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "An economy of scale lowers the capital requirement."
+     },
+     {
+      "lang": "tr",
+      "text": "Ölçek ekonomisi sermaye ihtiyacını düşürüyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "An economy of scale lowers the capital requirement."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi dersin kuralı. Maliyet sözlüğünde eşdizim KARARI da verir:"
+     },
+     {
+      "lang": "en",
+      "text": "marginal cost"
+     },
+     {
+      "lang": "tr",
+      "text": "yalnız üretimi düşünür ve devam etmeyi kolaylaştırır,"
+     },
+     {
+      "lang": "en",
+      "text": "opportunity cost"
+     },
+     {
+      "lang": "tr",
+      "text": "ise vazgeçileni hesaba katar ve durmayı mümkün kılar. İki hesap, iki ayrı karar."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sıra sende: Marjinal maliyet sabit maliyet değildir."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "A marginal cost is not a fixed cost.",
+     "accept": [
+      "A marginal cost is not a total cost.",
+      "A marginal cost is not an opportunity cost."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "İki eşdizimi karşı karşıya koymak için"
+      },
+      {
+       "lang": "en",
+       "text": "is not"
+      },
+      {
+       "lang": "tr",
+       "text": "yeter:"
+      },
+      {
+       "lang": "en",
+       "text": "A marginal cost is not a fixed cost."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kontrol. Şu cümle doğru mu?"
+     },
+     {
+      "lang": "en",
+      "text": "Follow-up costs are estimated; a cost overrun is announced."
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "Follow-up costs are estimated; a cost overrun is announced.",
+     "answer": true,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Doğru. Biri hesabın, öteki duyurunun eşdizimi; edilgen fiiller de o yüzden ayrı."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Yatırım için gereken paraya"
+     },
+     {
+      "lang": "en",
+      "text": "capital requirement"
+     },
+     {
+      "lang": "tr",
+      "text": "yatırımın zamanla geri ödenmesine ise"
+     },
+     {
+      "lang": "en",
+      "text": "amortization"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The amortization comes before the expected return."
+     },
+     {
+      "lang": "tr",
+      "text": "Amortisman beklenen getiriden önce geliyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The amortization comes before the expected return."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir yatırımdan umulan kazanca"
+     },
+     {
+      "lang": "en",
+      "text": "expected return"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sen kur: Ölçek ekonomisi fiyatı düşürüyor."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "An economy of scale lowers the price.",
+     "accept": [
+      "An economy of scale lowers the unit cost.",
+      "An economy of scale lowers the capital requirement."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "İki eşdizimi tek cümlede bağlamak için"
+      },
+      {
+       "lang": "en",
+       "text": "lowers"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "An economy of scale lowers the price."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Hangi maliyeti hesapladığın, hangi kararı vereceğini önceden söyler."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The collocation makes the decision."
+     },
+     {
+      "lang": "tr",
+      "text": "Kararı eşdizim veriyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The collocation makes the decision."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir tane daha: Sonradan çıkan maliyetler tahmin edilir, gecikme duyurulur."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "Follow-up costs are estimated; a delay is announced.",
+     "accept": [
+      "Follow-up costs are estimated; a change is announced.",
+      "Follow-up costs are estimated; a cost overrun is announced."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Tahmini duyurudan ayırmak için iki edilgen fiil kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "Follow-up costs are estimated; a delay is announced."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Özetleyelim: devam"
+     },
+     {
+      "lang": "en",
+      "text": "marginal cost"
+     },
+     {
+      "lang": "tr",
+      "text": "durma"
+     },
+     {
+      "lang": "en",
+      "text": "opportunity cost"
+     },
+     {
+      "lang": "tr",
+      "text": "duyuru"
+     },
+     {
+      "lang": "en",
+      "text": "cost overrun"
+     },
+     {
+      "lang": "tr",
+      "text": "Şimdi maliyet sözlüğünü kullanacaksın."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Bir projeyi sürdürüp sürdürmemeyi tartışıyorsun ve hangi maliyeti hesapladığını açıkça söylemek istiyorsun. Devam maliyetini, vazgeçme maliyetini ve duyuruyu üç ayrı eşdizimle adlandır.",
+   "partner": "yalnız harcanmışa bakan, «bu kadar para gitti, bırakamayız» diyen biri",
+   "opening": "We've spent too much to stop now, haven't we?",
+   "openingTr": "Bu kadar para gitti, şimdi bırakamayız değil mi?",
+   "goal": "Devam maliyetini, vazgeçme maliyetini ve duyuruyu üç ayrı eşdizimle adlandırdıysan konuşma başarılı sayılır.",
+   "minTurns": 8
+  }
+ },
+ {
+  "id": "en-c1-reporting-the-books",
+  "level": "C1",
+  "course": "en",
+  "icon": "media",
+  "title": "Reporting the books",
+  "titleTr": "Bilançoyu aktarmak",
+  "summary": "Mali bir suçlamayı aktarırken hükmü fiile yüklemeyi öğretir; iddia etmekle kanıtlamak arasındaki fark fiilde durur.",
+  "minutes": 12,
+  "focusId": "Reporting verbs in financial allegations",
+  "vocab": [
+   {
+    "de": "accounting fraud",
+    "tr": "muhasebe sahtekarlığı"
+   },
+   {
+    "de": "embezzlement",
+    "tr": "zimmete geçirme"
+   },
+   {
+    "de": "gray area",
+    "tr": "gri alan"
+   },
+   {
+    "de": "pretext",
+    "tr": "kılıf"
+   },
+   {
+    "de": "feign",
+    "tr": "numara yapmak"
+   },
+   {
+    "de": "embezzle",
+    "tr": "zimmetine geçirmek"
+   },
+   {
+    "de": "insider trading",
+    "tr": "içeriden ticaret"
+   },
+   {
+    "de": "money laundering",
+    "tr": "kara para aklama"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "One alleges accounting fraud; another proves embezzlement.",
+    "tr": "iki aktarmayı karşı karşıya koyar"
+   },
+   {
+    "de": "The gray area claims what the pretext assumes.",
+    "tr": "iddia ile varsayımı ayırır"
+   },
+   {
+    "de": "To feign a loss is not to embezzle a gain.",
+    "tr": "iki eylemi ayırır"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Bugün mali bir suçlamayı aktarırken hükmü fiile yüklemeyi öğreneceğiz."
+     },
+     {
+      "lang": "tr",
+      "text": "İddia etmekle kanıtlamak arasındaki fark fiilde duruyor; yanlış fiil bir insanı hükümsüz mahkûm eder. Hazır mısın?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "accounting fraud"
+     },
+     {
+      "lang": "tr",
+      "text": "Defterleri kasten yanlış tutmak demek. İlk kalıbımız da bu. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "One alleges accounting fraud; another proves embezzlement."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "One alleges accounting fraud; another proves embezzlement."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Emanet paranın üstüne oturulmasına"
+     },
+     {
+      "lang": "en",
+      "text": "embezzlement"
+     },
+     {
+      "lang": "tr",
+      "text": "yasal ile yasak arasındaki belirsiz bölgeye ise"
+     },
+     {
+      "lang": "en",
+      "text": "gray area"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İkinci kalıbımız iddia ile varsayımı ayırıyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "The gray area claims what the pretext assumes."
+     },
+     {
+      "lang": "tr",
+      "text": "Gri alan, kılıfın varsaydığını iddia ediyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The gray area claims what the pretext assumes."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Gerçek nedeni örten bahaneye"
+     },
+     {
+      "lang": "en",
+      "text": "pretext"
+     },
+     {
+      "lang": "tr",
+      "text": "olmayanı varmış gibi göstermeye ise"
+     },
+     {
+      "lang": "en",
+      "text": "feign"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son kalıbımız iki eylemi ayırıyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "To feign a loss is not to embezzle a gain."
+     },
+     {
+      "lang": "tr",
+      "text": "Zarar numarası yapmak kazancı zimmetine geçirmek değildir."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "To feign a loss is not to embezzle a gain."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi dersin kuralı. Mali suçlamada fiil bir HUKUK iddiasıdır:"
+     },
+     {
+      "lang": "en",
+      "text": "alleges"
+     },
+     {
+      "lang": "tr",
+      "text": "henüz kanıtlanmamış bir savı taşır,"
+     },
+     {
+      "lang": "en",
+      "text": "proves"
+     },
+     {
+      "lang": "tr",
+      "text": "ise kanıtı da üstlenir. İkisini karıştıran cümle iftira olabilir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sıra sende: Biri sahtekarlık iddia ediyor, öteki zimmete geçirmeyi kanıtlıyor."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "One alleges fraud; another proves embezzlement.",
+     "accept": [
+      "One alleges theft; another proves embezzlement.",
+      "One alleges accounting fraud; another proves embezzlement."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "İki aktarmayı karşı karşıya koymak için"
+      },
+      {
+       "lang": "en",
+       "text": "alleges … proves"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "One alleges fraud; another proves embezzlement."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kontrol. Şu cümle doğru mu?"
+     },
+     {
+      "lang": "en",
+      "text": "To feign a loss is not to embezzle a gain."
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "To feign a loss is not to embezzle a gain.",
+     "answer": true,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Doğru. Biri görüntüyle oynamak, öteki parayı almak; ikisi ayrı suç ve ayrı kanıt ister."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Kendine ait olmayan parayı almaya"
+     },
+     {
+      "lang": "en",
+      "text": "embezzle"
+     },
+     {
+      "lang": "tr",
+      "text": "içeriden öğrenilen bilgiyle alım satım yapmaya ise"
+     },
+     {
+      "lang": "en",
+      "text": "insider trading"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "Insider trading is not money laundering."
+     },
+     {
+      "lang": "tr",
+      "text": "İçeriden ticaret kara para aklama değildir."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Insider trading is not money laundering."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Suçtan gelen parayı temiz göstermeye"
+     },
+     {
+      "lang": "en",
+      "text": "money laundering"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sen kur: Gri alan, bahanenin varsaydığını iddia ediyor."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "The gray area claims what the excuse assumes.",
+     "accept": [
+      "The gray area claims what the story assumes.",
+      "The gray area claims what the pretext assumes."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "İddia ile varsayımı ayırmak için"
+      },
+      {
+       "lang": "en",
+       "text": "claims what … assumes"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "The gray area claims what the excuse assumes."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir mali suçlamayı aktaran kişi, kanıtın kimde olduğunu da söyler."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The verb carries the burden."
+     },
+     {
+      "lang": "tr",
+      "text": "Yükü fiil taşıyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The verb carries the burden."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir tane daha: Borç numarası yapmak kazancı zimmetine geçirmek değildir."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "To feign a debt is not to embezzle a gain.",
+     "accept": [
+      "To feign a need is not to embezzle a gain.",
+      "To feign a loss is not to embezzle a gain."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "İki eylemi ayırmak için"
+      },
+      {
+       "lang": "en",
+       "text": "is not to"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "To feign a debt is not to embezzle a gain."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Özetleyelim: iddia"
+     },
+     {
+      "lang": "en",
+      "text": "alleges"
+     },
+     {
+      "lang": "tr",
+      "text": "kanıt"
+     },
+     {
+      "lang": "en",
+      "text": "proves"
+     },
+     {
+      "lang": "tr",
+      "text": "belirsiz"
+     },
+     {
+      "lang": "en",
+      "text": "gray area"
+     },
+     {
+      "lang": "tr",
+      "text": "Şimdi bir mali suçlamayı iki fiille aktaracaksın."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Şirketteki bir mali usulsüzlüğü arkadaşına aktarıyorsun ve kimseyi kanıtsız suçlamak istemiyorsun. İki aktarmayı iki ayrı fiille söyle ve kanıtın kimde olduğunu söyle.",
+   "partner": "her söylentiyi kesin bilgi sayan, «demek yapmış» diyen bir iş arkadaşı",
+   "opening": "So he did it, then?",
+   "openingTr": "Demek yapmış, öyle mi?",
+   "goal": "İki aktarmayı iki ayrı fiille söylediysen ve kanıtın kimde olduğunu söylediysen konuşma başarılı sayılır.",
+   "minTurns": 8
+  }
+ },
+ {
+  "id": "en-c1-how-certain-is-the-forecast",
+  "level": "C1",
+  "course": "en",
+  "icon": "idea",
+  "title": "How certain is the forecast",
+  "titleTr": "Tahmin ne kadar kesin",
+  "summary": "Finansal tahmini aktarırken kipin koyduğu mesafeyi öğretir; kesin tahmin bir kez tutmazsa bütün analizi götürür.",
+  "minutes": 12,
+  "focusId": "Modal nuance in financial forecasting",
+  "vocab": [
+   {
+    "de": "investment cycle",
+    "tr": "yatırım döngüsü"
+   },
+   {
+    "de": "savings rate",
+    "tr": "tasarruf oranı"
+   },
+   {
+    "de": "savings potential",
+    "tr": "tasarruf potansiyeli"
+   },
+   {
+    "de": "solvency",
+    "tr": "ödeme gücü"
+   },
+   {
+    "de": "solvent",
+    "tr": "ödeme gücü olan"
+   },
+   {
+    "de": "default risk",
+    "tr": "temerrüt riski"
+   },
+   {
+    "de": "risk appetite",
+    "tr": "risk iştahı"
+   },
+   {
+    "de": "risk aversion",
+    "tr": "riskten kaçınma"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "The investment cycle may well turn before the savings rate falls.",
+    "tr": "kabul edilebilir okumayı işaretler"
+   },
+   {
+    "de": "A high savings potential might not mean solvency.",
+    "tr": "olasılığı uzak tutar"
+   },
+   {
+    "de": "A solvent firm may still carry a default risk and lose its risk appetite.",
+    "tr": "iki sonucu tek kipin altına koyar"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Bugün finansal tahmini aktarırken kipin koyduğu mesafeyi öğreneceğiz."
+     },
+     {
+      "lang": "tr",
+      "text": "Kesin tahmin bir kez tutmazsa bütün analizi götürüyor; kip analizi tahminden ayırıyor. Hazır mısın?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "investment cycle"
+     },
+     {
+      "lang": "tr",
+      "text": "Yatırımın iniş çıkış dönemi demek. İlk kalıbımız da bu. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "The investment cycle may well turn before the savings rate falls."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The investment cycle may well turn before the savings rate falls."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Gelirin ne kadarının biriktirildiğine"
+     },
+     {
+      "lang": "en",
+      "text": "savings rate"
+     },
+     {
+      "lang": "tr",
+      "text": "birikebilecek olanın toplamına ise"
+     },
+     {
+      "lang": "en",
+      "text": "savings potential"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İkinci kalıbımız olasılığı uzak tutuyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "A high savings potential might not mean solvency."
+     },
+     {
+      "lang": "tr",
+      "text": "Yüksek tasarruf potansiyeli ödeme gücü anlamına gelmeyebilir."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "A high savings potential might not mean solvency."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Borcunu vadesinde ödeyebilmeye"
+     },
+     {
+      "lang": "en",
+      "text": "solvency"
+     },
+     {
+      "lang": "tr",
+      "text": "bunu yapabilen kuruma ise"
+     },
+     {
+      "lang": "en",
+      "text": "solvent"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son kalıbımız iki sonucu tek kipin altına koyuyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "A solvent firm may still carry a default risk and lose its risk appetite."
+     },
+     {
+      "lang": "tr",
+      "text": "Ödeme gücü olan bir şirket yine de temerrüt riski taşıyabilir ve risk iştahını yitirebilir."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "A solvent firm may still carry a default risk and lose its risk appetite."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi dersin kuralı. Tahminde kip senin değil MODELİN mesafesini söyler:"
+     },
+     {
+      "lang": "en",
+      "text": "may well"
+     },
+     {
+      "lang": "tr",
+      "text": "verinin çoğunun işaret ettiğini,"
+     },
+     {
+      "lang": "en",
+      "text": "might"
+     },
+     {
+      "lang": "tr",
+      "text": "ise yalnız bir senaryonun verdiğini anlatır. Kipsiz tahmin bir söz olur ve sözler tutulmak zorundadır."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sıra sende: Yatırım döngüsü oran düşmeden dönebilir."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "The investment cycle may well turn before the rate falls.",
+     "accept": [
+      "The investment cycle may well turn before the price falls.",
+      "The investment cycle may well turn before the savings rate falls."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Kabul edilebilir okumayı işaretlemek için"
+      },
+      {
+       "lang": "en",
+       "text": "may well"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "The investment cycle may well turn before the rate falls."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kontrol. Şu cümle doğru mu?"
+     },
+     {
+      "lang": "en",
+      "text": "A high savings potential might not mean solvency."
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "A high savings potential might not mean solvency.",
+     "answer": true,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Doğru. «might» iddiayı uzakta tutuyor; cümle bir uyarı olarak kalıyor."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Borcun ödenmeme ihtimaline"
+     },
+     {
+      "lang": "en",
+      "text": "default risk"
+     },
+     {
+      "lang": "tr",
+      "text": "risk almaya istekli olmaya ise"
+     },
+     {
+      "lang": "en",
+      "text": "risk appetite"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "Risk aversion grows in winter."
+     },
+     {
+      "lang": "tr",
+      "text": "Riskten kaçınma kışın artıyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Risk aversion grows in winter."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Riskten uzak durma eğilimine"
+     },
+     {
+      "lang": "en",
+      "text": "risk aversion"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sen kur: Yüksek tasarruf oranı ödeme gücü anlamına gelmeyebilir."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "A high savings rate might not mean solvency.",
+     "accept": [
+      "A high income might not mean solvency.",
+      "A high savings potential might not mean solvency."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Olasılığı uzak tutmak için"
+      },
+      {
+       "lang": "en",
+       "text": "might"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "A high savings rate might not mean solvency."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Kip, tahmini bir söz olmaktan çıkarıp bir analiz hâline getirir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The modal keeps it an analysis."
+     },
+     {
+      "lang": "tr",
+      "text": "Kip onu analiz olarak tutuyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The modal keeps it an analysis."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir tane daha: Ödeme gücü olan bir banka yine de temerrüt riski taşıyabilir ve risk iştahını yitirebilir."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "A solvent bank may still carry a default risk and lose its risk appetite.",
+     "accept": [
+      "A solvent fund may still carry a default risk and lose its risk appetite.",
+      "A solvent firm may still carry a default risk and lose its risk appetite."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "İki sonucu tek kipin altına koymak için"
+      },
+      {
+       "lang": "en",
+       "text": "may"
+      },
+      {
+       "lang": "tr",
+       "text": "bir kez söylenir:"
+      },
+      {
+       "lang": "en",
+       "text": "A solvent bank may still carry a default risk and lose its risk appetite."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Özetleyelim: verinin çoğu"
+     },
+     {
+      "lang": "en",
+      "text": "may well"
+     },
+     {
+      "lang": "tr",
+      "text": "tek senaryo"
+     },
+     {
+      "lang": "en",
+      "text": "might"
+     },
+     {
+      "lang": "tr",
+      "text": "ortak kip"
+     },
+     {
+      "lang": "en",
+      "text": "may"
+     },
+     {
+      "lang": "tr",
+      "text": "Şimdi bir tahmini aktaracaksın."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Bir yatırım tahminini müşteriye anlatıyorsun ve söz vermiş duruma düşmek istemiyorsun. Üç ayrı kip derecesi kur ve her birinde verinin ne kadarına dayandığını söyle.",
+   "partner": "her tahmini söz sayan, «yani kazanacağız» diyen bir müşteri",
+   "opening": "So we'll make money, then?",
+   "openingTr": "Yani kazanacağız, öyle mi?",
+   "goal": "Üç ayrı kip derecesiyle anlattıysan ve her birinin veri dayanağını söylediysen konuşma başarılı sayılır.",
+   "minTurns": 8
+  }
+ },
+ {
+  "id": "en-c1-thoroughly-green",
+  "level": "C1",
+  "course": "en",
+  "icon": "star",
+  "title": "Thoroughly green",
+  "titleTr": "Yeşil aklama",
+  "summary": "Kurumsal dürüstlük iddialarını alayla eleştirmeyi öğretir; iddianın kendi sözcüğü eleştirinin en sağlam dayanağı olur.",
+  "minutes": 12,
+  "focusId": "Irony and understatement about corporate ethics",
+  "vocab": [
+   {
+    "de": "greenwashing",
+    "tr": "yeşil aklama"
+   },
+   {
+    "de": "nepotism",
+    "tr": "kayırmacılık"
+   },
+   {
+    "de": "old boys' network",
+    "tr": "kayırma ağı"
+   },
+   {
+    "de": "false labeling",
+    "tr": "yanıltıcı etiketleme"
+   },
+   {
+    "de": "reputational risk",
+    "tr": "itibar riski"
+   },
+   {
+    "de": "double standard",
+    "tr": "çifte standart"
+   },
+   {
+    "de": "enrich oneself",
+    "tr": "haksız kazanç sağlamak"
+   },
+   {
+    "de": "acceptance of benefits",
+    "tr": "menfaat temini"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "The greenwashing was thorough; the audit, less so.",
+    "tr": "eksik söyleyip çok kasteder"
+   },
+   {
+    "de": "We have no nepotism here; we have an old boys' network.",
+    "tr": "yalanlayıp aynı şeyi doğrular"
+   },
+   {
+    "de": "False labeling, they said, and rather good against the reputational risk.",
+    "tr": "övgüyü aktarıp tersine çevirir"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Bugün kurumsal dürüstlük iddialarını alayla eleştirmeyi öğreneceğiz."
+     },
+     {
+      "lang": "tr",
+      "text": "İddianın kendi sözcüğü eleştirinin en sağlam dayanağı oluyor; çünkü kimse kendi sözcüğünü inkâr edemiyor. Hazır mısın?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "greenwashing"
+     },
+     {
+      "lang": "tr",
+      "text": "Çevreci görünüp öyle olmamak demek. İlk kalıbımız da bu. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "The greenwashing was thorough; the audit, less so."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The greenwashing was thorough; the audit, less so."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Yakınları kayırmaya"
+     },
+     {
+      "lang": "en",
+      "text": "nepotism"
+     },
+     {
+      "lang": "tr",
+      "text": "birbirini kollayan tanıdıklar çevresine ise"
+     },
+     {
+      "lang": "en",
+      "text": "old boys' network"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İkinci kalıbımız yalanlayıp aynı şeyi doğruluyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "We have no nepotism here; we have an old boys' network."
+     },
+     {
+      "lang": "tr",
+      "text": "Burada kayırmacılık yok, kayırma ağı var."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "We have no nepotism here; we have an old boys' network."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Ürünü olduğundan başka göstermeye"
+     },
+     {
+      "lang": "en",
+      "text": "false labeling"
+     },
+     {
+      "lang": "tr",
+      "text": "adın zedelenme tehlikesine ise"
+     },
+     {
+      "lang": "en",
+      "text": "reputational risk"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son kalıbımız övgüyü aktarıp tersine çeviriyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "False labeling, they said, and rather good against the reputational risk."
+     },
+     {
+      "lang": "tr",
+      "text": "Yanıltıcı etiketleme, dediler, üstelik itibar riskine karşı iyi geliyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "False labeling, they said, and rather good against the reputational risk."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi dersin kuralı. Kurumsal alay iddianın kendi sözcüğüyle kurulur:"
+     },
+     {
+      "lang": "en",
+      "text": "greenwashing"
+     },
+     {
+      "lang": "tr",
+      "text": "hiç kimsenin kendine yakıştırmadığı bir sözcüktür; onu bir eksiltmenin yanına koyduğunda kurum kendi diline yakalanmış olur."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sıra sende: Kampanya özenliydi, denetim pek değil."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "The campaign was thorough; the audit, less so.",
+     "accept": [
+      "The report was thorough; the audit, less so.",
+      "The greenwashing was thorough; the audit, less so."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Eksik söyleyip çok kastetmek için ikinci yarıda fiil düşürülür:"
+      },
+      {
+       "lang": "en",
+       "text": "The campaign was thorough; the audit, less so."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kontrol. Şu cümle doğru mu?"
+     },
+     {
+      "lang": "en",
+      "text": "We have no nepotism here; we have an old boys' network."
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "We have no nepotism here; we have an old boys' network.",
+     "answer": true,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Doğru. Cümle önce yalanlıyor, sonra aynı şeyi daha kibar bir adla doğruluyor."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Aynı davranışı kimine serbest kimine yasak saymaya"
+     },
+     {
+      "lang": "en",
+      "text": "double standard"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "A double standard is only visible from below."
+     },
+     {
+      "lang": "tr",
+      "text": "Çifte standart yalnız aşağıdan görünüyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "A double standard is only visible from below."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Görevini kullanarak kazanç sağlamaya"
+     },
+     {
+      "lang": "en",
+      "text": "enrich oneself"
+     },
+     {
+      "lang": "tr",
+      "text": "karşılığında çıkar kabul etmeye ise"
+     },
+     {
+      "lang": "en",
+      "text": "acceptance of benefits"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "Nobody wanted to enrich oneself; it was an acceptance of benefits."
+     },
+     {
+      "lang": "tr",
+      "text": "Kimse haksız kazanç sağlamak istemedi, bu bir menfaat teminiydi."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Nobody wanted to enrich oneself; it was an acceptance of benefits."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sen kur: Burada iltimas yok, kayırma ağı var."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "We have no favoritism here; we have an old boys' network.",
+     "accept": [
+      "We have no bias here; we have an old boys' network.",
+      "We have no nepotism here; we have an old boys' network."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Yalanlayıp aynı şeyi doğrulamak için"
+      },
+      {
+       "lang": "en",
+       "text": "We have no … we have"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "We have no favoritism here; we have an old boys' network."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Alay burada iddiayı çürütmüyor; iddianın kendi sözcüğünü ona geri veriyor."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The word came back to them."
+     },
+     {
+      "lang": "tr",
+      "text": "Sözcük onlara geri döndü."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The word came back to them."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir tane daha: Yanıltıcı etiketleme, dediler, üstelik markaya iyi geliyor."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "False labeling, they said, and rather good for the brand.",
+     "accept": [
+      "False labeling, they said, and rather good for the image.",
+      "False labeling, they said, and rather good against the reputational risk."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Övgüyü aktarıp tersine çevirmek için"
+      },
+      {
+       "lang": "en",
+       "text": "they said, and rather"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "False labeling, they said, and rather good for the brand."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Özetleyelim: eksiltme"
+     },
+     {
+      "lang": "en",
+      "text": "the audit, less so"
+     },
+     {
+      "lang": "tr",
+      "text": "yalanlayıp doğrulama"
+     },
+     {
+      "lang": "en",
+      "text": "We have no … we have"
+     },
+     {
+      "lang": "tr",
+      "text": "aktarma"
+     },
+     {
+      "lang": "en",
+      "text": "they said, and rather"
+     },
+     {
+      "lang": "tr",
+      "text": "Şimdi kurumsal iddiayı alayla eleştireceksin."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Şirketinin sürdürülebilirlik iddiası ile gördüklerin arasındaki farkı anlatıyorsun ve açıkça suçlamak istemiyorsun. Üç cümlede eksilterek eleştir ve şirketin kendi sözcüklerini kullan.",
+   "partner": "iddiayı olduğu gibi savunan, «raporumuz ödül aldı» diyen bir iş arkadaşı",
+   "opening": "Our report won an award, didn't it?",
+   "openingTr": "Raporumuz ödül aldı, değil mi?",
+   "goal": "Üç cümlede eksilterek eleştirdiysen ve şirketin kendi sözcüklerini kullandıysan konuşma başarılı sayılır.",
+   "minTurns": 8
+  }
+ },
+ {
+  "id": "en-c1-holding-a-strategy-paper-together",
+  "level": "C1",
+  "course": "en",
+  "icon": "map",
+  "title": "Holding a strategy paper together",
+  "titleTr": "Strateji raporunu bağlamak",
+  "summary": "Uzun bir strateji raporunu bağlayan adresleri öğretir; her ölçüt başka bir pazarda başka sonuç verdiği için bağ zorunlu.",
+  "minutes": 13,
+  "focusId": "Cohesion across a strategy paper",
+  "vocab": [
+   {
+    "de": "market penetration",
+    "tr": "pazara nüfuz"
+   },
+   {
+    "de": "market saturation",
+    "tr": "pazar doygunluğu"
+   },
+   {
+    "de": "competitiveness",
+    "tr": "rekabet gücü"
+   },
+   {
+    "de": "monopoly position",
+    "tr": "tekel konumu"
+   },
+   {
+    "de": "undercut",
+    "tr": "fiyatın altına inmek"
+   },
+   {
+    "de": "price fixing",
+    "tr": "fiyat anlaşması"
+   },
+   {
+    "de": "emerging economy",
+    "tr": "yükselen ekonomi"
+   },
+   {
+    "de": "bargaining chip",
+    "tr": "pazarlık kozu"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "The market penetration above becomes market saturation below.",
+    "tr": "yukarıyı aşağıya bağlar"
+   },
+   {
+    "de": "That competitiveness, as noted, is the monopoly position of an earlier page.",
+    "tr": "geri göndermeyi araya koyar"
+   },
+   {
+    "de": "Where a rival can undercut us, no price fixing helps.",
+    "tr": "iki bölümü tek cümlede bağlar"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Bugün uzun bir strateji raporunu bağlayan adresleri öğreneceğiz."
+     },
+     {
+      "lang": "tr",
+      "text": "Her ölçüt başka bir pazarda başka sonuç veriyor; adres yoksa bir pazarın dersi bütün şirkete uygulanıyor. Hazır mısın?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "market penetration"
+     },
+     {
+      "lang": "tr",
+      "text": "Bir pazarda pay kazanmak demek. İlk kalıbımız da bu. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "The market penetration above becomes market saturation below."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The market penetration above becomes market saturation below."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Pazarın artık büyümemesine"
+     },
+     {
+      "lang": "en",
+      "text": "market saturation"
+     },
+     {
+      "lang": "tr",
+      "text": "rakiplerle yarışabilme gücüne ise"
+     },
+     {
+      "lang": "en",
+      "text": "competitiveness"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İkinci kalıbımız geri göndermeyi araya koyuyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "That competitiveness, as noted, is the monopoly position of an earlier page."
+     },
+     {
+      "lang": "tr",
+      "text": "O rekabet gücü, belirtildiği gibi, önceki bir sayfanın tekel konumudur."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "That competitiveness, as noted, is the monopoly position of an earlier page."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Pazarda tek satıcı olmaya"
+     },
+     {
+      "lang": "en",
+      "text": "monopoly position"
+     },
+     {
+      "lang": "tr",
+      "text": "rakibin altında fiyat vermeye ise"
+     },
+     {
+      "lang": "en",
+      "text": "undercut"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son kalıbımız iki bölümü tek cümlede bağlıyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "Where a rival can undercut us, no price fixing helps."
+     },
+     {
+      "lang": "tr",
+      "text": "Bir rakip bizim altımıza inebiliyorsa hiçbir fiyat anlaşması işe yaramaz."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Where a rival can undercut us, no price fixing helps."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi dersin kuralı. Strateji raporunda adres bir PAZAR taşır:"
+     },
+     {
+      "lang": "en",
+      "text": "above"
+     },
+     {
+      "lang": "tr",
+      "text": "ve"
+     },
+     {
+      "lang": "en",
+      "text": "below"
+     },
+     {
+      "lang": "tr",
+      "text": "ölçütün hangi pazarda geçerli olduğunu,"
+     },
+     {
+      "lang": "en",
+      "text": "as noted"
+     },
+     {
+      "lang": "tr",
+      "text": "ise hangi varsayımla yazıldığını söyler. Adres düşerse bir pazarın dersi bütün şirkete uygulanır."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sıra sende: Yukarıdaki pazara nüfuz aşağıda bir riske dönüşüyor."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "The market penetration above becomes a risk below.",
+     "accept": [
+      "The market penetration above becomes a cost below.",
+      "The market penetration above becomes market saturation below."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Yukarıyı aşağıya bağlamak için"
+      },
+      {
+       "lang": "en",
+       "text": "above … below"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "The market penetration above becomes a risk below."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kontrol. Şu cümle doğru mu?"
+     },
+     {
+      "lang": "en",
+      "text": "Where a rival can undercut us, no price fixing helps."
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "Where a rival can undercut us, no price fixing helps.",
+     "answer": true,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Doğru. İki bölüm tek cümlede bağlanmış; koşul ile sınır aynı yerde duruyor."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Rakiplerin gizlice fiyat üstünde anlaşmasına"
+     },
+     {
+      "lang": "en",
+      "text": "price fixing"
+     },
+     {
+      "lang": "tr",
+      "text": "hızla büyüyen ülke ekonomisine ise"
+     },
+     {
+      "lang": "en",
+      "text": "emerging economy"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "In an emerging economy, time is the bargaining chip."
+     },
+     {
+      "lang": "tr",
+      "text": "Yükselen bir ekonomide pazarlık kozu zamandır."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "In an emerging economy, time is the bargaining chip."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Pazarlıkta elde tutulan üstünlüğe"
+     },
+     {
+      "lang": "en",
+      "text": "bargaining chip"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sen kur: O üstünlük, belirtildiği gibi, önceki bir sayfanın tekel konumudur."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "That advantage, as noted, is the monopoly position of an earlier page.",
+     "accept": [
+      "That lead, as noted, is the monopoly position of an earlier page.",
+      "That competitiveness, as noted, is the monopoly position of an earlier page."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Geri göndermeyi araya koymak için"
+      },
+      {
+       "lang": "en",
+       "text": "as noted"
+      },
+      {
+       "lang": "tr",
+       "text": "iki virgül arasına girer:"
+      },
+      {
+       "lang": "en",
+       "text": "That advantage, as noted, is the monopoly position of an earlier page."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Strateji raporunda adres, ölçütün hangi pazara ait olduğunu taşır."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The address carries the market."
+     },
+     {
+      "lang": "tr",
+      "text": "Pazarı adres taşıyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The address carries the market."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir tane daha: Bir rakip bizim altımıza inebiliyorsa hiçbir anlaşma işe yaramaz."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "Where a rival can undercut us, no agreement helps.",
+     "accept": [
+      "Where a rival can undercut us, no deal helps.",
+      "Where a rival can undercut us, no price fixing helps."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "İki bölümü tek cümlede bağlamak için"
+      },
+      {
+       "lang": "en",
+       "text": "Where … no"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "Where a rival can undercut us, no agreement helps."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Özetleyelim: yer"
+     },
+     {
+      "lang": "en",
+      "text": "above"
+     },
+     {
+      "lang": "tr",
+      "text": "ve"
+     },
+     {
+      "lang": "en",
+      "text": "below"
+     },
+     {
+      "lang": "tr",
+      "text": "geri gönderme"
+     },
+     {
+      "lang": "en",
+      "text": "as noted"
+     },
+     {
+      "lang": "tr",
+      "text": "bağlama"
+     },
+     {
+      "lang": "en",
+      "text": "Where … no"
+     },
+     {
+      "lang": "tr",
+      "text": "Şimdi bir strateji raporunu bağlayacaksın."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Bir strateji raporunu sözlü olarak özetliyorsun ve dinleyen ölçütleri kendi pazarına uygulayacak. Yukarı, aşağı ve geri gönderme adresleriyle üç bölümü birbirine bağla.",
+   "partner": "her ölçütü kendi pazarına taşıyan, «bizde de böyle olur» diyen bir bölge müdürü",
+   "opening": "That would work in our market too, right?",
+   "openingTr": "Bizim pazarda da olur, değil mi?",
+   "goal": "Üç bölümü yukarı, aşağı ve geri gönderme adresleriyle birbirine bağladıysan konuşma başarılı sayılır.",
+   "minTurns": 8
+  }
+ },
+ {
+  "id": "en-c1-what-the-tender-leaves-unsaid",
+  "level": "C1",
+  "course": "en",
+  "icon": "key",
+  "title": "What the tender leaves unsaid",
+  "titleTr": "Teklifin söylemediği",
+  "summary": "İhale metninde düşen öğeyi öğretir; söylenmeyen şey çoğu zaman riski kimin taşıyacağıdır.",
+  "minutes": 13,
+  "focusId": "Ellipsis in tender documents",
+  "vocab": [
+   {
+    "de": "tender procedure",
+    "tr": "ihale süreci"
+   },
+   {
+    "de": "approval procedure",
+    "tr": "onay süreci"
+   },
+   {
+    "de": "consortium",
+    "tr": "konsorsiyum"
+   },
+   {
+    "de": "operator model",
+    "tr": "işletme modeli"
+   },
+   {
+    "de": "conflict of goals",
+    "tr": "hedef çatışması"
+   },
+   {
+    "de": "cumbersome",
+    "tr": "külfetli"
+   },
+   {
+    "de": "for lack of",
+    "tr": "yokluğundan"
+   },
+   {
+    "de": "on the part of",
+    "tr": "tarafından"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "The tender procedure survives as a form, the approval procedure as a delay.",
+    "tr": "ikinci yarıda yüklemi düşürür"
+   },
+   {
+    "de": "The consortium builds; the operator model, it does not name.",
+    "tr": "nesneyi başa alıp yüklemi sona atar"
+   },
+   {
+    "de": "The conflict of goals stayed; the cumbersome wording did not.",
+    "tr": "yüklemi yardımcı fiile indirir"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Bugün ihale metninde düşen öğeyi öğreneceğiz."
+     },
+     {
+      "lang": "tr",
+      "text": "Söylenmeyen şey çoğu zaman riski kimin taşıyacağıdır; bu modülün son dersinde eksiltmeyi para tarafından okuyoruz. Hazır mısın?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "tender procedure"
+     },
+     {
+      "lang": "tr",
+      "text": "İşin rekabetle verildiği süreç demek. İlk kalıbımız da bu. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "The tender procedure survives as a form, the approval procedure as a delay."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The tender procedure survives as a form, the approval procedure as a delay."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İznin alınma sürecine"
+     },
+     {
+      "lang": "en",
+      "text": "approval procedure"
+     },
+     {
+      "lang": "tr",
+      "text": "bir işi birlikte alan şirket birliğine ise"
+     },
+     {
+      "lang": "en",
+      "text": "consortium"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İkinci kalıbımız nesneyi başa alıp yüklemi sona atıyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "The consortium builds; the operator model, it does not name."
+     },
+     {
+      "lang": "tr",
+      "text": "Konsorsiyum inşa ediyor, işletme modelini adlandırmıyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The consortium builds; the operator model, it does not name."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İşin kim tarafından ve nasıl işletileceğine"
+     },
+     {
+      "lang": "en",
+      "text": "operator model"
+     },
+     {
+      "lang": "tr",
+      "text": "iki hedefin birbirini engellemesine ise"
+     },
+     {
+      "lang": "en",
+      "text": "conflict of goals"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son kalıbımız yüklemi yardımcı fiile indiriyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "The conflict of goals stayed; the cumbersome wording did not."
+     },
+     {
+      "lang": "tr",
+      "text": "Hedef çatışması kaldı, külfetli ifade kalmadı."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The conflict of goals stayed; the cumbersome wording did not."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi dersin kuralı. İhale metninde eksiltme bir RİSK devridir:"
+     },
+     {
+      "lang": "en",
+      "text": "the operator model, it does not name"
+     },
+     {
+      "lang": "tr",
+      "text": "dendiğinde işletmenin kime kalacağı yazılmamış olur ve risk sessizce karşı tarafa geçer. Bir teklifi okumak, adlandırılmayanı aramaktır."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sıra sende: İhale süreci bir biçim olarak kalır, denetim bir gecikme olarak."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "The tender procedure survives as a form, the audit as a delay.",
+     "accept": [
+      "The tender procedure survives as a form, the review as a delay.",
+      "The tender procedure survives as a form, the approval procedure as a delay."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "İkinci yarıda yüklemi düşürmek için"
+      },
+      {
+       "lang": "en",
+       "text": "survives as"
+      },
+      {
+       "lang": "tr",
+       "text": "bir kez söylenir:"
+      },
+      {
+       "lang": "en",
+       "text": "The tender procedure survives as a form, the audit as a delay."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kontrol. Şu cümle doğru mu?"
+     },
+     {
+      "lang": "en",
+      "text": "The conflict of goals stayed; the cumbersome wording did not."
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "The conflict of goals stayed; the cumbersome wording did not.",
+     "answer": true,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Doğru. İkinci yarıda yüklem yardımcı fiile inmiş ve gerisi okurda kalmış."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Ağır ve yorucu olana"
+     },
+     {
+      "lang": "en",
+      "text": "cumbersome"
+     },
+     {
+      "lang": "tr",
+      "text": "bir şeyin eksikliği yüzünden anlamına gelen öbeğe ise"
+     },
+     {
+      "lang": "en",
+      "text": "for lack of"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "For lack of interest on the part of the city, nothing moved."
+     },
+     {
+      "lang": "tr",
+      "text": "Şehrin tarafından ilgi yokluğundan hiçbir şey ilerlemedi."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "For lack of interest on the part of the city, nothing moved."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Birinin tarafından anlamına gelen öbeğe"
+     },
+     {
+      "lang": "en",
+      "text": "on the part of"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     },
+     {
+      "lang": "tr",
+      "text": "Bu ders modülün sonuncusu; adı, ödünü ve eksiltmeyi birlikte kullanacaksın."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sen kur: Konsorsiyum inşa ediyor, riski adlandırmıyor."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "The consortium builds; the risk, it does not name.",
+     "accept": [
+      "The consortium builds; the cost, it does not name.",
+      "The consortium builds; the operator model, it does not name."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Nesneyi başa alıp yüklemi sona atmak için virgül kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "The consortium builds; the risk, it does not name."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "Nobody named the operator."
+     },
+     {
+      "lang": "tr",
+      "text": "Kimse işletmeciyi adlandırmadı."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Nobody named the operator."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir tane daha: Hedef çatışması kaldı, son tarih kalmadı."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "The conflict of goals stayed; the deadline did not.",
+     "accept": [
+      "The conflict of goals stayed; the budget did not.",
+      "The conflict of goals stayed; the cumbersome wording did not."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Yüklemi yardımcı fiile indirmek için"
+      },
+      {
+       "lang": "en",
+       "text": "did not"
+      },
+      {
+       "lang": "tr",
+       "text": "yeter:"
+      },
+      {
+       "lang": "en",
+       "text": "The conflict of goals stayed; the deadline did not."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Özetleyelim: yüklem düşer"
+     },
+     {
+      "lang": "en",
+      "text": "the approval procedure as a delay"
+     },
+     {
+      "lang": "tr",
+      "text": "nesne başa"
+     },
+     {
+      "lang": "en",
+      "text": "the operator model, it does not name"
+     },
+     {
+      "lang": "tr",
+      "text": "yardımcı kalır"
+     },
+     {
+      "lang": "en",
+      "text": "the cumbersome wording did not"
+     },
+     {
+      "lang": "tr",
+      "text": "Şimdi teklifin söylemediğini okuyacaksın."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Bir ihale metnini iş arkadaşına anlatıyorsun ve riski kimin taşıyacağının yazılmadığını göstermek istiyorsun. Üç cümlede birer öğe düşür ve adlandırılmayanı söyle.",
+   "partner": "metni eksiksiz sayan, «her şey yazıyor» diyen bir iş arkadaşı",
+   "opening": "It's all written down, isn't it?",
+   "openingTr": "Her şey yazıyor, değil mi?",
+   "goal": "Üç cümlede birer öğe düşürdüysen ve adlandırılmayan riski söylediysen konuşma başarılı sayılır.",
+   "minTurns": 8
+  }
  }
 ]
