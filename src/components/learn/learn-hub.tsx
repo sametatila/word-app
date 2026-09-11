@@ -13,10 +13,10 @@ import {
   BoltIcon,
   CrownIcon,
   ExamIcon,
-  HeartIcon,
+  FlameIcon,
   PodiumIcon,
+  QuizIcon,
   RefreshIcon,
-  TargetIcon,
   WalkIcon,
 } from "@/components/icons";
 
@@ -204,7 +204,7 @@ export function LearnHub({ data }: { data: LearnHubData }) {
         <Action
           href="/learn/practice"
           tone="var(--color-brand-500)"
-          icon={<TargetIcon size={24} />}
+          icon={<QuizIcon size={24} />}
           title={t("learn.practice")}
           sub={t("learn.practice_one_game_with_your_own")}
         />
@@ -214,6 +214,23 @@ export function LearnHub({ data }: { data: LearnHubData }) {
           icon={<PodiumIcon size={24} />}
           title={t("learn.daily_round_2")}
           sub={t("learn.same_challenge_for_everyone_get")}
+        />
+        <Action
+          href="/learn/weekly"
+          tone="var(--color-mint-500)"
+          icon={<CrownIcon size={24} />}
+          title={t("learn.weekly_quiz")}
+          sub={t("learn.test_what_you_ve_learned_weekly")}
+        />
+        {/* Hayatta kalma §11.199'da Android'e de geldi; simge de oradan
+            (alev). Önce "web'e özel bir mod" diye yazılıydı ve o gerekçe
+            artık doğru değil. */}
+        <Action
+          href="/learn/challenge"
+          tone="var(--color-rose-500)"
+          icon={<FlameIcon size={24} />}
+          title={t("learn.survival")}
+          sub={t("learn.survival_pitch")}
         />
         {/*
           Seviye sınavı Öğren'de: beş bölümlük, 45 dakikalık bir ölçüm, yani
@@ -227,24 +244,6 @@ export function LearnHub({ data }: { data: LearnHubData }) {
           icon={<ExamIcon size={24} />}
           title={t("learn.level_exam", { level: data.level })}
           sub={t("learn.level_exam_sub")}
-        />
-        <Action
-          href="/learn/weekly"
-          tone="var(--color-mint-500)"
-          icon={<CrownIcon size={24} />}
-          title={t("learn.weekly_quiz")}
-          sub={t("learn.test_what_you_ve_learned_weekly")}
-        />
-        {/*
-          Hayatta kalma mobilde YOK — web'e özel bir mod. Parite "webde fazla
-          olanı at" demek değil; mobilin düzenine oturttuk, yerini korudu.
-        */}
-        <Action
-          href="/learn/challenge"
-          tone="var(--color-rose-500)"
-          icon={<HeartIcon size={24} />}
-          title={t("learn.survival")}
-          sub={t("learn.survival_pitch")}
         />
       </CardGrid>
     </div>

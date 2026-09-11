@@ -4268,6 +4268,51 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   sameList("tur ozetinin bolum sirasi", sira(mob, 1), sira(web, 0));
 }
 
+/* ── 125. Ogren sekmesindeki yollar ───────────────────────────────────────
+ * Iki taraf da ayni satirlari gosteriyordu ama SIRA ve SIMGE olculmemisti.
+ * Olculdugunde uc fark cikti ve ucu de webdeydi: seviye sinavi satiri
+ * Androidde en altta, webde ortadaydi; "Pratik" simgesi Androidde soru
+ * isareti (`QuizIcon`), webde nisan tahtasiydi (`TargetIcon`); hayatta kalma
+ * Androidde alev, webde kalpti. Ustelik webdeki gerekce de eskimisti
+ * ("hayatta kalma mobilde YOK") - mod §11.199'da Android'e geldi.
+ *
+ * Olculen: satir sirasi, simge ADI ve renk - renk ADIYLA degil HEX'iyle,
+ * cunku iki taraf ayni tonu ayri adla tutuyor (`--color-rose-500` /
+ * `colors.danger`). */
+{
+  /* Web jetonlari: globals.css. Mobil: `theme/colors` acik palet, ramp
+     indirmesiyle birlikte (`orange[500]` gibi). */
+  const css = read("src/app/globals.css");
+  const webHex = (jeton) => (css.match(new RegExp("--color-" + jeton + ":\\s*(#[0-9a-f]{3,8})", "i"))?.[1] ?? jeton).toLowerCase();
+  const renkSrc = read("mobile/src/theme/colors.ts");
+  const ramp = {};
+  for (const m of renkSrc.matchAll(/export const (\w+) = \{([^}]+)\} as const;/g)) {
+    ramp[m[1]] = Object.fromEntries([...m[2].matchAll(/(\d+): "(#[0-9a-f]{3,8})"/gi)].map((x) => [x[1], x[2]]));
+  }
+  const acik = renkSrc.slice(renkSrc.indexOf("export const light: Palette = {"), renkSrc.indexOf("export const dark"));
+  const mobHex = (ad) => {
+    const v = acik.match(new RegExp("\\b" + ad + ": ([^,\\n]+)"))?.[1]?.trim() ?? ad;
+    const r = v.match(/^(\w+)\[(\d+)\]$/);
+    return (r ? ramp[r[1]]?.[r[2]] ?? v : v.replace(/"/g, "")).toLowerCase();
+  };
+  const webSatir = (src) =>
+    [...src.matchAll(/tone="var\(--color-([\w-]+)\)"\s*\n\s*icon=\{<(\w+)[\s\S]*?\n\s*title=\{t\("([\w.]+)"/g)]
+      .map((m) => `${m[3]} ${m[2]} ${webHex(m[1])}`);
+  const mobSatir = (src) =>
+    /* Iki bileseni de okuyor (`WedgeTile` one cikan, `ActionRow` liste) ve
+       basliktan renge kadar TEMBEL geciyor: `learn.level_exam` basligi
+       `{ level }` tasiyor ve acgozlu bir sinif orada duruyordu. */
+    /* BILESEN ADINA capalanmis: capasiz hâli ekran BASLIGINDAN
+       (`AppHeader title={t("learn.learn")}`) baslayip ilk karonun rengine
+       kadar uzaniyordu ve ilk satir "learn.learn" diye okunuyordu - olcunun
+       komsusunu olcmenin onuncu bicimi. */
+    [...src.matchAll(/<(?:WedgeTile|ActionRow) title=\{t\("([\w.]+)"[\s\S]*?tint=\{colors\.(\w+)\}\s*icon=\{(\w+)\}/g)]
+      .map((m) => `${m[1]} ${m[3]} ${mobHex(m[2])}`);
+  const web = webSatir(read("src/components/learn/learn-hub.tsx"));
+  const mob = mobSatir(read("mobile/src/screens/LearnScreen.tsx"));
+  sameList("ogren sekmesi yollari", mob, web);
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"

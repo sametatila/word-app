@@ -7378,3 +7378,29 @@ Kapı ilk yazılışında **halkayı web tarafında göremiyordu**: dilim
 `summary.stopped`ten başlıyordu ve halka onun ÜSTÜNDE kalıyordu, yani "webde
 halka yok" diye okunacaktı. Ölçünün komşusunu ölçmenin dokuzuncu biçimi.
 Üç enjeksiyonun üçü de yakalandı.
+
+### 11.216 Öğren sekmesinde sıra ve simge ölçülmemişti
+
+Aynı soruyu Öğren sekmesine sordum: iki taraf da aynı satırları gösteriyor mu,
+**aynı sırada ve aynı simgeyle**. Üç fark çıktı, üçü de webdeydi:
+
+| satır | Android | web (eski) |
+|---|---|---|
+| seviye sınavı | listenin **en altında** | ortada, haftalık sınavın üstünde |
+| Pratik | soru işareti (`QuizIcon`) | nişan tahtası (`TargetIcon`) |
+| hayatta kalma | alev (`FlameIcon`) | kalp (`HeartIcon`) |
+
+Üçü de Android'e göre düzeltildi. Webdeki gerekçe de eskimişti — *"Hayatta
+kalma mobilde YOK, web'e özel bir mod"* — mod §11.199'da Android'e geldi.
+
+**§125** satır sırasını, simge adını ve rengi ölçüyor. Renk **adıyla değil
+HEX'iyle**: iki taraf aynı tonu ayrı adla tutuyor (`--color-rose-500` /
+`colors.danger`) ve ad karşılaştırması hiçbir şey söylemezdi. Kapı web
+jetonlarını `globals.css`ten, mobil paletini `theme/colors`tan çözüyor —
+ramp indirmesiyle birlikte (`orange[500]`). Yedi satırın yedisinde de renk
+birebir aynı çıktı, yani palet hizası gerçekten tutuyor.
+
+Kapı ilk yazılışında **ekran başlığından** başlıyordu (`AppHeader
+title={t("learn.learn")}`) ve ilk satırı "learn.learn" diye okuyordu: desen
+bileşen adına çapalanmamıştı. Ölçünün komşusunu ölçmenin onuncu biçimi.
+Üç enjeksiyonun üçü de yakalandı.
