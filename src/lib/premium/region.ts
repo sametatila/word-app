@@ -43,11 +43,19 @@ const EU_COUNTRIES = new Set([
   "LV", "LT", "LU", "MT", "NL", "PL", "PT", "RO", "SK", "SI", "ES", "SE", "IS", "LI", "NO",
 ]);
 
+/**
+ * SAAT DİLİMİ VARSA CEVAP DA VAR. "Ne TR ne AB" bilinmezlik değil, GLOBAL
+ * demek: America/New_York açık bir cevaptır. İlk yazımda buradan `null`
+ * dönüyordu ve karar `Accept-Language`a düşüyordu — New York'ta oturan ama
+ * tarayıcısı Türkçe olan kullanıcıya lira gösteriliyordu (ölçüldü). Güçlü
+ * sinyalin zayıf olana yenilmemesi gerekiyor; `null` yalnız saat dilimi HİÇ
+ * yokken dönüyor.
+ */
 function fromTimezone(tz: string | null | undefined): PriceRegion | null {
   if (!tz) return null;
   if (tz === "Europe/Istanbul") return "TR";
   if (EU_ZONES.has(tz)) return "EU";
-  return null;
+  return "GLOBAL";
 }
 
 function fromAcceptLanguage(header: string | null | undefined): PriceRegion | null {
