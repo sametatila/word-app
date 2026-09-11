@@ -52,7 +52,10 @@ export function LinkedAccounts({ colors }: { colors: Palette }) {
       return;
     }
     if (r.code === "CANCELLED") return; // sessiz
-    setMsg(r.code === "EMAIL_MISMATCH" ? r.message : t("links.failed"));
+    /* Ağ hatasının kendi cümlesi var ve `signInGoogleNative` onu zaten
+       çevrilmiş olarak döndürüyordu; burada atılıp "biraz sonra tekrar dene"ye
+       düşüyordu. Web ikisini ayırıyor (`links.link_offline`). */
+    setMsg(r.code === "EMAIL_MISMATCH" || r.code === "NETWORK" ? r.message : t("links.failed"));
   }
 
   async function kaldir(provider: string) {
@@ -65,7 +68,7 @@ export function LinkedAccounts({ colors }: { colors: Palette }) {
       setMsg(t("links.unlinked"));
       return;
     }
-    setMsg(r === "fresh" ? t("links.need_fresh") : t("links.failed"));
+    setMsg(r === "fresh" ? t("links.need_fresh") : r === "offline" ? t("links.unlink_offline") : t("links.failed"));
   }
 
   if (!accounts) return null;

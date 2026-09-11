@@ -763,6 +763,8 @@ export const en: Record<string, string> = {
   "links.need_fresh": "For security you need to sign in again, then try once more.",
   "links.linked": "Linked.",
   "links.unlinked": "Link removed.",
+  "links.link_offline": "Couldn't link. Check your internet connection.",
+  "links.unlink_offline": "Couldn't remove it. Check your internet connection.",
   "links.failed": "That didn't go through. Try again in a moment.",
   "lesson.next_speaking": "Next speaking: {title} →",
   "lesson.mic_repeat": "Repeat it",

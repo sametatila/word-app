@@ -3818,6 +3818,25 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   );
 }
 
+/* ── 113. giris yontemi baglama hatalari ──────────────────────────────────
+ * Web ag hatasini otekilerden AYIRIYOR: "internet baglantini kontrol et" ile
+ * "biraz sonra tekrar dene" iki ayri cumle. Mobil ikisini de tek cumleye
+ * dusuruyordu - ustelik baglama yolunda ag hatasinin kendi cevrilmis metni
+ * ZATEN uretiliyordu (`signInGoogleNative` `NETWORK`), ekranda atiliyordu.
+ *
+ * §11.192 ile ayni sinif: bir cumle birkac sebebin ortusu. */
+{
+  const bag = (p, re) => [
+    "baglama cevrimdisi=" + (re.link.test(read(p)) ? "var" : "yok"),
+    "kaldirma cevrimdisi=" + (re.unlink.test(read(p)) ? "var" : "yok"),
+  ];
+  sameList(
+    "giris yontemi hatalari",
+    bag("mobile/src/ui/LinkedAccounts.tsx", { link: /"NETWORK"/, unlink: /links\.unlink_offline/ }),
+    bag("src/components/account/linked-accounts.tsx", { link: /links\.link_offline/, unlink: /links\.unlink_offline/ }),
+  );
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"

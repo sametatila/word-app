@@ -768,6 +768,8 @@ export const tr: Record<string, string> = {
   "links.need_fresh": "Güvenlik için yeniden giriş yapman gerekiyor; sonra tekrar dene.",
   "links.linked": "Bağlandı.",
   "links.unlinked": "Bağlantı kaldırıldı.",
+  "links.link_offline": "Bağlanamadı. İnternet bağlantını kontrol et.",
+  "links.unlink_offline": "Kaldırılamadı. İnternet bağlantını kontrol et.",
   "links.failed": "İşlem tamamlanamadı. Biraz sonra tekrar dene.",
   "lesson.next_speaking": "Sonraki konuşma: {title} →",
   "lesson.mic_repeat": "Tekrarla",

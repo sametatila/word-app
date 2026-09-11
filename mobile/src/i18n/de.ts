@@ -763,6 +763,8 @@ export const de: Record<string, string> = {
   "links.need_fresh": "Aus Sicherheitsgründen musst du dich neu anmelden und es dann erneut versuchen.",
   "links.linked": "Verknüpft.",
   "links.unlinked": "Verknüpfung entfernt.",
+  "links.link_offline": "Verknüpfen fehlgeschlagen. Prüf deine Internetverbindung.",
+  "links.unlink_offline": "Ließ sich nicht entfernen. Prüf deine Internetverbindung.",
   "links.failed": "Das hat nicht geklappt. Versuch es gleich noch einmal.",
   "lesson.next_speaking": "Nächstes Sprechen: {title} →",
   "lesson.mic_repeat": "Nachsprechen",

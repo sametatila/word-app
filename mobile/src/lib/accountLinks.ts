@@ -34,13 +34,18 @@ export async function listAccounts(): Promise<LinkedAccount[]> {
  * sökülemesin diye. Çağıran bunu kullanıcıya "yeniden giriş yap" diye
  * çevirmeli, genel hata olarak değil.
  */
-export async function unlinkAccount(providerId: string): Promise<"ok" | "fresh" | "error"> {
+export async function unlinkAccount(providerId: string): Promise<"ok" | "fresh" | "offline" | "error"> {
   try {
     await api("/api/auth/unlink-account", { method: "POST", body: JSON.stringify({ providerId }) });
     return "ok";
   } catch (e) {
     const status = (e as { status?: number })?.status;
-    return status === 401 || status === 403 ? "fresh" : "error";
+    if (status === 401 || status === 403) return "fresh";
+    /* DURUM KODU YOKSA AĞ HATASI: `api()` HTTP hatalarında `ApiError` (status
+       dolu) atıyor, bağlantı kopmasında düz `Error`. İkisi aynı cümleye
+       düşünce "internet yok" diyen kullanıcıya "biraz sonra tekrar dene"
+       deniyordu; web ikisini ayırıyor (`linked.unlink_offline`). */
+    return status === undefined ? "offline" : "error";
   }
 }
 

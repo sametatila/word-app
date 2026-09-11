@@ -97,7 +97,7 @@ export function LinkedAccounts({ googleEnabled }: { googleEnabled: boolean }) {
       }
       setMsg(t("linked.link_failed"));
     } catch {
-      setMsg(t("linked.link_offline"));
+      setMsg(t("links.link_offline"));
     } finally {
       setBusy(null);
     }
@@ -125,7 +125,7 @@ export function LinkedAccounts({ googleEnabled }: { googleEnabled: boolean }) {
           : t("linked.unlink_failed"),
       );
     } catch {
-      setMsg(t("linked.unlink_offline"));
+      setMsg(t("links.unlink_offline"));
     } finally {
       setBusy(null);
     }
