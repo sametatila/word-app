@@ -4313,6 +4313,49 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   sameList("ogren sekmesi yollari", mob, web);
 }
 
+/* ── 126. kelime listesinin suzgecleri ────────────────────────────────────
+ * Iki sureyi de ayni sey suzuyor (seviye + durum) ama webde iki grup TEK
+ * seritte, aralarinda ince bir cizgiyle duruyordu ve iki ayri "Tumu" cipi
+ * yan yana cikiyordu: hangisinin neyi sifirladigi okunmuyordu. Androidde
+ * gruplar ayri seritler ve sifirlama cipi grubun ADINI tasiyor ("Seviye").
+ *
+ * Olculen: iki grubun secenekleri, sifirlama etiketleri, bes durumun sozluk
+ * anahtarlari ve "ne zaman tekrar" esikleri. */
+{
+  const web = read("src/components/word-list.tsx");
+  const mob = read("mobile/src/screens/WordsScreen.tsx");
+  const mobData = read("mobile/src/data/words.ts");
+  const idler = (src, blok) => {
+    const b = src.slice(src.indexOf(blok), src.indexOf("];", src.indexOf(blok)));
+    /* Bos kimlik = "sifirlama" ogesi; iki taraf onu ayri bicimlerde yaziyor
+       (nesne alani / duz bos dizgi) ve zaten ETIKETIYLE asagida ayrica
+       olculuyor - burada elenmezse fark bicimden gelirdi, anlamdan degil. */
+    return [...b.matchAll(/id: "(\w*)"|\{ key: "(\w*)"|"([A-C][12])"/g)].map((m) => m[1] ?? m[2] ?? m[3]).filter(Boolean);
+  };
+  /* Mobil seviye listesi duz dizgi dizisi, web nesne dizisi - ikisi de
+     ayni kumeye indiriliyor. */
+  const webSeviye = idler(web, "const LEVELS = [");
+  const mobSeviye = idler(mob, "const LEVELS = [");
+  const webDurum = idler(web, "const STATUSES = [");
+  const mobDurum = idler(mob, "const FILTERS: ");
+  /* Sifirlama etiketi: her grubun ILK ogesinin anahtari. */
+  const webSifir = [
+    web.slice(web.indexOf("const LEVELS = [")).match(/labelKey: "([\w.]+)"/)?.[1] ?? "-",
+    web.slice(web.indexOf("const STATUSES = [")).match(/labelKey: "([\w.]+)"/)?.[1] ?? "-",
+  ];
+  const mobSifir = [
+    mob.match(/t\("(words\.filter_\w+)"\)\}<\/Text>/)?.[1] ?? mob.match(/lv \|\| t\("([\w.]+)"\)/)?.[1] ?? "-",
+    mob.slice(mob.indexOf("const FILTERS: ")).match(/label: "([\w.]+)"/)?.[1] ?? "-",
+  ];
+  const anahtar = (src) => [...new Set([...src.matchAll(/"(words\.status_\w+)"/g)].map((m) => m[1]))].sort();
+  const zaman = (src) => [...new Set([...src.matchAll(/"(words\.(?:due_\w+|not_studied))"/g)].map((m) => m[1]))].sort();
+  sameList(
+    "kelime listesi suzgecleri",
+    [...mobSeviye, "|", ...mobDurum, "|", ...mobSifir, "|", ...anahtar(mobData), "|", ...zaman(mobData + mob)],
+    [...webSeviye, "|", ...webDurum, "|", ...webSifir, "|", ...anahtar(web), "|", ...zaman(web)],
+  );
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"

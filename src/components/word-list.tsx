@@ -40,7 +40,10 @@ const ARTIKEL_TONE: Record<string, string> = {
 
 /** Seviye süzgeci — "Tümü" dışındakiler zaten dilden bağımsız (CEFR kodu). */
 const LEVELS = [
-  { id: "", labelKey: "words.filter_all" },
+  /* Sifirlama cipi "Seviye" diyor, "Tumu" degil: iki grup yan yanayken iki
+     ayri "Tumu" cipi cikiyordu ve hangisinin neyi sifirladigi okunmuyordu.
+     Android baslangictan beri grubu adiyla adlandiriyor (`WordsScreen`). */
+  { id: "", labelKey: "words.filter_level" },
   { id: "A1", labelKey: "" },
   { id: "A2", labelKey: "" },
   { id: "B1", labelKey: "" },
@@ -208,6 +211,9 @@ export function WordList({
           placeholder={tx("words.search", { target: courseName(course, lang), nativeLang: LANG_LABEL[lang] })}
           className="option w-full px-4 py-3 text-base outline-none focus:border-[color:var(--color-brand)]"
         />
+        {/* İKİ AYRI ŞERİT — Android'deki gibi. Tek şeritte, aralarında ince
+            bir çizgiyle duruyorlardı ve iki grup tek bir süzgeç gibi
+            okunuyordu; sarılma olduğunda çizgi de satır ortasında kalıyordu. */}
         <div className="flex flex-wrap items-center gap-2">
           {LEVELS.map((l) => (
             <button
@@ -219,7 +225,8 @@ export function WordList({
               {l.labelKey ? tx(l.labelKey) : l.id}
             </button>
           ))}
-          <span className="mx-1 h-5 w-px" style={{ background: "var(--border)" }} />
+        </div>
+        <div className="flex flex-wrap items-center gap-2">
           {STATUSES.map((s) => (
             <button
               key={s.id || "any"}

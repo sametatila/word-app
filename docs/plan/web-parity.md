@@ -7404,3 +7404,30 @@ Kapı ilk yazılışında **ekran başlığından** başlıyordu (`AppHeader
 title={t("learn.learn")}`) ve ilk satırı "learn.learn" diye okuyordu: desen
 bileşen adına çapalanmamıştı. Ölçünün komşusunu ölçmenin onuncu biçimi.
 Üç enjeksiyonun üçü de yakalandı.
+
+### 11.217 Yan yana iki "Tümü" çipi
+
+Kelime listesini iki şey süzüyor: seviye ve durum. Android ikisini **ayrı
+şeritlerde** gösteriyor ve seviyenin sıfırlama çipi grubun adını taşıyor
+("Seviye"). Web ikisini tek şeritte, aralarında ince bir çizgiyle
+gösteriyordu ve iki grup da sıfırlama çipini "Tümü" diye yazıyordu: **yan
+yana iki özdeş çip** vardı ve hangisinin neyi sıfırladığı okunmuyordu.
+Sarılma olduğunda ayraç çizgisi de satırın ortasında kalıyordu.
+
+Web Android'e göre düzeltildi: iki ayrı şerit, seviye çipi "Seviye".
+
+Bu turda bir de **yanlış alarm** vardı ve nasıl elendiği kayda değer.
+Anahtar taraması webde `words.status_leech` ve `words.status_familiar`
+görüp mobilde görmeyince "Android beş durumdan üçünü biliyor" gibi
+duruyordu. Gerçekte mobil beşini de biliyor — eşikler `data/words`
+`statusOf` içinde, ekranın kendisinde değil. Aynı şekilde `words.due_*`
+satırları da mobilde var. **Ekranın anahtarlarına bakıp "yok" demek, ölçünün
+komşusunu ölçmenin bir başka biçimi.**
+
+Sunucunun `status` alanı da kontrol edildi: uç `intervalDays == null → new`,
+`>= 21 → mastered` diyor, yani mobilin sunucu alanına dayanan hesabı ile
+webin `intervalDays` eşiklerine dayanan hesabı aynı sonucu veriyor.
+
+**§126** iki grubun seçeneklerini, sıfırlama etiketlerini, beş durumun sözlük
+anahtarlarını ve "ne zaman tekrar" eşiklerini ölçüyor. Üç enjeksiyonun üçü de
+yakalandı.
