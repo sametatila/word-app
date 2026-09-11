@@ -11121,3 +11121,38 @@ quizinin sonucu. Web'de kabın `role="status"`u, mobilde sonuç metninin
 turda eklemek doğru olmazdı: sonuç kabı her ekranda ayrı yerde ve bazılarında
 birden fazla sonuç durumu var (sınavın bölüm sonu ile kâğıt sonu ayrı). Sırayla
 kapanacak; §223 şimdilik kapanan ikisini tutuyor.
+
+## §11.338 — Sonuç duyurusu: üç yüzey daha (dokuzdan altısı kaldı)
+
+§11.337'de adlarıyla yazdığım dokuz sonuç yüzeyinden üçü kapandı: **patron
+turu**, **meydan okuma** ve **günün turu** — altısı da (üç yüzey × iki
+platform) artık turun sonucunu duyuruyor.
+
+Her birinin sonuç kabı ayrı yerdeydi ve bu, "hepsini bir turda ekleyelim"
+demenin neden doğru olmadığını gösteriyor:
+
+- **Patron turu:** `Frame` sarmalayıcısı **üç durumu da** sarıyor (giriş, oyun,
+  sonuç). `role="status"`u orada sabitlemek tur oynanırken de canlı bölge
+  açmak olurdu — her doğru cevapta ekran okuyucu konuşurdu. Bunun yerine
+  `Frame` bir `role` prop'u aldı ve yalnız sonuç dalı veriyor.
+- **Meydan okuma:** sonuç içeriği kendi kabında (`<div className="text-center">`),
+  oraya kondu. Mobil tarafta bu ekranda **zaten bir canlı bölge vardı** — ama
+  o, oyun içindeki anlık geri bildirim şeridi (`flash`), sonuç değil. Var olan
+  bir canlı bölgeyi "bu ekran duyuruyor" diye saymak, bu turların en sık
+  hatasının (komşuyu ölçmek) ta kendisi olurdu.
+- **Günün turu:** bileşen o noktada zaten yalnızca sonuç kartını döndürüyor,
+  rol kartın kabına kondu.
+
+Mobil tarafta canlı bölge her üçünde de **sonuç metninde**, uygulamanın kendi
+kalıbı gereği — ama hangi metin olduğu ekrana göre değişiyor (`boss.passed`,
+puan `display`i, `formatNumber(score)`), o yüzden kapı her birini kendi
+dizesiyle arıyor.
+
+§223 artık on ölçüt okuyor (beş yüzey × iki platform). Üç enjeksiyon
+yakalandı. **Kalan altı yüzey:** haftalık (`weekly-player` ↔ `WeeklyScreen`),
+deneme sınavı (`mock-exam-player` ↔ `MockExamScreen`), seviye sınavı
+(`exam-player` ↔ `ExamScreen`), rol yapma (`roleplay-exam` ↔
+`RoleplayExamScreen`), oturum (`session-player` ↔ `GameScreen`) ve yürüyüş
+(`walk-player` ↔ `WalkModeScreen`). Son üçü özellikle dikkat istiyor: sınavın
+**bölüm sonu** ile **kâğıt sonu** ayrı iki sonuç ve oturumun içinde etap
+kartları var.
