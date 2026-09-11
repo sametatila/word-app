@@ -3194,6 +3194,24 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   sameList("yazilarim bos hali", bos("mobile/src/screens/WritingsScreen.tsx"), bos("src/components/writings-card.tsx"));
 }
 
+/* ── 89. sinav kapaginda BOLUMLER ve SURE ─────────────────────────────────
+ * "Ne kadar surecek, neler sorulacak" sorusu sinava GIRMEDEN cevaplanmali.
+ * Android kapaginda bolum listesi (madde sayilariyla) ve toplam dakika var;
+ * web kapagi yalniz basligi ve odaklari gosteriyordu. Sayilar kagittan degil
+ * sabit plandan geliyor - kapagi acmak haftanin kagidini harcamamali. */
+{
+  const kapak = (p) => {
+    const src = read(p).replace(/\/\*[\s\S]*?\*\//g, " ").replace(/\/\/[^\n]*/g, " ");
+    return [
+      "bolum listesi=" + (src.includes("exam.sections") ? "var" : "yok"),
+      "sure=" + (src.includes("exam.minutes") ? "var" : "yok"),
+      "odaklar=" + (src.includes("exam.measures_these") || /focus/.test(src) ? "var" : "yok"),
+      "deneme uyarisi=" + (/trial/.test(src) ? "var" : "yok"),
+    ];
+  };
+  sameList("sinav kapagi", kapak("mobile/src/screens/ExamScreen.tsx"), kapak("src/components/exam-player.tsx"));
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"

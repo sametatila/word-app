@@ -97,7 +97,9 @@ export {
 } from "@/lib/exam-types";
 
 
-const COUNTS: Record<ExamKind, { vocab: number; grammar: number; produce: number; text: number; speaking: number; writing: number }> = {
+/* Kapak da bu sayıları okuyor (`/api/exam` GET): madde sayısı kâğıt
+   üretilmeden bilinebiliyor ve kapağı açmak haftanın kâğıdını harcamamalı. */
+export const COUNTS: Record<ExamKind, { vocab: number; grammar: number; produce: number; text: number; speaking: number; writing: number }> = {
   module: { vocab: 6, grammar: 6, produce: 5, text: 1, speaking: 2, writing: 1 },
   level: { vocab: 12, grammar: 12, produce: 6, text: 2, speaking: 3, writing: 1 },
 };

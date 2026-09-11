@@ -3,8 +3,9 @@ import { clampDay } from "@/lib/award";
 import { getUserId } from "@/lib/auth/server";
 import { sameOrigin } from "@/lib/auth/origin";
 import { ensureProfile, submitAnswers } from "@/lib/session";
-import { buildExam, examHistory, finishExam, modulePrereq, type ExamSubmission, type ExamSectionId } from "@/lib/exam";
+import { buildExam, COUNTS as EXAM_COUNTS, examHistory, finishExam, modulePrereq, type ExamSubmission, type ExamSectionId } from "@/lib/exam";
 import { moduleExamPlan, hasModuleExams } from "@/lib/lessons/module-exam";
+import { MODULE_SECONDS } from "@/lib/exam-types";
 import { localiseExam, nativeExamText } from "@/lib/lessons/native-server";
 import { nativeOf } from "@/lib/courses";
 import { track } from "@/lib/events";
@@ -55,8 +56,20 @@ export async function GET(req: Request) {
      * KÂĞIDI ÜRETMİYOR, o yüzden kapağı açmak haftanın kâğıdını harcamıyor.
      */
     const trial = plan ? !(await modulePrereq(userId, profile?.course ?? "de", level as CefrLevel, Number(mod))) : false;
+    /*
+     * BÖLÜMLER VE SÜRE DE KAPAKTA. Kâğıt üretilmeden de biliniyorlar: madde
+     * sayıları (`EXAM_COUNTS`) ve süre (`MODULE_SECONDS`/`LEVEL_SECONDS`)
+     * sabit. Android kapağında ikisi de yazıyor - kullanıcı "ne kadar
+     * sürecek, neler sorulacak" sorusunu sınava GİRMEDEN cevaplıyor; webde
+     * kapak yalnız başlığı ve odakları gösteriyordu.
+     */
+    const counts = EXAM_COUNTS.module;
     return NextResponse.json(
-      { cover: plan ? { code: plan.code, titleDe: plan.titleDe, titleTr: plan.titleTr, focus: plan.focus, trial } : null },
+      {
+        cover: plan
+          ? { code: plan.code, titleDe: plan.titleDe, titleTr: plan.titleTr, focus: plan.focus, trial, seconds: MODULE_SECONDS, counts }
+          : null,
+      },
       { headers: { "cache-control": "private, max-age=60" } },
     );
   }

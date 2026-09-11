@@ -691,7 +691,7 @@ export function ExamPlayer({ level, module }: { level: CefrLevel; module: number
 function Cover({ level, module, onStart }: { level: CefrLevel; module: number | null; onStart: () => void }) {
   const course = useCourse();
   const t = useT();
-  const [cover, setCover] = useState<{ code: string; titleDe: string; titleTr: string; focus: { de: string; tr: string }[]; trial?: boolean } | null>(null);
+  const [cover, setCover] = useState<{ code: string; titleDe: string; titleTr: string; focus: { de: string; tr: string }[]; trial?: boolean; seconds?: number; counts?: Record<string, number> } | null>(null);
   useEffect(() => {
     if (module === null) return;
     let alive = true;
@@ -717,6 +717,29 @@ function Cover({ level, module, onStart }: { level: CefrLevel; module: number | 
         {cover?.titleDe ?? (module === null ? `Prüfung ${level}` : `Modul ${module + 1}`)}
       </h1>
       {cover?.titleTr ? <p className="text-base font-semibold" style={{ color: "var(--color-brand)" }}>{cover.titleTr}</p> : null}
+
+      {/*
+        BÖLÜMLER VE SÜRE. "Ne kadar sürecek, neler sorulacak" sorusu sınava
+        GİRMEDEN cevaplanmalı; web kapağı yalnız başlığı ve odakları
+        gösteriyordu. Sayılar kâğıttan değil sabit plandan geliyor (uç kapağı
+        üretirken kâğıdı hazırlamıyor). Android kapağında ikisi de var.
+      */}
+      {cover?.counts ? (
+        <div className="mt-4 rounded-2xl px-4 py-3 surface-2">
+          <p className="text-sm font-semibold">{t("exam.sections")}</p>
+          <ul className="mt-1 space-y-0.5">
+            {SECTION_ORDER.filter((id) => (cover.counts?.[id === "reading" || id === "listening" ? "text" : id] ?? 0) > 0).map((id) => (
+              <li key={id} className="muted text-xs">
+                <span lang="de" className="font-semibold">{SECTION_TITLE_DE[id]}</span> · {t(SECTION_TITLE_KEYS[id])}{" "}
+                ({cover.counts?.[id === "reading" || id === "listening" ? "text" : id]})
+              </li>
+            ))}
+          </ul>
+          {cover.seconds ? (
+            <p className="muted mt-1.5 text-xs">{t("exam.minutes", { n: Math.round(cover.seconds / 60) })}</p>
+          ) : null}
+        </div>
+      ) : null}
 
       {cover?.focus.length ? (
         <div className="mt-4">
