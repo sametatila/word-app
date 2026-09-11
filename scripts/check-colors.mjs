@@ -51,12 +51,17 @@ const MOBILE_SKIP = [
   "mobile/src/ui/icons.tsx",
   "mobile/src/ui/avatarParts.tsx",
   "mobile/src/ui/PersonAvatar.tsx",
+  /* Arma paleti: renk bir jeton degil KIMLIK - ayni kisi acik ve koyu temada
+     ayni renkte gorunmeli, jetona baglanirsa temayla degisir ve listede
+     tanidigin kisiyi renginden bulamazsin (gerekcesi web
+     `components/avatar.tsx` basinda). Iki dosyanin ayni on iki cifti
+     tasidigini parity-check 209 olcuyor. */
+  "mobile/src/ui/Avatar.tsx",
 ];
 
 /** Paletin dışında kalması KABUL EDİLEN değerler, sebepleriyle. */
 const MOBILE_ALLOW = new Map([
   ["#2b1d12", "koç balonunun KOYU zemindeki metni: balon orada sabit beyaza yakın (rgba(255,255,255,0.94)), yani zemin temayla değişmiyor — jetondan gelen metin gece temasında açık kalıp okunmazdı. Web `coach-bubble` aynı değeri aynı sebeple yazıyor"],
-  ["#FA7C13", "avatar dairesinin zemini: Erdi çiziminin PNG zeminiyle aynı değer, webde de aynı satır"],
   ["#c0392b", "varsayılan şapka rengi: kullanıcının seçtiği aksesuar, palet değil"],
   /* Konfeti kimlik listesi - web `components/celebrate.tsx` `COLORS` ile birebir. */
   ["#eda45d", "konfeti (web listesiyle birebir)"],

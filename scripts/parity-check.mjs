@@ -16,6 +16,14 @@
 import { existsSync, readFileSync, readdirSync } from "node:fs";
 
 const ESC = String.fromCharCode(27);
+/** 209: `PALETTE` tablosunun govdesi - dosyadaki baska cift dizilerini alma. */
+function govdeAl209(src) {
+  const i = src.indexOf("PALETTE");
+  if (i < 0) return "";
+  const j = src.indexOf("];", i);
+  return j < 0 ? "" : src.slice(i, j);
+}
+
 const C = { ok: ESC + "[32m", bad: ESC + "[31m", b: ESC + "[1m", off: ESC + "[0m", dim: ESC + "[2m" };
 let fails = 0;
 
@@ -7266,6 +7274,120 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     "bulunan",
     "beklenen",
   );
+
+  /* ── 210. beceri "bitti" esigi: sunucu, web ve mobil ─────────────────
+   * Sunucu bir beceri egzersizini yalniz SON PUANI 70'i gecince bitmis
+   * sayiyor (`lib/immersion/progress`: Patika kapisini da bununla aciyor).
+   * Web ayni esigi uc yerde ayri ayri yazmisti, mobilde ise esik HIC YOKTU:
+   * `markItemDone` egzersiz biter bitmez cagriliyordu ve `syncItemProgress`
+   * sunucudan gelen her satiri puanina bakmadan kumeye katiyordu.
+   *
+   * Kullanicinin gordugu: %10 alan bir egzersiz Android'de yesil onayli,
+   * "3/5 tamamlandi" sayacinin icinde ve Patika'nin beceri yuvasinda bitmis;
+   * web'de ayni egzersiz hala "siradaki". Iki uygulama ayni hesabin ayni
+   * ilerlemesini farkli okuyordu.
+   *
+   * Sayinin kendisi "ortak sayisal sabitler" kapisina dusuyor
+   * (`SKILL_DONE_PCT` iki agacta ayni adla). Bu kapi CAGRI YERLERINI okuyor:
+   * esitlik tek basina yetmez, karari veren karsilastirma sabiti kullanmiyorsa
+   * baglanti kopuk kalir ve sayi yeniden ayrisir. */
+  {
+    const webKaynak = sil(read("src/lib/score-bands.ts"));
+    const mobKaynak = sil(read("mobile/src/lib/learningRules.ts"));
+    /* Cagri yeri = `isSkillDone(` gecen dosya. Elle yazilmis esik = ayni
+       dosyada `>= 70` ya da `>= DONE_PCT` bicimi; ikisi birlikte olcum,
+       cunku "kaynaktan okuyor" ile "kaynagi ice aliyor ama yine elle
+       karsilastiriyor" ayri seylerdir. */
+    const cagiriyor = (f) => (/isSkillDone\(/.test(sil(read(f))) ? "kaynaktan" : "elle yazili");
+    const elleEsik = (f) => (/>=\s*(70|DONE_PCT)\b/.test(sil(read(f))) ? " + ELLE ESIK" : "");
+    const yer = (ad, f) => ad + "=" + cagiriyor(f) + elleEsik(f);
+    sameList(
+      "beceri bitti esigi cagri yerleri",
+      [
+        "web sabit=" + ((webKaynak.match(/SKILL_DONE_PCT = (\d+)/) ?? [])[1] ?? "yok"),
+        "mobil sabit=" + ((mobKaynak.match(/SKILL_DONE_PCT = (\d+)/) ?? [])[1] ?? "yok"),
+        yer("sunucu kapisi", "src/lib/immersion/progress.ts"),
+        yer("web liste", "src/app/(app)/skills/page.tsx"),
+        yer("web oynatici", "src/app/(app)/immersion/skill/[id]/page.tsx"),
+        yer("mobil sunucu birlesimi", "mobile/src/game/lessonProgress.ts"),
+        yer("mobil oynatici", "mobile/src/screens/ItemScreen.tsx"),
+      ],
+      [
+        "web sabit=70",
+        "mobil sabit=70",
+        "sunucu kapisi=kaynaktan",
+        "web liste=kaynaktan",
+        "web oynatici=kaynaktan",
+        "mobil sunucu birlesimi=kaynaktan",
+        "mobil oynatici=kaynaktan",
+      ],
+      "bulunan",
+      "beklenen",
+    );
+  }
+
+
+  /* 210'un ikinci yarisi: AYNI iki sayi (70 / 40) uygulamanin dort ayri
+   * yerinde bir puani "iyi / orta / zayif" diye bantliyor - yazma kartinin
+   * puan tonu, degerlendirme kartinin tonu, egzersiz sonucundaki maskot ve
+   * konfeti. Dordu de elle yaziliydi; biri degistirilirse ayni puan iki
+   * ekranda iki ayri renk alirdi.
+   *
+   * Kapi bandi HESAPLAYAN cagriyi ariyor: sabiti ice alip yine `>= 70`
+   * yazmak baglantiyi kurmuyor. */
+  {
+    const bant = (ad, f) => {
+      const src = sil(read(f));
+      const kaynak = /scoreBand\(/.test(src);
+      const elle = /(>=|<)\s*(70|40)\b/.test(src);
+      return ad + "=" + (kaynak && !elle ? "kaynaktan" : kaynak ? "kaynaktan + ELLE ESIK" : "elle yazili");
+    };
+    sameList(
+      "puan bandi cagri yerleri",
+      [
+        bant("web yazma karti", "src/components/writings-card.tsx"),
+        bant("web degerlendirme karti", "src/components/feedback/assessment-card.tsx"),
+        bant("web egzersiz sonucu", "src/components/skills/player-shell.tsx"),
+        bant("mobil yazma listesi", "mobile/src/screens/WritingsScreen.tsx"),
+        bant("mobil egzersiz sonucu", "mobile/src/screens/ItemScreen.tsx"),
+      ],
+      [
+        "web yazma karti=kaynaktan",
+        "web degerlendirme karti=kaynaktan",
+        "web egzersiz sonucu=kaynaktan",
+        "mobil yazma listesi=kaynaktan",
+        "mobil egzersiz sonucu=kaynaktan",
+      ],
+      "bulunan",
+      "beklenen",
+    );
+  }
+
+  /* ── 209. arma paleti: on iki renk cifti ─────────────────────────────
+   * Arma rengi bir KIMLIK: "ayni kisi telefonda ve tarayicida ayni renkte
+   * gorunmeli, yoksa listede tanidigin kisiyi renginden bulamazsin" - bunu
+   * iki dosyanin yorumu da SOYLUYOR, olcen bir sey yoktu. Tam bu turlarda
+   * tekrar tekrar cikan sinif: zorunlulugu yazan cumle.
+   *
+   * Renkler bilerek jetona bagli DEGIL (tema degistiginde kimlik degismesin),
+   * o yuzden `check:colors` iki dosyayi da atliyor - yani ham hex'leri
+   * karsilastiran baska bir kapi yoksa ayrisma hicbir yerden gorunmuyor.
+   * Sira da onemli: secim kimligin hash'inden indeksle yapiliyor, cift
+   * yerleri degisirse ayni kisi iki platformda AYRI renge duser. */
+  {
+    const ciftler = (f) => {
+      const blok = govdeAl209(sil(read(f)));
+      return [...blok.matchAll(/\["(#[0-9a-fA-F]{6})",\s*"(#[0-9a-fA-F]{6})"\]/g)]
+        .map((m, i) => i + ":" + m[1].toLowerCase() + ">" + m[2].toLowerCase());
+    };
+    const web = ciftler("src/components/avatar.tsx");
+    const mob = ciftler("mobile/src/ui/Avatar.tsx");
+    /* Palet tablosunun govdesi: `PALETTE`ten kapanis parantezine kadar.
+       Dosyanin tamamini taramak baska cift dizilerini de (desen tablolari,
+       gradyanlar) icine alirdi. */
+    sameList("arma paleti", mob.length ? mob : ["mobilde palet bulunamadi"], web.length ? web : ["webde palet bulunamadi"], "mobil", "web");
+    sameList("arma paleti uzunlugu", ["cift=" + mob.length], ["cift=12"], "bulunan", "beklenen");
+  }
 
   /* ── 208. ilerlemeye sayilan maddeler: sunucu ile iki istemci ─────────
    * Sunucu `total`a yalniz OYNANABILIR ve tamamlanabilir maddeleri katiyor
