@@ -7275,6 +7275,50 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     "beklenen",
   );
 
+  /* ── 216. Gelisim ekrani: ad, ustalik kartinin hedefi ve sayi bicimi ──
+   * Uc ayrisma birden:
+   *
+   * 1. EKRANIN ADI. Ayni ekran webde "Ilerlemem" (`progw.my_progress`,
+   *    web-only sozlukte), Android'de "Gelisim" (`progress.progress`, TABAN
+   *    sozlukte) diye yaziyordu. §11.102/§11.126 dokuz `prog.*`/`progw.*`
+   *    kopyasini mobil kaynakli anahtarlara tasimisti; bu BIRI hayatta
+   *    kalmisti, cunku cagriliyordu ve olu-anahtar kapisi yalniz cagrilmayani
+   *    goruyor.
+   * 2. USTALIK KARTININ HEDEFI. Android'de serit Kelimeler'e goturuyor
+   *    (gerekcesi orada: "Kart hedefsiz duruyordu, satir da bagalamsizdi;
+   *    ikisi birlesti"), webde tiklanamiyordu - hedef sekme cubugunda var ama
+   *    karttan yol yoktu. Dokunulabilirligi SOYLEYEN chevron da yoktu.
+   * 3. SAYI BICIMI. Web `formatNumber` ile bin ayraci koyuyor, mobil bu tek
+   *    satirda ham sayi yaziyordu - oysa ayni dosyada baska alti yerde
+   *    `formatNumber` geciyor. Rozet duvarinda ayni sinif zaten duzeltilmisti. */
+  {
+    const webIlerleme = sil(read("src/components/progress-view.tsx"));
+    const webSayfa = sil(read("src/app/(app)/profile/progress/page.tsx"));
+    const mobIlerleme = sil(read("mobile/src/screens/ProgressScreen.tsx"));
+    const webSozluk = sil(read("src/i18n/web/tr.ts"));
+    sameList(
+      "Gelisim ekraninin adi ve ustalik karti",
+      [
+        "web baslik=" + (/titleMeta\("progress\.progress"\)/.test(webSayfa) ? "progress.progress" : "AYRI ANAHTAR"),
+        "web geri dugmesi=" + (/title=\{t\("progress\.progress"\)\}/.test(webSayfa) ? "progress.progress" : "AYRI ANAHTAR"),
+        "mobil baslik=" + (/t\("progress\.progress"\)/.test(mobIlerleme) ? "progress.progress" : "AYRI ANAHTAR"),
+        "olu progw anahtari=" + (/"progw\./.test(webSozluk) ? "VAR" : "yok"),
+        "web kart hedefi=" + (/<Link href="\/words" aria-label=\{t\("profile\.my_words"\)\}/.test(webIlerleme) ? "Kelimeler" : "YOK"),
+        "mobil kart hedefi=" + (/nav\.navigate\("Words"\)[\s\S]{0,120}profile\.my_words/.test(mobIlerleme) ? "Kelimeler" : "YOK"),
+        "web sayi bicimi=" + (/formatNumber\(mastered, lang\)/.test(webIlerleme) ? "yerelden" : "HAM"),
+        "mobil sayi bicimi=" + (/formatNumber\(mastered\)/.test(mobIlerleme) ? "yerelden" : "HAM"),
+      ],
+      [
+        "web baslik=progress.progress", "web geri dugmesi=progress.progress",
+        "mobil baslik=progress.progress", "olu progw anahtari=yok",
+        "web kart hedefi=Kelimeler", "mobil kart hedefi=Kelimeler",
+        "web sayi bicimi=yerelden", "mobil sayi bicimi=yerelden",
+      ],
+      "bulunan",
+      "beklenen",
+    );
+  }
+
   /* ── 215. rozet duvari: yanit denetimi ve iskeletin duyurusu ─────────
    * Iki istemci de `/api/achievements`in govdesini KORU KORUNE kabul
    * etmiyor - cunku sayaci eksik bir yanitta ilerleme serigi `NaN%` genislik
