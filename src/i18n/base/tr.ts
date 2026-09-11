@@ -590,6 +590,7 @@ export const trBase: Record<string, string> = {
   "mockexam.solo_hint": "Görevi baştan sona anlat.",
   "mockexam.partner": "KARŞI TARAF",
   "mockexam.mic_needed": "Mikrofon izni ya da konuşma tanıma bu cihazda kullanılamıyor. Konuşmanı yazarak da verebilirsin.",
+  "mockexam.option_used": "başka bir maddede kullanıldı",
   "mockexam.transcript_you": "SÖYLEDİKLERİN",
   "mockexam.transcript_note": "Metin cihazın konuşma tanıyıcısından geldi; yanlış yazılan yerleri düzeltebilirsin. Ses hiçbir yere gönderilmiyor.",
   "mockexam.exchange_intro": "Karşılıklı konuşma: {n} kez sıra sana gelecek. Önce {prep} saniye hazırlık süren var.",

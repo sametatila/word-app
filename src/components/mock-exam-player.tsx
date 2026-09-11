@@ -573,8 +573,17 @@ function Item({ course, item, task, value, answers, onAnswer }: { course: MockCo
             : item.kind === "match"
               ? (
                 <div className="flex flex-wrap gap-2">
+                  {/* SOLUK OLMAK BİR BİLGİ: bu şık başka bir maddede
+                      kullanılmış. Opaklık bunu yalnız göze söylüyordu; ekran
+                      okuyucu kullanan öğrenci aynı şıkkı ikinci kez seçtiğini
+                      ancak sonuçta görüyordu. Şık yine basılabilir. Android
+                      aynı satırı taşıyor. */}
                   {(task.options ?? []).map((o) => (
-                    <span key={o.key} style={{ opacity: usedKeys?.has(o.key) && value !== o.key ? 0.45 : 1 }}>
+                    <span
+                      key={o.key}
+                      title={usedKeys?.has(o.key) && value !== o.key ? t("mockexam.option_used") : undefined}
+                      style={{ opacity: usedKeys?.has(o.key) && value !== o.key ? 0.45 : 1 }}
+                    >
                       {chip(o.key, value === o.key, () => onAnswer(item.id, o.key), o.key)}
                     </span>
                   ))}

@@ -666,6 +666,12 @@ function ItemView({
          hiçbir şekilde duymuyordu — sınavda cevabını doğrulayamamak demek.
          Aynı eksik iki platformda da vardı, ikisi birlikte kapatıldı. */
       accessibilityState={{ selected: active }}
+      /* SOLUK OLMAK BİR BİLGİ: bu şık başka bir maddede kullanılmış.
+         Opaklık bunu yalnız GÖZE söylüyordu; ekran okuyucu kullanan öğrenci
+         aynı şıkkı ikinci kez seçtiğini ancak sonuçta görüyordu. İpucu
+         eklendi (şık yine basılabilir — cevabı taşımak isteyen öğrenci
+         engellenmemeli, bkz. yukarıdaki not). Web aynı satırı taşıyor. */
+      accessibilityHint={dim ? t("mockexam.option_used") : undefined}
       style={{
         paddingVertical: spacing.sm, paddingHorizontal: spacing.md, borderRadius: radii.md,
         backgroundColor: active ? colors.primarySoft : colors.surface2,

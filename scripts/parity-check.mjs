@@ -5495,6 +5495,34 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   sameList("secili durum duyurusu", sessiz.length ? sessiz : ["yok"], ["yok"], "sessiz secim", "beklenen");
 }
 
+/* ── 155. "zaten kullanildi" bilgisi ──────────────────────────────────────
+ * Eslestirme maddesinde kullanilan bir sik SOLUYOR (opaklik 0.45) ve bu bir
+ * BILGI: "bu siki baska bir maddede kullandin". Opaklik onu yalniz GOZE
+ * soyluyordu; ekran okuyucu kullanan ogrenci ayni siki ikinci kez sectigini
+ * ancak sonucta goruyordu. Iki platformda da oyleydi.
+ *
+ * Sik YINE BASILABILIR kaliyor - cevabini tasimak isteyen ogrenci
+ * engellenmemeli (iki oynaticinin da kendi notu bunu soyluyor), o yuzden
+ * cozum `disabled` degil bir IPUCU.
+ *
+ * Olculen: solma kuralinin varligi ve ipucunun ayni kosula bagli olmasi. */
+{
+  const strip = (x) => x.replace(/\/\*[\s\S]*?\*\//g, " ").replace(/(^|[^:"'`\\])\/\/.*$/gm, "$1");
+  const solma = (yol, ipucu) => {
+    const src = strip(read(yol)).replace(/\s+/g, " ");
+    return [
+      "solma=" + (/opacity: (?:dim \? 0\.45|usedKeys\?\.has\(o\.key\) && value !== o\.key \? 0\.45)/.test(src) ? "var" : "yok"),
+      "ipucu=" + (ipucu.test(src) ? "var" : "yok"),
+      "hâlâ basilabilir=" + (/disabled=\{dim\}|disabled=\{usedKeys/.test(src) ? "hayir" : "evet"),
+    ];
+  };
+  sameList(
+    "eslestirmede kullanilmis sik",
+    solma("mobile/src/screens/MockExamScreen.tsx", /accessibilityHint=\{dim \? t\("mockexam\.option_used"\)/),
+    solma("src/components/mock-exam-player.tsx", /title=\{usedKeys\?\.has\(o\.key\) && value !== o\.key \? t\("mockexam\.option_used"\)/),
+  );
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"

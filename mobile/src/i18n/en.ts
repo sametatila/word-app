@@ -588,6 +588,7 @@ export const en: Record<string, string> = {
   "mockexam.solo_hint": "Cover the task from start to finish.",
   "mockexam.partner": "YOUR PARTNER",
   "mockexam.mic_needed": "Microphone permission or speech recognition is unavailable on this device. You can also type what you would say.",
+  "mockexam.option_used": "already used in another item",
   "mockexam.transcript_you": "WHAT YOU SAID",
   "mockexam.transcript_note": "This text came from the device's speech recognition; you can fix anything it got wrong. The audio is never sent anywhere.",
   "mockexam.exchange_intro": "Interactive task: it will be your turn {n} times. You get {prep} seconds to prepare first.",

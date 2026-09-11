@@ -588,6 +588,7 @@ export const de: Record<string, string> = {
   "mockexam.solo_hint": "Behandeln Sie die Aufgabe von Anfang bis Ende.",
   "mockexam.partner": "IHR GEGENÜBER",
   "mockexam.mic_needed": "Mikrofonberechtigung oder Spracherkennung steht auf diesem Gerät nicht zur Verfügung. Sie können Ihre Äußerung auch tippen.",
+  "mockexam.option_used": "bereits bei einer anderen Aufgabe verwendet",
   "mockexam.transcript_you": "IHRE ÄUSSERUNG",
   "mockexam.transcript_note": "Der Text stammt aus der Spracherkennung des Geräts; Sie können ihn korrigieren. Die Aufnahme wird nirgendwohin gesendet.",
   "mockexam.exchange_intro": "Dialogaufgabe: Sie sind {n}-mal an der Reihe. Zuerst haben Sie {prep} Sekunden Vorbereitungszeit.",

@@ -8219,3 +8219,33 @@ Kapı üç kez düzeltildi ve üçü de öğretici:
 Kapının sınırı da yazılı: tarama etiketin kendi içine bakıyor, seçili sınıfı
 bir değişkene alınmışsa (`const cls = …; className={cls}`) iz kalmıyor. Böyle
 iki yer vardı (beceri quizi), ikisi de elle düzeltildi.
+
+### 11.249 Solmak bir bilgiydi ve yalnız göze söyleniyordu
+
+§11.248'in taramasını "devre dışı" durumuna uygularken **neredeyse kırk dört
+sahte düzeltme yapıyordum** ve onu yazmak gerekiyor.
+
+Mobilde `disabled` taşıyan kırk dört basılabilirin hiçbirinde
+`accessibilityState={{ disabled }}` yoktu. Elle eklemeye başlamadan önce
+kaynağa baktım: React Native'in `Pressable`ı bunu **kendisi** yapıyor
+(`Pressable.js`: `disabled != null ? {..._accessibilityState, disabled} : …`)
+ve `PressableScale` propu aynen geçiriyor. Web'de de `<button disabled>` zaten
+yerli. Yani kırk dördü de doğruydu; yazacağım kapı kırk dört yanlış alarm
+üretecekti.
+
+**Kuralı bilmeden tarama yapmak, taramanın sonucunu yanlış okutuyor.**
+§11.236'daki "neyi saydığına bak" dersinin ikizi: orada sayı şişmişti, burada
+eksiklik uydurmaydı.
+
+Doğru bulgu bir adım ötedeydi. Eşleştirme maddesinde **kullanılmış bir şık
+soluyor** (opaklık 0.45) ve bu bir bilgi: "bu şıkkı başka bir maddede
+kullandın". Opaklık onu yalnız göze söylüyordu; ekran okuyucu kullanan öğrenci
+aynı şıkkı ikinci kez seçtiğini ancak sonuçta görüyordu — **iki platformda
+da.** Çözüm `disabled` değil bir **ipucu**: şık basılabilir kalmalı, çünkü
+cevabını taşımak isteyen öğrenci engellenmemeli (iki oynatıcının da kendi notu
+bunu söylüyor).
+
+**§155** üç şeyi birden ölçüyor: solma kuralı, ipucunun aynı koşula bağlı
+olması ve şıkkın **hâlâ basılabilir** kalması — sonuncusu olmasa "ipucu
+ekledim" diye gelip erişimi kapatan bir değişiklik sessizce geçerdi. Üç
+enjeksiyonun üçü de yakalandı.
