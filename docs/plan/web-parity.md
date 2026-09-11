@@ -11491,3 +11491,72 @@ bir düğüme koymak kapıyı yeşil bırakmıyor.
 Bu turda yedek sırası **doğru** yapıldı: anlık görüntü düzeltmelerden **sonra**
 alındı, enjeksiyonlar ondan geri alındı (§11.343'te tersi yapılmış ve o turun
 kendi düzeltmesi silinmişti).
+
+## §11.345 — Durum dallarının tasarımı: maskot, kutlama, çıkış yolu
+
+§11.343 beklemeyi, §11.344 hatayı ölçtü; bu tur **aynı dalların tasarımına**
+baktı. Üç kusur çıktı.
+
+### 1. Maskot: aynı kip bir platformda karakterli, ötekinde çıplak metin
+
+Android'in **yürüyüş ekranı dört yerde** maskot çiziyor (giriş, duraklama,
+bitiş, başlangıç) — **web'de hiç yoktu**. Meydan okumanın boş dalı, rol yapma
+sınavının ve seviye sınavının hata dalları da Android'de maskotlu, web'de
+metin bloğuydu. Maskot uygulamanın karakteri; yok olduğu ekran başka bir
+uygulamaya benziyor.
+
+Beş yere eklendi. Seviye sınavının **çevrimdışı kayıt** dalında bilerek
+çizilmiyor: orada kötü bir şey olmadı, kayıt bekliyor.
+
+### 2. Yürüyüşün bitiş ekranı: devam ve paylaşım yoktu
+
+| | Android | Web (eski) |
+|---|---|---|
+| kutlama | `Celebrate` (%60 eşiği) | — |
+| maskot | `celebrate`/`happy`/`idle` | — |
+| devam | `newTour` — aynı ekranda yeni tur | — |
+| paylaşım | `shareResult(correct, total)` | — |
+| çıkış | bitir | **yalnız bitir** |
+
+Yani web'de bir yürüyüş turunu bitirdikten sonra **yeni bir tura devam etmek
+için kipten çıkıp yeniden girmek** gerekiyordu, ve sonucu paylaşmanın hiçbir
+yolu yoktu. Kutlama eşiği de Android'den alındı: %60.
+
+Paylaşım için `src/lib/share.ts` `resultText` + `shareText` kazandı;
+`shareInvite` artık onun üstünde duran ince bir sarmalayıcı. Olay etiketi
+ayrıldı (`invite` / `result`) — mobil de öyle sayıyor. Bağlantıdaki
+`?ref=sonuc` işareti iki platformda aynı, yoksa paylaşımlar tek yerde
+sayılamaz.
+
+### 3. "Yapabildiklerim" boş hâli çıkış yolu göstermiyordu
+
+Metin "konuşma ve alıştırmaları bitirdikçe" diyor ama **gidilecek yeri**
+söylemiyordu; kullanıcı "nereye gideceğim" sorusuyla baş başa kalıyordu. Ev
+kalıbı zaten bu (`WritingsScreen` boş hâli yazma alıştırmalarına götürüyor).
+İkisi de eksik olduğu için karşılaştırma geçiyordu — ölçüt mutlak alındı ve
+iki platform birlikte düzeltildi. Yeni anahtar yok: hedefin adı `nav.path`.
+
+### Kapı: iki kez hiçbir şey ölçmedi, ikisi de enjeksiyonla çıktı
+
+**Tanık zorunlu oldu.** İlk yazım çapayı `src.indexOf` ile arıyordu ve sınav
+oynatıcısında `phase === "error"` **ilk olarak sayacın muafiyet listesinde**
+geçiyor (`… || phase === "error") return;`) — gövde bambaşka bir ağaçtan
+doluyor ve kapı **doğru koda "YOK"** diyordu. Artık her çift bir **tanık**
+taşıyor: dalın gövdesinde mutlaka bulunması gereken bir metin. Tanık yoksa
+ölçüm "DAL YOK" diyor, sessizce geçmiyor.
+
+**"Ya biri ya öteki" ölçüsü yetmedi.** Devam düğmesinin ölçüsü handler'ı
+*veya* etiketi arıyordu; etiketi "bitir"e çevirmek kapıyı yeşil bıraktı —
+oysa iki düğmenin ikisi de "bitir" yazan bir ekran tam olarak düzeltilen
+kusur. Ölçü artık **hem işi hem etiketi** birlikte istiyor.
+
+### Ve pencere tuzağının altıncı vakası — kendi değişikliğim açtı
+
+§223'ün yürüyüş ölçüsü `<Frame role="status">` ile `walk.done_title` arasında
+**120 karakterlik pencere** kullanıyordu. Bitiş ekranına konfeti ve maskot
+girince mesafe aştı ve kapı, duyurusu yerinde duran koda "SESSİZ" dedi. İki
+ölçü de düğüme çevrildi: **dalın kök elemanı** okunuyor (`dalKoku`) —
+`if (status === "done")`den sonraki ilk açılış etiketi `role="status"`
+taşımalı. Patron turunun ölçüsü de aynı şekilde güçlendirildi; o dosya
+genelinde `<Frame role="status">` arıyordu, yani komşuyu ölçme riski
+taşıyordu.

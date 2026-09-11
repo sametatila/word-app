@@ -7286,6 +7286,140 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     "beklenen",
   );
 
+  /* -- 229. durum dallarinin TASARIMI: maskot, kutlama, cikis yolu -------
+   *
+   * §227 bekleme, §228 hata dalini olctu; bu tur ayni dallarin TASARIMINA
+   * bakti ve uc kusur cikti:
+   *
+   *  1. MASKOT. Android'in yuruyus ekrani DORT yerde maskot ciziyor
+   *     (giris, duraklama, bitis, baslangic) - webde HIC yoktu. Meydan
+   *     okumanin bos dali, rol yapma sinavinin ve seviye sinavinin hata
+   *     dallari da Android'de maskotlu, webde ciplak metindi. Ayni kip bir
+   *     platformda karakterli, otekinde metin blogu olarak duruyordu.
+   *  2. YURUYUSUN BITIS EKRANI. Android konfeti + maskot + sonuc + DEVAM +
+   *     PAYLAS sunuyor; web yalniz "bitir" diyordu - yeni bir tura devam
+   *     etmek icin kipten cikip yeniden girmek gerekiyordu ve sonucu
+   *     paylasmanin hicbir yolu yoktu. Kutlama esigi de Android'den: %60.
+   *  3. BOS HALIN CIKIS YOLU. "Yapabildiklerim" bos dali iki platformda da
+   *     "konusma ve alistirmalari bitirdikce" diyor ama gidilecek yeri
+   *     GOSTERMIYORDU; ev kalibi zaten bu (`WritingsScreen` bos hali yazma
+   *     alistirmalarina goturuyor). Ikisi de eksik oldugu icin
+   *     karsilastirma geciyordu - olcut mutlak alindi.
+   *
+   * Olcum DAL GOVDESI uzerinden: capadan baslayip JSX yiginini bosalana
+   * kadar yuruyup dalin KENDI agacini aliyor. Boylece komsu dalda duran bir
+   * maskot "var" sayilmiyor ve dalin uzunlugu onemsiz. */
+  {
+    const acilisSonu = (blok) => {
+      let derinlik = 0, tirnak = null;
+      for (let i = 0; i < blok.length; i++) {
+        const c = blok[i];
+        if (tirnak) { if (c === tirnak && blok[i - 1] !== "\\") tirnak = null; continue; }
+        if (c === '"' || c === "'" || c === "`") { tirnak = c; continue; }
+        if (c === "{") derinlik++;
+        else if (c === "}") derinlik--;
+        else if (c === ">" && derinlik === 0) return i;
+      }
+      return -1;
+    };
+    /** Capadan sonraki ilk JSX agacinin govdesi (yigin bosalinca biter). */
+    const dalGovdesi = (src, capa) => {
+      const bas = src.indexOf(capa);
+      if (bas < 0) return null;
+      let k = bas, derinlik = 0, basladi = false, ilk = -1;
+      while (k < src.length) {
+        const j = src.indexOf("<", k);
+        if (j < 0) break;
+        if (src[j + 1] === "/") {
+          const kapanis = src.indexOf(">", j);
+          if (kapanis < 0) break;
+          derinlik--;
+          k = kapanis + 1;
+          if (basladi && derinlik === 0) return src.slice(ilk, k);
+          continue;
+        }
+        if (src[j + 1] === ">") { if (!basladi) { basladi = true; ilk = j; } derinlik++; k = j + 2; continue; }
+        if (!/[A-Za-z]/.test(src[j + 1] ?? "")) { k = j + 1; continue; }
+        const son = acilisSonu(src.slice(j));
+        if (son < 0) break;
+        const etiket = src.slice(j, j + son + 1);
+        if (!basladi) { basladi = true; ilk = j; }
+        if (!/\/\s*>$/.test(etiket)) derinlik++;
+        k = j + son + 1;
+        if (basladi && derinlik === 0) return src.slice(ilk, k);
+      }
+      return null;
+    };
+    /* TANIK ZORUNLU. Ilk yazim capayi `src.indexOf` ile ariyordu ve sinav
+       oynaticisinda `phase === "error"` ILK olarak sayacin muafiyet
+       listesinde geciyor (`... || phase === "error") return;`) - govde
+       bambaska bir agactan doluyor ve kapi dogru koda "YOK" diyordu. Artik
+       her cift bir TANIK tasiyor: dalin govdesinde mutlaka bulunmasi gereken
+       bir metin. Tanik yoksa olcum "DAL YOK" diyor, sessizce gecmiyor. */
+    const maskot = (yol, capa, tanik) => {
+      const g = dalGovdesi(sil(read(yol)), capa);
+      if (g === null || !g.includes(tanik)) return "DAL YOK";
+      return /<Mascot\b/.test(g) ? "maskot" : "YOK";
+    };
+
+    const CIFTLER = [
+      ["meydan bos", "mobile/src/screens/ChallengeScreen.tsx", 'phase === "empty"', 'challenge.none_title', "src/components/challenge-player.tsx", 'status === "empty"', 'challenge.none_title'],
+      ["rol hata", "mobile/src/screens/RoleplayExamScreen.tsx", 'if (phase === "error")', 'rpexam.service_down', "src/components/lessons/roleplay-exam.tsx", 'if (phase === "error")', 'rpexam.service_down'],
+      ["rol puanlama", "mobile/src/screens/RoleplayExamScreen.tsx", 'if (phase === "scoring")', 'item.mono_scoring', "src/components/lessons/roleplay-exam.tsx", 'if (phase === "scoring")', 'item.mono_scoring'],
+      ["sinav hata", "mobile/src/screens/ExamScreen.tsx", "if (err) {", '{err}', "src/components/exam-player.tsx", 'if (phase === "error") {', 'exam.load_or_save_failed'],
+      ["yuruyus giris", "mobile/src/screens/WalkModeScreen.tsx", 'phase === "intro" ? (', 'walkmode.listen_and_say_it', "src/components/walk-player.tsx", 'if (status === "ready" || status === "paused")', 'walk.intro_1'],
+      ["yuruyus bitis", "mobile/src/screens/WalkModeScreen.tsx", 'phase === "done" ? (', 'walkmode.correct', "src/components/walk-player.tsx", 'if (status === "done")', 'walk.done_sub'],
+    ];
+    sameList(
+      "durum dallarinda maskot",
+      CIFTLER.map(([ad, my, mc, mt]) => ad + "=" + maskot(my, mc, mt)),
+      CIFTLER.map(([ad, , , , wy, wc, wt]) => ad + "=" + maskot(wy, wc, wt)),
+      "mobil",
+      "web",
+    );
+
+    /* Yuruyusun bitis ekrani: kutlama, devam ve paylasim iki tarafta da. */
+    const wm = sil(read("mobile/src/screens/WalkModeScreen.tsx"));
+    const ww = sil(read("src/components/walk-player.tsx"));
+    sameList(
+      "yuruyus bitis ekrani",
+      [
+        "kutlama=" + (/<Celebrate show=\{tally\.total > 0 && donePct >= 60\}/.test(wm) ? "var" : "YOK"),
+        "esik=" + (/donePct >= 60/.test(wm) ? "60" : "?"),
+        "devam=" + (/onPress=\{newTour\}/.test(wm) ? "var" : "YOK"),
+        "paylasim=" + (/shareResult\(tally\.correct, tally\.total\)/.test(wm) ? "var" : "YOK"),
+      ],
+      [
+        "kutlama=" + (/<Confetti fire=\{tally\.total > 0 && donePct >= 60 \? 1 : 0\}/.test(ww) ? "var" : "YOK"),
+        "esik=" + (/donePct >= 60/.test(ww) ? "60" : "?"),
+        /* Dugmenin HEM ISI hem ETIKETI olculuyor. Ilk yazim "ya biri ya
+           oteki" diyordu ve etiketi "bitir"e cevirmek kapiyi yesil biraktı -
+           oysa iki dugmenin ikisi de "bitir" yazan bir ekran tam olarak
+           duzeltilen kusur. */
+        "devam=" + (/onClick=\{\(\) => \{ setStatus\("loading"\); void load\(\); \}\}[\s\S]{0,160}t\("common\.continue"\)/.test(ww) ? "var" : "YOK"),
+        "paylasim=" + (/shareText\(resultText\(lang, tally\.correct, tally\.total\), "result"\)/.test(ww) ? "var" : "YOK"),
+      ],
+      "mobil",
+      "web",
+    );
+
+    /* Bos halin cikis yolu: "yapabildiklerim" iki platformda da Patika'ya. */
+    const cm = sil(read("mobile/src/screens/CandoScreen.tsx"));
+    const cw = sil(read("src/components/cando-card.tsx"));
+    sameList(
+      "yapabildiklerim bos halinin cikis yolu",
+      [
+        "mobil eylem=" + (/action=\{t\("nav\.path"\)\}/.test(cm) ? "Patika" : "YOK"),
+        "mobil hedef=" + (/navigate\("Tabs", \{ screen: "Path" \}\)/.test(cm) ? "Path sekmesi" : "YOK"),
+        "web eylem=" + (/t\("nav\.path"\)/.test(cw) ? "Patika" : "YOK"),
+        "web hedef=" + (/href="\/immersion"/.test(cw) ? "/immersion" : "YOK"),
+      ],
+      ["mobil eylem=Patika", "mobil hedef=Path sekmesi", "web eylem=Patika", "web hedef=/immersion"],
+      "bulunan",
+      "beklenen",
+    );
+  }
+
   /* -- 228. HATA dali: duyuruluyor mu, sebebi dogru mu, tekrar yolu var mi --
    *
    * §227 beklemeyi duyurulur kildi; bu tur ayni yuzeylerin HATA dalini
@@ -7874,6 +8008,32 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
      * etiketini okuyor: kap `<section ...>` ya da `<div ...>` olabilir.
      * Pencere tahmin edilmiyor, en yakin kap bulunuyor.
      */
+    /**
+     * Dalin KOK ELEMANI: capadan sonraki ilk acilis etiketi.
+     *
+     * Yuruyus ve patron turunun sonucu `<Frame role="status">` ile
+     * duyuruluyor; `Frame` bir BILESEN, yani `<section`/`<div` arayan
+     * `dalDuyuruyor` onu bulamaz. Ilk yazim bu yuzden 120 karakterlik bir
+     * pencere kullaniyordu ve ARAYA konfeti + maskot girince yetmedi -
+     * pencere tuzaginin ALTINCI vakasi. Dogrusu mesafe degil dugum: dalin
+     * kok elemanini okumak.
+     */
+    const dalKoku = (src, capa) => {
+      const i = src.indexOf(capa);
+      if (i < 0) return "";
+      const j = src.indexOf("<", i);
+      if (j < 0) return "";
+      let derinlik = 0, tirnak = null;
+      for (let k = j; k < src.length; k++) {
+        const c = src[k];
+        if (tirnak) { if (c === tirnak && src[k - 1] !== "\\") tirnak = null; continue; }
+        if (c === '"' || c === "'" || c === "`") { tirnak = c; continue; }
+        if (c === "{") derinlik++;
+        else if (c === "}") derinlik--;
+        else if (c === ">" && derinlik === 0) return src.slice(j, k + 1);
+      }
+      return "";
+    };
     const dalDuyuruyor = (src, isaret) => {
       const j = src.indexOf(isaret);
       if (j < 0) return "ISARET YOK";
@@ -7888,7 +8048,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       [
         "web beceri=" + (/role="status"[\s\S]{0,80}card mt-5 p-5 text-center/.test(webBeceri) ? "duyuruyor" : "SESSIZ"),
         "web quiz=" + (/<div role="status" className="card relative p-6 text-center">/.test(webQuiz) ? "duyuruyor" : "SESSIZ"),
-        "web patron=" + (/<Frame role="status">/.test(webPatron) ? "duyuruyor" : "SESSIZ"),
+        "web patron=" + (/role="status"/.test(dalKoku(webPatron, 'if (status === "won" || status === "lost")')) ? "duyuruyor" : "SESSIZ"),
         "web meydan=" + (/<div role="status" className="text-center">/.test(webMeydan) ? "duyuruyor" : "SESSIZ"),
         "web gunun=" + (/<div role="status" className="card overflow-hidden">/.test(webGunun) ? "duyuruyor" : "SESSIZ"),
         "mobil beceri=" + mobSonuc(mobBeceri, /accessibilityLiveRegion="polite" variant="h2"/),
@@ -7917,7 +8077,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
         "web sinav=" + dalDuyuruyor(webSinav, "exam.not_passed"),
         "web oturum etap=" + dalDuyuruyor(webOturum, "stage.clean"),
         "web oturum bitis=" + (/<Stagger role="status" className="card overflow-hidden">/.test(webOturum) ? "duyuruyor" : "SESSIZ"),
-        "web yuruyus=" + (/<Frame role="status">[\s\S]{0,120}walk\.done_title/.test(webYuruyus) ? "duyuruyor" : "SESSIZ"),
+        "web yuruyus=" + (/role="status"/.test(dalKoku(webYuruyus, 'if (status === "done")')) ? "duyuruyor" : "SESSIZ"),
         "mobil sinav=" + mobSonuc(mobSinav, /accessibilityLiveRegion="polite" variant="h1">\{formatPercent\(pct\)\}/),
         "mobil oturum etap=" + mobSonuc(mobOturum, /accessibilityLiveRegion="polite" variant="h2"[\s\S]{0,80}stage\.clean/),
         "mobil oturum bitis=" + mobSonuc(mobOturum, /accessibilityLiveRegion="polite" variant="h1"[\s\S]{0,120}common\.round_done/),
