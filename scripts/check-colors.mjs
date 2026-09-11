@@ -168,6 +168,14 @@ function stripComments(src) {
 
 const problems = [];
 
+/* Hangi istisnanın gerçekten karşılığı var: listede olup artık HİÇBİR yerde
+   geçmeyen bir satır sessiz bir delik - o rengi biri geri koyduğunda kapı
+   susar ve kimse karar vermemiş olur. (`check:endpoints` aynı denetimi
+   `stale` adıyla baştan beri yapıyor.) */
+const usedWebAllow = new Set();
+const usedMobileAllow = new Set();
+
+
 for (const f of await sources("src")) {
   const src = stripComments(await readFile(f, "utf8"));
   const lines = src.split("\n");
@@ -192,7 +200,7 @@ for (const f of await sources("src")) {
     }
     const m = /(^|[^-a-zA-Z])color:\s*([^,;}]+)/.exec(line);
     if (!m || !STEP.test(m[2])) return;
-    if (WEB_ALLOW.has(f)) return;
+    if (WEB_ALLOW.has(f)) { usedWebAllow.add(f); return; }
     problems.push(`${f}:${i + 1}  metin rengi sabit basamak: ${m[2].trim().slice(0, 80)}`);
   });
 }
@@ -213,11 +221,16 @@ for (const f of await sources("mobile/src")) {
     }
     for (const hex of line.match(/#[0-9a-fA-F]{3,8}\b/g) ?? []) {
       if (WHITE_BLACK.test(hex)) continue;
-      if (MOBILE_ALLOW.has(hex)) continue;
+      if (MOBILE_ALLOW.has(hex)) { usedMobileAllow.add(hex); continue; }
       problems.push(`${f}:${i + 1}  ham renk: ${hex} (tema jetonu bekleniyordu)`);
     }
   });
 }
+
+/* Web tarafında istisna DOSYA bazlı: dosya hâlâ duruyor ama içinde artık
+   basamaklı bir metin rengi yoksa istisna da gereksiz. */
+for (const f of WEB_ALLOW.keys()) if (!usedWebAllow.has(f)) problems.push(`istisna artık karşılıksız (WEB_ALLOW): ${f}`);
+for (const hex of MOBILE_ALLOW.keys()) if (!usedMobileAllow.has(hex)) problems.push(`istisna artık karşılıksız (MOBILE_ALLOW): ${hex}`);
 
 if (problems.length) {
   console.error("check:colors — paletin dışına kaçan renkler:");
