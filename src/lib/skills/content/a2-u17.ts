@@ -229,7 +229,7 @@ export const a2U17: SkillExercise[] = [
       { de: "der Bach", tr: "dere", en: "stream" },
       { de: "angeln", tr: "balık tutmak", en: "to fish" },
       { de: "braten", tr: "kızartmak", en: "to fry, grill" },
-      { de: "der Campingplatz", tr: "kamp alanı", en: "campsite" },
+      { de: "die Feuerstelle", tr: "ateş yeri", en: "fire pit" },
     ],
     minutes: 3,
     segments: [

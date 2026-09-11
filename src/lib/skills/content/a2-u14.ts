@@ -158,7 +158,7 @@ export const a2U14: SkillExercise[] = [
     genre: "dialogue",
     intro: "Kuaförde. Ne kadar kısaltılıyor, hangi ek hizmet isteniyor?",
     gloss: [
-      { de: "der Friseursalon", tr: "kuaför salonu", en: "hair salon" },
+      { de: "schneiden", tr: "kesmek", en: "to cut" },
       { de: "die Schere", tr: "makas", en: "scissors" },
       { de: "föhnen", tr: "fön çekmek", en: "to blow-dry" },
       { de: "bürsten", tr: "fırçalamak", en: "to brush" },
@@ -224,7 +224,7 @@ export const a2U14: SkillExercise[] = [
       { de: "verärgert", tr: "kızgın", en: "annoyed" },
       { de: "der Filialleiter", tr: "şube müdürü", en: "branch manager" },
       { de: "anprobieren", tr: "üstünde denemek", en: "to try on" },
-      { de: "beschädigt", tr: "hasarlı", en: "damaged" },
+      { de: "der Reißverschluss", tr: "fermuar", en: "zip" },
     ],
     minutes: 3,
     segments: [

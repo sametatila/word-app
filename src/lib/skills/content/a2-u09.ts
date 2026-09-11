@@ -158,7 +158,7 @@ export const a2U09: SkillExercise[] = [
     genre: "dialogue",
     intro: "Oda düzenleniyor. Ne nereye gidiyor, hangi karar değişiyor?",
     gloss: [
-      { de: "hinstellen", tr: "oraya koymak", en: "to put there" },
+      { de: "der Schrank", tr: "dolap", en: "cupboard" },
       { de: "aufhängen", tr: "asmak", en: "to hang up" },
       { de: "der Schreibtisch", tr: "çalışma masası", en: "desk" },
       { de: "die Matratze", tr: "şilte", en: "mattress" },

@@ -245,11 +245,11 @@ export const a2U23: SkillExercise[] = [
     gloss: [
       { de: "leserlich", tr: "okunaklı", en: "legible" },
       { de: "vollständig", tr: "eksiksiz", en: "complete" },
-      { de: "fehlerfrei", tr: "hatasız", en: "error-free" },
+      { de: "die Unterschrift", tr: "imza", en: "signature" },
       { de: "durchlesen", tr: "baştan sona okumak", en: "to read through" },
       { de: "der Stift", tr: "kalem", en: "pen" },
       { de: "zuordnen", tr: "eşleştirmek", en: "to assign" },
-      { de: "beschriften", tr: "üstüne yazmak", en: "to label" },
+      { de: "die Druckbuchstaben", tr: "matbaa harfleri", en: "block letters" },
     ],
     minutes: 3,
     segments: [

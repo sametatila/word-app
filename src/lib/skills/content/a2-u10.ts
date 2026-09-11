@@ -102,7 +102,7 @@ export const a2U10: SkillExercise[] = [
       { de: "das Päckchen", tr: "küçük paket", en: "small parcel" },
       { de: "die Bestellung", tr: "sipariş", en: "order" },
       { de: "der Postbote", tr: "postacı", en: "postman" },
-      { de: "das Postfach", tr: "posta kutusu", en: "post office box" },
+      { de: "die Sendung", tr: "gönderi", en: "delivery" },
       { de: "die Haustür", tr: "sokak kapısı", en: "front door" },
       { de: "benachrichtigen", tr: "haber vermek", en: "to notify" },
       { de: "austragen", tr: "dağıtmak", en: "to deliver" },

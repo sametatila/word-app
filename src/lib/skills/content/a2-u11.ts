@@ -216,7 +216,7 @@ export const a2U11: SkillExercise[] = [
     genre: "dialogue",
     intro: "İşteki ilk gün. Kim kim, kim kiminle çalışıyor?",
     gloss: [
-      { de: "der Arbeitskollege", tr: "iş arkadaşı", en: "work colleague" },
+      { de: "der Kollege", tr: "meslektaş", en: "colleague" },
       { de: "das Team", tr: "ekip", en: "team" },
       { de: "die Teamarbeit", tr: "takım çalışması", en: "teamwork" },
       { de: "der Geschäftsführer", tr: "genel müdür", en: "managing director" },

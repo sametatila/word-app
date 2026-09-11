@@ -102,7 +102,7 @@ export const a2U07: SkillExercise[] = [
       { de: "berechtigt", tr: "yetkili", en: "entitled" },
       { de: "privat", tr: "özel", en: "private" },
       { de: "die Vereinbarung", tr: "anlaşma", en: "agreement" },
-      { de: "die Krankenkasse", tr: "sağlık sigortası", en: "health insurance" },
+      { de: "die Versichertenkarte", tr: "sigorta kartı", en: "health insurance card" },
     ],
     minutes: 4,
     text:

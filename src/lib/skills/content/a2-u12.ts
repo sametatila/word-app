@@ -102,7 +102,7 @@ export const a2U12: SkillExercise[] = [
       { de: "die Beilage", tr: "garnitür", en: "side dish" },
       { de: "die Portion", tr: "porsiyon", en: "portion" },
       { de: "die Selbstbedienung", tr: "self servis", en: "self-service" },
-      { de: "die Mittagspause", tr: "öğle molası", en: "lunch break" },
+      { de: "das Tablett", tr: "tepsi", en: "tray" },
       { de: "die Kaffeepause", tr: "kahve molası", en: "coffee break" },
       { de: "das Mittagessen", tr: "öğle yemeği", en: "lunch" },
     ],

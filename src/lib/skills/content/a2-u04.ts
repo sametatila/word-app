@@ -215,7 +215,7 @@ export const a2U04: SkillExercise[] = [
     intro: "Bir tanışma hikâyesi. Nerede tanışmışlar, ne kadar zamandır birlikteler?",
     gloss: [
       { de: "sich anfreunden", tr: "arkadaş olmak", en: "to become friends" },
-      { de: "befreundet", tr: "arkadaş", en: "friends" },
+      { de: "kennenlernen", tr: "tanışmak", en: "to get to know" },
       { de: "charmant", tr: "sevimli", en: "charming" },
       { de: "flirten", tr: "flört etmek", en: "to flirt" },
       { de: "verabredet sein", tr: "sözleşmiş olmak", en: "to have a date" },

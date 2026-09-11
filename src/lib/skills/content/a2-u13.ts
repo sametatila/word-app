@@ -37,11 +37,11 @@ export const a2U13: SkillExercise[] = [
     gloss: [
       { de: "der Betreff", tr: "konu başlığı", en: "subject line" },
       { de: "die Halsschmerzen", tr: "boğaz ağrısı", en: "sore throat" },
-      { de: "die Migräne", tr: "migren", en: "migraine" },
+      { de: "das Attest", tr: "sağlık raporu", en: "doctor's note" },
       { de: "ansteckend", tr: "bulaşıcı", en: "contagious" },
       { de: "der Anhang", tr: "ek", en: "attachment" },
       { de: "verschicken", tr: "yollamak", en: "to send" },
-      { de: "die Rückenschmerzen", tr: "sırt ağrısı", en: "back pain" },
+      { de: "das Fieber", tr: "ateş", en: "fever" },
     ],
     minutes: 4,
     text:
@@ -159,7 +159,7 @@ export const a2U13: SkillExercise[] = [
     genre: "dialogue",
     intro: "Yıllık değerlendirme görüşmesi. Geri bildirim ne, çalışan ne istiyor?",
     gloss: [
-      { de: "bewerten", tr: "değerlendirmek", en: "to assess" },
+      { de: "die Verantwortung", tr: "sorumluluk", en: "responsibility" },
       { de: "sorgfältig", tr: "özenli", en: "careful" },
       { de: "deutlich", tr: "net", en: "clear" },
       { de: "motivieren", tr: "motive etmek", en: "to motivate" },
@@ -224,7 +224,7 @@ export const a2U13: SkillExercise[] = [
       { de: "der Sonderpreis", tr: "özel fiyat", en: "special price" },
       { de: "das Preisschild", tr: "fiyat etiketi", en: "price tag" },
       { de: "der Stammkunde", tr: "sürekli müşteri", en: "regular customer" },
-      { de: "preiswert", tr: "uygun fiyatlı", en: "good value" },
+      { de: "reduziert", tr: "indirimli", en: "reduced" },
       { de: "die Qualität", tr: "kalite", en: "quality" },
     ],
     minutes: 3,

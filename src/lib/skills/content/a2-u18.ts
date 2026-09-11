@@ -103,7 +103,7 @@ export const a2U18: SkillExercise[] = [
     genre: "personal",
     intro: "Bir aile kutlaması daveti. Ne zaman, nerede, kim ne getiriyor?",
     gloss: [
-      { de: "die Familienfeier", tr: "aile kutlaması", en: "family celebration" },
+      { de: "der Grill", tr: "ızgara", en: "barbecue" },
       { de: "die Feier", tr: "kutlama", en: "celebration" },
       { de: "festlich", tr: "şık / bayramlık", en: "festive" },
       { de: "die Torte", tr: "yaş pasta", en: "cake" },
@@ -167,7 +167,7 @@ export const a2U18: SkillExercise[] = [
     genre: "dialogue",
     intro: "Trende bir aksilik. Kaç dakika gecikme, ne yapmak gerekiyor?",
     gloss: [
-      { de: "der Schaffner", tr: "kondüktör", en: "conductor" },
+      { de: "umsteigen", tr: "aktarma yapmak", en: "to change trains" },
       { de: "der Fahrschein", tr: "bilet", en: "ticket" },
       { de: "das Abteil", tr: "kompartıman", en: "compartment" },
       { de: "die Endstation", tr: "son durak", en: "final stop" },
@@ -238,7 +238,7 @@ export const a2U18: SkillExercise[] = [
       { de: "der Teller", tr: "tabak", en: "plate" },
       { de: "der Besuch", tr: "misafir / ziyaret", en: "visitors" },
       { de: "organisieren", tr: "organize etmek", en: "to organise" },
-      { de: "planen", tr: "planlamak", en: "to plan" },
+      { de: "leihen", tr: "ödünç vermek", en: "to lend" },
     ],
     minutes: 3,
     segments: [

@@ -236,7 +236,7 @@ export const a2U20: SkillExercise[] = [
       { de: "das Tennis", tr: "tenis", en: "tennis" },
       { de: "sportlich", tr: "sportif", en: "sporty" },
       { de: "motiviert", tr: "istekli", en: "motivated" },
-      { de: "freiwillig", tr: "gönüllü olarak", en: "voluntarily" },
+      { de: "die Unterstützung", tr: "destek", en: "support" },
       { de: "verringern", tr: "azaltmak", en: "to reduce" },
       { de: "machbar", tr: "yapılabilir", en: "doable" },
     ],

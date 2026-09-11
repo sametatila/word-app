@@ -37,7 +37,7 @@ export const a2U15: SkillExercise[] = [
       { de: "der Tarif", tr: "tarife", en: "tariff" },
       { de: "das WLAN", tr: "kablosuz internet", en: "wifi" },
       { de: "der Router", tr: "modem", en: "router" },
-      { de: "das Ladekabel", tr: "şarj kablosu", en: "charging cable" },
+      { de: "telefonieren", tr: "telefonla konuşmak", en: "to phone" },
     ],
     minutes: 4,
     text:
@@ -154,7 +154,7 @@ export const a2U15: SkillExercise[] = [
     genre: "dialogue",
     intro: "Bankada hesap açılıyor. Hangi belgeler gerekiyor, ücret ne kadar?",
     gloss: [
-      { de: "die Sparkasse", tr: "tasarruf bankası", en: "savings bank" },
+      { de: "der Ausweis", tr: "kimlik", en: "ID card" },
       { de: "die Kontonummer", tr: "hesap numarası", en: "account number" },
       { de: "die Gebühr", tr: "ücret", en: "fee" },
       { de: "sparen", tr: "biriktirmek", en: "to save" },

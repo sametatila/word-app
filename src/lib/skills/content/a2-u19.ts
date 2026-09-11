@@ -107,7 +107,7 @@ export const a2U19: SkillExercise[] = [
       { de: "überreichen", tr: "takdim etmek", en: "to hand over" },
       { de: "bewirten", tr: "ağırlamak", en: "to entertain guests" },
       { de: "gastfreundlich", tr: "misafirperver", en: "hospitable" },
-      { de: "bescheiden", tr: "mütevazı", en: "modest" },
+      { de: "die Pünktlichkeit", tr: "dakiklik", en: "punctuality" },
       { de: "schenken", tr: "hediye etmek", en: "to give as a gift" },
     ],
     minutes: 4,
