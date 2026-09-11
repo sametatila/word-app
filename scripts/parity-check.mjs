@@ -6491,8 +6491,13 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       "tek kapi=" + (/async function schedule\([^)]*\)[^{]*\{ if \(hasPushDevice\(\)\) return;/.test(notif) ? "var" : "yok"),
       "jeton yazilinca iptal=" + (/await cancelLocalReminders\(\)/.test(cihaz) ? "var" : "yok"),
       "bayrak yaziliyor=" + (/setPushDevice\(true\)/.test(cihaz) && /setPushDevice\(false\)/.test(cihaz) ? "var" : "yok"),
+      /* Bayrak AYRI dosyadan okunuyor mu: jetonu yazan modulden okumak, iki
+         modul arasinda dairesel bir ice aktarma kurar (o da buradan
+         `cancelLocalReminders` cagiriyor). Kapi bunu ayrica olcuyor cunku
+         derleyici daireyi hata saymaz - sessizce yukleme sirasina baglar. */
+      "bayrak kaynagi=" + (/from "\.\/pushState"/.test(notif) ? "ayri modul" : "jetonu yazan modul"),
     ],
-    ["tek kapi=var", "jeton yazilinca iptal=var", "bayrak yaziliyor=var"],
+    ["tek kapi=var", "jeton yazilinca iptal=var", "bayrak yaziliyor=var", "bayrak kaynagi=ayri modul"],
     "bulunan",
     "beklenen",
   );
@@ -6556,7 +6561,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   sameList(
     "varsayilan saat semadan",
     [
-      "mobil=" + ((bildirim.match(/const DEFAULT_HOUR = (\d+)/) ?? [])[1] ?? "yok"),
+      "mobil=" + ((strip(read("mobile/src/lib/profileDefaults.ts")).match(/reminderHour: (\d+)/) ?? [])[1] ?? "yok"),
       "sema=" + semaVarsayilan,
     ],
     ["mobil=" + semaVarsayilan, "sema=" + semaVarsayilan],
@@ -6573,6 +6578,57 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       "ekran okuyor=" + (/setDailyTime\(p\.hour\)/.test(mob) ? "var" : "yok"),
     ],
     ["tercih tasiyor=var", "ekran okuyor=var"],
+    "bulunan",
+    "beklenen",
+  );
+}
+
+/* ── 174. profilin varsayilanlari tek yerde mi ────────────────────────────
+ * Profil daha yuklenmemisken ekranlar bir deger gostermek zorunda ve mobilde
+ * o deger ekranin ICINDE yaziliydi. Bir tanesi yanlisti: gunde yeni kelime
+ * icin 10, semanin varsayilani ise 15 (`profiles.new_per_day`). Sunucuda 15
+ * duran bir hesapta ayar ekrani kisa bir an 10 gosteriyor ve kullanici o anda
+ * kaydiriciya dokunursa 10 YAZILIYORDU - ekranin tahmini gercegin yerine
+ * geciyordu. Webde bu sorun yok: sayfa sunucuda ciziliyor, gercek degerle
+ * geliyor (§11.269'daki hatirlatma saatiyle ayni sinif).
+ *
+ * Sayilar artik tek yerde (`lib/profileDefaults`) ve kapi onlari SEMAYLA
+ * karsilastiriyor: iki yerde yazili bir varsayilan, er gec ayrisir. */
+{
+  const strip = (x) => x.replace(/\/\*[\s\S]*?\*\//g, (m) => m.replace(/[^\n]/g, " ")).replace(/(^|[^:"\'`\\])\/\/.*$/gm, "$1");
+  const sema = strip(read("src/lib/db/schema.ts")).replace(/\s+/g, " ");
+  const mob = strip(read("mobile/src/lib/profileDefaults.ts")).replace(/\s+/g, " ");
+  /* Sema satiri: `dailyGoal: integer("daily_goal").notNull().default(20)` */
+  const semaVar = new Map(
+    [...sema.matchAll(/"(\w+)"\)[^,;]*?\.default\(([^)]*)\)/g)].map((m) => [m[1], m[2].replace(/"/g, "")]),
+  );
+  const mobVar = new Map(
+    [...mob.matchAll(/(\w+): ("?[\w]+"?),/g)].map((m) => [m[1], m[2].replace(/"/g, "")]),
+  );
+  const CIFT = [
+    ["dailyGoal", "daily_goal"],
+    ["newPerDay", "new_per_day"],
+    ["level", "level"],
+    ["course", "course"],
+    ["reminderHour", "reminder_hour"],
+  ];
+  sameList(
+    "profil varsayilanlari",
+    CIFT.map(([ad]) => ad + "=" + (mobVar.get(ad) ?? "yok")),
+    CIFT.map(([ad, sutun]) => ad + "=" + (semaVar.get(sutun) ?? "?")),
+    "mobil",
+    "sema",
+  );
+
+  /* Ekranlar sayiyi KENDI ICINDE yazmamali: tek kaynak varken ikinci bir
+     sabit, kaynagin degismesini sessizce yutar. */
+  const ayarlar = strip(read("mobile/src/screens/SettingsScreen.tsx")).replace(/\s+/g, " ");
+  const kaynaktan = (alan) =>
+    new RegExp("me\\?\\." + alan + " \\?\\? PROFILE_DEFAULTS\\." + alan).test(ayarlar) ? "kaynaktan" : "kendi sabiti";
+  sameList(
+    "ayar ekrani kaynaktan okuyor",
+    ["dailyGoal", "newPerDay", "level", "course"].map((a) => a + "=" + kaynaktan(a)),
+    ["dailyGoal", "newPerDay", "level", "course"].map((a) => a + "=kaynaktan"),
     "bulunan",
     "beklenen",
   );

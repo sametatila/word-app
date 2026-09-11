@@ -71,16 +71,9 @@ async function sendToken(token: string): Promise<void> {
 /** Son gönderilen jeton — çıkışta silmek ve aynı jetonu iki kez yazmamak için. */
 let current: string | null = null;
 
-/**
- * Sunucu bu cihaza bildirim gönderebiliyor mu.
- *
- * Hatırlatmaların YEREL kopyası buna bakıyor: jeton varsa hatırlatmayı sunucu
- * gönderiyor ve aynısını cihazda ikinci kez zamanlamak, kullanıcıya aynı şeyi
- * iki kez söylemek olurdu (bkz. `lib/notifications`).
- */
-export function hasPushDevice(): boolean {
-  return current !== null;
-}
+/* `hasPushDevice` BURADAN KALKTI ve `lib/pushState`e tasindi: bayragi burada
+   tutmak, hatirlatmalari zamanlayan modulle (o da buradan
+   `cancelLocalReminders` cagiriyor) DAIRESEL bir ice aktarma kuruyordu. */
 
 /**
  * Girişten sonra çağrılır: izin ister, jetonu alır ve sunucuya yazar.

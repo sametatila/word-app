@@ -1,0 +1,21 @@
+/**
+ * PROFİLİN VARSAYILANLARI — sunucudaki şemayla aynı sayılar.
+ *
+ * Profil daha yüklenmemişken ekranlar bir değer göstermek zorunda ve o değer
+ * ekranın kendi içinde yazılıydı: günde yeni kelime için **10**, oysa şemanın
+ * varsayılanı 15 (`profiles.new_per_day`). Sunucuda 15 duran bir hesapta ayar
+ * ekranı kısa bir an 10 gösteriyor ve kullanıcı o anda kaydırıcıya
+ * dokunursa 10 yazılıyordu — yani ekranın tahmini gerçeğin yerine geçiyordu.
+ * Web'de bu sorun yok: sayfa sunucuda çiziliyor ve gerçek değerle geliyor.
+ *
+ * Sayılar burada TEK YERDE ve `check:parity` şemayla karşılaştırıyor: şemada
+ * bir varsayılan değişirse kapı düşer.
+ */
+export const PROFILE_DEFAULTS = {
+  dailyGoal: 20,
+  newPerDay: 15,
+  level: "A1",
+  course: "de",
+  /** Hatırlatma saati — `lib/notifications` de aynı sayıyı kullanıyor. */
+  reminderHour: 12,
+} as const;

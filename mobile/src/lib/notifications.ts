@@ -1,7 +1,8 @@
 import notifee, { TriggerType, RepeatFrequency, AndroidImportance, AuthorizationStatus } from "@notifee/react-native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { t } from "./i18n";
-import { hasPushDevice } from "./pushDevice";
+import { hasPushDevice } from "./pushState";
+import { PROFILE_DEFAULTS } from "./profileDefaults";
 import { api } from "../api/client";
 
 /**
@@ -58,7 +59,7 @@ async function decided(key: string): Promise<boolean> {
 const hhmmOf = (hour: number) => `${String(hour).padStart(2, "0")}:00`;
 
 /** Şemanın varsayılanı (`profiles.reminder_hour`) — ağ yokken de aynı saat. */
-const DEFAULT_HOUR = 12;
+const DEFAULT_HOUR = PROFILE_DEFAULTS.reminderHour;
 
 export type ReminderPrefs = {
   daily: string | null;

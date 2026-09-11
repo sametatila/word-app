@@ -8903,3 +8903,36 @@ kaynağa bağlı.
 Kapı bir kez yanlış ölçtü: mobil listede saatler `"09:00"` biçiminde ve ilk
 sürüm **dakikayı da bir saat sandı** ("09:00" → 9 ve 0). İki taraftan da yalnız
 saat okunuyor.
+
+## §11.270 — "Günde yeni kelime" varsayılanı iki yerde ayrı yazılıydı
+
+§11.269'un sınıfını sonuna kadar taradım: şemadaki on sekiz varsayılanın hepsi
+çıkarıldı ve istemcilerin başlangıç değerleriyle karşılaştırıldı. Web'de bu
+sınıf hiç yok — sayfa sunucuda çiziliyor, gerçek değerle geliyor. Mobilde dört
+alanın başlangıç değeri ekranın içinde yazılıydı ve **biri yanlıştı**:
+
+    günde yeni kelime   ekranda 10   ·   şemada 15
+
+Sunucuda 15 duran bir hesapta ayar ekranı, profil yüklenene kadar kısa bir an
+10 gösteriyor. Kullanıcı o anda kaydırıcıya dokunursa **10 yazılıyordu** — yani
+ekranın tahmini gerçeğin yerine geçiyordu. Günlük hedef (20), seviye (A1) ve
+kurs (de) doğruydu, ama onlar da aynı kırılganlıktaydı: ikinci bir yerde
+yazılı bir varsayılan, şema değişince sessizce ayrışır.
+
+Dördü de tek bir kaynağa taşındı (`lib/profileDefaults`) ve **§174** o kaynağı
+şemayla karşılaştırıyor: şemada bir varsayılan değişirse kapı düşer. Ayrıca
+ekranın kaynaktan okuduğu ayrıca ölçülüyor — tek kaynak varken ekranın kendi
+sabitini tutması, kaynağın değişmesini yutar.
+
+Aynı turda kendi bıraktığım bir kusuru da kapattım: geçen tur (§11.268) uzak
+push bayrağını ayrı bir dosyaya taşıdığımı yazmıştım, ama `hasPushDevice`
+jetonu yazan modülde de duruyordu ve hatırlatma modülü onu **oradan** okuyordu
+— yani kaçınmak istediğim **dairesel içe aktarma** yerinde kalmıştı (iki modül
+birbirini çağırıyor). Derleyici daireyi hata saymıyor; sessizce yükleme
+sırasına bağlıyor. Fonksiyon kaldırıldı ve **§172'ye dördüncü bir ölçüm**
+eklendi: bayrağın hangi modülden okunduğu.
+
+Onu kaçırmamın sebebi öğreticiydi: düzenlemeyi yaptığımı sandım, `tsc`
+geçince doğrulamış saydım. Derleme, `pushDevice`in hâlâ dışa açtığı eski
+fonksiyon yüzünden geçiyordu. **Bir düzenlemenin uygulandığını görmek, dosyayı
+okumakla olur; yeşil bir derleme onu göstermez.**

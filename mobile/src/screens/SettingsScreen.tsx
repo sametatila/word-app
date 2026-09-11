@@ -17,6 +17,7 @@ import { listAccounts, type LinkedAccount } from "../lib/accountLinks";
 import { PressableScale } from "../ui/PressableScale";
 import { ArrowBackIcon, ChevronRightIcon } from "../ui/icons";
 import { useAuth } from "../lib/AuthContext";
+import { PROFILE_DEFAULTS } from "../lib/profileDefaults";
 import { useMe } from "../lib/useMe";
 import { updateProfile } from "../lib/updateProfile";
 import { VoicePicker } from "../ui/VoicePicker";
@@ -124,7 +125,7 @@ export function SettingsScreen() {
   const { me } = useMe();
 
   const [name, setName] = useState(me?.name ?? user?.name ?? "");
-  const [goal, setGoal] = useState<number>(me?.dailyGoal ?? 20);
+  const [goal, setGoal] = useState<number>(me?.dailyGoal ?? PROFILE_DEFAULTS.dailyGoal);
   /*
    * GÜNDE YENİ KELİME — mobilde HİÇ YOKTU.
    *
@@ -133,9 +134,9 @@ export function SettingsScreen() {
    * yüzeydi. Kullanıcı günde kaç yeni kelime göreceğini yalnız webden
    * ayarlayabiliyordu - oysa bu, günlük yükü belirleyen iki ayardan biri.
    */
-  const [newPerDay, setNewPerDay] = useState<number>(me?.newPerDay ?? 10);
-  const [level, setLevel] = useState<string>(me?.level ?? "A1");
-  const [course, setCourse] = useState<string>(me?.course ?? "de");
+  const [newPerDay, setNewPerDay] = useState<number>(me?.newPerDay ?? PROFILE_DEFAULTS.newPerDay);
+  const [level, setLevel] = useState<string>(me?.level ?? PROFILE_DEFAULTS.level);
+  const [course, setCourse] = useState<string>(me?.course ?? PROFILE_DEFAULTS.course);
   const [voice, setVoice] = useState<VoiceId>(defaultVoice(me?.course ?? "de"));
   /**
    * Yalnız HATA iletisi. Başarıda susuyoruz: anında kaydeden bir ayarda
@@ -171,7 +172,7 @@ export function SettingsScreen() {
       hydrated.current = true;
       setName((n) => n || me.name || user?.name || "");
       setGoal(me.dailyGoal);
-      setNewPerDay(me.newPerDay ?? 10);
+      setNewPerDay(me.newPerDay ?? PROFILE_DEFAULTS.newPerDay);
       setLevel(me.level);
       setCourse(me.course ?? "de");
       void loadVoicePref(me.course ?? "de").then(setVoice);
