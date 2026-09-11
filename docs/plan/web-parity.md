@@ -9823,3 +9823,41 @@ bu ikisi platformun kendi yoğunluk dili.
 ve madalya dolu zemin + beyaz içerik olarak mı çiziliyor. Üç enjeksiyonun üçü
 yakalandı — üçüncüsü tam da mobil tarafta ölçülüp elenmiş olan hatayı
 (rengi yazıya vermek) webde tekrar yapmaya karşı.
+
+## §11.299 — Üç durum satırı sessizdi (ve üç yanlış alarm ölçerek elendi)
+
+Mobilde ölçülmüş erişilebilirlik düzeltmelerinin webe ulaşıp ulaşmadığını
+taradım. Önce **üç yanlış alarm** çıktı ve üçü de kuralın nasıl yazılması
+gerektiğini öğretti:
+
+1. `account/active-sessions` duyuru taşımıyor sandım — taşıyor: `AuthNotice`
+   duyuruyu **kökte** tutuyor ve rol hesaplı (`role={tone === "error" ?
+   "alert" : "status"}`). Düz `role="status"` arayan desen onu görmüyor.
+2. `notification-settings` durum satırı hiç göstermiyor — ama bu **bilinçli**:
+   iyimser yazıyor, hatayı yutuyor ("bekleyen bir anahtar, dokunulduğunu
+   hissettirmeyen bir anahtardır").
+3. `exam-player` mobilin `tip` satırının karşılığını `PronounceCard` içinde
+   duyuruyor — duyuru ortak bir çocuk bileşende.
+
+Yani "bu dosyada duyuru var mı" sorusu **dosya düzeyinde sorulamaz**.
+
+Dar bir tarama yazdım — yalnız adı belli durum değişkenlerinin (`msg`,
+`error`, `saveError`, `note`, `failNote`) **doğrudan** bir metin etiketine
+koşullu bağlandığı yerler — ve üç gerçek eksik çıktı, **üçü de mobilde**
+(web karşılıklarının hepsi duyuruyordu):
+
+- **`DeleteAccountScreen`** — "parola yanlış" satırı. En ağırı: yok etme
+  akışında odak düğmede kalıyor, ekran okuyucu kullanan biri hesabını neden
+  silemediğini hiç duymuyordu. Web'de aynı satır `AuthNotice` ile `alert`.
+- **`PaywallScreen`** — satın alma hatası. Sessizken kullanıcı düğmeye basıp
+  hiçbir şey olmadığını sanıyor. Web'de `role="status"`.
+- **`skillQuiz`** — "puan verilemedi" notu. Web'in beceri oynatıcıları
+  karşılığını duyuruyor.
+
+Hata satırları `assertive`, bilgi satırı `polite`: webdeki `alert`/`status`
+ayrımının RN karşılığı.
+
+**§204** bunu kalıcı hâle getiriyor (§154'ün kardeşi: orada "seçili durum",
+burada "bir eylemin cevabı"). Kapının sınırı **yorumunda yazılı** — ortak
+bileşenden geçen duyuruları göremez, çünkü göremeyeceği şeyi aramak yanlış
+alarm üretir. Üç enjeksiyonun üçü yakalandı, biri web tarafından.

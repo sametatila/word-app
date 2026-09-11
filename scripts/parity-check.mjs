@@ -7226,6 +7226,55 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     "beklenen",
   );
 
+  /* ── 204. DURUM SATIRI duyuruluyor mu (yuzey taramasi) ───────────────
+   * §154'un kardesi: orada "secili durum", burada "bir eylemin cevabi".
+   * Bir islemden sonra YERINDE beliren metin (hata, "kaydedildi", "puan
+   * verilemedi") yalniz GORSEL bir degisiklikse, odagi dugmede kalan ekran
+   * okuyucu kullanicisi hicbir sey duymaz - dugmeye bastigini ama bir sey
+   * olmadigini saniyor.
+   *
+   * Tarama neden bu kadar DAR: elle bakarken uc yanlis alarm cikti ve ucu de
+   * ogreticiydi - (1) web `AuthNotice` duyuruyu KOKTE tasiyor ve rol hesaplı
+   * (`role={tone === "error" ? "alert" : "status"}`), duz `role="status"`
+   * arayan bir desen onu gormuyor; (2) `notification-settings` iyimser yazip
+   * hatayi BILEREK yutuyor, duyurulacak bir sey yok; (3) duyuru cogu zaman
+   * ortak bir cocuk bilesende. Yani "duyuru var mi" sorusu dosya duzeyinde
+   * sorulamaz. Kural bu yuzden yalniz ADI BELLI durum degiskenlerinin
+   * (`msg`, `error`, `saveError`, `note`, `failNote`) DOGRUDAN bir metin
+   * etiketine kosullu baglandigi yerleri tariyor; ortak bilesenden gecenler
+   * zaten deseni tutturmuyor ve listeye girmiyor.
+   *
+   * Bulundugunda uc yer sessizdi ve ucu de mobildeydi (web karsiliklarinin
+   * hepsi duyuruyordu): hesap silme hatasi, satin alma hatasi ve beceri
+   * quizinin "puan verilemedi" notu. Ilki en agiri - yok etme akisinda
+   * "parola yanlis" diyen bir satir. */
+  {
+    const strip5 = (x) => x.replace(/\/\*[\s\S]*?\*\//g, " ").replace(/(^|[^:"'`\\])\/\/.*$/gm, "$1");
+    const walkTsx5 = (d, out = []) => {
+      for (const e of readdirSync(new URL("../" + d, import.meta.url), { withFileTypes: true })) {
+        const p = d + "/" + e.name;
+        if (e.isDirectory()) { if (!/node_modules|__tests__|\/i18n|\/admin/.test("/" + p)) walkTsx5(p, out); }
+        else if (/\.tsx$/.test(e.name)) out.push(p);
+      }
+      return out;
+    };
+    const sessiz = [];
+    for (const [kok, etiket, duyuru] of [
+      ["mobile/src", "<Text", /accessibilityLiveRegion/],
+      ["src/components", "<p", /role=|aria-live/],
+    ]) {
+      const re = new RegExp("\\{\\s*(?:msg|error|saveError|note|failNote)\\s*(?:\\?|&&)\\s*" + etiket + "\\b[\\s\\S]{0,400}?[^=]>", "g");
+      for (const f of walkTsx5(kok)) {
+        const src = strip5(read(f));
+        for (const m of src.matchAll(re)) {
+          if (duyuru.test(m[0])) continue;
+          sessiz.push(f.split("/").pop() + ": " + m[0].replace(/\s+/g, " ").slice(0, 40));
+        }
+      }
+    }
+    sameList("durum satiri duyurusu", sessiz.length ? sessiz : ["yok"], ["yok"], "sessiz satir", "beklenen");
+  }
+
   /* ── 203. gunun turu siralamasinda madalya ───────────────────────────
    * Mobil ilk uce dolu daire + beyaz rakam veriyor ve rengi ORTAK kademe
    * olceginden (`TIER_COLOR`) okuyor; webde madalya HIC yoktu, ilk uc

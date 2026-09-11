@@ -612,7 +612,10 @@ function FreeCard({ t, n, done, level, exerciseId, onSettle, colors }: { t: Free
           {tx(score.overall >= 40 ? "writp.improve" : "writp.retry_suggest")}
         </Text>
       ) : null}
-      {note ? <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.sm, lineHeight: 20 }}>{note}</Text> : null}
+      {/* "Puan verilemedi" satırı duyuruluyor: gönder düğmesine basan
+          kullanıcının odağı düğmede kalıyor ve satırın geldiğini ekran okuyucu
+          söylemiyordu. Hata değil bilgi, o yüzden `polite`. */}
+      {note ? <Text accessibilityLiveRegion="polite" variant="caption" color={colors.textMuted} style={{ marginTop: spacing.sm, lineHeight: 20 }}>{note}</Text> : null}
       {queued ? <Text variant="caption" color={colors.textMuted} style={{ marginTop: 4, lineHeight: 20 }}>{tx("writp.queued")}</Text> : null}
       {reveal && !done ? (
         <View style={{ flexDirection: "row", gap: spacing.sm, marginTop: spacing.md }}>
