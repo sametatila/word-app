@@ -61,7 +61,13 @@ export function AchievementWall() {
         */
         const data = (await res.json()) as Partial<Board>;
         if (!alive) return;
-        if (Array.isArray(data.rows) && typeof data.total === "number") {
+        /* `unlockedCount` DA DENETLENIYOR. Once yalniz `rows` ve `total`a
+           bakiliyordu: sayaci eksik bir yanit "gecerli" sayiliyor, sonra
+           `board.unlockedCount / total` ile ilerleme serigi `NaN%` genislik
+           aliyor ve sayac satiri `formatNumber(undefined)` yaziyordu. Mobil
+           ucunu birden denetliyor (`AchievementsScreen`) ve yorumu "web de
+           ayni denetimi yapiyor" DIYORDU - yapmiyordu. */
+        if (Array.isArray(data.rows) && typeof data.total === "number" && typeof data.unlockedCount === "number") {
           setBoard(data as Board);
         } else {
           setFailed(true);
@@ -147,7 +153,12 @@ export function AchievementWall() {
 
   if (!board) {
     return (
-      <section className="card p-5">
+      /* ISKELET EKRAN OKUYUCUYA "MESGUL" DIYOR. Elle yazilmis tek iskelet
+         buydu ve etiketi yoktu: sesli okuyucu kullanan biri bos bir kart
+         duyuyordu. Kalip `components/skeleton` `SkeletonCard`ta zaten var
+         (`role="status" aria-busy`), mobilde de kokte
+         (`accessibilityRole="progressbar"`). */
+      <section className="card p-5" role="status" aria-busy="true" aria-label={t("achievements.achievements")}>
         <div className="grid grid-cols-4 gap-2 sm:grid-cols-6">
           {Array.from({ length: 8 }, (_, i) => (
             <div key={i} className="h-[78px] animate-pulse rounded-card" style={{ background: "var(--surface-2)" }} />
@@ -199,7 +210,8 @@ type Tr = (key: string, vars?: Record<string, string | number>) => string;
 function Section({ label, rows, lang, t }: { label: string; rows: Row[]; lang: NativeLang; t: Tr }) {
   if (!rows.length) return null;
   return (
-    <section className="mt-5">
+    /* Bolum araligi mobildeki `spacing.lg` (16): webde 20 yazilyydi. */
+    <section className="mt-4">
       {/* Büyük harfe çevirme YEREL: Türkçede "i" → "İ" (bkz. localeOf). */}
       <p className="muted mb-2 ml-1 text-caption tracking-wide">{label.toLocaleUpperCase(localeOf(lang))}</p>
       <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4">
