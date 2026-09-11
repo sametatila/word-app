@@ -42187,5 +42187,2434 @@
    "goal": "İki yüzü, bir engeli ve bir karşıtlığı üç ayrı bağlaçla söylediysen konuşma başarılı sayılır.",
    "minTurns": 7
   }
+ },
+ {
+  "id": "en-b1-how-i-feel",
+  "level": "B1",
+  "course": "en",
+  "icon": "feelings",
+  "title": "Naming a feeling",
+  "titleTr": "Duyguyu adlandırmak",
+  "summary": "Bir duyguyu adlandırmayı öğretir: süren hâl ile başladığı an ayrı zamanlarla söylenir.",
+  "minutes": 10,
+  "focusId": "Present perfect vs past simple",
+  "vocab": [
+   {
+    "de": "mood",
+    "tr": "ruh hâli"
+   },
+   {
+    "de": "feeling",
+    "tr": "his"
+   },
+   {
+    "de": "relief",
+    "tr": "rahatlama"
+   },
+   {
+    "de": "happy",
+    "tr": "mutlu"
+   },
+   {
+    "de": "sad",
+    "tr": "üzgün"
+   },
+   {
+    "de": "angry",
+    "tr": "kızgın"
+   },
+   {
+    "de": "afraid",
+    "tr": "korkmuş"
+   },
+   {
+    "de": "excited",
+    "tr": "heyecanlı"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "My mood has been low since Monday.",
+    "tr": "hâlâ süren hâli anlatır"
+   },
+   {
+    "de": "The feeling started when she left.",
+    "tr": "başlangıç anını söyler"
+   },
+   {
+    "de": "I have never felt such relief.",
+    "tr": "hiç yaşanmamış bir şeyi söyler"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Bugün bir duyguyu adlandırmayı öğreneceğiz: ne zamandır sürüyor, ne zaman başladı, daha önce oldu mu."
+     },
+     {
+      "lang": "tr",
+      "text": "Duyguyu söylemek onu tarif etmekle bitmiyor; ne zamandır sürdüğü de anlamın bir parçası. Hazır mısın?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "mood"
+     },
+     {
+      "lang": "tr",
+      "text": "İçinde bulunulan genel duygu hâli demek. İlk kalıbımız da bu. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "My mood has been low since Monday."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "My mood has been low since Monday."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Tek tek duyulan şeye"
+     },
+     {
+      "lang": "en",
+      "text": "feeling"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İkinci kalıbımız başlangıcı söylüyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "The feeling started when she left."
+     },
+     {
+      "lang": "tr",
+      "text": "His o gittiğinde başladı."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The feeling started when she left."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Ağırlığın kalkmasına"
+     },
+     {
+      "lang": "en",
+      "text": "relief"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son kalıbımız deneyimi söylüyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "I have never felt such relief."
+     },
+     {
+      "lang": "tr",
+      "text": "Hiç böyle bir rahatlama hissetmemiştim."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "I have never felt such relief."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi dersin kuralı. Duygu HÂLÂ SÜRÜYORSA present perfect kullanılır ve"
+     },
+     {
+      "lang": "en",
+      "text": "since"
+     },
+     {
+      "lang": "tr",
+      "text": "ile başlangıç eklenir; duygunun BAŞLADIĞI AN anlatılıyorsa past simple kullanılır. Aynı duygu iki zamanla da söylenebilir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sıra sende: Cumadan beri ruh hâlim daha iyi."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "My mood has been better since Friday.",
+     "accept": [
+      "My mood has been better since last Friday.",
+      "My mood's been better since Friday."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Süren hâl için present perfect kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "My mood has been better since Friday."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kontrol. Şu cümle doğru mu?"
+     },
+     {
+      "lang": "en",
+      "text": "The feeling started when she left."
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "The feeling started when she left.",
+     "answer": true,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Doğru. Başlangıç anı bitmiş bir noktadır, o yüzden olağan geçmiş zamanda duruyor."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Sevinçli olana"
+     },
+     {
+      "lang": "en",
+      "text": "happy"
+     },
+     {
+      "lang": "tr",
+      "text": "kederli olana ise"
+     },
+     {
+      "lang": "en",
+      "text": "sad"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "I am happy today but I was sad yesterday."
+     },
+     {
+      "lang": "tr",
+      "text": "Bugün mutluyum ama dün üzgündüm."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "I am happy today but I was sad yesterday."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sen kur: Gürültü çalışma başlayınca başladı."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "The noise started when the work began.",
+     "accept": [
+      "The noise started when the works began.",
+      "The noise began when the work started."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Bitmiş bir başlangıç için past simple kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "The noise started when the work began."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Öfkeli olana"
+     },
+     {
+      "lang": "en",
+      "text": "angry"
+     },
+     {
+      "lang": "tr",
+      "text": "korku duyana ise"
+     },
+     {
+      "lang": "en",
+      "text": "afraid"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "He was angry and I was afraid."
+     },
+     {
+      "lang": "tr",
+      "text": "O kızgındı ve ben korkmuştum."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "He was angry and I was afraid."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir şeyi dört gözle bekleyene"
+     },
+     {
+      "lang": "en",
+      "text": "excited"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The children are excited about the trip."
+     },
+     {
+      "lang": "tr",
+      "text": "Çocuklar gezi için heyecanlı."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The children are excited about the trip."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir tane daha: Hiç böyle bir sevinç hissetmemiştim."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "I have never felt such joy.",
+     "accept": [
+      "I've never felt such joy.",
+      "I have never felt this much joy."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Hiç yaşanmamış bir şey için present perfect kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "I have never felt such joy."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Özetleyelim: süren"
+     },
+     {
+      "lang": "en",
+      "text": "has been"
+     },
+     {
+      "lang": "tr",
+      "text": "başlangıç"
+     },
+     {
+      "lang": "en",
+      "text": "it started"
+     },
+     {
+      "lang": "tr",
+      "text": "deneyim"
+     },
+     {
+      "lang": "en",
+      "text": "I have never felt"
+     },
+     {
+      "lang": "tr",
+      "text": "Şimdi bir arkadaşına nasıl hissettiğini anlatacaksın."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Bir arkadaşın son zamanlarda nasıl olduğunu soruyor. Ne zamandır sürdüğünü, neyin başlattığını ve daha önce yaşayıp yaşamadığını anlat.",
+   "partner": "gerçekten merak eden, acele ettirmeyen bir arkadaş",
+   "opening": "How have you been lately?",
+   "openingTr": "Son zamanlarda nasılsın?",
+   "goal": "Süreni, başlangıcı ve daha önceki deneyimi üç ayrı zamanla anlattıysan konuşma başarılı sayılır.",
+   "minTurns": 7
+  }
+ },
+ {
+  "id": "en-b1-regret",
+  "level": "B1",
+  "course": "en",
+  "icon": "clock",
+  "title": "Looking back",
+  "titleTr": "Pişmanlık",
+  "summary": "Pişmanlığı anlatmayı öğretir; fark etmeden önce olan iş bir kat daha geriye çekilir.",
+  "minutes": 10,
+  "focusId": "Past perfect",
+  "vocab": [
+   {
+    "de": "memory",
+    "tr": "anı"
+   },
+   {
+    "de": "hurt",
+    "tr": "incitmek"
+   },
+   {
+    "de": "secret",
+    "tr": "sır"
+   },
+   {
+    "de": "regret",
+    "tr": "pişmanlık"
+   },
+   {
+    "de": "remember",
+    "tr": "hatırlamak"
+   },
+   {
+    "de": "guilty",
+    "tr": "suçlu"
+   },
+   {
+    "de": "tear",
+    "tr": "gözyaşı"
+   },
+   {
+    "de": "shout",
+    "tr": "bağırmak"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "By the time I understood, the memory had faded.",
+    "tr": "anlamadan önce biteni anlatır"
+   },
+   {
+    "de": "I had hurt her before I noticed.",
+    "tr": "fark etmeden önce olanı anlatır"
+   },
+   {
+    "de": "They had kept the secret for years.",
+    "tr": "önceden süregelen bir işi anlatır"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Bugün pişmanlığı anlatmayı öğreneceğiz: sen fark etmeden önce ne olmuştu."
+     },
+     {
+      "lang": "tr",
+      "text": "Pişmanlık her zaman iki zaman taşır: bir şey olmuştur, sonra anlarsın. Bu ayrımı kuran şey zaman. Hazır mısın?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "memory"
+     },
+     {
+      "lang": "tr",
+      "text": "Geçmişten akılda kalan demek. İlk kalıbımız da bu. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "By the time I understood, the memory had faded."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "By the time I understood, the memory had faded."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Birinin canını yakmaya"
+     },
+     {
+      "lang": "en",
+      "text": "hurt"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İkinci kalıbımız fark etmeden önce olanı anlatıyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "I had hurt her before I noticed."
+     },
+     {
+      "lang": "tr",
+      "text": "Fark etmeden önce onu incitmiştim."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "I had hurt her before I noticed."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Kimseye söylenmeyen şeye"
+     },
+     {
+      "lang": "en",
+      "text": "secret"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son kalıbımız önceden süregelen bir işi anlatıyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "They had kept the secret for years."
+     },
+     {
+      "lang": "tr",
+      "text": "Sırrı yıllarca saklamışlardı."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "They had kept the secret for years."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi dersin kuralı. Fark etmeden ÖNCE olan iş"
+     },
+     {
+      "lang": "en",
+      "text": "had"
+     },
+     {
+      "lang": "tr",
+      "text": "ile bir kat geriye çekilir; fark etmenin kendisi olağan geçmiş zamanda kalır ve pişmanlık tam bu aradan doğar."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sıra sende: Ben aradığımda o gitmişti."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "By the time I called, she had left.",
+     "accept": [
+      "By the time I called, she had gone.",
+      "By the time I phoned, she had left."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Önce olan iş bir kat geride:"
+      },
+      {
+       "lang": "en",
+       "text": "By the time I called, she had left."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kontrol. Şu cümle doğru mu?"
+     },
+     {
+      "lang": "en",
+      "text": "I had hurt her before I noticed."
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "I had hurt her before I noticed.",
+     "answer": true,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Doğru. İncitme fark etmeden önce olmuş, o yüzden bir kat geride; fark etme ise olağan geçmişte."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Keşke başka türlü olsaydı duygusuna"
+     },
+     {
+      "lang": "en",
+      "text": "regret"
+     },
+     {
+      "lang": "tr",
+      "text": "akla yeniden getirmeye ise"
+     },
+     {
+      "lang": "en",
+      "text": "remember"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "My only regret is that I remember it."
+     },
+     {
+      "lang": "tr",
+      "text": "Tek pişmanlığım onu hatırlıyor olmam."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "My only regret is that I remember it."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sen kur: Mektubu yıllarca saklamışlardı."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "They had kept the letter for years.",
+     "accept": [
+      "They had kept that letter for years.",
+      "They had kept the letter for many years."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Önceden süregelen iş için"
+      },
+      {
+       "lang": "en",
+       "text": "had kept"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "They had kept the letter for years."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Kabahati kendinde görene"
+     },
+     {
+      "lang": "en",
+      "text": "guilty"
+     },
+     {
+      "lang": "tr",
+      "text": "gözden süzülen damlaya ise"
+     },
+     {
+      "lang": "en",
+      "text": "tear"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "I felt guilty and a tear came."
+     },
+     {
+      "lang": "tr",
+      "text": "Kendimi suçlu hissettim ve bir gözyaşı süzüldü."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "I felt guilty and a tear came."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Yüksek sesle konuşmaya"
+     },
+     {
+      "lang": "en",
+      "text": "shout"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "Nobody had to shout that night."
+     },
+     {
+      "lang": "tr",
+      "text": "O gece kimsenin bağırmasına gerek kalmadı."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Nobody had to shout that night."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir tane daha: O sormadan önce tarihi unutmuştum."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "I had forgotten the date before she asked.",
+     "accept": [
+      "I had forgotten the date before she asked me.",
+      "I had forgotten that date before she asked."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Unutma sorudan önce olduğu için bir kat geride:"
+      },
+      {
+       "lang": "en",
+       "text": "I had forgotten the date before she asked."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Özetleyelim: önce olan"
+     },
+     {
+      "lang": "en",
+      "text": "had hurt"
+     },
+     {
+      "lang": "tr",
+      "text": "sonra olan"
+     },
+     {
+      "lang": "en",
+      "text": "I noticed"
+     },
+     {
+      "lang": "tr",
+      "text": "Şimdi bir pişmanlığını anlatacaksın."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Bir arkadaşınla geçmişte yaptığın bir şeyi konuşuyorsun. Sen fark etmeden önce ne olduğunu, ne zaman anladığını ve şimdi ne hissettiğini anlat.",
+   "partner": "yargılamadan dinleyen, tek tek soran bir arkadaş",
+   "opening": "When did you realise it?",
+   "openingTr": "Bunu ne zaman fark ettin?",
+   "goal": "Fark etmeden önce olanı bir kat geriye çekip fark etmeyi olağan geçmişte anlattıysan konuşma başarılı sayılır.",
+   "minTurns": 7
+  }
+ },
+ {
+  "id": "en-b1-dreams-plans",
+  "level": "B1",
+  "course": "en",
+  "icon": "star",
+  "title": "What I dream of",
+  "titleTr": "Hayaller",
+  "summary": "Hayalleri anlatmayı öğretir; uzak hayal, yakın niyet ve ayarlanmış adım ayrı biçimlerle söylenir.",
+  "minutes": 10,
+  "focusId": "Future forms",
+  "vocab": [
+   {
+    "de": "dream",
+    "tr": "hayal"
+   },
+   {
+    "de": "wish",
+    "tr": "dilek"
+   },
+   {
+    "de": "brave",
+    "tr": "cesur"
+   },
+   {
+    "de": "desire",
+    "tr": "arzu"
+   },
+   {
+    "de": "longing",
+    "tr": "özlem"
+   },
+   {
+    "de": "proud",
+    "tr": "gururlu"
+   },
+   {
+    "de": "joy",
+    "tr": "sevinç"
+   },
+   {
+    "de": "curious",
+    "tr": "meraklı"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "I will follow that dream one day.",
+    "tr": "uzak bir hayali söyler"
+   },
+   {
+    "de": "I am going to write the wish down.",
+    "tr": "yakın bir niyeti söyler"
+   },
+   {
+    "de": "I am taking the brave step next week.",
+    "tr": "ayarlanmış bir adımı söyler"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Bugün hayalleri anlatmayı öğreneceğiz: neyi bir gün yapacaksın, neye niyetlendin, neyi zaten ayarladın."
+     },
+     {
+      "lang": "tr",
+      "text": "Hayal ile plan arasındaki fark İngilizcede kelimeyle değil biçimle söyleniyor. Hazır mısın?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "dream"
+     },
+     {
+      "lang": "tr",
+      "text": "Uykuda ya da uyanıkken kurulan demek. İlk kalıbımız da bu. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "I will follow that dream one day."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "I will follow that dream one day."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Olmasını istediğin şeye"
+     },
+     {
+      "lang": "en",
+      "text": "wish"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İkinci kalıbımız niyeti söylüyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "I am going to write the wish down."
+     },
+     {
+      "lang": "tr",
+      "text": "Dileği yazacağım."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "I am going to write the wish down."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Korkuya rağmen yapana"
+     },
+     {
+      "lang": "en",
+      "text": "brave"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son kalıbımız ayarlanmış bir adımı söylüyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "I am taking the brave step next week."
+     },
+     {
+      "lang": "tr",
+      "text": "Cesur adımı haftaya atıyorum."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "I am taking the brave step next week."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi dersin kuralı. Uzak ve belirsiz bir hayal için"
+     },
+     {
+      "lang": "en",
+      "text": "will"
+     },
+     {
+      "lang": "tr",
+      "text": "yakın ve kararlı bir niyet için"
+     },
+     {
+      "lang": "en",
+      "text": "going to"
+     },
+     {
+      "lang": "tr",
+      "text": "takvime yazılmış bir adım için ise şimdiki zaman kullanılır. Uzaklık arttıkça biçim belirsizleşir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sıra sende: Bir gün o planın peşinden gideceğim."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "I will follow that plan one day.",
+     "accept": [
+      "I will follow the plan one day.",
+      "I'll follow that plan one day."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Uzak hayal için"
+      },
+      {
+       "lang": "en",
+       "text": "will"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "I will follow that plan one day."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kontrol. Şu cümle doğru mu?"
+     },
+     {
+      "lang": "en",
+      "text": "I am going to write the wish down."
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "I am going to write the wish down.",
+     "answer": true,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Doğru. Niyet konuşanın kendisine ait ve kararı verilmiş, o yüzden uzak hayal biçimi kullanılmıyor."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Güçlü bir istemeye"
+     },
+     {
+      "lang": "en",
+      "text": "desire"
+     },
+     {
+      "lang": "tr",
+      "text": "uzaktakini aramaya ise"
+     },
+     {
+      "lang": "en",
+      "text": "longing"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The desire is old but the longing is new."
+     },
+     {
+      "lang": "tr",
+      "text": "Arzu eski ama özlem yeni."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The desire is old but the longing is new."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sen kur: Mektubu bu akşam yazacağım."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "I am going to write the letter tonight.",
+     "accept": [
+      "I'm going to write the letter tonight.",
+      "I am going to write that letter tonight."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Yakın niyet için"
+      },
+      {
+       "lang": "en",
+       "text": "going to"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "I am going to write the letter tonight."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Kendiyle övünene"
+     },
+     {
+      "lang": "en",
+      "text": "proud"
+     },
+     {
+      "lang": "tr",
+      "text": "içi içine sığmayan sevince ise"
+     },
+     {
+      "lang": "en",
+      "text": "joy"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "I felt proud and full of joy."
+     },
+     {
+      "lang": "tr",
+      "text": "Gururlu ve sevinç doluydum."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "I felt proud and full of joy."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Öğrenmek isteyene"
+     },
+     {
+      "lang": "en",
+      "text": "curious"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "I am curious about the answer."
+     },
+     {
+      "lang": "tr",
+      "text": "Cevabı merak ediyorum."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "I am curious about the answer."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir tane daha: İlk adımı yarın atıyorum."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "I am taking the first step tomorrow.",
+     "accept": [
+      "I'm taking the first step tomorrow.",
+      "I am taking my first step tomorrow."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Ayarlanmış adım şimdiki zamanla söylenir:"
+      },
+      {
+       "lang": "en",
+       "text": "I am taking the first step tomorrow."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Özetleyelim: uzak hayal"
+     },
+     {
+      "lang": "en",
+      "text": "I will"
+     },
+     {
+      "lang": "tr",
+      "text": "yakın niyet"
+     },
+     {
+      "lang": "en",
+      "text": "I am going to"
+     },
+     {
+      "lang": "tr",
+      "text": "ayarlanmış adım"
+     },
+     {
+      "lang": "en",
+      "text": "I am taking"
+     },
+     {
+      "lang": "tr",
+      "text": "Şimdi hayallerini bir arkadaşınla konuşacaksın."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Bir arkadaşınla önümüzdeki yılların ne getireceğini konuşuyorsunuz. Uzak bir hayalini, yakın bir niyetini ve ayarlanmış bir adımını söyle.",
+   "partner": "kendi hayallerini de anlatan, seni cesaretlendiren bir arkadaş",
+   "opening": "What would you do if nothing stopped you?",
+   "openingTr": "Hiçbir şey seni durdurmasa ne yapardın?",
+   "goal": "Uzak bir hayali, yakın bir niyeti ve ayarlanmış bir adımı üç ayrı biçimle söylediysen konuşma başarılı sayılır.",
+   "minTurns": 7
+  }
+ },
+ {
+  "id": "en-b1-if-i-could",
+  "level": "B1",
+  "course": "en",
+  "icon": "handshake",
+  "title": "If I could",
+  "titleTr": "Olsaydı",
+  "summary": "Barışmayı konuşmayı öğretir; koşul cümlesi gerçek şartı, varsayımı ve tek çıkışı ayırır.",
+  "minutes": 10,
+  "focusId": "Conditionals",
+  "vocab": [
+   {
+    "de": "forgive",
+    "tr": "affetmek"
+   },
+   {
+    "de": "shy",
+    "tr": "utangaç"
+   },
+   {
+    "de": "thank",
+    "tr": "teşekkür etmek"
+   },
+   {
+    "de": "jealous",
+    "tr": "kıskanç"
+   },
+   {
+    "de": "close",
+    "tr": "yakın"
+   },
+   {
+    "de": "deep",
+    "tr": "derin"
+   },
+   {
+    "de": "soft",
+    "tr": "yumuşak"
+   },
+   {
+    "de": "comfort",
+    "tr": "avutmak"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "If you forgive him, everything gets easier.",
+    "tr": "gerçekleşmesi mümkün bir şartı anlatır"
+   },
+   {
+    "de": "If I were less shy, I would say it.",
+    "tr": "gerçek olmayan bir durumu anlatır"
+   },
+   {
+    "de": "Unless you thank her, she will feel hurt.",
+    "tr": "tek çıkış yolunu söyler"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Bugün barışmayı konuşmayı öğreneceğiz: hangi şartla affedilir, sen olsan ne yapardın."
+     },
+     {
+      "lang": "tr",
+      "text": "Duygu konuşmasında koşul cümlesi bir kibarlık aracı: söylenmesi zor olanı şarta bağlayınca yumuşuyor. Hazır mısın?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "forgive"
+     },
+     {
+      "lang": "tr",
+      "text": "Kusuru bağışlamak demek. İlk kalıbımız da bu. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "If you forgive him, everything gets easier."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "If you forgive him, everything gets easier."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Kolay açılamayana"
+     },
+     {
+      "lang": "en",
+      "text": "shy"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İkinci kalıbımız gerçek olmayan bir durumu anlatıyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "If I were less shy, I would say it."
+     },
+     {
+      "lang": "tr",
+      "text": "Daha az utangaç olsam söylerdim."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "If I were less shy, I would say it."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Minnet bildirmeye"
+     },
+     {
+      "lang": "en",
+      "text": "thank"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son kalıbımız tek çıkışı söylüyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "Unless you thank her, she will feel hurt."
+     },
+     {
+      "lang": "tr",
+      "text": "Ona teşekkür etmezsen kırılacak."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Unless you thank her, she will feel hurt."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi dersin kuralı. Mümkün şart olağan zamanla kurulur;"
+     },
+     {
+      "lang": "en",
+      "text": "if I were"
+     },
+     {
+      "lang": "tr",
+      "text": "gerçek olmayan bir durumu anlatır ve sonuç yarısı"
+     },
+     {
+      "lang": "en",
+      "text": "would"
+     },
+     {
+      "lang": "tr",
+      "text": "alır; tek çıkışı söyleyen bağlaç ise kendisi olumsuzdur ve yanına ikinci bir olumsuzluk almaz."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sıra sende: Onu ararsan her şey kolaylaşır."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "If you call her, everything gets easier.",
+     "accept": [
+      "If you call her, everything will get easier.",
+      "If you phone her, everything gets easier."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Mümkün şart için"
+      },
+      {
+       "lang": "en",
+       "text": "if"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "If you call her, everything gets easier."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kontrol. Şu cümle doğru mu?"
+     },
+     {
+      "lang": "en",
+      "text": "If I were less shy, I would say it."
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "If I were less shy, I would say it.",
+     "answer": true,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Doğru. Konuşan kişi gerçekte utangaç, o yüzden şart yarısı geçmiş biçimde ve sonuç yarısı şart kipinde."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Başkasının sahip olduğunu isteyene"
+     },
+     {
+      "lang": "en",
+      "text": "jealous"
+     },
+     {
+      "lang": "tr",
+      "text": "araya mesafe girmemişse ise"
+     },
+     {
+      "lang": "en",
+      "text": "close"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "He was jealous because they were close."
+     },
+     {
+      "lang": "tr",
+      "text": "Yakın oldukları için kıskandı."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "He was jealous because they were close."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sen kur: Daha cesur olsam sorardım."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "If I were braver, I would ask.",
+     "accept": [
+      "If I were braver, I'd ask.",
+      "If I were more brave, I would ask."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Gerçek olmayan durum için"
+      },
+      {
+       "lang": "en",
+       "text": "if I were"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "If I were braver, I would ask."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Yüzeyin çok altına"
+     },
+     {
+      "lang": "en",
+      "text": "deep"
+     },
+     {
+      "lang": "tr",
+      "text": "sert olmayana ise"
+     },
+     {
+      "lang": "en",
+      "text": "soft"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "Her voice was soft but the question was deep."
+     },
+     {
+      "lang": "tr",
+      "text": "Sesi yumuşaktı ama soru derindi."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Her voice was soft but the question was deep."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Üzgün birini yatıştırmaya"
+     },
+     {
+      "lang": "en",
+      "text": "comfort"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "A word of comfort helps more than advice."
+     },
+     {
+      "lang": "tr",
+      "text": "Bir avutma sözü öğütten çok işe yarar."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "A word of comfort helps more than advice."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir tane daha: Onu aramazsan unutulmuş hissedecek."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "Unless you call him, he will feel forgotten.",
+     "accept": [
+      "Unless you phone him, he will feel forgotten.",
+      "Unless you call him, he'll feel forgotten."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Tek çıkış için"
+      },
+      {
+       "lang": "en",
+       "text": "unless"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "Unless you call him, he will feel forgotten."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Özetleyelim: mümkün şart"
+     },
+     {
+      "lang": "en",
+      "text": "if you forgive"
+     },
+     {
+      "lang": "tr",
+      "text": "varsayım"
+     },
+     {
+      "lang": "en",
+      "text": "if I were"
+     },
+     {
+      "lang": "tr",
+      "text": "tek çıkış"
+     },
+     {
+      "lang": "en",
+      "text": "unless"
+     },
+     {
+      "lang": "tr",
+      "text": "Şimdi bir küskünlüğü konuşacaksın."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Bir arkadaşın biriyle küs ve senden akıl istiyor. Hangi şartla düzeleceğini, onun yerinde olsan ne yapacağını ve tek çıkışı söyle.",
+   "partner": "küs olduğu kişiyi hâlâ önemseyen ama adım atmakta zorlanan bir arkadaş",
+   "opening": "Do you think I should call first?",
+   "openingTr": "Sence önce ben mi aramalıyım?",
+   "goal": "Mümkün bir şartı, bir varsayımı ve tek çıkışı üç ayrı koşul cümlesiyle söylediysen konuşma başarılı sayılır.",
+   "minTurns": 7
+  }
+ },
+ {
+  "id": "en-b1-what-moved-me",
+  "level": "B1",
+  "course": "en",
+  "icon": "film",
+  "title": "The thing that moved me",
+  "titleTr": "Beni etkileyen şey",
+  "summary": "Seni etkileyen şeyi anlatmayı öğretir; ilgi cümlesi şeyi, kişiyi ve yeri cümleye bağlar.",
+  "minutes": 10,
+  "focusId": "Relative clauses",
+  "vocab": [
+   {
+    "de": "cry",
+    "tr": "ağlamak"
+   },
+   {
+    "de": "hug",
+    "tr": "sarılmak"
+   },
+   {
+    "de": "smile",
+    "tr": "gülümsemek"
+   },
+   {
+    "de": "laugh",
+    "tr": "gülmek"
+   },
+   {
+    "de": "surprise",
+    "tr": "sürpriz"
+   },
+   {
+    "de": "disappoint",
+    "tr": "hayal kırıklığına uğratmak"
+   },
+   {
+    "de": "emotion",
+    "tr": "duygu"
+   },
+   {
+    "de": "fear",
+    "tr": "korku"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "The film that made me cry was old.",
+    "tr": "şeyi tarif ederek bağlar"
+   },
+   {
+    "de": "The woman who hugged me was a stranger.",
+    "tr": "kişiyi tarif ederek bağlar"
+   },
+   {
+    "de": "The place where I smiled was quiet.",
+    "tr": "yeri tarif ederek bağlar"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Bugün seni etkileyen şeyi anlatmayı öğreneceğiz: hangi film, kim, nerede."
+     },
+     {
+      "lang": "tr",
+      "text": "Bir anı etkileyici yapan şey çoğu zaman adı değil tarifi ve o tarifi cümleye bağlayan şey ilgi cümlesi. Hazır mısın?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "cry"
+     },
+     {
+      "lang": "tr",
+      "text": "Gözyaşı dökmek demek. İlk kalıbımız da bu. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "The film that made me cry was old."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The film that made me cry was old."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Kollarını dolamaya"
+     },
+     {
+      "lang": "en",
+      "text": "hug"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İkinci kalıbımız kişiyi bağlıyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "The woman who hugged me was a stranger."
+     },
+     {
+      "lang": "tr",
+      "text": "Bana sarılan kadın bir yabancıydı."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The woman who hugged me was a stranger."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Dudakların yukarı kıvrılmasına"
+     },
+     {
+      "lang": "en",
+      "text": "smile"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son kalıbımız yeri bağlıyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "The place where I smiled was quiet."
+     },
+     {
+      "lang": "tr",
+      "text": "Gülümsediğim yer sessizdi."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The place where I smiled was quiet."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi dersin kuralı. İlgi cümlesi tarif ettiği kelimenin hemen ardına geliyor:"
+     },
+     {
+      "lang": "en",
+      "text": "that"
+     },
+     {
+      "lang": "tr",
+      "text": "şeyi,"
+     },
+     {
+      "lang": "en",
+      "text": "who"
+     },
+     {
+      "lang": "tr",
+      "text": "kişiyi,"
+     },
+     {
+      "lang": "en",
+      "text": "where"
+     },
+     {
+      "lang": "tr",
+      "text": "yeri bağlar. Bir anıyı anlatırken üçü de peş peşe gelir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sıra sende: Beni ağlatan şarkı yeniydi."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "The song that made me cry was new.",
+     "accept": [
+      "The song which made me cry was new.",
+      "The song that made me cry was quite new."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Şeyi bağlarken"
+      },
+      {
+       "lang": "en",
+       "text": "that"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "The song that made me cry was new."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kontrol. Şu cümle doğru mu?"
+     },
+     {
+      "lang": "en",
+      "text": "The woman who hugged me was a stranger."
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "The woman who hugged me was a stranger.",
+     "answer": true,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Doğru. Tarif kişiye ait olduğu için"
+      },
+      {
+       "lang": "en",
+       "text": "who"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılıyor ve tarif ettiği kelimeden hemen sonra duruyor."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Sesli sevinmeye"
+     },
+     {
+      "lang": "en",
+      "text": "laugh"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "We laughed until the bus came."
+     },
+     {
+      "lang": "tr",
+      "text": "Otobüs gelene kadar güldük."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "We laughed until the bus came."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sen kur: Bana yardım eden adam bir komşuydu."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "The man who helped me was a neighbour.",
+     "accept": [
+      "The man who helped me was my neighbour.",
+      "The person who helped me was a neighbour."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Kişiyi bağlarken"
+      },
+      {
+       "lang": "en",
+       "text": "who"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "The man who helped me was a neighbour."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Beklenmedik güzel şeye"
+     },
+     {
+      "lang": "en",
+      "text": "surprise"
+     },
+     {
+      "lang": "tr",
+      "text": "umulanı verememeye ise"
+     },
+     {
+      "lang": "en",
+      "text": "disappoint"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The surprise did not disappoint anyone."
+     },
+     {
+      "lang": "tr",
+      "text": "Sürpriz kimseyi hayal kırıklığına uğratmadı."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The surprise did not disappoint anyone."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İçte kabaran şeye"
+     },
+     {
+      "lang": "en",
+      "text": "emotion"
+     },
+     {
+      "lang": "tr",
+      "text": "tehlike karşısındaki duyguya ise"
+     },
+     {
+      "lang": "en",
+      "text": "fear"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The emotion was stronger than the fear."
+     },
+     {
+      "lang": "tr",
+      "text": "Duygu korkudan güçlüydü."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The emotion was stronger than the fear."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir tane daha: Beklediğim oda boştu."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "The room where I waited was empty.",
+     "accept": [
+      "The room where I waited was quite empty.",
+      "The room where I was waiting was empty."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Yeri bağlarken"
+      },
+      {
+       "lang": "en",
+       "text": "where"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "The room where I waited was empty."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Özetleyelim: şey"
+     },
+     {
+      "lang": "en",
+      "text": "that"
+     },
+     {
+      "lang": "tr",
+      "text": "kişi"
+     },
+     {
+      "lang": "en",
+      "text": "who"
+     },
+     {
+      "lang": "tr",
+      "text": "yer"
+     },
+     {
+      "lang": "en",
+      "text": "where"
+     },
+     {
+      "lang": "tr",
+      "text": "Şimdi seni etkileyen bir anı anlatacaksın."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Bir arkadaşınla seni en çok etkileyen anıyı konuşuyorsunuz. Hangi şeyin, kimin ve nerenin seni etkilediğini tarif et.",
+   "partner": "kendi anısını da anlatmak isteyen, meraklı bir arkadaş",
+   "opening": "What was the last thing that moved you?",
+   "openingTr": "Seni en son ne etkiledi?",
+   "goal": "Şeyi, kişiyi ve yeri üç ayrı ilgi cümlesiyle tarif ettiysen konuşma başarılı sayılır.",
+   "minTurns": 7
+  }
  }
 ]

@@ -1,0 +1,892 @@
+[
+ {
+  "tr": "Olsaydı",
+  "kind": "titleTr",
+  "de": "Wenn ich könnte"
+ },
+ {
+  "tr": "Hayaller",
+  "kind": "titleTr",
+  "de": "Träume"
+ },
+ {
+  "tr": "Pişmanlık",
+  "kind": "titleTr",
+  "de": "Bedauern"
+ },
+ {
+  "tr": "Beni etkileyen şey",
+  "kind": "titleTr",
+  "de": "Was mich bewegt hat"
+ },
+ {
+  "tr": "Duyguyu adlandırmak",
+  "kind": "titleTr",
+  "de": "Ein Gefühl benennen"
+ },
+ {
+  "tr": "Pişmanlığı anlatmayı öğretir; fark etmeden önce olan iş bir kat daha geriye çekilir.",
+  "kind": "summary",
+  "de": "Vermittelt, wie man Bedauern erzählt; was vor dem Merken geschah, wird eine Stufe weiter zurückgeschoben."
+ },
+ {
+  "tr": "Bir duyguyu adlandırmayı öğretir: süren hâl ile başladığı an ayrı zamanlarla söylenir.",
+  "kind": "summary",
+  "de": "Vermittelt, wie man ein Gefühl benennt: der andauernde Zustand und der Moment des Beginns stehen in verschiedenen Zeiten."
+ },
+ {
+  "tr": "Barışmayı konuşmayı öğretir; koşul cümlesi gerçek şartı, varsayımı ve tek çıkışı ayırır.",
+  "kind": "summary",
+  "de": "Vermittelt, wie man über Versöhnung spricht; der Bedingungssatz trennt echte Bedingung, Annahme und einzigen Ausweg."
+ },
+ {
+  "tr": "Seni etkileyen şeyi anlatmayı öğretir; ilgi cümlesi şeyi, kişiyi ve yeri cümleye bağlar.",
+  "kind": "summary",
+  "de": "Vermittelt, wie man erzählt, was einen bewegt hat; der Relativsatz bindet Sache, Person und Ort an den Satz."
+ },
+ {
+  "tr": "Hayalleri anlatmayı öğretir; uzak hayal, yakın niyet ve ayarlanmış adım ayrı biçimlerle söylenir.",
+  "kind": "summary",
+  "de": "Vermittelt, wie man von Träumen erzählt; ferner Traum, nahe Absicht und fester Schritt stehen in verschiedenen Formen."
+ },
+ {
+  "tr": "yargılamadan dinleyen, tek tek soran bir arkadaş",
+  "kind": "partner",
+  "de": "eine Freundin, die ohne Urteil zuhört und einzeln nachfragt"
+ },
+ {
+  "tr": "gerçekten merak eden, acele ettirmeyen bir arkadaş",
+  "kind": "partner",
+  "de": "ein Freund, der es wirklich wissen will und dich nicht drängt"
+ },
+ {
+  "tr": "kendi anısını da anlatmak isteyen, meraklı bir arkadaş",
+  "kind": "partner",
+  "de": "eine neugierige Freundin, die auch ihre eigene Erinnerung erzählen will"
+ },
+ {
+  "tr": "kendi hayallerini de anlatan, seni cesaretlendiren bir arkadaş",
+  "kind": "partner",
+  "de": "ein Freund, der auch seine eigenen Träume erzählt und dich ermutigt"
+ },
+ {
+  "tr": "küs olduğu kişiyi hâlâ önemseyen ama adım atmakta zorlanan bir arkadaş",
+  "kind": "partner",
+  "de": "eine Freundin, der die Person immer noch wichtig ist, die aber den ersten Schritt kaum schafft"
+ },
+ {
+  "tr": "Seni en son ne etkiledi?",
+  "kind": "openingTr",
+  "de": "Was hat dich zuletzt bewegt?"
+ },
+ {
+  "tr": "Son zamanlarda nasılsın?",
+  "kind": "openingTr",
+  "de": "Wie geht es dir in letzter Zeit?"
+ },
+ {
+  "tr": "Bunu ne zaman fark ettin?",
+  "kind": "openingTr",
+  "de": "Wann hast du das gemerkt?"
+ },
+ {
+  "tr": "Sence önce ben mi aramalıyım?",
+  "kind": "openingTr",
+  "de": "Meinst du, ich sollte zuerst anrufen?"
+ },
+ {
+  "tr": "Hiçbir şey seni durdurmasa ne yapardın?",
+  "kind": "openingTr",
+  "de": "Was würdest du tun, wenn dich nichts aufhielte?"
+ },
+ {
+  "tr": "Bir arkadaşınla seni en çok etkileyen anıyı konuşuyorsunuz. Hangi şeyin, kimin ve nerenin seni etkilediğini tarif et.",
+  "kind": "scene",
+  "de": "Du sprichst mit einer Freundin über die Erinnerung, die dich am meisten bewegt hat. Beschreib, welche Sache, welche Person und welcher Ort dich bewegt haben."
+ },
+ {
+  "tr": "Bir arkadaşın biriyle küs ve senden akıl istiyor. Hangi şartla düzeleceğini, onun yerinde olsan ne yapacağını ve tek çıkışı söyle.",
+  "kind": "scene",
+  "de": "Eine Freundin ist mit jemandem zerstritten und bittet dich um Rat. Sag, unter welcher Bedingung es sich löst, was du an ihrer Stelle tun würdest und was der einzige Ausweg ist."
+ },
+ {
+  "tr": "Bir arkadaşın son zamanlarda nasıl olduğunu soruyor. Ne zamandır sürdüğünü, neyin başlattığını ve daha önce yaşayıp yaşamadığını anlat.",
+  "kind": "scene",
+  "de": "Ein Freund fragt, wie es dir in letzter Zeit geht. Erzähl, wie lange es schon dauert, was es ausgelöst hat und ob du das früher schon erlebt hast."
+ },
+ {
+  "tr": "Bir arkadaşınla önümüzdeki yılların ne getireceğini konuşuyorsunuz. Uzak bir hayalini, yakın bir niyetini ve ayarlanmış bir adımını söyle.",
+  "kind": "scene",
+  "de": "Du sprichst mit einem Freund darüber, was die nächsten Jahre bringen. Nenn einen fernen Traum, eine nahe Absicht und einen schon festen Schritt."
+ },
+ {
+  "tr": "Bir arkadaşınla geçmişte yaptığın bir şeyi konuşuyorsun. Sen fark etmeden önce ne olduğunu, ne zaman anladığını ve şimdi ne hissettiğini anlat.",
+  "kind": "scene",
+  "de": "Du sprichst mit einer Freundin über etwas, das du früher getan hast. Erzähl, was passiert war, bevor du es merktest, wann du es verstanden hast und was du jetzt fühlst."
+ },
+ {
+  "tr": "Şeyi, kişiyi ve yeri üç ayrı ilgi cümlesiyle tarif ettiysen konuşma başarılı sayılır.",
+  "kind": "goal",
+  "de": "Das Gespräch gilt als gelungen, wenn du Sache, Person und Ort in drei verschiedenen Relativsätzen beschrieben hast."
+ },
+ {
+  "tr": "Fark etmeden önce olanı bir kat geriye çekip fark etmeyi olağan geçmişte anlattıysan konuşma başarılı sayılır.",
+  "kind": "goal",
+  "de": "Das Gespräch gilt als gelungen, wenn du das vor dem Merken Geschehene eine Stufe zurückgeschoben und das Merken im einfachen Präteritum erzählt hast."
+ },
+ {
+  "tr": "Uzak bir hayali, yakın bir niyeti ve ayarlanmış bir adımı üç ayrı biçimle söylediysen konuşma başarılı sayılır.",
+  "kind": "goal",
+  "de": "Das Gespräch gilt als gelungen, wenn du einen fernen Traum, eine nahe Absicht und einen festen Schritt in drei verschiedenen Formen gesagt hast."
+ },
+ {
+  "tr": "anı",
+  "kind": "vocab.tr",
+  "de": "Erinnerung"
+ },
+ {
+  "tr": "arzu",
+  "kind": "vocab.tr",
+  "de": "Verlangen"
+ },
+ {
+  "tr": "cesur",
+  "kind": "vocab.tr",
+  "de": "mutig"
+ },
+ {
+  "tr": "dilek",
+  "kind": "vocab.tr",
+  "de": "Wunsch"
+ },
+ {
+  "tr": "duygu",
+  "kind": "vocab.tr",
+  "de": "Emotion"
+ },
+ {
+  "tr": "hayal",
+  "kind": "vocab.tr",
+  "de": "Traum"
+ },
+ {
+  "tr": "korku",
+  "kind": "vocab.tr",
+  "de": "Angst"
+ },
+ {
+  "tr": "özlem",
+  "kind": "vocab.tr",
+  "de": "Sehnsucht"
+ },
+ {
+  "tr": "suçlu",
+  "kind": "vocab.tr",
+  "de": "schuldig"
+ },
+ {
+  "tr": "üzgün",
+  "kind": "vocab.tr",
+  "de": "traurig"
+ },
+ {
+  "tr": "sevinç",
+  "kind": "vocab.tr",
+  "de": "Freude"
+ },
+ {
+  "tr": "avutmak",
+  "kind": "vocab.tr",
+  "de": "trösten"
+ },
+ {
+  "tr": "gözyaşı",
+  "kind": "vocab.tr",
+  "de": "Träne"
+ },
+ {
+  "tr": "kıskanç",
+  "kind": "vocab.tr",
+  "de": "eifersüchtig"
+ },
+ {
+  "tr": "meraklı",
+  "kind": "vocab.tr",
+  "de": "neugierig"
+ },
+ {
+  "tr": "yumuşak",
+  "kind": "vocab.tr",
+  "de": "weich"
+ },
+ {
+  "tr": "incitmek",
+  "kind": "vocab.tr",
+  "de": "verletzen"
+ },
+ {
+  "tr": "ruh hâli",
+  "kind": "vocab.tr",
+  "de": "Stimmung"
+ },
+ {
+  "tr": "sarılmak",
+  "kind": "vocab.tr",
+  "de": "umarmen"
+ },
+ {
+  "tr": "pişmanlık",
+  "kind": "vocab.tr",
+  "de": "Bedauern"
+ },
+ {
+  "tr": "rahatlama",
+  "kind": "vocab.tr",
+  "de": "Erleichterung"
+ },
+ {
+  "tr": "hayal kırıklığına uğratmak",
+  "kind": "vocab.tr",
+  "de": "enttäuschen"
+ },
+ {
+  "tr": "başlangıç anını söyler",
+  "kind": "pattern.tr",
+  "de": "nennt den Moment des Beginns"
+ },
+ {
+  "tr": "uzak bir hayali söyler",
+  "kind": "pattern.tr",
+  "de": "nennt einen fernen Traum"
+ },
+ {
+  "tr": "hâlâ süren hâli anlatır",
+  "kind": "pattern.tr",
+  "de": "erzählt von einem noch andauernden Zustand"
+ },
+ {
+  "tr": "yakın bir niyeti söyler",
+  "kind": "pattern.tr",
+  "de": "nennt eine nahe Absicht"
+ },
+ {
+  "tr": "ayarlanmış bir adımı söyler",
+  "kind": "pattern.tr",
+  "de": "nennt einen schon festen Schritt"
+ },
+ {
+  "tr": "anlamadan önce biteni anlatır",
+  "kind": "pattern.tr",
+  "de": "erzählt, was zu Ende war, bevor man es verstand"
+ },
+ {
+  "tr": "fark etmeden önce olanı anlatır",
+  "kind": "pattern.tr",
+  "de": "erzählt, was geschah, bevor man es merkte"
+ },
+ {
+  "tr": "önceden süregelen bir işi anlatır",
+  "kind": "pattern.tr",
+  "de": "erzählt eine Handlung, die vorher schon andauerte"
+ },
+ {
+  "tr": "Doğru. İncitme fark etmeden önce olmuş, o yüzden bir kat geride; fark etme ise olağan geçmişte.",
+  "kind": "why.tr",
+  "de": "Richtig. Das Verletzen geschah vor dem Merken, deshalb steht es eine Stufe zurück; das Merken bleibt im einfachen Präteritum."
+ },
+ {
+  "tr": "Doğru. Niyet konuşanın kendisine ait ve kararı verilmiş, o yüzden uzak hayal biçimi kullanılmıyor.",
+  "kind": "why.tr",
+  "de": "Richtig. Die Absicht gehört der sprechenden Person und ist schon entschieden, deshalb steht hier nicht die Form des fernen Traums."
+ },
+ {
+  "tr": "Doğru. Konuşan kişi gerçekte utangaç, o yüzden şart yarısı geçmiş biçimde ve sonuç yarısı şart kipinde.",
+  "kind": "why.tr",
+  "de": "Richtig. Die sprechende Person ist in Wirklichkeit schüchtern, deshalb steht die Bedingungshälfte in der Vergangenheitsform und die Folgehälfte im Konjunktiv."
+ },
+ {
+  "tr": "Uzak hayal için",
+  "kind": "hint.tr",
+  "de": "Für einen fernen Traum"
+ },
+ {
+  "tr": "Yakın niyet için",
+  "kind": "hint.tr",
+  "de": "Für eine nahe Absicht"
+ },
+ {
+  "tr": "Önceden süregelen iş için",
+  "kind": "hint.tr",
+  "de": "Für eine vorher schon andauernde Handlung"
+ },
+ {
+  "tr": "Ayarlanmış adım şimdiki zamanla söylenir:",
+  "kind": "hint.tr",
+  "de": "Ein fester Schritt steht in der Verlaufsform der Gegenwart:"
+ },
+ {
+  "tr": "Süren hâl için present perfect kullanılır:",
+  "kind": "hint.tr",
+  "de": "Für einen andauernden Zustand steht Present Perfect:"
+ },
+ {
+  "tr": "Unutma sorudan önce olduğu için bir kat geride:",
+  "kind": "hint.tr",
+  "de": "Weil das Vergessen vor der Frage lag, steht es eine Stufe zurück:"
+ },
+ {
+  "tr": "yakın niyet",
+  "kind": "say.tr",
+  "de": "nahe Absicht"
+ },
+ {
+  "tr": "Öfkeli olana",
+  "kind": "say.tr",
+  "de": "Wer zornig ist, heißt"
+ },
+ {
+  "tr": "Sevinçli olana",
+  "kind": "say.tr",
+  "de": "Wer froh ist, heißt"
+ },
+ {
+  "tr": "ayarlanmış adım",
+  "kind": "say.tr",
+  "de": "fester Schritt"
+ },
+ {
+  "tr": "Sesli sevinmeye",
+  "kind": "say.tr",
+  "de": "Sich hörbar freuen heißt"
+ },
+ {
+  "tr": "Kendiyle övünene",
+  "kind": "say.tr",
+  "de": "Wer auf sich selbst hält, heißt"
+ },
+ {
+  "tr": "korku duyana ise",
+  "kind": "say.tr",
+  "de": "und wer Angst hat, heißt"
+ },
+ {
+  "tr": "Dileği yazacağım.",
+  "kind": "say.tr",
+  "de": "Ich werde den Wunsch aufschreiben."
+ },
+ {
+  "tr": "İçte kabaran şeye",
+  "kind": "say.tr",
+  "de": "Was innen aufsteigt, heißt"
+ },
+ {
+  "tr": "kederli olana ise",
+  "kind": "say.tr",
+  "de": "und wer bekümmert ist, heißt"
+ },
+ {
+  "tr": "Kolay açılamayana",
+  "kind": "say.tr",
+  "de": "Wer sich nicht leicht öffnet, heißt"
+ },
+ {
+  "tr": "Minnet bildirmeye",
+  "kind": "say.tr",
+  "de": "Dankbarkeit zeigen heißt"
+ },
+ {
+  "tr": "Öğrenmek isteyene",
+  "kind": "say.tr",
+  "de": "Wer etwas wissen will, heißt"
+ },
+ {
+  "tr": "sert olmayana ise",
+  "kind": "say.tr",
+  "de": "und was nicht hart ist, heißt"
+ },
+ {
+  "tr": "Güçlü bir istemeye",
+  "kind": "say.tr",
+  "de": "Ein starkes Wollen heißt"
+ },
+ {
+  "tr": "Kollarını dolamaya",
+  "kind": "say.tr",
+  "de": "Die Arme um jemanden legen heißt"
+ },
+ {
+  "tr": "Yüzeyin çok altına",
+  "kind": "say.tr",
+  "de": "Weit unter der Oberfläche heißt"
+ },
+ {
+  "tr": "Ağırlığın kalkmasına",
+  "kind": "say.tr",
+  "de": "Wenn die Last abfällt, heißt das"
+ },
+ {
+  "tr": "Tek tek duyulan şeye",
+  "kind": "say.tr",
+  "de": "Was man einzeln spürt, heißt"
+ },
+ {
+  "tr": "Korkuya rağmen yapana",
+  "kind": "say.tr",
+  "de": "Wer es trotz Angst tut, heißt"
+ },
+ {
+  "tr": "Beklenmedik güzel şeye",
+  "kind": "say.tr",
+  "de": "Das unerwartet Schöne heißt"
+ },
+ {
+  "tr": "Birinin canını yakmaya",
+  "kind": "say.tr",
+  "de": "Jemandem wehtun heißt"
+ },
+ {
+  "tr": "Cevabı merak ediyorum.",
+  "kind": "say.tr",
+  "de": "Ich bin neugierig auf die Antwort."
+ },
+ {
+  "tr": "umulanı verememeye ise",
+  "kind": "say.tr",
+  "de": "und das Erhoffte nicht geben können heißt"
+ },
+ {
+  "tr": "uzaktakini aramaya ise",
+  "kind": "say.tr",
+  "de": "und nach dem Fernen suchen heißt"
+ },
+ {
+  "tr": "Yüksek sesle konuşmaya",
+  "kind": "say.tr",
+  "de": "Mit lauter Stimme sprechen heißt"
+ },
+ {
+  "tr": "Olmasını istediğin şeye",
+  "kind": "say.tr",
+  "de": "Was du dir wünschst, heißt"
+ },
+ {
+  "tr": "Özetleyelim: uzak hayal",
+  "kind": "say.tr",
+  "de": "Fassen wir zusammen: ferner Traum"
+ },
+ {
+  "tr": "Duygu korkudan güçlüydü.",
+  "kind": "say.tr",
+  "de": "Die Emotion war stärker als die Angst."
+ },
+ {
+  "tr": "Kabahati kendinde görene",
+  "kind": "say.tr",
+  "de": "Wer die Schuld bei sich sieht, heißt"
+ },
+ {
+  "tr": "Kimseye söylenmeyen şeye",
+  "kind": "say.tr",
+  "de": "Was niemandem gesagt wird, heißt"
+ },
+ {
+  "tr": "Arzu eski ama özlem yeni.",
+  "kind": "say.tr",
+  "de": "Das Verlangen ist alt, aber die Sehnsucht ist neu."
+ },
+ {
+  "tr": "His o gittiğinde başladı.",
+  "kind": "say.tr",
+  "de": "Das Gefühl fing an, als sie ging."
+ },
+ {
+  "tr": "Üzgün birini yatıştırmaya",
+  "kind": "say.tr",
+  "de": "Jemanden Traurigen beruhigen heißt"
+ },
+ {
+  "tr": "akla yeniden getirmeye ise",
+  "kind": "say.tr",
+  "de": "und sich etwas wieder ins Gedächtnis rufen heißt"
+ },
+ {
+  "tr": "gözden süzülen damlaya ise",
+  "kind": "say.tr",
+  "de": "und der Tropfen aus dem Auge heißt"
+ },
+ {
+  "tr": "Gülümsediğim yer sessizdi.",
+  "kind": "say.tr",
+  "de": "Der Ort, an dem ich lächelte, war still."
+ },
+ {
+  "tr": "araya mesafe girmemişse ise",
+  "kind": "say.tr",
+  "de": "und wenn kein Abstand dazwischen ist, heißt das"
+ },
+ {
+  "tr": "Gururlu ve sevinç doluydum.",
+  "kind": "say.tr",
+  "de": "Ich war stolz und voller Freude."
+ },
+ {
+  "tr": "Otobüs gelene kadar güldük.",
+  "kind": "say.tr",
+  "de": "Wir haben gelacht, bis der Bus kam."
+ },
+ {
+  "tr": "Bir şeyi dört gözle bekleyene",
+  "kind": "say.tr",
+  "de": "Wer etwas sehnlich erwartet, heißt"
+ },
+ {
+  "tr": "Cesur adımı haftaya atıyorum.",
+  "kind": "say.tr",
+  "de": "Den mutigen Schritt mache ich nächste Woche."
+ },
+ {
+  "tr": "Çocuklar gezi için heyecanlı.",
+  "kind": "say.tr",
+  "de": "Die Kinder sind wegen des Ausflugs aufgeregt."
+ },
+ {
+  "tr": "O kızgındı ve ben korkmuştum.",
+  "kind": "say.tr",
+  "de": "Er war wütend und ich war ängstlich."
+ },
+ {
+  "tr": "Sırrı yıllarca saklamışlardı.",
+  "kind": "say.tr",
+  "de": "Sie hatten das Geheimnis jahrelang gehütet."
+ },
+ {
+  "tr": "Dudakların yukarı kıvrılmasına",
+  "kind": "say.tr",
+  "de": "Wenn sich die Lippen nach oben ziehen, heißt das"
+ },
+ {
+  "tr": "içi içine sığmayan sevince ise",
+  "kind": "say.tr",
+  "de": "und die Freude, die kaum zu fassen ist, heißt"
+ },
+ {
+  "tr": "Yakın oldukları için kıskandı.",
+  "kind": "say.tr",
+  "de": "Er war eifersüchtig, weil sie sich nah waren."
+ },
+ {
+  "tr": "yakın ve kararlı bir niyet için",
+  "kind": "say.tr",
+  "de": "für eine nahe und feste Absicht"
+ },
+ {
+  "tr": "Bugün mutluyum ama dün üzgündüm.",
+  "kind": "say.tr",
+  "de": "Heute bin ich glücklich, aber gestern war ich traurig."
+ },
+ {
+  "tr": "Daha az utangaç olsam söylerdim.",
+  "kind": "say.tr",
+  "de": "Wäre ich weniger schüchtern, würde ich es sagen."
+ },
+ {
+  "tr": "Ona teşekkür etmezsen kırılacak.",
+  "kind": "say.tr",
+  "de": "Wenn du ihr nicht dankst, wird sie verletzt sein."
+ },
+ {
+  "tr": "Sesi yumuşaktı ama soru derindi.",
+  "kind": "say.tr",
+  "de": "Ihre Stimme war weich, aber die Frage war tief."
+ },
+ {
+  "tr": "tehlike karşısındaki duyguya ise",
+  "kind": "say.tr",
+  "de": "und das Gefühl angesichts der Gefahr heißt"
+ },
+ {
+  "tr": "Bana sarılan kadın bir yabancıydı.",
+  "kind": "say.tr",
+  "de": "Die Frau, die mich umarmte, war eine Fremde."
+ },
+ {
+  "tr": "Başkasının sahip olduğunu isteyene",
+  "kind": "say.tr",
+  "de": "Wer will, was ein anderer hat, heißt"
+ },
+ {
+  "tr": "Fark etmeden önce onu incitmiştim.",
+  "kind": "say.tr",
+  "de": "Bevor ich es merkte, hatte ich sie verletzt."
+ },
+ {
+  "tr": "Şimdi bir küskünlüğü konuşacaksın.",
+  "kind": "say.tr",
+  "de": "Jetzt sprichst du über ein Zerwürfnis."
+ },
+ {
+  "tr": "Keşke başka türlü olsaydı duygusuna",
+  "kind": "say.tr",
+  "de": "Das Gefühl, es wäre besser anders gewesen, heißt"
+ },
+ {
+  "tr": "Bir tane daha: Beklediğim oda boştu.",
+  "kind": "say.tr",
+  "de": "Noch eins: Der Raum, in dem ich wartete, war leer."
+ },
+ {
+  "tr": "Şimdi bir pişmanlığını anlatacaksın.",
+  "kind": "say.tr",
+  "de": "Jetzt erzählst du von einem Bedauern."
+ },
+ {
+  "tr": "Tek pişmanlığım onu hatırlıyor olmam.",
+  "kind": "say.tr",
+  "de": "Mein einziges Bedauern ist, dass ich mich daran erinnere."
+ },
+ {
+  "tr": "Bir avutma sözü öğütten çok işe yarar.",
+  "kind": "say.tr",
+  "de": "Ein tröstendes Wort hilft mehr als ein Rat."
+ },
+ {
+  "tr": "Hiç böyle bir rahatlama hissetmemiştim.",
+  "kind": "say.tr",
+  "de": "So eine Erleichterung hatte ich noch nie gespürt."
+ },
+ {
+  "tr": "Son kalıbımız yeri bağlıyor. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Unsere letzte Wendung verbindet den Ort. Wiederhole:"
+ },
+ {
+  "tr": "Bir tane daha: İlk adımı yarın atıyorum.",
+  "kind": "say.tr",
+  "de": "Noch eins: Den ersten Schritt mache ich morgen."
+ },
+ {
+  "tr": "Şimdi sen kur: Daha cesur olsam sorardım.",
+  "kind": "say.tr",
+  "de": "Jetzt du: Wäre ich mutiger, würde ich fragen."
+ },
+ {
+  "tr": "O gece kimsenin bağırmasına gerek kalmadı.",
+  "kind": "say.tr",
+  "de": "In dieser Nacht musste niemand schreien."
+ },
+ {
+  "tr": "Şimdi sen kur: Mektubu bu akşam yazacağım.",
+  "kind": "say.tr",
+  "de": "Jetzt du: Ich werde den Brief heute Abend schreiben."
+ },
+ {
+  "tr": "Şimdi seni etkileyen bir anı anlatacaksın.",
+  "kind": "say.tr",
+  "de": "Jetzt erzählst du von einer Erinnerung, die dich bewegt hat."
+ },
+ {
+  "tr": "İkinci kalıbımız kişiyi bağlıyor. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Unsere zweite Wendung verbindet die Person. Wiederhole:"
+ },
+ {
+  "tr": "Sürpriz kimseyi hayal kırıklığına uğratmadı.",
+  "kind": "say.tr",
+  "de": "Die Überraschung hat niemanden enttäuscht."
+ },
+ {
+  "tr": "Şimdi sıra sende: Ben aradığımda o gitmişti.",
+  "kind": "say.tr",
+  "de": "Jetzt bist du dran: Als ich anrief, war sie gegangen."
+ },
+ {
+  "tr": "Şimdi sıra sende: Beni ağlatan şarkı yeniydi.",
+  "kind": "say.tr",
+  "de": "Jetzt bist du dran: Das Lied, das mich zum Weinen brachte, war neu."
+ },
+ {
+  "tr": "Şimdi dersin kuralı. Fark etmeden ÖNCE olan iş",
+  "kind": "say.tr",
+  "de": "Jetzt die Regel der Lektion. Was VOR dem Merken geschah, wird mit"
+ },
+ {
+  "tr": "Şimdi sen kur: Mektubu yıllarca saklamışlardı.",
+  "kind": "say.tr",
+  "de": "Jetzt du: Sie hatten den Brief jahrelang aufbewahrt."
+ },
+ {
+  "tr": "Kendimi suçlu hissettim ve bir gözyaşı süzüldü.",
+  "kind": "say.tr",
+  "de": "Ich fühlte mich schuldig und eine Träne lief herunter."
+ },
+ {
+  "tr": "Şimdi hayallerini bir arkadaşınla konuşacaksın.",
+  "kind": "say.tr",
+  "de": "Jetzt besprichst du deine Träume mit einem Freund."
+ },
+ {
+  "tr": "Bir tane daha: O sormadan önce tarihi unutmuştum.",
+  "kind": "say.tr",
+  "de": "Noch eins: Bevor sie fragte, hatte ich das Datum vergessen."
+ },
+ {
+  "tr": "Şimdi sıra sende: Onu ararsan her şey kolaylaşır.",
+  "kind": "say.tr",
+  "de": "Jetzt bist du dran: Wenn du sie anrufst, wird alles leichter."
+ },
+ {
+  "tr": "Bir tane daha: Onu aramazsan unutulmuş hissedecek.",
+  "kind": "say.tr",
+  "de": "Noch eins: Wenn du ihn nicht anrufst, wird er sich vergessen fühlen."
+ },
+ {
+  "tr": "Şimdi sen kur: Bana yardım eden adam bir komşuydu.",
+  "kind": "say.tr",
+  "de": "Jetzt du: Der Mann, der mir half, war ein Nachbar."
+ },
+ {
+  "tr": "Şimdi sen kur: Gürültü çalışma başlayınca başladı.",
+  "kind": "say.tr",
+  "de": "Jetzt du: Der Lärm fing an, als die Arbeiten begannen."
+ },
+ {
+  "tr": "Şimdi sıra sende: Cumadan beri ruh hâlim daha iyi.",
+  "kind": "say.tr",
+  "de": "Jetzt bist du dran: Seit Freitag ist meine Stimmung besser."
+ },
+ {
+  "tr": "Bir tane daha: Hiç böyle bir sevinç hissetmemiştim.",
+  "kind": "say.tr",
+  "de": "Noch eins: So eine Freude hatte ich noch nie gespürt."
+ },
+ {
+  "tr": "Şimdi dersin kuralı. Uzak ve belirsiz bir hayal için",
+  "kind": "say.tr",
+  "de": "Jetzt die Regel der Lektion. Für einen fernen und unbestimmten Traum steht"
+ },
+ {
+  "tr": "Gözyaşı dökmek demek. İlk kalıbımız da bu. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Das heißt Tränen vergießen. Das ist auch unsere erste Wendung. Wiederhole:"
+ },
+ {
+  "tr": "Şimdi bir arkadaşına nasıl hissettiğini anlatacaksın.",
+  "kind": "say.tr",
+  "de": "Jetzt erzählst du einem Freund, wie du dich fühlst."
+ },
+ {
+  "tr": "Şimdi sıra sende: Bir gün o planın peşinden gideceğim.",
+  "kind": "say.tr",
+  "de": "Jetzt bist du dran: Eines Tages werde ich diesem Plan folgen."
+ },
+ {
+  "tr": "Son kalıbımız ayarlanmış bir adımı söylüyor. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Unsere letzte Wendung nennt einen schon festen Schritt. Wiederhole:"
+ },
+ {
+  "tr": "Kusuru bağışlamak demek. İlk kalıbımız da bu. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Das heißt einen Fehler verzeihen. Das ist auch unsere erste Wendung. Wiederhole:"
+ },
+ {
+  "tr": "yeri bağlar. Bir anıyı anlatırken üçü de peş peşe gelir.",
+  "kind": "say.tr",
+  "de": "den Ort. Wenn man eine Erinnerung erzählt, kommen alle drei hintereinander."
+ },
+ {
+  "tr": "Geçmişten akılda kalan demek. İlk kalıbımız da bu. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Das heißt, was aus der Vergangenheit im Kopf bleibt. Das ist auch unsere erste Wendung. Wiederhole:"
+ },
+ {
+  "tr": "Son kalıbımız önceden süregelen bir işi anlatıyor. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Unsere letzte Wendung erzählt eine Handlung, die vorher schon andauerte. Wiederhole:"
+ },
+ {
+  "tr": "İkinci kalıbımız fark etmeden önce olanı anlatıyor. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Unsere zweite Wendung erzählt, was geschah, bevor man es merkte. Wiederhole:"
+ },
+ {
+  "tr": "Uykuda ya da uyanıkken kurulan demek. İlk kalıbımız da bu. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Das heißt, was man im Schlaf oder wach vor sich sieht. Das ist auch unsere erste Wendung. Wiederhole:"
+ },
+ {
+  "tr": "Şimdi dersin kuralı. Duygu HÂLÂ SÜRÜYORSA present perfect kullanılır ve",
+  "kind": "say.tr",
+  "de": "Jetzt die Regel der Lektion. Dauert das Gefühl NOCH AN, steht Present Perfect, und mit"
+ },
+ {
+  "tr": "İçinde bulunulan genel duygu hâli demek. İlk kalıbımız da bu. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Das heißt die allgemeine Gefühlslage, in der man gerade ist. Das ist auch unsere erste Wendung. Wiederhole:"
+ },
+ {
+  "tr": "Merhaba! Bugün pişmanlığı anlatmayı öğreneceğiz: sen fark etmeden önce ne olmuştu.",
+  "kind": "say.tr",
+  "de": "Hallo! Heute lernen wir, Bedauern zu erzählen: was passiert war, bevor du es merktest."
+ },
+ {
+  "tr": "Merhaba! Bugün seni etkileyen şeyi anlatmayı öğreneceğiz: hangi film, kim, nerede.",
+  "kind": "say.tr",
+  "de": "Hallo! Heute lernen wir zu erzählen, was dich bewegt hat: welcher Film, wer, wo."
+ },
+ {
+  "tr": "Hayal ile plan arasındaki fark İngilizcede kelimeyle değil biçimle söyleniyor. Hazır mısın?",
+  "kind": "say.tr",
+  "de": "Der Unterschied zwischen Traum und Plan wird im Englischen nicht mit einem Wort, sondern mit der Form gesagt. Bist du bereit?"
+ },
+ {
+  "tr": "Merhaba! Bugün barışmayı konuşmayı öğreneceğiz: hangi şartla affedilir, sen olsan ne yapardın.",
+  "kind": "say.tr",
+  "de": "Hallo! Heute lernen wir, über Versöhnung zu sprechen: unter welcher Bedingung verziehen wird, was du an seiner Stelle tun würdest."
+ },
+ {
+  "tr": "takvime yazılmış bir adım için ise şimdiki zaman kullanılır. Uzaklık arttıkça biçim belirsizleşir.",
+  "kind": "say.tr",
+  "de": "und für einen Schritt, der schon im Kalender steht, die Verlaufsform der Gegenwart. Je ferner es liegt, desto unbestimmter die Form."
+ },
+ {
+  "tr": "Duyguyu söylemek onu tarif etmekle bitmiyor; ne zamandır sürdüğü de anlamın bir parçası. Hazır mısın?",
+  "kind": "say.tr",
+  "de": "Ein Gefühl zu sagen endet nicht bei der Beschreibung; wie lange es schon dauert, gehört zur Bedeutung dazu. Bist du bereit?"
+ },
+ {
+  "tr": "ile bir kat geriye çekilir; fark etmenin kendisi olağan geçmiş zamanda kalır ve pişmanlık tam bu aradan doğar.",
+  "kind": "say.tr",
+  "de": "eine Stufe zurückgeschoben; das Merken selbst bleibt im einfachen Präteritum, und genau aus diesem Abstand entsteht das Bedauern."
+ },
+ {
+  "tr": "Merhaba! Bugün bir duyguyu adlandırmayı öğreneceğiz: ne zamandır sürüyor, ne zaman başladı, daha önce oldu mu.",
+  "kind": "say.tr",
+  "de": "Hallo! Heute lernen wir, ein Gefühl zu benennen: wie lange es schon dauert, wann es angefangen hat, ob es früher schon da war."
+ },
+ {
+  "tr": "Pişmanlık her zaman iki zaman taşır: bir şey olmuştur, sonra anlarsın. Bu ayrımı kuran şey zaman. Hazır mısın?",
+  "kind": "say.tr",
+  "de": "Bedauern trägt immer zwei Zeiten: etwas ist geschehen, dann verstehst du es. Diesen Unterschied baut die Zeitform. Bist du bereit?"
+ },
+ {
+  "tr": "Merhaba! Bugün hayalleri anlatmayı öğreneceğiz: neyi bir gün yapacaksın, neye niyetlendin, neyi zaten ayarladın.",
+  "kind": "say.tr",
+  "de": "Hallo! Heute lernen wir, von Träumen zu erzählen: was du eines Tages tun wirst, was du vorhast, was du schon festgelegt hast."
+ },
+ {
+  "tr": "Duygu konuşmasında koşul cümlesi bir kibarlık aracı: söylenmesi zor olanı şarta bağlayınca yumuşuyor. Hazır mısın?",
+  "kind": "say.tr",
+  "de": "Im Gespräch über Gefühle ist der Bedingungssatz ein Mittel der Höflichkeit: was schwer zu sagen ist, wird weicher, wenn man es an eine Bedingung knüpft. Bist du bereit?"
+ },
+ {
+  "tr": "Bir anı etkileyici yapan şey çoğu zaman adı değil tarifi ve o tarifi cümleye bağlayan şey ilgi cümlesi. Hazır mısın?",
+  "kind": "say.tr",
+  "de": "Was eine Erinnerung bewegend macht, ist meist nicht ihr Name, sondern ihre Beschreibung, und was diese Beschreibung an den Satz bindet, ist der Relativsatz. Bist du bereit?"
+ },
+ {
+  "tr": "ile başlangıç eklenir; duygunun BAŞLADIĞI AN anlatılıyorsa past simple kullanılır. Aynı duygu iki zamanla da söylenebilir.",
+  "kind": "say.tr",
+  "de": "wird der Anfang angehängt; erzählst du den MOMENT, IN DEM DAS GEFÜHL BEGANN, steht Past Simple. Dasselbe Gefühl lässt sich in beiden Zeiten sagen."
+ }
+]
