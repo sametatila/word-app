@@ -6885,3 +6885,37 @@ Küçük bir kalan: Android'in cümle **dizme** turunda ipucu düğmesi hiç yok
 (webde var). Alıştırma tarafında bir eksiklik; sınavı etkilemiyor çünkü orada
 zaten kapalı olmalı. Ayrı bir turda ölçülecek.
 
+
+### 11.196 Etap duraklaması ve bahis: kullanılmayan bir sunucu yeteneği
+
+`stage.` (9) ve `wager.` (3) uzaylarının denetimi. Tur mobilde **baştan sona
+tek parça** akıyordu: web her beş turda duruyor, etabın özetini gösteriyor ve
+"devam et / şimdilik yeter" diye soruyor. Androidde durulacak bir yer yoktu —
+uzun turu bırakmak isteyen ya sonuna kadar gidiyor ya ekrandan çıkıyordu.
+
+**Bahis, yazılmış ama hiç çağrılmamış bir yetenekti.** `/api/answers` `wager`
+alanını baştan beri kabul ediyor, `lib/session` `xpForWager` farkı hesaplıyor
+ve mobil tipinde alan bile duruyordu — kendi yorumuyla: *"mobilde bahis yok,
+alan sözleşme için var"*. §11.24'teki `/api/premium/consume` ile aynı sınıf
+(sözleşme modellenmiş, çağıran yok) ama bu sefer bağlamanın önünde bir ürün
+kararı yoktu.
+
+Etap sınırı artık gerçek bir **yazma noktası**: biriken cevaplar orada
+gönderiliyor, bahsin sonucu sunucudan dönüyor, gönderilenler listeden düşüyor.
+
+**Ses.** `stage` ipucu tabloya eklendi ve iki native kopyaya yeniden üretildi;
+on iki → on üç. On üçüncü ses, §11.15'te "mobilde yok" diye kaydedilen beşin
+ardından gelen ilk yeni cue.
+
+**Üç kapı kendi işini haber verdi:** §44'ün olay listesinden `stage_done`,
+§83/§84'ün "stage hariç" istisnası ve `check-ios`un "mp3 diskte var ama
+pbxproj'a bağlı değil" satırı. Bir taşımanın bittiğini üç ayrı yerden ölçüm
+söyledi — dördüncü turda aynı kalıp.
+
+### 11.197 Dizme turunda ipucu düğmesi yoktu
+
+§11.195'in kenar notu kapatıldı: web cümle dizme turunda sıradaki doğru
+kelimeyi yerleştiren bir ipucu veriyor ve bedelini `hintUsed` ile kaydediyor;
+Androidde düğme hiç yoktu, tıkanan öğrencinin tek çıkışı turu yanlış
+bitirmekti. Sınavda görünmüyor (§107'nin bağlamı).
+
