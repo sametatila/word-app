@@ -9719,3 +9719,33 @@ hüküm/dizme oranı aynı mı. Dört enjeksiyonun dördü yakalandı — biri i
 denemede hedefi ıskaladığı için (Türkçe "Ş" harfi yüzünden eşleşmeyen bir
 `sed`) ayrıca tekrar denendi; §11.285'te öğrenilen şey: **yakalanmayan bir
 enjeksiyon, önce enjeksiyonun kendisinden şüphelenmeyi gerektirir.**
+
+## §11.296 — Harf bulmacası mobilde rastgele diziliyordu
+
+§11.295'ten çıkan soruyu kalan seçimlere sordum: hangisi tohumlu, hangisi
+rastgele? Önce kapsamı daralttım — seviye sınavını kuran `lib/exam`
+`server-only`, yani kâğıdı **sunucu** seçiyor ve iki platform aynı soruları
+alıyor; günün turu ve haftalık sınav da uçtan geliyor. Ayrışma ancak
+**istemcide** seçim yapan yerlerde olabilir.
+
+Üç sonuç çıktı:
+
+**a) Harf bulmacası ayrışıktı.** Web turun kimliğiyle tohumluyor
+(`makePool(word.de, round.id)`), mobil `Math.random()` kullanıyordu. İki
+sonucu vardı: aynı tur iki platformda **farklı bulmaca** oluyordu, ve mobilde
+ekran yeniden kurulduğunda (geri dönüş, yeniden çizim) harfler yerinden
+oynuyordu. İkincisi ayrıca kendi içinde tutarsızdı: **mobilin kendi
+`lib/shuffle` dosyasının başında tam bu sebep yazılı** — "aynı tohum → aynı
+sıra, yani ekran yeniden çizilince parçalar yerinden oynamıyor". Dosya vardı,
+kullanan yoktu. §11.295'in aynısı, farklı yerde.
+
+**b) Eşleştirme oyunu iki tarafta da rastgele** ve bu bilinçli: her açılışta
+başka sıra isteniyor. Parite zaten vardı.
+
+**c) Cesaret cümlesi** de iki tarafta rastgele seçiliyor — aynı gerekçe.
+
+**§202 mutlak ölçüt kullanıyor:** her yüzey için *beklenen yöntem* yazılı.
+"İki taraf da aynı mı" diye sormak yetmezdi — ikisi birden rastgeleye
+dönseydi karşılaştırma yine yeşil kalırdı (§11.279'daki `"?" === "?"`
+tuzağının bu alandaki hâli). Dört enjeksiyonun dördü yakalandı, dördüncüsü
+ters yönden: eşleştirmenin **sessizce tohumlanması** da kırmızı veriyor.

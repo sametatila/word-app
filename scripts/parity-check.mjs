@@ -7226,6 +7226,48 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     "beklenen",
   );
 
+  /* ── 202. tohumlu mu, rastgele mi ────────────────────────────────────
+   * §201'den cikan soru: KALAN secimler hangi tarafta tohumlu, hangi tarafta
+   * rastgele? Tarama uc sonuc verdi.
+   *
+   *   a) Harf bulmacasi AYRISIKTI. Web turun kimligiyle tohumluyor
+   *      (`games/scramble-game` `makePool(word.de, round.id)`), mobil
+   *      `Math.random()` kullaniyordu. Iki sonucu vardi: ayni tur iki
+   *      platformda farkli bulmaca oluyordu, VE mobilde ekran yeniden
+   *      kuruldugunda harfler yerinden oynuyordu - mobilin KENDI
+   *      `lib/shuffle` dosyasinin basinda tam bu sebep yazili. Duzeltildi.
+   *   b) Eslestirme oyunu iki tarafta da RASTGELE ve bu bilincli: her
+   *      acilista baska sira isteniyor. Parite var; kapinin bunu bilmesi
+   *      gerekiyor, yoksa sonraki tarama onu "eksik tohum" sanip bozar.
+   *   c) Cesaret cumlesi iki tarafta da rastgele secilyor - ayni gerekce.
+   *
+   * Olcut mutlak: her yuzey icin BEKLENEN yontem yazili. "Iki taraf da ayni"
+   * diye sormak yetmez - ikisi birden rastgeleye donerse karsilastirma yine
+   * yesil kalirdi. */
+  {
+    const mobTur = sil(read("mobile/src/game/rounds.tsx"));
+    const webBulmaca = sil(read("src/components/games/scramble-game.tsx"));
+    const webEslestirme = sil(read("src/components/games/match-game.tsx"));
+    const govde = (src, ad) => {
+      const i = src.indexOf("function " + ad);
+      return i < 0 ? "" : src.slice(i, src.indexOf("\n}", i));
+    };
+    sameList(
+      "tohumlu secim yontemleri",
+      [
+        "web bulmaca=" + (/seededShuffle\(/.test(govde(webBulmaca, "makePool")) ? "tohumlu" : "rastgele"),
+        "mobil bulmaca=" + (/seededShuffle\(/.test(govde(mobTur, "ScrambleRound")) ? "tohumlu" : "rastgele"),
+        "mobil bulmaca tohumu=" + (/round\.id\)/.test(govde(mobTur, "ScrambleRound")) ? "tur kimligi" : "BASKA"),
+        /* Bilerek rastgele olanlar: donuslerse de gorunsun. */
+        "web eslestirme=" + (/shuffle\(words\.map/.test(webEslestirme) ? "rastgele" : "DEGISTI"),
+        "mobil eslestirme=" + (/Math\.random\(\)/.test(govde(mobTur, "MatchRound")) ? "rastgele" : "DEGISTI"),
+      ],
+      ["web bulmaca=tohumlu", "mobil bulmaca=tohumlu", "mobil bulmaca tohumu=tur kimligi", "web eslestirme=rastgele", "mobil eslestirme=rastgele"],
+      "bulunan",
+      "beklenen",
+    );
+  }
+
   /* ── 201. gramer sorularinin secimi ──────────────────────────────────
    * `deriveGrammar` iki tarafta ayni kurali uyguluyordu ama SECIMI yapan
    * karistirma ayni degildi. Mobil dosyanin icinde `seededOrder` diye ayri

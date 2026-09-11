@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
+import { seededShuffle } from "../lib/shuffle";
 import { grammarLine } from "./wordGrammar";
 import { firstExample } from "../data/example";
 import { t as tx, nativeLangName, targetLangName } from "../lib/i18n";
@@ -929,12 +930,17 @@ function ScrambleRound({ round, word, onDone, colors }: { round: Round; word: Ro
   const target = React.useMemo(() => Array.from(word.de).filter((c) => c !== " "), [word.de]);
   // Harf döşemeleri boşluksuz diziliyor; karşılaştırma da boşluksuz biçimde.
   const compareTarget = React.useMemo(() => foldTight(word.de, currentTargetLang()), [word.de]);
-  const pool = React.useMemo(() => {
-    const chars = Array.from(word.de).filter((c) => c !== " ").map((char, id) => ({ id, char }));
-    for (let i = chars.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [chars[i], chars[j]] = [chars[j], chars[i]]; }
-    return chars;
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [round.id]);
+  /* DİZİLİŞ TOHUMDAN, `Math.random()`TAN DEĞİL.
+     Web aynı bulmacayı turun kimliğiyle tohumluyor (`games/scramble-game`
+     `makePool(word.de, round.id)`) ve dosyanın kendi yorumu "bileşen yeniden
+     çizilse bile diziliş sabit kalıyor" diyor. Burada rastgele karıştırma
+     vardı: aynı tur iki platformda farklı bulmaca oluyordu ve ekran yeniden
+     kurulduğunda (geri dönüş, yeniden çizim) harfler yerinden oynuyordu —
+     mobilin KENDİ `lib/shuffle` dosyası da tam bu sebebi yazıyor. */
+  const pool = React.useMemo(
+    () => seededShuffle(Array.from(word.de).filter((c) => c !== " ").map((char, id) => ({ id, char })), round.id),
+    [word.de, round.id],
+  );
   const [placed, setPlaced] = useState<{ id: number; char: string }[]>([]);
   const [fb, setFb] = useState<Feedback | null>(null);
   const noHints = useNoHints();
