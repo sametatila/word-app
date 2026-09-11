@@ -1,0 +1,897 @@
+[
+ {
+  "tr": "Tartışma",
+  "kind": "titleTr",
+  "de": "Die Debatte"
+ },
+ {
+  "tr": "Habere tepki",
+  "kind": "titleTr",
+  "de": "Auf Nachrichten reagieren"
+ },
+ {
+  "tr": "Fikir söylemek",
+  "kind": "titleTr",
+  "de": "Seine Meinung sagen"
+ },
+ {
+  "tr": "Katılmak ve katılmamak",
+  "kind": "titleTr",
+  "de": "Zustimmen und widersprechen"
+ },
+ {
+  "tr": "Bir tartışmada söylenenleri aktarmayı öğretir.",
+  "kind": "summary",
+  "de": "Vermittelt, wie man wiedergibt, was in einer Debatte gesagt wurde."
+ },
+ {
+  "tr": "Habere tepki vermeyi öğretir: haberin kendisi edilgen, tepkin etken söylenir.",
+  "kind": "summary",
+  "de": "Vermittelt, wie man auf Nachrichten reagiert: die Nachricht steht im Passiv, deine Reaktion im Aktiv."
+ },
+ {
+  "tr": "Fikri gerekçesiyle birlikte söylemeyi öğretir; bağlaçlar iddiayı gerekçeye bağlar.",
+  "kind": "summary",
+  "de": "Vermittelt, wie man seine Meinung mit Begründung sagt; die Konnektoren verbinden Behauptung und Grund."
+ },
+ {
+  "tr": "Katılmayı ve katılmamayı koşula bağlamayı öğretir: hangi şartla evet, hangi şartla hayır.",
+  "kind": "summary",
+  "de": "Vermittelt, wie man Zustimmung und Widerspruch an eine Bedingung knüpft: unter welcher Bedingung ja, unter welcher nein."
+ },
+ {
+  "tr": "Sosyal medya alışkanlığını anlatmayı öğretir: süren alışkanlık ile bitmiş bir olay ayrı zamanlarla söylenir.",
+  "kind": "summary",
+  "de": "Vermittelt, wie man von Gewohnheiten in sozialen Medien erzählt: laufende Gewohnheit und abgeschlossenes Ereignis stehen in verschiedenen Zeiten."
+ },
+ {
+  "tr": "sosyal medyayı bırakmayı düşünen bir arkadaş",
+  "kind": "partner",
+  "de": "eine Freundin, die über den Ausstieg aus sozialen Medien nachdenkt"
+ },
+ {
+  "tr": "seninle aynı fikirde olmayan ama dinleyen bir arkadaş",
+  "kind": "partner",
+  "de": "ein Freund, der anderer Meinung ist, aber zuhört"
+ },
+ {
+  "tr": "önerisini savunan, seni ikna etmeye çalışan bir arkadaş",
+  "kind": "partner",
+  "de": "eine Freundin, die ihren Vorschlag verteidigt und dich überzeugen will"
+ },
+ {
+  "tr": "tartışmayı kaçırmış, kimin kazandığını merak eden bir arkadaş",
+  "kind": "partner",
+  "de": "ein Freund, der die Debatte verpasst hat und wissen will, wer gewonnen hat"
+ },
+ {
+  "tr": "haberi görmüş ama okumamış, senin yorumunu isteyen bir arkadaş",
+  "kind": "partner",
+  "de": "eine Freundin, die die Nachricht gesehen, aber nicht gelesen hat und deine Meinung will"
+ },
+ {
+  "tr": "Ne kadar vakit ayırıyorsun?",
+  "kind": "openingTr",
+  "de": "Wie viel Zeit verbringst du damit?"
+ },
+ {
+  "tr": "Bu sabahki başlığı gördün mü?",
+  "kind": "openingTr",
+  "de": "Hast du die Schlagzeile heute Morgen gesehen?"
+ },
+ {
+  "tr": "Kaçırdım. Kim daha iyi sav getirdi?",
+  "kind": "openingTr",
+  "de": "Ich habe es verpasst. Wer hatte das bessere Argument?"
+ },
+ {
+  "tr": "Ben öyle görmüyorum. Neden böyle diyorsun?",
+  "kind": "openingTr",
+  "de": "Ich sehe das anders. Warum sagst du das?"
+ },
+ {
+  "tr": "Yani kötü bir fikir olduğunu mu düşünüyorsun?",
+  "kind": "openingTr",
+  "de": "Du findest es also eine schlechte Idee?"
+ },
+ {
+  "tr": "Bir arkadaşınla bir öneriyi tartışıyorsunuz. Kısmen katıl, bir noktada karşı çık ve cevabını bir koşula bağla.",
+  "kind": "scene",
+  "de": "Du diskutierst mit einer Freundin einen Vorschlag. Stimm teilweise zu, widersprich an einem Punkt und knüpf deine Antwort an eine Bedingung."
+ },
+ {
+  "tr": "Günün haberini bir arkadaşınla konuşuyorsun. Ne yayımlandığını edilgen anlat, nasıl yayıldığını söyle ve kendi tepkini ekle.",
+  "kind": "scene",
+  "de": "Du besprichst die Nachricht des Tages mit einer Freundin. Erzähl im Passiv, was veröffentlicht wurde, sag, wie es sich verbreitet hat, und füg deine eigene Reaktion hinzu."
+ },
+ {
+  "tr": "Bir arkadaşınla ortak bir karar üzerine konuşuyorsunuz ve senin fikrin farklı. Fikrini söyle, gerekçeni ver ve bir çekince belirt.",
+  "kind": "scene",
+  "de": "Du sprichst mit einem Freund über eine gemeinsame Entscheidung und bist anderer Meinung. Sag deine Meinung, gib deinen Grund und nenne einen Vorbehalt."
+ },
+ {
+  "tr": "Bir arkadaşınla sosyal medya alışkanlıklarınızı konuşuyorsunuz. Bu hafta ne yaptığını, geçmişte neyi değiştirdiğini ve neyi hiç yapmadığını anlat.",
+  "kind": "scene",
+  "de": "Du besprichst mit einer Freundin eure Gewohnheiten in sozialen Medien. Erzähl, was du diese Woche gemacht hast, was du früher geändert hast und was du nie gemacht hast."
+ },
+ {
+  "tr": "Bir tartışmaya katıldın ve gelemeyen bir arkadaşın ne olduğunu soruyor. Kimin neyi savunduğunu, kimin ne söylediğini ve sana ne sorulduğunu aktar.",
+  "kind": "scene",
+  "de": "Du warst bei einer Debatte und ein Freund, der nicht kommen konnte, fragt, was war. Gib weiter, wer was verteidigt hat, wer was gesagt hat und was man dich gefragt hat."
+ },
+ {
+  "tr": "Fikrini, gerekçeni ve bir çekinceni üç ayrı bağlaçla söylediysen konuşma başarılı sayılır.",
+  "kind": "goal",
+  "de": "Das Gespräch gilt als gelungen, wenn du Meinung, Grund und Vorbehalt mit drei verschiedenen Konnektoren gesagt hast."
+ },
+ {
+  "tr": "Kısmen katıldığını, bir karşı çıkışını ve bir koşulu söylediysen konuşma başarılı sayılır.",
+  "kind": "goal",
+  "de": "Das Gespräch gilt als gelungen, wenn du teilweise zugestimmt, einmal widersprochen und eine Bedingung genannt hast."
+ },
+ {
+  "tr": "Haberi edilgen kalıplarla anlattıysan ve kendi tepkini etken bir cümleyle söylediysen konuşma başarılı sayılır.",
+  "kind": "goal",
+  "de": "Das Gespräch gilt als gelungen, wenn du die Nachricht im Passiv erzählt und deine eigene Reaktion in einem Aktivsatz gesagt hast."
+ },
+ {
+  "tr": "Bir savı, bir yönergeyi ve bir soruyu aktardıysan ve kendi değerlendirmeni söylediysen konuşma başarılı sayılır.",
+  "kind": "goal",
+  "de": "Das Gespräch gilt als gelungen, wenn du ein Argument, eine Anweisung und eine Frage wiedergegeben und deine eigene Einschätzung gesagt hast."
+ },
+ {
+  "tr": "Süren haftayı, bitmiş bir olayı ve hiç yapmadığın bir şeyi doğru zamanlarla anlattıysan konuşma başarılı sayılır.",
+  "kind": "goal",
+  "de": "Das Gespräch gilt als gelungen, wenn du die laufende Woche, ein abgeschlossenes Ereignis und etwas nie Gemachtes in den richtigen Zeiten erzählt hast."
+ },
+ {
+  "tr": "sav",
+  "kind": "vocab.tr",
+  "de": "Argument"
+ },
+ {
+  "tr": "gizli",
+  "kind": "vocab.tr",
+  "de": "privat"
+ },
+ {
+  "tr": "medya",
+  "kind": "vocab.tr",
+  "de": "Medien"
+ },
+ {
+  "tr": "tersi",
+  "kind": "vocab.tr",
+  "de": "Gegenteil"
+ },
+ {
+  "tr": "apaçık",
+  "kind": "vocab.tr",
+  "de": "offensichtlich"
+ },
+ {
+  "tr": "başlık",
+  "kind": "vocab.tr",
+  "de": "Schlagzeile"
+ },
+ {
+  "tr": "beğeni",
+  "kind": "vocab.tr",
+  "de": "Like"
+ },
+ {
+  "tr": "kısmen",
+  "kind": "vocab.tr",
+  "de": "teilweise"
+ },
+ {
+  "tr": "profil",
+  "kind": "vocab.tr",
+  "de": "Profil"
+ },
+ {
+  "tr": "takipçi",
+  "kind": "vocab.tr",
+  "de": "Follower"
+ },
+ {
+  "tr": "gazeteci",
+  "kind": "vocab.tr",
+  "de": "Journalist"
+ },
+ {
+  "tr": "paylaşım",
+  "kind": "vocab.tr",
+  "de": "Beitrag"
+ },
+ {
+  "tr": "savunmak",
+  "kind": "vocab.tr",
+  "de": "verteidigen"
+ },
+ {
+  "tr": "yayılmak",
+  "kind": "vocab.tr",
+  "de": "sich verbreiten"
+ },
+ {
+  "tr": "dinleyici",
+  "kind": "vocab.tr",
+  "de": "Publikum"
+ },
+ {
+  "tr": "kaydırmak",
+  "kind": "vocab.tr",
+  "de": "scrollen"
+ },
+ {
+  "tr": "konuşmacı",
+  "kind": "vocab.tr",
+  "de": "Redner"
+ },
+ {
+  "tr": "saldırmak",
+  "kind": "vocab.tr",
+  "de": "angreifen"
+ },
+ {
+  "tr": "sessizlik",
+  "kind": "vocab.tr",
+  "de": "Stille"
+ },
+ {
+  "tr": "şaşırtıcı",
+  "kind": "vocab.tr",
+  "de": "schockierend"
+ },
+ {
+  "tr": "engellemek",
+  "kind": "vocab.tr",
+  "de": "blockieren"
+ },
+ {
+  "tr": "katılmamak",
+  "kind": "vocab.tr",
+  "de": "widersprechen"
+ },
+ {
+  "tr": "muhtemelen",
+  "kind": "vocab.tr",
+  "de": "wahrscheinlich"
+ },
+ {
+  "tr": "yayımlamak",
+  "kind": "vocab.tr",
+  "de": "veröffentlichen"
+ },
+ {
+  "tr": "demek istemek",
+  "kind": "vocab.tr",
+  "de": "meinen"
+ },
+ {
+  "tr": "sözünü kesmek",
+  "kind": "vocab.tr",
+  "de": "unterbrechen"
+ },
+ {
+  "tr": "tepkiyi etken söyler",
+  "kind": "pattern.tr",
+  "de": "nennt die Reaktion im Aktiv"
+ },
+ {
+  "tr": "süren haftayı anlatır",
+  "kind": "pattern.tr",
+  "de": "erzählt von der laufenden Woche"
+ },
+ {
+  "tr": "bitmiş bir olayı anlatır",
+  "kind": "pattern.tr",
+  "de": "erzählt von einem abgeschlossenen Ereignis"
+ },
+ {
+  "tr": "cevabı bir koşula bağlar",
+  "kind": "pattern.tr",
+  "de": "knüpft die Antwort an eine Bedingung"
+ },
+ {
+  "tr": "iddiayı gerekçeye bağlar",
+  "kind": "pattern.tr",
+  "de": "verbindet die Behauptung mit dem Grund"
+ },
+ {
+  "tr": "haberi kim yaptığını söylemeden anlatır",
+  "kind": "pattern.tr",
+  "de": "erzählt die Nachricht, ohne zu sagen, wer sie gemacht hat"
+ },
+ {
+  "tr": "Doğru. Karşıtlık bağlacı noktadan sonra geliyor ve virgül alıyor; iki yarı da tam bir cümle.",
+  "kind": "why.tr",
+  "de": "Richtig. Der Gegensatzkonnektor steht nach dem Punkt und bekommt ein Komma; beide Hälften sind vollständige Sätze."
+ },
+ {
+  "tr": "Doğru. Kimin yayımladığı söylenmiyor ve haber dilinde bu olağan; önemli olan makalenin çıkmış olması.",
+  "kind": "why.tr",
+  "de": "Richtig. Wer veröffentlicht hat, wird nicht genannt, und in der Nachrichtensprache ist das normal; wichtig ist, dass der Artikel erschienen ist."
+ },
+ {
+  "tr": "Fikir cümlesi:",
+  "kind": "hint.tr",
+  "de": "Der Meinungssatz:"
+ },
+ {
+  "tr": "Bu fiilden sonra",
+  "kind": "hint.tr",
+  "de": "Nach diesem Verb steht"
+ },
+ {
+  "tr": "Tepki etken kalır:",
+  "kind": "hint.tr",
+  "de": "Die Reaktion bleibt im Aktiv:"
+ },
+ {
+  "tr": "Olumsuz yönerge aktarımında",
+  "kind": "hint.tr",
+  "de": "Bei der Wiedergabe einer verneinten Anweisung steht"
+ },
+ {
+  "tr": "Gerekçe bağlacı, ardından gerekçe:",
+  "kind": "hint.tr",
+  "de": "Der Grundkonnektor, danach der Grund:"
+ },
+ {
+  "tr": "Gün bitmedi, o yüzden present perfect:",
+  "kind": "hint.tr",
+  "de": "Der Tag ist nicht vorbei, deshalb Present Perfect:"
+ },
+ {
+  "tr": "tepki",
+  "kind": "say.tr",
+  "de": "Reaktion"
+ },
+ {
+  "tr": "bağlar.",
+  "kind": "say.tr",
+  "de": "verbindet."
+ },
+ {
+  "tr": "makale,",
+  "kind": "say.tr",
+  "de": "Artikel,"
+ },
+ {
+  "tr": "Düşünceye",
+  "kind": "say.tr",
+  "de": "Der Gedanke heißt"
+ },
+ {
+  "tr": "Gerekçeyi",
+  "kind": "say.tr",
+  "de": "Den Grund verbindet"
+ },
+ {
+  "tr": "karşıtlık",
+  "kind": "say.tr",
+  "de": "Gegensatz"
+ },
+ {
+  "tr": "tartışma,",
+  "kind": "say.tr",
+  "de": "Debatte,"
+ },
+ {
+  "tr": "Doğru için",
+  "kind": "say.tr",
+  "de": "Für richtig sagen wir"
+ },
+ {
+  "tr": "karşıtlığı",
+  "kind": "say.tr",
+  "de": "den Gegensatz"
+ },
+ {
+  "tr": "Kısmen için",
+  "kind": "say.tr",
+  "de": "Für teilweise sagen wir"
+ },
+ {
+  "tr": "beğeniye ise",
+  "kind": "say.tr",
+  "de": "und das Like heißt"
+ },
+ {
+  "tr": "Karşı çıkmak",
+  "kind": "say.tr",
+  "de": "Widersprechen wird mit"
+ },
+ {
+  "tr": "çekinceyi ise",
+  "kind": "say.tr",
+  "de": "und den Vorbehalt mit"
+ },
+ {
+  "tr": "Yayılmak için",
+  "kind": "say.tr",
+  "de": "Für sich verbreiten sagen wir"
+ },
+ {
+  "tr": "güçlü için ise",
+  "kind": "say.tr",
+  "de": "und für stark"
+ },
+ {
+  "tr": "Hissetmek için",
+  "kind": "say.tr",
+  "de": "Für fühlen sagen wir"
+ },
+ {
+  "tr": "Kaydırmak için",
+  "kind": "say.tr",
+  "de": "Für scrollen sagen wir"
+ },
+ {
+  "tr": "Konuşmacı için",
+  "kind": "say.tr",
+  "de": "Für den Redner sagen wir"
+ },
+ {
+  "tr": "koşula bağlama",
+  "kind": "say.tr",
+  "de": "an eine Bedingung knüpfen"
+ },
+ {
+  "tr": "sav. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Argument. Sprich nach:"
+ },
+ {
+  "tr": "yanlış için ise",
+  "kind": "say.tr",
+  "de": "und für falsch"
+ },
+ {
+  "tr": "Bir savı korumaya",
+  "kind": "say.tr",
+  "de": "Ein Argument schützen heißt"
+ },
+ {
+  "tr": "gazeteci için ise",
+  "kind": "say.tr",
+  "de": "und für den Journalisten"
+ },
+ {
+  "tr": "Haberin kendisine",
+  "kind": "say.tr",
+  "de": "Die Nachricht selbst heißt"
+ },
+ {
+  "tr": "karşı çıkmaya ise",
+  "kind": "say.tr",
+  "de": "und dagegen vorgehen heißt"
+ },
+ {
+  "tr": "Dinleyen topluluğa",
+  "kind": "say.tr",
+  "de": "Die Menge, die zuhört, heißt"
+ },
+ {
+  "tr": "Özetleyelim: haber",
+  "kind": "say.tr",
+  "de": "Fassen wir zusammen: Nachricht"
+ },
+ {
+  "tr": "tam tersi için ise",
+  "kind": "say.tr",
+  "de": "und für das genaue Gegenteil"
+ },
+ {
+  "tr": "Seni izleyen kişiye",
+  "kind": "say.tr",
+  "de": "Die Person, die dir folgt, heißt"
+ },
+ {
+  "tr": "tam olarak için ise",
+  "kind": "say.tr",
+  "de": "und für genau"
+ },
+ {
+  "tr": "Özetleyelim: gerekçe",
+  "kind": "say.tr",
+  "de": "Fassen wir zusammen: Grund"
+ },
+ {
+  "tr": "hiç ses olmamasına ise",
+  "kind": "say.tr",
+  "de": "und wenn gar kein Geräusch da ist, heißt das"
+ },
+ {
+  "tr": "sözünü kesmek için ise",
+  "kind": "say.tr",
+  "de": "und für jemanden unterbrechen"
+ },
+ {
+  "tr": "üstteki iri yazıya ise",
+  "kind": "say.tr",
+  "de": "und die große Schrift oben heißt"
+ },
+ {
+  "tr": "Özetleyelim: süren zaman",
+  "kind": "say.tr",
+  "de": "Fassen wir zusammen: laufende Zeit"
+ },
+ {
+  "tr": "daha da az kesin için ise",
+  "kind": "say.tr",
+  "de": "und für noch weniger sicher"
+ },
+ {
+  "tr": "herkese açık olmayana ise",
+  "kind": "say.tr",
+  "de": "und was nicht für alle offen ist, heißt"
+ },
+ {
+  "tr": "Hiç birini engelledin mi?",
+  "kind": "say.tr",
+  "de": "Hast du jemals jemanden blockiert?"
+ },
+ {
+  "tr": "Birini erişimden çıkarmaya",
+  "kind": "say.tr",
+  "de": "Jemanden vom Zugriff ausschließen heißt"
+ },
+ {
+  "tr": "Kesin olmayan bir şey için",
+  "kind": "say.tr",
+  "de": "Für etwas, das nicht sicher ist, sagen wir"
+ },
+ {
+  "tr": "O anda çok konuşulan konuya",
+  "kind": "say.tr",
+  "de": "Das Thema, über das gerade viel geredet wird, heißt"
+ },
+ {
+  "tr": "Zaman BİTTİYSE past simple:",
+  "kind": "say.tr",
+  "de": "Ist die Zeit VORBEI, steht Past Simple:"
+ },
+ {
+  "tr": "Bir tane daha: Fiyata bağlı.",
+  "kind": "say.tr",
+  "de": "Noch eins: Das hängt vom Preis ab."
+ },
+ {
+  "tr": "denir ve bu kelime çoğuldur.",
+  "kind": "say.tr",
+  "de": "genannt, und das Wort steht im Plural."
+ },
+ {
+  "tr": "Bütün yayın araçlarına birden",
+  "kind": "say.tr",
+  "de": "Alle Verbreitungswege zusammen heißen"
+ },
+ {
+  "tr": "Haber her yerde paylaşılıyor.",
+  "kind": "say.tr",
+  "de": "Die Geschichte wird überall geteilt."
+ },
+ {
+  "tr": "Savın zayıf olduğunu söyledi.",
+  "kind": "say.tr",
+  "de": "Sie hat gesagt, dass das Argument schwach gewesen war."
+ },
+ {
+  "tr": "Ne demek istediğini açıklarken",
+  "kind": "say.tr",
+  "de": "Wenn du erklärst, was du meinst, wird"
+ },
+ {
+  "tr": "Medya aynı haberi takip ediyor.",
+  "kind": "say.tr",
+  "de": "Die Medien verfolgen dieselbe Geschichte."
+ },
+ {
+  "tr": "Bu doğru ve ben önce yanılmışım.",
+  "kind": "say.tr",
+  "de": "Das stimmt, und ich hatte vorher unrecht."
+ },
+ {
+  "tr": "Fiyatı kastediyorsan katılıyorum.",
+  "kind": "say.tr",
+  "de": "Wenn du den Preis meinst, stimme ich zu."
+ },
+ {
+  "tr": "Güçlü bir fikir. Ancak çok pahalı.",
+  "kind": "say.tr",
+  "de": "Es ist eine starke Idee. Jedoch kostet sie viel."
+ },
+ {
+  "tr": "Fiyatı kastediyorum, kaliteyi değil.",
+  "kind": "say.tr",
+  "de": "Ich meine den Preis, nicht die Qualität."
+ },
+ {
+  "tr": "Takipçim az ama her beğeni sayılıyor.",
+  "kind": "say.tr",
+  "de": "Ich habe wenige Follower, aber jedes Like zählt."
+ },
+ {
+  "tr": "Şimdi bir tartışmada taraf tutacaksın.",
+  "kind": "say.tr",
+  "de": "Jetzt beziehst du in einer Diskussion Position."
+ },
+ {
+  "tr": "denir. İlki sayılamaz: 'a news' denmez,",
+  "kind": "say.tr",
+  "de": "genannt. Das erste ist unzählbar: 'a news' sagt man nicht,"
+ },
+ {
+  "tr": "denir. İkincisi kişi için de kullanılır:",
+  "kind": "say.tr",
+  "de": "genannt. Das zweite wird auch für Personen benutzt:"
+ },
+ {
+  "tr": "Dinleyicilere önce dinlemelerini söyledi.",
+  "kind": "say.tr",
+  "de": "Er hat dem Publikum gesagt, es solle zuerst zuhören."
+ },
+ {
+  "tr": "denir ve İngilizcede hem isim hem fiildir.",
+  "kind": "say.tr",
+  "de": "genannt und ist im Englischen Nomen und Verb zugleich."
+ },
+ {
+  "tr": "Şimdi bir arkadaşınla haberi konuşacaksın.",
+  "kind": "say.tr",
+  "de": "Jetzt besprichst du die Nachricht mit einer Freundin."
+ },
+ {
+  "tr": "Bir tane daha: Hiç bir paylaşımı sildin mi?",
+  "kind": "say.tr",
+  "de": "Noch eins: Hast du jemals einen Beitrag gelöscht?"
+ },
+ {
+  "tr": "Şimdi sıra sende: Bugün bir saat kaydırdım.",
+  "kind": "say.tr",
+  "de": "Jetzt bist du dran: Heute habe ich eine Stunde gescrollt."
+ },
+ {
+  "tr": "yayımlamak. İlk kalıbımız da bu. Tekrar et:",
+  "kind": "say.tr",
+  "de": "veröffentlichen. Das ist auch unsere erste Wendung. Sprich nach:"
+ },
+ {
+  "tr": "Bir tane daha: Bütün haberi tuhaf buluyorum.",
+  "kind": "say.tr",
+  "de": "Noch eins: Ich finde die ganze Geschichte seltsam."
+ },
+ {
+  "tr": "Katılmıyorum ama tam olarak o sebeple değil.",
+  "kind": "say.tr",
+  "de": "Ich widerspreche, aber nicht genau aus diesem Grund."
+ },
+ {
+  "tr": "Ona saldırdıklarında savunmak zorunda kaldı.",
+  "kind": "say.tr",
+  "de": "Als sie es angriffen, musste sie es verteidigen."
+ },
+ {
+  "tr": "Son kalıbımız çekinceyi bağlıyor. Apaçık için",
+  "kind": "say.tr",
+  "de": "Unsere letzte Wendung verbindet den Vorbehalt. Für offensichtlich sagen wir"
+ },
+ {
+  "tr": "Şimdi bir arkadaşınla bir konu tartışacaksın.",
+  "kind": "say.tr",
+  "de": "Jetzt diskutierst du ein Thema mit einem Freund."
+ },
+ {
+  "tr": "Şimdi sıra sende: Öyle söylersen katılıyorum.",
+  "kind": "say.tr",
+  "de": "Jetzt bist du dran: Wenn du es so sagst, stimme ich zu."
+ },
+ {
+  "tr": "Bir cevap hazırlayıp hazırlamadığımı sordular.",
+  "kind": "say.tr",
+  "de": "Sie haben gefragt, ob ich eine Antwort vorbereitet hatte."
+ },
+ {
+  "tr": "İnanmak demek. İlk kalıbımız da bu. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Das heißt glauben. Das ist auch unsere erste Wendung. Sprich nach:"
+ },
+ {
+  "tr": "Son kalıbımız tepkiyi söylüyor. Şaşırtıcı için",
+  "kind": "say.tr",
+  "de": "Unsere letzte Wendung nennt die Reaktion. Für schockierend sagen wir"
+ },
+ {
+  "tr": "Şimdi sen kur: Katılmama rağmen bir sorum var.",
+  "kind": "say.tr",
+  "de": "Jetzt du: Obwohl ich zustimme, habe ich eine Frage."
+ },
+ {
+  "tr": "İkinci kalıbımız varsayımı anlatıyor. Emin için",
+  "kind": "say.tr",
+  "de": "Unsere zweite Wendung nennt die Annahme. Für sicher sagen wir"
+ },
+ {
+  "tr": "Şimdi sen kur: Şifremi mart ayında değiştirdim.",
+  "kind": "say.tr",
+  "de": "Jetzt du: Ich habe mein Passwort im März geändert."
+ },
+ {
+  "tr": "Ama senin tepkin senin cümlendir ve etken kalır:",
+  "kind": "say.tr",
+  "de": "Deine Reaktion aber ist dein Satz und bleibt im Aktiv:"
+ },
+ {
+  "tr": "Şimdi tartışmayı katılmayan birine aktaracaksın.",
+  "kind": "say.tr",
+  "de": "Jetzt gibst du die Debatte an jemanden weiter, der nicht dabei war."
+ },
+ {
+  "tr": "Kısmen katılıyorum ama benim deneyimim tam tersi.",
+  "kind": "say.tr",
+  "de": "Ich stimme teilweise zu, aber meine Erfahrung ist das Gegenteil."
+ },
+ {
+  "tr": "Muhtemelen doğru hissediyorum ama belki yanılıyorum.",
+  "kind": "say.tr",
+  "de": "Ich habe das Gefühl, dass es wahrscheinlich stimmt, aber vielleicht irre ich mich."
+ },
+ {
+  "tr": "Hesabımı gizli tutuyorum ve yabancıları engelliyorum.",
+  "kind": "say.tr",
+  "de": "Ich halte mein Konto privat und blockiere Fremde."
+ },
+ {
+  "tr": "Son kalıbımız cevabı koşula bağlıyor. Bağlı olmak için",
+  "kind": "say.tr",
+  "de": "Unsere letzte Wendung knüpft die Antwort an eine Bedingung. Für abhängen sagen wir"
+ },
+ {
+  "tr": "İkinci kalıbımız süren bir işlemi anlatıyor. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Unsere zweite Wendung erzählt einen laufenden Vorgang. Sprich nach:"
+ },
+ {
+  "tr": "Bir tane daha: Bütün tartışmayı duyup duymadığımı sordu.",
+  "kind": "say.tr",
+  "de": "Noch eins: Er hat gefragt, ob ich die ganze Debatte gehört hatte."
+ },
+ {
+  "tr": "denir. İkincisi burada fiziksel değil, fikre yöneliktir.",
+  "kind": "say.tr",
+  "de": "genannt. Das zweite meint hier nichts Körperliches, sondern die Idee."
+ },
+ {
+  "tr": "İkinci kalıbımız bitmiş bir olayı anlatıyor. Profil için",
+  "kind": "say.tr",
+  "de": "Unsere zweite Wendung erzählt ein abgeschlossenes Ereignis. Für das Profil sagen wir"
+ },
+ {
+  "tr": "Şimdi sıra sende: Haber bir gazeteci tarafından yazıldı.",
+  "kind": "say.tr",
+  "de": "Jetzt bist du dran: Der Bericht wurde von einem Journalisten geschrieben."
+ },
+ {
+  "tr": "Şimdi sen kur: Fotoğraf ekip tarafından kontrol ediliyor.",
+  "kind": "say.tr",
+  "de": "Jetzt du: Das Foto wird vom Team geprüft."
+ },
+ {
+  "tr": "Şimdi sen kur: Rakamlar elimde olsa bugün karar verirdim.",
+  "kind": "say.tr",
+  "de": "Jetzt du: Wenn ich die Zahlen hätte, würde ich heute entscheiden."
+ },
+ {
+  "tr": "Şimdi sıra sende: Konuşmacının erken bitirdiğini söyledi.",
+  "kind": "say.tr",
+  "de": "Jetzt bist du dran: Er hat gesagt, dass der Redner früh fertig war."
+ },
+ {
+  "tr": "denir. İlki sert değildir; tartışmanın olağan kelimesidir.",
+  "kind": "say.tr",
+  "de": "genannt. Das erste ist nicht schroff; es ist das übliche Wort der Diskussion."
+ },
+ {
+  "tr": "Şimdi sen kur: Bana konuşmacının sözünü kesmememi söyledi.",
+  "kind": "say.tr",
+  "de": "Jetzt du: Sie hat mir gesagt, ich soll den Redner nicht unterbrechen."
+ },
+ {
+  "tr": "Bu gündem hızlı büyüdü, o yüzden artık daha az kaydırıyorum.",
+  "kind": "say.tr",
+  "de": "Dieses Thema ist schnell gewachsen, deshalb scrolle ich jetzt weniger."
+ },
+ {
+  "tr": "Şimdi dersin kuralı. Hafta HENÜZ BİTMEDİYSE present perfect:",
+  "kind": "say.tr",
+  "de": "Jetzt die Regel der Lektion. Ist die Woche NOCH NICHT VORBEI, steht Present Perfect:"
+ },
+ {
+  "tr": "kullanılır ve bu fiil tartışmanın en sık duyulan kelimesidir.",
+  "kind": "say.tr",
+  "de": "benutzt, und dieses Verb ist das häufigste Wort der Diskussion."
+ },
+ {
+  "tr": "Şimdi bir arkadaşınla sosyal medya alışkanlığını konuşacaksın.",
+  "kind": "say.tr",
+  "de": "Jetzt besprichst du mit einer Freundin deine Gewohnheiten in sozialen Medien."
+ },
+ {
+  "tr": "Şimdi dersin kuralı. Haber dilinde özne düşer ve edilgen kurulur:",
+  "kind": "say.tr",
+  "de": "Jetzt die Regel der Lektion. In der Nachrichtensprache fällt das Subjekt weg und das Passiv wird gebaut:"
+ },
+ {
+  "tr": "Bir tane daha: Bunun muhtemelen en iyi fikir olduğunu hissediyorum.",
+  "kind": "say.tr",
+  "de": "Noch eins: Ich habe das Gefühl, dass das wahrscheinlich die beste Idee ist."
+ },
+ {
+  "tr": "Paylaşım demek; hem isim hem fiildir. İlk kalıbımız da bu. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Das heißt Beitrag; es ist Nomen und Verb zugleich. Das ist auch unsere erste Wendung. Sprich nach:"
+ },
+ {
+  "tr": "Şimdi sıra sende: İşe yaradığına inanıyorum, çünkü daha sakin hissediyorum.",
+  "kind": "say.tr",
+  "de": "Jetzt bist du dran: Ich glaube, dass es hilft, weil ich mich ruhiger fühle."
+ },
+ {
+  "tr": "Şimdi dersin kuralı. Fikir cümlesi üç parçadan kurulur: iddia, gerekçe ve çekince.",
+  "kind": "say.tr",
+  "de": "Jetzt die Regel der Lektion. Der Meinungssatz besteht aus drei Teilen: Behauptung, Grund und Vorbehalt."
+ },
+ {
+  "tr": "Merhaba! Bugün fikir söylemeyi öğreneceğiz: neye inanıyorsun, neden, hangi çekincen var.",
+  "kind": "say.tr",
+  "de": "Hallo! Heute lernen wir, die eigene Meinung zu sagen: woran du glaubst, warum, welchen Vorbehalt du hast."
+ },
+ {
+  "tr": "Merhaba! Bugün katılmayı ve katılmamayı öğreneceğiz: neye evet, neye hayır, neye kısmen.",
+  "kind": "say.tr",
+  "de": "Hallo! Heute lernen wir zuzustimmen und zu widersprechen: wozu ja, wozu nein, wozu teilweise."
+ },
+ {
+  "tr": "Burada iki ses yan yana duruyor: haberin kendisi edilgen anlatılır, tepkin ise etken. Hazır mısın?",
+  "kind": "say.tr",
+  "de": "Hier stehen zwei Stimmen nebeneinander: die Nachricht wird im Passiv erzählt, deine Reaktion im Aktiv. Bist du bereit?"
+ },
+ {
+  "tr": "Merhaba! Bugün habere tepki vermeyi öğreneceğiz: ne yayımlandı, nasıl yayıldı, sen ne düşünüyorsun.",
+  "kind": "say.tr",
+  "de": "Hallo! Heute lernen wir, auf Nachrichten zu reagieren: was veröffentlicht wurde, wie es sich verbreitet hat, was du denkst."
+ },
+ {
+  "tr": "Merhaba! Bugün sosyal medyayı konuşmayı öğreneceğiz: ne paylaşıyorsun, kimi engelledin, gündemde ne var.",
+  "kind": "say.tr",
+  "de": "Hallo! Heute sprechen wir über soziale Medien: was du postest, wen du blockiert hast, was gerade Thema ist."
+ },
+ {
+  "tr": "Alışkanlıkla tek bir olay ayrı zamanlarla söyleniyor ve bu ayrım burada çok işine yarayacak. Hazır mısın?",
+  "kind": "say.tr",
+  "de": "Gewohnheit und einzelnes Ereignis stehen in verschiedenen Zeiten, und dieser Unterschied hilft dir hier sehr. Bist du bereit?"
+ },
+ {
+  "tr": "İngilizcede kibar bir hayır çoğu zaman koşulla kurulur: 'şunu kastediyorsan katılıyorum' gibi. Hazır mısın?",
+  "kind": "say.tr",
+  "de": "Im Englischen wird ein höfliches Nein oft mit einer Bedingung gebaut: «wenn du das meinst, stimme ich zu». Bist du bereit?"
+ },
+ {
+  "tr": "Bir fikir tek başına iddia; onu tartışmaya çeviren şey gerekçe ve gerekçeyi bağlayan şey bağlaç. Hazır mısın?",
+  "kind": "say.tr",
+  "de": "Eine Meinung allein ist eine Behauptung; was sie zur Diskussion macht, ist der Grund, und was den Grund anbindet, ist der Konnektor. Bist du bereit?"
+ },
+ {
+  "tr": "Merhaba! Bugün bir tartışmayı aktarmayı öğreneceğiz: kim neyi savundu, kim neye saldırdı, dinleyici ne yaptı.",
+  "kind": "say.tr",
+  "de": "Hallo! Heute lernen wir, eine Debatte wiederzugeben: wer was verteidigt hat, wer was angegriffen hat, was das Publikum gemacht hat."
+ },
+ {
+  "tr": "Tartışmayı aktarırken en sık yapılan hata zamanı olduğu gibi bırakmak; İngilizcede zaman bir basamak geriye gider. Hazır mısın?",
+  "kind": "say.tr",
+  "de": "Der häufigste Fehler beim Wiedergeben einer Debatte ist, die Zeit gleich zu lassen; im Englischen rückt sie eine Stufe zurück. Bist du bereit?"
+ }
+]

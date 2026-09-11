@@ -9,6 +9,7 @@ import { nativeLesson } from "../../lib/nativeContent";
 import a1 from "./de-a1.json";
 import enA1 from "./en-a1.json";
 import enA2 from "./en-a2.json";
+import enB1 from "./en-b1.json";
 import a2 from "./de-a2.json";
 import b1 from "./de-b1.json";
 import b2 from "./de-b2.json";
@@ -48,16 +49,17 @@ export type Lesson = {
 };
 
 /**
- * Paketler kurs → seviye biçiminde. Bugün yalnız Almanca paketi var; yeni bir
- * dilin paketi eklendiğinde buraya bir satır giriyor.
+ * Paketler kurs → seviye biçiminde; yeni bir dilin paketi eklendiğinde buraya
+ * bir satır giriyor, yeni bir seviye o satıra bir anahtar ekliyor.
  */
 const BY_COURSE: Record<string, Record<string, Lesson[]>> = {
   de: { A1: a1 as Lesson[], A2: a2 as Lesson[], B1: b1 as Lesson[], B2: b2 as Lesson[], C1: c1 as Lesson[] },
-  // İngilizce: A1 tam (100 ders, 10 modül), A2 modül 1 (10 ders) yolda.
-  // Seviye anahtarı olmayan seviyeler boş döner — Patika o ünitelerde
-  // "Yakında" gösterir, Almanca derslere DÜŞMEZ (bkz. bundleFor: yalnız aynı
-  // hedef dile düşülür).
-  en: { A1: enA1 as Lesson[], A2: enA2 as Lesson[] },
+  // İngilizce: A1 ve A2 tam (100'er ders), B1 yazılıyor (şimdilik 65 ders,
+  // modül 1-7). Seviye anahtarı olmayan seviyeler boş döner — Patika o
+  // ünitelerde "Yakında" gösterir, Almanca derslere DÜŞMEZ (bkz. bundleFor:
+  // yalnız aynı hedef dile düşülür). Yarım seviye de aynı şekilde görünür:
+  // yazılmış modüller listelenir, kalanlar gelince dosya büyür.
+  en: { A1: enA1 as Lesson[], A2: enA2 as Lesson[], B1: enB1 as Lesson[] },
 };
 
 /**

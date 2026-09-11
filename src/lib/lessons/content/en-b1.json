@@ -27885,5 +27885,2274 @@
    "goal": "Hedefini ve çekinceni en az iki bağlaçla anlattıysan ve gerçekçi bir plan söylediysen konuşma başarılı sayılır.",
    "minTurns": 7
   }
+ },
+ {
+  "id": "en-b1-giving-opinion",
+  "level": "B1",
+  "course": "en",
+  "icon": "idea",
+  "title": "In my view",
+  "titleTr": "Fikir söylemek",
+  "summary": "Fikri gerekçesiyle birlikte söylemeyi öğretir; bağlaçlar iddiayı gerekçeye bağlar.",
+  "minutes": 10,
+  "focusId": "Linking words",
+  "vocab": [
+   {
+    "de": "idea",
+    "tr": "fikir"
+   },
+   {
+    "de": "believe",
+    "tr": "inanmak"
+   },
+   {
+    "de": "probably",
+    "tr": "muhtemelen"
+   },
+   {
+    "de": "maybe",
+    "tr": "belki"
+   },
+   {
+    "de": "feel",
+    "tr": "hissetmek"
+   },
+   {
+    "de": "mean",
+    "tr": "demek istemek"
+   },
+   {
+    "de": "strong",
+    "tr": "güçlü"
+   },
+   {
+    "de": "obvious",
+    "tr": "apaçık"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "I believe it works, because I have tried it.",
+    "tr": "iddiayı gerekçeye bağlar"
+   },
+   {
+    "de": "It is a strong idea. However, it costs a lot.",
+    "tr": "iki cümleyi karşıtlıkla bağlar"
+   },
+   {
+    "de": "Although it is obvious, nobody says it.",
+    "tr": "çekinceyi cümleyle bağlar"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Bugün fikir söylemeyi öğreneceğiz: neye inanıyorsun, neden, hangi çekincen var."
+     },
+     {
+      "lang": "tr",
+      "text": "Bir fikir tek başına iddia; onu tartışmaya çeviren şey gerekçe ve gerekçeyi bağlayan şey bağlaç. Hazır mısın?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "believe"
+     },
+     {
+      "lang": "tr",
+      "text": "İnanmak demek. İlk kalıbımız da bu. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "I believe it works, because I have tried it."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "I believe it works, because I have tried it."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Düşünceye"
+     },
+     {
+      "lang": "en",
+      "text": "idea"
+     },
+     {
+      "lang": "tr",
+      "text": "güçlü için ise"
+     },
+     {
+      "lang": "en",
+      "text": "strong"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İkinci kalıbımız iki cümleyi bağlıyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "It is a strong idea. However, it costs a lot."
+     },
+     {
+      "lang": "tr",
+      "text": "Güçlü bir fikir. Ancak çok pahalı."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "It is a strong idea. However, it costs a lot."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi dersin kuralı. Fikir cümlesi üç parçadan kurulur: iddia, gerekçe ve çekince."
+     },
+     {
+      "lang": "tr",
+      "text": "Gerekçeyi"
+     },
+     {
+      "lang": "en",
+      "text": "because"
+     },
+     {
+      "lang": "tr",
+      "text": "karşıtlığı"
+     },
+     {
+      "lang": "en",
+      "text": "however"
+     },
+     {
+      "lang": "tr",
+      "text": "çekinceyi ise"
+     },
+     {
+      "lang": "en",
+      "text": "although"
+     },
+     {
+      "lang": "tr",
+      "text": "bağlar."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sıra sende: İşe yaradığına inanıyorum, çünkü daha sakin hissediyorum."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "I believe it helps, because I feel calmer.",
+     "accept": [
+      "I believe it helps because I feel calmer.",
+      "I believe it helps, because I feel more calm."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Gerekçe bağlacı, ardından gerekçe:"
+      },
+      {
+       "lang": "en",
+       "text": "I believe it helps, because I feel calmer."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kontrol. Şu cümle doğru mu?"
+     },
+     {
+      "lang": "en",
+      "text": "It is a strong idea. However, it costs a lot."
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "It is a strong idea. However, it costs a lot.",
+     "answer": true,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Doğru. Karşıtlık bağlacı noktadan sonra geliyor ve virgül alıyor; iki yarı da tam bir cümle."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Kesin olmayan bir şey için"
+     },
+     {
+      "lang": "en",
+      "text": "probably"
+     },
+     {
+      "lang": "tr",
+      "text": "daha da az kesin için ise"
+     },
+     {
+      "lang": "en",
+      "text": "maybe"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Hissetmek için"
+     },
+     {
+      "lang": "en",
+      "text": "feel"
+     },
+     {
+      "lang": "tr",
+      "text": "deriz. Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "I feel it is probably true, but maybe I am wrong."
+     },
+     {
+      "lang": "tr",
+      "text": "Muhtemelen doğru hissediyorum ama belki yanılıyorum."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "I feel it is probably true, but maybe I am wrong."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son kalıbımız çekinceyi bağlıyor. Apaçık için"
+     },
+     {
+      "lang": "en",
+      "text": "obvious"
+     },
+     {
+      "lang": "tr",
+      "text": "deriz. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "Although it is obvious, nobody says it."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Although it is obvious, nobody says it."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sen kur: Katılmama rağmen bir sorum var."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "Although I agree, I have one question.",
+     "accept": [
+      "Although I agree, I still have one question.",
+      "Although I agree, I have a question."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Bu bağlaçtan sonra tam bir cümle gelir:"
+      },
+      {
+       "lang": "en",
+       "text": "Although I agree, I have one question."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Ne demek istediğini açıklarken"
+     },
+     {
+      "lang": "en",
+      "text": "mean"
+     },
+     {
+      "lang": "tr",
+      "text": "kullanılır ve bu fiil tartışmanın en sık duyulan kelimesidir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "I mean the price, not the quality."
+     },
+     {
+      "lang": "tr",
+      "text": "Fiyatı kastediyorum, kaliteyi değil."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "I mean the price, not the quality."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir tane daha: Bunun muhtemelen en iyi fikir olduğunu hissediyorum."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "I feel it is probably the best idea.",
+     "accept": [
+      "I feel it is probably the best option.",
+      "I feel that it is probably the best idea."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Fikir cümlesi:"
+      },
+      {
+       "lang": "en",
+       "text": "I feel it is probably the best idea."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Özetleyelim: gerekçe"
+     },
+     {
+      "lang": "en",
+      "text": "because"
+     },
+     {
+      "lang": "tr",
+      "text": "karşıtlık"
+     },
+     {
+      "lang": "en",
+      "text": "however"
+     },
+     {
+      "lang": "tr",
+      "text": "çekince"
+     },
+     {
+      "lang": "en",
+      "text": "although"
+     },
+     {
+      "lang": "tr",
+      "text": "Şimdi bir arkadaşınla bir konu tartışacaksın."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Bir arkadaşınla ortak bir karar üzerine konuşuyorsunuz ve senin fikrin farklı. Fikrini söyle, gerekçeni ver ve bir çekince belirt.",
+   "partner": "seninle aynı fikirde olmayan ama dinleyen bir arkadaş",
+   "opening": "I don't see it that way. What makes you say that?",
+   "openingTr": "Ben öyle görmüyorum. Neden böyle diyorsun?",
+   "goal": "Fikrini, gerekçeni ve bir çekinceni üç ayrı bağlaçla söylediysen konuşma başarılı sayılır.",
+   "minTurns": 7
+  }
+ },
+ {
+  "id": "en-b1-agreeing",
+  "level": "B1",
+  "course": "en",
+  "icon": "handshake",
+  "title": "Agreeing and disagreeing",
+  "titleTr": "Katılmak ve katılmamak",
+  "summary": "Katılmayı ve katılmamayı koşula bağlamayı öğretir: hangi şartla evet, hangi şartla hayır.",
+  "minutes": 10,
+  "focusId": "Conditionals",
+  "vocab": [
+   {
+    "de": "disagree",
+    "tr": "katılmamak"
+   },
+   {
+    "de": "partly",
+    "tr": "kısmen"
+   },
+   {
+    "de": "exactly",
+    "tr": "tam olarak"
+   },
+   {
+    "de": "wrong",
+    "tr": "yanlış"
+   },
+   {
+    "de": "sure",
+    "tr": "emin"
+   },
+   {
+    "de": "true",
+    "tr": "doğru"
+   },
+   {
+    "de": "opposite",
+    "tr": "tersi"
+   },
+   {
+    "de": "depend",
+    "tr": "bağlı olmak"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "If you mean the price, I agree.",
+    "tr": "gerçekleşmesi mümkün bir koşulu anlatır"
+   },
+   {
+    "de": "If I were sure, I would say yes.",
+    "tr": "gerçek olmayan bir durumu anlatır"
+   },
+   {
+    "de": "It depends on what you mean.",
+    "tr": "cevabı bir koşula bağlar"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Bugün katılmayı ve katılmamayı öğreneceğiz: neye evet, neye hayır, neye kısmen."
+     },
+     {
+      "lang": "tr",
+      "text": "İngilizcede kibar bir hayır çoğu zaman koşulla kurulur: 'şunu kastediyorsan katılıyorum' gibi. Hazır mısın?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kalıbımız. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "If you mean the price, I agree."
+     },
+     {
+      "lang": "tr",
+      "text": "Fiyatı kastediyorsan katılıyorum."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "If you mean the price, I agree."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Karşı çıkmak"
+     },
+     {
+      "lang": "en",
+      "text": "disagree"
+     },
+     {
+      "lang": "tr",
+      "text": "tam olarak için ise"
+     },
+     {
+      "lang": "en",
+      "text": "exactly"
+     },
+     {
+      "lang": "tr",
+      "text": "denir. İlki sert değildir; tartışmanın olağan kelimesidir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "I disagree, but not exactly for that reason."
+     },
+     {
+      "lang": "tr",
+      "text": "Katılmıyorum ama tam olarak o sebeple değil."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "I disagree, but not exactly for that reason."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi dersin kuralı. Gerçekleşmesi MÜMKÜN bir koşulda"
+     },
+     {
+      "lang": "en",
+      "text": "if"
+     },
+     {
+      "lang": "tr",
+      "text": "ile geniş zaman gelir."
+     },
+     {
+      "lang": "tr",
+      "text": "Gerçek OLMAYAN bir durumda ise"
+     },
+     {
+      "lang": "en",
+      "text": "if"
+     },
+     {
+      "lang": "tr",
+      "text": "ile geçmiş ve"
+     },
+     {
+      "lang": "en",
+      "text": "would"
+     },
+     {
+      "lang": "tr",
+      "text": "kullanılır."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sıra sende: Öyle söylersen katılıyorum."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "If you say it like that, I agree.",
+     "accept": [
+      "If you put it like that, I agree.",
+      "If you say it that way, I agree."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Mümkün bir koşul, o yüzden geniş zaman:"
+      },
+      {
+       "lang": "en",
+       "text": "If you say it like that, I agree."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İkinci kalıbımız varsayımı anlatıyor. Emin için"
+     },
+     {
+      "lang": "en",
+      "text": "sure"
+     },
+     {
+      "lang": "tr",
+      "text": "deriz. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "If I were sure, I would say yes."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "If I were sure, I would say yes."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kontrol. Şu cümle doğru mu?"
+     },
+     {
+      "lang": "en",
+      "text": "If I would be sure, I would say yes."
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "If I would be sure, I would say yes.",
+     "answer": false,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Yanlış. Koşul cümlesinin içinde"
+      },
+      {
+       "lang": "en",
+       "text": "would"
+      },
+      {
+       "lang": "tr",
+       "text": "durmaz; orası geçmiş biçimi alır:"
+      },
+      {
+       "lang": "en",
+       "text": "If I were sure, I would say yes."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Kısmen için"
+     },
+     {
+      "lang": "en",
+      "text": "partly"
+     },
+     {
+      "lang": "tr",
+      "text": "tam tersi için ise"
+     },
+     {
+      "lang": "en",
+      "text": "opposite"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "I partly agree, but my experience is the opposite."
+     },
+     {
+      "lang": "tr",
+      "text": "Kısmen katılıyorum ama benim deneyimim tam tersi."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "I partly agree, but my experience is the opposite."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sen kur: Rakamlar elimde olsa bugün karar verirdim."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "If I had the numbers, I would decide today.",
+     "accept": [
+      "If I had the figures, I would decide today.",
+      "If I had the numbers, I would decide now."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Varsayım, o yüzden geçmiş biçim ve would:"
+      },
+      {
+       "lang": "en",
+       "text": "If I had the numbers, I would decide today."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Doğru için"
+     },
+     {
+      "lang": "en",
+      "text": "true"
+     },
+     {
+      "lang": "tr",
+      "text": "yanlış için ise"
+     },
+     {
+      "lang": "en",
+      "text": "wrong"
+     },
+     {
+      "lang": "tr",
+      "text": "denir. İkincisi kişi için de kullanılır:"
+     },
+     {
+      "lang": "en",
+      "text": "I was wrong"
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "That is true, and I was wrong before."
+     },
+     {
+      "lang": "tr",
+      "text": "Bu doğru ve ben önce yanılmışım."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "That is true, and I was wrong before."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son kalıbımız cevabı koşula bağlıyor. Bağlı olmak için"
+     },
+     {
+      "lang": "en",
+      "text": "depend"
+     },
+     {
+      "lang": "tr",
+      "text": "deriz. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "It depends on what you mean."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "It depends on what you mean."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir tane daha: Fiyata bağlı."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "It depends on the price.",
+     "accept": [
+      "It depends on the cost.",
+      "It depends on how much it costs."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Bu fiilden sonra"
+      },
+      {
+       "lang": "en",
+       "text": "on"
+      },
+      {
+       "lang": "tr",
+       "text": "gelir:"
+      },
+      {
+       "lang": "en",
+       "text": "It depends on the price."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Özetleyelim: mümkün koşul"
+     },
+     {
+      "lang": "en",
+      "text": "if + present"
+     },
+     {
+      "lang": "tr",
+      "text": "varsayım"
+     },
+     {
+      "lang": "en",
+      "text": "if + past, would"
+     },
+     {
+      "lang": "tr",
+      "text": "koşula bağlama"
+     },
+     {
+      "lang": "en",
+      "text": "It depends on"
+     },
+     {
+      "lang": "tr",
+      "text": "Şimdi bir tartışmada taraf tutacaksın."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Bir arkadaşınla bir öneriyi tartışıyorsunuz. Kısmen katıl, bir noktada karşı çık ve cevabını bir koşula bağla.",
+   "partner": "önerisini savunan, seni ikna etmeye çalışan bir arkadaş",
+   "opening": "So you think it's a bad idea?",
+   "openingTr": "Yani kötü bir fikir olduğunu mu düşünüyorsun?",
+   "goal": "Kısmen katıldığını, bir karşı çıkışını ve bir koşulu söylediysen konuşma başarılı sayılır.",
+   "minTurns": 7
+  }
+ },
+ {
+  "id": "en-b1-debate",
+  "level": "B1",
+  "course": "en",
+  "icon": "flag",
+  "title": "The debate",
+  "titleTr": "Tartışma",
+  "summary": "Bir tartışmada söylenenleri aktarmayı öğretir.",
+  "minutes": 11,
+  "focusId": "Reported speech",
+  "vocab": [
+   {
+    "de": "debate",
+    "tr": "tartışma"
+   },
+   {
+    "de": "argument",
+    "tr": "sav"
+   },
+   {
+    "de": "defend",
+    "tr": "savunmak"
+   },
+   {
+    "de": "attack",
+    "tr": "saldırmak"
+   },
+   {
+    "de": "speaker",
+    "tr": "konuşmacı"
+   },
+   {
+    "de": "audience",
+    "tr": "dinleyici"
+   },
+   {
+    "de": "silence",
+    "tr": "sessizlik"
+   },
+   {
+    "de": "interrupt",
+    "tr": "sözünü kesmek"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "She said that the argument had been weak.",
+    "tr": "söyleneni bir basamak geriye alarak aktarır"
+   },
+   {
+    "de": "He told the audience to listen first.",
+    "tr": "verilen yönergeyi aktarır"
+   },
+   {
+    "de": "They asked if I had prepared an answer.",
+    "tr": "sorulan soruyu aktarır"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Bugün bir tartışmayı aktarmayı öğreneceğiz: kim neyi savundu, kim neye saldırdı, dinleyici ne yaptı."
+     },
+     {
+      "lang": "tr",
+      "text": "Tartışmayı aktarırken en sık yapılan hata zamanı olduğu gibi bırakmak; İngilizcede zaman bir basamak geriye gider. Hazır mısın?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimelerimiz:"
+     },
+     {
+      "lang": "en",
+      "text": "debate"
+     },
+     {
+      "lang": "tr",
+      "text": "tartışma,"
+     },
+     {
+      "lang": "en",
+      "text": "argument"
+     },
+     {
+      "lang": "tr",
+      "text": "sav. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "The debate was long but the argument was clear."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The debate was long but the argument was clear."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir savı korumaya"
+     },
+     {
+      "lang": "en",
+      "text": "defend"
+     },
+     {
+      "lang": "tr",
+      "text": "karşı çıkmaya ise"
+     },
+     {
+      "lang": "en",
+      "text": "attack"
+     },
+     {
+      "lang": "tr",
+      "text": "denir. İkincisi burada fiziksel değil, fikre yöneliktir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "She had to defend it when they attacked it."
+     },
+     {
+      "lang": "tr",
+      "text": "Ona saldırdıklarında savunmak zorunda kaldı."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "She had to defend it when they attacked it."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi dersin kuralı. Aktarırken zaman bir basamak geriye gider:"
+     },
+     {
+      "lang": "en",
+      "text": "The argument was weak"
+     },
+     {
+      "lang": "tr",
+      "text": "aktarılınca"
+     },
+     {
+      "lang": "en",
+      "text": "she said that the argument had been weak"
+     },
+     {
+      "lang": "tr",
+      "text": "olur."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kalıbımız. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "She said that the argument had been weak."
+     },
+     {
+      "lang": "tr",
+      "text": "Savın zayıf olduğunu söyledi."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "She said that the argument had been weak."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sıra sende: Konuşmacının erken bitirdiğini söyledi."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "He said that the speaker had finished early.",
+     "accept": [
+      "He said the speaker had finished early.",
+      "He said that the speaker had ended early."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Aktarımda zaman geriye gider:"
+      },
+      {
+       "lang": "en",
+       "text": "He said that the speaker had finished early."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kontrol. Şu cümle doğru mu?"
+     },
+     {
+      "lang": "en",
+      "text": "She said that the argument has been weak."
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "She said that the argument has been weak.",
+     "answer": false,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Yanlış. Aktarımda zaman bir basamak geriye gider:"
+      },
+      {
+       "lang": "en",
+       "text": "She said that the argument had been weak."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Dinleyen topluluğa"
+     },
+     {
+      "lang": "en",
+      "text": "audience"
+     },
+     {
+      "lang": "tr",
+      "text": "hiç ses olmamasına ise"
+     },
+     {
+      "lang": "en",
+      "text": "silence"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Konuşmacı için"
+     },
+     {
+      "lang": "en",
+      "text": "speaker"
+     },
+     {
+      "lang": "tr",
+      "text": "sözünü kesmek için ise"
+     },
+     {
+      "lang": "en",
+      "text": "interrupt"
+     },
+     {
+      "lang": "tr",
+      "text": "deriz. Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The speaker went on and nobody dared to interrupt the silence."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The speaker went on and nobody dared to interrupt the silence."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İkinci kalıbımız yönergeyi aktarıyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "He told the audience to listen first."
+     },
+     {
+      "lang": "tr",
+      "text": "Dinleyicilere önce dinlemelerini söyledi."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "He told the audience to listen first."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sen kur: Bana konuşmacının sözünü kesmememi söyledi."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "She told me not to interrupt the speaker.",
+     "accept": [
+      "She told me not to interrupt him.",
+      "She told me not to cut off the speaker."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Olumsuz yönerge aktarımında"
+      },
+      {
+       "lang": "en",
+       "text": "not to"
+      },
+      {
+       "lang": "tr",
+       "text": "gelir:"
+      },
+      {
+       "lang": "en",
+       "text": "She told me not to interrupt the speaker."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son kalıbımız soruyu aktarıyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "They asked if I had prepared an answer."
+     },
+     {
+      "lang": "tr",
+      "text": "Bir cevap hazırlayıp hazırlamadığımı sordular."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "They asked if I had prepared an answer."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir tane daha: Bütün tartışmayı duyup duymadığımı sordu."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "He asked if I had heard the whole debate.",
+     "accept": [
+      "He asked whether I had heard the whole debate.",
+      "He asked if I had listened to the whole debate."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Aktarılan soruda soru sırası kurulmaz:"
+      },
+      {
+       "lang": "en",
+       "text": "He asked if I had heard the whole debate."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Özetleyelim: söz"
+     },
+     {
+      "lang": "en",
+      "text": "said that"
+     },
+     {
+      "lang": "tr",
+      "text": "yönerge"
+     },
+     {
+      "lang": "en",
+      "text": "told me to"
+     },
+     {
+      "lang": "tr",
+      "text": "soru"
+     },
+     {
+      "lang": "en",
+      "text": "asked if"
+     },
+     {
+      "lang": "tr",
+      "text": "Şimdi tartışmayı katılmayan birine aktaracaksın."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Bir tartışmaya katıldın ve gelemeyen bir arkadaşın ne olduğunu soruyor. Kimin neyi savunduğunu, kimin ne söylediğini ve sana ne sorulduğunu aktar.",
+   "partner": "tartışmayı kaçırmış, kimin kazandığını merak eden bir arkadaş",
+   "opening": "I missed it. Who made the better argument?",
+   "openingTr": "Kaçırdım. Kim daha iyi sav getirdi?",
+   "goal": "Bir savı, bir yönergeyi ve bir soruyu aktardıysan ve kendi değerlendirmeni söylediysen konuşma başarılı sayılır.",
+   "minTurns": 8
+  }
+ },
+ {
+  "id": "en-b1-news-opinion",
+  "level": "B1",
+  "course": "en",
+  "icon": "media",
+  "title": "Reacting to the news",
+  "titleTr": "Habere tepki",
+  "summary": "Habere tepki vermeyi öğretir: haberin kendisi edilgen, tepkin etken söylenir.",
+  "minutes": 10,
+  "focusId": "Passive voice",
+  "vocab": [
+   {
+    "de": "news",
+    "tr": "haber"
+   },
+   {
+    "de": "headline",
+    "tr": "başlık"
+   },
+   {
+    "de": "article",
+    "tr": "makale"
+   },
+   {
+    "de": "journalist",
+    "tr": "gazeteci"
+   },
+   {
+    "de": "publish",
+    "tr": "yayımlamak"
+   },
+   {
+    "de": "media",
+    "tr": "medya"
+   },
+   {
+    "de": "shocking",
+    "tr": "şaşırtıcı"
+   },
+   {
+    "de": "spread",
+    "tr": "yayılmak"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "The article was published this morning.",
+    "tr": "haberi kim yaptığını söylemeden anlatır"
+   },
+   {
+    "de": "The story is being shared everywhere.",
+    "tr": "süren bir işlemi edilgen anlatır"
+   },
+   {
+    "de": "I find the headline shocking.",
+    "tr": "tepkiyi etken söyler"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Bugün habere tepki vermeyi öğreneceğiz: ne yayımlandı, nasıl yayıldı, sen ne düşünüyorsun."
+     },
+     {
+      "lang": "tr",
+      "text": "Burada iki ses yan yana duruyor: haberin kendisi edilgen anlatılır, tepkin ise etken. Hazır mısın?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimelerimiz:"
+     },
+     {
+      "lang": "en",
+      "text": "article"
+     },
+     {
+      "lang": "tr",
+      "text": "makale,"
+     },
+     {
+      "lang": "en",
+      "text": "publish"
+     },
+     {
+      "lang": "tr",
+      "text": "yayımlamak. İlk kalıbımız da bu. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "The article was published this morning."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The article was published this morning."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Haberin kendisine"
+     },
+     {
+      "lang": "en",
+      "text": "news"
+     },
+     {
+      "lang": "tr",
+      "text": "üstteki iri yazıya ise"
+     },
+     {
+      "lang": "en",
+      "text": "headline"
+     },
+     {
+      "lang": "tr",
+      "text": "denir. İlki sayılamaz: 'a news' denmez,"
+     },
+     {
+      "lang": "en",
+      "text": "a piece of news"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Yayılmak için"
+     },
+     {
+      "lang": "en",
+      "text": "spread"
+     },
+     {
+      "lang": "tr",
+      "text": "gazeteci için ise"
+     },
+     {
+      "lang": "en",
+      "text": "journalist"
+     },
+     {
+      "lang": "tr",
+      "text": "deriz. Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The news spread fast after the journalist wrote the headline."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The news spread fast after the journalist wrote the headline."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi dersin kuralı. Haber dilinde özne düşer ve edilgen kurulur:"
+     },
+     {
+      "lang": "en",
+      "text": "was published, is being shared"
+     },
+     {
+      "lang": "tr",
+      "text": "Ama senin tepkin senin cümlendir ve etken kalır:"
+     },
+     {
+      "lang": "en",
+      "text": "I find it shocking."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sıra sende: Haber bir gazeteci tarafından yazıldı."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "The report was written by a journalist.",
+     "accept": [
+      "The report was written by one journalist.",
+      "The article was written by a journalist."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Geçmiş edilgen ve yapan by ile:"
+      },
+      {
+       "lang": "en",
+       "text": "The report was written by a journalist."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kontrol. Şu cümle doğru mu?"
+     },
+     {
+      "lang": "en",
+      "text": "The article was published this morning."
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "The article was published this morning.",
+     "answer": true,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Doğru. Kimin yayımladığı söylenmiyor ve haber dilinde bu olağan; önemli olan makalenin çıkmış olması."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İkinci kalıbımız süren bir işlemi anlatıyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "The story is being shared everywhere."
+     },
+     {
+      "lang": "tr",
+      "text": "Haber her yerde paylaşılıyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The story is being shared everywhere."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bütün yayın araçlarına birden"
+     },
+     {
+      "lang": "en",
+      "text": "media"
+     },
+     {
+      "lang": "tr",
+      "text": "denir ve bu kelime çoğuldur."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The media are following the same story."
+     },
+     {
+      "lang": "tr",
+      "text": "Medya aynı haberi takip ediyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The media are following the same story."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sen kur: Fotoğraf ekip tarafından kontrol ediliyor."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "The photo is being checked by the team.",
+     "accept": [
+      "The photo is being verified by the team.",
+      "The picture is being checked by the team."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Süren edilgen işlem:"
+      },
+      {
+       "lang": "en",
+       "text": "The photo is being checked by the team."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son kalıbımız tepkiyi söylüyor. Şaşırtıcı için"
+     },
+     {
+      "lang": "en",
+      "text": "shocking"
+     },
+     {
+      "lang": "tr",
+      "text": "deriz. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "I find the headline shocking."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "I find the headline shocking."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir tane daha: Bütün haberi tuhaf buluyorum."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "I find the whole story strange.",
+     "accept": [
+      "I find the whole story odd.",
+      "I find this whole story strange."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Tepki etken kalır:"
+      },
+      {
+       "lang": "en",
+       "text": "I find the whole story strange."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Özetleyelim: haber"
+     },
+     {
+      "lang": "en",
+      "text": "was published"
+     },
+     {
+      "lang": "tr",
+      "text": "süren"
+     },
+     {
+      "lang": "en",
+      "text": "is being shared"
+     },
+     {
+      "lang": "tr",
+      "text": "tepki"
+     },
+     {
+      "lang": "en",
+      "text": "I find it"
+     },
+     {
+      "lang": "tr",
+      "text": "Şimdi bir arkadaşınla haberi konuşacaksın."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Günün haberini bir arkadaşınla konuşuyorsun. Ne yayımlandığını edilgen anlat, nasıl yayıldığını söyle ve kendi tepkini ekle.",
+   "partner": "haberi görmüş ama okumamış, senin yorumunu isteyen bir arkadaş",
+   "opening": "Did you see the headline this morning?",
+   "openingTr": "Bu sabahki başlığı gördün mü?",
+   "goal": "Haberi edilgen kalıplarla anlattıysan ve kendi tepkini etken bir cümleyle söylediysen konuşma başarılı sayılır.",
+   "minTurns": 7
+  }
+ },
+ {
+  "id": "en-b1-social-media",
+  "level": "B1",
+  "course": "en",
+  "icon": "phone",
+  "title": "Online and offline",
+  "titleTr": "Sosyal medya",
+  "summary": "Sosyal medya alışkanlığını anlatmayı öğretir: süren alışkanlık ile bitmiş bir olay ayrı zamanlarla söylenir.",
+  "minutes": 10,
+  "focusId": "Present perfect vs past simple",
+  "vocab": [
+   {
+    "de": "post",
+    "tr": "paylaşım"
+   },
+   {
+    "de": "follower",
+    "tr": "takipçi"
+   },
+   {
+    "de": "like",
+    "tr": "beğeni"
+   },
+   {
+    "de": "block",
+    "tr": "engellemek"
+   },
+   {
+    "de": "private",
+    "tr": "gizli"
+   },
+   {
+    "de": "profile",
+    "tr": "profil"
+   },
+   {
+    "de": "scroll",
+    "tr": "kaydırmak"
+   },
+   {
+    "de": "trend",
+    "tr": "gündem"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "I have not posted anything this week.",
+    "tr": "süren haftayı anlatır"
+   },
+   {
+    "de": "I deleted my old profile last year.",
+    "tr": "bitmiş bir olayı anlatır"
+   },
+   {
+    "de": "Have you ever blocked anyone?",
+    "tr": "bir deneyimin hiç olup olmadığını sorar"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Bugün sosyal medyayı konuşmayı öğreneceğiz: ne paylaşıyorsun, kimi engelledin, gündemde ne var."
+     },
+     {
+      "lang": "tr",
+      "text": "Alışkanlıkla tek bir olay ayrı zamanlarla söyleniyor ve bu ayrım burada çok işine yarayacak. Hazır mısın?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "post"
+     },
+     {
+      "lang": "tr",
+      "text": "Paylaşım demek; hem isim hem fiildir. İlk kalıbımız da bu. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "I have not posted anything this week."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "I have not posted anything this week."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Seni izleyen kişiye"
+     },
+     {
+      "lang": "en",
+      "text": "follower"
+     },
+     {
+      "lang": "tr",
+      "text": "beğeniye ise"
+     },
+     {
+      "lang": "en",
+      "text": "like"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "My followers are few but every like counts."
+     },
+     {
+      "lang": "tr",
+      "text": "Takipçim az ama her beğeni sayılıyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "My followers are few but every like counts."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi dersin kuralı. Hafta HENÜZ BİTMEDİYSE present perfect:"
+     },
+     {
+      "lang": "en",
+      "text": "I have not posted this week."
+     },
+     {
+      "lang": "tr",
+      "text": "Zaman BİTTİYSE past simple:"
+     },
+     {
+      "lang": "en",
+      "text": "I deleted it last year."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sıra sende: Bugün bir saat kaydırdım."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "I have scrolled for an hour today.",
+     "accept": [
+      "I've scrolled for an hour today.",
+      "I have scrolled for one hour today."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Gün bitmedi, o yüzden present perfect:"
+      },
+      {
+       "lang": "en",
+       "text": "I have scrolled for an hour today."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İkinci kalıbımız bitmiş bir olayı anlatıyor. Profil için"
+     },
+     {
+      "lang": "en",
+      "text": "profile"
+     },
+     {
+      "lang": "tr",
+      "text": "deriz. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "I deleted my old profile last year."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "I deleted my old profile last year."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kontrol. Şu cümle doğru mu?"
+     },
+     {
+      "lang": "en",
+      "text": "I have deleted my old profile last year."
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "I have deleted my old profile last year.",
+     "answer": false,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Yanlış. Yıl belli ve bitmiş:"
+      },
+      {
+       "lang": "en",
+       "text": "last year"
+      },
+      {
+       "lang": "tr",
+       "text": "Bu durumda past simple gelir:"
+      },
+      {
+       "lang": "en",
+       "text": "I deleted my old profile last year."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Birini erişimden çıkarmaya"
+     },
+     {
+      "lang": "en",
+      "text": "block"
+     },
+     {
+      "lang": "tr",
+      "text": "herkese açık olmayana ise"
+     },
+     {
+      "lang": "en",
+      "text": "private"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "I keep my account private and I block strangers."
+     },
+     {
+      "lang": "tr",
+      "text": "Hesabımı gizli tutuyorum ve yabancıları engelliyorum."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "I keep my account private and I block strangers."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sen kur: Şifremi mart ayında değiştirdim."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "I changed my password in March.",
+     "accept": [
+      "I changed the password in March.",
+      "I changed my password last March."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Ay belli ve bitmiş, o yüzden past simple:"
+      },
+      {
+       "lang": "en",
+       "text": "I changed my password in March."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "O anda çok konuşulan konuya"
+     },
+     {
+      "lang": "en",
+      "text": "trend"
+     },
+     {
+      "lang": "tr",
+      "text": "denir ve İngilizcede hem isim hem fiildir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Kaydırmak için"
+     },
+     {
+      "lang": "en",
+      "text": "scroll"
+     },
+     {
+      "lang": "tr",
+      "text": "deriz. Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "This trend has grown fast, so I scroll less now."
+     },
+     {
+      "lang": "tr",
+      "text": "Bu gündem hızlı büyüdü, o yüzden artık daha az kaydırıyorum."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "This trend has grown fast, so I scroll less now."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son kalıbımız bir soru. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "Have you ever blocked anyone?"
+     },
+     {
+      "lang": "tr",
+      "text": "Hiç birini engelledin mi?"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Have you ever blocked anyone?"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir tane daha: Hiç bir paylaşımı sildin mi?"
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "Have you ever deleted a post?",
+     "accept": [
+      "Have you ever removed a post?",
+      "Have you ever deleted one of your posts?"
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Deneyim sorusu present perfect ile kurulur:"
+      },
+      {
+       "lang": "en",
+       "text": "Have you ever deleted a post?"
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Özetleyelim: süren zaman"
+     },
+     {
+      "lang": "en",
+      "text": "I have not posted"
+     },
+     {
+      "lang": "tr",
+      "text": "bitmiş olay"
+     },
+     {
+      "lang": "en",
+      "text": "I deleted"
+     },
+     {
+      "lang": "tr",
+      "text": "Şimdi bir arkadaşınla sosyal medya alışkanlığını konuşacaksın."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Bir arkadaşınla sosyal medya alışkanlıklarınızı konuşuyorsunuz. Bu hafta ne yaptığını, geçmişte neyi değiştirdiğini ve neyi hiç yapmadığını anlat.",
+   "partner": "sosyal medyayı bırakmayı düşünen bir arkadaş",
+   "opening": "How much time do you spend on it?",
+   "openingTr": "Ne kadar vakit ayırıyorsun?",
+   "goal": "Süren haftayı, bitmiş bir olayı ve hiç yapmadığın bir şeyi doğru zamanlarla anlattıysan konuşma başarılı sayılır.",
+   "minTurns": 7
+  }
  }
 ]
