@@ -3,7 +3,7 @@ export default function Loading() {
   return (
     <div aria-hidden className="mx-auto w-full max-w-3xl space-y-3 px-4 pt-11">
       <div className="flex items-center justify-between">
-        <div className="h-8 w-28 animate-pulse rounded-xl surface-2" />
+        <div className="h-8 w-28 animate-pulse rounded-chip surface-2" />
         <div className="h-6 w-10 animate-pulse rounded-full surface-2" />
       </div>
       <div className="h-2.5 w-full animate-pulse rounded-full surface-2" />

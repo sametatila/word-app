@@ -7,8 +7,8 @@ export default function Loading() {
       <div className="flex items-center gap-3">
         <div className="h-10 w-10 shrink-0 animate-pulse rounded-full surface-2" />
         <div className="min-w-0 flex-1 space-y-1.5">
-          <div className="h-6 w-44 animate-pulse rounded-lg surface-2" />
-          <div className="h-3.5 w-60 animate-pulse rounded-lg surface-2" />
+          <div className="h-6 w-44 animate-pulse rounded-chip surface-2" />
+          <div className="h-3.5 w-60 animate-pulse rounded-full surface-2" />
         </div>
       </div>
       <div className="h-16 w-full animate-pulse rounded-card surface-2" />

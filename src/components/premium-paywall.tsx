@@ -322,14 +322,14 @@ function PromoBox({ prefill }: { prefill: string }) {
           placeholder={t("promo.placeholder")}
           autoCapitalize="characters"
           spellCheck={false}
-          className="min-w-0 flex-1 rounded-xl border px-3 py-2 font-mono text-sm tracking-widest"
+          className="min-w-0 flex-1 rounded-tile border px-3 py-2 font-mono text-sm tracking-widest"
           style={{ borderColor: "var(--border)", background: "var(--surface-2)" }}
         />
         <button
           type="button"
           onClick={apply}
           disabled={busy || !code.trim()}
-          className="rounded-xl px-4 py-2 text-sm font-bold on-fill disabled:opacity-60"
+          className="rounded-panel px-4 py-2 text-sm font-bold on-fill disabled:opacity-60"
           style={{ background: "var(--color-brand)" }}
         >
           {t("promo.apply")}
@@ -382,7 +382,7 @@ function ReferralBox({ referral }: { referral: NonNullable<Referral> }) {
 
       <div className="mt-3 flex items-center gap-2">
         <code
-          className="flex-1 rounded-xl border px-3 py-2 text-center font-mono text-lg font-bold tracking-[0.3em]"
+          className="flex-1 rounded-tile border px-3 py-2 text-center font-mono text-lg font-bold tracking-[0.3em]"
           style={{ borderColor: "var(--border)", background: "var(--surface-2)" }}
         >
           {referral.code}
@@ -390,7 +390,7 @@ function ReferralBox({ referral }: { referral: NonNullable<Referral> }) {
         <button
           type="button"
           onClick={copy}
-          className="rounded-xl px-4 py-2 text-sm font-bold"
+          className="rounded-panel px-4 py-2 text-sm font-bold"
           style={{ background: "var(--surface-2)" }}
         >
           {copied ? t("referral.copied") : t("referral.copy_link")}

@@ -185,6 +185,16 @@
    * 20px'e sıçratırdı — hiçbiri gözden geçirilmeden. Adlar bunun yerine
    * NEREDE kullanıldıklarını söylüyor.
    *
+   * O gözden geçirme 2026-09-11'de YAPILDI: `rounded-full` dışında ölçek dışı
+   * kalan 167 kullanım rolüne göre çevrildi ve `check:radius` artık ölçek dışı
+   * tek bir kullanımı hata sayıyor (iki kayıtlı istisna var, sebepleriyle).
+   * Mobil taraf da aynı kapıda: daire (boyutun yarısı) ve 2–9 px'lik çubuklar
+   * dışında ham sayı bırakılmıyor.
+   *
+   * Basamak SAYIYA değil ROLE göre seçilir. 16 px'lik bir kart iskeleti sayıca
+   * tile'a (14) yakındır ama rolü card (26) — mobil `SkeletonCard` doğrudan
+   * `Card`'ı sarıyor, yani iskeletin yarıçapı kartın yarıçapıdır.
+   *
    *   chip  10  (mobil sm)   rozet, küçük etiket
    *   tile  14  (mobil md)   ikon karosu, giriş alanı, geri düğmesi
    *   panel 20  (mobil lg)   iç panel, liste satırı kabı, buton

@@ -436,7 +436,7 @@ function Rule({ tone, children }: { tone: "mint" | "rose" | "flame"; children: R
 
 function Box({ label, value }: { label: string; value: string }) {
   return (
-    <div className="rounded-xl px-2 py-3 surface-2">
+    <div className="rounded-panel px-2 py-3 surface-2">
       <div className="text-base font-bold">{value}</div>
       <div className="muted text-[11px]">{label}</div>
     </div>

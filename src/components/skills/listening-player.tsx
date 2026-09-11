@@ -260,7 +260,7 @@ export function ListeningPlayer({ exercise, backHref }: { exercise: ListeningExe
 
         {available === false && !hasAudio ? (
           <p
-            className="mt-3 rounded-xl px-3 py-2 text-xs"
+            className="mt-3 rounded-panel px-3 py-2 text-xs"
             style={{
               background: "color-mix(in srgb, var(--color-flame) 12%, transparent)",
               color: "var(--color-flame)",
@@ -283,7 +283,7 @@ export function ListeningPlayer({ exercise, backHref }: { exercise: ListeningExe
                 lang={lang}
                 onClick={() => playSegment(i)}
                 role={available ? "button" : undefined}
-                className={`rounded-lg px-2 py-1 text-[15px] leading-relaxed transition-colors ${
+                className={`rounded-chip px-2 py-1 text-[15px] leading-relaxed transition-colors ${
                   playing && i === segIdx ? "surface-2" : ""
                 } ${available ? "cursor-pointer hover:bg-[color:var(--surface-2)]" : ""}`}
               >

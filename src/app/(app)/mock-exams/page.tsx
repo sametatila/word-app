@@ -206,7 +206,7 @@ export default async function MockExamsPage({ searchParams }: { searchParams: Pr
         <section className="card p-4">
           <p className="muted text-xs font-bold tracking-wide">{t("mockstats.running")}</p>
           {running.filter((r) => mine(r.paperId)).map((r) => (
-            <Link key={r.id} href={`/mock-exams/${r.paperId}/${r.skill}`} className="mt-2 flex items-center justify-between rounded-xl p-3" style={{ background: "var(--surface-2)" }}>
+            <Link key={r.id} href={`/mock-exams/${r.paperId}/${r.skill}`} className="mt-2 flex items-center justify-between rounded-panel p-3" style={{ background: "var(--surface-2)" }}>
               <span className="text-sm font-semibold">
                 {r.paperId.toUpperCase().replace(/^(DE|EN)-/, "")} · {mockSkillLabel(course, r.skill as MockSkill)}
                 <span className="muted ml-2 font-normal">{t("mockstats.at_task", { n: r.taskIx + 1 })}</span>
@@ -290,7 +290,7 @@ export default async function MockExamsPage({ searchParams }: { searchParams: Pr
                   <div
                     key={part.skill}
                     aria-disabled
-                    className="flex items-center justify-between rounded-xl p-3"
+                    className="flex items-center justify-between rounded-panel p-3"
                     style={{ background: "var(--surface-2)" }}
                   >
                     {inner}
@@ -299,7 +299,7 @@ export default async function MockExamsPage({ searchParams }: { searchParams: Pr
                   <Link
                     key={part.skill}
                     href={`/mock-exams/${p.id}/${part.skill}`}
-                    className="flex items-center justify-between rounded-xl p-3"
+                    className="flex items-center justify-between rounded-panel p-3"
                     style={{ background: "var(--surface-2)" }}
                   >
                     {inner}

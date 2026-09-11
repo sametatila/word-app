@@ -209,7 +209,7 @@ export function ProfileForm({
         {saveError ? (
           <p
             role="alert"
-            className="flex items-center gap-2 rounded-xl px-3 py-2 text-sm"
+            className="flex items-center gap-2 rounded-panel px-3 py-2 text-sm"
             style={{
               background: "color-mix(in srgb, var(--color-rose) 12%, transparent)",
               color: "var(--color-rose)",
@@ -250,7 +250,7 @@ export function ProfileForm({
             </div>
             {course !== initial.course ? (
               <p
-                className="mt-2 rounded-xl px-3 py-2 text-xs"
+                className="mt-2 rounded-panel px-3 py-2 text-xs"
                 style={{
                   background: "color-mix(in srgb, var(--color-brand) 10%, transparent)",
                   color: "var(--color-brand)",

@@ -45,7 +45,7 @@ export function AuthNotice({ tone, children }: { tone: "error" | "success"; chil
          KÖKTE — bu bileşenden geçen her bildirim kazanıyor. Hata `alert`,
          başarı `status`: ilki sözü keser, ikincisi sırasını bekler. */
       role={tone === "error" ? "alert" : "status"}
-      className="rounded-xl px-3 py-2 text-sm"
+      className="rounded-panel px-3 py-2 text-sm"
       style={{ background: `color-mix(in srgb, ${color} 12%, transparent)`, color }}
     >
       {children}

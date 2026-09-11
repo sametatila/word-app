@@ -110,7 +110,7 @@ export function ReactionBar({
                   title={t(REACTION_LABEL_KEYS[k])}
                   aria-label={t(REACTION_LABEL_KEYS[k])}
                   onClick={() => void pick(k)}
-                  className="flex h-9 w-9 items-center justify-center rounded-lg transition-transform hover:scale-110"
+                  className="flex h-9 w-9 items-center justify-center rounded-tile transition-transform hover:scale-110"
                   style={s.mine === k ? { background: `color-mix(in srgb, ${REACTION_TONE[k]} 18%, transparent)` } : undefined}
                 >
                   <ReactionGlyph kind={k} size={20} />

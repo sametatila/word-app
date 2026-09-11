@@ -117,7 +117,7 @@ export function InstallPrompt() {
             <button
               onClick={close}
               aria-label={t("common.close")}
-              className="muted shrink-0 rounded-lg p-1 hover:text-[color:var(--text)]"
+              className="muted shrink-0 rounded-chip p-1 hover:text-[color:var(--text)]"
             >
               <XIcon size={16} />
             </button>

@@ -310,7 +310,7 @@ export function MockExamPlayer({ paper, part }: { paper: MockPaper; part: MockPa
       return (
         <section className="card mx-auto w-full max-w-2xl p-5" aria-busy>
           <p className="muted text-sm">{t("mockexam.scoring")}</p>
-          <div className="mt-3 h-10 animate-pulse rounded-xl surface-2" />
+          <div className="mt-3 h-10 animate-pulse rounded-tile surface-2" />
         </section>
       );
     }
@@ -550,7 +550,7 @@ function Item({ course, item, task, value, answers, onAnswer }: { course: MockCo
          hiçbir şekilde duymuyordu — sınavda cevabını doğrulayamamak demek.
          Aynı eksik iki platformda da vardı, ikisi birlikte kapatıldı. */
       aria-pressed={active}
-      className="rounded-xl px-3 py-2 text-left text-sm"
+      className="rounded-panel px-3 py-2 text-left text-sm"
       style={{ background: active ? "var(--brand-soft)" : "var(--surface-2)", border: `1px solid ${active ? "var(--color-brand)" : "transparent"}` }}
     >
       {label}

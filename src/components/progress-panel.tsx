@@ -141,7 +141,7 @@ export function ProgressPanel() {
       {data.next ? (
         <Link
           href={data.next.href}
-          className="mt-3 flex items-center justify-between gap-3 rounded-xl px-3 py-2.5 surface-2"
+          className="mt-3 flex items-center justify-between gap-3 rounded-panel px-3 py-2.5 surface-2"
         >
           <span className="min-w-0">
             <span className="block text-sm font-semibold">{t("skills.next")}: {data.next.title}</span>
@@ -242,7 +242,7 @@ function Spark({
   const last = [...values].reverse().find((v) => v !== null) ?? null;
   const label = points.map((p, i) => `${p.week}: ${values[i] ?? "—"}`).join(", ");
   return (
-    <figure className="rounded-xl px-2.5 py-2 surface-2">
+    <figure className="rounded-panel px-2.5 py-2 surface-2">
       <figcaption className="flex items-baseline justify-between text-xs">
         <span className="font-semibold">{title}</span>
         <span className="muted tabular-nums">{last ?? "—"}</span>

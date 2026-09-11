@@ -209,7 +209,7 @@ export default async function Home() {
             {GAMES.map((g, i) => (
               <Reveal key={g.name} delay={i * 0.06}>
                 <div className="card flex h-full items-start gap-4 p-5">
-                  <span className="surface-2 flex h-11 w-11 shrink-0 items-center justify-center rounded-xl text-[color:var(--color-brand)]">
+                  <span className="surface-2 flex h-11 w-11 shrink-0 items-center justify-center rounded-tile text-[color:var(--color-brand)]">
                     <g.Icon size={22} />
                   </span>
                   <div>

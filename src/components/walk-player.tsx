@@ -1651,7 +1651,7 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
         <p className="muted mt-2 text-sm leading-relaxed">{t("walk.intro_2")}</p>
         {pocketReady === false ? (
           <p
-            className="mt-3 rounded-xl px-3 py-2.5 text-sm leading-relaxed"
+            className="mt-3 rounded-panel px-3 py-2.5 text-sm leading-relaxed"
             style={{
               background: "color-mix(in srgb, var(--color-flame) 10%, transparent)",
               color: "var(--color-flame)",
@@ -1662,7 +1662,7 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
         ) : null}
         {status === "paused" ? (
           <p
-            className="mt-3 rounded-xl px-3 py-2.5 text-sm"
+            className="mt-3 rounded-panel px-3 py-2.5 text-sm"
             style={{
               background: "color-mix(in srgb, var(--color-flame) 10%, transparent)",
               color: "var(--color-flame)",
@@ -1671,7 +1671,7 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
             {t("walk.paused_note")}
           </p>
         ) : null}
-        <div className="mt-4 rounded-xl px-3 py-2.5 text-center text-sm" style={{ background: "var(--surface-2)" }}>
+        <div className="mt-4 rounded-panel px-3 py-2.5 text-center text-sm" style={{ background: "var(--surface-2)" }}>
           <span className="muted">{t("walk.where_you_left")} </span>
           <strong>{Math.max(1, step)}</strong>
           <span className="muted"> / {t("walk.n_rounds", { n: total })}</span>
@@ -1855,7 +1855,7 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
 
       {diag ? (
         <div
-          className="mt-4 rounded-xl px-3 py-2 font-mono text-[11px] leading-snug"
+          className="mt-4 rounded-panel px-3 py-2 font-mono text-[11px] leading-snug"
           style={{ background: "rgba(20,16,14,0.92)", color: "#f4eee4" }}
         >
           <div style={{ opacity: 0.6 }}>dinlemeler · yol: {capture === "stt" ? "cep" : "tarayıcı"}</div>

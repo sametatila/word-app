@@ -928,7 +928,7 @@ export function SessionPlayer() {
 
       {saveWarning ? (
         <div
-          className="mb-3 flex shrink-0 items-center gap-2 rounded-xl px-3 py-2 text-sm"
+          className="mb-3 flex shrink-0 items-center gap-2 rounded-panel px-3 py-2 text-sm"
           style={{
             background: "color-mix(in srgb, var(--color-flame) 12%, transparent)",
             color: "var(--color-flame)",
@@ -1238,7 +1238,7 @@ function StageCard({
               vibrate("tap");
             }}
             aria-pressed={bet}
-            className="flex w-full items-center gap-3 rounded-xl px-3.5 py-3 text-left transition-colors"
+            className="flex w-full items-center gap-3 rounded-panel px-3.5 py-3 text-left transition-colors"
             style={{
               background: bet
                 ? "color-mix(in srgb, var(--color-flame) 12%, transparent)"
@@ -1497,7 +1497,7 @@ function SummaryCard({
               {missed.slice(0, 6).map((w) => (
                 <li
                   key={w.id}
-                  className="flex items-baseline justify-between gap-3 rounded-xl px-3 py-2 text-sm surface-2"
+                  className="flex items-baseline justify-between gap-3 rounded-panel px-3 py-2 text-sm surface-2"
                 >
                   <span className="font-semibold">{w.de}</span>
                   <span className="muted min-w-0 text-right">

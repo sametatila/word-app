@@ -221,7 +221,7 @@ export function ResultCard({
       {frame.next ? (
         <Link
           href={frame.next.href}
-          className="mt-4 flex items-center justify-between gap-3 rounded-xl px-4 py-3 text-left surface-2"
+          className="mt-4 flex items-center justify-between gap-3 rounded-panel px-4 py-3 text-left surface-2"
         >
           <span className="min-w-0">
             <span className="muted block text-[11px] font-bold uppercase tracking-wide">{t("skills.next")}</span>

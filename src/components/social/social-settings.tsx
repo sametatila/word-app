@@ -86,7 +86,7 @@ export function SocialSettings({ initial, course = "de", bare = false }: { initi
             autoCorrect="off"
             spellCheck={false}
             placeholder={t("socialsettings.username_2")}
-            className="min-w-0 flex-1 rounded-lg border px-3 py-2 text-sm"
+            className="min-w-0 flex-1 rounded-tile border px-3 py-2 text-sm"
             style={{ borderColor: "var(--border)", background: "var(--surface-2)" }}
           />
           <button className="btn btn-primary h-9 px-3 text-xs" disabled={busy || !dirtyName || me.usernameChangeAvailableIn > 0} onClick={() => void save({ username: username.trim() }, t("socialsettings.username_updated"))}>
@@ -110,7 +110,7 @@ export function SocialSettings({ initial, course = "de", bare = false }: { initi
           onChange={(e) => setBio(e.target.value.slice(0, BIO_MAX))}
           rows={2}
           placeholder={t("socialsettings.why_one_sentence_is_enough", { lang: courseName(course, lang) })}
-          className="mt-1.5 w-full rounded-lg border px-3 py-2 text-sm"
+          className="mt-1.5 w-full rounded-tile border px-3 py-2 text-sm"
           style={{ borderColor: "var(--border)", background: "var(--surface-2)" }}
         />
         <div className="mt-1 flex items-center justify-between">

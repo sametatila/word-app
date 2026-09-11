@@ -444,7 +444,7 @@ function FreeTask({
       {task.stimulus ? (
         <blockquote
           lang={lang}
-          className="mt-3 rounded-xl border-l-4 px-3.5 py-2.5 text-sm leading-relaxed surface-2"
+          className="mt-3 rounded-panel border-l-4 px-3.5 py-2.5 text-sm leading-relaxed surface-2"
           style={{ borderColor: "var(--color-brand)" }}
         >
           {task.stimulus.split("\n\n").map((p, i) => (
@@ -541,7 +541,7 @@ function FreeTask({
           {t(showSample ? "writp.hide_sample" : "mockexam.show_model")}
         </button>
         {showSample ? (
-          <div lang={lang} className="mt-2 rounded-xl px-3.5 py-3 text-sm leading-relaxed surface-2">
+          <div lang={lang} className="mt-2 rounded-panel px-3.5 py-3 text-sm leading-relaxed surface-2">
             {task.sample.split("\n\n").map((p, i) => (
               <p key={i} className={`whitespace-pre-line ${i > 0 ? "mt-2" : ""}`}>
                 {p}
@@ -730,7 +730,7 @@ function FormTask({ task, onDone }: { task: FormTaskData; onDone: (ok: boolean) 
     <section className="card mt-4 p-5">
       <p className="text-xs font-bold uppercase tracking-wide text-[color:var(--color-brand)]">Formu doldur</p>
       <p className="mt-1.5 text-sm font-semibold leading-relaxed">{task.prompt}</p>
-      <p className="muted mt-1 rounded-xl px-3 py-2 text-xs leading-relaxed surface-2">{task.facts}</p>
+      <p className="muted mt-1 rounded-panel px-3 py-2 text-xs leading-relaxed surface-2">{task.facts}</p>
       <div className="mt-3 space-y-2">
         {task.fields.map((f, i) => (
           <label key={f.label} className="block">
@@ -795,7 +795,7 @@ function RewriteTask({ task, onDone }: { task: RewriteTaskData; onDone: (ok: boo
     <section className="card mt-4 p-5">
       <p className="text-xs font-bold uppercase tracking-wide text-[color:var(--color-brand)]">{t("writp.rewrite")}</p>
       <p className="mt-1.5 text-sm font-semibold leading-relaxed">{task.prompt}</p>
-      <p className="mt-2 rounded-xl px-3 py-2 text-base font-semibold surface-2" lang={lang}>
+      <p className="mt-2 rounded-panel px-3 py-2 text-base font-semibold surface-2" lang={lang}>
         {task.source}
       </p>
       {match ? (
@@ -804,7 +804,7 @@ function RewriteTask({ task, onDone }: { task: RewriteTaskData; onDone: (ok: boo
             {t(match.verdict === "exact" ? "writp.exact" : match.verdict === "spelling" ? "writp.spelling_only" : match.verdict === "order" ? "writp.order_only" : "lessonp.not_quite")}
           </p>
           {match.verdict !== "exact" ? (
-            <div className="rounded-xl px-3 py-2 text-sm surface-2">
+            <div className="rounded-panel px-3 py-2 text-sm surface-2">
               <p className="muted text-[11px]">{t("mockexam.your_answer")}</p>
               <TypedTokens tokens={match.typed} />
               <p className="muted mt-1.5 text-[11px]">{t("mockexam.correct_answer")}</p>

@@ -162,7 +162,7 @@ export function AchievementBadge({
       type="button"
       onClick={onClick}
       aria-label={`${row.title}${row.unlocked ? "" : ` — ${row.hint}`}`}
-      className="group flex flex-col items-center gap-1 rounded-xl p-1 text-center transition-transform active:scale-95"
+      className="group flex flex-col items-center gap-1 rounded-tile p-1 text-center transition-transform active:scale-95"
     >
       <span
         className="relative flex items-center justify-center rounded-tile"

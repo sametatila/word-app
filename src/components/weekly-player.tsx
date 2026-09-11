@@ -117,7 +117,7 @@ export function WeeklyPlayer() {
     return (
       <section className="card mx-auto w-full max-w-md p-5" aria-busy>
         <p className="muted text-sm">{t(phase === "loading" ? "weekly.preparing" : "weekly.saving")}</p>
-        <div className="mt-3 h-10 animate-pulse rounded-xl surface-2" />
+        <div className="mt-3 h-10 animate-pulse rounded-tile surface-2" />
       </section>
     );
   }

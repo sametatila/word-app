@@ -1088,7 +1088,7 @@ export function LessonPlayer({
 
       {resumed && phase !== "summary" ? (
         <div
-          className="flex items-center gap-2 rounded-xl px-3 py-2 text-xs"
+          className="flex items-center gap-2 rounded-panel px-3 py-2 text-xs"
           style={{ background: "color-mix(in srgb, var(--color-brand) 10%, transparent)" }}
         >
           <span className="flex-1" style={{ color: "var(--color-brand)" }}>
@@ -1770,7 +1770,7 @@ function LectureProgress({ at, steps }: { at: number; steps: { expect?: Expectat
 
 function Stat({ label, value, tone }: { label: string; value: string; tone?: "ok" | "warn" }) {
   return (
-    <div className="rounded-xl px-3 py-2.5" style={{ background: "var(--surface-2)" }}>
+    <div className="rounded-panel px-3 py-2.5" style={{ background: "var(--surface-2)" }}>
       <dt className="muted text-xs">{label}</dt>
       <dd
         className="mt-0.5 text-sm font-bold tabular-nums"
@@ -1997,7 +1997,7 @@ function Bubble({
       {corrections.map((c, i) => (
         <p
           key={i}
-          className="flex max-w-[85%] items-start gap-1.5 rounded-xl px-3 py-1.5 text-xs"
+          className="flex max-w-[85%] items-start gap-1.5 rounded-panel px-3 py-1.5 text-xs"
           style={{
             background: "color-mix(in srgb, var(--color-flame) 12%, transparent)",
             color: "var(--color-flame)",
@@ -2032,7 +2032,7 @@ function AsrNote({ visible }: { visible: boolean }) {
   if (!visible) return null;
   return (
     <div
-      className="flex items-start gap-2 rounded-xl px-3 py-2.5 text-xs"
+      className="flex items-start gap-2 rounded-panel px-3 py-2.5 text-xs"
       style={{
         background: "color-mix(in srgb, var(--color-flame) 12%, transparent)",
         color: "var(--color-flame)",

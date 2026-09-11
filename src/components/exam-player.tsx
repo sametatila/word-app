@@ -328,7 +328,7 @@ export function ExamPlayer({ level, module }: { level: CefrLevel; module: number
     return (
       <section className="card mx-auto w-full max-w-md p-5" aria-busy>
         <p className="muted text-sm">{t(phase === "loading" ? "exam.preparing" : "item.mono_scoring")}</p>
-        <div className="mt-3 h-10 animate-pulse rounded-xl surface-2" />
+        <div className="mt-3 h-10 animate-pulse rounded-tile surface-2" />
       </section>
     );
   }
@@ -566,7 +566,7 @@ export function ExamPlayer({ level, module }: { level: CefrLevel; module: number
           {item.title}
         </p>
         {item.text ? (
-          <div lang={course} className="mb-3 max-h-56 overflow-y-auto whitespace-pre-line rounded-xl px-3.5 py-3 text-sm leading-relaxed surface-2">
+          <div lang={course} className="mb-3 max-h-56 overflow-y-auto whitespace-pre-line rounded-panel px-3.5 py-3 text-sm leading-relaxed surface-2">
             {item.text}
           </div>
         ) : null}
@@ -657,7 +657,7 @@ export function ExamPlayer({ level, module }: { level: CefrLevel; module: number
           /* Ses alınamadı satırı YERİNDE çıkıyor (ekran değişmiyor): mikrofon
              düğmesine basan kullanıcı odağı düğmede tutuyor ve kutunun geldiğini
              ekran okuyucu söylemiyordu. Hata olduğu için `alert`. */
-          <p role="alert" className="mt-4 rounded-xl px-3 py-2 text-sm" style={{ background: "color-mix(in srgb, var(--color-rose) 10%, transparent)" }}>
+          <p role="alert" className="mt-4 rounded-panel px-3 py-2 text-sm" style={{ background: "color-mix(in srgb, var(--color-rose) 10%, transparent)" }}>
             {t(spkTries < 2 ? "exam.audio_failed_retry" : "exam.audio_failed_skip")}
           </p>
         ) : null}
@@ -682,7 +682,7 @@ export function ExamPlayer({ level, module }: { level: CefrLevel; module: number
       {header}
       <p className="text-sm font-semibold leading-relaxed">{w.task.prompt}</p>
       {w.task.stimulus ? (
-        <div lang={course} className="mt-2 whitespace-pre-line rounded-xl px-3.5 py-3 text-sm leading-relaxed surface-2">
+        <div lang={course} className="mt-2 whitespace-pre-line rounded-panel px-3.5 py-3 text-sm leading-relaxed surface-2">
           {w.task.stimulus}
         </div>
       ) : null}
@@ -832,14 +832,14 @@ function Cover({ level, module, onStart }: { level: CefrLevel; module: number | 
           SONRA öğreniyordu. Android kapakta uyarıyor. */}
       {cover?.trial ? (
         <p
-          className="mt-4 rounded-xl px-3.5 py-3 text-xs leading-relaxed"
+          className="mt-4 rounded-panel px-3.5 py-3 text-xs leading-relaxed"
           style={{ background: "var(--color-danger-soft)", color: "var(--color-danger)" }}
         >
           {t("exam.trial_notice")}
         </p>
       ) : null}
 
-      <div className="mt-4 rounded-xl px-3.5 py-3 text-xs leading-relaxed surface-2">
+      <div className="mt-4 rounded-panel px-3.5 py-3 text-xs leading-relaxed surface-2">
         <p className="font-semibold">{t("exam.rules")}</p>
         <p className="muted mt-1">
           {t(module === null ? "exam.rules_level" : "exam.rules_module")} {t("exam.rules_body", { total: PASS_TOTAL, section: PASS_SECTION })}
@@ -947,7 +947,7 @@ function ProduceCard({
 
       {item.mode === "order" ? (
         <>
-          <div className="mt-4 min-h-[3.25rem] rounded-xl px-3 py-2.5 text-base font-semibold surface-2" lang={course}>
+          <div className="mt-4 min-h-[3.25rem] rounded-panel px-3 py-2.5 text-base font-semibold surface-2" lang={course}>
             {chunks.length ? (
               <span className="flex flex-wrap gap-1.5">
                 {chunks.map((c, i) => (
@@ -1066,7 +1066,7 @@ function Result({
       </ul>
 
       {cando.length ? (
-        <div className="mt-4 rounded-xl px-3.5 py-3 surface-2">
+        <div className="mt-4 rounded-panel px-3.5 py-3 surface-2">
           <p className="text-sm font-bold">{t(result.passed ? "exam.now_you_can" : "exam.this_measured")}</p>
           <ul className="mt-2 space-y-2">
             {cando.map((c, i) => (
@@ -1099,7 +1099,7 @@ function Result({
           {showMisses ? (
             <ul className="mt-2 space-y-2.5">
               {misses.map((m, i) => (
-                <li key={i} className="rounded-xl px-3 py-2.5 text-sm surface-2">
+                <li key={i} className="rounded-panel px-3 py-2.5 text-sm surface-2">
                   <p className="muted text-xs font-semibold">
                     <span lang="de">{SECTION_TITLE_DE[m.section]}</span> · {t(SECTION_TITLE_KEYS[m.section])}
                   </p>
@@ -1126,7 +1126,7 @@ function Result({
       ) : null}
 
       {showMisses && writingSample ? (
-        <div className="mt-2 rounded-xl px-3 py-2.5 text-sm surface-2">
+        <div className="mt-2 rounded-panel px-3 py-2.5 text-sm surface-2">
           <p className="muted text-xs font-semibold">{t("exam.writing_sample")}</p>
           <p className="mt-1 whitespace-pre-line text-xs" lang={course}>
             {writingSample}

@@ -198,7 +198,7 @@ export function AuthForm({
           type="button"
           onClick={() => startSocial("apple")}
           disabled={busy}
-          className="mb-2.5 flex w-full items-center justify-center gap-2.5 rounded-xl px-4 py-3 text-base font-bold disabled:opacity-60"
+          className="mb-2.5 flex w-full items-center justify-center gap-2.5 rounded-panel px-4 py-3 text-base font-bold disabled:opacity-60"
           style={{ background: "var(--text)", color: "var(--surface)" }}
         >
           <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden fill="currentColor">
@@ -213,7 +213,7 @@ export function AuthForm({
         type="button"
         onClick={() => startSocial("google")}
         disabled={busy}
-        className="flex w-full items-center justify-center gap-2.5 rounded-xl border px-4 py-3 text-base font-bold disabled:opacity-60"
+        className="flex w-full items-center justify-center gap-2.5 rounded-panel border px-4 py-3 text-base font-bold disabled:opacity-60"
         style={{ borderColor: "var(--border)", background: "var(--surface)" }}
       >
         <svg width="20" height="20" viewBox="0 0 48 48" aria-hidden>

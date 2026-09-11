@@ -230,7 +230,7 @@ function LeagueRow({
             onClick={() => onReport(row)}
             aria-label={t("leaderboard.report_hint", { name: row.name ?? t("social.student") })}
             title={t("user.report")}
-            className="faint shrink-0 rounded-lg p-1 hover:text-[color:var(--text-muted)]"
+            className="faint shrink-0 rounded-chip p-1 hover:text-[color:var(--text-muted)]"
           >
             <FlagIcon size={13} />
           </button>

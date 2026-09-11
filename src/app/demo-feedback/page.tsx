@@ -46,7 +46,7 @@ export default function DemoFeedback() {
         <h2 className="muted mb-3 text-xs font-bold uppercase">FeedbackLine — her hata tipi</h2>
         <ul className="space-y-2">
           {ERROR_TYPES.map((type) => (
-            <li key={type} className="rounded-xl px-3 py-2 surface-2">
+            <li key={type} className="rounded-panel px-3 py-2 surface-2">
               <FeedbackLine
                 why={whyFor({
                   type,
@@ -76,7 +76,7 @@ export default function DemoFeedback() {
           {["Heute ich gehe ins Kino", "Ich gehe heute ins Kinno", "Ich gehe ins Kino", "Ich gehe heute abend ins Kino", "Ich bin heute müde"].map((typed) => {
             const m = matchSentence(typed, T);
             return (
-              <li key={typed} className="rounded-xl px-3 py-2 surface-2">
+              <li key={typed} className="rounded-panel px-3 py-2 surface-2">
                 <span className="muted mr-2 text-xs uppercase">{m.verdict} · kalite {m.quality}</span>
                 <TokenDiff tokens={m.target} />
                 <span className="muted block text-xs">

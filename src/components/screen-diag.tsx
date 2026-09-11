@@ -71,7 +71,7 @@ export function ScreenDiag() {
 
   return (
     <div
-      className="fixed left-2 top-2 z-50 rounded-xl px-3 py-2 font-mono text-[11px] leading-tight"
+      className="fixed left-2 top-2 z-50 rounded-panel px-3 py-2 font-mono text-[11px] leading-tight"
       style={{ background: "rgba(20,16,14,0.92)", color: "#f4eee4" }}
     >
       {rows.map(([k, v]) => (

@@ -416,7 +416,7 @@ export function CourseOnboarding({
 
             {error ? (
               <p
-                className="mt-4 flex items-center gap-2 rounded-xl px-3 py-2 text-sm"
+                className="mt-4 flex items-center gap-2 rounded-panel px-3 py-2 text-sm"
                 style={{ background: "color-mix(in srgb, var(--color-rose-500) 14%, transparent)", color: "var(--color-rose)" }}
               >
                 <AlertIcon size={16} /> {error}

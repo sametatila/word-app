@@ -117,7 +117,7 @@ export function ClozeGame({ round, onDone }: GameProps<ClozeRound>) {
                 initial={{ opacity: 0, scale: 0.85 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.2, ease: "easeOut" }}
-                className={`option mx-1 inline-block rounded-lg px-3 py-0.5 align-middle font-bold ${
+                className={`option mx-1 inline-block rounded-chip px-3 py-0.5 align-middle font-bold ${
                   correct ? "option-correct" : "option-wrong animate-shake"
                 }`}
               >
@@ -128,7 +128,7 @@ export function ClozeGame({ round, onDone }: GameProps<ClozeRound>) {
                 key="empty"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                className="surface-2 mx-1 inline-block min-w-[5rem] rounded-lg border border-dashed px-3 py-0.5 align-middle"
+                className="surface-2 mx-1 inline-block min-w-[5rem] rounded-chip border border-dashed px-3 py-0.5 align-middle"
                 style={{ borderColor: "var(--border)" }}
               >
                 &nbsp;

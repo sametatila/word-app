@@ -46,7 +46,7 @@ export function GrammarPlayer({ exercise, backHref }: { exercise: GrammarExercis
             {block.examples?.length ? (
               <ul className="mt-2 space-y-1.5">
                 {block.examples.map((x, j) => (
-                  <li key={j} className="rounded-xl px-3 py-2 surface-2">
+                  <li key={j} className="rounded-panel px-3 py-2 surface-2">
                     <button
                       type="button"
                       onClick={() => speakGerman(x.de)}

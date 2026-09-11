@@ -194,7 +194,7 @@ export function ScrambleGame({ round, onDone }: GameProps<ScrambleRound>) {
                 onClick={() => tile && removeAt(i)}
                 disabled={!tile || status !== "playing"}
                 aria-label={tile ? tx("rounds.undo_letter", { char: tile.char }) : tx("rounds.empty_letter_slot")}
-                className={`flex items-center justify-center rounded-xl font-bold transition-colors ${slotSize}`}
+                className={`flex items-center justify-center rounded-tile font-bold transition-colors ${slotSize}`}
                 style={{
                   border: `2px ${tile ? "solid" : "dashed"} ${slotTone}`,
                   background: tile ? "var(--surface)" : "transparent",

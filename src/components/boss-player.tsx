@@ -257,7 +257,7 @@ export function BossPlayer({
 
         {!ready ? (
           <p
-            className="mt-4 rounded-xl px-3 py-2.5 text-sm"
+            className="mt-4 rounded-panel px-3 py-2.5 text-sm"
             style={{
               background: "color-mix(in srgb, var(--color-flame) 10%, transparent)",
               color: "var(--color-flame)",

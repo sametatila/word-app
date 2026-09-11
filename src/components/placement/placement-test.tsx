@@ -189,7 +189,7 @@ export function PlacementTest({ initialLast, canRetake, retakeDays }: { initialL
           {t("plc.intro")}
         </p>
         {initialLast ? (
-          <p className="mt-3 rounded-xl px-3 py-2 text-xs surface-2">
+          <p className="mt-3 rounded-panel px-3 py-2 text-xs surface-2">
             {t("placement.last_taken", { date: new Date(initialLast.at).toLocaleDateString(localeOf(lang), { day: "numeric", month: "short", year: "numeric" }) })} <strong>{initialLast.suggested}</strong>
             {initialLast.accepted ? ` ${t("placement.you_chose", { level: initialLast.accepted })}` : ""} · {describePerSkill(initialLast.perSkill, t)}
           </p>
@@ -211,7 +211,7 @@ export function PlacementTest({ initialLast, canRetake, retakeDays }: { initialL
     return (
       <section className="card mx-auto w-full max-w-md p-5" aria-busy>
         <p className="muted text-sm">{t(phase === "loading" ? "plc.preparing" : "placement.calculating_your_level")}</p>
-        <div className="mt-3 h-10 animate-pulse rounded-xl surface-2" />
+        <div className="mt-3 h-10 animate-pulse rounded-tile surface-2" />
       </section>
     );
   }
@@ -365,7 +365,7 @@ export function PlacementTest({ initialLast, canRetake, retakeDays }: { initialL
       {header}
       <p className="muted mb-2 text-xs">{t(STAGE_HINT[stage])} · {item.level}</p>
       {item.text ? (
-        <div lang={course} className="mb-3 max-h-56 overflow-y-auto rounded-xl px-3.5 py-3 text-sm leading-relaxed surface-2">
+        <div lang={course} className="mb-3 max-h-56 overflow-y-auto rounded-panel px-3.5 py-3 text-sm leading-relaxed surface-2">
           {item.text.split("\n\n").map((p, i) => (
             <p key={i} className={i > 0 ? "mt-2" : ""}>
               {p}

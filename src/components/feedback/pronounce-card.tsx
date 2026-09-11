@@ -49,7 +49,7 @@ export function PronounceCard({ score, audioUrl, compact = false }: { score: Pro
                   ? t("pron.word_heard", { heard: w.heard })
                   : t("pron.word_missing")
             }
-            className="rounded-lg px-2 py-0.5 text-sm font-semibold"
+            className="rounded-chip px-2 py-0.5 text-sm font-semibold"
             style={{ background: `color-mix(in srgb, ${tone(w.status)} 18%, transparent)`, color: tone(w.status), textDecoration: w.status === "missing" ? "line-through" : undefined }}
           >
             {w.word}

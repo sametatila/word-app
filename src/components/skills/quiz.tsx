@@ -64,7 +64,7 @@ export function QuestionList({
               <motion.p
                 initial={{ opacity: 0, y: 4 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="mt-3 rounded-xl px-3 py-2 text-xs leading-relaxed"
+                className="mt-3 rounded-panel px-3 py-2 text-xs leading-relaxed"
                 style={{
                   background: wasCorrect
                     ? "color-mix(in srgb, var(--color-mint) 10%, transparent)"

@@ -276,7 +276,7 @@ export function MonologuePlayer({ exercise, backHref }: { exercise: SpeakingMono
               <li key={b}>· {b}</li>
             ))}
           </ul>
-          <p className="mt-3 min-h-12 rounded-xl px-3 py-2 text-sm surface-2" lang={lang} aria-live="polite">
+          <p className="mt-3 min-h-12 rounded-panel px-3 py-2 text-sm surface-2" lang={lang} aria-live="polite">
             {transcript} <span className="muted">{interim}</span>
             {!transcript && !interim ? <span className="muted">{t(asr ? "item.mono_listening" : "item.mono_recording")}</span> : null}
           </p>
@@ -401,7 +401,7 @@ export function MonologuePlayer({ exercise, backHref }: { exercise: SpeakingMono
             {showSample ? t("item.mono_hide_sample") : t("item.mono_sample")}
           </button>
           {showSample ? (
-            <p className="mt-2 rounded-xl px-3 py-2 text-sm leading-relaxed surface-2" lang={lang}>
+            <p className="mt-2 rounded-panel px-3 py-2 text-sm leading-relaxed surface-2" lang={lang}>
               {mono.sampleDe}
             </p>
           ) : null}
