@@ -45,6 +45,25 @@ export const BOSS_SECONDS = 60;
 export const LESSON_TRY_CEILING = 3;
 
 /**
+ * Söyleyiş drilinde tek kaydın üst sınırı (ms).
+ *
+ * Satır içinde adsız bir `9000` yazılıydı; web aynı dril için 8 saniye
+ * kullanıyordu. Web karşılığı `src/lib/pronounce-const.ts` `SPEAK_CLIP_MS`.
+ */
+export const SPEAK_CLIP_MS = 8000;
+
+/**
+ * Monologda tanıyıcının tek seferde açık kalacağı süre (ms) — YALNIZ mobil.
+ *
+ * Android'in tanıyıcısı her sessizlikte kendini kapatıyor, o yüzden monolog
+ * bir DÖNGÜ: pencere kapanınca yeniden açılıyor ve parçalar birleştiriliyor.
+ * Web'de karşılığı yok, çünkü orada `MediaRecorder` kullanıcı durdurana kadar
+ * kesintisiz kaydediyor — yani bu sayı bir ayrışma değil, platformun kendi
+ * kısıtı. Satır içinde adsız duruyordu; adı ve gerekçesi burada.
+ */
+export const MONOLOGUE_CHUNK_MS = 20000;
+
+/**
  * Beceri egzersizi "bitti" eşiği (yüzde) — web `lib/score-bands.ts`
  * `SKILL_DONE_PCT`.
  *

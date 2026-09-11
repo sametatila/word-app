@@ -8,6 +8,7 @@ import { PressableScale } from "../ui/PressableScale";
 import { SpeakerIcon, MicIcon, CheckIcon, XIcon } from "../ui/icons";
 import { speakTarget } from "../lib/tts";
 import { ensureMicPermission, listenOnce, sttAvailable, stopListening } from "../lib/stt";
+import { SPEAK_CLIP_MS, MONOLOGUE_CHUNK_MS } from "../lib/learningRules";
 import { spokenMatches } from "../lib/voiceMatch";
 import { currentTargetLang, currentTargetLocale } from "../lib/courses";
 import { api } from "../api/client";
@@ -94,7 +95,8 @@ export function SpeakingDrill({ tasks, onAllDone, colors }: { tasks: SpeakingTas
     if (!izin) { setSttOk(false); return; }
     setVerdict("listening");
     setHeard("");
-    const h = await listenOnce(currentTargetLocale(), 9000);
+    /* Pencere ortak sabitten; satir icinde adsiz bir 9000 yaziliydi. */
+    const h = await listenOnce(currentTargetLocale(), SPEAK_CLIP_MS);
     if (!h?.length) { setVerdict("unheard"); return; }
     setHeard(h[0]);
     if (spokenMatches(h, [task.de])) { haptic("correct"); setVerdict("ok"); return; }
@@ -257,7 +259,7 @@ export function MonologueBody({ mono, level, exerciseId, onDone, colors }: {
     recording.current = true;
     // Döngü: tanıyıcı her sessizlikte kapanır, biz yeniden açarız.
     while (recording.current) {
-      const h = await listenOnce(currentTargetLocale(), 20000);
+      const h = await listenOnce(currentTargetLocale(), MONOLOGUE_CHUNK_MS);
       if (!recording.current) break;
       if (h?.[0]) {
         textRef.current = `${textRef.current} ${h[0]}`.replace(/\s+/g, " ").trim();

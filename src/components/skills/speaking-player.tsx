@@ -13,16 +13,12 @@ import { useTargetLang } from "./player-context";
 import { CheckIcon, XIcon, SpeakerIcon } from "@/components/icons";
 import { speakGerman } from "@/components/speak-button";
 import { useT } from "@/lib/i18n/client";
+import { SPEAK_CLIP_MS } from "@/lib/pronounce-const";
 
-/**
- * Tek kayıt için üst sınır.
- *
- * Yorum "sınav oynatıcısıyla aynı" diyordu ve YANLIŞTI: sınav 12 saniye
- * kaydediyor (`exam-player` `SPEAK_MAX_MS`). Fark bilinçli — burada
- * söylenecek şey tek bir cümle, sınavda ise serbest bir cevap — ama yanlış
- * bir yorum yoklukten kötü: sonraki okuyan yanlış tarafı "düzeltir".
- */
-const MAX_MS = 8000;
+/* Tek kaydın üst sınırı artık ortak sabitten (`SPEAK_CLIP_MS`): sayı burada
+   `MAX_MS = 8000` diye duruyordu ve Android satır içinde adsız bir 9000
+   yazıyordu. Gerekçe sabitin yanında. */
+const MAX_MS = SPEAK_CLIP_MS;
 
 type Durum = "idle" | "rec" | "scoring" | "done" | "failed";
 
