@@ -1,0 +1,1142 @@
+[
+ {
+  "tr": "İkna etmek",
+  "kind": "titleTr",
+  "de": "Überzeugen"
+ },
+ {
+  "tr": "Kaynağı sormak",
+  "kind": "titleTr",
+  "de": "Nach der Quelle fragen"
+ },
+ {
+  "tr": "Tahmin yürütmek",
+  "kind": "titleTr",
+  "de": "Mutmaßen"
+ },
+ {
+  "tr": "Geriden anlatmak",
+  "kind": "titleTr",
+  "de": "Von vorher erzählen"
+ },
+ {
+  "tr": "Geleceği tartışmak",
+  "kind": "titleTr",
+  "de": "Über die Zukunft streiten"
+ },
+ {
+  "tr": "Birini ikna etmeyi öğretir; ikna fiilleri kendi ardılını seçer, kimi -ing kimi to ister.",
+  "kind": "summary",
+  "de": "Vermittelt, wie man jemanden überredet; die Überzeugungsverben wählen selbst, was ihnen folgt, die einen -ing, die anderen to."
+ },
+ {
+  "tr": "Bir tartışmanın öncesini anlatmayı öğretir; daha önce olan iş bir kat daha geriye çekilir.",
+  "kind": "summary",
+  "de": "Vermittelt, wie man erzählt, was vor einer Debatte war; die frühere Handlung wird eine Stufe weiter zurückgeschoben."
+ },
+ {
+  "tr": "Bir bilginin kaynağını tarif etmeyi öğretir; ilgi cümlesi kişiyi, şeyi ve yeri cümleye bağlar.",
+  "kind": "summary",
+  "de": "Vermittelt, wie man die Quelle einer Information beschreibt; der Relativsatz bindet Person, Sache und Ort an den Satz."
+ },
+ {
+  "tr": "Gelecek üzerine tartışmayı öğretir; tahmin, belirti ve ayarlanmış plan ayrı biçimlerle söylenir.",
+  "kind": "summary",
+  "de": "Vermittelt, wie man über die Zukunft diskutiert; Vermutung, Anzeichen und fester Plan stehen in verschiedenen Formen."
+ },
+ {
+  "tr": "Kesinlik derecesini kipe bağlamayı öğretir: eminsen must, imkânsız görüyorsan can't, ihtimal veriyorsan might.",
+  "kind": "summary",
+  "de": "Vermittelt, wie man den Grad der Sicherheit an das Modalverb knüpft: sicher must, unmöglich can't, möglich might."
+ },
+ {
+  "tr": "olayı senden farklı yorumlayan bir arkadaş",
+  "kind": "partner",
+  "de": "ein Freund, der das Ereignis anders deutet als du"
+ },
+ {
+  "tr": "geleceği senden daha karamsar gören bir arkadaş",
+  "kind": "partner",
+  "de": "eine Freundin, die die Zukunft düsterer sieht als du"
+ },
+ {
+  "tr": "planı değiştirmek istemeyen ama seni dinleyen bir arkadaş",
+  "kind": "partner",
+  "de": "ein Freund, der den Plan nicht ändern will, dir aber zuhört"
+ },
+ {
+  "tr": "bilgiyi aktaran ama kaynağını tam hatırlamayan bir arkadaş",
+  "kind": "partner",
+  "de": "eine Freundin, die die Information weitergibt, sich aber an die Quelle nicht genau erinnert"
+ },
+ {
+  "tr": "tartışmanın başını kaçırmış, sırayı merak eden bir arkadaş",
+  "kind": "partner",
+  "de": "ein Freund, der den Anfang der Debatte verpasst hat und die Reihenfolge wissen will"
+ },
+ {
+  "tr": "Neden şimdi değiştirelim ki?",
+  "kind": "openingTr",
+  "de": "Warum sollten wir es jetzt ändern?"
+ },
+ {
+  "tr": "Peki sence gerçekte ne oldu?",
+  "kind": "openingTr",
+  "de": "Und was ist deiner Meinung nach wirklich passiert?"
+ },
+ {
+  "tr": "Ben gelmeden önce neler olmuştu?",
+  "kind": "openingTr",
+  "de": "Was war passiert, bevor ich kam?"
+ },
+ {
+  "tr": "Sence gelecek yıl daha iyi olacak mı?",
+  "kind": "openingTr",
+  "de": "Glaubst du, nächstes Jahr wird besser?"
+ },
+ {
+  "tr": "Bir yerde işe yaradığını okudum. Neden sordun?",
+  "kind": "openingTr",
+  "de": "Ich habe irgendwo gelesen, dass es hilft. Warum fragst du?"
+ },
+ {
+  "tr": "Bir arkadaşını ortak bir planı değiştirmeye ikna etmeye çalışıyorsun. Gerekçeni söyle, onun itirazını karşıla ve bir rica ile bitir.",
+  "kind": "scene",
+  "de": "Du versuchst, einen Freund zu überreden, einen gemeinsamen Plan zu ändern. Sag deinen Grund, begegne seinem Einwand und schließ mit einer Bitte."
+ },
+ {
+  "tr": "Bir arkadaşın geç geldiği için tartışmanın başını kaçırdı. Ona sen konuşmadan önce nelerin olduğunu ve kararın ne zaman alındığını anlat.",
+  "kind": "scene",
+  "de": "Ein Freund kam zu spät und hat den Anfang der Debatte verpasst. Erzähl ihm, was passiert war, bevor du gesprochen hast, und wann die Entscheidung fiel."
+ },
+ {
+  "tr": "Bir arkadaşın sana bir bilgi aktardı ve sen kaynağını öğrenmek istiyorsun. Kimin yazdığını, hangi çalışma olduğunu ve nerede çıktığını sor.",
+  "kind": "scene",
+  "de": "Eine Freundin hat dir eine Information weitergegeben und du willst die Quelle wissen. Frag, wer sie geschrieben hat, welche Arbeit es war und wo sie erschienen ist."
+ },
+ {
+  "tr": "Bir arkadaşınla önümüzdeki yılın nasıl geçeceğini konuşuyorsunuz. Bir tahminini, bir belirtiye dayanan beklentini ve ayarlanmış bir planını söyle.",
+  "kind": "scene",
+  "de": "Du besprichst mit einem Freund, wie das nächste Jahr wird. Sag eine Vermutung, eine Erwartung mit Anzeichen und einen fest vereinbarten Plan."
+ },
+ {
+  "tr": "Bir arkadaşınla kimsenin tam bilmediği bir olayı konuşuyorsunuz. Bir çıkarımına emin ol, bir ihtimali tamamen kapat ve bir üçüncüsüne sadece ihtimal ver.",
+  "kind": "scene",
+  "de": "Du besprichst mit einem Freund ein Ereignis, das niemand genau kennt. Sei dir bei einem Schluss sicher, schließ eine Möglichkeit ganz aus und gib einer dritten nur eine Chance."
+ },
+ {
+  "tr": "Üç kesinlik derecesini üç ayrı kiple söylediysen konuşma başarılı sayılır.",
+  "kind": "goal",
+  "de": "Das Gespräch gilt als gelungen, wenn du die drei Grade der Sicherheit mit drei verschiedenen Modalverben gesagt hast."
+ },
+ {
+  "tr": "Kişiyi, çalışmayı ve yeri üç ayrı ilgi cümlesiyle sorduysan konuşma başarılı sayılır.",
+  "kind": "goal",
+  "de": "Das Gespräch gilt als gelungen, wenn du nach Person, Arbeit und Ort mit drei verschiedenen Relativsätzen gefragt hast."
+ },
+ {
+  "tr": "Bir ikna cümlesi, bir ret cümlesi ve kibar bir rica kurduysan konuşma başarılı sayılır.",
+  "kind": "goal",
+  "de": "Das Gespräch gilt als gelungen, wenn du einen Überredungssatz, einen Ablehnungssatz und eine höfliche Bitte gebaut hast."
+ },
+ {
+  "tr": "Önce olanı bir kat geriye çekip sonra olanı olağan geçmişte anlattıysan konuşma başarılı sayılır.",
+  "kind": "goal",
+  "de": "Das Gespräch gilt als gelungen, wenn du das Frühere eine Stufe zurückgeschoben und das Spätere im einfachen Präteritum erzählt hast."
+ },
+ {
+  "tr": "Tahmini, belirtiye dayanan beklentiyi ve ayarlanmış planı üç ayrı biçimle söylediysen konuşma başarılı sayılır.",
+  "kind": "goal",
+  "de": "Das Gespräch gilt als gelungen, wenn du Vermutung, Erwartung mit Anzeichen und festen Plan in drei verschiedenen Formen gesagt hast."
+ },
+ {
+  "tr": "an",
+  "kind": "vocab.tr",
+  "de": "Moment"
+ },
+ {
+  "tr": "çaba",
+  "kind": "vocab.tr",
+  "de": "Mühe"
+ },
+ {
+  "tr": "okur",
+  "kind": "vocab.tr",
+  "de": "Leser"
+ },
+ {
+  "tr": "anket",
+  "kind": "vocab.tr",
+  "de": "Umfrage"
+ },
+ {
+  "tr": "rakam",
+  "kind": "vocab.tr",
+  "de": "Zahl"
+ },
+ {
+  "tr": "uzman",
+  "kind": "vocab.tr",
+  "de": "Experte"
+ },
+ {
+  "tr": "yalan",
+  "kind": "vocab.tr",
+  "de": "Lüge"
+ },
+ {
+  "tr": "yazar",
+  "kind": "vocab.tr",
+  "de": "Autor"
+ },
+ {
+  "tr": "artmak",
+  "kind": "vocab.tr",
+  "de": "steigen"
+ },
+ {
+  "tr": "gerçek",
+  "kind": "vocab.tr",
+  "de": "Wahrheit"
+ },
+ {
+  "tr": "toplum",
+  "kind": "vocab.tr",
+  "de": "Gesellschaft"
+ },
+ {
+  "tr": "ihtimal",
+  "kind": "vocab.tr",
+  "de": "Chance"
+ },
+ {
+  "tr": "izlenim",
+  "kind": "vocab.tr",
+  "de": "Eindruck"
+ },
+ {
+  "tr": "öngörmek",
+  "kind": "vocab.tr",
+  "de": "vorhersagen"
+ },
+ {
+  "tr": "araştırma",
+  "kind": "vocab.tr",
+  "de": "Forschung"
+ },
+ {
+  "tr": "daha önce",
+  "kind": "vocab.tr",
+  "de": "früher"
+ },
+ {
+  "tr": "etkilemek",
+  "kind": "vocab.tr",
+  "de": "beeinflussen"
+ },
+ {
+  "tr": "kalkışmak",
+  "kind": "vocab.tr",
+  "de": "versuchen"
+ },
+ {
+  "tr": "kesinlikle",
+  "kind": "vocab.tr",
+  "de": "definitiv"
+ },
+ {
+  "tr": "alıntılamak",
+  "kind": "vocab.tr",
+  "de": "zitieren"
+ },
+ {
+  "tr": "inkâr etmek",
+  "kind": "vocab.tr",
+  "de": "abstreiten"
+ },
+ {
+  "tr": "endişelenmek",
+  "kind": "vocab.tr",
+  "de": "sich sorgen"
+ },
+ {
+  "tr": "önemli olmak",
+  "kind": "vocab.tr",
+  "de": "wichtig sein"
+ },
+ {
+  "tr": "şüphe duymak",
+  "kind": "vocab.tr",
+  "de": "bezweifeln"
+ },
+ {
+  "tr": "sakıncası olmak",
+  "kind": "vocab.tr",
+  "de": "etwas dagegen haben"
+ },
+ {
+  "tr": "kibar bir rica kurar",
+  "kind": "pattern.tr",
+  "de": "formuliert eine höfliche Bitte"
+ },
+ {
+  "tr": "bir suçlamayı reddeder",
+  "kind": "pattern.tr",
+  "de": "weist einen Vorwurf zurück"
+ },
+ {
+  "tr": "ayarlanmış bir planı söyler",
+  "kind": "pattern.tr",
+  "de": "nennt einen fest vereinbarten Plan"
+ },
+ {
+  "tr": "iki geçmiş işi sıraya koyar",
+  "kind": "pattern.tr",
+  "de": "bringt zwei vergangene Handlungen in eine Reihenfolge"
+ },
+ {
+  "tr": "emin olunan bir çıkarımı söyler",
+  "kind": "pattern.tr",
+  "de": "nennt einen sicheren Schluss"
+ },
+ {
+  "tr": "şeyi tarif ederek cümleye bağlar",
+  "kind": "pattern.tr",
+  "de": "bindet eine Sache beschreibend in den Satz ein"
+ },
+ {
+  "tr": "yeri tarif ederek cümleye bağlar",
+  "kind": "pattern.tr",
+  "de": "bindet einen Ort beschreibend in den Satz ein"
+ },
+ {
+  "tr": "bilginin daha eski olduğunu söyler",
+  "kind": "pattern.tr",
+  "de": "sagt, dass die Information älter ist"
+ },
+ {
+  "tr": "kişiyi tarif ederek cümleye bağlar",
+  "kind": "pattern.tr",
+  "de": "bindet eine Person beschreibend in den Satz ein"
+ },
+ {
+  "tr": "önce olan işi bir kat geriye çeker",
+  "kind": "pattern.tr",
+  "de": "schiebt die frühere Handlung eine Stufe zurück"
+ },
+ {
+  "tr": "ihtimal verilen bir çıkarımı söyler",
+  "kind": "pattern.tr",
+  "de": "nennt einen möglichen Schluss"
+ },
+ {
+  "tr": "imkânsız gördüğü bir çıkarımı söyler",
+  "kind": "pattern.tr",
+  "de": "nennt einen für unmöglich gehaltenen Schluss"
+ },
+ {
+  "tr": "belirtiye dayanan bir beklentiyi söyler",
+  "kind": "pattern.tr",
+  "de": "nennt eine Erwartung, die auf einem Anzeichen beruht"
+ },
+ {
+  "tr": "elinde belirti olmayan bir tahmini söyler",
+  "kind": "pattern.tr",
+  "de": "nennt eine Vermutung ohne Anzeichen"
+ },
+ {
+  "tr": "birini bir şey yapmaya ikna ettiğini anlatır",
+  "kind": "pattern.tr",
+  "de": "erzählt, dass man jemanden zu etwas überredet hat"
+ },
+ {
+  "tr": "derdi.",
+  "kind": "why.tr",
+  "de": "gesagt."
+ },
+ {
+  "tr": "girmiyor.",
+  "kind": "why.tr",
+  "de": "kommt nicht dazwischen."
+ },
+ {
+  "tr": "Doğru. Burada",
+  "kind": "why.tr",
+  "de": "Richtig. An dieser Stelle steht"
+ },
+ {
+  "tr": "hâlinde kalıyor; araya",
+  "kind": "why.tr",
+  "de": "Form, und ein"
+ },
+ {
+  "tr": "Doğru. Bu fiilden sonra ikinci fiil",
+  "kind": "why.tr",
+  "de": "Richtig. Nach diesem Verb bleibt das zweite Verb in der"
+ },
+ {
+  "tr": "Doğru. Tarif kişiye ait olduğu için",
+  "kind": "why.tr",
+  "de": "Richtig. Weil die Beschreibung zu einer Person gehört, steht hier"
+ },
+ {
+  "tr": "izin değil imkânsızlık anlatıyor; kip aynı, iş farklı.",
+  "kind": "why.tr",
+  "de": "nicht für Erlaubnis, sondern für Unmöglichkeit; das Modalverb ist dasselbe, seine Aufgabe eine andere."
+ },
+ {
+  "tr": "kullanılıyor ve tarif ettiği kelimeden hemen sonra duruyor.",
+  "kind": "why.tr",
+  "de": "und es steht direkt hinter dem Wort, das es beschreibt."
+ },
+ {
+  "tr": "Doğru. Konuşan kişi elinde bir belirti olduğunu ima ediyor; salt tahmin olsaydı",
+  "kind": "why.tr",
+  "de": "Richtig. Die sprechende Person deutet an, dass sie ein Anzeichen hat; bei bloßer Vermutung hätte sie"
+ },
+ {
+  "tr": "Doğru. Karar konuşmadan önce alınmış, o yüzden bir kat geride duruyor; konuşma ise olağan geçmişte.",
+  "kind": "why.tr",
+  "de": "Richtig. Die Entscheidung fiel vor dem Sprechen, deshalb steht sie eine Stufe zurück; das Sprechen bleibt im einfachen Präteritum."
+ },
+ {
+  "tr": "Şeyi bağlarken",
+  "kind": "hint.tr",
+  "de": "Beim Verbinden einer Sache"
+ },
+ {
+  "tr": "Yeri bağlarken",
+  "kind": "hint.tr",
+  "de": "Beim Verbinden eines Ortes"
+ },
+ {
+  "tr": "İmkânsızlık için",
+  "kind": "hint.tr",
+  "de": "Für die Unmöglichkeit"
+ },
+ {
+  "tr": "Kişiyi bağlarken",
+  "kind": "hint.tr",
+  "de": "Beim Verbinden einer Person"
+ },
+ {
+  "tr": "Salt tahmin için",
+  "kind": "hint.tr",
+  "de": "Für eine bloße Vermutung"
+ },
+ {
+  "tr": "İhtimal kipi ile:",
+  "kind": "hint.tr",
+  "de": "Mit dem Modalverb der Möglichkeit:"
+ },
+ {
+  "tr": "Önce olan iş için",
+  "kind": "hint.tr",
+  "de": "Für die frühere Handlung"
+ },
+ {
+  "tr": "Bu fiilin ardılı için",
+  "kind": "hint.tr",
+  "de": "Für das, was diesem Verb folgt"
+ },
+ {
+  "tr": "Emin olduğun çıkarım için",
+  "kind": "hint.tr",
+  "de": "Für einen sicheren Schluss"
+ },
+ {
+  "tr": "Önce biten iş bir kat geride:",
+  "kind": "hint.tr",
+  "de": "Die früher beendete Handlung steht eine Stufe zurück:"
+ },
+ {
+  "tr": "Reddetme fiilinin ardılı için",
+  "kind": "hint.tr",
+  "de": "Für das, was auf das Verb des Abstreitens folgt"
+ },
+ {
+  "tr": "Belirtiye dayanan beklenti için",
+  "kind": "hint.tr",
+  "de": "Für eine Erwartung mit Anzeichen"
+ },
+ {
+  "tr": "Bu kibar ricanın ikinci fiili için",
+  "kind": "hint.tr",
+  "de": "Für das zweite Verb dieser höflichen Bitte"
+ },
+ {
+  "tr": "Ayarlanmış plan şimdiki zamanla söylenir:",
+  "kind": "hint.tr",
+  "de": "Ein fest vereinbarter Plan steht in der Verlaufsform der Gegenwart:"
+ },
+ {
+  "tr": "Okuma toplantıdan önce bittiği için bir kat geride:",
+  "kind": "hint.tr",
+  "de": "Weil das Lesen vor der Sitzung fertig war, steht es eine Stufe zurück:"
+ },
+ {
+  "tr": "ret",
+  "kind": "say.tr",
+  "de": "Ablehnung"
+ },
+ {
+  "tr": "yer",
+  "kind": "say.tr",
+  "de": "Ort"
+ },
+ {
+  "tr": "rica",
+  "kind": "say.tr",
+  "de": "Bitte"
+ },
+ {
+  "tr": "şeyi,",
+  "kind": "say.tr",
+  "de": "die Sache,"
+ },
+ {
+  "tr": "ister,",
+  "kind": "say.tr",
+  "de": "dahinter,"
+ },
+ {
+  "tr": "belirti",
+  "kind": "say.tr",
+  "de": "Anzeichen"
+ },
+ {
+  "tr": "kişiyi,",
+  "kind": "say.tr",
+  "de": "verbindet die Person,"
+ },
+ {
+  "tr": "ihtimalse",
+  "kind": "say.tr",
+  "de": "möglich"
+ },
+ {
+  "tr": "imkânsızsa",
+  "kind": "say.tr",
+  "de": "unmöglich"
+ },
+ {
+  "tr": "ise fiilin",
+  "kind": "say.tr",
+  "de": "dagegen verlangen die Form auf"
+ },
+ {
+  "tr": "bir kişi ve",
+  "kind": "say.tr",
+  "de": "verlangt eine Person und ein"
+ },
+ {
+  "tr": "Aşağı inmeye",
+  "kind": "say.tr",
+  "de": "Nach unten gehen heißt"
+ },
+ {
+  "tr": "büyümeye ise",
+  "kind": "say.tr",
+  "de": "und für wachsen"
+ },
+ {
+  "tr": "yeri bağlar.",
+  "kind": "say.tr",
+  "de": "den Ort."
+ },
+ {
+  "tr": "belirti varken",
+  "kind": "say.tr",
+  "de": "mit einem Anzeichen steht"
+ },
+ {
+  "tr": "Harcanan emeğe",
+  "kind": "say.tr",
+  "de": "Die aufgewendete Mühe heißt"
+ },
+ {
+  "tr": "ayarlanmış plan",
+  "kind": "say.tr",
+  "de": "fest vereinbarter Plan"
+ },
+ {
+  "tr": "Düzen değişecek.",
+  "kind": "say.tr",
+  "de": "Das System wird sich ändern."
+ },
+ {
+  "tr": "Olabilirlik için",
+  "kind": "say.tr",
+  "de": "Für das Mögliche sagen wir"
+ },
+ {
+  "tr": "Bir işe girişmeye",
+  "kind": "say.tr",
+  "de": "Etwas in Angriff nehmen heißt"
+ },
+ {
+  "tr": "denir. Tekrar et:",
+  "kind": "say.tr",
+  "de": "heißt es. Wiederhole:"
+ },
+ {
+  "tr": "Özetleyelim: ikna",
+  "kind": "say.tr",
+  "de": "Fassen wir zusammen: überreden"
+ },
+ {
+  "tr": "denir. Şunu söyle:",
+  "kind": "say.tr",
+  "de": "heißt es. Sag das:"
+ },
+ {
+  "tr": "ihtimal veriyorsan",
+  "kind": "say.tr",
+  "de": "gibst du ihm nur eine Chance, sagst du"
+ },
+ {
+  "tr": "imkânsız görüyorsan",
+  "kind": "say.tr",
+  "de": "hältst du es für unmöglich, sagst du"
+ },
+ {
+  "tr": "Metni okuyan kişiye",
+  "kind": "say.tr",
+  "de": "Die Person, die den Text liest, heißt"
+ },
+ {
+  "tr": "Özetleyelim: tahmin",
+  "kind": "say.tr",
+  "de": "Fassen wir zusammen: Vermutung"
+ },
+ {
+  "tr": "kullanılır ve üçü de",
+  "kind": "say.tr",
+  "de": "und alle drei werden mit"
+ },
+ {
+  "tr": "Özetleyelim: eminsen",
+  "kind": "say.tr",
+  "de": "Fassen wir zusammen: sicher"
+ },
+ {
+  "tr": "endişelenmek için ise",
+  "kind": "say.tr",
+  "de": "und für sich sorgen"
+ },
+ {
+  "tr": "Çözülmesi gereken şeye",
+  "kind": "say.tr",
+  "de": "Was gelöst werden muss, heißt"
+ },
+ {
+  "tr": "Sayıyla verilen veriye",
+  "kind": "say.tr",
+  "de": "Eine Angabe in Zahlen heißt"
+ },
+ {
+  "tr": "Bir suçlamayı reddetmeye",
+  "kind": "say.tr",
+  "de": "Einen Vorwurf zurückzuweisen heißt"
+ },
+ {
+  "tr": "daha eski bir zamana ise",
+  "kind": "say.tr",
+  "de": "und für eine frühere Zeit"
+ },
+ {
+  "tr": "hiç tereddütsüz için ise",
+  "kind": "say.tr",
+  "de": "und für ganz ohne Zögern"
+ },
+ {
+  "tr": "içten içe inanmamaya ise",
+  "kind": "say.tr",
+  "de": "und für innerlich nicht glauben"
+ },
+ {
+  "tr": "içinde bulunulan hâle ise",
+  "kind": "say.tr",
+  "de": "und für den Zustand, in dem man gerade ist"
+ },
+ {
+  "tr": "ile aynı biçimde kurulur.",
+  "kind": "say.tr",
+  "de": "auf dieselbe Weise gebaut."
+ },
+ {
+  "tr": "İleriyi önceden söylemeye",
+  "kind": "say.tr",
+  "de": "Die Zukunft vorher zu sagen heißt"
+ },
+ {
+  "tr": "Tartışılmayan bir bilgiye",
+  "kind": "say.tr",
+  "de": "Eine Information, über die niemand streitet, heißt"
+ },
+ {
+  "tr": "Belirli bir zaman noktasına",
+  "kind": "say.tr",
+  "de": "Ein bestimmter Zeitpunkt heißt"
+ },
+ {
+  "tr": "gerçekleşme olasılığına ise",
+  "kind": "say.tr",
+  "de": "und für die Aussicht auf Erfolg"
+ },
+ {
+  "tr": "iyi bir sonuç beklemeye ise",
+  "kind": "say.tr",
+  "de": "und für ein gutes Ende erwarten"
+ },
+ {
+  "tr": "Sorunu daha önce duymuştum.",
+  "kind": "say.tr",
+  "de": "Ich hatte früher von dem Problem gehört."
+ },
+ {
+  "tr": "Araştırmadaki rakamlar eski.",
+  "kind": "say.tr",
+  "de": "Die Zahlen in der Forschung sind alt."
+ },
+ {
+  "tr": "bilerek söylenen yanlışa ise",
+  "kind": "say.tr",
+  "de": "und für eine bewusst gesagte Unwahrheit"
+ },
+ {
+  "tr": "Bir şeyin sana bıraktığı ize",
+  "kind": "say.tr",
+  "de": "Die Spur, die etwas bei dir hinterlässt, heißt"
+ },
+ {
+  "tr": "Sorunu ortadan kaldıran şeye",
+  "kind": "say.tr",
+  "de": "Was das Problem beseitigt, heißt"
+ },
+ {
+  "tr": "Şakaya gelmeyen bir hâl için",
+  "kind": "say.tr",
+  "de": "Für einen Zustand, der keinen Spaß versteht, sagen wir"
+ },
+ {
+  "tr": "bir şeyin önemli olmasına ise",
+  "kind": "say.tr",
+  "de": "und wenn etwas wichtig ist, heißt das"
+ },
+ {
+  "tr": "O anda kimsenin cevabı yoktu.",
+  "kind": "say.tr",
+  "de": "In diesem Moment hatte niemand eine Antwort."
+ },
+ {
+  "tr": "o veriyi üreten çalışmaya ise",
+  "kind": "say.tr",
+  "de": "und für die Arbeit, die diese Zahlen hervorbringt"
+ },
+ {
+  "tr": "Sözleri bütün grubu etkiledi.",
+  "kind": "say.tr",
+  "de": "Ihre Worte haben die ganze Gruppe beeinflusst."
+ },
+ {
+  "tr": "Birinin kararını yönlendirmeye",
+  "kind": "say.tr",
+  "de": "Die Entscheidung eines anderen zu lenken heißt"
+ },
+ {
+  "tr": "Onun izlenimi farklı olabilir.",
+  "kind": "say.tr",
+  "de": "Ihr Eindruck könnte anders sein."
+ },
+ {
+  "tr": "Cuma günü toplumu tartışıyoruz.",
+  "kind": "say.tr",
+  "de": "Am Freitag besprechen wir die Gesellschaft."
+ },
+ {
+  "tr": "Herkesin alıntıladığı anket bu.",
+  "kind": "say.tr",
+  "de": "Das ist die Umfrage, die alle zitieren."
+ },
+ {
+  "tr": "Yalan olamaz, çünkü onu gördüm.",
+  "kind": "say.tr",
+  "de": "Es kann keine Lüge sein, denn ich habe es gesehen."
+ },
+ {
+  "tr": "Her okur kaynağı kontrol etmeli.",
+  "kind": "say.tr",
+  "de": "Jeder Leser sollte die Quelle prüfen."
+ },
+ {
+  "tr": "Başkasının sözünü aynen aktarmaya",
+  "kind": "say.tr",
+  "de": "Die Worte eines anderen wörtlich wiederzugeben heißt"
+ },
+ {
+  "tr": "Elde kesin bilgi yokken kestirmeye",
+  "kind": "say.tr",
+  "de": "Ohne sicheres Wissen zu schätzen heißt"
+ },
+ {
+  "tr": "Birbirine bağlı kuralların bütününe",
+  "kind": "say.tr",
+  "de": "Die Gesamtheit zusammenhängender Regeln heißt"
+ },
+ {
+  "tr": "denir; ikna etmenin sessiz hâlidir.",
+  "kind": "say.tr",
+  "de": "und das ist die leise Form des Überzeugens."
+ },
+ {
+  "tr": "çok kişiye sorulan soru dizisine ise",
+  "kind": "say.tr",
+  "de": "und für eine Reihe von Fragen an viele Menschen"
+ },
+ {
+  "tr": "Son kalıbımız yeri bağlıyor. Dergiye",
+  "kind": "say.tr",
+  "de": "Unsere letzte Wendung verbindet den Ort. Die Zeitschrift heißt"
+ },
+ {
+  "tr": "Bir arada yaşayan insanların bütününe",
+  "kind": "say.tr",
+  "de": "Die Gesamtheit der Menschen, die zusammenleben, heißt"
+ },
+ {
+  "tr": "Olgu açık ama anlatılan hikâye yalan.",
+  "kind": "say.tr",
+  "de": "Die Tatsache ist klar, aber die erzählte Geschichte ist eine Lüge."
+ },
+ {
+  "tr": "denir. İlk kalıbımız da bu. Tekrar et:",
+  "kind": "say.tr",
+  "de": "heißt es. Das ist auch unsere erste Wendung. Wiederhole:"
+ },
+ {
+  "tr": "Şimdi sıra sende: Şu anda işte olmalı.",
+  "kind": "say.tr",
+  "de": "Jetzt bist du dran: Er muss jetzt bei der Arbeit sein."
+ },
+ {
+  "tr": "Bir tane daha: Bunu açıklayan uzman bu.",
+  "kind": "say.tr",
+  "de": "Noch eins: Das ist der Experte, der es erklärt hat."
+ },
+ {
+  "tr": "Kuralı değiştirdiklerini reddediyorlar.",
+  "kind": "say.tr",
+  "de": "Sie streiten ab, die Regel geändert zu haben."
+ },
+ {
+  "tr": "Artmak demek. Kısa bir süre sonrasına da",
+  "kind": "say.tr",
+  "de": "Das heißt steigen. Und für kurz danach sagen wir"
+ },
+ {
+  "tr": "Bir tane daha: Yarın grupla buluşuyoruz.",
+  "kind": "say.tr",
+  "de": "Noch eins: Morgen treffen wir die Gruppe."
+ },
+ {
+  "tr": "Biz buluşmadan önce durum ciddileşmişti.",
+  "kind": "say.tr",
+  "de": "Bevor wir uns trafen, war die Lage ernst geworden."
+ },
+ {
+  "tr": "Son kalıbımız kibar bir rica. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Unsere letzte Wendung ist eine höfliche Bitte. Wiederhole:"
+ },
+ {
+  "tr": "Bazı masraflar düşerken bazıları büyüyor.",
+  "kind": "say.tr",
+  "de": "Manche Kosten fallen, während andere wachsen."
+ },
+ {
+  "tr": "denir ve bu fiil tartışmanın sert ucudur.",
+  "kind": "say.tr",
+  "de": "heißt es, und dieses Verb ist das scharfe Ende der Diskussion."
+ },
+ {
+  "tr": "Son kalıbımız ihtimal veriyor. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Unsere letzte Wendung gibt eine Möglichkeit an. Wiederhole:"
+ },
+ {
+  "tr": "Şimdi sıra sende: Okuduğum anket kısaydı.",
+  "kind": "say.tr",
+  "de": "Jetzt bist du dran: Die Umfrage, die ich gelesen habe, war kurz."
+ },
+ {
+  "tr": "Şimdi dersin kuralı. Elinde belirti yokken",
+  "kind": "say.tr",
+  "de": "Jetzt die Regel der Lektion. Ohne Anzeichen steht"
+ },
+ {
+  "tr": "Bir gün daha beklemenizin sakıncası var mı?",
+  "kind": "say.tr",
+  "de": "Hätten Sie etwas dagegen, einen Tag länger zu warten?"
+ },
+ {
+  "tr": "Bir şeyin sakıncası olup olmadığını sorarken",
+  "kind": "say.tr",
+  "de": "Wenn du fragst, ob jemand etwas dagegen hat, sagst du"
+ },
+ {
+  "tr": "Şimdi sen kur: Fiyatlar gelecek yıl artacak.",
+  "kind": "say.tr",
+  "de": "Jetzt du: Die Preise werden nächstes Jahr steigen."
+ },
+ {
+  "tr": "Şimdi sen kur: Onu bulduğum dergi çevrimiçi.",
+  "kind": "say.tr",
+  "de": "Jetzt du: Die Zeitschrift, in der ich es gefunden habe, ist online."
+ },
+ {
+  "tr": "Bir metni yazan kişi demek. Konuyu bilene ise",
+  "kind": "say.tr",
+  "de": "Das heißt die Person, die einen Text schreibt. Und für jemanden, der sich auskennt"
+ },
+ {
+  "tr": "Çoktan demek. İlk kalıbımız da bu. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Das heißt schon. Das ist auch unsere erste Wendung. Wiederhole:"
+ },
+ {
+  "tr": "denir ve kaynağı sorgulamak asıl onun işidir.",
+  "kind": "say.tr",
+  "de": "heißt es, und die Quelle zu hinterfragen ist eigentlich seine Aufgabe."
+ },
+ {
+  "tr": "Endişelenme, buna tek başıma kalkışmayacağım.",
+  "kind": "say.tr",
+  "de": "Keine Sorge, ich werde es nicht allein versuchen."
+ },
+ {
+  "tr": "Gerçek demek. İlk kalıbımız da bu. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Das heißt Wahrheit. Das ist auch unsere erste Wendung. Wiederhole:"
+ },
+ {
+  "tr": "Kimse bunu öngöremez ama en iyisini umuyorum.",
+  "kind": "say.tr",
+  "de": "Niemand kann es vorhersagen, aber ich hoffe das Beste."
+ },
+ {
+  "tr": "Son kalıbımız ayarlanmış bir plan. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Unsere letzte Wendung ist ein fest vereinbarter Plan. Wiederhole:"
+ },
+ {
+  "tr": "Şimdi bir arkadaşını bir şeye ikna edeceksin.",
+  "kind": "say.tr",
+  "de": "Jetzt überredest du eine Freundin zu etwas."
+ },
+ {
+  "tr": "Şimdi sen kur: Doğru olamaz, çünkü oradaydım.",
+  "kind": "say.tr",
+  "de": "Jetzt du: Es kann nicht stimmen, denn ich war dort."
+ },
+ {
+  "tr": "Bir tane daha: Fiyat konusunda haklı olabilir.",
+  "kind": "say.tr",
+  "de": "Noch eins: Beim Preis könnte sie recht haben."
+ },
+ {
+  "tr": "İkinci kalıbımız belirtiye dayanıyor. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Unsere zweite Wendung beruht auf einem Anzeichen. Wiederhole:"
+ },
+ {
+  "tr": "Bir tane daha: Toplantıdan önce raporu okumuştum.",
+  "kind": "say.tr",
+  "de": "Noch eins: Vor der Sitzung hatte ich den Bericht gelesen."
+ },
+ {
+  "tr": "Gerçek bir çaba gerektirdi ama bir ihtimal vardı.",
+  "kind": "say.tr",
+  "de": "Es hat echte Mühe gekostet, aber es gab eine Chance."
+ },
+ {
+  "tr": "İkna etmek demek. İlk kalıbımız da bu. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Das heißt überreden. Das ist auch unsere erste Wendung. Wiederhole:"
+ },
+ {
+  "tr": "Şimdi sıra sende: Fiyatlar önümüzdeki ay düşecek.",
+  "kind": "say.tr",
+  "de": "Jetzt bist du dran: Die Preise werden nächsten Monat fallen."
+ },
+ {
+  "tr": "İkinci kalıbımız bir şeyi tarif ediyor. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Unsere zweite Wendung beschreibt eine Sache. Wiederhole:"
+ },
+ {
+  "tr": "Şimdi bir arkadaşınla önümüzdeki yılı konuşacaksın.",
+  "kind": "say.tr",
+  "de": "Jetzt besprichst du mit einem Freund das nächste Jahr."
+ },
+ {
+  "tr": "Şimdi sen kur: Ben varmadan önce toplantı bitmişti.",
+  "kind": "say.tr",
+  "de": "Jetzt du: Bevor ich ankam, war die Sitzung schon zu Ende."
+ },
+ {
+  "tr": "Kimse bir çözüm bulmamıştı ve bunun bir önemi yoktu.",
+  "kind": "say.tr",
+  "de": "Niemand hatte eine Lösung gefunden, und es war nicht wichtig."
+ },
+ {
+  "tr": "Şimdi sıra sende: Ben aradığımda çoktan gitmişlerdi.",
+  "kind": "say.tr",
+  "de": "Jetzt bist du dran: Als ich anrief, waren sie schon gegangen."
+ },
+ {
+  "tr": "İkinci kalıbımız bir suçlamayı reddediyor. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Unsere zweite Wendung weist einen Vorwurf zurück. Wiederhole:"
+ },
+ {
+  "tr": "Şimdi sıra sende: Onu bir hafta beklemeye ikna ettim.",
+  "kind": "say.tr",
+  "de": "Jetzt bist du dran: Ich habe sie überredet, eine Woche zu warten."
+ },
+ {
+  "tr": "İkinci kalıbımız önce olanı geriye çekiyor. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Unsere zweite Wendung schiebt das Frühere zurück. Wiederhole:"
+ },
+ {
+  "tr": "Son kalıbımız bilginin eskiliğini söylüyor. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Unsere letzte Wendung sagt, wie alt die Information ist. Wiederhole:"
+ },
+ {
+  "tr": "Sadece tahmin edebilirim ve gerisinden şüphe duyuyorum.",
+  "kind": "say.tr",
+  "de": "Ich kann nur raten, und den Rest bezweifle ich."
+ },
+ {
+  "tr": "Şimdi sen kur: Onu tekrar göndermenizin sakıncası var mı?",
+  "kind": "say.tr",
+  "de": "Jetzt du: Hätten Sie etwas dagegen, es noch einmal zu schicken?"
+ },
+ {
+  "tr": "denir; kanıt değildir, bu yüzden ihtimal kipiyle söylenir.",
+  "kind": "say.tr",
+  "de": "heißt es, und weil es kein Beweis ist, steht es im Modalverb der Möglichkeit."
+ },
+ {
+  "tr": "Şimdi bir arkadaşınla ne olmuş olabileceğini konuşacaksın.",
+  "kind": "say.tr",
+  "de": "Jetzt besprichst du mit einem Freund, was passiert sein könnte."
+ },
+ {
+  "tr": "İkinci kalıbımız bir ihtimali tamamen kapatıyor. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Unsere zweite Wendung schließt eine Möglichkeit ganz aus. Wiederhole:"
+ },
+ {
+  "tr": "Şimdi dersin kuralı. Kesinlik derecesi kipi seçiyor: eminsen",
+  "kind": "say.tr",
+  "de": "Jetzt die Regel der Lektion. Der Grad der Sicherheit wählt das Modalverb: bist du sicher, sagst du"
+ },
+ {
+  "tr": "Bir tane daha: Kararı tek başlarına aldıklarını reddediyorlar.",
+  "kind": "say.tr",
+  "de": "Noch eins: Sie streiten ab, die Entscheidung allein getroffen zu haben."
+ },
+ {
+  "tr": "Şimdi dersin kuralı. Aynı cümlede iki geçmiş iş varsa ÖNCE olan",
+  "kind": "say.tr",
+  "de": "Jetzt die Regel der Lektion. Stehen zwei vergangene Handlungen im selben Satz, wird die FRÜHERE mit"
+ },
+ {
+  "tr": "hâlini ister. Bu üç yolu ezberlemek yerine örnekle tanıyacaksın.",
+  "kind": "say.tr",
+  "de": "und nichts anderes. Statt diese drei Wege auswendig zu lernen, wirst du sie an Beispielen wiedererkennen."
+ },
+ {
+  "tr": "Şimdi bir arkadaşınla duyduğun bir bilginin kaynağını konuşacaksın.",
+  "kind": "say.tr",
+  "de": "Jetzt besprichst du mit einer Freundin die Quelle einer Information, die du gehört hast."
+ },
+ {
+  "tr": "Şimdi bir arkadaşına kaçırdığı bir tartışmanın öncesini anlatacaksın.",
+  "kind": "say.tr",
+  "de": "Jetzt erzählst du einem Freund, was vor der Debatte war, die er verpasst hat."
+ },
+ {
+  "tr": "Şimdi dersin kuralı. İkna fiillerinden sonra ne geleceğini fiilin kendisi belirler:",
+  "kind": "say.tr",
+  "de": "Jetzt die Regel der Lektion. Was nach einem Überzeugungsverb kommt, bestimmt das Verb selbst:"
+ },
+ {
+  "tr": "Merhaba! Bugün bir tartışmanın öncesini anlatmayı öğreneceğiz: sen konuşmadan önce ne olmuştu.",
+  "kind": "say.tr",
+  "de": "Hallo! Heute lernen wir zu erzählen, was vor einer Debatte war: was passiert war, bevor du gesprochen hast."
+ },
+ {
+  "tr": "İki geçmiş iş yan yana gelince hangisinin önce olduğunu sıra değil zaman gösteriyor. Hazır mısın?",
+  "kind": "say.tr",
+  "de": "Stehen zwei vergangene Handlungen nebeneinander, zeigt nicht die Reihenfolge, sondern die Zeitform, welche früher war — genau wie beim deutschen Plusquamperfekt. Bist du bereit?"
+ },
+ {
+  "tr": "ile bir kat geriye çekilir, SONRA olan olağan geçmiş zamanda kalır. Sıra değişse bile bu ayrım bozulmaz.",
+  "kind": "say.tr",
+  "de": "eine Stufe zurückgeschoben, die SPÄTERE bleibt im einfachen Präteritum. Auch wenn die Reihenfolge wechselt, bleibt dieser Unterschied."
+ },
+ {
+  "tr": "Merhaba! Bugün bir bilginin kaynağını sormayı öğreneceğiz: kim yazmış, hangi araştırmaymış, nerede çıkmış.",
+  "kind": "say.tr",
+  "de": "Hallo! Heute lernen wir, nach der Quelle einer Information zu fragen: wer sie geschrieben hat, welche Forschung es war, wo sie erschienen ist."
+ },
+ {
+  "tr": "Merhaba! Bugün birini ikna etmeyi öğreneceğiz: nasıl ikna ettin, karşı taraf neyi reddetti, ne rica ettin.",
+  "kind": "say.tr",
+  "de": "Hallo! Heute lernen wir, jemanden zu überreden: wie du überredet hast, was die andere Seite abgestritten hat, worum du gebeten hast."
+ },
+ {
+  "tr": "takvimde yeri olan bir plan için ise şimdiki zaman kullanılır. Üçü de geleceği anlatır ama dayanağı farklıdır.",
+  "kind": "say.tr",
+  "de": "und für einen Plan, der schon im Kalender steht, die Verlaufsform der Gegenwart. Alle drei sprechen von der Zukunft, aber ihre Grundlage ist verschieden."
+ },
+ {
+  "tr": "Merhaba! Bugün geleceği tartışmayı öğreneceğiz: neyi tahmin ediyorsun, neyin belirtisi var, neyi zaten ayarladın.",
+  "kind": "say.tr",
+  "de": "Hallo! Heute lernen wir, über die Zukunft zu diskutieren: was du vermutest, wofür es ein Anzeichen gibt, was du schon fest vereinbart hast."
+ },
+ {
+  "tr": "İkna fiillerinin her biri kendinden sonra ne geleceğini kendi seçiyor ve yanlış seçim cümleyi bozuyor. Hazır mısın?",
+  "kind": "say.tr",
+  "de": "Jedes Überzeugungsverb wählt selbst, was nach ihm kommt, und die falsche Wahl macht den Satz kaputt; im Deutschen steht dort fast immer zu, im Englischen nicht. Bist du bereit?"
+ },
+ {
+  "tr": "Merhaba! Bugün tahmin yürütmeyi öğreneceğiz: neye eminsin, neyi imkânsız görüyorsun, neye sadece ihtimal veriyorsun.",
+  "kind": "say.tr",
+  "de": "Hallo! Heute lernen wir zu mutmaßen: wobei du sicher bist, was du für unmöglich hältst, wem du nur eine Möglichkeit gibst."
+ },
+ {
+  "tr": "İngilizcede bu üç şey aynı gelecek değil; hangisini seçtiğin karşıdakine ne kadar dayanağın olduğunu söylüyor. Hazır mısın?",
+  "kind": "say.tr",
+  "de": "Im Englischen sind das nicht drei Mal dieselbe Zukunft; deine Wahl sagt der anderen Person, wie viel Grundlage du hast. Im Deutschen genügt oft eine Form, hier musst du dich entscheiden. Bist du bereit?"
+ },
+ {
+  "tr": "İngilizcede bu üç derece ayrı kelimelerle değil ayrı kiplerle söyleniyor ve kip seçmek burada fikir bildirmektir. Hazır mısın?",
+  "kind": "say.tr",
+  "de": "Im Englischen stehen diese drei Stufen nicht in eigenen Wörtern, sondern in verschiedenen Modalverben, und das Modalverb zu wählen heißt hier, eine Meinung zu sagen — wie im Deutschen, nur mit anderen Wörtern. Bist du bereit?"
+ },
+ {
+  "tr": "Kaynağı söylemek çoğu zaman tek kelime değil bir tarif gerektiriyor ve o tarifi cümleye bağlayan şey ilgi cümlesi. Hazır mısın?",
+  "kind": "say.tr",
+  "de": "Die Quelle zu nennen verlangt meist kein einzelnes Wort, sondern eine Beschreibung, und was diese Beschreibung an den Satz bindet, ist der Relativsatz. Bist du bereit?"
+ },
+ {
+  "tr": "Şimdi dersin kuralı. İlgi cümlesi tarif ettiği kelimenin hemen ardına geliyor ve başındaki kelime neyi tarif ettiğini söylüyor:",
+  "kind": "say.tr",
+  "de": "Jetzt die Regel der Lektion. Der Relativsatz steht direkt hinter dem Wort, das er beschreibt, und sein erstes Wort sagt, was beschrieben wird:"
+ }
+]

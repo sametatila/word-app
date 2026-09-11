@@ -1,6 +1,6 @@
 # WP-74 — İngilizce ders kapsamı B1–C1
 
-**Durum:** sürüyor (B1 modül 1-3 bitti) · **Sahip:** Claude · **Açılış:** 2026-09-11
+**Durum:** sürüyor (B1 modül 1-7 bitti, 70/300 ders) · **Sahip:** Claude · **Açılış:** 2026-09-11
 
 ## Kusur
 
@@ -107,6 +107,46 @@ eğer ile çıkıyor» Almanca için yanlış (es sei denn / solange / für den
 Fall, dass hepsi ayrı), «bağlaç nereye koyulursa koyulsun anlaşılır» de
 yanlış (weil ve deshalb kelime sırasını değiştiriyor). İkisi de Almancaya
 karşı yeniden yazıldı — bu satırlar çevrilmez, yeniden ölçülür.
+
+**B1 modül 4 — İlgi cümleleri (2026-09-11).** On ders: birini tarif etmek,
+yeri tarif etmek, tavsiye etmek, seçim yapmak, nasıl çalışır, şikâyet ve iade,
+randevu ve iptal, yönerge vermek, karışıklık, karara varmak.
+
+Modülün teması bir alan değil yine bir beceri, ve ilk iki ders aynı kuralı iki
+ayrı bağlayıcıyla (kişi / yer) işliyor — geri kalan sekiz ders kuralı başka
+bağlamlara taşıyor. Modül 3'ten devralınan ders şu: kuralı ilan etmek değil,
+kuralın SEÇİLDİĞİ yeri göstermek öğretiyor.
+
+**B1 modül 5 — Bürokrasi (2026-09-11).** On ders: kayıt işlemleri, form
+doldurmak, banka hesabı, oturum ve vize, sigorta, vergi beyanı, resmî yazışma,
+sıra ve bekleme, belgeler, itiraz.
+
+Bu modülün kelime yükü ağır ve havuz sınırı burada sıkışıyor: sekiz maddenin
+sekizi de havuzda olmalı, ama bürokrasi sözcükleri B1 havuzunda seyrek. Yazarken
+önce `vocabcheck` ile aday liste ölçüldü, sonra ders kuruldu — ters sırayla
+çalışınca ders bitip kapı kırılıyor.
+
+**B1 modül 6 — Eğitim ve gelişim (2026-09-11).** On ders: çalışma planı, sınava
+hazırlık, nasıl öğreniyorum, ilerlemeyi konuşmak, hatalardan öğrenmek, öğretmen
+geri bildirimi, grup çalışması, çevrimiçi kurs, motivasyonu korumak, sıradaki
+adım.
+
+Burada rol yapma açılışı bir kez soruyla bitmedi (`en-b1-motivation`) ve kapı
+haklı olarak reddetti: açılış soru değilse öğrenci ilk turda ne söyleyeceğini
+bilmiyor, konuşma tek taraflı başlıyor.
+
+**B1 modül 7 — Fikir ve tartışma (2026-09-11).** On ders: fikir söylemek,
+katılmak ve katılmamak, tartışma, habere tepki, sosyal medya, ikna etmek, tahmin
+yürütmek, kaynağı sormak, geriden anlatmak, geleceği tartışmak.
+
+İki şey burada netleşti. Birincisi ipucu biçimi: Türkçe SOV olduğu için
+«[açıklama] [İngilizce simge] [fiil:]» dizilişi Türkçede doğal, Almancada
+bozuk çıkıyor — çünkü Almanca fiili öne alıyor. Modülün on beş ipucu tek bir
+sağlam kalıba çevrildi: «… için» + simge + «kullanılır:». Segment sırası
+derste sabit, o yüzden Almancanın kurtarabileceği diziliş baştan seçilmeli.
+
+İkincisi ikon: `speak` diye bir ikon yok ve bunu `check:lessons` değil
+`check:content` yakalıyor. İki kapı da çalıştırılmadan modül bitmiş sayılmaz.
 
 ## Tamamlanma ölçütü
 
