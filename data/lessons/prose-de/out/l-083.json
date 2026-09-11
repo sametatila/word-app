@@ -1,0 +1,882 @@
+[
+ {
+  "tr": "Karışıklık",
+  "kind": "titleTr",
+  "de": "Die Verwechslung"
+ },
+ {
+  "tr": "Karara varmak",
+  "kind": "titleTr",
+  "de": "Zu einer Entscheidung kommen"
+ },
+ {
+  "tr": "Yönerge vermek",
+  "kind": "titleTr",
+  "de": "Schritt für Schritt erklären"
+ },
+ {
+  "tr": "Şikâyet ve iade",
+  "kind": "titleTr",
+  "de": "Beschwerde und Rückgabe"
+ },
+ {
+  "tr": "Randevu ve iptal",
+  "kind": "titleTr",
+  "de": "Termin und Absage"
+ },
+ {
+  "tr": "Başkalarının görüşünü aktararak karara varmayı öğretir.",
+  "kind": "summary",
+  "de": "Vermittelt, wie man zu einer Entscheidung kommt, indem man die Meinungen anderer wiedergibt."
+ },
+ {
+  "tr": "Bir karışıklığı çözmeyi öğretir: hangi hata önce olmuştu, sonra ne oldu.",
+  "kind": "summary",
+  "de": "Vermittelt, wie man eine Verwechslung klärt: welcher Fehler vorher passiert war und was danach geschah."
+ },
+ {
+  "tr": "Yönerge vermeyi öğretir: zorunluluk, yasak ve uyarı üç ayrı kalıpla söylenir.",
+  "kind": "summary",
+  "de": "Vermittelt, wie man Anweisungen gibt: Pflicht, Verbot und Warnung stehen in drei verschiedenen Wendungen."
+ },
+ {
+  "tr": "Randevu almayı, ertelemeyi ve iptal etmeyi öğretir; üç gelecek biçimini ayırır.",
+  "kind": "summary",
+  "de": "Vermittelt, wie man einen Termin macht, verschiebt und absagt, und trennt die drei Zukunftsformen."
+ },
+ {
+  "tr": "Bir şikâyeti anlatmayı öğretir: kaç kez yazdığın ile ne zaman yazdığın ayrı zamanlarla söylenir.",
+  "kind": "summary",
+  "de": "Vermittelt, wie man sich beschwert: wie oft du geschrieben hast und wann du geschrieben hast stehen in verschiedenen Zeiten."
+ },
+ {
+  "tr": "hatayı kabul eden ama suçlu aramayan bir yetkili",
+  "kind": "partner",
+  "de": "eine Mitarbeiterin, die den Fehler einräumt, aber keine Schuld sucht"
+ },
+ {
+  "tr": "seni dinleyen ama kendi görüşünü de söyleyen bir arkadaş",
+  "kind": "partner",
+  "de": "ein Freund, der zuhört, aber auch seine eigene Meinung sagt"
+ },
+ {
+  "tr": "hevesli ama aceleci, adımları atlamak isteyen bir arkadaş",
+  "kind": "partner",
+  "de": "ein eifriger, aber hastiger Freund, der Schritte überspringen will"
+ },
+ {
+  "tr": "önce savunmaya geçen ama çözüm arayan bir müşteri temsilcisi",
+  "kind": "partner",
+  "de": "ein Mitarbeiter im Kundendienst, der sich erst verteidigt, dann aber eine Lösung sucht"
+ },
+ {
+  "tr": "takvimi dolu ama yardımcı olmaya çalışan bir klinik görevlisi",
+  "kind": "partner",
+  "de": "eine Mitarbeiterin der Praxis mit vollem Kalender, die trotzdem helfen will"
+ },
+ {
+  "tr": "Tamam, nereden başlıyorum?",
+  "kind": "openingTr",
+  "de": "Gut, wo fange ich an?"
+ },
+ {
+  "tr": "Peki tam olarak ne dediler?",
+  "kind": "openingTr",
+  "de": "Und was haben sie genau gesagt?"
+ },
+ {
+  "tr": "Günaydın, bizde bir randevunuz var mı?",
+  "kind": "openingTr",
+  "de": "Guten Morgen, haben Sie bei uns einen Termin?"
+ },
+ {
+  "tr": "Müşteri hizmetleri, nasıl yardımcı olabilirim?",
+  "kind": "openingTr",
+  "de": "Kundendienst, wie kann ich helfen?"
+ },
+ {
+  "tr": "Rezervasyonunuzda bir sorun görüyorum. Ne oldu?",
+  "kind": "openingTr",
+  "de": "Ich sehe ein Problem mit Ihrer Buchung. Was ist passiert?"
+ },
+ {
+  "tr": "Kusurlu bir ürün geldi ve mağazayı aradın. Kaç kez yazdığını, ne zaman yazdığını ve ne istediğini anlat; fişin durumunu da söyle.",
+  "kind": "scene",
+  "de": "Ein fehlerhaftes Produkt ist angekommen und du hast im Laden angerufen. Sag, wie oft und wann du geschrieben hast und was du willst; nenne auch den Stand des Belegs."
+ },
+ {
+  "tr": "Bir arkadaşına ilk kez yapacağı bir işi anlatıyorsun. Adımları sırayla söyle, neyin yasak olduğunu belirt ve güvenlik uyarısı ver.",
+  "kind": "scene",
+  "de": "Du erklärst einem Freund eine Arbeit, die er zum ersten Mal macht. Nenne die Schritte der Reihe nach, sag, was verboten ist, und gib eine Sicherheitswarnung."
+ },
+ {
+  "tr": "Bir randevunu değiştirmek için kliniği arıyorsun. Mevcut randevunu söyle, neden değiştirmen gerektiğini anlat ve yeni bir saat üzerinde anlaş.",
+  "kind": "scene",
+  "de": "Du rufst in der Praxis an, um einen Termin zu ändern. Nenne deinen bestehenden Termin, erklär, warum du ihn ändern musst, und einigt euch auf eine neue Uhrzeit."
+ },
+ {
+  "tr": "Zor bir karar vermek üzeresin ve bir arkadaşınla konuşuyorsun. Başkalarının ne dediğini aktar, artı ve eksileri tart ve sonunda kararını söyle.",
+  "kind": "scene",
+  "de": "Du stehst vor einer schweren Entscheidung und sprichst mit einem Freund. Gib wieder, was andere gesagt haben, wäge Vor- und Nachteile ab und nenne am Ende deine Entscheidung."
+ },
+ {
+  "tr": "Bir rezervasyonda karışıklık çıktı ve yetkiliyle konuşuyorsun. Ne yanlış gitmişti, ne zaman fark ettin ve nasıl düzeltilmesini istiyorsun, sırayla anlat.",
+  "kind": "scene",
+  "de": "Bei einer Buchung gab es eine Verwechslung und du sprichst mit der Mitarbeiterin. Erzähl der Reihe nach, was schiefgegangen war, wann du es gemerkt hast und wie es korrigiert werden soll."
+ },
+ {
+  "tr": "Adımları sırayla anlattıysan, bir zorunluluk, bir yasak ve bir uyarı söylediysen konuşma başarılı sayılır.",
+  "kind": "goal",
+  "de": "Das Gespräch gilt als gelungen, wenn du die Schritte der Reihe nach erklärt und eine Pflicht, ein Verbot und eine Warnung genannt hast."
+ },
+ {
+  "tr": "En az iki kişinin sözünü aktardıysan, artı ve eksiyi tarttıysan ve bir karar söylediysen konuşma başarılı sayılır.",
+  "kind": "goal",
+  "de": "Das Gespräch gilt als gelungen, wenn du die Worte von mindestens zwei Personen wiedergegeben, Vor- und Nachteil abgewogen und eine Entscheidung genannt hast."
+ },
+ {
+  "tr": "Kaç kez yazdığını ve ne zaman yazdığını doğru zamanlarla söylediysen ve somut bir çözüm istediysen konuşma başarılı sayılır.",
+  "kind": "goal",
+  "de": "Das Gespräch gilt als gelungen, wenn du in den richtigen Zeiten gesagt hast, wie oft und wann du geschrieben hast, und eine konkrete Lösung verlangt hast."
+ },
+ {
+  "tr": "Mevcut randevunu söylediysen, değiştirme nedenini anlattıysan ve yeni bir saat üzerinde anlaştıysan konuşma başarılı sayılır.",
+  "kind": "goal",
+  "de": "Das Gespräch gilt als gelungen, wenn du deinen bestehenden Termin genannt, den Grund für die Änderung erklärt und euch auf eine neue Uhrzeit geeinigt habt."
+ },
+ {
+  "tr": "Hatanın sırasını doğru anlattıysan, en az bir kez önce olanı geriye aldıysan ve somut bir düzeltme istediysen konuşma başarılı sayılır.",
+  "kind": "goal",
+  "de": "Das Gespräch gilt als gelungen, wenn du die Reihenfolge des Fehlers richtig erzählt, mindestens einmal das Frühere zurückgesetzt und eine konkrete Korrektur verlangt hast."
+ },
+ {
+  "tr": "ajanda",
+  "kind": "vocab.tr",
+  "de": "Kalender"
+ },
+ {
+  "tr": "klinik",
+  "kind": "vocab.tr",
+  "de": "Praxis"
+ },
+ {
+  "tr": "değişim",
+  "kind": "vocab.tr",
+  "de": "Umtausch"
+ },
+ {
+  "tr": "kusurlu",
+  "kind": "vocab.tr",
+  "de": "fehlerhaft"
+ },
+ {
+  "tr": "yönerge",
+  "kind": "vocab.tr",
+  "de": "Anweisung"
+ },
+ {
+  "tr": "boş saat",
+  "kind": "vocab.tr",
+  "de": "freier Termin"
+ },
+ {
+  "tr": "güvenlik",
+  "kind": "vocab.tr",
+  "de": "Sicherheit"
+ },
+ {
+  "tr": "suçlamak",
+  "kind": "vocab.tr",
+  "de": "beschuldigen"
+ },
+ {
+  "tr": "düzeltmek",
+  "kind": "vocab.tr",
+  "de": "korrigieren"
+ },
+ {
+  "tr": "halletmek",
+  "kind": "vocab.tr",
+  "de": "regeln"
+ },
+ {
+  "tr": "dezavantaj",
+  "kind": "vocab.tr",
+  "de": "Nachteil"
+ },
+ {
+  "tr": "emin olmak",
+  "kind": "vocab.tr",
+  "de": "sicherstellen"
+ },
+ {
+  "tr": "ikna etmek",
+  "kind": "vocab.tr",
+  "de": "überzeugen"
+ },
+ {
+  "tr": "genel olarak",
+  "kind": "vocab.tr",
+  "de": "insgesamt"
+ },
+ {
+  "tr": "göz önüne almak",
+  "kind": "vocab.tr",
+  "de": "berücksichtigen"
+ },
+ {
+  "tr": "yer değiştirmek",
+  "kind": "vocab.tr",
+  "de": "tauschen"
+ },
+ {
+  "tr": "yeniden planlamak",
+  "kind": "vocab.tr",
+  "de": "verlegen"
+ },
+ {
+  "tr": "zorunluluğu söyler",
+  "kind": "pattern.tr",
+  "de": "nennt die Pflicht"
+ },
+ {
+  "tr": "kibarca çözüm ister",
+  "kind": "pattern.tr",
+  "de": "bittet höflich um eine Lösung"
+ },
+ {
+  "tr": "uyarı ve tavsiye verir",
+  "kind": "pattern.tr",
+  "de": "warnt und rät"
+ },
+ {
+  "tr": "o an verilen sözü söyler",
+  "kind": "pattern.tr",
+  "de": "nennt ein spontanes Versprechen"
+ },
+ {
+  "tr": "kararlaşmış randevuyu söyler",
+  "kind": "pattern.tr",
+  "de": "nennt den festen Termin"
+ },
+ {
+  "tr": "önce olan hatayı geriye alır",
+  "kind": "pattern.tr",
+  "de": "setzt den früheren Fehler zurück"
+ },
+ {
+  "tr": "süren bir şikâyetin sayısını verir",
+  "kind": "pattern.tr",
+  "de": "nennt die Zahl bei einer laufenden Beschwerde"
+ },
+ {
+  "tr": "sonra olanı normal geçmişte anlatır",
+  "kind": "pattern.tr",
+  "de": "erzählt das Spätere in der einfachen Vergangenheit"
+ },
+ {
+  "tr": "Yanlış. Gün belli ve bitmiş:",
+  "kind": "why.tr",
+  "de": "Falsch. Der Tag ist genannt und vorbei:"
+ },
+ {
+  "tr": "Yanlış. Bu kalıp 'gerekmiyor' demek; tehlike varsa yasağın kalıbı gelir:",
+  "kind": "why.tr",
+  "de": "Falsch. Diese Wendung heißt «nicht nötig»; bei Gefahr steht die Wendung für das Verbot:"
+ },
+ {
+  "tr": "Doğru. Arama sonra oldu, düzeltme önce; o yüzden düzeltme bir basamak geride duruyor.",
+  "kind": "why.tr",
+  "de": "Richtig. Der Anruf kam später, die Korrektur früher; deshalb steht die Korrektur eine Stufe zurück."
+ },
+ {
+  "tr": "Doğru. Karar önceden verilmiş ve bu kalıp tam da onu anlatıyor; o an verilen karar olsaydı başka kalıp gelirdi.",
+  "kind": "why.tr",
+  "de": "Richtig. Die Entscheidung war vorher gefallen, und genau das nennt diese Wendung; bei einem spontanen Entschluss stünde eine andere."
+ },
+ {
+  "tr": "Kibar istek kalıbı:",
+  "kind": "hint.tr",
+  "de": "Die Wendung für die höfliche Bitte:"
+ },
+ {
+  "tr": "Önce olan hata geriye gidiyor:",
+  "kind": "hint.tr",
+  "de": "Der frühere Fehler rückt zurück:"
+ },
+ {
+  "tr": "Hafta bitmedi, sayı hâlâ artabilir:",
+  "kind": "hint.tr",
+  "de": "Die Woche ist nicht vorbei, die Zahl kann noch steigen:"
+ },
+ {
+  "tr": "Gün belli ve bitmiş, o yüzden past simple:",
+  "kind": "hint.tr",
+  "de": "Der Tag ist genannt und vorbei, deshalb Past Simple:"
+ },
+ {
+  "tr": "Kararlaşmış randevu, o yüzden şimdiki zaman:",
+  "kind": "hint.tr",
+  "de": "Ein fester Termin, deshalb die Verlaufsform:"
+ },
+ {
+  "tr": "söz",
+  "kind": "say.tr",
+  "de": "Aussage"
+ },
+ {
+  "tr": "uyarı",
+  "kind": "say.tr",
+  "de": "Warnung"
+ },
+ {
+  "tr": "avantaj,",
+  "kind": "say.tr",
+  "de": "Vorteil,"
+ },
+ {
+  "tr": "randevu,",
+  "kind": "say.tr",
+  "de": "Termin,"
+ },
+ {
+  "tr": "şikâyet,",
+  "kind": "say.tr",
+  "de": "Beschwerde,"
+ },
+ {
+  "tr": "yönerge,",
+  "kind": "say.tr",
+  "de": "Anweisung,"
+ },
+ {
+  "tr": "Özür için",
+  "kind": "say.tr",
+  "de": "Für die Entschuldigung sagen wir"
+ },
+ {
+  "tr": "yasaklar,",
+  "kind": "say.tr",
+  "de": "verbietet,"
+ },
+ {
+  "tr": "İptal etmek",
+  "kind": "say.tr",
+  "de": "Absagen wird mit"
+ },
+ {
+  "tr": "alet için ise",
+  "kind": "say.tr",
+  "de": "und für das Werkzeug"
+ },
+ {
+  "tr": "Dikkatli için",
+  "kind": "say.tr",
+  "de": "Für vorsichtig sagen wir"
+ },
+ {
+  "tr": "Güvenlik için",
+  "kind": "say.tr",
+  "de": "Für die Sicherheit sagen wir"
+ },
+ {
+  "tr": "Düzeltmek için",
+  "kind": "say.tr",
+  "de": "Für korrigieren sagen wir"
+ },
+ {
+  "tr": "basmak için ise",
+  "kind": "say.tr",
+  "de": "und für drücken"
+ },
+ {
+  "tr": "bir yanlışa ise",
+  "kind": "say.tr",
+  "de": "und ein Fehler heißt"
+ },
+ {
+  "tr": "Emin olmak için",
+  "kind": "say.tr",
+  "de": "Für sicherstellen sagen wir"
+ },
+ {
+  "tr": "Ödeme belgesine",
+  "kind": "say.tr",
+  "de": "Der Zahlungsbeleg heißt"
+ },
+ {
+  "tr": "adım. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Schritt. Sprich nach:"
+ },
+ {
+  "tr": "değişim için ise",
+  "kind": "say.tr",
+  "de": "und für den Umtausch"
+ },
+ {
+  "tr": "Değiştirmek için",
+  "kind": "say.tr",
+  "de": "Für ersetzen sagen wir"
+ },
+ {
+  "tr": "denir; fiil hâli",
+  "kind": "say.tr",
+  "de": "genannt; die Verbform ist"
+ },
+ {
+  "tr": "göz önüne almak,",
+  "kind": "say.tr",
+  "de": "berücksichtigen,"
+ },
+ {
+  "tr": "Teyit etmek için",
+  "kind": "say.tr",
+  "de": "Für bestätigen sagen wir"
+ },
+ {
+  "tr": "Bir işi halletmek",
+  "kind": "say.tr",
+  "de": "Eine Sache regeln wird mit"
+ },
+ {
+  "tr": "Birini ikna etmek",
+  "kind": "say.tr",
+  "de": "Jemanden überzeugen wird mit"
+ },
+ {
+  "tr": "Boş bir saat için",
+  "kind": "say.tr",
+  "de": "Für einen freien Termin sagen wir"
+ },
+ {
+  "tr": "zorunluluk koyar,",
+  "kind": "say.tr",
+  "de": "setzt eine Pflicht,"
+ },
+ {
+  "tr": "İki tarafı tartmak",
+  "kind": "say.tr",
+  "de": "Beide Seiten abwägen heißt"
+ },
+ {
+  "tr": "klinik. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Praxis. Sprich nach:"
+ },
+ {
+  "tr": "Bir şeyden kaçınmak",
+  "kind": "say.tr",
+  "de": "Etwas vermeiden wird mit"
+ },
+ {
+  "tr": "ile birlikte gelir.",
+  "kind": "say.tr",
+  "de": "zusammen benutzt."
+ },
+ {
+  "tr": "kişinin görüşüne ise",
+  "kind": "say.tr",
+  "de": "und die Meinung einer Person heißt"
+ },
+ {
+  "tr": "rezervasyon için ise",
+  "kind": "say.tr",
+  "de": "und für die Buchung"
+ },
+ {
+  "tr": "teslimat. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Lieferung. Sprich nach:"
+ },
+ {
+  "tr": "Kusurlu bir ürün için",
+  "kind": "say.tr",
+  "de": "Für ein fehlerhaftes Produkt sagen wir"
+ },
+ {
+  "tr": "o an verilen söz için",
+  "kind": "say.tr",
+  "de": "und für ein spontanes Versprechen"
+ },
+ {
+  "tr": "dezavantaj. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Nachteil. Sprich nach:"
+ },
+ {
+  "tr": "Size pazartesi yazdım.",
+  "kind": "say.tr",
+  "de": "Ich habe Ihnen am Montag geschrieben."
+ },
+ {
+  "tr": "birini suçlamak için ise",
+  "kind": "say.tr",
+  "de": "und für jemanden beschuldigen"
+ },
+ {
+  "tr": "Bu konuda iki kez yazdım.",
+  "kind": "say.tr",
+  "de": "Ich habe deswegen zweimal geschrieben."
+ },
+ {
+  "tr": "ile söylenir ve çoğu zaman",
+  "kind": "say.tr",
+  "de": "gesagt und meistens mit"
+ },
+ {
+  "tr": "Özetleyelim: süren şikâyet",
+  "kind": "say.tr",
+  "de": "Fassen wir zusammen: laufende Beschwerde"
+ },
+ {
+  "tr": "Dikkatli ol ve nazikçe bas.",
+  "kind": "say.tr",
+  "de": "Sei vorsichtig und drück sanft."
+ },
+ {
+  "tr": "Güvenlik hızdan önce gelir.",
+  "kind": "say.tr",
+  "de": "Sicherheit kommt vor Schnelligkeit."
+ },
+ {
+  "tr": "Perşembe doktora gidiyorum.",
+  "kind": "say.tr",
+  "de": "Am Donnerstag gehe ich zur Ärztin."
+ },
+ {
+  "tr": "Randevuyu yeniden planlamak",
+  "kind": "say.tr",
+  "de": "Einen Termin verlegen wird mit"
+ },
+ {
+  "tr": "Daha ucuz olacağını söyledi.",
+  "kind": "say.tr",
+  "de": "Sie hat gesagt, dass es billiger wäre."
+ },
+ {
+  "tr": "İki kez yapılan bir şey için",
+  "kind": "say.tr",
+  "de": "Für etwas, das zweimal gemacht wurde, sagen wir"
+ },
+ {
+  "tr": "İki şeyin yerini değiştirmek",
+  "kind": "say.tr",
+  "de": "Zwei Dinge vertauschen wird mit"
+ },
+ {
+  "tr": "Karışıklık demek. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Das heißt Verwirrung. Sprich nach:"
+ },
+ {
+  "tr": "Genel olarak iyi bir seçimdi.",
+  "kind": "say.tr",
+  "de": "Insgesamt war es eine gute Wahl."
+ },
+ {
+  "tr": "Yanlış kutuyu göndermişlerdi.",
+  "kind": "say.tr",
+  "de": "Sie hatten die falsche Kiste geschickt."
+ },
+ {
+  "tr": "Lütfen değiştirebilir misiniz?",
+  "kind": "say.tr",
+  "de": "Könnten Sie es bitte ersetzen?"
+ },
+ {
+  "tr": "Özetleyelim: takvimdeki randevu",
+  "kind": "say.tr",
+  "de": "Fassen wir zusammen: Termin im Kalender"
+ },
+ {
+  "tr": "Bana bir daha düşünmemi söyledi.",
+  "kind": "say.tr",
+  "de": "Er hat mir gesagt, ich soll noch einmal darüber nachdenken."
+ },
+ {
+  "tr": "İki düğmeye birden basmak yasak.",
+  "kind": "say.tr",
+  "de": "Beide Knöpfe gleichzeitig zu drücken ist verboten."
+ },
+ {
+  "tr": "Her şeyi topluca değerlendirirken",
+  "kind": "say.tr",
+  "de": "Wenn du alles zusammen bewertest, sagst du"
+ },
+ {
+  "tr": "Karar verip vermediğimi sordular.",
+  "kind": "say.tr",
+  "de": "Sie haben gefragt, ob ich mich entschieden hatte."
+ },
+ {
+  "tr": "randevuların yazıldığı deftere ise",
+  "kind": "say.tr",
+  "de": "und das Heft, in das die Termine geschrieben werden, heißt"
+ },
+ {
+  "tr": "Rezervasyonu iptal edebilir miyim?",
+  "kind": "say.tr",
+  "de": "Kann ich die Buchung absagen?"
+ },
+ {
+  "tr": "Son kalıbımız uyarıyor. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Unsere letzte Wendung warnt. Sprich nach:"
+ },
+ {
+  "tr": "İkisini tartıp bir sonuca varacağım.",
+  "kind": "say.tr",
+  "de": "Ich wäge beides ab und komme zu einem Schluss."
+ },
+ {
+  "tr": "ile söylenir ve ardından -ing gelir:",
+  "kind": "say.tr",
+  "de": "gesagt, und danach steht -ing:"
+ },
+ {
+  "tr": "Onu gelecek haftaya almam gerekiyor.",
+  "kind": "say.tr",
+  "de": "Ich muss ihn auf nächste Woche verlegen."
+ },
+ {
+  "tr": "Şimdi sen kur: Saati değiştireceğim.",
+  "kind": "say.tr",
+  "de": "Jetzt du: Ich werde die Uhrzeit ändern."
+ },
+ {
+  "tr": "Kimse çifte rezervasyonu suçlamamalı.",
+  "kind": "say.tr",
+  "de": "Niemand sollte der Doppelbuchung die Schuld geben."
+ },
+ {
+  "tr": "Önce her yönergeyi okumak zorundasın.",
+  "kind": "say.tr",
+  "de": "Du musst zuerst jede Anweisung lesen."
+ },
+ {
+  "tr": "Aletin kuru olduğundan emin olmalısın.",
+  "kind": "say.tr",
+  "de": "Du solltest sicherstellen, dass das Werkzeug trocken ist."
+ },
+ {
+  "tr": "Şimdi sen kur: Çalışırken açmak yasak.",
+  "kind": "say.tr",
+  "de": "Jetzt du: Es zu öffnen, während es läuft, ist verboten."
+ },
+ {
+  "tr": "Beni tek bir görüşle ikna etmeye çalıştı.",
+  "kind": "say.tr",
+  "de": "Sie hat versucht, mich mit einer einzigen Meinung zu überzeugen."
+ },
+ {
+  "tr": "Şimdi sıra sende: Bu hafta üç kez aradım.",
+  "kind": "say.tr",
+  "de": "Jetzt bist du dran: Diese Woche habe ich dreimal angerufen."
+ },
+ {
+  "tr": "Bir tane daha: Seni yarın geri arayacağım.",
+  "kind": "say.tr",
+  "de": "Noch eins: Ich rufe dich morgen zurück."
+ },
+ {
+  "tr": "Şimdi sen kur: Fotoğrafları dün gönderdim.",
+  "kind": "say.tr",
+  "de": "Jetzt du: Ich habe die Fotos gestern geschickt."
+ },
+ {
+  "tr": "Ürün kusurluydu, o yüzden değişim istedim.",
+  "kind": "say.tr",
+  "de": "Das Produkt war fehlerhaft, deshalb habe ich einen Umtausch verlangt."
+ },
+ {
+  "tr": "Şimdi bir karışıklığı telefonda çözeceksin.",
+  "kind": "say.tr",
+  "de": "Jetzt klärst du eine Verwechslung am Telefon."
+ },
+ {
+  "tr": "denir; cümlenin başına gelir ve virgül alır.",
+  "kind": "say.tr",
+  "de": "genannt; es steht am Satzanfang und bekommt ein Komma."
+ },
+ {
+  "tr": "Şimdi birine bir işi adım adım anlatacaksın.",
+  "kind": "say.tr",
+  "de": "Jetzt erklärst du jemandem eine Arbeit Schritt für Schritt."
+ },
+ {
+  "tr": "Şimdi sıra sende: Yanlış günü ayırtmışlardı.",
+  "kind": "say.tr",
+  "de": "Jetzt bist du dran: Sie hatten den falschen Tag gebucht."
+ },
+ {
+  "tr": "Şimdi sen kur: Bana indirim istememi söyledi.",
+  "kind": "say.tr",
+  "de": "Jetzt du: Sie hat mir gesagt, ich soll um einen Rabatt bitten."
+ },
+ {
+  "tr": "Yeni siparişle birlikte bir özür gönderdiler.",
+  "kind": "say.tr",
+  "de": "Sie haben mit der neuen Bestellung eine Entschuldigung geschickt."
+ },
+ {
+  "tr": "Şimdi mağazayı arayıp şikâyetini anlatacaksın.",
+  "kind": "say.tr",
+  "de": "Jetzt rufst du im Laden an und schilderst deine Beschwerde."
+ },
+ {
+  "tr": "Şimdi sen kur: Onun parasını çoktan ödemiştim.",
+  "kind": "say.tr",
+  "de": "Jetzt du: Ich hatte es schon bezahlt."
+ },
+ {
+  "tr": "denir ve yönergelerin en sık geçen kelimesidir.",
+  "kind": "say.tr",
+  "de": "genannt und ist das häufigste Wort in Anweisungen."
+ },
+ {
+  "tr": "Son kalıbımız kibarca çözüm istiyor. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Unsere letzte Wendung bittet höflich um eine Lösung. Sprich nach:"
+ },
+ {
+  "tr": "Şimdi sıra sende: Daha uzun süreceğini söyledi.",
+  "kind": "say.tr",
+  "de": "Jetzt bist du dran: Er hat gesagt, dass es länger dauern würde."
+ },
+ {
+  "tr": "Şimdi bir randevuyu değiştirmek için arayacaksın.",
+  "kind": "say.tr",
+  "de": "Jetzt rufst du an, um einen Termin zu ändern."
+ },
+ {
+  "tr": "Bir tane daha: Dışarıda kullanmaktan kaçınmalısın.",
+  "kind": "say.tr",
+  "de": "Noch eins: Du solltest vermeiden, es draußen zu benutzen."
+ },
+ {
+  "tr": "denir ve bu kelimenin p harfi okunmaz. Siparişe ise",
+  "kind": "say.tr",
+  "de": "genannt, und der Buchstabe p wird nicht gesprochen. Und die Bestellung heißt"
+ },
+ {
+  "tr": "Bir tane daha: Lütfen yenisini gönderebilir misiniz?",
+  "kind": "say.tr",
+  "de": "Noch eins: Könnten Sie bitte ein neues schicken?"
+ },
+ {
+  "tr": "Hatadan sonra iki çantayı değiştirmek zorunda kaldık.",
+  "kind": "say.tr",
+  "de": "Nach dem Fehler mussten wir die beiden Taschen tauschen."
+ },
+ {
+  "tr": "Şimdi bir kararı bir arkadaşınla birlikte vereceksin.",
+  "kind": "say.tr",
+  "de": "Jetzt triffst du eine Entscheidung zusammen mit einem Freund."
+ },
+ {
+  "tr": "Şimdi sıra sende: Onunla klinikte dokuzda buluşuyorum.",
+  "kind": "say.tr",
+  "de": "Jetzt bist du dran: Ich treffe sie um neun in der Praxis."
+ },
+ {
+  "tr": "İkinci kalıbımız sonra olanı anlatıyor. Fark etmek için",
+  "kind": "say.tr",
+  "de": "Unsere zweite Wendung erzählt das Spätere. Für bemerken sagen wir"
+ },
+ {
+  "tr": "Şimdi sıra sende: Her adımı sırayla izlemek zorundasın.",
+  "kind": "say.tr",
+  "de": "Jetzt bist du dran: Du musst jeden Schritt der Reihe nach befolgen."
+ },
+ {
+  "tr": "Bir tane daha: Maliyeti göz önüne alıp almadığımı sordu.",
+  "kind": "say.tr",
+  "de": "Noch eins: Er hat gefragt, ob ich die Kosten berücksichtigt hatte."
+ },
+ {
+  "tr": "Bir tane daha: Biz vardığımızda odaları değiştirmişlerdi.",
+  "kind": "say.tr",
+  "de": "Noch eins: Als wir ankamen, hatten sie die Zimmer schon getauscht."
+ },
+ {
+  "tr": "ise uyarır ve tavsiye eder. Yönergede üçünü de kullanırsın.",
+  "kind": "say.tr",
+  "de": "dagegen warnt und rät. In einer Anweisung benutzt du alle drei."
+ },
+ {
+  "tr": "Hangi gün yazdığını söylüyorsan, yani olay BİTMİŞSE past simple:",
+  "kind": "say.tr",
+  "de": "Sagst du, an welchem Tag du geschrieben hast, ist das Ereignis also VORBEI, steht Past Simple:"
+ },
+ {
+  "tr": "Şimdi dersin kuralı. Takvime yazılmış randevu için şimdiki zaman:",
+  "kind": "say.tr",
+  "de": "Jetzt die Regel der Lektion. Für einen Termin im Kalender steht die Verlaufsform:"
+ },
+ {
+  "tr": "Şimdi dersin kuralı. Kaç kez yazdığın HÂLÂ sayılıyorsa present perfect:",
+  "kind": "say.tr",
+  "de": "Jetzt die Regel der Lektion. ZÄHLT noch, wie oft du geschrieben hast, steht Present Perfect:"
+ },
+ {
+  "tr": "artı fiilin üçüncü hâliyle geriye alınır; sonra olan normal geçmişte kalır.",
+  "kind": "say.tr",
+  "de": "plus die dritte Form des Verbs zurückgesetzt; das Spätere bleibt in der einfachen Vergangenheit."
+ },
+ {
+  "tr": "ile söylenir; resmî bir kelimedir ve tam olarak 'başka güne almak' demektir.",
+  "kind": "say.tr",
+  "de": "gesagt; es ist ein formelles Wort und heißt genau «auf einen anderen Tag legen»."
+ },
+ {
+  "tr": "Merhaba! Bugün randevu işlerini öğreneceğiz: almak, teyit etmek, ertelemek, iptal etmek.",
+  "kind": "say.tr",
+  "de": "Hallo! Heute lernen wir alles rund um Termine: machen, bestätigen, verschieben, absagen."
+ },
+ {
+  "tr": "Merhaba! Bugün birine bir işi adım adım anlatmayı öğreneceğiz: önce ne, sonra ne, neye dikkat.",
+  "kind": "say.tr",
+  "de": "Hallo! Heute lernen wir, jemandem eine Arbeit Schritt für Schritt zu erklären: was zuerst, was danach, worauf zu achten ist."
+ },
+ {
+  "tr": "Yönerge dilinde üç ton var: zorunluluk, yasak ve uyarı. Üçü ayrı kalıpla kuruluyor. Hazır mısın?",
+  "kind": "say.tr",
+  "de": "In der Anweisungssprache gibt es drei Töne: Pflicht, Verbot und Warnung. Jeder wird mit einer eigenen Wendung gebaut. Bist du bereit?"
+ },
+ {
+  "tr": "Merhaba! Bugün bir karışıklığı çözmeyi öğreneceğiz: ne yanlış gitti, kim fark etti, nasıl düzeldi.",
+  "kind": "say.tr",
+  "de": "Hallo! Heute lernen wir, eine Verwechslung zu klären: was schiefging, wer es gemerkt hat, wie es behoben wurde."
+ },
+ {
+  "tr": "Karar verirken başkalarının sözünü aktarırsın ve aktarırken zaman bir basamak geriye gider. Hazır mısın?",
+  "kind": "say.tr",
+  "de": "Beim Entscheiden gibst du die Worte anderer wieder, und dabei rückt die Zeit eine Stufe zurück. Bist du bereit?"
+ },
+ {
+  "tr": "Merhaba! Bugün bir şikâyeti anlatmayı öğreneceğiz: sipariş kusurlu geldi, kaç kez yazdın, ne istiyorsun.",
+  "kind": "say.tr",
+  "de": "Hallo! Heute lernen wir, eine Beschwerde vorzubringen: die Bestellung kam fehlerhaft, wie oft du geschrieben hast, was du willst."
+ },
+ {
+  "tr": "Merhaba! Bu modülün son dersi: bir karara varmak. Kim ne dedi, artısı ne, eksisi ne, sen ne düşünüyorsun.",
+  "kind": "say.tr",
+  "de": "Hallo! Die letzte Lektion dieses Moduls: zu einer Entscheidung kommen. Wer was gesagt hat, was dafür spricht, was dagegen, was du denkst."
+ },
+ {
+  "tr": "Karışıklığı anlatmanın püf noktası sıra: hangi hata önce olduysa o bir basamak geriye alınır. Hazır mısın?",
+  "kind": "say.tr",
+  "de": "Der Kniff beim Erzählen einer Verwechslung ist die Reihenfolge: welcher Fehler früher war, rückt eine Stufe zurück. Bist du bereit?"
+ },
+ {
+  "tr": "Şikâyette iki zaman yan yana duruyor: kaç kez yazdığın hâlâ sayılıyor, hangi gün yazdığın ise bitmiş. Hazır mısın?",
+  "kind": "say.tr",
+  "de": "In der Beschwerde stehen zwei Zeiten nebeneinander: wie oft du geschrieben hast, zählt noch, an welchem Tag du geschrieben hast, ist vorbei. Bist du bereit?"
+ },
+ {
+  "tr": "Bu konuşmada üç gelecek biçimi yan yana geliyor ve hangisini seçtiğin işin ne kadar kesin olduğunu söylüyor. Hazır mısın?",
+  "kind": "say.tr",
+  "de": "In diesem Gespräch stehen drei Zukunftsformen nebeneinander, und deine Wahl sagt, wie sicher die Sache ist. Bist du bereit?"
+ }
+]
