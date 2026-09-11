@@ -235,10 +235,15 @@ console.log("\n" + C.b + "9. TUR TURLERI" + C.off);
   const mob = [...read("mobile/src/game/rounds.tsx").matchAll(/round\.game === "(\w+)"/g)].map((x) => x[1]);
   const missing = [...new Set(web)].filter((g) => !mob.includes(g));
   const unexplained = missing.filter((g) => !(g in KNOWN_GAPS));
+  /* Kapanan bir boşluk listede kalmamalı: gerekçe artık yanlış olur ve bir
+     sonraki okuyan "mobilde bu tur yok" diye bilir. (`check:endpoints`in
+     `stale` denetimi, `check:colors`ın karşılıksız istisnası — aynı kural.) */
+  const kapanan = Object.keys(KNOWN_GAPS).filter((g) => !missing.includes(g));
   if (!web.length || !mob.length) fail("tur turleri okunamadi", [`web ${web.length}, mobil ${mob.length}`]);
-  else if (unexplained.length) {
+  else if (unexplained.length || kapanan.length) {
     fail("mobilde cizilemeyen tur", [
       ...unexplained.map((g) => `${g}: gerekcesi yok - ya oynatici ekle ya KNOWN_GAPS'e sebebiyle yaz`),
+      ...kapanan.map((g) => `${g}: bosluk KAPANMIS (mobil artik ciziyor) - KNOWN_GAPS'ten cikar`),
     ]);
   } else {
     pass(`sunucu ${new Set(web).size} tur, mobil ${new Set(mob).size} tanıyor`);
@@ -2171,6 +2176,10 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     TR_UPPER,
   ];
   const kacak = [];
+  /* Muaf dosya hâlâ duruyor mu: yolu değişmiş bir muafiyet sessiz bir delik
+     (aynı kural §119'da web sayımının yolları için de var). */
+  for (const f of MUAF) if (!existsSync(new URL("../" + f, import.meta.url))) kacak.push(`MUAF yolu yok: ${f}`);
+  for (const d of MUAF_KLASOR) if (!existsSync(new URL("../" + d, import.meta.url))) kacak.push(`MUAF_KLASOR yolu yok: ${d}`);
   for (const kok of ["mobile/src", "src"]) {
     for (const f of walkUI(kok)) {
       if (MUAF.includes(f) || MUAF_KLASOR.some((d) => f.startsWith(d))) continue;
