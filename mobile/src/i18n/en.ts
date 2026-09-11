@@ -129,6 +129,7 @@ export const en: Record<string, string> = {
   "common.loading": "Loading…",
   "daily.players_at_your_level": "Players at your level",
   "daily.be_first_to_play_today": "Be the first to play today",
+  "daily.first_today": "You're the first to play at your level today — the table fills up as others join.",
   "daily.correct": "correct",
   "daily.best_streak": "best streak",
   "daily.sign_in_sign_up": "Sign in / Sign up",

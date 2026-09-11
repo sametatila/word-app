@@ -40,6 +40,12 @@ function Board({ rows, colors }: { rows: DailyBoardRow[]; colors: Palette }) {
   if (!rows.length) return <Text variant="caption" color={colors.textMuted} style={{ textAlign: "center", marginTop: spacing.lg }}>{t("daily.be_first_to_play_today")}</Text>;
   return (
     <View style={{ gap: spacing.sm, marginTop: spacing.md }}>
+      {/* TEK SATIR: tabloda yalnız kendisi olan kullanıcı "kimse oynamamış"
+          sanıyordu. Sebebini söylemek gerekiyor - tablo gün ilerledikçe
+          doluyor. Web aynı notu aynı koşulda gösteriyor (`daily-player`). */}
+      {rows.length === 1 ? (
+        <Text variant="micro" color={colors.textMuted} style={{ textAlign: "center", lineHeight: 17 }}>{t("daily.first_today")}</Text>
+      ) : null}
       {rows.map((r) => {
         const mc = medalColor(r.rank);
         const initial = ((r.name ?? "?").trim()[0] ?? "?").toUpperCase();

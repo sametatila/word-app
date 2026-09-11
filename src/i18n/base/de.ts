@@ -131,6 +131,7 @@ export const deBase: Record<string, string> = {
   "common.loading": "Wird geladen…",
   "daily.players_at_your_level": "Spieler auf deinem Level",
   "daily.be_first_to_play_today": "Sei heute der Erste",
+  "daily.first_today": "Du bist heute die erste Person auf deiner Stufe — die Tabelle füllt sich, sobald andere spielen.",
   "daily.correct": "richtig",
   "daily.best_streak": "beste Serie",
   "daily.sign_in_sign_up": "Anmelden / Registrieren",

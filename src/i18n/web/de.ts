@@ -272,7 +272,6 @@ export const deWeb: Record<string, string> = {
   "daily.preparing": "Die Runde des Tages wird vorbereitet…",
   "daily.same_words": "Für alle dieselben Wörter",
   "daily.pitch": "{n} Fragen · ein Versuch · kein Zeitdruck. Du spielst dieselbe Runde wie alle auf deiner Stufe.",
-  "daily.first_today": "Du bist heute die erste Person auf deiner Stufe — die Tabelle füllt sich, sobald andere spielen.",
   "weekly.preparing": "Der Test wird vorbereitet…",
   "weekly.saving": "Das Ergebnis wird gespeichert…",
   "weekly.load_failed": "Der Test ließ sich gerade nicht laden. Versuch es gleich noch mal.",

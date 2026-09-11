@@ -311,6 +311,12 @@ export function DailyPlayer({ onExit }: { onExit: () => void }) {
         {/* Tablo tek satırken de gösteriliyor: "Tabloyu gör" deyip tablo
             görmemek, düğmenin yalan söylemesi. Seviyesinde ilk oynayan
             kullanıcı kendi satırını ve neden yalnız olduğunu görüyor. */}
+        {/* BOŞ TABLO da bir şey söylüyor: eskiden hiçbir şey çizilmiyordu ve
+            ekran bozuk görünüyordu. Android aynı koşulda "ilk oynayan sen ol"
+            diyor (`DailyScreen` `Board`). */}
+        {board.length === 0 ? (
+          <p className="muted px-5 py-3 text-center text-xs">{t("daily.be_first_to_play_today")}</p>
+        ) : null}
         {board.length > 0 ? <BoardList rows={board} title={t("daily.today_s_ranking")} /> : null}
         {board.length === 1 ? (
           <p className="muted border-t px-5 py-3 text-xs" style={{ borderColor: "var(--border)" }}>

@@ -3159,6 +3159,23 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   sameList("rozet acilis kutlamasi", kutlama("mobile/src/ui/AchievementUnlock.tsx"), kutlama("src/components/achievement-unlock.tsx"));
 }
 
+/* ── 87. gunun turu: tablonun iki OZEL durumu ─────────────────────────────
+ * Gunluk siralamanin iki hali kullaniciya bir sey soylemek zorunda: tablo BOS
+ * ("ilk oynayan sen ol") ve tabloda YALNIZ KENDISI var ("ilk sensin, tablo
+ * gun ilerledikce doluyor"). Iki platform birer tanesini gosteriyordu: mobil
+ * bos hali, web tek satirli hali. Otekinde ekran sessiz kaliyor ve kullanici
+ * "kimse oynamamis" ya da "ekran bozuk" saniyor. */
+{
+  const hal = (p) => {
+    const src = read(p).replace(/\/\*[\s\S]*?\*\//g, " ").replace(/\/\/[^\n]*/g, " ");
+    return [
+      "bos tablo=" + (src.includes("daily.be_first_to_play_today") ? "var" : "yok"),
+      "tek satir=" + (src.includes("daily.first_today") ? "var" : "yok"),
+    ];
+  };
+  sameList("gunun turu tablo halleri", hal("mobile/src/screens/DailyScreen.tsx"), hal("src/components/daily-player.tsx"));
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"

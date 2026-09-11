@@ -131,6 +131,7 @@ export const trBase: Record<string, string> = {
   "common.loading": "Yükleniyor…",
   "daily.players_at_your_level": "Aynı seviyede oynayanlar",
   "daily.be_first_to_play_today": "Bugün ilk oynayan sen ol",
+  "daily.first_today": "Seviyende bugün ilk oynayan sensin — diğerleri oynadıkça tablo dolacak.",
   "daily.correct": "doğru",
   "daily.best_streak": "en iyi seri",
   "daily.sign_in_sign_up": "Giriş yap / Kayıt ol",

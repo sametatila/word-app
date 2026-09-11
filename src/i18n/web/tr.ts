@@ -297,7 +297,6 @@ export const trWeb: Record<string, string> = {
   "daily.preparing": "Günün turu hazırlanıyor…",
   "daily.same_words": "Herkes aynı kelimeler",
   "daily.pitch": "{n} soru · tek hak · süre baskısı yok. Seviyendeki herkesle aynı turu oynuyorsun.",
-  "daily.first_today": "Seviyende bugün ilk oynayan sensin — diğerleri oynadıkça tablo dolacak.",
   "weekly.preparing": "Sınav hazırlanıyor…",
   "weekly.saving": "Sonuç kaydediliyor…",
   "weekly.load_failed": "Sınav şu an yüklenemedi. Biraz sonra tekrar dene.",

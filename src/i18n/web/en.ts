@@ -272,7 +272,6 @@ export const enWeb: Record<string, string> = {
   "daily.preparing": "Getting today's round ready…",
   "daily.same_words": "Everyone gets the same words",
   "daily.pitch": "{n} questions · one attempt · no time pressure. You're playing the same round as everyone at your level.",
-  "daily.first_today": "You're the first to play at your level today — the table fills up as others join.",
   "weekly.preparing": "Getting the quiz ready…",
   "weekly.saving": "Saving the result…",
   "weekly.load_failed": "The quiz couldn't be loaded right now. Try again in a bit.",
