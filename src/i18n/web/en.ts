@@ -143,7 +143,6 @@ export const enWeb: Record<string, string> = {
   "proficiency.next_conversation": "next conversation",
   "plan.word_round": "Word round",
   "words.subtitle": "{n} words · A1 to C1",
-  "settings.app": "APP",
   "settings.privacy_and_terms": "Privacy and terms",
   "settings.privacy_and_terms_sub": "What we process, why, and your rights",
   "settings.add_to_home": "Add to home screen",

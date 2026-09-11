@@ -1165,7 +1165,7 @@ export const deBase: Record<string, string> = {
   "settings.support_contact_sub": "Für Fragen, Vorschläge und Probleme",
   "settings.display_name": "Anzeigename",
   "settings.appearance": "DARSTELLUNG",
-  "settings.daily_goal_reviews_day": "TAGESZIEL · Wiederholungen / Tag",
+  "settings.daily_goal_reviews_day": "TAGESZIEL",
   "settings.delete_account": "Konto löschen",
   "settings.terms_of_use": "Nutzungsbedingungen",
   "settings.send_usage_data": "Nutzungsdaten senden",

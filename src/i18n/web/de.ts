@@ -143,7 +143,6 @@ export const deWeb: Record<string, string> = {
   "proficiency.next_conversation": "nächstes Gespräch",
   "plan.word_round": "Wortrunde",
   "words.subtitle": "{n} Wörter · A1 bis C1",
-  "settings.app": "APP",
   "settings.privacy_and_terms": "Datenschutz und Bedingungen",
   "settings.privacy_and_terms_sub": "Welche Daten wir warum verarbeiten, deine Rechte",
   "settings.add_to_home": "Zum Startbildschirm",

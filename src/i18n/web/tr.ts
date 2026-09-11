@@ -167,7 +167,6 @@ export const trWeb: Record<string, string> = {
   "proficiency.next_conversation": "sıradaki konuşma",
   "plan.word_round": "Kelime turu",
   "words.subtitle": "{n} kelime · A1'den C1'e",
-  "settings.app": "UYGULAMA",
   "settings.privacy_and_terms": "Gizlilik ve şartlar",
   "settings.privacy_and_terms_sub": "Hangi veriyi neden işlediğimiz, hakların",
   "settings.add_to_home": "Ana ekrana ekle",

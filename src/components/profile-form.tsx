@@ -346,8 +346,7 @@ export function ProfileForm({
             bildirim ayarlarında (`/notifications`) duruyor. */}
         <Row label={t("settings.sound")}>
           <div>
-            <p className="muted mb-2 text-caption tracking-wide">{t("settings.reading_voice")}</p>
-            <VoicePicker
+              <VoicePicker
               course={course}
               value={voice}
               onChange={(v: VoiceId) => { setVoice(v); void patch({ voice: v }, () => track("setting_change", 0, "voice")); }}
@@ -368,7 +367,7 @@ export function ProfileForm({
             edilirim" ayarı ve mobilde kendi ekranlarında (`NotificationsScreen`,
             Profil › Bildirimler). Web'de de oraya taşındı; ayarlar ekranında
             durduklarında o ekran mobilde olmayan iki satır taşıyordu. */}
-        <Row label={t("settings.app")}>
+        <Row>
           {/* Kurulum rehberi açılır kutuda. Üç numaralı adım, cihaz seçici ve
               açıklama metni 330 piksel tutuyordu ve bu, hayatta BİR KEZ yapılan
               bir işin yönergesi — zaten kurmuş olan kullanıcı her ayar açılışında

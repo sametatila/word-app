@@ -1168,7 +1168,7 @@ export const tr: Record<string, string> = {
   "settings.support_contact_sub": "Soru, öneri ve sorunlar için",
   "settings.display_name": "Görünen ad",
   "settings.appearance": "GÖRÜNÜM",
-  "settings.daily_goal_reviews_day": "GÜNLÜK HEDEF · tekrar / gün",
+  "settings.daily_goal_reviews_day": "GÜNLÜK HEDEF",
   "settings.delete_account": "Hesabı sil",
   "settings.terms_of_use": "Kullanım şartları",
   "settings.send_usage_data": "Kullanım verisi gönder",

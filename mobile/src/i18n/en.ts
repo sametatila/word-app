@@ -1163,7 +1163,7 @@ export const en: Record<string, string> = {
   "settings.support_contact_sub": "For questions, suggestions and problems",
   "settings.display_name": "Display name",
   "settings.appearance": "APPEARANCE",
-  "settings.daily_goal_reviews_day": "DAILY GOAL · reviews / day",
+  "settings.daily_goal_reviews_day": "DAILY GOAL",
   "settings.delete_account": "Delete account",
   "settings.terms_of_use": "Terms of use",
   "settings.send_usage_data": "Send usage data",
