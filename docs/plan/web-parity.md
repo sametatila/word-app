@@ -10039,3 +10039,46 @@ hacmi lig boyu belirliyor.
 Dürtme arayüzü de iki platformda aynı: arkadaş listesinde bugün dürtülmüş kişi
 için düğme kapanıyor (`nudgedToday`), profil sayfasında iki tarafta da
 kapanmıyor. Simetrik.
+
+## §11.306 — Hesap silme sekiz tabloyu arkada bırakıyordu
+
+Geçen turun dersini uyguladım: **kararlaştırılabilir** bir soru seç. Bu soru
+öyle — şemadaki hangi tablolar kullanıcıya bağlı, ve `lib/account/purge` onları
+kapsıyor mu? İkisi de metinden okunabiliyor.
+
+Cevap: 35 tablodan **sekizi** arkada kalıyordu.
+
+| Tablo | Ne tutuyor |
+|---|---|
+| `mock_exam_attempts` | deneme sınavı cevapları ve puanları |
+| `league_members` | haftalık lig üyeliği ve XP |
+| `usage_counters` | kişi başına kota sayaçları |
+| `device_tokens` | **telefonun push adresi** |
+| `entitlements` | premium hakkı |
+| `promo_redemptions` | hangi kodu kullandığı |
+| `referrals` | davet zinciri |
+| `premium_grants` | para defteri |
+
+Üstelik dosyanın kendi yorumu **"Silinmeyen tek şey yok"** diyordu — bu
+defterde en sık rastladığım sınıf, ama bu kez bedeli en ağır olanı: gizlilik
+politikası §11 "kalıcı olarak silinir" diye söz veriyor ve Play/App Store
+beyanları da buna dayanıyor. `device_tokens` özellikle kötü: o bir **adres**,
+kalırsa silinmiş hesabın telefonuna bildirim gönderilebilir hâlde kalıyor.
+
+Politika ayrımı da cevabı veriyordu: *"Yasal saklama yükümlülüğü olan mali
+kayıtlar anonimleştirilerek tutulur."* Buna göre altısı **silindi**; ikisi
+**anonimleşti** — `premium_grants` bir para defteri (satır kalır, kişi gider)
+ve `referrals` iki kişiyi bağladığı için satırı silmek **karşı tarafın**
+kazandığı ödülün kaydını da yok ederdi, o yüzden yalnız bu kullanıcının tarafı
+boşaltılıyor.
+
+**`check:purge`** artık şemayı `purge.ts` ile karşılaştırıyor: yeni bir
+kullanıcı tablosu eklendiğinde orada da görünmek zorunda. "Geçiyor mu" sorusu
+kasten kaba — silme mi anonimleştirme mi olduğu bir politika kararı ve
+gerekçesi yorumda; kapı yalnız *unutulmuş mu* diye soruyor.
+
+Kapının ters yönü ilk çalıştığında gerçek bir şey yakaladı: `rate_limits`
+kullanıcıya bir sütunla değil, `"<kapsam>:<userId>"` biçimli metin anahtarıyla
+bağlı. Bağ gerçek, yalnız sütun taramasının göremeyeceği yerde — gerekçesiyle
+kayıtlı. Üç enjeksiyonun üçü yakalandı (cihaz jetonu silmesinin kalkması,
+şemaya yeni tablo eklenmesi, para defteri anonimleştirmesinin kalkması).

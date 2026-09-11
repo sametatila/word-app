@@ -30,6 +30,14 @@ import {
   userReports,
   userSkills,
   userWords,
+  deviceTokens,
+  entitlements,
+  leagueMembers,
+  mockExamAttempts,
+  premiumGrants,
+  promoRedemptions,
+  referrals,
+  usageCounters,
 } from "@/lib/db/schema";
 
 /**
@@ -40,10 +48,27 @@ import {
  * (tablolar arası FK yok), ama hepsi tek transaction: yarım silinmiş hesap,
  * hiç silinmemiş hesaptan kötüdür.
  *
- * Silinmeyen tek şey yok: değerlendirme metinleri, konuşma kayıtları, ölçüm
- * olayları, sosyal iz (arkadaşlık, tepki, dürtme, bildirim) dâhil. Başkalarına
- * ait satırlarda bu kullanıcının kimliği geçiyorsa (arkadaşlık, dürtme, ortak
- * görev) o satırlar da gider — karşı taraf için "arkadaş ayrıldı" demektir.
+ * Kişisel olan her satır gider: değerlendirme metinleri, konuşma kayıtları,
+ * ölçüm olayları, deneme sınavı denemeleri, lig üyelikleri, kota sayaçları,
+ * cihaz jetonları ve sosyal iz (arkadaşlık, tepki, dürtme, bildirim) dâhil.
+ * Başkalarına ait satırlarda bu kullanıcının kimliği geçiyorsa (arkadaşlık,
+ * dürtme, ortak görev) o satırlar da gider — karşı taraf için "arkadaş
+ * ayrıldı" demektir.
+ *
+ * ANONİMLEŞEN İKİ YER VAR ve ikisi de gizlilik politikasının §11'deki
+ * cümlesinden geliyor: "yasal saklama yükümlülüğü olan mali kayıtlar
+ * anonimleştirilerek tutulur".
+ *   - `premium_grants` bir PARA defteri (kim, ne kadar, hangi kaynaktan).
+ *     Satır kalıyor, kime ait olduğu siliniyor.
+ *   - `referrals` iki kişiyi bağlıyor; satırı silmek KARŞI TARAFIN kazandığı
+ *     ödülün kaydını da yok ederdi. Bu kullanıcının tarafı boşaltılıyor.
+ *
+ * BU LİSTE SEKİZ TABLO EKSİKTİ ve dosyanın kendi yorumu "silinmeyen tek şey
+ * yok" diyordu: deneme sınavı denemeleri, lig üyelikleri, kota sayaçları,
+ * cihaz jetonları, premium hakkı, promosyon kullanımı, davet zinciri ve para
+ * defteri arkada kalıyordu. `check:purge` artık şemayı bu dosyayla
+ * karşılaştırıyor; yeni bir kullanıcı tablosu eklendiğinde burada da
+ * görünmek zorunda.
  */
 export async function purgeUserData(userId: string): Promise<void> {
   await db.transaction(async (tx) => {
@@ -82,5 +107,23 @@ export async function purgeUserData(userId: string): Promise<void> {
     await tx.delete(socialNotifications).where(or(eq(socialNotifications.userId, userId), eq(socialNotifications.actorId, userId)));
     // Anahtar "<kapsam>:<userId>" biçiminde (bkz. schema.ts rateLimits).
     await tx.delete(rateLimits).where(like(rateLimits.key, `%:${userId}`));
+
+    // Ölçüm ve oyun izleri
+    await tx.delete(mockExamAttempts).where(eq(mockExamAttempts.userId, userId));
+    await tx.delete(leagueMembers).where(eq(leagueMembers.userId, userId));
+    await tx.delete(usageCounters).where(eq(usageCounters.userId, userId));
+    // Cihaz jetonu bir ADRES: kalırsa silinmiş hesabın telefonuna bildirim
+    // gönderilebilir hâlde kalır.
+    await tx.delete(deviceTokens).where(eq(deviceTokens.userId, userId));
+
+    // Premium hakkı ve promosyon kullanımı: kimliğe bağlı, mali kayıt değil.
+    await tx.delete(entitlements).where(eq(entitlements.userId, userId));
+    await tx.delete(promoRedemptions).where(eq(promoRedemptions.userId, userId));
+
+    // Mali kayıt ANONİMLEŞİR (politika §11): satır kalır, kişi gider.
+    await tx.update(premiumGrants).set({ userId: "" }).where(eq(premiumGrants.userId, userId));
+    // Davet zinciri: bu kullanıcının tarafı boşalır, karşı tarafın kaydı durur.
+    await tx.update(referrals).set({ inviterUserId: "" }).where(eq(referrals.inviterUserId, userId));
+    await tx.update(referrals).set({ inviteeUserId: "" }).where(eq(referrals.inviteeUserId, userId));
   });
 }
