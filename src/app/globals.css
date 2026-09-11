@@ -399,7 +399,10 @@
   --color-danger-soft: color-mix(in srgb, var(--color-rose-300) 16%, transparent);
 
   /* Koyu zeminde sıcak kahve gölge görünmüyor; orada gölge siyaha dönüyor ve
-     derinleşiyor — Android'in `elevation`'ı da koyu temada aynı şeyi yapar. */
+     derinleşiyor. Mobilde karşılığı `colors.ts` `shadowTint`/`shadowStrength`
+     — bir tur boyunca YOKTU: burada "Android'in `elevation`'ı koyu temada
+     aynı şeyi zaten yapar" yazıyordu, oysa `elevation` gölgeyi `shadowColor`
+     ile boyuyor ve orada sabit `#5a3418` geçiliyordu (bkz. web-parity 11.181). */
   --shadow-soft-sm: 0 4px 10px -2px rgb(0 0 0 / 0.4);
   --shadow-soft: 0 7px 16px -4px rgb(0 0 0 / 0.45);
   --shadow-soft-lg: 0 11px 26px -6px rgb(0 0 0 / 0.5);

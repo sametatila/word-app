@@ -20,7 +20,7 @@ import { loadVoicePref, setVoicePref } from "../lib/tts";
 import { defaultVoice, type VoiceId } from "../lib/voices";
 import { coursesForNative, offeredNativeLangs, NATIVE_LANGS, type NativeLang } from "../lib/courses";
 import { currentLang, setLang } from "../lib/i18n";
-import { useTheme, spacing, radii, softShadow, type Palette, type ThemeMode } from "../theme";
+import { useTheme, spacing, radii, softShadow, cardShadow, type Palette, type ThemeMode } from "../theme";
 import { analyticsEnabled, setAnalyticsEnabled, track } from "../lib/track";
 import { soundEnabled, setSoundEnabled } from "../lib/sfx";
 import { hasMicConsent, setMicConsent } from "../lib/micConsent";
@@ -307,7 +307,7 @@ export function SettingsScreen() {
             {THEME_OPTIONS.map((o) => {
               const active = mode === o.key;
               return (
-                <PressableScale key={o.key} onPress={() => { if (o.key !== mode) track("setting_change", o.key === "dark" ? 1 : o.key === "light" ? 0 : 2, "theme"); setMode(o.key); }} style={{ flex: 1, paddingVertical: 10, borderRadius: radii.sm, alignItems: "center", backgroundColor: active ? colors.surface : "transparent", ...(active ? softShadow("#5a3418", 4) : {}) }}>
+                <PressableScale key={o.key} onPress={() => { if (o.key !== mode) track("setting_change", o.key === "dark" ? 1 : o.key === "light" ? 0 : 2, "theme"); setMode(o.key); }} style={{ flex: 1, paddingVertical: 10, borderRadius: radii.sm, alignItems: "center", backgroundColor: active ? colors.surface : "transparent", ...(active ? cardShadow(colors, 4) : {}) }}>
                   <Text variant="bodyStrong" color={active ? colors.primaryText : colors.textMuted}>{t(o.label)}</Text>
                 </PressableScale>
               );

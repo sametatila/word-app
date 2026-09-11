@@ -22,7 +22,7 @@ import { reduceMotion } from "../lib/reduceMotion";
 import { useKeyboardHeight } from "../lib/useKeyboardHeight";
 import { whyMeaning, whyArticle, whyPlural } from "./why";
 import { speakTarget, ttsAvailable } from "../lib/tts";
-import { useTheme, spacing, radii, softShadow, type Palette } from "../theme";
+import { useTheme, spacing, radii, softShadow, cardShadow, type Palette } from "../theme";
 import type { Round, RoundWord, Option } from "./session";
 
 const withArtikel = (w: RoundWord) => (w.artikel ? `${w.artikel} ${w.de}` : w.de);
@@ -321,7 +321,7 @@ function MascotMid({ mood, hidden }: { mood?: Mood; hidden?: boolean }) {
 /** Soru kartı — ortak üst blok. */
 function Prompt({ label, big, sub, speakText, colors }: { label: string; big: string; sub?: string | null; speakText?: string | null; colors: Palette }) {
   return (
-    <View style={[{ backgroundColor: colors.surface, borderRadius: radii.xl, paddingVertical: spacing.xxl, paddingHorizontal: spacing.lg, alignItems: "center", borderWidth: 1, borderColor: colors.hairline, marginBottom: spacing.md }, softShadow("#5a3418", 10)]}>
+    <View style={[{ backgroundColor: colors.surface, borderRadius: radii.xl, paddingVertical: spacing.xxl, paddingHorizontal: spacing.lg, alignItems: "center", borderWidth: 1, borderColor: colors.hairline, marginBottom: spacing.md }, cardShadow(colors, 10)]}>
       <Text variant="micro" color={colors.textMuted} style={{ textTransform: "uppercase", letterSpacing: 1 }}>{label}</Text>
       <Text variant="display" style={{ marginTop: spacing.sm, textAlign: "center" }}>{big}</Text>
       {speakText ? <View style={{ marginTop: spacing.sm }}><SpeakButton text={speakText} colors={colors} size={22} /></View> : null}
@@ -556,7 +556,7 @@ function ClozeRound({ round, onDone, colors }: { round: Round; onDone: Done; col
   }
   return (
     <RoundShell sheet={fb ? <FeedbackFooter data={fb} onContinue={() => onDone(fb.correct, miss(fb.correct, typeMode ? classifyTyping(picked ?? "", [answer]) : "meaning", picked))} colors={colors} /> : undefined}>
-      <View style={[{ backgroundColor: colors.surface, borderRadius: radii.xl, padding: spacing.xl, borderWidth: 1, borderColor: colors.hairline, marginBottom: spacing.md }, softShadow("#5a3418", 10)]}>
+      <View style={[{ backgroundColor: colors.surface, borderRadius: radii.xl, padding: spacing.xl, borderWidth: 1, borderColor: colors.hairline, marginBottom: spacing.md }, cardShadow(colors, 10)]}>
         <Text variant="micro" color={colors.textMuted} style={{ textTransform: "uppercase", letterSpacing: 1, marginBottom: spacing.md }}>{tx(typeMode ? "rounds.cloze_typed" : "rounds.fill_blank")}</Text>
         <View style={{ flexDirection: "row", alignItems: "flex-start", gap: spacing.sm }}>
           <Text variant="h2" style={{ flex: 1, lineHeight: 32 }}>{sentence}</Text>
@@ -726,7 +726,7 @@ function ListenRound({ round, word, onDone, colors }: { round: Round; word: Roun
   }
   return (
     <RoundShell sheet={fb ? <FeedbackFooter data={fb} onContinue={() => onDone(fb.correct, { ...miss(fb.correct, "listening", picked), hintUsed: replays >= 2 })} colors={colors} /> : undefined}>
-      <View style={[{ backgroundColor: colors.surface, borderRadius: radii.xl, paddingVertical: spacing.xxl, paddingHorizontal: spacing.lg, alignItems: "center", borderWidth: 1, borderColor: colors.hairline, marginBottom: spacing.md }, softShadow("#5a3418", 10)]}>
+      <View style={[{ backgroundColor: colors.surface, borderRadius: radii.xl, paddingVertical: spacing.xxl, paddingHorizontal: spacing.lg, alignItems: "center", borderWidth: 1, borderColor: colors.hairline, marginBottom: spacing.md }, cardShadow(colors, 10)]}>
         <Text variant="micro" color={colors.textMuted} style={{ textTransform: "uppercase", letterSpacing: 1 }}>{tx("rounds.listen_pick_meaning")}</Text>
         {hideWord ? (
           <PressableScale accessibilityLabel={tx("item.listen")} onPress={() => { setReplays((n) => n + 1); speakTarget(withArtikel(word)); }} style={[{ width: 84, height: 84, borderRadius: 42, backgroundColor: colors.primary, alignItems: "center", justifyContent: "center", marginTop: spacing.lg }, softShadow(colors.primary, 12)]}>

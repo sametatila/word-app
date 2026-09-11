@@ -88,6 +88,19 @@ export type Palette = {
   successText: string; dangerText: string; streakText: string; infoText: string; accentText: string;
   successSoft: string; dangerSoft: string;
   gradientA: [string, string]; gradientB: [string, string]; // yumuşak kart gradyanları
+  /**
+   * NÖTR KART GÖLGESİ - rengi de opaklığı da temayla değişir.
+   *
+   * Açık temada sıcak bir kahve (#5a3418, 0.16): zemin de sıcak, nötr siyah
+   * kremin üstünde gri bir kir gibi duruyor. Koyu temada aynı kahve GÖRÜNMÜYOR
+   * - koyu bir yüzeyin üstünde koyu ve %16 opak bir gölge yok demek, kartlar
+   * yükseltilerini kaybediyor. Orada gölge siyah ve çok daha opak.
+   *
+   * Web bu ayrımı `--shadow-soft*` jetonlarında yapıyor (`globals.css`): açık
+   * `rgb(90 52 24 / 0.16)`, koyu `rgb(0 0 0 / 0.45)`. Mobilde karşılığı yoktu
+   * - yedi çağrı da sabit `#5a3418` geçiyordu.
+   */
+  shadowTint: string; shadowStrength: number;
 };
 
 export const light: Palette = {
@@ -100,6 +113,7 @@ export const light: Palette = {
   successText: "#237a4c", dangerText: "#b62e43", streakText: "#86690e", infoText: "#16748a", accentText: "#77439d",
   successSoft: "#e2f2e9", dangerSoft: "#fde6ea",
   gradientA: ["#fb8f2a", "#f87612"], gradientB: ["#ffab54", "#db5f08"],
+  shadowTint: "#5a3418", shadowStrength: 0.16,
 };
 
 export const dark: Palette = {
@@ -114,6 +128,7 @@ export const dark: Palette = {
   successText: "#6fd19b", dangerText: "#f79ba6", streakText: "#ddb62c", infoText: "#6fd1e3", accentText: "#cda6e8",
   successSoft: "rgba(111,209,155,0.16)", dangerSoft: "rgba(247,155,166,0.16)",
   gradientA: ["#fb8f2a", "#db5f08"], gradientB: ["#f87612", "#8f3a0f"],
+  shadowTint: "#000000", shadowStrength: 0.45,
 };
 
 /**

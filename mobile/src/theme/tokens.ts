@@ -1,4 +1,5 @@
 import { Platform, type TextStyle } from "react-native";
+import type { Palette } from "./colors";
 
 export const spacing = { xs: 4, sm: 8, md: 12, lg: 16, xl: 20, xxl: 28, xxxl: 40 } as const;
 export const radii = { sm: 10, md: 14, lg: 20, xl: 26, xxl: 34, pill: 999 } as const;
@@ -17,10 +18,22 @@ export const typography = {
 };
 
 /** Yumuşak modern gölge (fitness örneği): geniş, düşük opaklık. */
-export function softShadow(color: string, elevation = 8) {
+export function softShadow(color: string, elevation = 8, opacity = 0.16) {
   return Platform.select({
-    ios: { shadowColor: color, shadowOffset: { width: 0, height: elevation * 0.7 }, shadowOpacity: 0.16, shadowRadius: elevation * 1.6 },
+    ios: { shadowColor: color, shadowOffset: { width: 0, height: elevation * 0.7 }, shadowOpacity: opacity, shadowRadius: elevation * 1.6 },
     android: { elevation, shadowColor: color },
     default: {},
   });
+}
+
+/**
+ * Kart gölgesi: `softShadow`un TEMAYA DUYARLI hâli.
+ *
+ * Renkli gölgeler (`softShadow(colors.primary, 8)` gibi) bir vurgu; bu ise
+ * yüzeyin kendi yükseltisi ve nötr. Nötr olan tek değerle yazılamıyor: açık
+ * temada sıcak kahve, koyu temada siyah ve daha opak olmak zorunda (gerekçe
+ * `colors.ts` `shadowTint`). Webin karşılığı `shadow-soft` sınıfı.
+ */
+export function cardShadow(colors: Pick<Palette, "shadowTint" | "shadowStrength">, elevation = 10) {
+  return softShadow(colors.shadowTint, elevation, colors.shadowStrength);
 }

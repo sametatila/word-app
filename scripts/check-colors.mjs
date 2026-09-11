@@ -55,7 +55,6 @@ const MOBILE_SKIP = [
 
 /** Paletin dışında kalması KABUL EDİLEN değerler, sebepleriyle. */
 const MOBILE_ALLOW = new Map([
-  ["#5a3418", "gölge tinti: `softShadow`un sıcak kahvesi, iki temada da aynı olması bilinçli"],
   ["#FA7C13", "avatar dairesinin zemini: Erdi çiziminin PNG zeminiyle aynı değer, webde de aynı satır"],
   ["#c0392b", "varsayılan şapka rengi: kullanıcının seçtiği aksesuar, palet değil"],
   /* Konfeti kimlik listesi - web `components/celebrate.tsx` `COLORS` ile birebir. */

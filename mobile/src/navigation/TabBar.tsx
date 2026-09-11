@@ -3,7 +3,7 @@ import { View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { useLayout } from "../lib/useLayout";
 import type { BottomTabBarProps } from "@react-navigation/bottom-tabs";
-import { useTheme, radii, spacing, softShadow } from "../theme";
+import { useTheme, radii, spacing, cardShadow } from "../theme";
 import { Text } from "../ui/Text";
 import { PressableScale } from "../ui/PressableScale";
 import { LearnIcon, PathIcon, SkillsIcon, HandshakeIcon } from "../ui/icons";
@@ -31,7 +31,7 @@ export function TabBar({ state, descriptors, navigation }: BottomTabBarProps) {
     // left/right kenar boşluğunun yerini alıyor.
     <View style={{ position: "absolute", left: 0, right: 0, bottom: insets.bottom + spacing.sm, alignItems: "center" }}>
       <View style={{ width: "100%", maxWidth: wideContentWidth, paddingHorizontal: spacing.lg }}>
-      <View style={[{ flexDirection: "row", backgroundColor: colors.surface, borderRadius: radii.xxl, padding: 7, borderWidth: 1, borderColor: colors.hairline }, softShadow("#5a3418", 16)]}>
+      <View style={[{ flexDirection: "row", backgroundColor: colors.surface, borderRadius: radii.xxl, padding: 7, borderWidth: 1, borderColor: colors.hairline }, cardShadow(colors, 16)]}>
         {state.routes.map((route, i) => {
           const focused = state.index === i;
           const label = (descriptors[route.key].options.title ?? route.name) as string;

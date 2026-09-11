@@ -5,7 +5,7 @@ import { PressableScale } from "../ui/PressableScale";
 import { CheckIcon, XIcon } from "../ui/icons";
 import { reduceMotion } from "../lib/reduceMotion";
 import { SpeakButton } from "../ui/SpeakButton";
-import { useTheme, spacing, radii, softShadow } from "../theme";
+import { useTheme, spacing, radii, cardShadow } from "../theme";
 import { haptic } from "../lib/haptics";
 
 export type ChoiceRound = {
@@ -57,7 +57,7 @@ export function ChoiceGame({ round, onDone }: { round: ChoiceRound; onDone: (cor
       <View
         style={[
           { backgroundColor: colors.surface, borderRadius: radii.xl, paddingVertical: spacing.xxxl, paddingHorizontal: spacing.lg, alignItems: "center", borderWidth: 1, borderColor: colors.hairline, marginBottom: spacing.xl },
-          softShadow("#5a3418", 10),
+          cardShadow(colors, 10),
         ]}
       >
         <Text variant="micro" color={colors.textMuted} style={{ textTransform: "uppercase", letterSpacing: 1 }}>{round.prompt}</Text>

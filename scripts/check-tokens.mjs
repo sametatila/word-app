@@ -18,10 +18,17 @@ import { readFile } from "node:fs/promises";
 
 const css = await readFile(new URL("../src/app/globals.css", import.meta.url), "utf8");
 const mob = await readFile(new URL("../mobile/src/theme/tokens.ts", import.meta.url), "utf8");
+const pal = await readFile(new URL("../mobile/src/theme/colors.ts", import.meta.url), "utf8");
 
 /** `--ad: değer;` → değer (ilk tanım; ölçekler tek yerde duruyor). */
 function cssVar(name) {
   const m = new RegExp(`--${name}:\\s*([^;]+);`).exec(css);
+  return m ? m[1].trim() : null;
+}
+/** Aynısının `.dark` bloğundaki hâli: koyu tema kendi değerini yeniden tanımlıyor. */
+const darkBlock = css.slice(css.indexOf("\n.dark {"));
+function darkVar(name) {
+  const m = new RegExp(`--${name}:\\s*([^;]+);`).exec(darkBlock);
   return m ? m[1].trim() : null;
 }
 /** `2rem` / `0.9375rem` → piksel (taban 16). */
@@ -96,29 +103,55 @@ for (const [k, want] of Object.entries(WANT_SPACING)) {
 }
 
 /* ── gölge ─────────────────────────────────────────────────────────────────
-   Mobil `softShadow(color, elevation)` iOS'ta üç sabit kullanıyor: y ofseti
-   yüksekliğin 0.7'si, bulanıklık 1.6'sı, opaklık 0.16. Web aynı formülü ÜÇ
-   BASAMAĞA DONDURMUŞ halde taşıyor (`--shadow-soft-sm/-soft/-soft-lg`,
+   Mobil `softShadow(color, elevation, opacity)` iOS'ta üç sabit kullanıyor: y
+   ofseti yüksekliğin 0.7'si, bulanıklık 1.6'sı, opaklık 0.16. Web aynı formülü
+   ÜÇ BASAMAĞA DONDURMUŞ halde taşıyor (`--shadow-soft-sm/-soft/-soft-lg`,
    sırasıyla elevation 6/10/16) ve formül değişirse webin donmuş değerleri
    sessizce eskiyor - ölçülen tam olarak bu.
 
    `spread` (-2/-4/-6px) ve CSS bulanıklığının iOS `shadowRadius`ıyla birebir
    olmayan anlamı kapsam dışı: ikisi de webe özgü ve kayıtlı bir yaklaşım.
-   KOYU tema da kapsam dışı - orada gölge bilerek siyah ve daha opak, çünkü
-   sıcak kahve bir gölge koyu zeminde görünmüyor (gerekçe `globals.css`te). */
-const shadowFn = /shadowOffset: \{ width: 0, height: elevation \* ([\d.]+) \}, shadowOpacity: ([\d.]+), shadowRadius: elevation \* ([\d.]+)/.exec(mob);
-if (!shadowFn) {
+
+   NÖTR GÖLGENİN RENGİ de ölçülüyor, İKİ TEMADA DA. Bir tur boyunca kapsam
+   dışıydı ("koyu tema webe özgü") ve tam orada bir hata birikti: mobildeki
+   yedi kart çağrısı sabit `#5a3418` geçiyordu, yani koyu temada gölge koyu
+   zeminin üstünde %16 opak bir kahveydi - görünmüyordu. Artık iki tarafta da
+   temayla değişen bir jeton var (`colors.ts` `shadowTint`/`shadowStrength`,
+   webde `.dark` bloğundaki `--shadow-soft*`). */
+const shadowFn = /shadowOffset: \{ width: 0, height: elevation \* ([\d.]+) \}, shadowOpacity: opacity, shadowRadius: elevation \* ([\d.]+)/.exec(mob);
+const shadowDefault = /export function softShadow\([^)]*opacity = ([\d.]+)\)/.exec(mob);
+if (!shadowFn || !shadowDefault) {
   problems.push("gölge: mobil `softShadow` formülü okunamadı (imza değişmiş olabilir)");
 } else {
-  const [, yF, opacity, blurF] = shadowFn;
+  const [, yF, blurF] = shadowFn;
+  const opacity = shadowDefault[1];
   for (const [name, elevation] of [["shadow-soft-sm", 6], ["shadow-soft", 10], ["shadow-soft-lg", 16]]) {
     const raw = cssVar(name);
-    const m = /^0 (\d+)px (\d+)px -\d+px rgb\([^/]+\/ ([\d.]+)\)$/.exec(raw ?? "");
+    const m = /^0 (\d+)px (\d+)px -\d+px rgb\(([^/]+)\/ ([\d.]+)\)$/.exec(raw ?? "");
     if (!m) { problems.push(`gölge ${name}: web değeri çözülemedi (${raw})`); continue; }
     eq(`gölge ${name} y`, Math.round(elevation * Number(yF)), Number(m[1]));
     eq(`gölge ${name} bulanıklık`, Math.round(elevation * Number(blurF)), Number(m[2]));
-    eq(`gölge ${name} opaklık`, Number(opacity), Number(m[3]));
+    eq(`gölge ${name} opaklık`, Number(opacity), Number(m[4]));
   }
+}
+
+/* Nötr gölgenin iki temadaki rengi ve gücü. Mobilde tek bir formül var, o
+   yüzden web tarafında ORTA basamak (`--shadow-soft`, elevation 10 - en çok
+   kullanılan kart gölgesi) karşılaştırılıyor. */
+const tint = (label, hex, raw) => {
+  const m = /rgb\(([\d\s]+)\/\s*([\d.]+)\)/.exec(raw ?? "");
+  if (!m) { problems.push(`${label}: web değeri çözülemedi (${raw})`); return; }
+  const web = "#" + m[1].trim().split(/\s+/).map((n) => Number(n).toString(16).padStart(2, "0")).join("");
+  eq(label, hex.toLowerCase(), web);
+  return Number(m[2]);
+};
+for (const [theme, read, want] of [["açık", cssVar, "light"], ["koyu", darkVar, "dark"]]) {
+  const block = new RegExp(`export const ${want}: Palette = \\{([\\s\\S]*?)\\n\\};`).exec(pal)?.[1] ?? "";
+  const hex = /shadowTint:\s*"([^"]+)"/.exec(block)?.[1];
+  const strength = Number(/shadowStrength:\s*([\d.]+)/.exec(block)?.[1]);
+  if (!hex || Number.isNaN(strength)) { problems.push(`gölge tinti (${theme}): mobil palette okunamadı`); continue; }
+  const webOpacity = tint(`gölge tinti (${theme})`, hex, read("shadow-soft"));
+  if (webOpacity !== undefined) eq(`gölge gücü (${theme})`, strength, webOpacity);
 }
 
 if (problems.length) {
@@ -126,6 +159,6 @@ if (problems.length) {
   for (const p of problems) console.error("  " + p);
   console.error("\nMobil kaynak, web ona uyar. Ayrım bilinçliyse betikteki eşleme tablosuna SEBEBİYLE yaz.");
 } else {
-  console.log(`check:tokens — tipografi (${TYPE.length}), yarıçap (${RADII.length}), boşluk (${Object.keys(WANT_SPACING).length}) ve gölge (3 basamak) ölçekleri iki platformda birebir: tamam`);
+  console.log(`check:tokens — tipografi (${TYPE.length}), yarıçap (${RADII.length}), boşluk (${Object.keys(WANT_SPACING).length}) ve gölge (3 basamak + iki temanın tinti) ölçekleri iki platformda birebir: tamam`);
 }
 process.exit(problems.length);
