@@ -7226,6 +7226,50 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     "beklenen",
   );
 
+  /* ── 199. bosluksuz katlama: "karsiligidir" diyen yorum yanlisti ─────
+   * Webin `foldTight`i basinda "mobil `lib/textFold` `foldTight`" yaziyordu
+   * ama KARSILIGI DEGILDI: mobil tarafta `foldTight` `foldCompare` uzerine
+   * kuruluyor (umlaut katlamasi + SAYI katlamasi), webde ise yalniz
+   * `normalize` vardi. Yani ayni cevap iki platformda farkli yargilaniyordu -
+   * "Fuesse" ya da "5" yazan Android'de yedek gecisi geciyor, webde
+   * gecemiyordu. On uc ornekle olculdu: yedisinde ayrisiyordu.
+   *
+   * `foldTight` YEDEK gecis: tam eslesme tutmayinca bosluksuz karsilastirma
+   * deneniyor. Yani ayrisma "cevap yanlis sayildi" diye gorunuyor, bir hata
+   * gibi degil.
+   *
+   * Kapi govdeleri karsilastirmiyor (yapilar farkli: web `normalize`,
+   * mobil `foldCompare`), her tarafi MUTLAK olcute bagliyor: iki katlama da
+   * hem harf katlamasindan hem sayi katlamasindan gecmeli. */
+  {
+    const webT = sil(read("src/components/games/types.ts"));
+    const mobT = sil(read("mobile/src/lib/textFold.ts"));
+    const govde = (src, ad) => {
+      const i = src.indexOf("function " + ad);
+      return i < 0 ? "" : src.slice(i, src.indexOf("\n}", i));
+    };
+    sameList(
+      "bosluksuz katlama ayni hatti izliyor",
+      [
+        "web harf=" + (/foldCase\(normalize\(/.test(govde(webT, "foldTight")) ? "var" : "YOK"),
+        "web sayi=" + (/foldNumbers\(/.test(govde(webT, "foldTight")) ? "var" : "YOK"),
+        "mobil taban=" + (/foldCompare\(/.test(govde(mobT, "foldTight")) ? "var" : "YOK"),
+        "mobil taban harf=" + (/foldCase\(/.test(govde(mobT, "foldCompare")) ? "var" : "YOK"),
+        "mobil taban sayi=" + (/foldNumbers\(/.test(govde(mobT, "foldCompare")) ? "var" : "YOK"),
+        /* Harf katlamasi ayni cifti kullanmali: biri "ue" oteki "u" yazsaydi
+           "schön" ile "schon" karisirdi (webin kendi yorumunun uyardigi sey). */
+        "harf tablosu=" + (
+          /ß\/g, "ss"[\s\S]{0,80}ä\/g, "ae"[\s\S]{0,80}ö\/g, "oe"[\s\S]{0,80}ü\/g, "ue"/.test(govde(webT, "foldCase"))
+          && /ß\/g, "ss"[\s\S]{0,80}ä\/g, "ae"[\s\S]{0,80}ö\/g, "oe"[\s\S]{0,80}ü\/g, "ue"/.test(govde(mobT, "foldCase"))
+            ? "ayni" : "AYRISIK"
+        ),
+      ],
+      ["web harf=var", "web sayi=var", "mobil taban=var", "mobil taban harf=var", "mobil taban sayi=var", "harf tablosu=ayni"],
+      "bulunan",
+      "beklenen",
+    );
+  }
+
   /* ── 198. gunun turunun puan formulu ─────────────────────────────────
    * Iki dosyanin da yorumu "formul ayni" diyordu (`game/daily`: "web'deki
    * lib/daily-score ile AYNI (ekranla tablo ayrismasin)"; `lib/daily-score`:

@@ -139,9 +139,31 @@ export function normalize(s: string, lang: TargetLang = currentTargetLang()): st
     .trim();
 }
 
-/** Boşluksuz karşılaştırma biçimi — mobil `lib/textFold` `foldTight`. */
+/**
+ * Almanca yazım katlaması — mobil `lib/textFold` `foldCase` ile aynı.
+ *
+ * Ayrı işlev olarak duruyor çünkü İKİ katlama da (boşluklu ve boşuksuz) buna
+ * ihtiyaç duyuyor; eskiden yalnız `foldSpelling`in içine gömülüydü ve
+ * `foldTight` ondan habersizdi.
+ */
+function foldCase(s: string, lang: TargetLang): string {
+  return lang === "de"
+    ? s.replace(/ß/g, "ss").replace(/ä/g, "ae").replace(/ö/g, "oe").replace(/ü/g, "ue")
+    : s;
+}
+
+/**
+ * Boşluksuz karşılaştırma biçimi — mobil `lib/textFold` `foldTight`.
+ *
+ * KARŞILIĞI OLDUĞUNU SÖYLÜYORDU AMA DEĞİLDİ. Mobil tarafta `foldTight`
+ * `foldCompare` üstüne kuruluyor, yani umlaut katlaması ve SAYI katlaması
+ * içeriyor; buradaki ise yalnız `normalize` idi. Sonuç, aynı cevabın iki
+ * platformda farklı yargılanmasıydı — "Fuesse" ya da "5" yazan Android'de
+ * yedek geçişi geçiyor, webde geçemiyordu. On üç örnekle ölçüldü: yedisinde
+ * ayrışıyordu, şimdi on üçünde de aynı.
+ */
 export function foldTight(s: string, lang: TargetLang = currentTargetLang()): string {
-  return normalize(s, lang).replace(/\s+/g, "");
+  return foldNumbers(foldCase(normalize(s, lang), lang), lang).replace(/\s+/g, "");
 }
 
 /**
@@ -187,12 +209,11 @@ export function foldSpelling(s: string, lang: TargetLang = currentTargetLang()):
   // Sayı sözcüğü → rakam, umlaut katlamadan ÖNCE (fünf ve fuenf ikisi de
   // tanınıyor, sıra aslında önemsiz): "fünf" ↔ "5" eşleşsin. Tanıyıcı sayıyı
   // rakam yazıyor, içerik sözcükle; ikisi de rakama iniyor.
-  return foldNumbers(normalize(s, lang), lang)
+  /* Umlaut katlaması artık `foldCase`te ve SAYI katlamasından ÖNCE geliyor —
+     mobil `foldCompare` ile aynı sıra. Sıra güvenli, çünkü sayı sözlüğü
+     umlautlu ve katlanmış yazımın İKİSİNİ de tanıyor (bkz. `lib/numbers`). */
+  return foldNumbers(foldCase(normalize(s, lang), lang), lang)
     .replace(ARTICLES[lang] ?? ARTICLES.de, " ")
-    .replace(/ß/g, "ss")
-    .replace(/ä/g, "ae")
-    .replace(/ö/g, "oe")
-    .replace(/ü/g, "ue")
     .replace(/\s+/g, " ")
     .trim();
 }

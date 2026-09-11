@@ -9606,3 +9606,44 @@ kayması, hız bonusunun yuvarlanması, yanlış cevabın erken dönüşünün k
 Ders: **bir sabit çiftini korumak, o sabitleri kullanan formülü korumaz.**
 Aynı sayılarla iki farklı sonuç üretmek gayet mümkün ve bu deftere bugüne
 kadar hep sayılar üzerinden bakılmıştı.
+
+## §11.293 — "Karşılığıdır" diyen yorum yanlıştı: boşluksuz katlama ayrışıyordu
+
+§11.292'nin yöntemini sürdürdüm: iki platformda ayrı yazılmış **saf hesap**
+gövdelerini tarayıp hangilerinin kapısı yok diye baktım. Doksan altı ortak
+işlev adı çıktı; çoğu zaten modül gövdesi olarak karşılaştırılıyor
+(`numbers`, `sentenceMatch`, `german`, `errors`). Dokuzunu tek tek
+karşılaştırdım: `checkPassword`, `classifyTyping`, `charDiff`, `articleRule`,
+`confusableHint` **birebir aynı** çıktı. Dördü ayrıştı.
+
+Üçü yapısal ve zararsızdı (`foldSpelling` aynı işlemleri farklı sırada
+yapıyor — sayı sözlüğü umlautlu ve katlanmış yazımın ikisini de tanıdığı için
+sonuç aynı; ölçtüm, on üç örnekte de aynı). **Biri gerçekti.**
+
+Webin `foldTight`i başında "mobil `lib/textFold` `foldTight`" yazıyordu ama
+**karşılığı değildi**: mobilde `foldCompare` üstüne kuruluyor — umlaut
+katlaması **ve sayı katlaması** içeriyor — webde ise yalnız `normalize` vardı.
+İki hattı yan yana çalıştırdım; on üç örneğin **yedisi** ayrışıyordu:
+
+| Girdi | Web (eski) | Mobil |
+|---|---|---|
+| "Ich bin fünf" | `ichbinfünf` | `ichbin5` |
+| "Füße" | `füße` | `fuesse` |
+| "Straße" | `straße` | `strasse` |
+| "zwölf" | `zwölf` | `12` |
+
+`foldTight` **yedek geçiş**: tam eşleşme tutmayınca boşluksuz karşılaştırma
+deneniyor. Yani ayrışma kullanıcıya hata gibi değil, **"cevabın yanlış"** diye
+görünüyordu — "Fuesse" ya da "5" yazan Android'de geçiyor, webde geçemiyordu.
+
+Web artık mobilin hattını izliyor: umlaut katlaması `foldCase` diye ayrı bir
+işleve çıktı (iki katlama da ona ihtiyaç duyuyor; eskiden yalnız
+`foldSpelling`in içine gömülüydü ve `foldTight` ondan habersizdi) ve
+`foldTight` `foldNumbers(foldCase(normalize(…)))` oldu. On üç örnekte de mobil
+ile aynı sonucu veriyor; `foldSpelling`in davranışı değişmedi (ayrıca ölçüldü).
+
+**§199** gövdeleri karşılaştırmıyor — yapılar farklı, karşılaştırma onları
+aynı yazmaya zorlardı — her tarafı **mutlak ölçüte** bağlıyor: iki katlama da
+hem harf hem sayı katlamasından geçmeli, ve umlaut çifti iki tarafta aynı
+olmalı (biri "oe" öteki "o" yazsaydı "schön" ile "schon" karışırdı — webin
+kendi yorumunun uyardığı şey). Dört enjeksiyonun dördü yakalandı.
