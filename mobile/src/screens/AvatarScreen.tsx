@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { t } from "../lib/i18n";
 import { View, ScrollView } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
@@ -8,7 +8,7 @@ import { PressableScale } from "../ui/PressableScale";
 import { ArrowBackIcon } from "../ui/icons";
 import { MascotAvatar } from "../ui/Avatar";
 import { HATS, GLASSES, MUSTACHES, HAT_COLORS } from "../ui/avatarParts";
-import { getAvatar, saveAvatar, DEFAULT_AVATAR, type AvatarConfig } from "../lib/avatar";
+import { saveAvatar, useAvatar, DEFAULT_AVATAR, type AvatarConfig } from "../lib/avatar";
 import { useTheme, spacing, radii, softShadow, type Palette } from "../theme";
 
 /**
@@ -54,8 +54,20 @@ export function AvatarScreen() {
   const { colors } = useTheme();
   const insets = useSafeAreaInsets();
   const nav = useNavigation<{ goBack: () => void }>();
-  const [cfg, setCfg] = useState<AvatarConfig>(DEFAULT_AVATAR);
-  useEffect(() => { void getAvatar().then(setCfg); }, []);
+  /*
+    TASLAK ile KAYITLI ayrı duruyor — webdeki düzenleme ekranıyla aynı sebep.
+
+    Ekran kayıtlı avatarı bir kez okuyup duruma kopyalıyordu; okuma eşzamansız
+    ve sunucudan gelen avatarın cihaza yazılmasıyla yarışıyor. Başka bir
+    cihazda avatarını seçmiş biri boş maskot görüp üzerine yazabiliyordu.
+
+    Kayıtlı değer artık reaktif; taslak yalnız kullanıcı bir şeye dokununca
+    doluyor ve o andan sonra kazanıyor.
+  */
+  const stored = useAvatar();
+  const [draft, setDraft] = useState<AvatarConfig | null>(null);
+  const cfg = draft ?? stored ?? DEFAULT_AVATAR;
+  const setCfg = (patch: Partial<AvatarConfig>) => setDraft({ ...cfg, ...patch });
 
   const none = (over: Partial<AvatarConfig>): AvatarConfig => ({ ...DEFAULT_AVATAR, hatColor: cfg.hatColor, ...over });
 
@@ -77,9 +89,9 @@ export function AvatarScreen() {
         </View>
 
         <Group title={t("avatar.hat")} colors={colors}>
-          <OptTile preview={none({ hat: null })} selected={cfg.hat === null} label={t("avatar.no_hat")} onPress={() => setCfg((c) => ({ ...c, hat: null }))} colors={colors} />
+          <OptTile preview={none({ hat: null })} selected={cfg.hat === null} label={t("avatar.no_hat")} onPress={() => setCfg({ hat: null })} colors={colors} />
           {HATS.map((h, i) => (
-            <OptTile key={h} label={`${t("avatar.hat")} ${i + 1}`} preview={none({ hat: h })} selected={cfg.hat === h} onPress={() => setCfg((c) => ({ ...c, hat: h }))} colors={colors} />
+            <OptTile key={h} label={`${t("avatar.hat")} ${i + 1}`} preview={none({ hat: h })} selected={cfg.hat === h} onPress={() => setCfg({ hat: h })} colors={colors} />
           ))}
         </Group>
 
@@ -90,7 +102,7 @@ export function AvatarScreen() {
               {HAT_COLORS.map((col) => {
                 const sel = cfg.hatColor === col;
                 return (
-                  <PressableScale hitSlop={4} key={col} onPress={() => setCfg((c) => ({ ...c, hatColor: col }))} style={{ width: 44, height: 44, borderRadius: 20, backgroundColor: col, borderWidth: 3, borderColor: sel ? colors.text : "transparent" }} />
+                  <PressableScale hitSlop={4} key={col} onPress={() => setCfg({ hatColor: col })} style={{ width: 44, height: 44, borderRadius: 20, backgroundColor: col, borderWidth: 3, borderColor: sel ? colors.text : "transparent" }} />
                 );
               })}
             </View>
@@ -98,16 +110,16 @@ export function AvatarScreen() {
         ) : null}
 
         <Group title={t("avatar.glasses")} colors={colors}>
-          <OptTile preview={none({ glasses: null })} selected={cfg.glasses === null} label={t("avatar.no_glasses")} onPress={() => setCfg((c) => ({ ...c, glasses: null }))} colors={colors} />
+          <OptTile preview={none({ glasses: null })} selected={cfg.glasses === null} label={t("avatar.no_glasses")} onPress={() => setCfg({ glasses: null })} colors={colors} />
           {GLASSES.map((g, i) => (
-            <OptTile key={g} label={`${t("avatar.glasses")} ${i + 1}`} preview={none({ glasses: g })} selected={cfg.glasses === g} onPress={() => setCfg((c) => ({ ...c, glasses: g }))} colors={colors} />
+            <OptTile key={g} label={`${t("avatar.glasses")} ${i + 1}`} preview={none({ glasses: g })} selected={cfg.glasses === g} onPress={() => setCfg({ glasses: g })} colors={colors} />
           ))}
         </Group>
 
         <Group title={t("avatar.mustache")} colors={colors}>
-          <OptTile preview={none({ mustache: null })} selected={cfg.mustache === null} label={t("avatar.no_mustache")} onPress={() => setCfg((c) => ({ ...c, mustache: null }))} colors={colors} />
+          <OptTile preview={none({ mustache: null })} selected={cfg.mustache === null} label={t("avatar.no_mustache")} onPress={() => setCfg({ mustache: null })} colors={colors} />
           {MUSTACHES.map((m, i) => (
-            <OptTile key={m} label={`${t("avatar.mustache")} ${i + 1}`} preview={none({ mustache: m })} selected={cfg.mustache === m} onPress={() => setCfg((c) => ({ ...c, mustache: m }))} colors={colors} />
+            <OptTile key={m} label={`${t("avatar.mustache")} ${i + 1}`} preview={none({ mustache: m })} selected={cfg.mustache === m} onPress={() => setCfg({ mustache: m })} colors={colors} />
           ))}
         </Group>
 

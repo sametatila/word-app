@@ -1,10 +1,10 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { MascotAvatar } from "@/components/avatar";
 import { GLASSES, HAT_COLORS, HATS, MUSTACHES } from "@/components/avatar-parts";
-import { getAvatar, saveAvatar, DEFAULT_AVATAR, type AvatarConfig } from "@/lib/avatar";
+import { saveAvatar, useAvatar, DEFAULT_AVATAR, type AvatarConfig } from "@/lib/avatar";
 import { PageBack } from "@/components/page-back";
 import { useT } from "@/lib/i18n/client";
 
@@ -22,11 +22,23 @@ import { useT } from "@/lib/i18n/client";
 export function AvatarEditor() {
   const t = useT();
   const router = useRouter();
-  const [cfg, setCfg] = useState<AvatarConfig>(DEFAULT_AVATAR);
+  /*
+    TASLAK ile KAYITLI ayrı duruyor.
 
-  // Depolama yalnız istemcide okunabiliyor; ilk render varsayılanla çiziliyor
-  // ve kayıtlı seçim hemen ardından yerine geçiyor.
-  useEffect(() => setCfg(getAvatar()), []);
+    Ekran kayıtlı avatarı BİR KEZ okuyup duruma kopyalıyordu ve bu okuma,
+    sunucudan gelen avatarın cihaza yazılmasından ÖNCE oluyordu (alt bileşenin
+    etkisi üstünkinden önce çalışır). Başka bir cihazda avatarını seçmiş biri
+    bu ekranı açınca boş maskot görüyor, bir şey seçip kaydedince de gerçek
+    avatarını üzerine yazıyordu.
+
+    Kayıtlı değer artık reaktif okunuyor; taslak yalnız kullanıcı bir şeye
+    dokununca doluyor ve o andan sonra kazanıyor (geç gelen eşitleme
+    düzenlemeyi bozmasın).
+  */
+  const stored = useAvatar();
+  const [draft, setDraft] = useState<AvatarConfig | null>(null);
+  const cfg = draft ?? stored ?? DEFAULT_AVATAR;
+  const setCfg = (patch: Partial<AvatarConfig>) => setDraft({ ...cfg, ...patch });
 
   /** Tek bir aksesuarı gösteren önizleme — diğerleri kapalı, şapka rengi korunuyor. */
   const only = (over: Partial<AvatarConfig>): AvatarConfig => ({
@@ -49,14 +61,14 @@ export function AvatarEditor() {
       </div>
 
       <Group title={t("avatar.hat")}>
-        <Opt preview={only({ hat: null })} selected={cfg.hat === null} label={t("avatar.no_hat")} onPick={() => setCfg((c) => ({ ...c, hat: null }))} />
+        <Opt preview={only({ hat: null })} selected={cfg.hat === null} label={t("avatar.no_hat")} onPick={() => setCfg({ hat: null })} />
         {HATS.map((h) => (
           <Opt
             key={h}
             preview={only({ hat: h })}
             selected={cfg.hat === h}
             label={h}
-            onPick={() => setCfg((c) => ({ ...c, hat: h }))}
+            onPick={() => setCfg({ hat: h })}
           />
         ))}
       </Group>
@@ -71,7 +83,7 @@ export function AvatarEditor() {
                 type="button"
                 aria-label={`${t("avatar.hat_color")} ${col}`}
                 aria-pressed={cfg.hatColor === col}
-                onClick={() => setCfg((c) => ({ ...c, hatColor: col }))}
+                onClick={() => setCfg({ hatColor: col })}
                 className="pressable h-11 w-11 rounded-full"
                 style={{
                   background: col,
@@ -84,27 +96,27 @@ export function AvatarEditor() {
       ) : null}
 
       <Group title={t("avatar.glasses")}>
-        <Opt preview={only({ glasses: null })} selected={cfg.glasses === null} label={t("avatar.no_glasses")} onPick={() => setCfg((c) => ({ ...c, glasses: null }))} />
+        <Opt preview={only({ glasses: null })} selected={cfg.glasses === null} label={t("avatar.no_glasses")} onPick={() => setCfg({ glasses: null })} />
         {GLASSES.map((g) => (
           <Opt
             key={g}
             preview={only({ glasses: g })}
             selected={cfg.glasses === g}
             label={g}
-            onPick={() => setCfg((c) => ({ ...c, glasses: g }))}
+            onPick={() => setCfg({ glasses: g })}
           />
         ))}
       </Group>
 
       <Group title={t("avatar.mustache")}>
-        <Opt preview={only({ mustache: null })} selected={cfg.mustache === null} label={t("avatar.no_mustache")} onPick={() => setCfg((c) => ({ ...c, mustache: null }))} />
+        <Opt preview={only({ mustache: null })} selected={cfg.mustache === null} label={t("avatar.no_mustache")} onPick={() => setCfg({ mustache: null })} />
         {MUSTACHES.map((m) => (
           <Opt
             key={m}
             preview={only({ mustache: m })}
             selected={cfg.mustache === m}
             label={m}
-            onPick={() => setCfg((c) => ({ ...c, mustache: m }))}
+            onPick={() => setCfg({ mustache: m })}
           />
         ))}
       </Group>
