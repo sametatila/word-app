@@ -5,11 +5,12 @@ import { useCachedJson } from "@/lib/use-cached";
 import { SkeletonBar, SkeletonLine, SkeletonTile } from "@/components/skeleton";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { CheckIcon, GiftIcon, TargetIcon } from "@/components/icons";
+import { BoltIcon, CheckIcon, GiftIcon, TargetIcon } from "@/components/icons";
 import { track } from "@/lib/track";
 import { play } from "@/lib/sfx";
 import { useT } from "@/lib/i18n/client";
 import { localDay } from "@/lib/day";
+import { CardGrid } from "@/components/layout";
 import { ALL_DONE_ID, ALL_DONE_XP } from "@/lib/quest-constants";
 
 /**
@@ -108,21 +109,23 @@ export function QuestCard() {
         role="status"
         aria-busy="true"
         aria-label={t("dailyquests.daily_quests")}
-        className="card mx-auto mt-4 w-full max-w-md overflow-hidden"
+        className="mt-4"
       >
-        <div className="flex items-center justify-between gap-3 border-b px-5 py-3.5" style={{ borderColor: "var(--border)" }}>
+        <div className="mb-3 flex items-baseline justify-between gap-3">
           <SkeletonLine variant="strong" width={130} />
           <SkeletonLine variant="caption" width={92} />
         </div>
-        {[0, 1, 2].map((i) => (
-          <div key={i} className="flex items-center gap-3 px-5 py-3" style={{ opacity: 1 - i * 0.12 }}>
-            <SkeletonTile size={28} className="rounded-full" />
-            <div className="min-w-0 flex-1">
-              <SkeletonLine variant="body" width={`${70 - i * 8}%`} />
-              <SkeletonBar height={6} className="mt-1.5" />
+        <CardGrid min={360}>
+          {[0, 1, 2].map((i) => (
+            <div key={i} className="card flex items-center gap-3 p-4" style={{ opacity: 1 - i * 0.12 }}>
+              <SkeletonTile size={42} />
+              <div className="min-w-0 flex-1">
+                <SkeletonLine variant="body" width={`${70 - i * 8}%`} />
+                <SkeletonBar height={6} className="mt-1.5" />
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </CardGrid>
       </section>
     );
   if (!board) return null;
@@ -131,18 +134,26 @@ export function QuestCard() {
 
   return (
     <section
-      /* Giriş animasyonu YOK: bu kart başlangıç ekranında bir zincirin halkası
-         ve zinciri `Stagger` yönetiyor (bkz. components/reveal). Kendi başına
-         belirdiğinde altı kart aynı anda ama farklı mesafelerle (kimi 8, kimi
-         14 piksel) açılıyordu — hepsi birden oynayan ama aynı ritmi tutmayan
-         bir hareket. */
-      className="card mx-auto mt-4 w-full max-w-md overflow-hidden"
+      /* Giriş animasyonu YOK: bu bölüm başlangıç ekranında bir zincirin
+         halkası ve zinciri `Stagger` yönetiyor (bkz. components/reveal).
+         Kendi başına belirdiğinde altı kart aynı anda ama farklı mesafelerle
+         (kimi 8, kimi 14 piksel) açılıyordu — hepsi birden oynayan ama aynı
+         ritmi tutmayan bir hareket. */
+      className="mt-4"
     >
-      <div
-        className="flex items-baseline justify-between border-b px-5 py-3.5"
-        style={{ borderColor: "var(--border)" }}
-      >
-        <h2 className="flex items-center gap-2 font-bold">
+      {/*
+        BÖLÜM BAŞLIĞI + KART IZGARASI — Android ile aynı yapı.
+
+        Burası tek bir kartın içinde çizgiyle ayrılmış üç satırdı; Android ise
+        başlığı kartın DIŞINDA tutup her görevi kendi kartı olarak ızgaraya
+        koyuyor (`ui/DailyQuests`). İki uygulamada aynı pano iki ayrı şey gibi
+        görünüyordu: webde dar bir liste kartı, Android'de geniş ekranda iki
+        sütuna açılan kartlar. Ölçü de oradan: mobil `minItemWidth={380}`,
+        web `min={360}` — aradaki fark bilinçli ve `learn-hub`ta gerekçesi
+        yazılı (bu sayfa 48rem'de sabit, 380 iki sütunu asla sığdırmıyor).
+      */}
+      <div className="mb-3 flex items-baseline justify-between gap-3">
+        <h2 className="flex items-center gap-2 text-h3 text-[color:var(--text-muted)]">
           <TargetIcon size={17} /> {t("dailyquests.daily_quests")}
         </h2>
         {claimable > 0 ? (
@@ -160,26 +171,26 @@ export function QuestCard() {
         )}
       </div>
 
-      <ul>
+      <CardGrid min={360}>
         {board.quests.map((q) => {
           const done = q.done >= q.target;
           const pct = Math.min(100, Math.round((q.done / q.target) * 100));
           return (
-            <li
+            <div
               key={q.id}
-              className="flex items-center gap-3 border-b px-5 py-3 last:border-b-0"
-              style={{ borderColor: "var(--border)" }}
+              className="card flex items-center gap-3 p-4"
+              style={{ borderColor: done ? "var(--color-mint)" : "var(--border)" }}
             >
+              {/* Karo: tamamlanmışsa dolu yeşil + onay, değilse yumuşak marka
+                  zemin + şimşek — Android `QuestRow` ile aynı (42 piksel). */}
               <span
-                className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full text-[11px] font-bold"
+                className="flex h-[42px] w-[42px] shrink-0 items-center justify-center rounded-tile"
                 style={{
-                  background: done
-                    ? "color-mix(in srgb, var(--color-mint) 18%, transparent)"
-                    : "var(--surface-2)",
-                  color: done ? "var(--color-mint)" : "var(--text-muted)",
+                  background: done ? "var(--color-mint)" : "color-mix(in srgb, var(--color-brand) 14%, transparent)",
+                  color: done ? "#fff" : "var(--color-brand)",
                 }}
               >
-                {done ? <CheckIcon size={15} /> : `${q.done}`}
+                {done ? <CheckIcon size={22} /> : <BoltIcon size={20} />}
               </span>
 
               <div className="min-w-0 flex-1">
@@ -197,14 +208,19 @@ export function QuestCard() {
                     className="h-full rounded-full"
                     style={{ background: done ? "var(--color-mint)" : "var(--color-brand)" }}
                     initial={{ width: 0 }}
-                    animate={{ width: `${pct}%` }}
+                    animate={{ width: `${Math.max(3, pct)}%` }}
                   />
                 </div>
+                {/* Sayı çubuğun ALTINDA — Android'de de öyle; sağ sütun artık
+                    kazanılacak XP'yi taşıyor. */}
+                <p className="muted mt-1 text-micro tabular-nums">
+                  {Math.min(q.done, q.target)}/{q.target}
+                </p>
               </div>
 
-              {q.claimed ? (
-                <span className="muted shrink-0 text-[11px] font-semibold">+{q.xp} XP</span>
-              ) : done ? (
+              {/* Üç durum Android ile aynı: tamam+alınmamış → düğme,
+                  ötekilerde kazanılacak XP (ilerleme çubuğun altında yazıyor). */}
+              {done && !q.claimed ? (
                 <button
                   onClick={() => void claim(q.id)}
                   disabled={busy === q.id}
@@ -213,21 +229,34 @@ export function QuestCard() {
                   {busy === q.id ? "…" : t("dailyquests.claim_xp", { xp: q.xp })}
                 </button>
               ) : (
-                <span className="muted shrink-0 text-[11px] tabular-nums">
-                  {q.done}/{q.target}
+                <span className="shrink-0 text-right">
+                  <span
+                    className="block text-strong"
+                    style={{ color: done ? "var(--color-mint)" : "var(--color-brand)" }}
+                  >
+                    +{q.xp}
+                  </span>
+                  <span className="muted block text-micro">XP</span>
                 </span>
               )}
-            </li>
+            </div>
           );
         })}
-      </ul>
+      </CardGrid>
 
       {board.allDone ? (
+        /* Kutu artık KENDİ kartı: pano tek bir kart olmaktan çıkınca bu
+           şerit dayanaksız kalıyordu. Android'de de ayrı bir kart ve aynı
+           renk ailesinde (`ui/DailyQuests`, `successSoft` zemin + `success`
+           kenarlık). */
         <div
-          className="flex items-center gap-3 px-5 py-3.5"
-          style={{ background: "color-mix(in srgb, var(--color-mint) 10%, transparent)" }}
+          className="card mt-3 flex items-center gap-3 p-4"
+          style={{
+            background: "color-mix(in srgb, var(--color-mint) 10%, transparent)",
+            borderColor: "var(--color-mint)",
+          }}
         >
-          <GiftIcon size={20} />
+          <GiftIcon size={22} />
           <p className="min-w-0 flex-1 text-sm font-semibold">
             {board.allClaimed ? t("dailyquests.all_three_done") : t("dailyquests.all_three_done_sub")}
           </p>
@@ -250,7 +279,7 @@ export function QuestCard() {
           role="status"
           initial={{ opacity: 0, y: 6 }}
           animate={{ opacity: 1, y: 0 }}
-          className="px-5 py-2 text-center text-sm font-bold"
+          className="mt-2 py-2 text-center text-sm font-bold"
           style={{ color: "var(--color-mint)" }}
         >
           {t("dailyquests.xp_earned", { xp: flash })}
