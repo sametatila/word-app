@@ -6837,3 +6837,26 @@ kelimesi olmayan bir oyunu seçen ise neden boş olduğunu hiç öğrenemiyordu.
 hatası "tur bitti" görünüyordu; burada boş kuyruk. Üç turda üçüncü kez aynı
 kalıp çıktı — boş ya da hatalı bir cevabın "başarıyla bitti" ekranına düşmesi.
 
+
+### 11.194 Sınav bölümlerinin ne sorduğu Android'de hiç yazmıyordu
+
+`exam.` uzayında 36 web-özel anahtar vardı; yedisi `exam.brief_*`, yani her
+sınav bölümünün ne yaptıracağını anlatan cümleler.
+
+Web her bölümün önüne bir kart koyuyor: Teil sırası, bölümün Almanca ve kendi
+dilindeki adı, brif ("Sınavın omurgası. Anlamı verilen cümleyi kur…"), kaç
+madde ve kalan süre, sonra "Bölüme başla". Mobil kapaktan doğrudan ilk soruya,
+bölüm bitince de doğrudan sonrakine geçiyordu.
+
+Bu, §89'un (sınav kapağında bölümler ve süre) devamı: orada "sınava GİRMEDEN
+ne sorulacağını bilmek" ölçülmüştü, burada aynı soru bölüm başına soruluyor.
+
+**Sayaç tuzağı.** Yeni fazı sayacın dışında bırakmak kolaydı — ve yanlış
+olurdu: web sayacı kart sırasında durdurmuyor, durdurmak Android'de bölümler
+arasında sınırsız okuma süresi verirdi. Aynı kâğıt iki platformda iki farklı
+sınav olurdu. Kapı bunu da ölçüyor.
+
+Aynı denetimde iki uzay daha bakıldı ve ikisi de **temiz çıktı**: `growth.`
+(13) ve `quest.` (7) sunucuda çevriliyor (`lib/growth`, `lib/quests`), mobil
+metni hazır alıyor — `ach.`, `push.` ve `email.` ile aynı sınıf.
+
