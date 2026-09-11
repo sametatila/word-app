@@ -9,7 +9,7 @@ import { Card } from "../ui/Card";
 import { Skeleton, textHeight } from "../ui/Skeleton";
 import { Text } from "../ui/Text";
 import { PressableScale } from "../ui/PressableScale";
-import { BoltIcon, WalkIcon, ExamIcon, ArrowRightIcon, PodiumIcon, CrownIcon, QuizIcon, RepeatIcon } from "../ui/icons";
+import { BoltIcon, WalkIcon, ExamIcon, ArrowRightIcon, PodiumIcon, CrownIcon, QuizIcon, RepeatIcon, FlameIcon } from "../ui/icons";
 import { useAuth } from "../lib/AuthContext";
 import { useMe } from "../lib/useMe";
 import { useMicrophone } from "../lib/useMicrophone";
@@ -180,6 +180,10 @@ export function LearnScreen() {
         <ActionRow title={t("learn.practice")} subtitle={t("learn.practice_one_game_with_your_own")} tint={colors.primary} icon={QuizIcon} onPress={() => nav.navigate("Practice")} />
         <ActionRow title={t("learn.daily_round_2")} subtitle={t("learn.same_challenge_for_everyone_get")} tint={colors.info} icon={PodiumIcon} onPress={() => nav.navigate("Daily")} />
         <ActionRow title={t("learn.weekly_quiz")} subtitle={t("learn.test_what_you_ve_learned_weekly")} tint={colors.success} icon={CrownIcon} onPress={() => nav.navigate("Weekly")} />
+        {/* HAYATTA KALMA. Web'de `/learn/challenge` olarak baştan beri vardı,
+            Android'de yoktu: aynı rekor tablosuna yalnız tarayıcıdan
+            oynayanlar yazıyordu. */}
+        <ActionRow title={t("learn.survival")} subtitle={t("learn.survival_pitch")} tint={colors.danger} icon={FlameIcon} onPress={() => nav.navigate("Challenge")} />
         {/* Seviye sınavı: beş bölüm, 45 dakika — ünite ya da modül ölçeğinde
             değil, o yüzden Patika'da değil burada. Web'de de Öğren'de
             (components/learn/learn-hub). Mobilde ExamScreen'e giden İLK

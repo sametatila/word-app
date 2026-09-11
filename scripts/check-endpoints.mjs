@@ -115,8 +115,6 @@ const WEB_ONLY_METHOD = {
   "POST /api/session": "tur ORTASI ilerleme damgasi; mobil ilerlemeyi cevaplarla birlikte /api/answers'a yaziyor",
   "POST /api/pronounce": "telaffuz puani - karar bekliyor (web-parity 11.139)",
   "GET /api/premium/referral": "mobil ayni kodu /api/premium/status icinden aliyor",
-  "GET /api/challenge": "hayatta kalma modu webe ozel",
-  "POST /api/challenge": "hayatta kalma modu webe ozel",
   "POST /api/admin/legal": "yonetim panosu",
   "POST /api/admin/premium": "yonetim panosu",
 };
@@ -124,7 +122,6 @@ const WEB_ONLY_METHOD = {
 const WEB_ONLY = {
   "/api/admin/legal": "yonetim panosu — mobilde yok, olmayacak",
   "/api/admin/premium": "yonetim panosu — mobilde yok, olmayacak",
-  "/api/challenge": "hayatta kalma modu webe ozel (bkz. learn/challenge sayfasi ve mobile pushRoute yorumu)",
   "/api/push/subscribe": "TARAYICI push aboneligi; mobil FCM ile /api/push/device cagiriyor",
   "/api/premium/referral": "mobil ayni kodu /api/premium/status icinden aliyor (usePremiumStatus().referral.code)",
   "/api/pronounce": "telaffuz PUANI; mobil konusmayi cihazdaki taniyici + spokenMatches ile metin olarak esliyor — web-parity 11.136",

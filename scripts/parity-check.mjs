@@ -3452,6 +3452,42 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   sameList("ders yapabilirlik eslemesi", esleme("mobile/src/game/candoMap.ts"), esleme("src/lib/cando-map.ts"));
 }
 
+/* ── 100. hayatta kalma turu ──────────────────────────────────────────────
+ * Web'de `/learn/challenge` baştan beri vardı, Android'de EKRAN yoktu: uç
+ * (`/api/challenge`) ve dalga mantığı sunucuda dururken rekor tablosuna
+ * yalnız tarayıcıdan oynayanlar yazıyordu (§11.25 ile aynı sınıf - web
+ * bileşeninin kendi başlığı da "mobilde bu modun karşılığı YOK" diyordu).
+ *
+ * Ayni rekor tablosunda iki farklı oyun yarışmasın diye SAYILAR ölçülüyor:
+ * başlangıç süresi, bonus, hızlı bonus, ceza, hızlı sınır, tavan, tehlike
+ * eşiği, çarpan basamakları ve puan formülü. Bir de giriş noktası: ekran
+ * varsa ama menüde yoksa kimse bulamaz. */
+{
+  const mod = (p, giris) => {
+    const src = read(p).replace(/\/\*[\s\S]*?\*\//g, " ").replace(/\/\/[^\n]*/g, " ");
+    const sabit = (ad) => new RegExp("const " + ad + " = ([\\d.]+)").exec(src)?.[1] ?? "?";
+    const carpan = [...src.matchAll(/combo >= (\d+)\) return ([\d.]+)/g)].map((m) => m[1] + "x" + m[2]);
+    return [
+      "baslangic=" + sabit("START_SECONDS"),
+      "bonus=" + sabit("BONUS_MS"),
+      "hizli bonus=" + sabit("FAST_BONUS_MS"),
+      "ceza=" + sabit("PENALTY_MS"),
+      "hizli sinir=" + sabit("FAST_LIMIT_MS"),
+      "tavan=" + sabit("MAX_SECONDS"),
+      "tehlike=" + sabit("DANGER_SECONDS"),
+      ...carpan,
+      "puan formulu=" + (/\(10 \+ tier \* 5 \+ \(fast \? 5 : 0\)\) \* multiplier\(nextCombo\)/.test(src) ? "var" : "yok"),
+      "kilometre taslari=" + (/\[3, 5, 7, 10, 15\]\.includes\(nextCombo\)/.test(src) ? "var" : "yok"),
+      "giris=" + (new RegExp(giris).test(read(giris.startsWith("/learn") ? "src/components/learn/learn-hub.tsx" : "mobile/src/screens/LearnScreen.tsx")) ? "var" : "yok"),
+    ];
+  };
+  sameList(
+    "hayatta kalma",
+    mod("mobile/src/screens/ChallengeScreen.tsx", 'navigate\\("Challenge"\\)'),
+    mod("src/components/challenge-player.tsx", "/learn/challenge"),
+  );
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"

@@ -36,6 +36,7 @@ import { BossScreen } from "../screens/BossScreen";
 import { PracticeScreen } from "../screens/PracticeScreen";
 import { CandoScreen } from "../screens/CandoScreen";
 import { WritingsScreen } from "../screens/WritingsScreen";
+import { ChallengeScreen } from "../screens/ChallengeScreen";
 import { RoleplayExamScreen } from "../screens/RoleplayExamScreen";
 import { LessonScreen } from "../screens/LessonScreen";
 import { QuizScreen } from "../screens/QuizScreen";
@@ -60,6 +61,8 @@ export type RootStackParams = {
   /** Modul patronu - sureli tur; modulun derslerindeki kelimelerden kuruluyor. */
   Boss: { level: string; moduleIndex: number };
   Walk: undefined;
+  /** Hayatta kalma turu: süre doğru cevapla kazanılıyor, yanlışta yanıyor. */
+  Challenge: undefined;
   Paywall: undefined;
   Unit: { index: number; level: string; theme: string; items?: { id: string; kind: string; title: string; titleTr?: string | null; done: boolean; playable: boolean; attempted?: boolean; open?: boolean; ref?: string | null }[] };
   Lesson: { id: string };
@@ -115,6 +118,7 @@ export function RootStack({ initialRoute }: { initialRoute: keyof RootStackParam
       <Stack.Screen name="MockStats" component={MockStatsScreen} layout={contentColumnLayout} />
       <Stack.Screen name="Exam" component={ExamScreen} options={{ animation: "slide_from_bottom" }} />
       <Stack.Screen name="Walk" component={WalkModeScreen} options={{ animation: "slide_from_bottom" }} />
+      <Stack.Screen name="Challenge" component={ChallengeScreen} options={{ animation: "slide_from_bottom" }} layout={contentColumnLayout} />
       <Stack.Screen name="Paywall" component={PaywallScreen} options={{ animation: "slide_from_bottom" }} />
       <Stack.Screen name="Unit" component={UnitScreen} />
       <Stack.Screen name="Lesson" component={LessonScreen} options={{ animation: "slide_from_bottom" }} />

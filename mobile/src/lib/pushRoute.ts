@@ -37,14 +37,13 @@ function friendTab(v: string | null): FriendTab | undefined {
  * mobilde ana ekran açılıyordu — bildirimin çağırdığı şey bir dokunuş daha
  * uzaktı. Kardeş yollar da aynı sınıftan olduğu için birlikte eşlendi.
  *
- * `/learn/challenge` burada YOK, çünkü mobilde karşılığı olan bir ekran yok;
- * o adres sekmelere düşmeye devam ediyor.
  */
 const LEARN_SUB = {
   weekly: "Weekly",
   daily: "Daily",
   practice: "Practice",
   walk: "Walk",
+  challenge: "Challenge",
 } as const satisfies Record<string, keyof RootStackParams>;
 
 export type PushRoute = { name: keyof RootStackParams; params?: object };
