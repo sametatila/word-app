@@ -1,0 +1,1007 @@
+[
+ {
+  "tr": "Haber dili",
+  "kind": "titleTr",
+  "de": "Die Sprache der Nachrichten"
+ },
+ {
+  "tr": "Kural ve öğüt",
+  "kind": "titleTr",
+  "de": "Regel und Rat"
+ },
+ {
+  "tr": "Hikâyenin sırası",
+  "kind": "titleTr",
+  "de": "Die Reihenfolge der Geschichte"
+ },
+ {
+  "tr": "Deneyimi bağlamak",
+  "kind": "titleTr",
+  "de": "Erfahrung verbinden"
+ },
+ {
+  "tr": "Söylenenleri bağlamak",
+  "kind": "titleTr",
+  "de": "Gesagtes weitergeben"
+ },
+ {
+  "tr": "Haber dilini okumayı öğretir: kimin yaptığı değil, neyin olduğu söylenir.",
+  "kind": "summary",
+  "de": "Vermittelt, wie man Nachrichtensprache liest: es steht nicht, wer etwas getan hat, sondern was geschehen ist."
+ },
+ {
+  "tr": "Bir toplantıyı aktarmayı öğretir: kim ne söyledi, ne önerildi, ne karara bağlandı.",
+  "kind": "summary",
+  "de": "Vermittelt, wie man eine Besprechung wiedergibt: wer was gesagt hat, was vorgeschlagen und was entschieden wurde."
+ },
+ {
+  "tr": "Kuralı, yasağı ve öğüdü ayırmayı öğretir: must, mustn't ve should aynı şey değildir.",
+  "kind": "summary",
+  "de": "Vermittelt, wie man Regel, Verbot und Rat trennt: must, mustn't und should sind nicht dasselbe."
+ },
+ {
+  "tr": "Bir aksiliği sırayla anlatmayı öğretir: önce olan geriye alınır, sonra olan öne çıkar.",
+  "kind": "summary",
+  "de": "Vermittelt, wie man ein Missgeschick der Reihe nach erzählt: das Frühere rückt zurück, das Spätere nach vorn."
+ },
+ {
+  "tr": "Deneyimi anlatmayı öğretir: bitmiş bir olay ile hâlâ sayılan bir deneyim ayrı zamanlarla söylenir.",
+  "kind": "summary",
+  "de": "Vermittelt, wie man von Erfahrung erzählt: ein abgeschlossenes Ereignis und eine noch zählende Erfahrung stehen in verschiedenen Zeiten."
+ },
+ {
+  "tr": "kulübe yeni katılmış, kuralları bilmeyen biri",
+  "kind": "partner",
+  "de": "jemand, der neu im Verein ist und die Regeln nicht kennt"
+ },
+ {
+  "tr": "olayı baştan sona dinlemek isteyen bir arkadaş",
+  "kind": "partner",
+  "de": "ein Freund, der die Geschichte von Anfang bis Ende hören will"
+ },
+ {
+  "tr": "haberi duymuş ama ayrıntıyı bilmeyen bir arkadaş",
+  "kind": "partner",
+  "de": "eine Freundin, die davon gehört hat, aber die Details nicht kennt"
+ },
+ {
+  "tr": "deneyimini merak eden, sıcak bir program sorumlusu",
+  "kind": "partner",
+  "de": "eine herzliche Programmleiterin, die deine Erfahrung wissen will"
+ },
+ {
+  "tr": "toplantıyı kaçırmış, kararı merak eden bir iş arkadaşı",
+  "kind": "partner",
+  "de": "ein Kollege, der die Besprechung verpasst hat und die Entscheidung wissen will"
+ },
+ {
+  "tr": "Dün stresli görünüyordun. Ne oldu?",
+  "kind": "openingTr",
+  "de": "Du hast gestern gestresst gewirkt. Was ist passiert?"
+ },
+ {
+  "tr": "Bugün ilk günüm. Neleri bilmem gerekiyor?",
+  "kind": "openingTr",
+  "de": "Heute ist mein erster Tag. Was muss ich wissen?"
+ },
+ {
+  "tr": "Kaçırdığım için üzgünüm. Ne karar verdiler?",
+  "kind": "openingTr",
+  "de": "Schade, dass ich es verpasst habe. Was haben sie entschieden?"
+ },
+ {
+  "tr": "Sokağımızla ilgili bir şey duydum. Doğru mu?",
+  "kind": "openingTr",
+  "de": "Ich habe etwas über unsere Straße gehört. Stimmt das?"
+ },
+ {
+  "tr": "Geldiğiniz için teşekkürler. Daha önce hiç böyle bir şey yaptınız mı?",
+  "kind": "openingTr",
+  "de": "Danke, dass Sie gekommen sind. Haben Sie so etwas schon einmal gemacht?"
+ },
+ {
+  "tr": "Bir spor kulübüne yeni katılan biri kuralları soruyor. Neyin zorunlu, neyin yasak olduğunu söyle ve ona iki öğüt ver.",
+  "kind": "scene",
+  "de": "Jemand, der neu in einem Sportverein ist, fragt nach den Regeln. Sag, was Pflicht und was verboten ist, und gib zwei Ratschläge."
+ },
+ {
+  "tr": "Bir gönüllülük programına başvurdun ve görüşmedesin. Deneyimini anlat: neyi hâlâ yapıyorsun, neyi geçmişte yaptın, neyi hiç yapmadın.",
+  "kind": "scene",
+  "de": "Du hast dich für ein Freiwilligenprogramm beworben und bist im Gespräch. Erzähl von deiner Erfahrung: was du noch machst, was du früher gemacht hast und was du nie gemacht hast."
+ },
+ {
+  "tr": "Dün başına küçük bir aksilik geldi ve bir arkadaşın merak ediyor. Olayı sırayla anlat: önce ne olmuştu, sonra ne oldu, nasıl toparladın.",
+  "kind": "scene",
+  "de": "Gestern ist dir ein kleines Missgeschick passiert und ein Freund ist neugierig. Erzähl es der Reihe nach: was vorher passiert war, was dann geschah und wie du es gelöst hast."
+ },
+ {
+  "tr": "Toplantıya katılamayan bir iş arkadaşın ne konuşulduğunu soruyor. Kimin neyi belirttiğini, hangi önerinin geldiğini ve kararın ne olduğunu aktar.",
+  "kind": "scene",
+  "de": "Ein Kollege, der nicht dabei war, fragt, worüber gesprochen wurde. Gib weiter, wer was gesagt hat, welcher Vorschlag kam und wie die Entscheidung ausfiel."
+ },
+ {
+  "tr": "Mahallenle ilgili bir haber çıktı ve bir arkadaşın ne olduğunu soruyor. Haberi anlat, kaynağın resmî olup olmadığını söyle ve soruşturmanın durumunu aktar.",
+  "kind": "scene",
+  "de": "Über dein Viertel ist eine Nachricht erschienen und eine Freundin fragt, was los ist. Erzähl die Nachricht, sag, ob die Quelle offiziell ist, und gib den Stand der Ermittlung weiter."
+ },
+ {
+  "tr": "Bir sözü, bir öneriyi ve bir soruyu aktardıysan ve kararı net söylediysen konuşma başarılı sayılır.",
+  "kind": "goal",
+  "de": "Das Gespräch gilt als gelungen, wenn du eine Aussage, einen Vorschlag und eine Frage weitergegeben und die Entscheidung klar genannt hast."
+ },
+ {
+  "tr": "Bir zorunluluk, bir yasak ve bir öğüt söylediysen ve ceza konusunu da anlattıysan konuşma başarılı sayılır.",
+  "kind": "goal",
+  "de": "Das Gespräch gilt als gelungen, wenn du eine Pflicht, ein Verbot und einen Rat genannt und auch die Strafe erklärt hast."
+ },
+ {
+  "tr": "Süren bir deneyimini, bitmiş bir olayını ve hiç yapmadığın bir şeyi doğru zamanlarla anlattıysan konuşma başarılı sayılır.",
+  "kind": "goal",
+  "de": "Das Gespräch gilt als gelungen, wenn du eine laufende Erfahrung, ein abgeschlossenes Ereignis und etwas nie Gemachtes in den richtigen Zeiten erzählt hast."
+ },
+ {
+  "tr": "Haberi edilgen kalıplarla anlattıysan, kaynağın ne olduğunu söylediysen ve soruşturmanın durumunu aktardıysan konuşma başarılı sayılır.",
+  "kind": "goal",
+  "de": "Das Gespräch gilt als gelungen, wenn du die Nachricht im Passiv erzählt, die Quelle genannt und den Stand der Ermittlung weitergegeben hast."
+ },
+ {
+  "tr": "Olayları doğru sırayla anlattıysan, en az bir kez önce olanı geriye aldıysan ve nasıl toparladığını söylediysen konuşma başarılı sayılır.",
+  "kind": "goal",
+  "de": "Das Gespräch gilt als gelungen, wenn du die Ereignisse in der richtigen Reihenfolge erzählt, mindestens einmal das Frühere zurückgesetzt und gesagt hast, wie du es gelöst hast."
+ },
+ {
+  "tr": "hiç",
+  "kind": "vocab.tr",
+  "de": "jemals"
+ },
+ {
+  "tr": "not",
+  "kind": "vocab.tr",
+  "de": "Notiz"
+ },
+ {
+  "tr": "ceza",
+  "kind": "vocab.tr",
+  "de": "Strafe"
+ },
+ {
+  "tr": "izin",
+  "kind": "vocab.tr",
+  "de": "Erlaubnis"
+ },
+ {
+  "tr": "katı",
+  "kind": "vocab.tr",
+  "de": "streng"
+ },
+ {
+  "tr": "özet",
+  "kind": "vocab.tr",
+  "de": "Zusammenfassung"
+ },
+ {
+  "tr": "staj",
+  "kind": "vocab.tr",
+  "de": "Praktikum"
+ },
+ {
+  "tr": "husus",
+  "kind": "vocab.tr",
+  "de": "Punkt"
+ },
+ {
+  "tr": "iddia",
+  "kind": "vocab.tr",
+  "de": "Behauptung"
+ },
+ {
+  "tr": "tanık",
+  "kind": "vocab.tr",
+  "de": "Zeuge"
+ },
+ {
+  "tr": "izinli",
+  "kind": "vocab.tr",
+  "de": "erlaubt"
+ },
+ {
+  "tr": "kaynak",
+  "kind": "vocab.tr",
+  "de": "Quelle"
+ },
+ {
+  "tr": "görüşme",
+  "kind": "vocab.tr",
+  "de": "Besprechung"
+ },
+ {
+  "tr": "uyarmak",
+  "kind": "vocab.tr",
+  "de": "warnen"
+ },
+ {
+  "tr": "duyurmak",
+  "kind": "vocab.tr",
+  "de": "bekannt geben"
+ },
+ {
+  "tr": "zorlu iş",
+  "kind": "vocab.tr",
+  "de": "Herausforderung"
+ },
+ {
+  "tr": "belirtmek",
+  "kind": "vocab.tr",
+  "de": "feststellen"
+ },
+ {
+  "tr": "davranmak",
+  "kind": "vocab.tr",
+  "de": "sich verhalten"
+ },
+ {
+  "tr": "fark etmek",
+  "kind": "vocab.tr",
+  "de": "merken"
+ },
+ {
+  "tr": "karışıklık",
+  "kind": "vocab.tr",
+  "de": "Durcheinander"
+ },
+ {
+  "tr": "soruşturmak",
+  "kind": "vocab.tr",
+  "de": "ermitteln"
+ },
+ {
+  "tr": "gönüllü olmak",
+  "kind": "vocab.tr",
+  "de": "sich freiwillig melden"
+ },
+ {
+  "tr": "başarılı olmak",
+  "kind": "vocab.tr",
+  "de": "Erfolg haben"
+ },
+ {
+  "tr": "son zamanlarda",
+  "kind": "vocab.tr",
+  "de": "in letzter Zeit"
+ },
+ {
+  "tr": "son zamanlardaki",
+  "kind": "vocab.tr",
+  "de": "jüngst"
+ },
+ {
+  "tr": "toplantı başkanı",
+  "kind": "vocab.tr",
+  "de": "Sitzungsleitung"
+ },
+ {
+  "tr": "başarmak / becermek",
+  "kind": "vocab.tr",
+  "de": "schaffen / hinbekommen"
+ },
+ {
+  "tr": "öğüt verir",
+  "kind": "pattern.tr",
+  "de": "gibt einen Rat"
+ },
+ {
+  "tr": "yasağı söyler",
+  "kind": "pattern.tr",
+  "de": "nennt das Verbot"
+ },
+ {
+  "tr": "yapanı by ile söyler",
+  "kind": "pattern.tr",
+  "de": "nennt den Handelnden mit by"
+ },
+ {
+  "tr": "öneriyi -ing ile aktarır",
+  "kind": "pattern.tr",
+  "de": "gibt den Vorschlag mit -ing wieder"
+ },
+ {
+  "tr": "önce olan olayı geriye alır",
+  "kind": "pattern.tr",
+  "de": "setzt das frühere Ereignis zurück"
+ },
+ {
+  "tr": "kuralı zorunluluk olarak söyler",
+  "kind": "pattern.tr",
+  "de": "nennt die Regel als Pflicht"
+ },
+ {
+  "tr": "süren bir işlemi edilgen anlatır",
+  "kind": "pattern.tr",
+  "de": "erzählt einen laufenden Vorgang im Passiv"
+ },
+ {
+  "tr": "hâlâ sayılan bir deneyimi anlatır",
+  "kind": "pattern.tr",
+  "de": "erzählt von einer noch zählenden Erfahrung"
+ },
+ {
+  "tr": "iki olayın sırasını tek cümlede verir",
+  "kind": "pattern.tr",
+  "de": "gibt die Reihenfolge zweier Ereignisse in einem Satz"
+ },
+ {
+  "tr": "kim yaptığını söylemeden olayı anlatır",
+  "kind": "pattern.tr",
+  "de": "erzählt das Ereignis, ohne zu sagen, wer es getan hat"
+ },
+ {
+  "tr": "bir deneyimin hiç olup olmadığını sorar",
+  "kind": "pattern.tr",
+  "de": "fragt, ob eine Erfahrung jemals gemacht wurde"
+ },
+ {
+  "tr": "Yanlış. Bu fiilden sonra mastar değil -ing gelir:",
+  "kind": "why.tr",
+  "de": "Falsch. Nach diesem Verb steht kein Infinitiv, sondern -ing:"
+ },
+ {
+  "tr": "Yanlış. Bu kalıp 'gerekmiyor' demek; yasağın kalıbı başkadır:",
+  "kind": "why.tr",
+  "de": "Falsch. Diese Wendung heißt «nicht nötig»; für das Verbot gibt es eine andere:"
+ },
+ {
+  "tr": "Yanlış. Yalnız ÖNCE olan geriye alınır; sonra olan normal geçmişte kalır:",
+  "kind": "why.tr",
+  "de": "Falsch. Nur das FRÜHERE wird zurückgesetzt; das Spätere bleibt in der einfachen Vergangenheit:"
+ },
+ {
+  "tr": "Doğru. Kimin yayımladığı söylenmiyor ve haber dilinde bu olağan; önemli olan haberin yayımlanmış olması.",
+  "kind": "why.tr",
+  "de": "Richtig. Wer es veröffentlicht hat, wird nicht genannt, und in der Nachrichtensprache ist das normal; wichtig ist, dass es erschienen ist."
+ },
+ {
+  "tr": "Öğüt kalıbı:",
+  "kind": "hint.tr",
+  "de": "Die Wendung für den Rat:"
+ },
+ {
+  "tr": "Yasak kalıbı:",
+  "kind": "hint.tr",
+  "de": "Die Wendung für das Verbot:"
+ },
+ {
+  "tr": "Zorunluluk kalıbı:",
+  "kind": "hint.tr",
+  "de": "Die Wendung für die Pflicht:"
+ },
+ {
+  "tr": "Süren edilgen işlem:",
+  "kind": "hint.tr",
+  "de": "Ein laufender Vorgang im Passiv:"
+ },
+ {
+  "tr": "Deneyim hâlâ sayılıyor:",
+  "kind": "hint.tr",
+  "de": "Die Erfahrung zählt noch:"
+ },
+ {
+  "tr": "Bu fiilden sonra mastar gelir:",
+  "kind": "hint.tr",
+  "de": "Nach diesem Verb steht der Infinitiv:"
+ },
+ {
+  "tr": "Kaynağı belirsiz haber kalıbı:",
+  "kind": "hint.tr",
+  "de": "Die Wendung für eine Nachricht ohne klare Quelle:"
+ },
+ {
+  "tr": "Zaman belli, o yüzden past simple:",
+  "kind": "hint.tr",
+  "de": "Die Zeit ist genannt, deshalb Past Simple:"
+ },
+ {
+  "tr": "Deneyim sorusu present perfect ile kurulur:",
+  "kind": "hint.tr",
+  "de": "Die Frage nach Erfahrung wird mit Present Perfect gebaut:"
+ },
+ {
+  "tr": "Sonra olan normal geçmişte, önce olan geride:",
+  "kind": "hint.tr",
+  "de": "Das Spätere in der einfachen Vergangenheit, das Frühere zurückgesetzt:"
+ },
+ {
+  "tr": "öğüt",
+  "kind": "say.tr",
+  "de": "Rat"
+ },
+ {
+  "tr": "üye,",
+  "kind": "say.tr",
+  "de": "Mitglied,"
+ },
+ {
+  "tr": "süren",
+  "kind": "say.tr",
+  "de": "laufend"
+ },
+ {
+  "tr": "yapan",
+  "kind": "say.tr",
+  "de": "Handelnder"
+ },
+ {
+  "tr": "yasak",
+  "kind": "say.tr",
+  "de": "Verbot"
+ },
+ {
+  "tr": "olmak,",
+  "kind": "say.tr",
+  "de": "passieren,"
+ },
+ {
+  "tr": "Duyurmak",
+  "kind": "say.tr",
+  "de": "Bekannt geben wird mit"
+ },
+ {
+  "tr": "belirtmek,",
+  "kind": "say.tr",
+  "de": "feststellen,"
+ },
+ {
+  "tr": "İddia için",
+  "kind": "say.tr",
+  "de": "Für die Behauptung sagen wir"
+ },
+ {
+  "tr": "Resmî için",
+  "kind": "say.tr",
+  "de": "Für offiziell sagen wir"
+ },
+ {
+  "tr": "Öneri fiili",
+  "kind": "say.tr",
+  "de": "Das Verb für den Vorschlag ist"
+ },
+ {
+  "tr": "Kazanmak için",
+  "kind": "say.tr",
+  "de": "Für gewinnen sagen wir"
+ },
+ {
+  "tr": "Birini uyarmak",
+  "kind": "say.tr",
+  "de": "Jemanden warnen wird mit"
+ },
+ {
+  "tr": "Resmî izin için",
+  "kind": "say.tr",
+  "de": "Für die offizielle Erlaubnis sagen wir"
+ },
+ {
+  "tr": "Gönüllü çalışmak",
+  "kind": "say.tr",
+  "de": "Sich freiwillig melden heißt"
+ },
+ {
+  "tr": "İzinli olan için",
+  "kind": "say.tr",
+  "de": "Für das Erlaubte sagen wir"
+ },
+ {
+  "tr": "husus. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Punkt. Sprich nach:"
+ },
+ {
+  "tr": "Zorlu bir iş için",
+  "kind": "say.tr",
+  "de": "Für eine schwierige Aufgabe sagen wir"
+ },
+ {
+  "tr": "aniden. Tekrar et:",
+  "kind": "say.tr",
+  "de": "plötzlich. Sprich nach:"
+ },
+ {
+  "tr": "varılan sonuca ise",
+  "kind": "say.tr",
+  "de": "und das Ergebnis heißt"
+ },
+ {
+  "tr": "Bir şeyi fark etmek",
+  "kind": "say.tr",
+  "de": "Etwas merken wird mit"
+ },
+ {
+  "tr": "Hikâyeyi kapatırken",
+  "kind": "say.tr",
+  "de": "Beim Abschluss der Geschichte sagen wir"
+ },
+ {
+  "tr": "Özetleyelim: geçmiş",
+  "kind": "say.tr",
+  "de": "Fassen wir zusammen: Vergangenheit"
+ },
+ {
+  "tr": "yasak olan için ise",
+  "kind": "say.tr",
+  "de": "und für das Verbotene"
+ },
+ {
+  "tr": "Şimdi dersin kuralı.",
+  "kind": "say.tr",
+  "de": "Jetzt die Regel der Lektion."
+ },
+ {
+  "tr": "bir zorunluluk koyar,",
+  "kind": "say.tr",
+  "de": "setzt eine Pflicht,"
+ },
+ {
+  "tr": "davranmak. Tekrar et:",
+  "kind": "say.tr",
+  "de": "sich verhalten. Sprich nach:"
+ },
+ {
+  "tr": "Dosya soruşturuluyor.",
+  "kind": "say.tr",
+  "de": "Der Fall wird ermittelt."
+ },
+ {
+  "tr": "ise YASAKLAR. Dikkat:",
+  "kind": "say.tr",
+  "de": "dagegen VERBIETET. Achtung:"
+ },
+ {
+  "tr": "İyi tarafı anlatırken",
+  "kind": "say.tr",
+  "de": "Wenn du die gute Seite nennst, steht"
+ },
+ {
+  "tr": "tek tek satırlara ise",
+  "kind": "say.tr",
+  "de": "und die einzelnen Zeilen heißen"
+ },
+ {
+  "tr": "Toplantının kendisine",
+  "kind": "say.tr",
+  "de": "Die Besprechung selbst heißt"
+ },
+ {
+  "tr": "olayı gören kişiye ise",
+  "kind": "say.tr",
+  "de": "und die Person, die es gesehen hat, heißt"
+ },
+ {
+  "tr": "Önce izin istemelisin.",
+  "kind": "say.tr",
+  "de": "Du solltest zuerst um Erlaubnis bitten."
+ },
+ {
+  "tr": "başarılı olmak için ise",
+  "kind": "say.tr",
+  "de": "und für Erfolg haben"
+ },
+ {
+  "tr": "Sonra sorunu fark ettim.",
+  "kind": "say.tr",
+  "de": "Dann habe ich das Problem gemerkt."
+ },
+ {
+  "tr": "son zamanlardaki için ise",
+  "kind": "say.tr",
+  "de": "und für jüngst"
+ },
+ {
+  "tr": "Görüşme bir kararla bitti.",
+  "kind": "say.tr",
+  "de": "Die Besprechung endete mit einer Entscheidung."
+ },
+ {
+  "tr": "Daha erken başlamayı önerdi.",
+  "kind": "say.tr",
+  "de": "Er hat vorgeschlagen, früher anzufangen."
+ },
+ {
+  "tr": "Bir şeyi zor da olsa becermek",
+  "kind": "say.tr",
+  "de": "Etwas trotz Schwierigkeiten schaffen wird mit"
+ },
+ {
+  "tr": "Bütçenin değiştiğini söyledi.",
+  "kind": "say.tr",
+  "de": "Sie hat gesagt, dass sich das Budget geändert hat."
+ },
+ {
+  "tr": "İçeri yiyecek getirmek yasak.",
+  "kind": "say.tr",
+  "de": "Essen mit hineinzubringen ist verboten."
+ },
+ {
+  "tr": "kısa süreli iş deneyimine ise",
+  "kind": "say.tr",
+  "de": "und die kurze Arbeitserfahrung heißt"
+ },
+ {
+  "tr": "kullanılır; kaçırmak için ise",
+  "kind": "say.tr",
+  "de": "benutzt; und für verpassen"
+ },
+ {
+  "tr": "Yolun kapanacağı bildiriliyor.",
+  "kind": "say.tr",
+  "de": "Es wird berichtet, dass die Straße gesperrt wird."
+ },
+ {
+  "tr": "Anahtarlarımı evde bırakmıştım.",
+  "kind": "say.tr",
+  "de": "Ich hatte meine Schlüssel zu Hause gelassen."
+ },
+ {
+  "tr": "İzin gerekiyor ve kurallar katı.",
+  "kind": "say.tr",
+  "de": "Man braucht eine Erlaubnis und die Regeln sind streng."
+ },
+ {
+  "tr": "Kısa bir özet ve bir not yazdım.",
+  "kind": "say.tr",
+  "de": "Ich habe eine kurze Zusammenfassung und eine Notiz geschrieben."
+ },
+ {
+  "tr": "Son kalıbımız bir soru. Hiç için",
+  "kind": "say.tr",
+  "de": "Unsere letzte Wendung ist eine Frage. Für jemals sagen wir"
+ },
+ {
+  "tr": "Son otobüsü yakalamayı başardım.",
+  "kind": "say.tr",
+  "de": "Ich habe es geschafft, den letzten Bus zu erwischen."
+ },
+ {
+  "tr": "Özetleyelim: hâlâ sayılan deneyim",
+  "kind": "say.tr",
+  "de": "Fassen wir zusammen: noch zählende Erfahrung"
+ },
+ {
+  "tr": "Bir olayı resmî olarak araştırmaya",
+  "kind": "say.tr",
+  "de": "Ein Ereignis amtlich untersuchen heißt"
+ },
+ {
+  "tr": "Neyse ki toplantıyı kaçırmamıştım.",
+  "kind": "say.tr",
+  "de": "Zum Glück hatte ich die Besprechung nicht verpasst."
+ },
+ {
+  "tr": "Fotoğraf serbest ama yiyecek yasak.",
+  "kind": "say.tr",
+  "de": "Fotos sind erlaubt, aber Essen ist verboten."
+ },
+ {
+  "tr": "kural bozulunca gelen yaptırıma ise",
+  "kind": "say.tr",
+  "de": "und die Folge bei einem Regelverstoß heißt"
+ },
+ {
+  "tr": "Staj özgüven kazanmama yardım etti.",
+  "kind": "say.tr",
+  "de": "Das Praktikum hat mir geholfen, Selbstvertrauen zu gewinnen."
+ },
+ {
+  "tr": "Bir kez uyarıyorlar, sonra ceza var.",
+  "kind": "say.tr",
+  "de": "Sie warnen einmal, danach gibt es eine Strafe."
+ },
+ {
+  "tr": "Kapıda kartını göstermek zorundasın.",
+  "kind": "say.tr",
+  "de": "Du musst an der Tür deine Karte zeigen."
+ },
+ {
+  "tr": "Toplantıdan sonra yazılan kısa metne",
+  "kind": "say.tr",
+  "de": "Der kurze Text nach der Besprechung heißt"
+ },
+ {
+  "tr": "Başkan katılıp katılmadığımızı sordu.",
+  "kind": "say.tr",
+  "de": "Die Sitzungsleitung hat gefragt, ob wir einverstanden sind."
+ },
+ {
+  "tr": "Şimdi sıra sende. Son zamanlarda için",
+  "kind": "say.tr",
+  "de": "Jetzt bist du dran. Für in letzter Zeit sagen wir"
+ },
+ {
+  "tr": "Geçen yaz bir okulda gönüllü çalıştım.",
+  "kind": "say.tr",
+  "de": "Letzten Sommer habe ich mich in einer Schule freiwillig gemeldet."
+ },
+ {
+  "tr": "Son kalıbımız öğüt veriyor. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Unsere letzte Wendung gibt einen Rat. Sprich nach:"
+ },
+ {
+  "tr": "Haber dilinde bir kalıp daha sık geçer:",
+  "kind": "say.tr",
+  "de": "In der Nachrichtensprache kommt noch eine Wendung oft vor:"
+ },
+ {
+  "tr": "İkinci kalıbımız yasaklıyor. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Unsere zweite Wendung verbietet. Sprich nach:"
+ },
+ {
+  "tr": "ile söylenir; bilginin geldiği yere ise",
+  "kind": "say.tr",
+  "de": "gesagt; und der Ort, aus dem die Information kommt, heißt"
+ },
+ {
+  "tr": "Başkan benden bir tarih önermemi istedi.",
+  "kind": "say.tr",
+  "de": "Die Sitzungsleitung hat mich gebeten, einen Termin vorzuschlagen."
+ },
+ {
+  "tr": "Bir karar belediye tarafından duyuruldu.",
+  "kind": "say.tr",
+  "de": "Eine Entscheidung wurde von der Stadt bekannt gegeben."
+ },
+ {
+  "tr": "Karışıklığı sonrasına kadar fark etmedim.",
+  "kind": "say.tr",
+  "de": "Ich habe das Durcheinander erst später gemerkt."
+ },
+ {
+  "tr": "kurallara sıkı sıkıya bağlı olan için ise",
+  "kind": "say.tr",
+  "de": "und für das, was streng an den Regeln hängt"
+ },
+ {
+  "tr": "Şimdi bir arkadaşına o günü anlatacaksın.",
+  "kind": "say.tr",
+  "de": "Jetzt erzählst du einem Freund von diesem Tag."
+ },
+ {
+  "tr": "Şimdi sen kur: O yıldan çok şey kazandım.",
+  "kind": "say.tr",
+  "de": "Jetzt du: Aus diesem Jahr habe ich viel gewonnen."
+ },
+ {
+  "tr": "Şimdi sen kur: Bir taksi bulmayı başardım.",
+  "kind": "say.tr",
+  "de": "Jetzt du: Ich habe es geschafft, ein Taxi zu finden."
+ },
+ {
+  "tr": "Şimdi sen kur: Tarihi değiştirmeyi önerdi.",
+  "kind": "say.tr",
+  "de": "Jetzt du: Sie hat vorgeschlagen, den Termin zu ändern."
+ },
+ {
+  "tr": "Şimdi sen kur: Arka kapıyı kullanmak yasak.",
+  "kind": "say.tr",
+  "de": "Jetzt du: Die Hintertür darfst du nicht benutzen."
+ },
+ {
+  "tr": "Şimdi sıra sende: Biletimi evde unutmuştum.",
+  "kind": "say.tr",
+  "de": "Jetzt bist du dran: Ich hatte meine Fahrkarte zu Hause vergessen."
+ },
+ {
+  "tr": "Bir tane daha: Hiç yurt dışında çalıştın mı?",
+  "kind": "say.tr",
+  "de": "Noch eins: Hast du jemals im Ausland gearbeitet?"
+ },
+ {
+  "tr": "Haber demek. İlk kalıbımız da bu. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Das heißt Bericht. Das ist auch unsere erste Wendung. Sprich nach:"
+ },
+ {
+  "tr": "İkinci kalıbımız yapanı söylüyor. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Unsere zweite Wendung nennt den Handelnden. Sprich nach:"
+ },
+ {
+  "tr": "Olayın zamanı belli ve BİTMİŞSE past simple:",
+  "kind": "say.tr",
+  "de": "Ist die Zeit des Ereignisses genannt und VORBEI, steht Past Simple:"
+ },
+ {
+  "tr": "Şimdi bir görüşmede deneyimini anlatacaksın.",
+  "kind": "say.tr",
+  "de": "Jetzt erzählst du in einem Gespräch von deiner Erfahrung."
+ },
+ {
+  "tr": "Son zamanlarda zorlu bir işte başarılı oldum.",
+  "kind": "say.tr",
+  "de": "In letzter Zeit hatte ich bei einer schwierigen Aufgabe Erfolg."
+ },
+ {
+  "tr": "Şimdi sıra sende: Kararın zor olduğunu söyledi.",
+  "kind": "say.tr",
+  "de": "Jetzt bist du dran: Er hat gesagt, dass die Entscheidung schwer war."
+ },
+ {
+  "tr": "Bir tane daha: Özetin hazır olup olmadığını sordu.",
+  "kind": "say.tr",
+  "de": "Noch eins: Er hat gefragt, ob die Zusammenfassung fertig ist."
+ },
+ {
+  "tr": "İkinci kalıbımız sonra olanı anlatıyor. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Unsere zweite Wendung erzählt das Spätere. Sprich nach:"
+ },
+ {
+  "tr": "Şimdi dersin kuralı. İki geçmiş olaydan ÖNCE olanı",
+  "kind": "say.tr",
+  "de": "Jetzt die Regel der Lektion. Von zwei vergangenen Ereignissen wird das FRÜHERE mit"
+ },
+ {
+  "tr": "Şimdi bir arkadaşına yerel bir haberi anlatacaksın.",
+  "kind": "say.tr",
+  "de": "Jetzt erzählst du einer Freundin eine Nachricht aus dem Viertel."
+ },
+ {
+  "tr": "Yurt dışında demek. İlk kalıbımız da bu. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Das heißt im Ausland. Das ist auch unsere erste Wendung. Sprich nach:"
+ },
+ {
+  "tr": "Bir tane daha: Katılmadan önce kuralları okumalısın.",
+  "kind": "say.tr",
+  "de": "Noch eins: Du solltest die Regeln lesen, bevor du beitrittst."
+ },
+ {
+  "tr": "Son kalıbımız süren bir işlemi anlatıyor. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Unsere letzte Wendung erzählt einen laufenden Vorgang. Sprich nach:"
+ },
+ {
+  "tr": "ve fiilin üçüncü hâli. Yapan kişi gerekiyorsa sonuna",
+  "kind": "say.tr",
+  "de": "und die dritte Form des Verbs. Wird der Handelnde gebraucht, kommt am Ende"
+ },
+ {
+  "tr": "Bir tane daha: Biz oraya vardığımızda tren kalkmıştı.",
+  "kind": "say.tr",
+  "de": "Noch eins: Als wir dort ankamen, war der Zug schon weg."
+ },
+ {
+  "tr": "Bir tane daha: Okulun yeniden açılacağı bildiriliyor.",
+  "kind": "say.tr",
+  "de": "Noch eins: Es wird berichtet, dass die Schule wieder öffnet."
+ },
+ {
+  "tr": "yasak demek değil, 'gerekmiyor' demektir. Öğüt içinse",
+  "kind": "say.tr",
+  "de": "heißt nicht verboten, sondern «nicht nötig». Für einen Rat dagegen steht"
+ },
+ {
+  "tr": "Son kalıbımız iki olayı tek cümlede veriyor. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Unsere letzte Wendung gibt beide Ereignisse in einem Satz. Sprich nach:"
+ },
+ {
+  "tr": "Şimdi sen kur: İddia polis tarafından kontrol ediliyor.",
+  "kind": "say.tr",
+  "de": "Jetzt du: Die Behauptung wird von der Polizei geprüft."
+ },
+ {
+  "tr": "Şimdi bir kulübe yeni gelen birine kuralları anlatacaksın.",
+  "kind": "say.tr",
+  "de": "Jetzt erklärst du jemandem, der neu im Verein ist, die Regeln."
+ },
+ {
+  "tr": "deriz. Şunu kur: Son zamanlarda büyük bir projeyi bitirdim.",
+  "kind": "say.tr",
+  "de": "sagen wir. Bau das: In letzter Zeit habe ich ein großes Projekt beendet."
+ },
+ {
+  "tr": "Şimdi dersin kuralı. Deneyim HÂLÂ sayılıyorsa present perfect:",
+  "kind": "say.tr",
+  "de": "Jetzt die Regel der Lektion. ZÄHLT die Erfahrung noch, steht Present Perfect:"
+ },
+ {
+  "tr": "Şimdi dersin kuralı. Aktarırken zaman bir basamak geriye gider:",
+  "kind": "say.tr",
+  "de": "Jetzt die Regel der Lektion. Bei der Wiedergabe rückt die Zeit eine Stufe zurück:"
+ },
+ {
+  "tr": "Şimdi sıra sende: Başlamadan önce listeyi imzalamak zorundasın.",
+  "kind": "say.tr",
+  "de": "Jetzt bist du dran: Du musst die Liste unterschreiben, bevor du anfängst."
+ },
+ {
+  "tr": "Zaman belirtilmişse seçim yok; belirtilmemişse deneyim öne çıkar.",
+  "kind": "say.tr",
+  "de": "Ist die Zeit genannt, gibt es keine Wahl; ist sie es nicht, steht die Erfahrung im Vordergrund."
+ },
+ {
+  "tr": "ile söylenir; Britanya yazımı s ile olur. Ortalığın karışmasına ise",
+  "kind": "say.tr",
+  "de": "gesagt; die britische Schreibung hat ein s. Und wenn alles durcheinandergerät, heißt das"
+ },
+ {
+  "tr": "Şimdi toplantıya katılmayan bir iş arkadaşına olanları aktaracaksın.",
+  "kind": "say.tr",
+  "de": "Jetzt gibst du einem Kollegen, der nicht dabei war, weiter, was passiert ist."
+ },
+ {
+  "tr": "Şimdi dersin kuralı. Edilgen çatı iki parçadan kurulur: yardımcı fiil",
+  "kind": "say.tr",
+  "de": "Jetzt die Regel der Lektion. Das Passiv besteht aus zwei Teilen: dem Hilfsverb"
+ },
+ {
+  "tr": "Şimdi sıra sende: Yakın tarihli bir haber bakanlık tarafından yayımlandı.",
+  "kind": "say.tr",
+  "de": "Jetzt bist du dran: Ein jüngster Bericht wurde vom Ministerium veröffentlicht."
+ },
+ {
+  "tr": "ve bu fiilin ardından her zaman -ing gelir. Toplantıyı yöneten kişiye ise",
+  "kind": "say.tr",
+  "de": "und nach diesem Verb steht immer -ing. Und wer die Besprechung leitet, heißt"
+ },
+ {
+  "tr": "Kimin söylediği belirsizken kullanılır ve haberi kaynağa bağlamadan verir.",
+  "kind": "say.tr",
+  "de": "Sie wird benutzt, wenn unklar ist, wer es gesagt hat, und gibt die Nachricht ohne Quelle weiter."
+ },
+ {
+  "tr": "Merhaba! Bugün bir aksiliği anlatmayı öğreneceğiz: ne oldu, ne zaman fark ettin, nasıl kurtardın.",
+  "kind": "say.tr",
+  "de": "Hallo! Heute lernen wir, ein Missgeschick zu erzählen: was passiert ist, wann du es gemerkt hast, wie du es gelöst hast."
+ },
+ {
+  "tr": "Merhaba! Bugün haber dilini okumayı öğreneceğiz: ne duyuruldu, kim soruşturuyor, kaynak ne diyor.",
+  "kind": "say.tr",
+  "de": "Hallo! Heute lernen wir, Nachrichtensprache zu lesen: was bekannt gegeben wurde, wer ermittelt, was die Quelle sagt."
+ },
+ {
+  "tr": "Hikâye anlatmanın püf noktası sıra: hangi olay önce olduysa o bir basamak geriye alınır. Hazır mısın?",
+  "kind": "say.tr",
+  "de": "Der Kniff beim Erzählen ist die Reihenfolge: welches Ereignis früher war, rückt eine Stufe zurück. Bist du bereit?"
+ },
+ {
+  "tr": "Merhaba! Bu modülün son dersi: deneyimini bağlamak. Nerede çalıştın, neyi başardın, neyi hiç yapmadın.",
+  "kind": "say.tr",
+  "de": "Hallo! Die letzte Lektion dieses Moduls: Erfahrung verbinden. Wo du gearbeitet hast, was du geschafft hast, was du nie gemacht hast."
+ },
+ {
+  "tr": "Merhaba! Bugün bir yerin kurallarını anlatmayı öğreneceğiz: neye izin var, ne yasak, ne yapsan iyi olur.",
+  "kind": "say.tr",
+  "de": "Hallo! Heute lernen wir, die Regeln eines Ortes zu erklären: was erlaubt ist, was verboten, und was du besser tust."
+ },
+ {
+  "tr": "artı fiilin üçüncü hâliyle geriye alınır; sonra olan normal geçmişte kalır. Böylece dinleyen sırayı duyar.",
+  "kind": "say.tr",
+  "de": "plus die dritte Form des Verbs zurückgesetzt; das Spätere bleibt in der einfachen Vergangenheit. So hört der Zuhörer die Reihenfolge."
+ },
+ {
+  "tr": "Merhaba! Bugün bir toplantıyı aktarmayı öğreneceğiz: kim neyi belirtti, kim ne önerdi, ne karara bağlandı.",
+  "kind": "say.tr",
+  "de": "Hallo! Heute lernen wir, eine Besprechung wiederzugeben: wer was festgestellt hat, wer was vorgeschlagen hat, was entschieden wurde."
+ },
+ {
+  "tr": "Aktarmanın iki incelikli yeri var: zamanın geriye gitmesi ve öneri fiilinin ardından -ing gelmesi. Hazır mısın?",
+  "kind": "say.tr",
+  "de": "Beim Weitergeben gibt es zwei Feinheiten: die Zeit rückt zurück, und nach dem Verb für den Vorschlag steht -ing. Bist du bereit?"
+ },
+ {
+  "tr": "Haber dilinin belirgin bir özelliği var: özne çoğu zaman düşer, çünkü haberin konusu kişi değil olaydır. Hazır mısın?",
+  "kind": "say.tr",
+  "de": "Die Nachrichtensprache hat ein deutliches Merkmal: das Subjekt fällt oft weg, denn das Thema ist nicht die Person, sondern das Ereignis. Bist du bereit?"
+ },
+ {
+  "tr": "Bu üçü İngilizcede üç ayrı kelime ve karıştırılırsa anlam ciddi biçimde kayar: 'gerekmiyor' ile 'yasak' aynı şey değil. Hazır mısın?",
+  "kind": "say.tr",
+  "de": "Im Englischen sind das drei eigene Wörter, und wenn man sie verwechselt, kippt die Bedeutung ernsthaft: «nicht nötig» und «verboten» sind nicht dasselbe. Bist du bereit?"
+ },
+ {
+  "tr": "Buradaki ayrım modülün başındaki bağlaç işiyle akraba: hangi zamanı seçtiğin olayın hâlâ sayılıp sayılmadığını söylüyor. Hazır mısın?",
+  "kind": "say.tr",
+  "de": "Dieser Unterschied ist mit der Konnektorarbeit vom Anfang des Moduls verwandt: deine Wahl der Zeit sagt, ob das Ereignis noch zählt. Bist du bereit?"
+ }
+]
