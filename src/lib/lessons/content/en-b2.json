@@ -9826,5 +9826,2442 @@
    "goal": "Bitmiş olanı, süren olanı ve edilgen olanı üç ayrı biçimle söylediysen konuşma başarılı sayılır.",
    "minTurns": 7
   }
+ },
+ {
+  "id": "en-b2-second-hand-news",
+  "level": "B2",
+  "course": "en",
+  "icon": "media",
+  "title": "As it is reported",
+  "titleTr": "Aktarıldığı kadarıyla",
+  "summary": "Doğrulanmamış bilgiyi aktarmayı öğretir; edilgen aktarım kalıbı bilgiyi verirken kaynağı açık bırakır.",
+  "minutes": 11,
+  "focusId": "Passive report structures",
+  "vocab": [
+   {
+    "de": "origin",
+    "tr": "köken"
+   },
+   {
+    "de": "verify",
+    "tr": "doğrulamak"
+   },
+   {
+    "de": "accuracy",
+    "tr": "doğruluk"
+   },
+   {
+    "de": "disclose",
+    "tr": "açıklamak"
+   },
+   {
+    "de": "conceal",
+    "tr": "gizlemek"
+   },
+   {
+    "de": "withhold",
+    "tr": "esirgemek"
+   },
+   {
+    "de": "validate",
+    "tr": "geçerli kılmak"
+   },
+   {
+    "de": "certify",
+    "tr": "belgelemek"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "It is reported that the origin is unclear.",
+    "tr": "kaynağı açık bırakarak aktarır"
+   },
+   {
+    "de": "The figures are said to verify the claim.",
+    "tr": "özneyi başa alıp iddiayı ona bağlar"
+   },
+   {
+    "de": "The accuracy is thought to be high.",
+    "tr": "değerlendirmeyi aktarım kalıbıyla verir"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Bugün doğrulanmamış bilgiyi aktarmayı öğreneceğiz: ne söyleniyor, kim doğruluyor, ne kadar güvenilir."
+     },
+     {
+      "lang": "tr",
+      "text": "Bu modülün konusu edilgenin bütün hâlleri ve ilki en sık kullanılanı: kaynağı açık bırakan aktarım. Hazır mısın?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "origin"
+     },
+     {
+      "lang": "tr",
+      "text": "Bir şeyin çıktığı yer demek. İlk kalıbımız da bu. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "It is reported that the origin is unclear."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "It is reported that the origin is unclear."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir bilginin doğru olduğunu kanıtlamaya"
+     },
+     {
+      "lang": "en",
+      "text": "verify"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İkinci kalıbımız özneyi başa alıyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "The figures are said to verify the claim."
+     },
+     {
+      "lang": "tr",
+      "text": "Rakamların iddiayı doğruladığı söyleniyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The figures are said to verify the claim."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Gerçeğe ne kadar yakın olduğuna"
+     },
+     {
+      "lang": "en",
+      "text": "accuracy"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son kalıbımız değerlendirmeyi aktarıyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "The accuracy is thought to be high."
+     },
+     {
+      "lang": "tr",
+      "text": "Doğruluğun yüksek olduğu düşünülüyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The accuracy is thought to be high."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi dersin kuralı. Aktarım kalıbının iki yolu var:"
+     },
+     {
+      "lang": "en",
+      "text": "It is reported that"
+     },
+     {
+      "lang": "tr",
+      "text": "bir cümle kurar ve özne boş kalır;"
+     },
+     {
+      "lang": "en",
+      "text": "are said to"
+     },
+     {
+      "lang": "tr",
+      "text": "ile"
+     },
+     {
+      "lang": "en",
+      "text": "is thought to"
+     },
+     {
+      "lang": "tr",
+      "text": "özneyi başa alıp fiili mastara çevirir. İkincisi daha kısa, haber dilinde daha sık."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sıra sende: Kaynağın belirsiz olduğu bildiriliyor."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "It is reported that the source is unclear.",
+     "accept": [
+      "It is reported the source is unclear.",
+      "It is reported that the source is unknown."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Kaynağı açık bırakmak için"
+      },
+      {
+       "lang": "en",
+       "text": "It is reported that"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "It is reported that the source is unclear."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kontrol. Şu cümle doğru mu?"
+     },
+     {
+      "lang": "en",
+      "text": "The accuracy is thought to be high."
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "The accuracy is thought to be high.",
+     "answer": true,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Doğru. Özne başa geçtiği için fiil mastara dönüyor ve değerlendirme kimseye mal edilmiyor."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bilinmeyeni ortaya çıkarmaya"
+     },
+     {
+      "lang": "en",
+      "text": "disclose"
+     },
+     {
+      "lang": "tr",
+      "text": "saklı tutmaya ise"
+     },
+     {
+      "lang": "en",
+      "text": "conceal"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "They disclose one part and conceal another."
+     },
+     {
+      "lang": "tr",
+      "text": "Bir bölümünü açıklıyor, bir bölümünü gizliyorlar."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "They disclose one part and conceal another."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sen kur: Sayıların iddiayı desteklediği söyleniyor."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "The numbers are said to support the claim.",
+     "accept": [
+      "The numbers are said to back the claim.",
+      "The figures are said to support the claim."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Özneyi başa almak için"
+      },
+      {
+       "lang": "en",
+       "text": "are said to"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "The numbers are said to support the claim."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Vermeyip elde tutmaya"
+     },
+     {
+      "lang": "en",
+      "text": "withhold"
+     },
+     {
+      "lang": "tr",
+      "text": "bir şeyi resmen geçerli saymaya ise"
+     },
+     {
+      "lang": "en",
+      "text": "validate"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "We withhold the file until we validate it."
+     },
+     {
+      "lang": "tr",
+      "text": "Geçerli kılana kadar dosyayı esirgiyoruz."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "We withhold the file until we validate it."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Yazılı belgeyle onaylamaya"
+     },
+     {
+      "lang": "en",
+      "text": "certify"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "Only a lab can certify the result."
+     },
+     {
+      "lang": "tr",
+      "text": "Sonucu ancak bir laboratuvar belgeleyebilir."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Only a lab can certify the result."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir tane daha: Raporun tam olduğu düşünülüyor."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "The report is thought to be complete.",
+     "accept": [
+      "The report is thought to be finished.",
+      "This report is thought to be complete."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Değerlendirmeyi aktarmak için"
+      },
+      {
+       "lang": "en",
+       "text": "is thought to"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "The report is thought to be complete."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Özetleyelim: boş özne"
+     },
+     {
+      "lang": "en",
+      "text": "It is reported that"
+     },
+     {
+      "lang": "tr",
+      "text": "özne başta"
+     },
+     {
+      "lang": "en",
+      "text": "are said to"
+     },
+     {
+      "lang": "tr",
+      "text": "değerlendirme"
+     },
+     {
+      "lang": "en",
+      "text": "is thought to"
+     },
+     {
+      "lang": "tr",
+      "text": "Şimdi doğrulanmamış bir bilgiyi aktaracaksın."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Elinde henüz doğrulanmamış bir bilgi var ve bunu bir meslektaşına aktarıyorsun. Bilgiyi aktarım kalıbıyla ver, neyin doğrulandığını söyle ve kendi değerlendirmeni ayır.",
+   "partner": "bilgiyi hemen yaymak isteyen, doğrulama beklemeyen bir meslektaş",
+   "opening": "Can we send this out today?",
+   "openingTr": "Bunu bugün duyurabilir miyiz?",
+   "goal": "Üç bilgiyi üç ayrı aktarım kalıbıyla verdiysen konuşma başarılı sayılır.",
+   "minTurns": 7
+  }
+ },
+ {
+  "id": "en-b2-instructions-passive",
+  "level": "B2",
+  "course": "en",
+  "icon": "tech",
+  "title": "Once completed",
+  "titleTr": "Tamamlandığında",
+  "summary": "Yönergeyi kısa yazmayı öğretir; ortaç öbeği adımları tek cümleye indirip sırayı korur.",
+  "minutes": 11,
+  "focusId": "Participle clauses",
+  "vocab": [
+   {
+    "de": "filter",
+    "tr": "süzmek"
+   },
+   {
+    "de": "mix",
+    "tr": "karıştırmak"
+   },
+   {
+    "de": "load",
+    "tr": "yüklemek"
+   },
+   {
+    "de": "crate",
+    "tr": "sandık"
+   },
+   {
+    "de": "glue",
+    "tr": "yapıştırmak"
+   },
+   {
+    "de": "component",
+    "tr": "bileşen"
+   },
+   {
+    "de": "unload",
+    "tr": "boşaltmak"
+   },
+   {
+    "de": "gauge",
+    "tr": "ölçek"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "Having filtered the liquid, mix the powder.",
+    "tr": "önce biten adımı öne alıp bağlar"
+   },
+   {
+    "de": "Being loaded first, the crate arrives last.",
+    "tr": "sebebi ortaçla bağlar"
+   },
+   {
+    "de": "Glued on Monday, the component was tested.",
+    "tr": "edilgen ortaçla bağlar"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Bugün yönergeyi kısa yazmayı öğreneceğiz: önce ne yapıldı, neden öyle oldu, ne sonra geldi."
+     },
+     {
+      "lang": "tr",
+      "text": "Yönerge kısa olmak zorunda ama adım sırasını kaybetmemeli; ortaç öbeği ikisini birden sağlıyor. Hazır mısın?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "filter"
+     },
+     {
+      "lang": "tr",
+      "text": "Katıyı sıvıdan ayırmak demek. Bir araya getirip birleştirmeye ise"
+     },
+     {
+      "lang": "en",
+      "text": "mix"
+     },
+     {
+      "lang": "tr",
+      "text": "denir. İlk kalıbımız da bu. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "Having filtered the liquid, mix the powder."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Having filtered the liquid, mix the powder."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Araca yerleştirmeye"
+     },
+     {
+      "lang": "en",
+      "text": "load"
+     },
+     {
+      "lang": "tr",
+      "text": "tahtadan yapılmış taşıma kabına ise"
+     },
+     {
+      "lang": "en",
+      "text": "crate"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İkinci kalıbımız sebebi bağlıyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "Being loaded first, the crate arrives last."
+     },
+     {
+      "lang": "tr",
+      "text": "İlk yüklendiği için sandık en son varıyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Being loaded first, the crate arrives last."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Yapıştırıcıyla birleştirmeye"
+     },
+     {
+      "lang": "en",
+      "text": "glue"
+     },
+     {
+      "lang": "tr",
+      "text": "bütünü oluşturan parçaya ise"
+     },
+     {
+      "lang": "en",
+      "text": "component"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son kalıbımız edilgen ortaçla bağlıyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "Glued on Monday, the component was tested."
+     },
+     {
+      "lang": "tr",
+      "text": "Pazartesi yapıştırılan bileşen test edildi."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Glued on Monday, the component was tested."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi dersin kuralı. Ortaç öbeği iki cümlenin ÖZNESİ AYNIYSA kurulur:"
+     },
+     {
+      "lang": "en",
+      "text": "having"
+     },
+     {
+      "lang": "tr",
+      "text": "önce biteni,"
+     },
+     {
+      "lang": "en",
+      "text": "being"
+     },
+     {
+      "lang": "tr",
+      "text": "sebebi, üçüncü hâlle başlayan öbek ise edilgeni bağlar. Yönergede sıra bu yapıyla korunur."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sıra sende: Tozu karıştırdıktan sonra suyu ekle."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "Having mixed the powder, add the water.",
+     "accept": [
+      "Having mixed the powder, add water.",
+      "Having mixed the powder, pour the water."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Önce biten adımı bağlamak için"
+      },
+      {
+       "lang": "en",
+       "text": "having"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "Having mixed the powder, add the water."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kontrol. Şu cümle doğru mu?"
+     },
+     {
+      "lang": "en",
+      "text": "Being loaded first, the crate arrives last."
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "Being loaded first, the crate arrives last.",
+     "answer": true,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Doğru. Her iki yarının öznesi de sandık; özne değişseydi bu öbek kurulamazdı."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Araçtan indirmeye"
+     },
+     {
+      "lang": "en",
+      "text": "unload"
+     },
+     {
+      "lang": "tr",
+      "text": "bir değeri gösteren aygıta ise"
+     },
+     {
+      "lang": "en",
+      "text": "gauge"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "We unload when the gauge drops."
+     },
+     {
+      "lang": "tr",
+      "text": "Ölçek düştüğünde boşaltıyoruz."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "We unload when the gauge drops."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sen kur: Boş olduğu için sandık hafif."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "Being empty, the crate is light.",
+     "accept": [
+      "Being empty, the crate is very light.",
+      "Being empty, that crate is light."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Sebebi bağlamak için"
+      },
+      {
+       "lang": "en",
+       "text": "being"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "Being empty, the crate is light."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir yönergede adımların sırası anlamın yarısıdır; yanlış sıra doğru cümleyi de yanlış yapar."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "Having checked the gauge, close the valve."
+     },
+     {
+      "lang": "tr",
+      "text": "Ölçeği kontrol ettikten sonra vanayı kapat."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Having checked the gauge, close the valve."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir tane daha: Cuma günü süzülen sıvı temizdi."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "Filtered on Friday, the liquid was clean.",
+     "accept": [
+      "Filtered on Friday, the liquid was clear.",
+      "Filtered on Friday, that liquid was clean."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Edilgen ortaç üçüncü hâlle başlar:"
+      },
+      {
+       "lang": "en",
+       "text": "Filtered on Friday, the liquid was clean."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Özetleyelim: önce biten"
+     },
+     {
+      "lang": "en",
+      "text": "having filtered"
+     },
+     {
+      "lang": "tr",
+      "text": "sebep"
+     },
+     {
+      "lang": "en",
+      "text": "being loaded"
+     },
+     {
+      "lang": "tr",
+      "text": "edilgen"
+     },
+     {
+      "lang": "en",
+      "text": "glued"
+     },
+     {
+      "lang": "tr",
+      "text": "Şimdi bir yönergeyi sözlü olarak vereceksin."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Bir işi ilk kez yapan birine yönergeyi sözlü anlatıyorsun. Önce biteni, sebebi ve edilgeni kısa cümlelerle bağla.",
+   "partner": "adımları not alan, sırayı iki kez soran bir çırak",
+   "opening": "Which step comes before the mixing?",
+   "openingTr": "Karıştırmadan önce hangi adım geliyor?",
+   "goal": "Önce biteni, sebebi ve edilgeni üç ayrı ortaç öbeğiyle bağladıysan konuşma başarılı sayılır.",
+   "minTurns": 7
+  }
+ },
+ {
+  "id": "en-b2-process-notes",
+  "level": "B2",
+  "course": "en",
+  "icon": "pen",
+  "title": "The treatment of the surface",
+  "titleTr": "Sürecin kaydı",
+  "summary": "Süreç kaydını yazmayı öğretir; fiil isme dönünce kayıt kişiden çıkar ve işleme odaklanır.",
+  "minutes": 11,
+  "focusId": "Nominalisation and formal register",
+  "vocab": [
+   {
+    "de": "treat",
+    "tr": "işlemden geçirmek"
+   },
+   {
+    "de": "refine",
+    "tr": "arıtmak"
+   },
+   {
+    "de": "requirement",
+    "tr": "gereklilik"
+   },
+   {
+    "de": "yield",
+    "tr": "verim"
+   },
+   {
+    "de": "input",
+    "tr": "girdi"
+   },
+   {
+    "de": "deviation",
+    "tr": "sapma"
+   },
+   {
+    "de": "guideline",
+    "tr": "yönerge"
+   },
+   {
+    "de": "provision",
+    "tr": "hüküm"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "The treatment of the surface took two hours.",
+    "tr": "fiili isme çevirip kayda geçirir"
+   },
+   {
+    "de": "The refinement of the process is ongoing.",
+    "tr": "süren işlemi isimle anlatır"
+   },
+   {
+    "de": "The requirement of a second check is clear.",
+    "tr": "gerekliliği resmî dille yazar"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Bugün süreç kaydı yazmayı öğreneceğiz: ne işlendi, ne arıtıldı, ne gerekiyor."
+     },
+     {
+      "lang": "tr",
+      "text": "Süreç kaydı kimin yaptığını değil neyin yapıldığını taşır ve bunu sağlayan şey fiili isme çevirmek. Hazır mısın?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "treat"
+     },
+     {
+      "lang": "tr",
+      "text": "Bir maddeye işlem uygulamak demek. İlk kalıbımız da bu. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "The treatment of the surface took two hours."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The treatment of the surface took two hours."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Yabancı maddelerden temizlemeye"
+     },
+     {
+      "lang": "en",
+      "text": "refine"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İkinci kalıbımız süren işlemi anlatıyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "The refinement of the process is ongoing."
+     },
+     {
+      "lang": "tr",
+      "text": "Sürecin arıtılması devam ediyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The refinement of the process is ongoing."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Yerine getirilmesi şart olana"
+     },
+     {
+      "lang": "en",
+      "text": "requirement"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son kalıbımız gerekliliği yazıyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "The requirement of a second check is clear."
+     },
+     {
+      "lang": "tr",
+      "text": "İkinci bir kontrol gerekliliği açık."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The requirement of a second check is clear."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi dersin kuralı. Fiili isme çevirmek kaydı kişiden çıkarır:"
+     },
+     {
+      "lang": "en",
+      "text": "they treated the surface"
+     },
+     {
+      "lang": "tr",
+      "text": "yerine"
+     },
+     {
+      "lang": "en",
+      "text": "the treatment of the surface"
+     },
+     {
+      "lang": "tr",
+      "text": "yazılır. Süreç kaydında bu bir üslup tercihi değil; kaydın kim değil ne olduğunu göstermesi gerekir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sıra sende: Metalin işlenmesi bir saat sürdü."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "The treatment of the metal took one hour.",
+     "accept": [
+      "The treatment of that metal took one hour.",
+      "The treatment of the metal took an hour."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Fiili isme çevirmek için"
+      },
+      {
+       "lang": "en",
+       "text": "the treatment of"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "The treatment of the metal took one hour."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kontrol. Şu cümle doğru mu?"
+     },
+     {
+      "lang": "en",
+      "text": "The refinement of the process is ongoing."
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "The refinement of the process is ongoing.",
+     "answer": true,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Doğru. Kimin arıttığı yazılmıyor ve süreç kaydında bu olağan; kayda geçen işlemin kendisi."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Elde edilen miktara"
+     },
+     {
+      "lang": "en",
+      "text": "yield"
+     },
+     {
+      "lang": "tr",
+      "text": "sürece giren malzemeye ise"
+     },
+     {
+      "lang": "en",
+      "text": "input"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The yield depends on the input."
+     },
+     {
+      "lang": "tr",
+      "text": "Verim girdiye bağlı."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The yield depends on the input."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sen kur: Yağın arıtılması devam ediyor."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "The refinement of the oil is ongoing.",
+     "accept": [
+      "The refinement of that oil is ongoing.",
+      "The refinement of the oil continues."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Süren işlemi isimle anlatmak için"
+      },
+      {
+       "lang": "en",
+       "text": "the refinement of"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "The refinement of the oil is ongoing."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Beklenenden ayrılmaya"
+     },
+     {
+      "lang": "en",
+      "text": "deviation"
+     },
+     {
+      "lang": "tr",
+      "text": "izlenmesi istenen yazılı yola ise"
+     },
+     {
+      "lang": "en",
+      "text": "guideline"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "One deviation broke the guideline."
+     },
+     {
+      "lang": "tr",
+      "text": "Bir sapma yönergeyi bozdu."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "One deviation broke the guideline."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir metindeki tek tek kurala"
+     },
+     {
+      "lang": "en",
+      "text": "provision"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The provision covers both cases."
+     },
+     {
+      "lang": "tr",
+      "text": "Hüküm iki durumu da kapsıyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The provision covers both cases."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir tane daha: Üçüncü bir deney gerekliliği açık."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "The requirement of a third test is clear.",
+     "accept": [
+      "The requirement of a third check is clear.",
+      "The requirement of one more test is clear."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Gerekliliği resmî dille yazmak için"
+      },
+      {
+       "lang": "en",
+       "text": "the requirement of"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "The requirement of a third test is clear."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Özetleyelim: işlem"
+     },
+     {
+      "lang": "en",
+      "text": "the treatment of"
+     },
+     {
+      "lang": "tr",
+      "text": "arıtma"
+     },
+     {
+      "lang": "en",
+      "text": "the refinement of"
+     },
+     {
+      "lang": "tr",
+      "text": "gereklilik"
+     },
+     {
+      "lang": "en",
+      "text": "the requirement of"
+     },
+     {
+      "lang": "tr",
+      "text": "Şimdi bir süreç kaydını sözlü olarak kuracaksın."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Bir işlemin kaydını sözlü olarak kuruyorsun. Ne işlendiğini, neyin sürdüğünü ve neyin gerektiğini fiili isme çevirerek söyle.",
+   "partner": "kaydı yazıya geçiren, kısa ve resmî cümle bekleyen bir meslektaş",
+   "opening": "Can you give me that as one line?",
+   "openingTr": "Bunu tek satır olarak verebilir misin?",
+   "goal": "Üç maddeyi de fiili isme çevirerek resmî dille söylediysen konuşma başarılı sayılır.",
+   "minTurns": 7
+  }
+ },
+ {
+  "id": "en-b2-when-it-is-done",
+  "level": "B2",
+  "course": "en",
+  "icon": "chart",
+  "title": "It will have been done",
+  "titleTr": "Yapılmış olacak",
+  "summary": "Bir denemenin takvimini anlatmayı öğretir: o ana kadar bitmiş olan, o an sürüyor olan ve edilgen olan ayrı biçimlerle söylenir.",
+  "minutes": 11,
+  "focusId": "Future perfect and future continuous",
+  "vocab": [
+   {
+    "de": "pilot",
+    "tr": "pilot uygulama"
+   },
+   {
+    "de": "prototype",
+    "tr": "ilk örnek"
+   },
+   {
+    "de": "quantity",
+    "tr": "miktar"
+   },
+   {
+    "de": "proportion",
+    "tr": "oran"
+   },
+   {
+    "de": "portion",
+    "tr": "pay"
+   },
+   {
+    "de": "length",
+    "tr": "uzunluk"
+   },
+   {
+    "de": "width",
+    "tr": "genişlik"
+   },
+   {
+    "de": "height",
+    "tr": "yükseklik"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "By June the pilot will have been finished.",
+    "tr": "o ana kadar bitmiş olanı edilgen söyler"
+   },
+   {
+    "de": "This time next month we will be testing the prototype.",
+    "tr": "o an sürüyor olanı söyler"
+   },
+   {
+    "de": "The quantity will have been checked by then.",
+    "tr": "o ana kadar bitmiş olanı söyler"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Bugün bir denemenin takvimini anlatmayı öğreneceğiz: o güne kadar ne bitmiş olacak, o an ne sürüyor olacak."
+     },
+     {
+      "lang": "tr",
+      "text": "Bu modülde edilgenin gelecekteki hâlini göreceksin: bitmiş olacak demek ile bitirilmiş olacak demek ayrı şeyler. Hazır mısın?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "pilot"
+     },
+     {
+      "lang": "tr",
+      "text": "Küçük ölçekli ilk deneme demek. İlk kalıbımız da bu. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "By June the pilot will have been finished."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "By June the pilot will have been finished."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Seri üretimden önceki ilk örneğe"
+     },
+     {
+      "lang": "en",
+      "text": "prototype"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İkinci kalıbımız o an sürüyor olanı söylüyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "This time next month we will be testing the prototype."
+     },
+     {
+      "lang": "tr",
+      "text": "Gelecek ay bu sıralarda ilk örneği deniyor olacağız."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "This time next month we will be testing the prototype."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Ne kadar olduğuna"
+     },
+     {
+      "lang": "en",
+      "text": "quantity"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son kalıbımız o ana kadar bitmiş olanı söylüyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "The quantity will have been checked by then."
+     },
+     {
+      "lang": "tr",
+      "text": "Miktar o zamana kadar kontrol edilmiş olacak."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The quantity will have been checked by then."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi dersin kuralı. Gelecekteki bir ana bakarken"
+     },
+     {
+      "lang": "en",
+      "text": "will have"
+     },
+     {
+      "lang": "tr",
+      "text": "o ana kadar BİTMİŞ olanı,"
+     },
+     {
+      "lang": "en",
+      "text": "will be"
+     },
+     {
+      "lang": "tr",
+      "text": "o an SÜRÜYOR olanı anlatır. Edilgeni ise"
+     },
+     {
+      "lang": "en",
+      "text": "will have been"
+     },
+     {
+      "lang": "tr",
+      "text": "taşır ve yapanı hiç söylemez."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sıra sende: Mayısa kadar deneme bitirilmiş olacak."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "By May the trial will have been finished.",
+     "accept": [
+      "By May the trial will have been completed.",
+      "By May that trial will have been finished."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Edilgen biçimde bitmiş olan için"
+      },
+      {
+       "lang": "en",
+       "text": "will have been"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "By May the trial will have been finished."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kontrol. Şu cümle doğru mu?"
+     },
+     {
+      "lang": "en",
+      "text": "This time next month we will be testing the prototype."
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "This time next month we will be testing the prototype.",
+     "answer": true,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Doğru. O an işin ortasında olunacak, bitmiş olmayacak; bu yüzden süregelen biçim kullanılıyor."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bütüne göre büyüklüğe"
+     },
+     {
+      "lang": "en",
+      "text": "proportion"
+     },
+     {
+      "lang": "tr",
+      "text": "bölünen parçaya ise"
+     },
+     {
+      "lang": "en",
+      "text": "portion"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The proportion of each portion is fixed."
+     },
+     {
+      "lang": "tr",
+      "text": "Her payın oranı sabit."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The proportion of each portion is fixed."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sen kur: Haftaya bu saatlerde pilot uygulamayı kontrol ediyor olacağız."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "This time next week we will be checking the pilot.",
+     "accept": [
+      "This time next week we'll be checking the pilot.",
+      "This time next week we will be reviewing the pilot."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "O an sürüyor olan için"
+      },
+      {
+       "lang": "en",
+       "text": "will be"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "This time next week we will be checking the pilot."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir şeyin baştan sona ölçüsüne"
+     },
+     {
+      "lang": "en",
+      "text": "length"
+     },
+     {
+      "lang": "tr",
+      "text": "yandan yana ölçüsüne ise"
+     },
+     {
+      "lang": "en",
+      "text": "width"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The length and the width are equal."
+     },
+     {
+      "lang": "tr",
+      "text": "Uzunluk ve genişlik eşit."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The length and the width are equal."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Yerden yukarı ölçüsüne"
+     },
+     {
+      "lang": "en",
+      "text": "height"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The height will be measured later."
+     },
+     {
+      "lang": "tr",
+      "text": "Yükseklik sonra ölçülecek."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The height will be measured later."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir tane daha: Miktar o zamana kadar sayılmış olacak."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "The quantity will have been counted by then.",
+     "accept": [
+      "The quantity will have been counted by that time.",
+      "The amount will have been counted by then."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "O ana kadar bitmiş olan için"
+      },
+      {
+       "lang": "en",
+       "text": "will have been"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "The quantity will have been counted by then."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Özetleyelim: edilgen bitmiş"
+     },
+     {
+      "lang": "en",
+      "text": "will have been finished"
+     },
+     {
+      "lang": "tr",
+      "text": "süren"
+     },
+     {
+      "lang": "en",
+      "text": "will be testing"
+     },
+     {
+      "lang": "tr",
+      "text": "bitmiş"
+     },
+     {
+      "lang": "en",
+      "text": "will have been checked"
+     },
+     {
+      "lang": "tr",
+      "text": "Şimdi bir denemenin takvimini anlatacaksın."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Bir pilot uygulamanın takvimini paydaşlara anlatıyorsun. Hangi işin ne zamana kadar bitirilmiş olacağını, o an neyin sürüyor olacağını ve neyin kontrol edilmiş olacağını söyle.",
+   "partner": "takvimi kısaltmak isteyen, her tarihi sorgulayan bir paydaş",
+   "opening": "Will the prototype be ready by May?",
+   "openingTr": "İlk örnek mayısa kadar hazır olur mu?",
+   "goal": "Edilgen bitmiş olanı, süren olanı ve bitmiş olanı üç ayrı biçimle söylediysen konuşma başarılı sayılır.",
+   "minTurns": 7
+  }
+ },
+ {
+  "id": "en-b2-which-was-checked",
+  "level": "B2",
+  "course": "en",
+  "icon": "question",
+  "title": "Which was checked in May",
+  "titleTr": "Ki kontrol edilmişti",
+  "summary": "Bir kaydın parçalarını tanıtmayı öğretir; açıklayıcı ilgi cümlesi edilgen bir ek bilgiyi cümleye bağlar.",
+  "minutes": 11,
+  "focusId": "Non-defining relative clauses",
+  "vocab": [
+   {
+    "de": "sensor",
+    "tr": "algılayıcı"
+   },
+   {
+    "de": "manual",
+    "tr": "el kitabı"
+   },
+   {
+    "de": "govern",
+    "tr": "düzenlemek"
+   },
+   {
+    "de": "trial",
+    "tr": "deneme"
+   },
+   {
+    "de": "column",
+    "tr": "sütun"
+   },
+   {
+    "de": "row",
+    "tr": "satır"
+   },
+   {
+    "de": "cell",
+    "tr": "hücre"
+   },
+   {
+    "de": "footnote",
+    "tr": "dipnot"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "The sensor, which was checked in May, failed.",
+    "tr": "edilgen bir ek bilgiyi kişiye değil şeye bağlar"
+   },
+   {
+    "de": "The manual, which is why we stopped, is old.",
+    "tr": "cümlenin tamamına ek bilgi ekler"
+   },
+   {
+    "de": "The rule to which we refer governs the trial.",
+    "tr": "edattan sonra ilgi zamiri kullanır"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Bugün bir kaydın parçalarını tanıtmayı öğreneceğiz: hangi parça ne zaman kontrol edildi, hangi kural neyi düzenliyor."
+     },
+     {
+      "lang": "tr",
+      "text": "Buradaki ek bilgi çoğu zaman edilgen: «ki mayısta kontrol edilmişti» gibi. Yapanı söylemeden ekliyorsun. Hazır mısın?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "sensor"
+     },
+     {
+      "lang": "tr",
+      "text": "Bir değeri algılayan aygıt demek. İlk kalıbımız da bu. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "The sensor, which was checked in May, failed."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The sensor, which was checked in May, failed."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Kullanımı anlatan kitapçığa"
+     },
+     {
+      "lang": "en",
+      "text": "manual"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İkinci kalıbımız cümlenin tamamına ek bilgi ekliyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "The manual, which is why we stopped, is old."
+     },
+     {
+      "lang": "tr",
+      "text": "El kitabı, ki bu yüzden durduk, eski."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The manual, which is why we stopped, is old."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir alanı kurala bağlamaya"
+     },
+     {
+      "lang": "en",
+      "text": "govern"
+     },
+     {
+      "lang": "tr",
+      "text": "küçük ölçekli sınamaya ise"
+     },
+     {
+      "lang": "en",
+      "text": "trial"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son kalıbımız edattan sonra ilgi zamiri kullanıyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "The rule to which we refer governs the trial."
+     },
+     {
+      "lang": "tr",
+      "text": "Atıf yaptığımız kural denemeyi düzenliyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The rule to which we refer governs the trial."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi dersin kuralı. Açıklayıcı ilgi cümlesi VİRGÜLLE ayrılır ve içindeki bilgi sık sık edilgendir:"
+     },
+     {
+      "lang": "en",
+      "text": "which was checked"
+     },
+     {
+      "lang": "tr",
+      "text": "yapanı söylemez. Edat öne geçtiğinde ilgi zamiri"
+     },
+     {
+      "lang": "en",
+      "text": "which"
+     },
+     {
+      "lang": "tr",
+      "text": "olur ve düşürülemez."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sıra sende: Parça, ki haziranda değiştirilmişti, bozuldu."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "The part, which was replaced in June, failed.",
+     "accept": [
+      "The part, which was changed in June, failed.",
+      "The component, which was replaced in June, failed."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Edilgen ek bilgi eklemek için"
+      },
+      {
+       "lang": "en",
+       "text": "which was"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "The part, which was replaced in June, failed."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kontrol. Şu cümle doğru mu?"
+     },
+     {
+      "lang": "en",
+      "text": "The manual, which is why we stopped, is old."
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "The manual, which is why we stopped, is old.",
+     "answer": true,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Doğru. Ek bilgi virgüller arasında duruyor ve çıkarılsa cümle yine tam kalıyor."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Tablonun dikey bölümüne"
+     },
+     {
+      "lang": "en",
+      "text": "column"
+     },
+     {
+      "lang": "tr",
+      "text": "yatay bölümüne ise"
+     },
+     {
+      "lang": "en",
+      "text": "row"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "Each column has the same number of rows."
+     },
+     {
+      "lang": "tr",
+      "text": "Her sütunda aynı sayıda satır var."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Each column has the same number of rows."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sen kur: Dosya, ki bu yüzden bekledik, uzun."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "The file, which is why we waited, is long.",
+     "accept": [
+      "The file, which is why we waited, is very long.",
+      "The document, which is why we waited, is long."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Cümlenin tamamına ek bilgi eklemek için"
+      },
+      {
+       "lang": "en",
+       "text": "which"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "The file, which is why we waited, is long."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Sütun ile satırın kesiştiği kutuya"
+     },
+     {
+      "lang": "en",
+      "text": "cell"
+     },
+     {
+      "lang": "tr",
+      "text": "sayfanın altındaki açıklamaya ise"
+     },
+     {
+      "lang": "en",
+      "text": "footnote"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The cell and the footnote disagree."
+     },
+     {
+      "lang": "tr",
+      "text": "Hücre ile dipnot birbirini tutmuyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The cell and the footnote disagree."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir tane daha: Atıf yaptığımız madde deneyi düzenliyor."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "The clause to which we refer governs the test.",
+     "accept": [
+      "The clause to which we refer governs the trial.",
+      "The term to which we refer governs the test."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Edattan sonra"
+      },
+      {
+       "lang": "en",
+       "text": "which"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "The clause to which we refer governs the test."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Özetleyelim: edilgen ek"
+     },
+     {
+      "lang": "en",
+      "text": "which was checked"
+     },
+     {
+      "lang": "tr",
+      "text": "cümleye ek"
+     },
+     {
+      "lang": "en",
+      "text": "which is why"
+     },
+     {
+      "lang": "tr",
+      "text": "edattan sonra"
+     },
+     {
+      "lang": "en",
+      "text": "to which"
+     },
+     {
+      "lang": "tr",
+      "text": "Şimdi bir kaydın parçalarını tanıtacaksın."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Bir arıza kaydını inceleyen meslektaşına parçaları tanıtıyorsun. Hangi parçanın ne zaman kontrol edildiğini, hangi belgenin neden durdurduğunu ve hangi kuralın neyi düzenlediğini anlat.",
+   "partner": "kaydı ilk kez okuyan, her satırı soran bir meslektaş",
+   "opening": "When was this part last checked?",
+   "openingTr": "Bu parça en son ne zaman kontrol edildi?",
+   "goal": "Edilgen eki, cümleye eki ve edattan sonrayı üç ayrı ilgi cümlesiyle söylediysen konuşma başarılı sayılır.",
+   "minTurns": 7
+  }
  }
 ]

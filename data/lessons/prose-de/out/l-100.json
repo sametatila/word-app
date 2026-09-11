@@ -1,0 +1,962 @@
+[
+ {
+  "tr": "Sürecin kaydı",
+  "kind": "titleTr",
+  "de": "Das Protokoll des Vorgangs"
+ },
+ {
+  "tr": "Tamamlandığında",
+  "kind": "titleTr",
+  "de": "Sobald es fertig ist"
+ },
+ {
+  "tr": "Yapılmış olacak",
+  "kind": "titleTr",
+  "de": "Es wird erledigt sein"
+ },
+ {
+  "tr": "Ki kontrol edilmişti",
+  "kind": "titleTr",
+  "de": "Das im Mai geprüft wurde"
+ },
+ {
+  "tr": "Aktarıldığı kadarıyla",
+  "kind": "titleTr",
+  "de": "Soweit berichtet wird"
+ },
+ {
+  "tr": "Yönergeyi kısa yazmayı öğretir; ortaç öbeği adımları tek cümleye indirip sırayı korur.",
+  "kind": "summary",
+  "de": "Vermittelt, wie man eine Anleitung kurz schreibt; die Partizipialkonstruktion fasst die Schritte in einen Satz und hält die Reihenfolge."
+ },
+ {
+  "tr": "Süreç kaydını yazmayı öğretir; fiil isme dönünce kayıt kişiden çıkar ve işleme odaklanır.",
+  "kind": "summary",
+  "de": "Vermittelt, wie man ein Vorgangsprotokoll schreibt; wird das Verb zum Nomen, tritt die Person aus dem Protokoll und der Vorgang rückt in den Blick."
+ },
+ {
+  "tr": "Doğrulanmamış bilgiyi aktarmayı öğretir; edilgen aktarım kalıbı bilgiyi verirken kaynağı açık bırakır.",
+  "kind": "summary",
+  "de": "Vermittelt, wie man ungeprüfte Informationen weitergibt; die passive Wiedergabe nennt die Information und lässt die Quelle offen."
+ },
+ {
+  "tr": "Bir kaydın parçalarını tanıtmayı öğretir; açıklayıcı ilgi cümlesi edilgen bir ek bilgiyi cümleye bağlar.",
+  "kind": "summary",
+  "de": "Vermittelt, wie man die Teile einer Akte vorstellt; der erklärende Relativsatz bindet eine passive Zusatzinformation an den Satz."
+ },
+ {
+  "tr": "Bir denemenin takvimini anlatmayı öğretir: o ana kadar bitmiş olan, o an sürüyor olan ve edilgen olan ayrı biçimlerle söylenir.",
+  "kind": "summary",
+  "de": "Vermittelt, wie man den Zeitplan eines Versuchs erklärt: was bis dahin fertig ist, was dann gerade läuft und was im Passiv steht, stehen in verschiedenen Formen."
+ },
+ {
+  "tr": "adımları not alan, sırayı iki kez soran bir çırak",
+  "kind": "partner",
+  "de": "ein Lehrling, der die Schritte notiert und zweimal nach der Reihenfolge fragt"
+ },
+ {
+  "tr": "kaydı ilk kez okuyan, her satırı soran bir meslektaş",
+  "kind": "partner",
+  "de": "eine Kollegin, die die Akte zum ersten Mal liest und jede Zeile abfragt"
+ },
+ {
+  "tr": "takvimi kısaltmak isteyen, her tarihi sorgulayan bir paydaş",
+  "kind": "partner",
+  "de": "ein Beteiligter, der den Zeitplan kürzen will und jedes Datum hinterfragt"
+ },
+ {
+  "tr": "bilgiyi hemen yaymak isteyen, doğrulama beklemeyen bir meslektaş",
+  "kind": "partner",
+  "de": "ein Kollege, der die Information sofort verbreiten will und keine Prüfung abwartet"
+ },
+ {
+  "tr": "kaydı yazıya geçiren, kısa ve resmî cümle bekleyen bir meslektaş",
+  "kind": "partner",
+  "de": "eine Kollegin, die das Protokoll schreibt und kurze, formelle Sätze erwartet"
+ },
+ {
+  "tr": "Bunu bugün duyurabilir miyiz?",
+  "kind": "openingTr",
+  "de": "Können wir das heute rausgeben?"
+ },
+ {
+  "tr": "İlk örnek mayısa kadar hazır olur mu?",
+  "kind": "openingTr",
+  "de": "Wird der Prototyp bis Mai fertig sein?"
+ },
+ {
+  "tr": "Bunu tek satır olarak verebilir misin?",
+  "kind": "openingTr",
+  "de": "Kannst du mir das als eine Zeile geben?"
+ },
+ {
+  "tr": "Karıştırmadan önce hangi adım geliyor?",
+  "kind": "openingTr",
+  "de": "Welcher Schritt kommt vor dem Mischen?"
+ },
+ {
+  "tr": "Bu parça en son ne zaman kontrol edildi?",
+  "kind": "openingTr",
+  "de": "Wann wurde dieses Teil zuletzt geprüft?"
+ },
+ {
+  "tr": "Bir işi ilk kez yapan birine yönergeyi sözlü anlatıyorsun. Önce biteni, sebebi ve edilgeni kısa cümlelerle bağla.",
+  "kind": "scene",
+  "de": "Du erklärst jemandem, der die Arbeit zum ersten Mal macht, die Anleitung mündlich. Binde das früher Beendete, den Grund und das Passiv in kurzen Sätzen an."
+ },
+ {
+  "tr": "Bir işlemin kaydını sözlü olarak kuruyorsun. Ne işlendiğini, neyin sürdüğünü ve neyin gerektiğini fiili isme çevirerek söyle.",
+  "kind": "scene",
+  "de": "Du formulierst das Protokoll eines Vorgangs mündlich. Sag durch Nominalisierung, was behandelt wurde, was noch läuft und was nötig ist."
+ },
+ {
+  "tr": "Elinde henüz doğrulanmamış bir bilgi var ve bunu bir meslektaşına aktarıyorsun. Bilgiyi aktarım kalıbıyla ver, neyin doğrulandığını söyle ve kendi değerlendirmeni ayır.",
+  "kind": "scene",
+  "de": "Du hast eine noch ungeprüfte Information und gibst sie einem Kollegen weiter. Gib sie in der Wiedergabeform, sag, was geprüft ist, und trenn deine eigene Einschätzung davon."
+ },
+ {
+  "tr": "Bir pilot uygulamanın takvimini paydaşlara anlatıyorsun. Hangi işin ne zamana kadar bitirilmiş olacağını, o an neyin sürüyor olacağını ve neyin kontrol edilmiş olacağını söyle.",
+  "kind": "scene",
+  "de": "Du erklärst den Beteiligten den Zeitplan eines Pilotprojekts. Sag, welche Arbeit bis wann erledigt sein wird, was dann gerade laufen wird und was geprüft sein wird."
+ },
+ {
+  "tr": "Bir arıza kaydını inceleyen meslektaşına parçaları tanıtıyorsun. Hangi parçanın ne zaman kontrol edildiğini, hangi belgenin neden durdurduğunu ve hangi kuralın neyi düzenlediğini anlat.",
+  "kind": "scene",
+  "de": "Du stellst einer Kollegin, die ein Störungsprotokoll durchsieht, die Teile vor. Erzähl, welches Teil wann geprüft wurde, welches Dokument warum gestoppt hat und welche Regel was regelt."
+ },
+ {
+  "tr": "Üç bilgiyi üç ayrı aktarım kalıbıyla verdiysen konuşma başarılı sayılır.",
+  "kind": "goal",
+  "de": "Das Gespräch gilt als gelungen, wenn du drei Informationen in drei verschiedenen Wiedergabeformen gesagt hast."
+ },
+ {
+  "tr": "Edilgen bitmiş olanı, süren olanı ve bitmiş olanı üç ayrı biçimle söylediysen konuşma başarılı sayılır.",
+  "kind": "goal",
+  "de": "Das Gespräch gilt als gelungen, wenn du das passiv Fertige, das Laufende und das Fertige in drei verschiedenen Formen gesagt hast."
+ },
+ {
+  "tr": "Edilgen eki, cümleye eki ve edattan sonrayı üç ayrı ilgi cümlesiyle söylediysen konuşma başarılı sayılır.",
+  "kind": "goal",
+  "de": "Das Gespräch gilt als gelungen, wenn du die passive Ergänzung, die Ergänzung zum ganzen Satz und die Stelle nach der Präposition in drei verschiedenen Relativsätzen gesagt hast."
+ },
+ {
+  "tr": "oran",
+  "kind": "vocab.tr",
+  "de": "Anteil"
+ },
+ {
+  "tr": "girdi",
+  "kind": "vocab.tr",
+  "de": "Zufuhr"
+ },
+ {
+  "tr": "hücre",
+  "kind": "vocab.tr",
+  "de": "Feld"
+ },
+ {
+  "tr": "hüküm",
+  "kind": "vocab.tr",
+  "de": "Bestimmung"
+ },
+ {
+  "tr": "köken",
+  "kind": "vocab.tr",
+  "de": "Herkunft"
+ },
+ {
+  "tr": "ölçek",
+  "kind": "vocab.tr",
+  "de": "Anzeige"
+ },
+ {
+  "tr": "sapma",
+  "kind": "vocab.tr",
+  "de": "Abweichung"
+ },
+ {
+  "tr": "satır",
+  "kind": "vocab.tr",
+  "de": "Zeile"
+ },
+ {
+  "tr": "sütun",
+  "kind": "vocab.tr",
+  "de": "Spalte"
+ },
+ {
+  "tr": "verim",
+  "kind": "vocab.tr",
+  "de": "Ertrag"
+ },
+ {
+  "tr": "deneme",
+  "kind": "vocab.tr",
+  "de": "Versuch"
+ },
+ {
+  "tr": "dipnot",
+  "kind": "vocab.tr",
+  "de": "Fußnote"
+ },
+ {
+  "tr": "miktar",
+  "kind": "vocab.tr",
+  "de": "Menge"
+ },
+ {
+  "tr": "sandık",
+  "kind": "vocab.tr",
+  "de": "Kiste"
+ },
+ {
+  "tr": "süzmek",
+  "kind": "vocab.tr",
+  "de": "filtern"
+ },
+ {
+  "tr": "arıtmak",
+  "kind": "vocab.tr",
+  "de": "raffinieren"
+ },
+ {
+  "tr": "bileşen",
+  "kind": "vocab.tr",
+  "de": "Bauteil"
+ },
+ {
+  "tr": "uzunluk",
+  "kind": "vocab.tr",
+  "de": "Länge"
+ },
+ {
+  "tr": "doğruluk",
+  "kind": "vocab.tr",
+  "de": "Genauigkeit"
+ },
+ {
+  "tr": "genişlik",
+  "kind": "vocab.tr",
+  "de": "Breite"
+ },
+ {
+  "tr": "gizlemek",
+  "kind": "vocab.tr",
+  "de": "verbergen"
+ },
+ {
+  "tr": "boşaltmak",
+  "kind": "vocab.tr",
+  "de": "abladen"
+ },
+ {
+  "tr": "el kitabı",
+  "kind": "vocab.tr",
+  "de": "Handbuch"
+ },
+ {
+  "tr": "esirgemek",
+  "kind": "vocab.tr",
+  "de": "zurückhalten"
+ },
+ {
+  "tr": "ilk örnek",
+  "kind": "vocab.tr",
+  "de": "Prototyp"
+ },
+ {
+  "tr": "yükseklik",
+  "kind": "vocab.tr",
+  "de": "Höhe"
+ },
+ {
+  "tr": "algılayıcı",
+  "kind": "vocab.tr",
+  "de": "Sensor"
+ },
+ {
+  "tr": "belgelemek",
+  "kind": "vocab.tr",
+  "de": "bescheinigen"
+ },
+ {
+  "tr": "doğrulamak",
+  "kind": "vocab.tr",
+  "de": "belegen"
+ },
+ {
+  "tr": "gereklilik",
+  "kind": "vocab.tr",
+  "de": "Erfordernis"
+ },
+ {
+  "tr": "karıştırmak",
+  "kind": "vocab.tr",
+  "de": "mischen"
+ },
+ {
+  "tr": "yapıştırmak",
+  "kind": "vocab.tr",
+  "de": "kleben"
+ },
+ {
+  "tr": "geçerli kılmak",
+  "kind": "vocab.tr",
+  "de": "für gültig erklären"
+ },
+ {
+  "tr": "pilot uygulama",
+  "kind": "vocab.tr",
+  "de": "Pilotprojekt"
+ },
+ {
+  "tr": "işlemden geçirmek",
+  "kind": "vocab.tr",
+  "de": "behandeln"
+ },
+ {
+  "tr": "süren işlemi isimle anlatır",
+  "kind": "pattern.tr",
+  "de": "nennt den laufenden Vorgang mit einem Nomen"
+ },
+ {
+  "tr": "gerekliliği resmî dille yazar",
+  "kind": "pattern.tr",
+  "de": "schreibt das Erfordernis in formeller Sprache"
+ },
+ {
+  "tr": "kaynağı açık bırakarak aktarır",
+  "kind": "pattern.tr",
+  "de": "gibt wieder und lässt die Quelle offen"
+ },
+ {
+  "tr": "önce biten adımı öne alıp bağlar",
+  "kind": "pattern.tr",
+  "de": "stellt den früher beendeten Schritt nach vorn und bindet ihn an"
+ },
+ {
+  "tr": "değerlendirmeyi aktarım kalıbıyla verir",
+  "kind": "pattern.tr",
+  "de": "gibt die Einschätzung in einer Wiedergabeform"
+ },
+ {
+  "tr": "edilgen bir ek bilgiyi kişiye değil şeye bağlar",
+  "kind": "pattern.tr",
+  "de": "bindet eine passive Zusatzinformation nicht an eine Person, sondern an eine Sache"
+ },
+ {
+  "tr": "Doğru. Her iki yarının öznesi de sandık; özne değişseydi bu öbek kurulamazdı.",
+  "kind": "why.tr",
+  "de": "Richtig. Beide Hälften haben die Kiste als Subjekt; bei einem Subjektwechsel ginge diese Konstruktion nicht."
+ },
+ {
+  "tr": "Doğru. Kimin arıttığı yazılmıyor ve süreç kaydında bu olağan; kayda geçen işlemin kendisi.",
+  "kind": "why.tr",
+  "de": "Richtig. Wer raffiniert, wird nicht geschrieben, und im Vorgangsprotokoll ist das normal; zu Protokoll geht der Vorgang selbst."
+ },
+ {
+  "tr": "Doğru. Özne başa geçtiği için fiil mastara dönüyor ve değerlendirme kimseye mal edilmiyor.",
+  "kind": "why.tr",
+  "de": "Richtig. Weil das Subjekt nach vorn rückt, wird das Verb zum Infinitiv, und die Einschätzung wird niemandem zugeschrieben."
+ },
+ {
+  "tr": "Kaynağı açık bırakmak için",
+  "kind": "hint.tr",
+  "de": "Um die Quelle offen zu lassen"
+ },
+ {
+  "tr": "Değerlendirmeyi aktarmak için",
+  "kind": "hint.tr",
+  "de": "Um die Einschätzung wiederzugeben"
+ },
+ {
+  "tr": "Edilgen ek bilgi eklemek için",
+  "kind": "hint.tr",
+  "de": "Um eine passive Zusatzinformation anzufügen"
+ },
+ {
+  "tr": "Önce biten adımı bağlamak için",
+  "kind": "hint.tr",
+  "de": "Um den früher beendeten Schritt anzubinden"
+ },
+ {
+  "tr": "Süren işlemi isimle anlatmak için",
+  "kind": "hint.tr",
+  "de": "Um den laufenden Vorgang mit einem Nomen zu nennen"
+ },
+ {
+  "tr": "Gerekliliği resmî dille yazmak için",
+  "kind": "hint.tr",
+  "de": "Um das Erfordernis formell zu schreiben"
+ },
+ {
+  "tr": "arıtma",
+  "kind": "say.tr",
+  "de": "Raffination"
+ },
+ {
+  "tr": "bitmiş",
+  "kind": "say.tr",
+  "de": "fertig"
+ },
+ {
+  "tr": "gereklilik",
+  "kind": "say.tr",
+  "de": "Erfordernis"
+ },
+ {
+  "tr": "değerlendirme",
+  "kind": "say.tr",
+  "de": "Einschätzung"
+ },
+ {
+  "tr": "Araçtan indirmeye",
+  "kind": "say.tr",
+  "de": "Vom Fahrzeug herunternehmen heißt"
+ },
+ {
+  "tr": "Ne kadar olduğuna",
+  "kind": "say.tr",
+  "de": "Wie viel es ist, heißt"
+ },
+ {
+  "tr": "saklı tutmaya ise",
+  "kind": "say.tr",
+  "de": "und verborgen halten heißt"
+ },
+ {
+  "tr": "Özetleyelim: işlem",
+  "kind": "say.tr",
+  "de": "Fassen wir zusammen: Behandlung"
+ },
+ {
+  "tr": "yatay bölümüne ise",
+  "kind": "say.tr",
+  "de": "und der waagerechte Abschnitt heißt"
+ },
+ {
+  "tr": "Araca yerleştirmeye",
+  "kind": "say.tr",
+  "de": "Auf das Fahrzeug bringen heißt"
+ },
+ {
+  "tr": "bölünen parçaya ise",
+  "kind": "say.tr",
+  "de": "und der abgeteilte Teil heißt"
+ },
+ {
+  "tr": "Elde edilen miktara",
+  "kind": "say.tr",
+  "de": "Die gewonnene Menge heißt"
+ },
+ {
+  "tr": "Verim girdiye bağlı.",
+  "kind": "say.tr",
+  "de": "Der Ertrag hängt von der Zufuhr ab."
+ },
+ {
+  "tr": "Beklenenden ayrılmaya",
+  "kind": "say.tr",
+  "de": "Vom Erwarteten abweichen heißt"
+ },
+ {
+  "tr": "Bütüne göre büyüklüğe",
+  "kind": "say.tr",
+  "de": "Die Größe im Verhältnis zum Ganzen heißt"
+ },
+ {
+  "tr": "Vermeyip elde tutmaya",
+  "kind": "say.tr",
+  "de": "Nicht herausgeben und behalten heißt"
+ },
+ {
+  "tr": "Her payın oranı sabit.",
+  "kind": "say.tr",
+  "de": "Der Anteil jedes Teils ist festgelegt."
+ },
+ {
+  "tr": "Yerden yukarı ölçüsüne",
+  "kind": "say.tr",
+  "de": "Das Maß vom Boden nach oben heißt"
+ },
+ {
+  "tr": "Özetleyelim: edilgen ek",
+  "kind": "say.tr",
+  "de": "Fassen wir zusammen: passive Ergänzung"
+ },
+ {
+  "tr": "Tablonun dikey bölümüne",
+  "kind": "say.tr",
+  "de": "Der senkrechte Abschnitt der Tabelle heißt"
+ },
+ {
+  "tr": "yandan yana ölçüsüne ise",
+  "kind": "say.tr",
+  "de": "und das Maß von Seite zu Seite heißt"
+ },
+ {
+  "tr": "Uzunluk ve genişlik eşit.",
+  "kind": "say.tr",
+  "de": "Länge und Breite sind gleich."
+ },
+ {
+  "tr": "Bir alanı kurala bağlamaya",
+  "kind": "say.tr",
+  "de": "Einen Bereich an Regeln binden heißt"
+ },
+ {
+  "tr": "Bir sapma yönergeyi bozdu.",
+  "kind": "say.tr",
+  "de": "Eine Abweichung hat die Richtlinie gebrochen."
+ },
+ {
+  "tr": "küçük ölçekli sınamaya ise",
+  "kind": "say.tr",
+  "de": "und die Erprobung in kleinem Maßstab heißt"
+ },
+ {
+  "tr": "sürece giren malzemeye ise",
+  "kind": "say.tr",
+  "de": "und das Material, das in den Vorgang geht, heißt"
+ },
+ {
+  "tr": "Yazılı belgeyle onaylamaya",
+  "kind": "say.tr",
+  "de": "Mit einem schriftlichen Dokument bestätigen heißt"
+ },
+ {
+  "tr": "Yükseklik sonra ölçülecek.",
+  "kind": "say.tr",
+  "de": "Die Höhe wird später gemessen."
+ },
+ {
+  "tr": "Kullanımı anlatan kitapçığa",
+  "kind": "say.tr",
+  "de": "Das Heft, das die Bedienung erklärt, heißt"
+ },
+ {
+  "tr": "Özetleyelim: edilgen bitmiş",
+  "kind": "say.tr",
+  "de": "Fassen wir zusammen: passiv fertig"
+ },
+ {
+  "tr": "Bilinmeyeni ortaya çıkarmaya",
+  "kind": "say.tr",
+  "de": "Unbekanntes ans Licht bringen heißt"
+ },
+ {
+  "tr": "Bir metindeki tek tek kurala",
+  "kind": "say.tr",
+  "de": "Die einzelne Regel in einem Text heißt"
+ },
+ {
+  "tr": "bütünü oluşturan parçaya ise",
+  "kind": "say.tr",
+  "de": "und der Teil, der das Ganze bildet, heißt"
+ },
+ {
+  "tr": "Yapıştırıcıyla birleştirmeye",
+  "kind": "say.tr",
+  "de": "Mit Klebstoff verbinden heißt"
+ },
+ {
+  "tr": "Hüküm iki durumu da kapsıyor.",
+  "kind": "say.tr",
+  "de": "Die Bestimmung deckt beide Fälle ab."
+ },
+ {
+  "tr": "taşır ve yapanı hiç söylemez.",
+  "kind": "say.tr",
+  "de": "und nennt den Handelnden überhaupt nicht."
+ },
+ {
+  "tr": "Yerine getirilmesi şart olana",
+  "kind": "say.tr",
+  "de": "Was erfüllt werden muss, heißt"
+ },
+ {
+  "tr": "bir değeri gösteren aygıta ise",
+  "kind": "say.tr",
+  "de": "und das Gerät, das einen Wert zeigt, heißt"
+ },
+ {
+  "tr": "Bir şeyin baştan sona ölçüsüne",
+  "kind": "say.tr",
+  "de": "Das Maß von einem Ende zum anderen heißt"
+ },
+ {
+  "tr": "Ölçek düştüğünde boşaltıyoruz.",
+  "kind": "say.tr",
+  "de": "Wir laden ab, wenn die Anzeige fällt."
+ },
+ {
+  "tr": "Gerçeğe ne kadar yakın olduğuna",
+  "kind": "say.tr",
+  "de": "Wie nah etwas an der Wirklichkeit ist, heißt"
+ },
+ {
+  "tr": "Yabancı maddelerden temizlemeye",
+  "kind": "say.tr",
+  "de": "Von fremden Stoffen reinigen heißt"
+ },
+ {
+  "tr": "Seri üretimden önceki ilk örneğe",
+  "kind": "say.tr",
+  "de": "Das erste Stück vor der Serienfertigung heißt"
+ },
+ {
+  "tr": "Sürecin arıtılması devam ediyor.",
+  "kind": "say.tr",
+  "de": "Die Raffination des Vorgangs läuft weiter."
+ },
+ {
+  "tr": "izlenmesi istenen yazılı yola ise",
+  "kind": "say.tr",
+  "de": "und der schriftliche Weg, dem man folgen soll, heißt"
+ },
+ {
+  "tr": "sayfanın altındaki açıklamaya ise",
+  "kind": "say.tr",
+  "de": "und die Erläuterung unten auf der Seite heißt"
+ },
+ {
+  "tr": "bir cümle kurar ve özne boş kalır;",
+  "kind": "say.tr",
+  "de": "baut einen Satz und das Subjekt bleibt leer;"
+ },
+ {
+  "tr": "Her sütunda aynı sayıda satır var.",
+  "kind": "say.tr",
+  "de": "Jede Spalte hat gleich viele Zeilen."
+ },
+ {
+  "tr": "Sütun ile satırın kesiştiği kutuya",
+  "kind": "say.tr",
+  "de": "Das Kästchen, wo sich Spalte und Zeile kreuzen, heißt"
+ },
+ {
+  "tr": "bir şeyi resmen geçerli saymaya ise",
+  "kind": "say.tr",
+  "de": "und etwas amtlich für gültig erklären heißt"
+ },
+ {
+  "tr": "tahtadan yapılmış taşıma kabına ise",
+  "kind": "say.tr",
+  "de": "und der Transportbehälter aus Holz heißt"
+ },
+ {
+  "tr": "Hücre ile dipnot birbirini tutmuyor.",
+  "kind": "say.tr",
+  "de": "Feld und Fußnote stimmen nicht überein."
+ },
+ {
+  "tr": "İkinci bir kontrol gerekliliği açık.",
+  "kind": "say.tr",
+  "de": "Das Erfordernis einer zweiten Prüfung ist klar."
+ },
+ {
+  "tr": "Doğruluğun yüksek olduğu düşünülüyor.",
+  "kind": "say.tr",
+  "de": "Man hält die Genauigkeit für hoch."
+ },
+ {
+  "tr": "El kitabı, ki bu yüzden durduk, eski.",
+  "kind": "say.tr",
+  "de": "Das Handbuch, weshalb wir aufgehört haben, ist alt."
+ },
+ {
+  "tr": "Bir bilginin doğru olduğunu kanıtlamaya",
+  "kind": "say.tr",
+  "de": "Zu belegen, dass eine Information stimmt, heißt"
+ },
+ {
+  "tr": "o an SÜRÜYOR olanı anlatır. Edilgeni ise",
+  "kind": "say.tr",
+  "de": "was dann gerade LÄUFT. Das Passiv trägt"
+ },
+ {
+  "tr": "Geçerli kılana kadar dosyayı esirgiyoruz.",
+  "kind": "say.tr",
+  "de": "Wir halten die Akte zurück, bis wir sie für gültig erklären."
+ },
+ {
+  "tr": "Atıf yaptığımız kural denemeyi düzenliyor.",
+  "kind": "say.tr",
+  "de": "Die Regel, auf die wir uns beziehen, regelt den Versuch."
+ },
+ {
+  "tr": "İlk yüklendiği için sandık en son varıyor.",
+  "kind": "say.tr",
+  "de": "Weil die Kiste zuerst geladen wurde, kommt sie zuletzt an."
+ },
+ {
+  "tr": "Rakamların iddiayı doğruladığı söyleniyor.",
+  "kind": "say.tr",
+  "de": "Es heißt, dass die Zahlen die Behauptung belegen."
+ },
+ {
+  "tr": "Şimdi bir kaydın parçalarını tanıtacaksın.",
+  "kind": "say.tr",
+  "de": "Jetzt stellst du die Teile einer Akte vor."
+ },
+ {
+  "tr": "Ölçeği kontrol ettikten sonra vanayı kapat.",
+  "kind": "say.tr",
+  "de": "Nachdem du die Anzeige geprüft hast, schließ das Ventil."
+ },
+ {
+  "tr": "Pazartesi yapıştırılan bileşen test edildi.",
+  "kind": "say.tr",
+  "de": "Das am Montag geklebte Bauteil wurde getestet."
+ },
+ {
+  "tr": "Şimdi bir denemenin takvimini anlatacaksın.",
+  "kind": "say.tr",
+  "de": "Jetzt erklärst du den Zeitplan eines Versuchs."
+ },
+ {
+  "tr": "Sonucu ancak bir laboratuvar belgeleyebilir.",
+  "kind": "say.tr",
+  "de": "Nur ein Labor kann das Ergebnis bescheinigen."
+ },
+ {
+  "tr": "Şimdi bir yönergeyi sözlü olarak vereceksin.",
+  "kind": "say.tr",
+  "de": "Jetzt gibst du eine Anleitung mündlich."
+ },
+ {
+  "tr": "Şimdi sen kur: Boş olduğu için sandık hafif.",
+  "kind": "say.tr",
+  "de": "Jetzt du: Weil die Kiste leer ist, ist sie leicht."
+ },
+ {
+  "tr": "Miktar o zamana kadar kontrol edilmiş olacak.",
+  "kind": "say.tr",
+  "de": "Die Menge wird bis dahin geprüft worden sein."
+ },
+ {
+  "tr": "Son kalıbımız gerekliliği yazıyor. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Unsere letzte Wendung schreibt das Erfordernis. Wiederhole:"
+ },
+ {
+  "tr": "Şimdi doğrulanmamış bir bilgiyi aktaracaksın.",
+  "kind": "say.tr",
+  "de": "Jetzt gibst du eine ungeprüfte Information weiter."
+ },
+ {
+  "tr": "Şimdi sen kur: Yağın arıtılması devam ediyor.",
+  "kind": "say.tr",
+  "de": "Jetzt du: Die Raffination des Öls läuft weiter."
+ },
+ {
+  "tr": "Bir tane daha: Cuma günü süzülen sıvı temizdi.",
+  "kind": "say.tr",
+  "de": "Noch eins: Die am Freitag gefilterte Flüssigkeit war sauber."
+ },
+ {
+  "tr": "Bir tane daha: Raporun tam olduğu düşünülüyor.",
+  "kind": "say.tr",
+  "de": "Noch eins: Man hält den Bericht für vollständig."
+ },
+ {
+  "tr": "Şimdi bir süreç kaydını sözlü olarak kuracaksın.",
+  "kind": "say.tr",
+  "de": "Jetzt formulierst du ein Vorgangsprotokoll mündlich."
+ },
+ {
+  "tr": "yapanı söylemez. Edat öne geçtiğinde ilgi zamiri",
+  "kind": "say.tr",
+  "de": "nennt den Handelnden nicht. Rückt die Präposition nach vorn, wird das Relativpronomen"
+ },
+ {
+  "tr": "Bir bölümünü açıklıyor, bir bölümünü gizliyorlar.",
+  "kind": "say.tr",
+  "de": "Einen Teil geben sie preis, einen Teil verbergen sie."
+ },
+ {
+  "tr": "Bir tane daha: Üçüncü bir deney gerekliliği açık.",
+  "kind": "say.tr",
+  "de": "Noch eins: Das Erfordernis eines dritten Versuchs ist klar."
+ },
+ {
+  "tr": "Şimdi sen kur: Dosya, ki bu yüzden bekledik, uzun.",
+  "kind": "say.tr",
+  "de": "Jetzt du: Die Akte, weshalb wir gewartet haben, ist lang."
+ },
+ {
+  "tr": "İkinci kalıbımız süren işlemi anlatıyor. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Unsere zweite Wendung nennt den laufenden Vorgang. Wiederhole:"
+ },
+ {
+  "tr": "Son kalıbımız değerlendirmeyi aktarıyor. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Unsere letzte Wendung gibt die Einschätzung wieder. Wiederhole:"
+ },
+ {
+  "tr": "Şimdi sıra sende: Metalin işlenmesi bir saat sürdü.",
+  "kind": "say.tr",
+  "de": "Jetzt bist du dran: Die Behandlung des Metalls hat eine Stunde gedauert."
+ },
+ {
+  "tr": "Gelecek ay bu sıralarda ilk örneği deniyor olacağız.",
+  "kind": "say.tr",
+  "de": "Nächsten Monat um diese Zeit werden wir den Prototyp testen."
+ },
+ {
+  "tr": "Şimdi dersin kuralı. Aktarım kalıbının iki yolu var:",
+  "kind": "say.tr",
+  "de": "Jetzt die Regel der Lektion. Die Wiedergabe hat zwei Wege:"
+ },
+ {
+  "tr": "Bir tane daha: Miktar o zamana kadar sayılmış olacak.",
+  "kind": "say.tr",
+  "de": "Noch eins: Die Menge wird bis dahin gezählt worden sein."
+ },
+ {
+  "tr": "Şimdi sıra sende: Tozu karıştırdıktan sonra suyu ekle.",
+  "kind": "say.tr",
+  "de": "Jetzt bist du dran: Nachdem du das Pulver gemischt hast, gib das Wasser dazu."
+ },
+ {
+  "tr": "Bir tane daha: Atıf yaptığımız madde deneyi düzenliyor.",
+  "kind": "say.tr",
+  "de": "Noch eins: Die Klausel, auf die wir uns beziehen, regelt den Versuch."
+ },
+ {
+  "tr": "Şimdi sıra sende: Kaynağın belirsiz olduğu bildiriliyor.",
+  "kind": "say.tr",
+  "de": "Jetzt bist du dran: Es wird berichtet, dass die Quelle unklar ist."
+ },
+ {
+  "tr": "Şimdi sıra sende: Mayısa kadar deneme bitirilmiş olacak.",
+  "kind": "say.tr",
+  "de": "Jetzt bist du dran: Bis Mai wird der Versuch beendet worden sein."
+ },
+ {
+  "tr": "Şimdi sen kur: Sayıların iddiayı desteklediği söyleniyor.",
+  "kind": "say.tr",
+  "de": "Jetzt du: Es heißt, dass die Zahlen die Behauptung stützen."
+ },
+ {
+  "tr": "Son kalıbımız o ana kadar bitmiş olanı söylüyor. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Unsere letzte Wendung nennt, was bis dahin fertig ist. Wiederhole:"
+ },
+ {
+  "tr": "Bir şeyin çıktığı yer demek. İlk kalıbımız da bu. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Das heißt der Ort, aus dem etwas kommt. Das ist auch unsere erste Wendung. Wiederhole:"
+ },
+ {
+  "tr": "Küçük ölçekli ilk deneme demek. İlk kalıbımız da bu. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Das heißt der erste Versuch in kleinem Maßstab. Das ist auch unsere erste Wendung. Wiederhole:"
+ },
+ {
+  "tr": "Şimdi dersin kuralı. Fiili isme çevirmek kaydı kişiden çıkarır:",
+  "kind": "say.tr",
+  "de": "Jetzt die Regel der Lektion. Das Verb zum Nomen zu machen nimmt die Person aus dem Protokoll:"
+ },
+ {
+  "tr": "Şimdi sıra sende: Parça, ki haziranda değiştirilmişti, bozuldu.",
+  "kind": "say.tr",
+  "de": "Jetzt bist du dran: Das Teil, das im Juni ersetzt wurde, ist ausgefallen."
+ },
+ {
+  "tr": "Bir değeri algılayan aygıt demek. İlk kalıbımız da bu. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Das heißt ein Gerät, das einen Wert erfasst. Das ist auch unsere erste Wendung. Wiederhole:"
+ },
+ {
+  "tr": "Katıyı sıvıdan ayırmak demek. Bir araya getirip birleştirmeye ise",
+  "kind": "say.tr",
+  "de": "Das heißt Festes von Flüssigem trennen. Und zusammenbringen und verbinden heißt"
+ },
+ {
+  "tr": "Bir maddeye işlem uygulamak demek. İlk kalıbımız da bu. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Das heißt einen Stoff einem Verfahren unterziehen. Das ist auch unsere erste Wendung. Wiederhole:"
+ },
+ {
+  "tr": "Şimdi sen kur: Haftaya bu saatlerde pilot uygulamayı kontrol ediyor olacağız.",
+  "kind": "say.tr",
+  "de": "Jetzt du: Nächste Woche um diese Zeit werden wir das Pilotprojekt prüfen."
+ },
+ {
+  "tr": "özneyi başa alıp fiili mastara çevirir. İkincisi daha kısa, haber dilinde daha sık.",
+  "kind": "say.tr",
+  "de": "stellen das Subjekt nach vorn und machen das Verb zum Infinitiv. Die zweite Form ist kürzer und in der Nachrichtensprache häufiger."
+ },
+ {
+  "tr": "Merhaba! Bugün süreç kaydı yazmayı öğreneceğiz: ne işlendi, ne arıtıldı, ne gerekiyor.",
+  "kind": "say.tr",
+  "de": "Hallo! Heute lernen wir, ein Vorgangsprotokoll zu schreiben: was behandelt, was raffiniert wurde, was nötig ist."
+ },
+ {
+  "tr": "sebebi, üçüncü hâlle başlayan öbek ise edilgeni bağlar. Yönergede sıra bu yapıyla korunur.",
+  "kind": "say.tr",
+  "de": "den Grund, und die Konstruktion mit der dritten Form bindet das Passiv an. In der Anleitung hält diese Konstruktion die Reihenfolge."
+ },
+ {
+  "tr": "Bir yönergede adımların sırası anlamın yarısıdır; yanlış sıra doğru cümleyi de yanlış yapar.",
+  "kind": "say.tr",
+  "de": "In einer Anleitung ist die Reihenfolge der Schritte die halbe Bedeutung; eine falsche Reihenfolge macht auch den richtigen Satz falsch."
+ },
+ {
+  "tr": "Şimdi dersin kuralı. Açıklayıcı ilgi cümlesi VİRGÜLLE ayrılır ve içindeki bilgi sık sık edilgendir:",
+  "kind": "say.tr",
+  "de": "Jetzt die Regel der Lektion. Der erklärende Relativsatz wird mit KOMMA abgetrennt, und was darin steht, ist oft passiv:"
+ },
+ {
+  "tr": "Merhaba! Bugün yönergeyi kısa yazmayı öğreneceğiz: önce ne yapıldı, neden öyle oldu, ne sonra geldi.",
+  "kind": "say.tr",
+  "de": "Hallo! Heute lernen wir, eine Anleitung kurz zu schreiben: was zuerst gemacht wurde, warum es so war, was danach kam."
+ },
+ {
+  "tr": "yazılır. Süreç kaydında bu bir üslup tercihi değil; kaydın kim değil ne olduğunu göstermesi gerekir.",
+  "kind": "say.tr",
+  "de": "geschrieben. Im Vorgangsprotokoll ist das keine Stilfrage; die Aufzeichnung soll nicht das Wer, sondern das Was zeigen."
+ },
+ {
+  "tr": "Yönerge kısa olmak zorunda ama adım sırasını kaybetmemeli; ortaç öbeği ikisini birden sağlıyor. Hazır mısın?",
+  "kind": "say.tr",
+  "de": "Eine Anleitung muss kurz sein, darf aber die Schrittfolge nicht verlieren; die Partizipialkonstruktion leistet beides. Bist du bereit?"
+ },
+ {
+  "tr": "Merhaba! Bugün doğrulanmamış bilgiyi aktarmayı öğreneceğiz: ne söyleniyor, kim doğruluyor, ne kadar güvenilir.",
+  "kind": "say.tr",
+  "de": "Hallo! Heute lernen wir, ungeprüfte Informationen weiterzugeben: was gesagt wird, wer es belegt, wie verlässlich es ist."
+ },
+ {
+  "tr": "Bu modülün konusu edilgenin bütün hâlleri ve ilki en sık kullanılanı: kaynağı açık bırakan aktarım. Hazır mısın?",
+  "kind": "say.tr",
+  "de": "Das Thema dieses Moduls ist das Passiv in all seinen Formen, und die erste ist die häufigste: die Wiedergabe, die die Quelle offen lässt. Bist du bereit?"
+ },
+ {
+  "tr": "Süreç kaydı kimin yaptığını değil neyin yapıldığını taşır ve bunu sağlayan şey fiili isme çevirmek. Hazır mısın?",
+  "kind": "say.tr",
+  "de": "Ein Vorgangsprotokoll trägt nicht, wer es gemacht hat, sondern was gemacht wurde, und das schafft die Nominalisierung. Bist du bereit?"
+ },
+ {
+  "tr": "Merhaba! Bugün bir denemenin takvimini anlatmayı öğreneceğiz: o güne kadar ne bitmiş olacak, o an ne sürüyor olacak.",
+  "kind": "say.tr",
+  "de": "Hallo! Heute lernen wir, den Zeitplan eines Versuchs zu erklären: was bis dahin fertig sein wird und was dann gerade laufen wird."
+ },
+ {
+  "tr": "Buradaki ek bilgi çoğu zaman edilgen: «ki mayısta kontrol edilmişti» gibi. Yapanı söylemeden ekliyorsun. Hazır mısın?",
+  "kind": "say.tr",
+  "de": "Die Ergänzung ist hier meist passiv: «das im Mai geprüft wurde». Du fügst sie an, ohne den Handelnden zu nennen. Bist du bereit?"
+ },
+ {
+  "tr": "Bu modülde edilgenin gelecekteki hâlini göreceksin: bitmiş olacak demek ile bitirilmiş olacak demek ayrı şeyler. Hazır mısın?",
+  "kind": "say.tr",
+  "de": "In diesem Modul siehst du das Passiv in der Zukunft: fertig sein wird und beendet worden sein wird sind zwei verschiedene Dinge. Bist du bereit?"
+ },
+ {
+  "tr": "Merhaba! Bugün bir kaydın parçalarını tanıtmayı öğreneceğiz: hangi parça ne zaman kontrol edildi, hangi kural neyi düzenliyor.",
+  "kind": "say.tr",
+  "de": "Hallo! Heute lernen wir, die Teile einer Akte vorzustellen: welches Teil wann geprüft wurde, welche Regel was regelt."
+ }
+]
