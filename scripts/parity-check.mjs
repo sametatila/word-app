@@ -5225,6 +5225,50 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   sameList("ortak gorev karti", kart("mobile/src/social/Quests.tsx"), kart("src/components/social/quests.tsx"));
 }
 
+/* ── 148. arkadas satirindaki eylemler ────────────────────────────────────
+ * Satirda uc eylem var: durt/alkisla, gorev daveti, arkadaslıktan cikar.
+ * Androidde ucu de SIMGE + METIN (`FriendRows` `ActionTile`); webde ikisi
+ * metinliydi, gorev dugmesi ise yalniz hedef simgesiydi. Ne yaptigini sormak
+ * icin farenin ustunde beklemesi gerekiyordu (`title`) - dokunmatik ekranda
+ * hic ogrenilemiyordu. Satirin oteki iki dugmesi zaten metinliydi, yani
+ * sessiz olan tek dugme buydu.
+ *
+ * Olculen: uc eylemin de GORUNUR bir adi var mi. `title` ipuclari webin
+ * kendi eklentisi ve sayilmiyor: ipucu, adin yerini tutmuyor. */
+{
+  const strip = (x) => x.replace(/\/\*[\s\S]*?\*\//g, " ").replace(/(^|[^:"'`\\])\/\/.*$/gm, "$1");
+  const eylemler = (yol) => {
+    const src = strip(read(yol)).replace(/\s+/g, " ");
+    /* Gorunur ad: dugmenin ICINDE ya da `label=` ile gecen sozluk anahtari.
+       `title=`/`aria-label=` gorunur ad DEGIL. */
+    const gorunur = (anahtar) => {
+      /* Duz metin taramasi, RegExp DEGIL: anahtar noktali (`friendrows.quest`)
+         ve kacis dizisi kurmak bu dosyada bir kez bozuk desen uretti.
+         ANAHTARIN KENDISI araniyor, `t("...")` kalibi degil: iki taraf da
+         kosullu yaziyor (`t(cheer ? "friendrows.cheer" : "friendrows.nudge")`)
+         ve kalip arayan ilk hâli o eylemi IKI TARAFTA DA "sessiz" sayiyordu -
+         bos bir mutabakat. */
+      const iz = '"' + anahtar + '"';
+      let k = -1;
+      while ((k = src.indexOf(iz, k + 1)) >= 0) {
+        /* Geriye dogru en yakin nitelik adini bul: gizli etiket mi, gorunur
+           ad mi. `title`/`aria-label`/`accessibilityLabel` GORUNUR ad degil. */
+        const once = src.slice(Math.max(0, k - 120), k);
+        const nitelik = once.match(/([\w-]+)=\{[^{}]*$/)?.[1] ?? "";
+        if (/^(title|aria-label|accessibilityLabel|accessibilityHint)$/.test(nitelik)) continue;
+        return "adi var";
+      }
+      return "sessiz";
+    };
+    return [
+      "durt/alkisla=" + (gorunur("friendrows.nudge") === "adi var" || gorunur("friendrows.cheer") === "adi var" ? "adi var" : "sessiz"),
+      "gorev=" + gorunur("friendrows.quest"),
+      "cikar=" + (gorunur("social.remove") === "adi var" || gorunur("friendrows.remove") === "adi var" ? "adi var" : "sessiz"),
+    ];
+  };
+  sameList("arkadas satiri eylemleri", eylemler("mobile/src/social/FriendRows.tsx"), eylemler("src/components/social/friend-list.tsx"));
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"

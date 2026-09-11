@@ -8029,3 +8029,30 @@ azaldı.
 **§147** iki şeyi ölçüyor ve üç enjeksiyonun üçü de yakalandı. Bu turda tepki
 çubuğu (`ReactionBar`) da karşılaştırıldı: beş anahtarın beşi de aynı, fark
 yok.
+
+### 11.242 Arkadaş satırındaki sessiz düğme
+
+Arkadaş satırında üç eylem var: dürt/alkışla, görev daveti, arkadaşlıktan
+çıkar. Android üçünü de **simge + metin** gösteriyor; web'de ikisi metinliydi,
+**görev düğmesi yalnız hedef simgesiydi.** Ne yaptığını öğrenmek için farenin
+üstünde beklemesi gerekiyordu (`title`) — dokunmatik ekranda hiç
+öğrenilemiyordu. Satırın öteki iki düğmesi zaten metinli olduğu için sessiz
+olan tek düğme oydu; adı kondu (Android'in kullandığı anahtarla,
+`friendrows.quest`).
+
+**§148** üç eylemin de görünür bir adı olduğunu ölçüyor. `title`,
+`aria-label` ve `accessibilityLabel` **görünür ad sayılmıyor**: ipucu, adın
+yerini tutmuyor — gatenin ayırt ettiği şey tam olarak bu.
+
+Kapı iki kez yanlış yazıldı ve ikisi de kayda değer:
+
+1. İlk hâli `t("anahtar")` **kalıbını** arıyordu. Oysa iki taraf da dürtme
+   düğmesini koşullu yazıyor (`t(cheer ? "friendrows.cheer" : ...)`), yani
+   kalıp hiç geçmiyor: o eylem **iki tarafta da "sessiz"** okunuyordu ve
+   karşılaştırma **boş bir mutabakatla** yeşil geçiyordu (§11.228'in sınıfı,
+   bu kez kapının içinde). Artık anahtarın kendisi aranıyor.
+2. Gizli etiket listesinde `accessibilityLabel` yoktu: mobilin adını gizleyen
+   enjeksiyon yakalanmıyordu — kapı web'in gizleme biçimini biliyor, mobilinkini
+   bilmiyordu.
+
+Dört enjeksiyonun dördü de sonunda yakalandı.

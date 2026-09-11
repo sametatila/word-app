@@ -151,8 +151,14 @@ function FriendItem({ f, nudged, onChanged }: { f: FriendRow; nudged: boolean; o
         >
           {t(sent ? (cheer ? "friendrows.cheered" : "friendrows.nudged") : cheer ? "friendrows.cheer" : "friendrows.nudge")}
         </button>
-        <button className="btn btn-ghost h-8 px-2 text-xs" disabled={busy} onClick={() => void quest()} title={t("socialw.quest_hint")} aria-label={t("quests.invite_title")}>
+        {/* GÖREV DÜĞMESİ ADIYLA. Yalnız hedef simgesiydi: ne yaptığını sormak
+            için fareyi üstünde bekletmek gerekiyordu (`title`), dokunmatik
+            ekranda ise hiç öğrenilemiyordu. Android aynı düğmeyi simge + metin
+            olarak veriyor (`FriendRows` `ActionTile`) ve satırdaki öteki iki
+            düğme webde de zaten metinli — tek sessiz olan buydu. */}
+        <button className="btn btn-ghost flex h-8 items-center gap-1 px-2 text-xs" disabled={busy} onClick={() => void quest()} title={t("socialw.quest_hint")}>
           <TargetIcon size={15} />
+          {t("friendrows.quest")}
         </button>
         <button className="muted h-8 px-1.5 text-[11px]" onClick={() => void remove()} aria-label={t("social.unfriend")}>
           {t("social.remove")}
