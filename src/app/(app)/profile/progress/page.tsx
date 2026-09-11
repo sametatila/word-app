@@ -51,7 +51,7 @@ export default async function ProgressPage() {
   }
 
   return (
-    <div className="mx-auto w-full max-w-2xl space-y-4">
+    <div className="mx-auto w-full max-w-3xl space-y-4">
       <PageBack fallback="/profile" title={t("progw.my_progress")} />
       {content}
       {/* Ölçüm bloğu: yetkinlik, dört haftalık değişim ve önerilen adım. */}

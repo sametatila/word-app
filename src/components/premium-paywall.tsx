@@ -103,7 +103,7 @@ export function PremiumPaywall({
   };
 
   return (
-    <div className="mx-auto w-full max-w-xl px-4 pb-12 pt-6">
+    <div className="mx-auto w-full max-w-3xl px-4 pb-12 pt-6">
       <header className="flex flex-col items-center text-center">
         <div
           className="flex h-20 w-20 items-center justify-center rounded-3xl on-fill"

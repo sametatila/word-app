@@ -7,7 +7,7 @@ import { SkeletonLine, SkeletonBar, SkeletonPill } from "@/components/skeleton";
  */
 export default function Loading() {
   return (
-    <div aria-hidden className="mx-auto w-full max-w-2xl space-y-4">
+    <div aria-hidden className="mx-auto w-full max-w-3xl space-y-4">
       <SkeletonLine variant="h2" width={160} />
       <section className="card p-4">
         <div className="flex items-baseline justify-between">

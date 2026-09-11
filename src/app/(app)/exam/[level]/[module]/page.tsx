@@ -16,7 +16,7 @@ export default async function ModuleExamPage({ params }: { params: Promise<{ lev
   const index = Number(mod);
   if (!LEVELS.includes(level) || !Number.isInteger(index) || index < 0 || index > 20) notFound();
   return (
-    <div className="mx-auto flex w-full max-w-2xl flex-1 flex-col">
+    <div className="mx-auto flex w-full max-w-3xl flex-1 flex-col">
       <ExamPlayer level={level as CefrLevel} module={index} />
     </div>
   );

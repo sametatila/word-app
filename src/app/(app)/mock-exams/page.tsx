@@ -135,7 +135,7 @@ export default async function MockExamsPage({ searchParams }: { searchParams: Pr
   }
 
   return (
-    <div className="mx-auto w-full max-w-2xl space-y-3">
+    <div className="mx-auto w-full max-w-3xl space-y-3">
       <PageBack fallback="/skills" title={t("mockexams.title")}>
         {/* İstatistiğin kapısı burada: liste "ne çözeyim", istatistik "nasıl
             gidiyorum" sorusunun yeri ve ikisi aynı ekranda yarışmamalı. */}

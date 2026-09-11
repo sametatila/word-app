@@ -101,7 +101,7 @@ export function FriendsHub({ me, initialTab }: { me: SocialMeView; initialTab: H
   }
 
   return (
-    <div className="mx-auto w-full max-w-md">
+    <div className="mx-auto w-full max-w-3xl">
       {/*
         KİMLİK KARTI — Profil'deki kartla aynı kurgu (mobil `FriendsScreen`
         de öyle): ortalanmış arma, ad, kullanıcı adı ve rozetler.

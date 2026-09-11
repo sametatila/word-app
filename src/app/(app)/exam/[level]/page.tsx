@@ -15,7 +15,7 @@ export default async function LevelExamPage({ params }: { params: Promise<{ leve
   const { level } = await params;
   if (!LEVELS.includes(level)) notFound();
   return (
-    <div className="mx-auto flex w-full max-w-2xl flex-1 flex-col">
+    <div className="mx-auto flex w-full max-w-3xl flex-1 flex-col">
       <ExamPlayer level={level as CefrLevel} module={null} />
     </div>
   );

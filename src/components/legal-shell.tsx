@@ -88,7 +88,7 @@ export async function LegalPage({ doc, locale }: { doc: LegalDocId; locale: Lega
   const changelog = cfg.changelog.slice(0, 2);
 
   return (
-    <div className="mx-auto w-full max-w-2xl px-5 py-10">
+    <div className="mx-auto w-full max-w-3xl px-5 py-10">
       <DocHeader locale={locale} />
       <h1 className="text-3xl font-extrabold tracking-tight">{page.title}</h1>
       {isContract ? (

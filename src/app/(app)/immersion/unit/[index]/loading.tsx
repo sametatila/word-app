@@ -6,7 +6,7 @@ import { SkeletonLine, RowSkeleton } from "@/components/skeleton";
  */
 export default function Loading() {
   return (
-    <div aria-hidden className="mx-auto w-full max-w-2xl space-y-3">
+    <div aria-hidden className="mx-auto w-full max-w-3xl space-y-3">
       <SkeletonLine variant="h2" width={200} />
       <SkeletonLine variant="caption" width={140} />
       <div className="h-2" />

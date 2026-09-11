@@ -25,7 +25,7 @@ export default async function SocialSettingsPage() {
   try {
     const [me, profile] = await Promise.all([socialMe(userId), ensureProfile(userId, null)]);
     return (
-      <div className="mx-auto w-full max-w-md">
+      <div className="mx-auto w-full max-w-3xl">
         <div className="mb-4 flex items-center gap-3">
           <BackButton fallback="/friends" />
           <h1 className="text-h2">{t("socialsettings.social_and_privacy")}</h1>

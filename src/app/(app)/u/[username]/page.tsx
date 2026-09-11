@@ -19,7 +19,7 @@ export default async function PublicProfilePage({ params }: { params: Promise<{ 
     await ensureUsername(userId);
     const data = await publicProfile(userId, username);
     return (
-      <div className="mx-auto w-full max-w-md">
+      <div className="mx-auto w-full max-w-3xl">
         <div className="mb-4 flex items-center gap-3">
           <BackButton fallback="/friends" />
           <h1 className="text-h2">Profil</h1>

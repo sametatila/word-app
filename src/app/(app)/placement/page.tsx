@@ -19,7 +19,7 @@ export default async function PlacementPage() {
   }
   const canRetake = !last || Date.now() - new Date(last.at).getTime() >= RETAKE_DAYS * 86400000;
   return (
-    <div className="mx-auto w-full max-w-2xl">
+    <div className="mx-auto w-full max-w-3xl">
       <PlacementTest initialLast={last} canRetake={canRetake} retakeDays={RETAKE_DAYS} />
     </div>
   );

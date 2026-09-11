@@ -15,7 +15,7 @@ export const generateMetadata = titleMeta("inbox.inbox");
 export default async function InboxPage() {
   const t = await getT();
   return (
-    <div className="mx-auto w-full max-w-md">
+    <div className="mx-auto w-full max-w-3xl">
       {/* Alt başlık Android'in ekran başlığında var: kutunun ne topladığını
           bir bakışta söylüyor. Web'de yalnız "Gelen kutusu" yazıyordu ve
           boşken ekran neyin bekleneceğini hiç anlatmıyordu. */}

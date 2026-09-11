@@ -7,7 +7,7 @@
  */
 export default function Loading() {
   return (
-    <div aria-hidden className="mx-auto w-full max-w-md space-y-4">
+    <div aria-hidden className="mx-auto w-full max-w-3xl space-y-4">
       <div className="card overflow-hidden">
         <div className="h-32 animate-pulse surface-2" />
         <div className="space-y-3 p-4">

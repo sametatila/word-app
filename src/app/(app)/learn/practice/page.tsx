@@ -97,7 +97,7 @@ export default async function PracticePage() {
   const list = TILES.filter((g) => articles || (g.game !== "artikel" && g.game !== "plural"));
 
   return (
-    <div className="mx-auto w-full max-w-2xl space-y-5">
+    <div className="mx-auto w-full max-w-3xl space-y-5">
       <PageBack
         fallback="/learn"
         title={t("practice.practice")}

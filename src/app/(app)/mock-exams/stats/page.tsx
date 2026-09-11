@@ -48,7 +48,7 @@ export default async function MockStatsPage() {
   };
 
   return (
-    <div className="mx-auto w-full max-w-2xl space-y-3">
+    <div className="mx-auto w-full max-w-3xl space-y-3">
       <PageBack fallback="/mock-exams" title={t("mockstats.title")} />
 
       {!data || data.attempts === 0 ? (

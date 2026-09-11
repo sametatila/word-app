@@ -18,7 +18,7 @@ export default async function FriendsPage({ searchParams }: { searchParams: Prom
   try {
     const me = await socialMe(userId);
     return (
-      <div className="mx-auto w-full max-w-md">
+      <div className="mx-auto w-full max-w-3xl">
         {/* Ayarlar başlığın SAĞ ÜSTÜNDE — mobil `ScreenHeader`in `right`
             yuvası. Kimlik kartının içinde bir çipti; kart kimliği söylüyor,
             ayarlar ise ekranın kendi eylemi. */}

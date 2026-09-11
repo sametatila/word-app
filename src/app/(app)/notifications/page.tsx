@@ -16,7 +16,7 @@ export const generateMetadata = titleMeta("notifications.notifications");
 export default async function NotificationsPage() {
   const t = await getT();
   return (
-    <div className="mx-auto w-full max-w-md">
+    <div className="mx-auto w-full max-w-3xl">
       <div className="mb-4 flex items-center gap-3">
         <BackButton fallback="/profile" />
         <h1 className="text-h2">{t("notifications.notifications")}</h1>

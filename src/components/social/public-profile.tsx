@@ -57,7 +57,7 @@ export function PublicProfile({ data, me }: { data: PublicProfileView; me: strin
   }
 
   return (
-    <div className="mx-auto flex w-full max-w-md flex-col gap-3">
+    <div className="mx-auto flex w-full max-w-3xl flex-col gap-3">
       <section className="card p-5">
         <div className="flex items-start gap-4">
           <Avatar userId={u.userId} name={u.name} size={64} ring={friends ? "var(--color-mint)" : null} />

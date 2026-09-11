@@ -74,7 +74,7 @@ export function ProfileView({ stats }: { stats: ProfileStats }) {
   }
 
   return (
-    <div className="mx-auto w-full max-w-2xl">
+    <div className="mx-auto w-full max-w-3xl">
       <div className="mb-4 flex items-center gap-3">
         <BackButton fallback="/learn" />
         <h1 className="flex-1 text-h2">{t("profile.profile")}</h1>

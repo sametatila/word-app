@@ -110,7 +110,7 @@ export default async function SkillsPage({
        ZAMAN tek sütun kalıyordu, yani yazılmış özellik hiç çalışmıyordu.
        Patika sayfası aynı açılımı zaten yapıyor (`max-w-3xl xl:max-w-none`) ve
        mobil de Beceriler sekmesini geniş düzene alıyor (`wideColumnLayout`). */
-    <div className="mx-auto w-full max-w-2xl xl:max-w-none">
+    <div className="mx-auto w-full max-w-3xl xl:max-w-none">
       {/* Ortak sekme başlığı: 32 punto başlık + açıklama alt satırı, sağda
           seri/gelen kutusu/profil. Mobilde `AppHeader` aynı iki satırı
           taşıyor (`SkillsScreen`). */}

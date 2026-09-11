@@ -11,7 +11,7 @@ export default async function WeeklyPage() {
   const userId = await getUserId();
   if (!userId) redirect("/login");
   return (
-    <div className="mx-auto flex w-full max-w-2xl flex-1 flex-col">
+    <div className="mx-auto flex w-full max-w-3xl flex-1 flex-col">
       <WeeklyPlayer />
     </div>
   );

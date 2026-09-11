@@ -9,7 +9,7 @@ import { SkeletonLine } from "@/components/skeleton";
  */
 export default function Loading() {
   return (
-    <div aria-hidden className="mx-auto w-full max-w-2xl space-y-4 pt-6">
+    <div aria-hidden className="mx-auto w-full max-w-3xl space-y-4 pt-6">
       <div className="flex flex-col items-center gap-3">
         <div className="size-20 rounded-full" style={{ background: "var(--surface-2)" }} />
         <SkeletonLine variant="h2" width={220} />

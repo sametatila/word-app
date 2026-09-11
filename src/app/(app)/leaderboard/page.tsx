@@ -20,7 +20,7 @@ export default async function LeaderboardPage() {
   if (!userId) return null;
 
   return (
-    <div className="mx-auto w-full max-w-2xl">
+    <div className="mx-auto w-full max-w-3xl">
       {/* ALT BAŞLIK: hangi haftaya bakıldığı yazıyor. Android başlığın altında
           söylüyor (`LeaderboardScreen`); webde tablo "bu hafta" mı yoksa
           birikmiş toplam mı belli değildi. */}

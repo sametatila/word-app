@@ -13,7 +13,7 @@ export const generateMetadata = titleMeta("achievements.achievements");
 export default async function AchievementsPage() {
   const t = await getT();
   return (
-    <div className="mx-auto w-full max-w-2xl">
+    <div className="mx-auto w-full max-w-3xl">
       <PageBack fallback="/profile" title={t("achievements.achievements")} />
       <AchievementWall />
     </div>
