@@ -1,6 +1,6 @@
 # WP-74 — İngilizce ders kapsamı B1–C1
 
-**Durum:** sürüyor (B1 modül 1-7 bitti, 70/300 ders) · **Sahip:** Claude · **Açılış:** 2026-09-11
+**Durum:** sürüyor (B1 modül 1-8 bitti, 80/300 ders) · **Sahip:** Claude · **Açılış:** 2026-09-11
 
 ## Kusur
 
@@ -147,6 +147,31 @@ derste sabit, o yüzden Almancanın kurtarabileceği diziliş baştan seçilmeli
 
 İkincisi ikon: `speak` diye bir ikon yok ve bunu `check:lessons` değil
 `check:content` yakalıyor. İki kapı da çalıştırılmadan modül bitmiş sayılmaz.
+
+**B1 modül 8 — Sağlık sistemi (2026-09-11).** On ders: aile hekimine
+kaydolmak, belirtileri anlatmak, acil serviste, reçete ve kutu, tahlil
+sonuçları, uzmana sevk, hastanede bir gece, tedaviyi seçmek, ikinci görüş,
+rapor almak.
+
+A1 ve A2 sağlığı zaten işliyor (doktor randevusu, eczane, hastane, sigorta,
+ağrı anlatma). Bu yüzden B1 katmanı hastalığı değil SİSTEMİ anlatıyor: kayıt,
+sevk zinciri, prospektüs, sonuç aktarımı, ikinci görüş, rapor. Aynı alanda
+ikinci bir tur atmanın yolu konuyu değil bakış açısını değiştirmek.
+
+Modülde iki tuzak çıktı, ikisi de sözlükçeyle ilgili:
+
+Birincisi Almanca sözlüğün TÜRKÇE DİZEYLE anahtarlanması. `pack`, `emergency`
+ve `file` karşılığı «kutu», «acil», «dosya» bırakılsaydı sözlük onlara zaten
+var olan «Kiste», «dringend», «Datei» karşılığını verecekti — bağlama değil
+dizeye bakıyor. Karşılıklar «ilaç kutusu», «acil durum», «hasta dosyası»
+yapılınca Almanca doğru kelimeyi aldı: Packung, Notfall, Krankenakte. Yani
+Türkçe karşılık yalnız öğrenciye değil, Almanca eksene de yazılıyor.
+
+İkincisi tekrar hedefi eşleşmesi: kapı sözlükçe kelimesini tekrar hedefinin
+İÇİNDE ALT DİZE olarak arıyor. `smoke` için tek tekrar `He gave up smoking`
+idi ve «smoking» içinde «smoke» geçmiyor — kapı haklı olarak reddetti. Aynı
+tuzağa `deny`/«denies» de düşüyor. Çekimlenince kök değişen kelimeye ayrı bir
+tekrar hedefi gerekiyor.
 
 ## Tamamlanma ölçütü
 

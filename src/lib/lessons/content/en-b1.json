@@ -34964,5 +34964,2466 @@
    "goal": "Bir bilgiyi, bir yönergeyi ve bir soruyu aktardıysan konuşma başarılı sayılır.",
    "minTurns": 7
   }
+ },
+ {
+  "id": "en-b1-referral",
+  "level": "B1",
+  "course": "en",
+  "icon": "mail",
+  "title": "Seeing a specialist",
+  "titleTr": "Uzmana sevk",
+  "summary": "Sevk zincirini anlatmayı öğretir; ilgi cümlesi kimin gönderdiğini, neyin gösterdiğini ve nerede çalıştığını bağlar.",
+  "minutes": 10,
+  "focusId": "Relative clauses",
+  "vocab": [
+   {
+    "de": "refer",
+    "tr": "sevk etmek"
+   },
+   {
+    "de": "specialist",
+    "tr": "uzman hekim"
+   },
+   {
+    "de": "surgeon",
+    "tr": "cerrah"
+   },
+   {
+    "de": "examine",
+    "tr": "muayene etmek"
+   },
+   {
+    "de": "x-ray",
+    "tr": "röntgen"
+   },
+   {
+    "de": "bone",
+    "tr": "kemik"
+   },
+   {
+    "de": "knee",
+    "tr": "diz"
+   },
+   {
+    "de": "joint",
+    "tr": "eklem"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "The doctor who referred me works upstairs.",
+    "tr": "gönderen kişiyi tarif ederek bağlar"
+   },
+   {
+    "de": "This is the x-ray that shows the bone.",
+    "tr": "gösteren belgeyi tarif ederek bağlar"
+   },
+   {
+    "de": "The clinic where the specialist works is new.",
+    "tr": "yeri tarif ederek bağlar"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Bugün sevk zincirini anlatmayı öğreneceğiz: kim gönderdi, hangi belge gösterdi, nerede çalışıyor."
+     },
+     {
+      "lang": "tr",
+      "text": "Sevkte üç şeyin de adı değil tarifi söyleniyor ve bu tarifleri cümleye bağlayan şey ilgi cümlesi. Hazır mısın?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "refer"
+     },
+     {
+      "lang": "tr",
+      "text": "Bir hastayı başka bir hekime göndermek demek. İlk kalıbımız da bu. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "The doctor who referred me works upstairs."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The doctor who referred me works upstairs."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Tek bir alanda derinleşmiş hekime"
+     },
+     {
+      "lang": "en",
+      "text": "specialist"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İkinci kalıbımız yeri bağlıyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "The clinic where the specialist works is new."
+     },
+     {
+      "lang": "tr",
+      "text": "Uzman hekimin çalıştığı klinik yeni."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The clinic where the specialist works is new."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Ameliyat yapan hekime"
+     },
+     {
+      "lang": "en",
+      "text": "surgeon"
+     },
+     {
+      "lang": "tr",
+      "text": "hastaya bakıp değerlendirmeye ise"
+     },
+     {
+      "lang": "en",
+      "text": "examine"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The surgeon examined me for ten minutes."
+     },
+     {
+      "lang": "tr",
+      "text": "Cerrah beni on dakika muayene etti."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The surgeon examined me for ten minutes."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi dersin kuralı. İlgi cümlesi tarif ettiği kelimenin hemen ardına geliyor:"
+     },
+     {
+      "lang": "en",
+      "text": "who"
+     },
+     {
+      "lang": "tr",
+      "text": "kişiyi,"
+     },
+     {
+      "lang": "en",
+      "text": "that"
+     },
+     {
+      "lang": "tr",
+      "text": "şeyi,"
+     },
+     {
+      "lang": "en",
+      "text": "where"
+     },
+     {
+      "lang": "tr",
+      "text": "yeri bağlar. Sevk mektubunda üçü de peş peşe geçer."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sıra sende: Bana bakan uzman hekim nazikti."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "The specialist who saw me was kind.",
+     "accept": [
+      "The specialist who examined me was kind.",
+      "The specialist who saw me was very kind."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Kişiyi bağlarken"
+      },
+      {
+       "lang": "en",
+       "text": "who"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "The specialist who saw me was kind."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kontrol. Şu cümle doğru mu?"
+     },
+     {
+      "lang": "en",
+      "text": "The doctor who referred me works upstairs."
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "The doctor who referred me works upstairs.",
+     "answer": true,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Doğru. Tarif kişiye ait olduğu için"
+      },
+      {
+       "lang": "en",
+       "text": "who"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılıyor ve tarif ettiği kelimeden hemen sonra duruyor."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İçeriyi gösteren çekime"
+     },
+     {
+      "lang": "en",
+      "text": "x-ray"
+     },
+     {
+      "lang": "tr",
+      "text": "bedenin sert yapısına ise"
+     },
+     {
+      "lang": "en",
+      "text": "bone"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son kalıbımız belgeyi bağlıyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "This is the x-ray that shows the bone."
+     },
+     {
+      "lang": "tr",
+      "text": "Kemiği gösteren röntgen bu."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "This is the x-ray that shows the bone."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sen kur: Uzman hekimin yazdığı mektup bu."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "This is the letter that the specialist wrote.",
+     "accept": [
+      "This is the letter which the specialist wrote.",
+      "This is the letter that the specialist sent."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Şeyi bağlarken"
+      },
+      {
+       "lang": "en",
+       "text": "that"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "This is the letter that the specialist wrote."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bacağın ortadan büküldüğü yere"
+     },
+     {
+      "lang": "en",
+      "text": "knee"
+     },
+     {
+      "lang": "tr",
+      "text": "iki kemiğin birleştiği yere ise"
+     },
+     {
+      "lang": "en",
+      "text": "joint"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The joint in my knee still hurts."
+     },
+     {
+      "lang": "tr",
+      "text": "Dizimdeki eklem hâlâ ağrıyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The joint in my knee still hurts."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir tane daha: Onu yapan cerrah burada çalışıyor."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "The surgeon who did it works here.",
+     "accept": [
+      "The surgeon who did it works here too.",
+      "The surgeon who operated works here."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Kişiyi bağlarken"
+      },
+      {
+       "lang": "en",
+       "text": "who"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "The surgeon who did it works here."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Özetleyelim: kişi"
+     },
+     {
+      "lang": "en",
+      "text": "who"
+     },
+     {
+      "lang": "tr",
+      "text": "şey"
+     },
+     {
+      "lang": "en",
+      "text": "that"
+     },
+     {
+      "lang": "tr",
+      "text": "yer"
+     },
+     {
+      "lang": "en",
+      "text": "where"
+     },
+     {
+      "lang": "tr",
+      "text": "Şimdi sevkini bir yakınına anlatacaksın."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Aile hekimin seni bir uzmana sevk etti ve bir yakının ayrıntıları soruyor. Kimin gönderdiğini, hangi belgenin gittiğini ve uzmanın nerede çalıştığını anlat.",
+   "partner": "sevk zincirini hiç bilmeyen, adım adım soran bir yakının",
+   "opening": "Who sent you to the specialist?",
+   "openingTr": "Seni uzmana kim gönderdi?",
+   "goal": "Gönderen kişiyi, giden belgeyi ve çalışılan yeri üç ayrı ilgi cümlesiyle anlattıysan konuşma başarılı sayılır.",
+   "minTurns": 7
+  }
+ },
+ {
+  "id": "en-b1-hospital-stay",
+  "level": "B1",
+  "course": "en",
+  "icon": "bed",
+  "title": "A night in hospital",
+  "titleTr": "Hastanede bir gece",
+  "summary": "Hastanede geçecek bir geceyi planlamayı öğretir; karar, niyet ve ayarlanmış plan ayrı biçimlerle söylenir.",
+  "minutes": 10,
+  "focusId": "Future forms",
+  "vocab": [
+   {
+    "de": "operate",
+    "tr": "ameliyat etmek"
+   },
+   {
+    "de": "stay",
+    "tr": "kalmak"
+   },
+   {
+    "de": "night",
+    "tr": "gece"
+   },
+   {
+    "de": "bed",
+    "tr": "yatak"
+   },
+   {
+    "de": "care",
+    "tr": "bakım"
+   },
+   {
+    "de": "visit",
+    "tr": "ziyaret etmek"
+   },
+   {
+    "de": "rest",
+    "tr": "dinlenme"
+   },
+   {
+    "de": "recover",
+    "tr": "iyileşmek"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "They will operate tomorrow morning.",
+    "tr": "kararı olduğu gibi söyler"
+   },
+   {
+    "de": "I am going to stay for one night.",
+    "tr": "niyeti söyler"
+   },
+   {
+    "de": "My sister is visiting at eight.",
+    "tr": "ayarlanmış bir planı söyler"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Bugün hastanede geçecek bir geceyi planlamayı öğreneceğiz: ne yapılacak, ne kadar kalacaksın, kim gelecek."
+     },
+     {
+      "lang": "tr",
+      "text": "Üç ayrı gelecek biçimi var ve hangisini seçtiğin planın ne kadar kesinleştiğini söylüyor. Hazır mısın?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "operate"
+     },
+     {
+      "lang": "tr",
+      "text": "Cerrahi işlem yapmak demek. İlk kalıbımız da bu. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "They will operate tomorrow morning."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "They will operate tomorrow morning."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir yerde kalmaya"
+     },
+     {
+      "lang": "en",
+      "text": "stay"
+     },
+     {
+      "lang": "tr",
+      "text": "günün karanlık bölümüne ise"
+     },
+     {
+      "lang": "en",
+      "text": "night"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İkinci kalıbımız niyeti söylüyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "I am going to stay for one night."
+     },
+     {
+      "lang": "tr",
+      "text": "Bir gece kalacağım."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "I am going to stay for one night."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Yatılan mobilyaya"
+     },
+     {
+      "lang": "en",
+      "text": "bed"
+     },
+     {
+      "lang": "tr",
+      "text": "hastaya gösterilen ilgiye ise"
+     },
+     {
+      "lang": "en",
+      "text": "care"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The bed by the window is free and the care is good."
+     },
+     {
+      "lang": "tr",
+      "text": "Pencere kenarındaki yatak boş ve bakım iyi."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The bed by the window is free and the care is good."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi dersin kuralı. Karar hastanenin ise"
+     },
+     {
+      "lang": "en",
+      "text": "will"
+     },
+     {
+      "lang": "tr",
+      "text": "niyet senin ise"
+     },
+     {
+      "lang": "en",
+      "text": "going to"
+     },
+     {
+      "lang": "tr",
+      "text": "saati belli bir plan için ise şimdiki zaman kullanılır. Üçü de yarını anlatır ama kesinlikleri farklıdır."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sıra sende: Pazartesi sabahı ameliyat edecekler."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "They will operate on Monday morning.",
+     "accept": [
+      "They will operate Monday morning.",
+      "They are going to operate on Monday morning."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Hastanenin kararı için"
+      },
+      {
+       "lang": "en",
+       "text": "will"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "They will operate on Monday morning."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kontrol. Şu cümle doğru mu?"
+     },
+     {
+      "lang": "en",
+      "text": "I am going to stay for one night."
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "I am going to stay for one night.",
+     "answer": true,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Doğru. Niyet konuşanın kendisine ait, o yüzden karar kipi değil niyet biçimi kullanılıyor."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Birini görmeye gitmeye"
+     },
+     {
+      "lang": "en",
+      "text": "visit"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son kalıbımız ayarlanmış bir plan. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "My sister is visiting at eight."
+     },
+     {
+      "lang": "tr",
+      "text": "Ablam sekizde ziyarete geliyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "My sister is visiting at eight."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sen kur: İki gece kalacağım."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "I am going to stay for two nights.",
+     "accept": [
+      "I'm going to stay for two nights.",
+      "I am going to stay two nights."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Niyet için"
+      },
+      {
+       "lang": "en",
+       "text": "going to"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "I am going to stay for two nights."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Hiçbir şey yapmadan toparlanmaya"
+     },
+     {
+      "lang": "en",
+      "text": "rest"
+     },
+     {
+      "lang": "tr",
+      "text": "sağlığına kavuşmaya ise"
+     },
+     {
+      "lang": "en",
+      "text": "recover"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "You need rest and you will recover faster at home."
+     },
+     {
+      "lang": "tr",
+      "text": "Dinlenmeye ihtiyacın var ve evde daha hızlı iyileşeceksin."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "You need rest and you will recover faster at home."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir tane daha: Ablam yarın akşam ziyarete geliyor."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "My sister is visiting tomorrow evening.",
+     "accept": [
+      "My sister is coming tomorrow evening.",
+      "My sister is visiting me tomorrow evening."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Saati belli plan şimdiki zamanla söylenir:"
+      },
+      {
+       "lang": "en",
+       "text": "My sister is visiting tomorrow evening."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Özetleyelim: karar"
+     },
+     {
+      "lang": "en",
+      "text": "they will"
+     },
+     {
+      "lang": "tr",
+      "text": "niyet"
+     },
+     {
+      "lang": "en",
+      "text": "I am going to"
+     },
+     {
+      "lang": "tr",
+      "text": "plan"
+     },
+     {
+      "lang": "en",
+      "text": "she is visiting"
+     },
+     {
+      "lang": "tr",
+      "text": "Şimdi hastanede geçecek geceyi konuşacaksın."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Yarın küçük bir işlem için hastaneye yatıyorsun ve hemşire programı anlatıyor. Ne yapılacağını sor, ne kadar kalacağını söyle ve ziyaret saatini ayarla.",
+   "partner": "programı sırayla anlatan, sorulara kısa cevap veren bir hemşire",
+   "opening": "Will you be staying overnight?",
+   "openingTr": "Geceyi burada geçirecek misiniz?",
+   "goal": "Hastanenin kararını, kendi niyetini ve ayarlanmış ziyareti üç ayrı biçimle söylediysen konuşma başarılı sayılır.",
+   "minTurns": 7
+  }
+ },
+ {
+  "id": "en-b1-treatment-choice",
+  "level": "B1",
+  "course": "en",
+  "icon": "sport",
+  "title": "Choosing a treatment",
+  "titleTr": "Tedaviyi seçmek",
+  "summary": "Tedavi seçimini anlatmayı öğretir; her fiil kendinden sonra mastar mı ulaç mı geleceğini kendi seçer.",
+  "minutes": 10,
+  "focusId": "Gerund or infinitive",
+  "vocab": [
+   {
+    "de": "alternative",
+    "tr": "başka yol"
+   },
+   {
+    "de": "worse",
+    "tr": "daha kötü"
+   },
+   {
+    "de": "better",
+    "tr": "daha iyi"
+   },
+   {
+    "de": "smoke",
+    "tr": "sigara içmek"
+   },
+   {
+    "de": "diet",
+    "tr": "beslenme düzeni"
+   },
+   {
+    "de": "healthy",
+    "tr": "sağlıklı"
+   },
+   {
+    "de": "exercise",
+    "tr": "egzersiz yapmak"
+   },
+   {
+    "de": "weight",
+    "tr": "kilo"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "I decided to try the alternative.",
+    "tr": "karar fiilinden sonra mastar getirir"
+   },
+   {
+    "de": "He gave up smoking last year.",
+    "tr": "bırakma fiilinden sonra ulaç getirir"
+   },
+   {
+    "de": "She suggested changing my diet.",
+    "tr": "öneri fiilinden sonra ulaç getirir"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Bugün tedavi seçimini anlatmayı öğreneceğiz: neye karar verdin, neyi bıraktın, sana ne önerildi."
+     },
+     {
+      "lang": "tr",
+      "text": "Bu üç fiilin üçü de kendinden sonra ne geleceğini kendi seçiyor ve seçimi karıştırmak cümleyi bozuyor. Hazır mısın?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "alternative"
+     },
+     {
+      "lang": "tr",
+      "text": "Aynı işi gören başka bir yol demek. İlk kalıbımız da bu. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "I decided to try the alternative."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "I decided to try the alternative."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Daha kötüye gitmek için"
+     },
+     {
+      "lang": "en",
+      "text": "worse"
+     },
+     {
+      "lang": "tr",
+      "text": "daha iyiye gitmek için ise"
+     },
+     {
+      "lang": "en",
+      "text": "better"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "It got worse before it got better."
+     },
+     {
+      "lang": "tr",
+      "text": "İyiye gitmeden önce kötüye gitti."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "It got worse before it got better."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Tütün içmeye"
+     },
+     {
+      "lang": "en",
+      "text": "smoke"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "I smoke less than I did last year."
+     },
+     {
+      "lang": "tr",
+      "text": "Geçen yıla göre daha az sigara içiyorum."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "I smoke less than I did last year."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İkinci kalıbımız bırakmayı anlatıyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "He gave up smoking last year."
+     },
+     {
+      "lang": "tr",
+      "text": "Geçen yıl sigarayı bıraktı."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "He gave up smoking last year."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi dersin kuralı. Karar ve söz veren fiiller kendinden sonra"
+     },
+     {
+      "lang": "en",
+      "text": "to"
+     },
+     {
+      "lang": "tr",
+      "text": "ister; bırakmayı ve önermeyi anlatan fiiller ise"
+     },
+     {
+      "lang": "en",
+      "text": "-ing"
+     },
+     {
+      "lang": "tr",
+      "text": "ister. Fiilin anlamı değil alışkanlığı belirliyor, o yüzden örnekle tanınır."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sıra sende: Tedaviyi değiştirmeye karar verdim."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "I decided to change the treatment.",
+     "accept": [
+      "I decided to change my treatment.",
+      "I have decided to change the treatment."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Karar fiilinin ardılı için"
+      },
+      {
+       "lang": "en",
+       "text": "to"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "I decided to change the treatment."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kontrol. Şu cümle doğru mu?"
+     },
+     {
+      "lang": "en",
+      "text": "He gave up smoking last year."
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "He gave up smoking last year.",
+     "answer": true,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Doğru. Bırakmayı anlatan fiilden sonra ikinci fiil"
+      },
+      {
+       "lang": "en",
+       "text": "-ing"
+      },
+      {
+       "lang": "tr",
+       "text": "hâlinde kalıyor."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Ne yiyip ne içtiğinin düzenine"
+     },
+     {
+      "lang": "en",
+      "text": "diet"
+     },
+     {
+      "lang": "tr",
+      "text": "bedeni iyi durumda olana ise"
+     },
+     {
+      "lang": "en",
+      "text": "healthy"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son kalıbımız öneriyi anlatıyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "She suggested changing my diet."
+     },
+     {
+      "lang": "tr",
+      "text": "Beslenme düzenimi değiştirmeyi önerdi."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "She suggested changing my diet."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "A healthy week starts with sleep."
+     },
+     {
+      "lang": "tr",
+      "text": "Sağlıklı bir hafta uykuyla başlar."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "A healthy week starts with sleep."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sen kur: Hapı değiştirmeyi önerdi."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "She suggested changing the tablet.",
+     "accept": [
+      "She suggested changing the pill.",
+      "She suggested changing my tablet."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Öneri fiilinin ardılı için"
+      },
+      {
+       "lang": "en",
+       "text": "-ing"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "She suggested changing the tablet."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bedeni çalıştırmaya"
+     },
+     {
+      "lang": "en",
+      "text": "exercise"
+     },
+     {
+      "lang": "tr",
+      "text": "tartıda çıkan sayıya ise"
+     },
+     {
+      "lang": "en",
+      "text": "weight"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "I promised to exercise and my weight went down."
+     },
+     {
+      "lang": "tr",
+      "text": "Egzersiz yapacağıma söz verdim ve kilom düştü."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "I promised to exercise and my weight went down."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir tane daha: Geç yemeyi bıraktı."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "He gave up eating late.",
+     "accept": [
+      "He gave up eating late at night.",
+      "He gave up having late meals."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Bırakma fiilinin ardılı için"
+      },
+      {
+       "lang": "en",
+       "text": "-ing"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "He gave up eating late."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Özetleyelim: karar"
+     },
+     {
+      "lang": "en",
+      "text": "decided to"
+     },
+     {
+      "lang": "tr",
+      "text": "bırakma"
+     },
+     {
+      "lang": "en",
+      "text": "gave up …-ing"
+     },
+     {
+      "lang": "tr",
+      "text": "öneri"
+     },
+     {
+      "lang": "en",
+      "text": "suggested …-ing"
+     },
+     {
+      "lang": "tr",
+      "text": "Şimdi tedavi seçimini bir arkadaşınla konuşacaksın."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "İki tedavi yolu arasında kaldın ve bir arkadaşınla konuşuyorsun. Neye karar verdiğini, neyi bıraktığını ve sana ne önerildiğini anlat.",
+   "partner": "aynı seçimi geçmişte yaşamış, kendi yolunu anlatan bir arkadaş",
+   "opening": "Which one did you decide on?",
+   "openingTr": "Hangisine karar verdin?",
+   "goal": "Bir kararı, bir bırakmayı ve bir öneriyi doğru ardıllarla söylediysen konuşma başarılı sayılır.",
+   "minTurns": 7
+  }
+ },
+ {
+  "id": "en-b1-second-opinion",
+  "level": "B1",
+  "course": "en",
+  "icon": "question",
+  "title": "A second opinion",
+  "titleTr": "İkinci görüş",
+  "summary": "İkinci bir hekime gitmeyi konuşmayı öğretir; koşul cümlesi gerçek şartı, varsayımı ve şartsız durumu ayırır.",
+  "minutes": 10,
+  "focusId": "Conditionals",
+  "vocab": [
+   {
+    "de": "pulse",
+    "tr": "nabız"
+   },
+   {
+    "de": "pressure",
+    "tr": "basınç"
+   },
+   {
+    "de": "temperature",
+    "tr": "vücut ısısı"
+   },
+   {
+    "de": "heart",
+    "tr": "kalp"
+   },
+   {
+    "de": "lung",
+    "tr": "akciğer"
+   },
+   {
+    "de": "muscle",
+    "tr": "kas"
+   },
+   {
+    "de": "skin",
+    "tr": "deri"
+   },
+   {
+    "de": "scale",
+    "tr": "tartı"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "If the pulse is normal, we will wait.",
+    "tr": "gerçekleşmesi mümkün bir şartı anlatır"
+   },
+   {
+    "de": "If I were you, I would check the heart again.",
+    "tr": "gerçek olmayan bir durumu anlatır"
+   },
+   {
+    "de": "Unless the temperature falls, call us.",
+    "tr": "tek çıkış yolunu söyler"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Bugün ikinci bir hekime gitmeyi konuşmayı öğreneceğiz: hangi şartla beklenir, sen olsan ne yapardın."
+     },
+     {
+      "lang": "tr",
+      "text": "İkinci görüş istemek kaba değil olağan bir haktır ve bunu kibar söylemenin yolu koşul cümlesinden geçiyor. Hazır mısın?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "pulse"
+     },
+     {
+      "lang": "tr",
+      "text": "Kalbin attıkça damarda hissedilen vuruş demek. İlk kalıbımız da bu. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "If the pulse is normal, we will wait."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "If the pulse is normal, we will wait."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir şeyin içeriden ittirme gücüne"
+     },
+     {
+      "lang": "en",
+      "text": "pressure"
+     },
+     {
+      "lang": "tr",
+      "text": "bedenin sıcaklık ölçüsüne ise"
+     },
+     {
+      "lang": "en",
+      "text": "temperature"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The pressure was higher this time."
+     },
+     {
+      "lang": "tr",
+      "text": "Basınç bu sefer daha yüksekti."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The pressure was higher this time."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İkinci kalıbımız tek çıkışı söylüyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "Unless the temperature falls, call us."
+     },
+     {
+      "lang": "tr",
+      "text": "Vücut ısısı düşmezse bizi arayın."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Unless the temperature falls, call us."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi dersin kuralı. Gerçekleşmesi mümkün şart"
+     },
+     {
+      "lang": "en",
+      "text": "if"
+     },
+     {
+      "lang": "tr",
+      "text": "ile ve olağan zamanla kurulur;"
+     },
+     {
+      "lang": "en",
+      "text": "if I were"
+     },
+     {
+      "lang": "tr",
+      "text": "gerçek olmayan bir durumu anlatır;"
+     },
+     {
+      "lang": "en",
+      "text": "unless"
+     },
+     {
+      "lang": "tr",
+      "text": "ise tek çıkışı söyler ve kendisi olumsuzdur, bu yüzden yanına ikinci bir olumsuzluk almaz."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sıra sende: Sonuç aynıysa kabul edeceğim."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "If the result is the same, I will accept it.",
+     "accept": [
+      "If the result is the same, I'll accept it.",
+      "If the results are the same, I will accept it."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Mümkün şart için"
+      },
+      {
+       "lang": "en",
+       "text": "if"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "If the result is the same, I will accept it."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kontrol. Şu cümle doğru mu?"
+     },
+     {
+      "lang": "en",
+      "text": "If the pulse is normal, we will wait."
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "If the pulse is normal, we will wait.",
+     "answer": true,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Doğru. Şart gerçekleşebilir, o yüzden şart yarısı olağan zamanda ve sonuç yarısı gelecek biçiminde."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Kan pompalayan organa"
+     },
+     {
+      "lang": "en",
+      "text": "heart"
+     },
+     {
+      "lang": "tr",
+      "text": "nefes alan organa ise"
+     },
+     {
+      "lang": "en",
+      "text": "lung"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son kalıbımız varsayım kuruyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "If I were you, I would check the heart again."
+     },
+     {
+      "lang": "tr",
+      "text": "Senin yerinde olsam kalbi bir daha kontrol ettirirdim."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "If I were you, I would check the heart again."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The lung sounded clear."
+     },
+     {
+      "lang": "tr",
+      "text": "Akciğer temiz duyuldu."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The lung sounded clear."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sen kur: Senin yerinde olsam başka bir hekime sorardım."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "If I were you, I would ask another doctor.",
+     "accept": [
+      "If I were you, I'd ask another doctor.",
+      "If I were you, I would see another doctor."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Gerçek olmayan durum için"
+      },
+      {
+       "lang": "en",
+       "text": "if I were"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "If I were you, I would ask another doctor."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Kasılıp gevşeyen dokuya"
+     },
+     {
+      "lang": "en",
+      "text": "muscle"
+     },
+     {
+      "lang": "tr",
+      "text": "bedeni kaplayan dış katmana ise"
+     },
+     {
+      "lang": "en",
+      "text": "skin"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "It is only a muscle and the skin is warm."
+     },
+     {
+      "lang": "tr",
+      "text": "Sadece bir kas ve deri sıcak."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "It is only a muscle and the skin is warm."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Üstüne çıkılıp kilo ölçülen alete"
+     },
+     {
+      "lang": "en",
+      "text": "scale"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The scale showed the same number."
+     },
+     {
+      "lang": "tr",
+      "text": "Tartı aynı sayıyı gösterdi."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The scale showed the same number."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir tane daha: Ağrı geçmezse tekrar git."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "Unless the pain stops, go again.",
+     "accept": [
+      "Unless the pain goes away, go again.",
+      "Unless the pain stops, go there again."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Tek çıkış için"
+      },
+      {
+       "lang": "en",
+       "text": "unless"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "Unless the pain stops, go again."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Özetleyelim: mümkün şart"
+     },
+     {
+      "lang": "en",
+      "text": "if it is"
+     },
+     {
+      "lang": "tr",
+      "text": "varsayım"
+     },
+     {
+      "lang": "en",
+      "text": "if I were"
+     },
+     {
+      "lang": "tr",
+      "text": "tek çıkış"
+     },
+     {
+      "lang": "en",
+      "text": "unless"
+     },
+     {
+      "lang": "tr",
+      "text": "Şimdi ikinci görüş almayı konuşacaksın."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Aldığın teşhisten emin değilsin ve bir arkadaşınla ikinci görüş almayı konuşuyorsun. Hangi şartla gideceğini, onun yerinde olsa ne yapacağını ve son çareyi söyle.",
+   "partner": "ikinci görüş almayı gereksiz bulan ama seni dinleyen bir arkadaş",
+   "opening": "Do you really need another opinion?",
+   "openingTr": "Gerçekten başka bir görüşe ihtiyacın var mı?",
+   "goal": "Mümkün bir şartı, bir varsayımı ve tek çıkışı üç ayrı koşul cümlesiyle söylediysen konuşma başarılı sayılır.",
+   "minTurns": 7
+  }
+ },
+ {
+  "id": "en-b1-sick-note",
+  "level": "B1",
+  "course": "en",
+  "icon": "pen",
+  "title": "The sick note",
+  "titleTr": "Rapor almak",
+  "summary": "Rapor sürecini yazılı anlatmayı öğretir; bağlaçlar ekler, uyarır, açar ve yerine koyar.",
+  "minutes": 10,
+  "focusId": "Linking words",
+  "vocab": [
+   {
+    "de": "moreover",
+    "tr": "üstelik"
+   },
+   {
+    "de": "absence",
+    "tr": "devamsızlık"
+   },
+   {
+    "de": "leave",
+    "tr": "izin"
+   },
+   {
+    "de": "otherwise",
+    "tr": "yoksa"
+   },
+   {
+    "de": "besides",
+    "tr": "ayrıca"
+   },
+   {
+    "de": "instead",
+    "tr": "onun yerine"
+   },
+   {
+    "de": "ill",
+    "tr": "rahatsız"
+   },
+   {
+    "de": "recovery",
+    "tr": "iyileşme"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "I sent the note; moreover I called the office.",
+    "tr": "aynı yöndeki ikinci bilgiyi ekler"
+   },
+   {
+    "de": "Take the leave now; otherwise you lose it.",
+    "tr": "yapılmazsa olacağı söyler"
+   },
+   {
+    "de": "Besides the note, they want a date.",
+    "tr": "cümleyi ek bir şeyle açar"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Bugün rapor sürecini yazılı anlatmayı öğreneceğiz: ne gönderdin, ne olmazsa ne olur, başka ne isteniyor."
+     },
+     {
+      "lang": "tr",
+      "text": "Bu dersin kelimeleri konu değil bağlaç; her biri cümleler arasındaki ilişkiyi tek başına kuruyor. Hazır mısın?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "moreover"
+     },
+     {
+      "lang": "tr",
+      "text": "Aynı yönde bir bilgi daha eklemek demek. İlk kalıbımız da bu. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "I sent the note; moreover I called the office."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "I sent the note; moreover I called the office."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İşe gidilmeyen güne"
+     },
+     {
+      "lang": "en",
+      "text": "absence"
+     },
+     {
+      "lang": "tr",
+      "text": "çalışmadan geçirilen resmî süreye ise"
+     },
+     {
+      "lang": "en",
+      "text": "leave"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The absence was three days long."
+     },
+     {
+      "lang": "tr",
+      "text": "Devamsızlık üç gün sürdü."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The absence was three days long."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İkinci kalıbımız uyarı veriyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "Take the leave now; otherwise you lose it."
+     },
+     {
+      "lang": "tr",
+      "text": "İzni şimdi kullan, yoksa kaybedersin."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Take the leave now; otherwise you lose it."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi dersin kuralı. Bu bağlaçların üçü de cümlenin başında durur ve her biri başka bir ilişki kurar:"
+     },
+     {
+      "lang": "en",
+      "text": "moreover"
+     },
+     {
+      "lang": "tr",
+      "text": "ekler,"
+     },
+     {
+      "lang": "en",
+      "text": "otherwise"
+     },
+     {
+      "lang": "tr",
+      "text": "uyarır,"
+     },
+     {
+      "lang": "en",
+      "text": "besides"
+     },
+     {
+      "lang": "tr",
+      "text": "ise yeni bir şeyi öne çıkarır. Noktalı virgülden sonra gelenler tam cümle ister."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sıra sende: Formu gönderdim, üstelik ofisi de aradım."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "I sent the form; moreover I called the office.",
+     "accept": [
+      "I sent the form; moreover, I called the office.",
+      "I sent the form; moreover I phoned the office."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Aynı yönde ekleme için"
+      },
+      {
+       "lang": "en",
+       "text": "moreover"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "I sent the form; moreover I called the office."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kontrol. Şu cümle doğru mu?"
+     },
+     {
+      "lang": "en",
+      "text": "Take the leave now; otherwise you lose it."
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "Take the leave now; otherwise you lose it.",
+     "answer": true,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Doğru. Bu bağlaç yapılmazsa olacağı söylüyor ve iki yarı da tam bir cümle."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Sayılanlara bir şey daha katmak için"
+     },
+     {
+      "lang": "en",
+      "text": "besides"
+     },
+     {
+      "lang": "tr",
+      "text": "bir şeyin yerine geçen için ise"
+     },
+     {
+      "lang": "en",
+      "text": "instead"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son kalıbımız cümleyi ek bir şeyle açıyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "Besides the note, they want a date."
+     },
+     {
+      "lang": "tr",
+      "text": "Rapordan ayrıca bir tarih de istiyorlar."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Besides the note, they want a date."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "I sent an email instead."
+     },
+     {
+      "lang": "tr",
+      "text": "Onun yerine bir e-posta gönderdim."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "I sent an email instead."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sen kur: Formdan ayrıca bir tarih de istiyorlar."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "Besides the form, they want a date.",
+     "accept": [
+      "Besides the form, they also want a date.",
+      "Besides the form, they want the date."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Cümleyi ek bir şeyle açmak için"
+      },
+      {
+       "lang": "en",
+       "text": "besides"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "Besides the form, they want a date."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Sağlığı bozulmuş kişiye"
+     },
+     {
+      "lang": "en",
+      "text": "ill"
+     },
+     {
+      "lang": "tr",
+      "text": "sağlığa dönüş sürecine ise"
+     },
+     {
+      "lang": "en",
+      "text": "recovery"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "I was too ill to travel and the recovery took two weeks."
+     },
+     {
+      "lang": "tr",
+      "text": "Yolculuk edemeyecek kadar rahatsızdım ve iyileşme iki hafta sürdü."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "I was too ill to travel and the recovery took two weeks."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir tane daha: Bugün gönder, yoksa günü kaybedersin."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "Send it today; otherwise you lose the day.",
+     "accept": [
+      "Send it today; otherwise, you lose the day.",
+      "Send it today; otherwise you will lose the day."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Uyarı için"
+      },
+      {
+       "lang": "en",
+       "text": "otherwise"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "Send it today; otherwise you lose the day."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Özetleyelim: ekleme"
+     },
+     {
+      "lang": "en",
+      "text": "moreover"
+     },
+     {
+      "lang": "tr",
+      "text": "uyarı"
+     },
+     {
+      "lang": "en",
+      "text": "otherwise"
+     },
+     {
+      "lang": "tr",
+      "text": "açma"
+     },
+     {
+      "lang": "en",
+      "text": "besides"
+     },
+     {
+      "lang": "tr",
+      "text": "Şimdi iş yerine rapor sürecini anlatacaksın."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Hastalandın ve iş yerine raporunu bildiriyorsun. Ne gönderdiğini, ne zamana kadar gönderilmesi gerektiğini ve başka ne istendiğini yazılı dille anlat.",
+   "partner": "kuralları hatırlatan, tarih soran bir insan kaynakları çalışanı",
+   "opening": "Have you sent us the note yet?",
+   "openingTr": "Raporu bize gönderdiniz mi?",
+   "goal": "Bir ekleme, bir uyarı ve bir açma bağlacını üç ayrı cümlede kullandıysan konuşma başarılı sayılır.",
+   "minTurns": 7
+  }
  }
 ]

@@ -1,0 +1,1062 @@
+[
+ {
+  "tr": "Rapor almak",
+  "kind": "titleTr",
+  "de": "Die Krankmeldung"
+ },
+ {
+  "tr": "Uzmana sevk",
+  "kind": "titleTr",
+  "de": "Die Überweisung"
+ },
+ {
+  "tr": "İkinci görüş",
+  "kind": "titleTr",
+  "de": "Die zweite Meinung"
+ },
+ {
+  "tr": "Tedaviyi seçmek",
+  "kind": "titleTr",
+  "de": "Die Behandlung wählen"
+ },
+ {
+  "tr": "Hastanede bir gece",
+  "kind": "titleTr",
+  "de": "Eine Nacht im Krankenhaus"
+ },
+ {
+  "tr": "Rapor sürecini yazılı anlatmayı öğretir; bağlaçlar ekler, uyarır, açar ve yerine koyar.",
+  "kind": "summary",
+  "de": "Vermittelt, wie man den Weg der Krankmeldung schriftlich erklärt; die Konnektoren ergänzen, warnen, eröffnen und ersetzen."
+ },
+ {
+  "tr": "Tedavi seçimini anlatmayı öğretir; her fiil kendinden sonra mastar mı ulaç mı geleceğini kendi seçer.",
+  "kind": "summary",
+  "de": "Vermittelt, wie man die Wahl der Behandlung erzählt; jedes Verb wählt selbst, ob danach der Infinitiv oder die -ing-Form steht."
+ },
+ {
+  "tr": "Hastanede geçecek bir geceyi planlamayı öğretir; karar, niyet ve ayarlanmış plan ayrı biçimlerle söylenir.",
+  "kind": "summary",
+  "de": "Vermittelt, wie man eine Nacht im Krankenhaus plant; Entscheidung, Absicht und fester Plan stehen in verschiedenen Formen."
+ },
+ {
+  "tr": "İkinci bir hekime gitmeyi konuşmayı öğretir; koşul cümlesi gerçek şartı, varsayımı ve şartsız durumu ayırır.",
+  "kind": "summary",
+  "de": "Vermittelt, wie man über eine zweite Ärztin spricht; der Bedingungssatz trennt echte Bedingung, Annahme und den einzigen Ausweg."
+ },
+ {
+  "tr": "Sevk zincirini anlatmayı öğretir; ilgi cümlesi kimin gönderdiğini, neyin gösterdiğini ve nerede çalıştığını bağlar.",
+  "kind": "summary",
+  "de": "Vermittelt, wie man die Überweisungskette erzählt; der Relativsatz bindet ein, wer geschickt hat, was gezeigt hat und wo gearbeitet wird."
+ },
+ {
+  "tr": "sevk zincirini hiç bilmeyen, adım adım soran bir yakının",
+  "kind": "partner",
+  "de": "eine Angehörige, die die Überweisungskette gar nicht kennt und Schritt für Schritt fragt"
+ },
+ {
+  "tr": "aynı seçimi geçmişte yaşamış, kendi yolunu anlatan bir arkadaş",
+  "kind": "partner",
+  "de": "ein Freund, der dieselbe Wahl früher erlebt hat und seinen eigenen Weg erzählt"
+ },
+ {
+  "tr": "kuralları hatırlatan, tarih soran bir insan kaynakları çalışanı",
+  "kind": "partner",
+  "de": "ein Mitarbeiter der Personalabteilung, der an die Regeln erinnert und nach dem Datum fragt"
+ },
+ {
+  "tr": "programı sırayla anlatan, sorulara kısa cevap veren bir hemşire",
+  "kind": "partner",
+  "de": "eine Pflegerin, die den Ablauf der Reihe nach erklärt und knapp antwortet"
+ },
+ {
+  "tr": "ikinci görüş almayı gereksiz bulan ama seni dinleyen bir arkadaş",
+  "kind": "partner",
+  "de": "eine Freundin, die eine zweite Meinung für unnötig hält, dir aber zuhört"
+ },
+ {
+  "tr": "Hangisine karar verdin?",
+  "kind": "openingTr",
+  "de": "Wofür hast du dich entschieden?"
+ },
+ {
+  "tr": "Seni uzmana kim gönderdi?",
+  "kind": "openingTr",
+  "de": "Wer hat dich zum Facharzt geschickt?"
+ },
+ {
+  "tr": "Raporu bize gönderdiniz mi?",
+  "kind": "openingTr",
+  "de": "Haben Sie uns die Krankmeldung schon geschickt?"
+ },
+ {
+  "tr": "Geceyi burada geçirecek misiniz?",
+  "kind": "openingTr",
+  "de": "Bleiben Sie über Nacht hier?"
+ },
+ {
+  "tr": "Gerçekten başka bir görüşe ihtiyacın var mı?",
+  "kind": "openingTr",
+  "de": "Brauchst du wirklich noch eine Meinung?"
+ },
+ {
+  "tr": "İki tedavi yolu arasında kaldın ve bir arkadaşınla konuşuyorsun. Neye karar verdiğini, neyi bıraktığını ve sana ne önerildiğini anlat.",
+  "kind": "scene",
+  "de": "Du stehst zwischen zwei Behandlungswegen und sprichst mit einem Freund. Erzähl, wofür du dich entschieden hast, was du aufgegeben hast und was dir vorgeschlagen wurde."
+ },
+ {
+  "tr": "Hastalandın ve iş yerine raporunu bildiriyorsun. Ne gönderdiğini, ne zamana kadar gönderilmesi gerektiğini ve başka ne istendiğini yazılı dille anlat.",
+  "kind": "scene",
+  "de": "Du bist krank geworden und meldest das am Arbeitsplatz. Erklär in schriftlicher Sprache, was du geschickt hast, bis wann es geschickt werden muss und was sonst noch verlangt wird."
+ },
+ {
+  "tr": "Yarın küçük bir işlem için hastaneye yatıyorsun ve hemşire programı anlatıyor. Ne yapılacağını sor, ne kadar kalacağını söyle ve ziyaret saatini ayarla.",
+  "kind": "scene",
+  "de": "Morgen kommst du für einen kleinen Eingriff ins Krankenhaus und die Pflegerin erklärt den Ablauf. Frag, was gemacht wird, sag, wie lange du bleibst, und leg die Besuchszeit fest."
+ },
+ {
+  "tr": "Aile hekimin seni bir uzmana sevk etti ve bir yakının ayrıntıları soruyor. Kimin gönderdiğini, hangi belgenin gittiğini ve uzmanın nerede çalıştığını anlat.",
+  "kind": "scene",
+  "de": "Deine Hausärztin hat dich zu einem Facharzt überwiesen und eine Angehörige fragt nach den Einzelheiten. Erzähl, wer geschickt hat, welches Dokument gegangen ist und wo der Facharzt arbeitet."
+ },
+ {
+  "tr": "Aldığın teşhisten emin değilsin ve bir arkadaşınla ikinci görüş almayı konuşuyorsun. Hangi şartla gideceğini, onun yerinde olsa ne yapacağını ve son çareyi söyle.",
+  "kind": "scene",
+  "de": "Du bist dir bei deiner Diagnose nicht sicher und sprichst mit einer Freundin über eine zweite Meinung. Sag, unter welcher Bedingung du hingehst, was du an ihrer Stelle tun würdest und was der letzte Ausweg ist."
+ },
+ {
+  "tr": "Bir kararı, bir bırakmayı ve bir öneriyi doğru ardıllarla söylediysen konuşma başarılı sayılır.",
+  "kind": "goal",
+  "de": "Das Gespräch gilt als gelungen, wenn du eine Entscheidung, ein Aufhören und einen Vorschlag mit den richtigen Anschlüssen gesagt hast."
+ },
+ {
+  "tr": "Bir ekleme, bir uyarı ve bir açma bağlacını üç ayrı cümlede kullandıysan konuşma başarılı sayılır.",
+  "kind": "goal",
+  "de": "Das Gespräch gilt als gelungen, wenn du einen ergänzenden, einen warnenden und einen eröffnenden Konnektor in drei verschiedenen Sätzen benutzt hast."
+ },
+ {
+  "tr": "Mümkün bir şartı, bir varsayımı ve tek çıkışı üç ayrı koşul cümlesiyle söylediysen konuşma başarılı sayılır.",
+  "kind": "goal",
+  "de": "Das Gespräch gilt als gelungen, wenn du eine erfüllbare Bedingung, eine Annahme und den einzigen Ausweg in drei verschiedenen Bedingungssätzen gesagt hast."
+ },
+ {
+  "tr": "Gönderen kişiyi, giden belgeyi ve çalışılan yeri üç ayrı ilgi cümlesiyle anlattıysan konuşma başarılı sayılır.",
+  "kind": "goal",
+  "de": "Das Gespräch gilt als gelungen, wenn du die sendende Person, das gegangene Dokument und den Arbeitsort in drei verschiedenen Relativsätzen erzählt hast."
+ },
+ {
+  "tr": "Hastanenin kararını, kendi niyetini ve ayarlanmış ziyareti üç ayrı biçimle söylediysen konuşma başarılı sayılır.",
+  "kind": "goal",
+  "de": "Das Gespräch gilt als gelungen, wenn du die Entscheidung des Krankenhauses, deine eigene Absicht und den festen Besuch in drei verschiedenen Formen gesagt hast."
+ },
+ {
+  "tr": "kas",
+  "kind": "vocab.tr",
+  "de": "Muskel"
+ },
+ {
+  "tr": "bakım",
+  "kind": "vocab.tr",
+  "de": "Pflege"
+ },
+ {
+  "tr": "eklem",
+  "kind": "vocab.tr",
+  "de": "Gelenk"
+ },
+ {
+  "tr": "kemik",
+  "kind": "vocab.tr",
+  "de": "Knochen"
+ },
+ {
+  "tr": "nabız",
+  "kind": "vocab.tr",
+  "de": "Puls"
+ },
+ {
+  "tr": "tartı",
+  "kind": "vocab.tr",
+  "de": "Waage"
+ },
+ {
+  "tr": "yoksa",
+  "kind": "vocab.tr",
+  "de": "sonst"
+ },
+ {
+  "tr": "ayrıca",
+  "kind": "vocab.tr",
+  "de": "außerdem"
+ },
+ {
+  "tr": "basınç",
+  "kind": "vocab.tr",
+  "de": "Druck"
+ },
+ {
+  "tr": "cerrah",
+  "kind": "vocab.tr",
+  "de": "Chirurg"
+ },
+ {
+  "tr": "akciğer",
+  "kind": "vocab.tr",
+  "de": "Lunge"
+ },
+ {
+  "tr": "röntgen",
+  "kind": "vocab.tr",
+  "de": "Röntgenbild"
+ },
+ {
+  "tr": "üstelik",
+  "kind": "vocab.tr",
+  "de": "überdies"
+ },
+ {
+  "tr": "dinlenme",
+  "kind": "vocab.tr",
+  "de": "Ruhe"
+ },
+ {
+  "tr": "iyileşme",
+  "kind": "vocab.tr",
+  "de": "Genesung"
+ },
+ {
+  "tr": "rahatsız",
+  "kind": "vocab.tr",
+  "de": "erkrankt"
+ },
+ {
+  "tr": "başka yol",
+  "kind": "vocab.tr",
+  "de": "Alternative"
+ },
+ {
+  "tr": "iyileşmek",
+  "kind": "vocab.tr",
+  "de": "genesen"
+ },
+ {
+  "tr": "sevk etmek",
+  "kind": "vocab.tr",
+  "de": "überweisen"
+ },
+ {
+  "tr": "devamsızlık",
+  "kind": "vocab.tr",
+  "de": "Fehlzeit"
+ },
+ {
+  "tr": "onun yerine",
+  "kind": "vocab.tr",
+  "de": "stattdessen"
+ },
+ {
+  "tr": "uzman hekim",
+  "kind": "vocab.tr",
+  "de": "Facharzt"
+ },
+ {
+  "tr": "vücut ısısı",
+  "kind": "vocab.tr",
+  "de": "Körpertemperatur"
+ },
+ {
+  "tr": "muayene etmek",
+  "kind": "vocab.tr",
+  "de": "untersuchen"
+ },
+ {
+  "tr": "ameliyat etmek",
+  "kind": "vocab.tr",
+  "de": "operieren"
+ },
+ {
+  "tr": "beslenme düzeni",
+  "kind": "vocab.tr",
+  "de": "Ernährung"
+ },
+ {
+  "tr": "egzersiz yapmak",
+  "kind": "vocab.tr",
+  "de": "Sport treiben"
+ },
+ {
+  "tr": "niyeti söyler",
+  "kind": "pattern.tr",
+  "de": "nennt die Absicht"
+ },
+ {
+  "tr": "tek çıkış yolunu söyler",
+  "kind": "pattern.tr",
+  "de": "nennt den einzigen Ausweg"
+ },
+ {
+  "tr": "yeri tarif ederek bağlar",
+  "kind": "pattern.tr",
+  "de": "bindet den Ort beschreibend ein"
+ },
+ {
+  "tr": "cümleyi ek bir şeyle açar",
+  "kind": "pattern.tr",
+  "de": "eröffnet den Satz mit etwas Zusätzlichem"
+ },
+ {
+  "tr": "kararı olduğu gibi söyler",
+  "kind": "pattern.tr",
+  "de": "nennt die Entscheidung, wie sie ist"
+ },
+ {
+  "tr": "yapılmazsa olacağı söyler",
+  "kind": "pattern.tr",
+  "de": "sagt, was passiert, wenn es nicht gemacht wird"
+ },
+ {
+  "tr": "aynı yöndeki ikinci bilgiyi ekler",
+  "kind": "pattern.tr",
+  "de": "fügt eine zweite Information in dieselbe Richtung an"
+ },
+ {
+  "tr": "öneri fiilinden sonra ulaç getirir",
+  "kind": "pattern.tr",
+  "de": "setzt nach dem Verb des Vorschlagens die Form auf -ing"
+ },
+ {
+  "tr": "gönderen kişiyi tarif ederek bağlar",
+  "kind": "pattern.tr",
+  "de": "bindet die sendende Person beschreibend ein"
+ },
+ {
+  "tr": "bırakma fiilinden sonra ulaç getirir",
+  "kind": "pattern.tr",
+  "de": "setzt nach dem Verb des Aufhörens die Form auf -ing"
+ },
+ {
+  "tr": "gösteren belgeyi tarif ederek bağlar",
+  "kind": "pattern.tr",
+  "de": "bindet das zeigende Dokument beschreibend ein"
+ },
+ {
+  "tr": "karar fiilinden sonra mastar getirir",
+  "kind": "pattern.tr",
+  "de": "setzt nach dem Verb des Entscheidens den Infinitiv"
+ },
+ {
+  "tr": "gerçekleşmesi mümkün bir şartı anlatır",
+  "kind": "pattern.tr",
+  "de": "nennt eine erfüllbare Bedingung"
+ },
+ {
+  "tr": "hâlinde kalıyor.",
+  "kind": "why.tr",
+  "de": "Form."
+ },
+ {
+  "tr": "Doğru. Bırakmayı anlatan fiilden sonra ikinci fiil",
+  "kind": "why.tr",
+  "de": "Richtig. Nach dem Verb des Aufhörens bleibt das zweite Verb in der"
+ },
+ {
+  "tr": "Doğru. Bu bağlaç yapılmazsa olacağı söylüyor ve iki yarı da tam bir cümle.",
+  "kind": "why.tr",
+  "de": "Richtig. Dieser Konnektor sagt, was passiert, wenn es nicht gemacht wird, und beide Hälften sind vollständige Sätze."
+ },
+ {
+  "tr": "Doğru. Niyet konuşanın kendisine ait, o yüzden karar kipi değil niyet biçimi kullanılıyor.",
+  "kind": "why.tr",
+  "de": "Richtig. Die Absicht gehört der sprechenden Person selbst, deshalb steht hier nicht die Entscheidungsform, sondern die Absichtsform."
+ },
+ {
+  "tr": "Doğru. Şart gerçekleşebilir, o yüzden şart yarısı olağan zamanda ve sonuç yarısı gelecek biçiminde.",
+  "kind": "why.tr",
+  "de": "Richtig. Die Bedingung kann eintreten, deshalb steht die Bedingungshälfte in der gewöhnlichen Zeit und die Folgehälfte in der Zukunftsform."
+ },
+ {
+  "tr": "Niyet için",
+  "kind": "hint.tr",
+  "de": "Für die Absicht"
+ },
+ {
+  "tr": "Uyarı için",
+  "kind": "hint.tr",
+  "de": "Für die Warnung"
+ },
+ {
+  "tr": "Tek çıkış için",
+  "kind": "hint.tr",
+  "de": "Für den einzigen Ausweg"
+ },
+ {
+  "tr": "Mümkün şart için",
+  "kind": "hint.tr",
+  "de": "Für eine erfüllbare Bedingung"
+ },
+ {
+  "tr": "Aynı yönde ekleme için",
+  "kind": "hint.tr",
+  "de": "Für eine Ergänzung in dieselbe Richtung"
+ },
+ {
+  "tr": "Hastanenin kararı için",
+  "kind": "hint.tr",
+  "de": "Für die Entscheidung des Krankenhauses"
+ },
+ {
+  "tr": "Gerçek olmayan durum için",
+  "kind": "hint.tr",
+  "de": "Für eine nicht wirkliche Lage"
+ },
+ {
+  "tr": "Karar fiilinin ardılı için",
+  "kind": "hint.tr",
+  "de": "Für das, was auf das Verb des Entscheidens folgt"
+ },
+ {
+  "tr": "Öneri fiilinin ardılı için",
+  "kind": "hint.tr",
+  "de": "Für das, was auf das Verb des Vorschlagens folgt"
+ },
+ {
+  "tr": "Bırakma fiilinin ardılı için",
+  "kind": "hint.tr",
+  "de": "Für das, was auf das Verb des Aufhörens folgt"
+ },
+ {
+  "tr": "Cümleyi ek bir şeyle açmak için",
+  "kind": "hint.tr",
+  "de": "Um den Satz mit etwas Zusätzlichem zu eröffnen"
+ },
+ {
+  "tr": "Saati belli plan şimdiki zamanla söylenir:",
+  "kind": "hint.tr",
+  "de": "Ein Plan mit fester Uhrzeit steht in der Verlaufsform der Gegenwart:"
+ },
+ {
+  "tr": "açma",
+  "kind": "say.tr",
+  "de": "Eröffnung"
+ },
+ {
+  "tr": "plan",
+  "kind": "say.tr",
+  "de": "Plan"
+ },
+ {
+  "tr": "ekler,",
+  "kind": "say.tr",
+  "de": "fügt hinzu,"
+ },
+ {
+  "tr": "bırakma",
+  "kind": "say.tr",
+  "de": "Aufhören"
+ },
+ {
+  "tr": "uyarır,",
+  "kind": "say.tr",
+  "de": "warnt,"
+ },
+ {
+  "tr": "tek çıkış",
+  "kind": "say.tr",
+  "de": "einziger Ausweg"
+ },
+ {
+  "tr": "Tütün içmeye",
+  "kind": "say.tr",
+  "de": "Tabak rauchen heißt"
+ },
+ {
+  "tr": "niyet senin ise",
+  "kind": "say.tr",
+  "de": "ist die Absicht deine, steht"
+ },
+ {
+  "tr": "Bir yerde kalmaya",
+  "kind": "say.tr",
+  "de": "An einem Ort bleiben heißt"
+ },
+ {
+  "tr": "Yatılan mobilyaya",
+  "kind": "say.tr",
+  "de": "Das Möbel, in dem man liegt, heißt"
+ },
+ {
+  "tr": "Bedeni çalıştırmaya",
+  "kind": "say.tr",
+  "de": "Den Körper bewegen heißt"
+ },
+ {
+  "tr": "Bir gece kalacağım.",
+  "kind": "say.tr",
+  "de": "Ich werde eine Nacht bleiben."
+ },
+ {
+  "tr": "İşe gidilmeyen güne",
+  "kind": "say.tr",
+  "de": "Ein Tag ohne Arbeit heißt"
+ },
+ {
+  "tr": "Özetleyelim: ekleme",
+  "kind": "say.tr",
+  "de": "Fassen wir zusammen: Ergänzung"
+ },
+ {
+  "tr": "Ameliyat yapan hekime",
+  "kind": "say.tr",
+  "de": "Wer operiert, heißt"
+ },
+ {
+  "tr": "Kan pompalayan organa",
+  "kind": "say.tr",
+  "de": "Das Organ, das Blut pumpt, heißt"
+ },
+ {
+  "tr": "nefes alan organa ise",
+  "kind": "say.tr",
+  "de": "und das Organ, das atmet, heißt"
+ },
+ {
+  "tr": "Akciğer temiz duyuldu.",
+  "kind": "say.tr",
+  "de": "Die Lunge klang frei."
+ },
+ {
+  "tr": "Birini görmeye gitmeye",
+  "kind": "say.tr",
+  "de": "Jemanden besuchen gehen heißt"
+ },
+ {
+  "tr": "Daha kötüye gitmek için",
+  "kind": "say.tr",
+  "de": "Für schlechter werden sagen wir"
+ },
+ {
+  "tr": "İçeriyi gösteren çekime",
+  "kind": "say.tr",
+  "de": "Die Aufnahme, die das Innere zeigt, heißt"
+ },
+ {
+  "tr": "Kasılıp gevşeyen dokuya",
+  "kind": "say.tr",
+  "de": "Das Gewebe, das sich anspannt und lockert, heißt"
+ },
+ {
+  "tr": "Sağlığı bozulmuş kişiye",
+  "kind": "say.tr",
+  "de": "Wer gesundheitlich angeschlagen ist, heißt"
+ },
+ {
+  "tr": "sağlığına kavuşmaya ise",
+  "kind": "say.tr",
+  "de": "und wieder gesund werden heißt"
+ },
+ {
+  "tr": "Özetleyelim: mümkün şart",
+  "kind": "say.tr",
+  "de": "Fassen wir zusammen: erfüllbare Bedingung"
+ },
+ {
+  "tr": "tartıda çıkan sayıya ise",
+  "kind": "say.tr",
+  "de": "und die Zahl auf der Waage heißt"
+ },
+ {
+  "tr": "bedenin sert yapısına ise",
+  "kind": "say.tr",
+  "de": "und die harte Struktur im Körper heißt"
+ },
+ {
+  "tr": "Devamsızlık üç gün sürdü.",
+  "kind": "say.tr",
+  "de": "Die Fehlzeit dauerte drei Tage."
+ },
+ {
+  "tr": "daha iyiye gitmek için ise",
+  "kind": "say.tr",
+  "de": "und für besser werden"
+ },
+ {
+  "tr": "sağlığa dönüş sürecine ise",
+  "kind": "say.tr",
+  "de": "und der Weg zurück zur Gesundheit heißt"
+ },
+ {
+  "tr": "Geçen yıl sigarayı bıraktı.",
+  "kind": "say.tr",
+  "de": "Letztes Jahr hat er das Rauchen aufgegeben."
+ },
+ {
+  "tr": "günün karanlık bölümüne ise",
+  "kind": "say.tr",
+  "de": "und der dunkle Teil des Tages heißt"
+ },
+ {
+  "tr": "Kemiği gösteren röntgen bu.",
+  "kind": "say.tr",
+  "de": "Das ist das Röntgenbild, das den Knochen zeigt."
+ },
+ {
+  "tr": "Tartı aynı sayıyı gösterdi.",
+  "kind": "say.tr",
+  "de": "Die Waage zeigte dieselbe Zahl."
+ },
+ {
+  "tr": "bedeni iyi durumda olana ise",
+  "kind": "say.tr",
+  "de": "und wer körperlich in gutem Zustand ist, heißt"
+ },
+ {
+  "tr": "bedenin sıcaklık ölçüsüne ise",
+  "kind": "say.tr",
+  "de": "und das Wärmemaß des Körpers heißt"
+ },
+ {
+  "tr": "Dizimdeki eklem hâlâ ağrıyor.",
+  "kind": "say.tr",
+  "de": "Das Gelenk in meinem Knie tut immer noch weh."
+ },
+ {
+  "tr": "hastaya gösterilen ilgiye ise",
+  "kind": "say.tr",
+  "de": "und die Zuwendung für die Kranken heißt"
+ },
+ {
+  "tr": "Sadece bir kas ve deri sıcak.",
+  "kind": "say.tr",
+  "de": "Es ist nur ein Muskel und die Haut ist warm."
+ },
+ {
+  "tr": "Bacağın ortadan büküldüğü yere",
+  "kind": "say.tr",
+  "de": "Die Stelle, an der sich das Bein in der Mitte beugt, heißt"
+ },
+ {
+  "tr": "Basınç bu sefer daha yüksekti.",
+  "kind": "say.tr",
+  "de": "Der Druck war diesmal höher."
+ },
+ {
+  "tr": "ile ve olağan zamanla kurulur;",
+  "kind": "say.tr",
+  "de": "und der gewöhnlichen Zeit gebaut;"
+ },
+ {
+  "tr": "Ne yiyip ne içtiğinin düzenine",
+  "kind": "say.tr",
+  "de": "Die Ordnung dessen, was du isst und trinkst, heißt"
+ },
+ {
+  "tr": "Ablam sekizde ziyarete geliyor.",
+  "kind": "say.tr",
+  "de": "Meine Schwester kommt um acht zu Besuch."
+ },
+ {
+  "tr": "bedeni kaplayan dış katmana ise",
+  "kind": "say.tr",
+  "de": "und die äußere Schicht, die den Körper bedeckt, heißt"
+ },
+ {
+  "tr": "bir şeyin yerine geçen için ise",
+  "kind": "say.tr",
+  "de": "und für das, was an die Stelle von etwas tritt"
+ },
+ {
+  "tr": "iki kemiğin birleştiği yere ise",
+  "kind": "say.tr",
+  "de": "und die Stelle, an der zwei Knochen zusammenkommen, heißt"
+ },
+ {
+  "tr": "Hiçbir şey yapmadan toparlanmaya",
+  "kind": "say.tr",
+  "de": "Sich erholen, ohne etwas zu tun, heißt"
+ },
+ {
+  "tr": "Bir şeyin içeriden ittirme gücüne",
+  "kind": "say.tr",
+  "de": "Die Kraft, mit der etwas von innen drückt, heißt"
+ },
+ {
+  "tr": "hastaya bakıp değerlendirmeye ise",
+  "kind": "say.tr",
+  "de": "und einen Kranken ansehen und beurteilen heißt"
+ },
+ {
+  "tr": "İyiye gitmeden önce kötüye gitti.",
+  "kind": "say.tr",
+  "de": "Es wurde schlechter, bevor es besser wurde."
+ },
+ {
+  "tr": "Tek bir alanda derinleşmiş hekime",
+  "kind": "say.tr",
+  "de": "Eine Ärztin, die sich auf ein Gebiet vertieft hat, heißt"
+ },
+ {
+  "tr": "Üstüne çıkılıp kilo ölçülen alete",
+  "kind": "say.tr",
+  "de": "Das Gerät, auf das man steigt und das das Gewicht misst, heißt"
+ },
+ {
+  "tr": "Vücut ısısı düşmezse bizi arayın.",
+  "kind": "say.tr",
+  "de": "Wenn die Körpertemperatur nicht sinkt, rufen Sie uns an."
+ },
+ {
+  "tr": "Bir tane daha: Geç yemeyi bıraktı.",
+  "kind": "say.tr",
+  "de": "Noch eins: Er hat das späte Essen aufgegeben."
+ },
+ {
+  "tr": "gerçek olmayan bir durumu anlatır;",
+  "kind": "say.tr",
+  "de": "nennt eine nicht wirkliche Lage;"
+ },
+ {
+  "tr": "Onun yerine bir e-posta gönderdim.",
+  "kind": "say.tr",
+  "de": "Stattdessen habe ich eine E-Mail geschickt."
+ },
+ {
+  "tr": "Sağlıklı bir hafta uykuyla başlar.",
+  "kind": "say.tr",
+  "de": "Eine gesunde Woche beginnt mit Schlaf."
+ },
+ {
+  "tr": "Şimdi sen kur: İki gece kalacağım.",
+  "kind": "say.tr",
+  "de": "Jetzt du: Ich werde zwei Nächte bleiben."
+ },
+ {
+  "tr": "Cerrah beni on dakika muayene etti.",
+  "kind": "say.tr",
+  "de": "Der Chirurg hat mich zehn Minuten untersucht."
+ },
+ {
+  "tr": "Sayılanlara bir şey daha katmak için",
+  "kind": "say.tr",
+  "de": "Um dem Aufgezählten noch etwas hinzuzufügen, sagen wir"
+ },
+ {
+  "tr": "Uzman hekimin çalıştığı klinik yeni.",
+  "kind": "say.tr",
+  "de": "Die Klinik, in der der Facharzt arbeitet, ist neu."
+ },
+ {
+  "tr": "çalışmadan geçirilen resmî süreye ise",
+  "kind": "say.tr",
+  "de": "und die offizielle Zeit ohne Arbeit heißt"
+ },
+ {
+  "tr": "İzni şimdi kullan, yoksa kaybedersin.",
+  "kind": "say.tr",
+  "de": "Nimm den Urlaub jetzt, sonst verlierst du ihn."
+ },
+ {
+  "tr": "Beslenme düzenimi değiştirmeyi önerdi.",
+  "kind": "say.tr",
+  "de": "Sie hat vorgeschlagen, meine Ernährung zu ändern."
+ },
+ {
+  "tr": "Şimdi ikinci görüş almayı konuşacaksın.",
+  "kind": "say.tr",
+  "de": "Jetzt sprichst du über eine zweite Meinung."
+ },
+ {
+  "tr": "Bir tane daha: Ağrı geçmezse tekrar git.",
+  "kind": "say.tr",
+  "de": "Noch eins: Wenn der Schmerz nicht aufhört, geh noch einmal hin."
+ },
+ {
+  "tr": "Geçen yıla göre daha az sigara içiyorum.",
+  "kind": "say.tr",
+  "de": "Ich rauche weniger als letztes Jahr."
+ },
+ {
+  "tr": "Rapordan ayrıca bir tarih de istiyorlar.",
+  "kind": "say.tr",
+  "de": "Außer der Bescheinigung wollen sie auch ein Datum."
+ },
+ {
+  "tr": "Şimdi sen kur: Hapı değiştirmeyi önerdi.",
+  "kind": "say.tr",
+  "de": "Jetzt du: Sie hat vorgeschlagen, die Pille zu wechseln."
+ },
+ {
+  "tr": "Şimdi sevkini bir yakınına anlatacaksın.",
+  "kind": "say.tr",
+  "de": "Jetzt erzählst du einer Angehörigen von deiner Überweisung."
+ },
+ {
+  "tr": "Şimdi dersin kuralı. Karar hastanenin ise",
+  "kind": "say.tr",
+  "de": "Jetzt die Regel der Lektion. Trifft das Krankenhaus die Entscheidung, steht"
+ },
+ {
+  "tr": "İkinci kalıbımız uyarı veriyor. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Unsere zweite Wendung warnt. Wiederhole:"
+ },
+ {
+  "tr": "İkinci kalıbımız yeri bağlıyor. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Unsere zweite Wendung verbindet den Ort. Wiederhole:"
+ },
+ {
+  "tr": "Son kalıbımız belgeyi bağlıyor. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Unsere letzte Wendung verbindet das Dokument. Wiederhole:"
+ },
+ {
+  "tr": "Son kalıbımız varsayım kuruyor. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Unsere letzte Wendung baut eine Annahme. Wiederhole:"
+ },
+ {
+  "tr": "Pencere kenarındaki yatak boş ve bakım iyi.",
+  "kind": "say.tr",
+  "de": "Das Bett am Fenster ist frei und die Pflege ist gut."
+ },
+ {
+  "tr": "Son kalıbımız öneriyi anlatıyor. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Unsere letzte Wendung nennt den Vorschlag. Wiederhole:"
+ },
+ {
+  "tr": "İkinci kalıbımız niyeti söylüyor. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Unsere zweite Wendung nennt die Absicht. Wiederhole:"
+ },
+ {
+  "tr": "Şimdi hastanede geçecek geceyi konuşacaksın.",
+  "kind": "say.tr",
+  "de": "Jetzt besprichst du die Nacht im Krankenhaus."
+ },
+ {
+  "tr": "Şimdi iş yerine rapor sürecini anlatacaksın.",
+  "kind": "say.tr",
+  "de": "Jetzt erklärst du am Arbeitsplatz den Weg der Krankmeldung."
+ },
+ {
+  "tr": "Egzersiz yapacağıma söz verdim ve kilom düştü.",
+  "kind": "say.tr",
+  "de": "Ich habe versprochen, Sport zu treiben, und mein Gewicht ist gesunken."
+ },
+ {
+  "tr": "Şimdi dersin kuralı. Gerçekleşmesi mümkün şart",
+  "kind": "say.tr",
+  "de": "Jetzt die Regel der Lektion. Eine erfüllbare Bedingung wird mit"
+ },
+ {
+  "tr": "Şimdi sen kur: Uzman hekimin yazdığı mektup bu.",
+  "kind": "say.tr",
+  "de": "Jetzt du: Das ist der Brief, den der Facharzt geschrieben hat."
+ },
+ {
+  "tr": "Şimdi sıra sende: Sonuç aynıysa kabul edeceğim.",
+  "kind": "say.tr",
+  "de": "Jetzt bist du dran: Wenn das Ergebnis dasselbe ist, nehme ich es an."
+ },
+ {
+  "tr": "İkinci kalıbımız bırakmayı anlatıyor. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Unsere zweite Wendung erzählt vom Aufhören. Wiederhole:"
+ },
+ {
+  "tr": "İkinci kalıbımız tek çıkışı söylüyor. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Unsere zweite Wendung nennt den einzigen Ausweg. Wiederhole:"
+ },
+ {
+  "tr": "ister; bırakmayı ve önermeyi anlatan fiiller ise",
+  "kind": "say.tr",
+  "de": "und Verben des Aufhörens und Vorschlagens dagegen die Form auf"
+ },
+ {
+  "tr": "Bir tane daha: Onu yapan cerrah burada çalışıyor.",
+  "kind": "say.tr",
+  "de": "Noch eins: Der Chirurg, der es gemacht hat, arbeitet hier."
+ },
+ {
+  "tr": "Şimdi sıra sende: Bana bakan uzman hekim nazikti.",
+  "kind": "say.tr",
+  "de": "Jetzt bist du dran: Der Facharzt, der mich gesehen hat, war freundlich."
+ },
+ {
+  "tr": "Bir tane daha: Ablam yarın akşam ziyarete geliyor.",
+  "kind": "say.tr",
+  "de": "Noch eins: Meine Schwester kommt morgen Abend zu Besuch."
+ },
+ {
+  "tr": "Şimdi tedavi seçimini bir arkadaşınla konuşacaksın.",
+  "kind": "say.tr",
+  "de": "Jetzt besprichst du die Wahl der Behandlung mit einem Freund."
+ },
+ {
+  "tr": "yeri bağlar. Sevk mektubunda üçü de peş peşe geçer.",
+  "kind": "say.tr",
+  "de": "den Ort. Im Überweisungsschreiben stehen alle drei hintereinander."
+ },
+ {
+  "tr": "Bir tane daha: Bugün gönder, yoksa günü kaybedersin.",
+  "kind": "say.tr",
+  "de": "Noch eins: Schick es heute, sonst verlierst du den Tag."
+ },
+ {
+  "tr": "Son kalıbımız cümleyi ek bir şeyle açıyor. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Unsere letzte Wendung eröffnet den Satz mit etwas Zusätzlichem. Wiederhole:"
+ },
+ {
+  "tr": "Şimdi sıra sende: Tedaviyi değiştirmeye karar verdim.",
+  "kind": "say.tr",
+  "de": "Jetzt bist du dran: Ich habe entschieden, die Behandlung zu ändern."
+ },
+ {
+  "tr": "Senin yerinde olsam kalbi bir daha kontrol ettirirdim.",
+  "kind": "say.tr",
+  "de": "An deiner Stelle würde ich das Herz noch einmal prüfen lassen."
+ },
+ {
+  "tr": "Şimdi sen kur: Formdan ayrıca bir tarih de istiyorlar.",
+  "kind": "say.tr",
+  "de": "Jetzt du: Außer dem Formular wollen sie auch ein Datum."
+ },
+ {
+  "tr": "Şimdi sıra sende: Pazartesi sabahı ameliyat edecekler.",
+  "kind": "say.tr",
+  "de": "Jetzt bist du dran: Am Montagmorgen werden sie operieren."
+ },
+ {
+  "tr": "Dinlenmeye ihtiyacın var ve evde daha hızlı iyileşeceksin.",
+  "kind": "say.tr",
+  "de": "Du brauchst Ruhe und zu Hause wirst du schneller genesen."
+ },
+ {
+  "tr": "Cerrahi işlem yapmak demek. İlk kalıbımız da bu. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Das heißt einen chirurgischen Eingriff machen. Das ist auch unsere erste Wendung. Wiederhole:"
+ },
+ {
+  "tr": "Şimdi sıra sende: Formu gönderdim, üstelik ofisi de aradım.",
+  "kind": "say.tr",
+  "de": "Jetzt bist du dran: Ich habe das Formular geschickt, überdies habe ich im Büro angerufen."
+ },
+ {
+  "tr": "Şimdi sen kur: Senin yerinde olsam başka bir hekime sorardım.",
+  "kind": "say.tr",
+  "de": "Jetzt du: An deiner Stelle würde ich eine andere Ärztin fragen."
+ },
+ {
+  "tr": "Şimdi dersin kuralı. Karar ve söz veren fiiller kendinden sonra",
+  "kind": "say.tr",
+  "de": "Jetzt die Regel der Lektion. Verben des Entscheidens und Versprechens verlangen danach ein"
+ },
+ {
+  "tr": "Yolculuk edemeyecek kadar rahatsızdım ve iyileşme iki hafta sürdü.",
+  "kind": "say.tr",
+  "de": "Ich war zu krank zum Reisen und die Genesung dauerte zwei Wochen."
+ },
+ {
+  "tr": "Aynı işi gören başka bir yol demek. İlk kalıbımız da bu. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Das heißt ein anderer Weg, der dasselbe leistet. Das ist auch unsere erste Wendung. Wiederhole:"
+ },
+ {
+  "tr": "Aynı yönde bir bilgi daha eklemek demek. İlk kalıbımız da bu. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Das heißt eine weitere Information in dieselbe Richtung anfügen. Das ist auch unsere erste Wendung. Wiederhole:"
+ },
+ {
+  "tr": "ister. Fiilin anlamı değil alışkanlığı belirliyor, o yüzden örnekle tanınır.",
+  "kind": "say.tr",
+  "de": "und nichts anderes. Nicht die Bedeutung des Verbs entscheidet, sondern seine Gewohnheit, deshalb erkennt man es an Beispielen."
+ },
+ {
+  "tr": "Bir hastayı başka bir hekime göndermek demek. İlk kalıbımız da bu. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Das heißt einen Kranken zu einer anderen Ärztin schicken. Das ist auch unsere erste Wendung. Wiederhole:"
+ },
+ {
+  "tr": "Kalbin attıkça damarda hissedilen vuruş demek. İlk kalıbımız da bu. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Das heißt der Schlag, den man bei jedem Herzschlag in der Ader spürt. Das ist auch unsere erste Wendung. Wiederhole:"
+ },
+ {
+  "tr": "Şimdi dersin kuralı. İlgi cümlesi tarif ettiği kelimenin hemen ardına geliyor:",
+  "kind": "say.tr",
+  "de": "Jetzt die Regel der Lektion. Der Relativsatz steht direkt hinter dem Wort, das er beschreibt:"
+ },
+ {
+  "tr": "ise yeni bir şeyi öne çıkarır. Noktalı virgülden sonra gelenler tam cümle ister.",
+  "kind": "say.tr",
+  "de": "hebt etwas Neues hervor. Was nach dem Semikolon kommt, muss ein vollständiger Satz sein."
+ },
+ {
+  "tr": "ise tek çıkışı söyler ve kendisi olumsuzdur, bu yüzden yanına ikinci bir olumsuzluk almaz.",
+  "kind": "say.tr",
+  "de": "sagt den einzigen Ausweg und ist selbst schon verneint, deshalb steht daneben keine zweite Verneinung."
+ },
+ {
+  "tr": "Şimdi dersin kuralı. Bu bağlaçların üçü de cümlenin başında durur ve her biri başka bir ilişki kurar:",
+  "kind": "say.tr",
+  "de": "Jetzt die Regel der Lektion. Alle drei Konnektoren stehen am Satzanfang und jeder baut eine andere Beziehung:"
+ },
+ {
+  "tr": "Üç ayrı gelecek biçimi var ve hangisini seçtiğin planın ne kadar kesinleştiğini söylüyor. Hazır mısın?",
+  "kind": "say.tr",
+  "de": "Es gibt drei Zukunftsformen, und deine Wahl sagt, wie fest der Plan schon steht. Bist du bereit?"
+ },
+ {
+  "tr": "Merhaba! Bugün tedavi seçimini anlatmayı öğreneceğiz: neye karar verdin, neyi bıraktın, sana ne önerildi.",
+  "kind": "say.tr",
+  "de": "Hallo! Heute lernen wir, die Wahl der Behandlung zu erzählen: wofür du dich entschieden hast, was du aufgegeben hast, was dir vorgeschlagen wurde."
+ },
+ {
+  "tr": "saati belli bir plan için ise şimdiki zaman kullanılır. Üçü de yarını anlatır ama kesinlikleri farklıdır.",
+  "kind": "say.tr",
+  "de": "und für einen Plan mit fester Uhrzeit die Verlaufsform der Gegenwart. Alle drei sprechen vom Morgen, aber ihre Sicherheit ist verschieden."
+ },
+ {
+  "tr": "Merhaba! Bugün sevk zincirini anlatmayı öğreneceğiz: kim gönderdi, hangi belge gösterdi, nerede çalışıyor.",
+  "kind": "say.tr",
+  "de": "Hallo! Heute lernen wir, die Überweisungskette zu erzählen: wer geschickt hat, welches Dokument gezeigt hat, wo gearbeitet wird."
+ },
+ {
+  "tr": "Merhaba! Bugün ikinci bir hekime gitmeyi konuşmayı öğreneceğiz: hangi şartla beklenir, sen olsan ne yapardın.",
+  "kind": "say.tr",
+  "de": "Hallo! Heute lernen wir, über eine zweite Ärztin zu sprechen: unter welcher Bedingung gewartet wird, was du an ihrer Stelle tun würdest."
+ },
+ {
+  "tr": "Bu dersin kelimeleri konu değil bağlaç; her biri cümleler arasındaki ilişkiyi tek başına kuruyor. Hazır mısın?",
+  "kind": "say.tr",
+  "de": "Die Wörter dieser Lektion sind kein Thema, sondern Konnektoren; jedes baut allein die Beziehung zwischen den Sätzen. Bist du bereit?"
+ },
+ {
+  "tr": "Sevkte üç şeyin de adı değil tarifi söyleniyor ve bu tarifleri cümleye bağlayan şey ilgi cümlesi. Hazır mısın?",
+  "kind": "say.tr",
+  "de": "Bei einer Überweisung wird von allen drei Dingen nicht der Name genannt, sondern die Beschreibung, und was diese Beschreibungen an den Satz bindet, ist der Relativsatz. Bist du bereit?"
+ },
+ {
+  "tr": "Merhaba! Bugün rapor sürecini yazılı anlatmayı öğreneceğiz: ne gönderdin, ne olmazsa ne olur, başka ne isteniyor.",
+  "kind": "say.tr",
+  "de": "Hallo! Heute lernen wir, den Weg der Krankmeldung schriftlich zu erklären: was du geschickt hast, was passiert, wenn etwas fehlt, was sonst noch verlangt wird."
+ },
+ {
+  "tr": "Bu üç fiilin üçü de kendinden sonra ne geleceğini kendi seçiyor ve seçimi karıştırmak cümleyi bozuyor. Hazır mısın?",
+  "kind": "say.tr",
+  "de": "Alle drei Verben wählen selbst, was nach ihnen kommt, und die Wahl zu verwechseln macht den Satz kaputt. Bist du bereit?"
+ },
+ {
+  "tr": "Merhaba! Bugün hastanede geçecek bir geceyi planlamayı öğreneceğiz: ne yapılacak, ne kadar kalacaksın, kim gelecek.",
+  "kind": "say.tr",
+  "de": "Hallo! Heute lernen wir, eine Nacht im Krankenhaus zu planen: was gemacht wird, wie lange du bleibst, wer kommt."
+ },
+ {
+  "tr": "İkinci görüş istemek kaba değil olağan bir haktır ve bunu kibar söylemenin yolu koşul cümlesinden geçiyor. Hazır mısın?",
+  "kind": "say.tr",
+  "de": "Eine zweite Meinung zu verlangen ist nicht unhöflich, sondern ein normales Recht, und der Weg, das höflich zu sagen, führt über den Bedingungssatz. Bist du bereit?"
+ }
+]
