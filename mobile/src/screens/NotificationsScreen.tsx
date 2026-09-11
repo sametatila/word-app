@@ -43,7 +43,9 @@ export function NotificationsScreen() {
   const insets = useSafeAreaInsets();
   const nav = useNavigation<{ goBack: () => void }>();
   const [dailyOn, setDailyOn] = useState(false);
-  const [dailyTime, setDailyTime] = useState("19:00");
+  /* Başlangıç değeri yalnız ilk çizim için; gerçek saat `loadPrefs`ten
+     geliyor (sunucunun kayıtlı saati — bkz. `ReminderPrefs.hour`). */
+  const [dailyTime, setDailyTime] = useState("12:00");
   const [streakOn, setStreakOn] = useState(false);
   const [weeklyOn, setWeeklyOn] = useState(false);
   const [denied, setDenied] = useState(false);
@@ -52,7 +54,8 @@ export function NotificationsScreen() {
   useEffect(() => {
     /* Karar verilmemiş kategori sunucudaki değerle çiziliyor; bkz. `loadPrefs`. */
     loadPrefs().then((p) => {
-      if (p.daily) { setDailyOn(true); setDailyTime(p.daily); }
+      setDailyTime(p.hour);
+      if (p.daily) setDailyOn(true);
       setStreakOn(p.streak);
       setWeeklyOn(p.weekly);
     });

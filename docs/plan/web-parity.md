@@ -8875,3 +8875,31 @@ Kapı ilk sürümde yanlış ölçtü: iki hatırlatma gönderimi ortak yardımc
 (`deliverRound`) devrediyor ve FCM çağrısı orada; ölçüm yalnız fonksiyonun
 kendi gövdesine bakıp "seri: fcm yok" dedi. Bir seviye devir artık izleniyor.
 Beş enjeksiyonun beşi yakalandı.
+
+## §11.269 — Aynı hesap, iki farklı varsayılan hatırlatma saati
+
+Bildirim yüzeyi baştan sona tarandı ve çoğu eş çıktı: üç anahtar (günlük,
+seri, haftalık) iki platformda da var ve ikisi de aynı uca yazıyor; saat
+listesi birebir aynı (9, 12, 15, 19, 21); bildirim gövdesinin dört alanını
+(`title`, `body`, `url`, `tag`) iki istemci de okuyor; dokunuş iki tarafta da
+`push_open` yazıyor; arayüz dili değişince iki taraf da profili güncelliyor,
+yani bildirim doğru dilde gidiyor.
+
+Ayrışan tek şey **varsayılan saat**. Mobil ekranı, anahtar kapalıyken saati
+kod içindeki bir sabitten çiziyordu ("19:00"); sunucu ise kullanıcının kayıtlı
+saatini tutuyor ve şemanın varsayılanı **12**. Yani hiçbir şeye dokunmamış bir
+kullanıcı anahtarı Android'de açınca 19:00, web'de 12:00 alıyordu — aynı
+hesap, aynı durum, iki farklı saat; hangisinin geçerli olduğu son dokunulan
+platforma kalıyordu.
+
+Sunucunun saati artık anahtar **kapalıyken de** taşınıyor (`ReminderPrefs.hour`)
+ve ekran onu okuyor; ağ yokken düşülen sabit de şemanın varsayılanıyla aynı.
+
+**§173** saat listesinin aynı olmasını, iki istemcinin varsayılanı şemadan
+almasını ve kapalı anahtarda saatin taşınmasını ölçüyor. Beş enjeksiyonun beşi
+yakalandı — biri şemanın kendi varsayılanını değiştirerek, yani ölçüm tek bir
+kaynağa bağlı.
+
+Kapı bir kez yanlış ölçtü: mobil listede saatler `"09:00"` biçiminde ve ilk
+sürüm **dakikayı da bir saat sandı** ("09:00" → 9 ve 0). İki taraftan da yalnız
+saat okunuyor.

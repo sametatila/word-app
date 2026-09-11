@@ -6527,6 +6527,57 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   );
 }
 
+/* ── 173. hatirlatma saatinin varsayilani ─────────────────────────────────
+ * Uc anahtar (gunluk, seri, haftalik), saat listesi ve tercih ucu iki
+ * platformda ayni cikti. Ayrisan tek sey VARSAYILAN SAAT: mobil ekrani kapali
+ * anahtarda saati kod icindeki sabitten ciziyordu ("19:00"), sunucu ise
+ * kullanicinin kayitli saatini tutuyor (sema varsayilani 12). Hicbir seye
+ * dokunmamis bir kullanici anahtari Androidde acinca 19:00, webde 12:00
+ * aliyordu - ayni hesap, ayni durum, iki farkli saat.
+ *
+ * Olculen uc sey: saat listesinin ayni olmasi, iki istemcinin de varsayilani
+ * SEMADAN alması, ve ucun kabul araligi. */
+{
+  const strip = (x) => x.replace(/\/\*[\s\S]*?\*\//g, (m) => m.replace(/[^\n]/g, " ")).replace(/(^|[^:"'`\\])\/\/.*$/gm, "$1");
+  const web = strip(read("src/components/notification-settings.tsx"));
+  const mob = strip(read("mobile/src/screens/NotificationsScreen.tsx"));
+  const sema = strip(read("src/lib/db/schema.ts"));
+  const bildirim = strip(read("mobile/src/lib/notifications.ts"));
+
+  const webSaatler = (web.match(/const HOURS = \[([^\]]*)\]/) ?? [])[1] ?? "";
+  const mobSaatler = (mob.match(/const TIMES = \[([^\]]*)\]/) ?? [])[1] ?? "";
+  /* Mobil listede saat "HH:MM" biciminde: DAKIKA da bir sayi ve ilk surum
+     "09:00"in sifirini ayri bir saat sandi. Iki taraftan da yalniz SAAT
+     okunuyor. */
+  const saatler = (x) => [...x.matchAll(/(\d{1,2})(?::\d{2})?/g)].map((m) => String(Number(m[1]))).filter((v, i, a) => a.indexOf(v) === i);
+  sameList("hatirlatma saati listesi", saatler(mobSaatler), saatler(webSaatler));
+
+  const semaVarsayilan = (sema.match(/reminder_hour"\)\.notNull\(\)\.default\((\d+)\)/) ?? [])[1] ?? "?";
+  sameList(
+    "varsayilan saat semadan",
+    [
+      "mobil=" + ((bildirim.match(/const DEFAULT_HOUR = (\d+)/) ?? [])[1] ?? "yok"),
+      "sema=" + semaVarsayilan,
+    ],
+    ["mobil=" + semaVarsayilan, "sema=" + semaVarsayilan],
+    "bulunan",
+    "beklenen",
+  );
+
+  /* Kapali anahtarda da saat TASINIYOR mu: tasinmazsa ekran yine kendi
+     sabitini cizer ve ayrisma geri gelir. */
+  sameList(
+    "kapali anahtarda saat",
+    [
+      "tercih tasiyor=" + (/hour: string;/.test(bildirim) ? "var" : "yok"),
+      "ekran okuyor=" + (/setDailyTime\(p\.hour\)/.test(mob) ? "var" : "yok"),
+    ],
+    ["tercih tasiyor=var", "ekran okuyor=var"],
+    "bulunan",
+    "beklenen",
+  );
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"

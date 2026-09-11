@@ -57,7 +57,24 @@ async function decided(key: string): Promise<boolean> {
 
 const hhmmOf = (hour: number) => `${String(hour).padStart(2, "0")}:00`;
 
-export type ReminderPrefs = { daily: string | null; streak: boolean; weekly: boolean };
+/** Şemanın varsayılanı (`profiles.reminder_hour`) — ağ yokken de aynı saat. */
+const DEFAULT_HOUR = 12;
+
+export type ReminderPrefs = {
+  daily: string | null;
+  /**
+   * SAAT, ANAHTAR KAPALIYKEN DE BİLİNİYOR.
+   *
+   * Ekran kapalı anahtarda saati kod içindeki sabitten çiziyordu ("19:00"),
+   * sunucu ise kullanıcının kayıtlı saatini tutuyor (varsayılan 12). Yani
+   * hiçbir şeye dokunmamış bir kullanıcı anahtarı Android'de açınca 19:00,
+   * webde 12:00 alıyordu — aynı hesap, aynı durum, iki farklı saat. Sunucunun
+   * değeri artık kapalıyken de taşınıyor.
+   */
+  hour: string;
+  streak: boolean;
+  weekly: boolean;
+};
 
 /**
  * Ekranın göstereceği üç değer — yerel karar varsa o, yoksa sunucudaki.
@@ -83,6 +100,8 @@ export async function loadPrefs(): Promise<ReminderPrefs> {
   }
   const out: ReminderPrefs = {
     daily: hasDaily || !srv ? daily : srv.daily ? hhmmOf(srv.hour) : null,
+    /* Sıra: yerel karar → sunucunun kayıtlı saati → şemanın varsayılanı. */
+    hour: daily ?? (srv ? hhmmOf(srv.hour) : hhmmOf(DEFAULT_HOUR)),
     streak: hasStreak || !srv ? streak : srv.streak,
     weekly: hasWeekly || !srv ? weekly : srv.weekly,
   };
