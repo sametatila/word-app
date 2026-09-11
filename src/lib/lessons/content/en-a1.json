@@ -212,6 +212,14 @@
       {
        "lang": "tr",
        "text": "ile başla, sonra ismi ekle."
+      },
+      {
+       "lang": "en",
+       "text": "My name is Ali."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -321,6 +329,14 @@
       {
        "lang": "tr",
        "text": "de, sonra şehrin adını ekle."
+      },
+      {
+       "lang": "en",
+       "text": "I'm from Ankara."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -527,6 +543,14 @@
       {
        "lang": "tr",
        "text": "."
+      },
+      {
+       "lang": "en",
+       "text": "Hello, my name is Deniz. I'm from Turkey."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -933,6 +957,14 @@
       {
        "lang": "en",
        "text": "thanks"
+      },
+      {
+       "lang": "en",
+       "text": "I'm fine, thanks."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -990,6 +1022,14 @@
       {
        "lang": "tr",
        "text": "kelimesini ekle."
+      },
+      {
+       "lang": "en",
+       "text": "And you?"
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -1124,6 +1164,14 @@
       {
        "lang": "en",
        "text": "are you"
+      },
+      {
+       "lang": "en",
+       "text": "How are you?"
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -1399,6 +1447,14 @@
       {
        "lang": "tr",
        "text": "Sen bir öğretmensin."
+      },
+      {
+       "lang": "en",
+       "text": "You are a teacher."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -1553,6 +1609,14 @@
       {
        "lang": "tr",
        "text": "Ben bir öğretmen değilim. Not kelimesi am'in hemen arkasına gelir."
+      },
+      {
+       "lang": "en",
+       "text": "I am not a teacher."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -1618,6 +1682,14 @@
       {
        "lang": "tr",
        "text": "Is kelimesini en başa al, sonra she, sonra a teacher."
+      },
+      {
+       "lang": "en",
+       "text": "Is she a teacher?"
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -3122,6 +3194,14 @@
       {
        "lang": "tr",
        "text": "Önce onluk, sonra birlik: kırk… iki."
+      },
+      {
+       "lang": "en",
+       "text": "forty-two."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -3221,6 +3301,14 @@
       {
        "lang": "tr",
        "text": "I'm ile başla, sonra otuz sayısı, sonra years old."
+      },
+      {
+       "lang": "en",
+       "text": "I'm thirty years old."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -3287,6 +3375,14 @@
       {
        "lang": "tr",
        "text": "It's ile başla, sonra sayı, sonra dollars."
+      },
+      {
+       "lang": "en",
+       "text": "It's fifteen dollars."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -4191,6 +4287,14 @@
       {
        "lang": "tr",
        "text": "I ile başla, sonra am ya da kısası I'm, sonra a student."
+      },
+      {
+       "lang": "en",
+       "text": "I'm a student."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -4373,6 +4477,14 @@
       {
        "lang": "tr",
        "text": "I work ile başla, sonra in a, sonra hospital."
+      },
+      {
+       "lang": "en",
+       "text": "I work in a hospital."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -4400,6 +4512,14 @@
       {
        "lang": "tr",
        "text": "What ile başla, sonra do you do."
+      },
+      {
+       "lang": "en",
+       "text": "What do you do?"
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -4667,6 +4787,14 @@
       {
        "lang": "en",
        "text": "I'm … years old."
+      },
+      {
+       "lang": "en",
+       "text": "I'm twenty-five years old."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -4738,6 +4866,14 @@
       {
        "lang": "en",
        "text": "He is … years old."
+      },
+      {
+       "lang": "en",
+       "text": "He is ten years old."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -4921,6 +5057,14 @@
       {
        "lang": "en",
        "text": "My birthday is in …"
+      },
+      {
+       "lang": "en",
+       "text": "My birthday is in March."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -5244,6 +5388,14 @@
       {
        "lang": "en",
        "text": "What's your …?"
+      },
+      {
+       "lang": "en",
+       "text": "What's your address?"
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -5315,6 +5467,14 @@
       {
        "lang": "en",
        "text": "What's your phone …?"
+      },
+      {
+       "lang": "en",
+       "text": "What's your phone number?"
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -5405,6 +5565,14 @@
       {
        "lang": "en",
        "text": "I live in …"
+      },
+      {
+       "lang": "en",
+       "text": "I live in Ankara."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -6414,6 +6582,14 @@
       {
        "lang": "tr",
        "text": "I've got ile başla, sonra a sister ekle."
+      },
+      {
+       "lang": "en",
+       "text": "I've got a sister."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -6484,6 +6660,14 @@
       {
        "lang": "tr",
        "text": "Soruda Have kelimesi en başa geçiyor: Have you got ...?"
+      },
+      {
+       "lang": "en",
+       "text": "Have you got a sister?"
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -6526,6 +6710,14 @@
       {
        "lang": "tr",
        "text": "İki tane olunca a düşüyor ve kelimenin sonuna s geliyor."
+      },
+      {
+       "lang": "en",
+       "text": "I've got two brothers."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -6807,6 +6999,14 @@
       {
        "lang": "en",
        "text": "I don't drink …"
+      },
+      {
+       "lang": "en",
+       "text": "I don't drink coffee."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -6968,6 +7168,14 @@
       {
        "lang": "en",
        "text": "She doesn't know …"
+      },
+      {
+       "lang": "en",
+       "text": "She doesn't know me."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -7092,6 +7300,14 @@
       {
        "lang": "en",
        "text": "Don't forget …"
+      },
+      {
+       "lang": "en",
+       "text": "Don't forget your key."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -7934,6 +8150,14 @@
       {
        "lang": "en",
        "text": "Who is ...?"
+      },
+      {
+       "lang": "en",
+       "text": "Who is that?"
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -8031,6 +8255,14 @@
       {
        "lang": "en",
        "text": "This is my ..."
+      },
+      {
+       "lang": "en",
+       "text": "This is my mother."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -8099,6 +8331,14 @@
       {
        "lang": "en",
        "text": "These are my ..."
+      },
+      {
+       "lang": "en",
+       "text": "These are my books."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -8379,6 +8619,14 @@
       {
        "lang": "en",
        "text": "I have two ..."
+      },
+      {
+       "lang": "en",
+       "text": "I have two friends."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -8554,6 +8802,14 @@
       {
        "lang": "en",
        "text": "There are many ..."
+      },
+      {
+       "lang": "en",
+       "text": "There are many people here."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -8606,6 +8862,14 @@
       {
        "lang": "en",
        "text": "These are my ..."
+      },
+      {
+       "lang": "en",
+       "text": "These are my books."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -9422,6 +9686,14 @@
       {
        "lang": "tr",
        "text": "O yüzden play değil, plays."
+      },
+      {
+       "lang": "en",
+       "text": "My friend plays football."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -9496,6 +9768,14 @@
       {
        "lang": "tr",
        "text": "We ile -s yok, fiil olduğu gibi kalır."
+      },
+      {
+       "lang": "en",
+       "text": "We play together."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -9566,6 +9846,14 @@
       {
        "lang": "tr",
        "text": "Özne she ya da he olduğu için plays diyeceksin."
+      },
+      {
+       "lang": "en",
+       "text": "She plays with us."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -9867,6 +10155,14 @@
       {
        "lang": "tr",
        "text": "Önce isim, sonra kesme işaretli s, sonra akraba: Ali artı 's artı cousin."
+      },
+      {
+       "lang": "en",
+       "text": "Ali's cousin."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -9906,6 +10202,14 @@
       {
        "lang": "tr",
        "text": "This is ile başla, sonra my, sonra amca kelimesi."
+      },
+      {
+       "lang": "en",
+       "text": "This is my uncle."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -9987,6 +10291,14 @@
       {
        "lang": "tr",
        "text": "This is ile başla, sonra Elif artı kesme işaretli s, sonra büyükanne."
+      },
+      {
+       "lang": "en",
+       "text": "This is Elif's grandmother."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -10230,6 +10542,14 @@
       {
        "lang": "en",
        "text": "He is very ..."
+      },
+      {
+       "lang": "en",
+       "text": "He is very funny."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -10293,6 +10613,14 @@
       {
        "lang": "en",
        "text": "My sister is very ..."
+      },
+      {
+       "lang": "en",
+       "text": "My sister is very quiet."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -10336,6 +10664,14 @@
       {
        "lang": "en",
        "text": "I am ... today."
+      },
+      {
+       "lang": "en",
+       "text": "I am busy today."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -10803,6 +11139,14 @@
       {
        "lang": "tr",
        "text": "'I'd like' ile başla, sonra 'a tea', en sonda 'please'."
+      },
+      {
+       "lang": "en",
+       "text": "I'd like a tea, please."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -10884,6 +11228,14 @@
       {
        "lang": "tr",
        "text": "'I'll have' ile başla, sonra 'a water', sonunda 'please'."
+      },
+      {
+       "lang": "en",
+       "text": "I'll have a water, please."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -10983,6 +11335,14 @@
       {
        "lang": "tr",
        "text": "'Alayım' için 'I'll have' kullan, sonra 'a coffee, please'."
+      },
+      {
+       "lang": "en",
+       "text": "I'll have a coffee, please."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -11370,6 +11730,14 @@
       {
        "lang": "en",
        "text": "I eat some ..."
+      },
+      {
+       "lang": "en",
+       "text": "I eat some cheese."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -11441,6 +11809,14 @@
       {
        "lang": "en",
        "text": "Is there any ...?"
+      },
+      {
+       "lang": "en",
+       "text": "Is there any bread?"
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -11518,6 +11894,14 @@
       {
        "lang": "en",
        "text": "Do you eat ...?"
+      },
+      {
+       "lang": "en",
+       "text": "Do you eat cheese?"
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -11785,6 +12169,14 @@
       {
        "lang": "tr",
        "text": "Can I have ile başla, ortaya a tea koy, sonuna please ekle."
+      },
+      {
+       "lang": "en",
+       "text": "Can I have a tea, please?"
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -11879,6 +12271,14 @@
       {
        "lang": "tr",
        "text": "How much ile başla, sonra is it ekle."
+      },
+      {
+       "lang": "en",
+       "text": "How much is it?"
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -12021,6 +12421,14 @@
       {
        "lang": "tr",
        "text": "Can I have + a bag + please."
+      },
+      {
+       "lang": "en",
+       "text": "Can I have a bag, please?"
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -12358,6 +12766,14 @@
       {
        "lang": "tr",
        "text": "İpucu: I'd like ile başla, çay tea."
+      },
+      {
+       "lang": "en",
+       "text": "I'd like a tea, please."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -12462,6 +12878,14 @@
       {
        "lang": "tr",
        "text": "İpucu: Can I have ile başla, menü için the menu."
+      },
+      {
+       "lang": "en",
+       "text": "Can I have the menu, please?"
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -12518,6 +12942,14 @@
       {
        "lang": "tr",
        "text": "İpucu: Can I have the ... , please?"
+      },
+      {
+       "lang": "en",
+       "text": "Can I have the bill, please?"
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -12841,6 +13273,14 @@
       {
        "lang": "tr",
        "text": "Önce I hate, sonra fiile -ing: eating, en sonda fish."
+      },
+      {
+       "lang": "en",
+       "text": "I hate eating fish."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -12958,6 +13398,14 @@
       {
        "lang": "tr",
        "text": "I prefer, sonra tercih ettiğin şey, sonra to, sonra diğeri."
+      },
+      {
+       "lang": "en",
+       "text": "I prefer water to milk."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -13036,6 +13484,14 @@
       {
        "lang": "tr",
        "text": "Do you like ile başla, sonra fiile -ing ekle: cooking."
+      },
+      {
+       "lang": "en",
+       "text": "Do you like cooking?"
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -13334,6 +13790,14 @@
       {
        "lang": "en",
        "text": "the cheese"
+      },
+      {
+       "lang": "en",
+       "text": "How much is the cheese?"
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -13414,6 +13878,14 @@
       {
        "lang": "tr",
        "text": "ve sonunda please."
+      },
+      {
+       "lang": "en",
+       "text": "Two kilos of apples, please."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -13539,6 +14011,14 @@
       {
        "lang": "tr",
        "text": "sonra soru için does, sonra it, en sonda cost."
+      },
+      {
+       "lang": "en",
+       "text": "How much does it cost?"
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -13821,6 +14301,14 @@
       {
        "lang": "en",
        "text": "the tomatoes"
+      },
+      {
+       "lang": "en",
+       "text": "First, cut the tomatoes."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -13904,6 +14392,14 @@
       {
        "lang": "en",
        "text": "the rice"
+      },
+      {
+       "lang": "en",
+       "text": "After that, cook the rice."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -14062,6 +14558,14 @@
       {
        "lang": "en",
        "text": "ready"
+      },
+      {
+       "lang": "en",
+       "text": "The food is ready."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -14459,6 +14963,14 @@
       {
        "lang": "tr",
        "text": "sonuna please ekle"
+      },
+      {
+       "lang": "en",
+       "text": "I'd like a tea, please."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -14512,6 +15024,14 @@
       {
        "lang": "tr",
        "text": "please'i unutma"
+      },
+      {
+       "lang": "en",
+       "text": "I'd like some water, please."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -14582,6 +15102,14 @@
       {
        "lang": "tr",
        "text": "soru sesiyle bitir"
+      },
+      {
+       "lang": "en",
+       "text": "Would you like a coffee?"
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -15047,6 +15575,14 @@
       {
        "lang": "tr",
        "text": "Domates çoğul: tomatoes"
+      },
+      {
+       "lang": "en",
+       "text": "I'd like two kilos of tomatoes."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -15117,6 +15653,14 @@
       {
        "lang": "tr",
        "text": "Taze: fresh"
+      },
+      {
+       "lang": "en",
+       "text": "Are the potatoes fresh?"
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -15176,6 +15720,14 @@
       {
        "lang": "tr",
        "text": "Elmalar: the apples"
+      },
+      {
+       "lang": "en",
+       "text": "How much are the apples?"
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -15502,6 +16054,14 @@
       {
        "lang": "tr",
        "text": "'Can I' ile başla, sonra 'pay', en sonda 'by card'."
+      },
+      {
+       "lang": "en",
+       "text": "Can I pay by card?"
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -15565,6 +16125,14 @@
       {
        "lang": "tr",
        "text": "'Can we' ile başla, sonra 'pay', en sonda 'together'."
+      },
+      {
+       "lang": "en",
+       "text": "Can we pay together?"
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -15668,6 +16236,14 @@
       {
        "lang": "tr",
        "text": "'Can I have' ile başla, ortada 'the bill', sonda 'please'."
+      },
+      {
+       "lang": "en",
+       "text": "Can I have the bill, please?"
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -15974,6 +16550,14 @@
       {
        "lang": "en",
        "text": "I have breakfast at ..."
+      },
+      {
+       "lang": "en",
+       "text": "I have breakfast at eight."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -16048,6 +16632,14 @@
       {
        "lang": "en",
        "text": "She get... up at six."
+      },
+      {
+       "lang": "en",
+       "text": "She gets up at six."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -16144,6 +16736,14 @@
       {
        "lang": "en",
        "text": "Do you ... on Sunday?"
+      },
+      {
+       "lang": "en",
+       "text": "Do you work on Sunday?"
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -16466,6 +17066,14 @@
       {
        "lang": "tr",
        "text": "ekle."
+      },
+      {
+       "lang": "en",
+       "text": "It's three o'clock."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -16557,6 +17165,14 @@
       {
        "lang": "tr",
        "text": "de, sonuna saati ekle."
+      },
+      {
+       "lang": "en",
+       "text": "It's half past nine."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -16731,6 +17347,14 @@
       {
        "lang": "tr",
        "text": "\"Kala\" için \"to\" kullan ve bir sonraki saati söyle: It's ten to …"
+      },
+      {
+       "lang": "en",
+       "text": "It's ten to eight."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -17133,6 +17757,14 @@
       {
        "lang": "en",
        "text": "on Monday"
+      },
+      {
+       "lang": "en",
+       "text": "I work on Monday."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -17220,6 +17852,14 @@
       {
        "lang": "tr",
        "text": "Sonuna hafta sonunu ekle."
+      },
+      {
+       "lang": "en",
+       "text": "I am at home at the weekend."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -17354,6 +17994,14 @@
       {
        "lang": "tr",
        "text": "Burada edat yok, sadece is ile bağla."
+      },
+      {
+       "lang": "en",
+       "text": "Today is Friday."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -17632,6 +18280,14 @@
       {
        "lang": "en",
        "text": "at seven"
+      },
+      {
+       "lang": "en",
+       "text": "I get up at seven."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -17794,6 +18450,14 @@
       {
        "lang": "tr",
        "text": "İsim olduğu için iki yere de koyabilirsin."
+      },
+      {
+       "lang": "en",
+       "text": "Turn off the TV."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -17887,6 +18551,14 @@
       {
        "lang": "en",
        "text": "my jacket"
+      },
+      {
+       "lang": "en",
+       "text": "I put on my jacket."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -18220,6 +18892,14 @@
       {
        "lang": "en",
        "text": "I usually ..."
+      },
+      {
+       "lang": "en",
+       "text": "I usually drink coffee."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -18341,6 +19021,14 @@
       {
        "lang": "en",
        "text": "She is ..."
+      },
+      {
+       "lang": "en",
+       "text": "She is never late."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -18388,6 +19076,14 @@
       {
        "lang": "en",
        "text": "Sometimes I ..."
+      },
+      {
+       "lang": "en",
+       "text": "Sometimes I walk to work."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -18723,6 +19419,14 @@
       {
        "lang": "en",
        "text": "have breakfast"
+      },
+      {
+       "lang": "en",
+       "text": "First, I take a shower. Then, I have breakfast."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -18849,6 +19553,14 @@
       {
        "lang": "tr",
        "text": "ekle."
+      },
+      {
+       "lang": "en",
+       "text": "I brush my teeth before breakfast."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -18911,6 +19623,14 @@
       {
        "lang": "en",
        "text": "go out"
+      },
+      {
+       "lang": "en",
+       "text": "First, I drink tea. After that, I go out."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -19221,6 +19941,14 @@
       {
        "lang": "tr",
        "text": "I have lunch ile başla, sonra saat için at kullan."
+      },
+      {
+       "lang": "en",
+       "text": "I have lunch at one."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -19299,6 +20027,14 @@
       {
        "lang": "tr",
        "text": "I have a meeting ile başla, gün için on kullan, Monday büyük harfle."
+      },
+      {
+       "lang": "en",
+       "text": "I have a meeting on Monday."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -19373,6 +20109,14 @@
       {
        "lang": "tr",
        "text": "Saat için at nine, sabah için in the morning. Sıra: önce saat, sonra günün bölümü."
+      },
+      {
+       "lang": "en",
+       "text": "I start at nine in the morning."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -19776,6 +20520,14 @@
       {
        "lang": "en",
        "text": "in my free time"
+      },
+      {
+       "lang": "en",
+       "text": "I like reading books in my free time."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -19834,6 +20586,14 @@
       {
        "lang": "tr",
        "text": "sonra yürümek fiilinin -ing hali."
+      },
+      {
+       "lang": "en",
+       "text": "Do you like walking?"
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -19904,6 +20664,14 @@
       {
        "lang": "en",
        "text": "to music"
+      },
+      {
+       "lang": "en",
+       "text": "I don't like listening to music."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -20673,6 +21441,14 @@
       {
        "lang": "en",
        "text": "What time do you …?"
+      },
+      {
+       "lang": "en",
+       "text": "What time do you close?"
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -20896,6 +21672,14 @@
       {
        "lang": "tr",
        "text": "ile başla, sonra \"geç\" kelimesini ekle."
+      },
+      {
+       "lang": "en",
+       "text": "I'm late."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -20959,6 +21743,14 @@
       {
        "lang": "en",
        "text": "leave"
+      },
+      {
+       "lang": "en",
+       "text": "When does the bus leave?"
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -21164,6 +21956,14 @@
       {
        "lang": "tr",
        "text": "I'm ile başla, sonra looking for, sonra a shirt."
+      },
+      {
+       "lang": "en",
+       "text": "I'm looking for a shirt."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -21281,6 +22081,14 @@
       {
        "lang": "tr",
        "text": "Can I ile başla, sonra try, sonra it on."
+      },
+      {
+       "lang": "en",
+       "text": "Can I try it on?"
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -21345,6 +22153,14 @@
       {
        "lang": "tr",
        "text": "How much ile başla."
+      },
+      {
+       "lang": "en",
+       "text": "How much is it?"
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -21835,6 +22651,14 @@
       {
        "lang": "tr",
        "text": "İzin için Can I ile başla, sonra try it on."
+      },
+      {
+       "lang": "en",
+       "text": "Can I try it on?"
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -21886,6 +22710,14 @@
       {
        "lang": "tr",
        "text": "Do you have ile başla, sonra a bigger size."
+      },
+      {
+       "lang": "en",
+       "text": "Do you have a bigger size?"
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -21908,6 +22740,14 @@
       {
        "lang": "tr",
        "text": "Yer sorusu where ile başlar; sonra is the fitting room."
+      },
+      {
+       "lang": "en",
+       "text": "Where is the fitting room?"
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -22317,6 +23157,14 @@
       {
        "lang": "tr",
        "text": ", sonra rengi ekle."
+      },
+      {
+       "lang": "en",
+       "text": "It's blue."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -22360,6 +23208,14 @@
       {
        "lang": "tr",
        "text": "+ renk + isim."
+      },
+      {
+       "lang": "en",
+       "text": "I have a black car."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -22471,6 +23327,14 @@
       {
        "lang": "en",
        "text": "house"
+      },
+      {
+       "lang": "en",
+       "text": "It's a white house."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -22844,6 +23708,14 @@
       {
        "lang": "tr",
        "text": "ekle."
+      },
+      {
+       "lang": "en",
+       "text": "How much is this?"
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -23004,6 +23876,14 @@
       {
        "lang": "tr",
        "text": "ve pahalı kelimesi."
+      },
+      {
+       "lang": "en",
+       "text": "It's too expensive."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -23154,6 +24034,14 @@
       {
        "lang": "tr",
        "text": "."
+      },
+      {
+       "lang": "en",
+       "text": "How much are these?"
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -24127,6 +25015,14 @@
       {
        "lang": "tr",
        "text": "ekle."
+      },
+      {
+       "lang": "en",
+       "text": "I'd like to return this."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -24232,6 +25128,14 @@
       {
        "lang": "tr",
        "text": "de."
+      },
+      {
+       "lang": "en",
+       "text": "There is a problem with it."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -24374,6 +25278,14 @@
       {
        "lang": "tr",
        "text": "ekle."
+      },
+      {
+       "lang": "en",
+       "text": "Can you help me?"
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -25140,6 +26052,14 @@
       {
        "lang": "tr",
        "text": "Sayılamayan için how much, sonra money, sonra do you want."
+      },
+      {
+       "lang": "en",
+       "text": "How much money do you want?"
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -25239,6 +26159,14 @@
       {
        "lang": "tr",
        "text": "I have ile başla, sonra a little, sonra water."
+      },
+      {
+       "lang": "en",
+       "text": "I have a little water."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -25330,6 +26258,14 @@
       {
        "lang": "tr",
        "text": "I don't have ile başla, sonra enough time."
+      },
+      {
+       "lang": "en",
+       "text": "I don't have enough time."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -25604,6 +26540,14 @@
       {
        "lang": "tr",
        "text": "İhtiyacım var: I need. Sabun: soap."
+      },
+      {
+       "lang": "en",
+       "text": "I need soap."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -25686,6 +26630,14 @@
       {
        "lang": "tr",
        "text": "Soruya do ile başla: Do you have. Diş macunu: toothpaste."
+      },
+      {
+       "lang": "en",
+       "text": "Do you have toothpaste?"
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -25737,6 +26689,14 @@
       {
        "lang": "tr",
        "text": "Önce I'm sick, sonra I need medicine."
+      },
+      {
+       "lang": "en",
+       "text": "I'm sick. I need medicine."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -26257,6 +27217,14 @@
       {
        "lang": "en",
        "text": "My address is Ada Street, number three."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      },
+      {
+       "lang": "en",
+       "text": "My address is 3 Ada Street."
       },
       {
        "lang": "tr",
@@ -27258,6 +28226,14 @@
       {
        "lang": "tr",
        "text": "Araç için by bus — arada the yok."
+      },
+      {
+       "lang": "en",
+       "text": "I go to school by bus."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -27360,6 +28336,14 @@
       {
        "lang": "tr",
        "text": "Trenin içindesin, yani on the train."
+      },
+      {
+       "lang": "en",
+       "text": "I'm on the train."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -27459,6 +28443,14 @@
       {
        "lang": "tr",
        "text": "Bir yerde, bir noktada demek için at: at the next stop."
+      },
+      {
+       "lang": "en",
+       "text": "I get off at the next stop."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -27744,6 +28736,14 @@
       {
        "lang": "tr",
        "text": "I'd like ile başla, sonra return ticket, sonunda please."
+      },
+      {
+       "lang": "en",
+       "text": "I'd like a return ticket, please."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -27783,6 +28783,14 @@
       {
        "lang": "tr",
        "text": "How much ile başla, sonra is it."
+      },
+      {
+       "lang": "en",
+       "text": "How much is it?"
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -27954,6 +28962,14 @@
       {
        "lang": "tr",
        "text": "I'd like, sonra two tickets, sonra to Manchester, sonunda please. Bilet iki tane olduğu için sonuna s gelecek."
+      },
+      {
+       "lang": "en",
+       "text": "I'd like two tickets to Manchester, please."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -28229,6 +29245,14 @@
       {
        "lang": "tr",
        "text": "I'm ile başla, sonra beklemek fiilinin -ing hâli, sonra for the bus."
+      },
+      {
+       "lang": "en",
+       "text": "I'm waiting for the bus."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -28332,6 +29356,14 @@
       {
        "lang": "tr",
        "text": "The train ile başla, sonra is, sonra running late."
+      },
+      {
+       "lang": "en",
+       "text": "The train is running late."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -28450,6 +29482,14 @@
       {
        "lang": "tr",
        "text": "Aynı kalıp, sadece tren yerine otobüs: The bus is ..."
+      },
+      {
+       "lang": "en",
+       "text": "The bus is running late."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -28669,6 +29709,14 @@
       {
        "lang": "tr",
        "text": "to ile başla, sonra the airport, en sonda please."
+      },
+      {
+       "lang": "en",
+       "text": "To the airport, please."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -28762,6 +29810,14 @@
       {
        "lang": "tr",
        "text": "How long ile başla, sonra does it take."
+      },
+      {
+       "lang": "en",
+       "text": "How long does it take?"
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -28821,6 +29877,14 @@
       {
        "lang": "tr",
        "text": "Can I have ile başla, sonra a receipt, en sonda please."
+      },
+      {
+       "lang": "en",
+       "text": "Can I have a receipt, please?"
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -28886,6 +29950,14 @@
       {
        "lang": "tr",
        "text": "Is ile başla, sonra it, sonra far."
+      },
+      {
+       "lang": "en",
+       "text": "Is it far?"
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -29188,6 +30260,14 @@
       {
        "lang": "tr",
        "text": "en başta."
+      },
+      {
+       "lang": "en",
+       "text": "Is it far?"
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -29329,6 +30409,14 @@
       {
        "lang": "tr",
        "text": "."
+      },
+      {
+       "lang": "en",
+       "text": "The hotel is next to the bank."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -29465,6 +30553,14 @@
       {
        "lang": "tr",
        "text": ", araya başka kelime girmiyor."
+      },
+      {
+       "lang": "en",
+       "text": "The pharmacy is opposite the bank."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -30706,6 +31802,14 @@
       {
        "lang": "tr",
        "text": "ekle."
+      },
+      {
+       "lang": "en",
+       "text": "I go to school by bus."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -30940,6 +32044,14 @@
       {
        "lang": "tr",
        "text": "."
+      },
+      {
+       "lang": "en",
+       "text": "I go to school by bike."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -31103,6 +32215,14 @@
       {
        "lang": "tr",
        "text": "."
+      },
+      {
+       "lang": "en",
+       "text": "My office is near, so I go on foot."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -31417,6 +32537,14 @@
       {
        "lang": "tr",
        "text": "Where ile başla, sonra is, sonra the museum."
+      },
+      {
+       "lang": "en",
+       "text": "Where is the museum?"
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -31515,6 +32643,14 @@
       {
        "lang": "tr",
        "text": "When does ile başla, sonra the film, en sonda start."
+      },
+      {
+       "lang": "en",
+       "text": "When does the film start?"
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -31604,6 +32740,14 @@
       {
        "lang": "tr",
        "text": "How long ile başla, sonra is, sonra the lesson."
+      },
+      {
+       "lang": "en",
+       "text": "How long is the lesson?"
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -31923,6 +33067,14 @@
       {
        "lang": "tr",
        "text": "Pencere: window."
+      },
+      {
+       "lang": "en",
+       "text": "There is a window."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -32055,6 +33207,14 @@
       {
        "lang": "tr",
        "text": "Is there ile başla."
+      },
+      {
+       "lang": "en",
+       "text": "Is there a room?"
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -32086,6 +33246,14 @@
       {
        "lang": "tr",
        "text": "Odamda: in my room."
+      },
+      {
+       "lang": "en",
+       "text": "There are two windows in my room."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -32353,6 +33521,14 @@
       {
        "lang": "en",
        "text": "This is a ..."
+      },
+      {
+       "lang": "en",
+       "text": "This is a bedroom."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -32423,6 +33599,14 @@
       {
        "lang": "en",
        "text": "The kitchen is ..."
+      },
+      {
+       "lang": "en",
+       "text": "The kitchen is big."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -32556,6 +33740,14 @@
       {
        "lang": "en",
        "text": "There is a ... on the first floor."
+      },
+      {
+       "lang": "en",
+       "text": "There is a bathroom on the first floor."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -32950,6 +34142,14 @@
       {
        "lang": "en",
        "text": "The book is …"
+      },
+      {
+       "lang": "en",
+       "text": "The book is on the table."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -33012,6 +34212,14 @@
       {
        "lang": "en",
        "text": "Where is my …?"
+      },
+      {
+       "lang": "en",
+       "text": "Where is my bag?"
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -33087,6 +34295,14 @@
       {
        "lang": "en",
        "text": "It's … the chair."
+      },
+      {
+       "lang": "en",
+       "text": "It's on the chair."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -33384,6 +34600,14 @@
       {
        "lang": "tr",
        "text": "O için he, ve fiilin sonunda s var: lives."
+      },
+      {
+       "lang": "en",
+       "text": "He lives next door."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -33490,6 +34714,14 @@
       {
        "lang": "tr",
        "text": "Komşum için my neighbour, sonra is, sonra quiet."
+      },
+      {
+       "lang": "en",
+       "text": "My neighbour is quiet."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -33566,6 +34798,14 @@
       {
        "lang": "tr",
        "text": "Önce where, sonra do, sonra you, en sonda live."
+      },
+      {
+       "lang": "en",
+       "text": "Where do you live?"
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -33824,6 +35064,14 @@
       {
        "lang": "en",
        "text": "You mustn't ... here."
+      },
+      {
+       "lang": "en",
+       "text": "You mustn't smoke here."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -33858,6 +35106,14 @@
       {
        "lang": "en",
        "text": "You must keep the ... clean."
+      },
+      {
+       "lang": "en",
+       "text": "You must keep the kitchen clean."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -33904,6 +35160,14 @@
       {
        "lang": "en",
        "text": "Is it ...?"
+      },
+      {
+       "lang": "en",
+       "text": "Is it allowed?"
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -34330,6 +35594,14 @@
       {
        "lang": "en",
        "text": "the electricity bill"
+      },
+      {
+       "lang": "en",
+       "text": "How much is the electricity bill?"
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -34411,6 +35683,14 @@
       {
        "lang": "en",
        "text": "every month"
+      },
+      {
+       "lang": "en",
+       "text": "I pay the water bill every month."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -34504,6 +35784,14 @@
       {
        "lang": "en",
        "text": "included"
+      },
+      {
+       "lang": "en",
+       "text": "Is electricity included?"
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -34811,6 +36099,14 @@
       {
        "lang": "tr",
        "text": "ve çöp kelimesi."
+      },
+      {
+       "lang": "en",
+       "text": "I take out the rubbish."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -34902,6 +36198,14 @@
       {
        "lang": "en",
        "text": "after dinner"
+      },
+      {
+       "lang": "en",
+       "text": "I wash up after dinner."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -34996,6 +36300,14 @@
       {
        "lang": "en",
        "text": "at home"
+      },
+      {
+       "lang": "en",
+       "text": "Do you help at home?"
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -36389,6 +37701,14 @@
       {
        "lang": "tr",
        "text": "diyebilirsin, sonra çalışmıyor kalıbını ekle."
+      },
+      {
+       "lang": "en",
+       "text": "The TV doesn't work."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -36459,6 +37779,14 @@
       {
        "lang": "tr",
        "text": "de, sonra bozuk kelimesini ekle."
+      },
+      {
+       "lang": "en",
+       "text": "My key is broken."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -36604,6 +37932,14 @@
       {
        "lang": "tr",
        "text": "sonra aramayı iste."
+      },
+      {
+       "lang": "en",
+       "text": "Something is wrong. Please call me."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -37087,6 +38423,14 @@
       {
        "lang": "tr",
        "text": "Tekrar dene."
+      },
+      {
+       "lang": "en",
+       "text": "Do you like collecting things."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -37499,6 +38843,14 @@
       {
        "lang": "tr",
        "text": "Top sporu, yani play. I + play + basketball."
+      },
+      {
+       "lang": "en",
+       "text": "I play basketball."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -37565,6 +38917,14 @@
       {
        "lang": "tr",
        "text": "I + go + swimming. Swim değil, swimming."
+      },
+      {
+       "lang": "en",
+       "text": "I go swimming."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -37722,6 +39082,14 @@
       {
        "lang": "tr",
        "text": "Başa Do, sonra you, sonra play football."
+      },
+      {
+       "lang": "en",
+       "text": "Do you play football?"
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -38568,6 +39936,14 @@
       {
        "lang": "en",
        "text": "Would you like to ... tonight?"
+      },
+      {
+       "lang": "en",
+       "text": "Would you like to go to the cinema tonight?"
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -38734,6 +40110,14 @@
       {
        "lang": "en",
        "text": "Sorry, I ... tonight."
+      },
+      {
+       "lang": "en",
+       "text": "Sorry, I can't tonight."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -38836,6 +40220,14 @@
       {
        "lang": "en",
        "text": "Let's ... together."
+      },
+      {
+       "lang": "en",
+       "text": "Let's go together."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -39141,6 +40533,14 @@
       {
        "lang": "tr",
        "text": "sonra soğuk, sonra bugün."
+      },
+      {
+       "lang": "en",
+       "text": "It's cold today."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -39294,6 +40694,14 @@
       {
        "lang": "tr",
        "text": "ile birleştir."
+      },
+      {
+       "lang": "en",
+       "text": "It's raining and it's cold."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -39411,6 +40819,14 @@
       {
        "lang": "tr",
        "text": "sonra soğuk."
+      },
+      {
+       "lang": "en",
+       "text": "Is it cold?"
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -39814,6 +41230,14 @@
       {
        "lang": "tr",
        "text": "sonra a child, en sonda in the park."
+      },
+      {
+       "lang": "en",
+       "text": "There is a child in the park."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -39901,6 +41325,14 @@
       {
        "lang": "tr",
        "text": "ve köpek kelimesine s ekle: dogs."
+      },
+      {
+       "lang": "en",
+       "text": "There are three dogs in the park."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -40003,6 +41435,14 @@
       {
        "lang": "en",
        "text": "on the grass"
+      },
+      {
+       "lang": "en",
+       "text": "There are children on the grass."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -40334,6 +41774,14 @@
       {
        "lang": "en",
        "text": "I can ..."
+      },
+      {
+       "lang": "en",
+       "text": "I can swim."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -40547,6 +41995,14 @@
       {
        "lang": "en",
        "text": "Can you ...?"
+      },
+      {
+       "lang": "en",
+       "text": "Can you swim?"
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -40575,6 +42031,14 @@
       {
        "lang": "en",
        "text": "I can't ..."
+      },
+      {
+       "lang": "en",
+       "text": "I can't swim."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -41266,6 +42730,14 @@
       {
        "lang": "tr",
        "text": "Korkarım yapamam, maalesef olmaz."
+      },
+      {
+       "lang": "en",
+       "text": "I'm afraid I can't."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -41370,6 +42842,14 @@
       {
        "lang": "tr",
        "text": "Kusura bakma, bugün meşgulüm."
+      },
+      {
+       "lang": "en",
+       "text": "Sorry, I'm busy today."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -41453,6 +42933,14 @@
       {
        "lang": "tr",
        "text": "Korkarım yapamam. Belki başka sefere."
+      },
+      {
+       "lang": "en",
+       "text": "I'm afraid I can't. Maybe next time."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -41806,6 +43294,14 @@
       {
        "lang": "en",
        "text": "I'm going to ..."
+      },
+      {
+       "lang": "en",
+       "text": "I'm going to meet Ali tomorrow."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -41880,6 +43376,14 @@
       {
        "lang": "en",
        "text": "Are you going to ...?"
+      },
+      {
+       "lang": "en",
+       "text": "Are you going to come tomorrow?"
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -41970,6 +43474,14 @@
       {
        "lang": "en",
        "text": "We're going to make a plan ..."
+      },
+      {
+       "lang": "en",
+       "text": "We're going to make a plan together."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -42341,6 +43853,14 @@
       {
        "lang": "tr",
        "text": "This is ile başla, sonra my, sonra kol: arm."
+      },
+      {
+       "lang": "en",
+       "text": "This is my arm."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -42388,6 +43908,14 @@
       {
        "lang": "tr",
        "text": "Senin dediğin için my değil your kullan. Bacak: leg."
+      },
+      {
+       "lang": "en",
+       "text": "This is your leg."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -42426,6 +43954,14 @@
       {
        "lang": "tr",
        "text": "Soruda is en başta. Is this ... ile başla, kafa: head."
+      },
+      {
+       "lang": "en",
+       "text": "Is this your head?"
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -43390,6 +44926,14 @@
       {
        "lang": "tr",
        "text": "ve doktor kelimesinin önüne \"a\" koymayı unutma."
+      },
+      {
+       "lang": "en",
+       "text": "I need a doctor."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -43484,6 +45028,14 @@
       {
        "lang": "tr",
        "text": "var, ve yarın en sona geliyor."
+      },
+      {
+       "lang": "en",
+       "text": "I need an appointment tomorrow."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -43937,6 +45489,14 @@
       {
        "lang": "tr",
        "text": "I ile başla, sonra have to, sonra çalışmak: work, en sona bugün: today."
+      },
+      {
+       "lang": "en",
+       "text": "I have to work today."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -43999,6 +45559,14 @@
       {
        "lang": "tr",
        "text": "Soruya do ile başla: Do I have to ... ve sonuna beklemek: wait."
+      },
+      {
+       "lang": "en",
+       "text": "Do I have to wait?"
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -44092,6 +45660,14 @@
       {
        "lang": "tr",
        "text": "You ile başla, have to, sonra binmek için take ve the bus."
+      },
+      {
+       "lang": "en",
+       "text": "You have to take the bus."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -44399,6 +45975,14 @@
       {
        "lang": "tr",
        "text": "Bende bir baş ağrısı var diye kur: I have ... ile başla."
+      },
+      {
+       "lang": "en",
+       "text": "I have a headache."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -44486,6 +46070,14 @@
       {
        "lang": "tr",
        "text": "Can I have ile başla, ortaya some medicine koy, sonuna please ekle."
+      },
+      {
+       "lang": "en",
+       "text": "Can I have some medicine, please?"
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -44568,6 +46160,14 @@
       {
        "lang": "tr",
        "text": "How many times ile başla, sonuna a day ekle."
+      },
+      {
+       "lang": "en",
+       "text": "How many times a day?"
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -44940,6 +46540,14 @@
       {
        "lang": "tr",
        "text": "."
+      },
+      {
+       "lang": "en",
+       "text": "I can't come to work today."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -45092,6 +46700,14 @@
       {
        "lang": "tr",
        "text": ", sonra 'daha iyi' ve 'yarın'."
+      },
+      {
+       "lang": "en",
+       "text": "I'll be better tomorrow."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -45167,6 +46783,14 @@
       {
        "lang": "tr",
        "text": "."
+      },
+      {
+       "lang": "en",
+       "text": "I'm staying home today."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -45506,6 +47130,14 @@
       {
        "lang": "tr",
        "text": "Önce özne: you. Sonra should. Sonra fiil: sleep."
+      },
+      {
+       "lang": "en",
+       "text": "You should sleep."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -45636,6 +47268,14 @@
       {
        "lang": "tr",
        "text": "You, sonra shouldn't, sonra drink coffee."
+      },
+      {
+       "lang": "en",
+       "text": "You shouldn't drink coffee."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -45679,6 +47319,14 @@
       {
        "lang": "tr",
        "text": "doktora görünmek demek. Başına You should ekle."
+      },
+      {
+       "lang": "en",
+       "text": "You should see a doctor."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -45978,6 +47626,14 @@
       {
        "lang": "tr",
        "text": "Fiille başla: call. Sonra an ambulance. Başına you koyma."
+      },
+      {
+       "lang": "en",
+       "text": "Call an ambulance!"
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -46105,6 +47761,14 @@
       {
        "lang": "tr",
        "text": "I ile başla, sonra need, sonra help."
+      },
+      {
+       "lang": "en",
+       "text": "I need help."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -46153,6 +47817,14 @@
       {
        "lang": "tr",
        "text": "Fiil önce: come. Sonra quickly."
+      },
+      {
+       "lang": "en",
+       "text": "Come quickly!"
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -47025,6 +48697,14 @@
       {
        "lang": "tr",
        "text": "Benim dişim: my tooth. Tek diş olduğu için fiile s ekle."
+      },
+      {
+       "lang": "en",
+       "text": "My tooth hurts."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -47142,6 +48822,14 @@
       {
        "lang": "tr",
        "text": "Var demek için have. Tek bir ağrı olduğu için önüne a koy."
+      },
+      {
+       "lang": "en",
+       "text": "I have a toothache."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -47212,6 +48900,14 @@
       {
        "lang": "tr",
        "text": "Dişler çoğul: teeth. Çoğulla is değil are kullanılır."
+      },
+      {
+       "lang": "en",
+       "text": "My teeth are clean."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -47515,6 +49211,14 @@
       {
        "lang": "tr",
        "text": "ve adın."
+      },
+      {
+       "lang": "en",
+       "text": "Hello, this is Ayşe."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -47605,6 +49309,14 @@
       {
        "lang": "tr",
        "text": "ile başla, sonra duymak ve beni."
+      },
+      {
+       "lang": "en",
+       "text": "Can you hear me?"
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -47763,6 +49475,14 @@
       {
        "lang": "tr",
        "text": "ve isim."
+      },
+      {
+       "lang": "en",
+       "text": "Can I speak to Anna?"
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -48111,6 +49831,14 @@
       {
        "lang": "tr",
        "text": "de."
+      },
+      {
+       "lang": "en",
+       "text": "I'll send you a message."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -48307,6 +50035,14 @@
       {
        "lang": "tr",
        "text": "."
+      },
+      {
+       "lang": "en",
+       "text": "I'm sorry, I'm busy."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -48351,6 +50087,14 @@
       {
        "lang": "tr",
        "text": "."
+      },
+      {
+       "lang": "en",
+       "text": "I can't talk now. I'll reply later."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -48745,6 +50489,14 @@
       {
        "lang": "en",
        "text": "I ... an email."
+      },
+      {
+       "lang": "en",
+       "text": "I'm writing an email."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -48816,6 +50568,14 @@
       {
        "lang": "en",
        "text": "Thank you ... ..."
+      },
+      {
+       "lang": "en",
+       "text": "Thank you very much."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -48933,6 +50693,14 @@
       {
        "lang": "en",
        "text": "I have ... question."
+      },
+      {
+       "lang": "en",
+       "text": "I have a question."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -49187,6 +50955,14 @@
       {
        "lang": "tr",
        "text": "sonra telefonum ve her gün."
+      },
+      {
+       "lang": "en",
+       "text": "I use my phone every day."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -49316,6 +51092,14 @@
       {
        "lang": "en",
        "text": "Do you use ...?"
+      },
+      {
+       "lang": "en",
+       "text": "Do you use the internet?"
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -49361,6 +51145,14 @@
       {
        "lang": "en",
        "text": "He use..."
+      },
+      {
+       "lang": "en",
+       "text": "He uses this app."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -49743,6 +51535,14 @@
       {
        "lang": "en",
        "text": "parcel"
+      },
+      {
+       "lang": "en",
+       "text": "I'd like to send this parcel."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -49793,6 +51593,14 @@
       {
        "lang": "tr",
        "text": "ile başla, sonra 'bir pul' de. Pulun önünde a var."
+      },
+      {
+       "lang": "en",
+       "text": "How much is a stamp?"
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -49865,6 +51673,14 @@
       {
        "lang": "tr",
        "text": "ile başla, sonra three stamps de, sonunda please'i unutma."
+      },
+      {
+       "lang": "en",
+       "text": "Can I have three stamps, please?"
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -50604,6 +52420,14 @@
       {
        "lang": "tr",
        "text": "I ile başla, sonra played, sonra football, en sona yesterday."
+      },
+      {
+       "lang": "en",
+       "text": "I played football yesterday."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -50727,6 +52551,14 @@
       {
        "lang": "tr",
        "text": "I didn't ile başla, sonra fiil yalın: watch. Sonra TV, sonra yesterday."
+      },
+      {
+       "lang": "en",
+       "text": "I didn't watch TV yesterday."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -50790,6 +52622,14 @@
       {
        "lang": "tr",
        "text": "Did you ile başla, sonra fiil yalın: visit. Sonra your family."
+      },
+      {
+       "lang": "en",
+       "text": "Did you visit your family?"
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -51140,6 +52980,14 @@
       {
        "lang": "tr",
        "text": "Önce when, sonra did, sonra you, en sonda yalın fiil come."
+      },
+      {
+       "lang": "en",
+       "text": "When did you come?"
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -51224,6 +53072,14 @@
       {
        "lang": "tr",
        "text": "I didn't ile başla, sonra yalın fiil study, sonra English, en sona yesterday."
+      },
+      {
+       "lang": "en",
+       "text": "I didn't study English yesterday."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -51318,6 +53174,14 @@
       {
        "lang": "tr",
        "text": "Did you ile başla, sonra yalın fiil see, sonra him."
+      },
+      {
+       "lang": "en",
+       "text": "Did you see him?"
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -52071,6 +53935,14 @@
       {
        "lang": "en",
        "text": "I'll call you ..."
+      },
+      {
+       "lang": "en",
+       "text": "I'll call you soon."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -52176,6 +54048,14 @@
       {
        "lang": "en",
        "text": "Let's ... again."
+      },
+      {
+       "lang": "en",
+       "text": "Let's meet again."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
@@ -52289,6 +54169,14 @@
       {
        "lang": "en",
        "text": "See you, ... care!"
+      },
+      {
+       "lang": "en",
+       "text": "See you, take care!"
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
       }
      ]
     }
