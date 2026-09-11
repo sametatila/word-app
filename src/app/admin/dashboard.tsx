@@ -272,9 +272,8 @@ export function AdminDashboard({ data: d, server: s }: { data: AdminData; server
             <BarList max={Math.max(1, ...d.platform.map((p) => p.count))} items={d.platform.map((p) => ({ label: PLATFORM_LABEL[p.key] ?? p.key, value: p.count, right: `${fmt(p.count)} · ${fmt(p.users)} kişi` }))} />
           </Section>
 
-          <Section title="Tur tamamlama akışı (30g)" hint="Başlangıç kartı → tur başladı → tamamlandı.">
-            <BarList max={Math.max(sess.startCard, sess.started, 1)} items={[
-              { label: "Başlangıç kartı", value: sess.startCard },
+          <Section title="Tur tamamlama akışı (30g)" hint="Tur başladı → tamamlandı.">
+            <BarList max={Math.max(sess.started, 1)} items={[
               { label: "Tur başladı", value: sess.started },
               { label: "Tamamlandı", value: sess.done, tone: "#16a34a" },
               { label: `"Şimdilik yeter"`, value: sess.stopped, tone: "#d97706" },

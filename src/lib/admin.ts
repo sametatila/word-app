@@ -60,7 +60,7 @@ export type AdminData = {
   // — UX / platform / öğrenme kalitesi / ops (WP-admin genişletme) —
   platform: { key: string; count: number; users: number }[];
   screens: { screen: string; views: number; avgSec: number }[];
-  sessionFunnel: { startCard: number; started: number; done: number; stopped: number };
+  sessionFunnel: { started: number; done: number; stopped: number };
   onboarding: { step: string; users: number }[];
   walk: { reason: number; count: number }[];
   production: { task: string; count: number; avgScore: number }[];
@@ -145,7 +145,12 @@ export async function getAdminData(): Promise<AdminData> {
   const [platform, screens, sess, onb, walk, production, clientErrors, prem, premGates, notif, ai] = await Promise.all([
     rows(sql`select coalesce(kind,'?') k, count(*)::int c, count(distinct user_id)::int u from events where name='app_open' and day >= current_date - 29 group by kind order by c desc`),
     rows(sql`select coalesce(kind,'?') screen, count(*) filter (where name='page_view')::int views, coalesce(avg(value) filter (where name='time_spent'),0)::int avg_sec from events where name in ('page_view','time_spent') and day >= current_date - 29 group by kind order by views desc limit 20`),
-    rows(sql`select count(*) filter (where name='start_card')::int start_card, count(*) filter (where name='session_start')::int started, count(*) filter (where name='session_done')::int done, count(*) filter (where name='session_stop')::int stopped from events where day >= current_date - 29`),
+    /* BAŞLANGIÇ KARTI BASAMAĞI KALKTI. `/learn` hub olunca turun başlangıç
+       kartı kaldırıldı ve olay 2026-09-08'den beri hiç akmıyor; huninin ilk
+       basamağı kalıcı olarak sıfır görünüyordu — bu, ölçümün bozuk olduğunu
+       değil ürünün çöktüğünü düşündürür. Huni artık turun BAŞLATILMASINDAN
+       başlıyor. */
+    rows(sql`select count(*) filter (where name='session_start')::int started, count(*) filter (where name='session_done')::int done, count(*) filter (where name='session_stop')::int stopped from events where day >= current_date - 29`),
     rows(sql`select coalesce(kind,'?') step, count(distinct user_id)::int users from events where name='onboarding_step' and day >= current_date - 29 group by kind`),
     rows(sql`select value reason, count(*)::int c from events where name='walk_end' and day >= current_date - 29 group by value order by value`),
     rows(sql`select coalesce(kind,'?') task, count(*)::int c, coalesce(avg(value),0)::int avg_score from events where name='production_attempt' and day >= current_date - 29 group by kind order by c desc`),
@@ -180,7 +185,7 @@ export async function getAdminData(): Promise<AdminData> {
     })),
     platform: platform.map((r) => ({ key: str(r.k), count: num(r.c), users: num(r.u) })),
     screens: screens.map((r) => ({ screen: str(r.screen), views: num(r.views), avgSec: num(r.avg_sec) })),
-    sessionFunnel: { startCard: num(sess[0]?.start_card), started: num(sess[0]?.started), done: num(sess[0]?.done), stopped: num(sess[0]?.stopped) },
+    sessionFunnel: { started: num(sess[0]?.started), done: num(sess[0]?.done), stopped: num(sess[0]?.stopped) },
     onboarding: onb.map((r) => ({ step: str(r.step), users: num(r.users) })),
     walk: walk.map((r) => ({ reason: num(r.reason), count: num(r.c) })),
     production: production.map((r) => ({ task: str(r.task), count: num(r.c), avgScore: num(r.avg_score) })),

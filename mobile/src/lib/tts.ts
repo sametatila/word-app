@@ -1,5 +1,7 @@
 import Tts from "react-native-tts";
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import { trackOnce } from "./track";
+import { navigationRef } from "./pushRoute";
 import { type VoiceId, VOICES, resolveVoice, defaultVoice, langOf, deviceRate } from "./voices";
 import { speechLocaleOf, setCurrentCourse } from "./courses";
 import { bridgeReady, bridgeSpeak, bridgeSpeakAndWait, bridgeStop } from "./ttsBridge";
@@ -138,6 +140,12 @@ export function stopSpeaking(): void {
  */
 export function speakTarget(text: string, opts?: { slow?: boolean; voice?: VoiceId }): void {
   if (!text) return;
+  /* HANGİ EKRANDA SES DİNLENİYOR — ekran başına bir kez. Web aynı olayı aynı
+     adla yazıyor (`speak-button` `trackOnce("tts_play", 0, ekran)`); Android
+     hiç yazmıyordu, yani panelde ses kullanımı yalnız webden görünüyordu ve
+     "sesi kimse kullanmıyor" gibi okunuyordu. Her kelimede değil ekran
+     başına: yoksa sayı ölçüm değil gürültü olur. */
+  trackOnce("tts_play", 0, navigationRef.isReady() ? (navigationRef.getCurrentRoute()?.name ?? "?") : "?");
   const voice = opts?.voice ?? currentVoice;
   // Önce Edge köprüsü (web ile birebir aynı ses); hazır değilse cihaz TTS'i.
   if (bridgeReady()) {

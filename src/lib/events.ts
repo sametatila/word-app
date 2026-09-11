@@ -15,13 +15,11 @@ import { events } from "@/lib/db/schema";
  * hem şemayı hem de sorguları okunur tutuyor.
  */
 export const EVENT_NAMES = [
-  "start_card", // başlangıç kartı görüldü
   "session_start", // tur başlatıldı
   "session_resume", // yarım tura devam edildi
   "stage_done", // beşli etap bitti (value = kaçıncı etap)
   "session_done", // tur tamamlandı (value = doğru sayısı)
   "session_stop", // etap sonunda "şimdilik yeter"
-  "daily_play", // günün turu oynandı
   "challenge_play", // hayatta kalma turu oynandı
   "walk_start", // yürürken (ekransız) modu başlatıldı (value = kaçıncı turdan)
   // Mikrofon gerçekte hangi kısıtlarla açıldı (value = yankı bastırma açık mı).
@@ -84,7 +82,6 @@ export const EVENT_NAMES = [
     (öğrencinin yazdığı cümle, konuşma dökümü) hiçbir zaman buraya yazılmaz —
     o içerik kendi tablosunda durur (`assessments`), burada yalnız puanı var.
   */
-  "session_round", // bir oyun turu cevaplandı (kind = oyun, value = 1 doğru / 0 yanlış)
   "production_attempt", // üretim görevi puanlandı (kind = translate|transform|free_sentence|writing_free|speaking_drill|roleplay, value = 0–100)
   "exam_start", // sınava girildi (kind = sınav türü:seviye, örn. "level:B1")
   "exam_finish", // sınav bitti (kind = sınav türü:seviye, value = puan 0–100)
@@ -94,7 +91,6 @@ export const EVENT_NAMES = [
   "error_recorded", // yanlış cevabın hata tipi (kind = ErrorType, bkz. lib/errors.ts)
   "feedback_why_opened", // "neden?" açıklaması açıldı (kind = ErrorType)
   "skill_finish", // beceri egzersizi bitti (kind = beceri:seviye, örn. "reading:A2", value = puan 0–100)
-  "plan_start", // bugünkü plan kartından bir öğe açıldı (kind = öğe: review|lesson|skill|weak, value = sıra)
   "pronounce", // telaffuz puanı (kind = egzersiz kimliği, value = 0–100) — WP-20
   "srs_weight", // tekrar aralığına hata tipi ağırlığı uygulandı (kind = ErrorType, value = ağırlık×100) — WP-51 ölçümü
 
@@ -121,7 +117,6 @@ export const EVENT_NAMES = [
      `skip` yalnız webde var - Android'de adım atlama düğmesi yok. */
   "lesson_step",
   "lesson_finish", // ders bitti (kind = ders kimliği, value = puanlı adımlarda doğru yüzdesi; geçme user_lessons'ta)
-  "speak_self", // söyleyiş görevinde karar (kind = asr tanıyıcı | self öz-değerlendirme, value = 1 doğru / 0 zorlandı)
   /* Onboarding adımı görüldü. value = adım sırası (platforma göre değişir), kind
      = adımın adı. Android: welcome | lang | course | level | goal. Web:
      welcome | motivation | level | goal | ready. Ortak kelimeler aynı soruyu

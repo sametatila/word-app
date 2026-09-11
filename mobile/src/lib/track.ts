@@ -22,6 +22,10 @@ export type EventName =
   | "notif_prime"
   /* Koç balonu gösterildi (kind = an). Ad web `lib/events` ile aynı -
      uydurulmadı, taşındı. */
+  /* Hangi ekranda ses dinleniyor - ekran basina bir kez (web `speak-button`
+     ile ayni ad, ayni kind). Android sesi cihazin kendi motoru okuyor ve bu
+     olay hic yazilmiyordu: panelde ses kullanimi yalniz webden gorunuyordu. */
+  | "tts_play"
   | "coach_show"
   | "nav"
   | "paywall_view"
@@ -126,6 +130,20 @@ export function analyticsEnabled(): boolean { return analyticsOn; }
 export async function setAnalyticsEnabled(on: boolean): Promise<void> {
   analyticsOn = on;
   try { if (on) await AsyncStorage.removeItem(ANALYTICS_KEY); else await AsyncStorage.setItem(ANALYTICS_KEY, "off"); } catch { /* yut */ }
+}
+
+/**
+ * Aynı (ad, kind) çifti için yalnız BİR KEZ — web `lib/track` `trackOnce` ile
+ * aynı sözleşme. Ekran başına bir kez yazılan ölçümler (ses dinlendi gibi)
+ * bunu kullanıyor: her kelimede olay atmak sayıyı ölçüm değil gürültü yapar.
+ */
+const birKez = new Set<string>();
+
+export function trackOnce(name: EventName, value = 0, kind?: string): void {
+  const anahtar = `${name}:${kind ?? ""}`;
+  if (birKez.has(anahtar)) return;
+  birKez.add(anahtar);
+  track(name, value, kind);
 }
 
 export function track(name: EventName, value = 0, kind?: string): void {

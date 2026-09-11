@@ -8615,3 +8615,49 @@ enjeksiyonun beşi yakalandı; altıncı denemem yanlıştı — değişikliği 
 
 Ayrıca `exam.module_exam` web'e özel sözlükte duruyordu ama mobil de çağırmaya
 başladı; ortak sözlüğe taşındı (§11.259'daki aynı sınıf).
+
+## §11.262 — Yönetim panelindeki huninin ilk çubuğu üç gündür sıfırdı
+
+Bu tur önce **POST gövdeleri** karşılaştırıldı (otuz bir ortak uç): on üç
+farkın hepsi ölçüm gürültüsü çıktı — alanlar değişkenle kuruluyor, iki taraf
+da aynı şeyi gönderiyor. Sonra **olay sözlüğü** karşılaştırıldı ve bulgu
+oradan geldi.
+
+`EVENT_NAMES` hem istemcilerin sözlüğü hem sunucunun doğrulama listesi. İçinde
+hiçbir yerin yazmadığı beş ad duruyordu ve biri zararsız değildi:
+**`start_card` yönetim panelinde tur hunisinin İLK BASAMAĞI olarak
+çiziliyordu.** Kart `/learn` hub olunca kaldırılmış (commit `9d2c9311`), olay
+o günden beri hiç akmıyor — yani huninin ilk çubuğu kalıcı olarak sıfırdı ve
+bu, ölçümün bozulduğunu değil **ürünün çöktüğünü** düşündürür. Rapor betiği de
+aynı basamağı yazıyor ve altına "kartı görüp hiç başlamayan: N açılış" diye
+türetilmiş bir satır koyuyordu; o satır artık hep "tamamı" diyordu.
+
+Üretim doğruladı (yalnız okuma):
+
+    start_card     son 2026-09-08   620
+    daily_play     son 2026-09-04    18
+    plan_start     son 2026-09-04     5
+    session_round  hiç
+    speak_self     hiç
+
+Beş ad sözlükten, basamak iki yüzeyden (panel ve rapor) kalktı. `daily_play`
+zaten bilerek kaldırılmıştı (`daily-player` içindeki not), `plan_start`ın
+yüzeyi parite turunda gitmişti, `session_round` "başka yerde yazılıyor" diye
+muaf tutulmuştu ama üretimde tek satırı bile yok.
+
+İkinci bulgu: **`tts_play` Android'de hiç yazılmıyordu.** Sesin hangi ekranda
+dinlendiğini web ekran başına bir kez yazıyor; Android'de ses cihazın kendi
+motorundan çıkıyor ve olay hiç atılmıyordu — panelde ses kullanımı yalnız
+web'den görünüyor, "sesi kimse kullanmıyor" gibi okunuyordu. Mobil tarafa
+web'in `trackOnce` sözleşmesi taşındı ve olay ekran adıyla yazılıyor.
+
+**§166** üç şeyi ölçüyor: `test:events`in iki muafiyet listesinin **boş**
+kalması (dolmaya başlaması ölü adın yeniden birikmesi demek), huninin ilk
+basamağının panel ile raporda aynı olması, ve ses ölçümünün iki platformda da
+yazılması.
+
+Kapı bir kez fazla gevşekti: panel testi sayfadaki herhangi bir "Tur başladı"
+yazısını arıyordu ve bölümün **ipucu metni** de aynı sözü içerdiği için çubuk
+değişse bile yeşil kalıyordu; artık çubuğun kendi etiketine bakıyor. Bir
+enjeksiyonum da yine yanlıştı — değişikliği koda değil **yoruma** uyguladım
+(bu turda ikinci kez); kapı haklıydı, ben yanlış ölçtüm.

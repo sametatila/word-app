@@ -6142,6 +6142,67 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   );
 }
 
+/* ── 166. olcum sozlugunde olu ad ─────────────────────────────────────────
+ * `EVENT_NAMES` hem istemcilerin sozlugu hem sunucunun DOGRULAMA listesi.
+ * Icinde hicbir yerin yazmadigi bes ad duruyordu ve biri zararsiz degildi:
+ * `start_card` yonetim panelinde tur hunisinin ILK BASAMAGI olarak
+ * ciziliyordu. Kart `/learn` hub olunca kaldirilmis, olay 2026-09-08'den beri
+ * hic akmiyor - yani huninin ilk cubugu kalici olarak sifirdi ve bu, olcumun
+ * bozuldugunu degil URUNUN coktugunu dusundurur.
+ *
+ * Uretim dogruladi (yalniz okuma): start_card son 2026-09-08, daily_play ve
+ * plan_start son 2026-09-04, session_round ve speak_self hic yok.
+ *
+ * Bes ad sozlukten, huni iki yuzeyden (panel ve rapor) kalkti. Kapi artik
+ * sozlukteki her adin bir yazani olmasini istiyor - istemcide ya da sunucuda.
+ * `scripts/test-events.ts` ayni seyi daha ayrintili yapiyor; buradaki olcum
+ * onun MUAFIYET LISTELERININ bos kalmasi: liste dolmaya basladiginda olu ad
+ * yeniden birikiyor demektir. */
+{
+  const strip = (x) => x.replace(/\/\*[\s\S]*?\*\//g, (m) => m.replace(/[^\n]/g, " ")).replace(/(^|[^:"'`\\])\/\/.*$/gm, "$1");
+  const test = strip(read("scripts/test-events.ts")).replace(/\s+/g, " ");
+  const bos = (re) => (re.test(test) ? "bos" : "dolu");
+  sameList(
+    "olcum sozlugu muafiyetleri",
+    [
+      "baska yerde yazilan=" + bos(/WRITTEN_ELSEWHERE = new Set<string>\(\[\]\)/),
+      "planli ama yazilmayan=" + bos(/PLANNED: Record<string, string> = \{ \}/),
+    ],
+    ["baska yerde yazilan=bos", "planli ama yazilmayan=bos"],
+    "bulunan",
+    "beklenen",
+  );
+
+  /* Huni artik turun BASLATILMASINDAN basliyor: iki yuzeyde de ilk basamak
+     `session_start`. Biri guncellenip oteki unutulursa panel ile rapor ayni
+     sayiyi iki turlu anlatir. */
+  const panel = strip(read("src/app/admin/dashboard.tsx")).replace(/\s+/g, " ");
+  const rapor = strip(read("scripts/report-events.ts")).replace(/\s+/g, " ");
+  sameList(
+    "tur hunisinin ilk basamagi",
+    [
+      /* Cubugun ETIKETINE bakiliyor, sayfadaki herhangi bir "Tur başladı"
+         yazisina degil: bolumun ipucu metni de ayni sozu iceriyor ve ilk
+         surum onu gorup cubuk degisse bile yesil kaliyordu. */
+      "panel=" + (/label: "Tur başladı"/.test(panel) && !/startCard/.test(panel) ? "tur basladi" : "baslangic karti"),
+      "rapor=" + (/\["session_start", "tur baslatildi"\]|\["session_start", "tur başlatıldı"\]/.test(rapor) && !/start_card/.test(rapor) ? "tur basladi" : "baslangic karti"),
+    ],
+    ["panel=tur basladi", "rapor=tur basladi"],
+    "bulunan",
+    "beklenen",
+  );
+
+  /* Sesin hangi ekranda dinlendigi iki platformda da yaziliyor. */
+  const sesOlayi = (yol, re) => (re.test(strip(read(yol))) ? "yaziyor" : "yazmiyor");
+  sameList(
+    "ses kullanimi olcumu",
+    ["mobil=" + sesOlayi("mobile/src/lib/tts.ts", /trackOnce\("tts_play"/)],
+    ["web=" + sesOlayi("src/components/speak-button.tsx", /trackOnce\("tts_play"/)].map((x) => x.replace("web=", "mobil=")),
+    "mobil",
+    "web",
+  );
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"

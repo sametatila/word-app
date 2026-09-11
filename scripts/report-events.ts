@@ -78,8 +78,10 @@ async function main() {
   // Huniye YALNIZCA tur başına en fazla bir kez atılan olaylar giriyor.
   // `stage_done` bir turda dört kez atılıyor; huniye konsaydı "%140" gibi
   // bir orana yol açardı ve huni oran demektir. O yüzden aşağıda, ayrı.
+  /* Başlangıç kartı basamağı kalktı: kart `/learn` hub olunca kaldırıldı ve
+     olay akmıyor (bkz. `lib/admin` notu). Sıfır bir basamak, huninin
+     tamamını yanlış okutur. */
   const funnel: [string, string][] = [
-    ["start_card", "başlangıç kartı görüldü"],
     ["session_start", "tur başlatıldı"],
     ["session_done", "tur tamamlandı"],
   ];
@@ -100,14 +102,7 @@ async function main() {
     if (stopped.n)
       console.log(`    ${"etapta bırakıldı".padEnd(26)} ${String(stopped.n).padStart(5)} olay · ${stopped.people} kişi`);
   }
-  // Asıl merak edilen tek satır.
-  const cards = get("start_card").n;
-  const starts = get("session_start").n;
-  if (cards > 0) {
-    console.log(
-      `\n  Kartı görüp hiç başlamayan: ${Math.max(0, cards - starts)} açılış (${pct(Math.max(0, cards - starts), cards)})`,
-    );
-  }
+
 
   // ── Sekmeler ───────────────────────────────────────────────────────
   const navs = (await q`

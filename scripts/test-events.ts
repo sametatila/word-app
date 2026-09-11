@@ -79,7 +79,11 @@ for (const f of files) {
 // Yalnız sunucuda ya da sağlayıcı tarafından yazılanlar burada listelenir;
 // kaynakta çağrısı olmayan olay bu listede değilse hata.
 // session_round bilerek yazılmıyor (kpi.md: reviews tablosu aynı satırı taşıyor).
-const WRITTEN_ELSEWHERE = new Set<string>(["session_round"]);
+/* Bu liste BOŞ: tek üyesi `session_round` idi ve "başka yerde yazılıyor"
+   diyordu — üretimde bugüne kadar tek bir satırı bile yok. Ad sözlükten
+   kalktı (bkz. web-parity §11.262). Liste, ileride gerçekten dışarıda
+   yazılan bir olay çıkarsa diye duruyor. */
+const WRITTEN_ELSEWHERE = new Set<string>([]);
 
 /*
   HENÜZ YAZILMAYAN, PLANLI olaylar — adı sözlükte duruyor ama çağıran yok.
@@ -92,11 +96,6 @@ const WRITTEN_ELSEWHERE = new Set<string>(["session_round"]);
   test "listeden çıkar" diyor, yani liste bayatlamıyor.
 */
 const PLANNED: Record<string, string> = {
-  start_card: "başlangıç kartı görüntülenmesi; İKİ platformda da ölçülmüyor - ekran görünümü olayı hiç yok",
-  daily_play: "günlük tur oynanması; Daily ekranı olayı yazmıyor",
-  plan_start: "bugünkü plan satırı parite turunda kaldırıldı (web-parity §11.10)",
-  speak_self: "söyleyişte asr/self ayrımı; `lesson_step` aynı kararı kind ile zaten yazıyor, ikisinin sınırı karar istiyor",
-  premium_gate: "premium kilidine çarpma; mobil birleşiminde de tanımlı, çağıran yok",
 };
 
 const unused = EVENT_NAMES.filter((n) => !seen.has(n) && !WRITTEN_ELSEWHERE.has(n) && !(n in PLANNED));
