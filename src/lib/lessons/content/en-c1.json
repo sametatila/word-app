@@ -9986,5 +9986,5035 @@
    "goal": "Önceki adıma, anılmayan bir türe ve ikinci seçeneğe gönderen üç ayrı bağ kurduysan konuşma başarılı sayılır.",
    "minTurns": 8
   }
+ },
+ {
+  "id": "en-c1-the-petition",
+  "level": "C1",
+  "course": "en",
+  "icon": "mail",
+  "title": "The petition",
+  "titleTr": "Dilekçe dili",
+  "summary": "Bir dilekçeyi kalıplaşmış biçimlerle yazmayı öğretir; hukukta biçim bir süs değil geçerlilik koşuludur.",
+  "minutes": 12,
+  "focusId": "Subjunctive in legal petitions",
+  "vocab": [
+   {
+    "de": "lodge",
+    "tr": "dilekçe vermek"
+   },
+   {
+    "de": "limitation period",
+    "tr": "zamanaşımı"
+   },
+   {
+    "de": "inadmissible",
+    "tr": "kabul edilemez"
+   },
+   {
+    "de": "power of attorney",
+    "tr": "vekaletname"
+   },
+   {
+    "de": "decree",
+    "tr": "kararname"
+   },
+   {
+    "de": "cut-off period",
+    "tr": "son kabul süresi"
+   },
+   {
+    "de": "service of documents",
+    "tr": "tebligat"
+   },
+   {
+    "de": "notice of appeal rights",
+    "tr": "itiraz yolları bildirimi"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "We request that the office lodge the appeal.",
+    "tr": "resmî isteği kalıplaşmış biçimle kurar"
+   },
+   {
+    "de": "Were it not for the limitation period, the claim would stand.",
+    "tr": "olmasaydıyı hukuk metninde kurar"
+   },
+   {
+    "de": "They ask that no document be inadmissible.",
+    "tr": "resmî yasağı kalıpla kurar"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Bugün bir dilekçeyi kalıplaşmış biçimlerle yazmayı öğreneceğiz."
+     },
+     {
+      "lang": "tr",
+      "text": "Hukukta biçim bir süs değil geçerlilik koşuludur: yanlış biçimde yazılmış doğru bir istek reddedilebilir. Hazır mısın?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "lodge"
+     },
+     {
+      "lang": "tr",
+      "text": "Resmî bir başvuruyu sunmak demek. İlk kalıbımız da bu. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "We request that the office lodge the appeal."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "We request that the office lodge the appeal."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Hak arama süresinin dolmasına"
+     },
+     {
+      "lang": "en",
+      "text": "limitation period"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İkinci kalıbımız olmasaydıyı hukuk metninde kuruyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "Were it not for the limitation period, the claim would stand."
+     },
+     {
+      "lang": "tr",
+      "text": "Zamanaşımı olmasaydı talep ayakta kalırdı."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Were it not for the limitation period, the claim would stand."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Usulen kabul edilemeyecek olana"
+     },
+     {
+      "lang": "en",
+      "text": "inadmissible"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son kalıbımız resmî yasağı kalıpla kuruyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "They ask that no document be inadmissible."
+     },
+     {
+      "lang": "tr",
+      "text": "Hiçbir belgenin kabul edilemez olmamasını istiyorlar."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "They ask that no document be inadmissible."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi dersin kuralı. Dilekçede fiil çekilmez:"
+     },
+     {
+      "lang": "en",
+      "text": "that the office lodge"
+     },
+     {
+      "lang": "tr",
+      "text": "diyoruz,"
+     },
+     {
+      "lang": "en",
+      "text": "lodges"
+     },
+     {
+      "lang": "tr",
+      "text": "demiyoruz. Bu biçim isteği yazan kişiden ayırır; hukukta isteği geçerli kılan şey kimin istediği değil nasıl yazıldığıdır."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sıra sende: Mahkemenin itirazı sunmasını talep ediyoruz."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "We request that the court lodge the appeal.",
+     "accept": [
+      "We request that the board lodge the appeal.",
+      "We request that the office lodge the appeal."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Resmî isteği kalıplaşmış biçimle kurmak için"
+      },
+      {
+       "lang": "en",
+       "text": "request that … lodge"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "We request that the court lodge the appeal."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kontrol. Şu cümle doğru mu?"
+     },
+     {
+      "lang": "en",
+      "text": "They ask that no document be inadmissible."
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "They ask that no document be inadmissible.",
+     "answer": true,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Doğru. Fiil çekilmemiş; bu bir hata değil, dilekçenin geçerli biçimi."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Birinin adına işlem yapma yetkisine"
+     },
+     {
+      "lang": "en",
+      "text": "power of attorney"
+     },
+     {
+      "lang": "tr",
+      "text": "yürütmenin çıkardığı düzenlemeye ise"
+     },
+     {
+      "lang": "en",
+      "text": "decree"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The decree mentions a power of attorney."
+     },
+     {
+      "lang": "tr",
+      "text": "Kararname bir vekaletnameden söz ediyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The decree mentions a power of attorney."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sen kur: Süre olmasaydı talep ayakta kalırdı."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "Were it not for the deadline, the claim would stand.",
+     "accept": [
+      "Were it not for the date, the claim would stand.",
+      "Were it not for the limitation period, the claim would stand."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Olmasaydıyı hukuk metninde kurmak için"
+      },
+      {
+       "lang": "en",
+       "text": "were it not for"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "Were it not for the deadline, the claim would stand."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Sonrasında başvurunun alınmadığı güne"
+     },
+     {
+      "lang": "en",
+      "text": "cut-off period"
+     },
+     {
+      "lang": "tr",
+      "text": "belgenin resmen ulaştırılmasına ise"
+     },
+     {
+      "lang": "en",
+      "text": "service of documents"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The cut-off period starts with the service of documents."
+     },
+     {
+      "lang": "tr",
+      "text": "Son kabul süresi tebligatla başlıyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The cut-off period starts with the service of documents."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Nereye ve ne zamana kadar itiraz edilebileceğini yazan bölüme"
+     },
+     {
+      "lang": "en",
+      "text": "notice of appeal rights"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The letter includes a notice of appeal rights."
+     },
+     {
+      "lang": "tr",
+      "text": "Yazıda bir itiraz yolları bildirimi var."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The letter includes a notice of appeal rights."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir tane daha: Hiçbir talebin kabul edilemez olmamasını istiyorlar."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "They ask that no claim be inadmissible.",
+     "accept": [
+      "They ask that no request be inadmissible.",
+      "They ask that no document be inadmissible."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Resmî yasağı kalıpla kurmak için"
+      },
+      {
+       "lang": "en",
+       "text": "ask that no"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "They ask that no claim be inadmissible."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Özetleyelim: istek"
+     },
+     {
+      "lang": "en",
+      "text": "that the office lodge"
+     },
+     {
+      "lang": "tr",
+      "text": "olmasaydı"
+     },
+     {
+      "lang": "en",
+      "text": "were it not for"
+     },
+     {
+      "lang": "tr",
+      "text": "yasak"
+     },
+     {
+      "lang": "en",
+      "text": "that no document be"
+     },
+     {
+      "lang": "tr",
+      "text": "Şimdi bir dilekçe yazacaksın."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Bir kuruma dilekçe yazıyorsun ve biçimi tutturman gerekiyor. İsteği, olmasaydıyı ve yasağı kalıplaşmış biçimlerle kur.",
+   "partner": "dilekçeyi kendi cümleleriyle sadeleştirmek isteyen bir tanıdık",
+   "opening": "Can't you just write it plainly?",
+   "openingTr": "Bunu sade yazamaz mısın?",
+   "goal": "İsteği, olmasaydıyı ve yasağı üç ayrı kalıplaşmış biçimle kurduysan konuşma başarılı sayılır.",
+   "minTurns": 8
+  }
+ },
+ {
+  "id": "en-c1-the-same-event",
+  "level": "C1",
+  "course": "en",
+  "icon": "law",
+  "title": "The same event in three texts",
+  "titleTr": "Aynı olay üç metinde",
+  "summary": "Aynı olayın tutanakta, haberde ve konuşmada nasıl değiştiğini öğretir; hukuk kaydında ad seçimi bir hükümdür.",
+  "minutes": 12,
+  "focusId": "Register shift in legal texts",
+  "vocab": [
+   {
+    "de": "misdemeanor",
+    "tr": "hafif suç"
+   },
+   {
+    "de": "administrative offense",
+    "tr": "kabahat"
+   },
+   {
+    "de": "administrative act",
+    "tr": "idari işlem"
+   },
+   {
+    "de": "acquittal",
+    "tr": "beraat"
+   },
+   {
+    "de": "compulsory enforcement",
+    "tr": "cebri icra"
+   },
+   {
+    "de": "state of affairs",
+    "tr": "işlerin gidişatı"
+   },
+   {
+    "de": "official oversight",
+    "tr": "idari denetim"
+   },
+   {
+    "de": "administrative regulation",
+    "tr": "idari düzenleme"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "A misdemeanor in one register is an administrative offense in another.",
+    "tr": "aynı olayın adının kayda göre değiştiğini söyler"
+   },
+   {
+    "de": "Written as an administrative act, the same step reads colder.",
+    "tr": "aynı adımın kayda göre soğuduğunu gösterir"
+   },
+   {
+    "de": "The acquittal becomes a sentence in the spoken register.",
+    "tr": "hukuk terimini konuşma diline çevirir"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Bugün aynı olayın tutanakta, haberde ve konuşmada nasıl değiştiğini öğreneceğiz."
+     },
+     {
+      "lang": "tr",
+      "text": "Hukuk kaydında ad seçimi bir hükümdür: aynı davranış «hafif suç» da olabilir «kabahat» de, ve ikisi ayrı sonuç doğurur. Hazır mısın?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "misdemeanor"
+     },
+     {
+      "lang": "tr",
+      "text": "Cezası hafif olan suç demek. İlk kalıbımız da bu. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "A misdemeanor in one register is an administrative offense in another."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "A misdemeanor in one register is an administrative offense in another."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Suç sayılmayıp idari para cezası gerektirene"
+     },
+     {
+      "lang": "en",
+      "text": "administrative offense"
+     },
+     {
+      "lang": "tr",
+      "text": "bir idarenin tek yanlı kararına ise"
+     },
+     {
+      "lang": "en",
+      "text": "administrative act"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İkinci kalıbımız aynı adımın kayda göre soğuduğunu gösteriyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "Written as an administrative act, the same step reads colder."
+     },
+     {
+      "lang": "tr",
+      "text": "İdari işlem olarak yazılınca aynı adım daha soğuk okunuyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Written as an administrative act, the same step reads colder."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Suçsuz bulunmaya"
+     },
+     {
+      "lang": "en",
+      "text": "acquittal"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son kalıbımız hukuk terimini konuşma diline çeviriyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "The acquittal becomes a sentence in the spoken register."
+     },
+     {
+      "lang": "tr",
+      "text": "Beraat konuşma kaydında bir cümleye dönüşüyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The acquittal becomes a sentence in the spoken register."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi dersin kuralı. Hukuk kaydında kayıt değişimi bir üslup meselesi değil:"
+     },
+     {
+      "lang": "en",
+      "text": "a misdemeanor"
+     },
+     {
+      "lang": "tr",
+      "text": "ile"
+     },
+     {
+      "lang": "en",
+      "text": "an administrative offense"
+     },
+     {
+      "lang": "tr",
+      "text": "aynı olayı anlatır ama biri mahkemeye biri idareye gider. Kaydı seçmek burada sonucu seçmektir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sıra sende: Bir metinde hafif suç olan şey başkasında kabahattir."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "A misdemeanor in one text is an administrative offense in another.",
+     "accept": [
+      "A misdemeanor in one law is an administrative offense in another.",
+      "A misdemeanor in one register is an administrative offense in another."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Aynı olayın adının kayda göre değiştiğini söylemek için"
+      },
+      {
+       "lang": "en",
+       "text": "in one … in another"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "A misdemeanor in one text is an administrative offense in another."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kontrol. Şu cümle doğru mu?"
+     },
+     {
+      "lang": "en",
+      "text": "Written as an administrative act, the same step reads colder."
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "Written as an administrative act, the same step reads colder.",
+     "answer": true,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Doğru. Adım değişmedi, yalnız yazıldığı kayıt değişti ve okur onu başka duyuyor."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Mahkeme kararının zorla yerine getirilmesine"
+     },
+     {
+      "lang": "en",
+      "text": "compulsory enforcement"
+     },
+     {
+      "lang": "tr",
+      "text": "işlerin o anki durumuna ise"
+     },
+     {
+      "lang": "en",
+      "text": "state of affairs"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The state of affairs ends in compulsory enforcement."
+     },
+     {
+      "lang": "tr",
+      "text": "İşlerin gidişatı cebri icrayla bitiyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The state of affairs ends in compulsory enforcement."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sen kur: Beraat konuşma kaydında bir kelimeye dönüşüyor."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "The acquittal becomes a word in the spoken register.",
+     "accept": [
+      "The acquittal becomes a phrase in the spoken register.",
+      "The acquittal becomes a sentence in the spoken register."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Hukuk terimini konuşma diline çevirmek için"
+      },
+      {
+       "lang": "en",
+       "text": "in the spoken register"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "The acquittal becomes a word in the spoken register."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir idarenin başka bir idareyi denetlemesine"
+     },
+     {
+      "lang": "en",
+      "text": "official oversight"
+     },
+     {
+      "lang": "tr",
+      "text": "idarenin kendi koyduğu kurala ise"
+     },
+     {
+      "lang": "en",
+      "text": "administrative regulation"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The official oversight follows an administrative regulation."
+     },
+     {
+      "lang": "tr",
+      "text": "İdari denetim bir idari düzenlemeyi izliyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The official oversight follows an administrative regulation."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Dikkat: bir olayı hangi adla yazdığın, o olayın hangi yolu izleyeceğini de yazar."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The name chooses the procedure."
+     },
+     {
+      "lang": "tr",
+      "text": "Ad, izlenecek yolu seçer."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The name chooses the procedure."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir tane daha: Karar olarak yazılınca aynı adım daha soğuk okunuyor."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "Written as a decision, the same step reads colder.",
+     "accept": [
+      "Written as a ruling, the same step reads colder.",
+      "Written as an administrative act, the same step reads colder."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Aynı adımın kayda göre soğuduğunu göstermek için"
+      },
+      {
+       "lang": "en",
+       "text": "written as"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "Written as a decision, the same step reads colder."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Özetleyelim: hukuk adı"
+     },
+     {
+      "lang": "en",
+      "text": "a misdemeanor"
+     },
+     {
+      "lang": "tr",
+      "text": "idari ad"
+     },
+     {
+      "lang": "en",
+      "text": "an administrative offense"
+     },
+     {
+      "lang": "tr",
+      "text": "konuşma kaydı"
+     },
+     {
+      "lang": "en",
+      "text": "in the spoken register"
+     },
+     {
+      "lang": "tr",
+      "text": "Şimdi aynı olayı üç metinde anlatacaksın."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Başından geçen bir olayı önce tutanak, sonra haber, sonra konuşma kaydında anlatıyorsun. Üçünü de kur ve adın değişmesiyle yolun da değiştiğini göster.",
+   "partner": "üç anlatımı da aynı sanan, «olay olaydır» diyen bir arkadaş",
+   "opening": "An event is an event, isn't it?",
+   "openingTr": "Olay olaydır, değil mi?",
+   "goal": "Aynı olayı tutanak, haber ve konuşma kaydında üç ayrı biçimde anlattıysan konuşma başarılı sayılır.",
+   "minTurns": 8
+  }
+ },
+ {
+  "id": "en-c1-what-the-witness-said",
+  "level": "C1",
+  "course": "en",
+  "icon": "media",
+  "title": "What the witness said",
+  "titleTr": "Tanık ne dedi",
+  "summary": "Bir ifadeyi aktarırken hükmü fiile yüklemeyi öğretir; hukukta stated ile alleged arasındaki fark bir dosyanın yönünü değiştirir.",
+  "minutes": 12,
+  "focusId": "Reporting verbs in testimony",
+  "vocab": [
+   {
+    "de": "expert report",
+    "tr": "bilirkişi raporu"
+   },
+   {
+    "de": "revocation",
+    "tr": "geri alma"
+   },
+   {
+    "de": "guardianship",
+    "tr": "vesayet"
+   },
+   {
+    "de": "land register",
+    "tr": "tapu sicili"
+   },
+   {
+    "de": "utility statement",
+    "tr": "yan gider hesabı"
+   },
+   {
+    "de": "arbitration board",
+    "tr": "hakem kurulu"
+   },
+   {
+    "de": "consumer advice center",
+    "tr": "tüketici danışma merkezi"
+   },
+   {
+    "de": "contracting party",
+    "tr": "sözleşme tarafı"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "She stated it; he conceded it; they alleged it.",
+    "tr": "aynı ifadeyi üç hükme çevirir"
+   },
+   {
+    "de": "The expert report claims what the file assumes.",
+    "tr": "iddia ile varsayımı ayırır"
+   },
+   {
+    "de": "To record a revocation is not to accept it.",
+    "tr": "kaydetmekle kabul etmeyi ayırır"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Bugün bir ifadeyi aktarırken hükmü fiile yüklemeyi öğreneceğiz."
+     },
+     {
+      "lang": "tr",
+      "text": "Hukukta stated ile alleged arasındaki fark bir dosyanın yönünü değiştirir; ikisi de içeriği aynen aktarır. Hazır mısın?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kalıbımız aynı ifadeyi üç hükme çeviriyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "She stated it; he conceded it; they alleged it."
+     },
+     {
+      "lang": "tr",
+      "text": "O beyan etti, o kabul etti, onlar iddia etti."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "She stated it; he conceded it; they alleged it."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Uzmanın mahkeme için hazırladığı incelemeye"
+     },
+     {
+      "lang": "en",
+      "text": "expert report"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İkinci kalıbımız iddia ile varsayımı ayırıyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "The expert report claims what the file assumes."
+     },
+     {
+      "lang": "tr",
+      "text": "Bilirkişi raporu, dosyanın varsaydığını iddia ediyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The expert report claims what the file assumes."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Verilmiş bir kararı ya da izni geri çekmeye"
+     },
+     {
+      "lang": "en",
+      "text": "revocation"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son kalıbımız kaydetmekle kabul etmeyi ayırıyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "To record a revocation is not to accept it."
+     },
+     {
+      "lang": "tr",
+      "text": "Bir geri almayı kaydetmek onu kabul etmek değildir."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "To record a revocation is not to accept it."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi dersin kuralı. Hukuk metninde aktarma fiili üç ayrı sonuç doğurur:"
+     },
+     {
+      "lang": "en",
+      "text": "stated"
+     },
+     {
+      "lang": "tr",
+      "text": "beyanı olduğu gibi kaydeder,"
+     },
+     {
+      "lang": "en",
+      "text": "conceded"
+     },
+     {
+      "lang": "tr",
+      "text": "kişinin kendi aleyhine konuştuğunu belgeler,"
+     },
+     {
+      "lang": "en",
+      "text": "alleged"
+     },
+     {
+      "lang": "tr",
+      "text": "ise kanıtlanmamış olduğunu işaretler. Üçü de doğru aktarımdır ve üçü ayrı dosya üretir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sıra sende: O beyan etti, o kabul etti, onlar iddia etti."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "He stated it; she conceded it; they alleged it.",
+     "accept": [
+      "He stated it; she admitted it; they alleged it.",
+      "She stated it; he conceded it; they alleged it."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Aynı ifadeyi üç hükme çevirmek için"
+      },
+      {
+       "lang": "en",
+       "text": "stated … conceded … alleged"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "He stated it; she conceded it; they alleged it."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kontrol. Şu cümle doğru mu?"
+     },
+     {
+      "lang": "en",
+      "text": "To record a revocation is not to accept it."
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "To record a revocation is not to accept it.",
+     "answer": true,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Doğru. Kaydetmek bir işlemdir, kabul etmek bir hükümdür; ikisi ayrı fiil ister."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Kendi işini göremeyen için atanan koruma düzenine"
+     },
+     {
+      "lang": "en",
+      "text": "guardianship"
+     },
+     {
+      "lang": "tr",
+      "text": "taşınmazların kayıtlı olduğu sicile ise"
+     },
+     {
+      "lang": "en",
+      "text": "land register"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The guardianship appears in the land register."
+     },
+     {
+      "lang": "tr",
+      "text": "Vesayet tapu sicilinde görünüyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The guardianship appears in the land register."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sen kur: Bilirkişi raporu, yazının varsaydığını iddia ediyor."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "The expert report claims what the letter assumes.",
+     "accept": [
+      "The expert report claims what the note assumes.",
+      "The expert report claims what the file assumes."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "İddia ile varsayımı ayırmak için"
+      },
+      {
+       "lang": "en",
+       "text": "claims what … assumes"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "The expert report claims what the letter assumes."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Kiracının ortak giderler dökümüne"
+     },
+     {
+      "lang": "en",
+      "text": "utility statement"
+     },
+     {
+      "lang": "tr",
+      "text": "mahkemeye gitmeden karar veren kurula ise"
+     },
+     {
+      "lang": "en",
+      "text": "arbitration board"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The arbitration board read the utility statement."
+     },
+     {
+      "lang": "tr",
+      "text": "Hakem kurulu yan gider hesabını okudu."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The arbitration board read the utility statement."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Tüketiciye hakkını anlatan kuruma"
+     },
+     {
+      "lang": "en",
+      "text": "consumer advice center"
+     },
+     {
+      "lang": "tr",
+      "text": "sözleşmeyi imzalayan tarafa ise"
+     },
+     {
+      "lang": "en",
+      "text": "contracting party"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The consumer advice center wrote to the contracting party."
+     },
+     {
+      "lang": "tr",
+      "text": "Tüketici danışma merkezi sözleşme tarafına yazdı."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The consumer advice center wrote to the contracting party."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir tane daha: Bir talebi kaydetmek onu kabul etmek değildir."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "To record a claim is not to accept it.",
+     "accept": [
+      "To record a request is not to accept it.",
+      "To record a revocation is not to accept it."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Kaydetmekle kabul etmeyi ayırmak için"
+      },
+      {
+       "lang": "en",
+       "text": "to record … is not to accept"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "To record a claim is not to accept it."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Özetleyelim: beyan"
+     },
+     {
+      "lang": "en",
+      "text": "stated"
+     },
+     {
+      "lang": "tr",
+      "text": "aleyhine"
+     },
+     {
+      "lang": "en",
+      "text": "conceded"
+     },
+     {
+      "lang": "tr",
+      "text": "kanıtsız"
+     },
+     {
+      "lang": "en",
+      "text": "alleged"
+     },
+     {
+      "lang": "tr",
+      "text": "Şimdi bir ifadeyi aktaracaksın."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Duyduğun bir ifadeyi bir görevliye aktarıyorsun ve hiçbir şeyi eklemek istemiyorsun. Beyanı, aleyhine olanı ve kanıtsız olanı üç ayrı aktarma fiiliyle söyle.",
+   "partner": "senden kesin bir sonuç bekleyen, «yani doğru mu» diye soran bir görevli",
+   "opening": "So is it true or not?",
+   "openingTr": "Yani doğru mu değil mi?",
+   "goal": "Beyanı, aleyhine olanı ve kanıtsız olanı üç ayrı aktarma fiiliyle söylediysen konuşma başarılı sayılır.",
+   "minTurns": 8
+  }
+ },
+ {
+  "id": "en-c1-the-settled-legal-phrase",
+  "level": "C1",
+  "course": "en",
+  "icon": "key",
+  "title": "The settled legal phrase",
+  "titleTr": "Hukukun yerleşik kalıpları",
+  "summary": "Hukuk dilinin yerleşik eşdizimlerini öğretir; bu kalıplar yüzyıllarca aşınmış ve artık tek parça hâlinde okunuyor.",
+  "minutes": 12,
+  "focusId": "Collocation in legal language",
+  "vocab": [
+   {
+    "de": "enact",
+    "tr": "yürürlüğe koymak"
+   },
+   {
+    "de": "outvote",
+    "tr": "oylamada yenmek"
+   },
+   {
+    "de": "swear in",
+    "tr": "yemin ettirmek"
+   },
+   {
+    "de": "term of office",
+    "tr": "görev süresi"
+   },
+   {
+    "de": "discretion",
+    "tr": "takdir yetkisi"
+   },
+   {
+    "de": "parliamentary group",
+    "tr": "meclis grubu"
+   },
+   {
+    "de": "division of powers",
+    "tr": "yetki paylaşımı"
+   },
+   {
+    "de": "breach of trust",
+    "tr": "güven ihlali"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "To enact a rule is not to enforce it.",
+    "tr": "iki eşdizimi karşı karşıya koyar"
+   },
+   {
+    "de": "They outvote a group they cannot swear in.",
+    "tr": "iki eşdizimi bir cümlede kurar"
+   },
+   {
+    "de": "What a term of office grants, discretion can take.",
+    "tr": "nesneyi başa alıp iki eşdizimi bağlar"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Bugün hukuk dilinin yerleşik eşdizimlerini öğreneceğiz."
+     },
+     {
+      "lang": "tr",
+      "text": "Bu kalıplar yüzyıllarca aşınmış ve artık tek parça hâlinde okunuyor; birini bozmak metni anlaşılmaz değil GÜVENİLMEZ yapıyor. Hazır mısın?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "enact"
+     },
+     {
+      "lang": "tr",
+      "text": "Bir kuralı resmen yürürlüğe sokmak demek. İlk kalıbımız da bu. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "To enact a rule is not to enforce it."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "To enact a rule is not to enforce it."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Oylamada çoğunlukla yenmeye"
+     },
+     {
+      "lang": "en",
+      "text": "outvote"
+     },
+     {
+      "lang": "tr",
+      "text": "göreve başlarken yemin ettirmeye ise"
+     },
+     {
+      "lang": "en",
+      "text": "swear in"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İkinci kalıbımız iki eşdizimi bir cümlede kuruyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "They outvote a group they cannot swear in."
+     },
+     {
+      "lang": "tr",
+      "text": "Yemin ettiremedikleri bir grubu oylamada yeniyorlar."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "They outvote a group they cannot swear in."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir görevin sürdüğü zamana"
+     },
+     {
+      "lang": "en",
+      "text": "term of office"
+     },
+     {
+      "lang": "tr",
+      "text": "kanunun bıraktığı karar payına ise"
+     },
+     {
+      "lang": "en",
+      "text": "discretion"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son kalıbımız nesneyi başa alıp iki eşdizimi bağlıyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "What a term of office grants, discretion can take."
+     },
+     {
+      "lang": "tr",
+      "text": "Görev süresinin verdiğini takdir yetkisi alabilir."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "What a term of office grants, discretion can take."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi dersin kuralı. Hukukta eşdizim değiştirilemez:"
+     },
+     {
+      "lang": "en",
+      "text": "enact a law"
+     },
+     {
+      "lang": "tr",
+      "text": "denir,"
+     },
+     {
+      "lang": "en",
+      "text": "make a law"
+     },
+     {
+      "lang": "tr",
+      "text": "denmez; aynı biçimde"
+     },
+     {
+      "lang": "en",
+      "text": "swear in"
+     },
+     {
+      "lang": "tr",
+      "text": "başka bir fiille değiştirilemez. Kalıbı bozan metin yanlış anlaşılmaz, güvenilmez sayılır."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sıra sende: Bir kanunu yürürlüğe koymak onu uygulatmak değildir."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "To enact a law is not to enforce it.",
+     "accept": [
+      "To enact a statute is not to enforce it.",
+      "To enact a rule is not to enforce it."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "İki eşdizimi karşı karşıya koymak için"
+      },
+      {
+       "lang": "en",
+       "text": "enact … enforce"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "To enact a law is not to enforce it."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kontrol. Şu cümle doğru mu?"
+     },
+     {
+      "lang": "en",
+      "text": "What a term of office grants, discretion can take."
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "What a term of office grants, discretion can take.",
+     "answer": true,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Doğru. Nesne başa alınmış ve iki hukuk eşdizimi karşı karşıya konmuş."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Mecliste aynı partiden vekillerin oluşturduğu topluluğa"
+     },
+     {
+      "lang": "en",
+      "text": "parliamentary group"
+     },
+     {
+      "lang": "tr",
+      "text": "yasama, yürütme ve yargının ayrılmasına ise"
+     },
+     {
+      "lang": "en",
+      "text": "division of powers"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The parliamentary group cited the division of powers."
+     },
+     {
+      "lang": "tr",
+      "text": "Meclis grubu yetki paylaşımına dayandı."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The parliamentary group cited the division of powers."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sen kur: Yemin ettiremedikleri bir kurulu oylamada yeniyorlar."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "They outvote a board they cannot swear in.",
+     "accept": [
+      "They outvote a council they cannot swear in.",
+      "They outvote a group they cannot swear in."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "İki eşdizimi bir cümlede kurmak için"
+      },
+      {
+       "lang": "en",
+       "text": "outvote … swear in"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "They outvote a board they cannot swear in."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Kendisine duyulan güveni kötüye kullanmaya"
+     },
+     {
+      "lang": "en",
+      "text": "breach of trust"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "A breach of trust ends it."
+     },
+     {
+      "lang": "tr",
+      "text": "Bir güven ihlali onu bitirir."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "A breach of trust ends it."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Hukuk metninde kalıbı korumak yalnız üslup değil, güvenilirlik meselesidir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The phrase is part of the proof."
+     },
+     {
+      "lang": "tr",
+      "text": "Kalıp da kanıtın parçasıdır."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The phrase is part of the proof."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir tane daha: Sözleşmenin verdiğini takdir yetkisi alabilir."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "What a contract grants, discretion can take.",
+     "accept": [
+      "What an agreement grants, discretion can take.",
+      "What a term of office grants, discretion can take."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Nesneyi başa alıp iki eşdizimi bağlamak için"
+      },
+      {
+       "lang": "en",
+       "text": "What … grants"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "What a contract grants, discretion can take."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Özetleyelim: yürürlük"
+     },
+     {
+      "lang": "en",
+      "text": "enact"
+     },
+     {
+      "lang": "tr",
+      "text": "yemin"
+     },
+     {
+      "lang": "en",
+      "text": "swear in"
+     },
+     {
+      "lang": "tr",
+      "text": "karar payı"
+     },
+     {
+      "lang": "en",
+      "text": "discretion"
+     },
+     {
+      "lang": "tr",
+      "text": "Şimdi hukukun kalıplarıyla konuşacaksın."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Bir hukuk metnini sade dile çeviriyorsun ama kalıpları bozmamak gerektiğini biliyorsun. Yürürlüğü, yemini ve takdir yetkisini yerleşik eşdizimlerle söyle.",
+   "partner": "kalıpları gereksiz bulan, eş anlamlısıyla değiştirmeyi öneren bir arkadaş",
+   "opening": "Why not just say 'make a law'?",
+   "openingTr": "Neden sadece «kanun yapmak» demiyoruz?",
+   "goal": "Yürürlüğü, yemini ve takdir yetkisini üç ayrı yerleşik eşdizimle söylediysen konuşma başarılı sayılır.",
+   "minTurns": 8
+  }
+ },
+ {
+  "id": "en-c1-what-the-article-omits",
+  "level": "C1",
+  "course": "en",
+  "icon": "flag",
+  "title": "What the article omits",
+  "titleTr": "Maddede geçmeyen",
+  "summary": "Bir kanun maddesinin neyi söylemediğini okumayı öğretir; hukukta eksilti okuma değil çıkarım konusudur.",
+  "minutes": 12,
+  "focusId": "Ellipsis in legal reading",
+  "vocab": [
+   {
+    "de": "arson",
+    "tr": "kundaklama"
+   },
+   {
+    "de": "bodily harm",
+    "tr": "yaralama"
+   },
+   {
+    "de": "apprehend",
+    "tr": "gözaltına almak"
+   },
+   {
+    "de": "impassable",
+    "tr": "geçilmez"
+   },
+   {
+    "de": "manhunt",
+    "tr": "insan avı"
+   },
+   {
+    "de": "deterrence",
+    "tr": "caydırıcılık"
+   },
+   {
+    "de": "resuscitation",
+    "tr": "yeniden canlandırma"
+   },
+   {
+    "de": "devastate",
+    "tr": "harap etmek"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "Some articles name arson; others, bodily harm.",
+    "tr": "ikinci fiili düşürür"
+   },
+   {
+    "de": "The police would apprehend if they could.",
+    "tr": "koşulun sonucunu düşürür"
+   },
+   {
+    "de": "One road is impassable; the other is not.",
+    "tr": "ikinci yarıyı yerine koyar"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Bugün bir kanun maddesinin neyi SÖYLEMEDİĞİNİ okumayı öğreneceğiz."
+     },
+     {
+      "lang": "tr",
+      "text": "Hukukta eksilti bir üslup değil bir çıkarım konusudur: maddede sayılmayan şey çoğu zaman kapsam dışıdır. Hazır mısın?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "arson"
+     },
+     {
+      "lang": "tr",
+      "text": "Kasten yangın çıkarmak demek. İlk kalıbımız da bu. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "Some articles name arson; others, bodily harm."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Some articles name arson; others, bodily harm."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kişiye bedensel zarar vermeye"
+     },
+     {
+      "lang": "en",
+      "text": "bodily harm"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İkinci kalıbımız koşulun sonucunu düşürüyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "The police would apprehend if they could."
+     },
+     {
+      "lang": "tr",
+      "text": "Polis elinden gelse gözaltına alırdı."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The police would apprehend if they could."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kişiyi yakalayıp alıkoymaya"
+     },
+     {
+      "lang": "en",
+      "text": "apprehend"
+     },
+     {
+      "lang": "tr",
+      "text": "geçit vermeyene ise"
+     },
+     {
+      "lang": "en",
+      "text": "impassable"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son kalıbımız ikinci yarıyı yerine koyuyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "One road is impassable; the other is not."
+     },
+     {
+      "lang": "tr",
+      "text": "Bir yol geçilmez, öteki değil."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "One road is impassable; the other is not."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi dersin kuralı. Hukuk metninde eksilti iki yönde okunur:"
+     },
+     {
+      "lang": "en",
+      "text": "others, bodily harm"
+     },
+     {
+      "lang": "tr",
+      "text": "fiili düşürür ve maddenin iki hâlini eşitler,"
+     },
+     {
+      "lang": "en",
+      "text": "the other is not"
+     },
+     {
+      "lang": "tr",
+      "text": "ise karşıtlığı kurar. Ama maddede hiç anılmayan bir şey eksilti değildir — kapsam dışıdır."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sıra sende: Kimi madde hırsızlığı sayıyor, kimi yaralamayı."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "Some articles name theft; others, bodily harm.",
+     "accept": [
+      "Some articles name fraud; others, bodily harm.",
+      "Some articles name arson; others, bodily harm."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "İkinci fiili düşürmek için"
+      },
+      {
+       "lang": "en",
+       "text": "others,"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "Some articles name theft; others, bodily harm."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kontrol. Şu cümle doğru mu?"
+     },
+     {
+      "lang": "en",
+      "text": "One road is impassable; the other is not."
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "One road is impassable; the other is not.",
+     "answer": true,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Doğru. İkinci yarıda sıfat düşmüş ve okur onu ilk yarıdan geri getiriyor."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Aranan birinin geniş çaplı takibine"
+     },
+     {
+      "lang": "en",
+      "text": "manhunt"
+     },
+     {
+      "lang": "tr",
+      "text": "cezanın suçtan alıkoyma gücüne ise"
+     },
+     {
+      "lang": "en",
+      "text": "deterrence"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "A manhunt is not deterrence."
+     },
+     {
+      "lang": "tr",
+      "text": "İnsan avı caydırıcılık değildir."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "A manhunt is not deterrence."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sen kur: Mahkeme elinden gelse gözaltına alırdı."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "The court would apprehend if it could.",
+     "accept": [
+      "The office would apprehend if it could.",
+      "The police would apprehend if they could."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Koşulun sonucunu düşürmek için"
+      },
+      {
+       "lang": "en",
+       "text": "would … if it could"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "The court would apprehend if it could."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Durmuş bir kalbi yeniden çalıştırmaya"
+     },
+     {
+      "lang": "en",
+      "text": "resuscitation"
+     },
+     {
+      "lang": "tr",
+      "text": "bir yeri yerle bir etmeye ise"
+     },
+     {
+      "lang": "en",
+      "text": "devastate"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The fire can devastate before the resuscitation begins."
+     },
+     {
+      "lang": "tr",
+      "text": "Yangın, yeniden canlandırma başlamadan harap edebilir."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The fire can devastate before the resuscitation begins."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Hukuk okurken en tehlikeli varsayım, söylenmeyeni kendin tamamlamaktır."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "What is not written is not implied."
+     },
+     {
+      "lang": "tr",
+      "text": "Yazılmayan şey ima edilmiş sayılmaz."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "What is not written is not implied."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir tane daha: Bir patika geçilmez, öteki değil."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "One path is impassable; the other is not.",
+     "accept": [
+      "One route is impassable; the other is not.",
+      "One road is impassable; the other is not."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "İkinci yarıyı yerine koymak için"
+      },
+      {
+       "lang": "en",
+       "text": "the other is not"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "One path is impassable; the other is not."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Özetleyelim: fiil düşer"
+     },
+     {
+      "lang": "en",
+      "text": "others, bodily harm"
+     },
+     {
+      "lang": "tr",
+      "text": "sonuç düşer"
+     },
+     {
+      "lang": "en",
+      "text": "would … if they could"
+     },
+     {
+      "lang": "tr",
+      "text": "ikinci yarı"
+     },
+     {
+      "lang": "en",
+      "text": "the other is not"
+     },
+     {
+      "lang": "tr",
+      "text": "Şimdi bir maddenin söylemediğini okuyacaksın."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Bir kanun maddesini bir arkadaşına açıklıyorsun ve neyin eksilti neyin kapsam dışı olduğunu ayırıyorsun. Fiili düşüren, sonucu düşüren ve ikinci yarıyı yerine koyan üç cümle kur.",
+   "partner": "maddede yazmayan her şeyi «demek ki serbest» diye okuyan bir arkadaş",
+   "opening": "If it's not banned, it's allowed, right?",
+   "openingTr": "Yasak değilse serbesttir, değil mi?",
+   "goal": "Fiili düşüren, sonucu düşüren ve ikinci yarıyı yerine koyan üç cümle kurduysan konuşma başarılı sayılır.",
+   "minTurns": 8
+  }
+ },
+ {
+  "id": "en-c1-the-appeal-letter",
+  "level": "C1",
+  "course": "en",
+  "icon": "money",
+  "title": "The appeal letter",
+  "titleTr": "İtiraz dilekçesi",
+  "summary": "Bir borç itirazında hakkı teslim edip savı korumayı öğretir; imtiyaz vermek borçta bir zayıflık değil bir güvenilirlik işaretidir.",
+  "minutes": 12,
+  "focusId": "Concessive range in appeals",
+  "vocab": [
+   {
+    "de": "insolvency",
+    "tr": "ödeme aczi"
+   },
+   {
+    "de": "indebtedness",
+    "tr": "borçluluk"
+   },
+   {
+    "de": "insolvent",
+    "tr": "ödeme aczinde"
+   },
+   {
+    "de": "levy",
+    "tr": "harç"
+   },
+   {
+    "de": "irrevocable",
+    "tr": "geri alınamaz"
+   },
+   {
+    "de": "payment default",
+    "tr": "ödeme temerrüdü"
+   },
+   {
+    "de": "creditworthiness",
+    "tr": "kredi değerliliği"
+   },
+   {
+    "de": "offset",
+    "tr": "mahsup etmek"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "Granted, the insolvency is real, albeit recent.",
+    "tr": "gerçeği teslim edip savı korur"
+   },
+   {
+    "de": "Much as the indebtedness grew, the client is not insolvent.",
+    "tr": "artışı görüp sonucu reddeder"
+   },
+   {
+    "de": "The levy is irrevocable, whereas the fee is not.",
+    "tr": "iki kalemi tonu bozmadan ayırır"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Bugün bir borç itirazında hakkı teslim edip savı korumayı öğreneceğiz."
+     },
+     {
+      "lang": "tr",
+      "text": "Borç yazışmasında imtiyaz vermek zayıflık değil güvenilirlik işaretidir: hiçbir şeyi kabul etmeyen itiraz okunmaz bile. Hazır mısın?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "insolvency"
+     },
+     {
+      "lang": "tr",
+      "text": "Borçları ödeyememe durumu demek. İlk kalıbımız da bu. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "Granted, the insolvency is real, albeit recent."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Granted, the insolvency is real, albeit recent."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Borç yükünün toplamına"
+     },
+     {
+      "lang": "en",
+      "text": "indebtedness"
+     },
+     {
+      "lang": "tr",
+      "text": "borcunu ödeyemez durumda olana ise"
+     },
+     {
+      "lang": "en",
+      "text": "insolvent"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İkinci kalıbımız artışı görüp sonucu reddediyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "Much as the indebtedness grew, the client is not insolvent."
+     },
+     {
+      "lang": "tr",
+      "text": "Borçluluk ne kadar arttıysa da müvekkil ödeme aczinde değil."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Much as the indebtedness grew, the client is not insolvent."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Devletin aldığı ücrete"
+     },
+     {
+      "lang": "en",
+      "text": "levy"
+     },
+     {
+      "lang": "tr",
+      "text": "bir daha geri alınamayana ise"
+     },
+     {
+      "lang": "en",
+      "text": "irrevocable"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son kalıbımız iki kalemi tonu bozmadan ayırıyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "The levy is irrevocable, whereas the fee is not."
+     },
+     {
+      "lang": "tr",
+      "text": "Harç geri alınamaz, oysa ücret öyle değil."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The levy is irrevocable, whereas the fee is not."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi dersin kuralı. İtiraz dilekçesinde imtiyaz bir hesaptır:"
+     },
+     {
+      "lang": "en",
+      "text": "granted"
+     },
+     {
+      "lang": "tr",
+      "text": "tartışmayacağın şeyi baştan verir,"
+     },
+     {
+      "lang": "en",
+      "text": "much as"
+     },
+     {
+      "lang": "tr",
+      "text": "veriyi kabul edip sonucu reddeder,"
+     },
+     {
+      "lang": "en",
+      "text": "whereas"
+     },
+     {
+      "lang": "tr",
+      "text": "ise iki kalemi karıştırmadan ayırır. Her şeyi reddeden itiraz hiçbir şeyi kazanmaz."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sıra sende: Kabul, gecikme gerçek, gerçi yeni."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "Granted, the delay is real, albeit recent.",
+     "accept": [
+      "Granted, the gap is real, albeit recent.",
+      "Granted, the insolvency is real, albeit recent."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Gerçeği teslim edip savı korumak için"
+      },
+      {
+       "lang": "en",
+       "text": "granted … albeit"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "Granted, the delay is real, albeit recent."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kontrol. Şu cümle doğru mu?"
+     },
+     {
+      "lang": "en",
+      "text": "The levy is irrevocable, whereas the fee is not."
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "The levy is irrevocable, whereas the fee is not.",
+     "answer": true,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Doğru. İki kalem karşı karşıya konmuş ve hiçbiri küçümsenmemiş."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Vadesinde ödememeye"
+     },
+     {
+      "lang": "en",
+      "text": "payment default"
+     },
+     {
+      "lang": "tr",
+      "text": "borcu ödeyebilme itibarına ise"
+     },
+     {
+      "lang": "en",
+      "text": "creditworthiness"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "A payment default lowers the creditworthiness."
+     },
+     {
+      "lang": "tr",
+      "text": "Bir ödeme temerrüdü kredi değerliliğini düşürüyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "A payment default lowers the creditworthiness."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sen kur: Borç ne kadar arttıysa da müvekkil ödeme aczinde değil."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "Much as the debt grew, the client is not insolvent.",
+     "accept": [
+      "Much as the loan grew, the client is not insolvent.",
+      "Much as the indebtedness grew, the client is not insolvent."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Artışı görüp sonucu reddetmek için"
+      },
+      {
+       "lang": "en",
+       "text": "much as"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "Much as the debt grew, the client is not insolvent."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İki alacağı birbirinden düşmeye"
+     },
+     {
+      "lang": "en",
+      "text": "offset"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "They offset the loss."
+     },
+     {
+      "lang": "tr",
+      "text": "Zararı mahsup ediyorlar."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "They offset the loss."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Borç yazışmasında en güçlü cümle, karşı tarafın haklı olduğu tek noktayı adıyla söyleyen cümledir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The strongest letter concedes one point."
+     },
+     {
+      "lang": "tr",
+      "text": "En güçlü mektup tek bir noktayı kabul eder."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The strongest letter concedes one point."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir tane daha: Ücret geri alınamaz, oysa harç öyle değil."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "The fee is irrevocable, whereas the levy is not.",
+     "accept": [
+      "The charge is irrevocable, whereas the levy is not.",
+      "The levy is irrevocable, whereas the fee is not."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "İki kalemi tonu bozmadan ayırmak için"
+      },
+      {
+       "lang": "en",
+       "text": "whereas"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "The fee is irrevocable, whereas the levy is not."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Özetleyelim: baştan teslim"
+     },
+     {
+      "lang": "en",
+      "text": "granted"
+     },
+     {
+      "lang": "tr",
+      "text": "veriyi kabul"
+     },
+     {
+      "lang": "en",
+      "text": "much as"
+     },
+     {
+      "lang": "tr",
+      "text": "kalem ayrımı"
+     },
+     {
+      "lang": "en",
+      "text": "whereas"
+     },
+     {
+      "lang": "tr",
+      "text": "Şimdi bir itiraz dilekçesi yazacaksın."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Bir borç bildirimine itiraz ediyorsun ve haklı olduğun noktaları korurken haksız olduğunu kabul ediyorsun. Baştan teslimi, veriyi kabulü ve kalem ayrımını imtiyaz sözleriyle kur.",
+   "partner": "hiçbir şeyi kabul etmemeni söyleyen, «hepsini reddet» diyen bir tanıdık",
+   "opening": "Why admit anything at all?",
+   "openingTr": "Neden hiçbir şeyi kabul edesin ki?",
+   "goal": "Baştan teslimi, veriyi kabulü ve kalem ayrımını üç ayrı imtiyaz sözüyle kurduysan konuşma başarılı sayılır.",
+   "minTurns": 8
+  }
+ },
+ {
+  "id": "en-c1-how-binding-is-it",
+  "level": "C1",
+  "course": "en",
+  "icon": "chart",
+  "title": "How binding is it",
+  "titleTr": "Ne kadar bağlayıcı",
+  "summary": "Bir sözleşme maddesinin bağlayıcılığını kiple ölçmeyi öğretir; sözleşmede kip belirsizlik değil derece taşır.",
+  "minutes": 12,
+  "focusId": "Modal nuance in contracts",
+  "vocab": [
+   {
+    "de": "deductible",
+    "tr": "muafiyet tutarı"
+   },
+   {
+    "de": "occupational disability",
+    "tr": "iş göremezlik"
+   },
+   {
+    "de": "liquidity",
+    "tr": "likidite"
+   },
+   {
+    "de": "debit",
+    "tr": "hesaptan çekmek"
+   },
+   {
+    "de": "devalue",
+    "tr": "değersizleştirmek"
+   },
+   {
+    "de": "expend",
+    "tr": "sarf etmek"
+   },
+   {
+    "de": "termination agreement",
+    "tr": "fesih anlaşması"
+   },
+   {
+    "de": "works agreement",
+    "tr": "işyeri anlaşması"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "The deductible may well be raised.",
+    "tr": "yakın ihtimali söyler"
+   },
+   {
+    "de": "It might have been expected to cover occupational disability.",
+    "tr": "beklentiyle metni ayırır"
+   },
+   {
+    "de": "Liquidity would tend to fall first.",
+    "tr": "genel eğilimi söyler"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Bugün bir sözleşme maddesinin bağlayıcılığını kiple ölçmeyi öğreneceğiz."
+     },
+     {
+      "lang": "tr",
+      "text": "Sözleşmede kip belirsizlik değil DERECE taşır: may, shall ve would üç ayrı yükümlülük kurar. Hazır mısın?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "deductible"
+     },
+     {
+      "lang": "tr",
+      "text": "Sigortanın ödemediği ilk tutar demek. İlk kalıbımız da bu. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "The deductible may well be raised."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The deductible may well be raised."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Çalışamaz duruma gelmeye"
+     },
+     {
+      "lang": "en",
+      "text": "occupational disability"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İkinci kalıbımız beklentiyle metni ayırıyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "It might have been expected to cover occupational disability."
+     },
+     {
+      "lang": "tr",
+      "text": "İş göremezliği kapsaması beklenebilirdi."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "It might have been expected to cover occupational disability."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Nakde kolay çevrilebilirliğe"
+     },
+     {
+      "lang": "en",
+      "text": "liquidity"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son kalıbımız genel eğilimi söylüyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "Liquidity would tend to fall first."
+     },
+     {
+      "lang": "tr",
+      "text": "Likidite genellikle önce düşer."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Liquidity would tend to fall first."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi dersin kuralı. Sözleşmede kip yükümlülük derecesidir:"
+     },
+     {
+      "lang": "en",
+      "text": "may well"
+     },
+     {
+      "lang": "tr",
+      "text": "bir ihtimali işaretler ama hak doğurmaz,"
+     },
+     {
+      "lang": "en",
+      "text": "might have been expected to"
+     },
+     {
+      "lang": "tr",
+      "text": "metnin eksiğini gösterir,"
+     },
+     {
+      "lang": "en",
+      "text": "would tend to"
+     },
+     {
+      "lang": "tr",
+      "text": "ise genel eğilimi. Hiçbiri taahhüt değildir; taahhüt için metinde shall aranır."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sıra sende: Prim pekâlâ artırılabilir."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "The premium may well be raised.",
+     "accept": [
+      "The fee may well be raised.",
+      "The deductible may well be raised."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Yakın ihtimali söylemek için"
+      },
+      {
+       "lang": "en",
+       "text": "may well"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "The premium may well be raised."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kontrol. Şu cümle doğru mu?"
+     },
+     {
+      "lang": "en",
+      "text": "Liquidity would tend to fall first."
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "Liquidity would tend to fall first.",
+     "answer": true,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Doğru. Yapı tek bir olayı değil genel eğilimi söylüyor ve taahhüt kurmuyor."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Hesaptan para çekmeye"
+     },
+     {
+      "lang": "en",
+      "text": "debit"
+     },
+     {
+      "lang": "tr",
+      "text": "değerini düşürmeye ise"
+     },
+     {
+      "lang": "en",
+      "text": "devalue"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "They debit the account and devalue the claim."
+     },
+     {
+      "lang": "tr",
+      "text": "Hesaptan çekiyorlar ve talebi değersizleştiriyorlar."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "They debit the account and devalue the claim."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sen kur: Zararı kapsaması beklenebilirdi."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "It might have been expected to cover the loss.",
+     "accept": [
+      "It might have been expected to cover the damage.",
+      "It might have been expected to cover occupational disability."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Beklentiyle metni ayırmak için"
+      },
+      {
+       "lang": "en",
+       "text": "might have been expected to"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "It might have been expected to cover the loss."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kaynağı harcamaya"
+     },
+     {
+      "lang": "en",
+      "text": "expend"
+     },
+     {
+      "lang": "tr",
+      "text": "tarafların anlaşarak sözleşmeyi bitirmesine ise"
+     },
+     {
+      "lang": "en",
+      "text": "termination agreement"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "We expend less under a termination agreement."
+     },
+     {
+      "lang": "tr",
+      "text": "Fesih anlaşmasıyla daha az sarf ediyoruz."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "We expend less under a termination agreement."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İşveren ile işçi temsilcilerinin yaptığı anlaşmaya"
+     },
+     {
+      "lang": "en",
+      "text": "works agreement"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The works agreement is binding."
+     },
+     {
+      "lang": "tr",
+      "text": "İşyeri anlaşması bağlayıcı."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The works agreement is binding."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir tane daha: Maliyet genellikle önce düşer."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "The cost would tend to fall first.",
+     "accept": [
+      "The price would tend to fall first.",
+      "Liquidity would tend to fall first."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Genel eğilimi söylemek için"
+      },
+      {
+       "lang": "en",
+       "text": "would tend to"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "The cost would tend to fall first."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Özetleyelim: ihtimal"
+     },
+     {
+      "lang": "en",
+      "text": "may well"
+     },
+     {
+      "lang": "tr",
+      "text": "metnin eksiği"
+     },
+     {
+      "lang": "en",
+      "text": "might have been expected to"
+     },
+     {
+      "lang": "tr",
+      "text": "eğilim"
+     },
+     {
+      "lang": "en",
+      "text": "would tend to"
+     },
+     {
+      "lang": "tr",
+      "text": "Şimdi bir maddenin ne kadar bağlayıcı olduğunu söyleyeceksin."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Bir sözleşme maddesinin ne kadar bağladığını birine açıklıyorsun. İhtimali, metnin eksiğini ve eğilimi üç ayrı kiple söyle ve hiçbirini taahhüt gibi göstermemeye dikkat et.",
+   "partner": "her cümleyi bir garanti sayan, «yani söz veriyorlar» diyen biri",
+   "opening": "So they're promising it?",
+   "openingTr": "Yani söz veriyorlar mı?",
+   "goal": "İhtimali, metnin eksiğini ve eğilimi üç ayrı kiple söylediysen konuşma başarılı sayılır.",
+   "minTurns": 8
+  }
+ },
+ {
+  "id": "en-c1-which-party-first",
+  "level": "C1",
+  "course": "en",
+  "icon": "handshake",
+  "title": "Which party comes first",
+  "titleTr": "Hangi taraf önce",
+  "summary": "Bir uyuşmazlıkta hangi tarafın önce anıldığını seçmeyi öğretir; sıra hukukta bir vurgu değil bir iddia olur.",
+  "minutes": 12,
+  "focusId": "Fronting in disputes",
+  "vocab": [
+   {
+    "de": "representation of interests",
+    "tr": "çıkar temsili"
+   },
+   {
+    "de": "warning strike",
+    "tr": "uyarı grevi"
+   },
+   {
+    "de": "short-time work",
+    "tr": "kısa çalışma"
+   },
+   {
+    "de": "continued pay",
+    "tr": "ücret ödemesinin sürmesi"
+   },
+   {
+    "de": "occupational accident insurer",
+    "tr": "iş kazası sigorta kurumu"
+   },
+   {
+    "de": "residence title",
+    "tr": "oturma statüsü"
+   },
+   {
+    "de": "family reunification",
+    "tr": "aile birleşimi"
+   },
+   {
+    "de": "asylum procedure",
+    "tr": "iltica süreci"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "What the union secured is a representation of interests.",
+    "tr": "kazanımı başa taşır"
+   },
+   {
+    "de": "Into the dispute comes a warning strike.",
+    "tr": "olayı başa alır"
+   },
+   {
+    "de": "The short-time work we accepted; the continued pay we did not.",
+    "tr": "iki kalemi başa alıp ayırır"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Bugün bir uyuşmazlıkta hangi tarafın önce anıldığını seçmeyi öğreneceğiz."
+     },
+     {
+      "lang": "tr",
+      "text": "Hukuk metninde sıra bir vurgu değil bir iddiadır: önce anılan taraf, davanın konusu olur. Hazır mısın?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "representation of interests"
+     },
+     {
+      "lang": "tr",
+      "text": "Bir kesimin çıkarlarının savunulması demek. İlk kalıbımız da bu. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "What the union secured is a representation of interests."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "What the union secured is a representation of interests."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Kısa süreli uyarı amaçlı iş bırakmaya"
+     },
+     {
+      "lang": "en",
+      "text": "warning strike"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İkinci kalıbımız olayı başa alıyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "Into the dispute comes a warning strike."
+     },
+     {
+      "lang": "tr",
+      "text": "Uyuşmazlığa bir uyarı grevi giriyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Into the dispute comes a warning strike."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Çalışma saatinin devletçe desteklenerek azaltılmasına"
+     },
+     {
+      "lang": "en",
+      "text": "short-time work"
+     },
+     {
+      "lang": "tr",
+      "text": "çalışılmayan günde ücretin sürmesine ise"
+     },
+     {
+      "lang": "en",
+      "text": "continued pay"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son kalıbımız iki kalemi başa alıp ayırıyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "The short-time work we accepted; the continued pay we did not."
+     },
+     {
+      "lang": "tr",
+      "text": "Kısa çalışmayı kabul ettik, ücret ödemesinin sürmesini etmedik."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The short-time work we accepted; the continued pay we did not."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi dersin kuralı. Başa aldığın şey uyuşmazlığın konusu olur:"
+     },
+     {
+      "lang": "en",
+      "text": "What the union secured is"
+     },
+     {
+      "lang": "tr",
+      "text": "kazanımı konu yapar,"
+     },
+     {
+      "lang": "en",
+      "text": "Into the dispute comes"
+     },
+     {
+      "lang": "tr",
+      "text": "olayı konu yapar,"
+     },
+     {
+      "lang": "en",
+      "text": "The short-time work we accepted"
+     },
+     {
+      "lang": "tr",
+      "text": "ise kalemi konu yapar. Aynı olay, üç ayrı dava."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sıra sende: Kurulun elde ettiği şey bir çıkar temsili."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "What the board secured is a representation of interests.",
+     "accept": [
+      "What the council secured is a representation of interests.",
+      "What the union secured is a representation of interests."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Kazanımı başa taşımak için"
+      },
+      {
+       "lang": "en",
+       "text": "What … secured is"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "What the board secured is a representation of interests."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kontrol. Şu cümle doğru mu?"
+     },
+     {
+      "lang": "en",
+      "text": "The short-time work we accepted; the continued pay we did not."
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "The short-time work we accepted; the continued pay we did not.",
+     "answer": true,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Doğru. İki kalem başa alınmış ve cümle ikiye bölünmüş; vurgu artık kalemlerin üstünde."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İş kazalarını karşılayan kuruma"
+     },
+     {
+      "lang": "en",
+      "text": "occupational accident insurer"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The occupational accident insurer paid."
+     },
+     {
+      "lang": "tr",
+      "text": "İş kazası sigorta kurumu ödedi."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The occupational accident insurer paid."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sen kur: Dosyaya bir uyarı grevi giriyor."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "Into the file comes a warning strike.",
+     "accept": [
+      "Into the case comes a warning strike.",
+      "Into the dispute comes a warning strike."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Olayı başa almak için"
+      },
+      {
+       "lang": "en",
+       "text": "Into the"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "Into the file comes a warning strike."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir ülkede kalma hakkının resmî durumuna"
+     },
+     {
+      "lang": "en",
+      "text": "residence title"
+     },
+     {
+      "lang": "tr",
+      "text": "ailenin bir araya gelmesine ise"
+     },
+     {
+      "lang": "en",
+      "text": "family reunification"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The residence title allows family reunification."
+     },
+     {
+      "lang": "tr",
+      "text": "Oturma statüsü aile birleşimine izin veriyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The residence title allows family reunification."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Sığınma başvurusunun görüldüğü işleyişe"
+     },
+     {
+      "lang": "en",
+      "text": "asylum procedure"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The asylum procedure is separate."
+     },
+     {
+      "lang": "tr",
+      "text": "İltica süreci ayrıdır."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The asylum procedure is separate."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir tane daha: Fazla mesaiyi kabul ettik, ücret ödemesinin sürmesini etmedik."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "The overtime we accepted; the continued pay we did not.",
+     "accept": [
+      "The extra hours we accepted; the continued pay we did not.",
+      "The short-time work we accepted; the continued pay we did not."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "İki kalemi başa alıp ayırmak için"
+      },
+      {
+       "lang": "en",
+       "text": "we accepted; … we did not"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "The overtime we accepted; the continued pay we did not."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Özetleyelim: kazanım"
+     },
+     {
+      "lang": "en",
+      "text": "What the union secured is"
+     },
+     {
+      "lang": "tr",
+      "text": "olay"
+     },
+     {
+      "lang": "en",
+      "text": "Into the dispute comes"
+     },
+     {
+      "lang": "tr",
+      "text": "kalem"
+     },
+     {
+      "lang": "en",
+      "text": "The short-time work we accepted"
+     },
+     {
+      "lang": "tr",
+      "text": "Şimdi hangi tarafın önce anılacağını seçeceksin."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Bir iş uyuşmazlığını anlatıyorsun ve her cümlede neyi başa aldığını bilerek seçiyorsun. Kazanımı, olayı ve kalemi başa alan üç cümle kur.",
+   "partner": "sıranın rastlantı olduğunu düşünen, «hangi sırayla söylesen olur» diyen biri",
+   "opening": "Does the order change anything?",
+   "openingTr": "Sıra bir şey değiştiriyor mu?",
+   "goal": "Kazanımı, olayı ve kalemi başa alan üç ayrı cümle kurduysan konuşma başarılı sayılır.",
+   "minTurns": 8
+  }
+ },
+ {
+  "id": "en-c1-holding-a-contract-together",
+  "level": "C1",
+  "course": "en",
+  "icon": "idea",
+  "title": "Holding a contract together",
+  "titleTr": "Sözleşmeyi bir arada tutmak",
+  "summary": "Uzun bir sözleşmeyi madde düzeyinde bağlamayı öğretir; hukukta yanlış gönderen bir «bu» maddeyi geçersiz kılabilir.",
+  "minutes": 12,
+  "focusId": "Cohesion in contracts",
+  "vocab": [
+   {
+    "de": "declaration of commitment",
+    "tr": "taahhütname"
+   },
+   {
+    "de": "hardship case",
+    "tr": "mağduriyet durumu"
+   },
+   {
+    "de": "federal office",
+    "tr": "federal daire"
+   },
+   {
+    "de": "citizen service office",
+    "tr": "vatandaş hizmetleri bürosu"
+   },
+   {
+    "de": "registry",
+    "tr": "sicil"
+   },
+   {
+    "de": "diplomatic mission",
+    "tr": "dış temsilcilik"
+   },
+   {
+    "de": "project charter",
+    "tr": "proje başlatma belgesi"
+   },
+   {
+    "de": "cross-departmental",
+    "tr": "bölümler arası"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "This alone binds the declaration of commitment.",
+    "tr": "önceki maddeye bağlar"
+   },
+   {
+    "de": "Such a hardship case is rare.",
+    "tr": "adı anılmadan türü işaret eder"
+   },
+   {
+    "de": "The latter falls to the federal office.",
+    "tr": "iki merciden ikincisini seçer"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Bugün uzun bir sözleşmeyi madde düzeyinde bağlamayı öğreneceğiz."
+     },
+     {
+      "lang": "tr",
+      "text": "Hukukta yanlış gönderen bir «bu» yalnız okumayı zorlaştırmaz, maddeyi geçersiz kılabilir. Hazır mısın?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "declaration of commitment"
+     },
+     {
+      "lang": "tr",
+      "text": "Masrafı üstlenme sözü veren belge demek. İlk kalıbımız da bu. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "This alone binds the declaration of commitment."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "This alone binds the declaration of commitment."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Kuralın ağır sonuç doğurduğu özel duruma"
+     },
+     {
+      "lang": "en",
+      "text": "hardship case"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İkinci kalıbımız adı anılmadan türü işaret ediyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "Such a hardship case is rare."
+     },
+     {
+      "lang": "tr",
+      "text": "Böyle bir mağduriyet durumu ender."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Such a hardship case is rare."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merkezî devlet dairesine"
+     },
+     {
+      "lang": "en",
+      "text": "federal office"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son kalıbımız iki merciden ikincisini seçiyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "The latter falls to the federal office."
+     },
+     {
+      "lang": "tr",
+      "text": "İkincisi federal daireye düşüyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The latter falls to the federal office."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi dersin kuralı. Sözleşmede üç bağ çalışır:"
+     },
+     {
+      "lang": "en",
+      "text": "this"
+     },
+     {
+      "lang": "tr",
+      "text": "bir önceki maddeye,"
+     },
+     {
+      "lang": "en",
+      "text": "such"
+     },
+     {
+      "lang": "tr",
+      "text": "adı anılmayan bir türe,"
+     },
+     {
+      "lang": "en",
+      "text": "the latter"
+     },
+     {
+      "lang": "tr",
+      "text": "ise iki merciden ikincisine gönderir. Hukukta bu sözlerin yanlış göndermesi, maddeyi uygulanamaz kılar."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sıra sende: Sözleşmeyi bağlayan tek şey bu."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "This alone binds the contract.",
+     "accept": [
+      "This alone binds the agreement.",
+      "This alone binds the declaration of commitment."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Önceki maddeye bağlamak için"
+      },
+      {
+       "lang": "en",
+       "text": "this alone binds"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "This alone binds the contract."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kontrol. Şu cümle doğru mu?"
+     },
+     {
+      "lang": "en",
+      "text": "The latter falls to the federal office."
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "The latter falls to the federal office.",
+     "answer": true,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Doğru. İki merci anılmış ve the latter ikincisini seçiyor; okur geri dönüp saymak zorunda kalmıyor."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Vatandaşın işlerini gördüğü yerel büroya"
+     },
+     {
+      "lang": "en",
+      "text": "citizen service office"
+     },
+     {
+      "lang": "tr",
+      "text": "resmî kayıtların tutulduğu deftere ise"
+     },
+     {
+      "lang": "en",
+      "text": "registry"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The citizen service office keeps the registry."
+     },
+     {
+      "lang": "tr",
+      "text": "Vatandaş hizmetleri bürosu sicili tutuyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The citizen service office keeps the registry."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sen kur: Böyle bir gecikme ender."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "Such a delay is rare.",
+     "accept": [
+      "Such a case is rare.",
+      "Such a hardship case is rare."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Adı anılmadan türü işaret etmek için"
+      },
+      {
+       "lang": "en",
+       "text": "such"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "Such a delay is rare."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir ülkenin yurt dışındaki resmî temsilciliğine"
+     },
+     {
+      "lang": "en",
+      "text": "diplomatic mission"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The diplomatic mission confirmed it."
+     },
+     {
+      "lang": "tr",
+      "text": "Dış temsilcilik bunu doğruladı."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The diplomatic mission confirmed it."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir projenin resmen başladığını gösteren belgeye"
+     },
+     {
+      "lang": "en",
+      "text": "project charter"
+     },
+     {
+      "lang": "tr",
+      "text": "birçok bölümü birden ilgilendirene ise"
+     },
+     {
+      "lang": "en",
+      "text": "cross-departmental"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The project charter is cross-departmental."
+     },
+     {
+      "lang": "tr",
+      "text": "Proje başlatma belgesi bölümler arası."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The project charter is cross-departmental."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir tane daha: İkincisi yerel daireye düşüyor."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "The latter falls to the local office.",
+     "accept": [
+      "The latter falls to the city office.",
+      "The latter falls to the federal office."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "İki merciden ikincisini seçmek için"
+      },
+      {
+       "lang": "en",
+       "text": "the latter"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "The latter falls to the local office."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Özetleyelim: önceki madde"
+     },
+     {
+      "lang": "en",
+      "text": "this"
+     },
+     {
+      "lang": "tr",
+      "text": "anılmayan tür"
+     },
+     {
+      "lang": "en",
+      "text": "such"
+     },
+     {
+      "lang": "tr",
+      "text": "ikinci merci"
+     },
+     {
+      "lang": "en",
+      "text": "the latter"
+     },
+     {
+      "lang": "tr",
+      "text": "Şimdi bir sözleşmeyi madde düzeyinde bağlayacaksın."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Uzun bir sözleşmeyi maddeleriyle anlatıyorsun ve her maddeyi bir öncekine bağlıyorsun. Önceki maddeye, anılmayan bir türe ve ikinci merciye gönderen üç bağ kur.",
+   "partner": "her maddeyi tek başına okuyan, «bu hangi maddeye bağlı» diye soran biri",
+   "opening": "Which clause does that refer to?",
+   "openingTr": "Bu hangi maddeye gönderiyor?",
+   "goal": "Önceki maddeye, anılmayan bir türe ve ikinci merciye gönderen üç ayrı bağ kurduysan konuşma başarılı sayılır.",
+   "minTurns": 8
+  }
+ },
+ {
+  "id": "en-c1-no-irony-in-a-ruling",
+  "level": "C1",
+  "course": "en",
+  "icon": "feelings",
+  "title": "No irony in a ruling",
+  "titleTr": "Kararda ironi olmaz",
+  "summary": "İroninin hangi kayıtta işe yarayıp hangisinde tehlikeli olduğunu öğretir; sözleşme hakkında konuşurken serbest, sözleşmede yasak.",
+  "minutes": 12,
+  "focusId": "Irony and its register limits",
+  "vocab": [
+   {
+    "de": "lucrative",
+    "tr": "kazançlı"
+   },
+   {
+    "de": "thrifty",
+    "tr": "tutumlu"
+   },
+   {
+    "de": "cyclical",
+    "tr": "döngüsel"
+   },
+   {
+    "de": "dealings",
+    "tr": "iş ilişkileri"
+   },
+   {
+    "de": "target agreement",
+    "tr": "hedef anlaşması"
+   },
+   {
+    "de": "annual financial statement",
+    "tr": "yıllık bilanço"
+   },
+   {
+    "de": "export ratio",
+    "tr": "ihracat oranı"
+   },
+   {
+    "de": "digitalization",
+    "tr": "dijitalleşme"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "Not exactly lucrative, is it?",
+    "tr": "olumsuzla överek eksiltir"
+   },
+   {
+    "de": "I wouldn't call that thrifty.",
+    "tr": "hükmü olumsuzla verir"
+   },
+   {
+    "de": "Hardly cyclical, is it?",
+    "tr": "soruyla tersini ima eder"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Bugün ironinin hangi kayıtta işe yarayıp hangisinde tehlikeli olduğunu öğreneceğiz."
+     },
+     {
+      "lang": "tr",
+      "text": "Bir sözleşme HAKKINDA konuşurken ironi serbest; sözleşmenin İÇİNDE yasak, çünkü orada ton okunmaz, yalnız sözcük okunur. Hazır mısın?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "lucrative"
+     },
+     {
+      "lang": "tr",
+      "text": "İyi kazandıran demek. İlk kalıbımız da bu. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "Not exactly lucrative, is it?"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Not exactly lucrative, is it?"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Parasını dikkatli harcayana"
+     },
+     {
+      "lang": "en",
+      "text": "thrifty"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İkinci kalıbımız hükmü olumsuzla veriyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "I wouldn't call that thrifty."
+     },
+     {
+      "lang": "tr",
+      "text": "Ben buna tutumlu demezdim."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "I wouldn't call that thrifty."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Belli aralıklarla yinelenene"
+     },
+     {
+      "lang": "en",
+      "text": "cyclical"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son kalıbımız soruyla tersini ima ediyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "Hardly cyclical, is it?"
+     },
+     {
+      "lang": "tr",
+      "text": "Pek de döngüsel değil, öyle mi?"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Hardly cyclical, is it?"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi dersin kuralı. İroni TONLA çalışır, sözcükle değil:"
+     },
+     {
+      "lang": "en",
+      "text": "not exactly"
+     },
+     {
+      "lang": "tr",
+      "text": ","
+     },
+     {
+      "lang": "en",
+      "text": "I wouldn't call that"
+     },
+     {
+      "lang": "tr",
+      "text": "ve"
+     },
+     {
+      "lang": "en",
+      "text": "hardly"
+     },
+     {
+      "lang": "tr",
+      "text": "konuşmada anlaşılır çünkü ses ve yüz eşlik eder. Sözleşme metninde bu ikisi yoktur; orada aynı cümle sözlük anlamıyla okunur ve aleyhine yorumlanır."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sıra sende: Pek ucuz sayılmaz, öyle mi?"
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "Not exactly cheap, is it?",
+     "accept": [
+      "Not exactly low, is it?",
+      "Not exactly lucrative, is it?"
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Olumsuzla överek eksiltmek için"
+      },
+      {
+       "lang": "en",
+       "text": "not exactly"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "Not exactly cheap, is it?"
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kontrol. Şu cümle doğru mu?"
+     },
+     {
+      "lang": "en",
+      "text": "I wouldn't call that thrifty."
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "I wouldn't call that thrifty.",
+     "answer": true,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Doğru. Hüküm konuşanın üstünde kalıyor; bu cümle bir sohbette işler ama bir sözleşmede işlemez."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Ticari ilişkilerin bütününe"
+     },
+     {
+      "lang": "en",
+      "text": "dealings"
+     },
+     {
+      "lang": "tr",
+      "text": "ulaşılacak hedefleri yazan anlaşmaya ise"
+     },
+     {
+      "lang": "en",
+      "text": "target agreement"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "Their dealings follow a target agreement."
+     },
+     {
+      "lang": "tr",
+      "text": "İş ilişkileri bir hedef anlaşmasını izliyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Their dealings follow a target agreement."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sen kur: Ben buna dikkatli demezdim."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "I wouldn't call that careful.",
+     "accept": [
+      "I wouldn't call that cautious.",
+      "I wouldn't call that thrifty."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Hükmü olumsuzla vermek için"
+      },
+      {
+       "lang": "en",
+       "text": "I wouldn't call that"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "I wouldn't call that careful."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Yılın hesabını kapatan tabloya"
+     },
+     {
+      "lang": "en",
+      "text": "annual financial statement"
+     },
+     {
+      "lang": "tr",
+      "text": "üretimin dışarı satılan payına ise"
+     },
+     {
+      "lang": "en",
+      "text": "export ratio"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The annual financial statement shows the export ratio."
+     },
+     {
+      "lang": "tr",
+      "text": "Yıllık bilanço ihracat oranını gösteriyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The annual financial statement shows the export ratio."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İşlerin sayısal ortama geçmesine"
+     },
+     {
+      "lang": "en",
+      "text": "digitalization"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The digitalization continues."
+     },
+     {
+      "lang": "tr",
+      "text": "Dijitalleşme sürüyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The digitalization continues."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir tane daha: Pek de tutumlu değil, öyle mi?"
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "Hardly thrifty, is it?",
+     "accept": [
+      "Hardly careful, is it?",
+      "Hardly cyclical, is it?"
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Soruyla tersini ima etmek için"
+      },
+      {
+       "lang": "en",
+       "text": "hardly"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "Hardly thrifty, is it?"
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Özetleyelim: konuşmada serbest"
+     },
+     {
+      "lang": "en",
+      "text": "not exactly"
+     },
+     {
+      "lang": "tr",
+      "text": "hüküm sende"
+     },
+     {
+      "lang": "en",
+      "text": "I wouldn't call that"
+     },
+     {
+      "lang": "tr",
+      "text": "metinde yasak"
+     },
+     {
+      "lang": "en",
+      "text": "hardly"
+     },
+     {
+      "lang": "tr",
+      "text": "Şimdi ironiyi doğru kayıtta kullanacaksın."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Bir sözleşmeyi bir arkadaşınla konuşurken ironi kullanıyorsun, sonra aynı şeyi yazıya dökerken ironiyi bırakıyorsun. Üç ironiyi konuşmada kur ve neden metne geçmediklerini söyle.",
+   "partner": "aynı esprileri sözleşmeye de yazmak isteyen bir ortak",
+   "opening": "Can we put that line in the contract?",
+   "openingTr": "Bu cümleyi sözleşmeye koyabilir miyiz?",
+   "goal": "Üç ironiyi konuşmada kurduysan ve metne geçmemeleri gerektiğini söylediysen konuşma başarılı sayılır.",
+   "minTurns": 8
+  }
  }
 ]

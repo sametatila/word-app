@@ -1,6 +1,6 @@
 # WP-74 — İngilizce ders kapsamı B1–C1
 
-**Durum:** sürüyor (B1 TAM, B2 TAM; C1 modül 1-2 TAM — 220/300 ders) · **Sahip:** Claude · **Açılış:** 2026-09-11
+**Durum:** sürüyor (B1 TAM, B2 TAM; C1 modül 1-3 TAM — 230/300 ders) · **Sahip:** Claude · **Açılış:** 2026-09-11
 
 ## Kusur
 
@@ -479,6 +479,27 @@ değil düşünceyi de taşıyor, «kalıbı seçmek çoğu zaman sonucu seçmek
 Kayıt dersi modül 1'in bulgusunu bir adım öteye taşıyor: kayıt yalnız
 üslubu değil ADI değiştiriyor — konuşma dilinde «öfke dalgası» olan şey
 hukuk kaydında «kamuoyu manipülasyonu» adını alıyor ve artık bir suçlama.
+
+C1.GR.11-20'nin onu da modül içinde bir kez kullanılıyor (ölçüldü, 10/10).
+
+**C1 modül 3 — Hukuk ve sözleşme dili (2026-09-11).** On ders: dilekçe
+dili, aynı olay üç metinde, tanık ne dedi, hukukun yerleşik kalıpları,
+maddede geçmeyen, itiraz dilekçesi, ne kadar bağlayıcı, hangi taraf önce,
+sözleşmeyi bir arada tutmak, kararda ironi olmaz.
+
+Modülün kendi ekseni BİÇİMİN SONUÇ DOĞURMASI. Hukukta biçim bir süs
+değil geçerlilik koşulu: yanlış biçimde yazılmış doğru bir istek
+reddedilebilir. Aynı ilke on dersin hepsinde başka bir yerden görünüyor —
+ad seçimi bir hükümdür («hafif suç» mahkemeye, «kabahat» idareye gider),
+kip belirsizlik değil DERECE taşır (taahhüt için metinde shall aranır),
+yanlış gönderen bir «bu» maddeyi geçersiz kılabilir.
+
+İki ders C1'in daha önce öğrettiği aracın sınırını çiziyor. Eksilti
+dersi: maddede hiç anılmayan bir şey eksilti DEĞİLDİR, kapsam dışıdır —
+hukuk okurken en tehlikeli varsayım söylenmeyeni kendin tamamlamaktır.
+İroni dersi ise modülü kapatıyor: sözleşme HAKKINDA konuşurken ironi
+serbest, sözleşmenin İÇİNDE yasak, çünkü orada ton okunmaz, yalnız
+sözcük okunur ve aleyhine yorumlanır.
 
 C1.GR.11-20'nin onu da modül içinde bir kez kullanılıyor (ölçüldü, 10/10).
 
