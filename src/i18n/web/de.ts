@@ -162,9 +162,6 @@ export const deWeb: Record<string, string> = {
   "session.offline_sub": "Prüfe deine Verbindung.",
   "summary.stopped": "Bis hierher",
   "summary.round_done": "Runde abgeschlossen",
-  "summary.accuracy": "Trefferquote",
-  "summary.words": "Wörter",
-  "summary.streak": "Serie",
   "summary.scheduled": "In deinen Wiederholungsplan aufgenommen",
   "summary.back_to_round": "Zurück zur Runde",
   /* Oyun adları + plan — bkz. tr.ts notu. */

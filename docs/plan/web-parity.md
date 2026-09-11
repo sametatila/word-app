@@ -7344,3 +7344,37 @@ kutusunun üstünde, kazanç yeşil, kayıp turuncu, berabere sessiz.
 kapanıyor mu, sonucu özet gösteriyor mu. Üç enjeksiyonun üçü de yakalandı.
 Fonksiyon gövdeleri ADA göre değil **girintiye göre** kesiliyor: bu dosyada
 komşu fonksiyonu okumak birden fazla kez tuzak oldu (§103, §116).
+
+### 11.215 Özet kartının sırası ölçülmemiş hiçbir şeydi
+
+Tur özeti iki platformda da aynı bölümlerden kuruluyordu ama **sıra** hiç
+ölçülmemişti. Ölçülünce iki gerçek çıktı ve ikisi de tasarım hatası:
+
+- **Android'de "devam" içeriğin ORTASINDA duruyordu.** Zorlandığın kelimeler
+  ve yarınki tekrar sayısı birincil düğmenin ALTINDA kalıyordu: turu bitiren
+  kullanıcı ikisini de hiç görmeden devam ediyordu. Web'de bütün içerik
+  bitince düğme grubu başlıyor — doğru olan o.
+- **Web'de "paylaş" ÇIKIŞ düğmesinin altındaydı.** Paylaşmak da yeni bir şey
+  başlatıyor; çıkış grubun sonu olmalı. İki platformda da sıra artık aynı:
+  devam · hayatta kalma · paylaş · bitir.
+
+Bir de eksik vardı: **üç sayı satırı** (doğruluk · kelime · seri). Web
+başlığın hemen altında çiziyor, Android'de yoktu — halka yalnız
+"doğru/toplam" gösteriyordu, yani **doğruluk yüzdesi hiçbir yerde
+yazmıyordu** ve turun seriye ne yaptığı da görünmüyordu (seri yalnız
+ONARILDIYSA bir satır çıkıyordu). Üç anahtar web-özel sözlükten ortak tabana
+taşındı; yüzde `formatPercent`, gün sayısı `profile.days` ile — ikisi de üç
+dilde doğru biçimleniyor.
+
+**§124** bölümlerin görünme sırasını ölçüyor (on dört bölüm). Desenler
+platforma ait, çünkü iki taraf aynı anahtarı kullanmıyor — başlık webde
+`summary.round_done`, mobilde `common.round_done`. İki bölüm muaf ve
+gerekçeleri kapının içinde yazılı: `PushOptIn` (webde izin tam burada
+isteniyor çünkü tarayıcıda reddedilen izin kalıcı kapanıyor; mobilde ayrı bir
+hazırlık ekranı var) ve kayıt uyarısı (webde tur ekranında, mobilde özette —
+web özete geldiğinde kayıt çoktan denenmiş oluyor).
+
+Kapı ilk yazılışında **halkayı web tarafında göremiyordu**: dilim
+`summary.stopped`ten başlıyordu ve halka onun ÜSTÜNDE kalıyordu, yani "webde
+halka yok" diye okunacaktı. Ölçünün komşusunu ölçmenin dokuzuncu biçimi.
+Üç enjeksiyonun üçü de yakalandı.

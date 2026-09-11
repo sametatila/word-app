@@ -1528,13 +1528,6 @@ function SummaryCard({
           <button onClick={onChallenge} className="btn btn-ghost w-full px-5 py-3">
             {t("challenge.title")}
           </button>
-          {/* KAPANIŞ — özetin üç düğmesi de yeni bir şey BAŞLATIYORDU (yeni
-              tur, hayatta kalma, paylaş) ve tur ekranında sekme çubuğu yok:
-              özetten Öğren'e dönmenin hiçbir yolu kalmıyordu. Mobilde bu
-              düğme baştan beri var (`GameScreen`: t("common.finish")). */}
-          <button onClick={onFinish} className="btn btn-ghost w-full px-5 py-3">
-            {t("common.finish")}
-          </button>
           <ShareResult
             marks={marks}
             total={tally.total}
@@ -1542,6 +1535,16 @@ function SummaryCard({
             streak={result?.currentStreak ?? 0}
             level={level}
           />
+          {/* KAPANIŞ — özetin üç düğmesi de yeni bir şey BAŞLATIYORDU (yeni
+              tur, hayatta kalma, paylaş) ve tur ekranında sekme çubuğu yok:
+              özetten Öğren'e dönmenin hiçbir yolu kalmıyordu. Mobilde bu
+              düğme baştan beri var (`GameScreen`: t("common.finish")).
+              EN ALTTA: paylaşmak da yeni bir şey başlatıyor ve çıkış
+              düğmesinin ALTINDA duruyordu — çıkışı grubun sonuna aldım, iki
+              platformda da sıra aynı (devam · hayatta kalma · paylaş · bitir). */}
+          <button onClick={onFinish} className="btn btn-ghost w-full px-5 py-3">
+            {t("common.finish")}
+          </button>
         </div>
       </Stagger>
     </motion.div>

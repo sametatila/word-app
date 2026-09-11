@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import { t, dateLocale } from "../lib/i18n";
+import { t, dateLocale, formatPercent } from "../lib/i18n";
 import { View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { useNavigation, useRoute, type RouteProp } from "@react-navigation/native";
@@ -510,6 +510,22 @@ export function GameScreen() {
             <Text variant="h2" color={colors.primaryText} style={{ marginBottom: spacing.md }}>{`+${result.xpGained} XP`}</Text>
           ) : null}
 
+          {/*
+            ÜÇ SAYI — web özetin başlığının hemen altında aynı satırı çiziyor
+            (doğruluk · kelime · seri). Mobilde halka yalnız "doğru/toplam"
+            gösteriyordu: doğruluk YÜZDESİ hiçbir yerde yazmıyordu ve turun
+            seriye ne yaptığı da görünmüyordu — seri yalnız ONARILDIYSA bir
+            satır çıkıyordu. Yüzde `formatPercent` ile, gün sayısı sözlükten
+            (`profile.days`): ikisi de üç dilde doğru biçimleniyor.
+          */}
+          {total > 0 ? (
+            <View style={{ flexDirection: "row", width: "100%", marginBottom: spacing.lg, borderTopWidth: 1, borderBottomWidth: 1, borderColor: colors.border }}>
+              <SummaryStat label={t("summary.accuracy")} value={formatPercent(pct)} colors={colors} />
+              <SummaryStat label={t("summary.words")} value={String(total)} colors={colors} divider />
+              <SummaryStat label={t("summary.streak")} value={t("profile.days", { n: result?.currentStreak ?? 0 })} colors={colors} divider />
+            </View>
+          ) : null}
+
           {/* SON ETABIN BAHSİ. Web özetin aynı yerinde kapatıyor: etap kartı
               gösterilmeden tur bittiği için söylenecek başka yer yok. */}
           {wagerResult !== null ? (
@@ -570,7 +586,11 @@ export function GameScreen() {
               <Text variant="bodyStrong" color={colors.streakText} style={{ flex: 1 }}>{saveWarning === "dropped" ? t("session.save_failed") : t("session.save_queued")}</Text>
             </View>
           ) : null}
-          <PressableScale onPress={() => void load()} style={[{ width: "100%", backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: spacing.lg, alignItems: "center" }, softShadow(colors.primary, 10)]}><Text variant="bodyStrong" color={colors.onPrimary}>{t("game.continue")}</Text></PressableScale>
+          {/* Ertesi güne dair somut bir sayı — yarın uygulamayı açmak için bir
+              sebep. Web özetin altında aynı satırı gösteriyor. */}
+          {result && result.dueTomorrow > 0 ? (
+            <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.md, textAlign: "center" }}>{t("sessionw.due_tomorrow", { n: result.dueTomorrow })}</Text>
+          ) : null}
           {/*
             ZORLANDIKLARIN. Web özetin altında o turda yanlış bilinen kelimeleri
             listeliyor ve kelime listesine kapı açıyor; mobilde bu liste HİÇ
@@ -599,16 +619,14 @@ export function GameScreen() {
               </PressableScale>
             </View>
           ) : null}
-          {/* Ertesi güne dair somut bir sayı — yarın uygulamayı açmak için bir
-              sebep. Web özetin altında aynı satırı gösteriyor. */}
-          {result && result.dueTomorrow > 0 ? (
-            <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.md, textAlign: "center" }}>{t("sessionw.due_tomorrow", { n: result.dueTomorrow })}</Text>
-          ) : null}
-          {total > 0 && (
-            <PressableScale onPress={() => shareResult(finalCorrect, total)} style={{ width: "100%", borderRadius: radii.lg, paddingVertical: spacing.lg, alignItems: "center", flexDirection: "row", justifyContent: "center", gap: 8, marginTop: spacing.md, borderWidth: 1.5, borderColor: colors.border }}>
-              <ShareIcon color={colors.text} size={19} /><Text variant="bodyStrong" color={colors.text}>{t("common.share")}</Text>
-            </PressableScale>
-          )}
+          {/*
+            DÜĞME GRUBU — web özette önce bütün içerik, sonra üç düğme
+            (devam · hayatta kalma · bitir). Mobilde "devam" içeriğin
+            ORTASINDA duruyordu: zorlandığın kelimeler ve yarınki tekrar
+            sayısı birincil düğmenin ALTINDA kalıyordu, yani turu bitiren
+            kullanıcı onları hiç görmeden devam ediyordu.
+          */}
+          <PressableScale onPress={() => void load()} style={[{ width: "100%", backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: spacing.lg, alignItems: "center" }, softShadow(colors.primary, 10)]}><Text variant="bodyStrong" color={colors.onPrimary}>{t("game.continue")}</Text></PressableScale>
           {/*
             HAYATTA KALMA TURU — web özetin düğme grubunda aynı yerde duruyor
             (devam · hayatta kalma · bitir). Mobilde mod vardı ama YALNIZ
@@ -622,6 +640,11 @@ export function GameScreen() {
           >
             <FlameIcon color={colors.dangerText} size={19} /><Text variant="bodyStrong" color={colors.text}>{t("challenge.title")}</Text>
           </PressableScale>
+          {total > 0 && (
+            <PressableScale onPress={() => shareResult(finalCorrect, total)} style={{ width: "100%", borderRadius: radii.lg, paddingVertical: spacing.lg, alignItems: "center", flexDirection: "row", justifyContent: "center", gap: 8, marginTop: spacing.md, borderWidth: 1.5, borderColor: colors.border }}>
+              <ShareIcon color={colors.text} size={19} /><Text variant="bodyStrong" color={colors.text}>{t("common.share")}</Text>
+            </PressableScale>
+          )}
           <PressableScale onPress={() => nav.goBack()} style={{ width: "100%", borderRadius: radii.lg, paddingVertical: spacing.lg, alignItems: "center", marginTop: spacing.md }}><Text variant="bodyStrong" color={colors.textMuted}>{t("common.finish")}</Text></PressableScale>
         </View>
       </View>
@@ -683,6 +706,21 @@ export function GameScreen() {
         }}
         onCancel={back.cancel}
       />
+    </View>
+  );
+}
+
+/**
+ * ÖZETİN ÜÇ SAYISI — web `session-player` `Stat` karşılığı.
+ *
+ * Ayırıcı SOLDA: ilk hücrede yok, sonrakilerde var. Webde aynı iş `divide-x`
+ * ile yapılıyor ve React Native'de karşılığı olmadığı için hücreye veriliyor.
+ */
+function SummaryStat({ label, value, colors, divider }: { label: string; value: string; colors: Palette; divider?: boolean }) {
+  return (
+    <View style={{ flex: 1, alignItems: "center", paddingVertical: spacing.md, borderLeftWidth: divider ? 1 : 0, borderColor: colors.border }}>
+      <Text variant="bodyStrong">{value}</Text>
+      <Text variant="micro" color={colors.textMuted} style={{ marginTop: 2 }}>{label}</Text>
     </View>
   );
 }

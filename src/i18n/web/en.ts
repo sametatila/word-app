@@ -162,9 +162,6 @@ export const enWeb: Record<string, string> = {
   "session.offline_sub": "Check your connection.",
   "summary.stopped": "That's it for now",
   "summary.round_done": "Round complete",
-  "summary.accuracy": "Accuracy",
-  "summary.words": "Words",
-  "summary.streak": "Streak",
   "summary.scheduled": "Added to your review plan",
   "summary.back_to_round": "Back to the round",
   /* Oyun adları + plan — bkz. tr.ts notu. */

@@ -186,9 +186,6 @@ export const trWeb: Record<string, string> = {
   "session.offline_sub": "Bağlantını kontrol et.",
   "summary.stopped": "Buraya kadar",
   "summary.round_done": "Tur tamamlandı",
-  "summary.accuracy": "Doğruluk",
-  "summary.words": "Kelime",
-  "summary.streak": "Seri",
   "summary.scheduled": "Tekrar planına alındı",
   "summary.back_to_round": "Tura geri dön",
   /* Oyun adları (web'e özel üçü) ve günlük plan metinleri. Plan sunucuda

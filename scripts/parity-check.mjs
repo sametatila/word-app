@@ -4213,6 +4213,61 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   sameList("son etabin bahsi", mob, web);
 }
 
+/* ── 124. tur ozetinin BOLUM SIRASI ───────────────────────────────────────
+ * Ozet karti iki platformda da ayni bolumlerden kuruluyor ama SIRA olculmemis
+ * hicbir seydi. Olculdugunde iki gercek cikti:
+ *   - Androidde "devam" dugmesi ICERIGIN ORTASINDA duruyordu: zorlandigin
+ *     kelimeler ve yarinki tekrar sayisi birincil dugmenin ALTINDA kaliyordu,
+ *     yani turu bitiren kullanici onlari hic gormeden devam ediyordu.
+ *   - Webde "paylas" CIKIS dugmesinin altindaydi; paylasmak da yeni bir sey
+ *     baslatiyor, cikis ise grubun sonu olmali.
+ *
+ * Olculen: bolumlerin gorunme sirasi. Bolum adlari ortak, desenler platforma
+ * ait - iki tarafta ayni anahtar kullanilmiyor (ornegin baslik webde
+ * `summary.round_done`, mobilde `common.round_done`). */
+{
+  const BOLUM = [
+    ["halka", /game\.correct/, /game\.correct/],
+    ["baslik", /summary\.(round_done|stopped)/, /common\.round_done/],
+    ["xp", /CountUp value=\{xp\}/, /xpGained\} XP/],
+    ["uc sayi", /summary\.accuracy/, /summary\.accuracy/],
+    ["bahis", /session\.wager_won/, /stage\.wager_won/],
+    ["gunluk hedef", /learn\.daily_goal/, /learn\.daily_goal/],
+    ["pekisen", /sessionw\.n_mastered/, /sessionw\.n_mastered/],
+    ["seri onarildi", /game\.streak_saved/, /game\.streak_saved/],
+    ["yarinki tekrar", /sessionw\.due_tomorrow/, /sessionw\.due_tomorrow/],
+    ["zorlandiklarin", /session\.missed_title/, /session\.missed_title/],
+    ["devam", /t\("game\.continue"\)/, /t\("game\.continue"\)/],
+    ["hayatta kalma", /t\("challenge\.title"\)/, /t\("challenge\.title"\)/],
+    ["paylas", /<ShareResult/, /t\("common\.share"\)/],
+    ["bitir", /t\("common\.finish"\)/, /t\("common\.finish"\)/],
+  ];
+  /* MUAF (bolum tablosunda YOK, gerekcesi burada):
+     - `PushOptIn`: web bildirim iznini tam burada istiyor cunku tarayicida
+       reddedilen izin kalici olarak kapaniyor - ikinci sans yok. Mobilde izin
+       ayri bir hazirlik EKRANINDAN isteniyor (`NotifPrimeScreen`, ilk girisin
+       ardindan bir kez) ve sistem diyalogu ancak kullanici "Hatirlat" derse
+       aciliyor. Ikisi ayni huni adimi, ayri yuzey.
+     - kayit uyarisi (`session.save_failed`): webde tur EKRANINDA, mobilde
+       ozette. Web ozete geldiginde kayit coktan denenmis oluyor. */
+  const dilim = (src, bas, son) => {
+    const i = src.indexOf(bas);
+    const j = son ? src.indexOf(son, i) : -1;
+    return i < 0 ? "" : src.slice(i, j < 0 ? src.length : j);
+  };
+  const sira = (src, ix) =>
+    BOLUM.map(([ad, ...d]) => [ad, src.search(d[ix])])
+      .filter(([, i]) => i >= 0)
+      .sort((a, b) => a[1] - b[1])
+      .map(([ad]) => ad);
+  /* Dilim HALKADAN basliyor: `summary.stopped`ten baslatinca halka dilimin
+     DISINDA kaliyordu ve "webde halka yok" gibi gorunuyordu - olcunun
+     komsusunu olcmenin bir baska bicimi. */
+  const web = dilim(read("src/components/session-player.tsx"), "SONUÇ HALKASI");
+  const mob = dilim(read("mobile/src/screens/GameScreen.tsx"), "if (phase === \"done\") {", "\n/**");
+  sameList("tur ozetinin bolum sirasi", sira(mob, 1), sira(web, 0));
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"
