@@ -187,33 +187,40 @@ export function WeeklyPlayer() {
     const byWord = new Map<number, boolean>();
     for (const a of answers.current) byWord.set(a.wordId, (byWord.get(a.wordId) ?? true) && a.correct);
     const wrong = (data?.rounds ?? []).map(wordOf).filter((w) => byWord.get(w.id) === false);
-    /* Basamak sabit: beyaz yazılı dolu daire koyu temada 300'e düşünce
-       okunmuyordu (bkz. `writings-card`). 600'de iki temada da geçiyor. */
-    const tone = result.score >= 80 ? "var(--color-mint-600)" : result.score >= 60 ? "var(--color-flame-600)" : "var(--color-rose-600)";
     return (
-      <section role="status" className="card mx-auto w-full max-w-md p-5">
-        <div className="flex items-center gap-4">
-          {/* HALKA, dolu daire değil: Android sonuç puanını üç yerde de
-              (tur, yürüyüş, haftalık sınav) halkayla gösteriyor ve halkanın
-              doluluğu puanın kendisi - dolu daire aynı sayıyı taşıyor ama
-              "yüzde kaç" bilgisini görselden düşürüyor. İç daire yüzey
-              renginde, yani halka bir şerit gibi okunuyor. */}
+      /*
+        YERLESIM ANDROID'DEKI GIBI. Iki ekran ayni sonucu iki bicimde
+        ciziyordu: Android buyuk bir halkayi ORTADA gosterip altina basligi ve
+        "{total} sorudan {correct} dogru" satirini yaziyor; web 64 px'lik
+        kucuk bir halkayi yanda tutup "Kullanim skorun" diye BASKA bir baslik
+        ve "hafta {n}" diye bir satir yaziyordu.
+
+        O "hafta {n}" satiri ayrica HATALIYDI: `{n}` sayi bekliyor ama
+        `status.week` bir dizge ("2026-W37"), yani ekranda "hafta 2026-W37"
+        yaziyordu. Android'de bu satir hic yok; yerlesim esitlenirken hata da
+        kapaniyor.
+
+        Halkanin rengi de Android'den: puana gore uc renk degil, MARKA rengi -
+        "yuzde kac" bilgisini halkanin dolulugu tasiyor, rengi degil.
+      */
+      <section role="status" className="card mx-auto w-full max-w-md p-5 text-center">
+        {result.total > 0 ? (
           <div
-            className="relative h-16 w-16 shrink-0 rounded-full"
-            style={{ background: `conic-gradient(${tone} ${result.score}%, var(--surface-2) ${result.score}% 100%)` }}
+            className="relative mx-auto h-32 w-32 rounded-full"
+            style={{ background: `conic-gradient(var(--color-brand-500) ${result.score}%, var(--surface-2) ${result.score}% 100%)` }}
           >
-            <div className="absolute inset-[6px] flex items-center justify-center rounded-full text-h3 tabular-nums" style={{ background: "var(--surface)", color: tone }}>
-              {result.score}
+            <div className="absolute inset-[15px] flex flex-col items-center justify-center rounded-full" style={{ background: "var(--surface)" }}>
+              <span className="text-display tabular-nums" style={{ color: "var(--color-brand)" }}>
+                {t("common.pct", { n: result.score })}
+              </span>
+              <span className="muted text-micro">{t("weekly.score")}</span>
             </div>
           </div>
-          <div>
-            <h1 className="text-h3">{t("weekly.your_score")}</h1>
-            <p className="muted text-body">
-              {t("common.n_correct", { correct: result.correct, total: result.total })} ·{" "}
-              {t("weekly.week_n", { n: data?.status.week ?? 0 })}
-            </p>
-          </div>
-        </div>
+        ) : null}
+        <h1 className="mt-5 text-h1">{t("weekly.done_title")}</h1>
+        <p className="muted mt-1 text-body">
+          {t("weekly.done_sub", { total: result.total, correct: result.correct })}
+        </p>
         {notSent ? (
           <p className="mt-3 text-strong" style={{ color: "var(--color-danger)" }}>
             {t("weekly.not_sent")}
