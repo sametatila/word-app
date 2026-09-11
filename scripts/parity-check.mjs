@@ -7284,12 +7284,11 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
    * 11.336'nin sinifi: IKI TARAF DA sessizdi, yani karsilastirmali bir kapi
    * bunu goremezdi. Olcut mutlak.
    *
-   * Kapi SEKIZ yuzeyi tutuyor: beceri egzersizi (bes oynatici da
-   * `player-shell`den geciyor), unite quizi, patron turu, meydan okuma,
-   * gunun turu, haftalik sinav, deneme sinavi ve rol yapma. Kalan UC yuzey
-   * (seviye sinavi, oturum, yuruyus) defterde 11.339'da adlariyla yazili;
-   * ucu de COK DURUMLU (sinavin bolum sonu ile kagit sonu ayri, oturumun
-   * icinde etap kartlari var) ve o yuzden en sona birakildi.
+   * Kapi ARTIK BUTUN sonuc yuzeylerini tutuyor: beceri egzersizi (bes
+   * oynatici da `player-shell`den geciyor), unite quizi, patron turu, meydan
+   * okuma, gunun turu, haftalik sinav, deneme sinavi, rol yapma, seviye
+   * sinavi, oturumun ETAP ve BITIS kartlari, yuruyus. Oturum iki sonuc
+   * tasidigi icin iki ayri olcut var.
    * Kapiyi yesil tutmak icin degil, her yuzeyin kendi turunda dogru yere
    * konmasi icin boyle: sonuc kabi her ekranda ayri yerde. */
   {
@@ -7309,6 +7308,12 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     const mobHaftalik = sil(read("mobile/src/screens/WeeklyScreen.tsx"));
     const mobDeneme = sil(read("mobile/src/screens/MockExamScreen.tsx"));
     const mobRol = sil(read("mobile/src/screens/RoleplayExamScreen.tsx"));
+    const webSinav = sil(read("src/components/exam-player.tsx"));
+    const webOturum = sil(read("src/components/session-player.tsx"));
+    const webYuruyus = sil(read("src/components/walk-player.tsx"));
+    const mobSinav = sil(read("mobile/src/screens/ExamScreen.tsx"));
+    const mobOturum = sil(read("mobile/src/screens/GameScreen.tsx"));
+    const mobYuruyus = sil(read("mobile/src/screens/WalkModeScreen.tsx"));
     /* Mobil tarafta canli bolge SONUC METNINDE; hangi metin oldugu ekrana
        gore degisiyor, o yuzden her biri kendi dizesiyle araniyor. */
     const mobSonuc = (src, desen) => (desen.test(src) ? "duyuruyor" : "SESSIZ");
@@ -7353,6 +7358,18 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
         "mobil haftalik=" + mobSonuc(mobHaftalik, /accessibilityLiveRegion="polite" variant="h1"/),
         "mobil deneme=" + mobSonuc(mobDeneme, /accessibilityLiveRegion="polite" variant="bodyStrong"/),
         "mobil rol yapma=" + mobSonuc(mobRol, /accessibilityLiveRegion="polite" variant="h1"/),
+        /* SON UC YUZEY COK DURUMLU: sinav (tek sonuc; bolum gecisleri calisan
+           fazin icinde bir KAPAK, ayri bir sonuc degil - ilk varsayim
+           yanlisti ve olcum duzeltti), oturum (ETAP karti + BITIS karti, iki
+           ayri sonuc) ve yuruyus (bitis). */
+        "web sinav=" + dalDuyuruyor(webSinav, "exam.not_passed"),
+        "web oturum etap=" + dalDuyuruyor(webOturum, "stage.clean"),
+        "web oturum bitis=" + (/<Stagger role="status" className="card overflow-hidden">/.test(webOturum) ? "duyuruyor" : "SESSIZ"),
+        "web yuruyus=" + (/<Frame role="status">[\s\S]{0,120}walk\.done_title/.test(webYuruyus) ? "duyuruyor" : "SESSIZ"),
+        "mobil sinav=" + mobSonuc(mobSinav, /accessibilityLiveRegion="polite" variant="h1">\{formatPercent\(pct\)\}/),
+        "mobil oturum etap=" + mobSonuc(mobOturum, /accessibilityLiveRegion="polite" variant="h2"[\s\S]{0,80}stage\.clean/),
+        "mobil oturum bitis=" + mobSonuc(mobOturum, /accessibilityLiveRegion="polite" variant="h1"[\s\S]{0,120}common\.round_done/),
+        "mobil yuruyus=" + mobSonuc(mobYuruyus, /accessibilityLiveRegion="polite" variant="h1"[\s\S]{0,140}walkmode\.done_title/),
       ],
       [
         "web beceri=duyuruyor", "web quiz=duyuruyor", "web patron=duyuruyor",
@@ -7361,6 +7378,10 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
         "mobil meydan=duyuruyor", "mobil gunun=duyuruyor",
         "web haftalik=duyuruyor", "web deneme=duyuruyor", "web rol yapma=duyuruyor",
         "mobil haftalik=duyuruyor", "mobil deneme=duyuruyor", "mobil rol yapma=duyuruyor",
+        "web sinav=duyuruyor", "web oturum etap=duyuruyor", "web oturum bitis=duyuruyor",
+        "web yuruyus=duyuruyor",
+        "mobil sinav=duyuruyor", "mobil oturum etap=duyuruyor", "mobil oturum bitis=duyuruyor",
+        "mobil yuruyus=duyuruyor",
       ],
       "bulunan",
       "beklenen",
