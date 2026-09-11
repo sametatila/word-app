@@ -7275,6 +7275,44 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     "beklenen",
   );
 
+  /* ── 215. rozet duvari: yanit denetimi ve iskeletin duyurusu ─────────
+   * Iki istemci de `/api/achievements`in govdesini KORU KORUNE kabul
+   * etmiyor - cunku sayaci eksik bir yanitta ilerleme serigi `NaN%` genislik
+   * alir ve sayac satiri `formatNumber(undefined)` yazar. Mobil ucunu birden
+   * denetliyordu (`rows`, `total`, `unlockedCount`) ve yorumu "web de ayni
+   * denetimi yapiyor" DIYORDU; web `unlockedCount`a bakmiyordu. Zorunlulugu
+   * yazan cumle, olcen yok - bu turlarda tekrar eden sinif.
+   *
+   * Iskeletin DUYURUSU da olculuyor: web duvarinin iskeleti elle yazilmis tek
+   * iskeletti ve `aria-busy` tasimiyordu (kalip `components/skeleton`
+   * `SkeletonCard`ta var), mobilde kokte `accessibilityRole="progressbar"`
+   * duruyor. */
+  {
+    const webDuvar = sil(read("src/components/achievement-wall.tsx"));
+    const mobDuvar = sil(read("mobile/src/screens/AchievementsScreen.tsx"));
+    const alan = (src, ad) => (new RegExp('typeof (?:data|d)\\.' + ad + ' === "number"').test(src) ? ad : "EKSIK " + ad);
+    sameList(
+      "rozet duvari yanit denetimi",
+      [
+        "web dizi=" + (/Array\.isArray\((?:data|d)\??\.rows\)/.test(webDuvar) ? "var" : "YOK"),
+        "web " + alan(webDuvar, "total"),
+        "web " + alan(webDuvar, "unlockedCount"),
+        "mobil dizi=" + (/Array\.isArray\((?:data|d)\??\.rows\)/.test(mobDuvar) ? "var" : "YOK"),
+        "mobil " + alan(mobDuvar, "total"),
+        "mobil " + alan(mobDuvar, "unlockedCount"),
+        "web iskelet duyurusu=" + (/aria-busy="true" aria-label=\{t\("achievements/.test(webDuvar) ? "var" : "YOK"),
+        "mobil iskelet duyurusu=" + (/accessibilityRole="progressbar"/.test(sil(read("mobile/src/ui/Skeleton.tsx"))) ? "var" : "YOK"),
+      ],
+      [
+        "web dizi=var", "web total", "web unlockedCount",
+        "mobil dizi=var", "mobil total", "mobil unlockedCount",
+        "web iskelet duyurusu=var", "mobil iskelet duyurusu=var",
+      ],
+      "bulunan",
+      "beklenen",
+    );
+  }
+
   /* ── 214. karar ile yukleme ayni dili okuyor mu ──────────────────────
    * Isinma (`first-words`) ve deneme yerlestirme (`placement-demo`) iceriginin
    * hangi ANA DIL - KURS paritesinde var oldugu veriden geliyor: `hasX(lang,
