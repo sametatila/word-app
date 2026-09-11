@@ -9897,3 +9897,24 @@ cümlenin bayatlaması, bu defterin en sık tekrar eden sınıfı.
 **§205** üçünü birbirine bağlıyor: iOS beyanı ↔ Android manifestosu ve beyan ↔
 `parseDeepLink`. Üç enjeksiyonun üçü yakalandı — birincisi tam da bugün
 düzelttiğim hâlin kendisi, ikincisi ters yön (iddia edilip karşılanmayan yol).
+
+## §11.301 — Katalogdaki bir env anahtarı `.env.example`de yoktu
+
+`.env.example` ile yerel `.env` zaten aynı 57 anahtarı taşıyordu. Koddaki
+`process.env.AD` kullanımlarıyla karşılaştırınca iki liste çıktı ve **ikisi de
+yanlış alarmdı**: örnekte olup kodda görünmeyen `*_MODEL` anahtarları
+**hesaplı** okunuyor (`process.env[cfg.envModel]`), kodda olup örnekte olmayan
+`WALK_*`/`PLAYTEST_*`/`EVAL_*` ise yalnız `scripts/` altındaki geliştirici
+araçlarına ait.
+
+Ama hesaplı okuma taramadan kaçtığı için gerçek bir eksik de saklıyordu:
+**`MISTRAL_STT_MODEL`** katalogda adı geçiyor ve okunuyordu, üç env dosyasının
+hiçbirinde yoktu. Yani operatör Groq'un STT modelini ezebiliyor, Mistral'inkini
+ezebileceğini hiç öğrenemiyordu — `.env.example` onun tek keşif yolu.
+
+Anahtar üçüne de aynı konumda, aynı yorumla eklendi (sunucudaki dosya önce
+yedeklendi: `/opt/lernomi/.env.bak-2026-09-11-1731`). Üç dosya artık 58
+anahtarda birebir aynı; anahtar kümeleri karşılaştırılarak doğrulandı.
+
+**§206** listeyi katalogdan çıkarıp örnekte arıyor: yeni bir sağlayıcı
+eklendiğinde anahtarları da belgelensin. İki enjeksiyonun ikisi yakalandı.

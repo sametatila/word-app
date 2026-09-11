@@ -7226,6 +7226,36 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     "beklenen",
   );
 
+  /* ── 206. saglayici katalogundaki env anahtarlari ornekte yazili mi ──
+   * `.env.example` operatorun TEK kesif yolu: AGENTS.md uc env dosyasinin
+   * ayni anahtar kumesini tasimasini sart kosuyor ve kume oradan cikiyor.
+   * Sohbet/STT saglayici katalogu ise anahtar adlarini KENDI ICINDE tutuyor
+   * (`envKey`, `envModel`, `sttEnvModel`) ve onlari `process.env[cfg.x]` diye
+   * HESAPLI okuyor.
+   *
+   * Hesapli okuma, "kodda gecen env anahtarlari" taramasindan KACIYOR: duz
+   * `process.env.AD` arayan bir tarama bu sekizini hic gormuyor. Nitekim
+   * `MISTRAL_STT_MODEL` katalogda adi geciyor ve okunuyordu ama ucunun de
+   * disindaydi - operator Groq'un STT modelini ezebiliyor, Mistral'inkini
+   * ezebilecegini HIC ogrenemiyordu.
+   *
+   * Kapi listeyi kataloktan cikarip ornekte ariyor: yeni bir saglayici
+   * eklendiginde anahtarlari da belgelensin. */
+  {
+    const katalog = read("src/lib/chat-providers.ts");
+    const ornek = read(".env.example");
+    const anahtarlar = [...katalog.matchAll(/(?:envKey|envModel|sttEnvModel):\s*"([A-Z0-9_]+)"/g)].map((m) => m[1]);
+    const ornekAd = new Set([...ornek.matchAll(/^\s*([A-Z][A-Z0-9_]*)\s*=/gm)].map((m) => m[1]));
+    const eksik = anahtarlar.filter((k) => !ornekAd.has(k));
+    sameList(
+      "katalog env anahtarlari ornekte",
+      eksik.length ? eksik : ["hepsi yazili (" + anahtarlar.length + ")"],
+      ["hepsi yazili (" + anahtarlar.length + ")"],
+      "ornekte olmayan",
+      "beklenen",
+    );
+  }
+
   /* ── 205. derin baglanti: iddia edilen yol ile karsilanan yol ────────
    * Ayni liste UC yerde yazili: iOS beyani (`APP_LINK_PATHS`), Android
    * manifestosu (`intent-filter` `android:path`) ve uygulamanin kendisi
