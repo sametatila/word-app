@@ -4514,7 +4514,8 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
 {
   const BOLUM = [
     ["baslik", /lesson\.lesson_complete/, /lesson\.lesson_complete/],
-    ["alistirma", /lessonp\.practice/, /lesson\.correct_production/],
+    /* Web de artik ortak anahtari kullaniyor (eskiden `lessonp.practice`). */
+    ["alistirma", /lesson\.correct_production/, /lesson\.correct_production/],
     ["basari", /lesson\.accuracy/, /lesson\.accuracy/],
     ["tur sayisi", /lessonp\.n_turns/, /lesson\.phase_roleplay/],
     ["kelimeler", /lessonp\.words_of_lesson/, /lessonp\.words_of_lesson/],
@@ -7290,6 +7291,58 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     "bulunan",
     "beklenen",
   );
+
+  /* -- 233. DERS KAPANISI: kutlamanin olcutu ve bilinmeyen hukum ---------
+   *
+   * Uc ayrisma cikti ve ikisi ayni koke bagli - web ozeti SUNUCUNUN HUKMUNE
+   * bakiyordu, Android ise dersin ALISTIRMA ISABETINE:
+   *
+   *  1. KUTLAMA VE MASKOT. Web `saved?.passed` boolean'ina bagliydi, yani
+   *     %79'la biten bir ders %10'la biten dersle ayni gorunuyordu. Android
+   *     uc kademe kullaniyor (`pct >= 80` kutla, `>= 50` sevin, alti sakin) ve
+   *     konfeti de ayni esikten cikiyor. Hukum sunucunun karari, kutlama ise
+   *     "nasil gecti"nin karsiligi - ikisi ayri sey olcuyor.
+   *  2. BASLIGIN BILINMEYEN HALI. Web `saved?.passed` truthy degilse
+   *     "konusma bitmedi" diyordu - kayit istegi DUSTUGUNDE de oyle diyordu:
+   *     kullanici dersi bitirmis ama ekran ona bitirmedigini soyluyordu.
+   *     Android yalniz hukum ACIKCA olumsuzken oyle diyor (`passed === false`)
+   *     ve bilinmeyeni "tamamlandi" sayiyor. Iki platform ayni bilinmeyene
+   *     TERS cevap veriyordu.
+   *  3. ILK KARONUN ETIKETI iki adliydi: web "Alistirma" diyen kendi
+   *     web-ozel anahtarini kullaniyordu, Android "dogru uretim". Ortak olan
+   *     kaldi, webin kopyasi silindi (`i18n:check` olu anahtar olarak
+   *     yakaladi). */
+  {
+    const dm = sil(read("mobile/src/screens/LessonScreen.tsx"));
+    const dw = sil(read("src/components/lessons/lesson-player.tsx"));
+    const WEB_SOZLUK = ["src/i18n/web/tr.ts", "src/i18n/web/en.ts", "src/i18n/web/de.ts"];
+    sameList(
+      "ders kapanisinin olcutleri",
+      [
+        "isabet hesabi=" + (/const pct = total \? Math\.round\(\(correct \/ total\) \* 100\) : 100/.test(dm) ? "correct/total" : (/const pct = /.test(dm) ? "BASKA" : "YOK")),
+        "maskot=" + (/pct >= 80 \? "celebrate" : pct >= 50 \? "happy" : "idle"/.test(dm) ? "uc kademe" : "TEK"),
+        "konfeti=" + (/<Celebrate show=\{pct >= 80\}/.test(dm) ? "80 esigi" : "BASKA"),
+        "baslik bilinmeyende=" + (/passed === false \? "lessonp\.conversation_unfinished" : "lesson\.lesson_complete"/.test(dm) ? "tamamlandi" : "BITMEDI"),
+        "ilk karo etiketi=" + (/lesson\.correct_production/.test(dm) ? "ortak" : "?"),
+      ],
+      [
+        "isabet hesabi=" + (/const pct = scoredTotal \? Math\.round\(\(correctCount \/ scoredTotal\) \* 100\) : 100/.test(dw) ? "correct/total" : (/const pct = /.test(dw) ? "BASKA" : "YOK")),
+        "maskot=" + (/pct >= 80 \? "cheer" : pct >= 50 \? "happy" : "idle"/.test(dw) ? "uc kademe" : "TEK"),
+        "konfeti=" + (/<Confetti fire=\{pct >= 80 \? 1 : 0\}/.test(dw) ? "80 esigi" : "BASKA"),
+        "baslik bilinmeyende=" + (/saved\?\.passed === false \? "lessonp\.conversation_unfinished" : "lesson\.lesson_complete"/.test(dw) ? "tamamlandi" : "BITMEDI"),
+        "ilk karo etiketi=" + (/lesson\.correct_production/.test(dw) ? "ortak" : "?"),
+      ],
+      "mobil",
+      "web",
+    );
+    sameList(
+      "ders kapanisinin olu anahtari kalkti",
+      ["lessonp.practice=" + WEB_SOZLUK.reduce((n, y) => n + (read(y).includes('"lessonp.practice"') ? 1 : 0), 0)],
+      ["lessonp.practice=0"],
+      "bulunan",
+      "beklenen",
+    );
+  }
 
   /* -- 232. SINAV SONUCU: sira, kutlama ve deneme cumlesi ---------------
    *

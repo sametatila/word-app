@@ -11700,3 +11700,44 @@ Bir not ölçümün kendisi hakkında: ilk anahtar diff'i `mockexam.passed`ı
 "mockexam.passed" : "mockexam.failed")` yazıyor, yani anahtar `t(`den hemen
 sonra değil. Çıkarıcı blok içindeki **tüm** i18n benzeri dizeleri toplayacak
 şekilde genişletildi; yoksa üçlü ifade içindeki her anahtar "eksik" görünürdü.
+
+## §11.349 — Ders kapanışı: kutlamanın ölçütü ve bilinmeyen hüküm
+
+Eksen **ders/konuşma oynatıcısı**ydı. İlk ölçüm bir şeyi netleştirdi:
+**özellik düzeyinde iki oynatıcı eşit** — rapor yolu, tur sayacı, devam etme,
+kalıp listesi, düzeltmeler, sınav bağlantısı ikisinde de var. Ayrışma **kopya
+alan adında**: mobil `lesson.*`, web `lessonp.*` (web-özel). Aynı cümlelerin
+iki ayrı yazımı; o kümeyi tek turda birleştirmek hem büyük hem riskli, o
+yüzden bu tur **karar verilebilir** olanı aldı: kapanış özetinin ölçütleri.
+
+Üç ayrışma çıktı ve ikisi aynı köke bağlı — web özeti **sunucunun hükmüne**
+bakıyordu, Android ise dersin **alıştırma isabetine**:
+
+1. **Kutlama ve maskot.** Web `saved?.passed` boolean'ına bağlıydı, yani
+   **%79'la biten bir ders %10'la biten dersle aynı görünüyordu**. Android üç
+   kademe kullanıyor (`pct >= 80` kutla, `>= 50` sevin, altı sakin) ve konfeti
+   de aynı eşikten çıkıyor. Hüküm sunucunun kararı, kutlama ise "nasıl
+   geçti"nin karşılığı — ikisi ayrı şey ölçüyor.
+2. **Başlığın bilinmeyen hâli.** Web `saved?.passed` truthy değilse "konuşma
+   bitmedi" diyordu — **kayıt isteği düştüğünde de öyle diyordu**: kullanıcı
+   dersi bitirmiş ama ekran ona bitirmediğini söylüyordu. Android yalnız hüküm
+   **açıkça** olumsuzken öyle diyor (`passed === false`) ve bilinmeyeni
+   "tamamlandı" sayıyor. İki platform aynı bilinmeyene **ters** cevap
+   veriyordu.
+3. **İlk karonun etiketi iki adlıydı**: web bu sayıya "Alıştırma" diyen kendi
+   web-özel anahtarını kullanıyordu, Android "doğru üretim". Ortak olan kaldı,
+   webin kopyası silindi.
+
+Web'e `pct` eklendi ve maskot, konfeti, yüzde karosu **aynı sayıdan**
+besleniyor — önce üç yerde üç ayrı hesap vardı.
+
+`parity-check` §233 beş ölçütle okuyor (isabet hesabı, maskot kademeleri,
+konfeti eşiği, başlığın bilinmeyen hâli, ilk karo etiketi) ve ölü anahtarın
+kalkmış olmasını ayrıca arıyor. "Ders kapanış özeti" kapısının `alistirma`
+deseni de güncellendi: web artık ortak anahtarı kullanıyor.
+
+Küçük bir gözlem ölçüm araçları hakkında: `i18n:check`in ölü anahtar
+denetimi **yorumları da okuyor**, yani anahtarın adını gerekçe yorumunda
+anmak onu "çağrılıyor" sayıyor. Yorum, anahtarı anmadan aynı şeyi
+söyleyecek biçimde yazıldı — yoksa silinmesi gereken anahtar sessizce
+kalırdı.
