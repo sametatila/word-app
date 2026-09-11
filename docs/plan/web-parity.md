@@ -10832,3 +10832,35 @@ Kusurlar **rozet duvarını** mobil karşılığıyla satır satır karşılaşt
 
 §215 sekiz ölçütü birlikte okuyor: iki platformun üç alan denetimi ve iki
 iskelet duyurusu. İki enjeksiyon (alanı silmek, duyuruyu silmek) yakalandı.
+
+## §11.330 — Gelişim ekranı: üç ayrışma, biri §11.126'nın son kalıntısı
+
+Profil/Gelişim ekranı mobil karşılığıyla karşılaştırıldı. Mimari fark
+meşru — web sunucuda çiziyor (`progress-view` saf sunum, veriyi sayfa
+veriyor), mobil istemcide çekip iskelet gösteriyor — o yüzden karşılaştırma
+**gösterilene** odaklandı. Üç ayrışma çıktı:
+
+**1. Ekranın adı.** Aynı ekran web'de "İlerlemem" (`progw.my_progress`,
+web-only sözlükte), Android'de "Gelişim" (`progress.progress`, **taban**
+sözlükte) diye yazıyordu. §11.102/§11.126 dokuz `prog.*`/`progw.*` kopyasını
+mobil kaynaklı anahtarlara taşımıştı; **bu biri hayatta kalmıştı** — çünkü
+çağrılıyordu ve §11.127'de yazılan ölü-anahtar kapısı yalnız *çağrılmayanı*
+görüyor. Üç yerde (sekme başlığı, geri düğmesi, `nav` etiketi) taban anahtara
+geçti ve son `progw.*` anahtarı üç web sözlüğünden düştü.
+
+**2. Ustalık kartının hedefi.** Android'de şeridin kendisi Kelimeler'e
+götürüyor ve gerekçesi orada yazılı: "Kelimelerim profilin menüsünde ayrı bir
+satırdı, oysa bu kartın detayından başka bir şey değil. Kart hedefsiz
+duruyordu, satır da bağlamsızdı; ikisi birleşti." Web'de şerit **tıklanamıyordu**
+— hedef sekme çubuğunda var ama karttan yol yoktu. Dokunulabilirliği söyleyen
+chevron da yoktu; Android'de sayının yanında duruyor.
+
+**3. Sayı biçimi — bu kez geride olan mobil.** Web `formatNumber` ile bin
+ayracı koyuyor (Türkçede nokta, İngilizcede virgül), mobil bu **tek satırda**
+ham sayı yazıyordu; oysa aynı dosyada başka altı yerde `formatNumber` geçiyor,
+yani karar değil atlama. Rozet duvarında aynı sınıf zaten düzeltilmişti
+(§11.329'un komşusu).
+
+§216 sekiz ölçütü birlikte okuyor: üç başlık yeri, ölü anahtarın yokluğu, iki
+platformun kart hedefi ve iki platformun sayı biçimi. Üç enjeksiyon aynı anda
+yakalandı.
