@@ -307,7 +307,9 @@ export function ItemScreen() {
           <Card padded style={{ marginTop: spacing.lg, alignItems: "center", gap: spacing.sm }}>
             <Celebrate show={band === "good"} />
             <Mascot mood={band === "good" ? "celebrate" : band === "mid" ? "happy" : "idle"} size={84} />
-            <Text variant="h2">
+            {/* TURUN SONUCU DUYURULUYOR - web `skills/player-shell` ile ayni
+                yer. Canli bolge metinde, uygulamanin kendi kalibi. */}
+            <Text accessibilityLiveRegion="polite" variant="h2">
               {exercise.skill === "writing" || exercise.monologue
                 ? t("item.tasks_done")
                 /* Hepsi doğruysa sayı yerine tek cümle - web de öyle söylüyor. */

@@ -92,7 +92,7 @@ export function ImmersionQuizPlayer({
            konfeti atıyor, geçmediyse duruyor. Yüzde tek başına bir sayıydı;
            "geçtin" / "biraz daha çalış" onu bir yargıya çeviriyor. Yeniden
            deneme düğmesi web'de hiç yoktu - tek çıkış Patika'ya dönmekti. */
-        <div className="card relative p-6 text-center">
+        <div role="status" className="card relative p-6 text-center">
           <Confetti fire={passed ? round + 1 : 0} />
           <Mascot mood={passed ? "cheer" : "idle"} size={84} className="mx-auto" />
           <p className="mt-1 text-h2">{t("common.n_correct", { correct: score, total: questions.length })}</p>

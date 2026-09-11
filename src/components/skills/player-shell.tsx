@@ -177,6 +177,13 @@ export function ResultCard({
       initial={{ opacity: 0, y: 14 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ type: "spring", stiffness: 200, damping: 22 }}
+      /* TURUN SONUCU DUYURULUYOR. Kart soru listesinin YERINE geliyor:
+         sorular kayboluyor, yerine puan ve yargi ("gectin" / "biraz daha
+         calis") beliriyor. Sesli okuyucu kullanan biri bunu hic duymuyordu -
+         tur bitti mi, kac dogru, gecti mi, hicbiri. `role="status"` sirasini
+         bekleyerek okuyor; hata degil, sonuc. Mobil karsiligi ayni yerde
+         `accessibilityLiveRegion`. */
+      role="status"
       className="card mt-5 p-5 text-center"
     >
       {/* Sonucu söyleyen şey burada da Erdi — kelime turlarında, etap
