@@ -7284,11 +7284,12 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
    * 11.336'nin sinifi: IKI TARAF DA sessizdi, yani karsilastirmali bir kapi
    * bunu goremezdi. Olcut mutlak.
    *
-   * Kapi BES yuzeyi tutuyor: beceri egzersizi (bes oynatici da
-   * `player-shell`den geciyor), unite quizi, patron turu, meydan okuma ve
-   * gunun turu. Kalan ALTI yuzey (haftalik, deneme sinavi, seviye sinavi,
-   * rol yapma, oturum, yuruyus) defterde 11.337 ve 11.338'de adlariyla
-   * yazili ve sirayla kapaniyor.
+   * Kapi SEKIZ yuzeyi tutuyor: beceri egzersizi (bes oynatici da
+   * `player-shell`den geciyor), unite quizi, patron turu, meydan okuma,
+   * gunun turu, haftalik sinav, deneme sinavi ve rol yapma. Kalan UC yuzey
+   * (seviye sinavi, oturum, yuruyus) defterde 11.339'da adlariyla yazili;
+   * ucu de COK DURUMLU (sinavin bolum sonu ile kagit sonu ayri, oturumun
+   * icinde etap kartlari var) ve o yuzden en sona birakildi.
    * Kapiyi yesil tutmak icin degil, her yuzeyin kendi turunda dogru yere
    * konmasi icin boyle: sonuc kabi her ekranda ayri yerde. */
   {
@@ -7302,9 +7303,29 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     const mobPatron = sil(read("mobile/src/screens/BossScreen.tsx"));
     const mobMeydan = sil(read("mobile/src/screens/ChallengeScreen.tsx"));
     const mobGunun = sil(read("mobile/src/screens/DailyScreen.tsx"));
+    const webHaftalik = sil(read("src/components/weekly-player.tsx"));
+    const webDeneme = sil(read("src/components/mock-exam-player.tsx"));
+    const webRol = sil(read("src/components/lessons/roleplay-exam.tsx"));
+    const mobHaftalik = sil(read("mobile/src/screens/WeeklyScreen.tsx"));
+    const mobDeneme = sil(read("mobile/src/screens/MockExamScreen.tsx"));
+    const mobRol = sil(read("mobile/src/screens/RoleplayExamScreen.tsx"));
     /* Mobil tarafta canli bolge SONUC METNINDE; hangi metin oldugu ekrana
        gore degisiyor, o yuzden her biri kendi dizesiyle araniyor. */
     const mobSonuc = (src, desen) => (desen.test(src) ? "duyuruyor" : "SESSIZ");
+    /**
+     * Sonucu isaretleyen dizeden GERI gidip ondan hemen once acilan kabin
+     * etiketini okuyor: kap `<section ...>` ya da `<div ...>` olabilir.
+     * Pencere tahmin edilmiyor, en yakin kap bulunuyor.
+     */
+    const dalDuyuruyor = (src, isaret) => {
+      const j = src.indexOf(isaret);
+      if (j < 0) return "ISARET YOK";
+      const oncesi = src.slice(0, j);
+      const k = Math.max(oncesi.lastIndexOf("<section"), oncesi.lastIndexOf('<div role="status" className="card'), oncesi.lastIndexOf('<div className="card'));
+      if (k < 0) return "KAP YOK";
+      const etiket = src.slice(k, src.indexOf(">", k) + 1);
+      return /role="status"/.test(etiket) ? "duyuruyor" : "SESSIZ";
+    };
     sameList(
       "turun sonucu duyuruluyor",
       [
@@ -7318,12 +7339,28 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
         "mobil patron=" + mobSonuc(mobPatron, /accessibilityLiveRegion="polite"[\s\S]{0,140}boss\.passed/),
         "mobil meydan=" + mobSonuc(mobMeydan, /accessibilityLiveRegion="polite" variant="display"/),
         "mobil gunun=" + mobSonuc(mobGunun, /accessibilityLiveRegion="polite" variant="display"/),
+        /* SONUC DALINDA MI, DOSYANIN HERHANGI BIR YERINDE MI? Bu dosyalarda
+           ayni kart sinifi uc-bes kez geciyor (giris, hata, sonuc) ve yalniz
+           "dosyada bir yerde role=status var" demek komsuyu olcmek olurdu:
+           rol yanlis dala kayarsa kapi yine yesil kalirdi.
+           KARAKTER PENCERESI DE YETMEDI - ilk yazimda 400 karakter verdim,
+           gercek mesafe 547 cikti ve kapi kendi kendine kirmizi oldu. Pencere
+           tahmin etmek yerine SONUCU ISARETLEYEN dizeden GERI gidip ondan
+           hemen once acilan kabin etiketine bakiliyor. */
+        "web haftalik=" + dalDuyuruyor(webHaftalik, "weekly.your_score"),
+        "web deneme=" + dalDuyuruyor(webDeneme, "mockexam.result"),
+        "web rol yapma=" + dalDuyuruyor(webRol, "rpexam.below_threshold"),
+        "mobil haftalik=" + mobSonuc(mobHaftalik, /accessibilityLiveRegion="polite" variant="h1"/),
+        "mobil deneme=" + mobSonuc(mobDeneme, /accessibilityLiveRegion="polite" variant="bodyStrong"/),
+        "mobil rol yapma=" + mobSonuc(mobRol, /accessibilityLiveRegion="polite" variant="h1"/),
       ],
       [
         "web beceri=duyuruyor", "web quiz=duyuruyor", "web patron=duyuruyor",
         "web meydan=duyuruyor", "web gunun=duyuruyor",
         "mobil beceri=duyuruyor", "mobil quiz=duyuruyor", "mobil patron=duyuruyor",
         "mobil meydan=duyuruyor", "mobil gunun=duyuruyor",
+        "web haftalik=duyuruyor", "web deneme=duyuruyor", "web rol yapma=duyuruyor",
+        "mobil haftalik=duyuruyor", "mobil deneme=duyuruyor", "mobil rol yapma=duyuruyor",
       ],
       "bulunan",
       "beklenen",
