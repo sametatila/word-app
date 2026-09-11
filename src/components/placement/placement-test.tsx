@@ -267,7 +267,7 @@ export function PlacementTest({ initialLast, canRetake, retakeDays }: { initialL
         {t(STAGE_TITLE_KEYS[stage])} · <span className="muted">{stage === "vocab" || stage === "grammar" ? level : ""}</span>
       </span>
       <div className="flex items-center gap-3">
-        <button type="button" onClick={() => leaveStage(stage)} className="muted underline-offset-2 hover:underline">
+        <button type="button" onClick={() => leaveStage(stage)} className="muted hit-8 underline-offset-2 hover:underline">
           {t("plc.skip_stage")}
         </button>
         {/* ÇIKIŞ YOLU YOKTU: test başlayınca tek çıkış tarayıcının geri
@@ -279,7 +279,7 @@ export function PlacementTest({ initialLast, canRetake, retakeDays }: { initialL
           type="button"
           onClick={() => setQuit(true)}
           aria-label={t("plc.quit_title")}
-          className="pressable flex h-8 w-8 shrink-0 items-center justify-center rounded-tile"
+          className="pressable hit-8 flex h-8 w-8 shrink-0 items-center justify-center rounded-tile"
           style={{ background: "var(--surface-2)" }}
         >
           <XIcon size={16} />

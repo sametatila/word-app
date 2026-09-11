@@ -162,7 +162,7 @@ export function WritingsCard({ showEmpty = false }: { showEmpty?: boolean }) {
                     {score === null ? ` · ${t("writings.to_be_graded")}` : ""}
                   </span>
                 </button>
-                <button type="button" onClick={() => void remove(it.id)} className="btn btn-ghost shrink-0 px-2 py-1 text-caption">
+                <button type="button" onClick={() => void remove(it.id)} className="btn btn-ghost hit-8 shrink-0 px-2 py-1 text-caption">
                   {t("common.delete")}
                 </button>
               </div>

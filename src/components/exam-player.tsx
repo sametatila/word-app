@@ -447,7 +447,7 @@ export function ExamPlayer({ level, module }: { level: CefrLevel; module: number
           type="button"
           onClick={() => setQuit(true)}
           aria-label={t("exam.quit_title")}
-          className="pressable flex h-8 w-8 shrink-0 items-center justify-center rounded-tile"
+          className="pressable hit-8 flex h-8 w-8 shrink-0 items-center justify-center rounded-tile"
           style={{ background: "var(--surface-2)" }}
         >
           <XIcon size={16} />

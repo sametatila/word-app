@@ -1098,7 +1098,9 @@ export function LessonPlayer({
             type="button"
             onClick={() => setResumed(false)}
             aria-label={t("common.close")}
-            className="muted shrink-0"
+            /* 14px ikon, dolgusu yoktu: hedef 14x14 idi. `p-1` + `hit-8` ile
+               38 - kardesi olan dinle dugmesi de ayni kaliba baglaniyor. */
+            className="muted hit-8 shrink-0 p-1"
           >
             <XIcon size={14} />
           </button>
@@ -1987,7 +1989,7 @@ function Bubble({
               whileTap={{ scale: 0.9 }}
               onClick={() => speakGerman(body)}
               aria-label={t("lessonp.listen_again")}
-              className="btn btn-ghost ml-1 h-7 w-7 shrink-0 align-middle"
+              className="btn btn-ghost hit-8 ml-1 h-7 w-7 shrink-0 align-middle"
             >
               <SpeakerIcon size={13} />
             </motion.button>

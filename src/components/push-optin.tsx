@@ -181,7 +181,7 @@ function Card({
         <button
           onClick={onClose}
           aria-label={t("common.close")}
-          className="muted shrink-0 rounded-chip p-1 hover:text-[color:var(--text)]"
+          className="muted hit-8 shrink-0 rounded-chip p-1 hover:text-[color:var(--text)]"
         >
           <XIcon size={15} />
         </button>

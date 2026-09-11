@@ -102,7 +102,7 @@ export function VoicePicker({
               <button
                 type="button"
                 onClick={() => preview(v.id)}
-                className="chip flex h-8 w-8 shrink-0 items-center justify-center"
+                className="chip hit-8 flex h-8 w-8 shrink-0 items-center justify-center"
                 aria-label={t("voice.listen_to", { name: v.label })}
                 title={t("item.listen")}
               >
