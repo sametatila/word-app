@@ -47,6 +47,7 @@
     "check:hit": "node scripts/check-hit-target.mjs",
     "check:selection": "node scripts/check-selection-state.mjs",
     "check:loading": "node scripts/check-loading-skeleton.mjs",
+    "check:title": "node scripts/check-title-only.mjs",
     "check:pairs": "npm run lessons:apply && npm run lessons:apply-de && tsx --tsconfig scripts/tsconfig.e2e.json scripts/check-pairs.ts",
     "test:legal-db": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/test-legal-db.ts",
     "test:entitlement": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/test-entitlement.ts",
