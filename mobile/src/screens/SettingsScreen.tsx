@@ -229,6 +229,10 @@ export function SettingsScreen() {
             placeholderTextColor={colors.textFaint}
             returnKeyType="done"
             autoCapitalize="words"
+            // Sınır yoktu: kullanıcı istediği kadar yazabiliyor, uç 40'a
+            // kırpıyordu (`/api/profile`) ve ad bir sonraki açılışta kısalmış
+            // görünüyordu. Web kutusu da 60 diyordu, o da düzeltildi.
+            maxLength={40}
             style={{ backgroundColor: colors.surface2, borderRadius: radii.md, paddingHorizontal: spacing.lg, paddingVertical: 13, color: colors.text, fontSize: 16 }}
           />
           {/* Hesap silme buradan PROFİLE taşındı (çıkış yapın altına): yıkıcı

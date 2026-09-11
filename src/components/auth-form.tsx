@@ -241,6 +241,8 @@ export function AuthForm({
             value={name}
             onChange={(e) => setName(e.target.value)}
             placeholder={t("auth.your_name_optional")}
+            /* Sınır profil formuyla aynı: uç adı 40'a kırpıyor. */
+            maxLength={40}
             autoComplete="name"
             className={authInputClass}
           />

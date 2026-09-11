@@ -500,7 +500,7 @@ export function AuthScreen() {
         ) : (
           <View style={{ gap: spacing.md }}>
             {mode === "signup" && (
-              <TextInput value={name} onChangeText={setName} placeholder={t("auth.your_name_optional")} placeholderTextColor={colors.textFaint} autoCapitalize="words" style={input} />
+              <TextInput value={name} onChangeText={setName} placeholder={t("auth.your_name_optional")} placeholderTextColor={colors.textFaint} autoCapitalize="words" maxLength={40} style={input} />
             )}
             <TextInput value={email} onChangeText={setEmail} placeholder={t("auth.email")} placeholderTextColor={colors.textFaint} keyboardType="email-address" autoCapitalize="none" autoCorrect={false} style={input} />
             <TextInput returnKeyType="go" onSubmitEditing={() => { if (!busy) void submit(); }} value={password} onChangeText={setPassword} placeholder={t("auth.password_min_hint")} placeholderTextColor={colors.textFaint} secureTextEntry style={input} />

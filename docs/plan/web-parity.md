@@ -7951,3 +7951,33 @@ ucun kırpması yan yana. Üç enjeksiyonun üçü de yakalandı — sonuncusu i
 birden düşürdü (kırpma değişirse iki yüzey de ayrışır), yani kapı
 "sunucu ne diyorsa o" kuralını ölçüyor, iki yüzeyin birbirine benzemesini
 değil.
+
+### 11.239 Adın kırk karakterden uzunu sessizce kayboluyordu
+
+§144'ün kuralının **ters yönü**: yüzey, sunucunun kabul ettiğinden az teklif
+etmemeli — **tuttuğundan çok da.**
+
+Uç görünen adı kırk karaktere kırpıyor (`/api/profile` `name.slice(0, 40)`)
+ama hiçbir kutu bunu söylemiyordu:
+
+| kutu | sınır |
+|---|---|
+| web profil formu | 60 |
+| web kayıt formu | yok |
+| Android ayarlar | yok |
+| Android giriş | yok |
+
+Kullanıcı elli beş karakterlik adını yazıyor, ekran "kaydedildi" diyor ve ad
+bir sonraki açılışta kısalmış oluyordu. **Ortada hata mesajı yok**, çünkü
+sunucu reddetmiyor — sessizce kesiyor. Dördü de 40'a çekildi.
+
+**§145** kutuları tek tek saymıyor: **adın girildiği her yeri** tarıyor ve
+sınırı ucun kırpmasından alıyor, yani kırpma değişirse dört kutu birden
+ayrışır.
+
+Kapının ilk hâli iki web enjeksiyonunu da kaçırdı: etiketi `[^>]*` ile
+okuyordu ve `onChange={(e) => ...}` içindeki **ok işaretinin `>`sinde**
+duruyordu — ad kutusunun kendisi hiç bulunamıyordu. Etiket artık kendi
+kapanışına (`/>`) kadar okunuyor. **On dokuzuncu biçim** ve bu kez mobil
+tarafı yakalayıp web tarafını kaçırması kapıyı "yarı kör" yapıyordu: iki
+enjeksiyon yeşil, iki enjeksiyon kırmızı — asimetri olmasa fark edilmezdi.

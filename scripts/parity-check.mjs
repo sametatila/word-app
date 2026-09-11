@@ -5110,6 +5110,46 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   );
 }
 
+/* ── 145. gorunen adin uzunlugu ───────────────────────────────────────────
+ * §144'un kuralinin TERS yonu. Uc adi kirk karaktere kirpiyor
+ * (`/api/profile` `name.slice(0, 40)`) ama hicbir kutu bunu soylemiyordu:
+ * web profil formu 60 kabul ediyor, oteki uc kutunun (web kayit, mobil
+ * ayarlar, mobil giris) hic siniri yoktu. Kullanici elli bes karakterlik
+ * adini yaziyor, ekran "kaydedildi" diyor ve ad bir sonraki acilista kisalmis
+ * oluyordu - sessiz bir kayip, cunku ortada hata mesaji yok.
+ *
+ * Olculen: adin girildigi DORT kutunun da sinirini ucun kirpmasindan almasi.
+ * Kutular tek tek yazili degil, ADIN girildigi her yer taraniyor. */
+{
+  const uc = read("src/app/api/profile/route.ts").match(/name\.slice\(0,\s*(\d+)\)/)?.[1] ?? "?";
+  const walkTsx2 = (d, out = []) => {
+    for (const e of readdirSync(new URL("../" + d, import.meta.url), { withFileTypes: true })) {
+      const p = d + "/" + e.name;
+      if (e.isDirectory()) { if (!/node_modules|__tests__/.test("/" + p)) walkTsx2(p, out); }
+      else if (/\.tsx$/.test(e.name)) out.push(p);
+    }
+    return out;
+  };
+  const yanlis = [];
+  for (const kok of ["src/components", "src/app", "mobile/src"]) {
+    for (const f of walkTsx2(kok)) {
+      const src = read(f).replace(/\/\*[\s\S]*?\*\//g, " ").replace(/(^|[^:"'`\\])\/\/.*$/gm, "$1");
+      /* Ad kutusu: `displayName`/`your_name_optional` tasiyan bir girdi. */
+      /* Etiket KENDI KAPANISINA kadar okunuyor. `[^>]*` ile kesmek webde
+         calismiyordu: `onChange={(e) => ...}` icindeki OK isareti bir `>` ve
+         desen tam orada duruyordu, yani ad kutusunun kendisi hic bulunamadi -
+         iki web enjeksiyonu da yesil gecti. On dokuzuncu biçim. */
+      for (const m of src.matchAll(/<(?:input|TextInput)\b[\s\S]{0,800}?\/>/g)) {
+        const etiket = m[0];
+        if (!/settings\.display_name|auth\.your_name_optional/.test(etiket)) continue;
+        const sinir = etiket.match(/maxLength=\{(\d+)\}/)?.[1];
+        if (sinir !== uc) yanlis.push(f.split("/").pop() + ": " + (sinir ?? "sinirsiz"));
+      }
+    }
+  }
+  sameList("gorunen ad sinirlari", yanlis.length ? yanlis : ["yok"], ["yok"], "ucun kirpmasindan farkli", "beklenen");
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"

@@ -167,7 +167,14 @@ export function ProfileForm({
           <input
             value={displayName}
             onChange={(e) => setDisplayName(e.target.value)}
-            maxLength={60}
+            /* UZUNLUK SUNUCUNUN TUTTUĞU KADAR. Kutu 60 karakter kabul
+               ediyordu ama uç adı 40'a kırpıyor (`/api/profile`
+               `name.slice(0, 40)`): kullanıcı 55 karakterlik adını yazıp
+               kaydediyor, ekran "kaydedildi" diyor ve ad bir sonraki açılışta
+               kısalmış oluyordu — sessiz bir kayıp. §144'ün kuralının ters
+               yönü: yüzey, sunucunun KABUL ETTİĞİNDEN AZ da teklif etmemeli,
+               TUTTUĞUNDAN ÇOK da. */
+            maxLength={40}
             placeholder={t("settings.display_name")}
             className="option w-full px-4 py-3 text-base outline-none focus:border-[color:var(--color-brand)]"
           />
