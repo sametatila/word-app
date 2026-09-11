@@ -7228,6 +7228,15 @@ Reddin gerçekten kullanıcıya gösterildiği her yüzey artık yayın yapıyor
 olmadığı yerde ölçülecek an da yok. Muafiyetin kendisi ölçülüyor: üçüncü bir
 çağıran çıkarsa satır düşer (§11.210'un kuralı).
 
+*Ek ölçüm (2026-09-11):* muafiyetin ZARARSIZ olmasının sebebi de yazılsın —
+"haftada bir" kuralı premium'dan bağımsız olarak yapısal: `weeklyStatus.done`
+o haftanın `exams` satırına bakıyor ve herkesi (premium dahil) bir denemeyle
+sınırlıyor. Yani `canWeeklyExam`in premium dalı (`havuzun tamamı`) bugün
+hiçbir şeyi değiştiremez ve serbest kotanın `weeklyExams: 1` olması ikisini
+aynı sonuca getiriyor. Premium'un bu eksende gerçekten bir şey açması
+isteniyorsa `weeklyStatus`un da premium'u bilmesi gerekir — ürün kararı,
+Samet'e ait (§11.254 sınıfı).
+
 Yan düzeltme: web `askAssess` içindeki durum kodu tablosu saf bir yardımcıya
 ayrıldı (`refusal`). Ölçüm çağrısı `case 403`ün içine konunca tablo yan
 etkili olmuş ve §104'ün karşılaştırması bozulmuştu — karar ile yan etki
@@ -10755,3 +10764,37 @@ olarak dönüyor. Bugün zararsız; biri bu değerleri ekrana basarsa arayüzü
 Almanca olan kullanıcı Türkçe görür. Dosyanın yorumu artık bunu söylüyor:
 anahtarlar sözleşme, değerler yalnız insan için okunabilir etiket, yeni bir
 kapının metni sözlüğe yazılır.
+
+
+## §11.328 — Karar gerçek dili okuyor, yükleme sabit "tr" yazıyordu
+
+Bu turun sorusu §11.326'nın genellemesi oldu: **adı olan bir koşul, okuma
+yolunda uygulanıp yazma/üretim yolunda atlanıyor mu?** Premium kapıları
+(`canPocketWalk`, `canAiPractice`, `canMockPaper`) tarandı — üçü de kendi
+eylem ucunda duruyor (`/api/stt`, `/api/assess`, `/api/mock-exam` POST).
+`canWeeklyExam`in yokluğu zaten defterde yazılı (§11.211) ve bu turda
+gerekçesine bir ölçüm eklendi.
+
+Yeni kusur **başka bir yerde** çıktı: içerik paritesi seçicilerinde.
+
+Isınma (`first-words`) ve deneme yerleştirme (`placement-demo`) içeriğinin
+hangi **ana dil – kurs** paritesinde var olduğu veriden geliyor:
+`hasX(lang, course)` onboarding'in "bu adımı göstereyim mi" kararı,
+`xFor(lang, course, …)` de yüklemesi. İkisi aynı dili okumak zorunda.
+
+Isınmada okumuyordu: web yüklemeyi **`firstWordsFor("tr", …)`** diye sabit
+yazıyordu, karar ise gerçek dili veriyordu. Mobil karşılığı doğruydu
+(`FirstPracticeScreen`: `firstWordsFor(currentLang(), …)`), kardeş yüzey
+(`demo-placement`) de doğruydu — yani tasarım kararı değil, gözden kaçma.
+
+İki sonucu var:
+1. **Bugün görünen:** doğrudan `/first-words` adresine giren Almanca ya da
+   İngilizce arayüzlü bir kullanıcı Türkçe karşılıklar görüyor. Sayfa `(app)`
+   grubunun dışında ve oturum istemiyor, yani adres tek başına yeterli.
+2. **Yarın görünecek:** `de-de` ya da `en-en` paritesi yazıldığı gün
+   onboarding kullanıcıyı ısınmaya yollar (`hasFirstWords` o parite için true
+   döner) ve sayfa Türkçe seti yükler. Bugün tek parite `tr-de` olduğu için
+   fark gizli.
+
+§214 dört yüzeyin sekiz çağrı yerini birlikte okuyor: karar ve yükleme, iki
+platformda, iki içerik türü için. Enjeksiyon (`"tr"`ü geri koymak) yakalandı.
