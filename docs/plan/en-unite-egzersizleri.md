@@ -61,8 +61,8 @@ mi çıkacağına yazar karar verir.
 | Seviye | Ünite | Durum |
 |---|---|---|
 | **A1** | **1–25** | **TAM** (2026-09-11/12) — 150 egzersiz, 150/150 yuva |
-| A2 | 1–9 | **yazıldı** (2026-09-12) — 54 egzersiz, 54/150 yuva |
-| A2 | 10–25 | bekliyor |
+| A2 | 1–12 | **yazıldı** (2026-09-12) — 72 egzersiz, 72/150 yuva |
+| A2 | 13–25 | bekliyor |
 | B1 · B2 · C1 | 1–25 | bekliyor |
 
 **A1 ünite 1 (2026-09-11).** Dört dersi Hello! · How are you? · I am, you
@@ -379,6 +379,44 @@ welcome, the hard part, company, fourth, the best part, winter, party,
 real) ve iki soruyu yeniden yazdırdı: „besides“ ile kurduğum soru kökü
 metinde geçmeyen bir sözcük getiriyordu, `en-a2-u8-l2`nin dikte cümlesi de
 bölümde virgülle sürdüğü için tam eşleşmiyordu — bölüm noktayla bitirildi.
+
+**A2 ünite 10–12 (2026-09-12).** Ünite 10 Calling a repairman ·
+Building rules · My neighbourhood · Local shops; ünite 11 Reading a job ad ·
+My experience · At the interview · My workplace; ünite 12 What I do at work ·
+A short meeting · Asking for time off · A problem at work. On sekiz
+egzersiz; ünite dışı ölçüm %0,0. A2 yuvalarının 72'si dolu.
+
+Ünite 10 A1'de yarım bırakılan işi tamamlıyor. Orada „mustn't“ tek başına
+öğretilmiş ve Almanca eksende şu uyarı yazılmıştı: „mustn't“ Almancada
+„musst nicht“ sanılıyor, oysa o „darfst nicht“. Şimdi üçlünün üçüncü ayağı
+geliyor ve çaprazlama tamamlanıyor: „don't have to“ TAM OLARAK „du musst
+nicht“. Yani iki dilin iki biçimi birbirinin karşısında duruyor, yalnız
+ters eşleşiyor — bu, hattın en temiz „yanlış dost“ çifti ve iki satır
+birlikte okunduğunda kendini açıklıyor.
+
+Ünite 11 present perfect ile simple past'ı aynı özgeçmişte yan yana
+koyuyor: „I have worked at a big company“ deneyimi, „I worked there for
+two years“ kapanmış dönemi söylüyor. Almanca eksende bu ayrımın karşılığı
+YOK — konuşulan Almanca ikisinde de Perfekt kuruyor („ich habe
+gearbeitet“). Karşılık bunu iki yerde adıyla söylüyor, çünkü Almanca
+okuyan öğrenci burada kendi diline yaslanamıyor; yaslanırsa iki biçimi de
+aynı sanar.
+
+Ünite 12 kibarlık merdivenini kuruyor: „Can I …?“ → „Could I …?“ →
+„Would it be possible to …?“. Bu merdivenin Almancada birebir karşılığı
+var („darf ich“ → „könnte ich“ → „wäre es möglich“), yani yeniden ölçüm
+burada satırı BÜYÜTMÜYOR — Konjunktiv aynı işi görüyor. Buna karşılık
+„I'll fix it today“ ile „going to“ arasındaki ayrım yine Almancada yok;
+ünite 4'te açılan not burada tekrar gerekiyor, çünkü karar ile plan
+ayrımı A2 boyunca dönüp duruyor.
+
+Ölçüm bu turda on üç sözlükçe maddesi ekletti ve üç yeri yeniden
+yazdırdı: „your own flat“ ile „In winter“ metinden çıkarıldı (ikisi de tek
+sözcük için sözlükçe şişirecekti), bir soru kökündeki „another“ „far from
+the team“ ile değiştirildi, ve bir dinleme bölümünün içindeki seslenme
+(„Ela, do you have two minutes?“) kaldırıldı — konuşmacı etiketi satır
+başındayken ölçümden düşüyor ama cümle İÇİNDEKİ ad düşmüyor, bu da
+makinenin bilinen ve kabul edilmiş sınırı.
 
 ## Tamamlanma ölçütü
 

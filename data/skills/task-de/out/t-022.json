@@ -1,0 +1,307 @@
+[
+ {
+  "tr": "İzin talebini doldur.",
+  "kind": "form.prompt",
+  "de": "Fülle den Urlaubsantrag aus."
+ },
+ {
+  "tr": "Başvuru kartını doldur.",
+  "kind": "form.prompt",
+  "de": "Fülle die Bewerbungskarte aus."
+ },
+ {
+  "tr": "Bina kuralları kartını doldur.",
+  "kind": "form.prompt",
+  "de": "Fülle die Karte zur Hausordnung aus."
+ },
+ {
+  "tr": "İzin cuma; sebep ablanın gelişi; görevlere Mert bakacak; ağustosta üç gün isteniyor.",
+  "kind": "form.facts",
+  "de": "Urlaub am Freitag; Grund die Ankunft der Schwester; Mert übernimmt die Aufgaben; im August drei Tage erbeten."
+ },
+ {
+  "tr": "Mutfakta dört yıl; 2021–2023 büyük şirket; sonra iki yıl küçük restoran; başlangıç bir mart.",
+  "kind": "form.facts",
+  "de": "Vier Jahre in der Küche; 2021–2023 große Firma; danach zwei Jahre kleines Restaurant; Beginn am ersten März."
+ },
+ {
+  "tr": "Çöp sekizden önce; gürültü geceden sabaha yasak; merdivenler şirkete ait; tavan arası nisandan ekime açık.",
+  "kind": "form.facts",
+  "de": "Müll vor acht; Lärm von nachts bis morgens verboten; Treppen macht eine Firma; Dachboden von April bis Oktober offen."
+ },
+ {
+  "tr": "Deneyim zorunlu.",
+  "kind": "build.tr",
+  "de": "Erfahrung ist Pflicht."
+ },
+ {
+  "tr": "Sana katılıyorum.",
+  "kind": "build.tr",
+  "de": "Ich stimme dir zu."
+ },
+ {
+  "tr": "Bugün düzelteceğim.",
+  "kind": "build.tr",
+  "de": "Ich bringe es heute in Ordnung."
+ },
+ {
+  "tr": "Ne kadara mal olacak?",
+  "kind": "build.tr",
+  "de": "Was wird es kosten?"
+ },
+ {
+  "tr": "Onu henüz bitirmedim.",
+  "kind": "build.tr",
+  "de": "Ich bin noch nicht damit fertig."
+ },
+ {
+  "tr": "Yakında bir park var.",
+  "kind": "build.tr",
+  "de": "In der Nähe gibt es einen Park."
+ },
+ {
+  "tr": "Bence şunu yapmalıyız.",
+  "kind": "build.tr",
+  "de": "Ich finde, wir sollten das machen."
+ },
+ {
+  "tr": "İki yıl deneyimim var.",
+  "kind": "build.tr",
+  "de": "Ich habe zwei Jahre Erfahrung."
+ },
+ {
+  "tr": "Orada iki yıl çalıştım.",
+  "kind": "build.tr",
+  "de": "Ich habe dort zwei Jahre gearbeitet."
+ },
+ {
+  "tr": "Pazartesi başlayabilirim.",
+  "kind": "build.tr",
+  "de": "Ich kann am Montag anfangen."
+ },
+ {
+  "tr": "Bir şey söyleyebilir miyim?",
+  "kind": "build.tr",
+  "de": "Darf ich etwas sagen?"
+ },
+ {
+  "tr": "Bu işe başvurmak istiyorum.",
+  "kind": "build.tr",
+  "de": "Ich möchte mich auf diese Stelle bewerben."
+ },
+ {
+  "tr": "Çamaşır makinem çalışmıyor.",
+  "kind": "build.tr",
+  "de": "Meine Waschmaschine geht nicht."
+ },
+ {
+  "tr": "Bir gün izin alabilir miyim?",
+  "kind": "build.tr",
+  "de": "Könnte ich einen Tag freinehmen?"
+ },
+ {
+  "tr": "Büyük bir şirkette çalıştım.",
+  "kind": "build.tr",
+  "de": "Ich habe in einer großen Firma gearbeitet."
+ },
+ {
+  "tr": "Erken çıkmam mümkün olur mu?",
+  "kind": "build.tr",
+  "de": "Wäre es möglich, früher zu gehen?"
+ },
+ {
+  "tr": "Yürüyerek on dakika sürüyor.",
+  "kind": "build.tr",
+  "de": "Zu Fuß dauert es zehn Minuten."
+ },
+ {
+  "tr": "Geceleri gürültü yapmamalısın.",
+  "kind": "build.tr",
+  "de": "Nachts darfst du keinen Lärm machen."
+ },
+ {
+  "tr": "Özür dilerim, bir hata yaptım.",
+  "kind": "build.tr",
+  "de": "Entschuldigung, ich habe einen Fehler gemacht."
+ },
+ {
+  "tr": "Şehir merkezinden daha sessiz.",
+  "kind": "build.tr",
+  "de": "Es ist ruhiger als die Innenstadt."
+ },
+ {
+  "tr": "Üç yıldır bir takımda çalışıyorum.",
+  "kind": "build.tr",
+  "de": "Ich arbeite seit drei Jahren im Team."
+ },
+ {
+  "tr": "En güçlü yönüm insanlarla çalışmak.",
+  "kind": "build.tr",
+  "de": "Meine größte Stärke ist die Arbeit mit Menschen."
+ },
+ {
+  "tr": "Merdivenleri temizlemen gerekmiyor.",
+  "kind": "build.tr",
+  "de": "Du musst die Treppen nicht putzen."
+ },
+ {
+  "tr": "Ne kadar zamandır burada çalışıyorsun?",
+  "kind": "build.tr",
+  "de": "Seit wann arbeitest du hier?"
+ },
+ {
+  "tr": "Erken çıkmam gerekiyor çünkü ablam geliyor.",
+  "kind": "build.tr",
+  "de": "Ich muss früher gehen, weil meine Schwester ankommt."
+ },
+ {
+  "tr": "Çöpü akşam sekizden önce çöp kutusuna koymalısın.",
+  "kind": "build.tr",
+  "de": "Du musst den Müll vor acht Uhr abends in die Tonne tun."
+ },
+ {
+  "tr": "„mustn't“ YASAK demek: izin yok.",
+  "kind": "build.hint",
+  "de": "„mustn't“ heißt VERBOT: „du darfst nicht“, nicht „du musst nicht“."
+ },
+ {
+  "tr": "„nearby“ tek sözcük ve önüne edat almıyor.",
+  "kind": "build.hint",
+  "de": "„nearby“ ist ein Wort und nimmt keine Präposition davor."
+ },
+ {
+  "tr": "Gün „on“ ile; „can“ sonrası fiil eksiz kalıyor.",
+  "kind": "build.hint",
+  "de": "Der Tag mit „on“; nach „can“ bleibt das Verb endungslos."
+ },
+ {
+  "tr": "Süre + hâlâ sürüyor: „for“ ile present perfect.",
+  "kind": "build.hint",
+  "de": "Dauer und noch andauernd: „for“ mit present perfect. Deutsch nimmt das Präsens."
+ },
+ {
+  "tr": "Saat sorusu „what time“ ile; „open“ burada fiil.",
+  "kind": "build.hint",
+  "de": "Die Uhrzeitfrage mit „what time“; „open“ ist hier ein Verb."
+ },
+ {
+  "tr": "Yüklemden sonra fiil „-ing“ alıyor, mastar değil.",
+  "kind": "build.hint",
+  "de": "Nach dem Prädikat steht das Verb auf „-ing“, kein Infinitiv."
+ },
+ {
+  "tr": "En alt basamak: „can“. Toplantıda yeterince kibar.",
+  "kind": "build.hint",
+  "de": "Unterste Stufe: „can“. In der Besprechung höflich genug."
+ },
+ {
+  "tr": "Şu anda bozuk olduğu için şimdiki zamanın olumsuzu.",
+  "kind": "build.hint",
+  "de": "Weil es gerade kaputt ist, steht die Verlaufsform in der Verneinung."
+ },
+ {
+  "tr": "„yet“ olumsuzda ve en sonda: iş bitmedi ama bitecek.",
+  "kind": "build.hint",
+  "de": "„yet“ in der Verneinung und ganz hinten: noch nicht fertig, aber es wird."
+ },
+ {
+  "tr": "Süre için „it takes“ kalıbı; baştaki „it“ boş bir özne.",
+  "kind": "build.hint",
+  "de": "Für die Dauer das Muster „it takes“; das „it“ ist ein leeres Subjekt wie „es“."
+ },
+ {
+  "tr": "„have to“ dışarıdan gelen zorunluluk: kural böyle diyor.",
+  "kind": "build.hint",
+  "de": "„have to“ ist die Pflicht von außen: die Regel sagt es so."
+ },
+ {
+  "tr": "„I think“ öneriyi yumuşatıyor; „should“ emir değil öneri.",
+  "kind": "build.hint",
+  "de": "„I think“ macht den Vorschlag weicher; „should“ ist Rat, kein Befehl."
+ },
+ {
+  "tr": "„need“ sonrası „to“ + fiil; gerekçeyi „because“ bağlıyor.",
+  "kind": "build.hint",
+  "de": "Nach „need“ kommt „to“ + Verb; den Grund hängt „because“ an."
+ },
+ {
+  "tr": "„agree“ kendi edatını taşıyor: with. „agree to you“ olmaz.",
+  "kind": "build.hint",
+  "de": "„agree“ trägt seine eigene Präposition: with — deutsch „zustimmen“ mit Dativ."
+ },
+ {
+  "tr": "Orta basamak: „could“ aynı soruyu bir adım uzaklaştırıyor.",
+  "kind": "build.hint",
+  "de": "Mittlere Stufe: „could“ rückt dieselbe Frage einen Schritt weg, wie „könnte“."
+ },
+ {
+  "tr": "Hata „make“ ile kuruluyor; „do a mistake“ diye bir şey yok.",
+  "kind": "build.hint",
+  "de": "Der Fehler wird mit „make“ gebildet; „do a mistake“ gibt es nicht."
+ },
+ {
+  "tr": "„cost“ burada fiil, isim değil; gelecek „will“ ile kuruluyor.",
+  "kind": "build.hint",
+  "de": "„cost“ ist hier Verb, kein Nomen; die Zukunft baut „will“."
+ },
+ {
+  "tr": "En üst basamak: özne bile kayboluyor, istek kişiden ayrılıyor.",
+  "kind": "build.hint",
+  "de": "Oberste Stufe: sogar das Subjekt verschwindet, die Bitte löst sich von der Person."
+ },
+ {
+  "tr": "„quiet“ kısa: „-er“ alıyor ve sondaki „t“den önce „e“ düşmüyor.",
+  "kind": "build.hint",
+  "de": "„quiet“ ist kurz: es nimmt „-er“ und das „e“ vor dem „t“ bleibt stehen."
+ },
+ {
+  "tr": "„don't have to“ yasak DEĞİL, gerek yok — „mustn't“un tam karşıtı.",
+  "kind": "build.hint",
+  "de": "„don't have to“ ist KEIN Verbot, sondern keine Pflicht: genau das deutsche „du musst nicht“."
+ },
+ {
+  "tr": "Buradaki „have“ sahiplik, yardımcı fiil değil; ölçüyü „of“ bağlıyor.",
+  "kind": "build.hint",
+  "de": "Dieses „have“ ist Besitz, kein Hilfsverb; das Maß hängt „of“ an."
+ },
+ {
+  "tr": "Edilgen kuruluyor: „is required“. İlanda kimin istediği zaten belli.",
+  "kind": "build.hint",
+  "de": "Passiv: „is required“. In der Anzeige ist ohnehin klar, wer es verlangt."
+ },
+ {
+  "tr": "„apply“ kendi edatını taşıyor: for. Başvurulan şey ondan sonra geliyor.",
+  "kind": "build.hint",
+  "de": "„apply“ trägt seine eigene Präposition: for — deutsch „sich bewerben auf“."
+ },
+ {
+  "tr": "İş sürüyor, o yüzden present perfect; Türkçe aynı yerde şimdiki zaman diyor.",
+  "kind": "build.hint",
+  "de": "Die Arbeit dauert an, deshalb present perfect; Deutsch sagt hier wie das Türkische Präsens."
+ },
+ {
+  "tr": "Ne zaman olduğu söylenmiyor: present perfect. Önemli olan deneyimin kendisi.",
+  "kind": "build.hint",
+  "de": "Der Zeitpunkt wird nicht genannt: present perfect. Wichtig ist die Erfahrung selbst."
+ },
+ {
+  "tr": "O anda verilen karar „will“ ile; „going to“ olsaydı önceden planlanmış olurdu.",
+  "kind": "build.hint",
+  "de": "Der Entschluss im Moment steht mit „will“; „going to“ wäre vorher geplant. Deutsch trennt das nicht."
+ },
+ {
+  "tr": "Kapanmış ve bitmiş bir dönem: simple past. „have worked“ olsaydı hâlâ sürüyor derdi.",
+  "kind": "build.hint",
+  "de": "Ein abgeschlossener Abschnitt: simple past. Mit „have worked“ würde es noch andauern; Deutsch nimmt beide Male das Perfekt."
+ },
+ {
+  "tr": "Mektubun sırası: doğru sıraya koy.",
+  "kind": "question.text",
+  "de": "Die Reihenfolge des Briefes: bring sie in die richtige Ordnung."
+ },
+ {
+  "tr": "İş geçmişinin sırası: doğru sıraya koy.",
+  "kind": "question.text",
+  "de": "Die Reihenfolge der Berufsjahre: bring sie in die richtige Ordnung."
+ }
+]

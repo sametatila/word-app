@@ -1,0 +1,232 @@
+[
+ {
+  "tr": "„I haven't finished the new one yet. I need two hours.“",
+  "kind": "explain",
+  "en": "„I haven't finished the new one yet. I need two hours.“"
+ },
+ {
+  "tr": "Mahalleni anlat ve tamirciye sor.",
+  "kind": "intro",
+  "en": "Describe your neighbourhood and ask the mechanic."
+ },
+ {
+  "tr": "Bir iş ilanı. Ne zorunlu, ne değil?",
+  "kind": "intro",
+  "en": "A job ad. What is required and what is not?"
+ },
+ {
+  "tr": "„can“ sonrası fiil eksiz; gün „on“ ile.",
+  "kind": "explain",
+  "en": "After „can“ the verb takes no ending; the day goes with „on“."
+ },
+ {
+  "tr": "Hata, bitmemiş iş ve o anda verilen karar.",
+  "kind": "intro",
+  "en": "A mistake, an unfinished job and a decision made on the spot."
+ },
+ {
+  "tr": "Hata „make“ ile kuruluyor: „make a mistake“.",
+  "kind": "explain",
+  "en": "A mistake is built with „make“: „make a mistake“."
+ },
+ {
+  "tr": "Sıradan bir salı. Hangi iş ne kadar sürüyor?",
+  "kind": "intro",
+  "en": "An ordinary Tuesday. Which task takes how long?"
+ },
+ {
+  "tr": "Toplantıda en alt basamak yetiyor: „Can I …?“",
+  "kind": "explain",
+  "en": "In a meeting the lowest step is enough: „Can I …?“"
+ },
+ {
+  "tr": "„You don't have to…“ — yasak değil, GEREK YOK.",
+  "kind": "explain",
+  "en": "„You don't have to…“ — not a ban, but NO OBLIGATION."
+ },
+ {
+  "tr": "Bir mahalle anlatılıyor. Nesi iyi, nesi eksik?",
+  "kind": "intro",
+  "en": "A neighbourhood is described. What is good and what is missing?"
+ },
+ {
+  "tr": "İzin mektubu. Üç rica, üç ayrı kibarlık basamağı.",
+  "kind": "intro",
+  "en": "A request for time off. Three requests, three steps of politeness."
+ },
+ {
+  "tr": "Açılış saati sorusu „what time“ ile; gün „on“ ile.",
+  "kind": "explain",
+  "en": "The opening-time question goes with „what time“; the day with „on“."
+ },
+ {
+  "tr": "Mülakat. Hangi soruya hangi zamanla cevap veriliyor?",
+  "kind": "intro",
+  "en": "The interview. Which question is answered in which tense?"
+ },
+ {
+  "tr": "Varlık cümlesi; „nearby“ tek sözcük ve edat almıyor.",
+  "kind": "explain",
+  "en": "An existence sentence; „nearby“ is one word and takes no preposition."
+ },
+ {
+  "tr": "Bir ofis anlatılıyor. Kaç kişi, hangi kat, nesi özel?",
+  "kind": "intro",
+  "en": "An office is described. How many people, which floor, what is special?"
+ },
+ {
+  "tr": "Kat „on the … floor“ ile; sıra sayısında „the“ zorunlu.",
+  "kind": "explain",
+  "en": "The floor goes with „on the … floor“; with an ordinal „the“ is required."
+ },
+ {
+  "tr": "„It's quieter than the city centre, but it isn't boring.“",
+  "kind": "explain",
+  "en": "„It's quieter than the city centre, but it isn't boring.“"
+ },
+ {
+  "tr": "Çöpü kutuya koymak sakine, dışarı çıkarmak görevliye ait.",
+  "kind": "explain",
+  "en": "Putting the rubbish in the can is the residents' job, taking it out the caretaker's."
+ },
+ {
+  "tr": "„Open, but it takes half an hour by bus.“ — açık ama uzak.",
+  "kind": "explain",
+  "en": "„Open, but it takes half an hour by bus.“ — open, but far away."
+ },
+ {
+  "tr": "Bir hata bildiriliyor. Ne bitti, ne bitmedi, ne yapılacak?",
+  "kind": "intro",
+  "en": "A mistake is reported. What is done, what is not, what comes next?"
+ },
+ {
+  "tr": "Fırında kısa bir alışveriş. Pazar günü ne açık, ne kapalı?",
+  "kind": "intro",
+  "en": "A short shop at the bakery. What is open on Sunday and what is closed?"
+ },
+ {
+  "tr": "Önce iki iş, sonra bu hafta olanlar: konuşma, sonra mektup.",
+  "kind": "explain",
+  "en": "First the two jobs, then this week: the talk, then the letter."
+ },
+ {
+  "tr": "Yirmi dakikalık toplantı. Kim ne öneriyor, ne karar çıkıyor?",
+  "kind": "intro",
+  "en": "A twenty-minute meeting. Who suggests what, and what is decided?"
+ },
+ {
+  "tr": "Bozuk makine için telefon. Ne zaman geliyor, kaça mal oluyor?",
+  "kind": "intro",
+  "en": "A phone call about a broken machine. When is the visit, what does it cost?"
+ },
+ {
+  "tr": "Zorunluluk üçlüsü. Üçüncüsü ikinciye benziyor ama tam karşıtı.",
+  "kind": "intro",
+  "en": "The three forms of obligation. The third looks like the second but means the opposite."
+ },
+ {
+  "tr": "„But he hasn't asked since January.“ — olumsuz present perfect.",
+  "kind": "explain",
+  "en": "„But he hasn't asked since January.“ — negative present perfect."
+ },
+ {
+  "tr": "Bina kuralları. Hangisi zorunlu, hangisi yasak, hangisi serbest?",
+  "kind": "intro",
+  "en": "The building rules. Which one is required, which forbidden, which free?"
+ },
+ {
+  "tr": "„You don't have to clean the stairs. A company comes every week.“",
+  "kind": "explain",
+  "en": "„You don't have to clean the stairs. A company comes every week.“"
+ },
+ {
+  "tr": "Kapanmış bir dönem olduğu için „I worked“, „I have worked“ değil.",
+  "kind": "explain",
+  "en": "A closed period, so „I worked“ and not „I have worked“."
+ },
+ {
+  "tr": "„I have worked in a kitchen for four years.“ — hâlâ süren deneyim.",
+  "kind": "explain",
+  "en": "„I have worked in a kitchen for four years.“ — experience that is still going."
+ },
+ {
+  "tr": "Yarın Ela dörde kadar çalışıyor, o yüzden „Then Thursday at five.“",
+  "kind": "explain",
+  "en": "Tomorrow Ela works until four, so „Then Thursday at five.“"
+ },
+ {
+  "tr": "„I have worked in kitchens for four years.“ — ikişer yıl iki yerde.",
+  "kind": "explain",
+  "en": "„I have worked in kitchens for four years.“ — two years in each of two places."
+ },
+ {
+  "tr": "Aynı özgeçmişte iki zaman. Hangisi deneyim, hangisi kapanmış dönem?",
+  "kind": "intro",
+  "en": "Two tenses in the same work history. Which one names the experience, which a closed period?"
+ },
+ {
+  "tr": "„I have five vacation days this year.“ — üçü ağustos için isteniyor.",
+  "kind": "explain",
+  "en": "„I have five vacation days this year.“ — three of them are asked for in August."
+ },
+ {
+  "tr": "„I have worked in three offices…“ — deneyimin kendisi, tarihi değil.",
+  "kind": "explain",
+  "en": "„I have worked in three offices…“ — the experience itself counts, not the date."
+ },
+ {
+  "tr": "Aynı ricanın üç basamağı. Hangisini seçeceğin kimden istediğine bağlı.",
+  "kind": "intro",
+  "en": "The same request on three steps. Which one you pick depends on who you are asking."
+ },
+ {
+  "tr": "Önce istek, sonra gerekçe, sonra ikinci seçenek, en son ayrı bir soru.",
+  "kind": "explain",
+  "en": "First the request, then the reason, then the second choice, and a separate question last."
+ },
+ {
+  "tr": "Mülakatın beş cümlesi. İlanın dili edilgen, cevabın dili birinci tekil.",
+  "kind": "intro",
+  "en": "Five sentences from the interview. The ad speaks in the passive, the answer in the first person."
+ },
+ {
+  "tr": "„At seven, like every day. But we close at twelve.“ — yedi açılış saati.",
+  "kind": "explain",
+  "en": "„At seven, like every day. But we close at twelve.“ — seven is the opening time."
+ },
+ {
+  "tr": "Başvuru mektubu. Hangi cümle deneyimi, hangisi kapanmış dönemi söylüyor?",
+  "kind": "intro",
+  "en": "The application letter. Which sentence names the experience and which a closed period?"
+ },
+ {
+  "tr": "„…this is the only one with a real kitchen.“ Bedava kahve yan departmanda.",
+  "kind": "explain",
+  "en": "„…this is the only one with a real kitchen.“ The free coffee is next door."
+ },
+ {
+  "tr": "„There are ten people in my team.“ — on iki masa, yirmi kişi yan departman.",
+  "kind": "explain",
+  "en": "„There are ten people in my team.“ — twelve desks, twenty people next door."
+ },
+ {
+  "tr": "„From my front door it takes ten minutes on foot.“ — yirmi dakika sinema için.",
+  "kind": "explain",
+  "en": "„From my front door it takes ten minutes on foot.“ — the twenty minutes are for the cinema."
+ },
+ {
+  "tr": "„I'll call and say the second version comes at four.“ — beş dünkü gidiş saati.",
+  "kind": "explain",
+  "en": "„I'll call and say the second version comes at four.“ — five was yesterday's time."
+ },
+ {
+  "tr": "„My sister arrives from Ankara in the morning…“ — kardeş mayısta tatil ayarlıyor.",
+  "kind": "explain",
+  "en": "„My sister arrives from Ankara in the morning…“ — the brother arranges his holiday in May."
+ },
+ {
+  "tr": "„I've already been to the bakery three times this week.“ — fırıncı bugünü de sayıyor.",
+  "kind": "explain",
+  "en": "„I've already been to the bakery three times this week.“ — the baker counts today too."
+ }
+]

@@ -1,0 +1,442 @@
+[
+ {
+  "tr": "Mahalleni anlat ve tamirciye sor.",
+  "kind": "intro",
+  "de": "Beschreibe dein Viertel und frage den Mechaniker."
+ },
+ {
+  "tr": "Bir iş ilanı. Ne zorunlu, ne değil?",
+  "kind": "intro",
+  "de": "Eine Stellenanzeige. Was ist Pflicht, was nicht?"
+ },
+ {
+  "tr": "Hata, bitmemiş iş ve o anda verilen karar.",
+  "kind": "intro",
+  "de": "Ein Fehler, eine unfertige Arbeit und ein Entschluss im Moment."
+ },
+ {
+  "tr": "Sıradan bir salı. Hangi iş ne kadar sürüyor?",
+  "kind": "intro",
+  "de": "Ein ganz normaler Dienstag. Welche Aufgabe dauert wie lange?"
+ },
+ {
+  "tr": "Bir mahalle anlatılıyor. Nesi iyi, nesi eksik?",
+  "kind": "intro",
+  "de": "Ein Viertel wird beschrieben. Was ist gut, was fehlt?"
+ },
+ {
+  "tr": "İzin mektubu. Üç rica, üç ayrı kibarlık basamağı.",
+  "kind": "intro",
+  "de": "Ein Urlaubsantrag. Drei Bitten, drei Stufen der Höflichkeit."
+ },
+ {
+  "tr": "Mülakat. Hangi soruya hangi zamanla cevap veriliyor?",
+  "kind": "intro",
+  "de": "Das Vorstellungsgespräch. Welche Frage wird mit welcher Zeitform beantwortet?"
+ },
+ {
+  "tr": "Bir ofis anlatılıyor. Kaç kişi, hangi kat, nesi özel?",
+  "kind": "intro",
+  "de": "Ein Büro wird beschrieben. Wie viele Leute, welche Etage, was ist besonders?"
+ },
+ {
+  "tr": "Bir hata bildiriliyor. Ne bitti, ne bitmedi, ne yapılacak?",
+  "kind": "intro",
+  "de": "Ein Fehler wird gemeldet. Was ist fertig, was nicht, was kommt noch?"
+ },
+ {
+  "tr": "Fırında kısa bir alışveriş. Pazar günü ne açık, ne kapalı?",
+  "kind": "intro",
+  "de": "Ein kurzer Einkauf beim Bäcker. Was ist sonntags offen, was zu?"
+ },
+ {
+  "tr": "Yirmi dakikalık toplantı. Kim ne öneriyor, ne karar çıkıyor?",
+  "kind": "intro",
+  "de": "Eine Besprechung von zwanzig Minuten. Wer schlägt was vor, was wird beschlossen?"
+ },
+ {
+  "tr": "Bozuk makine için telefon. Ne zaman geliyor, kaça mal oluyor?",
+  "kind": "intro",
+  "de": "Ein Anruf wegen einer kaputten Maschine. Wann kommt er, was kostet es?"
+ },
+ {
+  "tr": "Zorunluluk üçlüsü. Üçüncüsü ikinciye benziyor ama tam karşıtı.",
+  "kind": "intro",
+  "de": "Die drei Formen der Pflicht. Die dritte sieht aus wie die zweite, meint aber das Gegenteil."
+ },
+ {
+  "tr": "Bina kuralları. Hangisi zorunlu, hangisi yasak, hangisi serbest?",
+  "kind": "intro",
+  "de": "Die Hausordnung. Was ist Pflicht, was verboten, was freigestellt?"
+ },
+ {
+  "tr": "Aynı özgeçmişte iki zaman. Hangisi deneyim, hangisi kapanmış dönem?",
+  "kind": "intro",
+  "de": "Zwei Zeitformen im selben Lebenslauf. Welche meint die Erfahrung, welche einen abgeschlossenen Abschnitt?"
+ },
+ {
+  "tr": "Aynı ricanın üç basamağı. Hangisini seçeceğin kimden istediğine bağlı.",
+  "kind": "intro",
+  "de": "Dieselbe Bitte auf drei Stufen. Welche du wählst, hängt davon ab, wen du fragst."
+ },
+ {
+  "tr": "Mülakatın beş cümlesi. İlanın dili edilgen, cevabın dili birinci tekil.",
+  "kind": "intro",
+  "de": "Fünf Sätze aus dem Gespräch. Die Anzeige spricht im Passiv, die Antwort in der ersten Person."
+ },
+ {
+  "tr": "Başvuru mektubu. Hangi cümle deneyimi, hangisi kapanmış dönemi söylüyor?",
+  "kind": "intro",
+  "de": "Das Bewerbungsschreiben. Welcher Satz nennt die Erfahrung, welcher einen abgeschlossenen Abschnitt?"
+ },
+ {
+  "tr": "„I haven't finished the new one yet. I need two hours.“",
+  "kind": "explain",
+  "de": "„I haven't finished the new one yet. I need two hours.“"
+ },
+ {
+  "tr": "„can“ sonrası fiil eksiz; gün „on“ ile.",
+  "kind": "explain",
+  "de": "Nach „can“ bleibt das Verb endungslos; der Tag steht mit „on“."
+ },
+ {
+  "tr": "Hata „make“ ile kuruluyor: „make a mistake“.",
+  "kind": "explain",
+  "de": "Der Fehler wird mit „make“ gebildet: „make a mistake“ — wie deutsch „machen“."
+ },
+ {
+  "tr": "Toplantıda en alt basamak yetiyor: „Can I …?“",
+  "kind": "explain",
+  "de": "In der Besprechung reicht die unterste Stufe: „Can I …?“"
+ },
+ {
+  "tr": "„You don't have to…“ — yasak değil, GEREK YOK.",
+  "kind": "explain",
+  "de": "„You don't have to…“ — kein Verbot, sondern KEINE PFLICHT: genau das heißt „du musst nicht“."
+ },
+ {
+  "tr": "Açılış saati sorusu „what time“ ile; gün „on“ ile.",
+  "kind": "explain",
+  "de": "Die Frage nach der Öffnungszeit mit „what time“; der Tag mit „on“."
+ },
+ {
+  "tr": "Varlık cümlesi; „nearby“ tek sözcük ve edat almıyor.",
+  "kind": "explain",
+  "de": "Ein Existenzsatz; „nearby“ ist ein Wort und nimmt keine Präposition."
+ },
+ {
+  "tr": "Kat „on the … floor“ ile; sıra sayısında „the“ zorunlu.",
+  "kind": "explain",
+  "de": "Die Etage mit „on the … floor“; beim Ordnungszahlwort ist „the“ Pflicht."
+ },
+ {
+  "tr": "„It's quieter than the city centre, but it isn't boring.“",
+  "kind": "explain",
+  "de": "„It's quieter than the city centre, but it isn't boring.“"
+ },
+ {
+  "tr": "Çöpü kutuya koymak sakine, dışarı çıkarmak görevliye ait.",
+  "kind": "explain",
+  "de": "Den Müll in die Tonne tun ist Sache der Bewohner, das Hinausstellen Sache des Hausmeisters."
+ },
+ {
+  "tr": "„Open, but it takes half an hour by bus.“ — açık ama uzak.",
+  "kind": "explain",
+  "de": "„Open, but it takes half an hour by bus.“ — offen, aber weit."
+ },
+ {
+  "tr": "Önce iki iş, sonra bu hafta olanlar: konuşma, sonra mektup.",
+  "kind": "explain",
+  "de": "Zuerst die zwei Stellen, dann diese Woche: das Gespräch, dann der Brief."
+ },
+ {
+  "tr": "„But he hasn't asked since January.“ — olumsuz present perfect.",
+  "kind": "explain",
+  "de": "„But he hasn't asked since January.“ — verneintes present perfect; Deutsch nimmt hier das Präsens."
+ },
+ {
+  "tr": "„You don't have to clean the stairs. A company comes every week.“",
+  "kind": "explain",
+  "de": "„You don't have to clean the stairs. A company comes every week.“"
+ },
+ {
+  "tr": "Kapanmış bir dönem olduğu için „I worked“, „I have worked“ değil.",
+  "kind": "explain",
+  "de": "Ein abgeschlossener Abschnitt, deshalb „I worked“, nicht „I have worked“. Deutsch trennt das nicht."
+ },
+ {
+  "tr": "„I have worked in a kitchen for four years.“ — hâlâ süren deneyim.",
+  "kind": "explain",
+  "de": "„I have worked in a kitchen for four years.“ — eine Erfahrung, die noch andauert."
+ },
+ {
+  "tr": "Yarın Ela dörde kadar çalışıyor, o yüzden „Then Thursday at five.“",
+  "kind": "explain",
+  "de": "Morgen arbeitet Ela bis vier, deshalb „Then Thursday at five.“"
+ },
+ {
+  "tr": "„I have worked in kitchens for four years.“ — ikişer yıl iki yerde.",
+  "kind": "explain",
+  "de": "„I have worked in kitchens for four years.“ — je zwei Jahre an zwei Orten."
+ },
+ {
+  "tr": "„I have five vacation days this year.“ — üçü ağustos için isteniyor.",
+  "kind": "explain",
+  "de": "„I have five vacation days this year.“ — drei davon werden für August erbeten."
+ },
+ {
+  "tr": "„I have worked in three offices…“ — deneyimin kendisi, tarihi değil.",
+  "kind": "explain",
+  "de": "„I have worked in three offices…“ — die Erfahrung selbst zählt, nicht das Datum."
+ },
+ {
+  "tr": "Önce istek, sonra gerekçe, sonra ikinci seçenek, en son ayrı bir soru.",
+  "kind": "explain",
+  "de": "Zuerst die Bitte, dann der Grund, dann die zweite Möglichkeit, zuletzt eine eigene Frage."
+ },
+ {
+  "tr": "„At seven, like every day. But we close at twelve.“ — yedi açılış saati.",
+  "kind": "explain",
+  "de": "„At seven, like every day. But we close at twelve.“ — sieben ist die Öffnungszeit."
+ },
+ {
+  "tr": "„…this is the only one with a real kitchen.“ Bedava kahve yan departmanda.",
+  "kind": "explain",
+  "de": "„…this is the only one with a real kitchen.“ Den kostenlosen Kaffee gibt es nebenan."
+ },
+ {
+  "tr": "„There are ten people in my team.“ — on iki masa, yirmi kişi yan departman.",
+  "kind": "explain",
+  "de": "„There are ten people in my team.“ — zwölf Schreibtische, zwanzig Leute nebenan."
+ },
+ {
+  "tr": "„From my front door it takes ten minutes on foot.“ — yirmi dakika sinema için.",
+  "kind": "explain",
+  "de": "„From my front door it takes ten minutes on foot.“ — die zwanzig Minuten gelten dem Kino."
+ },
+ {
+  "tr": "„I'll call and say the second version comes at four.“ — beş dünkü gidiş saati.",
+  "kind": "explain",
+  "de": "„I'll call and say the second version comes at four.“ — fünf war die Uhrzeit von gestern."
+ },
+ {
+  "tr": "„My sister arrives from Ankara in the morning…“ — kardeş mayısta tatil ayarlıyor.",
+  "kind": "explain",
+  "de": "„My sister arrives from Ankara in the morning…“ — der Bruder plant seinen Urlaub im Mai."
+ },
+ {
+  "tr": "„I've already been to the bakery three times this week.“ — fırıncı bugünü de sayıyor.",
+  "kind": "explain",
+  "de": "„I've already been to the bakery three times this week.“ — der Bäcker zählt den heutigen mit."
+ },
+ {
+  "tr": "yemekhane",
+  "kind": "gloss.tr",
+  "de": "Kantine"
+ },
+ {
+  "tr": "izin günü",
+  "kind": "gloss.tr",
+  "de": "ein freier Tag"
+ },
+ {
+  "tr": "çoğu",
+  "kind": "gloss.tr",
+  "de": "die meisten"
+ },
+ {
+  "tr": "eksik",
+  "kind": "gloss.tr",
+  "de": "fehlt"
+ },
+ {
+  "tr": "madde",
+  "kind": "gloss.tr",
+  "de": "Punkt"
+ },
+ {
+  "tr": "o gün",
+  "kind": "gloss.tr",
+  "de": "an dem Tag"
+ },
+ {
+  "tr": "parça",
+  "kind": "gloss.tr",
+  "de": "Teil"
+ },
+ {
+  "tr": "rekor",
+  "kind": "gloss.tr",
+  "de": "Rekord"
+ },
+ {
+  "tr": "sakin",
+  "kind": "gloss.tr",
+  "de": "ruhig"
+ },
+ {
+  "tr": "sayar",
+  "kind": "gloss.tr",
+  "de": "zählt"
+ },
+ {
+  "tr": "tuhaf",
+  "kind": "gloss.tr",
+  "de": "seltsam"
+ },
+ {
+  "tr": "gitmiş",
+  "kind": "gloss.tr",
+  "de": "raus"
+ },
+ {
+  "tr": "servis",
+  "kind": "gloss.tr",
+  "de": "Dienst"
+ },
+ {
+  "tr": "sunmak",
+  "kind": "gloss.tr",
+  "de": "bieten"
+ },
+ {
+  "tr": "aletler",
+  "kind": "gloss.tr",
+  "de": "Werkzeug"
+ },
+ {
+  "tr": "bir kez",
+  "kind": "gloss.tr",
+  "de": "einmal"
+ },
+ {
+  "tr": "geliyor",
+  "kind": "gloss.tr",
+  "de": "kommt an"
+ },
+ {
+  "tr": "en büyük",
+  "kind": "gloss.tr",
+  "de": "größte"
+ },
+ {
+  "tr": "kendiniz",
+  "kind": "gloss.tr",
+  "de": "sich selbst"
+ },
+ {
+  "tr": "yardımcı",
+  "kind": "gloss.tr",
+  "de": "Hilfskraft"
+ },
+ {
+  "tr": "başvurmak",
+  "kind": "gloss.tr",
+  "de": "sich bewerben"
+ },
+ {
+  "tr": "düzeltmek",
+  "kind": "gloss.tr",
+  "de": "reparieren"
+ },
+ {
+  "tr": "gerek yok",
+  "kind": "gloss.tr",
+  "de": "du musst nicht"
+ },
+ {
+  "tr": "mal olmak",
+  "kind": "gloss.tr",
+  "de": "kosten"
+ },
+ {
+  "tr": "bir şirket",
+  "kind": "gloss.tr",
+  "de": "eine Firma"
+ },
+ {
+  "tr": "yönergeler",
+  "kind": "gloss.tr",
+  "de": "Anweisungen"
+ },
+ {
+  "tr": "zorundasın",
+  "kind": "gloss.tr",
+  "de": "du musst"
+ },
+ {
+  "tr": "alt kattaki",
+  "kind": "gloss.tr",
+  "de": "unten"
+ },
+ {
+  "tr": "hata yaptım",
+  "kind": "gloss.tr",
+  "de": "ich habe einen Fehler gemacht"
+ },
+ {
+  "tr": "işin tamamı",
+  "kind": "gloss.tr",
+  "de": "die ganze Arbeit"
+ },
+ {
+  "tr": "sessiz saat",
+  "kind": "gloss.tr",
+  "de": "Ruhezeit"
+ },
+ {
+  "tr": "en güçlü yön",
+  "kind": "gloss.tr",
+  "de": "größte Stärke"
+ },
+ {
+  "tr": "erken çıkmak",
+  "kind": "gloss.tr",
+  "de": "früher gehen"
+ },
+ {
+  "tr": "yapmamalısın",
+  "kind": "gloss.tr",
+  "de": "du darfst nicht"
+ },
+ {
+  "tr": "dersin tamamı",
+  "kind": "gloss.tr",
+  "de": "die ganze Lehre"
+ },
+ {
+  "tr": "kalan her şey",
+  "kind": "gloss.tr",
+  "de": "alles Übrige"
+ },
+ {
+  "tr": "takım hâlinde",
+  "kind": "gloss.tr",
+  "de": "im Team"
+ },
+ {
+  "tr": "mümkün olur mu",
+  "kind": "gloss.tr",
+  "de": "wäre es möglich"
+ },
+ {
+  "tr": "orada çalıştım",
+  "kind": "gloss.tr",
+  "de": "ich habe dort gearbeitet"
+ },
+ {
+  "tr": "her zamanki gibi",
+  "kind": "gloss.tr",
+  "de": "wie immer"
+ },
+ {
+  "tr": "gerçek bir mutfak",
+  "kind": "gloss.tr",
+  "de": "eine richtige Küche"
+ },
+ {
+  "tr": "iş yerim nasıl bir yer?",
+  "kind": "gloss.tr",
+  "de": "wie ist mein Arbeitsplatz?"
+ }
+]
