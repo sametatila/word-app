@@ -1,0 +1,827 @@
+[
+ {
+  "tr": "Sıradaki adım",
+  "kind": "titleTr",
+  "de": "Der nächste Schritt"
+ },
+ {
+  "tr": "Çevrimiçi kurs",
+  "kind": "titleTr",
+  "de": "Der Onlinekurs"
+ },
+ {
+  "tr": "Grup çalışması",
+  "kind": "titleTr",
+  "de": "Arbeit in der Gruppe"
+ },
+ {
+  "tr": "Motivasyonu korumak",
+  "kind": "titleTr",
+  "de": "Dranbleiben"
+ },
+ {
+  "tr": "Öğretmen geri bildirimi",
+  "kind": "titleTr",
+  "de": "Was die Lehrkraft gesagt hat"
+ },
+ {
+  "tr": "Öğretmenin söylediklerini başkasına aktarmayı öğretir.",
+  "kind": "summary",
+  "de": "Vermittelt, wie man weitergibt, was die Lehrkraft gesagt hat."
+ },
+ {
+  "tr": "Çalışmayı sürdürmeyi koşul cümleleriyle konuşmayı öğretir.",
+  "kind": "summary",
+  "de": "Vermittelt, wie man mit Bedingungssätzen darüber spricht, wie man dranbleibt."
+ },
+ {
+  "tr": "Grup içinde kimin ne yaptığını yan cümleyle ayırmayı öğretir.",
+  "kind": "summary",
+  "de": "Vermittelt, wie man mit einem Nebensatz trennt, wer in der Gruppe was macht."
+ },
+ {
+  "tr": "Bir sonraki adımı bağlaçlarla tartmayı öğretir: hevesle gerçekçilik aynı cümlede durur.",
+  "kind": "summary",
+  "de": "Vermittelt, wie man den nächsten Schritt mit Konnektoren abwägt: Begeisterung und Realismus stehen im selben Satz."
+ },
+ {
+  "tr": "Çevrimiçi kursun nasıl işlediğini anlatmayı öğretir: kim yaptığı değil, ne yapıldığı söylenir.",
+  "kind": "summary",
+  "de": "Vermittelt, wie man erklärt, wie ein Onlinekurs funktioniert: es wird nicht gesagt, wer etwas tut, sondern was getan wird."
+ },
+ {
+  "tr": "aynı öğretmenden ders alan meraklı bir arkadaş",
+  "kind": "partner",
+  "de": "eine neugierige Freundin, die bei derselben Lehrkraft lernt"
+ },
+ {
+  "tr": "yorgun ve sıkılmış, bırakmayı düşünen bir arkadaş",
+  "kind": "partner",
+  "de": "ein müder, gelangweilter Freund, der ans Aufhören denkt"
+ },
+ {
+  "tr": "seni hem cesaretlendiren hem frene basan bir danışman",
+  "kind": "partner",
+  "de": "ein Berater, der dich ermutigt und zugleich bremst"
+ },
+ {
+  "tr": "sistemin kurallarını iyi bilen bir kurs destek görevlisi",
+  "kind": "partner",
+  "de": "ein Support-Mitarbeiter, der die Regeln des Systems gut kennt"
+ },
+ {
+  "tr": "iş bölümünde kendi payını büyütmek isteyen bir grup arkadaşı",
+  "kind": "partner",
+  "de": "ein Gruppenmitglied, das bei der Aufteilung den eigenen Anteil vergrößern will"
+ },
+ {
+  "tr": "Dersin nasıldı? Ne dedi?",
+  "kind": "openingTr",
+  "de": "Wie war deine Stunde? Was hat sie gesagt?"
+ },
+ {
+  "tr": "Peki, ileri düzeye hazır mısın?",
+  "kind": "openingTr",
+  "de": "Und, bist du bereit für die Oberstufe?"
+ },
+ {
+  "tr": "Kim ne yapıyor peki? Ben kaybettim.",
+  "kind": "openingTr",
+  "de": "Wer macht denn was? Ich blicke nicht mehr durch."
+ },
+ {
+  "tr": "Sanırım bırakacağım. Kötü bir fikir mi?",
+  "kind": "openingTr",
+  "de": "Ich glaube, ich höre auf. Ist das eine schlechte Idee?"
+ },
+ {
+  "tr": "Destek hattı. Sizin için ne yapabilirim?",
+  "kind": "openingTr",
+  "de": "Support, was kann ich für Sie tun?"
+ },
+ {
+  "tr": "Özel dersten yeni çıktın ve bir arkadaşın öğretmenin ne dediğini soruyor. Övgüyü, öğüdü ve sorulan soruyu aktar.",
+  "kind": "scene",
+  "de": "Du kommst gerade aus dem Einzelunterricht und eine Freundin fragt, was die Lehrkraft gesagt hat. Gib das Lob, den Rat und die gestellte Frage weiter."
+ },
+ {
+  "tr": "Grup projesinde iş bölümü yapıyorsunuz. Kimin neyi yaptığını, hangi görevin kimde olduğunu ve kimin sunacağını yan cümlelerle netleştir.",
+  "kind": "scene",
+  "de": "Ihr teilt die Arbeit im Gruppenprojekt auf. Klär mit Nebensätzen, wer was macht, bei wem welche Aufgabe liegt und wer präsentiert."
+ },
+ {
+  "tr": "Bir danışmanla sıradaki adımını konuşuyorsun. İleri düzeye geçmek isteyip istemediğini, çekincelerini ve gerçekçi planını bağlaçlarla anlat.",
+  "kind": "scene",
+  "de": "Du besprichst mit einem Berater deinen nächsten Schritt. Erklär mit Konnektoren, ob du in die Oberstufe willst, welche Vorbehalte du hast und wie dein realistischer Plan aussieht."
+ },
+ {
+  "tr": "Bir arkadaşın çalışmayı bırakmak üzere ve seninle konuşuyor. Neyin işe yaradığını anlat, koşul cümleleriyle seçenekler sun ve bir öneri getir.",
+  "kind": "scene",
+  "de": "Ein Freund steht kurz vor dem Aufhören und spricht mit dir. Erzähl, was hilft, zeig mit Bedingungssätzen Möglichkeiten auf und mach einen Vorschlag."
+ },
+ {
+  "tr": "Çevrimiçi kursun desteğini aradın. Dersin ne zaman yüklendiğini, videonun indirilip indirilemeyeceğini ve modüle erişimin nasıl açıldığını sor.",
+  "kind": "scene",
+  "de": "Du hast den Support des Onlinekurses angerufen. Frag, wann die Lektion hochgeladen wird, ob das Video heruntergeladen werden kann und wie der Zugang zum Modul freigeschaltet wird."
+ },
+ {
+  "tr": "Bir sözü, bir öğüdü ve bir soruyu aktardıysan ve kendi düşünceni söylediysen konuşma başarılı sayılır.",
+  "kind": "goal",
+  "de": "Das Gespräch gilt als gelungen, wenn du eine Aussage, einen Rat und eine Frage weitergegeben und deine eigene Meinung gesagt hast."
+ },
+ {
+  "tr": "Bir mümkün koşul, bir varsayım cümlesi kurduysan ve somut bir öneri getirdiysen konuşma başarılı sayılır.",
+  "kind": "goal",
+  "de": "Das Gespräch gilt als gelungen, wenn du einen möglichen und einen angenommenen Bedingungssatz gebaut und einen konkreten Vorschlag gemacht hast."
+ },
+ {
+  "tr": "Hedefini ve çekinceni en az iki bağlaçla anlattıysan ve gerçekçi bir plan söylediysen konuşma başarılı sayılır.",
+  "kind": "goal",
+  "de": "Das Gespräch gilt als gelungen, wenn du Ziel und Vorbehalt mit mindestens zwei Konnektoren erklärt und einen realistischen Plan genannt hast."
+ },
+ {
+  "tr": "En az üç kişiyi ya da görevi yan cümleyle ayırdıysan ve kimin sunacağını netleştirdiysen konuşma başarılı sayılır.",
+  "kind": "goal",
+  "de": "Das Gespräch gilt als gelungen, wenn du mindestens drei Personen oder Aufgaben mit Nebensätzen unterschieden und geklärt hast, wer präsentiert."
+ },
+ {
+  "tr": "Yükleme zamanını, indirme olanağını ve erişimin nasıl açıldığını edilgen kalıplarla sorduysan konuşma başarılı sayılır.",
+  "kind": "goal",
+  "de": "Das Gespräch gilt als gelungen, wenn du im Passiv nach dem Zeitpunkt des Hochladens, der Downloadmöglichkeit und der Freischaltung gefragt hast."
+ },
+ {
+  "tr": "ders",
+  "kind": "vocab.tr",
+  "de": "Lektion"
+ },
+ {
+  "tr": "ödül",
+  "kind": "vocab.tr",
+  "de": "Belohnung"
+ },
+ {
+  "tr": "modül",
+  "kind": "vocab.tr",
+  "de": "Modul"
+ },
+ {
+  "tr": "bölmek",
+  "kind": "vocab.tr",
+  "de": "aufteilen"
+ },
+ {
+  "tr": "erişim",
+  "kind": "vocab.tr",
+  "de": "Zugang"
+ },
+ {
+  "tr": "sunmak",
+  "kind": "vocab.tr",
+  "de": "präsentieren"
+ },
+ {
+  "tr": "altyazı",
+  "kind": "vocab.tr",
+  "de": "Untertitel"
+ },
+ {
+  "tr": "bırakmak",
+  "kind": "vocab.tr",
+  "de": "aufhören"
+ },
+ {
+  "tr": "disiplin",
+  "kind": "vocab.tr",
+  "de": "Disziplin"
+ },
+ {
+  "tr": "gerçekçi",
+  "kind": "vocab.tr",
+  "de": "realistisch"
+ },
+ {
+  "tr": "sıkılmış",
+  "kind": "vocab.tr",
+  "de": "gelangweilt"
+ },
+ {
+  "tr": "yüklemek",
+  "kind": "vocab.tr",
+  "de": "hochladen"
+ },
+ {
+  "tr": "anlaşılır",
+  "kind": "vocab.tr",
+  "de": "verständlich"
+ },
+ {
+  "tr": "sürdürmek",
+  "kind": "vocab.tr",
+  "de": "weitermachen"
+ },
+ {
+  "tr": "daha ileri",
+  "kind": "vocab.tr",
+  "de": "weiter"
+ },
+ {
+  "tr": "desteklemek",
+  "kind": "vocab.tr",
+  "de": "unterstützen"
+ },
+ {
+  "tr": "ileri düzey",
+  "kind": "vocab.tr",
+  "de": "Oberstufe"
+ },
+ {
+  "tr": "öğüt vermek",
+  "kind": "vocab.tr",
+  "de": "raten"
+ },
+ {
+  "tr": "hırs / hedef",
+  "kind": "vocab.tr",
+  "de": "Ehrgeiz / Ziel"
+ },
+ {
+  "tr": "geri bildirim",
+  "kind": "vocab.tr",
+  "de": "Rückmeldung"
+ },
+ {
+  "tr": "özel öğretmen",
+  "kind": "vocab.tr",
+  "de": "Nachhilfelehrer"
+ },
+ {
+  "tr": "çalışma ortağı",
+  "kind": "vocab.tr",
+  "de": "Lernpartner"
+ },
+ {
+  "tr": "grup sorumlusu",
+  "kind": "vocab.tr",
+  "de": "Gruppenleitung"
+ },
+ {
+  "tr": "kesintisiz seri",
+  "kind": "vocab.tr",
+  "de": "Serie ohne Unterbrechung"
+ },
+ {
+  "tr": "cesaretlendirmek",
+  "kind": "vocab.tr",
+  "de": "ermutigen"
+ },
+ {
+  "tr": "kısa değerlendirme",
+  "kind": "vocab.tr",
+  "de": "kurze Anmerkung"
+ },
+ {
+  "tr": "işi yan cümleyle tanımlar",
+  "kind": "pattern.tr",
+  "de": "beschreibt die Aufgabe mit einem Nebensatz"
+ },
+ {
+  "tr": "yapılabileni edilgen anlatır",
+  "kind": "pattern.tr",
+  "de": "nennt im Passiv, was möglich ist"
+ },
+ {
+  "tr": "Yanlış. Zamir düştüğünde sona ikinci bir zamir gelmez:",
+  "kind": "why.tr",
+  "de": "Falsch. Fällt das Pronomen weg, kommt am Ende kein zweites:"
+ },
+ {
+  "tr": "Yanlış. Koşul cümlesinin içinde gelecek durmaz; orası geniş zaman olur:",
+  "kind": "why.tr",
+  "de": "Falsch. Im Bedingungssatz steht keine Zukunftsform; dort steht das Präsens:"
+ },
+ {
+  "tr": "Doğru. Kimin yüklediği söylenmiyor ve platform dilinde bu olağan; önemli olan dersin yüklenmiş olması.",
+  "kind": "why.tr",
+  "de": "Richtig. Wer hochlädt, wird nicht genannt, und in der Sprache der Plattform ist das normal; wichtig ist, dass die Lektion oben ist."
+ },
+ {
+  "tr": "Doğru. Asıl cümle present perfect'ti ve aktarılınca bir basamak geriye gitti; aktarımda olağan olan bu.",
+  "kind": "why.tr",
+  "de": "Richtig. Der ursprüngliche Satz stand im Present Perfect und ist bei der Wiedergabe eine Stufe zurückgerückt; genau das ist üblich."
+ },
+ {
+  "tr": "Edilgen ve araç bildiren tümleç:",
+  "kind": "hint.tr",
+  "de": "Passiv mit einer Angabe des Mittels:"
+ },
+ {
+  "tr": "Bu bağlaçtan sonra tam bir cümle gelir. Hazır için",
+  "kind": "hint.tr",
+  "de": "Nach diesem Konnektor steht ein vollständiger Satz. Für bereit sagen wir"
+ },
+ {
+  "tr": "Kim değerlendirdiği söylenmiyor, o yüzden edilgen:",
+  "kind": "hint.tr",
+  "de": "Wer bewertet, wird nicht genannt, deshalb Passiv:"
+ },
+ {
+  "tr": "Kişi tanımlanıyor ve zamir özne, o yüzden düşmez. Sunmak için",
+  "kind": "hint.tr",
+  "de": "Eine Person wird beschrieben und das Pronomen ist Subjekt, deshalb bleibt es. Für präsentieren sagen wir"
+ },
+ {
+  "tr": "ders,",
+  "kind": "say.tr",
+  "de": "Lektion,"
+ },
+ {
+  "tr": "Sürdürmek",
+  "kind": "say.tr",
+  "de": "Weitermachen wird mit"
+ },
+ {
+  "tr": "olabilirlik",
+  "kind": "say.tr",
+  "de": "Möglichkeit"
+ },
+ {
+  "tr": "Öğüt vermek",
+  "kind": "say.tr",
+  "de": "Raten wird mit"
+ },
+ {
+  "tr": "Yorgun için",
+  "kind": "say.tr",
+  "de": "Für müde sagen wir"
+ },
+ {
+  "tr": "bırakmak ise",
+  "kind": "say.tr",
+  "de": "und aufhören mit"
+ },
+ {
+  "tr": "de duyarsın.",
+  "kind": "say.tr",
+  "de": "hörst du auch."
+ },
+ {
+  "tr": "ödül için ise",
+  "kind": "say.tr",
+  "de": "und für die Belohnung"
+ },
+ {
+  "tr": "geri bildirim,",
+  "kind": "say.tr",
+  "de": "Rückmeldung,"
+ },
+ {
+  "tr": "proje için ise",
+  "kind": "say.tr",
+  "de": "und für das Projekt"
+ },
+ {
+  "tr": "Daha ileri için",
+  "kind": "say.tr",
+  "de": "Für weiter sagen wir"
+ },
+ {
+  "tr": "düzenlemek için",
+  "kind": "say.tr",
+  "de": "für organisieren"
+ },
+ {
+  "tr": "gelecek için ise",
+  "kind": "say.tr",
+  "de": "und für die Zukunft"
+ },
+ {
+  "tr": "keyif almaya ise",
+  "kind": "say.tr",
+  "de": "und Freude daran haben heißt"
+ },
+ {
+  "tr": "girme hakkına ise",
+  "kind": "say.tr",
+  "de": "und das Recht hineinzukommen heißt"
+ },
+ {
+  "tr": "seçtiğin şeye ise",
+  "kind": "say.tr",
+  "de": "und das, was du wählst, heißt"
+ },
+ {
+  "tr": "tek bir derse ise",
+  "kind": "say.tr",
+  "de": "und eine einzelne Stunde heißt"
+ },
+ {
+  "tr": "olur ve sayılamaz.",
+  "kind": "say.tr",
+  "de": "und ist unzählbar."
+ },
+ {
+  "tr": "Birine arka çıkmaya",
+  "kind": "say.tr",
+  "de": "Jemandem beistehen heißt"
+ },
+ {
+  "tr": "Grup sorumlusu için",
+  "kind": "say.tr",
+  "de": "Für die Gruppenleitung sagen wir"
+ },
+ {
+  "tr": "payın kendisine ise",
+  "kind": "say.tr",
+  "de": "und der Anteil selbst heißt"
+ },
+ {
+  "tr": "şeyi tanımlayan ise",
+  "kind": "say.tr",
+  "de": "und der, der ein Ding beschreibt, mit"
+ },
+ {
+  "tr": "Kesintisiz seri için",
+  "kind": "say.tr",
+  "de": "Für eine Serie ohne Unterbrechung sagen wir"
+ },
+ {
+  "tr": "Kursun her parçasına",
+  "kind": "say.tr",
+  "de": "Jeder Teil des Kurses heißt"
+ },
+ {
+  "tr": "anlaşılır. Tekrar et:",
+  "kind": "say.tr",
+  "de": "verständlich. Sprich nach:"
+ },
+ {
+  "tr": "Cesaretlendirmek için",
+  "kind": "say.tr",
+  "de": "Für ermutigen sagen wir"
+ },
+ {
+  "tr": "Ekranda görünen yazıya",
+  "kind": "say.tr",
+  "de": "Der Text, der auf dem Bildschirm erscheint, heißt"
+ },
+ {
+  "tr": "ile geniş zaman gelir.",
+  "kind": "say.tr",
+  "de": "das Präsens."
+ },
+ {
+  "tr": "izlenen kayıt için ise",
+  "kind": "say.tr",
+  "de": "und für die Aufnahme, die man ansieht"
+ },
+ {
+  "tr": "Özel ders veren kişiye",
+  "kind": "say.tr",
+  "de": "Wer Einzelunterricht gibt, heißt"
+ },
+ {
+  "tr": "ile söylenir; isim hâli",
+  "kind": "say.tr",
+  "de": "gesagt; die Nomenform ist"
+ },
+ {
+  "tr": "Bir işi paylara ayırmaya",
+  "kind": "say.tr",
+  "de": "Eine Arbeit in Teile teilen heißt"
+ },
+ {
+  "tr": "Kısa bir değerlendirmeye",
+  "kind": "say.tr",
+  "de": "Eine kurze Bewertung heißt"
+ },
+ {
+  "tr": "Sürdürürsen bırakmazsın.",
+  "kind": "say.tr",
+  "de": "Wenn du weitermachst, hörst du nicht auf."
+ },
+ {
+  "tr": "İlk kalıbımız. Yorum için",
+  "kind": "say.tr",
+  "de": "Unsere erste Wendung. Für den Kommentar sagen wir"
+ },
+ {
+  "tr": "Erişim bir kodla veriliyor.",
+  "kind": "say.tr",
+  "de": "Der Zugang wird mit einem Code gegeben."
+ },
+ {
+  "tr": "Kendini zorlayabilme gücüne",
+  "kind": "say.tr",
+  "de": "Die Kraft, sich selbst zu fordern, heißt"
+ },
+ {
+  "tr": "Sonraki seçim için hazırım.",
+  "kind": "say.tr",
+  "de": "Ich bin bereit für die nächste Wahl."
+ },
+ {
+  "tr": "İnternet üzerinden olan için",
+  "kind": "say.tr",
+  "de": "Für das, was über das Internet läuft, sagen wir"
+ },
+ {
+  "tr": "Altyazılar sonradan ekleniyor.",
+  "kind": "say.tr",
+  "de": "Die Untertitel werden später hinzugefügt."
+ },
+ {
+  "tr": "Böldüğümüz görev daha kolaydı.",
+  "kind": "say.tr",
+  "de": "Die Aufgabe, die wir geteilt haben, war leichter."
+ },
+ {
+  "tr": "denir ve hep çoğul kullanılır.",
+  "kind": "say.tr",
+  "de": "genannt und steht immer im Plural."
+ },
+ {
+  "tr": "Gerçek OLMAYAN bir durumda ise",
+  "kind": "say.tr",
+  "de": "Bei einer NICHT realen Lage dagegen steht"
+ },
+ {
+  "tr": "Ulaşmak istediğin büyük hedefe",
+  "kind": "say.tr",
+  "de": "Das große Ziel, das du erreichen willst, heißt"
+ },
+ {
+  "tr": "İkinci kalıbımız. İndirmek için",
+  "kind": "say.tr",
+  "de": "Unsere zweite Wendung. Für herunterladen sagen wir"
+ },
+ {
+  "tr": "Bize destek olanlar onu sunacak.",
+  "kind": "say.tr",
+  "de": "Die Leute, die uns unterstützen, werden es präsentieren."
+ },
+ {
+  "tr": "Gelecek planım sade ve gerçekçi.",
+  "kind": "say.tr",
+  "de": "Mein Plan für die Zukunft ist einfach und realistisch."
+ },
+ {
+  "tr": "Sonraki modül ne zaman açılıyor?",
+  "kind": "say.tr",
+  "de": "Wann wird das nächste Modul freigeschaltet?"
+ },
+ {
+  "tr": "Şimdi kurs desteğine yazacaksın.",
+  "kind": "say.tr",
+  "de": "Jetzt wendest du dich an den Support des Kurses."
+ },
+ {
+  "tr": "Benim yazdığım bölüm en kısasıydı.",
+  "kind": "say.tr",
+  "de": "Der Teil, den ich geschrieben habe, war der kürzeste."
+ },
+ {
+  "tr": "Son kalıbımız zamirsiz. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Unsere letzte Wendung ohne Pronomen. Sprich nach:"
+ },
+ {
+  "tr": "Bana diğerlerine öğüt vermemi söyledi.",
+  "kind": "say.tr",
+  "de": "Er hat mir gesagt, ich soll den anderen raten."
+ },
+ {
+  "tr": "kullanılır; birinci tekilde bu kalıpta",
+  "kind": "say.tr",
+  "de": "benutzt; in der ersten Person Singular steht bei dieser Wendung"
+ },
+ {
+  "tr": "Son kalıbımız isim alıyor. Gerçekçi için",
+  "kind": "say.tr",
+  "de": "Unsere letzte Wendung nimmt ein Nomen. Für realistisch sagen wir"
+ },
+ {
+  "tr": "Bir tane daha: Video ne zaman yükleniyor?",
+  "kind": "say.tr",
+  "de": "Noch eins: Wann wird das Video hochgeladen?"
+ },
+ {
+  "tr": "Keyif almadığımda disiplin yardım ediyor.",
+  "kind": "say.tr",
+  "de": "Wenn ich keine Freude daran habe, hilft die Disziplin."
+ },
+ {
+  "tr": "yüklemek. İlk kalıbımız da bu. Tekrar et:",
+  "kind": "say.tr",
+  "de": "hochladen. Das ist auch unsere erste Wendung. Sprich nach:"
+ },
+ {
+  "tr": "Çevrimiçi kurs her dönem kontrol ediliyor.",
+  "kind": "say.tr",
+  "de": "Der Onlinekurs wird jedes Semester geprüft."
+ },
+ {
+  "tr": "Geri bildirimi anlayıp anlamadığımı sordu.",
+  "kind": "say.tr",
+  "de": "Sie hat gefragt, ob ich die Rückmeldung verstanden hatte."
+ },
+ {
+  "tr": "denir; hem fiil hem isim olarak kullanılır.",
+  "kind": "say.tr",
+  "de": "genannt; es wird als Verb und als Nomen benutzt."
+ },
+ {
+  "tr": "İkinci kalıbımız işi tanımlıyor. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Unsere zweite Wendung beschreibt die Aufgabe. Sprich nach:"
+ },
+ {
+  "tr": "Şimdi grup içindeki iş bölümünü konuşacaksın.",
+  "kind": "say.tr",
+  "de": "Jetzt besprichst du die Aufteilung in der Gruppe."
+ },
+ {
+  "tr": "Şimdi sen kur: Hazırladığım slaytlar sadeydi.",
+  "kind": "say.tr",
+  "de": "Jetzt du: Die Folien, die ich gemacht habe, waren einfach."
+ },
+ {
+  "tr": "Şimdi sen kur: İş zor. Ancak sonuç buna değer.",
+  "kind": "say.tr",
+  "de": "Jetzt du: Die Arbeit ist hart. Jedoch lohnt sich das Ergebnis."
+ },
+ {
+  "tr": "Şimdi sıra sende: Yazımın geliştiğini söyledi.",
+  "kind": "say.tr",
+  "de": "Jetzt bist du dran: Er hat gesagt, dass sich mein Schreiben verbessert hatte."
+ },
+ {
+  "tr": "Şimdi sen kur: Bana onu tekrar okumamı söyledi.",
+  "kind": "say.tr",
+  "de": "Jetzt du: Sie hat mir gesagt, ich soll es noch einmal lesen."
+ },
+ {
+  "tr": "Tek bir değerlendirme bütün planımı değiştirdi.",
+  "kind": "say.tr",
+  "de": "Eine einzige Anmerkung hat meinen ganzen Plan verändert."
+ },
+ {
+  "tr": "İkinci kalıbımız iki cümleyi bağlıyor. Plan için",
+  "kind": "say.tr",
+  "de": "Unsere zweite Wendung verbindet zwei Sätze. Für den Plan sagen wir"
+ },
+ {
+  "tr": "Şimdi bir arkadaşına geri bildirimi aktaracaksın.",
+  "kind": "say.tr",
+  "de": "Jetzt gibst du einer Freundin die Rückmeldung weiter."
+ },
+ {
+  "tr": "Şimdi sen kur: Sertifika e-postayla gönderiliyor.",
+  "kind": "say.tr",
+  "de": "Jetzt du: Das Zertifikat wird per E-Mail geschickt."
+ },
+ {
+  "tr": "Bir tane daha: Görevi bitirip bitirmediğimi sordu.",
+  "kind": "say.tr",
+  "de": "Noch eins: Er hat gefragt, ob ich die Aufgabe beendet hatte."
+ },
+ {
+  "tr": "İleri düzey demek. İlk kalıbımız da bu. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Das heißt Oberstufe. Das ist auch unsere erste Wendung. Sprich nach:"
+ },
+ {
+  "tr": "Şimdi dersin kuralı. Edilgen iki parçadan kurulur:",
+  "kind": "say.tr",
+  "de": "Jetzt die Regel der Lektion. Das Passiv besteht aus zwei Teilen:"
+ },
+ {
+  "tr": "Şimdi sıra sende: Sunum yapan öğrenci çok sakindi.",
+  "kind": "say.tr",
+  "de": "Jetzt bist du dran: Die Studentin, die präsentiert hat, war sehr ruhig."
+ },
+ {
+  "tr": "Şimdi bir danışmanla sıradaki adımını konuşacaksın.",
+  "kind": "say.tr",
+  "de": "Jetzt besprichst du deinen nächsten Schritt mit einem Berater."
+ },
+ {
+  "tr": "Şimdi sıra sende: Ödev iki günde değerlendiriliyor.",
+  "kind": "say.tr",
+  "de": "Jetzt bist du dran: Die Hausaufgabe wird in zwei Tagen bewertet."
+ },
+ {
+  "tr": "Bir tane daha: Bana destek olan arkadaş önce konuştu.",
+  "kind": "say.tr",
+  "de": "Noch eins: Der Freund, der mich unterstützt hat, hat zuerst gesprochen."
+ },
+ {
+  "tr": "Çalışma ortağı demek. İlk kalıbımız da bu. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Das heißt Lernpartner. Das ist auch unsere erste Wendung. Sprich nach:"
+ },
+ {
+  "tr": "ile söylenir. İkincisi gündelik konuşmanın kelimesidir.",
+  "kind": "say.tr",
+  "de": "gesagt. Das zweite ist das Wort der Alltagssprache."
+ },
+ {
+  "tr": "Şimdi bırakmak üzere olan bir arkadaşınla konuşacaksın.",
+  "kind": "say.tr",
+  "de": "Jetzt sprichst du mit einem Freund, der kurz vor dem Aufhören steht."
+ },
+ {
+  "tr": "Şimdi sıra sende: Daha çok vaktim olsa her gün okurdum.",
+  "kind": "say.tr",
+  "de": "Jetzt bist du dran: Wenn ich mehr Zeit hätte, würde ich jeden Tag lesen."
+ },
+ {
+  "tr": "Bir tane daha: Bir hafta atlamadıkça seriyi kaybetmezsin.",
+  "kind": "say.tr",
+  "de": "Noch eins: Du verlierst die Serie nicht, es sei denn, du lässt eine Woche aus."
+ },
+ {
+  "tr": "Bir tane daha: Maliyete rağmen ileri düzey kursu alacağım.",
+  "kind": "say.tr",
+  "de": "Noch eins: Trotz der Kosten mache ich den Kurs der Oberstufe."
+ },
+ {
+  "tr": "denir; yorumdan farkı daha kısa ve daha kişisel olmasıdır.",
+  "kind": "say.tr",
+  "de": "genannt; der Unterschied zum Kommentar ist, dass sie kürzer und persönlicher ist."
+ },
+ {
+  "tr": "Şimdi sıra sende: Hazır olmama rağmen bir ay bekleyeceğim.",
+  "kind": "say.tr",
+  "de": "Jetzt bist du dran: Obwohl ich bereit bin, warte ich einen Monat."
+ },
+ {
+  "tr": "Şimdi sen kur: Seriyi korursam kendimi daha iyi hissediyorum.",
+  "kind": "say.tr",
+  "de": "Jetzt du: Wenn ich die Serie halte, fühle ich mich besser."
+ },
+ {
+  "tr": "ile başlar. Zamir yan cümlenin NESNESİYSE düşebilir, öznesiyse düşmez.",
+  "kind": "say.tr",
+  "de": "Ist das Pronomen OBJEKT des Nebensatzes, darf es wegfallen, als Subjekt nicht."
+ },
+ {
+  "tr": "Sıkılmış demek; dikkat, kişi için bu biçim kullanılır. İlk kalıbımız da bu. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Das heißt gelangweilt; Achtung, für die Person steht diese Form. Das ist auch unsere erste Wendung. Sprich nach:"
+ },
+ {
+  "tr": "Platformların dili edilgendir: kimin yüklediği değil, neyin yüklendiği yazar. Hazır mısın?",
+  "kind": "say.tr",
+  "de": "Die Sprache der Plattformen ist das Passiv: es steht nicht, wer hochlädt, sondern was hochgeladen wird. Bist du bereit?"
+ },
+ {
+  "tr": "Merhaba! Bugün öğretmenin söylediklerini aktarmayı öğreneceğiz: ne dedi, ne önerdi, ne sordu.",
+  "kind": "say.tr",
+  "de": "Hallo! Heute lernen wir weiterzugeben, was die Lehrkraft gesagt hat: was sie sagte, was sie vorschlug, was sie fragte."
+ },
+ {
+  "tr": "Merhaba! Bu modülün son dersi: sıradaki adımı seçmek. İleri düzeye geçmek mi, sağlamlaştırmak mı.",
+  "kind": "say.tr",
+  "de": "Hallo! Die letzte Lektion dieses Moduls: den nächsten Schritt wählen. In die Oberstufe gehen oder festigen."
+ },
+ {
+  "tr": "Motivasyon konuşmasının dili koşuldur: şu olursa şunu yaparım, şu olsaydı şu olurdu. Hazır mısın?",
+  "kind": "say.tr",
+  "de": "Die Sprache des Dranbleibens ist die Bedingung: passiert das, mache ich dies; wäre das so, wäre jenes so. Bist du bereit?"
+ },
+ {
+  "tr": "Grupta beş kişi varsa hepsinin adı 'the partner'; kimi kastettiğini yan cümle söyler. Hazır mısın?",
+  "kind": "say.tr",
+  "de": "Sind fünf Leute in der Gruppe, heißen alle 'the partner'; wen du meinst, sagt der Nebensatz. Bist du bereit?"
+ },
+ {
+  "tr": "Bu konuşmada heves ile gerçekçilik aynı cümlede duruyor ve onları bağlayan şey bağlaçlar. Hazır mısın?",
+  "kind": "say.tr",
+  "de": "In diesem Gespräch stehen Begeisterung und Realismus im selben Satz, und was sie verbindet, sind die Konnektoren. Bist du bereit?"
+ },
+ {
+  "tr": "Merhaba! Bugün grup çalışmasını konuşmayı öğreneceğiz: kim neyi yaptı, hangi görev kimde, kim sunacak.",
+  "kind": "say.tr",
+  "de": "Hallo! Heute sprechen wir über Gruppenarbeit: wer was gemacht hat, bei wem welche Aufgabe liegt, wer präsentiert."
+ },
+ {
+  "tr": "ve fiilin üçüncü hâli. Yapan kişi söylenmez, çünkü platformda kim yaptığı değil neyin olduğu önemlidir.",
+  "kind": "say.tr",
+  "de": "und der dritten Form des Verbs. Der Handelnde wird nicht genannt, denn auf der Plattform zählt nicht wer, sondern was."
+ },
+ {
+  "tr": "Geri bildirimi başkasına anlatırken cümle olduğu gibi kalmıyor: zaman bir basamak geriye gidiyor. Hazır mısın?",
+  "kind": "say.tr",
+  "de": "Wenn du die Rückmeldung weitergibst, bleibt der Satz nicht gleich: die Zeit rückt eine Stufe zurück. Bist du bereit?"
+ },
+ {
+  "tr": "Merhaba! Bugün çalışmayı sürdürmeyi konuşacağız: sıkıldığında ne yapıyorsun, yorgunken ne oluyor, seriyi nasıl koruyorsun.",
+  "kind": "say.tr",
+  "de": "Hallo! Heute sprechen wir übers Dranbleiben: was du machst, wenn dir langweilig ist, was passiert, wenn du müde bist, wie du deine Serie hältst."
+ },
+ {
+  "tr": "Merhaba! Bugün çevrimiçi kursu konuşmayı öğreneceğiz: ders ne zaman yükleniyor, video indirilebiliyor mu, modül ne zaman açılıyor.",
+  "kind": "say.tr",
+  "de": "Hallo! Heute sprechen wir über den Onlinekurs: wann die Lektion hochgeladen wird, ob das Video heruntergeladen werden kann, wann das Modul freigeschaltet wird."
+ }
+]
