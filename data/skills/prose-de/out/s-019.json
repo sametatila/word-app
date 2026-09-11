@@ -1,0 +1,567 @@
+[
+ {
+  "tr": "Görünüş yaz. Sonunda kişi kartını doldur.",
+  "kind": "intro",
+  "de": "Schreibe über das Aussehen. Am Ende füllst du die Personenkarte aus."
+ },
+ {
+  "tr": "Büfede alışveriş. Fiyatları ve toplamı yakala.",
+  "kind": "intro",
+  "de": "Einkauf am Kiosk. Achte auf die Preise und die Summe."
+ },
+ {
+  "tr": "Deniz fotoğraftaki akrabalarını tanıtıyor. Kim kimin nesi?",
+  "kind": "intro",
+  "de": "Deniz stellt seine Verwandten auf dem Foto vor. Wer ist mit wem verwandt?"
+ },
+ {
+  "tr": "Sipariş kalıplarını yaz. Sonunda kafe siparişi formunu doldur.",
+  "kind": "intro",
+  "de": "Schreibe die Wendungen zum Bestellen. Am Ende füllst du das Bestellformular aus."
+ },
+ {
+  "tr": "Bir arkadaş anlatılıyor: hem nasıl göründüğü hem nasıl biri olduğu.",
+  "kind": "intro",
+  "de": "Ein Freund wird beschrieben: wie er aussieht und wie er ist."
+ },
+ {
+  "tr": "Lena ile Can evcil hayvanları konuşuyor. Kimin nesi var, kimin yok?",
+  "kind": "intro",
+  "de": "Lena und Can sprechen über Haustiere. Wer hat was, wer hat nichts?"
+ },
+ {
+  "tr": "Bir kafenin menüsünü oku: ne var, ne kadar, kahvaltıda ne veriliyor?",
+  "kind": "intro",
+  "de": "Lies die Karte eines Cafés: was es gibt, was es kostet, was zum Frühstück dazugehört?"
+ },
+ {
+  "tr": "Karakteri yaz. Olumsuzu ve sorusu „be“ ile kuruluyor, „do“ ile değil.",
+  "kind": "intro",
+  "de": "Schreibe über den Charakter. Verneinung und Frage werden mit „be“ gebildet, nicht mit „do“."
+ },
+ {
+  "tr": "Deniz kahvaltısını anlatıyor. „some“ ile „any“ nerede geçiyor, dikkat et.",
+  "kind": "intro",
+  "de": "Deniz erzählt von seinem Frühstück. Achte darauf, wo „some“ und wo „any“ steht."
+ },
+ {
+  "tr": "Ayse iş yerindeki grup fotoğrafını anlatıyor. Kim kim, kim fotoğrafta yok?",
+  "kind": "intro",
+  "de": "Ayse erklärt das Gruppenfoto von der Arbeit. Wer ist wer, wer fehlt auf dem Foto?"
+ },
+ {
+  "tr": "„some“ olumlu cümlede, „any“ soru ve olumsuzda. Türkçede böyle bir ayrım yok.",
+  "kind": "intro",
+  "de": "„some“ steht im Aussagesatz, „any“ in Frage und Verneinung. Das Deutsche kennt diesen Unterschied ebenso wenig."
+ },
+ {
+  "tr": "Olumsuz cümleyi yaz. Dikkat: üçüncü tekil kişide „don't“ değil „doesn't“ geliyor.",
+  "kind": "intro",
+  "de": "Schreibe verneinte Sätze. Achtung: in der dritten Person Singular steht nicht „don't“, sondern „doesn't“."
+ },
+ {
+  "tr": "Eda bir fotoğrafı anlatıyor. „this“, „that“ ve „these“ arasındaki farka dikkat et.",
+  "kind": "intro",
+  "de": "Eda erklärt ein Foto. Achte auf den Unterschied zwischen „this“, „that“ und „these“."
+ },
+ {
+  "tr": "Sena akrabalarını anlatıyor. „look like“ görünüşü sorar — cevabı da görünüş olmalı.",
+  "kind": "intro",
+  "de": "Sena stellt ihre Verwandten vor. „look like“ fragt nach dem Aussehen — die Antwort muss auch Aussehen sein."
+ },
+ {
+  "tr": "Bir aile evcil hayvanlarını anlatıyor. Kimin hangi hayvanı var, hangisi ne yapmıyor?",
+  "kind": "intro",
+  "de": "Eine Familie erzählt von ihren Haustieren. Wer hat welches Tier, welches macht was nicht?"
+ },
+ {
+  "tr": "Eda kulübündeki üç kişiyi anlatıyor. Her biri için hem görünüş hem karakter geliyor.",
+  "kind": "intro",
+  "de": "Eda stellt drei Leute aus ihrem Klub vor. Zu jedem kommt Aussehen und Charakter."
+ },
+ {
+  "tr": "Tekil ile çoğulu yaz. İngilizcede çoğul, ismi ve ona bağlı sözcükleri birlikte değiştiriyor.",
+  "kind": "intro",
+  "de": "Schreibe Singular und Plural. Wie im Deutschen ändert sich mehr als das Substantiv — im Englischen geht auch das Demonstrativ mit: this → these."
+ },
+ {
+  "tr": "Restoranda sipariş ve hesap. Sipariş kalıplarına dikkat: „I'd like“ ve „I'll have“ aynı işi görüyor.",
+  "kind": "intro",
+  "de": "Bestellen und zahlen im Restaurant. Achte auf die Wendungen: „I'd like“ und „I'll have“ leisten dasselbe."
+ },
+ {
+  "tr": "„The dog's name is Tosun.“",
+  "kind": "explain",
+  "de": "„The dog's name is Tosun.“"
+ },
+ {
+  "tr": "„Water: 1 euro“ — iki euro olan kahve.",
+  "kind": "explain",
+  "de": "„Water: 1 euro“ — zwei Euro kostet der Kaffee."
+ },
+ {
+  "tr": "„he has got short hair“ — Ada'nınki uzun.",
+  "kind": "explain",
+  "de": "„he has got short hair“ — Adas Haare sind lang."
+ },
+ {
+  "tr": "„He doesn't live here. He is from Ankara.“",
+  "kind": "explain",
+  "de": "„He doesn't live here. He is from Ankara.“"
+ },
+ {
+  "tr": "„He doesn't work here now. He is in Bremen.“",
+  "kind": "explain",
+  "de": "„He doesn't work here now. He is in Bremen.“"
+ },
+ {
+  "tr": "„The cat's name is Zeyno.“ — balığın adı yok.",
+  "kind": "explain",
+  "de": "„The cat's name is Zeyno.“ — der Fisch hat keinen Namen."
+ },
+ {
+  "tr": "„He doesn't like cheese.“ — peyniri yiyen Deniz.",
+  "kind": "explain",
+  "de": "„He doesn't like cheese.“ — Käse isst Deniz."
+ },
+ {
+  "tr": "„But I don't have a brother. I only have two sisters.“",
+  "kind": "explain",
+  "de": "„But I don't have a brother. I only have two sisters.“"
+ },
+ {
+  "tr": "Restoranda sıra hep aynı: masa, sipariş, yemek, hesap.",
+  "kind": "explain",
+  "de": "Im Restaurant ist die Reihenfolge immer gleich: Tisch, Bestellung, Essen, Rechnung."
+ },
+ {
+  "tr": "„Breakfast: 8 euros.“ — tek tek alsan daha pahalı olurdu.",
+  "kind": "explain",
+  "de": "„Breakfast: 8 euros.“ — einzeln bestellt wäre es teurer."
+ },
+ {
+  "tr": "„I have a cat and a fish.“ — at ve kuş hayvanat bahçesinde.",
+  "kind": "explain",
+  "de": "„I have a cat and a fish.“ — Pferd und Vogel gibt es im Zoo."
+ },
+ {
+  "tr": "„My grandparents live together in Izmir.“ — ikisi birlikte.",
+  "kind": "explain",
+  "de": "„My grandparents live together in Izmir.“ — die beiden zusammen."
+ },
+ {
+  "tr": "„My mother takes a photo.“ — bu yüzden anne fotoğrafta yok.",
+  "kind": "explain",
+  "de": "„My mother takes a photo.“ — deshalb ist die Mutter nicht auf dem Foto."
+ },
+ {
+  "tr": "„Soup of the day: 5 euros“ — menünün en pahalı tek maddesi.",
+  "kind": "explain",
+  "de": "„Soup of the day: 5 euros“ — der teuerste Einzelposten der Karte."
+ },
+ {
+  "tr": "„He is quiet, but he is very strong.“ Can ise „never quiet“.",
+  "kind": "explain",
+  "de": "„He is quiet, but he is very strong.“ Can dagegen ist „never quiet“."
+ },
+ {
+  "tr": "„I'd like a soup, please. And a water.“ — sandviçi Eda alıyor.",
+  "kind": "explain",
+  "de": "„I'd like a soup, please. And a water.“ — das Sandwich nimmt Eda."
+ },
+ {
+  "tr": "„My friend Kaan is nineteen.“ — yaşta „years old“ düşebiliyor.",
+  "kind": "explain",
+  "de": "„My friend Kaan is nineteen.“ — beim Alter kann „years old“ wegfallen."
+ },
+ {
+  "tr": "„Nil's cousin Ali plays with us too.“ — kuzenlik iki yönlüdür.",
+  "kind": "explain",
+  "de": "„Nil's cousin Ali plays with us too.“ — Cousin ist man gegenseitig."
+ },
+ {
+  "tr": "„one, two, three … eight!“ — Eda sayıyor ve sekizde bitiriyor.",
+  "kind": "explain",
+  "de": "„one, two, three … eight!“ — Eda zählt und hört bei acht auf."
+ },
+ {
+  "tr": "„the coffee is three euros“ — iki euro gazete, beş euro toplam.",
+  "kind": "explain",
+  "de": "„the coffee is three euros“ — zwei Euro die Zeitung, fünf Euro zusammen."
+ },
+ {
+  "tr": "„I have a dog. Its name is Luna.“ — Mia kedilerden biri, Pit kuş.",
+  "kind": "explain",
+  "de": "„I have a dog. Its name is Luna.“ — Mia ist eine der Katzen, Pit der Vogel."
+ },
+ {
+  "tr": "„I only have coins“ — birden çok olduğu için çoğul: coin → coins.",
+  "kind": "explain",
+  "de": "„I only have coins“ — weil es mehrere sind, steht der Plural: coin → coins."
+ },
+ {
+  "tr": "„Sandwich with cheese: 4 euros“ — iki euro ekmek, beş euro çorba.",
+  "kind": "explain",
+  "de": "„Sandwich with cheese: 4 euros“ — zwei Euro das Brot, fünf Euro die Suppe."
+ },
+ {
+  "tr": "„…they only sleep.“ — „only“ başka bir şey yapmadıklarını söylüyor.",
+  "kind": "explain",
+  "de": "„…they only sleep.“ — „only“ sagt, dass sie sonst nichts tun."
+ },
+ {
+  "tr": "„he has got short, dark hair“ — iki sıfat virgülle art arda geliyor.",
+  "kind": "explain",
+  "de": "„he has got short, dark hair“ — zwei Adjektive stehen mit Komma hintereinander."
+ },
+ {
+  "tr": "„there is a dog. Its name is Nero.“ — hayvan için „its“ kullanılıyor.",
+  "kind": "explain",
+  "de": "„there is a dog. Its name is Nero.“ — für ein Tier steht „its“."
+ },
+ {
+  "tr": "„Kaan's cousin Ada is in our club.“ — iyelik „-'s“ ile: Kaan's cousin.",
+  "kind": "explain",
+  "de": "„Kaan's cousin Ada is in our club.“ — der Besitz mit „-'s“: Kaan's cousin."
+ },
+ {
+  "tr": "Önce tek kişi sorulur, sonra anne baba. Cevaplar kısa biçimde geliyor.",
+  "kind": "explain",
+  "de": "Zuerst wird nach einer Person gefragt, dann nach den Eltern. Die Antworten kommen in Kurzform."
+ },
+ {
+  "tr": "„It is nine euros.“ — beş euro çorba, dört euro sandviç; toplamı dokuz.",
+  "kind": "explain",
+  "de": "„It is nine euros.“ — fünf Euro die Suppe, vier Euro das Sandwich; zusammen neun."
+ },
+ {
+  "tr": "„No, that is my aunt's husband. His name is Kaan.“ — Ayse amca sanıyor.",
+  "kind": "explain",
+  "de": "„No, that is my aunt's husband. His name is Kaan.“ — Ayse hält ihn für den Onkel."
+ },
+ {
+  "tr": "Önce fotoğrafın kendisi, sonra tek kişi, sonra iki kişi, en son kendisi.",
+  "kind": "explain",
+  "de": "Zuerst das Foto selbst, dann eine Person, dann zwei Personen, zuletzt sie selbst."
+ },
+ {
+  "tr": "„I only have two sisters.“ — iki tane olduğu için çoğul: sister → sisters.",
+  "kind": "explain",
+  "de": "„I only have two sisters.“ — weil es zwei sind, steht der Plural: sister → sisters."
+ },
+ {
+  "tr": "Önce kim olduğu, sonra nasıl göründüğü. İki soru iki ayrı kalıpla geliyor.",
+  "kind": "explain",
+  "de": "Zuerst wer es ist, dann wie er aussieht. Zwei Fragen mit zwei verschiedenen Wendungen."
+ },
+ {
+  "tr": "„Is there any milk in it? — No milk, thank you.“ Soruda „any“, cevapta yok.",
+  "kind": "explain",
+  "de": "„Is there any milk in it? — No milk, thank you.“ In der Frage „any“, in der Antwort nichts."
+ },
+ {
+  "tr": "„I don't have an animal at home.“ Annesi de „Don't bring a dog here!“ diyor.",
+  "kind": "explain",
+  "de": "„I don't have an animal at home.“ Auch seine Mutter sagt „Don't bring a dog here!“ zu ihm."
+ },
+ {
+  "tr": "„Kaan likes music very much.“ Oyun da oynuyorlar ama „very much“ müzik için.",
+  "kind": "explain",
+  "de": "„Kaan likes music very much.“ Sie spielen auch, aber „very much“ gilt der Musik."
+ },
+ {
+  "tr": "„But can I have a spoon? There is only a knife here.“ — kaşık yok, bıçak var.",
+  "kind": "explain",
+  "de": "„But can I have a spoon? There is only a knife here.“ — kein Löffel, nur ein Messer."
+ },
+ {
+  "tr": "„Kaan is not quiet. He is funny, and he talks a lot.“ Sessiz olan kuzeni Ada.",
+  "kind": "explain",
+  "de": "„Kaan is not quiet. He is funny, and he talks a lot.“ Still ist seine Cousine Ada."
+ },
+ {
+  "tr": "„I don't have an animal at home.“ — „an“ sesli harfle başlayan sözcükten önce.",
+  "kind": "explain",
+  "de": "„I don't have an animal at home.“ — „an“ steht vor einem Wort mit Vokal am Anfang."
+ },
+ {
+  "tr": "„My grandmother is funny and my grandfather is quiet.“ — komik olan büyükanne.",
+  "kind": "explain",
+  "de": "„My grandmother is funny and my grandfather is quiet.“ — lustig ist die Großmutter."
+ },
+ {
+  "tr": "„But there are many horses at the zoo.“ — evde at yok, hayvanat bahçesinde var.",
+  "kind": "explain",
+  "de": "„But there are many horses at the zoo.“ — zu Hause kein Pferd, im Zoo schon."
+ },
+ {
+  "tr": "„Can I have a newspaper, please?“ — „please“ önünde virgülle, cümlenin sonunda.",
+  "kind": "explain",
+  "de": "„Can I have a newspaper, please?“ — „please“ steht am Satzende, mit Komma davor."
+ },
+ {
+  "tr": "„Can I have a newspaper, please?“ ilk cümle; kahve sonra, çanta en son geliyor.",
+  "kind": "explain",
+  "de": "„Can I have a newspaper, please?“ ist der erste Satz; der Kaffee kommt danach, die Tüte zuletzt."
+ },
+ {
+  "tr": "„My sister has two cats.“ Erkek kardeş köpekle oynuyor, baba kuşu hatırlatıyor.",
+  "kind": "explain",
+  "de": "„My sister has two cats.“ Der Bruder spielt mit dem Hund, der Vater erinnert an den Vogel."
+ },
+ {
+  "tr": "„No, he isn't. That is my grandfather.“ — Mert amcası sanıyor, Sena düzeltiyor.",
+  "kind": "explain",
+  "de": "„No, he isn't. That is my grandfather.“ — Mert hält ihn für den Onkel, Sena berichtigt das."
+ },
+ {
+  "tr": "„He is tall and he has got short, dark hair.“ — „funny“ karakter, görünüş değil.",
+  "kind": "explain",
+  "de": "„He is tall and he has got short, dark hair.“ — „funny“ ist Charakter, nicht Aussehen."
+ },
+ {
+  "tr": "„Pit doesn't talk, and he never sings.“ — „never“ tek başına olumsuzluk taşıyor.",
+  "kind": "explain",
+  "de": "„Pit doesn't talk, and he never sings.“ — „never“ verneint schon für sich allein."
+ },
+ {
+  "tr": "Önce kahvaltının kendisi, sonra kendi yediği, sonra kardeşininki, en son sonrası.",
+  "kind": "explain",
+  "de": "Zuerst das Frühstück selbst, dann was er isst, dann was der Bruder isst, zuletzt was danach kommt."
+ },
+ {
+  "tr": "Önce tek kişi sorulur, sonra kaç kişi olduğu. „who“ kişiyi, „how many“ sayıyı sorar.",
+  "kind": "explain",
+  "de": "Zuerst wird nach einer Person gefragt, dann nach der Anzahl. „who“ fragt nach der Person, „how many“ nach der Zahl."
+ },
+ {
+  "tr": "„He talks a lot and he is never quiet.“ — üçüncü tekil kişide fiil „-s“ alıyor: talks.",
+  "kind": "explain",
+  "de": "„He talks a lot and he is never quiet.“ — in der dritten Person Singular bekommt das Verb ein „-s“: talks."
+ },
+ {
+  "tr": "„One egg, bread, butter, cheese and a cup of tea or coffee.“ — sandviç ayrı bir madde.",
+  "kind": "explain",
+  "de": "„One egg, bread, butter, cheese and a cup of tea or coffee.“ — das Sandwich ist ein eigener Posten."
+ },
+ {
+  "tr": "„She is short and she has got long hair.“ — „funny“ ve „busy“ görünüş değil, karakter.",
+  "kind": "explain",
+  "de": "„She is short and she has got long hair.“ — „funny“ und „busy“ sind kein Aussehen, sondern Charakter."
+ },
+ {
+  "tr": "„I eat some bread with butter and cheese. I don't eat eggs.“ — yumurtayı kardeşi yiyor.",
+  "kind": "explain",
+  "de": "„I eat some bread with butter and cheese. I don't eat eggs.“ — das Ei isst sein Bruder."
+ },
+ {
+  "tr": "„I am not in the picture. I don't like photos!“ — Deniz resimde ama artık orada çalışmıyor.",
+  "kind": "explain",
+  "de": "„I am not in the picture. I don't like photos!“ — Deniz ist auf dem Bild, arbeitet dort aber nicht mehr."
+ },
+ {
+  "tr": "„The fish doesn't have a name.“ — üçüncü tekil kişide „doesn't“ ve fiil eksiz: have, has değil.",
+  "kind": "explain",
+  "de": "„The fish doesn't have a name.“ — dritte Person Singular: „doesn't“ und das Verb ohne Endung, also have, nicht has."
+ },
+ {
+  "tr": "tabii ki",
+  "kind": "gloss.tr",
+  "de": "natürlich"
+ },
+ {
+  "tr": "çok",
+  "kind": "gloss.tr",
+  "de": "sehr"
+ },
+ {
+  "tr": "bilmek",
+  "kind": "gloss.tr",
+  "de": "wissen"
+ },
+ {
+  "tr": "benzemek",
+  "kind": "gloss.tr",
+  "de": "aussehen wie"
+ },
+ {
+  "tr": "büfe",
+  "kind": "gloss.tr",
+  "de": "Kiosk"
+ },
+ {
+  "tr": "işte",
+  "kind": "gloss.tr",
+  "de": "bei der Arbeit"
+ },
+ {
+  "tr": "koyu",
+  "kind": "gloss.tr",
+  "de": "dunkel"
+ },
+ {
+  "tr": "hesap",
+  "kind": "gloss.tr",
+  "de": "Rechnung"
+ },
+ {
+  "tr": "yeşil",
+  "kind": "gloss.tr",
+  "de": "grün"
+ },
+ {
+  "tr": "… etme",
+  "kind": "gloss.tr",
+  "de": "mach … nicht"
+ },
+ {
+  "tr": "sevmek",
+  "kind": "gloss.tr",
+  "de": "mögen"
+ },
+ {
+  "tr": "bu … mi",
+  "kind": "gloss.tr",
+  "de": "ist das …"
+ },
+ {
+  "tr": "buyurun",
+  "kind": "gloss.tr",
+  "de": "bitte sehr"
+ },
+ {
+  "tr": "çiftlik",
+  "kind": "gloss.tr",
+  "de": "Bauernhof"
+ },
+ {
+  "tr": "her gün",
+  "kind": "gloss.tr",
+  "de": "jeden Tag"
+ },
+ {
+  "tr": "onlar …",
+  "kind": "gloss.tr",
+  "de": "das sind …"
+ },
+ {
+  "tr": "oynamak",
+  "kind": "gloss.tr",
+  "de": "spielen"
+ },
+ {
+  "tr": "bunlar …",
+  "kind": "gloss.tr",
+  "de": "dies sind …"
+ },
+ {
+  "tr": "insanlar",
+  "kind": "gloss.tr",
+  "de": "Leute"
+ },
+ {
+  "tr": "gerçekten",
+  "kind": "gloss.tr",
+  "de": "wirklich"
+ },
+ {
+  "tr": "neden yok",
+  "kind": "gloss.tr",
+  "de": "warum nicht"
+ },
+ {
+  "tr": "bir dakika",
+  "kind": "gloss.tr",
+  "de": "einen Moment"
+ },
+ {
+  "tr": "… istiyorum",
+  "kind": "gloss.tr",
+  "de": "ich hätte gern …"
+ },
+ {
+  "tr": "o … etmiyor",
+  "kind": "gloss.tr",
+  "de": "er … nicht"
+ },
+ {
+  "tr": "birçok … var",
+  "kind": "gloss.tr",
+  "de": "es gibt viele …"
+ },
+ {
+  "tr": "o uzun boylu",
+  "kind": "gloss.tr",
+  "de": "er ist groß"
+ },
+ {
+  "tr": "onu alacağım",
+  "kind": "gloss.tr",
+  "de": "ich nehme es"
+ },
+ {
+  "tr": "başka bir şey",
+  "kind": "gloss.tr",
+  "de": "sonst noch etwas"
+ },
+ {
+  "tr": "ben … değilim",
+  "kind": "gloss.tr",
+  "de": "ich … nicht"
+ },
+ {
+  "tr": "bir fincan çay",
+  "kind": "gloss.tr",
+  "de": "eine Tasse Tee"
+ },
+ {
+  "tr": "o sessiz değil",
+  "kind": "gloss.tr",
+  "de": "sie ist nicht still"
+ },
+ {
+  "tr": "şarkı söylemek",
+  "kind": "gloss.tr",
+  "de": "singen"
+ },
+ {
+  "tr": "fotoğraf çekmek",
+  "kind": "gloss.tr",
+  "de": "ein Foto machen"
+ },
+ {
+  "tr": "o cana yakın mı",
+  "kind": "gloss.tr",
+  "de": "ist sie nett"
+ },
+ {
+  "tr": "o neye benziyor",
+  "kind": "gloss.tr",
+  "de": "wie sieht er aus"
+ },
+ {
+  "tr": "… alabilir miyim",
+  "kind": "gloss.tr",
+  "de": "kann ich … haben"
+ },
+ {
+  "tr": "o çok iyi kalpli",
+  "kind": "gloss.tr",
+  "de": "er ist sehr lieb"
+ },
+ {
+  "tr": "uzun saçları var",
+  "kind": "gloss.tr",
+  "de": "sie hat lange Haare"
+ },
+ {
+  "tr": "ne almak istersiniz",
+  "kind": "gloss.tr",
+  "de": "was möchten Sie"
+ },
+ {
+  "tr": "büyükanne ve büyükbaba",
+  "kind": "gloss.tr",
+  "de": "Großeltern"
+ }
+]

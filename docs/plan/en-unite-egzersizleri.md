@@ -60,8 +60,8 @@ mi çıkacağına yazar karar verir.
 
 | Seviye | Ünite | Durum |
 |---|---|---|
-| A1 | 1 · 2 · 3 | **yazıldı** (2026-09-11) |
-| A1 | 4–25 | bekliyor |
+| A1 | 1–6 | **yazıldı** (2026-09-11) |
+| A1 | 7–25 | bekliyor |
 | A2 · B1 · B2 · C1 | 1–25 | bekliyor |
 
 **A1 ünite 1 (2026-09-11).** Dört dersi Hello! · How are you? · I am, you
@@ -109,6 +109,28 @@ de sahibe bakıyor. Almanca karşılık bunu söylüyor ve asıl farkı gösteri
 „my“ hiç çekilmiyor. Tersine "soru „do“ ile başlar" satırı Almanca okuyan
 için Türkçe okuyandan DAHA zor, çünkü Almancada yardımcı fiille soru kurma
 diye bir şey yok — o satır Almancada uzuyor.
+
+**A1 ünite 4–6 (2026-09-11).** Ünite 4 dersleri I don't … · Pets ·
+In the photo · One or many; ünite 5 What he looks like · My friends ·
+Relatives · What people are like; ünite 6 At the café · Breakfast ·
+At the kiosk · At the restaurant. On sekiz egzersiz; ünite dışı ölçüm
+%0,0 (tek belirteç kaldı).
+
+Ölçüm üçüncü kez düzeltildi ve bu sefer bir KÖR NOKTA kapandı. Okuma
+diyaloğunda konuşmacı adı metnin içinde, satır başında duruyor
+("Mert: Hello!"); dinlemede ise kendi alanında (`segments[].speaker`) ve
+ölçüme hiç girmiyor. Aynı ad, yalnızca biçim yüzünden bir egzersizde
+sayılıp ötekinde sayılmıyordu. Üstelik satır başındaki ad ortak makinenin
+özel-ad kuralının tek kör noktası: cümle başı sayıldığı için büyük harf
+onu kurtarmıyor. Etiket artık ölçüm yüzeyinden düşüyor ve okuma metni
+satır satır veriliyor.
+
+Ünite 6 sayılabilirliği öğretiyor („a coffee“ bir fincan, „coffee“ madde;
+„some“ olumluda, „any“ soruda) ve bu, Almanca eksende ilginç bir satır
+üretti: Türkçe yönerge "Türkçede böyle bir ayrım yok" diyor ve Almanca
+karşılık bunu DOĞRULUYOR — Almanca da bu ayrımı yapmıyor. Yeniden ölçüm
+her zaman farkı büyütmüyor; bazen iki dilin aynı yerde eksik olduğunu
+söylüyor.
 
 ## Tamamlanma ölçütü
 

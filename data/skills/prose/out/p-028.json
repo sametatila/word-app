@@ -1,0 +1,367 @@
+[
+ {
+  "tr": "„The dog's name is Tosun.“",
+  "kind": "explain",
+  "en": "„The dog's name is Tosun.“"
+ },
+ {
+  "tr": "„Water: 1 euro“ — iki euro olan kahve.",
+  "kind": "explain",
+  "en": "„Water: 1 euro“ — the coffee is the one that costs two euros."
+ },
+ {
+  "tr": "„he has got short hair“ — Ada'nınki uzun.",
+  "kind": "explain",
+  "en": "„he has got short hair“ — Ada's is long."
+ },
+ {
+  "tr": "Görünüş yaz. Sonunda kişi kartını doldur.",
+  "kind": "intro",
+  "en": "Write about appearance. At the end, fill in the person card."
+ },
+ {
+  "tr": "„He doesn't live here. He is from Ankara.“",
+  "kind": "explain",
+  "en": "„He doesn't live here. He is from Ankara.“"
+ },
+ {
+  "tr": "„He doesn't work here now. He is in Bremen.“",
+  "kind": "explain",
+  "en": "„He doesn't work here now. He is in Bremen.“"
+ },
+ {
+  "tr": "„The cat's name is Zeyno.“ — balığın adı yok.",
+  "kind": "explain",
+  "en": "„The cat's name is Zeyno.“ — the fish has no name."
+ },
+ {
+  "tr": "Büfede alışveriş. Fiyatları ve toplamı yakala.",
+  "kind": "intro",
+  "en": "Shopping at the kiosk. Catch the prices and the total."
+ },
+ {
+  "tr": "„He doesn't like cheese.“ — peyniri yiyen Deniz.",
+  "kind": "explain",
+  "en": "„He doesn't like cheese.“ — the one who eats cheese is Deniz."
+ },
+ {
+  "tr": "„But I don't have a brother. I only have two sisters.“",
+  "kind": "explain",
+  "en": "„But I don't have a brother. I only have two sisters.“"
+ },
+ {
+  "tr": "Restoranda sıra hep aynı: masa, sipariş, yemek, hesap.",
+  "kind": "explain",
+  "en": "At a restaurant the order is always the same: table, order, food, bill."
+ },
+ {
+  "tr": "„Breakfast: 8 euros.“ — tek tek alsan daha pahalı olurdu.",
+  "kind": "explain",
+  "en": "„Breakfast: 8 euros.“ — item by item it would cost more."
+ },
+ {
+  "tr": "Deniz fotoğraftaki akrabalarını tanıtıyor. Kim kimin nesi?",
+  "kind": "intro",
+  "en": "Deniz introduces the relatives in the photo. Who is related to whom?"
+ },
+ {
+  "tr": "„I have a cat and a fish.“ — at ve kuş hayvanat bahçesinde.",
+  "kind": "explain",
+  "en": "„I have a cat and a fish.“ — the horse and the bird are at the zoo."
+ },
+ {
+  "tr": "„My grandparents live together in Izmir.“ — ikisi birlikte.",
+  "kind": "explain",
+  "en": "„My grandparents live together in Izmir.“ — the two of them together."
+ },
+ {
+  "tr": "„My mother takes a photo.“ — bu yüzden anne fotoğrafta yok.",
+  "kind": "explain",
+  "en": "„My mother takes a photo.“ — that is why the mother is not in the photo."
+ },
+ {
+  "tr": "„Soup of the day: 5 euros“ — menünün en pahalı tek maddesi.",
+  "kind": "explain",
+  "en": "„Soup of the day: 5 euros“ — the most expensive single item on the menu."
+ },
+ {
+  "tr": "„He is quiet, but he is very strong.“ Can ise „never quiet“.",
+  "kind": "explain",
+  "en": "„He is quiet, but he is very strong.“ Can, on the other hand, is „never quiet“."
+ },
+ {
+  "tr": "„I'd like a soup, please. And a water.“ — sandviçi Eda alıyor.",
+  "kind": "explain",
+  "en": "„I'd like a soup, please. And a water.“ — the sandwich is Eda's order."
+ },
+ {
+  "tr": "„My friend Kaan is nineteen.“ — yaşta „years old“ düşebiliyor.",
+  "kind": "explain",
+  "en": "„My friend Kaan is nineteen.“ — with an age, „years old“ can be dropped."
+ },
+ {
+  "tr": "„Nil's cousin Ali plays with us too.“ — kuzenlik iki yönlüdür.",
+  "kind": "explain",
+  "en": "„Nil's cousin Ali plays with us too.“ — being cousins goes both ways."
+ },
+ {
+  "tr": "„one, two, three … eight!“ — Eda sayıyor ve sekizde bitiriyor.",
+  "kind": "explain",
+  "en": "„one, two, three … eight!“ — Eda counts and stops at eight."
+ },
+ {
+  "tr": "Sipariş kalıplarını yaz. Sonunda kafe siparişi formunu doldur.",
+  "kind": "intro",
+  "en": "Write the phrases for ordering. At the end, fill in the café order form."
+ },
+ {
+  "tr": "„the coffee is three euros“ — iki euro gazete, beş euro toplam.",
+  "kind": "explain",
+  "en": "„the coffee is three euros“ — two euros is the newspaper, five euros the total."
+ },
+ {
+  "tr": "„I have a dog. Its name is Luna.“ — Mia kedilerden biri, Pit kuş.",
+  "kind": "explain",
+  "en": "„I have a dog. Its name is Luna.“ — Mia is one of the cats, Pit is the bird."
+ },
+ {
+  "tr": "„I only have coins“ — birden çok olduğu için çoğul: coin → coins.",
+  "kind": "explain",
+  "en": "„I only have coins“ — there is more than one, so the plural: coin → coins."
+ },
+ {
+  "tr": "„Sandwich with cheese: 4 euros“ — iki euro ekmek, beş euro çorba.",
+  "kind": "explain",
+  "en": "„Sandwich with cheese: 4 euros“ — two euros is the bread, five euros the soup."
+ },
+ {
+  "tr": "„…they only sleep.“ — „only“ başka bir şey yapmadıklarını söylüyor.",
+  "kind": "explain",
+  "en": "„…they only sleep.“ — „only“ says that they do nothing else."
+ },
+ {
+  "tr": "Bir arkadaş anlatılıyor: hem nasıl göründüğü hem nasıl biri olduğu.",
+  "kind": "intro",
+  "en": "A friend is described: both what he looks like and what he is like."
+ },
+ {
+  "tr": "Lena ile Can evcil hayvanları konuşuyor. Kimin nesi var, kimin yok?",
+  "kind": "intro",
+  "en": "Lena and Can talk about pets. Who has what, who has nothing?"
+ },
+ {
+  "tr": "„he has got short, dark hair“ — iki sıfat virgülle art arda geliyor.",
+  "kind": "explain",
+  "en": "„he has got short, dark hair“ — two adjectives come one after the other with a comma."
+ },
+ {
+  "tr": "Bir kafenin menüsünü oku: ne var, ne kadar, kahvaltıda ne veriliyor?",
+  "kind": "intro",
+  "en": "Read a café menu: what there is, what it costs, what comes with breakfast?"
+ },
+ {
+  "tr": "„there is a dog. Its name is Nero.“ — hayvan için „its“ kullanılıyor.",
+  "kind": "explain",
+  "en": "„there is a dog. Its name is Nero.“ — for an animal you use „its“."
+ },
+ {
+  "tr": "Karakteri yaz. Olumsuzu ve sorusu „be“ ile kuruluyor, „do“ ile değil.",
+  "kind": "intro",
+  "en": "Write about character. The negative and the question are built with „be“, not with „do“."
+ },
+ {
+  "tr": "„Kaan's cousin Ada is in our club.“ — iyelik „-'s“ ile: Kaan's cousin.",
+  "kind": "explain",
+  "en": "„Kaan's cousin Ada is in our club.“ — possession with „-'s“: Kaan's cousin."
+ },
+ {
+  "tr": "Önce tek kişi sorulur, sonra anne baba. Cevaplar kısa biçimde geliyor.",
+  "kind": "explain",
+  "en": "First one person is asked about, then the parents. The answers come in short form."
+ },
+ {
+  "tr": "„It is nine euros.“ — beş euro çorba, dört euro sandviç; toplamı dokuz.",
+  "kind": "explain",
+  "en": "„It is nine euros.“ — five euros the soup, four euros the sandwich; nine together."
+ },
+ {
+  "tr": "„No, that is my aunt's husband. His name is Kaan.“ — Ayse amca sanıyor.",
+  "kind": "explain",
+  "en": "„No, that is my aunt's husband. His name is Kaan.“ — Ayse takes him for the uncle."
+ },
+ {
+  "tr": "Önce fotoğrafın kendisi, sonra tek kişi, sonra iki kişi, en son kendisi.",
+  "kind": "explain",
+  "en": "First the photo itself, then one person, then two people, last of all herself."
+ },
+ {
+  "tr": "Deniz kahvaltısını anlatıyor. „some“ ile „any“ nerede geçiyor, dikkat et.",
+  "kind": "intro",
+  "en": "Deniz talks about his breakfast. Watch where „some“ and where „any“ appears."
+ },
+ {
+  "tr": "„I only have two sisters.“ — iki tane olduğu için çoğul: sister → sisters.",
+  "kind": "explain",
+  "en": "„I only have two sisters.“ — there are two, so the plural: sister → sisters."
+ },
+ {
+  "tr": "Ayse iş yerindeki grup fotoğrafını anlatıyor. Kim kim, kim fotoğrafta yok?",
+  "kind": "intro",
+  "en": "Ayse explains the group photo from work. Who is who, who is missing from the photo?"
+ },
+ {
+  "tr": "Önce kim olduğu, sonra nasıl göründüğü. İki soru iki ayrı kalıpla geliyor.",
+  "kind": "explain",
+  "en": "First who it is, then what he looks like. Two questions with two different phrases."
+ },
+ {
+  "tr": "„Is there any milk in it? — No milk, thank you.“ Soruda „any“, cevapta yok.",
+  "kind": "explain",
+  "en": "„Is there any milk in it? — No milk, thank you.“ In the question „any“, in the answer nothing."
+ },
+ {
+  "tr": "„I don't have an animal at home.“ Annesi de „Don't bring a dog here!“ diyor.",
+  "kind": "explain",
+  "en": "„I don't have an animal at home.“ His mother says „Don't bring a dog here!“ as well."
+ },
+ {
+  "tr": "„Kaan likes music very much.“ Oyun da oynuyorlar ama „very much“ müzik için.",
+  "kind": "explain",
+  "en": "„Kaan likes music very much.“ They play games too, but „very much“ belongs to the music."
+ },
+ {
+  "tr": "„But can I have a spoon? There is only a knife here.“ — kaşık yok, bıçak var.",
+  "kind": "explain",
+  "en": "„But can I have a spoon? There is only a knife here.“ — no spoon, only a knife."
+ },
+ {
+  "tr": "„Kaan is not quiet. He is funny, and he talks a lot.“ Sessiz olan kuzeni Ada.",
+  "kind": "explain",
+  "en": "„Kaan is not quiet. He is funny, and he talks a lot.“ The quiet one is his cousin Ada."
+ },
+ {
+  "tr": "„some“ olumlu cümlede, „any“ soru ve olumsuzda. Türkçede böyle bir ayrım yok.",
+  "kind": "intro",
+  "en": "„some“ goes in a positive sentence, „any“ in a question or a negative. Turkish draws no such line."
+ },
+ {
+  "tr": "„I don't have an animal at home.“ — „an“ sesli harfle başlayan sözcükten önce.",
+  "kind": "explain",
+  "en": "„I don't have an animal at home.“ — „an“ comes before a word starting with a vowel."
+ },
+ {
+  "tr": "„My grandmother is funny and my grandfather is quiet.“ — komik olan büyükanne.",
+  "kind": "explain",
+  "en": "„My grandmother is funny and my grandfather is quiet.“ — the funny one is the grandmother."
+ },
+ {
+  "tr": "„But there are many horses at the zoo.“ — evde at yok, hayvanat bahçesinde var.",
+  "kind": "explain",
+  "en": "„But there are many horses at the zoo.“ — no horse at home, but there are some at the zoo."
+ },
+ {
+  "tr": "„Can I have a newspaper, please?“ — „please“ önünde virgülle, cümlenin sonunda.",
+  "kind": "explain",
+  "en": "„Can I have a newspaper, please?“ — „please“ sits at the end of the sentence, after a comma."
+ },
+ {
+  "tr": "„Can I have a newspaper, please?“ ilk cümle; kahve sonra, çanta en son geliyor.",
+  "kind": "explain",
+  "en": "„Can I have a newspaper, please?“ is the first line; the coffee comes next, the bag last."
+ },
+ {
+  "tr": "„My sister has two cats.“ Erkek kardeş köpekle oynuyor, baba kuşu hatırlatıyor.",
+  "kind": "explain",
+  "en": "„My sister has two cats.“ The brother plays with the dog, the father reminds them of the bird."
+ },
+ {
+  "tr": "„No, he isn't. That is my grandfather.“ — Mert amcası sanıyor, Sena düzeltiyor.",
+  "kind": "explain",
+  "en": "„No, he isn't. That is my grandfather.“ — Mert takes him for the uncle, Sena corrects him."
+ },
+ {
+  "tr": "„He is tall and he has got short, dark hair.“ — „funny“ karakter, görünüş değil.",
+  "kind": "explain",
+  "en": "„He is tall and he has got short, dark hair.“ — „funny“ is character, not appearance."
+ },
+ {
+  "tr": "„Pit doesn't talk, and he never sings.“ — „never“ tek başına olumsuzluk taşıyor.",
+  "kind": "explain",
+  "en": "„Pit doesn't talk, and he never sings.“ — „never“ carries the negative on its own."
+ },
+ {
+  "tr": "Olumsuz cümleyi yaz. Dikkat: üçüncü tekil kişide „don't“ değil „doesn't“ geliyor.",
+  "kind": "intro",
+  "en": "Write negative sentences. Careful: in the third person singular it is „doesn't“, not „don't“."
+ },
+ {
+  "tr": "Önce kahvaltının kendisi, sonra kendi yediği, sonra kardeşininki, en son sonrası.",
+  "kind": "explain",
+  "en": "First breakfast itself, then what he eats, then what his brother eats, last what comes after."
+ },
+ {
+  "tr": "Eda bir fotoğrafı anlatıyor. „this“, „that“ ve „these“ arasındaki farka dikkat et.",
+  "kind": "intro",
+  "en": "Eda explains a photo. Watch the difference between „this“, „that“ and „these“."
+ },
+ {
+  "tr": "Sena akrabalarını anlatıyor. „look like“ görünüşü sorar — cevabı da görünüş olmalı.",
+  "kind": "intro",
+  "en": "Sena introduces her relatives. „look like“ asks about appearance — so the answer has to be appearance."
+ },
+ {
+  "tr": "Bir aile evcil hayvanlarını anlatıyor. Kimin hangi hayvanı var, hangisi ne yapmıyor?",
+  "kind": "intro",
+  "en": "A family talks about its pets. Who has which animal, which one does not do what?"
+ },
+ {
+  "tr": "Eda kulübündeki üç kişiyi anlatıyor. Her biri için hem görünüş hem karakter geliyor.",
+  "kind": "intro",
+  "en": "Eda introduces three people from her club. For each one you get both looks and character."
+ },
+ {
+  "tr": "Önce tek kişi sorulur, sonra kaç kişi olduğu. „who“ kişiyi, „how many“ sayıyı sorar.",
+  "kind": "explain",
+  "en": "First one person is asked about, then how many there are. „who“ asks the person, „how many“ the number."
+ },
+ {
+  "tr": "„He talks a lot and he is never quiet.“ — üçüncü tekil kişide fiil „-s“ alıyor: talks.",
+  "kind": "explain",
+  "en": "„He talks a lot and he is never quiet.“ — in the third person singular the verb takes „-s“: talks."
+ },
+ {
+  "tr": "„One egg, bread, butter, cheese and a cup of tea or coffee.“ — sandviç ayrı bir madde.",
+  "kind": "explain",
+  "en": "„One egg, bread, butter, cheese and a cup of tea or coffee.“ — the sandwich is a separate item."
+ },
+ {
+  "tr": "„She is short and she has got long hair.“ — „funny“ ve „busy“ görünüş değil, karakter.",
+  "kind": "explain",
+  "en": "„She is short and she has got long hair.“ — „funny“ and „busy“ are not looks but character."
+ },
+ {
+  "tr": "„I eat some bread with butter and cheese. I don't eat eggs.“ — yumurtayı kardeşi yiyor.",
+  "kind": "explain",
+  "en": "„I eat some bread with butter and cheese. I don't eat eggs.“ — the egg is his brother's."
+ },
+ {
+  "tr": "„I am not in the picture. I don't like photos!“ — Deniz resimde ama artık orada çalışmıyor.",
+  "kind": "explain",
+  "en": "„I am not in the picture. I don't like photos!“ — Deniz is in the picture but no longer works there."
+ },
+ {
+  "tr": "Tekil ile çoğulu yaz. İngilizcede çoğul, ismi ve ona bağlı sözcükleri birlikte değiştiriyor.",
+  "kind": "intro",
+  "en": "Write singular and plural. In English the plural changes the noun and the words tied to it together."
+ },
+ {
+  "tr": "„The fish doesn't have a name.“ — üçüncü tekil kişide „doesn't“ ve fiil eksiz: have, has değil.",
+  "kind": "explain",
+  "en": "„The fish doesn't have a name.“ — third person singular: „doesn't“ and a bare verb, have, not has."
+ },
+ {
+  "tr": "Restoranda sipariş ve hesap. Sipariş kalıplarına dikkat: „I'd like“ ve „I'll have“ aynı işi görüyor.",
+  "kind": "intro",
+  "en": "Ordering and paying at a restaurant. Watch the phrases: „I'd like“ and „I'll have“ do the same job."
+ }
+]

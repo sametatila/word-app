@@ -31,7 +31,7 @@ import { EN_FREE, LEVELS, measureEn } from "./lib/en-gate";
 function surface(e: SkillExercise): string {
   const out: string[] = [];
   const tr = (s: string) => /[ığşĞİŞ]|iyor|mek\b|mak\b/.test(s);
-  if (e.skill === "reading") out.push(e.text);
+  if (e.skill === "reading") out.push(...e.text.split("\n"));
   if (e.skill === "listening") for (const s of e.segments) out.push(s.text);
   if (e.skill === "reading" || e.skill === "listening") {
     for (const q of e.questions) {
@@ -53,12 +53,21 @@ function surface(e: SkillExercise): string {
       if ("words" in t) for (const p of t.words) out.push(p.de);
     }
   }
+  /* KONUŞMACI ETİKETİ DE SÖZCÜK DEĞİL. Dinleme egzersizinde konuşmacı
+     kendi alanında duruyor (`segments[].speaker`) ve ölçüme hiç girmiyor;
+     okuma diyaloğunda ise tek metin bloğunun içinde, satır başında
+     "Mert: " olarak yazılıyor. Ölçüm ikisine aynı gözle bakmalı, yoksa
+     yalnızca biçim yüzünden aynı ad bir egzersizde sayılıyor ötekinde
+     sayılmıyordu. Üstelik satır başındaki ad, ortak makinenin özel-ad
+     kuralının TEK kör noktası: cümle başı sayıldığı için büyük harf onu
+     kurtarmıyor. */
+  const clean = out.join(" | ").replace(/(^|\| )\s*[A-Z][\w.']*(?: [A-Z][\w.']*)?:\s/g, "$1");
   /* E-POSTA VE AĞ ADRESİ SÖZCÜK DEĞİL. Form egzersizinde
      "deniz.yalin@mail.com" geçiyor; ölçüm onu noktalarından bölüp dört
      ayrı "kelime" sayıyor ve hiçbiri havuzda olmadığı için egzersizi
      %10 dışı gösteriyordu. Adres bir dizedir, öğrencinin öğreneceği bir
      sözcük değil. */
-  return out.join(" ").replace(/\S+@\S+/g, " ").replace(/https?:\/\/\S+/g, " ");
+  return clean.replace(/\S+@\S+/g, " ").replace(/https?:\/\/\S+/g, " ");
 }
 
 /** Egzersizin kendi sözlükçesi öğrenciye verilmiştir — havuza eklenir. */

@@ -1,0 +1,282 @@
+[
+ {
+  "tr": "Kafe siparişi formunu doldur.",
+  "kind": "form.prompt",
+  "de": "Fülle das Bestellformular des Cafés aus."
+ },
+ {
+  "tr": "Kişi kartını Kaan için doldur.",
+  "kind": "form.prompt",
+  "de": "Fülle die Personenkarte für Kaan aus."
+ },
+ {
+  "tr": "Kaan; uzun boylu; kısa saçlı; komik; on dokuz yaşında.",
+  "kind": "form.facts",
+  "de": "Kaan; groß; kurze Haare; lustig; neunzehn Jahre alt."
+ },
+ {
+  "tr": "Masa iki kişilik; bir çorba; bir peynirli sandviç; iki çay.",
+  "kind": "form.facts",
+  "de": "Tisch für zwei; eine Suppe; ein Sandwich mit Käse; zwei Tee."
+ },
+ {
+  "tr": "Cümleyi çoğul yap.",
+  "kind": "rewrite.prompt",
+  "de": "Setze den Satz in den Plural."
+ },
+ {
+  "tr": "„man“ düzensiz çoğul: men, „mans“ değil. Ayrıca çoğulda „a“ düşer.",
+  "kind": "rewrite.why",
+  "de": "„man“ hat einen unregelmäßigen Plural: men, nicht „mans“ — wie Mann und Männer. Im Plural fällt außerdem „a“ weg."
+ },
+ {
+  "tr": "Üç sözcük birden değişir: this → these, is → are, friend → friends.",
+  "kind": "rewrite.why",
+  "de": "Drei Wörter ändern sich zugleich: this → these, is → are, friend → friends."
+ },
+ {
+  "tr": "Fiil „be“ değilse olumsuzluk „don't“ ile kurulur ve fiilden ÖNCE gelir.",
+  "kind": "rewrite.why",
+  "de": "Ist das Verb nicht „be“, wird mit „don't“ verneint, und zwar VOR dem Verb. Das Deutsche braucht dafür kein Hilfsverb."
+ },
+ {
+  "tr": "Üçüncü tekil kişide „don't“ → „doesn't“ VE fiil ekini kaybeder: has → have.",
+  "kind": "rewrite.why",
+  "de": "In der dritten Person Singular wird „don't“ zu „doesn't“ UND das Verb verliert seine Endung: has → have."
+ },
+ {
+  "tr": "Fiil „be“ değil, o yüzden soru „do“ ile kuruluyor ve fiil olduğu gibi kalıyor.",
+  "kind": "rewrite.why",
+  "de": "Das Verb ist nicht „be“, deshalb wird die Frage mit „do“ gebildet und das Verb bleibt unverändert."
+ },
+ {
+  "tr": "Fiil „be“ olduğu için olumsuzluk „not“ ile ve „do“ hiç girmiyor: is + not → isn't.",
+  "kind": "rewrite.why",
+  "de": "Weil das Verb „be“ ist, wird mit „not“ verneint und „do“ kommt gar nicht vor: is + not → isn't."
+ },
+ {
+  "tr": "„be“ öne geçer. Bir önceki üniteye dikkat: „do“ ile kurulan soru başka bir fiil ailesi.",
+  "kind": "rewrite.why",
+  "de": "„be“ rückt nach vorn, genau wie im Deutschen. Achtung auf die vorige Einheit: die Frage mit „do“ betrifft eine andere Verbfamilie."
+ },
+ {
+  "tr": "Bu kim?",
+  "kind": "build.tr",
+  "de": "Wer ist das?"
+ },
+ {
+  "tr": "Kuşu unutma!",
+  "kind": "build.tr",
+  "de": "Vergiss den Vogel nicht!"
+ },
+ {
+  "tr": "O uzun boylu.",
+  "kind": "build.tr",
+  "de": "Er ist groß."
+ },
+ {
+  "tr": "Onu alacağım.",
+  "kind": "build.tr",
+  "de": "Ich nehme es."
+ },
+ {
+  "tr": "Hiç süt var mı?",
+  "kind": "build.tr",
+  "de": "Gibt es Milch?"
+ },
+ {
+  "tr": "Bir köpeğim var.",
+  "kind": "build.tr",
+  "de": "Ich habe einen Hund."
+ },
+ {
+  "tr": "Bu benim teyzem.",
+  "kind": "build.tr",
+  "de": "Das ist meine Tante."
+ },
+ {
+  "tr": "Gazete ne kadar?",
+  "kind": "build.tr",
+  "de": "Was kostet die Zeitung?"
+ },
+ {
+  "tr": "O müzik seviyor.",
+  "kind": "build.tr",
+  "de": "Sie mag Musik."
+ },
+ {
+  "tr": "O neye benziyor?",
+  "kind": "build.tr",
+  "de": "Wie sieht er aus?"
+ },
+ {
+  "tr": "O çok iyi kalpli.",
+  "kind": "build.tr",
+  "de": "Er ist sehr lieb."
+ },
+ {
+  "tr": "Uzun saçları var.",
+  "kind": "build.tr",
+  "de": "Sie hat lange Haare."
+ },
+ {
+  "tr": "İki arkadaşım var.",
+  "kind": "build.tr",
+  "de": "Ich habe zwei Freunde."
+ },
+ {
+  "tr": "Biraz ekmek yiyorum.",
+  "kind": "build.tr",
+  "de": "Ich esse etwas Brot."
+ },
+ {
+  "tr": "Birlikte çalışıyoruz.",
+  "kind": "build.tr",
+  "de": "Wir arbeiten zusammen."
+ },
+ {
+  "tr": "Burada birçok insan var.",
+  "kind": "build.tr",
+  "de": "Hier sind viele Leute."
+ },
+ {
+  "tr": "Bir çay istiyorum, lütfen.",
+  "kind": "build.tr",
+  "de": "Ich hätte gern einen Tee, bitte."
+ },
+ {
+  "tr": "Bunlar benim arkadaşlarım.",
+  "kind": "build.tr",
+  "de": "Das sind meine Freunde."
+ },
+ {
+  "tr": "İki kişilik bir masa, lütfen.",
+  "kind": "build.tr",
+  "de": "Einen Tisch für zwei, bitte."
+ },
+ {
+  "tr": "Hesabı alabilir miyim, lütfen?",
+  "kind": "build.tr",
+  "de": "Kann ich bitte die Rechnung haben?"
+ },
+ {
+  "tr": "Bir kahve alabilir miyim, lütfen?",
+  "kind": "build.tr",
+  "de": "Kann ich bitte einen Kaffee haben?"
+ },
+ {
+  "tr": "„very“ sıfattan önce gelir: very kind.",
+  "kind": "build.hint",
+  "de": "„very“ steht vor dem Adjektiv: very kind."
+ },
+ {
+  "tr": "Sayı birden çoksa isim „-s“ alır: two friends.",
+  "kind": "build.hint",
+  "de": "Bei mehr als eins bekommt das Substantiv ein „-s“: two friends."
+ },
+ {
+  "tr": "Üçüncü tekil kişide fiil „-s“ alır: she likes.",
+  "kind": "build.hint",
+  "de": "In der dritten Person Singular bekommt das Verb ein „-s“: she likes. Nur dort — sonst bleibt es unverändert."
+ },
+ {
+  "tr": "„people“ zaten çoğul, „-s“ almaz ve „are“ ister.",
+  "kind": "build.hint",
+  "de": "„people“ ist schon Plural wie „Leute“: kein „-s“, und es verlangt „are“."
+ },
+ {
+  "tr": "Emir olumsuzu „Don't“ ile başlar; özne yazılmaz.",
+  "kind": "build.hint",
+  "de": "Der verneinte Imperativ beginnt mit „Don't“; das Subjekt wird nicht geschrieben."
+ },
+ {
+  "tr": "Belli bir gazeteden söz ediliyor: „the newspaper“.",
+  "kind": "build.hint",
+  "de": "Es geht um eine bestimmte Zeitung: „the newspaper“."
+ },
+ {
+  "tr": "Hesap tektir ve bellidir: „the bill“, „a bill“ değil.",
+  "kind": "build.hint",
+  "de": "Die Rechnung ist eine bestimmte: „the bill“, nicht „a bill“."
+ },
+ {
+  "tr": "Soruda „any“ ve tekil „is there“, çünkü süt sayılamaz.",
+  "kind": "build.hint",
+  "de": "In der Frage „any“ und das einzahlige „is there“, denn Milch ist nicht zählbar."
+ },
+ {
+  "tr": "Görünüş sıfatı „be“ ile: he is tall. Fiil değil, sıfat.",
+  "kind": "build.hint",
+  "de": "Das Adjektiv des Aussehens steht mit „be“: he is tall. Kein Verb, ein Adjektiv."
+ },
+ {
+  "tr": "Görünüş sorusu „look like“ ile ve „like“ SONDA duruyor.",
+  "kind": "build.hint",
+  "de": "Die Frage nach dem Aussehen mit „look like“, und „like“ steht am ENDE — wie das „aus“ in „Wie sieht er aus?“."
+ },
+ {
+  "tr": "„hair“ tekildir ve „-s“ almaz: long hair, „hairs“ değil.",
+  "kind": "build.hint",
+  "de": "„hair“ ist Singular und nimmt kein „-s“: long hair. Anders als deutsch „Haare“, das im Plural steht."
+ },
+ {
+  "tr": "Soru sözcüğü başta, sonra „is this“. Yakındaki kişi için „this“.",
+  "kind": "build.hint",
+  "de": "Das Fragewort steht vorn, dann „is this“. Für eine Person in der Nähe „this“."
+ },
+ {
+  "tr": "Çoğulda „this“ → „these“ ve „is“ → „are“. İkisi birlikte değişir.",
+  "kind": "build.hint",
+  "de": "Im Plural wird „this“ zu „these“ und „is“ zu „are“. Beides ändert sich zusammen."
+ },
+ {
+  "tr": "„together“ cümlenin sonunda; „birlikte çalışmak“ tek sözcük değil.",
+  "kind": "build.hint",
+  "de": "„together“ steht am Satzende, genau wie „zusammen“ im Deutschen."
+ },
+ {
+  "tr": "Olumlu cümlede „some“. „bread“ sayılamaz, o yüzden „a bread“ olmaz.",
+  "kind": "build.hint",
+  "de": "Im Aussagesatz „some“. „bread“ ist nicht zählbar, deshalb geht „a bread“ nicht."
+ },
+ {
+  "tr": "Hayvan için „a“ gerekir: a dog, a cat. Türkçede böyle bir sözcük yok.",
+  "kind": "build.hint",
+  "de": "Vor dem Tier steht „a“: a dog, a cat — wie deutsch „ein“. Anders als im Türkischen, das kein solches Wort hat."
+ },
+ {
+  "tr": "„a coffee“ bir fincan kahve demek; madde olarak kahve „coffee“ olurdu.",
+  "kind": "build.hint",
+  "de": "„a coffee“ meint eine Tasse Kaffee; der Stoff Kaffee wäre „coffee“ — wie „einen Kaffee“ gegenüber „Kaffee“."
+ },
+ {
+  "tr": "Kişi sayısı „for“ ile: for two, for four. Fiil yok, bu hazır bir kalıp.",
+  "kind": "build.hint",
+  "de": "Die Personenzahl mit „for“: for two, for four. Kein Verb, eine feste Wendung."
+ },
+ {
+  "tr": "„I'd like“ = „I would like“. „I want“ kaba kaçar, siparişte kullanılmaz.",
+  "kind": "build.hint",
+  "de": "„I'd like“ = „I would like“. „I want“ klingt grob — dieselbe Grenze wie zwischen „ich möchte“ und „ich will“."
+ },
+ {
+  "tr": "İngilizcede teyze ile hala aynı sözcük: aunt. Amca, dayı ve enişte de uncle.",
+  "kind": "build.hint",
+  "de": "Für Tante gibt es nur ein Wort: aunt; für Onkel nur uncle. Das Englische macht hier so wenig Unterschiede wie das Deutsche."
+ },
+ {
+  "tr": "Alışverişte karar cümlesi. „I'll“ = „I will“ ve burada „hemen şimdi“ anlamı taşıyor.",
+  "kind": "build.hint",
+  "de": "Der Entscheidungssatz beim Einkauf. „I'll“ = „I will“ und meint hier „jetzt sofort“."
+ },
+ {
+  "tr": "Ayse'nin anlattığı sıra: doğru sıraya koy.",
+  "kind": "question.text",
+  "de": "Die Reihenfolge in Ayses Erzählung: bring sie in die richtige Ordnung."
+ },
+ {
+  "tr": "Deniz'in anlattığı sıra: doğru sıraya koy.",
+  "kind": "question.text",
+  "de": "Die Reihenfolge in Deniz' Erzählung: bring sie in die richtige Ordnung."
+ }
+]
