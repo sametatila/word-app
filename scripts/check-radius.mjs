@@ -11,25 +11,27 @@
  * gözden geçirme işi ERTELENMİŞTİ ve erteleneni sayan bir şey yoktu.
  *
  * Ölçüm (2026-09-11): `rounded-full` dışında 167 kullanım ölçek dışıydı.
+ * Hepsi çevrildi; kapı artık MUTLAK - tek bir ölçek dışı kullanım hata.
  *
- * KAPI BİR BORÇ SAYACI. Tek seferde 167 yuvayı çevirmek, her birinin hangi
- * basamağa gittiğine bakmadan yapılamaz (rozet mi, ikon karosu mu, panel mi,
- * kartın kendisi mi - ad zaten bunu söylüyor). O yüzden `i18n-hardcoded` ile
- * aynı kalıp: dosya başına taban, ARTIŞ hata. Borç tur tur düşüyor, yeni borç
- * eklenemiyor.
+ * Çevirme rol adına göre yapıldı, çünkü ölçeğin adları zaten rolü söylüyor:
+ * rozet ve satır içi etiket chip, ikon karosu ve giriş alanı tile, iç panel ve
+ * liste satırı ve buton panel, kartın kendisi card. Sayıya en yakın basamağa
+ * yuvarlamak yanlış olurdu - 16 px'lik bir kart iskeleti sayıca tile'a (14)
+ * yakın ama ROLÜ card (26), ve mobil `SkeletonCard` doğrudan `Card`'ı sarıyor.
  *
- * `rounded-full` sayılmıyor: mobilin `radii.pill` karşılığı, meşru.
+ * `rounded-full` sayılmıyor: mobilin `radii.pill` karşılığı, meşru. Metin
+ * satırı iskeletleri de orada: mobil `SkeletonLine` yarıçapı
+ * `min(radii.sm, yükseklik/2)` yazıyor, yani 20 px'e kadar çubuk tamamen
+ * yuvarlak - web'de karşılığı `rounded-full`.
  *
  * Kullanım:
- *   node scripts/check-radius.mjs --baseline   # bugünkü sayıları taban yaz
- *   node scripts/check-radius.mjs --check      # taban aşılırsa hata (CI)
- *   node scripts/check-radius.mjs --hits       # satır satır döküm
+ *   node scripts/check-radius.mjs           # ölçek dışı kullanım varsa hata
+ *   node scripts/check-radius.mjs --hits    # satır satır döküm
  */
 import fs from "node:fs";
 import path from "node:path";
 
 const ROOT = path.join(import.meta.dirname, "..");
-const BASELINE = path.join(ROOT, "scripts", "check-radius-baseline.json");
 const mode = process.argv[2] ?? "--check";
 
 /**
@@ -58,6 +60,36 @@ function stripComments(src) {
 }
 
 const STEP = /\brounded-(?:[a-z]{1,2}-)?(?:sm|md|lg|xl|2xl|3xl)\b/g;
+
+/* ── mobil taraf ──────────────────────────────────────────────────────────
+ * Simetri: web'in yaricaplari policelenirken mobilin ham sayilari serbest
+ * kalirsa kapi tek tarafli olur ve ayrisma oradan geri gelir.
+ *
+ * Mobil olcegi JETONLA yaziyor (`radii.sm/md/lg/xl/xxl`) ama 105 yerde ham
+ * sayi da var. Hepsi kusur DEGIL - iki mesru sinif:
+ *
+ *   DAIRE / PILL: yaricap boyutun yarisi (48'lik dairede 24, 22'lik basparmakta
+ *     11). Mobilin kendi `SkeletonBar`/`SkeletonPill`i de boyle hesapliyor.
+ *   SAC TELI CUBUK: 2-9 px yaricap, ilerleme cubuklarinin ucu. Olcegin en
+ *     kucugu (10) bu cubuklari tamamen yuvarlatirdi; webde de ayni sinif
+ *     kayitli istisna (`lesson-player` adim cubugu).
+ *
+ * Kalan iki durum kusur ve ikisi de kesin olculebiliyor:
+ *   1. Sayi olcekteki bir degere ESIT (10/14/20/26/34) -> jeton yazilmali,
+ *      yoksa jeton degistiginde bu yuva geride kalir.
+ *   2. Sayi 10'un ustunde, olcekte yok ve bir dairenin yarisi da degil.
+ */
+const RADII = { 10: "sm", 14: "md", 20: "lg", 26: "xl", 34: "xxl" };
+const BAR_MAX = 9;
+/** Yaricap civardaki bir genislik/yuksekligin yarisi mi (daire/pill)? */
+function isCircle(lines, i, r) {
+  for (let j = Math.max(0, i - 4); j <= Math.min(lines.length - 1, i + 4); j++) {
+    for (const m of lines[j].matchAll(/(?:width|height|size|inner|bar):\s*(\d+)\b/g)) {
+      if (r === Math.round(Number(m[1]) / 2)) return true;
+    }
+  }
+  return /\/\s*2\b/.test(lines[i]);
+}
 
 function walk(dir, out = []) {
   for (const e of fs.readdirSync(dir, { withFileTypes: true })) {
@@ -88,6 +120,25 @@ for (const abs of walk(path.join(ROOT, "src"))) {
 
 const total = Object.values(counts).reduce((a, b) => a + b, 0);
 
+/* ── mobil: ham sayilar ──────────────────────────────────────────────────── */
+const mobHits = [];
+for (const abs of walk(path.join(ROOT, "mobile", "src"))) {
+  const rel = path.relative(ROOT, abs);
+  const lines = stripComments(fs.readFileSync(abs, "utf8")).split("\n");
+  for (let i = 0; i < lines.length; i++) {
+    for (const m of lines[i].matchAll(/borderRadius:\s*(\d+)\b/g)) {
+      const r = Number(m[1]);
+      if (r <= BAR_MAX) continue;                       // sac teli cubuk
+      if (isCircle(lines, i, r)) continue;              // daire / pill
+      mobHits.push({
+        file: rel, line: i + 1, r,
+        why: RADII[r] ? `jeton yazilmali: radii.${RADII[r]}` : "olcek disi",
+        text: lines[i].trim().slice(0, 100),
+      });
+    }
+  }
+}
+
 /* ÖLÜ İSTİSNA SESSİZCE DURMASIN - `check:colors` aynı denetimi yapıyor ve
    orada bir istisnanın karşılıksız kalması gerçek bir bulguydu. */
 const dead = [];
@@ -95,37 +146,37 @@ for (const [file, list] of ALLOW) for (const [parca] of list) {
   if (!used.has(file + "|" + parca)) dead.push(`${file}: ${parca}`);
 }
 
-if (mode === "--baseline") {
-  fs.writeFileSync(BASELINE, JSON.stringify(counts, null, 2) + "\n");
-  console.log(`taban yazıldı: ${total} kullanım / ${Object.keys(counts).length} dosya`);
-} else if (mode === "--hits") {
+if (mode === "--hits") {
   for (const [f, list] of Object.entries(hits)) {
     console.log(f);
     for (const h of list) console.log(`  ${h.line}: ${h.what}  ${h.text.slice(0, 110)}`);
   }
-  console.log(`\ntoplam ${total}`);
+  for (const h of mobHits) console.log(`${h.file}:${h.line}  ${h.r}  ${h.why}`);
+  console.log(`\ntoplam web ${total} · mobil ${mobHits.length}`);
 } else {
-  if (!fs.existsSync(BASELINE)) {
-    console.error("taban yok; önce: node scripts/check-radius.mjs --baseline");
-    process.exit(1);
-  }
-  const base = JSON.parse(fs.readFileSync(BASELINE, "utf8"));
-  const over = Object.entries(counts).filter(([f, n]) => n > (base[f] ?? 0));
-  if (over.length || dead.length) {
-    if (over.length) {
-      console.error("check:radius — ölçek dışı yarıçap ARTMIŞ:\n");
-      for (const [f, n] of over) {
-        console.error(`  ${f}: ${base[f] ?? 0} → ${n}`);
-        for (const h of hits[f]) console.error(`      ${h.line}: ${h.what}`);
+  if (total || dead.length || mobHits.length) {
+    if (total) {
+      console.error("check:radius — ölçek dışı yarıçap:\n");
+      for (const [f, list] of Object.entries(hits)) {
+        console.error(`  ${f}`);
+        for (const h of list) console.error(`      ${h.line}: ${h.what}  ${h.text.slice(0, 100)}`);
       }
-      console.error("\nÖlçek: chip 10 (rozet) · tile 14 (ikon karosu, giriş, geri düğmesi) ·");
-      console.error("panel 20 (iç panel, liste satırı, buton) · card 26 (kartın kendisi) · float 34.");
-      console.error("Taban gerçekten düştüyse: node scripts/check-radius.mjs --baseline");
+      console.error("\nÖlçek ROLE göre seçilir, sayıya en yakın basamağa göre DEĞİL:");
+      console.error("  chip 10   rozet, satır içi etiket, küçük ikon düğmesi");
+      console.error("  tile 14   ikon karosu, giriş alanı, geri düğmesi, iskelet blok");
+      console.error("  panel 20  iç panel, uyarı bloğu, liste satırı, buton");
+      console.error("  card 26   kartın kendisi ve kart iskeleti");
+      console.error("  float 34  yüzen sekme çubuğu");
+      console.error("Meşru bir istisnaysa betikteki ALLOW listesine SEBEBİYLE ekle.");
+    }
+    if (mobHits.length) {
+      console.error("\ncheck:radius — mobilde ham yarıçap sayısı:\n");
+      for (const h of mobHits) console.error(`  ${h.file}:${h.line}  ${h.r}  ${h.why}\n      ${h.text}`);
+      console.error("\nDaire (boyutun yarısı) ve 2-9 px'lik çubuklar sayılmıyor; kalanı jeton olmalı.");
     }
     for (const d of dead) console.error(`  istisna artık karşılıksız (ALLOW): ${d}`);
     process.exit(1);
   }
-  const baseTotal = Object.values(base).reduce((a, b) => a + b, 0);
   const muaf = [...ALLOW.values()].reduce((n, l) => n + l.length, 0);
-  console.log(`check:radius — ölçek dışı yarıçap: ${total} kullanım (taban ${baseTotal}, ${muaf} kayıtlı istisna)`);
+  console.log(`check:radius — iki platformun yarıçapları beş basamaklı ölçekte: tamam (${muaf} kayıtlı istisna, mobilde daire ve çubuklar dışında ham sayı yok)`);
 }
