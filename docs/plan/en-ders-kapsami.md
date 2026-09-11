@@ -1,6 +1,6 @@
 # WP-74 — İngilizce ders kapsamı B1–C1
 
-**Durum:** sürüyor (B1 modül 1 bitti) · **Sahip:** Claude · **Açılış:** 2026-09-11
+**Durum:** sürüyor (B1 modül 1-2 bitti) · **Sahip:** Claude · **Açılış:** 2026-09-11
 
 ## Kusur
 
@@ -80,6 +80,18 @@ kez kullanıldı; ders başına bir kural, tekrar yok.
 (`cando.ts` + `FOCUS_GR_EN`) ve `prose-de/make.mjs` dosya listesi.
 İkisi de sonradan yapılsaydı kapılar yeşil görünürken içerik sessizce
 etiketsiz ve çevrilmemiş kalırdı.
+
+**B1 modül 2 — Ev ve kira dünyası (2026-09-11).** On ders: daire aramak,
+daire gezmek, kira sözleşmesi, taşınma günü, ev arkadaşları, tamirat,
+faturalar, gürültü sorunu, evden çıkmak, mahalle. Aynı on kural, başka
+bir dünyada — spiral müfredat: kural tekrar eder, bağlam değişir.
+
+Modülün tekrarlayan kusuru şu: bir sözlükçe kelimesi yalnız ÜRETİM
+hedefinde ya da köprüde geçiyor. `check:lessons` bunu «her kelime tekrar
+ettiriliyor» diye reddediyor ve haklı — öğrenciden duymadığı bir kelimeyi
+üretmesi istenmemeli. İki modülde toplam on iki kelime bu yüzden bir
+tekrar hedefine taşındı; yazarken baştan tekrar hedefine koymak daha
+ucuz.
 
 ## Tamamlanma ölçütü
 
