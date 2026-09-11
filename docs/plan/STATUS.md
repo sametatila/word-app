@@ -40,6 +40,7 @@ Her ajan aldığı WP'yi buraya işler: durum (`bekliyor` → `sürüyor` → `i
 | WP-73 | Gerekçe ve kural parçacıkları | 7 | sürüyor | Claude | 2026-08-26 | (bkz. git log) | Kural şeması + 35 kural; drill 28/60 tablo (A1 15, A2 13 tamam; B1–C1 32 tablo kaldı); 150 karıştırma çifti + 1 458 aday (`content:confusables`) |
 | WP-80 | Takip katmanı (veri boşluğu kapatma) | 8 | inceleme | Claude | 2026-08-26 | (bkz. git log) | 19 yeni olay (ekran, süre, ders adımı, söyleyiş kararı, ayar, cihaz, hata, bildirim hunisi), `lib/screens.ts`, `components/telemetry.tsx`, `test:events`, `report:events`/`report:learning` yeni bölümler, `report:all`; `docs/plan/80-tracking.md` |
 | WP-90 | Beceriler kütüphanesi (serbest çalışma, beş beceri, iki kurs) | 9 | inceleme | Claude | 2026-09-08 | (bkz. git log) | `content/library/` (50 egzersiz: kurs × seviye × beceri), `grammar` becerisi + oynatıcı, konuşma drill/monolog oynatıcıları geri, hub'da sıradaki/puan, mobilde aynı; `check:libvocab`; plan `docs/plan/90-beceri-kutuphanesi.md`; kalite kontrol turu bekliyor |
+| WP-74 | İngilizce ders kapsamı B1–C1 | 7 | bekliyor | Claude | 2026-09-11 | — | Patika İngilizcede A2'de bitiyor (ders 100/100/0/0/0; beceri ve deneme kâğıdı B1–C1'de var). 300 ders, modül başına 10, Almanca sözleşmesiyle (8 kelime + 3 üretim + accept). Her ders Almanca anadil ekseninde de karşılık ister — plan `docs/plan/en-ders-kapsami.md` |
 
 ## Karar kaydı
 
