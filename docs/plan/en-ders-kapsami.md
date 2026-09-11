@@ -602,6 +602,30 @@ anda orada bir hak el değiştirir.
 
 C1.GR.11-20'nin onu da modül içinde bir kez kullanılıyor (ölçüldü, 10/10).
 
+**C1 modül 8 — Çevre ve iklim (2026-09-11).** On ders: tek hedefin üç adı,
+kirleten kim, ihtiyat ilkesi, büyüme tartışması, atık sözlüğü, ölçümü
+aktarmak, model ne kadar kesin, canlandırıldı tabii, kent raporunu
+bağlamak, planın söylemediği.
+
+Modülün ekseni ADIN KAPSAM BELİRLEMESİ. Modül 7'de ad bir izindi; burada
+ad verilen sözün BÜYÜKLÜĞÜ: «emisyon azaltma» tek bir sayıyı hedefler ve
+sınırlı bir söz verir, «karbonsuzlaştırma» bütün bir ekonomiyi kapsar.
+İkisi aynı yöne gider ve biri çok daha azına söz verir. Atık dersi aynı
+şeyi sıra üzerinden gösteriyor: önleme ile döngüyü eşitleyen cümle,
+önlemeyi geri dönüşümle DEĞİŞTİRMİŞ oluyor.
+
+Kip dersi modelin kendi dürüstlüğüne bağlanıyor: belirsizliği söyleyen
+model bir kez şaşırdığında güvenini kaybetmiyor, kesin konuşan model ilk
+sapmada kaybediyor. Öne alma dersi ise çevre cümlesinin siyasetini
+açıyor — süreci başa almak kimseyi suçlamıyor, faili başa almak
+suçluyor, ve bir sürece soru sorulamaz.
+
+Kapanış dersi eksiltmeyi bir söz vermeme biçimi sayıyor: «inşaatın
+durdurulması bir tarih olarak» dendiğinde bir tarih verilmiş ama bir söz
+verilmemiş oluyor.
+
+C1.GR.11-20'nin onu da modül içinde bir kez kullanılıyor (ölçüldü, 10/10).
+
 ## Tamamlanma ölçütü
 
 - `LESSONS` içinde `course: "en"` için B1/B2/C1 100'er ders

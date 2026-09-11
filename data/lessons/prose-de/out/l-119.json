@@ -1,0 +1,1977 @@
+[
+ {
+  "tr": "her kirlenmeyi «böyle gelmiş böyle gider» diye anlatan biri",
+  "kind": "partner",
+  "de": "jemand, der jede Verschmutzung mit «das war schon immer so» erklärt"
+ },
+ {
+  "tr": "planı olduğu gibi okuyan, «tarihi yazıyor ya» diyen bir komşu",
+  "kind": "partner",
+  "de": "ein Nachbar, der den Plan wörtlich liest und sagt «das Datum steht doch da»"
+ },
+ {
+  "tr": "belirsizliği güvensizlik sayan, «demek bilmiyorlar» diyen biri",
+  "kind": "partner",
+  "de": "jemand, der Unsicherheit für Unzuverlässigkeit hält und sagt «sie wissen es also nicht»"
+ },
+ {
+  "tr": "büyümeyi tek çözüm sayan, «büyümezsek kim ödeyecek» diyen biri",
+  "kind": "partner",
+  "de": "jemand, der Wachstum für die einzige Lösung hält und sagt «wer zahlt, wenn wir nicht wachsen»"
+ },
+ {
+  "tr": "her iklim sözünü aynı sayan, «hepsi çevre işte» diyen bir arkadaş",
+  "kind": "partner",
+  "de": "ein Freund, der jedes Klimaversprechen gleichsetzt und sagt «das ist doch alles Umwelt»"
+ },
+ {
+  "tr": "dönüşümü tümden iyi bulan, «her şey daha güzel oldu» diyen bir komşu",
+  "kind": "partner",
+  "de": "eine Nachbarin, die den Umbau rundum gut findet und sagt «alles ist schöner geworden»"
+ },
+ {
+  "tr": "geri dönüşümü tam çözüm sayan, «zaten geri dönüştürüyoruz» diyen biri",
+  "kind": "partner",
+  "de": "jemand, der Recycling für die ganze Lösung hält und sagt «wir recyceln doch schon»"
+ },
+ {
+  "tr": "her çevre savını duygusal bulan, «bu senin görüşün» diyen bir yetkili",
+  "kind": "partner",
+  "de": "ein Beamter, der jede Umweltthese für gefühlig hält und sagt «das ist deine Meinung»"
+ },
+ {
+  "tr": "her ölçütü kendi sokağına uygulayan, «bizim sokakta da olur mu» diyen bir komşu",
+  "kind": "partner",
+  "de": "eine Nachbarin, die jeden Maßstab auf ihre Straße überträgt und fragt «geht das bei uns auch»"
+ },
+ {
+  "tr": "her araştırmayı şüpheyle karşılayan, «kim ödedi bu araştırmayı» diyen bir arkadaş",
+  "kind": "partner",
+  "de": "ein Freund, der jeder Studie misstraut und fragt «wer hat diese Studie bezahlt»"
+ },
+ {
+  "tr": "Hep böyleydi, değil mi?",
+  "kind": "openingTr",
+  "de": "Das war schon immer so, oder?"
+ },
+ {
+  "tr": "Bizim sokakta da olur mu?",
+  "kind": "openingTr",
+  "de": "Geht das bei uns in der Straße auch?"
+ },
+ {
+  "tr": "Bu araştırmayı kim ödedi?",
+  "kind": "openingTr",
+  "de": "Wer hat diese Studie bezahlt?"
+ },
+ {
+  "tr": "Demek aslında bilmiyorlar?",
+  "kind": "openingTr",
+  "de": "Sie wissen es also gar nicht?"
+ },
+ {
+  "tr": "Hepsi çevre işte, değil mi?",
+  "kind": "openingTr",
+  "de": "Das ist doch alles Umwelt, oder?"
+ },
+ {
+  "tr": "Büyümezsek bunu kim ödeyecek?",
+  "kind": "openingTr",
+  "de": "Wer zahlt das, wenn wir nicht wachsen?"
+ },
+ {
+  "tr": "Tarihi orada yazıyor, değil mi?",
+  "kind": "openingTr",
+  "de": "Das Datum steht doch dort, oder?"
+ },
+ {
+  "tr": "Her şey daha güzel oldu, değil mi?",
+  "kind": "openingTr",
+  "de": "Alles ist schöner geworden, oder?"
+ },
+ {
+  "tr": "Bu senin kişisel görüşün, değil mi?",
+  "kind": "openingTr",
+  "de": "Das ist deine persönliche Meinung, oder?"
+ },
+ {
+  "tr": "Zaten hepsini geri dönüştürüyoruz, değil mi?",
+  "kind": "openingTr",
+  "de": "Wir recyceln doch schon alles, oder?"
+ },
+ {
+  "tr": "Atık sözlüğü",
+  "kind": "titleTr",
+  "de": "Das Wörterbuch des Abfalls"
+ },
+ {
+  "tr": "Kirleten kim",
+  "kind": "titleTr",
+  "de": "Wer verschmutzt"
+ },
+ {
+  "tr": "İhtiyat ilkesi",
+  "kind": "titleTr",
+  "de": "Das Vorsorgeprinzip"
+ },
+ {
+  "tr": "Ölçümü aktarmak",
+  "kind": "titleTr",
+  "de": "Eine Messung wiedergeben"
+ },
+ {
+  "tr": "Büyüme tartışması",
+  "kind": "titleTr",
+  "de": "Die Wachstumsdebatte"
+ },
+ {
+  "tr": "Planın söylemediği",
+  "kind": "titleTr",
+  "de": "Was der Plan verschweigt"
+ },
+ {
+  "tr": "Tek hedefin üç adı",
+  "kind": "titleTr",
+  "de": "Drei Namen für ein Ziel"
+ },
+ {
+  "tr": "Canlandırıldı, tabii",
+  "kind": "titleTr",
+  "de": "Belebt, natürlich"
+ },
+ {
+  "tr": "Model ne kadar kesin",
+  "kind": "titleTr",
+  "de": "Wie sicher ist das Modell"
+ },
+ {
+  "tr": "Kent raporunu bağlamak",
+  "kind": "titleTr",
+  "de": "Den Stadtbericht zusammenhalten"
+ },
+ {
+  "tr": "İmar kararlarında düşen öğeyi öğretir; planın söylemediği şey çoğu zaman kimin çıkacağıdır.",
+  "kind": "summary",
+  "de": "Lehrt das weggelassene Glied in Planungsentscheidungen; was der Plan verschweigt, ist meist, wer gehen muss."
+ },
+ {
+  "tr": "Bir ölçümü aktarırken hükmü fiile yüklemeyi öğretir; kimin parasıyla ölçüldüğü de aktarmanın parçasıdır.",
+  "kind": "summary",
+  "de": "Lehrt, beim Wiedergeben einer Messung das Urteil ins Verb zu legen; wessen Geld gemessen hat, gehört zur Wiedergabe."
+ },
+ {
+  "tr": "Çevre yükümlülüğünü kalıplaşmış biçimle istemeyi öğretir; ilke kişiden ayrıldığı anda bir yükümlülük olur.",
+  "kind": "summary",
+  "de": "Lehrt, die Umweltpflicht in fester Form zu fordern; sobald das Prinzip von der Person getrennt ist, wird es zur Pflicht."
+ },
+ {
+  "tr": "Kentsel dönüşüm tanıtım dilini alayla eleştirmeyi öğretir; iyileştirme sözcükleri kimin gittiğini söylemez.",
+  "kind": "summary",
+  "de": "Lehrt, die Werbesprache der Stadterneuerung mit Spott zu kritisieren; die Wörter der Verbesserung sagen nicht, wer geht."
+ },
+ {
+  "tr": "Çevre anlatısında kimi başa aldığını seçmeyi öğretir; süreci başa almak kimseyi suçlamaz, faili başa almak suçlar.",
+  "kind": "summary",
+  "de": "Lehrt, in der Umwelterzählung zu wählen, wen man voranstellt; den Vorgang voranzustellen beschuldigt niemanden, die handelnde Person voranzustellen schon."
+ },
+ {
+  "tr": "Aynı iklim hedefinin üç ayrı adla söylendiğini öğretir; hangi ad seçilirse sorumluluk o kadar dar ya da geniş olur.",
+  "kind": "summary",
+  "de": "Lehrt, dass dasselbe Klimaziel drei Namen trägt; je nach Name wird die Verantwortung enger oder weiter."
+ },
+ {
+  "tr": "Atık konuşmasının yerleşik eşdizimlerini öğretir; önlemeyi anlatan söz ile geri kazanmayı anlatan söz aynı değildir.",
+  "kind": "summary",
+  "de": "Lehrt die festen Wortverbindungen des Redens über Abfall; das Wort für Vermeidung und das Wort für Rückgewinnung sind nicht dasselbe."
+ },
+ {
+  "tr": "Model sonucunu aktarırken kipin koyduğu mesafeyi öğretir; belirsizliği söylemek modeli zayıflatmaz, güvenilir kılar.",
+  "kind": "summary",
+  "de": "Lehrt den Abstand, den das Modalverb beim Wiedergeben eines Modellergebnisses setzt; die Unsicherheit zu nennen schwächt das Modell nicht, es macht es glaubwürdig."
+ },
+ {
+  "tr": "Uzun bir şehircilik raporunu bağlayan adresleri öğretir; ölçek değişince aynı ölçüt başka sonuç verdiği için bağ zorunlu.",
+  "kind": "summary",
+  "de": "Lehrt die Adressen, die einen langen Städtebaubericht zusammenhalten; weil derselbe Maßstab bei anderem Maßstabsniveau anders wirkt, ist die Bindung zwingend."
+ },
+ {
+  "tr": "Büyüme tartışmasında ödün vererek karşı çıkmayı öğretir; büyümenin sağladığını teslim etmeyen eleştiri ahlak dersi gibi duyuluyor.",
+  "kind": "summary",
+  "de": "Lehrt, in der Wachstumsdebatte mit Zugeständnis zu widersprechen; eine Kritik, die den Nutzen des Wachstums nicht einräumt, klingt wie eine Moralpredigt."
+ },
+ {
+  "tr": "Bir nehir kirlenmesini anlatıyorsun ve faili süreçlerin arkasına saklamak istemiyorsun. Süreci, yeri ve bizi başa alan üç cümle kur.",
+  "kind": "scene",
+  "de": "Du erzählst von der Verschmutzung eines Flusses und willst die handelnde Person nicht hinter Vorgängen verstecken. Bilde drei Sätze, die den Vorgang, den Ort und uns voranstellen."
+ },
+ {
+  "tr": "Bir şirketin iklim sözünü önce broşürün, sonra incelemenin diliyle anlatıyorsun. İki adı da kur ve her adın ne kadarına söz verdiğini söyle.",
+  "kind": "scene",
+  "de": "Du gibst das Klimaversprechen einer Firma erst in der Sprache des Prospekts, dann in der der Studie wieder. Bilde beide Namen und sag, wie viel jeder Name verspricht."
+ },
+ {
+  "tr": "Bir iklim ölçümünü arkadaşına aktarıyorsun ve ona ne kadar güvendiğini göstermek istiyorsun. İki aktarmayı iki ayrı fiille söyle ve kaynağı adlandır.",
+  "kind": "scene",
+  "de": "Du gibst einer Freundin eine Klimamessung wieder und willst zeigen, wie sehr du ihr traust. Sag die beiden Wiedergaben mit zwei verschiedenen Verben und benenne die Quelle."
+ },
+ {
+  "tr": "Bir iklim modelinin sonucunu anlatıyorsun ve belirsizliği saklamak istemiyorsun. Üç ayrı kip derecesi kur ve her birinde kaç senaryoda çıktığını söyle.",
+  "kind": "scene",
+  "de": "Du erklärst das Ergebnis eines Klimamodells und willst die Unsicherheit nicht verbergen. Bilde drei Modalstufen und sag bei jeder, in wie vielen Szenarien sie auftritt."
+ },
+ {
+  "tr": "Büyüme üstüne bir tartışmadasın ve karşındakini ahlak dersiyle kaybetmek istemiyorsun. Ödünü üç ayrı yerde ver ve her seferinde asıl savını sonra söyle.",
+  "kind": "scene",
+  "de": "Du bist in einer Debatte über Wachstum und willst dein Gegenüber nicht mit einer Moralpredigt verlieren. Setze das Zugeständnis an drei verschiedene Stellen und sag deine eigentliche These jedes Mal danach."
+ },
+ {
+  "tr": "Mahallendeki bir imar kararını komşuna anlatıyorsun ve planın hangi sözü vermediğini göstermek istiyorsun. Üç cümlede birer öğe düşür ve eksik kalan sözü adlandır.",
+  "kind": "scene",
+  "de": "Du erklärst einer Nachbarin eine Bauentscheidung in deinem Viertel und willst zeigen, welches Versprechen der Plan nicht gibt. Lass in drei Sätzen je ein Glied weg und benenne das fehlende Versprechen."
+ },
+ {
+  "tr": "Bir şehircilik raporunu sözlü olarak özetliyorsun ve dinleyen ölçütleri kendi mahallesine uygulayacak. Yukarı, aşağı ve ölçek adresleriyle üç bölümü birbirine bağla.",
+  "kind": "scene",
+  "de": "Du fasst einen Städtebaubericht mündlich zusammen, und die Zuhörerin überträgt die Maßstäbe auf ihr eigenes Viertel. Verbinde drei Abschnitte mit Adressen nach oben, nach unten und zum Maßstab."
+ },
+ {
+  "tr": "Bir şirketin ambalaj politikasını tartışıyorsun ve geri dönüşümün önlemenin yerine geçmesini istemiyorsun. Önlemeyi, döngüyü ve bilançoyu üç ayrı eşdizimle adlandır.",
+  "kind": "scene",
+  "de": "Du diskutierst die Verpackungspolitik einer Firma und willst nicht, dass Recycling die Vermeidung ersetzt. Benenne die Vermeidung, den Kreislauf und die Bilanz mit drei verschiedenen Wortverbindungen."
+ },
+ {
+  "tr": "Mahallendeki dönüşümü belediyenin diliyle gördüklerin arasındaki farkı göstererek anlatıyorsun. Üç cümlede eksilterek eleştir ve belediyenin kendi sözcüklerini kullan.",
+  "kind": "scene",
+  "de": "Du beschreibst den Umbau in deinem Viertel, indem du den Unterschied zwischen der Sprache der Stadt und dem Gesehenen zeigst. Kritisiere in drei Sätzen mit Auslassung und benutze die Wörter der Stadt selbst."
+ },
+ {
+  "tr": "Bir imar kararına karşı çevre yükümlülüğünü savunuyorsun ve bunu kişisel bir görüş gibi söylemek istemiyorsun. İsteği, olmasaydıyı ve koşulu kalıplaşmış biçimlerle kur.",
+  "kind": "scene",
+  "de": "Du verteidigst gegen eine Bauentscheidung die Umweltpflicht und willst das nicht wie eine persönliche Meinung sagen. Bilde die Forderung, das Wäre-nicht und die Bedingung in festen Formen."
+ },
+ {
+  "tr": "Süreci, yeri ve bizi başa alan üç ayrı cümle kurduysan konuşma başarılı sayılır.",
+  "kind": "goal",
+  "de": "Das Gespräch gilt als geschafft, wenn du drei Sätze gebaut hast, die den Vorgang, den Ort und uns voranstellen."
+ },
+ {
+  "tr": "Önlemeyi, döngüyü ve bilançoyu üç ayrı eşdizimle adlandırdıysan konuşma başarılı sayılır.",
+  "kind": "goal",
+  "de": "Das Gespräch gilt als geschafft, wenn du die Vermeidung, den Kreislauf und die Bilanz mit drei Wortverbindungen benannt hast."
+ },
+ {
+  "tr": "İki aktarmayı iki ayrı fiille söylediysen ve kaynağı adlandırdıysan konuşma başarılı sayılır.",
+  "kind": "goal",
+  "de": "Das Gespräch gilt als geschafft, wenn du die beiden Wiedergaben mit zwei Verben gesagt und die Quelle benannt hast."
+ },
+ {
+  "tr": "Üç bölümü yukarı, aşağı ve ölçek adresleriyle birbirine bağladıysan konuşma başarılı sayılır.",
+  "kind": "goal",
+  "de": "Das Gespräch gilt als geschafft, wenn du drei Abschnitte mit Adressen nach oben, nach unten und zum Maßstab verbunden hast."
+ },
+ {
+  "tr": "Üç cümlede birer öğe düşürdüysen ve eksik kalan sözü adlandırdıysan konuşma başarılı sayılır.",
+  "kind": "goal",
+  "de": "Das Gespräch gilt als geschafft, wenn du in drei Sätzen je ein Glied weggelassen und das fehlende Versprechen benannt hast."
+ },
+ {
+  "tr": "Aynı hedefi iki kayıtta adlandırdıysan ve her adın kapsamını söylediysen konuşma başarılı sayılır.",
+  "kind": "goal",
+  "de": "Das Gespräch gilt als geschafft, wenn du dasselbe Ziel in zwei Registern benannt und den Umfang jedes Namens gesagt hast."
+ },
+ {
+  "tr": "Üç ayrı kip derecesiyle anlattıysan ve her birinin senaryo payını söylediysen konuşma başarılı sayılır.",
+  "kind": "goal",
+  "de": "Das Gespräch gilt als geschafft, wenn du in drei Modalstufen erzählt und bei jeder den Szenarienanteil gesagt hast."
+ },
+ {
+  "tr": "Üç cümlede eksilterek eleştirdiysen ve belediyenin kendi sözcüklerini kullandıysan konuşma başarılı sayılır.",
+  "kind": "goal",
+  "de": "Das Gespräch gilt als geschafft, wenn du in drei Sätzen mit Auslassung kritisiert und die Wörter der Stadt selbst benutzt hast."
+ },
+ {
+  "tr": "Doğru. «might» sonucu uzakta tutuyor; cümle bir koşula bağlı kalıyor.",
+  "kind": "why.tr",
+  "de": "Richtig. «might» hält das Ergebnis auf Abstand; der Satz bleibt an eine Bedingung gebunden."
+ },
+ {
+  "tr": "Doğru. Yer öbeği başa alınmış; kayıp sona düşünce daha ağır duyuluyor.",
+  "kind": "why.tr",
+  "de": "Richtig. Die Ortsangabe steht vorn; fällt der Verlust ans Ende, klingt er schwerer."
+ },
+ {
+  "tr": "Doğru. Fiil çekilmemiş; koşul kişiye değil işlemin kendisine bağlanmış.",
+  "kind": "why.tr",
+  "de": "Richtig. Das Verb ist nicht gebeugt; die Bedingung hängt nicht an einer Person, sondern am Vorgang selbst."
+ },
+ {
+  "tr": "Doğru. Biri bir hesabı adlandırıyor, öteki bir ürünün üstündeki iddiayı.",
+  "kind": "why.tr",
+  "de": "Richtig. Das eine benennt eine Bilanz, das andere eine Aussage auf einem Produkt."
+ },
+ {
+  "tr": "Doğru. Biri sonucu zayıflatan bir işlem, öteki onun kendi niteliğine dair bir hüküm.",
+  "kind": "why.tr",
+  "de": "Richtig. Das eine ist ein Eingriff, der das Ergebnis schwächt, das andere ein Urteil über seine eigene Beschaffenheit."
+ },
+ {
+  "tr": "Doğru. Cümle önce yalanlıyor, sonra aynı şeyi belediyenin kendi fiilleriyle doğruluyor.",
+  "kind": "why.tr",
+  "de": "Richtig. Der Satz verneint zuerst und bestätigt dann dasselbe mit den eigenen Verben der Stadt."
+ },
+ {
+  "tr": "Doğru. Ölçek öbeği başa alınmış; ölçütün hangi düzeyde geçerli olduğu en başta duruyor.",
+  "kind": "why.tr",
+  "de": "Richtig. Die Maßstabsangabe steht vorn; auf welcher Ebene der Maßstab gilt, steht ganz am Anfang."
+ },
+ {
+  "tr": "Doğru. Biri bir tasarım kararını, öteki bir maliyeti adlandırıyor; edilgen fiiller de o yüzden ayrı.",
+  "kind": "why.tr",
+  "de": "Richtig. Das eine benennt eine Entwurfsentscheidung, das andere eine Kostenfrage; darum sind auch die Passivformen verschieden."
+ },
+ {
+  "tr": "iki işlemi ayırır",
+  "kind": "pattern.tr",
+  "de": "trennt zwei Eingriffe"
+ },
+ {
+  "tr": "hedefi etiketten ayırır",
+  "kind": "pattern.tr",
+  "de": "trennt Ziel und Etikett"
+ },
+ {
+  "tr": "ölçek öbeğini başa alır",
+  "kind": "pattern.tr",
+  "de": "stellt die Maßstabsangabe voran"
+ },
+ {
+  "tr": "tasarımı bedelle ayırır",
+  "kind": "pattern.tr",
+  "de": "trennt Entwurf und Kosten"
+ },
+ {
+  "tr": "aynı hedefi iki kayıtta söyler",
+  "kind": "pattern.tr",
+  "de": "sagt dasselbe Ziel in zwei Registern"
+ },
+ {
+  "tr": "iki eşdizimi tek cümlede bağlar",
+  "kind": "pattern.tr",
+  "de": "bindet zwei Wortverbindungen in einem Satz"
+ },
+ {
+  "tr": "olmasaydıyı çevre savında kurar",
+  "kind": "pattern.tr",
+  "de": "baut das Wäre-nicht in der Umweltthese"
+ },
+ {
+  "tr": "ısıl",
+  "kind": "vocab.tr",
+  "de": "thermisch"
+ },
+ {
+  "tr": "kopma",
+  "kind": "vocab.tr",
+  "de": "Entkopplung"
+ },
+ {
+  "tr": "oynak",
+  "kind": "vocab.tr",
+  "de": "schwankend"
+ },
+ {
+  "tr": "sökme",
+  "kind": "vocab.tr",
+  "de": "Rückbau"
+ },
+ {
+  "tr": "eskime",
+  "kind": "vocab.tr",
+  "de": "Obsoleszenz"
+ },
+ {
+  "tr": "çürümek",
+  "kind": "vocab.tr",
+  "de": "verrotten"
+ },
+ {
+  "tr": "sonluluk",
+  "kind": "vocab.tr",
+  "de": "Endlichkeit"
+ },
+ {
+  "tr": "su itici",
+  "kind": "vocab.tr",
+  "de": "wasserabweisend"
+ },
+ {
+  "tr": "yaşanmaz",
+  "kind": "vocab.tr",
+  "de": "unwirtlich"
+ },
+ {
+  "tr": "ısı adası",
+  "kind": "vocab.tr",
+  "de": "Hitzeinsel"
+ },
+ {
+  "tr": "iklim nötr",
+  "kind": "vocab.tr",
+  "de": "klimaneutral"
+ },
+ {
+  "tr": "imar planı",
+  "kind": "vocab.tr",
+  "de": "Bebauungsplan"
+ },
+ {
+  "tr": "moratoryum",
+  "kind": "vocab.tr",
+  "de": "Moratorium"
+ },
+ {
+  "tr": "permafrost",
+  "kind": "vocab.tr",
+  "de": "Permafrost"
+ },
+ {
+  "tr": "salgılamak",
+  "kind": "vocab.tr",
+  "de": "absondern"
+ },
+ {
+  "tr": "seyreltmek",
+  "kind": "vocab.tr",
+  "de": "verdünnen"
+ },
+ {
+  "tr": "yeterlilik",
+  "kind": "vocab.tr",
+  "de": "Suffizienz"
+ },
+ {
+  "tr": "atık önleme",
+  "kind": "vocab.tr",
+  "de": "Abfallvermeidung"
+ },
+ {
+  "tr": "hafifletmek",
+  "kind": "vocab.tr",
+  "de": "abmildern"
+ },
+ {
+  "tr": "tayin etmek",
+  "kind": "vocab.tr",
+  "de": "ausweisen"
+ },
+ {
+  "tr": "aşırı sömürü",
+  "kind": "vocab.tr",
+  "de": "Übernutzung"
+ },
+ {
+  "tr": "kamulaştırma",
+  "kind": "vocab.tr",
+  "de": "Enteignung"
+ },
+ {
+  "tr": "trafik felci",
+  "kind": "vocab.tr",
+  "de": "Verkehrskollaps"
+ },
+ {
+  "tr": "doğal sermaye",
+  "kind": "vocab.tr",
+  "de": "Naturkapital"
+ },
+ {
+  "tr": "geri kazanmak",
+  "kind": "vocab.tr",
+  "de": "rückgewinnen"
+ },
+ {
+  "tr": "karbon yutağı",
+  "kind": "vocab.tr",
+  "de": "Kohlenstoffsenke"
+ },
+ {
+  "tr": "madde döngüsü",
+  "kind": "vocab.tr",
+  "de": "Stoffkreislauf"
+ },
+ {
+  "tr": "soylulaştırma",
+  "kind": "vocab.tr",
+  "de": "Gentrifizierung"
+ },
+ {
+  "tr": "bilimsel dergi",
+  "kind": "vocab.tr",
+  "de": "Fachzeitschrift"
+ },
+ {
+  "tr": "dönüşüm süreci",
+  "kind": "vocab.tr",
+  "de": "Transformationsprozess"
+ },
+ {
+  "tr": "elden geçirmek",
+  "kind": "vocab.tr",
+  "de": "sanieren"
+ },
+ {
+  "tr": "ihtiyat ilkesi",
+  "kind": "vocab.tr",
+  "de": "Vorsorgeprinzip"
+ },
+ {
+  "tr": "iklim nötrlüğü",
+  "kind": "vocab.tr",
+  "de": "Klimaneutralität"
+ },
+ {
+  "tr": "ince ayrıntılı",
+  "kind": "vocab.tr",
+  "de": "kleinteilig"
+ },
+ {
+  "tr": "uzun ömürlülük",
+  "kind": "vocab.tr",
+  "de": "Langlebigkeit"
+ },
+ {
+  "tr": "yoğunlaştırmak",
+  "kind": "vocab.tr",
+  "de": "nachverdichten"
+ },
+ {
+  "tr": "bakımsız kalmak",
+  "kind": "vocab.tr",
+  "de": "verwahrlosen"
+ },
+ {
+  "tr": "düşük emisyonlu",
+  "kind": "vocab.tr",
+  "de": "emissionsarm"
+ },
+ {
+  "tr": "emisyon azaltma",
+  "kind": "vocab.tr",
+  "de": "Emissionsminderung"
+ },
+ {
+  "tr": "enerji dönüşümü",
+  "kind": "vocab.tr",
+  "de": "Energiewende"
+ },
+ {
+  "tr": "erişilebilirlik",
+  "kind": "vocab.tr",
+  "de": "Erreichbarkeit"
+ },
+ {
+  "tr": "harabeye dönmek",
+  "kind": "vocab.tr",
+  "de": "verfallen"
+ },
+ {
+  "tr": "hesabını vermek",
+  "kind": "vocab.tr",
+  "de": "Rechenschaft ablegen"
+ },
+ {
+  "tr": "kaynak tüketimi",
+  "kind": "vocab.tr",
+  "de": "Ressourcenverbrauch"
+ },
+ {
+  "tr": "otomobil odaklı",
+  "kind": "vocab.tr",
+  "de": "autogerecht"
+ },
+ {
+  "tr": "toparlanma gücü",
+  "kind": "vocab.tr",
+  "de": "Resilienz"
+ },
+ {
+  "tr": "ulaşım dönüşümü",
+  "kind": "vocab.tr",
+  "de": "Verkehrswende"
+ },
+ {
+  "tr": "devrilme noktası",
+  "kind": "vocab.tr",
+  "de": "Kipppunkt"
+ },
+ {
+  "tr": "dış kaynaklı fon",
+  "kind": "vocab.tr",
+  "de": "Drittmittel"
+ },
+ {
+  "tr": "döngüsel ekonomi",
+  "kind": "vocab.tr",
+  "de": "Kreislaufwirtschaft"
+ },
+ {
+  "tr": "ikincil hammadde",
+  "kind": "vocab.tr",
+  "de": "Sekundärrohstoff"
+ },
+ {
+  "tr": "kiralık mülkiyet",
+  "kind": "vocab.tr",
+  "de": "Erbpacht"
+ },
+ {
+  "tr": "ölçek bakımından",
+  "kind": "vocab.tr",
+  "de": "maßstäblich"
+ },
+ {
+  "tr": "büyüme eleştirisi",
+  "kind": "vocab.tr",
+  "de": "Wachstumskritik"
+ },
+ {
+  "tr": "ekosistem hizmeti",
+  "kind": "vocab.tr",
+  "de": "Ökosystemleistung"
+ },
+ {
+  "tr": "elektrikli ulaşım",
+  "kind": "vocab.tr",
+  "de": "Elektromobilität"
+ },
+ {
+  "tr": "karbonsuzlaştırma",
+  "kind": "vocab.tr",
+  "de": "Dekarbonisierung"
+ },
+ {
+  "tr": "kaynak eleştirisi",
+  "kind": "vocab.tr",
+  "de": "Quellenkritik"
+ },
+ {
+  "tr": "kaynak tasarruflu",
+  "kind": "vocab.tr",
+  "de": "ressourcenschonend"
+ },
+ {
+  "tr": "mekânsal planlama",
+  "kind": "vocab.tr",
+  "de": "Raumplanung"
+ },
+ {
+  "tr": "ölçeklenebilirlik",
+  "kind": "vocab.tr",
+  "de": "Skalierbarkeit"
+ },
+ {
+  "tr": "yönlendirici etki",
+  "kind": "vocab.tr",
+  "de": "Lenkungswirkung"
+ },
+ {
+  "tr": "altyapı geliştirme",
+  "kind": "vocab.tr",
+  "de": "Infrastrukturausbau"
+ },
+ {
+  "tr": "büyüme zorunluluğu",
+  "kind": "vocab.tr",
+  "de": "Wachstumszwang"
+ },
+ {
+  "tr": "geleceğe dayanıklı",
+  "kind": "vocab.tr",
+  "de": "zukunftsfest"
+ },
+ {
+  "tr": "koruma sorumluluğu",
+  "kind": "vocab.tr",
+  "de": "Schutzverantwortung"
+ },
+ {
+  "tr": "türlerin yok oluşu",
+  "kind": "vocab.tr",
+  "de": "Artensterben"
+ },
+ {
+  "tr": "canlılık kazandırmak",
+  "kind": "vocab.tr",
+  "de": "beleben"
+ },
+ {
+  "tr": "geri besleme döngüsü",
+  "kind": "vocab.tr",
+  "de": "Rückkopplung"
+ },
+ {
+  "tr": "kirletici madde yükü",
+  "kind": "vocab.tr",
+  "de": "Schadstoffbelastung"
+ },
+ {
+  "tr": "ortak kullanım alanı",
+  "kind": "vocab.tr",
+  "de": "Allmende"
+ },
+ {
+  "tr": "şehircilik açısından",
+  "kind": "vocab.tr",
+  "de": "städtebaulich"
+ },
+ {
+  "tr": "yenilenme kapasitesi",
+  "kind": "vocab.tr",
+  "de": "Regenerationsfähigkeit"
+ },
+ {
+  "tr": "inşaatın durdurulması",
+  "kind": "vocab.tr",
+  "de": "Baustopp"
+ },
+ {
+  "tr": "kaynakların korunması",
+  "kind": "vocab.tr",
+  "de": "Ressourcenschutz"
+ },
+ {
+  "tr": "doğal hâline döndürmek",
+  "kind": "vocab.tr",
+  "de": "renaturieren"
+ },
+ {
+  "tr": "kanıtlanabilir biçimde",
+  "kind": "vocab.tr",
+  "de": "nachweislich"
+ },
+ {
+  "tr": "yeniden işlevlendirmek",
+  "kind": "vocab.tr",
+  "de": "umnutzen"
+ },
+ {
+  "tr": "kullanım amacı değişikliği",
+  "kind": "vocab.tr",
+  "de": "Nutzungsänderung"
+ },
+ {
+  "tr": "yaşam döngüsü değerlendirmesi",
+  "kind": "vocab.tr",
+  "de": "Ökobilanz"
+ },
+ {
+  "tr": "İki işlemi ayırmak için",
+  "kind": "hint.tr",
+  "de": "Um zwei Eingriffe zu trennen"
+ },
+ {
+  "tr": "Ölçek öbeğini başa almak için",
+  "kind": "hint.tr",
+  "de": "Um die Maßstabsangabe voranzustellen"
+ },
+ {
+  "tr": "Olmasaydıyı çevre savında kurmak için",
+  "kind": "hint.tr",
+  "de": "Um das Wäre-nicht in der Umweltthese zu bauen"
+ },
+ {
+  "tr": "İki eşdizimi tek cümlede bağlamak için",
+  "kind": "hint.tr",
+  "de": "Um zwei Wortverbindungen in einem Satz zu binden"
+ },
+ {
+  "tr": "Hedefi etiketten ayırmak için iki yarı kurulur:",
+  "kind": "hint.tr",
+  "de": "Um Ziel und Etikett zu trennen, werden zwei Hälften gebaut:"
+ },
+ {
+  "tr": "Aynı hedefi iki kayıtta söylemek için iki yer adı yeter:",
+  "kind": "hint.tr",
+  "de": "Um dasselbe Ziel in zwei Registern zu sagen, genügen zwei Ortsangaben:"
+ },
+ {
+  "tr": "Tasarımı bedelle ayırmak için iki edilgen fiil kullanılır:",
+  "kind": "hint.tr",
+  "de": "Um Entwurf und Kosten zu trennen, werden zwei Passivformen verwendet:"
+ },
+ {
+  "tr": "geniş",
+  "kind": "say.tr",
+  "de": "weit"
+ },
+ {
+  "tr": "ölçek",
+  "kind": "say.tr",
+  "de": "Maßstab"
+ },
+ {
+  "tr": "etiket",
+  "kind": "say.tr",
+  "de": "Etikett"
+ },
+ {
+  "tr": "kaynak",
+  "kind": "say.tr",
+  "de": "Quelle"
+ },
+ {
+  "tr": "bilanço",
+  "kind": "say.tr",
+  "de": "Bilanz"
+ },
+ {
+  "tr": "sonraki",
+  "kind": "say.tr",
+  "de": "danach"
+ },
+ {
+  "tr": "bazı senaryo",
+  "kind": "say.tr",
+  "de": "einige Szenarien"
+ },
+ {
+  "tr": "Özetleyelim: dar",
+  "kind": "say.tr",
+  "de": "Fassen wir zusammen: eng"
+ },
+ {
+  "tr": "Zararı azaltmaya",
+  "kind": "say.tr",
+  "de": "Den Schaden zu verringern heißt"
+ },
+ {
+  "tr": "Özetleyelim: ilke",
+  "kind": "say.tr",
+  "de": "Fassen wir zusammen: Prinzip"
+ },
+ {
+  "tr": "Özetleyelim: süreç",
+  "kind": "say.tr",
+  "de": "Fassen wir zusammen: Vorgang"
+ },
+ {
+  "tr": "Az olanla yetinmeye",
+  "kind": "say.tr",
+  "de": "Sich mit weniger zu begnügen heißt"
+ },
+ {
+  "tr": "Isıya ilişkin olana",
+  "kind": "say.tr",
+  "de": "Was die Wärme betrifft, heißt"
+ },
+ {
+  "tr": "Modeli kip koruyor.",
+  "kind": "say.tr",
+  "de": "Das Modell schützt das Modalverb."
+ },
+ {
+  "tr": "az salım üretene ise",
+  "kind": "say.tr",
+  "de": "und was wenig Ausstoß erzeugt, heißt"
+ },
+ {
+  "tr": "Güveni fiil taşıyor.",
+  "kind": "say.tr",
+  "de": "Das Vertrauen trägt das Verb."
+ },
+ {
+  "tr": "Özetleyelim: aktarma",
+  "kind": "say.tr",
+  "de": "Fassen wir zusammen: Wiedergabe"
+ },
+ {
+  "tr": "suyu geçirmeyene ise",
+  "kind": "say.tr",
+  "de": "und was kein Wasser durchlässt, heißt"
+ },
+ {
+  "tr": "Ölçek cümleye aittir.",
+  "kind": "say.tr",
+  "de": "Der Maßstab gehört in den Satz."
+ },
+ {
+  "tr": "Eksik yarı insanlardı.",
+  "kind": "say.tr",
+  "de": "Die fehlende Hälfte waren die Menschen."
+ },
+ {
+  "tr": "Eski yapıyı yenilemeye",
+  "kind": "say.tr",
+  "de": "Ein altes Gebäude zu erneuern heißt"
+ },
+ {
+  "tr": "Kapsamı ad sabitliyor.",
+  "kind": "say.tr",
+  "de": "Den Umfang legt der Name fest."
+ },
+ {
+  "tr": "az kaynak harcayana ise",
+  "kind": "say.tr",
+  "de": "und was wenig Mittel verbraucht, heißt"
+ },
+ {
+  "tr": "Çözülüp toprağa karışmaya",
+  "kind": "say.tr",
+  "de": "Sich aufzulösen und in den Boden überzugehen heißt"
+ },
+ {
+  "tr": "Geri dönüşü olmayan eşiğe",
+  "kind": "say.tr",
+  "de": "Die Schwelle ohne Rückweg heißt"
+ },
+ {
+  "tr": "Özetleyelim: çoğu senaryo",
+  "kind": "say.tr",
+  "de": "Fassen wir zusammen: die meisten Szenarien"
+ },
+ {
+  "tr": "Yaşamaya elverişsiz olana",
+  "kind": "say.tr",
+  "de": "Was zum Leben nicht taugt, heißt"
+ },
+ {
+  "tr": "Bir sürece soru sorulamaz.",
+  "kind": "say.tr",
+  "de": "Einem Vorgang kann man keine Frage stellen."
+ },
+ {
+  "tr": "Kimse bir tarih vadetmedi.",
+  "kind": "say.tr",
+  "de": "Niemand hat ein Datum versprochen."
+ },
+ {
+  "tr": "Yapımın resmen kesilmesine",
+  "kind": "say.tr",
+  "de": "Der amtliche Abbruch des Bauens heißt"
+ },
+ {
+  "tr": "atıktan madde çıkarmaya ise",
+  "kind": "say.tr",
+  "de": "und aus Abfall Stoff zu gewinnen heißt"
+ },
+ {
+  "tr": "Bir yeri resmen belirlemeye",
+  "kind": "say.tr",
+  "de": "Einen Ort amtlich festzulegen heißt"
+ },
+ {
+  "tr": "herkesin ulaşabilmesine ise",
+  "kind": "say.tr",
+  "de": "und dass alle hingelangen können, heißt"
+ },
+ {
+  "tr": "ölçümü olduğu gibi geçirir,",
+  "kind": "say.tr",
+  "de": "gibt die Messung so weiter, wie sie ist,"
+ },
+ {
+  "tr": "Basamağı eşdizim gösteriyor.",
+  "kind": "say.tr",
+  "de": "Die Stufe zeigt die Wortverbindung."
+ },
+ {
+  "tr": "çoğu senaryoda çıkan sonucu,",
+  "kind": "say.tr",
+  "de": "das Ergebnis, das in den meisten Szenarien auftritt,"
+ },
+ {
+  "tr": "Özetleyelim: birinci basamak",
+  "kind": "say.tr",
+  "de": "Fassen wir zusammen: erste Stufe"
+ },
+ {
+  "tr": "Ürünün uzun süre dayanmasına",
+  "kind": "say.tr",
+  "de": "Dass ein Produkt lange hält, heißt"
+ },
+ {
+  "tr": "bakımsızlıktan yıpranmaya ise",
+  "kind": "say.tr",
+  "de": "und aus Vernachlässigung zu verkommen heißt"
+ },
+ {
+  "tr": "Bir çözümün büyütülebilmesine",
+  "kind": "say.tr",
+  "de": "Dass sich eine Lösung vergrößern lässt, heißt"
+ },
+ {
+  "tr": "Tümden yıkılacak hâle gelmeye",
+  "kind": "say.tr",
+  "de": "In einen Zustand völligen Verfalls zu geraten heißt"
+ },
+ {
+  "tr": "Ürünün üstüne basılan iddiaya",
+  "kind": "say.tr",
+  "de": "Die auf das Produkt gedruckte Aussage heißt"
+ },
+ {
+  "tr": "Yıl boyu donmuş kalan toprağa",
+  "kind": "say.tr",
+  "de": "Boden, der das ganze Jahr gefroren bleibt, heißt"
+ },
+ {
+  "tr": "Yol, su ve hattın kurulmasına",
+  "kind": "say.tr",
+  "de": "Der Bau von Straße, Wasser und Leitung heißt"
+ },
+ {
+  "tr": "bir maddeyi dışarı vermeye ise",
+  "kind": "say.tr",
+  "de": "und einen Stoff nach außen abzugeben heißt"
+ },
+ {
+  "tr": "Bir yapıya yeni bir iş vermeye",
+  "kind": "say.tr",
+  "de": "Einem Gebäude eine neue Aufgabe zu geben heißt"
+ },
+ {
+  "tr": "Boş salonlar harabeye dönüyor.",
+  "kind": "say.tr",
+  "de": "Leere Hallen verfallen."
+ },
+ {
+  "tr": "Söz hakkını ödün satın alıyor.",
+  "kind": "say.tr",
+  "de": "Das Rederecht kauft das Zugeständnis."
+ },
+ {
+  "tr": "Atıktan elde edilen ham maddeye",
+  "kind": "say.tr",
+  "de": "Der aus Abfall gewonnene Rohstoff heißt"
+ },
+ {
+  "tr": "kaynağın bir gün biteceğine ise",
+  "kind": "say.tr",
+  "de": "und dass die Quelle eines Tages endet, heißt"
+ },
+ {
+  "tr": "Küçük parçalardan oluşan dokuya",
+  "kind": "say.tr",
+  "de": "Ein Gefüge aus kleinen Teilen heißt"
+ },
+ {
+  "tr": "trafiğin tümden tıkanmasına ise",
+  "kind": "say.tr",
+  "de": "und der völlige Stillstand des Verkehrs heißt"
+ },
+ {
+  "tr": "Ulaşımın kendisinin değişmesine",
+  "kind": "say.tr",
+  "de": "Dass sich der Verkehr selbst wandelt, heißt"
+ },
+ {
+  "tr": "gösterilebilir biçimde olana ise",
+  "kind": "say.tr",
+  "de": "und was sich zeigen lässt, heißt"
+ },
+ {
+  "tr": "Karbonu tutan orman ya da denize",
+  "kind": "say.tr",
+  "de": "Der Wald oder das Meer, das Kohlenstoff bindet, heißt"
+ },
+ {
+  "tr": "Herkesin ortak kullandığı varlığa",
+  "kind": "say.tr",
+  "de": "Das Gut, das alle gemeinsam nutzen, heißt"
+ },
+ {
+  "tr": "kararın hangi düzeyde alındığını,",
+  "kind": "say.tr",
+  "de": "auf welcher Ebene entschieden wurde,"
+ },
+ {
+  "tr": "Kaynağın gelecek için korunmasına",
+  "kind": "say.tr",
+  "de": "Die Quelle für die Zukunft zu bewahren heißt"
+ },
+ {
+  "tr": "Alanın uzmanlarının yazdığı yayına",
+  "kind": "say.tr",
+  "de": "Die Veröffentlichung, die Fachleute schreiben, heißt"
+ },
+ {
+  "tr": "Atığı yeniden üretime sokan düzene",
+  "kind": "say.tr",
+  "de": "Die Ordnung, die Abfall zurück in die Herstellung führt, heißt"
+ },
+ {
+  "tr": "Elektrikle çalışan taşıma düzenine",
+  "kind": "say.tr",
+  "de": "Die Verkehrsordnung, die mit Strom fährt, heißt"
+ },
+ {
+  "tr": "kaynağın ne kadar harcandığına ise",
+  "kind": "say.tr",
+  "de": "und wie viel Mittel verbraucht werden, heißt"
+ },
+ {
+  "tr": "Maddenin yeniden üretime girmesine",
+  "kind": "say.tr",
+  "de": "Dass der Stoff wieder in die Herstellung geht, heißt"
+ },
+ {
+  "tr": "mülkün kira ile kullanılmasına ise",
+  "kind": "say.tr",
+  "de": "und die Nutzung von Eigentum gegen Zins heißt"
+ },
+ {
+  "tr": "Sürekli inip çıkan, kararsız olana",
+  "kind": "say.tr",
+  "de": "Was ständig auf und ab geht und unstet ist, heißt"
+ },
+ {
+  "tr": "Uzun vadede geçerliliğini koruyana",
+  "kind": "say.tr",
+  "de": "Was auf lange Sicht gültig bleibt, heißt"
+ },
+ {
+  "tr": "Devletin kamu yararına el koymasına",
+  "kind": "say.tr",
+  "de": "Der Zugriff des Staates zum Wohl der Allgemeinheit heißt"
+ },
+ {
+  "tr": "doğanın kendini yenileme gücüne ise",
+  "kind": "say.tr",
+  "de": "und die Kraft der Natur, sich zu erneuern, heißt"
+ },
+ {
+  "tr": "Ekonominin büyümek zorunda olmasına",
+  "kind": "say.tr",
+  "de": "Dass die Wirtschaft wachsen muss, heißt"
+ },
+ {
+  "tr": "İlkenin bir sahibi olması gerekmez.",
+  "kind": "say.tr",
+  "de": "Ein Prinzip braucht keinen Urheber."
+ },
+ {
+  "tr": "Şimdi atık sözlüğünü kullanacaksın.",
+  "kind": "say.tr",
+  "de": "Jetzt benutzt du das Wörterbuch des Abfalls."
+ },
+ {
+  "tr": "yaptığının hesabını verme işine ise",
+  "kind": "say.tr",
+  "de": "und für das Getane einzustehen heißt"
+ },
+ {
+  "tr": "Bir sistemin baştan sona değişmesine",
+  "kind": "say.tr",
+  "de": "Dass sich ein System von Grund auf wandelt, heißt"
+ },
+ {
+  "tr": "bir sonucu su katıp zayıflatmaya ise",
+  "kind": "say.tr",
+  "de": "und ein Ergebnis durch Zusätze zu schwächen heißt"
+ },
+ {
+  "tr": "Bir yeri doğal hâline geri getirmeye",
+  "kind": "say.tr",
+  "de": "Einen Ort in seinen natürlichen Zustand zurückzuführen heißt"
+ },
+ {
+  "tr": "bir yapının işlevinin değişmesine ise",
+  "kind": "say.tr",
+  "de": "und die Änderung der Funktion eines Gebäudes heißt"
+ },
+ {
+  "tr": "Çevreye giren zararlı madde miktarına",
+  "kind": "say.tr",
+  "de": "Die Menge an Schadstoff, die in die Umwelt gelangt, heißt"
+ },
+ {
+  "tr": "elektriğin kaynağının değişmesine ise",
+  "kind": "say.tr",
+  "de": "und der Wechsel der Stromquelle heißt"
+ },
+ {
+  "tr": "salım ile tutulanın eşitlenmesine ise",
+  "kind": "say.tr",
+  "de": "und der Ausgleich von Ausstoß und Bindung heißt"
+ },
+ {
+  "tr": "Zarar görebileni koruma yükümlülüğüne",
+  "kind": "say.tr",
+  "de": "Die Pflicht, das Gefährdete zu schützen, heißt"
+ },
+ {
+  "tr": "Bilginin nereden geldiğini sorgulamaya",
+  "kind": "say.tr",
+  "de": "Zu fragen, woher das Wissen kommt, heißt"
+ },
+ {
+  "tr": "her şeyi arabaya göre kuran düzene ise",
+  "kind": "say.tr",
+  "de": "und die Ordnung, die alles am Auto ausrichtet, heißt"
+ },
+ {
+  "tr": "Şimdi bir kent raporunu bağlayacaksın.",
+  "kind": "say.tr",
+  "de": "Jetzt hältst du einen Stadtbericht zusammen."
+ },
+ {
+  "tr": "Şimdi bir model sonucunu aktaracaksın.",
+  "kind": "say.tr",
+  "de": "Jetzt gibst du ein Modellergebnis wieder."
+ },
+ {
+  "tr": "bir darbeden sonra toparlanabilmeye ise",
+  "kind": "say.tr",
+  "de": "und sich nach einem Schlag erholen zu können heißt"
+ },
+ {
+  "tr": "bir süreci fail yapar ve kimseyi anmaz,",
+  "kind": "say.tr",
+  "de": "macht einen Vorgang zum Täter und nennt niemanden,"
+ },
+ {
+  "tr": "büyüklük bakımından anlamına gelene ise",
+  "kind": "say.tr",
+  "de": "und was der Größe nach bedeutet, heißt"
+ },
+ {
+  "tr": "doğanın sağladığı varlık birikimine ise",
+  "kind": "say.tr",
+  "de": "und der Bestand, den die Natur bereitstellt, heißt"
+ },
+ {
+  "tr": "Ekonomiyi kömür ve petrolden kurtarmaya",
+  "kind": "say.tr",
+  "de": "Die Wirtschaft von Kohle und Öl zu lösen heißt"
+ },
+ {
+  "tr": "Şimdi bir çevre yükümlülüğü kuracaksın.",
+  "kind": "say.tr",
+  "de": "Jetzt baust du eine Umweltpflicht."
+ },
+ {
+  "tr": "Şimdi planın söylemediğini okuyacaksın.",
+  "kind": "say.tr",
+  "de": "Jetzt liest du, was der Plan verschweigt."
+ },
+ {
+  "tr": "Ürünün baştan sona çevresel bilançosuna",
+  "kind": "say.tr",
+  "de": "Die Umweltbilanz eines Produkts von Anfang bis Ende heißt"
+ },
+ {
+  "tr": "araştırmanın dışarıdan aldığı paraya ise",
+  "kind": "say.tr",
+  "de": "und das Geld, das die Forschung von außen erhält, heißt"
+ },
+ {
+  "tr": "aynı alana daha çok konut sığdırmaya ise",
+  "kind": "say.tr",
+  "de": "und auf derselben Fläche mehr Wohnraum unterzubringen heißt"
+ },
+ {
+  "tr": "Şimdi büyüme tartışmasını sürdüreceksin.",
+  "kind": "say.tr",
+  "de": "Jetzt führst du die Wachstumsdebatte weiter."
+ },
+ {
+  "tr": "Şimdi bir ölçümü iki fiille aktaracaksın.",
+  "kind": "say.tr",
+  "de": "Jetzt gibst du eine Messung mit zwei Verben wieder."
+ },
+ {
+  "tr": "bir yapının parça parça kaldırılmasına ise",
+  "kind": "say.tr",
+  "de": "und der schrittweise Abtrag eines Gebäudes heißt"
+ },
+ {
+  "tr": "şehrin çevresinden sıcak olan bölgesine ise",
+  "kind": "say.tr",
+  "de": "und der Teil der Stadt, der wärmer ist als sein Umland, heißt"
+ },
+ {
+  "tr": "Şimdi aynı hedefi iki kayıtta anlatacaksın.",
+  "kind": "say.tr",
+  "de": "Jetzt beschreibst du dasselbe Ziel in zwei Registern."
+ },
+ {
+  "tr": "ürünün erken kullanılmaz hâle gelmesine ise",
+  "kind": "say.tr",
+  "de": "und dass ein Produkt früh unbrauchbar wird, heißt"
+ },
+ {
+  "tr": "Su itici bir kabuk hiçbir şeyi hafifletemez.",
+  "kind": "say.tr",
+  "de": "Eine wasserabweisende Kruste kann nichts abmildern."
+ },
+ {
+  "tr": "doğanın insana karşılıksız verdiği yarara ise",
+  "kind": "say.tr",
+  "de": "und der Nutzen, den die Natur dem Menschen umsonst gibt, heißt"
+ },
+ {
+  "tr": "Kent tasarımı bakımından anlamına gelen öbeğe",
+  "kind": "say.tr",
+  "de": "Die Wendung, die nach dem Stadtentwurf bedeutet, heißt"
+ },
+ {
+  "tr": "Son kalıbımız iki işlemi ayırıyor. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Unsere letzte Wendung trennt zwei Eingriffe. Sprich nach:"
+ },
+ {
+  "tr": "türlerin geri dönmemek üzere kaybolmasına ise",
+  "kind": "say.tr",
+  "de": "und dass Arten unwiederbringlich verschwinden, heißt"
+ },
+ {
+  "tr": "büyüme ile kaynak kullanımının ayrışmasına ise",
+  "kind": "say.tr",
+  "de": "und die Trennung von Wachstum und Ressourcenverbrauch heißt"
+ },
+ {
+  "tr": "ilk basamaktır ve hiç atık üretmemeyi anlatır,",
+  "kind": "say.tr",
+  "de": "ist die erste Stufe und meint, gar keinen Abfall zu erzeugen,"
+ },
+ {
+  "tr": "Kopma, gerçek olsa da, yeterliliği sağlamıyor.",
+  "kind": "say.tr",
+  "de": "Die Entkopplung, wenn auch wirklich, liefert keine Suffizienz."
+ },
+ {
+  "tr": "Bir bulguyu seyreltmek ona oynak demek değildir.",
+  "kind": "say.tr",
+  "de": "Einen Befund zu verdünnen heißt nicht, ihn schwankend zu nennen."
+ },
+ {
+  "tr": "Sökme başladı, yeniden işlevlendirmek başlamadı.",
+  "kind": "say.tr",
+  "de": "Der Rückbau begann, das Umnutzen nicht."
+ },
+ {
+  "tr": "Şimdi dersin kuralı. İklimde ad KAPSAM demektir:",
+  "kind": "say.tr",
+  "de": "Jetzt die Regel der Lektion. Beim Klima heißt der Name UMFANG:"
+ },
+ {
+  "tr": "Hangi alanda ne yapılabileceğini gösteren belgeye",
+  "kind": "say.tr",
+  "de": "Das Schriftstück, das zeigt, was auf welcher Fläche erlaubt ist, heißt"
+ },
+ {
+  "tr": "tek bir sayıyı hedefler ve sınırlı bir söz verir,",
+  "kind": "say.tr",
+  "de": "zielt auf eine einzige Zahl und gibt ein begrenztes Versprechen,"
+ },
+ {
+  "tr": "Yeni meydan yaşanmaz ama elektrikli ulaşım geldi.",
+  "kind": "say.tr",
+  "de": "Der neue Platz ist unwirtlich, aber die Elektromobilität kam."
+ },
+ {
+  "tr": "Eskime tasarlanır, uzun ömürlülüğün bedeli ödenir.",
+  "kind": "say.tr",
+  "de": "Obsoleszenz wird entworfen, Langlebigkeit wird bezahlt."
+ },
+ {
+  "tr": "Evler bakımsız kalıyor, salonlar harabeye dönüyor.",
+  "kind": "say.tr",
+  "de": "Die Häuser verwahrlosen, die Hallen verfallen."
+ },
+ {
+  "tr": "Son kalıbımız ölçek öbeğini başa alıyor. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Unsere letzte Wendung stellt die Maßstabsangabe voran. Sprich nach:"
+ },
+ {
+  "tr": "Bir semtin pahalılaşıp eski sakinlerini kaybetmesine",
+  "kind": "say.tr",
+  "de": "Dass ein Viertel teurer wird und seine alten Bewohner verliert, heißt"
+ },
+ {
+  "tr": "Şimdi sıra sende: Atık önleme geri dönüşüm değildir.",
+  "kind": "say.tr",
+  "de": "Jetzt bist du dran: Abfallvermeidung ist kein Recycling."
+ },
+ {
+  "tr": "Eşdizim seçmek hangi basamağın atlandığını da söyler.",
+  "kind": "say.tr",
+  "de": "Die Wortverbindung zu wählen sagt auch, welche Stufe übersprungen wird."
+ },
+ {
+  "tr": "Bir tane daha: Sökme başladı, yeniden yapım başlamadı.",
+  "kind": "say.tr",
+  "de": "Noch eins: Der Rückbau begann, der Wiederaufbau nicht."
+ },
+ {
+  "tr": "İkinci kalıbımız hedefi etiketten ayırıyor. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Unsere zweite Wendung trennt Ziel und Etikett. Sprich nach:"
+ },
+ {
+  "tr": "İkinci kalıbımız tasarımı bedelle ayırıyor. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Unsere zweite Wendung trennt Entwurf und Kosten. Sprich nach:"
+ },
+ {
+  "tr": "İklim nötrlüğü bir dengedir, iklim nötr bir etikettir.",
+  "kind": "say.tr",
+  "de": "Klimaneutralität ist eine Bilanz, klimaneutral ist ein Etikett."
+ },
+ {
+  "tr": "Toparlanma gücü ölçeklenebilirlikle aynı şey değildir.",
+  "kind": "say.tr",
+  "de": "Resilienz ist nicht dasselbe wie Skalierbarkeit."
+ },
+ {
+  "tr": "Döküntü çürüyebilirse yenilenme kapasitesi dayanabilir.",
+  "kind": "say.tr",
+  "de": "Kann die Streu verrotten, hält die Regenerationsfähigkeit womöglich."
+ },
+ {
+  "tr": "Son kalıbımız iki adı karşı karşıya koyuyor. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Unsere letzte Wendung stellt zwei Namen einander gegenüber. Sprich nach:"
+ },
+ {
+  "tr": "Türlerin yok oluşunu sayıyoruz, permafrostu saymıyoruz.",
+  "kind": "say.tr",
+  "de": "Das Artensterben zählen wir, den Permafrost nicht."
+ },
+ {
+  "tr": "Adayı tayin ediyorlar ve buna kiralık mülkiyet diyorlar.",
+  "kind": "say.tr",
+  "de": "Sie weisen den Block aus und nennen es Erbpacht."
+ },
+ {
+  "tr": "Bir tane daha: Eskime tasarlanır, onarımın bedeli ödenir.",
+  "kind": "say.tr",
+  "de": "Noch eins: Obsoleszenz wird entworfen, die Reparatur wird bezahlt."
+ },
+ {
+  "tr": "Merhaba! Bugün imar kararlarında düşen öğeyi öğreneceğiz.",
+  "kind": "say.tr",
+  "de": "Hallo! Heute lernen wir das weggelassene Glied in Planungsentscheidungen."
+ },
+ {
+  "tr": "Hedefin adı, verilen sözün ne kadarını kapsadığını söyler.",
+  "kind": "say.tr",
+  "de": "Der Name des Ziels sagt, wie viel das Versprechen umfasst."
+ },
+ {
+  "tr": "Salımın düşürülmesi demek. İlk kalıbımız da bu. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Das heißt die Senkung des Ausstoßes. Das ist auch unsere erste Wendung. Sprich nach:"
+ },
+ {
+  "tr": "Şimdi sıra sende: Sokak canlandırıldı, komşular pek değil.",
+  "kind": "say.tr",
+  "de": "Jetzt bist du dran: Die Straße wurde belebt, die Nachbarn weniger."
+ },
+ {
+  "tr": "Geleceğe dayanıklı bir planın hesabını vermeleri gerekiyor.",
+  "kind": "say.tr",
+  "de": "Sie müssen über einen zukunftsfesten Plan Rechenschaft ablegen."
+ },
+ {
+  "tr": "Son kalıbımız iki eşdizimi tek cümlede bağlıyor. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Unsere letzte Wendung bindet zwei Wortverbindungen in einem Satz. Sprich nach:"
+ },
+ {
+  "tr": "Şimdi bir kirlenme olayını üç ayrı sorumluyla anlatacaksın.",
+  "kind": "say.tr",
+  "de": "Jetzt erzählst du einen Fall von Verschmutzung mit drei Verantwortlichen."
+ },
+ {
+  "tr": "Şimdi dersin kuralı. Atık sözlüğünde eşdizim SIRAYI söyler:",
+  "kind": "say.tr",
+  "de": "Jetzt die Regel der Lektion. Im Wörterbuch des Abfalls sagt die Wortverbindung die REIHENFOLGE:"
+ },
+ {
+  "tr": "Şimdi dersin kuralı. Bilim aktarımında fiil güveni dağıtır:",
+  "kind": "say.tr",
+  "de": "Jetzt die Regel der Lektion. In der Wissenschaftswiedergabe verteilt das Verb das Vertrauen:"
+ },
+ {
+  "tr": "Atığın hiç oluşmaması demek. İlk kalıbımız da bu. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Das heißt, dass gar kein Abfall entsteht. Das ist auch unsere erste Wendung. Sprich nach:"
+ },
+ {
+  "tr": "Dereyi doğal hâline döndürüyorlar ve ısı adasını koruyorlar.",
+  "kind": "say.tr",
+  "de": "Sie renaturieren den Bach und behalten die Hitzeinsel."
+ },
+ {
+  "tr": "Bir ölçümü aktaran kişi, ona ne kadar güvendiğini de aktarır.",
+  "kind": "say.tr",
+  "de": "Wer eine Messung wiedergibt, gibt auch weiter, wie sehr er ihr traut."
+ },
+ {
+  "tr": "Doğal sermaye olmasaydı hiçbir ortak kullanım alanı tutmazdı.",
+  "kind": "say.tr",
+  "de": "Ohne Naturkapital würde keine Allmende halten."
+ },
+ {
+  "tr": "Kaynakların korunması düşük emisyonlu bir filodan fazlasıdır.",
+  "kind": "say.tr",
+  "de": "Ressourcenschutz ist mehr als eine emissionsarme Flotte."
+ },
+ {
+  "tr": "Şimdi sen kur: Rapor, gerçek olsa da, yeterliliği sağlamıyor.",
+  "kind": "say.tr",
+  "de": "Bilde du jetzt: Der Bericht, wenn auch wirklich, liefert keine Suffizienz."
+ },
+ {
+  "tr": "Altyapı geliştirme erişilebilirlik incelemesinden sonra geldi.",
+  "kind": "say.tr",
+  "de": "Der Infrastrukturausbau kam nach der Untersuchung zur Erreichbarkeit."
+ },
+ {
+  "tr": "Dış kaynaklı fon, bilimsel derginin varsaydığını iddia ediyor.",
+  "kind": "say.tr",
+  "de": "Die Drittmittel behaupten, was die Fachzeitschrift voraussetzt."
+ },
+ {
+  "tr": "İkinci kalıbımız olmasaydıyı çevre savında kuruyor. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Unsere zweite Wendung baut das Wäre-nicht in der Umweltthese. Sprich nach:"
+ },
+ {
+  "tr": "Kaynak eleştirisi raporu kanıtlanabilir biçimde iyileştiriyor.",
+  "kind": "say.tr",
+  "de": "Die Quellenkritik verbessert den Bericht nachweislich."
+ },
+ {
+  "tr": "Alay burada kimseyi suçlamıyor; yalnız eksik yarıyı gösteriyor.",
+  "kind": "say.tr",
+  "de": "Der Spott beschuldigt hier niemanden; er zeigt nur die fehlende Hälfte."
+ },
+ {
+  "tr": "Bakanlığın enerji dönüşümü dediğine ilçe ulaşım dönüşümü diyor.",
+  "kind": "say.tr",
+  "de": "Was das Ministerium Energiewende nennt, nennt der Bezirk Verkehrswende."
+ },
+ {
+  "tr": "Bir tane daha: Bir iddiayı seyreltmek ona oynak demek değildir.",
+  "kind": "say.tr",
+  "de": "Noch eins: Eine Aussage zu verdünnen heißt nicht, sie schwankend zu nennen."
+ },
+ {
+  "tr": "Metali geri kazanıyorlar ve ikincil hammadde olarak satıyorlar.",
+  "kind": "say.tr",
+  "de": "Sie gewinnen das Metall zurück und verkaufen es als Sekundärrohstoff."
+ },
+ {
+  "tr": "Şimdi dersin kuralı. Model dilinde kip bir dürüstlük ölçüsüdür:",
+  "kind": "say.tr",
+  "de": "Jetzt die Regel der Lektion. In der Modellsprache ist das Modalverb ein Maß der Redlichkeit:"
+ },
+ {
+  "tr": "Ödün karşındakinin haklı olduğu yeri bırakır; kalanı senin olur.",
+  "kind": "say.tr",
+  "de": "Das Zugeständnis lässt dem Gegenüber den Punkt, in dem es recht hat; der Rest gehört dir."
+ },
+ {
+  "tr": "Şimdi dersin kuralı. Kentsel dönüşümde alay eksiltmeyle çalışır:",
+  "kind": "say.tr",
+  "de": "Jetzt die Regel der Lektion. In der Stadterneuerung arbeitet der Spott mit Auslassung:"
+ },
+ {
+  "tr": "Şimdi dersin kuralı. Şehircilik raporunda adres bir ÖLÇEK taşır:",
+  "kind": "say.tr",
+  "de": "Jetzt die Regel der Lektion. Im Städtebaubericht trägt die Adresse einen MASSSTAB:"
+ },
+ {
+  "tr": "Şimdi sen kur: Evler bakımsız kalıyor, okullar harabeye dönüyor.",
+  "kind": "say.tr",
+  "de": "Bilde du jetzt: Die Häuser verwahrlosen, die Schulen verfallen."
+ },
+ {
+  "tr": "Şimdi sen kur: Fon, bilimsel derginin varsaydığını iddia ediyor.",
+  "kind": "say.tr",
+  "de": "Bilde du jetzt: Das Geld behauptet, was die Fachzeitschrift voraussetzt."
+ },
+ {
+  "tr": "Burada soylulaştırma yok, yoğunlaştırıyoruz ve elden geçiriyoruz.",
+  "kind": "say.tr",
+  "de": "Hier gibt es keine Gentrifizierung, wir verdichten nach und sanieren."
+ },
+ {
+  "tr": "Biçim, ilkeyi savunanın kimliğinden ayırır ve uygulanabilir kılar.",
+  "kind": "say.tr",
+  "de": "Die Form trennt das Prinzip von der Person, die es vertritt, und macht es anwendbar."
+ },
+ {
+  "tr": "Süreç fail olursa kimse hesap vermez; cümlenin başı bunu belirler.",
+  "kind": "say.tr",
+  "de": "Ist der Vorgang der Täter, legt niemand Rechenschaft ab; der Satzanfang entscheidet darüber."
+ },
+ {
+  "tr": "Şimdi sıra sende: Broşürde tasarruf, incelemede karbonsuzlaştırma.",
+  "kind": "say.tr",
+  "de": "Jetzt bist du dran: Im Prospekt Einsparung, in der Studie Dekarbonisierung."
+ },
+ {
+  "tr": "Bir tane daha: İklim nötrlüğü bir dengedir, çıkartma bir etikettir.",
+  "kind": "say.tr",
+  "de": "Noch eins: Klimaneutralität ist eine Bilanz, der Aufkleber ein Etikett."
+ },
+ {
+  "tr": "Kaynak tüketiminin arkasında kaybedilmiş bir karbon yutağı duruyor.",
+  "kind": "say.tr",
+  "de": "Hinter dem Ressourcenverbrauch steht eine verlorene Kohlenstoffsenke."
+ },
+ {
+  "tr": "Otomobil odaklı, dediler, üstelik trafik felcine karşı iyi geliyor.",
+  "kind": "say.tr",
+  "de": "Autogerecht, sagten sie, und dazu gut gegen den Verkehrskollaps."
+ },
+ {
+  "tr": "Şehircilikte ölçek belirtilmezse her ölçüt yanlış yerde kullanılır.",
+  "kind": "say.tr",
+  "de": "Wird im Städtebau der Maßstab nicht genannt, wird jeder Maßstab am falschen Ort benutzt."
+ },
+ {
+  "tr": "Şimdi dersin kuralı. Büyüme tartışmasında ödün bir GİRİŞ biletidir:",
+  "kind": "say.tr",
+  "de": "Jetzt die Regel der Lektion. In der Wachstumsdebatte ist das Zugeständnis eine EINTRITTSKARTE:"
+ },
+ {
+  "tr": "Şimdi sıra sende: İhtiyat ilkesi incelemenin önce olmasını istiyor.",
+  "kind": "say.tr",
+  "de": "Jetzt bist du dran: Das Vorsorgeprinzip verlangt, dass die Prüfung vorher sei."
+ },
+ {
+  "tr": "Merhaba! Bugün atık konuşmasının yerleşik eşdizimlerini öğreneceğiz.",
+  "kind": "say.tr",
+  "de": "Hallo! Heute lernen wir die festen Wortverbindungen des Redens über Abfall."
+ },
+ {
+  "tr": "Şimdi sen kur: Orman olmasaydı hiçbir ortak kullanım alanı tutmazdı.",
+  "kind": "say.tr",
+  "de": "Bilde du jetzt: Ohne Wald würde keine Allmende halten."
+ },
+ {
+  "tr": "Belirsizliği söyleyen model, bir kez şaşırdığında güvenini kaybetmez.",
+  "kind": "say.tr",
+  "de": "Ein Modell, das die Unsicherheit nennt, verliert sein Vertrauen nicht, wenn es sich einmal irrt."
+ },
+ {
+  "tr": "Her ekosistem hizmetinin kamulaştırmadan önce sayılmasını istiyorlar.",
+  "kind": "say.tr",
+  "de": "Sie verlangen, dass jede Ökosystemleistung vor der Enteignung gezählt werde."
+ },
+ {
+  "tr": "Sonluluğun farkında olsa da, döngüsel ekonomi yine de büyüme istiyor.",
+  "kind": "say.tr",
+  "de": "Wenn auch der Endlichkeit bewusst, braucht die Kreislaufwirtschaft dennoch Wachstum."
+ },
+ {
+  "tr": "Şimdi sen kur: Toprak çürüyebilirse yenilenme kapasitesi dayanabilir.",
+  "kind": "say.tr",
+  "de": "Bilde du jetzt: Kann der Boden verrotten, hält die Regenerationsfähigkeit womöglich."
+ },
+ {
+  "tr": "Bir tane daha: Permafrostu sayıyoruz, türlerin yok oluşunu saymıyoruz.",
+  "kind": "say.tr",
+  "de": "Noch eins: Den Permafrost zählen wir, das Artensterben nicht."
+ },
+ {
+  "tr": "Bir yere yeniden hayat getirmek demek. İlk kalıbımız da bu. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Das heißt, einem Ort wieder Leben zu bringen. Das ist auch unsere erste Wendung. Sprich nach:"
+ },
+ {
+  "tr": "Bölgenin bütününü düzenleme işi demek. İlk kalıbımız da bu. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Das heißt, ein ganzes Gebiet zu ordnen. Das ist auch unsere erste Wendung. Sprich nach:"
+ },
+ {
+  "tr": "ise bizi fail yapar. İkinci cümle daha rahatsız edici ve daha doğrudur.",
+  "kind": "say.tr",
+  "de": "dagegen macht uns zu Tätern. Der zweite Satz ist unbequemer und wahrer."
+ },
+ {
+  "tr": "Merhaba! Bugün bir ölçümü aktarırken hükmü fiile yüklemeyi öğreneceğiz.",
+  "kind": "say.tr",
+  "de": "Hallo! Heute lernen wir, beim Wiedergeben einer Messung das Urteil ins Verb zu legen."
+ },
+ {
+  "tr": "Şimdi dersin kuralı. İmar kararında eksiltme bir SÖZ VERMEME biçimidir:",
+  "kind": "say.tr",
+  "de": "Jetzt die Regel der Lektion. In der Bauentscheidung ist die Auslassung eine Form des NICHT-VERSPRECHENS:"
+ },
+ {
+  "tr": "Bir tane daha: Her hizmetin kamulaştırmadan önce sayılmasını istiyorlar.",
+  "kind": "say.tr",
+  "de": "Noch eins: Sie verlangen, dass jede Leistung vor der Enteignung gezählt werde."
+ },
+ {
+  "tr": "Bir tane daha: Otomobil odaklı, dediler, üstelik dükkânlara iyi geliyor.",
+  "kind": "say.tr",
+  "de": "Noch eins: Autogerecht, sagten sie, und dazu gut für die Läden."
+ },
+ {
+  "tr": "Isınan toprak daha çok gaz salgılayabilir ve ısıl dengesini yitirebilir.",
+  "kind": "say.tr",
+  "de": "Erwärmter Boden kann mehr Gas absondern und sein thermisches Gleichgewicht verlieren."
+ },
+ {
+  "tr": "Merhaba! Bugün çevre anlatısında kimi başa aldığını seçmeyi öğreneceğiz.",
+  "kind": "say.tr",
+  "de": "Hallo! Heute lernen wir, in der Umwelterzählung zu wählen, wen wir voranstellen."
+ },
+ {
+  "tr": "Şimdi dersin kuralı. Çevre hukukunda çekimsiz fiil bir yükümlülük kurar:",
+  "kind": "say.tr",
+  "de": "Jetzt die Regel der Lektion. Im Umweltrecht stiftet das ungebeugte Verb eine Pflicht:"
+ },
+ {
+  "tr": "Şimdi sıra sende: Sanayinin yaptığı şey kirletici madde yükünü gizlemek.",
+  "kind": "say.tr",
+  "de": "Jetzt bist du dran: Was die Industrie tut, ist die Schadstoffbelastung zu verbergen."
+ },
+ {
+  "tr": "Kaynak tasarruflu olup olmadığını yaşam döngüsü değerlendirmesi söylüyor.",
+  "kind": "say.tr",
+  "de": "Ob es ressourcenschonend ist, sagt die Ökobilanz."
+ },
+ {
+  "tr": "Şimdi dersin kuralı. Çevre cümlesinde başa alınan şey SORUMLUYU belirler:",
+  "kind": "say.tr",
+  "de": "Jetzt die Regel der Lektion. Im Umweltsatz bestimmt das Vorangestellte die VERANTWORTLICHEN:"
+ },
+ {
+  "tr": "Şimdi sen kur: Büyümenin arkasında kaybedilmiş bir karbon yutağı duruyor.",
+  "kind": "say.tr",
+  "de": "Bilde du jetzt: Hinter dem Wachstum steht eine verlorene Kohlenstoffsenke."
+ },
+ {
+  "tr": "Şimdi sıra sende: Moratoryum bir söz olarak kalır, izin bir tarih olarak.",
+  "kind": "say.tr",
+  "de": "Jetzt bist du dran: Das Moratorium bleibt als Versprechen, die Genehmigung als Datum."
+ },
+ {
+  "tr": "Bir işin süreli olarak durdurulması demek. İlk kalıbımız da bu. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Das heißt, dass etwas befristet ausgesetzt wird. Das ist auch unsere erste Wendung. Sprich nach:"
+ },
+ {
+  "tr": "Merhaba! Bugün aynı iklim hedefinin üç ayrı adla söylendiğini öğreneceğiz.",
+  "kind": "say.tr",
+  "de": "Hallo! Heute lernen wir, dass dasselbe Klimaziel drei Namen trägt."
+ },
+ {
+  "tr": "Şimdi sen kur: Burada soylulaştırma yok, planlıyoruz ve elden geçiriyoruz.",
+  "kind": "say.tr",
+  "de": "Bilde du jetzt: Hier gibt es keine Gentrifizierung, wir planen und sanieren."
+ },
+ {
+  "tr": "Şimdi sen kur: Şehrin enerji dönüşümü dediğine ilçe ulaşım dönüşümü diyor.",
+  "kind": "say.tr",
+  "de": "Bilde du jetzt: Was die Stadt Energiewende nennt, nennt der Bezirk Verkehrswende."
+ },
+ {
+  "tr": "Merhaba! Bugün büyüme tartışmasında ödün vererek karşı çıkmayı öğreneceğiz.",
+  "kind": "say.tr",
+  "de": "Hallo! Heute lernen wir, in der Wachstumsdebatte mit Zugeständnis zu widersprechen."
+ },
+ {
+  "tr": "Merhaba! Bugün uzun bir şehircilik raporunu bağlayan adresleri öğreneceğiz.",
+  "kind": "say.tr",
+  "de": "Hallo! Heute lernen wir die Adressen, die einen langen Städtebaubericht zusammenhalten."
+ },
+ {
+  "tr": "Sürekli büyümeye karşı çıkan düşünce demek. İlk kalıbımız da bu. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Das heißt der Gedanke, der sich gegen ständiges Wachstum stellt. Das ist auch unsere erste Wendung. Sprich nach:"
+ },
+ {
+  "tr": "Merhaba! Bugün çevre yükümlülüğünü kalıplaşmış biçimle istemeyi öğreneceğiz.",
+  "kind": "say.tr",
+  "de": "Hallo! Heute lernen wir, die Umweltpflicht in fester Form zu fordern."
+ },
+ {
+  "tr": "Merhaba! Bugün model sonucunu aktarırken kipin koyduğu mesafeyi öğreneceğiz.",
+  "kind": "say.tr",
+  "de": "Hallo! Heute lernen wir den Abstand, den das Modalverb beim Wiedergeben eines Modellergebnisses setzt."
+ },
+ {
+  "tr": "Sonucun kendi nedenini besleyen döngü demek. İlk kalıbımız da bu. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Das heißt ein Kreis, in dem die Folge ihre eigene Ursache nährt. Das ist auch unsere erste Wendung. Sprich nach:"
+ },
+ {
+  "tr": "Şimdi sen kur: Camı geri kazanıyorlar ve ikincil hammadde olarak satıyorlar.",
+  "kind": "say.tr",
+  "de": "Bilde du jetzt: Sie gewinnen das Glas zurück und verkaufen es als Sekundärrohstoff."
+ },
+ {
+  "tr": "Şimdi sıra sende: Yukarıdaki mekânsal planlama aşağıda bir kurala dönüşüyor.",
+  "kind": "say.tr",
+  "de": "Jetzt bist du dran: Die Raumplanung oben wird unten zu einer Regel."
+ },
+ {
+  "tr": "Bir önlemin davranışı yönlendirme gücü demek. İlk kalıbımız da bu. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Das heißt die Kraft einer Maßnahme, Verhalten zu lenken. Das ist auch unsere erste Wendung. Sprich nach:"
+ },
+ {
+  "tr": "Merhaba! Bugün kentsel dönüşüm tanıtım dilini alayla eleştirmeyi öğreneceğiz.",
+  "kind": "say.tr",
+  "de": "Hallo! Heute lernen wir, die Werbesprache der Stadterneuerung mit Spott zu kritisieren."
+ },
+ {
+  "tr": "Şimdi sen kur: O karar, belirtildiği gibi, yalnız şehircilik açısından işliyor.",
+  "kind": "say.tr",
+  "de": "Bilde du jetzt: Jene Entscheidung wirkt, wie angemerkt, nur städtebaulich."
+ },
+ {
+  "tr": "Kesin bilinmese de zarardan kaçınma kuralı demek. İlk kalıbımız da bu. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Das heißt die Regel, Schaden zu meiden, auch wenn er nicht sicher bekannt ist. Das ist auch unsere erste Wendung. Sprich nach:"
+ },
+ {
+  "tr": "Bir tane daha: Isınan su daha çok gaz salgılayabilir ve ısıl dengesini yitirebilir.",
+  "kind": "say.tr",
+  "de": "Noch eins: Erwärmtes Wasser kann mehr Gas absondern und sein thermisches Gleichgewicht verlieren."
+ },
+ {
+  "tr": "Şimdi sıra sende: Biri yönlendirici etkiyi aktarıyor, öteki sonuçtan kuşku duyuyor.",
+  "kind": "say.tr",
+  "de": "Jetzt bist du dran: Die eine gibt die Lenkungswirkung wieder, die andere zweifelt am Ergebnis."
+ },
+ {
+  "tr": "Bir tane daha: Sınırların farkında olsa da, döngüsel ekonomi yine de büyüme istiyor.",
+  "kind": "say.tr",
+  "de": "Noch eins: Wenn auch der Grenzen bewusst, braucht die Kreislaufwirtschaft dennoch Wachstum."
+ },
+ {
+  "tr": "Ölçek bakımından ince ayrıntılı bir mahalle erişilebilirliğe daha iyi hizmet ediyor.",
+  "kind": "say.tr",
+  "de": "Maßstäblich dient ein kleinteiliges Viertel der Erreichbarkeit besser."
+ },
+ {
+  "tr": "Şimdi sıra sende: Geri besleme döngüsü bölgeyi devrilme noktasının ötesine itebilir.",
+  "kind": "say.tr",
+  "de": "Jetzt bist du dran: Eine Rückkopplung kann die Region durchaus über einen Kipppunkt schieben."
+ },
+ {
+  "tr": "Bir kaynağın taşıyamayacağı kadar kullanılması demek. İlk kalıbımız da bu. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Das heißt, eine Quelle stärker zu nutzen, als sie tragen kann. Das ist auch unsere erste Wendung. Sprich nach:"
+ },
+ {
+  "tr": "O kullanım amacı değişikliği, belirtildiği gibi, yalnız şehircilik açısından işliyor.",
+  "kind": "say.tr",
+  "de": "Jene Nutzungsänderung wirkt, wie angemerkt, nur städtebaulich."
+ },
+ {
+  "tr": "ise hangi varsayımla yazıldığını söyler. Adres düşerse mahalle ölçüsü şehre uygulanır.",
+  "kind": "say.tr",
+  "de": "dagegen sagt, unter welcher Annahme es geschrieben wurde. Fällt die Adresse, wird der Maßstab eines Viertels auf die Stadt angewandt."
+ },
+ {
+  "tr": "Şimdi sıra sende: Eleştiri haklı olsa da emekli aylıklarını büyüme zorunluluğu ödüyor.",
+  "kind": "say.tr",
+  "de": "Jetzt bist du dran: So berechtigt die Kritik ist, die Renten zahlt der Wachstumszwang."
+ },
+ {
+  "tr": "ise onu askıya alır. İkisi de meşrudur; meşru olmayan, hangisini seçtiğini gizlemektir.",
+  "kind": "say.tr",
+  "de": "dagegen stellt sie in Frage. Beides ist zulässig; unzulässig ist, zu verbergen, welches man gewählt hat."
+ },
+ {
+  "tr": "ise bütün bir ekonomiyi kapsar. İkisi aynı yöne gider ama biri çok daha azına söz verir.",
+  "kind": "say.tr",
+  "de": "dagegen umfasst eine ganze Wirtschaft. Beide gehen in dieselbe Richtung, aber eines verspricht viel weniger."
+ },
+ {
+  "tr": "Bir tane daha: Ölçek bakımından küçük bir mahalle erişilebilirliğe daha iyi hizmet ediyor.",
+  "kind": "say.tr",
+  "de": "Noch eins: Maßstäblich dient ein kleines Viertel der Erreichbarkeit besser."
+ },
+ {
+  "tr": "ise atık oluştuktan sonra başlar. İkisini eşitleyen cümle, önlemeyi geri dönüşümle değiştirmiş olur.",
+  "kind": "say.tr",
+  "de": "dagegen beginnt erst, nachdem Abfall entstanden ist. Ein Satz, der beide gleichsetzt, ersetzt die Vermeidung durch das Recycling."
+ },
+ {
+  "tr": "dersen bu artık bir görüş değil bir ölçüdür. Görüşler tartılır, ölçüler uygulanır; fark tam buradadır.",
+  "kind": "say.tr",
+  "de": "sagst, ist es keine Meinung mehr, sondern ein Maßstab. Meinungen werden abgewogen, Maßstäbe angewandt; genau darin liegt der Unterschied."
+ },
+ {
+  "tr": "Hangi ad seçilirse sorumluluk o kadar dar ya da geniş oluyor; ad burada bir kapsam kararı. Hazır mısın?",
+  "kind": "say.tr",
+  "de": "Je nach Name wird die Verantwortung enger oder weiter; der Name ist hier eine Entscheidung über den Umfang. Bist du bereit?"
+ },
+ {
+  "tr": "İyileştirme sözcükleri kimin gittiğini söylemiyor; eksiltme tam o boşluğu görünür kılıyor. Hazır mısın?",
+  "kind": "say.tr",
+  "de": "Die Wörter der Verbesserung sagen nicht, wer geht; die Auslassung macht genau diese Lücke sichtbar. Bist du bereit?"
+ },
+ {
+  "tr": "ise yalnız bazılarında çıkanı işaretler. Kipsiz bir model cümlesi, modelin kendisinden fazlasını söyler.",
+  "kind": "say.tr",
+  "de": "dagegen markiert, was nur in einigen auftritt. Ein Modellsatz ohne Modalverb sagt mehr, als das Modell selbst sagt."
+ },
+ {
+  "tr": "Büyümenin sağladığını teslim etmeyen eleştiri ahlak dersi gibi duyuluyor ve kimse dinlemiyor. Hazır mısın?",
+  "kind": "say.tr",
+  "de": "Eine Kritik, die den Nutzen des Wachstums nicht einräumt, klingt wie eine Moralpredigt, und niemand hört zu. Bist du bereit?"
+ },
+ {
+  "tr": "Kimin parasıyla ölçüldüğü de aktarmanın parçası; bunu söylemek suçlama değil, kaynak bilgisidir. Hazır mısın?",
+  "kind": "say.tr",
+  "de": "Wessen Geld gemessen hat, gehört zur Wiedergabe; das zu sagen ist kein Vorwurf, sondern Quellenkunde. Bist du bereit?"
+ },
+ {
+  "tr": "dediğinde karşındaki seni rakamları gören biri sayar. Büyümeyi tümden reddeden cümle, haklı olsa bile masadan düşer.",
+  "kind": "say.tr",
+  "de": "hält dich dein Gegenüber für jemanden, der die Zahlen sieht. Ein Satz, der Wachstum ganz ablehnt, fällt vom Tisch, auch wenn er recht hat."
+ },
+ {
+  "tr": "dediğinde kimin gittiğini söylemene gerek kalmaz. Suçlama yok, yalnız bir boşluk var ve boşluğu dinleyen dolduruyor.",
+  "kind": "say.tr",
+  "de": "brauchst du nicht zu sagen, wer geht. Es gibt keinen Vorwurf, nur eine Lücke, und die Lücke füllt die Zuhörerin."
+ },
+ {
+  "tr": "İlke kişiden ayrıldığı anda bir yükümlülük oluyor; «biz istiyoruz» dediğin anda yeniden bir görüş oluyor. Hazır mısın?",
+  "kind": "say.tr",
+  "de": "Sobald das Prinzip von der Person getrennt ist, wird es zur Pflicht; sagst du «wir wollen», wird es wieder eine Meinung. Bist du bereit?"
+ },
+ {
+  "tr": "Ölçek değişince aynı ölçüt başka sonuç veriyor; adres yoksa okur bir mahalle ölçüsünü bütün şehre uygular. Hazır mısın?",
+  "kind": "say.tr",
+  "de": "Ändert sich der Maßstab, wirkt derselbe Maßstab anders; ohne Adresse überträgt die Leserin das Maß eines Viertels auf die ganze Stadt. Bist du bereit?"
+ },
+ {
+  "tr": "Planın söylemediği şey çoğu zaman kimin çıkacağıdır; bu modülün son dersinde eksiltmeyi okumayı bitiriyoruz. Hazır mısın?",
+  "kind": "say.tr",
+  "de": "Was der Plan verschweigt, ist meist, wer gehen muss; in der letzten Lektion dieses Moduls schließen wir das Lesen der Auslassung ab. Bist du bereit?"
+ },
+ {
+  "tr": "Süreci başa almak kimseyi suçlamıyor, faili başa almak suçluyor; ikisi de doğru cümle ve ikisi ayrı siyaset. Hazır mısın?",
+  "kind": "say.tr",
+  "de": "Den Vorgang voranzustellen beschuldigt niemanden, die handelnde Person voranzustellen schon; beide Sätze sind richtig und beide sind eine andere Politik. Bist du bereit?"
+ },
+ {
+  "tr": "Belirsizliği söylemek modeli zayıflatmaz, güvenilir kılar; kesin konuşan model ilk sapmada güvenini kaybeder. Hazır mısın?",
+  "kind": "say.tr",
+  "de": "Die Unsicherheit zu nennen schwächt das Modell nicht, es macht es glaubwürdig; ein Modell, das bestimmt spricht, verliert beim ersten Abweichen sein Vertrauen. Bist du bereit?"
+ },
+ {
+  "tr": "Önlemeyi anlatan söz ile geri kazanmayı anlatan söz aynı değil; ikisini karıştıran cümle atığı meşrulaştırır. Hazır mısın?",
+  "kind": "say.tr",
+  "de": "Das Wort für Vermeidung und das Wort für Rückgewinnung sind nicht dasselbe; ein Satz, der beide verwechselt, rechtfertigt den Abfall. Bist du bereit?"
+ },
+ {
+  "tr": "dediğinde bir tarih verilmiş olur ama bir söz verilmemiş olur. Eksiltilen yarı, plana bakan kişinin sorması gereken sorudur.",
+  "kind": "say.tr",
+  "de": "ist ein Datum genannt, aber kein Versprechen gegeben. Die weggelassene Hälfte ist die Frage, die wer den Plan liest, stellen muss."
+ }
+]

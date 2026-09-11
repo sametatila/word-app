@@ -34016,5 +34016,4727 @@
    "goal": "Üç cümlede birer öğe düşürdüysen ve eksilen hakkı adlandırdıysan konuşma başarılı sayılır.",
    "minTurns": 8
   }
+ },
+ {
+  "id": "en-c1-three-names-for-one-target",
+  "level": "C1",
+  "course": "en",
+  "icon": "recycle",
+  "title": "Three names for one target",
+  "titleTr": "Tek hedefin üç adı",
+  "summary": "Aynı iklim hedefinin üç ayrı adla söylendiğini öğretir; hangi ad seçilirse sorumluluk o kadar dar ya da geniş olur.",
+  "minutes": 12,
+  "focusId": "Register shift in naming a climate target",
+  "vocab": [
+   {
+    "de": "emission reduction",
+    "tr": "emisyon azaltma"
+   },
+   {
+    "de": "decarbonization",
+    "tr": "karbonsuzlaştırma"
+   },
+   {
+    "de": "climate neutrality",
+    "tr": "iklim nötrlüğü"
+   },
+   {
+    "de": "climate-neutral",
+    "tr": "iklim nötr"
+   },
+   {
+    "de": "energy transition",
+    "tr": "enerji dönüşümü"
+   },
+   {
+    "de": "mobility transition",
+    "tr": "ulaşım dönüşümü"
+   },
+   {
+    "de": "low-emission",
+    "tr": "düşük emisyonlu"
+   },
+   {
+    "de": "resource conservation",
+    "tr": "kaynakların korunması"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "In the brochure it is emission reduction; in the study, decarbonization.",
+    "tr": "aynı hedefi iki kayıtta söyler"
+   },
+   {
+    "de": "Climate neutrality is a balance; climate-neutral is a label.",
+    "tr": "hedefi etiketten ayırır"
+   },
+   {
+    "de": "What the ministry calls an energy transition, the district calls a mobility transition.",
+    "tr": "iki adı karşı karşıya koyar"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Bugün aynı iklim hedefinin üç ayrı adla söylendiğini öğreneceğiz."
+     },
+     {
+      "lang": "tr",
+      "text": "Hangi ad seçilirse sorumluluk o kadar dar ya da geniş oluyor; ad burada bir kapsam kararı. Hazır mısın?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "emission reduction"
+     },
+     {
+      "lang": "tr",
+      "text": "Salımın düşürülmesi demek. İlk kalıbımız da bu. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "In the brochure it is emission reduction; in the study, decarbonization."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "In the brochure it is emission reduction; in the study, decarbonization."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Ekonomiyi kömür ve petrolden kurtarmaya"
+     },
+     {
+      "lang": "en",
+      "text": "decarbonization"
+     },
+     {
+      "lang": "tr",
+      "text": "salım ile tutulanın eşitlenmesine ise"
+     },
+     {
+      "lang": "en",
+      "text": "climate neutrality"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İkinci kalıbımız hedefi etiketten ayırıyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "Climate neutrality is a balance; climate-neutral is a label."
+     },
+     {
+      "lang": "tr",
+      "text": "İklim nötrlüğü bir dengedir, iklim nötr bir etikettir."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Climate neutrality is a balance; climate-neutral is a label."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Ürünün üstüne basılan iddiaya"
+     },
+     {
+      "lang": "en",
+      "text": "climate-neutral"
+     },
+     {
+      "lang": "tr",
+      "text": "elektriğin kaynağının değişmesine ise"
+     },
+     {
+      "lang": "en",
+      "text": "energy transition"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son kalıbımız iki adı karşı karşıya koyuyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "What the ministry calls an energy transition, the district calls a mobility transition."
+     },
+     {
+      "lang": "tr",
+      "text": "Bakanlığın enerji dönüşümü dediğine ilçe ulaşım dönüşümü diyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "What the ministry calls an energy transition, the district calls a mobility transition."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi dersin kuralı. İklimde ad KAPSAM demektir:"
+     },
+     {
+      "lang": "en",
+      "text": "emission reduction"
+     },
+     {
+      "lang": "tr",
+      "text": "tek bir sayıyı hedefler ve sınırlı bir söz verir,"
+     },
+     {
+      "lang": "en",
+      "text": "decarbonization"
+     },
+     {
+      "lang": "tr",
+      "text": "ise bütün bir ekonomiyi kapsar. İkisi aynı yöne gider ama biri çok daha azına söz verir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sıra sende: Broşürde tasarruf, incelemede karbonsuzlaştırma."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "In the brochure it is a saving; in the study, decarbonization.",
+     "accept": [
+      "In the brochure it is a cut; in the study, decarbonization.",
+      "In the brochure it is emission reduction; in the study, decarbonization."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Aynı hedefi iki kayıtta söylemek için iki yer adı yeter:"
+      },
+      {
+       "lang": "en",
+       "text": "In the brochure it is a saving; in the study, decarbonization."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kontrol. Şu cümle doğru mu?"
+     },
+     {
+      "lang": "en",
+      "text": "Climate neutrality is a balance; climate-neutral is a label."
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "Climate neutrality is a balance; climate-neutral is a label.",
+     "answer": true,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Doğru. Biri bir hesabı adlandırıyor, öteki bir ürünün üstündeki iddiayı."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Ulaşımın kendisinin değişmesine"
+     },
+     {
+      "lang": "en",
+      "text": "mobility transition"
+     },
+     {
+      "lang": "tr",
+      "text": "az salım üretene ise"
+     },
+     {
+      "lang": "en",
+      "text": "low-emission"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "Resource conservation is more than a low-emission fleet."
+     },
+     {
+      "lang": "tr",
+      "text": "Kaynakların korunması düşük emisyonlu bir filodan fazlasıdır."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Resource conservation is more than a low-emission fleet."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Kaynağın gelecek için korunmasına"
+     },
+     {
+      "lang": "en",
+      "text": "resource conservation"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sen kur: Şehrin enerji dönüşümü dediğine ilçe ulaşım dönüşümü diyor."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "What the city calls an energy transition, the district calls a mobility transition.",
+     "accept": [
+      "What the state calls an energy transition, the district calls a mobility transition.",
+      "What the ministry calls an energy transition, the district calls a mobility transition."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "İki adı karşı karşıya koymak için"
+      },
+      {
+       "lang": "en",
+       "text": "What … calls … calls"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "What the city calls an energy transition, the district calls a mobility transition."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Hedefin adı, verilen sözün ne kadarını kapsadığını söyler."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The name fixes the scope."
+     },
+     {
+      "lang": "tr",
+      "text": "Kapsamı ad sabitliyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The name fixes the scope."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir tane daha: İklim nötrlüğü bir dengedir, çıkartma bir etikettir."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "Climate neutrality is a balance; the sticker is a label.",
+     "accept": [
+      "Climate neutrality is a balance; the claim is a label.",
+      "Climate neutrality is a balance; climate-neutral is a label."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Hedefi etiketten ayırmak için iki yarı kurulur:"
+      },
+      {
+       "lang": "en",
+       "text": "Climate neutrality is a balance; the sticker is a label."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Özetleyelim: dar"
+     },
+     {
+      "lang": "en",
+      "text": "emission reduction"
+     },
+     {
+      "lang": "tr",
+      "text": "geniş"
+     },
+     {
+      "lang": "en",
+      "text": "decarbonization"
+     },
+     {
+      "lang": "tr",
+      "text": "etiket"
+     },
+     {
+      "lang": "en",
+      "text": "climate-neutral"
+     },
+     {
+      "lang": "tr",
+      "text": "Şimdi aynı hedefi iki kayıtta anlatacaksın."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Bir şirketin iklim sözünü önce broşürün, sonra incelemenin diliyle anlatıyorsun. İki adı da kur ve her adın ne kadarına söz verdiğini söyle.",
+   "partner": "her iklim sözünü aynı sayan, «hepsi çevre işte» diyen bir arkadaş",
+   "opening": "It's all just environmental stuff, isn't it?",
+   "openingTr": "Hepsi çevre işte, değil mi?",
+   "goal": "Aynı hedefi iki kayıtta adlandırdıysan ve her adın kapsamını söylediysen konuşma başarılı sayılır.",
+   "minTurns": 8
+  }
+ },
+ {
+  "id": "en-c1-who-does-the-polluting",
+  "level": "C1",
+  "course": "en",
+  "icon": "rain",
+  "title": "Who does the polluting",
+  "titleTr": "Kirleten kim",
+  "summary": "Çevre anlatısında kimi başa aldığını seçmeyi öğretir; süreci başa almak kimseyi suçlamaz, faili başa almak suçlar.",
+  "minutes": 12,
+  "focusId": "Fronting in talk about pollution",
+  "vocab": [
+   {
+    "de": "pollutant load",
+    "tr": "kirletici madde yükü"
+   },
+   {
+    "de": "overexploitation",
+    "tr": "aşırı sömürü"
+   },
+   {
+    "de": "resource consumption",
+    "tr": "kaynak tüketimi"
+   },
+   {
+    "de": "carbon sink",
+    "tr": "karbon yutağı"
+   },
+   {
+    "de": "species extinction",
+    "tr": "türlerin yok oluşu"
+   },
+   {
+    "de": "permafrost",
+    "tr": "permafrost"
+   },
+   {
+    "de": "heat island",
+    "tr": "ısı adası"
+   },
+   {
+    "de": "renaturalize",
+    "tr": "doğal hâline döndürmek"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "What overexploitation does is hide the pollutant load.",
+    "tr": "eylemi başa taşır"
+   },
+   {
+    "de": "Behind the resource consumption stands a lost carbon sink.",
+    "tr": "yer öbeğini başa alır"
+   },
+   {
+    "de": "Species extinction we count; the permafrost we do not.",
+    "tr": "iki nesneyi başa alıp ikiye böler"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Bugün çevre anlatısında kimi başa aldığını seçmeyi öğreneceğiz."
+     },
+     {
+      "lang": "tr",
+      "text": "Süreci başa almak kimseyi suçlamıyor, faili başa almak suçluyor; ikisi de doğru cümle ve ikisi ayrı siyaset. Hazır mısın?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "overexploitation"
+     },
+     {
+      "lang": "tr",
+      "text": "Bir kaynağın taşıyamayacağı kadar kullanılması demek. İlk kalıbımız da bu. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "What overexploitation does is hide the pollutant load."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "What overexploitation does is hide the pollutant load."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Çevreye giren zararlı madde miktarına"
+     },
+     {
+      "lang": "en",
+      "text": "pollutant load"
+     },
+     {
+      "lang": "tr",
+      "text": "kaynağın ne kadar harcandığına ise"
+     },
+     {
+      "lang": "en",
+      "text": "resource consumption"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İkinci kalıbımız yer öbeğini başa alıyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "Behind the resource consumption stands a lost carbon sink."
+     },
+     {
+      "lang": "tr",
+      "text": "Kaynak tüketiminin arkasında kaybedilmiş bir karbon yutağı duruyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Behind the resource consumption stands a lost carbon sink."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Karbonu tutan orman ya da denize"
+     },
+     {
+      "lang": "en",
+      "text": "carbon sink"
+     },
+     {
+      "lang": "tr",
+      "text": "türlerin geri dönmemek üzere kaybolmasına ise"
+     },
+     {
+      "lang": "en",
+      "text": "species extinction"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son kalıbımız iki nesneyi başa alıp ikiye bölüyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "Species extinction we count; the permafrost we do not."
+     },
+     {
+      "lang": "tr",
+      "text": "Türlerin yok oluşunu sayıyoruz, permafrostu saymıyoruz."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Species extinction we count; the permafrost we do not."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi dersin kuralı. Çevre cümlesinde başa alınan şey SORUMLUYU belirler:"
+     },
+     {
+      "lang": "en",
+      "text": "What overexploitation does"
+     },
+     {
+      "lang": "tr",
+      "text": "bir süreci fail yapar ve kimseyi anmaz,"
+     },
+     {
+      "lang": "en",
+      "text": "Species extinction we count"
+     },
+     {
+      "lang": "tr",
+      "text": "ise bizi fail yapar. İkinci cümle daha rahatsız edici ve daha doğrudur."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sıra sende: Sanayinin yaptığı şey kirletici madde yükünü gizlemek."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "What the industry does is hide the pollutant load.",
+     "accept": [
+      "What the plant does is hide the pollutant load.",
+      "What overexploitation does is hide the pollutant load."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Eylemi başa taşımak için"
+      },
+      {
+       "lang": "en",
+       "text": "What … does is"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "What the industry does is hide the pollutant load."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kontrol. Şu cümle doğru mu?"
+     },
+     {
+      "lang": "en",
+      "text": "Behind the resource consumption stands a lost carbon sink."
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "Behind the resource consumption stands a lost carbon sink.",
+     "answer": true,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Doğru. Yer öbeği başa alınmış; kayıp sona düşünce daha ağır duyuluyor."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Yıl boyu donmuş kalan toprağa"
+     },
+     {
+      "lang": "en",
+      "text": "permafrost"
+     },
+     {
+      "lang": "tr",
+      "text": "şehrin çevresinden sıcak olan bölgesine ise"
+     },
+     {
+      "lang": "en",
+      "text": "heat island"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "They renaturalize the stream and keep the heat island."
+     },
+     {
+      "lang": "tr",
+      "text": "Dereyi doğal hâline döndürüyorlar ve ısı adasını koruyorlar."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "They renaturalize the stream and keep the heat island."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir yeri doğal hâline geri getirmeye"
+     },
+     {
+      "lang": "en",
+      "text": "renaturalize"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sen kur: Büyümenin arkasında kaybedilmiş bir karbon yutağı duruyor."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "Behind the growth stands a lost carbon sink.",
+     "accept": [
+      "Behind the road stands a lost carbon sink.",
+      "Behind the resource consumption stands a lost carbon sink."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Yer öbeğini başa almak için"
+      },
+      {
+       "lang": "en",
+       "text": "Behind"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "Behind the growth stands a lost carbon sink."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Süreç fail olursa kimse hesap vermez; cümlenin başı bunu belirler."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "A process cannot be asked."
+     },
+     {
+      "lang": "tr",
+      "text": "Bir sürece soru sorulamaz."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "A process cannot be asked."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir tane daha: Permafrostu sayıyoruz, türlerin yok oluşunu saymıyoruz."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "The permafrost we count; species extinction we do not.",
+     "accept": [
+      "The ice we count; species extinction we do not.",
+      "Species extinction we count; the permafrost we do not."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "İki nesneyi başa alıp ikiye bölmek için noktalı virgül kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "The permafrost we count; species extinction we do not."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Özetleyelim: süreç"
+     },
+     {
+      "lang": "en",
+      "text": "What overexploitation does"
+     },
+     {
+      "lang": "tr",
+      "text": "yer"
+     },
+     {
+      "lang": "en",
+      "text": "Behind the resource consumption"
+     },
+     {
+      "lang": "tr",
+      "text": "biz"
+     },
+     {
+      "lang": "en",
+      "text": "Species extinction we count"
+     },
+     {
+      "lang": "tr",
+      "text": "Şimdi bir kirlenme olayını üç ayrı sorumluyla anlatacaksın."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Bir nehir kirlenmesini anlatıyorsun ve faili süreçlerin arkasına saklamak istemiyorsun. Süreci, yeri ve bizi başa alan üç cümle kur.",
+   "partner": "her kirlenmeyi «böyle gelmiş böyle gider» diye anlatan biri",
+   "opening": "It's always been like that, hasn't it?",
+   "openingTr": "Hep böyleydi, değil mi?",
+   "goal": "Süreci, yeri ve bizi başa alan üç ayrı cümle kurduysan konuşma başarılı sayılır.",
+   "minTurns": 8
+  }
+ },
+ {
+  "id": "en-c1-the-precautionary-principle",
+  "level": "C1",
+  "course": "en",
+  "icon": "law",
+  "title": "The precautionary principle",
+  "titleTr": "İhtiyat ilkesi",
+  "summary": "Çevre yükümlülüğünü kalıplaşmış biçimle istemeyi öğretir; ilke kişiden ayrıldığı anda bir yükümlülük olur.",
+  "minutes": 12,
+  "focusId": "Subjunctive in environmental obligation",
+  "vocab": [
+   {
+    "de": "precautionary principle",
+    "tr": "ihtiyat ilkesi"
+   },
+   {
+    "de": "responsibility to protect",
+    "tr": "koruma sorumluluğu"
+   },
+   {
+    "de": "natural capital",
+    "tr": "doğal sermaye"
+   },
+   {
+    "de": "commons",
+    "tr": "ortak kullanım alanı"
+   },
+   {
+    "de": "ecosystem service",
+    "tr": "ekosistem hizmeti"
+   },
+   {
+    "de": "expropriation",
+    "tr": "kamulaştırma"
+   },
+   {
+    "de": "account for",
+    "tr": "hesabını vermek"
+   },
+   {
+    "de": "future-proof",
+    "tr": "geleceğe dayanıklı"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "The precautionary principle demands that the responsibility to protect be prior.",
+    "tr": "isteği kalıplaşmış biçimle kurar"
+   },
+   {
+    "de": "Were it not for the natural capital, no commons would hold.",
+    "tr": "olmasaydıyı çevre savında kurar"
+   },
+   {
+    "de": "They ask that every ecosystem service be counted before the expropriation.",
+    "tr": "koşulu kalıpla kurar"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Bugün çevre yükümlülüğünü kalıplaşmış biçimle istemeyi öğreneceğiz."
+     },
+     {
+      "lang": "tr",
+      "text": "İlke kişiden ayrıldığı anda bir yükümlülük oluyor; «biz istiyoruz» dediğin anda yeniden bir görüş oluyor. Hazır mısın?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "precautionary principle"
+     },
+     {
+      "lang": "tr",
+      "text": "Kesin bilinmese de zarardan kaçınma kuralı demek. İlk kalıbımız da bu. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "The precautionary principle demands that the responsibility to protect be prior."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The precautionary principle demands that the responsibility to protect be prior."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Zarar görebileni koruma yükümlülüğüne"
+     },
+     {
+      "lang": "en",
+      "text": "responsibility to protect"
+     },
+     {
+      "lang": "tr",
+      "text": "doğanın sağladığı varlık birikimine ise"
+     },
+     {
+      "lang": "en",
+      "text": "natural capital"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İkinci kalıbımız olmasaydıyı çevre savında kuruyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "Were it not for the natural capital, no commons would hold."
+     },
+     {
+      "lang": "tr",
+      "text": "Doğal sermaye olmasaydı hiçbir ortak kullanım alanı tutmazdı."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Were it not for the natural capital, no commons would hold."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Herkesin ortak kullandığı varlığa"
+     },
+     {
+      "lang": "en",
+      "text": "commons"
+     },
+     {
+      "lang": "tr",
+      "text": "doğanın insana karşılıksız verdiği yarara ise"
+     },
+     {
+      "lang": "en",
+      "text": "ecosystem service"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son kalıbımız koşulu kalıpla kuruyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "They ask that every ecosystem service be counted before the expropriation."
+     },
+     {
+      "lang": "tr",
+      "text": "Her ekosistem hizmetinin kamulaştırmadan önce sayılmasını istiyorlar."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "They ask that every ecosystem service be counted before the expropriation."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi dersin kuralı. Çevre hukukunda çekimsiz fiil bir yükümlülük kurar:"
+     },
+     {
+      "lang": "en",
+      "text": "that the responsibility to protect be prior"
+     },
+     {
+      "lang": "tr",
+      "text": "dersen bu artık bir görüş değil bir ölçüdür. Görüşler tartılır, ölçüler uygulanır; fark tam buradadır."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sıra sende: İhtiyat ilkesi incelemenin önce olmasını istiyor."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "The precautionary principle demands that the review be prior.",
+     "accept": [
+      "The precautionary principle demands that the check be prior.",
+      "The precautionary principle demands that the responsibility to protect be prior."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "İsteği kalıplaşmış biçimle kurmak için"
+      },
+      {
+       "lang": "en",
+       "text": "demands that … be"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "The precautionary principle demands that the review be prior."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kontrol. Şu cümle doğru mu?"
+     },
+     {
+      "lang": "en",
+      "text": "They ask that every ecosystem service be counted before the expropriation."
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "They ask that every ecosystem service be counted before the expropriation.",
+     "answer": true,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Doğru. Fiil çekilmemiş; koşul kişiye değil işlemin kendisine bağlanmış."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Devletin kamu yararına el koymasına"
+     },
+     {
+      "lang": "en",
+      "text": "expropriation"
+     },
+     {
+      "lang": "tr",
+      "text": "yaptığının hesabını verme işine ise"
+     },
+     {
+      "lang": "en",
+      "text": "account for"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "They must account for a future-proof plan."
+     },
+     {
+      "lang": "tr",
+      "text": "Geleceğe dayanıklı bir planın hesabını vermeleri gerekiyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "They must account for a future-proof plan."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Uzun vadede geçerliliğini koruyana"
+     },
+     {
+      "lang": "en",
+      "text": "future-proof"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sen kur: Orman olmasaydı hiçbir ortak kullanım alanı tutmazdı."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "Were it not for the forest, no commons would hold.",
+     "accept": [
+      "Were it not for the water, no commons would hold.",
+      "Were it not for the natural capital, no commons would hold."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Olmasaydıyı çevre savında kurmak için"
+      },
+      {
+       "lang": "en",
+       "text": "were it not for"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "Were it not for the forest, no commons would hold."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Biçim, ilkeyi savunanın kimliğinden ayırır ve uygulanabilir kılar."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "A principle needs no author."
+     },
+     {
+      "lang": "tr",
+      "text": "İlkenin bir sahibi olması gerekmez."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "A principle needs no author."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir tane daha: Her hizmetin kamulaştırmadan önce sayılmasını istiyorlar."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "They ask that every service be counted before the expropriation.",
+     "accept": [
+      "They ask that every loss be counted before the expropriation.",
+      "They ask that every ecosystem service be counted before the expropriation."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Koşulu kalıpla kurmak için"
+      },
+      {
+       "lang": "en",
+       "text": "ask that … be counted"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "They ask that every service be counted before the expropriation."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Özetleyelim: ilke"
+     },
+     {
+      "lang": "en",
+      "text": "demands that … be"
+     },
+     {
+      "lang": "tr",
+      "text": "olmasaydı"
+     },
+     {
+      "lang": "en",
+      "text": "were it not for"
+     },
+     {
+      "lang": "tr",
+      "text": "koşul"
+     },
+     {
+      "lang": "en",
+      "text": "ask that … be counted"
+     },
+     {
+      "lang": "tr",
+      "text": "Şimdi bir çevre yükümlülüğü kuracaksın."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Bir imar kararına karşı çevre yükümlülüğünü savunuyorsun ve bunu kişisel bir görüş gibi söylemek istemiyorsun. İsteği, olmasaydıyı ve koşulu kalıplaşmış biçimlerle kur.",
+   "partner": "her çevre savını duygusal bulan, «bu senin görüşün» diyen bir yetkili",
+   "opening": "That's your personal view, isn't it?",
+   "openingTr": "Bu senin kişisel görüşün, değil mi?",
+   "goal": "İsteği, olmasaydıyı ve koşulu üç ayrı kalıplaşmış biçimle kurduysan konuşma başarılı sayılır.",
+   "minTurns": 8
+  }
+ },
+ {
+  "id": "en-c1-the-growth-debate",
+  "level": "C1",
+  "course": "en",
+  "icon": "chart",
+  "title": "The growth debate",
+  "titleTr": "Büyüme tartışması",
+  "summary": "Büyüme tartışmasında ödün vererek karşı çıkmayı öğretir; büyümenin sağladığını teslim etmeyen eleştiri ahlak dersi gibi duyuluyor.",
+  "minutes": 12,
+  "focusId": "Concessive clauses in the growth debate",
+  "vocab": [
+   {
+    "de": "criticism of growth",
+    "tr": "büyüme eleştirisi"
+   },
+   {
+    "de": "growth imperative",
+    "tr": "büyüme zorunluluğu"
+   },
+   {
+    "de": "decoupling",
+    "tr": "kopma"
+   },
+   {
+    "de": "sufficiency",
+    "tr": "yeterlilik"
+   },
+   {
+    "de": "finiteness",
+    "tr": "sonluluk"
+   },
+   {
+    "de": "circular economy",
+    "tr": "döngüsel ekonomi"
+   },
+   {
+    "de": "resilience",
+    "tr": "toparlanma gücü"
+   },
+   {
+    "de": "scalability",
+    "tr": "ölçeklenebilirlik"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "Much as the criticism of growth is right, the growth imperative pays the pensions.",
+    "tr": "ödünü başa alıp gerçeği söyler"
+   },
+   {
+    "de": "The decoupling, albeit real, does not deliver sufficiency.",
+    "tr": "ödünü araya sıkıştırır"
+   },
+   {
+    "de": "Albeit aware of finiteness, the circular economy still needs growth.",
+    "tr": "ödünü başa çekip eksiği gösterir"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Bugün büyüme tartışmasında ödün vererek karşı çıkmayı öğreneceğiz."
+     },
+     {
+      "lang": "tr",
+      "text": "Büyümenin sağladığını teslim etmeyen eleştiri ahlak dersi gibi duyuluyor ve kimse dinlemiyor. Hazır mısın?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "criticism of growth"
+     },
+     {
+      "lang": "tr",
+      "text": "Sürekli büyümeye karşı çıkan düşünce demek. İlk kalıbımız da bu. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "Much as the criticism of growth is right, the growth imperative pays the pensions."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Much as the criticism of growth is right, the growth imperative pays the pensions."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Ekonominin büyümek zorunda olmasına"
+     },
+     {
+      "lang": "en",
+      "text": "growth imperative"
+     },
+     {
+      "lang": "tr",
+      "text": "büyüme ile kaynak kullanımının ayrışmasına ise"
+     },
+     {
+      "lang": "en",
+      "text": "decoupling"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İkinci kalıbımız ödünü araya sıkıştırıyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "The decoupling, albeit real, does not deliver sufficiency."
+     },
+     {
+      "lang": "tr",
+      "text": "Kopma, gerçek olsa da, yeterliliği sağlamıyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The decoupling, albeit real, does not deliver sufficiency."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Az olanla yetinmeye"
+     },
+     {
+      "lang": "en",
+      "text": "sufficiency"
+     },
+     {
+      "lang": "tr",
+      "text": "kaynağın bir gün biteceğine ise"
+     },
+     {
+      "lang": "en",
+      "text": "finiteness"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son kalıbımız ödünü başa çekip eksiği gösteriyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "Albeit aware of finiteness, the circular economy still needs growth."
+     },
+     {
+      "lang": "tr",
+      "text": "Sonluluğun farkında olsa da, döngüsel ekonomi yine de büyüme istiyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Albeit aware of finiteness, the circular economy still needs growth."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi dersin kuralı. Büyüme tartışmasında ödün bir GİRİŞ biletidir:"
+     },
+     {
+      "lang": "en",
+      "text": "albeit real"
+     },
+     {
+      "lang": "tr",
+      "text": "dediğinde karşındaki seni rakamları gören biri sayar. Büyümeyi tümden reddeden cümle, haklı olsa bile masadan düşer."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sıra sende: Eleştiri haklı olsa da emekli aylıklarını büyüme zorunluluğu ödüyor."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "Much as the criticism is right, the growth imperative pays the pensions.",
+     "accept": [
+      "Much as the warning is right, the growth imperative pays the pensions.",
+      "Much as the criticism of growth is right, the growth imperative pays the pensions."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Ödünü başa alıp gerçeği söylemek için"
+      },
+      {
+       "lang": "en",
+       "text": "Much as"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "Much as the criticism is right, the growth imperative pays the pensions."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kontrol. Şu cümle doğru mu?"
+     },
+     {
+      "lang": "en",
+      "text": "The decoupling, albeit real, does not deliver sufficiency."
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "The decoupling, albeit real, does not deliver sufficiency.",
+     "answer": true,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Doğru. Ödün iki virgül arasına girmiş ve asıl cümle ondan sonra ayakta kalmış."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Atığı yeniden üretime sokan düzene"
+     },
+     {
+      "lang": "en",
+      "text": "circular economy"
+     },
+     {
+      "lang": "tr",
+      "text": "bir darbeden sonra toparlanabilmeye ise"
+     },
+     {
+      "lang": "en",
+      "text": "resilience"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "Resilience is not the same as scalability."
+     },
+     {
+      "lang": "tr",
+      "text": "Toparlanma gücü ölçeklenebilirlikle aynı şey değildir."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Resilience is not the same as scalability."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir çözümün büyütülebilmesine"
+     },
+     {
+      "lang": "en",
+      "text": "scalability"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sen kur: Rapor, gerçek olsa da, yeterliliği sağlamıyor."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "The report, albeit real, does not deliver sufficiency.",
+     "accept": [
+      "The gain, albeit real, does not deliver sufficiency.",
+      "The decoupling, albeit real, does not deliver sufficiency."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Ödünü araya sıkıştırmak için"
+      },
+      {
+       "lang": "en",
+       "text": "albeit"
+      },
+      {
+       "lang": "tr",
+       "text": "iki virgül arasına girer:"
+      },
+      {
+       "lang": "en",
+       "text": "The report, albeit real, does not deliver sufficiency."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Ödün karşındakinin haklı olduğu yeri bırakır; kalanı senin olur."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The concession buys the floor."
+     },
+     {
+      "lang": "tr",
+      "text": "Söz hakkını ödün satın alıyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The concession buys the floor."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir tane daha: Sınırların farkında olsa da, döngüsel ekonomi yine de büyüme istiyor."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "Albeit aware of the limits, the circular economy still needs growth.",
+     "accept": [
+      "Albeit aware of the risk, the circular economy still needs growth.",
+      "Albeit aware of finiteness, the circular economy still needs growth."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Ödünü başa çekip eksiği göstermek için"
+      },
+      {
+       "lang": "en",
+       "text": "Albeit"
+      },
+      {
+       "lang": "tr",
+       "text": "yeter:"
+      },
+      {
+       "lang": "en",
+       "text": "Albeit aware of the limits, the circular economy still needs growth."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Özetleyelim: gerçeği söyleme"
+     },
+     {
+      "lang": "en",
+      "text": "Much as"
+     },
+     {
+      "lang": "tr",
+      "text": "araya çekince"
+     },
+     {
+      "lang": "en",
+      "text": "albeit"
+     },
+     {
+      "lang": "tr",
+      "text": "eksiği gösterme"
+     },
+     {
+      "lang": "en",
+      "text": "Albeit aware of finiteness"
+     },
+     {
+      "lang": "tr",
+      "text": "Şimdi büyüme tartışmasını sürdüreceksin."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Büyüme üstüne bir tartışmadasın ve karşındakini ahlak dersiyle kaybetmek istemiyorsun. Ödünü üç ayrı yerde ver ve her seferinde asıl savını sonra söyle.",
+   "partner": "büyümeyi tek çözüm sayan, «büyümezsek kim ödeyecek» diyen biri",
+   "opening": "If we don't grow, who pays for it?",
+   "openingTr": "Büyümezsek bunu kim ödeyecek?",
+   "goal": "Ödünü üç ayrı yerde verip her seferinde asıl savını sonra söylediysen konuşma başarılı sayılır.",
+   "minTurns": 8
+  }
+ },
+ {
+  "id": "en-c1-the-vocabulary-of-waste",
+  "level": "C1",
+  "course": "en",
+  "icon": "repair",
+  "title": "The vocabulary of waste",
+  "titleTr": "Atık sözlüğü",
+  "summary": "Atık konuşmasının yerleşik eşdizimlerini öğretir; önlemeyi anlatan söz ile geri kazanmayı anlatan söz aynı değildir.",
+  "minutes": 12,
+  "focusId": "Collocation in the vocabulary of waste",
+  "vocab": [
+   {
+    "de": "waste prevention",
+    "tr": "atık önleme"
+   },
+   {
+    "de": "material cycle",
+    "tr": "madde döngüsü"
+   },
+   {
+    "de": "obsolescence",
+    "tr": "eskime"
+   },
+   {
+    "de": "longevity",
+    "tr": "uzun ömürlülük"
+   },
+   {
+    "de": "reclaim",
+    "tr": "geri kazanmak"
+   },
+   {
+    "de": "secondary raw material",
+    "tr": "ikincil hammadde"
+   },
+   {
+    "de": "resource-saving",
+    "tr": "kaynak tasarruflu"
+   },
+   {
+    "de": "life cycle assessment",
+    "tr": "yaşam döngüsü değerlendirmesi"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "Waste prevention is not a material cycle.",
+    "tr": "iki eşdizimi karşı karşıya koyar"
+   },
+   {
+    "de": "Obsolescence is designed; longevity is paid for.",
+    "tr": "tasarımı bedelle ayırır"
+   },
+   {
+    "de": "They reclaim the metal and sell it as a secondary raw material.",
+    "tr": "iki eşdizimi tek cümlede bağlar"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Bugün atık konuşmasının yerleşik eşdizimlerini öğreneceğiz."
+     },
+     {
+      "lang": "tr",
+      "text": "Önlemeyi anlatan söz ile geri kazanmayı anlatan söz aynı değil; ikisini karıştıran cümle atığı meşrulaştırır. Hazır mısın?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "waste prevention"
+     },
+     {
+      "lang": "tr",
+      "text": "Atığın hiç oluşmaması demek. İlk kalıbımız da bu. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "Waste prevention is not a material cycle."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Waste prevention is not a material cycle."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Maddenin yeniden üretime girmesine"
+     },
+     {
+      "lang": "en",
+      "text": "material cycle"
+     },
+     {
+      "lang": "tr",
+      "text": "ürünün erken kullanılmaz hâle gelmesine ise"
+     },
+     {
+      "lang": "en",
+      "text": "obsolescence"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İkinci kalıbımız tasarımı bedelle ayırıyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "Obsolescence is designed; longevity is paid for."
+     },
+     {
+      "lang": "tr",
+      "text": "Eskime tasarlanır, uzun ömürlülüğün bedeli ödenir."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Obsolescence is designed; longevity is paid for."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Ürünün uzun süre dayanmasına"
+     },
+     {
+      "lang": "en",
+      "text": "longevity"
+     },
+     {
+      "lang": "tr",
+      "text": "atıktan madde çıkarmaya ise"
+     },
+     {
+      "lang": "en",
+      "text": "reclaim"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son kalıbımız iki eşdizimi tek cümlede bağlıyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "They reclaim the metal and sell it as a secondary raw material."
+     },
+     {
+      "lang": "tr",
+      "text": "Metali geri kazanıyorlar ve ikincil hammadde olarak satıyorlar."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "They reclaim the metal and sell it as a secondary raw material."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi dersin kuralı. Atık sözlüğünde eşdizim SIRAYI söyler:"
+     },
+     {
+      "lang": "en",
+      "text": "waste prevention"
+     },
+     {
+      "lang": "tr",
+      "text": "ilk basamaktır ve hiç atık üretmemeyi anlatır,"
+     },
+     {
+      "lang": "en",
+      "text": "material cycle"
+     },
+     {
+      "lang": "tr",
+      "text": "ise atık oluştuktan sonra başlar. İkisini eşitleyen cümle, önlemeyi geri dönüşümle değiştirmiş olur."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sıra sende: Atık önleme geri dönüşüm değildir."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "Waste prevention is not recycling.",
+     "accept": [
+      "Waste prevention is not reuse.",
+      "Waste prevention is not a material cycle."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "İki eşdizimi karşı karşıya koymak için"
+      },
+      {
+       "lang": "en",
+       "text": "is not"
+      },
+      {
+       "lang": "tr",
+       "text": "yeter:"
+      },
+      {
+       "lang": "en",
+       "text": "Waste prevention is not recycling."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kontrol. Şu cümle doğru mu?"
+     },
+     {
+      "lang": "en",
+      "text": "Obsolescence is designed; longevity is paid for."
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "Obsolescence is designed; longevity is paid for.",
+     "answer": true,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Doğru. Biri bir tasarım kararını, öteki bir maliyeti adlandırıyor; edilgen fiiller de o yüzden ayrı."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Atıktan elde edilen ham maddeye"
+     },
+     {
+      "lang": "en",
+      "text": "secondary raw material"
+     },
+     {
+      "lang": "tr",
+      "text": "az kaynak harcayana ise"
+     },
+     {
+      "lang": "en",
+      "text": "resource-saving"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "A life cycle assessment tells you if it is resource-saving."
+     },
+     {
+      "lang": "tr",
+      "text": "Kaynak tasarruflu olup olmadığını yaşam döngüsü değerlendirmesi söylüyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "A life cycle assessment tells you if it is resource-saving."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Ürünün baştan sona çevresel bilançosuna"
+     },
+     {
+      "lang": "en",
+      "text": "life cycle assessment"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sen kur: Camı geri kazanıyorlar ve ikincil hammadde olarak satıyorlar."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "They reclaim the glass and sell it as a secondary raw material.",
+     "accept": [
+      "They reclaim the paper and sell it as a secondary raw material.",
+      "They reclaim the metal and sell it as a secondary raw material."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "İki eşdizimi tek cümlede bağlamak için"
+      },
+      {
+       "lang": "en",
+       "text": "reclaim … sell it as"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "They reclaim the glass and sell it as a secondary raw material."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Eşdizim seçmek hangi basamağın atlandığını da söyler."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The collocation shows the step."
+     },
+     {
+      "lang": "tr",
+      "text": "Basamağı eşdizim gösteriyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The collocation shows the step."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir tane daha: Eskime tasarlanır, onarımın bedeli ödenir."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "Obsolescence is designed; repair is paid for.",
+     "accept": [
+      "Obsolescence is designed; the fix is paid for.",
+      "Obsolescence is designed; longevity is paid for."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Tasarımı bedelle ayırmak için iki edilgen fiil kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "Obsolescence is designed; repair is paid for."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Özetleyelim: birinci basamak"
+     },
+     {
+      "lang": "en",
+      "text": "waste prevention"
+     },
+     {
+      "lang": "tr",
+      "text": "sonraki"
+     },
+     {
+      "lang": "en",
+      "text": "material cycle"
+     },
+     {
+      "lang": "tr",
+      "text": "bilanço"
+     },
+     {
+      "lang": "en",
+      "text": "life cycle assessment"
+     },
+     {
+      "lang": "tr",
+      "text": "Şimdi atık sözlüğünü kullanacaksın."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Bir şirketin ambalaj politikasını tartışıyorsun ve geri dönüşümün önlemenin yerine geçmesini istemiyorsun. Önlemeyi, döngüyü ve bilançoyu üç ayrı eşdizimle adlandır.",
+   "partner": "geri dönüşümü tam çözüm sayan, «zaten geri dönüştürüyoruz» diyen biri",
+   "opening": "We recycle it all anyway, don't we?",
+   "openingTr": "Zaten hepsini geri dönüştürüyoruz, değil mi?",
+   "goal": "Önlemeyi, döngüyü ve bilançoyu üç ayrı eşdizimle adlandırdıysan konuşma başarılı sayılır.",
+   "minTurns": 8
+  }
+ },
+ {
+  "id": "en-c1-reporting-the-measurement",
+  "level": "C1",
+  "course": "en",
+  "icon": "media",
+  "title": "Reporting the measurement",
+  "titleTr": "Ölçümü aktarmak",
+  "summary": "Bir ölçümü aktarırken hükmü fiile yüklemeyi öğretir; kimin parasıyla ölçüldüğü de aktarmanın parçasıdır.",
+  "minutes": 12,
+  "focusId": "Reporting verbs in scientific claims",
+  "vocab": [
+   {
+    "de": "steering effect",
+    "tr": "yönlendirici etki"
+   },
+   {
+    "de": "transformation process",
+    "tr": "dönüşüm süreci"
+   },
+   {
+    "de": "third-party funding",
+    "tr": "dış kaynaklı fon"
+   },
+   {
+    "de": "specialist journal",
+    "tr": "bilimsel dergi"
+   },
+   {
+    "de": "dilute",
+    "tr": "seyreltmek"
+   },
+   {
+    "de": "volatile",
+    "tr": "oynak"
+   },
+   {
+    "de": "demonstrably",
+    "tr": "kanıtlanabilir biçimde"
+   },
+   {
+    "de": "source criticism",
+    "tr": "kaynak eleştirisi"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "One reports a steering effect; another doubts the transformation process.",
+    "tr": "iki aktarmayı karşı karşıya koyar"
+   },
+   {
+    "de": "The third-party funding claims what the specialist journal assumes.",
+    "tr": "iddia ile varsayımı ayırır"
+   },
+   {
+    "de": "To dilute a finding is not to call it volatile.",
+    "tr": "iki işlemi ayırır"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Bugün bir ölçümü aktarırken hükmü fiile yüklemeyi öğreneceğiz."
+     },
+     {
+      "lang": "tr",
+      "text": "Kimin parasıyla ölçüldüğü de aktarmanın parçası; bunu söylemek suçlama değil, kaynak bilgisidir. Hazır mısın?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "steering effect"
+     },
+     {
+      "lang": "tr",
+      "text": "Bir önlemin davranışı yönlendirme gücü demek. İlk kalıbımız da bu. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "One reports a steering effect; another doubts the transformation process."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "One reports a steering effect; another doubts the transformation process."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir sistemin baştan sona değişmesine"
+     },
+     {
+      "lang": "en",
+      "text": "transformation process"
+     },
+     {
+      "lang": "tr",
+      "text": "araştırmanın dışarıdan aldığı paraya ise"
+     },
+     {
+      "lang": "en",
+      "text": "third-party funding"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İkinci kalıbımız iddia ile varsayımı ayırıyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "The third-party funding claims what the specialist journal assumes."
+     },
+     {
+      "lang": "tr",
+      "text": "Dış kaynaklı fon, bilimsel derginin varsaydığını iddia ediyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The third-party funding claims what the specialist journal assumes."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Alanın uzmanlarının yazdığı yayına"
+     },
+     {
+      "lang": "en",
+      "text": "specialist journal"
+     },
+     {
+      "lang": "tr",
+      "text": "bir sonucu su katıp zayıflatmaya ise"
+     },
+     {
+      "lang": "en",
+      "text": "dilute"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son kalıbımız iki işlemi ayırıyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "To dilute a finding is not to call it volatile."
+     },
+     {
+      "lang": "tr",
+      "text": "Bir bulguyu seyreltmek ona oynak demek değildir."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "To dilute a finding is not to call it volatile."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi dersin kuralı. Bilim aktarımında fiil güveni dağıtır:"
+     },
+     {
+      "lang": "en",
+      "text": "reports"
+     },
+     {
+      "lang": "tr",
+      "text": "ölçümü olduğu gibi geçirir,"
+     },
+     {
+      "lang": "en",
+      "text": "doubts"
+     },
+     {
+      "lang": "tr",
+      "text": "ise onu askıya alır. İkisi de meşrudur; meşru olmayan, hangisini seçtiğini gizlemektir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sıra sende: Biri yönlendirici etkiyi aktarıyor, öteki sonuçtan kuşku duyuyor."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "One reports a steering effect; another doubts the result.",
+     "accept": [
+      "One reports a steering effect; another doubts the number.",
+      "One reports a steering effect; another doubts the transformation process."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "İki aktarmayı karşı karşıya koymak için"
+      },
+      {
+       "lang": "en",
+       "text": "reports … doubts"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "One reports a steering effect; another doubts the result."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kontrol. Şu cümle doğru mu?"
+     },
+     {
+      "lang": "en",
+      "text": "To dilute a finding is not to call it volatile."
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "To dilute a finding is not to call it volatile.",
+     "answer": true,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Doğru. Biri sonucu zayıflatan bir işlem, öteki onun kendi niteliğine dair bir hüküm."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Sürekli inip çıkan, kararsız olana"
+     },
+     {
+      "lang": "en",
+      "text": "volatile"
+     },
+     {
+      "lang": "tr",
+      "text": "gösterilebilir biçimde olana ise"
+     },
+     {
+      "lang": "en",
+      "text": "demonstrably"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "Source criticism demonstrably improves the report."
+     },
+     {
+      "lang": "tr",
+      "text": "Kaynak eleştirisi raporu kanıtlanabilir biçimde iyileştiriyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Source criticism demonstrably improves the report."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bilginin nereden geldiğini sorgulamaya"
+     },
+     {
+      "lang": "en",
+      "text": "source criticism"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sen kur: Fon, bilimsel derginin varsaydığını iddia ediyor."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "The funding claims what the specialist journal assumes.",
+     "accept": [
+      "The study claims what the specialist journal assumes.",
+      "The third-party funding claims what the specialist journal assumes."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "İddia ile varsayımı ayırmak için"
+      },
+      {
+       "lang": "en",
+       "text": "claims what … assumes"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "The funding claims what the specialist journal assumes."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir ölçümü aktaran kişi, ona ne kadar güvendiğini de aktarır."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The verb carries the trust."
+     },
+     {
+      "lang": "tr",
+      "text": "Güveni fiil taşıyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The verb carries the trust."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir tane daha: Bir iddiayı seyreltmek ona oynak demek değildir."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "To dilute a claim is not to call it volatile.",
+     "accept": [
+      "To dilute a warning is not to call it volatile.",
+      "To dilute a finding is not to call it volatile."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "İki işlemi ayırmak için"
+      },
+      {
+       "lang": "en",
+       "text": "is not to call it"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "To dilute a claim is not to call it volatile."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Özetleyelim: aktarma"
+     },
+     {
+      "lang": "en",
+      "text": "reports"
+     },
+     {
+      "lang": "tr",
+      "text": "askıya alma"
+     },
+     {
+      "lang": "en",
+      "text": "doubts"
+     },
+     {
+      "lang": "tr",
+      "text": "kaynak"
+     },
+     {
+      "lang": "en",
+      "text": "source criticism"
+     },
+     {
+      "lang": "tr",
+      "text": "Şimdi bir ölçümü iki fiille aktaracaksın."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Bir iklim ölçümünü arkadaşına aktarıyorsun ve ona ne kadar güvendiğini göstermek istiyorsun. İki aktarmayı iki ayrı fiille söyle ve kaynağı adlandır.",
+   "partner": "her araştırmayı şüpheyle karşılayan, «kim ödedi bu araştırmayı» diyen bir arkadaş",
+   "opening": "Who paid for that study?",
+   "openingTr": "Bu araştırmayı kim ödedi?",
+   "goal": "İki aktarmayı iki ayrı fiille söylediysen ve kaynağı adlandırdıysan konuşma başarılı sayılır.",
+   "minTurns": 8
+  }
+ },
+ {
+  "id": "en-c1-how-certain-is-the-model",
+  "level": "C1",
+  "course": "en",
+  "icon": "idea",
+  "title": "How certain is the model",
+  "titleTr": "Model ne kadar kesin",
+  "summary": "Model sonucunu aktarırken kipin koyduğu mesafeyi öğretir; belirsizliği söylemek modeli zayıflatmaz, güvenilir kılar.",
+  "minutes": 12,
+  "focusId": "Modal nuance in climate modelling",
+  "vocab": [
+   {
+    "de": "feedback loop",
+    "tr": "geri besleme döngüsü"
+   },
+   {
+    "de": "tipping point",
+    "tr": "devrilme noktası"
+   },
+   {
+    "de": "regenerative capacity",
+    "tr": "yenilenme kapasitesi"
+   },
+   {
+    "de": "decompose",
+    "tr": "çürümek"
+   },
+   {
+    "de": "secrete",
+    "tr": "salgılamak"
+   },
+   {
+    "de": "thermal",
+    "tr": "ısıl"
+   },
+   {
+    "de": "water-repellent",
+    "tr": "su itici"
+   },
+   {
+    "de": "mitigate",
+    "tr": "hafifletmek"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "A feedback loop may well push the system past a tipping point.",
+    "tr": "kabul edilebilir okumayı işaretler"
+   },
+   {
+    "de": "The regenerative capacity might hold if the litter can decompose.",
+    "tr": "olasılığı uzak tutar"
+   },
+   {
+    "de": "Warm soil may secrete more gas and lose its thermal balance.",
+    "tr": "iki sonucu tek kipin altına koyar"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Bugün model sonucunu aktarırken kipin koyduğu mesafeyi öğreneceğiz."
+     },
+     {
+      "lang": "tr",
+      "text": "Belirsizliği söylemek modeli zayıflatmaz, güvenilir kılar; kesin konuşan model ilk sapmada güvenini kaybeder. Hazır mısın?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "feedback loop"
+     },
+     {
+      "lang": "tr",
+      "text": "Sonucun kendi nedenini besleyen döngü demek. İlk kalıbımız da bu. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "A feedback loop may well push the system past a tipping point."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "A feedback loop may well push the system past a tipping point."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Geri dönüşü olmayan eşiğe"
+     },
+     {
+      "lang": "en",
+      "text": "tipping point"
+     },
+     {
+      "lang": "tr",
+      "text": "doğanın kendini yenileme gücüne ise"
+     },
+     {
+      "lang": "en",
+      "text": "regenerative capacity"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İkinci kalıbımız olasılığı uzak tutuyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "The regenerative capacity might hold if the litter can decompose."
+     },
+     {
+      "lang": "tr",
+      "text": "Döküntü çürüyebilirse yenilenme kapasitesi dayanabilir."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The regenerative capacity might hold if the litter can decompose."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Çözülüp toprağa karışmaya"
+     },
+     {
+      "lang": "en",
+      "text": "decompose"
+     },
+     {
+      "lang": "tr",
+      "text": "bir maddeyi dışarı vermeye ise"
+     },
+     {
+      "lang": "en",
+      "text": "secrete"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son kalıbımız iki sonucu tek kipin altına koyuyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "Warm soil may secrete more gas and lose its thermal balance."
+     },
+     {
+      "lang": "tr",
+      "text": "Isınan toprak daha çok gaz salgılayabilir ve ısıl dengesini yitirebilir."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Warm soil may secrete more gas and lose its thermal balance."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi dersin kuralı. Model dilinde kip bir dürüstlük ölçüsüdür:"
+     },
+     {
+      "lang": "en",
+      "text": "may well"
+     },
+     {
+      "lang": "tr",
+      "text": "çoğu senaryoda çıkan sonucu,"
+     },
+     {
+      "lang": "en",
+      "text": "might"
+     },
+     {
+      "lang": "tr",
+      "text": "ise yalnız bazılarında çıkanı işaretler. Kipsiz bir model cümlesi, modelin kendisinden fazlasını söyler."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sıra sende: Geri besleme döngüsü bölgeyi devrilme noktasının ötesine itebilir."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "A feedback loop may well push the region past a tipping point.",
+     "accept": [
+      "A feedback loop may well push the ice past a tipping point.",
+      "A feedback loop may well push the system past a tipping point."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Kabul edilebilir okumayı işaretlemek için"
+      },
+      {
+       "lang": "en",
+       "text": "may well"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "A feedback loop may well push the region past a tipping point."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kontrol. Şu cümle doğru mu?"
+     },
+     {
+      "lang": "en",
+      "text": "The regenerative capacity might hold if the litter can decompose."
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "The regenerative capacity might hold if the litter can decompose.",
+     "answer": true,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Doğru. «might» sonucu uzakta tutuyor; cümle bir koşula bağlı kalıyor."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Isıya ilişkin olana"
+     },
+     {
+      "lang": "en",
+      "text": "thermal"
+     },
+     {
+      "lang": "tr",
+      "text": "suyu geçirmeyene ise"
+     },
+     {
+      "lang": "en",
+      "text": "water-repellent"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "A water-repellent crust can mitigate nothing."
+     },
+     {
+      "lang": "tr",
+      "text": "Su itici bir kabuk hiçbir şeyi hafifletemez."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "A water-repellent crust can mitigate nothing."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Zararı azaltmaya"
+     },
+     {
+      "lang": "en",
+      "text": "mitigate"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sen kur: Toprak çürüyebilirse yenilenme kapasitesi dayanabilir."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "The regenerative capacity might hold if the soil can decompose.",
+     "accept": [
+      "The regenerative capacity might hold if the leaves can decompose.",
+      "The regenerative capacity might hold if the litter can decompose."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Olasılığı uzak tutmak için"
+      },
+      {
+       "lang": "en",
+       "text": "might"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "The regenerative capacity might hold if the soil can decompose."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Belirsizliği söyleyen model, bir kez şaşırdığında güvenini kaybetmez."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The modal protects the model."
+     },
+     {
+      "lang": "tr",
+      "text": "Modeli kip koruyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The modal protects the model."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir tane daha: Isınan su daha çok gaz salgılayabilir ve ısıl dengesini yitirebilir."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "Warm water may secrete more gas and lose its thermal balance.",
+     "accept": [
+      "Warm air may secrete more gas and lose its thermal balance.",
+      "Warm soil may secrete more gas and lose its thermal balance."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "İki sonucu tek kipin altına koymak için"
+      },
+      {
+       "lang": "en",
+       "text": "may"
+      },
+      {
+       "lang": "tr",
+       "text": "bir kez söylenir:"
+      },
+      {
+       "lang": "en",
+       "text": "Warm water may secrete more gas and lose its thermal balance."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Özetleyelim: çoğu senaryo"
+     },
+     {
+      "lang": "en",
+      "text": "may well"
+     },
+     {
+      "lang": "tr",
+      "text": "bazı senaryo"
+     },
+     {
+      "lang": "en",
+      "text": "might"
+     },
+     {
+      "lang": "tr",
+      "text": "ortak kip"
+     },
+     {
+      "lang": "en",
+      "text": "may"
+     },
+     {
+      "lang": "tr",
+      "text": "Şimdi bir model sonucunu aktaracaksın."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Bir iklim modelinin sonucunu anlatıyorsun ve belirsizliği saklamak istemiyorsun. Üç ayrı kip derecesi kur ve her birinde kaç senaryoda çıktığını söyle.",
+   "partner": "belirsizliği güvensizlik sayan, «demek bilmiyorlar» diyen biri",
+   "opening": "So they don't actually know?",
+   "openingTr": "Demek aslında bilmiyorlar?",
+   "goal": "Üç ayrı kip derecesiyle anlattıysan ve her birinin senaryo payını söylediysen konuşma başarılı sayılır.",
+   "minTurns": 8
+  }
+ },
+ {
+  "id": "en-c1-revitalized-indeed",
+  "level": "C1",
+  "course": "en",
+  "icon": "city",
+  "title": "Revitalized indeed",
+  "titleTr": "Canlandırıldı, tabii",
+  "summary": "Kentsel dönüşüm tanıtım dilini alayla eleştirmeyi öğretir; iyileştirme sözcükleri kimin gittiğini söylemez.",
+  "minutes": 12,
+  "focusId": "Irony and understatement about urban renewal",
+  "vocab": [
+   {
+    "de": "gentrification",
+    "tr": "soylulaştırma"
+   },
+   {
+    "de": "revitalize",
+    "tr": "canlılık kazandırmak"
+   },
+   {
+    "de": "densify",
+    "tr": "yoğunlaştırmak"
+   },
+   {
+    "de": "refurbish",
+    "tr": "elden geçirmek"
+   },
+   {
+    "de": "car-oriented",
+    "tr": "otomobil odaklı"
+   },
+   {
+    "de": "inhospitable",
+    "tr": "yaşanmaz"
+   },
+   {
+    "de": "traffic gridlock",
+    "tr": "trafik felci"
+   },
+   {
+    "de": "electric mobility",
+    "tr": "elektrikli ulaşım"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "The square was revitalized; the neighbours, less so.",
+    "tr": "eksik söyleyip çok kasteder"
+   },
+   {
+    "de": "We have no gentrification here; we densify and refurbish.",
+    "tr": "yalanlayıp aynı şeyi doğrular"
+   },
+   {
+    "de": "Car-oriented, they said, and rather good against the traffic gridlock.",
+    "tr": "övgüyü aktarıp tersine çevirir"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Bugün kentsel dönüşüm tanıtım dilini alayla eleştirmeyi öğreneceğiz."
+     },
+     {
+      "lang": "tr",
+      "text": "İyileştirme sözcükleri kimin gittiğini söylemiyor; eksiltme tam o boşluğu görünür kılıyor. Hazır mısın?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "revitalize"
+     },
+     {
+      "lang": "tr",
+      "text": "Bir yere yeniden hayat getirmek demek. İlk kalıbımız da bu. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "The square was revitalized; the neighbours, less so."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The square was revitalized; the neighbours, less so."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir semtin pahalılaşıp eski sakinlerini kaybetmesine"
+     },
+     {
+      "lang": "en",
+      "text": "gentrification"
+     },
+     {
+      "lang": "tr",
+      "text": "aynı alana daha çok konut sığdırmaya ise"
+     },
+     {
+      "lang": "en",
+      "text": "densify"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İkinci kalıbımız yalanlayıp aynı şeyi doğruluyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "We have no gentrification here; we densify and refurbish."
+     },
+     {
+      "lang": "tr",
+      "text": "Burada soylulaştırma yok, yoğunlaştırıyoruz ve elden geçiriyoruz."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "We have no gentrification here; we densify and refurbish."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Eski yapıyı yenilemeye"
+     },
+     {
+      "lang": "en",
+      "text": "refurbish"
+     },
+     {
+      "lang": "tr",
+      "text": "her şeyi arabaya göre kuran düzene ise"
+     },
+     {
+      "lang": "en",
+      "text": "car-oriented"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son kalıbımız övgüyü aktarıp tersine çeviriyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "Car-oriented, they said, and rather good against the traffic gridlock."
+     },
+     {
+      "lang": "tr",
+      "text": "Otomobil odaklı, dediler, üstelik trafik felcine karşı iyi geliyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Car-oriented, they said, and rather good against the traffic gridlock."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi dersin kuralı. Kentsel dönüşümde alay eksiltmeyle çalışır:"
+     },
+     {
+      "lang": "en",
+      "text": "the neighbours, less so"
+     },
+     {
+      "lang": "tr",
+      "text": "dediğinde kimin gittiğini söylemene gerek kalmaz. Suçlama yok, yalnız bir boşluk var ve boşluğu dinleyen dolduruyor."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sıra sende: Sokak canlandırıldı, komşular pek değil."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "The street was revitalized; the neighbours, less so.",
+     "accept": [
+      "The park was revitalized; the neighbours, less so.",
+      "The square was revitalized; the neighbours, less so."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Eksik söyleyip çok kastetmek için ikinci yarıda fiil düşürülür:"
+      },
+      {
+       "lang": "en",
+       "text": "The street was revitalized; the neighbours, less so."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kontrol. Şu cümle doğru mu?"
+     },
+     {
+      "lang": "en",
+      "text": "We have no gentrification here; we densify and refurbish."
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "We have no gentrification here; we densify and refurbish.",
+     "answer": true,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Doğru. Cümle önce yalanlıyor, sonra aynı şeyi belediyenin kendi fiilleriyle doğruluyor."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Yaşamaya elverişsiz olana"
+     },
+     {
+      "lang": "en",
+      "text": "inhospitable"
+     },
+     {
+      "lang": "tr",
+      "text": "trafiğin tümden tıkanmasına ise"
+     },
+     {
+      "lang": "en",
+      "text": "traffic gridlock"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The new square is inhospitable but electric mobility arrived."
+     },
+     {
+      "lang": "tr",
+      "text": "Yeni meydan yaşanmaz ama elektrikli ulaşım geldi."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The new square is inhospitable but electric mobility arrived."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Elektrikle çalışan taşıma düzenine"
+     },
+     {
+      "lang": "en",
+      "text": "electric mobility"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sen kur: Burada soylulaştırma yok, planlıyoruz ve elden geçiriyoruz."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "We have no gentrification here; we plan and refurbish.",
+     "accept": [
+      "We have no gentrification here; we build and refurbish.",
+      "We have no gentrification here; we densify and refurbish."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Yalanlayıp aynı şeyi doğrulamak için"
+      },
+      {
+       "lang": "en",
+       "text": "We have no … we"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "We have no gentrification here; we plan and refurbish."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Alay burada kimseyi suçlamıyor; yalnız eksik yarıyı gösteriyor."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The missing half was the people."
+     },
+     {
+      "lang": "tr",
+      "text": "Eksik yarı insanlardı."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The missing half was the people."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir tane daha: Otomobil odaklı, dediler, üstelik dükkânlara iyi geliyor."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "Car-oriented, they said, and rather good for the shops.",
+     "accept": [
+      "Car-oriented, they said, and rather good for the centre.",
+      "Car-oriented, they said, and rather good against the traffic gridlock."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Övgüyü aktarıp tersine çevirmek için"
+      },
+      {
+       "lang": "en",
+       "text": "they said, and rather"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "Car-oriented, they said, and rather good for the shops."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Özetleyelim: eksiltme"
+     },
+     {
+      "lang": "en",
+      "text": "the neighbours, less so"
+     },
+     {
+      "lang": "tr",
+      "text": "yalanlayıp doğrulama"
+     },
+     {
+      "lang": "en",
+      "text": "We have no … we"
+     },
+     {
+      "lang": "tr",
+      "text": "aktarma"
+     },
+     {
+      "lang": "en",
+      "text": "they said, and rather"
+     },
+     {
+      "lang": "tr",
+      "text": "Şimdi tanıtım dilini alayla eleştireceksin."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Mahallendeki dönüşümü belediyenin diliyle gördüklerin arasındaki farkı göstererek anlatıyorsun. Üç cümlede eksilterek eleştir ve belediyenin kendi sözcüklerini kullan.",
+   "partner": "dönüşümü tümden iyi bulan, «her şey daha güzel oldu» diyen bir komşu",
+   "opening": "Everything looks nicer now, doesn't it?",
+   "openingTr": "Her şey daha güzel oldu, değil mi?",
+   "goal": "Üç cümlede eksilterek eleştirdiysen ve belediyenin kendi sözcüklerini kullandıysan konuşma başarılı sayılır.",
+   "minTurns": 8
+  }
+ },
+ {
+  "id": "en-c1-holding-a-city-report-together",
+  "level": "C1",
+  "course": "en",
+  "icon": "map",
+  "title": "Holding a city report together",
+  "titleTr": "Kent raporunu bağlamak",
+  "summary": "Uzun bir şehircilik raporunu bağlayan adresleri öğretir; ölçek değişince aynı ölçüt başka sonuç verdiği için bağ zorunlu.",
+  "minutes": 13,
+  "focusId": "Cohesion across an urban planning report",
+  "vocab": [
+   {
+    "de": "spatial planning",
+    "tr": "mekânsal planlama"
+   },
+   {
+    "de": "zoning plan",
+    "tr": "imar planı"
+   },
+   {
+    "de": "change of use",
+    "tr": "kullanım amacı değişikliği"
+   },
+   {
+    "de": "in urban design terms",
+    "tr": "şehircilik açısından"
+   },
+   {
+    "de": "in terms of scale",
+    "tr": "ölçek bakımından"
+   },
+   {
+    "de": "fine-grained",
+    "tr": "ince ayrıntılı"
+   },
+   {
+    "de": "accessibility",
+    "tr": "erişilebilirlik"
+   },
+   {
+    "de": "infrastructure development",
+    "tr": "altyapı geliştirme"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "The spatial planning above becomes a zoning plan below.",
+    "tr": "yukarıyı aşağıya bağlar"
+   },
+   {
+    "de": "That change of use, as noted, works in urban design terms only.",
+    "tr": "geri göndermeyi araya koyar"
+   },
+   {
+    "de": "In terms of scale, a fine-grained quarter serves accessibility better.",
+    "tr": "ölçek öbeğini başa alır"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Bugün uzun bir şehircilik raporunu bağlayan adresleri öğreneceğiz."
+     },
+     {
+      "lang": "tr",
+      "text": "Ölçek değişince aynı ölçüt başka sonuç veriyor; adres yoksa okur bir mahalle ölçüsünü bütün şehre uygular. Hazır mısın?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "spatial planning"
+     },
+     {
+      "lang": "tr",
+      "text": "Bölgenin bütününü düzenleme işi demek. İlk kalıbımız da bu. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "The spatial planning above becomes a zoning plan below."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The spatial planning above becomes a zoning plan below."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Hangi alanda ne yapılabileceğini gösteren belgeye"
+     },
+     {
+      "lang": "en",
+      "text": "zoning plan"
+     },
+     {
+      "lang": "tr",
+      "text": "bir yapının işlevinin değişmesine ise"
+     },
+     {
+      "lang": "en",
+      "text": "change of use"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İkinci kalıbımız geri göndermeyi araya koyuyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "That change of use, as noted, works in urban design terms only."
+     },
+     {
+      "lang": "tr",
+      "text": "O kullanım amacı değişikliği, belirtildiği gibi, yalnız şehircilik açısından işliyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "That change of use, as noted, works in urban design terms only."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Kent tasarımı bakımından anlamına gelen öbeğe"
+     },
+     {
+      "lang": "en",
+      "text": "in urban design terms"
+     },
+     {
+      "lang": "tr",
+      "text": "büyüklük bakımından anlamına gelene ise"
+     },
+     {
+      "lang": "en",
+      "text": "in terms of scale"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son kalıbımız ölçek öbeğini başa alıyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "In terms of scale, a fine-grained quarter serves accessibility better."
+     },
+     {
+      "lang": "tr",
+      "text": "Ölçek bakımından ince ayrıntılı bir mahalle erişilebilirliğe daha iyi hizmet ediyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "In terms of scale, a fine-grained quarter serves accessibility better."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi dersin kuralı. Şehircilik raporunda adres bir ÖLÇEK taşır:"
+     },
+     {
+      "lang": "en",
+      "text": "above"
+     },
+     {
+      "lang": "tr",
+      "text": "ve"
+     },
+     {
+      "lang": "en",
+      "text": "below"
+     },
+     {
+      "lang": "tr",
+      "text": "kararın hangi düzeyde alındığını,"
+     },
+     {
+      "lang": "en",
+      "text": "as noted"
+     },
+     {
+      "lang": "tr",
+      "text": "ise hangi varsayımla yazıldığını söyler. Adres düşerse mahalle ölçüsü şehre uygulanır."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sıra sende: Yukarıdaki mekânsal planlama aşağıda bir kurala dönüşüyor."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "The spatial planning above becomes a rule below.",
+     "accept": [
+      "The spatial planning above becomes a limit below.",
+      "The spatial planning above becomes a zoning plan below."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Yukarıyı aşağıya bağlamak için"
+      },
+      {
+       "lang": "en",
+       "text": "above … below"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "The spatial planning above becomes a rule below."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kontrol. Şu cümle doğru mu?"
+     },
+     {
+      "lang": "en",
+      "text": "In terms of scale, a fine-grained quarter serves accessibility better."
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "In terms of scale, a fine-grained quarter serves accessibility better.",
+     "answer": true,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Doğru. Ölçek öbeği başa alınmış; ölçütün hangi düzeyde geçerli olduğu en başta duruyor."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Küçük parçalardan oluşan dokuya"
+     },
+     {
+      "lang": "en",
+      "text": "fine-grained"
+     },
+     {
+      "lang": "tr",
+      "text": "herkesin ulaşabilmesine ise"
+     },
+     {
+      "lang": "en",
+      "text": "accessibility"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The infrastructure development came after the accessibility study."
+     },
+     {
+      "lang": "tr",
+      "text": "Altyapı geliştirme erişilebilirlik incelemesinden sonra geldi."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The infrastructure development came after the accessibility study."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Yol, su ve hattın kurulmasına"
+     },
+     {
+      "lang": "en",
+      "text": "infrastructure development"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sen kur: O karar, belirtildiği gibi, yalnız şehircilik açısından işliyor."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "That decision, as noted, works in urban design terms only.",
+     "accept": [
+      "That plan, as noted, works in urban design terms only.",
+      "That change of use, as noted, works in urban design terms only."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Geri göndermeyi araya koymak için"
+      },
+      {
+       "lang": "en",
+       "text": "as noted"
+      },
+      {
+       "lang": "tr",
+       "text": "iki virgül arasına girer:"
+      },
+      {
+       "lang": "en",
+       "text": "That decision, as noted, works in urban design terms only."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şehircilikte ölçek belirtilmezse her ölçüt yanlış yerde kullanılır."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The scale belongs in the sentence."
+     },
+     {
+      "lang": "tr",
+      "text": "Ölçek cümleye aittir."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The scale belongs in the sentence."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir tane daha: Ölçek bakımından küçük bir mahalle erişilebilirliğe daha iyi hizmet ediyor."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "In terms of scale, a small quarter serves accessibility better.",
+     "accept": [
+      "In terms of scale, a dense quarter serves accessibility better.",
+      "In terms of scale, a fine-grained quarter serves accessibility better."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Ölçek öbeğini başa almak için"
+      },
+      {
+       "lang": "en",
+       "text": "In terms of scale"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "In terms of scale, a small quarter serves accessibility better."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Özetleyelim: yer"
+     },
+     {
+      "lang": "en",
+      "text": "above"
+     },
+     {
+      "lang": "tr",
+      "text": "ve"
+     },
+     {
+      "lang": "en",
+      "text": "below"
+     },
+     {
+      "lang": "tr",
+      "text": "geri gönderme"
+     },
+     {
+      "lang": "en",
+      "text": "as noted"
+     },
+     {
+      "lang": "tr",
+      "text": "ölçek"
+     },
+     {
+      "lang": "en",
+      "text": "In terms of scale"
+     },
+     {
+      "lang": "tr",
+      "text": "Şimdi bir kent raporunu bağlayacaksın."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Bir şehircilik raporunu sözlü olarak özetliyorsun ve dinleyen ölçütleri kendi mahallesine uygulayacak. Yukarı, aşağı ve ölçek adresleriyle üç bölümü birbirine bağla.",
+   "partner": "her ölçütü kendi sokağına uygulayan, «bizim sokakta da olur mu» diyen bir komşu",
+   "opening": "Would that work on our street too?",
+   "openingTr": "Bizim sokakta da olur mu?",
+   "goal": "Üç bölümü yukarı, aşağı ve ölçek adresleriyle birbirine bağladıysan konuşma başarılı sayılır.",
+   "minTurns": 8
+  }
+ },
+ {
+  "id": "en-c1-what-the-plan-leaves-unsaid",
+  "level": "C1",
+  "course": "en",
+  "icon": "key",
+  "title": "What the plan leaves unsaid",
+  "titleTr": "Planın söylemediği",
+  "summary": "İmar kararlarında düşen öğeyi öğretir; planın söylemediği şey çoğu zaman kimin çıkacağıdır.",
+  "minutes": 13,
+  "focusId": "Ellipsis in planning decisions",
+  "vocab": [
+   {
+    "de": "moratorium",
+    "tr": "moratoryum"
+   },
+   {
+    "de": "construction halt",
+    "tr": "inşaatın durdurulması"
+   },
+   {
+    "de": "fall into neglect",
+    "tr": "bakımsız kalmak"
+   },
+   {
+    "de": "fall into ruin",
+    "tr": "harabeye dönmek"
+   },
+   {
+    "de": "dismantling",
+    "tr": "sökme"
+   },
+   {
+    "de": "repurpose",
+    "tr": "yeniden işlevlendirmek"
+   },
+   {
+    "de": "leasehold",
+    "tr": "kiralık mülkiyet"
+   },
+   {
+    "de": "designate",
+    "tr": "tayin etmek"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "The moratorium survives as a promise, the construction halt as a date.",
+    "tr": "ikinci yarıda yüklemi düşürür"
+   },
+   {
+    "de": "The houses fall into neglect; the halls, into ruin.",
+    "tr": "ikinci yarıda fiili düşürür"
+   },
+   {
+    "de": "The dismantling began; the repurpose did not.",
+    "tr": "yüklemi yardımcı fiile indirir"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Bugün imar kararlarında düşen öğeyi öğreneceğiz."
+     },
+     {
+      "lang": "tr",
+      "text": "Planın söylemediği şey çoğu zaman kimin çıkacağıdır; bu modülün son dersinde eksiltmeyi okumayı bitiriyoruz. Hazır mısın?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "moratorium"
+     },
+     {
+      "lang": "tr",
+      "text": "Bir işin süreli olarak durdurulması demek. İlk kalıbımız da bu. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "The moratorium survives as a promise, the construction halt as a date."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The moratorium survives as a promise, the construction halt as a date."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Yapımın resmen kesilmesine"
+     },
+     {
+      "lang": "en",
+      "text": "construction halt"
+     },
+     {
+      "lang": "tr",
+      "text": "bakımsızlıktan yıpranmaya ise"
+     },
+     {
+      "lang": "en",
+      "text": "fall into neglect"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İkinci kalıbımız ikinci yarıda fiili düşürüyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "The houses fall into neglect; the halls, into ruin."
+     },
+     {
+      "lang": "tr",
+      "text": "Evler bakımsız kalıyor, salonlar harabeye dönüyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The houses fall into neglect; the halls, into ruin."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Tümden yıkılacak hâle gelmeye"
+     },
+     {
+      "lang": "en",
+      "text": "fall into ruin"
+     },
+     {
+      "lang": "tr",
+      "text": "bir yapının parça parça kaldırılmasına ise"
+     },
+     {
+      "lang": "en",
+      "text": "dismantling"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son kalıbımız yüklemi yardımcı fiile indiriyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "The dismantling began; the repurpose did not."
+     },
+     {
+      "lang": "tr",
+      "text": "Sökme başladı, yeniden işlevlendirmek başlamadı."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The dismantling began; the repurpose did not."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi dersin kuralı. İmar kararında eksiltme bir SÖZ VERMEME biçimidir:"
+     },
+     {
+      "lang": "en",
+      "text": "the construction halt as a date"
+     },
+     {
+      "lang": "tr",
+      "text": "dediğinde bir tarih verilmiş olur ama bir söz verilmemiş olur. Eksiltilen yarı, plana bakan kişinin sorması gereken sorudur."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sıra sende: Moratoryum bir söz olarak kalır, izin bir tarih olarak."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "The moratorium survives as a promise, the permit as a date.",
+     "accept": [
+      "The moratorium survives as a promise, the decision as a date.",
+      "The moratorium survives as a promise, the construction halt as a date."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "İkinci yarıda yüklemi düşürmek için"
+      },
+      {
+       "lang": "en",
+       "text": "survives as"
+      },
+      {
+       "lang": "tr",
+       "text": "bir kez söylenir:"
+      },
+      {
+       "lang": "en",
+       "text": "The moratorium survives as a promise, the permit as a date."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kontrol. Şu cümle doğru mu?"
+     },
+     {
+      "lang": "en",
+      "text": "The dismantling began; the repurpose did not."
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "The dismantling began; the repurpose did not.",
+     "answer": true,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Doğru. İkinci yarıda yüklem yardımcı fiile inmiş ve gerisi okurda kalmış."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "Empty halls fall into ruin."
+     },
+     {
+      "lang": "tr",
+      "text": "Boş salonlar harabeye dönüyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Empty halls fall into ruin."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir yapıya yeni bir iş vermeye"
+     },
+     {
+      "lang": "en",
+      "text": "repurpose"
+     },
+     {
+      "lang": "tr",
+      "text": "mülkün kira ile kullanılmasına ise"
+     },
+     {
+      "lang": "en",
+      "text": "leasehold"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "They designate the block and call it a leasehold."
+     },
+     {
+      "lang": "tr",
+      "text": "Adayı tayin ediyorlar ve buna kiralık mülkiyet diyorlar."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "They designate the block and call it a leasehold."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir yeri resmen belirlemeye"
+     },
+     {
+      "lang": "en",
+      "text": "designate"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     },
+     {
+      "lang": "tr",
+      "text": "Bu ders modülün sonuncusu; adı, ödünü ve eksiltmeyi birlikte kullanacaksın."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sen kur: Evler bakımsız kalıyor, okullar harabeye dönüyor."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "The houses fall into neglect; the schools, into ruin.",
+     "accept": [
+      "The houses fall into neglect; the shops, into ruin.",
+      "The houses fall into neglect; the halls, into ruin."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "İkinci yarıda fiili düşürmek için virgül kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "The houses fall into neglect; the schools, into ruin."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "Nobody promised a date."
+     },
+     {
+      "lang": "tr",
+      "text": "Kimse bir tarih vadetmedi."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Nobody promised a date."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir tane daha: Sökme başladı, yeniden yapım başlamadı."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "The dismantling began; the rebuilding did not.",
+     "accept": [
+      "The dismantling began; the work did not.",
+      "The dismantling began; the repurpose did not."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Yüklemi yardımcı fiile indirmek için"
+      },
+      {
+       "lang": "en",
+       "text": "did not"
+      },
+      {
+       "lang": "tr",
+       "text": "yeter:"
+      },
+      {
+       "lang": "en",
+       "text": "The dismantling began; the rebuilding did not."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Özetleyelim: yüklem düşer"
+     },
+     {
+      "lang": "en",
+      "text": "the construction halt as a date"
+     },
+     {
+      "lang": "tr",
+      "text": "fiil düşer"
+     },
+     {
+      "lang": "en",
+      "text": "the halls, into ruin"
+     },
+     {
+      "lang": "tr",
+      "text": "yardımcı kalır"
+     },
+     {
+      "lang": "en",
+      "text": "the repurpose did not"
+     },
+     {
+      "lang": "tr",
+      "text": "Şimdi planın söylemediğini okuyacaksın."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Mahallendeki bir imar kararını komşuna anlatıyorsun ve planın hangi sözü vermediğini göstermek istiyorsun. Üç cümlede birer öğe düşür ve eksik kalan sözü adlandır.",
+   "partner": "planı olduğu gibi okuyan, «tarihi yazıyor ya» diyen bir komşu",
+   "opening": "The date is written there, isn't it?",
+   "openingTr": "Tarihi orada yazıyor, değil mi?",
+   "goal": "Üç cümlede birer öğe düşürdüysen ve eksik kalan sözü adlandırdıysan konuşma başarılı sayılır.",
+   "minTurns": 8
+  }
  }
 ]
