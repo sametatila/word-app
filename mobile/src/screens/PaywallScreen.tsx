@@ -6,7 +6,7 @@ import { useNavigation } from "@react-navigation/native";
 import type { PurchasesPackage } from "react-native-purchases";
 import { Text } from "../ui/Text";
 import { PressableScale } from "../ui/PressableScale";
-import { XIcon, CheckIcon, CrownIcon, ExamIcon, ShareIcon } from "../ui/icons";
+import { XIcon, CheckIcon, CrownIcon, ShareIcon } from "../ui/icons";
 import { SkeletonLine, SkeletonTile } from "../ui/Skeleton";
 import { track } from "../lib/track";
 import { haptic } from "../lib/haptics";
@@ -290,12 +290,18 @@ export function PaywallScreen() {
           3.1.2 ve Play'in abonelik beyanı kurallarına aykırı. Sınav vaadi
           yalnız gerçekten deneme sınavı OLAN kursta.
         */}
-        <Text variant="micro" color={colors.textMuted} style={{ marginBottom: spacing.xl, lineHeight: 18 }}>
-          {status?.limits
-            ? `${t("paywall.fair_use_title")}: ${t("plan.pro_walk_cap", { n: status.limits.fairUse.pocketWalksPerDay })} · ${t("plan.pro_ai", { n: status.limits.fairUse.aiPracticePerDay })} `
-            : ""}
-          {t(hasMockExams(currentCourseId()) ? "paywall.content_is_built_around_cefr_a1" : "paywall.content_is_built_around_cefr")}
-        </Text>
+        <View style={{ marginBottom: spacing.xl, gap: 4 }}>
+          {status?.limits ? (
+            <Text variant="micro" color={colors.textMuted} style={{ lineHeight: 18 }}>
+              {t("paywall.fair_use_title")}: {t("plan.pro_walk_cap", { n: status.limits.fairUse.pocketWalksPerDay })} · {t("plan.pro_ai", { n: status.limits.fairUse.aiPracticePerDay })}
+            </Text>
+          ) : null}
+          {/* İçerik vaadi AYRI satır: adil kullanım tavanlarıyla aynı cümlede
+              birleşince iki ayrı konu tek bir cümle gibi okunuyordu. */}
+          <Text variant="micro" color={colors.textMuted} style={{ lineHeight: 18 }}>
+            {t(hasMockExams(currentCourseId()) ? "paywall.content_is_built_around_cefr_a1" : "paywall.content_is_built_around_cefr")}
+          </Text>
+        </View>
 
         <PromoBox colors={colors} onRedeemed={refresh} />
         {status?.referral ? <ReferralBox colors={colors} referral={status.referral} /> : null}
