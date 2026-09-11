@@ -1972,7 +1972,14 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
      hangi ekran acildi, ne kadar kalindi, hangi hata yakalanmadi. Mobil
      bunlari yazmayinca panodaki ekran tablosu yalniz web kullanicilarini
      gosteriyordu, yani veri yanliydi (bkz. §11.178). */
-  /* UCU DAHA DUSTU (challenge_play, walk_listen, walk_switch): ikisi
+  /* BIRI DAHA DUSTU (push_optin): "tarayici bildirim istemi, mobil karsiligi
+     `notif_prime`" diye yaziliydi ve bu, iki adin AYNI SEYI olctugunu kabul
+     edip farkli adlarda birakmak demekti - panelin izin hunisi yalniz
+     `push_optin` okudugu icin Android kullanicilari hunide hic gorunmuyordu.
+     Mobil artik ucuncu sonucu da (verildi/reddedildi/sonra) ayni adla ve ayni
+     degerlerle yaziyor; `notif_prime` secilen saat icin duruyor (bkz. §168).
+
+     UCU DAHA DUSTU (challenge_play, walk_listen, walk_switch): ikisi
      "tarayici mikrofon yolu tanilamasi" diye yazilmisti ama olculen sey
      tarayiciya ait degildi - dinleme kac kez bos dondu, tur kac kez cebe
      gecti. Androidde de ikisi de oluyordu ve hicbiri yazilmiyordu, yani
@@ -1985,7 +1992,6 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     "install_prompt", //        PWA kurulum onerisi
     "invite_open", //           tarayici olcum katmani
     "panel_open", //            tarayici olcum katmani
-    "push_optin", //            tarayici bildirim istemi (mobil karsiligi `notif_prime`)
     "walk_capture", //          tarayicinin getUserMedia kisiti; native kaydedicide karsiligi yok
   ];
   /* `feedback_why_opened` MUAF cunku webde de HIC yazilmiyor: olay kural
@@ -6242,6 +6248,49 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     "kelime aramasi olcumu",
     ["mobil=" + arama("mobile/src/screens/WordsScreen.tsx"), "web=" + arama("src/components/word-list.tsx")],
     ["mobil=olculuyor", "web=olculuyor"],
+    "bulunan",
+    "beklenen",
+  );
+}
+
+/* ── 168. bildirim izni hunisi iki platformu da sayiyor mu ────────────────
+ * Panelin izin hunisi tek bir addan besleniyor: `push_optin`, degerleri
+ * 1 verildi / 0 reddedildi / 2 sonra. Web bunu uc yolda da yaziyordu; Android
+ * `notif_prime` yaziyordu ve o ad hunide hic okunmuyor - yani Android
+ * kullanicilarinin izin verip vermedigi panelde GORUNMUYORDU.
+ *
+ * Androidin kendi olcumu de yarimdi: `notif_prime` dugmeye BASILDIGI anda
+ * yaziliyor ("sordu" demek), reddedilen yol hicbir sey yazmiyordu. Yani
+ * "sordu -> verdi/reddetti" adimi Androidde olculemiyordu.
+ *
+ * `notif_prime` duruyor: secilen hatirlatma saati Androide ozel bir ayrinti
+ * ve webde karsiligi yok. Olculen, iki platformun da UC sonucu ayni adla ve
+ * ayni degerlerle yazmasi. */
+{
+  const strip = (x) => x.replace(/\/\*[\s\S]*?\*\//g, (m) => m.replace(/[^\n]/g, " ")).replace(/(^|[^:"'`\\])\/\/.*$/gm, "$1");
+  const degerler = (yol) => {
+    const src = strip(read(yol)).replace(/\s+/g, " ");
+    const out = new Set();
+    for (const m of src.matchAll(/track\("push_optin",\s*([^)]+)\)/g)) {
+      const arg = m[1].trim();
+      if (/\?/.test(arg)) { out.add("1"); out.add("0"); }
+      else out.add(arg);
+    }
+    return [...out].sort().join("+") || "yok";
+  };
+  sameList(
+    "bildirim izni sonucu",
+    ["mobil=" + degerler("mobile/src/screens/NotifPrimeScreen.tsx"), "web=" + degerler("src/components/push-optin.tsx")],
+    ["mobil=0+1+2", "web=0+1+2"],
+    "bulunan",
+    "beklenen",
+  );
+  /* Panelin okudugu ad degismemeli: huni `push_optin` uzerine kurulu. */
+  const panel = strip(read("src/lib/admin.ts")).replace(/\s+/g, " ");
+  sameList(
+    "panelin izin hunisi",
+    ["okudugu ad=" + (/name='push_optin' and value=1/.test(panel) ? "push_optin" : "baska")],
+    ["okudugu ad=push_optin"],
     "bulunan",
     "beklenen",
   );

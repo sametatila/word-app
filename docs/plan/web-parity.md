@@ -8698,3 +8698,34 @@ Kapı bir kez fazla katıydı: kalıptaki değişken adı iki tarafta farklı
 (`onlyGame` / `opts.game`) ve **nokta** taşıyabiliyor; ilk sürüm noktayı kabul
 etmeyip web'i "başka sözcük" diye bildirdi. Değişkenin adı ölçümün konusu
 değil. Beş enjeksiyonun beşi doğru tarafta yakalandı.
+
+## §11.264 — Bildirim izni hunisinde Android hiç görünmüyordu
+
+Kurulum akışı taraması: adımlar (hoş geldin → dil → kurs → seviye → hedef) ve
+hedef değerleri (10/20/50) iki platformda birebir aynı çıktı. `course-onboarding`
+içindeki "mobil seviye satırını açıklamasız basıyor" notu **bayatmış** — mobil
+seçimden sonra açıklamayı gösteriyor. Akışın kendisi eş.
+
+Bulgu bir adım ötede: **bildirim izni**. Panelin izin hunisi tek bir addan
+besleniyor — `push_optin`, değerleri 1 verildi / 0 reddedildi / 2 sonra. Web
+üç yolda da yazıyor; Android `notif_prime` yazıyor ve o ad hunide hiç
+okunmuyor. Yani **Android kullanıcılarının izin verip vermediği panelde hiç
+görünmüyordu.**
+
+Android'in kendi ölçümü de yarımdı: `notif_prime` düğmeye **basıldığı anda**
+yazılıyor, yani "sordu" demek; izin reddedilirse hiçbir şey yazılmıyordu.
+"Sordu → verdi/reddetti" adımı Android'de ölçülemiyordu.
+
+Mobil artık üç sonucu da aynı adla ve aynı değerlerle yazıyor. `notif_prime`
+duruyor: seçilen hatırlatma saati Android'e özel bir ayrıntı ve web'de
+karşılığı yok.
+
+Bunun bir yan etkisi kapıda görüldü: var olan ölçüm paritesi kapısının
+muafiyet listesinde `push_optin` "tarayıcıya özel, mobil karşılığı
+`notif_prime`" diye kayıtlıydı. O satır, **iki adın aynı şeyi ölçtüğünü kabul
+edip farklı adlarda bırakmak** demekti — muafiyet, sorunun kendisini
+belgeliyordu. Satır düştü.
+
+**§168** iki platformun da üç sonucu aynı adla ve aynı değerlerle yazmasını,
+ve panelin okuduğu adın değişmemesini denetliyor. Dört enjeksiyonun dördü de
+yakalandı.

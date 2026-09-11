@@ -20,6 +20,9 @@ export type EventName =
   | "onboarding_existing_account"
   | "first_practice"
   | "notif_prime"
+  /* Bildirim izninin SONUCU - web `push-optin` ile ayni ad ve ayni degerler:
+     1 verildi / 0 reddedildi / 2 sonra. Panelin izin hunisi bunu okuyor. */
+  | "push_optin"
   /* Koç balonu gösterildi (kind = an). Ad web `lib/events` ile aynı -
      uydurulmadı, taşındı. */
   /* Hangi ekranda ses dinleniyor - ekran basina bir kez (web `speak-button`

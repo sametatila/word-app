@@ -57,6 +57,18 @@ export function NotifPrimeScreen() {
      */
     let ok = false;
     try { ok = await enableDailyReminder(time); } catch { ok = false; }
+    /*
+     * İZNİN SONUCU DA YAZILIYOR — web ile AYNI ad ve AYNI değerlerle.
+     *
+     * `notif_prime` yukarıda düğmeye BASILDIĞI anda yazılıyor, yani "sordu"
+     * demek; izin verilip verilmediğini söylemiyordu ve reddedilen yol hiçbir
+     * şey yazmıyordu. Panelde bildirim izni hunisi (`push_optin`: 1 verildi /
+     * 0 reddedildi / 2 sonra) yalnız `push_optin` okuyor — yani Android
+     * kullanıcılarının izin verip vermediği panelde HİÇ görünmüyordu.
+     * `notif_prime` kalıyor: seçilen saat Android'e özel bir ayrıntı ve
+     * web'de karşılığı yok.
+     */
+    track("push_optin", ok ? 1 : 0);
     if (!ok) {
       setDenied(true);
       setBusy(false);
@@ -67,6 +79,8 @@ export function NotifPrimeScreen() {
   }
   async function skip() {
     track("notif_prime", 0);
+    /* "Sonra" da web ile aynı değerle (2). */
+    track("push_optin", 2);
     await markNotifPrimed();
     toApp();
   }
