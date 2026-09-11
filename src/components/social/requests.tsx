@@ -6,6 +6,7 @@ import { Avatar } from "@/components/avatar";
 import { errorText, social, timeAgo, type PendingView } from "@/lib/social/client";
 import { useT, useLang } from "@/lib/i18n/client";
 import { SkeletonLine, SkeletonPill, SkeletonTile } from "@/components/skeleton";
+import { ErrorText } from "./error-text";
 
 /**
  * Bekleyen istekler. `side` verilmezse ikisi de çizilir.
@@ -145,7 +146,7 @@ function RequestRow({ r, incoming, onChanged }: { r: PendingView; incoming: bool
         <p className="muted text-micro">
           {r.user.level} · {timeAgo(r.createdAt, lang)}
         </p>
-        {err ? <p className="text-micro" style={{ color: "var(--color-rose)" }}>{err}</p> : null}
+        <ErrorText text={err} className="text-micro" />
       </div>
       {incoming ? (
         <div className="flex shrink-0 gap-1.5">

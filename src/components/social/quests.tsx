@@ -10,6 +10,7 @@ import type { FriendRow, QuestView } from "@/lib/social/types";
 import { useShell } from "@/components/app-shell";
 import { useT, useLang } from "@/lib/i18n/client";
 import { formatNumber, formatPercent } from "@/lib/i18n/dict";
+import { ErrorText } from "./error-text";
 
 /**
  * Ortak görevler. Bu haftanın görevi üstte (davet ya da ilerleme çubuğu),
@@ -109,7 +110,7 @@ export function Quests({ friends, onChanged, me }: { friends: FriendRow[]; onCha
           ) : null}
         </div>
       ) : null}
-      {err ? <p className="text-center text-caption" style={{ color: "var(--color-rose)" }}>{err}</p> : null}
+      <ErrorText text={err} className="text-center text-caption" />
       {past.length ? (
         <section>
           <h3 className="muted mb-2 px-1 text-micro uppercase tracking-wide">{t("quests.past_weeks")}</h3>

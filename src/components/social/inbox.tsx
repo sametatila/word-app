@@ -10,6 +10,7 @@ import { errorText, notificationText, social, timeAgo, type NotificationView } f
 import { REACTION_TONE, ReactionGlyph } from "./reaction-icons";
 import type { ReactionKind } from "@/lib/social/types";
 import { useT, useLang } from "@/lib/i18n/client";
+import { ErrorText } from "./error-text";
 
 /** Bildirimin götürdüğü yer — her satırın bir işi var. */
 function hrefFor(n: NotificationView): string {
@@ -147,7 +148,7 @@ export function Inbox() {
           title={t("inbox.no_notifications")}
           text={t("inbox.friend_requests_reactions_nudges")}
         />
-        {err ? <p className="mt-2 text-center text-caption" style={{ color: "var(--color-rose)" }}>{err}</p> : null}
+        <ErrorText text={err} className="mt-2 text-center text-caption" />
       </>
     );
   }
@@ -200,7 +201,7 @@ export function Inbox() {
           {t(busy ? "social.loading" : "social.older")}
         </button>
       ) : null}
-      {err ? <p className="text-center text-caption" style={{ color: "var(--color-rose)" }}>{err}</p> : null}
+      <ErrorText text={err} className="text-center text-caption" />
     </div>
   );
 }

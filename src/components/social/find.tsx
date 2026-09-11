@@ -8,6 +8,7 @@ import { PersonRowSkeleton } from "@/components/skeleton";
 import { errorText, social, type SearchHitView, type SuggestionView } from "@/lib/social/client";
 import { UserAction } from "./user-action";
 import { useT } from "@/lib/i18n/client";
+import { ErrorText } from "./error-text";
 
 /**
  * Bul: arama kutusu + öneriler. Arama iki karakterden sonra, 350 ms
@@ -72,7 +73,7 @@ export function Find({ onChanged }: { onChanged?: () => void }) {
         ) : null}
       </label>
 
-      {err ? <p className="px-1 text-caption" style={{ color: "var(--color-rose)" }}>{err}</p> : null}
+      <ErrorText text={err} className="px-1 text-caption" />
 
       {q.trim().length >= 2 ? (
         hits === null ? (

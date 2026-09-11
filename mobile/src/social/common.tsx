@@ -135,10 +135,22 @@ export function EmptyCard({ icon, tint, title, text, action, onAction }: { icon:
   );
 }
 
+/**
+ * SOSYAL EYLEMIN HATASI — DUYURULUYOR.
+ *
+ * Bu satir yalniz gorsel bir isaretti: istek kabul etmek, durtmek, tepki
+ * vermek ya da ortak gorev kurmak basarisiz oldugunda sesli okuyucu kullanan
+ * biri hicbir sey duymuyordu. Web tarafi da sessizdi (on bir yerde elle
+ * yazilmis kirmizi metin, `role` yok), yani IKI TARAF DA YANLISTI ve
+ * karsilastirmali bir kapi bunu goremezdi.
+ *
+ * `polite` seciliyor: uygulamanin kendi kalibi (`ActiveSessions`,
+ * `ChangePassword`, `ResetPasswordScreen`). Web karsiligi `role="alert"`.
+ */
 export function ErrorText({ text }: { text: string | null }) {
   const { colors } = useTheme();
   if (!text) return null;
-  return <Text variant="caption" color={colors.dangerText} style={{ marginTop: spacing.sm, textAlign: "center" }}>{text}</Text>;
+  return <Text accessibilityLiveRegion="polite" variant="caption" color={colors.dangerText} style={{ marginTop: spacing.sm, textAlign: "center" }}>{text}</Text>;
 }
 
 export function reactionTone(kind: ReactionKind, colors: Palette): string {

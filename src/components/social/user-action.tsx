@@ -5,6 +5,7 @@ import { CheckIcon, UserPlusIcon } from "@/components/icons";
 import { errorText, social } from "@/lib/social/client";
 import type { Relation } from "@/lib/social/types";
 import { useT } from "@/lib/i18n/client";
+import { ErrorText } from "./error-text";
 
 /**
  * İlişkiye göre tek düğme: Ekle · İstek gönderildi (iptal) · Kabul et ·
@@ -124,7 +125,7 @@ export function UserAction({
   return (
     <span className="flex flex-col items-end gap-1">
       {button}
-      {err ? <span className="text-micro" style={{ color: "var(--color-rose)" }}>{err}</span> : null}
+      <ErrorText text={err} className="text-micro" />
     </span>
   );
 }

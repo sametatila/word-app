@@ -5,6 +5,7 @@ import { errorText, social } from "@/lib/social/client";
 import { REACTION_KINDS, REACTION_LABEL_KEYS, type ReactionKind, type ReactionSummary } from "@/lib/social/types";
 import { ReactionGlyph, REACTION_TONE } from "./reaction-icons";
 import { useT } from "@/lib/i18n/client";
+import { ErrorText } from "./error-text";
 
 /**
  * Tepki çubuğu: mevcut tepkiler sayılarıyla, "+" ile altı seçenek. Kendi
@@ -122,7 +123,7 @@ export function ReactionBar({
       ) : null}
       </div>
       {who ? <p className="mt-1.5 text-micro" style={{ color: "var(--text-faint)" }}>{who}</p> : null}
-      {err ? <p className="mt-1.5 text-micro" style={{ color: "var(--color-rose)" }}>{err}</p> : null}
+      <ErrorText text={err} className="mt-1.5 text-micro" />
     </div>
   );
 }

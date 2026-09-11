@@ -10,6 +10,7 @@ import { errorText, feedText, social, timeAgo } from "@/lib/social/client";
 import type { FeedItem } from "@/lib/social/types";
 import { ReactionBar } from "./reaction-bar";
 import { useT, useLang } from "@/lib/i18n/client";
+import { ErrorText } from "./error-text";
 
 /**
  * Olay türü → ikon karosu — Android `social/FeedList` `eventTile` ile birebir
@@ -117,7 +118,7 @@ export function Feed({ onFindFriends }: { onFindFriends?: () => void }) {
           ) : null
         }
       />
-      {err ? <p className="mt-3 text-center text-caption" style={{ color: "var(--color-rose)" }}>{err}</p> : null}
+      <ErrorText text={err} className="mt-3 text-center text-caption" />
       </>
     );
   }
@@ -132,7 +133,7 @@ export function Feed({ onFindFriends }: { onFindFriends?: () => void }) {
           {t(busy ? "social.loading" : "social.older")}
         </button>
       ) : null}
-      {err ? <p className="text-center text-caption" style={{ color: "var(--color-rose)" }}>{err}</p> : null}
+      <ErrorText text={err} className="text-center text-caption" />
     </div>
   );
 }

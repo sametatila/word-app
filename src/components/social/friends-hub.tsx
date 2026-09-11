@@ -18,6 +18,7 @@ import { useT, useLang } from "@/lib/i18n/client";
 import { courseName } from "@/lib/courses";
 import { useShell } from "@/components/app-shell";
 import { HUB_TABS, type HubTab } from "@/lib/social/hub-tab";
+import { ErrorText } from "./error-text";
 
 /* Sekme kimliği ve adres çözümü `lib/social/hub-tab`te: sunucu sayfası da
    okuyor ve buradan (istemci modülünden) okumak Next'te fırlatıyordu. */
@@ -201,7 +202,7 @@ export function FriendsHub({ me, initialTab }: { me: SocialMeView; initialTab: H
             ağ hatasında kullanıcının sekmeyi terk etmesi gerekmiyor. */}
         {err ? (
           <div className="mb-2 flex items-center gap-2">
-            <p className="text-caption" style={{ color: "var(--color-danger)" }}>{err}</p>
+            <ErrorText text={err} className="text-caption" />
             <button type="button" onClick={() => void reload()} className="chip px-3 py-1 text-caption">
               {t("friends.try_again")}
             </button>
