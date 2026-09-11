@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import { t, currentLang, nativeLangName } from "../lib/i18n";
+import { t, currentLang, nativeLangName, dateLocale } from "../lib/i18n";
 import { track } from "../lib/track";
 import { currentCourseId } from "../lib/courses";
 import { View, ActivityIndicator } from "react-native";
@@ -307,7 +307,7 @@ export function PlacementScreen() {
         <Text variant="h2" style={{ textAlign: "center" }}>{t("placement.title")}</Text>
         {last ? (
           <Text variant="caption" color={colors.textMuted} style={{ textAlign: "center", lineHeight: 20 }}>
-            {t("placement.last_taken", { date: last.at.slice(0, 10) })} {last.suggested}
+            {t("placement.last_taken", { date: new Date(last.at).toLocaleDateString(dateLocale(), { day: "numeric", month: "short", year: "numeric" }) })} {last.suggested}
             {last.accepted ? ` ${t("placement.you_chose", { level: last.accepted })}` : ""}
           </Text>
         ) : null}
@@ -330,7 +330,7 @@ export function PlacementScreen() {
         <Text variant="body" color={colors.textMuted} style={{ textAlign: "center", marginTop: spacing.md, lineHeight: 22 }}>{t("plc.intro")}</Text>
         {last ? (
           <Text variant="caption" color={colors.textMuted} style={{ textAlign: "center", marginTop: spacing.lg, lineHeight: 20 }}>
-            {t("placement.last_taken", { date: last.at.slice(0, 10) })} {last.suggested}
+            {t("placement.last_taken", { date: new Date(last.at).toLocaleDateString(dateLocale(), { day: "numeric", month: "short", year: "numeric" }) })} {last.suggested}
             {last.accepted ? ` ${t("placement.you_chose", { level: last.accepted })}` : ""}
           </Text>
         ) : null}

@@ -5792,6 +5792,53 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   );
 }
 
+/* ── 161. tarih kullanicinin biciminde mi ─────────────────────────────────
+ * Sunucu tarihleri "2026-09-11" diye saklıyor; kullanici onu oyle okumaz.
+ * Uygulamanin her yerinde `toLocaleDateString` var - IKI yer haric: seviye
+ * belirleme girisindeki "son test" satiri ve gelisim panelindeki kilometre
+ * taslari. Iki yer de IKI PLATFORMDA birden hamdi (§11.228 sinifi), yani
+ * karsilastirma degil mutlak olcut yakalar.
+ *
+ * Gun-yalniz dizgi `T00:00:00` ile okunmali: `new Date("2026-09-11")` UTC
+ * gece yarisi demek ve TR'de bir gun GERIYE kayar.
+ *
+ * Tarama iki desene bakiyor: arayuzde gosterilen `slice(0, 10)` (gun anahtari
+ * uretmek icin kullanilani `const` satirinda kaliyor, o sayilmiyor) ve JSX
+ * metninde dogrudan basilan tarih alani. */
+{
+  /* Dilimlenen sey bir TARIH alani olmali: `userId.slice(0, 10)` kimlik
+     kisaltmasi ve arayuzde dogru duruyor (ilk surum onu da sayiyordu). */
+  const HAM_DILIM = /\b(at|createdAt|updatedAt|lastAt|date|day)\.slice\(0, ?10\)|toISOString\(\)\.slice\(0, ?10\)/;
+  const HAM_ALAN = /\{\s*[A-Za-z_$][\w.$]*\.(at|createdAt|updatedAt|lastAt)\s*\}\s*</;
+  const gez = (d, out = []) => {
+    for (const e of readdirSync(new URL("../" + d, import.meta.url), { withFileTypes: true })) {
+      if (e.isDirectory()) gez(d + "/" + e.name, out);
+      else if (e.name.endsWith(".tsx")) out.push(d + "/" + e.name);
+    }
+    return out;
+  };
+  const tara = (kok) => {
+    const bulunan = [];
+    for (const yol of gez(kok)) {
+      /* Blok yorumu satir sayisini KORUYARAK siliniyor: bosluga cevirmek
+         satirlari kaydirir ve kapi yanlis satiri bildirir (ilk surumde oldu). */
+      const src = read(yol)
+        .replace(/\/\*[\s\S]*?\*\//g, (m) => m.replace(/[^\n]/g, " "))
+        .replace(/(^|[^:"'`\\])\/\/.*$/gm, "$1");
+      for (const [i, satir] of src.split("\n").entries()) {
+        /* Gun anahtari uretimi gosterim degil: `const today = ...slice(0,10)`. */
+        if (HAM_DILIM.test(satir) && !/\b(const|let|var)\b/.test(satir)) bulunan.push(`${yol}:${i + 1}`);
+        if (HAM_ALAN.test(satir)) bulunan.push(`${yol}:${i + 1}`);
+      }
+    }
+    return bulunan;
+  };
+  const web = tara("src");
+  const mob = tara("mobile/src");
+  sameList("webde ham tarih", web.length ? web : ["yok"], ["yok"], "bulunan", "beklenen");
+  sameList("mobilde ham tarih", mob.length ? mob : ["yok"], ["yok"], "bulunan", "beklenen");
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"

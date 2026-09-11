@@ -13,7 +13,7 @@ import type { PlacementRecord, PlacementTest as Test, TextItem } from "@/lib/pla
 import type { CefrLevel } from "@/lib/skills/types";
 import { useT, useLang } from "@/lib/i18n/client";
 import { useCourse } from "@/components/app-shell";
-import { formatPercent } from "@/lib/i18n/dict";
+import { formatPercent, localeOf } from "@/lib/i18n/dict";
 import { localDay } from "@/lib/day";
 
 type Phase = "intro" | "loading" | "vocab" | "grammar" | "reading" | "listening" | "finishing" | "result" | "error";
@@ -190,7 +190,7 @@ export function PlacementTest({ initialLast, canRetake, retakeDays }: { initialL
         </p>
         {initialLast ? (
           <p className="mt-3 rounded-xl px-3 py-2 text-xs surface-2">
-            {t("placement.last_taken", { date: initialLast.at.slice(0, 10) })} <strong>{initialLast.suggested}</strong>
+            {t("placement.last_taken", { date: new Date(initialLast.at).toLocaleDateString(localeOf(lang), { day: "numeric", month: "short", year: "numeric" }) })} <strong>{initialLast.suggested}</strong>
             {initialLast.accepted ? ` ${t("placement.you_chose", { level: initialLast.accepted })}` : ""} · {describePerSkill(initialLast.perSkill, t)}
           </p>
         ) : null}

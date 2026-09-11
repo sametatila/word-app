@@ -8436,3 +8436,27 @@ dosyasının yedeği aynı ada yazıldı ve kelimeler sayfası arkadaşlar sayfa
 içeriğiyle geri yüklendi. `git diff --numstat` ile fark edildi, dosya HEAD'den
 geri alınıp düzeltme yeniden uygulandı. Ortak ağaçta yedek adı dosya adından
 değil, YOLDAN türetilmeli.
+
+## §11.256 — Tarih sunucunun biçiminde gösteriliyordu
+
+Uygulamanın her yerinde tarih `toLocaleDateString` ile arayüz dilinde yazılıyor
+— iki yer hariç: seviye belirleme girişindeki "son test" satırı ve gelişim
+panelindeki kilometre taşları. İkisi de sunucunun sakladığı dizgiyi (ISO,
+`2026-09-11`) olduğu gibi basıyordu ve ikisi de **iki platformda birden**
+öyleydi (§11.228 sınıfı — karşılaştırma bunu bulamaz, mutlak ölçüt bulur).
+
+Gün-yalnız dizgiyi okurken `T00:00:00` şart: `new Date("2026-09-11")` UTC gece
+yarısı demek ve Türkiye saatinde tarih bir gün **geriye** kayar. Aynı yol
+`public-profile` içinde zaten kullanılıyordu, oradan alındı.
+
+**§161** iki deseni tarıyor: arayüzde gösterilen `slice(0, 10)` ve JSX metnine
+doğrudan basılan tarih alanı. Kapı iki kez yanlış ölçtü, ikisi de düzeltildi:
+
+1. Blok yorumlarını boşluğa çevirince satır numaraları kayıyordu ve kapı
+   yanlış satırı bildiriyordu (yönetim panelinde var olmayan bir tarih).
+   Yorumlar artık satır sayısı korunarak siliniyor.
+2. `slice(0, 10)` deseni fazla genişti: `userId.slice(0, 10)` bir kimlik
+   kısaltması ve doğru duruyor. Desen artık dilimlenen şeyin bir tarih alanı
+   olmasını istiyor.
+
+Dört enjeksiyonun dördü de doğru tarafta yakalandı.

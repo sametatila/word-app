@@ -6,7 +6,8 @@ import { Disclosure } from "@/components/disclosure";
 import { WeakSpotsCard } from "@/components/weak-spots-card";
 import { useCachedJson } from "@/lib/use-cached";
 import type { GrowthReport, WeekPoint } from "@/lib/growth";
-import { useT } from "@/lib/i18n/client";
+import { useT, useLang } from "@/lib/i18n/client";
+import { localeOf } from "@/lib/i18n/dict";
 import { localDay } from "@/lib/day";
 import { bandKey } from "@/lib/proficiency";
 
@@ -35,6 +36,7 @@ import { bandKey } from "@/lib/proficiency";
  */
 export function ProgressPanel() {
   const t = useT();
+  const lang = useLang();
   /* Gün istemcinin YEREL günü: uç gün gelmezse sunucunun UTC gününe düşüyor
      ve gece yarısına yakın açılan rapor bir gün kaymış seriyle çiziliyordu.
      Öteki öğrenme uçlarının hepsi yerel günü gönderiyor. */
@@ -171,7 +173,15 @@ export function ProgressPanel() {
                 <ul className="mt-1.5 space-y-1 text-sm">
                   {data.milestones.map((m) => (
                     <li key={`${m.at}-${m.text}`} className="flex items-baseline gap-2">
-                      <span className="muted shrink-0 text-xs tabular-nums">{m.at}</span>
+                      {/* TARİH ARAYÜZ DİLİNDE. Kilometre taşları "2026-09-11" diye yazıyordu:
+                          sunucunun sakladığı biçim, kullanıcının okuduğu biçim değil.
+                          Gün-yalnız dizgiyi `T00:00:00` ile okumak şart, yoksa UTC
+                          kayması tarihi bir gün geriye alıyor (aynı yol
+                          `public-profile` içinde de kullanılıyor). Android'de de
+                          aynı ham dizgi vardı, ikisi birlikte düzeltildi. */}
+                      <span className="muted shrink-0 text-xs tabular-nums">
+                        {new Date(`${m.at}T00:00:00`).toLocaleDateString(localeOf(lang), { day: "numeric", month: "short", year: "numeric" })}
+                      </span>
                       <span>{m.text}</span>
                     </li>
                   ))}

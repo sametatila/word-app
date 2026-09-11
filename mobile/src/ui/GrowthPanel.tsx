@@ -4,7 +4,7 @@ import { useNavigation } from "@react-navigation/native";
 import type { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import type { RootStackParams } from "../navigation/RootStack";
 import { routeFromHref } from "../lib/pushRoute";
-import { t } from "../lib/i18n";
+import { t, dateLocale } from "../lib/i18n";
 import { api } from "../api/client";
 import { todayStr } from "../game/session";
 import { Text } from "./Text";
@@ -215,7 +215,12 @@ export function GrowthPanel() {
                   <Text variant="micro" color={colors.textMuted}>{t("progw.milestones")}</Text>
                   {data.milestones.map((m) => (
                     <View key={`${m.at}-${m.text}`} style={{ flexDirection: "row", gap: spacing.sm, marginTop: 4 }}>
-                      <Text variant="micro" color={colors.textFaint}>{m.at}</Text>
+                      {/* Tarih arayüz dilinde -- web `progress-panel` içindeki nota bak:
+                          gün-yalnız dizgi `T00:00:00` ile okunmazsa UTC kayması
+                          tarihi bir gün geriye alır. */}
+                      <Text variant="micro" color={colors.textFaint}>
+                        {new Date(`${m.at}T00:00:00`).toLocaleDateString(dateLocale(), { day: "numeric", month: "short", year: "numeric" })}
+                      </Text>
                       <Text variant="caption" color={colors.text} style={{ flex: 1, lineHeight: 19 }}>{m.text}</Text>
                     </View>
                   ))}
