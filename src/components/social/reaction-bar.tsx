@@ -60,7 +60,7 @@ export function ReactionBar({
           type="button"
           disabled={disabled || busy}
           onClick={() => void pick(k)}
-          className="chip flex h-7 items-center gap-1 px-2 text-xs"
+          className="chip flex h-7 items-center gap-1 px-2 text-caption"
           /*
            * HER TEPKİ KENDİ RENGİNDE. Haplar yalnız SEÇİLİ olan renkliydi,
            * geri kalanı nötr çipti: akışta hangi tepkinin verildiği renkten
@@ -87,7 +87,7 @@ export function ReactionBar({
         <div className="relative">
           <button
             type="button"
-            className="chip h-7 px-2.5 text-xs"
+            className="chip h-7 px-2.5 text-caption"
             onClick={() => setOpen((o) => !o)}
             aria-expanded={open}
             data-panel="reactions"

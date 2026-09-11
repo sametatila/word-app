@@ -15,14 +15,14 @@ export function ReadingPlayer({ exercise, backHref }: { exercise: ReadingExercis
 
   return (
     <PlayerShell exercise={exercise} backHref={backHref}>
-      <p className="muted px-1 text-sm">{exercise.intro}</p>
+      <p className="muted px-1 text-body">{exercise.intro}</p>
 
       {/* select-text: öğrenci kelime kopyalayıp sözlüğe bakabilsin. */}
       <article className="card mt-3 select-text p-5">
         {exercise.text.split("\n\n").map((para, i) => (
           <p
             key={i}
-            className={`whitespace-pre-line text-[15px] leading-relaxed ${i > 0 ? "mt-3.5" : ""}`}
+            className={`whitespace-pre-line text-body leading-relaxed ${i > 0 ? "mt-3.5" : ""}`}
             lang={lang}
           >
             {para}

@@ -55,8 +55,8 @@ export function Disclosure({
         data-panel={panel}
         className="flex w-full items-center gap-3 py-1 text-left"
       >
-        <span className="flex-1 text-sm font-bold">{title}</span>
-        {hint ? <span className="muted shrink-0 text-xs font-semibold">{hint}</span> : null}
+        <span className="flex-1 text-strong">{title}</span>
+        {hint ? <span className="muted shrink-0 text-caption">{hint}</span> : null}
         <motion.span
           animate={{ rotate: open ? 90 : 0 }}
           transition={{ duration: 0.18 }}

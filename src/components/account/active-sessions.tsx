@@ -123,7 +123,7 @@ export function ActiveSessions() {
                 sub={`${since(s.createdAt)}${s.ipAddress ? ` · ${s.ipAddress}` : ""}`}
               >
                 <button
-                  className="btn-ghost text-xs"
+                  className="btn-ghost text-caption"
                   disabled={busy === s.token}
                   onClick={() => void revoke(s.token)}
                 >
@@ -140,11 +140,11 @@ export function ActiveSessions() {
           {msg ? <AuthNotice tone="success">{msg}</AuthNotice> : null}
 
           <div className="flex items-center justify-between gap-3">
-            <p className="muted text-sm leading-snug">{t("sessions.sub")}</p>
+            <p className="muted text-body leading-snug">{t("sessions.sub")}</p>
             {/* Liste yüklenmese de çalışıyor: bu uç oturumun YAŞINA bakmıyor. */}
             <button
               type="button"
-              className="btn shrink-0 text-xs"
+              className="btn shrink-0 text-caption"
               disabled={busy === "others"}
               onClick={() => void revokeOthers()}
             >

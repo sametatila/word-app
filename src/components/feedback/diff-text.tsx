@@ -122,7 +122,7 @@ export function TypedTokens({ tokens, lang = "de" }: { tokens: MarkedToken[]; la
 export function DiffLegend() {
   const t = useT();
   return (
-    <ul className="muted flex flex-wrap gap-x-4 gap-y-1 text-xs">
+    <ul className="muted flex flex-wrap gap-x-4 gap-y-1 text-caption">
       <li>
         <span className="underline decoration-2 underline-offset-2">{t("diff.missing")}</span>
       </li>

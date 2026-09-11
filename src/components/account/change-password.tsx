@@ -133,11 +133,11 @@ export function ChangePassword() {
           </form>
         ) : (
           <div className="flex items-center justify-between gap-3">
-            <p className="muted text-sm leading-snug">{t("changepw.sub")}</p>
+            <p className="muted text-body leading-snug">{t("changepw.sub")}</p>
             <button
               type="button"
               onClick={() => { setOpen(true); setDone(false); }}
-              className="btn shrink-0 text-xs"
+              className="btn shrink-0 text-caption"
             >
               {t("changepw.open")}
             </button>

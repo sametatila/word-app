@@ -227,7 +227,7 @@ export function AchievementUnlock() {
         {view.kind === "batch" ? (
           <Card tier="legend">
             <p
-              className="text-[11px] font-black uppercase tracking-[0.18em]"
+              className="text-micro uppercase tracking-[0.18em]"
               style={{ color: "var(--color-brand)" }}
             >
               {tt("achu.n_unlocked", { n: view.items.length })}
@@ -251,7 +251,7 @@ export function AchievementUnlock() {
         ) : (
           <Card tier={view.queue[0].tier}>
             <p
-              className="text-[11px] font-black uppercase tracking-[0.18em]"
+              className="text-micro uppercase tracking-[0.18em]"
               style={{ color: TIER_COLOR[view.queue[0].tier] }}
             >
               {tt("achu.tier_unlocked", { tier: tt(TIER_LABEL_KEYS[view.queue[0].tier] ?? "tier.bronze") })}
@@ -290,7 +290,7 @@ function Card({ tier, children }: { tier: string; children: React.ReactNode }) {
 function Hint() {
   const t = useT();
   return (
-    <p className="muted mt-4 text-[11px] font-semibold uppercase tracking-wide opacity-70">
+    <p className="muted mt-4 text-micro uppercase tracking-wide opacity-70">
       {/* Web'de "dokun" yanlış fiil: fare ve klavye de var. Anahtar web'e
           özel (`achuw.`), yani ayrışma görünür duruyor — Android'in metni
           kendi girdi biçimi için doğru. */}

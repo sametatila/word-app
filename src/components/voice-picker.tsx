@@ -89,7 +89,7 @@ export function VoicePicker({
                 className="min-w-0 flex-1 text-left"
               >
                 <span className="block truncate text-sm font-bold">{v.label}</span>
-                <span className="muted block truncate text-[11px]">{t(v.gender === "female" ? "voices.female" : "voices.male")}</span>
+                <span className="muted block truncate text-micro">{t(v.gender === "female" ? "voices.female" : "voices.male")}</span>
               </button>
               {active ? (
                 <span

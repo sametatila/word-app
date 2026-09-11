@@ -97,12 +97,12 @@ export function ChoiceGame({ round, onDone }: GameProps<ChoiceRound>) {
         </span>
       }
       prompt={
-        <span className="text-2xl font-bold sm:text-3xl">
+        <span className="text-h1 sm:text-display">
           {question}
           {/* Türkçeden Almancaya yönde soru bir anlamdır; İngilizcesi burada
               ayırt edici olarak duruyor ("o" tek başına üç kelimeye uyar). */}
           {!deSide && word.en ? (
-            <span className="block text-base font-normal opacity-60" lang="en">
+            <span className="block text-body opacity-60" lang="en">
               {word.en}
             </span>
           ) : null}

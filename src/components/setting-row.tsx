@@ -30,8 +30,8 @@ export function SettingRow({
   return (
     <div className="flex items-center gap-3 px-4 py-3">
       <div className="min-w-0 flex-1">
-        <p className="text-sm font-bold">{title}</p>
-        {sub ? <p className="muted mt-0.5 text-xs leading-snug">{sub}</p> : null}
+        <p className="text-strong">{title}</p>
+        {sub ? <p className="muted mt-0.5 text-caption leading-snug">{sub}</p> : null}
       </div>
       {children ? <div className="flex shrink-0 items-center gap-1.5">{children}</div> : null}
     </div>

@@ -124,7 +124,7 @@ export function GameShell({
       <div className="card px-4 py-6 text-center">
         <span className="muted text-micro uppercase tracking-widest">{label}</span>
         {prompt ? <div className="mt-1.5 text-lg font-medium sm:text-xl">{prompt}</div> : null}
-        {hint ? <div className="muted mt-1 text-sm">{hint}</div> : null}
+        {hint ? <div className="muted mt-1 text-body">{hint}</div> : null}
       </div>
 
       {/*

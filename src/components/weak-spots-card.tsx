@@ -76,7 +76,7 @@ export function WeakSpotsCard({ bare = false }: { bare?: boolean } = {}) {
   return (
     <section id="weak-spots" className={bare ? "" : "card p-5"}>
       <div className="flex items-baseline justify-between">
-        <h2 className={bare ? "text-[11px] font-bold uppercase tracking-wide muted" : "font-bold"}>
+        <h2 className={bare ? "text-micro uppercase tracking-wide muted" : "font-bold"}>
           {tx("weak.title")}
         </h2>
         <span className="muted text-xs font-semibold">{tx("weak.window", { days: report.days, wrong: report.totalWrong })}</span>

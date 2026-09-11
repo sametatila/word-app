@@ -43,8 +43,8 @@ export default async function SettingsPage() {
   if (!veri) {
     return (
       <div className="card mx-auto w-full max-w-md p-6 text-center">
-        <h2 className="text-lg font-bold">{t("settingsw.load_failed")}</h2>
-        <p className="muted mt-2 text-sm">{t("socialw.try_in_a_moment")}</p>
+        <h2 className="text-h2">{t("settingsw.load_failed")}</h2>
+        <p className="muted mt-2 text-body">{t("socialw.try_in_a_moment")}</p>
         <RetryButton />
       </div>
     );

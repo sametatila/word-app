@@ -125,7 +125,7 @@ export function AchievementFlash({
         >
           <span
             role="status"
-            className="flex items-center gap-2 rounded-full px-4 py-2 text-sm font-black text-white"
+            className="flex items-center gap-2 rounded-full px-4 py-2 text-strong text-white"
             style={{ background: color, boxShadow: `0 14px 34px -12px ${color}` }}
           >
             {tone === "mint" ? <TrophyIcon size={16} /> : <FlameIcon size={16} />}

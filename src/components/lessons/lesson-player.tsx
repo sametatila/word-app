@@ -1370,7 +1370,7 @@ export function LessonPlayer({
               <AiNotice variant="character" className="mt-2" />
               {offline ? (
                 <p
-                  className="mt-2 inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-[11px] font-semibold"
+                  className="mt-2 inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-micro"
                   style={{
                     background: "color-mix(in srgb, var(--color-flame) 12%, transparent)",
                     color: "var(--color-flame)",
@@ -1720,7 +1720,7 @@ function Steps({ phase }: { phase: Phase }) {
             style={{ background: i <= at ? "var(--color-brand)" : "var(--border)" }}
           />
           <span
-            className="text-[11px] font-semibold"
+            className="text-micro"
             style={{ color: i <= at ? "var(--color-brand)" : "var(--text-muted)" }}
           >
             {s.label}
@@ -1755,7 +1755,7 @@ function LectureProgress({ at, steps }: { at: number; steps: { expect?: Expectat
         ))}
       </div>
       {kinds.length ? (
-        <p className="muted mt-1 flex flex-wrap gap-x-3 text-[10px]">
+        <p className="muted mt-1 flex flex-wrap gap-x-3 text-micro">
           {kinds.map((k) => (
             <span key={k} className="flex items-center gap-1">
               <span className="inline-block h-1.5 w-1.5 rounded-full" style={{ background: STEP_TONE[k] }} />

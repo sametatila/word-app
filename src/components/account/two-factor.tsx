@@ -106,14 +106,14 @@ export function TwoFactor() {
           </form>
         ) : (
           <div className="flex items-center justify-between gap-3">
-            <p className="muted text-sm leading-snug">
+            <p className="muted text-body leading-snug">
               {t(enabled ? "twofa.on_sub" : "twofa.off_sub")}
             </p>
             <button
               type="button"
               disabled={enabled === null}
               onClick={() => { setOpen(true); setNote(null); }}
-              className="btn shrink-0 text-xs disabled:opacity-60"
+              className="btn shrink-0 text-caption disabled:opacity-60"
             >
               {t(enabled ? "twofa.disable" : "twofa.enable")}
             </button>

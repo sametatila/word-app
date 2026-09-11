@@ -77,7 +77,7 @@ export function ArtikelGame({ round, onDone }: GameProps<ArtikelRound>) {
           ) : null}
         </span>
       }
-      prompt={<span className="text-3xl font-bold sm:text-4xl">{word.de}</span>}
+      prompt={<span className="text-display sm:text-4xl">{word.de}</span>}
     >
       <div className="grid grid-cols-3 gap-3">
         {options.map((opt, i) => {
@@ -93,7 +93,7 @@ export function ArtikelGame({ round, onDone }: GameProps<ArtikelRound>) {
               disabled={picked != null}
               onClick={() => choose(opt)}
               style={picked == null ? { borderColor: OPTION_COLORS[i] } : undefined}
-              className={`option min-h-16 px-4 py-4 text-center text-xl font-bold ${state} ${
+              className={`option min-h-16 px-4 py-4 text-center text-h2 ${state} ${
                 picked === opt && !isAnswer ? "animate-shake" : ""
               }`}
             >

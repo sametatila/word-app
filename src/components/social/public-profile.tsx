@@ -67,7 +67,7 @@ export function PublicProfile({ data, me }: { data: PublicProfileView; me: strin
               @{u.username} · {u.level}
             </p>
             {data.bio ? <p className="mt-2 text-sm leading-snug">{data.bio}</p> : null}
-            <p className="muted mt-2 flex flex-wrap gap-x-3 text-[11px]">
+            <p className="muted mt-2 flex flex-wrap gap-x-3 text-micro">
               {data.mutual > 0 ? <span>{t("social.mutual", { n: data.mutual })}</span> : null}
               {data.friendStreak > 0 ? (
                 <span className="flex items-center gap-0.5" style={{ color: "var(--color-mint)" }}>
@@ -95,7 +95,7 @@ export function PublicProfile({ data, me }: { data: PublicProfileView; me: strin
             {/* Etiket AÇIK: "Daha fazla" ne olduğunu söylemiyordu ve açılan
                 şey engelleme/şikayet gibi geri dönüşü olan bir seçim değil.
                 Android iki durumu da adıyla yazıyor. */}
-            <button className="muted ml-auto text-[11px]" onClick={() => setMore((m) => !m)} aria-expanded={more} data-panel="profile_more">
+            <button className="muted ml-auto text-micro" onClick={() => setMore((m) => !m)} aria-expanded={more} data-panel="profile_more">
               {t(more ? "user.hide" : "user.block_or_report")}
             </button>
           </div>
@@ -177,7 +177,7 @@ function Stat({ label, value, text, suffix = "", icon, tone }: { label: string; 
         {icon}
         {text ?? `${formatNumber(value ?? 0, lang)}${suffix}`}
       </p>
-      <p className="muted text-[11px]">{label}</p>
+      <p className="muted text-micro">{label}</p>
     </div>
   );
 }

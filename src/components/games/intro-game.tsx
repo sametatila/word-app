@@ -67,7 +67,7 @@ export function IntroGame({ round, onDone }: GameProps<IntroRound>) {
         {/* Seviye rozeti kartın içinde durur: kelimeyle birlikte okunur, başlığın
             altında ayrı bir satır tüketmez. */}
         <span
-          className="absolute right-3 top-3 rounded-full px-2 py-0.5 text-[11px] font-bold tracking-wide"
+          className="absolute right-3 top-3 rounded-full px-2 py-0.5 text-micro tracking-wide"
           style={{
             background: "color-mix(in srgb, var(--color-brand) 14%, transparent)",
             color: "var(--color-brand)",

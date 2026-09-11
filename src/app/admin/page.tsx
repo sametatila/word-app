@@ -16,13 +16,13 @@ export default async function AdminPage() {
   if (!gate.ok) {
     return (
       <div className="mx-auto max-w-lg px-6 py-16 text-center">
-        <h1 className="text-2xl font-extrabold">Yönetim panosu</h1>
+        <h1 className="text-h1">Yönetim panosu</h1>
         {gate.email ? (
-          <p className="mt-3 text-sm" style={{ color: "var(--text-muted)" }}>
+          <p className="mt-3 text-body" style={{ color: "var(--text-muted)" }}>
             Bu hesap (<b>{gate.email}</b>) yönetim yetkisine sahip değil. Admin e-postasıyla giriş yap.
           </p>
         ) : (
-          <p className="mt-3 text-sm" style={{ color: "var(--text-muted)" }}>
+          <p className="mt-3 text-body" style={{ color: "var(--text-muted)" }}>
             Önce giriş yap, sonra admin e-postasıyla bu sayfaya dön.
           </p>
         )}

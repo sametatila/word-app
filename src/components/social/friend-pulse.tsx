@@ -48,7 +48,7 @@ export function FriendPulse() {
         <Avatar userId={q.partner.userId} name={q.partner.name} avatar={q.partner.avatar} size={32} ring="var(--color-sky)" />
       </div>
       <div className="min-w-0 flex-1">
-        <p className="truncate text-sm font-bold">
+        <p className="truncate text-strong">
           {invited
             ? q.invitedByMe
               ? t("friendpulse.waiting")
@@ -56,7 +56,7 @@ export function FriendPulse() {
             : t("friendpulse.shared", { name: q.partner.name?.split(" ")[0] ?? t("social.your_friend") })}
         </p>
         {invited ? (
-          <p className="muted text-xs">
+          <p className="muted text-caption">
             {/* Mobil hedefi ve durumu tek cümlede yazıyor; web ikisini elle
                 birleştiriyordu ve aradaki ayraç dile göre değişemiyordu. */}
             {t("friendpulse.target", {
@@ -84,7 +84,7 @@ export function FriendPulse() {
         )}
       </div>
       {!invited ? (
-        <span className="shrink-0 text-xs font-bold tabular-nums" style={{ color: "var(--color-brand)" }}>
+        <span className="shrink-0 text-caption tabular-nums" style={{ color: "var(--color-brand)" }}>
           {formatPercent(q.pct, lang)}
         </span>
       ) : null}

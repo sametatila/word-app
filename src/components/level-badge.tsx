@@ -61,7 +61,7 @@ export function LevelBadge({
             initial={{ scale: 0.7, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ type: "spring", stiffness: 320, damping: 18 }}
-            className="rounded-chip px-2 py-0.5 text-sm font-black text-white"
+            className="rounded-chip px-2 py-0.5 text-strong text-white"
             style={{ background: tone }}
           >
             {level}
@@ -70,7 +70,7 @@ export function LevelBadge({
             /* Tek satır: "1.234 Wörter gefestigt" dar kartta ikinci satıra
                düşüp armanın yüksekliğini değiştiriyordu. Android aynı satırı
                `numberOfLines={1}` ile tutuyor. */
-            <span className="muted truncate text-xs font-semibold">
+            <span className="muted truncate text-caption">
               {mastered > 0
                 ? t("level.mastered_count", { n: formatNumber(mastered, lang) })
                 : t("level.mastered_none")}
@@ -78,7 +78,7 @@ export function LevelBadge({
           ) : null}
         </div>
         {!compact && total > 0 ? (
-          <span className="muted text-xs font-semibold tabular-nums">
+          <span className="muted text-caption tabular-nums">
             {pct < 1 && mastered > 0 ? t("common.pct_lt1") : formatPercent(Math.round(pct), lang)}
           </span>
         ) : null}

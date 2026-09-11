@@ -24,9 +24,9 @@ function Kpi({ label, value, sub, tone }: { label: string; value: string; sub?: 
   const color = tone === "bad" ? "#dc2626" : tone === "warn" ? "#d97706" : tone === "ok" ? "#16a34a" : "var(--text)";
   return (
     <div className="rounded-card border p-4" style={{ borderColor: "var(--border)", background: "var(--surface)" }}>
-      <div className="text-xs font-bold uppercase tracking-wide" style={{ color: "var(--text-muted)" }}>{label}</div>
-      <div className="mt-1 text-2xl font-extrabold" style={{ color }}>{value}</div>
-      {sub && <div className="text-xs" style={{ color: "var(--text-muted)" }}>{sub}</div>}
+      <div className="text-micro uppercase tracking-wide" style={{ color: "var(--text-muted)" }}>{label}</div>
+      <div className="mt-1 text-h1" style={{ color }}>{value}</div>
+      {sub && <div className="text-caption" style={{ color: "var(--text-muted)" }}>{sub}</div>}
     </div>
   );
 }
@@ -43,13 +43,13 @@ function BarList({ items, max, unit }: { items: { label: string; value: number; 
   return (
     <div className="space-y-1.5">
       {items.map((it, i) => (
-        <div key={i} className="flex items-center gap-2 text-sm">
+        <div key={i} className="flex items-center gap-2 text-body">
           <span className="w-44 shrink-0 truncate" style={{ color: "var(--text)" }} title={it.label}>{it.label}</span>
           <Bar frac={it.value / top} tone={it.tone} />
-          <span className="w-20 shrink-0 text-right text-xs font-bold tabular-nums">{it.right ?? fmt(it.value) + (unit ?? "")}</span>
+          <span className="w-20 shrink-0 text-right text-caption tabular-nums">{it.right ?? fmt(it.value) + (unit ?? "")}</span>
         </div>
       ))}
-      {items.length === 0 && <div className="text-sm" style={{ color: "var(--text-muted)" }}>Henüz veri yok.</div>}
+      {items.length === 0 && <div className="text-body" style={{ color: "var(--text-muted)" }}>Henüz veri yok.</div>}
     </div>
   );
 }
@@ -57,8 +57,8 @@ function BarList({ items, max, unit }: { items: { label: string; value: number; 
 function Section({ title, hint, children, full }: { title: string; hint?: string; children: React.ReactNode; full?: boolean }) {
   return (
     <section className={`rounded-card border p-5 ${full ? "lg:col-span-2" : ""}`} style={{ borderColor: "var(--border)", background: "var(--surface)" }}>
-      <h2 className="text-sm font-extrabold uppercase tracking-wide">{title}</h2>
-      {hint && <p className="mb-3 text-xs" style={{ color: "var(--text-muted)" }}>{hint}</p>}
+      <h2 className="text-micro uppercase tracking-wide">{title}</h2>
+      {hint && <p className="mb-3 text-caption" style={{ color: "var(--text-muted)" }}>{hint}</p>}
       <div className={hint ? "" : "mt-3"}>{children}</div>
     </section>
   );
@@ -68,12 +68,12 @@ function Gauge({ label, pctVal, detail }: { label: string; pctVal: number; detai
   const tone = pctVal >= 90 ? "#dc2626" : pctVal >= 75 ? "#d97706" : "#16a34a";
   return (
     <div>
-      <div className="flex items-baseline justify-between text-sm">
+      <div className="flex items-baseline justify-between text-body">
         <span className="font-semibold">{label}</span>
-        <span className="text-xs font-bold tabular-nums" style={{ color: tone }}>{pctVal}%</span>
+        <span className="text-caption tabular-nums" style={{ color: tone }}>{pctVal}%</span>
       </div>
       <div className="mt-1"><Bar frac={pctVal / 100} tone={tone} /></div>
-      <div className="mt-0.5 text-[11px]" style={{ color: "var(--text-muted)" }}>{detail}</div>
+      <div className="mt-0.5 text-micro" style={{ color: "var(--text-muted)" }}>{detail}</div>
     </div>
   );
 }
@@ -89,7 +89,7 @@ function TrendChart({ trend }: { trend: AdminData["trend"] }) {
           </div>
         ))}
       </div>
-      <div className="mt-1 flex justify-between text-[10px]" style={{ color: "var(--text-muted)" }}>
+      <div className="mt-1 flex justify-between text-micro" style={{ color: "var(--text-muted)" }}>
         <span>{trend[0]?.day ?? ""}</span><span>günlük tekrar · son 30 gün</span><span>{trend[trend.length - 1]?.day ?? ""}</span>
       </div>
     </div>
@@ -128,15 +128,15 @@ export function AdminDashboard({ data: d, server: s }: { data: AdminData; server
     <div className="mx-auto w-full max-w-6xl space-y-6 px-4 py-8">
       <header className="flex flex-wrap items-end justify-between gap-2">
         <div>
-          <h1 className="text-3xl font-extrabold tracking-tight">Yönetim panosu</h1>
-          <p className="text-sm" style={{ color: "var(--text-muted)" }}>Canlı veriler — web + mobil · sunucu · telemetri</p>
+          <h1 className="text-display tracking-tight">Yönetim panosu</h1>
+          <p className="text-body" style={{ color: "var(--text-muted)" }}>Canlı veriler — web + mobil · sunucu · telemetri</p>
         </div>
         <div className="flex flex-wrap items-center gap-2">
           {/* Ayrı sayfada duran yönetim ekranları: panonun sekmeleri okuma,
               bunlar YAZMA. Karıştırmamak için görsel olarak da ayrı. */}
-          <a href="/admin/premium" className="chip h-8 px-3 text-xs font-semibold">Premium</a>
-          <a href="/admin/legal" className="chip h-8 px-3 text-xs font-semibold">Hukuki metinler</a>
-          <span className="text-xs" style={{ color: "var(--text-muted)" }}>{new Date(d.generatedAt).toLocaleString("tr-TR")}</span>
+          <a href="/admin/premium" className="chip h-8 px-3 text-caption">Premium</a>
+          <a href="/admin/legal" className="chip h-8 px-3 text-caption">Hukuki metinler</a>
+          <span className="text-caption" style={{ color: "var(--text-muted)" }}>{new Date(d.generatedAt).toLocaleString("tr-TR")}</span>
         </div>
       </header>
 
@@ -144,7 +144,7 @@ export function AdminDashboard({ data: d, server: s }: { data: AdminData; server
       <div className="flex flex-wrap gap-1.5 border-b pb-2" style={{ borderColor: "var(--border)" }}>
         {TABS.map((t) => (
           <button key={t} onClick={() => setTab(t)}
-            className="rounded-full px-3.5 py-1.5 text-sm font-bold transition"
+            className="rounded-full px-3.5 py-1.5 text-strong transition"
             style={tab === t ? { background: "var(--color-brand)", color: "var(--on-fill)" } : { background: "var(--surface-2)", color: "var(--text-muted)" }}>
             {t}
           </button>
@@ -179,8 +179,8 @@ export function AdminDashboard({ data: d, server: s }: { data: AdminData; server
               <div className="mt-4 grid grid-cols-3 gap-2 text-center">
                 {[["D1", d.funnel.d1], ["D7", d.funnel.d7], ["D30", d.funnel.d30]].map(([lbl, v]) => (
                   <div key={String(lbl)} className="rounded-panel border p-2" style={{ borderColor: "var(--border)" }}>
-                    <div className="text-lg font-extrabold" style={{ color: "var(--color-brand)" }}>{pct(d.funnel.retentionBase ? (v as number) / d.funnel.retentionBase : 0)}</div>
-                    <div className="text-xs" style={{ color: "var(--text-muted)" }}>{lbl} retention</div>
+                    <div className="text-h2" style={{ color: "var(--color-brand)" }}>{pct(d.funnel.retentionBase ? (v as number) / d.funnel.retentionBase : 0)}</div>
+                    <div className="text-caption" style={{ color: "var(--text-muted)" }}>{lbl} retention</div>
                   </div>
                 ))}
               </div>
@@ -189,7 +189,7 @@ export function AdminDashboard({ data: d, server: s }: { data: AdminData; server
               <BarList max={Math.max(1, ...d.levels.map((l) => l.count))} items={d.levels.map((l) => ({ label: l.level, value: l.count }))} />
               <div className="mt-3 flex flex-wrap gap-2">
                 {d.courses.map((c) => (
-                  <span key={c.course} className="rounded-full px-3 py-1 text-xs font-bold" style={{ background: "var(--surface-2)" }}>
+                  <span key={c.course} className="rounded-full px-3 py-1 text-caption" style={{ background: "var(--surface-2)" }}>
                     {c.course === "gsw-zh" ? "Zürih Almancası" : "Almanca"}: {fmt(c.count)}
                   </span>
                 ))}
@@ -213,34 +213,34 @@ export function AdminDashboard({ data: d, server: s }: { data: AdminData; server
           <Section title="Uygulama & deploy" hint={`Aktif renk: ${s.app.activeColor} · canlı commit ${s.app.liveCommit || "?"}`}>
             <div className="mb-3 grid grid-cols-2 gap-2 sm:grid-cols-3">
               {s.app.instances.map((i) => (
-                <div key={i.name} className="flex items-center gap-2 rounded-chip border px-2 py-1.5 text-xs" style={{ borderColor: "var(--border)" }}>
+                <div key={i.name} className="flex items-center gap-2 rounded-chip border px-2 py-1.5 text-caption" style={{ borderColor: "var(--border)" }}>
                   <span className="h-2.5 w-2.5 rounded-full" style={{ background: i.up ? "#16a34a" : "#9ca3af" }} />
                   <span className="font-mono">{i.name}</span>
                 </div>
               ))}
             </div>
-            <div className="text-xs" style={{ color: "var(--text-muted)" }}>Yeşil nokta = çalışan instance (aktif renk yük dengeleme arkasında).</div>
+            <div className="text-caption" style={{ color: "var(--text-muted)" }}>Yeşil nokta = çalışan instance (aktif renk yük dengeleme arkasında).</div>
           </Section>
 
           <Section title="PostgreSQL" hint={`Bağlantı ${s.pg.total}/${s.pg.maxConn} · veritabanı ${fmt(s.pg.dbSizeMB)} MB · önbellek isabeti %${s.pg.cacheHitPct}`}>
-            <div className="mb-3 grid grid-cols-3 gap-2 text-center text-xs">
-              <div className="rounded-panel border p-2" style={{ borderColor: "var(--border)" }}><div className="text-lg font-extrabold">{s.pg.active}</div><div style={{ color: "var(--text-muted)" }}>aktif</div></div>
-              <div className="rounded-panel border p-2" style={{ borderColor: "var(--border)" }}><div className="text-lg font-extrabold">{s.pg.idle}</div><div style={{ color: "var(--text-muted)" }}>boşta</div></div>
-              <div className="rounded-panel border p-2" style={{ borderColor: "var(--border)" }}><div className="text-lg font-extrabold" style={{ color: s.pg.cacheHitPct >= 95 ? "#16a34a" : "#d97706" }}>%{s.pg.cacheHitPct}</div><div style={{ color: "var(--text-muted)" }}>cache hit</div></div>
+            <div className="mb-3 grid grid-cols-3 gap-2 text-center text-caption">
+              <div className="rounded-panel border p-2" style={{ borderColor: "var(--border)" }}><div className="text-h2">{s.pg.active}</div><div style={{ color: "var(--text-muted)" }}>aktif</div></div>
+              <div className="rounded-panel border p-2" style={{ borderColor: "var(--border)" }}><div className="text-h2">{s.pg.idle}</div><div style={{ color: "var(--text-muted)" }}>boşta</div></div>
+              <div className="rounded-panel border p-2" style={{ borderColor: "var(--border)" }}><div className="text-h2" style={{ color: s.pg.cacheHitPct >= 95 ? "#16a34a" : "#d97706" }}>%{s.pg.cacheHitPct}</div><div style={{ color: "var(--text-muted)" }}>cache hit</div></div>
             </div>
             <BarList max={Math.max(1, ...s.pg.topTables.map((t) => t.mb))} items={s.pg.topTables.map((t) => ({ label: t.name, value: t.mb, right: `${t.mb} MB` }))} />
           </Section>
 
           <Section title="Yapay zekâ sağlığı (7g)" hint="Sağlayıcı başına çağrı, başarı, gecikme, token — /sohbet ve STT/telaffuz.">
-            {d.ai.length === 0 ? <div className="text-sm" style={{ color: "var(--text-muted)" }}>Son 7 günde AI çağrısı yok.</div> : (
+            {d.ai.length === 0 ? <div className="text-body" style={{ color: "var(--text-muted)" }}>Son 7 günde AI çağrısı yok.</div> : (
               <div className="space-y-2">
                 {d.ai.map((a) => (
-                  <div key={a.provider} className="rounded-panel border p-2.5 text-sm" style={{ borderColor: "var(--border)" }}>
+                  <div key={a.provider} className="rounded-panel border p-2.5 text-body" style={{ borderColor: "var(--border)" }}>
                     <div className="flex items-center justify-between">
                       <span className="font-bold">{a.provider}</span>
-                      <span className="text-xs font-bold" style={{ color: a.okPct >= 95 ? "#16a34a" : a.okPct >= 80 ? "#d97706" : "#dc2626" }}>%{a.okPct} başarı</span>
+                      <span className="text-caption" style={{ color: a.okPct >= 95 ? "#16a34a" : a.okPct >= 80 ? "#d97706" : "#dc2626" }}>%{a.okPct} başarı</span>
                     </div>
-                    <div className="mt-0.5 flex flex-wrap gap-x-3 text-xs tabular-nums" style={{ color: "var(--text-muted)" }}>
+                    <div className="mt-0.5 flex flex-wrap gap-x-3 text-caption tabular-nums" style={{ color: "var(--text-muted)" }}>
                       <span>{fmt(a.calls)} çağrı</span><span>{fmt(a.avgMs)} ms ort.</span>{a.errors > 0 && <span style={{ color: "#dc2626" }}>{a.errors} hata</span>}<span>{fmt(a.tokens)} token</span>
                     </div>
                   </div>
@@ -250,10 +250,10 @@ export function AdminDashboard({ data: d, server: s }: { data: AdminData; server
           </Section>
 
           <Section title="Deploy geçmişi" hint="GitHub push → webhook → sıfır-kesinti deploy." full>
-            {s.deploys.length === 0 ? <div className="text-sm" style={{ color: "var(--text-muted)" }}>Kayıt yok.</div> : (
+            {s.deploys.length === 0 ? <div className="text-body" style={{ color: "var(--text-muted)" }}>Kayıt yok.</div> : (
               <div className="space-y-1">
                 {s.deploys.map((dp, i) => (
-                  <div key={i} className="flex items-center gap-2 text-xs">
+                  <div key={i} className="flex items-center gap-2 text-caption">
                     <span className="h-2 w-2 shrink-0 rounded-full" style={{ background: dp.status === "ok" ? "#16a34a" : dp.status === "fail" ? "#dc2626" : "#6366f1" }} />
                     <span className="w-40 shrink-0 font-mono tabular-nums" style={{ color: "var(--text-muted)" }}>{dp.time}</span>
                     <span className="truncate">{dp.detail}</span>
@@ -278,7 +278,7 @@ export function AdminDashboard({ data: d, server: s }: { data: AdminData; server
               { label: "Tamamlandı", value: sess.done, tone: "#16a34a" },
               { label: `"Şimdilik yeter"`, value: sess.stopped, tone: "#d97706" },
             ]} />
-            <div className="mt-3 text-center text-sm">Tamamlama oranı: <b style={{ color: sessRate >= 0.6 ? "#16a34a" : "#d97706" }}>{pct(sessRate)}</b></div>
+            <div className="mt-3 text-center text-body">Tamamlama oranı: <b style={{ color: sessRate >= 0.6 ? "#16a34a" : "#d97706" }}>{pct(sessRate)}</b></div>
           </Section>
 
           <Section title="Ekran kullanımı (30g)" hint="Görüntülenme + ortalama görünür süre. Soğuk ekranları (çok bakış, az süre) yakalar." full>
@@ -303,7 +303,7 @@ export function AdminDashboard({ data: d, server: s }: { data: AdminData; server
             ]} />
             {d.premiumGates.length > 0 && (
               <div className="mt-3 flex flex-wrap gap-1.5">
-                {d.premiumGates.map((g) => <span key={g.feature} className="rounded-full px-2.5 py-0.5 text-xs font-semibold" style={{ background: "var(--surface-2)" }}>{g.feature}: {g.count}</span>)}
+                {d.premiumGates.map((g) => <span key={g.feature} className="rounded-full px-2.5 py-0.5 text-caption" style={{ background: "var(--surface-2)" }}>{g.feature}: {g.count}</span>)}
               </div>
             )}
           </Section>
@@ -352,19 +352,19 @@ export function AdminDashboard({ data: d, server: s }: { data: AdminData; server
         <div className="space-y-6">
           <div className="grid gap-6 lg:grid-cols-2">
             <Section title="İstemci hataları (30g)" hint="Yakalanmamış hata — ekrana göre. Mobil + web.">
-              {d.clientErrors.length === 0 ? <div className="text-sm" style={{ color: "var(--text-muted)" }}>Hata kaydı yok.</div> :
+              {d.clientErrors.length === 0 ? <div className="text-body" style={{ color: "var(--text-muted)" }}>Hata kaydı yok.</div> :
                 <BarList max={Math.max(1, ...d.clientErrors.map((e) => e.count))} items={d.clientErrors.map((e) => ({ label: e.screen, value: e.count, tone: "#dc2626" }))} />}
             </Section>
             <Section title="AI hataları (7g)" hint="Başarısız sağlayıcı çağrıları.">
-              {d.ai.filter((a) => a.errors > 0).length === 0 ? <div className="text-sm" style={{ color: "var(--text-muted)" }}>Hata yok.</div> :
+              {d.ai.filter((a) => a.errors > 0).length === 0 ? <div className="text-body" style={{ color: "var(--text-muted)" }}>Hata yok.</div> :
                 <BarList max={Math.max(1, ...d.ai.map((a) => a.errors))} items={d.ai.filter((a) => a.errors > 0).map((a) => ({ label: a.provider, value: a.errors, right: `${a.errors} / ${fmt(a.calls)}`, tone: "#dc2626" }))} />}
             </Section>
           </div>
           <Section title="İçerik bildirimleri" hint="Yapay zekâ yanıtı / değerlendirme için kullanıcı bildirimleri (açık olanlar). Play üretken yapay zekâ politikası: insan inceler.">
-            {d.reports.length === 0 ? <div className="text-sm" style={{ color: "var(--text-muted)" }}>Açık bildirim yok.</div> : (
+            {d.reports.length === 0 ? <div className="text-body" style={{ color: "var(--text-muted)" }}>Açık bildirim yok.</div> : (
               <div className="space-y-2">
                 {d.reports.map((r) => (
-                  <div key={r.id} className="rounded-panel border p-3 text-xs" style={{ borderColor: "var(--border)" }}>
+                  <div key={r.id} className="rounded-panel border p-3 text-caption" style={{ borderColor: "var(--border)" }}>
                     <div className="flex flex-wrap gap-x-3" style={{ color: "var(--text-muted)" }}>
                       <span className="tabular-nums">#{r.id} · {r.day}</span>
                       <span className="font-semibold" style={{ color: "var(--text)" }}>{r.kind} · {r.reason}</span>
@@ -379,7 +379,7 @@ export function AdminDashboard({ data: d, server: s }: { data: AdminData; server
           </Section>
           <Section title="Son olaylar" hint="En yeni 40 telemetri olayı (ham).">
             <div className="overflow-x-auto">
-              <table className="w-full text-left text-xs">
+              <table className="w-full text-left text-caption">
                 <thead style={{ color: "var(--text-muted)" }}>
                   <tr><th className="py-1 pr-3">Gün</th><th className="pr-3">Olay</th><th className="pr-3">Etiket</th><th className="pr-3">Değer</th><th>Kullanıcı</th></tr>
                 </thead>

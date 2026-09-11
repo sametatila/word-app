@@ -334,7 +334,7 @@ export function MockExamPlayer({ paper, part }: { paper: MockPaper; part: MockPa
           {/* Sayaç GÖREV başına; etiketsiz bir geri sayım "sınavın tamamı bu
               kadar" diye okunabiliyordu. Android etiketi yazıyor. */}
           <div className="text-right">
-            <p className="muted text-[10px] font-bold tracking-wide">{t("mockexam.task_time")}</p>
+            <p className="muted text-micro tracking-wide">{t("mockexam.task_time")}</p>
             <p className="text-lg font-bold tabular-nums" style={{ color: left < 30 ? "var(--color-danger)" : undefined }}>{mmss(left)}</p>
           </div>
           {/* ÇIKIŞ YOLU YOKTU: sınav başlayınca kullanıcı bitirene kadar

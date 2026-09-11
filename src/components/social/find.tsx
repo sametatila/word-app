@@ -147,7 +147,7 @@ function PersonRow({
           {href ? <Link href={href} prefetch={false}>{user.name ?? t("social.unnamed")}</Link> : (user.name ?? t("social.unnamed"))}
           {user.username ? <span className="muted ml-1.5 text-xs font-normal">@{user.username}</span> : null}
         </p>
-        <p className="muted flex items-center gap-2 text-[11px]">
+        <p className="muted flex items-center gap-2 text-micro">
           {note}
           {streak ? (
             <span className="flex items-center gap-0.5" style={{ color: "var(--color-flame)" }}>

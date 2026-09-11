@@ -58,7 +58,7 @@ export function ForgotPasswordForm({ turnstileSiteKey = "" }: { turnstileSiteKey
           <AuthNotice tone="success">
             {t("auth.we_sent_reset_link_to_if_that", { email })}
           </AuthNotice>
-          <p className="muted text-sm">
+          <p className="muted text-body">
             {t("authw.reset_sent_note")}
           </p>
           <button onClick={() => setSent(false)} className="btn btn-ghost w-full px-5 py-3">
@@ -89,7 +89,7 @@ export function ForgotPasswordForm({ turnstileSiteKey = "" }: { turnstileSiteKey
                 onToken={setCaptchaToken}
               />
               {captchaToken ? null : (
-                <p className="muted text-center text-xs" aria-live="polite">
+                <p className="muted text-center text-caption" aria-live="polite">
                   {t("auth.captcha_wait")}
                 </p>
               )}

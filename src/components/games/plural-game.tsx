@@ -79,7 +79,7 @@ export function PluralGame({ round, onDone }: GameProps<PluralRound>) {
         <span className="inline-flex items-center gap-2">
           <span>
             <span className="muted">{word.artikel} </span>
-            <span className="brand-text text-2xl font-bold sm:text-3xl">{word.de}</span>
+            <span className="brand-text text-h1 sm:text-display">{word.de}</span>
           </span>
           <SpeakButton text={`${word.artikel ?? ""} ${word.de}`.trim()} size="sm" />
         </span>
@@ -109,12 +109,12 @@ export function PluralGame({ round, onDone }: GameProps<PluralRound>) {
               transition={{ delay: i * 0.05 }}
               disabled={picked != null}
               onClick={() => choose(option)}
-              className={`option flex min-h-14 items-center justify-center px-3 py-3 text-center text-base font-medium ${state} ${
+              className={`option flex min-h-14 items-center justify-center px-3 py-3 text-center text-body ${state} ${
                 picked === option && !isAnswer ? "animate-shake" : ""
               }`}
             >
               {/* Çoğulda artikel her zaman "die" — şıkta da öyle görünsün. */}
-              <span className="muted mr-1.5 text-sm">die</span>
+              <span className="muted mr-1.5 text-body">die</span>
               {option}
               <OptionMark state={picked == null ? null : isAnswer ? "correct" : option === picked ? "wrong" : null} />
             </motion.button>

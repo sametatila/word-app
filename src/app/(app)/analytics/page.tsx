@@ -21,7 +21,7 @@ function Stat({ label, value, sub, tone }: { label: string; value: string; sub?:
     <div className="card px-4 py-3">
       <div className="text-2xl font-extrabold" style={{ color }}>{value}</div>
       <div className="muted text-xs font-semibold uppercase tracking-wide">{label}</div>
-      {sub ? <div className="muted mt-0.5 text-[11px]">{sub}</div> : null}
+      {sub ? <div className="muted mt-0.5 text-micro">{sub}</div> : null}
     </div>
   );
 }

@@ -24,8 +24,8 @@ export default async function AdminPremiumPage() {
   if (!gate.ok) {
     return (
       <div className="mx-auto max-w-lg px-6 py-16 text-center">
-        <h1 className="text-2xl font-extrabold">Premium yönetimi</h1>
-        <p className="mt-3 text-sm" style={{ color: "var(--text-muted)" }}>
+        <h1 className="text-h1">Premium yönetimi</h1>
+        <p className="mt-3 text-body" style={{ color: "var(--text-muted)" }}>
           {gate.email ? `Bu hesap (${gate.email}) yönetim yetkisine sahip değil.` : "Önce admin e-postasıyla giriş yap."}
         </p>
       </div>

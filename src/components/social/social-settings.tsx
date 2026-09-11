@@ -93,7 +93,7 @@ export function SocialSettings({ initial, course = "de", bare = false }: { initi
             {t("common.save")}
           </button>
         </div>
-        <p className="muted mt-1 text-[11px]">
+        <p className="muted mt-1 text-micro">
           {t("socialsettings.username_rule")}{" "}
           {me.usernameChangeAvailableIn > 0
             ? t("socialsettings.username_wait", { n: me.usernameChangeAvailableIn })
@@ -114,7 +114,7 @@ export function SocialSettings({ initial, course = "de", bare = false }: { initi
           style={{ borderColor: "var(--border)", background: "var(--surface-2)" }}
         />
         <div className="mt-1 flex items-center justify-between">
-          <span className="muted text-[11px] tabular-nums">{bio.length}/140</span>
+          <span className="muted text-micro tabular-nums">{bio.length}/140</span>
           <button className="btn btn-ghost h-8 px-3 text-xs" disabled={busy || !dirtyBio} onClick={() => void save({ bio: bio.trim() || null })}>
             {t("common.save")}
           </button>
@@ -133,7 +133,7 @@ export function SocialSettings({ initial, course = "de", bare = false }: { initi
               onClick={() => void save({ visibility: v.key })}
             >
               <span className="block text-xs font-bold">{t(v.label)}</span>
-              <span className="muted block text-[11px]">{t(v.sub)}</span>
+              <span className="muted block text-micro">{t(v.sub)}</span>
             </button>
           ))}
         </div>

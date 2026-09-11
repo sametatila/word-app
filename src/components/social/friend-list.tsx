@@ -104,7 +104,7 @@ function FriendItem({ f, nudged, onChanged }: { f: FriendRow; nudged: boolean; o
           {href ? <Link href={href} prefetch={false}>{f.name ?? t("social.unnamed")}</Link> : (f.name ?? t("social.unnamed"))}
           {f.username ? <span className="muted ml-1.5 text-xs font-normal">@{f.username}</span> : null}
         </p>
-        <p className="muted mt-0.5 flex flex-wrap items-center gap-x-3 text-[11px]">
+        <p className="muted mt-0.5 flex flex-wrap items-center gap-x-3 text-micro">
           <span className="font-semibold" style={{ color: "var(--color-brand)" }}>
             {t("social.xp_this_week", { xp: formatNumber(f.weeklyXp, lang) })}
           </span>
@@ -129,7 +129,7 @@ function FriendItem({ f, nudged, onChanged }: { f: FriendRow; nudged: boolean; o
         {/* Aciliyet BİR satır: zincir bugün kırılıyorsa yaz, kırılmıyorsa
             hiçbir şey yazma. Her gün duran bir uyarı uyarı olmaktan çıkar. */}
         {f.streakAtRisk ? (
-          <p className="mt-1 flex items-center gap-1 text-[11px] font-semibold" style={{ color: "var(--color-flame)" }}>
+          <p className="mt-1 flex items-center gap-1 text-micro" style={{ color: "var(--color-flame)" }}>
             <AlertIcon size={12} />
             {t("social.costreak_risk")}
           </p>
@@ -137,7 +137,7 @@ function FriendItem({ f, nudged, onChanged }: { f: FriendRow; nudged: boolean; o
         {/* Ton mesajın METNİNDEN değil kendi alanından okunuyor: metni Türkçe
             sözcüklere göre sınamak çeviriyle birlikte bozuluyordu. */}
         {msg ? (
-          <p role="status" className="mt-1 text-[11px]" style={{ color: msg.ok ? "var(--color-mint)" : "var(--color-rose)" }}>
+          <p role="status" className="mt-1 text-micro" style={{ color: msg.ok ? "var(--color-mint)" : "var(--color-rose)" }}>
             {msg.text}
           </p>
         ) : null}
@@ -160,7 +160,7 @@ function FriendItem({ f, nudged, onChanged }: { f: FriendRow; nudged: boolean; o
           <TargetIcon size={15} />
           {t("friendrows.quest")}
         </button>
-        <button className="muted h-8 px-1.5 text-[11px]" onClick={() => void remove()} aria-label={t("social.unfriend")}>
+        <button className="muted h-8 px-1.5 text-micro" onClick={() => void remove()} aria-label={t("social.unfriend")}>
           {t("social.remove")}
         </button>
       </div>

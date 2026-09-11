@@ -28,8 +28,8 @@ export default async function AuthAppReturnPage() {
   return (
     <main className="mx-auto flex min-h-dvh w-full max-w-md flex-col items-center justify-center gap-4 px-4 py-10 text-center">
       <h1 className="text-h3">{t("authapp.signed_in")}</h1>
-      <p className="muted text-sm leading-relaxed">{t("authapp.return_to_app")}</p>
-      <Link href="/learn" className="btn btn-primary w-full px-6 py-3.5 text-base">
+      <p className="muted text-body leading-relaxed">{t("authapp.return_to_app")}</p>
+      <Link href="/learn" className="btn btn-primary w-full px-6 py-3.5 text-body">
         {t("authapp.continue_on_web")}
       </Link>
     </main>

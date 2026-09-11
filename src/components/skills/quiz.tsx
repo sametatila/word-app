@@ -300,7 +300,7 @@ export function GlossPanel({ gloss }: { gloss: Gloss[] }) {
               </button>
             ))}
           </div>
-          <p className="muted mt-2 text-[11px]">{t("skillq.tap_word_hint")}</p>
+          <p className="muted mt-2 text-micro">{t("skillq.tap_word_hint")}</p>
         </>
       ) : null}
     </section>

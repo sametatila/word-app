@@ -256,7 +256,7 @@ function VerdictBar({
       initial={fx ? { x: fx === "right" ? "110%" : "-110%" } : false}
       animate={fx ? { x: 0 } : undefined}
       transition={fx ? { duration: PULL_MS / 1000, ease: "easeInOut" } : undefined}
-      className={`verdict relative flex min-h-[4.5rem] flex-1 items-center gap-1 py-1 pl-1 pr-4 text-left text-sm font-semibold ${
+      className={`verdict relative flex min-h-[4.5rem] flex-1 items-center gap-1 py-1 pl-1 pr-4 text-left text-strong ${
         verdict === "correct" ? "verdict-correct" : "verdict-wrong"
       }`}
     >

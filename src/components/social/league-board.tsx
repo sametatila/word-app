@@ -208,7 +208,7 @@ function LeagueRow({
           )}
           {row.isMe ? (
             <span
-              className="ml-2 rounded-full px-1.5 py-0.5 text-[10px] font-bold uppercase tracking-wide"
+              className="ml-2 rounded-full px-1.5 py-0.5 text-micro uppercase tracking-wide"
               style={{ background: "color-mix(in srgb, var(--color-brand-500) 14%, transparent)", color: "var(--color-brand)" }}
             >
               {t("social.you")}
@@ -239,7 +239,7 @@ function LeagueRow({
       {edge ? (
         <li aria-hidden className="flex items-center gap-2 px-5 py-1">
           <span className="h-px flex-1" style={{ background: edge === "up" ? ZONE_UP : ZONE_DOWN }} />
-          <span className="text-[10px] font-bold uppercase tracking-wide" style={{ color: edge === "up" ? ZONE_UP : ZONE_DOWN }}>
+          <span className="text-micro uppercase tracking-wide" style={{ color: edge === "up" ? ZONE_UP : ZONE_DOWN }}>
             {edgeLabel}
           </span>
           <span className="h-px flex-1" style={{ background: edge === "up" ? ZONE_UP : ZONE_DOWN }} />

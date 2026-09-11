@@ -298,7 +298,7 @@ async function Row({
       {score !== null ? (
         <span
           /* Yarıçap ve punto PROJENİN ölçeğinden: `rounded-md` (6 px) ve
-             `text-[11px]` ölçekte yok, mobil karşılığı radii.sm=10 ve
+             `text-micro` ölçekte yok, mobil karşılığı radii.sm=10 ve
              `micro`. */
           className="shrink-0 rounded-chip px-1.5 py-0.5 text-micro"
           style={{

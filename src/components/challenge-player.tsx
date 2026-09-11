@@ -349,7 +349,7 @@ export function ChallengePlayer({ onExit }: { onExit: () => void }) {
         <div className="mb-1.5 flex items-center justify-between text-xs font-semibold">
           <span className="flex items-center gap-2">
             <span
-              className="rounded-full px-2 py-0.5 text-[10px] uppercase tracking-wide"
+              className="rounded-full px-2 py-0.5 text-micro uppercase tracking-wide"
               style={{
                 background: "color-mix(in srgb, var(--color-brand) 14%, transparent)",
                 color: "var(--color-brand)",
@@ -438,7 +438,7 @@ function Box({ label, value }: { label: string; value: string }) {
   return (
     <div className="rounded-panel px-2 py-3 surface-2">
       <div className="text-base font-bold">{value}</div>
-      <div className="muted text-[11px]">{label}</div>
+      <div className="muted text-micro">{label}</div>
     </div>
   );
 }

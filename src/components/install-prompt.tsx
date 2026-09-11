@@ -103,13 +103,13 @@ export function InstallPrompt() {
           <div className="card flex items-start gap-3 p-3.5 shadow-lg">
             <LogoMark size={40} className="shrink-0" />
             <div className="min-w-0 flex-1">
-              <p className="text-sm font-bold">{t("settings.add_to_home")}</p>
-              <p className="muted mt-0.5 text-xs">
+              <p className="text-strong">{t("settings.add_to_home")}</p>
+              <p className="muted mt-0.5 text-caption">
                 {t(iosHint ? "instw.ios_hint" : "instw.why")}
               </p>
-              <p className="muted mt-1 text-[11px]">{t("instw.full_steps")}</p>
+              <p className="muted mt-1 text-micro">{t("instw.full_steps")}</p>
               {!iosHint ? (
-                <button onClick={() => void install()} className="btn btn-primary mt-2.5 px-4 py-2 text-xs">
+                <button onClick={() => void install()} className="btn btn-primary mt-2.5 px-4 py-2 text-caption">
                   {t("common.add")}
                 </button>
               ) : null}

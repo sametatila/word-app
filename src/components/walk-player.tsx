@@ -1757,7 +1757,7 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
           {/* Yakalama yöntemi ekranda: tarayıcı tanıyıcısıyla çalışılıyorsa
               ekranın açık kalması gerektiğini bilmek gerekiyor. */}
           <span
-            className="rounded-full px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide"
+            className="rounded-full px-2 py-0.5 text-micro uppercase tracking-wide"
             style={{
               background:
                 capture === "stt"
@@ -1855,7 +1855,7 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
 
       {diag ? (
         <div
-          className="mt-4 rounded-panel px-3 py-2 font-mono text-[11px] leading-snug"
+          className="mt-4 rounded-panel px-3 py-2 font-mono text-micro leading-snug"
           style={{ background: "rgba(20,16,14,0.92)", color: "#f4eee4" }}
         >
           <div style={{ opacity: 0.6 }}>dinlemeler · yol: {capture === "stt" ? "cep" : "tarayıcı"}</div>

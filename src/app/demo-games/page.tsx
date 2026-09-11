@@ -135,7 +135,7 @@ export default function DemoGames() {
     <div className="mx-auto max-w-2xl space-y-16 p-6">
       {ROUNDS.map((round) => (
         <section key={round.id} className="card p-5">
-          <h2 className="muted mb-4 text-xs font-bold uppercase">{round.game}</h2>
+          <h2 className="muted mb-4 text-micro uppercase">{round.game}</h2>
           {round.game === "intro" && <IntroGame round={round} onDone={() => {}} />}
           {round.game === "choice" && <ChoiceGame round={round} onDone={() => {}} />}
           {round.game === "match" && <MatchGame round={round} onDone={() => {}} />}

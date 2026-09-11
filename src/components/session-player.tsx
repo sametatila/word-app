@@ -875,7 +875,7 @@ export function SessionPlayer() {
               const isNew = ws.every((w) => w.isNew);
               return (
                 <span
-                  className="rounded-full px-2 py-0.5 text-[10px] uppercase tracking-wide"
+                  className="rounded-full px-2 py-0.5 text-micro uppercase tracking-wide"
                   style={{
                     background: isNew
                       ? "color-mix(in srgb, var(--color-brand) 14%, transparent)"
@@ -896,7 +896,7 @@ export function SessionPlayer() {
               initial={{ scale: 1.35 }}
               animate={{ scale: 1 }}
               transition={{ type: "spring", stiffness: 420, damping: 16 }}
-              className="flex items-center gap-1 rounded-full px-2 py-0.5 text-[11px] font-black"
+              className="flex items-center gap-1 rounded-full px-2 py-0.5 text-micro"
               /* Mobil seri hapı `info` (gök) tonunda; web mordaydı ve aynı rozet
                  iki uygulamada iki ayrı şey söylüyor gibi duruyordu. */
               style={{
@@ -1378,7 +1378,7 @@ function SummaryCard({
                 <span className="text-xl font-black tabular-nums">
                   {tally.correct}/{tally.total}
                 </span>
-                <span className="text-[11px] opacity-80">{t("game.correct")}</span>
+                <span className="text-micro opacity-80">{t("game.correct")}</span>
               </div>
             </div>
           ) : null}

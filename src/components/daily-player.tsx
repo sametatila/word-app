@@ -240,7 +240,7 @@ export function DailyPlayer({ onExit }: { onExit: () => void }) {
                   key={combo}
                   initial={{ scale: 1.3 }}
                   animate={{ scale: 1 }}
-                  className="flex items-center gap-1 rounded-full px-2 py-0.5 text-[11px] font-black"
+                  className="flex items-center gap-1 rounded-full px-2 py-0.5 text-micro"
                   style={{
                     background: "color-mix(in srgb, var(--color-violet) 16%, transparent)",
                     color: "var(--color-violet)",
@@ -377,7 +377,7 @@ function BoardList({ rows, title }: { rows: Board; title: string }) {
           karşılaştırdığını sanıyordu. */}
       <div className="px-5 pt-2.5 pb-1">
         <p className="muted text-xs font-semibold uppercase tracking-wide">{title}</p>
-        <p className="muted text-[11px]">{t("daily.players_at_your_level")}</p>
+        <p className="muted text-micro">{t("daily.players_at_your_level")}</p>
       </div>
       <ol>
         {rows.map((r) => (
@@ -414,7 +414,7 @@ function BoardList({ rows, title }: { rows: Board; title: string }) {
             </span>
             <span className="min-w-0 flex-1 truncate font-semibold">
               {r.name ?? t("social.unnamed")}
-              {r.isMe ? <span className="muted ml-1.5 text-[10px] uppercase">{t("social.you")}</span> : null}
+              {r.isMe ? <span className="muted ml-1.5 text-micro uppercase">{t("social.you")}</span> : null}
             </span>
             <span className="muted shrink-0 text-xs tabular-nums">
               {r.correct}/{r.total}

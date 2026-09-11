@@ -198,7 +198,7 @@ export function AchievementBadge({
           "Kelime hazi…" oluyordu: adı okunamayan rozet, hedef olmuyor.
           Sabit yükseklik satırların hizasını koruyor. */}
       <span
-        className="flex w-full items-start justify-center text-[11px] font-bold leading-tight"
+        className="flex w-full items-start justify-center text-micro leading-tight"
         style={{
           color: row.unlocked ? "var(--text)" : "var(--text-muted)",
           /*

@@ -150,7 +150,7 @@ export default async function PracticePage() {
         </CardGrid>
       </section>
 
-      <p className="muted px-1 text-xs leading-relaxed">{t("prac.note")}</p>
+      <p className="muted px-1 text-caption leading-relaxed">{t("prac.note")}</p>
     </div>
   );
 }

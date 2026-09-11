@@ -485,7 +485,7 @@ function FreeTask({
         /* Sabit Almanca yazıyordu. Android hedef dili SÖYLÜYOR
            (`skillquiz.write_your_answer_in`, {lang} = kursun adı); web de öyle. */
         placeholder={t("skillquiz.write_your_answer_in", { lang: courseName(lang, uiLang) })}
-        className="option mt-3 w-full px-3.5 py-3 text-[15px] leading-relaxed outline-none focus:border-[color:var(--color-brand)]"
+        className="option mt-3 w-full px-3.5 py-3 text-body leading-relaxed outline-none focus:border-[color:var(--color-brand)]"
       />
       <div className="mt-1.5 flex items-center justify-between">
         <div className="flex gap-1">
@@ -805,9 +805,9 @@ function RewriteTask({ task, onDone }: { task: RewriteTaskData; onDone: (ok: boo
           </p>
           {match.verdict !== "exact" ? (
             <div className="rounded-panel px-3 py-2 text-sm surface-2">
-              <p className="muted text-[11px]">{t("mockexam.your_answer")}</p>
+              <p className="muted text-micro">{t("mockexam.your_answer")}</p>
               <TypedTokens tokens={match.typed} />
-              <p className="muted mt-1.5 text-[11px]">{t("mockexam.correct_answer")}</p>
+              <p className="muted mt-1.5 text-micro">{t("mockexam.correct_answer")}</p>
               <TokenDiff tokens={match.target} />
             </div>
           ) : null}

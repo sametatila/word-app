@@ -230,7 +230,7 @@ function PlanCard({
         /* 500 değil 600: beyaz yazı 500 üstünde 3.55, 11 piksellik yazı için
            eşik 4.5. 600'de 5.30. */
         <span
-          className="mt-2 inline-block rounded-full px-2 py-0.5 text-[11px] font-bold text-white"
+          className="mt-2 inline-block rounded-full px-2 py-0.5 text-micro text-white"
           style={{ background: "var(--color-mint-600)" }}
         >
           −{savePct}%
@@ -243,7 +243,7 @@ function PlanCard({
 function Section({ title, children }: { title: string; children: React.ReactNode }) {
   return (
     <section className="mt-6">
-      <h2 className="mb-2 text-sm font-bold uppercase tracking-wide muted">{title}</h2>
+      <h2 className="mb-2 text-micro uppercase tracking-wide muted">{title}</h2>
       <div className="rounded-card border p-4" style={{ borderColor: "var(--border)", background: "var(--surface)" }}>
         {children}
       </div>
@@ -267,7 +267,7 @@ function Row({ text, tone }: { text: string; tone: "premium" | "free" }) {
            kullanılınca "premium" ile "zaten sende olan" ayırt edilmiyordu. */
         <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full" style={{ background: "var(--text-faint)" }} />
       )}
-      <span className={premium ? "text-[15px]" : "muted text-[15px]"}>{text}</span>
+      <span className={premium ? "text-body" : "muted text-body"}>{text}</span>
     </div>
   );
 }

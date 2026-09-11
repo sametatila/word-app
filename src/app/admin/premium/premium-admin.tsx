@@ -117,13 +117,13 @@ export function PremiumAdmin({
 
   return (
     <div className="mx-auto w-full max-w-4xl px-4 py-8">
-      <h1 className="text-2xl font-extrabold">Premium yönetimi</h1>
-      <p className="mt-1 text-sm" style={{ color: "var(--text-muted)" }}>
+      <h1 className="text-h1">Premium yönetimi</h1>
+      <p className="mt-1 text-body" style={{ color: "var(--text-muted)" }}>
         Buradaki her değer canlıda geçerli. Kod değişikliği ya da mağaza sürümü gerekmez.
       </p>
 
       <Card title="Ücretsiz katman">
-        <p className="mb-3 text-xs" style={{ color: "var(--text-muted)" }}>
+        <p className="mb-3 text-caption" style={{ color: "var(--text-muted)" }}>
           Ücretsiz hesabın hakları. 0 yazmak “bu özellik ücretsizde hiç yok” demek — cepte
           yürüyüşün varsayılanı tam olarak bu.
         </p>
@@ -140,7 +140,7 @@ export function PremiumAdmin({
       </Card>
 
       <Card title="Premium — adil kullanım tavanı">
-        <p className="mb-3 text-xs" style={{ color: "var(--text-muted)" }}>
+        <p className="mb-3 text-caption" style={{ color: "var(--text-muted)" }}>
           Bu sayılar paywall’da kullanıcıya <b>yazılıyor</b>. Tavanı olan bir şeyi “sınırsız”
           diye sunmak App Store 3.1.2 ve Play’in beyan kurallarına aykırı. Amaç normal
           kullanıcıyı durdurmak değil, tek bir hesabın bütçeyi yakmasını engellemek.
@@ -156,7 +156,7 @@ export function PremiumAdmin({
           <Num label="Paket boyu (kâğıt)" v={cfg.mock.packSize} on={(n) => num(["mock", "packSize"], n)} />
           <Num label="Sonraki paketi açan yüzde" v={cfg.mock.unlockPct} on={(n) => num(["mock", "unlockPct"], n)} />
         </Grid>
-        <label className="mt-3 flex items-start gap-2 text-sm">
+        <label className="mt-3 flex items-start gap-2 text-body">
           <input
             type="checkbox"
             checked={cfg.mock.unlockOnComplete}
@@ -165,7 +165,7 @@ export function PremiumAdmin({
           />
           <span>
             <b>Paketi bitirmek de açsın</b> (puan yetmese bile)
-            <span className="block text-xs" style={{ color: "var(--text-muted)" }}>
+            <span className="block text-caption" style={{ color: "var(--text-muted)" }}>
               Kapatırsan yüzdeyi tutturamayan bir <b>ödeme yapmış</b> kullanıcı hiçbir yeni
               kâğıt göremez. İadenin ve tek yıldızın en sık sebebi budur. Kapatacaksan paywall
               metnine “puan yetmezse paket açılmaz” cümlesi eklenmeli.
@@ -179,14 +179,14 @@ export function PremiumAdmin({
           <Num label="Ödül (gün)" v={cfg.referral.rewardDays} on={(n) => num(["referral", "rewardDays"], n)} />
           <Num label="Kişi başı en fazla ödül (0 = sınırsız)" v={cfg.referral.maxRewards} on={(n) => num(["referral", "maxRewards"], n)} />
         </Grid>
-        <p className="mt-2 text-xs" style={{ color: "var(--text-muted)" }}>
+        <p className="mt-2 text-caption" style={{ color: "var(--text-muted)" }}>
           Ödül davet edilenin <b>ilk ödemesinde</b> düşer; ücretsiz deneme ödül üretmez.
           Ödüller bakiyede birikir ve üst üste eklenir.
         </p>
       </Card>
 
       <Card title="Planlar ve fiyat bilgisi">
-        <p className="mb-3 text-xs" style={{ color: "var(--text-muted)" }}>
+        <p className="mb-3 text-caption" style={{ color: "var(--text-muted)" }}>
           <b>Buradaki fiyatlar mağazadaki fiyatı değiştirmez.</b> Mobilde fiyat mağazadan
           gelir (politika gereği); bu tablo web vitrini ve mağaza kurulumunda referans.
           Değiştirirsen App Store Connect ve Play Console’daki tutarları da elle eşitle.
@@ -209,7 +209,7 @@ export function PremiumAdmin({
       </Card>
 
       <div className="sticky bottom-4 mt-6 flex items-center gap-3 rounded-card border p-3" style={{ borderColor: "var(--border)", background: "var(--surface)" }}>
-        <button type="button" onClick={save} disabled={busy} className="rounded-panel px-5 py-2.5 text-sm font-bold on-fill disabled:opacity-60" style={{ background: "var(--color-brand)" }}>
+        <button type="button" onClick={save} disabled={busy} className="rounded-panel px-5 py-2.5 text-strong on-fill disabled:opacity-60" style={{ background: "var(--color-brand)" }}>
           Kaydet
         </button>
         <button
@@ -223,12 +223,12 @@ export function PremiumAdmin({
               setMsg("Varsayılanlara dönüldü.");
             }
           }}
-          className="rounded-panel px-4 py-2.5 text-sm font-semibold"
+          className="rounded-panel px-4 py-2.5 text-strong"
           style={{ background: "var(--surface-2)" }}
         >
           Varsayılanlara dön
         </button>
-        {msg && <span className="text-sm font-semibold">{msg}</span>}
+        {msg && <span className="text-strong">{msg}</span>}
       </div>
 
       <AccountSection post={post} busy={busy} />
@@ -237,9 +237,9 @@ export function PremiumAdmin({
 
       <Card title="Davet sıralaması">
         {referrers.length === 0 ? (
-          <p className="text-sm" style={{ color: "var(--text-muted)" }}>Henüz davet yok.</p>
+          <p className="text-body" style={{ color: "var(--text-muted)" }}>Henüz davet yok.</p>
         ) : (
-          <table className="w-full text-sm">
+          <table className="w-full text-body">
             <thead>
               <tr className="text-left" style={{ color: "var(--text-muted)" }}>
                 <th className="py-1">Kullanıcı</th>
@@ -250,7 +250,7 @@ export function PremiumAdmin({
             <tbody>
               {referrers.map((r) => (
                 <tr key={r.userId} className="border-t" style={{ borderColor: "var(--border)" }}>
-                  <td className="py-1 font-mono text-xs">{r.userId.slice(0, 12)}…</td>
+                  <td className="py-1 font-mono text-caption">{r.userId.slice(0, 12)}…</td>
                   <td className="py-1">{r.invited}</td>
                   <td className="py-1">{r.rewarded}</td>
                 </tr>
@@ -327,14 +327,14 @@ function AccountSection({
 
   return (
     <Card title="Hesap yetkisi">
-      <p className="mb-3 text-xs" style={{ color: "var(--text-muted)" }}>
+      <p className="mb-3 text-caption" style={{ color: "var(--text-muted)" }}>
         E-posta ya da kullanıcı kimliğiyle ara. Verilen süre <b>bonus</b> olarak yazılır:
         mağaza alanlarına dokunulmaz, hesap RevenueCat/Play/Apple tarafında abone görünmez.
         Her işlem <code>premium_grants</code> defterine kimin yaptığıyla birlikte düşer.
       </p>
       <Grid>
         <Txt label="E-posta ya da kullanıcı kimliği" v={query} on={setQuery} w="24rem" />
-        <label className="flex flex-col justify-end gap-1 text-xs">
+        <label className="flex flex-col justify-end gap-1 text-caption">
           <span aria-hidden>&nbsp;</span>
           <button
             type="button"
@@ -343,7 +343,7 @@ function AccountSection({
               setAcc(null);
               take(await post({ action: "find_user", query }));
             }}
-            className="rounded-chip px-4 py-1.5 text-sm font-bold on-fill disabled:opacity-60"
+            className="rounded-chip px-4 py-1.5 text-strong on-fill disabled:opacity-60"
             style={{ background: "var(--color-brand)" }}
           >
             Bul
@@ -356,25 +356,25 @@ function AccountSection({
           <div className="mt-4 rounded-panel border p-3" style={{ borderColor: "var(--border)", background: "var(--surface-2)" }}>
             <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
               <span className="font-bold">{acc.displayName || acc.name}</span>
-              <span className="text-xs" style={{ color: "var(--text-muted)" }}>{acc.email}</span>
-              <span className="font-mono text-xs" style={{ color: "var(--text-muted)" }}>{acc.userId}</span>
+              <span className="text-caption" style={{ color: "var(--text-muted)" }}>{acc.email}</span>
+              <span className="font-mono text-caption" style={{ color: "var(--text-muted)" }}>{acc.userId}</span>
             </div>
-            <p className="mt-2 text-sm font-bold" style={{ color: acc.premium ? "var(--color-mint)" : "var(--text-muted)" }}>
+            <p className="mt-2 text-strong" style={{ color: acc.premium ? "var(--color-mint)" : "var(--text-muted)" }}>
               {acc.premium ? `Premium · ${when(acc.until)} tarihine kadar` : "Ücretsiz"}
               {acc.premium && acc.source ? ` · kaynak: ${acc.source === "store" ? "mağaza aboneliği" : "bonus"}` : ""}
             </p>
             {acc.store && (
-              <p className="mt-1 text-xs" style={{ color: "var(--text-muted)" }}>
+              <p className="mt-1 text-caption" style={{ color: "var(--text-muted)" }}>
                 Mağaza: {acc.store.provider ?? "?"} · {acc.store.platform ?? "?"} · {acc.store.product ?? "?"} ·
                 durum {acc.store.state ?? "?"} · {when(acc.store.until)}
               </p>
             )}
             {acc.bonusDaysPending > 0 && (
-              <p className="mt-1 text-xs" style={{ color: "var(--text-muted)" }}>
+              <p className="mt-1 text-caption" style={{ color: "var(--text-muted)" }}>
                 Bekleyen bonus: {acc.bonusDaysPending} gün — pencere, kullanıcının yetkisi ilk okunduğunda başlar.
               </p>
             )}
-            <p className="mt-1 text-xs" style={{ color: "var(--text-muted)" }}>
+            <p className="mt-1 text-caption" style={{ color: "var(--text-muted)" }}>
               Sıcak yol önbelleği (<code>profiles.premium_until</code>): {when(acc.cachedUntil)}
             </p>
           </div>
@@ -388,7 +388,7 @@ function AccountSection({
               type="button"
               disabled={busy || days <= 0}
               onClick={async () => take(await post({ action: "grant_days", userId: acc.userId, days, note }))}
-              className="rounded-panel px-4 py-2 text-sm font-bold on-fill disabled:opacity-60"
+              className="rounded-panel px-4 py-2 text-strong on-fill disabled:opacity-60"
               style={{ background: "var(--color-brand)" }}
             >
               {days} gün premium ver
@@ -400,13 +400,13 @@ function AccountSection({
                 if (!armed) return setArmed(true);
                 take(await post({ action: "revoke", userId: acc.userId, note }));
               }}
-              className="rounded-panel px-4 py-2 text-sm font-semibold disabled:opacity-60"
+              className="rounded-panel px-4 py-2 text-strong disabled:opacity-60"
               style={armed ? { background: "var(--color-rose)", color: "var(--on-fill)" } : { background: "var(--surface-2)" }}
             >
               {armed ? "Emin misin? Yetkiyi kaldır" : "Yetkiyi kaldır"}
             </button>
             {armed && (
-              <button type="button" onClick={() => setArmed(false)} className="text-xs font-semibold underline">
+              <button type="button" onClick={() => setArmed(false)} className="text-caption underline">
                 Vazgeç
               </button>
             )}
@@ -414,7 +414,7 @@ function AccountSection({
 
           {acc.grants.length > 0 && (
             <div className="mt-4 overflow-x-auto">
-              <table className="w-full text-sm">
+              <table className="w-full text-body">
                 <thead>
                   <tr className="text-left" style={{ color: "var(--text-muted)" }}>
                     <th className="py-1">Tarih</th>
@@ -427,11 +427,11 @@ function AccountSection({
                 <tbody>
                   {acc.grants.map((g, i) => (
                     <tr key={`${g.at}-${i}`} className="border-t" style={{ borderColor: "var(--border)" }}>
-                      <td className="py-1 text-xs">{when(g.at)}</td>
-                      <td className="py-1 text-xs">{g.source}</td>
-                      <td className="py-1 text-xs">{g.minutes ? `${Math.round(g.minutes / (24 * 60))} gün` : "—"}</td>
-                      <td className="py-1 text-xs" style={{ color: "var(--text-muted)" }}>{g.actor ?? "—"}</td>
-                      <td className="py-1 text-xs" style={{ color: "var(--text-muted)" }}>{g.note ?? "—"}</td>
+                      <td className="py-1 text-caption">{when(g.at)}</td>
+                      <td className="py-1 text-caption">{g.source}</td>
+                      <td className="py-1 text-caption">{g.minutes ? `${Math.round(g.minutes / (24 * 60))} gün` : "—"}</td>
+                      <td className="py-1 text-caption" style={{ color: "var(--text-muted)" }}>{g.actor ?? "—"}</td>
+                      <td className="py-1 text-caption" style={{ color: "var(--text-muted)" }}>{g.note ?? "—"}</td>
                     </tr>
                   ))}
                 </tbody>
@@ -472,7 +472,7 @@ function CodesSection({
 
   return (
     <Card title="Promo kodları">
-      <p className="mb-3 text-xs" style={{ color: "var(--text-muted)" }}>
+      <p className="mb-3 text-caption" style={{ color: "var(--text-muted)" }}>
         Kod üç platformda da geçerli ve mağazadan bağımsız. Dağıtım bağlantısı:{" "}
         <code>{origin}/premium?code=KOD</code> — bağlantıya tıklayan kullanıcıda kod alanı
         dolu gelir.
@@ -508,7 +508,7 @@ function CodesSection({
             ]);
           }
         }}
-        className="mt-3 rounded-panel px-4 py-2 text-sm font-bold on-fill disabled:opacity-60"
+        className="mt-3 rounded-panel px-4 py-2 text-strong on-fill disabled:opacity-60"
         style={{ background: "var(--color-brand)" }}
       >
         Kod üret
@@ -516,11 +516,11 @@ function CodesSection({
 
       {made.length > 0 && (
         <div className="mt-3 rounded-panel border p-3" style={{ borderColor: "var(--border)", background: "var(--surface-2)" }}>
-          <p className="mb-2 text-xs font-bold">Üretilen kodlar — bu listeyi şimdi kopyala.</p>
+          <p className="mb-2 text-caption">Üretilen kodlar — bu listeyi şimdi kopyala.</p>
           <textarea
             readOnly
             rows={Math.min(10, made.length + 1)}
-            className="w-full rounded-tile p-2 font-mono text-xs"
+            className="w-full rounded-tile p-2 font-mono text-caption"
             style={{ background: "var(--surface)" }}
             value={made.map((c) => `${c}\t${origin}/premium?code=${c}`).join("\n")}
           />
@@ -528,7 +528,7 @@ function CodesSection({
       )}
 
       <div className="mt-4 overflow-x-auto">
-        <table className="w-full text-sm">
+        <table className="w-full text-body">
           <thead>
             <tr className="text-left" style={{ color: "var(--text-muted)" }}>
               <th className="py-1">Kod</th>
@@ -546,7 +546,7 @@ function CodesSection({
                 <td className="py-1">
                   {c.uses}/{c.maxUses}
                 </td>
-                <td className="py-1 text-xs" style={{ color: "var(--text-muted)" }}>{c.campaign ?? "—"}</td>
+                <td className="py-1 text-caption" style={{ color: "var(--text-muted)" }}>{c.campaign ?? "—"}</td>
                 <td className="py-1 text-right">
                   {c.id > 0 && (
                     <button
@@ -561,7 +561,7 @@ function CodesSection({
                           );
                         }
                       }}
-                      className="rounded-chip px-2 py-1 text-xs font-semibold"
+                      className="rounded-chip px-2 py-1 text-caption"
                       style={{ background: "var(--surface-2)" }}
                     >
                       {c.disabledAt ? "Aç" : "Kapat"}
@@ -580,7 +580,7 @@ function CodesSection({
 function Card({ title, children }: { title: string; children: React.ReactNode }) {
   return (
     <section className="mt-6 rounded-card border p-4" style={{ borderColor: "var(--border)", background: "var(--surface)" }}>
-      <h2 className="mb-2 text-base font-bold">{title}</h2>
+      <h2 className="mb-2 text-h3">{title}</h2>
       {children}
     </section>
   );
@@ -592,13 +592,13 @@ function Grid({ children }: { children: React.ReactNode }) {
 
 function Num({ label, v, on, w = "12rem" }: { label: string; v: number; on: (n: number) => void; w?: string }) {
   return (
-    <label className="flex flex-col gap-1 text-xs" style={{ width: w }}>
+    <label className="flex flex-col gap-1 text-caption" style={{ width: w }}>
       <span style={{ color: "var(--text-muted)" }}>{label}</span>
       <input
         type="number"
         value={v}
         onChange={(e) => on(Number(e.target.value))}
-        className="rounded-tile border px-2 py-1.5 text-sm"
+        className="rounded-tile border px-2 py-1.5 text-body"
         style={{ borderColor: "var(--border)", background: "var(--surface-2)" }}
       />
     </label>
@@ -607,13 +607,13 @@ function Num({ label, v, on, w = "12rem" }: { label: string; v: number; on: (n: 
 
 function Txt({ label, v, on, w = "12rem" }: { label: string; v: string; on: (s: string) => void; w?: string }) {
   return (
-    <label className="flex flex-col gap-1 text-xs" style={{ width: w }}>
+    <label className="flex flex-col gap-1 text-caption" style={{ width: w }}>
       <span style={{ color: "var(--text-muted)" }}>{label}</span>
       <input
         type="text"
         value={v}
         onChange={(e) => on(e.target.value)}
-        className="rounded-tile border px-2 py-1.5 text-sm"
+        className="rounded-tile border px-2 py-1.5 text-body"
         style={{ borderColor: "var(--border)", background: "var(--surface-2)" }}
       />
     </label>

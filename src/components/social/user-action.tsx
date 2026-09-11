@@ -47,9 +47,9 @@ export function UserAction({
     }
   }
 
-  const size = compact ? "h-8 px-3 text-xs" : "h-9 px-3.5 text-xs";
+  const size = compact ? "h-8 px-3 text-caption" : "h-9 px-3.5 text-caption";
   if (state === "self") return null;
-  if (state === "blocked") return <span className="muted text-xs">{t("useractionbutton.blocked")}</span>;
+  if (state === "blocked") return <span className="muted text-caption">{t("useractionbutton.blocked")}</span>;
 
   let button: React.ReactNode;
   if (state === "friends") {
@@ -101,7 +101,7 @@ export function UserAction({
       </button>
     );
   } else if (state === "declined") {
-    button = <span className="muted text-xs">{t("useractionbutton.in_week")}</span>;
+    button = <span className="muted text-caption">{t("useractionbutton.in_week")}</span>;
   } else {
     button = (
       <button
@@ -124,7 +124,7 @@ export function UserAction({
   return (
     <span className="flex flex-col items-end gap-1">
       {button}
-      {err ? <span className="text-[11px]" style={{ color: "var(--color-rose)" }}>{err}</span> : null}
+      {err ? <span className="text-micro" style={{ color: "var(--color-rose)" }}>{err}</span> : null}
     </span>
   );
 }

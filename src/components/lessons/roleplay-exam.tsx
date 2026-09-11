@@ -271,7 +271,7 @@ export function RoleplayExam({ lesson, cando }: { lesson: Lesson; cando: string[
         </div>
         {best.length ? (
           <div className="mt-3">
-            <p className="muted text-[11px] font-bold uppercase tracking-wide">{t("rpexam.best_sentences")}</p>
+            <p className="muted text-micro uppercase tracking-wide">{t("rpexam.best_sentences")}</p>
             <ul className="mt-1 space-y-1">
               {best.map((s) => (
                 <li key={s} className="rounded-panel px-3 py-2 text-sm surface-2" lang={lesson.course}>

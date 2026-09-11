@@ -140,7 +140,7 @@ export function Inbox() {
           title={t("inbox.no_notifications")}
           text={t("inbox.friend_requests_reactions_nudges")}
         />
-        {err ? <p className="mt-2 text-center text-xs" style={{ color: "var(--color-rose)" }}>{err}</p> : null}
+        {err ? <p className="mt-2 text-center text-caption" style={{ color: "var(--color-rose)" }}>{err}</p> : null}
       </>
     );
   }
@@ -189,11 +189,11 @@ export function Inbox() {
         })}
       </ol>
       {cursor ? (
-        <button className="btn btn-ghost h-9 text-xs" disabled={busy} onClick={() => void load(cursor)}>
+        <button className="btn btn-ghost h-9 text-caption" disabled={busy} onClick={() => void load(cursor)}>
           {t(busy ? "social.loading" : "social.older")}
         </button>
       ) : null}
-      {err ? <p className="text-center text-xs" style={{ color: "var(--color-rose)" }}>{err}</p> : null}
+      {err ? <p className="text-center text-caption" style={{ color: "var(--color-rose)" }}>{err}</p> : null}
     </div>
   );
 }

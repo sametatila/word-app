@@ -158,7 +158,7 @@ export function QuestCard() {
         </h2>
         {claimable > 0 ? (
           <span
-            className="rounded-full px-2 py-0.5 text-[11px] font-bold"
+            className="rounded-full px-2 py-0.5 text-micro"
             style={{
               background: "color-mix(in srgb, var(--color-mint) 18%, transparent)",
               color: "var(--color-mint)",
@@ -261,7 +261,7 @@ export function QuestCard() {
             {board.allClaimed ? t("dailyquests.all_three_done") : t("dailyquests.all_three_done_sub")}
           </p>
           {board.allClaimed ? (
-            <span className="muted shrink-0 text-[11px] font-semibold">+{ALL_DONE_XP} XP</span>
+            <span className="muted shrink-0 text-micro">+{ALL_DONE_XP} XP</span>
           ) : (
             <button
               onClick={() => void claim(ALL_DONE_ID)}

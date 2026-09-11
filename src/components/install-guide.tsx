@@ -156,7 +156,7 @@ export function InstallGuide({ tone = "surface" }: { tone?: "surface" | "plain" 
               {STEPS[p].steps.map((step, i) => (
                 <li key={step} className="flex gap-2.5 text-sm">
                   <span
-                    className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full text-[11px] font-bold tabular-nums"
+                    className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full text-micro tabular-nums"
                     style={{ background: "var(--surface-2)" }}
                   >
                     {i + 1}

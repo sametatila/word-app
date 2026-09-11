@@ -161,7 +161,7 @@ export function SpeakingPlayer({ exercise, backHref }: { exercise: SkillExercise
         <p className="muted text-sm">{task.tr}</p>
 
         {task.hint ? (
-          <p className="mt-3 rounded-panel px-3 py-2 text-[13px] leading-relaxed surface-2">{task.hint}</p>
+          <p className="mt-3 rounded-panel px-3 py-2 text-caption leading-relaxed surface-2">{task.hint}</p>
         ) : null}
 
         {phase === "idle" || phase === "failed" ? (
@@ -205,7 +205,7 @@ export function SpeakingPlayer({ exercise, backHref }: { exercise: SkillExercise
             {score.overall < PASS_SCORE && task.confusions?.length ? (
               <ul className="mt-3 space-y-1.5">
                 {task.confusions.map((c, i) => (
-                  <li key={i} className="rounded-panel px-3 py-2 text-[13px] leading-relaxed surface-2">
+                  <li key={i} className="rounded-panel px-3 py-2 text-caption leading-relaxed surface-2">
                     {c.fix}
                   </li>
                 ))}
@@ -222,7 +222,7 @@ export function SpeakingPlayer({ exercise, backHref }: { exercise: SkillExercise
                       key={i}
                       lang={lang}
                       title={w.heard ? `duyulan: ${w.heard}` : undefined}
-                      className="rounded px-1.5 py-0.5 text-[13px] font-semibold"
+                      className="rounded px-1.5 py-0.5 text-caption"
                       style={{
                         background:
                           w.status === "ok"
@@ -241,7 +241,7 @@ export function SpeakingPlayer({ exercise, backHref }: { exercise: SkillExercise
                     {score.words
                       .filter((w) => w.hint)
                       .map((w, i) => (
-                        <li key={i} className="rounded-panel px-3 py-2 text-[13px] leading-relaxed surface-2">
+                        <li key={i} className="rounded-panel px-3 py-2 text-caption leading-relaxed surface-2">
                           <b lang={lang}>{w.word}</b> — {w.hint}
                         </li>
                       ))}

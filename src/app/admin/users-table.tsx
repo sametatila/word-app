@@ -66,11 +66,11 @@ export function UsersTable({ users }: { users: U[] }) {
         value={q}
         onChange={(e) => setQ(e.target.value)}
         placeholder="Ara: ad, kimlik, seviye, kurs…"
-        className="mb-3 w-full rounded-tile border px-3 py-2 text-sm"
+        className="mb-3 w-full rounded-tile border px-3 py-2 text-body"
         style={{ borderColor: "var(--border)", background: "var(--surface-2)", color: "var(--text)" }}
       />
       <div className="overflow-x-auto">
-        <table className="w-full text-left text-sm">
+        <table className="w-full text-left text-body">
           <thead style={{ color: "var(--text-muted)" }}>
             <tr>
               <Th k="name" label="Ad" sort={sort} dir={dir} onSort={onSort} />
@@ -99,8 +99,8 @@ export function UsersTable({ users }: { users: U[] }) {
           </tbody>
         </table>
       </div>
-      {filtered.length === 0 && <div className="mt-2 text-sm" style={{ color: "var(--text-muted)" }}>Eşleşme yok.</div>}
-      {filtered.length > 200 && <div className="mt-2 text-xs" style={{ color: "var(--text-muted)" }}>İlk 200 gösteriliyor ({filtered.length} eşleşme). Aramayı daralt.</div>}
+      {filtered.length === 0 && <div className="mt-2 text-body" style={{ color: "var(--text-muted)" }}>Eşleşme yok.</div>}
+      {filtered.length > 200 && <div className="mt-2 text-caption" style={{ color: "var(--text-muted)" }}>İlk 200 gösteriliyor ({filtered.length} eşleşme). Aramayı daralt.</div>}
     </div>
   );
 }

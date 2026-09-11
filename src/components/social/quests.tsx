@@ -240,7 +240,7 @@ export function QuestCard({ q, me, busy, onAct }: { q: QuestView; me: string; bu
               <div style={{ flex: 1, background: "var(--color-sky)" }} />
             </div>
           </div>
-          <p className="muted mt-1.5 flex justify-between text-[11px] tabular-nums">
+          <p className="muted mt-1.5 flex justify-between text-micro tabular-nums">
             <span style={{ color: "var(--color-brand)" }}>{t("quests.my_xp", { xp: formatNumber(q.myXp, lang) })}</span>
             <span className="font-bold">
               {formatNumber(q.totalXp, lang)} / {formatNumber(q.targetXp, lang)}
@@ -254,7 +254,7 @@ export function QuestCard({ q, me, busy, onAct }: { q: QuestView; me: string; bu
               Android sonucu açıkça yazıyor; başkasını etkileyen bir eylemde
               bunun söylenmemesi olmaz. */}
           <div className="mt-2 text-right">
-            <button className="muted text-[11px]" onClick={() => { if (window.confirm(`${t("quests.leave_title")}\n\n${t("quests.leave_text")}`)) void onAct(() => social.questAction(q.id, "cancel")); }}>
+            <button className="muted text-micro" onClick={() => { if (window.confirm(`${t("quests.leave_title")}\n\n${t("quests.leave_text")}`)) void onAct(() => social.questAction(q.id, "cancel")); }}>
               {t("quests.leave_quest")}
             </button>
           </div>

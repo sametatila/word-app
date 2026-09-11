@@ -170,7 +170,7 @@ export function ProgressPanel() {
 
             {data.milestones.length ? (
               <div>
-                <p className="muted text-[11px] font-bold uppercase tracking-wide">{t("progw.milestones")}</p>
+                <p className="muted text-micro uppercase tracking-wide">{t("progw.milestones")}</p>
                 <ul className="mt-1.5 space-y-1 text-sm">
                   {data.milestones.map((m) => (
                     <li key={`${m.at}-${m.text}`} className="flex items-baseline gap-2">

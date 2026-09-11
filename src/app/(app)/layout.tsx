@@ -68,8 +68,8 @@ async function SessionUnavailable() {
   const t = await getT();
   return (
     <div className="mx-auto flex min-h-dvh w-full max-w-md flex-col items-center justify-center gap-4 px-6 text-center">
-      <h1 className="text-xl font-bold">{t("common.connection_failed")}</h1>
-      <p className="muted text-sm">
+      <h1 className="text-h2">{t("common.connection_failed")}</h1>
+      <p className="muted text-body">
         {t("appw.offline_body")}
       </p>
       <Link href="/learn" prefetch={false} className="btn btn-primary px-5 py-3">

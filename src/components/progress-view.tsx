@@ -430,7 +430,7 @@ function ActivityStrip({ byDay, today }: { byDay: Map<string, DayRow>; today: st
         {days.map((d) => (
           <span
             key={d.day}
-            className={`min-w-0 flex-1 text-center text-[10px] leading-none ${
+            className={`min-w-0 flex-1 text-center text-micro leading-none ${
               d.day === today ? "font-bold" : d.weekday >= 5 ? "muted opacity-60" : "muted"
             }`}
           >

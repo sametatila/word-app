@@ -125,14 +125,14 @@ export function CandoCard({ bare = false }: { bare?: boolean } = {}) {
       <CardGrid min={320} className="mt-3">
         {skills.map((sk) => (
         <div key={sk}>
-          <p className="muted text-[11px] font-bold uppercase tracking-wide">{t(CANDO_SKILL_LABEL_KEYS[sk])}</p>
+          <p className="muted text-micro uppercase tracking-wide">{t(CANDO_SKILL_LABEL_KEYS[sk])}</p>
           <ul className="mt-1 space-y-1">
             {shown
               .filter((i) => i.cando.skill === sk)
               .map((i) => (
                 <li key={i.cando.id} className="flex items-start gap-2 text-sm">
                   <span
-                    className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full text-[10px] font-bold"
+                    className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full text-micro"
                     style={{
                       background: i.state === "proven" ? "var(--color-mint)" : i.state === "progressing" ? "color-mix(in srgb, var(--color-flame) 25%, transparent)" : "var(--surface-2)",
                       color: i.state === "proven" ? "white" : "var(--text-muted)",

@@ -79,7 +79,7 @@ export function ImmersionQuizPlayer({
         </span>
         <div className="min-w-0">
           <h1 className="truncate font-bold">{title}</h1>
-          <p className="muted truncate text-xs">{subtitle}</p>
+          <p className="muted truncate text-caption">{subtitle}</p>
         </div>
       </div>
 

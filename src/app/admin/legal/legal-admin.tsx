@@ -92,8 +92,8 @@ export function LegalAdmin({ config, documents, tokens }: { config: LegalConfig;
 
   return (
     <div className="mx-auto w-full max-w-5xl px-5 py-8">
-      <h1 className="text-2xl font-extrabold tracking-tight">Hukuki metinler ve bilgiler</h1>
-      <p className="muted mt-2 text-sm">
+      <h1 className="text-h1 tracking-tight">Hukuki metinler ve bilgiler</h1>
+      <p className="muted mt-2 text-body">
         Buradaki her şey <b>anında</b> yayına giriyor (en geç 30 sn). Metinler{" "}
         <code>legal_documents</code>, bilgiler <code>app_settings</code> tablosunda; kayıt yoksa koddaki
         varsayılan basılıyor.
@@ -110,7 +110,7 @@ export function LegalAdmin({ config, documents, tokens }: { config: LegalConfig;
           <button
             key={k}
             onClick={() => setTab(k)}
-            className={`chip h-8 px-3 text-xs ${tab === k ? "font-bold" : ""}`}
+            className={`chip h-8 px-3 text-caption ${tab === k ? "font-bold" : ""}`}
             style={tab === k ? { background: "var(--surface-2)" } : undefined}
           >
             {label}
@@ -119,7 +119,7 @@ export function LegalAdmin({ config, documents, tokens }: { config: LegalConfig;
       </div>
 
       {msg ? (
-        <p className="mt-4 rounded-panel px-3 py-2 text-sm" style={{ background: "var(--surface-2)" }}>{msg}</p>
+        <p className="mt-4 rounded-panel px-3 py-2 text-body" style={{ background: "var(--surface-2)" }}>{msg}</p>
       ) : null}
 
       {tab === "docs" ? (
@@ -149,14 +149,14 @@ export function LegalAdmin({ config, documents, tokens }: { config: LegalConfig;
             <Txt label="Sürüm (1.0 / 1.2.3)" v={cfg.version} w="10rem" on={(v) => setCfg({ ...cfg, version: v })} />
             <Txt label="Yürürlük (YYYY-AA-GG)" v={cfg.effectiveDate} w="12rem" on={(v) => setCfg({ ...cfg, effectiveDate: v })} />
           </div>
-          <h3 className="mt-6 text-sm font-bold">Sürüm geçmişi</h3>
-          <p className="muted text-xs">En yeni kayıt en üstte. Sayfada son iki kayıt gösteriliyor.</p>
+          <h3 className="mt-6 text-strong">Sürüm geçmişi</h3>
+          <p className="muted text-caption">En yeni kayıt en üstte. Sayfada son iki kayıt gösteriliyor.</p>
           {cfg.changelog.map((e, i) => (
             <div key={i} className="mt-3 rounded-panel border p-3" style={{ borderColor: "var(--border)" }}>
               <div className="flex flex-wrap items-end gap-3">
                 <Txt label="Sürüm" v={e.version} w="8rem" on={(v) => setCfg({ ...cfg, changelog: cfg.changelog.map((x, j) => (j === i ? { ...x, version: v } : x)) })} />
                 <Txt label="Tarih" v={e.date} w="10rem" on={(v) => setCfg({ ...cfg, changelog: cfg.changelog.map((x, j) => (j === i ? { ...x, date: v } : x)) })} />
-                <button className="btn btn-ghost h-8 px-3 text-xs" onClick={() => setCfg({ ...cfg, changelog: cfg.changelog.filter((_, j) => j !== i) })}>
+                <button className="btn btn-ghost h-8 px-3 text-caption" onClick={() => setCfg({ ...cfg, changelog: cfg.changelog.filter((_, j) => j !== i) })}>
                   Kaydı sil
                 </button>
               </div>
@@ -172,7 +172,7 @@ export function LegalAdmin({ config, documents, tokens }: { config: LegalConfig;
             </div>
           ))}
           <button
-            className="btn btn-ghost mt-3 h-8 px-3 text-xs"
+            className="btn btn-ghost mt-3 h-8 px-3 text-caption"
             onClick={() => setCfg({ ...cfg, changelog: [{ version: cfg.version, date: cfg.effectiveDate, changes: { tr: [""], en: [""], de: [""] } }, ...cfg.changelog] })}
           >
             + Kayıt ekle
@@ -192,7 +192,7 @@ export function LegalAdmin({ config, documents, tokens }: { config: LegalConfig;
             />
           ))}
           <button
-            className="btn btn-ghost mt-3 h-8 px-3 text-xs"
+            className="btn btn-ghost mt-3 h-8 px-3 text-caption"
             onClick={() => setCfg({ ...cfg, processors: [...cfg.processors, emptyProcessor()] })}
           >
             + Sağlayıcı ekle
@@ -203,7 +203,7 @@ export function LegalAdmin({ config, documents, tokens }: { config: LegalConfig;
 
       {tab === "platform" ? (
         <Card title="Platform ve adil kullanım" note="iOS anahtarı açılınca metinlerin kapsam cümlesi değişiyor, Apple maddeleri basılıyor ve alıcılar tablosuna iki Apple satırı giriyor.">
-          <label className="flex items-center gap-2 text-sm">
+          <label className="flex items-center gap-2 text-body">
             <input
               type="checkbox"
               checked={cfg.platforms.ios}
@@ -211,14 +211,14 @@ export function LegalAdmin({ config, documents, tokens }: { config: LegalConfig;
             />
             <span>
               Metinler iOS uygulamasını da kapsıyor
-              <span className="muted block text-xs">
+              <span className="muted block text-caption">
                 Yalnız uygulama gerçekten Apple&apos;a gittiğinde açılmalı: kapalıyken Apple satırları basılmıyor,
                 açıkken &quot;Apple ile giriş&quot; bir alıcı olarak beyan ediliyor.
               </span>
             </span>
           </label>
-          <h3 className="mt-5 text-sm font-bold">Adil kullanım tavanları (günlük)</h3>
-          <p className="muted text-xs">Şartlarda {"{{fairUse:…}}"} belirteçleriyle geçiyor; koddaki gerçek kotalarla aynı olmalı.</p>
+          <h3 className="mt-5 text-strong">Adil kullanım tavanları (günlük)</h3>
+          <p className="muted text-caption">Şartlarda {"{{fairUse:…}}"} belirteçleriyle geçiyor; koddaki gerçek kotalarla aynı olmalı.</p>
           <div className="mt-2 flex flex-wrap gap-3">
             {Object.keys(cfg.fairUse).map((k) => (
               <Num
@@ -229,7 +229,7 @@ export function LegalAdmin({ config, documents, tokens }: { config: LegalConfig;
               />
             ))}
           </div>
-          <h3 className="mt-5 text-sm font-bold">Sunucu konumu ({"{{hosting}}"})</h3>
+          <h3 className="mt-5 text-strong">Sunucu konumu ({"{{hosting}}"})</h3>
           <div className="mt-2 flex flex-wrap gap-3">
             {LEGAL_LOCALES.map((l) => (
               <Txt key={l} label={LOC_LABEL[l]} v={cfg.hosting[l]} w="16rem" on={(v) => setCfg({ ...cfg, hosting: { ...cfg.hosting, [l]: v } })} />
@@ -277,19 +277,19 @@ function DocumentsTab({ docs, setDocs, cfg, tokens, post, busy, setMsg }: {
     <div className="mt-5">
       <div className="flex flex-wrap items-center gap-2">
         {(Object.keys(DOC_LABEL) as (keyof Docs)[]).map((d) => (
-          <button key={d} onClick={() => setDoc(d)} className={`chip h-8 px-3 text-xs ${doc === d ? "font-bold" : ""}`} style={doc === d ? { background: "var(--surface-2)" } : undefined}>
+          <button key={d} onClick={() => setDoc(d)} className={`chip h-8 px-3 text-caption ${doc === d ? "font-bold" : ""}`} style={doc === d ? { background: "var(--surface-2)" } : undefined}>
             {DOC_LABEL[d]}
           </button>
         ))}
         <span className="mx-2 opacity-40">|</span>
         {LEGAL_LOCALES.map((l) => (
-          <button key={l} onClick={() => setLocale(l)} className={`chip h-8 px-3 text-xs ${locale === l ? "font-bold" : ""}`} style={locale === l ? { background: "var(--surface-2)" } : undefined}>
+          <button key={l} onClick={() => setLocale(l)} className={`chip h-8 px-3 text-caption ${locale === l ? "font-bold" : ""}`} style={locale === l ? { background: "var(--surface-2)" } : undefined}>
             {LOC_LABEL[l]}
             {docs[doc][l].overridden ? " ●" : ""}
           </button>
         ))}
       </div>
-      <p className="muted mt-2 text-xs">
+      <p className="muted mt-2 text-caption">
         {cur.overridden
           ? `Bu belge panelden düzenlenmiş${cur.updatedBy ? ` (${cur.updatedBy})` : ""}${cur.updatedAt ? ` · ${cur.updatedAt.slice(0, 16).replace("T", " ")}` : ""}. ● işareti değiştirilmiş dilleri gösteriyor.`
           : "Bu belge koddaki varsayılandan basılıyor."}
@@ -302,8 +302,8 @@ function DocumentsTab({ docs, setDocs, cfg, tokens, post, busy, setMsg }: {
       <Area label={`"Kısaca" maddeleri — her satır bir madde (boş bırakılırsa kutu hiç basılmaz)`} rows={4} v={cur.summary.join("\n")} on={(v) => patch({ summary: v.split("\n") })} />
 
       <div className="mt-4 flex items-center justify-between">
-        <h3 className="text-sm font-bold">Gövde (markdown)</h3>
-        <label className="flex items-center gap-2 text-xs">
+        <h3 className="text-strong">Gövde (markdown)</h3>
+        <label className="flex items-center gap-2 text-caption">
           <input type="checkbox" checked={preview} onChange={(e) => setPreview(e.target.checked)} />
           Önizleme
         </label>
@@ -313,7 +313,7 @@ function DocumentsTab({ docs, setDocs, cfg, tokens, post, busy, setMsg }: {
           value={cur.body}
           onChange={(e) => patch({ body: e.target.value })}
           spellCheck={false}
-          className="w-full rounded-tile border p-3 font-mono text-xs leading-relaxed"
+          className="w-full rounded-tile border p-3 font-mono text-caption leading-relaxed"
           style={{ borderColor: "var(--border)", background: "var(--surface-2)", minHeight: "32rem" }}
         />
         {preview ? (
@@ -325,11 +325,11 @@ function DocumentsTab({ docs, setDocs, cfg, tokens, post, busy, setMsg }: {
       </div>
 
       <details className="mt-3">
-        <summary className="cursor-pointer text-xs" style={{ color: "var(--text-muted)" }}>Kullanılabilir belirteçler ({tokens.length})</summary>
+        <summary className="cursor-pointer text-caption" style={{ color: "var(--text-muted)" }}>Kullanılabilir belirteçler ({tokens.length})</summary>
         <p className="mt-2 flex flex-wrap gap-1.5">
-          {tokens.map((t) => <code key={t} className="rounded px-1.5 py-0.5 text-[11px]" style={{ background: "var(--surface-2)" }}>{`{{${t}}}`}</code>)}
+          {tokens.map((t) => <code key={t} className="rounded px-1.5 py-0.5 text-micro" style={{ background: "var(--surface-2)" }}>{`{{${t}}}`}</code>)}
         </p>
-        <p className="muted mt-2 text-xs">
+        <p className="muted mt-2 text-caption">
           Başlık <code>## </code>, alt başlık <code>### </code>, liste <code>- </code>, kalın <code>**…**</code>,
           bağlantı <code>[metin](adres)</code>. Tablo: başlık satırı + <code>|---|---|</code>; başlıksız tablo için
           doğrudan <code>|---|---|</code> ile başla. {"{{entityBlock:…}}"} ve {"{{processorsTable}}"} kendi satırlarında durmalı.
@@ -337,8 +337,8 @@ function DocumentsTab({ docs, setDocs, cfg, tokens, post, busy, setMsg }: {
       </details>
 
       <div className="mt-4 flex items-center gap-3">
-        <button className="btn h-9 px-4 text-sm" disabled={busy} onClick={save}>Kaydet</button>
-        <button className="btn btn-ghost h-9 px-4 text-sm" disabled={busy || !cur.overridden} onClick={reset}>Varsayılana dön</button>
+        <button className="btn h-9 px-4 text-body" disabled={busy} onClick={save}>Kaydet</button>
+        <button className="btn btn-ghost h-9 px-4 text-body" disabled={busy || !cur.overridden} onClick={reset}>Varsayılana dön</button>
       </div>
     </div>
   );
@@ -360,13 +360,13 @@ function ProcessorRow({ p, onChange, onDelete }: { p: ConfigProcessor; onChange:
   return (
     <div className="mt-3 rounded-panel border p-3" style={{ borderColor: "var(--border)" }}>
       <div className="flex flex-wrap items-center gap-3">
-        <button className="text-sm font-semibold" onClick={() => setOpen(!open)}>
+        <button className="text-strong" onClick={() => setOpen(!open)}>
           {open ? "▾" : "▸"} {p.name.tr || p.name.en || "(adsız)"}
         </button>
-        <span className="muted text-xs">{p.purpose.tr}</span>
-        {p.iosOnly ? <span className="chip h-6 px-2 text-[11px]">yalnız iOS</span> : null}
+        <span className="muted text-caption">{p.purpose.tr}</span>
+        {p.iosOnly ? <span className="chip h-6 px-2 text-micro">yalnız iOS</span> : null}
         <span className="flex-1" />
-        <button className="btn btn-ghost h-8 px-3 text-xs" onClick={onDelete}>Sil</button>
+        <button className="btn btn-ghost h-8 px-3 text-caption" onClick={onDelete}>Sil</button>
       </div>
       {open ? (
         <div className="mt-3 flex flex-col gap-3">
@@ -383,7 +383,7 @@ function ProcessorRow({ p, onChange, onDelete }: { p: ConfigProcessor; onChange:
               ))}
             </div>
           ))}
-          <label className="flex items-center gap-2 text-xs">
+          <label className="flex items-center gap-2 text-caption">
             <input type="checkbox" checked={Boolean(p.iosOnly)} onChange={(e) => onChange({ ...p, iosOnly: e.target.checked })} />
             Yalnız iOS yayındayken bas
           </label>
@@ -396,8 +396,8 @@ function ProcessorRow({ p, onChange, onDelete }: { p: ConfigProcessor; onChange:
 function Card({ title, note, children }: { title: string; note?: string; children: React.ReactNode }) {
   return (
     <section className="card mt-5 p-5">
-      <h2 className="text-base font-bold">{title}</h2>
-      {note ? <p className="muted mt-1 text-xs">{note}</p> : null}
+      <h2 className="text-h3">{title}</h2>
+      {note ? <p className="muted mt-1 text-caption">{note}</p> : null}
       <div className="mt-4">{children}</div>
     </section>
   );
@@ -406,20 +406,20 @@ function Card({ title, note, children }: { title: string; note?: string; childre
 function SaveRow({ onSave, busy }: { onSave: () => void; busy: boolean }) {
   return (
     <div className="mt-5">
-      <button className="btn h-9 px-4 text-sm" disabled={busy} onClick={onSave}>Kaydet</button>
+      <button className="btn h-9 px-4 text-body" disabled={busy} onClick={onSave}>Kaydet</button>
     </div>
   );
 }
 
 function Txt({ label, v, on, w = "12rem" }: { label: string; v: string; on: (s: string) => void; w?: string }) {
   return (
-    <label className="flex flex-col gap-1 text-xs" style={{ width: w }}>
+    <label className="flex flex-col gap-1 text-caption" style={{ width: w }}>
       <span style={{ color: "var(--text-muted)" }}>{label}</span>
       <input
         type="text"
         value={v}
         onChange={(e) => on(e.target.value)}
-        className="rounded-tile border px-2 py-1.5 text-sm"
+        className="rounded-tile border px-2 py-1.5 text-body"
         style={{ borderColor: "var(--border)", background: "var(--surface-2)" }}
       />
     </label>
@@ -428,13 +428,13 @@ function Txt({ label, v, on, w = "12rem" }: { label: string; v: string; on: (s: 
 
 function Num({ label, v, on }: { label: string; v: number; on: (n: number) => void }) {
   return (
-    <label className="flex flex-col gap-1 text-xs" style={{ width: "12rem" }}>
+    <label className="flex flex-col gap-1 text-caption" style={{ width: "12rem" }}>
       <span style={{ color: "var(--text-muted)" }}>{label}</span>
       <input
         type="number"
         value={v}
         onChange={(e) => on(Number(e.target.value))}
-        className="rounded-tile border px-2 py-1.5 text-sm"
+        className="rounded-tile border px-2 py-1.5 text-body"
         style={{ borderColor: "var(--border)", background: "var(--surface-2)" }}
       />
     </label>
@@ -443,13 +443,13 @@ function Num({ label, v, on }: { label: string; v: number; on: (n: number) => vo
 
 function Area({ label, v, on, rows = 3 }: { label: string; v: string; on: (s: string) => void; rows?: number }) {
   return (
-    <label className="mt-3 flex flex-col gap-1 text-xs">
+    <label className="mt-3 flex flex-col gap-1 text-caption">
       <span style={{ color: "var(--text-muted)" }}>{label}</span>
       <textarea
         value={v}
         rows={rows}
         onChange={(e) => on(e.target.value)}
-        className="w-full rounded-tile border px-2 py-1.5 text-sm"
+        className="w-full rounded-tile border px-2 py-1.5 text-body"
         style={{ borderColor: "var(--border)", background: "var(--surface-2)" }}
       />
     </label>

@@ -43,7 +43,7 @@ export default async function BossPage({
         gibi okunuyordu. Tura artık sınav SONUCU ekranından giriliyor.
       */}
       <div className="mx-auto mb-3 w-full max-w-2xl text-right">
-        <Link href={`/exam/${level}/${index}`} className="muted text-xs font-semibold underline-offset-2 hover:underline">
+        <Link href={`/exam/${level}/${index}`} className="muted text-caption underline-offset-2 hover:underline">
           {t("bossw.exam_link")}
         </Link>
       </div>

@@ -34,7 +34,7 @@ export function GrammarPlayer({ exercise, backHref }: { exercise: GrammarExercis
       <p className="muted px-1 text-sm">{exercise.intro}</p>
 
       <section className="card mt-3 p-5">
-        <p className="text-[11px] font-bold uppercase tracking-wide" style={{ color: "var(--color-flame)" }}>
+        <p className="text-micro uppercase tracking-wide" style={{ color: "var(--color-flame)" }}>
           {t("item.grammar_rule")}
         </p>
         <h2 className="mt-1 text-base font-bold">{exercise.focus}</h2>
@@ -42,7 +42,7 @@ export function GrammarPlayer({ exercise, backHref }: { exercise: GrammarExercis
         {exercise.explanation.map((block, i) => (
           <div key={i} className={i > 0 ? "mt-4" : "mt-3"}>
             {block.heading ? <h3 className="text-sm font-bold">{block.heading}</h3> : null}
-            <p className="mt-1 text-[15px] leading-relaxed">{block.tr}</p>
+            <p className="mt-1 text-body leading-relaxed">{block.tr}</p>
             {block.examples?.length ? (
               <ul className="mt-2 space-y-1.5">
                 {block.examples.map((x, j) => (
@@ -55,7 +55,7 @@ export function GrammarPlayer({ exercise, backHref }: { exercise: GrammarExercis
                     >
                       <SpeakerIcon size={16} className="mt-0.5 shrink-0" style={{ color: "var(--color-brand)" }} />
                       <span className="min-w-0">
-                        <span className="block text-[15px] font-semibold" lang={lang}>
+                        <span className="block text-strong" lang={lang}>
                           {x.de}
                         </span>
                         <span className="muted block text-sm">{x.tr}</span>

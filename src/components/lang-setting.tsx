@@ -90,7 +90,7 @@ export function LangSetting({ bare = false }: { bare?: boolean } = {}) {
     return (
       <div className="px-4 py-3">
         {chips}
-        <p className="muted mt-2 text-xs leading-snug">{t("lang.app_language_sub")}</p>
+        <p className="muted mt-2 text-caption leading-snug">{t("lang.app_language_sub")}</p>
       </div>
     );
   }

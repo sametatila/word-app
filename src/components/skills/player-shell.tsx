@@ -121,7 +121,7 @@ export function PlayerShell({
         <div className="min-w-0">
           <div className="flex items-center gap-2">
             <span
-              className="rounded-chip px-1.5 py-0.5 text-[11px] font-black text-white"
+              className="rounded-chip px-1.5 py-0.5 text-micro text-white"
               style={{ background: LEVEL_TONE[exercise.level] ?? "var(--color-brand-700)" }}
             >
               {exercise.level}
@@ -224,7 +224,7 @@ export function ResultCard({
           className="mt-4 flex items-center justify-between gap-3 rounded-panel px-4 py-3 text-left surface-2"
         >
           <span className="min-w-0">
-            <span className="muted block text-[11px] font-bold uppercase tracking-wide">{t("skills.next")}</span>
+            <span className="muted block text-micro uppercase tracking-wide">{t("skills.next")}</span>
             <span className="block truncate text-sm font-semibold">{frame.next.title}</span>
           </span>
           <span className="shrink-0 text-lg" aria-hidden>

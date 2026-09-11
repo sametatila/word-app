@@ -138,7 +138,7 @@ export function AchievementWall() {
         title={t("achievements.achievements")}
         text={t("achievements.couldn_t_load_achievements")}
         action={
-          <button type="button" onClick={() => setAttempt((n) => n + 1)} className="btn btn-ghost px-4 py-2 text-sm">
+          <button type="button" onClick={() => setAttempt((n) => n + 1)} className="btn btn-ghost px-4 py-2 text-body">
             {t("common.try_again")}
           </button>
         }

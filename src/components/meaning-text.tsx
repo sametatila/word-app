@@ -28,8 +28,8 @@ export function MeaningText({
   align?: "start" | "center";
 }) {
   const main =
-    size === "lg" ? "text-xl sm:text-2xl" : size === "sm" ? "text-sm" : "text-base";
-  const sub = size === "lg" ? "text-sm" : size === "sm" ? "text-[11px]" : "text-xs";
+    size === "lg" ? "text-h2 sm:text-h1" : size === "sm" ? "text-body" : "text-h3";
+  const sub = size === "lg" ? "text-body" : size === "sm" ? "text-micro" : "text-caption";
 
   return (
     <span className={`flex flex-col ${align === "center" ? "items-center" : "items-start"}`}>

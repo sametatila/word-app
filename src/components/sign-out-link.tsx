@@ -47,12 +47,12 @@ export function SignOutLink({ email, className }: { email?: string | null; class
       {/* E-posta dar ekranda gizli: başlıkta yeri yok, taşarsa düğmeyi ekran
           dışına itiyor. Geniş ekranda duruyor çünkü "hangi hesap" sorusu çoğu
           zaman çıkışın sebebi. */}
-      {email ? <span className="muted hidden text-xs sm:inline">{email}</span> : null}
+      {email ? <span className="muted hidden text-caption sm:inline">{email}</span> : null}
       <button
         type="button"
         onClick={() => void out()}
         disabled={busy}
-        className="btn btn-ghost px-3 py-2.5 text-sm disabled:opacity-60"
+        className="btn btn-ghost px-3 py-2.5 text-body disabled:opacity-60"
       >
         {t("profile.log_out")}
       </button>

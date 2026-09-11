@@ -274,7 +274,7 @@ export function ListeningPlayer({ exercise, backHref }: { exercise: ListeningExe
       {showText ? (
         <section className="card mt-4 select-text p-5">
           {available ? (
-            <p className="muted mb-2 text-[11px]">{t("listenp.tap_line")}</p>
+            <p className="muted mb-2 text-micro">{t("listenp.tap_line")}</p>
           ) : null}
           <div className="space-y-2.5">
             {exercise.segments.map((seg, i) => (
@@ -283,7 +283,7 @@ export function ListeningPlayer({ exercise, backHref }: { exercise: ListeningExe
                 lang={lang}
                 onClick={() => playSegment(i)}
                 role={available ? "button" : undefined}
-                className={`rounded-chip px-2 py-1 text-[15px] leading-relaxed transition-colors ${
+                className={`rounded-chip px-2 py-1 text-body leading-relaxed transition-colors ${
                   playing && i === segIdx ? "surface-2" : ""
                 } ${available ? "cursor-pointer hover:bg-[color:var(--surface-2)]" : ""}`}
               >

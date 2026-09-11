@@ -143,7 +143,7 @@ export function MatchGame({ round, onDone }: GameProps<MatchRound>) {
                 transition={{ delay: i * 0.05, duration: 0.28 }}
                 disabled={isMatched}
                 onClick={() => chooseLeft(w.id)}
-                className={`option min-h-14 px-3 py-3 text-left text-sm font-semibold sm:text-base ${state} ${
+                className={`option min-h-14 px-3 py-3 text-left text-strong sm:text-h3 ${state} ${
                   isWrong ? "animate-shake" : ""
                 }`}
               >

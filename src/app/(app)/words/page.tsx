@@ -157,12 +157,12 @@ export default async function WordsPage({
     console.error("[words]", err);
     return (
       <div className="card mx-auto w-full max-w-md p-6 text-center">
-        <h2 className="text-lg font-bold">{t("words.couldn_t_load_your_words")}</h2>
+        <h2 className="text-h2">{t("words.couldn_t_load_your_words")}</h2>
         {/* Buraya "npm run db:push çalıştır" yazıyordu: geliştirici yönergesi,
             üretimde kullanıcının karşısına çıkıyordu ve yapabileceği bir şey
             değildi. Sebep zaten sunucu günlüğünde; kullanıcıya bağlantı
             sorunu söyleniyor. Android aynı yerde tek satır gösteriyor. */}
-        <p className="muted mt-2 text-sm">{t("social.err_offline")}</p>
+        <p className="muted mt-2 text-body">{t("social.err_offline")}</p>
         <RetryButton />
       </div>
     );

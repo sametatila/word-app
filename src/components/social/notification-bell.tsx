@@ -62,7 +62,7 @@ export function NotificationBell({ className = "" }: { className?: string }) {
       <InboxIcon size={20} />
       {unread > 0 ? (
         <span
-          className="absolute -right-[3px] -top-[3px] min-w-[18px] rounded-full px-1 text-center text-[10px] font-black leading-[18px]"
+          className="absolute -right-[3px] -top-[3px] min-w-[18px] rounded-full px-1 text-center text-micro leading-[18px]"
           /* Sayaç rozeti: parlak kehribar zemin + mürekkep yazı (6.04).
              Beyaz yazı açık temada 5.20 veriyordu ama koyu temada
              `--color-flame` 300'e düşüyor ve 1.49'a iniyordu - okunmuyordu. */
