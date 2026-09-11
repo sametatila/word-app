@@ -41,6 +41,8 @@
  * iletişim kanalı yeterli. Doldurulmamış alanlar [[...]] biçiminde kalır ve
  * sayfalarda vurguyla basılır (bkz. legal-shell Ph).
  */
+import { SPEECH_LOG_RETENTION_DAYS } from "@/lib/lessons/log-const";
+import { SESSION_MAX_DAYS } from "@/lib/auth/session-config";
 /**
  * Yürürlük tarihi ve sürüm. İkisi de EN YENİ değişikliği anlatır ve
  * LEGAL_CHANGELOG'un ilk kaydıyla aynı olmak zorundadır — kapı
@@ -139,6 +141,21 @@ export const LEGAL_ENTITY = {
    * kopya (en eskisi 28 gün) — hepsi 30 günün içinde kalır.
    */
   backupRetentionDays: "30",
+
+  /**
+   * Konuşma pratiği kaydının ve oturum kaydının saklama süresi (gün).
+   *
+   * Bu ikisi ÖTEKİ alanlardan farklı: değerleri elle yazılmıyor, kuralı
+   * uygulayan sabitten okunuyor. Sebep, politikanın verdiği sözü kodun
+   * TUTMASI gerektiği: "konuşma kayıtları 30 gün sonra silinir" cümlesi
+   * `lib/lessons/log-const` içindeki sayıyla, "oturum en çok 30 gün" cümlesi
+   * `lib/auth/session-config` içindekiyle aynı olmak zorunda. Metne düz sayı
+   * yazıldığı sürece biri değişip öteki eski sözü söylemeye devam edebilirdi
+   * — ve bu sayfa Play Console ile App Store Connect'e URL olarak verilmiş
+   * durumda, yani tutulmayan bir taahhüt olurdu.
+   */
+  speechLogDays: String(SPEECH_LOG_RETENTION_DAYS),
+  sessionMaxDays: String(SESSION_MAX_DAYS),
 } as const;
 
 /** Adil kullanım sınırları — koddaki gerçek kotalar (route dosyalarındaki sabitler). */

@@ -23,8 +23,9 @@ import { roleplayLogs } from "@/lib/db/schema";
  *      saçma olurdu.
  */
 
-/** Kaydın kaç gün tutulacağı. */
-const RETENTION_DAYS = 30;
+/* Kaydın kaç gün tutulacağı — politika metni de bunu okuyor, bkz.
+   `lib/lessons/log-const`. */
+import { SPEECH_LOG_RETENTION_DAYS as RETENTION_DAYS } from "@/lib/lessons/log-const";
 
 /** Tek turda saklanacak metnin üst sınırı — kayıt şişmesin. */
 const MAX_CHARS = 4000;

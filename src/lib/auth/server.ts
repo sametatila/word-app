@@ -18,6 +18,7 @@ import { clearFailedLogins, isLockedOut, MAX_FAILED_LOGINS, noteFailedLogin } fr
 import { captchaPlugins } from "@/lib/auth/captcha";
 import { twoFactor } from "better-auth/plugins";
 import { TWO_FACTOR_ALLOWED_ATTEMPTS, TWO_FACTOR_CODE_DIGITS, TWO_FACTOR_CODE_MINUTES, TWO_FACTOR_TRUST_DAYS } from "@/lib/auth/two-factor-config";
+import { SESSION_MAX_DAYS } from "@/lib/auth/session-config";
 
 /**
  * Self-hosted Better Auth. Oturumlar/kullanıcılar KENDİ
@@ -299,7 +300,8 @@ export const auth = betterAuth({
     },
   },
   session: {
-    expiresIn: 60 * 60 * 24 * 30, // 30 gün
+    // Süre politikada da yazılı: bkz. `lib/auth/session-config`.
+    expiresIn: SESSION_MAX_DAYS * 24 * 60 * 60,
     updateAge: 60 * 60 * 24, // günde bir tazele
     /**
      * Çerez-önbelleği: oturum verisi imzalı bir çerezde taşınır ve o süre

@@ -9320,3 +9320,48 @@ Enjeksiyon 5 (`{min}` → `30`) eski hâlde sessizce geçerdi, şimdi yakalanıy
 Bu, bu turların en sık tekrar eden dersinin bir örneği daha: **bir kapının
 yeşil olması ölçtüğünün doğru şey olduğunu göstermez.** Enjeksiyon, ölçümün
 kendisini ölçmenin tek yolu.
+
+## §11.285 — Gizlilik politikasının verdiği iki söz koda bağlı değildi
+
+Taramayı hukuki metinlere taşıdım; buradaki sınıf aynı ama bedeli farklı:
+politika sayfası Play Console ve App Store Connect'e **URL olarak verilmiş**
+durumda, yani tutulmayan bir söz yalnız yanlış metin değil.
+
+İki söz kodun davranışına bağlıydı ama metne düz sayı olarak yazılmıştı:
+
+- "Konuşma pratiği kayıtları **30 gün**, sonra kendiliğinden silinir" —
+  kuralı `lib/lessons/log` içindeki `RETENTION_DAYS` uyguluyor.
+- "Oturum süresince, **en çok 30 gün**" ve "oturum çerezi … 30 gün" —
+  kuralı `lib/auth/server` içindeki `expiresIn: 60 * 60 * 24 * 30` uyguluyor.
+
+Üçü de üç dilde ayrı yazılıydı: on beş dizge. Sabit değişse politika eski sözü
+söylemeye devam ederdi. Metinde zaten bir belirteç düzeni vardı
+(`{{backupRetentionDays}}` tam bu gerekçeyle konulmuş) — eksik olan, bu iki
+sözün ona bağlanmasıydı.
+
+`SPEECH_LOG_RETENTION_DAYS` (`lib/lessons/log-const`) ve `SESSION_MAX_DAYS`
+(`lib/auth/session-config`) açıldı; ikisi de `server-only` modüllerden
+çıkarıldı çünkü metni besleyen `lib/legal` onlardan okuyor. Yeni iki belirteç
+`{{speechLogDays}}` ve `{{sessionMaxDays}}` **değerini elle almıyor**,
+`String(sabit)` ile kuralın kendisinden alıyor.
+
+**Yan bulgu:** `ENTITY_KEYS` (belirteç sözlüğü) ile `LEGAL_ENTITY` (alanların
+kendisi) iki ayrı elle yazılmış listeydi. Yeni bir alan birine eklenip ötekine
+eklenmezse belirteç sayfada ham `{{...}}` görünür, panelde ise kaydı
+engellerdi. Liste artık `Object.keys(LEGAL_ENTITY)`den türetiliyor.
+
+**Kapı iki kez yanlış yerden ölçtü, ikisi de kendi dersini verdi:**
+
+1. İlk hâl metnin TAMAMINDA "N gün" arıyordu ve üç dilde birden "talepler en
+   geç 30 gün içinde sonuçlandırılır" cümlesine takıldı. O otuz gün
+   **kanundan** geliyor (KVKK m.13, GDPR m.12(3)) ve uygulamanın sabitine
+   bağlı değil — belirtece çevrilmesi yanlış olurdu. Tarama konuya uyan
+   satırlarla sınırlandı: ölçüm konusunu seçmeli.
+2. "Metin belirteci kullanıyor mu" sorusu **gövde düzeyinde** (`body.includes`)
+   soruluyordu, oysa söz **satır düzeyinde** veriliyor. Tablo satırındaki
+   belirteç, listedeki cümlenin düz sayıya dönmesini örtüyordu — bir
+   enjeksiyon bunu kaçırdığında anlaşıldı (ve kaçırmasının sebebi benim
+   enjeksiyonumun hedefi ıskalamasıydı; yani kapı test edilmeden yeşil
+   duruyordu). Kapı artık konuya uyan her satırı ayrı okuyor. **Bir
+   enjeksiyonun yakalanmaması, kapının sağlam olduğunu değil, enjeksiyonun
+   doğru yere düşüp düşmediğini önce doğrulamak gerektiğini gösteriyor.**

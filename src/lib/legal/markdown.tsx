@@ -1,6 +1,6 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
-import { LEGAL_PATHS, isLegalPlaceholder, isLegalOmitted, legalPath, type LegalLocale } from "./index";
+import { LEGAL_ENTITY, LEGAL_PATHS, isLegalPlaceholder, isLegalOmitted, legalPath, type LegalLocale } from "./index";
 import { platformText, visibleProcessors, type LegalConfig } from "./shape";
 
 /**
@@ -25,14 +25,15 @@ import { platformText, visibleProcessors, type LegalConfig } from "./shape";
 
 /* ── belirteç sözlüğü ───────────────────────────────────────────────────── */
 
-/** Kimlik alanları — `{{controllerName}}` gibi doğrudan adıyla. */
-const ENTITY_KEYS = [
-  "controllerName", "controllerAddress",
-  "publisherName", "publisherAddress", "publisherTaxOffice",
-  "trRepresentative",
-  "privacyEmailTr", "privacyEmailEu", "supportEmail",
-  "court", "backupRetentionDays", "supportResponseDays",
-] as const;
+/**
+ * Kimlik alanları — `{{controllerName}}` gibi doğrudan adıyla.
+ *
+ * Liste `LEGAL_ENTITY`den TÜRETİLİYOR, elle yazılmıyor. Önceden iki yerde
+ * yazılıydı ve ayrışmanın bedeli sessizdi: `LEGAL_ENTITY`ye eklenen bir alan
+ * buraya eklenmezse belirteç sayfada ham `{{...}}` olarak görünür, panelde ise
+ * "bilinmeyen belirteç" diye kaydı engellerdi.
+ */
+const ENTITY_KEYS = Object.keys(LEGAL_ENTITY) as (keyof typeof LEGAL_ENTITY)[];
 
 const FAIR_USE_KEYS = ["roleplayTurnsPerDay", "sttRequestsPerDay", "pronounceRequestsPerDay", "reportsPerDay"] as const;
 const ENTITY_BLOCKS = ["controller", "controller:contact", "publisher"] as const;

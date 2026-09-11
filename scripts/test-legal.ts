@@ -4,8 +4,11 @@ import { TERMS_DEFAULT } from "@/content/legal/defaults/terms";
 import { SUPPORT_DEFAULT } from "@/content/legal/defaults/support";
 import type { LegalDocDefault } from "@/content/legal/defaults/types";
 import { unbalancedConditionals, unknownTokens } from "@/lib/legal/markdown";
+import { SPEECH_LOG_RETENTION_DAYS } from "@/lib/lessons/log-const";
+import { SESSION_MAX_DAYS } from "@/lib/auth/session-config";
 import {
   LEGAL_CHANGELOG,
+  LEGAL_ENTITY,
   LEGAL_EFFECTIVE_DATE,
   LEGAL_LOCALES,
   LEGAL_PATHS,
@@ -125,6 +128,75 @@ for (const [doc, byLocale] of Object.entries(DOCS)) {
       .split("\n")
       .some((l) => /\{\{(processorsTable|entityBlock:)/.test(l) && l.trim() !== l.trim().match(/^\{\{[^}]+\}\}$/)?.[0]);
     check(`${where}: blok belirteçleri kendi satırında`, !inlineBlock);
+  }
+}
+
+/**
+ * SAKLAMA SÜRELERİ: POLİTİKANIN SÖZÜ İLE KODUN DAVRANIŞI.
+ *
+ * Politika üç dilde "konuşma pratiği kayıtları N gün, sonra kendiliğinden
+ * silinir" ve "oturum süresince, en çok N gün" diyor. Bu iki cümle bir
+ * taahhüt: sayfa Play Console ve App Store Connect'e URL olarak verilmiş
+ * durumda. Sayı metnin içine düz yazıldığı sürece kuralı uygulayan sabit
+ * değişip metin eski sözü söylemeye devam edebilirdi — ve kimse fark etmezdi,
+ * çünkü ne derleme ne test bir metnin içindeki rakamı okur.
+ *
+ * Ölçüt MUTLAK, karşılaştırmalı değil: metin belirteci kullanmalı ve o
+ * belirtecin değeri kuralı uygulayan sabitten gelmeli. "İki taraf da aynı
+ * sayıyı yazıyor mu" diye sormak yetmez — ikisi birlikte yanlış olabilir.
+ */
+console.log("\nSaklama süreleri");
+{
+  /*
+   * Her söz KENDI KONUSUYLA birlikte tanımlı. İlk yazımda belirtecin metinde
+   * geçip geçmediği GÖVDE düzeyinde soruluyordu (`body.includes`) — oysa söz
+   * SATIR düzeyinde veriliyor: tablo satırındaki belirteç, listedeki cümlenin
+   * düz sayıya dönmesini örtüyordu. Ölçüm, ölçtüğünü sandığı şeyin komşusunu
+   * ölçüyordu; kapı şimdi konuya uyan HER satırı ayrı ayrı okuyor.
+   */
+  const PROMISES = [
+    {
+      token: "speechLogDays",
+      value: SPEECH_LOG_RETENTION_DAYS,
+      label: "konuşma kaydı",
+      topic: /konuşma pratiği kayıt|speaking practice log|Protokolle der Sprechpraxis/i,
+    },
+    {
+      token: "sessionMaxDays",
+      value: SESSION_MAX_DAYS,
+      label: "oturum kaydı",
+      topic: /oturum süresince|oturum kayıtları|oturum çerezi|life of the session|session records|session cookie|Dauer der Sitzung|Sitzungsdatensätze|Sitzungs-Cookie/i,
+    },
+  ];
+
+  /*
+   * "N gün" taraması yalnız konuya uyan satırlarda. Metnin tamamında aramak
+   * YANLIŞ olurdu ve ilk yazımda öyleydi: üç dilde birden "talepler en geç 30
+   * gün içinde sonuçlandırılır" cümlesine takıldı. O otuz gün KANUNDAN geliyor
+   * (KVKK m.13, GDPR m.12(3)) ve uygulamanın bir sabitine bağlı değil;
+   * belirtece çevrilseydi kodun sayısını değiştirmek kanuni süreyi de
+   * değiştirir görünürdü.
+   */
+  const PLAIN_DAYS = /(\d+)\s*(gün|days|Tage)/g;
+
+  for (const { token, value, label, topic } of PROMISES) {
+    check(
+      `${label}: belirtecin değeri sabitten geliyor`,
+      LEGAL_ENTITY[token as keyof typeof LEGAL_ENTITY] === String(value),
+      `${LEGAL_ENTITY[token as keyof typeof LEGAL_ENTITY]} ≠ ${value}`,
+    );
+    for (const locale of LEGAL_LOCALES) {
+      const lines = (PRIVACY_DEFAULT[locale]?.body ?? "").split("\n").filter((l) => topic.test(l));
+      check(`${label} · ${locale}: sözü taşıyan satır bulundu`, lines.length > 0);
+      const withoutToken = lines.filter((l) => !l.includes(`{{${token}}}`));
+      check(
+        `${label} · ${locale}: her satır belirteci kullanıyor`,
+        withoutToken.length === 0,
+        withoutToken.map((l) => l.slice(0, 60)).join(" | "),
+      );
+      const plain = lines.flatMap((l) => [...l.matchAll(PLAIN_DAYS)].map((m) => m[0]));
+      check(`${label} · ${locale}: satırda düz sayı kalmadı`, plain.length === 0, plain.join(", "));
+    }
   }
 }
 

@@ -57,10 +57,10 @@ Sunucular {{hosting}} üzerinde çalışır; veriler orada saklanır. Veri sorum
 | E-posta adresi, ad, parola özeti | Kayıt formu ya da Google hesabın | Hesap açma, giriş, parola sıfırlama, doğrulama e-postası | Sözleşmenin kurulması ve ifası (m.5/2-c / m.6(1)(b)) | Hesap süresince |
 | Görünen ad, avatar seçimi, seviye, kurs, günlük hedef, ses tercihi | Sen | Kişiselleştirme; görünen ad haftalık sıralamada diğer kullanıcılara görünür | Sözleşmenin ifası | Hesap süresince |
 | Öğrenme verisi: kelime durumu, tekrar sonuçları, seri, XP, başarımlar, konuşma ve sınav sonuçları | Uygulamayı kullanırken | Aralıklı tekrar planı, ilerleme, sıralama | Sözleşmenin ifası | Hesap süresince |
-| Yazdığın ve söylediğin metinler (yazma görevleri, konuşma pratiği, sınav cevapları) | Sen | Yapay zekâ ile değerlendirme ve geri bildirim | Sözleşmenin ifası | Değerlendirmeler hesap süresince; konuşma pratiği kayıtları 30 gün |
+| Yazdığın ve söylediğin metinler (yazma görevleri, konuşma pratiği, sınav cevapları) | Sen | Yapay zekâ ile değerlendirme ve geri bildirim | Sözleşmenin ifası | Değerlendirmeler hesap süresince; konuşma pratiği kayıtları {{speechLogDays}} gün |
 | Mikrofon ses kaydı | Yürüyüş modunda mikrofon | Söylediğin kelimeyi yazıya çevirmek | Açık rıza (m.5/1 / m.6(1)(a)); uygulama içi onay ekranı, geri alınabilir | Saklanmaz; tanıma biter bitmez silinir, yalnız tanınan metin tutulur |
 | Kullanım olayları: hangi ekran açıldı, tur başladı/bitti, ekran genişliği ve platform | Uygulama | Ürünü iyileştirme (birinci taraf analitik) | Meşru menfaat (m.5/2-f / m.6(1)(f)); ayarlardan kapatılabilir | Hesap süresince |
-| IP adresi ve tarayıcı/cihaz tanımı (oturum kaydında) | Bağlantın | Oturum güvenliği, kötüye kullanım ve hız sınırı | Meşru menfaat (güvenlik) | Oturum süresince (en çok 30 gün) |
+| IP adresi ve tarayıcı/cihaz tanımı (oturum kaydında) | Bağlantın | Oturum güvenliği, kötüye kullanım ve hız sınırı | Meşru menfaat (güvenlik) | Oturum süresince (en çok {{sessionMaxDays}} gün) |
 | Sosyal profil: kullanıcı adı, biyografi, görünürlük ve istek tercihleri | Sen | Arkadaşların ve (görünürlük "herkese açık" ise) diğer kullanıcıların seni bulması | Sözleşmenin ifası; tercihler için rıza | Hesap süresince |
 | Arkadaşlık istekleri, arkadaş listesi, engellemeler, kullanıcı bildirimleri | Sen ve arkadaşların | Arkadaşlık özellikleri, güvenlik ve moderasyon | Sözleşmenin ifası; meşru menfaat (güvenlik) | Hesap süresince; bildirimler inceleme kapanana kadar |
 | Etkinlik akışı, tepkiler, dürtmeler, ortak görevler, gelen kutusu bildirimleri | Uygulamayı kullanırken | Arkadaşlarınla ilerleme paylaşımı ve motivasyon (yalnız arkadaşlarına görünür) | Sözleşmenin ifası; "etkinliğimi göster" tercihiyle kapatılabilir | Hesap süresince |
@@ -111,7 +111,7 @@ Verilerin kamu kurumlarına aktarımı yalnız yasal bir zorunluluk ya da yetkil
 
 ## 7. Çerezler ve yerel depolama
 
-Web'de yalnız zorunlu oturum çerezi kullanılır (giriş yaptığını hatırlamak için, 30 gün); bu nedenle çerez onay bandı yoktur. Pazarlama ya da takip çerezi kullanılmaz. Tarayıcı ve uygulama yerel depolamasında tema, ses ve bildirim tercihleri, avatar seçimi ve yarım kalan konuşma gibi bilgiler tutulur; bunlar cihazından çıkmaz.
+Web'de yalnız zorunlu oturum çerezi kullanılır (giriş yaptığını hatırlamak için, {{sessionMaxDays}} gün); bu nedenle çerez onay bandı yoktur. Pazarlama ya da takip çerezi kullanılmaz. Tarayıcı ve uygulama yerel depolamasında tema, ses ve bildirim tercihleri, avatar seçimi ve yarım kalan konuşma gibi bilgiler tutulur; bunlar cihazından çıkmaz.
 
 ## 8. Ürün analitiği ve kapatma
 
@@ -131,9 +131,9 @@ Sana yalnız hizmetle ilgili iletiler gönderilir: e-posta doğrulama, parola s�
 ## 9. Saklama süreleri
 
 - Hesap ve öğrenme verisi: hesabın açık olduğu sürece; hesap silinince tümü silinir.
-- Konuşma pratiği kayıtları (söylediğin cümle ve model yanıtı): 30 gün, sonra kendiliğinden silinir.
+- Konuşma pratiği kayıtları (söylediğin cümle ve model yanıtı): {{speechLogDays}} gün, sonra kendiliğinden silinir.
 - Ses kayıtları: saklanmaz.
-- Oturum kayıtları (IP, cihaz tanımı): oturum süresince, en çok 30 gün.
+- Oturum kayıtları (IP, cihaz tanımı): oturum süresince, en çok {{sessionMaxDays}} gün.
 - Mali kayıtlar (abonelik faturaları): Türk Ticaret Kanunu ve Vergi Usul Kanunu'nun öngördüğü süre (10 yıl), yalnız Google Play'in ilettiği kadarıyla.
 - Hak talepleri yazışmaları: talep kapandıktan sonra 2 yıl.
 - Sunucu yedekleri: silinen veriler yedeklerden en geç {{backupRetentionDays}} gün içinde düşer; yedekler yalnız felaket kurtarma için kullanılır, silinen hesap yedekten geri yüklenmez.
@@ -208,10 +208,10 @@ The servers run on {{hosting}}; the data is stored there. The controller is not 
 | E-mail address, name, password hash | Registration form or your Google account | Account creation, sign-in, password reset, verification e-mail | Conclusion and performance of a contract (Art. 5/2-c / Art. 6(1)(b)) | For the life of the account |
 | Display name, avatar choice, level, course, daily goal, voice preference | You | Personalisation; the display name is visible to other users on the weekly leaderboard | Performance of a contract | For the life of the account |
 | Learning data: word state, review results, streak, XP, achievements, speaking practice and exam results | While you use the app | Spaced repetition schedule, progress, leaderboard | Performance of a contract | For the life of the account |
-| Texts you write and say (writing tasks, speaking practice, exam answers) | You | AI assessment and feedback | Performance of a contract | Assessments for the life of the account; speaking practice logs for 30 days |
+| Texts you write and say (writing tasks, speaking practice, exam answers) | You | AI assessment and feedback | Performance of a contract | Assessments for the life of the account; speaking practice logs for {{speechLogDays}} days |
 | Microphone audio | The microphone in walk mode | Transcribing the word you said | Explicit consent (Art. 5/1 / Art. 6(1)(a)); in-app consent screen, revocable | Not kept; deleted as soon as recognition finishes, only the recognised text is retained |
 | Usage events: which screen opened, round started/finished, screen width and platform | The app | Improving the product (first-party analytics) | Legitimate interest (Art. 5/2-f / Art. 6(1)(f)); can be switched off in settings | For the life of the account |
-| IP address and browser/device description (in the session record) | Your connection | Session security, abuse prevention and rate limiting | Legitimate interest (security) | For the life of the session (at most 30 days) |
+| IP address and browser/device description (in the session record) | Your connection | Session security, abuse prevention and rate limiting | Legitimate interest (security) | For the life of the session (at most {{sessionMaxDays}} days) |
 | Social profile: username, bio, visibility and request preferences | You | Letting your friends and, if visibility is "public", other users find you | Performance of a contract; consent for the preferences | For the life of the account |
 | Friend requests, friend list, blocks, user reports | You and your friends | Friend features, safety and moderation | Performance of a contract; legitimate interest (safety) | For the life of the account; reports until the review closes |
 | Activity feed, reactions, nudges, shared quests, inbox notifications | While you use the app | Sharing progress with your friends and motivation (visible only to your friends) | Performance of a contract; can be switched off with the "show my activity" preference | For the life of the account |
@@ -262,7 +262,7 @@ Data is transferred to public authorities only where there is a legal obligation
 
 ## 7. Cookies and local storage
 
-On the web only the strictly necessary session cookie is used (to remember that you are signed in, for 30 days); for that reason there is no cookie consent banner. No marketing or tracking cookies are used. Browser and app local storage holds things like theme, sound and notification preferences, avatar choice and an unfinished speaking practice; these never leave your device.
+On the web only the strictly necessary session cookie is used (to remember that you are signed in, for {{sessionMaxDays}} days); for that reason there is no cookie consent banner. No marketing or tracking cookies are used. Browser and app local storage holds things like theme, sound and notification preferences, avatar choice and an unfinished speaking practice; these never leave your device.
 
 ## 8. Product analytics and switching them off
 
@@ -282,9 +282,9 @@ You receive only service-related messages: e-mail verification, password reset, 
 ## 9. Retention periods
 
 - Account and learning data: as long as the account exists; when the account is deleted, all of it is deleted.
-- Speaking practice logs (the sentence you said and the model's reply): 30 days, then deleted automatically.
+- Speaking practice logs (the sentence you said and the model's reply): {{speechLogDays}} days, then deleted automatically.
 - Audio recordings: not kept.
-- Session records (IP, device description): for the life of the session, at most 30 days.
+- Session records (IP, device description): for the life of the session, at most {{sessionMaxDays}} days.
 - Financial records (subscription invoices): the period required by the Turkish Commercial Code and the Tax Procedure Law (10 years), and only to the extent Google Play passes them on.
 - Correspondence about rights requests: 2 years after the request closes.
 - Server backups: deleted data drops out of the backups within {{backupRetentionDays}} days at the latest; backups are used only for disaster recovery, and a deleted account is never restored from a backup.
@@ -359,10 +359,10 @@ Die Server laufen bei {{hosting}}; dort werden die Daten gespeichert. Der Verant
 | E-Mail-Adresse, Name, Passwort-Hash | Registrierungsformular oder dein Google-Konto | Kontoerstellung, Anmeldung, Passwort-Reset, Bestätigungs-E-Mail | Abschluss und Erfüllung eines Vertrags (Art. 5/2-c / Art. 6 Abs. 1 lit. b) | Für die Dauer des Kontos |
 | Anzeigename, Avatar-Auswahl, Niveau, Kurs, Tagesziel, Stimmpräferenz | Du | Personalisierung; der Anzeigename ist für andere Nutzer in der Wochen-Rangliste sichtbar | Erfüllung eines Vertrags | Für die Dauer des Kontos |
 | Lerndaten: Wortstatus, Wiederholungsergebnisse, Serie, XP, Erfolge, Ergebnisse von Sprechübungen und Prüfungen | Während der Nutzung der App | Wiederholungsplan, Fortschritt, Rangliste | Erfüllung eines Vertrags | Für die Dauer des Kontos |
-| Texte, die du schreibst und sprichst (Schreibaufgaben, Sprechpraxis, Prüfungsantworten) | Du | Bewertung und Rückmeldung durch KI | Erfüllung eines Vertrags | Bewertungen für die Dauer des Kontos; Protokolle der Sprechpraxis 30 Tage |
+| Texte, die du schreibst und sprichst (Schreibaufgaben, Sprechpraxis, Prüfungsantworten) | Du | Bewertung und Rückmeldung durch KI | Erfüllung eines Vertrags | Bewertungen für die Dauer des Kontos; Protokolle der Sprechpraxis {{speechLogDays}} Tage |
 | Mikrofon-Audio | Mikrofon im Gehmodus | Verschriftlichung des gesprochenen Wortes | Ausdrückliche Einwilligung (Art. 5/1 / Art. 6 Abs. 1 lit. a); Einwilligungsbildschirm in der App, widerruflich | Wird nicht gespeichert; nach Abschluss der Erkennung gelöscht, nur der erkannte Text bleibt |
 | Nutzungsereignisse: welcher Bildschirm geöffnet wurde, Runde begonnen/beendet, Bildschirmbreite und Plattform | Die App | Verbesserung des Produkts (eigene Analyse, keine Dritten) | Berechtigtes Interesse (Art. 5/2-f / Art. 6 Abs. 1 lit. f); in den Einstellungen abschaltbar | Für die Dauer des Kontos |
-| IP-Adresse und Browser-/Gerätebezeichnung (im Sitzungsdatensatz) | Deine Verbindung | Sitzungssicherheit, Missbrauchsabwehr und Ratenbegrenzung | Berechtigtes Interesse (Sicherheit) | Für die Dauer der Sitzung (höchstens 30 Tage) |
+| IP-Adresse und Browser-/Gerätebezeichnung (im Sitzungsdatensatz) | Deine Verbindung | Sitzungssicherheit, Missbrauchsabwehr und Ratenbegrenzung | Berechtigtes Interesse (Sicherheit) | Für die Dauer der Sitzung (höchstens {{sessionMaxDays}} Tage) |
 | Soziales Profil: Benutzername, Bio, Sichtbarkeits- und Anfrageeinstellungen | Du | Damit deine Freunde und — bei Sichtbarkeit "öffentlich" — andere Nutzer dich finden | Erfüllung eines Vertrags; Einwilligung für die Einstellungen | Für die Dauer des Kontos |
 | Freundschaftsanfragen, Freundesliste, Blockierungen, Nutzermeldungen | Du und deine Freunde | Freundesfunktionen, Sicherheit und Moderation | Erfüllung eines Vertrags; berechtigtes Interesse (Sicherheit) | Für die Dauer des Kontos; Meldungen bis zum Abschluss der Prüfung |
 | Aktivitäts-Feed, Reaktionen, Anstöße, gemeinsame Aufgaben, Posteingangs-Benachrichtigungen | Während der Nutzung der App | Teilen des Fortschritts mit deinen Freunden und Motivation (nur für deine Freunde sichtbar) | Erfüllung eines Vertrags; über die Einstellung "Aktivität zeigen" abschaltbar | Für die Dauer des Kontos |
@@ -413,7 +413,7 @@ Eine Übermittlung an Behörden erfolgt nur bei einer rechtlichen Verpflichtung 
 
 ## 7. Cookies und lokale Speicherung
 
-Im Web wird nur das unbedingt erforderliche Sitzungs-Cookie verwendet (um zu merken, dass du angemeldet bist, 30 Tage); deshalb gibt es kein Cookie-Banner. Marketing- oder Tracking-Cookies werden nicht eingesetzt. In der lokalen Speicherung von Browser und App liegen Angaben wie Design-, Ton- und Benachrichtigungseinstellungen, Avatar-Auswahl und eine unterbrochene Sprechübung; diese verlassen dein Gerät nicht.
+Im Web wird nur das unbedingt erforderliche Sitzungs-Cookie verwendet (um zu merken, dass du angemeldet bist, {{sessionMaxDays}} Tage); deshalb gibt es kein Cookie-Banner. Marketing- oder Tracking-Cookies werden nicht eingesetzt. In der lokalen Speicherung von Browser und App liegen Angaben wie Design-, Ton- und Benachrichtigungseinstellungen, Avatar-Auswahl und eine unterbrochene Sprechübung; diese verlassen dein Gerät nicht.
 
 ## 8. Produktanalyse und Abschalten
 
@@ -433,9 +433,9 @@ Du erhältst nur dienstbezogene Nachrichten: E-Mail-Bestätigung, Passwort-Reset
 ## 9. Speicherfristen
 
 - Konto- und Lerndaten: solange das Konto besteht; mit der Löschung des Kontos wird alles gelöscht.
-- Protokolle der Sprechpraxis (dein Satz und die Antwort des Modells): 30 Tage, danach automatische Löschung.
+- Protokolle der Sprechpraxis (dein Satz und die Antwort des Modells): {{speechLogDays}} Tage, danach automatische Löschung.
 - Audioaufnahmen: werden nicht gespeichert.
-- Sitzungsdatensätze (IP, Gerätebezeichnung): für die Dauer der Sitzung, höchstens 30 Tage.
+- Sitzungsdatensätze (IP, Gerätebezeichnung): für die Dauer der Sitzung, höchstens {{sessionMaxDays}} Tage.
 - Finanzunterlagen (Abonnementrechnungen): die vom türkischen Handelsgesetzbuch und vom Steuerverfahrensgesetz vorgesehene Frist (10 Jahre), und nur soweit Google Play sie übermittelt.
 - Schriftwechsel zu Rechteanfragen: 2 Jahre nach Abschluss der Anfrage.
 - Server-Backups: gelöschte Daten fallen spätestens innerhalb von {{backupRetentionDays}} Tagen aus den Backups heraus; Backups dienen nur der Notfallwiederherstellung, und ein gelöschtes Konto wird nie aus einem Backup wiederhergestellt.
