@@ -7082,3 +7082,28 @@ modu duyuruları, karartılmış ekran, "çıkmak için üç kez dokun" ve "ekra
 kapanınca sesini duyamıyorum" hep TARAYICI mekaniği — webde sayfa açık kalmak
 zorunda, Android'de gerçek bir ön plan servisi var (`startWalkService`).
 
+
+### 11.206 Çalışan bir şey bozuk sanılıyordu
+
+`lessonp.` uzayının kalanı. İki yanlış mesaj çıktı.
+
+**"Birazdan tekrar dene" derken ders devam ediyordu.** Sağlayıcı kapalıysa
+mobil çevrimdışı rol yapmaya düşüyor (`game/offlineRoleplay`, §43'te ölçülen
+yol) ama ekrandaki cümle "yapay zekâ sohbeti şu an kullanılamıyor; birazdan
+tekrar dene" diyordu. Kullanıcı **çalışan bir şeyi bozuk sanıp** dersi
+bırakabiliyordu. Web hangi yedeğe düşüldüğünü adlandırıyor (senaryolu konuşma
+/ kalıplar); aynı iki cümle taşındı, eskiyen `lesson.ai_off` düştü.
+
+**"Konuşma bitti" yarım bırakıldığında da yazılıyordu.** Sunucu `/api/lesson`
+yanıtında `passed` döndürüyor (asgari tur doldu mu) ve mobil yanıtın yalnız
+`nextDays` alanını okuyordu — §11.23'te bulunan "yanıt okunmuyor" sınıfının
+kalan bir parçası.
+
+**Kapının kendi hatası, beşinci kez.** §116'nın "passed okunuyor" ölçümü iki
+enjeksiyon boyunca yeşil kaldı: önce özet bileşeninin KENDİ `passed` alanını,
+sonra `useState` satırını yakaladı. Bu oturumda aynı ders beşinci kez çıktı
+(§73, §78, §98, §103, §114): **gevşek bir desen, ölçmek istediği şeyin
+komşusunu ölçüyor — ve kapı yeşil kaldığı için bu ancak enjeksiyonla
+görülüyor.** Her yeni kapının enjeksiyonla denenmesi bu yüzden pazarlık
+konusu değil.
+
