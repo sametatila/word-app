@@ -10,7 +10,7 @@ import { localeOf } from "@/lib/i18n/dict";
 import { CrownIcon, CheckIcon } from "@/components/icons";
 import type { CopyLine, PlanPrice } from "@/lib/premium/gates";
 
-type Plans = { productMonthly: string; productYearly: string; trialDays: number; prices: PlanPrice[] };
+type Plans = { productMonthly: string; productYearly: string; trialDays: number };
 type FairUse = { pocketWalksPerDay: number; aiPracticePerDay: number };
 type Status = {
   premium: boolean;
@@ -39,6 +39,7 @@ export function PremiumPaywall({
   status,
   copy,
   plans,
+  price,
   fairUse,
   referral,
   prefillCode = "",
@@ -48,6 +49,14 @@ export function PremiumPaywall({
   status: Status | null | undefined;
   copy: { free: CopyLine[]; premium: CopyLine[] };
   plans: Plans;
+  /**
+   * ZİYARETÇİNİN BÖLGESİNİN fiyatı — tek satır. Sayfa eskiden üç bölgeyi
+   * (TR/EU/GLOBAL) yan yana listeliyordu: kullanıcı kendi para biriminin
+   * hangisi olduğunu tahmin etmek zorunda kalıyor, ötekiler yalnız kıyas
+   * malzemesi oluyordu. Bölge sunucuda, konum izni İSTEMEDEN bulunuyor
+   * (bkz. lib/premium/region.ts). `null` = panelde hiç fiyat tanımlı değil.
+   */
+  price: PlanPrice | null;
   fairUse: FairUse;
   referral: Referral;
   prefillCode?: string;
@@ -119,66 +128,111 @@ export function PremiumPaywall({
 
       {!premium && (
         <>
+          {/*
+            KARAR ÖNCE. Fiyat sayfanın dibindeydi: kullanıcı iki özellik
+            listesini, adil kullanım notunu ve içerik vaadini geçtikten sonra
+            ne ödeyeceğini öğreniyordu. Artık başlıktan hemen sonra geliyor ve
+            ardından tek bir yönlendirme var.
+          */}
+          {price && (
+            <section className="mt-6">
+              <div className="grid grid-cols-2 gap-3">
+                <PlanCard label={t("paywall.monthly")} price={price.monthly} />
+                <PlanCard label={t("paywall.yearly")} price={price.yearly} savePct={price.yearlySavePct} highlight />
+              </div>
+              {plans.trialDays > 0 && (
+                <p className="muted mt-3 text-center text-xs">{t("paywall.trial_note", { days: plans.trialDays })}</p>
+              )}
+            </section>
+          )}
+
+          {/* Web'de satın alma yok — yönlendirme dürüstçe yazılı. */}
+          <div className="brand-gradient mt-4 rounded-2xl px-4 py-4 text-center on-fill">
+            <p className="text-base font-extrabold">{t("paywall.upgrade_in_app")}</p>
+            {/* Vitrin fiyatının bağlayıcı olmadığı burada yazıyor: App Store
+                3.1.2 ve Play, fiyatın yanıltıcı olmamasını istiyor. */}
+            <p className="mt-1 text-xs opacity-90">{t("paywall.price_note_store")}</p>
+          </div>
+
+          {/*
+            KAPSAM TEK KART. "Premium'da neler var" ve "Ücretsizde ne var"
+            iki ayrı kutuydu ve ikisi de aynı yeşil onay işaretini kullanıyordu:
+            yan yana durduklarında hangisinin neyi anlattığı ayırt edilmiyordu.
+            Aynı kartın iki bölümü oldular ve ücretsiz taraf sönük bir noktayla
+            yazılıyor — onay işareti "bu da sende var" diyordu.
+          */}
           <Section title={t("paywall.what_you_get")}>
             {copy.premium.map((l) => (
               <Row key={l.key} text={line(l)} tone="premium" />
             ))}
-          </Section>
-
-          <Section title={t("paywall.whats_free")}>
-            {copy.free.map((l) => (
-              <Row key={l.key} text={line(l)} tone="free" />
-            ))}
-          </Section>
-
-          {/* Fiyatlar. Mobilde gerçek fiyat MAĞAZADAN gelir; buradakiler vitrin
-              ve bunu söyleyen bir not var — App Store 3.1.2 ve Play, fiyatın
-              yanıltıcı olmamasını istiyor. */}
-          <Section title={`${t("paywall.monthly")} / ${t("paywall.yearly")}`}>
-            <div className="flex flex-col gap-2">
-              {plans.prices.map((p) => (
-                <div key={p.region} className="flex items-center justify-between rounded-2xl border p-3" style={{ borderColor: "var(--border)" }}>
-                  <span className="text-sm font-bold">{p.region}</span>
-                  <span className="text-sm">
-                    {p.monthly} · {p.yearly}
-                    {/* 500 değil 600: beyaz yazı 500 üstünde 3.55, 11 piksellik
-                        yazı için eşik 4.5. 600'de 5.30. */}
-                    {p.yearlySavePct > 0 && (
-                      <span className="ml-2 rounded-full px-2 py-0.5 text-[11px] font-bold text-white" style={{ background: "var(--color-mint-600)" }}>
-                        −{p.yearlySavePct}%
-                      </span>
-                    )}
-                  </span>
-                </div>
+            <div className="mt-3 border-t pt-3" style={{ borderColor: "var(--hairline)" }}>
+              <p className="muted mb-1.5 text-caption tracking-wide">{t("paywall.whats_free")}</p>
+              {copy.free.map((l) => (
+                <Row key={l.key} text={line(l)} tone="free" />
               ))}
             </div>
-            <p className="mt-2 text-xs muted">{t("paywall.price_note_store")}</p>
-            {plans.trialDays > 0 && <p className="mt-1 text-xs muted">{t("paywall.trial_note", { days: plans.trialDays })}</p>}
           </Section>
 
-          {/* Adil kullanım AÇIKÇA yazılıyor: tavanı olan bir şeyi "sınırsız"
-              diye sunmak iki mağazanın da beyan kuralına aykırı. */}
-          <p className="mt-4 rounded-2xl border p-3 text-xs muted" style={{ borderColor: "var(--border)" }}>
+          {/*
+            İNCE YAZI TEK PARAGRAF. Adil kullanım kendi kutusunda, içerik vaadi
+            ayrı bir satırdaydı; ikisi de okunması gereken ama karar vermeyen
+            metinler, yani kutu hak etmiyorlar. Adil kullanım AÇIKÇA yazılıyor:
+            tavanı olan bir şeyi "sınırsız" diye sunmak iki mağazanın da beyan
+            kuralına aykırı.
+          */}
+          <p className="muted mt-4 text-caption leading-relaxed">
             <strong className="mr-1">{t("paywall.fair_use_title")}:</strong>
             {t("plan.pro_walk_cap", { n: fairUse.pocketWalksPerDay })} · {t("plan.pro_ai", { n: fairUse.aiPracticePerDay })}
-          </p>
-
-          {/* İçerik vaadi — mobilde plan listesinin hemen altında. Sınav
-              formatından yalnız o kursta gerçekten deneme sınavı varsa söz
-              ediliyor; olmayan sınavın sözü verilmiyor. */}
-          <p className="muted mt-3 text-center text-caption">
+            {" "}
             {t(supportsMockExams(course) ? "paywall.content_is_built_around_cefr_a1" : "paywall.content_is_built_around_cefr")}
           </p>
-
-          {/* Web'de satın alma yok — yönlendirme dürüstçe yazılı. */}
-          <div className="brand-gradient mt-6 rounded-2xl px-4 py-4 text-center text-white">
-            <p className="text-base font-extrabold">{t("paywall.upgrade_in_app")}</p>
-          </div>
         </>
       )}
 
       {signedIn && <PromoBox prefill={prefillCode} />}
       {signedIn && referral && <ReferralBox referral={referral} />}
+    </div>
+  );
+}
+
+/**
+ * Bir plan kutusu. Yıllık VURGULU: indirim oranı orada ve kullanıcıyı oraya
+ * yönlendiriyoruz (yıllığa geçiş nakit akışını öne çekiyor, iptal oranını
+ * düşürüyor). Seçilebilir DEĞİL — webde satın alma yok ve seçilemeyecek bir
+ * şeye tıklatmak, tıklamanın bir şey yapacağı sözünü vermek olurdu.
+ */
+function PlanCard({
+  label,
+  price,
+  savePct = 0,
+  highlight = false,
+}: {
+  label: string;
+  price: string;
+  savePct?: number;
+  highlight?: boolean;
+}) {
+  return (
+    <div
+      className="rounded-2xl border p-4 text-center"
+      style={
+        highlight
+          ? { borderColor: "var(--color-brand)", background: "color-mix(in srgb, var(--color-brand-500) 8%, transparent)" }
+          : { borderColor: "var(--border)", background: "var(--surface)" }
+      }
+    >
+      <p className="muted text-caption tracking-wide">{label}</p>
+      <p className="mt-1 text-xl font-extrabold">{price}</p>
+      {savePct > 0 && (
+        /* 500 değil 600: beyaz yazı 500 üstünde 3.55, 11 piksellik yazı için
+           eşik 4.5. 600'de 5.30. */
+        <span
+          className="mt-2 inline-block rounded-full px-2 py-0.5 text-[11px] font-bold text-white"
+          style={{ background: "var(--color-mint-600)" }}
+        >
+          −{savePct}%
+        </span>
+      )}
     </div>
   );
 }
@@ -195,19 +249,22 @@ function Section({ title, children }: { title: string; children: React.ReactNode
 }
 
 function Row({ text, tone }: { text: string; tone: "premium" | "free" }) {
+  const premium = tone === "premium";
   return (
     <div className="flex items-start gap-3 py-1.5">
-      <span
-        className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full"
-        style={
-          tone === "premium"
-            ? { background: "color-mix(in srgb, var(--color-brand-500) 14%, transparent)", color: "var(--color-brand)" }
-            : { background: "color-mix(in srgb, var(--color-mint-500) 14%, transparent)", color: "var(--color-mint)" }
-        }
-      >
-        <CheckIcon size={14} />
-      </span>
-      <span className="text-[15px]">{text}</span>
+      {premium ? (
+        <span
+          className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full"
+          style={{ background: "color-mix(in srgb, var(--color-brand-500) 14%, transparent)", color: "var(--color-brand)" }}
+        >
+          <CheckIcon size={14} />
+        </span>
+      ) : (
+        /* Ücretsiz tarafta ONAY İŞARETİ YOK: aynı işaret iki listede de
+           kullanılınca "premium" ile "zaten sende olan" ayırt edilmiyordu. */
+        <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full" style={{ background: "var(--text-faint)" }} />
+      )}
+      <span className={premium ? "text-[15px]" : "muted text-[15px]"}>{text}</span>
     </div>
   );
 }

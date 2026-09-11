@@ -1,3 +1,8 @@
+import { headers } from "next/headers";
+import { eq } from "drizzle-orm";
+import { db } from "@/lib/db";
+import { profiles } from "@/lib/db/schema";
+import { priceFor, resolveRegion } from "@/lib/premium/region";
 import { titleMeta } from "@/lib/page-meta";
 import { getUserId } from "@/lib/auth/server";
 import { premiumConfig, premiumCopy, premiumStatus } from "@/lib/premium";
@@ -27,12 +32,28 @@ export default async function PremiumPage({ searchParams }: { searchParams: Prom
   const source = from && SOURCES.has(from) ? from : "other";
   const userId = await getUserId();
 
-  const [cfg, copy, status, referral] = await Promise.all([
+  const [cfg, copy, status, referral, tz, hdrs] = await Promise.all([
     premiumConfig(),
     premiumCopy(),
     premiumStatus(userId),
     userId ? referralStats(userId).catch(() => null) : Promise.resolve(null),
+    userId
+      ? db.select({ tz: profiles.timezone }).from(profiles).where(eq(profiles.userId, userId)).limit(1)
+          .then((r) => r[0]?.tz ?? null)
+          .catch(() => null)
+      : Promise.resolve(null),
+    headers(),
   ]);
+
+  /*
+    TEK FİYAT, TEK BÖLGE. Sayfa üç bölgenin fiyatını yan yana listeliyordu:
+    kullanıcı kendi para biriminin hangisi olduğunu tahmin etmek zorunda
+    kalıyor, ötekiler de yalnız kıyas malzemesi oluyordu. Bölge konum izni
+    İSTEMEDEN bulunuyor (gerekçe: lib/premium/region.ts) ve ekrana yalnız
+    bulunan bölgenin fiyatı çıkıyor.
+  */
+  const region = resolveRegion(tz, hdrs.get("accept-language"));
+  const price = priceFor(cfg.plans.prices, region);
 
   return (
     <PremiumPaywall
@@ -50,7 +71,12 @@ export default async function PremiumPage({ searchParams }: { searchParams: Prom
         }
       }
       copy={copy}
-      plans={cfg.plans}
+      plans={{
+        productMonthly: cfg.plans.productMonthly,
+        productYearly: cfg.plans.productYearly,
+        trialDays: cfg.plans.trialDays,
+      }}
+      price={price}
       fairUse={cfg.fairUse}
       referral={referral}
       /** Davet bağlantısındaki kod alanı doluysa form açık gelir. */
