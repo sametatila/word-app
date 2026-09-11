@@ -6,6 +6,7 @@ import { authApi } from "@/lib/auth/api";
 import { translateAuthError } from "@/lib/auth/errors";
 import { checkPassword, MIN_PASSWORD_LENGTH } from "@/lib/auth/password-policy";
 import { useT, useLang } from "@/lib/i18n/client";
+import { Section } from "@/components/settings-section";
 
 /**
  * Giriş yapmış kullanıcının parolasını değiştirmesi.
@@ -70,9 +71,7 @@ export function ChangePassword() {
   }
 
   return (
-    <section className="mx-auto mt-4 w-full max-w-3xl">
-      <p className="muted mb-2 ml-1 text-caption tracking-wide">{t("changepw.title")}</p>
-      <div className="card p-4">
+    <Section title={t("settings.sec_password")}>
         {done ? <AuthNotice tone="success">{t("changepw.done")}</AuthNotice> : null}
 
         {open ? (
@@ -143,7 +142,6 @@ export function ChangePassword() {
             </button>
           </div>
         )}
-      </div>
-    </section>
+    </Section>
   );
 }

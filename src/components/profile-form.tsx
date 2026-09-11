@@ -2,8 +2,7 @@
 
 import { useEffect, useState, type ReactNode } from "react";
 import Link from "next/link";
-import { motion } from "framer-motion";
-import { AlertIcon, CheckIcon, ChevronRightIcon } from "@/components/icons";
+import { AlertIcon, ChevronRightIcon } from "@/components/icons";
 import { VoicePicker } from "@/components/voice-picker";
 import { InstallGuide } from "@/components/install-guide";
 import { AnalyticsSettings } from "@/components/analytics-settings";
@@ -13,6 +12,7 @@ import { SettingRow } from "@/components/setting-row";
 import { hasMicConsent, setMicConsent } from "@/lib/mic-consent";
 import { ThemeSetting } from "@/components/theme-toggle";
 import { useT, useLang } from "@/lib/i18n/client";
+import { Group, Section } from "@/components/settings-section";
 import { courseName, courseSub, coursesForNative } from "@/lib/courses";
 import { LangSetting } from "@/components/lang-setting";
 import { defaultVoice, type VoiceId } from "@/lib/tts/voices";
@@ -86,49 +86,49 @@ export function ProfileForm({
   const [level, setLevel] = useState(initial.level);
   const [course, setCourse] = useState(initial.course);
   const [voice, setVoice] = useState<string | null>(initial.voice);
-  const [saving, setSaving] = useState(false);
-  const [saved, setSaved] = useState(false);
+  /**
+   * Yalnız HATA. Kayıt dokunulduğu anda olduğu için başarı ayrıca
+   * söylenmiyor: kontrolün kendisi zaten yeni durumu gösteriyor (çip aktif
+   * olur, kaydırıcının sayısı değişir). Her dokunuşa "Kaydedildi" yazmak
+   * sayfayı bir bildirim akışına çevirirdi.
+   */
   const [saveError, setSaveError] = useState<string | null>(null);
+  /**
+   * Adın KENDİ hata satırı. Genel hata satırı sayfanın başında duruyor ve
+   * "ad iki karakterden kısa" mesajı oraya düşseydi, kullanıcı yazdığı
+   * kutudan uzakta bir cümle okuyacaktı. Kaydet düğmesi varken bu sorun
+   * yoktu: düğme kapalı kalıyordu ve sebebi yanındaydı.
+   */
+  const [nameError, setNameError] = useState<string | null>(null);
 
   // İsim boş bırakılamıyor (bkz. api/profile): sunucu zaten reddediyor, burada
   // kaydet düğmesini kapatmak kullanıcıya sebebini önceden gösteriyor.
   const cleanName = displayName.trim().replace(/\s+/g, " ");
   const nameOk = cleanName.length >= 2;
 
-  async function save() {
-    if (!nameOk) {
-      setSaveError(t("prof.name_required"));
-      return;
-    }
-    setSaving(true);
-    setSaved(false);
+  /**
+   * TEK KAYDETME MODELİ — her ayar dokunulduğu anda yazılıyor.
+   *
+   * Eskiden sayfada iki model birden vardı: arayüz dili, tema, bildirim ve
+   * analitik anında kaydediliyor; ad, seviye, hedef, kurs ve ses ise
+   * ortadaki "Kaydet" düğmesini bekliyordu. İkisi arasında hiçbir görsel
+   * fark yoktu ve düğme ekranın ortasındaydı — altındaki ayarların ona ait
+   * olmadığı hiçbir yerde yazmıyordu. Mobilde ayrım daha da kaymıştı: orada
+   * kurs ve ses ANINDA kaydediliyordu, yani aynı kontrol iki platformda
+   * farklı davranıyordu. Azınlık çoğunluğa uyduruldu; düğme kalktı.
+   */
+  async function patch(fields: Record<string, unknown>, onOk?: () => void) {
     setSaveError(null);
     try {
       const res = await fetch("/api/profile", {
         method: "POST",
         headers: { "content-type": "application/json" },
-        body: JSON.stringify({ displayName: cleanName, dailyGoal, newPerDay, level, course, voice }),
+        body: JSON.stringify(fields),
       });
-      if (res.ok) {
-        // Hangi ayar değişti (WP-80): "seviyeyi kimse değiştirmiyor" ya da
-        // "günlük hedef hep düşürülüyor" gibi kararlar buradan okunur.
-        if (cleanName !== initial.displayName) track("setting_change", 0, "name");
-        if (dailyGoal !== initial.dailyGoal) track("setting_change", dailyGoal, "daily_goal");
-        if (newPerDay !== initial.newPerDay) track("setting_change", newPerDay, "new_per_day");
-        if (level !== initial.level) track("setting_change", 0, "level");
-        if (course !== initial.course) track("setting_change", 0, "course");
-        if (voice !== initial.voice) track("setting_change", 0, "voice");
-        setSaved(true);
-        setTimeout(() => setSaved(false), 2200);
-      } else if (res.status === 401) {
-        setSaveError(t("prof.session_expired"));
-      } else {
-        setSaveError(t("prof.save_failed"));
-      }
+      if (res.ok) { onOk?.(); return; }
+      setSaveError(res.status === 401 ? t("prof.session_expired") : t("prof.save_failed"));
     } catch {
       setSaveError(t("autherrorw.network"));
-    } finally {
-      setSaving(false);
     }
   }
 
@@ -161,33 +161,25 @@ export function ProfileForm({
         etiket, altında yalnız o kavramın kartı. Etiket zaten ne olduğunu
         söylediği için kartın içindeki tekrar eden başlıklar da kalktı.
       */}
-      <Group title={t("settings.group_account")} />
-      <Section title={t("settings.account")}>
-        <label className="block">
-          <input
-            value={displayName}
-            onChange={(e) => setDisplayName(e.target.value)}
-            /* UZUNLUK SUNUCUNUN TUTTUĞU KADAR. Kutu 60 karakter kabul
-               ediyordu ama uç adı 40'a kırpıyor (`/api/profile`
-               `name.slice(0, 40)`): kullanıcı 55 karakterlik adını yazıp
-               kaydediyor, ekran "kaydedildi" diyor ve ad bir sonraki açılışta
-               kısalmış oluyordu — sessiz bir kayıp. §144'ün kuralının ters
-               yönü: yüzey, sunucunun KABUL ETTİĞİNDEN AZ da teklif etmemeli,
-               TUTTUĞUNDAN ÇOK da. */
-            maxLength={40}
-            placeholder={t("settings.display_name")}
-            className="option w-full px-4 py-3 text-base outline-none focus:border-[color:var(--color-brand)]"
-          />
-        </label>
-        {/* Hesap silme buradan PROFİLE taşındı (çıkış yapın altına): yıkıcı
-            eylem, ad kutusunun bir dokunuş yanında durmamalı. Gerekçenin
-            tamamı profile-view.tsx'te. */}
-      </Section>
-
-      {/* Giriş yöntemleri HESAP'ın hemen altında — mobildeki sıra. Web'de
-          sayfanın dibindeydi, yani "nasıl giriyorum" sorusunun cevabı
-          hesabın yanında değil sonundaydı. */}
-      {linkedAccounts}
+      {/* KAYDET DÜĞMESİ KALKTI — gerekçe `patch` üzerinde. Geriye yalnız hata
+          satırı kalıyor ve yeri SAYFANIN BAŞI: artık hangi kontrolün kaydı
+          düştüyse düşsün aynı satıra yazılıyor, o yüzden tek bir kontrolün
+          yanında duramaz. `role="alert"` sayfanın neresinde olunursa olunsun
+          duyuruyor. */}
+      <div className="mx-auto w-full max-w-3xl empty:hidden">
+        {saveError ? (
+          <p
+            role="alert"
+            className="flex items-center gap-2 rounded-xl px-3 py-2 text-sm"
+            style={{
+              background: "color-mix(in srgb, var(--color-rose) 12%, transparent)",
+              color: "var(--color-rose)",
+            }}
+          >
+            <AlertIcon size={16} /> {saveError}
+          </p>
+        ) : null}
+      </div>
 
       <Group title={t("settings.group_learning")} />
       <Section title={t("settings.language_to_learn")}>
@@ -202,10 +194,13 @@ export function ProfileForm({
                    (bkz. parity §154). */
                 aria-pressed={course === c.id}
                 onClick={() => {
+                  if (c.id === course) return;
                   setCourse(c.id);
                   // Ses kursa bağlı: Zürih metnini Almanca sesle okutmak
                   // bu değişikliğin çözdüğü sorunun ta kendisiydi.
-                  setVoice(defaultVoice(c.id));
+                  const v = defaultVoice(c.id);
+                  setVoice(v);
+                  void patch({ course: c.id, voice: v }, () => track("setting_change", 0, "course"));
                 }}
                 className={`option px-3 py-3 text-left ${course === c.id ? "option-correct" : ""}`}
               >
@@ -239,7 +234,7 @@ export function ProfileForm({
               <button
                 key={l.id}
                 aria-pressed={level === l.id}
-                onClick={() => setLevel(l.id)}
+                onClick={() => { if (l.id === level) return; setLevel(l.id); void patch({ level: l.id }, () => track("setting_change", 0, "level")); }}
                 className={`option px-1 py-2.5 text-sm font-bold ${
                   level === l.id ? "option-correct" : ""
                 }`}
@@ -254,8 +249,7 @@ export function ProfileForm({
               dört satır yer kaplıyordu. Kalan tek ek bilgi kullanıcıyı
               ilgilendiren tek şey: bu düğmeyi ondan başkası çevirmiyor. */}
           <p className="muted mt-1.5 text-xs">
-            {t(LEVELS.find((l) => l.id === level)?.descKey ?? "")}.{" "}
-            {t("settings.only_you_change_level")}
+            {t(LEVELS.find((l) => l.id === level)?.descKey ?? "")}
           </p>
           {/* Yerleştirme testine tek giriş onboarding'di, yani bir kez geçilip
               bir daha ulaşılamıyordu: seviyesinden emin olmayan mevcut kullanıcı
@@ -276,6 +270,7 @@ export function ProfileForm({
           step={5}
           suffix={t("settings.reviews_unit")}
           onChange={setDailyGoal}
+          onCommit={(v) => { if (v !== initial.dailyGoal) void patch({ dailyGoal: v }, () => track("setting_change", v, "daily_goal")); }}
         />
         <Slider
           label={t("settings.new_per_day")}
@@ -285,6 +280,7 @@ export function ProfileForm({
           step={1}
           suffix={t("settings.words_unit")}
           onChange={setNewPerDay}
+          onCommit={(v) => { if (v !== initial.newPerDay) void patch({ newPerDay: v }, () => track("setting_change", v, "new_per_day")); }}
         />
         {/* Tekrar mantığı eskiden ayrı bir "Tekrar sistemi" kartındaydı: dört
             satır, hiçbir eylem yok. Bilginin ait olduğu yer burası — hedefi
@@ -294,48 +290,6 @@ export function ProfileForm({
         <p className="muted -mt-1 text-caption">{t("settings.srs_note")}</p>
       </Section>
 
-      <Section title={t("settings.reading_voice")}>
-        <div>
-          <VoicePicker
-            course={course}
-            value={voice}
-            onChange={(v: VoiceId) => setVoice(v)}
-            compact
-          />
-        </div>
-      </Section>
-
-      <div className="mx-auto w-full max-w-3xl">
-        <div className="flex items-center gap-3">
-          <button
-            onClick={() => void save()}
-            disabled={saving || !nameOk}
-            className="btn btn-primary px-6 py-3 disabled:opacity-60"
-          >
-            {saving ? t("settings.saving") : t("common.save")}
-          </button>
-          {saved ? (
-            <motion.span
-              initial={{ opacity: 0, x: -6 }}
-              animate={{ opacity: 1, x: 0 }}
-              className="flex items-center gap-1 text-sm font-semibold text-[color:var(--color-mint)]"
-            >
-              <CheckIcon size={16} /> {t("settings.saved")}
-            </motion.span>
-          ) : null}
-        </div>
-        {saveError ? (
-          <p
-            className="flex items-center gap-2 rounded-xl px-3 py-2 text-sm"
-            style={{
-              background: "color-mix(in srgb, var(--color-rose) 12%, transparent)",
-              color: "var(--color-rose)",
-            }}
-          >
-            <AlertIcon size={16} /> {saveError}
-          </p>
-        ) : null}
-      </div>
 
       {/* UYGULAMA DİLİ ve GÖRÜNÜM mobilde İKİ AYRI bölüm. Web'de ikisi
           kurulum, ses ve bildirimle birlikte tek "UYGULAMA" kartındaydı;
@@ -347,6 +301,22 @@ export function ProfileForm({
       <Group title={t("settings.group_app")} />
       <Section title={t("settings.app_language")} bare>
         <LangSetting bare />
+      </Section>
+
+      {/* SES kendi bölümü ve UYGULAMA grubunda. Okuma sesi "Öğrenme"nin
+          içindeydi; sesle ilgili ayar arayan kullanıcı onu orada aramıyor.
+          Mobilde aynı bölüm oyun seslerini de taşıyor — webde o anahtar
+          bildirim ayarlarında (`/notifications`) duruyor. */}
+      <Section title={t("settings.sound")}>
+        <div>
+          <p className="muted mb-2 text-caption tracking-wide">{t("settings.reading_voice")}</p>
+          <VoicePicker
+            course={course}
+            value={voice}
+            onChange={(v: VoiceId) => { setVoice(v); void patch({ voice: v }, () => track("setting_change", 0, "voice")); }}
+            compact
+          />
+        </div>
       </Section>
 
       <Section title={t("settings.appearance")} bare>
@@ -393,6 +363,55 @@ export function ProfileForm({
         </Link>
       </Section>
 
+      {/*
+        HESAP VE GÜVENLİK EN ALTTA. İkisi de en üstteydi ve ayarlar sayfası
+        "giriş yöntemlerin" ile başlıyordu — yılda bir dokunulan bir şey, her
+        gün açılan hedef/seviye/tema ayarlarının önünde duruyordu. Sık
+        kullanılan önce, yönetimsel olan sonra; mobil ayarlar ekranında da
+        sıra aynı.
+      */}
+      <Group title={t("settings.group_account")} />
+      <Section title={t("settings.account")}>
+        <label className="block">
+          <input
+            value={displayName}
+            onChange={(e) => setDisplayName(e.target.value)}
+            /*
+              ODAKTAN ÇIKINCA yazılıyor, her tuşta değil: her harfte bir istek
+              atmak sunucuya gereksiz yük, üstelik yarım yazılmış bir adı
+              kaydederdi. Boş ad sunucuda da reddediliyor; burada hiç
+              gönderilmiyor ki kullanıcı sebepsiz bir hata satırı görmesin.
+            */
+            onBlur={() => {
+              if (!nameOk) { setNameError(t("prof.name_required")); return; }
+              setNameError(null);
+              if (cleanName !== initial.displayName) void patch({ displayName: cleanName }, () => track("setting_change", 0, "name"));
+            }}
+            /* UZUNLUK SUNUCUNUN TUTTUĞU KADAR. Kutu 60 karakter kabul
+               ediyordu ama uç adı 40'a kırpıyor (`/api/profile`
+               `name.slice(0, 40)`): kullanıcı 55 karakterlik adını yazıp
+               kaydediyor, ekran "kaydedildi" diyor ve ad bir sonraki açılışta
+               kısalmış oluyordu — sessiz bir kayıp. §144'ün kuralının ters
+               yönü: yüzey, sunucunun KABUL ETTİĞİNDEN AZ da teklif etmemeli,
+               TUTTUĞUNDAN ÇOK da. */
+            maxLength={40}
+            placeholder={t("settings.display_name")}
+            className="option w-full px-4 py-3 text-base outline-none focus:border-[color:var(--color-brand)]"
+          />
+        </label>
+        {nameError ? (
+          <p role="alert" className="text-caption" style={{ color: "var(--color-rose)" }}>{nameError}</p>
+        ) : null}
+        {/* Hesap silme buradan PROFİLE taşındı (çıkış yapın altına): yıkıcı
+            eylem, ad kutusunun bir dokunuş yanında durmamalı. Gerekçenin
+            tamamı profile-view.tsx'te. */}
+      </Section>
+
+      {/* Giriş yöntemleri HESAP'ın hemen altında — mobildeki sıra. Web'de
+          sayfanın dibindeydi, yani "nasıl giriyorum" sorusunun cevabı
+          hesabın yanında değil sonundaydı. */}
+      {linkedAccounts}
+
       <Group title={t("settings.group_privacy_about")} />
       <Section title={t("settings.privacy")} bare>
         <AnalyticsSettings bare />
@@ -400,6 +419,15 @@ export function ProfileForm({
             geri alma düğmesi göstermek, hiçbir şey yapmayan bir düğme demek.
             Mobil ayarlarda da aynı satır ve aynı koşul var. */}
         <MicConsentRow />
+      </Section>
+
+      {/*
+        HAKKINDA AYRI BİR BÖLÜM. Politika, şartlar ve destek "Gizlilik"in
+        içindeydi; grubun adı zaten "Gizlilik ve hakkında"ydı ama "hakkında"
+        diye bir yer yoktu. Gizlilik artık yalnız kullanıcının AÇIP
+        KAPATABİLDİĞİ iki şeyi taşıyor; okunacak metinler burada.
+      */}
+      <Section title={t("settings.about")} bare>
         <SettingRow title={t("settings.privacy_and_terms")} sub={t("settings.privacy_and_terms_sub")}>
           <Link href={legalPath("privacy", lang)} prefetch={false} className="btn btn-ghost h-9 px-3 text-xs">{t("settings.privacy_policy")}</Link>
           <Link href={legalPath("terms", lang)} prefetch={false} className="btn btn-ghost h-9 px-3 text-xs">{t("settings.terms_of_use")}</Link>
@@ -426,45 +454,6 @@ export function ProfileForm({
   );
 }
 
-/**
- * Ayar bölümü — üstte küçük etiket, altında kart. Mobil `SettingsScreen`in
- * `Section`u ile aynı: etiket kartın İÇİNDE bir başlık değil, kartın DIŞINDA
- * bir ad. Fark küçük görünüyor ama bölümler arasındaki sınırı görünür kılan
- * şey bu — kart içi başlık, kartı bir öncekinin devamı gibi gösteriyordu.
- *
- * `bare`: kartın kendi dolgusu yok (satırlar kendi dolgusunu taşıyor).
- */
-/**
- * Grup başlığı — dokuz düz bölüm dört mantıksal gruba alındı (mobil ayarlarla
- * aynı bölünme). Eskiden kurs/seviye/hedef (öğrenme) ile arayüz dili/görünüm
- * (uygulama) ve hesap/gizlilik aynı düzlemdeydi; kullanıcı aradığı ayarı
- * grubun adından değil, satır satır okuyarak buluyordu.
- */
-function Group({ title }: { title: string }) {
-  return (
-    <h2 className="mx-auto mt-8 w-full max-w-3xl text-h3 first:mt-0">{title}</h2>
-  );
-}
-
-function Section({
-  title,
-  bare,
-  children,
-}: {
-  title: string;
-  bare?: boolean;
-  children: React.ReactNode;
-}) {
-  return (
-    <section className="mx-auto w-full max-w-3xl">
-      <p className="muted mb-2 ml-1 text-caption tracking-wide">{title}</p>
-      <div className={bare ? "card divide-y divide-[color:var(--hairline)] overflow-hidden" : "card space-y-4 p-5"}>
-        {children}
-      </div>
-    </section>
-  );
-}
-
 function Slider({
   label,
   value,
@@ -473,6 +462,7 @@ function Slider({
   step,
   suffix,
   onChange,
+  onCommit,
 }: {
   label: string;
   value: number;
@@ -481,6 +471,12 @@ function Slider({
   step: number;
   suffix: string;
   onChange: (v: number) => void;
+  /**
+   * BIRAKILDIĞINDA çağrılır. `onChange` sürükleme boyunca her adımda
+   * tetikleniyor; kaydı ona bağlamak 5'ten 120'ye giden bir sürüklemede
+   * yirmi dört istek demekti.
+   */
+  onCommit: (v: number) => void;
 }) {
   return (
     <label className="block">
@@ -497,6 +493,9 @@ function Slider({
         step={step}
         value={value}
         onChange={(e) => onChange(Number(e.target.value))}
+        onPointerUp={(e) => onCommit(Number((e.target as HTMLInputElement).value))}
+        onKeyUp={(e) => onCommit(Number((e.target as HTMLInputElement).value))}
+        onBlur={(e) => onCommit(Number(e.target.value))}
         className="h-2 w-full cursor-pointer appearance-none rounded-full accent-[color:var(--color-brand)] surface-2"
       />
     </label>

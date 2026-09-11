@@ -6,6 +6,7 @@ import { ChangePassword } from "@/components/account/change-password";
 import { ActiveSessions } from "@/components/account/active-sessions";
 import { TwoFactor } from "@/components/account/two-factor";
 import { useT } from "@/lib/i18n/client";
+import { Group, Section } from "@/components/settings-section";
 
 /**
  * better-auth `/list-accounts` yanıtı. Alan adı `providerId` — `provider` DEĞİL.
@@ -138,13 +139,12 @@ export function LinkedAccounts({ googleEnabled }: { googleEnabled: boolean }) {
   const satirlar = [...new Set([...accounts.map((a) => a.providerId), ...(googleEnabled ? ["google"] : [])])];
 
   return (
-    /* Ayarların diğer bölümleriyle AYNI kalıp: üstte küçük etiket, altında
-       kart. Bölüm sayfanın dibindeyken kendi genişliği (max-w-md) ve kendi
-       başlığı (kalın h2) vardı; HESAP'ın altına gelince aradaki fark bir
-       yamaya dönüştü. */
-    <section id="accounts" className="mx-auto w-full max-w-3xl">
-      <p className="muted mb-2 ml-1 text-caption tracking-wide">{t("links.title")}</p>
-      <div className="card divide-y divide-[color:var(--hairline)] overflow-hidden">
+    <>
+      {/* GİRİŞ YÖNTEMLERİ artık yalnız giriş yöntemleri. Parola, iki adımlı
+          doğrulama ve etkin oturumlar bu bölümün İÇİNDEYDİ ve etiket onları
+          anlatmıyordu — üçü de birer giriş yöntemi değil. Kendi grubuna
+          çıktılar; mobil ayarlar ekranında da bölünme aynı. */}
+      <Section id="accounts" title={t("links.title")} bare>
         {satirlar.map((p) => {
           const bagli = bagliMi(p);
           const etiket = ETIKET[p] ?? { ad: p, alt: "" };
@@ -167,11 +167,10 @@ export function LinkedAccounts({ googleEnabled }: { googleEnabled: boolean }) {
             </SettingRow>
           );
         })}
-      </div>
-      <p className="muted mt-2 px-1 text-xs leading-snug">
-        {t("links.hint")}
-      </p>
-      {msg ? <p className="mt-2 px-1 text-xs font-semibold">{msg}</p> : null}
+      </Section>
+      {msg ? <p role="status" className="mx-auto w-full max-w-3xl px-1 text-xs font-semibold">{msg}</p> : null}
+
+      <Group title={t("settings.group_security")} />
 
       {/* Parola değiştirme YALNIZ parolası olan hesapta. Bu bileşen zaten
           sağlayıcı listesini okuyor, ikinci bir istek atmaya gerek yok;
@@ -188,6 +187,6 @@ export function LinkedAccounts({ googleEnabled }: { googleEnabled: boolean }) {
           telefonunu kaybedebilir. Parola değiştirmenin aksine bu, giriş
           yöntemine bağlı değil. */}
       <ActiveSessions />
-    </section>
+    </>
   );
 }
