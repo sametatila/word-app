@@ -10625,3 +10625,72 @@ karşılığı yok.
 
 Kapı `check:radius` gibi **mutlak** oldu: taban dosyası silindi, ölçek dışı tek
 punto hata. İki enjeksiyon (yeni ölçek dışı sınıf, ölü istisna) yakalandı.
+
+## §11.325 — Dokunma hedefi: `hit-8` altı yerde, mobilde `hitSlop` yirmi yerde
+
+`globals.css`'teki `.hit-8` yardımcısının kendi yorumu ölçüyü yazıyor: mobilde
+ikincil denetimler `hitSlop={8}` taşıyor ve "gerçek hedef 36–50; webde hedef
+görünen boyutun kendisi. Yani en çok dokunulan ikincil denetim webde
+sistematik olarak daha küçük bir hedef sunuyordu." Yardımcı bunu kapatmak için
+yazılmış — ama **yalnız altı yerde** kullanılıyordu; mobilde `hitSlop` yirmi
+yerde.
+
+Ölçüm, yalnız ikonlu (metinsiz) düğmeler, etkili hedef:
+
+| Yuva | Önce | Sonra |
+|---|---|---|
+| `lesson-player` "sürdürüldü" kapat | **14×14** (dolgu yok) | 38 (`p-1` + `hit-8`) |
+| `league-board` bildir | **21** | 37 |
+| `push-optin` kapat | **23** (WCAG 24'ün altında) | 39 |
+| `install-prompt` kapat | 24 (sınırda) | 40 |
+| `writings-card` sil | ~26 | ~42 |
+| `skills/quiz` dinle | 26 | — (metinli, hedefi geniş) |
+| `lesson-player` ikinci dinle | 28 | 44 |
+| `exam-player` çık | 32 | 48 |
+| `placement-test` çık | 32 | 48 |
+| `sound-settings` örnek çal | 32 | 48 |
+| `voice-picker` dinle | 32 | 48 |
+
+Eşik **36** ve kaynağı o yorumun kendisi ("mobilin gerçek hedefi 36–50").
+`lesson-player`'ın ikinci dinle düğmesi özellikle öğreticiydi: kardeşi olan
+birinci dinle düğmesi `hit-8` taşıyor **ve yanında gerekçesi yazılı**, ikincisi
+taşımıyordu.
+
+Yol boyunca bir **i18n hatası** çıktı: `skills/quiz`in yazdırma turundaki
+"dinle" düğmesi `Cümleyi dinle` diye **sabit Türkçe** yazıyordu. Anahtar
+(`skillquiz.listen_to_sentence`) altı sözlüğün hepsinde duruyor ve mobil onu
+çağırıyor; yalnız web çağırmıyordu. Yani Almanca ya da İngilizce arayüz
+kullanan biri orada Türkçe görüyordu. (`i18n-hardcoded` tabanı 162 → 161.)
+
+### Kapı iki kez hiçbir şey ölçmedi ve ikisi de enjeksiyonla çıktı
+
+**Birinci:** açılış etiketinin sonunu `blok.indexOf(">")` ile arıyordum ve
+`onClick={() => ...}` içindeki **ok işaretinde** duruyordu. Açılış etiketi
+yarım kalıyor, kalan öznitelikler "içerik" sayılıyor, içerikte metin görünüyor
+ve düğme "ölçülemez" diye sessizce atlanıyordu. Kapı yeşildi ve **hiçbir şey**
+ölçmüyordu; bir düğmeden `hit-8`i silmek yakalanmayınca ortaya çıktı. Doğrusu:
+süslü parantez derinliği sıfırken ve tırnak içinde değilken gelen ilk `>`.
+Düzeltmeden sonra kapı, elle taramamın **tamamen kaçırdığı** on bir yuva daha
+buldu.
+
+**İkinci:** "ikonlu düğme" testim `{...}` ifadelerini de siliyordu, yani
+`<Icon/> {t("etiket")}` biçimindeki **metinli** düğmeler ikonlu sayılıyordu ve
+`retry-button`ın geniş düğmesi "18 px" diye bildirildi. Etiketler çıkarıldıktan
+sonra geride bir şey kalıyorsa o düğme ölçülemez.
+
+Bir **yanlış pozitif** de aynı şekilde kapatıldı: `achievement-badge`in düğmesi
+11 px'lik bir ikon taşıyor ama ikon, genişliği `style={{ width: size }}` ile
+gelen 56–72 px'lik bir karonun içinde; sınıflardan okunamayan boyut artık
+ölçüm dışı. Ölçemediği yeri bildiren kapı, komşuyu ölçen kapının kardeşi.
+
+Kapı metinli düğmeleri **bilerek** ölçmüyor: orada hedef metnin kendi genişliği
+kadar ve sınıflardan hesaplanamaz. Ölçüm yapmayan bir kapı yazmak,
+yazmamaktan kötü.
+
+### İkon boyutu ekseninde kapı YAZILMADI
+
+Ölçüm: mobilde `size={N}` 13'ten 104'e kırk ayrı değer, webde de aynı yayılım.
+Belgelenmiş bir ikon ölçeği **yok** — yarıçap ve puntoda olan (beş/sekiz
+basamak, `check:tokens`ın doğruladığı) burada hiç yazılmamış. Bir kapı "yakın
+değerleri" ihlal sayardı; §11.323'ün boşluk kararıyla aynı sınıf. Ayrışma
+varsa yüzey yüzey bulunur.
