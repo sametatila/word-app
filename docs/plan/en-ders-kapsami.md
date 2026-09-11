@@ -1,6 +1,6 @@
 # WP-74 — İngilizce ders kapsamı B1–C1
 
-**Durum:** sürüyor (B1 TAM; B2 modül 1-8 TAM, 180/300 ders) · **Sahip:** Claude · **Açılış:** 2026-09-11
+**Durum:** sürüyor (B1 TAM; B2 modül 1-9 TAM, 190/300 ders) · **Sahip:** Claude · **Açılış:** 2026-09-11
 
 ## Kusur
 
@@ -380,6 +380,24 @@ karşıdakini tek bir cevaba mahkûm eder.
 İki Türkçe kusur yazarken düzeldi, ikisini de hiçbir kapı görmüyor:
 ünsüz uyumu («teklifden» → «tekliften») ve anlamca tutmayan bir üretim
 hedefi (bir mektup kadrolu iş olamaz; «teklif» yapıldı).
+
+**B2 modül 9 — İnsan ilişkileri ve psikoloji (2026-09-11).** On ders:
+değerlendirme raporu, onun hakkında söylenenler, asıl kıran şey, nasıl
+bozuştuk, aramızdaki kişi, hiç bu kadar ağır gelmemişti, bir yıl sonra,
+yanlış anlamış olmalı, konuşsaydık, duyguyu adlandırmak.
+
+Modülün kendi ekseni DUYGUYU KİMİN SÖZÜ OLARAK SÖYLEDİĞİN. Bir duygu
+söylenirken kolayca karşıdaki hakkında bir gerçeğe dönüşür; modülün her
+dersi bunu başka bir yapıyla tutuyor. İlk ders bu modülde spirali TERSİNE
+çeviriyor: isimleştirme modül 1'den beri iyi bir araçtı, burada iki
+yüzlü — raporda kişiyi korur, sohbette kişiyi konudan çıkarır. Aynı
+şekilde edilgen aktarım, bir rakamda az zararlıyken bir insanda en yıkıcı
+biçim; ders bunu açıkça söylüyor.
+
+Kip bileşimi dersi modülün ahlaki merkezi: `can't have` ilişkide en
+cömert kiptir, çünkü karşındakine yapmayacağı şeyi yakıştırmaz. Son ders
+ise yumuşatıcıların işini ilişkiye taşıyor: üçü de duyguyu verir ama onu
+karşındaki hakkında bir hükme çevirmez.
 
 ## Tamamlanma ölçütü
 
