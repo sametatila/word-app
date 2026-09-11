@@ -207,7 +207,7 @@ export function FreeSentenceGame({ round, onDone }: GameProps<FreeRound>) {
             ))}
           </div>
           <button type="submit" disabled={status !== "idle" || value.trim().split(/\s+/).length < 2} className="btn btn-primary min-h-12 px-4 text-sm">
-            {tx(status === "checking" ? "rounds.evaluating" : "rounds.evaluate")}
+            {tx(status === "checking" ? "mockexam.evaluating" : "mockexam.evaluate")}
           </button>
         </form>
       )}

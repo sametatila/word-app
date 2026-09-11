@@ -214,7 +214,7 @@ export function RoleplayExam({ lesson, cando }: { lesson: Lesson; cando: string[
     return (
       <section className="card mx-auto w-full max-w-md p-5 text-center" aria-busy>
         <Mascot mood="think" size={80} className="mx-auto" />
-        <p className="mt-2 text-sm font-semibold">{t("exam.scoring")}</p>
+        <p className="mt-2 text-sm font-semibold">{t("item.mono_scoring")}</p>
         <p className="muted text-xs">{t("rpexam.scoring_note", { n: userTurns })}</p>
       </section>
     );

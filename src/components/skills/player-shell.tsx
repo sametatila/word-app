@@ -192,7 +192,7 @@ export function ResultCard({
           </p>
           {state.repeat && state.xpGained === 0 ? (
             <p className="muted mt-1.5 text-xs">
-              {t("skillp.repeat_note")}
+              {t("item.repeat_note")}
             </p>
           ) : null}
         </>

@@ -114,7 +114,7 @@ export function ListenGame({ round, onDone }: GameProps<ListenRound>) {
               speakGerman(spoken);
             }}
             whileTap={{ scale: 0.93 }}
-            aria-label={tx("rounds.listen_again")}
+            aria-label={tx("mockexam.listen_again")}
             className="brand-gradient flex h-20 w-20 items-center justify-center rounded-full shadow-lg"
           >
             <SpeakerIcon size={34} />

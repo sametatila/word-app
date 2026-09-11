@@ -312,7 +312,7 @@ export function ExamPlayer({ level, module }: { level: CefrLevel; module: number
   if (phase === "loading" || phase === "finishing") {
     return (
       <section className="card mx-auto w-full max-w-md p-5" aria-busy>
-        <p className="muted text-sm">{t(phase === "loading" ? "exam.preparing" : "exam.scoring")}</p>
+        <p className="muted text-sm">{t(phase === "loading" ? "exam.preparing" : "item.mono_scoring")}</p>
         <div className="mt-3 h-10 animate-pulse rounded-xl surface-2" />
       </section>
     );
@@ -603,7 +603,7 @@ export function ExamPlayer({ level, module }: { level: CefrLevel; module: number
             <span className="muted text-xs">{t(spk === "rec" ? "exam.recording_tap_done" : "exam.tap_mic_read")}</span>
           </div>
         ) : null}
-        {spk === "scoring" ? <p className="muted mt-5 text-center text-sm">{t("exam.scoring")}</p> : null}
+        {spk === "scoring" ? <p className="muted mt-5 text-center text-sm">{t("item.mono_scoring")}</p> : null}
         {spk === "done" && spkResult ? (
           <div className="mt-4">
             <PronounceCard score={spkResult} compact />

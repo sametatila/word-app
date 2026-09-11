@@ -152,10 +152,10 @@ export function QuestCard() {
               color: "var(--color-mint)",
             }}
           >
-            {t("questw.rewards_ready", { n: claimable })}
+            {t("dailyquests.rewards_ready", { n: claimable })}
           </span>
         ) : (
-          <span className="muted text-xs">{t("quests.resets_midnight")}</span>
+          <span className="muted text-xs">{t("dailyquests.resets_midnight")}</span>
         )}
       </div>
 
@@ -209,7 +209,7 @@ export function QuestCard() {
                   disabled={busy === q.id}
                   className="btn btn-primary shrink-0 px-3 py-1.5 text-xs disabled:opacity-60"
                 >
-                  {busy === q.id ? "…" : t("questw.claim_xp", { xp: q.xp })}
+                  {busy === q.id ? "…" : t("dailyquests.claim_xp", { xp: q.xp })}
                 </button>
               ) : (
                 <span className="muted shrink-0 text-[11px] tabular-nums">
@@ -228,7 +228,7 @@ export function QuestCard() {
         >
           <GiftIcon size={20} />
           <p className="min-w-0 flex-1 text-sm font-semibold">
-            {board.allClaimed ? t("quests.all_three_done") : t("quests.all_three_done_sub")}
+            {board.allClaimed ? t("dailyquests.all_three_done") : t("dailyquests.all_three_done_sub")}
           </p>
           {board.allClaimed ? (
             <span className="muted shrink-0 text-[11px] font-semibold">+300 XP</span>
@@ -238,7 +238,7 @@ export function QuestCard() {
               disabled={busy === "all"}
               className="btn btn-primary shrink-0 px-3 py-1.5 text-xs disabled:opacity-60"
             >
-              {busy === "all" ? "…" : t("questw.claim_xp", { xp: 300 })}
+              {busy === "all" ? "…" : t("dailyquests.claim_xp", { xp: 300 })}
             </button>
           )}
         </div>

@@ -743,7 +743,7 @@ export function LessonPlayer({
 
       if (attempts.current === 2) {
         interject(
-          [nar("lesson.answer_is"), { lang: "de", text: e.target }, nar("lessonp.please_repeat")],
+          [nar("common.answer_is"), { lang: "de", text: e.target }, nar("lessonp.please_repeat")],
           reopen,
         );
         return;
