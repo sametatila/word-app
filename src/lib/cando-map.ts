@@ -67,6 +67,21 @@ const FOCUS_GR: [RegExp, Record<CefrLevel, number>][] = [
  * seviyede.
  */
 const FOCUS_GR_EN: [RegExp, Partial<Record<CefrLevel, number>>][] = [
+  /* B1 SATIRLARI ÖNDE. Sıra önemli: ilk eşleşen kazanıyor ve A1/A2 desenleri
+     geniş. «Modals of obligation» aşağıdaki `/must|have to|…/` satırına düşerdi
+     ve o satırın B1 sütunu yok — ders sessizce dilbilgisi ifadesiz kalırdı.
+     Aynı tuzak «Present perfect vs past simple» için de var (`/past simple/`).
+     Desenler B1'e özgü tutuldu ki A1/A2 odakları buraya kaymasın. */
+  [/present perfect vs past|perfect or past/i, { B1: 11 }],
+  [/past perfect/i, { B1: 12 }],
+  [/future forms|will vs going|arrangements/i, { B1: 13 }],
+  [/conditional/i, { B1: 14 }],
+  [/relative clause/i, { B1: 15 }],
+  [/reported speech|indirect speech/i, { B1: 16 }],
+  [/passive/i, { B1: 17 }],
+  [/deduction|modals of obligation|obligation and permission/i, { B1: 18 }],
+  [/gerund|infinitive|verb patterns/i, { B1: 19 }],
+  [/linking words|connectors|although|despite|in order to/i, { B1: 20 }],
   [/to-be|past of be|there-is|there is/i, { A1: 11 }],
   [/article/i, { A1: 12 }],
   [/plural|countable/i, { A1: 13 }],

@@ -221,6 +221,21 @@ export const CANDO: Cando[] = [
   c("A2", "GR", 14, "Karşılaştırma yapabilirim: -er ve -est, more ve most, as … as."),
   c("A2", "GR", 15, "Geleceği anlatabilirim: going to ile plan, will ile o an verilen karar."),
   c("A2", "GR", 16, "can, should, must ve have to ile yetenek, tavsiye ve zorunluluk anlatabilirim."),
+  /* B1 bloğu WP-74 ile açıldı: İngilizce kursun B1 dersleri yazılmadan ÖNCE,
+     çünkü ders `focusId`'siyle buraya bağlanıyor ve karşılığı olmayan odak
+     sessizce düşüyor — ders yazılıp sonra etiket aranırsa 100 dersin hiçbiri
+     dilbilgisi ifadesine bağlanmamış olurdu. On ifade, seviyenin on modülüne
+     karşılık geliyor (bkz. `docs/plan/en-ders-kapsami.md`). */
+  c("B1", "GR", 11, "Present perfect ile past simple arasında seçim yapabilirim: zamanı belli bitmiş olayda past simple, etkisi süren deneyimde present perfect."),
+  c("B1", "GR", 12, "İki geçmiş olayı sıralayabilirim: önce olanı past perfect ile (had + fiilin üçüncü hâli) geriye alırım."),
+  c("B1", "GR", 13, "Geleceği üç biçimle anlatabilirim: kararlaşmış program için present continuous, niyet için going to, tahmin ve o anki karar için will."),
+  c("B1", "GR", 14, "Birinci ve ikinci koşul cümlelerini kurabilirim: if + geniş zaman → will, if + past → would."),
+  c("B1", "GR", 15, "İlgi cümlesi kurabilirim: who, which ve that; nesne durumunda ilgi zamirini düşürebilirim."),
+  c("B1", "GR", 16, "Başkasının sözünü aktarabilirim: zaman bir basamak geriye gider, zamirler ve zaman zarfları kayar."),
+  c("B1", "GR", 17, "Edilgen çatıyı şimdiki ve geçmiş zamanda kurabilirim: is/was + fiilin üçüncü hâli, gerekirse by ile yapan."),
+  c("B1", "GR", 18, "must, might ve can't ile çıkarım yapabilirim; have to, don't have to ve should ile zorunluluk ve öğüt anlatabilirim."),
+  c("B1", "GR", 19, "Fiilden sonra -ing mi to mu geldiğini seçebilirim: enjoy doing, decide to do ve stop doing ile stop to do farkı."),
+  c("B1", "GR", 20, "Uzun cümleyi bağlaçlarla toparlayabilirim: although, however, so that, in order to ve despite."),
 ];
 
 /**
@@ -232,9 +247,11 @@ export const CANDO: Cando[] = [
  * çağrılarını düz metin olarak okuduğu için tipte yeni bir alan onları
  * kırardı.
  */
-export const EN_GR_IDS: ReadonlySet<string> = new Set(
-  ["A1", "A2"].flatMap((lvl) => [11, 12, 13, 14, 15, 16, 17, 18].map((n) => `${lvl}.GR.${n}`)),
-);
+export const EN_GR_IDS: ReadonlySet<string> = new Set([
+  ...["A1", "A2"].flatMap((lvl) => [11, 12, 13, 14, 15, 16, 17, 18].map((n) => `${lvl}.GR.${n}`)),
+  // B1 on ifade taşıyor (A1/A2 sekiz): seviyenin on modülü, her modüle bir kural.
+  ...[11, 12, 13, 14, 15, 16, 17, 18, 19, 20].map((n) => `B1.GR.${n}`),
+]);
 
 const byId = new Map(CANDO.map((x) => [x.id, x]));
 
