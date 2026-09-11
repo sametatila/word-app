@@ -9978,3 +9978,32 @@ Kapı bu yüzden yalnız **açık karşı beyanı** arıyor: oturum okuyan bir d
 Bugün hiçbir ihlal yok (162 dosya). Üç enjeksiyonun üçü yakalandı: oturumlu
 sayfaya `revalidate`, oturumlu sayfaya `force-static`, ve oturumlu ucun ikisini
 birden bırakması.
+
+## §11.304 — Her uç bir kapıdan geçiyor mu?
+
+`src/app/api` altındaki 68 ucun tamamı tarandı. Hepsi dört kapıdan birine
+dayanıyor: oturum, cron anahtarı (`cronGate`), yönetici (`adminGate`) ya da
+imza doğrulaması (Apple bildirimi, mağaza webhook'u). Üçü bilerek açık ve
+gerekçeleri artık kapının içinde **yazılı** — better-auth'un kendi yolu, genel
+yapılandırma ve captcha doğrulaması.
+
+**IDOR taraması da yapıldı ve temiz çıktı.** İstekten gelen bir `userId`
+kullanan yedi uç var; hepsinde desen aynı ve doğru: *aktör* oturumdan
+(`requireUser`), *hedef* gövdeden. "Arkadaş ekle { userId }" zaten hedefi
+istekten almak zorunda; tehlikeli olan aktörü istekten almak olurdu ve öyle bir
+yer yok.
+
+**Kapı bir kayıt defteri tutuyor, istisna torbası değil:** açık uçlar adıyla ve
+gerekçesiyle listede; yeni bir uç ya kapıdan geçecek ya listeye yazılacak.
+Liste bayatlamasın diye ters yön de ölçülüyor — kayıtlı bir yol silinirse kapı
+onu da bildiriyor.
+
+İki enjeksiyonun ikisi yakalandı: kapısız yeni bir uç, ve var olan bir ucun
+kapısının kalkması.
+
+**Bu turda kendi ayağıma sıktım ve kaydı buraya:** üçüncü enjeksiyonu geri
+alırken `git checkout scripts/check-client-boundary.mjs` yazdım — o dosyada
+henüz **commit edilmemiş** olan beşinci denetimin tamamı silindi. Yedekleme
+disiplini enjeksiyon hedefleri için vardı, kapının kendisi için yoktu. Kural:
+*enjeksiyonu geri alan komut, o turda yazılmış kodu da geri alabilir; geri alma
+her zaman yedekten olmalı, `git checkout`tan değil.*

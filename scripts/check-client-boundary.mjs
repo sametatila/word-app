@@ -222,6 +222,47 @@ for (const file of walk("src/app")) {
   }
 }
 
+/**
+ * BEŞİNCİ SINIR: her uç bir kapıdan geçiyor mu?
+ *
+ * `src/app/api` altındaki her `route.ts` şu dördünden BİRİNE dayanmalı:
+ * oturum (`requireUser`/`getUserId`/…), cron anahtarı (`cronGate`), yönetici
+ * (`adminGate`) ya da imza doğrulaması (webhook). Hiçbirine dayanmayan bir uç
+ * internete açık demektir ve bunu fark etmenin tek yolu dosyayı okumak.
+ *
+ * AÇIK OLANLAR BURADA, GEREKÇESİYLE. Liste bir istisna torbası değil, bir
+ * BEYAN: yeni bir uç eklendiğinde ya kapıdan geçecek ya da buraya gerekçesini
+ * yazacak. Sessizce üçüncü bir yol yok. Kayıtlı bir yol silinirse o da
+ * bildiriliyor — liste bayatlamasın.
+ */
+const PUBLIC_ROUTES = new Map([
+  ["src/app/api/auth/[...path]/route.ts", "better-auth'un kendi yolu: giriş, kayıt, doğrulama hepsi burada"],
+  ["src/app/api/config/route.ts", "istemcinin açılışta okuduğu genel yapılandırma; sır taşımıyor"],
+  ["src/app/api/turnstile/route.ts", "captcha doğrulaması: çağıran henüz giriş yapmamış olabilir"],
+]);
+
+const GATES = /getUserId\(|getUserInfo\(|requireUser\(|auth\.api\.getSession|cronGate\(|adminGate\(|verifyAppleNotification\(|adapter\.parse\(/;
+const apiFiles = walk("src/app/api");
+const ungated = new Set();
+for (const file of apiFiles) {
+  if (!/\/route\.ts$/.test(file) || PUBLIC_ROUTES.has(file)) continue;
+  const src = read(file).replace(/\/\*[\s\S]*?\*\//g, " ").replace(/\/\/[^\n]*/g, " ");
+  if (!GATES.test(src)) ungated.add(file);
+}
+for (const [file] of PUBLIC_ROUTES) {
+  if (!apiFiles.includes(file)) ungated.add(`${file} (kayıtlı ama dosya yok)`);
+}
+
+if (ungated.size) {
+  console.error("\nKAPISIZ UÇ:\n");
+  for (const x of ungated) console.error("  " + x);
+  console.error(
+    "\nHer uç oturum, cron anahtarı, yönetici ya da imza doğrulamasına dayanmalı.\n" +
+    "Bilerek açıksa `PUBLIC_ROUTES` listesine gerekçesiyle yazın.\n",
+  );
+  process.exit(1);
+}
+
 if (cacheIssues.size) {
   console.error("\nOTURUMA BAĞLI İÇERİK ÖNBELLEĞE ALINABİLİR:\n");
   for (const x of cacheIssues) console.error("  " + x + "\n");
