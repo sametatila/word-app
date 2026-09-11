@@ -9,13 +9,12 @@ import type { PlanPrice } from "./gates";
  * dışarı taşır, oysa burada karar verilen tek şey vitrinde hangi para
  * biriminin yazacağı. Kaynak sırayla:
  *
- *   1. PROFİLDEKİ SAAT DİLİMİ. Uygulama zaten kaydediyor (bildirim saatleri
- *      kullanıcının kendi gününe göre hesaplanıyor, bkz. lib/push) ve cihazın
- *      kendi ayarından geliyor — izin gerektirmeyen en güçlü sinyal. Premium
- *      sayfası giriş istiyor, yani bu alan pratikte hep dolu.
- *   2. `Accept-Language` başlığındaki ülke eki ("tr-TR" → TR). Zayıf ama
- *      bedava: dil ülke demek değil, yine de hiç yoktan iyi.
- *   3. GLOBAL.
+ *   1. CİHAZIN SAAT DİLİMİ (`tz` çerezi, bkz. lib/tz-cookie). Tarayıcının
+ *      kendi ayarı; izin gerektirmiyor. Profildeki `timezone` alanı bu iş için
+ *      KULLANILMIYOR: NOT NULL ve varsayılanı "Europe/Istanbul", yalnız bildirim
+ *      kaydında yazılıyor — bildirimleri açmamış kullanıcıda varsayılanı taşıyor.
+ *   2. GLOBAL — bilinmiyorsa taban fiyat. Dil HİÇ bakılmıyor: dil kullanıcının
+ *      nerede olduğunu söylemez.
  *
  * SONUÇ TEK BÖLGE. Çağıran yalnız bunun fiyatını gösteriyor; bölge listesi
  * hiçbir yüzeyde açılmıyor.
@@ -37,12 +36,6 @@ const EU_ZONES = new Set([
   "Europe/Vilnius", "Europe/Warsaw", "Europe/Zagreb", "Atlantic/Canary", "Atlantic/Madeira",
 ]);
 
-/** Ülke kodu → bölge. Yalnız iki özel durum var, gerisi GLOBAL. */
-const EU_COUNTRIES = new Set([
-  "AT", "BE", "BG", "HR", "CY", "CZ", "DK", "EE", "FI", "FR", "DE", "GR", "HU", "IE", "IT",
-  "LV", "LT", "LU", "MT", "NL", "PL", "PT", "RO", "SK", "SI", "ES", "SE", "IS", "LI", "NO",
-]);
-
 /**
  * SAAT DİLİMİ VARSA CEVAP DA VAR. "Ne TR ne AB" bilinmezlik değil, GLOBAL
  * demek: America/New_York açık bir cevaptır. İlk yazımda buradan `null`
@@ -58,19 +51,16 @@ function fromTimezone(tz: string | null | undefined): PriceRegion | null {
   return "GLOBAL";
 }
 
-function fromAcceptLanguage(header: string | null | undefined): PriceRegion | null {
-  if (!header) return null;
-  // "tr-TR,tr;q=0.9,en-US;q=0.8" → ilk etiketteki ülke eki
-  const first = header.split(",")[0]?.trim() ?? "";
-  const country = first.split("-")[1]?.slice(0, 2).toUpperCase();
-  if (!country) return null;
-  if (country === "TR") return "TR";
-  if (EU_COUNTRIES.has(country)) return "EU";
-  return null;
-}
-
-export function resolveRegion(tz: string | null | undefined, acceptLanguage?: string | null): PriceRegion {
-  return fromTimezone(tz) ?? fromAcceptLanguage(acceptLanguage) ?? "GLOBAL";
+/**
+ * DİL FİYATI BELİRLEMEZ. İlk yazımda saat dilimi bilinmiyorsa
+ * `Accept-Language`daki ülke ekine düşülüyordu ve sonuç şuydu: arayüzünü ya da
+ * tarayıcısını Almancaya alan kullanıcıya euro gösteriliyordu. Dil, kullanıcının
+ * NEREDE olduğunu söylemez — Türkiye'de yaşayan biri uygulamayı İngilizce
+ * kullanabilir. Bilinmeyen bölge artık GLOBAL; yanlış bölge göstermektense
+ * taban fiyat gösteriliyor.
+ */
+export function resolveRegion(tz: string | null | undefined): PriceRegion {
+  return fromTimezone(tz) ?? "GLOBAL";
 }
 
 /**

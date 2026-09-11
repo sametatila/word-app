@@ -1,8 +1,6 @@
-import { headers } from "next/headers";
-import { eq } from "drizzle-orm";
-import { db } from "@/lib/db";
-import { profiles } from "@/lib/db/schema";
+import { cookies } from "next/headers";
 import { priceFor, resolveRegion } from "@/lib/premium/region";
+import { TZ_COOKIE } from "@/lib/tz-cookie";
 import { titleMeta } from "@/lib/page-meta";
 import { getUserId } from "@/lib/auth/server";
 import { premiumConfig, premiumCopy, premiumStatus } from "@/lib/premium";
@@ -32,17 +30,12 @@ export default async function PremiumPage({ searchParams }: { searchParams: Prom
   const source = from && SOURCES.has(from) ? from : "other";
   const userId = await getUserId();
 
-  const [cfg, copy, status, referral, tz, hdrs] = await Promise.all([
+  const [cfg, copy, status, referral, jar] = await Promise.all([
     premiumConfig(),
     premiumCopy(),
     premiumStatus(userId),
     userId ? referralStats(userId).catch(() => null) : Promise.resolve(null),
-    userId
-      ? db.select({ tz: profiles.timezone }).from(profiles).where(eq(profiles.userId, userId)).limit(1)
-          .then((r) => r[0]?.tz ?? null)
-          .catch(() => null)
-      : Promise.resolve(null),
-    headers(),
+    cookies(),
   ]);
 
   /*
@@ -52,7 +45,7 @@ export default async function PremiumPage({ searchParams }: { searchParams: Prom
     İSTEMEDEN bulunuyor (gerekçe: lib/premium/region.ts) ve ekrana yalnız
     bulunan bölgenin fiyatı çıkıyor.
   */
-  const region = resolveRegion(tz, hdrs.get("accept-language"));
+  const region = resolveRegion(jar.get(TZ_COOKIE)?.value ?? null);
   const price = priceFor(cfg.plans.prices, region);
 
   return (

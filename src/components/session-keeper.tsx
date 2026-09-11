@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
+import { writeTzCookie } from "@/lib/tz-cookie";
 
 /**
  * Oturumu ayakta tutan ve hesap değişiminde cihazı temizleyen görünmez bileşen.
@@ -104,6 +105,15 @@ function forgetPreviousAccount() {
 }
 
 export function SessionKeeper({ userId }: { userId: string }) {
+  /*
+    CİHAZIN SAAT DİLİMİ ÇEREZE. Fiyat bölgesi sunucuda, sayfa çizilirken
+    belli olmalı ve profildeki alan bunu söylemiyor: `profiles.timezone` NOT
+    NULL, varsayılanı "Europe/Istanbul" ve yalnız bildirim kaydı sırasında
+    yazılıyor — bildirimleri açmamış kullanıcıda cihazın değil varsayılanın
+    değeri duruyor. Gerekçenin tamamı `lib/tz-cookie`de.
+  */
+  useEffect(() => { writeTzCookie(); }, []);
+
   useEffect(() => {
     // Temizlik, kurs/ses aynasının yazılmasından ÖNCE olmalı — bu bileşen
     // kabuğun içinde durduğu için etkisi kabuğunkinden önce çalışıyor.
