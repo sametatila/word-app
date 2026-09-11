@@ -1663,10 +1663,13 @@ export function LessonPlayer({
                         key={pt.de}
                         className="chip px-2 py-1 text-caption"
                         style={used ? { borderColor: "var(--color-mint)", color: "var(--color-mint)" } : { opacity: 0.6 }}
-                        title={pt.tr}
                       >
+                        {/* Karşılık GÖRÜNÜR: `title=` ipucu balonundaydı,
+                            dokunmatikte hiç açılmıyor. Android özetteki aynı
+                            listede "de" ve "tr"yi yan yana yazıyor. */}
                         {used ? "✓ " : ""}
                         {pt.de}
+                        <span className="muted"> · {pt.tr}</span>
                       </span>
                     );
                   })}

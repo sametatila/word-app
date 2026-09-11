@@ -162,7 +162,6 @@ export function FreeSentenceGame({ round, onDone }: GameProps<FreeRound>) {
               onClick={() => insertChar((value && !value.endsWith(" ") ? " " : "") + t.de + " ")}
               disabled={status !== "idle"}
               className="chip px-3 py-1.5 text-body"
-              title={t.tr}
             >
               <strong lang={course}>{withArtikel(t)}</strong>
               <span className="muted ml-1.5 text-caption">{t.tr}</span>

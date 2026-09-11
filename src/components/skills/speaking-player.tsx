@@ -217,7 +217,14 @@ export function SpeakingPlayer({ exercise, backHref }: { exercise: SkillExercise
                     <span
                       key={i}
                       lang={lang}
-                      title={w.heard ? `duyulan: ${w.heard}` : undefined}
+                      /* SABİT TÜRKÇE KALKTI VE İPUCU BALONUNDAN ÇIKTI.
+                         Metin `duyulan: ${...}` diye KODA GÖMÜLÜ Türkçeydi —
+                         İngilizce ve Almanca arayüzde de Türkçe çıkıyordu — ve
+                         yalnız fare üstüne gelince görünüyordu. Sözlükte
+                         zaten ortak anahtar var (`item.heard`, Android aynı
+                         cümleyi görünür bir satırda yazıyor); burada kelime
+                         kelime olduğu için erişilebilir ad olarak veriliyor. */
+                      aria-label={w.heard ? t("item.heard", { text: w.heard }) : undefined}
                       className="rounded px-1.5 py-0.5 text-caption"
                       style={{
                         background:

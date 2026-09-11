@@ -108,7 +108,6 @@ export function UserAction({
       <button
         className={`btn btn-primary ${size}`}
         disabled={busy || !canRequest}
-        title={canRequest ? undefined : t("social.err_requests_closed")}
         onClick={() =>
           void run(async () => {
             const r = await social.request(userId);
@@ -125,6 +124,14 @@ export function UserAction({
   return (
     <span className="flex flex-col items-end gap-1">
       {button}
+      {/* DEVRE DIŞI DÜĞMENİN SEBEBİ GÖRÜNÜR. Sebep `title=` ipucu balonunda
+          duruyordu: dokunmatikte hiç açılmaz, klavyeyle de erişilmez — yani
+          kullanıcı ölü bir düğmeye bakıp neden çalışmadığını hiçbir yerden
+          öğrenemiyordu. Hata değil bilgi, o yüzden `ErrorText` değil sönük
+          bir satır. */}
+      {!canRequest ? (
+        <span className="muted text-micro">{t("social.err_requests_closed")}</span>
+      ) : null}
       <ErrorText text={err} className="text-micro" />
     </span>
   );

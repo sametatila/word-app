@@ -3,9 +3,9 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { useTargetLang } from "./player-context";
 import { motion } from "framer-motion";
-import { glossTitle } from "./gloss-entry";
 import type { WritingExercise, WritingTask } from "@/lib/skills/types";
 import { PlayerShell, ResultCard, useSkillFinish } from "./player-shell";
+import { glossTitle } from "./gloss-entry";
 import { AiNotice } from "@/components/ai-notice";
 import { askAssess, fallbackAssessment, type AssessFailure, type FallbackAssessment } from "@/lib/assess-client";
 import type { Assessment, AssessLevel, AssessRequest } from "@/lib/assess-prompts";
@@ -466,10 +466,20 @@ function FreeTask({
                 key={p.de}
                 type="button"
                 onClick={() => insert(p.de + " ")}
-                title={glossTitle(p)}
                 className="chip px-2.5 py-1 text-caption"
               >
+                {/* KARŞILIK GÖRÜNÜR. `title=` ipucu balonundaydı ve
+                    dokunmatikte hiç açılmıyor; Android aynı kartta "de · tr"
+                    yazıyor (`skillQuiz` `FreeCard`).
+
+                    Yazılan şey `glossTitle`ın TAMAMI, yalnız Türkçesi değil:
+                    o metin İngilizceyi ve Hochdeutsch köprüsünü de taşıyor ve
+                    kendi yorumunun dediği gibi Züritüütsch kalıplarında
+                    lehçe biçimin Almancası başka hiçbir yerde görünmüyor —
+                    ipucu balonunu görünür satıra çevirirken o bilgiyi
+                    düşürmek, bir kusuru bir başkasıyla değişmek olurdu. */}
                 {p.de}
+                <span className="muted"> · {glossTitle(p)}</span>
               </button>
             ))}
           </div>
@@ -664,7 +674,7 @@ function SentenceTask({ task, level, onDone }: { task: SentenceTaskData; level: 
       <p className="mt-1.5 text-strong leading-relaxed">{task.prompt ?? t("rounds.build_sentence")}</p>
       <div className="mt-2 flex flex-wrap gap-2">
         {task.words.map((w) => (
-          <button key={w.de} type="button" onClick={() => insert((text && !text.endsWith(" ") ? " " : "") + w.de + " ")} disabled={Boolean(result)} className="chip px-3 py-1.5 text-body" title={w.tr}>
+          <button key={w.de} type="button" onClick={() => insert((text && !text.endsWith(" ") ? " " : "") + w.de + " ")} disabled={Boolean(result)} className="chip px-3 py-1.5 text-body">
             <strong lang={lang}>{w.de}</strong>
             <span className="muted ml-1.5 text-caption">{w.tr}</span>
           </button>
