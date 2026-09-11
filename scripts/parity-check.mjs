@@ -7292,6 +7292,54 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     "beklenen",
   );
 
+  /* -- 237. YAZMA GOREVININ PUAN BANTLARI SABITTEN MI -------------------
+   *
+   * Yazma degerlendirmesinde uc sayi var ve ikisi elle yaziliydi:
+   *
+   *   RUBRIC_PASS_PCT (60) - gorev "tamam" sayilir : iki tarafta SABITTEN
+   *   SCORE_MID_PCT   (40) - "gelistir" ile "bastan dene" arasindaki cizgi
+   *                          : iki tarafta da ELLE `40` yaziliydi
+   *   SKILL_DONE_PCT  (70) - cumle gorevinin gecme notu (webde)
+   *                          : elle `70` yaziliydi, dosyanin yorumu sayiyi
+   *                            ANLATIYOR ama olcen bir sey yoktu
+   *
+   * Orta bant iki platformda da yanlisti, yani karsilastirmali bir kapi bunu
+   * goremezdi (§11.228 sinifi) - olcut mutlak: bu dosyalarda elle yazilmis
+   * puan esigi kalmamali.
+   *
+   * OLCULDU VE DEFTERE GECTI: yazma gorev turleri webde yedi cesit tanimli
+   * (`sentence`, `build`, `reply`, `form`, `rewrite`, `summary`, `free`),
+   * mobilde dort (`build`, `rewrite`, `form`, `free`). Ama icerikte `sentence`
+   * ve `summary` HIC yok (ikisinde de sifir) ve `reply` gorevleri mobilde
+   * `FreeCard`a dusuyor - o kart `stimulus`, `checklist` ve `phrases`i
+   * ciziyor, `minWords` de kirk gorevin kirkinda dolu, yani calisiyor.
+   * Latent bir ayrisma, canli degil. */
+  {
+    const yw = sil(read("src/components/skills/writing-player.tsx"));
+    const ym = sil(read("mobile/src/game/skillQuiz.tsx"));
+    /* Puan esigi gibi duran elle yazilmis sayilar: `overall >= NN`,
+       `aiScore >= NN`, `score >= NN`. */
+    const elle = (src) => (src.match(/\b(?:overall|aiScore|score(?:\.overall)?) >= \d+/g) ?? []).length;
+    const bant = (src) => [
+      /* `\b` ZORUNLU: onek eslesmesi uzun bir adi da yakalar ve deponun
+         kendi meta-kapisi ("kapilarda onek eslesmesi") bunu reddediyor. */
+      "gecme=" + (/\bRUBRIC_PASS_PCT\b/.test(src) ? "sabitten" : "YOK"),
+      "orta bant=" + (/\bSCORE_MID_PCT\b/.test(src) ? "sabitten" : "ELLE"),
+      "elle esik=" + elle(src),
+    ];
+    sameList("yazma gorevinin puan bantlari", bant(ym), bant(yw), "mobil", "web");
+
+    /* Cumle gorevinin gecme notu webde; mobilde o gorev turu hic yok, o
+       yuzden bu olcu mutlak ve tek tarafli. */
+    sameList(
+      "cumle gorevinin gecme notu sabitten",
+      ["cumle gorevi=" + (/overall >= SKILL_DONE_PCT/.test(yw) ? "sabitten" : "ELLE")],
+      ["cumle gorevi=sabitten"],
+      "bulunan",
+      "beklenen",
+    );
+  }
+
   /* -- 236. ROL YAPMA: en az tur kurali ve servis kapaliyken guvence ----
    *
    * Iki sey cikti:

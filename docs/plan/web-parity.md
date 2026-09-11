@@ -11848,3 +11848,40 @@ sayılmayacağını sanıp dersi bırakabilirdi.
 Cümle ortak anahtara alındı (`lesson.chat_offline_note`) ve iki tarafta da
 **görünür** yazıldı: webde rozetin altında bir satır, Android'de balonun
 ikinci parçası.
+
+## §11.353 — Yazma değerlendirmesinin puan bantları: ikisi de elle yazılıydı
+
+Eksen **beceri egzersizi oynatıcıları**ydı. Kapsam ölçüldü ve **altı biçimin
+hepsi ikisinde de oynanıyor** (okuma, dinleme, yazma, gramer, konuşma drili,
+monolog); dinleme kontrolleri de eşit (yavaş, metni göster/gizle, satıra
+dokununca o replik, "önce dinle" ipucu). Gerçek kayıt yolu (`segment.audio`)
+iki tarafta da uykuda ve bu zaten deftere geçmişti (2265 replik, sıfır kayıt).
+
+Ayrışma **puan bantlarında** çıktı. Yazma değerlendirmesinde üç sayı var:
+
+| sayı | ne kararı | durum |
+|---|---|---|
+| `RUBRIC_PASS_PCT` (60) | görev "tamam" sayılır | iki tarafta **sabitten** |
+| `SCORE_MID_PCT` (40) | "geliştir" ile "baştan dene" arasındaki çizgi | **iki tarafta da elle `40`** |
+| `SKILL_DONE_PCT` (70) | cümle görevinin geçme notu (webde) | **elle `70`** |
+
+Orta bant **iki platformda da** yanlıştı, yani karşılaştırmalı bir kapı bunu
+göremezdi (§11.228 sınıfı) — ölçüt mutlak alındı: bu dosyalarda elle yazılmış
+puan eşiği kalmamalı. Cümle görevinin dosya yorumu sayıyı **anlatıyordu**
+("genel puan ≥ 70") ama ölçen bir şey yoktu; o da sabitten okuyor.
+
+### Ölçüldü ve latent kaldı: yazma görev türleri
+
+Web yedi çeşit tanımlıyor (`sentence`, `build`, `reply`, `form`, `rewrite`,
+`summary`, `free`), mobil dört (`build`, `rewrite`, `form`, `free`). Ama
+içerikte `sentence` ve `summary` **hiç yok** (ikisinde de sıfır) ve `reply`
+görevleri mobilde `FreeCard`a düşüyor — o kart `stimulus`, `checklist` ve
+`phrases`i çiziyor, `minWords` de kırk görevin kırkında dolu. Yani ayrışma
+**latent, canlı değil**; deftere geçiyor, koda dokunulmuyor.
+
+### Kapı yine deponun kendi meta-kapısına yakalandı
+
+İlk yazımda sabit adlarını `\b` olmadan aradım (`/RUBRIC_PASS_PCT/`) ve
+"kapılarda önek eşleşmesi" kapısı bunu reddetti — aynı hatayı §11.341
+civarında da yapmıştım. Önek eşleşmesi uzun bir adı da yakalar; desenler
+sınırlandı.
