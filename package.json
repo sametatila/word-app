@@ -38,6 +38,7 @@
     "check:endpoints": "node scripts/check-endpoints.mjs --check",
     "check:client-boundary": "node scripts/check-client-boundary.mjs",
     "check:purge": "node scripts/check-purge.mjs",
+    "check:key-families": "node scripts/check-key-families.mjs",
     "export:user": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/export-user.ts",
     "check:colors": "node scripts/check-colors.mjs",
     "check:tokens": "node scripts/check-tokens.mjs",

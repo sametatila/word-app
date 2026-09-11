@@ -10146,3 +10146,40 @@ biri tam da bugün düzelttiğim hâl (webin tek mağaza adı yazması).
 Ders, bir kural olarak: *anahtar kullanımını `t("…")` deseniyle saymak,
 koşullu ve değişkenle çağrılan her yeri gözden kaçırır; "bu yüzeyde şu metin
 var mı" sorusu ancak anahtar tek tek arandığında güvenilir.*
+
+## §11.309 — Şablonla kurulan anahtarlar: ekrana ham anahtar çıkma riski
+
+§11.308'in dersini geriye dönük uyguladım. Önce körlüğün büyüklüğünü ölçtüm:
+webde 1562 düz `t("…")` çağrısına karşı **116 koşullu + 40 değişkenli**,
+mobilde 1577'ye karşı **93 + 39**. Yani anahtar kullanımının yaklaşık onda
+biri düz taramaya görünmüyor.
+
+Bunların içinde gerçek tehlike **şablonla** kurulanlarda: on yerde anahtar
+çalışma zamanında birleştiriliyor. Yeni bir değer ortaya çıkarsa sözlükte
+karşılığı olmuyor ve ekrana `genre.podcast` gibi **ham anahtar** çıkıyor — ne
+derleme, ne tip, ne düz anahtar taraması görür, çünkü değer veriden ya da bir
+birleşim tipinden geliyor.
+
+Beş aile ve kaynakları:
+
+| Aile | Değer kaynağı | Değer |
+|---|---|---|
+| `genre.*` | egzersiz içeriğindeki `genre` alanı | 26 |
+| `league.tier_*` | `LEAGUE_TIERS` | 5 |
+| `social.reaction_*` | `REACTION_KINDS` | 6 |
+| `band.*` | `Band` birleşim tipi | 4 |
+| `mockexam.fail_*` | `FailReason` birleşim tipi | 4 |
+
+Bugün beşi de tam (45 değer, üç dilde). **`check:key-families`** kaynakları
+okuyup her değeri üç sözlükte arıyor; ters yönü de var, çünkü bir değer
+yeniden adlandırıldığında eski anahtar kalır ve yenisi eksik olur.
+
+Ters yön ilk çalıştığında bir **önek çakışması** yakaladı:
+`social.reaction_add` ve `social.reaction_change` bu ailenin üyesi değil,
+ikisi de düğme etiketi ("Tepki ver" / "Değiştir") ve iki platformda da öyle
+kullanılıyor. Denetimi kapatmak yerine ikisi adıyla ayrıldı — kapı ailenin
+bayatlamasını görmeye devam ediyor.
+
+Kapı bilerek **elle beslenen bir liste** tutuyor: "şablonla kurulan her
+anahtarı bul" diye genel bir tarama, değer kümesini tahmin etmek zorunda kalır
+ve tahmin eden kapı ya gürültü ya kalıcı yeşil üretir (§11.305'in dersi).
