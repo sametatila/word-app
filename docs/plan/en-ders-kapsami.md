@@ -528,6 +528,31 @@ ADRES veriyor ve okur ipini kaybederse çöken şey sav değil metin oluyor.
 
 C1.GR.11-20'nin onu da modül içinde bir kez kullanılıyor (ölçüldü, 10/10).
 
+**C1 modül 5 — Kültür ve ötekilik (2026-09-11).** On ders: kültürün üç adı,
+dışarıda kalanı öne almak, eşitlik istemek, uyum tartışması, göç sözlüğü,
+geçmişi kim aktarıyor, yakınlık ne kadar yakın, ne sıcak bir karşılama,
+anlam kayarken, aidiyetin söylemediği.
+
+Modülün ekseni ADLANDIRMANIN KENDİSİ BİR HÜKÜMDÜR. Aynı sokak, aynı
+insanlar: kültür sahnesi denirse meşru bir üretici, paralel toplum
+denirse bir sorun — ve ikisi ayrı politika getiriyor. Göç dersi aynı
+şeyi eşdizim üzerinden gösteriyor: göçmen kökeni bir insanın hikâyesini,
+göç akışı bir tabloyu taşıyor; ikisini aynı cümlede kullanmak insanı
+sayıya indiriyor.
+
+Üç ders C1'in araçlarını bu eksene bağlıyor. Kip dersi nezaketi değil
+DOĞRULUĞU savunuyor: bilmediğin bir hayatı anlatan cümle kesinlikten
+kaçınmayı bilmeli, çünkü kesinlik burada yanlışın adı. Ödün dersi
+tartışmanın sürmesini ödüne bağlıyor — ödünsüz karşı çıkış haklı olsa
+bile duyulmuyor. Alay dersi ise iki adı yan yana koyunca doğuyor:
+«burada normdan sapma yok, yörede alışılmış bir norm ihlali var».
+
+Kapanış dersi eksiltmeyi bir aidiyet sınavı olarak okuyor: söylenmeyen
+şey bilinmediği için değil herkesçe bilindiği için düşüyor, o yüzden
+düşen öğeyi yalnız içeriden biri tamamlayabiliyor.
+
+C1.GR.11-20'nin onu da modül içinde bir kez kullanılıyor (ölçüldü, 10/10).
+
 ## Tamamlanma ölçütü
 
 - `LESSONS` içinde `course: "en"` için B1/B2/C1 100'er ders

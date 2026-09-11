@@ -19866,5 +19866,4739 @@
    "goal": "Üç bölümü yukarı, aşağı ve geri gönderme adresleriyle birbirine bağladıysan konuşma başarılı sayılır.",
    "minTurns": 8
   }
+ },
+ {
+  "id": "en-c1-three-names-for-a-culture",
+  "level": "C1",
+  "course": "en",
+  "icon": "culture",
+  "title": "Three names for a culture",
+  "titleTr": "Kültürün üç adı",
+  "summary": "Aynı topluluğun kayda göre başka ad aldığını öğretir; adı seçen kurum kendi hükmünü de seçmiş olur.",
+  "minutes": 12,
+  "focusId": "Register shift in naming a culture",
+  "vocab": [
+   {
+    "de": "subculture",
+    "tr": "alt kültür"
+   },
+   {
+    "de": "cultural policy",
+    "tr": "kültür politikası"
+   },
+   {
+    "de": "cultural scene",
+    "tr": "kültür sahnesi"
+   },
+   {
+    "de": "parallel society",
+    "tr": "paralel toplum"
+   },
+   {
+    "de": "high culture",
+    "tr": "yüksek kültür"
+   },
+   {
+    "de": "guiding culture",
+    "tr": "başat kültür"
+   },
+   {
+    "de": "majority society",
+    "tr": "çoğunluk toplumu"
+   },
+   {
+    "de": "cultural relativism",
+    "tr": "kültürel görelilik"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "In the arts section it is a subculture; in the ministry, cultural policy.",
+    "tr": "aynı şeyi iki kurumun ağzında söyler"
+   },
+   {
+    "de": "What one calls a cultural scene, another calls a parallel society.",
+    "tr": "iki adı karşı karşıya koyar"
+   },
+   {
+    "de": "High culture is a register; guiding culture is a claim.",
+    "tr": "adı hükümden ayırır"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Bugün aynı topluluğun kayda göre başka ad aldığını öğreneceğiz."
+     },
+     {
+      "lang": "tr",
+      "text": "Adı seçen kurum kendi hükmünü de seçmiş oluyor; bu yüzden ad tarafsız değil. Hazır mısın?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "subculture"
+     },
+     {
+      "lang": "tr",
+      "text": "Bütünün içindeki küçük kültür demek. İlk kalıbımız da bu. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "In the arts section it is a subculture; in the ministry, cultural policy."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "In the arts section it is a subculture; in the ministry, cultural policy."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Devletin kültüre dair izlediği yola"
+     },
+     {
+      "lang": "en",
+      "text": "cultural policy"
+     },
+     {
+      "lang": "tr",
+      "text": "bir şehrin sanat çevresine ise"
+     },
+     {
+      "lang": "en",
+      "text": "cultural scene"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İkinci kalıbımız iki adı karşı karşıya koyuyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "What one calls a cultural scene, another calls a parallel society."
+     },
+     {
+      "lang": "tr",
+      "text": "Birinin kültür sahnesi dediğine öteki paralel toplum diyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "What one calls a cultural scene, another calls a parallel society."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Ana toplumun yanında ayrı yaşayan topluluğa"
+     },
+     {
+      "lang": "en",
+      "text": "parallel society"
+     },
+     {
+      "lang": "tr",
+      "text": "sanat ve edebiyatın seçkin katmanına ise"
+     },
+     {
+      "lang": "en",
+      "text": "high culture"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son kalıbımız adı hükümden ayırıyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "High culture is a register; guiding culture is a claim."
+     },
+     {
+      "lang": "tr",
+      "text": "Yüksek kültür bir kayıttır, başat kültür bir iddiadır."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "High culture is a register; guiding culture is a claim."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi dersin kuralı. Kurum adı seçerken hüküm de veriyor:"
+     },
+     {
+      "lang": "en",
+      "text": "cultural scene"
+     },
+     {
+      "lang": "tr",
+      "text": "topluluğu meşru bir üretici sayar,"
+     },
+     {
+      "lang": "en",
+      "text": "parallel society"
+     },
+     {
+      "lang": "tr",
+      "text": "ise onu bir sorun sayar. Aynı sokak, aynı insanlar, iki ayrı ad ve iki ayrı politika."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sıra sende: Gazetede alt kültür, bakanlıkta kültür politikası."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "In the newspaper it is a subculture; in the ministry, cultural policy.",
+     "accept": [
+      "In the report it is a subculture; in the ministry, cultural policy.",
+      "In the arts section it is a subculture; in the ministry, cultural policy."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Aynı şeyi iki kurumun ağzında söylemek için iki yer adı yeter:"
+      },
+      {
+       "lang": "en",
+       "text": "In the newspaper it is a subculture; in the ministry, cultural policy."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kontrol. Şu cümle doğru mu?"
+     },
+     {
+      "lang": "en",
+      "text": "High culture is a register; guiding culture is a claim."
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "High culture is a register; guiding culture is a claim.",
+     "answer": true,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Doğru. Biri bir üslup katmanını adlandırıyor, öteki hangi kültürün ölçü olacağını söylüyor."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Ötekilerin uyması beklenen kültüre"
+     },
+     {
+      "lang": "en",
+      "text": "guiding culture"
+     },
+     {
+      "lang": "tr",
+      "text": "sayıca üstün olan kesime ise"
+     },
+     {
+      "lang": "en",
+      "text": "majority society"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The majority society names the rest."
+     },
+     {
+      "lang": "tr",
+      "text": "Adı çoğunluk toplumu koyuyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The majority society names the rest."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sen kur: Birinin kültür sahnesi dediğine öteki sorun diyor."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "What one calls a cultural scene, another calls a problem.",
+     "accept": [
+      "What one calls a cultural scene, another calls a threat.",
+      "What one calls a cultural scene, another calls a parallel society."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "İki adı karşı karşıya koymak için"
+      },
+      {
+       "lang": "en",
+       "text": "What one calls … another calls"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "What one calls a cultural scene, another calls a problem."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Hiçbir kültürü ötekinin ölçüsüyle yargılamayan görüşe"
+     },
+     {
+      "lang": "en",
+      "text": "cultural relativism"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "Cultural relativism refuses the ranking."
+     },
+     {
+      "lang": "tr",
+      "text": "Kültürel görelilik sıralamayı reddediyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Cultural relativism refuses the ranking."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Ad tarafsız değildir; hangi kurumun ağzından çıktığını da söyler."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The name carries the institution."
+     },
+     {
+      "lang": "tr",
+      "text": "Ad kurumu da taşıyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The name carries the institution."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir tane daha: Yüksek kültür bir kayıttır, kanon bir iddiadır."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "High culture is a register; the canon is a claim.",
+     "accept": [
+      "High culture is a register; the list is a claim.",
+      "High culture is a register; guiding culture is a claim."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Adı hükümden ayırmak için iki yarı kurulur:"
+      },
+      {
+       "lang": "en",
+       "text": "High culture is a register; the canon is a claim."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Özetleyelim: gazete"
+     },
+     {
+      "lang": "en",
+      "text": "subculture"
+     },
+     {
+      "lang": "tr",
+      "text": "bakanlık"
+     },
+     {
+      "lang": "en",
+      "text": "cultural policy"
+     },
+     {
+      "lang": "tr",
+      "text": "iddia"
+     },
+     {
+      "lang": "en",
+      "text": "guiding culture"
+     },
+     {
+      "lang": "tr",
+      "text": "Şimdi aynı topluluğu iki kurumun ağzından adlandıracaksın."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Bir mahalledeki topluluğu iki ayrı kurumun diliyle anlatıyorsun. İki adı da kur ve her adın hangi politikayı getirdiğini söyle.",
+   "partner": "adın önemli olmadığını düşünen, «sonuçta aynı şey» diyen bir arkadaş",
+   "opening": "It's the same thing either way, isn't it?",
+   "openingTr": "Nasıl desen aynı şey, değil mi?",
+   "goal": "Aynı topluluğu iki kurumun adıyla anlattıysan ve her adın getirdiği politikayı söylediysen konuşma başarılı sayılır.",
+   "minTurns": 8
+  }
+ },
+ {
+  "id": "en-c1-fronting-the-excluded",
+  "level": "C1",
+  "course": "en",
+  "icon": "flag",
+  "title": "Fronting the excluded",
+  "titleTr": "Dışarıda kalanı öne almak",
+  "summary": "Dışlanmış olanı cümlenin başına almayı öğretir; başa alınan şey konuşmanın konusu olur.",
+  "minutes": 12,
+  "focusId": "Fronting the excluded in a sentence",
+  "vocab": [
+   {
+    "de": "marginalization",
+    "tr": "ötekileştirme"
+   },
+   {
+    "de": "marginal group",
+    "tr": "marjinal grup"
+   },
+   {
+    "de": "demarcation line",
+    "tr": "ayrım hattı"
+   },
+   {
+    "de": "xenophobia",
+    "tr": "yabancı düşmanlığı"
+   },
+   {
+    "de": "statelessness",
+    "tr": "vatansızlık"
+   },
+   {
+    "de": "foreign rule",
+    "tr": "yabancı egemenliği"
+   },
+   {
+    "de": "background-related",
+    "tr": "kökenden kaynaklanan"
+   },
+   {
+    "de": "socially conditioned",
+    "tr": "toplumsal kaynaklı"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "What marginalization does is name a marginal group.",
+    "tr": "eylemi başa taşır"
+   },
+   {
+    "de": "Behind the demarcation line stands xenophobia.",
+    "tr": "yer öbeğini başa alır"
+   },
+   {
+    "de": "Statelessness we inherit; foreign rule we remember.",
+    "tr": "iki nesneyi başa alıp ikiye böler"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Bugün dışarıda kalanı cümlenin başına almayı öğreneceğiz."
+     },
+     {
+      "lang": "tr",
+      "text": "Başa alınan şey konuşmanın konusu olur; kimi başa aldığın kimden söz ettiğini de belirler. Hazır mısın?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "marginalization"
+     },
+     {
+      "lang": "tr",
+      "text": "Birini kenara itme işi demek. İlk kalıbımız da bu. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "What marginalization does is name a marginal group."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "What marginalization does is name a marginal group."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Kenarda bırakılmış topluluğa"
+     },
+     {
+      "lang": "en",
+      "text": "marginal group"
+     },
+     {
+      "lang": "tr",
+      "text": "iki tarafı ayıran çizgiye ise"
+     },
+     {
+      "lang": "en",
+      "text": "demarcation line"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İkinci kalıbımız yer öbeğini başa alıyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "Behind the demarcation line stands xenophobia."
+     },
+     {
+      "lang": "tr",
+      "text": "Ayrım hattının arkasında yabancı düşmanlığı duruyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Behind the demarcation line stands xenophobia."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Yabancıdan duyulan korku ve nefrete"
+     },
+     {
+      "lang": "en",
+      "text": "xenophobia"
+     },
+     {
+      "lang": "tr",
+      "text": "hiçbir devletin yurttaşı olmama hâline ise"
+     },
+     {
+      "lang": "en",
+      "text": "statelessness"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son kalıbımız iki nesneyi başa alıp ikiye bölüyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "Statelessness we inherit; foreign rule we remember."
+     },
+     {
+      "lang": "tr",
+      "text": "Vatansızlığı devralıyoruz, yabancı egemenliğini hatırlıyoruz."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Statelessness we inherit; foreign rule we remember."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi dersin kuralı. Başa alma bir seçimdir:"
+     },
+     {
+      "lang": "en",
+      "text": "What marginalization does"
+     },
+     {
+      "lang": "tr",
+      "text": "eylemi konu yapar,"
+     },
+     {
+      "lang": "en",
+      "text": "Behind the demarcation line"
+     },
+     {
+      "lang": "tr",
+      "text": "yeri konu yapar,"
+     },
+     {
+      "lang": "en",
+      "text": "Statelessness we inherit"
+     },
+     {
+      "lang": "tr",
+      "text": "ise insanları. Üçü de aynı olguyu anlatır ve üçünde de dinleyen başka bir şeyi hatırlar."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sıra sende: Dışlamanın yaptığı şey bir marjinal grup adlandırmak."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "What exclusion does is name a marginal group.",
+     "accept": [
+      "What the border does is name a marginal group.",
+      "What marginalization does is name a marginal group."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Eylemi başa taşımak için"
+      },
+      {
+       "lang": "en",
+       "text": "What … does is"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "What exclusion does is name a marginal group."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kontrol. Şu cümle doğru mu?"
+     },
+     {
+      "lang": "en",
+      "text": "Behind the demarcation line stands xenophobia."
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "Behind the demarcation line stands xenophobia.",
+     "answer": true,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Doğru. Yer öbeği başa alınmış; özne sona düşünce daha ağır duyuluyor."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir ülkeyi başka bir devletin yönetmesine"
+     },
+     {
+      "lang": "en",
+      "text": "foreign rule"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "Background-related disadvantage is socially conditioned."
+     },
+     {
+      "lang": "tr",
+      "text": "Kökenden kaynaklanan dezavantaj toplumsal kaynaklıdır."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Background-related disadvantage is socially conditioned."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Aileden ya da geldiği yerden gelene"
+     },
+     {
+      "lang": "en",
+      "text": "background-related"
+     },
+     {
+      "lang": "tr",
+      "text": "toplumun kendisinin ürettiğine ise"
+     },
+     {
+      "lang": "en",
+      "text": "socially conditioned"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sen kur: Duvarın arkasında yabancı düşmanlığı duruyor."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "Behind the wall stands xenophobia.",
+     "accept": [
+      "Behind the fence stands xenophobia.",
+      "Behind the demarcation line stands xenophobia."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Yer öbeğini başa almak için"
+      },
+      {
+       "lang": "en",
+       "text": "Behind"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "Behind the wall stands xenophobia."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Kimi başa aldığın, konuşmanın kimin üstünde döneceğini belirler."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The first position is a choice."
+     },
+     {
+      "lang": "tr",
+      "text": "İlk yer bir seçimdir."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The first position is a choice."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir tane daha: Yabancı egemenliğini devralıyoruz, vatansızlığı hatırlıyoruz."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "Foreign rule we inherit; statelessness we remember.",
+     "accept": [
+      "Foreign rule we inherit; the border we remember.",
+      "Statelessness we inherit; foreign rule we remember."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "İki nesneyi başa alıp ikiye bölmek için noktalı virgül kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "Foreign rule we inherit; statelessness we remember."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Özetleyelim: eylem"
+     },
+     {
+      "lang": "en",
+      "text": "What marginalization does"
+     },
+     {
+      "lang": "tr",
+      "text": "yer"
+     },
+     {
+      "lang": "en",
+      "text": "Behind the demarcation line"
+     },
+     {
+      "lang": "tr",
+      "text": "insan"
+     },
+     {
+      "lang": "en",
+      "text": "Statelessness we inherit"
+     },
+     {
+      "lang": "tr",
+      "text": "Şimdi dışarıda kalanı başa alacaksın."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Bir dışlanma olayını anlatıyorsun ve her cümlede neyi başa aldığını bilerek seçiyorsun. Eylemi, yeri ve insanları başa alan üç cümle kur.",
+   "partner": "olayı hep kurumlarla anlatan, insanları hiç anmayan biri",
+   "opening": "Isn't that just how the system works?",
+   "openingTr": "Sistem böyle işlemiyor mu zaten?",
+   "goal": "Eylemi, yeri ve insanları başa alan üç ayrı cümle kurduysan konuşma başarılı sayılır.",
+   "minTurns": 8
+  }
+ },
+ {
+  "id": "en-c1-demanding-equality",
+  "level": "C1",
+  "course": "en",
+  "icon": "law",
+  "title": "Demanding equality",
+  "titleTr": "Eşitlik istemek",
+  "summary": "Eşitlik istemenin kalıplaşmış biçimini öğretir; bu biçim isteği isteyenden ayırır ve kimin istediğini tartışma dışına çıkarır.",
+  "minutes": 12,
+  "focusId": "Subjunctive in claims of equality",
+  "vocab": [
+   {
+    "de": "principle of equality",
+    "tr": "eşitlik ilkesi"
+   },
+   {
+    "de": "human dignity",
+    "tr": "insan onuru"
+   },
+   {
+    "de": "educational inequality",
+    "tr": "eğitim eşitsizliği"
+   },
+   {
+    "de": "class society",
+    "tr": "sınıflı toplum"
+   },
+   {
+    "de": "participation model",
+    "tr": "katılım modeli"
+   },
+   {
+    "de": "show solidarity",
+    "tr": "dayanışma göstermek"
+   },
+   {
+    "de": "solidarity principle",
+    "tr": "dayanışma ilkesi"
+   },
+   {
+    "de": "intergenerational fairness",
+    "tr": "kuşaklar arası adalet"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "The principle of equality demands that human dignity be untouchable.",
+    "tr": "isteği kalıplaşmış biçimle kurar"
+   },
+   {
+    "de": "Were it not for educational inequality, the class society would fade.",
+    "tr": "olmasaydıyı toplumsal savda kurar"
+   },
+   {
+    "de": "They ask that every participation model show solidarity.",
+    "tr": "koşulu kalıpla kurar"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Bugün eşitlik istemenin kalıplaşmış biçimini öğreneceğiz."
+     },
+     {
+      "lang": "tr",
+      "text": "Bu biçim isteği isteyenden ayırır: «insan onurunun dokunulmaz olması» kimin istediğine bağlı değildir. Hazır mısın?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "principle of equality"
+     },
+     {
+      "lang": "tr",
+      "text": "Herkesin eşit sayılması ilkesi demek. İlk kalıbımız da bu. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "The principle of equality demands that human dignity be untouchable."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The principle of equality demands that human dignity be untouchable."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İnsanın yalnız insan olduğu için taşıdığı değere"
+     },
+     {
+      "lang": "en",
+      "text": "human dignity"
+     },
+     {
+      "lang": "tr",
+      "text": "okul fırsatlarının eşit olmamasına ise"
+     },
+     {
+      "lang": "en",
+      "text": "educational inequality"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İkinci kalıbımız olmasaydıyı toplumsal savda kuruyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "Were it not for educational inequality, the class society would fade."
+     },
+     {
+      "lang": "tr",
+      "text": "Eğitim eşitsizliği olmasaydı sınıflı toplum silinirdi."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Were it not for educational inequality, the class society would fade."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Katmanlara bölünmüş topluma"
+     },
+     {
+      "lang": "en",
+      "text": "class society"
+     },
+     {
+      "lang": "tr",
+      "text": "herkesin karara katılmasını sağlayan düzene ise"
+     },
+     {
+      "lang": "en",
+      "text": "participation model"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son kalıbımız koşulu kalıpla kuruyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "They ask that every participation model show solidarity."
+     },
+     {
+      "lang": "tr",
+      "text": "Her katılım modelinin dayanışma göstermesini istiyorlar."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "They ask that every participation model show solidarity."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi dersin kuralı. Çekimsiz fiil isteği kişiden ayırır:"
+     },
+     {
+      "lang": "en",
+      "text": "that human dignity be untouchable"
+     },
+     {
+      "lang": "tr",
+      "text": "diyoruz, çünkü bu istek benim isteğim olmaktan çıkıp bir ölçü hâline geliyor. Hukukun ve siyasetin dili bu yüzden bu biçimde kalıyor."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sıra sende: Eşitlik ilkesi okulun parasız olmasını istiyor."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "The principle of equality demands that the school be free.",
+     "accept": [
+      "The principle of equality demands that the school be open.",
+      "The principle of equality demands that human dignity be untouchable."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "İsteği kalıplaşmış biçimle kurmak için"
+      },
+      {
+       "lang": "en",
+       "text": "demands that … be"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "The principle of equality demands that the school be free."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kontrol. Şu cümle doğru mu?"
+     },
+     {
+      "lang": "en",
+      "text": "They ask that every participation model show solidarity."
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "They ask that every participation model show solidarity.",
+     "answer": true,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Doğru. Fiil çekilmemiş; istek kişiden ayrılmış ve bir koşul hâline gelmiş."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Yükü birlikte taşıma kuralına"
+     },
+     {
+      "lang": "en",
+      "text": "solidarity principle"
+     },
+     {
+      "lang": "tr",
+      "text": "kuşaklar arasında yükün eşit bölünmesine ise"
+     },
+     {
+      "lang": "en",
+      "text": "intergenerational fairness"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The solidarity principle carries intergenerational fairness."
+     },
+     {
+      "lang": "tr",
+      "text": "Dayanışma ilkesi kuşaklar arası adaleti taşıyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The solidarity principle carries intergenerational fairness."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sen kur: Harçlar olmasaydı sınıflı toplum silinirdi."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "Were it not for the fees, the class society would fade.",
+     "accept": [
+      "Were it not for the rents, the class society would fade.",
+      "Were it not for educational inequality, the class society would fade."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Olmasaydıyı toplumsal savda kurmak için"
+      },
+      {
+       "lang": "en",
+       "text": "were it not for"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "Were it not for the fees, the class society would fade."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Birine yükünü paylaşarak destek olmaya"
+     },
+     {
+      "lang": "en",
+      "text": "show solidarity"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "They show solidarity without being asked."
+     },
+     {
+      "lang": "tr",
+      "text": "İstenmeden dayanışma gösteriyorlar."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "They show solidarity without being asked."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir tane daha: Her okulun dayanışma göstermesini istiyorlar."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "They ask that every school show solidarity.",
+     "accept": [
+      "They ask that every office show solidarity.",
+      "They ask that every participation model show solidarity."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Koşulu kalıpla kurmak için"
+      },
+      {
+       "lang": "en",
+       "text": "ask that … show"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "They ask that every school show solidarity."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Özetleyelim: istek"
+     },
+     {
+      "lang": "en",
+      "text": "demands that … be"
+     },
+     {
+      "lang": "tr",
+      "text": "olmasaydı"
+     },
+     {
+      "lang": "en",
+      "text": "were it not for"
+     },
+     {
+      "lang": "tr",
+      "text": "koşul"
+     },
+     {
+      "lang": "en",
+      "text": "ask that … show"
+     },
+     {
+      "lang": "tr",
+      "text": "Şimdi bir eşitlik savını kuracaksın."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Bir eşitlik savını kuruyorsun ve savı kendi isteğin gibi değil bir ölçü gibi söylemek istiyorsun. İsteği, olmasaydıyı ve koşulu kalıplaşmış biçimlerle kur.",
+   "partner": "her savı kişisel görüş sayan, «bu senin fikrin» diyen biri",
+   "opening": "That's just your opinion, right?",
+   "openingTr": "Bu senin fikrin, değil mi?",
+   "goal": "İsteği, olmasaydıyı ve koşulu üç ayrı kalıplaşmış biçimle kurduysan konuşma başarılı sayılır.",
+   "minTurns": 8
+  }
+ },
+ {
+  "id": "en-c1-the-integration-debate",
+  "level": "C1",
+  "course": "en",
+  "icon": "handshake",
+  "title": "The integration debate",
+  "titleTr": "Uyum tartışması",
+  "summary": "Uyum tartışmasında kabul edip karşı çıkmayı öğretir; ödün vermeden söylenen karşı çıkış tartışmayı kapatıyor.",
+  "minutes": 12,
+  "focusId": "Concessive clauses in the integration debate",
+  "vocab": [
+   {
+    "de": "acculturation",
+    "tr": "kültürleşme"
+   },
+   {
+    "de": "assimilation",
+    "tr": "asimilasyon"
+   },
+   {
+    "de": "adaptation course",
+    "tr": "uyum eğitimi"
+   },
+   {
+    "de": "welcoming culture",
+    "tr": "karşılama kültürü"
+   },
+   {
+    "de": "hybridity",
+    "tr": "melezlik"
+   },
+   {
+    "de": "adaptability",
+    "tr": "uyum yeteneği"
+   },
+   {
+    "de": "naturalize",
+    "tr": "vatandaşlığa almak"
+   },
+   {
+    "de": "reintegration",
+    "tr": "topluma yeniden uyum"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "Much as we call it acculturation, they mean assimilation.",
+    "tr": "ödünü başa alıp adı düzeltir"
+   },
+   {
+    "de": "The adaptation course, albeit useful, is not a welcoming culture.",
+    "tr": "ödünü araya sıkıştırır"
+   },
+   {
+    "de": "Albeit a sign of hybridity, adaptability is asked of one side only.",
+    "tr": "ödünü başa çekip eksiği gösterir"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Bugün uyum tartışmasında kabul edip karşı çıkmayı öğreneceğiz."
+     },
+     {
+      "lang": "tr",
+      "text": "Ödün vermeden söylenen karşı çıkış tartışmayı kapatıyor; ödünle söylenen ise onu sürdürüyor. Hazır mısın?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "acculturation"
+     },
+     {
+      "lang": "tr",
+      "text": "İki kültürün karşılıklı değişmesi demek. İlk kalıbımız da bu. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "Much as we call it acculturation, they mean assimilation."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Much as we call it acculturation, they mean assimilation."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kültürün ötekinin içinde eriyip yok olmasına"
+     },
+     {
+      "lang": "en",
+      "text": "assimilation"
+     },
+     {
+      "lang": "tr",
+      "text": "yeni gelenlere verilen derslere ise"
+     },
+     {
+      "lang": "en",
+      "text": "adaptation course"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İkinci kalıbımız ödünü araya sıkıştırıyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "The adaptation course, albeit useful, is not a welcoming culture."
+     },
+     {
+      "lang": "tr",
+      "text": "Uyum eğitimi, yararlı olsa da, bir karşılama kültürü değildir."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The adaptation course, albeit useful, is not a welcoming culture."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Gelenin hoş karşılandığı ortama"
+     },
+     {
+      "lang": "en",
+      "text": "welcoming culture"
+     },
+     {
+      "lang": "tr",
+      "text": "iki kültürün karışmasından doğan yeni hâle ise"
+     },
+     {
+      "lang": "en",
+      "text": "hybridity"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son kalıbımız ödünü başa çekip eksiği gösteriyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "Albeit a sign of hybridity, adaptability is asked of one side only."
+     },
+     {
+      "lang": "tr",
+      "text": "Melezlik işareti olsa da, uyum yeteneği yalnız bir taraftan isteniyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Albeit a sign of hybridity, adaptability is asked of one side only."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi dersin kuralı. Ödün karşı çıkışı zayıflatmaz, DİNLENİR kılar:"
+     },
+     {
+      "lang": "en",
+      "text": "albeit useful"
+     },
+     {
+      "lang": "tr",
+      "text": "dediğinde karşındaki savunmayı bırakır ve asıl cümleyi duyar. Ödünsüz karşı çıkış ise haklı olsa bile duyulmaz."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sıra sende: Ona kurs desek de asimilasyon demek istiyorlar."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "Much as we call it a course, they mean assimilation.",
+     "accept": [
+      "Much as we call it help, they mean assimilation.",
+      "Much as we call it acculturation, they mean assimilation."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Ödünü başa alıp adı düzeltmek için"
+      },
+      {
+       "lang": "en",
+       "text": "Much as"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "Much as we call it a course, they mean assimilation."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kontrol. Şu cümle doğru mu?"
+     },
+     {
+      "lang": "en",
+      "text": "The adaptation course, albeit useful, is not a welcoming culture."
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "The adaptation course, albeit useful, is not a welcoming culture.",
+     "answer": true,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Doğru. Ödün iki virgül arasına girmiş ve asıl cümle ondan sonra ayakta kalmış."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Değişen koşullara ayak uydurabilmeye"
+     },
+     {
+      "lang": "en",
+      "text": "adaptability"
+     },
+     {
+      "lang": "tr",
+      "text": "birini yurttaşlığa kabul etmeye ise"
+     },
+     {
+      "lang": "en",
+      "text": "naturalize"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "They naturalize late and call it reintegration."
+     },
+     {
+      "lang": "tr",
+      "text": "Geç vatandaşlığa alıyorlar ve buna topluma yeniden uyum diyorlar."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "They naturalize late and call it reintegration."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kişinin topluma yeniden katılmasına"
+     },
+     {
+      "lang": "en",
+      "text": "reintegration"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sen kur: Kurs, parasız olsa da, bir karşılama kültürü değildir."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "The course, albeit free, is not a welcoming culture.",
+     "accept": [
+      "The course, albeit good, is not a welcoming culture.",
+      "The adaptation course, albeit useful, is not a welcoming culture."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Ödünü araya sıkıştırmak için"
+      },
+      {
+       "lang": "en",
+       "text": "albeit"
+      },
+      {
+       "lang": "tr",
+       "text": "iki virgül arasına girer:"
+      },
+      {
+       "lang": "en",
+       "text": "The course, albeit free, is not a welcoming culture."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Tartışmayı sürdürmek isteyen, karşısındakine haklı olduğu yeri bırakır."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The concession keeps the talk alive."
+     },
+     {
+      "lang": "tr",
+      "text": "Ödün konuşmayı ayakta tutuyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The concession keeps the talk alive."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir tane daha: Melezlik işareti olsa da, çaba yalnız bir taraftan isteniyor."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "Albeit a sign of hybridity, the effort is asked of one side only.",
+     "accept": [
+      "Albeit a sign of hybridity, the work is asked of one side only.",
+      "Albeit a sign of hybridity, adaptability is asked of one side only."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Ödünü başa çekip eksiği göstermek için"
+      },
+      {
+       "lang": "en",
+       "text": "Albeit"
+      },
+      {
+       "lang": "tr",
+       "text": "yeter:"
+      },
+      {
+       "lang": "en",
+       "text": "Albeit a sign of hybridity, the effort is asked of one side only."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Özetleyelim: adı düzeltme"
+     },
+     {
+      "lang": "en",
+      "text": "Much as"
+     },
+     {
+      "lang": "tr",
+      "text": "araya çekince"
+     },
+     {
+      "lang": "en",
+      "text": "albeit"
+     },
+     {
+      "lang": "tr",
+      "text": "eksiği gösterme"
+     },
+     {
+      "lang": "en",
+      "text": "Albeit a sign of hybridity"
+     },
+     {
+      "lang": "tr",
+      "text": "Şimdi uyum tartışmasını sürdüreceksin."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Uyum üstüne bir tartışmadasın ve karşındakini kaybetmek istemiyorsun. Ödünü üç ayrı yerde ver ve her seferinde asıl savını sonra söyle.",
+   "partner": "uyumu tek taraflı bir borç sayan, «uyum sağlasınlar yeter» diyen biri",
+   "opening": "They just need to adapt, don't they?",
+   "openingTr": "Uyum sağlasalar yeter, değil mi?",
+   "goal": "Ödünü üç ayrı yerde verip her seferinde asıl savını sonra söylediysen konuşma başarılı sayılır.",
+   "minTurns": 8
+  }
+ },
+ {
+  "id": "en-c1-the-vocabulary-of-migration",
+  "level": "C1",
+  "course": "en",
+  "icon": "map",
+  "title": "The vocabulary of migration",
+  "titleTr": "Göç sözlüğü",
+  "summary": "Göç konuşmasının yerleşik eşdizimlerini öğretir; sayıyı anlatan söz ile insanı anlatan söz aynı değildir.",
+  "minutes": 12,
+  "focusId": "Collocation in the vocabulary of migration",
+  "vocab": [
+   {
+    "de": "migration background",
+    "tr": "göçmen kökeni"
+   },
+   {
+    "de": "migration flow",
+    "tr": "göç akışı"
+   },
+   {
+    "de": "out-migration",
+    "tr": "dışa göç"
+   },
+   {
+    "de": "internal migration",
+    "tr": "iç göç"
+   },
+   {
+    "de": "net migration",
+    "tr": "net göç"
+   },
+   {
+    "de": "influx",
+    "tr": "akın"
+   },
+   {
+    "de": "refugee convention",
+    "tr": "mülteci sözleşmesi"
+   },
+   {
+    "de": "uproot",
+    "tr": "kökünden sökmek"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "A migration background is not a migration flow.",
+    "tr": "iki eşdizimi karşı karşıya koyar"
+   },
+   {
+    "de": "Out-migration and internal migration produce net migration.",
+    "tr": "üç eşdizimi tek cümlede bağlar"
+   },
+   {
+    "de": "An influx is counted; a refugee convention is signed.",
+    "tr": "sayı ile hukuku ayırır"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Bugün göç konuşmasının yerleşik eşdizimlerini öğreneceğiz."
+     },
+     {
+      "lang": "tr",
+      "text": "Sayıyı anlatan söz ile insanı anlatan söz aynı değil; ikisini karıştıran cümle yanlış bir şey söyler. Hazır mısın?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "migration background"
+     },
+     {
+      "lang": "tr",
+      "text": "Ailesi göçle gelmiş olma durumu demek. İlk kalıbımız da bu. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "A migration background is not a migration flow."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "A migration background is not a migration flow."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Belli bir yöne doğru süren göç hareketine"
+     },
+     {
+      "lang": "en",
+      "text": "migration flow"
+     },
+     {
+      "lang": "tr",
+      "text": "bir ülkeden dışarı gitmeye ise"
+     },
+     {
+      "lang": "en",
+      "text": "out-migration"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İkinci kalıbımız üç eşdizimi tek cümlede bağlıyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "Out-migration and internal migration produce net migration."
+     },
+     {
+      "lang": "tr",
+      "text": "Dışa göç ve iç göç net göçü üretiyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Out-migration and internal migration produce net migration."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Ülke içinde yer değiştirmeye"
+     },
+     {
+      "lang": "en",
+      "text": "internal migration"
+     },
+     {
+      "lang": "tr",
+      "text": "gelenle gidenin farkına ise"
+     },
+     {
+      "lang": "en",
+      "text": "net migration"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son kalıbımız sayı ile hukuku ayırıyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "An influx is counted; a refugee convention is signed."
+     },
+     {
+      "lang": "tr",
+      "text": "Akın sayılır, mülteci sözleşmesi imzalanır."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "An influx is counted; a refugee convention is signed."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi dersin kuralı. Göç sözlüğünde eşdizim İNSANI mı SAYIYI mı anlattığını söyler:"
+     },
+     {
+      "lang": "en",
+      "text": "migration background"
+     },
+     {
+      "lang": "tr",
+      "text": "tek bir insanın hikâyesini taşır,"
+     },
+     {
+      "lang": "en",
+      "text": "migration flow"
+     },
+     {
+      "lang": "tr",
+      "text": "ise bir tabloyu. İkisini aynı cümlede kullanmak insanı sayıya indirir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sıra sende: Göçmen kökeni bir sayı değildir."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "A migration background is not a number.",
+     "accept": [
+      "A migration background is not a statistic.",
+      "A migration background is not a migration flow."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "İki eşdizimi karşı karşıya koymak için"
+      },
+      {
+       "lang": "en",
+       "text": "is not"
+      },
+      {
+       "lang": "tr",
+       "text": "yeter:"
+      },
+      {
+       "lang": "en",
+       "text": "A migration background is not a number."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kontrol. Şu cümle doğru mu?"
+     },
+     {
+      "lang": "en",
+      "text": "An influx is counted; a refugee convention is signed."
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "An influx is counted; a refugee convention is signed.",
+     "answer": true,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Doğru. Biri istatistiğin, öteki hukukun eşdizimi; fiiller de o yüzden ayrı."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Kısa sürede gelen kalabalığa"
+     },
+     {
+      "lang": "en",
+      "text": "influx"
+     },
+     {
+      "lang": "tr",
+      "text": "mültecinin haklarını yazan antlaşmaya ise"
+     },
+     {
+      "lang": "en",
+      "text": "refugee convention"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "Numbers do not uproot anyone."
+     },
+     {
+      "lang": "tr",
+      "text": "Sayılar kimseyi kökünden sökmüyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Numbers do not uproot anyone."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Birini yerinden yurdundan etmeye"
+     },
+     {
+      "lang": "en",
+      "text": "uproot"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sen kur: Dışa göç ve geri dönüş net göçü üretiyor."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "Out-migration and return produce net migration.",
+     "accept": [
+      "Out-migration and arrival produce net migration.",
+      "Out-migration and internal migration produce net migration."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Üç eşdizimi tek cümlede bağlamak için"
+      },
+      {
+       "lang": "en",
+       "text": "produce"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "Out-migration and return produce net migration."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Eşdizim seçmek konuyu seçmektir: tablo mu, insan mı."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The collocation chooses the subject."
+     },
+     {
+      "lang": "tr",
+      "text": "Eşdizim konuyu seçiyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The collocation chooses the subject."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir tane daha: Akın sayılır, antlaşma imzalanır."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "An influx is counted; a treaty is signed.",
+     "accept": [
+      "An influx is counted; a contract is signed.",
+      "An influx is counted; a refugee convention is signed."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Sayı ile hukuku ayırmak için iki edilgen fiil kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "An influx is counted; a treaty is signed."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Özetleyelim: insan"
+     },
+     {
+      "lang": "en",
+      "text": "migration background"
+     },
+     {
+      "lang": "tr",
+      "text": "tablo"
+     },
+     {
+      "lang": "en",
+      "text": "migration flow"
+     },
+     {
+      "lang": "tr",
+      "text": "hukuk"
+     },
+     {
+      "lang": "en",
+      "text": "refugee convention"
+     },
+     {
+      "lang": "tr",
+      "text": "Şimdi göç sözlüğünü kullanacaksın."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Göç üstüne bir haberi arkadaşına anlatıyorsun ve insanı sayıya indirmek istemiyorsun. İnsanı, tabloyu ve hukuku üç ayrı eşdizimle adlandır.",
+   "partner": "haberi yalnız sayılarla anlatan, «rakamlar ortada» diyen bir arkadaş",
+   "opening": "The numbers speak for themselves, don't they?",
+   "openingTr": "Rakamlar zaten konuşuyor, değil mi?",
+   "goal": "İnsanı, tabloyu ve hukuku üç ayrı eşdizimle adlandırdıysan konuşma başarılı sayılır.",
+   "minTurns": 8
+  }
+ },
+ {
+  "id": "en-c1-who-reports-the-past",
+  "level": "C1",
+  "course": "en",
+  "icon": "book",
+  "title": "Who reports the past",
+  "titleTr": "Geçmişi kim aktarıyor",
+  "summary": "Geçmişin okumasını aktarırken hükmü fiile yüklemeyi öğretir; kimin aktardığı, neyin aktarıldığı kadar belirleyici.",
+  "minutes": 12,
+  "focusId": "Reporting verbs in memory culture",
+  "vocab": [
+   {
+    "de": "reinterpret",
+    "tr": "yeniden yorumlamak"
+   },
+   {
+    "de": "memory culture",
+    "tr": "hatırlama kültürü"
+   },
+   {
+    "de": "interpretive authority",
+    "tr": "yorum yetkisi"
+   },
+   {
+    "de": "exegesis",
+    "tr": "metin yorumu"
+   },
+   {
+    "de": "heritage protection",
+    "tr": "kültürel miras koruması"
+   },
+   {
+    "de": "customary law",
+    "tr": "örf ve âdet hukuku"
+   },
+   {
+    "de": "venerable",
+    "tr": "saygıdeğer"
+   },
+   {
+    "de": "generational conflict",
+    "tr": "kuşak çatışması"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "One reinterprets the memory culture; another guards the interpretive authority.",
+    "tr": "iki aktarmayı karşı karşıya koyar"
+   },
+   {
+    "de": "The exegesis claims what heritage protection assumes.",
+    "tr": "iddia ile varsayımı ayırır"
+   },
+   {
+    "de": "To call customary law venerable is not to obey it.",
+    "tr": "övmekle uymayı ayırır"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Bugün geçmişin okumasını aktarırken hükmü fiile yüklemeyi öğreneceğiz."
+     },
+     {
+      "lang": "tr",
+      "text": "Kimin aktardığı, neyin aktarıldığı kadar belirleyici; aktarma fiili o yetkiyi de gösteriyor. Hazır mısın?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "reinterpret"
+     },
+     {
+      "lang": "tr",
+      "text": "Bilineni yeni baştan okumak demek. İlk kalıbımız da bu. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "One reinterprets the memory culture; another guards the interpretive authority."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "One reinterprets the memory culture; another guards the interpretive authority."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir toplumun geçmişini anma biçimine"
+     },
+     {
+      "lang": "en",
+      "text": "memory culture"
+     },
+     {
+      "lang": "tr",
+      "text": "neyin doğru okuma sayılacağına karar verme gücüne ise"
+     },
+     {
+      "lang": "en",
+      "text": "interpretive authority"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İkinci kalıbımız iddia ile varsayımı ayırıyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "The exegesis claims what heritage protection assumes."
+     },
+     {
+      "lang": "tr",
+      "text": "Metin yorumu, kültürel miras korumasının varsaydığını iddia ediyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The exegesis claims what heritage protection assumes."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir metni ayrıntısıyla açıklamaya"
+     },
+     {
+      "lang": "en",
+      "text": "exegesis"
+     },
+     {
+      "lang": "tr",
+      "text": "eski yapı ve eserleri korumaya ise"
+     },
+     {
+      "lang": "en",
+      "text": "heritage protection"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son kalıbımız övmekle uymayı ayırıyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "To call customary law venerable is not to obey it."
+     },
+     {
+      "lang": "tr",
+      "text": "Örf ve âdet hukukuna saygıdeğer demek ona uymak değildir."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "To call customary law venerable is not to obey it."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi dersin kuralı. Aktarma fiili yetkiyi de gösterir:"
+     },
+     {
+      "lang": "en",
+      "text": "reinterprets"
+     },
+     {
+      "lang": "tr",
+      "text": "aktaranı okuma hakkı olan biri sayar,"
+     },
+     {
+      "lang": "en",
+      "text": "guards"
+     },
+     {
+      "lang": "tr",
+      "text": "ise onu bekçi sayar. Aynı geçmiş, iki fiil ve iki ayrı hak iddiası."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sıra sende: Biri geçmişi yeniden yorumluyor, öteki yorum yetkisini koruyor."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "One reinterprets the past; another guards the interpretive authority.",
+     "accept": [
+      "One rereads the past; another guards the interpretive authority.",
+      "One reinterprets the memory culture; another guards the interpretive authority."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "İki aktarmayı karşı karşıya koymak için"
+      },
+      {
+       "lang": "en",
+       "text": "reinterprets … guards"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "One reinterprets the past; another guards the interpretive authority."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kontrol. Şu cümle doğru mu?"
+     },
+     {
+      "lang": "en",
+      "text": "To call customary law venerable is not to obey it."
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "To call customary law venerable is not to obey it.",
+     "answer": true,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Doğru. Övgü bir hüküm taşır ama bağlayıcı değildir; ayrım tam bu iki iş arasında."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Yazılı olmayan, gelenekten gelen kurallara"
+     },
+     {
+      "lang": "en",
+      "text": "customary law"
+     },
+     {
+      "lang": "tr",
+      "text": "uzun geçmişi yüzünden saygı görene ise"
+     },
+     {
+      "lang": "en",
+      "text": "venerable"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The generational conflict is about who reports."
+     },
+     {
+      "lang": "tr",
+      "text": "Kuşak çatışması kimin aktardığıyla ilgili."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The generational conflict is about who reports."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Kuşaklar arasındaki anlaşmazlığa"
+     },
+     {
+      "lang": "en",
+      "text": "generational conflict"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sen kur: Metin yorumu, müzenin varsaydığını iddia ediyor."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "The exegesis claims what the museum assumes.",
+     "accept": [
+      "The exegesis claims what the archive assumes.",
+      "The exegesis claims what heritage protection assumes."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "İddia ile varsayımı ayırmak için"
+      },
+      {
+       "lang": "en",
+       "text": "claims what … assumes"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "The exegesis claims what the museum assumes."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Geçmişi kimin aktardığı, aktarılanın kendisi kadar belirleyicidir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The verb hands out the right."
+     },
+     {
+      "lang": "tr",
+      "text": "Hakkı dağıtan fiildir."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The verb hands out the right."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir tane daha: Bir geleneğe saygıdeğer demek ona uymak değildir."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "To call a tradition venerable is not to obey it.",
+     "accept": [
+      "To call a rule venerable is not to obey it.",
+      "To call customary law venerable is not to obey it."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Övmekle uymayı ayırmak için"
+      },
+      {
+       "lang": "en",
+       "text": "is not to obey it"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "To call a tradition venerable is not to obey it."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Özetleyelim: okuma hakkı"
+     },
+     {
+      "lang": "en",
+      "text": "reinterprets"
+     },
+     {
+      "lang": "tr",
+      "text": "bekçilik"
+     },
+     {
+      "lang": "en",
+      "text": "guards"
+     },
+     {
+      "lang": "tr",
+      "text": "övgü"
+     },
+     {
+      "lang": "en",
+      "text": "venerable"
+     },
+     {
+      "lang": "tr",
+      "text": "Şimdi geçmişin iki okumasını aktaracaksın."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Bir anma töreni üstüne konuşuyorsun ve geçmişin iki ayrı okumasını aktarıyorsun. İki okumayı iki ayrı aktarma fiiliyle söyle ve yorum yetkisinin kimde olduğunu sor.",
+   "partner": "geçmişin tek bir doğru okuması olduğunu düşünen biri",
+   "opening": "There's only one true version, isn't there?",
+   "openingTr": "Tek bir doğru anlatı var, değil mi?",
+   "goal": "İki okumayı iki ayrı aktarma fiiliyle söylediysen ve yorum yetkisini sorduysan konuşma başarılı sayılır.",
+   "minTurns": 8
+  }
+ },
+ {
+  "id": "en-c1-how-close-is-close",
+  "level": "C1",
+  "course": "en",
+  "icon": "family",
+  "title": "How close is close",
+  "titleTr": "Yakınlık ne kadar yakın",
+  "summary": "Yakınlık üstüne konuşurken kipin koyduğu mesafeyi öğretir; başkasının hayatını anlatan cümle kesinlikten kaçınmayı bilmeli.",
+  "minutes": 12,
+  "focusId": "Modal nuance and remoteness in kinship",
+  "vocab": [
+   {
+    "de": "kinship",
+    "tr": "akrabalık"
+   },
+   {
+    "de": "lifeworld",
+    "tr": "yaşam dünyası"
+   },
+   {
+    "de": "reciprocity",
+    "tr": "karşılıklılık"
+   },
+   {
+    "de": "reciprocal",
+    "tr": "mütekabil"
+   },
+   {
+    "de": "socialization",
+    "tr": "toplumsallaşma"
+   },
+   {
+    "de": "pecking order",
+    "tr": "sıra düzeni"
+   },
+   {
+    "de": "initiation",
+    "tr": "başlatma"
+   },
+   {
+    "de": "ethnocentrism",
+    "tr": "etnosantrizm"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "Kinship may well shape the lifeworld more than the law.",
+    "tr": "kabul edilebilir okumayı işaretler"
+   },
+   {
+    "de": "Reciprocity might be reciprocal only in name.",
+    "tr": "olasılığı uzak tutar"
+   },
+   {
+    "de": "Socialization may set the pecking order before the initiation.",
+    "tr": "iki adımı tek kipin altına koyar"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Bugün yakınlık üstüne konuşurken kipin koyduğu mesafeyi öğreneceğiz."
+     },
+     {
+      "lang": "tr",
+      "text": "Başkasının hayatını anlatan cümle kesinlikten kaçınmayı bilmeli; kip tam bunun için var. Hazır mısın?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "kinship"
+     },
+     {
+      "lang": "tr",
+      "text": "Kan ya da evlilik bağıyla kurulan ilişki demek. İlk kalıbımız da bu. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "Kinship may well shape the lifeworld more than the law."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Kinship may well shape the lifeworld more than the law."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İnsanın gündelik olarak içinde yaşadığı dünyaya"
+     },
+     {
+      "lang": "en",
+      "text": "lifeworld"
+     },
+     {
+      "lang": "tr",
+      "text": "verilenin karşılığının verilmesine ise"
+     },
+     {
+      "lang": "en",
+      "text": "reciprocity"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İkinci kalıbımız olasılığı uzak tutuyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "Reciprocity might be reciprocal only in name."
+     },
+     {
+      "lang": "tr",
+      "text": "Karşılıklılık yalnız adıyla mütekabil olabilir."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Reciprocity might be reciprocal only in name."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İki tarafın birbirine eşit biçimde davranmasına"
+     },
+     {
+      "lang": "en",
+      "text": "reciprocal"
+     },
+     {
+      "lang": "tr",
+      "text": "insanın topluma katılarak kural öğrenmesine ise"
+     },
+     {
+      "lang": "en",
+      "text": "socialization"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son kalıbımız iki adımı tek kipin altına koyuyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "Socialization may set the pecking order before the initiation."
+     },
+     {
+      "lang": "tr",
+      "text": "Toplumsallaşma sıra düzenini başlatmadan önce kurabilir."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Socialization may set the pecking order before the initiation."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi dersin kuralı. Kip, bilmediğin bir hayatı anlatırken senin mesafeni söyler:"
+     },
+     {
+      "lang": "en",
+      "text": "may well"
+     },
+     {
+      "lang": "tr",
+      "text": "gördüğün şeye güvendiğini,"
+     },
+     {
+      "lang": "en",
+      "text": "might"
+     },
+     {
+      "lang": "tr",
+      "text": "ise bunun senin dışarıdan okuman olduğunu söyler. İkisi de saygılıdır; kesinlik ise değildir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sıra sende: Akrabalık haneyi kanundan çok biçimlendirebilir."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "Kinship may well shape the household more than the law.",
+     "accept": [
+      "Kinship may well shape the family more than the law.",
+      "Kinship may well shape the lifeworld more than the law."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Kabul edilebilir okumayı işaretlemek için"
+      },
+      {
+       "lang": "en",
+       "text": "may well"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "Kinship may well shape the household more than the law."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kontrol. Şu cümle doğru mu?"
+     },
+     {
+      "lang": "en",
+      "text": "Reciprocity might be reciprocal only in name."
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "Reciprocity might be reciprocal only in name.",
+     "answer": true,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Doğru. «might» iddiayı uzakta tutuyor; cümle bir gözlem olarak kalıyor."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir toplulukta kimin önde geldiğini belirleyen düzene"
+     },
+     {
+      "lang": "en",
+      "text": "pecking order"
+     },
+     {
+      "lang": "tr",
+      "text": "bir işi ya da süreci başlatmaya ise"
+     },
+     {
+      "lang": "en",
+      "text": "initiation"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "Ethnocentrism might be the last thing we see."
+     },
+     {
+      "lang": "tr",
+      "text": "Etnosantrizm en son göreceğimiz şey olabilir."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Ethnocentrism might be the last thing we see."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Kendi kültürünü ölçü sayma eğilimine"
+     },
+     {
+      "lang": "en",
+      "text": "ethnocentrism"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sen kur: Karşılıklılık yalnız adıyla adil olabilir."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "Reciprocity might be fair only in name.",
+     "accept": [
+      "Reciprocity might be equal only in name.",
+      "Reciprocity might be reciprocal only in name."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Olasılığı uzak tutmak için"
+      },
+      {
+       "lang": "en",
+       "text": "might"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "Reciprocity might be fair only in name."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Başkasının hayatını anlatırken kip bir nezaket değil, bir doğruluk aracıdır."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The modal keeps the claim honest."
+     },
+     {
+      "lang": "tr",
+      "text": "Kip iddiayı dürüst tutuyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The modal keeps the claim honest."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir tane daha: Toplumsallaşma sıra düzenini okuldan önce kurabilir."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "Socialization may set the pecking order before the school.",
+     "accept": [
+      "Socialization may set the pecking order before the work.",
+      "Socialization may set the pecking order before the initiation."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "İki adımı tek kipin altına koymak için"
+      },
+      {
+       "lang": "en",
+       "text": "may"
+      },
+      {
+       "lang": "tr",
+       "text": "bir kez söylenir:"
+      },
+      {
+       "lang": "en",
+       "text": "Socialization may set the pecking order before the school."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Özetleyelim: güven"
+     },
+     {
+      "lang": "en",
+      "text": "may well"
+     },
+     {
+      "lang": "tr",
+      "text": "mesafe"
+     },
+     {
+      "lang": "en",
+      "text": "might"
+     },
+     {
+      "lang": "tr",
+      "text": "ortak kip"
+     },
+     {
+      "lang": "en",
+      "text": "may"
+     },
+     {
+      "lang": "tr",
+      "text": "Şimdi bilmediğin bir hayatı anlatacaksın."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Kendi büyüdüğün çevreden farklı bir aile düzenini anlatıyorsun ve yanılma payını cümlede bırakmak istiyorsun. Üç ayrı kip derecesi kur ve her birinde mesafeni söyle.",
+   "partner": "gözlemini kesin bir kural gibi tekrarlayan, «demek hep öyle» diyen biri",
+   "opening": "So it's always like that there?",
+   "openingTr": "Demek orada hep böyle?",
+   "goal": "Üç ayrı kip derecesiyle anlattıysan ve her birinde mesafeni söylediysen konuşma başarılı sayılır.",
+   "minTurns": 8
+  }
+ },
+ {
+  "id": "en-c1-a-warm-welcome-indeed",
+  "level": "C1",
+  "course": "en",
+  "icon": "party",
+  "title": "A warm welcome indeed",
+  "titleTr": "Ne sıcak bir karşılama",
+  "summary": "Kuralı ihlal edenin nasıl adlandırıldığını alayla göstermeyi öğretir; eksiltilen söz eleştiriyi dinleyene tamamlatır.",
+  "minutes": 12,
+  "focusId": "Irony and understatement about norms",
+  "vocab": [
+   {
+    "de": "opulent",
+    "tr": "şatafatlı"
+   },
+   {
+    "de": "faceless",
+    "tr": "kimliksiz"
+   },
+   {
+    "de": "deviance",
+    "tr": "normdan sapma"
+   },
+   {
+    "de": "locally customary",
+    "tr": "yörede alışılmış"
+   },
+   {
+    "de": "norm violation",
+    "tr": "norm ihlali"
+   },
+   {
+    "de": "taboo breaking",
+    "tr": "tabu yıkma"
+   },
+   {
+    "de": "dissonance",
+    "tr": "uyumsuzluk"
+   },
+   {
+    "de": "alienation",
+    "tr": "yabancılaşma"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "The banquet was opulent; the welcome, faceless.",
+    "tr": "eksik söyleyip çok kasteder"
+   },
+   {
+    "de": "We have no deviance here; we have a locally customary norm violation.",
+    "tr": "yalanlayıp aynı şeyi doğrular"
+   },
+   {
+    "de": "Taboo breaking, they said, and rather good for the dissonance.",
+    "tr": "övgüyü aktarıp tersine çevirir"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Bugün kuralı ihlal edenin nasıl adlandırıldığını alayla göstermeyi öğreneceğiz."
+     },
+     {
+      "lang": "tr",
+      "text": "Eksiltilen söz eleştiriyi dinleyene tamamlatır; aynı davranışa iki ayrı ad verilmesi de böyle görünür olur. Hazır mısın?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "opulent"
+     },
+     {
+      "lang": "tr",
+      "text": "Gösterişli ve bol demek. İlk kalıbımız da bu. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "The banquet was opulent; the welcome, faceless."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The banquet was opulent; the welcome, faceless."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Kişiliği görünmeyen, herkese aynı davranan tutuma"
+     },
+     {
+      "lang": "en",
+      "text": "faceless"
+     },
+     {
+      "lang": "tr",
+      "text": "kuralın dışına çıkmaya ise"
+     },
+     {
+      "lang": "en",
+      "text": "deviance"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İkinci kalıbımız yalanlayıp aynı şeyi doğruluyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "We have no deviance here; we have a locally customary norm violation."
+     },
+     {
+      "lang": "tr",
+      "text": "Burada normdan sapma yok, yörede alışılmış bir norm ihlali var."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "We have no deviance here; we have a locally customary norm violation."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "O yörede olağan sayılana"
+     },
+     {
+      "lang": "en",
+      "text": "locally customary"
+     },
+     {
+      "lang": "tr",
+      "text": "kuralın açıkça çiğnenmesine ise"
+     },
+     {
+      "lang": "en",
+      "text": "norm violation"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son kalıbımız övgüyü aktarıp tersine çeviriyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "Taboo breaking, they said, and rather good for the dissonance."
+     },
+     {
+      "lang": "tr",
+      "text": "Tabu yıkma, dediler, üstelik uyumsuzluğa iyi geliyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Taboo breaking, they said, and rather good for the dissonance."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi dersin kuralı. Alay aynı davranışın iki adını yan yana koyunca doğar:"
+     },
+     {
+      "lang": "en",
+      "text": "deviance"
+     },
+     {
+      "lang": "tr",
+      "text": "bir yargıdır,"
+     },
+     {
+      "lang": "en",
+      "text": "locally customary"
+     },
+     {
+      "lang": "tr",
+      "text": "ise bir hoşgörüdür. İkisini bir cümlede birleştirince kimin hangi adı hak ettiğini dinleyen kendi sorar."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sıra sende: Yemek şatafatlıydı, karşılama kimliksiz."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "The dinner was opulent; the welcome, faceless.",
+     "accept": [
+      "The table was opulent; the welcome, faceless.",
+      "The banquet was opulent; the welcome, faceless."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Eksik söyleyip çok kastetmek için ikinci yarıda fiil düşürülür:"
+      },
+      {
+       "lang": "en",
+       "text": "The dinner was opulent; the welcome, faceless."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kontrol. Şu cümle doğru mu?"
+     },
+     {
+      "lang": "en",
+      "text": "We have no deviance here; we have a locally customary norm violation."
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "We have no deviance here; we have a locally customary norm violation.",
+     "answer": true,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Doğru. Cümle önce yalanlıyor, sonra aynı şeyi başka adla doğruluyor."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Dokunulmaz sayılanı açıkça çiğnemeye"
+     },
+     {
+      "lang": "en",
+      "text": "taboo breaking"
+     },
+     {
+      "lang": "tr",
+      "text": "birbirini tutmayan seslerin bir aradalığına ise"
+     },
+     {
+      "lang": "en",
+      "text": "dissonance"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "They call the alienation a phase."
+     },
+     {
+      "lang": "tr",
+      "text": "Yabancılaşmaya bir evre diyorlar."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "They call the alienation a phase."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İnsanın kendine ve çevresine uzak düşmesine"
+     },
+     {
+      "lang": "en",
+      "text": "alienation"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sen kur: Burada sorun yok, yörede alışılmış bir norm ihlali var."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "We have no problem here; we have a locally customary norm violation.",
+     "accept": [
+      "We have no conflict here; we have a locally customary norm violation.",
+      "We have no deviance here; we have a locally customary norm violation."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Yalanlayıp aynı şeyi doğrulamak için"
+      },
+      {
+       "lang": "en",
+       "text": "We have no … we have"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "We have no problem here; we have a locally customary norm violation."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Alay adlandırmayı görünür kılar; kimin hangi adı aldığını sorduran şey odur."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The name was never neutral."
+     },
+     {
+      "lang": "tr",
+      "text": "Ad hiçbir zaman tarafsız değildi."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The name was never neutral."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir tane daha: Tabu yıkma, dediler, üstelik havaya iyi geliyor."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "Taboo breaking, they said, and rather good for the mood.",
+     "accept": [
+      "Taboo breaking, they said, and rather good for the evening.",
+      "Taboo breaking, they said, and rather good for the dissonance."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Övgüyü aktarıp tersine çevirmek için"
+      },
+      {
+       "lang": "en",
+       "text": "they said, and rather"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "Taboo breaking, they said, and rather good for the mood."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Özetleyelim: eksiltme"
+     },
+     {
+      "lang": "en",
+      "text": "the welcome, faceless"
+     },
+     {
+      "lang": "tr",
+      "text": "yalanlayıp doğrulama"
+     },
+     {
+      "lang": "en",
+      "text": "We have no … we have"
+     },
+     {
+      "lang": "tr",
+      "text": "aktarma"
+     },
+     {
+      "lang": "en",
+      "text": "they said, and rather"
+     },
+     {
+      "lang": "tr",
+      "text": "Şimdi alayla eleştireceksin."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Aynı davranışın iki ayrı ad aldığı bir olayı anlatıyorsun ve açıkça suçlamak istemiyorsun. Üç cümlede eksilterek eleştir ve dinleyenin hangi adı seçtiğini sor.",
+   "partner": "iki adı da doğal bulan, «bizde öyle denir» diyen biri",
+   "opening": "That's just what we call it here, no?",
+   "openingTr": "Bizde buna böyle deniyor, olmaz mı?",
+   "goal": "Üç cümlede eksilterek eleştirdiysen ve dinleyenin hangi adı seçtiğini sorduysan konuşma başarılı sayılır.",
+   "minTurns": 8
+  }
+ },
+ {
+  "id": "en-c1-when-meaning-shifts",
+  "level": "C1",
+  "course": "en",
+  "icon": "chart",
+  "title": "When meaning shifts",
+  "titleTr": "Anlam kayarken",
+  "summary": "Anlamı kayan bir sözcüğü uzun metinde takip etmeyi öğretir; bağlantı verilmezse okur hangi anlamın sürdüğünü bilemez.",
+  "minutes": 13,
+  "focusId": "Cohesion when meaning shifts",
+  "vocab": [
+   {
+    "de": "language change",
+    "tr": "dil değişimi"
+   },
+   {
+    "de": "language norm",
+    "tr": "dil normu"
+   },
+   {
+    "de": "semantic change",
+    "tr": "anlam değişimi"
+   },
+   {
+    "de": "language usage",
+    "tr": "dil kullanımı"
+   },
+   {
+    "de": "semantic context",
+    "tr": "anlam bağlamı"
+   },
+   {
+    "de": "literal meaning",
+    "tr": "gerçek anlam"
+   },
+   {
+    "de": "semantic content",
+    "tr": "anlam içeriği"
+   },
+   {
+    "de": "source language",
+    "tr": "kaynak dil"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "The language change above becomes a language norm below.",
+    "tr": "yukarıyı aşağıya bağlar"
+   },
+   {
+    "de": "That semantic change, as noted, is the language usage of an earlier page.",
+    "tr": "geri göndermeyi araya koyar"
+   },
+   {
+    "de": "Where the semantic context is missing, the literal meaning does not hold.",
+    "tr": "iki bölümü tek cümlede bağlar"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Bugün anlamı kayan bir sözcüğü uzun metinde takip etmeyi öğreneceğiz."
+     },
+     {
+      "lang": "tr",
+      "text": "Bağlantı verilmezse okur hangi anlamın sürdüğünü bilemez ve aynı sözcüğü iki ayrı yerde iki ayrı şey sanır. Hazır mısın?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "language change"
+     },
+     {
+      "lang": "tr",
+      "text": "Dilin zamanla dönüşmesi demek. İlk kalıbımız da bu. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "The language change above becomes a language norm below."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The language change above becomes a language norm below."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Doğru sayılan kullanım ölçüsüne"
+     },
+     {
+      "lang": "en",
+      "text": "language norm"
+     },
+     {
+      "lang": "tr",
+      "text": "bir sözcüğün anlamının kaymasına ise"
+     },
+     {
+      "lang": "en",
+      "text": "semantic change"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İkinci kalıbımız geri göndermeyi araya koyuyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "That semantic change, as noted, is the language usage of an earlier page."
+     },
+     {
+      "lang": "tr",
+      "text": "O anlam değişimi, belirtildiği gibi, önceki bir sayfanın dil kullanımıdır."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "That semantic change, as noted, is the language usage of an earlier page."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Dilin günlük hayatta fiilen kullanılışına"
+     },
+     {
+      "lang": "en",
+      "text": "language usage"
+     },
+     {
+      "lang": "tr",
+      "text": "sözcüğün içinde durduğu anlam çevresine ise"
+     },
+     {
+      "lang": "en",
+      "text": "semantic context"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son kalıbımız iki bölümü tek cümlede bağlıyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "Where the semantic context is missing, the literal meaning does not hold."
+     },
+     {
+      "lang": "tr",
+      "text": "Anlam bağlamı eksikse gerçek anlam tutmaz."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Where the semantic context is missing, the literal meaning does not hold."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi dersin kuralı. Uzun metinde anlam kayıyorsa okura ADRES vermek gerekir:"
+     },
+     {
+      "lang": "en",
+      "text": "above"
+     },
+     {
+      "lang": "tr",
+      "text": "ve"
+     },
+     {
+      "lang": "en",
+      "text": "below"
+     },
+     {
+      "lang": "tr",
+      "text": "hangi anlamın nerede geçtiğini,"
+     },
+     {
+      "lang": "en",
+      "text": "as noted"
+     },
+     {
+      "lang": "tr",
+      "text": "ise okurun onu daha önce gördüğünü söyler. Adres yoksa okur her seferinde baştan tahmin eder."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sıra sende: Yukarıdaki dil değişimi aşağıda bir alışkanlığa dönüşüyor."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "The language change above becomes a habit below.",
+     "accept": [
+      "The language change above becomes a rule below.",
+      "The language change above becomes a language norm below."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Yukarıyı aşağıya bağlamak için"
+      },
+      {
+       "lang": "en",
+       "text": "above … below"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "The language change above becomes a habit below."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kontrol. Şu cümle doğru mu?"
+     },
+     {
+      "lang": "en",
+      "text": "Where the semantic context is missing, the literal meaning does not hold."
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "Where the semantic context is missing, the literal meaning does not hold.",
+     "answer": true,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Doğru. İki bölüm tek cümlede bağlanmış; koşul ile sonuç aynı yerde duruyor."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Sözcüğün düz karşılığına"
+     },
+     {
+      "lang": "en",
+      "text": "literal meaning"
+     },
+     {
+      "lang": "tr",
+      "text": "taşıdığı anlam yüküne ise"
+     },
+     {
+      "lang": "en",
+      "text": "semantic content"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The semantic content travels; the source language does not."
+     },
+     {
+      "lang": "tr",
+      "text": "Anlam içeriği yolculuk ediyor, kaynak dil etmiyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The semantic content travels; the source language does not."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Çevirinin yapıldığı asıl dile"
+     },
+     {
+      "lang": "en",
+      "text": "source language"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sen kur: O anlam değişimi, belirtildiği gibi, önceki bir sayfanın alışkanlığıdır."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "That semantic change, as noted, is the habit of an earlier page.",
+     "accept": [
+      "That semantic change, as noted, is the rule of an earlier page.",
+      "That semantic change, as noted, is the language usage of an earlier page."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Geri göndermeyi araya koymak için"
+      },
+      {
+       "lang": "en",
+       "text": "as noted"
+      },
+      {
+       "lang": "tr",
+       "text": "iki virgül arasına girer:"
+      },
+      {
+       "lang": "en",
+       "text": "That semantic change, as noted, is the habit of an earlier page."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Anlam kayarken okur yalnız bırakılmaz; her kayma bir adresle işaretlenir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The address carries the reader."
+     },
+     {
+      "lang": "tr",
+      "text": "Okuru adres taşıyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The address carries the reader."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir tane daha: Bağlam eksikse gerçek anlam tutmaz."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "Where the context is missing, the literal meaning does not hold.",
+     "accept": [
+      "Where the page is missing, the literal meaning does not hold.",
+      "Where the semantic context is missing, the literal meaning does not hold."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "İki bölümü tek cümlede bağlamak için"
+      },
+      {
+       "lang": "en",
+       "text": "Where … does not"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "Where the context is missing, the literal meaning does not hold."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Özetleyelim: yer"
+     },
+     {
+      "lang": "en",
+      "text": "above"
+     },
+     {
+      "lang": "tr",
+      "text": "ve"
+     },
+     {
+      "lang": "en",
+      "text": "below"
+     },
+     {
+      "lang": "tr",
+      "text": "geri gönderme"
+     },
+     {
+      "lang": "en",
+      "text": "as noted"
+     },
+     {
+      "lang": "tr",
+      "text": "bağlama"
+     },
+     {
+      "lang": "en",
+      "text": "Where … does not"
+     },
+     {
+      "lang": "tr",
+      "text": "Şimdi kayan bir anlamı takip ettireceksin."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Anlamı zamanla kaymış bir sözcüğü arkadaşına anlatıyorsun ve hangi anlamın nerede geçtiğini kaybettirmek istemiyorsun. Yukarı, aşağı ve geri gönderme adreslerini kullan.",
+   "partner": "sözcüğün tek bir anlamı olduğunu düşünen, «sözlükte ne yazıyorsa o» diyen bir arkadaş",
+   "opening": "Doesn't the dictionary settle it?",
+   "openingTr": "Sözlük bu işi bitirmiyor mu?",
+   "goal": "Kayan anlamı yukarı, aşağı ve geri gönderme adresleriyle takip ettirdiysen konuşma başarılı sayılır.",
+   "minTurns": 8
+  }
+ },
+ {
+  "id": "en-c1-what-belonging-leaves-unsaid",
+  "level": "C1",
+  "course": "en",
+  "icon": "star",
+  "title": "What belonging leaves unsaid",
+  "titleTr": "Aidiyetin söylemediği",
+  "summary": "Aidiyet konuşmasında düşen öğeyi öğretir; söylenmeyen şey bilinmediği için değil, herkesçe bilindiği için düşüyor.",
+  "minutes": 13,
+  "focusId": "Ellipsis in talk about belonging",
+  "vocab": [
+   {
+    "de": "diaspora",
+    "tr": "diaspora"
+   },
+   {
+    "de": "heritage language",
+    "tr": "köken dili"
+   },
+   {
+    "de": "enclave",
+    "tr": "enklav"
+   },
+   {
+    "de": "untranslatability",
+    "tr": "çevrilemezlik"
+   },
+   {
+    "de": "spirituality",
+    "tr": "maneviyat"
+   },
+   {
+    "de": "crisis of faith",
+    "tr": "inanç krizi"
+   },
+   {
+    "de": "social stratum",
+    "tr": "toplumsal katman"
+   },
+   {
+    "de": "change in values",
+    "tr": "değerlerin dönüşümü"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "The diaspora keeps the heritage language; the enclave, the silence.",
+    "tr": "ikinci yarıda fiili düşürür"
+   },
+   {
+    "de": "Untranslatability survives as spirituality, a crisis of faith as a question.",
+    "tr": "ikinci yarıda yüklemi düşürür"
+   },
+   {
+    "de": "The social stratum changed; the change in values did not.",
+    "tr": "yüklemi yardımcı fiile indirir"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Bugün aidiyet konuşmasında düşen öğeyi öğreneceğiz."
+     },
+     {
+      "lang": "tr",
+      "text": "Söylenmeyen şey bilinmediği için değil, herkesçe bilindiği için düşüyor; bu yüzden eksiltme bir aidiyet işareti. Hazır mısın?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "diaspora"
+     },
+     {
+      "lang": "tr",
+      "text": "Yurdundan uzakta yaşayan topluluk demek. İlk kalıbımız da bu. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "The diaspora keeps the heritage language; the enclave, the silence."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The diaspora keeps the heritage language; the enclave, the silence."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Ailenin geldiği yerin diline"
+     },
+     {
+      "lang": "en",
+      "text": "heritage language"
+     },
+     {
+      "lang": "tr",
+      "text": "başka bir toplumun ortasında kalmış bölgeye ise"
+     },
+     {
+      "lang": "en",
+      "text": "enclave"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İkinci kalıbımız ikinci yarıda yüklemi düşürüyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "Untranslatability survives as spirituality, a crisis of faith as a question."
+     },
+     {
+      "lang": "tr",
+      "text": "Çevrilemezlik maneviyat olarak kalır, inanç krizi bir soru olarak."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Untranslatability survives as spirituality, a crisis of faith as a question."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir sözün başka dile tam geçmemesine"
+     },
+     {
+      "lang": "en",
+      "text": "untranslatability"
+     },
+     {
+      "lang": "tr",
+      "text": "insanın iç dünyasına ait olana ise"
+     },
+     {
+      "lang": "en",
+      "text": "spirituality"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son kalıbımız yüklemi yardımcı fiile indiriyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "The social stratum changed; the change in values did not."
+     },
+     {
+      "lang": "tr",
+      "text": "Toplumsal katman değişti, değerlerin dönüşümü değişmedi."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The social stratum changed; the change in values did not."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi dersin kuralı. Aidiyet konuşmasında düşen öğe bir SINAV gibidir:"
+     },
+     {
+      "lang": "en",
+      "text": "the enclave, the silence"
+     },
+     {
+      "lang": "tr",
+      "text": "dediğinde düşen fiili yalnız içeriden biri tamamlar. Bu yüzden eksiltme hem bir kısaltma hem de bir kapıdır."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sıra sende: Diaspora dili tutuyor, enklav sessizliği."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "The diaspora keeps the language; the enclave, the silence.",
+     "accept": [
+      "The diaspora keeps the songs; the enclave, the silence.",
+      "The diaspora keeps the heritage language; the enclave, the silence."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "İkinci yarıda fiili düşürmek için virgül kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "The diaspora keeps the language; the enclave, the silence."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kontrol. Şu cümle doğru mu?"
+     },
+     {
+      "lang": "en",
+      "text": "The social stratum changed; the change in values did not."
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "The social stratum changed; the change in values did not.",
+     "answer": true,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Doğru. İkinci yarıda yüklem yardımcı fiile inmiş ve gerisi okurda kalmış."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İnanılan şeyin sarsılmasına"
+     },
+     {
+      "lang": "en",
+      "text": "crisis of faith"
+     },
+     {
+      "lang": "tr",
+      "text": "toplumun gelir ve eğitimle ayrılan katına ise"
+     },
+     {
+      "lang": "en",
+      "text": "social stratum"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The change in values came first."
+     },
+     {
+      "lang": "tr",
+      "text": "Önce değerlerin dönüşümü geldi."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The change in values came first."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir toplumun neye değer verdiğinin değişmesine"
+     },
+     {
+      "lang": "en",
+      "text": "change in values"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sen kur: Çevrilemezlik maneviyat olarak kalır, bir kuşku bir soru olarak."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "Untranslatability survives as spirituality, a doubt as a question.",
+     "accept": [
+      "Untranslatability survives as spirituality, a silence as a question.",
+      "Untranslatability survives as spirituality, a crisis of faith as a question."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "İkinci yarıda yüklemi düşürmek için"
+      },
+      {
+       "lang": "en",
+       "text": "survives as"
+      },
+      {
+       "lang": "tr",
+       "text": "bir kez söylenir:"
+      },
+      {
+       "lang": "en",
+       "text": "Untranslatability survives as spirituality, a doubt as a question."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bu ders modülün sonuncusu; adı, ödünü ve eksiltmeyi birlikte kullanacaksın."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The gap knows who belongs."
+     },
+     {
+      "lang": "tr",
+      "text": "Boşluk kimin ait olduğunu biliyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The gap knows who belongs."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir tane daha: Katman değişti, değerlerin dönüşümü değişmedi."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "The stratum changed; the change in values did not.",
+     "accept": [
+      "The city changed; the change in values did not.",
+      "The social stratum changed; the change in values did not."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Yüklemi yardımcı fiile indirmek için"
+      },
+      {
+       "lang": "en",
+       "text": "did not"
+      },
+      {
+       "lang": "tr",
+       "text": "yeter:"
+      },
+      {
+       "lang": "en",
+       "text": "The stratum changed; the change in values did not."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Özetleyelim: fiil düşer"
+     },
+     {
+      "lang": "en",
+      "text": "the enclave, the silence"
+     },
+     {
+      "lang": "tr",
+      "text": "yüklem düşer"
+     },
+     {
+      "lang": "en",
+      "text": "a crisis of faith as a question"
+     },
+     {
+      "lang": "tr",
+      "text": "yardımcı kalır"
+     },
+     {
+      "lang": "en",
+      "text": "the change in values did not"
+     },
+     {
+      "lang": "tr",
+      "text": "Şimdi aidiyeti eksilterek anlatacaksın."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Kendi aidiyetini anlatıyorsun ve her cümlede bir öğeyi bilerek düşürüyorsun. Düşen öğeyi kimin tamamlayabildiğini de söyle.",
+   "partner": "eksik cümleleri anlamayan ama anlamış gibi yapan bir arkadaş",
+   "opening": "I think I follow — do I?",
+   "openingTr": "Anladım galiba, anladım mı?",
+   "goal": "Üç cümlede birer öğe düşürdüysen ve düşeni kimin tamamlayabildiğini söylediysen konuşma başarılı sayılır.",
+   "minTurns": 8
+  }
  }
 ]
