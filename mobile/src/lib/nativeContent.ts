@@ -45,7 +45,6 @@ let dictDe: DeDict | null | undefined;
 function nativeDict(): NativeDict | null {
   if (dict !== undefined) return dict;
   try {
-    // eslint-disable-next-line @typescript-eslint/no-var-requires, global-require
     dict = require("../data/native/en.json") as NativeDict;
   } catch (err) {
     console.warn("[native] dictionary load failed", err);
@@ -57,7 +56,6 @@ function nativeDict(): NativeDict | null {
 function deDict(): DeDict | null {
   if (dictDe !== undefined) return dictDe;
   try {
-    // eslint-disable-next-line @typescript-eslint/no-var-requires, global-require
     dictDe = require("../data/native/de.json") as DeDict;
   } catch (err) {
     console.warn("[native] German dictionary load failed", err);
