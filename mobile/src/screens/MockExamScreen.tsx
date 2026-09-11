@@ -383,7 +383,9 @@ export function MockExamScreen() {
             />
           </>
         ) : busy || !result ? (
-          <View style={{ paddingTop: spacing.xxl, alignItems: "center" }}>
+          /* Kagit puanlanirken sayfanin govdesi bu dala geciyor ve
+             sessizdi; webin karsiligi duyuruyor. */
+          <View accessibilityLiveRegion="polite" accessibilityRole="progressbar" accessibilityState={{ busy: true }} style={{ paddingTop: spacing.xxl, alignItems: "center" }}>
             <ActivityIndicator color={colors.primaryText} />
             <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.md }}>{t("mockexam.scoring")}</Text>
           </View>

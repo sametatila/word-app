@@ -213,7 +213,11 @@ export function BossScreen() {
   const exit = () => nav.goBack();
 
   if (phase === "loading") {
-    return <View style={[pad, { alignItems: "center", justifyContent: "center" }]}><Text variant="body" color={colors.textMuted}>{t("exam.preparing")}</Text></View>;
+    /* BEKLEME KENDINI DUYURUYOR. Bu dal ekranin TAMAMINI kaplayip
+       "hazirlaniyor" yaziyor ama canli bolge degildi: TalkBack kullanan biri
+       dugmeye basip hicbir sey duymuyordu. Webde karsiligi
+       `role="status" aria-busy`. */
+    return <View accessibilityLiveRegion="polite" accessibilityRole="progressbar" accessibilityState={{ busy: true }} style={[pad, { alignItems: "center", justifyContent: "center" }]}><Text variant="body" color={colors.textMuted}>{t("exam.preparing")}</Text></View>;
   }
 
   if (phase === "error") {

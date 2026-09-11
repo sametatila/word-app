@@ -264,7 +264,11 @@ export function ChallengeScreen() {
   const cardPad = { padding: spacing.lg, paddingTop: insets.top + spacing.lg, paddingBottom: insets.bottom + spacing.xxl };
 
   if (phase === "loading") {
-    return <View style={[page, { alignItems: "center", justifyContent: "center" }]}><Text variant="body" color={colors.textMuted}>{t("challenge.preparing")}</Text></View>;
+    /* BEKLEME KENDINI DUYURUYOR. Bu dal ekranin TAMAMINI kaplayip
+       "hazirlaniyor" yaziyor ama canli bolge degildi: TalkBack kullanan biri
+       dugmeye basip hicbir sey duymuyordu. Webde karsiligi
+       `role="status" aria-busy`. */
+    return <View accessibilityLiveRegion="polite" accessibilityRole="progressbar" accessibilityState={{ busy: true }} style={[page, { alignItems: "center", justifyContent: "center" }]}><Text variant="body" color={colors.textMuted}>{t("challenge.preparing")}</Text></View>;
   }
 
   if (phase === "error") {

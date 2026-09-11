@@ -253,7 +253,8 @@ export function RoleplayExamScreen() {
 
   if (phase === "scoring") {
     return (
-      <View style={{ flex: 1, backgroundColor: colors.bg, alignItems: "center", justifyContent: "center", gap: spacing.md, padding: spacing.xl }}>
+      /* Puanlama beklemesi ekranin tamami ve sessizdi. */
+      <View accessibilityLiveRegion="polite" accessibilityRole="progressbar" accessibilityState={{ busy: true }} style={{ flex: 1, backgroundColor: colors.bg, alignItems: "center", justifyContent: "center", gap: spacing.md, padding: spacing.xl }}>
         <Mascot mood="idle" size={92} />
         <ActivityIndicator color={colors.primary} />
         <Text variant="h3">{tx("item.mono_scoring")}</Text>

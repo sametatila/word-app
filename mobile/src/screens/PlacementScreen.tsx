@@ -400,7 +400,9 @@ export function PlacementScreen() {
           </PressableScale>
         </>
       ) : submitting ? (
-        <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
+        /* Seviye hesaplanirken ekran tamamen bu dala geciyor ve sessizdi;
+           webde ayni dal `role="status" aria-busy` tasiyor. */
+        <View accessibilityLiveRegion="polite" accessibilityRole="progressbar" accessibilityState={{ busy: true }} style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
           <ActivityIndicator color={colors.primaryText} />
           <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.md }}>{t("placement.calculating_your_level")}</Text>
         </View>
