@@ -7275,6 +7275,52 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     "beklenen",
   );
 
+  /* ── 220. sosyal merkez: yukleme dali gercek dizilimi ciziyor mu ─────
+   * Sosyal merkezin "arkadaslar" sekmesi iki platformda AYNI dizilimi
+   * cizyor ve sira bilincli: cevap bekleyen is (gelen istek), bu haftanin
+   * taahhudu (ortak gorev), sonra liste ve tablo. Bu kisim zaten esitti.
+   *
+   * YUKLEME DALI esit DEGILDI. Android yuklenirken gercek dizilimin aynisini
+   * ciziyor (istek karti, gorev karti, iki kisi satiri); web yalniz UC KISI
+   * SATIRI ciziyordu ve veri gelince ilk iki kart USTTE belirip listeyi asagi
+   * itiyordu. Ayni sinif 11.329'da rozet duvarinda cikti (iskeletin
+   * duyurusu) ve mobilin baska bir ekraninda gerekcesi yazili: "icerik
+   * gelince kartlar ortadan yukari sicramiyor, olduklari yerde beliriyor".
+   *
+   * Ilginc yani: `QuestsSkeleton` webde ZATEN vardi ama yalniz `Quests`in
+   * kendi yuklemesinde kullaniliyordu - merkez yuklenirken `Quests` henuz
+   * takili olmadigi icin o iskelet hic gorunmuyordu. */
+  {
+    const webMerkez = sil(read("src/components/social/friends-hub.tsx"));
+    const mobMerkez = sil(read("mobile/src/screens/FriendsScreen.tsx"));
+    const webIstek = sil(read("src/components/social/requests.tsx"));
+    const sira = (src, adlar) => adlar.map((a) => (src.indexOf(a) >= 0 ? src.indexOf(a) : Infinity));
+    const artan = (xs) => xs.every((v, i) => i === 0 || (xs[i - 1] < v && v !== Infinity));
+    const webSira = sira(webMerkez, ["<RequestCardSkeleton", "<QuestsSkeleton", "<PersonRowSkeleton"]);
+    const mobSira = sira(mobMerkez, ["<RequestCardSkeleton", "<QuestsSkeleton", "<FriendCardSkeleton"]);
+    sameList(
+      "sosyal merkez yukleme dali",
+      [
+        "web istek iskeleti=" + (/export function RequestCardSkeleton/.test(webIstek) ? "var" : "YOK"),
+        "web uc parca=" + (webSira.every((x) => x !== Infinity) ? "var" : "EKSIK"),
+        "web sira=" + (artan(webSira) ? "istek+gorev+liste" : "AYRI"),
+        "mobil uc parca=" + (mobSira.every((x) => x !== Infinity) ? "var" : "EKSIK"),
+        "mobil sira=" + (artan(mobSira) ? "istek+gorev+liste" : "AYRI"),
+        /* Gercek dizilim de olculuyor: yukleme dali ona benzemek zorunda. */
+        "web gercek sira=" + (artan(sira(webMerkez, ["<Requests incoming", "<Quests friends", "<FriendList friends", "<FriendsBoard"])) ? "dogru" : "AYRI"),
+        "mobil gercek sira=" + (artan(sira(mobMerkez, ["<Requests incoming", "<Quests friends", "<FriendRows friends", "<FriendsBoard"])) ? "dogru" : "AYRI"),
+      ],
+      [
+        "web istek iskeleti=var",
+        "web uc parca=var", "web sira=istek+gorev+liste",
+        "mobil uc parca=var", "mobil sira=istek+gorev+liste",
+        "web gercek sira=dogru", "mobil gercek sira=dogru",
+      ],
+      "bulunan",
+      "beklenen",
+    );
+  }
+
   /* ── 219. gelen kutusu: "ne kadar once", hedefler ve rozetin tavani ──
    * Gelen kutusu iki platformda satir satir eslesiyor (avatar/karo,
    * okunmamis KALIN + nokta, tepki simgesi, chevron, imlecli sayfalama,
