@@ -94,6 +94,7 @@ export const enBase: Record<string, string> = {
   "cando.not_yet": "Not yet",
   "cando.n_proven": "{n} proven",
   "cando.proven_of_total": "{proven}/{total} proven",
+  "cando.couldn_t_load": "Couldn't load what you can do.",
   "changepw.title": "Change your password",
   "changepw.sub": "Changing it signs you out on your other devices.",
   "changepw.open": "Change",

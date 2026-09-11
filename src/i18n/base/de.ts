@@ -94,6 +94,7 @@ export const deBase: Record<string, string> = {
   "cando.not_yet": "Noch nicht",
   "cando.n_proven": "{n} nachgewiesen",
   "cando.proven_of_total": "{proven}/{total} nachgewiesen",
+  "cando.couldn_t_load": "„Was ich kann“ konnte nicht geladen werden.",
   "changepw.title": "Passwort ändern",
   "changepw.sub": "Nach der Änderung wirst du auf deinen anderen Geräten abgemeldet.",
   "changepw.open": "Ändern",

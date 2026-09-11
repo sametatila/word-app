@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { SkeletonBar, SkeletonCard, SkeletonLine, SkeletonTile } from "@/components/skeleton";
 import { EmptyCard } from "@/components/empty-card";
-import { CheckIcon } from "@/components/icons";
+import { AlertIcon, CheckIcon } from "@/components/icons";
 import { CANDO_LEVELS, CANDO_SKILL_LABEL_KEYS, type Cando, type CandoSkill } from "@/lib/cando";
 import { CardGrid } from "@/components/layout";
 import type { CefrLevel } from "@/lib/skills/types";
@@ -34,6 +34,8 @@ type Data = { level: string; items: Item[]; byLevel: Record<CefrLevel, { proven:
 export function CandoCard() {
   const t = useT();
   const [data, setData] = useState<Data | null | undefined>(undefined);
+  /* Tekrar deneme sayaci: artinca istek yeniden kosuyor. */
+  const [attempt, setAttempt] = useState(0);
 
   useEffect(() => {
     let alive = true;
@@ -51,7 +53,7 @@ export function CandoCard() {
     return () => {
       alive = false;
     };
-  }, []);
+  }, [attempt]);
 
   /* İskelet İÇERİĞİN ŞEKLİNDE: kural satırı, iki çubuklu özet kartı, iki
      grup × dört satır. Android'in yükleme dalı birebir bu. */
@@ -91,12 +93,31 @@ export function CandoCard() {
       </div>
     );
 
-  /* VERİ YOKKEN SESSİZ KALMIYOR: hiç ders bitirmemiş kullanıcı boş bir sayfa
-     görüp ekranın bozuk olduğunu sanıyordu. Android sebebi söylüyor — ve
-     Android boş LİSTEYİ de aynı kartla karşılıyor, yalnız istek hatasını
-     değil. Web önceden yalnız `!data` dalını taşıyordu. */
-  const items = data?.items ?? [];
-  if (!data || !items.length)
+  /* İSTEK HATASI ile BOŞ LİSTE AYRI İKİ ŞEY ve tek kartla karşılanıyordu:
+     ağı kopan kullanıcıya "giriş yapıp dersleri bitir" yazıyordu — yanlış
+     sebep, üstelik tekrar deneme yolu da yoktu. Aynı kusur Android'de de
+     vardı (`CandoScreen` hata dalı) ve ikisi birlikte düzeltildi.
+
+     Hata dalı ayrıca DUYURULUYOR: ekranı kaplayan bir hata metni canlı bölge
+     değilse ekran okuyucu kullanan biri hiçbir şey duymuyor. */
+  if (!data)
+    return (
+      <div role="alert">
+        <EmptyCard
+          icon={AlertIcon}
+          tint="var(--color-rose)"
+          title={t("cando.couldn_t_load")}
+          text={t("cando.rule")}
+          action={
+            <button type="button" onClick={() => setAttempt((n) => n + 1)} className="btn btn-primary px-4 py-2 text-body">
+              {t("common.try_again")}
+            </button>
+          }
+        />
+      </div>
+    );
+  const items = data.items;
+  if (!items.length)
     return (
       <EmptyCard
         icon={CheckIcon}

@@ -97,6 +97,7 @@ export const tr: Record<string, string> = {
   "cando.not_yet": "Henüz yok",
   "cando.n_proven": "{n} kanıtlı",
   "cando.proven_of_total": "{proven}/{total} kanıtlı",
+  "cando.couldn_t_load": "Neler yapabilirim yüklenemedi.",
   "changepw.title": "Parolanı değiştir",
   "changepw.sub": "Değiştirince öteki cihazlardaki oturumlar kapanır.",
   "changepw.open": "Değiştir",

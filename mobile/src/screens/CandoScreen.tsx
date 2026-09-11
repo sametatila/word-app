@@ -51,6 +51,9 @@ export function CandoScreen() {
   const { user } = useAuth();
   const [data, setData] = useState<CandoData | null>(null);
   const [phase, setPhase] = useState<"loading" | "ready" | "error">("loading");
+  /* Tekrar deneme sayaci: artinca yukleme etkisi yeniden kosuyor. Kalip
+     `AchievementsScreen`/`ExamScreen` ile ayni. */
+  const [attempt, setAttempt] = useState(0);
 
   /*
    * EKRANA HER DÖNÜŞTE TAZE.
@@ -68,9 +71,10 @@ export function CandoScreen() {
     useCallback(() => {
       if (!user) { setPhase("error"); return; }
       let alive = true;
+      setPhase("loading");
       fetchCando().then((d) => { if (alive) { setData(d); setPhase("ready"); } }).catch(() => { if (alive) setPhase("error"); });
       return () => { alive = false; };
-    }, [user]),
+    }, [user, attempt]),
   );
 
   const byLevel = useMemo(() => {
@@ -139,7 +143,24 @@ export function CandoScreen() {
           />
         </View>
       ) : phase === "error" ? (
-        <View style={{ flex: 1, alignItems: "center", justifyContent: "center", paddingHorizontal: spacing.xl }}><Text variant="body" color={colors.textMuted} style={{ textAlign: "center" }}>{t("cando.sign_in_and_finish_lessons_and")}</Text></View>
+        /*
+          HATA DALI YANLIŞ SEBEBİ SÖYLÜYORDU. İstek düştüğünde ekran BOŞ
+          DURUM metnini yazıyordu ("giriş yapıp dersleri bitir") — ağı kopan
+          kullanıcıya yanlış sebep, üstelik tekrar deneme yolu da yoktu ve
+          bu ekranda çekerek yenileme de yok, yani tek çıkış ekrandan
+          çıkmaktı. Webde aynı kusur vardı (`cando-card` tek kartla iki
+          durumu karşılıyordu) ve ikisi birlikte düzeltildi.
+
+          Duyuru da eklendi: ekranı kaplayan bir hata metni canlı bölge
+          değilse TalkBack kullanan biri hiçbir şey duymuyor.
+        */
+        <View accessibilityLiveRegion="assertive" style={{ flex: 1, alignItems: "center", justifyContent: "center", gap: spacing.lg, paddingHorizontal: spacing.xl }}>
+          <Text variant="h2" style={{ textAlign: "center" }}>{t("cando.couldn_t_load")}</Text>
+          <Text variant="body" color={colors.textMuted} style={{ textAlign: "center" }}>{t("cando.rule")}</Text>
+          <PressableScale onPress={() => setAttempt((n) => n + 1)} style={{ paddingHorizontal: 18, paddingVertical: 12, borderRadius: radii.md, borderWidth: 1.5, borderColor: colors.border }}>
+            <Text variant="bodyStrong" color={colors.primaryText}>{t("common.try_again")}</Text>
+          </PressableScale>
+        </View>
       ) : (
         <ScrollView contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.xxl }} showsVerticalScrollIndicator={false}>
           {/*
