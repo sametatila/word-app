@@ -3258,6 +3258,33 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   );
 }
 
+/* ── 92. yazma turunda ipucu yuzeyi ───────────────────────────────────────
+ * Ayni kelime iki platformda AYNI zorlukta yazilmali. Web yazma turunun
+ * basliginda "12 harf - S ile basliyor" satirini BEDAVA gosteriyordu;
+ * Androidde boyle bir satir yok, harf sayisi ancak ipucu dugmesine basinca
+ * (iskelet) goruluyor ve o dugme `hintUsed` gonderip SRS kalitesini
+ * dusuruyor. Yani webde ayni cevap daha kolay veriliyor ve sunucu ikisini
+ * AYNI kalitede sayiyordu.
+ *
+ * Olculen uc sey: tur her iki tarafta da yalniz tur/cogul satirini bedava
+ * gosteriyor mu, iskelet dugmenin arkasinda mi, ve dugme cezayi yaziyor mu. */
+{
+  const ipucu = (p, gramer) => {
+    const src = read(p).replace(/\/\*[\s\S]*?\*\//g, " ").replace(/\/\/[^\n]*/g, " ");
+    return [
+      "gramer satiri=" + (gramer.test(src) ? "var" : "yok"),
+      "bedava harf ipucu=" + (/letter_hint|firstLetter/.test(src) ? "var" : "yok"),
+      "iskelet dugme arkasinda=" + (/hintShown \?|shown \?/.test(src) ? "var" : "yok"),
+      "ceza=" + (/hintUsed/.test(src) ? "var" : "yok"),
+    ];
+  };
+  sameList(
+    "yazma turu ipucu yuzeyi",
+    ipucu("mobile/src/game/rounds.tsx", /grammarLine\(/),
+    ipucu("src/components/games/typing-game.tsx", /typLabel\(/),
+  );
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"

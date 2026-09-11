@@ -236,8 +236,6 @@ export const trWeb: Record<string, string> = {
   "rounds.empty_letter_slot": "boş yuva",
   "rounds.n_words": "{n} kelime",
   "rounds.ai_accepted": "Anlamca doğru — başka bir kuruluş. ",
-  "rounds.letter_hint": "{n} harf · {letter} ile başlıyor",
-  "rounds.with_hints": " · ipuçlu",
   "rounds.means": "demek",
   "rounds.is_match_right": "Bu eşleşme doğru mu?",
   "session.back_to_mixed": "Karışık tura dön",

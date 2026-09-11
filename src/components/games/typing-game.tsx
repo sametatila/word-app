@@ -78,12 +78,6 @@ export function TypingGame({ round, onDone }: GameProps<TypingRound>) {
     prefetchGerman(withArtikel(word));
   }, [round.id, word, round.assist]);
 
-  const letterCount = word.de.replace(/\s+/g, "").length;
-  const firstLetter = word.de.trim().charAt(0).toUpperCase();
-  // Ayraç: çeviri metnindeki harfin yerini bulmak için. Metinde geçmeyecek bir
-  // karakter seçildi ki bölme her dilde tam iki parça versin.
-  const [hintBefore, hintAfter] = tx("rounds.letter_hint", { n: letterCount, letter: "\u0000" }).split("\u0000");
-
   function submit() {
     if (status !== "idle") return;
     // Kabul edilen yazımlar: madde başlığının bütün makul biçimleri (artikelsiz,
@@ -174,20 +168,16 @@ export function TypingGame({ round, onDone }: GameProps<TypingRound>) {
           ) : null}
         </span>
       }
+      /* Yalnız tür/çoğul satırı - Android'deki hâliyle aynı. Burada ayrıca
+         "{n} harf · {X} ile başlıyor" yazıyordu ve bu BEDAVA bir ipucuydu:
+         aynı kelime webde harf sayısı ve baş harfi bilinerek yazılıyor,
+         Androidde bilinmeden. İkisi de `hintUsed` göndermiyordu, yani SRS iki
+         cevabı aynı kalitede sayıyordu. İpucu iskeleti iki tarafta da düğmenin
+         arkasında ve orası ceza kaydediyor. */
       hint={
         <div className="flex items-center justify-center gap-2">
           <span className="surface-2 rounded-full px-2.5 py-0.5 text-xs font-semibold uppercase tracking-wide">
             {typLabel(word.typ, meaningOf(word, lang), lang)}
-          </span>
-          <span>
-            {/* Baş harf kalın kalmalı ama cümledeki YERİ dile göre değişiyor:
-                metin bir ayraçla üretilip ikiye bölünüyor, kalın harf araya
-                giriyor. Kalıbı Türkçenin söz dizimine sabitlemenin tek yolu
-                buydu. */}
-            {hintBefore}
-            <strong>{firstLetter}</strong>
-            {hintAfter}
-            {round.assist ? tx("rounds.with_hints") : ""}
           </span>
         </div>
       }

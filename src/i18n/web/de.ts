@@ -211,8 +211,6 @@ export const deWeb: Record<string, string> = {
   "rounds.empty_letter_slot": "leeres Feld",
   "rounds.n_words": "{n} Wörter",
   "rounds.ai_accepted": "Sinngemäß richtig — andere Formulierung. ",
-  "rounds.letter_hint": "{n} Buchstaben · beginnt mit {letter}",
-  "rounds.with_hints": " · mit Hilfen",
   "rounds.means": "bedeutet",
   "rounds.is_match_right": "Stimmt diese Zuordnung?",
   "session.back_to_mixed": "Zurück zur gemischten Runde",

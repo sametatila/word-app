@@ -211,8 +211,6 @@ export const enWeb: Record<string, string> = {
   "rounds.empty_letter_slot": "empty slot",
   "rounds.n_words": "{n} words",
   "rounds.ai_accepted": "Right meaning — a different construction. ",
-  "rounds.letter_hint": "{n} letters · starts with {letter}",
-  "rounds.with_hints": " · with hints",
   "rounds.means": "means",
   "rounds.is_match_right": "Is this match right?",
   "session.back_to_mixed": "Back to the mixed round",
