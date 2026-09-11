@@ -34,7 +34,14 @@ export function RetryButton({ className }: { className?: string }) {
         // aynı kalırsa (hata sürüyorsa) düğme kilitli kalmasın.
         setTimeout(() => setBusy(false), 3000);
       }}
-      className={className ?? "btn btn-primary mt-4 flex items-center gap-2 px-5 py-3"}
+      /* ORTALI VE İÇERİĞİ KADAR GENİŞ. Varsayılan sınıf `flex` taşıyordu:
+         `display:flex` kutuyu blok seviyesine çıkarıyor, yani düğme kartın
+         tamamını kaplıyor ve kartın `text-center`i onu ortalamıyordu; üstelik
+         `justify-center` olmadığı için ikon ile yazı düğmenin SOLUNDA
+         kalıyordu. Görünen sonuç: hata kartı ortalı, düğmesi kayık.
+         Android aynı yerde içeriği kadar bir düğme gösteriyor (bkz.
+         `WordsScreen` hata durumu), burası da öyle. */
+      className={className ?? "btn btn-primary mx-auto mt-4 flex w-fit items-center justify-center gap-2 px-5 py-3"}
     >
       <RefreshIcon size={18} /> {t(busy ? "common.loading" : "common.try_again")}
     </button>
