@@ -1,6 +1,6 @@
 "use client";
 
-import { createContext, useCallback, useContext, type ReactNode } from "react";
+import { createContext, useCallback, useContext, useEffect, useState, type ReactNode } from "react";
 import { DEFAULT_NATIVE, translate, type NativeLang } from "@/lib/i18n/dict";
 
 /**
@@ -13,13 +13,51 @@ import { DEFAULT_NATIVE, translate, type NativeLang } from "@/lib/i18n/dict";
  * modül değişkeni OLAMAZ.
  */
 const LangContext = createContext<NativeLang>(DEFAULT_NATIVE);
+/** Dili SUNUCUYA GİTMEDEN değiştiren kanca — bkz. `useSetLang`. */
+const SetLangContext = createContext<((lang: NativeLang) => void) | null>(null);
 
 export function LangProvider({ lang, children }: { lang: NativeLang; children: ReactNode }) {
-  return <LangContext.Provider value={lang}>{children}</LangContext.Provider>;
+  /*
+    Dil artık DURUM. Sunucudan gelen değer başlangıç; sonrasında istemci de
+    değiştirebiliyor.
+
+    NEDEN: kurulum sihirbazında dil seçilince `router.refresh()` çağrılıyordu
+    ve tazeleme sihirbazı YENİDEN KURUYORDU — kullanıcı ikinci adımda dilini
+    seçiyor, birinci adıma geri düşüyordu (üretimde ölçüldü). Dili istemcide
+    çevirmek o tazelemeyi gereksiz kılıyor: metinler anında değişiyor, adım
+    yerinde kalıyor.
+  */
+  const [cur, setCur] = useState<NativeLang>(lang);
+  /* Sunucu yeni bir dil bildirdiyse (gezinme, gerçek tazeleme) o kazanır. */
+  useEffect(() => { setCur(lang); }, [lang]);
+  return (
+    <SetLangContext.Provider value={setCur}>
+      <LangContext.Provider value={cur}>{children}</LangContext.Provider>
+    </SetLangContext.Provider>
+  );
 }
 
 export function useLang(): NativeLang {
   return useContext(LangContext);
+}
+
+/**
+ * Arayüz dilini SAYFA TAZELEMEDEN değiştirir.
+ *
+ * Çağıranın ayrıca çerezi yazması gerekiyor (`writeLangCookie`): burada
+ * değişen şey yalnız o anki sekmenin gördüğü dil, sunucunun bir sonraki
+ * çiziminde okuyacağı kaynak çerez. `<html lang>` da elle güncelleniyor,
+ * yoksa ekran okuyucu sayfayı eski dilde okumaya devam eder.
+ */
+export function useSetLang(): (lang: NativeLang) => void {
+  const set = useContext(SetLangContext);
+  return useCallback(
+    (lang: NativeLang) => {
+      set?.(lang);
+      try { document.documentElement.lang = lang; } catch { /* SSR dışında hep var */ }
+    },
+    [set],
+  );
 }
 
 /**

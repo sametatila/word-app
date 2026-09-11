@@ -14,6 +14,7 @@ import { hasDemoPlacement } from "@/lib/placement-demo";
 import { useT, useLang } from "@/lib/i18n/client";
 import { LANG_LABEL, NATIVE_LANGS, type NativeLang } from "@/lib/i18n/dict";
 import { writeLangCookie } from "@/lib/i18n/set-lang";
+import { useSetLang } from "@/lib/i18n/client";
 import { courseName, courseSub, offeredNativeLangs, onboardingCoursesFor } from "@/lib/courses";
 
 /*
@@ -95,6 +96,7 @@ export function CourseOnboarding({
   const t = useT();
   const lang = useLang();
   const router = useRouter();
+  const setLang = useSetLang();
 
   const [i, setI] = useState(0);
   /**
@@ -214,7 +216,15 @@ export function CourseOnboarding({
     // Hesap henüz yoksa karar diğer tercihlerle birlikte saklanıyor ve giriş
     // yapılınca profile taşınıyor (bkz. lib/onboarding-prefs).
     saveOnboardingPrefs({ nativeLang: next });
-    router.refresh();
+    /*
+      TAZELEME YOK. Burada `router.refresh()` vardı ve tazeleme sihirbazı
+      YENİDEN KURUYORDU: kullanıcı ikinci adımda dilini seçiyor, birinci adıma
+      geri düşüyordu (üretimde ölçüldü — "Deutsch"a basınca ekran
+      "Willkommen bei Lernomi"ye dönüyor). Dil istemcide çevriliyor: metinler
+      anında değişiyor, adım yerinde kalıyor. Çerez zaten yazıldı, sunucu bir
+      sonraki çiziminde onu okuyacak.
+    */
+    setLang(next);
   }
 
   function pick(key: StepKey, value: string) {
