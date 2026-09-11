@@ -7292,6 +7292,75 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     "beklenen",
   );
 
+  /* -- 238. KONUSMA: kayit penceresi ve monologun hazirlik ekrani --------
+   *
+   * Uc sey cikti:
+   *
+   *  1. SOYLEYIS DRILININ KAYIT PENCERESI ayrisikti: web `MAX_MS = 8000`
+   *     diye kendi kopyasini tutuyordu, Android `listenOnce(..., 9000)` diye
+   *     satir icinde ADSIZ bir 9 saniye yaziyordu. Ayni dril iki platformda
+   *     baska bir pencere veriyordu ve Android'in sayisini kimse
+   *     savunmuyordu cunku adi yoktu. Iki tarafta `SPEAK_CLIP_MS` adiyla
+   *     sabitlendi; gerekce sabitin yaninda (tek cumle, sinavin serbest
+   *     cevabindan kisa).
+   *  2. MONOLOGUN HAZIRLIK EKRANINDA WEB OTUZ SANIYE SAYIYOR ve sifira
+   *     inince KAYDI KENDILIGINDEN baslatiyordu. Android'de boyle bir saat
+   *     yok - ogrenci hazir oldugunda "basla"ya basiyor - ve mikrofon
+   *     kullanici istemeden aciliyordu: hazirlik metnini okuyan biri kaydin
+   *     basladigini fark etmeyebilir. Baslat dugmesi zaten duruyordu.
+   *  3. HEDEF CIPLERINDE TURKCE KARSILIK webde `title=` ipucu balonundaydi
+   *     (dokunmatikte hic acilmaz) ve cip sessizdi; Android "de · tr" yazip
+   *     dokununca okuyor. Ikisi de yazili ve sesli oldu.
+   *
+   * Telaffuz gecme notu (`PASS_SCORE = 80`) zaten tek kaynaktan okunuyordu. */
+  {
+    const kw = sil(read("src/components/skills/speaking-player.tsx"));
+    const km = sil(read("mobile/src/game/skillLibrary.tsx"));
+    const sw = read("src/lib/pronounce-const.ts");
+    const sm = read("mobile/src/lib/learningRules.ts");
+    sameList(
+      "soyleyis drilinin kayit penceresi",
+      [
+        "sabit=" + ((sm.match(/SPEAK_CLIP_MS = (\d+)/) ?? [])[1] ?? "YOK"),
+        /* KULLANIM, varlik degil: `import` satiri da adi tasiyor, o yuzden
+           "dosyada gecıyor mu" olcusu sabitten cikmayi gormez (enjeksiyonla
+           yakalandi - §11.351'in ayni dersi). */
+        "koddan=" + (/listenOnce\([^,]+, SPEAK_CLIP_MS\)/.test(km) ? "sabitten" : "ELLE"),
+        "elle ms kaldi mi=" + (km.match(/listenOnce\([^,]+, \d{4,5}\)/g) ?? []).length,
+      ],
+      [
+        "sabit=" + ((sw.match(/SPEAK_CLIP_MS = (\d+)/) ?? [])[1] ?? "YOK"),
+        "koddan=" + (/const MAX_MS = SPEAK_CLIP_MS/.test(kw) ? "sabitten" : "ELLE"),
+        /* Webin monolog dongusu yok; olcu ayni bicimde yazilsin diye sifir. */
+        "elle ms kaldi mi=" + (kw.match(/captureClip\(\d{4,5}\)/g) ?? []).length,
+      ],
+      "mobil",
+      "web",
+    );
+
+    const mw = sil(read("src/components/skills/monologue-player.tsx"));
+    const mm2 = sil(read("mobile/src/game/skillLibrary.tsx"));
+    sameList(
+      "monologun hazirlik ekrani",
+      [
+        "geri sayim=" + (/\bPREP_SECONDS\b/.test(mm2) ? "VAR" : "yok"),
+        "kendiliginden kayit=" + (/prepLeft <= 0\) void startRecording/.test(mm2) ? "VAR" : "yok"),
+        "baslat dugmesi=" + (/item\.mono_start/.test(mm2) ? "var" : "YOK"),
+        "sure bilgisi=" + (/item\.mono_duration/.test(mm2) ? "var" : "YOK"),
+        "hedef karsiligi=" + (/\{x\.de\} · \{x\.tr\}/.test(mm2) ? "yazili" : "IPUCU BALONU"),
+      ],
+      [
+        "geri sayim=" + (/\bPREP_SECONDS\b/.test(mw) ? "VAR" : "yok"),
+        "kendiliginden kayit=" + (/prepLeft <= 0\) void startRecording/.test(mw) ? "VAR" : "yok"),
+        "baslat dugmesi=" + (/item\.mono_start/.test(mw) ? "var" : "YOK"),
+        "sure bilgisi=" + (/item\.mono_duration/.test(mw) ? "var" : "YOK"),
+        "hedef karsiligi=" + (/\{x\.de\}<\/span>[\s\S]{0,80}\{x\.tr\}/.test(mw) ? "yazili" : "IPUCU BALONU"),
+      ],
+      "mobil",
+      "web",
+    );
+  }
+
   /* -- 237. YAZMA GOREVININ PUAN BANTLARI SABITTEN MI -------------------
    *
    * Yazma degerlendirmesinde uc sayi var ve ikisi elle yaziliydi:
@@ -9924,7 +9993,13 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       "telaffuz esigi ve kayit sureleri",
       [
         "beceri esigi=" + (/\bPASS_SCORE\b/.test(konusma) && !/const PASS =/.test(konusma) ? "kaynaktan" : "kendi kopyasi"),
-        "beceri kaydi=" + al(konusma, /MAX_MS = (\d+)/),
+        /* Sayi artik oynaticida degil ortak sabitte (`SPEAK_CLIP_MS`);
+           oynatici `const MAX_MS = SPEAK_CLIP_MS` diyor. Kapi once sabiti
+           okuyor, sonra oynaticinin gercekten oradan aldigini dogruluyor. */
+        "beceri kaydi=" +
+          (/const MAX_MS = SPEAK_CLIP_MS/.test(konusma)
+            ? al(read("src/lib/pronounce-const.ts"), /SPEAK_CLIP_MS = (\d+)/)
+            : "ELLE"),
         "sinav kaydi (web)=" + al(sinavWeb, /SPEAK_MAX_MS = (\d+)/),
         "sinav dinlemesi (mobil)=" + al(sinavMob, /SPEAK_MAX_MS = (\d+)/),
         "mobil sabiti kullaniyor=" + (/listenOnce\(currentTargetLocale\(\), SPEAK_MAX_MS\)/.test(sinavMob) ? "evet" : "HAYIR"),

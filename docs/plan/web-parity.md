@@ -11885,3 +11885,50 @@ görevleri mobilde `FreeCard`a düşüyor — o kart `stimulus`, `checklist` ve
 "kapılarda önek eşleşmesi" kapısı bunu reddetti — aynı hatayı §11.341
 civarında da yapmıştım. Önek eşleşmesi uzun bir adı da yakalar; desenler
 sınırlandı.
+
+## §11.354 — Konuşma: kayıt penceresi, zorla başlayan kayıt ve gizli karşılık
+
+Eksen **konuşma değerlendirmesi**ydi. Telaffuz geçme notu (`PASS_SCORE = 80`)
+zaten tek kaynaktan okunuyordu; üç şey ayrışıyordu.
+
+### 1. Söyleyiş drilinin kayıt penceresi
+
+Web `MAX_MS = 8000` diye kendi kopyasını tutuyordu, Android
+`listenOnce(..., 9000)` diye satır içinde **adsız** bir 9 saniye yazıyordu.
+Aynı dril iki platformda başka bir pencere veriyordu — ve Android'in sayısını
+kimse savunmuyordu çünkü **adı yoktu**. İki tarafta `SPEAK_CLIP_MS` adıyla
+sabitlendi; gerekçe sabitin yanında (söylenecek şey tek bir cümle, sınavın
+serbest cevabından kısa).
+
+Monologun döngü penceresi de (`20000`) adlandırıldı: `MONOLOGUE_CHUNK_MS`,
+**yalnız mobil** — Android'in tanıyıcısı her sessizlikte kapanıyor, web'de
+`MediaRecorder` kesintisiz kaydediyor. Bir ayrışma değil, platformun kısıtı;
+ama adsız bir sayı olarak durması gerekmiyordu.
+
+### 2. Monologun hazırlık ekranı kaydı kendiliğinden başlatıyordu
+
+Web hazırlık ekranında **otuz saniye sayıyor** ve sıfıra inince **kaydı
+kendiliğinden başlatıyordu**. İki sorun: Android'de böyle bir saat yok —
+öğrenci hazır olduğunda "başla"ya basıyor — ve **mikrofon kullanıcı istemeden
+açılıyordu**; hazırlık metnini okuyan biri kaydın başladığını fark
+etmeyebilir. Başlat düğmesi zaten duruyordu, tek çıkış oydu. Geri sayım
+kalktı.
+
+### 3. Hedef çiplerinde Türkçe karşılık gizliydi
+
+Web karşılığı `title=` ipucu balonunda tutuyordu (dokunmatikte hiç açılmaz)
+ve çip sessizdi; Android "de · tr" yazıp dokununca okuyor. Web'de de ikisi
+oldu: karşılık yazılı, çip `speakGerman` ile sesli.
+
+### Kapı iki kez zayıf çıktı, ikisi de tanıdık ders
+
+- **Önek eşleşmesi**: `/PREP_SECONDS/` sınırsızdı ve deponun kendi
+  meta-kapısı reddetti — bu turda ikinci kez.
+- **Varlık değil kullanım**: web ölçüsü "dosyada `SPEAK_CLIP_MS` geçiyor mu"
+  diyordu; `import` satırı da adı taşıdığı için `const MAX_MS = 8000`a geri
+  dönmek kapıyı **yeşil bıraktı**. Ölçü kullanıma çevrildi (§11.351'in aynı
+  dersi).
+
+Mevcut "telaffuz eşiği ve kayıt süreleri" kapısı da güncellendi: sayıyı
+oynatıcıdan okuyordu, artık **sabitten** okuyup oynatıcının gerçekten oradan
+aldığını ayrıca doğruluyor.
