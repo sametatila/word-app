@@ -18777,5 +18777,2326 @@
    "goal": "En az iki kişinin sözünü aktardıysan, artı ve eksiyi tarttıysan ve bir karar söylediysen konuşma başarılı sayılır.",
    "minTurns": 8
   }
+ },
+ {
+  "id": "en-b1-registration",
+  "level": "B1",
+  "course": "en",
+  "icon": "flag",
+  "title": "Registering here",
+  "titleTr": "Kayıt işlemleri",
+  "summary": "Resmî kayıt işlemlerini anlatmayı öğretir: kimin yaptığı değil, neyin yapıldığı söylenir.",
+  "minutes": 10,
+  "focusId": "Passive voice",
+  "vocab": [
+   {
+    "de": "register",
+    "tr": "kayıt yaptırmak"
+   },
+   {
+    "de": "resident",
+    "tr": "yerleşik kişi"
+   },
+   {
+    "de": "council",
+    "tr": "belediye"
+   },
+   {
+    "de": "proof",
+    "tr": "kanıt belgesi"
+   },
+   {
+    "de": "stamp",
+    "tr": "kaşe"
+   },
+   {
+    "de": "process",
+    "tr": "işlem"
+   },
+   {
+    "de": "issue",
+    "tr": "düzenlemek"
+   },
+   {
+    "de": "application",
+    "tr": "başvuru"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "The form is stamped at the desk.",
+    "tr": "işlemi kim yaptığını söylemeden anlatır"
+   },
+   {
+    "de": "My application was processed last week.",
+    "tr": "geçmişte yapılan işlemi anlatır"
+   },
+   {
+    "de": "When is the card issued?",
+    "tr": "bir belgenin ne zaman verildiğini sorar"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Bugün resmî kayıt işlemlerini öğreneceğiz: nereye kaydoluyorsun, hangi belge isteniyor, ne zaman çıkıyor."
+     },
+     {
+      "lang": "tr",
+      "text": "Resmî dilin en belirgin özelliği şu: işi kimin yaptığı neredeyse hiç yazılmaz. Bu bir kibarlık değil, kural. Hazır mısın?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimelerimiz:"
+     },
+     {
+      "lang": "en",
+      "text": "register"
+     },
+     {
+      "lang": "tr",
+      "text": "kayıt yaptırmak,"
+     },
+     {
+      "lang": "en",
+      "text": "resident"
+     },
+     {
+      "lang": "tr",
+      "text": "yerleşik kişi. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "I want to register as a resident."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "I want to register as a resident."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Yerel yönetime"
+     },
+     {
+      "lang": "en",
+      "text": "council"
+     },
+     {
+      "lang": "tr",
+      "text": "istenen belgeye ise"
+     },
+     {
+      "lang": "en",
+      "text": "proof"
+     },
+     {
+      "lang": "tr",
+      "text": "denir. İkincisi tek başına 'kanıt' demektir ve resmî yazıda hep bu kelime geçer."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The council asked for proof of my address."
+     },
+     {
+      "lang": "tr",
+      "text": "Belediye adres belgesi istedi."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The council asked for proof of my address."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi dersin kuralı. Resmî işlemlerde özne düşer ve edilgen kurulur:"
+     },
+     {
+      "lang": "en",
+      "text": "is stamped, was processed"
+     },
+     {
+      "lang": "tr",
+      "text": "Kim kaşeledi, kim işledi yazmaz; çünkü işlem kurumun işidir, kişinin değil."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kalıbımız. Kaşe için"
+     },
+     {
+      "lang": "en",
+      "text": "stamp"
+     },
+     {
+      "lang": "tr",
+      "text": "deriz. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "The form is stamped at the desk."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The form is stamped at the desk."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sıra sende: Belgeler girişte kontrol ediliyor."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "The documents are checked at the entrance.",
+     "accept": [
+      "The documents are checked at the door.",
+      "The papers are checked at the entrance."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Kim kontrol ettiği söylenmiyor, o yüzden edilgen:"
+      },
+      {
+       "lang": "en",
+       "text": "The documents are checked at the entrance."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kontrol. Şu cümle doğru mu?"
+     },
+     {
+      "lang": "en",
+      "text": "The form is stamp at the desk."
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "The form is stamp at the desk.",
+     "answer": false,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Yanlış. Edilgende fiilin üçüncü hâli gerekir:"
+      },
+      {
+       "lang": "en",
+       "text": "The form is stamped at the desk."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bütün adımların tamamına"
+     },
+     {
+      "lang": "en",
+      "text": "process"
+     },
+     {
+      "lang": "tr",
+      "text": "başvurunun kendisine ise"
+     },
+     {
+      "lang": "en",
+      "text": "application"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İkinci kalıbımız geçmişte. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "My application was processed last week."
+     },
+     {
+      "lang": "tr",
+      "text": "Başvurum geçen hafta işleme alındı."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "My application was processed last week."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sen kur: Mektup iki gün önce gönderildi."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "The letter was sent two days ago.",
+     "accept": [
+      "The letter was posted two days ago.",
+      "The letter was sent two days before."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Geçmiş edilgen:"
+      },
+      {
+       "lang": "en",
+       "text": "The letter was sent two days ago."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir belgeyi resmî olarak düzenlemek"
+     },
+     {
+      "lang": "en",
+      "text": "issue"
+     },
+     {
+      "lang": "tr",
+      "text": "ile söylenir; bu kelime hem isim hem fiildir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The card is issued by the council."
+     },
+     {
+      "lang": "tr",
+      "text": "Kart belediye tarafından düzenleniyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The card is issued by the council."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son kalıbımız bir soru. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "When is the card issued?"
+     },
+     {
+      "lang": "tr",
+      "text": "Kart ne zaman düzenleniyor?"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "When is the card issued?"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir tane daha: Başvuru ne zaman kontrol ediliyor?"
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "When is the application checked?",
+     "accept": [
+      "When is the application reviewed?",
+      "When is my application checked?"
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Edilgen soru aynı sırayla kurulur:"
+      },
+      {
+       "lang": "en",
+       "text": "When is the application checked?"
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Özetleyelim: şimdi"
+     },
+     {
+      "lang": "en",
+      "text": "is stamped"
+     },
+     {
+      "lang": "tr",
+      "text": "geçmiş"
+     },
+     {
+      "lang": "en",
+      "text": "was processed"
+     },
+     {
+      "lang": "tr",
+      "text": "soru"
+     },
+     {
+      "lang": "en",
+      "text": "When is … issued?"
+     },
+     {
+      "lang": "tr",
+      "text": "Şimdi bir kayıt masasındasın."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Yeni taşındığın yerde kayıt yaptırmak için resmî bir masadasın. Hangi belgelerin gerektiğini sor, işlemin ne kadar süreceğini öğren ve kartın ne zaman çıkacağını netleştir.",
+   "partner": "kurallara bağlı ama yardımcı olmaya çalışan bir kayıt görevlisi",
+   "opening": "Good morning. Are you here to register?",
+   "openingTr": "Günaydın. Kayıt için mi geldiniz?",
+   "goal": "Gereken belgeleri sorduysan, işlemin süresini öğrendiysen ve kartın ne zaman verileceğini netleştirdiysen konuşma başarılı sayılır.",
+   "minTurns": 7
+  }
+ },
+ {
+  "id": "en-b1-forms",
+  "level": "B1",
+  "course": "en",
+  "icon": "pen",
+  "title": "Filling in the form",
+  "titleTr": "Form doldurmak",
+  "summary": "Form doldurmayı öğretir: neyi yazmak zorundasın, neyi yazmak zorunda değilsin.",
+  "minutes": 10,
+  "focusId": "Modals of obligation",
+  "vocab": [
+   {
+    "de": "form",
+    "tr": "form"
+   },
+   {
+    "de": "fill",
+    "tr": "doldurmak"
+   },
+   {
+    "de": "signature",
+    "tr": "imza"
+   },
+   {
+    "de": "tick",
+    "tr": "işaretlemek"
+   },
+   {
+    "de": "section",
+    "tr": "bölüm"
+   },
+   {
+    "de": "detail",
+    "tr": "ayrıntı"
+   },
+   {
+    "de": "print",
+    "tr": "matbaa harfleriyle yazmak"
+   },
+   {
+    "de": "surname",
+    "tr": "soyadı"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "You must fill in every section.",
+    "tr": "zorunluluğu söyler"
+   },
+   {
+    "de": "You don't have to give a phone number.",
+    "tr": "zorunlu olmadığını söyler"
+   },
+   {
+    "de": "You should print your surname.",
+    "tr": "tavsiye verir"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Bugün form doldurmayı öğreneceğiz: hangi bölüm zorunlu, hangisi değil, nereye imza atılıyor."
+     },
+     {
+      "lang": "tr",
+      "text": "Formların üstündeki küçük yazılar hep aynı üç kalıpla kurulur ve bu üçünü karıştırmak formun reddedilmesine yol açar. Hazır mısın?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimelerimiz:"
+     },
+     {
+      "lang": "en",
+      "text": "form"
+     },
+     {
+      "lang": "tr",
+      "text": "form,"
+     },
+     {
+      "lang": "en",
+      "text": "fill"
+     },
+     {
+      "lang": "tr",
+      "text": "doldurmak. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "Please fill in the form in black."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Please fill in the form in black."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Formun her parçasına"
+     },
+     {
+      "lang": "en",
+      "text": "section"
+     },
+     {
+      "lang": "tr",
+      "text": "istenen bilgilere ise"
+     },
+     {
+      "lang": "en",
+      "text": "detail"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "Each section asks for different details."
+     },
+     {
+      "lang": "tr",
+      "text": "Her bölüm farklı ayrıntı istiyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Each section asks for different details."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi dersin kuralı."
+     },
+     {
+      "lang": "en",
+      "text": "must"
+     },
+     {
+      "lang": "tr",
+      "text": "zorunluluk koyar,"
+     },
+     {
+      "lang": "en",
+      "text": "don't have to"
+     },
+     {
+      "lang": "tr",
+      "text": "gerekmediğini söyler ve bu YASAK DEĞİLDİR;"
+     },
+     {
+      "lang": "en",
+      "text": "should"
+     },
+     {
+      "lang": "tr",
+      "text": "ise tavsiye verir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kalıbımız. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "You must fill in every section."
+     },
+     {
+      "lang": "tr",
+      "text": "Her bölümü doldurmak zorundasın."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "You must fill in every section."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sıra sende: Soyadını büyük harfle yazmak zorundasın."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "You must write your surname in capitals.",
+     "accept": [
+      "You must write your surname in capital letters.",
+      "You must put your surname in capitals."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Zorunluluk kalıbı. Soyadı için"
+      },
+      {
+       "lang": "en",
+       "text": "surname"
+      },
+      {
+       "lang": "tr",
+       "text": "deriz:"
+      },
+      {
+       "lang": "en",
+       "text": "You must write your surname in capitals."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kontrol. Şu cümle doğru mu?"
+     },
+     {
+      "lang": "en",
+      "text": "You don't have to give a phone number."
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "You don't have to give a phone number.",
+     "answer": true,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Doğru. Bu kalıp yasaklamıyor, gerekmediğini söylüyor: istersen yazarsın, istemezsen boş bırakırsın."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Kutucuğu işaretlemek"
+     },
+     {
+      "lang": "en",
+      "text": "tick"
+     },
+     {
+      "lang": "tr",
+      "text": "ile söylenir; Amerika'da aynı işe 'check' denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "Tick the box if you agree."
+     },
+     {
+      "lang": "tr",
+      "text": "Kabul ediyorsan kutucuğu işaretle."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Tick the box if you agree."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İkinci kalıbımız. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "You don't have to give a phone number."
+     },
+     {
+      "lang": "tr",
+      "text": "Telefon numarası vermek zorunda değilsin."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "You don't have to give a phone number."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sen kur: Son bölümü doldurmak zorunda değilsin."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "You don't have to fill in the last part.",
+     "accept": [
+      "You do not have to fill in the last part.",
+      "You don't have to complete the last part."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Gerekmediğini söylüyoruz:"
+      },
+      {
+       "lang": "en",
+       "text": "You don't have to fill in the last part."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "El yazısı yerine ayrı ayrı harflerle yazmaya"
+     },
+     {
+      "lang": "en",
+      "text": "print"
+     },
+     {
+      "lang": "tr",
+      "text": "imzaya ise"
+     },
+     {
+      "lang": "en",
+      "text": "signature"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "Your signature goes under the last line."
+     },
+     {
+      "lang": "tr",
+      "text": "İmzan son satırın altına gidiyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Your signature goes under the last line."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son kalıbımız tavsiye veriyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "You should print your surname."
+     },
+     {
+      "lang": "tr",
+      "text": "Soyadını matbaa harfleriyle yazmalısın."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "You should print your surname."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir tane daha: İmzalamadan önce ayrıntıları kontrol etmelisin."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "You should check the details before you sign.",
+     "accept": [
+      "You should check the details before signing.",
+      "You should read the details before you sign."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Tavsiye kalıbı:"
+      },
+      {
+       "lang": "en",
+       "text": "You should check the details before you sign."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Özetleyelim: zorunluluk"
+     },
+     {
+      "lang": "en",
+      "text": "must"
+     },
+     {
+      "lang": "tr",
+      "text": "gerekmiyor"
+     },
+     {
+      "lang": "en",
+      "text": "don't have to"
+     },
+     {
+      "lang": "tr",
+      "text": "tavsiye"
+     },
+     {
+      "lang": "en",
+      "text": "should"
+     },
+     {
+      "lang": "tr",
+      "text": "Şimdi bir formu birlikte dolduracaksınız."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Bir görevliyle birlikte resmî bir formu dolduruyorsun. Hangi bölümün zorunlu olduğunu sor, anlamadığın bir ayrıntıyı sor ve imzayı nereye atacağını öğren.",
+   "partner": "formu ezbere bilen, sabırlı bir görevli",
+   "opening": "Let's go through it together. Have you filled in the first part?",
+   "openingTr": "Birlikte bakalım. İlk bölümü doldurdunuz mu?",
+   "goal": "Zorunlu ve zorunlu olmayan bölümleri ayırdıysan, bir ayrıntıyı sorduysan ve imza yerini öğrendiysen konuşma başarılı sayılır.",
+   "minTurns": 7
+  }
+ },
+ {
+  "id": "en-b1-bank-account",
+  "level": "B1",
+  "course": "en",
+  "icon": "money",
+  "title": "Opening an account",
+  "titleTr": "Banka hesabı",
+  "summary": "Banka işlerini konuşmayı öğretir; üç gelecek biçimini banka randevusunda ayırır.",
+  "minutes": 10,
+  "focusId": "Future forms",
+  "vocab": [
+   {
+    "de": "account",
+    "tr": "hesap"
+   },
+   {
+    "de": "transfer",
+    "tr": "havale"
+   },
+   {
+    "de": "balance",
+    "tr": "bakiye"
+   },
+   {
+    "de": "branch",
+    "tr": "şube"
+   },
+   {
+    "de": "card",
+    "tr": "kart"
+   },
+   {
+    "de": "fee",
+    "tr": "masraf"
+   },
+   {
+    "de": "statement",
+    "tr": "hesap özeti"
+   },
+   {
+    "de": "savings",
+    "tr": "birikim"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "I am opening an account on Friday.",
+    "tr": "kararlaşmış randevuyu söyler"
+   },
+   {
+    "de": "I am going to move my savings.",
+    "tr": "önceden kurulmuş niyeti söyler"
+   },
+   {
+    "de": "I will check the balance tonight.",
+    "tr": "o an verilen kararı söyler"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Bugün banka işlerini öğreneceğiz: hesap açmak, havale yapmak, bakiyeye bakmak."
+     },
+     {
+      "lang": "tr",
+      "text": "Banka konuşmasında üç gelecek biçimi yan yana geliyor: randevu kesin, niyet önceden, karar o anda. Hazır mısın?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "account"
+     },
+     {
+      "lang": "tr",
+      "text": "Hesap demek. İlk kalıbımız da bu. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "I am opening an account on Friday."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "I am opening an account on Friday."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Paranın bir hesaptan ötekine gitmesine"
+     },
+     {
+      "lang": "en",
+      "text": "transfer"
+     },
+     {
+      "lang": "tr",
+      "text": "hesaptaki paraya ise"
+     },
+     {
+      "lang": "en",
+      "text": "balance"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The transfer will change the balance today."
+     },
+     {
+      "lang": "tr",
+      "text": "Havale bugün bakiyeyi değiştirecek."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The transfer will change the balance today."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi dersin kuralı. Randevu kesinse şimdiki zaman:"
+     },
+     {
+      "lang": "en",
+      "text": "I am opening an account."
+     },
+     {
+      "lang": "tr",
+      "text": "Niyet önceden kurulmuşsa"
+     },
+     {
+      "lang": "en",
+      "text": "going to"
+     },
+     {
+      "lang": "tr",
+      "text": "karar o anda verilmişse"
+     },
+     {
+      "lang": "en",
+      "text": "will"
+     },
+     {
+      "lang": "tr",
+      "text": "gelir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sıra sende: Danışmanla onda buluşuyorum."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "I am meeting the adviser at ten.",
+     "accept": [
+      "I'm meeting the adviser at ten.",
+      "I am meeting the advisor at ten."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Randevu kesin, o yüzden şimdiki zaman:"
+      },
+      {
+       "lang": "en",
+       "text": "I am meeting the adviser at ten."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şube için"
+     },
+     {
+      "lang": "en",
+      "text": "branch"
+     },
+     {
+      "lang": "tr",
+      "text": "deriz. Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The branch near the station is open until five."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The branch near the station is open until five."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kontrol. Şu cümle doğru mu?"
+     },
+     {
+      "lang": "en",
+      "text": "I will open an account on Friday, it is already booked."
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "I will open an account on Friday, it is already booked.",
+     "answer": false,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Yanlış. Randevu kesin ve takvimde; bunun kalıbı başkadır:"
+      },
+      {
+       "lang": "en",
+       "text": "I am opening an account on Friday."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bankanın aldığı ücrete"
+     },
+     {
+      "lang": "en",
+      "text": "fee"
+     },
+     {
+      "lang": "tr",
+      "text": "biriktirdiğin paraya ise"
+     },
+     {
+      "lang": "en",
+      "text": "savings"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İkinci kalıbımız niyeti anlatıyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "I am going to move my savings."
+     },
+     {
+      "lang": "tr",
+      "text": "Birikimimi taşıyacağım."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "I am going to move my savings."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sen kur: Eski hesabı kapatacağım."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "I am going to close the old account.",
+     "accept": [
+      "I'm going to close the old account.",
+      "I am going to close my old account."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Önceden kurulmuş niyet:"
+      },
+      {
+       "lang": "en",
+       "text": "I am going to close the old account."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Aylık dökümüne"
+     },
+     {
+      "lang": "en",
+      "text": "statement"
+     },
+     {
+      "lang": "tr",
+      "text": "banka kartına ise"
+     },
+     {
+      "lang": "en",
+      "text": "card"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The statement shows every fee and the new card number."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The statement shows every fee and the new card number."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son kalıbımız o anki kararı anlatıyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "I will check the balance tonight."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "I will check the balance tonight."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir tane daha: Şubeyi yarın arayacağım."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "I will call the branch tomorrow.",
+     "accept": [
+      "I'll call the branch tomorrow.",
+      "I will ring the branch tomorrow."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "O an verilen karar, o yüzden will:"
+      },
+      {
+       "lang": "en",
+       "text": "I will call the branch tomorrow."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Özetleyelim: kesin randevu"
+     },
+     {
+      "lang": "en",
+      "text": "I am opening"
+     },
+     {
+      "lang": "tr",
+      "text": "niyet"
+     },
+     {
+      "lang": "en",
+      "text": "going to"
+     },
+     {
+      "lang": "tr",
+      "text": "o anki karar"
+     },
+     {
+      "lang": "en",
+      "text": "will"
+     },
+     {
+      "lang": "tr",
+      "text": "Şimdi bankada hesap açtıracaksın."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Bankada hesap açtırıyorsun. Hangi belgelerin gerektiğini sor, masrafları öğren ve kartın ne zaman geleceğini netleştir.",
+   "partner": "her adımı tek tek anlatan bir banka görevlisi",
+   "opening": "Welcome. What kind of account would you like to open?",
+   "openingTr": "Hoş geldiniz. Ne tür bir hesap açtırmak istersiniz?",
+   "goal": "Gereken belgeleri sorduysan, masrafları öğrendiysen ve kartın ne zaman geleceğini netleştirdiysen konuşma başarılı sayılır.",
+   "minTurns": 7
+  }
+ },
+ {
+  "id": "en-b1-visa",
+  "level": "B1",
+  "course": "en",
+  "icon": "plane",
+  "title": "At the embassy",
+  "titleTr": "Oturum ve vize",
+  "summary": "Resmî bir görüşmede söylenenleri aktarmayı öğretir.",
+  "minutes": 11,
+  "focusId": "Reported speech",
+  "vocab": [
+   {
+    "de": "visa",
+    "tr": "vize"
+   },
+   {
+    "de": "permit",
+    "tr": "izin belgesi"
+   },
+   {
+    "de": "embassy",
+    "tr": "büyükelçilik"
+   },
+   {
+    "de": "residence",
+    "tr": "oturum"
+   },
+   {
+    "de": "expire",
+    "tr": "süresi dolmak"
+   },
+   {
+    "de": "extend",
+    "tr": "uzatmak"
+   },
+   {
+    "de": "passport",
+    "tr": "pasaport"
+   },
+   {
+    "de": "applicant",
+    "tr": "başvuran"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "She said that the visa had expired.",
+    "tr": "söyleneni bir basamak geriye alarak aktarır"
+   },
+   {
+    "de": "He told me to bring my passport.",
+    "tr": "verilen yönergeyi aktarır"
+   },
+   {
+    "de": "They asked if I had a permit.",
+    "tr": "sorulan soruyu aktarır"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Bugün oturum ve vize işlerini öğreneceğiz: hangi belge, ne zamana kadar geçerli, nasıl uzatılıyor."
+     },
+     {
+      "lang": "tr",
+      "text": "Bu konuşmalarda en çok yaptığın şey aktarmak olacak: görevli ne dedi, senden ne istedi, ne sordu. Hazır mısın?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimelerimiz:"
+     },
+     {
+      "lang": "en",
+      "text": "visa"
+     },
+     {
+      "lang": "tr",
+      "text": "vize,"
+     },
+     {
+      "lang": "en",
+      "text": "expire"
+     },
+     {
+      "lang": "tr",
+      "text": "süresi dolmak. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "My visa expires next month."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "My visa expires next month."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Çalışma ya da oturum belgesine"
+     },
+     {
+      "lang": "en",
+      "text": "permit"
+     },
+     {
+      "lang": "tr",
+      "text": "oturum hakkına ise"
+     },
+     {
+      "lang": "en",
+      "text": "residence"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "I applied for a residence permit."
+     },
+     {
+      "lang": "tr",
+      "text": "Oturum izni için başvurdum."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "I applied for a residence permit."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi dersin kuralı. Aktarırken zaman bir basamak geriye gider:"
+     },
+     {
+      "lang": "en",
+      "text": "The visa has expired"
+     },
+     {
+      "lang": "tr",
+      "text": "aktarılınca"
+     },
+     {
+      "lang": "en",
+      "text": "she said that the visa had expired"
+     },
+     {
+      "lang": "tr",
+      "text": "olur."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kalıbımız. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "She said that the visa had expired."
+     },
+     {
+      "lang": "tr",
+      "text": "Vizenin süresinin dolduğunu söyledi."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "She said that the visa had expired."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sıra sende: Ofisin kapandığını söyledi."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "He said that the office had closed.",
+     "accept": [
+      "He said the office had closed.",
+      "He said that the office had already closed."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Aktarımda zaman geriye gider:"
+      },
+      {
+       "lang": "en",
+       "text": "He said that the office had closed."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kontrol. Şu cümle doğru mu?"
+     },
+     {
+      "lang": "en",
+      "text": "She said that the visa has expired."
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "She said that the visa has expired.",
+     "answer": false,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Yanlış. Aktarımda zaman bir basamak geriye gider:"
+      },
+      {
+       "lang": "en",
+       "text": "She said that the visa had expired."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Büyükelçiliğe"
+     },
+     {
+      "lang": "en",
+      "text": "embassy"
+     },
+     {
+      "lang": "tr",
+      "text": "başvuran kişiye ise"
+     },
+     {
+      "lang": "en",
+      "text": "applicant"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "Every applicant must come to the embassy."
+     },
+     {
+      "lang": "tr",
+      "text": "Her başvuran büyükelçiliğe gelmek zorunda."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Every applicant must come to the embassy."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İkinci kalıbımız yönergeyi aktarıyor. Pasaport için"
+     },
+     {
+      "lang": "en",
+      "text": "passport"
+     },
+     {
+      "lang": "tr",
+      "text": "deriz. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "He told me to bring my passport."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "He told me to bring my passport."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sen kur: Bana mektubu beklememi söyledi."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "She told me to wait for the letter.",
+     "accept": [
+      "She told me to wait for the email.",
+      "She told me to wait for their letter."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Yönerge aktarımı mastarla kurulur:"
+      },
+      {
+       "lang": "en",
+       "text": "She told me to wait for the letter."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Süreyi uzatmak"
+     },
+     {
+      "lang": "en",
+      "text": "extend"
+     },
+     {
+      "lang": "tr",
+      "text": "ile söylenir; resmî yazışmanın kelimesidir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "I want to extend my permit."
+     },
+     {
+      "lang": "tr",
+      "text": "İzin belgemi uzatmak istiyorum."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "I want to extend my permit."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son kalıbımız soruyu aktarıyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "They asked if I had a permit."
+     },
+     {
+      "lang": "tr",
+      "text": "İzin belgem olup olmadığını sordular."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "They asked if I had a permit."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir tane daha: Fotoğrafları getirip getirmediğimi sordu."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "He asked if I had brought the photos.",
+     "accept": [
+      "He asked whether I had brought the photos.",
+      "He asked if I had the photos with me."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Aktarılan soruda soru sırası kurulmaz:"
+      },
+      {
+       "lang": "en",
+       "text": "He asked if I had brought the photos."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Özetleyelim: söz"
+     },
+     {
+      "lang": "en",
+      "text": "said that"
+     },
+     {
+      "lang": "tr",
+      "text": "yönerge"
+     },
+     {
+      "lang": "en",
+      "text": "told me to"
+     },
+     {
+      "lang": "tr",
+      "text": "soru"
+     },
+     {
+      "lang": "en",
+      "text": "asked if"
+     },
+     {
+      "lang": "tr",
+      "text": "Şimdi görüşmeden sonra bir arkadaşına anlatacaksın."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Büyükelçilikteki görüşmeden yeni çıktın ve bir arkadaşın ne olduğunu soruyor. Görevlinin ne söylediğini, senden ne istediğini ve ne sorduğunu aktar.",
+   "partner": "aynı işlemi yapacak, her ayrıntıyı merak eden bir arkadaş",
+   "opening": "How did it go? What did they say?",
+   "openingTr": "Nasıl geçti? Ne dediler?",
+   "goal": "Bir sözü, bir yönergeyi ve bir soruyu aktardıysan ve sıradaki adımı söylediysen konuşma başarılı sayılır.",
+   "minTurns": 8
+  }
+ },
+ {
+  "id": "en-b1-insurance",
+  "level": "B1",
+  "course": "en",
+  "icon": "pill",
+  "title": "What the policy covers",
+  "titleTr": "Sigorta",
+  "summary": "Sigortanın neyi kapsadığını koşul cümleleriyle anlatmayı öğretir.",
+  "minutes": 10,
+  "focusId": "Conditionals",
+  "vocab": [
+   {
+    "de": "insurance",
+    "tr": "sigorta"
+   },
+   {
+    "de": "cover",
+    "tr": "kapsamak"
+   },
+   {
+    "de": "policy",
+    "tr": "poliçe"
+   },
+   {
+    "de": "accident",
+    "tr": "kaza"
+   },
+   {
+    "de": "premium",
+    "tr": "sigorta primi"
+   },
+   {
+    "de": "health",
+    "tr": "sağlık"
+   },
+   {
+    "de": "protect",
+    "tr": "korumak"
+   },
+   {
+    "de": "benefit",
+    "tr": "fayda"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "If you have an accident, the policy covers it.",
+    "tr": "gerçekleşmesi mümkün bir koşulu anlatır"
+   },
+   {
+    "de": "If I paid more, I would get a better policy.",
+    "tr": "gerçek olmayan bir durumu anlatır"
+   },
+   {
+    "de": "You are not covered unless you report it.",
+    "tr": "olumsuz koşulu tek kelimeyle söyler"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Bugün sigortayı öğreneceğiz: poliçe neyi kapsıyor, ne zaman ödüyor, ne zaman ödemiyor."
+     },
+     {
+      "lang": "tr",
+      "text": "Sigortanın bütün dili koşuldur: şu olursa şu olur, şu olmazsa hiçbir şey olmaz. Hazır mısın?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimelerimiz:"
+     },
+     {
+      "lang": "en",
+      "text": "insurance"
+     },
+     {
+      "lang": "tr",
+      "text": "sigorta,"
+     },
+     {
+      "lang": "en",
+      "text": "health"
+     },
+     {
+      "lang": "tr",
+      "text": "sağlık,"
+     },
+     {
+      "lang": "en",
+      "text": "cover"
+     },
+     {
+      "lang": "tr",
+      "text": "kapsamak. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "My health insurance covers the hospital."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "My health insurance covers the hospital."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Sözleşmenin kendisine"
+     },
+     {
+      "lang": "en",
+      "text": "policy"
+     },
+     {
+      "lang": "tr",
+      "text": "her ay ödediğin paraya ise"
+     },
+     {
+      "lang": "en",
+      "text": "premium"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The policy is cheap but the premium goes up."
+     },
+     {
+      "lang": "tr",
+      "text": "Poliçe ucuz ama prim yükseliyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The policy is cheap but the premium goes up."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi dersin kuralı. Gerçekleşmesi MÜMKÜN bir koşulda"
+     },
+     {
+      "lang": "en",
+      "text": "if"
+     },
+     {
+      "lang": "tr",
+      "text": "ile geniş zaman ve"
+     },
+     {
+      "lang": "en",
+      "text": "will"
+     },
+     {
+      "lang": "tr",
+      "text": "ya da geniş zaman gelir. Gerçek OLMAYAN bir durumda ise"
+     },
+     {
+      "lang": "en",
+      "text": "if"
+     },
+     {
+      "lang": "tr",
+      "text": "ile geçmiş ve"
+     },
+     {
+      "lang": "en",
+      "text": "would"
+     },
+     {
+      "lang": "tr",
+      "text": "kullanılır."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kalıbımız. Kaza için"
+     },
+     {
+      "lang": "en",
+      "text": "accident"
+     },
+     {
+      "lang": "tr",
+      "text": "deriz. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "If you have an accident, the policy covers it."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "If you have an accident, the policy covers it."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sıra sende: Hastaneye gidersen sigorta ödüyor."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "If you go to hospital, the insurance pays.",
+     "accept": [
+      "If you go to the hospital, the insurance pays.",
+      "If you go to hospital, the insurance will pay."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Mümkün bir koşul, o yüzden geniş zaman:"
+      },
+      {
+       "lang": "en",
+       "text": "If you go to hospital, the insurance pays."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kontrol. Şu cümle doğru mu?"
+     },
+     {
+      "lang": "en",
+      "text": "If I paid more, I would get a better policy."
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "If I paid more, I would get a better policy.",
+     "answer": true,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Doğru. Varsayılan bir durum anlatılıyor: şu anda daha fazla ödemiyorum, o yüzden koşul geçmiş biçimde ve sonuç would ile."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İkinci kalıbımız varsayımı anlatıyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "If I paid more, I would get a better policy."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "If I paid more, I would get a better policy."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sen kur: Planı değiştirsem para biriktirirdim."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "If I changed the plan, I would save money.",
+     "accept": [
+      "If I changed the plan, I would save more money.",
+      "If I changed the policy, I would save money."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Varsayım, o yüzden geçmiş biçim ve would:"
+      },
+      {
+       "lang": "en",
+       "text": "If I changed the plan, I would save money."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Korumak"
+     },
+     {
+      "lang": "en",
+      "text": "protect"
+     },
+     {
+      "lang": "tr",
+      "text": "sağladığı yarar için ise"
+     },
+     {
+      "lang": "en",
+      "text": "benefit"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "A good policy protects you and brings a real benefit."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "A good policy protects you and brings a real benefit."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son kalıbımız olumsuz koşulu tek kelimeyle söylüyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "You are not covered unless you report it."
+     },
+     {
+      "lang": "tr",
+      "text": "Bildirmedikçe kapsam dışındasın."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "You are not covered unless you report it."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir tane daha: Bir hafta içinde aramadıkça kapsam dışındasın."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "You are not covered unless you call within a week.",
+     "accept": [
+      "You are not covered unless you call in a week.",
+      "You are not covered unless you phone within a week."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Bu bağlaç olumsuzluğu kendi içinde taşır:"
+      },
+      {
+       "lang": "en",
+       "text": "You are not covered unless you call within a week."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Özetleyelim: mümkün koşul"
+     },
+     {
+      "lang": "en",
+      "text": "if + present"
+     },
+     {
+      "lang": "tr",
+      "text": "varsayım"
+     },
+     {
+      "lang": "en",
+      "text": "if + past, would"
+     },
+     {
+      "lang": "tr",
+      "text": "olumsuz koşul"
+     },
+     {
+      "lang": "en",
+      "text": "unless"
+     },
+     {
+      "lang": "tr",
+      "text": "Şimdi sigorta görevlisiyle konuşacaksın."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Sigorta poliçeni anlamak için görevliyle konuşuyorsun. Neyin kapsandığını sor, bir kaza durumunda ne olacağını öğren ve daha iyi bir poliçenin ne getireceğini konuş.",
+   "partner": "poliçeyi satmaya da çalışan, bilgili bir sigorta görevlisi",
+   "opening": "How can I help you with your policy today?",
+   "openingTr": "Poliçenizle ilgili bugün nasıl yardımcı olabilirim?",
+   "goal": "Kapsamı sorduysan, bir mümkün ve bir varsayım koşul cümlesi kurduysan ve bir karar söylediysen konuşma başarılı sayılır.",
+   "minTurns": 7
+  }
  }
 ]

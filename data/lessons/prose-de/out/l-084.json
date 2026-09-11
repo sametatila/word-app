@@ -1,0 +1,832 @@
+[
+ {
+  "tr": "Sigorta",
+  "kind": "titleTr",
+  "de": "Die Versicherung"
+ },
+ {
+  "tr": "Banka hesabı",
+  "kind": "titleTr",
+  "de": "Das Bankkonto"
+ },
+ {
+  "tr": "Oturum ve vize",
+  "kind": "titleTr",
+  "de": "Aufenthalt und Visum"
+ },
+ {
+  "tr": "Kayıt işlemleri",
+  "kind": "titleTr",
+  "de": "Die Anmeldung"
+ },
+ {
+  "tr": "Resmî bir görüşmede söylenenleri aktarmayı öğretir.",
+  "kind": "summary",
+  "de": "Vermittelt, wie man wiedergibt, was in einem amtlichen Gespräch gesagt wurde."
+ },
+ {
+  "tr": "Sigortanın neyi kapsadığını koşul cümleleriyle anlatmayı öğretir.",
+  "kind": "summary",
+  "de": "Vermittelt, wie man mit Bedingungssätzen erklärt, was die Versicherung abdeckt."
+ },
+ {
+  "tr": "Form doldurmayı öğretir: neyi yazmak zorundasın, neyi yazmak zorunda değilsin.",
+  "kind": "summary",
+  "de": "Vermittelt, wie man ein Formular ausfüllt: was du eintragen musst und was nicht."
+ },
+ {
+  "tr": "Banka işlerini konuşmayı öğretir; üç gelecek biçimini banka randevusunda ayırır.",
+  "kind": "summary",
+  "de": "Vermittelt, wie man Bankgeschäfte bespricht, und trennt die drei Zukunftsformen im Banktermin."
+ },
+ {
+  "tr": "Resmî kayıt işlemlerini anlatmayı öğretir: kimin yaptığı değil, neyin yapıldığı söylenir.",
+  "kind": "summary",
+  "de": "Vermittelt, wie man amtliche Vorgänge erzählt: es wird nicht gesagt, wer etwas tut, sondern was getan wird."
+ },
+ {
+  "tr": "formu ezbere bilen, sabırlı bir görevli",
+  "kind": "partner",
+  "de": "ein geduldiger Mitarbeiter, der das Formular auswendig kennt"
+ },
+ {
+  "tr": "her adımı tek tek anlatan bir banka görevlisi",
+  "kind": "partner",
+  "de": "eine Bankmitarbeiterin, die jeden Schritt einzeln erklärt"
+ },
+ {
+  "tr": "aynı işlemi yapacak, her ayrıntıyı merak eden bir arkadaş",
+  "kind": "partner",
+  "de": "ein Freund, der denselben Vorgang vor sich hat und jedes Detail wissen will"
+ },
+ {
+  "tr": "poliçeyi satmaya da çalışan, bilgili bir sigorta görevlisi",
+  "kind": "partner",
+  "de": "ein kundiger Versicherungsmitarbeiter, der die Police auch verkaufen will"
+ },
+ {
+  "tr": "kurallara bağlı ama yardımcı olmaya çalışan bir kayıt görevlisi",
+  "kind": "partner",
+  "de": "eine Sachbearbeiterin, die sich an die Regeln hält, aber helfen will"
+ },
+ {
+  "tr": "Nasıl geçti? Ne dediler?",
+  "kind": "openingTr",
+  "de": "Wie lief es? Was haben sie gesagt?"
+ },
+ {
+  "tr": "Günaydın. Kayıt için mi geldiniz?",
+  "kind": "openingTr",
+  "de": "Guten Morgen. Kommen Sie wegen der Anmeldung?"
+ },
+ {
+  "tr": "Birlikte bakalım. İlk bölümü doldurdunuz mu?",
+  "kind": "openingTr",
+  "de": "Gehen wir es zusammen durch. Haben Sie den ersten Teil ausgefüllt?"
+ },
+ {
+  "tr": "Hoş geldiniz. Ne tür bir hesap açtırmak istersiniz?",
+  "kind": "openingTr",
+  "de": "Willkommen. Was für ein Konto möchten Sie eröffnen?"
+ },
+ {
+  "tr": "Poliçenizle ilgili bugün nasıl yardımcı olabilirim?",
+  "kind": "openingTr",
+  "de": "Wie kann ich Ihnen heute mit Ihrer Police helfen?"
+ },
+ {
+  "tr": "Bankada hesap açtırıyorsun. Hangi belgelerin gerektiğini sor, masrafları öğren ve kartın ne zaman geleceğini netleştir.",
+  "kind": "scene",
+  "de": "Du eröffnest ein Konto bei der Bank. Frag, welche Unterlagen nötig sind, erfahre die Gebühren und klär, wann die Karte kommt."
+ },
+ {
+  "tr": "Büyükelçilikteki görüşmeden yeni çıktın ve bir arkadaşın ne olduğunu soruyor. Görevlinin ne söylediğini, senden ne istediğini ve ne sorduğunu aktar.",
+  "kind": "scene",
+  "de": "Du kommst gerade aus dem Gespräch in der Botschaft und ein Freund fragt, was war. Gib weiter, was der Mitarbeiter gesagt, von dir verlangt und gefragt hat."
+ },
+ {
+  "tr": "Bir görevliyle birlikte resmî bir formu dolduruyorsun. Hangi bölümün zorunlu olduğunu sor, anlamadığın bir ayrıntıyı sor ve imzayı nereye atacağını öğren.",
+  "kind": "scene",
+  "de": "Du füllst mit einem Mitarbeiter ein amtliches Formular aus. Frag, welcher Teil Pflicht ist, frag nach einem Detail, das du nicht verstehst, und finde heraus, wo du unterschreibst."
+ },
+ {
+  "tr": "Sigorta poliçeni anlamak için görevliyle konuşuyorsun. Neyin kapsandığını sor, bir kaza durumunda ne olacağını öğren ve daha iyi bir poliçenin ne getireceğini konuş.",
+  "kind": "scene",
+  "de": "Du sprichst mit einem Mitarbeiter, um deine Police zu verstehen. Frag, was abgedeckt ist, finde heraus, was bei einem Unfall passiert, und sprich darüber, was eine bessere Police bringt."
+ },
+ {
+  "tr": "Yeni taşındığın yerde kayıt yaptırmak için resmî bir masadasın. Hangi belgelerin gerektiğini sor, işlemin ne kadar süreceğini öğren ve kartın ne zaman çıkacağını netleştir.",
+  "kind": "scene",
+  "de": "An deinem neuen Wohnort stehst du am Amtsschalter für die Anmeldung. Frag, welche Unterlagen nötig sind, wie lange der Vorgang dauert, und klär, wann die Karte kommt."
+ },
+ {
+  "tr": "Bir sözü, bir yönergeyi ve bir soruyu aktardıysan ve sıradaki adımı söylediysen konuşma başarılı sayılır.",
+  "kind": "goal",
+  "de": "Das Gespräch gilt als gelungen, wenn du eine Aussage, eine Anweisung und eine Frage wiedergegeben und den nächsten Schritt genannt hast."
+ },
+ {
+  "tr": "Kapsamı sorduysan, bir mümkün ve bir varsayım koşul cümlesi kurduysan ve bir karar söylediysen konuşma başarılı sayılır.",
+  "kind": "goal",
+  "de": "Das Gespräch gilt als gelungen, wenn du nach dem Umfang gefragt, einen möglichen und einen angenommenen Bedingungssatz gebaut und eine Entscheidung genannt hast."
+ },
+ {
+  "tr": "Gereken belgeleri sorduysan, masrafları öğrendiysen ve kartın ne zaman geleceğini netleştirdiysen konuşma başarılı sayılır.",
+  "kind": "goal",
+  "de": "Das Gespräch gilt als gelungen, wenn du nach den Unterlagen gefragt, die Gebühren erfahren und geklärt hast, wann die Karte kommt."
+ },
+ {
+  "tr": "Zorunlu ve zorunlu olmayan bölümleri ayırdıysan, bir ayrıntıyı sorduysan ve imza yerini öğrendiysen konuşma başarılı sayılır.",
+  "kind": "goal",
+  "de": "Das Gespräch gilt als gelungen, wenn du Pflicht- und Kannfelder getrennt, nach einem Detail gefragt und die Stelle für die Unterschrift erfahren hast."
+ },
+ {
+  "tr": "Gereken belgeleri sorduysan, işlemin süresini öğrendiysen ve kartın ne zaman verileceğini netleştirdiysen konuşma başarılı sayılır.",
+  "kind": "goal",
+  "de": "Das Gespräch gilt als gelungen, wenn du nach den Unterlagen gefragt, die Dauer des Vorgangs erfahren und geklärt hast, wann die Karte ausgestellt wird."
+ },
+ {
+  "tr": "kaşe",
+  "kind": "vocab.tr",
+  "de": "Stempel"
+ },
+ {
+  "tr": "şube",
+  "kind": "vocab.tr",
+  "de": "Filiale"
+ },
+ {
+  "tr": "vize",
+  "kind": "vocab.tr",
+  "de": "Visum"
+ },
+ {
+  "tr": "fayda",
+  "kind": "vocab.tr",
+  "de": "Nutzen"
+ },
+ {
+  "tr": "işlem",
+  "kind": "vocab.tr",
+  "de": "Vorgang"
+ },
+ {
+  "tr": "bakiye",
+  "kind": "vocab.tr",
+  "de": "Kontostand"
+ },
+ {
+  "tr": "havale",
+  "kind": "vocab.tr",
+  "de": "Überweisung"
+ },
+ {
+  "tr": "masraf",
+  "kind": "vocab.tr",
+  "de": "Gebühr"
+ },
+ {
+  "tr": "oturum",
+  "kind": "vocab.tr",
+  "de": "Aufenthalt"
+ },
+ {
+  "tr": "poliçe",
+  "kind": "vocab.tr",
+  "de": "Police"
+ },
+ {
+  "tr": "ayrıntı",
+  "kind": "vocab.tr",
+  "de": "Detail"
+ },
+ {
+  "tr": "başvuru",
+  "kind": "vocab.tr",
+  "de": "Antrag"
+ },
+ {
+  "tr": "birikim",
+  "kind": "vocab.tr",
+  "de": "Ersparnisse"
+ },
+ {
+  "tr": "uzatmak",
+  "kind": "vocab.tr",
+  "de": "verlängern"
+ },
+ {
+  "tr": "başvuran",
+  "kind": "vocab.tr",
+  "de": "Antragsteller"
+ },
+ {
+  "tr": "belediye",
+  "kind": "vocab.tr",
+  "de": "Gemeinde"
+ },
+ {
+  "tr": "kapsamak",
+  "kind": "vocab.tr",
+  "de": "abdecken"
+ },
+ {
+  "tr": "doldurmak",
+  "kind": "vocab.tr",
+  "de": "ausfüllen"
+ },
+ {
+  "tr": "düzenlemek",
+  "kind": "vocab.tr",
+  "de": "ausstellen"
+ },
+ {
+  "tr": "işaretlemek",
+  "kind": "vocab.tr",
+  "de": "ankreuzen"
+ },
+ {
+  "tr": "büyükelçilik",
+  "kind": "vocab.tr",
+  "de": "Botschaft"
+ },
+ {
+  "tr": "kanıt belgesi",
+  "kind": "vocab.tr",
+  "de": "Nachweis"
+ },
+ {
+  "tr": "sigorta primi",
+  "kind": "vocab.tr",
+  "de": "Beitrag"
+ },
+ {
+  "tr": "süresi dolmak",
+  "kind": "vocab.tr",
+  "de": "ablaufen"
+ },
+ {
+  "tr": "yerleşik kişi",
+  "kind": "vocab.tr",
+  "de": "Einwohner"
+ },
+ {
+  "tr": "matbaa harfleriyle yazmak",
+  "kind": "vocab.tr",
+  "de": "in Druckbuchstaben schreiben"
+ },
+ {
+  "tr": "gerçek olmayan bir durumu anlatır",
+  "kind": "pattern.tr",
+  "de": "nennt eine nicht reale Lage"
+ },
+ {
+  "tr": "bir belgenin ne zaman verildiğini sorar",
+  "kind": "pattern.tr",
+  "de": "fragt, wann ein Dokument ausgestellt wird"
+ },
+ {
+  "tr": "Yanlış. Randevu kesin ve takvimde; bunun kalıbı başkadır:",
+  "kind": "why.tr",
+  "de": "Falsch. Der Termin steht fest und im Kalender; dafür gibt es eine andere Wendung:"
+ },
+ {
+  "tr": "Doğru. Bu kalıp yasaklamıyor, gerekmediğini söylüyor: istersen yazarsın, istemezsen boş bırakırsın.",
+  "kind": "why.tr",
+  "de": "Richtig. Diese Wendung verbietet nichts, sie sagt, dass es nicht nötig ist: du kannst es eintragen oder leer lassen."
+ },
+ {
+  "tr": "Doğru. Varsayılan bir durum anlatılıyor: şu anda daha fazla ödemiyorum, o yüzden koşul geçmiş biçimde ve sonuç would ile.",
+  "kind": "why.tr",
+  "de": "Richtig. Hier wird eine angenommene Lage erzählt: ich zahle im Moment nicht mehr, deshalb steht die Bedingung in der Vergangenheit und die Folge mit would."
+ },
+ {
+  "tr": "Zorunluluk kalıbı. Soyadı için",
+  "kind": "hint.tr",
+  "de": "Die Wendung für die Pflicht. Für den Nachnamen sagen wir"
+ },
+ {
+  "tr": "Randevu kesin, o yüzden şimdiki zaman:",
+  "kind": "hint.tr",
+  "de": "Der Termin steht fest, deshalb die Verlaufsform:"
+ },
+ {
+  "tr": "Mümkün bir koşul, o yüzden geniş zaman:",
+  "kind": "hint.tr",
+  "de": "Eine mögliche Bedingung, deshalb das Präsens:"
+ },
+ {
+  "tr": "Kim kontrol ettiği söylenmiyor, o yüzden edilgen:",
+  "kind": "hint.tr",
+  "de": "Wer prüft, wird nicht genannt, deshalb Passiv:"
+ },
+ {
+  "tr": "form,",
+  "kind": "say.tr",
+  "de": "Formular,"
+ },
+ {
+  "tr": "vize,",
+  "kind": "say.tr",
+  "de": "Visum,"
+ },
+ {
+  "tr": "Korumak",
+  "kind": "say.tr",
+  "de": "Schützen wird mit"
+ },
+ {
+  "tr": "sağlık,",
+  "kind": "say.tr",
+  "de": "Gesundheit,"
+ },
+ {
+  "tr": "sigorta,",
+  "kind": "say.tr",
+  "de": "Versicherung,"
+ },
+ {
+  "tr": "Şube için",
+  "kind": "say.tr",
+  "de": "Für die Filiale sagen wir"
+ },
+ {
+  "tr": "imzaya ise",
+  "kind": "say.tr",
+  "de": "und die Unterschrift heißt"
+ },
+ {
+  "tr": "Büyükelçiliğe",
+  "kind": "say.tr",
+  "de": "Die Botschaft heißt"
+ },
+ {
+  "tr": "olumsuz koşul",
+  "kind": "say.tr",
+  "de": "negative Bedingung"
+ },
+ {
+  "tr": "Aylık dökümüne",
+  "kind": "say.tr",
+  "de": "Die monatliche Aufstellung heißt"
+ },
+ {
+  "tr": "Süreyi uzatmak",
+  "kind": "say.tr",
+  "de": "Die Frist verlängern wird mit"
+ },
+ {
+  "tr": "Yerel yönetime",
+  "kind": "say.tr",
+  "de": "Die örtliche Verwaltung heißt"
+ },
+ {
+  "tr": "kayıt yaptırmak,",
+  "kind": "say.tr",
+  "de": "sich anmelden,"
+ },
+ {
+  "tr": "banka kartına ise",
+  "kind": "say.tr",
+  "de": "und die Bankkarte heißt"
+ },
+ {
+  "tr": "ise tavsiye verir.",
+  "kind": "say.tr",
+  "de": "dagegen rät."
+ },
+ {
+  "tr": "oturum hakkına ise",
+  "kind": "say.tr",
+  "de": "und das Aufenthaltsrecht heißt"
+ },
+ {
+  "tr": "başvuran kişiye ise",
+  "kind": "say.tr",
+  "de": "und die Person, die den Antrag stellt, heißt"
+ },
+ {
+  "tr": "istenen belgeye ise",
+  "kind": "say.tr",
+  "de": "und das verlangte Dokument heißt"
+ },
+ {
+  "tr": "Formun her parçasına",
+  "kind": "say.tr",
+  "de": "Jeder Teil des Formulars heißt"
+ },
+ {
+  "tr": "hesaptaki paraya ise",
+  "kind": "say.tr",
+  "de": "und das Geld auf dem Konto heißt"
+ },
+ {
+  "tr": "kapsamak. Tekrar et:",
+  "kind": "say.tr",
+  "de": "abdecken. Sprich nach:"
+ },
+ {
+  "tr": "Kutucuğu işaretlemek",
+  "kind": "say.tr",
+  "de": "Das Kästchen ankreuzen wird mit"
+ },
+ {
+  "tr": "doldurmak. Tekrar et:",
+  "kind": "say.tr",
+  "de": "ausfüllen. Sprich nach:"
+ },
+ {
+  "tr": "istenen bilgilere ise",
+  "kind": "say.tr",
+  "de": "und die verlangten Angaben heißen"
+ },
+ {
+  "tr": "Bankanın aldığı ücrete",
+  "kind": "say.tr",
+  "de": "Das Entgelt, das die Bank nimmt, heißt"
+ },
+ {
+  "tr": "Birikimimi taşıyacağım.",
+  "kind": "say.tr",
+  "de": "Ich werde meine Ersparnisse umziehen."
+ },
+ {
+  "tr": "karar o anda verilmişse",
+  "kind": "say.tr",
+  "de": "ist die Entscheidung spontan gefallen, steht"
+ },
+ {
+  "tr": "başvurunun kendisine ise",
+  "kind": "say.tr",
+  "de": "und der Antrag selbst heißt"
+ },
+ {
+  "tr": "biriktirdiğin paraya ise",
+  "kind": "say.tr",
+  "de": "und das Geld, das du sparst, heißt"
+ },
+ {
+  "tr": "Bütün adımların tamamına",
+  "kind": "say.tr",
+  "de": "Die Gesamtheit aller Schritte heißt"
+ },
+ {
+  "tr": "İlk kalıbımız. Kaşe için",
+  "kind": "say.tr",
+  "de": "Unsere erste Wendung. Für den Stempel sagen wir"
+ },
+ {
+  "tr": "İlk kalıbımız. Kaza için",
+  "kind": "say.tr",
+  "de": "Unsere erste Wendung. Für den Unfall sagen wir"
+ },
+ {
+  "tr": "Niyet önceden kurulmuşsa",
+  "kind": "say.tr",
+  "de": "Ist die Absicht vorher gefasst, steht"
+ },
+ {
+  "tr": "sağladığı yarar için ise",
+  "kind": "say.tr",
+  "de": "und für den Nutzen, den sie bringt"
+ },
+ {
+  "tr": "süresi dolmak. Tekrar et:",
+  "kind": "say.tr",
+  "de": "ablaufen. Sprich nach:"
+ },
+ {
+  "tr": "yerleşik kişi. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Einwohner. Sprich nach:"
+ },
+ {
+  "tr": "her ay ödediğin paraya ise",
+  "kind": "say.tr",
+  "de": "und das Geld, das du jeden Monat zahlst, heißt"
+ },
+ {
+  "tr": "Özetleyelim: kesin randevu",
+  "kind": "say.tr",
+  "de": "Fassen wir zusammen: fester Termin"
+ },
+ {
+  "tr": "Kart ne zaman düzenleniyor?",
+  "kind": "say.tr",
+  "de": "Wann wird die Karte ausgestellt?"
+ },
+ {
+  "tr": "Oturum izni için başvurdum.",
+  "kind": "say.tr",
+  "de": "Ich habe eine Aufenthaltserlaubnis beantragt."
+ },
+ {
+  "tr": "Şimdi bir kayıt masasındasın.",
+  "kind": "say.tr",
+  "de": "Jetzt stehst du am Anmeldeschalter."
+ },
+ {
+  "tr": "Belediye adres belgesi istedi.",
+  "kind": "say.tr",
+  "de": "Die Gemeinde hat einen Nachweis meiner Adresse verlangt."
+ },
+ {
+  "tr": "Çalışma ya da oturum belgesine",
+  "kind": "say.tr",
+  "de": "Das Dokument für Arbeit oder Aufenthalt heißt"
+ },
+ {
+  "tr": "İzin belgemi uzatmak istiyorum.",
+  "kind": "say.tr",
+  "de": "Ich möchte meine Erlaubnis verlängern."
+ },
+ {
+  "tr": "Bildirmedikçe kapsam dışındasın.",
+  "kind": "say.tr",
+  "de": "Du bist nicht versichert, es sei denn, du meldest es."
+ },
+ {
+  "tr": "Her bölümü doldurmak zorundasın.",
+  "kind": "say.tr",
+  "de": "Du musst jeden Abschnitt ausfüllen."
+ },
+ {
+  "tr": "Poliçe ucuz ama prim yükseliyor.",
+  "kind": "say.tr",
+  "de": "Die Police ist günstig, aber der Beitrag steigt."
+ },
+ {
+  "tr": "Her bölüm farklı ayrıntı istiyor.",
+  "kind": "say.tr",
+  "de": "Jeder Abschnitt verlangt andere Angaben."
+ },
+ {
+  "tr": "İmzan son satırın altına gidiyor.",
+  "kind": "say.tr",
+  "de": "Deine Unterschrift kommt unter die letzte Zeile."
+ },
+ {
+  "tr": "Şimdi bankada hesap açtıracaksın.",
+  "kind": "say.tr",
+  "de": "Jetzt eröffnest du bei der Bank ein Konto."
+ },
+ {
+  "tr": "Kabul ediyorsan kutucuğu işaretle.",
+  "kind": "say.tr",
+  "de": "Kreuz das Kästchen an, wenn du zustimmst."
+ },
+ {
+  "tr": "Başvurum geçen hafta işleme alındı.",
+  "kind": "say.tr",
+  "de": "Mein Antrag wurde letzte Woche bearbeitet."
+ },
+ {
+  "tr": "Bir belgeyi resmî olarak düzenlemek",
+  "kind": "say.tr",
+  "de": "Ein Dokument amtlich ausstellen wird mit"
+ },
+ {
+  "tr": "Havale bugün bakiyeyi değiştirecek.",
+  "kind": "say.tr",
+  "de": "Die Überweisung wird heute den Kontostand ändern."
+ },
+ {
+  "tr": "Vizenin süresinin dolduğunu söyledi.",
+  "kind": "say.tr",
+  "de": "Sie hat gesagt, dass das Visum abgelaufen war."
+ },
+ {
+  "tr": "İkinci kalıbımız geçmişte. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Unsere zweite Wendung steht in der Vergangenheit. Sprich nach:"
+ },
+ {
+  "tr": "İzin belgem olup olmadığını sordular.",
+  "kind": "say.tr",
+  "de": "Sie haben gefragt, ob ich eine Erlaubnis hatte."
+ },
+ {
+  "tr": "Kart belediye tarafından düzenleniyor.",
+  "kind": "say.tr",
+  "de": "Die Karte wird von der Gemeinde ausgestellt."
+ },
+ {
+  "tr": "Paranın bir hesaptan ötekine gitmesine",
+  "kind": "say.tr",
+  "de": "Wenn Geld von einem Konto auf ein anderes geht, heißt das"
+ },
+ {
+  "tr": "Bir tane daha: Şubeyi yarın arayacağım.",
+  "kind": "say.tr",
+  "de": "Noch eins: Ich rufe morgen die Filiale an."
+ },
+ {
+  "tr": "Soyadını matbaa harfleriyle yazmalısın.",
+  "kind": "say.tr",
+  "de": "Du solltest deinen Nachnamen in Druckbuchstaben schreiben."
+ },
+ {
+  "tr": "Şimdi sen kur: Eski hesabı kapatacağım.",
+  "kind": "say.tr",
+  "de": "Jetzt du: Ich werde das alte Konto schließen."
+ },
+ {
+  "tr": "Şimdi sigorta görevlisiyle konuşacaksın.",
+  "kind": "say.tr",
+  "de": "Jetzt sprichst du mit dem Versicherungsmitarbeiter."
+ },
+ {
+  "tr": "Şimdi bir formu birlikte dolduracaksınız.",
+  "kind": "say.tr",
+  "de": "Jetzt füllt ihr zusammen ein Formular aus."
+ },
+ {
+  "tr": "Telefon numarası vermek zorunda değilsin.",
+  "kind": "say.tr",
+  "de": "Du musst keine Telefonnummer angeben."
+ },
+ {
+  "tr": "gerekmediğini söyler ve bu YASAK DEĞİLDİR;",
+  "kind": "say.tr",
+  "de": "sagt, dass es nicht nötig ist, und das ist KEIN VERBOT;"
+ },
+ {
+  "tr": "Her başvuran büyükelçiliğe gelmek zorunda.",
+  "kind": "say.tr",
+  "de": "Jeder Antragsteller muss in die Botschaft kommen."
+ },
+ {
+  "tr": "ile söylenir; resmî yazışmanın kelimesidir.",
+  "kind": "say.tr",
+  "de": "gesagt; es ist das Wort des amtlichen Schriftverkehrs."
+ },
+ {
+  "tr": "El yazısı yerine ayrı ayrı harflerle yazmaya",
+  "kind": "say.tr",
+  "de": "Statt Schreibschrift einzelne Buchstaben zu schreiben heißt"
+ },
+ {
+  "tr": "Hesap demek. İlk kalıbımız da bu. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Das heißt Konto. Das ist auch unsere erste Wendung. Sprich nach:"
+ },
+ {
+  "tr": "Şimdi sıra sende: Ofisin kapandığını söyledi.",
+  "kind": "say.tr",
+  "de": "Jetzt bist du dran: Er hat gesagt, dass das Büro geschlossen hatte."
+ },
+ {
+  "tr": "Şimdi sen kur: Bana mektubu beklememi söyledi.",
+  "kind": "say.tr",
+  "de": "Jetzt du: Sie hat mir gesagt, ich soll auf den Brief warten."
+ },
+ {
+  "tr": "Şimdi sen kur: Mektup iki gün önce gönderildi.",
+  "kind": "say.tr",
+  "de": "Jetzt du: Der Brief wurde vor zwei Tagen geschickt."
+ },
+ {
+  "tr": "Şimdi sıra sende: Danışmanla onda buluşuyorum.",
+  "kind": "say.tr",
+  "de": "Jetzt bist du dran: Ich treffe den Berater um zehn."
+ },
+ {
+  "tr": "ile söylenir; Amerika'da aynı işe 'check' denir.",
+  "kind": "say.tr",
+  "de": "gesagt; in Amerika heißt dieselbe Handlung 'check'."
+ },
+ {
+  "tr": "Bir tane daha: Başvuru ne zaman kontrol ediliyor?",
+  "kind": "say.tr",
+  "de": "Noch eins: Wann wird der Antrag geprüft?"
+ },
+ {
+  "tr": "İkinci kalıbımız yönergeyi aktarıyor. Pasaport için",
+  "kind": "say.tr",
+  "de": "Unsere zweite Wendung gibt die Anweisung wieder. Für den Pass sagen wir"
+ },
+ {
+  "tr": "Şimdi dersin kuralı. Randevu kesinse şimdiki zaman:",
+  "kind": "say.tr",
+  "de": "Jetzt die Regel der Lektion. Steht der Termin fest, nimmt man die Verlaufsform:"
+ },
+ {
+  "tr": "Şimdi görüşmeden sonra bir arkadaşına anlatacaksın.",
+  "kind": "say.tr",
+  "de": "Jetzt erzählst du nach dem Gespräch einem Freund davon."
+ },
+ {
+  "tr": "Şimdi sen kur: Planı değiştirsem para biriktirirdim.",
+  "kind": "say.tr",
+  "de": "Jetzt du: Wenn ich den Tarif ändern würde, würde ich Geld sparen."
+ },
+ {
+  "tr": "Şimdi sıra sende: Belgeler girişte kontrol ediliyor.",
+  "kind": "say.tr",
+  "de": "Jetzt bist du dran: Die Unterlagen werden am Eingang geprüft."
+ },
+ {
+  "tr": "Şimdi sıra sende: Hastaneye gidersen sigorta ödüyor.",
+  "kind": "say.tr",
+  "de": "Jetzt bist du dran: Wenn du ins Krankenhaus gehst, zahlt die Versicherung."
+ },
+ {
+  "tr": "Şimdi sen kur: Son bölümü doldurmak zorunda değilsin.",
+  "kind": "say.tr",
+  "de": "Jetzt du: Du musst den letzten Abschnitt nicht ausfüllen."
+ },
+ {
+  "tr": "ya da geniş zaman gelir. Gerçek OLMAYAN bir durumda ise",
+  "kind": "say.tr",
+  "de": "oder das Präsens. Bei einer NICHT realen Lage dagegen steht"
+ },
+ {
+  "tr": "Bir tane daha: Fotoğrafları getirip getirmediğimi sordu.",
+  "kind": "say.tr",
+  "de": "Noch eins: Er hat gefragt, ob ich die Fotos mitgebracht hatte."
+ },
+ {
+  "tr": "Şimdi sıra sende: Soyadını büyük harfle yazmak zorundasın.",
+  "kind": "say.tr",
+  "de": "Jetzt bist du dran: Du musst deinen Nachnamen in Großbuchstaben schreiben."
+ },
+ {
+  "tr": "Bir tane daha: Bir hafta içinde aramadıkça kapsam dışındasın.",
+  "kind": "say.tr",
+  "de": "Noch eins: Du bist nicht versichert, es sei denn, du rufst innerhalb einer Woche an."
+ },
+ {
+  "tr": "Bir tane daha: İmzalamadan önce ayrıntıları kontrol etmelisin.",
+  "kind": "say.tr",
+  "de": "Noch eins: Du solltest die Angaben prüfen, bevor du unterschreibst."
+ },
+ {
+  "tr": "Son kalıbımız olumsuz koşulu tek kelimeyle söylüyor. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Unsere letzte Wendung nennt die negative Bedingung mit einem Wort. Sprich nach:"
+ },
+ {
+  "tr": "Şimdi dersin kuralı. Resmî işlemlerde özne düşer ve edilgen kurulur:",
+  "kind": "say.tr",
+  "de": "Jetzt die Regel der Lektion. Bei amtlichen Vorgängen fällt das Subjekt weg und das Passiv wird gebaut:"
+ },
+ {
+  "tr": "Kim kaşeledi, kim işledi yazmaz; çünkü işlem kurumun işidir, kişinin değil.",
+  "kind": "say.tr",
+  "de": "Wer gestempelt und wer bearbeitet hat, steht nicht da; der Vorgang ist Sache der Behörde, nicht der Person."
+ },
+ {
+  "tr": "denir. İkincisi tek başına 'kanıt' demektir ve resmî yazıda hep bu kelime geçer.",
+  "kind": "say.tr",
+  "de": "genannt. Das zweite heißt für sich «Nachweis» und steht im Amtsdeutsch immer so."
+ },
+ {
+  "tr": "Merhaba! Bugün banka işlerini öğreneceğiz: hesap açmak, havale yapmak, bakiyeye bakmak.",
+  "kind": "say.tr",
+  "de": "Hallo! Heute lernen wir Bankgeschäfte: ein Konto eröffnen, überweisen, den Kontostand prüfen."
+ },
+ {
+  "tr": "Sigortanın bütün dili koşuldur: şu olursa şu olur, şu olmazsa hiçbir şey olmaz. Hazır mısın?",
+  "kind": "say.tr",
+  "de": "Die ganze Sprache der Versicherung ist Bedingung: passiert das, folgt das; passiert es nicht, folgt nichts. Bist du bereit?"
+ },
+ {
+  "tr": "Merhaba! Bugün sigortayı öğreneceğiz: poliçe neyi kapsıyor, ne zaman ödüyor, ne zaman ödemiyor.",
+  "kind": "say.tr",
+  "de": "Hallo! Heute lernen wir die Versicherung: was die Police abdeckt, wann sie zahlt und wann nicht."
+ },
+ {
+  "tr": "Merhaba! Bugün form doldurmayı öğreneceğiz: hangi bölüm zorunlu, hangisi değil, nereye imza atılıyor.",
+  "kind": "say.tr",
+  "de": "Hallo! Heute lernen wir, ein Formular auszufüllen: welcher Abschnitt Pflicht ist, welcher nicht, wo unterschrieben wird."
+ },
+ {
+  "tr": "Merhaba! Bugün oturum ve vize işlerini öğreneceğiz: hangi belge, ne zamana kadar geçerli, nasıl uzatılıyor.",
+  "kind": "say.tr",
+  "de": "Hallo! Heute lernen wir Aufenthalt und Visum: welches Dokument, wie lange gültig, wie es verlängert wird."
+ },
+ {
+  "tr": "Bu konuşmalarda en çok yaptığın şey aktarmak olacak: görevli ne dedi, senden ne istedi, ne sordu. Hazır mısın?",
+  "kind": "say.tr",
+  "de": "In diesen Gesprächen wirst du vor allem wiedergeben: was der Mitarbeiter gesagt, von dir verlangt und gefragt hat. Bist du bereit?"
+ },
+ {
+  "tr": "Banka konuşmasında üç gelecek biçimi yan yana geliyor: randevu kesin, niyet önceden, karar o anda. Hazır mısın?",
+  "kind": "say.tr",
+  "de": "Im Bankgespräch stehen drei Zukunftsformen nebeneinander: der Termin fest, die Absicht vorher, der Entschluss spontan. Bist du bereit?"
+ },
+ {
+  "tr": "Merhaba! Bugün resmî kayıt işlemlerini öğreneceğiz: nereye kaydoluyorsun, hangi belge isteniyor, ne zaman çıkıyor.",
+  "kind": "say.tr",
+  "de": "Hallo! Heute lernen wir die amtliche Anmeldung: wo du dich anmeldest, welches Dokument verlangt wird, wann es fertig ist."
+ },
+ {
+  "tr": "Resmî dilin en belirgin özelliği şu: işi kimin yaptığı neredeyse hiç yazılmaz. Bu bir kibarlık değil, kural. Hazır mısın?",
+  "kind": "say.tr",
+  "de": "Das deutlichste Merkmal der Amtssprache: wer die Arbeit tut, steht fast nie da. Das ist keine Höflichkeit, sondern Regel. Bist du bereit?"
+ },
+ {
+  "tr": "Formların üstündeki küçük yazılar hep aynı üç kalıpla kurulur ve bu üçünü karıştırmak formun reddedilmesine yol açar. Hazır mısın?",
+  "kind": "say.tr",
+  "de": "Das Kleingedruckte auf Formularen steht immer in denselben drei Wendungen, und sie zu verwechseln führt zur Ablehnung des Formulars. Bist du bereit?"
+ }
+]
