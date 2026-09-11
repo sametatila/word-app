@@ -1,6 +1,6 @@
 # WP-74 — İngilizce ders kapsamı B1–C1
 
-**Durum:** sürüyor (B1 modül 1-2 bitti) · **Sahip:** Claude · **Açılış:** 2026-09-11
+**Durum:** sürüyor (B1 modül 1-3 bitti) · **Sahip:** Claude · **Açılış:** 2026-09-11
 
 ## Kusur
 
@@ -92,6 +92,21 @@ ettiriliyor» diye reddediyor ve haklı — öğrenciden duymadığı bir kelime
 üretmesi istenmemeli. İki modülde toplam on iki kelime bu yüzden bir
 tekrar hedefine taşındı; yazarken baştan tekrar hedefine koymak daha
 ucuz.
+
+**B1 modül 3 — Bağlaç ustalığı (2026-09-11).** On ders: sebep ve sonuç,
+zaman cümleleri, amaç anlatmak, koşul incelikleri, tarif ederek anlatmak,
+hikâyenin sırası, söylenenleri bağlamak, haber dili, kural ve öğüt,
+deneyimi bağlamak.
+
+Bu modülün konusu bir alan değil bir beceri, ve her ders bir bağlaç
+AİLESİNİ karşılaştırıyor, tek tek öğretmiyor — çünkü kusur seçimde
+çıkıyor. Doğru/yanlış adımı da hep o karışma noktasına bakıyor.
+
+Referans dili satırlarında iki kez İDDİA TERSİNE DÖNDÜ: «Türkçede hepsi
+eğer ile çıkıyor» Almanca için yanlış (es sei denn / solange / für den
+Fall, dass hepsi ayrı), «bağlaç nereye koyulursa koyulsun anlaşılır» de
+yanlış (weil ve deshalb kelime sırasını değiştiriyor). İkisi de Almancaya
+karşı yeniden yazıldı — bu satırlar çevrilmez, yeniden ölçülür.
 
 ## Tamamlanma ölçütü
 
