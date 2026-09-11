@@ -21,6 +21,7 @@ import { sfx } from "../lib/sfx";
 import { reduceMotion } from "../lib/reduceMotion";
 import { useKeyboardHeight } from "../lib/useKeyboardHeight";
 import { whyFor } from "./why";
+import { useNoHints } from "./noHints";
 import { speakTarget, ttsAvailable } from "../lib/tts";
 import { useTheme, spacing, radii, softShadow, cardShadow, type Palette } from "../theme";
 import type { Round, RoundWord, Option } from "./session";
@@ -469,6 +470,8 @@ function TrueFalseRound({ round, word, onDone, colors }: { round: Round; word: R
  */
 function HintRow({ answer, colors, shown, onShow }: { answer: string; colors: Palette; shown: boolean; onShow: () => void }) {
   const setShown = onShow;
+  // Sınav kâğıdının kuralı "ipucu yok" (bkz. `game/noHints`).
+  if (useNoHints() && !shown) return null;
   return (
     <View style={{ marginTop: spacing.md }}>
       {shown ? (
@@ -765,6 +768,7 @@ function ScrambleRound({ round, word, onDone, colors }: { round: Round; word: Ro
   }, [round.id]);
   const [placed, setPlaced] = useState<{ id: number; char: string }[]>([]);
   const [fb, setFb] = useState<Feedback | null>(null);
+  const noHints = useNoHints();
   const [hintUsed, setHintUsed] = useState(false);
   const usedIds = new Set(placed.map((t) => t.id));
   // Bir harf yerleştir; tamamlanınca değerlendir (hem dokunuş hem ipucu buradan geçer).
@@ -807,9 +811,11 @@ function ScrambleRound({ round, word, onDone, colors }: { round: Round; word: Ro
             <PressableScale onPress={backspace} disabled={placed.length === 0} style={{ backgroundColor: colors.surface2, borderRadius: radii.pill, paddingHorizontal: 18, paddingVertical: 9, opacity: placed.length === 0 ? 0.4 : 1 }}>
               <Text variant="caption" color={colors.textMuted}>{tx("common.delete")}</Text>
             </PressableScale>
-            <PressableScale onPress={useHint} disabled={placed.length >= target.length} style={{ backgroundColor: colors.surface2, borderRadius: radii.pill, paddingHorizontal: 18, paddingVertical: 9, opacity: placed.length >= target.length ? 0.4 : 1 }}>
-              <Text variant="caption" color={colors.textMuted}>{tx("rounds.hint")}</Text>
-            </PressableScale>
+            {noHints ? null : (
+              <PressableScale onPress={useHint} disabled={placed.length >= target.length} style={{ backgroundColor: colors.surface2, borderRadius: radii.pill, paddingHorizontal: 18, paddingVertical: 9, opacity: placed.length >= target.length ? 0.4 : 1 }}>
+                <Text variant="caption" color={colors.textMuted}>{tx("rounds.hint")}</Text>
+              </PressableScale>
+            )}
           </View>
         ) : null}
       </View>

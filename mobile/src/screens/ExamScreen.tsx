@@ -13,6 +13,7 @@ import { Celebrate } from "../ui/Celebrate";
 import { CertificateSheet } from "../ui/CertificateSheet";
 import { XIcon, SpeakerIcon, CheckIcon } from "../ui/icons";
 import { RoundView } from "../game/rounds";
+import { NoHints } from "../game/noHints";
 import { written } from "../game/skillQuiz";
 import { speakTarget } from "../lib/tts";
 import { ensureMicPermission, listenOnce } from "../lib/stt";
@@ -599,6 +600,10 @@ function SectionBody({
     const r = paper.sections.vocab[idx];
     return (
       <View style={{ flex: 1 }}>
+        {/* Kâğıdın kuralı: ipucu yok (bkz. `game/noHints`). Web sınavda ipucu
+            düğmesini kaldırıyordu, Android'de duruyordu - aynı kâğıt iki
+            platformda iki farklı zorluktaydı. */}
+        <NoHints>
         <RoundView
           key={r.id}
           round={r}
@@ -625,6 +630,7 @@ function SectionBody({
             advance(ok, paper.sections.vocab.length);
           }}
         />
+        </NoHints>
       </View>
     );
   }
@@ -664,7 +670,7 @@ function SectionBody({
 
   if (id === "produce") {
     const it = paper.sections.produce[idx];
-    return <Produce key={it.id} it={it} colors={colors} pad={pad} onDone={(ok, given) => {
+    return <Produce key={it.id} it={it} idx={idx} total={paper.sections.produce.length} colors={colors} pad={pad} onDone={(ok, given) => {
       if (!ok) onMiss({ section: "produce", prompt: it.prompt, answer: it.de, given });
       advance(ok, paper.sections.produce.length);
     }} />;
@@ -728,22 +734,31 @@ function Choice({ prompt, options, answerIdx, colors, onPick }: { prompt: string
   );
 }
 
-function Produce({ it, colors, pad, onDone }: { it: ProduceItem; colors: Palette; pad: object; onDone: (ok: boolean, given: string) => void }) {
+/**
+ * SINAV CEVABI AÇILMIYOR. Kart iki adımlıydı: "Kontrol et" basılınca kenarlık
+ * yeşile/kırmızıya dönüyor, DOĞRU CEVAP yazılıyor, sonra "Sıradaki". Bu bir
+ * alıştırma davranışı; sınavda aynı yapılar sonraki maddelerde tekrar geçtiği
+ * için cevabı açmak sınavın kendisini kolaylaştırıyor ve Android puanını web
+ * puanıyla karşılaştırılamaz kılıyordu. Web tek düğme veriyor ve altına
+ * "cevap sınav sonunda gösterilir" yazıyor; kaçırılanlar zaten sonuç
+ * ekranında madde madde duruyor.
+ */
+function Produce({ it, idx, total, colors, pad, onDone }: { it: ProduceItem; idx: number; total: number; colors: Palette; pad: object; onDone: (ok: boolean, given: string) => void }) {
   const [typed, setTyped] = useState("");
   const [parts, setParts] = useState<string[]>([]);
-  const [done, setDone] = useState(false);
   const answer = it.mode === "order" ? parts.map((p) => p.split(":").slice(1).join(":")).join(" ") : typed;
   const ok = written(answer, [it.de, ...it.accept]);
 
   return (
     <ScrollView contentContainerStyle={pad} keyboardShouldPersistTaps="handled">
       <Card padded style={{ gap: spacing.sm }}>
+        <Text variant="micro" color={colors.textMuted}>{t(it.mode === "order" ? "exam.order_the_sentence" : "exam.write_in_target")}</Text>
         <Text variant="bodyStrong" style={{ lineHeight: 24 }}>{it.prompt}</Text>
         {it.mode === "order" ? (
           <>
             <View style={{ flexDirection: "row", flexWrap: "wrap", gap: spacing.xs, minHeight: 44, backgroundColor: colors.surface, borderRadius: radii.md, padding: spacing.sm }}>
               {parts.map((p, i) => (
-                <PressableScale key={p} disabled={done} onPress={() => setParts(parts.filter((_, j) => j !== i))}
+                <PressableScale key={p} onPress={() => setParts(parts.filter((_, j) => j !== i))}
                   style={{ backgroundColor: colors.primarySoft, borderRadius: radii.sm, paddingHorizontal: 10, paddingVertical: 6 }}>
                   <Text variant="body" color={colors.primaryText}>{p.split(":").slice(1).join(":")}</Text>
                 </PressableScale>
@@ -754,7 +769,7 @@ function Produce({ it, colors, pad, onDone }: { it: ProduceItem; colors: Palette
                 const key = `${i}:${c}`;
                 if (parts.includes(key)) return null;
                 return (
-                  <PressableScale key={key} disabled={done} onPress={() => setParts([...parts, key])}
+                  <PressableScale key={key} onPress={() => setParts([...parts, key])}
                     style={{ backgroundColor: colors.surface2, borderRadius: radii.sm, paddingHorizontal: 10, paddingVertical: 8 }}>
                     <Text variant="body">{c}</Text>
                   </PressableScale>
@@ -763,21 +778,21 @@ function Produce({ it, colors, pad, onDone }: { it: ProduceItem; colors: Palette
             </View>
           </>
         ) : (
-          <TextInput value={typed} onChangeText={setTyped} editable={!done} multiline autoCapitalize="sentences"
+          <TextInput value={typed} onChangeText={setTyped} multiline autoCapitalize="sentences"
             placeholder={t("exam.write_sentence")} placeholderTextColor={colors.textFaint}
-            style={{ minHeight: 52, backgroundColor: colors.surface, borderRadius: radii.md, borderWidth: 1.5, borderColor: done ? (ok ? colors.success : colors.danger) : colors.border, paddingHorizontal: spacing.md, paddingVertical: 10, color: colors.text, fontSize: 15 }} />
+            style={{ minHeight: 52, backgroundColor: colors.surface, borderRadius: radii.md, borderWidth: 1.5, borderColor: colors.border, paddingHorizontal: spacing.md, paddingVertical: 10, color: colors.text, fontSize: 15 }} />
         )}
-        {done ? (
-          <Text variant="caption" color={colors.textMuted}>{t("common.answer_is")} <Text variant="caption" style={{ fontWeight: "700" }}>{it.de}</Text></Text>
-        ) : null}
         <PressableScale
-          disabled={!answer.trim() && !done}
-          onPress={() => (done ? onDone(ok, answer) : setDone(true))}
-          style={{ backgroundColor: answer.trim() || done ? colors.primary : colors.surface2, borderRadius: radii.lg, paddingVertical: 14, alignItems: "center" }}>
-          <Text variant="bodyStrong" color={answer.trim() || done ? colors.onPrimary : colors.textFaint}>
-            {done ? t("common.next") : t("skillquiz.check")}
+          disabled={!answer.trim()}
+          onPress={() => onDone(ok, answer)}
+          style={{ backgroundColor: answer.trim() ? colors.primary : colors.surface2, borderRadius: radii.lg, paddingVertical: 14, alignItems: "center" }}>
+          <Text variant="bodyStrong" color={answer.trim() ? colors.onPrimary : colors.textFaint}>
+            {t(idx + 1 === total ? "exam.finish_section" : "exam.answer_and_next")}
           </Text>
         </PressableScale>
+        <Text variant="micro" color={colors.textMuted} style={{ textAlign: "center" }}>
+          {idx + 1} / {total} · {t("exam.answers_at_end")}
+        </Text>
       </Card>
     </ScrollView>
   );

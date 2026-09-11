@@ -3664,6 +3664,35 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   );
 }
 
+/* ── 107. sinav kagidinin kurallari ───────────────────────────────────────
+ * Ayni kagit iki platformda ayni sinav olmali. Iki yerde degildi:
+ *
+ * IPUCU. Web sinav bolumunu "ipucu yok" baglamiyla sariyor ve dort turun
+ * ipucu dugmesi orada gorunmuyor; Androidde dugme duruyordu. Kapak "kagidin
+ * kurali" diye yazarken dugmenin orada durmasi sozu bozuyordu.
+ *
+ * CEVAP. Mobil cumle kurma bolumunde iki adimliydi: "Kontrol et" kenarligi
+ * yesile/kirmiziya ceviriyor, DOGRU CEVABI yaziyor, sonra "Siradaki". Ayni
+ * yapilar sonraki maddelerde tekrar gectigi icin bu sinavi kolaylastiriyordu.
+ * Web tek dugme veriyor ve altina "cevap sinav sonunda gosterilir" yaziyor. */
+{
+  const kural = (yollar) => {
+    const src = yollar.map((p) => read(p)).join("\n").replace(/\/\*[\s\S]*?\*\//g, " ").replace(/\/\/[^\n]*/g, " ");
+    return [
+      "ipucu baglami=" + (/useNoHints\(\)/.test(src) ? "var" : "yok"),
+      "sinav sariyor=" + (/<NoHints>/.test(src) ? "var" : "yok"),
+      "cevap sonunda=" + (/exam\.answers_at_end/.test(src) ? "var" : "yok"),
+      "tek dugme=" + (/exam\.answer_and_next/.test(src) ? "var" : "yok"),
+      "cumle kurma cevabi acilmiyor=" + (/common\.answer_is/.test(src) ? "aciliyor" : "acilmiyor"),
+    ];
+  };
+  sameList(
+    "sinav kagidinin kurallari",
+    kural(["mobile/src/screens/ExamScreen.tsx", "mobile/src/game/noHints.tsx"]),
+    kural(["src/components/exam-player.tsx", "src/components/games/no-hints.tsx"]),
+  );
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"
