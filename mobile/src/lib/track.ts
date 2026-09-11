@@ -73,7 +73,22 @@ export type EventName =
   /* Sinav/test BASLADI (kind = "placement:A1" gibi). Web yerlestirme testi
      baslarken yaziyor; mobil yalniz BITISI yaziyordu, yani "kac kisi
      baslayip birakti" hesaplanamiyordu - huninin payi eksikti. */
-  | "exam_start";
+  | "exam_start"
+  /*
+   * EKRAN ÖLÇÜMÜ — web `components/telemetry` ile aynı üç ad.
+   *
+   * Mobil yalnız SEKME dokunuşunu yazıyordu (`nav`): profil, kelimeler, sınav,
+   * ayarlar gibi yığın ekranları hiç sayılmıyordu ve "hangi ekranda ne kadar
+   * kalınıyor" sorusu Android için cevapsızdı. Panodaki ekran tablosu yalnız
+   * web kullanıcılarını gösteriyor, yani veri yanlı.
+   *
+   * `page_view` kind = ekran adı · `time_spent` value = görünür saniye
+   * (üç saniyeden kısası yazılmıyor: yanlışlıkla açılan ekran veri değil
+   * gürültü) · `client_error` yakalanmamış hata, dakikada en çok bir.
+   */
+  | "page_view"
+  | "time_spent"
+  | "client_error";
 
 /** Analitik tercihi (Gizlilik Politikası §8) — cihazda, varsayılan açık; açılışta yüklenir. */
 const ANALYTICS_KEY = "lernomi:analytics";

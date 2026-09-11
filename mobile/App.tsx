@@ -12,6 +12,7 @@ import { migrateReminderIds } from "./src/lib/notifications";
 import { loadVoicePref } from "./src/lib/tts";
 import { TtsBridge } from "./src/lib/ttsBridge";
 import { track, loadAnalyticsPref } from "./src/lib/track";
+import { attachTelemetry, screenChanged } from "./src/lib/telemetry";
 import { loadReduceMotion } from "./src/lib/reduceMotion";
 import { loadLang, useLang } from "./src/lib/i18n";
 import { attachPushListeners } from "./src/lib/pushDevice";
@@ -111,6 +112,10 @@ function Nav() {
   */
   useEffect(() => attachPushListeners(), []);
 
+  /* Ekran ölçümü (açılan ekran, ekranda geçen süre, yakalanmamış hata) —
+     web `Telemetry` bileşeninin karşılığı. */
+  useEffect(() => attachTelemetry(), []);
+
   /*
     ÇEVRİMDIŞI KALAN CEVAPLAR. Ağ yokken bitirilen turun cevapları cihazda
     kuyruğa alınıyor (`session` `queueAnswers`); bir sonraki tur atılana kadar
@@ -163,7 +168,9 @@ function Nav() {
     <NavigationContainer
       ref={navigationRef}
       theme={navTheme}
+      onStateChange={() => screenChanged(navigationRef.getCurrentRoute()?.name)}
       onReady={() => {
+        screenChanged(navigationRef.getCurrentRoute()?.name); // ilk ekran da sayılıyor
         const p = pending.current;
         pending.current = null;
         if (p?.kind === "reset-password") {

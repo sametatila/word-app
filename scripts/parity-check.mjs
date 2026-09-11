@@ -1951,21 +1951,23 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   const sunucu = atilan(["src/app/api", "src/lib"]);
   const web = atilan(["src/components", "src/app"]);
   const mob = atilan(["mobile/src"], ["mobile/App.tsx"]);
-  /* Web istemcisine ozgu olmasi MESRU olanlar; her biri bir yuzey farki. */
+  /* Web istemcisine ozgu olmasi MESRU olanlar; her biri bir yuzey farki.
+     UCU LISTEDEN DUSTU (page_view, time_spent, client_error): "tarayici olcum
+     katmani" diye yazilmislardi ama olculen sey tarayiciya ait degildi -
+     hangi ekran acildi, ne kadar kalindi, hangi hata yakalanmadi. Mobil
+     bunlari yazmayinca panodaki ekran tablosu yalniz web kullanicilarini
+     gosteriyordu, yani veri yanliydi (bkz. §11.178). */
   const WEB_OZEL = [
     "challenge_play", //        sure-kazanma modu mobilde yok
-    "client_error", //          Next hata siniri
     "coach_show", //            koc baloncugu mobilde yok
     "feedback_why_opened", //   mobil "neden"i her zaman gosteriyor, acma eylemi yok
     "install_prompt", //        PWA kurulum onerisi
     "invite_open", //           tarayici olcum katmani
-    "page_view", //             tarayici olcum katmani
     "panel_open", //            tarayici olcum katmani
     "push_open", //             tarayici olcum katmani
     "push_optin", //            tarayici bildirim istemi
     "sound_toggle", //          mobilde ses anahtari yok (sistem sesi)
     "stage_done", //            mobilde etap duraklamasi yok
-    "time_spent", //            tarayici olcum katmani
     "walk_capture", //          tarayici mikrofon yolu tanilamasi
     "walk_listen", //           tarayici mikrofon yolu tanilamasi
     "walk_switch", //           tarayici mikrofon yolu tanilamasi
@@ -3210,6 +3212,29 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     ];
   };
   sameList("sinav kapagi", kapak("mobile/src/screens/ExamScreen.tsx"), kapak("src/components/exam-player.tsx"));
+}
+
+/* ── 90. ekran olcumu: dort soru iki tarafta da cevapli mi ────────────────
+ * Panodaki ekran tablosu iki platformu birlikte gosteriyor; biri olcmuyorsa
+ * tablo YANLI olur ve bunu okuyan kimse anlamaz. Web dort soruyu tek yerden
+ * cevapliyor (`components/telemetry`): hangi ekran acildi, ekranda ne kadar
+ * kalindi, gunun ilk acilisi, yakalanmamis hata. Mobil yalniz SEKME
+ * dokunusunu ve gunun ilk acilisini yaziyordu - yigin ekranlari (profil,
+ * kelimeler, sinav, ayarlar) hic sayilmiyordu. */
+{
+  const olcum = (yollar) => {
+    const src = yollar.map((p) => read(p)).join("\n").replace(/\/\*[\s\S]*?\*\//g, " ").replace(/\/\/[^\n]*/g, " ");
+    return ["page_view", "time_spent", "app_open", "client_error"].map((ad) => ad + "=" + (new RegExp('track\\("' + ad + '"').test(src) ? "var" : "yok"));
+  };
+  /* Olaylarin TANIMLI olmasi yetmez, olcum katmaninin BAGLI olmasi da gerek:
+     ilk yazimda kapi yalnizca `track("time_spent")` satirini ariyordu ve
+     `attachTelemetry()` cagrisi App'ten silinince kirmizi olmuyordu. */
+  const bagli = (p, re) => (re.test(read(p)) ? "var" : "yok");
+  sameList(
+    "ekran olcumu",
+    [...olcum(["mobile/src/lib/telemetry.ts", "mobile/App.tsx"]), "bagli=" + bagli("mobile/App.tsx", /attachTelemetry\(\)/)],
+    [...olcum(["src/components/telemetry.tsx", "src/app/error.tsx"]), "bagli=" + bagli("src/components/app-shell.tsx", /<Telemetry/)],
+  );
 }
 
 console.log(
