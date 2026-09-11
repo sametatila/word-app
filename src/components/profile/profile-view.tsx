@@ -320,7 +320,7 @@ function InviteRow({ last }: { last?: boolean }) {
       >
         <ShareIcon size={20} />
       </span>
-      <span className="flex-1 text-strong">{t(copied ? "inv.copied" : "profile.invite_friend")}</span>
+      <span className="flex-1 text-strong">{t(copied ? "referral.copied" : "profile.invite_friend")}</span>
       <ChevronRightIcon size={20} className="muted shrink-0" />
     </button>
   );

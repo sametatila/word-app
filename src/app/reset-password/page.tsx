@@ -3,7 +3,7 @@ import { titleMeta } from "@/lib/page-meta";
 
 export const dynamic = "force-dynamic";
 
-export const generateMetadata = titleMeta("authw.set_new_password");
+export const generateMetadata = titleMeta("resetpw.title");
 
 export default async function ResetPasswordPage({
   searchParams,

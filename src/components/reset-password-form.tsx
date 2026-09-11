@@ -66,7 +66,7 @@ export function ResetPasswordForm({ token }: { token: string | null }) {
 
   return (
     <AuthShell
-      title={t("authw.set_new_password")}
+      title={t("resetpw.title")}
       subtitle={done ? undefined : t("authw.password_rule", { n: MIN_PASSWORD_LENGTH })}
       footer={
         <Link href="/login" className="underline-offset-4 hover:underline">
@@ -86,7 +86,7 @@ export function ResetPasswordForm({ token }: { token: string | null }) {
             type="password"
             required
             minLength={MIN_PASSWORD_LENGTH}
-            placeholder={t("authw.new_password")}
+            placeholder={t("changepw.new")}
             autoComplete="new-password"
             autoFocus
             className={authInputClass}
@@ -97,7 +97,7 @@ export function ResetPasswordForm({ token }: { token: string | null }) {
             type="password"
             required
             minLength={MIN_PASSWORD_LENGTH}
-            placeholder={t("authw.new_password_again")}
+            placeholder={t("changepw.again")}
             autoComplete="new-password"
             className={authInputClass}
           />

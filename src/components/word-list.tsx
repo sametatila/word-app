@@ -72,9 +72,9 @@ function statusOf(r: WordRow): { labelKey: string; tone: string } {
 function dueLabel(dueAt: string | null, t: (key: string, vars?: Record<string, string | number>) => string): string | null {
   if (!dueAt) return null;
   const days = Math.round((new Date(dueAt).getTime() - Date.now()) / 86400000);
-  if (days <= 0) return t("wordsw.due_now");
-  if (days === 1) return t("wordsw.due_tomorrow");
-  return t("wordsw.due_in_days", { n: days });
+  if (days <= 0) return t("words.due_now");
+  if (days === 1) return t("words.due_tomorrow");
+  return t("words.due_in_days", { n: days });
 }
 
 export function WordList({
@@ -309,7 +309,7 @@ export function WordList({
                       </>
                     ) : null}
                     <p className="muted mt-2 text-xs">
-                      {dueLabel(r.dueAt, tx) ?? tx("wordsw.not_studied")}
+                      {dueLabel(r.dueAt, tx) ?? tx("words.not_studied")}
                       {r.lapses ? ` · ${tx("words.n_lapses", { n: r.lapses })}` : ""}
                     </p>
                   </motion.div>
