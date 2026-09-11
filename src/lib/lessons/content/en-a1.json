@@ -750,7 +750,7 @@
    },
    {
     "de": "you",
-    "tr": "sen, siz"
+    "tr": "sen / siz"
    },
    {
     "de": "good",
@@ -758,7 +758,7 @@
    },
    {
     "de": "fine",
-    "tr": "iyi, keyfi yerinde"
+    "tr": "iyi / keyfi yerinde"
    },
    {
     "de": "thanks",
@@ -2029,7 +2029,7 @@
   "vocab": [
    {
     "de": "where",
-    "tr": "nerede, nereli"
+    "tr": "nerede / nereli"
    },
    {
     "de": "country",
@@ -2768,7 +2768,7 @@
    },
    {
     "de": "a little",
-    "tr": "biraz, az"
+    "tr": "biraz / az"
    },
    {
     "de": "understand",
@@ -3439,7 +3439,7 @@
    },
    {
     "de": "old",
-    "tr": "eski, yaşlı"
+    "tr": "eski / yaşlı"
    },
    {
     "de": "year",
@@ -4029,7 +4029,7 @@
    },
    {
     "de": "again",
-    "tr": "tekrar, yine"
+    "tr": "tekrar / yine"
    },
    {
     "de": "pen",
@@ -5335,11 +5335,11 @@
    },
    {
     "de": "old",
-    "tr": "yaşında, yaşlı"
+    "tr": "yaşında / yaşlı"
    },
    {
     "de": "year",
-    "tr": "yıl, sene"
+    "tr": "yıl / sene"
    },
    {
     "de": "month",
@@ -6020,7 +6020,7 @@
    },
    {
     "de": "name",
-    "tr": "isim, ad"
+    "tr": "isim / ad"
    },
    {
     "de": "city",
@@ -10457,7 +10457,7 @@
    },
    {
     "de": "look",
-    "tr": "bakmak, görünmek"
+    "tr": "bakmak / görünmek"
    },
    {
     "de": "face",
@@ -11075,7 +11075,7 @@
    },
    {
     "de": "like",
-    "tr": "beğenmek, sevmek"
+    "tr": "beğenmek / sevmek"
    },
    {
     "de": "together",
@@ -14724,7 +14724,7 @@
    },
    {
     "de": "bill",
-    "tr": "hesap, fatura"
+    "tr": "hesap / fatura"
    },
    {
     "de": "soup",
@@ -15408,11 +15408,11 @@
   "vocab": [
    {
     "de": "food",
-    "tr": "yiyecek, yemek"
+    "tr": "yiyecek / yemek"
    },
    {
     "de": "love",
-    "tr": "bayılmak, çok sevmek"
+    "tr": "bayılmak / çok sevmek"
    },
    {
     "de": "hate",
@@ -15424,7 +15424,7 @@
    },
    {
     "de": "taste",
-    "tr": "tadı olmak, tatmak"
+    "tr": "tadı olmak / tatmak"
    },
    {
     "de": "sweet",
@@ -16019,7 +16019,7 @@
    },
    {
     "de": "cost",
-    "tr": "mal olmak, tutmak"
+    "tr": "mal olmak / tutmak"
    },
    {
     "de": "sale",
@@ -18642,7 +18642,7 @@
   "vocab": [
    {
     "de": "bill",
-    "tr": "hesap, fatura"
+    "tr": "hesap / fatura"
    },
    {
     "de": "pay",
@@ -19835,7 +19835,7 @@
   "vocab": [
    {
     "de": "time",
-    "tr": "zaman, saat (kaç?)"
+    "tr": "zaman / saat (kaç?)"
    },
    {
     "de": "hour",
@@ -23744,7 +23744,7 @@
   "vocab": [
    {
     "de": "free",
-    "tr": "boş, serbest"
+    "tr": "boş / serbest"
    },
    {
     "de": "watch",
@@ -23760,7 +23760,7 @@
    },
    {
     "de": "walk",
-    "tr": "yürümek, yürüyüş"
+    "tr": "yürümek / yürüyüş"
    },
    {
     "de": "television",
@@ -24957,7 +24957,7 @@
    },
    {
     "de": "open",
-    "tr": "açmak, açık"
+    "tr": "açmak / açık"
    },
    {
     "de": "close",
@@ -26255,7 +26255,7 @@
   "vocab": [
    {
     "de": "size",
-    "tr": "beden, boyut"
+    "tr": "beden / boyut"
    },
    {
     "de": "big",
@@ -28452,7 +28452,7 @@
    },
    {
     "de": "nice",
-    "tr": "hoş, cana yakın"
+    "tr": "hoş / cana yakın"
    },
    {
     "de": "beautiful",
@@ -30401,7 +30401,7 @@
   "vocab": [
    {
     "de": "many",
-    "tr": "birçok, çok (sayılabilenler için)"
+    "tr": "birçok / çok (sayılabilenler için)"
    },
    {
     "de": "much",
@@ -30409,11 +30409,11 @@
    },
    {
     "de": "a little",
-    "tr": "biraz, az"
+    "tr": "biraz / az"
    },
    {
     "de": "enough",
-    "tr": "yeterince, yeterli"
+    "tr": "yeterince / yeterli"
    },
    {
     "de": "a few",
@@ -31571,7 +31571,7 @@
    },
    {
     "de": "arrive",
-    "tr": "varmak, gelmek"
+    "tr": "varmak / gelmek"
    },
    {
     "de": "delivery",
@@ -32261,7 +32261,7 @@
    },
    {
     "de": "straight",
-    "tr": "dümdüz, doğru"
+    "tr": "dümdüz / doğru"
    },
    {
     "de": "on the left",
@@ -33526,7 +33526,7 @@
    },
    {
     "de": "seat",
-    "tr": "oturacak yer, koltuk"
+    "tr": "oturacak yer / koltuk"
    },
    {
     "de": "return",
@@ -36064,7 +36064,7 @@
   "vocab": [
    {
     "de": "visit",
-    "tr": "ziyaret etmek, gezmek"
+    "tr": "ziyaret etmek / gezmek"
    },
    {
     "de": "museum",
@@ -37284,7 +37284,7 @@
    },
    {
     "de": "ride",
-    "tr": "binmek, sürmek"
+    "tr": "binmek / sürmek"
    },
    {
     "de": "near",
@@ -40617,11 +40617,11 @@
    },
    {
     "de": "live",
-    "tr": "yaşamak, oturmak"
+    "tr": "yaşamak / oturmak"
    },
    {
     "de": "next door",
-    "tr": "yan kapı, bitişik daire"
+    "tr": "yan kapı / bitişik daire"
    },
    {
     "de": "quiet",
@@ -42399,7 +42399,7 @@
    },
    {
     "de": "tidy up",
-    "tr": "toplamak, düzenlemek"
+    "tr": "toplamak / düzenlemek"
    },
    {
     "de": "rubbish",
@@ -44317,11 +44317,11 @@
    },
    {
     "de": "call",
-    "tr": "telefon etmek, aramak"
+    "tr": "telefon etmek / aramak"
    },
    {
     "de": "wrong",
-    "tr": "yanlış, ters"
+    "tr": "yanlış / ters"
    },
    {
     "de": "tap",
@@ -50134,7 +50134,7 @@
   "vocab": [
    {
     "de": "sorry",
-    "tr": "özür dilerim, kusura bakma"
+    "tr": "özür dilerim / kusura bakma"
    },
    {
     "de": "busy",
@@ -53325,7 +53325,7 @@
   "vocab": [
    {
     "de": "must",
-    "tr": "-meli, zorunda"
+    "tr": "-meli / zorunda"
    },
    {
     "de": "need",
@@ -53337,7 +53337,7 @@
    },
    {
     "de": "take",
-    "tr": "götürmek, binmek"
+    "tr": "götürmek / binmek"
    },
    {
     "de": "wait",
@@ -54547,7 +54547,7 @@
   "vocab": [
    {
     "de": "work",
-    "tr": "iş, çalışmak"
+    "tr": "iş / çalışmak"
    },
    {
     "de": "today",
@@ -54555,7 +54555,7 @@
    },
    {
     "de": "call",
-    "tr": "aramak, telefon etmek"
+    "tr": "aramak / telefon etmek"
    },
    {
     "de": "better",
@@ -55854,7 +55854,7 @@
    },
    {
     "de": "call",
-    "tr": "telefon etmek, aramak"
+    "tr": "telefon etmek / aramak"
    },
    {
     "de": "ambulance",
@@ -55862,7 +55862,7 @@
    },
    {
     "de": "fast",
-    "tr": "hızlı, çabuk"
+    "tr": "hızlı / çabuk"
    },
    {
     "de": "danger",
@@ -57683,7 +57683,7 @@
    },
    {
     "de": "call",
-    "tr": "telefon etmek, aramak"
+    "tr": "telefon etmek / aramak"
    },
    {
     "de": "speak",
@@ -57695,7 +57695,7 @@
    },
    {
     "de": "number",
-    "tr": "numara, sayı"
+    "tr": "numara / sayı"
    },
    {
     "de": "mobile phone",
@@ -63275,7 +63275,7 @@
   "vocab": [
    {
     "de": "call",
-    "tr": "telefon etmek, aramak"
+    "tr": "telefon etmek / aramak"
    },
    {
     "de": "visit",
@@ -63287,7 +63287,7 @@
    },
    {
     "de": "again",
-    "tr": "yine, tekrar"
+    "tr": "yine / tekrar"
    },
    {
     "de": "miss",
