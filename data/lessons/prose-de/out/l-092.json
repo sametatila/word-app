@@ -1,0 +1,897 @@
+[
+ {
+  "tr": "Yeşil alan",
+  "kind": "titleTr",
+  "de": "Grünflächen"
+ },
+ {
+  "tr": "Çöpü ayırmak",
+  "kind": "titleTr",
+  "de": "Müll trennen"
+ },
+ {
+  "tr": "İklimi konuşmak",
+  "kind": "titleTr",
+  "de": "Über das Klima sprechen"
+ },
+ {
+  "tr": "Enerji tasarrufu",
+  "kind": "titleTr",
+  "de": "Energie sparen"
+ },
+ {
+  "tr": "Şehir nasıl değişti",
+  "kind": "titleTr",
+  "de": "Wie sich die Stadt verändert hat"
+ },
+ {
+  "tr": "Çöp düzenini anlatmayı öğretir; kuralı kimin koyduğu değil neyin yapıldığı söylenir.",
+  "kind": "summary",
+  "de": "Vermittelt, wie man die Müllordnung erklärt; genannt wird nicht, wer die Regel setzt, sondern was getan wird."
+ },
+ {
+  "tr": "Bir yeşil alanı tarif etmeyi öğretir; ilgi cümlesi yeri, şeyi ve kişiyi cümleye bağlar.",
+  "kind": "summary",
+  "de": "Vermittelt, wie man eine Grünfläche beschreibt; der Relativsatz bindet Ort, Sache und Person an den Satz."
+ },
+ {
+  "tr": "Şehrin değişimini anlatmayı öğretir: süren değişim ile tarihi belli olay ayrı zamanlarla söylenir.",
+  "kind": "summary",
+  "de": "Vermittelt, wie man die Veränderung der Stadt erzählt: andauernde Veränderung und Ereignis mit festem Datum stehen in verschiedenen Zeiten."
+ },
+ {
+  "tr": "Evde enerji tasarrufunu konuşmayı öğretir; koşul cümlesi gerçek şartı, varsayımı ve tek çıkışı ayırır.",
+  "kind": "summary",
+  "de": "Vermittelt, wie man zu Hause über das Energiesparen spricht; der Bedingungssatz trennt echte Bedingung, Annahme und einzigen Ausweg."
+ },
+ {
+  "tr": "İklimi konuşmayı öğretir; tahmin, belirtiye dayanan beklenti ve takvimdeki olay ayrı biçimlerle söylenir.",
+  "kind": "summary",
+  "de": "Vermittelt, wie man über das Klima spricht; Vermutung, Erwartung mit Anzeichen und Ereignis im Kalender stehen in verschiedenen Formen."
+ },
+ {
+  "tr": "düzeni hiç bilmeyen, her kutuyu tek tek soran yeni komşun",
+  "kind": "partner",
+  "de": "dein neuer Nachbar, der die Ordnung gar nicht kennt und jede Tonne einzeln abfragt"
+ },
+ {
+  "tr": "şehri eski hâliyle hatırlayan, karşılaştırma yapan bir arkadaş",
+  "kind": "partner",
+  "de": "eine Freundin, die die Stadt von früher kennt und ständig vergleicht"
+ },
+ {
+  "tr": "tasarrufa istekli ama alışkanlıklarını savunan bir ev arkadaşı",
+  "kind": "partner",
+  "de": "ein Mitbewohner, der sparen will, aber seine Gewohnheiten verteidigt"
+ },
+ {
+  "tr": "her yıl aynı şeyi duyduğunu söyleyen, kanıt isteyen bir arkadaş",
+  "kind": "partner",
+  "de": "ein Freund, der sagt, er höre das jedes Jahr, und Belege verlangt"
+ },
+ {
+  "tr": "parkı hiç görmemiş, nasıl bir yer olduğunu merak eden bir arkadaş",
+  "kind": "partner",
+  "de": "eine Freundin, die den Park nie gesehen hat und wissen will, was für ein Ort das ist"
+ },
+ {
+  "tr": "Cam hangi kutuya giriyor?",
+  "kind": "openingTr",
+  "de": "In welche Tonne kommt das Glas?"
+ },
+ {
+  "tr": "Bütün enerji nereye gidiyor?",
+  "kind": "openingTr",
+  "de": "Wohin geht die ganze Energie?"
+ },
+ {
+  "tr": "Sence gerçekten değişiyor mu?",
+  "kind": "openingTr",
+  "de": "Glaubst du, es ändert sich wirklich?"
+ },
+ {
+  "tr": "Yakınında yeşil bir yer var mı?",
+  "kind": "openingTr",
+  "de": "Gibt es bei dir in der Nähe etwas Grünes?"
+ },
+ {
+  "tr": "Ben gittiğimden beri ne değişti?",
+  "kind": "openingTr",
+  "de": "Was hat sich verändert, seit ich weg bin?"
+ },
+ {
+  "tr": "Şehre yeni gelen bir arkadaşına mahallendeki parkı anlatıyorsun. Nerede buluşulduğunu, neyin değiştiğini ve kimin baktığını tarif et.",
+  "kind": "scene",
+  "de": "Du erzählst einer Freundin, die neu in der Stadt ist, von dem Park in deinem Viertel. Beschreib, wo man sich trifft, was sich verändert hat und wer sich darum kümmert."
+ },
+ {
+  "tr": "Faturanız yükseldi ve ev arkadaşınla tasarrufu konuşuyorsun. Neyi değiştirirsen ne kazanacağını, neyin mümkün olmadığını ve tek çıkışı söyle.",
+  "kind": "scene",
+  "de": "Eure Rechnung ist gestiegen und du sprichst mit deinem Mitbewohner über das Sparen. Sag, was du gewinnst, wenn du etwas änderst, was nicht möglich ist und was der einzige Ausweg ist."
+ },
+ {
+  "tr": "Binaya yeni taşınan bir komşun çöp düzenini bilmiyor. Neyin ne zaman toplandığını, neyin ayrılması gerektiğini ve neyin hiç atılmadığını anlat.",
+  "kind": "scene",
+  "de": "Ein Nachbar, der neu ins Haus gezogen ist, kennt die Müllordnung nicht. Erzähl, was wann eingesammelt wird, was getrennt werden muss und was gar nicht hineingeworfen wird."
+ },
+ {
+  "tr": "Bir arkadaşınla bölgenizdeki hava değişimlerini konuşuyorsunuz. Bir tahminini, bir belirtiye dayanan beklentini ve takvimde yeri olan bir olayı söyle.",
+  "kind": "scene",
+  "de": "Du sprichst mit einem Freund über die Wetterveränderungen in eurer Gegend. Sag eine Vermutung, eine Erwartung mit Anzeichen und ein Ereignis, das schon im Kalender steht."
+ },
+ {
+  "tr": "Yıllar sonra şehre dönen bir arkadaşın neyin değiştiğini soruyor. Ne zamandır süren değişimi, tarihi belli bir yapıyı ve hiç görmediğin bir şeyi anlat.",
+  "kind": "scene",
+  "de": "Eine Freundin kommt nach Jahren in die Stadt zurück und fragt, was sich verändert hat. Erzähl von der andauernden Veränderung, von einem Bau mit festem Datum und von etwas, das du noch nie gesehen hast."
+ },
+ {
+  "tr": "Yeri, şeyi ve kişiyi üç ayrı ilgi cümlesiyle tarif ettiysen konuşma başarılı sayılır.",
+  "kind": "goal",
+  "de": "Das Gespräch gilt als gelungen, wenn du Ort, Sache und Person in drei verschiedenen Relativsätzen beschrieben hast."
+ },
+ {
+  "tr": "Bir tahmini, bir belirtiyi ve takvimdeki bir olayı üç ayrı biçimle söylediysen konuşma başarılı sayılır.",
+  "kind": "goal",
+  "de": "Das Gespräch gilt als gelungen, wenn du eine Vermutung, ein Anzeichen und ein Ereignis im Kalender in drei verschiedenen Formen gesagt hast."
+ },
+ {
+  "tr": "Süren değişimi, tarihi belli bir olayı ve bir deneyimi üç ayrı zamanla anlattıysan konuşma başarılı sayılır.",
+  "kind": "goal",
+  "de": "Das Gespräch gilt als gelungen, wenn du die andauernde Veränderung, ein Ereignis mit festem Datum und eine Erfahrung in drei verschiedenen Zeiten erzählt hast."
+ },
+ {
+  "tr": "Düzenli bir işi, bir zorunluluğu ve bir yasağı üç ayrı edilgen cümleyle anlattıysan konuşma başarılı sayılır.",
+  "kind": "goal",
+  "de": "Das Gespräch gilt als gelungen, wenn du eine regelmäßige Handlung, eine Pflicht und ein Verbot in drei verschiedenen Passivsätzen erzählt hast."
+ },
+ {
+  "tr": "cam",
+  "kind": "vocab.tr",
+  "de": "Glas"
+ },
+ {
+  "tr": "ısı",
+  "kind": "vocab.tr",
+  "de": "Wärme"
+ },
+ {
+  "tr": "sel",
+  "kind": "vocab.tr",
+  "de": "Überschwemmung"
+ },
+ {
+  "tr": "çeşme",
+  "kind": "vocab.tr",
+  "de": "Brunnen"
+ },
+ {
+  "tr": "iklim",
+  "kind": "vocab.tr",
+  "de": "Klima"
+ },
+ {
+  "tr": "köprü",
+  "kind": "vocab.tr",
+  "de": "Brücke"
+ },
+ {
+  "tr": "metal",
+  "kind": "vocab.tr",
+  "de": "Metall"
+ },
+ {
+  "tr": "serin",
+  "kind": "vocab.tr",
+  "de": "kühl"
+ },
+ {
+  "tr": "erimek",
+  "kind": "vocab.tr",
+  "de": "schmelzen"
+ },
+ {
+  "tr": "mevsim",
+  "kind": "vocab.tr",
+  "de": "Jahreszeit"
+ },
+ {
+  "tr": "trafik",
+  "kind": "vocab.tr",
+  "de": "Verkehr"
+ },
+ {
+  "tr": "ayırmak",
+  "kind": "vocab.tr",
+  "de": "trennen"
+ },
+ {
+  "tr": "banliyö",
+  "kind": "vocab.tr",
+  "de": "Vorort"
+ },
+ {
+  "tr": "fırtına",
+  "kind": "vocab.tr",
+  "de": "Sturm"
+ },
+ {
+  "tr": "kirlilik",
+  "kind": "vocab.tr",
+  "de": "Verschmutzung"
+ },
+ {
+  "tr": "kuraklık",
+  "kind": "vocab.tr",
+  "de": "Dürre"
+ },
+ {
+  "tr": "oyun alanı",
+  "kind": "vocab.tr",
+  "de": "Spielplatz"
+ },
+ {
+  "tr": "yasağı edilgen anlatır",
+  "kind": "pattern.tr",
+  "de": "nennt das Verbot im Passiv"
+ },
+ {
+  "tr": "şeyi tarif ederek bağlar",
+  "kind": "pattern.tr",
+  "de": "bindet eine Sache beschreibend ein"
+ },
+ {
+  "tr": "kişiyi tarif ederek bağlar",
+  "kind": "pattern.tr",
+  "de": "bindet eine Person beschreibend ein"
+ },
+ {
+  "tr": "hâlâ süren değişimi anlatır",
+  "kind": "pattern.tr",
+  "de": "erzählt von einer noch andauernden Veränderung"
+ },
+ {
+  "tr": "zorunluluğu edilgen anlatır",
+  "kind": "pattern.tr",
+  "de": "nennt die Pflicht im Passiv"
+ },
+ {
+  "tr": "tarihi belli bir olayı anlatır",
+  "kind": "pattern.tr",
+  "de": "erzählt ein Ereignis mit festem Datum"
+ },
+ {
+  "tr": "düzenli bir işi edilgen anlatır",
+  "kind": "pattern.tr",
+  "de": "erzählt eine regelmäßige Handlung im Passiv"
+ },
+ {
+  "tr": "takvimde yeri olan bir olayı söyler",
+  "kind": "pattern.tr",
+  "de": "nennt ein Ereignis, das schon im Kalender steht"
+ },
+ {
+  "tr": "Doğru. Tarif bir şeye ait olduğu için",
+  "kind": "why.tr",
+  "de": "Richtig. Weil die Beschreibung zu einer Sache gehört, steht hier"
+ },
+ {
+  "tr": "Doğru. Cümlede bitmiş bir tarih var, o yüzden olağan geçmiş zaman kullanılıyor.",
+  "kind": "why.tr",
+  "de": "Richtig. Im Satz steht ein abgeschlossenes Datum, deshalb wird das einfache Präteritum benutzt."
+ },
+ {
+  "tr": "Doğru. Camı kimin topladığı söylenmiyor ve belediye yazısında bu olağan; önemli olan gün.",
+  "kind": "why.tr",
+  "de": "Richtig. Wer das Glas einsammelt, wird nicht genannt, und in einem Schreiben der Stadt ist das normal; wichtig ist der Tag."
+ },
+ {
+  "tr": "Doğru. Lamba gerçekte yok, o yüzden şart yarısı geçmiş biçimde ve sonuç yarısı şart kipinde.",
+  "kind": "why.tr",
+  "de": "Richtig. Die Lampe gibt es in Wirklichkeit nicht, deshalb steht die Bedingungshälfte in der Vergangenheitsform und die Folgehälfte im Konjunktiv."
+ },
+ {
+  "tr": "Doğru. Elinde bir belirti yok, salt bir tahmin söyleniyor; belirti olsaydı başka bir biçim gelirdi.",
+  "kind": "why.tr",
+  "de": "Richtig. Es gibt kein Anzeichen, hier wird eine bloße Vermutung gesagt; mit einem Anzeichen käme eine andere Form."
+ },
+ {
+  "tr": "Edilgen yasak için",
+  "kind": "hint.tr",
+  "de": "Für ein Verbot im Passiv"
+ },
+ {
+  "tr": "Düzenli iş için edilgen kullanılır:",
+  "kind": "hint.tr",
+  "de": "Für eine regelmäßige Handlung steht das Passiv:"
+ },
+ {
+  "tr": "Bitmiş tarih için past simple kullanılır:",
+  "kind": "hint.tr",
+  "de": "Für ein abgeschlossenes Datum steht Past Simple:"
+ },
+ {
+  "tr": "Takvimdeki olay şimdiki zamanla söylenir:",
+  "kind": "hint.tr",
+  "de": "Ein Ereignis im Kalender steht in der Verlaufsform der Gegenwart:"
+ },
+ {
+  "tr": "Süren değişim için present perfect kullanılır:",
+  "kind": "hint.tr",
+  "de": "Für eine andauernde Veränderung steht Present Perfect:"
+ },
+ {
+  "tr": "yeri,",
+  "kind": "say.tr",
+  "de": "verbindet den Ort,"
+ },
+ {
+  "tr": "takvim",
+  "kind": "say.tr",
+  "de": "Kalender"
+ },
+ {
+  "tr": "bitmiş tarih",
+  "kind": "say.tr",
+  "de": "abgeschlossenes Datum"
+ },
+ {
+  "tr": "belirti varsa",
+  "kind": "say.tr",
+  "de": "gibt es ein Anzeichen, steht"
+ },
+ {
+  "tr": "Hafif sıcak için",
+  "kind": "say.tr",
+  "de": "Für leicht warm sagen wir"
+ },
+ {
+  "tr": "Işık veren alete",
+  "kind": "say.tr",
+  "de": "Das Gerät, das Licht gibt, heißt"
+ },
+ {
+  "tr": "Gökten düşen suya",
+  "kind": "say.tr",
+  "de": "Das Wasser, das vom Himmel fällt, heißt"
+ },
+ {
+  "tr": "hafif soğuk için ise",
+  "kind": "say.tr",
+  "de": "und für leicht kalt"
+ },
+ {
+  "tr": "Sıcaklığın kendisine",
+  "kind": "say.tr",
+  "de": "Die Wärme selbst heißt"
+ },
+ {
+  "tr": "yürünen dar yola ise",
+  "kind": "say.tr",
+  "de": "und der schmale Weg, auf dem man geht, heißt"
+ },
+ {
+  "tr": "Ayakta yıkanılan yere",
+  "kind": "say.tr",
+  "de": "Der Ort, an dem man im Stehen duscht, heißt"
+ },
+ {
+  "tr": "çöpün konduğu kaba ise",
+  "kind": "say.tr",
+  "de": "und der Behälter für den Müll heißt"
+ },
+ {
+  "tr": "Meydandaki çeşme kuru.",
+  "kind": "say.tr",
+  "de": "Der Brunnen auf dem Platz ist trocken."
+ },
+ {
+  "tr": "Şehrin dış mahallesine",
+  "kind": "say.tr",
+  "de": "Das äußere Viertel der Stadt heißt"
+ },
+ {
+  "tr": "uçan küçük canlıya ise",
+  "kind": "say.tr",
+  "de": "und das kleine fliegende Lebewesen heißt"
+ },
+ {
+  "tr": "iş yapabilme gücüne ise",
+  "kind": "say.tr",
+  "de": "und die Kraft, Arbeit zu leisten, heißt"
+ },
+ {
+  "tr": "Özetleyelim: düzenli iş",
+  "kind": "say.tr",
+  "de": "Fassen wir zusammen: regelmäßige Handlung"
+ },
+ {
+  "tr": "Suyun taşıp kaplamasına",
+  "kind": "say.tr",
+  "de": "Wenn das Wasser übertritt und alles bedeckt, heißt das"
+ },
+ {
+  "tr": "Bir şeyi elden bırakmaya",
+  "kind": "say.tr",
+  "de": "Etwas aus der Hand lassen heißt"
+ },
+ {
+  "tr": "Buz daha hızlı eriyecek.",
+  "kind": "say.tr",
+  "de": "Das Eis wird schneller schmelzen."
+ },
+ {
+  "tr": "Katının sıvıya dönmesine",
+  "kind": "say.tr",
+  "de": "Wenn Festes flüssig wird, heißt das"
+ },
+ {
+  "tr": "sıcaklığın yokluğuna ise",
+  "kind": "say.tr",
+  "de": "und das Fehlen der Wärme heißt"
+ },
+ {
+  "tr": "Yoldaki araç yoğunluğuna",
+  "kind": "say.tr",
+  "de": "Die Dichte der Fahrzeuge auf der Straße heißt"
+ },
+ {
+  "tr": "Çocukların oynadığı alana",
+  "kind": "say.tr",
+  "de": "Die Fläche, auf der Kinder spielen, heißt"
+ },
+ {
+  "tr": "Havayı ve suyu bozan şeye",
+  "kind": "say.tr",
+  "de": "Was Luft und Wasser verdirbt, heißt"
+ },
+ {
+  "tr": "Köprüyü 2015'te yaptılar.",
+  "kind": "say.tr",
+  "de": "Sie haben die Brücke 2015 gebaut."
+ },
+ {
+  "tr": "Metal depoya götürülüyor.",
+  "kind": "say.tr",
+  "de": "Metall wird zum Hof gebracht."
+ },
+ {
+  "tr": "Suyun aktığı süslü yapıya",
+  "kind": "say.tr",
+  "de": "Das verzierte Bauwerk, aus dem Wasser fließt, heißt"
+ },
+ {
+  "tr": "Şehrin açık ortak alanına",
+  "kind": "say.tr",
+  "de": "Die offene gemeinsame Fläche der Stadt heißt"
+ },
+ {
+  "tr": "Şiddetli rüzgâr ve yağışa",
+  "kind": "say.tr",
+  "de": "Starker Wind mit Regen heißt"
+ },
+ {
+  "tr": "evlerin dizildiği yola ise",
+  "kind": "say.tr",
+  "de": "und der Weg, an dem die Häuser stehen, heißt"
+ },
+ {
+  "tr": "Fırtına cumartesi geliyor.",
+  "kind": "say.tr",
+  "de": "Der Sturm kommt am Samstag."
+ },
+ {
+  "tr": "uzun susuzluk dönemine ise",
+  "kind": "say.tr",
+  "de": "und die lange Zeit ohne Wasser heißt"
+ },
+ {
+  "tr": "Yağmur öğleden önce durdu.",
+  "kind": "say.tr",
+  "de": "Der Regen hörte vor Mittag auf."
+ },
+ {
+  "tr": "Devrilen ağaç çok yaşlıydı.",
+  "kind": "say.tr",
+  "de": "Der Baum, der umfiel, war sehr alt."
+ },
+ {
+  "tr": "günlük gökyüzü durumuna ise",
+  "kind": "say.tr",
+  "de": "und der tägliche Zustand des Himmels heißt"
+ },
+ {
+  "tr": "Plastik kâğıttan ayrılmalı.",
+  "kind": "say.tr",
+  "de": "Plastik muss von Papier getrennt werden."
+ },
+ {
+  "tr": "Renkli açan bitki parçasına",
+  "kind": "say.tr",
+  "de": "Der bunt aufgehende Teil der Pflanze heißt"
+ },
+ {
+  "tr": "Yılın dörde bölünen bölümüne",
+  "kind": "say.tr",
+  "de": "Der Abschnitt, in den das Jahr viermal geteilt wird, heißt"
+ },
+ {
+  "tr": "İki yakayı birleştiren yapıya",
+  "kind": "say.tr",
+  "de": "Das Bauwerk, das zwei Ufer verbindet, heißt"
+ },
+ {
+  "tr": "Meydan ve sokak bugün kapalı.",
+  "kind": "say.tr",
+  "de": "Der Platz und die Straße sind heute gesperrt."
+ },
+ {
+  "tr": "birbirinden uzaklaştırmaya ise",
+  "kind": "say.tr",
+  "de": "und voneinander wegbringen heißt"
+ },
+ {
+  "tr": "Dışarısı soğukken ısı kaçıyor.",
+  "kind": "say.tr",
+  "de": "Wenn es draußen kalt ist, entweicht die Wärme."
+ },
+ {
+  "tr": "Gövdesi ve dalları olan bitkiye",
+  "kind": "say.tr",
+  "de": "Die Pflanze mit Stamm und Ästen heißt"
+ },
+ {
+  "tr": "Yere yayılan kısa yeşil bitkiye",
+  "kind": "say.tr",
+  "de": "Die kurze grüne Pflanze auf dem Boden heißt"
+ },
+ {
+  "tr": "Hiç bu kadar trafik görmemiştim.",
+  "kind": "say.tr",
+  "de": "So viel Verkehr habe ich noch nie gesehen."
+ },
+ {
+  "tr": "Kirlilik o zamandan beri azaldı.",
+  "kind": "say.tr",
+  "de": "Die Verschmutzung ist seitdem zurückgegangen."
+ },
+ {
+  "tr": "Patikanın yanındaki çimen ıslak.",
+  "kind": "say.tr",
+  "de": "Das Gras neben dem Weg ist nass."
+ },
+ {
+  "tr": "Banliyöde yeni bir bina yükseldi.",
+  "kind": "say.tr",
+  "de": "Im Vorort ist ein neues Gebäude entstanden."
+ },
+ {
+  "tr": "Duş kısa olmazsa fatura yükselir.",
+  "kind": "say.tr",
+  "de": "Wenn die Dusche nicht kurz ist, steigt die Rechnung."
+ },
+ {
+  "tr": "Kutu ve kapak yapılan sert maddeye",
+  "kind": "say.tr",
+  "de": "Der harte Stoff für Dosen und Deckel heißt"
+ },
+ {
+  "tr": "Oda ılık kalıyor ve koridor serin.",
+  "kind": "say.tr",
+  "de": "Das Zimmer bleibt warm und der Flur ist kühl."
+ },
+ {
+  "tr": "Hava durumu her mevsimle değişiyor.",
+  "kind": "say.tr",
+  "de": "Das Wetter ändert sich mit jeder Jahreszeit."
+ },
+ {
+  "tr": "Selden sonra uzun bir kuraklık geldi.",
+  "kind": "say.tr",
+  "de": "Nach der Überschwemmung kam eine lange Dürre."
+ },
+ {
+  "tr": "Çiçekleri diken kadın burada oturuyor.",
+  "kind": "say.tr",
+  "de": "Die Frau, die die Blumen gepflanzt hat, wohnt hier."
+ },
+ {
+  "tr": "Şimdi dersin kuralı. Elinde veri yoksa",
+  "kind": "say.tr",
+  "de": "Jetzt die Regel der Lektion. Hast du keine Daten, steht"
+ },
+ {
+  "tr": "Şimdi sen kur: Diktiğimiz ağaç büyüyor.",
+  "kind": "say.tr",
+  "de": "Jetzt du: Der Baum, den wir gepflanzt haben, wächst."
+ },
+ {
+  "tr": "Şimdi sıra sende: Koştuğum park sessiz.",
+  "kind": "say.tr",
+  "de": "Jetzt bist du dran: Der Park, in dem ich laufe, ist ruhig."
+ },
+ {
+  "tr": "Şimdi şehrinin değişimini anlatacaksın.",
+  "kind": "say.tr",
+  "de": "Jetzt erzählst du, wie sich deine Stadt verändert hat."
+ },
+ {
+  "tr": "Yanlış çöp kutusuna hiçbir şey atılmaz.",
+  "kind": "say.tr",
+  "de": "In die falsche Tonne wird nichts geworfen."
+ },
+ {
+  "tr": "Şimdi sen kur: Plastik camdan ayrılmalı.",
+  "kind": "say.tr",
+  "de": "Jetzt du: Plastik muss von Glas getrennt werden."
+ },
+ {
+  "tr": "Bir tane daha: Yağmur pazar günü geliyor.",
+  "kind": "say.tr",
+  "de": "Noch eins: Der Regen kommt am Sonntag."
+ },
+ {
+  "tr": "içinde yaşanan ya da çalışılan yapıya ise",
+  "kind": "say.tr",
+  "de": "und das Bauwerk, in dem gewohnt oder gearbeitet wird, heißt"
+ },
+ {
+  "tr": "Son kalıbımız kişiyi bağlıyor. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Unsere letzte Wendung verbindet die Person. Wiederhole:"
+ },
+ {
+  "tr": "Şimdi sen kur: İstasyonu 2018'de açtılar.",
+  "kind": "say.tr",
+  "de": "Jetzt du: Sie haben den Bahnhof 2018 eröffnet."
+ },
+ {
+  "tr": "İkinci kalıbımız şeyi bağlıyor. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Unsere zweite Wendung verbindet die Sache. Wiederhole:"
+ },
+ {
+  "tr": "Son kalıbımız yasağı anlatıyor. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Unsere letzte Wendung nennt das Verbot. Wiederhole:"
+ },
+ {
+  "tr": "Şimdi iklimi bir arkadaşınla konuşacaksın.",
+  "kind": "say.tr",
+  "de": "Jetzt sprichst du mit einem Freund über das Klima."
+ },
+ {
+  "tr": "Şimdi sen kur: Bu bölgede iklim değişecek.",
+  "kind": "say.tr",
+  "de": "Jetzt du: In dieser Region wird sich das Klima ändern."
+ },
+ {
+  "tr": "Buradaki hemen her şey geri dönüştürülüyor.",
+  "kind": "say.tr",
+  "de": "Fast alles hier wird wiederverwertet."
+ },
+ {
+  "tr": "Şişeden poşete kadar her yerde olan maddeye",
+  "kind": "say.tr",
+  "de": "Der Stoff, der von der Flasche bis zur Tüte überall ist, heißt"
+ },
+ {
+  "tr": "Şimdi mahallendeki yeşil alanı anlatacaksın.",
+  "kind": "say.tr",
+  "de": "Jetzt beschreibst du die Grünfläche in deinem Viertel."
+ },
+ {
+  "tr": "kullanılmışı yeniden hammaddeye çevirmeye ise",
+  "kind": "say.tr",
+  "de": "und Gebrauchtes wieder zu Rohstoff machen heißt"
+ },
+ {
+  "tr": "Son kalıbımız tek çıkışı söylüyor. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Unsere letzte Wendung nennt den einzigen Ausweg. Wiederhole:"
+ },
+ {
+  "tr": "Şimdi çöp düzenini yeni komşuna anlatacaksın.",
+  "kind": "say.tr",
+  "de": "Jetzt erklärst du deinem neuen Nachbarn die Müllordnung."
+ },
+ {
+  "tr": "Yeni bir lambam olsa daha az enerji harcardım.",
+  "kind": "say.tr",
+  "de": "Hätte ich eine neue Lampe, würde ich weniger Energie verbrauchen."
+ },
+ {
+  "tr": "Bir tane daha: Hiç bu kadar inşaat görmemiştim.",
+  "kind": "say.tr",
+  "de": "Noch eins: So viel Bauarbeit habe ich noch nie gesehen."
+ },
+ {
+  "tr": "Her sabah oyun alanının yanında bir kuş ötüyor.",
+  "kind": "say.tr",
+  "de": "Jeden Morgen singt ein Vogel neben dem Spielplatz."
+ },
+ {
+  "tr": "Bir tane daha: Çimeni biçen adam erken başlıyor.",
+  "kind": "say.tr",
+  "de": "Noch eins: Der Mann, der das Gras mäht, fängt früh an."
+ },
+ {
+  "tr": "Bir tane daha: Pencere kapalı olmazsa ısı kaçar.",
+  "kind": "say.tr",
+  "de": "Noch eins: Wenn das Fenster nicht zu ist, entweicht die Wärme."
+ },
+ {
+  "tr": "Şimdi sıra sende: Hava durumu bu gece değişecek.",
+  "kind": "say.tr",
+  "de": "Jetzt bist du dran: Das Wetter wird sich heute Nacht ändern."
+ },
+ {
+  "tr": "Şimdi sıra sende: Kâğıt cuma günleri toplanıyor.",
+  "kind": "say.tr",
+  "de": "Jetzt bist du dran: Papier wird freitags eingesammelt."
+ },
+ {
+  "tr": "gerçek olmayan bir durumu anlatır ve sonuç yarısı",
+  "kind": "say.tr",
+  "de": "nennt eine nicht wirkliche Lage und die Folgehälfte bekommt ein"
+ },
+ {
+  "tr": "İkinci kalıbımız zorunluluğu anlatıyor. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Unsere zweite Wendung nennt die Pflicht. Wiederhole:"
+ },
+ {
+  "tr": "Son kalıbımız takvimdeki olayı söylüyor. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Unsere letzte Wendung nennt das Ereignis im Kalender. Wiederhole:"
+ },
+ {
+  "tr": "Şimdi sıra sende: Banliyö 2015'ten beri çok değişti.",
+  "kind": "say.tr",
+  "de": "Jetzt bist du dran: Der Vorort hat sich seit 2015 stark verändert."
+ },
+ {
+  "tr": "Bir tane daha: Yeşil çöp kutusuna hiçbir şey atılmaz.",
+  "kind": "say.tr",
+  "de": "Noch eins: In die grüne Tonne wird nichts geworfen."
+ },
+ {
+  "tr": "Şimdi evdeki tasarrufu bir ev arkadaşınla konuşacaksın.",
+  "kind": "say.tr",
+  "de": "Jetzt besprichst du das Sparen zu Hause mit einem Mitbewohner."
+ },
+ {
+  "tr": "Şimdi dersin kuralı. Mümkün şart olağan zamanla kurulur;",
+  "kind": "say.tr",
+  "de": "Jetzt die Regel der Lektion. Eine erfüllbare Bedingung wird in der gewöhnlichen Zeit gebaut;"
+ },
+ {
+  "tr": "İkinci kalıbımız tarihi belli bir olayı anlatıyor. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Unsere zweite Wendung erzählt ein Ereignis mit festem Datum. Wiederhole:"
+ },
+ {
+  "tr": "Şimdi dersin kuralı. Edilgen cümlede nesne başa geçer ve fiil",
+  "kind": "say.tr",
+  "de": "Jetzt die Regel der Lektion. Im Passivsatz rückt das Objekt nach vorn und das Verb tritt mit"
+ },
+ {
+  "tr": "Şişenin yapıldığı saydam madde demek. Bir araya getirmeye ise",
+  "kind": "say.tr",
+  "de": "Das heißt der durchsichtige Stoff, aus dem Flaschen sind. Und zusammenbringen heißt"
+ },
+ {
+  "tr": "Şehirden küçük yerleşim demek. İlk kalıbımız da bu. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Das heißt eine Siedlung, die kleiner als eine Stadt ist. Das ist auch unsere erste Wendung. Wiederhole:"
+ },
+ {
+  "tr": "Şimdi sıra sende: Pencereyi kapatırsan ısı tasarrufu yaparsın.",
+  "kind": "say.tr",
+  "de": "Jetzt bist du dran: Wenn du das Fenster schließt, sparst du Wärme."
+ },
+ {
+  "tr": "İkinci kalıbımız gerçek olmayan bir durumu anlatıyor. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Unsere zweite Wendung nennt eine nicht wirkliche Lage. Wiederhole:"
+ },
+ {
+  "tr": "kişiyi bağlar. Bir parkı anlatırken üçü de aynı paragrafta geçer.",
+  "kind": "say.tr",
+  "de": "die Person. Wenn man einen Park beschreibt, stehen alle drei im selben Absatz."
+ },
+ {
+  "tr": "Suyun açılıp kapandığı yer demek. İlk kalıbımız da bu. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Das heißt die Stelle, an der man das Wasser auf- und zudreht. Das ist auch unsere erste Wendung. Wiederhole:"
+ },
+ {
+  "tr": "Şehrin içindeki yeşil alan demek. İlk kalıbımız da bu. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Das heißt die Grünfläche innerhalb der Stadt. Das ist auch unsere erste Wendung. Wiederhole:"
+ },
+ {
+  "tr": "Şimdi sen kur: Daha iyi bir pencerem olsa daha çok tasarruf ederdim.",
+  "kind": "say.tr",
+  "de": "Jetzt du: Hätte ich ein besseres Fenster, würde ich mehr sparen."
+ },
+ {
+  "tr": "Şimdi dersin kuralı. Değişim HÂLÂ SÜRÜYORSA present perfect kullanılır ve",
+  "kind": "say.tr",
+  "de": "Jetzt die Regel der Lektion. Dauert die Veränderung NOCH AN, steht Present Perfect, und mit"
+ },
+ {
+  "tr": "Bir bölgenin uzun yıllara yayılan hava düzeni demek. İlk kalıbımız da bu. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Das heißt die Wetterordnung einer Gegend über lange Jahre. Das ist auch unsere erste Wendung. Wiederhole:"
+ },
+ {
+  "tr": "ile üçüncü hâline girer; kuralı koyan kurum söylenmez çünkü kim olduğu herkesçe bilinir.",
+  "kind": "say.tr",
+  "de": "in die dritte Form; die Behörde, die die Regel setzt, wird nicht genannt, weil ohnehin jeder weiß, wer es ist."
+ },
+ {
+  "tr": "Merhaba! Bugün evde enerji tasarrufunu konuşmayı öğreneceğiz: ne yaparsan ne kazanırsın.",
+  "kind": "say.tr",
+  "de": "Hallo! Heute lernen wir, zu Hause über das Energiesparen zu sprechen: was du gewinnst, wenn du etwas tust."
+ },
+ {
+  "tr": "alır; tek çıkışı söyleyen bağlaç ise kendisi olumsuzdur ve yanına ikinci bir olumsuzluk almaz.",
+  "kind": "say.tr",
+  "de": "dazu; der Konnektor für den einzigen Ausweg ist selbst schon verneint und nimmt daneben keine zweite Verneinung."
+ },
+ {
+  "tr": "Bu düzeni anlatan yazıların hiçbirinde kimin yaptığı geçmez; hepsi edilgen kurulur. Hazır mısın?",
+  "kind": "say.tr",
+  "de": "In keinem der Schreiben zu dieser Ordnung steht, wer es macht; alle sind im Passiv gebaut. Bist du bereit?"
+ },
+ {
+  "tr": "Merhaba! Bugün çöp düzenini anlatmayı öğreneceğiz: ne zaman toplanıyor, ne ayrılıyor, ne atılmıyor.",
+  "kind": "say.tr",
+  "de": "Hallo! Heute lernen wir, die Müllordnung zu erklären: wann eingesammelt wird, was getrennt wird, was nicht hineingeworfen wird."
+ },
+ {
+  "tr": "ile başlangıç eklenir; cümlede BİTMİŞ BİR TARİH varsa past simple kullanılır. Tarih zamanı belirler.",
+  "kind": "say.tr",
+  "de": "wird der Anfang angehängt; steht im Satz ein ABGESCHLOSSENES DATUM, steht Past Simple. Das Datum bestimmt die Zeitform."
+ },
+ {
+  "tr": "Merhaba! Bugün bir yeşil alanı tarif etmeyi öğreneceğiz: nerede buluşuyorsunuz, hangi ağaç, kim dikti.",
+  "kind": "say.tr",
+  "de": "Hallo! Heute lernen wir, eine Grünfläche zu beschreiben: wo ihr euch trefft, welcher Baum, wer gepflanzt hat."
+ },
+ {
+  "tr": "Merhaba! Bugün iklimi konuşmayı öğreneceğiz: neyi tahmin ediyorsun, neyin belirtisi var, ne zaten takvimde.",
+  "kind": "say.tr",
+  "de": "Hallo! Heute lernen wir, über das Klima zu sprechen: was du vermutest, wofür es ein Anzeichen gibt, was schon im Kalender steht."
+ },
+ {
+  "tr": "tarihi belli bir olay için ise şimdiki zaman kullanılır. Üçü de geleceği anlatır ama dayanakları farklıdır.",
+  "kind": "say.tr",
+  "de": "und für ein Ereignis mit festem Datum die Verlaufsform der Gegenwart. Alle drei sprechen von der Zukunft, aber ihre Grundlagen sind verschieden."
+ },
+ {
+  "tr": "Bir yeri tarif etmek adını söylemekten fazlasıdır ve o fazlayı cümleye bağlayan şey ilgi cümlesi. Hazır mısın?",
+  "kind": "say.tr",
+  "de": "Einen Ort zu beschreiben ist mehr, als seinen Namen zu nennen, und was dieses Mehr an den Satz bindet, ist der Relativsatz. Bist du bereit?"
+ },
+ {
+  "tr": "İklim konuşması gelecekle ilgilidir ve hangi biçimi seçtiğin elinde ne kadar veri olduğunu söyler. Hazır mısın?",
+  "kind": "say.tr",
+  "de": "Ein Gespräch über das Klima handelt von der Zukunft, und deine Wahl der Form sagt, wie viele Daten du hast. Bist du bereit?"
+ },
+ {
+  "tr": "Şehir anlatmak iki zamanı yan yana kullanmayı gerektiriyor ve tarih verildiği anda zaman değişiyor. Hazır mısın?",
+  "kind": "say.tr",
+  "de": "Eine Stadt zu beschreiben verlangt zwei Zeiten nebeneinander, und sobald ein Datum fällt, wechselt die Zeitform. Bist du bereit?"
+ },
+ {
+  "tr": "Merhaba! Bugün şehrin değişimini anlatmayı öğreneceğiz: ne zamandır değişiyor, ne zaman yapıldı, daha önce oldu mu.",
+  "kind": "say.tr",
+  "de": "Hallo! Heute lernen wir, die Veränderung der Stadt zu erzählen: seit wann sie sich ändert, wann etwas gebaut wurde, ob es das früher schon gab."
+ },
+ {
+  "tr": "Tasarruf konuşmasının tamamı şarta bağlı cümlelerden kuruluyor, çünkü her tasarruf bir davranışın karşılığı. Hazır mısın?",
+  "kind": "say.tr",
+  "de": "Ein Gespräch über das Sparen besteht ganz aus Bedingungssätzen, denn jede Ersparnis ist die Antwort auf ein Verhalten. Bist du bereit?"
+ }
+]
