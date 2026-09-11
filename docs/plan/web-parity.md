@@ -7153,3 +7153,26 @@ için de geçtiği için pencere boş kalıyor ve kapı sessizce hiçbir şey
 §114, §116 ve şimdi §118): **bir ölçüm penceresi, ölçmek istediği yerin
 komşusunu yakalıyor.** Altısı da yalnız enjeksiyonla görüldü.
 
+
+### 11.209 Ham metin sayımının muafiyet yollarından biri ölüydü
+
+§118'in web karşılığı. `i18n-hardcoded.mjs` üç liste tutuyor — SKIP (sayımdan
+çıkan yol), FORCE (SKIP'in içinde kalan ama yine de sayılan mantık dosyası),
+SKIP_ASCII — toplam 38 yol. Hepsi diskte arandı; **biri yoktu**:
+`lib/cheatsheet`. Dilbilgisi sayfası 2026-08'de kaldırılmış, muafiyet listede
+kalmıştı.
+
+Bugün hiçbir şey atlamıyordu. Ama **olmayan bir yol sessiz bir deliktir**: o
+yola bir dosya konursa Türkçe metni hiç sayılmadan içeri girer ve kimse karar
+vermemiş olur. Aynı kaldırmadan kalan sahipsiz bir yorum da düştü
+(`lib/errors.ts`, anlattığı dışa aktarım çoktan silinmiş).
+
+**Ölçmek bir varsayımı da düzeltti:** FORCE listesindeki altı `lib/lessons/*`
+satırını önce fazlalık sandım (dizin zaten SKIP'te). Değillermiş — dizin ders
+içeriği yüzünden atlanıyor ve o altı MANTIK dosyası bilerek geri alınıyor.
+Ölçüm, yanlış bir "temizlik" yapmamı engelledi.
+
+§118 ve §119 birlikte şu kuralı kapıya çeviriyor: **bir muafiyetin gerekçesi
+yazılı olmalı (eskiden beri), gerekçesi ölçülebilir olmalı (§118) ve
+muafiyetin kendisi hâlâ var olan bir şeye işaret etmeli (§119).**
+
