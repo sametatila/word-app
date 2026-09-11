@@ -7226,6 +7226,38 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     "beklenen",
   );
 
+  /* ── 207. hesap silmede magaza uyarisi ───────────────────────────────
+   * "Hesabi silmek aboneligi durdurmaz" cumlesi uc ayri metin ister, cunku
+   * iptal YOLU magazaya gore degisiyor (Play Store > Odemeler ve abonelikler
+   * / Ayarlar > Apple Hesabi > Abonelikler). Yanlisini gostermek kullaniciyi
+   * hic var olmayan bir ekrana yolluyor.
+   *
+   * Webde metin "Google Play" diyordu: aboneligi App Store'dan alan biri de
+   * hesabini webden silebiliyor ve web hangi magaza oldugunu BILMIYOR. Oraya
+   * magaza adi yazmayan ucuncu bir metin kondu.
+   *
+   * KAPI YAZILMASININ SEBEBI BIR OLCUM HATASI. Ilk taramada "mobilde magaza
+   * uyarisi yok" sonucuna varmistim; oysa vardi - cagri
+   * `tx(Platform.OS === "ios" ? "a" : "b")` bicimindeydi ve anahtar cikaran
+   * desenim KOSULLU cagriyi gormuyordu. Kapi bu yuzden anahtarlari tek tek,
+   * dogru yuzeyde ariyor. */
+  {
+    const webSil = sil(read("src/components/account-delete-form.tsx"));
+    const mobSil = sil(read("mobile/src/screens/DeleteAccountScreen.tsx"));
+    sameList(
+      "hesap silmede magaza uyarisi",
+      [
+        "web=" + (/subscription_cancel_store/.test(webSil) ? "magaza adsiz" : /subscription_cancel_(play|appstore)/.test(webSil) ? "TEK MAGAZA ADI" : "YOK"),
+        "mobil android=" + (/subscription_cancel_play/.test(mobSil) ? "var" : "YOK"),
+        "mobil ios=" + (/subscription_cancel_appstore/.test(mobSil) ? "var" : "YOK"),
+        "mobil platforma bagli=" + (/Platform\.OS === "ios" \? "deleteaccount\.subscription_cancel_appstore"/.test(mobSil) ? "evet" : "HAYIR"),
+      ],
+      ["web=magaza adsiz", "mobil android=var", "mobil ios=var", "mobil platforma bagli=evet"],
+      "bulunan",
+      "beklenen",
+    );
+  }
+
   /* ── 206. saglayici katalogundaki env anahtarlari ornekte yazili mi ──
    * `.env.example` operatorun TEK kesif yolu: AGENTS.md uc env dosyasinin
    * ayni anahtar kumesini tasimasini sart kosuyor ve kume oradan cikiyor.

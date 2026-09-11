@@ -227,6 +227,7 @@ export const deBase: Record<string, string> = {
   "deleteaccount.we_re_asking_one_last_time": "Letzte Nachfrage",
   "deleteaccount.subscription_cancel_appstore": "Wenn du über den App Store abonniert hast, musst du das Abo zusätzlich unter Einstellungen › Apple-Account › Abonnements kündigen; das Löschen des Kontos beendet das Abo nicht.",
   "deleteaccount.subscription_cancel_play": "Wenn du über Google Play abonniert hast, musst du das Abo zusätzlich im Play Store › Zahlungen und Abos kündigen; das Löschen des Kontos beendet das Abo nicht.",
+  "deleteaccount.subscription_cancel_store": "Wenn du über einen Store abonniert hast, musst du das Abo zusätzlich in dem Store kündigen, in dem du es gekauft hast; das Löschen des Kontos beendet das Abo nicht.",
   "deleteaccount.i_understand_my_data_will_be": "Ich habe verstanden, dass meine Daten dauerhaft gelöscht werden.",
   "deleteaccount.your_data_is_gone_it_was_good_to": "Deine Daten wurden gelöscht. Schön, dass wir dich kennengelernt haben.",
   "deleteaccount.your_writing_speaking_records": "Deine Texte, Sprechaufzeichnungen und Bewertungen",

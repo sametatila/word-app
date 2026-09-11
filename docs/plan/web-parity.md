@@ -10117,3 +10117,32 @@ doğru.)
    çıktı "1 tablo" dedi ve fark oradan anlaşıldı. Drizzle tabloyu sembolle
    işaretliyor; `is(v, PgTable)` doğru API. Bir aracın doğru çalıştığını ancak
    ÇIKTISI söyler: "hata vermedi" yetmez.
+
+## §11.308 — Web yanlış mağazayı söylüyordu (ve ben yanlış ölçtüm)
+
+Hesap silme akışını iki platformda karşılaştırdım. Uç aynı (better-auth
+`delete-user`, ikisinde de parola isteğe bağlı), onay basamakları aynı, kayıp
+listesi aynı dört maddeyi sayıyor.
+
+Bir fark vardı: **abonelik uyarısı webde "Google Play" diyordu.** Oysa
+aboneliği App Store'dan alan biri de hesabını webden silebiliyor ve web hangi
+mağaza olduğunu **bilmiyor** — yanlış mağazayı söylemek kullanıcıyı hiç var
+olmayan bir ekrana yolluyor. Webe mağaza adı geçmeyen üçüncü bir metin kondu
+(`subscription_cancel_store`); mobilde mağaza belli olduğu için orada adıyla
+söylenmeye devam ediyor.
+
+**Ama önce yanlış bir sonuca vardım ve kayda değer olan o.** İlk taramada
+"mobilde mağaza uyarısı hiç yok" dedim ve düzeltmek üzere iki yeni sözlük
+satırı bile ekledim. Uyarı vardı: çağrı
+`tx(Platform.OS === "ios" ? "…_appstore" : "…_play")` biçimindeydi ve anahtar
+çıkaran desenim `t("anahtar"` arıyordu — **koşullu çağrıyı görmüyordu.** Kendi
+analizimde, defterin baştan beri kovaladığı hatanın aynısı: ölçüm, ölçtüğünü
+sandığı şeyin yanındakine bakıyor. Gereksiz eklediğim anahtar geri alındı.
+
+**§207** üç metni tek tek, doğru yüzeyde arıyor: web mağaza adsız olanı,
+mobil ikisini de, ve seçim platforma bağlı mı. Üç enjeksiyonun üçü yakalandı —
+biri tam da bugün düzelttiğim hâl (webin tek mağaza adı yazması).
+
+Ders, bir kural olarak: *anahtar kullanımını `t("…")` deseniyle saymak,
+koşullu ve değişkenle çağrılan her yeri gözden kaçırır; "bu yüzeyde şu metin
+var mı" sorusu ancak anahtar tek tek arandığında güvenilir.*

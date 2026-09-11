@@ -133,7 +133,12 @@ export function AccountDeleteForm({ email }: { email: string | null }) {
         <li>{t("deleteaccount.your_friendships_and_your_inbox")}</li>
         <li>{t("deleteaccount.your_account_and_your_email")}</li>
       </ul>
-      <p className="muted mb-4 text-xs">{t("deleteaccount.subscription_cancel_play")}</p>
+      {/* MAĞAZA ADI YAZILMIYOR, çünkü web BİLMİYOR. Buradaki metin
+          "Google Play" diyordu; oysa aboneliği App Store'dan alan biri de
+          hesabını webden silebiliyor ve ona yanlış mağazayı söylemek onu hiç
+          var olmayan bir ekrana yolluyor. Mobil tarafta mağaza belli, orada
+          adıyla söyleniyor (`DeleteAccountScreen`, `Platform.OS`). */}
+      <p className="muted mb-4 text-xs">{t("deleteaccount.subscription_cancel_store")}</p>
 
       <ConfirmDialog
         open={confirm}

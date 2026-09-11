@@ -227,6 +227,7 @@ export const enBase: Record<string, string> = {
   "deleteaccount.we_re_asking_one_last_time": "We're asking one last time",
   "deleteaccount.subscription_cancel_appstore": "If you subscribed through the App Store, you also have to cancel it in Settings › Apple Account › Subscriptions; deleting your account does not stop the subscription.",
   "deleteaccount.subscription_cancel_play": "If you subscribed through Google Play, you also have to cancel it in Play Store › Payments and subscriptions; deleting your account does not stop the subscription.",
+  "deleteaccount.subscription_cancel_store": "If you subscribed through a store, you also have to cancel it in the store where you bought it; deleting your account does not stop the subscription.",
   "deleteaccount.i_understand_my_data_will_be": "I understand my data will be permanently deleted.",
   "deleteaccount.your_data_is_gone_it_was_good_to": "Your data is gone. It was good to know you.",
   "deleteaccount.your_writing_speaking_records": "Your writing, speaking records and assessments",

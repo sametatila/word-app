@@ -227,6 +227,7 @@ export const trBase: Record<string, string> = {
   "deleteaccount.we_re_asking_one_last_time": "Son kez soruyoruz",
   "deleteaccount.subscription_cancel_appstore": "App Store üzerinden abonelik aldıysan, aboneliği Ayarlar › Apple Hesabı › Abonelikler bölümünden ayrıca iptal etmen gerekir; hesap silmek aboneliği durdurmaz.",
   "deleteaccount.subscription_cancel_play": "Google Play üzerinden abonelik aldıysan, aboneliği Play Store › Ödemeler ve abonelikler bölümünden ayrıca iptal etmen gerekir; hesap silmek aboneliği durdurmaz.",
+  "deleteaccount.subscription_cancel_store": "Mağaza üzerinden abonelik aldıysan, aboneliği satın aldığın mağazadan ayrıca iptal etmen gerekir; hesap silmek aboneliği durdurmaz.",
   "deleteaccount.i_understand_my_data_will_be": "Verilerimin kalıcı olarak silineceğini anladım.",
   "deleteaccount.your_data_is_gone_it_was_good_to": "Verilerin kaldırıldı. Seni tanımak güzeldi.",
   "deleteaccount.your_writing_speaking_records": "Yazıların, konuşma kayıtların ve değerlendirmelerin",
