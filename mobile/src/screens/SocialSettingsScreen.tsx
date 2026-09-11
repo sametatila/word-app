@@ -107,11 +107,14 @@ export function SocialSettingsScreen() {
               </View>
             </Section>
 
+            {/* Gorunurluk gercek bir radyo grubu - yanindaki nokta da onu
+                ciziyor - ama rol bilgisi yoktu: secili satir yalnizca yazi
+                renginden ve noktadan okunuyordu. Webde `aria-pressed` var. */}
             <Section title={tx("socialsettings.visibility")} colors={colors}>
               {VIS.map((v, i) => {
                 const active = me.visibility === v.key;
                 return (
-                  <PressableScale key={v.key} onPress={() => void save({ visibility: v.key })} disabled={busy} style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingVertical: 12, borderTopWidth: i === 0 ? 0 : 1, borderTopColor: colors.hairline }}>
+                  <PressableScale key={v.key} accessibilityRole="radio" accessibilityState={{ selected: active, disabled: busy }} onPress={() => void save({ visibility: v.key })} disabled={busy} style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingVertical: 12, borderTopWidth: i === 0 ? 0 : 1, borderTopColor: colors.hairline }}>
                     <View style={{ flex: 1 }}>
                       <Text variant="bodyStrong" color={active ? colors.primaryText : colors.text}>{tx(v.label)}</Text>
                       <Text variant="caption" color={colors.textMuted}>{tx(v.sub)}</Text>

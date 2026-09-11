@@ -90,6 +90,10 @@ export function ChoiceGame({ round, onDone, reveal = true }: { round: ChoiceRoun
           return (
             <PressableScale
               key={opt}
+              /* Secim ve kapali olma hali yalnizca RENKTEN okunuyordu; webde
+                 ayni dugme `aria-pressed` + dogal `disabled` tasiyor. */
+              accessibilityRole="radio"
+              accessibilityState={{ selected: isPicked, disabled: picked !== null }}
               onPress={() => choose(opt)}
               style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between", backgroundColor: bg, borderColor: border, borderWidth: 1.5, borderRadius: radii.lg, paddingVertical: spacing.lg, paddingHorizontal: spacing.lg }}
             >

@@ -121,7 +121,11 @@ function ChoiceInput({ q, done, onSettle, colors }: { q: SkillQuestion; done: bo
         const bg = !done ? colors.surface : isAnswer ? colors.successSoft : pick === oi ? colors.dangerSoft ?? colors.surface2 : colors.surface;
         const bc = !done ? colors.border : isAnswer ? colors.success : pick === oi ? colors.danger : colors.hairline;
         return (
-          <PressableScale key={oi} onPress={() => { if (done) return; setPick(oi); onSettle(isAnswer); }}
+          /* Sikkin secili hali yalnizca ZEMIN RENGIYLE anlatiliyordu - webde
+             ayni dugme `aria-pressed` tasiyor (bkz. skills/quiz). Cevaptan
+             sonra tum sikler yutuluyor (`if (done) return`), o yuzden
+             `disabled` da turun kapali olmasini soyler. */
+          <PressableScale key={oi} accessibilityRole="radio" accessibilityState={{ selected: pick === oi, disabled: done }} onPress={() => { if (done) return; setPick(oi); onSettle(isAnswer); }}
             style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between", gap: spacing.sm, paddingHorizontal: spacing.md, paddingVertical: 12, borderRadius: radii.md, borderWidth: 1.5, borderColor: bc, backgroundColor: bg, opacity: done && !isAnswer && pick !== oi ? 0.55 : 1 }}>
             <Text variant="body" color={colors.text} style={{ flex: 1 }}>{opt}</Text>
             {done && isAnswer ? <CheckIcon color={colors.successText} size={18} /> : done && pick === oi ? <XIcon color={colors.dangerText} size={18} /> : null}
@@ -191,7 +195,9 @@ function OrderInput({ q, done, onSettle, colors }: { q: SkillQuestion; done: boo
         {order.map((v, pos) => {
           const bc = done ? (v === pos ? colors.success : colors.danger) : picked === pos ? colors.primary : colors.border;
           return (
-            <PressableScale key={v} onPress={() => tap(pos)} style={{ flexDirection: "row", alignItems: "center", gap: spacing.sm, paddingHorizontal: spacing.md, paddingVertical: 11, borderRadius: radii.md, borderWidth: 1.5, borderColor: bc, backgroundColor: colors.surface }}>
+            /* Iki ogeyi degistirmek icin once birini seciyorsun; o secim de
+               renkten baska bir seyle soylenmeli (webde `aria-pressed`). */
+            <PressableScale key={v} accessibilityState={{ selected: picked === pos, disabled: done }} onPress={() => tap(pos)} style={{ flexDirection: "row", alignItems: "center", gap: spacing.sm, paddingHorizontal: spacing.md, paddingVertical: 11, borderRadius: radii.md, borderWidth: 1.5, borderColor: bc, backgroundColor: colors.surface }}>
               <Text variant="caption" color={colors.textMuted} style={{ width: 18 }}>{pos + 1}.</Text>
               <Text variant="body" color={colors.text} style={{ flex: 1 }}>{items[v]}</Text>
             </PressableScale>

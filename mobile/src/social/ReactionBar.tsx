@@ -40,7 +40,7 @@ export function ReactionBar({ eventId, summary, disabled }: { eventId: number; s
           const mine = s.mine === k;
           const tone = reactionTone(k, colors);
           return (
-            <PressableScale key={k} onPress={() => void pick(k)} disabled={disabled || busy} accessibilityLabel={`${reactionLabel(k)} ${s.counts[k]}`} style={[{ flexDirection: "row", alignItems: "center", gap: 5, paddingHorizontal: 10, paddingVertical: 6, borderRadius: radii.pill, backgroundColor: mine ? tone : tone + "22" }, mine ? softShadow(tone, 4) : {}]}>
+            <PressableScale key={k} onPress={() => void pick(k)} disabled={disabled || busy} accessibilityState={{ selected: mine }} accessibilityLabel={`${reactionLabel(k)} ${s.counts[k]}`} style={[{ flexDirection: "row", alignItems: "center", gap: 5, paddingHorizontal: 10, paddingVertical: 6, borderRadius: radii.pill, backgroundColor: mine ? tone : tone + "22" }, mine ? softShadow(tone, 4) : {}]}>
               {/* Dolu hâlde `onFill`, tintli hâlde tonun metin varyantı: sabit
                   beyaz dolu zeminde 1.94-2.88, ton kendi tinti üstünde 2.54-3.58
                   veriyordu (bkz. `theme/colors.ts`). */}
@@ -58,11 +58,14 @@ export function ReactionBar({ eventId, summary, disabled }: { eventId: number; s
       {who ? <Text variant="micro" color={colors.textFaint} style={{ marginTop: 6 }}>{who}</Text> : null}
       {open ? (
         <View style={{ flexDirection: "row", justifyContent: "space-between", marginTop: spacing.sm }}>
-          {REACTION_KINDS.map((k) => {
+          {/* Kendi tepkim yalnizca DOLU ZEMINLE anlatiliyordu: renk tek
+            kanaldi, ekran okuyucu "begendim" ile "begenmedim" arasinda fark
+            gormuyordu. Webde ayni dugme `aria-pressed` tasiyor. */}
+        {REACTION_KINDS.map((k) => {
             const tone = reactionTone(k, colors);
             const mine = s.mine === k;
             return (
-              <PressableScale hitSlop={4} key={k} onPress={() => void pick(k)} accessibilityLabel={reactionLabel(k)} style={[{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: mine ? tone : tone + "22" }, mine ? softShadow(tone, 6) : {}]}>
+              <PressableScale hitSlop={4} key={k} onPress={() => void pick(k)} accessibilityRole="radio" accessibilityState={{ selected: mine }} accessibilityLabel={reactionLabel(k)} style={[{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: mine ? tone : tone + "22" }, mine ? softShadow(tone, 6) : {}]}>
                 <ReactionGlyph kind={k} size={22} colors={colors} color={mine ? colors.onFill : onTint(tone, colors)} />
               </PressableScale>
             );
