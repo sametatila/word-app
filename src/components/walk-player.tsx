@@ -351,6 +351,7 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
    * mikrofon çalışıyor, ama kullanıcı cebe koyunca ne ışık ne kazara dokunma.
    */
   const [screenDark, setScreenDark] = useState(false);
+  const darkOverlay = useRef<HTMLDivElement | null>(null);
   /** Tur ortasında "Bitir" onayı açık mı. */
   const [quit, setQuit] = useState(false);
   /** Karanlık katmandan çıkış: kısa sürede üç dokunuş (cepte kazara açılmasın). */
@@ -946,6 +947,31 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
     exitFullscreen();
     track("walk_switch", 0, "dark-exit");
   }, [exitFullscreen]);
+
+  /**
+   * KARANLIK ORTU: ODAK VE ESCAPE.
+   *
+   * Dugumdeki `onKeyDown` ise yaramazdi - ortuya odak verilmedigi surece hic
+   * atesleme almaz. `achievement-unlock`un kalibi izleniyor: ortu gelince
+   * odagi aliyor, pencere dinleyicisi Escape'i yakaliyor, ortu kalkinca odak
+   * geldigi yere donuyor.
+   */
+  useEffect(() => {
+    if (!screenDark) return;
+    const geri = document.activeElement as HTMLElement | null;
+    darkOverlay.current?.focus();
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key !== "Escape") return;
+      e.preventDefault();
+      exitDark();
+    };
+    window.addEventListener("keydown", onKey);
+    return () => {
+      window.removeEventListener("keydown", onKey);
+      geri?.focus?.();
+    };
+  }, [screenDark, exitDark]);
+
 
   // Tur oynamıyorsa karanlık katman ve tam ekran kalkar (duraklat/çık/bitti sonrası).
   useEffect(() => {
@@ -1739,7 +1765,27 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
       {screenDark ? (
         <div
           onClick={onDarkTap}
-          className="fixed inset-0 z-[120] flex flex-col items-center justify-end"
+          /* ORTU KENDINI DUYURUYOR VE KLAVYEYE BIR CIKIS BIRAKIYOR.
+             Iki ayri kusur vardi:
+
+             1. Ortu ekranin tamamini kapatiyor ve etkilesim kipini
+                degistiriyor ("ekran karanlik ama acik - seni dinliyorum"),
+                ama hicbir sey bunu duyurmuyordu: sesli okuyucu kullanan biri
+                ortunun geldigini ogrenmiyordu.
+             2. Cikis yalnizca UC DOKUNUSTU. Dokunmalarin yutulmasi bilincli
+                (cepte kazara basilmasin) ama klavye kullanan biri icin bu bir
+                KLAVYE TUZAGI: ortu her seyi kapatiyor, tiklamalar yutuluyor ve
+                disari cikan hicbir tus yok (WCAG 2.1.2). Escape eklendi -
+                kazara basilan bir tus degil, bilincli bir cikis; uc dokunus
+                kurali dokunmatikte oldugu gibi kaliyor.
+
+             Bu ortu WEB'E OZEL (anahtarlari `i18n/web`de): mobilde ekran
+             gercekten kapaniyor, taklit bir karartmaya gerek yok. Yani burada
+             Android'e bakilacak bir karsilik yok, olcut mutlak. */
+          role="status"
+          ref={darkOverlay}
+          tabIndex={-1}
+          className="fixed inset-0 z-[120] flex flex-col items-center justify-end outline-none"
           style={{ background: "#000", touchAction: "none" }}
         >
           <p className="mb-24 px-8 text-center text-caption leading-relaxed" style={{ color: "rgba(255,255,255,0.22)" }}>
