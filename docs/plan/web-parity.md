@@ -10471,3 +10471,47 @@ ben altı sanıyordum.
 (§118/§119 sınıfı: listeyi değil listenin kendisini ölçmek) bunu anında ihlal
 olarak bildirdi — `RUBRIC_PASS_PCT2` diye yeniden adlandırılan bir sabit hâlâ
 "var" sayılırdı. Desen `\b` ile sınırlandı.
+
+## §11.321 — Yarıçap borcu kapandı (88 → 0) ve kapı iki taraflı oldu
+
+§11.318'in kalan 88 kullanımı da çevrildi; web'de ölçek dışı yarıçap kalmadı.
+Basamak her yuvada **rol adına** göre seçildi, sayıya en yakın basamağa göre
+değil — ölçeğin adları zaten rolü söylüyor:
+
+- **iskelet blok** (`h-10 animate-pulse`) → tile. Yön mobilden: `Skeleton`
+  bileşeninin varsayılan yarıçapı `radii.md`.
+- **metin satırı iskeleti** (h-3.5 … h-5) → `rounded-full`. Yine mobilden:
+  `SkeletonLine` yarıçapı `min(radii.sm, yükseklik/2)` yazıyor, yani 20 px'e
+  kadar çubuk tamamen yuvarlak. h-6 (24 px) → chip, çünkü orada formül 10
+  veriyor.
+- **giriş alanı / textarea** → tile · **buton** → panel · **uyarı bloğu, iç
+  panel, liste satırı** → panel · **satır içi etiket, seçenek, küçük ikon
+  düğmesi** → chip · **ikon karosu** → tile.
+
+**Kapı mutlak oldu.** Taban dosyası silindi: borç sayacı değil, ölçek dışı tek
+bir kullanımı hata sayan bir kural. İki kayıtlı istisna sebepleriyle duruyor.
+
+**Ve kapı artık iki taraflı.** Web'in yarıçapları policelenirken mobilin ham
+sayıları serbest kalsaydı kapı tek taraflı olurdu ve ayrışma oradan geri
+gelirdi. Mobilde 105 ham `borderRadius: <sayı>` var; ölçüm ikisinin meşru
+olduğunu gösterdi ve ikisi de kesin ayırt edilebiliyor:
+
+- **daire / pill**: yarıçap boyutun yarısı (48'lik dairede 24, 22'lik
+  başparmakta 11). Mobilin kendi `SkeletonBar`/`SkeletonPill`i de böyle
+  hesaplıyor.
+- **saç teli çubuk**: 2–9 px, ilerleme çubuklarının ucu. Ölçeğin en küçüğü (10)
+  bu çubukları tamamen yuvarlatırdı; web'de de aynı sınıf kayıtlı istisna.
+
+Kalan iki durum kusur ve ikisi de ölçülebilir: (1) sayı ölçekteki bir değere
+**eşit** — jeton yazılmalı, yoksa jeton değiştiğinde o yuva geride kalır;
+(2) sayı 10'un üstünde, ölçekte yok ve bir dairenin yarısı da değil. Üç yuva
+çıktı ve düzeltildi: `AvatarScreen` ve `PathScreen` 44 px'lik karolara `20`
+yazıyordu (= `radii.lg`), `WritingsScreen`in 80 px'lik boş durum karosu `24`
+(ölçek dışı → `radii.xl`).
+
+Dört enjeksiyonun dördü yakalandı: web'de yeni ölçek dışı sınıf, ölü istisna,
+mobilde jeton yerine sayı, mobilde ölçek dışı sayı.
+
+`globals.css`'teki ölçek yorumu da düzeltildi — "hiçbiri gözden geçirilmeden"
+diyen cümle artık gözden geçirmenin yapıldığını ve kapının onu tuttuğunu
+söylüyor.
