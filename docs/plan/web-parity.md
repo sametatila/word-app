@@ -6769,3 +6769,35 @@ sonra ipucu, temizle, doğruda onay satırı. `lib/shuffle` webin
 
 Kapılar: §101 yazma görevinin on bir noktası, §102 karıştırma gövdesi.
 
+
+### 11.191 Erdi Android'de hiç konuşmuyordu
+
+`coach.` uzayı: webde 40 anahtar, mobilde sıfır. Web öğrenme ANLARINDA
+maskotun yanında tek cümle gösteriyor (WP-66) — sınav başlarken, sonucunda ve
+zayıf nokta turunun özetinde. Android'de maskot aynı yerlerde sessizce
+duruyordu.
+
+`install.` uzayı (24 anahtar) da denetlendi ve **gerçekten web-özel**: "ana
+ekrana ekle" adımları bir APK'de karşılıksız. Bu turların ilk temiz çıkan
+muafiyeti.
+
+Taşınan: `game/coachLines` (sekiz an × beş cümle, yer tutucu kuralı, tekrar
+etmeyen seçim) ve `ui/CoachBubble` (dört saniye duran balon; hareket
+azaltmada düz metin; koyu zeminde sabit mürekkep). Üç bağlantı web ile aynı
+yerde. "Son söylenenler" kaydı açılışta belleğe okunuyor, çünkü seçim çizim
+sırasında ve senkron yapılıyor.
+
+`plan_*` ve `weekly` anları iki tarafta da çağrılmıyor ve web bunu kendi
+dosyasında yazmış; tablo bütün olarak taşındı.
+
+**İki kapı kendi işini kendi haber verdi:** §44'ün "yalnız webde ölçülüyor"
+listesi `coach_show`u kırmızıya çevirdi, `check:colors` balonun sabit
+mürekkebini yakaladı.
+
+**Ve kendi kapımda §90'ın hatasını tekrarladım:** §103'ün bağlantı ölçümü
+başta an tablosuyla BİRLİKTE okunuyordu; tablo zaten `"weak_done"` dizgesini
+taşıdığı için ekrandaki çağrı koparıldığında kapı yeşil kalıyordu — üstelik
+bunu, aynı bölümün yorumunda "olayın tanımlı olması yetmez, bağlı olması da
+gerek" diye yazdıktan hemen sonra. Ölçüm ekranlardan ayrıldı ve "var/yok"
+yerine SAYIYLA yapılıyor: iki sınav yüzeyi de kendi balonunu çizmeli.
+
