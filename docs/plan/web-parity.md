@@ -7842,3 +7842,33 @@ Panoya `useT` girerse satır düşer.
 
 Dört enjeksiyonun dördü de yakalandı (webin rozeti, mobilin niteliği, webin
 `Stat`i, mobilin `UserScreen`i).
+
+### 11.234 Premium bitiş tarihi cihazın dilinden okunuyordu
+
+Premium bitiş tarihi **iki platformda da** cihazın/tarayıcının dilinden
+biçimleniyordu: webde yerel `undefined` bırakılmış, Android'de hiç
+verilmemişti. Arayüzü Türkçe seçmiş ama telefonu ya da tarayıcısı İngilizce
+olan kullanıcı "September 11, 2026" görüyordu. **Ödeme kararının dayandığı
+tarih bu** — en okunması gereken tarih. §11.228'in kalıbı: aynı hata iki
+tarafta, ikisi birlikte düzeltildi (`localeOf(lang)` / `dateLocale()`).
+
+**§141** bütün `toLocale*String` çağrılarını tarıyor; kural dosya adı saymıyor.
+Yönetim panosu muaf (tek dilli, §140'ta ayrıca denetleniyor). Kapının argüman
+penceresi ilk yazılışında `[^,)]*` ile kesiliyordu ve `dateLocale()`in **kendi
+kapanış parantezinde** duruyordu: doğru çağrıları "yerelsiz" sayıyordu —
+**on yedinci biçim.**
+
+### 11.235 Yüzde işareti otuz iki yerde koda gömülü (taban kondu)
+
+Aynı taramayı yüzdeye uygulayınca beklediğimden büyük bir şey çıktı: işaret
+**otuz iki yerde** koda gömülü (`{pct}%`) ve **iki platformda da** öyle. Yani
+bu tek bir hata değil, birikmiş bir borç. Almanca arayüzde hepsi "85%" yazıyor,
+oysa dilin kuralı "85 %" (boşluklu); uygulamanın biçimleyicisi bunu zaten
+biliyor (`formatPercent` / `common.pct`) ve tur özetinde §124'te tam bu
+gerekçeyle kullanılmış.
+
+Otuz iki yeri bir turda değiştirmek bu turun işi değil. Bunun yerine
+`i18n-hardcoded`in kalıbı kuruldu: **taban 32, sayı artamaz.** Yeni bir yüzey
+işareti koda gömerse kapı ihlal veriyor (enjeksiyonla doğrulandı: 33 > 32),
+borç ödendikçe taban aşağı çekilecek. Bir kere ölçüldüğü için artık sessiz
+değil.

@@ -4,7 +4,8 @@ import { useEffect, useState } from "react";
 import { supportsMockExams } from "@/lib/mock-exams";
 import { useShell } from "@/components/app-shell";
 import { track } from "@/lib/track";
-import { useT } from "@/lib/i18n/client";
+import { useLang, useT } from "@/lib/i18n/client";
+import { localeOf } from "@/lib/i18n/dict";
 import { CrownIcon, CheckIcon } from "@/components/icons";
 import type { CopyLine, PlanPrice } from "@/lib/premium/gates";
 
@@ -57,9 +58,21 @@ export function PremiumPaywall({
     if (!premium) track("paywall_view", 0, source);
   }, [source, premium]);
 
+  const lang = useLang();
   const line = (l: CopyLine) => t(l.key, l.params);
+  /*
+   * TARİH ARAYÜZ DİLİNDE, TARAYICININ DİLİNDE DEĞİL.
+   *
+   * Yerel `undefined` bırakılmıştı, yani tarih TARAYICININ dilinden
+   * biçimleniyordu: arayüzü Türkçe olan ama tarayıcısı İngilizce olan
+   * kullanıcı "September 11, 2026" görüyordu. Uygulamanın kuralı bunun tersi
+   * ve tek yeri var (`lib/i18n/dict` `localeOf`); aynı hata Androidde de
+   * vardı (`PaywallScreen`, orada yerel HİÇ verilmiyordu) ve ikisi birlikte
+   * düzeltildi. Premium bitiş tarihi ödeme kararının dayanağı, yani en
+   * okunması gereken tarih.
+   */
   const date = (iso: string | null) =>
-    iso ? new Date(iso).toLocaleDateString(undefined, { day: "numeric", month: "long", year: "numeric" }) : "";
+    iso ? new Date(iso).toLocaleDateString(localeOf(lang), { day: "numeric", month: "long", year: "numeric" }) : "";
 
   /** Durum cümlesi — kaynağa ve mağaza durumuna göre değişiyor. */
   const stateLine = (): string => {

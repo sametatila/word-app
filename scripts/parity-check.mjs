@@ -4977,6 +4977,85 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   sameList("yonetim panosu tek dilli", [/\buseT\(|\bt\(\"/.test(pano) ? "cok dilli olmus" : "tek dilli"], ["tek dilli"], "bulunan", "beklenen");
 }
 
+/* ── 141. tarih ve yuzde arayuz dilinde mi ────────────────────────────────
+ * Premium bitis tarihi iki platformda da CIHAZIN/TARAYICININ dilinden
+ * biciimleniyordu: webde yerel `undefined` biraklimis, Androidde hic
+ * verilmemisti. Arayuzu Turkce secmis ama telefonu/tarayicisi Ingilizce olan
+ * kullanici "September 11, 2026" goruyordu. Odeme kararinin dayandigi tarih
+ * bu; iki hata birlikte duzeltildi (§11.228'in kalibi).
+ *
+ * Olculen: `toLocale*` cagrilarinin hepsi arayuz yerelini aliyor mu. Kural
+ * yuzey tariyor, dosya adi saymiyor.
+ *
+ * MUAF: `app/admin/*` - pano bastan beri tek dilli (bkz. §140) ve orada
+ * `tr-TR` bilincli. Muafiyet §140'ta ayrica denetleniyor. */
+{
+  const walkAll = (d, out = []) => {
+    for (const e of readdirSync(new URL("../" + d, import.meta.url), { withFileTypes: true })) {
+      const p = d + "/" + e.name;
+      if (e.isDirectory()) { if (!/node_modules|__tests__/.test("/" + p)) walkAll(p, out); }
+      else if (/\.tsx?$/.test(e.name)) out.push(p);
+    }
+    return out;
+  };
+  const yerelsiz = [];
+  for (const kok of ["src/components", "src/app", "mobile/src"]) {
+    for (const f of walkAll(kok)) {
+      if (f.startsWith("src/app/admin")) continue;
+      const src = read(f).replace(/\/\*[\s\S]*?\*\//g, " ").replace(/(^|[^:"'`\\])\/\/.*$/gm, "$1");
+      /* Argument penceresi: `[^,)]*` ile kesmek `dateLocale()`in kendi
+         kapanis parantezinde duruyordu ve kapi dogru cagrilari "yerelsiz"
+         sayiyordu - on yedinci biçim. Simdi cagrinin ilk kirk karakterine
+         bakiliyor. */
+      for (const m of src.matchAll(/\.toLocale(?:Date|Time)?String\(([\s\S]{0,40})/g)) {
+        const arg = m[1].trim();
+        /* Kabul edilen: `dateLocale()` (mobil), `localeOf(lang)` (web) ve dil
+           kodunu dogrudan veren `currentLang()`. Bos ya da `undefined`
+           cihazin/tarayicinin dilini secer. */
+        if (/^\s*(?:dateLocale\(\)|localeOf\(|currentLang\(\)|[\w.]*locale|[\w.]*lang\b)/.test(arg)) continue;
+        yerelsiz.push(f.split("/").pop() + ": toLocale…(" + (arg.split("\n")[0].slice(0, 24) || "bos") + ")");
+      }
+    }
+  }
+  sameList("tarih yereli arayuzden", yerelsiz.length ? yerelsiz : ["yok"], ["yok"], "yerelsiz cagri", "beklenen");
+
+  /* YUZDE: isaretin yeri dile ait (tr "%85", en "85%", de "85 %") ve iki
+     taraf da onu SOZLUKTEN aliyor. Bu turda tarandi ve temiz cikti; kapi
+     isaretin kodda yazilmasini yakaliyor. */
+  const kodaGomulu = [];
+  for (const kok of ["src/components", "src/app", "mobile/src"]) {
+    for (const f of walkAll(kok)) {
+      if (f.startsWith("src/app/admin") || /\/i18n\//.test(f)) continue;
+      const src = read(f).replace(/\/\*[\s\S]*?\*\//g, " ").replace(/(^|[^:"'`\\])\/\/.*$/gm, "$1");
+      /* JSX icinde `{pct}%` ya da `%{pct}` gibi elle yazilmis isaret. */
+      for (const m of src.matchAll(/\{\s*(?:\w+\.)?(?:pct|accuracy)\s*\}\s*%|%\s*\{\s*(?:\w+\.)?(?:pct|accuracy)\s*\}/g)) {
+        kodaGomulu.push(f.split("/").pop() + ": " + m[0].trim());
+      }
+    }
+  }
+  /*
+   * TABAN SAYIMI, "sifir" DEGIL. Tarama gosterdi ki isaret otuz iki yerde
+   * koda gomulu ve IKI PLATFORMDA da oyle - yani bu tek bir hata degil,
+   * birikmis bir borc. Almanca arayuzde hepsi "85%" yaziyor, oysa dilin
+   * kurali "85 %" (bosluklu); uygulamanin bicimleyicisi de bunu biliyor
+   * (`formatPercent` / `common.pct`) ve tur ozeti gibi yerlerde zaten
+   * kullaniliyor.
+   *
+   * Kapi `i18n-hardcoded`in kalibiyla kuruldu: sayi ARTAMAZ. Yeni bir yuzey
+   * isareti koda gomerse ihlal verir; borç odendikce taban asagi ceklir.
+   * Bir kerede otuz iki yeri degistirmek bu turun isi degil - ama bir kere
+   * OLCULDUGU icin artik sessiz de degil.
+   */
+  const TABAN = 32;
+  sameList(
+    "yuzde isareti koda gomulu (taban)",
+    ["sayi=" + (kodaGomulu.length <= TABAN ? "taban icinde (" + kodaGomulu.length + "/" + TABAN + ")" : "ARTTI: " + kodaGomulu.length + " > " + TABAN)],
+    ["sayi=taban icinde (" + Math.min(kodaGomulu.length, TABAN) + "/" + TABAN + ")"],
+    "bulunan",
+    "beklenen",
+  );
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"

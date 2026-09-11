@@ -127,7 +127,11 @@ export function PaywallScreen() {
    * mağazaya sorulsaydı "abonelik yok" derdi.
    */
   if (status?.premium) {
-    const until = status.until ? new Date(status.until).toLocaleDateString() : "";
+    /* TARİH ARAYÜZ DİLİNDE: yerel hiç verilmiyordu, yani tarih CİHAZIN
+       dilinden biçimleniyordu. Arayüzü Türkçe seçmiş ama telefonu İngilizce
+       olan kullanıcı "September 11, 2026" görüyordu. Sözlüğün kendi yereli
+       var (`lib/i18n` `dateLocale`) ve webde de aynı hata duruyordu. */
+    const until = status.until ? new Date(status.until).toLocaleDateString(dateLocale(), { day: "numeric", month: "long", year: "numeric" }) : "";
     const line =
       status.source === "bonus"
         ? t("premiumstate.bonus_until", { date: until })
