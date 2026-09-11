@@ -10183,3 +10183,44 @@ bayatlamasını görmeye devam ediyor.
 Kapı bilerek **elle beslenen bir liste** tutuyor: "şablonla kurulan her
 anahtarı bul" diye genel bir tarama, değer kümesini tahmin etmek zorunda kalır
 ve tahmin eden kapı ya gürültü ya kalıcı yeşil üretir (§11.305'in dersi).
+
+## §11.310 — Belgelenen `kind` kümesi ile üretilen değerler
+
+Şablon anahtar taramasını olay adlarına taşıdım ve orası **temiz çıktı**: iki
+platformda 186 çağrı yerinin hepsinde olay adı düz dizgi (`test:events` zaten
+kolluyor), tek istemciden gelen ad `isEventName` beyaz listesinden geçiyor, ve
+`kind` politikaya bağlı kapalı bir desenle süzülüyor
+(`^[a-z0-9_:-]{1,32}$`, gizlilik politikası §8'e bağlı — kümeyi genişletmek
+politikayı değiştirmek demek).
+
+Ama bir kat aşağıda bulgu vardı. `lib/events` her olayın yanında `kind`in ne
+alabileceğini yazıyor ve o cümle bir sözleşme: pano `kind`e göre gruplayıp
+satır satır gösteriyor (`lib/admin`). `production_attempt` için yorum **altı**
+değer sayıyordu:
+
+`translate | transform | free_sentence | writing_free | speaking_drill | roleplay`
+
+Üretilen ise **dört**: `lib/assess` `productionKind` yalnız serbest cümle,
+serbest yazma, konuşma alıştırması ve rol yapmayı yazıyor. **Çeviri ve
+dönüştürme turları bu olayı hiç yazmıyor**, yani panonun "üretim görevleri"
+kırılımında o iki satır hiç görünmüyor — okuyan kişi "henüz veri yok" sanıyor.
+
+Bunu tek taraflı düzeltmedim, çünkü **ölçümün tanımı** söz konusu: o iki tur
+yerel hakemle de geçilebiliyor, yani puan her zaman 0–100 aralığında bir
+değerlendirmeden gelmiyor. "Doğru=100 / yanlış=0" yazmak ortalamayı bambaşka
+bir şeye çevirir ve KPI'ın anlamını sessizce değiştirir. Karar ürün tarafında;
+yorum gerçeğe uyduruldu ve gerekçesi oraya yazıldı (§11.289: yanlış yorum
+yokluktan kötü).
+
+**`check:key-families`** artık bunu da kolluyor: belgelenen dört değerin
+hepsi üretiliyor mu, fazlası var mı, ve yorum hâlâ kümeyi anlatıyor mu. Üç
+enjeksiyonun üçü yakalandı — üçüncüsü yorumun bayatlaması.
+
+Ölçüm dar tutuldu: öteki olayların `kind`i serbest biçimli ("B1:reading",
+ekran anahtarı, hata tipi) ve kapalı küme değil. Kapalı küme yazan yeni bir
+olay eklenirse kapıya bir satır gerekiyor.
+
+**Paralel oturum notu:** mobil `tsc` şu an iki hata veriyor
+(`FriendsScreen`, `InboxScreen` → `avatar` alanı henüz tipte yok) ve
+`check:parity` `/api/me` için "mobilde eksik: avatar" diyor. Üçü de başka bir
+oturumun kaydedilmemiş işi; dosyalarına dokunulmadı.

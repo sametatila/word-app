@@ -102,6 +102,43 @@ for (const fam of FAMILIES) {
   for (const k of extra) problems.push(`sözlükte var, kaynakta yok: ${k}  (kaynak: ${fam.source})`);
 }
 
+/*
+ * OLAY `kind` KÜMELERİ: belgelenen ile üretilen aynı mı?
+ *
+ * `lib/events` her olayın yanında `kind`in ne alabileceğini yazıyor ve o
+ * cümle bir sözleşme: pano `kind`e göre gruplayıp satır satır gösteriyor
+ * (`lib/admin`). Belgelenip ÜRETİLMEYEN bir değer, panoda hiç görünmeyecek
+ * bir satır demek — ve okuyan kişi onu "henüz veri yok" sanır.
+ *
+ * `production_attempt` tam bunu yaşadı: yorum altı değer sayıyordu, dördü
+ * üretiliyordu. Kapı belgelenen kümeyi `productionKind`in ürettikleriyle
+ * karşılaştırıyor.
+ *
+ * YALNIZ BU OLAY ÖLÇÜLÜYOR ve sebebi dar tutmak: ötekilerin `kind`i serbest
+ * biçimli ("B1:reading", ekran anahtarı, hata tipi) ve kapalı bir küme
+ * değil. Kapalı küme yazan bir olay eklenirse buraya da bir satır gerekiyor.
+ */
+const eventsSrc = read("src/lib/events.ts");
+const assessSrc = read("src/lib/assess.ts");
+const PRODUCTION_EXPECTED = ["free_sentence", "writing_free", "speaking_drill", "roleplay"];
+const kindFn = assessSrc.slice(assessSrc.indexOf("function productionKind"));
+const producedKinds = [...kindFn.slice(0, kindFn.indexOf("\n}")).matchAll(/return "([a-z_]+)"/g)].map((m) => m[1]);
+if (!producedKinds.length) {
+  problems.push("production_attempt: `productionKind` okunamadı (lib/assess)");
+} else {
+  for (const v of PRODUCTION_EXPECTED.filter((x) => !producedKinds.includes(x))) {
+    problems.push(`production_attempt: "${v}" artık üretilmiyor (lib/assess productionKind)`);
+  }
+  for (const v of producedKinds.filter((x) => !PRODUCTION_EXPECTED.includes(x))) {
+    problems.push(`production_attempt: "${v}" üretiliyor ama beklenen kümede yok — lib/events yorumu ve bu kapı güncellenmeli`);
+  }
+  /* Yorum da gerçeği söylemeli: dört değerden söz etmeyen bir yorum yine
+     bayatlamış demektir (§11.289: yanlış yorum yokluktan kötü). */
+  if (!/YALNIZ DÖRT DEĞER/.test(eventsSrc)) {
+    problems.push("production_attempt: lib/events yorumu `kind` kümesini artık anlatmıyor");
+  }
+}
+
 if (problems.length) {
   console.error("\nŞABLONLA KURULAN ANAHTAR EKSİK:\n");
   for (const p of problems) console.error("  " + p);

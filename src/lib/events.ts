@@ -82,7 +82,23 @@ export const EVENT_NAMES = [
     (öğrencinin yazdığı cümle, konuşma dökümü) hiçbir zaman buraya yazılmaz —
     o içerik kendi tablosunda durur (`assessments`), burada yalnız puanı var.
   */
-  "production_attempt", // üretim görevi puanlandı (kind = translate|transform|free_sentence|writing_free|speaking_drill|roleplay, value = 0–100)
+  /*
+    Üretim görevi puanlandı; `value` = 0–100.
+
+    `kind` YALNIZ DÖRT DEĞER ALIYOR ve bunu yazmak gerekiyor: bu satır uzun
+    süre `translate|transform|free_sentence|writing_free|speaking_drill|roleplay`
+    diye altı değer sayıyordu, oysa `translate` ve `transform` hiçbir yerde
+    ÜRETİLMİYOR. Dört değerin tamamı tek yerden geliyor (`lib/assess`
+    `productionKind`): serbest cümle, serbest yazma, konuşma alıştırması, rol
+    yapma.
+    Yani çeviri ve dönüştürme turları bu olayı hiç yazmıyor ve panonun
+    "üretim görevleri" kırılımında (bkz. `lib/admin`, `kind`e göre gruplama)
+    o iki satır hiç görünmüyor. Bunun sebebi ölçüm TANIMI: iki tur yerel
+    hakemle de geçilebiliyor, yani puan her zaman 0–100 aralığında bir
+    değerlendirmeden gelmiyor; "doğru=100/yanlış=0" yazmak ortalamayı bambaşka
+    bir şeye çevirirdi. Karar ürün tarafında (bkz. web-parity §11.310).
+  */
+  "production_attempt",
   "exam_start", // sınava girildi (kind = sınav türü:seviye, örn. "level:B1")
   "exam_finish", // sınav bitti (kind = sınav türü:seviye, value = puan 0–100)
   "mock_exam_start", // deneme sınavı bölümü açıldı (kind = "B1:reading")
