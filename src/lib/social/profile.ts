@@ -18,6 +18,8 @@ import { assignOne, ensureUsernames } from "./usernames";
 import { VISIBILITIES, type FeedItem, type PublicUser, type Relation, type Visibility } from "./types";
 
 export type SocialMe = {
+  /** Kişinin kendi avatarı, ham JSON (bkz. lib/avatar-config). */
+  avatar: string | null;
   userId: string;
   name: string | null;
   username: string;
@@ -34,7 +36,7 @@ export type SocialMe = {
 
 /** Kullanıcı adı yoksa görünen addan türetip yazar (yarışa dayanıklı, bkz. usernames.ts). Sosyal ekran hep bir adla açılır. */
 export async function ensureUsername(userId: string): Promise<string> {
-  const [p] = await db.select({ username: profiles.username, name: profiles.displayName }).from(profiles).where(eq(profiles.userId, userId)).limit(1);
+  const [p] = await db.select({ username: profiles.username, avatar: profiles.avatar, name: profiles.displayName }).from(profiles).where(eq(profiles.userId, userId)).limit(1);
   if (!p) throw new SocialError("not_found", 404);
   if (p.username) return p.username;
   const assigned = await assignOne(userId, p.name);
@@ -63,6 +65,7 @@ export async function socialMe(userId: string): Promise<SocialMe> {
     userId,
     name: p.displayName,
     username,
+    avatar: p.avatar,
     bio: p.bio,
     level: p.level,
     visibility: p.visibility as Visibility,
@@ -189,7 +192,7 @@ export async function publicProfile(viewer: string, usernameRaw: string): Promis
     canSee ? feed(viewer, null, 5, uid) : Promise.resolve({ items: [] as FeedItem[], nextCursor: null }),
   ]);
   return {
-    user: { userId: uid, name: p.displayName, username, level: p.level },
+    user: { userId: uid, name: p.displayName, username, avatar: p.avatar, level: p.level },
     bio: canSee ? p.bio : null,
     visibility,
     relation: rel.state,
@@ -229,7 +232,7 @@ export async function searchUsers(me: string, qRaw: string): Promise<SearchHit[]
   const blocked = [...(await blockedSet(me)), me];
   const like = `%${q.replace(/[%_\\]/g, (m) => `\\${m}`)}%`;
   const rows = await db
-    .select({ userId: profiles.userId, name: profiles.displayName, username: profiles.username, level: profiles.level, currentStreak: profiles.currentStreak })
+    .select({ userId: profiles.userId, name: profiles.displayName, username: profiles.username, avatar: profiles.avatar, level: profiles.level, currentStreak: profiles.currentStreak })
     .from(profiles)
     .where(
       and(
@@ -254,7 +257,7 @@ export async function searchUsers(me: string, qRaw: string): Promise<SearchHit[]
     for (const r of rows) if (!r.username) r.username = map.get(r.userId) ?? null;
   }
   const rels = await relations(me, rows.map((r) => r.userId));
-  return rows.map((r) => ({ userId: r.userId, name: r.name, username: r.username, level: r.level, currentStreak: r.currentStreak, relation: rels.get(r.userId) ?? "none" }));
+  return rows.map((r) => ({ userId: r.userId, name: r.name, username: r.username, avatar: r.avatar, level: r.level, currentStreak: r.currentStreak, relation: rels.get(r.userId) ?? "none" }));
 }
 
 /** Davet bağlantısıyla gelen `?u=<username>` — profil sayfasına yönlendirmek için. */

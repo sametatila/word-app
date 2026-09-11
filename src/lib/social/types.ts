@@ -76,12 +76,27 @@ export type Relation =
   | "declined" // reddedildi ve yeniden isteme süresi dolmadı
   | "blocked"; // ben engelledim (engellendiğimi asla görmem)
 
-/** Listelerde görünen asgari kimlik: aynı avatar her yerde aynı userId'den türer. */
+/** Listelerde görünen asgari kimlik. */
 export type PublicUser = {
   userId: string;
   name: string | null;
   username: string | null;
   level: string;
+  /**
+   * Kişinin KENDİ avatarı, ham JSON metni (bkz. lib/avatar-config).
+   *
+   * Listelerde herkes kimliğinden TÜRETİLEN renkli bir armayla çiziliyordu:
+   * avatar yalnız cihazın deposunda durduğu için başkaları onu göremiyordu.
+   * Artık sunucuda ve her kişi yükünde geliyor — aynı kişi her ekranda ve
+   * her platformda kendi avatarıyla görünüyor.
+   *
+   * `null` = hiç seçmemiş; o kullanıcı türetilen armasıyla kalıyor.
+   *
+   * METİN olarak taşınıyor, çözümlemeyi çizen bileşen yapıyor: yazarken
+   * doğrulandı, okurken `parseAvatar` yine süzüyor — bozuk bir değer iki
+   * uçta da ekrana düşemiyor.
+   */
+  avatar: string | null;
 };
 
 export type FriendRow = PublicUser & {

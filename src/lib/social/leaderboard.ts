@@ -28,7 +28,7 @@ export async function friendsLeaderboard(me: string, today: string): Promise<{ r
   const [weekly, prof] = await Promise.all([
     weeklyXpFor(ids, today),
     db
-      .select({ userId: profiles.userId, name: profiles.displayName, username: profiles.username, level: profiles.level, streak: profiles.currentStreak })
+      .select({ userId: profiles.userId, name: profiles.displayName, username: profiles.username, avatar: profiles.avatar, level: profiles.level, streak: profiles.currentStreak })
       .from(profiles)
       .where(inArray(profiles.userId, ids)),
   ]);

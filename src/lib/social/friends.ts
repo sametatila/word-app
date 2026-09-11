@@ -229,6 +229,7 @@ export async function listFriends(me: string, today: string): Promise<FriendRow[
         userId: r.friendId,
         name: u?.name ?? null,
         username: u?.username ?? null,
+        avatar: u?.avatar ?? null,
         level: u?.level ?? "A1",
         friendshipId: r.friendshipId,
         currentStreak: p?.currentStreak ?? 0,
@@ -257,7 +258,7 @@ export async function pendingRequests(me: string): Promise<{ incoming: PendingRe
     const other = r.requesterId === me ? r.addresseeId : r.requesterId;
     return {
       friendshipId: r.id,
-      user: users.get(other) ?? { userId: other, name: null, username: null, level: "A1" },
+      user: users.get(other) ?? { userId: other, name: null, username: null, level: "A1", avatar: null },
       createdAt: new Date(r.createdAt).toISOString(),
     };
   };
@@ -316,12 +317,12 @@ export async function suggestions(me: string, today: string, limit = 20): Promis
     const ids = [...mutual.keys()];
     await ensureUsernames(ids);
     const rows = await db
-      .select({ userId: profiles.userId, name: profiles.displayName, username: profiles.username, level: profiles.level, visibility: profiles.visibility, show: profiles.showInSuggestions, currentStreak: profiles.currentStreak })
+      .select({ userId: profiles.userId, name: profiles.displayName, username: profiles.username, avatar: profiles.avatar, level: profiles.level, visibility: profiles.visibility, show: profiles.showInSuggestions, currentStreak: profiles.currentStreak })
       .from(profiles)
       .where(inArray(profiles.userId, ids));
     for (const r of rows) {
       if (!eligible(r.visibility, r.show)) continue;
-      out.push({ userId: r.userId, name: r.name, username: r.username, level: r.level, mutual: mutual.get(r.userId) ?? 0, reason: "mutual", currentStreak: r.currentStreak });
+      out.push({ userId: r.userId, name: r.name, username: r.username, avatar: r.avatar, level: r.level, mutual: mutual.get(r.userId) ?? 0, reason: "mutual", currentStreak: r.currentStreak });
       seen.add(r.userId);
     }
     out.sort((a, b) => b.mutual - a.mutual || b.currentStreak - a.currentStreak);
@@ -330,7 +331,7 @@ export async function suggestions(me: string, today: string, limit = 20): Promis
     const level = meProfile[0]?.level ?? "A1";
     const excludeList = [...excluded, ...seen];
     const rows = await db
-      .select({ userId: profiles.userId, name: profiles.displayName, username: profiles.username, level: profiles.level, currentStreak: profiles.currentStreak })
+      .select({ userId: profiles.userId, name: profiles.displayName, username: profiles.username, avatar: profiles.avatar, level: profiles.level, currentStreak: profiles.currentStreak })
       .from(profiles)
       .where(
         and(
@@ -350,7 +351,7 @@ export async function suggestions(me: string, today: string, limit = 20): Promis
       for (const r of rows) if (!r.username) r.username = map.get(r.userId) ?? null;
     }
     for (const r of rows) {
-      out.push({ userId: r.userId, name: r.name, username: r.username, level: r.level, mutual: 0, reason: r.level === level ? "level" : "active", currentStreak: r.currentStreak });
+      out.push({ userId: r.userId, name: r.name, username: r.username, avatar: r.avatar, level: r.level, mutual: 0, reason: r.level === level ? "level" : "active", currentStreak: r.currentStreak });
     }
   }
   return out.slice(0, limit);

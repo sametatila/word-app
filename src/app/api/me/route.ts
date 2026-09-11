@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { getUserId } from "@/lib/auth/server";
 import { ensureProfile, getProgress } from "@/lib/session";
+import { parseAvatar } from "@/lib/avatar-config";
 
 export const dynamic = "force-dynamic";
 
@@ -30,6 +31,10 @@ export async function GET() {
     return NextResponse.json(
       {
         name: profile.displayName,
+        /* AVATAR SUNUCUDAN. Seçim eskiden yalnız cihazda duruyordu; iki cihaz
+           iki farklı avatar demekti. `null` = hiç seçmemiş — istemci o zaman
+           kimlikten türeyen armayı çiziyor (bkz. lib/avatar-config). */
+        avatar: parseAvatar(profile.avatar),
         level: profile.level,
         course: profile.course,
         // Null = anadili hiç seçilmemiş eski hesap; istemci kendi

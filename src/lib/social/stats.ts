@@ -45,10 +45,10 @@ export async function publicUsers(ids: string[]): Promise<Map<string, PublicUser
   // Sosyal katman öncesi hesapların adı yok; listelendikleri anda atanır (bkz. usernames.ts).
   await ensureUsernames(ids);
   const rows = await db
-    .select({ userId: profiles.userId, name: profiles.displayName, username: profiles.username, level: profiles.level })
+    .select({ userId: profiles.userId, name: profiles.displayName, username: profiles.username, avatar: profiles.avatar, level: profiles.level })
     .from(profiles)
     .where(inArray(profiles.userId, ids));
-  for (const r of rows) map.set(r.userId, { userId: r.userId, name: r.name, username: r.username, level: r.level });
+  for (const r of rows) map.set(r.userId, { userId: r.userId, name: r.name, username: r.username, avatar: r.avatar, level: r.level });
   return map;
 }
 

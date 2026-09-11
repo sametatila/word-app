@@ -103,6 +103,15 @@ export const profiles = pgTable("profiles", {
   newPerDay: integer("new_per_day").notNull().default(15), // gün başına yeni kelime
   // Kullanıcının seçtiği CEFR seviyesi. Yalnızca kullanıcı değiştirir; sistem
   // performansa bakarak terfi/düşüş yapmaz (bkz. lib/session.ts, Strength).
+  /*
+    AVATAR — maskot tabanı + aksesuar katmanları, JSON metni olarak.
+
+    Seçim eskiden yalnız cihazın `localStorage`ındaydı: telefonda seçilen
+    şapka tarayıcıda görünmüyordu ve başkaları hiç göremiyordu. NULL = "hiç
+    seçmedi"; o kullanıcı listelerde kimliğinden türeyen armasıyla kalıyor
+    (bkz. lib/avatar-config).
+  */
+  avatar: text("avatar"),
   level: text("level").notNull().default("A1"),
   course: text("course").notNull().default("de"), // de | gsw-zh | en — çalışılan HEDEF dil
   /**

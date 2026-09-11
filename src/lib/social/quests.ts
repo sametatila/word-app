@@ -175,7 +175,7 @@ export async function questViews(me: string, today: string): Promise<QuestView[]
       status: r.status as QuestView["status"],
       weekStart: ws,
       targetXp: r.targetXp,
-      partner: users.get(partner) ?? { userId: partner, name: null, username: null, level: "A1" },
+      partner: users.get(partner) ?? { userId: partner, name: null, username: null, avatar: null, level: "A1" },
       invitedByMe: r.invitedBy === me,
       myXp,
       partnerXp,

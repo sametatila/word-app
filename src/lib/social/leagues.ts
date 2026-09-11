@@ -204,7 +204,7 @@ export async function leagueBoard(userId: string, today: string): Promise<League
   const [xp, prof, result] = await Promise.all([
     xpBetween(ids, ws, shiftDay(ws, 7)),
     db
-      .select({ userId: profiles.userId, name: profiles.displayName, username: profiles.username, level: profiles.level, streak: profiles.currentStreak })
+      .select({ userId: profiles.userId, name: profiles.displayName, username: profiles.username, avatar: profiles.avatar, level: profiles.level, streak: profiles.currentStreak })
       .from(profiles)
       .where(inArray(profiles.userId, ids)),
     pendingResult(userId, ws),

@@ -72,7 +72,7 @@ export async function listBlocked(userId: string): Promise<(PublicUser & { since
       userId: userBlocks.blockedId,
       since: userBlocks.createdAt,
       name: profiles.displayName,
-      username: profiles.username,
+      username: profiles.username, avatar: profiles.avatar,
       level: profiles.level,
     })
     .from(userBlocks)
@@ -82,6 +82,7 @@ export async function listBlocked(userId: string): Promise<(PublicUser & { since
     userId: r.userId,
     name: r.name ?? null,
     username: r.username ?? null,
+    avatar: r.avatar ?? null,
     level: r.level ?? "A1",
     since: new Date(r.since).toISOString(),
   }));

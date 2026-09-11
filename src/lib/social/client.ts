@@ -84,6 +84,8 @@ export function errorText(err: unknown, lang?: NativeLang): string {
 }
 
 export type SocialMeView = {
+  /** Kişinin kendi avatarı, ham JSON (bkz. lib/avatar-config). */
+  avatar: string | null;
   userId: string;
   name: string | null;
   username: string;
@@ -103,7 +105,7 @@ export type FriendsView = { friends: FriendRow[]; incoming: PendingView[]; outgo
 export type SearchHitView = PublicUser & { relation: Relation; currentStreak: number };
 export type SuggestionView = PublicUser & { mutual: number; reason: "mutual" | "level" | "active"; currentStreak: number };
 export type BoardView = {
-  rows: { rank: number; userId: string; name: string | null; username: string | null; level: string; xp: number; streak: number; isMe: boolean }[];
+  rows: { rank: number; userId: string; name: string | null; username: string | null; avatar: string | null; level: string; xp: number; streak: number; isMe: boolean }[];
   start: string;
   daysLeft: number;
 };
@@ -131,6 +133,8 @@ export type PublicProfileView = {
 };
 
 export type LeagueRowView = {
+  /** Kişinin kendi avatarı, ham JSON (bkz. lib/avatar-config). */
+  avatar: string | null;
   rank: number;
   userId: string;
   name: string | null;

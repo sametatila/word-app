@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { displayNameAllowed } from "@/lib/moderation";
+import { parseAvatar, serializeAvatar } from "@/lib/avatar-config";
 import { acceptsCourse, acceptsNativeLang, acceptsPair, coursesForNative, nativeOf } from "@/lib/courses";
 import { resolveVoice } from "@/lib/tts/voices";
 import { eq, sql } from "drizzle-orm";
@@ -57,6 +58,15 @@ export async function POST(req: Request) {
     // karakteri ve küfür kabul edilmez (Play UGC: başkalarına görünen metin için moderasyon).
     if (!displayNameAllowed(name)) return NextResponse.json({ error: "name_invalid" }, { status: 400 });
     patch.displayName = name.slice(0, PROFILE_LIMITS.displayNameMax);
+  }
+  /*
+    AVATAR. Ham değer doğrulanıp METİN olarak yazılıyor; bilinmeyen parça
+    kimlikleri atılıyor ama kayıt reddedilmiyor (gerekçe: lib/avatar-config).
+    `null` göndermek "avatarımı sıfırla" demek.
+  */
+  if (body.avatar !== undefined) {
+    const cfg = body.avatar === null ? null : parseAvatar(body.avatar);
+    patch.avatar = cfg ? serializeAvatar(cfg) : null;
   }
   if (typeof body.dailyGoal === "number") patch.dailyGoal = clampInt(body.dailyGoal, PROFILE_LIMITS.dailyGoal.min, PROFILE_LIMITS.dailyGoal.max);
   if (typeof body.goal === "string" && ["work", "daily", "exam", "swiss"].includes(body.goal)) patch.goal = body.goal;

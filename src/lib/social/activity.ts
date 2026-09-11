@@ -95,7 +95,7 @@ export async function feed(
     type: r.type as ActivityType,
     payload: (r.payload ?? {}) as Record<string, unknown>,
     createdAt: new Date(r.createdAt).toISOString(),
-    user: users.get(r.userId) ?? { userId: r.userId, name: null, username: null, level: "A1" },
+    user: users.get(r.userId) ?? { userId: r.userId, name: null, username: null, level: "A1", avatar: null },
     reactions: reactions.get(r.id) ?? { counts: {}, total: 0, mine: null, names: [] },
     isMine: r.userId === me,
   }));
