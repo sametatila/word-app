@@ -6678,3 +6678,50 @@ görüp yeşil kalıyordu - sınavdan `day` silindiğinde kırmızı olmadı. Bu
 ile aynı sınıf: **ölçüm penceresi komşu dosyanın satırını çalıyor.** Her taraf
 artık kendi isteği kuran dosyadan okunuyor.
 
+
+### 11.187 Hayatta kalma turu Android'de hiç yoktu
+
+`challenge.` uzayı: webde 22 anahtar, mobilde **bir** (`challenge.seconds`,
+patron turunun sayacı ödünç alıyordu).
+
+Web'de `/learn/challenge` baştan beri var: 40 saniyeyle başlayan, her doğru
+cevapta süre kazandıran, yanlışta yakan, üst üste doğrularda puanı 3 katına
+çıkaran, üç dalgada sertleşen mod. Uç (`/api/challenge`) ve dalga mantığı
+sunucuda duruyordu. **Android'de ekran yoktu**, yani aynı rekor tablosuna
+yalnız tarayıcıdan oynayanlar yazıyordu.
+
+Bu sefer not tek yerde değil ÜÇ yerde duruyordu ve üçü de "bilinçli" gibi
+okunuyordu:
+- `challenge-player.tsx` başlığı: "Mobilde bu modun karşılığı YOK"
+- `learn-hub.tsx`: "Hayatta kalma mobilde YOK — web'e özel bir mod"
+- `mobile/lib/pushRoute.ts`: "`/learn/challenge` burada YOK, çünkü mobilde
+  karşılığı olan bir ekran yok"
+
+Üçüncüsünün bedeli ölçülebilirdi: bildirimden gelen `/learn/challenge` mobilde
+ana sekmeye düşüyordu.
+
+Bir de ters yönde bir yalan vardı: `learn/mode-screen.tsx` "Mobilde üçü de kök
+yığında ayrı ekran (`RootStack`: Daily, Walk, Challenge karşılığı)" diyordu -
+üçüncüsü yoktu.
+
+Taşınan: altı fazlı ekran, zaman damgasından okunan geri sayım, kombo çarpanı,
+dalga rozeti, kombo/dalga duyuruları, son saniyelerin tık sesi, sonuç kartı;
+menü girişi; `pushRoute` yolu. Sayılar birebir (kapı §100 hepsini ölçüyor,
+giriş noktası dahil - ekran varsa ama menüde yoksa kimse bulamaz).
+
+`check:endpoints` bu işi kendisi haber verdi: "WEB_ONLY listesinde olup artık
+mobilde de çağrılan uç: /api/challenge". **Kapı, taşımanın tamamlandığını
+söyleyen ilk şey oldu.**
+
+### 11.188 Patron turunda cevap süresi bütün turun süresiydi
+
+Aynı dosya ailesini okurken çıktı: `BossScreen` her cevapta `latencyMs`i
+`startedAt`ten hesaplıyordu ve o, bütün patron turunun başlangıcı. Onuncu
+kelimenin gecikmesi "oyuna başlayalı kaç saniye oldu" diye gidiyordu. Gecikme
+SRS'te ve hata çözümlemesinde okunuyor; `GameScreen` baştan beri tur başına
+ölçüyor.
+
+Aynı dosyanın başındaki "son saniyelerin tık sesi BURADA YOK" notu da
+eskimişti - `danger` sesi ses tablosuna eklendiğinde kod düzelmiş, yorum
+kalmıştı.
+
