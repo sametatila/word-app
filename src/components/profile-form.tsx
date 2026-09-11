@@ -198,6 +198,9 @@ export function ProfileForm({
             {coursesForNative(lang).map((c) => (
               <button
                 key={c.id}
+                /* Seçili durum renkten başka bir şeyle de söyleniyor
+                   (bkz. parity §154). */
+                aria-pressed={course === c.id}
                 onClick={() => {
                   setCourse(c.id);
                   // Ses kursa bağlı: Zürih metnini Almanca sesle okutmak
@@ -235,6 +238,7 @@ export function ProfileForm({
             {LEVELS.map((l) => (
               <button
                 key={l.id}
+                aria-pressed={level === l.id}
                 onClick={() => setLevel(l.id)}
                 className={`option px-1 py-2.5 text-sm font-bold ${
                   level === l.id ? "option-correct" : ""

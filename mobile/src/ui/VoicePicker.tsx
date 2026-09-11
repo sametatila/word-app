@@ -43,6 +43,8 @@ export function VoicePicker({
         return (
           <PressableScale
             key={v.id}
+            accessibilityRole="radio"
+            accessibilityState={{ selected: on }}
             onPress={() => onChange(v.id)}
             style={{
               flex: 1,

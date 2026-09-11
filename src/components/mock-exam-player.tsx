@@ -545,6 +545,11 @@ function Item({ course, item, task, value, answers, onAnswer }: { course: MockCo
       key={key}
       type="button"
       onClick={onClick}
+      /* SEÇİLİ DURUMU DUYURULUYOR. Şık seçilince yalnız zemin ve kenarlık
+         değişiyordu: ekran okuyucu kullanan öğrenci hangi şıkkı işaretlediğini
+         hiçbir şekilde duymuyordu — sınavda cevabını doğrulayamamak demek.
+         Aynı eksik iki platformda da vardı, ikisi birlikte kapatıldı. */
+      aria-pressed={active}
       className="rounded-xl px-3 py-2 text-left text-sm"
       style={{ background: active ? "var(--brand-soft)" : "var(--surface-2)", border: `1px solid ${active ? "var(--color-brand)" : "transparent"}` }}
     >

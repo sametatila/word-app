@@ -428,6 +428,10 @@ export function ExamPlayer({ level, module }: { level: CefrLevel; module: number
         <button
           key={`${o}-${i}`}
           type="button"
+          /* Seçili durum RENKTEN başka bir şeyle de söyleniyor: ekran okuyucu
+         kullanan kişi hangi seçeneğin işaretli olduğunu yalnız zeminden
+         anlayamaz (bkz. parity §154). */
+          aria-pressed={picked === i}
           disabled={picked !== null}
           onClick={() => {
             setPicked(i);

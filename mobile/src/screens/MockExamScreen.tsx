@@ -661,6 +661,11 @@ function ItemView({
     <PressableScale
       key={key ?? label}
       onPress={onPress}
+      /* SEÇİLİ DURUMU DUYURULUYOR. Şık seçilince yalnız zemin ve kenarlık
+         değişiyordu: ekran okuyucu kullanan öğrenci hangi şıkkı işaretlediğini
+         hiçbir şekilde duymuyordu — sınavda cevabını doğrulayamamak demek.
+         Aynı eksik iki platformda da vardı, ikisi birlikte kapatıldı. */
+      accessibilityState={{ selected: active }}
       style={{
         paddingVertical: spacing.sm, paddingHorizontal: spacing.md, borderRadius: radii.md,
         backgroundColor: active ? colors.primarySoft : colors.surface2,

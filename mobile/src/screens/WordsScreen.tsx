@@ -154,7 +154,7 @@ export function WordsScreen() {
           {LEVELS.map((lv) => {
             const active = level === lv;
             return (
-              <PressableScale key={lv || "all"} onPress={() => setLevel(lv)} style={{ paddingHorizontal: 12, paddingVertical: 7, borderRadius: radii.pill, backgroundColor: active ? colors.info : colors.surface2 }}>
+              <PressableScale key={lv || "all"} accessibilityRole="radio" accessibilityState={{ selected: active }} onPress={() => setLevel(lv)} style={{ paddingHorizontal: 12, paddingVertical: 7, borderRadius: radii.pill, backgroundColor: active ? colors.info : colors.surface2 }}>
                 <Text variant="caption" color={active ? colors.onFill : colors.textMuted}>{lv || t("words.filter_level")}</Text>
               </PressableScale>
             );
@@ -164,7 +164,7 @@ export function WordsScreen() {
           {FILTERS.map((f) => {
             const active = filter === f.key;
             return (
-              <PressableScale key={f.key || "all"} onPress={() => setFilter(f.key)} style={{ paddingHorizontal: 14, paddingVertical: 8, borderRadius: radii.pill, backgroundColor: active ? colors.primary : colors.surface2 }}>
+              <PressableScale key={f.key || "all"} accessibilityRole="radio" accessibilityState={{ selected: active }} onPress={() => setFilter(f.key)} style={{ paddingHorizontal: 14, paddingVertical: 8, borderRadius: radii.pill, backgroundColor: active ? colors.primary : colors.surface2 }}>
                 <Text variant="caption" color={active ? colors.onPrimary : colors.textMuted}>{t(f.label)}</Text>
               </PressableScale>
             );

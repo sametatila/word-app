@@ -98,6 +98,9 @@ function ChoiceInput({ q, done, onSettle }: { q: SkillQuestion; done: boolean; o
           <button
             key={oi}
             type="button"
+            /* Seçili durum renkten başka bir şeyle de söyleniyor: alıştırma
+               şıkkı seçilince yalnız zemin değişiyordu (bkz. parity §154). */
+            aria-pressed={pick === oi}
             disabled={done}
             onClick={() => choose(oi)}
             className={`option flex items-center justify-between gap-2 px-3.5 py-2.5 text-left text-sm font-semibold ${cls}`}
@@ -242,6 +245,9 @@ function OrderInput({ q, done, onSettle }: { q: SkillQuestion; done: boolean; on
           <li key={v}>
             <button
               type="button"
+              /* Sıralama şıkkının seçili hâli renkten başka bir şeyle de
+                 söyleniyor (bkz. parity §154). */
+              aria-pressed={picked === pos}
               disabled={done}
               onClick={() => tap(pos)}
               className={`option flex w-full items-center gap-2 px-3 py-2 text-left text-sm ${picked === pos ? "option-correct" : ""} ${done ? (v === pos ? "option-correct" : "option-wrong") : ""}`}

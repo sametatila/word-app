@@ -5438,6 +5438,63 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   sameList("web onay diyalogu", [webDialog], ["dialog uzerinde"], "bulunan", "beklenen");
 }
 
+/* ── 154. secili durum duyuruluyor mu ─────────────────────────────────────
+ * Bir dugme "secili" oldugunu yalniz RENKLE soyluyorsa, ekran okuyucu
+ * kullanan icin o bilgi YOK demektir. Deneme kagidinin sik cipi tam boyleydi
+ * ve HATA IKI PLATFORMDA DA vardi: secilince zemin ve kenarlik degisiyor,
+ * duyurulan hicbir sey yok - sinavda ogrencinin kendi cevabini
+ * dogrulayamamasi demek. Ikisi birlikte kapatildi (`aria-pressed` /
+ * `accessibilityState={{ selected }}`).
+ *
+ * Olculen: SECILI DURUMA gore stil degistiren her basilabilir, o durumu
+ * duyuruyor mu. Kural yuzey tariyor; iki tarafi da ayni anda gezdigi icin
+ * "ikisi birden sessiz" hâli de yakalaniyor (§11.228'in dersi).
+ *
+ * SINIRI YAZILI: tarama etiketin KENDI icine bakiyor. Secili sinifi bir
+ * degiskene alinmissa (`const cls = ...; className={cls}`) etikette iz
+ * kalmiyor ve o dugme gorunmuyor. Boyle iki yer var (beceri quizi) ve ikisi
+ * de elle duzeltildi; kural, izi etiketinde tasiyanlari kapaliyor. */
+{
+  const strip = (x) => x.replace(/\/\*[\s\S]*?\*\//g, " ").replace(/(^|[^:"'`\\])\/\/.*$/gm, "$1");
+  const walkTsx4 = (d, out = []) => {
+    for (const e of readdirSync(new URL("../" + d, import.meta.url), { withFileTypes: true })) {
+      const p = d + "/" + e.name;
+      if (e.isDirectory()) { if (!/node_modules|__tests__|\/i18n/.test("/" + p)) walkTsx4(p, out); }
+      else if (/\.tsx$/.test(e.name)) out.push(p);
+    }
+    return out;
+  };
+  const sessiz = [];
+  for (const [kok, etiket, secim, duyuru] of [
+    /* Mobilde `accessibilityState` SART: yalniz `accessibilityRole="radio"`
+       vermek "bu bir secenek" diyor ama HANGISININ secili oldugunu
+       soylemiyor - enjeksiyon tam bunu gosterdi. */
+    ["mobile/src", "<PressableScale", /(active|selected|secili|isActive|on)\s*\?/, /accessibilityState/],
+    /* `[?:]` yerine YALNIZ `?`: Tailwind'in `active:scale-95` sozde sinifi
+       "secili durum" degil, BASILI ANI - iki nokta yuzunden basarim rozeti
+       yanlis alarm veriyordu. Secili durumun izi bir kosul: `active ? ...`
+       ya da `chip-active`/`option-correct` sinifinin kosullu verilmesi. */
+    ["src/components", "<button", /\b(?:active|selected|isActive)\s*\?|chip-active|option-correct/, /aria-pressed|aria-checked|aria-current|aria-selected/],
+  ]) {
+    for (const f of walkTsx4(kok)) {
+      if (f.startsWith("src/app/admin")) continue;
+      const src = strip(read(f));
+      /* Acilis etiketi, OK ISARETINDE bitmeyen ilk `>`e kadar. `...?>` ile
+         kesmek `onClick={() => ...}` icindeki `>`te duruyordu ve etiketin
+         geri kalani (className, aria-*) hic goruhlmuyordu: webin seviye cipi
+         enjeksiyonu bu yuzden kacmisti. §11.239'daki `[^>]*` hatasinin ayni
+         sinifi, bu kez kendi kapimda. */
+      const re = new RegExp(etiket + "\\b[\\s\\S]{0,600}?[^=]>", "g");
+      for (const m of src.matchAll(re)) {
+        if (!secim.test(m[0])) continue;
+        if (duyuru.test(m[0])) continue;
+        sessiz.push(f.split("/").pop() + ": " + m[0].replace(/\s+/g, " ").slice(0, 40));
+      }
+    }
+  }
+  sameList("secili durum duyurusu", sessiz.length ? sessiz : ["yok"], ["yok"], "sessiz secim", "beklenen");
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"

@@ -8180,3 +8180,42 @@ tarıyor, yeni bir modal aynı şeyi unutursa da yakalanır — ve webin karşı
 İkinci enjeksiyonum yine yorumu vurdu: `<dialog` dosyada üç kez geçiyor,
 ikisi yorumda. Kapı doğru davranıyordu (yorumları atıyor); yanlış olan
 enjeksiyondu — §11.227'de aynı hatayı yapmıştım. Kodu hedefleyince yakalandı.
+
+### 11.248 Seçili olmak yalnız bir renkti — on bir yerde, iki platformda
+
+Erişilebilirlik taramasını seçim kontrollerine uygulayınca bu turun en büyük
+bulgusu çıktı: **bir düğmenin "seçili" olduğunu yalnız rengi söylüyorsa, ekran
+okuyucu kullanan için o bilgi yoktur.** On bir yerde öyleydi ve **iki
+platformda da**:
+
+| Android | web |
+|---|---|
+| onboarding seçenek kartları, seviye çipleri | sınav şıkkı |
+| ayarlarda tema seçeneği | profil formunda kurs ve seviye çipleri |
+| kelime listesinde seviye ve durum şeritleri | beceri quizinde şık ve sıralama satırı |
+| ses seçici satırları | |
+| deneme kâğıdı şık çipi | deneme kâğıdı şık çipi |
+
+Sonuncusu iki tarafta da sessizdi — sınavda öğrencinin **kendi cevabını
+doğrulayamaması** demek. On birine de durum kondu (`aria-pressed` /
+`accessibilityState={{ selected }}`).
+
+**§154** kuralı yüzey tarayarak kuruyor ve iki platformu aynı geçişte gezdiği
+için "ikisi birden sessiz" hâlini de yakalıyor (§11.228'in dersi).
+
+Kapı üç kez düzeltildi ve üçü de öğretici:
+
+1. Başarım rozetini yanlış alarm verdi: Tailwind'in **`active:scale-95`**
+   sözde sınıfı "seçili durum" değil, **basılı an**. `[?:]` yerine yalnız `?`.
+2. **Webin seviye çipini hiç görmedi**: açılış etiketini `...?>` ile kesiyordu
+   ve `onClick={() => ...}` içindeki **ok işaretinin `>`sinde** duruyordu —
+   §11.239'daki `[^>]*` hatasının aynısı, bu kez kendi kapımda. Düzeltilince
+   **on yeni sessiz kontrol** birden ortaya çıktı; yani kapı yarım çalışırken
+   bulduğu iki yer, işin küçük parçasıydı.
+3. Mobilde `accessibilityRole="radio"`yu yeterli sayıyordu: rol "bu bir
+   seçenek" diyor ama **hangisinin seçili olduğunu söylemiyor.** Artık
+   `accessibilityState` şart.
+
+Kapının sınırı da yazılı: tarama etiketin kendi içine bakıyor, seçili sınıfı
+bir değişkene alınmışsa (`const cls = …; className={cls}`) iz kalmıyor. Böyle
+iki yer vardı (beceri quizi), ikisi de elle düzeltildi.
