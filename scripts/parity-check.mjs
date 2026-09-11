@@ -5506,8 +5506,19 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     ["mobile/src/ui/GrowthPanel.tsx", "src/components/progress-panel.tsx"],
     ["mobile/src/screens/CandoScreen.tsx", "src/components/cando-card.tsx"],
   ];
-  const mob = CIFT.map(([m]) => m.split("/").pop() + "=" + (/accessibilityState=\{\{ busy: true \}\}|label=\{t\(/.test(strip(read(m))) ? "duyuruyor" : "sessiz"));
-  const web = CIFT.map(([, w]) => w.split("/").pop() + "=" + (/aria-busy="true"/.test(strip(read(w))) ? "duyuruyor" : "sessiz"));
+  /* Duyuru IKI yoldan gelebiliyor ve olcum ikisini de tanimali, yoksa dogru
+     olan bir yapiyi kusur sanar: kart iskeletini KENDI kuruyorsa isareti
+     kendi tasir (`aria-busy` / `busy: true`), paylasilan kutuyu kullaniyorsa
+     (`SkeletonCard`, §152'nin kok duzeltmesi) isaret o kutunun icinde ve
+     dosyada gorunen tek sey ETIKET olur. Olcut iki platformda ayni bicimde
+     yazili: ya kendi isareti, ya etiketli `SkeletonCard`.
+
+     Ilk surum webde yalniz `aria-busy` ariyordu; "yapabildiklerim" Android
+     yerlesimine gecip paylasilan kutuya gecince kapi onu "sessiz" sandi -
+     oysa duyuru kutunun icinden geliyordu. */
+  const DUYURU = /accessibilityState=\{\{ busy: true \}\}|aria-busy="true"|<SkeletonCard[^>]*label=\{t\(/;
+  const mob = CIFT.map(([m]) => m.split("/").pop() + "=" + (DUYURU.test(strip(read(m))) ? "duyuruyor" : "sessiz"));
+  const web = CIFT.map(([, w]) => w.split("/").pop() + "=" + (DUYURU.test(strip(read(w))) ? "duyuruyor" : "sessiz"));
   sameList("yukleme duyurusu (dort kart)", mob.map((x) => x.split("=")[1]), web.map((x) => x.split("=")[1]));
 }
 
@@ -7274,6 +7285,228 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     "bulunan",
     "beklenen",
   );
+
+  /* -- 226. "yapabildiklerim": ayni sayfa mi, iki ayri urun mu ---------
+   *
+   * Tasarim eksenindeki en buyuk ayrisma buydu ve iki platform ayni veriyi
+   * (`/api/cando`) iki FARKLI SAYFA olarak ciziyordu:
+   *
+   *   Android: hepsi birden. Ustte seviye basina ILERLEME CUBUKLU ozet karti,
+   *     altinda her seviye kendi kartinda, ifadenin altinda becerinin adi.
+   *   Web (eski): bes seviye CIPI ve liste yalnizca SECILI seviyeyi
+   *     gosteriyordu; ifadeler beceri basliklarina bolunuyordu; seviye
+   *     sayilari ciplerin icine sikismisti; ve durum dairesi `aria-hidden`
+   *     tasidigi icin "kanitli/gelisiyor/henuz yok" ekran okuyucuya HIC
+   *     ulasmiyordu (`aria-hidden` `title`i da susturur).
+   *
+   * Ayrica bos LISTE dali webde yoktu: `!data` (istek hatasi) karsilaniyor,
+   * "veri geldi ama ici bos" hali bos bir sayfa birakiyordu - Android o dalda
+   * da sebebi soyluyor.
+   *
+   * Kapi yerlesimin KENDISINI okuyor, metni degil: gruplama anahtari, ozet
+   * cubugu, satirin erisilebilir adi, beceri alt satiri ve bos liste dali. */
+  {
+    const mob = sil(read("mobile/src/screens/CandoScreen.tsx"));
+    const web = sil(read("src/components/cando-card.tsx"));
+    sameList(
+      "yapabildiklerim yerlesimi",
+      [
+        "gruplama=" + (/g\[it\.cando\.level\]/.test(mob) ? "seviye" : "?"),
+        "tum seviyeler=" + (/LEVELS\.filter\(\(lv\) => byLevel\[lv\]\?\.length\)/.test(mob) ? "evet" : "HAYIR"),
+        "seviye suzgeci=" + (/\bsetLevel\b/.test(mob) ? "VAR" : "yok"),
+        "ozet cubugu=" + (/b\.proven \/ b\.total/.test(mob) ? "var" : "YOK"),
+        "satir durum adi=" + (/accessibilityLabel=\{t\(it\.state === "proven"/.test(mob) ? "var" : "YOK"),
+        "beceri alt satiri=" + (/SKILL_KEY\[it\.cando\.skill\]/.test(mob) ? "var" : "YOK"),
+        "bos liste dali=" + (/!\(data\?\.items \?\? \[\]\)\.length/.test(mob) ? "var" : "YOK"),
+      ],
+      [
+        "gruplama=" + (/byLevel\.set\(it\.cando\.level/.test(web) ? "seviye" : "?"),
+        "tum seviyeler=" + (/CANDO_LEVELS\.filter\(\(lv\) => byLevel\.get\(lv\)\?\.length\)/.test(web) ? "evet" : "HAYIR"),
+        "seviye suzgeci=" + (/\bsetLevel\b/.test(web) ? "VAR" : "yok"),
+        "ozet cubugu=" + (/b\.proven \/ b\.total/.test(web) ? "var" : "YOK"),
+        "satir durum adi=" + (/aria-label=\{t\(it\.state === "proven"/.test(web) ? "var" : "YOK"),
+        "beceri alt satiri=" + (/CANDO_SKILL_LABEL_KEYS\[it\.cando\.skill/.test(web) ? "var" : "YOK"),
+        "bos liste dali=" + (/!items\.length/.test(web) ? "var" : "YOK"),
+      ],
+      "mobil",
+      "web",
+    );
+    /* Mutlak olcut: durum dairesi `aria-hidden` TASIMAMALI - eski kusur tam
+       olarak buydu ve "etiket var" olcusu tek basina onu yakalamaz (ikisi bir
+       arada da yazilabilir, o zaman etiket yine susar). */
+    sameList(
+      "durum dairesi susturulmamis",
+      ["aria-hidden=" + (/aria-hidden/.test(web) ? "VAR" : "yok")],
+      ["aria-hidden=yok"],
+      "bulunan",
+      "beklenen",
+    );
+  }
+
+  /* -- 225. sik seciciler: "hangisi secili" renkten baska bir kanaldan
+   *    da soyleniyor mu --------------------------------------------------
+   *
+   * Bu turda eksen SECIM BILGISIYDI: bir dugme/satir/cip secili oldugunu
+   * yalnizca ZEMIN RENGIYLE anlatiyorsa ekran okuyucu kullanicisi hangisini
+   * sectigini hicbir yoldan ogrenemez. Olcut mutlak: secime gore stil
+   * degistiren bir denetim, secimi bir DURUMA da yazmak zorunda.
+   *
+   * Yedi ayri kusur cikti ve dordu ANDROID'deydi - birini kopyalamak yanlis
+   * olurdu, o yuzden olcut karsilastirma degil mutlak:
+   *
+   *  1. Android `OptionButton` (oyun turlarinin ortak sik dugmesi) iki
+   *     durumu da YANLIS seyden okuyordu: `selected: state !== "idle"`
+   *     cevaptan sonra DOGRU sikki "secili" diye okutuyordu (kullanici
+   *     baskasini secmis olsa bile), `disabled: state !== "idle"` ise
+   *     dokunulmayan siklari "acik" gosteriyordu - oysa `choose` cevaptan
+   *     sonra hepsini yutuyor. Artik `answered`/`chosen` proplari var.
+   *  2. Android beceri alistirmasinin sik ve siralama dugmeleri (`skillQuiz`)
+   *     hic durum tasimiyordu; webde ayni dugmeler `aria-pressed` tasiyor.
+   *  3. Android tepki cubugu: kendi tepkim yalnizca dolu zeminle anlatiliyordu.
+   *  4. Android sosyal gorunurluk satirlari gercek bir radyo grubu (yaninda
+   *     nokta bile var) ama rol/durum bilgisi yoktu.
+   *  5. Web kenar cubugu gezinmesi (masaustu, iki blok): hangi sayfada
+   *     oldugun yalnizca gradyandan okunuyordu - KENDI KARDESI olan alt cubuk
+   *     ayni bilgiyi `aria-current` ile veriyor, Android'de sekme
+   *     `accessibilityState={{ selected }}` tasiyor (bkz. TabBar).
+   *  6. Web /mock-exams seviye seridi: ayni serit /skills'te `aria-current`
+   *     tasiyor, burada tasimiyordu.
+   *  7. Web tepki SECICISI: menude secilebilir oge `menuitemradio` +
+   *     `aria-checked` ister; `role="menuitem"` durum tasimaz (ikisi de
+   *     eksikti - §11.228 sinifi: "iki taraf da yanlis oldugu icin
+   *     karsilastirma geciyor").
+   *
+   * Kapi PENCERE kullanmiyor: isaretten geri gidip onu ICEREN en yakin
+   * acilis etiketini bulup o etiketi okuyor (§11.339 kurali - sinir bir
+   * mesafe degil, bir dugum).
+   *
+   * BU KAPI ADI GECEN YUZEYLERI TUTAR; eksenin KENDISINI butun agacta
+   * `check:selection` olcuyor (`scripts/check-selection-state.mjs`): secime
+   * gore stil kuran her denetim durumu da yazmali - iki olcutle, cunku
+   * etiket duzeyi olcut secimini etiketin DISINDA hesaplayan denetimleri
+   * (Android `ChoiceGame`, web `match-game`) hic olcmuyordu. */
+  {
+    /** Acilis etiketinin sonu: tirnak ve suslu derinligine bakan `>`. */
+    const acilisSonu = (blok) => {
+      let derinlik = 0, tirnak = null;
+      for (let i = 0; i < blok.length; i++) {
+        const c = blok[i];
+        if (tirnak) { if (c === tirnak && blok[i - 1] !== "\\") tirnak = null; continue; }
+        if (c === '"' || c === "'" || c === "`") { tirnak = c; continue; }
+        if (c === "{") derinlik++;
+        else if (c === "}") derinlik--;
+        else if (c === ">" && derinlik === 0) return i;
+      }
+      return -1;
+    };
+    /** `isaret`i ICINDE tasiyan `<ad` acilis etiketlerinin tamami. */
+    const kapsayanlar = (src, isaret, ad) => {
+      const cikti = [];
+      for (let j = src.indexOf(isaret); j >= 0; j = src.indexOf(isaret, j + 1)) {
+        const a = src.lastIndexOf("<" + ad, j);
+        if (a < 0) continue;
+        const son = acilisSonu(src.slice(a));
+        if (son < 0) continue;
+        const etiket = src.slice(a, a + son + 1);
+        if (etiket.includes(isaret)) cikti.push(etiket);
+      }
+      return cikti;
+    };
+    /** Bir dosyadaki tum `<ad` acilis etiketleri. */
+    const tumEtiketler = (src, ad) => {
+      const cikti = [];
+      for (let j = src.indexOf("<" + ad); j >= 0; j = src.indexOf("<" + ad, j + 1)) {
+        const son = acilisSonu(src.slice(j));
+        if (son < 0) continue;
+        cikti.push(src.slice(j, j + son + 1));
+      }
+      return cikti;
+    };
+
+    /* -- mobil: oyun turlarinin ortak sik dugmesi -- */
+    const rounds = sil(read("mobile/src/game/rounds.tsx"));
+    const optDurum = rounds.match(/accessibilityState=\{\{ disabled: ([^,]+), selected: ([^}]+)\}\}/) ?? [];
+    /* `state={st}` gecen cagirilar SECILEBILIR olanlar; `state="idle"` ile
+       cagirilan iki dugme ("zorlandim"/"anladim") gercek dugme, hep acik. */
+    const secilebilir = rounds.split("\n").filter((l) => l.includes("<OptionButton") && l.includes("state={st}"));
+
+    /* -- mobil: beceri alistirmasi -- */
+    const sq = sil(read("mobile/src/game/skillQuiz.tsx"));
+    const sqSik = kapsayanlar(sq, "setPick(oi)", "PressableScale");
+    const sqSira = kapsayanlar(sq, "onPress={() => tap(pos)}", "PressableScale");
+
+    /* -- mobil: tepki cubugu (serit + secici) -- */
+    const rb = sil(read("mobile/src/social/ReactionBar.tsx"));
+    const rbSecim = kapsayanlar(rb, "void pick(k)", "PressableScale");
+
+    /* -- mobil: sosyal gorunurluk radyo grubu -- */
+    const ss = sil(read("mobile/src/screens/SocialSettingsScreen.tsx"));
+    const ssSatir = kapsayanlar(ss, "visibility: v.key", "PressableScale");
+
+    sameList(
+      "mobil secim durumu dogru seyi olcuyor",
+      [
+        "sik dugmesi disabled=" + (optDurum[1]?.trim() ?? "YOK"),
+        "sik dugmesi selected=" + (optDurum[2]?.trim() ?? "YOK"),
+        "secilebilir cagiri=" + secilebilir.length,
+        "answered gecen=" + secilebilir.filter((l) => /\banswered=\{/.test(l)).length,
+        "chosen gecen=" + secilebilir.filter((l) => /\bchosen=\{/.test(l)).length,
+        "beceri sikki=" + (sqSik.length === 1 && /accessibilityState=\{\{ selected: pick === oi/.test(sqSik[0]) ? "durumlu" : "DURUMSUZ"),
+        "beceri siralamasi=" + (sqSira.length === 1 && /accessibilityState=\{\{ selected: picked === pos/.test(sqSira[0]) ? "durumlu" : "DURUMSUZ"),
+        "tepki secimi=" + rbSecim.length + "/" + rbSecim.filter((e) => /accessibilityState=\{\{ selected: mine \}\}/.test(e)).length,
+        "gorunurluk satiri=" + (ssSatir.length === 1 && /accessibilityRole="radio"/.test(ssSatir[0]) && /selected: active/.test(ssSatir[0]) ? "radyo+durumlu" : "EKSIK"),
+      ],
+      [
+        "sik dugmesi disabled=answered",
+        "sik dugmesi selected=chosen",
+        "secilebilir cagiri=6",
+        "answered gecen=6",
+        "chosen gecen=6",
+        "beceri sikki=durumlu",
+        "beceri siralamasi=durumlu",
+        "tepki secimi=2/2",
+        "gorunurluk satiri=radyo+durumlu",
+      ],
+      "bulunan",
+      "beklenen",
+    );
+
+    /* -- web: secime gore stil degistiren her bagin durumu da yazmali --
+       Olcut mutlak ve GENEL: `active` ya da `=== level` ile stil kuran bir
+       `<Link` `aria-current` tasimazsa kusurdur. Boylece yarin eklenen
+       dorduncu gezinme blogu da kendiliginden olculur. Kapinin hic bag
+       gormeden gecmesi de engelli: gorulen bag sayisi ayrica raporlaniyor. */
+    const WEB_GEZINME = [
+      "src/components/app-shell.tsx",
+      "src/app/(app)/mock-exams/page.tsx",
+      "src/app/(app)/skills/page.tsx",
+    ];
+    let secili = 0, akimsiz = 0;
+    for (const y of WEB_GEZINME) {
+      for (const etiket of tumEtiketler(sil(read(y)), "Link")) {
+        const secimeBagli = /\bactive\b/.test(etiket) || /=== level\b/.test(etiket);
+        if (!secimeBagli) continue;
+        secili++;
+        if (!/\baria-current=/.test(etiket)) akimsiz++;
+      }
+    }
+
+    /* Web tepki secicisi: `menuitem` durum tasimaz. */
+    const wrb = sil(read("src/components/social/reaction-bar.tsx"));
+    const wrbSecici = kapsayanlar(wrb, "void pick(k)", "button").filter((e) => /role="menuitem/.test(e));
+
+    sameList(
+      "web secim durumu renkten baska bir kanalda da",
+      [
+        "secime bagli bag=" + secili,
+        "aria-current tasimayan=" + akimsiz,
+        "tepki secicisi=" + (wrbSecici.length === 1 && /role="menuitemradio"/.test(wrbSecici[0]) && /aria-checked=\{s\.mine === k\}/.test(wrbSecici[0]) ? "menuitemradio+checked" : "EKSIK"),
+      ],
+      ["secime bagli bag=5", "aria-current tasimayan=0", "tepki secicisi=menuitemradio+checked"],
+      "bulunan",
+      "beklenen",
+    );
+  }
 
   /* ── 224. kip yuzeyleri: odak, Escape ve duyuru ─────────────────────
    * Bu eksen ikisinde de ZATEN yapilmisti ve olcum bunu dogruladi - kapi

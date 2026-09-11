@@ -11265,3 +11265,99 @@ yazdım, oysa bağımlılık dizisi render sırasında okunuyor ve o noktada
 kullanıyordu; araya yazdığım uzun gerekçe yorumu girince yetmedi. §11.339'un
 kuralı uygulandı: işaretten geri gidip ondan hemen önce açılan `<div`in
 etiketine bakılıyor. **Sınır bir mesafe değil, bir düğüm.**
+
+## §11.342 — Seçim bilgisi: on iki denetim "hangisi seçili"yi yalnız renkle söylüyordu
+
+Eksen **seçim durumu**ydı: bir şık, çip ya da satır seçili olduğunu yalnızca
+zemin rengiyle anlatıyorsa ekran okuyucu kullanan biri hangisini seçtiğini
+hiçbir yoldan öğrenemez, renk körü biri için de tek kanal kalmış olur. Ölçüt
+mutlak: **seçime göre stil kuran bir denetim, seçimi bir duruma da yazmak
+zorunda.**
+
+**Android'de dört kusur** — ve bunları kopyalamak yanlış olurdu, o yüzden
+ölçüt karşılaştırma değil mutlak:
+
+1. `OptionButton` (oyun turlarının ortak şık düğmesi) **iki durumu da yanlış
+   şeyden okuyordu**. `selected: state !== "idle"` cevaptan sonra **doğru
+   şıkkı** "seçili" diye okutuyordu — kullanıcı başkasını seçmiş olsa bile;
+   yanlış cevaplayan biri ekrana dönüp "seçili" duyduğu şıkkı kendi cevabı
+   sanıyordu. `disabled: state !== "idle"` ise yalnız doğru şıkkı ve seçilen
+   yanlışı kapalı sayıyor, **dokunulmayan şıkları "açık"** gösteriyordu — oysa
+   `choose` cevaptan sonra hepsini yutuyor. İki yeni prop (`answered`,
+   `chosen`) ve altı çağrı yeri düzeltildi; `state="idle"` ile çağrılan iki
+   gerçek düğme ("zorlandım"/"anladım") dokunulmadı.
+2. `skillQuiz`in şık ve sıralama düğmeleri hiç durum taşımıyordu.
+3. `ChoiceGame` (yerleştirme sınavı ve örnek yerleştirme) hiç durum
+   taşımıyordu.
+4. Tepki çubuğu (kendi tepkim) ve sosyal görünürlük satırları — ikincisi
+   yanında radyo noktası bile olan gerçek bir radyo grubu — rolsüz ve
+   durumsuzdu.
+
+**Web'de sekiz kusur:**
+
+5. Kenar çubuğu gezinmesi (masaüstü, iki blok): hangi sayfada olduğun yalnız
+   gradyandan okunuyordu. **Kendi kardeşi** olan alt çubuk aynı bilgiyi
+   `aria-current` ile veriyor, Android'de sekme `accessibilityState` taşıyor.
+6. `/mock-exams` seviye şeridi: aynı şerit `/skills`te `aria-current` taşıyor.
+7. Yedi oyun şıkkı (şık, boşluk, dinleme, çoğul, artikel, yerleştirme, örnek
+   yerleştirme) ve eşleştirmenin iki sütunu `aria-pressed` taşımıyordu.
+8. **Boşluk oyununun şık dalında `OptionMark` hiç yoktu** — `option-mark`
+   yazıldığında atlanmış: doğruluk yalnız zeminin yeşil/kırmızılığından
+   okunuyordu. Örnek yerleştirmede de aynı boşluk vardı. Beş kardeş oyunun
+   hepsinde bu işaret var, Android'de de `OptionButton` simgeyi çiziyor.
+9. Tepki **seçicisinde** seçilebilir öge `role="menuitem"` taşıyordu;
+   `menuitem` durum taşımaz, doğrusu `menuitemradio` + `aria-checked`. Bu
+   ikisinde de eksikti — §11.228 sınıfı: "iki taraf da yanlış olduğu için
+   karşılaştırma geçiyor".
+
+### Yapabildiklerim: iki platform iki ayrı ürün açıyordu
+
+Tasarım eksenindeki en büyük ayrışma buydu. Aynı veri (`/api/cando`), iki
+farklı sayfa:
+
+| | Android | Web (eski) |
+|---|---|---|
+| kapsam | **hepsi birden** | yalnız seçili seviye |
+| gruplama | seviyeye göre, her seviye kendi kartında | beceriye göre (okuma/dinleme/…) |
+| özet | seviye başına **ilerleme çubuklu** kart | sayılar beş çipin içine sıkışmış |
+| beceri | ifadenin altında alt satır | grup başlığı |
+| durum dairesi | `accessibilityLabel` | `aria-hidden` + `title` |
+
+Son satır bir hata: **`aria-hidden` `title`ı da susturur**, yani
+"kanıtlı/gelişiyor/henüz yok" ekran okuyucuya hiç ulaşmıyordu. Web
+`cando-card` Android'in yerleşimine geçirildi; seviye süzgeci kalktı, boş
+LİSTE dalı eklendi (eskiden yalnız istek hatası karşılanıyordu, "veri geldi
+ama içi boş" hâli boş bir sayfa bırakıyordu).
+
+### İki kapı, çünkü biri tek başına hiçbir şey ölçmüyor
+
+`check:selection` (`scripts/check-selection-state.mjs`) iki ölçütle çalışıyor:
+
+- **Etiket düzeyi** — açılış etiketinde `active ?` / `picked ===` yazılıysa
+  durum da yazılmalı. Kesin, ama **seçimini etiketin dışında hesaplayan**
+  denetimi hiç görmez: `ChoiceGame` renkleri etiketin üstünde if/else ile
+  kuruyor, `match-game` bir `state` değişkeniyle. Android `ChoiceGame`den
+  durumu silen enjeksiyon kapıyı **yeşil bıraktı** — kapının hiçbir şey
+  ölçmediği altıncı vaka.
+- **Dosya düzeyi** — dosya bir seçim değişkeni tanımlıyorsa (`const
+  isSelected = x === y`) ve içinde basılabilir bir şey varsa, en az bir durum
+  özniteliği bulunmalı. Kaba, ama sessizce boş geçemez. Bir kayıtlı istisna:
+  `WalkModeScreen`in `const active = phase === "listening"`i bir animasyon
+  bayrağı.
+
+İlk yazımın değişken deseni `const active = days.filter(...).length` gibi
+**sayıları** da seçim sanıyordu; sağ tarafın bir karşılaştırma içermesi
+(`===`, `!==`, `.has(`, `.includes(`) şartı eklendi.
+
+`check:hit` de ikinci bir ölçü kazandı: **klavye hedefi**. Dokunma hedefi bir
+denetimin parmağa ne kadar yer bıraktığını söylüyor; aynı denetimin
+**klavyeye hiç yer bırakmaması** ayrı ve daha sert bir kusur — `<div onClick>`
+fareyle çalışır, Tab'la sıraya girmez, Enter'ı duymaz. Ölçüm bugün **0**
+buldu (Android'de karşılığı `Pressable` ve o odağı da rolü de kendiliğinden
+taşıyor, yani bu sınıf hata yalnız webde olabilir); kapı o sıfırı tutuyor.
+
+`parity-check` §225 (iki liste, 12 ölçüt) ve §226 (yapabildiklerim yerleşimi,
+8 ölçüt) yazıldı. §156'nın yükleme duyurusu ölçütü de düzeltildi: yalnız
+`aria-busy` arıyordu ve "yapabildiklerim" paylaşılan `SkeletonCard` kutusuna
+geçince onu **"sessiz" sandı** — oysa duyuru kutunun içinden geliyordu. Ölçüt
+artık iki yolu da tanıyor, iki platformda aynı biçimde yazılı.
