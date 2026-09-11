@@ -1,6 +1,6 @@
 # WP-74 — İngilizce ders kapsamı B1–C1
 
-**Durum:** sürüyor (B1 TAM, B2 TAM; C1 modül 1 TAM — 210/300 ders) · **Sahip:** Claude · **Açılış:** 2026-09-11
+**Durum:** sürüyor (B1 TAM, B2 TAM; C1 modül 1-2 TAM — 220/300 ders) · **Sahip:** Claude · **Açılış:** 2026-09-11
 
 ## Kusur
 
@@ -457,6 +457,28 @@ hükme çevirir ve hiçbiri yorum diye işaretlenmez.
 ikisinden zor olanı duymak. Son ders modülü kapatırken ölçeği büyütüyor —
 `this`, `such` ve `the latter` cümleyi değil metni bağlıyor, yanlış yere
 gönderirlerse okur cümleyi değil paragrafı kaybediyor.
+
+C1.GR.11-20'nin onu da modül içinde bir kez kullanılıyor (ölçüldü, 10/10).
+
+**C1 modül 2 — Tartışma ve karşı çıkış (2026-09-11).** On ders: kırmadan
+karşı çıkmak, rakibin sözünü aktarmak, iğneleyici cevap, kısa cevap,
+tartışmanın kalıpları, vurguyu değiştirmek, önerge dili, iddian ne kadar
+güçlü, aynı itiraz üç kayıtta, uzun bir savı bağlamak.
+
+Modülün kendi ekseni KÖPRÜYÜ ATMAMAK ve ilk ders C1'in kendi tehlikesini
+adlandırıyor: dil inceldikçe kesinlik kolayca küçümsemeye dönüşür.
+Modülün tezi bir cümlede duruyor — «bir planı suya düşürmek bir insanı
+eksiltmektir».
+
+Üç ders aynı aracın üç ayrı bedelini gösteriyor. Aktarma fiili
+tartışmanın en sessiz silahı: kimse ona itiraz etmez çünkü kimse onu bir
+iddia saymaz. İroni en hızlı silah ama en kolay geri tepen: duyulmazsa
+etkisiz, fazla duyulursa düşmanlık. Eşdizim ise hazır kutu — yalnız sözü
+değil düşünceyi de taşıyor, «kalıbı seçmek çoğu zaman sonucu seçmektir».
+
+Kayıt dersi modül 1'in bulgusunu bir adım öteye taşıyor: kayıt yalnız
+üslubu değil ADI değiştiriyor — konuşma dilinde «öfke dalgası» olan şey
+hukuk kaydında «kamuoyu manipülasyonu» adını alıyor ve artık bir suçlama.
 
 C1.GR.11-20'nin onu da modül içinde bir kez kullanılıyor (ölçüldü, 10/10).
 
