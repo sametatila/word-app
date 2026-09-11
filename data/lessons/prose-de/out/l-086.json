@@ -1,0 +1,912 @@
+[
+ {
+  "tr": "Çalışma planı",
+  "kind": "titleTr",
+  "de": "Der Lernplan"
+ },
+ {
+  "tr": "Sınava hazırlık",
+  "kind": "titleTr",
+  "de": "Vor der Prüfung"
+ },
+ {
+  "tr": "Nasıl öğreniyorum",
+  "kind": "titleTr",
+  "de": "Wie ich am besten lerne"
+ },
+ {
+  "tr": "Hatalardan öğrenmek",
+  "kind": "titleTr",
+  "de": "Aus Fehlern lernen"
+ },
+ {
+  "tr": "İlerlemeyi konuşmak",
+  "kind": "titleTr",
+  "de": "Über Fortschritt sprechen"
+ },
+ {
+  "tr": "Bir hatayı sırayla anlatmayı öğretir: neyi yanlış öğrenmiştin, sonra ne oldu.",
+  "kind": "summary",
+  "de": "Vermittelt, wie man einen Fehler der Reihe nach erzählt: was du falsch gelernt hattest und was danach geschah."
+ },
+ {
+  "tr": "Çalışma planını anlatmayı öğretir; üç gelecek biçimini plan üzerinden ayırır.",
+  "kind": "summary",
+  "de": "Vermittelt, wie man seinen Lernplan erzählt, und trennt die drei Zukunftsformen am Plan."
+ },
+ {
+  "tr": "Öğrenme yöntemini anlatmayı öğretir; fiilden sonra -ing mi to mu geldiğini seçtirir.",
+  "kind": "summary",
+  "de": "Vermittelt, wie man seine Lernmethode erklärt, und lässt wählen, ob nach dem Verb -ing oder to steht."
+ },
+ {
+  "tr": "Sınav kurallarını ve hazırlık öğütlerini ayırmayı öğretir: zorunluluk, yasak ve tavsiye.",
+  "kind": "summary",
+  "de": "Vermittelt, wie man Prüfungsregeln von Vorbereitungstipps trennt: Pflicht, Verbot und Rat."
+ },
+ {
+  "tr": "İlerlemeni anlatmayı öğretir: süren gelişim ile bitmiş bir dönem ayrı zamanlarla söylenir.",
+  "kind": "summary",
+  "de": "Vermittelt, wie man von Fortschritt erzählt: laufende Entwicklung und ein abgeschlossener Abschnitt stehen in verschiedenen Zeiten."
+ },
+ {
+  "tr": "aynı hatayı yaptığını düşünen bir arkadaş",
+  "kind": "partner",
+  "de": "ein Freund, der glaubt, denselben Fehler zu machen"
+ },
+ {
+  "tr": "sana uygun yöntemi bulmaya çalışan bir öğretmen",
+  "kind": "partner",
+  "de": "eine Lehrerin, die die passende Methode für dich sucht"
+ },
+ {
+  "tr": "sınav konusunda gergin, her şeyi soran bir arkadaş",
+  "kind": "partner",
+  "de": "ein Freund, der vor der Prüfung nervös ist und alles fragt"
+ },
+ {
+  "tr": "ilerlemeni rakamlarla da görmek isteyen bir öğretmen",
+  "kind": "partner",
+  "de": "ein Lehrer, der deinen Fortschritt auch in Zahlen sehen will"
+ },
+ {
+  "tr": "planlı çalışmayı beceremeyen, senden fikir isteyen bir arkadaş",
+  "kind": "partner",
+  "de": "eine Freundin, die es mit dem Planen nicht schafft und dich um Ideen bittet"
+ },
+ {
+  "tr": "Haftanı nasıl düzenliyorsun?",
+  "kind": "openingTr",
+  "de": "Wie teilst du deine Woche ein?"
+ },
+ {
+  "tr": "Çok gerginim. Neleri bilmem gerekiyor?",
+  "kind": "openingTr",
+  "de": "Ich bin sehr nervös. Was muss ich wissen?"
+ },
+ {
+  "tr": "İlerlemene bakalım. Nereden başlamıştın?",
+  "kind": "openingTr",
+  "de": "Schauen wir uns deinen Fortschritt an. Wo hattest du angefangen?"
+ },
+ {
+  "tr": "Söyle bakalım, en iyi nasıl öğreniyorsun?",
+  "kind": "openingTr",
+  "de": "Sag mal, wie lernst du am besten?"
+ },
+ {
+  "tr": "Dur, sanırım ben de öyle yapıyorum. Yanlış olan neydi?",
+  "kind": "openingTr",
+  "de": "Moment, ich glaube, ich mache das auch. Was war falsch?"
+ },
+ {
+  "tr": "Bir öğretmenle ilerlemeni değerlendiriyorsunuz. Nereden başladığını, neyin geliştiğini ve hangi boşluğun kaldığını anlat.",
+  "kind": "scene",
+  "de": "Du wertest mit einem Lehrer deinen Fortschritt aus. Erzähl, wo du angefangen hast, was sich entwickelt hat und welche Lücke geblieben ist."
+ },
+ {
+  "tr": "Bir öğretmenle nasıl öğrendiğini konuşuyorsun. Hangi yöntemden hoşlandığını, neyi denediğini ve hangi alışkanlığı kurduğunu anlat.",
+  "kind": "scene",
+  "de": "Du sprichst mit einer Lehrerin darüber, wie du lernst. Erzähl, welche Methode dir gefällt, was du versuchst und welche Gewohnheit du aufgebaut hast."
+ },
+ {
+  "tr": "Bir arkadaşınla çalışma planınızı konuşuyorsunuz. Hangi güne ne koyduğunu söyle, neye odaklanacağını anlat ve mola düzenini paylaş.",
+  "kind": "scene",
+  "de": "Du besprichst mit einer Freundin euren Lernplan. Sag, was du auf welchen Tag gelegt hast, worauf du dich konzentrierst, und teil deine Pausenregel."
+ },
+ {
+  "tr": "Bir arkadaşın ilk kez bu sınava girecek ve kuralları soruyor. Neyi getirmek zorunda, neyin yasak olduğunu söyle ve ona iki öğüt ver.",
+  "kind": "scene",
+  "de": "Ein Freund schreibt diese Prüfung zum ersten Mal und fragt nach den Regeln. Sag, was er mitbringen muss und was verboten ist, und gib ihm zwei Ratschläge."
+ },
+ {
+  "tr": "Uzun süre yanlış öğrendiğin bir şeyi sonunda düzelttin ve bir arkadaşın merak ediyor. Sırayla anlat: neyi yanlış öğrenmiştin, ne zaman fark ettin, nasıl düzelttin.",
+  "kind": "scene",
+  "de": "Etwas, das du lange falsch gelernt hattest, hast du endlich korrigiert und ein Freund ist neugierig. Erzähl der Reihe nach: was du falsch gelernt hattest, wann du es gemerkt hast, wie du es korrigiert hast."
+ },
+ {
+  "tr": "Bir yöntemi, bir çabayı ve bir alışkanlığı doğru kalıplarla anlattıysan konuşma başarılı sayılır.",
+  "kind": "goal",
+  "de": "Das Gespräch gilt als gelungen, wenn du eine Methode, einen Versuch und eine Gewohnheit mit den richtigen Wendungen erklärt hast."
+ },
+ {
+  "tr": "Başlangıcını ve süren gelişimini doğru zamanlarla ayırdıysan ve kalan boşluğu söylediysen konuşma başarılı sayılır.",
+  "kind": "goal",
+  "de": "Das Gespräch gilt als gelungen, wenn du Anfang und laufende Entwicklung in den richtigen Zeiten getrennt und die verbliebene Lücke genannt hast."
+ },
+ {
+  "tr": "Kararlaşmış bir işi, bir niyetini ve o anda verdiğin bir kararı doğru kalıplarla söylediysen konuşma başarılı sayılır.",
+  "kind": "goal",
+  "de": "Das Gespräch gilt als gelungen, wenn du einen festen Termin, eine Absicht und einen spontanen Entschluss mit den richtigen Wendungen gesagt hast."
+ },
+ {
+  "tr": "Bir zorunluluk, bir yasak ve iki öğüt söylediysen ve arkadaşının gerginliğine cevap verdiysen konuşma başarılı sayılır.",
+  "kind": "goal",
+  "de": "Das Gespräch gilt als gelungen, wenn du eine Pflicht, ein Verbot und zwei Ratschläge genannt und auf die Nervosität deines Freundes reagiert hast."
+ },
+ {
+  "tr": "Hatanın sırasını doğru anlattıysan, en az bir kez önce olanı geriye aldıysan ve nasıl düzelttiğini söylediysen konuşma başarılı sayılır.",
+  "kind": "goal",
+  "de": "Das Gespräch gilt als gelungen, wenn du die Reihenfolge des Fehlers richtig erzählt, mindestens einmal das Frühere zurückgesetzt und gesagt hast, wie du ihn korrigiert hast."
+ },
+ {
+  "tr": "odak",
+  "kind": "vocab.tr",
+  "de": "Fokus"
+ },
+ {
+  "tr": "puan",
+  "kind": "vocab.tr",
+  "de": "Punktzahl"
+ },
+ {
+  "tr": "akıcı",
+  "kind": "vocab.tr",
+  "de": "fließend"
+ },
+ {
+  "tr": "düzen",
+  "kind": "vocab.tr",
+  "de": "Routine"
+ },
+ {
+  "tr": "sınav",
+  "kind": "vocab.tr",
+  "de": "Prüfung"
+ },
+ {
+  "tr": "boşluk",
+  "kind": "vocab.tr",
+  "de": "Lücke"
+ },
+ {
+  "tr": "geçmek",
+  "kind": "vocab.tr",
+  "de": "bestehen"
+ },
+ {
+  "tr": "gergin",
+  "kind": "vocab.tr",
+  "de": "nervös"
+ },
+ {
+  "tr": "görsel",
+  "kind": "vocab.tr",
+  "de": "visuell"
+ },
+ {
+  "tr": "ölçmek",
+  "kind": "vocab.tr",
+  "de": "messen"
+ },
+ {
+  "tr": "örüntü",
+  "kind": "vocab.tr",
+  "de": "Muster"
+ },
+ {
+  "tr": "seviye",
+  "kind": "vocab.tr",
+  "de": "Niveau"
+ },
+ {
+  "tr": "yaygın",
+  "kind": "vocab.tr",
+  "de": "häufig"
+ },
+ {
+  "tr": "yöntem",
+  "kind": "vocab.tr",
+  "de": "Methode"
+ },
+ {
+  "tr": "düzeltme",
+  "kind": "vocab.tr",
+  "de": "Korrektur"
+ },
+ {
+  "tr": "haftalık",
+  "kind": "vocab.tr",
+  "de": "wöchentlich"
+ },
+ {
+  "tr": "telaffuz",
+  "kind": "vocab.tr",
+  "de": "Aussprache"
+ },
+ {
+  "tr": "alıştırma",
+  "kind": "vocab.tr",
+  "de": "Übung"
+ },
+ {
+  "tr": "dikkatsiz",
+  "kind": "vocab.tr",
+  "de": "unachtsam"
+ },
+ {
+  "tr": "alışkanlık",
+  "kind": "vocab.tr",
+  "de": "Gewohnheit"
+ },
+ {
+  "tr": "dilbilgisi",
+  "kind": "vocab.tr",
+  "de": "Grammatik"
+ },
+ {
+  "tr": "ezberlemek",
+  "kind": "vocab.tr",
+  "de": "auswendig lernen"
+ },
+ {
+  "tr": "odaklanmak",
+  "kind": "vocab.tr",
+  "de": "sich konzentrieren"
+ },
+ {
+  "tr": "konu başlığı",
+  "kind": "vocab.tr",
+  "de": "Thema"
+ },
+ {
+  "tr": "kopya çekmek",
+  "kind": "vocab.tr",
+  "de": "abschreiben"
+ },
+ {
+  "tr": "tekrar etmek",
+  "kind": "vocab.tr",
+  "de": "wiederholen"
+ },
+ {
+  "tr": "kendine güvenen",
+  "kind": "vocab.tr",
+  "de": "selbstsicher"
+ },
+ {
+  "tr": "kelime dağarcığı",
+  "kind": "vocab.tr",
+  "de": "Wortschatz"
+ },
+ {
+  "tr": "planlama defteri",
+  "kind": "vocab.tr",
+  "de": "Lernkalender"
+ },
+ {
+  "tr": "çabayı to ile söyler",
+  "kind": "pattern.tr",
+  "de": "nennt den Versuch mit to"
+ },
+ {
+  "tr": "süren gelişimi anlatır",
+  "kind": "pattern.tr",
+  "de": "erzählt von der laufenden Entwicklung"
+ },
+ {
+  "tr": "alışkanlığı -ing ile söyler",
+  "kind": "pattern.tr",
+  "de": "nennt die Gewohnheit mit -ing"
+ },
+ {
+  "tr": "kararlaşmış programı söyler",
+  "kind": "pattern.tr",
+  "de": "nennt den festen Plan"
+ },
+ {
+  "tr": "bir çalışmanın süresini sorar",
+  "kind": "pattern.tr",
+  "de": "fragt, wie lange man schon lernt"
+ },
+ {
+  "tr": "bitmiş bir başlangıcı anlatır",
+  "kind": "pattern.tr",
+  "de": "erzählt von einem abgeschlossenen Anfang"
+ },
+ {
+  "tr": "hoşlanılan yöntemi -ing ile söyler",
+  "kind": "pattern.tr",
+  "de": "nennt mit -ing die Methode, die man mag"
+ },
+ {
+  "tr": "Yanlış. Burada bir hedef anlatılıyor ve o kalıp mastar ister:",
+  "kind": "why.tr",
+  "de": "Falsch. Hier wird ein Ziel genannt, und diese Wendung verlangt den Infinitiv:"
+ },
+ {
+  "tr": "Yanlış. Bu kalıp 'gerekmiyor' demek; kopya yasaktır ve yasağın kalıbı başkadır:",
+  "kind": "why.tr",
+  "de": "Falsch. Diese Wendung heißt «nicht nötig»; Abschreiben ist verboten, und für das Verbot gibt es eine andere:"
+ },
+ {
+  "tr": "Doğru. Gün kararlaşmış ve plana yazılmış; İngilizce bunu şimdiki zamanla söyler, gelecek eki aramaz.",
+  "kind": "why.tr",
+  "de": "Richtig. Der Tag steht fest und im Plan; das Englische sagt das mit der Verlaufsform und braucht keine Zukunftsform."
+ },
+ {
+  "tr": "Doğru. Gelişim bitmiş bir noktada değil, bugüne kadar geliyor; İngilizce bunu present perfect ile söyler.",
+  "kind": "why.tr",
+  "de": "Richtig. Die Entwicklung ist nicht an einem Punkt beendet, sie reicht bis heute; das Englische sagt das mit Present Perfect."
+ },
+ {
+  "tr": "Çaba fiilinden sonra mastar gelir:",
+  "kind": "hint.tr",
+  "de": "Nach dem Verb des Versuchens steht der Infinitiv:"
+ },
+ {
+  "tr": "Gelişim sürüyor, o yüzden present perfect:",
+  "kind": "hint.tr",
+  "de": "Die Entwicklung läuft, deshalb Present Perfect:"
+ },
+ {
+  "tr": "Bu akşam için kararlaşmış, o yüzden şimdiki zaman:",
+  "kind": "hint.tr",
+  "de": "Für heute Abend steht es fest, deshalb die Verlaufsform:"
+ },
+ {
+  "tr": "çaba",
+  "kind": "say.tr",
+  "de": "Versuch"
+ },
+ {
+  "tr": "sınav,",
+  "kind": "say.tr",
+  "de": "Prüfung,"
+ },
+ {
+  "tr": "alışkanlık",
+  "kind": "say.tr",
+  "de": "Gewohnheit"
+ },
+ {
+  "tr": "Geçememeye",
+  "kind": "say.tr",
+  "de": "Nicht bestehen heißt"
+ },
+ {
+  "tr": "Ezberlemeye",
+  "kind": "say.tr",
+  "de": "Auswendig lernen heißt"
+ },
+ {
+  "tr": "kural koyar,",
+  "kind": "say.tr",
+  "de": "setzt eine Regel,"
+ },
+ {
+  "tr": "Kopya çekmeye",
+  "kind": "say.tr",
+  "de": "Abschreiben heißt"
+ },
+ {
+  "tr": "Aldığın sayıya",
+  "kind": "say.tr",
+  "de": "Die Zahl, die du bekommst, heißt"
+ },
+ {
+  "tr": "Gözle öğrenene",
+  "kind": "say.tr",
+  "de": "Wer mit den Augen lernt, ist"
+ },
+ {
+  "tr": "İşlenen konuya",
+  "kind": "say.tr",
+  "de": "Das behandelte Thema heißt"
+ },
+ {
+  "tr": "Rahat konuşana",
+  "kind": "say.tr",
+  "de": "Wer flüssig spricht, ist"
+ },
+ {
+  "tr": "Bir şeyi anlamak",
+  "kind": "say.tr",
+  "de": "Etwas verstehen wird mit"
+ },
+ {
+  "tr": "Bir şeyi ölçmeye",
+  "kind": "say.tr",
+  "de": "Etwas messen heißt"
+ },
+ {
+  "tr": "bitmiş başlangıç",
+  "kind": "say.tr",
+  "de": "abgeschlossener Anfang"
+ },
+ {
+  "tr": "izlenen yola ise",
+  "kind": "say.tr",
+  "de": "und der Weg, dem man folgt, heißt"
+ },
+ {
+  "tr": "Sık yapılan şeye",
+  "kind": "say.tr",
+  "de": "Was man oft macht, heißt"
+ },
+ {
+  "tr": "tekrarlamaya ise",
+  "kind": "say.tr",
+  "de": "und wiederholen heißt"
+ },
+ {
+  "tr": "unutmak için ise",
+  "kind": "say.tr",
+  "de": "und für vergessen"
+ },
+ {
+  "tr": "Bir de kalıp var:",
+  "kind": "say.tr",
+  "de": "Und es gibt eine Wendung:"
+ },
+ {
+  "tr": "düzenli akışa ise",
+  "kind": "say.tr",
+  "de": "und der geregelte Ablauf heißt"
+ },
+ {
+  "tr": "Kurallar bütününe",
+  "kind": "say.tr",
+  "de": "Die Gesamtheit der Regeln heißt"
+ },
+ {
+  "tr": "özensiz olana ise",
+  "kind": "say.tr",
+  "de": "und wer nicht sorgfältig ist, ist"
+ },
+ {
+  "tr": "geçmek. Tekrar et:",
+  "kind": "say.tr",
+  "de": "bestehen. Sprich nach:"
+ },
+ {
+  "tr": "Kontrol etmek için",
+  "kind": "say.tr",
+  "de": "Für prüfen sagen wir"
+ },
+ {
+  "tr": "Tekrarlanan biçime",
+  "kind": "say.tr",
+  "de": "Die wiederkehrende Form heißt"
+ },
+ {
+  "tr": "Yapılan düzeltmeye",
+  "kind": "say.tr",
+  "de": "Die gemachte Korrektur heißt"
+ },
+ {
+  "tr": "eksik kalan yere ise",
+  "kind": "say.tr",
+  "de": "und die Stelle, die fehlt, heißt"
+ },
+ {
+  "tr": "kendine güvenene ise",
+  "kind": "say.tr",
+  "de": "und wer sich sicher fühlt, ist"
+ },
+ {
+  "tr": "sık görülen için ise",
+  "kind": "say.tr",
+  "de": "und für das, was oft vorkommt"
+ },
+ {
+  "tr": "yazdığın deftere ise",
+  "kind": "say.tr",
+  "de": "und das Heft, in das du schreibst, heißt"
+ },
+ {
+  "tr": "Çalışmaya ara vermeye",
+  "kind": "say.tr",
+  "de": "Eine Unterbrechung beim Lernen heißt"
+ },
+ {
+  "tr": "Özetleyelim: hoşlanma",
+  "kind": "say.tr",
+  "de": "Fassen wir zusammen: Vorliebe"
+ },
+ {
+  "tr": "söyleyiş biçimine ise",
+  "kind": "say.tr",
+  "de": "und die Art des Aussprechens heißt"
+ },
+ {
+  "tr": "Dokuzda mola vereceğim.",
+  "kind": "say.tr",
+  "de": "Um neun mache ich eine Pause."
+ },
+ {
+  "tr": "Gergindim ama kalmadım.",
+  "kind": "say.tr",
+  "de": "Ich war nervös, aber ich bin nicht durchgefallen."
+ },
+ {
+  "tr": "Özetleyelim: kararlaşmış",
+  "kind": "say.tr",
+  "de": "Fassen wir zusammen: festgelegt"
+ },
+ {
+  "tr": "Planını yazdığın deftere",
+  "kind": "say.tr",
+  "de": "Das Heft, in das du deinen Plan schreibst, heißt"
+ },
+ {
+  "tr": "haftada bir olan için ise",
+  "kind": "say.tr",
+  "de": "und für das, was einmal pro Woche ist"
+ },
+ {
+  "tr": "bir hatayı kabul etmek ise",
+  "kind": "say.tr",
+  "de": "und einen Fehler zugeben heißt"
+ },
+ {
+  "tr": "Deftere yazmaya alışkınım.",
+  "kind": "say.tr",
+  "de": "Ich bin es gewohnt, ins Heft zu schreiben."
+ },
+ {
+  "tr": "Dinlemek demek ve ardından",
+  "kind": "say.tr",
+  "de": "Das heißt hören, und danach kommt"
+ },
+ {
+  "tr": "Özetleyelim: süren gelişim",
+  "kind": "say.tr",
+  "de": "Fassen wir zusammen: laufende Entwicklung"
+ },
+ {
+  "tr": "o an verilen karar için ise",
+  "kind": "say.tr",
+  "de": "und für einen spontanen Entschluss"
+ },
+ {
+  "tr": "Sınavda kopya çekmek yasak.",
+  "kind": "say.tr",
+  "de": "In der Prüfung abzuschreiben ist verboten."
+ },
+ {
+  "tr": "Başlangıçta yanlış öğrenmiştim.",
+  "kind": "say.tr",
+  "de": "Am Anfang hatte ich es falsch gelernt."
+ },
+ {
+  "tr": "Konuşmadaki boşluğu ölçmek zor.",
+  "kind": "say.tr",
+  "de": "Die Lücke beim Sprechen ist schwer zu messen."
+ },
+ {
+  "tr": "Puanım düşüktü ama notum iyiydi.",
+  "kind": "say.tr",
+  "de": "Meine Punktzahl war niedrig, aber meine Note war gut."
+ },
+ {
+  "tr": "sınav öncesi hissettiğin şeye ise",
+  "kind": "say.tr",
+  "de": "und was du vor der Prüfung fühlst, heißt"
+ },
+ {
+  "tr": "harfle verilen değerlendirmeye ise",
+  "kind": "say.tr",
+  "de": "und die Bewertung mit einem Buchstaben heißt"
+ },
+ {
+  "tr": "Sonra düzeltme bana yardımcı oldu.",
+  "kind": "say.tr",
+  "de": "Dann hat mir die Korrektur geholfen."
+ },
+ {
+  "tr": "Dilbilgim iyi ama telaffuzum zayıf.",
+  "kind": "say.tr",
+  "de": "Meine Grammatik ist gut, aber meine Aussprache ist schwach."
+ },
+ {
+  "tr": "Her konunun haftalık bir testi var.",
+  "kind": "say.tr",
+  "de": "Jedes Thema hat einen wöchentlichen Test."
+ },
+ {
+  "tr": "Sınava kartını getirmek zorundasın.",
+  "kind": "say.tr",
+  "de": "Du musst deinen Ausweis zur Prüfung mitbringen."
+ },
+ {
+  "tr": "denir. İlki Britanya'da s ile yazılır.",
+  "kind": "say.tr",
+  "de": "genannt. Das erste wird in Großbritannien mit s geschrieben."
+ },
+ {
+  "tr": "Bu düzeltme öğrenenler arasında yaygın.",
+  "kind": "say.tr",
+  "de": "Diese Korrektur ist unter Lernenden häufig."
+ },
+ {
+  "tr": "Günde on kelime ezberlemeye çalışıyorum.",
+  "kind": "say.tr",
+  "de": "Ich versuche, zehn Wörter am Tag auswendig zu lernen."
+ },
+ {
+  "tr": "Şimdi sen kur: Zor konudan başlayacağım.",
+  "kind": "say.tr",
+  "de": "Jetzt du: Ich fange mit dem schweren Thema an."
+ },
+ {
+  "tr": "Bir tane daha: Sabah çalışmaya alışkınım.",
+  "kind": "say.tr",
+  "de": "Noch eins: Ich bin es gewohnt, morgens zu lernen."
+ },
+ {
+  "tr": "denir ve bu fiil oyunlarda da kullanılır.",
+  "kind": "say.tr",
+  "de": "genannt, und dieses Verb wird auch bei Spielen benutzt."
+ },
+ {
+  "tr": "Kabul ediyorum ve artık kuralı anlıyorum.",
+  "kind": "say.tr",
+  "de": "Ich gebe es zu, und jetzt verstehe ich die Regel."
+ },
+ {
+  "tr": "Ne kadar zamandır İngilizce çalışıyorsun?",
+  "kind": "say.tr",
+  "de": "Wie lange lernst du schon Englisch?"
+ },
+ {
+  "tr": "Çaba ve karar fiillerinden sonra to gelir:",
+  "kind": "say.tr",
+  "de": "Nach Verben des Versuchens und Entscheidens steht to:"
+ },
+ {
+  "tr": "Son kalıbımız öğüt veriyor. Alıştırma için",
+  "kind": "say.tr",
+  "de": "Unsere letzte Wendung gibt einen Rat. Für die Übung sagen wir"
+ },
+ {
+  "tr": "Dikkatsiz olduğumda aynı örüntü geri geldi.",
+  "kind": "say.tr",
+  "de": "Als ich unachtsam war, kam dasselbe Muster zurück."
+ },
+ {
+  "tr": "Ezberleyene kadar kelimeleri tekrarlıyorum.",
+  "kind": "say.tr",
+  "de": "Ich wiederhole die Wörter, bis ich sie auswendig kann."
+ },
+ {
+  "tr": "Şimdi planını bir arkadaşınla konuşacaksın.",
+  "kind": "say.tr",
+  "de": "Jetzt besprichst du deinen Plan mit einer Freundin."
+ },
+ {
+  "tr": "Şimdi sen kur: Geçen bahar bir test yaptım.",
+  "kind": "say.tr",
+  "de": "Jetzt du: Letztes Frühjahr habe ich einen Test gemacht."
+ },
+ {
+  "tr": "Artık daha akıcı ve daha kendime güvenliyim.",
+  "kind": "say.tr",
+  "de": "Ich bin jetzt flüssiger und selbstsicherer."
+ },
+ {
+  "tr": "Bir tane daha: Sınavdan önce iyi uyumalısın.",
+  "kind": "say.tr",
+  "de": "Noch eins: Du solltest vor der Prüfung gut schlafen."
+ },
+ {
+  "tr": "Bölüm demek. İlk kalıbımız da bu. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Das heißt Kapitel. Das ist auch unsere erste Wendung. Sprich nach:"
+ },
+ {
+  "tr": "Şimdi bir öğretmenle yöntemini konuşacaksın.",
+  "kind": "say.tr",
+  "de": "Jetzt besprichst du deine Methode mit einer Lehrerin."
+ },
+ {
+  "tr": "Şimdi sıra sende: Telaffuzum bu yıl gelişti.",
+  "kind": "say.tr",
+  "de": "Jetzt bist du dran: Meine Aussprache hat sich dieses Jahr verbessert."
+ },
+ {
+  "tr": "Şimdi bir arkadaşına bir hatanı anlatacaksın.",
+  "kind": "say.tr",
+  "de": "Jetzt erzählst du einem Freund von einem Fehler."
+ },
+ {
+  "tr": "Şimdi bir öğretmenle ilerlemeni konuşacaksın.",
+  "kind": "say.tr",
+  "de": "Jetzt besprichst du deinen Fortschritt mit einem Lehrer."
+ },
+ {
+  "tr": "Şimdi sen kur: Aynı hatayı iki kez yapmıştım.",
+  "kind": "say.tr",
+  "de": "Jetzt du: Ich hatte denselben Fehler zweimal gemacht."
+ },
+ {
+  "tr": "Yöntemim görsel, o yüzden çok çizim yapıyorum.",
+  "kind": "say.tr",
+  "de": "Meine Methode ist visuell, deshalb zeichne ich viel."
+ },
+ {
+  "tr": "Son kalıbımız alışkanlığı anlatıyor. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Unsere letzte Wendung nennt die Gewohnheit. Sprich nach:"
+ },
+ {
+  "tr": "Şimdi sen kur: Salonda telefon kullanmak yasak.",
+  "kind": "say.tr",
+  "de": "Jetzt du: Im Saal das Handy zu benutzen ist verboten."
+ },
+ {
+  "tr": "Şimdi sınava ilk kez girecek birine anlatacaksın.",
+  "kind": "say.tr",
+  "de": "Jetzt erklärst du es jemandem, der die Prüfung zum ersten Mal schreibt."
+ },
+ {
+  "tr": "Şimdi sıra sende: Testten önce kuralı unutmuştum.",
+  "kind": "say.tr",
+  "de": "Jetzt bist du dran: Vor dem Test hatte ich die Regel vergessen."
+ },
+ {
+  "tr": "Deftere yazmak odağımı koruyan iyi bir alışkanlık.",
+  "kind": "say.tr",
+  "de": "Ins Heft zu schreiben ist eine gute Gewohnheit, die meinen Fokus hält."
+ },
+ {
+  "tr": "Şimdi sen kur: Otuz dakika odaklanmaya çalışıyorum.",
+  "kind": "say.tr",
+  "de": "Jetzt du: Ich versuche, mich dreißig Minuten zu konzentrieren."
+ },
+ {
+  "tr": "İkinci kalıbımız niyeti anlatıyor. Tekrar etmek için",
+  "kind": "say.tr",
+  "de": "Unsere zweite Wendung nennt die Absicht. Für wiederholen sagen wir"
+ },
+ {
+  "tr": "Bir tane daha: Bu akşam ikinci bölümü tekrar ediyorum.",
+  "kind": "say.tr",
+  "de": "Noch eins: Heute Abend wiederhole ich das zweite Kapitel."
+ },
+ {
+  "tr": "Planlama defterim her bölümü ve her molayı gösteriyor.",
+  "kind": "say.tr",
+  "de": "Mein Lernkalender zeigt jedes Kapitel und jede Pause."
+ },
+ {
+  "tr": "Şimdi sıra sende: Bu hafta dilbilgisine odaklanacağım.",
+  "kind": "say.tr",
+  "de": "Jetzt bist du dran: Diese Woche konzentriere ich mich auf die Grammatik."
+ },
+ {
+  "tr": "Kelime dağarcığı demek. İlk kalıbımız da bu. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Das heißt Wortschatz. Das ist auch unsere erste Wendung. Sprich nach:"
+ },
+ {
+  "tr": "Şimdi sıra sende: On beş dakika erken gelmek zorundasın.",
+  "kind": "say.tr",
+  "de": "Jetzt bist du dran: Du musst fünfzehn Minuten früher kommen."
+ },
+ {
+  "tr": "Bir tane daha: Öğretmen konuştuğunda onu tekrar yazmıştım.",
+  "kind": "say.tr",
+  "de": "Noch eins: Als die Lehrerin sprach, hatte ich es schon wieder geschrieben."
+ },
+ {
+  "tr": "Şimdi sıra sende: Altyazısız film izlemekten hoşlanıyorum.",
+  "kind": "say.tr",
+  "de": "Jetzt bist du dran: Ich sehe gern Filme ohne Untertitel."
+ },
+ {
+  "tr": "denir; ajandadan farkı yalnız çalışma için kullanılmasıdır.",
+  "kind": "say.tr",
+  "de": "genannt; der Unterschied zum Kalender ist, dass er nur fürs Lernen da ist."
+ },
+ {
+  "tr": "Şimdi dersin kuralı. Gelişim HÂLÂ sürüyorsa present perfect:",
+  "kind": "say.tr",
+  "de": "Jetzt die Regel der Lektion. LÄUFT die Entwicklung noch, steht Present Perfect:"
+ },
+ {
+  "tr": "Başlangıç gibi bitmiş bir noktadan söz ediyorsan past simple:",
+  "kind": "say.tr",
+  "de": "Sprichst du von einem abgeschlossenen Punkt wie dem Anfang, steht Past Simple:"
+ },
+ {
+  "tr": "İkinci kalıbımız bitmiş bir başlangıcı anlatıyor. Seviye için",
+  "kind": "say.tr",
+  "de": "Unsere zweite Wendung erzählt von einem abgeschlossenen Anfang. Für das Niveau sagen wir"
+ },
+ {
+  "tr": "Şimdi dersin kuralı. Takvime yazılmış bir iş için şimdiki zaman:",
+  "kind": "say.tr",
+  "de": "Jetzt die Regel der Lektion. Für etwas, das im Kalender steht, nimmt man die Verlaufsform:"
+ },
+ {
+  "tr": "Bir tane daha: Ne kadar zamandır telaffuzun üzerinde çalışıyorsun?",
+  "kind": "say.tr",
+  "de": "Noch eins: Wie lange arbeitest du schon an deiner Aussprache?"
+ },
+ {
+  "tr": "ise öğüt verir. Sınav salonunda ilk ikisi, hazırlıkta üçüncüsü geçer.",
+  "kind": "say.tr",
+  "de": "dagegen gibt einen Rat. Im Prüfungssaal gelten die ersten beiden, bei der Vorbereitung die dritte."
+ },
+ {
+  "tr": "Kısa bir mola odaklanmama yardım ediyor ve düzenimi sağlıklı tutuyor.",
+  "kind": "say.tr",
+  "de": "Eine kurze Pause hilft mir, mich zu konzentrieren, und hält meine Routine gesund."
+ },
+ {
+  "tr": "Şimdi dersin kuralı. Hoşlanma ve alışkanlık fiillerinden sonra -ing gelir:",
+  "kind": "say.tr",
+  "de": "Jetzt die Regel der Lektion. Nach Verben der Vorliebe und Gewohnheit steht -ing:"
+ },
+ {
+  "tr": "Hatanın hikâyesi hep aynı sıradadır ve İngilizce o sırayı zamanla gösterir. Hazır mısın?",
+  "kind": "say.tr",
+  "de": "Die Geschichte eines Fehlers hat immer dieselbe Reihenfolge, und das Englische zeigt sie mit der Zeitform. Bist du bereit?"
+ },
+ {
+  "tr": "İlerleme anlatısında iki zaman yan yana duruyor: gelişim sürüyor, başlangıç bitti. Hazır mısın?",
+  "kind": "say.tr",
+  "de": "Beim Erzählen vom Fortschritt stehen zwei Zeiten nebeneinander: die Entwicklung läuft, der Anfang ist vorbei. Bist du bereit?"
+ },
+ {
+  "tr": "Planın üç katmanı var ve İngilizce her katmanı ayrı bir gelecek biçimiyle söylüyor. Hazır mısın?",
+  "kind": "say.tr",
+  "de": "Der Plan hat drei Ebenen, und das Englische sagt jede mit einer eigenen Zukunftsform. Bist du bereit?"
+ },
+ {
+  "tr": "Merhaba! Bugün nasıl öğrendiğini anlatmayı öğreneceğiz: ezberleyerek mi, dinleyerek mi, yazarak mı.",
+  "kind": "say.tr",
+  "de": "Hallo! Heute lernen wir zu erklären, wie du lernst: auswendig, durch Hören oder durch Schreiben."
+ },
+ {
+  "tr": "Merhaba! Bugün ilerlemeni anlatmayı öğreneceğiz: nereden başladın, ne kadar geldin, nerede boşluk var.",
+  "kind": "say.tr",
+  "de": "Hallo! Heute lernen wir, von deinem Fortschritt zu erzählen: wo du angefangen hast, wie weit du gekommen bist, wo eine Lücke ist."
+ },
+ {
+  "tr": "Bu konuşmada fiil seçimi kritik: bazı fiillerden sonra -ing, bazılarından sonra to geliyor. Hazır mısın?",
+  "kind": "say.tr",
+  "de": "In diesem Gespräch ist die Wahl des Verbs entscheidend: nach manchen steht -ing, nach anderen to. Bist du bereit?"
+ },
+ {
+  "tr": "Merhaba! Bugün çalışma planını anlatmayı öğreneceğiz: ne zaman tekrar ediyorsun, hangi konu, ne kadar mola.",
+  "kind": "say.tr",
+  "de": "Hallo! Heute lernen wir, deinen Lernplan zu erzählen: wann du wiederholst, welches Thema, wie viel Pause."
+ },
+ {
+  "tr": "Merhaba! Bugün sınav öncesini konuşmayı öğreneceğiz: neyi getirmek zorundasın, ne yasak, ne yapsan iyi olur.",
+  "kind": "say.tr",
+  "de": "Hallo! Heute sprechen wir über die Zeit vor der Prüfung: was du mitbringen musst, was verboten ist und was du besser tust."
+ },
+ {
+  "tr": "Merhaba! Bugün hatalardan öğrenmeyi konuşacağız: neyi yanlış öğrenmiştin, ne zaman fark ettin, nasıl düzelttin.",
+  "kind": "say.tr",
+  "de": "Hallo! Heute sprechen wir darüber, aus Fehlern zu lernen: was du falsch gelernt hattest, wann du es gemerkt hast, wie du es korrigiert hast."
+ },
+ {
+  "tr": "Sınav kuralları ile hazırlık öğütleri farklı kalıplarla söylenir; karıştırmak öğrenciyi yanlış yönlendirir. Hazır mısın?",
+  "kind": "say.tr",
+  "de": "Prüfungsregeln und Vorbereitungstipps werden mit verschiedenen Wendungen gesagt; sie zu verwechseln führt Lernende in die Irre. Bist du bereit?"
+ }
+]
