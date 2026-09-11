@@ -53,7 +53,25 @@ export function translate(
   key: string,
   vars?: Record<string, string | number>,
 ): string {
-  const raw = DICTS[lang]?.[key] ?? DICTS[DEFAULT_NATIVE]?.[key] ?? key;
+  /*
+   * TEKİL BİÇİM. Sözlükte çoğul yoktu: "{n} friends" bir arkadaşta "1 friends"
+   * diye çıkıyordu, Almancada "1 Freunde". Türkçede sorun yok — sayıdan sonra
+   * isim tekil kalır — ama İngilizce ve Almanca hem ismi hem fiili değiştirir
+   * ("1 word is due", "1 Wort droht").
+   *
+   * Ek NOKTALI (`.one`), alt çizgili değil: sözlükte adı doğal olarak "_one"
+   * ile biten bir anahtar zaten var (`practice.all_game_types_in_one`) ve alt
+   * çizgili ek onunla karışıyordu — denetim onu öksüz bir tekil biçim sanıp
+   * düştü. Nokta anahtar adlarında ayraç, sözcük içinde geçmiyor.
+   *
+   * Kural küçük bilerek: `n` birse ve `<anahtar>.one` varsa o kullanılıyor,
+   * yoksa temel anahtar. Yani çoğul biçimi olmayan hiçbir anahtar bundan
+   * etkilenmiyor. İkiden fazla biçim isteyen diller (Lehçe, Rusça) gelirse
+   * burası `Intl.PluralRules`e döner; üç dil için o makine fazla.
+   */
+  const bul = (k: string): string | undefined => DICTS[lang]?.[k] ?? DICTS[DEFAULT_NATIVE]?.[k];
+  const tekil = vars?.n !== undefined && Number(vars.n) === 1;
+  const raw = (tekil ? bul(`${key}.one`) : undefined) ?? bul(key) ?? key;
   if (!vars) return raw;
   return raw.replace(/\{(\w+)\}/g, (m, name: string) => {
     const v = vars[name];

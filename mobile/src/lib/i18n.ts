@@ -215,7 +215,11 @@ export function onLangChange(fn: () => void): () => void {
  *   t("learn.greeting_named", { name: "Ada" })   // "Merhaba Ada"
  */
 export function t(key: string, vars?: Record<string, string | number>): string {
-  const raw = DICTS[lang]?.[key] ?? DICTS[DEFAULT_NATIVE]?.[key] ?? key;
+  /* TEKİL BİÇİM — web `lib/i18n/dict` `translate` ile aynı kural, aynı yer.
+     `n` birse ve `<anahtar>.one` varsa o kullanılıyor. */
+  const bul = (k: string): string | undefined => DICTS[lang]?.[k] ?? DICTS[DEFAULT_NATIVE]?.[k];
+  const tekil = vars?.n !== undefined && Number(vars.n) === 1;
+  const raw = (tekil ? bul(`${key}.one`) : undefined) ?? bul(key) ?? key;
   if (!vars) return raw;
   return raw.replace(/\{(\w+)\}/g, (m, name) => {
     const v = vars[name];

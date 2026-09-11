@@ -237,9 +237,19 @@ const DYNAMIC_WEB = [/^band\./, /^push\.rem_.*_named$/];
 {
   const webKeys = load("web", "tr");
   const src = files.map((f) => readFileSync(f, "utf8")).join("\n");
-  const dead = [...webKeys.keys()].filter(
-    (k) => !DYNAMIC_WEB.some((re) => re.test(k)) && !src.includes(`"${k}"`) && !src.includes(`'${k}'`) && !src.includes(`${k}\``),
-  );
+  /*
+    `<anahtar>.one` KODDA GEÇMEZ ve ölü değildir: tekil biçimi çözücü
+    (`lib/i18n/dict` `translate`) çalışma anında kendisi arıyor. Ölçüt temel
+    anahtarın çağrılması — tekil biçim onun kardeşi, ayrı bir anahtar değil.
+  */
+  const cagrilan = (k) => src.includes(`"${k}"`) || src.includes(`'${k}'`) || src.includes(`${k}\``);
+  const dead = [...webKeys.keys()].filter((k) => {
+    const temel = k.endsWith(".one") ? k.slice(0, -4) : k;
+    /* Muafiyet de temel anahtara bakıyor: adı çalışma anında kurulan bir
+       anahtarın tekil biçimi de çalışma anında kuruluyor demektir. */
+    if (DYNAMIC_WEB.some((re) => re.test(k) || re.test(temel))) return false;
+    return !cagrilan(k) && !(temel !== k && cagrilan(temel));
+  });
   if (dead.length) {
     bad += dead.length;
     for (const k of dead) console.error(`web sözlüğünde ÖLÜ anahtar (hiçbir yerde çağrılmıyor) → ${k}`);

@@ -8480,3 +8480,56 @@ yıldız, müzik) kapsam dışı: tek glif, metin akışında duruyorlar. Beceri
 kütüphanesi de dışarıda — ders metinleri gerçek dünyadan alınıyor ve içinde
 emoji geçen bir uygulama yorumu örnek metnin kendisi. İki enjeksiyonun ikisi
 de yakalandı.
+
+## §11.258 — "1 days": üç dilde çoğul, hiçbir katmanda çoğul desteği
+
+Sözlükte 89 anahtar `{n}` taşıyor ve **hiçbir çözücüde çoğul kuralı yoktu**.
+İngilizce arayüzde "1 friends", "1 days left", Almancada "1 Freunde", "noch 1
+Tage" yazıyordu. Türkçede sorun yok — sayıdan sonra isim tekil kalır — yani
+hata yalnız iki dilde görünüyordu ve **iki platformda birden** vardı.
+
+Almanca yalnız ismi değil edatı ve fiili de değiştiriyor: "vor {n} Tagen" →
+"vor 1 Tag", "{n} Wörter drohen verloren zu gehen" → "1 Wort droht verloren zu
+gehen". İngilizcede de fiil değişiyor: "{n} words are due" → "1 word is due".
+Bu yüzden makine bir "s" eklemekle çözülmüyor, her cümlenin tekil hâli ayrı
+yazılmalı.
+
+Kural iki çözücüde de aynı ve küçük: `n` birse ve `<anahtar>.one` varsa o
+kullanılıyor, yoksa temel anahtar. Çoğul biçimi olmayan hiçbir anahtar
+etkilenmiyor. İkiden fazla biçim isteyen diller (Lehçe, Rusça) gelirse burası
+`Intl.PluralRules`e döner; üç dil için o makine fazla.
+
+**53 anahtarın** tekil hâli üç dilde yazıldı (43'ü ortak sözlükte, 10'u
+web'e özel). Sabit sayı taşıyanlar (tanıtım metinlerindeki "20 soru", parola
+kuralı, plan maddeleri) kapsam dışı — oradaki `{n}` hiçbir zaman 1 olmuyor.
+
+Ek **noktalı** (`.one`), alt çizgili değil: sözlükte adı doğal olarak "_one"
+ile biten bir anahtar zaten vardı (`practice.all_game_types_in_one`) ve alt
+çizgili ek onunla karışıyordu — kapı onu öksüz bir tekil biçim sanıp düştü.
+Nokta anahtar adlarında ayraç, sözcük içinde geçmiyor.
+
+Doğrulama üç yerde: mobilde dört yeni Jest testi (üç dil + tekil biçimi
+olmayan anahtar), web çözücüsü için `tsx` ile yedi denetim, ve **§163**:
+kuralın iki çözücüde de yazılı olması, tekil anahtarların öksüz olmaması ve
+tekil ile çoğul biçimin aynı yer tutucuları taşıması.
+
+Kapı ilk sürümde üç dili tek haritada birleştiriyordu ve iki enjeksiyonu
+birden kaçırıyordu: İngilizcedeki temel anahtar silinince Türkçedeki aynı
+anahtar öksüzlüğü örtüyor, yer tutucu karşılaştırması da haritaya en son yazan
+dilin metnine bakıyordu. Denetim artık dil dil. Dört enjeksiyonun dördü de
+yakalandı.
+
+`i18n:check` de güncellendi: `<anahtar>.one` kodda geçmez ve ölü değildir —
+ölçüt temel anahtarın çağrılması.
+
+## §11.259 — İki kapı boş listeyi ölçüyordu
+
+Paralel oturum ayarlardaki çip listelerini kaydırıcıya çevirdi. Günlük hedef
+ve günde yeni kelime kapıları hâlâ `const GOALS = [...]` arıyordu; liste
+kalkınca `Math.min(...[])` **Infinity** döndürdü ve kapı "alt=Infinity" diye
+düştü. Düşmesi iyi oldu — sessizce geçseydi ölçüm ölü kalırdı. İkisi de artık
+kaydırıcının kendi ucundan okuyor.
+
+Aynı düzenlemede iki anahtar web'e özel sözlükte duruyordu ama mobil de
+çağırıyordu (`settings.reviews_unit`, `settings.daily_goal_short`): Android'de
+ekranda anahtarın kendisi yazıyordu. İkisi ortak sözlüğe taşındı.

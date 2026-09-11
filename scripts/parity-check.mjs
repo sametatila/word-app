@@ -2124,13 +2124,13 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   const web = read("src/components/profile-form.tsx");
   const wm = web.match(/label=\{t\("settings\.new_per_day"\)\}[\s\S]{0,200}?min=\{(\d+)\}[\s\S]{0,80}?max=\{(\d+)\}/);
   const mob = read("mobile/src/screens/SettingsScreen.tsx");
-  const mm = mob.match(/const NEW_PER_DAY = \[([^\]]*)\]/);
-  const sayilar = mm ? mm[1].split(",").map((x) => Number(x.trim())) : [];
+  /* Mobil kaydiriciya gecti - bkz. gunluk hedef kapisindaki not. */
+  const mm = mob.match(/label=\{t\("settings\.new_per_day"\)\}[\s\S]{0,200}?min=\{(\d+)\}[\s\S]{0,80}?max=\{(\d+)\}/);
   sameList(
     "gunde yeni kelime araligi",
-    ["alt=" + Math.min(...sayilar), "ust=" + Math.max(...sayilar)],
+    ["alt=" + (mm?.[1] ?? "?"), "ust=" + (mm?.[2] ?? "?")],
     ["alt=" + uc[0], "ust=" + uc[1]],
-    "mobil cipleri",
+    "mobil kaydiricisi",
     "uc kirpmasi",
   );
   sameList(
@@ -5091,14 +5091,17 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   const uc = m ? [m[1], m[2]] : ["?", "?"];
   const web = read("src/components/profile-form.tsx");
   const wm = web.match(/label=\{t\("settings\.daily_goal_short"\)\}[\s\S]{0,200}?min=\{(\d+)\}[\s\S]{0,80}?max=\{(\d+)\}/);
+  /* Mobil de artik KAYDIRICI kullaniyor (eskiden sabit cip listesi vardi ve
+     ucun kabul ettigi degerlerin cogunu hic sunmuyordu). Olcum kaydiricinin
+     kendi ucundan okunuyor; cip listesi kalkinca ilk surum bos listeyi
+     "alt=Infinity" diye bildirdi, yani hicbir sey olcmuyordu. */
   const mob = read("mobile/src/screens/SettingsScreen.tsx");
-  const mm = mob.match(/const GOALS = \[([^\]]*)\]/);
-  const sayilar = mm ? mm[1].split(",").map((x) => Number(x.trim())) : [];
+  const mm = mob.match(/label=\{t\("settings\.daily_goal_short"\)\}[\s\S]{0,200}?min=\{(\d+)\}[\s\S]{0,80}?max=\{(\d+)\}/);
   sameList(
-    "gunluk hedef araligi (mobil cipleri)",
-    ["alt=" + Math.min(...sayilar), "ust=" + Math.max(...sayilar)],
+    "gunluk hedef araligi (mobil kaydiricisi)",
+    ["alt=" + (mm?.[1] ?? "?"), "ust=" + (mm?.[2] ?? "?")],
     ["alt=" + uc[0], "ust=" + uc[1]],
-    "mobil cipleri",
+    "mobil kaydiricisi",
     "uc kirpmasi",
   );
   sameList(
@@ -5873,6 +5876,75 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   sameList("webde emoji", web.length ? web : ["yok"], ["yok"], "bulunan", "beklenen");
   const mob = tara("mobile/src");
   sameList("mobilde emoji", mob.length ? mob : ["yok"], ["yok"], "bulunan", "beklenen");
+}
+
+/* ── 163. tekil bicim ─────────────────────────────────────────────────────
+ * Sozlukte cogul YOKTU. "{n} friends" bir arkadasta "1 friends" diye
+ * cikiyordu, Almancada "1 Freunde" - ve Almanca yalniz ismi degil edati ve
+ * fiili de degistiriyor ("noch 1 Tag", "1 Wort droht"). Turkcede sorun yok:
+ * sayidan sonra isim tekil kalir, yani hata yalniz iki dilde GORUNUYORDU ve
+ * iki platformda birden vardi.
+ *
+ * Cozum iki cozucude de ayni kural: `n` birse ve `<anahtar>.one` varsa o
+ * kullanilir, yoksa temel anahtar. Cogul bicimi olmayan hicbir anahtar
+ * etkilenmiyor.
+ *
+ * Kapi uc sey olcuyor: kuralin IKI cozucude de yazili olmasi, tekil
+ * anahtarlarin oksuz olmamasi (temeli yoksa hic kullanilmaz) ve tekil ile
+ * cogul bicimin AYNI yer tutuculari tasimasi - `{n}` tekilde dusunce cumle
+ * sayiyi hic gostermez. */
+{
+  const strip = (x) => x.replace(/\/\*[\s\S]*?\*\//g, " ").replace(/(^|[^:"'`\\])\/\/.*$/gm, "$1");
+  const KURAL = /_one`\]?\)?/;
+  const cozucu = (yol) => (/\$\{key\}\.one/.test(strip(read(yol))) ? "tekili ariyor" : "yok");
+  sameList(
+    "tekil kurali cozucude",
+    ["mobil=" + cozucu("mobile/src/lib/i18n.ts")],
+    ["mobil=tekili ariyor"],
+    "bulunan",
+    "beklenen",
+  );
+  sameList(
+    "tekil kurali cozucude (web)",
+    ["web=" + cozucu("src/lib/i18n/dict.ts")],
+    ["web=tekili ariyor"],
+    "bulunan",
+    "beklenen",
+  );
+
+  const sozluk = (yol) => {
+    const out = new Map();
+    for (const m of read(yol).matchAll(/^\s*"([^"]+)":\s*"((?:[^"\\]|\\.)*)",?\s*$/gm)) out.set(m[1], m[2]);
+    return out;
+  };
+  const yer = (x) => [...x.matchAll(/\{(\w+)\}/g)].map((m) => m[1]).sort().join(",");
+  /* DENETIM DIL DIL. Ilk surum uc dili tek haritada birlestiriyordu ve iki
+     enjeksiyonu birden kaciriyordu: Ingilizcedeki temel anahtar silinince
+     Turkcedeki ayni anahtar oksuzlugu ortuyordu, ve yer tutucu
+     karsilastirmasi haritaya EN SON yazan dilin metnine bakiyordu. */
+  const denetle = (etiket, yollar) => {
+    const bulgu = [];
+    for (const y of yollar) {
+      const d = sozluk(y);
+      const dil = y.replace(/.*\//, "").replace(/\.ts$/, "");
+      const oksuz = [...d.keys()].filter((k) => k.endsWith(".one") && !d.has(k.slice(0, -4)));
+      const kayik = [...d.keys()]
+        .filter((k) => k.endsWith(".one") && d.has(k.slice(0, -4)))
+        .filter((k) => yer(d.get(k)) !== yer(d.get(k.slice(0, -4))));
+      const sayi = [...d.keys()].filter((k) => k.endsWith(".one")).length;
+      bulgu.push(`${dil}: oksuz=${oksuz.length ? oksuz.join("+") : "yok"}, kayma=${kayik.length ? kayik.join("+") : "yok"}, tekil=${sayi > 0 ? "var" : "yok"}`);
+    }
+    sameList(
+      etiket,
+      bulgu,
+      yollar.map((y) => `${y.replace(/.*\//, "").replace(/\.ts$/, "")}: oksuz=yok, kayma=yok, tekil=var`),
+      "bulunan",
+      "beklenen",
+    );
+  };
+  denetle("mobil sozlukte tekil", ["mobile/src/i18n/tr.ts", "mobile/src/i18n/en.ts", "mobile/src/i18n/de.ts"]);
+  denetle("web sozlukte tekil", ["src/i18n/web/tr.ts", "src/i18n/web/en.ts", "src/i18n/web/de.ts"]);
+  void KURAL;
 }
 
 console.log(
