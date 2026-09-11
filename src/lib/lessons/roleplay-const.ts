@@ -19,6 +19,18 @@ export const EXAM_PASS_SCORE = 60;
 export const MAX_MIN_TURNS = 9;
 
 /**
+ * Ders adımında bir öğrencinin deneme hakkı.
+ *
+ * Sayı hiçbir yerde sabit değildi: iki oynatıcı da `>= 3` diye ELLE
+ * karşılaştırıyordu (`lesson-player` `attempts`, Android `LessonScreen`
+ * `tries`). Biri değişse öteki sessizce eski kalır ve aynı ders iki
+ * platformda farklı sayıda hak verirdi.
+ *
+ * Mobil karşılığı `mobile/src/lib/learningRules.ts` `LESSON_TRY_CEILING`.
+ */
+export const LESSON_TRY_CEILING = 3;
+
+/**
  * Sunucuya taşınan geçmiş mesaj sayısı.
  *
  * Sabit 16'ydı ve tur sayısı dörtken sorun değildi. Dokuz tura çıkınca sessiz

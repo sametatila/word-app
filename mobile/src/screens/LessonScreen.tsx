@@ -31,6 +31,7 @@ import { candoIdsForLesson } from "../game/candoMap";
 import { fetchCando } from "../game/cando";
 import { useTheme, spacing, radii, softShadow, type Palette } from "../theme";
 import { sfx } from "../lib/sfx";
+import { LESSON_TRY_CEILING } from "../lib/learningRules";
 import { track } from "../lib/track";
 
 /**
@@ -386,7 +387,7 @@ export function LessonScreen() {
     }
     const t = tries + 1;
     setTries(t);
-    if (t >= 3) {
+    if (t >= LESSON_TRY_CEILING) {
       /* Adım geçilemedi. Web de sıfırı YALNIZ burada yazıyor: her yanlış
          denemeye ayrı bir sıfır yazmak, bir adımı üç başarısız adım gibi
          gösterirdi. */
@@ -465,7 +466,7 @@ export function LessonScreen() {
       haptic("wrong");
       const t = tries + 1;
       setTries(t);
-      if (t >= 3) {
+      if (t >= LESSON_TRY_CEILING) {
         track("lesson_step", 0, `produce:${via}`);
         // Doğru cevap balonu: dil etiketi KURSTAN gelir. Sabit "de" yazıyordu;
         // çizim `lang !== "tr"` diye baktığı için görünürde bir şey bozulmuyordu
