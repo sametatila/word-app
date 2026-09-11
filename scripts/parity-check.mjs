@@ -5201,6 +5201,30 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   );
 }
 
+/* ── 147. ortak gorev karti ───────────────────────────────────────────────
+ * Iki fark cikti, ikisi de ayni kartta ve zit yonlerde:
+ *   - ARKADAS SECME satiri: Android her arkadasin HAFTALIK XP'sini yaziyor,
+ *     web yalniz adi. Ortak gorevde partner secmek "kim gercekten cekecek"
+ *     kararidir ve o soruya cevap veren tek sayi bu; webde secim kor
+ *     yapiliyordu.
+ *   - ILERLEME CUBUGU: web cubuga etiket koyuyor (`aria-label`), Android
+ *     hicbir sey soylemiyordu - yuzde yalniz GORSELDE vardi, sesli okuyucu
+ *     bos bir kutu goruyordu.
+ *
+ * Anahtar da ortak tabana tasindi: etiket `socialw.progress_pct` diye
+ * web-ozel sozlukte duruyordu, artik `social.progress_pct`. */
+{
+  const strip = (x) => x.replace(/\/\*[\s\S]*?\*\//g, " ").replace(/(^|[^:"'`\\])\/\/.*$/gm, "$1");
+  const kart = (yol) => {
+    const src = strip(read(yol)).replace(/\s+/g, " ");
+    return [
+      "arkadas satirinda haftalik xp=" + (/social\.xp_this_week/.test(src) ? "var" : "yok"),
+      "cubuk etiketi=" + (/social\.progress_pct/.test(src) ? "var" : "yok"),
+    ];
+  };
+  sameList("ortak gorev karti", kart("mobile/src/social/Quests.tsx"), kart("src/components/social/quests.tsx"));
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"

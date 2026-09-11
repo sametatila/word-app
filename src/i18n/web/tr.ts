@@ -438,7 +438,6 @@ export const trWeb: Record<string, string> = {
   "socialw.quest_hint": "Bu hafta ortak görev",
   "socialw.link_copied": "Bağlantı kopyalandı",
   "socialw.tabs": "Sosyal sekmeler",
-  "socialw.progress_pct": "İlerleme yüzde {n}",
   "socialw.joined": "Katılım {date}",
   "onb.course_de": "CEFR A1–C1 kelime hazinesi, sınav formatında okuma, dinleme ve yazma.",
   "onb.course_gsw": "İsviçre'nin Zürih lehçesi: günlük konuşma dili, Hochdeutsch köprüsüyle.",

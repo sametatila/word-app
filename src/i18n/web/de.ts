@@ -413,7 +413,6 @@ export const deWeb: Record<string, string> = {
   "socialw.quest_hint": "Gemeinsame Quest diese Woche",
   "socialw.link_copied": "Link kopiert",
   "socialw.tabs": "Soziale Reiter",
-  "socialw.progress_pct": "Fortschritt {n} Prozent",
   "socialw.joined": "Dabei seit {date}",
   "onb.course_de": "Wortschatz für GER A1–C1, dazu Lesen, Hören und Schreiben im Prüfungsformat.",
   "onb.course_gsw": "Der Zürcher Dialekt: die gesprochene Alltagssprache, mit Hochdeutsch-Brücke.",

@@ -89,7 +89,15 @@ export function Quests({ friends, onChanged, me }: { friends: FriendRow[]; onCha
                 {friends.map((f) => (
                   <li key={f.userId} className="flex items-center gap-3 px-4 py-2.5">
                     <Avatar userId={f.userId} name={f.name} size={32} />
-                    <span className="min-w-0 flex-1 truncate text-sm font-semibold">{f.name ?? t("social.unnamed")}</span>
+                    {/* HAFTALIK XP DE YAZILI: ortak görevde partner seçmek
+                        "kim gerçekten çekecek" kararıdır ve o soruya cevap
+                        veren tek sayı bu. Android satırı baştan beri
+                        gösteriyor (`social/Quests`); webde yalnız ad vardı,
+                        yani seçim kör yapılıyordu. */}
+                    <span className="min-w-0 flex-1 truncate">
+                      <span className="block truncate text-sm font-semibold">{f.name ?? t("social.unnamed")}</span>
+                      <span className="muted block text-caption">{t("social.xp_this_week", { xp: formatNumber(f.weeklyXp, lang) })}</span>
+                    </span>
                     <button className="btn btn-primary h-8 px-3 text-xs" disabled={busy} onClick={() => void act(() => social.inviteQuest(f.userId))}>
                       {t("quests.invite")}
                     </button>
@@ -224,7 +232,7 @@ export function QuestCard({ q, me, busy, onAct }: { q: QuestView; me: string; bu
         </div>
       ) : (
         <>
-          <div className="mt-3 h-3 w-full overflow-hidden rounded-full" style={{ background: "var(--surface-2)" }} aria-label={t("socialw.progress_pct", { n: q.pct })}>
+          <div className="mt-3 h-3 w-full overflow-hidden rounded-full" style={{ background: "var(--surface-2)" }} aria-label={t("social.progress_pct", { n: q.pct })}>
             <div className="flex h-full" style={{ width: `${q.pct}%` }}>
               <div style={{ width: `${myShare}%`, background: "var(--color-brand)" }} />
               <div style={{ flex: 1, background: "var(--color-sky)" }} />

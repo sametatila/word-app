@@ -1270,6 +1270,7 @@ export const trBase: Record<string, string> = {
   "social.unnamed_short": "İsimsiz",
   "social.and_others": " ve {n} kişi",
   "social.xp_this_week": "{xp} XP bu hafta",
+  "social.progress_pct": "İlerleme yüzde {n}",
   "social.you": "Sen",
   "social.you_paren": " (sen)",
   "social.your_friend": "Arkadaşın",

@@ -8008,3 +8008,24 @@ kendisine bağlıyor: ikisi birlikte kaysa bile kapı düşüyor (§11.228'in de
 kapıya uygulanmış). Üç enjeksiyonun üçü de yakalandı — sonuncusu tam o dersi
 gösterdi: `BIO_MAX`i 200 yapınca iki yüzey birbirine eşit kaldığı için birinci
 kapı yeşil geçti, ikinci kapı kırmızı yandı.
+
+### 11.241 Ortak görev kartında iki eksik, zıt yönlerde
+
+Aynı kartta iki fark çıktı ve ilginç olan **zıt yönlerde** olmaları:
+
+- **Arkadaş seçme satırı**: Android her arkadaşın **haftalık XP'sini** yazıyor,
+  web yalnız adını. Ortak görevde partner seçmek "kim gerçekten çekecek"
+  kararıdır ve o soruya cevap veren tek sayı bu; web'de seçim **kör**
+  yapılıyordu. Satır web'e kondu.
+- **İlerleme çubuğu**: web çubuğa etiket koyuyor (`aria-label`), Android
+  hiçbir şey söylemiyordu — yüzde yalnız **görselde** vardı, sesli okuyucu boş
+  bir kutu görüyordu. Android'e `accessibilityRole="progressbar"` + aynı
+  etiket kondu.
+
+Etiketin anahtarı da ortak tabana taşındı: `socialw.progress_pct` web-özel
+sözlükte duruyordu, artık `social.progress_pct` — web-özel anahtar sayısı bir
+azaldı.
+
+**§147** iki şeyi ölçüyor ve üç enjeksiyonun üçü de yakalandı. Bu turda tepki
+çubuğu (`ReactionBar`) da karşılaştırıldı: beş anahtarın beşi de aynı, fark
+yok.

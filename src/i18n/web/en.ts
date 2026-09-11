@@ -413,7 +413,6 @@ export const enWeb: Record<string, string> = {
   "socialw.quest_hint": "A shared quest this week",
   "socialw.link_copied": "Link copied",
   "socialw.tabs": "Social tabs",
-  "socialw.progress_pct": "Progress {n} percent",
   "socialw.joined": "Joined {date}",
   "onb.course_de": "CEFR A1–C1 vocabulary, plus reading, listening and writing in exam format.",
   "onb.course_gsw": "Switzerland's Zurich dialect: the everyday spoken language, with a Hochdeutsch bridge.",

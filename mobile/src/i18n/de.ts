@@ -1268,6 +1268,7 @@ export const de: Record<string, string> = {
   "social.unnamed_short": "Namenlos",
   "social.and_others": " und {n} weitere",
   "social.xp_this_week": "{xp} XP diese Woche",
+  "social.progress_pct": "Fortschritt {n} Prozent",
   "social.you": "Du",
   "social.you_paren": " (du)",
   "social.your_friend": "dein Freund",

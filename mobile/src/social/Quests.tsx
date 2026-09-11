@@ -144,7 +144,15 @@ export function QuestCard({ q, me, busy, onAct }: { q: QuestView; me: string; bu
         </View>
       ) : (
         <View style={{ marginTop: spacing.lg }}>
-          <View style={{ height: 10, borderRadius: 5, backgroundColor: colors.surface2, overflow: "hidden", flexDirection: "row" }}>
+          {/* ÇUBUĞUN EKRAN OKUYUCU KARŞILIĞI. Renkli iki dilim ekranda ilerlemeyi
+              anlatıyor ama sesli okuyucuya hiçbir şey söylemiyordu: yüzde
+              yalnız GÖRSELDE vardı. Web aynı çubuğa baştan beri etiket koyuyor
+              (`quests` `aria-label`). */}
+          <View
+            accessibilityRole="progressbar"
+            accessibilityLabel={t("social.progress_pct", { n: q.pct })}
+            style={{ height: 10, borderRadius: 5, backgroundColor: colors.surface2, overflow: "hidden", flexDirection: "row" }}
+          >
             <View style={{ width: `${Math.round(q.pct * myShare)}%`, backgroundColor: colors.primary }} />
             <View style={{ width: `${Math.round(q.pct * (1 - myShare))}%`, backgroundColor: colors.info }} />
           </View>

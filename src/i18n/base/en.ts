@@ -1270,6 +1270,7 @@ export const enBase: Record<string, string> = {
   "social.unnamed_short": "Unnamed",
   "social.and_others": " and {n} others",
   "social.xp_this_week": "{xp} XP this week",
+  "social.progress_pct": "Progress {n} percent",
   "social.you": "You",
   "social.you_paren": " (you)",
   "social.your_friend": "your friend",
