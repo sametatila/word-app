@@ -6450,3 +6450,30 @@ muafiyetin kendisinden daha çabuk eskiyor.**
 **Kapı iki kez yazıldı:** ilk hâli yalnız olay adlarını arıyordu ve
 `attachTelemetry()` çağrısı App'ten silinse bile yeşil kalıyordu. Olayın
 TANIMLI olması yetmez, katmanın BAĞLI olması da gerek.
+
+
+### 11.179 Muafiyet listesini tek tek ölçmek: iki satır daha düştü
+
+§11.178'de §44'ün listesinden üç satır düşünce kalan on üçünü tek tek ölçtüm.
+İkisi daha eskimişti — ve ikisi de **muafiyet diye yazılmış birer eksiklikti**.
+
+**`sound_toggle`** — "mobilde ses anahtarı yok (sistem sesi)". Cümle doğruydu,
+çıkarım yanlıştı: anahtarın olmaması bir muafiyet değil, eksiklik. Mobilde
+sesleri susturmanın tek yolu telefonu kısmaktı ve bu **TTS'i de susturuyordu**
+— sessiz bir yerde çalışmak isteyen kullanıcı telaffuzu da kaybediyordu. Web
+ikisini ayırıyor ve ayrımı kullanıcıya da söylüyor ("telaffuz sesi ayrı — bu
+kapalıyken de çalışır"). Aynı ayrım mobilde de var artık.
+
+**`push_open`** — "tarayıcı ölçüm katmanı". Ölçülen şey tarayıcıya ait değil:
+kaç kişi bildirimden dönüyor. Mobilde üç dokunuş yolu (arka plan, ön plan,
+uygulama kapalıyken) tek bir yerden geçiyor; olay oraya yazıldı.
+
+**Kalan on bir satır gerçekten web-özel:** süre-kazanma modu, koç baloncuğu,
+PWA kurulum önerisi, tarayıcı mikrofon yolu tanılaması (`walk_capture`,
+`walk_listen`, `walk_switch` — Web Speech'in kendi tuhaflıklarını ölçüyorlar),
+etap duraklaması, panel açma (tarayıcıda tek bir tıklama dinleyicisiyle
+toplanıyor), davet bağlantısı (mobilde derin bağlantı o adresi karşılamıyor).
+
+**Üç turdur aynı kalıp:** listelerin kendisi denetlenmezse, içindeki gerekçeler
+sessizce eskiyor. "Kayıtlı istisna" bir karar değil, bir **borç**; ödenip
+ödenmediğine bakmak da ölçümün parçası.
