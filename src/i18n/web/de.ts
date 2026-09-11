@@ -143,7 +143,6 @@ export const deWeb: Record<string, string> = {
   "proficiency.next_conversation": "nächstes Gespräch",
   "plan.word_round": "Wortrunde",
   "words.subtitle": "{n} Wörter · A1 bis C1",
-  "settings.account": "KONTO",
   "settings.app": "APP",
   "settings.daily_goal_short": "Tägliches Wiederholungsziel",
   "settings.reviews_unit": "Wiederholungen",

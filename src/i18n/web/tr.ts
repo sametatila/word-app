@@ -167,7 +167,6 @@ export const trWeb: Record<string, string> = {
   "proficiency.next_conversation": "sıradaki konuşma",
   "plan.word_round": "Kelime turu",
   "words.subtitle": "{n} kelime · A1'den C1'e",
-  "settings.account": "HESAP",
   "settings.app": "UYGULAMA",
   "settings.daily_goal_short": "Günlük tekrar hedefi",
   "settings.reviews_unit": "tekrar",

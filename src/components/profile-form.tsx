@@ -349,7 +349,7 @@ export function ProfileForm({
         koruma, haftalık test) ama profil menüsünde duruyordu ve "Gelen kutusu"
         satırının hemen altında neredeyse aynı adla görünüyordu.
       */}
-      <Section title={t("notifications.notifications")} bare>
+      <Section title={t("settings.sec_notifications")} bare>
         <Link
           href="/notifications"
           prefetch={false}
@@ -371,7 +371,7 @@ export function ProfileForm({
         sıra aynı.
       */}
       <Group title={t("settings.group_account")} />
-      <Section title={t("settings.account")}>
+      <Section title={t("settings.sec_name")}>
         <label className="block">
           <input
             value={displayName}

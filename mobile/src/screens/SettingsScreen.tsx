@@ -337,7 +337,7 @@ export function SettingsScreen() {
           kullanıcı onu Ayarlar'da arıyor ve bulamıyordu; ayrıca "Gelen kutusu"
           satırının hemen altında, neredeyse aynı adla duruyordu.
         */}
-        <Section title={t("notifications.notifications")} colors={colors}>
+        <Section title={t("settings.sec_notifications")} colors={colors}>
           <PressableScale
             onPress={() => nav.navigate("Notifications")}
             accessibilityRole="button"
@@ -359,7 +359,7 @@ export function SettingsScreen() {
           Sık kullanılan önce, yönetimsel olan sonra.
         */}
         <Group title={t("settings.group_account")} colors={colors} />
-        <Section title={t("settings.display_name")} colors={colors}>
+        <Section title={t("settings.sec_name")} colors={colors}>
           <TextInput
             value={name}
             onChangeText={setName}
