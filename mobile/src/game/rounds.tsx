@@ -7,7 +7,7 @@ import { matchSentence, VERDICT_KEYS, type SentenceMatch } from "../lib/sentence
 import { markKnown, optionCards, optionTexts, todayStr } from "./session";
 import { SentenceFeedback, type MarkedToken } from "../ui/TokenDiff";
 import { classifyOrder, classifyTyping, miss } from "../lib/errors";
-import { api } from "../api/client";
+import { api, ASSESS_TIMEOUT_MS } from "../api/client";
 import type { DoneExtra } from "./session";
 import { currentTargetLang } from "../lib/courses";
 import { View, TextInput, ScrollView, Keyboard, Platform, Animated } from "react-native";
@@ -603,6 +603,7 @@ function FreeSentenceRound({ round, word, onDone, colors }: { round: Round; word
     try {
       const d = await api<{ result: AssessmentResult }>("/api/assess", {
         method: "POST",
+        timeoutMs: ASSESS_TIMEOUT_MS,
         body: JSON.stringify({ ...req, day: todayStr() }),
       });
       const overall = d.result?.score?.overall ?? 0;

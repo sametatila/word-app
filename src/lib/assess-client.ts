@@ -31,7 +31,26 @@ export type AssessResponse =
   | { ok: true; result: Assessment; cached: boolean; provider: string | null }
   | { ok: false; reason: AssessFailure };
 
-export const ASSESS_TIMEOUT_MS = 20_000;
+/**
+ * Tek cevaplık değerlendirmede bekleme tavanı.
+ *
+ * Alt çizgisiz yazılı: `check:parity`nin ortak sayısal sabit taraması
+ * `20_000` biçimini görmüyor ve mobildeki aynı adlı sabitle karşılaştırma
+ * tam da bu yüzden kaçıyordu.
+ */
+export const ASSESS_TIMEOUT_MS = 20000;
+
+/**
+ * Rol yapma sınavının puanlanmasında bekleme tavanı.
+ *
+ * Konuşmanın TAMAMI gönderiliyor, tek bir cümle değil; model yanıtı buna
+ * göre uzun sürüyor. Mobil bu çağrıda baştan beri otuz saniye bekliyordu
+ * (`RoleplayExamScreen`, `timeoutMs: 30_000`), web ise varsayılan yirmiyle
+ * yetiniyordu: uzun bir konuşma webde zaman aşımına düşerken mobilde
+ * puanlanıyordu — aynı sınav, aynı cevap, farklı sonuç. Sayı artık iki
+ * tarafta aynı adla yazılı.
+ */
+export const ASSESS_ROLEPLAY_TIMEOUT_MS = 30000;
 
 /** Kullanıcıya gösterilecek kısa açıklama. */
 export const ASSESS_FAILURE_KEYS: Record<AssessFailure, string> = {

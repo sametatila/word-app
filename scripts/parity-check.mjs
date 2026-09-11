@@ -7226,6 +7226,55 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     "beklenen",
   );
 
+  /* ── 197. degerlendirme bekleme tavanlari ────────────────────────────
+   * Ayni cevap iki platformda FARKLI noktada "zaman asimi" oluyordu:
+   *
+   *   tek cevap   web 20000 (`ASSESS_TIMEOUT_MS`)   mobil 25000 (genel tavan)
+   *   rol yapma   web 20000 (varsayilan)            mobil 30000 (elle)
+   *   ceviri onay web 6000 (`ASSESS_WAIT_MS`)       mobil 6000 (ayni ad)
+   *
+   * Ucuncu satir zaten esti ve sebebi ogretici: iki taraf da sayiyi AYNI ADLA
+   * yaziyordu, o yuzden ortak sabit taramasi onu koruyordu. Ilk ikisi adsizdi
+   * (biri genel tavana dusuyor, oteki cagri yerinde elle yazili) ve kimse
+   * bakmiyordu.
+   *
+   * Rol yapma tavani BILEREK daha uzun: konusmanin tamami gonderiliyor, tek
+   * cumle degil. Fark artik iki tarafta AYNI adla yazili; webin varsayilanla
+   * yetinmesi bir riskti - uzun bir konusma webde zaman asimina duserken
+   * mobilde puanlaniyordu.
+   *
+   * Kapi sayilari degil CAGRI YERLERINI okuyor: sayilar zaten "ortak sayisal
+   * sabitler"de karsilastiriliyor (alt cizgi kalktigi icin; `20_000` o
+   * taramaya girmiyordu). Burada sorulan sey, yuzeylerin o sabiti gercekten
+   * geciriyor mu oldugu.
+   *
+   * `game/skillLibrary` LISTEDE YOK: baska bir oturumun surmekte olan isi
+   * (henuz git'te degil). Yayina girdiginde bu listeye eklenmeli. */
+  {
+    const YUZEYLER = [
+      ["mobile/src/screens/ExamScreen.tsx", /timeoutMs: ASSESS_TIMEOUT_MS/],
+      ["mobile/src/game/rounds.tsx", /timeoutMs: ASSESS_TIMEOUT_MS/],
+      ["mobile/src/game/skillQuiz.tsx", /timeoutMs: ASSESS_TIMEOUT_MS/],
+      ["mobile/src/screens/RoleplayExamScreen.tsx", /timeoutMs: ASSESS_ROLEPLAY_TIMEOUT_MS/],
+      ["src/components/lessons/roleplay-exam.tsx", /timeoutMs: ASSESS_ROLEPLAY_TIMEOUT_MS/],
+    ];
+    const bulgu = YUZEYLER.map(([yol, re]) => {
+      const src = sil(read(yol));
+      const ad = yol.split("/").slice(-1)[0] + (yol.startsWith("mobile") ? " (mobil)" : " (web)");
+      /* Elle yazilmis bir tavan kalmamali: sabit geciliyor gorunurken baska
+         bir cagri rakamla kalabilir. */
+      const elle = /timeoutMs: \d/.test(src);
+      return ad + "=" + (elle ? "ELLE YAZILI" : re.test(src) ? "sabitten" : "GECMIYOR");
+    });
+    sameList(
+      "degerlendirme tavani cagri yerleri",
+      bulgu,
+      YUZEYLER.map(([yol]) => yol.split("/").slice(-1)[0] + (yol.startsWith("mobile") ? " (mobil)" : " (web)") + "=sabitten"),
+      "bulunan",
+      "beklenen",
+    );
+  }
+
   /* ── 196. konusma pencereleri: hangisi bilincli fark, hangisi ayrisma ──
    * Iki platformun mikrofon sureleri tek tek eslendi. Cikan tablo:
    *

@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 import type { Lesson } from "@/lib/lessons/types";
 import { parseReply } from "@/lib/chat-format";
 import { EXAM_PASS_SCORE, EXAM_SECONDS, EXAM_TURNS } from "@/lib/lessons/roleplay-const";
-import { askAssess, fallbackAssessment, type AssessFailure, type FallbackAssessment } from "@/lib/assess-client";
+import { askAssess, fallbackAssessment, ASSESS_ROLEPLAY_TIMEOUT_MS, type AssessFailure, type FallbackAssessment } from "@/lib/assess-client";
 import type { Assessment, AssessLevel, AssessRequest } from "@/lib/assess-prompts";
 import { AssessmentCard } from "@/components/feedback/assessment-card";
 import { ERROR_LABEL_KEYS, type ErrorType } from "@/lib/errors";
@@ -150,7 +150,9 @@ export function RoleplayExam({ lesson, cando }: { lesson: Lesson; cando: string[
       answer: { text: said.join("\n"), transcript: said },
       exerciseId: `${lesson.id}:exam`,
     };
-    const ai = await askAssess(req);
+    /* Konuşmanın tamamı gönderiliyor: tavan tek cümlelik değerlendirmeden
+       uzun (bkz. `lib/assess-client`). */
+    const ai = await askAssess(req, { timeoutMs: ASSESS_ROLEPLAY_TIMEOUT_MS });
     if (ai.ok) setResult(ai.result);
     else {
       setResult(fallbackAssessment(req, t));

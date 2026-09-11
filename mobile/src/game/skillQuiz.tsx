@@ -13,7 +13,7 @@ import { matchSentence, type SentenceMatch } from "../lib/sentenceMatch";
 import { seededShuffle } from "../lib/shuffle";
 import { levenshtein } from "../lib/errors";
 import { haptic } from "../lib/haptics";
-import { api } from "../api/client";
+import { api, ASSESS_TIMEOUT_MS } from "../api/client";
 import { isPremiumRefusal, isQuotaRefusal, notePremiumGate } from "../lib/premium";
 import { assessFailKey } from "../lib/assessFail";
 import { spacing, radii, type Palette } from "../theme";
@@ -505,6 +505,7 @@ function FreeCard({ t, n, done, level, exerciseId, onSettle, colors }: { t: Free
     try {
       const d = await api<{ result: { score?: { overall?: number }; praise_tr?: string; next_tip_tr?: string; corrected?: string } }>("/api/assess", {
         method: "POST",
+        timeoutMs: ASSESS_TIMEOUT_MS,
         body: JSON.stringify(body()),
       });
       const overall = d.result?.score?.overall ?? 0;

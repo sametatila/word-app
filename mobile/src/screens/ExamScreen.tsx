@@ -23,7 +23,7 @@ import { speakTarget } from "../lib/tts";
 import { ensureMicPermission, listenOnce } from "../lib/stt";
 import { spokenMatches } from "../lib/voiceMatch";
 import { currentTargetLocale } from "../lib/courses";
-import { api } from "../api/client";
+import { api, ASSESS_TIMEOUT_MS } from "../api/client";
 import { isPremiumRefusal, isQuotaRefusal, notePremiumGate } from "../lib/premium";
 import { assessFailKey } from "../lib/assessFail";
 import { todayStr } from "../game/session";
@@ -1093,6 +1093,7 @@ function Write({ w, level, colors, pad, onDone }: { w: WritingItem; level: strin
     try {
       const d = await api<{ result: AssessmentResult }>("/api/assess", {
         method: "POST",
+        timeoutMs: ASSESS_TIMEOUT_MS,
         body: JSON.stringify({
           kind: "writing", level,
           task: { prompt: w.task.prompt, constraints: [...w.task.checklist, `en az ${w.task.minWords} kelime`] },

@@ -44,6 +44,21 @@ export class ApiError extends Error {
  */
 export const API_TIMEOUT_MS = 25_000;
 
+/**
+ * Değerlendirme uçlarının kendi tavanları — web `lib/assess-client` ile AYNI
+ * ADLA, aynı sayılarla.
+ *
+ * `/api/assess` çağrıları genel tavana (25 sn) düşüyordu, web ise yirmi
+ * saniye bekliyor; rol yapma sınavı ise burada otuz saniye geçiyordu, webde
+ * yirmi. Yani aynı cevap iki platformda farklı noktada "zaman aşımı"
+ * oluyordu. Adlar web'dekiyle birebir aynı, o yüzden ayrışmayı "ortak sayısal
+ * sabitler" kapısı kendiliğinden yakalıyor.
+ */
+export const ASSESS_TIMEOUT_MS = 20000;
+
+/** Rol yapma sınavı: konuşmanın TAMAMI gönderiliyor, tavan daha uzun. */
+export const ASSESS_ROLEPLAY_TIMEOUT_MS = 30000;
+
 export type ApiInit = RequestInit & { timeoutMs?: number };
 
 /**

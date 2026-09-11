@@ -9540,3 +9540,39 @@ defterdeki en sık hatası olurdu.
 
 Dört enjeksiyonun dördü yakalandı. Önceki turda not düştüğüm paralel oturum
 kırığı (`en-b2.json`) giderilmiş: mobil `tsc` temiz, 137 test geçiyor.
+
+## §11.291 — Aynı cevap, iki platformda farklı noktada "zaman aşımı"
+
+Değerlendirme bekleme tavanları eşlendi:
+
+| Çağrı | Web | Mobil (önce) |
+|---|---|---|
+| Tek cevap (yazma, serbest cümle, beceri) | `ASSESS_TIMEOUT_MS` 20000 | genel tavan 25000 |
+| Rol yapma sınavı puanlaması | varsayılan 20000 | elle `30_000` |
+| Çeviri turunda AI onayı | `ASSESS_WAIT_MS` 6000 | `ASSESS_WAIT_MS` 6000 |
+
+Üçüncü satır zaten eşti ve **sebebi öğretici**: iki taraf da sayıyı **aynı
+adla** yazıyordu, o yüzden var olan "ortak sayısal sabitler" kapısı onu
+koruyordu. İlk ikisi adsızdı — biri genel tavana düşüyor, öteki çağrı yerinde
+elle yazılı — ve hiçbir şey bakmıyordu.
+
+**Rol yapma satırı webde bir riskti.** Orada konuşmanın tamamı gönderiliyor,
+tek cümle değil; mobil baştan beri otuz saniye bekliyordu, web varsayılan
+yirmiyle yetiniyordu. Yani uzun bir konuşma **webde zaman aşımına düşerken
+mobilde puanlanıyordu** — aynı sınav, aynı cevap, farklı sonuç. Fark bilinçli
+olarak korundu (yük gerçekten farklı) ama artık iki tarafta aynı adla yazılı:
+`ASSESS_ROLEPLAY_TIMEOUT_MS`.
+
+Bir ayrıntı ölçümü etkiliyordu: webde sayı `20_000` yazılıydı ve ortak sabit
+taraması **alt çizgili biçimi görmüyordu**. Alt çizgi kalktı; §11.290'da
+`12_000` için aynı şey yapılmıştı. Bu artık bilinen bir tuzak: *sabiti
+adlandırmak kapıya girmesi için yetmiyor, biçiminin de taramanın desenine
+uyması gerekiyor.*
+
+**§197** sayıları değil **çağrı yerlerini** okuyor (sayılar zaten ortak sabit
+taramasında): beş yüzeyin her biri sabiti geçiriyor mu, ve hiçbirinde elle
+yazılmış bir tavan kalmamış mı. Dört enjeksiyonun dördü yakalandı.
+
+`game/skillLibrary` listeye **alınmadı**: başka bir oturumun sürmekte olan işi,
+henüz git'te değil. Kapının yorumunda yayına girdiğinde eklenmesi gerektiği
+yazılı.

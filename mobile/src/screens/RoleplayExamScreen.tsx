@@ -18,7 +18,7 @@ import { fetchCando } from "../game/cando";
 import { speakTarget } from "../lib/tts";
 import { ensureMicPermission, listenOnce, sttAvailable, stopListening } from "../lib/stt";
 import { currentTargetLocale } from "../lib/courses";
-import { api } from "../api/client";
+import { api, ASSESS_ROLEPLAY_TIMEOUT_MS } from "../api/client";
 import { assessFailKey, assessFailure } from "../lib/assessFail";
 import { notePremiumGate } from "../lib/premium";
 
@@ -112,7 +112,7 @@ export function RoleplayExamScreen() {
     try {
       const d = await api<{ result: Result }>("/api/assess", {
         method: "POST",
-        timeoutMs: 30_000,
+        timeoutMs: ASSESS_ROLEPLAY_TIMEOUT_MS,
         body: JSON.stringify({
           kind: "roleplay",
           level: lesson.level,
