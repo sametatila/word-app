@@ -1,0 +1,897 @@
+[
+ {
+  "tr": "Düzeltme",
+  "kind": "titleTr",
+  "de": "Die Richtigstellung"
+ },
+ {
+  "tr": "Basın özeti",
+  "kind": "titleTr",
+  "de": "Der Pressespiegel"
+ },
+ {
+  "tr": "Başlığı okumak",
+  "kind": "titleTr",
+  "de": "Eine Schlagzeile lesen"
+ },
+ {
+  "tr": "Gazetenin savı",
+  "kind": "titleTr",
+  "de": "Was die Zeitung vertritt"
+ },
+ {
+  "tr": "Kaynağı alıntılamak",
+  "kind": "titleTr",
+  "de": "Eine Quelle zitieren"
+ },
+ {
+  "tr": "Günün basın özetini yazmayı öğretir; ortaç öbeği haberleri tek cümlede sıraya koyar.",
+  "kind": "summary",
+  "de": "Vermittelt, wie man den Pressespiegel des Tages schreibt; die Partizipialkonstruktion ordnet die Meldungen in einem Satz."
+ },
+ {
+  "tr": "Bir yayının savını özetlemeyi öğretir; yarık cümle savın hangi parçasının asıl olduğunu ayırır.",
+  "kind": "summary",
+  "de": "Vermittelt, wie man die Position eines Blattes zusammenfasst; der Spaltsatz trennt heraus, welcher Teil der Position der eigentliche ist."
+ },
+ {
+  "tr": "Haber başlığının arkasını okumayı öğretir; edilgen aktarım kalıbı iddiayı verir, kaynağı vermez.",
+  "kind": "summary",
+  "de": "Vermittelt, wie man hinter eine Schlagzeile schaut; die passive Wiedergabe nennt die Behauptung, aber nicht die Quelle."
+ },
+ {
+  "tr": "Bir kaynağı doğru alıntılamayı öğretir; açıklayıcı ilgi cümlesi kimin ne dediğini cümleyi bölmeden ekler.",
+  "kind": "summary",
+  "de": "Vermittelt, wie man eine Quelle richtig zitiert; der erklärende Relativsatz ergänzt, wer was gesagt hat, ohne den Satz zu zerteilen."
+ },
+ {
+  "tr": "Yanlış çıkan bir haberi değerlendirmeyi öğretir: eminsen must have, imkânsız görüyorsan can't have, atlanmışsa should have.",
+  "kind": "summary",
+  "de": "Vermittelt, wie man eine falsch gewordene Meldung bewertet: sicher must have, unmöglich can't have, versäumt should have."
+ },
+ {
+  "tr": "başlığı olduğu gibi doğru kabul eden bir arkadaş",
+  "kind": "partner",
+  "de": "ein Freund, der die Schlagzeile für bare Münze nimmt"
+ },
+ {
+  "tr": "aynı gazeteyi okuyan ama başka bir yan gören bir arkadaş",
+  "kind": "partner",
+  "de": "eine Freundin, die dieselbe Zeitung liest, aber eine andere Seite sieht"
+ },
+ {
+  "tr": "hatayı küçültmek isteyen, düzeltmeyi geciktiren bir editör",
+  "kind": "partner",
+  "de": "ein Redakteur, der den Fehler kleinreden und die Richtigstellung hinauszögern will"
+ },
+ {
+  "tr": "özeti bir dakikada isteyen, uzatmayı sevmeyen bir yönetici",
+  "kind": "partner",
+  "de": "eine Vorgesetzte, die den Überblick in einer Minute will und keine langen Ausführungen mag"
+ },
+ {
+  "tr": "alıntının kaynağını yayımlamadan önce görmek isteyen bir editör",
+  "kind": "partner",
+  "de": "eine Redakteurin, die die Quelle des Zitats vor der Veröffentlichung sehen will"
+ },
+ {
+  "tr": "Aynı yazıyı mı okuduk?",
+  "kind": "openingTr",
+  "de": "Haben wir denselben Text gelesen?"
+ },
+ {
+  "tr": "Bunu tam olarak kim söyledi?",
+  "kind": "openingTr",
+  "de": "Wer genau hat das gesagt?"
+ },
+ {
+  "tr": "Orada öyle yazıyor, değil mi?",
+  "kind": "openingTr",
+  "de": "Da steht es doch so, oder?"
+ },
+ {
+  "tr": "Günü bir dakikada verebilir misin?",
+  "kind": "openingTr",
+  "de": "Kannst du mir den Tag in einer Minute geben?"
+ },
+ {
+  "tr": "Gerçekten bir düzeltmeye ihtiyacımız var mı?",
+  "kind": "openingTr",
+  "de": "Brauchen wir wirklich eine Richtigstellung?"
+ },
+ {
+  "tr": "Günün basın özetini sözlü olarak veriyorsun. Ne okuduğunu, neyin neden az yer aldığını ve neyin hızla büyüdüğünü kısa cümlelerle bağla.",
+  "kind": "scene",
+  "de": "Du gibst den Pressespiegel des Tages mündlich. Binde in kurzen Sätzen an, was du gelesen hast, was warum wenig Platz bekam und was schnell gewachsen ist."
+ },
+ {
+  "tr": "Bir gazetenin bir konudaki savını arkadaşına özetliyorsun. Savın bütününü, belirleyici gördüğün parçayı ve eksik bıraktığı yanı ayrı ayrı söyle.",
+  "kind": "scene",
+  "de": "Du fasst einer Freundin die Position einer Zeitung zu einem Thema zusammen. Nenn getrennt die ganze Position, das Stück, das du für entscheidend hältst, und die Seite, die fehlt."
+ },
+ {
+  "tr": "Yayımlanan bir haber yanlış çıktı ve düzeltmeyi konuşuyorsunuz. Neye emin olduğunu, neyi imkânsız gördüğünü ve neyin atlandığını suçlamadan söyle.",
+  "kind": "scene",
+  "de": "Eine veröffentlichte Meldung hat sich als falsch erwiesen und ihr besprecht die Richtigstellung. Sag ohne Schuldzuweisung, wobei du sicher bist, was du ausschließt und was übersehen wurde."
+ },
+ {
+  "tr": "Bir haber başlığını arkadaşınla konuşuyorsun ve başlıkta yazmayan şeyleri soruyorsun. İddiayı, gösterileni ve geçmişte olanı aktarım kalıbıyla ver.",
+  "kind": "scene",
+  "de": "Du sprichst mit einem Freund über eine Schlagzeile und fragst nach dem, was dort nicht steht. Gib die Behauptung, das Gezeigte und das Vergangene in der Wiedergabeform."
+ },
+ {
+  "tr": "Bir yazıdaki alıntının kaynağını meslektaşına anlatıyorsun. Kimin kontrol ettiğini, atfın neden belirsiz kaldığını ve kime yazıldığını açıklayıcı ilgi cümleleriyle ver.",
+  "kind": "scene",
+  "de": "Du erklärst einer Kollegin die Quelle eines Zitats in einem Text. Gib mit erklärenden Relativsätzen an, wer geprüft hat, warum die Zuschreibung unklar blieb und an wen geschrieben wurde."
+ },
+ {
+  "tr": "İddiayı, gösterileni ve geçmişte olanı üç ayrı aktarım kalıbıyla verdiysen konuşma başarılı sayılır.",
+  "kind": "goal",
+  "de": "Das Gespräch gilt als gelungen, wenn du die Behauptung, das Gezeigte und das Vergangene in drei verschiedenen Wiedergabeformen gesagt hast."
+ },
+ {
+  "tr": "Savın bütününü, tek parçayı ve eksik olanı üç ayrı yarık cümleyle söylediysen konuşma başarılı sayılır.",
+  "kind": "goal",
+  "de": "Das Gespräch gilt als gelungen, wenn du die ganze Position, das einzelne Stück und das Fehlende in drei verschiedenen Spaltsätzen gesagt hast."
+ },
+ {
+  "tr": "ağ",
+  "kind": "vocab.tr",
+  "de": "Netzwerk"
+ },
+ {
+  "tr": "akış",
+  "kind": "vocab.tr",
+  "de": "Feed"
+ },
+ {
+  "tr": "kuşku",
+  "kind": "vocab.tr",
+  "de": "Misstrauen"
+ },
+ {
+  "tr": "tiraj",
+  "kind": "vocab.tr",
+  "de": "Auflage"
+ },
+ {
+  "tr": "yayın",
+  "kind": "vocab.tr",
+  "de": "Veröffentlichung"
+ },
+ {
+  "tr": "yergi",
+  "kind": "vocab.tr",
+  "de": "Satire"
+ },
+ {
+  "tr": "alıntı",
+  "kind": "vocab.tr",
+  "de": "Zitat"
+ },
+ {
+  "tr": "efsane",
+  "kind": "vocab.tr",
+  "de": "Mythos"
+ },
+ {
+  "tr": "mağdur",
+  "kind": "vocab.tr",
+  "de": "Opfer"
+ },
+ {
+  "tr": "reform",
+  "kind": "vocab.tr",
+  "de": "Reform"
+ },
+ {
+  "tr": "sansür",
+  "kind": "vocab.tr",
+  "de": "Zensur"
+ },
+ {
+  "tr": "başyazı",
+  "kind": "vocab.tr",
+  "de": "Leitartikel"
+ },
+ {
+  "tr": "çekişme",
+  "kind": "vocab.tr",
+  "de": "Kontroverse"
+ },
+ {
+  "tr": "duruşma",
+  "kind": "vocab.tr",
+  "de": "Anhörung"
+ },
+ {
+  "tr": "ekonomi",
+  "kind": "vocab.tr",
+  "de": "Wirtschaft"
+ },
+ {
+  "tr": "hareket",
+  "kind": "vocab.tr",
+  "de": "Bewegung"
+ },
+ {
+  "tr": "muhabir",
+  "kind": "vocab.tr",
+  "de": "Reporter"
+ },
+ {
+  "tr": "skandal",
+  "kind": "vocab.tr",
+  "de": "Skandal"
+ },
+ {
+  "tr": "şüpheli",
+  "kind": "vocab.tr",
+  "de": "Verdächtiger"
+ },
+ {
+  "tr": "yayıncı",
+  "kind": "vocab.tr",
+  "de": "Verlag"
+ },
+ {
+  "tr": "dedikodu",
+  "kind": "vocab.tr",
+  "de": "Klatsch"
+ },
+ {
+  "tr": "olasılık",
+  "kind": "vocab.tr",
+  "de": "Wahrscheinlichkeit"
+ },
+ {
+  "tr": "protesto",
+  "kind": "vocab.tr",
+  "de": "Protest"
+ },
+ {
+  "tr": "yanlılık",
+  "kind": "vocab.tr",
+  "de": "Voreingenommenheit"
+ },
+ {
+  "tr": "algoritma",
+  "kind": "vocab.tr",
+  "de": "Algorithmus"
+ },
+ {
+  "tr": "nesnellik",
+  "kind": "vocab.tr",
+  "de": "Sachlichkeit"
+ },
+ {
+  "tr": "şeffaflık",
+  "kind": "vocab.tr",
+  "de": "Transparenz"
+ },
+ {
+  "tr": "yansızlık",
+  "kind": "vocab.tr",
+  "de": "Neutralität"
+ },
+ {
+  "tr": "parlamento",
+  "kind": "vocab.tr",
+  "de": "Parlament"
+ },
+ {
+  "tr": "propaganda",
+  "kind": "vocab.tr",
+  "de": "Propaganda"
+ },
+ {
+  "tr": "soruşturma",
+  "kind": "vocab.tr",
+  "de": "Ermittlung"
+ },
+ {
+  "tr": "anma yazısı",
+  "kind": "vocab.tr",
+  "de": "Nachruf"
+ },
+ {
+  "tr": "okur kitlesi",
+  "kind": "vocab.tr",
+  "de": "Leserschaft"
+ },
+ {
+  "tr": "yayın organı",
+  "kind": "vocab.tr",
+  "de": "Medienhaus"
+ },
+ {
+  "tr": "yayın yasağı",
+  "kind": "vocab.tr",
+  "de": "Sperrfrist"
+ },
+ {
+  "tr": "kaynak gösterme",
+  "kind": "vocab.tr",
+  "de": "Quellenangabe"
+ },
+ {
+  "tr": "hesap verebilirlik",
+  "kind": "vocab.tr",
+  "de": "Rechenschaft"
+ },
+ {
+  "tr": "başka sözcüklerle anlatmak",
+  "kind": "vocab.tr",
+  "de": "umschreiben"
+ },
+ {
+  "tr": "savın bütününü başa taşır",
+  "kind": "pattern.tr",
+  "de": "bringt die ganze Position an den Anfang"
+ },
+ {
+  "tr": "kaynağı vermeden iddiayı aktarır",
+  "kind": "pattern.tr",
+  "de": "gibt die Behauptung wieder, ohne die Quelle zu nennen"
+ },
+ {
+  "tr": "geçmişteki bir işi aktarım kalıbıyla verir",
+  "kind": "pattern.tr",
+  "de": "gibt eine vergangene Handlung in der Wiedergabeform"
+ },
+ {
+  "tr": "biçimini alıyor.",
+  "kind": "why.tr",
+  "de": "Form an."
+ },
+ {
+  "tr": "Doğru. Aktarım kalıbı geçmişe uzandığında",
+  "kind": "why.tr",
+  "de": "Richtig. Reicht die Wiedergabe in die Vergangenheit, nimmt sie die"
+ },
+ {
+  "tr": "Doğru. Her iki yarının öznesi de protesto; özne değişseydi bu öbek kurulamazdı.",
+  "kind": "why.tr",
+  "de": "Richtig. Beide Hälften haben den Protest als Subjekt; bei einem Subjektwechsel ginge diese Konstruktion nicht."
+ },
+ {
+  "tr": "Kaynağı vermeden aktarmak için",
+  "kind": "hint.tr",
+  "de": "Um ohne Quellenangabe wiederzugeben"
+ },
+ {
+  "tr": "Geçmişteki bir işi aktarmak için",
+  "kind": "hint.tr",
+  "de": "Um eine vergangene Handlung wiederzugeben"
+ },
+ {
+  "tr": "Savın bütününü başa taşımak için",
+  "kind": "hint.tr",
+  "de": "Um die ganze Position an den Anfang zu bringen"
+ },
+ {
+  "tr": "bugünü,",
+  "kind": "say.tr",
+  "de": "die Gegenwart,"
+ },
+ {
+  "tr": "Zarar görene",
+  "kind": "say.tr",
+  "de": "Wer Schaden erleidet, heißt"
+ },
+ {
+  "tr": "Özetleyelim: sav",
+  "kind": "say.tr",
+  "de": "Fassen wir zusammen: Position"
+ },
+ {
+  "tr": "Özetleyelim: iddia",
+  "kind": "say.tr",
+  "de": "Fassen wir zusammen: Behauptung"
+ },
+ {
+  "tr": "İçten içe inanmamaya",
+  "kind": "say.tr",
+  "de": "Innerlich nicht glauben heißt"
+ },
+ {
+  "tr": "Bir düzeni yenilemeye",
+  "kind": "say.tr",
+  "de": "Eine Ordnung erneuern heißt"
+ },
+ {
+  "tr": "Yayını basan kuruluşa",
+  "kind": "say.tr",
+  "de": "Der Betrieb, der die Veröffentlichung druckt, heißt"
+ },
+ {
+  "tr": "yasa yapan meclise ise",
+  "kind": "say.tr",
+  "de": "und die gesetzgebende Versammlung heißt"
+ },
+ {
+  "tr": "Çekişme hareketi böldü.",
+  "kind": "say.tr",
+  "de": "Die Kontroverse hat die Bewegung gespalten."
+ },
+ {
+  "tr": "Hiçbir tarafı tutmamaya",
+  "kind": "say.tr",
+  "de": "Für keine Seite Partei ergreifen heißt"
+ },
+ {
+  "tr": "mahkemedeki oturuma ise",
+  "kind": "say.tr",
+  "de": "und die Sitzung vor Gericht heißt"
+ },
+ {
+  "tr": "Akış bütün ağa ulaşıyor.",
+  "kind": "say.tr",
+  "de": "Der Feed erreicht das ganze Netzwerk."
+ },
+ {
+  "tr": "Kulaktan dolma konuşmaya",
+  "kind": "say.tr",
+  "de": "Gerede vom Hörensagen heißt"
+ },
+ {
+  "tr": "Reform duruşmada anıldı.",
+  "kind": "say.tr",
+  "de": "Die Reform wurde in der Anhörung genannt."
+ },
+ {
+  "tr": "savın bütününü öne alır,",
+  "kind": "say.tr",
+  "de": "holt die ganze Position nach vorn,"
+ },
+ {
+  "tr": "her şeyi açık tutmaya ise",
+  "kind": "say.tr",
+  "de": "und alles offen halten heißt"
+ },
+ {
+  "tr": "Soruşturma altı ay sürdü.",
+  "kind": "say.tr",
+  "de": "Die Ermittlung dauerte sechs Monate."
+ },
+ {
+  "tr": "Tek yanlı yayılan bilgiye",
+  "kind": "say.tr",
+  "de": "Einseitig verbreitete Information heißt"
+ },
+ {
+  "tr": "Basılan ve dağıtılan sayıya",
+  "kind": "say.tr",
+  "de": "Die gedruckte und verteilte Zahl heißt"
+ },
+ {
+  "tr": "basılan ürünün kendisine ise",
+  "kind": "say.tr",
+  "de": "und das gedruckte Erzeugnis selbst heißt"
+ },
+ {
+  "tr": "Bir yayını izleyen topluluğa",
+  "kind": "say.tr",
+  "de": "Die Gruppe, die ein Blatt liest, heißt"
+ },
+ {
+  "tr": "Doğru sanılan yaygın yanlışa",
+  "kind": "say.tr",
+  "de": "Der weit verbreitete Irrtum, den man für wahr hält, heißt"
+ },
+ {
+  "tr": "Ölen biri için yazılan yazıya",
+  "kind": "say.tr",
+  "de": "Der Text für eine verstorbene Person heißt"
+ },
+ {
+  "tr": "Şüphelinin adı hiç verilmedi.",
+  "kind": "say.tr",
+  "de": "Der Name des Verdächtigen wurde nie genannt."
+ },
+ {
+  "tr": "Uzun süren kamusal tartışmaya",
+  "kind": "say.tr",
+  "de": "Der lange öffentliche Streit heißt"
+ },
+ {
+  "tr": "Efsane burada başlamış olamaz.",
+  "kind": "say.tr",
+  "de": "Der Mythos kann hier nicht angefangen haben."
+ },
+ {
+  "tr": "Yayının okur kitlesi azalıyor.",
+  "kind": "say.tr",
+  "de": "Die Leserschaft der Veröffentlichung geht zurück."
+ },
+ {
+  "tr": "Karşı çıkışın toplu gösterisine",
+  "kind": "say.tr",
+  "de": "Die gemeinsame Kundgebung des Widerspruchs heißt"
+ },
+ {
+  "tr": "Sürekli gelen iletiler dizisine",
+  "kind": "say.tr",
+  "de": "Die Reihe der ständig eingehenden Beiträge heißt"
+ },
+ {
+  "tr": "Şimdi bir kaynağı tanıtacaksın.",
+  "kind": "say.tr",
+  "de": "Jetzt stellst du eine Quelle vor."
+ },
+ {
+  "tr": "Gerçekleşme ihtimalinin ölçüsüne",
+  "kind": "say.tr",
+  "de": "Das Maß der Eintrittschance heißt"
+ },
+ {
+  "tr": "Radyo ya da televizyonda yaymaya",
+  "kind": "say.tr",
+  "de": "Über Radio oder Fernsehen verbreiten heißt"
+ },
+ {
+  "tr": "alay yoluyla eleştiren yazıya ise",
+  "kind": "say.tr",
+  "de": "und der Text, der mit Spott kritisiert, heißt"
+ },
+ {
+  "tr": "Bir olayın resmen araştırılmasına",
+  "kind": "say.tr",
+  "de": "Die amtliche Untersuchung eines Vorfalls heißt"
+ },
+ {
+  "tr": "Kuşku nesnellikle aynı şey değil.",
+  "kind": "say.tr",
+  "de": "Misstrauen ist nicht dasselbe wie Sachlichkeit."
+ },
+ {
+  "tr": "Sözün kime ait olduğunu belirtmeye",
+  "kind": "say.tr",
+  "de": "Anzugeben, von wem ein Wort stammt, heißt"
+ },
+ {
+  "tr": "Yansızlık göründüğünden pahalıdır.",
+  "kind": "say.tr",
+  "de": "Neutralität kostet mehr, als sie aussieht."
+ },
+ {
+  "tr": "Bir ülkenin üretim ve para düzenine",
+  "kind": "say.tr",
+  "de": "Die Produktions- und Geldordnung eines Landes heißt"
+ },
+ {
+  "tr": "Eksik olan şey mağdurun kendi sesi.",
+  "kind": "say.tr",
+  "de": "Was fehlt, ist die eigene Stimme des Opfers."
+ },
+ {
+  "tr": "işi öğrenmek için çalışan gence ise",
+  "kind": "say.tr",
+  "de": "und die junge Person, die zum Lernen arbeitet, heißt"
+ },
+ {
+  "tr": "Kamuoyunu sarsan yolsuzluk haberine",
+  "kind": "say.tr",
+  "de": "Die Meldung über Missbrauch, die die Öffentlichkeit erschüttert, heißt"
+ },
+ {
+  "tr": "Oylamayı belirleyen şey ekonomiydi.",
+  "kind": "say.tr",
+  "de": "Was die Abstimmung entschieden hat, war die Wirtschaft."
+ },
+ {
+  "tr": "Yayın yasağı şeffaflığımızı sınadı.",
+  "kind": "say.tr",
+  "de": "Die Sperrfrist hat unsere Transparenz auf die Probe gestellt."
+ },
+ {
+  "tr": "yayının devletçe kısıtlanmasına ise",
+  "kind": "say.tr",
+  "de": "und die staatliche Einschränkung der Veröffentlichung heißt"
+ },
+ {
+  "tr": "Yazdığımız yayıncı geç cevap verdi.",
+  "kind": "say.tr",
+  "de": "Der Verlag, an den wir geschrieben haben, hat spät geantwortet."
+ },
+ {
+  "tr": "Ne göreceğini bir algoritma seçiyor.",
+  "kind": "say.tr",
+  "de": "Was du siehst, wählt ein Algorithmus aus."
+ },
+ {
+  "tr": "Aynı anlamı başka sözcüklerle vermeye",
+  "kind": "say.tr",
+  "de": "Denselben Sinn mit anderen Worten geben heißt"
+ },
+ {
+  "tr": "Dedikoduyu kontrol etmemiz gerekirdi.",
+  "kind": "say.tr",
+  "de": "Wir hätten den Klatsch prüfen sollen."
+ },
+ {
+  "tr": "Şimdi günün basın özetini vereceksin.",
+  "kind": "say.tr",
+  "de": "Jetzt gibst du den Pressespiegel des Tages."
+ },
+ {
+  "tr": "birbirine bağlı yayıncılar bütününe ise",
+  "kind": "say.tr",
+  "de": "und die Gesamtheit der verbundenen Sender heißt"
+ },
+ {
+  "tr": "Şimdi bir başlığın arkasını okuyacaksın.",
+  "kind": "say.tr",
+  "de": "Jetzt schaust du hinter eine Schlagzeile."
+ },
+ {
+  "tr": "Şimdi bir yayının savını özetleyeceksin.",
+  "kind": "say.tr",
+  "de": "Jetzt fasst du die Position eines Blattes zusammen."
+ },
+ {
+  "tr": "Haberin iki kez yayımlandığı düşünülüyor.",
+  "kind": "say.tr",
+  "de": "Man hält es für erwiesen, dass die Meldung zweimal gesendet wurde."
+ },
+ {
+  "tr": "Suçu işlemiş olabileceği düşünülen kişiye",
+  "kind": "say.tr",
+  "de": "Wer die Tat begangen haben könnte, heißt"
+ },
+ {
+  "tr": "Bir tane daha: Eksik olan şey öteki taraf.",
+  "kind": "say.tr",
+  "de": "Noch eins: Was fehlt, ist die andere Seite."
+ },
+ {
+  "tr": "Bir tane daha: Kaynağa sormamız gerekirdi.",
+  "kind": "say.tr",
+  "de": "Noch eins: Wir hätten die Quelle fragen sollen."
+ },
+ {
+  "tr": "kendi görüşünü karıştırmadan anlatmaya ise",
+  "kind": "say.tr",
+  "de": "und ohne die eigene Meinung zu erzählen heißt"
+ },
+ {
+  "tr": "Neyin gösterileceğini seçen kural dizisine",
+  "kind": "say.tr",
+  "de": "Die Regelfolge, die auswählt, was gezeigt wird, heißt"
+ },
+ {
+  "tr": "Olasılık düşük, o yüzden yergiyi seçtiler.",
+  "kind": "say.tr",
+  "de": "Die Wahrscheinlichkeit ist gering, deshalb wählten sie die Satire."
+ },
+ {
+  "tr": "Pazartesi yayımlanan skandal hızla büyüdü.",
+  "kind": "say.tr",
+  "de": "Der am Montag veröffentlichte Skandal wuchs schnell."
+ },
+ {
+  "tr": "Sansürün başladığı yerde propaganda büyür.",
+  "kind": "say.tr",
+  "de": "Wo die Zensur beginnt, wächst die Propaganda."
+ },
+ {
+  "tr": "Belli bir saate kadar yayımlanmama kuralına",
+  "kind": "say.tr",
+  "de": "Die Regel, bis zu einer bestimmten Stunde nicht zu veröffentlichen, heißt"
+ },
+ {
+  "tr": "ortak amaçla bir araya gelmiş topluluğa ise",
+  "kind": "say.tr",
+  "de": "und die Gruppe, die sich für ein gemeinsames Ziel zusammenfindet, heißt"
+ },
+ {
+  "tr": "Kısa sürdüğü için protestoya az yer ayrıldı.",
+  "kind": "say.tr",
+  "de": "Weil er kurz war, bekam der Protest wenig Platz."
+ },
+ {
+  "tr": "Anma yazısı parlamento haberinin yanında çıktı.",
+  "kind": "say.tr",
+  "de": "Der Nachruf erschien neben dem Bericht aus dem Parlament."
+ },
+ {
+  "tr": "Şimdi sen kur: Oylamayı değiştiren şey rapordu.",
+  "kind": "say.tr",
+  "de": "Jetzt du: Was die Abstimmung verändert hat, war der Bericht."
+ },
+ {
+  "tr": "Şimdi sen kur: Söylenti burada başlamış olamaz.",
+  "kind": "say.tr",
+  "de": "Jetzt du: Das Gerücht kann hier nicht angefangen haben."
+ },
+ {
+  "tr": "Bir stajyer metni başka sözcüklerle anlatabilir.",
+  "kind": "say.tr",
+  "de": "Ein Praktikant kann den Text umschreiben."
+ },
+ {
+  "tr": "Şimdi yanlış çıkan bir haberi değerlendireceksin.",
+  "kind": "say.tr",
+  "de": "Jetzt bewertest du eine falsch gewordene Meldung."
+ },
+ {
+  "tr": "Bir tane daha: Yazdığımız editör hızlı cevap verdi.",
+  "kind": "say.tr",
+  "de": "Noch eins: Die Redakteurin, an die wir geschrieben haben, hat schnell geantwortet."
+ },
+ {
+  "tr": "Kaynak gösterme, ki bu yüzden bekledik, belirsizdi.",
+  "kind": "say.tr",
+  "de": "Die Quellenangabe, weshalb wir gewartet haben, war unklar."
+ },
+ {
+  "tr": "Rakamların tirajda bir düşüş gösterdiği söyleniyor.",
+  "kind": "say.tr",
+  "de": "Es heißt, dass die Zahlen einen Rückgang der Auflage zeigen."
+ },
+ {
+  "tr": "Haberi derleyen kişi demek. Aynen aktarılan söze ise",
+  "kind": "say.tr",
+  "de": "Das heißt die Person, die die Meldung zusammenträgt. Und das wörtlich wiedergegebene Wort heißt"
+ },
+ {
+  "tr": "Şimdi sıra sende: Gazetenin savunduğu şey şeffaflık.",
+  "kind": "say.tr",
+  "de": "Jetzt bist du dran: Was die Zeitung vertritt, ist Transparenz."
+ },
+ {
+  "tr": "Şimdi sıra sende: Hata baştan beri oradaymış olmalı.",
+  "kind": "say.tr",
+  "de": "Jetzt bist du dran: Der Fehler muss von Anfang an dort gewesen sein."
+ },
+ {
+  "tr": "Bir tane daha: Cuma günü basılan yazı herkese ulaştı.",
+  "kind": "say.tr",
+  "de": "Noch eins: Der am Freitag gedruckte Text hat alle erreicht."
+ },
+ {
+  "tr": "Şimdi sıra sende: Yazıyı okuduktan sonra notu yazdık.",
+  "kind": "say.tr",
+  "de": "Jetzt bist du dran: Nachdem wir den Text gelesen hatten, schrieben wir die Notiz."
+ },
+ {
+  "tr": "Bir yana eğilim demek. İlk kalıbımız da bu. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Das heißt eine Neigung zu einer Seite. Das ist auch unsere erste Wendung. Wiederhole:"
+ },
+ {
+  "tr": "Son kalıbımız geçmişteki bir işi aktarıyor. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Unsere letzte Wendung gibt eine vergangene Handlung wieder. Wiederhole:"
+ },
+ {
+  "tr": "Şimdi dersin kuralı. Aktarım kalıbı geçmişe de uzanır:",
+  "kind": "say.tr",
+  "de": "Jetzt die Regel der Lektion. Die Wiedergabe reicht auch in die Vergangenheit:"
+ },
+ {
+  "tr": "Şimdi sen kur: Geç kaldığı için haber baskıyı kaçırdı.",
+  "kind": "say.tr",
+  "de": "Jetzt du: Weil sie zu spät war, verpasste die Meldung die Ausgabe."
+ },
+ {
+  "tr": "Şimdi sıra sende: Muhabir, ki yazıyı o yazdı, yeniydi.",
+  "kind": "say.tr",
+  "de": "Jetzt bist du dran: Der Reporter, der den Text geschrieben hat, war neu."
+ },
+ {
+  "tr": "Bir tane daha: Filmin iki kez gösterildiği düşünülüyor.",
+  "kind": "say.tr",
+  "de": "Noch eins: Man hält es für erwiesen, dass der Film zweimal gezeigt wurde."
+ },
+ {
+  "tr": "Şimdi sıra sende: Raporun yanlış olduğu iddia ediliyor.",
+  "kind": "say.tr",
+  "de": "Jetzt bist du dran: Es wird behauptet, dass der Bericht falsch war."
+ },
+ {
+  "tr": "Şimdi sen kur: Sayıların bir artış gösterdiği söyleniyor.",
+  "kind": "say.tr",
+  "de": "Jetzt du: Es heißt, dass die Zahlen einen Anstieg zeigen."
+ },
+ {
+  "tr": "olur ve düşürülemez. Haber dilinde kaynak böyle tanıtılır.",
+  "kind": "say.tr",
+  "de": "und kann nicht wegfallen. In der Nachrichtensprache wird die Quelle so eingeführt."
+ },
+ {
+  "tr": "Şimdi sen kur: Kaynak, ki bu yüzden kontrol ettik, yeniydi.",
+  "kind": "say.tr",
+  "de": "Jetzt du: Die Quelle, weshalb wir geprüft haben, war neu."
+ },
+ {
+  "tr": "Haber yayımlayan kuruluş demek. İlk kalıbımız da bu. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Das heißt ein Betrieb, der Nachrichten veröffentlicht. Das ist auch unsere erste Wendung. Wiederhole:"
+ },
+ {
+  "tr": "Şimdi dersin kuralı. Üç kip de geçmişe bakar ama üçü ayrı iş görür:",
+  "kind": "say.tr",
+  "de": "Jetzt die Regel der Lektion. Alle drei Modalverben blicken zurück, aber jedes leistet etwas anderes:"
+ },
+ {
+  "tr": "Gazetenin kendi görüşünü yazdığı yazı demek. İlk kalıbımız da bu. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Das heißt der Text, in dem die Zeitung ihre eigene Meinung schreibt. Das ist auch unsere erste Wendung. Wiederhole:"
+ },
+ {
+  "tr": "Yaptığının hesabını verme zorunluluğu demek. İlk kalıbımız da bu. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Das heißt die Pflicht, für das eigene Handeln einzustehen. Das ist auch unsere erste Wendung. Wiederhole:"
+ },
+ {
+  "tr": "ise bir eksik tespitidir. Düzeltme yazısında bu ayrım özrü suçlamadan ayırır.",
+  "kind": "say.tr",
+  "de": "ist die Feststellung einer Lücke. In der Richtigstellung trennt dieser Unterschied die Entschuldigung von der Schuldzuweisung."
+ },
+ {
+  "tr": "sebebi, üçüncü hâlle başlayan öbek ise edilgeni bağlar. Basın özetinde üçü peş peşe gelir.",
+  "kind": "say.tr",
+  "de": "den Grund, und die Konstruktion mit der dritten Form bindet das Passiv an. Im Pressespiegel kommen alle drei hintereinander."
+ },
+ {
+  "tr": "Basın özeti çok haberi az cümleye sığdırmak zorunda ve bunu ortaç öbeği sağlıyor. Hazır mısın?",
+  "kind": "say.tr",
+  "de": "Ein Pressespiegel muss viele Meldungen in wenige Sätze bringen, und das leistet die Partizipialkonstruktion. Bist du bereit?"
+ },
+ {
+  "tr": "Merhaba! Bugün günün basın özetini yazmayı öğreneceğiz: ne okundu, neden az yer aldı, ne büyüdü.",
+  "kind": "say.tr",
+  "de": "Hallo! Heute lernen wir, den Pressespiegel des Tages zu schreiben: was gelesen wurde, warum etwas wenig Platz bekam, was gewachsen ist."
+ },
+ {
+  "tr": "Başlık dili iddiayı verir kaynağı vermez ve bunu yapan yapı edilgen aktarım kalıbıdır. Hazır mısın?",
+  "kind": "say.tr",
+  "de": "Die Sprache der Schlagzeile nennt die Behauptung, aber nicht die Quelle, und das leistet die passive Wiedergabe. Bist du bereit?"
+ },
+ {
+  "tr": "geçmişi anlatır. İkincisi başlık dilinde çok sık, çünkü olayı verir ama kimsenin sözü olarak vermez.",
+  "kind": "say.tr",
+  "de": "erzählt die Vergangenheit. Die zweite Form ist in der Schlagzeile sehr häufig, denn sie nennt das Ereignis, aber nicht als jemandes Wort."
+ },
+ {
+  "tr": "Bir yayının savı çoğu zaman tek cümlede durmaz; yarık cümle o savın asıl parçasını ayırır. Hazır mısın?",
+  "kind": "say.tr",
+  "de": "Die Position eines Blattes steht selten in einem Satz; der Spaltsatz trennt das eigentliche Stück dieser Position heraus. Bist du bereit?"
+ },
+ {
+  "tr": "Merhaba! Bugün bir kaynağı doğru alıntılamayı öğreneceğiz: kim kontrol etti, atıf neden belirsizdi, kime yazıldı.",
+  "kind": "say.tr",
+  "de": "Hallo! Heute lernen wir, eine Quelle richtig zu zitieren: wer geprüft hat, warum die Zuschreibung unklar war, an wen geschrieben wurde."
+ },
+ {
+  "tr": "Merhaba! Bugün bir yayının savını özetlemeyi öğreneceğiz: neyi savunuyor, neyi belirleyici görüyor, neyi atlıyor.",
+  "kind": "say.tr",
+  "de": "Hallo! Heute lernen wir, die Position eines Blattes zusammenzufassen: was es vertritt, was es für entscheidend hält, was es auslässt."
+ },
+ {
+  "tr": "Alıntı yaparken kaynağı anlatmak cümleyi bölmeden yapılmalı; açıklayıcı ilgi cümlesi tam bunun için var. Hazır mısın?",
+  "kind": "say.tr",
+  "de": "Beim Zitieren soll die Quelle genannt werden, ohne den Satz zu zerteilen; genau dafür gibt es den erklärenden Relativsatz. Bist du bereit?"
+ },
+ {
+  "tr": "ise tek bir parçayı seçer. Bir yayının savını özetlerken ikincisi bir yorumdur: sen o parçayı belirleyici görüyorsun.",
+  "kind": "say.tr",
+  "de": "wählt dagegen ein einzelnes Stück. Beim Zusammenfassen einer Position ist die zweite Form eine Deutung: du hältst dieses Stück für entscheidend."
+ },
+ {
+  "tr": "Merhaba! Bugün haber başlığının arkasını okumayı öğreneceğiz: kim iddia ediyor, ne gösteriliyor, ne zaman yayımlandı.",
+  "kind": "say.tr",
+  "de": "Hallo! Heute lernen wir, hinter eine Schlagzeile zu schauen: wer behauptet, was gezeigt wird, wann es gesendet wurde."
+ },
+ {
+  "tr": "Düzeltme yazısı bu üç kipi birlikte kullanır; üçü ayrı iş görür ve karıştırılınca özür suçlamaya dönüşür. Hazır mısın?",
+  "kind": "say.tr",
+  "de": "Eine Richtigstellung benutzt diese drei Modalverben zusammen; jedes leistet etwas anderes, und verwechselt man sie, wird aus der Entschuldigung eine Schuldzuweisung. Bist du bereit?"
+ },
+ {
+  "tr": "Merhaba! Bugün yanlış çıkan bir haberi değerlendirmeyi öğreneceğiz: neye eminsin, neyi imkânsız görüyorsun, ne atlandı.",
+  "kind": "say.tr",
+  "de": "Hallo! Heute lernen wir, eine falsch gewordene Meldung zu bewerten: wobei du sicher bist, was du ausschließt, was übersehen wurde."
+ }
+]

@@ -14744,5 +14744,2478 @@
    "goal": "Bir gözlemi, bir duyumu ve sınırlı bir bakışı üç ayrı yumuşatıcıyla söylediysen konuşma başarılı sayılır.",
    "minTurns": 7
   }
+ },
+ {
+  "id": "en-b2-the-headline",
+  "level": "B2",
+  "course": "en",
+  "icon": "media",
+  "title": "Reading a headline",
+  "titleTr": "Başlığı okumak",
+  "summary": "Haber başlığının arkasını okumayı öğretir; edilgen aktarım kalıbı iddiayı verir, kaynağı vermez.",
+  "minutes": 11,
+  "focusId": "Passive report structures",
+  "vocab": [
+   {
+    "de": "outlet",
+    "tr": "yayın organı"
+   },
+   {
+    "de": "circulation",
+    "tr": "tiraj"
+   },
+   {
+    "de": "broadcast",
+    "tr": "yayımlamak"
+   },
+   {
+    "de": "readership",
+    "tr": "okur kitlesi"
+   },
+   {
+    "de": "publication",
+    "tr": "yayın"
+   },
+   {
+    "de": "feed",
+    "tr": "akış"
+   },
+   {
+    "de": "network",
+    "tr": "ağ"
+   },
+   {
+    "de": "algorithm",
+    "tr": "algoritma"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "It is claimed that the outlet was wrong.",
+    "tr": "kaynağı vermeden iddiayı aktarır"
+   },
+   {
+    "de": "The figures are said to show a fall in circulation.",
+    "tr": "özneyi başa alıp iddiayı ona bağlar"
+   },
+   {
+    "de": "The story is thought to have been broadcast twice.",
+    "tr": "geçmişteki bir işi aktarım kalıbıyla verir"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Bugün haber başlığının arkasını okumayı öğreneceğiz: kim iddia ediyor, ne gösteriliyor, ne zaman yayımlandı."
+     },
+     {
+      "lang": "tr",
+      "text": "Başlık dili iddiayı verir kaynağı vermez ve bunu yapan yapı edilgen aktarım kalıbıdır. Hazır mısın?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "outlet"
+     },
+     {
+      "lang": "tr",
+      "text": "Haber yayımlayan kuruluş demek. İlk kalıbımız da bu. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "It is claimed that the outlet was wrong."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "It is claimed that the outlet was wrong."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Basılan ve dağıtılan sayıya"
+     },
+     {
+      "lang": "en",
+      "text": "circulation"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İkinci kalıbımız özneyi başa alıyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "The figures are said to show a fall in circulation."
+     },
+     {
+      "lang": "tr",
+      "text": "Rakamların tirajda bir düşüş gösterdiği söyleniyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The figures are said to show a fall in circulation."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Radyo ya da televizyonda yaymaya"
+     },
+     {
+      "lang": "en",
+      "text": "broadcast"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son kalıbımız geçmişteki bir işi aktarıyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "The story is thought to have been broadcast twice."
+     },
+     {
+      "lang": "tr",
+      "text": "Haberin iki kez yayımlandığı düşünülüyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The story is thought to have been broadcast twice."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi dersin kuralı. Aktarım kalıbı geçmişe de uzanır:"
+     },
+     {
+      "lang": "en",
+      "text": "is thought to be"
+     },
+     {
+      "lang": "tr",
+      "text": "bugünü,"
+     },
+     {
+      "lang": "en",
+      "text": "is thought to have been"
+     },
+     {
+      "lang": "tr",
+      "text": "geçmişi anlatır. İkincisi başlık dilinde çok sık, çünkü olayı verir ama kimsenin sözü olarak vermez."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sıra sende: Raporun yanlış olduğu iddia ediliyor."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "It is claimed that the report was wrong.",
+     "accept": [
+      "It is claimed the report was wrong.",
+      "It is claimed that the report was false."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Kaynağı vermeden aktarmak için"
+      },
+      {
+       "lang": "en",
+       "text": "It is claimed that"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "It is claimed that the report was wrong."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kontrol. Şu cümle doğru mu?"
+     },
+     {
+      "lang": "en",
+      "text": "The story is thought to have been broadcast twice."
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "The story is thought to have been broadcast twice.",
+     "answer": true,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Doğru. Aktarım kalıbı geçmişe uzandığında"
+      },
+      {
+       "lang": "en",
+       "text": "to have been"
+      },
+      {
+       "lang": "tr",
+       "text": "biçimini alıyor."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir yayını izleyen topluluğa"
+     },
+     {
+      "lang": "en",
+      "text": "readership"
+     },
+     {
+      "lang": "tr",
+      "text": "basılan ürünün kendisine ise"
+     },
+     {
+      "lang": "en",
+      "text": "publication"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The readership of the publication is falling."
+     },
+     {
+      "lang": "tr",
+      "text": "Yayının okur kitlesi azalıyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The readership of the publication is falling."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sen kur: Sayıların bir artış gösterdiği söyleniyor."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "The numbers are said to show a rise.",
+     "accept": [
+      "The numbers are said to show an increase.",
+      "The figures are said to show a rise."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Özneyi başa almak için"
+      },
+      {
+       "lang": "en",
+       "text": "are said to"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "The numbers are said to show a rise."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Sürekli gelen iletiler dizisine"
+     },
+     {
+      "lang": "en",
+      "text": "feed"
+     },
+     {
+      "lang": "tr",
+      "text": "birbirine bağlı yayıncılar bütününe ise"
+     },
+     {
+      "lang": "en",
+      "text": "network"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The feed reaches the whole network."
+     },
+     {
+      "lang": "tr",
+      "text": "Akış bütün ağa ulaşıyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The feed reaches the whole network."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Neyin gösterileceğini seçen kural dizisine"
+     },
+     {
+      "lang": "en",
+      "text": "algorithm"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "An algorithm chooses what you see."
+     },
+     {
+      "lang": "tr",
+      "text": "Ne göreceğini bir algoritma seçiyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "An algorithm chooses what you see."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir tane daha: Filmin iki kez gösterildiği düşünülüyor."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "The film is thought to have been shown twice.",
+     "accept": [
+      "The film is thought to have been screened twice.",
+      "The film is thought to have been shown two times."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Geçmişteki bir işi aktarmak için"
+      },
+      {
+       "lang": "en",
+       "text": "is thought to have been"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "The film is thought to have been shown twice."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Özetleyelim: iddia"
+     },
+     {
+      "lang": "en",
+      "text": "It is claimed that"
+     },
+     {
+      "lang": "tr",
+      "text": "özne başta"
+     },
+     {
+      "lang": "en",
+      "text": "are said to"
+     },
+     {
+      "lang": "tr",
+      "text": "geçmiş"
+     },
+     {
+      "lang": "en",
+      "text": "is thought to have been"
+     },
+     {
+      "lang": "tr",
+      "text": "Şimdi bir başlığın arkasını okuyacaksın."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Bir haber başlığını arkadaşınla konuşuyorsun ve başlıkta yazmayan şeyleri soruyorsun. İddiayı, gösterileni ve geçmişte olanı aktarım kalıbıyla ver.",
+   "partner": "başlığı olduğu gibi doğru kabul eden bir arkadaş",
+   "opening": "It says it right there, doesn't it?",
+   "openingTr": "Orada öyle yazıyor, değil mi?",
+   "goal": "İddiayı, gösterileni ve geçmişte olanı üç ayrı aktarım kalıbıyla verdiysen konuşma başarılı sayılır.",
+   "minTurns": 7
+  }
+ },
+ {
+  "id": "en-b2-quoting-a-source",
+  "level": "B2",
+  "course": "en",
+  "icon": "pen",
+  "title": "Quoting a source",
+  "titleTr": "Kaynağı alıntılamak",
+  "summary": "Bir kaynağı doğru alıntılamayı öğretir; açıklayıcı ilgi cümlesi kimin ne dediğini cümleyi bölmeden ekler.",
+  "minutes": 11,
+  "focusId": "Non-defining relative clauses",
+  "vocab": [
+   {
+    "de": "reporter",
+    "tr": "muhabir"
+   },
+   {
+    "de": "quotation",
+    "tr": "alıntı"
+   },
+   {
+    "de": "attribution",
+    "tr": "kaynak gösterme"
+   },
+   {
+    "de": "publisher",
+    "tr": "yayıncı"
+   },
+   {
+    "de": "paraphrase",
+    "tr": "başka sözcüklerle anlatmak"
+   },
+   {
+    "de": "intern",
+    "tr": "stajyer"
+   },
+   {
+    "de": "embargo",
+    "tr": "yayın yasağı"
+   },
+   {
+    "de": "transparency",
+    "tr": "şeffaflık"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "The reporter, who checked the quotation, was new.",
+    "tr": "kişiye ek bilgi ekler"
+   },
+   {
+    "de": "The attribution, which is why we waited, was unclear.",
+    "tr": "cümlenin tamamına ek bilgi ekler"
+   },
+   {
+    "de": "The publisher to whom we wrote replied late.",
+    "tr": "edattan sonra ilgi zamiri kullanır"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Bugün bir kaynağı doğru alıntılamayı öğreneceğiz: kim kontrol etti, atıf neden belirsizdi, kime yazıldı."
+     },
+     {
+      "lang": "tr",
+      "text": "Alıntı yaparken kaynağı anlatmak cümleyi bölmeden yapılmalı; açıklayıcı ilgi cümlesi tam bunun için var. Hazır mısın?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "reporter"
+     },
+     {
+      "lang": "tr",
+      "text": "Haberi derleyen kişi demek. Aynen aktarılan söze ise"
+     },
+     {
+      "lang": "en",
+      "text": "quotation"
+     },
+     {
+      "lang": "tr",
+      "text": "denir. İlk kalıbımız da bu. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "The reporter, who checked the quotation, was new."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The reporter, who checked the quotation, was new."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Sözün kime ait olduğunu belirtmeye"
+     },
+     {
+      "lang": "en",
+      "text": "attribution"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İkinci kalıbımız cümlenin tamamına ek bilgi ekliyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "The attribution, which is why we waited, was unclear."
+     },
+     {
+      "lang": "tr",
+      "text": "Kaynak gösterme, ki bu yüzden bekledik, belirsizdi."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The attribution, which is why we waited, was unclear."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Yayını basan kuruluşa"
+     },
+     {
+      "lang": "en",
+      "text": "publisher"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son kalıbımız edattan sonra ilgi zamiri kullanıyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "The publisher to whom we wrote replied late."
+     },
+     {
+      "lang": "tr",
+      "text": "Yazdığımız yayıncı geç cevap verdi."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The publisher to whom we wrote replied late."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi dersin kuralı. Açıklayıcı ilgi cümlesi VİRGÜLLE ayrılır ve"
+     },
+     {
+      "lang": "en",
+      "text": "that"
+     },
+     {
+      "lang": "tr",
+      "text": "burada kullanılamaz. Edat öne geçtiğinde ilgi zamiri"
+     },
+     {
+      "lang": "en",
+      "text": "whom"
+     },
+     {
+      "lang": "tr",
+      "text": "ya da"
+     },
+     {
+      "lang": "en",
+      "text": "which"
+     },
+     {
+      "lang": "tr",
+      "text": "olur ve düşürülemez. Haber dilinde kaynak böyle tanıtılır."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sıra sende: Muhabir, ki yazıyı o yazdı, yeniydi."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "The reporter, who wrote the piece, was new.",
+     "accept": [
+      "The reporter, who wrote that piece, was new.",
+      "The journalist, who wrote the piece, was new."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Kişiye ek bilgi eklemek için"
+      },
+      {
+       "lang": "en",
+       "text": "who"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "The reporter, who wrote the piece, was new."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kontrol. Şu cümle doğru mu?"
+     },
+     {
+      "lang": "en",
+      "text": "The attribution, which is why we waited, was unclear."
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "The attribution, which is why we waited, was unclear.",
+     "answer": true,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Doğru. Ek bilgi virgüller arasında duruyor ve çıkarılsa cümle yine tam kalıyor."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Aynı anlamı başka sözcüklerle vermeye"
+     },
+     {
+      "lang": "en",
+      "text": "paraphrase"
+     },
+     {
+      "lang": "tr",
+      "text": "işi öğrenmek için çalışan gence ise"
+     },
+     {
+      "lang": "en",
+      "text": "intern"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "An intern can paraphrase the text."
+     },
+     {
+      "lang": "tr",
+      "text": "Bir stajyer metni başka sözcüklerle anlatabilir."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "An intern can paraphrase the text."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sen kur: Kaynak, ki bu yüzden kontrol ettik, yeniydi."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "The source, which is why we checked, was new.",
+     "accept": [
+      "The source, which is why we checked, was fresh.",
+      "That source, which is why we checked, was new."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Cümlenin tamamına ek bilgi eklemek için"
+      },
+      {
+       "lang": "en",
+       "text": "which"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "The source, which is why we checked, was new."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Belli bir saate kadar yayımlanmama kuralına"
+     },
+     {
+      "lang": "en",
+      "text": "embargo"
+     },
+     {
+      "lang": "tr",
+      "text": "her şeyi açık tutmaya ise"
+     },
+     {
+      "lang": "en",
+      "text": "transparency"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The embargo tested our transparency."
+     },
+     {
+      "lang": "tr",
+      "text": "Yayın yasağı şeffaflığımızı sınadı."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The embargo tested our transparency."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir tane daha: Yazdığımız editör hızlı cevap verdi."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "The editor to whom we wrote replied fast.",
+     "accept": [
+      "The editor to whom we wrote answered fast.",
+      "The person to whom we wrote replied fast."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Edattan sonra"
+      },
+      {
+       "lang": "en",
+       "text": "whom"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "The editor to whom we wrote replied fast."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Özetleyelim: kişiye ek"
+     },
+     {
+      "lang": "en",
+      "text": "who"
+     },
+     {
+      "lang": "tr",
+      "text": "cümleye ek"
+     },
+     {
+      "lang": "en",
+      "text": "which"
+     },
+     {
+      "lang": "tr",
+      "text": "edattan sonra"
+     },
+     {
+      "lang": "en",
+      "text": "to whom"
+     },
+     {
+      "lang": "tr",
+      "text": "Şimdi bir kaynağı tanıtacaksın."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Bir yazıdaki alıntının kaynağını meslektaşına anlatıyorsun. Kimin kontrol ettiğini, atfın neden belirsiz kaldığını ve kime yazıldığını açıklayıcı ilgi cümleleriyle ver.",
+   "partner": "alıntının kaynağını yayımlamadan önce görmek isteyen bir editör",
+   "opening": "Who exactly said this?",
+   "openingTr": "Bunu tam olarak kim söyledi?",
+   "goal": "Kişiye, cümleye ve edattan sonraya üç ayrı ilgi zamiri yerleştirdiysen konuşma başarılı sayılır.",
+   "minTurns": 7
+  }
+ },
+ {
+  "id": "en-b2-the-correction",
+  "level": "B2",
+  "course": "en",
+  "icon": "question",
+  "title": "The correction",
+  "titleTr": "Düzeltme",
+  "summary": "Yanlış çıkan bir haberi değerlendirmeyi öğretir: eminsen must have, imkânsız görüyorsan can't have, atlanmışsa should have.",
+  "minutes": 11,
+  "focusId": "Perfect modals",
+  "vocab": [
+   {
+    "de": "bias",
+    "tr": "yanlılık"
+   },
+   {
+    "de": "myth",
+    "tr": "efsane"
+   },
+   {
+    "de": "gossip",
+    "tr": "dedikodu"
+   },
+   {
+    "de": "propaganda",
+    "tr": "propaganda"
+   },
+   {
+    "de": "censorship",
+    "tr": "sansür"
+   },
+   {
+    "de": "suspicion",
+    "tr": "kuşku"
+   },
+   {
+    "de": "objectivity",
+    "tr": "nesnellik"
+   },
+   {
+    "de": "neutrality",
+    "tr": "yansızlık"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "The bias must have been there from the start.",
+    "tr": "geçmişe dair emin bir çıkarımı söyler"
+   },
+   {
+    "de": "The myth can't have started here.",
+    "tr": "geçmişe dair imkânsız gördüğünü söyler"
+   },
+   {
+    "de": "We should have checked the gossip.",
+    "tr": "yapılmamış olanı söyler"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Bugün yanlış çıkan bir haberi değerlendirmeyi öğreneceğiz: neye eminsin, neyi imkânsız görüyorsun, ne atlandı."
+     },
+     {
+      "lang": "tr",
+      "text": "Düzeltme yazısı bu üç kipi birlikte kullanır; üçü ayrı iş görür ve karıştırılınca özür suçlamaya dönüşür. Hazır mısın?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "bias"
+     },
+     {
+      "lang": "tr",
+      "text": "Bir yana eğilim demek. İlk kalıbımız da bu. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "The bias must have been there from the start."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The bias must have been there from the start."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Doğru sanılan yaygın yanlışa"
+     },
+     {
+      "lang": "en",
+      "text": "myth"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İkinci kalıbımız imkânsız gördüğünü söylüyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "The myth can't have started here."
+     },
+     {
+      "lang": "tr",
+      "text": "Efsane burada başlamış olamaz."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The myth can't have started here."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Kulaktan dolma konuşmaya"
+     },
+     {
+      "lang": "en",
+      "text": "gossip"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son kalıbımız yapılmamış olanı söylüyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "We should have checked the gossip."
+     },
+     {
+      "lang": "tr",
+      "text": "Dedikoduyu kontrol etmemiz gerekirdi."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "We should have checked the gossip."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi dersin kuralı. Üç kip de geçmişe bakar ama üçü ayrı iş görür:"
+     },
+     {
+      "lang": "en",
+      "text": "must have"
+     },
+     {
+      "lang": "tr",
+      "text": "bir çıkarımdır,"
+     },
+     {
+      "lang": "en",
+      "text": "can't have"
+     },
+     {
+      "lang": "tr",
+      "text": "bir reddir,"
+     },
+     {
+      "lang": "en",
+      "text": "should have"
+     },
+     {
+      "lang": "tr",
+      "text": "ise bir eksik tespitidir. Düzeltme yazısında bu ayrım özrü suçlamadan ayırır."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sıra sende: Hata baştan beri oradaymış olmalı."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "The error must have been there from the start.",
+     "accept": [
+      "The mistake must have been there from the start.",
+      "The error must have been there from the beginning."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Emin bir çıkarım için"
+      },
+      {
+       "lang": "en",
+       "text": "must have"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "The error must have been there from the start."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kontrol. Şu cümle doğru mu?"
+     },
+     {
+      "lang": "en",
+      "text": "We should have checked the gossip."
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "We should have checked the gossip.",
+     "answer": true,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Doğru. Bu kip yapılmamış olanı söylüyor ve bir suçlama değil bir eksik tespiti."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Tek yanlı yayılan bilgiye"
+     },
+     {
+      "lang": "en",
+      "text": "propaganda"
+     },
+     {
+      "lang": "tr",
+      "text": "yayının devletçe kısıtlanmasına ise"
+     },
+     {
+      "lang": "en",
+      "text": "censorship"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "Propaganda grows where censorship starts."
+     },
+     {
+      "lang": "tr",
+      "text": "Sansürün başladığı yerde propaganda büyür."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Propaganda grows where censorship starts."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sen kur: Söylenti burada başlamış olamaz."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "The rumour can't have started here.",
+     "accept": [
+      "The rumour can't have begun here.",
+      "The story can't have started here."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "İmkânsız gördüğün için"
+      },
+      {
+       "lang": "en",
+       "text": "can't have"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "The rumour can't have started here."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İçten içe inanmamaya"
+     },
+     {
+      "lang": "en",
+      "text": "suspicion"
+     },
+     {
+      "lang": "tr",
+      "text": "kendi görüşünü karıştırmadan anlatmaya ise"
+     },
+     {
+      "lang": "en",
+      "text": "objectivity"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "Suspicion is not the same as objectivity."
+     },
+     {
+      "lang": "tr",
+      "text": "Kuşku nesnellikle aynı şey değil."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Suspicion is not the same as objectivity."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Hiçbir tarafı tutmamaya"
+     },
+     {
+      "lang": "en",
+      "text": "neutrality"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "Neutrality costs more than it looks."
+     },
+     {
+      "lang": "tr",
+      "text": "Yansızlık göründüğünden pahalıdır."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Neutrality costs more than it looks."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir tane daha: Kaynağa sormamız gerekirdi."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "We should have asked the source.",
+     "accept": [
+      "We should have asked that source.",
+      "We should have contacted the source."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Yapılmamış olan için"
+      },
+      {
+       "lang": "en",
+       "text": "should have"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "We should have asked the source."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Özetleyelim: çıkarım"
+     },
+     {
+      "lang": "en",
+      "text": "must have"
+     },
+     {
+      "lang": "tr",
+      "text": "ret"
+     },
+     {
+      "lang": "en",
+      "text": "can't have"
+     },
+     {
+      "lang": "tr",
+      "text": "eksik"
+     },
+     {
+      "lang": "en",
+      "text": "should have"
+     },
+     {
+      "lang": "tr",
+      "text": "Şimdi yanlış çıkan bir haberi değerlendireceksin."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Yayımlanan bir haber yanlış çıktı ve düzeltmeyi konuşuyorsunuz. Neye emin olduğunu, neyi imkânsız gördüğünü ve neyin atlandığını suçlamadan söyle.",
+   "partner": "hatayı küçültmek isteyen, düzeltmeyi geciktiren bir editör",
+   "opening": "Do we really need a correction?",
+   "openingTr": "Gerçekten bir düzeltmeye ihtiyacımız var mı?",
+   "goal": "Bir çıkarımı, bir reddi ve bir eksiği üç ayrı kiple söylediysen konuşma başarılı sayılır.",
+   "minTurns": 7
+  }
+ },
+ {
+  "id": "en-b2-press-summary",
+  "level": "B2",
+  "course": "en",
+  "icon": "mail",
+  "title": "A press summary",
+  "titleTr": "Basın özeti",
+  "summary": "Günün basın özetini yazmayı öğretir; ortaç öbeği haberleri tek cümlede sıraya koyar.",
+  "minutes": 11,
+  "focusId": "Participle clauses",
+  "vocab": [
+   {
+    "de": "editorial",
+    "tr": "başyazı"
+   },
+   {
+    "de": "protest",
+    "tr": "protesto"
+   },
+   {
+    "de": "scandal",
+    "tr": "skandal"
+   },
+   {
+    "de": "controversy",
+    "tr": "çekişme"
+   },
+   {
+    "de": "movement",
+    "tr": "hareket"
+   },
+   {
+    "de": "reform",
+    "tr": "reform"
+   },
+   {
+    "de": "hearing",
+    "tr": "duruşma"
+   },
+   {
+    "de": "investigation",
+    "tr": "soruşturma"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "Having read the editorial, we wrote the summary.",
+    "tr": "önce biteni öne alıp bağlar"
+   },
+   {
+    "de": "Being short, the protest got little space.",
+    "tr": "sebebi ortaçla bağlar"
+   },
+   {
+    "de": "Published on Monday, the scandal grew fast.",
+    "tr": "edilgen ortaçla bağlar"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Bugün günün basın özetini yazmayı öğreneceğiz: ne okundu, neden az yer aldı, ne büyüdü."
+     },
+     {
+      "lang": "tr",
+      "text": "Basın özeti çok haberi az cümleye sığdırmak zorunda ve bunu ortaç öbeği sağlıyor. Hazır mısın?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "editorial"
+     },
+     {
+      "lang": "tr",
+      "text": "Gazetenin kendi görüşünü yazdığı yazı demek. İlk kalıbımız da bu. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "Having read the editorial, we wrote the summary."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Having read the editorial, we wrote the summary."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Karşı çıkışın toplu gösterisine"
+     },
+     {
+      "lang": "en",
+      "text": "protest"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İkinci kalıbımız sebebi bağlıyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "Being short, the protest got little space."
+     },
+     {
+      "lang": "tr",
+      "text": "Kısa sürdüğü için protestoya az yer ayrıldı."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Being short, the protest got little space."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Kamuoyunu sarsan yolsuzluk haberine"
+     },
+     {
+      "lang": "en",
+      "text": "scandal"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son kalıbımız edilgen ortaçla bağlıyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "Published on Monday, the scandal grew fast."
+     },
+     {
+      "lang": "tr",
+      "text": "Pazartesi yayımlanan skandal hızla büyüdü."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Published on Monday, the scandal grew fast."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi dersin kuralı. Ortaç öbeği iki cümlenin ÖZNESİ AYNIYSA kurulur:"
+     },
+     {
+      "lang": "en",
+      "text": "having"
+     },
+     {
+      "lang": "tr",
+      "text": "önce biteni,"
+     },
+     {
+      "lang": "en",
+      "text": "being"
+     },
+     {
+      "lang": "tr",
+      "text": "sebebi, üçüncü hâlle başlayan öbek ise edilgeni bağlar. Basın özetinde üçü peş peşe gelir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sıra sende: Yazıyı okuduktan sonra notu yazdık."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "Having read the piece, we wrote the note.",
+     "accept": [
+      "Having read the article, we wrote the note.",
+      "Having read the piece, we wrote a note."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Önce biteni bağlamak için"
+      },
+      {
+       "lang": "en",
+       "text": "having"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "Having read the piece, we wrote the note."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kontrol. Şu cümle doğru mu?"
+     },
+     {
+      "lang": "en",
+      "text": "Being short, the protest got little space."
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "Being short, the protest got little space.",
+     "answer": true,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Doğru. Her iki yarının öznesi de protesto; özne değişseydi bu öbek kurulamazdı."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Uzun süren kamusal tartışmaya"
+     },
+     {
+      "lang": "en",
+      "text": "controversy"
+     },
+     {
+      "lang": "tr",
+      "text": "ortak amaçla bir araya gelmiş topluluğa ise"
+     },
+     {
+      "lang": "en",
+      "text": "movement"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The controversy split the movement."
+     },
+     {
+      "lang": "tr",
+      "text": "Çekişme hareketi böldü."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The controversy split the movement."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sen kur: Geç kaldığı için haber baskıyı kaçırdı."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "Being late, the story missed the edition.",
+     "accept": [
+      "Being late, the story missed the issue.",
+      "Being late, that story missed the edition."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Sebebi bağlamak için"
+      },
+      {
+       "lang": "en",
+       "text": "being"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "Being late, the story missed the edition."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir düzeni yenilemeye"
+     },
+     {
+      "lang": "en",
+      "text": "reform"
+     },
+     {
+      "lang": "tr",
+      "text": "mahkemedeki oturuma ise"
+     },
+     {
+      "lang": "en",
+      "text": "hearing"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The reform was named at the hearing."
+     },
+     {
+      "lang": "tr",
+      "text": "Reform duruşmada anıldı."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The reform was named at the hearing."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir olayın resmen araştırılmasına"
+     },
+     {
+      "lang": "en",
+      "text": "investigation"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The investigation ran for six months."
+     },
+     {
+      "lang": "tr",
+      "text": "Soruşturma altı ay sürdü."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The investigation ran for six months."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir tane daha: Cuma günü basılan yazı herkese ulaştı."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "Printed on Friday, the piece reached everyone.",
+     "accept": [
+      "Printed on Friday, the article reached everyone.",
+      "Printed on Friday, that piece reached everyone."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Edilgen ortaç üçüncü hâlle başlar:"
+      },
+      {
+       "lang": "en",
+       "text": "Printed on Friday, the piece reached everyone."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Özetleyelim: önce biten"
+     },
+     {
+      "lang": "en",
+      "text": "having read"
+     },
+     {
+      "lang": "tr",
+      "text": "sebep"
+     },
+     {
+      "lang": "en",
+      "text": "being short"
+     },
+     {
+      "lang": "tr",
+      "text": "edilgen"
+     },
+     {
+      "lang": "en",
+      "text": "published"
+     },
+     {
+      "lang": "tr",
+      "text": "Şimdi günün basın özetini vereceksin."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Günün basın özetini sözlü olarak veriyorsun. Ne okuduğunu, neyin neden az yer aldığını ve neyin hızla büyüdüğünü kısa cümlelerle bağla.",
+   "partner": "özeti bir dakikada isteyen, uzatmayı sevmeyen bir yönetici",
+   "opening": "Can you give me the day in one minute?",
+   "openingTr": "Günü bir dakikada verebilir misin?",
+   "goal": "Önce biteni, sebebi ve edilgeni üç ayrı ortaç öbeğiyle bağladıysan konuşma başarılı sayılır.",
+   "minTurns": 7
+  }
+ },
+ {
+  "id": "en-b2-editorial-line",
+  "level": "B2",
+  "course": "en",
+  "icon": "flag",
+  "title": "What the paper argues",
+  "titleTr": "Gazetenin savı",
+  "summary": "Bir yayının savını özetlemeyi öğretir; yarık cümle savın hangi parçasının asıl olduğunu ayırır.",
+  "minutes": 11,
+  "focusId": "Cleft sentences for emphasis",
+  "vocab": [
+   {
+    "de": "accountability",
+    "tr": "hesap verebilirlik"
+   },
+   {
+    "de": "economy",
+    "tr": "ekonomi"
+   },
+   {
+    "de": "victim",
+    "tr": "mağdur"
+   },
+   {
+    "de": "probability",
+    "tr": "olasılık"
+   },
+   {
+    "de": "satire",
+    "tr": "yergi"
+   },
+   {
+    "de": "obituary",
+    "tr": "anma yazısı"
+   },
+   {
+    "de": "parliament",
+    "tr": "parlamento"
+   },
+   {
+    "de": "suspect",
+    "tr": "şüpheli"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "What the paper argues is accountability.",
+    "tr": "savın bütününü başa taşır"
+   },
+   {
+    "de": "It was the economy that decided the vote.",
+    "tr": "tek bir parçayı öne çıkarır"
+   },
+   {
+    "de": "What is missing is the victim's own voice.",
+    "tr": "eksik olanı başa alır"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Bugün bir yayının savını özetlemeyi öğreneceğiz: neyi savunuyor, neyi belirleyici görüyor, neyi atlıyor."
+     },
+     {
+      "lang": "tr",
+      "text": "Bir yayının savı çoğu zaman tek cümlede durmaz; yarık cümle o savın asıl parçasını ayırır. Hazır mısın?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "accountability"
+     },
+     {
+      "lang": "tr",
+      "text": "Yaptığının hesabını verme zorunluluğu demek. İlk kalıbımız da bu. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "What the paper argues is accountability."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "What the paper argues is accountability."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir ülkenin üretim ve para düzenine"
+     },
+     {
+      "lang": "en",
+      "text": "economy"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İkinci kalıbımız tek bir parçayı öne çıkarıyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "It was the economy that decided the vote."
+     },
+     {
+      "lang": "tr",
+      "text": "Oylamayı belirleyen şey ekonomiydi."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "It was the economy that decided the vote."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Zarar görene"
+     },
+     {
+      "lang": "en",
+      "text": "victim"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son kalıbımız eksik olanı başa alıyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "What is missing is the victim's own voice."
+     },
+     {
+      "lang": "tr",
+      "text": "Eksik olan şey mağdurun kendi sesi."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "What is missing is the victim's own voice."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi dersin kuralı. Yarık cümlenin iki biçimi var:"
+     },
+     {
+      "lang": "en",
+      "text": "What … is"
+     },
+     {
+      "lang": "tr",
+      "text": "savın bütününü öne alır,"
+     },
+     {
+      "lang": "en",
+      "text": "It was … that"
+     },
+     {
+      "lang": "tr",
+      "text": "ise tek bir parçayı seçer. Bir yayının savını özetlerken ikincisi bir yorumdur: sen o parçayı belirleyici görüyorsun."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sıra sende: Gazetenin savunduğu şey şeffaflık."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "What the paper argues is transparency.",
+     "accept": [
+      "What the paper argues is openness.",
+      "What this paper argues is transparency."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Savın bütününü başa taşımak için"
+      },
+      {
+       "lang": "en",
+       "text": "What … is"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "What the paper argues is transparency."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kontrol. Şu cümle doğru mu?"
+     },
+     {
+      "lang": "en",
+      "text": "It was the economy that decided the vote."
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "It was the economy that decided the vote.",
+     "answer": true,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Doğru. Tek bir parça seçilip başa alınmış ve cümlenin geri kalanı olduğu gibi duruyor."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Gerçekleşme ihtimalinin ölçüsüne"
+     },
+     {
+      "lang": "en",
+      "text": "probability"
+     },
+     {
+      "lang": "tr",
+      "text": "alay yoluyla eleştiren yazıya ise"
+     },
+     {
+      "lang": "en",
+      "text": "satire"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The probability is low, so they chose satire."
+     },
+     {
+      "lang": "tr",
+      "text": "Olasılık düşük, o yüzden yergiyi seçtiler."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The probability is low, so they chose satire."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sen kur: Oylamayı değiştiren şey rapordu."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "It was the report that changed the vote.",
+     "accept": [
+      "It was that report that changed the vote.",
+      "It was the report which changed the vote."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Tek parçayı seçmek için"
+      },
+      {
+       "lang": "en",
+       "text": "It was … that"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "It was the report that changed the vote."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Ölen biri için yazılan yazıya"
+     },
+     {
+      "lang": "en",
+      "text": "obituary"
+     },
+     {
+      "lang": "tr",
+      "text": "yasa yapan meclise ise"
+     },
+     {
+      "lang": "en",
+      "text": "parliament"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The obituary ran beside the parliament report."
+     },
+     {
+      "lang": "tr",
+      "text": "Anma yazısı parlamento haberinin yanında çıktı."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The obituary ran beside the parliament report."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Suçu işlemiş olabileceği düşünülen kişiye"
+     },
+     {
+      "lang": "en",
+      "text": "suspect"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The suspect was never named."
+     },
+     {
+      "lang": "tr",
+      "text": "Şüphelinin adı hiç verilmedi."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The suspect was never named."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir tane daha: Eksik olan şey öteki taraf."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "What is missing is the other side.",
+     "accept": [
+      "What is missing is the other view.",
+      "What's missing is the other side."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Eksik olanı başa almak için"
+      },
+      {
+       "lang": "en",
+       "text": "What is missing is"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "What is missing is the other side."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Özetleyelim: sav"
+     },
+     {
+      "lang": "en",
+      "text": "What the paper argues is"
+     },
+     {
+      "lang": "tr",
+      "text": "tek parça"
+     },
+     {
+      "lang": "en",
+      "text": "It was … that"
+     },
+     {
+      "lang": "tr",
+      "text": "eksik"
+     },
+     {
+      "lang": "en",
+      "text": "What is missing is"
+     },
+     {
+      "lang": "tr",
+      "text": "Şimdi bir yayının savını özetleyeceksin."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Bir gazetenin bir konudaki savını arkadaşına özetliyorsun. Savın bütününü, belirleyici gördüğün parçayı ve eksik bıraktığı yanı ayrı ayrı söyle.",
+   "partner": "aynı gazeteyi okuyan ama başka bir yan gören bir arkadaş",
+   "opening": "Did we read the same piece?",
+   "openingTr": "Aynı yazıyı mı okuduk?",
+   "goal": "Savın bütününü, tek parçayı ve eksik olanı üç ayrı yarık cümleyle söylediysen konuşma başarılı sayılır.",
+   "minTurns": 7
+  }
  }
 ]

@@ -1,6 +1,6 @@
 # WP-74 — İngilizce ders kapsamı B1–C1
 
-**Durum:** sürüyor (B1 TAM; B2 modül 1-3 bitti, 130/300 ders) · **Sahip:** Claude · **Açılış:** 2026-09-11
+**Durum:** sürüyor (B1 TAM; B2 modül 4 yarıda, 135/300 ders) · **Sahip:** Claude · **Açılış:** 2026-09-11
 
 ## Kusur
 
