@@ -9,6 +9,7 @@ import { AiNotice } from "../ui/AiNotice";
 import { PressableScale } from "../ui/PressableScale";
 import { ArrowBackIcon, MicIcon } from "../ui/icons";
 import { Mascot } from "../ui/Mascot";
+import { CoachBubble } from "../ui/CoachBubble";
 import { ProgressRing } from "../ui/ProgressRing";
 import { findLesson, type Lesson } from "../data/lessons";
 import { sendRoleplay, parseReply, type ChatMsg } from "../game/roleplay";
@@ -207,7 +208,7 @@ export function RoleplayExamScreen() {
       <ScrollView style={{ flex: 1, backgroundColor: colors.bg }} contentContainerStyle={pad}>
         <Back nav={nav} colors={colors} />
         <View style={[{ backgroundColor: colors.surface, borderRadius: radii.xl, borderWidth: 1, borderColor: colors.hairline, padding: spacing.xl, marginTop: spacing.md }, cardShadow(colors, 10)]}>
-          <Mascot mood="idle" size={72} />
+          <CoachBubble moment="exam_intro" mood="idle" size={56} />
           <Text variant="h1" style={{ marginTop: spacing.md }}>{tx("rpexam.title")}</Text>
           <Text variant="caption" color={colors.textMuted} style={{ marginTop: 2 }}>{lesson.title} · {lesson.titleTr}</Text>
           <Text variant="body" style={{ marginTop: spacing.md, lineHeight: 22 }}>{lesson.roleplay.scene}</Text>
@@ -267,7 +268,7 @@ export function RoleplayExamScreen() {
       <ScrollView style={{ flex: 1, backgroundColor: colors.bg }} contentContainerStyle={pad}>
         <Back nav={nav} colors={colors} />
         <View style={{ alignItems: "center", marginTop: spacing.md }}>
-          <Mascot mood={passed ? "celebrate" : "sad"} size={92} />
+          <CoachBubble moment={passed ? "exam_pass" : "exam_fail"} mood={passed ? "celebrate" : "sad"} vars={{ pct: overall, level: lesson.level }} size={56} />
           {result ? (
             <ProgressRing size={140} stroke={13} pct={overall} track={colors.surface2} from={colors.gradientA[0]} to={colors.gradientA[1]}>
               <Text variant="display" color={colors.primaryText}>{formatPercent(overall)}</Text>

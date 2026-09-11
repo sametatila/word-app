@@ -8,6 +8,7 @@ import { Text } from "../ui/Text";
 import { Card } from "../ui/Card";
 import { PressableScale } from "../ui/PressableScale";
 import { Mascot } from "../ui/Mascot";
+import { CoachBubble } from "../ui/CoachBubble";
 import { Celebrate } from "../ui/Celebrate";
 import { CertificateSheet } from "../ui/CertificateSheet";
 import { XIcon, SpeakerIcon, CheckIcon } from "../ui/icons";
@@ -311,6 +312,9 @@ export function ExamScreen() {
       <View style={{ flex: 1, backgroundColor: colors.bg }}>
         {header}
         <ScrollView contentContainerStyle={{ padding: spacing.lg, paddingBottom: insets.bottom + spacing.xxl, gap: spacing.md }}>
+          {/* Sınav başlarken Erdi tek cümle söylüyor - web `exam-player` de
+              aynı yerde. Androidde maskot bu ekranda hiç yoktu. */}
+          <CoachBubble moment="exam_intro" mood="idle" size={48} />
           {paper.cover ? (
             <Card padded style={{ gap: spacing.sm }}>
               <Text variant="h2" style={{ lineHeight: 30 }}>{paper.cover.titleDe}</Text>
@@ -365,7 +369,7 @@ export function ExamScreen() {
         <ScrollView contentContainerStyle={{ padding: spacing.lg, paddingBottom: insets.bottom + spacing.xxl, gap: spacing.md }}>
           <Card padded style={{ alignItems: "center", gap: spacing.sm }}>
             <Celebrate show={!!result?.passed} />
-            <Mascot mood={result?.passed ? "celebrate" : "idle"} size={90} />
+            <CoachBubble moment={result?.passed ? "exam_pass" : "exam_fail"} mood={result?.passed ? "celebrate" : "sad"} vars={{ pct, level }} size={72} />
             <Text variant="h1">{formatPercent(pct)}</Text>
             <Text variant="bodyStrong" color={result?.passed ? colors.successText : colors.textMuted}>
               {result ? (result.passed ? t("exam.passed") : t("exam.not_passed")) : t("exam.saved_offline")}

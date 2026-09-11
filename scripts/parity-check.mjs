@@ -1959,7 +1959,6 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
      gosteriyordu, yani veri yanliydi (bkz. §11.178). */
   const WEB_OZEL = [
     "challenge_play", //        sure-kazanma modu mobilde yok
-    "coach_show", //            koc baloncugu mobilde yok
     "feedback_why_opened", //   mobil "neden"i her zaman gosteriyor, acma eylemi yok
     "install_prompt", //        PWA kurulum onerisi
     "invite_open", //           tarayici olcum katmani
@@ -3537,6 +3536,49 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     ];
   };
   sameList("tohumlu karistirma", govde("mobile/src/lib/shuffle.ts"), govde("src/lib/shuffle.ts"));
+}
+
+/* ── 103. koc balonu ──────────────────────────────────────────────────────
+ * Erdi'nin ogrenme anlarinda soyledigi tek cumle. Kirk cumlelik tablo webin
+ * KENDI sozlugunde duruyordu (`coach.*`), bilesen de yalniz webdeydi: sinav
+ * baslarken, sonucunda ve zayif nokta turunun ozetinde web konusuyor, Android
+ * yalnizca bir maskot gosteriyordu.
+ *
+ * Olculen: an tablosu (sekiz an x bes cumle), yer tutucu kurali (isim yoksa
+ * virguluyle duser), tekrar etmeyen secim ve ucu de BAGLI mi - olay tanimli
+ * olmasi yetmez, balonun cagrildigi yer de gerekli (§90'in dersi). */
+{
+  /* BAĞLANTI ÖLÇÜMÜ EKRANLARDAN, tablodan DEĞİL. İlk yazımda ikisi birlikte
+     okunuyordu ve an tablosu zaten `"weak_done"` dizgesini taşıdığı için
+     ekrandaki çağrı koparıldığında kapı yeşil kalıyordu - §90'in dersini
+     yazdığım satırın altında yine aynı hatayı yaptım. */
+  const koc = (tablo, ekranlar) => {
+    const kirp = (x) => x.replace(/\/\*[\s\S]*?\*\//g, " ").replace(/\/\/[^\n]*/g, " ");
+    const src = kirp(tablo.map((p) => read(p)).join("\n"));
+    const ekran = kirp(ekranlar.map((p) => read(p)).join("\n"));
+    const anlar = [...new Set([...src.matchAll(/"coach\.(\w+?)_[1-5]"/g)].map((m) => m[1]))].sort();
+    return [
+      ...anlar,
+      "yer tutucu=" + (/replace\(\/,\\s\*\\\{name\\\}\/g, ""\)/.test(src) ? "var" : "yok"),
+      "tekrarsiz secim=" + (/function pickIndex\(/.test(src) ? "var" : "yok"),
+      /* SAYIYLA: "en az bir yerde var" yetmez - iki sinav yuzeyi de (modul/
+         seviye sinavi ve rol yapma sinavi) kendi balonunu cizmeli. */
+      "sinav girisi=" + (ekran.match(/moment="exam_intro"/g) ?? []).length,
+      "sinav sonucu=" + (ekran.match(/exam_pass" : "exam_fail"/g) ?? []).length,
+      "zayif nokta=" + (ekran.match(/"weak_done"/g) ?? []).length,
+    ];
+  };
+  sameList(
+    "koc balonu",
+    koc(
+      ["mobile/src/game/coachLines.ts", "mobile/src/ui/CoachBubble.tsx"],
+      ["mobile/src/screens/ExamScreen.tsx", "mobile/src/screens/RoleplayExamScreen.tsx", "mobile/src/screens/GameScreen.tsx"],
+    ),
+    koc(
+      ["src/lib/coach-lines.ts", "src/components/coach-bubble.tsx"],
+      ["src/components/exam-player.tsx", "src/components/lessons/roleplay-exam.tsx", "src/components/session-player.tsx"],
+    ),
+  );
 }
 
 console.log(

@@ -20,6 +20,9 @@ export type EventName =
   | "onboarding_existing_account"
   | "first_practice"
   | "notif_prime"
+  /* Koç balonu gösterildi (kind = an). Ad web `lib/events` ile aynı -
+     uydurulmadı, taşındı. */
+  | "coach_show"
   | "nav"
   | "paywall_view"
   | "premium_gate"

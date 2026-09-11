@@ -13,6 +13,7 @@ import { MascotPop } from "../ui/MascotPop";
 import { AmbientPeek } from "../ui/AmbientMascot";
 import { ProgressRing } from "../ui/ProgressRing";
 import { Mascot } from "../ui/Mascot";
+import { CoachBubble } from "../ui/CoachBubble";
 import { Celebrate } from "../ui/Celebrate";
 import { RoundView } from "../game/rounds";
 import { fetchSession, submitAnswers, isPermanentError, todayStr, PRACTICE_GAMES, type Round, type AnswerOut, type DoneExtra, type SessionMeta, type SessionProgress, type SubmitResult, type MissedWord } from "../game/session";
@@ -333,7 +334,13 @@ export function GameScreen() {
               turda kutlama, geçer turda mutlu, altında ÜZGÜN. Burada ikinci
               hâl yoktu - %59 alan öğrenci de mutlu maskot görüyordu, yani
               maskot hiçbir şey söylemiyordu. */}
-          {total > 0 ? <Mascot mood={deserved ? "celebrate" : pct >= 60 ? "happy" : "sad"} size={104} /> : <Mascot mood="idle" size={104} />}
+          {/* ZAYIF NOKTA TURUNDA ERDİ KONUŞUYOR. Pratik'ten tek oyuna
+              kilitlenen tur "zayıf nokta çalışması" sayılıyor ve web özetinde
+              Erdi ona göre bir cümle söylüyor (`session-player`, `weak_done`);
+              Androidde maskot sessizdi. */}
+          {onlyGame && total > 0 ? (
+            <CoachBubble moment="weak_done" mood={pct >= 60 ? "thumbsup" : "sad"} size={72} />
+          ) : total > 0 ? <Mascot mood={deserved ? "celebrate" : pct >= 60 ? "happy" : "sad"} size={104} /> : <Mascot mood="idle" size={104} />}
           <ProgressRing size={150} stroke={14} pct={pct} track={colors.surface2} from={colors.gradientA[0]} to={colors.gradientA[1]}>
             <Text variant="display" color={colors.primaryText}>{finalCorrect}/{total || 0}</Text>
             <Text variant="micro" color={colors.textMuted}>{t("game.correct")}</Text>

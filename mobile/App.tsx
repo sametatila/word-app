@@ -15,6 +15,7 @@ import { track, loadAnalyticsPref } from "./src/lib/track";
 import { attachTelemetry, screenChanged } from "./src/lib/telemetry";
 import { loadSoundPref } from "./src/lib/sfx";
 import { loadReduceMotion } from "./src/lib/reduceMotion";
+import { loadCoachSeen } from "./src/game/coachLines";
 import { loadLang, useLang } from "./src/lib/i18n";
 import { attachPushListeners } from "./src/lib/pushDevice";
 import { flushPendingAnswers } from "./src/game/session";
@@ -140,6 +141,9 @@ function Nav() {
       // "Hareketi azalt" sistem tercihi — animasyon kararı veren her yer bunu
       // senkron okuyor, o yüzden ilk çizimden önce yüklenmesi gerekiyor.
       .then(() => loadReduceMotion())
+      /* Koçun "son söyledikleri" — cümle seçimi çizim sırasında ve SENKRON
+         yapılıyor, o yüzden kayıt önceden belleğe alınıyor. */
+      .then(() => loadCoachSeen())
       // Günün ilk açılışı (§4 funnel) — kind platform:görünüm, value ekran genişliği.
       // Görünüm native pakette her zaman "standalone"; web tarafı (components/telemetry)
       // aynı kalıbı display-mode'dan üretiyor ve yönetim panosu ikisini de tanıyor
