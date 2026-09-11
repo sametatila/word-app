@@ -4798,6 +4798,58 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   sameList("kuyrugu cagiran", cagri("mobile/src/game/session.ts"), cagri("src/components/session-player.tsx"));
 }
 
+/* ── 137. deneme kagidi listesinde bolum durumu ───────────────────────────
+ * Bir kagit 80-205 dakika suruyor ve bolum bolum cozuluyor, yani listenin
+ * cevaplamasi gereken soru "nerede kaldim". Android bunu satir satir
+ * gosteriyor (`MockExamsScreen` `PartBadge`: yuzde, gecti/kaldi, yarim
+ * kaldi). Webde ayni veri ZATEN cekiliyordu (`done` ve `running`) ama yalniz
+ * ortalama blogunda ve "yarim kalanlar" listesinde kullaniliyordu: bir kagidin
+ * hangi bolumlerini cozdugun listede hic gorunmuyordu.
+ *
+ * Olculen: iki tarafta da satirin durumu var mi, ayni uc hâli mi tasiyor ve
+ * yarim kalan bitmisi ezerek mi gosteriliyor. */
+{
+  const strip = (x) => x.replace(/\/\*[\s\S]*?\*\//g, " ").replace(/(^|[^:"'`\\])\/\/.*$/gm, "$1");
+  const durum = (yol) => {
+    const src = strip(read(yol)).replace(/\s+/g, " ");
+    return [
+      "yarim=" + (/mockexams\.state_running/.test(src) ? "var" : "yok"),
+      "bitmis=" + (/mockexams\.state_done/.test(src) ? "var" : "yok"),
+      /* Gecti/kaldi rengi: iki tarafta da ton `passed`e bakiyor. */
+      "gecti-tonu=" + (/passed\s*\?/.test(src) ? "var" : "yok"),
+      /* Yarim kalan, bitmisi EZMELI: kullanici o bolume yeniden girmis. */
+      "yarim ezer=" + (/(running|state === "running")/.test(src) ? "var" : "yok"),
+    ];
+  };
+  sameList(
+    "deneme kagidi bolum durumu",
+    durum("mobile/src/screens/MockExamsScreen.tsx"),
+    durum("src/app/(app)/mock-exams/page.tsx"),
+  );
+
+  /* MUAF: `mockexams.state_local` ("yalniz bu cihazda") yalniz Androidde.
+     Orada sonuc cihaza da yaziliyor (`mockExamLocal` `pushLocalResult`) cunku
+     uygulama cevrimdisi acilabiliyor ve liste sunucu olmadan da bu soruya
+     cevap vermek zorunda; webde liste SUNUCUDA ciziliyor, yani sunucu yoksa
+     sayfa da yok. Muafiyet kendini denetliyor: web listesi bir gun istemciye
+     tasinirsa (ve `localStorage` okumaya baslarsa) bu satir duser. */
+  const webListe = strip(read("src/app/(app)/mock-exams/page.tsx"));
+  const istemcide = /"use client"|localStorage/.test(webListe);
+  /* Ad sinirina kapali: `/pushLocalResult/` oneki `pushLocalResult2`yi de
+     eslesiyordu ve enjeksiyon gecmisti (§11.226'daki `<ConfirmDialog` ile
+     ayni hata, ayni turda ikinci kez). */
+  const mobilYerel = /pushLocalResult\(/.test(strip(read("mobile/src/screens/MockExamScreen.tsx")));
+  /* Uc hâlden yalniz biri bekleniyor. (Ilk yazilisinda iki taraf da ayni
+     sabiti donduruyordu, yani kapi hicbir sey olcmuyordu - kendi yazdigim
+     bos bir esitlik.) */
+  const hal = istemcide
+    ? "web listesi istemcide: yerel kopya webde de gerekli"
+    : mobilYerel
+      ? "muaf: mobil yerel kopya tutuyor, web listesi sunucuda ciziliyor"
+      : "mobilde yerel kopya YOK";
+  sameList("bolum durumu yerel kopya", [hal], ["muaf: mobil yerel kopya tutuyor, web listesi sunucuda ciziliyor"], "bulunan", "beklenen");
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"

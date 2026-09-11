@@ -7726,3 +7726,36 @@ Kapı bir kez daha komşusunu ölçtü: kuyruk sınırını dosyanın **ilk**
 `slice(-N)`inden okuyordu ve mobilde alakasız bir kırpmayı (-200) buluyordu,
 yani "sınır 200'e 20" diye ayrışıyordu. Sınır artık `queueAnswers`in kendi
 gövdesinden okunuyor — **on beşinci biçim.**
+
+### 11.230 "Nerede kaldım" sorusu webde cevapsızdı
+
+Bir deneme kâğıdı 80-205 dakika sürüyor ve **bölüm bölüm** çözülüyor, yani
+listenin cevaplaması gereken soru tam olarak bu: nerede kaldım. Android bunu
+satır satır gösteriyor (`MockExamsScreen` `PartBadge`: yüzde, geçti/kaldı,
+yarım kaldı). Web'de bir kâğıdın hangi bölümlerini çözdüğün **hiçbir yerde
+görünmüyordu.**
+
+İlginç olan şu: **veri zaten çekiliyordu.** Sayfa bitmiş denemeleri (`done`,
+skor ve geçti/kaldı ile) ve yarım kalanları (`running`) sunucudan alıyor, ama
+ikisini yalnız ortalama bloğunda ve "yarım kalanlar" listesinde kullanıyordu.
+Satırın kendisine hiç bakılmamıştı. Rozet eklendi; yarım kalan bitmişi
+**eziyor**, çünkü kullanıcı o bölüme yeniden girmiş ve şu an içinde.
+
+`mockexams.state_local` ("yalnız bu cihazda") Android'e özel kalıyor ve
+gerekçesi ölçülüyor: orada sonuç cihaza da yazılıyor (`pushLocalResult`),
+çünkü uygulama çevrimdışı açılabiliyor ve liste sunucu olmadan da bu soruya
+cevap vermek zorunda; web listesi **sunucuda** çiziliyor, yani sunucu yoksa
+sayfa da yok. Web listesi bir gün istemciye taşınırsa satır düşer.
+
+İki kapı hatası daha bu turda, ikisi de kendi yazdığım:
+
+- Muafiyet kapısının ilk hâli **iki tarafta da aynı sabiti** döndürüyordu,
+  yani hiçbir şey ölçmüyordu — boş bir eşitlik. Artık üç hâlden yalnız biri
+  bekleniyor.
+- `/pushLocalResult/` deseni **önek** olarak eşleşiyordu ve yeniden
+  adlandırılmış `pushLocalResult2`yi hâlâ "var" sayıyordu. **§11.226'daki
+  `<ConfirmDialog` hatasının aynısı, iki tur sonra ikinci kez.** Ad sınırı
+  eklendi.
+
+Dört enjeksiyonun dördü de sonunda yakalandı. **§137** satırın üç hâlini ve
+yerel kopya muafiyetini ölçüyor.

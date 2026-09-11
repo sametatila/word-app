@@ -106,6 +106,25 @@ export default async function MockExamsPage({ searchParams }: { searchParams: Pr
   ]);
 
   const mine = (paperId: string) => paperId.startsWith(`${course}-`);
+  /*
+   * BÖLÜM DURUMU — "bu bölümü çözdüm mü" sorusu satırın kendisinde.
+   *
+   * Veri zaten çekiliyordu (`done`, `running`) ama YALNIZ ortalama bloğunda
+   * ve "yarım kalanlar" listesinde kullanılıyordu: liste ekranında bir kâğıdın
+   * hangi bölümlerini çözdüğün hiçbir yerde görünmüyordu. Android bunu baştan
+   * beri satır satır gösteriyor (`MockExamsScreen` `PartBadge`) ve bir kâğıt
+   * 80-205 dakika sürdüğü için soru tam olarak bu: nerede kaldım.
+   *
+   * `done` en yeniden eskiye sıralı, o yüzden İLK kayıt en güncel deneme.
+   */
+  const partState = new Map<string, { pct: number; passed: boolean } | "running">();
+  for (const r of done) {
+    const k = `${r.paperId}:${r.skill}`;
+    if (!partState.has(k)) partState.set(k, { pct: r.score, passed: r.passed ?? false });
+  }
+  /* Yarım kalan, bitmiş kaydı EZİYOR: kullanıcı o bölüme yeniden girmiş ve
+     şu an içinde — satırın söylemesi gereken şey bu. */
+  for (const r of running) partState.set(`${r.paperId}:${r.skill}`, "running");
   const bySkill = new Map<string, { n: number; sum: number; best: number }>();
   for (const r of done.filter((x) => mine(x.paperId))) {
     const s = bySkill.get(r.skill) ?? { n: 0, sum: 0, best: 0 };
@@ -247,6 +266,21 @@ export default async function MockExamsPage({ searchParams }: { searchParams: Pr
                           : t("mockexams.part_open", { minutes: part.minutes })}
                       </span>
                     </span>
+                    {(() => {
+                      const st = partState.get(`${p.id}:${part.skill}`);
+                      if (!st) return null;
+                      const running = st === "running";
+                      const tone = running
+                        ? "var(--color-flame)"
+                        : st.passed
+                          ? "var(--color-mint)"
+                          : "var(--color-rose)";
+                      return (
+                        <span className="chip ml-auto px-2 py-0.5 text-micro font-bold" style={{ color: tone }}>
+                          {running ? t("mockexams.state_running") : t("mockexams.state_done", { pct: st.pct })}
+                        </span>
+                      );
+                    })()}
                     {locked ? <LockIcon className="size-4" /> : <ChevronRightIcon className="size-4" />}
                   </>
                 );
