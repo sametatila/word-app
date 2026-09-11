@@ -31,9 +31,8 @@ import { useTheme, spacing, radii, softShadow } from "../theme";
  * istemcide ikinci bir kopya tutmak dengeyi değiştirdiğimizde iki yerde
  * birden değiştirmeyi hatırlamak demekti (ucun kendi yorumu da bunu söylüyor).
  *
- * Webin son saniyelerdeki tık sesi BURADA YOK: mobil ses tablosunda `danger`
- * diye bir tür yok ve yeni bir tür eklemek native tabloları yeniden üretmeyi
- * gerektiriyor (`scripts/render-sfx.py`, iki paket). Sayaç görünüyor.
+ * Son saniyelerin tık sesi web ile aynı (`danger`, aynı eşik, aynı ritim);
+ * ses tablosuna o tür sonradan eklendi (bkz. `lib/sfxNotes`).
  */
 type BossMeta = {
   level: string;
@@ -77,6 +76,11 @@ export function BossScreen() {
   const finished = useRef(false);
   const pending = useRef<AnswerOut[]>([]);
   const startedAt = useRef(Date.now());
+  /* CEVAP SÜRESİ TUR BAŞINA. `startedAt` bütün patron turunun başlangıcı ve
+     gecikme ondan hesaplanıyordu: onuncu kelimenin gecikmesi "oyuna
+     başlayalı kaç saniye oldu" diye gidiyordu. Gecikme SRS'te ve hata
+     çözümlemesinde okunuyor; `GameScreen` baştan beri tur başına ölçüyor. */
+  const roundStart = useRef(0);
 
   useEffect(() => {
     let alive = true;
@@ -167,6 +171,7 @@ export function BossScreen() {
     setIsRecord(false);
     pending.current = [];
     startedAt.current = Date.now();
+    roundStart.current = Date.now();
     sfx("start"); // turun açılışı — web `boss-player` aynı yerde çalıyor
     track("boss_play", moduleIndex);
     setPhase("playing");
@@ -178,7 +183,7 @@ export function BossScreen() {
     const results = extra?.batch?.length
       ? extra.batch.map((b) => ({ wordId: b.wordId, correct: b.correct }))
       : [{ wordId: r?.word?.id ?? r?.words?.[0]?.id ?? 0, correct: ok }];
-    const lat = Math.max(0, Date.now() - startedAt.current);
+    const lat = Math.max(0, Date.now() - roundStart.current);
     for (const x of results) {
       if (!x.wordId || !r) continue;
       pending.current.push({
@@ -201,7 +206,7 @@ export function BossScreen() {
     }));
 
     if (index >= data.rounds.length - 1) void finish(true, Math.max(0, (deadline.current - Date.now()) / 1000));
-    else setIndex((i) => i + 1);
+    else { roundStart.current = Date.now(); setIndex((i) => i + 1); }
   }
 
   const pad = { flex: 1, backgroundColor: colors.bg, paddingTop: insets.top + spacing.sm, paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.lg } as const;
