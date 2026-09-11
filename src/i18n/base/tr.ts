@@ -1522,6 +1522,16 @@ export const trBase: Record<string, string> = {
   "paywall.store_not_open_sub": "Premium'a bugün davet ödülüyle ya da promo koduyla geçebilirsin — ikisi de aşağıda.",
   "assess.fail_offline": "Değerlendirme servisi şu an kapalı; bu puan kelime sayısından çıkarılmış geçici bir tahmin, gerçek değerlendirme değil.",
   "assess.fail_unscored": "Değerlendirme servisi şu an kapalı; metnin puanlanamadı.",
+  /* Değerlendirme neden alınamadı - SEBEBİNE göre. Mobil hepsini tek
+     cümleye ("servis kapalı") indiriyordu: metni çok uzun olan da,
+     oturumu düşen de aynı yanlış açıklamayı görüyordu. */
+  "assess.fail_not_configured": "AI değerlendirmesi şu an kapalı.",
+  "assess.fail_too_long": "Metin çok uzun; kısaltıp tekrar dene.",
+  "assess.fail_timeout": "Değerlendirme zaman aşımına uğradı.",
+  "assess.fail_invalid": "Değerlendirme okunamadı.",
+  "assess.fail_upstream": "Değerlendirme servisi şu an cevap vermiyor.",
+  "assess.fail_unauthorized": "Oturum bulunamadı; yeniden giriş yap.",
+  "assess.fail_bad_request": "Görev eksik; sayfayı yenileyip tekrar dene.",
   "assess.fail_premium": "Yapay zekâ değerlendirmesi Premium'a özel; ücretsiz hakkın bu dönem için doldu. Profilden Premium'a bakabilirsin.",
   "assess.fail_quota": "Bugünkü yapay zekâ değerlendirme hakkın doldu; yarın yeniden açılıyor.",
   "league.tier_bronze": "Bronz Lig",

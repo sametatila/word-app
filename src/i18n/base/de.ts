@@ -1522,6 +1522,16 @@ export const deBase: Record<string, string> = {
   "paywall.store_not_open_sub": "Premium bekommst du heute über eine Einladungsprämie oder einen Promo-Code — beides steht unten.",
   "assess.fail_offline": "Der Bewertungsdienst ist gerade nicht erreichbar; diese Punktzahl ist eine grobe Schätzung aus der Wortzahl, keine echte Bewertung.",
   "assess.fail_unscored": "Der Bewertungsdienst ist gerade aus; dein Text konnte nicht bewertet werden.",
+  /* Değerlendirme neden alınamadı - SEBEBİNE göre. Mobil hepsini tek
+     cümleye ("servis kapalı") indiriyordu: metni çok uzun olan da,
+     oturumu düşen de aynı yanlış açıklamayı görüyordu. */
+  "assess.fail_not_configured": "Die KI-Bewertung ist gerade aus.",
+  "assess.fail_too_long": "Der Text ist zu lang; kürze ihn und versuch es noch mal.",
+  "assess.fail_timeout": "Die Bewertung hat zu lange gedauert.",
+  "assess.fail_invalid": "Die Bewertung war nicht lesbar.",
+  "assess.fail_upstream": "Der Bewertungsdienst antwortet gerade nicht.",
+  "assess.fail_unauthorized": "Keine Sitzung gefunden; melde dich neu an.",
+  "assess.fail_bad_request": "Die Aufgabe fehlt; lade die Seite neu und versuch es noch mal.",
   "assess.fail_premium": "KI-Feedback gehört zu Premium; dein kostenloses Kontingent für diesen Zeitraum ist aufgebraucht. Im Profil kannst du dir Premium ansehen.",
   "assess.fail_quota": "Dein heutiges Kontingent für KI-Feedback ist aufgebraucht; morgen gibt es wieder neues.",
   "league.tier_bronze": "Bronze-Liga",

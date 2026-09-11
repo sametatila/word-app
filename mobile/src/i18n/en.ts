@@ -1520,6 +1520,16 @@ export const en: Record<string, string> = {
   "paywall.store_not_open_sub": "You can get Premium today with an invite reward or a promo code — both are below.",
   "assess.fail_offline": "The assessment service is down; this score is a rough guess from your word count, not a real assessment.",
   "assess.fail_unscored": "The assessment service is off right now; your text couldn't be scored.",
+  /* Değerlendirme neden alınamadı - SEBEBİNE göre. Mobil hepsini tek
+     cümleye ("servis kapalı") indiriyordu: metni çok uzun olan da,
+     oturumu düşen de aynı yanlış açıklamayı görüyordu. */
+  "assess.fail_not_configured": "AI assessment is off right now.",
+  "assess.fail_too_long": "The text is too long; shorten it and try again.",
+  "assess.fail_timeout": "The assessment timed out.",
+  "assess.fail_invalid": "The assessment couldn't be read.",
+  "assess.fail_upstream": "The assessment service isn't answering right now.",
+  "assess.fail_unauthorized": "No session found; sign in again.",
+  "assess.fail_bad_request": "The task is missing; refresh the page and try again.",
   "assess.fail_premium": "AI feedback is part of Premium; your free allowance for this period is used up. You can look at Premium in your profile.",
   "assess.fail_quota": "You've used today's AI feedback allowance; it resets tomorrow.",
   "league.tier_bronze": "Bronze League",

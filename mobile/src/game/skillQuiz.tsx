@@ -15,6 +15,7 @@ import { levenshtein } from "../lib/errors";
 import { haptic } from "../lib/haptics";
 import { api } from "../api/client";
 import { isPremiumRefusal, isQuotaRefusal } from "../lib/premium";
+import { assessFailKey } from "../lib/assessFail";
 import { spacing, radii, type Palette } from "../theme";
 import type { Gloss, SkillQuestion } from "../data/skills";
 
@@ -516,7 +517,7 @@ function FreeCard({ t, n, done, level, exerciseId, onSettle, colors }: { t: Free
         /* Sağlayıcı/ağ yok: metin kaybolmasın diye sunucu kuyruğuna bırakılıyor
            (uç kendi sınırlarını yine uyguluyor). Kuyruk da tutmazsa kullanıcı
            en azından sebebini görüyor. */
-        setNote(tx("assess.fail_unscored"));
+        setNote(`${tx(assessFailKey(e))} ${tx("assess.fail_unscored")}`);
         try {
           await api("/api/assess/queue", { method: "POST", body: JSON.stringify(body()) });
           setQueued(true);

@@ -19,7 +19,7 @@ import { speakTarget } from "../lib/tts";
 import { ensureMicPermission, listenOnce, sttAvailable, stopListening } from "../lib/stt";
 import { currentTargetLocale } from "../lib/courses";
 import { api } from "../api/client";
-import { isPremiumRefusal, isQuotaRefusal } from "../lib/premium";
+import { assessFailKey } from "../lib/assessFail";
 import { todayStr } from "../game/session";
 import { ERROR_LABEL_KEYS, type ErrorType } from "../lib/errors";
 import { useTheme, spacing, radii, softShadow, cardShadow, type Palette } from "../theme";
@@ -125,7 +125,7 @@ export function RoleplayExamScreen() {
       setResult(d.result ?? null);
     } catch (e) {
       if (!mounted.current) return;
-      setGateNote(tx(isPremiumRefusal(e) ? "assess.fail_premium" : isQuotaRefusal(e) ? "assess.fail_quota" : "assess.fail_offline"));
+      setGateNote(tx(assessFailKey(e)));
     }
     track("nav", said.length, "roleplay_exam:done");
     if (mounted.current) setPhase("result");

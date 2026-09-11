@@ -3581,6 +3581,34 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   );
 }
 
+/* ── 104. degerlendirme neden alinamadi ───────────────────────────────────
+ * Mobil premium ve adil kullanim disindaki HER seyi tek cumleye indiriyordu
+ * ("servis su an kapali"): metni cok uzun olan da, oturumu dusen de, istegi
+ * eksik giden de ayni YANLIS aciklamayi goruyordu. Web durum koduna gore
+ * dokuz ayri sebep ayiriyor ve 403'u ikiye boluyor (premium kapisi /
+ * yetkisizlik) - ayirt edilmezse premium reddi "gecersiz istek" diye gorunur.
+ *
+ * Olculen: sebep tablosu ve durum kodu eslemesi. `quota` iki tarafta AYRI
+ * anahtar (`assessw.fail_quota`): webde hak dolunca kural tabanli yedek
+ * gosteriliyor, mobilde puan hic verilmiyor - metin gercekten farkli. */
+{
+  const sebep = (p) => {
+    const src = read(p).replace(/\/\*[\s\S]*?\*\//g, " ").replace(/\/\/[^\n]*/g, " ");
+    const tablo = [...src.matchAll(/^\s{2}(\w+): "(assess\w*\.fail_\w+)",?$/gm)].map((m) => m[1] + "=" + m[2].replace(/^assessw?\./, ""));
+    /* İki taraf aynı şeyi başka kabukla dönüyor (`return X` / `return { ok:
+       false, reason: X }`) ve web hata alanını `err.error`, mobil `err.message`
+       diye okuyor - kabuk soyuluyor, KARAR karşılaştırılıyor. */
+    const duz = src
+      .replace(/\{ ok: false, reason: /g, "")
+      .replace(/ \}/g, "")
+      .replace(/err\.(error|message)/g, "err.x")
+      .replace(/\s+/g, " ");
+    const kod = [...duz.matchAll(/case (\d{3}): return ([^;]+);/g)].map((m) => m[1] + "->" + m[2].replace(/"/g, "").trim());
+    return [...tablo, ...kod];
+  };
+  sameList("degerlendirme hata sebepleri", sebep("mobile/src/lib/assessFail.ts"), sebep("src/lib/assess-client.ts"));
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"

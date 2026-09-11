@@ -20,6 +20,7 @@ import { spokenMatches } from "../lib/voiceMatch";
 import { currentTargetLocale } from "../lib/courses";
 import { api } from "../api/client";
 import { isPremiumRefusal, isQuotaRefusal } from "../lib/premium";
+import { assessFailKey } from "../lib/assessFail";
 import { todayStr } from "../game/session";
 import type { Round } from "../game/session";
 import type { RootStackParams } from "../navigation/RootStack";
@@ -892,7 +893,10 @@ function Write({ w, level, colors, pad, onDone }: { w: WritingItem; level: strin
       // 70'i hak edilmiş sayıyordu. Web aynı yerde kural tabanlı yedeği
       // ÖLÇÜT LİSTESİYLE gösteriyor, yani yedek olduğu görünüyor; mobilde
       // görünmüyordu.
-      else { setGateNote(t("assess.fail_offline")); setScore(wordCount >= w.task.minWords ? 70 : 40); }
+      /* Sebebi SÖYLENİYOR: metin çok uzunsa "kısalt", oturum düştüyse
+         "yeniden giriş yap" - hepsi "servis kapalı" değil (bkz.
+         `lib/assessFail`). Geçici puanın geçici olduğu satırı da koruyor. */
+      else { setGateNote(`${t(assessFailKey(e))} ${t("assess.fail_offline")}`); setScore(wordCount >= w.task.minWords ? 70 : 40); }
     }
     setBusy(false);
   }

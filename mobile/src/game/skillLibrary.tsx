@@ -12,6 +12,7 @@ import { spokenMatches } from "../lib/voiceMatch";
 import { currentTargetLang, currentTargetLocale } from "../lib/courses";
 import { api } from "../api/client";
 import { isPremiumRefusal, isQuotaRefusal } from "../lib/premium";
+import { assessFailKey } from "../lib/assessFail";
 import { haptic } from "../lib/haptics";
 import { spacing, radii, softShadow, type Palette } from "../theme";
 import type { Gloss } from "../data/skills";
@@ -296,6 +297,9 @@ export function MonologueBody({ mono, level, exerciseId, onDone, colors }: {
         return;
       }
       // Sağlayıcı/ağ yoksa alıştırma durmaz: kalıp kullanımı ve süreyle kaba bir karar.
+      // Sebebi de söyleniyor (bkz. `lib/assessFail`); "puanlanamadı" tek başına
+      // ne olduğunu anlatmıyordu.
+      setGateNote(`${t(assessFailKey(e))} ${t("item.mono_unscored")}`);
       setFailed(true);
       const used = mono.targets.filter((x) => text.toLowerCase().includes(x.de.split(/…|\.\.\./)[0].trim().toLowerCase())).length;
       const ok = used >= Math.ceil(mono.targets.length / 2) && seconds >= mono.minSeconds;
