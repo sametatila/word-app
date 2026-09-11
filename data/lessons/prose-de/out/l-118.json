@@ -1,0 +1,1972 @@
+[
+ {
+  "tr": "her şeyi «zaman böyle getirdi» diye anlatan bir köylü",
+  "kind": "partner",
+  "de": "ein Dorfbewohner, der alles mit «so hat es die Zeit gebracht» erklärt"
+ },
+ {
+  "tr": "her fiyatı arz talep sayan, «piyasa böyle diyor» diyen biri",
+  "kind": "partner",
+  "de": "jemand, der jeden Preis für Angebot und Nachfrage hält und sagt «der Markt sagt es so»"
+ },
+ {
+  "tr": "tanıtım broşürünü tekrarlayan, «sertifikası var» diyen biri",
+  "kind": "partner",
+  "de": "jemand, der den Werbeprospekt wiederholt und sagt «sie haben ein Zertifikat»"
+ },
+ {
+  "tr": "her savı çıkar sayan, «senin tarlan için istiyorsun» diyen biri",
+  "kind": "partner",
+  "de": "jemand, der jede These für Eigennutz hält und sagt «du willst es für deinen Acker»"
+ },
+ {
+  "tr": "çeşitliliği lüks sayan, «karnımızı doyuran verim» diyen bir çiftçi",
+  "kind": "partner",
+  "de": "ein Bauer, der Vielfalt für Luxus hält und sagt «satt macht uns der Ertrag»"
+ },
+ {
+  "tr": "etikete olduğu gibi inanan, «üstünde yazıyor ya» diyen bir arkadaş",
+  "kind": "partner",
+  "de": "ein Freund, der dem Etikett wörtlich glaubt und sagt «es steht doch drauf»"
+ },
+ {
+  "tr": "her ölçütü evrensel sayan, «o zaman bizde de öyle olur» diyen biri",
+  "kind": "partner",
+  "de": "jemand, der jeden Maßstab für allgemeingültig hält und sagt «dann ist es bei uns auch so»"
+ },
+ {
+  "tr": "adın önemsiz olduğunu düşünen, «toprak yine aynı toprak» diyen biri",
+  "kind": "partner",
+  "de": "jemand, der den Namen für unwichtig hält und sagt «der Boden bleibt derselbe Boden»"
+ },
+ {
+  "tr": "sözleşmeyi olduğu gibi kabul eden, «hepsi standart madde» diyen bir çiftçi",
+  "kind": "partner",
+  "de": "eine Bäuerin, die den Vertrag hinnimmt, wie er ist, und sagt «das sind alles Standardklauseln»"
+ },
+ {
+  "tr": "her uyarıyı felaket senaryosu sayan, «her yıl böyle diyorlar» diyen bir çiftçi",
+  "kind": "partner",
+  "de": "ein Bauer, der jede Warnung für ein Katastrophenszenario hält und sagt «das sagen sie jedes Jahr»"
+ },
+ {
+  "tr": "Yani bizde de aynı olur mu?",
+  "kind": "openingTr",
+  "de": "Ist es bei uns also genauso?"
+ },
+ {
+  "tr": "Sertifikaları var, değil mi?",
+  "kind": "openingTr",
+  "de": "Sie haben ein Zertifikat, oder?"
+ },
+ {
+  "tr": "Zaman böyle getirdi, değil mi?",
+  "kind": "openingTr",
+  "de": "So hat es die Zeit gebracht, oder?"
+ },
+ {
+  "tr": "Hepsi standart madde, değil mi?",
+  "kind": "openingTr",
+  "de": "Das sind alles Standardklauseln, oder?"
+ },
+ {
+  "tr": "Piyasa karar veriyor, değil mi?",
+  "kind": "openingTr",
+  "de": "Der Markt entscheidet, oder?"
+ },
+ {
+  "tr": "Her yıl böyle diyorlar, değil mi?",
+  "kind": "openingTr",
+  "de": "Das sagen sie jedes Jahr, oder?"
+ },
+ {
+  "tr": "Karnımızı doyuran verim, değil mi?",
+  "kind": "openingTr",
+  "de": "Satt macht uns der Ertrag, oder?"
+ },
+ {
+  "tr": "Toprak yine aynı toprak, değil mi?",
+  "kind": "openingTr",
+  "de": "Der Boden bleibt derselbe Boden, oder?"
+ },
+ {
+  "tr": "Etiketin üstünde yazıyor, değil mi?",
+  "kind": "openingTr",
+  "de": "Es steht auf dem Etikett, oder?"
+ },
+ {
+  "tr": "Bunu kendi tarlan için istiyorsun, değil mi?",
+  "kind": "openingTr",
+  "de": "Du willst das für deinen eigenen Acker, oder?"
+ },
+ {
+  "tr": "Fiyat sözlüğü",
+  "kind": "titleTr",
+  "de": "Das Wörterbuch der Preise"
+ },
+ {
+  "tr": "Etiketi aktarmak",
+  "kind": "titleTr",
+  "de": "Das Etikett wiedergeben"
+ },
+ {
+  "tr": "Toprağı kim alıyor",
+  "kind": "titleTr",
+  "de": "Wer sich das Land nimmt"
+ },
+ {
+  "tr": "Tohumun söylemediği",
+  "kind": "titleTr",
+  "de": "Was das Saatgut verschweigt"
+ },
+ {
+  "tr": "Türüne uygun, tabii",
+  "kind": "titleTr",
+  "de": "Artgerecht, natürlich"
+ },
+ {
+  "tr": "Aynı tarlanın üç adı",
+  "kind": "titleTr",
+  "de": "Drei Namen für einen Acker"
+ },
+ {
+  "tr": "Verim mi çeşitlilik mi",
+  "kind": "titleTr",
+  "de": "Ertrag oder Vielfalt"
+ },
+ {
+  "tr": "Gıda egemenliği istemek",
+  "kind": "titleTr",
+  "de": "Ernährungssouveränität fordern"
+ },
+ {
+  "tr": "İklim raporunu bağlamak",
+  "kind": "titleTr",
+  "de": "Den Klimabericht zusammenhalten"
+ },
+ {
+  "tr": "Toprak ne kadar dayanır",
+  "kind": "titleTr",
+  "de": "Wie lange hält der Boden"
+ },
+ {
+  "tr": "Tohum hakları üstüne konuşurken düşen öğeyi öğretir; sözleşmede yazmayan şey çiftçinin kaybettiği haktır.",
+  "kind": "summary",
+  "de": "Lehrt das weggelassene Glied im Reden über Saatgutrechte; was nicht im Vertrag steht, ist das Recht, das die Bäuerin verliert."
+ },
+ {
+  "tr": "Etiket iddialarını aktarırken hükmü fiile yüklemeyi öğretir; aktarma fiili iddiayı savunur ya da askıya alır.",
+  "kind": "summary",
+  "de": "Lehrt, beim Wiedergeben von Etikettenaussagen das Urteil ins Verb zu legen; das wiedergebende Verb verteidigt die Aussage oder stellt sie in Frage."
+ },
+ {
+  "tr": "Aynı toprağın plandaki ve köydeki adının ayrı olduğunu öğretir; hangi adla anıldığı onun ne olacağını belirler.",
+  "kind": "summary",
+  "de": "Lehrt, dass derselbe Boden im Plan und im Dorf anders heißt; wie er genannt wird, bestimmt, was aus ihm wird."
+ },
+ {
+  "tr": "Hayvancılık tanıtım dilini alayla eleştirmeyi öğretir; kurumun kendi sözcüğü en sağlam eleştiri malzemesi olur.",
+  "kind": "summary",
+  "de": "Lehrt, die Werbesprache der Tierhaltung mit Spott zu kritisieren; das eigene Wort des Betriebs ist das festeste Material der Kritik."
+ },
+ {
+  "tr": "Toprağın geleceği üstüne konuşurken kipin koyduğu mesafeyi öğretir; kesin felaket cümlesi tartışmayı kapatıyor.",
+  "kind": "summary",
+  "de": "Lehrt den Abstand, den das Modalverb beim Reden über die Zukunft des Bodens setzt; ein bestimmter Katastrophensatz beendet das Gespräch."
+ },
+ {
+  "tr": "Tarım tartışmasında ödün vererek karşı çıkmayı öğretir; verimin haklı yanını teslim etmeyen savunma dinlenmiyor.",
+  "kind": "summary",
+  "de": "Lehrt, in der Agrardebatte mit Zugeständnis zu widersprechen; eine Verteidigung, die das Recht des Ertrags nicht einräumt, wird nicht gehört."
+ },
+ {
+  "tr": "Uzun bir iklim raporunu bağlayan adresleri öğretir; her ölçüt başka bir bölgede başka sonuç verdiği için bağ zorunlu.",
+  "kind": "summary",
+  "de": "Lehrt die Adressen, die einen langen Klimabericht zusammenhalten; weil jeder Maßstab in jeder Region anders wirkt, ist die Bindung zwingend."
+ },
+ {
+  "tr": "Tarım fiyatı konuşmasının yerleşik eşdizimlerini öğretir; piyasayı anlatan söz ile üreticiyi anlatan söz aynı değildir.",
+  "kind": "summary",
+  "de": "Lehrt die festen Wortverbindungen des Redens über Agrarpreise; das Wort für den Markt und das Wort für die Erzeugerin sind nicht dasselbe."
+ },
+ {
+  "tr": "Tarım politikası isteğini kalıplaşmış biçimle kurmayı öğretir; kimin istediğini tartışma dışına çıkaran biçim savı korur.",
+  "kind": "summary",
+  "de": "Lehrt, die agrarpolitische Forderung in fester Form zu bauen; die Form, die die Frage nach der fordernden Person aus der Debatte nimmt, schützt die These."
+ },
+ {
+  "tr": "Toprak el değiştirirken kimi başa aldığını seçmeyi öğretir; eylemi başa almak faili gösterir, yeri başa almak onu gizler.",
+  "kind": "summary",
+  "de": "Lehrt, beim Besitzwechsel von Land zu wählen, wen man voranstellt; die Handlung voranzustellen zeigt die handelnde Person, den Ort voranzustellen verbirgt sie."
+ },
+ {
+  "tr": "Bir köydeki toprak el değiştirmesini anlatıyorsun ve faili kaybetmek istemiyorsun. Eylemi, yeri ve nesneleri başa alan üç cümle kur.",
+  "kind": "scene",
+  "de": "Du erzählst vom Besitzwechsel von Land in einem Dorf und willst die handelnde Person nicht verlieren. Bilde drei Sätze, die die Handlung, den Ort und die Objekte voranstellen."
+ },
+ {
+  "tr": "Bir tarlanın imara açılmasını önce planın, sonra köyün diliyle anlatıyorsun. İki adı da kur ve her adın hangi izni getirdiğini söyle.",
+  "kind": "scene",
+  "de": "Du beschreibst die Bebauung eines Ackers erst in der Sprache des Plans, dann in der des Dorfes. Bilde beide Namen und sag, welche Erlaubnis jeder Name mitbringt."
+ },
+ {
+  "tr": "Bir çiftçiyle tarım yöntemi tartışıyorsun ve onun sayılarını yok saymak istemiyorsun. Ödünü üç ayrı yerde ver ve her seferinde asıl savını sonra söyle.",
+  "kind": "scene",
+  "de": "Du diskutierst mit einem Bauern über die Anbaumethode und willst seine Zahlen nicht übergehen. Setze das Zugeständnis an drei verschiedene Stellen und sag deine eigentliche These jedes Mal danach."
+ },
+ {
+  "tr": "Süt fiyatı üstüne bir tartışmadasın ve çiftçiyi borsa kalemi gibi anlatmak istemiyorsun. Borsayı, haneyi ve aracısız satışı üç ayrı eşdizimle adlandır.",
+  "kind": "scene",
+  "de": "Du bist in einer Debatte über den Milchpreis und willst die Bäuerin nicht wie einen Börsenposten beschreiben. Benenne die Börse, den Haushalt und den Direktverkauf mit drei verschiedenen Wortverbindungen."
+ },
+ {
+  "tr": "Bir tarım politikası toplantısındasın ve savını kendi çiftliğinin çıkarı gibi göstermemek istiyorsun. İsteği, olmasaydıyı ve koşulu kalıplaşmış biçimlerle kur.",
+  "kind": "scene",
+  "de": "Du bist auf einer agrarpolitischen Sitzung und willst deine These nicht wie den Vorteil deines eigenen Hofes aussehen lassen. Bilde die Forderung, das Wäre-nicht und die Bedingung in festen Formen."
+ },
+ {
+  "tr": "Bir tohum sözleşmesini çiftçi arkadaşına anlatıyorsun ve hangi hakkın eksiltildiğini göstermek istiyorsun. Üç cümlede birer öğe düşür ve eksilen hakkı adlandır.",
+  "kind": "scene",
+  "de": "Du erklärst einer befreundeten Bäuerin einen Saatgutvertrag und willst zeigen, welches Recht weggelassen wurde. Lass in drei Sätzen je ein Glied weg und benenne das fehlende Recht."
+ },
+ {
+  "tr": "Bir gıda etiketinin iddialarını arkadaşına aktarıyorsun ve ne kadarını sahiplendiğini göstermek istiyorsun. İki aktarmayı iki ayrı fiille söyle ve farkı adlandır.",
+  "kind": "scene",
+  "de": "Du gibst einer Freundin die Aussagen eines Lebensmitteletiketts wieder und willst zeigen, wie viel davon du dir zu eigen machst. Sag die beiden Wiedergaben mit zwei verschiedenen Verben und benenne den Unterschied."
+ },
+ {
+  "tr": "Bir iklim raporunu sözlü olarak özetliyorsun ve dinleyen ölçütleri kendi bölgesine uygulayacak. Yukarı, aşağı ve geri gönderme adresleriyle üç bölümü birbirine bağla.",
+  "kind": "scene",
+  "de": "Du fasst einen Klimabericht mündlich zusammen, und die Zuhörerin wendet die Maßstäbe auf ihre eigene Region an. Verbinde drei Abschnitte mit Adressen nach oben, nach unten und zurück."
+ },
+ {
+  "tr": "Bir çiftliğin tanıtım diliyle gördüklerin arasındaki farkı anlatıyorsun ve açıkça suçlamak istemiyorsun. Üç cümlede eksilterek eleştir ve çiftliğin kendi sözcüklerini kullan.",
+  "kind": "scene",
+  "de": "Du beschreibst den Unterschied zwischen der Werbesprache eines Hofes und dem, was du gesehen hast, und willst nicht offen beschuldigen. Kritisiere in drei Sätzen mit Auslassung und benutze die Wörter des Hofes selbst."
+ },
+ {
+  "tr": "Bir tarladaki toprak sorununu çiftçiye anlatıyorsun ve abartarak güvenini kaybetmek istemiyorsun. Üç ayrı kip derecesi kur ve her birinde kanıtının nereye kadar uzandığını söyle.",
+  "kind": "scene",
+  "de": "Du erklärst einem Bauern ein Bodenproblem auf seinem Acker und willst sein Vertrauen nicht durch Übertreibung verlieren. Bilde drei Modalstufen und sag bei jeder, wie weit dein Beleg reicht."
+ },
+ {
+  "tr": "Eylemi, yeri ve nesneleri başa alan üç ayrı cümle kurduysan konuşma başarılı sayılır.",
+  "kind": "goal",
+  "de": "Das Gespräch gilt als geschafft, wenn du drei Sätze gebaut hast, die die Handlung, den Ort und die Objekte voranstellen."
+ },
+ {
+  "tr": "Üç cümlede birer öğe düşürdüysen ve eksilen hakkı adlandırdıysan konuşma başarılı sayılır.",
+  "kind": "goal",
+  "de": "Das Gespräch gilt als geschafft, wenn du in drei Sätzen je ein Glied weggelassen und das fehlende Recht benannt hast."
+ },
+ {
+  "tr": "Borsayı, haneyi ve aracısız satışı üç ayrı eşdizimle adlandırdıysan konuşma başarılı sayılır.",
+  "kind": "goal",
+  "de": "Das Gespräch gilt als geschafft, wenn du die Börse, den Haushalt und den Direktverkauf mit drei Wortverbindungen benannt hast."
+ },
+ {
+  "tr": "Aynı tarlayı iki kayıtta adlandırdıysan ve her adın getirdiği izni söylediysen konuşma başarılı sayılır.",
+  "kind": "goal",
+  "de": "Das Gespräch gilt als geschafft, wenn du denselben Acker in zwei Registern benannt und die Erlaubnis jedes Namens gesagt hast."
+ },
+ {
+  "tr": "Üç cümlede eksilterek eleştirdiysen ve çiftliğin kendi sözcüklerini kullandıysan konuşma başarılı sayılır.",
+  "kind": "goal",
+  "de": "Das Gespräch gilt als geschafft, wenn du in drei Sätzen mit Auslassung kritisiert und die Wörter des Hofes selbst benutzt hast."
+ },
+ {
+  "tr": "Üç ayrı kip derecesiyle anlattıysan ve her birinde kanıtının sınırını söylediysen konuşma başarılı sayılır.",
+  "kind": "goal",
+  "de": "Das Gespräch gilt als geschafft, wenn du in drei Modalstufen erzählt und bei jeder die Grenze deines Belegs gesagt hast."
+ },
+ {
+  "tr": "Doğru. Ödün başa çekilmiş ve bedel ondan sonra açıkça söylenmiş.",
+  "kind": "why.tr",
+  "de": "Richtig. Das Zugeständnis ist vorangezogen und der Preis danach offen genannt."
+ },
+ {
+  "tr": "Doğru. Biri bir aktarımı adlandırıyor, öteki uzmanlık iddiası taşıyor.",
+  "kind": "why.tr",
+  "de": "Richtig. Das eine benennt eine Weitergabe, das andere erhebt einen Fachanspruch."
+ },
+ {
+  "tr": "Doğru. Fiil çekilmemiş; koşul kişiye değil hedefin kendisine bağlanmış.",
+  "kind": "why.tr",
+  "de": "Richtig. Das Verb ist nicht gebeugt; die Bedingung hängt nicht an einer Person, sondern am Ziel selbst."
+ },
+ {
+  "tr": "Doğru. «might» iddiayı uzakta tutuyor; cümle bir senaryo olarak kalıyor.",
+  "kind": "why.tr",
+  "de": "Richtig. «might» hält die Behauptung auf Abstand; der Satz bleibt ein Szenario."
+ },
+ {
+  "tr": "Doğru. İki bölüm tek cümlede bağlanmış; koşul ile sınır aynı yerde duruyor.",
+  "kind": "why.tr",
+  "de": "Richtig. Zwei Abschnitte sind in einem Satz gebunden; Bedingung und Grenze stehen an derselben Stelle."
+ },
+ {
+  "tr": "Doğru. Yer öbeği başa alınmış; asıl neden sona düşünce daha ağır duyuluyor.",
+  "kind": "why.tr",
+  "de": "Richtig. Die Ortsangabe steht vorn; fällt der eigentliche Grund ans Ende, klingt er schwerer."
+ },
+ {
+  "tr": "Doğru. Cümle önce yalanlıyor, sonra aynı şeyi kurumun kendi sözcüğüyle doğruluyor.",
+  "kind": "why.tr",
+  "de": "Richtig. Der Satz verneint zuerst und bestätigt dann dasselbe mit dem eigenen Wort des Betriebs."
+ },
+ {
+  "tr": "Doğru. Biri tarafların anlaşmazlığını adlandırıyor, öteki geri dönmeyen bir durumu.",
+  "kind": "why.tr",
+  "de": "Richtig. Das eine benennt den Streit der Parteien, das andere einen Zustand ohne Rückweg."
+ },
+ {
+  "tr": "ölçme ile imzayı ayırır",
+  "kind": "pattern.tr",
+  "de": "trennt Messen und Unterschreiben"
+ },
+ {
+  "tr": "tartışmayı olgudan ayırır",
+  "kind": "pattern.tr",
+  "de": "trennt Streit und Tatsache"
+ },
+ {
+  "tr": "aynı toprağı iki kayıtta söyler",
+  "kind": "pattern.tr",
+  "de": "sagt denselben Boden in zwei Registern"
+ },
+ {
+  "tr": "ikinci yarıda nesneyi başa alır",
+  "kind": "pattern.tr",
+  "de": "holt in der zweiten Hälfte das Objekt nach vorn"
+ },
+ {
+  "tr": "olmasaydıyı tarım savında kurar",
+  "kind": "pattern.tr",
+  "de": "baut das Wäre-nicht in der Agrarthese"
+ },
+ {
+  "tr": "iki eşdizimi karşıt yönde bağlar",
+  "kind": "pattern.tr",
+  "de": "bindet zwei Wortverbindungen gegenläufig"
+ },
+ {
+  "tr": "ödünü başa çekip bedeli gösterir",
+  "kind": "pattern.tr",
+  "de": "zieht das Zugeständnis vor und zeigt den Preis"
+ },
+ {
+  "tr": "gür",
+  "kind": "vocab.tr",
+  "de": "üppig"
+ },
+ {
+  "tr": "çeper",
+  "kind": "vocab.tr",
+  "de": "Peripherie"
+ },
+ {
+  "tr": "harap",
+  "kind": "vocab.tr",
+  "de": "baufällig"
+ },
+ {
+  "tr": "kıraç",
+  "kind": "vocab.tr",
+  "de": "karg"
+ },
+ {
+  "tr": "yağış",
+  "kind": "vocab.tr",
+  "de": "Niederschlag"
+ },
+ {
+  "tr": "bellemek",
+  "kind": "vocab.tr",
+  "de": "umgraben"
+ },
+ {
+  "tr": "ihmalkâr",
+  "kind": "vocab.tr",
+  "de": "nachlässig"
+ },
+ {
+  "tr": "tüketmek",
+  "kind": "vocab.tr",
+  "de": "auszehren"
+ },
+ {
+  "tr": "agronomik",
+  "kind": "vocab.tr",
+  "de": "agronomisch"
+ },
+ {
+  "tr": "her alanda",
+  "kind": "vocab.tr",
+  "de": "flächendeckend"
+ },
+ {
+  "tr": "süt kotası",
+  "kind": "vocab.tr",
+  "de": "Milchquote"
+ },
+ {
+  "tr": "agroekoloji",
+  "kind": "vocab.tr",
+  "de": "Agrarökologie"
+ },
+ {
+  "tr": "atıl durmak",
+  "kind": "vocab.tr",
+  "de": "brachliegen"
+ },
+ {
+  "tr": "ayrıştırmak",
+  "kind": "vocab.tr",
+  "de": "entkoppeln"
+ },
+ {
+  "tr": "çevre etiği",
+  "kind": "vocab.tr",
+  "de": "Umweltethik"
+ },
+ {
+  "tr": "ekili arazi",
+  "kind": "vocab.tr",
+  "de": "Ackerfläche"
+ },
+ {
+  "tr": "iklime uyum",
+  "kind": "vocab.tr",
+  "de": "Klimaanpassung"
+ },
+ {
+  "tr": "doğala yakın",
+  "kind": "vocab.tr",
+  "de": "naturnah"
+ },
+ {
+  "tr": "sızıp gitmek",
+  "kind": "vocab.tr",
+  "de": "versickern"
+ },
+ {
+  "tr": "toprak gaspı",
+  "kind": "vocab.tr",
+  "de": "Landnahme"
+ },
+ {
+  "tr": "tozlaştırmak",
+  "kind": "vocab.tr",
+  "de": "bestäuben"
+ },
+ {
+  "tr": "türüne uygun",
+  "kind": "vocab.tr",
+  "de": "artgerecht"
+ },
+ {
+  "tr": "arz güvenliği",
+  "kind": "vocab.tr",
+  "de": "Versorgungssicherheit"
+ },
+ {
+  "tr": "aşırı büyümek",
+  "kind": "vocab.tr",
+  "de": "wuchern"
+ },
+ {
+  "tr": "değer zinciri",
+  "kind": "vocab.tr",
+  "de": "Wertschöpfungskette"
+ },
+ {
+  "tr": "iklim adaleti",
+  "kind": "vocab.tr",
+  "de": "Klimagerechtigkeit"
+ },
+ {
+  "tr": "piyasa düzeni",
+  "kind": "vocab.tr",
+  "de": "Marktordnung"
+ },
+ {
+  "tr": "tarım reformu",
+  "kind": "vocab.tr",
+  "de": "Agrarreform"
+ },
+ {
+  "tr": "toprak talebi",
+  "kind": "vocab.tr",
+  "de": "Gebietsanspruch"
+ },
+ {
+  "tr": "arazi tüketimi",
+  "kind": "vocab.tr",
+  "de": "Flächenverbrauch"
+ },
+ {
+  "tr": "bilgi aktarımı",
+  "kind": "vocab.tr",
+  "de": "Wissenstransfer"
+ },
+ {
+  "tr": "çeşitlendirmek",
+  "kind": "vocab.tr",
+  "de": "diversifizieren"
+ },
+ {
+  "tr": "izlenebilirlik",
+  "kind": "vocab.tr",
+  "de": "Rückverfolgbarkeit"
+ },
+ {
+  "tr": "üretici fiyatı",
+  "kind": "vocab.tr",
+  "de": "Erzeugerpreis"
+ },
+ {
+  "tr": "çiftliğin devri",
+  "kind": "vocab.tr",
+  "de": "Hofnachfolge"
+ },
+ {
+  "tr": "fiyat oynaklığı",
+  "kind": "vocab.tr",
+  "de": "Preisvolatilität"
+ },
+ {
+  "tr": "geçici kullanım",
+  "kind": "vocab.tr",
+  "de": "Zwischennutzung"
+ },
+ {
+  "tr": "gıda egemenliği",
+  "kind": "vocab.tr",
+  "de": "Ernährungssouveränität"
+ },
+ {
+  "tr": "kaymağını almak",
+  "kind": "vocab.tr",
+  "de": "abschöpfen"
+ },
+ {
+  "tr": "kentsel yayılma",
+  "kind": "vocab.tr",
+  "de": "Zersiedelung"
+ },
+ {
+  "tr": "tek ürün tarımı",
+  "kind": "vocab.tr",
+  "de": "Monokultur"
+ },
+ {
+  "tr": "toprağı koruyan",
+  "kind": "vocab.tr",
+  "de": "bodenschonend"
+ },
+ {
+  "tr": "toprak erozyonu",
+  "kind": "vocab.tr",
+  "de": "Bodenerosion"
+ },
+ {
+  "tr": "aşırı gübrelemek",
+  "kind": "vocab.tr",
+  "de": "überdüngen"
+ },
+ {
+  "tr": "çok yıllık bitki",
+  "kind": "vocab.tr",
+  "de": "Staude"
+ },
+ {
+  "tr": "ithalata bağımlı",
+  "kind": "vocab.tr",
+  "de": "importabhängig"
+ },
+ {
+  "tr": "kırdan kente göç",
+  "kind": "vocab.tr",
+  "de": "Landflucht"
+ },
+ {
+  "tr": "nitrat kirliliği",
+  "kind": "vocab.tr",
+  "de": "Nitratbelastung"
+ },
+ {
+  "tr": "saha araştırması",
+  "kind": "vocab.tr",
+  "de": "Feldforschung"
+ },
+ {
+  "tr": "tarımsal dönüşüm",
+  "kind": "vocab.tr",
+  "de": "Agrarwende"
+ },
+ {
+  "tr": "tüketiciye yakın",
+  "kind": "vocab.tr",
+  "de": "verbrauchernah"
+ },
+ {
+  "tr": "düzenleyici hukuk",
+  "kind": "vocab.tr",
+  "de": "Ordnungsrecht"
+ },
+ {
+  "tr": "kıt hale getirmek",
+  "kind": "vocab.tr",
+  "de": "verknappen"
+ },
+ {
+  "tr": "kullan-at toplumu",
+  "kind": "vocab.tr",
+  "de": "Wegwerfgesellschaft"
+ },
+ {
+  "tr": "ormansızlaştırmak",
+  "kind": "vocab.tr",
+  "de": "abholzen"
+ },
+ {
+  "tr": "yöreye uyarlanmış",
+  "kind": "vocab.tr",
+  "de": "standortangepasst"
+ },
+ {
+  "tr": "anlaşmazlık konusu",
+  "kind": "vocab.tr",
+  "de": "Streitpunkt"
+ },
+ {
+  "tr": "arazi spekülasyonu",
+  "kind": "vocab.tr",
+  "de": "Bodenspekulation"
+ },
+ {
+  "tr": "bitki koruma ilacı",
+  "kind": "vocab.tr",
+  "de": "Pflanzenschutzmittel"
+ },
+ {
+  "tr": "çevreyle uyumluluk",
+  "kind": "vocab.tr",
+  "de": "Umweltverträglichkeit"
+ },
+ {
+  "tr": "doğrudan pazarlama",
+  "kind": "vocab.tr",
+  "de": "Direktvermarktung"
+ },
+ {
+  "tr": "menşe etiketlemesi",
+  "kind": "vocab.tr",
+  "de": "Herkunftskennzeichnung"
+ },
+ {
+  "tr": "pestisit kullanımı",
+  "kind": "vocab.tr",
+  "de": "Pestizideinsatz"
+ },
+ {
+  "tr": "tarım sübvansiyonu",
+  "kind": "vocab.tr",
+  "de": "Agrarsubvention"
+ },
+ {
+  "tr": "toprak verimliliği",
+  "kind": "vocab.tr",
+  "de": "Bodenfruchtbarkeit"
+ },
+ {
+  "tr": "dünya piyasa fiyatı",
+  "kind": "vocab.tr",
+  "de": "Weltmarktpreis"
+ },
+ {
+  "tr": "genetik mühendisliği",
+  "kind": "vocab.tr",
+  "de": "Gentechnik"
+ },
+ {
+  "tr": "arazi toplulaştırması",
+  "kind": "vocab.tr",
+  "de": "Flurbereinigung"
+ },
+ {
+  "tr": "bitki çeşidi koruması",
+  "kind": "vocab.tr",
+  "de": "Sortenschutz"
+ },
+ {
+  "tr": "toprağın betonlaşması",
+  "kind": "vocab.tr",
+  "de": "Bodenversiegelung"
+ },
+ {
+  "tr": "tür bakımından zengin",
+  "kind": "vocab.tr",
+  "de": "artenreich"
+ },
+ {
+  "tr": "yeniden ağaçlandırmak",
+  "kind": "vocab.tr",
+  "de": "aufforsten"
+ },
+ {
+  "tr": "endüstriyel hayvancılık",
+  "kind": "vocab.tr",
+  "de": "Massentierhaltung"
+ },
+ {
+  "tr": "arazi kullanım çatışması",
+  "kind": "vocab.tr",
+  "de": "Nutzungskonflikt"
+ },
+ {
+  "tr": "sürdürülebilirlik hedefi",
+  "kind": "vocab.tr",
+  "de": "Nachhaltigkeitsziel"
+ },
+ {
+  "tr": "sürdürülebilirlik raporu",
+  "kind": "vocab.tr",
+  "de": "Nachhaltigkeitsbericht"
+ },
+ {
+  "tr": "ticaretin serbestleşmesi",
+  "kind": "vocab.tr",
+  "de": "Handelsliberalisierung"
+ },
+ {
+  "tr": "serbest ticaret anlaşması",
+  "kind": "vocab.tr",
+  "de": "Freihandelsabkommen"
+ },
+ {
+  "tr": "tohumu yeniden ekme hakkı",
+  "kind": "vocab.tr",
+  "de": "Nachbaurecht"
+ },
+ {
+  "tr": "sürdürülebilirlik standardı",
+  "kind": "vocab.tr",
+  "de": "Nachhaltigkeitsstandard"
+ },
+ {
+  "tr": "Olmasaydıyı tarım savında kurmak için",
+  "kind": "hint.tr",
+  "de": "Um das Wäre-nicht in der Agrarthese zu bauen"
+ },
+ {
+  "tr": "Ödünü başa çekip bedeli göstermek için",
+  "kind": "hint.tr",
+  "de": "Um das Zugeständnis vorzuziehen und den Preis zu zeigen"
+ },
+ {
+  "tr": "İki eşdizimi karşıt yönde bağlamak için",
+  "kind": "hint.tr",
+  "de": "Um zwei Wortverbindungen gegenläufig zu binden"
+ },
+ {
+  "tr": "Tartışmayı olgudan ayırmak için iki yarı kurulur:",
+  "kind": "hint.tr",
+  "de": "Um Streit und Tatsache zu trennen, werden zwei Hälften gebaut:"
+ },
+ {
+  "tr": "İkinci yarıda nesneyi başa almak için virgül kullanılır:",
+  "kind": "hint.tr",
+  "de": "Um in der zweiten Hälfte das Objekt voranzustellen, wird ein Komma verwendet:"
+ },
+ {
+  "tr": "Aynı toprağı iki kayıtta söylemek için iki yer adı yeter:",
+  "kind": "hint.tr",
+  "de": "Um denselben Boden in zwei Registern zu sagen, genügen zwei Ortsangaben:"
+ },
+ {
+  "tr": "Ölçme ile imzayı ayırmak için iki edilgen fiil kullanılır:",
+  "kind": "hint.tr",
+  "de": "Um Messen und Unterschreiben zu trennen, werden zwei Passivformen verwendet:"
+ },
+ {
+  "tr": "köy",
+  "kind": "say.tr",
+  "de": "Dorf"
+ },
+ {
+  "tr": "hane",
+  "kind": "say.tr",
+  "de": "Haushalt"
+ },
+ {
+  "tr": "olgu",
+  "kind": "say.tr",
+  "de": "Tatsache"
+ },
+ {
+  "tr": "senaryo",
+  "kind": "say.tr",
+  "de": "Szenario"
+ },
+ {
+  "tr": "aracısız",
+  "kind": "say.tr",
+  "de": "direkt"
+ },
+ {
+  "tr": "uzmanlık",
+  "kind": "say.tr",
+  "de": "Fachanspruch"
+ },
+ {
+  "tr": "nesne başa",
+  "kind": "say.tr",
+  "de": "Objekt nach vorn"
+ },
+ {
+  "tr": "askıya alma",
+  "kind": "say.tr",
+  "de": "Infragestellen"
+ },
+ {
+  "tr": "bedeli gösterme",
+  "kind": "say.tr",
+  "de": "den Preis zeigen"
+ },
+ {
+  "tr": "Bunu biri yaptı.",
+  "kind": "say.tr",
+  "de": "Das hat jemand getan."
+ },
+ {
+  "tr": "Kapıyı ad açıyor.",
+  "kind": "say.tr",
+  "de": "Das Tor öffnet der Name."
+ },
+ {
+  "tr": "Ormanı kaldırmaya",
+  "kind": "say.tr",
+  "de": "Den Wald zu entfernen heißt"
+ },
+ {
+  "tr": "Özetleyelim: fail",
+  "kind": "say.tr",
+  "de": "Fassen wir zusammen: handelnde Person"
+ },
+ {
+  "tr": "Özetleyelim: plan",
+  "kind": "say.tr",
+  "de": "Fassen wir zusammen: Plan"
+ },
+ {
+  "tr": "Özetleyelim: borsa",
+  "kind": "say.tr",
+  "de": "Fassen wir zusammen: Börse"
+ },
+ {
+  "tr": "aracısız satışa ise",
+  "kind": "say.tr",
+  "de": "und der Verkauf ohne Zwischenhandel heißt"
+ },
+ {
+  "tr": "iddiayı sahiplenir,",
+  "kind": "say.tr",
+  "de": "macht sich die Aussage zu eigen,"
+ },
+ {
+  "tr": "Kip kanıtı ölçüyor.",
+  "kind": "say.tr",
+  "de": "Das Modalverb misst den Beleg."
+ },
+ {
+  "tr": "Denetimsiz çoğalmaya",
+  "kind": "say.tr",
+  "de": "Sich ungehemmt zu vermehren heißt"
+ },
+ {
+  "tr": "Ekim yapılan toprağa",
+  "kind": "say.tr",
+  "de": "Der Boden, auf dem gesät wird, heißt"
+ },
+ {
+  "tr": "Bedel cümleye aittir.",
+  "kind": "say.tr",
+  "de": "Der Preis gehört in den Satz."
+ },
+ {
+  "tr": "Koşulu adres taşıyor.",
+  "kind": "say.tr",
+  "de": "Die Bedingung trägt die Adresse."
+ },
+ {
+  "tr": "Özetleyelim: ölçülmüş",
+  "kind": "say.tr",
+  "de": "Fassen wir zusammen: gemessen"
+ },
+ {
+  "tr": "gerekeni yapmayana ise",
+  "kind": "say.tr",
+  "de": "und wer das Nötige nicht tut, heißt"
+ },
+ {
+  "tr": "İddiayı fiil imzalıyor.",
+  "kind": "say.tr",
+  "de": "Die Aussage unterschreibt das Verb."
+ },
+ {
+  "tr": "köyden şehre gidişe ise",
+  "kind": "say.tr",
+  "de": "und der Zug vom Dorf in die Stadt heißt"
+ },
+ {
+  "tr": "Özetleyelim: sahiplenme",
+  "kind": "say.tr",
+  "de": "Fassen wir zusammen: Zueigenmachen"
+ },
+ {
+  "tr": "Yıllarca yaşayan bitkiye",
+  "kind": "say.tr",
+  "de": "Eine Pflanze, die viele Jahre lebt, heißt"
+ },
+ {
+  "tr": "Bedeli önce çeper ödüyor.",
+  "kind": "say.tr",
+  "de": "Den Preis zahlt zuerst die Peripherie."
+ },
+ {
+  "tr": "Özetleyelim: yüklem düşer",
+  "kind": "say.tr",
+  "de": "Fassen wir zusammen: das Prädikat fällt weg"
+ },
+ {
+  "tr": "Biçim hasadı aşıp kalıyor.",
+  "kind": "say.tr",
+  "de": "Die Form überdauert die Ernte."
+ },
+ {
+  "tr": "Çok sayıda tür barındırana",
+  "kind": "say.tr",
+  "de": "Was viele Arten beherbergt, heißt"
+ },
+ {
+  "tr": "Ekilmeden bekleyen toprağa",
+  "kind": "say.tr",
+  "de": "Boden, der unbestellt wartet, heißt"
+ },
+ {
+  "tr": "Kaybedeni eşdizim seçiyor.",
+  "kind": "say.tr",
+  "de": "Den Verlierer wählt die Wortverbindung."
+ },
+ {
+  "tr": "Tarlada yapılan incelemeye",
+  "kind": "say.tr",
+  "de": "Die Untersuchung auf dem Feld heißt"
+ },
+ {
+  "tr": "Toprağa işleyip kaybolmaya",
+  "kind": "say.tr",
+  "de": "In den Boden zu ziehen und zu verschwinden heißt"
+ },
+ {
+  "tr": "Toprağın ürün verme gücüne",
+  "kind": "say.tr",
+  "de": "Die Kraft des Bodens, Ertrag zu geben, heißt"
+ },
+ {
+  "tr": "Suya karışan gübre artığına",
+  "kind": "say.tr",
+  "de": "Der Düngerrest, der ins Wasser gelangt, heißt"
+ },
+ {
+  "tr": "toprağı derin çevirmeye ise",
+  "kind": "say.tr",
+  "de": "und den Boden tief zu wenden heißt"
+ },
+ {
+  "tr": "Yağış düştü, hasat düşmedi.",
+  "kind": "say.tr",
+  "de": "Der Niederschlag fiel, die Ernte nicht."
+ },
+ {
+  "tr": "Çiftçinin eline geçen fiyata",
+  "kind": "say.tr",
+  "de": "Der Preis, den die Bäuerin bekommt, heißt"
+ },
+ {
+  "tr": "gıdasını dışarıdan alana ise",
+  "kind": "say.tr",
+  "de": "und wer seine Nahrung von außen bezieht, heißt"
+ },
+ {
+  "tr": "toprağı yormayan yönteme ise",
+  "kind": "say.tr",
+  "de": "und die Methode, die den Boden nicht auslaugt, heißt"
+ },
+ {
+  "tr": "Çiçekten çiçeğe tozu taşımaya",
+  "kind": "say.tr",
+  "de": "Den Blütenstaub von Blüte zu Blüte zu tragen heißt"
+ },
+ {
+  "tr": "Merkezin dışında kalan kuşağa",
+  "kind": "say.tr",
+  "de": "Der Gürtel außerhalb des Zentrums heißt"
+ },
+ {
+  "tr": "verimsiz ve çorak toprağa ise",
+  "kind": "say.tr",
+  "de": "und der unfruchtbare, dürre Boden heißt"
+ },
+ {
+  "tr": "yağmur ve karın toplamına ise",
+  "kind": "say.tr",
+  "de": "und die Summe aus Regen und Schnee heißt"
+ },
+ {
+  "tr": "Gümrükleri kaldıran antlaşmaya",
+  "kind": "say.tr",
+  "de": "Der Vertrag, der die Zölle aufhebt, heißt"
+ },
+ {
+  "tr": "iki şeyin bağını koparmaya ise",
+  "kind": "say.tr",
+  "de": "und die Bindung zweier Dinge zu lösen heißt"
+ },
+ {
+  "tr": "Üzerinde uzlaşılamayan noktaya",
+  "kind": "say.tr",
+  "de": "Der Punkt, über den keine Einigung gelingt, heißt"
+ },
+ {
+  "tr": "Ayrımsız her yerde geçerli olana",
+  "kind": "say.tr",
+  "de": "Was ohne Unterschied überall gilt, heißt"
+ },
+ {
+  "tr": "bir işin çevreye uygunluğuna ise",
+  "kind": "say.tr",
+  "de": "und die Verträglichkeit eines Vorhabens mit der Umwelt heißt"
+ },
+ {
+  "tr": "fiyatın hızla inip çıkmasına ise",
+  "kind": "say.tr",
+  "de": "und das schnelle Auf und Ab des Preises heißt"
+ },
+ {
+  "tr": "gereğinden çok gübre vermeye ise",
+  "kind": "say.tr",
+  "de": "und mehr Dünger zu geben als nötig heißt"
+ },
+ {
+  "tr": "İklim yükünün adil bölüşülmesine",
+  "kind": "say.tr",
+  "de": "Die gerechte Verteilung der Klimalast heißt"
+ },
+ {
+  "tr": "ölçütün nerede geçerli olduğunu,",
+  "kind": "say.tr",
+  "de": "wo der Maßstab gilt,"
+ },
+ {
+  "tr": "Toprağın beton altında kalmasına",
+  "kind": "say.tr",
+  "de": "Dass der Boden unter Beton verschwindet, heißt"
+ },
+ {
+  "tr": "bakımsızlıktan dökülen yapıya ise",
+  "kind": "say.tr",
+  "de": "und das Gebäude, das aus Vernachlässigung zerfällt, heißt"
+ },
+ {
+  "tr": "Bol olanı azaltıp değerli kılmaya",
+  "kind": "say.tr",
+  "de": "Das Reichliche zu verringern und wertvoll zu machen heißt"
+ },
+ {
+  "tr": "doğal hâline yakın bırakılana ise",
+  "kind": "say.tr",
+  "de": "und was nahe an seinem natürlichen Zustand bleibt, heißt"
+ },
+ {
+  "tr": "ölçülmüş bir eğilime dayandığını,",
+  "kind": "say.tr",
+  "de": "dass es auf einem gemessenen Trend beruht,"
+ },
+ {
+  "tr": "Gıdanın kesintisiz bulunabilmesine",
+  "kind": "say.tr",
+  "de": "Dass Nahrung ohne Unterbrechung verfügbar ist, heißt"
+ },
+ {
+  "tr": "Şimdi bir tarım savını kuracaksın.",
+  "kind": "say.tr",
+  "de": "Jetzt baust du eine Agrarthese."
+ },
+ {
+  "tr": "Tarımın başka bir modele geçmesine",
+  "kind": "say.tr",
+  "de": "Dass die Landwirtschaft auf ein anderes Modell übergeht, heißt"
+ },
+ {
+  "tr": "Bir toprağın kendisinin sayılmasına",
+  "kind": "say.tr",
+  "de": "Ein Gebiet für das eigene zu erklären heißt"
+ },
+ {
+  "tr": "Çiftliğin satabileceği süt sınırına",
+  "kind": "say.tr",
+  "de": "Die Grenze der Milch, die ein Hof verkaufen darf, heißt"
+ },
+ {
+  "tr": "Doğaya karşı sorumluluğu soran dala",
+  "kind": "say.tr",
+  "de": "Der Zweig, der nach der Verantwortung gegenüber der Natur fragt, heißt"
+ },
+ {
+  "tr": "kimsenin denetlemediği bir sayıdır,",
+  "kind": "say.tr",
+  "de": "ist eine Zahl, die niemand steuert,"
+ },
+ {
+  "tr": "Kullanıp atmayı olağan sayan düzene",
+  "kind": "say.tr",
+  "de": "Eine Ordnung, die das Wegwerfen für normal hält, heißt"
+ },
+ {
+  "tr": "Piyasanın kurallarla düzenlenmesine",
+  "kind": "say.tr",
+  "de": "Die Ordnung des Marktes durch Regeln heißt"
+ },
+ {
+  "tr": "Şimdi eksiltilen hakkı okuyacaksın.",
+  "kind": "say.tr",
+  "de": "Jetzt liest du das weggelassene Recht."
+ },
+ {
+  "tr": "Ayrıştırmak çeşitlendirmek değildir.",
+  "kind": "say.tr",
+  "de": "Entkoppeln heißt nicht diversifizieren."
+ },
+ {
+  "tr": "bilenden bilmeyene aktarma işine ise",
+  "kind": "say.tr",
+  "de": "und die Weitergabe von Wissenden an Unwissende heißt"
+ },
+ {
+  "tr": "şehrin kırlara doğru dağılmasına ise",
+  "kind": "say.tr",
+  "de": "und das Ausufern der Stadt ins Land heißt"
+ },
+ {
+  "tr": "Şimdi fiyat sözlüğünü kullanacaksın.",
+  "kind": "say.tr",
+  "de": "Jetzt benutzt du das Wörterbuch der Preise."
+ },
+ {
+  "tr": "zararlıya karşı ilaç kullanımına ise",
+  "kind": "say.tr",
+  "de": "und der Einsatz von Mitteln gegen Schädlinge heißt"
+ },
+ {
+  "tr": "Bir kaynağı bitirene kadar kullanmaya",
+  "kind": "say.tr",
+  "de": "Ein Mittel bis zur Erschöpfung zu nutzen heißt"
+ },
+ {
+  "tr": "çiftçiye verilen devlet desteğine ise",
+  "kind": "say.tr",
+  "de": "und die staatliche Hilfe für die Bäuerin heißt"
+ },
+ {
+  "tr": "Çiftliğin bir sonraki kuşağa geçmesine",
+  "kind": "say.tr",
+  "de": "Dass der Hof an die nächste Generation übergeht, heißt"
+ },
+ {
+  "tr": "Ölçülebilir sürdürülebilirlik kuralına",
+  "kind": "say.tr",
+  "de": "Die messbare Regel der Nachhaltigkeit heißt"
+ },
+ {
+  "tr": "piyasayı kurallara bağlayan hukuka ise",
+  "kind": "say.tr",
+  "de": "und das Recht, das den Markt an Regeln bindet, heißt"
+ },
+ {
+  "tr": "Tek bir ürünün büyük alanda ekilmesine",
+  "kind": "say.tr",
+  "de": "Dass eine einzige Frucht auf großer Fläche steht, heißt"
+ },
+ {
+  "tr": "ticaretin kurallarının gevşemesine ise",
+  "kind": "say.tr",
+  "de": "und die Lockerung der Handelsregeln heißt"
+ },
+ {
+  "tr": "Toprağı satıp değerlenmesini beklemeye",
+  "kind": "say.tr",
+  "de": "Boden zu kaufen und auf Wertzuwachs zu warten heißt"
+ },
+ {
+  "tr": "Toprak ve bitki bilimine ilişkin olana",
+  "kind": "say.tr",
+  "de": "Was Boden- und Pflanzenkunde betrifft, heißt"
+ },
+ {
+  "tr": "bir alanı yeniden ormanla kaplamaya ise",
+  "kind": "say.tr",
+  "de": "und eine Fläche wieder mit Wald zu bedecken heißt"
+ },
+ {
+  "tr": "Canlının kalıtımına doğrudan müdahaleye",
+  "kind": "say.tr",
+  "de": "Der unmittelbare Eingriff in das Erbgut heißt"
+ },
+ {
+  "tr": "o yörenin koşullarına göre seçilene ise",
+  "kind": "say.tr",
+  "de": "und was nach den Bedingungen des Ortes gewählt ist, heißt"
+ },
+ {
+  "tr": "Şimdi bir iklim raporunu bağlayacaksın.",
+  "kind": "say.tr",
+  "de": "Jetzt hältst du einen Klimabericht zusammen."
+ },
+ {
+  "tr": "Şimdi tarım tartışmasını sürdüreceksin.",
+  "kind": "say.tr",
+  "de": "Jetzt führst du die Agrardebatte weiter."
+ },
+ {
+  "tr": "Şimdi toprağın geleceğini anlatacaksın.",
+  "kind": "say.tr",
+  "de": "Jetzt erzählst du von der Zukunft des Bodens."
+ },
+ {
+  "tr": "Aracısız, alıcının yanı başında satılana",
+  "kind": "say.tr",
+  "de": "Was ohne Zwischenhandel unmittelbar neben der Käuferin verkauft wird, heißt"
+ },
+ {
+  "tr": "dağınık parçaların birleştirilmesine ise",
+  "kind": "say.tr",
+  "de": "und die Zusammenlegung zerstreuter Parzellen heißt"
+ },
+ {
+  "tr": "Tarımın kurallarının yeniden yazılmasına",
+  "kind": "say.tr",
+  "de": "Das Neuschreiben der Regeln der Landwirtschaft heißt"
+ },
+ {
+  "tr": "bitkiyi hastalıktan koruyan kimyasala ise",
+  "kind": "say.tr",
+  "de": "und das Mittel, das die Pflanze vor Krankheit schützt, heißt"
+ },
+ {
+  "tr": "en kârlı kısmı alıp gerisini bırakmaya ise",
+  "kind": "say.tr",
+  "de": "und den einträglichsten Teil zu nehmen und den Rest zu lassen heißt"
+ },
+ {
+  "tr": "Bir tane daha: Yağmur düştü, hasat düşmedi.",
+  "kind": "say.tr",
+  "de": "Noch eins: Der Regen fiel, die Ernte nicht."
+ },
+ {
+  "tr": "Şimdi tanıtım dilini alayla eleştireceksin.",
+  "kind": "say.tr",
+  "de": "Jetzt kritisierst du die Werbesprache mit Spott."
+ },
+ {
+  "tr": "Yağmur nitratın sızıp gitmesine yol açıyor.",
+  "kind": "say.tr",
+  "de": "Der Regen lässt das Nitrat versickern."
+ },
+ {
+  "tr": "Şimdi aynı toprağı iki kayıtta anlatacaksın.",
+  "kind": "say.tr",
+  "de": "Jetzt beschreibst du denselben Boden in zwei Registern."
+ },
+ {
+  "tr": "hayvanın kendi doğasına uygun tutulmasına ise",
+  "kind": "say.tr",
+  "de": "und die Haltung nach der eigenen Natur des Tieres heißt"
+ },
+ {
+  "tr": "Hayvanların sıkışık ve hızlı yetiştirilmesine",
+  "kind": "say.tr",
+  "de": "Die enge und schnelle Aufzucht von Tieren heißt"
+ },
+ {
+  "tr": "Tek kaynağa bağlı kalmayıp seçenek çoğaltmaya",
+  "kind": "say.tr",
+  "de": "Nicht an einer Quelle zu hängen und die Auswahl zu mehren heißt"
+ },
+ {
+  "tr": "aynı yeri iki tarafın başka işe istemesine ise",
+  "kind": "say.tr",
+  "de": "und dass zwei Seiten denselben Ort für Verschiedenes wollen, heißt"
+ },
+ {
+  "tr": "Bedeli söyleyen taraf, çözümü de söyleyebilir.",
+  "kind": "say.tr",
+  "de": "Wer den Preis nennt, darf auch die Lösung nennen."
+ },
+ {
+  "tr": "Bir yerin bir süreliğine başka işe verilmesine",
+  "kind": "say.tr",
+  "de": "Dass ein Ort für eine Weile anders genutzt wird, heißt"
+ },
+ {
+  "tr": "Doğrudan pazarlama değer zincirini kısaltıyor.",
+  "kind": "say.tr",
+  "de": "Die Direktvermarktung verkürzt die Wertschöpfungskette."
+ },
+ {
+  "tr": "Düzenleyici hukuk önce arz güvenliğini anıyor.",
+  "kind": "say.tr",
+  "de": "Das Ordnungsrecht nennt zuerst die Versorgungssicherheit."
+ },
+ {
+  "tr": "Şimdi sıra sende: Tarla gürdü, ahır pek değil.",
+  "kind": "say.tr",
+  "de": "Jetzt bist du dran: Das Feld war üppig, der Stall weniger."
+ },
+ {
+  "tr": "Bir ürünün yolunun geriye doğru izlenebilmesine",
+  "kind": "say.tr",
+  "de": "Dass sich der Weg eines Produkts zurückverfolgen lässt, heißt"
+ },
+ {
+  "tr": "Kentsel yayılma bir geçici kullanımla başlıyor.",
+  "kind": "say.tr",
+  "de": "Die Zersiedelung beginnt mit einer Zwischennutzung."
+ },
+ {
+  "tr": "şirketin kendi sürdürülebilirlik anlatısına ise",
+  "kind": "say.tr",
+  "de": "und die eigene Nachhaltigkeitserzählung der Firma heißt"
+ },
+ {
+  "tr": "Tarhı belliyoruz ve tüketiciye yakın kalıyoruz.",
+  "kind": "say.tr",
+  "de": "Wir graben das Beet um und bleiben verbrauchernah."
+ },
+ {
+  "tr": "bir eylemi öne alır ve birinin yaptığını söyler,",
+  "kind": "say.tr",
+  "de": "stellt eine Handlung voran und sagt, dass jemand sie getan hat,"
+ },
+ {
+  "tr": "Doğala yakın bir kenar çok yıllık bitki istiyor.",
+  "kind": "say.tr",
+  "de": "Ein naturnaher Rand braucht eine Staude."
+ },
+ {
+  "tr": "ulaşılmak istenen sürdürülebilirlik ölçüsüne ise",
+  "kind": "say.tr",
+  "de": "und das angestrebte Maß der Nachhaltigkeit heißt"
+ },
+ {
+  "tr": "bir çeşidi geliştirenin hakkını koruyan düzene ise",
+  "kind": "say.tr",
+  "de": "und die Ordnung, die das Recht des Züchters schützt, heißt"
+ },
+ {
+  "tr": "Kimse ihmalkâr değildi, yalnız evrak aşırı büyüdü.",
+  "kind": "say.tr",
+  "de": "Niemand war nachlässig, nur begann der Papierkram zu wuchern."
+ },
+ {
+  "tr": "bir kaybı adlandırır ve karşı çıkmayı mümkün kılar,",
+  "kind": "say.tr",
+  "de": "benennt einen Verlust und macht Widerspruch möglich,"
+ },
+ {
+  "tr": "Bol ve yeşil demek. İlk kalıbımız da bu. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Das heißt reichlich und grün. Das ist auch unsere erste Wendung. Sprich nach:"
+ },
+ {
+  "tr": "Şimdi bir etiket iddiasını iki fiille aktaracaksın.",
+  "kind": "say.tr",
+  "de": "Jetzt gibst du eine Etikettenaussage mit zwei Verben wieder."
+ },
+ {
+  "tr": "Kıraç tarlalar atıl duruyor, harap ahırlar durmuyor.",
+  "kind": "say.tr",
+  "de": "Die kargen Felder liegen brach, die baufälligen Ställe nicht."
+ },
+ {
+  "tr": "Bir toprağın adı, ona ne yapılabileceğinin de adıdır.",
+  "kind": "say.tr",
+  "de": "Der Name eines Bodens ist auch der Name dessen, was mit ihm geschehen darf."
+ },
+ {
+  "tr": "Son kalıbımız tartışmayı olgudan ayırıyor. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Unsere letzte Wendung trennt Streit und Tatsache. Sprich nach:"
+ },
+ {
+  "tr": "Şimdi sıra sende: Planda arazi tüketimi, köyde çayır.",
+  "kind": "say.tr",
+  "de": "Jetzt bist du dran: Im Plan Flächenverbrauch, im Dorf eine Wiese."
+ },
+ {
+  "tr": "Alay burada suçlamıyor; suçlamayı dinleyene bırakıyor.",
+  "kind": "say.tr",
+  "de": "Der Spott beschuldigt hier nicht; er überlässt die Beschuldigung der Zuhörerin."
+ },
+ {
+  "tr": "İkinci kalıbımız ölçme ile imzayı ayırıyor. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Unsere zweite Wendung trennt Messen und Unterschreiben. Sprich nach:"
+ },
+ {
+  "tr": "Tarım sübvansiyonu olmasaydı tarımsal dönüşüm dururdu.",
+  "kind": "say.tr",
+  "de": "Ohne Agrarsubvention käme die Agrarwende zum Stehen."
+ },
+ {
+  "tr": "Tarladan sofraya kadar değer katan halkaların bütününe",
+  "kind": "say.tr",
+  "de": "Die Gesamtheit der Glieder, die vom Feld bis zum Tisch Wert schaffen, heißt"
+ },
+ {
+  "tr": "Eşdizim seçmek fiyatın kimin sorunu olduğunu seçmektir.",
+  "kind": "say.tr",
+  "de": "Die Wortverbindung zu wählen heißt zu wählen, wessen Problem der Preis ist."
+ },
+ {
+  "tr": "Şimdi dersin kuralı. Toprak konusunda ad izin demektir:",
+  "kind": "say.tr",
+  "de": "Jetzt die Regel der Lektion. Beim Boden heißt der Name Erlaubnis:"
+ },
+ {
+  "tr": "Süt kotası, dediler, üstelik küçük çiftliğe iyi geliyor.",
+  "kind": "say.tr",
+  "de": "Die Milchquote, sagten sie, und dazu gut für den kleinen Hof."
+ },
+ {
+  "tr": "Şimdi sen kur: Yağmur olmasaydı tarımsal dönüşüm dururdu.",
+  "kind": "say.tr",
+  "de": "Bilde du jetzt: Ohne Regen käme die Agrarwende zum Stehen."
+ },
+ {
+  "tr": "Şimdi sıra sende: Dünya piyasa fiyatı bir ücret değildir.",
+  "kind": "say.tr",
+  "de": "Jetzt bist du dran: Ein Weltmarktpreis ist kein Lohn."
+ },
+ {
+  "tr": "Ona bilgi aktarımı demek agronomik tavsiye demek değildir.",
+  "kind": "say.tr",
+  "de": "Es Wissenstransfer zu nennen heißt nicht, es agronomische Beratung zu nennen."
+ },
+ {
+  "tr": "Aracılar kaymağını alıyor, bedeli kullan-at toplumu ödüyor.",
+  "kind": "say.tr",
+  "de": "Die Zwischenhändler schöpfen die Marge ab, den Preis zahlt die Wegwerfgesellschaft."
+ },
+ {
+  "tr": "Bir tane daha: Fiyat oynaklığı ölçülür, antlaşma imzalanır.",
+  "kind": "say.tr",
+  "de": "Noch eins: Die Preisvolatilität wird gemessen, der Vertrag wird unterschrieben."
+ },
+ {
+  "tr": "Patent, tarlanın bedavaya verdiğini kıt hale getirebiliyor.",
+  "kind": "say.tr",
+  "de": "Ein Patent kann verknappen, was das Feld umsonst gibt."
+ },
+ {
+  "tr": "Şimdi dersin kuralı. İklim raporunda adres bir KOŞUL taşır:",
+  "kind": "say.tr",
+  "de": "Jetzt die Regel der Lektion. Im Klimabericht trägt die Adresse eine BEDINGUNG:"
+ },
+ {
+  "tr": "Şimdi toprak el değiştirmesini üç ayrı failli anlatacaksın.",
+  "kind": "say.tr",
+  "de": "Jetzt erzählst du den Besitzwechsel von Land mit drei handelnden Personen."
+ },
+ {
+  "tr": "Bitki çeşidi koruması bir anlaşmazlık konusu olarak duruyor.",
+  "kind": "say.tr",
+  "de": "Der Sortenschutz bleibt ein Streitpunkt."
+ },
+ {
+  "tr": "Kip burada korkuyu değil, kanıtın ne kadar uzandığını ölçer.",
+  "kind": "say.tr",
+  "de": "Das Modalverb misst hier nicht die Furcht, sondern wie weit der Beleg reicht."
+ },
+ {
+  "tr": "Son kalıbımız iki eşdizimi karşıt yönde bağlıyor. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Unsere letzte Wendung bindet zwei Wortverbindungen gegenläufig. Sprich nach:"
+ },
+ {
+  "tr": "Son kalıbımız ödünü başa çekip bedeli gösteriyor. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Unsere letzte Wendung zieht das Zugeständnis vor und zeigt den Preis. Sprich nach:"
+ },
+ {
+  "tr": "Ticaretin serbestleşmesi ve piyasa düzeni ters yöne çekiyor.",
+  "kind": "say.tr",
+  "de": "Handelsliberalisierung und Marktordnung ziehen in entgegengesetzte Richtungen."
+ },
+ {
+  "tr": "Fiyat oynaklığı ölçülür, serbest ticaret anlaşması imzalanır.",
+  "kind": "say.tr",
+  "de": "Die Preisvolatilität wird gemessen, das Freihandelsabkommen wird unterschrieben."
+ },
+ {
+  "tr": "Şimdi dersin kuralı. Etiket tartışmasında fiil iddiayı taşır:",
+  "kind": "say.tr",
+  "de": "Jetzt die Regel der Lektion. In der Etikettendebatte trägt das Verb die Aussage:"
+ },
+ {
+  "tr": "Toprak anlatısında fail kaybolursa geriye yalnız kader kalır.",
+  "kind": "say.tr",
+  "de": "Verschwindet in der Erzählung vom Boden die handelnde Person, bleibt nur das Schicksal."
+ },
+ {
+  "tr": "Biçim, savı çiftçinin cebinden ayırır ve tartışılabilir kılar.",
+  "kind": "say.tr",
+  "de": "Die Form trennt die These von der Tasche der Bäuerin und macht sie verhandelbar."
+ },
+ {
+  "tr": "İkinci kalıbımız ikinci yarıda nesneyi başa alıyor. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Unsere zweite Wendung holt in der zweiten Hälfte das Objekt nach vorn. Sprich nach:"
+ },
+ {
+  "tr": "İkinci kalıbımız olmasaydıyı tarım savında kuruyor. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Unsere zweite Wendung baut das Wäre-nicht in der Agrarthese. Sprich nach:"
+ },
+ {
+  "tr": "Şimdi sıra sende: Agroekolojiyi övsek de şehri besleyen verim.",
+  "kind": "say.tr",
+  "de": "Jetzt bist du dran: So sehr wir die Agrarökologie loben, satt macht die Stadt der Ertrag."
+ },
+ {
+  "tr": "Yamacı yeniden ağaçlandırıyorlar, ovayı ormansızlaştırıyorlar.",
+  "kind": "say.tr",
+  "de": "Den Hang forsten sie auf, die Ebene holzen sie ab."
+ },
+ {
+  "tr": "Bir etiketi aktaran kişi, onu ne kadar sahiplendiğini de söyler.",
+  "kind": "say.tr",
+  "de": "Wer ein Etikett wiedergibt, sagt auch, wie sehr er es sich zu eigen macht."
+ },
+ {
+  "tr": "Bir tane daha: Süt kotası, dediler, üstelik bölgeye iyi geliyor.",
+  "kind": "say.tr",
+  "de": "Noch eins: Die Milchquote, sagten sie, und dazu gut für die Region."
+ },
+ {
+  "tr": "Burada endüstriyel hayvancılık yok, türüne uygun barındırma var.",
+  "kind": "say.tr",
+  "de": "Hier gibt es keine Massentierhaltung, hier gibt es artgerechte Haltung."
+ },
+ {
+  "tr": "Şimdi dersin kuralı. Tarım tartışmasında herkesin bir çıkarı var:",
+  "kind": "say.tr",
+  "de": "Jetzt die Regel der Lektion. In der Agrardebatte hat jede Seite einen Vorteil:"
+ },
+ {
+  "tr": "Şimdi sıra sende: Gıda egemenliği pazarın yerel olmasını istiyor.",
+  "kind": "say.tr",
+  "de": "Jetzt bist du dran: Die Ernährungssouveränität verlangt, dass der Markt örtlich sei."
+ },
+ {
+  "tr": "Şimdi sıra sende: Toprak erozyonu bir kuşakta yamacı tüketebilir.",
+  "kind": "say.tr",
+  "de": "Jetzt bist du dran: Die Bodenerosion kann den Hang durchaus in einer Generation auszehren."
+ },
+ {
+  "tr": "Bir bölge ithalata bağımlıysa hiçbir önlem her alanda işe yaramaz.",
+  "kind": "say.tr",
+  "de": "Ist eine Region importabhängig, wirkt keine Maßnahme flächendeckend."
+ },
+ {
+  "tr": "Bir tane daha: Ona tavsiye demek agronomik tavsiye demek değildir.",
+  "kind": "say.tr",
+  "de": "Noch eins: Es Beratung zu nennen heißt nicht, es agronomische Beratung zu nennen."
+ },
+ {
+  "tr": "Aşırı gübrelemek aşağı havzada nitrat kirliliği anlamına gelebilir.",
+  "kind": "say.tr",
+  "de": "Überdüngen könnte flussabwärts Nitratbelastung bedeuten."
+ },
+ {
+  "tr": "Bir tane daha: Harap ahırlar atıl duruyor, kıraç tarlalar durmuyor.",
+  "kind": "say.tr",
+  "de": "Noch eins: Die baufälligen Ställe liegen brach, die kargen Felder nicht."
+ },
+ {
+  "tr": "Kırdan kente göçün arkasında başarısız bir çiftliğin devri duruyor.",
+  "kind": "say.tr",
+  "de": "Hinter der Landflucht steht eine gescheiterte Hofnachfolge."
+ },
+ {
+  "tr": "Doğal döngülere dayanan tarım demek. İlk kalıbımız da bu. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Das heißt Landwirtschaft, die auf natürlichen Kreisläufen beruht. Das ist auch unsere erste Wendung. Sprich nach:"
+ },
+ {
+  "tr": "Dünya borsasında oluşan fiyat demek. İlk kalıbımız da bu. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Das heißt der Preis, der an der Weltbörse entsteht. Das ist auch unsere erste Wendung. Sprich nach:"
+ },
+ {
+  "tr": "Şimdi dersin kuralı. Tohum sözleşmesinde eksiltme bir HAK sorusudur:",
+  "kind": "say.tr",
+  "de": "Jetzt die Regel der Lektion. Im Saatgutvertrag ist die Auslassung eine RECHTSFRAGE:"
+ },
+ {
+  "tr": "Şimdi sen kur: Rapor, saha araştırmasının varsaydığını iddia ediyor.",
+  "kind": "say.tr",
+  "de": "Bilde du jetzt: Der Bericht behauptet, was die Feldforschung voraussetzt."
+ },
+ {
+  "tr": "Değişen iklime göre düzen kurma demek. İlk kalıbımız da bu. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Das heißt, sich nach dem veränderten Klima einzurichten. Das ist auch unsere erste Wendung. Sprich nach:"
+ },
+ {
+  "tr": "Merhaba! Bugün uzun bir iklim raporunu bağlayan adresleri öğreneceğiz.",
+  "kind": "say.tr",
+  "de": "Hallo! Heute lernen wir die Adressen, die einen langen Klimabericht zusammenhalten."
+ },
+ {
+  "tr": "Şimdi dersin kuralı. Tarım tartışmasında ödün bir dürüstlük ölçüsüdür:",
+  "kind": "say.tr",
+  "de": "Jetzt die Regel der Lektion. In der Agrardebatte ist das Zugeständnis ein Maß der Redlichkeit:"
+ },
+ {
+  "tr": "Şimdi dersin kuralı. Toprak konusunda başa aldığın şey FAİLİ belirler:",
+  "kind": "say.tr",
+  "de": "Jetzt die Regel der Lektion. Beim Boden bestimmt das Vorangestellte die HANDELNDE PERSON:"
+ },
+ {
+  "tr": "Tarım toprağının yapıya gitmesi demek. İlk kalıbımız da bu. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Das heißt, dass Ackerboden in Bebauung übergeht. Das ist auch unsere erste Wendung. Sprich nach:"
+ },
+ {
+  "tr": "Meclisin arazi toplulaştırması dediğine komşu arazi spekülasyonu diyor.",
+  "kind": "say.tr",
+  "de": "Was der Rat Flurbereinigung nennt, nennt der Nachbar Bodenspekulation."
+ },
+ {
+  "tr": "Merhaba! Bugün tohum hakları üstüne konuşurken düşen öğeyi öğreneceğiz.",
+  "kind": "say.tr",
+  "de": "Hallo! Heute lernen wir das weggelassene Glied im Reden über Saatgutrechte."
+ },
+ {
+  "tr": "Şimdi dersin kuralı. Çevre konuşmasında kip inandırıcılığın kendisidir:",
+  "kind": "say.tr",
+  "de": "Jetzt die Regel der Lektion. Im Reden über die Umwelt ist das Modalverb die Glaubwürdigkeit selbst:"
+ },
+ {
+  "tr": "Şimdi sen kur: Satışın arkasında başarısız bir çiftliğin devri duruyor.",
+  "kind": "say.tr",
+  "de": "Bilde du jetzt: Hinter dem Verkauf steht eine gescheiterte Hofnachfolge."
+ },
+ {
+  "tr": "Sürdürülebilirlik raporu, saha araştırmasının varsaydığını iddia ediyor.",
+  "kind": "say.tr",
+  "de": "Der Nachhaltigkeitsbericht behauptet, was die Feldforschung voraussetzt."
+ },
+ {
+  "tr": "Şimdi sıra sende: Yukarıdaki iklime uyum aşağıda bir maliyete dönüşüyor.",
+  "kind": "say.tr",
+  "de": "Jetzt bist du dran: Die Klimaanpassung oben wird unten zu einer Kostenfrage."
+ },
+ {
+  "tr": "Bir tane daha: Arazi kullanım çatışması bir tartışmadır, yol bir olgudur.",
+  "kind": "say.tr",
+  "de": "Noch eins: Ein Nutzungskonflikt ist ein Streit, die Straße ist eine Tatsache."
+ },
+ {
+  "tr": "Merhaba! Bugün hayvancılık tanıtım dilini alayla eleştirmeyi öğreneceğiz.",
+  "kind": "say.tr",
+  "de": "Hallo! Heute lernen wir, die Werbesprache der Tierhaltung mit Spott zu kritisieren."
+ },
+ {
+  "tr": "Şimdi sen kur: Burada endüstriyel hayvancılık yok, modern barındırma var.",
+  "kind": "say.tr",
+  "de": "Bilde du jetzt: Hier gibt es keine Massentierhaltung, hier gibt es moderne Haltung."
+ },
+ {
+  "tr": "Merhaba! Bugün tarım tartışmasında ödün vererek karşı çıkmayı öğreneceğiz.",
+  "kind": "say.tr",
+  "de": "Hallo! Heute lernen wir, in der Agrardebatte mit Zugeständnis zu widersprechen."
+ },
+ {
+  "tr": "Şimdi sıra sende: Satın almanın yaptığı şey bir toprak talebini giydirmek.",
+  "kind": "say.tr",
+  "de": "Jetzt bist du dran: Was der Kauf tut, ist einen Gebietsanspruch einzukleiden."
+ },
+ {
+  "tr": "Ürünün nereden geldiğinin yazılması demek. İlk kalıbımız da bu. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Das heißt, dass aufgeschrieben wird, woher das Produkt kommt. Das ist auch unsere erste Wendung. Sprich nach:"
+ },
+ {
+  "tr": "Üst toprağın su ve rüzgârla gitmesi demek. İlk kalıbımız da bu. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Das heißt, dass der Oberboden mit Wasser und Wind fortgeht. Das ist auch unsere erste Wendung. Sprich nach:"
+ },
+ {
+  "tr": "Şimdi dersin kuralı. Alay tanıtım sözcüğünü değiştirmeden kullanınca doğar:",
+  "kind": "say.tr",
+  "de": "Jetzt die Regel der Lektion. Der Spott entsteht, wenn man das Werbewort unverändert benutzt:"
+ },
+ {
+  "tr": "Şimdi dersin kuralı. Fiyat sözlüğünde eşdizim KİMİN fiyatı olduğunu söyler:",
+  "kind": "say.tr",
+  "de": "Jetzt die Regel der Lektion. Im Wörterbuch der Preise sagt die Wortverbindung, WESSEN Preis gemeint ist:"
+ },
+ {
+  "tr": "Şimdi sen kur: Aşırı gübrelemek kuyuda nitrat kirliliği anlamına gelebilir.",
+  "kind": "say.tr",
+  "de": "Bilde du jetzt: Überdüngen könnte im Brunnen Nitratbelastung bedeuten."
+ },
+ {
+  "tr": "Şimdi sen kur: Ticaretin serbestleşmesi ve arz güvenliği ters yöne çekiyor.",
+  "kind": "say.tr",
+  "de": "Bilde du jetzt: Handelsliberalisierung und Versorgungssicherheit ziehen in entgegengesetzte Richtungen."
+ },
+ {
+  "tr": "Yöreye uyarlanmış olsa da, tür bakımından zengin bir tarla daha az veriyor.",
+  "kind": "say.tr",
+  "de": "Wenn auch standortangepasst, gibt ein artenreiches Feld weniger her."
+ },
+ {
+  "tr": "Arazi kullanım çatışması bir tartışmadır, toprağın betonlaşması bir olgudur.",
+  "kind": "say.tr",
+  "de": "Ein Nutzungskonflikt ist ein Streit, die Bodenversiegelung ist eine Tatsache."
+ },
+ {
+  "tr": "İklim raporunda adres yoksa ölçüt evrensel sanılır ve yanlış yere uygulanır.",
+  "kind": "say.tr",
+  "de": "Fehlt im Klimabericht die Adresse, hält man den Maßstab für allgemeingültig und wendet ihn am falschen Ort an."
+ },
+ {
+  "tr": "Merhaba! Bugün tarım fiyatı konuşmasının yerleşik eşdizimlerini öğreneceğiz.",
+  "kind": "say.tr",
+  "de": "Hallo! Heute lernen wir die festen Wortverbindungen des Redens über Agrarpreise."
+ },
+ {
+  "tr": "O çevreyle uyumluluk, belirtildiği gibi, önceki bir sayfanın çevre etiğidir.",
+  "kind": "say.tr",
+  "de": "Jene Umweltverträglichkeit ist, wie angemerkt, die Umweltethik einer früheren Seite."
+ },
+ {
+  "tr": "Merhaba! Bugün toprak el değiştirirken kimi başa aldığını seçmeyi öğreneceğiz.",
+  "kind": "say.tr",
+  "de": "Hallo! Heute lernen wir, beim Besitzwechsel von Land zu wählen, wen wir voranstellen."
+ },
+ {
+  "tr": "Şimdi sen kur: O önlem, belirtildiği gibi, önceki bir sayfanın çevre etiğidir.",
+  "kind": "say.tr",
+  "de": "Bilde du jetzt: Jene Maßnahme ist, wie angemerkt, die Umweltethik einer früheren Seite."
+ },
+ {
+  "tr": "Şimdi sen kur: Yamacı yeniden ağaçlandırıyorlar, vadiyi ormansızlaştırıyorlar.",
+  "kind": "say.tr",
+  "de": "Bilde du jetzt: Den Hang forsten sie auf, das Tal holzen sie ab."
+ },
+ {
+  "tr": "ise onu koruma altına alır. Plan hangi adı yazarsa o toprak öyle muamele görür.",
+  "kind": "say.tr",
+  "de": "dagegen stellt ihn unter Schutz. Welchen Namen der Plan schreibt, so wird der Boden behandelt."
+ },
+ {
+  "tr": "Merhaba! Bugün etiket iddialarını aktarırken hükmü fiile yüklemeyi öğreneceğiz.",
+  "kind": "say.tr",
+  "de": "Hallo! Heute lernen wir, beim Wiedergeben von Etikettenaussagen das Urteil ins Verb zu legen."
+ },
+ {
+  "tr": "Şimdi sıra sende: Biri etiketi savunuyor, öteki izlenebilirlikten kuşku duyuyor.",
+  "kind": "say.tr",
+  "de": "Jetzt bist du dran: Die eine verteidigt das Etikett, die andere zweifelt an der Rückverfolgbarkeit."
+ },
+ {
+  "tr": "Merhaba! Bugün tarım politikası isteğini kalıplaşmış biçimle kurmayı öğreneceğiz.",
+  "kind": "say.tr",
+  "de": "Hallo! Heute lernen wir, die agrarpolitische Forderung in fester Form zu bauen."
+ },
+ {
+  "tr": "Yöntem, toprağı koruyan bir yöntem olsa da, toprak verimliliğini geri getirmiyor.",
+  "kind": "say.tr",
+  "de": "Die Methode, wenn auch bodenschonend, bringt die Bodenfruchtbarkeit nicht zurück."
+ },
+ {
+  "tr": "Bir halkın kendi gıdasına karar verme hakkı demek. İlk kalıbımız da bu. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Das heißt das Recht eines Volkes, über die eigene Nahrung zu entscheiden. Das ist auch unsere erste Wendung. Sprich nach:"
+ },
+ {
+  "tr": "Merhaba! Bugün aynı toprağın plandaki ve köydeki adının ayrı olduğunu öğreneceğiz.",
+  "kind": "say.tr",
+  "de": "Hallo! Heute lernen wir, dass derselbe Boden im Plan und im Dorf anders heißt."
+ },
+ {
+  "tr": "Şimdi sıra sende: Tohumu yeniden ekme hakkı örf olarak kalır, patent kanun olarak.",
+  "kind": "say.tr",
+  "de": "Jetzt bist du dran: Das Nachbaurecht bleibt als Brauch, das Patent als Gesetz."
+ },
+ {
+  "tr": "Bir tane daha: Bir çiftlik ithalata bağımlıysa hiçbir önlem her alanda işe yaramaz.",
+  "kind": "say.tr",
+  "de": "Noch eins: Ist ein Hof importabhängig, wirkt keine Maßnahme flächendeckend."
+ },
+ {
+  "tr": "Bir tane daha: Her çiftliğin bir sürdürülebilirlik standardı taşımasını istiyorlar.",
+  "kind": "say.tr",
+  "de": "Noch eins: Sie verlangen, dass jeder Hof einen Nachhaltigkeitsstandard trage."
+ },
+ {
+  "tr": "Hasattan ayrılan tohumu ertesi yıl ekme hakkı demek. İlk kalıbımız da bu. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Das heißt das Recht, aus der Ernte gewonnenes Saatgut im nächsten Jahr auszusäen. Das ist auch unsere erste Wendung. Sprich nach:"
+ },
+ {
+  "tr": "Bir tane daha: Doğala yakın olsa da, tür bakımından zengin bir tarla daha az veriyor.",
+  "kind": "say.tr",
+  "de": "Noch eins: Wenn auch naturnah, gibt ein artenreiches Feld weniger her."
+ },
+ {
+  "tr": "Her sürdürülebilirlik hedefinin bir sürdürülebilirlik standardı taşımasını istiyorlar.",
+  "kind": "say.tr",
+  "de": "Sie verlangen, dass jedes Nachhaltigkeitsziel einen Nachhaltigkeitsstandard trage."
+ },
+ {
+  "tr": "Merhaba! Bugün toprağın geleceği üstüne konuşurken kipin koyduğu mesafeyi öğreneceğiz.",
+  "kind": "say.tr",
+  "de": "Hallo! Heute lernen wir den Abstand, den das Modalverb beim Reden über die Zukunft des Bodens setzt."
+ },
+ {
+  "tr": "Şimdi sen kur: Dairenin arazi toplulaştırması dediğine çiftçi arazi spekülasyonu diyor.",
+  "kind": "say.tr",
+  "de": "Bilde du jetzt: Was das Amt Flurbereinigung nennt, nennt der Bauer Bodenspekulation."
+ },
+ {
+  "tr": "Büyük toprakların zorla ya da ucuza ele geçirilmesi demek. İlk kalıbımız da bu. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Das heißt die gewaltsame oder billige Aneignung großer Flächen. Das ist auch unsere erste Wendung. Sprich nach:"
+ },
+ {
+  "tr": "Şimdi sen kur: Plan, toprağı koruyan bir plan olsa da, toprak verimliliğini geri getirmiyor.",
+  "kind": "say.tr",
+  "de": "Bilde du jetzt: Der Plan, wenn auch bodenschonend, bringt die Bodenfruchtbarkeit nicht zurück."
+ },
+ {
+  "tr": "ise bir hanenin gelirini anlatır. İkisini aynı cümlede kullanmak çiftçiyi borsa kalemi yapar.",
+  "kind": "say.tr",
+  "de": "dagegen beschreibt das Einkommen eines Haushalts. Beide im selben Satz zu benutzen macht aus der Bäuerin einen Börsenposten."
+ },
+ {
+  "tr": "ise olayı bir yere yerleştirir ve kimseyi anmaz. İkinci cümle daha kibar ve daha az doğrudur.",
+  "kind": "say.tr",
+  "de": "dagegen setzt das Geschehen an einen Ort und nennt niemanden. Der zweite Satz ist höflicher und weniger wahr."
+ },
+ {
+  "tr": "Kesin felaket cümlesi tartışmayı kapatıyor; kip ise karşındakini masada tutuyor. Hazır mısın?",
+  "kind": "say.tr",
+  "de": "Ein bestimmter Katastrophensatz beendet das Gespräch; das Modalverb dagegen hält das Gegenüber am Tisch. Bist du bereit?"
+ },
+ {
+  "tr": "Hangi adla anıldığı onun ne olacağını belirliyor; ad değişince izin de değişiyor. Hazır mısın?",
+  "kind": "say.tr",
+  "de": "Wie er genannt wird, bestimmt, was aus ihm wird; ändert sich der Name, ändert sich auch die Erlaubnis. Bist du bereit?"
+ },
+ {
+  "tr": "ise onu askıya alır. Etiketin kendisi değişmiyor; değişen, aktaranın onu ne kadar sahiplendiği.",
+  "kind": "say.tr",
+  "de": "dagegen stellt sie in Frage. Das Etikett selbst ändert sich nicht; es ändert sich, wie sehr die wiedergebende Person es sich zu eigen macht."
+ },
+ {
+  "tr": "Eylemi başa almak faili gösteriyor, yeri başa almak onu gizliyor; ikisi de doğru cümle. Hazır mısın?",
+  "kind": "say.tr",
+  "de": "Die Handlung voranzustellen zeigt die handelnde Person, den Ort voranzustellen verbirgt sie; beide Sätze sind richtig. Bist du bereit?"
+ },
+ {
+  "tr": "Kurumun kendi sözcüğü en sağlam eleştiri malzemesi olur; onu değiştirmeden kullanmak yeter. Hazır mısın?",
+  "kind": "say.tr",
+  "de": "Das eigene Wort des Betriebs ist das festeste Material der Kritik; es genügt, es unverändert zu benutzen. Bist du bereit?"
+ },
+ {
+  "tr": "Verimin haklı yanını teslim etmeyen savunma dinlenmiyor; ödün burada bir dürüstlük işareti. Hazır mısın?",
+  "kind": "say.tr",
+  "de": "Eine Verteidigung, die das Recht des Ertrags nicht einräumt, wird nicht gehört; das Zugeständnis ist hier ein Zeichen der Redlichkeit. Bist du bereit?"
+ },
+ {
+  "tr": "ise hangi varsayımla yazıldığını söyler. Adres düşerse ölçüt evrensel sanılır ve yanlış bölgeye uygulanır.",
+  "kind": "say.tr",
+  "de": "dagegen sagt, unter welcher Annahme es geschrieben wurde. Fällt die Adresse, hält man den Maßstab für allgemeingültig und wendet ihn in der falschen Region an."
+ },
+ {
+  "tr": "Bir tane daha: Pestisit kullanımı tozlaştırması gerekeni öldürebilir ve ilacın sızıp gitmesine yol açabilir.",
+  "kind": "say.tr",
+  "de": "Noch eins: Der Pestizideinsatz kann töten, was bestäuben sollte, und das Mittel versickern lassen."
+ },
+ {
+  "tr": "Pestisit kullanımı tozlaştırması gerekeni öldürebilir ve bitki koruma ilacının sızıp gitmesine yol açabilir.",
+  "kind": "say.tr",
+  "de": "Der Pestizideinsatz kann töten, was bestäuben sollte, und das Pflanzenschutzmittel versickern lassen."
+ },
+ {
+  "tr": "ise bunun bir senaryo olduğunu söyler. Kesin söylenen bir felaket, bir kez gerçekleşmezse bütün savı götürür.",
+  "kind": "say.tr",
+  "de": "dagegen sagt, dass dies ein Szenario ist. Eine bestimmt genannte Katastrophe reißt die ganze These mit, wenn sie einmal ausbleibt."
+ },
+ {
+  "tr": "Aktarma fiili iddiayı savunur ya da askıya alır; alıcı da çoğu zaman etiketi değil o fiili duyar. Hazır mısın?",
+  "kind": "say.tr",
+  "de": "Das wiedergebende Verb verteidigt die Aussage oder stellt sie in Frage; und die Käuferin hört meist nicht das Etikett, sondern dieses Verb. Bist du bereit?"
+ },
+ {
+  "tr": "diyorsan istek senin çiftliğinin değil bir ölçünün isteği olur. «Ben istiyorum» diyen çiftçi hemen bir taraf sayılır.",
+  "kind": "say.tr",
+  "de": "sagst, ist die Forderung nicht die deines Hofes, sondern die eines Maßstabs. Ein Bauer, der «ich will» sagt, gilt sofort als Partei."
+ },
+ {
+  "tr": "Sözleşmede yazmayan şey çiftçinin kaybettiği haktır; bu yüzden eksiltmeyi okumak burada bir hak bilgisi. Hazır mısın?",
+  "kind": "say.tr",
+  "de": "Was nicht im Vertrag steht, ist das Recht, das die Bäuerin verliert; darum ist das Lesen der Auslassung hier Rechtskunde. Bist du bereit?"
+ },
+ {
+  "tr": "kurumun kendi seçtiği sözcüktür; onu bir eksiltmenin yanına koyunca hiçbir suçlama gerekmez, boşluğu dinleyen doldurur.",
+  "kind": "say.tr",
+  "de": "ist das vom Betrieb selbst gewählte Wort; stellt man es neben eine Auslassung, braucht es keinen Vorwurf, die Lücke füllt die Zuhörerin."
+ },
+ {
+  "tr": "dediğinde düşen fiili okuyan koyar ve orada bir hak el değiştirir. Sözleşmeyi okumak, eksiltilen yarıyı görmekle başlar.",
+  "kind": "say.tr",
+  "de": "setzt die lesende Person das weggelassene Verb ein, und dort wechselt ein Recht den Besitzer. Einen Vertrag zu lesen beginnt damit, die weggelassene Hälfte zu sehen."
+ },
+ {
+  "tr": "dediğinde karşındaki senin sayıları gördüğünü anlar. Bedeli yok sayan savunma, haklı olsa bile çiftçiye inandırıcı gelmez.",
+  "kind": "say.tr",
+  "de": "versteht dein Gegenüber, dass du die Zahlen kennst. Eine Verteidigung, die den Preis übergeht, wirkt auf die Bäuerin auch dann unglaubwürdig, wenn sie recht hat."
+ },
+ {
+  "tr": "Piyasayı anlatan söz ile üreticiyi anlatan söz aynı değil; ikisini karıştıran cümle çiftçiyi bir kaleme çevirir. Hazır mısın?",
+  "kind": "say.tr",
+  "de": "Das Wort für den Markt und das Wort für die Erzeugerin sind nicht dasselbe; ein Satz, der beide verwechselt, macht aus der Bäuerin einen Posten. Bist du bereit?"
+ },
+ {
+  "tr": "Her ölçüt başka bir bölgede başka sonuç verdiği için bağ zorunlu; adres yoksa okur her bölümü ayrı bir dünya sanır. Hazır mısın?",
+  "kind": "say.tr",
+  "de": "Weil jeder Maßstab in jeder Region anders wirkt, ist die Bindung zwingend; ohne Adresse hält die Leserin jeden Abschnitt für eine eigene Welt. Bist du bereit?"
+ },
+ {
+  "tr": "Kimin istediğini tartışma dışına çıkaran biçim savı koruyor; tarımda bu özellikle önemli çünkü herkes bir çıkar sahibi. Hazır mısın?",
+  "kind": "say.tr",
+  "de": "Die Form, die die Frage nach der fordernden Person aus der Debatte nimmt, schützt die These; in der Landwirtschaft ist das besonders wichtig, weil jede Seite einen Vorteil hat. Bist du bereit?"
+ }
+]

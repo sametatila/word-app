@@ -577,6 +577,31 @@ yükseldi, tahsis edilmiş para hiç yükselmedi».
 
 C1.GR.11-20'nin onu da modül içinde bir kez kullanılıyor (ölçüldü, 10/10).
 
+**C1 modül 7 — Toprak ve tarım (2026-09-11).** On ders: aynı tarlanın üç
+adı, toprağı kim alıyor, gıda egemenliği istemek, verim mi çeşitlilik mi,
+fiyat sözlüğü, etiketi aktarmak, toprak ne kadar dayanır, türüne uygun
+tabii, iklim raporunu bağlamak, tohumun söylemediği.
+
+Modülün ekseni ADIN İZNE DÖNÜŞMESİ. Modül 5 adın bir hüküm, modül 6 bir
+sorumluluk dağıtımı olduğunu göstermişti; burada ad doğrudan bir İZİN:
+plan «arazi tüketimi» yazarsa bir kayıp adlandırılmış ve karşı çıkmak
+mümkün olur, «ekili arazi» yazarsa toprak koruma altına girer. Aynı
+mekanizma göç ve fiyat dersinde de görünüyor — göçmen kökeni bir insanın,
+göç akışı bir tablonun sözcüğüydü; burada dünya piyasa fiyatı kimsenin
+denetlemediği bir sayı, üretici fiyatı bir hanenin geliri.
+
+Kip dersi iklim tartışmasına özgü bir tuzağı açıyor: kesin söylenen bir
+felaket bir kez gerçekleşmezse bütün savı götürür, o yüzden burada kip
+korkuyu değil KANITIN NE KADAR UZANDIĞINI ölçüyor. Ödün dersi aynı şeyi
+tersten söylüyor — bedeli yok sayan savunma, haklı olsa bile çiftçiye
+inandırıcı gelmiyor.
+
+Kapanış dersi eksiltmeyi bir hak bilgisi hâline getiriyor: sözleşmede
+yazmayan şey çiftçinin kaybettiği haktır, ve düşen fiili okuyan koyduğu
+anda orada bir hak el değiştirir.
+
+C1.GR.11-20'nin onu da modül içinde bir kez kullanılıyor (ölçüldü, 10/10).
+
 ## Tamamlanma ölçütü
 
 - `LESSONS` içinde `course: "en"` için B1/B2/C1 100'er ders

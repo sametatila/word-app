@@ -29314,5 +29314,4707 @@
    "goal": "Üç cümlede birer öğe düşürdüysen ve eksik kalan yarıyı adlandırdıysan konuşma başarılı sayılır.",
    "minTurns": 8
   }
+ },
+ {
+  "id": "en-c1-three-names-for-a-field",
+  "level": "C1",
+  "course": "en",
+  "icon": "nature",
+  "title": "Three names for a field",
+  "titleTr": "Aynı tarlanın üç adı",
+  "summary": "Aynı toprağın plandaki ve köydeki adının ayrı olduğunu öğretir; hangi adla anıldığı onun ne olacağını belirler.",
+  "minutes": 12,
+  "focusId": "Register shift in naming a piece of land",
+  "vocab": [
+   {
+    "de": "land consumption",
+    "tr": "arazi tüketimi"
+   },
+   {
+    "de": "arable field",
+    "tr": "ekili arazi"
+   },
+   {
+    "de": "land consolidation",
+    "tr": "arazi toplulaştırması"
+   },
+   {
+    "de": "land speculation",
+    "tr": "arazi spekülasyonu"
+   },
+   {
+    "de": "land use conflict",
+    "tr": "arazi kullanım çatışması"
+   },
+   {
+    "de": "soil sealing",
+    "tr": "toprağın betonlaşması"
+   },
+   {
+    "de": "urban sprawl",
+    "tr": "kentsel yayılma"
+   },
+   {
+    "de": "interim use",
+    "tr": "geçici kullanım"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "In the plan it is land consumption; in the village, an arable field.",
+    "tr": "aynı toprağı iki kayıtta söyler"
+   },
+   {
+    "de": "What the council calls land consolidation, the neighbour calls land speculation.",
+    "tr": "iki adı karşı karşıya koyar"
+   },
+   {
+    "de": "A land use conflict is a dispute; soil sealing is a fact.",
+    "tr": "tartışmayı olgudan ayırır"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Bugün aynı toprağın plandaki ve köydeki adının ayrı olduğunu öğreneceğiz."
+     },
+     {
+      "lang": "tr",
+      "text": "Hangi adla anıldığı onun ne olacağını belirliyor; ad değişince izin de değişiyor. Hazır mısın?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "land consumption"
+     },
+     {
+      "lang": "tr",
+      "text": "Tarım toprağının yapıya gitmesi demek. İlk kalıbımız da bu. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "In the plan it is land consumption; in the village, an arable field."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "In the plan it is land consumption; in the village, an arable field."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Ekim yapılan toprağa"
+     },
+     {
+      "lang": "en",
+      "text": "arable field"
+     },
+     {
+      "lang": "tr",
+      "text": "dağınık parçaların birleştirilmesine ise"
+     },
+     {
+      "lang": "en",
+      "text": "land consolidation"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İkinci kalıbımız iki adı karşı karşıya koyuyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "What the council calls land consolidation, the neighbour calls land speculation."
+     },
+     {
+      "lang": "tr",
+      "text": "Meclisin arazi toplulaştırması dediğine komşu arazi spekülasyonu diyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "What the council calls land consolidation, the neighbour calls land speculation."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Toprağı satıp değerlenmesini beklemeye"
+     },
+     {
+      "lang": "en",
+      "text": "land speculation"
+     },
+     {
+      "lang": "tr",
+      "text": "aynı yeri iki tarafın başka işe istemesine ise"
+     },
+     {
+      "lang": "en",
+      "text": "land use conflict"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son kalıbımız tartışmayı olgudan ayırıyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "A land use conflict is a dispute; soil sealing is a fact."
+     },
+     {
+      "lang": "tr",
+      "text": "Arazi kullanım çatışması bir tartışmadır, toprağın betonlaşması bir olgudur."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "A land use conflict is a dispute; soil sealing is a fact."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi dersin kuralı. Toprak konusunda ad izin demektir:"
+     },
+     {
+      "lang": "en",
+      "text": "land consumption"
+     },
+     {
+      "lang": "tr",
+      "text": "bir kaybı adlandırır ve karşı çıkmayı mümkün kılar,"
+     },
+     {
+      "lang": "en",
+      "text": "arable field"
+     },
+     {
+      "lang": "tr",
+      "text": "ise onu koruma altına alır. Plan hangi adı yazarsa o toprak öyle muamele görür."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sıra sende: Planda arazi tüketimi, köyde çayır."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "In the plan it is land consumption; in the village, a meadow.",
+     "accept": [
+      "In the plan it is land consumption; in the village, a garden.",
+      "In the plan it is land consumption; in the village, an arable field."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Aynı toprağı iki kayıtta söylemek için iki yer adı yeter:"
+      },
+      {
+       "lang": "en",
+       "text": "In the plan it is land consumption; in the village, a meadow."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kontrol. Şu cümle doğru mu?"
+     },
+     {
+      "lang": "en",
+      "text": "A land use conflict is a dispute; soil sealing is a fact."
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "A land use conflict is a dispute; soil sealing is a fact.",
+     "answer": true,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Doğru. Biri tarafların anlaşmazlığını adlandırıyor, öteki geri dönmeyen bir durumu."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Toprağın beton altında kalmasına"
+     },
+     {
+      "lang": "en",
+      "text": "soil sealing"
+     },
+     {
+      "lang": "tr",
+      "text": "şehrin kırlara doğru dağılmasına ise"
+     },
+     {
+      "lang": "en",
+      "text": "urban sprawl"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "Urban sprawl begins with an interim use."
+     },
+     {
+      "lang": "tr",
+      "text": "Kentsel yayılma bir geçici kullanımla başlıyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Urban sprawl begins with an interim use."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir yerin bir süreliğine başka işe verilmesine"
+     },
+     {
+      "lang": "en",
+      "text": "interim use"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sen kur: Dairenin arazi toplulaştırması dediğine çiftçi arazi spekülasyonu diyor."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "What the office calls land consolidation, the farmer calls land speculation.",
+     "accept": [
+      "What the state calls land consolidation, the farmer calls land speculation.",
+      "What the council calls land consolidation, the neighbour calls land speculation."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "İki adı karşı karşıya koymak için"
+      },
+      {
+       "lang": "en",
+       "text": "What … calls … calls"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "What the office calls land consolidation, the farmer calls land speculation."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir toprağın adı, ona ne yapılabileceğinin de adıdır."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The name opens the gate."
+     },
+     {
+      "lang": "tr",
+      "text": "Kapıyı ad açıyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The name opens the gate."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir tane daha: Arazi kullanım çatışması bir tartışmadır, yol bir olgudur."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "A land use conflict is a dispute; the road is a fact.",
+     "accept": [
+      "A land use conflict is a dispute; the permit is a fact.",
+      "A land use conflict is a dispute; soil sealing is a fact."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Tartışmayı olgudan ayırmak için iki yarı kurulur:"
+      },
+      {
+       "lang": "en",
+       "text": "A land use conflict is a dispute; the road is a fact."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Özetleyelim: plan"
+     },
+     {
+      "lang": "en",
+      "text": "land consumption"
+     },
+     {
+      "lang": "tr",
+      "text": "köy"
+     },
+     {
+      "lang": "en",
+      "text": "arable field"
+     },
+     {
+      "lang": "tr",
+      "text": "olgu"
+     },
+     {
+      "lang": "en",
+      "text": "soil sealing"
+     },
+     {
+      "lang": "tr",
+      "text": "Şimdi aynı toprağı iki kayıtta anlatacaksın."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Bir tarlanın imara açılmasını önce planın, sonra köyün diliyle anlatıyorsun. İki adı da kur ve her adın hangi izni getirdiğini söyle.",
+   "partner": "adın önemsiz olduğunu düşünen, «toprak yine aynı toprak» diyen biri",
+   "opening": "It's the same soil either way, isn't it?",
+   "openingTr": "Toprak yine aynı toprak, değil mi?",
+   "goal": "Aynı tarlayı iki kayıtta adlandırdıysan ve her adın getirdiği izni söylediysen konuşma başarılı sayılır.",
+   "minTurns": 8
+  }
+ },
+ {
+  "id": "en-c1-who-takes-the-land",
+  "level": "C1",
+  "course": "en",
+  "icon": "map",
+  "title": "Who takes the land",
+  "titleTr": "Toprağı kim alıyor",
+  "summary": "Toprak el değiştirirken kimi başa aldığını seçmeyi öğretir; eylemi başa almak faili gösterir, yeri başa almak onu gizler.",
+  "minutes": 12,
+  "focusId": "Fronting in talk about land ownership",
+  "vocab": [
+   {
+    "de": "land grabbing",
+    "tr": "toprak gaspı"
+   },
+   {
+    "de": "territorial claim",
+    "tr": "toprak talebi"
+   },
+   {
+    "de": "rural exodus",
+    "tr": "kırdan kente göç"
+   },
+   {
+    "de": "farm succession",
+    "tr": "çiftliğin devri"
+   },
+   {
+    "de": "barren",
+    "tr": "kıraç"
+   },
+   {
+    "de": "lie fallow",
+    "tr": "atıl durmak"
+   },
+   {
+    "de": "dilapidated",
+    "tr": "harap"
+   },
+   {
+    "de": "periphery",
+    "tr": "çeper"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "What land grabbing does is dress a territorial claim.",
+    "tr": "eylemi başa taşır"
+   },
+   {
+    "de": "Behind the rural exodus stands a failed farm succession.",
+    "tr": "yer öbeğini başa alır"
+   },
+   {
+    "de": "The barren fields lie fallow; the dilapidated barns do not.",
+    "tr": "iki nesneyi başa alıp ikiye böler"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Bugün toprak el değiştirirken kimi başa aldığını seçmeyi öğreneceğiz."
+     },
+     {
+      "lang": "tr",
+      "text": "Eylemi başa almak faili gösteriyor, yeri başa almak onu gizliyor; ikisi de doğru cümle. Hazır mısın?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "land grabbing"
+     },
+     {
+      "lang": "tr",
+      "text": "Büyük toprakların zorla ya da ucuza ele geçirilmesi demek. İlk kalıbımız da bu. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "What land grabbing does is dress a territorial claim."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "What land grabbing does is dress a territorial claim."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir toprağın kendisinin sayılmasına"
+     },
+     {
+      "lang": "en",
+      "text": "territorial claim"
+     },
+     {
+      "lang": "tr",
+      "text": "köyden şehre gidişe ise"
+     },
+     {
+      "lang": "en",
+      "text": "rural exodus"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İkinci kalıbımız yer öbeğini başa alıyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "Behind the rural exodus stands a failed farm succession."
+     },
+     {
+      "lang": "tr",
+      "text": "Kırdan kente göçün arkasında başarısız bir çiftliğin devri duruyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Behind the rural exodus stands a failed farm succession."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Çiftliğin bir sonraki kuşağa geçmesine"
+     },
+     {
+      "lang": "en",
+      "text": "farm succession"
+     },
+     {
+      "lang": "tr",
+      "text": "verimsiz ve çorak toprağa ise"
+     },
+     {
+      "lang": "en",
+      "text": "barren"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son kalıbımız iki nesneyi başa alıp ikiye bölüyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "The barren fields lie fallow; the dilapidated barns do not."
+     },
+     {
+      "lang": "tr",
+      "text": "Kıraç tarlalar atıl duruyor, harap ahırlar durmuyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The barren fields lie fallow; the dilapidated barns do not."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi dersin kuralı. Toprak konusunda başa aldığın şey FAİLİ belirler:"
+     },
+     {
+      "lang": "en",
+      "text": "What land grabbing does"
+     },
+     {
+      "lang": "tr",
+      "text": "bir eylemi öne alır ve birinin yaptığını söyler,"
+     },
+     {
+      "lang": "en",
+      "text": "Behind the rural exodus"
+     },
+     {
+      "lang": "tr",
+      "text": "ise olayı bir yere yerleştirir ve kimseyi anmaz. İkinci cümle daha kibar ve daha az doğrudur."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sıra sende: Satın almanın yaptığı şey bir toprak talebini giydirmek."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "What the purchase does is dress a territorial claim.",
+     "accept": [
+      "What the deal does is dress a territorial claim.",
+      "What land grabbing does is dress a territorial claim."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Eylemi başa taşımak için"
+      },
+      {
+       "lang": "en",
+       "text": "What … does is"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "What the purchase does is dress a territorial claim."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kontrol. Şu cümle doğru mu?"
+     },
+     {
+      "lang": "en",
+      "text": "Behind the rural exodus stands a failed farm succession."
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "Behind the rural exodus stands a failed farm succession.",
+     "answer": true,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Doğru. Yer öbeği başa alınmış; asıl neden sona düşünce daha ağır duyuluyor."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Ekilmeden bekleyen toprağa"
+     },
+     {
+      "lang": "en",
+      "text": "lie fallow"
+     },
+     {
+      "lang": "tr",
+      "text": "bakımsızlıktan dökülen yapıya ise"
+     },
+     {
+      "lang": "en",
+      "text": "dilapidated"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The periphery pays first."
+     },
+     {
+      "lang": "tr",
+      "text": "Bedeli önce çeper ödüyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The periphery pays first."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merkezin dışında kalan kuşağa"
+     },
+     {
+      "lang": "en",
+      "text": "periphery"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sen kur: Satışın arkasında başarısız bir çiftliğin devri duruyor."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "Behind the sale stands a failed farm succession.",
+     "accept": [
+      "Behind the move stands a failed farm succession.",
+      "Behind the rural exodus stands a failed farm succession."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Yer öbeğini başa almak için"
+      },
+      {
+       "lang": "en",
+       "text": "Behind"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "Behind the sale stands a failed farm succession."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Toprak anlatısında fail kaybolursa geriye yalnız kader kalır."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "Someone did this."
+     },
+     {
+      "lang": "tr",
+      "text": "Bunu biri yaptı."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Someone did this."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir tane daha: Harap ahırlar atıl duruyor, kıraç tarlalar durmuyor."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "The dilapidated barns lie fallow; the barren fields do not.",
+     "accept": [
+      "The empty barns lie fallow; the barren fields do not.",
+      "The barren fields lie fallow; the dilapidated barns do not."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "İki nesneyi başa alıp ikiye bölmek için noktalı virgül kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "The dilapidated barns lie fallow; the barren fields do not."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Özetleyelim: fail"
+     },
+     {
+      "lang": "en",
+      "text": "What land grabbing does"
+     },
+     {
+      "lang": "tr",
+      "text": "yer"
+     },
+     {
+      "lang": "en",
+      "text": "Behind the rural exodus"
+     },
+     {
+      "lang": "tr",
+      "text": "nesne"
+     },
+     {
+      "lang": "en",
+      "text": "The barren fields lie fallow"
+     },
+     {
+      "lang": "tr",
+      "text": "Şimdi toprak el değiştirmesini üç ayrı failli anlatacaksın."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Bir köydeki toprak el değiştirmesini anlatıyorsun ve faili kaybetmek istemiyorsun. Eylemi, yeri ve nesneleri başa alan üç cümle kur.",
+   "partner": "her şeyi «zaman böyle getirdi» diye anlatan bir köylü",
+   "opening": "That's just how the times went, isn't it?",
+   "openingTr": "Zaman böyle getirdi, değil mi?",
+   "goal": "Eylemi, yeri ve nesneleri başa alan üç ayrı cümle kurduysan konuşma başarılı sayılır.",
+   "minTurns": 8
+  }
+ },
+ {
+  "id": "en-c1-demanding-food-sovereignty",
+  "level": "C1",
+  "course": "en",
+  "icon": "law",
+  "title": "Demanding food sovereignty",
+  "titleTr": "Gıda egemenliği istemek",
+  "summary": "Tarım politikası isteğini kalıplaşmış biçimle kurmayı öğretir; kimin istediğini tartışma dışına çıkaran biçim savı korur.",
+  "minutes": 12,
+  "focusId": "Subjunctive in demands for food sovereignty",
+  "vocab": [
+   {
+    "de": "food sovereignty",
+    "tr": "gıda egemenliği"
+   },
+   {
+    "de": "agricultural reform",
+    "tr": "tarım reformu"
+   },
+   {
+    "de": "agricultural subsidy",
+    "tr": "tarım sübvansiyonu"
+   },
+   {
+    "de": "agricultural transition",
+    "tr": "tarımsal dönüşüm"
+   },
+   {
+    "de": "sustainability goal",
+    "tr": "sürdürülebilirlik hedefi"
+   },
+   {
+    "de": "sustainability standard",
+    "tr": "sürdürülebilirlik standardı"
+   },
+   {
+    "de": "regulatory law",
+    "tr": "düzenleyici hukuk"
+   },
+   {
+    "de": "supply security",
+    "tr": "arz güvenliği"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "Food sovereignty demands that the agricultural reform be local.",
+    "tr": "isteği kalıplaşmış biçimle kurar"
+   },
+   {
+    "de": "Were it not for the agricultural subsidy, the agricultural transition would stall.",
+    "tr": "olmasaydıyı tarım savında kurar"
+   },
+   {
+    "de": "They ask that every sustainability goal carry a sustainability standard.",
+    "tr": "koşulu kalıpla kurar"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Bugün tarım politikası isteğini kalıplaşmış biçimle kurmayı öğreneceğiz."
+     },
+     {
+      "lang": "tr",
+      "text": "Kimin istediğini tartışma dışına çıkaran biçim savı koruyor; tarımda bu özellikle önemli çünkü herkes bir çıkar sahibi. Hazır mısın?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "food sovereignty"
+     },
+     {
+      "lang": "tr",
+      "text": "Bir halkın kendi gıdasına karar verme hakkı demek. İlk kalıbımız da bu. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "Food sovereignty demands that the agricultural reform be local."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Food sovereignty demands that the agricultural reform be local."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Tarımın kurallarının yeniden yazılmasına"
+     },
+     {
+      "lang": "en",
+      "text": "agricultural reform"
+     },
+     {
+      "lang": "tr",
+      "text": "çiftçiye verilen devlet desteğine ise"
+     },
+     {
+      "lang": "en",
+      "text": "agricultural subsidy"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İkinci kalıbımız olmasaydıyı tarım savında kuruyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "Were it not for the agricultural subsidy, the agricultural transition would stall."
+     },
+     {
+      "lang": "tr",
+      "text": "Tarım sübvansiyonu olmasaydı tarımsal dönüşüm dururdu."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Were it not for the agricultural subsidy, the agricultural transition would stall."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Tarımın başka bir modele geçmesine"
+     },
+     {
+      "lang": "en",
+      "text": "agricultural transition"
+     },
+     {
+      "lang": "tr",
+      "text": "ulaşılmak istenen sürdürülebilirlik ölçüsüne ise"
+     },
+     {
+      "lang": "en",
+      "text": "sustainability goal"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son kalıbımız koşulu kalıpla kuruyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "They ask that every sustainability goal carry a sustainability standard."
+     },
+     {
+      "lang": "tr",
+      "text": "Her sürdürülebilirlik hedefinin bir sürdürülebilirlik standardı taşımasını istiyorlar."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "They ask that every sustainability goal carry a sustainability standard."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi dersin kuralı. Tarım tartışmasında herkesin bir çıkarı var:"
+     },
+     {
+      "lang": "en",
+      "text": "that the agricultural reform be local"
+     },
+     {
+      "lang": "tr",
+      "text": "diyorsan istek senin çiftliğinin değil bir ölçünün isteği olur. «Ben istiyorum» diyen çiftçi hemen bir taraf sayılır."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sıra sende: Gıda egemenliği pazarın yerel olmasını istiyor."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "Food sovereignty demands that the market be local.",
+     "accept": [
+      "Food sovereignty demands that the supply be local.",
+      "Food sovereignty demands that the agricultural reform be local."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "İsteği kalıplaşmış biçimle kurmak için"
+      },
+      {
+       "lang": "en",
+       "text": "demands that … be"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "Food sovereignty demands that the market be local."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kontrol. Şu cümle doğru mu?"
+     },
+     {
+      "lang": "en",
+      "text": "They ask that every sustainability goal carry a sustainability standard."
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "They ask that every sustainability goal carry a sustainability standard.",
+     "answer": true,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Doğru. Fiil çekilmemiş; koşul kişiye değil hedefin kendisine bağlanmış."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Ölçülebilir sürdürülebilirlik kuralına"
+     },
+     {
+      "lang": "en",
+      "text": "sustainability standard"
+     },
+     {
+      "lang": "tr",
+      "text": "piyasayı kurallara bağlayan hukuka ise"
+     },
+     {
+      "lang": "en",
+      "text": "regulatory law"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The regulatory law names supply security first."
+     },
+     {
+      "lang": "tr",
+      "text": "Düzenleyici hukuk önce arz güvenliğini anıyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The regulatory law names supply security first."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Gıdanın kesintisiz bulunabilmesine"
+     },
+     {
+      "lang": "en",
+      "text": "supply security"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sen kur: Yağmur olmasaydı tarımsal dönüşüm dururdu."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "Were it not for the rain, the agricultural transition would stall.",
+     "accept": [
+      "Were it not for the support, the agricultural transition would stall.",
+      "Were it not for the agricultural subsidy, the agricultural transition would stall."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Olmasaydıyı tarım savında kurmak için"
+      },
+      {
+       "lang": "en",
+       "text": "were it not for"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "Were it not for the rain, the agricultural transition would stall."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Biçim, savı çiftçinin cebinden ayırır ve tartışılabilir kılar."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The form outlives the harvest."
+     },
+     {
+      "lang": "tr",
+      "text": "Biçim hasadı aşıp kalıyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The form outlives the harvest."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir tane daha: Her çiftliğin bir sürdürülebilirlik standardı taşımasını istiyorlar."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "They ask that every farm carry a sustainability standard.",
+     "accept": [
+      "They ask that every field carry a sustainability standard.",
+      "They ask that every sustainability goal carry a sustainability standard."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Koşulu kalıpla kurmak için"
+      },
+      {
+       "lang": "en",
+       "text": "ask that … carry"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "They ask that every farm carry a sustainability standard."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Özetleyelim: istek"
+     },
+     {
+      "lang": "en",
+      "text": "demands that … be"
+     },
+     {
+      "lang": "tr",
+      "text": "olmasaydı"
+     },
+     {
+      "lang": "en",
+      "text": "were it not for"
+     },
+     {
+      "lang": "tr",
+      "text": "koşul"
+     },
+     {
+      "lang": "en",
+      "text": "ask that … carry"
+     },
+     {
+      "lang": "tr",
+      "text": "Şimdi bir tarım savını kuracaksın."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Bir tarım politikası toplantısındasın ve savını kendi çiftliğinin çıkarı gibi göstermemek istiyorsun. İsteği, olmasaydıyı ve koşulu kalıplaşmış biçimlerle kur.",
+   "partner": "her savı çıkar sayan, «senin tarlan için istiyorsun» diyen biri",
+   "opening": "You want this for your own field, don't you?",
+   "openingTr": "Bunu kendi tarlan için istiyorsun, değil mi?",
+   "goal": "İsteği, olmasaydıyı ve koşulu üç ayrı kalıplaşmış biçimle kurduysan konuşma başarılı sayılır.",
+   "minTurns": 8
+  }
+ },
+ {
+  "id": "en-c1-yield-or-variety",
+  "level": "C1",
+  "course": "en",
+  "icon": "flower",
+  "title": "Yield or variety",
+  "titleTr": "Verim mi çeşitlilik mi",
+  "summary": "Tarım tartışmasında ödün vererek karşı çıkmayı öğretir; verimin haklı yanını teslim etmeyen savunma dinlenmiyor.",
+  "minutes": 12,
+  "focusId": "Concessive clauses in the farming debate",
+  "vocab": [
+   {
+    "de": "agroecology",
+    "tr": "agroekoloji"
+   },
+   {
+    "de": "monoculture",
+    "tr": "tek ürün tarımı"
+   },
+   {
+    "de": "soil-conserving",
+    "tr": "toprağı koruyan"
+   },
+   {
+    "de": "soil fertility",
+    "tr": "toprak verimliliği"
+   },
+   {
+    "de": "site-adapted",
+    "tr": "yöreye uyarlanmış"
+   },
+   {
+    "de": "species-rich",
+    "tr": "tür bakımından zengin"
+   },
+   {
+    "de": "near-natural",
+    "tr": "doğala yakın"
+   },
+   {
+    "de": "perennial",
+    "tr": "çok yıllık bitki"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "Much as we praise agroecology, the monoculture feeds the city.",
+    "tr": "ödünü başa alıp gerçeği söyler"
+   },
+   {
+    "de": "The method, albeit soil-conserving, does not restore soil fertility.",
+    "tr": "ödünü araya sıkıştırır"
+   },
+   {
+    "de": "Albeit site-adapted, a species-rich field yields less.",
+    "tr": "ödünü başa çekip bedeli gösterir"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Bugün tarım tartışmasında ödün vererek karşı çıkmayı öğreneceğiz."
+     },
+     {
+      "lang": "tr",
+      "text": "Verimin haklı yanını teslim etmeyen savunma dinlenmiyor; ödün burada bir dürüstlük işareti. Hazır mısın?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "agroecology"
+     },
+     {
+      "lang": "tr",
+      "text": "Doğal döngülere dayanan tarım demek. İlk kalıbımız da bu. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "Much as we praise agroecology, the monoculture feeds the city."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Much as we praise agroecology, the monoculture feeds the city."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Tek bir ürünün büyük alanda ekilmesine"
+     },
+     {
+      "lang": "en",
+      "text": "monoculture"
+     },
+     {
+      "lang": "tr",
+      "text": "toprağı yormayan yönteme ise"
+     },
+     {
+      "lang": "en",
+      "text": "soil-conserving"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İkinci kalıbımız ödünü araya sıkıştırıyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "The method, albeit soil-conserving, does not restore soil fertility."
+     },
+     {
+      "lang": "tr",
+      "text": "Yöntem, toprağı koruyan bir yöntem olsa da, toprak verimliliğini geri getirmiyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The method, albeit soil-conserving, does not restore soil fertility."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Toprağın ürün verme gücüne"
+     },
+     {
+      "lang": "en",
+      "text": "soil fertility"
+     },
+     {
+      "lang": "tr",
+      "text": "o yörenin koşullarına göre seçilene ise"
+     },
+     {
+      "lang": "en",
+      "text": "site-adapted"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son kalıbımız ödünü başa çekip bedeli gösteriyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "Albeit site-adapted, a species-rich field yields less."
+     },
+     {
+      "lang": "tr",
+      "text": "Yöreye uyarlanmış olsa da, tür bakımından zengin bir tarla daha az veriyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Albeit site-adapted, a species-rich field yields less."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi dersin kuralı. Tarım tartışmasında ödün bir dürüstlük ölçüsüdür:"
+     },
+     {
+      "lang": "en",
+      "text": "albeit site-adapted"
+     },
+     {
+      "lang": "tr",
+      "text": "dediğinde karşındaki senin sayıları gördüğünü anlar. Bedeli yok sayan savunma, haklı olsa bile çiftçiye inandırıcı gelmez."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sıra sende: Agroekolojiyi övsek de şehri besleyen verim."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "Much as we praise agroecology, the yield feeds the city.",
+     "accept": [
+      "Much as we praise agroecology, the big farm feeds the city.",
+      "Much as we praise agroecology, the monoculture feeds the city."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Ödünü başa alıp gerçeği söylemek için"
+      },
+      {
+       "lang": "en",
+       "text": "Much as"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "Much as we praise agroecology, the yield feeds the city."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kontrol. Şu cümle doğru mu?"
+     },
+     {
+      "lang": "en",
+      "text": "Albeit site-adapted, a species-rich field yields less."
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "Albeit site-adapted, a species-rich field yields less.",
+     "answer": true,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Doğru. Ödün başa çekilmiş ve bedel ondan sonra açıkça söylenmiş."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Çok sayıda tür barındırana"
+     },
+     {
+      "lang": "en",
+      "text": "species-rich"
+     },
+     {
+      "lang": "tr",
+      "text": "doğal hâline yakın bırakılana ise"
+     },
+     {
+      "lang": "en",
+      "text": "near-natural"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "A near-natural edge needs a perennial."
+     },
+     {
+      "lang": "tr",
+      "text": "Doğala yakın bir kenar çok yıllık bitki istiyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "A near-natural edge needs a perennial."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Yıllarca yaşayan bitkiye"
+     },
+     {
+      "lang": "en",
+      "text": "perennial"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sen kur: Plan, toprağı koruyan bir plan olsa da, toprak verimliliğini geri getirmiyor."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "The plan, albeit soil-conserving, does not restore soil fertility.",
+     "accept": [
+      "The rule, albeit soil-conserving, does not restore soil fertility.",
+      "The method, albeit soil-conserving, does not restore soil fertility."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Ödünü araya sıkıştırmak için"
+      },
+      {
+       "lang": "en",
+       "text": "albeit"
+      },
+      {
+       "lang": "tr",
+       "text": "iki virgül arasına girer:"
+      },
+      {
+       "lang": "en",
+       "text": "The plan, albeit soil-conserving, does not restore soil fertility."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bedeli söyleyen taraf, çözümü de söyleyebilir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The cost belongs in the sentence."
+     },
+     {
+      "lang": "tr",
+      "text": "Bedel cümleye aittir."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The cost belongs in the sentence."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir tane daha: Doğala yakın olsa da, tür bakımından zengin bir tarla daha az veriyor."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "Albeit near-natural, a species-rich field yields less.",
+     "accept": [
+      "Albeit careful, a species-rich field yields less.",
+      "Albeit site-adapted, a species-rich field yields less."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Ödünü başa çekip bedeli göstermek için"
+      },
+      {
+       "lang": "en",
+       "text": "Albeit"
+      },
+      {
+       "lang": "tr",
+       "text": "yeter:"
+      },
+      {
+       "lang": "en",
+       "text": "Albeit near-natural, a species-rich field yields less."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Özetleyelim: gerçeği söyleme"
+     },
+     {
+      "lang": "en",
+      "text": "Much as"
+     },
+     {
+      "lang": "tr",
+      "text": "araya çekince"
+     },
+     {
+      "lang": "en",
+      "text": "albeit"
+     },
+     {
+      "lang": "tr",
+      "text": "bedeli gösterme"
+     },
+     {
+      "lang": "en",
+      "text": "Albeit site-adapted"
+     },
+     {
+      "lang": "tr",
+      "text": "Şimdi tarım tartışmasını sürdüreceksin."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Bir çiftçiyle tarım yöntemi tartışıyorsun ve onun sayılarını yok saymak istemiyorsun. Ödünü üç ayrı yerde ver ve her seferinde asıl savını sonra söyle.",
+   "partner": "çeşitliliği lüks sayan, «karnımızı doyuran verim» diyen bir çiftçi",
+   "opening": "Yield is what feeds us, isn't it?",
+   "openingTr": "Karnımızı doyuran verim, değil mi?",
+   "goal": "Ödünü üç ayrı yerde verip her seferinde asıl savını sonra söylediysen konuşma başarılı sayılır.",
+   "minTurns": 8
+  }
+ },
+ {
+  "id": "en-c1-the-vocabulary-of-farm-prices",
+  "level": "C1",
+  "course": "en",
+  "icon": "money",
+  "title": "The vocabulary of farm prices",
+  "titleTr": "Fiyat sözlüğü",
+  "summary": "Tarım fiyatı konuşmasının yerleşik eşdizimlerini öğretir; piyasayı anlatan söz ile üreticiyi anlatan söz aynı değildir.",
+  "minutes": 12,
+  "focusId": "Collocation in the vocabulary of farm prices",
+  "vocab": [
+   {
+    "de": "world market price",
+    "tr": "dünya piyasa fiyatı"
+   },
+   {
+    "de": "producer price",
+    "tr": "üretici fiyatı"
+   },
+   {
+    "de": "price volatility",
+    "tr": "fiyat oynaklığı"
+   },
+   {
+    "de": "free trade agreement",
+    "tr": "serbest ticaret anlaşması"
+   },
+   {
+    "de": "trade liberalization",
+    "tr": "ticaretin serbestleşmesi"
+   },
+   {
+    "de": "market organization",
+    "tr": "piyasa düzeni"
+   },
+   {
+    "de": "direct marketing",
+    "tr": "doğrudan pazarlama"
+   },
+   {
+    "de": "value chain",
+    "tr": "değer zinciri"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "A world market price is not a producer price.",
+    "tr": "iki eşdizimi karşı karşıya koyar"
+   },
+   {
+    "de": "Price volatility is measured; a free trade agreement is signed.",
+    "tr": "ölçme ile imzayı ayırır"
+   },
+   {
+    "de": "Trade liberalization and market organization pull apart.",
+    "tr": "iki eşdizimi karşıt yönde bağlar"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Bugün tarım fiyatı konuşmasının yerleşik eşdizimlerini öğreneceğiz."
+     },
+     {
+      "lang": "tr",
+      "text": "Piyasayı anlatan söz ile üreticiyi anlatan söz aynı değil; ikisini karıştıran cümle çiftçiyi bir kaleme çevirir. Hazır mısın?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "world market price"
+     },
+     {
+      "lang": "tr",
+      "text": "Dünya borsasında oluşan fiyat demek. İlk kalıbımız da bu. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "A world market price is not a producer price."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "A world market price is not a producer price."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Çiftçinin eline geçen fiyata"
+     },
+     {
+      "lang": "en",
+      "text": "producer price"
+     },
+     {
+      "lang": "tr",
+      "text": "fiyatın hızla inip çıkmasına ise"
+     },
+     {
+      "lang": "en",
+      "text": "price volatility"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İkinci kalıbımız ölçme ile imzayı ayırıyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "Price volatility is measured; a free trade agreement is signed."
+     },
+     {
+      "lang": "tr",
+      "text": "Fiyat oynaklığı ölçülür, serbest ticaret anlaşması imzalanır."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Price volatility is measured; a free trade agreement is signed."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Gümrükleri kaldıran antlaşmaya"
+     },
+     {
+      "lang": "en",
+      "text": "free trade agreement"
+     },
+     {
+      "lang": "tr",
+      "text": "ticaretin kurallarının gevşemesine ise"
+     },
+     {
+      "lang": "en",
+      "text": "trade liberalization"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son kalıbımız iki eşdizimi karşıt yönde bağlıyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "Trade liberalization and market organization pull apart."
+     },
+     {
+      "lang": "tr",
+      "text": "Ticaretin serbestleşmesi ve piyasa düzeni ters yöne çekiyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Trade liberalization and market organization pull apart."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi dersin kuralı. Fiyat sözlüğünde eşdizim KİMİN fiyatı olduğunu söyler:"
+     },
+     {
+      "lang": "en",
+      "text": "world market price"
+     },
+     {
+      "lang": "tr",
+      "text": "kimsenin denetlemediği bir sayıdır,"
+     },
+     {
+      "lang": "en",
+      "text": "producer price"
+     },
+     {
+      "lang": "tr",
+      "text": "ise bir hanenin gelirini anlatır. İkisini aynı cümlede kullanmak çiftçiyi borsa kalemi yapar."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sıra sende: Dünya piyasa fiyatı bir ücret değildir."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "A world market price is not a wage.",
+     "accept": [
+      "A world market price is not an income.",
+      "A world market price is not a producer price."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "İki eşdizimi karşı karşıya koymak için"
+      },
+      {
+       "lang": "en",
+       "text": "is not"
+      },
+      {
+       "lang": "tr",
+       "text": "yeter:"
+      },
+      {
+       "lang": "en",
+       "text": "A world market price is not a wage."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kontrol. Şu cümle doğru mu?"
+     },
+     {
+      "lang": "en",
+      "text": "Price volatility is measured; a free trade agreement is signed."
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "Price volatility is measured; a free trade agreement is signed.",
+     "answer": true,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Doğru. Biri istatistiğin, öteki hukukun eşdizimi; fiiller de o yüzden ayrı."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Piyasanın kurallarla düzenlenmesine"
+     },
+     {
+      "lang": "en",
+      "text": "market organization"
+     },
+     {
+      "lang": "tr",
+      "text": "aracısız satışa ise"
+     },
+     {
+      "lang": "en",
+      "text": "direct marketing"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "Direct marketing shortens the value chain."
+     },
+     {
+      "lang": "tr",
+      "text": "Doğrudan pazarlama değer zincirini kısaltıyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Direct marketing shortens the value chain."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Tarladan sofraya kadar değer katan halkaların bütününe"
+     },
+     {
+      "lang": "en",
+      "text": "value chain"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sen kur: Ticaretin serbestleşmesi ve arz güvenliği ters yöne çekiyor."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "Trade liberalization and supply security pull apart.",
+     "accept": [
+      "Trade liberalization and the standard pull apart.",
+      "Trade liberalization and market organization pull apart."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "İki eşdizimi karşıt yönde bağlamak için"
+      },
+      {
+       "lang": "en",
+       "text": "pull apart"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "Trade liberalization and supply security pull apart."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Eşdizim seçmek fiyatın kimin sorunu olduğunu seçmektir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The collocation picks the loser."
+     },
+     {
+      "lang": "tr",
+      "text": "Kaybedeni eşdizim seçiyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The collocation picks the loser."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir tane daha: Fiyat oynaklığı ölçülür, antlaşma imzalanır."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "Price volatility is measured; a treaty is signed.",
+     "accept": [
+      "Price volatility is measured; a contract is signed.",
+      "Price volatility is measured; a free trade agreement is signed."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Ölçme ile imzayı ayırmak için iki edilgen fiil kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "Price volatility is measured; a treaty is signed."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Özetleyelim: borsa"
+     },
+     {
+      "lang": "en",
+      "text": "world market price"
+     },
+     {
+      "lang": "tr",
+      "text": "hane"
+     },
+     {
+      "lang": "en",
+      "text": "producer price"
+     },
+     {
+      "lang": "tr",
+      "text": "aracısız"
+     },
+     {
+      "lang": "en",
+      "text": "direct marketing"
+     },
+     {
+      "lang": "tr",
+      "text": "Şimdi fiyat sözlüğünü kullanacaksın."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Süt fiyatı üstüne bir tartışmadasın ve çiftçiyi borsa kalemi gibi anlatmak istemiyorsun. Borsayı, haneyi ve aracısız satışı üç ayrı eşdizimle adlandır.",
+   "partner": "her fiyatı arz talep sayan, «piyasa böyle diyor» diyen biri",
+   "opening": "The market decides, doesn't it?",
+   "openingTr": "Piyasa karar veriyor, değil mi?",
+   "goal": "Borsayı, haneyi ve aracısız satışı üç ayrı eşdizimle adlandırdıysan konuşma başarılı sayılır.",
+   "minTurns": 8
+  }
+ },
+ {
+  "id": "en-c1-reporting-the-label",
+  "level": "C1",
+  "course": "en",
+  "icon": "shopping",
+  "title": "Reporting the label",
+  "titleTr": "Etiketi aktarmak",
+  "summary": "Etiket iddialarını aktarırken hükmü fiile yüklemeyi öğretir; aktarma fiili iddiayı savunur ya da askıya alır.",
+  "minutes": 12,
+  "focusId": "Reporting verbs in food labelling",
+  "vocab": [
+   {
+    "de": "origin labeling",
+    "tr": "menşe etiketlemesi"
+   },
+   {
+    "de": "traceability",
+    "tr": "izlenebilirlik"
+   },
+   {
+    "de": "sustainability report",
+    "tr": "sürdürülebilirlik raporu"
+   },
+   {
+    "de": "field research",
+    "tr": "saha araştırması"
+   },
+   {
+    "de": "knowledge transfer",
+    "tr": "bilgi aktarımı"
+   },
+   {
+    "de": "agronomic",
+    "tr": "agronomik"
+   },
+   {
+    "de": "plant variety protection",
+    "tr": "bitki çeşidi koruması"
+   },
+   {
+    "de": "point of contention",
+    "tr": "anlaşmazlık konusu"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "One defends the origin labeling; another doubts the traceability.",
+    "tr": "iki aktarmayı karşı karşıya koyar"
+   },
+   {
+    "de": "The sustainability report claims what the field research assumes.",
+    "tr": "iddia ile varsayımı ayırır"
+   },
+   {
+    "de": "To call it knowledge transfer is not to call it agronomic advice.",
+    "tr": "iki adlandırmayı ayırır"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Bugün etiket iddialarını aktarırken hükmü fiile yüklemeyi öğreneceğiz."
+     },
+     {
+      "lang": "tr",
+      "text": "Aktarma fiili iddiayı savunur ya da askıya alır; alıcı da çoğu zaman etiketi değil o fiili duyar. Hazır mısın?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "origin labeling"
+     },
+     {
+      "lang": "tr",
+      "text": "Ürünün nereden geldiğinin yazılması demek. İlk kalıbımız da bu. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "One defends the origin labeling; another doubts the traceability."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "One defends the origin labeling; another doubts the traceability."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir ürünün yolunun geriye doğru izlenebilmesine"
+     },
+     {
+      "lang": "en",
+      "text": "traceability"
+     },
+     {
+      "lang": "tr",
+      "text": "şirketin kendi sürdürülebilirlik anlatısına ise"
+     },
+     {
+      "lang": "en",
+      "text": "sustainability report"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İkinci kalıbımız iddia ile varsayımı ayırıyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "The sustainability report claims what the field research assumes."
+     },
+     {
+      "lang": "tr",
+      "text": "Sürdürülebilirlik raporu, saha araştırmasının varsaydığını iddia ediyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The sustainability report claims what the field research assumes."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Tarlada yapılan incelemeye"
+     },
+     {
+      "lang": "en",
+      "text": "field research"
+     },
+     {
+      "lang": "tr",
+      "text": "bilenden bilmeyene aktarma işine ise"
+     },
+     {
+      "lang": "en",
+      "text": "knowledge transfer"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son kalıbımız iki adlandırmayı ayırıyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "To call it knowledge transfer is not to call it agronomic advice."
+     },
+     {
+      "lang": "tr",
+      "text": "Ona bilgi aktarımı demek agronomik tavsiye demek değildir."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "To call it knowledge transfer is not to call it agronomic advice."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi dersin kuralı. Etiket tartışmasında fiil iddiayı taşır:"
+     },
+     {
+      "lang": "en",
+      "text": "defends"
+     },
+     {
+      "lang": "tr",
+      "text": "iddiayı sahiplenir,"
+     },
+     {
+      "lang": "en",
+      "text": "doubts"
+     },
+     {
+      "lang": "tr",
+      "text": "ise onu askıya alır. Etiketin kendisi değişmiyor; değişen, aktaranın onu ne kadar sahiplendiği."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sıra sende: Biri etiketi savunuyor, öteki izlenebilirlikten kuşku duyuyor."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "One defends the label; another doubts the traceability.",
+     "accept": [
+      "One defends the claim; another doubts the traceability.",
+      "One defends the origin labeling; another doubts the traceability."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "İki aktarmayı karşı karşıya koymak için"
+      },
+      {
+       "lang": "en",
+       "text": "defends … doubts"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "One defends the label; another doubts the traceability."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kontrol. Şu cümle doğru mu?"
+     },
+     {
+      "lang": "en",
+      "text": "To call it knowledge transfer is not to call it agronomic advice."
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "To call it knowledge transfer is not to call it agronomic advice.",
+     "answer": true,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Doğru. Biri bir aktarımı adlandırıyor, öteki uzmanlık iddiası taşıyor."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Toprak ve bitki bilimine ilişkin olana"
+     },
+     {
+      "lang": "en",
+      "text": "agronomic"
+     },
+     {
+      "lang": "tr",
+      "text": "bir çeşidi geliştirenin hakkını koruyan düzene ise"
+     },
+     {
+      "lang": "en",
+      "text": "plant variety protection"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "Plant variety protection remains a point of contention."
+     },
+     {
+      "lang": "tr",
+      "text": "Bitki çeşidi koruması bir anlaşmazlık konusu olarak duruyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Plant variety protection remains a point of contention."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Üzerinde uzlaşılamayan noktaya"
+     },
+     {
+      "lang": "en",
+      "text": "point of contention"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sen kur: Rapor, saha araştırmasının varsaydığını iddia ediyor."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "The report claims what the field research assumes.",
+     "accept": [
+      "The brochure claims what the field research assumes.",
+      "The sustainability report claims what the field research assumes."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "İddia ile varsayımı ayırmak için"
+      },
+      {
+       "lang": "en",
+       "text": "claims what … assumes"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "The report claims what the field research assumes."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir etiketi aktaran kişi, onu ne kadar sahiplendiğini de söyler."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The verb signs the claim."
+     },
+     {
+      "lang": "tr",
+      "text": "İddiayı fiil imzalıyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The verb signs the claim."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir tane daha: Ona tavsiye demek agronomik tavsiye demek değildir."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "To call it advice is not to call it agronomic advice.",
+     "accept": [
+      "To call it help is not to call it agronomic advice.",
+      "To call it knowledge transfer is not to call it agronomic advice."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "İki adlandırmayı ayırmak için"
+      },
+      {
+       "lang": "en",
+       "text": "is not to call it"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "To call it advice is not to call it agronomic advice."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Özetleyelim: sahiplenme"
+     },
+     {
+      "lang": "en",
+      "text": "defends"
+     },
+     {
+      "lang": "tr",
+      "text": "askıya alma"
+     },
+     {
+      "lang": "en",
+      "text": "doubts"
+     },
+     {
+      "lang": "tr",
+      "text": "uzmanlık"
+     },
+     {
+      "lang": "en",
+      "text": "agronomic"
+     },
+     {
+      "lang": "tr",
+      "text": "Şimdi bir etiket iddiasını iki fiille aktaracaksın."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Bir gıda etiketinin iddialarını arkadaşına aktarıyorsun ve ne kadarını sahiplendiğini göstermek istiyorsun. İki aktarmayı iki ayrı fiille söyle ve farkı adlandır.",
+   "partner": "etikete olduğu gibi inanan, «üstünde yazıyor ya» diyen bir arkadaş",
+   "opening": "It says so on the label, doesn't it?",
+   "openingTr": "Etiketin üstünde yazıyor, değil mi?",
+   "goal": "İki aktarmayı iki ayrı fiille söylediysen ve aradaki farkı adlandırdıysan konuşma başarılı sayılır.",
+   "minTurns": 8
+  }
+ },
+ {
+  "id": "en-c1-how-long-does-soil-last",
+  "level": "C1",
+  "course": "en",
+  "icon": "sun",
+  "title": "How long does soil last",
+  "titleTr": "Toprak ne kadar dayanır",
+  "summary": "Toprağın geleceği üstüne konuşurken kipin koyduğu mesafeyi öğretir; kesin felaket cümlesi tartışmayı kapatıyor.",
+  "minutes": 12,
+  "focusId": "Modal nuance in talk about soil",
+  "vocab": [
+   {
+    "de": "soil erosion",
+    "tr": "toprak erozyonu"
+   },
+   {
+    "de": "deplete",
+    "tr": "tüketmek"
+   },
+   {
+    "de": "overfertilize",
+    "tr": "aşırı gübrelemek"
+   },
+   {
+    "de": "nitrate pollution",
+    "tr": "nitrat kirliliği"
+   },
+   {
+    "de": "pesticide use",
+    "tr": "pestisit kullanımı"
+   },
+   {
+    "de": "pollinate",
+    "tr": "tozlaştırmak"
+   },
+   {
+    "de": "plant protection product",
+    "tr": "bitki koruma ilacı"
+   },
+   {
+    "de": "seep away",
+    "tr": "sızıp gitmek"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "Soil erosion may well deplete the field in one generation.",
+    "tr": "kabul edilebilir okumayı işaretler"
+   },
+   {
+    "de": "To overfertilize might mean nitrate pollution downstream.",
+    "tr": "olasılığı uzak tutar"
+   },
+   {
+    "de": "Pesticide use may kill what should pollinate and let the plant protection product seep away.",
+    "tr": "iki sonucu tek kipin altına koyar"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Bugün toprağın geleceği üstüne konuşurken kipin koyduğu mesafeyi öğreneceğiz."
+     },
+     {
+      "lang": "tr",
+      "text": "Kesin felaket cümlesi tartışmayı kapatıyor; kip ise karşındakini masada tutuyor. Hazır mısın?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "soil erosion"
+     },
+     {
+      "lang": "tr",
+      "text": "Üst toprağın su ve rüzgârla gitmesi demek. İlk kalıbımız da bu. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "Soil erosion may well deplete the field in one generation."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Soil erosion may well deplete the field in one generation."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kaynağı bitirene kadar kullanmaya"
+     },
+     {
+      "lang": "en",
+      "text": "deplete"
+     },
+     {
+      "lang": "tr",
+      "text": "gereğinden çok gübre vermeye ise"
+     },
+     {
+      "lang": "en",
+      "text": "overfertilize"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İkinci kalıbımız olasılığı uzak tutuyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "To overfertilize might mean nitrate pollution downstream."
+     },
+     {
+      "lang": "tr",
+      "text": "Aşırı gübrelemek aşağı havzada nitrat kirliliği anlamına gelebilir."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "To overfertilize might mean nitrate pollution downstream."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Suya karışan gübre artığına"
+     },
+     {
+      "lang": "en",
+      "text": "nitrate pollution"
+     },
+     {
+      "lang": "tr",
+      "text": "zararlıya karşı ilaç kullanımına ise"
+     },
+     {
+      "lang": "en",
+      "text": "pesticide use"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son kalıbımız iki sonucu tek kipin altına koyuyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "Pesticide use may kill what should pollinate and let the plant protection product seep away."
+     },
+     {
+      "lang": "tr",
+      "text": "Pestisit kullanımı tozlaştırması gerekeni öldürebilir ve bitki koruma ilacının sızıp gitmesine yol açabilir."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Pesticide use may kill what should pollinate and let the plant protection product seep away."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi dersin kuralı. Çevre konuşmasında kip inandırıcılığın kendisidir:"
+     },
+     {
+      "lang": "en",
+      "text": "may well"
+     },
+     {
+      "lang": "tr",
+      "text": "ölçülmüş bir eğilime dayandığını,"
+     },
+     {
+      "lang": "en",
+      "text": "might"
+     },
+     {
+      "lang": "tr",
+      "text": "ise bunun bir senaryo olduğunu söyler. Kesin söylenen bir felaket, bir kez gerçekleşmezse bütün savı götürür."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sıra sende: Toprak erozyonu bir kuşakta yamacı tüketebilir."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "Soil erosion may well deplete the slope in one generation.",
+     "accept": [
+      "Soil erosion may well deplete the hill in one generation.",
+      "Soil erosion may well deplete the field in one generation."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Kabul edilebilir okumayı işaretlemek için"
+      },
+      {
+       "lang": "en",
+       "text": "may well"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "Soil erosion may well deplete the slope in one generation."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kontrol. Şu cümle doğru mu?"
+     },
+     {
+      "lang": "en",
+      "text": "To overfertilize might mean nitrate pollution downstream."
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "To overfertilize might mean nitrate pollution downstream.",
+     "answer": true,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Doğru. «might» iddiayı uzakta tutuyor; cümle bir senaryo olarak kalıyor."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Çiçekten çiçeğe tozu taşımaya"
+     },
+     {
+      "lang": "en",
+      "text": "pollinate"
+     },
+     {
+      "lang": "tr",
+      "text": "bitkiyi hastalıktan koruyan kimyasala ise"
+     },
+     {
+      "lang": "en",
+      "text": "plant protection product"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The rain lets the nitrate seep away."
+     },
+     {
+      "lang": "tr",
+      "text": "Yağmur nitratın sızıp gitmesine yol açıyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The rain lets the nitrate seep away."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Toprağa işleyip kaybolmaya"
+     },
+     {
+      "lang": "en",
+      "text": "seep away"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sen kur: Aşırı gübrelemek kuyuda nitrat kirliliği anlamına gelebilir."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "To overfertilize might mean nitrate pollution in the well.",
+     "accept": [
+      "To overfertilize might mean nitrate pollution in the river.",
+      "To overfertilize might mean nitrate pollution downstream."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Olasılığı uzak tutmak için"
+      },
+      {
+       "lang": "en",
+       "text": "might"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "To overfertilize might mean nitrate pollution in the well."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Kip burada korkuyu değil, kanıtın ne kadar uzandığını ölçer."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The modal measures the evidence."
+     },
+     {
+      "lang": "tr",
+      "text": "Kip kanıtı ölçüyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The modal measures the evidence."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir tane daha: Pestisit kullanımı tozlaştırması gerekeni öldürebilir ve ilacın sızıp gitmesine yol açabilir."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "Pesticide use may kill what should pollinate and let the spray seep away.",
+     "accept": [
+      "Pesticide use may kill what should pollinate and let the poison seep away.",
+      "Pesticide use may kill what should pollinate and let the plant protection product seep away."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "İki sonucu tek kipin altına koymak için"
+      },
+      {
+       "lang": "en",
+       "text": "may"
+      },
+      {
+       "lang": "tr",
+       "text": "bir kez söylenir:"
+      },
+      {
+       "lang": "en",
+       "text": "Pesticide use may kill what should pollinate and let the spray seep away."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Özetleyelim: ölçülmüş"
+     },
+     {
+      "lang": "en",
+      "text": "may well"
+     },
+     {
+      "lang": "tr",
+      "text": "senaryo"
+     },
+     {
+      "lang": "en",
+      "text": "might"
+     },
+     {
+      "lang": "tr",
+      "text": "ortak kip"
+     },
+     {
+      "lang": "en",
+      "text": "may"
+     },
+     {
+      "lang": "tr",
+      "text": "Şimdi toprağın geleceğini anlatacaksın."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Bir tarladaki toprak sorununu çiftçiye anlatıyorsun ve abartarak güvenini kaybetmek istemiyorsun. Üç ayrı kip derecesi kur ve her birinde kanıtının nereye kadar uzandığını söyle.",
+   "partner": "her uyarıyı felaket senaryosu sayan, «her yıl böyle diyorlar» diyen bir çiftçi",
+   "opening": "They say that every year, don't they?",
+   "openingTr": "Her yıl böyle diyorlar, değil mi?",
+   "goal": "Üç ayrı kip derecesiyle anlattıysan ve her birinde kanıtının sınırını söylediysen konuşma başarılı sayılır.",
+   "minTurns": 8
+  }
+ },
+ {
+  "id": "en-c1-species-appropriate-indeed",
+  "level": "C1",
+  "course": "en",
+  "icon": "dog",
+  "title": "Species-appropriate indeed",
+  "titleTr": "Türüne uygun, tabii",
+  "summary": "Hayvancılık tanıtım dilini alayla eleştirmeyi öğretir; kurumun kendi sözcüğü en sağlam eleştiri malzemesi olur.",
+  "minutes": 12,
+  "focusId": "Irony and understatement about animal farming",
+  "vocab": [
+   {
+    "de": "lush",
+    "tr": "gür"
+   },
+   {
+    "de": "factory farming",
+    "tr": "endüstriyel hayvancılık"
+   },
+   {
+    "de": "species-appropriate",
+    "tr": "türüne uygun"
+   },
+   {
+    "de": "milk quota",
+    "tr": "süt kotası"
+   },
+   {
+    "de": "skim off",
+    "tr": "kaymağını almak"
+   },
+   {
+    "de": "throwaway society",
+    "tr": "kullan-at toplumu"
+   },
+   {
+    "de": "negligent",
+    "tr": "ihmalkâr"
+   },
+   {
+    "de": "grow rampantly",
+    "tr": "aşırı büyümek"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "The pasture was lush; the barn, less so.",
+    "tr": "eksik söyleyip çok kasteder"
+   },
+   {
+    "de": "We have no factory farming here; we have species-appropriate housing.",
+    "tr": "yalanlayıp aynı şeyi doğrular"
+   },
+   {
+    "de": "The milk quota, they said, and rather good for the small farm.",
+    "tr": "övgüyü aktarıp tersine çevirir"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Bugün hayvancılık tanıtım dilini alayla eleştirmeyi öğreneceğiz."
+     },
+     {
+      "lang": "tr",
+      "text": "Kurumun kendi sözcüğü en sağlam eleştiri malzemesi olur; onu değiştirmeden kullanmak yeter. Hazır mısın?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "lush"
+     },
+     {
+      "lang": "tr",
+      "text": "Bol ve yeşil demek. İlk kalıbımız da bu. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "The pasture was lush; the barn, less so."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The pasture was lush; the barn, less so."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Hayvanların sıkışık ve hızlı yetiştirilmesine"
+     },
+     {
+      "lang": "en",
+      "text": "factory farming"
+     },
+     {
+      "lang": "tr",
+      "text": "hayvanın kendi doğasına uygun tutulmasına ise"
+     },
+     {
+      "lang": "en",
+      "text": "species-appropriate"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İkinci kalıbımız yalanlayıp aynı şeyi doğruluyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "We have no factory farming here; we have species-appropriate housing."
+     },
+     {
+      "lang": "tr",
+      "text": "Burada endüstriyel hayvancılık yok, türüne uygun barındırma var."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "We have no factory farming here; we have species-appropriate housing."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Çiftliğin satabileceği süt sınırına"
+     },
+     {
+      "lang": "en",
+      "text": "milk quota"
+     },
+     {
+      "lang": "tr",
+      "text": "en kârlı kısmı alıp gerisini bırakmaya ise"
+     },
+     {
+      "lang": "en",
+      "text": "skim off"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son kalıbımız övgüyü aktarıp tersine çeviriyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "The milk quota, they said, and rather good for the small farm."
+     },
+     {
+      "lang": "tr",
+      "text": "Süt kotası, dediler, üstelik küçük çiftliğe iyi geliyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The milk quota, they said, and rather good for the small farm."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi dersin kuralı. Alay tanıtım sözcüğünü değiştirmeden kullanınca doğar:"
+     },
+     {
+      "lang": "en",
+      "text": "species-appropriate"
+     },
+     {
+      "lang": "tr",
+      "text": "kurumun kendi seçtiği sözcüktür; onu bir eksiltmenin yanına koyunca hiçbir suçlama gerekmez, boşluğu dinleyen doldurur."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sıra sende: Tarla gürdü, ahır pek değil."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "The field was lush; the barn, less so.",
+     "accept": [
+      "The meadow was lush; the barn, less so.",
+      "The pasture was lush; the barn, less so."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Eksik söyleyip çok kastetmek için ikinci yarıda fiil düşürülür:"
+      },
+      {
+       "lang": "en",
+       "text": "The field was lush; the barn, less so."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kontrol. Şu cümle doğru mu?"
+     },
+     {
+      "lang": "en",
+      "text": "We have no factory farming here; we have species-appropriate housing."
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "We have no factory farming here; we have species-appropriate housing.",
+     "answer": true,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Doğru. Cümle önce yalanlıyor, sonra aynı şeyi kurumun kendi sözcüğüyle doğruluyor."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The middlemen skim off the margin; the throwaway society pays."
+     },
+     {
+      "lang": "tr",
+      "text": "Aracılar kaymağını alıyor, bedeli kullan-at toplumu ödüyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The middlemen skim off the margin; the throwaway society pays."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Kullanıp atmayı olağan sayan düzene"
+     },
+     {
+      "lang": "en",
+      "text": "throwaway society"
+     },
+     {
+      "lang": "tr",
+      "text": "gerekeni yapmayana ise"
+     },
+     {
+      "lang": "en",
+      "text": "negligent"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sen kur: Burada endüstriyel hayvancılık yok, modern barındırma var."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "We have no factory farming here; we have modern housing.",
+     "accept": [
+      "We have no factory farming here; we have new housing.",
+      "We have no factory farming here; we have species-appropriate housing."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Yalanlayıp aynı şeyi doğrulamak için"
+      },
+      {
+       "lang": "en",
+       "text": "We have no … we have"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "We have no factory farming here; we have modern housing."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "Nobody was negligent; the paperwork just began to grow rampantly."
+     },
+     {
+      "lang": "tr",
+      "text": "Kimse ihmalkâr değildi, yalnız evrak aşırı büyüdü."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Nobody was negligent; the paperwork just began to grow rampantly."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Denetimsiz çoğalmaya"
+     },
+     {
+      "lang": "en",
+      "text": "grow rampantly"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     },
+     {
+      "lang": "tr",
+      "text": "Alay burada suçlamıyor; suçlamayı dinleyene bırakıyor."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir tane daha: Süt kotası, dediler, üstelik bölgeye iyi geliyor."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "The milk quota, they said, and rather good for the region.",
+     "accept": [
+      "The milk quota, they said, and rather good for the village.",
+      "The milk quota, they said, and rather good for the small farm."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Övgüyü aktarıp tersine çevirmek için"
+      },
+      {
+       "lang": "en",
+       "text": "they said, and rather"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "The milk quota, they said, and rather good for the region."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Özetleyelim: eksiltme"
+     },
+     {
+      "lang": "en",
+      "text": "the barn, less so"
+     },
+     {
+      "lang": "tr",
+      "text": "yalanlayıp doğrulama"
+     },
+     {
+      "lang": "en",
+      "text": "We have no … we have"
+     },
+     {
+      "lang": "tr",
+      "text": "aktarma"
+     },
+     {
+      "lang": "en",
+      "text": "they said, and rather"
+     },
+     {
+      "lang": "tr",
+      "text": "Şimdi tanıtım dilini alayla eleştireceksin."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Bir çiftliğin tanıtım diliyle gördüklerin arasındaki farkı anlatıyorsun ve açıkça suçlamak istemiyorsun. Üç cümlede eksilterek eleştir ve çiftliğin kendi sözcüklerini kullan.",
+   "partner": "tanıtım broşürünü tekrarlayan, «sertifikası var» diyen biri",
+   "opening": "They have the certificate, don't they?",
+   "openingTr": "Sertifikaları var, değil mi?",
+   "goal": "Üç cümlede eksilterek eleştirdiysen ve çiftliğin kendi sözcüklerini kullandıysan konuşma başarılı sayılır.",
+   "minTurns": 8
+  }
+ },
+ {
+  "id": "en-c1-holding-a-climate-report-together",
+  "level": "C1",
+  "course": "en",
+  "icon": "recycle",
+  "title": "Holding a climate report together",
+  "titleTr": "İklim raporunu bağlamak",
+  "summary": "Uzun bir iklim raporunu bağlayan adresleri öğretir; her ölçüt başka bir bölgede başka sonuç verdiği için bağ zorunlu.",
+  "minutes": 13,
+  "focusId": "Cohesion across a climate report",
+  "vocab": [
+   {
+    "de": "climate adaptation",
+    "tr": "iklime uyum"
+   },
+   {
+    "de": "climate justice",
+    "tr": "iklim adaleti"
+   },
+   {
+    "de": "environmental compatibility",
+    "tr": "çevreyle uyumluluk"
+   },
+   {
+    "de": "environmental ethics",
+    "tr": "çevre etiği"
+   },
+   {
+    "de": "import-dependent",
+    "tr": "ithalata bağımlı"
+   },
+   {
+    "de": "across the board",
+    "tr": "her alanda"
+   },
+   {
+    "de": "decouple",
+    "tr": "ayrıştırmak"
+   },
+   {
+    "de": "diversify",
+    "tr": "çeşitlendirmek"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "The climate adaptation above becomes climate justice below.",
+    "tr": "yukarıyı aşağıya bağlar"
+   },
+   {
+    "de": "That environmental compatibility, as noted, is the environmental ethics of an earlier page.",
+    "tr": "geri göndermeyi araya koyar"
+   },
+   {
+    "de": "Where a region is import-dependent, no measure works across the board.",
+    "tr": "iki bölümü tek cümlede bağlar"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Bugün uzun bir iklim raporunu bağlayan adresleri öğreneceğiz."
+     },
+     {
+      "lang": "tr",
+      "text": "Her ölçüt başka bir bölgede başka sonuç verdiği için bağ zorunlu; adres yoksa okur her bölümü ayrı bir dünya sanır. Hazır mısın?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "climate adaptation"
+     },
+     {
+      "lang": "tr",
+      "text": "Değişen iklime göre düzen kurma demek. İlk kalıbımız da bu. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "The climate adaptation above becomes climate justice below."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The climate adaptation above becomes climate justice below."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İklim yükünün adil bölüşülmesine"
+     },
+     {
+      "lang": "en",
+      "text": "climate justice"
+     },
+     {
+      "lang": "tr",
+      "text": "bir işin çevreye uygunluğuna ise"
+     },
+     {
+      "lang": "en",
+      "text": "environmental compatibility"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İkinci kalıbımız geri göndermeyi araya koyuyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "That environmental compatibility, as noted, is the environmental ethics of an earlier page."
+     },
+     {
+      "lang": "tr",
+      "text": "O çevreyle uyumluluk, belirtildiği gibi, önceki bir sayfanın çevre etiğidir."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "That environmental compatibility, as noted, is the environmental ethics of an earlier page."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Doğaya karşı sorumluluğu soran dala"
+     },
+     {
+      "lang": "en",
+      "text": "environmental ethics"
+     },
+     {
+      "lang": "tr",
+      "text": "gıdasını dışarıdan alana ise"
+     },
+     {
+      "lang": "en",
+      "text": "import-dependent"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son kalıbımız iki bölümü tek cümlede bağlıyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "Where a region is import-dependent, no measure works across the board."
+     },
+     {
+      "lang": "tr",
+      "text": "Bir bölge ithalata bağımlıysa hiçbir önlem her alanda işe yaramaz."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Where a region is import-dependent, no measure works across the board."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi dersin kuralı. İklim raporunda adres bir KOŞUL taşır:"
+     },
+     {
+      "lang": "en",
+      "text": "above"
+     },
+     {
+      "lang": "tr",
+      "text": "ve"
+     },
+     {
+      "lang": "en",
+      "text": "below"
+     },
+     {
+      "lang": "tr",
+      "text": "ölçütün nerede geçerli olduğunu,"
+     },
+     {
+      "lang": "en",
+      "text": "as noted"
+     },
+     {
+      "lang": "tr",
+      "text": "ise hangi varsayımla yazıldığını söyler. Adres düşerse ölçüt evrensel sanılır ve yanlış bölgeye uygulanır."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sıra sende: Yukarıdaki iklime uyum aşağıda bir maliyete dönüşüyor."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "The climate adaptation above becomes a cost below.",
+     "accept": [
+      "The climate adaptation above becomes a burden below.",
+      "The climate adaptation above becomes climate justice below."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Yukarıyı aşağıya bağlamak için"
+      },
+      {
+       "lang": "en",
+       "text": "above … below"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "The climate adaptation above becomes a cost below."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kontrol. Şu cümle doğru mu?"
+     },
+     {
+      "lang": "en",
+      "text": "Where a region is import-dependent, no measure works across the board."
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "Where a region is import-dependent, no measure works across the board.",
+     "answer": true,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Doğru. İki bölüm tek cümlede bağlanmış; koşul ile sınır aynı yerde duruyor."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Ayrımsız her yerde geçerli olana"
+     },
+     {
+      "lang": "en",
+      "text": "across the board"
+     },
+     {
+      "lang": "tr",
+      "text": "iki şeyin bağını koparmaya ise"
+     },
+     {
+      "lang": "en",
+      "text": "decouple"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "To decouple is not to diversify."
+     },
+     {
+      "lang": "tr",
+      "text": "Ayrıştırmak çeşitlendirmek değildir."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "To decouple is not to diversify."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Tek kaynağa bağlı kalmayıp seçenek çoğaltmaya"
+     },
+     {
+      "lang": "en",
+      "text": "diversify"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sen kur: O önlem, belirtildiği gibi, önceki bir sayfanın çevre etiğidir."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "That measure, as noted, is the environmental ethics of an earlier page.",
+     "accept": [
+      "That rule, as noted, is the environmental ethics of an earlier page.",
+      "That environmental compatibility, as noted, is the environmental ethics of an earlier page."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Geri göndermeyi araya koymak için"
+      },
+      {
+       "lang": "en",
+       "text": "as noted"
+      },
+      {
+       "lang": "tr",
+       "text": "iki virgül arasına girer:"
+      },
+      {
+       "lang": "en",
+       "text": "That measure, as noted, is the environmental ethics of an earlier page."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İklim raporunda adres yoksa ölçüt evrensel sanılır ve yanlış yere uygulanır."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The address carries the condition."
+     },
+     {
+      "lang": "tr",
+      "text": "Koşulu adres taşıyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The address carries the condition."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir tane daha: Bir çiftlik ithalata bağımlıysa hiçbir önlem her alanda işe yaramaz."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "Where a farm is import-dependent, no measure works across the board.",
+     "accept": [
+      "Where a country is import-dependent, no measure works across the board.",
+      "Where a region is import-dependent, no measure works across the board."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "İki bölümü tek cümlede bağlamak için"
+      },
+      {
+       "lang": "en",
+       "text": "Where … no"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "Where a farm is import-dependent, no measure works across the board."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Özetleyelim: yer"
+     },
+     {
+      "lang": "en",
+      "text": "above"
+     },
+     {
+      "lang": "tr",
+      "text": "ve"
+     },
+     {
+      "lang": "en",
+      "text": "below"
+     },
+     {
+      "lang": "tr",
+      "text": "geri gönderme"
+     },
+     {
+      "lang": "en",
+      "text": "as noted"
+     },
+     {
+      "lang": "tr",
+      "text": "bağlama"
+     },
+     {
+      "lang": "en",
+      "text": "Where … no"
+     },
+     {
+      "lang": "tr",
+      "text": "Şimdi bir iklim raporunu bağlayacaksın."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Bir iklim raporunu sözlü olarak özetliyorsun ve dinleyen ölçütleri kendi bölgesine uygulayacak. Yukarı, aşağı ve geri gönderme adresleriyle üç bölümü birbirine bağla.",
+   "partner": "her ölçütü evrensel sayan, «o zaman bizde de öyle olur» diyen biri",
+   "opening": "So it works the same for us?",
+   "openingTr": "Yani bizde de aynı olur mu?",
+   "goal": "Üç bölümü yukarı, aşağı ve geri gönderme adresleriyle birbirine bağladıysan konuşma başarılı sayılır.",
+   "minTurns": 8
+  }
+ },
+ {
+  "id": "en-c1-what-the-seed-leaves-unsaid",
+  "level": "C1",
+  "course": "en",
+  "icon": "key",
+  "title": "What the seed leaves unsaid",
+  "titleTr": "Tohumun söylemediği",
+  "summary": "Tohum hakları üstüne konuşurken düşen öğeyi öğretir; sözleşmede yazmayan şey çiftçinin kaybettiği haktır.",
+  "minutes": 13,
+  "focusId": "Ellipsis in talk about seed rights",
+  "vocab": [
+   {
+    "de": "seed replanting right",
+    "tr": "tohumu yeniden ekme hakkı"
+   },
+   {
+    "de": "genetic engineering",
+    "tr": "genetik mühendisliği"
+   },
+   {
+    "de": "reforest",
+    "tr": "yeniden ağaçlandırmak"
+   },
+   {
+    "de": "deforest",
+    "tr": "ormansızlaştırmak"
+   },
+   {
+    "de": "precipitation",
+    "tr": "yağış"
+   },
+   {
+    "de": "make scarce",
+    "tr": "kıt hale getirmek"
+   },
+   {
+    "de": "dig over",
+    "tr": "bellemek"
+   },
+   {
+    "de": "close to the consumer",
+    "tr": "tüketiciye yakın"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "The seed replanting right survives as custom, genetic engineering as a patent.",
+    "tr": "ikinci yarıda yüklemi düşürür"
+   },
+   {
+    "de": "They reforest the hillside; the plain, they deforest.",
+    "tr": "ikinci yarıda nesneyi başa alır"
+   },
+   {
+    "de": "The precipitation fell; the harvest did not.",
+    "tr": "yüklemi yardımcı fiile indirir"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Bugün tohum hakları üstüne konuşurken düşen öğeyi öğreneceğiz."
+     },
+     {
+      "lang": "tr",
+      "text": "Sözleşmede yazmayan şey çiftçinin kaybettiği haktır; bu yüzden eksiltmeyi okumak burada bir hak bilgisi. Hazır mısın?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "seed replanting right"
+     },
+     {
+      "lang": "tr",
+      "text": "Hasattan ayrılan tohumu ertesi yıl ekme hakkı demek. İlk kalıbımız da bu. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "The seed replanting right survives as custom, genetic engineering as a patent."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The seed replanting right survives as custom, genetic engineering as a patent."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Canlının kalıtımına doğrudan müdahaleye"
+     },
+     {
+      "lang": "en",
+      "text": "genetic engineering"
+     },
+     {
+      "lang": "tr",
+      "text": "bir alanı yeniden ormanla kaplamaya ise"
+     },
+     {
+      "lang": "en",
+      "text": "reforest"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İkinci kalıbımız ikinci yarıda nesneyi başa alıyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "They reforest the hillside; the plain, they deforest."
+     },
+     {
+      "lang": "tr",
+      "text": "Yamacı yeniden ağaçlandırıyorlar, ovayı ormansızlaştırıyorlar."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "They reforest the hillside; the plain, they deforest."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Ormanı kaldırmaya"
+     },
+     {
+      "lang": "en",
+      "text": "deforest"
+     },
+     {
+      "lang": "tr",
+      "text": "yağmur ve karın toplamına ise"
+     },
+     {
+      "lang": "en",
+      "text": "precipitation"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son kalıbımız yüklemi yardımcı fiile indiriyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "The precipitation fell; the harvest did not."
+     },
+     {
+      "lang": "tr",
+      "text": "Yağış düştü, hasat düşmedi."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The precipitation fell; the harvest did not."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi dersin kuralı. Tohum sözleşmesinde eksiltme bir HAK sorusudur:"
+     },
+     {
+      "lang": "en",
+      "text": "genetic engineering as a patent"
+     },
+     {
+      "lang": "tr",
+      "text": "dediğinde düşen fiili okuyan koyar ve orada bir hak el değiştirir. Sözleşmeyi okumak, eksiltilen yarıyı görmekle başlar."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sıra sende: Tohumu yeniden ekme hakkı örf olarak kalır, patent kanun olarak."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "The seed replanting right survives as custom, the patent as law.",
+     "accept": [
+      "The seed replanting right survives as custom, the licence as law.",
+      "The seed replanting right survives as custom, genetic engineering as a patent."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "İkinci yarıda yüklemi düşürmek için"
+      },
+      {
+       "lang": "en",
+       "text": "survives as"
+      },
+      {
+       "lang": "tr",
+       "text": "bir kez söylenir:"
+      },
+      {
+       "lang": "en",
+       "text": "The seed replanting right survives as custom, the patent as law."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kontrol. Şu cümle doğru mu?"
+     },
+     {
+      "lang": "en",
+      "text": "The precipitation fell; the harvest did not."
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "The precipitation fell; the harvest did not.",
+     "answer": true,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Doğru. İkinci yarıda yüklem yardımcı fiile inmiş ve gerisi okurda kalmış."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bol olanı azaltıp değerli kılmaya"
+     },
+     {
+      "lang": "en",
+      "text": "make scarce"
+     },
+     {
+      "lang": "tr",
+      "text": "toprağı derin çevirmeye ise"
+     },
+     {
+      "lang": "en",
+      "text": "dig over"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "A patent can make scarce what the field gives freely."
+     },
+     {
+      "lang": "tr",
+      "text": "Patent, tarlanın bedavaya verdiğini kıt hale getirebiliyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "A patent can make scarce what the field gives freely."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Aracısız, alıcının yanı başında satılana"
+     },
+     {
+      "lang": "en",
+      "text": "close to the consumer"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sen kur: Yamacı yeniden ağaçlandırıyorlar, vadiyi ormansızlaştırıyorlar."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "They reforest the hillside; the valley, they deforest.",
+     "accept": [
+      "They reforest the hillside; the field, they deforest.",
+      "They reforest the hillside; the plain, they deforest."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "İkinci yarıda nesneyi başa almak için virgül kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "They reforest the hillside; the valley, they deforest."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bu ders modülün sonuncusu; adı, ödünü ve eksiltmeyi birlikte kullanacaksın."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "We dig over the bed and stay close to the consumer."
+     },
+     {
+      "lang": "tr",
+      "text": "Tarhı belliyoruz ve tüketiciye yakın kalıyoruz."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "We dig over the bed and stay close to the consumer."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir tane daha: Yağmur düştü, hasat düşmedi."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "The rain fell; the harvest did not.",
+     "accept": [
+      "The snow fell; the harvest did not.",
+      "The precipitation fell; the harvest did not."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Yüklemi yardımcı fiile indirmek için"
+      },
+      {
+       "lang": "en",
+       "text": "did not"
+      },
+      {
+       "lang": "tr",
+       "text": "yeter:"
+      },
+      {
+       "lang": "en",
+       "text": "The rain fell; the harvest did not."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Özetleyelim: yüklem düşer"
+     },
+     {
+      "lang": "en",
+      "text": "genetic engineering as a patent"
+     },
+     {
+      "lang": "tr",
+      "text": "nesne başa"
+     },
+     {
+      "lang": "en",
+      "text": "the plain, they deforest"
+     },
+     {
+      "lang": "tr",
+      "text": "yardımcı kalır"
+     },
+     {
+      "lang": "en",
+      "text": "the harvest did not"
+     },
+     {
+      "lang": "tr",
+      "text": "Şimdi eksiltilen hakkı okuyacaksın."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Bir tohum sözleşmesini çiftçi arkadaşına anlatıyorsun ve hangi hakkın eksiltildiğini göstermek istiyorsun. Üç cümlede birer öğe düşür ve eksilen hakkı adlandır.",
+   "partner": "sözleşmeyi olduğu gibi kabul eden, «hepsi standart madde» diyen bir çiftçi",
+   "opening": "It's all standard wording, isn't it?",
+   "openingTr": "Hepsi standart madde, değil mi?",
+   "goal": "Üç cümlede birer öğe düşürdüysen ve eksilen hakkı adlandırdıysan konuşma başarılı sayılır.",
+   "minTurns": 8
+  }
  }
 ]
