@@ -92,6 +92,32 @@ const inPool = (de: string, course = "de") => {
   if (!bare || /\s/.test(bare)) return true; // kalıp/çok kelimeli: havuz karşılaştırması anlamsız
   return p.set.has(bare.toLocaleLowerCase(p.locale));
 };
+/*
+  ÇEKİMLİ SÖZLÜKÇE: HAVUZ DENETİMİNİN GERÇEK YANLIŞ POZİTİFİ.
+
+  Havuz sözlük biçimlerini (mastar, yalın ad) tutuyor. Geçmiş biçim öğreten
+  dersler ise sözlükçesine BİLEREK çekimli biçimi yazıyor — öğrettiği şey o:
+  `gemacht`, `gegangen`, `aufgestanden`, `worked`. Havuzda mastarı var,
+  çekimlisi yok ve olması da gerekmiyor: oyun kartına `machen` ile `gemacht`
+  ayrı iki kelime diye girmek havuzu bozardı.
+
+  Ölçüldü: eşiği aşan beş ders de bu sınıftan ve hepsinin dışarıda kalan
+  kelimesi bir çekim. Liste ders KİMLİĞİNE bağlı, odağa değil — aynı odaktaki
+  öteki dersler (de-a1-perfekt-uebung gibi) sözlükçesini mastarla kuruyor ve
+  denetimden geçiyor; onları da muaf tutmak kapıyı gereksiz kör ederdi.
+
+  Liste bayatlamasın diye kendini denetliyor: muaf bir ders artık eşiği
+  aşmıyorsa satır fazlalıktır ve uyarı verir.
+*/
+const INFLECTED_VOCAB = new Set([
+  "de-a1-perfekt-haben",
+  "de-a1-perfekt-sein",
+  "de-a1-gestern",
+  "de-a1-wochenende-bericht",
+  "en-a1-past-ed",
+]);
+const usedInflectedExempt = new Set<string>();
+
 const wc = (s: string) => s.trim().split(/\s+/).filter(Boolean).length;
 const multi = (s: string) => /,/.test(s) && !/[…/]/.test(s);
 const need = (where: string, obj: Record<string, unknown>, keys: string[]) => {
@@ -340,7 +366,10 @@ function checkLessons(list: Lesson[]) {
       if (multi(v.tr)) W(w, `çok anlamlı vocab tr: ${v.de} → "${v.tr}"`);
       if (POOLS[l.course] && !inPool(v.de, l.course)) out++;
     }
-    if (POOLS[l.course] && l.vocab.length && out / l.vocab.length > 0.34) W(w, `havuz dışı kelime ${out}/${l.vocab.length}`);
+    if (POOLS[l.course] && l.vocab.length && out / l.vocab.length > 0.34) {
+      if (INFLECTED_VOCAB.has(l.id)) usedInflectedExempt.add(l.id);
+      else W(w, `havuz dışı kelime ${out}/${l.vocab.length}`);
+    }
     for (const p of l.patterns) if (!p.de?.trim() || !p.tr?.trim()) E(w, `pattern eksik: ${JSON.stringify(p)}`);
 
     const steps = l.lecture;
@@ -399,6 +428,12 @@ function checkLessons(list: Lesson[]) {
 const kinds = only ? [only] : ["skills", "lessons"];
 if (kinds.includes("skills")) checkSkills(BUNDLED_EXERCISES);
 if (kinds.includes("lessons")) checkLessons(LESSONS);
+
+// Muafiyet listesi bayatladıysa söyle: artık eşiği aşmayan bir kimlik listede
+// durursa bir sonraki okuyan onu gerçek bir kusur sanır.
+if (kinds.includes("lessons"))
+  for (const id of INFLECTED_VOCAB)
+    if (!usedInflectedExempt.has(id)) W("[lessons]", `çekimli sözlükçe muafiyeti artık gereksiz: ${id}`);
 
 const poolSizes = Object.entries(POOLS).map(([c, p]) => `${c} ${p.set.size}`).join(" · ");
 const counts = `${BUNDLED_EXERCISES.length} egzersiz · ${LESSONS.length} ders · havuz ${poolSizes}`;
