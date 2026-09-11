@@ -44,6 +44,7 @@
     "check:tokens": "node scripts/check-tokens.mjs",
     "check:radius": "node scripts/check-radius.mjs",
     "check:type": "node scripts/check-type-scale.mjs",
+    "check:hit": "node scripts/check-hit-target.mjs",
     "check:pairs": "npm run lessons:apply && npm run lessons:apply-de && tsx --tsconfig scripts/tsconfig.e2e.json scripts/check-pairs.ts",
     "test:legal-db": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/test-legal-db.ts",
     "test:entitlement": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/test-entitlement.ts",
