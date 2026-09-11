@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { MASTERED_DAYS } from "@/lib/srs";
+import { coarseStatus } from "@/lib/word-status";
 import { and, asc, eq, ilike, or, sql, type SQL } from "drizzle-orm";
 import { db } from "@/lib/db";
 import { userWords, words } from "@/lib/db/schema";
@@ -104,7 +105,7 @@ export async function GET(req: Request) {
       intervalDays: r.intervalDays,
       lapses: r.lapses ?? 0,
       leech: r.leech ?? false,
-      status: r.intervalDays == null ? "new" : r.intervalDays >= MASTERED_DAYS ? "mastered" : "learning",
+      status: coarseStatus(r.intervalDays),
     }));
 
     return NextResponse.json({ words: list, page, hasMore }, { headers: { "cache-control": "no-store" } });

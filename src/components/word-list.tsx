@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState, type ReactNode } from "react";
-import { MASTERED_DAYS } from "@/lib/srs";
+import { wordStatus, type WordStatus as WordStatusId } from "@/lib/word-status";
 import { useT, useLang } from "@/lib/i18n/client";
 import { LANG_LABEL, formatNumber } from "@/lib/i18n/dict";
 import { courseName } from "@/lib/courses";
@@ -59,12 +59,17 @@ const STATUSES = [
   { id: "mastered", labelKey: "words.status_mastered" },
 ];
 
+/** Etiket ve ton — bant kararı TEK KAYNAKTAN (`lib/word-status`), ton burada. */
+const STATUS_TONE: Record<WordStatusId, { labelKey: string; tone: string }> = {
+  leech: { labelKey: "words.status_leech", tone: "var(--color-rose)" },
+  new: { labelKey: "words.status_new", tone: "var(--text-muted)" },
+  mastered: { labelKey: "words.status_mastered", tone: "var(--color-mint)" },
+  familiar: { labelKey: "words.status_familiar", tone: "var(--color-sky)" },
+  learning: { labelKey: "words.status_learning", tone: "var(--color-flame)" },
+};
+
 function statusOf(r: WordRow): { labelKey: string; tone: string } {
-  if (r.leech) return { labelKey: "words.status_leech", tone: "var(--color-rose)" };
-  if (r.intervalDays == null) return { labelKey: "words.status_new", tone: "var(--text-muted)" };
-  if (r.intervalDays >= MASTERED_DAYS) return { labelKey: "words.status_mastered", tone: "var(--color-mint)" };
-  if (r.intervalDays >= 3) return { labelKey: "words.status_familiar", tone: "var(--color-sky)" };
-  return { labelKey: "words.status_learning", tone: "var(--color-flame)" };
+  return STATUS_TONE[wordStatus(r)];
 }
 
 /**

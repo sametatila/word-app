@@ -35,11 +35,17 @@ export type WordRow = {
  * "zorlanıyorsun" (leech). Mobil üçle kalıyordu, yani tekrar tekrar unutulan
  * kelime öğrenilenden ayırt edilemiyordu.
  */
+/** "Tanıdık" bandının tabanı (gün) — web `lib/word-status.ts` `FAMILIAR_DAYS`. */
+export const FAMILIAR_DAYS = 3;
+
 export function statusOf(w: WordRow): WordStatus {
   if (w.leech) return "leech";
   if (w.status === "new") return "new";
   if (w.status === "mastered") return "mastered";
-  return (w.intervalDays ?? 0) >= 3 ? "familiar" : "learning";
+  /* Sayı artık ADLI: web tarafında da `FAMILIAR_DAYS` ve "ortak sayisal
+     sabitler" kapısı ikisini ada bakarak karşılaştırıyor. Eşiğin kendisi
+     ucun üç değerinde yok — `familiar` yalnız etikette var. */
+  return (w.intervalDays ?? 0) >= FAMILIAR_DAYS ? "familiar" : "learning";
 }
 
 /**
