@@ -10903,3 +10903,34 @@ imkânının olduğu yerde eşleme, ayrışma değil. Üç `wordsw.*` anahtarı 
 yüzden yerinde kalıyor (§11.330'da düşen `progw.my_progress`ten farkı: orada
 web-only anahtar aynı şeyi başka adla söylüyordu, burada web-only bir
 etkileşimin kendi metni).
+
+## §11.332 — Ses ayarı iki ekrana bölünmüştü
+
+Ayarlar ekranı mobil karşılığıyla karşılaştırıldı. Çoğu yer eşleşiyor —
+güvenlik grubu (şifre, iki adımlı doğrulama, etkin oturumlar) web'de de var,
+`LinkedAccounts` `profile-form`un içinde kuruyor; hesap, uygulama, öğrenme ve
+gizlilik grupları iki tarafta da aynı. Bir ayrışma çıktı ve ikiye ayrılıyor:
+
+**Oyun sesleri başka ekrandaydı.** Android'de "Ses" bölümü ikisini birden
+taşıyor: okuma sesi (alt etiketi `settings.reading_voice`, sonra picker), bir
+ayırıcı, sonra oyun sesleri anahtarı. Web'de oyun sesleri **bildirim
+ayarlarında** duruyordu ve gerekçesi yazılıydı: "oyun sesleri de bir 'ne zaman
+rahatsız edilirim' ayarı". Savunulabilir bir sınıflandırma — ama sonucu şu:
+sesle ilgili ayar arayan kullanıcı **iki yere** bakmak zorunda ve iki platform
+aynı ayarı iki ayrı ekranda tutuyor. Android referans alındı: anahtar Ses
+bölümüne taşındı, bildirim ayarlarından çıktı.
+
+**Picker'ın alt etiketi eksikti.** Mobil okuma sesi seçicisinin ne olduğunu
+söylüyor (`settings.reading_voice`, üç sözlükte de var); web'de picker
+başlıksız duruyordu — "Ses" başlığının altında ne seçtiğini söyleyen bir şey
+yoktu.
+
+§218 yedi ölçüt okuyor ve taşımanın **en kolay hatasını** da kapsıyor: aynı
+anahtarın iki yerde birden çizilmesi. İki enjeksiyon (anahtarı geri taşımak,
+eskisini silmeden bırakmak) yakalandı.
+
+**Kapımın kusurunu repo'nun meta-kapısı yine yakaladı** (§11.320'nin aynısı):
+`/<VoicePicker/` ve `/SoundSettings/` sade bileşen adı desenleriydi, yani önek
+eşleşmesi. "kapilarda onek eslesmesi" kapısı ikisini de bildirdi; `\b` ile
+sınırlandı. Aynı hatayı iki turda iki kez yaptım — kapı olmasa ikisi de
+sessizce geçerdi.
