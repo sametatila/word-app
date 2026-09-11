@@ -20,6 +20,14 @@
  * Kapı yalnız IKONLU düğmeleri ölçüyor: metin taşıyan bir düğmenin hedefi
  * metnin kendi genişliği kadar ve sınıflardan hesaplanamaz. Orada ölçüm
  * yapmayan bir kapı yazmak, yazmamaktan kötüdür.
+ *
+ * IKINCI ÖLÇÜ — KLAVYE HEDEFİ (2026-09-11, §11.342). Dokunma hedefi bir
+ * denetimin PARMAĞA ne kadar yer bıraktığını söylüyor; aynı denetimin
+ * KLAVYEYE hiç yer bırakmaması ayrı ve daha sert bir kusur. `<div onClick>`
+ * fareyle çalışır, Tab'la hiç sıraya girmez ve Enter'ı duymaz: o denetim
+ * klavye kullanan biri için YOKTUR. Android'de karşılığı `Pressable`, ve
+ * `Pressable` odağı da rolü de kendiliğinden taşıyor - yani bu sınıf hata
+ * yalnız webde OLABİLİR. Ölçüm bugün 0 buldu; kapı o sıfırı tutuyor.
  */
 import fs from "node:fs";
 import path from "node:path";
@@ -137,20 +145,58 @@ for (const abs of walk(path.join(ROOT, "src"))) {
   }
 }
 
+/* ── KLAVYE HEDEFİ ──────────────────────────────────────────────────────
+ * Etkileşimli OLMAYAN bir etikette `onClick` varsa ve denetim ne bir rol ne
+ * de `tabIndex` taşıyorsa klavyeden ulaşılamaz. `<a>` yalnız `href`siz
+ * olduğunda sayılır (href'li bağ zaten odak sırasında); `<img>`/`<svg>` hiç
+ * sayılmaz - onlar tıklanabilir olduklarında gerçek bir düğmenin İÇİNDE
+ * duruyorlar, dıştaki düğme odağı taşıyor.
+ */
+const OLU_ETIKETLER = ["div", "span", "li", "section", "article", "p", "ul", "ol", "tr", "td", "label", "a"];
+const klavyesiz = [];
+for (const abs of walk(path.join(ROOT, "src"))) {
+  const rel = path.relative(ROOT, abs);
+  const src = stripComments(fs.readFileSync(abs, "utf8"));
+  for (const ad of OLU_ETIKETLER) {
+    for (let j = src.indexOf("<" + ad); j >= 0; j = src.indexOf("<" + ad, j + 1)) {
+      /* `<div` ile `<divider` ayrimi: etiket adindan sonra harf/rakam gelmez. */
+      if (/[A-Za-z0-9]/.test(src[j + 1 + ad.length] ?? "")) continue;
+      const son = acilisiBitir(src.slice(j));
+      if (son < 0) break;
+      const acilis = src.slice(j, j + son + 1);
+      if (!/\bonClick=/.test(acilis)) continue;
+      if (/\brole=/.test(acilis) || /\btabIndex=/.test(acilis)) continue;
+      if (ad === "a" && /\bhref=/.test(acilis)) continue;
+      klavyesiz.push({ rel, satir: src.slice(0, j).split("\n").length, ad, metin: acilis.replace(/\s+/g, " ").slice(0, 90) });
+    }
+  }
+}
+
 if (mode === "--hits") {
   for (const b of bulgular) {
     console.log(`${b.rel}:${b.satir}  ikon ${b.ikon} · görünen ${b.gorunen} · etkili ${b.etkili}${b.slop ? " (hit-8 var)" : ""}`);
   }
-  console.log(`\ntoplam ${bulgular.length} · olculemeyen ${olculemez}`);
-} else if (bulgular.length) {
-  console.error(`check:hit — ikonlu düğmelerin dokunma hedefi ${ESIK} px'in altında:\n`);
-  for (const b of bulgular) {
-    console.error(`  ${b.rel}:${b.satir}  ikon ${b.ikon} · görünen ${b.gorunen} · etkili ${b.etkili}${b.slop ? " (hit-8 var)" : ""}`);
-    console.error(`      ${b.satirMetni}`);
+  for (const k of klavyesiz) console.log(`${k.rel}:${k.satir}  <${k.ad} onClick> klavyeden ulasilamaz`);
+  console.log(`\ntoplam ${bulgular.length} · olculemeyen ${olculemez} · klavyesiz ${klavyesiz.length}`);
+} else if (bulgular.length || klavyesiz.length) {
+  if (bulgular.length) {
+    console.error(`check:hit — ikonlu düğmelerin dokunma hedefi ${ESIK} px'in altında:\n`);
+    for (const b of bulgular) {
+      console.error(`  ${b.rel}:${b.satir}  ikon ${b.ikon} · görünen ${b.gorunen} · etkili ${b.etkili}${b.slop ? " (hit-8 var)" : ""}`);
+      console.error(`      ${b.satirMetni}`);
+    }
+    console.error("\n`hit-8` her eksende 8 px ekler (etkili = görünen + 16); mobil karşılığı `hitSlop={8}`.");
+    console.error("Meşru bir istisnaysa betikteki ALLOW listesine SEBEBİYLE ekle.");
   }
-  console.error("\n`hit-8` her eksende 8 px ekler (etkili = görünen + 16); mobil karşılığı `hitSlop={8}`.");
-  console.error("Meşru bir istisnaysa betikteki ALLOW listesine SEBEBİYLE ekle.");
+  if (klavyesiz.length) {
+    console.error("\ncheck:hit — klavyeden ulaşılamayan denetimler (etkileşimli olmayan etikette `onClick`):\n");
+    for (const k of klavyesiz) {
+      console.error(`  ${k.rel}:${k.satir}  <${k.ad} onClick>`);
+      console.error(`      ${k.metin}`);
+    }
+    console.error("\nDoğrusu gerçek bir `<button type=\"button\">`; olmuyorsa `role` + `tabIndex={0}` + Enter/Space.");
+  }
   process.exit(1);
 } else {
-  console.log(`check:hit — ikonlu düğmelerin hepsinin dokunma hedefi ${ESIK} px ve üstü: tamam (${olculemez} düğmenin sınıfı değişkenden geliyor, ölçülemez)`);
+  console.log(`check:hit — ikonlu düğmelerin hepsinin dokunma hedefi ${ESIK} px ve üstü, tıklanan her denetim klavyeden de ulaşılabilir: tamam (${olculemez} düğmenin sınıfı değişkenden geliyor, ölçülemez)`);
 }
