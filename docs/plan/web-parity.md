@@ -7431,3 +7431,22 @@ webin `intervalDays` eşiklerine dayanan hesabı aynı sonucu veriyor.
 **§126** iki grubun seçeneklerini, sıfırlama etiketlerini, beş durumun sözlük
 anahtarlarını ve "ne zaman tekrar" eşiklerini ölçüyor. Üç enjeksiyonun üçü de
 yakalandı.
+
+### 11.218 Haftalık sınav bitiyordu, hangi kelimede takıldığın yazmıyordu
+
+Haftalık sınav Android'de tek cümleyle kapanıyordu: *"{total} sorudan
+{correct} doğru."* **Hangi** kelimede takıldığın hiçbir yerde görünmüyordu.
+Web aynı yerde yanlış bilinen kelimeleri çip çip yazıyor ("tekrar kuyruğuna
+dönenler"), hepsi doğruysa onu söylüyor — iki cümle de mobil sözlükte zaten
+duruyordu (`weekly.back_in_queue`, `weekly.all_correct`), yalnız hiç
+kullanılmıyordu. Tur özetinde bu liste iki tarafta da vardı; haftalık sınavda
+yalnız webde.
+
+Hesap sunucudan gelmiyor, elde duran cevaplardan çıkıyor ve webdekiyle aynı:
+bir kelime turlarının **hepsinde** doğruysa doğru sayılıyor (aynı kelime
+birden çok turda çıkabiliyor).
+
+**§127** sonuç ekranının bölüm sırasını ölçüyor. Desenler yine platforma ait:
+puan başlığı webde `weekly.your_score`, mobilde halkanın altındaki
+`weekly.score`; çıkış webde "Öğren'e dön", mobilde "Bitir". Üç enjeksiyonun
+üçü de yakalandı.

@@ -4356,6 +4356,41 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   );
 }
 
+/* ── 127. haftalik sinavin sonuc ekrani ───────────────────────────────────
+ * Sinav bitiyordu ve Androidde "{total} sorudan {correct} dogru" disinda
+ * hicbir sey yazmiyordu: HANGI kelimede takildigin hicbir yerde
+ * gorunmuyordu. Web ayni yerde yanlis bilinen kelimeleri cip cip yaziyor
+ * ("tekrar kuyruguna donenler"), hepsi dogruysa da onu soyluyor. Tur
+ * ozetinde bu liste iki tarafta da vardi; haftalik sinavda yalniz webde.
+ *
+ * Olculen: sonuc ekraninin bolum sirasi. Desenler platforma ait - puan
+ * basligi webde `weekly.your_score`, mobilde halkanin altindaki
+ * `weekly.score`; cikis webde "Ogren'e don", mobilde "Bitir". */
+{
+  const BOLUM = [
+    ["puan halkasi", /weekly\.your_score/, /weekly\.score/],
+    ["dogru sayisi", /common\.n_correct/, /weekly\.done_sub/],
+    ["gonderilemedi", /weekly\.not_sent/, /weekly\.not_sent/],
+    ["kuyruga donenler", /weekly\.back_in_queue/, /weekly\.back_in_queue/],
+    ["hepsi dogru", /weekly\.all_correct/, /weekly\.all_correct/],
+    ["haftada bir", /weekly\.once_a_week/, /weekly\.once_a_week/],
+    ["cikis", /weekly\.back_to_learn/, /common\.finish/],
+  ];
+  const dilim = (src, bas, son) => {
+    const i = src.indexOf(bas);
+    const j = src.indexOf(son, i);
+    return i < 0 ? "" : src.slice(i, j < 0 ? src.length : j);
+  };
+  const web = dilim(read("src/components/weekly-player.tsx"), 'if (phase === "done" && result) {', "\n  const round =");
+  const mob = dilim(read("mobile/src/screens/WeeklyScreen.tsx"), 'if (phase === "done") {', "\n  // play");
+  const sira = (src, ix) =>
+    BOLUM.map(([ad, ...d]) => [ad, src.search(d[ix])])
+      .filter(([, i]) => i >= 0)
+      .sort((a, b) => a[1] - b[1])
+      .map(([ad]) => ad);
+  sameList("haftalik sinav sonucu", sira(mob, 1), sira(web, 0));
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"

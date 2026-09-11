@@ -172,6 +172,19 @@ export function WeeklyScreen() {
   if (phase === "done") {
     const score = result?.score ?? 0;
     const done = (result?.total ?? 0) > 0;
+    /*
+     * KUYRUĞA GERİ DÖNENLER — web `weekly-player` aynı yerde gösteriyor.
+     *
+     * Sınav bitiyordu ve "{total} sorudan {correct} doğru" dışında hiçbir şey
+     * yazmıyordu: HANGİ kelimede takıldığın hiçbir yerde görünmüyordu. Turun
+     * özetinde bu liste vardı (§11.x "zorlandıkların"), haftalık sınavda
+     * yoktu. Hesap sunucudan gelmiyor, elde duran cevaplardan çıkıyor —
+     * webdeki hesabın aynısı: bir kelime turlarının HEPSİNDE doğruysa doğru.
+     */
+    const wordOf = (r: Round) => (r.game === "match" ? r.words?.[0] : r.word);
+    const byWord = new Map<number, boolean>();
+    for (const a of answers.current) if (a.wordId) byWord.set(a.wordId, (byWord.get(a.wordId) ?? true) && a.correct);
+    const wrong = rounds.map(wordOf).filter((w): w is NonNullable<typeof w> => !!w && byWord.get(w.id) === false);
     return (
       <View style={pad}>
         <View style={{ flexDirection: "row", justifyContent: "flex-end" }}>
@@ -194,6 +207,23 @@ export function WeeklyScreen() {
           {/* Sınavın haftada bir olduğu ve sonrakinin ne zaman geleceği: web
               aynı yerde söylüyor, mobilde hiç yazmıyordu. */}
           {notSent ? <Text variant="caption" color={colors.dangerText} style={{ textAlign: "center", marginBottom: spacing.md, lineHeight: 19 }}>{t("weekly.not_sent")}</Text> : null}
+          {done ? (
+            wrong.length ? (
+              <View style={{ width: "100%", marginBottom: spacing.lg }}>
+                <Text variant="bodyStrong" style={{ marginBottom: spacing.sm }}>{t("weekly.back_in_queue")}</Text>
+                <View style={{ flexDirection: "row", flexWrap: "wrap", gap: spacing.sm }}>
+                  {wrong.map((w) => (
+                    <View key={w.id} style={{ flexDirection: "row", alignItems: "baseline", gap: 6, backgroundColor: colors.surface2, borderRadius: radii.pill, paddingHorizontal: 12, paddingVertical: 6 }}>
+                      <Text variant="caption">{w.artikel ? `${w.artikel} ${w.de}` : w.de}</Text>
+                      <Text variant="micro" color={colors.textMuted}>{w.tr}</Text>
+                    </View>
+                  ))}
+                </View>
+              </View>
+            ) : (
+              <Text variant="caption" color={colors.successText} style={{ textAlign: "center", marginBottom: spacing.lg, lineHeight: 19 }}>{t("weekly.all_correct")}</Text>
+            )
+          ) : null}
           {done ? <Text variant="micro" color={colors.textFaint} style={{ textAlign: "center", marginBottom: spacing.lg, lineHeight: 18 }}>{t("weekly.once_a_week")}</Text> : null}
           <PressableScale onPress={() => nav.goBack()} style={[{ width: "100%", backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: spacing.lg, alignItems: "center" }, softShadow(colors.primary, 8)]}><Text variant="bodyStrong" color={colors.onPrimary}>{t("common.finish")}</Text></PressableScale>
         </View>
