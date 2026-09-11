@@ -77,6 +77,21 @@ const FOCUS_GR_EN: [RegExp, Partial<Record<CefrLevel, number>>][] = [
      düşseydi `hit[1]["B2"]` undefined dönerdi ve ders sessizce ifadesiz
      kalırdı. Desenler B2'ye özgü: «third conditional» yakalanır ama
      «Conditionals» aşağıdaki B1 satırına gitmeye devam eder. */
+  /* C1 SATIRLARI HEPSİNDEN ÖNDE, aynı gerekçeyle: B2 satırlarının C1 sütunu
+     YOK. Bir C1 dersi «Reporting verbs and evaluation» odağıyla aşağıdaki
+     `/report structure/i` satırına düşseydi `hit[1]["C1"]` undefined döner,
+     ders sessizce ifadesiz kalırdı. Desenler C1'e özgü: «fronting» yakalanır
+     ama «cleft» aşağıdaki B2 satırına gitmeye devam eder. */
+  [/ellipsis|substitution|former and the latter/i, { C1: 11 }],
+  [/fronting|end.weight|marked word order/i, { C1: 12 }],
+  [/subjunctive|formulaic were|lest/i, { C1: 13 }],
+  [/concessive|albeit|much as/i, { C1: 14 }],
+  [/collocation|delexical|fixed expression/i, { C1: 15 }],
+  [/register shift|three registers|register range/i, { C1: 16 }],
+  [/reporting verb|evaluation in reporting/i, { C1: 17 }],
+  [/modal nuance|remoteness|may well/i, { C1: 18 }],
+  [/irony|understatement|implicature/i, { C1: 19 }],
+  [/cohesion|text-level reference|signposting/i, { C1: 20 }],
   [/perfect modal|must have|speculation about the past/i, { B2: 11 }],
   [/third conditional|mixed conditional|regret conditional/i, { B2: 12 }],
   [/report structure|it is said|passive reporting/i, { B2: 13 }],

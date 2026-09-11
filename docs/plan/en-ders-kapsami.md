@@ -1,6 +1,6 @@
 # WP-74 — İngilizce ders kapsamı B1–C1
 
-**Durum:** sürüyor (B1 TAM, B2 TAM; 200/300 ders — kalan yalnız C1) · **Sahip:** Claude · **Açılış:** 2026-09-11
+**Durum:** sürüyor (B1 TAM, B2 TAM; C1 açıldı, modül 1 yarıda — 205/300 ders) · **Sahip:** Claude · **Açılış:** 2026-09-11
 
 ## Kusur
 
@@ -418,6 +418,32 @@ bırakarak vermek zor; B2'nin bütün yükü bu cümlede.
 **B2 sayıları:** 100 ders, 800 sözlükçe maddesi, 800'ü de benzersiz,
 B2.GR.11-20 her modülde bir kez (on modülün onunda da ölçüldü), Almanca
 eksende l-105…l-110 paketleri.
+
+**C1 AÇILDI (2026-09-11).** Ders yazmadan önce dört bağlama noktası, B2'de
+olduğu gibi:
+
+1. `cando.ts` — İngilizce C1 için on dilbilgisi ifadesi (`C1.GR.11-20`).
+   Numara yine 11'den başlıyor: 1-4 Almanca kursun C1 dilbilgisi.
+   `EN_GR_IDS` artık B1, B2 ve C1'i birlikte üretiyor.
+2. `cando-map.ts` — on `FOCUS_GR_EN` satırı **hepsinden önde**, aynı
+   gerekçeyle: B2 satırlarının C1 sütunu yok, bir C1 dersi «Reporting verbs»
+   odağıyla `/report structure/i` satırına düşseydi ifadesiz kalırdı.
+3. `c-006` paketleri (`cando/out` ve `cando-de/out`) — on ifadenin İngilizce
+   ve Almanca karşılığı. Kapsam 165 → 175.
+4. Dört dosya listesi: `prose-de/make.mjs`, `src/lib/lessons/index.ts`,
+   `mobile/src/data/lessons/index.ts`, `scripts/check-dumps.ts`.
+
+Bağlantı ders yazılmadan ÖLÇÜLDÜ: ilk beş dersin beşi de ayrı bir C1
+can-do'suna düşüyor.
+
+**C1'in seviye farkı:** öğretilen şey yeni bir KURAL değil bir SEÇİM — aynı
+içeriği kaç ayrı biçimde söyleyebildiğin ve hangisini neden seçtiğin. On
+ifade de bu yüzden «kurabilirim» değil çoğu yerde «seçebilirim» diyor.
+
+**C1 modül 1 — Kayıt ve ton (ilk yarı).** Beş ders: aynı şey üç kayıtta,
+söylenmeyeni bırakmak, ağırlığı sona atmak, resmî dilek, imtiyazın tonu.
+Modülün ekseni seçimin kendisi; ilk ders bunu doğrudan konu ediyor ve
+seviyenin tezini söylüyor: en kesin cümle her zaman en güçlü cümle değildir.
 
 ## Tamamlanma ölçütü
 

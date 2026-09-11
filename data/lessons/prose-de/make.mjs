@@ -39,7 +39,7 @@ import { readFileSync, writeFileSync, mkdirSync, rmSync, existsSync } from "node
 
 const DIR = new URL(".", import.meta.url).pathname;
 const SRC = new URL("../../../src/lib/lessons/content/", import.meta.url).pathname;
-const FILES = ["en-a1.json", "en-a2.json", "en-b1.json", "en-b2.json"];
+const FILES = ["en-a1.json", "en-a2.json", "en-b1.json", "en-b2.json", "en-c1.json"];
 
 /** Tür sırası — paket sınırlarını bu belirliyor. Sıra KARARLI. */
 export const KINDS = [

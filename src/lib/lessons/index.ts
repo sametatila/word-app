@@ -63,6 +63,7 @@ import enA1 from "./content/en-a1.json";
 import enA2 from "./content/en-a2.json";
 import enB1 from "./content/en-b1.json";
 import enB2 from "./content/en-b2.json";
+import enC1 from "./content/en-c1.json";
 
 /**
  * Ders kataloğu.
@@ -107,7 +108,7 @@ function withScript(lesson: Lesson): Lesson {
  * döküm zinciri koruyor — mobil paket bu dosyalardan üretiliyor ve ayrışma
  * ilk dökümde diff olarak çıkar.
  */
-const EN_LESSONS = [...enA1, ...enA2, ...enB1, ...enB2] as unknown as Lesson[];
+const EN_LESSONS = [...enA1, ...enA2, ...enB1, ...enB2, ...enC1] as unknown as Lesson[];
 
 export const LESSONS: Lesson[] = [
   ...[

@@ -1,0 +1,2535 @@
+[
+ {
+  "id": "en-c1-the-same-in-three",
+  "level": "C1",
+  "course": "en",
+  "icon": "pen",
+  "title": "The same thing in three registers",
+  "titleTr": "Aynı şey üç kayıtta",
+  "summary": "Aynı içeriği hukuk, nötr ve konuşma diliyle söylemeyi öğretir; C1'de öğrenilen kural değil seçimdir.",
+  "minutes": 12,
+  "focusId": "Register shift across three registers",
+  "vocab": [
+   {
+    "de": "salutation",
+    "tr": "hitap"
+   },
+   {
+    "de": "cordial",
+    "tr": "içten"
+   },
+   {
+    "de": "matter-of-fact",
+    "tr": "yalın"
+   },
+   {
+    "de": "verbatim",
+    "tr": "kelimesi kelimesine"
+   },
+   {
+    "de": "stylistically",
+    "tr": "üslup açısından"
+   },
+   {
+    "de": "journalistic",
+    "tr": "gazetecilikle ilgili"
+   },
+   {
+    "de": "non-binding",
+    "tr": "bağlayıcı olmayan"
+   },
+   {
+    "de": "convey",
+    "tr": "ulaştırmak"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "The salutation alone sets the register.",
+    "tr": "kaydı ilk kelimenin kurduğunu söyler"
+   },
+   {
+    "de": "A cordial note and a matter-of-fact note say the same thing.",
+    "tr": "aynı içeriği iki kayıtta gösterir"
+   },
+   {
+    "de": "Quoted verbatim, the line reads differently.",
+    "tr": "aynı cümlenin kayıt değişince değiştiğini gösterir"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba ve C1'e hoş geldin! Bu seviyede öğrendiğin şey yeni bir kural değil bir SEÇİM: aynı içeriği kaç ayrı biçimde söyleyebildiğin ve hangisini neden seçtiğin."
+     },
+     {
+      "lang": "tr",
+      "text": "İlk ders tam bunu konu ediyor: hitap, ton ve alıntı. Hazır mısın?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "salutation"
+     },
+     {
+      "lang": "tr",
+      "text": "Yazının başındaki sesleniş demek. İlk kalıbımız da bu. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "The salutation alone sets the register."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The salutation alone sets the register."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Sıcak ve samimi olana"
+     },
+     {
+      "lang": "en",
+      "text": "cordial"
+     },
+     {
+      "lang": "tr",
+      "text": "süssüz ve doğrudan olana ise"
+     },
+     {
+      "lang": "en",
+      "text": "matter-of-fact"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İkinci kalıbımız aynı içeriği iki kayıtta gösteriyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "A cordial note and a matter-of-fact note say the same thing."
+     },
+     {
+      "lang": "tr",
+      "text": "İçten bir not ile yalın bir not aynı şeyi söylüyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "A cordial note and a matter-of-fact note say the same thing."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Tek kelimesi değiştirilmeden alıntılanana"
+     },
+     {
+      "lang": "en",
+      "text": "verbatim"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son kalıbımız aynı cümlenin kayıt değişince değiştiğini gösteriyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "Quoted verbatim, the line reads differently."
+     },
+     {
+      "lang": "tr",
+      "text": "Kelimesi kelimesine alıntılanınca satır başka okunuyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Quoted verbatim, the line reads differently."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi dersin kuralı. Kayıt üç yerde belli olur: hitapta, kelime seçiminde ve cümlenin uzunluğunda."
+     },
+     {
+      "lang": "en",
+      "text": "Dear Sir or Madam"
+     },
+     {
+      "lang": "tr",
+      "text": "hukuk kaydı,"
+     },
+     {
+      "lang": "en",
+      "text": "Dear Anna"
+     },
+     {
+      "lang": "tr",
+      "text": "nötr kayıt,"
+     },
+     {
+      "lang": "en",
+      "text": "Hi Anna"
+     },
+     {
+      "lang": "tr",
+      "text": "konuşma kaydıdır. İçerik aynı kalır; değişen şey karşındakine ne kadar yaklaştığındır."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sıra sende: Kaydı tek başına selamlama kuruyor."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "The greeting alone sets the register.",
+     "accept": [
+      "The opening alone sets the register.",
+      "The salutation alone sets the register."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Kaydı ilk kelimenin kurduğunu söylemek için"
+      },
+      {
+       "lang": "en",
+       "text": "alone sets the register"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "The greeting alone sets the register."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kontrol. Şu cümle doğru mu?"
+     },
+     {
+      "lang": "en",
+      "text": "A cordial note and a matter-of-fact note say the same thing."
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "A cordial note and a matter-of-fact note say the same thing.",
+     "answer": true,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Doğru. İçerik aynı, değişen yalnız kayıt; C1'de öğretilen şey tam bu ayrım."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Yazının biçimi bakımından anlamına gelen söze"
+     },
+     {
+      "lang": "en",
+      "text": "stylistically"
+     },
+     {
+      "lang": "tr",
+      "text": "basın diline ait olana ise"
+     },
+     {
+      "lang": "en",
+      "text": "journalistic"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The piece is stylistically journalistic."
+     },
+     {
+      "lang": "tr",
+      "text": "Yazı üslup açısından gazetecilikle ilgili."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The piece is stylistically journalistic."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sen kur: Kelimesi kelimesine alıntılanınca cevap başka okunuyor."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "Quoted verbatim, the answer reads differently.",
+     "accept": [
+      "Quoted verbatim, the reply reads differently.",
+      "Quoted verbatim, the line reads differently."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Kayıt değişince cümlenin değiştiğini göstermek için"
+      },
+      {
+       "lang": "en",
+       "text": "quoted verbatim"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "Quoted verbatim, the answer reads differently."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Söz verip bağlamayana"
+     },
+     {
+      "lang": "en",
+      "text": "non-binding"
+     },
+     {
+      "lang": "tr",
+      "text": "bir şeyi karşıya iletmeye ise"
+     },
+     {
+      "lang": "en",
+      "text": "convey"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "A non-binding phrase can convey more."
+     },
+     {
+      "lang": "tr",
+      "text": "Bağlayıcı olmayan bir ifade daha çok şey ulaştırabilir."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "A non-binding phrase can convey more."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bunu duymak tuhaf gelebilir ama C1'in çekirdeği burada: en kesin cümle her zaman en güçlü cümle değildir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The register is the message."
+     },
+     {
+      "lang": "tr",
+      "text": "Kaydın kendisi mesajdır."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The register is the message."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir tane daha: Yazı üslup açısından resmî."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "The piece is stylistically formal.",
+     "accept": [
+      "The text is stylistically formal.",
+      "The piece is stylistically journalistic."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Üslubu adlandırmak için"
+      },
+      {
+       "lang": "en",
+       "text": "stylistically"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "The piece is stylistically formal."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Özetleyelim: hitap kaydı kurar"
+     },
+     {
+      "lang": "en",
+      "text": "The salutation alone sets the register."
+     },
+     {
+      "lang": "tr",
+      "text": "aynı içerik iki kayıtta"
+     },
+     {
+      "lang": "en",
+      "text": "cordial"
+     },
+     {
+      "lang": "tr",
+      "text": "ve"
+     },
+     {
+      "lang": "en",
+      "text": "matter-of-fact"
+     },
+     {
+      "lang": "tr",
+      "text": "Şimdi aynı şeyi üç ayrı kayıtta söyleyeceksin."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Bir haberi önce hukuk kaydında, sonra nötr, sonra konuşma kaydında söylüyorsun. Üç kaydı da kur ve içeriğin değişmediğini göster.",
+   "partner": "üç biçimi de aynı sanan, «hepsi aynı şey değil mi» diyen bir arkadaş",
+   "opening": "Aren't those all the same?",
+   "openingTr": "Bunların hepsi aynı değil mi?",
+   "goal": "Aynı içeriği hukuk, nötr ve konuşma kaydında üç ayrı biçimde söylediysen konuşma başarılı sayılır.",
+   "minTurns": 8
+  }
+ },
+ {
+  "id": "en-c1-leaving-it-out",
+  "level": "C1",
+  "course": "en",
+  "icon": "idea",
+  "title": "Leaving it out",
+  "titleTr": "Söylenmeyeni bırakmak",
+  "summary": "Geri getirilebilen her şeyi düşürmeyi öğretir; eksilti cümleyi kısaltmaz, okura güven gösterir.",
+  "minutes": 12,
+  "focusId": "Ellipsis and substitution",
+  "vocab": [
+   {
+    "de": "discourse",
+    "tr": "söylem"
+   },
+   {
+    "de": "argumentation",
+    "tr": "gerekçelendirme"
+   },
+   {
+    "de": "coherence",
+    "tr": "iç tutarlılık"
+   },
+   {
+    "de": "differentiation",
+    "tr": "ayrıştırma"
+   },
+   {
+    "de": "subjectivity",
+    "tr": "öznellik"
+   },
+   {
+    "de": "plausibility",
+    "tr": "akla yatkınlık"
+   },
+   {
+    "de": "well-founded",
+    "tr": "sağlam temelli"
+   },
+   {
+    "de": "construe",
+    "tr": "anlamlandırmak"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "I would if I could, and so would she.",
+    "tr": "tekrar edileni düşürür"
+   },
+   {
+    "de": "Some call it discourse; others, argumentation.",
+    "tr": "ikinci fiili düşürür"
+   },
+   {
+    "de": "The first reading is careful; the second is not.",
+    "tr": "ikinci yarıyı yerine koyar"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Bugün geri getirilebilen her şeyi düşürmeyi öğreneceğiz: tekrar edilen fiili, ikinci yarıyı, adı geçmiş olanı."
+     },
+     {
+      "lang": "tr",
+      "text": "Eksilti cümleyi kısaltmak için değil; okura «bunu zaten biliyorsun» demek için var. Hazır mısın?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kalıbımız tekrar edileni düşürüyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "I would if I could, and so would she."
+     },
+     {
+      "lang": "tr",
+      "text": "Elimden gelse yapardım, o da yapardı."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "I would if I could, and so would she."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir konu çevresinde dönen konuşma bütününe"
+     },
+     {
+      "lang": "en",
+      "text": "discourse"
+     },
+     {
+      "lang": "tr",
+      "text": "bir savın gerekçelerle kurulmasına ise"
+     },
+     {
+      "lang": "en",
+      "text": "argumentation"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İkinci kalıbımız ikinci fiili düşürüyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "Some call it discourse; others, argumentation."
+     },
+     {
+      "lang": "tr",
+      "text": "Kimi ona söylem diyor, kimi gerekçelendirme."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Some call it discourse; others, argumentation."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son kalıbımız ikinci yarıyı yerine koyuyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "The first reading is careful; the second is not."
+     },
+     {
+      "lang": "tr",
+      "text": "İlk okuma dikkatli, ikincisi değil."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The first reading is careful; the second is not."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi dersin kuralı. Eksilti üç yerde çalışır: yardımcı fiilden sonra"
+     },
+     {
+      "lang": "en",
+      "text": "so would she"
+     },
+     {
+      "lang": "tr",
+      "text": "noktalı virgülden sonra"
+     },
+     {
+      "lang": "en",
+      "text": "others, argumentation"
+     },
+     {
+      "lang": "tr",
+      "text": "ve olumsuzda"
+     },
+     {
+      "lang": "en",
+      "text": "the second is not"
+     },
+     {
+      "lang": "tr",
+      "text": "Düşürdüğün şeyin geri getirilebilir olması şart; getirilemiyorsa cümle eksik değil bozuk olur."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sıra sende: Elimden gelse yapardım, o da yapardı."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "I would if I could, and so would he.",
+     "accept": [
+      "I would if I could, and he would too.",
+      "I would if I could, and so would she."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Tekrar edileni düşürmek için"
+      },
+      {
+       "lang": "en",
+       "text": "and so would"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "I would if I could, and so would he."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kontrol. Şu cümle doğru mu?"
+     },
+     {
+      "lang": "en",
+      "text": "The first reading is careful; the second is not."
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "The first reading is careful; the second is not.",
+     "answer": true,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Doğru. İkinci yarıda «reading» düşmüş ve okur onu ilk yarıdan geri getiriyor."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir metnin kendi içinde tutarlı olmasına"
+     },
+     {
+      "lang": "en",
+      "text": "coherence"
+     },
+     {
+      "lang": "tr",
+      "text": "iki şeyi birbirinden ayırmaya ise"
+     },
+     {
+      "lang": "en",
+      "text": "differentiation"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The coherence rests on a differentiation."
+     },
+     {
+      "lang": "tr",
+      "text": "İç tutarlılık bir ayrıştırmaya dayanıyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The coherence rests on a differentiation."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sen kur: Kimi ona üslup diyor, kimi kayıt."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "Some call it style; others, register.",
+     "accept": [
+      "Some call it style; others, tone.",
+      "Some call it discourse; others, argumentation."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "İkinci fiili düşürmek için"
+      },
+      {
+       "lang": "en",
+       "text": "others,"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "Some call it style; others, register."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Kişinin kendi bakışını taşımasına"
+     },
+     {
+      "lang": "en",
+      "text": "subjectivity"
+     },
+     {
+      "lang": "tr",
+      "text": "akla uygun görünmeye ise"
+     },
+     {
+      "lang": "en",
+      "text": "plausibility"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The subjectivity does not remove the plausibility."
+     },
+     {
+      "lang": "tr",
+      "text": "Öznellik akla yatkınlığı ortadan kaldırmıyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The subjectivity does not remove the plausibility."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Sağlam gerekçeye dayanana"
+     },
+     {
+      "lang": "en",
+      "text": "well-founded"
+     },
+     {
+      "lang": "tr",
+      "text": "bir sözden anlam çıkarmaya ise"
+     },
+     {
+      "lang": "en",
+      "text": "construe"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "A well-founded claim is hard to construe otherwise."
+     },
+     {
+      "lang": "tr",
+      "text": "Sağlam temelli bir sav başka türlü anlamlandırmak zordur."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "A well-founded claim is hard to construe otherwise."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir tane daha: İlk cevap dikkatli, ikincisi değil."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "The first answer is careful; the second is not.",
+     "accept": [
+      "The first reply is careful; the second is not.",
+      "The first reading is careful; the second is not."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "İkinci yarıyı yerine koymak için"
+      },
+      {
+       "lang": "en",
+       "text": "the second is not"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "The first answer is careful; the second is not."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Özetleyelim: yardımcı fiil"
+     },
+     {
+      "lang": "en",
+      "text": "so would she"
+     },
+     {
+      "lang": "tr",
+      "text": "noktalı virgül"
+     },
+     {
+      "lang": "en",
+      "text": "others, argumentation"
+     },
+     {
+      "lang": "tr",
+      "text": "olumsuz"
+     },
+     {
+      "lang": "en",
+      "text": "the second is not"
+     },
+     {
+      "lang": "tr",
+      "text": "Şimdi eksiltiyle konuşacaksın."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Bir tartışmada aynı sözcükleri tekrarlamadan konuşuyorsun. Tekrar edileni, ikinci fiili ve ikinci yarıyı düşür ve cümlelerin anlaşılır kalsın.",
+   "partner": "eksiltili cümleleri yarım bulan, «tam söyler misin» diyen bir arkadaş",
+   "opening": "Can you say that in full?",
+   "openingTr": "Bunu tam söyler misin?",
+   "goal": "Tekrar edileni, ikinci fiili ve ikinci yarıyı üç ayrı eksiltiyle düşürdüysen konuşma başarılı sayılır.",
+   "minTurns": 8
+  }
+ },
+ {
+  "id": "en-c1-weight-at-the-end",
+  "level": "C1",
+  "course": "en",
+  "icon": "book",
+  "title": "Weight at the end",
+  "titleTr": "Ağırlığı sona atmak",
+  "summary": "Cümlenin ağır parçasını sona, vurgulu parçasını başa taşımayı öğretir; sıra anlamı değiştirmez, ağırlığı değiştirir.",
+  "minutes": 12,
+  "focusId": "Fronting and end-weight",
+  "vocab": [
+   {
+    "de": "connotation",
+    "tr": "yan anlam"
+   },
+   {
+    "de": "essayist",
+    "tr": "deneme yazarı"
+   },
+   {
+    "de": "allusion",
+    "tr": "gönderme"
+   },
+   {
+    "de": "denotation",
+    "tr": "düz anlam"
+   },
+   {
+    "de": "subtext",
+    "tr": "alt metin"
+   },
+   {
+    "de": "allegory",
+    "tr": "alegori"
+   },
+   {
+    "de": "aphorism",
+    "tr": "özdeyiş"
+   },
+   {
+    "de": "polemic",
+    "tr": "polemik"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "Into the sentence creeps a connotation.",
+    "tr": "yer öbeğini başa alır"
+   },
+   {
+    "de": "What the essayist does next is an allusion.",
+    "tr": "yapılanı başa alır"
+   },
+   {
+    "de": "The denotation we know; the subtext we guess.",
+    "tr": "nesneyi başa alır"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Bugün cümlenin ağır parçasını sona, vurgulu parçasını başa taşımayı öğreneceğiz."
+     },
+     {
+      "lang": "tr",
+      "text": "Sıra anlamı değiştirmez, ağırlığı değiştirir; okur en sonda duranı hatırlar. Hazır mısın?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "connotation"
+     },
+     {
+      "lang": "tr",
+      "text": "Kelimenin yanında taşıdığı çağrışım demek. İlk kalıbımız da bu. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "Into the sentence creeps a connotation."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Into the sentence creeps a connotation."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Deneme türünde yazana"
+     },
+     {
+      "lang": "en",
+      "text": "essayist"
+     },
+     {
+      "lang": "tr",
+      "text": "dolaylı anıştırmaya ise"
+     },
+     {
+      "lang": "en",
+      "text": "allusion"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İkinci kalıbımız yapılanı başa alıyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "What the essayist does next is an allusion."
+     },
+     {
+      "lang": "tr",
+      "text": "Deneme yazarının sonra yaptığı şey bir gönderme."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "What the essayist does next is an allusion."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Kelimenin sözlükteki karşılığına"
+     },
+     {
+      "lang": "en",
+      "text": "denotation"
+     },
+     {
+      "lang": "tr",
+      "text": "satır aralarında duran anlama ise"
+     },
+     {
+      "lang": "en",
+      "text": "subtext"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son kalıbımız nesneyi başa alıyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "The denotation we know; the subtext we guess."
+     },
+     {
+      "lang": "tr",
+      "text": "Düz anlamı biliyoruz, alt metni tahmin ediyoruz."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The denotation we know; the subtext we guess."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi dersin kuralı. İngilizce ağır parçayı sona sever:"
+     },
+     {
+      "lang": "en",
+      "text": "Into the sentence creeps a connotation."
+     },
+     {
+      "lang": "tr",
+      "text": "cümlesinde uzun özne sona gitti,"
+     },
+     {
+      "lang": "en",
+      "text": "The denotation we know"
+     },
+     {
+      "lang": "tr",
+      "text": "cümlesinde ise nesne başa geldi ve vurgu ona bindi. İkisi de dilbilgisi hatası değil, bilinçli bir seçimdir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sıra sende: Odaya bir kuşku siziyor."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "Into the room creeps a doubt.",
+     "accept": [
+      "Into the room creeps a suspicion.",
+      "Into the sentence creeps a connotation."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Yer öbeğini başa almak için"
+      },
+      {
+       "lang": "en",
+       "text": "Into the"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "Into the room creeps a doubt."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kontrol. Şu cümle doğru mu?"
+     },
+     {
+      "lang": "en",
+      "text": "The denotation we know; the subtext we guess."
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "The denotation we know; the subtext we guess.",
+     "answer": true,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Doğru. Nesne başa geçmiş ve vurgu ona binmiş; anlam aynı, ağırlık değişmiş."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Baştan sona bir şeyi başka bir şeyle anlatan anlatıya"
+     },
+     {
+      "lang": "en",
+      "text": "allegory"
+     },
+     {
+      "lang": "tr",
+      "text": "tek cümlelik keskin söze ise"
+     },
+     {
+      "lang": "en",
+      "text": "aphorism"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "An allegory is longer than an aphorism."
+     },
+     {
+      "lang": "tr",
+      "text": "Alegori özdeyişten uzundur."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "An allegory is longer than an aphorism."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sen kur: Yazarın sonra yaptığı şey bir gönderme."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "What the writer does next is an allusion.",
+     "accept": [
+      "What the author does next is an allusion.",
+      "What the essayist does next is an allusion."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Yapılanı başa almak için"
+      },
+      {
+       "lang": "en",
+       "text": "What … does next is"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "What the writer does next is an allusion."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Sert ve çatışmalı tartışmaya"
+     },
+     {
+      "lang": "en",
+      "text": "polemic"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The polemic came last."
+     },
+     {
+      "lang": "tr",
+      "text": "Polemik en sona geldi."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The polemic came last."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Dikkat: sona attığın şey vurgulanan şey olur. Bu yüzden bir cümlenin son kelimesi hiçbir zaman rastlantı değildir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The last word carries the weight."
+     },
+     {
+      "lang": "tr",
+      "text": "Son kelime ağırlığı taşır."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The last word carries the weight."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir tane daha: Alt metni biliyoruz, yan anlamı tahmin ediyoruz."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "The subtext we know; the connotation we guess.",
+     "accept": [
+      "The subtext we know; the meaning we guess.",
+      "The denotation we know; the subtext we guess."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Nesneyi başa almak için"
+      },
+      {
+       "lang": "en",
+       "text": "we know; … we guess"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "The subtext we know; the connotation we guess."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Özetleyelim: yer öbeği"
+     },
+     {
+      "lang": "en",
+      "text": "Into the sentence"
+     },
+     {
+      "lang": "tr",
+      "text": "yapılan"
+     },
+     {
+      "lang": "en",
+      "text": "What … does next is"
+     },
+     {
+      "lang": "tr",
+      "text": "nesne"
+     },
+     {
+      "lang": "en",
+      "text": "The denotation we know"
+     },
+     {
+      "lang": "tr",
+      "text": "Şimdi ağırlığı nereye koyduğunu seçeceksin."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Okuduğun bir metni anlatıyorsun ve her cümlede neyin sona kaldığını bilerek seçiyorsun. Yer öbeğini, yapılanı ve nesneyi başa alan üç cümle kur.",
+   "partner": "cümle sırasını rastlantı sayan, «nasıl söylesen olur» diyen bir arkadaş",
+   "opening": "Does the order really matter?",
+   "openingTr": "Sıra gerçekten önemli mi?",
+   "goal": "Yer öbeğini, yapılanı ve nesneyi başa alan üç ayrı cümle kurduysan konuşma başarılı sayılır.",
+   "minTurns": 8
+  }
+ },
+ {
+  "id": "en-c1-the-formal-request",
+  "level": "C1",
+  "course": "en",
+  "icon": "office",
+  "title": "The formal request",
+  "titleTr": "Resmî dilek",
+  "summary": "Resmî dilekte kalıplaşmış biçimleri öğretir: that he be, were it not for, lest — üçü de eski ama hâlâ yürürlükte.",
+  "minutes": 12,
+  "focusId": "Subjunctive and formulaic were",
+  "vocab": [
+   {
+    "de": "convene",
+    "tr": "toplantıya çağırmak"
+   },
+   {
+    "de": "chairing",
+    "tr": "oturum başkanlığı"
+   },
+   {
+    "de": "adjourn",
+    "tr": "ara vermek"
+   },
+   {
+    "de": "exert",
+    "tr": "baskı uygulamak"
+   },
+   {
+    "de": "admonish",
+    "tr": "ikaz etmek"
+   },
+   {
+    "de": "deputizing",
+    "tr": "vekâlet"
+   },
+   {
+    "de": "prioritization",
+    "tr": "önceliklendirme"
+   },
+   {
+    "de": "consolidate",
+    "tr": "birleştirmek"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "I insist that the board convene tomorrow.",
+    "tr": "resmî isteği kalıplaşmış biçimle kurar"
+   },
+   {
+    "de": "Were it not for the chairing, we would adjourn.",
+    "tr": "olmasaydı anlamını kalıpla kurar"
+   },
+   {
+    "de": "They ask that no one exert pressure.",
+    "tr": "resmî yasağı kalıpla kurar"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Bugün resmî dilekte kalıplaşmış biçimleri öğreneceğiz: that he be, were it not for ve lest."
+     },
+     {
+      "lang": "tr",
+      "text": "Üçü de eski biçimler ama hâlâ yürürlükte; kurumsal metinde bunları kullanmamak kaydı düşürüyor. Hazır mısın?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "convene"
+     },
+     {
+      "lang": "tr",
+      "text": "Bir kurulu toplanmaya çağırmak demek. İlk kalıbımız da bu. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "I insist that the board convene tomorrow."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "I insist that the board convene tomorrow."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Toplantıyı yönetme işine"
+     },
+     {
+      "lang": "en",
+      "text": "chairing"
+     },
+     {
+      "lang": "tr",
+      "text": "oturumu bir süre kesmeye ise"
+     },
+     {
+      "lang": "en",
+      "text": "adjourn"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İkinci kalıbımız olmasaydı anlamını kalıpla kuruyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "Were it not for the chairing, we would adjourn."
+     },
+     {
+      "lang": "tr",
+      "text": "Oturum başkanlığı olmasaydı ara verirdik."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Were it not for the chairing, we would adjourn."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Birinin üzerinde baskı kurmaya"
+     },
+     {
+      "lang": "en",
+      "text": "exert"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son kalıbımız resmî yasağı kalıpla kuruyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "They ask that no one exert pressure."
+     },
+     {
+      "lang": "tr",
+      "text": "Kimsenin baskı uygulamamasını istiyorlar."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "They ask that no one exert pressure."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi dersin kuralı. Bu kalıpta fiil ÇEKİLMİYOR:"
+     },
+     {
+      "lang": "en",
+      "text": "that the board convene"
+     },
+     {
+      "lang": "tr",
+      "text": "diyoruz,"
+     },
+     {
+      "lang": "en",
+      "text": "convenes"
+     },
+     {
+      "lang": "tr",
+      "text": "demiyoruz. Aynı biçimde"
+     },
+     {
+      "lang": "en",
+      "text": "were it not for"
+     },
+     {
+      "lang": "tr",
+      "text": "tekilde bile was değil were alır. Kural eskidir ama bugün de kurumsal metnin işaretidir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sıra sende: Grubun yarın toplanmasında ısrar ediyorum."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "I insist that the group convene tomorrow.",
+     "accept": [
+      "I insist that the team convene tomorrow.",
+      "I insist that the board convene tomorrow."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Resmî isteği kalıplaşmış biçimle kurmak için"
+      },
+      {
+       "lang": "en",
+       "text": "insist that … convene"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "I insist that the group convene tomorrow."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kontrol. Şu cümle doğru mu?"
+     },
+     {
+      "lang": "en",
+      "text": "Were it not for the chairing, we would adjourn."
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "Were it not for the chairing, we would adjourn.",
+     "answer": true,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Doğru. Tekil özneyle bile were kullanılıyor; bu bir hata değil kalıplaşmış biçim."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Uyarıda bulunmaya"
+     },
+     {
+      "lang": "en",
+      "text": "admonish"
+     },
+     {
+      "lang": "tr",
+      "text": "birinin yerine bakmaya ise"
+     },
+     {
+      "lang": "en",
+      "text": "deputizing"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "They admonish whoever is deputizing."
+     },
+     {
+      "lang": "tr",
+      "text": "Vekâlet edeni ikaz ediyorlar."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "They admonish whoever is deputizing."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sen kur: Oylama olmasaydı ara verirdik."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "Were it not for the vote, we would adjourn.",
+     "accept": [
+      "Were it not for the ballot, we would adjourn.",
+      "Were it not for the chairing, we would adjourn."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Olmasaydı anlamını kalıpla kurmak için"
+      },
+      {
+       "lang": "en",
+       "text": "were it not for"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "Were it not for the vote, we would adjourn."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Neyin önce yapılacağını belirlemeye"
+     },
+     {
+      "lang": "en",
+      "text": "prioritization"
+     },
+     {
+      "lang": "tr",
+      "text": "birkaç şeyi tek başlık altında toplamaya ise"
+     },
+     {
+      "lang": "en",
+      "text": "consolidate"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The prioritization will consolidate the list."
+     },
+     {
+      "lang": "tr",
+      "text": "Önceliklendirme listeyi birleştirecek."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The prioritization will consolidate the list."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Üçüncü kalıp da var:"
+     },
+     {
+      "lang": "en",
+      "text": "lest"
+     },
+     {
+      "lang": "tr",
+      "text": "Bu söz «olmasın diye» demek ve kendinden sonra da çekimsiz fiil ister."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "We write it down lest the point be lost."
+     },
+     {
+      "lang": "tr",
+      "text": "Nokta kaybolmasın diye yazıya geçiriyoruz."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "We write it down lest the point be lost."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir tane daha: Kimsenin nüfuz kullanmamasını istiyorlar."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "They ask that no one exert influence.",
+     "accept": [
+      "They ask that nobody exert influence.",
+      "They ask that no one exert pressure."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Resmî yasağı kalıpla kurmak için"
+      },
+      {
+       "lang": "en",
+       "text": "ask that no one"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "They ask that no one exert influence."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Özetleyelim: istek"
+     },
+     {
+      "lang": "en",
+      "text": "that the board convene"
+     },
+     {
+      "lang": "tr",
+      "text": "olmasaydı"
+     },
+     {
+      "lang": "en",
+      "text": "were it not for"
+     },
+     {
+      "lang": "tr",
+      "text": "olmasın diye"
+     },
+     {
+      "lang": "en",
+      "text": "lest … be"
+     },
+     {
+      "lang": "tr",
+      "text": "Şimdi resmî bir dilek yazacaksın."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Bir kurula resmî bir istek iletiyorsun. İsteği, olmasaydıyı ve yasağı kalıplaşmış biçimlerle kur ve kaydı düşürme.",
+   "partner": "bu biçimleri eskimiş bulan, «kimse böyle konuşmuyor» diyen bir meslektaş",
+   "opening": "Nobody talks like that anymore, do they?",
+   "openingTr": "Artık kimse böyle konuşmuyor, değil mi?",
+   "goal": "İsteği, olmasaydıyı ve yasağı üç ayrı kalıplaşmış biçimle kurduysan konuşma başarılı sayılır.",
+   "minTurns": 8
+  }
+ },
+ {
+  "id": "en-c1-the-tone-of-concession",
+  "level": "C1",
+  "course": "en",
+  "icon": "handshake",
+  "title": "The tone of concession",
+  "titleTr": "İmtiyazın tonu",
+  "summary": "Karşı tarafa hak verirken kendi savını korumayı öğretir; granted, albeit ve whereas üç ayrı sıcaklıkta.",
+  "minutes": 12,
+  "focusId": "Concessive and contrastive range",
+  "vocab": [
+   {
+    "de": "weigh up",
+    "tr": "ölçüp biçmek"
+   },
+   {
+    "de": "concede",
+    "tr": "kabul etmek"
+   },
+   {
+    "de": "gloss over",
+    "tr": "geçiştirmek"
+   },
+   {
+    "de": "put into perspective",
+    "tr": "bağlamına oturtmak"
+   },
+   {
+    "de": "call into question",
+    "tr": "sorgulamak"
+   },
+   {
+    "de": "denounce",
+    "tr": "kınamak"
+   },
+   {
+    "de": "multilayered",
+    "tr": "çok katmanlı"
+   },
+   {
+    "de": "ambivalent",
+    "tr": "ikircikli"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "Granted, the figure is high, albeit explicable.",
+    "tr": "hakkı teslim edip savı korur"
+   },
+   {
+    "de": "Much as I weigh up both sides, one is stronger.",
+    "tr": "ne kadar tartsam da der"
+   },
+   {
+    "de": "She would concede the point, whereas he would gloss over it.",
+    "tr": "iki tutumu karşı karşıya koyar"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Bugün karşı tarafa hak verirken kendi savını korumayı öğreneceğiz: granted, albeit, whereas ve much as."
+     },
+     {
+      "lang": "tr",
+      "text": "İmtiyaz vermek zayıflık değildir; doğru tonda verilen imtiyaz savı güçlendirir. Hazır mısın?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kalıbımız hakkı teslim edip savı koruyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "Granted, the figure is high, albeit explicable."
+     },
+     {
+      "lang": "tr",
+      "text": "Kabul, rakam yüksek, gerçi açıklanabilir."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Granted, the figure is high, albeit explicable."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Artısını eksisini tartmaya"
+     },
+     {
+      "lang": "en",
+      "text": "weigh up"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İkinci kalıbımız ne kadar tartsam da diyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "Much as I weigh up both sides, one is stronger."
+     },
+     {
+      "lang": "tr",
+      "text": "İki tarafı ne kadar ölçüp biçsem de biri daha güçlü."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Much as I weigh up both sides, one is stronger."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Karşı tarafın haklı olduğunu teslim etmeye"
+     },
+     {
+      "lang": "en",
+      "text": "concede"
+     },
+     {
+      "lang": "tr",
+      "text": "bir sorunu üstünkörü geçmeye ise"
+     },
+     {
+      "lang": "en",
+      "text": "gloss over"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son kalıbımız iki tutumu karşı karşıya koyuyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "She would concede the point, whereas he would gloss over it."
+     },
+     {
+      "lang": "tr",
+      "text": "O noktayı kabul ederdi, oysa öteki geçiştirirdi."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "She would concede the point, whereas he would gloss over it."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi dersin kuralı. Dört sözün sıcaklığı farklı:"
+     },
+     {
+      "lang": "en",
+      "text": "granted"
+     },
+     {
+      "lang": "tr",
+      "text": "en açık teslim,"
+     },
+     {
+      "lang": "en",
+      "text": "albeit"
+     },
+     {
+      "lang": "tr",
+      "text": "en resmî çekince,"
+     },
+     {
+      "lang": "en",
+      "text": "whereas"
+     },
+     {
+      "lang": "tr",
+      "text": "nötr karşıtlık,"
+     },
+     {
+      "lang": "en",
+      "text": "much as"
+     },
+     {
+      "lang": "tr",
+      "text": "ise en kişisel olanı. Aynı içerik, dört ayrı mesafe."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sıra sende: Kabul, maliyet yüksek, gerçi açıklanabilir."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "Granted, the cost is high, albeit explicable.",
+     "accept": [
+      "Granted, the price is high, albeit explicable.",
+      "Granted, the figure is high, albeit explicable."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Hakkı teslim edip savı korumak için"
+      },
+      {
+       "lang": "en",
+       "text": "granted … albeit"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "Granted, the cost is high, albeit explicable."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kontrol. Şu cümle doğru mu?"
+     },
+     {
+      "lang": "en",
+      "text": "She would concede the point, whereas he would gloss over it."
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "She would concede the point, whereas he would gloss over it.",
+     "answer": true,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Doğru. İki tutum karşı karşıya konmuş ve hiçbiri küçümsenmemiş; whereas nötr karşıtlık kurar."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir şeyi ölçüsüne oturtmaya"
+     },
+     {
+      "lang": "en",
+      "text": "put into perspective"
+     },
+     {
+      "lang": "tr",
+      "text": "doğruluğundan kuşku duymaya ise"
+     },
+     {
+      "lang": "en",
+      "text": "call into question"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "To put into perspective is not to call into question."
+     },
+     {
+      "lang": "tr",
+      "text": "Bağlamına oturtmak sorgulamak değildir."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "To put into perspective is not to call into question."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sen kur: İki metni ne kadar ölçüp biçsem de biri daha güçlü."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "Much as I weigh up both texts, one is stronger.",
+     "accept": [
+      "Much as I weigh up both essays, one is stronger.",
+      "Much as I weigh up both sides, one is stronger."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Ne kadar tartsam da demek için"
+      },
+      {
+       "lang": "en",
+       "text": "much as I"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "Much as I weigh up both texts, one is stronger."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Açıkça kötülemeye"
+     },
+     {
+      "lang": "en",
+      "text": "denounce"
+     },
+     {
+      "lang": "tr",
+      "text": "birden çok katı olana ise"
+     },
+     {
+      "lang": "en",
+      "text": "multilayered"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "They denounce a multilayered text."
+     },
+     {
+      "lang": "tr",
+      "text": "Çok katmanlı bir metni kınıyorlar."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "They denounce a multilayered text."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İki duyguyu aynı anda taşıyana"
+     },
+     {
+      "lang": "en",
+      "text": "ambivalent"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The answer stays ambivalent."
+     },
+     {
+      "lang": "tr",
+      "text": "Cevap ikircikli kalıyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The answer stays ambivalent."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir tane daha: O noktayı kabul ederdi, oysa öteki geçiştirirdi."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "He would concede the point, whereas she would gloss over it.",
+     "accept": [
+      "He would concede the point, whereas she would skip it.",
+      "She would concede the point, whereas he would gloss over it."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "İki tutumu karşı karşıya koymak için"
+      },
+      {
+       "lang": "en",
+       "text": "whereas"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "He would concede the point, whereas she would gloss over it."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Özetleyelim: açık teslim"
+     },
+     {
+      "lang": "en",
+      "text": "granted"
+     },
+     {
+      "lang": "tr",
+      "text": "resmî çekince"
+     },
+     {
+      "lang": "en",
+      "text": "albeit"
+     },
+     {
+      "lang": "tr",
+      "text": "nötr karşıtlık"
+     },
+     {
+      "lang": "en",
+      "text": "whereas"
+     },
+     {
+      "lang": "tr",
+      "text": "Şimdi imtiyaz verirken savını koruyacaksın."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Bir tartışmada karşı tarafa hak veriyorsun ama savından vazgeçmiyorsun. Açık teslimi, resmî çekinceyi ve nötr karşıtlığı ayrı ayrı kur.",
+   "partner": "her imtiyazı geri adım sayan, «demek kabul ediyorsun» diyen bir tartışmacı",
+   "opening": "So you admit I'm right?",
+   "openingTr": "Demek haklı olduğumu kabul ediyorsun?",
+   "goal": "Açık teslimi, resmî çekinceyi ve nötr karşıtlığı üç ayrı imtiyaz sözüyle kurduysan konuşma başarılı sayılır.",
+   "minTurns": 8
+  }
+ }
+]

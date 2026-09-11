@@ -250,6 +250,23 @@ export const CANDO: Cando[] = [
   c("B2", "GR", 18, "Gelecekteki bir ana göre konuşabilirim: future perfect ile bitmiş olanı, future continuous ile o an sürecek olanı."),
   c("B2", "GR", 19, "Fiili isme çevirip resmî kayda geçebilirim: they introduced the rule yerine the introduction of the rule."),
   c("B2", "GR", 20, "İddiayı yumuşatabilir ve metni yönlendirebilirim: arguably, admittedly, to some extent, that said."),
+
+  /* İngilizce C1: yine on ifade, seviyenin on modülüne birer tane. Numara
+     11'den başlıyor çünkü 1-4 Almanca kursun C1 dilbilgisi (Partizipial-
+     konstruktionen, Modalpartikeln, Konjunktiv II, Funktionsverbgefüge).
+     C1'de öğretilen şey yeni bir KURAL değil bir SEÇİM: aynı içeriği kaç
+     ayrı biçimde söyleyebildiğin ve hangisini neden seçtiğin. Bu yüzden
+     ifadeler "kurabilirim" değil çoğu yerde "seçebilirim" diyor. */
+  c("C1", "GR", 11, "Söylenmesi gerekmeyeni düşürebilirim: I would if I could, so do I, the former ve the latter."),
+  c("C1", "GR", 12, "Cümlenin ağırlığını sona atıp başa vurguyu taşıyabilirim: Into the hall came ve What he did next was."),
+  c("C1", "GR", 13, "Resmî dilekte kalıplaşmış biçimleri seçebilirim: I insist that he be, were it not for ve lest."),
+  c("C1", "GR", 14, "İmtiyaz ve karşıtlığın tonunu ayarlayabilirim: granted, albeit, whereas ve much as I."),
+  c("C1", "GR", 15, "Yerleşik eşdizimleri ve işlev fiillerini kullanabilirim: take issue with, bear the brunt, draw a distinction."),
+  c("C1", "GR", 16, "Aynı içeriği üç ayrı kayıtta söyleyebilirim: hukuk dili, nötr dil ve konuşma dili."),
+  c("C1", "GR", 17, "Aktarırken hükmü aktarma fiiline yükleyebilirim: he claimed, he conceded, he alleged."),
+  c("C1", "GR", 18, "Kip nüansıyla mesafe ayarlayabilirim: may well, might have been expected to, would tend to."),
+  c("C1", "GR", 19, "Eksiltili övgü ve ironiyi kurabilir ve duyabilirim: not exactly cheap, I wouldn't say no."),
+  c("C1", "GR", 20, "Metnin bütününü bağlayabilirim: this, such, the latter ve paragraf düzeyinde yön işaretleri."),
 ];
 
 /**
@@ -263,8 +280,8 @@ export const CANDO: Cando[] = [
  */
 export const EN_GR_IDS: ReadonlySet<string> = new Set([
   ...["A1", "A2"].flatMap((lvl) => [11, 12, 13, 14, 15, 16, 17, 18].map((n) => `${lvl}.GR.${n}`)),
-  // B1 ve B2 onar ifade taşıyor (A1/A2 sekiz): seviyenin on modülü, her modüle bir kural.
-  ...["B1", "B2"].flatMap((lvl) =>
+  // B1, B2 ve C1 onar ifade taşıyor (A1/A2 sekiz): seviyenin on modülü, her modüle bir kural.
+  ...["B1", "B2", "C1"].flatMap((lvl) =>
     [11, 12, 13, 14, 15, 16, 17, 18, 19, 20].map((n) => `${lvl}.GR.${n}`),
   ),
 ]);

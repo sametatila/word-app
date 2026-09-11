@@ -11,6 +11,7 @@ import enA1 from "./en-a1.json";
 import enA2 from "./en-a2.json";
 import enB1 from "./en-b1.json";
 import enB2 from "./en-b2.json";
+import enC1 from "./en-c1.json";
 import a2 from "./de-a2.json";
 import b1 from "./de-b1.json";
 import b2 from "./de-b2.json";
@@ -55,14 +56,14 @@ export type Lesson = {
  */
 const BY_COURSE: Record<string, Record<string, Lesson[]>> = {
   de: { A1: a1 as Lesson[], A2: a2 as Lesson[], B1: b1 as Lesson[], B2: b2 as Lesson[], C1: c1 as Lesson[] },
-  // İngilizce: A1, A2 ve B1 tam (100'er ders); B2 yazılıyor, C1 yazılmadı.
+  // İngilizce: A1, A2, B1 ve B2 tam (100'er ders); C1 yazılıyor.
   // Sayılar burada TEK TEK YAZILMIYOR — güncel sayı `npm run dump:lessons en`
   // çıktısında, yorumda bayatlıyor.
   // Seviye anahtarı olmayan seviyeler boş döner — Patika o ünitelerde
   // "Yakında" gösterir, Almanca derslere DÜŞMEZ (bkz. bundleFor: yalnız aynı
   // hedef dile düşülür). Yarım seviye de aynı şekilde görünür: yazılmış
   // modüller listelenir, kalanlar gelince dosya büyür.
-  en: { A1: enA1 as Lesson[], A2: enA2 as Lesson[], B1: enB1 as Lesson[], B2: enB2 as Lesson[] },
+  en: { A1: enA1 as Lesson[], A2: enA2 as Lesson[], B1: enB1 as Lesson[], B2: enB2 as Lesson[], C1: enC1 as Lesson[] },
 };
 
 /**
