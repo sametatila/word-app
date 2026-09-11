@@ -9957,3 +9957,24 @@ kaydedilmemiş işini** de içine aldı. İçerik doğru ve kapılar yeşil oldu
 geri alınmadı; commit mesajı iki işi taşıdığını açıkça yazıyor. Defterdeki
 `GIT_INDEX_FILE` kuralının sınırı buymuş: ayrı indeks kurmak **dosya
 içeriğini** parçalamıyor.
+
+## §11.303 — Oturuma bağlı içeriğin önbelleğe girmesi
+
+`check:client-boundary`e dördüncü sınır eklendi: bir sayfa ya da uç kullanıcının
+verisini çiziyorsa istek başına çizilmeli. Yanlış tarafa düşerse bedeli ağır ve
+sessiz — bir kullanıcının yanıtı önbelleğe girip **başkasına** sunulabilir.
+
+**Kapının neye BAKMADIĞI, baktığı kadar önemli.** Önce "oturum okuyor ama
+`force-dynamic` yazmamış" diye ölçtüm; tek aday tanıtım sayfası çıktı ve o bir
+kusur değil: `getUserId()`/`getLang()` çerez okuyor, Next `cookies()`/`headers()`
+okuyan rotayı zaten dinamiğe çeviriyor. Öyle bir kural, zararsız sayfalarla
+dolu bir liste üretip kapıyı gürültüye boğardı — ve bu defterde gürültü,
+kapının kendisini öldüren şey.
+
+Kapı bu yüzden yalnız **açık karşı beyanı** arıyor: oturum okuyan bir dosyada
+`dynamic = "force-static"` ya da `revalidate = N`. Uçlarda ikinci bir kabul var
+(`no-store` başlığı), çünkü uç zaten yanıt başlığıyla da korunabiliyor.
+
+Bugün hiçbir ihlal yok (162 dosya). Üç enjeksiyonun üçü yakalandı: oturumlu
+sayfaya `revalidate`, oturumlu sayfaya `force-static`, ve oturumlu ucun ikisini
+birden bırakması.

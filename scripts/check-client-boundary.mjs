@@ -187,6 +187,51 @@ for (const file of files) {
   }
 }
 
+/**
+ * DÖRDÜNCÜ SINIR: oturuma bağlı sayfa STATİK önbelleğe alınıyor mu?
+ *
+ * Bir sayfa kullanıcının verisini çiziyorsa istek başına çizilmeli. Next,
+ * `cookies()`/`headers()` okuyan rotayı zaten dinamiğe çeviriyor — bu yüzden
+ * "force-dynamic yazılmamış" tek başına bir kusur DEĞİL ve kapı ona
+ * bakmıyor (öyle yazsaydım tanıtım sayfası gibi zararsız yerler listeyi
+ * doldururdu; ölçtüm, tek aday oydu).
+ *
+ * Tehlikeli olan AÇIK karşı beyan: oturum okuyan bir dosyada
+ * `dynamic = "force-static"` ya da `revalidate = N`. O bileşimde bir
+ * kullanıcının sayfası önbelleğe girip BAŞKASINA sunulabilir — sessiz ve
+ * geri alınamaz bir sızıntı.
+ *
+ * Uçlarda ikinci bir kabul var: `no-store` başlığı. `route.ts` gövdesi
+ * oturum okuyup ne `force-dynamic` ne `no-store` taşıyorsa bildiriliyor.
+ */
+const SESSION = /getUserId\(|getUserInfo\(|requireUser\(|auth\.api\.getSession|cookies\(\)|headers\(\)/;
+const cacheIssues = new Set();
+for (const file of walk("src/app")) {
+  const src = read(file);
+  if (!SESSION.test(src)) continue;
+  const forcedStatic = /export const dynamic\s*=\s*["']force-static["']|export const revalidate\s*=\s*\d/.test(src);
+  if (forcedStatic) {
+    cacheIssues.add(`${file}\n      oturum okuyor ama statik/revalidate beyanı var`);
+    continue;
+  }
+  if (/\/route\.ts$/.test(file)) {
+    const dynamic = /export const dynamic\s*=\s*["']force-dynamic["']/.test(src);
+    if (!dynamic && !/no-store/.test(src)) {
+      cacheIssues.add(`${file}\n      oturum okuyan uç: ne force-dynamic ne no-store`);
+    }
+  }
+}
+
+if (cacheIssues.size) {
+  console.error("\nOTURUMA BAĞLI İÇERİK ÖNBELLEĞE ALINABİLİR:\n");
+  for (const x of cacheIssues) console.error("  " + x + "\n");
+  console.error(
+    "Bir kullanıcının yanıtı önbelleğe girip başkasına sunulabilir.\n" +
+    "Sayfada `dynamic = \"force-dynamic\"`, uçta ayrıca `cache-control: no-store`.\n",
+  );
+  process.exit(1);
+}
+
 if (serialize.size) {
   console.error("\nSUNUCUDAN İSTEMCİYE SERİ HÂLE GELMEYEN PROP:\n");
   for (const x of serialize) console.error("  " + x + "\n");
