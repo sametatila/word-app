@@ -10798,3 +10798,37 @@ yazıyordu, karar ise gerçek dili veriyordu. Mobil karşılığı doğruydu
 
 §214 dört yüzeyin sekiz çağrı yerini birlikte okuyor: karar ve yükleme, iki
 platformda, iki içerik türü için. Enjeksiyon (`"tr"`ü geri koymak) yakalandı.
+
+## §11.329 — Rozet duvarı: üç sapma, biri mobilin yorumunda yazılıydı
+
+Kurs ekseninde "karar ile yükleme aynı girdiyi okuyor mu" taraması temiz
+çıktı: sözlük yükleyicilerine sabit kurs geçen tek yerler `catch` dalları
+(profil okunamazsa `"de"`), TTS parçalarının `lang: "de"` etiketi ise iki
+platformda da yalnız "hedef dil" işareti — gerçek ses kurstan geliyor
+(`voiceForSegment` → `lessonVoice(course)`), mobil de aynı düzeni yazıyor.
+Yani taranan hipotez yanlıştı ve bu da bir sonuç.
+
+Kusurlar **rozet duvarını** mobil karşılığıyla satır satır karşılaştırınca
+çıktı:
+
+1. **Yanıt denetimi eksikti.** Mobil `/api/achievements` gövdesinin üç alanını
+   birden denetliyor (`rows`, `total`, `unlockedCount`); web yalnız ilk ikisine
+   bakıyordu. `unlockedCount`u eksik bir yanıt web'de "geçerli" sayılıyor,
+   sonra `board.unlockedCount / total` ile ilerleme şeridi **`NaN%` genişlik**
+   alıyor ve sayaç satırı `formatNumber(undefined)` yazıyordu. Mobil aynı yerde
+   "tekrar dene" gösteriyor.
+
+   **Mobilin yorumu bunu zaten söylüyordu:** "Web de aynı denetimi yapıyor
+   (`achievement-wall`)". Yapmıyordu. Zorunluluğu yazan cümle, ölçen yok —
+   §11.316 ve §11.319 ile aynı sınıf, bu kez tersinden: iddia mobilin
+   tarafındaydı.
+
+2. **İskeletin duyurusu yoktu.** Web duvarının iskeleti elle yazılmış tek
+   iskeletti ve `aria-busy` taşımıyordu; sesli okuyucu kullanan biri boş bir
+   kart duyuyordu. Kalıp `components/skeleton` `SkeletonCard`ta zaten var
+   (`role="status" aria-busy`), mobilde kökte (`accessibilityRole="progressbar"`).
+
+3. **Bölüm aralığı 20 px'ti**, mobilde `spacing.lg` (16).
+
+§215 sekiz ölçütü birlikte okuyor: iki platformun üç alan denetimi ve iki
+iskelet duyurusu. İki enjeksiyon (alanı silmek, duyuruyu silmek) yakalandı.
