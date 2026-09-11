@@ -19726,5 +19726,2450 @@
    "goal": "Karşılaştırmayı, ayrımı ve karşıtlığı fiili isme çevirerek söylediysen konuşma başarılı sayılır.",
    "minTurns": 7
   }
+ },
+ {
+  "id": "en-b2-how-the-study-works",
+  "level": "B2",
+  "course": "en",
+  "icon": "chart",
+  "title": "How the study works",
+  "titleTr": "Çalışma nasıl yürüyor",
+  "summary": "Bir çalışmanın kurgusunu anlatmayı öğretir; edilgen aktarım kalıbı bulguyu verir, kimin bulduğunu vermez.",
+  "minutes": 11,
+  "focusId": "Passive report structures",
+  "vocab": [
+   {
+    "de": "experiment",
+    "tr": "deney"
+   },
+   {
+    "de": "measurement",
+    "tr": "ölçüm"
+   },
+   {
+    "de": "cohort",
+    "tr": "izlem grubu"
+   },
+   {
+    "de": "dosage",
+    "tr": "doz düzeni"
+   },
+   {
+    "de": "therapy",
+    "tr": "tedavi yöntemi"
+   },
+   {
+    "de": "organism",
+    "tr": "organizma"
+   },
+   {
+    "de": "mutation",
+    "tr": "mutasyon"
+   },
+   {
+    "de": "evolution",
+    "tr": "evrim"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "It is reported that the experiment was repeated.",
+    "tr": "kimin bulduğunu söylemeden aktarır"
+   },
+   {
+    "de": "The measurements are said to be stable.",
+    "tr": "özneyi başa alıp bulguyu ona bağlar"
+   },
+   {
+    "de": "The cohort is thought to have been too small.",
+    "tr": "geçmişteki bir kusuru aktarım kalıbıyla verir"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Bugün bir çalışmanın kurgusunu anlatmayı öğreneceğiz: ne tekrarlandı, ölçümler tutarlı mı, grup yeterli miydi."
+     },
+     {
+      "lang": "tr",
+      "text": "Bilim yazısında bulgu verilir ama kimin bulduğu öne çıkarılmaz; bunu edilgen aktarım kalıbı sağlar. Hazır mısın?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "experiment"
+     },
+     {
+      "lang": "tr",
+      "text": "Kurulmuş bir sınama demek. İlk kalıbımız da bu. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "It is reported that the experiment was repeated."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "It is reported that the experiment was repeated."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir değerin sayıyla saptanmasına"
+     },
+     {
+      "lang": "en",
+      "text": "measurement"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İkinci kalıbımız özneyi başa alıyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "The measurements are said to be stable."
+     },
+     {
+      "lang": "tr",
+      "text": "Ölçümlerin kararlı olduğu söyleniyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The measurements are said to be stable."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Birlikte izlenen katılımcı grubuna"
+     },
+     {
+      "lang": "en",
+      "text": "cohort"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son kalıbımız geçmişteki bir kusuru aktarıyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "The cohort is thought to have been too small."
+     },
+     {
+      "lang": "tr",
+      "text": "İzlem grubunun fazla küçük olduğu düşünülüyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The cohort is thought to have been too small."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi dersin kuralı. Bilim yazısında aktarım üç biçimde geçer:"
+     },
+     {
+      "lang": "en",
+      "text": "It is reported that"
+     },
+     {
+      "lang": "tr",
+      "text": "cümle kurar,"
+     },
+     {
+      "lang": "en",
+      "text": "are said to"
+     },
+     {
+      "lang": "tr",
+      "text": "bugünü,"
+     },
+     {
+      "lang": "en",
+      "text": "is thought to have been"
+     },
+     {
+      "lang": "tr",
+      "text": "geçmişi anlatır. Üçü de bulguyu verir ama kimseyi öne çıkarmaz."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sıra sende: Deneyin tekrarlandığı bildiriliyor."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "It is reported that the test was repeated.",
+     "accept": [
+      "It is reported the test was repeated.",
+      "It is reported that the trial was repeated."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Kimin bulduğunu söylemeden aktarmak için"
+      },
+      {
+       "lang": "en",
+       "text": "It is reported that"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "It is reported that the test was repeated."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kontrol. Şu cümle doğru mu?"
+     },
+     {
+      "lang": "en",
+      "text": "The cohort is thought to have been too small."
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "The cohort is thought to have been too small.",
+     "answer": true,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Doğru. Aktarım geçmişe uzandığı için"
+      },
+      {
+       "lang": "en",
+       "text": "to have been"
+      },
+      {
+       "lang": "tr",
+       "text": "biçimini alıyor."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Ne kadar ve ne sıklıkla verileceğine"
+     },
+     {
+      "lang": "en",
+      "text": "dosage"
+     },
+     {
+      "lang": "tr",
+      "text": "uygulanan iyileştirme yoluna ise"
+     },
+     {
+      "lang": "en",
+      "text": "therapy"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The dosage depends on the therapy."
+     },
+     {
+      "lang": "tr",
+      "text": "Doz düzeni tedavi yöntemine bağlı."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The dosage depends on the therapy."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sen kur: Sonuçların kararlı olduğu söyleniyor."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "The results are said to be stable.",
+     "accept": [
+      "The results are said to be steady.",
+      "The findings are said to be stable."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Özneyi başa almak için"
+      },
+      {
+       "lang": "en",
+       "text": "are said to"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "The results are said to be stable."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Yaşayan tek varlığa"
+     },
+     {
+      "lang": "en",
+      "text": "organism"
+     },
+     {
+      "lang": "tr",
+      "text": "kalıtımdaki değişime ise"
+     },
+     {
+      "lang": "en",
+      "text": "mutation"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "One organism showed a mutation."
+     },
+     {
+      "lang": "tr",
+      "text": "Bir organizma bir mutasyon gösterdi."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "One organism showed a mutation."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Türlerin uzun sürede değişmesine"
+     },
+     {
+      "lang": "en",
+      "text": "evolution"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "Evolution works over long spans."
+     },
+     {
+      "lang": "tr",
+      "text": "Evrim uzun süreler boyunca işler."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Evolution works over long spans."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir tane daha: Örneklemin fazla küçük olduğu düşünülüyor."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "The sample is thought to have been too small.",
+     "accept": [
+      "The sample is thought to have been too little.",
+      "The group is thought to have been too small."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Geçmişteki bir kusuru aktarmak için"
+      },
+      {
+       "lang": "en",
+       "text": "is thought to have been"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "The sample is thought to have been too small."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Özetleyelim: cümle"
+     },
+     {
+      "lang": "en",
+      "text": "It is reported that"
+     },
+     {
+      "lang": "tr",
+      "text": "bugün"
+     },
+     {
+      "lang": "en",
+      "text": "are said to"
+     },
+     {
+      "lang": "tr",
+      "text": "geçmiş"
+     },
+     {
+      "lang": "en",
+      "text": "is thought to have been"
+     },
+     {
+      "lang": "tr",
+      "text": "Şimdi bir çalışmanın kurgusunu anlatacaksın."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Bir çalışmanın kurgusunu meslektaşına anlatıyorsun. Neyin tekrarlandığını, ölçümlerin ne durumda olduğunu ve grubun neden yetersiz sayıldığını aktarım kalıbıyla ver.",
+   "partner": "çalışmanın sonucuna hemen inanmak isteyen bir meslektaş",
+   "opening": "So the result holds, doesn't it?",
+   "openingTr": "Yani sonuç tutuyor, değil mi?",
+   "goal": "Üç bulguyu üç ayrı aktarım kalıbıyla verdiysen konuşma başarılı sayılır.",
+   "minTurns": 7
+  }
+ },
+ {
+  "id": "en-b2-lab-procedure",
+  "level": "B2",
+  "course": "en",
+  "icon": "tech",
+  "title": "In the lab",
+  "titleTr": "Laboratuvarda",
+  "summary": "Laboratuvar yönergesini kısa yazmayı öğretir; ortaç öbeği adımları tek cümleye indirip sırayı korur.",
+  "minutes": 11,
+  "focusId": "Participle clauses",
+  "vocab": [
+   {
+    "de": "liquid",
+    "tr": "sıvı"
+   },
+   {
+    "de": "catalyst",
+    "tr": "katalizör"
+   },
+   {
+    "de": "reaction",
+    "tr": "tepkime"
+   },
+   {
+    "de": "crystal",
+    "tr": "kristal"
+   },
+   {
+    "de": "alloy",
+    "tr": "alaşım"
+   },
+   {
+    "de": "molecule",
+    "tr": "molekül"
+   },
+   {
+    "de": "enzyme",
+    "tr": "enzim"
+   },
+   {
+    "de": "particle",
+    "tr": "parçacık"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "Having heated the liquid, add the catalyst.",
+    "tr": "önce biten adımı öne alıp bağlar"
+   },
+   {
+    "de": "Being slow, the reaction needed more heat.",
+    "tr": "sebebi ortaçla bağlar"
+   },
+   {
+    "de": "Formed on Monday, the crystal was measured.",
+    "tr": "edilgen ortaçla bağlar"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Bugün laboratuvar yönergesini kısa yazmayı öğreneceğiz: önce ne yapıldı, neden öyle oldu, ne sonra ölçüldü."
+     },
+     {
+      "lang": "tr",
+      "text": "Laboratuvar yönergesi kısa olmak zorunda ve adım sırası anlamın yarısı; ortaç öbeği ikisini birden sağlıyor. Hazır mısın?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "liquid"
+     },
+     {
+      "lang": "tr",
+      "text": "Akan madde demek. Tepkimeyi hızlandıran maddeye ise"
+     },
+     {
+      "lang": "en",
+      "text": "catalyst"
+     },
+     {
+      "lang": "tr",
+      "text": "denir. İlk kalıbımız da bu. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "Having heated the liquid, add the catalyst."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Having heated the liquid, add the catalyst."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Maddelerin birbirini değiştirmesine"
+     },
+     {
+      "lang": "en",
+      "text": "reaction"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İkinci kalıbımız sebebi bağlıyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "Being slow, the reaction needed more heat."
+     },
+     {
+      "lang": "tr",
+      "text": "Yavaş olduğu için tepkime daha çok ısı istedi."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Being slow, the reaction needed more heat."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Düzenli yüzleri olan katı yapıya"
+     },
+     {
+      "lang": "en",
+      "text": "crystal"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son kalıbımız edilgen ortaçla bağlıyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "Formed on Monday, the crystal was measured."
+     },
+     {
+      "lang": "tr",
+      "text": "Pazartesi oluşan kristal ölçüldü."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Formed on Monday, the crystal was measured."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi dersin kuralı. Ortaç öbeği iki cümlenin ÖZNESİ AYNIYSA kurulur:"
+     },
+     {
+      "lang": "en",
+      "text": "having"
+     },
+     {
+      "lang": "tr",
+      "text": "önce biteni,"
+     },
+     {
+      "lang": "en",
+      "text": "being"
+     },
+     {
+      "lang": "tr",
+      "text": "sebebi, üçüncü hâlle başlayan öbek ise edilgeni bağlar. Yönergede sıra bu yapıyla korunur."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sıra sende: Sıvıyı soğuttuktan sonra tozu ekle."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "Having cooled the liquid, add the powder.",
+     "accept": [
+      "Having cooled the liquid, add the salt.",
+      "Having cooled the liquid, add that powder."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Önce biten adımı bağlamak için"
+      },
+      {
+       "lang": "en",
+       "text": "having"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "Having cooled the liquid, add the powder."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kontrol. Şu cümle doğru mu?"
+     },
+     {
+      "lang": "en",
+      "text": "Being slow, the reaction needed more heat."
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "Being slow, the reaction needed more heat.",
+     "answer": true,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Doğru. Her iki yarının öznesi de tepkime; özne değişseydi bu öbek kurulamazdı."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İki metalin karışımına"
+     },
+     {
+      "lang": "en",
+      "text": "alloy"
+     },
+     {
+      "lang": "tr",
+      "text": "maddenin en küçük birleşik birimine ise"
+     },
+     {
+      "lang": "en",
+      "text": "molecule"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The alloy holds one heavy molecule."
+     },
+     {
+      "lang": "tr",
+      "text": "Alaşım ağır bir molekül taşıyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The alloy holds one heavy molecule."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sen kur: Ilık olduğu için örnek renk değiştirdi."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "Being warm, the sample changed colour.",
+     "accept": [
+      "Being warm, the sample changed color.",
+      "Being warm, that sample changed colour."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Sebebi bağlamak için"
+      },
+      {
+       "lang": "en",
+       "text": "being"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "Being warm, the sample changed colour."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Tepkimeyi yürüten canlı maddeye"
+     },
+     {
+      "lang": "en",
+      "text": "enzyme"
+     },
+     {
+      "lang": "tr",
+      "text": "çok küçük parçaya ise"
+     },
+     {
+      "lang": "en",
+      "text": "particle"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The enzyme splits the particle."
+     },
+     {
+      "lang": "tr",
+      "text": "Enzim parçacığı ayırıyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The enzyme splits the particle."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir tane daha: Cuma günü soğutulan alaşım test edildi."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "Cooled on Friday, the alloy was tested.",
+     "accept": [
+      "Cooled on Friday, the alloy was checked.",
+      "Cooled on Friday, that alloy was tested."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Edilgen ortaç üçüncü hâlle başlar:"
+      },
+      {
+       "lang": "en",
+       "text": "Cooled on Friday, the alloy was tested."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Özetleyelim: önce biten"
+     },
+     {
+      "lang": "en",
+      "text": "having heated"
+     },
+     {
+      "lang": "tr",
+      "text": "sebep"
+     },
+     {
+      "lang": "en",
+      "text": "being slow"
+     },
+     {
+      "lang": "tr",
+      "text": "edilgen"
+     },
+     {
+      "lang": "en",
+      "text": "formed"
+     },
+     {
+      "lang": "tr",
+      "text": "Şimdi bir laboratuvar yönergesini vereceksin."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Laboratuvarda bir işlemi ilk kez yapan birine yönergeyi anlatıyorsun. Önce biteni, sebebi ve edilgeni kısa cümlelerle bağla.",
+   "partner": "adımları not alan, sırayı iki kez soran bir öğrenci",
+   "opening": "Do I add the catalyst before or after?",
+   "openingTr": "Katalizörü önce mi sonra mı ekleyeyim?",
+   "goal": "Önce biteni, sebebi ve edilgeni üç ayrı ortaç öbeğiyle bağladıysan konuşma başarılı sayılır.",
+   "minTurns": 7
+  }
+ },
+ {
+  "id": "en-b2-the-finding",
+  "level": "B2",
+  "course": "en",
+  "icon": "pen",
+  "title": "The automation of the process",
+  "titleTr": "Bulgunun kendisi",
+  "summary": "Bilimsel yazının dilini öğretir; fiil isme dönünce yazı kişiden çıkar ve bulguya odaklanır.",
+  "minutes": 11,
+  "focusId": "Nominalisation and formal register",
+  "vocab": [
+   {
+    "de": "automation",
+    "tr": "otomasyon"
+   },
+   {
+    "de": "invention",
+    "tr": "buluş"
+   },
+   {
+    "de": "institute",
+    "tr": "enstitü"
+   },
+   {
+    "de": "patch",
+    "tr": "yama"
+   },
+   {
+    "de": "innovation",
+    "tr": "yenilik"
+   },
+   {
+    "de": "faculty",
+    "tr": "fakülte"
+   },
+   {
+    "de": "thesis",
+    "tr": "tez"
+   },
+   {
+    "de": "robot",
+    "tr": "robot"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "The automation of the process took a year.",
+    "tr": "fiili isme çevirip kayda geçirir"
+   },
+   {
+    "de": "The invention of the tool changed the institute.",
+    "tr": "buluşu isimle anlatır"
+   },
+   {
+    "de": "The introduction of the patch was delayed.",
+    "tr": "getirilmeyi isimle anlatır"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Bugün bilimsel yazının dilini öğreneceğiz: ne otomatikleşti, ne bulundu, ne geciktirildi."
+     },
+     {
+      "lang": "tr",
+      "text": "Bilim yazısı kişiyi değil bulguyu anlatır ve bunu sağlayan şey fiili isme çevirmek. Hazır mısın?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "automation"
+     },
+     {
+      "lang": "tr",
+      "text": "İşin kendiliğinden yürür hâle gelmesi demek. İlk kalıbımız da bu. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "The automation of the process took a year."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The automation of the process took a year."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Daha önce olmayan bir şeyi ortaya çıkarmaya"
+     },
+     {
+      "lang": "en",
+      "text": "invention"
+     },
+     {
+      "lang": "tr",
+      "text": "araştırma yapan kuruma ise"
+     },
+     {
+      "lang": "en",
+      "text": "institute"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İkinci kalıbımız buluşu anlatıyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "The invention of the tool changed the institute."
+     },
+     {
+      "lang": "tr",
+      "text": "Aracın bulunması enstitüyü değiştirdi."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The invention of the tool changed the institute."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Yazılımdaki eksiği kapatan küçük eklemeye"
+     },
+     {
+      "lang": "en",
+      "text": "patch"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son kalıbımız getirilmeyi anlatıyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "The introduction of the patch was delayed."
+     },
+     {
+      "lang": "tr",
+      "text": "Yamanın getirilmesi gecikti."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The introduction of the patch was delayed."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi dersin kuralı. Fiili isme çevirmek yazıyı kişiden çıkarır:"
+     },
+     {
+      "lang": "en",
+      "text": "they automated the process"
+     },
+     {
+      "lang": "tr",
+      "text": "yerine"
+     },
+     {
+      "lang": "en",
+      "text": "the automation of the process"
+     },
+     {
+      "lang": "tr",
+      "text": "yazılır. Bilim yazısında bu bir üslup tercihi değil; yazının kim değil ne olduğunu taşıması gerekir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sıra sende: Deneyin otomatikleştirilmesi bir ay sürdü."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "The automation of the test took a month.",
+     "accept": [
+      "The automation of that test took a month.",
+      "The automation of the test took one month."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Fiili isme çevirmek için"
+      },
+      {
+       "lang": "en",
+       "text": "the automation of"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "The automation of the test took a month."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kontrol. Şu cümle doğru mu?"
+     },
+     {
+      "lang": "en",
+      "text": "The introduction of the patch was delayed."
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "The introduction of the patch was delayed.",
+     "answer": true,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Doğru. Kimin geciktirdiği yazılmıyor ve bilim yazısında bu olağan; kayda geçen olayın kendisi."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Yeni bir yol ya da yöntem getirmeye"
+     },
+     {
+      "lang": "en",
+      "text": "innovation"
+     },
+     {
+      "lang": "tr",
+      "text": "üniversitenin bir bölümüne ise"
+     },
+     {
+      "lang": "en",
+      "text": "faculty"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The faculty rewards every innovation."
+     },
+     {
+      "lang": "tr",
+      "text": "Fakülte her yeniliği ödüllendiriyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The faculty rewards every innovation."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sen kur: Yöntemin bulunması alanı değiştirdi."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "The invention of the method changed the field.",
+     "accept": [
+      "The invention of that method changed the field.",
+      "The invention of the method changed the area."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Buluşu isimle anlatmak için"
+      },
+      {
+       "lang": "en",
+       "text": "the invention of"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "The invention of the method changed the field."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir araştırmanın yazılı sonucuna"
+     },
+     {
+      "lang": "en",
+      "text": "thesis"
+     },
+     {
+      "lang": "tr",
+      "text": "kendi başına iş gören makineye ise"
+     },
+     {
+      "lang": "en",
+      "text": "robot"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The thesis describes a working robot."
+     },
+     {
+      "lang": "tr",
+      "text": "Tez çalışan bir robotu anlatıyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The thesis describes a working robot."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir tane daha: Kuralın getirilmesi gecikti."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "The introduction of the rule was delayed.",
+     "accept": [
+      "The introduction of that rule was delayed.",
+      "The introduction of the rule was postponed."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Getirilmeyi isimle anlatmak için"
+      },
+      {
+       "lang": "en",
+       "text": "the introduction of"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "The introduction of the rule was delayed."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Özetleyelim: otomatikleşme"
+     },
+     {
+      "lang": "en",
+      "text": "the automation of"
+     },
+     {
+      "lang": "tr",
+      "text": "buluş"
+     },
+     {
+      "lang": "en",
+      "text": "the invention of"
+     },
+     {
+      "lang": "tr",
+      "text": "getirilme"
+     },
+     {
+      "lang": "en",
+      "text": "the introduction of"
+     },
+     {
+      "lang": "tr",
+      "text": "Şimdi bir bulguyu bilimsel dille anlatacaksın."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Bir bulguyu bilimsel dille anlatıyorsun. Otomatikleşmeyi, buluşu ve getirilmeyi fiili isme çevirerek söyle.",
+   "partner": "her cümlede özne arayan, «biz» demeni bekleyen bir dinleyici",
+   "opening": "Who actually did all this?",
+   "openingTr": "Bütün bunları aslında kim yaptı?",
+   "goal": "Üç maddeyi de fiili isme çevirerek söylediysen konuşma başarılı sayılır.",
+   "minTurns": 7
+  }
+ },
+ {
+  "id": "en-b2-when-the-data-lands",
+  "level": "B2",
+  "course": "en",
+  "icon": "calendar",
+  "title": "When the data lands",
+  "titleTr": "Veri geldiğinde",
+  "summary": "Bir ölçüm takvimini anlatmayı öğretir: o ana kadar bitmiş olan ile o an sürüyor olan ayrı biçimlerle söylenir.",
+  "minutes": 11,
+  "focusId": "Future perfect and future continuous",
+  "vocab": [
+   {
+    "de": "emission",
+    "tr": "salım"
+   },
+   {
+    "de": "vehicle",
+    "tr": "taşıt"
+   },
+   {
+    "de": "consumption",
+    "tr": "tüketim"
+   },
+   {
+    "de": "insulation",
+    "tr": "yalıtım"
+   },
+   {
+    "de": "electric",
+    "tr": "elektrikli"
+   },
+   {
+    "de": "gravity",
+    "tr": "yerçekimi"
+   },
+   {
+    "de": "acceleration",
+    "tr": "ivme"
+   },
+   {
+    "de": "friction",
+    "tr": "sürtünme"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "By June the emissions will have been measured.",
+    "tr": "o ana kadar bitmiş olanı edilgen söyler"
+   },
+   {
+    "de": "This time next week we will be testing the vehicle.",
+    "tr": "o an sürüyor olanı söyler"
+   },
+   {
+    "de": "The consumption will have been checked by then.",
+    "tr": "o ana kadar bitmiş olanı söyler"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Bugün bir ölçüm takvimini anlatmayı öğreneceğiz: o güne kadar ne ölçülmüş olacak, o an ne deneniyor olacak."
+     },
+     {
+      "lang": "tr",
+      "text": "Bilimsel planda bu iki biçim ayrı söz verir: biri bitmiş olacağını, öteki sürüyor olacağını. Hazır mısın?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "emission"
+     },
+     {
+      "lang": "tr",
+      "text": "Dışarı bırakılan madde demek. İlk kalıbımız da bu. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "By June the emissions will have been measured."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "By June the emissions will have been measured."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İnsan ya da yük taşıyan araca"
+     },
+     {
+      "lang": "en",
+      "text": "vehicle"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İkinci kalıbımız o an sürüyor olanı söylüyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "This time next week we will be testing the vehicle."
+     },
+     {
+      "lang": "tr",
+      "text": "Haftaya bu saatlerde taşıtı deniyor olacağız."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "This time next week we will be testing the vehicle."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Harcanan miktara"
+     },
+     {
+      "lang": "en",
+      "text": "consumption"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son kalıbımız o ana kadar bitmiş olanı söylüyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "The consumption will have been checked by then."
+     },
+     {
+      "lang": "tr",
+      "text": "Tüketim o zamana kadar kontrol edilmiş olacak."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The consumption will have been checked by then."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi dersin kuralı. Gelecekteki bir ana bakarken"
+     },
+     {
+      "lang": "en",
+      "text": "will have"
+     },
+     {
+      "lang": "tr",
+      "text": "o ana kadar BİTMİŞ olanı,"
+     },
+     {
+      "lang": "en",
+      "text": "will be"
+     },
+     {
+      "lang": "tr",
+      "text": "o an SÜRÜYOR olanı anlatır. Edilgeni ise"
+     },
+     {
+      "lang": "en",
+      "text": "will have been"
+     },
+     {
+      "lang": "tr",
+      "text": "taşır ve ölçümü kimin yaptığını hiç söylemez."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sıra sende: Mayısa kadar değerler ölçülmüş olacak."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "By May the values will have been measured.",
+     "accept": [
+      "By May the values will have been recorded.",
+      "By May the numbers will have been measured."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Edilgen biçimde bitmiş olan için"
+      },
+      {
+       "lang": "en",
+       "text": "will have been"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "By May the values will have been measured."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kontrol. Şu cümle doğru mu?"
+     },
+     {
+      "lang": "en",
+      "text": "This time next week we will be testing the vehicle."
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "This time next week we will be testing the vehicle.",
+     "answer": true,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Doğru. O an işin ortasında olunacak, bitmiş olmayacak; bu yüzden süregelen biçim kullanılıyor."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Isının kaçmasını önleyen katmana"
+     },
+     {
+      "lang": "en",
+      "text": "insulation"
+     },
+     {
+      "lang": "tr",
+      "text": "elektrikle çalışana ise"
+     },
+     {
+      "lang": "en",
+      "text": "electric"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The insulation matters in an electric car."
+     },
+     {
+      "lang": "tr",
+      "text": "Elektrikli bir arabada yalıtım önemli."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The insulation matters in an electric car."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sen kur: Yarın bu saatlerde motoru deniyor olacağız."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "This time tomorrow we will be testing the engine.",
+     "accept": [
+      "This time tomorrow we'll be testing the engine.",
+      "This time tomorrow we will be checking the engine."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "O an sürüyor olan için"
+      },
+      {
+       "lang": "en",
+       "text": "will be"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "This time tomorrow we will be testing the engine."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Kütleleri birbirine çeken kuvvete"
+     },
+     {
+      "lang": "en",
+      "text": "gravity"
+     },
+     {
+      "lang": "tr",
+      "text": "hızın artış oranına ise"
+     },
+     {
+      "lang": "en",
+      "text": "acceleration"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "Gravity gives the same acceleration."
+     },
+     {
+      "lang": "tr",
+      "text": "Yerçekimi aynı ivmeyi veriyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Gravity gives the same acceleration."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Yüzeylerin birbirini yavaşlatmasına"
+     },
+     {
+      "lang": "en",
+      "text": "friction"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "Friction slows the wheel."
+     },
+     {
+      "lang": "tr",
+      "text": "Sürtünme tekerleği yavaşlatıyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Friction slows the wheel."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir tane daha: Veri o zamana kadar kontrol edilmiş olacak."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "The data will have been checked by then.",
+     "accept": [
+      "The data will have been reviewed by then.",
+      "The data will have been checked by that time."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "O ana kadar bitmiş olan için"
+      },
+      {
+       "lang": "en",
+       "text": "will have been"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "The data will have been checked by then."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Özetleyelim: edilgen bitmiş"
+     },
+     {
+      "lang": "en",
+      "text": "will have been measured"
+     },
+     {
+      "lang": "tr",
+      "text": "süren"
+     },
+     {
+      "lang": "en",
+      "text": "will be testing"
+     },
+     {
+      "lang": "tr",
+      "text": "bitmiş"
+     },
+     {
+      "lang": "en",
+      "text": "will have been checked"
+     },
+     {
+      "lang": "tr",
+      "text": "Şimdi bir ölçüm takvimini anlatacaksın."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Bir ölçüm çalışmasının takvimini fon verene anlatıyorsun. O güne kadar neyin ölçülmüş olacağını, o an neyin deneniyor olacağını ve neyin kontrol edilmiş olacağını söyle.",
+   "partner": "takvimi kısaltmak isteyen, her tarihi sorgulayan bir fon yetkilisi",
+   "opening": "Will anything be ready before June?",
+   "openingTr": "Hazirandan önce bir şey hazır olur mu?",
+   "goal": "Edilgen bitmiş olanı, süren olanı ve bitmiş olanı üç ayrı biçimle söylediysen konuşma başarılı sayılır.",
+   "minTurns": 7
+  }
+ },
+ {
+  "id": "en-b2-the-variable-that",
+  "level": "B2",
+  "course": "en",
+  "icon": "key",
+  "title": "The software, which was updated",
+  "titleTr": "Sabitlenen değişken",
+  "summary": "Bir sistemin parçalarını tanıtmayı öğretir; açıklayıcı ilgi cümlesi edilgen bir ek bilgiyi cümleye bağlar.",
+  "minutes": 11,
+  "focusId": "Non-defining relative clauses",
+  "vocab": [
+   {
+    "de": "software",
+    "tr": "yazılım"
+   },
+   {
+    "de": "interface",
+    "tr": "arayüz"
+   },
+   {
+    "de": "encryption",
+    "tr": "şifreleme"
+   },
+   {
+    "de": "malware",
+    "tr": "kötücül yazılım"
+   },
+   {
+    "de": "surveillance",
+    "tr": "gözetim"
+   },
+   {
+    "de": "radiation",
+    "tr": "ışınım"
+   },
+   {
+    "de": "frequency",
+    "tr": "frekans"
+   },
+   {
+    "de": "wavelength",
+    "tr": "dalga boyu"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "The software, which was updated in May, failed.",
+    "tr": "edilgen bir ek bilgiyi şeye bağlar"
+   },
+   {
+    "de": "The interface, which is why we stopped, is old.",
+    "tr": "cümlenin tamamına ek bilgi ekler"
+   },
+   {
+    "de": "The method to which we refer uses encryption.",
+    "tr": "edattan sonra ilgi zamiri kullanır"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Bugün bir sistemin parçalarını tanıtmayı öğreneceğiz: hangi parça ne zaman güncellendi, hangi yöntem neyi kullanıyor."
+     },
+     {
+      "lang": "tr",
+      "text": "Teknik yazıda ek bilgi çoğu zaman edilgen: «ki mayısta güncellenmişti» gibi. Yapanı söylemeden ekliyorsun. Hazır mısın?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "software"
+     },
+     {
+      "lang": "tr",
+      "text": "Makineye ne yapacağını söyleyen program demek. İlk kalıbımız da bu. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "The software, which was updated in May, failed."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The software, which was updated in May, failed."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İnsanla makinenin buluştuğu yüzeye"
+     },
+     {
+      "lang": "en",
+      "text": "interface"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İkinci kalıbımız cümlenin tamamına ek bilgi ekliyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "The interface, which is why we stopped, is old."
+     },
+     {
+      "lang": "tr",
+      "text": "Arayüz, ki bu yüzden durduk, eski."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The interface, which is why we stopped, is old."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Veriyi okunamaz hâle getirmeye"
+     },
+     {
+      "lang": "en",
+      "text": "encryption"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son kalıbımız edattan sonra ilgi zamiri kullanıyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "The method to which we refer uses encryption."
+     },
+     {
+      "lang": "tr",
+      "text": "Atıf yaptığımız yöntem şifreleme kullanıyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The method to which we refer uses encryption."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi dersin kuralı. Açıklayıcı ilgi cümlesi VİRGÜLLE ayrılır ve içindeki bilgi sık sık edilgendir:"
+     },
+     {
+      "lang": "en",
+      "text": "which was updated"
+     },
+     {
+      "lang": "tr",
+      "text": "yapanı söylemez. Edat öne geçtiğinde ilgi zamiri"
+     },
+     {
+      "lang": "en",
+      "text": "which"
+     },
+     {
+      "lang": "tr",
+      "text": "olur ve düşürülemez."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sıra sende: Sistem, ki haziranda güncellenmişti, bozuldu."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "The system, which was updated in June, failed.",
+     "accept": [
+      "The system, which was updated in June, broke.",
+      "The device, which was updated in June, failed."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Edilgen ek bilgi eklemek için"
+      },
+      {
+       "lang": "en",
+       "text": "which was"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "The system, which was updated in June, failed."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kontrol. Şu cümle doğru mu?"
+     },
+     {
+      "lang": "en",
+      "text": "The interface, which is why we stopped, is old."
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "The interface, which is why we stopped, is old.",
+     "answer": true,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Doğru. Ek bilgi virgüller arasında duruyor ve çıkarılsa cümle yine tam kalıyor."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Zarar vermek için yazılmış programa"
+     },
+     {
+      "lang": "en",
+      "text": "malware"
+     },
+     {
+      "lang": "tr",
+      "text": "sürekli izlemeye ise"
+     },
+     {
+      "lang": "en",
+      "text": "surveillance"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The malware turned into surveillance."
+     },
+     {
+      "lang": "tr",
+      "text": "Kötücül yazılım gözetime dönüştü."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The malware turned into surveillance."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sen kur: Araç, ki bu yüzden bekledik, yavaş."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "The tool, which is why we waited, is slow.",
+     "accept": [
+      "The tool, which is why we waited, is very slow.",
+      "The program, which is why we waited, is slow."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Cümlenin tamamına ek bilgi eklemek için"
+      },
+      {
+       "lang": "en",
+       "text": "which"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "The tool, which is why we waited, is slow."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Yayılan enerjiye"
+     },
+     {
+      "lang": "en",
+      "text": "radiation"
+     },
+     {
+      "lang": "tr",
+      "text": "saniyedeki titreşim sayısına ise"
+     },
+     {
+      "lang": "en",
+      "text": "frequency"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The radiation has a low frequency."
+     },
+     {
+      "lang": "tr",
+      "text": "Işınımın frekansı düşük."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The radiation has a low frequency."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İki dalga tepesi arasındaki uzaklığa"
+     },
+     {
+      "lang": "en",
+      "text": "wavelength"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The wavelength changes with heat."
+     },
+     {
+      "lang": "tr",
+      "text": "Dalga boyu ısıyla değişiyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The wavelength changes with heat."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir tane daha: Atıf yaptığımız sistem şifreleme kullanıyor."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "The system to which we refer uses encryption.",
+     "accept": [
+      "The system to which we refer uses a code.",
+      "The device to which we refer uses encryption."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Edattan sonra"
+      },
+      {
+       "lang": "en",
+       "text": "which"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "The system to which we refer uses encryption."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Özetleyelim: edilgen ek"
+     },
+     {
+      "lang": "en",
+      "text": "which was updated"
+     },
+     {
+      "lang": "tr",
+      "text": "cümleye ek"
+     },
+     {
+      "lang": "en",
+      "text": "which is why"
+     },
+     {
+      "lang": "tr",
+      "text": "edattan sonra"
+     },
+     {
+      "lang": "en",
+      "text": "to which"
+     },
+     {
+      "lang": "tr",
+      "text": "Şimdi bir sistemin parçalarını tanıtacaksın."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Bir arıza kaydını inceleyen meslektaşına sistemin parçalarını tanıtıyorsun. Hangi parçanın ne zaman güncellendiğini, hangi arayüzün neden durdurduğunu ve hangi yöntemin neyi kullandığını anlat.",
+   "partner": "sistemi ilk kez gören, her parçayı soran bir meslektaş",
+   "opening": "When was the software last updated?",
+   "openingTr": "Yazılım en son ne zaman güncellendi?",
+   "goal": "Edilgen eki, cümleye eki ve edattan sonrayı üç ayrı ilgi cümlesiyle söylediysen konuşma başarılı sayılır.",
+   "minTurns": 7
+  }
  }
 ]

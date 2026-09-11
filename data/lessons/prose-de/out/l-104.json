@@ -1,0 +1,912 @@
+[
+ {
+  "tr": "Laboratuvarda",
+  "kind": "titleTr",
+  "de": "Im Labor"
+ },
+ {
+  "tr": "Veri geldiğinde",
+  "kind": "titleTr",
+  "de": "Wenn die Daten kommen"
+ },
+ {
+  "tr": "Bulgunun kendisi",
+  "kind": "titleTr",
+  "de": "Die Automatisierung des Vorgangs"
+ },
+ {
+  "tr": "Sabitlenen değişken",
+  "kind": "titleTr",
+  "de": "Die Software, die aktualisiert wurde"
+ },
+ {
+  "tr": "Çalışma nasıl yürüyor",
+  "kind": "titleTr",
+  "de": "Wie die Studie läuft"
+ },
+ {
+  "tr": "Bilimsel yazının dilini öğretir; fiil isme dönünce yazı kişiden çıkar ve bulguya odaklanır.",
+  "kind": "summary",
+  "de": "Vermittelt die Sprache des wissenschaftlichen Textes; wird das Verb zum Nomen, tritt die Person aus dem Text und der Blick liegt auf dem Befund."
+ },
+ {
+  "tr": "Laboratuvar yönergesini kısa yazmayı öğretir; ortaç öbeği adımları tek cümleye indirip sırayı korur.",
+  "kind": "summary",
+  "de": "Vermittelt, wie man eine Laboranleitung kurz schreibt; die Partizipialkonstruktion fasst die Schritte in einen Satz und hält die Reihenfolge."
+ },
+ {
+  "tr": "Bir çalışmanın kurgusunu anlatmayı öğretir; edilgen aktarım kalıbı bulguyu verir, kimin bulduğunu vermez.",
+  "kind": "summary",
+  "de": "Vermittelt, wie man den Aufbau einer Studie erklärt; die passive Wiedergabe nennt den Befund, aber nicht, wer ihn gefunden hat."
+ },
+ {
+  "tr": "Bir sistemin parçalarını tanıtmayı öğretir; açıklayıcı ilgi cümlesi edilgen bir ek bilgiyi cümleye bağlar.",
+  "kind": "summary",
+  "de": "Vermittelt, wie man die Teile eines Systems vorstellt; der erklärende Relativsatz bindet eine passive Zusatzinformation an den Satz."
+ },
+ {
+  "tr": "Bir ölçüm takvimini anlatmayı öğretir: o ana kadar bitmiş olan ile o an sürüyor olan ayrı biçimlerle söylenir.",
+  "kind": "summary",
+  "de": "Vermittelt den Zeitplan einer Messreihe: was bis dahin fertig ist und was dann gerade läuft, stehen in verschiedenen Formen."
+ },
+ {
+  "tr": "adımları not alan, sırayı iki kez soran bir öğrenci",
+  "kind": "partner",
+  "de": "eine Studentin, die die Schritte notiert und zweimal nach der Reihenfolge fragt"
+ },
+ {
+  "tr": "sistemi ilk kez gören, her parçayı soran bir meslektaş",
+  "kind": "partner",
+  "de": "ein Kollege, der das System zum ersten Mal sieht und nach jedem Teil fragt"
+ },
+ {
+  "tr": "çalışmanın sonucuna hemen inanmak isteyen bir meslektaş",
+  "kind": "partner",
+  "de": "eine Kollegin, die dem Ergebnis der Studie sofort glauben will"
+ },
+ {
+  "tr": "her cümlede özne arayan, «biz» demeni bekleyen bir dinleyici",
+  "kind": "partner",
+  "de": "ein Zuhörer, der in jedem Satz ein Subjekt sucht und «wir» von dir erwartet"
+ },
+ {
+  "tr": "takvimi kısaltmak isteyen, her tarihi sorgulayan bir fon yetkilisi",
+  "kind": "partner",
+  "de": "eine Fördermittelgeberin, die den Zeitplan kürzen will und jedes Datum hinterfragt"
+ },
+ {
+  "tr": "Yani sonuç tutuyor, değil mi?",
+  "kind": "openingTr",
+  "de": "Das Ergebnis hält also, oder?"
+ },
+ {
+  "tr": "Bütün bunları aslında kim yaptı?",
+  "kind": "openingTr",
+  "de": "Wer hat das alles eigentlich gemacht?"
+ },
+ {
+  "tr": "Yazılım en son ne zaman güncellendi?",
+  "kind": "openingTr",
+  "de": "Wann wurde die Software zuletzt aktualisiert?"
+ },
+ {
+  "tr": "Hazirandan önce bir şey hazır olur mu?",
+  "kind": "openingTr",
+  "de": "Wird vor Juni irgendetwas fertig sein?"
+ },
+ {
+  "tr": "Katalizörü önce mi sonra mı ekleyeyim?",
+  "kind": "openingTr",
+  "de": "Soll ich den Katalysator vorher oder nachher zugeben?"
+ },
+ {
+  "tr": "Bir bulguyu bilimsel dille anlatıyorsun. Otomatikleşmeyi, buluşu ve getirilmeyi fiili isme çevirerek söyle.",
+  "kind": "scene",
+  "de": "Du erklärst einen Befund in wissenschaftlicher Sprache. Sag Automatisierung, Erfindung und Einführung durch Nominalisierung."
+ },
+ {
+  "tr": "Laboratuvarda bir işlemi ilk kez yapan birine yönergeyi anlatıyorsun. Önce biteni, sebebi ve edilgeni kısa cümlelerle bağla.",
+  "kind": "scene",
+  "de": "Du erklärst im Labor jemandem, der einen Vorgang zum ersten Mal macht, die Anleitung. Binde das früher Beendete, den Grund und das Passiv in kurzen Sätzen an."
+ },
+ {
+  "tr": "Bir çalışmanın kurgusunu meslektaşına anlatıyorsun. Neyin tekrarlandığını, ölçümlerin ne durumda olduğunu ve grubun neden yetersiz sayıldığını aktarım kalıbıyla ver.",
+  "kind": "scene",
+  "de": "Du erklärst einer Kollegin den Aufbau einer Studie. Gib in der Wiedergabeform an, was wiederholt wurde, wie es um die Messungen steht und warum die Gruppe als zu klein gilt."
+ },
+ {
+  "tr": "Bir ölçüm çalışmasının takvimini fon verene anlatıyorsun. O güne kadar neyin ölçülmüş olacağını, o an neyin deneniyor olacağını ve neyin kontrol edilmiş olacağını söyle.",
+  "kind": "scene",
+  "de": "Du erklärst einer Fördermittelgeberin den Zeitplan einer Messreihe. Sag, was bis dahin gemessen worden sein wird, was dann gerade getestet wird und was geprüft sein wird."
+ },
+ {
+  "tr": "Bir arıza kaydını inceleyen meslektaşına sistemin parçalarını tanıtıyorsun. Hangi parçanın ne zaman güncellendiğini, hangi arayüzün neden durdurduğunu ve hangi yöntemin neyi kullandığını anlat.",
+  "kind": "scene",
+  "de": "Du stellst einem Kollegen, der ein Störungsprotokoll durchsieht, die Teile des Systems vor. Erzähl, welches Teil wann aktualisiert wurde, welche Oberfläche warum gestoppt hat und welches Verfahren was benutzt."
+ },
+ {
+  "tr": "Üç bulguyu üç ayrı aktarım kalıbıyla verdiysen konuşma başarılı sayılır.",
+  "kind": "goal",
+  "de": "Das Gespräch gilt als gelungen, wenn du drei Befunde in drei verschiedenen Wiedergabeformen gesagt hast."
+ },
+ {
+  "tr": "Üç maddeyi de fiili isme çevirerek söylediysen konuşma başarılı sayılır.",
+  "kind": "goal",
+  "de": "Das Gespräch gilt als gelungen, wenn du alle drei Punkte durch Nominalisierung gesagt hast."
+ },
+ {
+  "tr": "tez",
+  "kind": "vocab.tr",
+  "de": "Abschlussarbeit"
+ },
+ {
+  "tr": "ivme",
+  "kind": "vocab.tr",
+  "de": "Beschleunigung"
+ },
+ {
+  "tr": "sıvı",
+  "kind": "vocab.tr",
+  "de": "Flüssigkeit"
+ },
+ {
+  "tr": "yama",
+  "kind": "vocab.tr",
+  "de": "Patch"
+ },
+ {
+  "tr": "buluş",
+  "kind": "vocab.tr",
+  "de": "Erfindung"
+ },
+ {
+  "tr": "deney",
+  "kind": "vocab.tr",
+  "de": "Experiment"
+ },
+ {
+  "tr": "enzim",
+  "kind": "vocab.tr",
+  "de": "Enzym"
+ },
+ {
+  "tr": "evrim",
+  "kind": "vocab.tr",
+  "de": "Evolution"
+ },
+ {
+  "tr": "ölçüm",
+  "kind": "vocab.tr",
+  "de": "Messung"
+ },
+ {
+  "tr": "robot",
+  "kind": "vocab.tr",
+  "de": "Roboter"
+ },
+ {
+  "tr": "salım",
+  "kind": "vocab.tr",
+  "de": "Ausstoß"
+ },
+ {
+  "tr": "taşıt",
+  "kind": "vocab.tr",
+  "de": "Fahrzeug"
+ },
+ {
+  "tr": "alaşım",
+  "kind": "vocab.tr",
+  "de": "Legierung"
+ },
+ {
+  "tr": "arayüz",
+  "kind": "vocab.tr",
+  "de": "Oberfläche"
+ },
+ {
+  "tr": "ışınım",
+  "kind": "vocab.tr",
+  "de": "Strahlung"
+ },
+ {
+  "tr": "enstitü",
+  "kind": "vocab.tr",
+  "de": "Institut"
+ },
+ {
+  "tr": "fakülte",
+  "kind": "vocab.tr",
+  "de": "Fakultät"
+ },
+ {
+  "tr": "frekans",
+  "kind": "vocab.tr",
+  "de": "Frequenz"
+ },
+ {
+  "tr": "gözetim",
+  "kind": "vocab.tr",
+  "de": "Überwachung"
+ },
+ {
+  "tr": "kristal",
+  "kind": "vocab.tr",
+  "de": "Kristall"
+ },
+ {
+  "tr": "molekül",
+  "kind": "vocab.tr",
+  "de": "Molekül"
+ },
+ {
+  "tr": "tepkime",
+  "kind": "vocab.tr",
+  "de": "Reaktion"
+ },
+ {
+  "tr": "yalıtım",
+  "kind": "vocab.tr",
+  "de": "Dämmung"
+ },
+ {
+  "tr": "yazılım",
+  "kind": "vocab.tr",
+  "de": "Software"
+ },
+ {
+  "tr": "yenilik",
+  "kind": "vocab.tr",
+  "de": "Neuerung"
+ },
+ {
+  "tr": "mutasyon",
+  "kind": "vocab.tr",
+  "de": "Mutation"
+ },
+ {
+  "tr": "parçacık",
+  "kind": "vocab.tr",
+  "de": "Teilchen"
+ },
+ {
+  "tr": "sürtünme",
+  "kind": "vocab.tr",
+  "de": "Reibung"
+ },
+ {
+  "tr": "katalizör",
+  "kind": "vocab.tr",
+  "de": "Katalysator"
+ },
+ {
+  "tr": "organizma",
+  "kind": "vocab.tr",
+  "de": "Organismus"
+ },
+ {
+  "tr": "otomasyon",
+  "kind": "vocab.tr",
+  "de": "Automatisierung"
+ },
+ {
+  "tr": "şifreleme",
+  "kind": "vocab.tr",
+  "de": "Verschlüsselung"
+ },
+ {
+  "tr": "yerçekimi",
+  "kind": "vocab.tr",
+  "de": "Schwerkraft"
+ },
+ {
+  "tr": "dalga boyu",
+  "kind": "vocab.tr",
+  "de": "Wellenlänge"
+ },
+ {
+  "tr": "doz düzeni",
+  "kind": "vocab.tr",
+  "de": "Dosierung"
+ },
+ {
+  "tr": "elektrikli",
+  "kind": "vocab.tr",
+  "de": "elektrisch"
+ },
+ {
+  "tr": "izlem grubu",
+  "kind": "vocab.tr",
+  "de": "Kohorte"
+ },
+ {
+  "tr": "tedavi yöntemi",
+  "kind": "vocab.tr",
+  "de": "Therapie"
+ },
+ {
+  "tr": "kötücül yazılım",
+  "kind": "vocab.tr",
+  "de": "Schadsoftware"
+ },
+ {
+  "tr": "buluşu isimle anlatır",
+  "kind": "pattern.tr",
+  "de": "nennt die Erfindung mit einem Nomen"
+ },
+ {
+  "tr": "getirilmeyi isimle anlatır",
+  "kind": "pattern.tr",
+  "de": "nennt die Einführung mit einem Nomen"
+ },
+ {
+  "tr": "edilgen bir ek bilgiyi şeye bağlar",
+  "kind": "pattern.tr",
+  "de": "bindet eine passive Zusatzinformation an eine Sache"
+ },
+ {
+  "tr": "kimin bulduğunu söylemeden aktarır",
+  "kind": "pattern.tr",
+  "de": "gibt wieder, ohne zu sagen, wer es gefunden hat"
+ },
+ {
+  "tr": "özneyi başa alıp bulguyu ona bağlar",
+  "kind": "pattern.tr",
+  "de": "stellt das Subjekt nach vorn und bindet den Befund daran"
+ },
+ {
+  "tr": "geçmişteki bir kusuru aktarım kalıbıyla verir",
+  "kind": "pattern.tr",
+  "de": "gibt einen vergangenen Mangel in einer Wiedergabeform"
+ },
+ {
+  "tr": "Doğru. Aktarım geçmişe uzandığı için",
+  "kind": "why.tr",
+  "de": "Richtig. Weil die Wiedergabe in die Vergangenheit reicht, nimmt sie die"
+ },
+ {
+  "tr": "Doğru. Her iki yarının öznesi de tepkime; özne değişseydi bu öbek kurulamazdı.",
+  "kind": "why.tr",
+  "de": "Richtig. Beide Hälften haben die Reaktion als Subjekt; bei einem Subjektwechsel ginge diese Konstruktion nicht."
+ },
+ {
+  "tr": "Doğru. Kimin geciktirdiği yazılmıyor ve bilim yazısında bu olağan; kayda geçen olayın kendisi.",
+  "kind": "why.tr",
+  "de": "Richtig. Wer verzögert hat, wird nicht geschrieben, und im wissenschaftlichen Text ist das normal; festgehalten wird das Geschehen selbst."
+ },
+ {
+  "tr": "Buluşu isimle anlatmak için",
+  "kind": "hint.tr",
+  "de": "Um die Erfindung mit einem Nomen zu nennen"
+ },
+ {
+  "tr": "Getirilmeyi isimle anlatmak için",
+  "kind": "hint.tr",
+  "de": "Um die Einführung mit einem Nomen zu nennen"
+ },
+ {
+  "tr": "Geçmişteki bir kusuru aktarmak için",
+  "kind": "hint.tr",
+  "de": "Um einen vergangenen Mangel wiederzugeben"
+ },
+ {
+  "tr": "Kimin bulduğunu söylemeden aktarmak için",
+  "kind": "hint.tr",
+  "de": "Um wiederzugeben, ohne zu sagen, wer es gefunden hat"
+ },
+ {
+  "tr": "bugün",
+  "kind": "say.tr",
+  "de": "heute"
+ },
+ {
+  "tr": "buluş",
+  "kind": "say.tr",
+  "de": "Erfindung"
+ },
+ {
+  "tr": "getirilme",
+  "kind": "say.tr",
+  "de": "Einführung"
+ },
+ {
+  "tr": "Harcanan miktara",
+  "kind": "say.tr",
+  "de": "Die verbrauchte Menge heißt"
+ },
+ {
+  "tr": "Yayılan enerjiye",
+  "kind": "say.tr",
+  "de": "Die abgegebene Energie heißt"
+ },
+ {
+  "tr": "Yaşayan tek varlığa",
+  "kind": "say.tr",
+  "de": "Das einzelne lebende Wesen heißt"
+ },
+ {
+  "tr": "sürekli izlemeye ise",
+  "kind": "say.tr",
+  "de": "und das ständige Beobachten heißt"
+ },
+ {
+  "tr": "çok küçük parçaya ise",
+  "kind": "say.tr",
+  "de": "und das sehr kleine Stück heißt"
+ },
+ {
+  "tr": "İki metalin karışımına",
+  "kind": "say.tr",
+  "de": "Die Mischung zweier Metalle heißt"
+ },
+ {
+  "tr": "elektrikle çalışana ise",
+  "kind": "say.tr",
+  "de": "und was mit Strom läuft, heißt"
+ },
+ {
+  "tr": "hızın artış oranına ise",
+  "kind": "say.tr",
+  "de": "und die Zunahme der Geschwindigkeit heißt"
+ },
+ {
+  "tr": "Işınımın frekansı düşük.",
+  "kind": "say.tr",
+  "de": "Die Strahlung hat eine niedrige Frequenz."
+ },
+ {
+  "tr": "kalıtımdaki değişime ise",
+  "kind": "say.tr",
+  "de": "und die Veränderung im Erbgut heißt"
+ },
+ {
+  "tr": "Enzim parçacığı ayırıyor.",
+  "kind": "say.tr",
+  "de": "Das Enzym spaltet das Teilchen."
+ },
+ {
+  "tr": "araştırma yapan kuruma ise",
+  "kind": "say.tr",
+  "de": "und die forschende Einrichtung heißt"
+ },
+ {
+  "tr": "Özetleyelim: otomatikleşme",
+  "kind": "say.tr",
+  "de": "Fassen wir zusammen: Automatisierung"
+ },
+ {
+  "tr": "Dalga boyu ısıyla değişiyor.",
+  "kind": "say.tr",
+  "de": "Die Wellenlänge ändert sich mit der Wärme."
+ },
+ {
+  "tr": "Yamanın getirilmesi gecikti.",
+  "kind": "say.tr",
+  "de": "Die Einführung des Patches hat sich verzögert."
+ },
+ {
+  "tr": "İnsan ya da yük taşıyan araca",
+  "kind": "say.tr",
+  "de": "Das Gefährt, das Menschen oder Lasten befördert, heißt"
+ },
+ {
+  "tr": "üniversitenin bir bölümüne ise",
+  "kind": "say.tr",
+  "de": "und ein Bereich der Universität heißt"
+ },
+ {
+  "tr": "Veriyi okunamaz hâle getirmeye",
+  "kind": "say.tr",
+  "de": "Daten unlesbar machen heißt"
+ },
+ {
+  "tr": "Yerçekimi aynı ivmeyi veriyor.",
+  "kind": "say.tr",
+  "de": "Die Schwerkraft gibt dieselbe Beschleunigung."
+ },
+ {
+  "tr": "Tepkimeyi yürüten canlı maddeye",
+  "kind": "say.tr",
+  "de": "Der lebende Stoff, der die Reaktion treibt, heißt"
+ },
+ {
+  "tr": "Alaşım ağır bir molekül taşıyor.",
+  "kind": "say.tr",
+  "de": "Die Legierung trägt ein schweres Molekül."
+ },
+ {
+  "tr": "Bir araştırmanın yazılı sonucuna",
+  "kind": "say.tr",
+  "de": "Das schriftliche Ergebnis einer Forschung heißt"
+ },
+ {
+  "tr": "Bir değerin sayıyla saptanmasına",
+  "kind": "say.tr",
+  "de": "Einen Wert in Zahlen festzustellen heißt"
+ },
+ {
+  "tr": "Düzenli yüzleri olan katı yapıya",
+  "kind": "say.tr",
+  "de": "Der feste Körper mit regelmäßigen Flächen heißt"
+ },
+ {
+  "tr": "Isının kaçmasını önleyen katmana",
+  "kind": "say.tr",
+  "de": "Die Schicht, die das Entweichen der Wärme verhindert, heißt"
+ },
+ {
+  "tr": "saniyedeki titreşim sayısına ise",
+  "kind": "say.tr",
+  "de": "und die Zahl der Schwingungen pro Sekunde heißt"
+ },
+ {
+  "tr": "Sürtünme tekerleği yavaşlatıyor.",
+  "kind": "say.tr",
+  "de": "Die Reibung bremst das Rad."
+ },
+ {
+  "tr": "Türlerin uzun sürede değişmesine",
+  "kind": "say.tr",
+  "de": "Die Veränderung der Arten über lange Zeit heißt"
+ },
+ {
+  "tr": "uygulanan iyileştirme yoluna ise",
+  "kind": "say.tr",
+  "de": "und der angewandte Behandlungsweg heißt"
+ },
+ {
+  "tr": "Evrim uzun süreler boyunca işler.",
+  "kind": "say.tr",
+  "de": "Die Evolution wirkt über lange Zeiträume."
+ },
+ {
+  "tr": "Kötücül yazılım gözetime dönüştü.",
+  "kind": "say.tr",
+  "de": "Aus der Schadsoftware wurde Überwachung."
+ },
+ {
+  "tr": "Kütleleri birbirine çeken kuvvete",
+  "kind": "say.tr",
+  "de": "Die Kraft, die Massen zueinander zieht, heißt"
+ },
+ {
+  "tr": "Pazartesi oluşan kristal ölçüldü.",
+  "kind": "say.tr",
+  "de": "Der am Montag entstandene Kristall wurde gemessen."
+ },
+ {
+  "tr": "Tez çalışan bir robotu anlatıyor.",
+  "kind": "say.tr",
+  "de": "Die Abschlussarbeit beschreibt einen funktionierenden Roboter."
+ },
+ {
+  "tr": "Arayüz, ki bu yüzden durduk, eski.",
+  "kind": "say.tr",
+  "de": "Die Oberfläche, weshalb wir aufgehört haben, ist alt."
+ },
+ {
+  "tr": "Birlikte izlenen katılımcı grubuna",
+  "kind": "say.tr",
+  "de": "Die gemeinsam beobachtete Gruppe von Teilnehmenden heißt"
+ },
+ {
+  "tr": "Doz düzeni tedavi yöntemine bağlı.",
+  "kind": "say.tr",
+  "de": "Die Dosierung hängt von der Therapie ab."
+ },
+ {
+  "tr": "İnsanla makinenin buluştuğu yüzeye",
+  "kind": "say.tr",
+  "de": "Die Fläche, an der Mensch und Maschine sich treffen, heißt"
+ },
+ {
+  "tr": "kendi başına iş gören makineye ise",
+  "kind": "say.tr",
+  "de": "und die Maschine, die selbstständig arbeitet, heißt"
+ },
+ {
+  "tr": "Maddelerin birbirini değiştirmesine",
+  "kind": "say.tr",
+  "de": "Wenn Stoffe einander verändern, heißt das"
+ },
+ {
+  "tr": "Yeni bir yol ya da yöntem getirmeye",
+  "kind": "say.tr",
+  "de": "Einen neuen Weg oder ein neues Verfahren bringen heißt"
+ },
+ {
+  "tr": "Yüzeylerin birbirini yavaşlatmasına",
+  "kind": "say.tr",
+  "de": "Wenn Flächen einander bremsen, heißt das"
+ },
+ {
+  "tr": "Zarar vermek için yazılmış programa",
+  "kind": "say.tr",
+  "de": "Das Programm, das Schaden anrichten soll, heißt"
+ },
+ {
+  "tr": "Bir organizma bir mutasyon gösterdi.",
+  "kind": "say.tr",
+  "de": "Ein Organismus zeigte eine Mutation."
+ },
+ {
+  "tr": "Fakülte her yeniliği ödüllendiriyor.",
+  "kind": "say.tr",
+  "de": "Die Fakultät belohnt jede Neuerung."
+ },
+ {
+  "tr": "İki dalga tepesi arasındaki uzaklığa",
+  "kind": "say.tr",
+  "de": "Der Abstand zwischen zwei Wellenbergen heißt"
+ },
+ {
+  "tr": "Ne kadar ve ne sıklıkla verileceğine",
+  "kind": "say.tr",
+  "de": "Wie viel und wie oft gegeben wird, heißt"
+ },
+ {
+  "tr": "Ölçümlerin kararlı olduğu söyleniyor.",
+  "kind": "say.tr",
+  "de": "Es heißt, dass die Messungen stabil sind."
+ },
+ {
+  "tr": "Aracın bulunması enstitüyü değiştirdi.",
+  "kind": "say.tr",
+  "de": "Die Erfindung des Werkzeugs hat das Institut verändert."
+ },
+ {
+  "tr": "Elektrikli bir arabada yalıtım önemli.",
+  "kind": "say.tr",
+  "de": "In einem elektrischen Auto ist die Dämmung wichtig."
+ },
+ {
+  "tr": "maddenin en küçük birleşik birimine ise",
+  "kind": "say.tr",
+  "de": "und die kleinste zusammengesetzte Einheit des Stoffes heißt"
+ },
+ {
+  "tr": "Şimdi bir ölçüm takvimini anlatacaksın.",
+  "kind": "say.tr",
+  "de": "Jetzt erklärst du den Zeitplan einer Messreihe."
+ },
+ {
+  "tr": "Yazılımdaki eksiği kapatan küçük eklemeye",
+  "kind": "say.tr",
+  "de": "Die kleine Ergänzung, die eine Lücke in der Software schließt, heißt"
+ },
+ {
+  "tr": "Bir tane daha: Kuralın getirilmesi gecikti.",
+  "kind": "say.tr",
+  "de": "Noch eins: Die Einführung der Regel hat sich verzögert."
+ },
+ {
+  "tr": "Daha önce olmayan bir şeyi ortaya çıkarmaya",
+  "kind": "say.tr",
+  "de": "Etwas hervorbringen, das es vorher nicht gab, heißt"
+ },
+ {
+  "tr": "Atıf yaptığımız yöntem şifreleme kullanıyor.",
+  "kind": "say.tr",
+  "de": "Das Verfahren, auf das wir uns beziehen, benutzt Verschlüsselung."
+ },
+ {
+  "tr": "Şimdi bir çalışmanın kurgusunu anlatacaksın.",
+  "kind": "say.tr",
+  "de": "Jetzt erklärst du den Aufbau einer Studie."
+ },
+ {
+  "tr": "Şimdi bir sistemin parçalarını tanıtacaksın.",
+  "kind": "say.tr",
+  "de": "Jetzt stellst du die Teile eines Systems vor."
+ },
+ {
+  "tr": "Haftaya bu saatlerde taşıtı deniyor olacağız.",
+  "kind": "say.tr",
+  "de": "Nächste Woche um diese Zeit werden wir das Fahrzeug testen."
+ },
+ {
+  "tr": "İkinci kalıbımız buluşu anlatıyor. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Unsere zweite Wendung nennt die Erfindung. Wiederhole:"
+ },
+ {
+  "tr": "Şimdi bir laboratuvar yönergesini vereceksin.",
+  "kind": "say.tr",
+  "de": "Jetzt gibst du eine Laboranleitung."
+ },
+ {
+  "tr": "taşır ve ölçümü kimin yaptığını hiç söylemez.",
+  "kind": "say.tr",
+  "de": "und sagt überhaupt nicht, wer gemessen hat."
+ },
+ {
+  "tr": "İzlem grubunun fazla küçük olduğu düşünülüyor.",
+  "kind": "say.tr",
+  "de": "Man hält die Kohorte für zu klein."
+ },
+ {
+  "tr": "Şimdi bir bulguyu bilimsel dille anlatacaksın.",
+  "kind": "say.tr",
+  "de": "Jetzt erklärst du einen Befund in wissenschaftlicher Sprache."
+ },
+ {
+  "tr": "Tüketim o zamana kadar kontrol edilmiş olacak.",
+  "kind": "say.tr",
+  "de": "Der Verbrauch wird bis dahin geprüft worden sein."
+ },
+ {
+  "tr": "Yavaş olduğu için tepkime daha çok ısı istedi.",
+  "kind": "say.tr",
+  "de": "Weil sie langsam war, brauchte die Reaktion mehr Wärme."
+ },
+ {
+  "tr": "Son kalıbımız getirilmeyi anlatıyor. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Unsere letzte Wendung nennt die Einführung. Wiederhole:"
+ },
+ {
+  "tr": "Şimdi sen kur: Araç, ki bu yüzden bekledik, yavaş.",
+  "kind": "say.tr",
+  "de": "Jetzt du: Das Werkzeug, weshalb wir gewartet haben, ist langsam."
+ },
+ {
+  "tr": "Akan madde demek. Tepkimeyi hızlandıran maddeye ise",
+  "kind": "say.tr",
+  "de": "Das heißt der fließende Stoff. Und der Stoff, der die Reaktion beschleunigt, heißt"
+ },
+ {
+  "tr": "Şimdi sen kur: Yöntemin bulunması alanı değiştirdi.",
+  "kind": "say.tr",
+  "de": "Jetzt du: Die Erfindung des Verfahrens hat das Gebiet verändert."
+ },
+ {
+  "tr": "Şimdi sen kur: Sonuçların kararlı olduğu söyleniyor.",
+  "kind": "say.tr",
+  "de": "Jetzt du: Es heißt, dass die Ergebnisse stabil sind."
+ },
+ {
+  "tr": "Şimdi sıra sende: Deneyin tekrarlandığı bildiriliyor.",
+  "kind": "say.tr",
+  "de": "Jetzt bist du dran: Es wird berichtet, dass der Versuch wiederholt wurde."
+ },
+ {
+  "tr": "Şimdi sıra sende: Sıvıyı soğuttuktan sonra tozu ekle.",
+  "kind": "say.tr",
+  "de": "Jetzt bist du dran: Nachdem du die Flüssigkeit gekühlt hast, gib das Pulver dazu."
+ },
+ {
+  "tr": "Bir tane daha: Cuma günü soğutulan alaşım test edildi.",
+  "kind": "say.tr",
+  "de": "Noch eins: Die am Freitag gekühlte Legierung wurde getestet."
+ },
+ {
+  "tr": "Şimdi sen kur: Ilık olduğu için örnek renk değiştirdi.",
+  "kind": "say.tr",
+  "de": "Jetzt du: Weil sie warm war, hat die Probe die Farbe gewechselt."
+ },
+ {
+  "tr": "Şimdi sıra sende: Mayısa kadar değerler ölçülmüş olacak.",
+  "kind": "say.tr",
+  "de": "Jetzt bist du dran: Bis Mai werden die Werte gemessen worden sein."
+ },
+ {
+  "tr": "Bir tane daha: Örneklemin fazla küçük olduğu düşünülüyor.",
+  "kind": "say.tr",
+  "de": "Noch eins: Man hält die Stichprobe für zu klein."
+ },
+ {
+  "tr": "Son kalıbımız geçmişteki bir kusuru aktarıyor. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Unsere letzte Wendung gibt einen vergangenen Mangel wieder. Wiederhole:"
+ },
+ {
+  "tr": "Bir tane daha: Veri o zamana kadar kontrol edilmiş olacak.",
+  "kind": "say.tr",
+  "de": "Noch eins: Die Daten werden bis dahin geprüft worden sein."
+ },
+ {
+  "tr": "Kurulmuş bir sınama demek. İlk kalıbımız da bu. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Das heißt eine angelegte Prüfung. Das ist auch unsere erste Wendung. Wiederhole:"
+ },
+ {
+  "tr": "Şimdi sen kur: Yarın bu saatlerde motoru deniyor olacağız.",
+  "kind": "say.tr",
+  "de": "Jetzt du: Morgen um diese Zeit werden wir den Motor testen."
+ },
+ {
+  "tr": "Bir tane daha: Atıf yaptığımız sistem şifreleme kullanıyor.",
+  "kind": "say.tr",
+  "de": "Noch eins: Das System, auf das wir uns beziehen, benutzt Verschlüsselung."
+ },
+ {
+  "tr": "Şimdi sıra sende: Deneyin otomatikleştirilmesi bir ay sürdü.",
+  "kind": "say.tr",
+  "de": "Jetzt bist du dran: Die Automatisierung des Versuchs hat einen Monat gedauert."
+ },
+ {
+  "tr": "Dışarı bırakılan madde demek. İlk kalıbımız da bu. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Das heißt der nach außen abgegebene Stoff. Das ist auch unsere erste Wendung. Wiederhole:"
+ },
+ {
+  "tr": "Şimdi dersin kuralı. Bilim yazısında aktarım üç biçimde geçer:",
+  "kind": "say.tr",
+  "de": "Jetzt die Regel der Lektion. Im wissenschaftlichen Text kommt die Wiedergabe in drei Formen vor:"
+ },
+ {
+  "tr": "geçmişi anlatır. Üçü de bulguyu verir ama kimseyi öne çıkarmaz.",
+  "kind": "say.tr",
+  "de": "erzählt die Vergangenheit. Alle drei nennen den Befund, stellen aber niemanden nach vorn."
+ },
+ {
+  "tr": "Şimdi sıra sende: Sistem, ki haziranda güncellenmişti, bozuldu.",
+  "kind": "say.tr",
+  "de": "Jetzt bist du dran: Das System, das im Juni aktualisiert wurde, ist ausgefallen."
+ },
+ {
+  "tr": "İşin kendiliğinden yürür hâle gelmesi demek. İlk kalıbımız da bu. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Das heißt, dass eine Arbeit von selbst läuft. Das ist auch unsere erste Wendung. Wiederhole:"
+ },
+ {
+  "tr": "Makineye ne yapacağını söyleyen program demek. İlk kalıbımız da bu. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Das heißt das Programm, das der Maschine sagt, was sie tun soll. Das ist auch unsere erste Wendung. Wiederhole:"
+ },
+ {
+  "tr": "Bilim yazısı kişiyi değil bulguyu anlatır ve bunu sağlayan şey fiili isme çevirmek. Hazır mısın?",
+  "kind": "say.tr",
+  "de": "Ein wissenschaftlicher Text erzählt nicht die Person, sondern den Befund, und das schafft die Nominalisierung. Bist du bereit?"
+ },
+ {
+  "tr": "Merhaba! Bugün bilimsel yazının dilini öğreneceğiz: ne otomatikleşti, ne bulundu, ne geciktirildi.",
+  "kind": "say.tr",
+  "de": "Hallo! Heute lernen wir die Sprache des wissenschaftlichen Textes: was automatisiert wurde, was erfunden wurde, was sich verzögert hat."
+ },
+ {
+  "tr": "yazılır. Bilim yazısında bu bir üslup tercihi değil; yazının kim değil ne olduğunu taşıması gerekir.",
+  "kind": "say.tr",
+  "de": "geschrieben. Im wissenschaftlichen Text ist das keine Stilfrage; der Text soll nicht das Wer, sondern das Was tragen."
+ },
+ {
+  "tr": "Bilimsel planda bu iki biçim ayrı söz verir: biri bitmiş olacağını, öteki sürüyor olacağını. Hazır mısın?",
+  "kind": "say.tr",
+  "de": "Im wissenschaftlichen Plan geben diese zwei Formen verschiedene Zusagen: die eine, dass es fertig sein wird, die andere, dass es laufen wird. Bist du bereit?"
+ },
+ {
+  "tr": "Bilim yazısında bulgu verilir ama kimin bulduğu öne çıkarılmaz; bunu edilgen aktarım kalıbı sağlar. Hazır mısın?",
+  "kind": "say.tr",
+  "de": "Im wissenschaftlichen Text wird der Befund genannt, aber nicht, wer ihn gefunden hat; das leistet die passive Wiedergabe. Bist du bereit?"
+ },
+ {
+  "tr": "Merhaba! Bugün bir ölçüm takvimini anlatmayı öğreneceğiz: o güne kadar ne ölçülmüş olacak, o an ne deneniyor olacak.",
+  "kind": "say.tr",
+  "de": "Hallo! Heute lernen wir, den Zeitplan einer Messreihe zu erklären: was bis dahin gemessen worden sein wird und was dann gerade getestet wird."
+ },
+ {
+  "tr": "Merhaba! Bugün laboratuvar yönergesini kısa yazmayı öğreneceğiz: önce ne yapıldı, neden öyle oldu, ne sonra ölçüldü.",
+  "kind": "say.tr",
+  "de": "Hallo! Heute lernen wir, eine Laboranleitung kurz zu schreiben: was zuerst gemacht wurde, warum es so war, was danach gemessen wurde."
+ },
+ {
+  "tr": "Merhaba! Bugün bir çalışmanın kurgusunu anlatmayı öğreneceğiz: ne tekrarlandı, ölçümler tutarlı mı, grup yeterli miydi.",
+  "kind": "say.tr",
+  "de": "Hallo! Heute lernen wir, den Aufbau einer Studie zu erklären: was wiederholt wurde, ob die Messungen stimmig sind, ob die Gruppe ausreichte."
+ },
+ {
+  "tr": "Teknik yazıda ek bilgi çoğu zaman edilgen: «ki mayısta güncellenmişti» gibi. Yapanı söylemeden ekliyorsun. Hazır mısın?",
+  "kind": "say.tr",
+  "de": "Im technischen Text ist die Ergänzung meist passiv: «das im Mai aktualisiert wurde». Du fügst sie an, ohne den Handelnden zu nennen. Bist du bereit?"
+ },
+ {
+  "tr": "Laboratuvar yönergesi kısa olmak zorunda ve adım sırası anlamın yarısı; ortaç öbeği ikisini birden sağlıyor. Hazır mısın?",
+  "kind": "say.tr",
+  "de": "Eine Laboranleitung muss kurz sein, und die Schrittfolge ist die halbe Bedeutung; die Partizipialkonstruktion leistet beides. Bist du bereit?"
+ },
+ {
+  "tr": "Merhaba! Bugün bir sistemin parçalarını tanıtmayı öğreneceğiz: hangi parça ne zaman güncellendi, hangi yöntem neyi kullanıyor.",
+  "kind": "say.tr",
+  "de": "Hallo! Heute lernen wir, die Teile eines Systems vorzustellen: welches Teil wann aktualisiert wurde, welches Verfahren was benutzt."
+ }
+]
