@@ -11661,3 +11661,42 @@ ile JSX arasına generik giremez.
 `parity-check` §231 dört listeyle ölçüyor: erken durdurma ayrımı (4 ölçüt),
 özetin üç sayısı (doğruluk · kelime · seri, aynı sıra), haftalık sonuç
 yerleşimi (5 ölçüt) ve ölü anahtarların kalkmış olması.
+
+## §11.348 — Sınav sonucu: kutlama yoktu, sıra farklıydı, deneme cümlesi iki metindi
+
+Eksen **sınav sonuç ekranları**ydı. Deneme kâğıdının sonucu ölçüldü ve **zaten
+eşitti** (yüzde + skor + hüküm + geçme notu, aynı sıra, geçme notu iki tarafta
+da `MOCK_PASS_PCT` sabitinden) — kapı orayı gerilemeyi tutmak için okuyor.
+İkisinde de kutlama yok ve bu bilinçli: kâğıdın bir **bölümü** bitiyor,
+kâğıdın kendisi değil.
+
+**Seviye sınavında üç ayrışma vardı:**
+
+1. **Kutlama yoktu.** Android geçince konfeti atıyor (`Celebrate
+   show={!!result?.passed}`); web sınav oynatıcısının hiçbir yerinde kutlama
+   yoktu — geçmek en çok kutlanması gereken an ve iki platformda iki ayrı
+   duyguydu.
+2. **Sıra farklıydı.** Android önce **büyük yüzdeyi**, sonra hükmü, sonra
+   deneme cümlesini yazıyor; web önce hükmü yazıp yüzdeyi **"Toplam %78"**
+   diye küçük bir satıra gömüyordu — aynı ekranda **önce okunan şey**
+   farklıydı.
+3. **Deneme cümlesi iki ayrı metindi.** Web: "deneme (modül konuşmaları
+   bitmeden sayılmaz)" — toplam satırına eklenmiş kısa bir parantez
+   (`exam.trial_note`, yalnız webde). Android: tam cümle, kendi satırında ve
+   **sebebiyle** ("modül konuşmalarının %80'i geçilmediği için sonuç
+   sayılmaz" — `exam.trial_notice`, ortak kümede). Ortak olan kaldı; webin
+   kopyası ve artık çağırılmayan `exam.total` silindi (`i18n:check` ikisini de
+   ölü anahtar olarak yakaladı).
+
+Koç balonu ve sertifika bağlantısı ikisinde de zaten vardı.
+
+`parity-check` §232 dört listeyle ölçüyor: seviye sınavı sonucunun altı kalemi
+(kutlama, koç balonu, büyük yüzde, hüküm, deneme cümlesi, sertifika), üç
+parçanın **sırası** (konum karşılaştırması, metin değil), ölü anahtarların
+kalkmış olması ve deneme kâğıdının sonuç başı.
+
+Bir not ölçümün kendisi hakkında: ilk anahtar diff'i `mockexam.passed`ı
+"yalnız mobilde" gösterdi ve bu **yanlıştı** — web `t(score.passed ?
+"mockexam.passed" : "mockexam.failed")` yazıyor, yani anahtar `t(`den hemen
+sonra değil. Çıkarıcı blok içindeki **tüm** i18n benzeri dizeleri toplayacak
+şekilde genişletildi; yoksa üçlü ifade içindeki her anahtar "eksik" görünürdü.

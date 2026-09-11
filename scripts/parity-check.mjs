@@ -7291,6 +7291,101 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     "beklenen",
   );
 
+  /* -- 232. SINAV SONUCU: sira, kutlama ve deneme cumlesi ---------------
+   *
+   * Seviye sinavinin sonucunda uc ayrisma vardi:
+   *
+   *  1. KUTLAMA YOKTU. Android gecince konfeti atiyor (`ExamScreen`
+   *     `Celebrate show={!!result?.passed}`); webde sinav oynaticisinin
+   *     hicbir yerinde kutlama yoktu - gecmek en cok kutlanmasi gereken an ve
+   *     iki platformda iki ayri duyguydu.
+   *  2. SIRA FARKLIYDI. Android once BUYUK YUZDEyi, sonra hukmu, sonra deneme
+   *     cumlesini yaziyor; web once hukmu yazip yuzdeyi "Toplam %78" diye
+   *     kucuk bir satira gomuyordu - ayni ekranda ONCE OKUNAN sey farkliydi.
+   *  3. DENEME CUMLESI iki ayri metindi: web "deneme (modul konusmalari
+   *     bitmeden sayilmaz)" diye toplam satirina eklenmis kisa bir parantez
+   *     (`exam.trial_note`, yalniz webde), Android tam cumleyi kendi satirinda
+   *     ve sebebiyle veriyor (`exam.trial_notice`, %80 esigi). Ortak olan
+   *     kaldi, webin kopyasi ve artik cagirilmayan `exam.total` silindi.
+   *
+   * DENEME KAGIDININ sonucu olculdu ve ZATEN esitti (yuzde + skor + hukum +
+   * gecme notu, ayni sira); kapi orayi gerilemeyi tutmak icin okuyor.
+   * Ikisinde de kutlama YOK ve bu bilincli: kagidin bir BOLUMU bitiyor,
+   * kagidin kendisi degil. */
+  {
+    const sm = sil(read("mobile/src/screens/ExamScreen.tsx"));
+    const sw = sil(read("src/components/exam-player.tsx"));
+    sameList(
+      "seviye sinavi sonucu",
+      [
+        "kutlama=" + (/<Celebrate show=\{!!result\?\.passed\}/.test(sm) ? "gecince" : "YOK"),
+        "koc balonu=" + (/moment=\{result\?\.passed \? "exam_pass" : "exam_fail"\}/.test(sm) ? "var" : "YOK"),
+        "buyuk yuzde=" + (/variant="h1">\{formatPercent\(pct\)\}/.test(sm) ? "var" : "YOK"),
+        "hukum=" + (/exam\.passed[\s\S]{0,60}exam\.not_passed/.test(sm) ? "var" : "YOK"),
+        "deneme cumlesi=" + (/exam\.trial_notice/.test(sm) ? "ortak anahtar" : "?"),
+        "sertifika=" + (/exam\.open_certificate/.test(sm) ? "var" : "YOK"),
+      ],
+      [
+        "kutlama=" + (/<Confetti fire=\{result\.passed \? 1 : 0\}/.test(sw) ? "gecince" : "YOK"),
+        "koc balonu=" + (/moment=\{result\.passed \? "exam_pass" : "exam_fail"\}/.test(sw) ? "var" : "YOK"),
+        "buyuk yuzde=" + (/<h1 className="text-h1 tabular-nums">\{t\("common\.pct", \{ n: result\.total \}\)\}<\/h1>/.test(sw) ? "var" : "YOK"),
+        "hukum=" + (/exam\.passed[\s\S]{0,80}exam\.not_passed/.test(sw) ? "var" : "YOK"),
+        "deneme cumlesi=" + (/exam\.trial_notice/.test(sw) ? "ortak anahtar" : "?"),
+        "sertifika=" + (/exam\.open_certificate/.test(sw) ? "var" : "YOK"),
+      ],
+      "mobil",
+      "web",
+    );
+
+    /* Sira: yuzde -> hukum -> deneme cumlesi. Konum karsilastirmasi, metin
+       degil: ayni uc parca iki tarafta ayni sirada mi. */
+    const sira = (src, desenler) =>
+      desenler
+        .map(([ad, re]) => [ad, src.search(re)])
+        .filter(([, i]) => i >= 0)
+        .sort((a, b) => a[1] - b[1])
+        .map(([ad]) => ad);
+    sameList(
+      "seviye sinavi sonucunun sirasi",
+      sira(sm, [["yuzde", /variant="h1">\{formatPercent\(pct\)\}/], ["hukum", /exam\.not_passed/], ["deneme", /exam\.trial_notice/]]),
+      sira(sw, [["yuzde", /<h1 className="text-h1 tabular-nums">/], ["hukum", /exam\.not_passed/], ["deneme", /exam\.trial_notice/]]),
+      "mobil",
+      "web",
+    );
+
+    /* Webin olu anahtarlari kalkti. */
+    const WEB_SOZLUK = ["src/i18n/web/tr.ts", "src/i18n/web/en.ts", "src/i18n/web/de.ts"];
+    sameList(
+      "sinav sonucunun olu anahtarlari kalkti",
+      [
+        "exam.total=" + WEB_SOZLUK.reduce((n, y) => n + (read(y).includes('"exam.total"') ? 1 : 0), 0),
+        "exam.trial_note=" + WEB_SOZLUK.reduce((n, y) => n + (read(y).includes('"exam.trial_note"') ? 1 : 0), 0),
+      ],
+      ["exam.total=0", "exam.trial_note=0"],
+      "bulunan",
+      "beklenen",
+    );
+
+    /* Deneme kagidinin sonuc basi: zaten esitti, kapi tutuyor. */
+    const dm = sil(read("mobile/src/screens/MockExamScreen.tsx"));
+    const dw = sil(read("src/components/mock-exam-player.tsx"));
+    const kagit = (src, yuzde) => [
+      "baslik=" + (/mockexam\.result/.test(src) ? "var" : "YOK"),
+      "yuzde=" + (yuzde.test(src) ? "var" : "YOK"),
+      "skor=" + (/mockexam\.score", \{ correct: score\.correct, total: score\.total \}/.test(src) ? "var" : "YOK"),
+      "hukum=" + (/mockexam\.passed[\s\S]{0,60}mockexam\.failed/.test(src) ? "var" : "YOK"),
+      "gecme notu=" + (/mockexam\.pass_note", \{ pct: MOCK_PASS_PCT \}/.test(src) ? "sabitten" : "YOK"),
+      "kutlama=" + (/<Celebrate|<Confetti/.test(src) ? "VAR" : "yok"),
+    ];
+    sameList(
+      "deneme kagidi sonuc basi",
+      kagit(dm, /variant="h1" color=\{score\.passed[\s\S]{0,80}formatPercent\(score\.pct\)/),
+      kagit(dw, /className="text-h1"[\s\S]{0,120}n: score\.pct/),
+      "mobil",
+      "web",
+    );
+  }
+
   /* -- 231. SONUC KIRILIMI: ayni kalemler, ayni yerlesim ----------------
    *
    * Uc ayrisma cikti:
