@@ -7286,6 +7286,86 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     "beklenen",
   );
 
+  /* -- 230. PAYLASIM: ayni tur, ayni metin, ayni yerlerde dugme ---------
+   *
+   * Ayni ozellik iki uygulamada iki ayri seydi:
+   *
+   *  - Web tur sonucunu Wordle'in ogrettigi DESENLE paylasiyor (kareler +
+   *    seviye basligi + istatistik satiri, gunun turunda ayrica "ayni
+   *    sorular herkese ayni" cagrisi). Android tek cumlelik duz bir metin
+   *    gonderiyordu.
+   *  - Metnin sozluk anahtarlari webde `sharew.*` diye YALNIZ webde
+   *    duruyordu, yani Android'in o metni uretmesi mumkun degildi.
+   *  - GUNUN TURUNDA Android'de paylasim dugmesi HIC YOKTU. Oysa gunun turu
+   *    paylasilmaya en deger tur: sorular o seviyedeki HERKESE ayni geliyor,
+   *    yani karsi taraf kiyaslayabilecegi bir sey goruyor.
+   *
+   * Anahtarlar `share.*` olarak ortak kumeye tasindi (`i18n-pull` base'i
+   * mobilden uretiyor, yani tasima mobile yazilip cekildi) ve metin uretimi
+   * `mobile/src/lib/share.ts`e kopyalandi.
+   *
+   * YURUYUS KIPI bilincli olarak duz cumlede kaldi: orada tur basina
+   * dogru/yanlis dizisi tutulmuyor (ne webde ne Androidde), yani cizilecek
+   * desen yok. Ayrim platformlar arasinda degil, TURUN TURU arasinda - ve
+   * iki tarafta ayni. */
+  {
+    const mw = sil(read("src/components/share-result.tsx"));
+    const mm = sil(read("mobile/src/lib/share.ts"));
+    /* Desen uretimi: ayni sabitler, ayni karakterler, ayni "son kareler"
+       kurali. Sayilar iki yerde yazili oldugu icin ikisi de okunuyor. */
+    const desen = (src) => [
+      "MAX_ROWS=" + ((src.match(/MAX_ROWS = (\d+)/) ?? [])[1] ?? "?"),
+      "PER_ROW=" + ((src.match(/PER_ROW = (\d+)/) ?? [])[1] ?? "?"),
+      "kare=" + (/\(ok\) => \(ok \? "■" : "□"\)/.test(src) ? "dolu/bos" : "?"),
+      "son kareler=" + (/slice\(-MAX_ROWS \* PER_ROW\)/.test(src) ? "evet" : "HAYIR"),
+    ];
+    sameList("paylasim deseni", desen(mm), desen(mw), "mobil", "web");
+
+    /* Metnin govdesi: basliklar, istatistik satiri ve gunun turu dali. */
+    const govde = (src) => [
+      "baslik=" + (/share\.head_daily[\s\S]{0,120}share\.head\b/.test(src) ? "gunluk+normal" : "EKSIK"),
+      "gunluk istatistik=" + (/share\.points[\s\S]{0,120}share\.of_questions/.test(src) ? "puan+soru" : "EKSIK"),
+      "normal istatistik=" + (/share\.n_words[\s\S]{0,120}share\.pct_correct/.test(src) ? "kelime+yuzde" : "EKSIK"),
+      "seri=" + (/share\.streak_short[\s\S]{0,80}social\.days_streak/.test(src) ? "iki dal" : "EKSIK"),
+      "gunluk cagri=" + (/share\.daily_cta/.test(src) ? "var" : "YOK"),
+    ];
+    sameList("paylasim metni govdesi", govde(mm), govde(mw), "mobil", "web");
+
+    /* Anahtarlar ORTAK kumede mi: `sharew.` hicbir yerde kalmamali.
+       (base<->mobil birebirligini `i18n:check` ayrica zorluyor.) */
+    const WEB_SOZLUK = ["src/i18n/web/tr.ts", "src/i18n/web/en.ts", "src/i18n/web/de.ts"];
+    const MOB_SOZLUK = ["mobile/src/i18n/tr.ts", "mobile/src/i18n/en.ts", "mobile/src/i18n/de.ts"];
+    const ANAHTARLAR = ["share.head", "share.head_daily", "share.points", "share.of_questions", "share.n_words", "share.pct_correct", "share.streak_short", "share.daily_cta"];
+    sameList(
+      "paylasim anahtarlari ortak kumede",
+      [
+        "webde kalan sharew=" + WEB_SOZLUK.reduce((n, y) => n + (read(y).match(/"sharew\./g) ?? []).length, 0),
+        "mobil sozlukte eksik=" + ANAHTARLAR.filter((k) => !MOB_SOZLUK.every((y) => read(y).includes('"' + k + '"'))).length,
+      ],
+      ["webde kalan sharew=0", "mobil sozlukte eksik=0"],
+      "bulunan",
+      "beklenen",
+    );
+
+    /* Dugmenin bulundugu turlar: oturum, gunun turu (desenli) ve yuruyus
+       (duz cumle). Ucu de iki platformda. */
+    sameList(
+      "paylasim dugmesi hangi turlarda",
+      [
+        "oturum=" + (/shareRoundResult\(\{ marks: answers\.current/.test(sil(read("mobile/src/screens/GameScreen.tsx"))) ? "desenli" : "YOK"),
+        "gunun turu=" + (/shareRoundResult\(\{[\s\S]{0,400}kind: "daily"/.test(sil(read("mobile/src/screens/DailyScreen.tsx"))) ? "desenli" : "YOK"),
+        "yuruyus=" + (/shareResult\(tally\.correct, tally\.total\)/.test(sil(read("mobile/src/screens/WalkModeScreen.tsx"))) ? "duz" : "YOK"),
+      ],
+      [
+        "oturum=" + (/<ShareResult\b/.test(sil(read("src/components/session-player.tsx"))) ? "desenli" : "YOK"),
+        "gunun turu=" + (/kind="daily"/.test(sil(read("src/components/daily-player.tsx"))) ? "desenli" : "YOK"),
+        "yuruyus=" + (/shareText\(resultText\(/.test(sil(read("src/components/walk-player.tsx"))) ? "duz" : "YOK"),
+      ],
+      "mobil",
+      "web",
+    );
+  }
+
   /* -- 229. durum dallarinin TASARIMI: maskot, kutlama, cikis yolu -------
    *
    * §227 bekleme, §228 hata dalini olctu; bu tur ayni dallarin TASARIMINA

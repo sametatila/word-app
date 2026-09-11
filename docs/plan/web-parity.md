@@ -11560,3 +11560,42 @@ girince mesafe aştı ve kapı, duyurusu yerinde duran koda "SESSİZ" dedi. İki
 taşımalı. Patron turunun ölçüsü de aynı şekilde güçlendirildi; o dosya
 genelinde `<Frame role="status">` arıyordu, yani komşuyu ölçme riski
 taşıyordu.
+
+## §11.346 — Paylaşım: aynı tur, iki ayrı metin; günün turunda düğme hiç yoktu
+
+Eksen **sonuç ekranının paylaşımı**ydı ve aynı özellik iki uygulamada iki
+ayrı şey çıktı.
+
+**Web** tur sonucunu Wordle'ın öğrettiği **desenle** paylaşıyor: seviye
+başlığı, `■□` kareleri (son otuz tur), istatistik satırı, günün turunda
+ayrıca "aynı sorular o seviyedeki herkese aynı" çağrısı. Kareler hangi
+kelimeler olduğunu söylemiyor — kimsenin sırasını bozmuyor, yalnızca merak
+ettiriyor. **Android** tek cümlelik düz bir metin gönderiyordu.
+
+Metnin sözlük anahtarları webde **`sharew.*`** diye yalnız webde duruyordu,
+yani Android'in o metni üretmesi mümkün değildi. Anahtarlar `share.*` olarak
+ortak kümeye taşındı. Yön önemliydi: `src/i18n/base/*` **mobilden üretiliyor**
+(`i18n-pull`) ve `i18n:check` base↔mobil katı eşitliği zorluyor — yani
+taşıma mobile yazılıp çekildi, `src/i18n/web/*`ten silindi. Metin üretimi
+(`marksToGrid`, `buildShareText`) `mobile/src/lib/share.ts`e kopyalandı.
+
+**Günün turunda Android'de paylaşım düğmesi hiç yoktu.** Oysa paylaşılmaya en
+değer tur o: sorular o seviyedeki herkese aynı geliyor, yani karşı taraf
+kıyaslayabileceği bir şey görüyor. Düğme eklendi; desen için tur başına
+doğru/yanlış dizisi (`marksRef`) ve başlık için yükün seviyesi
+(`levelRef`) tutuluyor. Oturum turu da (`GameScreen`) düz metinden desenli
+metne geçti — `answers.current` zaten doğru/yanlış tutuyordu, yeni durum
+gerekmedi.
+
+**Yürüyüş kipi bilinçli olarak düz cümlede kaldı**: orada tur başına
+doğru/yanlış dizisi tutulmuyor (ne webde ne Android'de), yani çizilecek desen
+yok. Ayrım platformlar arasında değil, **turun türü** arasında — ve iki
+tarafta aynı. Webin `shareInvite`ı da bu turda `shareText` üstünde ince bir
+sarmalayıcıya indi; olay etiketi `invite`/`result`/`daily` diye ayrıldı.
+
+`parity-check` §230 dört listeyle ölçüyor: desen sabitleri (`MAX_ROWS`,
+`PER_ROW`, kare karakterleri, "son kareler" kuralı — sayılar iki yerde yazılı
+olduğu için ikisi de okunuyor), metnin gövdesi (başlıklar, iki istatistik
+dalı, seri, günlük çağrı), anahtarların ortak kümede olması (`sharew.`
+hiçbir yerde kalmamalı + sekiz anahtar üç mobil sözlükte tam) ve düğmenin
+bulunduğu turlar.
