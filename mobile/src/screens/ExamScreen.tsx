@@ -126,6 +126,17 @@ type Result = { id: number; total: number; passed: boolean; trial: boolean; sect
  * sunucuya gitmiyor), yazma için `/api/assess` rubriği. Boş gelen bölüm hiç
  * çizilmiyor — sunucu zaten eksik bölümün ağırlığını kalanlara dağıtıyor.
  */
+/**
+ * Konuşma maddesinde en uzun dinleme.
+ *
+ * Sekiz saniyeydi, web aynı maddede on iki saniye kaydediyordu: aynı sınav,
+ * aynı soru, farklı süre. Cevabı kesilen kullanıcı puan kaybediyordu ve
+ * hiçbir kapı bakmıyordu. Ad web'deki sabitle birebir aynı
+ * (`components/exam-player` `SPEAK_MAX_MS`), o yüzden ayrışma "ortak sayısal
+ * sabitler" kapısına düşüyor.
+ */
+const SPEAK_MAX_MS = 12000;
+
 export function ExamScreen() {
   const { colors } = useTheme();
   const insets = useSafeAreaInsets();
@@ -996,7 +1007,7 @@ function Speak({ it, colors, pad, onDone }: { it: SpeakingItem; colors: Palette;
     setTries((n) => n + 1);
     if (!(await ensureMicPermission())) { setTip(t("speak.mic_needed")); setPhase("err"); return; }
     setPhase("rec"); setTip(null);
-    const duyulan = await listenOnce(currentTargetLocale(), 8000);
+    const duyulan = await listenOnce(currentTargetLocale(), SPEAK_MAX_MS);
     if (!duyulan?.length) { setTip(t("speak.not_heard")); setPhase("err"); return; }
     setHeard(duyulan[0]);
     const tutti = spokenMatches(duyulan, [it.de]);

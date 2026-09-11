@@ -47,8 +47,16 @@ import { localDay } from "@/lib/day";
 
 type Phase = "cover" | "loading" | "intro" | "run" | "finishing" | "result" | "error";
 
-/** Konuşma maddesinde en uzun kayıt. */
-const SPEAK_MAX_MS = 12_000;
+/**
+ * Konuşma maddesinde en uzun kayıt.
+ *
+ * Mobil aynı maddede 8 saniye dinliyordu (`ExamScreen`, `listenOnce`): aynı
+ * sınav, aynı soru, farklı süre — ve konuşma cevabı kesilen kullanıcı puan
+ * kaybediyordu. İki taraf da artık 12 saniye ve sayı AYNI ADLA yazılı, o
+ * yüzden "ortak sayısal sabitler" kapısı ayrışmayı kendiliğinden yakalıyor
+ * (alt çizgili `12_000` o taramaya girmiyordu, bu yüzden düz yazılı).
+ */
+const SPEAK_MAX_MS = 12000;
 
 /** Bölümün öğrenciye ne yaptıracağı — bölüm arası kartında okunur. */
 const SECTION_BRIEF_KEYS: Record<ExamSectionId, string> = {

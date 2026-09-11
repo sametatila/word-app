@@ -9464,3 +9464,41 @@ koyar.
 `PremiumGate`in hiçbir yerde kullanılmayan takma adlarıydı. Tek kaynağı ikiye
 bölmenin en sessiz hâli: ikinci ad bir gün ayrı bir şeye bağlanırsa kimse fark
 etmez. Kaldırıldı.
+
+## §11.289 — Yorumun söylediği ama ölçülmeyen zorunluluklar
+
+Taramayı yön değiştirdim: sayılardan **yorumlara**. Kodun içinde "şu şu ile
+aynı olmalı / olmak zorunda" diyen cümleleri dolaşıp hangisinin kapısı yok
+diye baktım. Çoğu zaten ölçülüyordu (`numbers.ts` gövde karşılaştırması,
+hukuki sürüm eşitliği, ses kayıt defteri, ikon yolları). Üç tanesi kirliydi.
+
+**a) Beceri konuşma oynatıcısında `PASS = 80`.** Başında "lib/pronounce'daki
+`PASS_SCORE` ile aynı olmalı" yazılıydı — zorunluluğu yazan bir cümle, ölçen
+bir şey yok. Eşik `lib/pronounce-const` içine alındı (ayrı dosya, çünkü bir
+bileşenin puanlama modülünün tamamını tek sayı için bundle'a çekmesi gereksiz
+ağırlık olurdu); iki taraf da oradan okuyor.
+
+**b) Aynı dosyadaki `MAX_MS = 8000`in yorumu YANLIŞTI.** "Sınav oynatıcısıyla
+aynı" diyordu; sınav 12 saniye kaydediyor. Fark bilinçli (burada tek bir cümle
+söyleniyor, sınavda serbest cevap) ama **yanlış bir yorum yokluktan kötü**:
+sonraki okuyan yanlış tarafı "düzeltir". Yorum gerekçesiyle düzeltildi ve kapı
+ikisinin **ayrı** kalmasını bekliyor — mutlak ölçütle, çünkü iki tarafı
+karşılaştırmak onları eşitlemeye davet ederdi.
+
+**c) Sınavın konuşma maddesinde iki platform farklı süre veriyordu.** Web 12
+saniye kaydediyor, mobil 8 saniye dinliyordu: aynı sınav, aynı soru, farklı
+süre — ve cevabı kesilen kullanıcı puan kaybediyordu. İkisi 12'de eşlendi
+(gevşetme yönü: mobilin tanıyıcısı sessizlikte kendiliğinden duruyor, kimse
+daha uzun konuşmaya zorlanmıyor). Sayı iki tarafta **aynı adla** yazılı, o
+yüzden ayrışmayı var olan "ortak sayısal sabitler" kapısı kendiliğinden
+yakalıyor — bunun için webdeki `12_000` düz `12000` yazıldı, çünkü alt çizgili
+biçim o taramanın desenine girmiyordu.
+
+**§195** beşi birden okuyor. Dört enjeksiyonun dördü yakalandı; dördüncüsü tam
+da (b)'nin davet ettiği yanlış düzeltmeydi (beceri kaydını sınava eşitlemek).
+
+**Not — paralel oturum:** `mobile/src/data/lessons/index.ts` içinde
+`./en-b2.json` içe alınmış ama dosya henüz yazılmamış (başka bir oturumun
+sürmekte olan işi). Mobil `tsc` tek bu hatayı veriyor ve `App.test.tsx` süiti
+bu yüzden yüklenemiyor (136 test geçiyor, 1 süit yükleme hatası). Benim
+değişikliklerimle ilgisi yok ve onların dosyalarına dokunmadım.

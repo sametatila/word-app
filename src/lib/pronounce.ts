@@ -1,4 +1,5 @@
 import { matchSentence, type TokenMark } from "@/lib/sentence-match";
+import { PASS_SCORE } from "@/lib/pronounce-const";
 import type { SpeechConfusion } from "@/lib/skills/types";
 import type { SttWord } from "@/lib/stt";
 
@@ -40,7 +41,8 @@ export type PronounceScore = {
   passed: boolean;
 };
 
-export const PASS_SCORE = 80;
+/* Eşik arayüzden de okunuyor: bkz. `lib/pronounce-const`. */
+export { PASS_SCORE } from "@/lib/pronounce-const";
 
 const fold = (s: string) => s.toLocaleLowerCase("de-DE").replace(/[.,!?;:„“"'’()]/g, "").replace(/ß/g, "ss").replace(/ä/g, "ae").replace(/ö/g, "oe").replace(/ü/g, "ue").trim();
 

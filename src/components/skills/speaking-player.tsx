@@ -4,6 +4,9 @@ import { useRef, useState } from "react";
 import type { SkillExercise, SpeakingTask } from "@/lib/skills/types";
 import type { PronounceScore } from "@/lib/pronounce";
 import { askPronounce, captureClip, type Capture } from "@/lib/pronounce-client";
+/* Geçme eşiği kuralın kendisinden: kopyası burada `PASS = 80` diye duruyordu
+   ve "aynı olmalı" diyen bir yorum vardı, ölçen bir şey yoktu. */
+import { PASS_SCORE } from "@/lib/pronounce-const";
 import { PlayerShell, ResultCard, useSkillFinish } from "./player-shell";
 import { GlossPanel } from "./quiz";
 import { useTargetLang } from "./player-context";
@@ -11,10 +14,15 @@ import { CheckIcon, XIcon, SpeakerIcon } from "@/components/icons";
 import { speakGerman } from "@/components/speak-button";
 import { useT } from "@/lib/i18n/client";
 
-/** Tek kayıt için üst sınır; sınav oynatıcısıyla aynı. */
+/**
+ * Tek kayıt için üst sınır.
+ *
+ * Yorum "sınav oynatıcısıyla aynı" diyordu ve YANLIŞTI: sınav 12 saniye
+ * kaydediyor (`exam-player` `SPEAK_MAX_MS`). Fark bilinçli — burada
+ * söylenecek şey tek bir cümle, sınavda ise serbest bir cevap — ama yanlış
+ * bir yorum yoklukten kötü: sonraki okuyan yanlış tarafı "düzeltir".
+ */
 const MAX_MS = 8000;
-/** Geçme eşiği — lib/pronounce'daki PASS_SCORE ile aynı olmalı. */
-const PASS = 80;
 
 type Durum = "idle" | "rec" | "scoring" | "done" | "failed";
 
@@ -102,7 +110,7 @@ export function SpeakingPlayer({ exercise, backHref }: { exercise: SkillExercise
 
   function advance() {
     const p = scores.current[idx] ?? 0;
-    const passedNow = passedCount + (p >= PASS ? 1 : 0);
+    const passedNow = passedCount + (p >= PASS_SCORE ? 1 : 0);
     setPassedCount(passedNow);
     setScore(null);
     setReason(null);
@@ -184,7 +192,7 @@ export function SpeakingPlayer({ exercise, backHref }: { exercise: SkillExercise
              GÖRSEL bir değişiklikti. */
           <div role="status" className="mt-4">
             <div className="flex items-center gap-2">
-              {score.overall >= PASS ? (
+              {score.overall >= PASS_SCORE ? (
                 <CheckIcon size={18} className="text-[color:var(--color-mint)]" />
               ) : (
                 <XIcon size={18} className="text-[color:var(--color-rose)]" />
@@ -194,7 +202,7 @@ export function SpeakingPlayer({ exercise, backHref }: { exercise: SkillExercise
             </div>
 
             {/* Puan düşükse önce KARIŞMA uyarısı: sayı değil, düzeltme öğretir. */}
-            {score.overall < PASS && task.confusions?.length ? (
+            {score.overall < PASS_SCORE && task.confusions?.length ? (
               <ul className="mt-3 space-y-1.5">
                 {task.confusions.map((c, i) => (
                   <li key={i} className="rounded-lg px-3 py-2 text-[13px] leading-relaxed surface-2">

@@ -7226,6 +7226,55 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     "beklenen",
   );
 
+  /* ── 195. yorumun soyledigi ama olculmeyen iki zorunluluk ────────────
+   * Tarama yon degistirdi: sayilardan YORUMLARA. Kodun icinde "su su ile ayni
+   * olmali" diyen cumleleri dolasip hangisinin kapisi yok diye bakildi. Iki
+   * tanesi kirli cikti:
+   *
+   *   a) `skills/speaking-player` icinde `PASS = 80` duruyordu ve basinda
+   *      "lib/pronounce'daki PASS_SCORE ile ayni olmali" yaziliydi. Esik
+   *      `lib/pronounce-const` icine alindi, ikisi de oradan okuyor.
+   *   b) Ayni dosyadaki `MAX_MS = 8000`in yorumu "sinav oynaticisiyla ayni"
+   *      diyordu ve YANLISTI - sinav 12 saniye kaydediyor. Yanlis yorum
+   *      yokluktan kotu: sonraki okuyan yanlis tarafi duzeltir. Yorum
+   *      gerekcesiyle duzeltildi ve kapi ikisinin AYRI kalmasini bekliyor.
+   *
+   * Ucuncu bulgu sayiyla ilgiliydi ve iki platform arasindaydi: seviye
+   * sinavinin konusma maddesinde web 12 saniye kaydediyor, mobil 8 saniye
+   * dinliyordu - ayni sinav, ayni soru, farkli sure. Ikisi 12'de eslendi ve
+   * sayi AYNI ADLA yazildigi icin ("ortak sayisal sabitler") ayrisma
+   * kendiliginden yakalaniyor; alt cizgili `12_000` o taramaya girmedigi icin
+   * duz yazildi. */
+  {
+    const konusma = sil(read("src/components/skills/speaking-player.tsx"));
+    const sinavWeb = sil(read("src/components/exam-player.tsx"));
+    const sinavMob = sil(read("mobile/src/screens/ExamScreen.tsx"));
+    const al = (src, re) => (src.match(re) ?? [])[1] ?? "yok";
+    sameList(
+      "telaffuz esigi ve kayit sureleri",
+      [
+        "beceri esigi=" + (/\bPASS_SCORE\b/.test(konusma) && !/const PASS =/.test(konusma) ? "kaynaktan" : "kendi kopyasi"),
+        "beceri kaydi=" + al(konusma, /MAX_MS = (\d+)/),
+        "sinav kaydi (web)=" + al(sinavWeb, /SPEAK_MAX_MS = (\d+)/),
+        "sinav dinlemesi (mobil)=" + al(sinavMob, /SPEAK_MAX_MS = (\d+)/),
+        "mobil sabiti kullaniyor=" + (/listenOnce\(currentTargetLocale\(\), SPEAK_MAX_MS\)/.test(sinavMob) ? "evet" : "HAYIR"),
+      ],
+      [
+        "beceri esigi=kaynaktan",
+        /* Beceri kaydi sinavdan KISA kalmali: tek cumle soyleniyor. Sayi
+           burada YAZILI cunku "ayri olmali"yi ancak mutlak bir olcut
+           tutabilir - iki tarafi karsilastirmak onlari esitlemeye davet
+           ederdi. */
+        "beceri kaydi=8000",
+        "sinav kaydi (web)=12000",
+        "sinav dinlemesi (mobil)=12000",
+        "mobil sabiti kullaniyor=evet",
+      ],
+      "bulunan",
+      "beklenen",
+    );
+  }
+
   /* ── 194. panelin varsayilani ile gecme notu ──────────────────────────
    * `mock.unlockPct` (sonraki kagit paketini acan yuzde) ile `MOCK_PASS_PCT`
    * (kagidin gecme notu) ayni olmak zorunda ve bunu SOYLEYEN bir yorum vardi
