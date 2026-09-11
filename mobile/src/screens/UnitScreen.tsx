@@ -57,8 +57,12 @@ export function UnitPane({ index, level, theme, items: gelenItems, embedded = fa
     ünite 10/10 diyordu. Sunucu da (immersion/state) sayıma yalnız ders ve
     beceriyi alıyor; mobil ölçütü ona hizalandı.
   */
+  /* `playable` ŞARTI SUNUCUYLA AYNI. Eksikti ve İngilizce kursta ayrışma
+     canlıydı: içeriği olmayan yuvalar (ref yok) sunucunun `total`ına
+     girmiyor ama burada sayılıyordu — ünite sunucuda bitmiş sayılıp sonraki
+     açılırken ekranda ilerleme takılı kalıyordu. Bkz. web `unit-pane`. */
   const counted = items.filter(
-    (i) => i.kind === "lesson" || i.kind === "read" || i.kind === "listen" || i.kind === "write",
+    (i) => i.playable && (i.kind === "lesson" || i.kind === "read" || i.kind === "listen" || i.kind === "write"),
   );
   const done = counted.filter((i) => i.done).length;
   const pct = counted.length ? Math.round((done / counted.length) * 100) : 0;

@@ -7226,6 +7226,69 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     "beklenen",
   );
 
+  /* ── 208. ilerlemeye sayilan maddeler: sunucu ile iki istemci ─────────
+   * Sunucu `total`a yalniz OYNANABILIR ve tamamlanabilir maddeleri katiyor
+   * (`lib/immersion/state`: `completable = playable ∩ {lesson,read,listen,
+   * write}`). Iki istemci ayni kumeyi suzuyordu ama `playable` sartini
+   * ATLIYORDU.
+   *
+   * Ayrisma Ingilizce kursta CANLIYDI: seviye basina 25 unite × 2 okuma = 50
+   * yuva var, havuzda 13 metin - yani yuvalarin cogu `ref: null`, oynanamaz.
+   * Sunucu uniteyi bitmis sayip sonrakini aciyor, ekranda ise ilerleme
+   * "5/10"da takili kaliyor ve unite bitmemis gorunuyordu. Kullanicinin
+   * bildirdigi "13 madde ama x/10" sikayetinin bir kat altindaki sebep.
+   *
+   * Almancada havuzlar tam tamina yetiyor (25 × 2 = 50, havuz 50), o yuzden
+   * orada ayni kusur GIZLI kaliyordu - iki kursu ayri olcmek gerekti.
+   *
+   * Kapi uc yerin AYNI uc turu ve `playable` sartini tasidigini okuyor. */
+  {
+    const sunucu = sil(read("src/lib/immersion/state.ts"));
+    const webPane = sil(read("src/components/immersion/unit-pane.tsx"));
+    const mobUnit = sil(read("mobile/src/screens/UnitScreen.tsx"));
+    const turler = (src, ad) => {
+      const blok = govdeAl(src, ad);
+      if (!blok) return "counted yok";
+      const k = ["lesson", "read", "listen", "write"].filter((t) => blok.includes(`"${t}"`));
+      return k.join("+") || "tur yok";
+    };
+    /* GOVDE TAM ALINIYOR, PENCEREYLE DEGIL. Ilk yazim `ad`dan sonraki 420
+       karakteri tariyordu ve web dosyasinda `counted`in HEMEN ARDINDAKI
+       satirda da `playable` geciyor (acik maddeler suzgeci): enjeksiyon
+       `i.playable &&`i sildigi hâlde kapi yesil kaldi. Olcum yine komsuyu
+       olcuyordu - bu kez uc dakika once yazdigim kapida. */
+    const govdeAl = (src, ad) => {
+      const i = src.indexOf(ad);
+      if (i < 0) return "";
+      const j = src.indexOf("\n}", i);
+      const k = src.indexOf(";", i);
+      return src.slice(i, Math.min(...[j, k].filter((x) => x > i)) + 1);
+    };
+    const oynanabilir = (src, ad) => (/playable/.test(govdeAl(src, ad)) ? "var" : "YOK");
+    sameList(
+      "ilerlemeye sayilan maddeler",
+      [
+        "sunucu turler=" + (() => { const i = sunucu.indexOf("completable"); const b = sunucu.slice(i, i + 420);
+          return ["lesson", "read", "listen", "write"].filter((t) => b.includes(`"${t}"`)).join("+"); })(),
+        "sunucu oynanabilir=" + oynanabilir(sunucu, "completable"),
+        "web turler=" + turler(webPane, "function counted"),
+        "web oynanabilir=" + oynanabilir(webPane, "function counted"),
+        "mobil turler=" + turler(mobUnit, "const counted"),
+        "mobil oynanabilir=" + oynanabilir(mobUnit, "const counted"),
+      ],
+      [
+        "sunucu turler=lesson+read+listen+write",
+        "sunucu oynanabilir=var",
+        "web turler=lesson+read+listen+write",
+        "web oynanabilir=var",
+        "mobil turler=lesson+read+listen+write",
+        "mobil oynanabilir=var",
+      ],
+      "bulunan",
+      "beklenen",
+    );
+  }
+
   /* ── 207. hesap silmede magaza uyarisi ───────────────────────────────
    * "Hesabi silmek aboneligi durdurmaz" cumlesi uc ayri metin ister, cunku
    * iptal YOLU magazaya gore degisiyor (Play Store > Odemeler ve abonelikler

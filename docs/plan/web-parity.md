@@ -10245,3 +10245,33 @@ duruyor ("kalan saniye", "ekran genişliği px", "puanlı adımlarda doğru
 yüzdesi"); bunları yorumlayan bir kapı ya gürültü ya kalıcı yeşil üretir —
 §11.305'te aynı sebeple bir kapı reddedilmişti. Ölçüm yapıldı, sonuç temiz,
 kayıt burada: bir sonraki tur aynı taramayı yeniden yazmasın.
+
+## §11.312 — Sunucu bitmiş sayıyor, ekran "5/10" gösteriyor
+
+Kullanıcının bildirdiği "13 madde ama x/10" şikâyetinin (§11.284) bir kat
+altında gerçek bir ayrışma vardı.
+
+Sunucu ilerlemeye **yalnız oynanabilir** ve tamamlanabilir maddeleri katıyor:
+`completable = playable ∩ {lesson, read, listen, write}` (`lib/immersion/state`).
+İki istemci aynı dört türü süzüyordu ama **`playable` şartını atlıyordu.**
+
+Fark Almancada görünmüyor, çünkü havuzlar tam tamına yetiyor: 25 ünite × 2
+okuma = 50, havuzda 50 metin. **İngilizce kursta ise canlı:** aynı 50 yuvaya
+karşı havuzda 13 metin var, yani yuvaların çoğu `ref: null` — oynanamaz.
+
+Sonuç, İngilizce kursta bir öğrenci için: sunucu üniteyi **bitmiş** sayıp
+sonrakini açıyor, ekranda ise ilerleme `5/10`da takılı kalıyor ve ünite
+bitmemiş görünüyor. İki kursu ayrı ölçmek gerekti — tek kursla bakan bir ölçüm
+bunu "yok" diye raporlardı.
+
+İki istemci de sunucunun ölçütüne bağlandı.
+
+**§208 kapısı ilk yazımında komşuyu ölçtü ve enjeksiyon onu gösterdi.**
+`counted`ın adından sonraki 420 karakteri tarıyordum; web dosyasında hemen
+ardındaki satırda da `playable` geçiyor (açık maddeler süzgeci), o yüzden
+`i.playable &&` silindiği hâlde kapı yeşil kaldı. Gövde tam alınacak şekilde
+düzeltildi; üç enjeksiyonun üçü şimdi yakalanıyor.
+
+Not: ilk turda enjeksiyonun yakalanmamasını "kapı sağlam" diye okumadım, önce
+enjeksiyonun gerçekten uygulandığını doğruladım (§11.285'in kuralı) — uygulanmış,
+kusur kapıdaydı.

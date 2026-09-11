@@ -102,9 +102,22 @@ export function KindIconFor({ kind, size = 22 }: { kind: string; size?: number }
  * ama madde başına "bitti" kaydı tutmuyorlar. Paydaya katılınca ünite hiçbir
  * zaman %100 görünmüyor.
  */
+/**
+ * İlerlemeye SAYILAN maddeler — sunucudaki ölçütün aynısı.
+ *
+ * `playable` ŞARTI EKSİKTİ ve ayrışma İngilizce kursta canlıydı: sunucu
+ * `total`a yalnız oynanabilir maddeleri katıyor (`lib/immersion/state`
+ * `completable = playable ∩ {lesson,read,listen,write}`), istemci ise
+ * içeriği olmayan yuvaları da sayıyordu. İngilizce seviyede 25 ünite × 2
+ * okuma = 50 yuva var, havuzda 13 metin — yani yuvaların çoğu `ref: null`,
+ * yani oynanamaz. Sonuç: sunucu üniteyi BİTMİŞ sayıp sonrakini açıyor,
+ * ekranda ise ilerleme "5/10"da takılı kalıyor ve ünite bitmemiş görünüyor.
+ */
 function counted(items: HubItem[]): HubItem[] {
   return items.filter(
-    (i) => i.kind === "lesson" || i.kind === "read" || i.kind === "listen" || i.kind === "write",
+    (i) =>
+      i.playable &&
+      (i.kind === "lesson" || i.kind === "read" || i.kind === "listen" || i.kind === "write"),
   );
 }
 
