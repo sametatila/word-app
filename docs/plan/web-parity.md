@@ -10007,3 +10007,35 @@ henüz **commit edilmemiş** olan beşinci denetimin tamamı silindi. Yedekleme
 disiplini enjeksiyon hedefleri için vardı, kapının kendisi için yoktu. Kural:
 *enjeksiyonu geri alan komut, o turda yazılmış kodu da geri alabilir; geri alma
 her zaman yedekten olmalı, `git checkout`tan değil.*
+
+## §11.305 — Sorulamayan bir soru: "bu uç hız sınırlı mı?"
+
+Mutasyon uçlarının hız sınırını taramaya çalıştım ve **yöntem elendi.** Kaydı
+buraya, çünkü bir sonraki tur aynı taramayı yeniden yazmasın.
+
+İlk deneme rota dosyasına baktı: 45 mutasyon ucundan 36'sı "sınırsız" çıktı.
+Yanlıştı — sınır bir katman aşağıda yaşıyor. `social/nudges` ucunun dosyasında
+tek bir sınır çağrısı yok; `sendNudge` içinde **iki** tane var
+(`nudgePerFriend` ve `nudgeTotal`).
+
+İkinci deneme içe alım ağacını üç seviye izledi: bu sefer 45'in **45'i**
+"sınırlı" çıktı. O da yanlıştı ve sebebi daha kötü: eşleşen dosya çoğu zaman
+`src/lib/db/schema.ts`, çünkü orada `rateLimit` diye bir **tablo adı** geçiyor.
+Yani kapı "sınır var mı" değil, "bu kelime bir yerlerde geçiyor mu" diye
+soruyordu — her şeye evet diyen bir ölçüm, hiçbir şeye bakmayan bir ölçümdür
+(§11.279'daki `"?" === "?"` tuzağının bu alandaki hâli).
+
+**Sonuç: bu soru bu teknikle sorulamaz.** Sınırın istek YOLUNDA olup olmadığını
+statik metinden ayırt etmek, çağrı grafiğini gerçekten çözmeyi gerektirir; ona
+yaklaşmayan her kalıp ya gürültü ya kalıcı yeşil üretir. Kapı yazılmadı.
+
+Bunun yerine **kararlaştırılabilir** bir soru soruldu: başkasına bildirim
+gönderen kaç yer var ve hepsi sınırlı mı? Beş yer çıktı ve beşi de doğru:
+dürtme (iki sınır: kişi başına ve toplam), görev daveti, tepki ve arkadaşlık
+isteği aktör başına sınırlı; beşincisi (lig yükselme bildirimi) haftalık lig
+kapanışının içinde ve tetikleyeni kullanıcı değil sistem — sınır gerekmiyor,
+hacmi lig boyu belirliyor.
+
+Dürtme arayüzü de iki platformda aynı: arkadaş listesinde bugün dürtülmüş kişi
+için düğme kapanıyor (`nudgedToday`), profil sayfasında iki tarafta da
+kapanmıyor. Simetrik.
