@@ -76,8 +76,10 @@ export function TokenDiff({ tokens, lang = "de" }: { tokens: MarkedToken[]; lang
       {tokens.map((t, i) => (
         <span
           key={i}
+          /* Üst öge tam metni işaretleriyle birlikte `aria-label`da veriyor
+             (bkz. `plain`), çocuklar `aria-hidden`. Balon bir şey eklemiyordu
+             ve yalnız fareyle açılıyordu. */
           aria-hidden
-          title={TITLE_KEYS[t.mark] ? tx(TITLE_KEYS[t.mark]!) : undefined}
           className={
             t.mark === "missing"
               ? "underline decoration-2 underline-offset-2"

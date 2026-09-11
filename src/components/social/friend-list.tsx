@@ -117,8 +117,12 @@ function FriendItem({ f, nudged, onChanged }: { f: FriendRow; nudged: boolean; o
           {f.friendStreak > 0 ? (
             <span
               className="flex items-center gap-0.5"
+              /* İPUCU BALONU KALKTI. Rozet "N gün birlikte" diye zaten
+                 yazıyor ve zincir kırılıyorsa uyarı ALTTA görünür bir satır
+                 olarak duruyor (`social.costreak_risk`, Android da öyle
+                 yapıyor). Balonda duran iki cümle yalnız fareyle açılıyordu ve
+                 Android'de karşılığı yok. */
               style={{ color: f.streakAtRisk ? "var(--color-flame)" : "var(--color-mint)" }}
-              title={t(f.streakAtRisk ? "socialw.costreak_risk_hint" : "socialw.costreak_hint")}
             >
               <HandshakeIcon size={12} />
               {t("social.days_together", { n: f.friendStreak })}
@@ -147,7 +151,6 @@ function FriendItem({ f, nudged, onChanged }: { f: FriendRow; nudged: boolean; o
           className="btn btn-ghost h-8 px-2.5 text-caption"
           disabled={busy || sent}
           onClick={() => void nudge()}
-          title={t(cheer ? "socialw.cheer_hint" : "socialw.nudge_hint")}
         >
           {t(sent ? (cheer ? "friendrows.cheered" : "friendrows.nudged") : cheer ? "friendrows.cheer" : "friendrows.nudge")}
         </button>
@@ -156,7 +159,7 @@ function FriendItem({ f, nudged, onChanged }: { f: FriendRow; nudged: boolean; o
             ekranda ise hiç öğrenilemiyordu. Android aynı düğmeyi simge + metin
             olarak veriyor (`FriendRows` `ActionTile`) ve satırdaki öteki iki
             düğme webde de zaten metinli — tek sessiz olan buydu. */}
-        <button className="btn btn-ghost flex h-8 items-center gap-1 px-2 text-caption" disabled={busy} onClick={() => void quest()} title={t("socialw.quest_hint")}>
+        <button className="btn btn-ghost flex h-8 items-center gap-1 px-2 text-caption" disabled={busy} onClick={() => void quest()}>
           <TargetIcon size={15} />
           {t("friendrows.quest")}
         </button>

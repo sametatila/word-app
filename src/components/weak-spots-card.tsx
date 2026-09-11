@@ -114,7 +114,7 @@ export function WeakSpotsCard({ bare = false }: { bare?: boolean } = {}) {
           <p className="text-micro uppercase tracking-wide muted">{tx("weak.confusions")}</p>
           <ul className="mt-1.5 flex flex-wrap gap-2">
             {report.confusions.slice(0, 5).map((c) => (
-              <li key={`${c.wordId}-${c.with}`} className="chip px-3 py-1.5 text-caption" title={tx("weak.n_times", { n: c.n })}>
+              <li key={`${c.wordId}-${c.with}`} className="chip px-3 py-1.5 text-caption">
                 <strong lang={course}>
                   {c.artikel ? `${c.artikel} ` : ""}
                   {c.de}

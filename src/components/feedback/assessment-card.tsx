@@ -3,9 +3,7 @@
 import { FeedbackLine } from "@/components/feedback/feedback-line";
 import { ASSESS_FAILURE_KEYS, type AssessFailure, type FallbackAssessment } from "@/lib/assess-client";
 import type { Assessment } from "@/lib/assess-prompts";
-import { ERROR_LABEL_KEYS } from "@/lib/errors";
-import { whyLabel } from "@/lib/why";
-import { useT, useLang } from "@/lib/i18n/client";
+import { useT } from "@/lib/i18n/client";
 import { useCourse } from "@/components/app-shell";
 import { scoreBand } from "@/lib/score-bands";
 
@@ -139,8 +137,11 @@ function Bar({ label, value, muted = false }: { label: string; value: number; mu
 
 /** Metinde hata aralıklarını vurgular; çakışan/boş span'ler atlanır. */
 function Highlighted({ answer, errors }: { answer: string; errors: Assessment["errors"] }) {
-  const t = useT();
-  const lang = useLang();
+  /* İŞARETİN İPUCU BALONU KALKTI. Hata tipi ve düzeltmesi `title=`de
+     duruyordu; aynı bilgi ALTTAKİ listede zaten görünür yazılı
+     („yanlış" → „doğru" — neden) ve Android aynı listeyi aynı biçimde
+     çiziyor (`ui/AssessmentCard`). Balon yalnız fareyle açılıyordu, yani
+     bir şey eklemiyor gizliyordu. */
   const spans = errors
     .filter((e) => e.span[1] > e.span[0] && e.span[1] <= answer.length)
     .sort((a, b) => a.span[0] - b.span[0]);
@@ -152,7 +153,6 @@ function Highlighted({ answer, errors }: { answer: string; errors: Assessment["e
     out.push(
       <mark
         key={`${e.span[0]}-${e.span[1]}`}
-        title={`${ERROR_LABEL_KEYS[e.type] ? t(ERROR_LABEL_KEYS[e.type]) : whyLabel(e.type, lang)}: ${e.fix}`}
         className="rounded px-0.5 underline decoration-2 underline-offset-2"
         style={{ background: "color-mix(in srgb, var(--color-rose) 18%, transparent)", color: "inherit" }}
       >
