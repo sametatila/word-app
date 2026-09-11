@@ -7,7 +7,7 @@ import { cleanDetail, isErrorType, srsWeightFor, type ErrorType } from "@/lib/er
 import { clozeTypeChance, gamesFor, isProductionGame, PRODUCTION_GAMES, type Strength as LadderStrength } from "@/lib/ladder";
 import { chatConfigured } from "@/lib/chat-providers";
 import { FREQUENT_ERROR_WEIGHT, frequentErrorTypes } from "@/lib/error-analytics";
-import { grade, schedule, xpForQuality, type SrsState } from "@/lib/srs";
+import { grade, schedule, xpForQuality, type SrsState, MASTERED_DAYS } from "@/lib/srs";
 import { nextStreak, shiftDay } from "@/lib/award";
 import { onActivityAwarded } from "@/lib/social/hooks";
 import { xpForChallengeRecord, xpForWager } from "@/lib/xp";
@@ -68,7 +68,6 @@ const PRODUCTION_FLOOR = Math.max(0, Math.min(0.8, Number(process.env.PRODUCTION
  */
 const MIN_MATURE = 6;
 /** Bu aralığa ulaşan kelime "pekişmiş" sayılır (kelime listesiyle aynı ölçüt). */
-const MASTERED_DAYS = 21;
 
 /**
  * Tek oyun modunun dolgusu — görülmüş koleksiyonun tamamından, üç banttan.

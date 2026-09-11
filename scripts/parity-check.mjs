@@ -6634,6 +6634,43 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   );
 }
 
+/* ── 175. pekismis esigi tek yerde mi ─────────────────────────────────────
+ * Kirk bir ortak sayisal sabitin hepsi iki platformda ayni cikti. Ayrisma
+ * SUNUCUNUN KENDI ICINDE bulundu: "pekismis" esigi (yirmi bir gun) ALTI yerde
+ * yaziliydi - iki modulde ayri ayri `const MASTERED_DAYS = 21`, dort yerde de
+ * dogrudan `21` (kelimeler sayfasi, kelime ucu iki kez, kelime listesi).
+ * Altisi da bugun ayniydi; biri degistirilse otekiler sessizce eski kalir ve
+ * ayni kelime bir yerde "pekismis", baska yerde "ogreniliyor" gorunurdu.
+ *
+ * Esik artik tekrar araligini hesaplayan yerde (`lib/srs`) ve okuyan herkes
+ * oradan aliyor. Mobil bu esigi hic hesaplamiyor: `status` alanini sunucudan
+ * okuyor, yani platformlar arasi ayrisma ihtimali de yok.
+ *
+ * Olculen: esigin tanimi tek yerde mi ve arayuzde satir ici bir kopyasi
+ * kalmis mi. */
+{
+  const strip = (x) => x.replace(/\/\*[\s\S]*?\*\//g, (m) => m.replace(/[^\n]/g, " ")).replace(/(^|[^:"'`\\])\/\/.*$/gm, "$1");
+  const gez = (d, out = []) => {
+    for (const e of readdirSync(new URL("../" + d, import.meta.url), { withFileTypes: true })) {
+      const yol = d + "/" + e.name;
+      if (e.isDirectory()) { if (!/node_modules|__tests__|\.next/.test("/" + yol)) gez(yol, out); }
+      else if (/\.(ts|tsx)$/.test(e.name)) out.push(yol);
+    }
+    return out;
+  };
+  const tanim = [];
+  const kopya = [];
+  for (const yol of gez("src")) {
+    const src = strip(read(yol));
+    if (/const MASTERED_DAYS\s*=/.test(src)) tanim.push(yol);
+    /* Esigin satir ici kopyasi: `intervalDays` ile yirmi birin ayni
+       karsilastirmada gectigi her yer. */
+    if (/intervalDays\s*[<>]=?\s*21\b|21\s*[<>]=?\s*[\w.]*intervalDays/.test(src)) kopya.push(yol);
+  }
+  sameList("pekismis esigi tanimi", tanim, ["src/lib/srs.ts"], "bulunan", "beklenen");
+  sameList("pekismis esiginin satir ici kopyasi", kopya.length ? kopya : ["yok"], ["yok"], "bulunan", "beklenen");
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"

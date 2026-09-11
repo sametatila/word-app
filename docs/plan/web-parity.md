@@ -8936,3 +8936,25 @@ Onu kaçırmamın sebebi öğreticiydi: düzenlemeyi yaptığımı sandım, `tsc
 geçince doğrulamış saydım. Derleme, `pushDevice`in hâlâ dışa açtığı eski
 fonksiyon yüzünden geçiyordu. **Bir düzenlemenin uygulandığını görmek, dosyayı
 okumakla olur; yeşil bir derleme onu göstermez.**
+
+## §11.271 — "Pekişmiş" eşiği altı yerde yazılıydı
+
+İki platformda aynı adla yazılı **kırk bir sayısal sabitin hepsi eş** çıktı
+(SRS bekleme süreleri, sınav saniyeleri, puan katsayıları, parola uzunluğu,
+iki adımlı kod basamakları…). Bu sınıf mobil-web arasında temiz.
+
+Ayrışma **sunucunun kendi içinde** bulundu: "pekişmiş" eşiği — tekrar aralığı
+yirmi bir güne çıkan kelime — altı ayrı yerde yazılıydı. İki modülde ayrı ayrı
+`const MASTERED_DAYS = 21`, dört yerde de doğrudan `21`: kelimeler sayfasının
+süzgeci, kelime ucunun iki süzgeci ve kelime listesinin etiketi. Altısı da
+bugün aynıydı; biri değiştirilse ötekiler sessizce eski kalır ve aynı kelime
+bir yerde "pekişmiş", başka yerde "öğreniliyor" görünürdü — kullanıcıya iki
+farklı gerçek.
+
+Eşik artık tekrar aralığını hesaplayan yerde (`lib/srs`) ve okuyan herkes
+oradan alıyor. Mobil bu eşiği hiç hesaplamıyor — `status` alanını sunucudan
+okuyor — yani platformlar arası ayrışma ihtimali de yok; risk tamamen web'in
+kendi içindeydi.
+
+**§175** iki şeyi ölçüyor: eşiğin tanımının tek yerde olması ve arayüzde satır
+içi bir kopyasının kalmaması. Üç enjeksiyonun üçü de yakalandı.

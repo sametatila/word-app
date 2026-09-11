@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { MASTERED_DAYS } from "@/lib/srs";
 import { and, asc, eq, ilike, or, sql, type SQL } from "drizzle-orm";
 import { db } from "@/lib/db";
 import { userWords, words } from "@/lib/db/schema";
@@ -38,8 +39,8 @@ export async function GET(req: Request) {
   }
   if (level) filters.push(eq(words.niveau, level));
   if (status === "new") filters.push(sql`${userWords.wordId} is null`);
-  if (status === "learning") filters.push(sql`${userWords.wordId} is not null and ${userWords.intervalDays} < 21`);
-  if (status === "mastered") filters.push(sql`${userWords.intervalDays} >= 21`);
+  if (status === "learning") filters.push(sql`${userWords.wordId} is not null and ${userWords.intervalDays} < ${MASTERED_DAYS}`);
+  if (status === "mastered") filters.push(sql`${userWords.intervalDays} >= ${MASTERED_DAYS}`);
 
   try {
     const rows = await db
@@ -103,7 +104,7 @@ export async function GET(req: Request) {
       intervalDays: r.intervalDays,
       lapses: r.lapses ?? 0,
       leech: r.leech ?? false,
-      status: r.intervalDays == null ? "new" : r.intervalDays >= 21 ? "mastered" : "learning",
+      status: r.intervalDays == null ? "new" : r.intervalDays >= MASTERED_DAYS ? "mastered" : "learning",
     }));
 
     return NextResponse.json({ words: list, page, hasMore }, { headers: { "cache-control": "no-store" } });

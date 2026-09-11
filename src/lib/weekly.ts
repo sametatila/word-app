@@ -1,4 +1,5 @@
 import "server-only";
+import { MASTERED_DAYS } from "@/lib/srs";
 import { and, asc, desc, eq, gt, gte, lt, sql } from "drizzle-orm";
 import { db } from "@/lib/db";
 import { exams, userWords, words } from "@/lib/db/schema";
@@ -23,7 +24,6 @@ import { nativeOf } from "@/lib/courses";
  */
 
 export const WEEKLY_ROUNDS = 15;
-const MASTERED_DAYS = 21;
 const MIN_MASTERED = 30;
 const NO_REPEAT_WEEKS = 4;
 

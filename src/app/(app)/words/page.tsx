@@ -1,4 +1,5 @@
 import { and, asc, eq, ilike, or, sql, type SQL } from "drizzle-orm";
+import { MASTERED_DAYS } from "@/lib/srs";
 import { titleMeta } from "@/lib/page-meta";
 import { db } from "@/lib/db";
 import { userWords, words } from "@/lib/db/schema";
@@ -56,7 +57,7 @@ export default async function WordsPage({
   if (status === "new") filters.push(sql`${userWords.wordId} is null`);
   if (status === "learning")
     filters.push(sql`${userWords.wordId} is not null and ${userWords.intervalDays} < 21`);
-  if (status === "mastered") filters.push(sql`${userWords.intervalDays} >= 21`);
+  if (status === "mastered") filters.push(sql`${userWords.intervalDays} >= ${MASTERED_DAYS}`);
 
   try {
     const rows = await db

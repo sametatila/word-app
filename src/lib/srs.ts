@@ -7,6 +7,17 @@
  * oturum kuyruğuna kendiliğinden karışır.
  */
 
+/**
+ * "PEKİŞMİŞ" EŞİĞİ — aralık bu kadar güne çıktıysa kelime pekişmiş sayılır.
+ *
+ * Sayı altı yerde yazılıydı: iki modülde ayrı ayrı `const MASTERED_DAYS = 21`,
+ * dört yerde de doğrudan `21` (kelimeler sayfası, kelime ucu iki kez, kelime
+ * listesi). Altısı da bugün aynıydı ama biri değiştirilse ötekiler sessizce
+ * eski kalırdı: aynı kelime bir yerde "pekişmiş", başka yerde "öğreniliyor"
+ * görünürdü. Eşiğin yeri burası — tekrar aralığını hesaplayan yer.
+ */
+export const MASTERED_DAYS = 21;
+
 export type SrsState = {
   state: number; // 0 yeni, 1 öğreniliyor, 2 tekrar
   ease: number;

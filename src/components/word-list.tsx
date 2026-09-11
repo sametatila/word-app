@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState, type ReactNode } from "react";
+import { MASTERED_DAYS } from "@/lib/srs";
 import { useT, useLang } from "@/lib/i18n/client";
 import { LANG_LABEL, formatNumber } from "@/lib/i18n/dict";
 import { courseName } from "@/lib/courses";
@@ -61,7 +62,7 @@ const STATUSES = [
 function statusOf(r: WordRow): { labelKey: string; tone: string } {
   if (r.leech) return { labelKey: "words.status_leech", tone: "var(--color-rose)" };
   if (r.intervalDays == null) return { labelKey: "words.status_new", tone: "var(--text-muted)" };
-  if (r.intervalDays >= 21) return { labelKey: "words.status_mastered", tone: "var(--color-mint)" };
+  if (r.intervalDays >= MASTERED_DAYS) return { labelKey: "words.status_mastered", tone: "var(--color-mint)" };
   if (r.intervalDays >= 3) return { labelKey: "words.status_familiar", tone: "var(--color-sky)" };
   return { labelKey: "words.status_learning", tone: "var(--color-flame)" };
 }
