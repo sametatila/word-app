@@ -6,6 +6,7 @@ import { getUserInfo } from "@/lib/auth/server";
 import { ensureProfile } from "@/lib/session";
 import { libraryMetas, listExerciseMeta, type SkillMeta } from "@/lib/skills";
 import { listSkillStatus, type SkillStatus } from "@/lib/skills/record";
+import { isSkillDone } from "@/lib/score-bands";
 import { SKILL_LABEL_KEYS, SKILL_ORDER } from "@/lib/skills/meta";
 import { SKILL_ICON, SKILL_TINT } from "@/components/skills/theme";
 import { CardGrid } from "@/components/layout";
@@ -17,9 +18,6 @@ export const generateMetadata = titleMeta("skills.skills");
 export const dynamic = "force-dynamic";
 
 const LEVELS: CefrLevel[] = ["A1", "A2", "B1", "B2", "C1"];
-
-/** "Bitti" eşiği — immersion/progress.ts ve oynatıcı rotasıyla aynı (70). */
-const DONE_PCT = 70;
 
 /**
  * Beceriler — Patika'nın YANINDAKİ serbest çalışma yüzeyi.
@@ -86,7 +84,7 @@ export default async function SkillsPage({
     console.error("[skills] ilerleme okunamadı", err);
   }
   const scoreOf = (id: string): number | null => status[id]?.lastScore ?? null;
-  const done = (id: string) => (scoreOf(id) ?? 0) >= DONE_PCT;
+  const done = (id: string) => isSkillDone(scoreOf(id));
 
   const doneCount = atLevel.filter((m) => done(m.id)).length;
 
@@ -154,6 +152,16 @@ export default async function SkillsPage({
         })}
       </nav>
 
+      {/* BOŞ DURUM ÖNERİDEN ÖNCE. Bu kart sayfanın en ALTINDAYDI: içeriği
+          olmayan bir seviyeye geçen kullanıcı boş bir sayfa görüyor ve
+          sebebini ancak aşağı kaydırınca okuyordu. Mobilde sıra baştan beri
+          böyle (`SkillsScreen`: çipler, sonra boş durum). */}
+      {!atLevel.length ? (
+        <p className="card mb-4 p-5 text-body" style={{ color: "var(--text-muted)" }}>
+          {t("skills.this_course_has_no_reading")}
+        </p>
+      ) : null}
+
       {/* Tek öneri: en geride kalan becerinin sıradaki egzersizi; hepsi
           bittiyse bir üst seviye. Öğrenci "ne çalışsam" diye listeyi taramasın. */}
       {suggestion?.next ? (
@@ -170,12 +178,15 @@ export default async function SkillsPage({
           }
         />
       ) : allDone && nextLevel ? (
-        <Link href={`/skills?level=${nextLevel}`} className="card mb-4 flex items-center justify-between gap-3 p-4">
-          <span>
-            <span className="block text-[11px] font-bold uppercase tracking-wide" style={{ color: "var(--color-mint)" }}>
+        /* Mobildeki kartın aynısı: 11 punto yosun üst satır, altında SÖNÜK
+           açıklama. Burada açıklama kalın ve koyu yazılmıştı; kartın işi bir
+           duyuru, vurgu üst satırda. */
+        <Link href={`/skills?level=${nextLevel}`} className="card mb-4 flex items-center gap-3 p-4">
+          <span className="min-w-0 flex-1">
+            <span className="block text-micro uppercase" style={{ color: "var(--color-mint)" }}>
               {t("skills.level_done")}
             </span>
-            <span className="block text-sm font-bold">{t("skills.level_done_body", { level, next: nextLevel })}</span>
+            <span className="muted mt-0.5 block text-caption">{t("skills.level_done_body", { level, next: nextLevel })}</span>
           </span>
           <ChevronRightIcon className="size-4 shrink-0" />
         </Link>
@@ -211,12 +222,6 @@ export default async function SkillsPage({
         })}
       </CardGrid>
 
-      {!atLevel.length ? (
-        <p className="card p-5 text-body" style={{ color: "var(--text-muted)" }}>
-          {t("skills.this_course_has_no_reading")}
-        </p>
-      ) : null}
-
     </div>
   );
 }
@@ -226,21 +231,26 @@ async function SuggestionCard({ skill, meta, reason }: { skill: SkillId; meta: S
   const Icon = SKILL_ICON[skill];
   const tint = SKILL_TINT[skill];
   return (
+    /* ÖNERİ KARTI MOBİLDEKİ KARTIN AYNISI (`SkillsScreen`). Üç sapma vardı:
+       simge karosu %18 tint zeminliydi (mobilde nötr `surface2`, ve uygulamanın
+       tint kalıbı %13-14), yarıçapı projenin ölçeğinde olmayan Tailwind
+       `rounded-xl`iydi (12 px; ölçekte 14 = `rounded-tile`), ve alt satır
+       gerekçenin ARDINA ayırıcısız tür + süre ekliyordu ("... %40 ilerledin
+       Kısa hikâye · 5 dk"). İkisi zaten listede yazıyor; mobil yalnız gerekçeyi
+       söylüyor. Punto da jetona bağlandı: 11 punto `text-micro`. */
     <Link href={`/immersion/skill/${meta.id}?from=skills`} className="card mb-4 flex items-center gap-3 p-4">
       <span
-        className="flex size-10 shrink-0 items-center justify-center rounded-xl"
-        style={{ background: `color-mix(in srgb, ${tint} 18%, transparent)`, color: tint }}
+        className="flex size-10 shrink-0 items-center justify-center rounded-tile"
+        style={{ background: "var(--surface-2)", color: tint }}
       >
         <Icon size={20} />
       </span>
       <span className="min-w-0 flex-1">
-        <span className="block text-[11px] font-bold uppercase tracking-wide" style={{ color: tint }}>
+        <span className="block text-micro uppercase" style={{ color: tint }}>
           {t("skills.next")} · {t(SKILL_LABEL_KEYS[skill])}
         </span>
-        <span className="block truncate text-sm font-bold">{meta.title}</span>
-        <span className="muted block truncate text-caption">
-          {reason} {t(`genre.${meta.genre}`)} · {t("skills.dk", { n: meta.minutes })}
-        </span>
+        <span className="block truncate text-strong">{meta.title}</span>
+        <span className="muted line-clamp-2 block text-caption">{reason}</span>
       </span>
       <ChevronRightIcon className="size-4 shrink-0" />
     </Link>
@@ -287,7 +297,10 @@ async function Row({
           "denedim ama %50 aldım" ile "hiç açmadım" ayrışsın. */}
       {score !== null ? (
         <span
-          className="shrink-0 rounded-md px-1.5 py-0.5 text-[11px] font-bold"
+          /* Yarıçap ve punto PROJENİN ölçeğinden: `rounded-md` (6 px) ve
+             `text-[11px]` ölçekte yok, mobil karşılığı radii.sm=10 ve
+             `micro`. */
+          className="shrink-0 rounded-chip px-1.5 py-0.5 text-micro"
           style={{
             /* %14 TİNT + ANLAMSAL JETON — uygulamanın her yerindeki kalıp
                (bkz. `progress-view`, `app-shell`). Burada iki sapma vardı:

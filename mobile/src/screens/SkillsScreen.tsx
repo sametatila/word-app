@@ -48,10 +48,14 @@ function ExerciseRow({ ex, tint, done, score, isNext, onPress, colors, last }: {
         </Text>
       </View>
       {/* PUAN ROZETİ — web listesi baştan beri gösteriyor: "bitti" ile "iyi
-          bitti" aynı şey değil ve tekrar çalışma kararı buna bakıyor. */}
+          bitti" aynı şey değil ve tekrar çalışma kararı buna bakıyor.
+          EŞİĞİN ALTI KEHRİBAR, KIRMIZI DEĞİL. Rozet web'den alınmıştı ama
+          anlamsal jetonu yanlış seçilmişti: "%50 aldım" bir HATA değil, henüz
+          eşiği geçmemiş bir deneme. Web aynı rozeti alev (kehribar) tonunda
+          çiziyor (`skills/page.tsx`); kırmızı tehlikeye ayrılmış. */}
       {score !== undefined ? (
-        <View style={{ paddingHorizontal: 8, paddingVertical: 3, borderRadius: radii.sm, backgroundColor: done ? colors.successSoft : colors.dangerSoft }}>
-          <Text variant="micro" color={done ? colors.successText : colors.dangerText}>{formatPercent(score)}</Text>
+        <View style={{ paddingHorizontal: 8, paddingVertical: 3, borderRadius: radii.sm, backgroundColor: (done ? colors.success : colors.streak) + "22" }}>
+          <Text variant="micro" color={done ? colors.successText : colors.streakText}>{formatPercent(score)}</Text>
         </View>
       ) : null}
       {done ? <CheckIcon color={colors.successText} size={18} /> : <ChevronRightIcon color={colors.textFaint} size={20} />}
