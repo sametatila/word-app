@@ -320,6 +320,12 @@ export function AppShell({
               <Link
                 key={item.href}
                 href={item.href}
+                /* Hangi sayfada olundugu masaustunde yalnizca ZEMIN
+                   GRADYANIYLA anlatiliyordu; alt cubuk (telefon) ayni bilgiyi
+                   `aria-current` ile de veriyor, Android'de sekme
+                   `accessibilityState={{ selected }}` tasiyor (bkz. TabBar).
+                   Kenar cubugu kendi kardesinden geride kalmisti. */
+                aria-current={active ? "page" : undefined}
                 className={`relative flex items-center gap-3 rounded-panel px-3 py-2.5 text-strong transition-colors ${
                   active ? "text-white" : "muted hover:text-[color:var(--text)]"
                 }`}
@@ -352,6 +358,7 @@ export function AppShell({
                 key={item.href}
                 href={item.href}
                 prefetch={false}
+                aria-current={active ? "page" : undefined}
                 className={`flex items-center gap-3 rounded-panel px-3 py-2 text-strong transition-colors ${
                   active ? "text-[color:var(--text)]" : "muted hover:text-[color:var(--text)]"
                 }`}

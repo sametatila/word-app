@@ -171,6 +171,10 @@ export default async function MockExamsPage({ searchParams }: { searchParams: Pr
           <Link
             key={l}
             href={`/mock-exams?level=${l}`}
+            /* Secili seviye yalnizca ZEMIN RENGIYLE anlatiliyordu. Ayni serit
+               /skills'te `aria-current` tasiyor, Android'de
+               `accessibilityState={{ selected }}` (bkz. MockExamsScreen). */
+            aria-current={l === level ? "page" : undefined}
             className="rounded-full px-3 py-1.5 text-strong"
             style={{
               background: l === level ? "var(--brand-soft)" : "var(--surface-2)",
