@@ -6310,3 +6310,35 @@ tek satırlı tabloda mobil susuyordu (kullanıcı "kimse oynamamış" sanıyor)
 İlk bakışta **aynı şeyin iki adı** gibi duruyordu — bu turlarda üç kez öyle
 çıkmıştı. Ama metinleri okuyunca iki AYRI durum oldukları görüldü. Anahtar
 kümesi farkı bir ipucu, sonuç değil: **adlar değil metinler karşılaştırılmalı.**
+
+
+### 11.174 Boş hâller taraması: dört liste, iki bulgu
+
+§11.173'ün yöntemini (iki ekranın anahtar kümesini yan yana koy, sonra
+METİNLERİ oku) dört listeye uyguladım: yazılarım, lig tablosu, arkadaş listesi,
+akış.
+
+**Yazılarım — gerçek açık.** Boş listede web üç parça gösteriyor (başlık, ne
+düştüğünü anlatan paragraf, yazma alıştırmalarına götüren düğme); mobilde tek
+cümle vardı. Boş bir ekranın işi kullanıcıyı bir yere göndermek; tek cümle
+"nereye gideceğim" sorusunu cevapsız bırakıyor. Üçü de mobile geldi.
+
+**Akış — anahtar ikizi.** `feedlist.find_friends` ile `friends.find_friends`
+aynı metni taşıyordu; ilki silindi. Bu, bu turlardaki dördüncü ikiz
+(`session.save_*`, `wordsw.n_lapses`, `common.listen`, şimdi bu).
+
+**Kalan iki lead ölçüldü, açık değil:**
+- Lig tablosunda web `social.unnamed` ve `user.report` taşıyor. İkisi de
+  mobilde BAŞKA dosyada: isimsiz kullanıcı `social/common`de, şikâyet
+  `UserScreen`de. Satır aynı şeyleri sunuyor.
+- Arkadaş satırındaki `socialw.*_hint` anahtarları webin tooltip'leri;
+  mobilde dokunmatikte tooltip yok, eylem adları zaten görünür. Aynı bilgi,
+  platforma uygun biçim.
+
+**İkiz anahtar sayısı arttıkça şu soru güçleniyor:** aynı metni iki ayrı
+anahtarda tutmak neden kolay? Çünkü web sözlüğü ELLE yazılıyor ve mobil
+sözlükte zaten var olan bir cümleyi aramak, yeni bir anahtar uydurmaktan
+zahmetli. Kapı bunu yakalayamıyor — iki anahtar da "kullanılıyor" ve ikisi de
+"var". Yakalamanın yolu metin karşılaştırması olurdu; sözlükler büyüdükçe
+yanlış pozitif üretir (aynı kelime iki bağlamda meşru olabilir), o yüzden
+yazmadım. Ölçüm turlarında elle bakmak şimdilik daha ucuz.
