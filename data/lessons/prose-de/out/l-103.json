@@ -1,0 +1,952 @@
+[
+ {
+  "tr": "Bassalardı",
+  "kind": "titleTr",
+  "de": "Hätten sie es gedruckt"
+ },
+ {
+  "tr": "Raporun kendisi",
+  "kind": "titleTr",
+  "de": "Der Vergleich der Berichte"
+ },
+ {
+  "tr": "Doğruluk kontrolü",
+  "kind": "titleTr",
+  "de": "Eine Behauptung prüfen"
+ },
+ {
+  "tr": "Yayına girdiğinde",
+  "kind": "titleTr",
+  "de": "Wenn es gesendet wird"
+ },
+ {
+  "tr": "Daha önce yayımlanmadı",
+  "kind": "titleTr",
+  "de": "Nie zuvor veröffentlicht"
+ },
+ {
+  "tr": "Bir iddiayı sınamayı öğretir; yumuşatıcı bağlayıcılar bulguyu kesin hüküm olmaktan çıkarır.",
+  "kind": "summary",
+  "de": "Vermittelt, wie man eine Behauptung prüft; die abschwächenden Konnektoren machen aus dem Befund kein festes Urteil."
+ },
+ {
+  "tr": "Çözümleme yazısının dilini öğretir; fiil isme dönünce yazı kişiden çıkar ve metne odaklanır.",
+  "kind": "summary",
+  "de": "Vermittelt die Sprache eines Analysetexts; wird das Verb zum Nomen, tritt die Person aus dem Text und der Blick liegt auf dem Text selbst."
+ },
+ {
+  "tr": "Bir ilki duyurmayı öğretir; olumsuz zarf başa gelince devrik yapı duyurunun ağırlığını taşır.",
+  "kind": "summary",
+  "de": "Vermittelt, wie man eine Premiere ankündigt; steht ein negatives Adverb am Anfang, trägt die Inversion das Gewicht der Ankündigung."
+ },
+ {
+  "tr": "Haber takvimini anlatmayı öğretir: yayına kadar bitmiş olan ile o an sürüyor olan ayrı biçimlerle söylenir.",
+  "kind": "summary",
+  "de": "Vermittelt den Zeitplan einer Meldung: was bis zur Sendung fertig ist und was dann gerade läuft, stehen in verschiedenen Formen."
+ },
+ {
+  "tr": "Yayımlanmamış bir haberin sonuçlarını konuşmayı öğretir; sonuç geçmişte kalırsa would have, bugüne uzanırsa would.",
+  "kind": "summary",
+  "de": "Vermittelt, wie man über die Folgen einer nicht veröffentlichten Meldung spricht; bleibt die Folge in der Vergangenheit, steht would have, reicht sie bis heute, steht would."
+ },
+ {
+  "tr": "yayını öne çekmek isteyen bir yayın yönetmeni",
+  "kind": "partner",
+  "de": "ein Chefredakteur, der die Sendung vorziehen will"
+ },
+ {
+  "tr": "kesin bir evet ya da hayır bekleyen bir editör",
+  "kind": "partner",
+  "de": "eine Redakteurin, die ein klares Ja oder Nein erwartet"
+ },
+ {
+  "tr": "duyurunun abartılı olduğunu düşünen bir meslektaş",
+  "kind": "partner",
+  "de": "ein Kollege, der die Ankündigung für übertrieben hält"
+ },
+ {
+  "tr": "haberi tutmanın doğru olduğunu savunan bir meslektaş",
+  "kind": "partner",
+  "de": "eine Kollegin, die es für richtig hält, die Meldung zurückzuhalten"
+ },
+ {
+  "tr": "yazıyı kısaltmak isteyen, her cümlede isim bekleyen bir editör",
+  "kind": "partner",
+  "de": "ein Redakteur, der den Text kürzen will und in jedem Satz ein Nomen erwartet"
+ },
+ {
+  "tr": "Doğru mu değil mi? Hangisi?",
+  "kind": "openingTr",
+  "de": "Stimmt es oder nicht? Was denn nun?"
+ },
+ {
+  "tr": "Bu gerçekten ilk kez mi oluyor?",
+  "kind": "openingTr",
+  "de": "Ist das wirklich das erste Mal?"
+ },
+ {
+  "tr": "Bir gün önce yayımlayabilir miyiz?",
+  "kind": "openingTr",
+  "de": "Können wir es einen Tag früher bringen?"
+ },
+ {
+  "tr": "Bunu «biz» demeden söyleyebilir misin?",
+  "kind": "openingTr",
+  "de": "Kannst du das sagen, ohne «wir» zu sagen?"
+ },
+ {
+  "tr": "Hâlâ hatalı olduğumuzu mu düşünüyorsun?",
+  "kind": "openingTr",
+  "de": "Findest du immer noch, dass wir falsch lagen?"
+ },
+ {
+  "tr": "Daha önce yayımlanmamış bir belgeyi duyuruyorsun. İlk kez olanı, hiç olmayanı ve tek yeri devrik cümlelerle söyle.",
+  "kind": "scene",
+  "de": "Du kündigst ein nie zuvor veröffentlichtes Dokument an. Sag mit Inversionen, was zum ersten Mal geschieht, was nie geschah und wo es als Einziges steht."
+ },
+ {
+  "tr": "Yayımlanmak üzere olan bir iddiayı sınıyorsun. Bulgunu gözlem olarak ver, duyduğunu kaynağa yasla ve bakışını sınırla.",
+  "kind": "scene",
+  "de": "Du prüfst eine Behauptung, die veröffentlicht werden soll. Gib deinen Befund als Beobachtung, stütz das Gehörte auf eine Quelle und begrenz deine Sicht."
+ },
+ {
+  "tr": "Yayımlanmayan bir haberi meslektaşınla konuşuyorsun. Geçmişte kalan bir sonucu ve bugüne uzanan bir sonucu ayrı ayrı söyle.",
+  "kind": "scene",
+  "de": "Du sprichst mit einer Kollegin über eine nicht veröffentlichte Meldung. Nenn getrennt eine Folge in der Vergangenheit und eine, die bis heute reicht."
+ },
+ {
+  "tr": "İki raporu karşılaştıran bir çözümleme yazısını sözlü olarak kuruyorsun. Karşılaştırmayı, ayrımı ve karşıtlığı fiili isme çevirerek söyle.",
+  "kind": "scene",
+  "de": "Du formulierst mündlich einen Analysetext, der zwei Berichte vergleicht. Sag Vergleich, Unterscheidung und Gegensatz durch Nominalisierung."
+ },
+ {
+  "tr": "Bir haberin yayın takvimini yayın yönetmenine anlatıyorsun. Yayına kadar neyin duyurulmuş olacağını, o an neyin izleniyor olacağını ve kimin bilgilendirilmiş olacağını söyle.",
+  "kind": "scene",
+  "de": "Du erklärst dem Chefredakteur den Sendeplan einer Meldung. Sag, was bis zur Sendung bekannt gegeben sein wird, was dann gerade verfolgt wird und wer informiert sein wird."
+ },
+ {
+  "tr": "Karşılaştırmayı, ayrımı ve karşıtlığı fiili isme çevirerek söylediysen konuşma başarılı sayılır.",
+  "kind": "goal",
+  "de": "Das Gespräch gilt als gelungen, wenn du Vergleich, Unterscheidung und Gegensatz durch Nominalisierung gesagt hast."
+ },
+ {
+  "tr": "İlk kez olanı, hiç olmayanı ve tek yeri üç ayrı devrik cümleyle söylediysen konuşma başarılı sayılır.",
+  "kind": "goal",
+  "de": "Das Gespräch gilt als gelungen, wenn du das erste Mal, das Nie und den einzigen Ort in drei verschiedenen Inversionen gesagt hast."
+ },
+ {
+  "tr": "anıt",
+  "kind": "vocab.tr",
+  "de": "Gedenkstätte"
+ },
+ {
+  "tr": "rıza",
+  "kind": "vocab.tr",
+  "de": "Einwilligung"
+ },
+ {
+  "tr": "saik",
+  "kind": "vocab.tr",
+  "de": "Beweggrund"
+ },
+ {
+  "tr": "abide",
+  "kind": "vocab.tr",
+  "de": "Denkmal"
+ },
+ {
+  "tr": "ayrım",
+  "kind": "vocab.tr",
+  "de": "Unterscheidung"
+ },
+ {
+  "tr": "emsal",
+  "kind": "vocab.tr",
+  "de": "Präzedenzfall"
+ },
+ {
+  "tr": "ironi",
+  "kind": "vocab.tr",
+  "de": "Ironie"
+ },
+ {
+  "tr": "miras",
+  "kind": "vocab.tr",
+  "de": "Erbe"
+ },
+ {
+  "tr": "yetki",
+  "kind": "vocab.tr",
+  "de": "Zuständigkeit"
+ },
+ {
+  "tr": "anlatı",
+  "kind": "vocab.tr",
+  "de": "Erzählung"
+ },
+ {
+  "tr": "derlem",
+  "kind": "vocab.tr",
+  "de": "Sammlung"
+ },
+ {
+  "tr": "çelişki",
+  "kind": "vocab.tr",
+  "de": "Widerspruch"
+ },
+ {
+  "tr": "ittifak",
+  "kind": "vocab.tr",
+  "de": "Bündnis"
+ },
+ {
+  "tr": "aciliyet",
+  "kind": "vocab.tr",
+  "de": "Dringlichkeit"
+ },
+ {
+  "tr": "birleşme",
+  "kind": "vocab.tr",
+  "de": "Fusion"
+ },
+ {
+  "tr": "devralma",
+  "kind": "vocab.tr",
+  "de": "Übernahme"
+ },
+ {
+  "tr": "hissedar",
+  "kind": "vocab.tr",
+  "de": "Aktionär"
+ },
+ {
+  "tr": "koşutluk",
+  "kind": "vocab.tr",
+  "de": "Parallele"
+ },
+ {
+  "tr": "ortaklık",
+  "kind": "vocab.tr",
+  "de": "Partnerschaft"
+ },
+ {
+  "tr": "özerklik",
+  "kind": "vocab.tr",
+  "de": "Autonomie"
+ },
+ {
+  "tr": "üç aylık",
+  "kind": "vocab.tr",
+  "de": "vierteljährlich"
+ },
+ {
+  "tr": "egemenlik",
+  "kind": "vocab.tr",
+  "de": "Souveränität"
+ },
+ {
+  "tr": "iddianame",
+  "kind": "vocab.tr",
+  "de": "Anklageschrift"
+ },
+ {
+  "tr": "ilgililik",
+  "kind": "vocab.tr",
+  "de": "Bezug"
+ },
+ {
+  "tr": "karşıtlık",
+  "kind": "vocab.tr",
+  "de": "Gegensatz"
+ },
+ {
+  "tr": "yatırımcı",
+  "kind": "vocab.tr",
+  "de": "Investor"
+ },
+ {
+  "tr": "anlamlılık",
+  "kind": "vocab.tr",
+  "de": "Aussagekraft"
+ },
+ {
+  "tr": "belirsizlik",
+  "kind": "vocab.tr",
+  "de": "Mehrdeutigkeit"
+ },
+ {
+  "tr": "telif hakkı",
+  "kind": "vocab.tr",
+  "de": "Urheberrecht"
+ },
+ {
+  "tr": "veri tabanı",
+  "kind": "vocab.tr",
+  "de": "Datenbank"
+ },
+ {
+  "tr": "tören düzeni",
+  "kind": "vocab.tr",
+  "de": "Ritual"
+ },
+ {
+  "tr": "karşılaştırma",
+  "kind": "vocab.tr",
+  "de": "Vergleich"
+ },
+ {
+  "tr": "yayın damgası",
+  "kind": "vocab.tr",
+  "de": "Impressum"
+ },
+ {
+  "tr": "yöntem düzeni",
+  "kind": "vocab.tr",
+  "de": "Methodik"
+ },
+ {
+  "tr": "devlet desteği",
+  "kind": "vocab.tr",
+  "de": "Subvention"
+ },
+ {
+  "tr": "gerekçelendirme",
+  "kind": "vocab.tr",
+  "de": "Begründung"
+ },
+ {
+  "tr": "kaynak aktarımı",
+  "kind": "vocab.tr",
+  "de": "Finanzierung"
+ },
+ {
+  "tr": "ileriye dönük tahmin",
+  "kind": "vocab.tr",
+  "de": "Hochrechnung"
+ },
+ {
+  "tr": "ayrımı isimle kurar",
+  "kind": "pattern.tr",
+  "de": "baut die Unterscheidung mit einem Nomen"
+ },
+ {
+  "tr": "bilgiyi kaynağa yaslar",
+  "kind": "pattern.tr",
+  "de": "stützt die Information auf eine Quelle"
+ },
+ {
+  "tr": "karşıtlığı isimle kurar",
+  "kind": "pattern.tr",
+  "de": "baut den Gegensatz mit einem Nomen"
+ },
+ {
+  "tr": "tek yeri devrikle söyler",
+  "kind": "pattern.tr",
+  "de": "nennt den einzigen Ort mit Inversion"
+ },
+ {
+  "tr": "bulguyu gözlem olarak sunar",
+  "kind": "pattern.tr",
+  "de": "gibt den Befund als Beobachtung"
+ },
+ {
+  "tr": "hiç olmayanı devrikle söyler",
+  "kind": "pattern.tr",
+  "de": "nennt mit Inversion, was nie geschah"
+ },
+ {
+  "tr": "Doğru. Bilgi bir kaynağa yaslanıyor ve konuşan kişi onu kendi bulgusu gibi sunmuyor.",
+  "kind": "why.tr",
+  "de": "Richtig. Die Information stützt sich auf eine Quelle, und die sprechende Person gibt sie nicht als eigenen Befund aus."
+ },
+ {
+  "tr": "Doğru. Kimin ayırdığı yazılmıyor ve çözümlemede bu olağan; yazıya geçen ayrımın kendisi.",
+  "kind": "why.tr",
+  "de": "Richtig. Wer unterscheidet, wird nicht geschrieben, und in der Analyse ist das normal; in den Text kommt die Unterscheidung selbst."
+ },
+ {
+  "tr": "Ayrımı isimle kurmak için",
+  "kind": "hint.tr",
+  "de": "Um die Unterscheidung mit einem Nomen zu bauen"
+ },
+ {
+  "tr": "Bilgiyi kaynağa yaslamak için",
+  "kind": "hint.tr",
+  "de": "Um die Information auf eine Quelle zu stützen"
+ },
+ {
+  "tr": "Karşıtlığı isimle kurmak için",
+  "kind": "hint.tr",
+  "de": "Um den Gegensatz mit einem Nomen zu bauen"
+ },
+ {
+  "tr": "Tek yeri devrikle söylemek için",
+  "kind": "hint.tr",
+  "de": "Um den einzigen Ort mit Inversion zu sagen"
+ },
+ {
+  "tr": "Bulguyu gözlem olarak sunmak için",
+  "kind": "hint.tr",
+  "de": "Um den Befund als Beobachtung zu geben"
+ },
+ {
+  "tr": "Hiç olmayanı devrikle söylemek için",
+  "kind": "hint.tr",
+  "de": "Um mit Inversion zu sagen, was nie geschah"
+ },
+ {
+  "tr": "hiç",
+  "kind": "say.tr",
+  "de": "nie"
+ },
+ {
+  "tr": "ayrım",
+  "kind": "say.tr",
+  "de": "Unterscheidung"
+ },
+ {
+  "tr": "tek yer",
+  "kind": "say.tr",
+  "de": "einziger Ort"
+ },
+ {
+  "tr": "Yetki mahkemede.",
+  "kind": "say.tr",
+  "de": "Die Zuständigkeit liegt beim Gericht."
+ },
+ {
+  "tr": "Özetleyelim: ilk kez",
+  "kind": "say.tr",
+  "de": "Fassen wir zusammen: erstes Mal"
+ },
+ {
+  "tr": "Geçmişten devralınana",
+  "kind": "say.tr",
+  "de": "Was aus der Vergangenheit übernommen wird, heißt"
+ },
+ {
+  "tr": "İroniyi okur kaçırdı.",
+  "kind": "say.tr",
+  "de": "Die Ironie ist dem Leser entgangen."
+ },
+ {
+  "tr": "üç ayda bir çıkana ise",
+  "kind": "say.tr",
+  "de": "und was alle drei Monate erscheint, heißt"
+ },
+ {
+  "tr": "Ad yalnız anıtta yazılı.",
+  "kind": "say.tr",
+  "de": "Nur auf der Gedenkstätte steht der Name."
+ },
+ {
+  "tr": "Kontrol etmek görevimiz.",
+  "kind": "say.tr",
+  "de": "Zu prüfen ist unsere Pflicht."
+ },
+ {
+  "tr": "Paraya ortak olan kişiye",
+  "kind": "say.tr",
+  "de": "Wer sein Geld einbringt, heißt"
+ },
+ {
+  "tr": "Anmak için dikilen yapıya",
+  "kind": "say.tr",
+  "de": "Das Bauwerk, das zum Gedenken errichtet wird, heißt"
+ },
+ {
+  "tr": "Konuyla bağlantılı olmaya",
+  "kind": "say.tr",
+  "de": "Mit der Sache verbunden sein heißt"
+ },
+ {
+  "tr": "Raporun anlatısı değişti.",
+  "kind": "say.tr",
+  "de": "Die Erzählung des Berichts hat sich geändert."
+ },
+ {
+  "tr": "Saik aciliyeti açıklıyor.",
+  "kind": "say.tr",
+  "de": "Der Beweggrund erklärt die Dringlichkeit."
+ },
+ {
+  "tr": "Yapmak zorunda olunan işe",
+  "kind": "say.tr",
+  "de": "Was man tun muss, heißt"
+ },
+ {
+  "tr": "bir işe para aktarmaya ise",
+  "kind": "say.tr",
+  "de": "und Geld in eine Sache geben heißt"
+ },
+ {
+  "tr": "Özetleyelim: karşılaştırma",
+  "kind": "say.tr",
+  "de": "Fassen wir zusammen: Vergleich"
+ },
+ {
+  "tr": "Şirketten pay sahibi olana",
+  "kind": "say.tr",
+  "de": "Wer einen Anteil an der Firma hält, heißt"
+ },
+ {
+  "tr": "Bir araya getirilmiş bütüne",
+  "kind": "say.tr",
+  "de": "Das zusammengetragene Ganze heißt"
+ },
+ {
+  "tr": "bir bulgunun ağırlığına ise",
+  "kind": "say.tr",
+  "de": "und das Gewicht eines Befundes heißt"
+ },
+ {
+  "tr": "Ortaklık haziranda bitiyor.",
+  "kind": "say.tr",
+  "de": "Die Partnerschaft endet im Juni."
+ },
+ {
+  "tr": "Belirgin biçimde zıt durmaya",
+  "kind": "say.tr",
+  "de": "Deutlich entgegengesetzt stehen heißt"
+ },
+ {
+  "tr": "Olayların anlatılış biçimine",
+  "kind": "say.tr",
+  "de": "Die Art, wie Ereignisse erzählt werden, heißt"
+ },
+ {
+  "tr": "Özerklik egemenlik değildir.",
+  "kind": "say.tr",
+  "de": "Autonomie ist keine Souveränität."
+ },
+ {
+  "tr": "Şimdi bir ilki duyuracaksın.",
+  "kind": "say.tr",
+  "de": "Jetzt kündigst du eine Premiere an."
+ },
+ {
+  "tr": "Bir işi yaptıran içsel nedene",
+  "kind": "say.tr",
+  "de": "Der innere Grund, der zu einer Tat führt, heißt"
+ },
+ {
+  "tr": "ortak amaçla kurulan bağa ise",
+  "kind": "say.tr",
+  "de": "und die Verbindung für ein gemeinsames Ziel heißt"
+ },
+ {
+  "tr": "Söylenenin tersini kastetmeye",
+  "kind": "say.tr",
+  "de": "Das Gegenteil dessen meinen, was man sagt, heißt"
+ },
+ {
+  "tr": "Devletin verdiği maddi desteğe",
+  "kind": "say.tr",
+  "de": "Die finanzielle Hilfe des Staates heißt"
+ },
+ {
+  "tr": "İki anlama birden gelen duruma",
+  "kind": "say.tr",
+  "de": "Wenn etwas zwei Bedeutungen zugleich hat, heißt das"
+ },
+ {
+  "tr": "İki şeyin aynı yönde gitmesine",
+  "kind": "say.tr",
+  "de": "Wenn zwei Dinge in dieselbe Richtung laufen, heißt das"
+ },
+ {
+  "tr": "Olaylar arasındaki ayrım açık.",
+  "kind": "say.tr",
+  "de": "Die Unterscheidung zwischen den Fällen ist klar."
+ },
+ {
+  "tr": "yayıncının künye damgasına ise",
+  "kind": "say.tr",
+  "de": "und der Vermerk des Verlags heißt"
+ },
+ {
+  "tr": "Abide üç aylık raporda geçiyor.",
+  "kind": "say.tr",
+  "de": "Das Denkmal kommt im vierteljährlichen Bericht vor."
+ },
+ {
+  "tr": "birbirini tutmayan iki söze ise",
+  "kind": "say.tr",
+  "de": "und zwei Aussagen, die einander nicht stützen, heißen"
+ },
+ {
+  "tr": "Şimdi bir iddiayı sınayacaksın.",
+  "kind": "say.tr",
+  "de": "Jetzt prüfst du eine Behauptung."
+ },
+ {
+  "tr": "Anmak için yapılmış büyük yapıya",
+  "kind": "say.tr",
+  "de": "Das große Bauwerk zum Gedenken heißt"
+ },
+ {
+  "tr": "bir devletin üstün yetkisine ise",
+  "kind": "say.tr",
+  "de": "und die höchste Gewalt eines Staates heißt"
+ },
+ {
+  "tr": "bir işi haklı çıkaran nedene ise",
+  "kind": "say.tr",
+  "de": "und der Grund, der eine Handlung rechtfertigt, heißt"
+ },
+ {
+  "tr": "Kendi kararını verebilme hakkına",
+  "kind": "say.tr",
+  "de": "Das Recht, selbst zu entscheiden, heißt"
+ },
+ {
+  "tr": "Bir eserin sahibine tanınan hakka",
+  "kind": "say.tr",
+  "de": "Das Recht, das dem Urheber eines Werks zusteht, heißt"
+ },
+ {
+  "tr": "İki tarafın birlikte iş yapmasına",
+  "kind": "say.tr",
+  "de": "Wenn zwei Seiten zusammen arbeiten, heißt das"
+ },
+ {
+  "tr": "hemen yapılması gerekme hâline ise",
+  "kind": "say.tr",
+  "de": "und wenn etwas sofort getan werden muss, heißt das"
+ },
+ {
+  "tr": "Savcının suçlamayı yazdığı belgeye",
+  "kind": "say.tr",
+  "de": "Das Schriftstück, in dem die Staatsanwaltschaft die Anklage formuliert, heißt"
+ },
+ {
+  "tr": "Belirsizlik bir çelişkiyi gizliyor.",
+  "kind": "say.tr",
+  "de": "Die Mehrdeutigkeit verbirgt einen Widerspruch."
+ },
+ {
+  "tr": "Eski tören düzeniyle koşutluk açık.",
+  "kind": "say.tr",
+  "de": "Die Parallele zum alten Ritual ist klar."
+ },
+ {
+  "tr": "İki şeyi birbirinden ayıran çizgiye",
+  "kind": "say.tr",
+  "de": "Die Linie, die zwei Dinge voneinander trennt, heißt"
+ },
+ {
+  "tr": "Karar verme hakkının kimde olduğuna",
+  "kind": "say.tr",
+  "de": "Bei wem das Entscheidungsrecht liegt, heißt"
+ },
+ {
+  "tr": "Miras kamuya bir kez bile ulaşmadı.",
+  "kind": "say.tr",
+  "de": "Nicht ein einziges Mal hat das Erbe die Öffentlichkeit erreicht."
+ },
+ {
+  "tr": "Şimdi haber takvimini anlatacaksın.",
+  "kind": "say.tr",
+  "de": "Jetzt erklärst du den Zeitplan der Meldung."
+ },
+ {
+  "tr": "Bir çalışmanın izlediği yol düzenine",
+  "kind": "say.tr",
+  "de": "Der Weg, dem eine Arbeit folgt, heißt"
+ },
+ {
+  "tr": "Her hissedar kaynak aktarımını sordu.",
+  "kind": "say.tr",
+  "de": "Jeder Aktionär hat nach der Finanzierung gefragt."
+ },
+ {
+  "tr": "Sürümler arasındaki karşıtlık keskin.",
+  "kind": "say.tr",
+  "de": "Der Gegensatz zwischen den Fassungen ist scharf."
+ },
+ {
+  "tr": "Derlem eski bir yayın damgası taşıyor.",
+  "kind": "say.tr",
+  "de": "Die Sammlung trägt ein altes Impressum."
+ },
+ {
+  "tr": "İlgililik anlamlılıkla aynı şey değil.",
+  "kind": "say.tr",
+  "de": "Bezug ist nicht dasselbe wie Aussagekraft."
+ },
+ {
+  "tr": "Emsal onlara bir gerekçelendirme verdi.",
+  "kind": "say.tr",
+  "de": "Der Präzedenzfall hat ihnen eine Begründung gegeben."
+ },
+ {
+  "tr": "Sonraki kararlara örnek olan eski karara",
+  "kind": "say.tr",
+  "de": "Die frühere Entscheidung, die späteren als Beispiel dient, heißt"
+ },
+ {
+  "tr": "belli bir sırayla yinelenen davranışa ise",
+  "kind": "say.tr",
+  "de": "und das Verhalten, das sich in fester Ordnung wiederholt, heißt"
+ },
+ {
+  "tr": "Bugünkü veriden geleceğe uzatılan tahmine",
+  "kind": "say.tr",
+  "de": "Die Schätzung, die von heutigen Daten in die Zukunft reicht, heißt"
+ },
+ {
+  "tr": "Son kalıbımız tek yeri söylüyor. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Unsere letzte Wendung nennt den einzigen Ort. Wiederhole:"
+ },
+ {
+  "tr": "Bir tane daha: Ad yalnız arşivde saklanıyor.",
+  "kind": "say.tr",
+  "de": "Noch eins: Nur im Archiv wird der Name aufbewahrt."
+ },
+ {
+  "tr": "İttifakı bir arada tutan şey devlet desteği.",
+  "kind": "say.tr",
+  "de": "Was das Bündnis zusammenhält, ist die Subvention."
+ },
+ {
+  "tr": "Şimdi yayımlanmamış bir haberi konuşacaksın.",
+  "kind": "say.tr",
+  "de": "Jetzt sprichst du über eine nicht veröffentlichte Meldung."
+ },
+ {
+  "tr": "Bir şirketin başka bir şirketi ele geçirmesine",
+  "kind": "say.tr",
+  "de": "Wenn eine Firma eine andere übernimmt, heißt das"
+ },
+ {
+  "tr": "Görünüşe göre yöntem düzeni hiç yayımlanmamış.",
+  "kind": "say.tr",
+  "de": "Anscheinend wurde die Methodik nie veröffentlicht."
+ },
+ {
+  "tr": "İddianame daha erken gelseydi haber değişirdi.",
+  "kind": "say.tr",
+  "de": "Wäre die Anklageschrift früher gekommen, hätte sich die Meldung geändert."
+ },
+ {
+  "tr": "Şimdi sen kur: Sürümler arasındaki ayrım açık.",
+  "kind": "say.tr",
+  "de": "Jetzt du: Die Unterscheidung zwischen den Fassungen ist klar."
+ },
+ {
+  "tr": "Şimdi sıra sende: Önce sorsalardı kabul ederdik.",
+  "kind": "say.tr",
+  "de": "Jetzt bist du dran: Hätten sie zuerst gefragt, hätten wir zugestimmt."
+ },
+ {
+  "tr": "Haftaya bu saatlerde devralmayı izliyor olacağız.",
+  "kind": "say.tr",
+  "de": "Nächste Woche um diese Zeit werden wir die Übernahme verfolgen."
+ },
+ {
+  "tr": "Şimdi sen kur: Dosya ofise bir kez bile ulaşmadı.",
+  "kind": "say.tr",
+  "de": "Jetzt du: Nicht ein einziges Mal hat die Akte das Büro erreicht."
+ },
+ {
+  "tr": "İkinci kalıbımız ayrımı isimle kuruyor. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Unsere zweite Wendung baut die Unterscheidung mit einem Nomen. Wiederhole:"
+ },
+ {
+  "tr": "İkinci kalıbımız hiç olmayanı söylüyor. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Unsere zweite Wendung nennt, was nie geschah. Wiederhole:"
+ },
+ {
+  "tr": "Son kalıbımız karşıtlığı isimle kuruyor. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Unsere letzte Wendung baut den Gegensatz mit einem Nomen. Wiederhole:"
+ },
+ {
+  "tr": "Bir tane daha: İki yazı arasındaki karşıtlık keskin.",
+  "kind": "say.tr",
+  "de": "Noch eins: Der Gegensatz zwischen den beiden Texten ist scharf."
+ },
+ {
+  "tr": "Yatırımcılar o zamana kadar bilgilendirilmiş olacak.",
+  "kind": "say.tr",
+  "de": "Die Investoren werden bis dahin informiert worden sein."
+ },
+ {
+  "tr": "İkinci kalıbımız bilgiyi kaynağa yaslıyor. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Unsere zweite Wendung stützt die Information auf eine Quelle. Wiederhole:"
+ },
+ {
+  "tr": "Şimdi bir çözümleme yazısını sözlü olarak kuracaksın.",
+  "kind": "say.tr",
+  "de": "Jetzt formulierst du einen Analysetext mündlich."
+ },
+ {
+  "tr": "Şimdi sıra sende: Bir listeden kopyalanmış görünüyor.",
+  "kind": "say.tr",
+  "de": "Jetzt bist du dran: Es scheint aus einer Liste kopiert worden zu sein."
+ },
+ {
+  "tr": "Telif hakkı açık olsaydı dosya bugün kapanmış olurdu.",
+  "kind": "say.tr",
+  "de": "Wäre das Urheberrecht klar gewesen, wäre die Akte heute geschlossen."
+ },
+ {
+  "tr": "Bir açıdan bakılırsa tahmin tartışmalı biçimde sağlam.",
+  "kind": "say.tr",
+  "de": "Aus einem Blickwinkel ist die Hochrechnung wohl solide."
+ },
+ {
+  "tr": "Bir tane daha: Mektup daha erken gelseydi yazı değişirdi.",
+  "kind": "say.tr",
+  "de": "Noch eins: Wäre der Brief früher gekommen, hätte sich der Text geändert."
+ },
+ {
+  "tr": "Şimdi sen kur: Görünüşe göre kaynak hiç kontrol edilmemiş.",
+  "kind": "say.tr",
+  "de": "Jetzt du: Anscheinend wurde die Quelle nie geprüft."
+ },
+ {
+  "tr": "Bilerek verilen izin demek. İlk kalıbımız da bu. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Das heißt die bewusst gegebene Erlaubnis. Das ist auch unsere erste Wendung. Wiederhole:"
+ },
+ {
+  "tr": "Şimdi sen kur: Ad açık olsaydı dosya bugün kapanmış olurdu.",
+  "kind": "say.tr",
+  "de": "Jetzt du: Wäre der Name klar gewesen, wäre die Akte heute geschlossen."
+ },
+ {
+  "tr": "Şimdi sen kur: Yarın bu saatlerde oylamayı izliyor olacağız.",
+  "kind": "say.tr",
+  "de": "Jetzt du: Morgen um diese Zeit werden wir die Abstimmung verfolgen."
+ },
+ {
+  "tr": "Bir tane daha: Okurlar o zamana kadar bilgilendirilmiş olacak.",
+  "kind": "say.tr",
+  "de": "Noch eins: Die Leser werden bis dahin informiert worden sein."
+ },
+ {
+  "tr": "Şimdi sıra sende: Böyle bir mektup daha önce hiç gösterilmedi.",
+  "kind": "say.tr",
+  "de": "Jetzt bist du dran: Nie zuvor wurde ein solcher Brief gezeigt."
+ },
+ {
+  "tr": "Şimdi sıra sende: Pazartesiye kadar anlaşma duyurulmuş olacak.",
+  "kind": "say.tr",
+  "de": "Jetzt bist du dran: Bis Montag wird die Einigung bekannt gegeben worden sein."
+ },
+ {
+  "tr": "Şimdi sıra sende: İki dosyanın karşılaştırılması bir gün sürdü.",
+  "kind": "say.tr",
+  "de": "Jetzt bist du dran: Der Vergleich der beiden Akten hat einen Tag gedauert."
+ },
+ {
+  "tr": "Şimdi dersin kuralı. Fiili isme çevirmek yazıyı kişiden çıkarır:",
+  "kind": "say.tr",
+  "de": "Jetzt die Regel der Lektion. Das Verb zum Nomen zu machen nimmt die Person aus dem Text:"
+ },
+ {
+  "tr": "Şimdi dersin kuralı. Doğruluk kontrolünde üç yumuşatıcı iş görür:",
+  "kind": "say.tr",
+  "de": "Jetzt die Regel der Lektion. Beim Prüfen leisten drei Abschwächungen die Arbeit:"
+ },
+ {
+  "tr": "Düzenli tutulan veri yığını demek. İlk kalıbımız da bu. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Das heißt ein geordneter Datenbestand. Das ist auch unsere erste Wendung. Wiederhole:"
+ },
+ {
+  "tr": "ise sınırlı bakış demektir. Üçü de bulguyu verir ama hüküm vermez.",
+  "kind": "say.tr",
+  "de": "heißt eine begrenzte Sicht. Alle drei nennen den Befund, aber sie fällen kein Urteil."
+ },
+ {
+  "tr": "Bir tane daha: Bir açıdan bakılırsa iddia tartışmalı biçimde doğru.",
+  "kind": "say.tr",
+  "de": "Noch eins: Aus einem Blickwinkel ist die Behauptung wohl richtig."
+ },
+ {
+  "tr": "Gidişi değiştiren önemli nokta demek. İlk kalıbımız da bu. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Das heißt der wichtige Punkt, der den Verlauf ändert. Das ist auch unsere erste Wendung. Wiederhole:"
+ },
+ {
+  "tr": "İki şeyi yan yana koyup ölçmek demek. İlk kalıbımız da bu. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Das heißt zwei Dinge nebeneinanderlegen und messen. Das ist auch unsere erste Wendung. Wiederhole:"
+ },
+ {
+  "tr": "İki şirketin tek çatıda toplanması demek. İlk kalıbımız da bu. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Das heißt, dass zwei Firmen unter ein Dach kommen. Das ist auch unsere erste Wendung. Wiederhole:"
+ },
+ {
+  "tr": "Haberciliğin en zor sorusu budur ve farkı sonuç yarısı kuruyor. Hazır mısın?",
+  "kind": "say.tr",
+  "de": "Das ist die schwerste Frage des Journalismus, und den Unterschied baut die Folgehälfte. Bist du bereit?"
+ },
+ {
+  "tr": "ise bugüne taşır. Haberde ikincisi daha ağırdır, çünkü zararın hâlâ sürdüğünü söyler.",
+  "kind": "say.tr",
+  "de": "holt sie in die Gegenwart. In der Meldung wiegt die zweite schwerer, denn sie sagt, dass der Schaden noch andauert."
+ },
+ {
+  "tr": "hepsi özneyle yardımcı fiili yer değiştirtir. Duyuru dilinde bu yapı olayın ilk oluşunu taşır.",
+  "kind": "say.tr",
+  "de": "sie alle tauschen Subjekt und Hilfsverb. In der Ankündigung trägt diese Konstruktion, dass es zum ersten Mal geschieht."
+ },
+ {
+  "tr": "yazılır. Çözümlemede bu bir üslup tercihi değil; yazının kim değil ne olduğunu taşıması gerekir.",
+  "kind": "say.tr",
+  "de": "geschrieben. In der Analyse ist das keine Stilfrage; der Text soll nicht das Wer, sondern das Was tragen."
+ },
+ {
+  "tr": "Çözümleme yazısı kişiyi değil metni anlatır ve bunu sağlayan şey fiili isme çevirmek. Hazır mısın?",
+  "kind": "say.tr",
+  "de": "Ein Analysetext erzählt nicht die Person, sondern den Text, und das schafft die Nominalisierung. Bist du bereit?"
+ },
+ {
+  "tr": "Duyurunun ağırlığını kelime değil yapı taşıyor: olumsuz zarf başa gelince cümle devriliyor. Hazır mısın?",
+  "kind": "say.tr",
+  "de": "Das Gewicht der Ankündigung trägt nicht das Wort, sondern der Bau: steht ein negatives Adverb am Anfang, kippt der Satz. Bist du bereit?"
+ },
+ {
+  "tr": "Merhaba! Bugün bir iddiayı sınamayı öğreneceğiz: veri nereden geldi, yöntem yayımlandı mı, tahmin tutuyor mu.",
+  "kind": "say.tr",
+  "de": "Hallo! Heute lernen wir, eine Behauptung zu prüfen: woher die Daten kamen, ob die Methodik veröffentlicht wurde, ob die Schätzung hält."
+ },
+ {
+  "tr": "Merhaba! Bugün bir ilki duyurmayı öğreneceğiz: daha önce ne gösterilmedi, ne hiç ulaşmadı, ad nerede yazıyor.",
+  "kind": "say.tr",
+  "de": "Hallo! Heute lernen wir, eine Premiere anzukündigen: was nie zuvor gezeigt wurde, was nie ankam, wo der Name steht."
+ },
+ {
+  "tr": "Merhaba! Bugün haber takvimini anlatmayı öğreneceğiz: yayına kadar ne duyurulmuş olacak, o an ne izleniyor olacak.",
+  "kind": "say.tr",
+  "de": "Hallo! Heute lernen wir, den Zeitplan einer Meldung zu erklären: was bis zur Sendung bekannt gegeben sein wird, was dann gerade verfolgt wird."
+ },
+ {
+  "tr": "Haber planında bu iki biçim ayrı söz verir: biri bitmiş olacağını, öteki sürüyor olacağını taahhüt eder. Hazır mısın?",
+  "kind": "say.tr",
+  "de": "Im Meldungsplan geben diese zwei Formen verschiedene Zusagen: die eine sagt zu, dass es fertig sein wird, die andere, dass es laufen wird. Bist du bereit?"
+ },
+ {
+  "tr": "Doğruluk kontrolü kesin hüküm vermez; bulguyu gözlem olarak sunar ve bunu yumuşatıcı bağlayıcılar sağlar. Hazır mısın?",
+  "kind": "say.tr",
+  "de": "Eine Faktenprüfung fällt kein festes Urteil; sie gibt den Befund als Beobachtung, und das leisten die abschwächenden Konnektoren. Bist du bereit?"
+ },
+ {
+  "tr": "Merhaba! Bugün çözümleme yazısının dilini öğreneceğiz: ne karşılaştırıldı, hangi ayrım var, hangi karşıtlık görünüyor.",
+  "kind": "say.tr",
+  "de": "Hallo! Heute lernen wir die Sprache des Analysetexts: was verglichen wurde, welche Unterscheidung es gibt, welcher Gegensatz sichtbar wird."
+ },
+ {
+  "tr": "Merhaba! Bugün yayımlanmamış bir haberin sonuçlarını konuşmayı öğreneceğiz: bassalardı ne olurdu, bugün ne farklı olurdu.",
+  "kind": "say.tr",
+  "de": "Hallo! Heute lernen wir, über die Folgen einer nicht veröffentlichten Meldung zu sprechen: was wäre gewesen, was wäre heute anders."
+ }
+]

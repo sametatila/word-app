@@ -1,6 +1,6 @@
 # WP-74 — İngilizce ders kapsamı B1–C1
 
-**Durum:** sürüyor (B1 TAM; B2 modül 4 yarıda, 135/300 ders) · **Sahip:** Claude · **Açılış:** 2026-09-11
+**Durum:** sürüyor (B1 TAM; B2 modül 1-4 bitti, 140/300 ders) · **Sahip:** Claude · **Açılış:** 2026-09-11
 
 ## Kusur
 
@@ -279,6 +279,20 @@ ilk 240'ı yazıldıktan sonra teknik yönde havuz seyrekleşti ve kelime
 listeleri ancak altı ayrı sorguyla dolduruldu. Bu bir kusur değil bir ölçüm:
 kalan 160 kelime için sorgu sayısı artacak, konu seçimi havuza göre
 daralacak.
+
+**B2 modül 4 — Medya ve aktarılan söz (2026-09-11).** On ders: başlığı
+okumak, kaynağı alıntılamak, düzeltme, basın özeti, gazetenin savı, doğruluk
+kontrolü, bassalardı, daha önce yayımlanmadı, yayına girdiğinde, raporun
+kendisi.
+
+Modülün kendi ekseni aktarım kalıbının ZAMANI. B2 modül 1'de «is thought to
+be» bugünü anlatıyordu; başlık dilinde asıl kullanılan «is thought to have
+been», çünkü olayı verir ama kimsenin sözü olarak vermez. Aynı yapının iki
+zamanı ayrı modüllerde ayrı iş görüyor — spiralin B2'deki karşılığı bu.
+
+Düzeltme dersi modülün ahlaki yükünü taşıyor: `must have` bir çıkarım,
+`can't have` bir ret, `should have` bir eksik tespiti. Karıştırılınca özür
+suçlamaya dönüşüyor ve düzeltme yazısı asıl işini görmüyor.
 
 ## Tamamlanma ölçütü
 

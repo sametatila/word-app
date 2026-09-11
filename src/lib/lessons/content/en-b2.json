@@ -17217,5 +17217,2514 @@
    "goal": "Savın bütününü, tek parçayı ve eksik olanı üç ayrı yarık cümleyle söylediysen konuşma başarılı sayılır.",
    "minTurns": 7
   }
+ },
+ {
+  "id": "en-b2-fact-check",
+  "level": "B2",
+  "course": "en",
+  "icon": "question",
+  "title": "Checking a claim",
+  "titleTr": "Doğruluk kontrolü",
+  "summary": "Bir iddiayı sınamayı öğretir; yumuşatıcı bağlayıcılar bulguyu kesin hüküm olmaktan çıkarır.",
+  "minutes": 11,
+  "focusId": "Hedging and discourse markers",
+  "vocab": [
+   {
+    "de": "database",
+    "tr": "veri tabanı"
+   },
+   {
+    "de": "methodology",
+    "tr": "yöntem düzeni"
+   },
+   {
+    "de": "projection",
+    "tr": "ileriye dönük tahmin"
+   },
+   {
+    "de": "ambiguity",
+    "tr": "belirsizlik"
+   },
+   {
+    "de": "contradiction",
+    "tr": "çelişki"
+   },
+   {
+    "de": "relevance",
+    "tr": "ilgililik"
+   },
+   {
+    "de": "significance",
+    "tr": "anlamlılık"
+   },
+   {
+    "de": "irony",
+    "tr": "ironi"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "It seems to have been taken from a database.",
+    "tr": "bulguyu gözlem olarak sunar"
+   },
+   {
+    "de": "Apparently the methodology was never published.",
+    "tr": "bilgiyi kaynağa yaslar"
+   },
+   {
+    "de": "From one angle the projection is arguably sound.",
+    "tr": "bakış açısını sınırlayıp yumuşatır"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Bugün bir iddiayı sınamayı öğreneceğiz: veri nereden geldi, yöntem yayımlandı mı, tahmin tutuyor mu."
+     },
+     {
+      "lang": "tr",
+      "text": "Doğruluk kontrolü kesin hüküm vermez; bulguyu gözlem olarak sunar ve bunu yumuşatıcı bağlayıcılar sağlar. Hazır mısın?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "database"
+     },
+     {
+      "lang": "tr",
+      "text": "Düzenli tutulan veri yığını demek. İlk kalıbımız da bu. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "It seems to have been taken from a database."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "It seems to have been taken from a database."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir çalışmanın izlediği yol düzenine"
+     },
+     {
+      "lang": "en",
+      "text": "methodology"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İkinci kalıbımız bilgiyi kaynağa yaslıyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "Apparently the methodology was never published."
+     },
+     {
+      "lang": "tr",
+      "text": "Görünüşe göre yöntem düzeni hiç yayımlanmamış."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Apparently the methodology was never published."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bugünkü veriden geleceğe uzatılan tahmine"
+     },
+     {
+      "lang": "en",
+      "text": "projection"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son kalıbımız bakış açısını sınırlıyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "From one angle the projection is arguably sound."
+     },
+     {
+      "lang": "tr",
+      "text": "Bir açıdan bakılırsa tahmin tartışmalı biçimde sağlam."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "From one angle the projection is arguably sound."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi dersin kuralı. Doğruluk kontrolünde üç yumuşatıcı iş görür:"
+     },
+     {
+      "lang": "en",
+      "text": "it seems to have been"
+     },
+     {
+      "lang": "tr",
+      "text": "gözlem,"
+     },
+     {
+      "lang": "en",
+      "text": "apparently"
+     },
+     {
+      "lang": "tr",
+      "text": "duyum,"
+     },
+     {
+      "lang": "en",
+      "text": "from one angle"
+     },
+     {
+      "lang": "tr",
+      "text": "ise sınırlı bakış demektir. Üçü de bulguyu verir ama hüküm vermez."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sıra sende: Bir listeden kopyalanmış görünüyor."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "It seems to have been copied from a list.",
+     "accept": [
+      "It seems to have been taken from a list.",
+      "It seems to have been copied from that list."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Bulguyu gözlem olarak sunmak için"
+      },
+      {
+       "lang": "en",
+       "text": "it seems to have been"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "It seems to have been copied from a list."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kontrol. Şu cümle doğru mu?"
+     },
+     {
+      "lang": "en",
+      "text": "Apparently the methodology was never published."
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "Apparently the methodology was never published.",
+     "answer": true,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Doğru. Bilgi bir kaynağa yaslanıyor ve konuşan kişi onu kendi bulgusu gibi sunmuyor."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İki anlama birden gelen duruma"
+     },
+     {
+      "lang": "en",
+      "text": "ambiguity"
+     },
+     {
+      "lang": "tr",
+      "text": "birbirini tutmayan iki söze ise"
+     },
+     {
+      "lang": "en",
+      "text": "contradiction"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The ambiguity hides a contradiction."
+     },
+     {
+      "lang": "tr",
+      "text": "Belirsizlik bir çelişkiyi gizliyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The ambiguity hides a contradiction."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sen kur: Görünüşe göre kaynak hiç kontrol edilmemiş."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "Apparently the source was never checked.",
+     "accept": [
+      "Apparently the source was never verified.",
+      "Apparently that source was never checked."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Bilgiyi kaynağa yaslamak için"
+      },
+      {
+       "lang": "en",
+       "text": "apparently"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "Apparently the source was never checked."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Konuyla bağlantılı olmaya"
+     },
+     {
+      "lang": "en",
+      "text": "relevance"
+     },
+     {
+      "lang": "tr",
+      "text": "bir bulgunun ağırlığına ise"
+     },
+     {
+      "lang": "en",
+      "text": "significance"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "Relevance is not the same as significance."
+     },
+     {
+      "lang": "tr",
+      "text": "İlgililik anlamlılıkla aynı şey değil."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Relevance is not the same as significance."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Söylenenin tersini kastetmeye"
+     },
+     {
+      "lang": "en",
+      "text": "irony"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The irony was lost on the reader."
+     },
+     {
+      "lang": "tr",
+      "text": "İroniyi okur kaçırdı."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The irony was lost on the reader."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir tane daha: Bir açıdan bakılırsa iddia tartışmalı biçimde doğru."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "From one angle the claim is arguably true.",
+     "accept": [
+      "From one angle the claim is arguably right.",
+      "From one angle that claim is arguably true."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Bakış açısını sınırlamak için"
+      },
+      {
+       "lang": "en",
+       "text": "from one angle"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "From one angle the claim is arguably true."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Özetleyelim: gözlem"
+     },
+     {
+      "lang": "en",
+      "text": "it seems to have been"
+     },
+     {
+      "lang": "tr",
+      "text": "duyum"
+     },
+     {
+      "lang": "en",
+      "text": "apparently"
+     },
+     {
+      "lang": "tr",
+      "text": "sınırlı bakış"
+     },
+     {
+      "lang": "en",
+      "text": "from one angle"
+     },
+     {
+      "lang": "tr",
+      "text": "Şimdi bir iddiayı sınayacaksın."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Yayımlanmak üzere olan bir iddiayı sınıyorsun. Bulgunu gözlem olarak ver, duyduğunu kaynağa yasla ve bakışını sınırla.",
+   "partner": "kesin bir evet ya da hayır bekleyen bir editör",
+   "opening": "Is it true or not? Which is it?",
+   "openingTr": "Doğru mu değil mi? Hangisi?",
+   "goal": "Bir gözlemi, bir duyumu ve sınırlı bir bakışı üç ayrı yumuşatıcıyla söylediysen konuşma başarılı sayılır.",
+   "minTurns": 7
+  }
+ },
+ {
+  "id": "en-b2-if-they-had-printed",
+  "level": "B2",
+  "course": "en",
+  "icon": "idea",
+  "title": "If they had printed it",
+  "titleTr": "Bassalardı",
+  "summary": "Yayımlanmamış bir haberin sonuçlarını konuşmayı öğretir; sonuç geçmişte kalırsa would have, bugüne uzanırsa would.",
+  "minutes": 11,
+  "focusId": "Third and mixed conditionals",
+  "vocab": [
+   {
+    "de": "consent",
+    "tr": "rıza"
+   },
+   {
+    "de": "copyright",
+    "tr": "telif hakkı"
+   },
+   {
+    "de": "indictment",
+    "tr": "iddianame"
+   },
+   {
+    "de": "precedent",
+    "tr": "emsal"
+   },
+   {
+    "de": "justification",
+    "tr": "gerekçelendirme"
+   },
+   {
+    "de": "motive",
+    "tr": "saik"
+   },
+   {
+    "de": "urgency",
+    "tr": "aciliyet"
+   },
+   {
+    "de": "duty",
+    "tr": "görev"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "If they had asked for consent, we would have agreed.",
+    "tr": "sonucu geçmişte bırakır"
+   },
+   {
+    "de": "If the copyright had been clear, the case would be closed now.",
+    "tr": "sonucu bugüne taşır"
+   },
+   {
+    "de": "If the indictment had come earlier, the story would have changed.",
+    "tr": "gerçekleşmemiş bir geçmişi anlatır"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Bugün yayımlanmamış bir haberin sonuçlarını konuşmayı öğreneceğiz: bassalardı ne olurdu, bugün ne farklı olurdu."
+     },
+     {
+      "lang": "tr",
+      "text": "Haberciliğin en zor sorusu budur ve farkı sonuç yarısı kuruyor. Hazır mısın?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "consent"
+     },
+     {
+      "lang": "tr",
+      "text": "Bilerek verilen izin demek. İlk kalıbımız da bu. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "If they had asked for consent, we would have agreed."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "If they had asked for consent, we would have agreed."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir eserin sahibine tanınan hakka"
+     },
+     {
+      "lang": "en",
+      "text": "copyright"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İkinci kalıbımız sonucu bugüne taşıyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "If the copyright had been clear, the case would be closed now."
+     },
+     {
+      "lang": "tr",
+      "text": "Telif hakkı açık olsaydı dosya bugün kapanmış olurdu."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "If the copyright had been clear, the case would be closed now."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Savcının suçlamayı yazdığı belgeye"
+     },
+     {
+      "lang": "en",
+      "text": "indictment"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son kalıbımız tamamen geçmişte kalıyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "If the indictment had come earlier, the story would have changed."
+     },
+     {
+      "lang": "tr",
+      "text": "İddianame daha erken gelseydi haber değişirdi."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "If the indictment had come earlier, the story would have changed."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi dersin kuralı. Şart yarısı ikisinde de aynı:"
+     },
+     {
+      "lang": "en",
+      "text": "if + had"
+     },
+     {
+      "lang": "tr",
+      "text": "Fark sonuç yarısında:"
+     },
+     {
+      "lang": "en",
+      "text": "would have"
+     },
+     {
+      "lang": "tr",
+      "text": "sonucu geçmişte bırakır,"
+     },
+     {
+      "lang": "en",
+      "text": "would"
+     },
+     {
+      "lang": "tr",
+      "text": "ise bugüne taşır. Haberde ikincisi daha ağırdır, çünkü zararın hâlâ sürdüğünü söyler."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sıra sende: Önce sorsalardı kabul ederdik."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "If they had asked first, we would have agreed.",
+     "accept": [
+      "If they had asked us first, we would have agreed.",
+      "If they'd asked first, we would have agreed."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Sonucu geçmişte bırakmak için"
+      },
+      {
+       "lang": "en",
+       "text": "would have"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "If they had asked first, we would have agreed."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kontrol. Şu cümle doğru mu?"
+     },
+     {
+      "lang": "en",
+      "text": "If the copyright had been clear, the case would be closed now."
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "If the copyright had been clear, the case would be closed now.",
+     "answer": true,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Doğru. Şart geçmişte ama sonuç bugüne bakıyor, o yüzden sonuç yarısı geçmişe geçmiyor."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Sonraki kararlara örnek olan eski karara"
+     },
+     {
+      "lang": "en",
+      "text": "precedent"
+     },
+     {
+      "lang": "tr",
+      "text": "bir işi haklı çıkaran nedene ise"
+     },
+     {
+      "lang": "en",
+      "text": "justification"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The precedent gave them a justification."
+     },
+     {
+      "lang": "tr",
+      "text": "Emsal onlara bir gerekçelendirme verdi."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The precedent gave them a justification."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sen kur: Ad açık olsaydı dosya bugün kapanmış olurdu."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "If the name had been clear, the file would be closed now.",
+     "accept": [
+      "If the name had been clear, the file would be shut now.",
+      "If that name had been clear, the file would be closed now."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Sonucu bugüne taşımak için"
+      },
+      {
+       "lang": "en",
+       "text": "would"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "If the name had been clear, the file would be closed now."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir işi yaptıran içsel nedene"
+     },
+     {
+      "lang": "en",
+      "text": "motive"
+     },
+     {
+      "lang": "tr",
+      "text": "hemen yapılması gerekme hâline ise"
+     },
+     {
+      "lang": "en",
+      "text": "urgency"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The motive explains the urgency."
+     },
+     {
+      "lang": "tr",
+      "text": "Saik aciliyeti açıklıyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The motive explains the urgency."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Yapmak zorunda olunan işe"
+     },
+     {
+      "lang": "en",
+      "text": "duty"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "We have a duty to check."
+     },
+     {
+      "lang": "tr",
+      "text": "Kontrol etmek görevimiz."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "We have a duty to check."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir tane daha: Mektup daha erken gelseydi yazı değişirdi."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "If the letter had come earlier, the piece would have changed.",
+     "accept": [
+      "If the letter had arrived earlier, the piece would have changed.",
+      "If the note had come earlier, the piece would have changed."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Tamamen geçmişte kalan koşul için"
+      },
+      {
+       "lang": "en",
+       "text": "would have"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "If the letter had come earlier, the piece would have changed."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Özetleyelim: geçmişte kalan"
+     },
+     {
+      "lang": "en",
+      "text": "would have agreed"
+     },
+     {
+      "lang": "tr",
+      "text": "bugüne uzanan"
+     },
+     {
+      "lang": "en",
+      "text": "would be closed"
+     },
+     {
+      "lang": "tr",
+      "text": "Şimdi yayımlanmamış bir haberi konuşacaksın."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Yayımlanmayan bir haberi meslektaşınla konuşuyorsun. Geçmişte kalan bir sonucu ve bugüne uzanan bir sonucu ayrı ayrı söyle.",
+   "partner": "haberi tutmanın doğru olduğunu savunan bir meslektaş",
+   "opening": "Do you still think we were wrong?",
+   "openingTr": "Hâlâ hatalı olduğumuzu mu düşünüyorsun?",
+   "goal": "Geçmişte kalan bir sonucu ve bugüne uzanan bir sonucu iki ayrı koşul cümlesiyle söylediysen konuşma başarılı sayılır.",
+   "minTurns": 7
+  }
+ },
+ {
+  "id": "en-b2-never-before-published",
+  "level": "B2",
+  "course": "en",
+  "icon": "star",
+  "title": "Never before published",
+  "titleTr": "Daha önce yayımlanmadı",
+  "summary": "Bir ilki duyurmayı öğretir; olumsuz zarf başa gelince devrik yapı duyurunun ağırlığını taşır.",
+  "minutes": 11,
+  "focusId": "Inversion after negative adverbials",
+  "vocab": [
+   {
+    "de": "landmark",
+    "tr": "dönüm noktası"
+   },
+   {
+    "de": "legacy",
+    "tr": "miras"
+   },
+   {
+    "de": "memorial",
+    "tr": "anıt"
+   },
+   {
+    "de": "collection",
+    "tr": "derlem"
+   },
+   {
+    "de": "imprint",
+    "tr": "yayın damgası"
+   },
+   {
+    "de": "autonomy",
+    "tr": "özerklik"
+   },
+   {
+    "de": "sovereignty",
+    "tr": "egemenlik"
+   },
+   {
+    "de": "competence",
+    "tr": "yetki"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "Never before has such a landmark been shown.",
+    "tr": "ilk kez olanı devrikle söyler"
+   },
+   {
+    "de": "Not once did the legacy reach the public.",
+    "tr": "hiç olmayanı devrikle söyler"
+   },
+   {
+    "de": "Only in the memorial is the name written.",
+    "tr": "tek yeri devrikle söyler"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Bugün bir ilki duyurmayı öğreneceğiz: daha önce ne gösterilmedi, ne hiç ulaşmadı, ad nerede yazıyor."
+     },
+     {
+      "lang": "tr",
+      "text": "Duyurunun ağırlığını kelime değil yapı taşıyor: olumsuz zarf başa gelince cümle devriliyor. Hazır mısın?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "landmark"
+     },
+     {
+      "lang": "tr",
+      "text": "Gidişi değiştiren önemli nokta demek. İlk kalıbımız da bu. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "Never before has such a landmark been shown."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Never before has such a landmark been shown."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Geçmişten devralınana"
+     },
+     {
+      "lang": "en",
+      "text": "legacy"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İkinci kalıbımız hiç olmayanı söylüyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "Not once did the legacy reach the public."
+     },
+     {
+      "lang": "tr",
+      "text": "Miras kamuya bir kez bile ulaşmadı."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Not once did the legacy reach the public."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Anmak için dikilen yapıya"
+     },
+     {
+      "lang": "en",
+      "text": "memorial"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son kalıbımız tek yeri söylüyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "Only in the memorial is the name written."
+     },
+     {
+      "lang": "tr",
+      "text": "Ad yalnız anıtta yazılı."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Only in the memorial is the name written."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi dersin kuralı. Olumsuz zarf başa gelince cümle SORU SIRASINA geçiyor:"
+     },
+     {
+      "lang": "en",
+      "text": "never before"
+     },
+     {
+      "lang": "tr",
+      "text": ","
+     },
+     {
+      "lang": "en",
+      "text": "not once"
+     },
+     {
+      "lang": "tr",
+      "text": "ve"
+     },
+     {
+      "lang": "en",
+      "text": "only in"
+     },
+     {
+      "lang": "tr",
+      "text": "hepsi özneyle yardımcı fiili yer değiştirtir. Duyuru dilinde bu yapı olayın ilk oluşunu taşır."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sıra sende: Böyle bir mektup daha önce hiç gösterilmedi."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "Never before has such a letter been shown.",
+     "accept": [
+      "Never before has such a letter been published.",
+      "Never before has this letter been shown."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "İlk kez olanı devrikle söylemek için"
+      },
+      {
+       "lang": "en",
+       "text": "never before has"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "Never before has such a letter been shown."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kontrol. Şu cümle doğru mu?"
+     },
+     {
+      "lang": "en",
+      "text": "Not once did the legacy reach the public."
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "Not once did the legacy reach the public.",
+     "answer": true,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Doğru. Yardımcı fiil özneden önce geliyor ve bu bir soru değil vurgu işareti."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir araya getirilmiş bütüne"
+     },
+     {
+      "lang": "en",
+      "text": "collection"
+     },
+     {
+      "lang": "tr",
+      "text": "yayıncının künye damgasına ise"
+     },
+     {
+      "lang": "en",
+      "text": "imprint"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The collection carries an old imprint."
+     },
+     {
+      "lang": "tr",
+      "text": "Derlem eski bir yayın damgası taşıyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The collection carries an old imprint."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sen kur: Dosya ofise bir kez bile ulaşmadı."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "Not once did the file reach the office.",
+     "accept": [
+      "Not once did the file reach the desk.",
+      "Not once did that file reach the office."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Hiç olmayanı devrikle söylemek için"
+      },
+      {
+       "lang": "en",
+       "text": "not once did"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "Not once did the file reach the office."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Kendi kararını verebilme hakkına"
+     },
+     {
+      "lang": "en",
+      "text": "autonomy"
+     },
+     {
+      "lang": "tr",
+      "text": "bir devletin üstün yetkisine ise"
+     },
+     {
+      "lang": "en",
+      "text": "sovereignty"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "Autonomy is not sovereignty."
+     },
+     {
+      "lang": "tr",
+      "text": "Özerklik egemenlik değildir."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Autonomy is not sovereignty."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Karar verme hakkının kimde olduğuna"
+     },
+     {
+      "lang": "en",
+      "text": "competence"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The competence lies with the court."
+     },
+     {
+      "lang": "tr",
+      "text": "Yetki mahkemede."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The competence lies with the court."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir tane daha: Ad yalnız arşivde saklanıyor."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "Only in the archive is the name kept.",
+     "accept": [
+      "Only in the archive is the name stored.",
+      "Only in the archive is that name kept."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Tek yeri devrikle söylemek için"
+      },
+      {
+       "lang": "en",
+       "text": "only in"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "Only in the archive is the name kept."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Özetleyelim: ilk kez"
+     },
+     {
+      "lang": "en",
+      "text": "never before has"
+     },
+     {
+      "lang": "tr",
+      "text": "hiç"
+     },
+     {
+      "lang": "en",
+      "text": "not once did"
+     },
+     {
+      "lang": "tr",
+      "text": "tek yer"
+     },
+     {
+      "lang": "en",
+      "text": "only in"
+     },
+     {
+      "lang": "tr",
+      "text": "Şimdi bir ilki duyuracaksın."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Daha önce yayımlanmamış bir belgeyi duyuruyorsun. İlk kez olanı, hiç olmayanı ve tek yeri devrik cümlelerle söyle.",
+   "partner": "duyurunun abartılı olduğunu düşünen bir meslektaş",
+   "opening": "Is this really the first time?",
+   "openingTr": "Bu gerçekten ilk kez mi oluyor?",
+   "goal": "İlk kez olanı, hiç olmayanı ve tek yeri üç ayrı devrik cümleyle söylediysen konuşma başarılı sayılır.",
+   "minTurns": 7
+  }
+ },
+ {
+  "id": "en-b2-coverage-timeline",
+  "level": "B2",
+  "course": "en",
+  "icon": "calendar",
+  "title": "By the time it airs",
+  "titleTr": "Yayına girdiğinde",
+  "summary": "Haber takvimini anlatmayı öğretir: yayına kadar bitmiş olan ile o an sürüyor olan ayrı biçimlerle söylenir.",
+  "minutes": 11,
+  "focusId": "Future perfect and future continuous",
+  "vocab": [
+   {
+    "de": "merger",
+    "tr": "birleşme"
+   },
+   {
+    "de": "takeover",
+    "tr": "devralma"
+   },
+   {
+    "de": "investor",
+    "tr": "yatırımcı"
+   },
+   {
+    "de": "shareholder",
+    "tr": "hissedar"
+   },
+   {
+    "de": "funding",
+    "tr": "kaynak aktarımı"
+   },
+   {
+    "de": "subsidy",
+    "tr": "devlet desteği"
+   },
+   {
+    "de": "alliance",
+    "tr": "ittifak"
+   },
+   {
+    "de": "partnership",
+    "tr": "ortaklık"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "By Friday the merger will have been announced.",
+    "tr": "o ana kadar bitmiş olanı edilgen söyler"
+   },
+   {
+    "de": "This time next week we will be covering the takeover.",
+    "tr": "o an sürüyor olanı söyler"
+   },
+   {
+    "de": "The investors will have been informed by then.",
+    "tr": "o ana kadar bitmiş olanı söyler"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Bugün haber takvimini anlatmayı öğreneceğiz: yayına kadar ne duyurulmuş olacak, o an ne izleniyor olacak."
+     },
+     {
+      "lang": "tr",
+      "text": "Haber planında bu iki biçim ayrı söz verir: biri bitmiş olacağını, öteki sürüyor olacağını taahhüt eder. Hazır mısın?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "merger"
+     },
+     {
+      "lang": "tr",
+      "text": "İki şirketin tek çatıda toplanması demek. İlk kalıbımız da bu. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "By Friday the merger will have been announced."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "By Friday the merger will have been announced."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir şirketin başka bir şirketi ele geçirmesine"
+     },
+     {
+      "lang": "en",
+      "text": "takeover"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İkinci kalıbımız o an sürüyor olanı söylüyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "This time next week we will be covering the takeover."
+     },
+     {
+      "lang": "tr",
+      "text": "Haftaya bu saatlerde devralmayı izliyor olacağız."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "This time next week we will be covering the takeover."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Paraya ortak olan kişiye"
+     },
+     {
+      "lang": "en",
+      "text": "investor"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son kalıbımız o ana kadar bitmiş olanı söylüyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "The investors will have been informed by then."
+     },
+     {
+      "lang": "tr",
+      "text": "Yatırımcılar o zamana kadar bilgilendirilmiş olacak."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The investors will have been informed by then."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi dersin kuralı. Gelecekteki bir ana bakarken"
+     },
+     {
+      "lang": "en",
+      "text": "will have"
+     },
+     {
+      "lang": "tr",
+      "text": "o ana kadar BİTMİŞ olanı,"
+     },
+     {
+      "lang": "en",
+      "text": "will be"
+     },
+     {
+      "lang": "tr",
+      "text": "o an SÜRÜYOR olanı anlatır. Edilgeni ise"
+     },
+     {
+      "lang": "en",
+      "text": "will have been"
+     },
+     {
+      "lang": "tr",
+      "text": "taşır ve yapanı hiç söylemez."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sıra sende: Pazartesiye kadar anlaşma duyurulmuş olacak."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "By Monday the deal will have been announced.",
+     "accept": [
+      "By Monday the deal will have been declared.",
+      "By Monday that deal will have been announced."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Edilgen biçimde bitmiş olan için"
+      },
+      {
+       "lang": "en",
+       "text": "will have been"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "By Monday the deal will have been announced."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kontrol. Şu cümle doğru mu?"
+     },
+     {
+      "lang": "en",
+      "text": "This time next week we will be covering the takeover."
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "This time next week we will be covering the takeover.",
+     "answer": true,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Doğru. O an işin ortasında olunacak, bitmiş olmayacak; bu yüzden süregelen biçim kullanılıyor."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şirketten pay sahibi olana"
+     },
+     {
+      "lang": "en",
+      "text": "shareholder"
+     },
+     {
+      "lang": "tr",
+      "text": "bir işe para aktarmaya ise"
+     },
+     {
+      "lang": "en",
+      "text": "funding"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "Every shareholder asked about the funding."
+     },
+     {
+      "lang": "tr",
+      "text": "Her hissedar kaynak aktarımını sordu."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Every shareholder asked about the funding."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sen kur: Yarın bu saatlerde oylamayı izliyor olacağız."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "This time tomorrow we will be covering the vote.",
+     "accept": [
+      "This time tomorrow we'll be covering the vote.",
+      "This time tomorrow we will be following the vote."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "O an sürüyor olan için"
+      },
+      {
+       "lang": "en",
+       "text": "will be"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "This time tomorrow we will be covering the vote."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Devletin verdiği maddi desteğe"
+     },
+     {
+      "lang": "en",
+      "text": "subsidy"
+     },
+     {
+      "lang": "tr",
+      "text": "ortak amaçla kurulan bağa ise"
+     },
+     {
+      "lang": "en",
+      "text": "alliance"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The subsidy holds the alliance together."
+     },
+     {
+      "lang": "tr",
+      "text": "İttifakı bir arada tutan şey devlet desteği."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The subsidy holds the alliance together."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İki tarafın birlikte iş yapmasına"
+     },
+     {
+      "lang": "en",
+      "text": "partnership"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The partnership ends in June."
+     },
+     {
+      "lang": "tr",
+      "text": "Ortaklık haziranda bitiyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The partnership ends in June."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir tane daha: Okurlar o zamana kadar bilgilendirilmiş olacak."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "The readers will have been informed by then.",
+     "accept": [
+      "The readers will have been told by then.",
+      "The readers will have been informed by that time."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "O ana kadar bitmiş olan için"
+      },
+      {
+       "lang": "en",
+       "text": "will have been"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "The readers will have been informed by then."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Özetleyelim: edilgen bitmiş"
+     },
+     {
+      "lang": "en",
+      "text": "will have been announced"
+     },
+     {
+      "lang": "tr",
+      "text": "süren"
+     },
+     {
+      "lang": "en",
+      "text": "will be covering"
+     },
+     {
+      "lang": "tr",
+      "text": "bitmiş"
+     },
+     {
+      "lang": "en",
+      "text": "will have been informed"
+     },
+     {
+      "lang": "tr",
+      "text": "Şimdi haber takvimini anlatacaksın."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Bir haberin yayın takvimini yayın yönetmenine anlatıyorsun. Yayına kadar neyin duyurulmuş olacağını, o an neyin izleniyor olacağını ve kimin bilgilendirilmiş olacağını söyle.",
+   "partner": "yayını öne çekmek isteyen bir yayın yönetmeni",
+   "opening": "Can we run it a day earlier?",
+   "openingTr": "Bir gün önce yayımlayabilir miyiz?",
+   "goal": "Edilgen bitmiş olanı, süren olanı ve bitmiş olanı üç ayrı biçimle söylediysen konuşma başarılı sayılır.",
+   "minTurns": 7
+  }
+ },
+ {
+  "id": "en-b2-the-report-itself",
+  "level": "B2",
+  "course": "en",
+  "icon": "pen",
+  "title": "The comparison of the reports",
+  "titleTr": "Raporun kendisi",
+  "summary": "Çözümleme yazısının dilini öğretir; fiil isme dönünce yazı kişiden çıkar ve metne odaklanır.",
+  "minutes": 11,
+  "focusId": "Nominalisation and formal register",
+  "vocab": [
+   {
+    "de": "comparison",
+    "tr": "karşılaştırma"
+   },
+   {
+    "de": "distinction",
+    "tr": "ayrım"
+   },
+   {
+    "de": "contrast",
+    "tr": "karşıtlık"
+   },
+   {
+    "de": "parallel",
+    "tr": "koşutluk"
+   },
+   {
+    "de": "ritual",
+    "tr": "tören düzeni"
+   },
+   {
+    "de": "monument",
+    "tr": "abide"
+   },
+   {
+    "de": "quarterly",
+    "tr": "üç aylık"
+   },
+   {
+    "de": "narrative",
+    "tr": "anlatı"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "The comparison of the two reports took a week.",
+    "tr": "fiili isme çevirip kayda geçirir"
+   },
+   {
+    "de": "The distinction between the cases is clear.",
+    "tr": "ayrımı isimle kurar"
+   },
+   {
+    "de": "The contrast between the versions is sharp.",
+    "tr": "karşıtlığı isimle kurar"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Bugün çözümleme yazısının dilini öğreneceğiz: ne karşılaştırıldı, hangi ayrım var, hangi karşıtlık görünüyor."
+     },
+     {
+      "lang": "tr",
+      "text": "Çözümleme yazısı kişiyi değil metni anlatır ve bunu sağlayan şey fiili isme çevirmek. Hazır mısın?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "comparison"
+     },
+     {
+      "lang": "tr",
+      "text": "İki şeyi yan yana koyup ölçmek demek. İlk kalıbımız da bu. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "The comparison of the two reports took a week."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The comparison of the two reports took a week."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İki şeyi birbirinden ayıran çizgiye"
+     },
+     {
+      "lang": "en",
+      "text": "distinction"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İkinci kalıbımız ayrımı isimle kuruyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "The distinction between the cases is clear."
+     },
+     {
+      "lang": "tr",
+      "text": "Olaylar arasındaki ayrım açık."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The distinction between the cases is clear."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Belirgin biçimde zıt durmaya"
+     },
+     {
+      "lang": "en",
+      "text": "contrast"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son kalıbımız karşıtlığı isimle kuruyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "The contrast between the versions is sharp."
+     },
+     {
+      "lang": "tr",
+      "text": "Sürümler arasındaki karşıtlık keskin."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The contrast between the versions is sharp."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi dersin kuralı. Fiili isme çevirmek yazıyı kişiden çıkarır:"
+     },
+     {
+      "lang": "en",
+      "text": "we compared the reports"
+     },
+     {
+      "lang": "tr",
+      "text": "yerine"
+     },
+     {
+      "lang": "en",
+      "text": "the comparison of the reports"
+     },
+     {
+      "lang": "tr",
+      "text": "yazılır. Çözümlemede bu bir üslup tercihi değil; yazının kim değil ne olduğunu taşıması gerekir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sıra sende: İki dosyanın karşılaştırılması bir gün sürdü."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "The comparison of the two files took a day.",
+     "accept": [
+      "The comparison of the two files took one day.",
+      "The comparison of those two files took a day."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Fiili isme çevirmek için"
+      },
+      {
+       "lang": "en",
+       "text": "the comparison of"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "The comparison of the two files took a day."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kontrol. Şu cümle doğru mu?"
+     },
+     {
+      "lang": "en",
+      "text": "The distinction between the cases is clear."
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "The distinction between the cases is clear.",
+     "answer": true,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Doğru. Kimin ayırdığı yazılmıyor ve çözümlemede bu olağan; yazıya geçen ayrımın kendisi."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İki şeyin aynı yönde gitmesine"
+     },
+     {
+      "lang": "en",
+      "text": "parallel"
+     },
+     {
+      "lang": "tr",
+      "text": "belli bir sırayla yinelenen davranışa ise"
+     },
+     {
+      "lang": "en",
+      "text": "ritual"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The parallel with the old ritual is clear."
+     },
+     {
+      "lang": "tr",
+      "text": "Eski tören düzeniyle koşutluk açık."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The parallel with the old ritual is clear."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sen kur: Sürümler arasındaki ayrım açık."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "The distinction between the versions is clear.",
+     "accept": [
+      "The distinction between the two versions is clear.",
+      "The distinction between these versions is clear."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Ayrımı isimle kurmak için"
+      },
+      {
+       "lang": "en",
+       "text": "the distinction between"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "The distinction between the versions is clear."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Anmak için yapılmış büyük yapıya"
+     },
+     {
+      "lang": "en",
+      "text": "monument"
+     },
+     {
+      "lang": "tr",
+      "text": "üç ayda bir çıkana ise"
+     },
+     {
+      "lang": "en",
+      "text": "quarterly"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The monument appears in the quarterly report."
+     },
+     {
+      "lang": "tr",
+      "text": "Abide üç aylık raporda geçiyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The monument appears in the quarterly report."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Olayların anlatılış biçimine"
+     },
+     {
+      "lang": "en",
+      "text": "narrative"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The narrative of the report changed."
+     },
+     {
+      "lang": "tr",
+      "text": "Raporun anlatısı değişti."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The narrative of the report changed."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir tane daha: İki yazı arasındaki karşıtlık keskin."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "The contrast between the two pieces is sharp.",
+     "accept": [
+      "The contrast between the two texts is sharp.",
+      "The contrast between those two pieces is sharp."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Karşıtlığı isimle kurmak için"
+      },
+      {
+       "lang": "en",
+       "text": "the contrast between"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "The contrast between the two pieces is sharp."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Özetleyelim: karşılaştırma"
+     },
+     {
+      "lang": "en",
+      "text": "the comparison of"
+     },
+     {
+      "lang": "tr",
+      "text": "ayrım"
+     },
+     {
+      "lang": "en",
+      "text": "the distinction between"
+     },
+     {
+      "lang": "tr",
+      "text": "karşıtlık"
+     },
+     {
+      "lang": "en",
+      "text": "the contrast between"
+     },
+     {
+      "lang": "tr",
+      "text": "Şimdi bir çözümleme yazısını sözlü olarak kuracaksın."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "İki raporu karşılaştıran bir çözümleme yazısını sözlü olarak kuruyorsun. Karşılaştırmayı, ayrımı ve karşıtlığı fiili isme çevirerek söyle.",
+   "partner": "yazıyı kısaltmak isteyen, her cümlede isim bekleyen bir editör",
+   "opening": "Can you say that without saying we?",
+   "openingTr": "Bunu «biz» demeden söyleyebilir misin?",
+   "goal": "Karşılaştırmayı, ayrımı ve karşıtlığı fiili isme çevirerek söylediysen konuşma başarılı sayılır.",
+   "minTurns": 7
+  }
  }
 ]
