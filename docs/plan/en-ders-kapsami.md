@@ -1,6 +1,6 @@
 # WP-74 — İngilizce ders kapsamı B1–C1
 
-**Durum:** sürüyor (B1 TAM; B2 modül 5 yarıda, 145/300 ders) · **Sahip:** Claude · **Açılış:** 2026-09-11
+**Durum:** sürüyor (B1 TAM; B2 modül 1-5 TAM, 150/300 ders) · **Sahip:** Claude · **Açılış:** 2026-09-11
 
 ## Kusur
 
@@ -274,11 +274,14 @@ kalıbı, ortaç öbeği, isimleştirme, gelecekte edilgen, edilgen ilgi cümles
 edilgen yarık cümle, edilgen kip bileşimi. «Bitmiş olacak» ile «bitirilmiş
 olacak» aynı takvimi anlatıyor ama biri yapanı taşıyor öteki taşımıyor.
 
-Bu modülde İngilizce havuzun B2 sınırı görüldü: 400 kelimelik B2 katmanının
-ilk 240'ı yazıldıktan sonra teknik yönde havuz seyrekleşti ve kelime
-listeleri ancak altı ayrı sorguyla dolduruldu. Bu bir kusur değil bir ölçüm:
-kalan 160 kelime için sorgu sayısı artacak, konu seçimi havuza göre
-daralacak.
+Bu modülde kelime listeleri ancak altı ayrı sorguyla doldu ve bunu «havuz
+seyrekleşti» diye yazmıştım. **Yanlıştı, modül 5'te ölçtüm:** havuzda 7163
+satır var, 2028'i kullanılmış, B2 seviyesinde **1934'ü boşta**. Seyrekleşen
+havuz değil benim arama yöntemimdi — kelimeyi önce kafamda seçip havuzda
+arıyordum. Havuz bir ALMANCA kelime listesinden türediği için içinde «civil
+servant», «commuter train» var ama `cell`, `gene`, `atom`, `server`, `chip`
+yok. Doğru sıra ters: önce boştaki kelimeler listelenir, ders konusu ona göre
+dizilir. Tek sorguda kırk kelime çıkıyor (`scratchpad/freewords.mjs`).
 
 **B2 modül 4 — Medya ve aktarılan söz (2026-09-11).** On ders: başlığı
 okumak, kaynağı alıntılamak, düzeltme, basın özeti, gazetenin savı, doğruluk
@@ -293,6 +296,27 @@ zamanı ayrı modüllerde ayrı iş görüyor — spiralin B2'deki karşılığ�
 Düzeltme dersi modülün ahlaki yükünü taşıyor: `must have` bir çıkarım,
 `can't have` bir ret, `should have` bir eksik tespiti. Karıştırılınca özür
 suçlamaya dönüşüyor ve düzeltme yazısı asıl işini görmüyor.
+
+**B2 modül 5 — Bilim ve teknoloji (2026-09-11).** On ders: bir çalışmanın
+işleyişi, laboratuvar yordamı, bulgu, veri geldiğinde, o değişken, çalışmanın
+gösterdiği, hiçbir örüntü çıkmadı, tutmamış olmalı, örneklem büyük olsaydı,
+geçici sonuç.
+
+Modülün kendi ekseni KESİNLİK DERECESİ. Bilimsel dilde bir cümlenin ağırlığı
+kelimede değil yapıda: `must have` bir çıkarım, `can't have` bir ret,
+`should have` bir eksik tespiti — modül 4'te bunlar bir düzeltme yazısının
+ahlakıydı, burada bir yöntem tartışmasının. Aynı spiralde devrik yapı da yön
+değiştiriyor: modül 4'te bir ilki duyuruyordu (`Never before has … been
+shown`), burada beklenmedik bir ölçümü (`Never has such a pattern emerged`).
+
+Son ders modülün yükünü taşıyor: yumuşatıcı bağlayıcılar. Bilimsel sonuç
+çoğu zaman geçicidir ve `it seems to be` / `apparently` / `on balance`
+sonucu verir ama kapıyı kapatmaz. Tereddüdü zayıflık sayan bir dinleyiciyle
+konuşmak rol yapmanın kendi işi.
+
+Modül 5 kapandığında B2.GR.11-20'nin onu da modül içinde tam bir kez
+kullanılmış oldu (`candoForLesson` ile ölçüldü, 10/10) ve B2'nin elli
+dersinin hepsi bir ifadeye düşüyor.
 
 ## Tamamlanma ölçütü
 

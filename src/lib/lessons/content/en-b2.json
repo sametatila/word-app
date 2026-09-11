@@ -22171,5 +22171,2486 @@
    "goal": "Edilgen eki, cümleye eki ve edattan sonrayı üç ayrı ilgi cümlesiyle söylediysen konuşma başarılı sayılır.",
    "minTurns": 7
   }
+ },
+ {
+  "id": "en-b2-what-the-study-shows",
+  "level": "B2",
+  "course": "en",
+  "icon": "star",
+  "title": "What the study shows",
+  "titleTr": "Çalışmanın gösterdiği",
+  "summary": "Bir çalışmanın asıl bulgusunu öne almayı öğretir; yarık cümle hangi parçanın gösterildiğini ayırır.",
+  "minutes": 11,
+  "focusId": "Cleft sentences for emphasis",
+  "vocab": [
+   {
+    "de": "determine",
+    "tr": "belirlemek"
+   },
+   {
+    "de": "statistical",
+    "tr": "istatistiksel"
+   },
+   {
+    "de": "imply",
+    "tr": "ima etmek"
+   },
+   {
+    "de": "specify",
+    "tr": "belirtmek"
+   },
+   {
+    "de": "interpret",
+    "tr": "yorumlamak"
+   },
+   {
+    "de": "theoretical",
+    "tr": "kuramsal"
+   },
+   {
+    "de": "numerous",
+    "tr": "çok sayıda"
+   },
+   {
+    "de": "credible",
+    "tr": "inandırıcı"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "What the study determines is the limit.",
+    "tr": "asıl bulguyu başa taşır"
+   },
+   {
+    "de": "It was the statistical test that failed.",
+    "tr": "tek bir parçayı öne çıkarır"
+   },
+   {
+    "de": "What we imply is not what we say.",
+    "tr": "söylenmeyeni başa alır"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Bugün bir çalışmanın asıl bulgusunu öne almayı öğreneceğiz: ne belirleniyor, hangi sınama tutmadı, ne ima ediliyor."
+     },
+     {
+      "lang": "tr",
+      "text": "Bir çalışma çok şey söyler ama hepsi aynı ağırlıkta değildir; yarık cümle asıl bulguyu ayırır. Hazır mısın?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "determine"
+     },
+     {
+      "lang": "tr",
+      "text": "Kesin olarak saptamak demek. İlk kalıbımız da bu. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "What the study determines is the limit."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "What the study determines is the limit."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Sayısal verilere dayanan işleme"
+     },
+     {
+      "lang": "en",
+      "text": "statistical"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İkinci kalıbımız tek bir parçayı öne çıkarıyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "It was the statistical test that failed."
+     },
+     {
+      "lang": "tr",
+      "text": "Tutmayan şey istatistiksel sınamaydı."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "It was the statistical test that failed."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Açıkça söylemeden anlatmaya"
+     },
+     {
+      "lang": "en",
+      "text": "imply"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son kalıbımız söylenmeyeni başa alıyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "What we imply is not what we say."
+     },
+     {
+      "lang": "tr",
+      "text": "İma ettiğimiz şey söylediğimiz şey değil."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "What we imply is not what we say."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi dersin kuralı. Yarık cümlenin iki biçimi var:"
+     },
+     {
+      "lang": "en",
+      "text": "What … is"
+     },
+     {
+      "lang": "tr",
+      "text": "bir bütünü öne alır,"
+     },
+     {
+      "lang": "en",
+      "text": "It was … that"
+     },
+     {
+      "lang": "tr",
+      "text": "ise tek bir parçayı seçer. Bilim yazısında ikincisi bir iddiadır: geri kalanı tuttu demektir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sıra sende: Çalışmanın belirlediği şey aralık."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "What the study determines is the range.",
+     "accept": [
+      "What the study determines is the limit.",
+      "What this study determines is the range."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Asıl bulguyu başa taşımak için"
+      },
+      {
+       "lang": "en",
+       "text": "What … is"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "What the study determines is the range."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kontrol. Şu cümle doğru mu?"
+     },
+     {
+      "lang": "en",
+      "text": "It was the statistical test that failed."
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "It was the statistical test that failed.",
+     "answer": true,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Doğru. Tek bir parça seçilmiş ve geri kalanının tuttuğu da aynı cümleyle söylenmiş."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Tam olarak hangisi olduğunu söylemeye"
+     },
+     {
+      "lang": "en",
+      "text": "specify"
+     },
+     {
+      "lang": "tr",
+      "text": "bir anlamı çıkarmaya ise"
+     },
+     {
+      "lang": "en",
+      "text": "interpret"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "We specify the term before we interpret it."
+     },
+     {
+      "lang": "tr",
+      "text": "Terimi yorumlamadan önce belirtiyoruz."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "We specify the term before we interpret it."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sen kur: Tutmayan şey ikinci sınamaydı."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "It was the second test that failed.",
+     "accept": [
+      "It was the second check that failed.",
+      "It was that second test that failed."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Tek parçayı seçmek için"
+      },
+      {
+       "lang": "en",
+       "text": "It was … that"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "It was the second test that failed."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Uygulamadan önce kurguda kalana"
+     },
+     {
+      "lang": "en",
+      "text": "theoretical"
+     },
+     {
+      "lang": "tr",
+      "text": "sayıca fazla olana ise"
+     },
+     {
+      "lang": "en",
+      "text": "numerous"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The theoretical part has numerous gaps."
+     },
+     {
+      "lang": "tr",
+      "text": "Kuramsal bölümde çok sayıda boşluk var."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The theoretical part has numerous gaps."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İnanılır bulunana"
+     },
+     {
+      "lang": "en",
+      "text": "credible"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The result is credible enough."
+     },
+     {
+      "lang": "tr",
+      "text": "Sonuç yeterince inandırıcı."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The result is credible enough."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir tane daha: İma ettiğimiz şey kanıtladığımız şey değil."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "What we imply is not what we prove.",
+     "accept": [
+      "What we imply is not what we show.",
+      "What we imply is not what we proved."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Söylenmeyeni başa almak için"
+      },
+      {
+       "lang": "en",
+       "text": "What we imply is"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "What we imply is not what we prove."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Özetleyelim: asıl bulgu"
+     },
+     {
+      "lang": "en",
+      "text": "What the study determines is"
+     },
+     {
+      "lang": "tr",
+      "text": "tek parça"
+     },
+     {
+      "lang": "en",
+      "text": "It was … that"
+     },
+     {
+      "lang": "tr",
+      "text": "söylenmeyen"
+     },
+     {
+      "lang": "en",
+      "text": "What we imply is"
+     },
+     {
+      "lang": "tr",
+      "text": "Şimdi bir çalışmanın asıl bulgusunu anlatacaksın."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Bir çalışmanın sonucunu meslektaşına anlatıyorsun ve asıl bulguyu öne almak istiyorsun. Asıl bulguyu, tutmayan tek parçayı ve ima edileni ayrı ayrı söyle.",
+   "partner": "çalışmanın her cümlesini eşit ağırlıkta okuyan bir meslektaş",
+   "opening": "So all of it holds equally?",
+   "openingTr": "Yani hepsi aynı ölçüde tutuyor mu?",
+   "goal": "Asıl bulguyu, tek parçayı ve ima edileni üç ayrı yarık cümleyle söylediysen konuşma başarılı sayılır.",
+   "minTurns": 7
+  }
+ },
+ {
+  "id": "en-b2-never-has-a-result",
+  "level": "B2",
+  "course": "en",
+  "icon": "flag",
+  "title": "Never has a pattern emerged",
+  "titleTr": "Hiçbir örüntü çıkmadı",
+  "summary": "Beklenmedik bir sonucu duyurmayı öğretir; olumsuz zarf başa gelince devrik yapı sonucun ağırlığını taşır.",
+  "minutes": 11,
+  "focusId": "Inversion after negative adverbials",
+  "vocab": [
+   {
+    "de": "emerge",
+    "tr": "ortaya çıkmak"
+   },
+   {
+    "de": "arise",
+    "tr": "doğmak"
+   },
+   {
+    "de": "extreme",
+    "tr": "uç"
+   },
+   {
+    "de": "occur",
+    "tr": "meydana gelmek"
+   },
+   {
+    "de": "vanish",
+    "tr": "yok olmak"
+   },
+   {
+    "de": "fluctuate",
+    "tr": "dalgalanmak"
+   },
+   {
+    "de": "scarce",
+    "tr": "kıt"
+   },
+   {
+    "de": "dense",
+    "tr": "sık"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "Never has such a pattern emerged.",
+    "tr": "ilk kez olanı devrikle söyler"
+   },
+   {
+    "de": "Rarely does a question arise so early.",
+    "tr": "nadirliği devrikle söyler"
+   },
+   {
+    "de": "Only under extreme heat does it occur.",
+    "tr": "tek koşulu devrikle söyler"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Bugün beklenmedik bir sonucu duyurmayı öğreneceğiz: daha önce ne çıkmadı, ne nadiren doğar, ne zaman meydana gelir."
+     },
+     {
+      "lang": "tr",
+      "text": "Bilimsel duyuruda sonucun ağırlığını kelime değil yapı taşıyor: olumsuz zarf başa gelince cümle devriliyor. Hazır mısın?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "emerge"
+     },
+     {
+      "lang": "tr",
+      "text": "Görünür hâle gelmek demek. İlk kalıbımız da bu. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "Never has such a pattern emerged."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Never has such a pattern emerged."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir sorunun kendiliğinden çıkmasına"
+     },
+     {
+      "lang": "en",
+      "text": "arise"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İkinci kalıbımız nadirliği söylüyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "Rarely does a question arise so early."
+     },
+     {
+      "lang": "tr",
+      "text": "Bir soru nadiren bu kadar erken doğar."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Rarely does a question arise so early."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Sınırdaki değere"
+     },
+     {
+      "lang": "en",
+      "text": "extreme"
+     },
+     {
+      "lang": "tr",
+      "text": "bir olayın gerçekleşmesine ise"
+     },
+     {
+      "lang": "en",
+      "text": "occur"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son kalıbımız tek koşulu söylüyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "Only under extreme heat does it occur."
+     },
+     {
+      "lang": "tr",
+      "text": "Yalnız uç sıcaklıkta meydana geliyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Only under extreme heat does it occur."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi dersin kuralı. Olumsuz zarf başa gelince cümle SORU SIRASINA geçiyor:"
+     },
+     {
+      "lang": "en",
+      "text": "never"
+     },
+     {
+      "lang": "tr",
+      "text": ","
+     },
+     {
+      "lang": "en",
+      "text": "rarely"
+     },
+     {
+      "lang": "tr",
+      "text": "ve"
+     },
+     {
+      "lang": "en",
+      "text": "only under"
+     },
+     {
+      "lang": "tr",
+      "text": "hepsi özneyle yardımcı fiili yer değiştirtir. Bilimsel duyuruda bu yapı sonucun ne kadar beklenmedik olduğunu taşır."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sıra sende: Böyle bir değer daha önce hiç ortaya çıkmadı."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "Never has such a value emerged.",
+     "accept": [
+      "Never has such a number emerged.",
+      "Never has this value emerged."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "İlk kez olanı devrikle söylemek için"
+      },
+      {
+       "lang": "en",
+       "text": "never has"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "Never has such a value emerged."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kontrol. Şu cümle doğru mu?"
+     },
+     {
+      "lang": "en",
+      "text": "Rarely does a question arise so early."
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "Rarely does a question arise so early.",
+     "answer": true,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Doğru. Yardımcı fiil özneden önce geliyor ve bu bir soru değil vurgu işareti."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Görünmez olmaya"
+     },
+     {
+      "lang": "en",
+      "text": "vanish"
+     },
+     {
+      "lang": "tr",
+      "text": "bir aşağı bir yukarı gitmeye ise"
+     },
+     {
+      "lang": "en",
+      "text": "fluctuate"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The signal can vanish or fluctuate."
+     },
+     {
+      "lang": "tr",
+      "text": "Sinyal yok olabilir ya da dalgalanabilir."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The signal can vanish or fluctuate."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sen kur: Bir sinyal nadiren bu kadar geç doğar."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "Rarely does a signal arise so late.",
+     "accept": [
+      "Rarely does a signal arise this late.",
+      "Rarely does a signal appear so late."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Nadirliği devrikle söylemek için"
+      },
+      {
+       "lang": "en",
+       "text": "rarely does"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "Rarely does a signal arise so late."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Az bulunana"
+     },
+     {
+      "lang": "en",
+      "text": "scarce"
+     },
+     {
+      "lang": "tr",
+      "text": "aralıkları dar olana ise"
+     },
+     {
+      "lang": "en",
+      "text": "dense"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The data is scarce but the text is dense."
+     },
+     {
+      "lang": "tr",
+      "text": "Veri kıt ama metin sık."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The data is scarce but the text is dense."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir tane daha: Yalnız uç soğukta bozuluyor."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "Only under extreme cold does it fail.",
+     "accept": [
+      "Only under extreme cold does it break.",
+      "Only in extreme cold does it fail."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Tek koşulu devrikle söylemek için"
+      },
+      {
+       "lang": "en",
+       "text": "only under"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "Only under extreme cold does it fail."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Özetleyelim: ilk kez"
+     },
+     {
+      "lang": "en",
+      "text": "never has"
+     },
+     {
+      "lang": "tr",
+      "text": "nadirlik"
+     },
+     {
+      "lang": "en",
+      "text": "rarely does"
+     },
+     {
+      "lang": "tr",
+      "text": "tek koşul"
+     },
+     {
+      "lang": "en",
+      "text": "only under"
+     },
+     {
+      "lang": "tr",
+      "text": "Şimdi beklenmedik bir sonucu duyuracaksın."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Beklenmedik bir ölçüm sonucunu ekibe duyuruyorsun. İlk kez olanı, nadiren olanı ve tek koşulu devrik cümlelerle söyle.",
+   "partner": "sonucun ölçüm hatası olduğunu düşünen bir ekip üyesi",
+   "opening": "Could this just be noise?",
+   "openingTr": "Bu sadece gürültü olabilir mi?",
+   "goal": "İlk kez olanı, nadirliği ve tek koşulu üç ayrı devrik cümleyle söylediysen konuşma başarılı sayılır.",
+   "minTurns": 7
+  }
+ },
+ {
+  "id": "en-b2-it-must-have-failed",
+  "level": "B2",
+  "course": "en",
+  "icon": "repair",
+  "title": "It must have failed",
+  "titleTr": "Tutmamış olmalı",
+  "summary": "Tutmayan bir çalışmayı değerlendirmeyi öğretir: eminsen must have, imkânsız görüyorsan can't have, atlanmışsa should have.",
+  "minutes": 11,
+  "focusId": "Perfect modals",
+  "vocab": [
+   {
+    "de": "neglect",
+    "tr": "ihmal etmek"
+   },
+   {
+    "de": "misjudge",
+    "tr": "yanlış değerlendirmek"
+   },
+   {
+    "de": "observe",
+    "tr": "gözlemlemek"
+   },
+   {
+    "de": "exaggerate",
+    "tr": "abartmak"
+   },
+   {
+    "de": "downplay",
+    "tr": "küçük göstermek"
+   },
+   {
+    "de": "contradict",
+    "tr": "aksini söylemek"
+   },
+   {
+    "de": "perceive",
+    "tr": "algılamak"
+   },
+   {
+    "de": "reflect",
+    "tr": "üzerine düşünmek"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "The team must have neglected one step.",
+    "tr": "geçmişe dair emin bir çıkarımı söyler"
+   },
+   {
+    "de": "They can't have misjudged the scale.",
+    "tr": "geçmişe dair imkânsız gördüğünü söyler"
+   },
+   {
+    "de": "We should have observed it twice.",
+    "tr": "yapılmamış olanı söyler"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Bugün tutmayan bir çalışmayı değerlendirmeyi öğreneceğiz: ne ihmal edilmiş olmalı, ne yanlış değerlendirilmiş olamaz, ne yapılmalıydı."
+     },
+     {
+      "lang": "tr",
+      "text": "Bilimde bu üç kip suçlamayı çözümlemeden ayırır ve ayrımı kaybetmek tartışmayı kişiselleştirir. Hazır mısın?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "neglect"
+     },
+     {
+      "lang": "tr",
+      "text": "Gereken ilgiyi göstermemek demek. İlk kalıbımız da bu. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "The team must have neglected one step."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The team must have neglected one step."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir şeyin değerini ya da büyüklüğünü yanlış ölçmeye"
+     },
+     {
+      "lang": "en",
+      "text": "misjudge"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İkinci kalıbımız imkânsız gördüğünü söylüyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "They can't have misjudged the scale."
+     },
+     {
+      "lang": "tr",
+      "text": "Ölçeği yanlış değerlendirmiş olamazlar."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "They can't have misjudged the scale."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Dikkatle bakıp kaydetmeye"
+     },
+     {
+      "lang": "en",
+      "text": "observe"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son kalıbımız yapılmamış olanı söylüyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "We should have observed it twice."
+     },
+     {
+      "lang": "tr",
+      "text": "Onu iki kez gözlemlememiz gerekirdi."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "We should have observed it twice."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi dersin kuralı. Üç kip de geçmişe bakar ama üçü ayrı iş görür:"
+     },
+     {
+      "lang": "en",
+      "text": "must have"
+     },
+     {
+      "lang": "tr",
+      "text": "bir çıkarımdır,"
+     },
+     {
+      "lang": "en",
+      "text": "can't have"
+     },
+     {
+      "lang": "tr",
+      "text": "bir reddir,"
+     },
+     {
+      "lang": "en",
+      "text": "should have"
+     },
+     {
+      "lang": "tr",
+      "text": "ise bir eksik tespitidir. Bilimsel tartışmada bu ayrım kişiyi değil yöntemi konuşmayı sağlar."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sıra sende: Ekip bir kontrolü atlamış olmalı."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "The team must have skipped one check.",
+     "accept": [
+      "The team must have skipped a check.",
+      "The team must have missed one check."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Emin bir çıkarım için"
+      },
+      {
+       "lang": "en",
+       "text": "must have"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "The team must have skipped one check."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kontrol. Şu cümle doğru mu?"
+     },
+     {
+      "lang": "en",
+      "text": "We should have observed it twice."
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "We should have observed it twice.",
+     "answer": true,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Doğru. Bu kip yapılmamış olanı söylüyor ve bir suçlama değil bir eksik tespiti."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Olduğundan büyük göstermeye"
+     },
+     {
+      "lang": "en",
+      "text": "exaggerate"
+     },
+     {
+      "lang": "tr",
+      "text": "olduğundan küçük göstermeye ise"
+     },
+     {
+      "lang": "en",
+      "text": "downplay"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "Some exaggerate and others downplay."
+     },
+     {
+      "lang": "tr",
+      "text": "Kimi abartıyor, kimi küçük gösteriyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Some exaggerate and others downplay."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sen kur: Değeri yanlış değerlendirmiş olamazlar."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "They can't have misjudged the value.",
+     "accept": [
+      "They cannot have misjudged the value.",
+      "They can't have misjudged that value."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "İmkânsız gördüğün için"
+      },
+      {
+       "lang": "en",
+       "text": "can't have"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "They can't have misjudged the value."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Söylenenin tersini savunmaya"
+     },
+     {
+      "lang": "en",
+      "text": "contradict"
+     },
+     {
+      "lang": "tr",
+      "text": "duyularla kavramaya ise"
+     },
+     {
+      "lang": "en",
+      "text": "perceive"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "Two readers perceive it differently and contradict each other."
+     },
+     {
+      "lang": "tr",
+      "text": "İki okur onu farklı algılıyor ve birbirinin aksini söylüyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Two readers perceive it differently and contradict each other."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir şeyi enine boyuna düşünmeye"
+     },
+     {
+      "lang": "en",
+      "text": "reflect"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "We reflect on the method every year."
+     },
+     {
+      "lang": "tr",
+      "text": "Yöntem üzerine her yıl düşünüyoruz."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "We reflect on the method every year."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir tane daha: Onu iki kez tekrarlamamız gerekirdi."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "We should have repeated it twice.",
+     "accept": [
+      "We should have repeated it two times.",
+      "We should have run it twice."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Yapılmamış olan için"
+      },
+      {
+       "lang": "en",
+       "text": "should have"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "We should have repeated it twice."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Özetleyelim: çıkarım"
+     },
+     {
+      "lang": "en",
+      "text": "must have"
+     },
+     {
+      "lang": "tr",
+      "text": "ret"
+     },
+     {
+      "lang": "en",
+      "text": "can't have"
+     },
+     {
+      "lang": "tr",
+      "text": "eksik"
+     },
+     {
+      "lang": "en",
+      "text": "should have"
+     },
+     {
+      "lang": "tr",
+      "text": "Şimdi tutmayan bir çalışmayı değerlendireceksin."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Bir çalışma tekrarlanınca tutmadı ve nedenini ekiple konuşuyorsun. Neye emin olduğunu, neyi imkânsız gördüğünü ve neyin yapılmadığını kişiyi değil yöntemi konuşarak söyle.",
+   "partner": "kendi bölümünü savunmaya hazır bir ekip üyesi",
+   "opening": "Are you saying my part was wrong?",
+   "openingTr": "Benim bölümümün yanlış olduğunu mu söylüyorsun?",
+   "goal": "Bir çıkarımı, bir reddi ve bir eksiği üç ayrı kiple söylediysen konuşma başarılı sayılır.",
+   "minTurns": 7
+  }
+ },
+ {
+  "id": "en-b2-had-the-sample-been",
+  "level": "B2",
+  "course": "en",
+  "icon": "idea",
+  "title": "Had the sample been larger",
+  "titleTr": "Örneklem büyük olsaydı",
+  "summary": "Bir çalışmanın kaçırdığı yolu konuşmayı öğretir; sonuç geçmişte kalırsa would have, bugüne uzanırsa would.",
+  "minutes": 11,
+  "focusId": "Third and mixed conditionals",
+  "vocab": [
+   {
+    "de": "generalize",
+    "tr": "genellemek"
+   },
+   {
+    "de": "remain",
+    "tr": "geçerli kalmak"
+   },
+   {
+    "de": "biased",
+    "tr": "taraflı"
+   },
+   {
+    "de": "justify",
+    "tr": "gerekçelendirmek"
+   },
+   {
+    "de": "derive",
+    "tr": "türetmek"
+   },
+   {
+    "de": "anticipate",
+    "tr": "öngörmek"
+   },
+   {
+    "de": "attribute",
+    "tr": "atfetmek"
+   },
+   {
+    "de": "provisional",
+    "tr": "kesinleşmemiş"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "If the sample had been larger, we would have generalized.",
+    "tr": "sonucu geçmişte bırakır"
+   },
+   {
+    "de": "If the method had been clear, the result would remain valid now.",
+    "tr": "sonucu bugüne taşır"
+   },
+   {
+    "de": "If the sample had been biased, the result would have failed.",
+    "tr": "gerçekleşmemiş bir geçmişi anlatır"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Bugün bir çalışmanın kaçırdığı yolu konuşmayı öğreneceğiz: büyük olsaydı ne olurdu, bugün ne farklı olurdu."
+     },
+     {
+      "lang": "tr",
+      "text": "Bilimsel tartışmada bu cümleler suçlama değil sınama aracıdır; farkı sonuç yarısı kuruyor. Hazır mısın?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "generalize"
+     },
+     {
+      "lang": "tr",
+      "text": "Tek örnekten geneli çıkarmak demek. İlk kalıbımız da bu. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "If the sample had been larger, we would have generalized."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "If the sample had been larger, we would have generalized."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Değişmeden sürmeye"
+     },
+     {
+      "lang": "en",
+      "text": "remain"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İkinci kalıbımız sonucu bugüne taşıyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "If the method had been clear, the result would remain valid now."
+     },
+     {
+      "lang": "tr",
+      "text": "Yöntem açık olsaydı sonuç bugün geçerli kalırdı."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "If the method had been clear, the result would remain valid now."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir yana eğilim taşıyana"
+     },
+     {
+      "lang": "en",
+      "text": "biased"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son kalıbımız tamamen geçmişte kalıyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "If the sample had been biased, the result would have failed."
+     },
+     {
+      "lang": "tr",
+      "text": "Örneklem taraflı olsaydı sonuç tutmazdı."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "If the sample had been biased, the result would have failed."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi dersin kuralı. Şart yarısı ikisinde de aynı:"
+     },
+     {
+      "lang": "en",
+      "text": "if + had"
+     },
+     {
+      "lang": "tr",
+      "text": "Fark sonuç yarısında:"
+     },
+     {
+      "lang": "en",
+      "text": "would have"
+     },
+     {
+      "lang": "tr",
+      "text": "sonucu geçmişte bırakır,"
+     },
+     {
+      "lang": "en",
+      "text": "would"
+     },
+     {
+      "lang": "tr",
+      "text": "ise bugüne taşır. Bilimsel tartışmada ikincisi daha ağırdır, çünkü belirsizliğin hâlâ sürdüğünü söyler."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sıra sende: Örneklem daha büyük olsaydı yayımlardık."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "If the sample had been larger, we would have published.",
+     "accept": [
+      "If the sample had been bigger, we would have published.",
+      "If the sample had been larger, we'd have published."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Sonucu geçmişte bırakmak için"
+      },
+      {
+       "lang": "en",
+       "text": "would have"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "If the sample had been larger, we would have published."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kontrol. Şu cümle doğru mu?"
+     },
+     {
+      "lang": "en",
+      "text": "If the method had been clear, the result would remain valid now."
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "If the method had been clear, the result would remain valid now.",
+     "answer": true,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Doğru. Şart geçmişte ama sonuç bugüne bakıyor, o yüzden sonuç yarısı geçmişe geçmiyor."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir şeyi haklı göstermeye"
+     },
+     {
+      "lang": "en",
+      "text": "justify"
+     },
+     {
+      "lang": "tr",
+      "text": "bir sonucu başkasından çıkarmaya ise"
+     },
+     {
+      "lang": "en",
+      "text": "derive"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "We justify each step and derive the rest."
+     },
+     {
+      "lang": "tr",
+      "text": "Her adımı gerekçelendiriyor, gerisini türetiyoruz."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "We justify each step and derive the rest."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sen kur: Deney açık olsaydı cevap bugün geçerli kalırdı."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "If the test had been clear, the answer would remain valid now.",
+     "accept": [
+      "If the test had been clear, the answer would still be valid now.",
+      "If the check had been clear, the answer would remain valid now."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Sonucu bugüne taşımak için"
+      },
+      {
+       "lang": "en",
+       "text": "would"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "If the test had been clear, the answer would remain valid now."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Önceden kestirmeye"
+     },
+     {
+      "lang": "en",
+      "text": "anticipate"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "We anticipate the same gap next year."
+     },
+     {
+      "lang": "tr",
+      "text": "Gelecek yıl aynı boşluğu öngörüyoruz."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "We anticipate the same gap next year."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir sonucu bir nedene bağlamaya"
+     },
+     {
+      "lang": "en",
+      "text": "attribute"
+     },
+     {
+      "lang": "tr",
+      "text": "henüz son hâlini almamışa ise"
+     },
+     {
+      "lang": "en",
+      "text": "provisional"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "They attribute the provisional figure to chance."
+     },
+     {
+      "lang": "tr",
+      "text": "Kesinleşmemiş sayıyı rastlantıya atfediyorlar."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "They attribute the provisional figure to chance."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir tane daha: Veri taraflı olsaydı çalışma tutmazdı."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "If the data had been biased, the study would have failed.",
+     "accept": [
+      "If the data had been biased, the study would have collapsed.",
+      "If that data had been biased, the study would have failed."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Tamamen geçmişte kalan koşul için"
+      },
+      {
+       "lang": "en",
+       "text": "would have"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "If the data had been biased, the study would have failed."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Özetleyelim: geçmişte kalan"
+     },
+     {
+      "lang": "en",
+      "text": "would have generalized"
+     },
+     {
+      "lang": "tr",
+      "text": "bugüne uzanan"
+     },
+     {
+      "lang": "en",
+      "text": "would remain"
+     },
+     {
+      "lang": "tr",
+      "text": "Şimdi bir çalışmanın kaçırdığı yolu konuşacaksın."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Bir çalışmanın sonucu yayımlanamadı ve nedenini konuşuyorsunuz. Geçmişte kalan bir sonucu ve bugüne uzanan bir sonucu ayrı ayrı söyle.",
+   "partner": "çalışmayı tekrarlamak isteyen, kaynak arayan bir meslektaş",
+   "opening": "Would a bigger sample have saved it?",
+   "openingTr": "Daha büyük bir örneklem onu kurtarır mıydı?",
+   "goal": "Geçmişte kalan bir sonucu ve bugüne uzanan bir sonucu iki ayrı koşul cümlesiyle söylediysen konuşma başarılı sayılır.",
+   "minTurns": 7
+  }
+ },
+ {
+  "id": "en-b2-tentative-conclusion",
+  "level": "B2",
+  "course": "en",
+  "icon": "question",
+  "title": "A tentative conclusion",
+  "titleTr": "Geçici sonuç",
+  "summary": "Kesinleşmemiş bir sonucu söylemeyi öğretir; yumuşatıcı bağlayıcılar sonucu iddia olmaktan çıkarır.",
+  "minutes": 11,
+  "focusId": "Hedging and discourse markers",
+  "vocab": [
+   {
+    "de": "sensible",
+    "tr": "mantıklı"
+   },
+   {
+    "de": "superficial",
+    "tr": "yüzeysel"
+   },
+   {
+    "de": "suspicious",
+    "tr": "kuşku uyandıran"
+   },
+   {
+    "de": "thoroughly",
+    "tr": "iyice"
+   },
+   {
+    "de": "likewise",
+    "tr": "aynı şekilde"
+   },
+   {
+    "de": "exclusively",
+    "tr": "yalnızca"
+   },
+   {
+    "de": "voluntary",
+    "tr": "gönüllü"
+   },
+   {
+    "de": "autonomous",
+    "tr": "özerk"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "It seems to be a sensible reading.",
+    "tr": "sonucu gözlem olarak sunar"
+   },
+   {
+    "de": "Apparently the check was superficial.",
+    "tr": "bilgiyi kaynağa yaslar"
+   },
+   {
+    "de": "On balance the result is arguably suspicious.",
+    "tr": "tartıp ölçerek yumuşatır"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Bugün kesinleşmemiş bir sonucu söylemeyi öğreneceğiz: ne mantıklı görünüyor, kontrol nasıldı, sonuç ne kadar güvenilir."
+     },
+     {
+      "lang": "tr",
+      "text": "Bilimsel sonuç çoğu zaman geçicidir ve onu iddia olmaktan çıkaran şey yumuşatıcı bağlayıcılar. Hazır mısın?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "sensible"
+     },
+     {
+      "lang": "tr",
+      "text": "Akla yatkın demek. İlk kalıbımız da bu. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "It seems to be a sensible reading."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "It seems to be a sensible reading."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Derine inmeyene"
+     },
+     {
+      "lang": "en",
+      "text": "superficial"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İkinci kalıbımız bilgiyi kaynağa yaslıyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "Apparently the check was superficial."
+     },
+     {
+      "lang": "tr",
+      "text": "Görünüşe göre kontrol yüzeyseldi."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Apparently the check was superficial."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Güven vermeyene"
+     },
+     {
+      "lang": "en",
+      "text": "suspicious"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son kalıbımız tartıp ölçerek yumuşatıyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "On balance the result is arguably suspicious."
+     },
+     {
+      "lang": "tr",
+      "text": "Her şey tartıldığında sonuç tartışmalı biçimde kuşku uyandırıyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "On balance the result is arguably suspicious."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi dersin kuralı. Geçici sonuçta üç yumuşatıcı iş görür:"
+     },
+     {
+      "lang": "en",
+      "text": "it seems to be"
+     },
+     {
+      "lang": "tr",
+      "text": "gözlem,"
+     },
+     {
+      "lang": "en",
+      "text": "apparently"
+     },
+     {
+      "lang": "tr",
+      "text": "duyum,"
+     },
+     {
+      "lang": "en",
+      "text": "on balance"
+     },
+     {
+      "lang": "tr",
+      "text": "ise tartıp ölçmedir. Üçü de sonucu verir ama kapıyı kapatmaz."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sıra sende: Mantıklı bir cevap gibi görünüyor."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "It seems to be a sensible answer.",
+     "accept": [
+      "It seems to be a sensible reply.",
+      "It seems to be a reasonable answer."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Sonucu gözlem olarak sunmak için"
+      },
+      {
+       "lang": "en",
+       "text": "it seems to be"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "It seems to be a sensible answer."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kontrol. Şu cümle doğru mu?"
+     },
+     {
+      "lang": "en",
+      "text": "Apparently the check was superficial."
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "Apparently the check was superficial.",
+     "answer": true,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Doğru. Bilgi bir kaynağa yaslanıyor ve konuşan kişi onu kendi gözlemi gibi sunmuyor."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Baştan sona yapmaya"
+     },
+     {
+      "lang": "en",
+      "text": "thoroughly"
+     },
+     {
+      "lang": "tr",
+      "text": "aynı biçimde anlamına gelen söze ise"
+     },
+     {
+      "lang": "en",
+      "text": "likewise"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "We checked it thoroughly and, likewise, twice."
+     },
+     {
+      "lang": "tr",
+      "text": "Onu iyice kontrol ettik ve aynı şekilde iki kez."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "We checked it thoroughly and, likewise, twice."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sen kur: Görünüşe göre değerlendirme yüzeyseldi."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "Apparently the review was superficial.",
+     "accept": [
+      "Apparently the review was shallow.",
+      "Apparently that review was superficial."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Bilgiyi kaynağa yaslamak için"
+      },
+      {
+       "lang": "en",
+       "text": "apparently"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "Apparently the review was superficial."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Başka hiçbir şey olmadan anlamına gelen söze"
+     },
+     {
+      "lang": "en",
+      "text": "exclusively"
+     },
+     {
+      "lang": "tr",
+      "text": "zorlama olmadan yapılana ise"
+     },
+     {
+      "lang": "en",
+      "text": "voluntary"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The trial was exclusively voluntary."
+     },
+     {
+      "lang": "tr",
+      "text": "Deneme yalnızca gönüllüydü."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The trial was exclusively voluntary."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Kendi başına karar verebilene"
+     },
+     {
+      "lang": "en",
+      "text": "autonomous"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The system is autonomous."
+     },
+     {
+      "lang": "tr",
+      "text": "Sistem özerk."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The system is autonomous."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir tane daha: Her şey tartıldığında yöntem tartışmalı biçimde sağlam."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "On balance the method is arguably sound.",
+     "accept": [
+      "On balance the method is arguably solid.",
+      "On balance that method is arguably sound."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Tartıp ölçerek yumuşatmak için"
+      },
+      {
+       "lang": "en",
+       "text": "on balance"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır:"
+      },
+      {
+       "lang": "en",
+       "text": "On balance the method is arguably sound."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Özetleyelim: gözlem"
+     },
+     {
+      "lang": "en",
+      "text": "it seems to be"
+     },
+     {
+      "lang": "tr",
+      "text": "duyum"
+     },
+     {
+      "lang": "en",
+      "text": "apparently"
+     },
+     {
+      "lang": "tr",
+      "text": "tartıp ölçme"
+     },
+     {
+      "lang": "en",
+      "text": "on balance"
+     },
+     {
+      "lang": "tr",
+      "text": "Şimdi kesinleşmemiş bir sonucu söyleyeceksin."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Bir çalışmanın henüz kesinleşmemiş sonucunu anlatıyorsun. Gözlemini, duyduğunu ve tartıp ölçtüğünü yumuşatıcı bağlayıcılarla söyle.",
+   "partner": "kesin bir sonuç bekleyen, tereddüdü zayıflık sayan bir dinleyici",
+   "opening": "Can you just tell me the answer?",
+   "openingTr": "Bana sadece cevabı söyleyebilir misin?",
+   "goal": "Bir gözlemi, bir duyumu ve bir tartıp ölçmeyi üç ayrı yumuşatıcıyla söylediysen konuşma başarılı sayılır.",
+   "minTurns": 7
+  }
  }
 ]
