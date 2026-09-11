@@ -7005,3 +7005,36 @@ sayfası Play politikası gereği herkese açık bir sayfa ve kendi akışı var
 (yönlendirme, "çıkış yap ve yeniden gir", uygulama içi yolun tarifi); mobilin
 karşılığı ekran içi akış ve kendi `deleteaccount.*` uzayında 24 anahtarı var.
 
+
+### 11.203 "İnternet yok" da "tekrar dene" diyordu
+
+`linked.` uzayı (9 web-özel anahtar; mobilin aynı ekranı kendi `links.*`
+uzayında 12 anahtarla çiziyor — iki adı olan tek bir ekran).
+
+Web ağ hatasını ötekilerden ayırıyor: "İnternet bağlantını kontrol et" ile
+"Biraz sonra tekrar dene" iki ayrı cümle. Mobil ikisini de tek cümleye
+düşürüyordu. Bağlama yolunda daha tuhaftı: ağ hatasının **kendi çevrilmiş
+metni zaten üretiliyordu** (`signInGoogleNative` `NETWORK` kodu) ve ekran onu
+atıp genel cümleyi gösteriyordu.
+
+Kaldırma yolunda ayrım hiç yoktu; `unlinkAccount` artık durum kodu OLMAYAN
+hatayı `offline` diye ayırıyor (`api()` HTTP hatalarında `ApiError` atıyor,
+bağlantı kopmasında düz `Error`).
+
+§11.192 ile aynı sınıf: **bir cümle birkaç sebebin örtüsü.**
+
+**Bu turda üç muafiyet daha doğru çıktı:**
+
+- `pron.` (12) — telaffuz puanı kartı. `/api/pronounce` yolu ve §11.139'daki
+  açık karar (ücretli sağlayıcı mı, cihazdaki metin eşlemesi mi) Samet'in;
+  tek taraflı bağlanacak bir şey değil.
+- `mockhow_en.` + `mockhow_de.` (16) — deneme sınavı çalışma tavsiyeleri
+  SUNUCUDA üretiliyor (`lib/mock-exams/feedback`, `/api/mock-exam`); mobil
+  metni hazır alıyor. `ach.`, `push.`, `email.`, `growth.`, `quest.` ile aynı
+  sınıf.
+- `del.` (9) — webin `/account/delete` sayfası Play politikası gereği herkese
+  açık ve kendi akışı var.
+
+Web-özel anahtar sayısı bu turlarda **913'ten 648'e** indi; kalanların büyük
+bölümü artık ölçülmüş ve gerekçesi yazılı.
+
