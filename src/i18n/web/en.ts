@@ -314,7 +314,6 @@ export const enWeb: Record<string, string> = {
   "lessonp.chat_offline_note": "The chat service is off right now; the conversation runs from a written script. It still counts.",
   "lessonp.end_conversation": "End the conversation",
   "lessonp.leave_for_now": "Leave it for now",
-  "lessonp.practice": "Practice",
   "lessonp.patterns": "Patterns",
   "authw.social_unavailable": "Social sign-in isn't available right now. You can carry on with email.",
   "authw.signup_sub": "It takes a few seconds and your first word is ready.",

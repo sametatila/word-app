@@ -1067,6 +1067,9 @@ export function LessonPlayer({
   const scoredTotal = lesson.lecture.filter(
     (s) => s.expect?.kind === "produce" || s.expect?.kind === "truefalse",
   ).length;
+  /* Alistirma isabeti - ozetin maskotu, konfetisi ve yuzde karosu ayni
+     sayidan besleniyor (Android `Summary` `pct` ile ayni hesap). */
+  const pct = scoredTotal ? Math.round((correctCount / scoredTotal) * 100) : 100;
 
   // ─────────────────────────── görünüm ───────────────────────────
 
@@ -1547,19 +1550,35 @@ export function LessonPlayer({
             animate={{ opacity: 1, y: 0 }}
             className="card relative p-5"
           >
-            {/* Geçilen ders küçük bir kutlamayı hak ediyor — sonuç sunucudan
-                dönünce patlıyor, kalan her durumda hiç çizilmiyor. */}
-            <Confetti fire={saved?.passed ? 1 : 0} />
+            {/* KUTLAMANIN VE MASKOTUN ÖLÇÜTÜ ANDROID'DEKİ GİBİ: dersin
+                ALIŞTIRMA İSABETİ. Web `saved?.passed`e bakıyordu ve ikisi ayrı
+                şey ölçüyor — hüküm sunucunun kararı, kutlama ise "nasıl
+                geçti"nin karşılığı. Android üç kademe kullanıyor
+                (`pct >= 80` kutla, `>= 50` sevin, altı sakin) ve konfeti de
+                aynı eşikten çıkıyor; web tek bir boolean'a bağlıydı, yani
+                %79'la biten bir ders %10'la biten dersle aynı görünüyordu.
+
+                İkinci fayda: `saved` null kalırsa (kayıt isteği düşerse) web
+                hiç kutlamıyor ve MASKOT "düşünüyor" moduna geçiyordu — oysa
+                kullanıcı dersi bitirdi, yalnız hüküm gelmedi. */}
+            <Confetti fire={pct >= 80 ? 1 : 0} />
             {/* Ders kapanışında da Erdi: geçilen derste kutluyor, yarım kalanda
                 düşünüyor. Kelime turu, etap kartı, oyun içindeki sonuç şeridi ve
                 beceri egzersizi aynı karakterle kapanıyor — kapanış anını her
                 bölümde başka bir simgeyle karşılamak, aynı uygulamada birkaç
                 ayrı dil konuşmak olurdu. */}
             <div className="flex items-center gap-2">
-              <Mascot mood={saved?.passed ? "cheer" : "think"} size={54} className="-my-2 shrink-0" />
+              <Mascot mood={pct >= 80 ? "cheer" : pct >= 50 ? "happy" : "idle"} size={54} className="-my-2 shrink-0" />
               <div>
+                {/* BAŞLIĞIN BİLİNMEYEN HÂLİ. Web `saved?.passed` truthy
+                    değilse "konuşma bitmedi" diyordu, yani kayıt isteği
+                    DÜŞTÜĞÜNDE de öyle diyordu: kullanıcı dersi bitirmiş ama
+                    ekran ona bitirmediğini söylüyordu. Android yalnız hüküm
+                    AÇIKÇA olumsuzken öyle diyor (`passed === false`) ve
+                    bilinmeyeni "tamamlandı" sayıyor - doğrusu bu, çünkü ders
+                    yerelde gerçekten bitti. */}
                 <h2 className="text-h3">
-                  {t(saved?.passed ? "lesson.lesson_complete" : "lessonp.conversation_unfinished")}
+                  {t(saved?.passed === false ? "lessonp.conversation_unfinished" : "lesson.lesson_complete")}
                 </h2>
                 <p className="muted text-caption">
                   {lesson.title} · {lesson.titleTr}
@@ -1573,8 +1592,11 @@ export function LessonPlayer({
                 isabeti) ve hangisini atacağımıza karar vermek yerine ikisi de
                 iki tarafta duruyor. Yüzde sözlükteki ortak biçimden. */}
             <dl className="mt-4 grid grid-cols-3 gap-3">
-              <Stat label={t("lessonp.practice")} value={`${correctCount} / ${scoredTotal}`} />
-              <Stat label={t("lesson.accuracy")} value={t("common.pct", { n: scoredTotal ? Math.round((correctCount / scoredTotal) * 100) : 100 })} />
+              {/* Etiket ORTAK anahtardan. Web bu sayıya "Alıştırma" diyen
+                  kendi web-özel anahtarını kullanıyordu, Android "doğru
+                  üretim" - aynı sayının iki adı vardı. */}
+              <Stat label={t("lesson.correct_production")} value={`${correctCount} / ${scoredTotal}`} />
+              <Stat label={t("lesson.accuracy")} value={t("common.pct", { n: pct })} />
               <Stat
                 label={t("lesson.phase_roleplay")}
                 value={t("lessonp.n_turns", { n: userTurns })}

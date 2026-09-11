@@ -340,7 +340,6 @@ export const trWeb: Record<string, string> = {
   "lessonp.chat_offline_note": "Sohbet servisi şu an kapalı; konuşma önceden yazılmış bir senaryoyla sürüyor. Konuşma yine sayılır.",
   "lessonp.end_conversation": "Konuşmayı bitir",
   "lessonp.leave_for_now": "Şimdilik bırak",
-  "lessonp.practice": "Alıştırma",
   "lessonp.patterns": "Kalıplar",
   "authw.social_unavailable": "Sosyal giriş şu an kullanılamıyor. E-posta ile devam edebilirsin.",
   "authw.signup_sub": "Birkaç saniye sürer, ilk kelimen hazır.",

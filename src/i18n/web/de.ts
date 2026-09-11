@@ -314,7 +314,6 @@ export const deWeb: Record<string, string> = {
   "lessonp.chat_offline_note": "Der Chatdienst ist gerade aus; das Gespräch läuft nach einem geschriebenen Skript. Es zählt trotzdem.",
   "lessonp.end_conversation": "Gespräch beenden",
   "lessonp.leave_for_now": "Für jetzt lassen",
-  "lessonp.practice": "Übung",
   "lessonp.patterns": "Muster",
   "authw.social_unavailable": "Die Anmeldung über soziale Netzwerke geht gerade nicht. Du kannst mit E-Mail weitermachen.",
   "authw.signup_sub": "Ein paar Sekunden, und dein erstes Wort steht bereit.",
