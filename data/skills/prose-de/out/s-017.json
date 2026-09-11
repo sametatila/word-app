@@ -1,0 +1,217 @@
+[
+ {
+  "tr": "Mert ile Lena ilk kez tanışıyor. Kısa bir selamlaşma, tanışma ve hal hatır sorma.",
+  "kind": "intro",
+  "de": "Mert und Lena lernen sich zum ersten Mal kennen. Eine kurze Begrüßung, ein Kennenlernen und die Frage nach dem Befinden."
+ },
+ {
+  "tr": "Resmî bir tanışma. Dikkat: burada ad değil, „Mr.“ ve „Ms.“ ile soyadı kullanılıyor.",
+  "kind": "intro",
+  "de": "Ein förmliches Kennenlernen. Achtung: Hier steht nicht der Vorname, sondern „Mr.“ und „Ms.“ mit dem Nachnamen."
+ },
+ {
+  "tr": "Üç kişi kendini tanıtıyor. Herkes adını, nereli olduğunu ve nerede yaşadığını söylüyor.",
+  "kind": "intro",
+  "de": "Drei Personen stellen sich vor. Jede sagt ihren Namen, woher sie kommt und wo sie wohnt."
+ },
+ {
+  "tr": "Kendini tanıtmayı yazarak çalış. Önce parçaları birleştir, sonra tanışma kartını doldur.",
+  "kind": "intro",
+  "de": "Übe schriftlich, dich vorzustellen. Setze zuerst die Teile zusammen, dann fülle die Karte aus."
+ },
+ {
+  "tr": "Ava kendini tanıtıyor. Dinlerken üç şeye dikkat et: nereli, nerede yaşıyor, ne iş yapıyor.",
+  "kind": "intro",
+  "de": "Ava stellt sich vor. Achte beim Hören auf drei Dinge: woher sie kommt, wo sie wohnt, was sie beruflich macht."
+ },
+ {
+  "tr": "Soru sormayı ve olumsuz cümleyi yaz. İngilizcede soru, „be“ fiilinin öne geçmesiyle kurulur.",
+  "kind": "intro",
+  "de": "Schreibe Fragen und verneinte Sätze. Im Englischen entsteht die Frage dadurch, dass das Verb „be“ nach vorn rückt."
+ },
+ {
+  "tr": "„I am from Italy…“ — ülke İtalya.",
+  "kind": "explain",
+  "de": "„I am from Italy…“ — das Land ist Italien."
+ },
+ {
+  "tr": "„I live in a town in the north.“ — kuzeyde bir kasabada.",
+  "kind": "explain",
+  "de": "„I live in a town in the north.“ — in einer Kleinstadt im Norden."
+ },
+ {
+  "tr": "„I am from Canada.“ — Türkiye yaşadığı yer, geldiği yer değil.",
+  "kind": "explain",
+  "de": "„I am from Canada.“ — die Türkei ist ihr Wohnort, nicht ihre Herkunft."
+ },
+ {
+  "tr": "„I am a little tired, but I am happy.“ — biraz yorgun ama mutlu.",
+  "kind": "explain",
+  "de": "„I am a little tired, but I am happy.“ — ein bisschen müde, aber glücklich."
+ },
+ {
+  "tr": "„I am married. My husband is from Turkey.“ — evli; hüküm yanlış.",
+  "kind": "explain",
+  "de": "„I am married. My husband is from Turkey.“ — sie ist verheiratet; die Aussage ist falsch."
+ },
+ {
+  "tr": "„I am from Germany. I live in Bremen.“ — ülke Almanya, şehir Bremen.",
+  "kind": "explain",
+  "de": "„I am from Germany. I live in Bremen.“ — das Land ist Deutschland, die Stadt Bremen."
+ },
+ {
+  "tr": "„No, I am not a teacher. I am a student.“ — öğretmen değil, öğrenci.",
+  "kind": "explain",
+  "de": "„No, I am not a teacher. I am a student.“ — keine Lehrerin, sondern Studentin."
+ },
+ {
+  "tr": "„I am not married.“ — „not“ cümleyi olumsuz yapıyor, yani evli değil.",
+  "kind": "explain",
+  "de": "„I am not married.“ — „not“ verneint den Satz, er ist also nicht verheiratet."
+ },
+ {
+  "tr": "„I am from Turkey.“ — evet. Kısa cevap „Yes, he is.“ biçiminde kurulur.",
+  "kind": "explain",
+  "de": "„I am from Turkey.“ — ja. Die Kurzantwort wird mit „Yes, he is.“ gebildet."
+ },
+ {
+  "tr": "„I was born in a small town in the north.“ — kuzeyde küçük bir kasabada.",
+  "kind": "explain",
+  "de": "„I was born in a small town in the north.“ — in einer kleinen Stadt im Norden."
+ },
+ {
+  "tr": "„I am fine, thanks. But I am very hungry!“ — yorgun ve susamış olan Lena.",
+  "kind": "explain",
+  "de": "„I am fine, thanks. But I am very hungry!“ — müde und durstig ist Lena."
+ },
+ {
+  "tr": "„I live in Bremen.“ — Almanya ülkesi, Bremen şehri; boşluğa şehir giriyor.",
+  "kind": "explain",
+  "de": "„I live in Bremen.“ — Deutschland ist das Land, Bremen die Stadt; in die Lücke kommt die Stadt."
+ },
+ {
+  "tr": "„I am from Turkey.“ — Deniz Türkiye'den. Spain Ana'nın, Ireland Tom'un ülkesi.",
+  "kind": "explain",
+  "de": "„I am from Turkey.“ — Deniz kommt aus der Türkei. Spain ist das Land von Ana, Ireland das von Tom."
+ },
+ {
+  "tr": "Önce kim olduğunu doğrular, sonra adını söyler, sonra soru gelir, en son ülke.",
+  "kind": "explain",
+  "de": "Zuerst bestätigt sie, wer er ist, dann nennt sie ihren Namen, dann kommt die Frage, zuletzt das Land."
+ },
+ {
+  "tr": "Önce soru, sonra ad, sonra „nerelisin“, sonra ülke. Tanışma hep bu sırayla gidiyor.",
+  "kind": "explain",
+  "de": "Zuerst die Frage, dann der Name, dann „woher kommst du“, dann das Land. Ein Kennenlernen läuft immer in dieser Reihenfolge."
+ },
+ {
+  "tr": "„I am a teacher here.“ — „here“ İstanbul demek, yani Kanada'da değil burada öğretmen.",
+  "kind": "explain",
+  "de": "„I am a teacher here.“ — „here“ meint Istanbul, sie ist also nicht in Kanada Lehrerin, sondern hier."
+ },
+ {
+  "tr": "„I am from Italy, but I live in Ankara now.“ — İtalya geldiği yer, Ankara yaşadığı yer.",
+  "kind": "explain",
+  "de": "„I am from Italy, but I live in Ankara now.“ — Italien ist die Herkunft, Ankara der Wohnort."
+ },
+ {
+  "tr": "„I am a teacher.“ satırı Ana'nın paragrafında. Deniz öğrenci, Tom ne olduğunu söylemiyor.",
+  "kind": "explain",
+  "de": "„I am a teacher.“ steht im Absatz von Ana. Deniz ist Student, Tom sagt nicht, was er ist."
+ },
+ {
+  "tr": "„I am not from Turkey, but I live in Turkey now.“ — Tom İrlandalı ama Türkiye'de yaşıyor.",
+  "kind": "explain",
+  "de": "„I am not from Turkey, but I live in Turkey now.“ — Tom ist Ire, wohnt aber in der Türkei."
+ },
+ {
+  "tr": "„I am a teacher here.“ Konuşmada „I am“ çoğu zaman „I'm“ gibi duyulur; ikisi de aynı cümle.",
+  "kind": "explain",
+  "de": "„I am a teacher here.“ Beim Sprechen klingt „I am“ meistens wie „I'm“; beide sind derselbe Satz."
+ },
+ {
+  "tr": "İki satırı birleştir: „I am a teacher.“ diyen kişi „My name is Sofia Rossi.“ diyen kişi. Ankara şehir, kişi değil.",
+  "kind": "explain",
+  "de": "Verbinde zwei Zeilen: Wer „I am a teacher.“ sagt, sagt auch „My name is Sofia Rossi.“ Ankara ist eine Stadt, keine Person."
+ },
+ {
+  "tr": "büyük",
+  "kind": "gloss.tr",
+  "de": "groß"
+ },
+ {
+  "tr": "görüşürüz",
+  "kind": "gloss.tr",
+  "de": "bis bald"
+ },
+ {
+  "tr": "koca",
+  "kind": "gloss.tr",
+  "de": "Ehemann"
+ },
+ {
+  "tr": "doğdu",
+  "kind": "gloss.tr",
+  "de": "wurde geboren"
+ },
+ {
+  "tr": "küçük",
+  "kind": "gloss.tr",
+  "de": "klein"
+ },
+ {
+  "tr": "İtalya",
+  "kind": "gloss.tr",
+  "de": "Italien"
+ },
+ {
+  "tr": "Almanya",
+  "kind": "gloss.tr",
+  "de": "Deutschland"
+ },
+ {
+  "tr": "İrlanda",
+  "kind": "gloss.tr",
+  "de": "Irland"
+ },
+ {
+  "tr": "İspanya",
+  "kind": "gloss.tr",
+  "de": "Spanien"
+ },
+ {
+  "tr": "nasılsın",
+  "kind": "gloss.tr",
+  "de": "wie geht es dir"
+ },
+ {
+  "tr": "nerelisin",
+  "kind": "gloss.tr",
+  "de": "woher kommst du"
+ },
+ {
+  "tr": "ben …'denim",
+  "kind": "gloss.tr",
+  "de": "ich komme aus …"
+ },
+ {
+  "tr": "teşekkürler",
+  "kind": "gloss.tr",
+  "de": "danke"
+ },
+ {
+  "tr": "benim adım …",
+  "kind": "gloss.tr",
+  "de": "ich heiße …"
+ },
+ {
+  "tr": "memnun oldum",
+  "kind": "gloss.tr",
+  "de": "freut mich"
+ },
+ {
+  "tr": "…'de yaşıyorum",
+  "kind": "gloss.tr",
+  "de": "ich wohne in …"
+ }
+]

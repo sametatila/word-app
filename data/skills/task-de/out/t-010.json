@@ -1,0 +1,112 @@
+[
+ {
+  "tr": "Tanışma kartını Ali için doldur.",
+  "kind": "form.prompt",
+  "de": "Fülle die Karte für Ali aus."
+ },
+ {
+  "tr": "Ali Demir; Türkiye'den; şu an Bremen'de yaşıyor.",
+  "kind": "form.facts",
+  "de": "Ali Demir; aus der Türkei; wohnt jetzt in Bremen."
+ },
+ {
+  "tr": "Cümleyi soru yap.",
+  "kind": "rewrite.prompt",
+  "de": "Mach aus dem Satz eine Frage."
+ },
+ {
+  "tr": "Cümleyi olumsuz yap.",
+  "kind": "rewrite.prompt",
+  "de": "Verneine den Satz."
+ },
+ {
+  "tr": "„not“ fiilden sonra gelir: are + not. Konuşmada „aren't“ diye büzülür.",
+  "kind": "rewrite.why",
+  "de": "„not“ steht nach dem Verb: are + not. Beim Sprechen zieht es sich zu „aren't“ zusammen."
+ },
+ {
+  "tr": "Soruda „be“ fiili özneden ÖNE geçer: You are → Are you? Türkçedeki „-mi“ eki gibi ayrı bir sözcük yok.",
+  "kind": "rewrite.why",
+  "de": "In der Frage rückt das Verb „be“ vor das Subjekt: You are → Are you? Im Deutschen ist es genauso — „Du bist“ wird zu „Bist du“."
+ },
+ {
+  "tr": "Nasılsın?",
+  "kind": "build.tr",
+  "de": "Wie geht es dir?"
+ },
+ {
+  "tr": "Nerelisin?",
+  "kind": "build.tr",
+  "de": "Woher kommst du?"
+ },
+ {
+  "tr": "Benim adım Lena.",
+  "kind": "build.tr",
+  "de": "Ich heiße Lena."
+ },
+ {
+  "tr": "Ben Türkiye'denim.",
+  "kind": "build.tr",
+  "de": "Ich komme aus der Türkei."
+ },
+ {
+  "tr": "İzmir'de yaşıyorum.",
+  "kind": "build.tr",
+  "de": "Ich wohne in Izmir."
+ },
+ {
+  "tr": "İyiyim, teşekkürler.",
+  "kind": "build.tr",
+  "de": "Mir geht es gut, danke."
+ },
+ {
+  "tr": "Ben öğretmen değilim.",
+  "kind": "build.tr",
+  "de": "Ich bin kein Lehrer."
+ },
+ {
+  "tr": "Ülke için „from“: I am from + ülke. Kısası „I'm from …“.",
+  "kind": "build.hint",
+  "de": "Für das Land „from“: I am from + Land. Kurzform „I'm from …“."
+ },
+ {
+  "tr": "Soru sözcüğü „how“ başta, sonra „are you“. Sıra hep böyle.",
+  "kind": "build.hint",
+  "de": "Das Fragewort „how“ steht vorn, danach „are you“. Die Reihenfolge ist immer so."
+ },
+ {
+  "tr": "„fine“ hal hatır sorusunun hazır cevabı; „good“ da doğaldır.",
+  "kind": "build.hint",
+  "de": "„fine“ ist die fertige Antwort auf die Frage nach dem Befinden; „good“ geht genauso."
+ },
+ {
+  "tr": "Olumsuzluk „not“ ile ve fiilden SONRA: am + not. Meslekten önce „a“ gerekir.",
+  "kind": "build.hint",
+  "de": "Die Verneinung mit „not“ steht NACH dem Verb: am + not. Vor dem Beruf braucht das Englische einen Artikel — anders als das Deutsche, das keinen setzt."
+ },
+ {
+  "tr": "„My name is …“ + ad. İngilizcede özne düşmez: „My name“ olmadan cümle kurulmaz.",
+  "kind": "build.hint",
+  "de": "„My name is …“ + Name. Ein Verb wie „heißen“ hat das Englische nicht; der Satz wird mit „My name“ als Subjekt gebaut."
+ },
+ {
+  "tr": "„where“ + „are you“ + „from“. Türkçede tek sözcük olan soru, İngilizcede dört sözcük.",
+  "kind": "build.hint",
+  "de": "„where“ + „are you“ + „from“. Im Deutschen steckt alles in „woher“; im Englischen umklammern zwei Teile den Satz."
+ },
+ {
+  "tr": "Şehir için „in“: I live in + şehir. „from“ geldiğin yeri, „in“ yaşadığın yeri söyler.",
+  "kind": "build.hint",
+  "de": "Für die Stadt „in“: I live in + Stadt. „from“ sagt, woher du kommst, „in“ sagt, wo du wohnst."
+ },
+ {
+  "tr": "Konuşmanın sırası: doğru sıraya koy.",
+  "kind": "question.text",
+  "de": "Die Reihenfolge des Gesprächs: bring sie in die richtige Ordnung."
+ },
+ {
+  "tr": "Duyduğun cümleyi yaz.",
+  "kind": "question.text",
+  "de": "Schreibe den Satz, den du hörst."
+ }
+]

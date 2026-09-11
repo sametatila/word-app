@@ -1,0 +1,137 @@
+[
+ {
+  "tr": "Mert ile Lena ilk kez tanışıyor. Kısa bir selamlaşma, tanışma ve hal hatır sorma.",
+  "kind": "intro",
+  "en": "Mert and Lena meet for the first time. A short greeting, an introduction and a question about how they are."
+ },
+ {
+  "tr": "Resmî bir tanışma. Dikkat: burada ad değil, „Mr.“ ve „Ms.“ ile soyadı kullanılıyor.",
+  "kind": "intro",
+  "en": "A formal introduction. Careful: no first names here, but „Mr.“ and „Ms.“ with the family name."
+ },
+ {
+  "tr": "Üç kişi kendini tanıtıyor. Herkes adını, nereli olduğunu ve nerede yaşadığını söylüyor.",
+  "kind": "intro",
+  "en": "Three people introduce themselves. Each one says their name, where they are from and where they live."
+ },
+ {
+  "tr": "Kendini tanıtmayı yazarak çalış. Önce parçaları birleştir, sonra tanışma kartını doldur.",
+  "kind": "intro",
+  "en": "Practice introducing yourself in writing. First put the parts together, then fill in the card."
+ },
+ {
+  "tr": "Ava kendini tanıtıyor. Dinlerken üç şeye dikkat et: nereli, nerede yaşıyor, ne iş yapıyor.",
+  "kind": "intro",
+  "en": "Ava introduces herself. Listen for three things: where she is from, where she lives, what she does for a living."
+ },
+ {
+  "tr": "Soru sormayı ve olumsuz cümleyi yaz. İngilizcede soru, „be“ fiilinin öne geçmesiyle kurulur.",
+  "kind": "intro",
+  "en": "Write questions and negative sentences. In English a question is built by moving the verb „be“ to the front."
+ },
+ {
+  "tr": "„I am from Italy…“ — ülke İtalya.",
+  "kind": "explain",
+  "en": "„I am from Italy…“ — the country is Italy."
+ },
+ {
+  "tr": "„I live in a town in the north.“ — kuzeyde bir kasabada.",
+  "kind": "explain",
+  "en": "„I live in a town in the north.“ — in a town up north."
+ },
+ {
+  "tr": "„I am from Canada.“ — Türkiye yaşadığı yer, geldiği yer değil.",
+  "kind": "explain",
+  "en": "„I am from Canada.“ — Turkey is where she lives, not where she is from."
+ },
+ {
+  "tr": "„I am a little tired, but I am happy.“ — biraz yorgun ama mutlu.",
+  "kind": "explain",
+  "en": "„I am a little tired, but I am happy.“ — a little tired but happy."
+ },
+ {
+  "tr": "„I am married. My husband is from Turkey.“ — evli; hüküm yanlış.",
+  "kind": "explain",
+  "en": "„I am married. My husband is from Turkey.“ — she is married; the statement is false."
+ },
+ {
+  "tr": "„I am from Germany. I live in Bremen.“ — ülke Almanya, şehir Bremen.",
+  "kind": "explain",
+  "en": "„I am from Germany. I live in Bremen.“ — the country is Germany, the city is Bremen."
+ },
+ {
+  "tr": "„No, I am not a teacher. I am a student.“ — öğretmen değil, öğrenci.",
+  "kind": "explain",
+  "en": "„No, I am not a teacher. I am a student.“ — not a teacher, a student."
+ },
+ {
+  "tr": "„I am not married.“ — „not“ cümleyi olumsuz yapıyor, yani evli değil.",
+  "kind": "explain",
+  "en": "„I am not married.“ — „not“ makes the sentence negative, so he is not married."
+ },
+ {
+  "tr": "„I am from Turkey.“ — evet. Kısa cevap „Yes, he is.“ biçiminde kurulur.",
+  "kind": "explain",
+  "en": "„I am from Turkey.“ — yes. The short answer is built as „Yes, he is.“ in English."
+ },
+ {
+  "tr": "„I was born in a small town in the north.“ — kuzeyde küçük bir kasabada.",
+  "kind": "explain",
+  "en": "„I was born in a small town in the north.“ — in a small town up north."
+ },
+ {
+  "tr": "„I am fine, thanks. But I am very hungry!“ — yorgun ve susamış olan Lena.",
+  "kind": "explain",
+  "en": "„I am fine, thanks. But I am very hungry!“ — the tired and thirsty one is Lena."
+ },
+ {
+  "tr": "„I live in Bremen.“ — Almanya ülkesi, Bremen şehri; boşluğa şehir giriyor.",
+  "kind": "explain",
+  "en": "„I live in Bremen.“ — Germany is the country, Bremen the city; the gap takes the city."
+ },
+ {
+  "tr": "„I am from Turkey.“ — Deniz Türkiye'den. Spain Ana'nın, Ireland Tom'un ülkesi.",
+  "kind": "explain",
+  "en": "„I am from Turkey.“ — Deniz is from Turkey. Spain is Ana's country, Ireland is Tom's."
+ },
+ {
+  "tr": "Önce kim olduğunu doğrular, sonra adını söyler, sonra soru gelir, en son ülke.",
+  "kind": "explain",
+  "en": "First she confirms who he is, then she says her name, then comes the question, last the country."
+ },
+ {
+  "tr": "Önce soru, sonra ad, sonra „nerelisin“, sonra ülke. Tanışma hep bu sırayla gidiyor.",
+  "kind": "explain",
+  "en": "First the question, then the name, then „where are you from“, then the country. An introduction always runs in this order."
+ },
+ {
+  "tr": "„I am a teacher here.“ — „here“ İstanbul demek, yani Kanada'da değil burada öğretmen.",
+  "kind": "explain",
+  "en": "„I am a teacher here.“ — „here“ means Istanbul, so she teaches here, not in Canada."
+ },
+ {
+  "tr": "„I am from Italy, but I live in Ankara now.“ — İtalya geldiği yer, Ankara yaşadığı yer.",
+  "kind": "explain",
+  "en": "„I am from Italy, but I live in Ankara now.“ — Italy is where she is from, Ankara where she lives."
+ },
+ {
+  "tr": "„I am a teacher.“ satırı Ana'nın paragrafında. Deniz öğrenci, Tom ne olduğunu söylemiyor.",
+  "kind": "explain",
+  "en": "The line „I am a teacher.“ is in Ana's paragraph. Deniz is a student, Tom does not say what he is."
+ },
+ {
+  "tr": "„I am not from Turkey, but I live in Turkey now.“ — Tom İrlandalı ama Türkiye'de yaşıyor.",
+  "kind": "explain",
+  "en": "„I am not from Turkey, but I live in Turkey now.“ — Tom is Irish but lives in Turkey."
+ },
+ {
+  "tr": "„I am a teacher here.“ Konuşmada „I am“ çoğu zaman „I'm“ gibi duyulur; ikisi de aynı cümle.",
+  "kind": "explain",
+  "en": "„I am a teacher here.“ In speech „I am“ usually sounds like „I'm“; both are the same sentence."
+ },
+ {
+  "tr": "İki satırı birleştir: „I am a teacher.“ diyen kişi „My name is Sofia Rossi.“ diyen kişi. Ankara şehir, kişi değil.",
+  "kind": "explain",
+  "en": "Put two lines together: the person who says „I am a teacher.“ is the person who says „My name is Sofia Rossi.“ Ankara is a city, not a person."
+ }
+]

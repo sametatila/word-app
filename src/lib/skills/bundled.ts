@@ -5,6 +5,7 @@ import { a2 } from "./content/a2";
 import { b1 } from "./content/b1";
 import { b2 } from "./content/b2";
 import { c1 } from "./content/c1";
+import { enA1 } from "./content/en-a1";
 import { library } from "./content/library";
 
 /**
@@ -39,6 +40,10 @@ const BASE: SkillExercise[] = [
   ...b1,
   ...b2,
   ...c1,
+  // İngilizce kursun Patika egzersizleri: Almanca kursunkilerle aynı ünite
+  // deseninde (ünite başına 2 okuma + 2 dinleme + 2 yazma), ayrı dosyalarda
+  // çünkü havuzu ayrı — builder `course` başına ayrı liste tüketiyor.
+  ...enA1,
   // Beceriler kütüphanesi (ünitesiz, iki kurs): Patika bu egzersizleri
   // görmez (build.ts `pathMetas`), Beceriler yalnız bunları gösterir.
   ...library,

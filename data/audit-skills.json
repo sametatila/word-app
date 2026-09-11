@@ -265,11 +265,6 @@
   "detail": "\"das Mittel\""
  },
  {
-  "id": "a2-u07-r2",
-  "rule": "sözlükçe metinde geçmiyor",
-  "detail": "\"die Krankenkasse\""
- },
- {
   "id": "a2-u07-w1",
   "rule": "sözlükçe metinde geçmiyor",
   "detail": "\"wehtun\""
@@ -305,21 +300,6 @@
   "detail": "\"vereinbaren\""
  },
  {
-  "id": "a2-u13-r1",
-  "rule": "sözlükçe metinde geçmiyor",
-  "detail": "\"die Migräne\""
- },
- {
-  "id": "a2-u13-r1",
-  "rule": "sözlükçe metinde geçmiyor",
-  "detail": "\"die Rückenschmerzen\""
- },
- {
-  "id": "a2-u13-l1",
-  "rule": "sözlükçe metinde geçmiyor",
-  "detail": "\"bewerten\""
- },
- {
   "id": "a2-u13-w1",
   "rule": "sözlükçe metinde geçmiyor",
   "detail": "\"die Qualität\""
@@ -328,21 +308,6 @@
   "id": "a2-u13-w2",
   "rule": "sözlükçe metinde geçmiyor",
   "detail": "\"ansteckend\""
- },
- {
-  "id": "a2-u14-l1",
-  "rule": "sözlükçe metinde geçmiyor",
-  "detail": "\"der Friseursalon\""
- },
- {
-  "id": "a2-u14-l2",
-  "rule": "sözlükçe metinde geçmiyor",
-  "detail": "\"beschädigt\""
- },
- {
-  "id": "a2-u15-r1",
-  "rule": "sözlükçe metinde geçmiyor",
-  "detail": "\"das Ladekabel\""
  },
  {
   "id": "a2-u15-w1",
@@ -360,11 +325,6 @@
   "detail": "\"die Unterkunft\""
  },
  {
-  "id": "a2-u17-l2",
-  "rule": "sözlükçe metinde geçmiyor",
-  "detail": "\"der Campingplatz\""
- },
- {
   "id": "a2-u17-w1",
   "rule": "sözlükçe metinde geçmiyor",
   "detail": "\"das Gewitter\""
@@ -377,17 +337,7 @@
  {
   "id": "a2-u18-l1",
   "rule": "sözlükçe metinde geçmiyor",
-  "detail": "\"der Schaffner\""
- },
- {
-  "id": "a2-u18-l1",
-  "rule": "sözlükçe metinde geçmiyor",
   "detail": "\"eintreffen\""
- },
- {
-  "id": "a2-u18-l2",
-  "rule": "sözlükçe metinde geçmiyor",
-  "detail": "\"planen\""
  },
  {
   "id": "a2-u18-w1",
@@ -398,11 +348,6 @@
   "id": "a2-u18-w1",
   "rule": "sözlükçe metinde geçmiyor",
   "detail": "\"decken\""
- },
- {
-  "id": "a2-u19-r2",
-  "rule": "sözlükçe metinde geçmiyor",
-  "detail": "\"bescheiden\""
  },
  {
   "id": "a2-u19-r2",
@@ -1550,6 +1495,21 @@
   "detail": "\"der Reichtum\""
  },
  {
+  "id": "en-a1-u1-w1",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 2: \"I'm from Turkey.\""
+ },
+ {
+  "id": "en-a1-u1-w1",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 4: \"I'm not a teacher.\""
+ },
+ {
+  "id": "en-a1-u1-w2",
+  "rule": "alternatif farklı kelimeler",
+  "detail": "görev 5: \"I'm fine, thanks.\""
+ },
+ {
   "id": "de-a1-lib-s1",
   "rule": "sözlükçe metinde geçmiyor",
   "detail": "\"leider\""
@@ -1598,11 +1558,6 @@
   "id": "de-c1-lib-g1",
   "rule": "sözlükçe metinde geçmiyor",
   "detail": "\"beifügen\""
- },
- {
-  "id": "en-a1-l7",
-  "rule": "sözlükçe metinde geçmiyor",
-  "detail": "\"size\""
  },
  {
   "id": "en-a1-w1",
@@ -2033,11 +1988,6 @@
   "id": "en-a1-w8",
   "rule": "alternatif farklı kelimeler",
   "detail": "görev 3: \"We did not go to the cinema but we swam in the sea\""
- },
- {
-  "id": "en-a2-r2",
-  "rule": "sözlükçe metinde geçmiyor",
-  "detail": "\"grow up\""
  },
  {
   "id": "en-a2-r10",

@@ -103,6 +103,7 @@
     "dump:native": "npm run lessons:apply && npm run lessons:apply-de && tsx --tsconfig scripts/tsconfig.e2e.json scripts/dump-native-mobile.ts",
     "check:unitvocab": "tsx scripts/check-unit-vocab.ts",
     "check:libvocab": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/check-library-vocab.ts",
+    "check:en-unitvocab": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/check-en-unit-vocab.ts",
     "report:library": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/report-library.ts",
     "prep:library": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/prep-library-inputs.ts",
     "check:examvocab": "tsx scripts/check-exam-vocab.ts",
