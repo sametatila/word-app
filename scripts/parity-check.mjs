@@ -7286,6 +7286,160 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     "beklenen",
   );
 
+  /* -- 228. HATA dali: duyuruluyor mu, sebebi dogru mu, tekrar yolu var mi --
+   *
+   * §227 beklemeyi duyurulur kildi; bu tur ayni yuzeylerin HATA dalini
+   * olcuyor ve uc ayri kusur cikti:
+   *
+   *  1. Yirmi bir hata dalinin HICBIRI kendini duyurmuyordu. §222 sosyal
+   *     eylemlerin hatasini `ErrorText` ile duyurulur kilmisti; bunlar
+   *     ekranin TAMAMINI kaplayan hata dallari ve ayri kume.
+   *  2. "Yapabildiklerim" iki platformda da ISTEK HATASI ile BOS LISTEYI ayni
+   *     kartla karsiliyordu: agi kopan kullaniciya "giris yapip dersleri
+   *     bitir" yaziyordu - yanlis sebep - ve tekrar deneme yolu yoktu.
+   *     Ikisi de yanlis oldugu icin karsilastirma geciyordu (§11.228 sinifi),
+   *     olcut mutlak alindi.
+   *  3. Iki web yuzeyinde YERINDE TEKRAR DENEME yoktu ve Android'de vardi:
+   *     meydan okuma (`ChallengeScreen` birincil dugme olarak deniyor) ve
+   *     seviye sinavi (`ExamScreen`, gerekcesi orada yazili: haftanin kagidi
+   *     gecici bir ag kesintisiyle harcanabiliyordu). Sinavda tekrar yalniz
+   *     kagit ALINAMADIGINDA sunuluyor - cevaplar cevrimdisi kaydedildiyse
+   *     bastan acmak o kaydi cope atar.
+   *
+   * Duyuru olcumu §227'nin ATA YURUYUSU ile: isaretten geri gidip saran
+   * `return`i bulup JSX etiket yiginini tutuyor, isareti ATALARDA ariyor. */
+  {
+    const acilisSonu = (blok) => {
+      let derinlik = 0, tirnak = null;
+      for (let i = 0; i < blok.length; i++) {
+        const c = blok[i];
+        if (tirnak) { if (c === tirnak && blok[i - 1] !== "\\") tirnak = null; continue; }
+        if (c === '"' || c === "'" || c === "`") { tirnak = c; continue; }
+        if (c === "{") derinlik++;
+        else if (c === "}") derinlik--;
+        else if (c === ">" && derinlik === 0) return i;
+      }
+      return -1;
+    };
+    /* `capa`: yurumenin BASLADIGI dugum. Varsayilan `return` cogu dalda
+       dogru, ama bir hata dali JSX UCLUSUNUN icinde de olabilir
+       (`phase === "error" ? (`) - orada en yakin `return` KOMSU bir okun
+       govdesine dusuyor ve yigin bambaska bir agactan doluyor. O uc yuzeyde
+       capa dalin kendi kosulu; yani sinir yine bir dugum, tahmin degil. */
+    const atalar = (src, isaret, capa) => {
+      const hedef = src.indexOf(isaret);
+      if (hedef < 0) return null;
+      const bas = capa ? src.lastIndexOf(capa, hedef) : src.lastIndexOf("return", hedef);
+      if (bas < 0) return null;
+      const yigin = [];
+      let k = bas;
+      while (k < hedef) {
+        const j = src.indexOf("<", k);
+        if (j < 0 || j >= hedef) break;
+        if (src[j + 1] === "/") {
+          const kapanis = src.indexOf(">", j);
+          if (kapanis < 0) break;
+          yigin.pop();
+          k = kapanis + 1;
+          continue;
+        }
+        /* PARCA (`<>`): acilisi yigina girmezse kapanisi (`</>`) yanlis bir
+           ogeyi dusurur - sinav oynaticisinin `section`u boyle kayboluyordu
+           ve kapi "SESSIZ" diyordu. Parca da bir kare olarak sayiliyor. */
+        if (src[j + 1] === ">") { yigin.push("<>"); k = j + 2; continue; }
+        if (!/[A-Za-z]/.test(src[j + 1] ?? "")) { k = j + 1; continue; }
+        const son = acilisSonu(src.slice(j));
+        if (son < 0) break;
+        const etiket = src.slice(j, j + son + 1);
+        if (!/\/\s*>$/.test(etiket)) yigin.push(etiket);
+        k = j + son + 1;
+      }
+      return yigin;
+    };
+    /* Isaretin KENDISI de sayilir: WritingsScreen'de kap bos hali de tasiyor,
+       o yuzden canli bolge ortak kaba degil hata METNINE konuldu. */
+    const duyuruyor = (src, isaret, desen, capa) => {
+      const yigin = atalar(src, isaret, capa);
+      if (yigin === null) return "ISARET YOK";
+      const hedef = src.indexOf(isaret);
+      const kendi = src.lastIndexOf("<", hedef);
+      const kendiEtiket = kendi >= 0 ? src.slice(kendi, kendi + (acilisSonu(src.slice(kendi)) + 1 || 0)) : "";
+      return yigin.some((e) => desen.test(e)) || desen.test(kendiEtiket) ? "duyuruyor" : "SESSIZ";
+    };
+    const WEB = /role="alert"/;
+    const MOB = /accessibilityLiveRegion="assertive"/;
+
+    const DALLAR = [
+      ["src/components/boss-player.tsx", 't("exam.could_not_load")'],
+      ["src/components/challenge-player.tsx", 't("challenge.load_failed")'],
+      ["src/components/daily-player.tsx", 't("daily.couldn_t_load_daily_round")'],
+      ["src/components/weekly-player.tsx", 't("weekly.load_failed")'],
+      ["src/components/placement/placement-test.tsx", 't("placement.couldn_t_load_test")'],
+      ["src/components/walk-player.tsx", 't("walk.error_title")'],
+      ["src/components/lessons/roleplay-exam.tsx", 't("rpexam.service_down")'],
+      ["src/components/session-player.tsx", "{content.title}"],
+      ["src/components/exam-player.tsx", 't("exam.load_or_save_failed")'],
+      ["src/components/cando-card.tsx", 't("cando.couldn_t_load")'],
+      ["mobile/src/screens/BossScreen.tsx", '"boss.not_ready" : "exam.could_not_load"'],
+      ["mobile/src/screens/ChallengeScreen.tsx", 't("challenge.load_failed")'],
+      ["mobile/src/screens/DailyScreen.tsx", 't("daily.couldn_t_load_daily_round")'],
+      ["mobile/src/screens/WeeklyScreen.tsx", 't("weekly.couldn_t_load_weekly_quiz")'],
+      ["mobile/src/screens/GameScreen.tsx", 't("game.couldn_t_load_round")'],
+      ["mobile/src/screens/WalkModeScreen.tsx", 'tx("walk.error_title")'],
+      ["mobile/src/screens/WordsScreen.tsx", 't("words.couldn_t_load_your_words")', 'phase === "error" ? ('],
+      ["mobile/src/screens/WritingsScreen.tsx", 't("writings.couldn_t_load_writings")', 'phase === "error" ? ('],
+      ["mobile/src/screens/RoleplayExamScreen.tsx", 'tx("rpexam.service_down")'],
+      ["mobile/src/screens/ExamScreen.tsx", "{err}"],
+      ["mobile/src/screens/CandoScreen.tsx", 't("cando.couldn_t_load")', 'phase === "error" ? ('],
+    ];
+    const kisa = (y) => y.split("/").pop().replace(/\.tsx$/, "");
+    sameList(
+      "hata dali duyuruluyor",
+      DALLAR.map(([y, isaret, capa]) => kisa(y) + "=" + duyuruyor(sil(read(y)), isaret, y.startsWith("mobile/") ? MOB : WEB, capa)),
+      DALLAR.map(([y]) => kisa(y) + "=duyuruyor"),
+      "bulunan",
+      "beklenen",
+    );
+
+    /* Yapabildiklerim: hata metni BOS metinden ayri, ve tekrar yolu var. */
+    const cw = sil(read("src/components/cando-card.tsx"));
+    const cm = sil(read("mobile/src/screens/CandoScreen.tsx"));
+    sameList(
+      "yapabildiklerim hata dali bos daldan ayri",
+      [
+        "web hata metni=" + (/cando\.couldn_t_load/.test(cw) ? "kendi" : "BOS METNI"),
+        "web bos metni=" + (/cando\.sign_in_and_finish_lessons_and/.test(cw) ? "var" : "YOK"),
+        "web tekrar=" + (/\bsetAttempt\b/.test(cw) ? "var" : "YOK"),
+        "mobil hata metni=" + (/cando\.couldn_t_load/.test(cm) ? "kendi" : "BOS METNI"),
+        "mobil bos metni=" + (/cando\.sign_in_and_finish_lessons_and/.test(cm) ? "var" : "YOK"),
+        "mobil tekrar=" + (/\bsetAttempt\b/.test(cm) ? "var" : "YOK"),
+      ],
+      ["web hata metni=kendi", "web bos metni=var", "web tekrar=var", "mobil hata metni=kendi", "mobil bos metni=var", "mobil tekrar=var"],
+      "bulunan",
+      "beklenen",
+    );
+
+    /* Yerinde tekrar deneme: Android'de olan iki yuzey webde de olmali. */
+    const chw = sil(read("src/components/challenge-player.tsx"));
+    const exw = sil(read("src/components/exam-player.tsx"));
+    const exm = sil(read("mobile/src/screens/ExamScreen.tsx"));
+    const chm = sil(read("mobile/src/screens/ChallengeScreen.tsx"));
+    sameList(
+      "hata dalinda yerinde tekrar deneme",
+      [
+        "meydan mobil=" + (/onPress=\{load\}/.test(chm) ? "var" : "YOK"),
+        "meydan web=" + (/setAttempt\(\(n\) => n \+ 1\)/.test(chw) ? "var" : "YOK"),
+        "sinav mobil=" + (/setAttempt\(\(n\) => n \+ 1\)/.test(exm) ? "var" : "YOK"),
+        "sinav web=" + (/onClick=\{\(\) => void start\(\)\}/.test(exw) ? "var" : "YOK"),
+        /* Cevrimdisi kayit varken tekrar SUNULMUYOR - kaydi cope atardi. */
+        "sinav web cevrimdisi ayrimi=" + (/offline \? null : \(/.test(exw) ? "var" : "YOK"),
+      ],
+      ["meydan mobil=var", "meydan web=var", "sinav mobil=var", "sinav web=var", "sinav web cevrimdisi ayrimi=var"],
+      "bulunan",
+      "beklenen",
+    );
+  }
+
   /* -- 227. ekrani kaplayan BEKLEME kendini duyuruyor mu ---------------
    *
    * "Hazirlaniyor", "puanlaniyor", "seviyen hesaplaniyor": bu dallar ekranin
@@ -7337,6 +7491,9 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
           k = kapanis + 1;
           continue;
         }
+        /* Parca (`<>`) da bir kare: acilisi yigina girmezse kapanisi yanlis
+           bir ogeyi dusurur (bkz. §228'in ayni tamiri). */
+        if (src[j + 1] === ">") { yigin.push("<>"); k = j + 2; continue; }
         if (!/[A-Za-z]/.test(src[j + 1] ?? "")) { k = j + 1; continue; }
         const son = acilisSonu(src.slice(j));
         if (son < 0) break;

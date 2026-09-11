@@ -11431,3 +11431,63 @@ dosyada (boss, günlük, oturum, deneme kâğıdı) o turun **kendi düzeltmesi
 silindi**. §11.285'in tam olarak yazdığı hata. Kapı yeşile dönmeyince
 yakalandı ve dördü yeniden uygulandı. Doğrusu önceki turda yaptığım gibi:
 **düzeltmeden SONRA** bir anlık görüntü al, enjeksiyonu ondan geri al.
+
+## §11.344 — Hata dalı: yirmi biri sessizdi, biri yanlış sebebi söylüyordu
+
+§11.343 beklemeyi duyurulur kıldı; bu tur **aynı yüzeylerin hata dalı**nı
+ölçtü ve üç ayrı kusur çıktı.
+
+### 1. Yirmi bir hata dalının hiçbiri kendini duyurmuyordu
+
+Ekranın tamamını kaplayıp "yüklenemedi" yazan yirmi bir dal — web'de on
+(boss, meydan, günün turu, haftalık, yerleştirme, yürüyüş, rol yapma
+sınavı, oturum, seviye sınavı, yapabildiklerim), Android'de on bir (aynı
+yüzeyler + kelimeler, yazılar, oyun) — canlı bölge değildi. §222 **sosyal
+eylemlerin** hatasını `ErrorText` ile duyurulur kılmıştı; bunlar ayrı küme.
+Web `role="alert"`, Android `accessibilityLiveRegion="assertive"`.
+
+Bir istisna bilinçli: `WritingsScreen`in kabı **boş hâli de** taşıyor, o
+yüzden işaret ortak kaba değil **hata metninin kendisine** kondu — "yazın
+yok" bir hata değil, duyurulması gerekmiyor.
+
+### 2. Yapabildiklerim: istek hatası ile boş liste aynı kartla karşılanıyordu
+
+Ağı kopan kullanıcıya **"giriş yapıp dersleri bitir"** yazıyordu — yanlış
+sebep — ve tekrar deneme yolu yoktu; o ekranda çekerek yenileme de yok, yani
+tek çıkış ekrandan çıkmaktı. **İkisi de yanlış olduğu için karşılaştırma
+geçiyordu** (§11.228 sınıfı); ölçüt mutlak alındı ve iki platform birlikte
+düzeltildi: `cando.couldn_t_load` anahtarı altı sözlüğe eklendi, hata dalı
+kendi başlığını + tekrar deneme düğmesini aldı, boş dal olduğu gibi kaldı.
+
+### 3. İki web yüzeyinde yerinde tekrar deneme yoktu
+
+- **Meydan okuma**: web yalnız "geri dön" diyordu; Android birincil düğme
+  olarak deniyor (`ChallengeScreen`). Geçici bir ağ hatası kullanıcıyı
+  meydan okumadan tamamen atıyordu.
+- **Seviye sınavı**: aynı kusur, ve Android'de gerekçesi zaten yazılıydı —
+  *haftanın kâğıdı geçici bir ağ kesintisiyle harcanabiliyordu*. Web'de
+  tekrar **yalnız kâğıt alınamadığında** sunuluyor: cevaplar çevrimdışı
+  kaydedildiyse baştan açmak o kaydı çöpe atar, orada tek doğru çıkış
+  Patika'ya dönmek. Android bu ayrımı baştan yapıyordu.
+
+### Kapı: ata yürüyüşünün iki tuzağı
+
+§228 §227'nin ata yürüyüşünü kullanıyor ama ilk yazımı **iki yerde hiçbir şey
+ölçmedi** ve ikisi de enjeksiyonla çıktı:
+
+- **Parça (`<>`)**: açılışı yığına girmiyor ama kapanışı (`</>`) yığından bir
+  öge düşürüyordu — sınav oynatıcısının `section`u böyle kayboluyor ve kapı
+  doğru koda "SESSİZ" diyordu. Parça artık bir kare olarak sayılıyor. Aynı
+  tamir §227'ye de uygulandı.
+- **Çapa**: varsayılan `return` çoğu dalda doğru, ama bir hata dalı JSX
+  üçlüsünün içinde de olabiliyor (`phase === "error" ? (`) — orada en yakın
+  `return` **komşu bir okun gövdesine** düşüyor ve yığın bambaşka bir
+  ağaçtan doluyor. Üç yüzeyde (kelimeler, yazılar, yapabildiklerim) çapa
+  dalın kendi koşulu; sınır yine bir düğüm, tahmin değil.
+
+Beş enjeksiyonun hepsi görüldü, komşu tuzağı dahil: `role="alert"`i **kardeş**
+bir düğüme koymak kapıyı yeşil bırakmıyor.
+
+Bu turda yedek sırası **doğru** yapıldı: anlık görüntü düzeltmelerden **sonra**
+alındı, enjeksiyonlar ondan geri alındı (§11.343'te tersi yapılmış ve o turun
+kendi düzeltmesi silinmişti).
