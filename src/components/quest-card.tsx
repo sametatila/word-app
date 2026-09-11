@@ -10,6 +10,7 @@ import { track } from "@/lib/track";
 import { play } from "@/lib/sfx";
 import { useT } from "@/lib/i18n/client";
 import { localDay } from "@/lib/day";
+import { ALL_DONE_ID, ALL_DONE_XP } from "@/lib/quest-constants";
 
 /**
  * Günün görevleri kartı.
@@ -231,14 +232,14 @@ export function QuestCard() {
             {board.allClaimed ? t("dailyquests.all_three_done") : t("dailyquests.all_three_done_sub")}
           </p>
           {board.allClaimed ? (
-            <span className="muted shrink-0 text-[11px] font-semibold">+300 XP</span>
+            <span className="muted shrink-0 text-[11px] font-semibold">+{ALL_DONE_XP} XP</span>
           ) : (
             <button
-              onClick={() => void claim("all")}
-              disabled={busy === "all"}
+              onClick={() => void claim(ALL_DONE_ID)}
+              disabled={busy === ALL_DONE_ID}
               className="btn btn-primary shrink-0 px-3 py-1.5 text-xs disabled:opacity-60"
             >
-              {busy === "all" ? "…" : t("dailyquests.claim_xp", { xp: 300 })}
+              {busy === ALL_DONE_ID ? "…" : t("dailyquests.claim_xp", { xp: ALL_DONE_XP })}
             </button>
           )}
         </div>

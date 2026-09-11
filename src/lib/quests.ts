@@ -1,6 +1,7 @@
 import "server-only";
 import { and, eq, gte, inArray, sql } from "drizzle-orm";
 import { db } from "@/lib/db";
+import { ALL_DONE_ID, ALL_DONE_XP } from "@/lib/quest-constants";
 import { translate, DEFAULT_NATIVE, type NativeLang } from "@/lib/i18n/dict";
 import {
   dailyScores,
@@ -72,9 +73,9 @@ const QUESTS: QuestDef[] = [
   { id: "lesson1", labelKey: "quest.lesson1", href: "/immersion", target: 1, xp: 200, discovery: true },
 ];
 
-/** Üçünü birden bitirmenin ödülü — ayrı bir "görev" gibi talep edilir. */
-export const ALL_DONE_ID = "all";
-export const ALL_DONE_XP = 300;
+/* Üçünü birden bitirmenin ödülü ve kimliği: kart da (istemci) okuduğu için
+   `server-only` olmayan `lib/quest-constants` içinde duruyor, bkz. orası. */
+export { ALL_DONE_ID, ALL_DONE_XP } from "@/lib/quest-constants";
 
 const byId = new Map(QUESTS.map((q) => [q.id, q]));
 
