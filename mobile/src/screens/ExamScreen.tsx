@@ -818,20 +818,33 @@ function TextSection({ it, spoken, colors, pad, onDone, onMiss }: { it: TextItem
       {it.questions.map((q, qi) => (
         <Card key={qi} padded style={{ gap: spacing.sm }}>
           <Text variant="bodyStrong" style={{ lineHeight: 23 }}>{q.textTr ?? q.text}</Text>
+          {/*
+            SINAVDA CEVAP AÇIKLANMIYOR.
+            Seçilen şık yeşile, yanlış olan kırmızıya boyanıyordu ve şıklar
+            kilitleniyordu: yani seviye sınavı ortasında DOĞRU CEVAP
+            gösteriliyor, aynı metnin sonraki soruları kolaylaşıyordu.
+            Uygulamanın kendi sözü bunun tersi ve aynı ekranda yazılı —
+            `exam.answers_at_end`: "cevap sınav sonunda gösterilir". Web de
+            yalnız SEÇİMİ işaretliyor (`exam-player` `options`).
+            Kilit de kalktı: hemen üstteki yorum "öğrenci son cevabını
+            değiştirebiliyor" diyordu, oysa `disabled` buna izin vermiyordu —
+            yazılı gerekçenin kodla çelişmesinin bir örneği daha.
+          */}
           {q.options.map((o, oi) => {
-            const picked = answers[qi] !== null;
-            const bg = !picked ? colors.surface : oi === q.answer ? colors.success : answers[qi] === oi ? colors.danger : colors.surface;
+            const secili = answers[qi] === oi;
             return (
-              <PressableScale key={oi} disabled={picked} onPress={() => setAnswers(answers.map((a, i) => (i === qi ? oi : a)))}
-                style={{ backgroundColor: bg, borderRadius: radii.md, borderWidth: 1.5, borderColor: colors.border, paddingVertical: 12, paddingHorizontal: spacing.md }}>
-                <Text variant="body" color={picked && (oi === q.answer || answers[qi] === oi) ? "#fff" : colors.text}>{o}</Text>
+              <PressableScale key={oi} onPress={() => setAnswers(answers.map((a, i) => (i === qi ? oi : a)))}
+                accessibilityRole="radio" accessibilityState={{ selected: secili }}
+                style={{ backgroundColor: secili ? colors.primarySoft : colors.surface, borderRadius: radii.md, borderWidth: 1.5, borderColor: secili ? colors.primary : colors.border, paddingVertical: 12, paddingHorizontal: spacing.md }}>
+                <Text variant="body" color={secili ? colors.onPrimarySoft : colors.text}>{o}</Text>
               </PressableScale>
             );
           })}
         </Card>
       ))}
       {/* Kaçanlar bölüm bitince toplanıyor: her soru tek tek işaretlenmiyor,
-          öğrenci son cevabını değiştirebiliyor (`answers` durumu). */}
+          öğrenci son cevabını değiştirebiliyor (`answers` durumu) — şıklar
+          artık gerçekten kilitlenmiyor, yukarıdaki nota bak. */}
       {allAnswered ? (
         <PressableScale onPress={() => {
           it.questions.forEach((q, i) => { const a = answers[i]; if (a !== null && a !== q.answer) onMiss(q, q.options[a]); });
@@ -849,9 +862,21 @@ function Speak({ it, colors, pad, onDone }: { it: SpeakingItem; colors: Palette;
   const [heard, setHeard] = useState("");
   const [tip, setTip] = useState<string | null>(null);
   const [ok, setOk] = useState(false);
+  /*
+   * SES ALINAMAZSA SINAV TIKANIYORDU.
+   *
+   * Hata dalında ekranda yalnız "Kaydet" düğmesi kalıyordu: mikrofon izni yok
+   * ya da tanıyıcı hiçbir şey duymuyorsa kullanıcı o maddede SONSUZA KADAR
+   * kalıyordu - ilerlemenin bir yolu yoktu, sınav orada bitiyordu. Web iki
+   * denemeden sonra maddeyi atlatıyor ve neden atlandığını da yazıyor
+   * (`exam.audio_failed_retry` / `exam.audio_failed_skip`). Atlanan madde
+   * puanlanmıyor (0), sınav sürüyor.
+   */
+  const [tries, setTries] = useState(0);
 
   async function listen() {
     if (phase === "rec") return;
+    setTries((n) => n + 1);
     if (!(await ensureMicPermission())) { setTip(t("speak.mic_needed")); setPhase("err"); return; }
     setPhase("rec"); setTip(null);
     const duyulan = await listenOnce(currentTargetLocale(), 8000);
@@ -891,12 +916,26 @@ function Speak({ it, colors, pad, onDone }: { it: SpeakingItem; colors: Palette;
           </>
         ) : null}
         {tip ? <Text variant="body" style={{ backgroundColor: colors.surface2, borderRadius: radii.md, padding: spacing.sm, lineHeight: 20 }}>{tip}</Text> : null}
+        {phase === "err" ? (
+          <Text variant="caption" color={colors.textMuted} style={{ lineHeight: 19 }}>{t(tries < 2 ? "exam.audio_failed_retry" : "exam.audio_failed_skip")}</Text>
+        ) : null}
         {phase === "rec" ? (
           <Text variant="bodyStrong" color={colors.primaryText} style={{ textAlign: "center", paddingVertical: 14 }}>{t("speak.listening")}</Text>
         ) : phase === "done" ? (
           <PressableScale onPress={() => onDone(ok, ok ? 100 : 0)} style={{ backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: 14, alignItems: "center" }}>
             <Text variant="bodyStrong" color={colors.onPrimary}>{t("common.next")}</Text>
           </PressableScale>
+        ) : phase === "err" ? (
+          <>
+            {tries < 2 ? (
+              <PressableScale onPress={() => void listen()} style={{ borderRadius: radii.lg, paddingVertical: 14, alignItems: "center", borderWidth: 1.5, borderColor: colors.border }}>
+                <Text variant="bodyStrong" color={colors.text}>{t("common.try_again")}</Text>
+              </PressableScale>
+            ) : null}
+            <PressableScale onPress={() => onDone(false, 0)} style={{ backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: 14, alignItems: "center" }}>
+              <Text variant="bodyStrong" color={colors.onPrimary}>{t("common.next")}</Text>
+            </PressableScale>
+          </>
         ) : (
           <PressableScale onPress={() => void listen()} style={{ backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: 14, alignItems: "center" }}>
             <Text variant="bodyStrong" color={colors.onPrimary}>{t("speak.record")}</Text>

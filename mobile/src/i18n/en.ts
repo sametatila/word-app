@@ -504,6 +504,8 @@ export const en: Record<string, string> = {
   "exam.write_in_target": "Write the sentence in the target language",
   "exam.answer_and_next": "Answer and continue",
   "exam.answers_at_end": "answers are shown at the end",
+  "exam.audio_failed_retry": "The audio couldn't be captured or scored. Try once more; otherwise the item is skipped.",
+  "exam.audio_failed_skip": "This item couldn't be scored; the exam continues.",
   "exam.start_section": "Start the section",
   "exam.sec_vocab": "Vocabulary",
   "exam.sec_grammar": "Grammar",

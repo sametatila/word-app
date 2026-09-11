@@ -277,8 +277,6 @@ export const enWeb: Record<string, string> = {
   "exam.start_recording": "Start recording",
   "exam.recording_tap_done": "Recording… tap when you're done",
   "exam.tap_mic_read": "Tap the mic, read, tap again",
-  "exam.audio_failed_retry": "The audio couldn't be captured or scored. Try once more; otherwise the item is skipped.",
-  "exam.audio_failed_skip": "This item couldn't be scored; the exam continues.",
   "exam.next_sentence": "Next sentence",
   "exam.min_words": "at least {n} words",
   "exam.finish_exam": "Finish the exam",

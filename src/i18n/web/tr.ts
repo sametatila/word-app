@@ -302,8 +302,6 @@ export const trWeb: Record<string, string> = {
   "exam.start_recording": "Kaydı başlat",
   "exam.recording_tap_done": "Kaydediliyor… bitince dokun",
   "exam.tap_mic_read": "Mikrofona dokun, oku, tekrar dokun",
-  "exam.audio_failed_retry": "Ses alınamadı ya da puanlanamadı. Bir kez daha dene; olmazsa madde atlanır.",
-  "exam.audio_failed_skip": "Bu madde puanlanamadı; sınav devam ediyor.",
   "exam.next_sentence": "Sıradaki cümle",
   "exam.min_words": "en az {n} kelime",
   "exam.finish_exam": "Sınavı bitir",

@@ -509,6 +509,8 @@ export const tr: Record<string, string> = {
   "exam.write_in_target": "Cümleyi hedef dilde yaz",
   "exam.answer_and_next": "Cevabı ver ve devam et",
   "exam.answers_at_end": "cevap sınav sonunda gösterilir",
+  "exam.audio_failed_retry": "Ses alınamadı ya da puanlanamadı. Bir kez daha dene; olmazsa madde atlanır.",
+  "exam.audio_failed_skip": "Bu madde puanlanamadı; sınav devam ediyor.",
   "exam.start_section": "Bölüme başla",
   "exam.sec_vocab": "Kelime",
   "exam.sec_grammar": "Dilbilgisi",

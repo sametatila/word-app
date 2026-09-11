@@ -277,8 +277,6 @@ export const deWeb: Record<string, string> = {
   "exam.start_recording": "Aufnahme starten",
   "exam.recording_tap_done": "Aufnahme läuft… tippe, wenn du fertig bist",
   "exam.tap_mic_read": "Aufs Mikro tippen, lesen, nochmal tippen",
-  "exam.audio_failed_retry": "Der Ton ließ sich nicht aufnehmen oder bewerten. Versuch es noch einmal; sonst wird die Aufgabe übersprungen.",
-  "exam.audio_failed_skip": "Diese Aufgabe ließ sich nicht bewerten; die Prüfung läuft weiter.",
   "exam.next_sentence": "Nächster Satz",
   "exam.min_words": "mindestens {n} Wörter",
   "exam.finish_exam": "Prüfung beenden",

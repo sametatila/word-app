@@ -7540,3 +7540,35 @@ bölümün silinmesini ya da adının değişmesini görüyor, `if (false)` ile 
 bırakmayı görmüyor — ilk iki enjeksiyonum tam olarak o yüzden geçti ve
 enjeksiyonlar gerçek gerilemeye benzetilerek (blok silinerek) tekrarlandı.
 Dördünün dördü de yakalandı.
+
+### 11.222 Sınav ortasında doğru cevap gösteriliyordu
+
+Seviye sınavının okuma/dinleme bölümünde şık seçilince **doğru şık yeşile,
+yanlış seçim kırmızıya** boyanıyor ve şıklar kilitleniyordu. Yani sınav
+ortasında cevap açıklanıyor, aynı metnin sonraki soruları kolaylaşıyordu.
+
+Uygulamanın kendi sözü bunun tersi ve **aynı ekranda yazılı**:
+`exam.answers_at_end` — *"cevap sınav sonunda gösterilir."* Web yalnız seçimi
+işaretliyor (`exam-player` `options`). Android artık o sözü tutuyor: seçim
+marka renginde işaretleniyor, doğruluk açıklanmıyor.
+
+Kilit de kalktı ve bu ikinci bir tutarsızlığı kapattı: hemen üstteki yorum
+*"öğrenci son cevabını değiştirebiliyor"* diyordu, oysa `disabled={picked}`
+buna izin vermiyordu. **Yazılı gerekçenin kodla çelişmesinin** bir örneği daha
+(§11.181, §11.207).
+
+### 11.223 Ses alınamazsa sınav tıkanıyordu
+
+Konuşma maddesinin hata dalında ekranda yalnız "Kaydet" düğmesi kalıyordu:
+mikrofon izni yoksa ya da tanıyıcı hiçbir şey duymuyorsa kullanıcı o maddede
+**sonsuza kadar** kalıyordu — ilerlemenin bir yolu yoktu, sınav orada bitiyordu.
+
+Web iki denemeden sonra maddeyi atlatıyor ve nedenini de yazıyor
+(`exam.audio_failed_retry` → `exam.audio_failed_skip`). Android'de artık aynısı:
+ilk hatada "bir kez daha dene", ikincisinden sonra "bu madde puanlanamadı;
+sınav devam ediyor" ve her iki durumda da ilerleten bir düğme. Atlanan madde
+sıfır alıyor — uydurma bir puan verilmiyor.
+
+**§131** iki şeyi ölçüyor: şık boyamasında doğru cevaba bakan bir dal var mı,
+ve ses hatası dalında ilerleten bir çıkış var mı. Üç enjeksiyonun üçü de
+yakalandı.

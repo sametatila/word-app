@@ -4560,6 +4560,37 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   sameList("yerlestirme olcum ani", [ani(mob)], [ani(web)]);
 }
 
+/* ── 131. seviye sinavinda sik davranisi ve ses hatasi ────────────────────
+ * Iki sey cikti, ikisi de Androidde:
+ *   - SINAV ORTASINDA DOGRU CEVAP GOSTERILIYORDU. Secilen sik yesile, yanlis
+ *     olan kirmiziya boyaniyor ve siklar kilitleniyordu; ayni metnin sonraki
+ *     sorulari kolaylasiyordu. Uygulamanin kendi sozu bunun tersi ve AYNI
+ *     ekranda yazili: `exam.answers_at_end` - "cevap sinav sonunda
+ *     gosterilir". Web yalniz SECIMI isaretliyor.
+ *   - SES ALINAMAZSA SINAV TIKANIYORDU. Konusma maddesinin hata dalinda
+ *     ekranda yalniz "Kaydet" kaliyordu: mikrofon izni yoksa ya da taniyici
+ *     hicbir sey duymuyorsa ilerlemenin YOLU YOKTU. Web iki denemeden sonra
+ *     maddeyi atliyor ve nedenini yaziyor.
+ *
+ * Olculen: sik boyamasinda dogru cevaba bakan bir dal var mi, ve ses hatasi
+ * dalinda ilerleten bir cikis var mi. */
+{
+  const strip = (x) => x.replace(/\/\*[\s\S]*?\*\//g, " ").replace(/(^|[^:"'`\\])\/\/.*$/gm, "$1");
+  const mob = strip(read("mobile/src/screens/ExamScreen.tsx"));
+  const web = strip(read("src/components/exam-player.tsx"));
+  /* "Dogru cevabi acan" desen: sik cizilirken `q.answer` ile karsilastirma.
+     Bolum SONUNDA dogru/yanlis sayilmasi ayri sey (o `correctRef`te ve
+     `onMiss`te) - burada aranan, SEKLIN kendisini boyayan karsilastirma. */
+  const acikliyor = (src) => (/(backgroundColor|className)[^\n]*(oi|i) === q\.answer/.test(src) ? "aciyor" : "acmiyor");
+  /* Ses hatasindan cikis: hata dalinda ilerleten bir dugme ve sebebi. */
+  const cikis = (src) =>
+    [
+      "sebep=" + (/exam\.audio_failed_(retry|skip)/.test(src) ? "yaziyor" : "yazmiyor"),
+      "ilerletiyor=" + (/(phase|spk) === "(err|failed)"[\s\S]{0,900}?(onDone\(false, 0\)|onClick=\{advance\})/.test(src) ? "evet" : "hayir"),
+    ];
+  sameList("sinav sik davranisi", ["sik boyamasi=" + acikliyor(mob), ...cikis(mob)], ["sik boyamasi=" + acikliyor(web), ...cikis(web)]);
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"
