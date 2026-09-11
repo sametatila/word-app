@@ -269,7 +269,7 @@ export function AdminDashboard({ data: d, server: s }: { data: AdminData; server
       {tab === "Kullanıcı Deneyimi" && (
         <div className="grid gap-6 lg:grid-cols-2">
           <Section title="Platform dağılımı (30g)" hint={`${fmt(appOpens)} açılış · ${appOpens ? Math.round((installed / appOpens) * 100) : 0}% uygulama olarak (standalone).`}>
-            <BarList max={Math.max(1, ...d.platform.map((p) => p.count))} items={d.platform.map((p) => ({ label: PLATFORM_LABEL[p.key] ?? p.key, value: p.count, right: `${fmt(p.count)} · ${fmt(p.users)}👤` }))} />
+            <BarList max={Math.max(1, ...d.platform.map((p) => p.count))} items={d.platform.map((p) => ({ label: PLATFORM_LABEL[p.key] ?? p.key, value: p.count, right: `${fmt(p.count)} · ${fmt(p.users)} kişi` }))} />
           </Section>
 
           <Section title="Tur tamamlama akışı (30g)" hint="Başlangıç kartı → tur başladı → tamamlandı.">
@@ -330,13 +330,13 @@ export function AdminDashboard({ data: d, server: s }: { data: AdminData; server
             <BarList max={100} items={d.production.map((p) => ({ label: p.task, value: p.avgScore, right: `${p.avgScore}/100 · ${fmt(p.count)}`, tone: p.avgScore < 60 ? "#d97706" : "#16a34a" }))} />
           </Section>
           <Section title="En zorlanılan kelimeler" hint="En çok unutulan (lapse) / leech — içerik iyileştirme için.">
-            <BarList max={Math.max(1, ...d.hardWords.map((w) => w.lapses))} items={d.hardWords.map((w) => ({ label: `${w.de} · ${w.tr}`, value: w.lapses, right: `${w.lapses}${w.leeches ? ` · ${w.leeches}🩸` : ""}` }))} />
+            <BarList max={Math.max(1, ...d.hardWords.map((w) => w.lapses))} items={d.hardWords.map((w) => ({ label: `${w.de} · ${w.tr}`, value: w.lapses, right: `${w.lapses}${w.leeches ? ` · ${w.leeches} sülük` : ""}` }))} />
           </Section>
           <Section title="Hata tipleri" hint="Yanlış cevapların sınıflandırması.">
             <BarList max={Math.max(1, ...d.errors.map((e) => e.count))} items={d.errors.map((e) => ({ label: e.type, value: e.count }))} />
           </Section>
           <Section title="Telemetri — olaylar (30g)" hint="Ada göre olay sayısı ve tekil kullanıcı." full>
-            <BarList max={Math.max(1, ...d.events30.map((e) => e.count))} items={d.events30.map((e) => ({ label: e.name, value: e.count, right: `${fmt(e.count)} · ${fmt(e.users)}👤` }))} />
+            <BarList max={Math.max(1, ...d.events30.map((e) => e.count))} items={d.events30.map((e) => ({ label: e.name, value: e.count, right: `${fmt(e.count)} · ${fmt(e.users)} kişi` }))} />
           </Section>
         </div>
       )}
@@ -353,11 +353,11 @@ export function AdminDashboard({ data: d, server: s }: { data: AdminData; server
         <div className="space-y-6">
           <div className="grid gap-6 lg:grid-cols-2">
             <Section title="İstemci hataları (30g)" hint="Yakalanmamış hata — ekrana göre. Mobil + web.">
-              {d.clientErrors.length === 0 ? <div className="text-sm" style={{ color: "var(--text-muted)" }}>Hata kaydı yok. 🎉</div> :
+              {d.clientErrors.length === 0 ? <div className="text-sm" style={{ color: "var(--text-muted)" }}>Hata kaydı yok.</div> :
                 <BarList max={Math.max(1, ...d.clientErrors.map((e) => e.count))} items={d.clientErrors.map((e) => ({ label: e.screen, value: e.count, tone: "#dc2626" }))} />}
             </Section>
             <Section title="AI hataları (7g)" hint="Başarısız sağlayıcı çağrıları.">
-              {d.ai.filter((a) => a.errors > 0).length === 0 ? <div className="text-sm" style={{ color: "var(--text-muted)" }}>Hata yok. 🎉</div> :
+              {d.ai.filter((a) => a.errors > 0).length === 0 ? <div className="text-sm" style={{ color: "var(--text-muted)" }}>Hata yok.</div> :
                 <BarList max={Math.max(1, ...d.ai.map((a) => a.errors))} items={d.ai.filter((a) => a.errors > 0).map((a) => ({ label: a.provider, value: a.errors, right: `${a.errors} / ${fmt(a.calls)}`, tone: "#dc2626" }))} />}
             </Section>
           </div>

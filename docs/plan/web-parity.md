@@ -8460,3 +8460,23 @@ doğrudan basılan tarih alanı. Kapı iki kez yanlış ölçtü, ikisi de düze
    olmasını istiyor.
 
 Dört enjeksiyonun dördü de doğru tarafta yakalandı.
+
+## §11.257 — Yönetim panelinde beş emoji
+
+Proje kuralı emojiyi kodda da arayüzde de yasaklıyor ve sebebi tek bir estetik
+tercih değil: emoji platformdan platforma **başka çizilir** (Android, iOS ve
+web ayrı setler kullanır), ekran okuyucu onu uzun bir ada çevirip cümlenin
+ortasına sokar, ve dar bir satırda sayının yanındaki simge etiketin yerini
+tutmaz — "1.240👤" ile "1.240 kişi" aynı şey değil.
+
+Tarama yönetim panelinde beş tane buldu: kullanıcı sayısının yanındaki kişi
+simgesi (iki yerde), zor kelime satırındaki damla ve "hata yok" satırındaki
+kutlama (iki yerde). Yerlerine kelime kondu. Bir de `immersion-hub`
+başındaki yorum, kaldırılmış emojileri **örnek olarak** içinde taşıyordu;
+yorum emojisiz yeniden yazıldı — kapının muafiyet listesi olmasın diye.
+
+**§162** iki platformu da tarıyor ve sıfır bekliyor. İşaret karakterleri (onay,
+yıldız, müzik) kapsam dışı: tek glif, metin akışında duruyorlar. Beceri içerik
+kütüphanesi de dışarıda — ders metinleri gerçek dünyadan alınıyor ve içinde
+emoji geçen bir uygulama yorumu örnek metnin kendisi. İki enjeksiyonun ikisi
+de yakalandı.

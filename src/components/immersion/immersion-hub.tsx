@@ -19,7 +19,8 @@ import type { ImmersionItemKind } from "@/lib/immersion/types";
  *
  * ÜÇ ŞEY DEĞİŞTİ:
  *
- * 1. Emoji kalktı. Ünite dairesinde "✓" ve "🔒" karakter olarak yazılıyordu;
+ * 1. Emoji kalktı. Ünite dairesinde onay ve kilit işaretleri emoji karakteri
+ *    olarak yazılıyordu;
  *    yazı tipine göre boyu ve hizası değişiyor, koyu temada emoji kendi
  *    rengini dayatıyordu. Artık setin kendi ikonları.
  *

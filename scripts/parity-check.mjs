@@ -5839,6 +5839,42 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   sameList("mobilde ham tarih", mob.length ? mob : ["yok"], ["yok"], "bulunan", "beklenen");
 }
 
+/* ── 162. emoji ───────────────────────────────────────────────────────────
+ * Proje kurali: kodda da arayuzde de emoji yok. Sebep tek bir estetik tercih
+ * degil: emoji platformdan platforma BASKA cizilir (Android, iOS ve web ayri
+ * setler kullanir), ekran okuyucu onu uzun bir ada cevirip cumlenin ortasina
+ * sokar ve dar bir satirda sayinin yanindaki simge etiketin yerini tutmaz.
+ *
+ * Tarama yonetim panelinde bes tane buldu: kullanici sayisinin yanindaki kisi
+ * simgesi (iki yerde), zor kelime satirindaki damla ve "hata yok" satirindaki
+ * kutlama (iki yerde). Yerlerine kelime kondu.
+ *
+ * Isaret karakterleri (onay, yildiz, muzik) emoji DEGIL ve kapsam disinda:
+ * tek bir glife sahipler, metin akisinda duruyorlar. */
+{
+  const EMOJI = /[\u{1F000}-\u{1FAFF}\u{2B00}-\u{2BFF}\u{2728}\u{2764}]/u;
+  const gez = (d, out = []) => {
+    for (const e of readdirSync(new URL("../" + d, import.meta.url), { withFileTypes: true })) {
+      if (e.isDirectory()) gez(d + "/" + e.name, out);
+      else if (/\.(ts|tsx)$/.test(e.name)) out.push(d + "/" + e.name);
+    }
+    return out;
+  };
+  const tara = (kok) =>
+    gez(kok).flatMap((yol) =>
+      read(yol)
+        .split("\n")
+        .map((satir, i) => (EMOJI.test(satir) ? `${yol}:${i + 1}` : null))
+        .filter(Boolean),
+    );
+  /* Icerik kutuphanesi HARIC: ders metinleri gercek dunyadan aliniyor ve
+     icinde emoji gecen bir uygulama yorumu ornek metnin kendisi. */
+  const web = tara("src").filter((x) => !x.includes("/skills/content/"));
+  sameList("webde emoji", web.length ? web : ["yok"], ["yok"], "bulunan", "beklenen");
+  const mob = tara("mobile/src");
+  sameList("mobilde emoji", mob.length ? mob : ["yok"], ["yok"], "bulunan", "beklenen");
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"
