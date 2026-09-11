@@ -11040,3 +11040,37 @@ düzeltmesini** sildi — §11.285'te yazdığım "enjeksiyonlar yedekten geri
 alınır, `git checkout` ile değil" kuralının aynısı. Kapı yeşile dönmeyince
 fark edildi ve düzeltme yeniden uygulandı; kuralı ihlal etmenin bedeli bu kez
 yalnız bir dosya oldu çünkü kapı bekliyordu.
+
+## §11.336 — Sosyal eylemin hatası iki platformda da sessizdi
+
+§11.335'in duyuru ekseni verimli çıktığı için aynı bakışı **hata durumlarına**
+taşıdım: bir eylem başarısız olduğunda kullanıcı bunu öğreniyor mu?
+
+İstek kabul etmek, dürtmek, tepki vermek, ortak görev kurmak, arama yapmak —
+hepsi başarısız olabilir ve hepsi aynı satırı çiziyor: küçük kırmızı bir metin.
+O satır **iki platformda da sessizdi**:
+
+- **Web:** on bir yerde elle yazılmış `<p className="… text-caption"
+  style={{ color: var(--color-rose) }}>{err}</p>`, `role` yok.
+- **Mobil:** `social/common` `ErrorText`, `accessibilityLiveRegion` yok.
+
+Yani sesli okuyucu kullanan biri eyleminin başarısız olduğunu **hiç
+öğrenmiyordu** — hata yalnız görsel olarak vardı.
+
+**İki taraf da yanlış olduğu için karşılaştırmalı bir kapı bunu göremezdi.**
+§11.228'in sınıfı: "her iki taraf da aynı yanlışı yapıyorsa eşitlik kontrolü
+geçer". Ölçüt karşılaştırma değil, **mutlak**: bir eylem başarısız olduysa
+duyurulur. Bu turların en çok tekrar eden dersi, tersinden: bazı kusurlar
+ancak iki tarafa da aynı anda bakmayan bir ölçütle görülür.
+
+Düzeltme iki platformda da **tek yerde**: web'de yeni `social/error-text`
+(`role="alert"`, sınıf dışarıdan — on bir yuvanın dolgusu ve puntosu farklı ve
+bu bir tasarım kararı), mobilde `ErrorText`e `accessibilityLiveRegion="polite"`.
+İki seçim de uygulamanın kendi kalıbı: web'in `role="alert"`i `profile-form`,
+`report-dialog`, `push-settings` ve `exam-player`da zaten var (gerekçesi
+`profile-form`da yazılı), mobilin `polite`i `ActiveSessions`,
+`ChangePassword` ve `ResetPasswordScreen`de.
+
+§222 üç ölçüt okuyor ve üçüncüsü toplamanın **en kolay yanlışını** kapsıyor:
+web'de elle yazılmış hata satırı kalıp kalmadığı (on bir yuvadan birini
+atlamak). Üç enjeksiyonun üçü de ayrı ayrı yakalandı.
