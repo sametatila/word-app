@@ -1019,6 +1019,8 @@ export const trBase: Record<string, string> = {
   "progp.window": "son 30 gün · {n} ölçüm",
   "progp.window.one": "son 30 gün · {n} ölçüm",
   "assess.not_measured": "ölçülmedi",
+  "assess.corrected": "Düzeltilmiş:",
+  "assess.example": "Örnek cümle:",
   "band.beginner": "başlangıç",
   "band.developing": "gelişiyor",
   "band.solid": "sağlam",

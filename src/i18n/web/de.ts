@@ -193,8 +193,6 @@ export const deWeb: Record<string, string> = {
   "assess.capital": "Beginnt mit einem Großbuchstaben",
   "assess.punctuation": "Endet mit einem Satzzeichen",
   "assess.target_lang": "Auf Deutsch geschrieben",
-  "assess.corrected": "Korrigiert:",
-  "assess.example": "Beispielsatz:",
   "assessw.fail_quota": "Deine KI-Bewertungen für heute sind aufgebraucht — es wird die Basisprüfung gezeigt.",
   "pron.headline": "Aussprache · {pct}",
   "pron.passed": "· bestanden",

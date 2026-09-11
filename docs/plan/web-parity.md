@@ -8759,3 +8759,40 @@ bağlantısı Android'de uygulamayı değil siteyi açıyor. Bu yüzden `invite_
 gerçekten web'e özel — ama sebebi "tarayıcı ölçüm katmanı" değil, Android'in o
 kapıyı hiç açmaması. Uzak push da bağlı olmadığı için bugün etkisi sınırlı;
 ikisi birlikte ele alınmalı.
+
+## §11.266 — Değerlendirmenin öğreten kısmı Android'de yoktu
+
+`/api/assess` yalnız puan döndürmüyor: her hatanın **gerekçesi** (`why_tr`),
+düzeltilmiş cümle, övgü ve sıradaki ipucu da geliyor. Web bunların hepsini
+ortak bir kartla çiziyor (`feedback/assessment-card`). Android'de:
+
+- **rol yapma sınavı** (canlı yüzey) yalnız dört rubrik çubuğu gösteriyordu,
+- **sınav yazması** yalnız bir yüzde gösteriyordu.
+
+Yani öğrenci "72" görüyor, neyi yanlış yaptığını öğrenmiyordu — oysa sınavın
+öğreten kısmı tam olarak o. Alanlar sunucudan zaten geliyordu ve istemcide
+düşüyordu: §11.22 sınıfı ("sunucu gönderiyor, istemci tanımıyor").
+
+Kart mobile taşındı (`ui/AssessmentCard`). **Bilgiyi taşıyor, işaretlemeyi
+değil**: web'in kart düzeni tarayıcıya, buradaki düzen uygulamanın kendi
+diline ait — ölçülen şey aynı olmalı, çizim aynı olmak zorunda değil. Hatalı
+aralıkların metin üstünde vurgulanması da geldi (çakışan ve boş aralıklar
+atlanıyor, web `Highlighted` ile aynı kural). `assess.corrected` ve
+`assess.example` web'e özel sözlükten ortak sözlüğe taşındı.
+
+**§170** kartın beş bilgisini (rubrik, hata gerekçesi, düzeltilmiş metin,
+övgü, ipucu) iki platformda karşılaştırıyor, ikisini de beklenene ölçüyor ve
+kartı **çağıran** yüzeylerin aynı olduğunu denetliyor — iki yerde iki ayrı
+kart, er geç ayrışır.
+
+Kapı bir kez yanlış ölçtü: övgü ve ipucu için dosyada `praise_tr` geçmesine
+bakıyordu; alanın **tip tanımı** da o adı taşıyor, yani çizim silinince bile
+yeşil kalıyordu. Ölçüm artık çizim ifadesine bakıyor. Yedi enjeksiyonun yedisi
+yakalandı.
+
+Kalan gerçek boşluk (bu turda kapatılmadı): **`free_sentence` turu mobilde
+hâlâ yok** (§11.13). Tam port üç parça istiyor — tur bileşeni, kural tabanlı
+yedek puanlama (`fallbackAssessment`) ve SRS kalite eşlemesi. Üçünden birini
+eksik bırakmak yeni bir ayrışma üretir (AI kapalıyken web puan verir, mobil
+vermez), o yüzden yarım başlanmadı. Değerlendirme kartı artık mobilde olduğu
+için portun en büyük parçası hazır.

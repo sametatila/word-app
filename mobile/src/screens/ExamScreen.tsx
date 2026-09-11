@@ -11,6 +11,7 @@ import { useBackConfirm } from "../lib/useBackConfirm";
 import { PressableScale } from "../ui/PressableScale";
 import { Mascot } from "../ui/Mascot";
 import { CoachBubble } from "../ui/CoachBubble";
+import { AssessmentCard, type AssessmentResult } from "../ui/AssessmentCard";
 import { Celebrate } from "../ui/Celebrate";
 import { CertificateSheet } from "../ui/CertificateSheet";
 import { XIcon, SpeakerIcon, CheckIcon } from "../ui/icons";
@@ -1065,6 +1066,8 @@ function Write({ w, level, colors, pad, onDone }: { w: WritingItem; level: strin
   const [typed, setTyped] = useState("");
   const [busy, setBusy] = useState(false);
   const [score, setScore] = useState<number | null>(null);
+  /** Rubrik, hatalar ve düzeltilmiş metin — kart bunu çiziyor. */
+  const [detail, setDetail] = useState<AssessmentResult | null>(null);
   /** Premium kapısı notu — puan yerine bu gösterilir. */
   const [gateNote, setGateNote] = useState<string | null>(null);
   const wordCount = typed.trim() ? typed.trim().split(/\s+/).length : 0;
@@ -1073,7 +1076,7 @@ function Write({ w, level, colors, pad, onDone }: { w: WritingItem; level: strin
     if (busy || wordCount < 5) return;
     setBusy(true);
     try {
-      const d = await api<{ result: { score?: { overall?: number } } }>("/api/assess", {
+      const d = await api<{ result: AssessmentResult }>("/api/assess", {
         method: "POST",
         body: JSON.stringify({
           kind: "writing", level,
@@ -1084,6 +1087,10 @@ function Write({ w, level, colors, pad, onDone }: { w: WritingItem; level: strin
           day: todayStr(),
         }),
       });
+      /* SONUCUN TAMAMI SAKLANIYOR. Yalnız `overall` alınıyordu: öğrenci bir
+         sayı görüp neyi yanlış yaptığını hiç öğrenmiyordu. Web aynı yerde
+         değerlendirme kartını çiziyor (`exam-player` `AssessmentCard`). */
+      setDetail(d.result ?? null);
       setScore(d.result?.score?.overall ?? null);
     } catch (e) {
       // Premium kapısı ağ hatası DEĞİL. Uydurma bir yedek puan vermek kapıyı
@@ -1130,6 +1137,7 @@ function Write({ w, level, colors, pad, onDone }: { w: WritingItem; level: strin
         ) : score !== null ? (
           <>
             <Text variant="bodyStrong" color={score >= 60 ? colors.successText : colors.dangerText}>{formatPercent(score)}</Text>
+            {detail ? <AssessmentCard answer={typed.trim()} result={detail} /> : null}
             <PressableScale onPress={() => onDone(score >= 60, score)} style={{ backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: 14, alignItems: "center" }}>
               <Text variant="bodyStrong" color={colors.onPrimary}>{t("item.finish")}</Text>
             </PressableScale>

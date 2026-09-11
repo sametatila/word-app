@@ -6359,6 +6359,63 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   sameList("adsiz katli bolum", adsiz.length ? adsiz : ["yok"], ["yok"], "bulunan", "beklenen");
 }
 
+/* ── 170. degerlendirmenin OGRETEN kismi gosteriliyor mu ──────────────────
+ * `/api/assess` yalniz puan dondurmuyor: her hatanin gerekcesi (`why_tr`),
+ * duzeltilmis cumle, ovgu ve siradaki ipucu da geliyor. Web bunlarin hepsini
+ * ortak bir kartla cizyor (`feedback/assessment-card`); Android rol yapma
+ * sinavinda yalniz dort rubrik cubugu, sinav yazmasinda ise YALNIZ SAYI
+ * gosteriyordu. Yani ogrenci "72" goruyor, neyi yanlis yaptigini
+ * ogrenmiyordu - oysa sinavin ogreten kismi tam olarak o.
+ *
+ * Alanlar sunucudan zaten geliyordu ve istemcide dusuyordu (§11.22 sinifi:
+ * "sunucu gonderiyor, istemci tanimiyor").
+ *
+ * Olculen: iki platformda da ayni DORT bilginin cizilmesi ve kartin ortak
+ * bir bilesen olmasi - iki yerde iki ayri kart, er gec ayrisir. */
+{
+  const strip = (x) => x.replace(/\/\*[\s\S]*?\*\//g, (m) => m.replace(/[^\n]/g, " ")).replace(/(^|[^:"'`\\])\/\/.*$/gm, "$1");
+  const kart = (yol) => {
+    const src = strip(read(yol)).replace(/\s+/g, " ");
+    return [
+      "rubrik=" + (/assess\.task/.test(src) ? "var" : "yok"),
+      "hata gerekcesi=" + (/why_tr/.test(src) ? "var" : "yok"),
+      "duzeltilmis=" + (/assess\.corrected/.test(src) ? "var" : "yok"),
+      /* CIZIME bakiliyor, dosyada gecmesine degil: alanin TIP tanimi da
+         `praise_tr` yaziyor ve ilk surum cizim silinince bile yesil kaldi. */
+      "ovgu=" + (/\{\s*result\.praise_tr\s*\?/.test(src) ? "var" : "yok"),
+      "ipucu=" + (/\{\s*result\.next_tip_tr\s*\?/.test(src) ? "var" : "yok"),
+    ];
+  };
+  const mob = kart("mobile/src/ui/AssessmentCard.tsx");
+  const web = kart("src/components/feedback/assessment-card.tsx");
+  sameList("degerlendirme karti", mob, web);
+  sameList(
+    "degerlendirme karti (mutlak)",
+    mob,
+    ["rubrik=var", "hata gerekcesi=var", "duzeltilmis=var", "ovgu=var", "ipucu=var"],
+    "bulunan",
+    "beklenen",
+  );
+
+  /* Karti CAGIRAN yuzeyler: iki platformda da ayni uc yer. Rol yapma sinavi
+     ve sinav yazmasi iki tarafta da karti kullanmali; kendi cizimini yapan
+     bir yuzey karttan kopar. */
+  const kullanan = (yol, re) => (re.test(strip(read(yol))) ? "kart" : "kendi cizimi");
+  sameList(
+    "karti kullanan yuzeyler",
+    [
+      "rol yapma sinavi=" + kullanan("mobile/src/screens/RoleplayExamScreen.tsx", /<AssessmentCard[\s/>]/),
+      "sinav yazmasi=" + kullanan("mobile/src/screens/ExamScreen.tsx", /<AssessmentCard[\s/>]/),
+    ],
+    [
+      "rol yapma sinavi=" + kullanan("src/components/lessons/roleplay-exam.tsx", /<AssessmentCard[\s/>]/),
+      "sinav yazmasi=" + kullanan("src/components/exam-player.tsx", /<AssessmentCard[\s/>]/),
+    ],
+    "mobil",
+    "web",
+  );
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"

@@ -193,8 +193,6 @@ export const enWeb: Record<string, string> = {
   "assess.capital": "Starts with a capital letter",
   "assess.punctuation": "Ends with punctuation",
   "assess.target_lang": "Written in German",
-  "assess.corrected": "Corrected:",
-  "assess.example": "Example sentence:",
   "assessw.fail_quota": "You've used up today's AI assessments — showing the basic check.",
   "pron.headline": "Pronunciation · {pct}",
   "pron.passed": "· passed",

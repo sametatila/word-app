@@ -219,8 +219,6 @@ export const trWeb: Record<string, string> = {
   "assess.capital": "Büyük harfle başlıyor",
   "assess.punctuation": "Noktalama ile bitiyor",
   "assess.target_lang": "Almanca yazılmış",
-  "assess.corrected": "Düzeltilmiş:",
-  "assess.example": "Örnek cümle:",
   "assessw.fail_quota": "Bugünlük AI değerlendirme hakkın doldu — temel kontrol gösteriliyor.",
   "pron.headline": "Telaffuz · {pct}",
   "pron.passed": "· geçti",

@@ -1019,6 +1019,8 @@ export const enBase: Record<string, string> = {
   "progp.window": "last 30 days · {n} measurements",
   "progp.window.one": "last 30 days · {n} measurement",
   "assess.not_measured": "not measured",
+  "assess.corrected": "Corrected:",
+  "assess.example": "Example sentence:",
   "band.beginner": "beginner",
   "band.developing": "developing",
   "band.solid": "solid",

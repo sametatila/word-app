@@ -1017,6 +1017,8 @@ export const de: Record<string, string> = {
   "progp.window": "letzte 30 Tage · {n} Messungen",
   "progp.window.one": "letzte 30 Tage · {n} Messung",
   "assess.not_measured": "nicht gemessen",
+  "assess.corrected": "Korrigiert:",
+  "assess.example": "Beispielsatz:",
   "band.beginner": "Anfang",
   "band.developing": "im Aufbau",
   "band.solid": "solide",

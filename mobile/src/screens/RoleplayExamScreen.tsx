@@ -24,6 +24,7 @@ import { notePremiumGate } from "../lib/premium";
 
 import { todayStr } from "../game/session";
 import { ERROR_LABEL_KEYS, type ErrorType } from "../lib/errors";
+import { AssessmentCard } from "../ui/AssessmentCard";
 import { useTheme, spacing, radii, softShadow, cardShadow, type Palette } from "../theme";
 import { track } from "../lib/track";
 import type { RootStackParams } from "../navigation/RootStack";
@@ -36,8 +37,10 @@ type Turn = { role: "user" | "assistant"; content: string };
 type Phase = "intro" | "talk" | "scoring" | "result" | "error";
 
 type Score = { task: number; grammar: number; vocab: number; structure: number; overall: number };
-type AssessError = { type: ErrorType; wrong: string; fix: string };
-type Result = { score: Score; errors: AssessError[]; corrected?: string | null };
+type AssessError = { type: ErrorType; wrong: string; fix: string; why_tr?: string; span?: [number, number] };
+/* `praise_tr` ve `next_tip_tr` SUNUCUDAN GELİYORDU ve burada düşüyordu: web
+   ikisini de gösteriyor (`roleplay-exam` `AssessmentCard`). */
+type Result = { score: Score; errors: AssessError[]; corrected?: string | null; praise_tr?: string | null; next_tip_tr?: string | null };
 
 /**
  * Rol yapma sınavı (WP-22) — aynı sahne, yardım yok, 5 tur, 3 dakika.
@@ -303,11 +306,13 @@ export function RoleplayExamScreen() {
         ) : null}
 
         {result ? (
-          <View style={[{ backgroundColor: colors.surface, borderRadius: radii.lg, borderWidth: 1, borderColor: colors.hairline, padding: spacing.lg, marginTop: spacing.lg, gap: spacing.sm }, cardShadow(colors, 10)]}>
-            <Bar colors={colors} label={tx("assess.task")} value={result.score.task} />
-            <Bar colors={colors} label={tx("assess.structure")} value={result.score.structure} />
-            <Bar colors={colors} label={tx("assess.grammar")} value={result.score.grammar} />
-            <Bar colors={colors} label={tx("assess.vocab")} value={result.score.vocab} />
+          /* DEĞERLENDİRMENİN ÖĞRETEN KISMI DA GÖSTERİLİYOR. Burada yalnız dört
+             rubrik çubuğu vardı: öğrenci "72" görüyor, neyi yanlış yaptığını
+             öğrenmiyordu. Kart hataların gerekçesini, düzeltilmiş cümleyi,
+             övgüyü ve sıradaki ipucunu da yazıyor — web aynı ekranda baştan
+             beri yazıyor. */
+          <View style={{ marginTop: spacing.lg }}>
+            <AssessmentCard answer={said.join("\n")} result={result} />
           </View>
         ) : null}
 
@@ -434,18 +439,3 @@ function Rule({ colors, text }: { colors: Palette; text: string }) {
   );
 }
 
-/** Rubrik basamağı: 0-4. Web `assessment-card` `Bar` ile aynı ölçek. */
-function Bar({ colors, label, value }: { colors: Palette; label: string; value: number }) {
-  const pct = Math.max(0, Math.min(4, value)) / 4;
-  return (
-    <View>
-      <View style={{ flexDirection: "row", justifyContent: "space-between", marginBottom: 4 }}>
-        <Text variant="caption" color={colors.textMuted}>{label}</Text>
-        <Text variant="caption" color={colors.textMuted}>{value}/4</Text>
-      </View>
-      <View style={{ height: 6, borderRadius: 3, backgroundColor: colors.surface2, overflow: "hidden" }}>
-        <View style={{ width: `${pct * 100}%`, height: "100%", borderRadius: 3, backgroundColor: colors.primary }} />
-      </View>
-    </View>
-  );
-}
