@@ -6342,3 +6342,28 @@ zahmetli. Kapı bunu yakalayamıyor — iki anahtar da "kullanılıyor" ve ikisi
 "var". Yakalamanın yolu metin karşılaştırması olurdu; sözlükler büyüdükçe
 yanlış pozitif üretir (aynı kelime iki bağlamda meşru olabilir), o yüzden
 yazmadım. Ölçüm turlarında elle bakmak şimdilik daha ucuz.
+
+
+### 11.175 İkiz anahtarların ölçümü: 46 aday, 11 gerçek
+
+§11.174'te "ikiz anahtar" sınıfını dördüncü kez elle bulunca sayıyı ölçtüm:
+**web sözlüğündeki 46 anahtar, ortak sözlükteki bir anahtarla aynı metni
+taşıyor.**
+
+**Ama 46'sı da ikiz değil.** "Kelime" hem başarım grubu adı hem değerlendirme
+kategorisi; "Görev" hem ortak görev hem yazma görevi. Bunları birleştirmek
+**yanlış bir bağ** kurar: birinin metni değişince öteki de sessizce değişir.
+Aynı metin ≠ aynı kavram.
+
+Bu turda aynı kavramı taşıyan **on bir** tanesi birleştirildi (görev panosu,
+değerlendirme üçlüsü, puanlanıyor, ödül satırları, tekrar notu, "Doğrusu:").
+Kalan 35 bilerek duruyor.
+
+**Neden önemli:** aynı cümlenin iki kopyası olduğunda birine yapılan düzeltme
+ötekine ulaşmıyor. Bu oturumda dört ikizi tek tek buldum — her biri bir
+yüzeyde eski metnin kalmasına yol açabilirdi.
+
+**Kapı yazılmadı, sebebi yazıldı:** "aynı metin = hata" kuralı 35 meşru eş
+sesliyi kırmızıya boyar. Ölçüm betiği tekrarlanabilir (scratchpad'de) ve
+sözlük büyüdükçe elle bakmak hâlâ daha ucuz. Otomatikleştirilecekse doğru
+kural "aynı metin VE aynı bağlam" olurdu; bağlamı kod bilmiyor.
