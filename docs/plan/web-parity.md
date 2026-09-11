@@ -9918,3 +9918,42 @@ anahtarda birebir aynı; anahtar kümeleri karşılaştırılarak doğrulandı.
 
 **§206** listeyi katalogdan çıkarıp örnekte arıyor: yeni bir sağlayıcı
 eklendiğinde anahtarları da belgelensin. İki enjeksiyonun ikisi yakalandı.
+
+## §11.302 — Yalnız çalışma zamanında görünen sınırlar için bir kapı
+
+Arkadaşlar sayfasının kırığı (§bkz. `check:client-boundary`) hiçbir kapıya
+takılmamıştı ve sebebi sınıfın kendisiydi: **sunucu/istemci sınırı ihlalleri
+derlemede değil, sayfa açıldığında patlıyor.** Tip denetimi için imza geçerli,
+lint için sıradan bir içe alım, `check:parity` ise iki platformu
+karşılaştırıyor — bu ise tek platformun kendi içindeki bir sınır.
+
+Yeni kapı üç şeye bakıyor:
+
+1. **Sunucudan istemci işlevi çağrılıyor mu** — `app/` altındaki 147 giriş
+   noktasından başlayıp içe alım ağacını yürüyor. Gerçek kırığın kendisi ve
+   dolaylı yol (sunucu girişi → sunucu yardımcısı → istemci işlevi) enjekte
+   edilip yakalandı.
+2. **İstemciden gizli env okunuyor mu** — `"use client"`ten ulaşılan her yerde
+   `process.env.X` (X `NEXT_PUBLIC_` değilse). Değer derleme sırasında pakete
+   gömülür ve her ziyaretçiye gider; bunu `server-only` dışında hiçbir şey
+   korumuyordu. 164 istemci girişi taranıyor.
+3. **Seri hâle gelmeyen prop geçiliyor mu** — sunucu bileşeninden istemci
+   bileşenine fonksiyon, `Date`, `Map`, `Set`.
+
+**Üçüncü ölçüm bir kez hiçbir şey ölçmedi ve bu turun asıl dersi o.** Açılış
+etiketini `[\s\S]{0,700}?/?>` ile kesiyordum; ilk `>` **okun içindeydi**
+(`onPick={() => …}`), yani etiket tam da aranan prop'un önünde bitiyordu.
+Enjeksiyon yakalanmayınca ortaya çıktı — ve tuzağın kaydı depoda zaten vardı:
+`check:parity` §138 civarı aynı hatayı kendi içinde bir kez yaşamış ve çözümü
+yazmış ("ok işaretinde bitmeyen ilk `>`", yani `[^=]>`).
+
+İkinci ayar da ölçümle geldi: `new Date()` ihlal ama `new Date().toISOString()`
+değil — ikincisi dizgi döndürüyor. Kalıp kurucunun kapanışında bitmeyi şart
+koşuyor. Beş girdiyle sınandı, beşi doğru ayrıldı.
+
+**Ve bir hata:** bu turda mobil lint'i açan tek satırlık düzeltmeyi commit
+ederken, pathspec ile evreleme aynı dosyada duran **başka bir oturumun
+kaydedilmemiş işini** de içine aldı. İçerik doğru ve kapılar yeşil olduğu için
+geri alınmadı; commit mesajı iki işi taşıdığını açıkça yazıyor. Defterdeki
+`GIT_INDEX_FILE` kuralının sınırı buymuş: ayrı indeks kurmak **dosya
+içeriğini** parçalamıyor.

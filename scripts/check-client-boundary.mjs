@@ -137,6 +137,67 @@ function scanEnv(file, entry, depth) {
 
 for (const e of clientEntries) scanEnv(e, e, 0);
 
+/**
+ * ÜÇÜNCÜ SINIR: sunucudan istemciye SERİ HÂLE GELMEYEN prop.
+ *
+ * Sunucu bileşeninin istemci bileşenine geçirdiği her prop JSON'a
+ * çevriliyor. Fonksiyon, `Date`, `Map`, `Set` çevrilemiyor ve Next çizim
+ * sırasında fırlatıyor ("Functions cannot be passed directly to Client
+ * Components"). Derleme geçer, tip geçer — sayfayı AÇANA kadar görünmez;
+ * §11.302'deki `hubTab` kırığının tam kardeşi.
+ *
+ * TARAMA BİR KEZ HİÇBİR ŞEY ÖLÇMEDİ ve sebebi kayda değer: açılış etiketini
+ * `[\s\S]{0,700}?/?>` ile kesiyordum ve ilk `>` OKUN içindeydi
+ * (`onPick={() => …}`), yani etiket tam da aranan prop'un ÖNÜNDE bitiyordu.
+ * Enjeksiyon yakalanmayınca ortaya çıktı. Bu tuzağın kaydı depoda zaten
+ * vardı (`check:parity` §138 civarı, "ok işaretinde bitmeyen ilk `>`");
+ * çözüm de oradan: `[^=]>`.
+ */
+const serialize = new Set();
+for (const file of files) {
+  if (isClient(file) || !file.endsWith(".tsx")) continue;
+  const src = read(file);
+  const fromClient = new Map();
+  for (const m of src.matchAll(/import\s*\{([^}]+)\}\s*from\s*["']([^"']+)["']/g)) {
+    const target = resolve(file, m[2]);
+    if (!target || !isClient(target)) continue;
+    for (const raw of m[1].split(",")) {
+      const name = raw.trim().replace(/^type\s+/, "").split(/\s+as\s+/).pop()?.trim();
+      if (name && /^[A-Z]/.test(name)) fromClient.set(name, m[2]);
+    }
+  }
+  for (const [name, mod] of fromClient) {
+    const tag = new RegExp("<" + name + "\\b[\\s\\S]{0,700}?[^=]>", "g");
+    for (const m of src.matchAll(tag)) {
+      for (const p of m[0].matchAll(/(\w+)=\{([^}]*(?:\{[^}]*\}[^}]*)*)\}/g)) {
+        const value = p[2].trim();
+        /* `new Date()` ihlal, `new Date().toISOString()` DEĞİL: ikincisi
+           dizgi döndürüyor ve seri hâle geliyor. Kalıp bu yüzden kurucunun
+           kapanışında BİTMEYİ şart koşuyor. */
+        const nonSerializable =
+          /^\(.*\)\s*=>/.test(value) ||
+          /^function\b/.test(value) ||
+          /^async\s/.test(value) ||
+          /^new (?:Date|Map|Set)\([^)]*\)$/.test(value);
+        if (nonSerializable) {
+          serialize.add(`${file}\n      <${name} ${p[1]}={${value.slice(0, 48)}…}>  <-  ${mod}`);
+        }
+      }
+    }
+  }
+}
+
+if (serialize.size) {
+  console.error("\nSUNUCUDAN İSTEMCİYE SERİ HÂLE GELMEYEN PROP:\n");
+  for (const x of serialize) console.error("  " + x + "\n");
+  console.error(
+    "Next bu prop'u JSON'a çeviremiyor ve çizim sırasında fırlatır.\n" +
+    "Değeri istemci tarafında üretin ya da seri hâle gelen bir biçimde geçirin\n" +
+    "(tarih için ISO dizgi, eşleme için dizi).\n",
+  );
+  process.exit(1);
+}
+
 if (leaks.size) {
   console.error("\nİSTEMCİDEN GİZLİ ENV OKUNUYOR:\n");
   for (const l of leaks) console.error("  " + l + "\n");
