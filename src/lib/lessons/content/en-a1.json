@@ -763,6 +763,18 @@
    {
     "de": "thanks",
     "tr": "teşekkürler"
+   },
+   {
+    "de": "happy",
+    "tr": "mutlu"
+   },
+   {
+    "de": "sad",
+    "tr": "hüzünlü"
+   },
+   {
+    "de": "ill",
+    "tr": "hasta"
    }
   ],
   "patterns": [
@@ -996,6 +1008,78 @@
      "accept": [
       "I am good, thank you."
      ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kelime daha:"
+     },
+     {
+      "lang": "en",
+      "text": "happy"
+     },
+     {
+      "lang": "tr",
+      "text": "Türkçesi \"mutlu\" demek. Lütfen tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "happy"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "happy"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kelime daha:"
+     },
+     {
+      "lang": "en",
+      "text": "sad"
+     },
+     {
+      "lang": "tr",
+      "text": "Türkçesi \"hüzünlü\" demek. Lütfen tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "sad"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "sad"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kelime daha:"
+     },
+     {
+      "lang": "en",
+      "text": "ill"
+     },
+     {
+      "lang": "tr",
+      "text": "Türkçesi \"hasta\" demek. Lütfen tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "ill"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "ill"
     }
    },
    {
@@ -1348,6 +1432,18 @@
    {
     "de": "tired",
     "tr": "yorgun"
+   },
+   {
+    "de": "married",
+    "tr": "evli"
+   },
+   {
+    "de": "hungry",
+    "tr": "aç"
+   },
+   {
+    "de": "thirsty",
+    "tr": "susamış"
    }
   ],
   "patterns": [
@@ -1753,6 +1849,78 @@
     "say": [
      {
       "lang": "tr",
+      "text": "Bir kelime daha:"
+     },
+     {
+      "lang": "en",
+      "text": "married"
+     },
+     {
+      "lang": "tr",
+      "text": "Türkçesi \"evli\" demek. Lütfen tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "married"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "married"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kelime daha:"
+     },
+     {
+      "lang": "en",
+      "text": "hungry"
+     },
+     {
+      "lang": "tr",
+      "text": "Türkçesi \"aç\" demek. Lütfen tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "hungry"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "hungry"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kelime daha:"
+     },
+     {
+      "lang": "en",
+      "text": "thirsty"
+     },
+     {
+      "lang": "tr",
+      "text": "Türkçesi \"susamış\" demek. Lütfen tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "thirsty"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "thirsty"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
       "text": "Bir tane de sen kur. Bir kadını kastederek sor: O bir öğretmen mi?"
      }
     ],
@@ -1854,6 +2022,18 @@
    {
     "de": "come",
     "tr": "gelmek"
+   },
+   {
+    "de": "town",
+    "tr": "kasaba"
+   },
+   {
+    "de": "north",
+    "tr": "kuzey"
+   },
+   {
+    "de": "world",
+    "tr": "dünya"
    }
   ],
   "patterns": [
@@ -2080,6 +2260,78 @@
     "expect": {
      "kind": "repeat",
      "target": "Where are you from"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kelime daha:"
+     },
+     {
+      "lang": "en",
+      "text": "town"
+     },
+     {
+      "lang": "tr",
+      "text": "Türkçesi \"kasaba\" demek. Lütfen tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "town"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "town"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kelime daha:"
+     },
+     {
+      "lang": "en",
+      "text": "north"
+     },
+     {
+      "lang": "tr",
+      "text": "Türkçesi \"kuzey\" demek. Lütfen tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "north"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "north"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kelime daha:"
+     },
+     {
+      "lang": "en",
+      "text": "world"
+     },
+     {
+      "lang": "tr",
+      "text": "Türkçesi \"dünya\" demek. Lütfen tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "world"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "world"
     }
    },
    {
@@ -2497,6 +2749,18 @@
    {
     "de": "understand",
     "tr": "anlamak"
+   },
+   {
+    "de": "word",
+    "tr": "kelime"
+   },
+   {
+    "de": "mean",
+    "tr": "anlamına gelmek"
+   },
+   {
+    "de": "easy",
+    "tr": "kolay"
    }
   ],
   "patterns": [
@@ -2892,6 +3156,78 @@
     "say": [
      {
       "lang": "tr",
+      "text": "Bir kelime daha:"
+     },
+     {
+      "lang": "en",
+      "text": "word"
+     },
+     {
+      "lang": "tr",
+      "text": "Türkçesi \"kelime\" demek. Lütfen tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "word"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "word"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kelime daha:"
+     },
+     {
+      "lang": "en",
+      "text": "mean"
+     },
+     {
+      "lang": "tr",
+      "text": "Türkçesi \"anlamına gelmek\" demek. Lütfen tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "mean"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "mean"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kelime daha:"
+     },
+     {
+      "lang": "en",
+      "text": "easy"
+     },
+     {
+      "lang": "tr",
+      "text": "Türkçesi \"kolay\" demek. Lütfen tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "easy"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "easy"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
       "text": "Bunun soru hali de aynı mantıkla kuruluyor. Karşındakine \"Anlıyor musun?\" demek istersen, başa yine"
      },
      {
@@ -3088,6 +3424,18 @@
    {
     "de": "price",
     "tr": "fiyat"
+   },
+   {
+    "de": "count",
+    "tr": "saymak"
+   },
+   {
+    "de": "one",
+    "tr": "bir"
+   },
+   {
+    "de": "how much",
+    "tr": "ne kadar"
    }
   ],
   "patterns": [
@@ -3445,6 +3793,78 @@
     "say": [
      {
       "lang": "tr",
+      "text": "Bir kelime daha:"
+     },
+     {
+      "lang": "en",
+      "text": "count"
+     },
+     {
+      "lang": "tr",
+      "text": "Türkçesi \"saymak\" demek. Lütfen tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "count"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "count"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kelime daha:"
+     },
+     {
+      "lang": "en",
+      "text": "one"
+     },
+     {
+      "lang": "tr",
+      "text": "Türkçesi \"bir\" demek. Lütfen tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "one"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "one"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kelime daha:"
+     },
+     {
+      "lang": "en",
+      "text": "how much"
+     },
+     {
+      "lang": "tr",
+      "text": "Türkçesi \"ne kadar\" demek. Lütfen tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "how much"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "how much"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
       "text": "Şimdi cevabı sen ver: On beş dolar."
      }
     ],
@@ -3562,6 +3982,18 @@
    {
     "de": "again",
     "tr": "tekrar, yine"
+   },
+   {
+    "de": "pen",
+    "tr": "kalem"
+   },
+   {
+    "de": "page",
+    "tr": "sayfa"
+   },
+   {
+    "de": "print",
+    "tr": "yazdırmak"
    }
   ],
   "patterns": [
@@ -3820,6 +4252,78 @@
     "expect": {
      "kind": "repeat",
      "target": "How do you spell it"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kelime daha:"
+     },
+     {
+      "lang": "en",
+      "text": "pen"
+     },
+     {
+      "lang": "tr",
+      "text": "Türkçesi \"kalem\" demek. Lütfen tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "pen"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "pen"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kelime daha:"
+     },
+     {
+      "lang": "en",
+      "text": "page"
+     },
+     {
+      "lang": "tr",
+      "text": "Türkçesi \"sayfa\" demek. Lütfen tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "page"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "page"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kelime daha:"
+     },
+     {
+      "lang": "en",
+      "text": "print"
+     },
+     {
+      "lang": "tr",
+      "text": "Türkçesi \"yazdırmak\" demek. Lütfen tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "print"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "print"
     }
    },
    {
@@ -4168,6 +4672,18 @@
    {
     "de": "doctor",
     "tr": "doktor"
+   },
+   {
+    "de": "singer",
+    "tr": "şarkıcı"
+   },
+   {
+    "de": "coach",
+    "tr": "antrenör"
+   },
+   {
+    "de": "staff",
+    "tr": "personel"
    }
   ],
   "patterns": [
@@ -4522,6 +5038,78 @@
     "say": [
      {
       "lang": "tr",
+      "text": "Bir kelime daha:"
+     },
+     {
+      "lang": "en",
+      "text": "singer"
+     },
+     {
+      "lang": "tr",
+      "text": "Türkçesi \"şarkıcı\" demek. Lütfen tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "singer"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "singer"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kelime daha:"
+     },
+     {
+      "lang": "en",
+      "text": "coach"
+     },
+     {
+      "lang": "tr",
+      "text": "Türkçesi \"antrenör\" demek. Lütfen tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "coach"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "coach"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kelime daha:"
+     },
+     {
+      "lang": "en",
+      "text": "staff"
+     },
+     {
+      "lang": "tr",
+      "text": "Türkçesi \"personel\" demek. Lütfen tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "staff"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "staff"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
       "text": "In a kalıbının arkasına yeri koyuyorsun:"
      },
      {
@@ -4688,6 +5276,18 @@
    {
     "de": "month",
     "tr": "ay"
+   },
+   {
+    "de": "cake",
+    "tr": "kek"
+   },
+   {
+    "de": "adult",
+    "tr": "yetişkin"
+   },
+   {
+    "de": "baby",
+    "tr": "bebek"
    }
   ],
   "patterns": [
@@ -5089,6 +5689,78 @@
      },
      {
       "lang": "en",
+      "text": "cake"
+     },
+     {
+      "lang": "tr",
+      "text": "Türkçesi \"kek\" demek. Lütfen tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "cake"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "cake"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kelime daha:"
+     },
+     {
+      "lang": "en",
+      "text": "adult"
+     },
+     {
+      "lang": "tr",
+      "text": "Türkçesi \"yetişkin\" demek. Lütfen tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "adult"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "adult"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kelime daha:"
+     },
+     {
+      "lang": "en",
+      "text": "baby"
+     },
+     {
+      "lang": "tr",
+      "text": "Türkçesi \"bebek\" demek. Lütfen tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "baby"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "baby"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kelime daha:"
+     },
+     {
+      "lang": "en",
       "text": "month"
      },
      {
@@ -5289,6 +5961,18 @@
    {
     "de": "email address",
     "tr": "e-posta adresi"
+   },
+   {
+    "de": "first name",
+    "tr": "ad"
+   },
+   {
+    "de": "last name",
+    "tr": "soyadı"
+   },
+   {
+    "de": "code",
+    "tr": "kod"
    }
   ],
   "patterns": [
@@ -5595,6 +6279,78 @@
      },
      {
       "lang": "en",
+      "text": "first name"
+     },
+     {
+      "lang": "tr",
+      "text": "Türkçesi \"ad\" demek. Lütfen tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "first name"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "first name"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kelime daha:"
+     },
+     {
+      "lang": "en",
+      "text": "last name"
+     },
+     {
+      "lang": "tr",
+      "text": "Türkçesi \"soyadı\" demek. Lütfen tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "last name"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "last name"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kelime daha:"
+     },
+     {
+      "lang": "en",
+      "text": "code"
+     },
+     {
+      "lang": "tr",
+      "text": "Türkçesi \"kod\" demek. Lütfen tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "code"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "code"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kelime daha:"
+     },
+     {
+      "lang": "en",
       "text": "city"
      },
      {
@@ -5864,6 +6620,18 @@
    {
     "de": "brother",
     "tr": "erkek kardeş"
+   },
+   {
+    "de": "parents",
+    "tr": "anne baba"
+   },
+   {
+    "de": "grandma",
+    "tr": "nine"
+   },
+   {
+    "de": "grandpa",
+    "tr": "dede"
    }
   ],
   "patterns": [
@@ -6090,6 +6858,78 @@
     "expect": {
      "kind": "repeat",
      "target": "This is my father"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kelime daha:"
+     },
+     {
+      "lang": "en",
+      "text": "parents"
+     },
+     {
+      "lang": "tr",
+      "text": "Türkçesi \"anne baba\" demek. Lütfen tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "parents"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "parents"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kelime daha:"
+     },
+     {
+      "lang": "en",
+      "text": "grandma"
+     },
+     {
+      "lang": "tr",
+      "text": "Türkçesi \"nine\" demek. Lütfen tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "grandma"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "grandma"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kelime daha:"
+     },
+     {
+      "lang": "en",
+      "text": "grandpa"
+     },
+     {
+      "lang": "tr",
+      "text": "Türkçesi \"dede\" demek. Lütfen tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "grandpa"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "grandpa"
     }
    },
    {
@@ -6420,6 +7260,18 @@
    {
     "de": "young",
     "tr": "genç"
+   },
+   {
+    "de": "boy",
+    "tr": "erkek çocuk"
+   },
+   {
+    "de": "girl",
+    "tr": "kız"
+   },
+   {
+    "de": "grow",
+    "tr": "büyümek"
    }
   ],
   "patterns": [
@@ -6706,6 +7558,78 @@
     "say": [
      {
       "lang": "tr",
+      "text": "Bir kelime daha:"
+     },
+     {
+      "lang": "en",
+      "text": "boy"
+     },
+     {
+      "lang": "tr",
+      "text": "Türkçesi \"erkek çocuk\" demek. Lütfen tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "boy"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "boy"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kelime daha:"
+     },
+     {
+      "lang": "en",
+      "text": "girl"
+     },
+     {
+      "lang": "tr",
+      "text": "Türkçesi \"kız\" demek. Lütfen tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "girl"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "girl"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kelime daha:"
+     },
+     {
+      "lang": "en",
+      "text": "grow"
+     },
+     {
+      "lang": "tr",
+      "text": "Türkçesi \"büyümek\" demek. Lütfen tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "grow"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "grow"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
       "text": "Bu soruya cevap çok kısa. Varsa:"
      },
      {
@@ -6925,6 +7849,18 @@
    {
     "de": "forget",
     "tr": "unutmak"
+   },
+   {
+    "de": "nothing",
+    "tr": "hiçbir şey"
+   },
+   {
+    "de": "no",
+    "tr": "hayır"
+   },
+   {
+    "de": "only",
+    "tr": "sadece"
    }
   ],
   "patterns": [
@@ -7336,6 +8272,78 @@
     "say": [
      {
       "lang": "tr",
+      "text": "Bir kelime daha:"
+     },
+     {
+      "lang": "en",
+      "text": "nothing"
+     },
+     {
+      "lang": "tr",
+      "text": "Türkçesi \"hiçbir şey\" demek. Lütfen tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "nothing"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "nothing"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kelime daha:"
+     },
+     {
+      "lang": "en",
+      "text": "no"
+     },
+     {
+      "lang": "tr",
+      "text": "Türkçesi \"hayır\" demek. Lütfen tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "no"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "no"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kelime daha:"
+     },
+     {
+      "lang": "en",
+      "text": "only"
+     },
+     {
+      "lang": "tr",
+      "text": "Türkçesi \"sadece\" demek. Lütfen tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "only"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "only"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
       "text": "Aynı şekilde en sık duyacağın uyarılardan biri:"
      },
      {
@@ -7452,6 +8460,18 @@
    {
     "de": "name",
     "tr": "isim"
+   },
+   {
+    "de": "fish",
+    "tr": "balık"
+   },
+   {
+    "de": "horse",
+    "tr": "at"
+   },
+   {
+    "de": "zoo",
+    "tr": "hayvanat bahçesi"
    }
   ],
   "patterns": [
@@ -7718,6 +8738,78 @@
     "expect": {
      "kind": "repeat",
      "target": "I have a dog"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kelime daha:"
+     },
+     {
+      "lang": "en",
+      "text": "fish"
+     },
+     {
+      "lang": "tr",
+      "text": "Türkçesi \"balık\" demek. Lütfen tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "fish"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "fish"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kelime daha:"
+     },
+     {
+      "lang": "en",
+      "text": "horse"
+     },
+     {
+      "lang": "tr",
+      "text": "Türkçesi \"at\" demek. Lütfen tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "horse"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "horse"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kelime daha:"
+     },
+     {
+      "lang": "en",
+      "text": "zoo"
+     },
+     {
+      "lang": "tr",
+      "text": "Türkçesi \"hayvanat bahçesi\" demek. Lütfen tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "zoo"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "zoo"
     }
    },
    {
@@ -8017,6 +9109,18 @@
    {
     "de": "who",
     "tr": "kim"
+   },
+   {
+    "de": "picture",
+    "tr": "resim"
+   },
+   {
+    "de": "that",
+    "tr": "şu; ki"
+   },
+   {
+    "de": "person",
+    "tr": "kişi"
    }
   ],
   "patterns": [
@@ -8306,6 +9410,78 @@
     "say": [
      {
       "lang": "tr",
+      "text": "Bir kelime daha:"
+     },
+     {
+      "lang": "en",
+      "text": "picture"
+     },
+     {
+      "lang": "tr",
+      "text": "Türkçesi \"resim\" demek. Lütfen tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "picture"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "picture"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kelime daha:"
+     },
+     {
+      "lang": "en",
+      "text": "that"
+     },
+     {
+      "lang": "tr",
+      "text": "Türkçesi \"şu; ki\" demek. Lütfen tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "that"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "that"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kelime daha:"
+     },
+     {
+      "lang": "en",
+      "text": "person"
+     },
+     {
+      "lang": "tr",
+      "text": "Türkçesi \"kişi\" demek. Lütfen tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "person"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "person"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
       "text": "Küçük ama önemli bir kural: tek şey için is, birden fazla şey için are."
      },
      {
@@ -8511,6 +9687,18 @@
    {
     "de": "many",
     "tr": "birçok"
+   },
+   {
+    "de": "thing",
+    "tr": "şey"
+   },
+   {
+    "de": "group",
+    "tr": "grup"
+   },
+   {
+    "de": "both",
+    "tr": "her ikisi de"
    }
   ],
   "patterns": [
@@ -8866,6 +10054,78 @@
     "say": [
      {
       "lang": "tr",
+      "text": "Bir kelime daha:"
+     },
+     {
+      "lang": "en",
+      "text": "thing"
+     },
+     {
+      "lang": "tr",
+      "text": "Türkçesi \"şey\" demek. Lütfen tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "thing"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "thing"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kelime daha:"
+     },
+     {
+      "lang": "en",
+      "text": "group"
+     },
+     {
+      "lang": "tr",
+      "text": "Türkçesi \"grup\" demek. Lütfen tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "group"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "group"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kelime daha:"
+     },
+     {
+      "lang": "en",
+      "text": "both"
+     },
+     {
+      "lang": "tr",
+      "text": "Türkçesi \"her ikisi de\" demek. Lütfen tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "both"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "both"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
       "text": "Şimdi sen kur. Burada birçok insan olduğunu söyle. Bir yerde bir şey var demek için there is, birden fazlaysa there are kullanıyoruz."
      }
     ],
@@ -9006,6 +10266,18 @@
    {
     "de": "look",
     "tr": "bakmak, görünmek"
+   },
+   {
+    "de": "face",
+    "tr": "yüz"
+   },
+   {
+    "de": "nose",
+    "tr": "burun"
+   },
+   {
+    "de": "mouth",
+    "tr": "ağız"
    }
   ],
   "patterns": [
@@ -9316,6 +10588,78 @@
     "say": [
      {
       "lang": "tr",
+      "text": "Bir kelime daha:"
+     },
+     {
+      "lang": "en",
+      "text": "face"
+     },
+     {
+      "lang": "tr",
+      "text": "Türkçesi \"yüz\" demek. Lütfen tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "face"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "face"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kelime daha:"
+     },
+     {
+      "lang": "en",
+      "text": "nose"
+     },
+     {
+      "lang": "tr",
+      "text": "Türkçesi \"burun\" demek. Lütfen tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "nose"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "nose"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kelime daha:"
+     },
+     {
+      "lang": "en",
+      "text": "mouth"
+     },
+     {
+      "lang": "tr",
+      "text": "Türkçesi \"ağız\" demek. Lütfen tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "mouth"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "mouth"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
       "text": "Renk eklemek çok kolay, rengi ismin önüne koyarsın:"
      },
      {
@@ -9520,6 +10864,18 @@
    {
     "de": "together",
     "tr": "birlikte"
+   },
+   {
+    "de": "talk",
+    "tr": "sohbet etmek"
+   },
+   {
+    "de": "game",
+    "tr": "oyun"
+   },
+   {
+    "de": "club",
+    "tr": "kulüp"
    }
   ],
   "patterns": [
@@ -9834,6 +11190,78 @@
     "say": [
      {
       "lang": "tr",
+      "text": "Bir kelime daha:"
+     },
+     {
+      "lang": "en",
+      "text": "talk"
+     },
+     {
+      "lang": "tr",
+      "text": "Türkçesi \"sohbet etmek\" demek. Lütfen tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "talk"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "talk"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kelime daha:"
+     },
+     {
+      "lang": "en",
+      "text": "game"
+     },
+     {
+      "lang": "tr",
+      "text": "Türkçesi \"oyun\" demek. Lütfen tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "game"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "game"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kelime daha:"
+     },
+     {
+      "lang": "en",
+      "text": "club"
+     },
+     {
+      "lang": "tr",
+      "text": "Türkçesi \"kulüp\" demek. Lütfen tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "club"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "club"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
       "text": "Şimdi sen kur: Biz birlikte oynarız."
      }
     ],
@@ -9998,6 +11426,18 @@
    {
     "de": "grandfather",
     "tr": "büyükbaba"
+   },
+   {
+    "de": "grandparents",
+    "tr": "büyükanne ve büyükbaba"
+   },
+   {
+    "de": "parent",
+    "tr": "ebeveyn"
+   },
+   {
+    "de": "husband",
+    "tr": "koca"
    }
   ],
   "patterns": [
@@ -10361,6 +11801,78 @@
     "say": [
      {
       "lang": "tr",
+      "text": "Bir kelime daha:"
+     },
+     {
+      "lang": "en",
+      "text": "grandparents"
+     },
+     {
+      "lang": "tr",
+      "text": "Türkçesi \"büyükanne ve büyükbaba\" demek. Lütfen tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "grandparents"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "grandparents"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kelime daha:"
+     },
+     {
+      "lang": "en",
+      "text": "parent"
+     },
+     {
+      "lang": "tr",
+      "text": "Türkçesi \"ebeveyn\" demek. Lütfen tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "parent"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "parent"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kelime daha:"
+     },
+     {
+      "lang": "en",
+      "text": "husband"
+     },
+     {
+      "lang": "tr",
+      "text": "Türkçesi \"koca\" demek. Lütfen tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "husband"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "husband"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
       "text": "Şimdi ikisini birleştirelim. 'Bu Elif'in büyükannesi.' cümlesini kur."
      }
     ],
@@ -10475,6 +11987,18 @@
    {
     "de": "nice",
     "tr": "cana yakın"
+   },
+   {
+    "de": "angry",
+    "tr": "kızgın"
+   },
+   {
+    "de": "strong",
+    "tr": "güçlü"
+   },
+   {
+    "de": "great",
+    "tr": "harika"
    }
   ],
   "patterns": [
@@ -10872,6 +12396,78 @@
     "say": [
      {
       "lang": "tr",
+      "text": "Bir kelime daha:"
+     },
+     {
+      "lang": "en",
+      "text": "angry"
+     },
+     {
+      "lang": "tr",
+      "text": "Türkçesi \"kızgın\" demek. Lütfen tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "angry"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "angry"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kelime daha:"
+     },
+     {
+      "lang": "en",
+      "text": "strong"
+     },
+     {
+      "lang": "tr",
+      "text": "Türkçesi \"güçlü\" demek. Lütfen tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "strong"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "strong"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kelime daha:"
+     },
+     {
+      "lang": "en",
+      "text": "great"
+     },
+     {
+      "lang": "tr",
+      "text": "Türkçesi \"harika\" demek. Lütfen tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "great"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "great"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
       "text": "Cevap kısacık olur:"
      },
      {
@@ -10991,6 +12587,18 @@
    {
     "de": "order",
     "tr": "sipariş"
+   },
+   {
+    "de": "cup",
+    "tr": "fincan"
+   },
+   {
+    "de": "café",
+    "tr": "kafe"
+   },
+   {
+    "de": "sandwich",
+    "tr": "sandviç"
    }
   ],
   "patterns": [
@@ -11265,6 +12873,78 @@
     "expect": {
      "kind": "repeat",
      "target": "I'll have"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kelime daha:"
+     },
+     {
+      "lang": "en",
+      "text": "cup"
+     },
+     {
+      "lang": "tr",
+      "text": "Türkçesi \"fincan\" demek. Lütfen tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "cup"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "cup"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kelime daha:"
+     },
+     {
+      "lang": "en",
+      "text": "café"
+     },
+     {
+      "lang": "tr",
+      "text": "Türkçesi \"kafe\" demek. Lütfen tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "café"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "café"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kelime daha:"
+     },
+     {
+      "lang": "en",
+      "text": "sandwich"
+     },
+     {
+      "lang": "tr",
+      "text": "Türkçesi \"sandviç\" demek. Lütfen tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "sandwich"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "sandwich"
     }
    },
    {

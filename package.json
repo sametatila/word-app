@@ -93,7 +93,7 @@
     "dump:lessons": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/dump-lessons-mobile.ts",
     "dump:mock-exams": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/dump-mock-exams-mobile.ts",
     "dump:mock-exams:en": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/dump-mock-exams-mobile.ts en",
-    "dump:native": "npm run lessons:apply && tsx --tsconfig scripts/tsconfig.e2e.json scripts/dump-native-mobile.ts",
+    "dump:native": "npm run lessons:apply && npm run lessons:apply-de && tsx --tsconfig scripts/tsconfig.e2e.json scripts/dump-native-mobile.ts",
     "check:unitvocab": "tsx scripts/check-unit-vocab.ts",
     "check:libvocab": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/check-library-vocab.ts",
     "report:library": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/report-library.ts",
