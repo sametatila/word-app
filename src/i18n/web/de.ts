@@ -261,8 +261,6 @@ export const deWeb: Record<string, string> = {
   "exam.submit_and_score": "Abgeben und bewerten",
   "exam.listen_dialog": "Dialog anhören",
   "exam.stop": "Stopp",
-  "exam.total": "Gesamt",
-  "exam.trial_note": "Probe (zählt erst, wenn die Modulgespräche fertig sind)",
   "exam.structures_measured": "Geprüfte Strukturen: {list}",
   "mockfb.summary": "{correct} von {total} Aufgaben richtig ({pct}).",
   "mockfb.hardest": "Am schwersten fiel dir: {goal} ({pct}).",

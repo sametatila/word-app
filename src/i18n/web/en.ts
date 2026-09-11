@@ -261,8 +261,6 @@ export const enWeb: Record<string, string> = {
   "exam.submit_and_score": "Submit and score",
   "exam.listen_dialog": "Listen to the dialogue",
   "exam.stop": "Stop",
-  "exam.total": "Total",
-  "exam.trial_note": "trial (doesn't count until the module conversations are done)",
   "exam.structures_measured": "Structures measured: {list}",
   "mockfb.summary": "{correct} of {total} items correct ({pct}).",
   "mockfb.hardest": "Where you struggled most: {goal} ({pct}).",

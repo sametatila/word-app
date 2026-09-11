@@ -287,8 +287,6 @@ export const trWeb: Record<string, string> = {
   "exam.submit_and_score": "Gönder ve puanla",
   "exam.listen_dialog": "Diyaloğu dinle",
   "exam.stop": "Durdur",
-  "exam.total": "Toplam",
-  "exam.trial_note": "deneme (modül konuşmaları bitmeden sayılmaz)",
   "exam.structures_measured": "Ölçülen yapılar: {list}",
   "mockfb.summary": "{total} maddenin {correct} tanesi doğru ({pct}).",
   "mockfb.hardest": "En çok zorlandığın yer: {goal} ({pct}).",

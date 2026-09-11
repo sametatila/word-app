@@ -6,6 +6,7 @@ import { PASS_SECTION, PASS_TOTAL } from "@/lib/exam-types";
 import { useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { Mascot } from "@/components/mascot";
+import { Confetti } from "@/components/celebrate";
 import { AnimatePresence, motion } from "framer-motion";
 import { GameSwitch } from "@/components/game-switch";
 import { NoHints } from "@/components/games/no-hints";
@@ -1057,14 +1058,24 @@ function Result({
         size={56}
         className="mb-3"
       />
+      {/* KUTLAMA. Android sinav sonucunda gecince konfeti atiyor
+          (`ExamScreen` `Celebrate show={!!result?.passed}`); webde sinav
+          oynaticisinin hicbir yerinde kutlama yoktu - gecmek en cok kutlanmasi
+          gereken an ve iki platformda iki ayri duyguydu. */}
+      <Confetti fire={result.passed ? 1 : 0} count={40} />
       <p className="muted text-micro uppercase tracking-wide">{title}</p>
-      <h1 className="text-h2">
-        {result.passed ? `Bestanden — ${t("exam.passed")}` : `Nicht bestanden — ${t("exam.not_passed")}`}
-      </h1>
-      <p className="muted mt-1 text-body">
-        {t("exam.total")} <strong>{t("common.pct", { n: result.total })}</strong>
-        {result.trial ? ` · ${t("exam.trial_note")}` : ""}
+      {/* SIRA ANDROID'DEKI GIBI: once BUYUK YUZDE, sonra hukum, sonra deneme
+          cumlesi. Web once hukmu yazip yuzdeyi "Toplam %78" diye kucuk bir
+          satira gomuyordu - ayni ekranda once okunan sey farkliydi. */}
+      <h1 className="text-h1 tabular-nums">{t("common.pct", { n: result.total })}</h1>
+      <p className="mt-1 text-strong" style={{ color: result.passed ? "var(--color-success)" : "var(--text-muted)" }}>
+        {result.passed ? t("exam.passed") : t("exam.not_passed")}
       </p>
+      {/* DENEME CUMLESI ORTAK ANAHTARDAN. Web "deneme (modul konusmalari
+          bitmeden sayilmaz)" diye toplam satirina eklenmis kisa bir parantez
+          yaziyordu; Android tam cumleyi kendi satirinda veriyor ve sebebi de
+          soyluyor (%80 esigi). Ortak olan kullaniliyor. */}
+      {result.trial ? <p className="muted mt-1 text-caption">{t("exam.trial_notice")}</p> : null}
 
       <ul className="mt-3 space-y-1.5">
         {result.sections.map((s) => (
