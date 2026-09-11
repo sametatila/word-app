@@ -36,6 +36,7 @@
     "check:dumps": "npm run lessons:apply && tsx --tsconfig scripts/tsconfig.e2e.json scripts/check-dumps.ts",
     "check:parity": "node scripts/parity-check.mjs",
     "check:endpoints": "node scripts/check-endpoints.mjs --check",
+    "check:client-boundary": "node scripts/check-client-boundary.mjs",
     "check:colors": "node scripts/check-colors.mjs",
     "check:tokens": "node scripts/check-tokens.mjs",
     "check:pairs": "npm run lessons:apply && npm run lessons:apply-de && tsx --tsconfig scripts/tsconfig.e2e.json scripts/check-pairs.ts",
