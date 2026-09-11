@@ -7226,6 +7226,52 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     "beklenen",
   );
 
+  /* ── 201. gramer sorularinin secimi ──────────────────────────────────
+   * `deriveGrammar` iki tarafta ayni kurali uyguluyordu ama SECIMI yapan
+   * karistirma ayni degildi. Mobil dosyanin icinde `seededOrder` diye ayri
+   * bir uygulama duruyordu; yorumu "web'deki seededShuffle ile ayni amac"
+   * diyordu - amac ayniydi, algoritma degil. Ikisi de FNV-1a ile tohumluyor
+   * ama kopya xorshift + `Math.abs(h) % (i+1)`, web (ve mobilin KENDI
+   * `lib/shuffle`i) mulberry32 + `Math.floor(rand() * (i+1))` kullaniyordu.
+   *
+   * Sira farki masum degil: hukum sayisi yaridan coksa dilimleme SECIMI de
+   * degistiriyor. Dokuz hukum ve dort secim ile olculdu - ornek unitelerin
+   * hepsinde iki platform FARKLI soru kumesi seciyordu.
+   *
+   * Ikinci ayrisma tohumun kendisindeydi: mobil `de-` onekini SABIT
+   * yaziyordu, yani Ingilizce kursta webin tohumundan (`${kurs}-...`) farkli
+   * bir dizi uretiyordu.
+   *
+   * Kapi ucunu de mutlak olcutle tutuyor: paylasilan karistirma kullaniliyor
+   * mu, dosyada ayri bir kopya kalmis mi, ve tohum kursu tasiyor mu. */
+  {
+    const mob = sil(read("mobile/src/game/immersionQuiz.ts"));
+    const web = sil(read("src/lib/immersion/grammar.ts"));
+    sameList(
+      "gramer sorulari ayni siradan",
+      [
+        "mobil karistirma=" + (/seededShuffle\(judges,/.test(mob) && /seededShuffle\(orders,/.test(mob) ? "paylasilan" : "AYRI KOPYA"),
+        "mobil kopya kalmis mi=" + (/function seededOrder/.test(mob) ? "EVET" : "hayir"),
+        "web karistirma=" + (/seededShuffle\(judges,/.test(web) && /seededShuffle\(orders,/.test(web) ? "paylasilan" : "AYRI KOPYA"),
+        "mobil tohum kursu tasiyor=" + (/`\$\{currentCourseId\(\)\}-\$\{String\(level\)\.toLowerCase\(\)\}-u\$\{String\(unitIndex\)\.padStart\(2, "0"\)\}`/.test(mob) ? "evet" : "HAYIR"),
+        /* Hukum/dizme oraninin da ayni kalmasi gerek: biri yariyi, oteki
+           ucte biri alsaydi ayni unitede farkli agirlik olurdu. */
+        "mobil oran=" + ((mob.match(/Math\.ceil\(count \/ (\d+)\)/) ?? [])[1] ?? "yok"),
+        "web oran=" + ((web.match(/Math\.ceil\(count \/ (\d+)\)/) ?? [])[1] ?? "yok"),
+      ],
+      [
+        "mobil karistirma=paylasilan",
+        "mobil kopya kalmis mi=hayir",
+        "web karistirma=paylasilan",
+        "mobil tohum kursu tasiyor=evet",
+        "mobil oran=2",
+        "web oran=2",
+      ],
+      "bulunan",
+      "beklenen",
+    );
+  }
+
   /* ── 200. unite quizinde tekrar sorulari ─────────────────────────────
    * Webin `deriveQuiz`i sorularin ucte birini ONCEKI unitelerden secip kendi
    * sorularinin arasina serpiyor (`pickReview` + `interleave`); mobilde bu

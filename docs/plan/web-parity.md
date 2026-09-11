@@ -9683,3 +9683,39 @@ beşi artık yakalanıyor.
 Gövde karşılaştırmasının tutması için mobile `QuizPool` tipi de eklendi —
 imzalar ayrı yazıldığında (`{ vocab: VocabItem[] }` ile `QuizPool`) kapı
 gövdeyi ayrışık görüyordu. İki taraf artık aynı adı kullanıyor.
+
+## §11.295 — Gramer soruları: aynı kural, farklı karıştırma, farklı sorular
+
+`deriveGrammar` iki tarafta aynı kuralı uyguluyordu — hüküm adımları çekirdek,
+dizme soruları pekiştirme, yarı yarıya — ama **seçimi yapan karıştırma aynı
+değildi.** Mobil dosyanın içinde `seededOrder` diye ayrı bir uygulama duruyordu
+ve yorumu "web'deki `seededShuffle` ile aynı **amaç**" diyordu. Amaç aynıydı,
+algoritma değil: ikisi de FNV-1a ile tohumluyor, ama kopya xorshift +
+`Math.abs(h) % (i+1)`, web (**ve mobilin kendi `lib/shuffle`ı**) mulberry32 +
+`Math.floor(rand() * (i+1))` kullanıyordu.
+
+Sıra farkı masum değil: hüküm sayısı yarıdan çoksa dilimleme **seçimi de**
+değiştiriyor. Dokuz hüküm ve dört seçimle ölçtüm — örnek ünitelerin
+**hepsinde** iki platform farklı soru kümesi seçiyordu:
+
+| Ünite | Web | Mobil (eski) |
+|---|---|---|
+| de-a1-u01 | H2,H6,H5,H3 | H3,H2,H7,H0 |
+| de-a2-u03 | H5,H0,H2,H3 | H5,H8,H1,H4 |
+
+İkinci ayrışma tohumun kendisindeydi: mobil `de-` önekini **sabit** yazıyordu,
+yani İngilizce kursta webin tohumundan (`${kurs}-…`) farklı bir dizi
+üretiyordu — ve iki kurs mobilde aynı tohumu paylaşıyordu.
+
+İlginç olan: mobilde doğru karıştırma **zaten vardı** (`lib/shuffle`
+`seededShuffle`, gövdesi webinkiyle karşılaştırılıyor ve yeşil). Bu dosya onu
+kullanmak yerine kendi kopyasını yazmıştı. Kapının "tohumlu karıştırma"
+ölçümü de yeşildi — çünkü ölçtüğü modül doğruydu; **yanlış olan, o modülü
+kullanmayan çağıran.**
+
+**§201** dört şeyi mutlak ölçütle tutuyor: iki taraf da paylaşılan karıştırmayı
+mı kullanıyor, dosyada ayrı bir kopya kalmış mı, tohum kursu taşıyor mu, ve
+hüküm/dizme oranı aynı mı. Dört enjeksiyonun dördü yakalandı — biri ilk
+denemede hedefi ıskaladığı için (Türkçe "Ş" harfi yüzünden eşleşmeyen bir
+`sed`) ayrıca tekrar denendi; §11.285'te öğrenilen şey: **yakalanmayan bir
+enjeksiyon, önce enjeksiyonun kendisinden şüphelenmeyi gerektirir.**

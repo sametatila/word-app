@@ -6,6 +6,7 @@
  * üretir; QuestionList aynen render eder.
  */
 import { lessonsForLevel } from "../data/lessons";
+import { seededShuffle } from "../lib/shuffle";
 import { moduleTheme } from "../data/moduleThemes";
 import { t, targetLangName } from "../lib/i18n";
 import { currentCourseId } from "../lib/courses";
@@ -192,18 +193,13 @@ export function deriveQuiz(
 
 /* ─────────────────────────── GRAMER ─────────────────────────── */
 
-/** Tohumlu karıştırma — web'deki seededShuffle ile aynı amaç: sıra sabit kalsın. */
-function seededOrder<T>(arr: T[], seed: string): T[] {
-  let h = 2166136261;
-  for (let i = 0; i < seed.length; i++) { h ^= seed.charCodeAt(i); h = Math.imul(h, 16777619); }
-  const a = [...arr];
-  for (let i = a.length - 1; i > 0; i--) {
-    h ^= h << 13; h ^= h >>> 17; h ^= h << 5;
-    const j = Math.abs(h) % (i + 1);
-    [a[i], a[j]] = [a[j], a[i]];
-  }
-  return a;
-}
+/* KARIŞTIRMA `lib/shuffle`DEN. Burada `seededOrder` diye AYRI bir uygulama
+   duruyordu ve yorumu "web'deki seededShuffle ile aynı amaç" diyordu — amaç
+   aynıydı, ALGORİTMA değil: tohumlama ikisinde de FNV-1a ama bu kopya
+   xorshift + `Math.abs(h) % (i+1)` kullanıyordu, web (ve mobilin kendi
+   `lib/shuffle`ı) mulberry32 + `Math.floor(rand() * (i+1))`. Sıra farkı
+   masum değildi: hüküm sayısı yarıdan çoksa dilimleme SEÇİMİ de değiştiriyor,
+   yani aynı ünitede iki platform farklı gramer sorusu soruyordu. */
 
 /**
  * Ünitenin gramer adımı — ünitenin KENDİ derslerinden türetilir.
@@ -219,7 +215,11 @@ function seededOrder<T>(arr: T[], seed: string): T[] {
  */
 export function deriveGrammar(level: string, unitIndex: number, count = 8): SkillQuestion[] {
   const lessons = lessonsForLevel(level).slice((unitIndex - 1) * 4, (unitIndex - 1) * 4 + 4);
-  const unitId = `de-${String(level).toLowerCase()}-u${String(unitIndex).padStart(2, "0")}`;
+  /* Tohum web ile AYNI biçimde kurulmalı: `${kurs}-${seviye}-uNN`
+     (bkz. `lib/immersion/brief` `unitId`). "de-" SABİT yazılıydı, yani
+     İngilizce kursta mobilin tohumu webinkinden farklıydı ve aynı ünitede
+     iki platform farklı soru seçiyordu. */
+  const unitId = `${currentCourseId()}-${String(level).toLowerCase()}-u${String(unitIndex).padStart(2, "0")}`;
   const judges: SkillQuestion[] = [];
   const orders: SkillQuestion[] = [];
 
@@ -254,7 +254,7 @@ export function deriveGrammar(level: string, unitIndex: number, count = 8): Skil
   }
 
   const half = Math.ceil(count / 2);
-  const picked = seededOrder(judges, `${unitId}|judge`).slice(0, Math.min(judges.length, half));
-  const rest = seededOrder(orders, `${unitId}|order`).slice(0, Math.max(0, count - picked.length));
+  const picked = seededShuffle(judges, `${unitId}|judge`).slice(0, Math.min(judges.length, half));
+  const rest = seededShuffle(orders, `${unitId}|order`).slice(0, Math.max(0, count - picked.length));
   return [...picked, ...rest];
 }
