@@ -1714,7 +1714,8 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
 
   if (status === "done")
     return (
-      <Frame>
+      /* TURUN SONUCU DUYURULUYOR (bkz. 11.337). */
+      <Frame role="status">
         <h2 className="text-h1">{t("walk.done_title")}</h2>
         <p className="mt-2 text-body" style={{ color: "var(--color-mint)" }}>
           {t("common.n_correct", { correct: tally.correct, total: tally.total })}
@@ -1900,10 +1901,16 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
   );
 }
 
-function Frame({ children }: { children: React.ReactNode }) {
+/**
+ * `role` DISARIDAN: Frame yuruyusun butun durumlarini sariyor (izin, hata,
+ * oynama, bitis) ve `role="status"`u burada sabitlemek tur yururken de canli
+ * bolge acmak olurdu. Sonucu duyuran yalniz bitis dali. Ayni kalip
+ * `boss-player`da da var.
+ */
+function Frame({ children, role }: { children: React.ReactNode; role?: "status" }) {
   return (
     <div className="mx-auto w-full max-w-md">
-      <div className="card p-6">{children}</div>
+      <div role={role} className="card p-6">{children}</div>
     </div>
   );
 }

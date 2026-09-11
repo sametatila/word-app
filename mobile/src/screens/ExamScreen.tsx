@@ -495,7 +495,8 @@ export function ExamScreen() {
           <Card padded style={{ alignItems: "center", gap: spacing.sm }}>
             <Celebrate show={!!result?.passed} />
             <CoachBubble moment={result?.passed ? "exam_pass" : "exam_fail"} mood={result?.passed ? "celebrate" : "sad"} vars={{ pct, level }} size={72} />
-            <Text variant="h1">{formatPercent(pct)}</Text>
+            {/* TURUN SONUCU DUYURULUYOR (bkz. web-parity 11.337). */}
+            <Text accessibilityLiveRegion="polite" variant="h1">{formatPercent(pct)}</Text>
             <Text variant="bodyStrong" color={result?.passed ? colors.successText : colors.textMuted}>
               {result ? (result.passed ? t("exam.passed") : t("exam.not_passed")) : t("exam.saved_offline")}
             </Text>

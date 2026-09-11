@@ -1171,7 +1171,7 @@ function StageCard({
           birkaç turda değersizleşir. */}
       <Confetti fire={perfect ? stage : 0} count={22} />
 
-      <div className="card overflow-hidden">
+      <div role="status" className="card overflow-hidden">
         <div className="brand-gradient-deep px-6 py-5 text-center text-white">
           <motion.div
             initial={{ scale: 0.6, y: 10, opacity: 0 }}
@@ -1337,7 +1337,7 @@ function SummaryCard({
         ne olduğu ancak durup bakınca ayrılıyordu. Sıra okunma sırasıyla
         aynı: önce Erdi ve kazanılan XP, sonra sayılar, sonra ayrıntı.
       */}
-      <Stagger className="card overflow-hidden">
+      <Stagger role="status" className="card overflow-hidden">
         <div className="brand-gradient-deep p-8 text-center text-white">
           {/* Turun nasıl geçtiğini söyleyen şey artık bir simge değil, Erdi'nin
               hâli: hak edilmiş turda kutluyor, iyi turda gülümsüyor, kötü turda

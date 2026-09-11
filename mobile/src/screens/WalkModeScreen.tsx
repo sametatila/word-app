@@ -735,7 +735,8 @@ export function WalkModeScreen() {
               <Text variant="display" color={colors.primaryText}>{tally.correct}/{tally.total || 0}</Text>
               <Text variant="micro" color={colors.textMuted}>{tx("walkmode.correct")}</Text>
             </ProgressRing>
-            <Text variant="h1" style={{ marginTop: spacing.xl }}>{tx(noMore ? "walkmode.done_no_more" : "walkmode.done_title")}</Text>
+            {/* TURUN SONUCU DUYURULUYOR (bkz. web-parity 11.337). */}
+            <Text accessibilityLiveRegion="polite" variant="h1" style={{ marginTop: spacing.xl }}>{tx(noMore ? "walkmode.done_no_more" : "walkmode.done_title")}</Text>
             <Text variant="body" color={colors.textMuted} style={{ marginTop: spacing.xs, marginBottom: spacing.xxl, textAlign: "center" }}>
               {tx(noMore ? "walkmode.done_no_more_sub" : "walkmode.done_saved")}
             </Text>

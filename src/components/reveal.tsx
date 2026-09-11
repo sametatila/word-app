@@ -62,6 +62,7 @@ export function Stagger({
   gap = 0.045,
   delay = 0,
   className = "",
+  role,
 }: {
   children: ReactNode;
   /** İki öğe arası gecikme, saniye. */
@@ -69,6 +70,12 @@ export function Stagger({
   /** Zincirin başlamasından önceki bekleme, saniye. */
   delay?: number;
   className?: string;
+  /**
+   * Kap bir SONUÇ taşıyorsa `"status"`: zincir sona erdiğinde ekran okuyucu
+   * da haberdar olsun (bkz. web-parity 11.337). Varsayılan yok — süsleme
+   * amaçlı zincirler canlı bölge açmamalı.
+   */
+  role?: "status";
 }) {
   const still = useStill();
   const container: Variants = {
@@ -85,6 +92,7 @@ export function Stagger({
       variants={container}
       initial="hidden"
       animate="show"
+      role={role}
       className={className}
     >
       {Children.map(children, (child) =>

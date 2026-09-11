@@ -513,7 +513,8 @@ export function GameScreen() {
             <Text variant="display" color={colors.primaryText}>{finalCorrect}/{total || 0}</Text>
             <Text variant="micro" color={colors.textMuted}>{t("game.correct")}</Text>
           </ProgressRing>
-          <Text variant="h1" style={{ marginTop: spacing.xl }}>{t(total ? "common.round_done" : "game.done_no_more")}</Text>
+          {/* TURUN SONUCU DUYURULUYOR (bkz. web-parity 11.337). */}
+          <Text accessibilityLiveRegion="polite" variant="h1" style={{ marginTop: spacing.xl }}>{t(total ? "common.round_done" : "game.done_no_more")}</Text>
           <Text variant="body" color={colors.textMuted} style={{ marginTop: spacing.xs, marginBottom: repaired === null ? spacing.xxl : spacing.lg, textAlign: "center" }}>
             {t(total ? "game.saved" : "game.nothing_to_review")}
           </Text>
@@ -766,7 +767,8 @@ function StageCard({ stage, stages, correct, total, perfect, bestCombo, remainin
           <View style={{ backgroundColor: colors.primary, paddingHorizontal: spacing.xl, paddingVertical: spacing.lg, alignItems: "center" }}>
             <Mascot mood={perfect ? "celebrate" : "happy"} size={72} />
             <Text variant="caption" color={colors.onPrimary} style={{ marginTop: 4, opacity: 0.9 }}>{t("stage.counter", { n: stage, total: stages })}</Text>
-            <Text variant="h2" color={colors.onPrimary}>{t(perfect ? "stage.clean" : "stage.done")}</Text>
+            {/* TURUN SONUCU DUYURULUYOR (bkz. web-parity 11.337). */}
+            <Text accessibilityLiveRegion="polite" variant="h2" color={colors.onPrimary}>{t(perfect ? "stage.clean" : "stage.done")}</Text>
             <View style={{ flexDirection: "row", gap: 6, marginTop: spacing.md }}>
               {Array.from({ length: stages }, (_, i) => (
                 <View key={i} style={{ height: 6, width: i < stage ? 22 : 10, borderRadius: 3, backgroundColor: i < stage ? colors.onPrimary : "rgba(255,255,255,0.35)" }} />

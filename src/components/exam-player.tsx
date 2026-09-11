@@ -1022,7 +1022,9 @@ function Result({
   const course = useCourse();
   const t = useT();
   return (
-    <section className="card mx-auto w-full max-w-md p-5">
+    /* TURUN SONUCU DUYURULUYOR (bkz. 11.337). Sinavin TEK sonucu bu: bolum
+       gecisleri ayri bir "sonuc" degil, calisan fazin icinde bir kapak. */
+    <section role="status" className="card mx-auto w-full max-w-md p-5">
       <CoachBubble
         moment={result.passed ? "exam_pass" : "exam_fail"}
         mood={result.passed ? "cheer" : "sad"}
