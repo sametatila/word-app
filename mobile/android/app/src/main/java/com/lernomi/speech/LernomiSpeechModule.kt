@@ -390,6 +390,11 @@ class LernomiSpeechModule(private val reactCtx: ReactApplicationContext) :
         doubleArrayOf(1046.5, 0.21, 0.2, 0.16, 0.0, 0.0, 0.0, 0.004, 0.0, 0.0),
         doubleArrayOf(1567.98, 0.28, 0.35, 0.09, 1.0, 0.0, 0.0, 0.004, 0.0, 0.0),
       )
+      "stage" -> listOf(
+        doubleArrayOf(523.25, 0.0, 0.18, 0.15, 0.0, 0.0, 0.0, 0.004, 0.0, 0.0),
+        doubleArrayOf(659.25, 0.075, 0.18, 0.15, 0.0, 0.0, 0.0, 0.004, 0.0, 0.0),
+        doubleArrayOf(783.99, 0.15, 0.18, 0.15, 0.0, 0.0, 0.0, 0.004, 0.0, 0.0),
+      )
       "tap" -> listOf(
         doubleArrayOf(1174.66, 0.0, 0.05, 0.06, 0.0, 0.0, 0.0, 0.008, 0.0, 0.0),
       )

@@ -58,7 +58,8 @@ describe("SFX nota tablosu iki native kopyada da aynı", () => {
     // habersiz büyümesin. Yedi → on iki: turun açılışı, rozet açılışı, süre
     // uyarısı, rekor ve kusursuz tur webde vardı, mobilde yoktu (web-parity
     // §11.15) — beşi de eklendi ve iki native kopyaya yeniden üretildi.
-    expect(TURLER.length).toBe(12);
+    // On iki → on üç: etap bitiş sesi (etap duraklaması mobilde hiç yoktu).
+    expect(TURLER.length).toBe(13);
     for (const tur of TURLER) {
       expect(kotlin).toContain(`"${tur}" -> listOf(`);
       expect(swift).toContain(`case "${tur}":`);

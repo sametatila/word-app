@@ -72,6 +72,8 @@ export type EventName =
      ayni ad. "Kac kisi turu bitirmeden cikiyor ve nerede cikiyor" sorusu
      Androidde hic cevaplanmiyordu; `session_done` yalnizca bitirenleri
      sayiyor. */
+  /* Beşli etap bitti (value = kaçıncı etap). Ad web `lib/events` ile aynı. */
+  | "stage_done"
   | "session_stop"
   /* Sinav/test BASLADI (kind = "placement:A1" gibi). Web yerlestirme testi
      baslarken yaziyor; mobil yalniz BITISI yaziyordu, yani "kac kisi

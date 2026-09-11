@@ -1205,9 +1205,9 @@ function StageCard({
             }}
           >
             {wagerResult > 0
-              ? t("sessionw.wager_won", { xp: wagerResult })
+              ? t("stage.wager_won", { xp: wagerResult })
               : wagerResult < 0
-                ? t("sessionw.wager_lost", { xp: wagerResult })
+                ? t("stage.wager_lost", { xp: wagerResult })
                 : t("wager.even")}
           </div>
         ) : null}

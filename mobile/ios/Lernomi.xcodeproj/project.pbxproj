@@ -24,6 +24,7 @@
 		AB01F1002D4E51A700000035 /* tap.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AB01F1002D4E51A700000025 /* tap.mp3 */; };
 		AB01F1002D4E51A700000038 /* danger.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AB01F1002D4E51A700000028 /* danger.mp3 */; };
 		AB01F1002D4E51A700000039 /* perfect.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AB01F1002D4E51A700000029 /* perfect.mp3 */; };
+		AB01F1002D4E51A70000003D /* stage.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AB01F1002D4E51A70000002D /* stage.mp3 */; };
 		AB01F1002D4E51A70000003A /* record.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AB01F1002D4E51A70000002A /* record.mp3 */; };
 		AB01F1002D4E51A70000003B /* start.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AB01F1002D4E51A70000002B /* start.mp3 */; };
 		AB01F1002D4E51A70000003C /* unlock.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AB01F1002D4E51A70000002C /* unlock.mp3 */; };
@@ -55,6 +56,7 @@
 		AB01F1002D4E51A700000025 /* tap.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = tap.mp3; path = Lernomi/sfx/tap.mp3; sourceTree = "<group>"; };
 		AB01F1002D4E51A700000028 /* danger.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = danger.mp3; path = Lernomi/sfx/danger.mp3; sourceTree = "<group>"; };
 		AB01F1002D4E51A700000029 /* perfect.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = perfect.mp3; path = Lernomi/sfx/perfect.mp3; sourceTree = "<group>"; };
+		AB01F1002D4E51A70000002D /* stage.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = stage.mp3; path = Lernomi/sfx/stage.mp3; sourceTree = "<group>"; };
 		AB01F1002D4E51A70000002A /* record.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = record.mp3; path = Lernomi/sfx/record.mp3; sourceTree = "<group>"; };
 		AB01F1002D4E51A70000002B /* start.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = start.mp3; path = Lernomi/sfx/start.mp3; sourceTree = "<group>"; };
 		AB01F1002D4E51A70000002C /* unlock.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = unlock.mp3; path = Lernomi/sfx/unlock.mp3; sourceTree = "<group>"; };
@@ -147,6 +149,7 @@
 				AB01F1002D4E51A700000026 /* wrong.mp3 */,
 				AB01F1002D4E51A700000028 /* danger.mp3 */,
 				AB01F1002D4E51A700000029 /* perfect.mp3 */,
+				AB01F1002D4E51A70000002D /* stage.mp3 */,
 				AB01F1002D4E51A70000002A /* record.mp3 */,
 				AB01F1002D4E51A70000002B /* start.mp3 */,
 				AB01F1002D4E51A70000002C /* unlock.mp3 */,
@@ -238,6 +241,7 @@
 				AB01F1002D4E51A700000036 /* wrong.mp3 in Resources */,
 				AB01F1002D4E51A700000038 /* danger.mp3 in Resources */,
 				AB01F1002D4E51A700000039 /* perfect.mp3 in Resources */,
+				AB01F1002D4E51A70000003D /* stage.mp3 in Resources */,
 				AB01F1002D4E51A70000003A /* record.mp3 in Resources */,
 				AB01F1002D4E51A70000003B /* start.mp3 in Resources */,
 				AB01F1002D4E51A70000003C /* unlock.mp3 in Resources */,

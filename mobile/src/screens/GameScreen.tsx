@@ -21,14 +21,24 @@ import { ApiError } from "../api/client";
 import { bumpStats } from "../lib/statsSignal";
 import { track } from "../lib/track";
 import { sfx } from "../lib/sfx";
+import { haptic } from "../lib/haptics";
 import { RoundSkeleton } from "../game/RoundSkeleton";
-import { useTheme, spacing, radii, softShadow } from "../theme";
+import { useTheme, spacing, radii, softShadow, type Palette } from "../theme";
 import { onTint } from "../theme/colors";
 import { LevelBadge } from "../ui/LevelBadge";
 import { ConfirmDialog } from "../ui/ConfirmDialog";
 import { useBackConfirm } from "../lib/useBackConfirm";
 
-type Phase = "loading" | "auth" | "error" | "play" | "done" | "goal_done" | "no_words";
+type Phase = "loading" | "auth" | "error" | "play" | "stage" | "done" | "goal_done" | "no_words";
+
+/**
+ * ETAP BOYU — web `session-player` `STAGE_SIZE` ile aynı beş.
+ *
+ * Tur mobilde baştan sona tek parça akıyordu: durulacak bir yer yoktu, o ana
+ * kadarki ilerlemenin özeti yoktu ve bahis mekaniği (sunucu `xpForWager` ile
+ * baştan beri destekliyor) Android'de hiç oynanamıyordu.
+ */
+const STAGE_SIZE = 5;
 
 /**
  * GERÇEK kelime turu — sunucu verisiyle. /api/session'dan gerçek turları çeker
@@ -66,6 +76,12 @@ export function GameScreen() {
    */
   const [saveWarning, setSaveWarning] = useState<null | "queued" | "dropped">(null);
   const [combo, setCombo] = useState(0);
+  /** Etap kartındaki "en uzun seri" ve etabın kendi sayacı. */
+  const bestCombo = useRef(0);
+  const stageStart = useRef({ index: 0, correct: 0, total: 0, xp: 0 });
+  const xpEstimate = useRef(0);
+  const wagerOn = useRef(false);
+  const [wagerResult, setWagerResult] = useState<number | null>(null);
   const [pop, setPop] = useState(0);
   const answers = useRef<AnswerOut[]>([]);
   const startedAt = useRef(0);
@@ -242,12 +258,56 @@ export function GameScreen() {
     roundsSeen.current += 1;
     if (ok) roundsRight.current += 1;
     if (ok && (combo + 1) % 5 === 0) setPop((x) => x + 1);
-    setCombo((c) => (ok ? c + 1 : 0));
+    const nextCombo = ok ? combo + 1 : 0;
+    bestCombo.current = Math.max(bestCombo.current, nextCombo);
+    setCombo(nextCombo);
+    /* Pay, o etapta kazanılan puanın İSTEMCİ tahmini (doğru 10, yanlış 3) —
+       web `session-player` aynı iki sayıyı kullanıyor. Sunucu ayrıca
+       tavanlıyor; buradaki sayının işi bahsi ETABIN büyüklüğüne bağlamak. */
+    xpEstimate.current += ok ? 10 : 3;
     roundStart.current = Date.now();
     const next = idx + 1;
     idxRef.current = next;
-    if (next >= rounds.length) void finish();
-    else setIdx(next);
+    if (next >= rounds.length) { void finish(); return; }
+    setIdx(next);
+
+    // Etap sınırı: burada durmak da devam etmek de meşru.
+    if (next % STAGE_SIZE === 0) {
+      track("stage_done", next / STAGE_SIZE);
+      void closeStage();
+      setPhase("stage");
+    }
+  }
+
+  /**
+   * Etap kapanışı: biriken cevaplar (varsa bahisle birlikte) sunucuya yazılır.
+   * Web her turdan sonra yazıyor; mobil turu toplu gönderiyordu ve bahsin
+   * sonucu ancak sunucudan dönüyor, o yüzden etap sınırı gerçek bir yazma
+   * noktası. Cevaplar gönderildikten sonra listeden düşüyor - aynı cevap iki
+   * kez gitmesin.
+   */
+  async function closeStage() {
+    const batch = answers.current;
+    const wager = wagerOn.current
+      ? {
+          correct: roundsRight.current - stageStart.current.correct,
+          total: roundsSeen.current - stageStart.current.total,
+          stake: xpEstimate.current - stageStart.current.xp,
+        }
+      : null;
+    wagerOn.current = false;
+    if (!batch.length && !wager) return;
+    answers.current = [];
+    const secs = Math.round((Date.now() - startedAt.current) / 1000);
+    try {
+      const r = await submitAnswers(batch, day.current, secs, progressNow(), wager);
+      bumpStats();
+      if (r) setResult(r);
+      if (wager) setWagerResult(r?.wagerXp ?? 0);
+    } catch (e) {
+      /* Çevrimdışıysa batch cihazdaki kuyruğa alındı; etap yine kapanıyor. */
+      setSaveWarning(isPermanentError(e) ? "dropped" : "queued");
+    }
   }
 
   async function finish() {
@@ -316,6 +376,35 @@ export function GameScreen() {
         <PressableScale onPress={() => void load()} style={[{ backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: 15, paddingHorizontal: spacing.xxl, alignItems: "center" }, softShadow(colors.primary, 8)]}><Text variant="h3" color={colors.onPrimary}>{t("game.try_again")}</Text></PressableScale>
         <PressableScale onPress={() => nav.goBack()} style={{ paddingVertical: spacing.lg, marginTop: spacing.sm }}><Text variant="bodyStrong" color={colors.textMuted}>{t("common.close")}</Text></PressableScale>
       </View>
+    );
+  }
+
+  if (phase === "stage") {
+    const stageNo = Math.ceil(idx / STAGE_SIZE);
+    const stages = Math.ceil(rounds.length / STAGE_SIZE);
+    const sCorrect = roundsRight.current - stageStart.current.correct;
+    const sTotal = roundsSeen.current - stageStart.current.total;
+    const perfect = sTotal > 0 && sCorrect === sTotal;
+    return (
+      <StageCard
+        stage={stageNo}
+        stages={stages}
+        correct={sCorrect}
+        total={sTotal}
+        perfect={perfect}
+        bestCombo={bestCombo.current}
+        remaining={rounds.length - idx}
+        wagerResult={wagerResult}
+        colors={colors}
+        pad={pad}
+        onContinue={(bet) => {
+          wagerOn.current = bet;
+          setWagerResult(null);
+          stageStart.current = { index: idx, correct: roundsRight.current, total: roundsSeen.current, xp: xpEstimate.current };
+          setPhase("play");
+        }}
+        onStop={() => { track("session_stop", idx); void finish(); }}
+      />
     );
   }
 
@@ -550,6 +639,86 @@ export function GameScreen() {
         }}
         onCancel={back.cancel}
       />
+    </View>
+  );
+}
+
+/**
+ * ETAP KARTI — web `session-player` `StageCard` karşılığı.
+ *
+ * İki işi var. Birincisi turu bitirilebilir kılmak: her beş turda bir durma
+ * noktası, ilerleme zaten sunucuya yazılmış durumda, yani çıkan kullanıcı
+ * hiçbir şey kaybetmiyor. İkincisi bahis: sonraki etabın hepsi doğruysa
+ * etabın puanı iki katı, iki yanlışta puan yanıyor. Kural düğmenin altında
+ * yazılı — gizli kuralı olan bir bahis, bahis değil tuzaktır.
+ */
+function StageCard({ stage, stages, correct, total, perfect, bestCombo, remaining, wagerResult, colors, pad, onContinue, onStop }: {
+  stage: number; stages: number; correct: number; total: number; perfect: boolean;
+  bestCombo: number; remaining: number; wagerResult: number | null;
+  colors: Palette; pad: object; onContinue: (bet: boolean) => void; onStop: () => void;
+}) {
+  const [bet, setBet] = useState(false);
+  /* Etabın kendi sesi var: tertemiz geçen etap oktavla taçlanan bir ezgi,
+     normal etap kısa bir üçlü duyuruyor. Konfetiyle aynı eşik — göz ve kulak
+     aynı şeyi söylüyor. */
+  useEffect(() => { sfx(perfect ? "perfect" : "stage"); }, [perfect]);
+  return (
+    <View style={pad}>
+      <Celebrate show={perfect} />
+      <View style={{ flex: 1, justifyContent: "center" }}>
+        <View style={{ borderRadius: radii.xl, overflow: "hidden", backgroundColor: colors.surface, borderWidth: 1, borderColor: colors.hairline }}>
+          <View style={{ backgroundColor: colors.primary, paddingHorizontal: spacing.xl, paddingVertical: spacing.lg, alignItems: "center" }}>
+            <Mascot mood={perfect ? "celebrate" : "happy"} size={72} />
+            <Text variant="caption" color={colors.onPrimary} style={{ marginTop: 4, opacity: 0.9 }}>{t("stage.counter", { n: stage, total: stages })}</Text>
+            <Text variant="h2" color={colors.onPrimary}>{t(perfect ? "stage.clean" : "stage.done")}</Text>
+            <View style={{ flexDirection: "row", gap: 6, marginTop: spacing.md }}>
+              {Array.from({ length: stages }, (_, i) => (
+                <View key={i} style={{ height: 6, width: i < stage ? 22 : 10, borderRadius: 3, backgroundColor: i < stage ? colors.onPrimary : "rgba(255,255,255,0.35)" }} />
+              ))}
+            </View>
+          </View>
+
+          <View style={{ flexDirection: "row" }}>
+            <View style={{ flex: 1, alignItems: "center", paddingVertical: spacing.lg }}>
+              <Text variant="h2">{correct}/{total}</Text>
+              <Text variant="micro" color={colors.textMuted}>{t("stage.this_stage")}</Text>
+            </View>
+            <View style={{ width: 1, backgroundColor: colors.hairline }} />
+            <View style={{ flex: 1, alignItems: "center", paddingVertical: spacing.lg }}>
+              <Text variant="h2">{bestCombo > 0 ? String(bestCombo) : "—"}</Text>
+              <Text variant="micro" color={colors.textMuted}>{t("stage.best_streak")}</Text>
+            </View>
+          </View>
+
+          {/* Kapanan bahsin sonucu: kazanılan, boşa giden ve yanan üç hâl de
+              açıkça söyleniyor. Sessizce eklenen puan bahsi gürültüye çevirir. */}
+          {wagerResult !== null ? (
+            <Text variant="bodyStrong" color={wagerResult > 0 ? colors.successText : wagerResult < 0 ? colors.streakText : colors.textMuted} style={{ textAlign: "center", paddingHorizontal: spacing.xl }}>
+              {wagerResult > 0 ? t("stage.wager_won", { xp: wagerResult }) : wagerResult < 0 ? t("stage.wager_lost", { xp: wagerResult }) : t("wager.even")}
+            </Text>
+          ) : null}
+
+          <View style={{ padding: spacing.xl, gap: spacing.sm }}>
+            <PressableScale onPress={() => { setBet(!bet); haptic("tap"); }} accessibilityState={{ selected: bet }}
+              style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, borderRadius: radii.md, paddingHorizontal: 14, paddingVertical: 12, backgroundColor: bet ? colors.streak + "1f" : colors.surface2, borderWidth: bet ? 1.5 : 0, borderColor: colors.streak }}>
+              <View style={{ width: 36, height: 20, borderRadius: 10, padding: 2, backgroundColor: bet ? colors.streak : colors.border, justifyContent: "center" }}>
+                <View style={{ width: 16, height: 16, borderRadius: 8, backgroundColor: "#ffffff", alignSelf: bet ? "flex-end" : "flex-start" }} />
+              </View>
+              <View style={{ flex: 1 }}>
+                <Text variant="bodyStrong">{t("wager.next_stage")}</Text>
+                <Text variant="micro" color={colors.textMuted} style={{ lineHeight: 17 }}>{t("wager.rules")}</Text>
+              </View>
+            </PressableScale>
+            <PressableScale onPress={() => onContinue(bet)} style={[{ backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: 15, alignItems: "center" }, softShadow(colors.primary, 8)]}>
+              <Text variant="h3" color={colors.onPrimary}>{t(bet ? "stage.continue_bet" : "stage.continue", { n: remaining })}</Text>
+            </PressableScale>
+            <PressableScale onPress={onStop} style={{ paddingVertical: 12, alignItems: "center" }}>
+              <Text variant="bodyStrong" color={colors.textMuted}>{t("stage.enough")}</Text>
+            </PressableScale>
+            <Text variant="micro" color={colors.textMuted} style={{ textAlign: "center", lineHeight: 17 }}>{t("stage.stop_note")}</Text>
+          </View>
+        </View>
+      </View>
     </View>
   );
 }

@@ -30,7 +30,10 @@ export type SfxKind =
   | "unlock"
   | "danger"
   | "record"
-  | "perfect";
+  | "perfect"
+  /* Etap bitti - web `lib/sfx` `stage` ile aynı tarif. Etap duraklaması
+     mobilde hiç yoktu, sesi de yoktu. */
+  | "stage";
 
 /** Ana kazanç — tüm yollarda aynı (köprü, native, mp3). */
 export const SFX_MASTER = 0.8;
@@ -144,6 +147,12 @@ export const SFX_NOTES: Record<SfxKind, number[][]> = {
     [783.99, 0.14, 0.2, 0.16, 0, 0, 0, 0.004, 0, 0],
     [1046.5, 0.21, 0.2, 0.16, 0, 0, 0, 0.004, 0, 0],
     [1567.98, 0.28, 0.35, 0.09, 1, 0, 0, 0.004, 0, 0],
+  ],
+  // Etap bitti: küçük bir majör üçlü (web `stage`).
+  stage: [
+    [523.25, 0.0, 0.18, 0.15, 0, 0, 0, 0.004, 0, 0],
+    [659.25, 0.075, 0.18, 0.15, 0, 0, 0, 0.004, 0, 0],
+    [783.99, 0.15, 0.18, 0.15, 0, 0, 0, 0.004, 0, 0],
   ],
   // Kısa dokunuş blip'i (scramble/order karo yerleştirme).
   tap: [

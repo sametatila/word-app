@@ -148,6 +148,13 @@ export type SessionPayload = { rounds: Round[]; resume: ResumeState | null; meta
  */
 export type SessionProgress = { index: number; correct: number; total: number; xp: number; missed: MissedWord[] };
 
+/**
+ * Bahisli etap: kapanan etabın doğru/toplam sayısı ve ortaya konan puan.
+ * Sunucu `xpForWager` ile farkı hesaplıyor (`lib/session`) ve `wagerXp` diye
+ * geri veriyor. Mobil bunu HİÇ göndermiyordu - etap duraklaması yoktu.
+ */
+export type Wager = { correct: number; total: number; stake: number };
+
 export type AnswerOut = {
   wordId: number;
   game: string;
@@ -271,7 +278,7 @@ export function practiceGamesFor(course: string | null | undefined) {
  * kalan tekrarı HİÇ göstermiyordu (web `session-player` dördünü de gösteriyor).
  * Bkz. web-parity §11.23.
  *
- * `wagerXp` mobilde okunmuyor: bahisli etap mobilde hiç yok.
+ * `wagerXp` etabın bahis farkı; etap duraklaması artık mobilde de var.
  */
 export type SubmitResult = {
   streakRepaired: boolean;
@@ -286,7 +293,7 @@ export type SubmitResult = {
   goalReached: boolean;
   /** Yarın tekrar zamanı gelen kelime sayısı. */
   dueTomorrow: number;
-  /** Bahisli etabın puan farkı — mobilde bahis yok, alan sözleşme için var. */
+  /** Bahisli etabın puan farkı: hatasızsa artı, iki yanlışta eksi, aksi hâlde sıfır. */
   wagerXp: number;
 };
 
@@ -368,9 +375,9 @@ export async function flushPendingAnswers(): Promise<void> {
   } catch { /* yut */ }
 }
 
-export async function submitAnswers(answers: AnswerOut[], day: string, seconds: number, progress?: SessionProgress): Promise<SubmitResult> {
+export async function submitAnswers(answers: AnswerOut[], day: string, seconds: number, progress?: SessionProgress, wager?: Wager | null): Promise<SubmitResult> {
   try {
-    const r = await api<SubmitResult>("/api/answers", { method: "POST", body: JSON.stringify({ answers, day, seconds, ...(progress ? { progress } : {}) }) });
+    const r = await api<SubmitResult>("/api/answers", { method: "POST", body: JSON.stringify({ answers, day, seconds, ...(progress ? { progress } : {}), ...(wager ? { wager } : {}) }) });
     void flushPendingAnswers(); // bağlantı var: bekleyenler de gitsin
     return r;
   } catch (e) {

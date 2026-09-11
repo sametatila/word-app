@@ -1964,7 +1964,6 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     "invite_open", //           tarayici olcum katmani
     "panel_open", //            tarayici olcum katmani
     "push_optin", //            tarayici bildirim istemi
-    "stage_done", //            mobilde etap duraklamasi yok
     "walk_capture", //          tarayici mikrofon yolu tanilamasi
     "walk_listen", //           tarayici mikrofon yolu tanilamasi
     "walk_switch", //           tarayici mikrofon yolu tanilamasi
@@ -3049,14 +3048,13 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
  * kusursuz tur MOBILDE YOKTU. Varlik farki sanilmisti (web-parity §11.15) ama
  * uc calma yolu da nota TABLOSUNDAN sentezliyor; eksik olan satirlardi.
  *
- * `stage` webe ozel kaliyor: etap karti mobilde yok. */
+ * `stage` de geldi: etap karti artik mobilde de var (§108). */
 {
   /* Birlesimin SON satiri noktali virgulle bitiyor; ilk yazimda desen onu
      kaciriyordu ve iki taraf da kendi son ipucunu kaybediyordu. */
   const kumeM = new Set([...read("mobile/src/lib/sfxNotes.ts").matchAll(/^  \| "([a-z]+)";?$/gm)].map((m) => m[1]));
   const kumeW = new Set([...read("src/lib/sfx.ts").matchAll(/^  \| "([a-z]+)";?$/gm)].map((m) => m[1]));
-  kumeW.delete("stage");
-  sameSet("ses ipuclari", [...kumeM].sort(), [...kumeW].sort(), "mobil", "web (stage haric)");
+  sameSet("ses ipuclari", [...kumeM].sort(), [...kumeW].sort());
 
   /* Ipucu VAR olmasi yetmez, CALINMASI da gerek: her ipucunun iki tarafta da
      en az bir cagri yeri olmali. */
@@ -3078,8 +3076,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   /* Web mikrofon ipuclarini bir sarmalayicidan caliyor (`walkCue`), cunku
      ekran kapaliyken WebAudio askiya aliniyor; sarmalayici da sayiliyor. */
   const cW = cagrilan(["src/components", "src/lib"], /(?:play|walkCue|pocketWalkCue)\(\s*(?:[a-zA-Z]+ \? )?"([a-z]+)"(?: : "([a-z]+)")?/g);
-  cW.delete("stage");
-  sameSet("calinan ses ipuclari", [...cM].sort(), [...cW].sort(), "mobil", "web (stage haric)");
+  sameSet("calinan ses ipuclari", [...cM].sort(), [...cW].sort());
 }
 
 /* ── 84. geri bildirim TEK cagriyla veriliyor mu ──────────────────────────
@@ -3691,6 +3688,35 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     kural(["mobile/src/screens/ExamScreen.tsx", "mobile/src/game/noHints.tsx"]),
     kural(["src/components/exam-player.tsx", "src/components/games/no-hints.tsx"]),
   );
+}
+
+/* ── 108. etap duraklamasi ve bahis ───────────────────────────────────────
+ * Tur mobilde bastan sona TEK PARCA akiyordu: durulacak bir yer, o ana
+ * kadarki ozet ve bahis mekanigi yoktu. Sunucu bahsi baştan beri destekliyor
+ * (`/api/answers` `wager`, `xpForWager`) ve mobil tipinde alan bile duruyordu
+ * ("mobilde bahis yok, alan sozlesme icin var").
+ *
+ * Olculen: etap boyu, bahis payinin iki sabiti (dogru 10 / yanlis 3), kartin
+ * parcalari ve bahsin sunucuya GIDIYOR olmasi - kart cizilip istek gitmezse
+ * bahis bir suslemeye doner. */
+{
+  const etap = (yollar) => {
+    const src = yollar.map((p) => read(p)).join("\n").replace(/\/\*[\s\S]*?\*\//g, " ").replace(/\/\/[^\n]*/g, " ");
+    return [
+      "etap boyu=" + (/STAGE_SIZE = (\d+)/.exec(src)?.[1] ?? "?"),
+      "pay tahmini=" + (/\? 10 : 3/.test(src) ? "10/3" : "baska"),
+      "sayac=" + (/stage\.counter/.test(src) ? "var" : "yok"),
+      "tertemiz=" + (/stage\.clean/.test(src) ? "var" : "yok"),
+      "etap istatistigi=" + (/stage\.this_stage/.test(src) && /stage\.best_streak/.test(src) ? "var" : "yok"),
+      "bahis anahtari=" + (/wager\.next_stage/.test(src) && /wager\.rules/.test(src) ? "var" : "yok"),
+      "bahis sonucu=" + (/stage\.wager_won/.test(src) && /wager\.even/.test(src) ? "var" : "yok"),
+      "devam/yeter=" + (/stage\.continue_bet/.test(src) && /stage\.enough/.test(src) ? "var" : "yok"),
+      "durma notu=" + (/stage\.stop_note/.test(src) ? "var" : "yok"),
+      "bahis sunucuya=" + (/stake: /.test(src) ? "var" : "yok"),
+      "etap sesi=" + (/"perfect" : "stage"/.test(src) ? "var" : "yok"),
+    ];
+  };
+  sameList("etap duraklamasi", etap(["mobile/src/screens/GameScreen.tsx"]), etap(["src/components/session-player.tsx"]));
 }
 
 console.log(
