@@ -7107,3 +7107,26 @@ komşusunu ölçüyor — ve kapı yeşil kaldığı için bu ancak enjeksiyonla
 görülüyor.** Her yeni kapının enjeksiyonla denenmesi bu yüzden pazarlık
 konusu değil.
 
+
+### 11.207 Kayıtlı gerekçenin kendisi yanlıştı
+
+`rounds.` uzayının kalan on beşi §93'te gerekçesiyle yazılıydı. Tek tek
+ölçünce **ikisinin gerekçesi yanlış çıktı**.
+
+"Ekran okuyucu etiketi: harfi geri al — mobilde yuva bir View, okunmuyor"
+diyordu. Oysa yuva bir `Pressable` ve etiketi vardı; eksik olan şey etiketin
+İÇERİĞİYDİ: havuzdaki karo da yerleştirilmiş karo da yalnız "S" diyordu, yani
+dokunmanın ne yapacağı (yerleştirmek mi, geri almak mı) ekran okuyucuyla ayırt
+edilemiyordu. İki anahtar ortak sözlüğe taşındı.
+
+Kalan iki satırın (`empty_*_slot`) gerekçesi düzeltildi: webde boş yuva bir
+div ve aria etiketi gerekiyor, mobilde aynı yerde gerçek metin duruyor
+("Harflere dokun") ve ekran okuyucu onu zaten okuyor.
+
+**Bu, muafiyet listelerinin ikinci kez yanlış çıkması** (§11.181'de gölge
+tintinin "iki temada da aynı olması bilinçli" gerekçesi yanlıştı). Gerekçe
+yazmak bir kapı değil; gerekçeyi ÖLÇMEK kapı.
+
+Küçük bir ek: sınav yazma sayacı "12 / 40" diyordu ve neyin sayıldığı hiçbir
+yerde geçmiyordu; birim yazıldı.
+
