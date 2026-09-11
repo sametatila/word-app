@@ -7062,3 +7062,23 @@ karşılıyordu; atlama tablosundan İngilizce silindiğinde kapı yeşil kaldı
 oturumda dördüncü kez aynı sınıf: **desen, ölçmek istediği şeyin komşusunu
 yakalıyor** (§73, §78, §98, §103).
 
+
+### 11.205 Ders adımında tıkanan öğrencinin çıkış yolu yoktu
+
+`lessonp.` uzayının (37 web-özel / 12 mobil) denetimi. Çoğu ikiz anahtar
+(mobil aynı şeyleri `lesson.*` altında yazıyor) ama biri gerçek bir eksikti.
+
+Beklentili adımlarda (tekrar et, üret, doğru/yanlış) mobilde ilerlemenin tek
+yolu "yazarak cevapla"ydı — **ve o da doğru cevabı bilmeyi gerektiriyor.**
+Adımı bilmeyen öğrencinin dersi bitirme yolu yoktu: ya doğruyu buluyor ya
+dersten çıkıyordu. Web her beklentili adımda bir atlama bağlantısı veriyor ve
+atlanan adımı ölçümde **sıfır** sayıyor — atlama sessizce "doğru" sayılmıyor.
+
+Bu, §11.201'deki "Bilmiyorum" ile aynı düşünce: **bilmemenin de bir yolu
+olmalı, ve o yol ölçüme doğru yansımalı.**
+
+`walk.` uzayının kalan otuz satırı da bakıldı ve **doğru muafiyet** çıktı: cep
+modu duyuruları, karartılmış ekran, "çıkmak için üç kez dokun" ve "ekran
+kapanınca sesini duyamıyorum" hep TARAYICI mekaniği — webde sayfa açık kalmak
+zorunda, Android'de gerçek bir ön plan servisi var (`startWalkService`).
+
