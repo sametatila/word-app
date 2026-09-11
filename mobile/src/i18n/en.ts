@@ -347,6 +347,8 @@ export const en: Record<string, string> = {
   "inbox.sign_in_required": "Sign-in required",
   "inbox.sign_in": "Sign in",
   "inbox.requests_reactions_nudges_quests": "Requests, reactions, nudges, quests",
+  "skillp.perfect": "Perfect! All correct.",
+  "skillp.saved_offline": "The result is saved on this device; your XP is processed once you're online.",
   "item.repeat_note": "You've done this exercise before — XP is only added when you beat your best score.",
   "item.this_exercise_can_t_be_opened": "This exercise can't be opened right now.",
   "item.content": "Content",

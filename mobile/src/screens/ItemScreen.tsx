@@ -165,6 +165,11 @@ export function ItemScreen() {
    * söylüyor. Sessiz sıfır, kapalı düğmenin sebepsizliğiyle aynı sınıf.
    */
   const [repeatNoXp, setRepeatNoXp] = useState(false);
+  /* SONUÇ KUYRUĞA ALINDIYSA SÖYLENİYOR. Kuyruk baştan beri vardı ama ekran
+     bunu hiç yazmıyordu: kullanıcı XP satırı olmayan bir kart görüyor ve
+     sonucunun kaydedilip kaydedilmediğini bilemiyordu. Web aynı yerde tek
+     satır gösteriyor (`skills/player-shell` `offline` fazı). */
+  const [queued, setQueued] = useState(false);
   const [streak, setStreak] = useState(0);
   const [round, setRound] = useState(0);
 
@@ -200,6 +205,7 @@ export function ItemScreen() {
          taşınıyor. Eskiden yalnız yerel işaret kalıyordu ve sunucu bu
          egzersizi HİÇ öğrenmiyordu - cihaz değişince gidiyordu. */
       void queueItemRecord(exercise.id, c, total);
+      setQueued(true);
     }
   }
 
@@ -207,6 +213,7 @@ export function ItemScreen() {
     /* Yeniden denemede eski XP satırı kalmasın: yeni sonuç yeni cevabı bekler. */
     setEarnedXp(0);
     setRepeatNoXp(false);
+    setQueued(false);
     saved.current = false;
     setFinished(false);
     setCorrect(0);
@@ -285,13 +292,23 @@ export function ItemScreen() {
           <Card padded style={{ marginTop: spacing.lg, alignItems: "center", gap: spacing.sm }}>
             <Celebrate show={pct >= 70} />
             <Mascot mood={pct >= 70 ? "celebrate" : pct >= 40 ? "happy" : "idle"} size={84} />
-            <Text variant="h2">{exercise.skill === "writing" || exercise.monologue ? t("item.tasks_done") : t("common.n_correct", { correct: correct, total: total })}</Text>
+            <Text variant="h2">
+              {exercise.skill === "writing" || exercise.monologue
+                ? t("item.tasks_done")
+                /* Hepsi doğruysa sayı yerine tek cümle - web de öyle söylüyor. */
+                : total > 0 && correct === total
+                  ? t("skillp.perfect")
+                  : t("common.n_correct", { correct: correct, total: total })}
+            </Text>
             {/* Kazanılan XP — `GameScreen` ile aynı biçim (`+N XP`). */}
             {earnedXp > 0 ? (
               <View style={{ alignItems: "center", gap: 2 }}>
                 <Text variant="h2" color={colors.primaryText}>{`+${earnedXp} XP`}</Text>
                 {streak > 0 ? <Text variant="caption" color={colors.streakText}>{t("social.days_streak", { n: streak })}</Text> : null}
               </View>
+            ) : null}
+            {queued ? (
+              <Text variant="caption" color={colors.textMuted} style={{ textAlign: "center", lineHeight: 20 }}>{t("skillp.saved_offline")}</Text>
             ) : null}
             {repeatNoXp ? (
               <Text variant="caption" color={colors.textMuted} style={{ textAlign: "center" }}>{t("item.repeat_note")}</Text>

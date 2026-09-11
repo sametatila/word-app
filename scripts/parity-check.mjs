@@ -3794,6 +3794,30 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   sameList("yerlestirme yuzeyleri", yer("mobile/src/screens/PlacementScreen.tsx"), yer("src/components/placement/placement-test.tsx"));
 }
 
+/* ── 112. beceri sonuc karti ve silme hatasi ──────────────────────────────
+ * Iki kucuk sessizlik:
+ *
+ * SONUC KUYRUGA ALINDIYSA SOYLENMIYORDU. Mobil cevrimdisi kaldiginda sonucu
+ * kuyruga aliyor (`queueItemRecord`) ama ekran bunu yazmiyordu: kullanici XP
+ * satiri olmayan bir kart goruyor ve kaydedilip kaydedilmedigini bilemiyordu.
+ *
+ * SUNUCU METNI EKRANA CIKIYORDU. Hesap silme hatasinda bilinen iki hal
+ * cevriliyor, gerisi better-auth'un INGILIZCE cumlesiyle gosteriliyordu. */
+{
+  const kart = (p, re) => [ "kuyruk notu=" + (re.test(read(p)) ? "var" : "yok") ];
+  sameList(
+    "beceri sonucu cevrimdisi notu",
+    kart("mobile/src/screens/ItemScreen.tsx", /skillp\.saved_offline/),
+    kart("src/components/skills/player-shell.tsx", /skillp\.saved_offline/),
+  );
+  const ham = (p, re) => [ "ham sunucu metni=" + (re.test(read(p)) ? "var" : "yok") ];
+  sameList(
+    "silme hatasi cevrilmis",
+    ham("mobile/src/lib/auth.ts", /message: message \|\| t\(/),
+    ham("src/components/account-delete-form.tsx", /setError\(text\)|setError\(message\)/),
+  );
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"

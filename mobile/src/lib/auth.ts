@@ -354,7 +354,12 @@ export async function deleteAccount(password?: string): Promise<DeleteOutcome> {
     const m = message.toLowerCase();
     if (m.includes("password")) return { ok: false, code: "PASSWORD", message: t("autherror.password_wrong") };
     if (m.includes("session") || m.includes("expired")) return { ok: false, code: "FRESH", message: t("autherror.fresh_login") };
-    return { ok: false, code: "OTHER", message: message || t("autherror.not_deleted") };
+    /* SUNUCU METNİ EKRANA ÇIKMIYOR. Buradaki `message` better-auth'un kendi
+       İngilizce cümlesi; bilinen iki hâl (parola, oturum tazeliği) zaten
+       yukarıda çevrilmiş metne dönüyor, geri kalanı ham geçiyordu. Yani
+       Türkçe arayüzde İngilizce bir hata satırı görünebiliyordu. Web aynı
+       yerde tek çevrilmiş cümle veriyor (`del.failed`). */
+    return { ok: false, code: "OTHER", message: t("autherror.not_deleted") };
   } catch {
     return { ok: false, code: "NETWORK", message: t("common.connection_failed") };
   }
