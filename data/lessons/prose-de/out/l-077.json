@@ -1,0 +1,1217 @@
+[
+ {
+  "tr": "Maaş konuşması",
+  "kind": "titleTr",
+  "de": "Über das Gehalt sprechen"
+ },
+ {
+  "tr": "İstifa ve devir",
+  "kind": "titleTr",
+  "de": "Kündigung und Übergabe"
+ },
+ {
+  "tr": "İş arkadaşlarım",
+  "kind": "titleTr",
+  "de": "Die Menschen im Team"
+ },
+ {
+  "tr": "Değerlendirme görüşmesi",
+  "kind": "titleTr",
+  "de": "Das Mitarbeitergespräch"
+ },
+ {
+  "tr": "Toplantı ve teslim tarihi",
+  "kind": "titleTr",
+  "de": "Termine und Fristen"
+ },
+ {
+  "tr": "Söyleneni başkasına aktarmayı öğretir: zaman bir basamak geriye gider, zamirler kayar.",
+  "kind": "summary",
+  "de": "Vermittelt, wie man Gesagtes weitergibt: die Zeit rückt eine Stufe zurück, die Pronomen verschieben sich."
+ },
+ {
+  "tr": "Geleceği üç ayrı biçimle anlatmayı öğretir: kararlaşmış program, niyet ve o anki karar.",
+  "kind": "summary",
+  "de": "Vermittelt, wie man die Zukunft auf drei Arten ausdrückt: fester Termin, Absicht und spontaner Entschluss."
+ },
+ {
+  "tr": "Uzun cümleyi bağlaçlarla toparlamayı öğretir: although, however ve despite arasındaki fark.",
+  "kind": "summary",
+  "de": "Vermittelt, wie man lange Sätze mit Konnektoren zusammenhält: der Unterschied zwischen although, however und despite."
+ },
+ {
+  "tr": "Kişileri ve şeyleri yan cümleyle tanımlamayı öğretir; zamirin ne zaman düşebileceğini gösterir.",
+  "kind": "summary",
+  "de": "Vermittelt, wie man Personen und Dinge mit einem Nebensatz beschreibt, und zeigt, wann das Pronomen wegfallen darf."
+ },
+ {
+  "tr": "Zam konuşmasını koşul cümleleriyle kurmayı öğretir: mümkün olan ile varsayılan arasındaki fark.",
+  "kind": "summary",
+  "de": "Vermittelt, wie man das Gehaltsgespräch mit Bedingungssätzen führt: der Unterschied zwischen Möglichem und Angenommenem."
+ },
+ {
+  "tr": "programı seninle birlikte kuran bir iş arkadaşı",
+  "kind": "partner",
+  "de": "ein Kollege, der die Woche mit dir zusammen plant"
+ },
+ {
+  "tr": "görüşmen nasıl geçti diye merak eden bir iş arkadaşı",
+  "kind": "partner",
+  "de": "ein Kollege, der wissen will, wie dein Gespräch lief"
+ },
+ {
+  "tr": "takıma yeni katılmış ve herkesi tanımak isteyen biri",
+  "kind": "partner",
+  "de": "jemand, der neu im Team ist und alle kennenlernen will"
+ },
+ {
+  "tr": "bütçesi sınırlı ama seni kaybetmek istemeyen bir yönetici",
+  "kind": "partner",
+  "de": "eine Chefin mit knappem Budget, die dich aber halten will"
+ },
+ {
+  "tr": "kararını duyunca önce şaşıran, sonra planı soran bir yönetici",
+  "kind": "partner",
+  "de": "eine Chefin, die zuerst überrascht ist und dann nach dem Plan fragt"
+ },
+ {
+  "tr": "Eee, nasıl geçti? Ne dedi?",
+  "kind": "openingTr",
+  "de": "Und, wie lief es? Was hat sie gesagt?"
+ },
+ {
+  "tr": "Beni görmek istemişsin. Her şey yolunda mı?",
+  "kind": "openingTr",
+  "de": "Du wolltest mich sprechen. Ist alles in Ordnung?"
+ },
+ {
+  "tr": "Herkes iyi görünüyor. Takımı yöneten kişi kim?",
+  "kind": "openingTr",
+  "de": "Alle wirken nett. Wer ist die Person, die das Team leitet?"
+ },
+ {
+  "tr": "Maaşını konuşmak istemiştin. Aklında ne vardı?",
+  "kind": "openingTr",
+  "de": "Du wolltest über dein Gehalt sprechen. Was hattest du im Sinn?"
+ },
+ {
+  "tr": "Başlamadan önce: bu hafta müşteriyle görüşüyor musun?",
+  "kind": "openingTr",
+  "de": "Bevor wir anfangen: triffst du diese Woche den Kunden?"
+ },
+ {
+  "tr": "Yöneticinle maaşını konuşuyorsun. Bir zam iste, gerekçeni söyle, bütçe sınırlı denirse alternatif olarak primi gündeme getir.",
+  "kind": "scene",
+  "de": "Du sprichst mit deiner Chefin über dein Gehalt. Bitte um eine Erhöhung, nenne deinen Grund, und wenn das Budget knapp ist, bring den Bonus als Alternative ins Gespräch."
+ },
+ {
+  "tr": "Değerlendirme görüşmenden yeni çıktın ve bir iş arkadaşın ne konuşulduğunu soruyor. Sana söylenen övgüyü, eleştiriyi ve yeni hedefi aktar.",
+  "kind": "scene",
+  "de": "Du kommst gerade aus deinem Mitarbeitergespräch und ein Kollege fragt, worüber gesprochen wurde. Gib das Lob, die Kritik und das neue Ziel weiter."
+ },
+ {
+  "tr": "Yöneticine istifa ettiğini söylüyorsun. Kararını bağlaçlarla yumuşatarak anlat, devir teslim için bir plan öner ve minnettarlığını belirt.",
+  "kind": "scene",
+  "de": "Du sagst deiner Chefin, dass du kündigst. Erkläre deine Entscheidung mit weichen Konnektoren, schlag einen Plan für die Übergabe vor und sag, wofür du dankbar bist."
+ },
+ {
+  "tr": "Takıma yeni katılan biri sana kimin ne yaptığını soruyor. Yöneticiyi, amiri ve stajyeri tanıt, kimin neyle ilgilendiğini yan cümlelerle anlat.",
+  "kind": "scene",
+  "de": "Jemand, der neu im Team ist, fragt dich, wer was macht. Stell die Chefin, den Vorgesetzten und den Praktikanten vor und erklär mit Nebensätzen, wer sich um was kümmert."
+ },
+ {
+  "tr": "Bir iş arkadaşınla haftanın programını konuşuyorsun. Hangi toplantının ne zaman olduğunu söyle, bir işi ertelemeyi öner ve teslim tarihi için söz ver.",
+  "kind": "scene",
+  "de": "Du besprichst mit einem Kollegen die Woche. Sag, welcher Termin wann ist, schlag vor, etwas zu verschieben, und gib ein Versprechen für die Frist."
+ },
+ {
+  "tr": "En az üç kişiyi yan cümleyle tanıttıysan ve birinin nasıl biri olduğunu anlattıysan konuşma başarılı sayılır.",
+  "kind": "goal",
+  "de": "Das Gespräch gilt als gelungen, wenn du mindestens drei Personen mit einem Nebensatz vorgestellt und beschrieben hast, wie eine davon ist."
+ },
+ {
+  "tr": "Ayrılma kararını, bir çekince bağlacıyla kurulmuş en az iki cümleyi ve devir teslim planını söylediysen konuşma başarılı sayılır.",
+  "kind": "goal",
+  "de": "Das Gespräch gilt als gelungen, wenn du deine Entscheidung, mindestens zwei Sätze mit einem Konnektor der Einschränkung und deinen Übergabeplan genannt hast."
+ },
+ {
+  "tr": "Takvimindeki bir işi, bir niyetini ve bir sözünü doğru kalıplarla söylediysen ve bir erteleme önerdiysen konuşma başarılı sayılır.",
+  "kind": "goal",
+  "de": "Das Gespräch gilt als gelungen, wenn du einen Termin, eine Absicht und ein Versprechen mit den richtigen Wendungen gesagt und eine Verschiebung vorgeschlagen hast."
+ },
+ {
+  "tr": "Sana söylenen bir övgüyü, bir eleştiriyi ve bir yönergeyi aktardıysan ve sorulan bir soruyu da aktardıysan konuşma başarılı sayılır.",
+  "kind": "goal",
+  "de": "Das Gespräch gilt als gelungen, wenn du ein Lob, eine Kritik und eine Anweisung weitergegeben und auch eine gestellte Frage wiedergegeben hast."
+ },
+ {
+  "tr": "Zam talebini gerekçesiyle söylediysen, bir varsayım cümlesi kurduysan ve prim ya da başka bir alternatif önerdiysen konuşma başarılı sayılır.",
+  "kind": "goal",
+  "de": "Das Gespräch gilt als gelungen, wenn du deine Bitte um eine Erhöhung begründet, einen Bedingungssatz mit Annahme gebaut und einen Bonus oder eine andere Alternative vorgeschlagen hast."
+ },
+ {
+  "tr": "-e rağmen",
+  "kind": "vocab.tr",
+  "de": "obwohl / trotz"
+ },
+ {
+  "tr": "zam",
+  "kind": "vocab.tr",
+  "de": "Gehaltserhöhung"
+ },
+ {
+  "tr": "amir",
+  "kind": "vocab.tr",
+  "de": "Vorgesetzter"
+ },
+ {
+  "tr": "övgü",
+  "kind": "vocab.tr",
+  "de": "Lob"
+ },
+ {
+  "tr": "prim",
+  "kind": "vocab.tr",
+  "de": "Bonus"
+ },
+ {
+  "tr": "ancak",
+  "kind": "vocab.tr",
+  "de": "jedoch"
+ },
+ {
+  "tr": "bütçe",
+  "kind": "vocab.tr",
+  "de": "Budget"
+ },
+ {
+  "tr": "makul",
+  "kind": "vocab.tr",
+  "de": "angemessen"
+ },
+ {
+  "tr": "dürüst",
+  "kind": "vocab.tr",
+  "de": "ehrlich"
+ },
+ {
+  "tr": "gündem",
+  "kind": "vocab.tr",
+  "de": "Tagesordnung"
+ },
+ {
+  "tr": "stajyer",
+  "kind": "vocab.tr",
+  "de": "Praktikant"
+ },
+ {
+  "tr": "eleştiri",
+  "kind": "vocab.tr",
+  "de": "Kritik"
+ },
+ {
+  "tr": "görüşmek",
+  "kind": "vocab.tr",
+  "de": "besprechen"
+ },
+ {
+  "tr": "ilerleme",
+  "kind": "vocab.tr",
+  "de": "Fortschritt"
+ },
+ {
+  "tr": "ertelemek",
+  "kind": "vocab.tr",
+  "de": "verschieben"
+ },
+ {
+  "tr": "güvenilir",
+  "kind": "vocab.tr",
+  "de": "zuverlässig"
+ },
+ {
+  "tr": "minnettar",
+  "kind": "vocab.tr",
+  "de": "dankbar"
+ },
+ {
+  "tr": "geliştirmek",
+  "kind": "vocab.tr",
+  "de": "verbessern"
+ },
+ {
+  "tr": "gücü yetmek",
+  "kind": "vocab.tr",
+  "de": "sich leisten können"
+ },
+ {
+  "tr": "hatırlatmak",
+  "kind": "vocab.tr",
+  "de": "erinnern"
+ },
+ {
+  "tr": "destekleyici",
+  "kind": "vocab.tr",
+  "de": "unterstützend"
+ },
+ {
+  "tr": "devir teslim",
+  "kind": "vocab.tr",
+  "de": "Übergabe"
+ },
+ {
+  "tr": "istifa etmek",
+  "kind": "vocab.tr",
+  "de": "kündigen"
+ },
+ {
+  "tr": "teklif etmek",
+  "kind": "vocab.tr",
+  "de": "anbieten"
+ },
+ {
+  "tr": "teslim etmek",
+  "kind": "vocab.tr",
+  "de": "einreichen"
+ },
+ {
+  "tr": "teslim tarihi",
+  "kind": "vocab.tr",
+  "de": "Frist"
+ },
+ {
+  "tr": "pazarlık etmek",
+  "kind": "vocab.tr",
+  "de": "verhandeln"
+ },
+ {
+  "tr": "gözden geçirmek",
+  "kind": "vocab.tr",
+  "de": "durchsehen"
+ },
+ {
+  "tr": "takım çalışması",
+  "kind": "vocab.tr",
+  "de": "Teamarbeit"
+ },
+ {
+  "tr": "yerine gelecek kişi",
+  "kind": "vocab.tr",
+  "de": "Nachfolger"
+ },
+ {
+  "tr": "değerlendirme görüşmesi",
+  "kind": "vocab.tr",
+  "de": "Mitarbeitergespräch"
+ },
+ {
+  "tr": "kibarca konu açar",
+  "kind": "pattern.tr",
+  "de": "bringt das Thema höflich auf"
+ },
+ {
+  "tr": "sorulan soruyu aktarır",
+  "kind": "pattern.tr",
+  "de": "gibt eine gestellte Frage wieder"
+ },
+ {
+  "tr": "çekinceyi isimle bağlar",
+  "kind": "pattern.tr",
+  "de": "verbindet die Einschränkung mit einem Nomen"
+ },
+ {
+  "tr": "çekinceyi cümleyle bağlar",
+  "kind": "pattern.tr",
+  "de": "verbindet die Einschränkung mit einem Satz"
+ },
+ {
+  "tr": "verilen yönergeyi aktarır",
+  "kind": "pattern.tr",
+  "de": "gibt eine erhaltene Anweisung wieder"
+ },
+ {
+  "tr": "iki cümleyi karşıtlıkla bağlar",
+  "kind": "pattern.tr",
+  "de": "verbindet zwei Sätze mit einem Gegensatz"
+ },
+ {
+  "tr": "önceden kurulmuş niyeti anlatır",
+  "kind": "pattern.tr",
+  "de": "nennt eine vorher gefasste Absicht"
+ },
+ {
+  "tr": "kararlaşmış bir programı anlatır",
+  "kind": "pattern.tr",
+  "de": "nennt einen festen Termin"
+ },
+ {
+  "tr": "kişiyi tanımlayan yan cümle kurar",
+  "kind": "pattern.tr",
+  "de": "baut einen Nebensatz, der eine Person beschreibt"
+ },
+ {
+  "tr": "nesneyi tanımlayan yan cümle kurar",
+  "kind": "pattern.tr",
+  "de": "baut einen Nebensatz, der ein Ding beschreibt"
+ },
+ {
+  "tr": "nesne durumunda ilgi zamirini düşürür",
+  "kind": "pattern.tr",
+  "de": "lässt das Relativpronomen als Objekt weg"
+ },
+ {
+  "tr": "o an verilen kararı ya da sözü anlatır",
+  "kind": "pattern.tr",
+  "de": "nennt einen spontanen Entschluss oder ein Versprechen"
+ },
+ {
+  "tr": "gerçekleşmesi mümkün bir koşulu anlatır",
+  "kind": "pattern.tr",
+  "de": "nennt eine Bedingung, die eintreten kann"
+ },
+ {
+  "tr": "söyleneni bir basamak geriye alarak aktarır",
+  "kind": "pattern.tr",
+  "de": "gibt Gesagtes eine Zeitstufe zurückgesetzt wieder"
+ },
+ {
+  "tr": "gerçek olmayan bir durumu ve sonucunu anlatır",
+  "kind": "pattern.tr",
+  "de": "nennt eine nicht reale Lage und ihre Folge"
+ },
+ {
+  "tr": "ile söylenir:",
+  "kind": "why.tr",
+  "de": "gesagt:"
+ },
+ {
+  "tr": "ile kişi söylenmez,",
+  "kind": "why.tr",
+  "de": "wird die Person nicht genannt,"
+ },
+ {
+  "tr": "Yanlış. Koşul cümlesinin içinde",
+  "kind": "why.tr",
+  "de": "Falsch. Im Bedingungssatz selbst steht"
+ },
+ {
+  "tr": "durmaz; orası geçmiş biçimi alır:",
+  "kind": "why.tr",
+  "de": "nicht; dort steht die Vergangenheitsform:"
+ },
+ {
+  "tr": "Yanlış. Bu fiil kişiyi doğrudan almaz:",
+  "kind": "why.tr",
+  "de": "Falsch. Dieses Verb nimmt die Person nicht direkt:"
+ },
+ {
+  "tr": "Cümle gelecekse başka bağlaç kullanılır:",
+  "kind": "why.tr",
+  "de": "Kommt ein Satz, nimmt man einen anderen Konnektor:"
+ },
+ {
+  "tr": "Yanlış. Bu bağlaç cümle almaz, isim alır:",
+  "kind": "why.tr",
+  "de": "Falsch. Dieser Konnektor nimmt keinen Satz, sondern ein Nomen:"
+ },
+ {
+  "tr": "Doğru. Burada zamir yan cümlenin nesnesi, o yüzden düşebilir; özne olsaydı kalması gerekirdi.",
+  "kind": "why.tr",
+  "de": "Richtig. Hier ist das Pronomen Objekt des Nebensatzes und darf wegfallen; als Subjekt müsste es bleiben."
+ },
+ {
+  "tr": "Doğru. Buluşma kararlaştırılmış ve takvimde; İngilizce bunu şimdiki zamanla söyler, gelecek eki aramaz.",
+  "kind": "why.tr",
+  "de": "Richtig. Der Termin ist vereinbart und steht im Kalender; das Englische sagt das mit der Verlaufsform und braucht keine Zukunftsform."
+ },
+ {
+  "tr": "Kibar açılış kalıbı:",
+  "kind": "hint.tr",
+  "de": "Die höfliche Einstiegswendung:"
+ },
+ {
+  "tr": "Önceden kurulmuş niyet:",
+  "kind": "hint.tr",
+  "de": "Eine vorher gefasste Absicht:"
+ },
+ {
+  "tr": "Bu bağlaçtan sonra isim gelir:",
+  "kind": "hint.tr",
+  "de": "Nach diesem Konnektor steht ein Nomen:"
+ },
+ {
+  "tr": "Kişi tanımlanıyor, o yüzden who:",
+  "kind": "hint.tr",
+  "de": "Eine Person wird beschrieben, deshalb who:"
+ },
+ {
+  "tr": "Nesne durumunda zamir düşebilir:",
+  "kind": "hint.tr",
+  "de": "Als Objekt darf das Pronomen wegfallen:"
+ },
+ {
+  "tr": "O an verilen söz, o yüzden will:",
+  "kind": "hint.tr",
+  "de": "Ein spontanes Versprechen, deshalb will:"
+ },
+ {
+  "tr": "Şey tanımlanıyor, o yüzden that:",
+  "kind": "hint.tr",
+  "de": "Ein Ding wird beschrieben, deshalb that:"
+ },
+ {
+  "tr": "Yönerge aktarımı mastarla kurulur:",
+  "kind": "hint.tr",
+  "de": "Die Anweisung wird mit dem Infinitiv wiedergegeben:"
+ },
+ {
+  "tr": "Aktarılan soruda soru sırası kurulmaz:",
+  "kind": "hint.tr",
+  "de": "In der wiedergegebenen Frage steht keine Fragestellung:"
+ },
+ {
+  "tr": "Bu bağlaçtan sonra tam bir cümle gelir:",
+  "kind": "hint.tr",
+  "de": "Nach diesem Konnektor steht ein vollständiger Satz:"
+ },
+ {
+  "tr": "Aktarımda zaman bir basamak geriye gider:",
+  "kind": "hint.tr",
+  "de": "Bei der Wiedergabe rückt die Zeit eine Stufe zurück:"
+ },
+ {
+  "tr": "Varsayım, o yüzden geçmiş biçim ve would:",
+  "kind": "hint.tr",
+  "de": "Eine Annahme, deshalb Vergangenheitsform und would:"
+ },
+ {
+  "tr": "Bu bağlaç noktadan sonra gelir ve virgül alır:",
+  "kind": "hint.tr",
+  "de": "Dieser Konnektor steht nach dem Punkt und bekommt ein Komma:"
+ },
+ {
+  "tr": "Mümkün bir koşul, o yüzden geniş zaman ve will:",
+  "kind": "hint.tr",
+  "de": "Eine mögliche Bedingung, deshalb Präsens und will:"
+ },
+ {
+  "tr": "Takvime yazılmış bir iş, o yüzden şimdiki zaman:",
+  "kind": "hint.tr",
+  "de": "Ein Termin im Kalender, deshalb die Verlaufsform:"
+ },
+ {
+  "tr": "şey",
+  "kind": "say.tr",
+  "de": "Ding"
+ },
+ {
+  "tr": "zam,",
+  "kind": "say.tr",
+  "de": "Gehaltserhöhung,"
+ },
+ {
+  "tr": "niyet",
+  "kind": "say.tr",
+  "de": "Absicht"
+ },
+ {
+  "tr": "orada",
+  "kind": "say.tr",
+  "de": "dort"
+ },
+ {
+  "tr": "övgü ve",
+  "kind": "say.tr",
+  "de": "Lob und"
+ },
+ {
+  "tr": "ikisi de",
+  "kind": "say.tr",
+  "de": "beide auch"
+ },
+ {
+  "tr": "varsayım",
+  "kind": "say.tr",
+  "de": "Annahme"
+ },
+ {
+  "tr": "aktarımda",
+  "kind": "say.tr",
+  "de": "bei der Wiedergabe"
+ },
+ {
+  "tr": "güvenmek.",
+  "kind": "say.tr",
+  "de": "vertrauen."
+ },
+ {
+  "tr": "isim alan",
+  "kind": "say.tr",
+  "de": "mit Nomen"
+ },
+ {
+  "tr": "Kibar için",
+  "kind": "say.tr",
+  "de": "Für höflich sagen wir"
+ },
+ {
+  "tr": "o anki söz",
+  "kind": "say.tr",
+  "de": "spontanes Versprechen"
+ },
+ {
+  "tr": "aktarılınca",
+  "kind": "say.tr",
+  "de": "wiedergegeben"
+ },
+ {
+  "tr": "Dürüst için",
+  "kind": "say.tr",
+  "de": "Für ehrlich sagen wir"
+ },
+ {
+  "tr": "müşteri için",
+  "kind": "say.tr",
+  "de": "für den Kunden"
+ },
+ {
+  "tr": "destekleyici,",
+  "kind": "say.tr",
+  "de": "unterstützend,"
+ },
+ {
+  "tr": "ertelemek ise",
+  "kind": "say.tr",
+  "de": "verschieben dagegen mit"
+ },
+ {
+  "tr": "İlerleme için",
+  "kind": "say.tr",
+  "de": "Für den Fortschritt sagen wir"
+ },
+ {
+  "tr": "Personel için",
+  "kind": "say.tr",
+  "de": "Für das Personal sagen wir"
+ },
+ {
+  "tr": "Toplantı için",
+  "kind": "say.tr",
+  "de": "Für die Besprechung sagen wir"
+ },
+ {
+  "tr": "bir İSİM alır,",
+  "kind": "say.tr",
+  "de": "nimmt ein NOMEN,"
+ },
+ {
+  "tr": "Bir şey acilse",
+  "kind": "say.tr",
+  "de": "Ist etwas eilig, wird es"
+ },
+ {
+  "tr": "İşi devretmeye",
+  "kind": "say.tr",
+  "de": "Die Übergabe der Arbeit heißt"
+ },
+ {
+  "tr": "Pazarlık etmek",
+  "kind": "say.tr",
+  "de": "Verhandeln wird mit"
+ },
+ {
+  "tr": "bir CÜMLE alır,",
+  "kind": "say.tr",
+  "de": "nimmt einen SATZ,"
+ },
+ {
+  "tr": "kalmak zorunda.",
+  "kind": "say.tr",
+  "de": "muss bleiben."
+ },
+ {
+  "tr": "Özneyse düşmez:",
+  "kind": "say.tr",
+  "de": "Ist es Subjekt, fällt es nicht weg:"
+ },
+ {
+  "tr": "takım çalışması,",
+  "kind": "say.tr",
+  "de": "Teamarbeit,"
+ },
+ {
+  "tr": "Özetleyelim: kişi",
+  "kind": "say.tr",
+  "de": "Fassen wir zusammen: Person"
+ },
+ {
+  "tr": "deriz. Şunu söyle:",
+  "kind": "say.tr",
+  "de": "sagen wir. Sag das:"
+ },
+ {
+  "tr": "ile söylenir, soru",
+  "kind": "say.tr",
+  "de": "gesagt, die Frage mit"
+ },
+ {
+  "tr": "İlk kelimelerimiz:",
+  "kind": "say.tr",
+  "de": "Unsere ersten Wörter:"
+ },
+ {
+  "tr": "şey tanımlanıyorsa",
+  "kind": "say.tr",
+  "de": "wird ein Ding beschrieben, steht"
+ },
+ {
+  "tr": "Bir işi teslim etmek",
+  "kind": "say.tr",
+  "de": "Etwas einreichen wird mit"
+ },
+ {
+  "tr": "görüşmek. Tekrar et:",
+  "kind": "say.tr",
+  "de": "besprechen. Sprich nach:"
+ },
+ {
+  "tr": "iki cümleyi bağlayan",
+  "kind": "say.tr",
+  "de": "das zwei Sätze verbindende"
+ },
+ {
+  "tr": "Şirketin parası için",
+  "kind": "say.tr",
+  "de": "Für das Geld der Firma sagen wir"
+ },
+ {
+  "tr": "Yönerge aktarılırken",
+  "kind": "say.tr",
+  "de": "Wenn eine Anweisung wiedergegeben wird, nimmt man"
+ },
+ {
+  "tr": "Bir şeyi teklif etmek",
+  "kind": "say.tr",
+  "de": "Etwas anbieten wird mit"
+ },
+ {
+  "tr": "ile geçmiş, sonucunda",
+  "kind": "say.tr",
+  "de": "mit Vergangenheit, in der Folge"
+ },
+ {
+  "tr": "O, dinleyen bir amir.",
+  "kind": "say.tr",
+  "de": "Sie ist eine Vorgesetzte, die zuhört."
+ },
+ {
+  "tr": "ve mastar kullanılır:",
+  "kind": "say.tr",
+  "de": "und den Infinitiv:"
+ },
+ {
+  "tr": "Özetleyelim: cümle alan",
+  "kind": "say.tr",
+  "de": "Fassen wir zusammen: mit Satz"
+ },
+ {
+  "tr": "Görüşmenin iki yüzü var:",
+  "kind": "say.tr",
+  "de": "Das Gespräch hat zwei Seiten:"
+ },
+ {
+  "tr": "yeni başlayan kişiye ise",
+  "kind": "say.tr",
+  "de": "und die neu angefangene Person heißt"
+ },
+ {
+  "tr": "Yerime birini arıyorlar.",
+  "kind": "say.tr",
+  "de": "Sie suchen einen Nachfolger."
+ },
+ {
+  "tr": "gelir; ikisinin yerine de",
+  "kind": "say.tr",
+  "de": "steht; für beide kann auch"
+ },
+ {
+  "tr": "Özetleyelim: mümkün koşul",
+  "kind": "say.tr",
+  "de": "Fassen wir zusammen: mögliche Bedingung"
+ },
+ {
+  "tr": "yerine gelecek kişiye ise",
+  "kind": "say.tr",
+  "de": "und die Person, die nachkommt, heißt"
+ },
+ {
+  "tr": "ile geniş zaman, sonucunda",
+  "kind": "say.tr",
+  "de": "mit Präsens, in der Folge"
+ },
+ {
+  "tr": "Özetleyelim: takvimdeki iş",
+  "kind": "say.tr",
+  "de": "Fassen wir zusammen: Termin im Kalender"
+ },
+ {
+  "tr": "Bir belgeyi gözden geçirmek",
+  "kind": "say.tr",
+  "de": "Ein Dokument durchsehen wird mit"
+ },
+ {
+  "tr": "bir rakamı makul bulmak ise",
+  "kind": "say.tr",
+  "de": "eine Zahl angemessen finden dagegen mit"
+ },
+ {
+  "tr": "Birine bir şeyi hatırlatmak",
+  "kind": "say.tr",
+  "de": "Jemanden an etwas erinnern wird mit"
+ },
+ {
+  "tr": "Baskıya rağmen sakin kaldım.",
+  "kind": "say.tr",
+  "de": "Trotz des Drucks bin ich ruhig geblieben."
+ },
+ {
+  "tr": "Gönderdiğim rapor geç kaldı.",
+  "kind": "say.tr",
+  "de": "Der Bericht, den ich geschickt habe, kam zu spät."
+ },
+ {
+  "tr": "Mutlu olup olmadığımı sordu.",
+  "kind": "say.tr",
+  "de": "Sie hat gefragt, ob ich zufrieden bin."
+ },
+ {
+  "tr": "Doğrudan bağlı olduğun kişiye",
+  "kind": "say.tr",
+  "de": "Die Person, der du direkt unterstellt bist, heißt"
+ },
+ {
+  "tr": "İlk kalıbımız. Minnettar için",
+  "kind": "say.tr",
+  "de": "Unsere erste Wendung. Für dankbar sagen wir"
+ },
+ {
+  "tr": "İstifa etmek demek. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Das heißt kündigen. Sprich nach:"
+ },
+ {
+  "tr": "Zamir düştü, anlam aynı kaldı.",
+  "kind": "say.tr",
+  "de": "Das Pronomen ist weg, die Bedeutung bleibt gleich."
+ },
+ {
+  "tr": "Destekleyici ve güvenilir biri.",
+  "kind": "say.tr",
+  "de": "Er ist unterstützend und zuverlässig."
+ },
+ {
+  "tr": "Devir teslim iki hafta sürecek.",
+  "kind": "say.tr",
+  "de": "Die Übergabe wird zwei Wochen dauern."
+ },
+ {
+  "tr": "İlk kalıbımız. Geliştirmek için",
+  "kind": "say.tr",
+  "de": "Unsere erste Wendung. Für verbessern sagen wir"
+ },
+ {
+  "tr": "Önceden kurulmuş bir niyet için",
+  "kind": "say.tr",
+  "de": "Für eine vorher gefasste Absicht steht"
+ },
+ {
+  "tr": "Teslim tarihi demek. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Das heißt Frist. Sprich nach:"
+ },
+ {
+  "tr": "İyi takım çalışması güven ister.",
+  "kind": "say.tr",
+  "de": "Gute Teamarbeit braucht Vertrauen."
+ },
+ {
+  "tr": "Hedefi her ay gözden geçiriyoruz.",
+  "kind": "say.tr",
+  "de": "Wir sehen das Ziel jeden Monat durch."
+ },
+ {
+  "tr": "İlerlememin iyi olduğunu söyledi.",
+  "kind": "say.tr",
+  "de": "Er hat gesagt, mein Fortschritt sei gut."
+ },
+ {
+  "tr": "Bu acil, o yüzden ertelemeyeceğim.",
+  "kind": "say.tr",
+  "de": "Das ist dringend, deshalb verschiebe ich es nicht."
+ },
+ {
+  "tr": "denir. Bir şeye gücünün yetmesi ise",
+  "kind": "say.tr",
+  "de": "genannt. Und sich etwas leisten können wird mit"
+ },
+ {
+  "tr": "deriz. Toplantının konu listesi ise",
+  "kind": "say.tr",
+  "de": "sagen wir. Und die Themenliste der Besprechung heißt"
+ },
+ {
+  "tr": "Bana yeni bir hedef koymamı söyledi.",
+  "kind": "say.tr",
+  "de": "Er hat mir gesagt, ich soll ein neues Ziel setzen."
+ },
+ {
+  "tr": "ile söylenir ve ardından kişi gelir:",
+  "kind": "say.tr",
+  "de": "gesagt, und danach kommt die Person:"
+ },
+ {
+  "tr": "o an verilen karar ya da söz için ise",
+  "kind": "say.tr",
+  "de": "und für einen spontanen Entschluss oder ein Versprechen steht"
+ },
+ {
+  "tr": "Pazartesi müşteriyle toplantımız var.",
+  "kind": "say.tr",
+  "de": "Am Montag haben wir eine Besprechung mit dem Kunden."
+ },
+ {
+  "tr": "ile söylenir ve ardından mastar gelir:",
+  "kind": "say.tr",
+  "de": "gesagt, und danach kommt der Infinitiv:"
+ },
+ {
+  "tr": "Şimdi sen kur: Görüşmeyi erteleyeceğim.",
+  "kind": "say.tr",
+  "de": "Jetzt du: Ich werde das Gespräch verschieben."
+ },
+ {
+  "tr": "Şimdi dersin kuralı. Kişi tanımlanıyorsa",
+  "kind": "say.tr",
+  "de": "Jetzt die Regel der Lektion. Wird eine Person beschrieben, steht"
+ },
+ {
+  "tr": "Değerlendirme görüşmesi demek. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Das heißt Mitarbeitergespräch. Sprich nach:"
+ },
+ {
+  "tr": "olur. Zamirler ve zaman zarfları da kayar:",
+  "kind": "say.tr",
+  "de": "Auch die Pronomen und die Zeitangaben verschieben sich:"
+ },
+ {
+  "tr": "Son kalıbımız soruyu aktarıyor. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Unsere letzte Wendung gibt eine Frage wieder. Sprich nach:"
+ },
+ {
+  "tr": "Şimdi yöneticine ayrıldığını söyleyeceksin.",
+  "kind": "say.tr",
+  "de": "Jetzt sagst du deiner Chefin, dass du gehst."
+ },
+ {
+  "tr": "Bütçe sabit, o yüzden buna güçleri yetmiyor.",
+  "kind": "say.tr",
+  "de": "Das Budget steht fest, deshalb können sie es sich nicht leisten."
+ },
+ {
+  "tr": "Son iki kelimemiz takımın kendisiyle ilgili:",
+  "kind": "say.tr",
+  "de": "Unsere letzten zwei Wörter betreffen das Team selbst:"
+ },
+ {
+  "tr": "İkinci kalıbımız niyeti anlatıyor. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Unsere zweite Wendung nennt die Absicht. Sprich nach:"
+ },
+ {
+  "tr": "Şimdi sen kur: Bana bir plan yazmamı söyledi.",
+  "kind": "say.tr",
+  "de": "Jetzt du: Sie hat mir gesagt, ich soll einen Plan schreiben."
+ },
+ {
+  "tr": "Şimdi sıra sende: Raporumu okuduğunu söyledi.",
+  "kind": "say.tr",
+  "de": "Jetzt bist du dran: Er hat gesagt, dass er meinen Bericht gelesen hat."
+ },
+ {
+  "tr": "Şimdi sen kur: Gönderdiğim e-posta çok uzundu.",
+  "kind": "say.tr",
+  "de": "Jetzt du: Die E-Mail, die ich geschickt habe, war zu lang."
+ },
+ {
+  "tr": "İlk kalıbımız mümkün olanı anlatıyor. Prim için",
+  "kind": "say.tr",
+  "de": "Unsere erste Wendung nennt das Mögliche. Für den Bonus sagen wir"
+ },
+ {
+  "tr": "Özetleyelim: aktarımda zaman geriye gider, kişi",
+  "kind": "say.tr",
+  "de": "Fassen wir zusammen: bei der Wiedergabe rückt die Zeit zurück, die Person steht bei"
+ },
+ {
+  "tr": "Son kalıbımız konuyu kibarca açıyor. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Unsere letzte Wendung bringt das Thema höflich auf. Sprich nach:"
+ },
+ {
+  "tr": "Yönetici demek. İlk kalıbımız da bu. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Das heißt Chefin. Das ist auch unsere erste Wendung. Sprich nach:"
+ },
+ {
+  "tr": "Bir tane daha: Uzun saatlere rağmen keyif aldım.",
+  "kind": "say.tr",
+  "de": "Noch eins: Trotz der langen Stunden hat es mir Spaß gemacht."
+ },
+ {
+  "tr": "İkinci kalıbımız bir şeyi tanımlıyor. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Unsere zweite Wendung beschreibt ein Ding. Sprich nach:"
+ },
+ {
+  "tr": "İkinci kalıbımız varsayımı anlatıyor. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Unsere zweite Wendung nennt die Annahme. Sprich nach:"
+ },
+ {
+  "tr": "İnsanları anlatırken iki kelime çok işine yarar:",
+  "kind": "say.tr",
+  "de": "Beim Beschreiben von Menschen helfen dir zwei Wörter sehr:"
+ },
+ {
+  "tr": "Şimdi yöneticinle karşı karşıyasın ve konu maaş.",
+  "kind": "say.tr",
+  "de": "Jetzt sitzt du deiner Chefin gegenüber und es geht ums Gehalt."
+ },
+ {
+  "tr": "gelir. Gerçek OLMAYAN, varsayılan bir durumda ise",
+  "kind": "say.tr",
+  "de": "Bei einer NICHT realen, angenommenen Lage dagegen steht"
+ },
+ {
+  "tr": "İkinci kalıbımız iki cümleyi bağlıyor. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Unsere zweite Wendung verbindet zwei Sätze. Sprich nach:"
+ },
+ {
+  "tr": "Bir tane daha: Gündemi sana bu akşam göndereceğim.",
+  "kind": "say.tr",
+  "de": "Noch eins: Ich schicke dir heute Abend die Tagesordnung."
+ },
+ {
+  "tr": "Şimdi sıra sende: O, bana eğitim veren iş arkadaşı.",
+  "kind": "say.tr",
+  "de": "Jetzt bist du dran: Sie ist die Kollegin, die mich eingearbeitet hat."
+ },
+ {
+  "tr": "Şimdi sıra sende: Zam alırsam bir yıl daha kalırım.",
+  "kind": "say.tr",
+  "de": "Jetzt bist du dran: Wenn ich eine Erhöhung bekomme, bleibe ich noch ein Jahr."
+ },
+ {
+  "tr": "ile söylenir ve hem fiil hem isim olarak kullanılır:",
+  "kind": "say.tr",
+  "de": "gesagt und sowohl als Verb wie als Nomen benutzt:"
+ },
+ {
+  "tr": "ile söylenir; aynı kelime isim olarak da kullanılır.",
+  "kind": "say.tr",
+  "de": "gesagt; dasselbe Wort wird auch als Nomen benutzt."
+ },
+ {
+  "tr": "ise iki ayrı cümleyi bağlar ve noktadan sonra gelir.",
+  "kind": "say.tr",
+  "de": "dagegen verbindet zwei getrennte Sätze und steht nach dem Punkt."
+ },
+ {
+  "tr": "Şimdi sen kur: Daha fazla istesem hayır mı derlerdi?",
+  "kind": "say.tr",
+  "de": "Jetzt du: Würden sie nein sagen, wenn ich mehr verlangen würde?"
+ },
+ {
+  "tr": "Bir tane daha: Primi gelecek hafta görüşebilir miyiz?",
+  "kind": "say.tr",
+  "de": "Noch eins: Können wir den Bonus nächste Woche besprechen?"
+ },
+ {
+  "tr": "Son kalıbımız o an verilen sözü anlatıyor. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Unsere letzte Wendung nennt ein spontanes Versprechen. Sprich nach:"
+ },
+ {
+  "tr": "Şimdi dersin kuralı. Gerçekleşmesi MÜMKÜN bir koşulda",
+  "kind": "say.tr",
+  "de": "Jetzt die Regel der Lektion. Bei einer Bedingung, die eintreten KANN, steht"
+ },
+ {
+  "tr": "Şimdi sen kur: Saatler uzundu. Ancak takım harikaydı.",
+  "kind": "say.tr",
+  "de": "Jetzt du: Die Stunden waren lang. Jedoch war das Team großartig."
+ },
+ {
+  "tr": "Şimdi sıra sende: Perşembe günü takımımla buluşuyorum.",
+  "kind": "say.tr",
+  "de": "Jetzt bist du dran: Am Donnerstag treffe ich mein Team."
+ },
+ {
+  "tr": "Bu kalıp emir cümlesini yumuşatır ve aktarımı kısaltır.",
+  "kind": "say.tr",
+  "de": "Diese Wendung macht den Befehl weicher und kürzt die Wiedergabe."
+ },
+ {
+  "tr": "İlk kalıbımız kararlaşmış programı anlatıyor. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Unsere erste Wendung nennt den festen Termin. Sprich nach:"
+ },
+ {
+  "tr": "kullanılır — geçmiş burada zaman değil, mesafe işaretidir.",
+  "kind": "say.tr",
+  "de": "benutzt — die Vergangenheit ist hier keine Zeit, sondern ein Zeichen von Distanz."
+ },
+ {
+  "tr": "Şimdi bir iş arkadaşınla haftanın programını konuşacaksın.",
+  "kind": "say.tr",
+  "de": "Jetzt besprichst du mit einem Kollegen die Woche."
+ },
+ {
+  "tr": "Şimdi sıra sende: İş zor olmasına rağmen çok şey öğrendim.",
+  "kind": "say.tr",
+  "de": "Jetzt bist du dran: Obwohl die Arbeit hart war, habe ich viel gelernt."
+ },
+ {
+  "tr": "Bir tane daha: Daha fazla eğitim isteyip istemediğimi sordu.",
+  "kind": "say.tr",
+  "de": "Noch eins: Er hat gefragt, ob ich mehr Schulung möchte."
+ },
+ {
+  "tr": "deriz ve bu kelime sayılamaz: 'progresses' yoktur. Hedef için de",
+  "kind": "say.tr",
+  "de": "sagen wir, und das Wort ist unzählbar: 'progresses' gibt es nicht. Und für das Ziel sagen wir"
+ },
+ {
+  "tr": "Bir tane daha, bu sefer zamirsiz: Gönderdiğim e-posta çok uzundu.",
+  "kind": "say.tr",
+  "de": "Noch eins, diesmal ohne Pronomen: Die E-Mail, die ich geschickt habe, war zu lang."
+ },
+ {
+  "tr": "kullanılabilir. Yan cümle ismin HEMEN arkasına gelir, sonuna değil.",
+  "kind": "say.tr",
+  "de": "benutzt werden. Der Nebensatz kommt DIREKT hinter das Nomen, nicht ans Satzende."
+ },
+ {
+  "tr": "güvenilir. İkincisi işin zamanında bitmesiyle ilgilidir, duyguyla değil.",
+  "kind": "say.tr",
+  "de": "zuverlässig. Das zweite betrifft, ob die Arbeit rechtzeitig fertig wird, nicht das Gefühl."
+ },
+ {
+  "tr": "Üçüncü bağlacımız isim alıyor ve cümlenin başına da sonuna da gelebiliyor.",
+  "kind": "say.tr",
+  "de": "Unser dritter Konnektor nimmt ein Nomen und kann am Anfang wie am Ende des Satzes stehen."
+ },
+ {
+  "tr": "nesne durumunda düşebilir. Şimdi yeni bir iş arkadaşına takımı tanıtacaksın.",
+  "kind": "say.tr",
+  "de": "als Objekt darf es wegfallen. Jetzt stellst du einer neuen Kollegin das Team vor."
+ },
+ {
+  "tr": "Şimdi dersin kuralı. Birinin sözünü aktarırken zaman bir basamak geriye gider:",
+  "kind": "say.tr",
+  "de": "Jetzt die Regel der Lektion. Wenn du die Worte von jemandem wiedergibst, rückt die Zeit eine Stufe zurück:"
+ },
+ {
+  "tr": "ile aktarılır. Şimdi görüşme sonrası bir iş arkadaşın ne konuşulduğunu soruyor.",
+  "kind": "say.tr",
+  "de": "wiedergegeben. Jetzt fragt dich nach dem Gespräch ein Kollege, worüber gesprochen wurde."
+ },
+ {
+  "tr": "Merhaba! Bugün modülün son dersi: bir işten ayrılmayı ve işi devretmeyi anlatmak.",
+  "kind": "say.tr",
+  "de": "Hallo! Heute die letzte Lektion des Moduls: eine Stelle verlassen und die Arbeit übergeben."
+ },
+ {
+  "tr": "ile söylenir. İkincisi resmî bir kelimedir; gündelik konuşmada 'move' de duyarsın.",
+  "kind": "say.tr",
+  "de": "gesagt. Das zweite ist ein formelles Wort; im Alltag hörst du auch 'move'."
+ },
+ {
+  "tr": "Şimdi dersin kuralı. Üç bağlaç aynı çekinceyi kuruyor ama ardına farklı şey alıyor:",
+  "kind": "say.tr",
+  "de": "Jetzt die Regel der Lektion. Drei Konnektoren bauen dieselbe Einschränkung, nehmen danach aber Verschiedenes:"
+ },
+ {
+  "tr": "deriz ve bu kelime topluluk adıdır: 'staffs' yoktur, tek başına bütün ekibi anlatır.",
+  "kind": "say.tr",
+  "de": "sagen wir, und das Wort ist ein Sammelbegriff: 'staffs' gibt es nicht, es meint allein die ganze Belegschaft."
+ },
+ {
+  "tr": "eleştiri. İkincisi İngilizcede Türkçedeki kadar sert duyulmaz; iş dilinde olağandır.",
+  "kind": "say.tr",
+  "de": "Kritik. Im Englischen ist das Wort im Arbeitsalltag so normal wie im Deutschen; es klingt nicht nach Vorwurf."
+ },
+ {
+  "tr": "Aktarırken cümle olduğu gibi kalmıyor: zaman bir basamak geriye gidiyor. Hazır mısın?",
+  "kind": "say.tr",
+  "de": "Bei der Wiedergabe bleibt der Satz nicht gleich: die Zeit rückt eine Stufe zurück. Bist du bereit?"
+ },
+ {
+  "tr": "Şimdi küçük ama çok kullanılan bir incelik. İlgi zamiri yan cümlenin NESNESİYSE düşebilir:",
+  "kind": "say.tr",
+  "de": "Jetzt eine kleine, aber sehr häufige Feinheit. Ist das Relativpronomen OBJEKT des Nebensatzes, darf es wegfallen:"
+ },
+ {
+  "tr": "Bunun için tek bir yapı yetiyor: bir ismin arkasına gelip onu tanımlayan yan cümle. Hazır mısın?",
+  "kind": "say.tr",
+  "de": "Dafür reicht eine einzige Struktur: ein Nebensatz, der hinter ein Nomen tritt und es beschreibt. Bist du bereit?"
+ },
+ {
+  "tr": "denir. Bu kelime İngilizcede Türkçedeki kadar sık kullanılmaz; gerçekten acil olanı işaret eder.",
+  "kind": "say.tr",
+  "de": "genannt. Im Englischen wird das Wort seltener benutzt als das deutsche «dringend»; es meint wirklich Eiliges."
+ },
+ {
+  "tr": "Merhaba! Bugün maaş konuşmasını öğreneceğiz: zam istemek, prim konuşmak, bir rakamı makul bulmak.",
+  "kind": "say.tr",
+  "de": "Hallo! Heute lernen wir das Gehaltsgespräch: um eine Erhöhung bitten, über den Bonus sprechen, eine Zahl angemessen finden."
+ },
+ {
+  "tr": "Bu konuşmanın dili koşul cümleleridir ve iki ayrı koşul var: biri mümkün, öteki varsayım. Hazır mısın?",
+  "kind": "say.tr",
+  "de": "Die Sprache dieses Gesprächs sind Bedingungssätze, und es gibt zwei davon: eine mögliche und eine angenommene. Bist du bereit?"
+ },
+ {
+  "tr": "Merhaba! Bugün birlikte çalıştığın insanları tanıtmayı öğreneceğiz: kim ne yapıyor, kime güveniyorsun.",
+  "kind": "say.tr",
+  "de": "Hallo! Heute lernen wir, die Menschen vorzustellen, mit denen du arbeitest: wer was macht, wem du vertraust."
+ },
+ {
+  "tr": "Şimdi dersin kuralı. Takvime yazılmış, karşı tarafla kararlaştırılmış bir iş için şimdiki zaman kullanılır:",
+  "kind": "say.tr",
+  "de": "Jetzt die Regel der Lektion. Für etwas, das im Kalender steht und mit der anderen Seite vereinbart ist, steht die Verlaufsform:"
+ },
+ {
+  "tr": "Merhaba! Bugün iş gününün takvimini İngilizce konuşmayı öğreneceğiz: toplantılar, teslim tarihleri, ertelemeler.",
+  "kind": "say.tr",
+  "de": "Hallo! Heute lernen wir, den Kalender des Arbeitstags auf Englisch zu besprechen: Besprechungen, Fristen, Verschiebungen."
+ },
+ {
+  "tr": "İngilizcede gelecek tek bir kalıp değil; hangi kalıbı seçtiğin işin ne kadar kesin olduğunu söylüyor. Hazır mısın?",
+  "kind": "say.tr",
+  "de": "Im Englischen ist die Zukunft nicht eine einzige Wendung; deine Wahl sagt, wie sicher die Sache ist. Bist du bereit?"
+ },
+ {
+  "tr": "Merhaba! Bugün değerlendirme görüşmesini ve sonrasını öğreneceğiz: sana ne söylendi, sen başkasına nasıl aktaracaksın.",
+  "kind": "say.tr",
+  "de": "Hallo! Heute lernen wir das Mitarbeitergespräch und danach: was dir gesagt wurde und wie du es weitergibst."
+ },
+ {
+  "tr": "Bu konuşmanın zor yanı dilbilgisi değil ton: kötü bir şey söylerken bile köprüyü atmamak. O işi bağlaçlar yapıyor. Hazır mısın?",
+  "kind": "say.tr",
+  "de": "Das Schwere daran ist nicht die Grammatik, sondern der Ton: auch bei einer schlechten Nachricht keine Brücke abbrechen. Das machen die Konnektoren. Bist du bereit?"
+ }
+]
