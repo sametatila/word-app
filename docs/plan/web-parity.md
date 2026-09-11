@@ -6983,3 +6983,25 @@ karşılaştırılamaz kılıyor.**
 "Bilmiyorum" yanlış cevapla aynı sonucu yazıyor; farkı tahmini ortadan
 kaldırması.
 
+
+### 11.202 İki sessizlik: kuyruğa alınan sonuç ve İngilizce hata
+
+`skillp.` (4) ve `del.` (10) uzaylarının denetimi. İkisi de küçük çıktı ama
+ikisi de aynı sınıftan: **kullanıcıya söylenmeyen bir durum.**
+
+**Beceri sonucu kuyruğa alındığında söylenmiyordu.** Mobil çevrimdışı kalınca
+sonucu kuyruğa alıyor (`queueItemRecord`, §11.12'de eklenmişti) ama ekran
+bunu yazmıyordu: kullanıcı XP satırı olmayan bir kart görüyor ve sonucunun
+kaydedilip kaydedilmediğini bilemiyordu. Kuyruğun kendisi doğruydu, eksik olan
+tek satırdı.
+
+**Silme hatasında sunucu metni ekrana çıkıyordu.** Bilinen iki hâl (yanlış
+parola, oturum tazeliği) çevrilmiş metne dönüyor, geri kalanı better-auth'un
+İngilizce cümlesiyle gösteriliyordu — Türkçe arayüzde İngilizce bir hata
+satırı. Web aynı yerde tek çevrilmiş cümle veriyor (`del.failed`).
+
+`del.` uzayının kalan dokuzu **doğru muafiyet**: web'in `/account/delete`
+sayfası Play politikası gereği herkese açık bir sayfa ve kendi akışı var
+(yönlendirme, "çıkış yap ve yeniden gir", uygulama içi yolun tarifi); mobilin
+karşılığı ekran içi akış ve kendi `deleteaccount.*` uzayında 24 anahtarı var.
+
