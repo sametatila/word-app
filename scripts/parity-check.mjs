@@ -7275,6 +7275,40 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     "beklenen",
   );
 
+  /* ── 213. modul sinavinin kurs kontrolu: uc yolun hepsinde ───────────
+   * Modul sinavi planlari Almanca yazilmis ve kurs boyutu YOK
+   * (`hasModuleExams`, gerekcesi kendi dosyasinda: "Ingilizce ogrenen birinin
+   * Patika'sinda Almanca baslikli modul sinavlari cikiyor ve actiginda
+   * Almanca kagit geliyordu").
+   *
+   * Varsayimin adi var ama UC YOL var ve ucunde de uygulanmasi gerekiyor:
+   * kapak ucu, modul listesi ve KAGIT URETIMI. Ilk ikisi uyguluyordu, ucuncu
+   * uygulamiyordu - `/api/exam`a dogrudan `{action:"start", module: 3}`
+   * gonderen bir Ingilizce kurs kullanicisi Almanca kagit aliyordu. Arayuzden
+   * erisilmiyordu (iki istemci de listeyi bos aliyor), yani kusur
+   * gorunmuyordu; adi olan bir varsayimin en onemli yerde uygulanmamasi tam
+   * bu turlarda tekrar eden sinif.
+   *
+   * Mobil tarafta ayri bir kapi GEREKMIYOR ve bu da olculuyor: modul listesi
+   * sunucudan geliyor (`/api/exam?level=`), yani kural tek yerde. */
+  {
+    const rota = sil(read("src/app/api/exam/route.ts"));
+    const kapi = (ad, desen) => ad + "=" + (desen.test(rota) ? "var" : "YOK");
+    const mobilPath = sil(read("mobile/src/screens/PathScreen.tsx"));
+    sameList(
+      "modul sinavi kurs kontrolu",
+      [
+        kapi("kapak", /hasModuleExams\(profile\.course \?\? "de"\) \? moduleExamPlan/),
+        kapi("liste", /hasModuleExams\(listProfile\.course \?\? "de"\)/),
+        kapi("kagit uretimi", /moduleNo !== null && !hasModuleExams\(profile\.course \?\? "de"\)/),
+        "mobil liste kaynagi=" + (/api<[^>]*>\(`\/api\/exam\?level=/.test(mobilPath) ? "sunucu" : "KENDI KOPYASI"),
+      ],
+      ["kapak=var", "liste=var", "kagit uretimi=var", "mobil liste kaynagi=sunucu"],
+      "bulunan",
+      "beklenen",
+    );
+  }
+
   /* ── 212. sohbet balonunun bicimi: uc balon, iki platform ────────────
    * Uygulamada uc sohbet balonu var - koc balonu, ders balonlari ve rol yapma
    * sinavi - ve ucu de ayni sey: yaricap panel basamagi (mobil radii.lg = 20),
