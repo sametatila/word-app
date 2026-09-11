@@ -7176,3 +7176,24 @@ içeriği yüzünden atlanıyor ve o altı MANTIK dosyası bilerek geri alınıy
 yazılı olmalı (eskiden beri), gerekçesi ölçülebilir olmalı (§118) ve
 muafiyetin kendisi hâlâ var olan bir şeye işaret etmeli (§119).**
 
+
+### 11.210 Her muafiyet listesi artık kendini denetliyor
+
+§118 (mobil sayımın gerekçeleri) ve §119'un (web sayımın yolları) ardından
+kalan üç liste de aynı testten geçirildi. Kural `check:endpoints`te baştan
+beri vardı ve adı bile konmuştu (`stale`): **listede olup artık karşılığı
+olmayan satır, sessiz bir deliktir.**
+
+| liste | durum | ne eklendi |
+|---|---|---|
+| `check:colors` WEB_ALLOW + MOBILE_ALLOW (12) | hepsi canlı | karşılıksız istisna artık ihlal |
+| parity §10 KNOWN_GAPS (2 tur) | ikisi de hâlâ boşluk | kapanan boşluk artık ihlal |
+| parity "yerelsiz harf" MUAF yolları (4) | hepsi duruyor | olmayan yol artık ihlal |
+| `check:endpoints` ALLOW + WEB_ONLY | zaten kendini denetliyordu | — |
+
+Hiçbirinde bugün eskimiş bir satır yoktu (tek istisna bir önceki turdaki
+`lib/cheatsheet`). Ama bu turların en çok tekrarlayan dersi şu oldu: **doğru
+olmak yetmiyor, doğruluğun ölçülüyor olması gerekiyor.** §11.181'de gölge
+tintinin gerekçesi, §11.207'de ekran okuyucu etiketinin gerekçesi yanlıştı ve
+ikisi de kapı olmadığı için yıllarca öyle kaldı.
+
