@@ -7292,6 +7292,67 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     "beklenen",
   );
 
+  /* -- 235. DERS ADIMININ DENEME HAKKI VE CEVABIN ACILDIGI AN ------------
+   *
+   * Uc sey cikti:
+   *
+   *  1. DENEME TAVANI (3) hicbir yerde sabit degildi: iki oynatici da elle
+   *     `>= 3` diye karsilastiriyordu. Biri degisse oteki sessizce eski kalir
+   *     ve ayni ders iki platformda farkli sayida hak verirdi. Iki tarafta
+   *     `LESSON_TRY_CEILING` adiyla sabitlendi.
+   *  2. CEVABIN ACILDIGI AN farkliydi. Web cevabi IKINCI yanlista aciyor ve
+   *     ogrenciye bir daha deniyordu; UCUNCU yanlista cevabi HIC soylemeden
+   *     "olsun" deyip geciyordu. Android ucuncu yanlista cevabi SOYLEYIP
+   *     geciyor - yani ayni adim iki platformda iki ayri ders veriyordu.
+   *     Webin ikinci-yanlis dali kalkti, ucuncu dal cevabi soyluyor; webde
+   *     olu kalan iki anahtar silindi.
+   *  3. DENEME SAYACI webde hic yoktu. Android her yanlistan sonra
+   *     "{n}. deneme" yaziyor (`lesson.try_again`); ogrenci kacinci denemede
+   *     oldugunu ve cevabin ne zaman acilacagini bilmiyordu. Web `attempts`i
+   *     bir ref'te tutuyordu, yani cizime giremiyordu - yansi bir duruma
+   *     alindi ve ref'in degistigi her yerde birlikte guncelleniyor. */
+  {
+    const dm = sil(read("mobile/src/screens/LessonScreen.tsx"));
+    const dw = sil(read("src/components/lessons/lesson-player.tsx"));
+    const sm = read("mobile/src/lib/learningRules.ts");
+    const sw = read("src/lib/lessons/roleplay-const.ts");
+    const WEB_SOZLUK = ["src/i18n/web/tr.ts", "src/i18n/web/en.ts", "src/i18n/web/de.ts"];
+    sameList(
+      "ders adiminin deneme hakki",
+      [
+        "tavan sabiti=" + ((sm.match(/LESSON_TRY_CEILING = (\d+)/) ?? [])[1] ?? "YOK"),
+        "tavan koddan=" + (/>= LESSON_TRY_CEILING/.test(dm) ? "sabitten" : "ELLE"),
+        /* HERHANGI BIR SAYIYLA karsilastirma kaldi mi - yalniz `3` degil.
+           Ilk yazim `>= 3` ariyordu ve enjeksiyon (`t >= 99`) kapiyi yesil
+           birakti: mobilde iki adim turu var (tekrarla / kur ve soyle) ve
+           BIRININ sabitten cikmasi oteki hala sabitten geldigi icin
+           gorunmuyordu. Olcu artik "elle yazilmis esik sayisi = 0". */
+        "elle esik=" + (dm.match(/\b(?:t|tries|attempts\.current) >= \d+/g) ?? []).length,
+        "cevap acilan an=" + (/LESSON_TRY_CEILING\)[\s\S]{0,400}common\.answer_is/.test(dm) ? "tavanda" : "BASKA"),
+        "sayac ekranda=" + (/lesson\.try_again", \{ n: tries \}/.test(dm) ? "var" : "YOK"),
+      ],
+      [
+        "tavan sabiti=" + ((sw.match(/LESSON_TRY_CEILING = (\d+)/) ?? [])[1] ?? "YOK"),
+        "tavan koddan=" + (/>= LESSON_TRY_CEILING/.test(dw) ? "sabitten" : "ELLE"),
+        "elle esik=" + (dw.match(/\b(?:t|tries|attempts\.current) >= \d+/g) ?? []).length,
+        "cevap acilan an=" + (/LESSON_TRY_CEILING\)[\s\S]{0,400}common\.answer_is/.test(dw) ? "tavanda" : "BASKA"),
+        "sayac ekranda=" + (/lesson\.try_again", \{ n: tryCount \}/.test(dw) ? "var" : "YOK"),
+      ],
+      "mobil",
+      "web",
+    );
+    sameList(
+      "ders adiminin olu anahtarlari kalkti",
+      [
+        "lessonp.no_worries=" + WEB_SOZLUK.reduce((n, y) => n + (read(y).includes('"lessonp.no_worries":') ? 1 : 0), 0),
+        "lessonp.please_repeat=" + WEB_SOZLUK.reduce((n, y) => n + (read(y).includes('"lessonp.please_repeat":') ? 1 : 0), 0),
+      ],
+      ["lessonp.no_worries=0", "lessonp.please_repeat=0"],
+      "bulunan",
+      "beklenen",
+    );
+  }
+
   /* -- 234. DERSTE MIKROFON YOLU KAPANIRSA SEBEBI SOYLENIYOR MU ---------
    *
    * Android `sttOk === false` olunca ekrani kalici olarak YAZMA yoluna

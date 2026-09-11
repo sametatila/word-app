@@ -11777,3 +11777,42 @@ Sınırın kendisi de bir düzeltme gerektirdi: web tarafını `phase ===
 koşul yukarıda iki kez daha geçiyor (bir etkide, bir dinleme çağrısında).
 Sınır artık dalın **çizim** yeri (`phase === "roleplay" ? (`) — yine bir
 düğüm, bir mesafe ya da ilk eşleşme değil.
+
+## §11.351 — Ders adımının deneme hakkı: aynı adım, iki ayrı ders
+
+Eksen **ders içi deneme hakkı ve cevabın açıldığı an**dı. Üç şey çıktı.
+
+### 1. Tavan (3) hiçbir yerde sabit değildi
+
+İki oynatıcı da elle `>= 3` diye karşılaştırıyordu. Biri değişse öteki
+sessizce eski kalır ve **aynı ders iki platformda farklı sayıda hak
+verirdi**. İki tarafta `LESSON_TRY_CEILING` adıyla sabitlendi
+(`src/lib/lessons/roleplay-const.ts` ve `mobile/src/lib/learningRules.ts`).
+
+### 2. Cevabın açıldığı an farklıydı
+
+| yanlış | Android | Web (eski) |
+|---|---|---|
+| 1. | içerikteki ipucu | içerikteki ipucu |
+| 2. | ipucu (yine) | **cevabı söylüyor** + "tekrar et", adım yeniden açılıyor |
+| 3. | **cevabı söylüyor** ve geçiyor | "olsun" — cevabı **hiç söylemeden** geçiyor |
+
+Yani aynı adım iki platformda iki ayrı ders veriyordu: birinde cevap görülüp
+tekrar ediliyor, ötekinde adım cevapla kapanıyor. Web'in ikinci-yanlış dalı
+kalktı, üçüncü dal cevabı söylüyor; ölü kalan iki web anahtarı silindi.
+
+### 3. Deneme sayacı webde hiç yoktu
+
+Android her yanlıştan sonra "{n}. deneme" yazıyor (`lesson.try_again`);
+webde hiçbir yerde yazmıyordu — öğrenci kaçıncı denemede olduğunu ve cevabın
+ne zaman açılacağını bilmiyordu. Web `attempts`i bir **ref**te tutuyordu,
+yani çizime giremiyordu; yansı bir duruma alındı ve ref'in değiştiği **dört**
+yerde birlikte güncelleniyor.
+
+### Kapı: "varlık" değil "sayı"
+
+İlk ölçüm `>= LESSON_TRY_CEILING` **var mı** diye bakıyordu ve enjeksiyon
+(`t >= 99`) kapıyı **yeşil bıraktı**: mobilde iki adım türü var (tekrarla /
+kur ve söyle) ve birinin sabitten çıkması, öteki hâlâ sabitten geldiği için
+görünmüyordu. Ölçü **"elle yazılmış eşik sayısı = 0"**a çevrildi — yalnız
+`3`ü değil, herhangi bir sayıyla karşılaştırmayı arıyor.
