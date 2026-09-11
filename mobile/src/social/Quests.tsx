@@ -5,9 +5,10 @@ import { social, errorText, type FriendRow, type QuestView } from "../api/social
 import { Text } from "../ui/Text";
 import { Card } from "../ui/Card";
 import { SkeletonBar, SkeletonCard, SkeletonLine, SkeletonPill, SkeletonTile } from "../ui/Skeleton";
-import { PersonAvatar } from "../ui/PersonAvatar";
+import { Avatar, MyAvatar } from "../ui/Avatar";
 import { PressableScale } from "../ui/PressableScale";
 import { TargetIcon, CheckIcon } from "../ui/icons";
+import { useMe } from "../lib/useMe";
 import { useTheme, spacing, radii, softShadow } from "../theme";
 import { EmptyCard, ErrorText, IconTile, Pill, SectionTitle } from "./common";
 
@@ -40,7 +41,7 @@ export function Quests({ friends, me, onChanged }: { friends: FriendRow[]; me: s
               <SectionTitle title={t("quests.with")} />
               {friends.map((f) => (
                 <Card key={f.userId} padded style={{ marginBottom: spacing.md, flexDirection: "row", alignItems: "center", gap: spacing.md }}>
-                  <PersonAvatar userId={f.userId} name={f.name} size={44} />
+                  <Avatar userId={f.userId} name={f.name} avatar={f.avatar} size={44} />
                   <View style={{ flex: 1 }}>
                     <Text variant="h3" numberOfLines={1}>{f.name ?? t("social.unnamed")}</Text>
                     <Text variant="caption" color={colors.textMuted}>{t("social.xp_this_week", { xp: formatNumber(f.weeklyXp) })}</Text>
@@ -65,7 +66,7 @@ export function Quests({ friends, me, onChanged }: { friends: FriendRow[]; me: s
                   <Text variant="bodyStrong" numberOfLines={1}>{t("quests.past_row", { name: q.partner.name ?? t("social.unnamed_short"), xp: formatNumber(q.targetXp) })}</Text>
                   <Text variant="micro" color={colors.textMuted}>{done ? t("quests.completed") : `${formatPercent(q.pct)} · ${formatNumber(q.totalXp)} XP`}</Text>
                 </View>
-                <PersonAvatar userId={q.partner.userId} name={q.partner.name} size={32} />
+                <Avatar userId={q.partner.userId} name={q.partner.name} avatar={q.partner.avatar} size={32} />
               </Card>
             );
           })}
@@ -110,14 +111,15 @@ export function QuestsSkeleton() {
 /** Bu haftanın görevi: hero kart — iki arma, hedef, iki paylı çubuk, pill düğmeler. */
 export function QuestCard({ q, me, busy, onAct }: { q: QuestView; me: string; busy: boolean; onAct: (fn: () => Promise<unknown>) => Promise<void> }) {
   const { colors } = useTheme();
+  const { me: myProfile } = useMe();
   const invited = q.status === "invited";
   const myShare = q.totalXp ? q.myXp / q.totalXp : 0;
   return (
     <Card padded style={[{ marginBottom: spacing.md, borderColor: colors.primary, borderWidth: 1.5 }, softShadow(colors.primary, 8)]}>
       <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md }}>
         <View style={{ flexDirection: "row" }}>
-          <PersonAvatar userId={me} name={null} size={44} ring={colors.primary} />
-          <View style={{ marginLeft: -12 }}><PersonAvatar userId={q.partner.userId} name={q.partner.name} size={44} ring={colors.info} /></View>
+          <MyAvatar userId={me} name={myProfile?.name ?? null} size={44} ring={colors.primary} />
+          <View style={{ marginLeft: -12 }}><Avatar userId={q.partner.userId} name={q.partner.name} avatar={q.partner.avatar} size={44} ring={colors.info} /></View>
         </View>
         <View style={{ flex: 1 }}>
           <Text variant="h3">{t(invited ? "quests.invite_title" : "quests.week_title")}</Text>

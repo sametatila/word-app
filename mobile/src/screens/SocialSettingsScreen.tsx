@@ -7,7 +7,7 @@ import { useAuth } from "../lib/AuthContext";
 import { Text } from "../ui/Text";
 import { Card } from "../ui/Card";
 import { Skeleton, SkeletonCard, SkeletonLine } from "../ui/Skeleton";
-import { PersonAvatar } from "../ui/PersonAvatar";
+import { Avatar } from "../ui/Avatar";
 import { PressableScale } from "../ui/PressableScale";
 import { useTheme, spacing, radii } from "../theme";
 import type { Palette } from "../theme/colors";
@@ -133,7 +133,7 @@ export function SocialSettingsScreen() {
             <Section title={tx("socialsettings.blocked_title")} colors={colors}>
               {blocked === null ? <SkeletonLine variant="caption" width="60%" /> : blocked.length ? blocked.map((b, i) => (
                 <View key={b.userId} style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingVertical: 10, borderTopWidth: i === 0 ? 0 : 1, borderTopColor: colors.hairline }}>
-                  <PersonAvatar userId={b.userId} name={b.name} size={36} />
+                  <Avatar userId={b.userId} name={b.name} avatar={b.avatar} size={36} />
                   <View style={{ flex: 1 }}>
                     <Text variant="bodyStrong" numberOfLines={1}>{b.name ?? tx("social.unnamed_short")}</Text>
                     {b.username ? <Text variant="caption" color={colors.textMuted}>@{b.username}</Text> : null}

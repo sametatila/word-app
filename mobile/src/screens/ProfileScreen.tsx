@@ -11,7 +11,7 @@ import { Card } from "../ui/Card";
 import { MenuRow } from "../ui/MenuRow";
 import { PressableScale } from "../ui/PressableScale";
 import { ArrowBackIcon, ChevronRightIcon, FlameIcon, BoltIcon, TrophyIcon, LogoutIcon, CrownIcon, ShareIcon, SettingsIcon, PodiumIcon, CheckIcon, HandshakeIcon, InboxIcon } from "../ui/icons";
-import { Avatar } from "../ui/Avatar";
+import { MyAvatar } from "../ui/Avatar";
 import { SkeletonCard, SkeletonLine, SkeletonPill, textHeight } from "../ui/Skeleton";
 import { useAuth } from "../lib/AuthContext";
 import { shareInvite } from "../lib/share";
@@ -66,7 +66,7 @@ export function ProfileScreen() {
         {/* kimlik kartı */}
         <Card style={{ alignItems: "center", marginTop: spacing.sm, marginBottom: spacing.lg }}>
           <PressableScale onPress={() => nav.navigate("Avatar")} accessibilityLabel={t("profile.edit_your_avatar")} style={softShadow(colors.primary, 10)}>
-            <Avatar size={76} />
+            <MyAvatar userId={user?.id ?? ""} name={me?.name ?? null} size={76} />
           </PressableScale>
           <Text variant="h2" style={{ marginTop: spacing.md }}>{displayName}</Text>
           <Text variant="caption" color={colors.textMuted}>{user?.email ?? t("profile.not_signed_in")}</Text>

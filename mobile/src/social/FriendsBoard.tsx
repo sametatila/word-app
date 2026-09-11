@@ -8,7 +8,7 @@ import { social, type BoardView } from "../api/social";
 import { Text } from "../ui/Text";
 import { Card } from "../ui/Card";
 import { SkeletonLine, SkeletonRows } from "../ui/Skeleton";
-import { PersonAvatar } from "../ui/PersonAvatar";
+import { Avatar } from "../ui/Avatar";
 import { PressableScale } from "../ui/PressableScale";
 import { FlameIcon, PodiumIcon } from "../ui/icons";
 import { useTheme, spacing, radii, softShadow } from "../theme";
@@ -57,7 +57,7 @@ export function FriendsBoard({ compact = false }: { compact?: boolean }) {
           return (
             <PressableScale key={r.userId} disabled={r.isMe || !r.username} onPress={() => r.username && nav.navigate("User", { username: r.username })} style={[{ flexDirection: "row", alignItems: "center", gap: spacing.md, borderRadius: radii.lg, paddingHorizontal: spacing.md, paddingVertical: 12, backgroundColor: r.isMe ? colors.primarySoft : colors.surface, borderWidth: 1, borderColor: r.isMe ? colors.primary : colors.hairline }, r.rank <= 3 ? softShadow(mc, 4) : {}]}>
               <View style={{ width: 30, alignItems: "center" }}><Text variant="h3" color={mc}>{r.rank}</Text></View>
-              <PersonAvatar userId={r.userId} name={r.name} size={40} ring={r.rank <= 3 ? mc : null} />
+              <Avatar userId={r.userId} name={r.name} avatar={r.avatar} size={40} ring={r.rank <= 3 ? mc : null} />
               <View style={{ flex: 1 }}>
                 <Text variant="bodyStrong" color={r.isMe ? colors.primaryText : colors.text} numberOfLines={1}>{r.name ?? t("social.student")}{r.isMe ? t("social.you_paren") : ""}</Text>
                 <View style={{ flexDirection: "row", alignItems: "center", gap: 4 }}>

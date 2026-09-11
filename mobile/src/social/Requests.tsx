@@ -8,7 +8,7 @@ import { social, errorText, timeAgo, type PendingView } from "../api/social";
 import { Text } from "../ui/Text";
 import { Card } from "../ui/Card";
 import { PressableScale } from "../ui/PressableScale";
-import { PersonAvatar } from "../ui/PersonAvatar";
+import { Avatar } from "../ui/Avatar";
 import { SkeletonCard, SkeletonLine, SkeletonPill, SkeletonTile } from "../ui/Skeleton";
 import { useTheme, spacing } from "../theme";
 import { ErrorText, Pill, SectionTitle } from "./common";
@@ -74,10 +74,10 @@ function RequestCard({ r, incoming, onChanged }: { r: PendingView; incoming: boo
         */}
         {r.user.username ? (
           <PressableScale hitSlop={4} accessibilityLabel={r.user.name ?? t("social.unnamed")} onPress={() => nav.navigate("User", { username: r.user.username! })}>
-            <PersonAvatar userId={r.user.userId} name={r.user.name} size={48} />
+            <Avatar userId={r.user.userId} name={r.user.name} avatar={r.user.avatar} size={48} />
           </PressableScale>
         ) : (
-          <PersonAvatar userId={r.user.userId} name={r.user.name} size={48} />
+          <Avatar userId={r.user.userId} name={r.user.name} avatar={r.user.avatar} size={48} />
         )}
         <View style={{ flex: 1 }}>
           <Text variant="h3" numberOfLines={1}>{r.user.name ?? t("social.unnamed")}</Text>

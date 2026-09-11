@@ -8,7 +8,7 @@ import { social, errorText, type SearchHit, type Suggestion } from "../api/socia
 import { Text } from "../ui/Text";
 import { Card } from "../ui/Card";
 import { SkeletonCard, SkeletonLine, SkeletonPill, SkeletonTile } from "../ui/Skeleton";
-import { PersonAvatar } from "../ui/PersonAvatar";
+import { Avatar } from "../ui/Avatar";
 import { PressableScale } from "../ui/PressableScale";
 import { FlameIcon, SearchIcon, XIcon, HandshakeIcon } from "../ui/icons";
 import { useTheme, spacing, radii } from "../theme";
@@ -59,12 +59,12 @@ export function Find({ onChanged }: { onChanged?: () => void }) {
   }, [q]);
 
   const open = (username: string | null) => { if (username) nav.navigate("User", { username }); };
-  const card = (u: { userId: string; name: string | null; username: string | null; level: string }, note: { label: string; tint: string; icon?: typeof FlameIcon } | null, streak: number, right: React.ReactNode) => (
+  const card = (u: { userId: string; name: string | null; username: string | null; avatar: string | null; level: string }, note: { label: string; tint: string; icon?: typeof FlameIcon } | null, streak: number, right: React.ReactNode) => (
     <Card key={u.userId} padded style={{ marginBottom: spacing.md }}>
       <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md }}>
         {/* Adın kendisi zaten aynı yere basılabilir; avatar onun süsü ve adsız
           ikinci bir durak eklemesin diye ekran okuyucudan gizlendi. */}
-        <PressableScale accessibilityElementsHidden importantForAccessibility="no-hide-descendants" onPress={() => open(u.username)}><PersonAvatar userId={u.userId} name={u.name} size={48} /></PressableScale>
+        <PressableScale accessibilityElementsHidden importantForAccessibility="no-hide-descendants" onPress={() => open(u.username)}><Avatar userId={u.userId} name={u.name} avatar={u.avatar} size={48} /></PressableScale>
         <PressableScale onPress={() => open(u.username)} style={{ flex: 1 }}>
           <Text variant="h3" numberOfLines={1}>{u.name ?? t("social.unnamed")}</Text>
           <Text variant="caption" color={colors.textMuted} numberOfLines={1}>{u.username ? `@${u.username} · ` : ""}{u.level}</Text>

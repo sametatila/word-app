@@ -11,7 +11,7 @@ import { useAuth } from "../lib/AuthContext";
 import { Text } from "../ui/Text";
 import { Card } from "../ui/Card";
 import { SkeletonCard, SkeletonLine, SkeletonPill, SkeletonTile } from "../ui/Skeleton";
-import { PersonAvatar } from "../ui/PersonAvatar";
+import { Avatar } from "../ui/Avatar";
 import { PressableScale } from "../ui/PressableScale";
 import { FlameIcon, HandshakeIcon, BellIcon, TargetIcon, LockIcon, XIcon } from "../ui/icons";
 import { useTheme, spacing, radii, softShadow } from "../theme";
@@ -100,7 +100,7 @@ export function UserScreen() {
       <ScreenHeader title={t("user.profile")} />
       <ScrollView contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.xxl }} showsVerticalScrollIndicator={false}>
         <Card style={{ alignItems: "center", marginTop: spacing.sm, marginBottom: spacing.lg }}>
-          <View style={softShadow(friends ? colors.success : colors.primary, 10)}><PersonAvatar userId={u.userId} name={u.name} size={76} ring={friends ? colors.success : null} /></View>
+          <View style={softShadow(friends ? colors.success : colors.primary, 10)}><Avatar userId={u.userId} name={u.name} avatar={u.avatar} size={76} ring={friends ? colors.success : null} /></View>
           <Text variant="h2" style={{ marginTop: spacing.md }}>{u.name ?? t("social.unnamed")}</Text>
           <Text variant="caption" color={colors.textMuted}>@{u.username} · {u.level} · {new Date(data.joined).toLocaleDateString(dateLocale(), { month: "short", year: "numeric" })}</Text>
           {data.bio ? <Text variant="body" color={colors.text} style={{ marginTop: spacing.sm, textAlign: "center", lineHeight: 21 }}>{data.bio}</Text> : null}

@@ -7,7 +7,7 @@ import type { RootStackParams } from "../navigation/RootStack";
 import { social, errorText, type FriendRow } from "../api/social";
 import { Text } from "../ui/Text";
 import { Card } from "../ui/Card";
-import { PersonAvatar } from "../ui/PersonAvatar";
+import { Avatar } from "../ui/Avatar";
 import { PressableScale } from "../ui/PressableScale";
 import { FlameIcon, HandshakeIcon, TargetIcon, BoltIcon, BellIcon, PartyIcon, XIcon, ChevronRightIcon } from "../ui/icons";
 import { useTheme, spacing, radii, onTint } from "../theme";
@@ -87,7 +87,7 @@ function FriendCard({ f, nudged, onChanged }: { f: FriendRow; nudged: boolean; o
   return (
     <Card padded style={{ marginBottom: spacing.md }}>
       <PressableScale onPress={open} style={{ flexDirection: "row", alignItems: "center", gap: spacing.md }}>
-        <PersonAvatar userId={f.userId} name={f.name} size={48} />
+        <Avatar userId={f.userId} name={f.name} avatar={f.avatar} size={48} />
         <View style={{ flex: 1 }}>
           <Text variant="h3" numberOfLines={1}>{f.name ?? t("social.unnamed")}</Text>
           <Text variant="caption" color={colors.textMuted} numberOfLines={1}>{f.username ? `@${f.username} · ` : ""}{f.level}</Text>

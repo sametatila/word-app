@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { syncAvatarWithServer, type AvatarConfig } from "./avatar";
 import { setCurrentCourse } from "./courses";
 import { adoptServerLang, dateLocale, t } from "./i18n";
 import { loadOnboardingPrefs } from "./onboardingPrefs";
@@ -14,6 +15,8 @@ export type Me = {
   course: string;
   /** Sunucuda saklı anadil; null = hiç seçilmemiş eski hesap. */
   nativeLang?: string | null;
+  /** Hesabın avatarı; null = hiç seçilmemiş (arma çiziliyor). */
+  avatar?: AvatarConfig | null;
   streak: number;
   longestStreak: number;
   xp: number;
@@ -96,6 +99,9 @@ export function useMe(): { me: Me | null; loading: boolean } {
         // bilinmiyor ve her şey Almanca varsayılanına düşüyordu.
         setCurrentCourse(d.course);
         void syncNativeLang(d.nativeLang);
+        /* Avatar da hesabın: başka bir cihazda ya da web'de değiştirildiyse
+           burada da o görünsün (bkz. lib/avatar `syncAvatarWithServer`). */
+        void syncAvatarWithServer(d.avatar);
         setMe(d);
       })
       .catch(async () => {

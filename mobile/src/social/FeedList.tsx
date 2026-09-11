@@ -8,7 +8,7 @@ import { social, errorText, feedText, timeAgo, type FeedItem } from "../api/soci
 import { Text } from "../ui/Text";
 import { Card } from "../ui/Card";
 import { SkeletonCard, SkeletonLine, SkeletonPill, SkeletonTile } from "../ui/Skeleton";
-import { PersonAvatar } from "../ui/PersonAvatar";
+import { Avatar } from "../ui/Avatar";
 import { PressableScale } from "../ui/PressableScale";
 import { FlameIcon, TrophyIcon, HandshakeIcon, HeartIcon, CrownIcon, TargetIcon, PodiumIcon, SparkIcon } from "../ui/icons";
 import { useTheme, spacing } from "../theme";
@@ -43,7 +43,7 @@ export function FeedCard({ item }: { item: FeedItem }) {
       <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md }}>
         {/* Ad bu kartta basılabilir DEĞİL; profile giden tek yol avatar. Adsız
             bırakılırsa ekran okuyucu yalnız "düğme" diyor. */}
-        <PressableScale accessibilityLabel={item.user.name ?? t("social.unnamed")} onPress={open}><PersonAvatar userId={item.user.userId} name={item.user.name} size={44} /></PressableScale>
+        <PressableScale accessibilityLabel={item.user.name ?? t("social.unnamed")} onPress={open}><Avatar userId={item.user.userId} name={item.user.name} avatar={item.user.avatar} size={44} /></PressableScale>
         <View style={{ flex: 1 }}>
           <Text variant="h3" numberOfLines={1}>{item.isMine ? t("social.you") : item.user.name ?? t("social.unnamed")}</Text>
           <Text variant="caption" color={colors.textMuted}>{timeAgo(item.createdAt)}</Text>

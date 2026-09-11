@@ -6,7 +6,7 @@ import { useNavigation } from "@react-navigation/native";
 import { Text } from "../ui/Text";
 import { PressableScale } from "../ui/PressableScale";
 import { ArrowBackIcon } from "../ui/icons";
-import { Avatar } from "../ui/Avatar";
+import { MascotAvatar } from "../ui/Avatar";
 import { HATS, GLASSES, MUSTACHES, HAT_COLORS } from "../ui/avatarParts";
 import { getAvatar, saveAvatar, DEFAULT_AVATAR, type AvatarConfig } from "../lib/avatar";
 import { useTheme, spacing, radii, softShadow, type Palette } from "../theme";
@@ -29,7 +29,7 @@ function OptTile({ preview, selected, onPress, colors, label }: { preview: Avata
       onPress={onPress}
       style={{ padding: 4, borderRadius: radii.lg, borderWidth: 2, borderColor: selected ? colors.primary : "transparent" }}
     >
-      <Avatar size={54} config={preview} />
+      <MascotAvatar config={preview} size={54} />
     </PressableScale>
   );
 }
@@ -73,7 +73,7 @@ export function AvatarScreen() {
       <ScrollView contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.xxl }} showsVerticalScrollIndicator={false}>
         {/* canlı önizleme */}
         <View style={{ alignItems: "center", marginVertical: spacing.lg }}>
-          <View style={softShadow(colors.primary, 12)}><Avatar size={140} config={cfg} /></View>
+          <View style={softShadow(colors.primary, 12)}><MascotAvatar config={cfg} size={140} /></View>
         </View>
 
         <Group title={t("avatar.hat")} colors={colors}>

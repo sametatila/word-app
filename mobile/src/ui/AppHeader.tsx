@@ -7,7 +7,8 @@ import type { RootStackParams } from "../navigation/RootStack";
 import { Text } from "./Text";
 import { PressableScale } from "./PressableScale";
 import { FlameIcon } from "./icons";
-import { Avatar } from "./Avatar";
+import { MyAvatar } from "./Avatar";
+import { useAuth } from "../lib/AuthContext";
 import { useMe } from "../lib/useMe";
 import { useTheme, spacing, radii, softShadow } from "../theme";
 import { InboxBell } from "../social/InboxBell";
@@ -20,6 +21,7 @@ import { InboxBell } from "../social/InboxBell";
 export function AppHeader({ title, subtitle }: { title: string; subtitle?: string }) {
   const { colors } = useTheme();
   const nav = useNavigation<NativeStackNavigationProp<RootStackParams>>();
+  const { user } = useAuth();
   const { me } = useMe();
   const streak = me?.streak ?? 0;
   return (
@@ -41,7 +43,7 @@ export function AppHeader({ title, subtitle }: { title: string; subtitle?: strin
             ama izin reddedilebilir ve jeton ölebilir; rozet tek güvenilir sayaç. */}
         <InboxBell />
         <PressableScale onPress={() => nav.navigate("Profile")} accessibilityLabel={t("appheader.profile")} style={softShadow(colors.primary, 6)}>
-          <Avatar size={44} />
+          <MyAvatar userId={user?.id ?? ""} name={me?.name ?? null} size={44} />
         </PressableScale>
       </View>
     </View>

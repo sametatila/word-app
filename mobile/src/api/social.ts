@@ -16,7 +16,14 @@ export function reactionLabel(kind: ReactionKind): string {
 
 export type Relation = "self" | "none" | "friends" | "outgoing" | "incoming" | "declined" | "blocked";
 export type Visibility = "public" | "friends" | "private";
-export type PublicUser = { userId: string; name: string | null; username: string | null; level: string };
+/**
+ * Başkalarına görünen kullanıcı.
+ *
+ * `avatar`: kişinin KENDİ avatarı, ham JSON metni (bkz. lib/avatar.ts).
+ * Sunucuda durduğu için her cihazda ve web'de aynı; `null` ise kişi hiç
+ * avatar seçmemiş demektir ve armalı yedek çiziliyor.
+ */
+export type PublicUser = { userId: string; name: string | null; username: string | null; avatar: string | null; level: string };
 export type FriendRow = PublicUser & {
   friendshipId: number; currentStreak: number; weeklyXp: number; lastActiveDay: string | null; friendStreak: number;
   /** Ortak seri var ama bugün ikisi de çalışmadı — zincir bu gece kırılıyor. */
@@ -35,7 +42,7 @@ export type QuestView = {
   invitedByMe: boolean; myXp: number; partnerXp: number; totalXp: number; pct: number; daysLeft: number; completedAt: string | null;
 };
 export type SocialMe = {
-  userId: string; name: string | null; username: string; bio: string | null; level: string; visibility: Visibility;
+  userId: string; name: string | null; username: string; avatar: string | null; bio: string | null; level: string; visibility: Visibility;
   allowRequests: boolean; showInSuggestions: boolean; showActivity: boolean; usernameChangedAt: string | null; usernameChangeAvailableIn: number;
   counts: { friends: number; incoming: number; outgoing: number; unread: number };
 };
@@ -43,10 +50,10 @@ export type PendingView = { friendshipId: number; user: PublicUser; createdAt: s
 export type FriendsView = { friends: FriendRow[]; incoming: PendingView[]; outgoing: PendingView[]; nudgedToday: string[]; today: string };
 export type SearchHit = PublicUser & { relation: Relation; currentStreak: number };
 export type Suggestion = PublicUser & { mutual: number; reason: "mutual" | "level" | "active"; currentStreak: number };
-export type BoardRow = { rank: number; userId: string; name: string | null; username: string | null; level: string; xp: number; streak: number; isMe: boolean };
+export type BoardRow = { rank: number; userId: string; name: string | null; username: string | null; avatar: string | null; level: string; xp: number; streak: number; isMe: boolean };
 export type BoardView = { rows: BoardRow[]; start: string; daysLeft: number };
 export type LeagueOutcome = "promoted" | "demoted" | "stayed";
-export type LeagueRow = { rank: number; userId: string; name: string | null; username: string | null; level: string; xp: number; streak: number; isMe: boolean };
+export type LeagueRow = { rank: number; userId: string; name: string | null; username: string | null; avatar: string | null; level: string; xp: number; streak: number; isMe: boolean };
 export type LeagueView = {
   weekStart: string; tier: number; daysLeft: number; rows: LeagueRow[]; promote: number; demote: number;
   result: { weekStart: string; tier: number; nextTier: number; rank: number; xp: number; outcome: LeagueOutcome } | null;

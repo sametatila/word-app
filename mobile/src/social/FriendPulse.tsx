@@ -9,7 +9,7 @@ import { t, formatNumber, formatPercent } from "../lib/i18n";
 import { useAuth } from "../lib/AuthContext";
 import { Text } from "../ui/Text";
 import { Card } from "../ui/Card";
-import { PersonAvatar } from "../ui/PersonAvatar";
+import { Avatar } from "../ui/Avatar";
 import { PressableScale } from "../ui/PressableScale";
 import { ArrowRightIcon } from "../ui/icons";
 import { SkeletonBar, SkeletonLine, SkeletonTile } from "../ui/Skeleton";
@@ -57,7 +57,7 @@ export function FriendPulse() {
   return (
     <PressableScale onPress={() => goFriends(nav, "friends")} style={{ marginBottom: spacing.xl }}>
       <Card padded style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, borderColor: invited ? colors.info : colors.primary, borderWidth: 1.5 }}>
-        <PersonAvatar userId={q.partner.userId} name={q.partner.name} size={44} ring={invited ? colors.info : colors.primary} />
+        <Avatar userId={q.partner.userId} name={q.partner.name} avatar={q.partner.avatar} size={44} ring={invited ? colors.info : colors.primary} />
         <View style={{ flex: 1 }}>
           <Text variant="h3" numberOfLines={1}>{invited ? (q.invitedByMe ? t("friendpulse.waiting") : t("friendpulse.invited_you", { name: q.partner.name?.split(" ")[0] ?? t("social.your_friend") })) : t("friendpulse.shared", { name: q.partner.name?.split(" ")[0] ?? t("social.your_friend") })}</Text>
           {invited ? (

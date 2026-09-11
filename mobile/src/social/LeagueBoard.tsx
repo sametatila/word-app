@@ -9,7 +9,7 @@ import { Text } from "../ui/Text";
 import { Card } from "../ui/Card";
 import { ReportSheet } from "../ui/ReportSheet";
 import { SkeletonLine, SkeletonRows } from "../ui/Skeleton";
-import { PersonAvatar } from "../ui/PersonAvatar";
+import { Avatar } from "../ui/Avatar";
 import { PressableScale } from "../ui/PressableScale";
 import { FlameIcon, PodiumIcon, TrophyIcon } from "../ui/icons";
 import { useTheme, spacing, radii, softShadow } from "../theme";
@@ -119,7 +119,7 @@ function LeagueRowCard({ row, zone, onOpen, onReport }: { row: LeagueRow; zone: 
       <View style={{ width: 30, alignItems: "center" }}>
         <Text variant="h3" color={tint ?? colors.textMuted}>{row.rank}</Text>
       </View>
-      <PersonAvatar userId={row.userId} name={row.name} size={40} ring={tint} />
+      <Avatar userId={row.userId} name={row.name} avatar={row.avatar} size={40} ring={tint} />
       <View style={{ flex: 1 }}>
         <Text variant="bodyStrong" color={row.isMe ? colors.primaryText : colors.text} numberOfLines={1}>
           {row.name ?? t("social.student")}{row.isMe ? t("social.you_paren") : ""}

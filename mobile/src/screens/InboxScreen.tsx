@@ -11,7 +11,7 @@ import { useAuth } from "../lib/AuthContext";
 import { Text } from "../ui/Text";
 import { Card } from "../ui/Card";
 import { SkeletonLine, SkeletonTile } from "../ui/Skeleton";
-import { PersonAvatar } from "../ui/PersonAvatar";
+import { Avatar } from "../ui/Avatar";
 import { PressableScale } from "../ui/PressableScale";
 import { UserPlusIcon, HandshakeIcon, BellIcon, TargetIcon, CheckIcon, FlameIcon, InboxIcon, LockIcon, ChevronRightIcon, PodiumIcon } from "../ui/icons";
 import { useTheme, spacing, onTint } from "../theme";
@@ -98,7 +98,7 @@ export function InboxScreen() {
                 const reaction = n.type === "reaction" && typeof n.detail.reaction === "string" ? (n.detail.reaction as ReactionKind) : null;
                 return (
                   <PressableScale key={n.id} onPress={() => open(n)} style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingVertical: spacing.md, borderBottomWidth: i === items.length - 1 ? 0 : 1, borderBottomColor: colors.hairline }}>
-                    {n.actor ? <PersonAvatar userId={n.actor.userId} name={n.actor.name} size={40} /> : <IconTile icon={icon} tint={tint} size={40} />}
+                    {n.actor ? <Avatar userId={n.actor.userId} name={n.actor.name} avatar={n.actor.avatar} size={40} /> : <IconTile icon={icon} tint={tint} size={40} />}
                     <View style={{ flex: 1 }}>
                       <Text variant={n.read ? "body" : "bodyStrong"} style={{ lineHeight: 20 }}>{notificationText(n)}</Text>
                       <Text variant="micro" color={colors.textFaint} style={{ marginTop: 2 }}>{timeAgo(n.createdAt)}</Text>

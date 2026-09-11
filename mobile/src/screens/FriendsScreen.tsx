@@ -14,7 +14,7 @@ import { track } from "../lib/track";
 import { Text } from "../ui/Text";
 import { Card } from "../ui/Card";
 import { SkeletonCard, SkeletonLine, SkeletonPill, SkeletonTile } from "../ui/Skeleton";
-import { PersonAvatar } from "../ui/PersonAvatar";
+import { Avatar } from "../ui/Avatar";
 import { PressableScale } from "../ui/PressableScale";
 import { SettingsIcon, ShareIcon, HandshakeIcon, UserPlusIcon, InboxIcon, ChevronRightIcon } from "../ui/icons";
 import { useTheme, spacing, radii, softShadow } from "../theme";
@@ -101,7 +101,7 @@ export function FriendsScreen() {
       <ScrollView contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + 96 }} showsVerticalScrollIndicator={false} keyboardShouldPersistTaps="handled">
         {me ? (
           <Card style={{ alignItems: "center", marginTop: spacing.sm, marginBottom: spacing.lg }}>
-            <View style={softShadow(colors.primary, 10)}><PersonAvatar userId={me.userId} name={me.name} size={76} /></View>
+            <View style={softShadow(colors.primary, 10)}><Avatar userId={me.userId} name={me.name} avatar={me.avatar} size={76} /></View>
             <Text variant="h2" style={{ marginTop: spacing.md }}>{me.name ?? tx("social.unnamed")}</Text>
             <Text variant="caption" color={colors.textMuted}>@{me.username}</Text>
             <View style={{ flexDirection: "row", gap: spacing.sm, marginTop: spacing.md }}>

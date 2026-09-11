@@ -15,6 +15,12 @@ export type ProfilePatch = {
   nativeLang?: string;
   goal?: string;
   voice?: string;
+  /**
+   * Avatar — maskot tabanına aksesuar katmanları. Sunucu ham nesneyi
+   * doğrulayıp METİN olarak saklıyor (bkz. web lib/avatar-config); `null`
+   * göndermek "avatarımı sıfırla" demek.
+   */
+  avatar?: { hat: string | null; hatColor: string; glasses: string | null; mustache: string | null } | null;
 };
 
 export async function updateProfile(patch: ProfilePatch): Promise<boolean> {

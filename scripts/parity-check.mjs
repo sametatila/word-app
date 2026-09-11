@@ -2160,7 +2160,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   };
   /* Kisi adinin bas harfi arayuz metni degil; iki tarafta da ayni sekilde
      "tr-TR" ile buyutuluyor ve oyle kaliyor. */
-  const MUAF = ["mobile/src/ui/PersonAvatar.tsx", "src/components/avatar.tsx"];
+  const MUAF = ["mobile/src/ui/Avatar.tsx", "src/components/avatar.tsx"];
   /* Huni sayfasi da yonetime kapali (`adminGate`) ve yalniz Turkce: metinleri
      koda gomulu, kullaniciya acik degil - yonetim panosuyla ayni sebep. */
   const MUAF_KLASOR = ["src/app/admin/", "src/app/(app)/analytics/"];
