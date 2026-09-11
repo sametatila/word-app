@@ -7275,6 +7275,41 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     "beklenen",
   );
 
+  /* ── 223. turun SONUCU duyuruluyor mu ───────────────────────────────
+   * Bir tur bitince kart soru listesinin YERINE geliyor: sorular kayboluyor,
+   * yerine puan ve yargi ("gectin" / "biraz daha calis") beliriyor. Sesli
+   * okuyucu kullanan biri bunu hic duymuyordu - tur bitti mi, kac dogru,
+   * gecti mi, hicbiri.
+   *
+   * 11.336'nin sinifi: IKI TARAF DA sessizdi, yani karsilastirmali bir kapi
+   * bunu goremezdi. Olcut mutlak.
+   *
+   * Bu kapi IKI yuzeyi tutuyor: beceri egzersizinin sonucu (her bes oynatici
+   * `player-shell`den geciyor) ve unite quizinin sonucu. Geri kalan sonuc
+   * yuzeyleri (patron, meydan okuma, gunun turu, haftalik, deneme sinavi,
+   * seviye sinavi, rol yapma, oturum, yuruyus) OLCULDU ve hicbiri
+   * duyurmuyor; defterde 11.337'de adlariyla yazili ve sirayla kapanacak.
+   * Kapiyi yesil tutmak icin degil, her yuzeyin kendi turunda dogru yere
+   * konmasi icin boyle: sonuc kabi her ekranda ayri yerde. */
+  {
+    const webBeceri = sil(read("src/components/skills/player-shell.tsx"));
+    const webQuiz = sil(read("src/components/immersion/quiz-player.tsx"));
+    const mobBeceri = sil(read("mobile/src/screens/ItemScreen.tsx"));
+    const mobQuiz = sil(read("mobile/src/screens/QuizScreen.tsx"));
+    sameList(
+      "turun sonucu duyuruluyor",
+      [
+        "web beceri=" + (/role="status"[\s\S]{0,80}card mt-5 p-5 text-center/.test(webBeceri) ? "duyuruyor" : "SESSIZ"),
+        "web quiz=" + (/<div role="status" className="card relative p-6 text-center">/.test(webQuiz) ? "duyuruyor" : "SESSIZ"),
+        "mobil beceri=" + (/accessibilityLiveRegion="polite" variant="h2"/.test(mobBeceri) ? "duyuruyor" : "SESSIZ"),
+        "mobil quiz=" + (/accessibilityLiveRegion="polite" variant="h2"/.test(mobQuiz) ? "duyuruyor" : "SESSIZ"),
+      ],
+      ["web beceri=duyuruyor", "web quiz=duyuruyor", "mobil beceri=duyuruyor", "mobil quiz=duyuruyor"],
+      "bulunan",
+      "beklenen",
+    );
+  }
+
   /* ── 222. sosyal eylemin hatasi duyuruluyor mu ──────────────────────
    * Istek kabul etmek, durtmek, tepki vermek, ortak gorev kurmak: hepsi
    * basarisiz olabilir ve hepsi ayni satiri ciziyor. O satir IKI PLATFORMDA
