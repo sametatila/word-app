@@ -14,7 +14,7 @@ import { seededShuffle } from "../lib/shuffle";
 import { levenshtein } from "../lib/errors";
 import { haptic } from "../lib/haptics";
 import { api } from "../api/client";
-import { isPremiumRefusal, isQuotaRefusal } from "../lib/premium";
+import { isPremiumRefusal, isQuotaRefusal, notePremiumGate } from "../lib/premium";
 import { assessFailKey } from "../lib/assessFail";
 import { spacing, radii, type Palette } from "../theme";
 import type { Gloss, SkillQuestion } from "../data/skills";
@@ -512,6 +512,7 @@ function FreeCard({ t, n, done, level, exerciseId, onSettle, colors }: { t: Free
       setReveal(true);
     } catch (e) {
       if (isPremiumRefusal(e) || isQuotaRefusal(e)) {
+        if (isPremiumRefusal(e)) notePremiumGate("writing");
         setNote(tx(isPremiumRefusal(e) ? "assess.fail_premium" : "assess.fail_quota"));
       } else {
         /* Sağlayıcı/ağ yok: metin kaybolmasın diye sunucu kuyruğuna bırakılıyor

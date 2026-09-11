@@ -41,6 +41,7 @@ import {
   type OpenScore,
 } from "../game/mockExam";
 import { clearLocalRun, loadLocalRun, pushLocalResult, saveLocalRun } from "../game/mockExamLocal";
+import { notePremiumGate } from "../lib/premium";
 import type { RootStackParams } from "../navigation/RootStack";
 import { useTheme, spacing, radii, type Palette } from "../theme";
 
@@ -222,7 +223,10 @@ export function MockExamScreen() {
       // Sunucuya ulaşılamadı. Sınav durmuyor ve YARIM KALAN cihazdaki kayıttan
       // sürüyor: bir sunucu koşulu yüzünden kırk beş dakika kaybedilmemeli.
       setAttempt(null);
-      setFail(failReason(err));
+      const why = failReason(err);
+      setFail(why);
+      // Kilide takılan an ölçülüyor (bkz. lib/premium `notePremiumGate`).
+      if (why === "locked") notePremiumGate("mock_exam");
       const local = await loadLocalRun(paper.id, part.skill);
       if (local) {
         setResumed(true);

@@ -15,7 +15,7 @@ import { fetchSession, submitAnswers, todayStr, type AnswerOut, type Round } fro
 import { useAuth } from "../lib/AuthContext";
 import { speakAndWaitVoiced, currentVoiceId } from "../lib/tts";
 import { bridgeReady, bridgeStop } from "../lib/ttsBridge";
-import { usePremiumStatus } from "../lib/premium";
+import { usePremiumStatus, notePremiumGate } from "../lib/premium";
 import { narrationVoice } from "../lib/voices";
 import { currentLang, nativeLangName, targetLangName } from "../lib/i18n";
 import { ensureMicPermission, listenOnce, stopListening, setKeepAwake, azureListenOnce, startWalkService, stopWalkService, onScreenState, onWalkStop, onWalkServiceFailed, speakServerTts, stopServerTts, nativeDelay, nativeHttpGet } from "../lib/stt";
@@ -263,6 +263,7 @@ export function WalkModeScreen() {
         // Bekleme süresi nota tablosundan türüyor (`sfxDurationMs`), sabit
         // yazılmıyor: jingle değişirse söz kendiliğinden ona göre kayar.
         sfx("premium");
+        notePremiumGate("pocket_walk"); // kilide takılan an ölçülüyor (bkz. lib/premium)
         void nativeDelay(sfxDurationMs("premium")).then(() => sayNative(tx("walkmode.screen_off_premium")));
       }
     });

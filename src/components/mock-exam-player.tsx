@@ -11,6 +11,7 @@ import { taskSeconds, type MockItem, type MockPaper, type MockPart, type MockSti
 import { MOCK_PASS_PCT, mockBoolLabels, mockSkillLabel, type MockCourse } from "@/lib/mock-exams/types";
 import { foldAnswer, isOpenTask } from "@/lib/mock-exams/scoring";
 import { useT } from "@/lib/i18n/client";
+import { track } from "@/lib/track";
 
 /**
  * Deneme sınavı oynatıcısı — web.
@@ -215,7 +216,12 @@ export function MockExamPlayer({ paper, part }: { paper: MockPaper; part: MockPa
       setLeft(d.resumed && d.attempt.secondsLeft > 0 ? d.attempt.secondsLeft : budgets[start] ?? 60);
     } catch (e) {
       setAttempt(null);
-      setFail(failOf(e));
+      const why = failOf(e);
+      setFail(why);
+      /* Kilide takilan an olculuyor: kagit acilmadi cunku paket kapali.
+         Bitis yolundaki `failOf` cagrisinda OLCULMUYOR - orada kullanici zaten
+         sinavi cozmus oluyor, kilit degil ag sorunu konusulur. */
+      if (why === "locked") track("premium_gate", 0, "mock_exam");
       const local = readLocalRun(paper.id, part.skill);
       if (local) {
         setResumed(true);

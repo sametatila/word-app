@@ -3,6 +3,7 @@
 import { overallScore, type AssessRequest, type Assessment } from "@/lib/assess-prompts";
 import { translate, DEFAULT_NATIVE } from "@/lib/i18n/dict";
 import { localDay } from "@/lib/day";
+import { track } from "@/lib/track";
 
 /**
  * `/api/assess` istemci yardımcısı (WP-03).
@@ -74,34 +75,55 @@ export async function askAssess(
       return { ok: true, result: data.result, cached: data.cached, provider: data.provider };
     }
     const err = (await res.json().catch(() => ({}))) as { error?: string };
-    switch (res.status) {
-      /*
-        403 iki ayrı şey olabilir ve ikisi çok farklı: premium kapısı (ücretsiz
-        katmanın hakkı bitti) ya da yetkisizlik. Ayırt edilmezse premium reddi
-        `default` dalına düşüp "geçersiz istek" diye gösteriliyordu — kullanıcı
-        bir şeyin bozulduğunu sanıyor, oysa kapıya çarpmış.
-      */
-      case 403:
-        return { ok: false, reason: err.error === "premium_required" ? "premium" : "unauthorized" };
-      case 401:
-        return { ok: false, reason: "unauthorized" };
-      case 413:
-        return { ok: false, reason: "too_long" };
-      case 429:
-        return { ok: false, reason: "quota" };
-      case 502:
-        return { ok: false, reason: "invalid" };
-      case 503:
-        return { ok: false, reason: err.error === "not_configured" ? "not_configured" : "upstream" };
-      default:
-        return { ok: false, reason: "bad_request" };
+    const reason = refusal(res.status, err);
+    if (reason === "premium") {
+      /* KİLİDE TAKILAN AN ÖLÇÜLÜYOR. `premium_gate` iki platformun da kayıt
+         defterinde yazılıydı ("paywall'ı hangi kısıt besliyor, oradan
+         görülür") ama hiçbiri göndermiyordu: paywall'ı GÖRENLER sayılıyor,
+         oraya İTEN kilit sayılmıyordu. Tür adı sunucunun kendi sözlüğünden
+         (`lib/premium/gates` `PREMIUM_GATES`). */
+      track("premium_gate", 0, req.kind === "writing" || req.kind === "sentence" ? "writing" : "speaking");
     }
+    return { ok: false, reason };
   } catch {
     const why = controller.signal.reason;
     return { ok: false, reason: why === "timeout" ? "timeout" : why === "aborted" ? "aborted" : "upstream" };
   } finally {
     clearTimeout(timer);
     opts.signal?.removeEventListener("abort", onOuter);
+  }
+}
+
+/**
+ * Neden reddedildi — durum kodu tablosu.
+ *
+ * `askAssess`ten AYRI duruyor ki tablo yan etkisiz kalsın: kilit ölçümü
+ * (`premium_gate`) kararı verildikten SONRA, tek yerde yapılıyor. Mobil
+ * karşılığı `lib/assessFail` `assessFailure` ve iki tablo satır satır aynı
+ * (parity §104).
+ */
+function refusal(status: number, err: { error?: string }): AssessFailure {
+  switch (status) {
+    /*
+      403 iki ayrı şey olabilir ve ikisi çok farklı: premium kapısı (ücretsiz
+      katmanın hakkı bitti) ya da yetkisizlik. Ayırt edilmezse premium reddi
+      `default` dalına düşüp "geçersiz istek" diye gösteriliyordu — kullanıcı
+      bir şeyin bozulduğunu sanıyor, oysa kapıya çarpmış.
+    */
+    case 403:
+      return err.error === "premium_required" ? "premium" : "unauthorized";
+    case 401:
+      return "unauthorized";
+    case 413:
+      return "too_long";
+    case 429:
+      return "quota";
+    case 502:
+      return "invalid";
+    case 503:
+      return err.error === "not_configured" ? "not_configured" : "upstream";
+    default:
+      return "bad_request";
   }
 }
 

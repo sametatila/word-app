@@ -20,7 +20,7 @@ import { ensureMicPermission, listenOnce } from "../lib/stt";
 import { spokenMatches } from "../lib/voiceMatch";
 import { currentTargetLocale } from "../lib/courses";
 import { api } from "../api/client";
-import { isPremiumRefusal, isQuotaRefusal } from "../lib/premium";
+import { isPremiumRefusal, isQuotaRefusal, notePremiumGate } from "../lib/premium";
 import { assessFailKey } from "../lib/assessFail";
 import { todayStr } from "../game/session";
 import type { Round } from "../game/session";
@@ -935,7 +935,7 @@ function Write({ w, level, colors, pad, onDone }: { w: WritingItem; level: strin
       // Premium kapısı ağ hatası DEĞİL. Uydurma bir yedek puan vermek kapıyı
       // görünmez kılar: kullanıcı yapay zekâ değerlendirmesinin hakkının
       // bittiğini hiç öğrenmez ve aldığı puanın gerçek olduğunu sanır.
-      if (isPremiumRefusal(e)) { setGateNote(t("assess.fail_premium")); setScore(null); }
+      if (isPremiumRefusal(e)) { notePremiumGate("writing"); setGateNote(t("assess.fail_premium")); setScore(null); }
       // Adil kullanım hakkının dolması da bir kapı: 429'u ağ hatası sayıp
       // kelime sayısından puan uydurmak, kullanıcıya gerçek olmayan bir not
       // vermek demekti - üstteki kapıda kaçınılan hatanın aynısı.

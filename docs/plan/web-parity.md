@@ -7197,3 +7197,46 @@ olmak yetmiyor, doğruluğun ölçülüyor olması gerekiyor.** §11.181'de göl
 tintinin gerekçesi, §11.207'de ekran okuyucu etiketinin gerekçesi yanlıştı ve
 ikisi de kapı olmadığı için yıllarca öyle kaldı.
 
+
+### 11.211 Kilidi görenler sayılıyordu, kilide çarpanlar sayılmıyordu
+
+`premium_gate` **iki platformun da olay kayıt defterinde yazılıydı** ve
+gerekçesi de duruyordu — `lib/events.ts`: *"premium özellik kilide takıldı
+(kind = özellik) … paywall'ı hangi kısıt besliyor, oradan görülür."* Olayı
+**hiçbiri göndermiyordu.** Huninin sonu ölçülüyordu (`paywall_view`,
+`paywall_cta`, `purchase_*`), başı ölçülmüyordu: kimin oraya hangi kapıdan
+itildiği hiç yazılmıyordu. §90'ın dersinin aynısı — olayın TANIMLI olması
+gönderildiği anlamına gelmiyor.
+
+Yazılı `kind` listesi de uydurmaydı (`speaking|exam_full|unlimited_tour`);
+sunucunun kendi sözlüğü `lib/premium/gates` `PREMIUM_GATES`:
+**mock_exam · weekly_exam · pocket_walk · speaking · writing**. Yorum
+düzeltildi, mobil yardımcı (`notePremiumGate`) aynı beş türü alıyor.
+
+Reddin gerçekten kullanıcıya gösterildiği her yüzey artık yayın yapıyor:
+
+| kilit | Android | web |
+|---|---|---|
+| `pocket_walk` | `WalkModeScreen` (ekran kapalı reddi) | `walk-player` |
+| `writing` | `ExamScreen`, `skillQuiz` | `assess-client` (403 `premium_required`) |
+| `speaking` | `skillLibrary`, `RoleplayExamScreen` | `assess-client` |
+| `mock_exam` | `MockExamScreen` (`locked`) | `mock-exam-player` (`locked`) |
+
+`weekly_exam` **bilerek dışarıda**: sözlükte var ama hiç uygulanmıyor —
+`canWeeklyExam`i yalnız `premium/status` (bilgi) ve `premium/consume`
+(çağıranı yok, §11.24) okuyor; `/api/weekly` kilide hiç bakmıyor. Reddin
+olmadığı yerde ölçülecek an da yok. Muafiyetin kendisi ölçülüyor: üçüncü bir
+çağıran çıkarsa satır düşer (§11.210'un kuralı).
+
+Yan düzeltme: web `askAssess` içindeki durum kodu tablosu saf bir yardımcıya
+ayrıldı (`refusal`). Ölçüm çağrısı `case 403`ün içine konunca tablo yan
+etkili olmuş ve §104'ün karşılaştırması bozulmuştu — karar ile yan etki
+ayrıldı, tablo mobildeki `assessFailure` ile yeniden satır satır aynı.
+
+**Yeni kapı (§120)** dört şeyi birden ölçüyor: (1) iki platform aynı kilit
+türlerini gönderiyor mu, (2) türler sunucunun sözlüğünde var mı, (3) sözlükteki
+her kilit ya ölçülüyor ya muaf listesinde gerekçeli, (4) **reddeden yüzeylerden
+biri susmuş mu.** Dördüncüsü turun içinde kendini kanıtladı: bir enjeksiyon
+denemesinden sonra `RoleplayExamScreen`in yayını geri alınmıştı ve ilk üç
+kontrol de yeşil kalmıştı — aynı türü başka bir ekran hâlâ gönderiyordu.
+Beş enjeksiyonun beşi de yakalandı.

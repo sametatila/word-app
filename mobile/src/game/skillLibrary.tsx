@@ -11,7 +11,7 @@ import { ensureMicPermission, listenOnce, sttAvailable, stopListening } from "..
 import { spokenMatches } from "../lib/voiceMatch";
 import { currentTargetLang, currentTargetLocale } from "../lib/courses";
 import { api } from "../api/client";
-import { isPremiumRefusal, isQuotaRefusal } from "../lib/premium";
+import { isPremiumRefusal, isQuotaRefusal, notePremiumGate } from "../lib/premium";
 import { assessFailKey } from "../lib/assessFail";
 import { haptic } from "../lib/haptics";
 import { spacing, radii, softShadow, type Palette } from "../theme";
@@ -305,6 +305,7 @@ export function MonologueBody({ mono, level, exerciseId, onDone, colors }: {
        * baştan beri ayırıyor ve aynı iki anahtarı kullanıyor.
        */
       if (isPremiumRefusal(e) || isQuotaRefusal(e)) {
+        if (isPremiumRefusal(e)) notePremiumGate("speaking");
         setGateNote(isPremiumRefusal(e) ? t("assess.fail_premium") : t("assess.fail_quota"));
         setResult(null);
         setPhase("result");

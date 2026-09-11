@@ -19,7 +19,9 @@ import { speakTarget } from "../lib/tts";
 import { ensureMicPermission, listenOnce, sttAvailable, stopListening } from "../lib/stt";
 import { currentTargetLocale } from "../lib/courses";
 import { api } from "../api/client";
-import { assessFailKey } from "../lib/assessFail";
+import { assessFailKey, assessFailure } from "../lib/assessFail";
+import { notePremiumGate } from "../lib/premium";
+
 import { todayStr } from "../game/session";
 import { ERROR_LABEL_KEYS, type ErrorType } from "../lib/errors";
 import { useTheme, spacing, radii, softShadow, cardShadow, type Palette } from "../theme";
@@ -126,6 +128,9 @@ export function RoleplayExamScreen() {
     } catch (e) {
       if (!mounted.current) return;
       setGateNote(tx(assessFailKey(e)));
+      // Kilide takılan an ölçülüyor (bkz. lib/premium `notePremiumGate`).
+      if (assessFailure(e) === "premium") notePremiumGate("speaking");
+      
     }
     track("nav", said.length, "roleplay_exam:done");
     if (mounted.current) setPhase("result");

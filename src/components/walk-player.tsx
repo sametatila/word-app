@@ -794,6 +794,7 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
             if (heard.reason === "premium" && !premiumTold.current) {
               premiumTold.current = true;
               track("walk_listen", 0, "stt:premium");
+              track("premium_gate", 0, "pocket_walk");
               walkCue("premium");
               await new Promise((r) => setTimeout(r, walkCueMs("premium")));
               await say([{ lang, narration: true, text: t("walkmode.screen_off_premium") }]);

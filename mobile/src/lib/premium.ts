@@ -1,3 +1,4 @@
+import { track } from "./track";
 import { useCallback, useEffect, useState } from "react";
 import { api } from "../api/client";
 
@@ -135,6 +136,19 @@ export async function awaitPremiumAfterPurchase(tries = 6): Promise<boolean> {
  * yere bakmaya gönderiyor, üstelik uydurma bir yedek puan vermek kapıyı
  * görünmez kılıyor.
  */
+/**
+ * Premium kilide takılan an — huni ölçümünün eksik halkası.
+ *
+ * `premium_gate` olayı iki platformun da kayıt defterinde YAZILIYDI ve
+ * gerekçesi de duruyordu ("paywall'ı hangi kısıt besliyor, oradan görülür")
+ * ama HİÇBİRİ göndermiyordu: paywall'ı görenler sayılıyor, oraya iten kilit
+ * sayılmıyordu. Tür adları sunucunun kendi sözlüğünden (`lib/premium/gates`
+ * `PremiumGate`): mock_exam · weekly_exam · pocket_walk · speaking · writing.
+ */
+export function notePremiumGate(gate: "mock_exam" | "weekly_exam" | "pocket_walk" | "speaking" | "writing"): void {
+  track("premium_gate", 0, gate);
+}
+
 export function isPremiumRefusal(e: unknown): boolean {
   const err = e as { status?: number; message?: string } | null;
   return err?.status === 403 && err?.message === "premium_required";

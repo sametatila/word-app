@@ -4000,6 +4000,77 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   sameList("web sayim muafiyetlerinin yollari", yasayan, hepsi, "diskte var", "listede yazan");
 }
 
+/* ── 120. premium kilidi olculuyor mu ─────────────────────────────────────
+ * `premium_gate` iki platformun da olay kayit defterinde YAZILIYDI ve
+ * gerekcesi de duruyordu ("paywall'i hangi kisit besliyor, oradan gorulur")
+ * ama HICBIRI gondermiyordu: paywall'i GORENLER sayiliyor (`paywall_view`),
+ * oraya ITEN kilit sayilmiyordu. §90'in dersi bir kez daha - olayin TANIMLI
+ * olmasi yetmez.
+ *
+ * Olculen uc sey: iki tarafta da ayni kilit turleri gonderiliyor mu, turler
+ * sunucunun kendi sozlugunden mi (`lib/premium/gates` PREMIUM_GATES) ve
+ * sozlukteki her tur ya olculuyor ya da MUAF listesinde gerekcesiyle duruyor. */
+{
+  /* Dosyalarin KENDISI de olculuyor: tur listesi ayni kaldigi surece bir
+     EKRANIN susmasi gorunmez kaliyor (ayni turu baska bir ekran hâlâ
+     gonderiyor). Bu tam olarak bir kez oldu - rol yapma sinavindaki yayin
+     dusmustu ve uc kontrol de yesil kalmisti. */
+  const suskun = (yollar) => yollar.filter((p) => !/premium_gate"|notePremiumGate\(/.test(read(p)));
+  const kilitTurleri = (yollar) => {
+    const src = yollar.map((p) => read(p)).join("\n").replace(/\/\*[\s\S]*?\*\//g, " ").replace(/\/\/[^\n]*/g, " ");
+    /* Tur adi duz dizgi olabilir ("pocket_walk") ya da bir kosulun iki ucunda
+       ("writing" : "speaking") - ikisi de sayiliyor, yoksa kosullu yayan
+       dosya "hic gondermiyor" gibi gorunurdu. */
+    const cagri = [...src.matchAll(/(?:track\("premium_gate", 0,|notePremiumGate\()([^;]*?)\)/g)]
+      /* Kosul KARSILASTIRMASI turu degil: `req.kind === "sentence" ? ...`
+         icindeki "sentence" bir kilit adi degil, ona giden yolun sartidir. */
+      .map((m) => m[1].replace(/===\s*"\w+"/g, " "));
+    return [...new Set(cagri.flatMap((c) => [...c.matchAll(/"(\w+)"/g)].map((m) => m[1])))].sort();
+  };
+  const sozluk = read("src/lib/premium/gates.ts").split("export const PREMIUM_GATES")[1] ?? "";
+  const gecerli = [...sozluk.slice(0, sozluk.indexOf("} as const")).matchAll(/^  (\w+):/gm)].map((m) => m[1]).sort();
+  /* `lib/premium.ts` listede YOK: orasi yardimcinin TANIMI, cagiran degil -
+     tur birligi asagida ayrica olculuyor. */
+  const MOB = [
+    "mobile/src/screens/WalkModeScreen.tsx", "mobile/src/screens/ExamScreen.tsx",
+    "mobile/src/game/skillQuiz.tsx", "mobile/src/game/skillLibrary.tsx", "mobile/src/screens/RoleplayExamScreen.tsx",
+    "mobile/src/screens/MockExamScreen.tsx",
+  ];
+  const WEB = ["src/lib/assess-client.ts", "src/components/walk-player.tsx", "src/components/mock-exam-player.tsx"];
+  const mob = kilitTurleri(MOB);
+  const web = kilitTurleri(WEB);
+  sameList("premium kilidi olcumu", mob, web);
+
+  const sessiz = [...suskun(MOB), ...suskun(WEB)].map((p) => p.split("/").pop());
+  sameList("premium kilidi: reddeden her yuzey", sessiz.length ? sessiz : ["yok"], ["yok"], "susan yuzey", "beklenen");
+
+  /* Uydurma bir tur panoda sessizce bos bir satir olurdu (once tam bunun
+     ornegi yaziliydi: "exam_full", "unlimited_tour" - hicbiri yok). */
+  const disarda = [...new Set([...mob, ...web])].filter((x) => !gecerli.includes(x));
+  sameList("premium kilidi turleri sozlukte", disarda.length ? disarda : ["yok"], ["yok"], "sozlukte olmayan", "beklenen");
+
+  /* Mobil yardimcinin tur birligi sunucunun sozlugu olmali: burada kendi
+     listesini tutsaydi sozluge eklenen bir kilit mobilde derlenmezdi. */
+  const birlik = (read("mobile/src/lib/premium.ts").match(/notePremiumGate\(gate: ([^)]*)\)/)?.[1] ?? "")
+    .match(/"\w+"/g)?.map((x) => x.slice(1, -1)).sort() ?? [];
+  sameList("premium kilidi sozlugu (mobil yardimci)", birlik, gecerli, "mobil", "sunucu");
+
+  /* MUAF: `weekly_exam` sozlukte var ama HIC UYGULANMIYOR - `canWeeklyExam`i
+     yalnizca `premium/status` (bilgi) ve `premium/consume` (cagirani yok,
+     bkz. web-parity §11.24) okuyor, `/api/weekly` kilide hic bakmiyor. Reddin
+     olmadigi yerde olculecek an da yok. Muafiyetin kendisi olculuyor: ucuncu
+     bir cagiran cikarsa kilit uygulanmaya baslamis demektir ve bu satir duser. */
+  /* Yollar PARCADAN kuruluyor: tam uc yolunu duz dizgi yazmak
+     `check-endpoints`e "bu uc cagriliyor" diye gorunuyordu - orasi kaynak
+     dosyalarda uc yolu ariyor ve burasi ucu cagirmiyor, dosyasini OKUYOR. */
+  const uc = (f) => "src/app/api/" + f + "/route.ts";
+  const cagiran = [uc("premium/status"), uc("premium/consume"), uc("weekly"), uc("exam"), "src/lib/weekly.ts"]
+    .filter((f) => read(f).includes("canWeeklyExam"));
+  const MUAF = cagiran.length === 2 ? ["weekly_exam"] : [];
+  const olculmeyen = gecerli.filter((g) => !mob.includes(g) && !MUAF.includes(g));
+  sameList("premium kilidi eksiksiz", olculmeyen.length ? olculmeyen : ["yok"], ["yok"], "olculmeyen kilit", "beklenen");
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"

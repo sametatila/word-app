@@ -159,8 +159,13 @@ export const EVENT_NAMES = [
     paywall_view (kind = nereden gelindi: exam|walk|limit|profile|nav) →
     purchase_start (plan seçildi, kind = monthly|yearly) → purchase_done
     (kind = plan, value = aylık kuruş). premium_gate ise bir premium özelliğin
-    kilide takıldığı an (kind = özellik: speaking|exam_full|unlimited_tour) —
-    paywall'ı hangi kısıt besliyor, oradan görülür.
+    kilide takıldığı an — paywall'ı hangi kısıt besliyor, oradan görülür.
+
+    KIND SUNUCUNUN KENDİ SÖZLÜĞÜNDEN: `lib/premium/gates` `PremiumGate` —
+    mock_exam · weekly_exam · pocket_walk · speaking · writing. Burada önce
+    uydurma bir liste yazılıydı (speaking|exam_full|unlimited_tour) ve olay
+    ZATEN hiç gönderilmiyordu: iki platform da adı kayıt defterine yazmış,
+    çağırmayı unutmuştu (bkz. web-parity §11.211).
   */
   "paywall_view", // paywall açıldı (kind = kaynak)
   "premium_gate", // premium özellik kilide takıldı (kind = özellik)
