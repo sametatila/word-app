@@ -5,6 +5,7 @@ import { WrenchIcon } from "@/components/icons";
 import { socialMe } from "@/lib/social/profile";
 import { FriendsHub, hubTab } from "@/components/social/friends-hub";
 import { getT } from "@/lib/i18n/server";
+import { RetryButton } from "@/components/retry-button";
 
 export const dynamic = "force-dynamic";
 export const generateMetadata = titleMeta("friends.friends");
@@ -43,6 +44,7 @@ export default async function FriendsPage({ searchParams }: { searchParams: Prom
       <div className="card mx-auto w-full max-w-md p-6 text-center">
         <h2 className="text-lg font-bold">{t("socialw.friends_load_failed")}</h2>
         <p className="muted mt-2 text-sm">{t("socialw.try_in_a_moment")}</p>
+        <RetryButton />
       </div>
     );
   }

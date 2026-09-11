@@ -8,6 +8,7 @@ import { WordProgress } from "@/components/progress-view";
 import { WordList, type WordRow } from "@/components/word-list";
 import { getT, getLang } from "@/lib/i18n/server";
 import { formatNumber } from "@/lib/i18n/dict";
+import { RetryButton } from "@/components/retry-button";
 
 export const generateMetadata = titleMeta("words.my_words");
 export const dynamic = "force-dynamic";
@@ -161,6 +162,7 @@ export default async function WordsPage({
             değildi. Sebep zaten sunucu günlüğünde; kullanıcıya bağlantı
             sorunu söyleniyor. Android aynı yerde tek satır gösteriyor. */}
         <p className="muted mt-2 text-sm">{t("social.err_offline")}</p>
+        <RetryButton />
       </div>
     );
   }

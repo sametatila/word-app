@@ -8365,3 +8365,74 @@ Android'in metni kendi girdi biçimi için doğru kaldı.
 **§159** dört şeyi ölçüyor: diyalog rolü, odağın taşınması, klavyeyle kapatma
 ve mobilde geri tuşu + arka planın gizlenmesi. Dört enjeksiyonun dördü de
 yakalandı.
+
+## §11.254 — Duyurulan kotaların hiçbiri sayılmıyor (karar Samet'te)
+
+Bu bir parite bulgusu değil, **sunucu tarafında bir açık**; üç platformu da
+aynı biçimde etkiliyor. §11.24'te "çağıranı olmayan uç" diye işaretlenen
+`/api/premium/consume`ün ne olduğu bu turda anlaşıldı.
+
+Karar katmanı (`lib/premium/access.ts`) her kararla birlikte **hangi sayacın
+artacağını** döndürüyor (`access.counter`) ve o sayacı artıran tek yer
+`/api/premium/consume`. O ucun çağıranı yok. Sonuç:
+
+    KONTROL EDİLEN            ARTIRAN
+    pocket_walk               — (yok)
+    weekly_exam               — (yok)
+    ai_practice               — (yok)
+    speaking_lesson:<seviye>  — (yok)
+    writing_lesson:<seviye>   — (yok)
+    ai_practice_weekly        — (yok)
+
+Yani "seviye başına 2 konuşma alıştırması", "haftada 1 sınav", "günde 20 tur"
+gibi **kullanıcıya duyurulan her sınır** her zaman 0 kullanımda görünüyor ve
+hiç dolmuyor. `/api/assess` içindeki yorum bunu zaten yazıyor: "Hak alıştırma
+BAŞINDA bir kez sayılıyor (`/api/premium/consume`)" — sayılmıyor.
+
+Üretim doğruladı (yalnız okuma):
+
+    select key, count(*), sum(count) from usage_counters group by key
+    tts_calls | 4 | 201
+
+Tek yazılan sayaç `tts_calls`. Kotaların hiçbiri bugüne kadar bir kez bile
+artmamış.
+
+Bugün tutan tek şey iki emniyet tavanı: `/api/assess` günlük `ai_assess_calls`
+(adil kullanımın dört katı) ve `/api/stt` `pocket_walk_words`. İkisi de
+faturayı koruyor, ürün sınırını değil. Cepte yürüyüş ayrıca ücretsizde
+limitin 0 olmasıyla kapalı, yani orada kapı sayaçtan bağımsız çalışıyor.
+
+**BİLEREK DÜZELTİLMEDİ.** Eksik parça istemci çağrısı; ekleyince ücretsiz
+kullanıcılar bugün gerçek duvarlara çarpar (seviye başına 2 AI alıştırması,
+haftada 1 sınav) ve premium satın alma **hâlâ pasif** — yani duvarı aşmanın
+yolu yok. Bu bir hata düzeltmesi değil, ürün kararı: kotalar premium açılınca
+mı yürürlüğe girsin, yoksa şimdi mi. Samet karar verince bağlanacak yer üç
+nokta: cepte yürüyüş başlangıcı, haftalık sınav başlangıcı, AI alıştırması
+başlangıcı (ikisi de her iki istemcide).
+
+## §11.255 — Hata kartından çıkış yolu yalnız geri dönmekti
+
+Android'de bir yüzey verisini okuyamayınca kart iki şey gösteriyor: ne olduğu
+ve **birincil** bir "tekrar dene". Web'de altı sunucu sayfası (kelimeler,
+arkadaşlar, arkadaş ayarları, profil, ayarlar, başkasının profili) ile yürüyüş
+modunun hata kartı yalnız metni gösteriyordu. Sebep çoğunlukla geçici — ağ
+kesintisi, veritabanı hıçkırığı — ama kullanıcının elinde deneyecek bir şey
+yoktu; yürüyüşte tek düğme "Geri dön"dü, yani geçici bir hata kullanıcıyı
+moddan tamamen atıyordu.
+
+Sunucu bileşeni içinden tekrar deneme için küçük bir istemci bileşeni açıldı
+(`components/retry-button`): `router.refresh()` sunucu çizimini yeniden
+çalıştırıyor, sayfa yeniden yüklenmiyor — sekme çubuğu ve kaydırma yeri
+yerinde kalıyor.
+
+**§160** iki listeyi birbirine değil, **ikisini de beklenene** ölçüyor: hata
+kartı gösteren her yüzey kendi tekrar denemesini taşımalı. Her satır çift
+ölçüyor — hata metni hâlâ orada mı (yüzey duruyor mu) ve düğme var mı; yalnız
+düğmeye bakmak, hata dalı silinince kapıyı sessizce yeşil bırakırdı. Beş
+enjeksiyonun beşi de yakalandı.
+
+Bu turda enjeksiyon geri almasında bir hata daha yaptım: iki ayrı `page.tsx`
+dosyasının yedeği aynı ada yazıldı ve kelimeler sayfası arkadaşlar sayfasının
+içeriğiyle geri yüklendi. `git diff --numstat` ile fark edildi, dosya HEAD'den
+geri alınıp düzeltme yeniden uygulandı. Ortak ağaçta yedek adı dosya adından
+değil, YOLDAN türetilmeli.

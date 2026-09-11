@@ -1595,7 +1595,20 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
       <Frame>
         <h2 className="text-lg font-bold">{t("walk.error_title")}</h2>
         <p className="muted mt-2 text-sm">{t("walk.error_sub")}</p>
-        <button onClick={leave} className="btn btn-ghost mt-5 w-full px-5 py-3">{t("common.go_back")}</button>
+        {/* YERİNDE TEKRAR DENEME. Tek çıkış "Geri dön"dü: geçici bir ağ
+            hatası kullanıcıyı yürüyüş modundan tamamen atıyordu -- oysa
+            metnin kendisi "bağlantını kontrol edip tekrar dene" diyor ve
+            deneyecek düğme yoktu. Android'deki sıra: birincil "tekrar dene",
+            ikincil çıkış (aynı düzeltme `placement-test` hata dalında da
+            yapılmıştı). */}
+        <button
+          type="button"
+          onClick={() => { setStatus("loading"); void load(); }}
+          className="btn btn-primary mt-5 w-full px-5 py-3"
+        >
+          {t("common.try_again")}
+        </button>
+        <button onClick={leave} className="btn btn-ghost mt-2 w-full px-5 py-3">{t("common.go_back")}</button>
       </Frame>
     );
 

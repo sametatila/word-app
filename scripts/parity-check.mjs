@@ -5737,6 +5737,61 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   sameList("kutlama kapatilabilir", mob, web);
 }
 
+/* ── 160. hata ekraninda yerinde tekrar deneme ────────────────────────────
+ * Androidde bir yuzey verisini okuyamayinca kart iki sey gosteriyor: ne
+ * oldugu ve BIRINCIL bir "tekrar dene". Webde alti sunucu sayfasi ile
+ * yuruyus modunun hata kartinda o dugme yoktu - tek yol sekmeden cikip geri
+ * gelmek ya da sayfayi elle yenilemekti. Sebep coguldukla gecici (baglanti
+ * kesintisi) oldugu icin kullaniciyi ekrandan atiyordu.
+ *
+ * Olcum EŞLESTIRME degil MUTLAK: her iki platformda da hata karti gosteren
+ * her yuzey kendi tekrar denemesini tasimali. Iki taraf birden eksik olsaydi
+ * karsilastirma yesil kalirdi (§157 dersi).
+ *
+ * Her satir cift olcuyor: hata METNI hala orada mi (yuzey duruyor mu) ve
+ * tekrar deneme dugmesi var mi. Yalniz dugmeye bakmak, hata dali silinince
+ * kapiyi sessizce yesil birakirdi. */
+{
+  const strip = (x) => x.replace(/\/\*[\s\S]*?\*\//g, " ").replace(/(^|[^:"'`\\])\/\/.*$/gm, "$1");
+  const durum = (yol, hataIsareti, tekrarIsareti) => {
+    const src = strip(read(yol));
+    if (!hataIsareti.test(src)) return "hata dali yok";
+    return tekrarIsareti.test(src) ? "tekrar var" : "tekrar yok";
+  };
+  const WEB_TEKRAR = /<RetryButton[\s/>]|t\("common\.try_again"\)/;
+  const MOB_TEKRAR = /common\.try_again|friends\.try_again/;
+  const WEB = [
+    ["kelimeler", "src/app/(app)/words/page.tsx", /words\.couldn_t_load_your_words/],
+    ["arkadaslar", "src/app/(app)/friends/page.tsx", /socialw\.friends_load_failed/],
+    ["arkadas ayarlari", "src/app/(app)/friends/settings/page.tsx", /socialw\.friends_load_failed/],
+    ["profil", "src/app/(app)/profile/page.tsx", /profw\.load_failed/],
+    ["ayarlar", "src/app/(app)/profile/settings/page.tsx", /settings/],
+    ["baskasinin profili", "src/app/(app)/u/[username]/page.tsx", /profw\.load_failed/],
+    ["yuruyus", "src/components/walk-player.tsx", /walk\.error_title/],
+  ];
+  const MOB = [
+    ["kelimeler", "mobile/src/screens/WordsScreen.tsx", /words\.couldn_t_load_your_words/],
+    ["arkadaslar", "mobile/src/screens/FriendsScreen.tsx", /ErrorText/],
+    ["yuruyus", "mobile/src/screens/WalkModeScreen.tsx", /walk\.error_title/],
+    ["basarimlar", "mobile/src/screens/AchievementsScreen.tsx", /common\.try_again/],
+    ["yazilar", "mobile/src/screens/WritingsScreen.tsx", /common\.try_again/],
+  ];
+  sameList(
+    "web hata kartinda tekrar deneme",
+    WEB.map(([ad, yol, re]) => ad + "=" + durum(yol, re, WEB_TEKRAR)),
+    WEB.map(([ad]) => ad + "=tekrar var"),
+    "bulunan",
+    "beklenen",
+  );
+  sameList(
+    "mobil hata kartinda tekrar deneme",
+    MOB.map(([ad, yol, re]) => ad + "=" + durum(yol, re, MOB_TEKRAR)),
+    MOB.map(([ad]) => ad + "=tekrar var"),
+    "bulunan",
+    "beklenen",
+  );
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"

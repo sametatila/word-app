@@ -5,6 +5,7 @@ import { SocialError } from "@/lib/social/errors";
 import { ensureUsername, publicProfile } from "@/lib/social/profile";
 import { BackButton } from "@/components/page-back";
 import { PublicProfile } from "@/components/social/public-profile";
+import { RetryButton } from "@/components/retry-button";
 
 export const dynamic = "force-dynamic";
 
@@ -33,6 +34,7 @@ export default async function PublicProfilePage({ params }: { params: Promise<{ 
       <div className="card mx-auto w-full max-w-md p-6 text-center">
         <h2 className="text-lg font-bold">{t("profw.load_failed")}</h2>
         <p className="muted mt-2 text-sm">{t("socialw.try_in_a_moment")}</p>
+        <RetryButton />
       </div>
     );
   }

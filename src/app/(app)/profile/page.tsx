@@ -4,6 +4,7 @@ import { ensureProfile, getProgress } from "@/lib/session";
 import { isPremium } from "@/lib/premium";
 import { ProfileView } from "@/components/profile/profile-view";
 import { titleMeta } from "@/lib/page-meta";
+import { RetryButton } from "@/components/retry-button";
 
 export const dynamic = "force-dynamic";
 
@@ -52,6 +53,7 @@ export default async function ProfilePage() {
       <div className="card mx-auto w-full max-w-md p-6 text-center">
         <h2 className="text-h3">{t("profw.load_failed")}</h2>
         <p className="muted mt-2 text-body">{t("socialw.try_in_a_moment")}</p>
+        <RetryButton />
       </div>
     );
   }

@@ -5,6 +5,7 @@ import { ensureProfile } from "@/lib/session";
 import { BackButton } from "@/components/page-back";
 import { SocialSettings } from "@/components/social/social-settings";
 import { getT } from "@/lib/i18n/server";
+import { RetryButton } from "@/components/retry-button";
 
 export const dynamic = "force-dynamic";
 export const generateMetadata = titleMeta("socialsettings.social_and_privacy");
@@ -38,6 +39,7 @@ export default async function SocialSettingsPage() {
       <div className="card mx-auto w-full max-w-md p-6 text-center">
         <h2 className="text-lg font-bold">{t("socialw.friends_load_failed")}</h2>
         <p className="muted mt-2 text-sm">{t("socialw.try_in_a_moment")}</p>
+        <RetryButton />
       </div>
     );
   }
