@@ -7286,6 +7286,104 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     "beklenen",
   );
 
+  /* -- 227. ekrani kaplayan BEKLEME kendini duyuruyor mu ---------------
+   *
+   * "Hazirlaniyor", "puanlaniyor", "seviyen hesaplaniyor": bu dallar ekranin
+   * TAMAMINI kaplayip bir cumle yaziyor ve on ucunun HICBIRI canli bolge
+   * degildi. Ekran okuyucu kullanan biri "basla"ya basip hicbir sey
+   * duymuyordu - ekranin dondugunu mu, hazirlandigini mi bilemiyor.
+   *
+   * Ucunde `aria-busy` vardi ve YETMIYOR: `aria-busy` "bu bolge
+   * guncelleniyor" der, MONTE EDILDIGINDE hicbir sey okutmaz. Okutan
+   * `role="status"`. Yani o uc dal da sessizdi - kapinin `aria-busy`
+   * aramasi yanlis olurdu (§11.228 sinifi).
+   *
+   * §221 ROTA yedeklerini duyurulur kilmisti (`loading.tsx`), §152 kart
+   * iskeletlerini; bunlar ucuncu kume: BILESENIN ICINDEKI bekleme dali.
+   *
+   * OLCUM ATA YURUYUSUYLE. Isaretten geri gidip onu saran `return`i bulup
+   * oradan ileri JSX ETIKET YIGINI tutuluyor; isarete gelindiginde yigin
+   * atalari tasiyor ve isaret onlarin BIRINDE aranıyor. Pencere yok, komsu
+   * yok: `<Frame role="status">` cocugun etiketinde gorunmez ama atadir,
+   * yanindaki kardes bir `role="status"` ise yigina hic girmez. */
+  {
+    const acilisSonu = (blok) => {
+      let derinlik = 0, tirnak = null;
+      for (let i = 0; i < blok.length; i++) {
+        const c = blok[i];
+        if (tirnak) { if (c === tirnak && blok[i - 1] !== "\\") tirnak = null; continue; }
+        if (c === '"' || c === "'" || c === "`") { tirnak = c; continue; }
+        if (c === "{") derinlik++;
+        else if (c === "}") derinlik--;
+        else if (c === ">" && derinlik === 0) return i;
+      }
+      return -1;
+    };
+    /** `isaret`i saran JSX atalarinin acilis etiketleri (en dis once). */
+    const atalar = (src, isaret) => {
+      const hedef = src.indexOf(isaret);
+      if (hedef < 0) return null;
+      const bas = src.lastIndexOf("return", hedef);
+      if (bas < 0) return null;
+      const yigin = [];
+      let k = bas;
+      while (k < hedef) {
+        const j = src.indexOf("<", k);
+        if (j < 0 || j >= hedef) break;
+        if (src[j + 1] === "/") {
+          const kapanis = src.indexOf(">", j);
+          if (kapanis < 0) break;
+          yigin.pop();
+          k = kapanis + 1;
+          continue;
+        }
+        if (!/[A-Za-z]/.test(src[j + 1] ?? "")) { k = j + 1; continue; }
+        const son = acilisSonu(src.slice(j));
+        if (son < 0) break;
+        const etiket = src.slice(j, j + son + 1);
+        /* Kendi kendini kapatan etiket ata olmaz. */
+        if (!/\/\s*>$/.test(etiket)) yigin.push(etiket);
+        k = j + son + 1;
+      }
+      return yigin;
+    };
+    const duyuruyor = (src, isaret, desen) => {
+      const yigin = atalar(src, isaret);
+      if (yigin === null) return "ISARET YOK";
+      return yigin.some((e) => desen.test(e)) ? "duyuruyor" : "SESSIZ";
+    };
+    const WEB_ISARET = /role="status"/;
+    const MOBIL_ISARET = /accessibilityLiveRegion="polite"/;
+
+    const WEB = [
+      ["src/components/boss-player.tsx", 't("exam.preparing")'],
+      ["src/components/walk-player.tsx", 't("walk.preparing")'],
+      ["src/components/daily-player.tsx", 't("daily.preparing")'],
+      ["src/components/challenge-player.tsx", 't("challenge.preparing")'],
+      ["src/components/exam-player.tsx", '"exam.preparing" : "item.mono_scoring"'],
+      ["src/components/weekly-player.tsx", '"weekly.preparing" : "weekly.saving"'],
+      ["src/components/placement/placement-test.tsx", '"plc.preparing" : "placement.calculating_your_level"'],
+      ["src/components/session-player.tsx", 't("session.preparing")'],
+    ];
+    const MOBIL = [
+      ["mobile/src/screens/BossScreen.tsx", 't("exam.preparing")'],
+      ["mobile/src/screens/ChallengeScreen.tsx", 't("challenge.preparing")'],
+      ["mobile/src/screens/PlacementScreen.tsx", 't("placement.calculating_your_level")'],
+      ["mobile/src/screens/RoleplayExamScreen.tsx", 'tx("item.mono_scoring")'],
+      ["mobile/src/screens/MockExamScreen.tsx", 't("mockexam.scoring")'],
+    ];
+    const kisa = (y) => y.split("/").pop().replace(/\.tsx$/, "");
+    sameList(
+      "ekrani kaplayan bekleme duyuruluyor",
+      [...WEB, ...MOBIL].map(([y, isaret]) =>
+        kisa(y) + "=" + duyuruyor(sil(read(y)), isaret, y.startsWith("mobile/") ? MOBIL_ISARET : WEB_ISARET),
+      ),
+      [...WEB, ...MOBIL].map(([y]) => kisa(y) + "=duyuruyor"),
+      "bulunan",
+      "beklenen",
+    );
+  }
+
   /* -- 226. "yapabildiklerim": ayni sayfa mi, iki ayri urun mu ---------
    *
    * Tasarim eksenindeki en buyuk ayrisma buydu ve iki platform ayni veriyi

@@ -11361,3 +11361,73 @@ taşıyor, yani bu sınıf hata yalnız webde olabilir); kapı o sıfırı tutuy
 `aria-busy` arıyordu ve "yapabildiklerim" paylaşılan `SkeletonCard` kutusuna
 geçince onu **"sessiz" sandı** — oysa duyuru kutunun içinden geliyordu. Ölçüt
 artık iki yolu da tanıyor, iki platformda aynı biçimde yazılı.
+
+## §11.343 — Bekleme hâli: on rota boş ekran açıyordu, on üç bekleme sessizdi
+
+Eksen **bekleme**ydi ve iki ayrı kusur kümesi çıktı.
+
+### Boş ekran: veri bekleyen on rotanın iskeleti yoktu
+
+`(app)` altında sunucuda veri bekleyen **23 sayfa** var; **onunda**
+`loading.tsx` yoktu, yani kullanıcı o süre boyunca hiçbir işaret görmüyordu:
+
+| rota | sunucudaki bekleme |
+|---|---|
+| `immersion/skill/[id]` | **on istek** (egzersiz, profil, yerelleştirme, ilerleme, sıradaki) |
+| `mock-exams/[paper]/[skill]` | kâğıdın yerelleştirilmesi — sınav başlarken |
+| `lessons/[id]/exam` | rol yapma sahnesinin çözülmesi |
+| `immersion/quiz/[unit]`, `immersion/grammar/[unit]` | ünite özetlerinden soru üretimi |
+| `premium` | beş okuma birden |
+| `u/[username]` | herkese açık profil |
+| `friends/settings` | `socialMe` + profil |
+| `placement` | son yerleştirme |
+| `analytics` | bütün olay tablosunun taranması (en uzun bekleme) |
+
+Dördünün Android karşılığı **iskelet çiziyordu** (`PaywallScreen`,
+`UserScreen`, `SocialSettingsScreen`, `PlacementScreen`); geri kalanda içerik
+Android'de yerelde paketli olduğu için iskelete gerek yok — orada ölçüt
+karşılaştırma değil **mutlak**: sunucudan içerik bekleyen sayfa boş kalmaz.
+
+`check:loading` (`scripts/check-loading-skeleton.mjs`) bunu tutuyor. "Veri
+bekliyor" ölçütü: `page.tsx` **ucuz olmayan** bir şeyi `await` ediyor. Ucuz
+sayılanlar (`getT`, `getLang`, `getUserId`, `params`, `searchParams`,
+`cookies`, `headers`) her sayfada var, yani ayrıştırıcı olamazlar — ölçütün
+ayrıştırıcısı onların dışındaki çağrı.
+
+### Sessiz bekleme: on üç dalın hiçbiri canlı bölge değildi
+
+"Hazırlanıyor", "puanlanıyor", "seviyen hesaplanıyor" — bu dallar ekranın
+tamamını kaplıyor ve **on üçünün hiçbiri** kendini duyurmuyordu: ekran
+okuyucu kullanan biri "başla"ya basıp hiçbir şey duymuyor, ekranın donduğunu
+mu yoksa hazırlandığını mı bilemiyordu. Web'de sekiz (beceri turu, boss,
+yürüyüş, günlük, meydan, seviye sınavı, haftalık, yerleştirme), Android'de
+beş (boss, meydan, yerleştirme, rol yapma, deneme kâğıdı).
+
+Üçünde `aria-busy` vardı ve **yetmiyor**: `aria-busy` "bu bölge
+güncelleniyor" der, **monte edildiğinde hiçbir şey okutmaz**. Okutan
+`role="status"`. Yani o üç dal da sessizdi — kapının `aria-busy` araması
+yanlış olurdu (§11.228 sınıfı).
+
+§221 rota yedeklerini, §152 kart iskeletlerini duyurulur kılmıştı; bunlar
+üçüncü küme: **bileşenin içindeki bekleme dalı**.
+
+### Kapı: ata yürüyüşü
+
+`parity-check` §227 işaretten geri gidip onu saran `return`i buluyor, oradan
+ileri **JSX etiket yığını** tutuyor ve işarete gelindiğinde yığındaki
+**atalarda** işareti arıyor. Pencere yok, komşu yok:
+
+- `<Frame role="status">` çocuğun etiketinde görünmez ama **atadır** — bu
+  yüzden yalnız "aynı etikette mi" diye bakan bir ölçüt boss ve yürüyüş
+  turunu yanlış okurdu.
+- Enjeksiyonla doğrulandı: rolü **kardeş** bir düğüme koymak kapıyı
+  yeşil bırakmıyor (yığına hiç girmiyor), araya altmış kelimelik bir yorum
+  sıkıştırmak ise geçiriyor — **sınır bir mesafe değil, bir düğüm** (§11.339).
+
+### Ve kendi kuralımı yine çiğnedim
+
+Enjeksiyonları **düzeltmeden ÖNCE alınmış** yedeklerden geri aldım: dört
+dosyada (boss, günlük, oturum, deneme kâğıdı) o turun **kendi düzeltmesi
+silindi**. §11.285'in tam olarak yazdığı hata. Kapı yeşile dönmeyince
+yakalandı ve dördü yeniden uygulandı. Doğrusu önceki turda yaptığım gibi:
+**düzeltmeden SONRA** bir anlık görüntü al, enjeksiyonu ondan geri al.
