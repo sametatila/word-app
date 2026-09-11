@@ -1568,6 +1568,16 @@ export const de: Record<string, string> = {
   "diff.typo": "Schreibung",
   "session.chip_new": "neu",
   "session.chip_review": "Wdh.",
+  /* Tur BOŞ döndüğünde ne yazacağı. Mobil ikisini de "Tur bitti 0/0"
+     diye gösteriyordu: günlük hedefi bitiren de, o oyunda kelimesi
+     olmayan da. */
+  "session.review_only_mode": "Dieser Modus wiederholt nur Wörter, die du schon kennst.",
+  "session.goal_done": "Du hast dein Tagesziel erreicht",
+  "session.goal_done_sub": "Deine geplanten Wiederholungen sind erledigt.",
+  "session.no_words_for_game": "Keine Wörter für {game}",
+  "session.back_to_mixed": "Zurück zur gemischten Runde",
+  "session.today_summary": "Heute {reviews} Wiederholungen · {news} neue Wörter · {streak} Tage Serie",
+  "session.continue_with_new": "Mit neuen Wörtern weitermachen",
   "session.goal_reached": "Tagesziel geschafft",
   "level.mastered_count": "{n} Wörter gefestigt",
   "level.mastered_none": "hier sammeln sich die gefestigten Wörter",

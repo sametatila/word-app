@@ -1573,6 +1573,16 @@ export const tr: Record<string, string> = {
   "diff.typo": "yazım",
   "session.chip_new": "yeni",
   "session.chip_review": "tekrar",
+  /* Tur BOŞ döndüğünde ne yazacağı. Mobil ikisini de "Tur bitti 0/0"
+     diye gösteriyordu: günlük hedefi bitiren de, o oyunda kelimesi
+     olmayan da. */
+  "session.review_only_mode": "Bu mod yalnızca öğrendiğin kelimeleri tekrarlar.",
+  "session.goal_done": "Günlük hedefini tamamladın",
+  "session.goal_done_sub": "Planlanan tekrarların bitti.",
+  "session.no_words_for_game": "{game} için kelime yok",
+  "session.back_to_mixed": "Karışık tura dön",
+  "session.today_summary": "Bugün {reviews} tekrar · {news} yeni kelime · seri {streak} gün",
+  "session.continue_with_new": "Yeni kelimelerle devam et",
   "session.goal_reached": "Günlük hedefi tamamladın",
   "level.mastered_count": "{n} kelime pekişti",
   "level.mastered_none": "kelimeler pekiştikçe burada birikecek",

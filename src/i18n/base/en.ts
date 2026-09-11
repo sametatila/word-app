@@ -1570,6 +1570,16 @@ export const enBase: Record<string, string> = {
   "diff.typo": "spelling",
   "session.chip_new": "new",
   "session.chip_review": "review",
+  /* Tur BOŞ döndüğünde ne yazacağı. Mobil ikisini de "Tur bitti 0/0"
+     diye gösteriyordu: günlük hedefi bitiren de, o oyunda kelimesi
+     olmayan da. */
+  "session.review_only_mode": "This mode only reviews words you've already seen.",
+  "session.goal_done": "You've hit your daily goal",
+  "session.goal_done_sub": "Your planned reviews are done.",
+  "session.no_words_for_game": "No words for {game}",
+  "session.back_to_mixed": "Back to the mixed round",
+  "session.today_summary": "Today {reviews} reviews · {news} new words · {streak}-day streak",
+  "session.continue_with_new": "Continue with new words",
   "session.goal_reached": "You hit your daily goal",
   "level.mastered_count": "{n} words mastered",
   "level.mastered_none": "words collect here as they stick",

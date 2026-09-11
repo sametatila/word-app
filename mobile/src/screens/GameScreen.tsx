@@ -28,7 +28,7 @@ import { LevelBadge } from "../ui/LevelBadge";
 import { ConfirmDialog } from "../ui/ConfirmDialog";
 import { useBackConfirm } from "../lib/useBackConfirm";
 
-type Phase = "loading" | "auth" | "error" | "play" | "done";
+type Phase = "loading" | "auth" | "error" | "play" | "done" | "goal_done" | "no_words";
 
 /**
  * GERÇEK kelime turu — sunucu verisiyle. /api/session'dan gerçek turları çeker
@@ -110,7 +110,7 @@ export function GameScreen() {
     };
   }
 
-  async function load() {
+  async function load(opts?: { extra?: boolean }) {
     setPhase("loading");
     try {
       /*
@@ -122,7 +122,7 @@ export function GameScreen() {
         lib/session `loadSession`) — `game` verildiğinde her istek taze bir
         kuyruk kuruyor ve kayıtlı satıra hiç dokunmuyor.
       */
-      let p = await fetchSession(day.current, onlyGame ? { game: onlyGame } : undefined);
+      let p = await fetchSession(day.current, onlyGame ? { game: onlyGame } : opts?.extra ? { extra: true } : undefined);
       let list = p.rounds ?? [];
       // Karışık tur açılırken slotta tek-oyun pratiği kalıntısı varsa (tüm turlar
       // tek tür — paylaşılan session_state) onu atla, taze karışık tur getir.
@@ -153,7 +153,19 @@ export function GameScreen() {
          `session-player` da oyle. Yoksa "bastan mi basladi, devam mi etti"
          sorusu Androidde hic cevaplanmiyor. */
       if (start > 0) track("session_resume", start);
-      if (list.length === 0) { setFinalCorrect(0); setFinalTotal(0); setRepaired(null); setMastered(0); setResult(null); setPhase("done"); }
+      /*
+        BOŞ TUR BİTMİŞ TUR DEĞİL. Liste boş dönünce ekran "Tur bitti · 0/0"
+        gösteriyordu ve iki ayrı durum aynı yanlış cümleye düşüyordu: günlük
+        hedefini bitiren kullanıcı kutlama yerine sıfırlı bir skor kartı
+        görüyor, Pratik'ten o oyunu seçip de kelimesi olmayan kullanıcı ise
+        neden boş olduğunu hiç öğrenemiyordu. Web ikisini ayrı ekranla
+        karşılıyor (`session-player`: hedef kartı + "yeni kelimelerle devam",
+        pratik kartı + "karışık tura dön").
+      */
+      if (list.length === 0) {
+        setFinalCorrect(0); setFinalTotal(0); setRepaired(null); setMastered(0); setResult(null);
+        setPhase(onlyGame ? "no_words" : "goal_done");
+      }
       else { sfx("start"); setPhase("play"); } // turun açılışı — web `session-player` aynı yerde çalıyor
     } catch (e) {
       setPhase(e instanceof ApiError && e.status === 401 ? "auth" : "error");
@@ -301,8 +313,42 @@ export function GameScreen() {
       <View style={[pad, { alignItems: "center", justifyContent: "center" }]}>
         <Text variant="h2" style={{ textAlign: "center" }}>{t("game.couldn_t_load_round")}</Text>
         <Text variant="body" color={colors.textMuted} style={{ textAlign: "center", marginTop: spacing.sm, marginBottom: spacing.xxl }}>{t("game.check_your_connection_and_try")}</Text>
-        <PressableScale onPress={load} style={[{ backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: 15, paddingHorizontal: spacing.xxl, alignItems: "center" }, softShadow(colors.primary, 8)]}><Text variant="h3" color={colors.onPrimary}>{t("game.try_again")}</Text></PressableScale>
+        <PressableScale onPress={() => void load()} style={[{ backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: 15, paddingHorizontal: spacing.xxl, alignItems: "center" }, softShadow(colors.primary, 8)]}><Text variant="h3" color={colors.onPrimary}>{t("game.try_again")}</Text></PressableScale>
         <PressableScale onPress={() => nav.goBack()} style={{ paddingVertical: spacing.lg, marginTop: spacing.sm }}><Text variant="bodyStrong" color={colors.textMuted}>{t("common.close")}</Text></PressableScale>
+      </View>
+    );
+  }
+
+  if (phase === "goal_done") {
+    return (
+      <View style={[pad, { alignItems: "center", justifyContent: "center" }]}>
+        <Mascot mood="celebrate" size={112} />
+        <Text variant="h2" style={{ textAlign: "center", marginTop: spacing.md }}>{t("session.goal_done")}</Text>
+        <Text variant="body" color={colors.textMuted} style={{ textAlign: "center", marginTop: spacing.sm }}>{t("session.goal_done_sub")}</Text>
+        {meta ? (
+          <Text variant="caption" color={colors.textMuted} style={{ textAlign: "center", marginTop: spacing.lg, lineHeight: 20 }}>
+            {t("session.today_summary", { reviews: meta.reviewsToday, news: meta.newToday, streak: meta.currentStreak })}
+          </Text>
+        ) : null}
+        <PressableScale onPress={() => void load({ extra: true })} style={[{ width: "100%", marginTop: spacing.xl, backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: 15, alignItems: "center" }, softShadow(colors.primary, 8)]}>
+          <Text variant="h3" color={colors.onPrimary}>{t("session.continue_with_new")}</Text>
+        </PressableScale>
+        <PressableScale onPress={() => nav.goBack()} style={{ paddingVertical: spacing.lg }}><Text variant="bodyStrong" color={colors.textMuted}>{t("common.close")}</Text></PressableScale>
+      </View>
+    );
+  }
+
+  if (phase === "no_words") {
+    return (
+      <View style={[pad, { alignItems: "center", justifyContent: "center" }]}>
+        <Mascot mood="idle" size={104} />
+        <Text variant="h2" style={{ textAlign: "center", marginTop: spacing.md }}>{t("session.no_words_for_game", { game: gameLabel ?? "" })}</Text>
+        {/* Tek cümle: boş ekranda okunacak son şey modun nasıl çalıştığı. */}
+        <Text variant="body" color={colors.textMuted} style={{ textAlign: "center", marginTop: spacing.sm }}>{t("session.review_only_mode")}</Text>
+        <PressableScale onPress={() => { nav.goBack(); nav.navigate("Game"); }} style={[{ width: "100%", marginTop: spacing.xl, backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: 15, alignItems: "center" }, softShadow(colors.primary, 8)]}>
+          <Text variant="h3" color={colors.onPrimary}>{t("session.back_to_mixed")}</Text>
+        </PressableScale>
+        <PressableScale onPress={() => nav.goBack()} style={{ paddingVertical: spacing.lg }}><Text variant="bodyStrong" color={colors.textMuted}>{t("common.close")}</Text></PressableScale>
       </View>
     );
   }
@@ -404,7 +450,7 @@ export function GameScreen() {
               <Text variant="bodyStrong" color={colors.streakText} style={{ flex: 1 }}>{saveWarning === "dropped" ? t("session.save_failed") : t("session.save_queued")}</Text>
             </View>
           ) : null}
-          <PressableScale onPress={load} style={[{ width: "100%", backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: spacing.lg, alignItems: "center" }, softShadow(colors.primary, 10)]}><Text variant="bodyStrong" color={colors.onPrimary}>{t("game.continue")}</Text></PressableScale>
+          <PressableScale onPress={() => void load()} style={[{ width: "100%", backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: spacing.lg, alignItems: "center" }, softShadow(colors.primary, 10)]}><Text variant="bodyStrong" color={colors.onPrimary}>{t("game.continue")}</Text></PressableScale>
           {/*
             ZORLANDIKLARIN. Web özetin altında o turda yanlış bilinen kelimeleri
             listeliyor ve kelime listesine kapı açıyor; mobilde bu liste HİÇ

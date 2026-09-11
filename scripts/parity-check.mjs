@@ -3609,6 +3609,32 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   sameList("degerlendirme hata sebepleri", sebep("mobile/src/lib/assessFail.ts"), sebep("src/lib/assess-client.ts"));
 }
 
+/* ── 105. tur BOS dondugunde ──────────────────────────────────────────────
+ * Mobil bos listeyi "Tur bitti - 0/0" diye gosteriyordu ve iki ayri durum
+ * ayni yanlis cumleye dusuyordu: gunluk hedefini bitiren kullanici kutlama
+ * yerine sifirli bir skor karti goruyor, Pratik'ten kelimesi olmayan bir
+ * oyunu secen ise neden bos oldugunu hic ogrenemiyordu. Web ikisini ayri
+ * ekranla karsiliyor: hedef karti + "yeni kelimelerle devam", pratik karti +
+ * "karisik tura don".
+ *
+ * Ayni sinif §11.185 (yuruyus modunda ag hatasinin "tur bitti" gorunmesi):
+ * BIR DURUM SONUC DEGIL. */
+{
+  const bos = (p) => {
+    const src = read(p).replace(/\/\*[\s\S]*?\*\//g, " ").replace(/\/\/[^\n]*/g, " ");
+    return [
+      "hedef karti=" + (/session\.goal_done"/.test(src) ? "var" : "yok"),
+      "gunun ozeti=" + (/session\.today_summary/.test(src) ? "var" : "yok"),
+      "yeni kelimelerle devam=" + (/session\.continue_with_new/.test(src) ? "var" : "yok"),
+      "ekstra istegi=" + (/extra: true/.test(src) ? "var" : "yok"),
+      "oyunda kelime yok=" + (/session\.no_words_for_game/.test(src) ? "var" : "yok"),
+      "mod notu=" + (/session\.review_only_mode/.test(src) ? "var" : "yok"),
+      "karisik tura don=" + (/session\.back_to_mixed/.test(src) ? "var" : "yok"),
+    ];
+  };
+  sameList("bos tur ekranlari", bos("mobile/src/screens/GameScreen.tsx"), bos("src/components/session-player.tsx"));
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"
