@@ -31,9 +31,9 @@ const ROOT = path.join(path.dirname(fileURLToPath(import.meta.url)), "..");
 const ALLOW = {
   "/api/auth/apple/notifications": "Apple sunucudan sunucuya bildirim gönderiyor; bizim kodumuz çağırmaz",
   "/api/cron/reminders": "systemd timer + /opt/lernomi/cron-call.sh (repo dışı, bkz. AGENTS.md)",
-  "/api/cron/streak-alert": "systemd timer (deploy sonrası kurulacak, bkz. AGENTS.md)",
+  "/api/cron/streak-alert": "systemd timer (lernomi-cron-streak, saatlik 17-21 UTC)",
   "/api/cron/summary": "systemd timer",
-  "/api/cron/weekly-reminder": "systemd timer (deploy sonrası kurulacak)",
+  "/api/cron/weekly-reminder": "systemd timer (lernomi-cron-weekly, pazar 15-19 UTC)",
   "/api/plan": "istemcisi parite turunda kaldırıldı (web-parity §7); e2e `buildPlan`i doğrudan deniyor",
   "/api/premium/consume": "tur başına kotayı sayan uç, çağıranı yok (web-parity §11.24)",
   "/api/cron/assess": "systemd timer (lernomi-cron-assess, her gün 04:15 UTC)",
