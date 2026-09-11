@@ -7226,6 +7226,39 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     "beklenen",
   );
 
+  /* ── 198. gunun turunun puan formulu ─────────────────────────────────
+   * Iki dosyanin da yorumu "formul ayni" diyordu (`game/daily`: "web'deki
+   * lib/daily-score ile AYNI (ekranla tablo ayrismasin)"; `lib/daily-score`:
+   * "iki kopya formul, ekranda gorunen puanla tabloya yazilanin ayrismasi
+   * demekti"). Yani gerekcesi de, sonucu da yaziliydi - olcen bir sey yoktu.
+   *
+   * Sabitler zaten korunuyordu ("ortak sayisal sabitler" bes sayiyi da
+   * goruyor, enjeksiyonla dogrulandi) ama GOVDE korunmuyordu: mobilde
+   * `combo >= 3` yerine `combo >= 2` yazmak butun kapilari yesil birakiyordu.
+   * Kullanicinin gordugu sey sudur - tur boyunca ekranda bir puan birikiyor,
+   * gun sonunda tabloda baska bir sayi yaziyor.
+   *
+   * Karsilastirma §16'nin kalibi: govde satir satir, yorumlar ayiklanarak
+   * (iki taraf kendi hikayesini anlatiyor) ve bosluk teklenerek. */
+  {
+    const govde = (p, ad) => {
+      const src = sil(read(p));
+      const i = src.indexOf("export function " + ad);
+      if (i < 0) return ["bulunamadi: " + ad + " @ " + p];
+      const j = src.indexOf("\n}", i);
+      return src
+        .slice(i, j)
+        .split("\n")
+        .map((l) => l.trim().replace(/\s+/g, " "))
+        .filter(Boolean);
+    };
+    sameList(
+      "gunun turu puan formulu",
+      govde("mobile/src/game/daily.ts", "scoreAnswer"),
+      govde("src/lib/daily-score.ts", "scoreAnswer"),
+    );
+  }
+
   /* ── 197. degerlendirme bekleme tavanlari ────────────────────────────
    * Ayni cevap iki platformda FARKLI noktada "zaman asimi" oluyordu:
    *

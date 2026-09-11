@@ -9576,3 +9576,33 @@ yazılmış bir tavan kalmamış mı. Dört enjeksiyonun dördü yakalandı.
 `game/skillLibrary` listeye **alınmadı**: başka bir oturumun sürmekte olan işi,
 henüz git'te değil. Kapının yorumunda yayına girdiğinde eklenmesi gerektiği
 yazılı.
+
+## §11.292 — Günün turunun puan formülü iki kopyaydı ve gövdesi ölçülmüyordu
+
+Animasyon ve gecikme sürelerini taradım. Rozet kutlaması temiz çıktı: `MAX_SOLO`,
+`SOLO_MS`, `BATCH_MS`, `BATCH_SHOWN` iki tarafta **aynı adla** yazılı, o yüzden
+ortak sabit taraması onları zaten koruyor. Mobildeki fazladan `FIRST_MS` ve
+`DEBOUNCE_MS` eksik değil — webde rota değişimi tetikleyici olduğu için orada
+karşılığı yok.
+
+Asıl bulgu başka yerden çıktı: **günün turunun puan formülü.** İki dosyanın da
+yorumu zorunluluğu yazıyor — `game/daily`: "Puanlama formülü web'deki
+`lib/daily-score` ile AYNI (ekranla tablo ayrışmasın)"; `lib/daily-score`: "iki
+kopya formül, ekranda görünen puanla tabloya yazılanın ayrışması demekti."
+Gerekçesi de sonucu da yazılı, **ölçen bir şey yok.**
+
+Sabitler korunuyordu: beş sayı (`BASE_POINTS`, `FAST_MS`, `SLOW_MS`,
+`MAX_SPEED_BONUS`, `MAX_STREAK_MULTIPLIER`) aynı adla yazılı olduğu için ortak
+sabit taramasına giriyor — enjeksiyonla doğruladım. Ama **gövde**
+korunmuyordu: mobilde `combo >= 3` yerine `combo >= 2` yazmak bütün kapıları
+yeşil bırakıyordu. Kullanıcının göreceği şey şu: tur boyunca ekranda bir puan
+birikir, gün sonunda tabloda başka bir sayı yazar — ve sıralama o ikincisine
+göre kurulur.
+
+**§198** gövdeyi §16'nın kalıbıyla karşılaştırıyor (satır satır, yorumlar
+ayıklanmış, boşluk teklenmiş). Üç enjeksiyonun üçü yakalandı: seri eşiğinin
+kayması, hız bonusunun yuvarlanması, yanlış cevabın erken dönüşünün kalkması.
+
+Ders: **bir sabit çiftini korumak, o sabitleri kullanan formülü korumaz.**
+Aynı sayılarla iki farklı sonuç üretmek gayet mümkün ve bu deftere bugüne
+kadar hep sayılar üzerinden bakılmıştı.
