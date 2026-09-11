@@ -382,6 +382,9 @@ export function RoleplayExamScreen() {
               maxWidth: "88%",
               backgroundColor: turn.role === "user" ? colors.primary : colors.surface2,
               borderRadius: radii.lg,
+              /* Kuyruk köşesi konuşan tarafa bakıyor - `CoachBubble` ve ders
+                 balonlarıyla aynı biçim. */
+              ...(turn.role === "user" ? { borderBottomRightRadius: radii.sm } : { borderBottomLeftRadius: radii.sm }),
               paddingHorizontal: spacing.md,
               paddingVertical: 10,
               marginBottom: spacing.sm,

@@ -744,7 +744,12 @@ function BubbleView({ b, colors, onReport }: { b: Bubble; colors: Palette; onRep
   if (b.role === "student") {
     return (
       <View style={{ alignSelf: "flex-end", maxWidth: "84%", marginBottom: spacing.md, flexDirection: "row", alignItems: "center", gap: 6 }}>
-        <View style={[{ borderRadius: radii.lg, paddingVertical: 11, paddingHorizontal: spacing.md, backgroundColor: b.ok === false ? colors.danger : colors.primary }, softShadow(colors.primary, 6)]}>
+        {/* KUYRUK KÖŞESİ: konuşan tarafa bakan alt köşe küçülüyor (radii.sm).
+            Koç balonu bunu baştan beri yapıyor (`ui/CoachBubble`), ders ve rol
+            yapma balonları ise dört köşesi eşit duruyordu; web de öyleydi ama
+            orada kuyruk 4 px'lik ölçek dışı bir değerdi. Üç balon artık aynı
+            biçimde. */}
+        <View style={[{ borderRadius: radii.lg, borderBottomRightRadius: radii.sm, paddingVertical: 10, paddingHorizontal: spacing.md, backgroundColor: b.ok === false ? colors.danger : colors.primary }, softShadow(colors.primary, 6)]}>
           <Text variant="body" color={colors.onPrimary}>{b.text}</Text>
         </View>
       </View>
@@ -753,7 +758,7 @@ function BubbleView({ b, colors, onReport }: { b: Bubble; colors: Palette; onRep
   const bg = b.tone === "hint" ? colors.surface2 : b.tone === "why" ? colors.primarySoft : colors.surface;
   return (
     <View style={{ alignSelf: "flex-start", maxWidth: "88%", marginBottom: spacing.md }}>
-      <View style={{ borderRadius: radii.lg, paddingVertical: 11, paddingHorizontal: spacing.md, backgroundColor: bg, borderWidth: 1, borderColor: colors.hairline }}>
+      <View style={{ borderRadius: radii.lg, borderBottomLeftRadius: radii.sm, paddingVertical: 10, paddingHorizontal: spacing.md, backgroundColor: bg, borderWidth: 1, borderColor: colors.hairline }}>
         <Text variant="body">
           {b.segments.map((s, i) => (
             <Text key={i} variant="body" color={s.lang !== "tr" ? colors.text : colors.textMuted} style={s.lang !== "tr" ? { fontWeight: "700" } : undefined}>

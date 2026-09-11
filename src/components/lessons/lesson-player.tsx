@@ -1418,7 +1418,7 @@ export function LessonPlayer({
                   geleceği yerde durmalı. */}
               {error ? (
                 <div
-                  className="flex max-w-[85%] items-start gap-1.5 rounded-2xl rounded-bl-sm px-3.5 py-2 text-sm"
+                  className="flex max-w-[85%] items-start gap-1.5 rounded-panel rounded-bl-chip px-3 py-2.5 text-sm"
                   style={{
                     background: "color-mix(in srgb, var(--color-flame) 12%, transparent)",
                     color: "var(--color-flame)",
@@ -1876,7 +1876,7 @@ function LectureBubble({
     return (
       <motion.div {...bubbleEntrance(still)} className="flex justify-end">
         <p
-          className="max-w-[85%] rounded-2xl rounded-br-sm px-3.5 py-2 text-sm text-white"
+          className="max-w-[85%] rounded-panel rounded-br-chip px-3 py-2.5 text-sm text-white"
           style={{ background: "var(--color-brand-600)" }}
         >
           {item.text}
@@ -1888,7 +1888,7 @@ function LectureBubble({
   return (
     <motion.div {...bubbleEntrance(still)} className="flex items-end gap-1.5">
       <div
-        className="max-w-[85%] rounded-2xl rounded-bl-sm px-3.5 py-2 text-sm leading-relaxed"
+        className="max-w-[85%] rounded-panel rounded-bl-chip px-3 py-2.5 text-sm leading-relaxed"
         style={{
           background: hint
             ? "color-mix(in srgb, var(--color-flame) 10%, transparent)"
@@ -1961,7 +1961,7 @@ function Bubble({
     return (
       <motion.div {...bubbleEntrance(still)} className="flex justify-end">
         <p
-          className="max-w-[85%] rounded-2xl rounded-br-sm px-3.5 py-2 text-sm text-white"
+          className="max-w-[85%] rounded-panel rounded-br-chip px-3 py-2.5 text-sm text-white"
           style={{ background: "var(--color-brand-600)" }}
         >
           {turn.content}
@@ -1974,7 +1974,7 @@ function Bubble({
   return (
     <motion.div {...bubbleEntrance(still)} className="flex flex-col items-start gap-1.5">
       <div
-        className="max-w-[85%] rounded-2xl rounded-bl-sm px-3.5 py-2 text-sm"
+        className="max-w-[85%] rounded-panel rounded-bl-chip px-3 py-2.5 text-sm"
         style={{ background: "var(--surface-2)" }}
       >
         {body.trim() ? body : pending ? <TypingDots /> : ""}

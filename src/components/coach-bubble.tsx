@@ -94,7 +94,7 @@ export function CoachBubble({
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 4, scale: 0.98 }}
             transition={{ duration: 0.22 }}
-            className="relative mb-3 min-w-0 rounded-2xl rounded-bl-md px-3 py-2 text-sm leading-snug"
+            className="relative mb-3 min-w-0 rounded-panel rounded-bl-chip px-3 py-2 text-sm leading-snug"
             style={bubble}
           >
             {/* Kuyruk: balonun Erdi'ye bakan alt köşesi. */}

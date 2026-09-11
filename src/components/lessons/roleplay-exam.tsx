@@ -326,7 +326,7 @@ export function RoleplayExam({ lesson, cando }: { lesson: Lesson; cando: string[
             key={i}
             initial={{ opacity: 0, y: 6 }}
             animate={{ opacity: 1, y: 0 }}
-            className={`max-w-[88%] rounded-2xl px-3.5 py-2 text-sm leading-relaxed ${t.role === "user" ? "ml-auto brand-gradient text-white" : "surface-2"}`}
+            className={`max-w-[88%] rounded-panel px-3 py-2.5 text-sm leading-relaxed ${t.role === "user" ? "ml-auto rounded-br-chip brand-gradient text-white" : "rounded-bl-chip surface-2"}`}
             lang={lesson.course}
           >
             {t.content}
