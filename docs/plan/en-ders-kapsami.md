@@ -503,6 +503,31 @@ sözcük okunur ve aleyhine yorumlanır.
 
 C1.GR.11-20'nin onu da modül içinde bir kez kullanılıyor (ölçüldü, 10/10).
 
+**C1 modül 4 — Dil, anlatım ve yorum (2026-09-11).** On ders: günlük dil
+ve yazı dili, konuşmayı yönetmek, anlatıcının yeri, metni aktarmak, klasik
+metnin dili, şiirin eksilttiği, yorum farkı, metin ne kadar söylüyor,
+alaycı eleştiri, uzun bir denemeyi bağlamak.
+
+Modülün ekseni OKURUN PAYI. Modül 3'te biçim geçerlilik koşuluydu; burada
+biçim okura iş veriyor. Eksilti dersi bunu en açık söylüyor: düşürülen öğe
+kaybolmuyor, okurun zihnine taşınıyor — bu yüzden şiirde eksiltme bir
+kısaltma değil bir davet. Alay dersi aynı mekanizmanın tersini gösteriyor:
+eleştiriyi konuşan değil dinleyen tamamlıyor ve tam bu yüzden alaycı cümle
+savunulması en zor cümle — söylenmemiş olanı kimse inkâr edemez.
+
+Üç ders aracın kendi maliyetini taşıyor. Aktarma fiili modül 3'te sessiz
+silahtı, burada bir DEĞERLENDİRME: «contextualizes» okumayı meşru sayıyor,
+«dissects» aynı okumayı soğuk gösteriyor. Kip aynı işi derece olarak
+yapıyor — metin değişmiyor, okurun ona yaslanma derecesi değişiyor. Klasik
+metnin çekimsiz fiili ise eski olduğu için değil savı isteyenden ayırdığı
+için duruyor; felsefe metninin sav ile kişiyi ayırma iddiası dilbilgisinde
+de sürüyor.
+
+Kapanış dersi uzun metnin kendi sorununu alıyor: bağlantı sözcük değil
+ADRES veriyor ve okur ipini kaybederse çöken şey sav değil metin oluyor.
+
+C1.GR.11-20'nin onu da modül içinde bir kez kullanılıyor (ölçüldü, 10/10).
+
 ## Tamamlanma ölçütü
 
 - `LESSONS` içinde `course: "en"` için B1/B2/C1 100'er ders
