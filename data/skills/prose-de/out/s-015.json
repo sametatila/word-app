@@ -1,0 +1,117 @@
+[
+ {
+  "tr": "\"We'll call you on Friday morning.\"",
+  "kind": "explain",
+  "de": "Es heißt \"We'll call you on Friday morning.\""
+ },
+ {
+  "tr": "İlan işin sabah sekizde başladığını söylüyor.",
+  "kind": "explain",
+  "de": "Die Anzeige sagt, dass die Arbeit morgens um acht beginnt."
+ },
+ {
+  "tr": "Programda pazar günü \"09:00 Boat trip\" yazıyor.",
+  "kind": "explain",
+  "de": "Im Programm steht für Sonntag \"09:00 Boat trip\"."
+ },
+ {
+  "tr": "\"The warranty is two years, so this isn't a problem.\"",
+  "kind": "explain",
+  "de": "Es heißt \"The warranty is two years, so this isn't a problem.\""
+ },
+ {
+  "tr": "\"We danced until two in the morning.\" Düğün Bursa'daydı.",
+  "kind": "explain",
+  "de": "\"We danced until two in the morning.\" Die Hochzeit war in Bursa."
+ },
+ {
+  "tr": "\"It's 60 euros a night, and the price includes breakfast.\"",
+  "kind": "explain",
+  "de": "Es heißt \"It's 60 euros a night, and the price includes breakfast.\""
+ },
+ {
+  "tr": "\"It's cheaper than the plane. The ticket is only 350 lira.\"",
+  "kind": "explain",
+  "de": "Es heißt \"It's cheaper than the plane. The ticket is only 350 lira.\""
+ },
+ {
+  "tr": "\"a big living room with a balcony\" — balkon oturma odasında.",
+  "kind": "explain",
+  "de": "\"a big living room with a balcony\" — der Balkon gehört zum Wohnzimmer."
+ },
+ {
+  "tr": "\"It's free, but the special version costs 3 dollars a month.\"",
+  "kind": "explain",
+  "de": "Es heißt \"It's free, but the special version costs 3 dollars a month.\""
+ },
+ {
+  "tr": "\"Everybody is giving four hundred lira.\" Hediye ortak alınıyor.",
+  "kind": "explain",
+  "de": "\"Everybody is giving four hundred lira.\" Das Geschenk wird gemeinsam gekauft."
+ },
+ {
+  "tr": "\"It will be slow until ten o'clock, so please use Green Street.\"",
+  "kind": "explain",
+  "de": "Es heißt \"It will be slow until ten o'clock, so please use Green Street.\""
+ },
+ {
+  "tr": "\"You should sleep at least eight hours\" — şu an beş saat uyuyor.",
+  "kind": "explain",
+  "de": "\"You should sleep at least eight hours\" — zurzeit schläft sie fünf Stunden."
+ },
+ {
+  "tr": "\"The flat is on the third floor of a quiet building.\" Asansör yok.",
+  "kind": "explain",
+  "de": "\"The flat is on the third floor of a quiet building.\" Einen Aufzug gibt es nicht."
+ },
+ {
+  "tr": "\"My father was a fisherman\" — Elif yazları teknede ona yardım ederdi.",
+  "kind": "explain",
+  "de": "\"My father was a fisherman\" — Elif half ihm in den Sommern auf dem Boot."
+ },
+ {
+  "tr": "\"You can bring an item back within 30 days.\" Elektronikte süre 14 gün.",
+  "kind": "explain",
+  "de": "\"You can bring an item back within 30 days.\" Bei Elektronik sind es 14 Tage."
+ },
+ {
+  "tr": "\"I have never written thirty pages in one week.\" Rapor henüz başlamadı.",
+  "kind": "explain",
+  "de": "\"I have never written thirty pages in one week.\" Der Bericht hat noch nicht begonnen."
+ },
+ {
+  "tr": "\"We have already received your deposit of £60.\" Toplam fiyat 240 pound.",
+  "kind": "explain",
+  "de": "\"We have already received your deposit of £60.\" Der Gesamtpreis liegt bei 240 Pfund."
+ },
+ {
+  "tr": "\"It's cold this morning, only four degrees\" — yarın on iki derece olacak.",
+  "kind": "explain",
+  "de": "\"It's cold this morning, only four degrees\" — morgen werden es zwölf Grad."
+ },
+ {
+  "tr": "\"I have already booked a room for you at the hotel.\" Mektubu Elif yazıyor.",
+  "kind": "explain",
+  "de": "\"I have already booked a room for you at the hotel.\" Den Brief schreibt Elif."
+ },
+ {
+  "tr": "\"We're going to stay there for three nights.\" Otelde değil, kuzenin evinde.",
+  "kind": "explain",
+  "de": "\"We're going to stay there for three nights.\" Nicht im Hotel, sondern bei der Cousine."
+ },
+ {
+  "tr": "Kurdeleyi belediye başkanı kesti ve köprünün daha güvenli olduğunu söyledi.",
+  "kind": "explain",
+  "de": "Die Bürgermeisterin durchschnitt das Band und sagte, die Brücke sei sicherer."
+ },
+ {
+  "tr": "\"I've already taken a food safety course.\" Büyük mutfak deneyimi yok ama kurs var.",
+  "kind": "explain",
+  "de": "\"I've already taken a food safety course.\" Erfahrung in einer großen Küche fehlt, der Kurs aber nicht."
+ },
+ {
+  "tr": "\"Is the black cable in the yellow port?\" Kablo gri portta olduğu için bağlanmıyordu.",
+  "kind": "explain",
+  "de": "\"Is the black cable in the yellow port?\" Das Kabel steckte im grauen Anschluss, darum gab es keine Verbindung."
+ }
+]

@@ -3771,6 +3771,29 @@ export const enMobile2026: SkillExercise[] = [
         ],
         "answer": 0,
         "explain": "Elif \"On Sunday I made lentil soup for my neighbours\" diyor. Arabayı temizleyen ise Kerem."
+      },
+      {
+        "kind": "gapfill",
+        "text": "Kerem has never written ___ pages in one week.",
+        "options": [],
+        "answer": 0,
+        "accept": [
+          "thirty",
+          "30"
+        ],
+        "explain": "\"I have never written thirty pages in one week.\" Rapor henüz başlamadı."
+      },
+      {
+        "kind": "short_answer",
+        "text": "What will Elif bring Kerem tomorrow?",
+        "options": [],
+        "answer": 0,
+        "accept": [
+          "a cup of soup",
+          "soup",
+          "some soup"
+        ],
+        "explain": "\"I will bring you a cup of soup tomorrow.\""
       }
     ]
   },
@@ -3849,6 +3872,29 @@ export const enMobile2026: SkillExercise[] = [
         ],
         "answer": 1,
         "explain": "\"Next year I am going to open my own studio\" diyor; biraz korkuyor ama planı bu."
+      },
+      {
+        "kind": "gapfill",
+        "text": "Elif moved to Ankara when she was ___.",
+        "options": [],
+        "answer": 0,
+        "accept": [
+          "nineteen",
+          "19"
+        ],
+        "explain": "\"When I was nineteen, I moved to Ankara to study engineering.\""
+      },
+      {
+        "kind": "short_answer",
+        "text": "What did Elif's father do?",
+        "options": [],
+        "answer": 0,
+        "accept": [
+          "he was a fisherman",
+          "a fisherman",
+          "fisherman"
+        ],
+        "explain": "\"My father was a fisherman\" — Elif yazları teknede ona yardım ederdi."
       }
     ]
   },
@@ -3927,6 +3973,28 @@ export const enMobile2026: SkillExercise[] = [
         ],
         "answer": 1,
         "explain": "\"You must call before you come, because the classes are small\" cümlesi telefon etmeyi zorunlu kılıyor. Havlu sadece yoga için, 300 ise bu yıl yardım edilen kişi sayısı."
+      },
+      {
+        "kind": "gapfill",
+        "text": "You should drink ___ glasses of water a day.",
+        "options": [],
+        "answer": 0,
+        "accept": [
+          "six",
+          "6"
+        ],
+        "explain": "\"Drink six glasses of water a day.\""
+      },
+      {
+        "kind": "short_answer",
+        "text": "What must you bring to the yoga class?",
+        "options": [],
+        "answer": 0,
+        "accept": [
+          "a towel",
+          "towel"
+        ],
+        "explain": "\"Yoga for beginners — bring a towel.\""
       }
     ]
   },
@@ -4009,6 +4077,28 @@ export const enMobile2026: SkillExercise[] = [
         ],
         "answer": 2,
         "explain": "İlanda \"You can move in on 1 October\" yazıyor. Temmuz duvarların boyandığı ay, taşınma ayı değil."
+      },
+      {
+        "kind": "gapfill",
+        "text": "The flat is on the ___ floor.",
+        "options": [],
+        "answer": 0,
+        "accept": [
+          "third",
+          "3rd"
+        ],
+        "explain": "\"The flat is on the third floor of a quiet building.\" Asansör yok."
+      },
+      {
+        "kind": "short_answer",
+        "text": "Which room has a balcony?",
+        "options": [],
+        "answer": 0,
+        "accept": [
+          "the living room",
+          "living room"
+        ],
+        "explain": "\"a big living room with a balcony\" — balkon oturma odasında."
       }
     ]
   },
@@ -4087,6 +4177,29 @@ export const enMobile2026: SkillExercise[] = [
         ],
         "answer": 0,
         "explain": "Deniz notunda \"I used to work in a small pizza place in Izmir, and I made coffee every morning\" diyor."
+      },
+      {
+        "kind": "gapfill",
+        "text": "The work starts at ___ a.m.",
+        "options": [],
+        "answer": 0,
+        "accept": [
+          "8",
+          "eight"
+        ],
+        "explain": "İlan işin sabah sekizde başladığını söylüyor."
+      },
+      {
+        "kind": "short_answer",
+        "text": "How long did Deniz study English at school?",
+        "options": [],
+        "answer": 0,
+        "accept": [
+          "six years",
+          "for six years",
+          "6 years"
+        ],
+        "explain": "\"I studied English at school for six years.\""
       }
     ]
   },
@@ -4165,6 +4278,29 @@ export const enMobile2026: SkillExercise[] = [
         ],
         "answer": 1,
         "explain": "Son satırda \"Elif Demir, our new manager, will answer your questions on Saturday morning\" deniyor."
+      },
+      {
+        "kind": "gapfill",
+        "text": "You can bring an item back within ___ days.",
+        "options": [],
+        "answer": 0,
+        "accept": [
+          "30",
+          "thirty"
+        ],
+        "explain": "\"You can bring an item back within 30 days.\" Elektronikte süre 14 gün."
+      },
+      {
+        "kind": "short_answer",
+        "text": "Where is the returns desk?",
+        "options": [],
+        "answer": 0,
+        "accept": [
+          "on the second floor",
+          "the second floor",
+          "second floor"
+        ],
+        "explain": "\"The returns desk is on the second floor, next to the coffee shop.\""
       }
     ]
   },
@@ -4247,6 +4383,30 @@ export const enMobile2026: SkillExercise[] = [
         ],
         "answer": 1,
         "explain": "3. günde \"Last year it rained all morning and everybody was cold\" yazıyor; bu yüzden sıcak bir mont isteniyor."
+      },
+      {
+        "kind": "gapfill",
+        "text": "The boat trip starts at ___ on Sunday.",
+        "options": [],
+        "answer": 0,
+        "accept": [
+          "09:00",
+          "9:00",
+          "nine"
+        ],
+        "explain": "Programda pazar günü \"09:00 Boat trip\" yazıyor."
+      },
+      {
+        "kind": "short_answer",
+        "text": "What have some people not sent yet?",
+        "options": [],
+        "answer": 0,
+        "accept": [
+          "their passport number",
+          "passport number",
+          "the passport number"
+        ],
+        "explain": "\"Some of you have not sent us your passport number yet.\""
       }
     ]
   },
@@ -4329,6 +4489,28 @@ export const enMobile2026: SkillExercise[] = [
         ],
         "answer": 1,
         "explain": "Davetiyenin alt kısmında \"Please answer before 20 August\" yazıyor; 12 Eylül ise düğünün kendi tarihi."
+      },
+      {
+        "kind": "gapfill",
+        "text": "The photos in the garden are at ___ past three.",
+        "options": [],
+        "answer": 0,
+        "accept": [
+          "half"
+        ],
+        "explain": "\"We are going to take photos in the garden at half past three.\""
+      },
+      {
+        "kind": "short_answer",
+        "text": "Who booked a hotel room for Marta?",
+        "options": [],
+        "answer": 0,
+        "accept": [
+          "Elif",
+          "Elif did",
+          "Elif has"
+        ],
+        "explain": "\"I have already booked a room for you at the hotel.\" Mektubu Elif yazıyor."
       }
     ]
   },
@@ -4407,6 +4589,29 @@ export const enMobile2026: SkillExercise[] = [
         ],
         "answer": 0,
         "explain": "Tom_92 son cümlede \"I am going to buy the family plan in April\" diyor."
+      },
+      {
+        "kind": "gapfill",
+        "text": "Deniz starts a ___-minute timer.",
+        "options": [],
+        "answer": 0,
+        "accept": [
+          "25",
+          "twenty-five"
+        ],
+        "explain": "\"Now I start a 25-minute timer and I stop only when it rings.\""
+      },
+      {
+        "kind": "short_answer",
+        "text": "What has the support team not translated yet?",
+        "options": [],
+        "answer": 0,
+        "accept": [
+          "the help page",
+          "help page",
+          "the help page into Turkish"
+        ],
+        "explain": "\"The support team has not translated the help page into Turkish yet.\""
       }
     ]
   },
@@ -4489,6 +4694,29 @@ export const enMobile2026: SkillExercise[] = [
         ],
         "answer": 1,
         "explain": "Yazıda \"Please give us your email address before 25 March\" deniyor. 1 Nisan e-posta faturalarının başlayacağı tarih, 12 Mart ise yazının tarihidir."
+      },
+      {
+        "kind": "gapfill",
+        "text": "The Housing Office is now at ___ King Street.",
+        "options": [],
+        "answer": 0,
+        "accept": [
+          "4",
+          "four"
+        ],
+        "explain": "\"Since Monday we have worked at 4 King Street, next to the library.\""
+      },
+      {
+        "kind": "short_answer",
+        "text": "Which day is the busiest at the office?",
+        "options": [],
+        "answer": 0,
+        "accept": [
+          "Monday",
+          "Monday morning",
+          "on Monday"
+        ],
+        "explain": "\"Monday morning is our busiest time, so Wednesday is the best day for a visit.\""
       }
     ]
   },
@@ -4571,6 +4799,29 @@ export const enMobile2026: SkillExercise[] = [
         ],
         "answer": 1,
         "explain": "Son bölümde \"The council will plant fifty new trees along the river path next spring\" deniyor; gelecek bahar elli yeni ağaç dikecekler."
+      },
+      {
+        "kind": "gapfill",
+        "text": "The town spent ___ million euros on the project.",
+        "options": [],
+        "answer": 0,
+        "accept": [
+          "1.2",
+          "1,2"
+        ],
+        "explain": "\"The town spent 1.2 million euros on the project.\""
+      },
+      {
+        "kind": "short_answer",
+        "text": "Who cut the red ribbon?",
+        "options": [],
+        "answer": 0,
+        "accept": [
+          "the mayor",
+          "mayor",
+          "the mayor of the town"
+        ],
+        "explain": "Kurdeleyi belediye başkanı kesti ve köprünün daha güvenli olduğunu söyledi."
       }
     ]
   },
@@ -4649,6 +4900,29 @@ export const enMobile2026: SkillExercise[] = [
         ],
         "answer": 0,
         "explain": "\"We have already received your deposit of £60\" cümlesine göre otel şimdiye kadar 60 sterlin kapora almış; 240 sterlin ise toplam fiyat."
+      },
+      {
+        "kind": "gapfill",
+        "text": "The deposit was ___ pounds.",
+        "options": [],
+        "answer": 0,
+        "accept": [
+          "60",
+          "sixty"
+        ],
+        "explain": "\"We have already received your deposit of £60.\" Toplam fiyat 240 pound."
+      },
+      {
+        "kind": "short_answer",
+        "text": "How far is the nearest bus stop?",
+        "options": [],
+        "answer": 0,
+        "accept": [
+          "200 metres",
+          "two hundred metres",
+          "200 m"
+        ],
+        "explain": "\"The nearest bus stop is 200 metres from the hotel.\""
       }
     ]
   },
@@ -4768,6 +5042,29 @@ export const enMobile2026: SkillExercise[] = [
         ],
         "answer": 2,
         "explain": "Emma \"I bought three books for 90 lira\" diyor. Üç kitaba toplam 90 lira ödedi."
+      },
+      {
+        "kind": "gapfill",
+        "text": "They danced until ___ in the morning.",
+        "options": [],
+        "answer": 0,
+        "accept": [
+          "two",
+          "2"
+        ],
+        "explain": "\"We danced until two in the morning.\" Düğün Bursa'daydı."
+      },
+      {
+        "kind": "short_answer",
+        "text": "How many books did Emma buy?",
+        "options": [],
+        "answer": 0,
+        "accept": [
+          "three",
+          "3",
+          "three books"
+        ],
+        "explain": "\"I bought three books for 90 lira.\""
       }
     ]
   },
@@ -4883,6 +5180,28 @@ export const enMobile2026: SkillExercise[] = [
         ],
         "answer": 1,
         "explain": "Ms. Clark \"We have twelve cooks here\" diyerek mutfakta on iki aşçı olduğunu söylüyor."
+      },
+      {
+        "kind": "gapfill",
+        "text": "Deniz has already taken a ___ safety course.",
+        "options": [],
+        "answer": 0,
+        "accept": [
+          "food"
+        ],
+        "explain": "\"I've already taken a food safety course.\" Büyük mutfak deneyimi yok ama kurs var."
+      },
+      {
+        "kind": "short_answer",
+        "text": "When will the company call Deniz?",
+        "options": [],
+        "answer": 0,
+        "accept": [
+          "on Friday morning",
+          "Friday morning",
+          "on Friday"
+        ],
+        "explain": "\"We'll call you on Friday morning.\""
       }
     ]
   },
@@ -4998,6 +5317,29 @@ export const enMobile2026: SkillExercise[] = [
         ],
         "answer": 1,
         "explain": "Doktorun son cümlesi \"And come back in two weeks.\" — yani iki hafta sonra."
+      },
+      {
+        "kind": "gapfill",
+        "text": "Mrs. Kaya should sleep at least ___ hours.",
+        "options": [],
+        "answer": 0,
+        "accept": [
+          "eight",
+          "8"
+        ],
+        "explain": "\"You should sleep at least eight hours\" — şu an beş saat uyuyor."
+      },
+      {
+        "kind": "short_answer",
+        "text": "How often must she take the tablets?",
+        "options": [],
+        "answer": 0,
+        "accept": [
+          "twice a day",
+          "two times a day",
+          "twice"
+        ],
+        "explain": "\"take these tablets twice a day, after meals.\""
       }
     ]
   },
@@ -5081,6 +5423,29 @@ export const enMobile2026: SkillExercise[] = [
         ],
         "answer": 2,
         "explain": "\"Tomorrow will be warmer than today — about twelve degrees.\" Dört derece bugünün sabah sıcaklığı."
+      },
+      {
+        "kind": "gapfill",
+        "text": "It is only ___ degrees this morning.",
+        "options": [],
+        "answer": 0,
+        "accept": [
+          "four",
+          "4"
+        ],
+        "explain": "\"It's cold this morning, only four degrees\" — yarın on iki derece olacak."
+      },
+      {
+        "kind": "short_answer",
+        "text": "Which street should drivers use?",
+        "options": [],
+        "answer": 0,
+        "accept": [
+          "Green Street",
+          "Green",
+          "the Green Street"
+        ],
+        "explain": "\"It will be slow until ten o'clock, so please use Green Street.\""
       }
     ]
   },
@@ -5200,6 +5565,29 @@ export const enMobile2026: SkillExercise[] = [
         ],
         "answer": 0,
         "explain": "Resepsiyonist \"Check-in starts at two o'clock in the afternoon\" diyor, yani öğleden sonra ikide."
+      },
+      {
+        "kind": "gapfill",
+        "text": "The double room is ___ euros a night.",
+        "options": [],
+        "answer": 0,
+        "accept": [
+          "60",
+          "sixty"
+        ],
+        "explain": "\"It's 60 euros a night, and the price includes breakfast.\""
+      },
+      {
+        "kind": "short_answer",
+        "text": "Which floor is the room on?",
+        "options": [],
+        "answer": 0,
+        "accept": [
+          "the third floor",
+          "third floor",
+          "the third"
+        ],
+        "explain": "\"we have a double room on the third floor.\""
       }
     ]
   },
@@ -5287,6 +5675,29 @@ export const enMobile2026: SkillExercise[] = [
         ],
         "answer": 1,
         "explain": "\"Your ticket is still fine; you don't need a new one.\" deniyor, yani eski bilet geçerli."
+      },
+      {
+        "kind": "gapfill",
+        "text": "The train is ___ minutes late.",
+        "options": [],
+        "answer": 0,
+        "accept": [
+          "twenty",
+          "20"
+        ],
+        "explain": "\"The train is also twenty minutes late, so the new departure time is 3:35.\""
+      },
+      {
+        "kind": "short_answer",
+        "text": "Where is the lift for heavy bags?",
+        "options": [],
+        "answer": 0,
+        "accept": [
+          "next to the coffee shop",
+          "by the coffee shop",
+          "the coffee shop"
+        ],
+        "explain": "\"Passengers with heavy bags can use the lift next to the coffee shop.\""
       }
     ]
   },
@@ -5406,6 +5817,29 @@ export const enMobile2026: SkillExercise[] = [
         ],
         "answer": 1,
         "explain": "Görevli para iadesi mi yeni kulaklık mı diye sorunca Emre \"A new pair, please.\" diyor."
+      },
+      {
+        "kind": "gapfill",
+        "text": "The warranty is ___ years.",
+        "options": [],
+        "answer": 0,
+        "accept": [
+          "two",
+          "2"
+        ],
+        "explain": "\"The warranty is two years, so this isn't a problem.\""
+      },
+      {
+        "kind": "short_answer",
+        "text": "What colour is the new pair?",
+        "options": [],
+        "answer": 0,
+        "accept": [
+          "black",
+          "in black",
+          "it is black"
+        ],
+        "explain": "\"We have the same model in black.\""
       }
     ]
   },
@@ -5493,6 +5927,28 @@ export const enMobile2026: SkillExercise[] = [
         ],
         "answer": 0,
         "explain": "\"Call me back tonight\" diyor. Taksiyi zaten kendisi ayırtmış: \"I have already booked a taxi for us.\""
+      },
+      {
+        "kind": "gapfill",
+        "text": "Everybody is giving ___ hundred lira for the present.",
+        "options": [],
+        "answer": 0,
+        "accept": [
+          "four",
+          "400"
+        ],
+        "explain": "\"Everybody is giving four hundred lira.\" Hediye ortak alınıyor."
+      },
+      {
+        "kind": "short_answer",
+        "text": "What colour must Elif not wear?",
+        "options": [],
+        "answer": 0,
+        "accept": [
+          "white",
+          "not white"
+        ],
+        "explain": "\"You should wear something nice, but not white!\""
       }
     ]
   },
@@ -5608,6 +6064,28 @@ export const enMobile2026: SkillExercise[] = [
         ],
         "answer": 0,
         "explain": "Emma 'Only home visits cost money. They're 30 pounds.' diyor. Ücretsiz olan telefon görüşmesi; 419 ise referans numarası."
+      },
+      {
+        "kind": "gapfill",
+        "text": "The black cable must go in the ___ port.",
+        "options": [],
+        "answer": 0,
+        "accept": [
+          "yellow"
+        ],
+        "explain": "\"Is the black cable in the yellow port?\" Kablo gri portta olduğu için bağlanmıyordu."
+      },
+      {
+        "kind": "short_answer",
+        "text": "What is Deniz's reference number?",
+        "options": [],
+        "answer": 0,
+        "accept": [
+          "419",
+          "four one nine",
+          "4 1 9"
+        ],
+        "explain": "\"Your reference number is four one nine.\""
       }
     ]
   },
@@ -5691,6 +6169,29 @@ export const enMobile2026: SkillExercise[] = [
         ],
         "answer": 0,
         "explain": "Kayıtta \"A new passport photo costs twelve euros\" geçiyor; ayrıca nakit ödenmesi gerektiği söyleniyor."
+      },
+      {
+        "kind": "gapfill",
+        "text": "A new passport photo costs ___ euros.",
+        "options": [],
+        "answer": 0,
+        "accept": [
+          "twelve",
+          "12"
+        ],
+        "explain": "\"A new passport photo costs twelve euros, and you must pay in cash.\""
+      },
+      {
+        "kind": "short_answer",
+        "text": "Which room do you go to for a birth certificate?",
+        "options": [],
+        "answer": 0,
+        "accept": [
+          "room 214",
+          "214",
+          "room 214 on the third floor"
+        ],
+        "explain": "\"please come to the third floor, room 214.\""
       }
     ]
   },
@@ -5810,6 +6311,28 @@ export const enMobile2026: SkillExercise[] = [
         ],
         "answer": 1,
         "explain": "Mert otelde kalmayacaklarını söylüyor: \"my cousin has a flat near the sea. We're going to stay there for three nights.\""
+      },
+      {
+        "kind": "gapfill",
+        "text": "The bus ticket is only ___ lira.",
+        "options": [],
+        "answer": 0,
+        "accept": [
+          "350"
+        ],
+        "explain": "\"It's cheaper than the plane. The ticket is only 350 lira.\""
+      },
+      {
+        "kind": "short_answer",
+        "text": "How many nights are they going to stay?",
+        "options": [],
+        "answer": 0,
+        "accept": [
+          "three nights",
+          "three",
+          "3 nights"
+        ],
+        "explain": "\"We're going to stay there for three nights.\" Otelde değil, kuzenin evinde."
       }
     ]
   },
@@ -5897,6 +6420,29 @@ export const enMobile2026: SkillExercise[] = [
         ],
         "answer": 0,
         "explain": "\"Next week he will open a small office in Istanbul\" diyor; gelecek hafta İstanbul'da küçük bir ofis açacak."
+      },
+      {
+        "kind": "gapfill",
+        "text": "The special version costs ___ dollars a month.",
+        "options": [],
+        "answer": 0,
+        "accept": [
+          "3",
+          "three"
+        ],
+        "explain": "\"It's free, but the special version costs 3 dollars a month.\""
+      },
+      {
+        "kind": "short_answer",
+        "text": "How many people use the app now?",
+        "options": [],
+        "answer": 0,
+        "accept": [
+          "400,000",
+          "more than 400,000",
+          "400000"
+        ],
+        "explain": "\"Now more than 400,000 people use the app.\""
       }
     ]
   },
