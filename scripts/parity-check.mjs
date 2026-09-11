@@ -4722,6 +4722,43 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   sameList("deneme kagidi sayaci", kagit(mobKagit), kagit(webKagit));
 }
 
+/* ── 135. zamanli yuzeylerde surenin KAYNAGI ──────────────────────────────
+ * §134 seviye sinavini duzeltti; ayni soruyu butun zamanli yuzeylere sordum.
+ * Kural: bir ZAMAN SINIRI olcum kisitiysa, sure duvar saatinden gelmeli -
+ * her saniye bir sayiciyi azaltmak, uygulama arka plana alininca (webde
+ * sekme gizlendiginde) sureyi durduruyor ve sinir delinebiliyor.
+ *
+ * Rol yapma sinavinda hata IKI platformda da vardi ve ikisi birlikte
+ * duzeltildi. Hayatta kalma turu bunu bastan beri dogru yapiyor.
+ *
+ * DENEME KAGIDI listede YOK ve gerekcesi §134'te: orada butce gorev basina,
+ * kalan saniye kaydediliyor ve birakip donmek SURDURMEK demek. */
+{
+  const strip = (x) => x.replace(/\/\*[\s\S]*?\*\//g, " ").replace(/(^|[^:"'`\\])\/\/.*$/gm, "$1");
+  /* Duvar saati izi: kalan sure `Date.now()` ile bir hedeften/baslangictan
+     hesaplaniyor mu. Sayici izi: `setLeft((s) => s - 1)` gibi bir azaltma. */
+  const kaynak = (yol) => {
+    const src = strip(read(yol)).replace(/\s+/g, " ");
+    /* Duvar saati izi: kalan sure bir HEDEF ya da BASLANGIC damgasiyla
+       `Date.now()` arasindaki farktan geliyor. Ilk yazilisinda desen
+       "`) / 1000`"a capalanmisti ve seviye sinavinin kendi ifadesini
+       (`(Date.now() - startedAt.current) / 1000`) hic gormedi: iki taraf da
+       "sure yok" diye okunuyor ve karsilastirma bos bir esitlikle geciyordu.
+       Ustteki karsilastirmanin komsusunu olcmenin on dorduncu bicimi. */
+    const duvar = /(?:deadline|startedAt)(?:\.current)?\s*-\s*Date\.now\(\)|Date\.now\(\)\s*-\s*(?:deadline|startedAt)(?:\.current)?/.test(src);
+    const sayici = /setLeft\(\((?:s|n)\) => (?:s|n) - 1\)|setLeft\(\((?:s|n)\) => \((?:s|n) <= 1/.test(src);
+    return yol.split("/").pop() + "=" + (sayici ? "sayici" : duvar ? "duvar saati" : "sure yok");
+  };
+  const mob = ["mobile/src/screens/ExamScreen.tsx", "mobile/src/screens/RoleplayExamScreen.tsx", "mobile/src/screens/ChallengeScreen.tsx"].map(kaynak);
+  const web = ["src/components/exam-player.tsx", "src/components/lessons/roleplay-exam.tsx", "src/components/challenge-player.tsx"].map(kaynak);
+  /* Dosya adlari farkli; karsilastirma yalniz KAYNAK uzerinden. */
+  sameList("zamanli yuzeylerin sure kaynagi", mob.map((x) => x.split("=")[1]), web.map((x) => x.split("=")[1]));
+  /* Ucunde de duvar saati olmali: iki taraf ayni sekilde YANLIS olsa ustteki
+     karsilastirma gecerdi - §11.227'nin dersi. */
+  const sayiciyla = [...mob, ...web].filter((x) => x.endsWith("=sayici"));
+  sameList("zamanli yuzeyler duvar saatinde", sayiciyla.length ? sayiciyla : ["yok"], ["yok"], "sayiciyla isleyen", "beklenen");
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"

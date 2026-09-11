@@ -7662,3 +7662,34 @@ eşiği değiştirmek için yaptığım arama `left < 120`yi önce **yorumun iç
 buldu (orada webe atıf var), kodda değil. Kapı doğru çalışıyordu; ölçtüğüm
 şey yanlıştı. Kodu hedefleyen iki enjeksiyonla tekrarlandı, ikisi de
 yakalandı.
+
+### 11.228 Aynı hata iki platformda birdendi: rol yapma sınavının süresi
+
+§11.227'den sonra aynı soruyu bütün zamanlı yüzeylere sordum ve dördüncüsü
+çıktı: **rol yapma sınavı** (üç dakika, beş tur, yardım yok) süreyi her saniye
+bir sayıcıyı azaltarak işletiyordu. Uygulama arka plana alınınca (webde sekme
+gizlenince) sayaç duruyor, yani üç dakikalık ölçüm istenildiği kadar
+uzatılabiliyordu.
+
+Bu kez hata **iki platformda da** vardı ve ikisi birlikte düzeltildi: süre
+artık bir hedef damgasından (`deadline`) geliyor. Hayatta kalma turu bunu
+baştan beri doğru yapıyor (`deadline.current - Date.now()`), yani örnek zaten
+evin içindeydi.
+
+İkisi birden yanlış olunca **karşılaştırma hiçbir şey söylemez** — bu turun
+dersi bu. §135 o yüzden iki şey ölçüyor: (1) üç zamanlı yüzeyde sürenin
+kaynağı iki platformda aynı mı, (2) **hiçbiri sayıcıyla işlemiyor mu.**
+İkincisi olmadan "ikisi de sayıcı" durumu yeşil geçerdi ve enjeksiyon bunu
+gösterdi.
+
+Kapının ilk hâli ayrıca seviye sınavının kendi ifadesini de görmüyordu: desen
+`") / 1000"`a çapalanmıştı ve `(Date.now() - startedAt.current) / 1000` ona
+uymuyordu — iki taraf da "süre yok" diye okunuyor, karşılaştırma **boş bir
+eşitlikle** geçiyordu. Ölçünün komşusunu ölçmenin on dördüncü biçimi; artık
+hedef/başlangıç damgası ile `Date.now()` arasındaki fark aranıyor ve altı
+dosyanın altısı da "duvar saati" diye okunuyor.
+
+Bu turda değişmeyen üç şey de ölçüldü ve kayda geçiyor: hayatta kalma turu
+(iki tarafta birebir aynı `deadline` kalıbı, aynı 100 ms tık, aynı tehlike
+eşiği), yerel gün sınırı (`todayStr` / `localDay` — aynı hesap) ve deneme
+kâğıdının görev bütçesi (bilerek sayıcı, kalan saniye kaydediliyor).

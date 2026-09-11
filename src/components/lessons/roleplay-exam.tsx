@@ -57,10 +57,22 @@ export function RoleplayExam({ lesson, cando }: { lesson: Lesson; cando: string[
     setAsr(Boolean(recognitionCtor()));
   }, []);
 
-  // Süre: konuşma fazında saniyede bir; sıfırda konuşma biter ve puanlanır.
+  /*
+   * Süre: konuşma fazında saniyede bir; sıfırda konuşma biter ve puanlanır.
+   *
+   * DUVAR SAATİNDEN, SAYICIDAN DEĞİL. Sekme gizlendiğinde tarayıcı
+   * `setInterval`i kısıyor (mobilde uygulama arka plana alınınca tamamen
+   * duruyor), yani üç dakikalık ölçüm istenildiği kadar uzatılabiliyordu.
+   * Aynı hata iki platformda da vardı; hayatta kalma turu bunu baştan beri
+   * doğru yapıyor (`challenge-player` `deadline`).
+   */
+  const deadline = useRef(0);
   useEffect(() => {
     if (phase !== "talk") return;
-    const t = setInterval(() => setLeft((s) => s - 1), 1000);
+    if (!deadline.current) deadline.current = Date.now() + EXAM_SECONDS * 1000;
+    const tick = () => setLeft(Math.max(0, Math.ceil((deadline.current - Date.now()) / 1000)));
+    tick();
+    const t = setInterval(tick, 1000);
     return () => clearInterval(t);
   }, [phase]);
   useEffect(() => {

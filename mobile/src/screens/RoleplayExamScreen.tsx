@@ -136,10 +136,22 @@ export function RoleplayExamScreen() {
     if (mounted.current) setPhase("result");
   }, [lesson]);
 
-  // Süre: konuşma fazında saniyede bir; sıfırda konuşma biter ve puanlanır.
+  /*
+   * Süre: konuşma fazında saniyede bir; sıfırda konuşma biter ve puanlanır.
+   *
+   * DUVAR SAATİNDEN, SAYICIDAN DEĞİL. Her saniye bir sayıcıyı azaltmak,
+   * uygulama arka plana alındığında (webde sekme gizlendiğinde) süreyi
+   * durduruyordu: üç dakikalık ölçüm istenildiği kadar uzatılabiliyordu. İki
+   * platformda da aynı hata vardı, ikisi birlikte düzeltildi — hayatta kalma
+   * turu bunu baştan beri doğru yapıyor (`ChallengeScreen` `deadline`).
+   */
+  const deadline = useRef(0);
   useEffect(() => {
     if (phase !== "talk") return;
-    const timer = setInterval(() => setLeft((s) => s - 1), 1000);
+    if (!deadline.current) deadline.current = Date.now() + EXAM_SECONDS * 1000;
+    const tick = () => setLeft(Math.max(0, Math.ceil((deadline.current - Date.now()) / 1000)));
+    tick();
+    const timer = setInterval(tick, 1000);
     return () => clearInterval(timer);
   }, [phase]);
   useEffect(() => {
