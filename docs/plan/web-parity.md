@@ -7981,3 +7981,30 @@ duruyordu — ad kutusunun kendisi hiç bulunamıyordu. Etiket artık kendi
 kapanışına (`/>`) kadar okunuyor. **On dokuzuncu biçim** ve bu kez mobil
 tarafı yakalayıp web tarafını kaçırması kapıyı "yarı kör" yapıyordu: iki
 enjeksiyon yeşil, iki enjeksiyon kırmızı — asimetri olmasa fark edilmezdi.
+
+### 11.240 Sosyal profil sınırları: bu kez ürün doğruydu, kural bağlanmamıştı
+
+§11.239'un taramasını sunucunun kalan uzunluk kırpmalarına uyguladım. Bu kez
+**hiçbir ayrışma çıkmadı** ve bunu da yazmak gerekiyor:
+
+- **Kullanıcı adı**: iki yüzey de `maxLength={20}`, kural da 3-20
+  (`USERNAME_RE`).
+- **Kısa tanıtım**: iki yüzey de 140'ta kırpıyor **ve ikisi de sayaç
+  gösteriyor** (`{bio.length}/140`).
+- **Kelime arama kutusu**: uç sorguyu 40'a kırpıyor ama bu bir arama terimi,
+  kaydedilen bir değer değil — kırpılması kullanıcıdan bir şey götürmüyor.
+
+Yanlış alarmı nasıl elediğimi not ediyorum: mobilde tanıtım sayacını önce
+"yok" sandım, çünkü aramam yalnız `maxLength|TextInput|value=` taşıyan
+satırlara bakıyordu ve sayaç ayrı bir satırdaydı. **Ekranın bir satırına bakıp
+"yok" demek**, bu defterde tekrarlayan hatanın ta kendisi (§11.218'de aynısı
+olmuştu). Bloğun tamamını okuyunca sayaç oradaydı.
+
+Ürün doğru olduğu için bu turda kod değişmedi; değişen şey **kuralın
+bağlanması**. Dört sayı (iki kutu, iki sayaç) kendi dosyalarında elle
+duruyordu — mobil `src/lib`ten import edemiyor, o yüzden sayı orada elle
+yazılmak zorunda. **§146** dördünü hem birbirine hem `lib/social/username`'in
+kendisine bağlıyor: ikisi birlikte kaysa bile kapı düşüyor (§11.228'in dersi,
+kapıya uygulanmış). Üç enjeksiyonun üçü de yakalandı — sonuncusu tam o dersi
+gösterdi: `BIO_MAX`i 200 yapınca iki yüzey birbirine eşit kaldığı için birinci
+kapı yeşil geçti, ikinci kapı kırmızı yandı.

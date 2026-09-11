@@ -5150,6 +5150,57 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   sameList("gorunen ad sinirlari", yanlis.length ? yanlis : ["yok"], ["yok"], "ucun kirpmasindan farkli", "beklenen");
 }
 
+/* ── 146. sosyal profil alanlarinin sinirlari ─────────────────────────────
+ * §145'in ailesinden: kullanici adi ve kisa tanitim yazisi da sunucunun
+ * kuralina bagli. Kural TEK yerde yazili (`lib/social/username`:
+ * `USERNAME_RE` 3-20 ve `BIO_MAX` 140) ama dort yuzey sayilari KENDI
+ * icinde tutuyor - iki kutu, iki sayac. Bugun hepsi tutuyor; kapinin isi
+ * kuralin degismesi hâlinde dordunun birden ayrismasini saglamak (mobil
+ * `src/lib`ten import edemiyor, o yuzden sayi orada elle duruyor).
+ *
+ * Olculen: dort yuzeyin sinirlari ile kuralin kendisi. */
+{
+  const kural = read("src/lib/social/username.ts");
+  const adUst = kural.match(/USERNAME_RE = \/\^\[a-z0-9_\]\{(\d+),(\d+)\}\$\//);
+  const bioMax = kural.match(/BIO_MAX = (\d+)/)?.[1] ?? "?";
+  const sinirlar = (yol, alan) => {
+    const src = read(yol).replace(/\/\*[\s\S]*?\*\//g, " ").replace(/(^|[^:"'`\\])\/\/.*$/gm, "$1");
+    if (alan === "username") return src.match(/maxLength=\{(\d+)\}/)?.[1] ?? "sinirsiz";
+    /* Tanitim yazisi: hem kirpma hem sayac ayni sayiyi kullanmali. */
+    const kirpma = src.match(/setBio\([^)]*slice\(0,\s*(\d+)\)/)?.[1] ?? "sinirsiz";
+    const sayac = src.match(/bio\.length\}\/(\d+)/)?.[1] ?? "yok";
+    return kirpma + "/" + sayac;
+  };
+  sameList(
+    "sosyal profil sinirlari",
+    [
+      "kullanici adi=" + sinirlar("mobile/src/screens/SocialSettingsScreen.tsx", "username"),
+      "tanitim=" + sinirlar("mobile/src/screens/SocialSettingsScreen.tsx", "bio"),
+    ],
+    [
+      "kullanici adi=" + sinirlar("src/components/social/social-settings.tsx", "username"),
+      "tanitim=" + sinirlar("src/components/social/social-settings.tsx", "bio"),
+    ],
+  );
+  /* Yuzeylerin sayilari KURALIN kendisiyle de tutmali: iki yuzey birlikte
+     kaysaydi ustteki karsilastirma gecerdi (§11.228'in dersi). */
+  const hepsi = [
+    sinirlar("mobile/src/screens/SocialSettingsScreen.tsx", "username"),
+    sinirlar("src/components/social/social-settings.tsx", "username"),
+  ];
+  const bio = [
+    sinirlar("mobile/src/screens/SocialSettingsScreen.tsx", "bio"),
+    sinirlar("src/components/social/social-settings.tsx", "bio"),
+  ];
+  sameList(
+    "sosyal sinirlar kurala bagli",
+    ["ad ustu=" + [...new Set(hepsi)].join("|"), "tanitim=" + [...new Set(bio)].join("|")],
+    ["ad ustu=" + (adUst?.[2] ?? "?"), "tanitim=" + bioMax + "/" + bioMax],
+    "yuzeyler",
+    "kural",
+  );
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"
