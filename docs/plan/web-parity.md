@@ -6367,3 +6367,26 @@ yüzeyde eski metnin kalmasına yol açabilirdi.
 sesliyi kırmızıya boyar. Ölçüm betiği tekrarlanabilir (scratchpad'de) ve
 sözlük büyüdükçe elle bakmak hâlâ daha ucuz. Otomatikleştirilecekse doğru
 kural "aynı metin VE aynı bağlam" olurdu; bağlamı kod bilmiyor.
+
+
+### 11.176 İkiz anahtarlar bitti: 46 → 25, kalanlar gerekçeli
+
+İkinci parti: on ikiz daha ortak anahtara indi — kelime listesinin dört tekrar
+etiketi, parola sıfırlama formunun üç alanı, "Kopyalandı", "+{xp} XP kazandın",
+"Bağlantı kurulamadı".
+
+**Kalan 25 bilerek duruyor** ve üç sebepten:
+1. **Eş sesli, ayrı kavram:** "Kelime" (başarım grubu ↔ değerlendirme
+   kategorisi), "Görev" (ortak görev ↔ yazma görevi), "tekrar" (tur çipi ↔
+   ayar birimi ↔ ders adımı).
+2. **Ayrı yüzey:** e-posta şablonunun başlığı ile uygulamadaki ekran başlığı
+   aynı cümle olabilir ama biri e-posta metni, öteki arayüz.
+3. **Ayrı özellik:** sınavın "Bölüme başla"sı ile deneme sınavınınki.
+
+**Kural olarak yazıyorum:** iki anahtarı birleştirmenin ölçütü metin eşitliği
+DEĞİL, "bu iki yerde metin hep birlikte mi değişmeli" sorusu. Cevap hayırsa
+ikiz değil, benzerlik.
+
+Birleştirmenin kazancı somut: aynı cümlenin tek kopyası olduğunda bir
+düzeltme her yüzeye ulaşıyor. Bu oturumda dört ikizi tek tek bulmuştum;
+yirmi biri toplu ölçümle çıktı.
