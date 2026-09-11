@@ -6390,3 +6390,33 @@ ikiz değil, benzerlik.
 Birleştirmenin kazancı somut: aynı cümlenin tek kopyası olduğunda bir
 düzeltme her yüzeye ulaşıyor. Bu oturumda dört ikizi tek tek bulmuştum;
 yirmi biri toplu ölçümle çıktı.
+
+
+### 11.177 Ters yön: ortak sözlükte olup yalnız mobilde kullanılan anahtarlar
+
+§11.175'in ölçümünü ters çevirdim: ortak sözlükte (yani mobil kaynağında) olup
+**web kodunda hiç geçmeyen** 242 anahtar var. Çoğu meşru ve bir kalıp
+gösteriyor:
+
+- **Oturum-kapalı ekranlar** (`daily.sign_in_for_daily_round`,
+  `weekly.sign_in_for_weekly_quiz`, `user.sign_in_required`): webde bu
+  sayfalar zaten girişin arkasında, mobilde ekran açılıp "giriş yap" diyor.
+- **Platform akışları**: bildirim izni hazırlığı (`notifprime.*`), hesap
+  silmede yeniden giriş (`deleteaccount.sign_in_with_google_again_and`),
+  yürüyüş modu (`walkmode.*` 31 anahtar).
+- **Farklı ölçüm**: `exam.speak_missed` (§11.169).
+
+**Gerçek bulgu iki anahtardı:** `exam.sections` ve `exam.minutes`. Android
+sınav kapağında bölüm listesini ve toplam süreyi gösteriyor; web kapağı
+göstermiyordu — kullanıcı yirmi beş dakikalık bir sınava süresini bilmeden
+giriyordu.
+
+**Uygulaması bir kısıtı korumak zorundaydı:** uç kapağı üretirken kâğıdı
+HAZIRLAMIYOR ("kapağı açmak haftanın kâğıdını harcamamalı" — uçtaki kendi
+yorumu). Madde sayıları ve süre sabit plandan geldiği için kâğıda dokunmadan
+eklenebildi.
+
+**Yöntem notu:** "hangi anahtar hangi tarafta kullanılıyor" ölçümü iki yönde
+de iş görüyor. Web→mobil yönü ikiz anahtarları verdi (§11.175–176),
+mobil→web yönü yüzey eksiğini. İkisi de sözlüğü bir **envanter** gibi okumaya
+dayanıyor: her anahtar bir arayüz parçasının kanıtı.
