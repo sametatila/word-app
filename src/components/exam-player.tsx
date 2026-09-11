@@ -795,7 +795,7 @@ function Cover({ level, module, onStart }: { level: CefrLevel; module: number | 
         üretirken kâğıdı hazırlamıyor). Android kapağında ikisi de var.
       */}
       {cover?.counts ? (
-        <div className="mt-4 rounded-2xl px-4 py-3 surface-2">
+        <div className="mt-4 rounded-panel px-4 py-3 surface-2">
           <p className="text-sm font-semibold">{t("exam.sections")}</p>
           <ul className="mt-1 space-y-0.5">
             {SECTION_ORDER.filter((id) => (cover.counts?.[id === "reading" || id === "listening" ? "text" : id] ?? 0) > 0).map((id) => (

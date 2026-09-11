@@ -241,7 +241,7 @@ export function BossPlayer({
     const ready = data.meta.lessonsDone >= data.meta.lessonsTotal;
     return (
       <Frame>
-        <div className="brand-gradient mx-auto mb-3 flex h-14 w-14 items-center justify-center rounded-2xl">
+        <div className="brand-gradient mx-auto mb-3 flex h-14 w-14 items-center justify-center rounded-tile">
           <TrophyIcon size={26} />
         </div>
         <p className="muted text-xs font-bold uppercase tracking-wide">
@@ -288,7 +288,7 @@ export function BossPlayer({
       <Frame>
         <Confetti fire={won ? 1 : 0} count={won ? 40 : 0} />
         <div
-          className="mx-auto mb-3 flex h-14 w-14 items-center justify-center rounded-2xl"
+          className="mx-auto mb-3 flex h-14 w-14 items-center justify-center rounded-tile"
           style={{
             background: won ? "var(--color-mint)" : "var(--surface-2)",
             color: won ? "var(--on-fill)" : "var(--text-muted)",

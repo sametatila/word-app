@@ -170,7 +170,7 @@ function Card({
     <motion.div
       initial={{ opacity: 0, y: 8 }}
       animate={{ opacity: 1, y: 0 }}
-      className="mx-6 mt-4 flex items-start gap-3 rounded-2xl px-4 py-3"
+      className="mx-6 mt-4 flex items-start gap-3 rounded-panel px-4 py-3"
       style={{ background: `color-mix(in srgb, ${color} 12%, transparent)` }}
     >
       <span className="mt-0.5 shrink-0" style={{ color }}>

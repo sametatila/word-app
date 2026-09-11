@@ -24,7 +24,7 @@ export function FeedbackLine({ why, compact = false }: { why: Why; compact?: boo
   return (
     <span className={`${compact ? "text-xs" : "text-sm"} block font-normal leading-snug opacity-90`}>
       <span
-        className="mr-1.5 inline-block rounded-md px-1.5 py-px text-[10px] font-bold uppercase tracking-wide"
+        className="mr-1.5 inline-block rounded-chip px-1.5 py-px text-[10px] font-bold uppercase tracking-wide"
         style={{ background: "color-mix(in srgb, currentColor 14%, transparent)" }}
       >
         {whyLabel(why.type, lang)}

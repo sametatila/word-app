@@ -176,7 +176,7 @@ export function OrderGame({ round, onDone }: GameProps<OrderRound>) {
       <div className="mx-auto flex w-full max-w-md flex-col items-center gap-6">
         {/* Cevap alanı — yuva sayısı sabit, konumlar oynamaz */}
         <div
-          className={`flex min-h-[3.5rem] flex-wrap items-center justify-center gap-1.5 rounded-2xl px-3 py-3 ${
+          className={`flex min-h-[3.5rem] flex-wrap items-center justify-center gap-1.5 rounded-panel px-3 py-3 ${
             status === "wrong" ? "animate-shake" : ""
           }`}
           style={{ border: `2px dashed ${slotTone}`, background: "var(--surface-2)" }}

@@ -121,7 +121,7 @@ export function PlayerShell({
         <div className="min-w-0">
           <div className="flex items-center gap-2">
             <span
-              className="rounded-md px-1.5 py-0.5 text-[11px] font-black text-white"
+              className="rounded-chip px-1.5 py-0.5 text-[11px] font-black text-white"
               style={{ background: LEVEL_TONE[exercise.level] ?? "var(--color-brand-700)" }}
             >
               {exercise.level}

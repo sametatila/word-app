@@ -66,7 +66,7 @@ export function UsersTable({ users }: { users: U[] }) {
         value={q}
         onChange={(e) => setQ(e.target.value)}
         placeholder="Ara: ad, kimlik, seviye, kurs…"
-        className="mb-3 w-full rounded-lg border px-3 py-2 text-sm"
+        className="mb-3 w-full rounded-tile border px-3 py-2 text-sm"
         style={{ borderColor: "var(--border)", background: "var(--surface-2)", color: "var(--text)" }}
       />
       <div className="overflow-x-auto">

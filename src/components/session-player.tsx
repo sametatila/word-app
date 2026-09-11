@@ -999,7 +999,7 @@ function LoadingCard() {
     <div className="mx-auto flex w-full max-w-2xl flex-1 items-center justify-center">
       <div className="flex flex-col items-center gap-3">
         <motion.div
-          className="brand-gradient h-12 w-12 rounded-2xl"
+          className="brand-gradient h-12 w-12 rounded-tile"
           animate={{ rotate: [0, 90, 180, 270, 360], borderRadius: ["30%", "50%", "30%"] }}
           transition={{ duration: 1.6, repeat: Infinity, ease: "easeInOut" }}
         />
@@ -1448,7 +1448,7 @@ function SummaryCard({
             Bu ölçü yalnızca ileri gider, kimseyi geri düşürmez. */}
         {mastered > 0 ? (
           <div
-            className="mx-6 mt-4 rounded-2xl px-4 py-3 text-center"
+            className="mx-6 mt-4 rounded-panel px-4 py-3 text-center"
             style={{ background: "color-mix(in srgb, var(--color-mint) 14%, transparent)" }}
           >
             <p className="text-sm font-bold" style={{ color: "var(--color-mint)" }}>
@@ -1463,7 +1463,7 @@ function SummaryCard({
             açıklanamaz hâle getirir. */}
         {result?.streakRepaired ? (
           <div
-            className="mx-6 mt-4 rounded-2xl px-4 py-3 text-center"
+            className="mx-6 mt-4 rounded-panel px-4 py-3 text-center"
             style={{ background: "color-mix(in srgb, var(--color-flame) 14%, transparent)" }}
           >
             <p

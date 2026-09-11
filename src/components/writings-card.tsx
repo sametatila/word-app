@@ -214,7 +214,7 @@ function WritingsEmpty() {
   return (
     <section className="card p-6 text-center">
       <span
-        className="mx-auto flex h-12 w-12 items-center justify-center rounded-2xl"
+        className="mx-auto flex h-12 w-12 items-center justify-center rounded-tile"
         style={{
           background: "color-mix(in srgb, var(--color-sky) 14%, transparent)",
           color: "var(--color-sky)",

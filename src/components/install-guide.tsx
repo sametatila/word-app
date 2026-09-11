@@ -96,7 +96,7 @@ export function InstallGuide({ tone = "surface" }: { tone?: "surface" | "plain" 
   if (installed)
     return (
       <div
-        className="flex items-center gap-3 rounded-2xl px-4 py-3.5"
+        className="flex items-center gap-3 rounded-panel px-4 py-3.5"
         style={{ background: "color-mix(in srgb, var(--color-mint) 12%, transparent)" }}
       >
         <span
@@ -118,7 +118,7 @@ export function InstallGuide({ tone = "surface" }: { tone?: "surface" | "plain" 
 
   return (
     <div
-      className="rounded-2xl px-4 py-4"
+      className="rounded-panel px-4 py-4"
       style={
         tone === "surface"
           ? { background: "var(--surface)", border: "1px solid var(--border)" }

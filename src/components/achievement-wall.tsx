@@ -150,7 +150,7 @@ export function AchievementWall() {
       <section className="card p-5">
         <div className="grid grid-cols-4 gap-2 sm:grid-cols-6">
           {Array.from({ length: 8 }, (_, i) => (
-            <div key={i} className="h-[78px] animate-pulse rounded-2xl" style={{ background: "var(--surface-2)" }} />
+            <div key={i} className="h-[78px] animate-pulse rounded-card" style={{ background: "var(--surface-2)" }} />
           ))}
         </div>
       </section>

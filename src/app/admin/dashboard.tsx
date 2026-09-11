@@ -23,7 +23,7 @@ function dur(sec: number): string {
 function Kpi({ label, value, sub, tone }: { label: string; value: string; sub?: string; tone?: "ok" | "warn" | "bad" }) {
   const color = tone === "bad" ? "#dc2626" : tone === "warn" ? "#d97706" : tone === "ok" ? "#16a34a" : "var(--text)";
   return (
-    <div className="rounded-2xl border p-4" style={{ borderColor: "var(--border)", background: "var(--surface)" }}>
+    <div className="rounded-card border p-4" style={{ borderColor: "var(--border)", background: "var(--surface)" }}>
       <div className="text-xs font-bold uppercase tracking-wide" style={{ color: "var(--text-muted)" }}>{label}</div>
       <div className="mt-1 text-2xl font-extrabold" style={{ color }}>{value}</div>
       {sub && <div className="text-xs" style={{ color: "var(--text-muted)" }}>{sub}</div>}
@@ -56,7 +56,7 @@ function BarList({ items, max, unit }: { items: { label: string; value: number; 
 
 function Section({ title, hint, children, full }: { title: string; hint?: string; children: React.ReactNode; full?: boolean }) {
   return (
-    <section className={`rounded-2xl border p-5 ${full ? "lg:col-span-2" : ""}`} style={{ borderColor: "var(--border)", background: "var(--surface)" }}>
+    <section className={`rounded-card border p-5 ${full ? "lg:col-span-2" : ""}`} style={{ borderColor: "var(--border)", background: "var(--surface)" }}>
       <h2 className="text-sm font-extrabold uppercase tracking-wide">{title}</h2>
       {hint && <p className="mb-3 text-xs" style={{ color: "var(--text-muted)" }}>{hint}</p>}
       <div className={hint ? "" : "mt-3"}>{children}</div>
@@ -178,7 +178,7 @@ export function AdminDashboard({ data: d, server: s }: { data: AdminData; server
               ]} />
               <div className="mt-4 grid grid-cols-3 gap-2 text-center">
                 {[["D1", d.funnel.d1], ["D7", d.funnel.d7], ["D30", d.funnel.d30]].map(([lbl, v]) => (
-                  <div key={String(lbl)} className="rounded-xl border p-2" style={{ borderColor: "var(--border)" }}>
+                  <div key={String(lbl)} className="rounded-panel border p-2" style={{ borderColor: "var(--border)" }}>
                     <div className="text-lg font-extrabold" style={{ color: "var(--color-brand)" }}>{pct(d.funnel.retentionBase ? (v as number) / d.funnel.retentionBase : 0)}</div>
                     <div className="text-xs" style={{ color: "var(--text-muted)" }}>{lbl} retention</div>
                   </div>
@@ -213,7 +213,7 @@ export function AdminDashboard({ data: d, server: s }: { data: AdminData; server
           <Section title="Uygulama & deploy" hint={`Aktif renk: ${s.app.activeColor} · canlı commit ${s.app.liveCommit || "?"}`}>
             <div className="mb-3 grid grid-cols-2 gap-2 sm:grid-cols-3">
               {s.app.instances.map((i) => (
-                <div key={i.name} className="flex items-center gap-2 rounded-lg border px-2 py-1.5 text-xs" style={{ borderColor: "var(--border)" }}>
+                <div key={i.name} className="flex items-center gap-2 rounded-chip border px-2 py-1.5 text-xs" style={{ borderColor: "var(--border)" }}>
                   <span className="h-2.5 w-2.5 rounded-full" style={{ background: i.up ? "#16a34a" : "#9ca3af" }} />
                   <span className="font-mono">{i.name}</span>
                 </div>
@@ -224,9 +224,9 @@ export function AdminDashboard({ data: d, server: s }: { data: AdminData; server
 
           <Section title="PostgreSQL" hint={`Bağlantı ${s.pg.total}/${s.pg.maxConn} · veritabanı ${fmt(s.pg.dbSizeMB)} MB · önbellek isabeti %${s.pg.cacheHitPct}`}>
             <div className="mb-3 grid grid-cols-3 gap-2 text-center text-xs">
-              <div className="rounded-xl border p-2" style={{ borderColor: "var(--border)" }}><div className="text-lg font-extrabold">{s.pg.active}</div><div style={{ color: "var(--text-muted)" }}>aktif</div></div>
-              <div className="rounded-xl border p-2" style={{ borderColor: "var(--border)" }}><div className="text-lg font-extrabold">{s.pg.idle}</div><div style={{ color: "var(--text-muted)" }}>boşta</div></div>
-              <div className="rounded-xl border p-2" style={{ borderColor: "var(--border)" }}><div className="text-lg font-extrabold" style={{ color: s.pg.cacheHitPct >= 95 ? "#16a34a" : "#d97706" }}>%{s.pg.cacheHitPct}</div><div style={{ color: "var(--text-muted)" }}>cache hit</div></div>
+              <div className="rounded-panel border p-2" style={{ borderColor: "var(--border)" }}><div className="text-lg font-extrabold">{s.pg.active}</div><div style={{ color: "var(--text-muted)" }}>aktif</div></div>
+              <div className="rounded-panel border p-2" style={{ borderColor: "var(--border)" }}><div className="text-lg font-extrabold">{s.pg.idle}</div><div style={{ color: "var(--text-muted)" }}>boşta</div></div>
+              <div className="rounded-panel border p-2" style={{ borderColor: "var(--border)" }}><div className="text-lg font-extrabold" style={{ color: s.pg.cacheHitPct >= 95 ? "#16a34a" : "#d97706" }}>%{s.pg.cacheHitPct}</div><div style={{ color: "var(--text-muted)" }}>cache hit</div></div>
             </div>
             <BarList max={Math.max(1, ...s.pg.topTables.map((t) => t.mb))} items={s.pg.topTables.map((t) => ({ label: t.name, value: t.mb, right: `${t.mb} MB` }))} />
           </Section>
@@ -235,7 +235,7 @@ export function AdminDashboard({ data: d, server: s }: { data: AdminData; server
             {d.ai.length === 0 ? <div className="text-sm" style={{ color: "var(--text-muted)" }}>Son 7 günde AI çağrısı yok.</div> : (
               <div className="space-y-2">
                 {d.ai.map((a) => (
-                  <div key={a.provider} className="rounded-lg border p-2.5 text-sm" style={{ borderColor: "var(--border)" }}>
+                  <div key={a.provider} className="rounded-panel border p-2.5 text-sm" style={{ borderColor: "var(--border)" }}>
                     <div className="flex items-center justify-between">
                       <span className="font-bold">{a.provider}</span>
                       <span className="text-xs font-bold" style={{ color: a.okPct >= 95 ? "#16a34a" : a.okPct >= 80 ? "#d97706" : "#dc2626" }}>%{a.okPct} başarı</span>
@@ -364,7 +364,7 @@ export function AdminDashboard({ data: d, server: s }: { data: AdminData; server
             {d.reports.length === 0 ? <div className="text-sm" style={{ color: "var(--text-muted)" }}>Açık bildirim yok.</div> : (
               <div className="space-y-2">
                 {d.reports.map((r) => (
-                  <div key={r.id} className="rounded-xl border p-3 text-xs" style={{ borderColor: "var(--border)" }}>
+                  <div key={r.id} className="rounded-panel border p-3 text-xs" style={{ borderColor: "var(--border)" }}>
                     <div className="flex flex-wrap gap-x-3" style={{ color: "var(--text-muted)" }}>
                       <span className="tabular-nums">#{r.id} · {r.day}</span>
                       <span className="font-semibold" style={{ color: "var(--text)" }}>{r.kind} · {r.reason}</span>

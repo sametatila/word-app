@@ -208,8 +208,8 @@ export function PremiumAdmin({
         </div>
       </Card>
 
-      <div className="sticky bottom-4 mt-6 flex items-center gap-3 rounded-2xl border p-3" style={{ borderColor: "var(--border)", background: "var(--surface)" }}>
-        <button type="button" onClick={save} disabled={busy} className="rounded-xl px-5 py-2.5 text-sm font-bold on-fill disabled:opacity-60" style={{ background: "var(--color-brand)" }}>
+      <div className="sticky bottom-4 mt-6 flex items-center gap-3 rounded-card border p-3" style={{ borderColor: "var(--border)", background: "var(--surface)" }}>
+        <button type="button" onClick={save} disabled={busy} className="rounded-panel px-5 py-2.5 text-sm font-bold on-fill disabled:opacity-60" style={{ background: "var(--color-brand)" }}>
           Kaydet
         </button>
         <button
@@ -223,7 +223,7 @@ export function PremiumAdmin({
               setMsg("Varsayılanlara dönüldü.");
             }
           }}
-          className="rounded-xl px-4 py-2.5 text-sm font-semibold"
+          className="rounded-panel px-4 py-2.5 text-sm font-semibold"
           style={{ background: "var(--surface-2)" }}
         >
           Varsayılanlara dön
@@ -343,7 +343,7 @@ function AccountSection({
               setAcc(null);
               take(await post({ action: "find_user", query }));
             }}
-            className="rounded-lg px-4 py-1.5 text-sm font-bold on-fill disabled:opacity-60"
+            className="rounded-chip px-4 py-1.5 text-sm font-bold on-fill disabled:opacity-60"
             style={{ background: "var(--color-brand)" }}
           >
             Bul
@@ -353,7 +353,7 @@ function AccountSection({
 
       {acc && (
         <>
-          <div className="mt-4 rounded-xl border p-3" style={{ borderColor: "var(--border)", background: "var(--surface-2)" }}>
+          <div className="mt-4 rounded-panel border p-3" style={{ borderColor: "var(--border)", background: "var(--surface-2)" }}>
             <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
               <span className="font-bold">{acc.displayName || acc.name}</span>
               <span className="text-xs" style={{ color: "var(--text-muted)" }}>{acc.email}</span>
@@ -388,7 +388,7 @@ function AccountSection({
               type="button"
               disabled={busy || days <= 0}
               onClick={async () => take(await post({ action: "grant_days", userId: acc.userId, days, note }))}
-              className="rounded-xl px-4 py-2 text-sm font-bold on-fill disabled:opacity-60"
+              className="rounded-panel px-4 py-2 text-sm font-bold on-fill disabled:opacity-60"
               style={{ background: "var(--color-brand)" }}
             >
               {days} gün premium ver
@@ -400,7 +400,7 @@ function AccountSection({
                 if (!armed) return setArmed(true);
                 take(await post({ action: "revoke", userId: acc.userId, note }));
               }}
-              className="rounded-xl px-4 py-2 text-sm font-semibold disabled:opacity-60"
+              className="rounded-panel px-4 py-2 text-sm font-semibold disabled:opacity-60"
               style={armed ? { background: "var(--color-rose)", color: "var(--on-fill)" } : { background: "var(--surface-2)" }}
             >
               {armed ? "Emin misin? Yetkiyi kaldır" : "Yetkiyi kaldır"}
@@ -508,19 +508,19 @@ function CodesSection({
             ]);
           }
         }}
-        className="mt-3 rounded-xl px-4 py-2 text-sm font-bold on-fill disabled:opacity-60"
+        className="mt-3 rounded-panel px-4 py-2 text-sm font-bold on-fill disabled:opacity-60"
         style={{ background: "var(--color-brand)" }}
       >
         Kod üret
       </button>
 
       {made.length > 0 && (
-        <div className="mt-3 rounded-xl border p-3" style={{ borderColor: "var(--border)", background: "var(--surface-2)" }}>
+        <div className="mt-3 rounded-panel border p-3" style={{ borderColor: "var(--border)", background: "var(--surface-2)" }}>
           <p className="mb-2 text-xs font-bold">Üretilen kodlar — bu listeyi şimdi kopyala.</p>
           <textarea
             readOnly
             rows={Math.min(10, made.length + 1)}
-            className="w-full rounded-lg p-2 font-mono text-xs"
+            className="w-full rounded-tile p-2 font-mono text-xs"
             style={{ background: "var(--surface)" }}
             value={made.map((c) => `${c}\t${origin}/premium?code=${c}`).join("\n")}
           />
@@ -561,7 +561,7 @@ function CodesSection({
                           );
                         }
                       }}
-                      className="rounded-lg px-2 py-1 text-xs font-semibold"
+                      className="rounded-chip px-2 py-1 text-xs font-semibold"
                       style={{ background: "var(--surface-2)" }}
                     >
                       {c.disabledAt ? "Aç" : "Kapat"}
@@ -579,7 +579,7 @@ function CodesSection({
 
 function Card({ title, children }: { title: string; children: React.ReactNode }) {
   return (
-    <section className="mt-6 rounded-2xl border p-4" style={{ borderColor: "var(--border)", background: "var(--surface)" }}>
+    <section className="mt-6 rounded-card border p-4" style={{ borderColor: "var(--border)", background: "var(--surface)" }}>
       <h2 className="mb-2 text-base font-bold">{title}</h2>
       {children}
     </section>
@@ -598,7 +598,7 @@ function Num({ label, v, on, w = "12rem" }: { label: string; v: number; on: (n: 
         type="number"
         value={v}
         onChange={(e) => on(Number(e.target.value))}
-        className="rounded-lg border px-2 py-1.5 text-sm"
+        className="rounded-tile border px-2 py-1.5 text-sm"
         style={{ borderColor: "var(--border)", background: "var(--surface-2)" }}
       />
     </label>
@@ -613,7 +613,7 @@ function Txt({ label, v, on, w = "12rem" }: { label: string; v: string; on: (s: 
         type="text"
         value={v}
         onChange={(e) => on(e.target.value)}
-        className="rounded-lg border px-2 py-1.5 text-sm"
+        className="rounded-tile border px-2 py-1.5 text-sm"
         style={{ borderColor: "var(--border)", background: "var(--surface-2)" }}
       />
     </label>

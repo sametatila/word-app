@@ -106,7 +106,7 @@ export function PremiumPaywall({
     <div className="mx-auto w-full max-w-3xl px-4 pb-12 pt-6">
       <header className="flex flex-col items-center text-center">
         <div
-          className="flex h-20 w-20 items-center justify-center rounded-3xl on-fill"
+          className="flex h-20 w-20 items-center justify-center rounded-card on-fill"
           style={{ background: "var(--color-brand)", boxShadow: "0 12px 24px -10px var(--color-brand)" }}
         >
           <CrownIcon size={42} />
@@ -147,7 +147,7 @@ export function PremiumPaywall({
           )}
 
           {/* Web'de satın alma yok — yönlendirme dürüstçe yazılı. */}
-          <div className="brand-gradient mt-4 rounded-2xl px-4 py-4 text-center on-fill">
+          <div className="brand-gradient mt-4 rounded-panel px-4 py-4 text-center on-fill">
             <p className="text-base font-extrabold">{t("paywall.upgrade_in_app")}</p>
             {/* Vitrin fiyatının bağlayıcı olmadığı burada yazıyor: App Store
                 3.1.2 ve Play, fiyatın yanıltıcı olmamasını istiyor. */}
@@ -217,7 +217,7 @@ function PlanCard({
 }) {
   return (
     <div
-      className="rounded-2xl border p-4 text-center"
+      className="rounded-panel border p-4 text-center"
       style={
         highlight
           ? { borderColor: "var(--color-brand)", background: "color-mix(in srgb, var(--color-brand-500) 8%, transparent)" }
@@ -244,7 +244,7 @@ function Section({ title, children }: { title: string; children: React.ReactNode
   return (
     <section className="mt-6">
       <h2 className="mb-2 text-sm font-bold uppercase tracking-wide muted">{title}</h2>
-      <div className="rounded-3xl border p-4" style={{ borderColor: "var(--border)", background: "var(--surface)" }}>
+      <div className="rounded-card border p-4" style={{ borderColor: "var(--border)", background: "var(--surface)" }}>
         {children}
       </div>
     </section>

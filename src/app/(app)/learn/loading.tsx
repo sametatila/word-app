@@ -16,13 +16,13 @@ export default function Loading() {
             <div className="h-7 w-20 animate-pulse rounded-full surface-2" />
           </div>
           <div className="h-11 w-full animate-pulse rounded-xl surface-2" />
-          <div className="h-13 w-full animate-pulse rounded-2xl surface-2" style={{ height: 52 }} />
+          <div className="h-13 w-full animate-pulse rounded-panel surface-2" style={{ height: 52 }} />
         </div>
       </div>
       <div className="h-4 w-32 animate-pulse rounded-lg surface-2" />
       <div className="grid grid-cols-2 gap-2">
         {[0, 1, 2, 3].map((i) => (
-          <div key={i} className="h-24 animate-pulse rounded-2xl surface-2" style={{ opacity: 1 - i * 0.08 }} />
+          <div key={i} className="h-24 animate-pulse rounded-card surface-2" style={{ opacity: 1 - i * 0.08 }} />
         ))}
       </div>
     </div>

@@ -119,7 +119,7 @@ export function LegalAdmin({ config, documents, tokens }: { config: LegalConfig;
       </div>
 
       {msg ? (
-        <p className="mt-4 rounded-lg px-3 py-2 text-sm" style={{ background: "var(--surface-2)" }}>{msg}</p>
+        <p className="mt-4 rounded-panel px-3 py-2 text-sm" style={{ background: "var(--surface-2)" }}>{msg}</p>
       ) : null}
 
       {tab === "docs" ? (
@@ -152,7 +152,7 @@ export function LegalAdmin({ config, documents, tokens }: { config: LegalConfig;
           <h3 className="mt-6 text-sm font-bold">Sürüm geçmişi</h3>
           <p className="muted text-xs">En yeni kayıt en üstte. Sayfada son iki kayıt gösteriliyor.</p>
           {cfg.changelog.map((e, i) => (
-            <div key={i} className="mt-3 rounded-xl border p-3" style={{ borderColor: "var(--border)" }}>
+            <div key={i} className="mt-3 rounded-panel border p-3" style={{ borderColor: "var(--border)" }}>
               <div className="flex flex-wrap items-end gap-3">
                 <Txt label="Sürüm" v={e.version} w="8rem" on={(v) => setCfg({ ...cfg, changelog: cfg.changelog.map((x, j) => (j === i ? { ...x, version: v } : x)) })} />
                 <Txt label="Tarih" v={e.date} w="10rem" on={(v) => setCfg({ ...cfg, changelog: cfg.changelog.map((x, j) => (j === i ? { ...x, date: v } : x)) })} />
@@ -313,11 +313,11 @@ function DocumentsTab({ docs, setDocs, cfg, tokens, post, busy, setMsg }: {
           value={cur.body}
           onChange={(e) => patch({ body: e.target.value })}
           spellCheck={false}
-          className="w-full rounded-xl border p-3 font-mono text-xs leading-relaxed"
+          className="w-full rounded-tile border p-3 font-mono text-xs leading-relaxed"
           style={{ borderColor: "var(--border)", background: "var(--surface-2)", minHeight: "32rem" }}
         />
         {preview ? (
-          <div className="rounded-xl border p-4" style={{ borderColor: "var(--border)", maxHeight: "32rem", overflow: "auto" }}>
+          <div className="rounded-panel border p-4" style={{ borderColor: "var(--border)", maxHeight: "32rem", overflow: "auto" }}>
             <article className="legal">{renderLegalBody(cur.body, { cfg, locale })}</article>
             <LegalStyles />
           </div>
@@ -358,7 +358,7 @@ function ProcessorRow({ p, onChange, onDelete }: { p: ConfigProcessor; onChange:
     ["region", "Bölge"], ["safeguard", "Güvence"], ["when", "Ne zaman"],
   ];
   return (
-    <div className="mt-3 rounded-xl border p-3" style={{ borderColor: "var(--border)" }}>
+    <div className="mt-3 rounded-panel border p-3" style={{ borderColor: "var(--border)" }}>
       <div className="flex flex-wrap items-center gap-3">
         <button className="text-sm font-semibold" onClick={() => setOpen(!open)}>
           {open ? "▾" : "▸"} {p.name.tr || p.name.en || "(adsız)"}
@@ -419,7 +419,7 @@ function Txt({ label, v, on, w = "12rem" }: { label: string; v: string; on: (s: 
         type="text"
         value={v}
         onChange={(e) => on(e.target.value)}
-        className="rounded-lg border px-2 py-1.5 text-sm"
+        className="rounded-tile border px-2 py-1.5 text-sm"
         style={{ borderColor: "var(--border)", background: "var(--surface-2)" }}
       />
     </label>
@@ -434,7 +434,7 @@ function Num({ label, v, on }: { label: string; v: number; on: (n: number) => vo
         type="number"
         value={v}
         onChange={(e) => on(Number(e.target.value))}
-        className="rounded-lg border px-2 py-1.5 text-sm"
+        className="rounded-tile border px-2 py-1.5 text-sm"
         style={{ borderColor: "var(--border)", background: "var(--surface-2)" }}
       />
     </label>
@@ -449,7 +449,7 @@ function Area({ label, v, on, rows = 3 }: { label: string; v: string; on: (s: st
         value={v}
         rows={rows}
         onChange={(e) => on(e.target.value)}
-        className="w-full rounded-lg border px-2 py-1.5 text-sm"
+        className="w-full rounded-tile border px-2 py-1.5 text-sm"
         style={{ borderColor: "var(--border)", background: "var(--surface-2)" }}
       />
     </label>

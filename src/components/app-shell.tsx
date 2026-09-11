@@ -309,7 +309,7 @@ export function AppShell({
             Önce gradyan bir kutuda geometrik bir "W" vardı; kullanıcı ana
             ekranda bir mirket, uygulamanın içinde bir harf görüyordu.
           */}
-          <Image src="/logo-mark.png" alt="" width={36} height={36} className="rounded-xl" />
+          <Image src="/logo-mark.png" alt="" width={36} height={36} className="rounded-tile" />
           <span className="text-lg font-bold">Lernomi</span>
         </Link>
 
@@ -320,14 +320,14 @@ export function AppShell({
               <Link
                 key={item.href}
                 href={item.href}
-                className={`relative flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-semibold transition-colors ${
+                className={`relative flex items-center gap-3 rounded-panel px-3 py-2.5 text-sm font-semibold transition-colors ${
                   active ? "text-white" : "muted hover:text-[color:var(--text)]"
                 }`}
               >
                 {active && (
                   <motion.span
                     layoutId="nav-active"
-                    className="brand-gradient absolute inset-0 rounded-xl"
+                    className="brand-gradient absolute inset-0 rounded-panel"
                     transition={{ type: "spring", stiffness: 400, damping: 32 }}
                   />
                 )}
@@ -352,7 +352,7 @@ export function AppShell({
                 key={item.href}
                 href={item.href}
                 prefetch={false}
-                className={`flex items-center gap-3 rounded-xl px-3 py-2 text-sm font-semibold transition-colors ${
+                className={`flex items-center gap-3 rounded-panel px-3 py-2 text-sm font-semibold transition-colors ${
                   active ? "text-[color:var(--text)]" : "muted hover:text-[color:var(--text)]"
                 }`}
               >

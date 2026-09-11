@@ -20,7 +20,7 @@ export function PronounceCard({ score, audioUrl, compact = false }: { score: Pro
     s === "ok" ? "var(--color-mint)" : s === "near" ? "var(--color-flame)" : "var(--color-rose)";
   const hint = score.words.find((w) => w.hint)?.hint;
   return (
-    <motion.div initial={{ opacity: 0, y: 6 }} animate={{ opacity: 1, y: 0 }} className="rounded-2xl px-4 py-3 surface-2" role="status">
+    <motion.div initial={{ opacity: 0, y: 6 }} animate={{ opacity: 1, y: 0 }} className="rounded-panel px-4 py-3 surface-2" role="status">
       <div className="flex items-center justify-between gap-3">
         <span className="text-xs font-bold uppercase tracking-wide" style={{ color: score.passed ? "var(--color-mint)" : "var(--color-flame)" }}>
           {t("pron.headline", { pct: t("common.pct", { n: score.overall }) })}{" "}

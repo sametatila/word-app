@@ -260,7 +260,7 @@ export function ChallengePlayer({ onExit }: { onExit: () => void }) {
     return (
       <Frame>
         <div className="text-center">
-          <div className="brand-gradient mx-auto mb-3 flex h-14 w-14 items-center justify-center rounded-2xl">
+          <div className="brand-gradient mx-auto mb-3 flex h-14 w-14 items-center justify-center rounded-tile">
             <FlameIcon size={26} />
           </div>
           <h2 className="text-xl font-bold">{t("challenge.title")}</h2>
