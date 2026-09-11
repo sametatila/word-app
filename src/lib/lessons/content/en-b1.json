@@ -4803,5 +4803,4667 @@
    "goal": "Ayrılma kararını, bir çekince bağlacıyla kurulmuş en az iki cümleyi ve devir teslim planını söylediysen konuşma başarılı sayılır.",
    "minTurns": 8
   }
+ },
+ {
+  "id": "en-b1-flat-search",
+  "level": "B1",
+  "course": "en",
+  "icon": "map",
+  "title": "Looking for a flat",
+  "titleTr": "Daire aramak",
+  "summary": "Ev ararken neyi kaç kez yaptığını anlatmayı öğretir: süren arayış ile biten bir randevu.",
+  "minutes": 10,
+  "focusId": "Present perfect vs past simple",
+  "vocab": [
+   {
+    "de": "rent",
+    "tr": "kira"
+   },
+   {
+    "de": "landlord",
+    "tr": "ev sahibi"
+   },
+   {
+    "de": "deposit",
+    "tr": "depozito"
+   },
+   {
+    "de": "advert",
+    "tr": "ilan"
+   },
+   {
+    "de": "viewing",
+    "tr": "daire gezme randevusu"
+   },
+   {
+    "de": "furnished",
+    "tr": "eşyalı"
+   },
+   {
+    "de": "available",
+    "tr": "müsait"
+   },
+   {
+    "de": "agency",
+    "tr": "emlak ofisi"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "I have seen five flats this month.",
+    "tr": "süren bir arayışın sayısını verir"
+   },
+   {
+    "de": "I saw that flat last week.",
+    "tr": "bitmiş tek bir olayı anlatır"
+   },
+   {
+    "de": "Is the flat still available?",
+    "tr": "bir şeyin hâlâ geçerli olup olmadığını sorar"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Bugün ev aramanın dilini öğreneceğiz: ilanlar, emlak ofisleri, gezme randevuları."
+     },
+     {
+      "lang": "tr",
+      "text": "Ev arayışı sürerken anlattığın şeyle, geçen hafta gördüğün bir daire İngilizcede farklı zamanla söyleniyor. Hazır mısın?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "rent"
+     },
+     {
+      "lang": "tr",
+      "text": "Kira demek; hem isim hem fiil olarak kullanılır. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "The rent is eight hundred a month."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The rent is eight hundred a month."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Evin sahibine"
+     },
+     {
+      "lang": "en",
+      "text": "landlord"
+     },
+     {
+      "lang": "tr",
+      "text": "baştan yatırdığın paraya ise"
+     },
+     {
+      "lang": "en",
+      "text": "deposit"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The landlord wants a deposit."
+     },
+     {
+      "lang": "tr",
+      "text": "Ev sahibi depozito istiyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The landlord wants a deposit."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi dersin kuralı. Arayış SÜRÜYORSA ve sayı veriyorsan present perfect kullanılır:"
+     },
+     {
+      "lang": "en",
+      "text": "I have seen five flats."
+     },
+     {
+      "lang": "tr",
+      "text": "Belli bir gün ya da haftadan söz ediyorsan, yani olay BİTTİYSE past simple gelir:"
+     },
+     {
+      "lang": "en",
+      "text": "I saw that flat last week."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kalıbımız. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "I have seen five flats this month."
+     },
+     {
+      "lang": "tr",
+      "text": "Bu ay beş daire gördüm."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "I have seen five flats this month."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sıra sende. Emlak ofisi için"
+     },
+     {
+      "lang": "en",
+      "text": "agency"
+     },
+     {
+      "lang": "tr",
+      "text": "deriz. Şunu kur: Bu hafta üç emlak ofisine gittim."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "I have visited three agencies this week.",
+     "accept": [
+      "I have visited three agencies.",
+      "I've visited three agencies this week."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Hafta bitmedi, arayış sürüyor:"
+      },
+      {
+       "lang": "en",
+       "text": "I have visited three agencies this week."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kontrol. Şu cümle doğru mu?"
+     },
+     {
+      "lang": "en",
+      "text": "I have seen that flat last week."
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "I have seen that flat last week.",
+     "answer": false,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Yanlış. Zaman belli ve bitmiş:"
+      },
+      {
+       "lang": "en",
+       "text": "last week"
+      },
+      {
+       "lang": "tr",
+       "text": "Bu durumda past simple gelir:"
+      },
+      {
+       "lang": "en",
+       "text": "I saw that flat last week."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Gazetedeki ya da sitedeki duyuruya"
+     },
+     {
+      "lang": "en",
+      "text": "advert"
+     },
+     {
+      "lang": "tr",
+      "text": "gezme randevusuna ise"
+     },
+     {
+      "lang": "en",
+      "text": "viewing"
+     },
+     {
+      "lang": "tr",
+      "text": "denir. İkincisi Britanya'da çok kullanılır ve tam olarak 'daireyi görmeye gitmek' demektir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İkinci kalıbımız bitmiş bir olayı anlatıyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "I saw the advert and booked a viewing through the agency."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "I saw the advert and booked a viewing through the agency."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sen kur: Dün ev sahibini aradım."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "I called the landlord yesterday.",
+     "accept": [
+      "I phoned the landlord yesterday.",
+      "I called the landlord on Monday."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Zaman belli ve bitmiş, o yüzden past simple:"
+      },
+      {
+       "lang": "en",
+       "text": "I called the landlord yesterday."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Eşyalı daire için"
+     },
+     {
+      "lang": "en",
+      "text": "furnished"
+     },
+     {
+      "lang": "tr",
+      "text": "deriz. Eşyasız olanına"
+     },
+     {
+      "lang": "en",
+      "text": "unfurnished"
+     },
+     {
+      "lang": "tr",
+      "text": "denir; İngilizcede olumsuzu yapan önek bu."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The flat is furnished and quite big."
+     },
+     {
+      "lang": "tr",
+      "text": "Daire eşyalı ve oldukça büyük."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The flat is furnished and quite big."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son kalıbımız bir soru. Müsait için"
+     },
+     {
+      "lang": "en",
+      "text": "available"
+     },
+     {
+      "lang": "tr",
+      "text": "deriz. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "Is the flat still available?"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Is the flat still available?"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir tane daha: Depozito hâlâ aynı mı?"
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "Is the deposit still the same?",
+     "accept": [
+      "Is the deposit the same?",
+      "Is the deposit still the same amount?"
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Aynı soru kalıbı:"
+      },
+      {
+       "lang": "en",
+       "text": "Is the deposit still the same?"
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Özetleyelim: süren arayış"
+     },
+     {
+      "lang": "en",
+      "text": "I have seen"
+     },
+     {
+      "lang": "tr",
+      "text": "bitmiş olay"
+     },
+     {
+      "lang": "en",
+      "text": "I saw"
+     },
+     {
+      "lang": "tr",
+      "text": "Şimdi bir emlak ofisini arayacaksın."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Bir emlak ofisini arıyorsun ve ilandaki daireyi soruyorsun. Ne kadar süredir aradığını söyle, dairenin müsait olup olmadığını öğren ve gezme randevusu al.",
+   "partner": "telefona bakan, acelesi olan bir emlak görevlisi",
+   "opening": "Good morning, how can I help you?",
+   "openingTr": "Günaydın, nasıl yardımcı olabilirim?",
+   "goal": "Arayışını süren zamanla anlattıysan, dairenin müsait olup olmadığını sorduysan ve bir gezme randevusu aldıysan konuşma başarılı sayılır.",
+   "minTurns": 7
+  }
+ },
+ {
+  "id": "en-b1-viewing",
+  "level": "B1",
+  "course": "en",
+  "icon": "key",
+  "title": "The viewing",
+  "titleTr": "Daire gezmek",
+  "summary": "Gezdiğin daireleri birbirinden ayırmayı öğretir: hangisi hangisiydi sorusunun cevabı yan cümledir.",
+  "minutes": 10,
+  "focusId": "Relative clauses",
+  "vocab": [
+   {
+    "de": "balcony",
+    "tr": "balkon"
+   },
+   {
+    "de": "basement",
+    "tr": "bodrum"
+   },
+   {
+    "de": "ceiling",
+    "tr": "tavan"
+   },
+   {
+    "de": "spacious",
+    "tr": "ferah"
+   },
+   {
+    "de": "bright",
+    "tr": "aydınlık"
+   },
+   {
+    "de": "storage",
+    "tr": "depolama alanı"
+   },
+   {
+    "de": "view",
+    "tr": "manzara"
+   },
+   {
+    "de": "corridor",
+    "tr": "koridor"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "The flat that I saw yesterday was bright.",
+    "tr": "hangi daire olduğunu yan cümleyle söyler"
+   },
+   {
+    "de": "The flat I saw yesterday was bright.",
+    "tr": "nesne durumunda ilgi zamirini düşürür"
+   },
+   {
+    "de": "The woman who showed me the flat was kind.",
+    "tr": "kişiyi yan cümleyle tanımlar"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Bugün gezdiğin daireleri anlatmayı öğreneceğiz: hangisi aydınlıktı, hangisinde balkon vardı."
+     },
+     {
+      "lang": "tr",
+      "text": "Beş daire gezdiysen hepsinin adı 'the flat'; onları ayıran şey arkalarına eklediğin yan cümle. Hazır mısın?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "balcony"
+     },
+     {
+      "lang": "tr",
+      "text": "Balkon demek. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "The balcony was small but sunny."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The balcony was small but sunny."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Evin alt katına"
+     },
+     {
+      "lang": "en",
+      "text": "basement"
+     },
+     {
+      "lang": "tr",
+      "text": "odanın üst yüzeyine ise"
+     },
+     {
+      "lang": "en",
+      "text": "ceiling"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The spacious basement had a high ceiling."
+     },
+     {
+      "lang": "tr",
+      "text": "Ferah bodrumun tavanı yüksekti."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The spacious basement had a high ceiling."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi dersin kuralı. Bir ismin hangisi olduğunu söylemek için arkasına yan cümle eklenir:"
+     },
+     {
+      "lang": "en",
+      "text": "that"
+     },
+     {
+      "lang": "tr",
+      "text": "ya da"
+     },
+     {
+      "lang": "en",
+      "text": "which"
+     },
+     {
+      "lang": "tr",
+      "text": "şeyler için,"
+     },
+     {
+      "lang": "en",
+      "text": "who"
+     },
+     {
+      "lang": "tr",
+      "text": "kişiler için. Yan cümle ismin hemen arkasına gelir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kalıbımız. Aydınlık için"
+     },
+     {
+      "lang": "en",
+      "text": "bright"
+     },
+     {
+      "lang": "tr",
+      "text": "deriz. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "The flat that I saw yesterday was bright."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The flat that I saw yesterday was bright."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sıra sende: Beğendiğim dairenin balkonu vardı."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "The flat that I liked had a balcony.",
+     "accept": [
+      "The flat which I liked had a balcony.",
+      "The flat that I liked had a big balcony."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Şey tanımlanıyor, o yüzden that:"
+      },
+      {
+       "lang": "en",
+       "text": "The flat that I liked had a balcony."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kontrol. Şu cümle doğru mu?"
+     },
+     {
+      "lang": "en",
+      "text": "The flat I saw yesterday was bright."
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "The flat I saw yesterday was bright.",
+     "answer": true,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Doğru. Zamir yan cümlenin nesnesi olduğu için düşebiliyor; anlam değişmiyor, cümle yalnız kısalıyor."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Odaları birbirine bağlayan geçide"
+     },
+     {
+      "lang": "en",
+      "text": "corridor"
+     },
+     {
+      "lang": "tr",
+      "text": "denir; Amerika'da aynı yere 'hallway' denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İkinci kalıbımız zamirsiz. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "The flat I saw yesterday was bright."
+     },
+     {
+      "lang": "tr",
+      "text": "Zamir düştü, cümle kısaldı."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The flat I saw yesterday was bright."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sen kur: Pazartesi gezdiğim daire ferahtı."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "The flat I visited on Monday was spacious.",
+     "accept": [
+      "The flat I saw on Monday was spacious.",
+      "The flat I visited on Monday was very spacious."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Nesne durumunda zamir düşebilir:"
+      },
+      {
+       "lang": "en",
+       "text": "The flat I visited on Monday was spacious."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Eşyaları koyacak yere"
+     },
+     {
+      "lang": "en",
+      "text": "storage"
+     },
+     {
+      "lang": "tr",
+      "text": "pencereden görünene ise"
+     },
+     {
+      "lang": "en",
+      "text": "view"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The corridor had no storage but a nice view."
+     },
+     {
+      "lang": "tr",
+      "text": "Koridorda depo yoktu ama güzel bir manzara vardı."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The corridor had no storage but a nice view."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Eve gelen misafire kapıyı açan yer koridordur; ferah bir daire için ise"
+     },
+     {
+      "lang": "en",
+      "text": "spacious"
+     },
+     {
+      "lang": "tr",
+      "text": "denir ve bu kelime ilanların dilidir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son kalıbımız bir kişiyi tanımlıyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "The woman who showed me the flat was kind."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The woman who showed me the flat was kind."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir tane daha: Binanın sahibi olan adam üst katta oturuyor."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "The man who owns the building lives upstairs.",
+     "accept": [
+      "The man who owns the building lives on the top floor.",
+      "The man that owns the building lives upstairs."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Kişi tanımlanıyor, o yüzden who:"
+      },
+      {
+       "lang": "en",
+       "text": "The man who owns the building lives upstairs."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Özetleyelim: şey"
+     },
+     {
+      "lang": "en",
+      "text": "that"
+     },
+     {
+      "lang": "tr",
+      "text": "kişi"
+     },
+     {
+      "lang": "en",
+      "text": "who"
+     },
+     {
+      "lang": "tr",
+      "text": "nesne durumunda zamir düşebilir."
+     },
+     {
+      "lang": "tr",
+      "text": "Şimdi bir arkadaşın gezdiğin daireleri soruyor."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Bir arkadaşın bu hafta gezdiğin daireleri soruyor. Hangisinin neyi vardı, hangisini neden beğendin, hangisini elediğini yan cümlelerle anlat.",
+   "partner": "senin yerine karar vermeye çalışan meraklı bir arkadaş",
+   "opening": "So which one was the best? The one with the balcony?",
+   "openingTr": "Peki hangisi en iyisiydi? Balkonlu olan mı?",
+   "goal": "En az üç daireyi yan cümleyle ayırdıysan ve birini gerekçesiyle seçtiysen konuşma başarılı sayılır.",
+   "minTurns": 7
+  }
+ },
+ {
+  "id": "en-b1-rental-contract",
+  "level": "B1",
+  "course": "en",
+  "icon": "law",
+  "title": "The rental agreement",
+  "titleTr": "Kira sözleşmesi",
+  "summary": "Sözleşmenin dilini okumayı öğretir: kimin yaptığı değil, neyin yapıldığı yazılır.",
+  "minutes": 11,
+  "focusId": "Passive voice",
+  "vocab": [
+   {
+    "de": "tenant",
+    "tr": "kiracı"
+   },
+   {
+    "de": "lease",
+    "tr": "kira sözleşmesi"
+   },
+   {
+    "de": "sign",
+    "tr": "imzalamak"
+   },
+   {
+    "de": "clause",
+    "tr": "madde"
+   },
+   {
+    "de": "term",
+    "tr": "süre"
+   },
+   {
+    "de": "renew",
+    "tr": "yenilemek"
+   },
+   {
+    "de": "condition",
+    "tr": "koşul"
+   },
+   {
+    "de": "legal",
+    "tr": "hukuki"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "The deposit is paid before you move in.",
+    "tr": "kim yaptığını söylemeden kuralı anlatır"
+   },
+   {
+    "de": "The lease was signed last week.",
+    "tr": "geçmişte yapılan işlemi anlatır"
+   },
+   {
+    "de": "When is the lease renewed?",
+    "tr": "bir işlemin ne zaman yapıldığını sorar"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Bugün kira sözleşmesini okumayı öğreneceğiz: maddeler, süre, yenileme."
+     },
+     {
+      "lang": "tr",
+      "text": "Sözleşmelerin garip bir dili var: kimin yaptığı neredeyse hiç yazılmıyor. Bu bir üslup değil, bir dilbilgisi seçimi. Hazır mısın?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "tenant"
+     },
+     {
+      "lang": "tr",
+      "text": "Kiracı demek. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "The tenant pays the rent on the first day."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The tenant pays the rent on the first day."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Sözleşmenin kendisine"
+     },
+     {
+      "lang": "en",
+      "text": "lease"
+     },
+     {
+      "lang": "tr",
+      "text": "imzalamaya ise"
+     },
+     {
+      "lang": "en",
+      "text": "sign"
+     },
+     {
+      "lang": "tr",
+      "text": "denir. İkincisi aynı zamanda 'tabela' demektir; bağlam ayırır."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "I will sign the lease tomorrow."
+     },
+     {
+      "lang": "tr",
+      "text": "Sözleşmeyi yarın imzalayacağım."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "I will sign the lease tomorrow."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi dersin kuralı. Sözleşmede kimin yaptığı önemli değildir, o yüzden edilgen çatı kurulur:"
+     },
+     {
+      "lang": "en",
+      "text": "is paid, was signed"
+     },
+     {
+      "lang": "tr",
+      "text": "Yardımcı fiil"
+     },
+     {
+      "lang": "en",
+      "text": "is"
+     },
+     {
+      "lang": "tr",
+      "text": "ya da"
+     },
+     {
+      "lang": "en",
+      "text": "was"
+     },
+     {
+      "lang": "tr",
+      "text": "fiilin üçüncü hâliyle birleşir ve yapan kişi düşer."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kalıbımız. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "The deposit is paid before you move in."
+     },
+     {
+      "lang": "tr",
+      "text": "Depozito taşınmadan önce ödenir."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The deposit is paid before you move in."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sıra sende: Kira her ay ödenir."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "The rent is paid every month.",
+     "accept": [
+      "The rent is paid monthly.",
+      "The rent is paid each month."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Kim ödediği yazılmıyor, o yüzden edilgen:"
+      },
+      {
+       "lang": "en",
+       "text": "The rent is paid every month."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kontrol. Şu cümle doğru mu?"
+     },
+     {
+      "lang": "en",
+      "text": "The lease was signed last week."
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "The lease was signed last week.",
+     "answer": true,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Doğru. Kimin imzaladığı söylenmiyor ve sözleşme dilinde bu olağan; önemli olan işlemin yapılmış olması."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Sözleşmedeki her ayrı hükme"
+     },
+     {
+      "lang": "en",
+      "text": "clause"
+     },
+     {
+      "lang": "tr",
+      "text": "sözleşmenin süresine ise"
+     },
+     {
+      "lang": "en",
+      "text": "term"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "This clause sets the term at one year."
+     },
+     {
+      "lang": "tr",
+      "text": "Bu madde süreyi bir yıl olarak belirliyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "This clause sets the term at one year."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sen kur. Yenilemek için"
+     },
+     {
+      "lang": "en",
+      "text": "renew"
+     },
+     {
+      "lang": "tr",
+      "text": "deriz. Şunu kur: Sözleşme mayısta yenilendi."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "The contract was renewed in May.",
+     "accept": [
+      "The lease was renewed in May.",
+      "The contract was renewed last May."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Geçmiş edilgen:"
+      },
+      {
+       "lang": "en",
+       "text": "The contract was renewed in May."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir şartın kendisine"
+     },
+     {
+      "lang": "en",
+      "text": "condition"
+     },
+     {
+      "lang": "tr",
+      "text": "hukuki olana ise"
+     },
+     {
+      "lang": "en",
+      "text": "legal"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "Every legal condition is written in the lease."
+     },
+     {
+      "lang": "tr",
+      "text": "Her hukuki koşul sözleşmede yazılıdır."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Every legal condition is written in the lease."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son kalıbımız bir soru. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "When is the lease renewed?"
+     },
+     {
+      "lang": "tr",
+      "text": "Sözleşme ne zaman yenileniyor?"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "When is the lease renewed?"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir tane daha: Depozito ne zaman geri veriliyor?"
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "When is the deposit returned?",
+     "accept": [
+      "When is the deposit paid back?",
+      "When is the deposit given back?"
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Edilgen soru aynı sırayla kurulur:"
+      },
+      {
+       "lang": "en",
+       "text": "When is the deposit returned?"
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Özetleyelim: kural"
+     },
+     {
+      "lang": "en",
+      "text": "is paid"
+     },
+     {
+      "lang": "tr",
+      "text": "geçmiş işlem"
+     },
+     {
+      "lang": "en",
+      "text": "was signed"
+     },
+     {
+      "lang": "tr",
+      "text": "soru"
+     },
+     {
+      "lang": "en",
+      "text": "When is … renewed?"
+     },
+     {
+      "lang": "tr",
+      "text": "Şimdi sözleşmeyi ev sahibiyle birlikte okuyacaksın."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Ev sahibiyle sözleşmeyi birlikte okuyorsunuz. Anlamadığın bir maddeyi sor, sürenin ne kadar olduğunu öğren ve depozitonun ne zaman geri verileceğini netleştir.",
+   "partner": "sözleşmeyi ezbere bilen ama aceleci bir ev sahibi",
+   "opening": "Here is the lease. Shall we go through it?",
+   "openingTr": "Sözleşme burada. Birlikte bakalım mı?",
+   "goal": "Bir maddeyi sorduysan, süreyi öğrendiysen ve depozitonun geri verilme koşulunu netleştirdiysen konuşma başarılı sayılır.",
+   "minTurns": 8
+  }
+ },
+ {
+  "id": "en-b1-moving-in",
+  "level": "B1",
+  "course": "en",
+  "icon": "car",
+  "title": "Moving day",
+  "titleTr": "Taşınma günü",
+  "summary": "Taşınma gününün programını anlatmayı öğretir: kararlaşmış saat, niyet ve o anki karar.",
+  "minutes": 10,
+  "focusId": "Future forms",
+  "vocab": [
+   {
+    "de": "van",
+    "tr": "kamyonet"
+   },
+   {
+    "de": "carry",
+    "tr": "taşımak"
+   },
+   {
+    "de": "fragile",
+    "tr": "kırılacak"
+   },
+   {
+    "de": "unpack",
+    "tr": "kutuları boşaltmak"
+   },
+   {
+    "de": "address",
+    "tr": "adres"
+   },
+   {
+    "de": "meter",
+    "tr": "sayaç"
+   },
+   {
+    "de": "ground",
+    "tr": "zemin"
+   },
+   {
+    "de": "upstairs",
+    "tr": "üst kat"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "The van is coming at nine.",
+    "tr": "kararlaşmış saati söyler"
+   },
+   {
+    "de": "I am going to unpack the kitchen first.",
+    "tr": "önceden kurulmuş niyeti söyler"
+   },
+   {
+    "de": "I will carry that one.",
+    "tr": "o an verilen kararı söyler"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Bugün taşınma gününü konuşmayı öğreneceğiz: kamyonet kaçta geliyor, önce ne boşaltılıyor, kim neyi taşıyor."
+     },
+     {
+      "lang": "tr",
+      "text": "Gün boyunca üç ayrı gelecek kullanacaksın ve hangisini seçtiğin işin ne kadar kesin olduğunu söylüyor. Hazır mısın?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "van"
+     },
+     {
+      "lang": "tr",
+      "text": "Kamyonet demek. İlk kalıbımız da bu. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "The van is coming at nine."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The van is coming at nine."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir şeyi taşımak"
+     },
+     {
+      "lang": "en",
+      "text": "carry"
+     },
+     {
+      "lang": "tr",
+      "text": "kırılacak eşya için ise"
+     },
+     {
+      "lang": "en",
+      "text": "fragile"
+     },
+     {
+      "lang": "tr",
+      "text": "denir. İkincisi kutuların üstüne yazılan kelimedir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "Please carry the fragile box slowly."
+     },
+     {
+      "lang": "tr",
+      "text": "Kırılacak kutuyu yavaş taşı lütfen."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Please carry the fragile box slowly."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi dersin kuralı. Saati kararlaşmış bir iş için şimdiki zaman:"
+     },
+     {
+      "lang": "en",
+      "text": "The van is coming."
+     },
+     {
+      "lang": "tr",
+      "text": "Önceden kurulmuş niyet için"
+     },
+     {
+      "lang": "en",
+      "text": "going to"
+     },
+     {
+      "lang": "tr",
+      "text": "o anda verilen karar için"
+     },
+     {
+      "lang": "en",
+      "text": "will"
+     },
+     {
+      "lang": "tr",
+      "text": "gelir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sıra sende: Emlak ofisi onda arıyor."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "The agency is calling at ten.",
+     "accept": [
+      "The agency is phoning at ten.",
+      "The agency is calling us at ten."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Saati kararlaşmış, o yüzden şimdiki zaman:"
+      },
+      {
+       "lang": "en",
+       "text": "The agency is calling at ten."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İkinci kalıbımız niyeti anlatıyor. Kutuları boşaltmak için"
+     },
+     {
+      "lang": "en",
+      "text": "unpack"
+     },
+     {
+      "lang": "tr",
+      "text": "deriz. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "I am going to unpack the kitchen first."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "I am going to unpack the kitchen first."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kontrol. Şu cümle doğru mu?"
+     },
+     {
+      "lang": "en",
+      "text": "I will unpack the kitchen first, it is my plan."
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "I will unpack the kitchen first, it is my plan.",
+     "answer": false,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Yanlış. Önceden kurulmuş bir plan anlatılıyor; bunun kalıbı başkadır:"
+      },
+      {
+       "lang": "en",
+       "text": "I am going to unpack the kitchen first."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Yeni evin adresi için"
+     },
+     {
+      "lang": "en",
+      "text": "address"
+     },
+     {
+      "lang": "tr",
+      "text": "elektrik ya da su sayacı için ise"
+     },
+     {
+      "lang": "en",
+      "text": "meter"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "I sent the new address and the meter reading."
+     },
+     {
+      "lang": "tr",
+      "text": "Yeni adresi ve sayaç okumasını gönderdim."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "I sent the new address and the meter reading."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sen kur: Bugün sayacı okuyacağım."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "I am going to read the meter today.",
+     "accept": [
+      "I'm going to read the meter today.",
+      "I am going to check the meter today."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Önceden kurulmuş niyet:"
+      },
+      {
+       "lang": "en",
+       "text": "I am going to read the meter today."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Giriş katı için"
+     },
+     {
+      "lang": "en",
+      "text": "ground"
+     },
+     {
+      "lang": "tr",
+      "text": "üst kat için ise"
+     },
+     {
+      "lang": "en",
+      "text": "upstairs"
+     },
+     {
+      "lang": "tr",
+      "text": "denir. Britanya'da giriş kat 'ground floor', bir üstü 'first floor' olur."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The heavy boxes stay on the ground floor."
+     },
+     {
+      "lang": "tr",
+      "text": "Ağır kutular zemin katta kalıyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The heavy boxes stay on the ground floor."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son kalıbımız o anki kararı anlatıyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "I will carry that one upstairs."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "I will carry that one upstairs."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir tane daha: Kırılacak kutularda sana yardım edeceğim."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "I will help you with the fragile boxes.",
+     "accept": [
+      "I'll help you with the fragile boxes.",
+      "I will help with the fragile boxes."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "O an verilen karar, o yüzden will:"
+      },
+      {
+       "lang": "en",
+       "text": "I will help you with the fragile boxes."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Özetleyelim: kararlaşmış saat"
+     },
+     {
+      "lang": "en",
+      "text": "is coming"
+     },
+     {
+      "lang": "tr",
+      "text": "niyet"
+     },
+     {
+      "lang": "en",
+      "text": "going to"
+     },
+     {
+      "lang": "tr",
+      "text": "o anki karar"
+     },
+     {
+      "lang": "en",
+      "text": "will"
+     },
+     {
+      "lang": "tr",
+      "text": "Şimdi taşınma gününü bir arkadaşınla planlayacaksın."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Taşınma gününü yardıma gelecek arkadaşınla planlıyorsun. Kamyonetin kaçta geldiğini söyle, hangi odayı önce boşaltacağını anlat ve iş bölümü yap.",
+   "partner": "yardıma gelecek ve işi paylaşmak isteyen bir arkadaş",
+   "opening": "What time is the van coming on Saturday?",
+   "openingTr": "Cumartesi kamyonet kaçta geliyor?",
+   "goal": "Kararlaşmış bir saati, bir niyetini ve o anda verdiğin bir kararı doğru kalıplarla söylediysen konuşma başarılı sayılır.",
+   "minTurns": 7
+  }
+ },
+ {
+  "id": "en-b1-flatmates",
+  "level": "B1",
+  "course": "en",
+  "icon": "home",
+  "title": "Living with flatmates",
+  "titleTr": "Ev arkadaşları",
+  "summary": "Ortak yaşam kurallarını konuşmayı öğretir: zorunluluk, serbestlik ve tavsiye.",
+  "minutes": 10,
+  "focusId": "Modals of obligation",
+  "vocab": [
+   {
+    "de": "share",
+    "tr": "paylaşmak"
+   },
+   {
+    "de": "chore",
+    "tr": "ev işi"
+   },
+   {
+    "de": "rota",
+    "tr": "iş bölümü çizelgesi"
+   },
+   {
+    "de": "tidy",
+    "tr": "toplamak"
+   },
+   {
+    "de": "guest",
+    "tr": "misafir"
+   },
+   {
+    "de": "split",
+    "tr": "bölüşmek"
+   },
+   {
+    "de": "agree",
+    "tr": "anlaşmak"
+   },
+   {
+    "de": "argue",
+    "tr": "tartışmak"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "You have to tidy the kitchen after cooking.",
+    "tr": "ortak kuralı zorunluluk olarak söyler"
+   },
+   {
+    "de": "You don't have to ask about guests.",
+    "tr": "zorunlu olmadığını söyler"
+   },
+   {
+    "de": "We should agree on a rota.",
+    "tr": "ortak bir öneri yapar"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Bugün ev arkadaşlarıyla yaşamanın dilini öğreneceğiz: kim neyi yapıyor, neyi sormak gerekiyor, neyi gerekmiyor."
+     },
+     {
+      "lang": "tr",
+      "text": "Bu konuşmada üç ayrı ton var ve üçü ayrı kalıpla kuruluyor: kural, serbestlik, öneri. Hazır mısın?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "share"
+     },
+     {
+      "lang": "tr",
+      "text": "Paylaşmak demek. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "We share the rent and the bills."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "We share the rent and the bills."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Ev işlerine"
+     },
+     {
+      "lang": "en",
+      "text": "chore"
+     },
+     {
+      "lang": "tr",
+      "text": "kimin ne zaman yapacağını gösteren çizelgeye ise"
+     },
+     {
+      "lang": "en",
+      "text": "rota"
+     },
+     {
+      "lang": "tr",
+      "text": "denir. İkincisi Britanya'da çok kullanılır."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The rota shows who does which chore."
+     },
+     {
+      "lang": "tr",
+      "text": "Çizelge kimin hangi işi yaptığını gösteriyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The rota shows who does which chore."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi dersin kuralı. Ortak bir kural"
+     },
+     {
+      "lang": "en",
+      "text": "have to"
+     },
+     {
+      "lang": "tr",
+      "text": "ile söylenir. Zorunlu değilse"
+     },
+     {
+      "lang": "en",
+      "text": "don't have to"
+     },
+     {
+      "lang": "tr",
+      "text": "gelir — bu 'yasak' demek değildir. Öneri içinse"
+     },
+     {
+      "lang": "en",
+      "text": "should"
+     },
+     {
+      "lang": "tr",
+      "text": "kullanılır."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kalıbımız. Toplamak için"
+     },
+     {
+      "lang": "en",
+      "text": "tidy"
+     },
+     {
+      "lang": "tr",
+      "text": "deriz. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "You have to tidy the kitchen after cooking."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "You have to tidy the kitchen after cooking."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sıra sende: Salı günleri çöpü çıkarman gerekiyor."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "You have to take the rubbish out on Tuesdays.",
+     "accept": [
+      "You have to take the rubbish out on Tuesday.",
+      "You have to put the rubbish out on Tuesdays."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Ortak kural, o yüzden zorunluluk kalıbı:"
+      },
+      {
+       "lang": "en",
+       "text": "You have to take the rubbish out on Tuesdays."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kontrol. Şu cümle doğru mu?"
+     },
+     {
+      "lang": "en",
+      "text": "You don't have to ask about guests."
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "You don't have to ask about guests.",
+     "answer": true,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Doğru. Bu kalıp izin vermiyor ya da yasaklamıyor, yalnız gerekmediğini söylüyor: sorabilirsin de, sormayabilirsin de."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Eve gelen kişiye"
+     },
+     {
+      "lang": "en",
+      "text": "guest"
+     },
+     {
+      "lang": "tr",
+      "text": "masrafı bölüşmeye ise"
+     },
+     {
+      "lang": "en",
+      "text": "split"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "A guest can stay, and we split the bills every month."
+     },
+     {
+      "lang": "tr",
+      "text": "Misafir kalabilir ve faturaları her ay bölüşüyoruz."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "A guest can stay, and we split the bills every month."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sen kur: Herkese yemek yapmak zorunda değilsin."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "You don't have to cook for everyone.",
+     "accept": [
+      "You do not have to cook for everyone.",
+      "You don't have to cook for the others."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Gerekmediğini söylüyoruz:"
+      },
+      {
+       "lang": "en",
+       "text": "You don't have to cook for everyone."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Anlaşmak"
+     },
+     {
+      "lang": "en",
+      "text": "agree"
+     },
+     {
+      "lang": "tr",
+      "text": "tartışmak ise"
+     },
+     {
+      "lang": "en",
+      "text": "argue"
+     },
+     {
+      "lang": "tr",
+      "text": "ile söylenir. İkincisi kavga etmek değil, farklı düşünmek anlamına da gelir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "We rarely argue because we agree on the rules."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "We rarely argue because we agree on the rules."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son kalıbımız öneri veriyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "We should agree on a rota."
+     },
+     {
+      "lang": "tr",
+      "text": "Bir çizelgede anlaşmalıyız."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "We should agree on a rota."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir tane daha: Ev işlerini daha adil paylaşmalıyız."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "We should share the chores more fairly.",
+     "accept": [
+      "We should split the chores more fairly.",
+      "We should share the chores better."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Öneri kalıbı:"
+      },
+      {
+       "lang": "en",
+       "text": "We should share the chores more fairly."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Özetleyelim: kural"
+     },
+     {
+      "lang": "en",
+      "text": "have to"
+     },
+     {
+      "lang": "tr",
+      "text": "gerekmiyor"
+     },
+     {
+      "lang": "en",
+      "text": "don't have to"
+     },
+     {
+      "lang": "tr",
+      "text": "öneri"
+     },
+     {
+      "lang": "en",
+      "text": "should"
+     },
+     {
+      "lang": "tr",
+      "text": "Şimdi yeni ev arkadaşınla kuralları konuşacaksın."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Yeni bir ev arkadaşıyla ortak yaşam kurallarını konuşuyorsun. Hangi işlerin zorunlu olduğunu söyle, neyin serbest olduğunu belirt ve bir çizelge öner.",
+   "partner": "daha önce ev paylaşmamış, her şeyi soran yeni ev arkadaşın",
+   "opening": "This is my first time sharing. What do I have to do here?",
+   "openingTr": "İlk kez ev paylaşıyorum. Burada ne yapmam gerekiyor?",
+   "goal": "En az bir zorunluluk, bir serbestlik ve bir öneri söylediysen ve bir çizelge üzerinde anlaştıysan konuşma başarılı sayılır.",
+   "minTurns": 7
+  }
+ },
+ {
+  "id": "en-b1-repairs",
+  "level": "B1",
+  "course": "en",
+  "icon": "repair",
+  "title": "Getting it fixed",
+  "titleTr": "Tamirat",
+  "summary": "Ev sahibiyle usta arasındaki mesajı aktarmayı öğretir: kim ne söyledi, ne zaman gelecekmiş.",
+  "minutes": 10,
+  "focusId": "Reported speech",
+  "vocab": [
+   {
+    "de": "leak",
+    "tr": "su kaçağı"
+   },
+   {
+    "de": "plumber",
+    "tr": "tesisatçı"
+   },
+   {
+    "de": "boiler",
+    "tr": "kombi"
+   },
+   {
+    "de": "fix",
+    "tr": "tamir etmek"
+   },
+   {
+    "de": "damp",
+    "tr": "rutubet"
+   },
+   {
+    "de": "broken",
+    "tr": "bozuk"
+   },
+   {
+    "de": "complain",
+    "tr": "şikâyet etmek"
+   },
+   {
+    "de": "delay",
+    "tr": "gecikme"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "He said that he would come on Monday.",
+    "tr": "söyleneni bir basamak geriye alarak aktarır"
+   },
+   {
+    "de": "She told me to wait for the plumber.",
+    "tr": "verilen yönergeyi aktarır"
+   },
+   {
+    "de": "He asked if the boiler was old.",
+    "tr": "sorulan soruyu aktarır"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Bugün ev tamiratını konuşmayı öğreneceğiz: kaçak, kombi, rutubet, gecikmeler."
+     },
+     {
+      "lang": "tr",
+      "text": "Bu konuşmada çoğu zaman üçüncü bir kişi var: usta ne dedi, ev sahibi ne söyledi. Aktarmak ayrı bir dilbilgisi işi. Hazır mısın?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "leak"
+     },
+     {
+      "lang": "tr",
+      "text": "Su kaçağı demek. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "There is a leak under the sink."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "There is a leak under the sink."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Suyu tamir edene"
+     },
+     {
+      "lang": "en",
+      "text": "plumber"
+     },
+     {
+      "lang": "tr",
+      "text": "ısıtma cihazına ise"
+     },
+     {
+      "lang": "en",
+      "text": "boiler"
+     },
+     {
+      "lang": "tr",
+      "text": "denir. İkincisi Britanya evlerinin en sık bozulan parçasıdır."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bozuk için"
+     },
+     {
+      "lang": "en",
+      "text": "broken"
+     },
+     {
+      "lang": "tr",
+      "text": "deriz. Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The plumber said the boiler was broken."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The plumber said the boiler was broken."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi dersin kuralı. Birinin sözünü aktarırken zaman bir basamak geriye gider:"
+     },
+     {
+      "lang": "en",
+      "text": "I will come"
+     },
+     {
+      "lang": "tr",
+      "text": "aktarılınca"
+     },
+     {
+      "lang": "en",
+      "text": "he said that he would come"
+     },
+     {
+      "lang": "tr",
+      "text": "olur."
+     },
+     {
+      "lang": "en",
+      "text": "will"
+     },
+     {
+      "lang": "tr",
+      "text": "burada"
+     },
+     {
+      "lang": "en",
+      "text": "would"
+     },
+     {
+      "lang": "tr",
+      "text": "oluyor."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kalıbımız. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "He said that he would come on Monday."
+     },
+     {
+      "lang": "tr",
+      "text": "Pazartesi geleceğini söyledi."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "He said that he would come on Monday."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sıra sende. Tamir etmek için"
+     },
+     {
+      "lang": "en",
+      "text": "fix"
+     },
+     {
+      "lang": "tr",
+      "text": "deriz. Şunu kur: Bugün tamir edeceğini söyledi."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "She said that she would fix it today.",
+     "accept": [
+      "She said she would fix it today.",
+      "She said that she would repair it today."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Aktarımda zaman geriye gider:"
+      },
+      {
+       "lang": "en",
+       "text": "She said that she would fix it today."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kontrol. Şu cümle doğru mu?"
+     },
+     {
+      "lang": "en",
+      "text": "He said he will come on Monday."
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "He said he will come on Monday.",
+     "answer": false,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Yanlış. Aktarımda zaman bir basamak geriye gider:"
+      },
+      {
+       "lang": "en",
+       "text": "He said he would come on Monday."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Duvardaki neme"
+     },
+     {
+      "lang": "en",
+      "text": "damp"
+     },
+     {
+      "lang": "tr",
+      "text": "şikâyet etmeye ise"
+     },
+     {
+      "lang": "en",
+      "text": "complain"
+     },
+     {
+      "lang": "tr",
+      "text": "denir. İkincisinden sonra"
+     },
+     {
+      "lang": "en",
+      "text": "about"
+     },
+     {
+      "lang": "tr",
+      "text": "gelir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "I complained about the damp in the bedroom."
+     },
+     {
+      "lang": "tr",
+      "text": "Yatak odasındaki rutubetten şikâyet ettim."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "I complained about the damp in the bedroom."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İkinci kalıbımız yönergeyi aktarıyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "She told me to wait for the plumber."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "She told me to wait for the plumber."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sen kur: Bana bir fotoğraf göndermemi söyledi."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "He told me to send a photo.",
+     "accept": [
+      "He told me to send him a photo.",
+      "He told me to send a picture."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Yönerge aktarımı mastarla kurulur:"
+      },
+      {
+       "lang": "en",
+       "text": "He told me to send a photo."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İşin sarkmasına"
+     },
+     {
+      "lang": "en",
+      "text": "delay"
+     },
+     {
+      "lang": "tr",
+      "text": "denir ve bu kelime hem isim hem fiildir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "There was a delay, so nobody could fix it."
+     },
+     {
+      "lang": "tr",
+      "text": "Bir gecikme oldu, o yüzden kimse tamir edemedi."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "There was a delay, so nobody could fix it."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son kalıbımız soruyu aktarıyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "He asked if the boiler was old."
+     },
+     {
+      "lang": "tr",
+      "text": "Kombinin eski olup olmadığını sordu."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "He asked if the boiler was old."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir tane daha: Kaçağın hâlâ olup olmadığını sordu."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "She asked if the leak was still there.",
+     "accept": [
+      "She asked whether the leak was still there.",
+      "She asked if the leak was there."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Aktarılan soruda soru sırası kurulmaz:"
+      },
+      {
+       "lang": "en",
+       "text": "She asked if the leak was still there."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Özetleyelim: söz"
+     },
+     {
+      "lang": "en",
+      "text": "said that"
+     },
+     {
+      "lang": "tr",
+      "text": "yönerge"
+     },
+     {
+      "lang": "en",
+      "text": "told me to"
+     },
+     {
+      "lang": "tr",
+      "text": "soru"
+     },
+     {
+      "lang": "en",
+      "text": "asked if"
+     },
+     {
+      "lang": "tr",
+      "text": "Şimdi ev sahibini arayıp ustanın ne dediğini aktaracaksın."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Kombi bozuldu ve usta geldi gitti. Ev sahibini arayıp ustanın ne söylediğini, ne zaman geleceğini ve senden ne istediğini aktar.",
+   "partner": "durumu telefondan anlamaya çalışan ev sahibin",
+   "opening": "Hello, you called about the boiler. What did the plumber say?",
+   "openingTr": "Merhaba, kombi için aramıştın. Tesisatçı ne dedi?",
+   "goal": "Ustanın söylediğini, verdiği yönergeyi ve sorduğu soruyu aktardıysan ve bir tarih üzerinde anlaştıysan konuşma başarılı sayılır.",
+   "minTurns": 8
+  }
+ },
+ {
+  "id": "en-b1-bills",
+  "level": "B1",
+  "course": "en",
+  "icon": "money",
+  "title": "The bills",
+  "titleTr": "Faturalar",
+  "summary": "Fatura konuşmasını koşul cümleleriyle kurmayı öğretir: ne olursa ne değişir.",
+  "minutes": 10,
+  "focusId": "Second conditional",
+  "vocab": [
+   {
+    "de": "electricity",
+    "tr": "elektrik"
+   },
+   {
+    "de": "gas",
+    "tr": "doğal gaz"
+   },
+   {
+    "de": "heating",
+    "tr": "ısıtma"
+   },
+   {
+    "de": "usage",
+    "tr": "tüketim"
+   },
+   {
+    "de": "reading",
+    "tr": "sayaç okuması"
+   },
+   {
+    "de": "waste",
+    "tr": "boşa harcamak"
+   },
+   {
+    "de": "save",
+    "tr": "tasarruf etmek"
+   },
+   {
+    "de": "provider",
+    "tr": "tedarikçi"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "If we used less heating, the bill would be lower.",
+    "tr": "gerçek olmayan bir durumu ve sonucunu anlatır"
+   },
+   {
+    "de": "If the bill comes tomorrow, I will pay it.",
+    "tr": "gerçekleşmesi mümkün bir koşulu anlatır"
+   },
+   {
+    "de": "Could we change the provider?",
+    "tr": "kibarca bir öneri getirir"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Bugün faturaları konuşmayı öğreneceğiz: elektrik, gaz, ısıtma ve tüketim."
+     },
+     {
+      "lang": "tr",
+      "text": "Fatura konuşması hep aynı cümleye dayanır: 'şunu yapsak şu olurdu'. Bu cümlenin İngilizcede iki ayrı biçimi var. Hazır mısın?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "electricity"
+     },
+     {
+      "lang": "tr",
+      "text": "Elektrik demek. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "The electricity bill came yesterday."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The electricity bill came yesterday."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Doğal gaz için"
+     },
+     {
+      "lang": "en",
+      "text": "gas"
+     },
+     {
+      "lang": "tr",
+      "text": "ısıtma için ise"
+     },
+     {
+      "lang": "en",
+      "text": "heating"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The gas and the heating are separate."
+     },
+     {
+      "lang": "tr",
+      "text": "Gaz ve ısıtma ayrı."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The gas and the heating are separate."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi dersin kuralı. Gerçekleşmesi MÜMKÜN bir koşulda"
+     },
+     {
+      "lang": "en",
+      "text": "if"
+     },
+     {
+      "lang": "tr",
+      "text": "ile geniş zaman ve"
+     },
+     {
+      "lang": "en",
+      "text": "will"
+     },
+     {
+      "lang": "tr",
+      "text": "gelir. Gerçek OLMAYAN, varsayılan bir durumda ise"
+     },
+     {
+      "lang": "en",
+      "text": "if"
+     },
+     {
+      "lang": "tr",
+      "text": "ile geçmiş ve"
+     },
+     {
+      "lang": "en",
+      "text": "would"
+     },
+     {
+      "lang": "tr",
+      "text": "kullanılır."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kalıbımız varsayımı anlatıyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "If we used less heating, the bill would be lower."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "If we used less heating, the bill would be lower."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sıra sende. Boşa harcamak için"
+     },
+     {
+      "lang": "en",
+      "text": "waste"
+     },
+     {
+      "lang": "tr",
+      "text": "tasarruf etmek için"
+     },
+     {
+      "lang": "en",
+      "text": "save"
+     },
+     {
+      "lang": "tr",
+      "text": "deriz. Şunu kur: Daha az boşa harcasak para biriktirirdik."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "If we wasted less, we would save money.",
+     "accept": [
+      "If we wasted less, we would save more money.",
+      "If we wasted less, we could save money."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Varsayım, o yüzden geçmiş biçim ve would:"
+      },
+      {
+       "lang": "en",
+       "text": "If we wasted less, we would save money."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kontrol. Şu cümle doğru mu?"
+     },
+     {
+      "lang": "en",
+      "text": "If we would use less, the bill would be lower."
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "If we would use less, the bill would be lower.",
+     "answer": false,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Yanlış. Koşul cümlesinin içinde"
+      },
+      {
+       "lang": "en",
+       "text": "would"
+      },
+      {
+       "lang": "tr",
+       "text": "durmaz; orası geçmiş biçimi alır:"
+      },
+      {
+       "lang": "en",
+       "text": "If we used less, the bill would be lower."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Ne kadar harcadığına"
+     },
+     {
+      "lang": "en",
+      "text": "usage"
+     },
+     {
+      "lang": "tr",
+      "text": "sayaçtan aldığın sayıya ise"
+     },
+     {
+      "lang": "en",
+      "text": "reading"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The reading shows our usage, so we can save and waste less."
+     },
+     {
+      "lang": "tr",
+      "text": "Okuma tüketimimizi gösteriyor, böylece tasarruf edip daha az boşa harcayabiliriz."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The reading shows our usage, so we can save and waste less."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İkinci kalıbımız mümkün olanı anlatıyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "If the bill comes tomorrow, I will pay it."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "If the bill comes tomorrow, I will pay it."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sen kur: Okuma yanlışsa onları ararım."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "If the reading is wrong, I will call them.",
+     "accept": [
+      "If the reading is wrong, I'll call them.",
+      "If the reading is wrong, I will phone them."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Mümkün bir koşul, o yüzden geniş zaman ve will:"
+      },
+      {
+       "lang": "en",
+       "text": "If the reading is wrong, I will call them."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Elektriği ya da gazı satan şirkete"
+     },
+     {
+      "lang": "en",
+      "text": "provider"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son kalıbımız kibar bir öneri. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "Could we change the provider?"
+     },
+     {
+      "lang": "tr",
+      "text": "Tedarikçiyi değiştirebilir miyiz?"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Could we change the provider?"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir tane daha: Sayacı birlikte kontrol edebilir miyiz?"
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "Could we check the meter together?",
+     "accept": [
+      "Could we look at the meter together?",
+      "Could we check the meter together, please?"
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Kibar öneri kalıbı:"
+      },
+      {
+       "lang": "en",
+       "text": "Could we check the meter together?"
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Özetleyelim: mümkün koşul"
+     },
+     {
+      "lang": "en",
+      "text": "if + present, will"
+     },
+     {
+      "lang": "tr",
+      "text": "varsayım"
+     },
+     {
+      "lang": "en",
+      "text": "if + past, would"
+     },
+     {
+      "lang": "tr",
+      "text": "Şimdi ev arkadaşınla fatura konuşacaksın."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Fatura beklenenden yüksek geldi ve ev arkadaşınla ne yapacağınızı konuşuyorsunuz. Tüketimi karşılaştır, tasarruf önerileri getir ve tedarikçiyi değiştirmeyi tartış.",
+   "partner": "faturayı yüksek bulan ama üşümek de istemeyen ev arkadaşın",
+   "opening": "Have you seen the gas bill? What should we do?",
+   "openingTr": "Gaz faturasını gördün mü? Ne yapsak?",
+   "goal": "Bir varsayım cümlesi, bir mümkün koşul cümlesi kurduysan ve somut bir tasarruf önerisi getirdiysen konuşma başarılı sayılır.",
+   "minTurns": 7
+  }
+ },
+ {
+  "id": "en-b1-noise",
+  "level": "B1",
+  "course": "en",
+  "icon": "feelings",
+  "title": "The noise problem",
+  "titleTr": "Gürültü sorunu",
+  "summary": "Şikâyeti köprü atmadan söylemeyi öğretir: çekince bağlaçları cümlenin tonunu tutar.",
+  "minutes": 10,
+  "focusId": "Linking words",
+  "vocab": [
+   {
+    "de": "neighbour",
+    "tr": "komşu"
+   },
+   {
+    "de": "noise",
+    "tr": "gürültü"
+   },
+   {
+    "de": "calm",
+    "tr": "sakin"
+   },
+   {
+    "de": "wall",
+    "tr": "duvar"
+   },
+   {
+    "de": "disturb",
+    "tr": "rahatsız etmek"
+   },
+   {
+    "de": "apologise",
+    "tr": "özür dilemek"
+   },
+   {
+    "de": "downstairs",
+    "tr": "alt kat"
+   },
+   {
+    "de": "ignore",
+    "tr": "görmezden gelmek"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "Although I asked twice, the noise continued.",
+    "tr": "çekinceyi cümleyle bağlar"
+   },
+   {
+    "de": "The walls are thin. However, we can talk about it.",
+    "tr": "iki cümleyi karşıtlıkla bağlar"
+   },
+   {
+    "de": "Despite the noise, I stayed calm.",
+    "tr": "çekinceyi isimle bağlar"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Bugün gürültü sorununu konuşmayı öğreneceğiz: komşu, duvarlar, geceleri gelen sesler."
+     },
+     {
+      "lang": "tr",
+      "text": "Bu konuşmanın zor yanı dilbilgisi değil ton: şikâyet ederken kapıyı kapatmamak. O işi bağlaçlar yapıyor. Hazır mısın?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "neighbour"
+     },
+     {
+      "lang": "tr",
+      "text": "Komşu demek; Britanya yazımı sonunda u taşır. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "My neighbour plays music at night."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "My neighbour plays music at night."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Sesin kendisine"
+     },
+     {
+      "lang": "en",
+      "text": "noise"
+     },
+     {
+      "lang": "tr",
+      "text": "sakin olana ise"
+     },
+     {
+      "lang": "en",
+      "text": "calm"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The noise stopped and the house was calm."
+     },
+     {
+      "lang": "tr",
+      "text": "Gürültü kesildi ve ev sakinleşti."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The noise stopped and the house was calm."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi dersin kuralı. Üç bağlaç aynı çekinceyi kuruyor ama ardına farklı şey alıyor:"
+     },
+     {
+      "lang": "en",
+      "text": "although"
+     },
+     {
+      "lang": "tr",
+      "text": "bir CÜMLE alır,"
+     },
+     {
+      "lang": "en",
+      "text": "despite"
+     },
+     {
+      "lang": "tr",
+      "text": "bir İSİM alır,"
+     },
+     {
+      "lang": "en",
+      "text": "however"
+     },
+     {
+      "lang": "tr",
+      "text": "iki ayrı cümleyi bağlar ve noktadan sonra gelir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kalıbımız. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "Although I asked twice, the noise continued."
+     },
+     {
+      "lang": "tr",
+      "text": "İki kez rica etmeme rağmen gürültü devam etti."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Although I asked twice, the noise continued."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sıra sende. Duvar için"
+     },
+     {
+      "lang": "en",
+      "text": "wall"
+     },
+     {
+      "lang": "tr",
+      "text": "deriz. Şunu kur: Duvarlar ince olmasına rağmen iyi uyuyorum."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "Although the walls are thin, I sleep well.",
+     "accept": [
+      "Although the walls are thin, I sleep quite well.",
+      "Although the wall is thin, I sleep well."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Bu bağlaçtan sonra tam bir cümle gelir:"
+      },
+      {
+       "lang": "en",
+       "text": "Although the walls are thin, I sleep well."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kontrol. Şu cümle doğru mu?"
+     },
+     {
+      "lang": "en",
+      "text": "Despite the noise, I stayed calm."
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "Despite the noise, I stayed calm.",
+     "answer": true,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Doğru. Bu bağlaç isim alıyor ve burada ardından gelen bir isim; cümle gelseydi başka bağlaç gerekirdi."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Birini rahatsız etmek"
+     },
+     {
+      "lang": "en",
+      "text": "disturb"
+     },
+     {
+      "lang": "tr",
+      "text": "özür dilemek ise"
+     },
+     {
+      "lang": "en",
+      "text": "apologise"
+     },
+     {
+      "lang": "tr",
+      "text": "ile söylenir. İkincisinin Amerikan yazımı z ile olur."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "He apologised for disturbing us so late."
+     },
+     {
+      "lang": "tr",
+      "text": "Bu kadar geç rahatsız ettiği için özür diledi."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "He apologised for disturbing us so late."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İkinci kalıbımız iki cümleyi bağlıyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "The walls are thin. However, we can talk about it."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The walls are thin. However, we can talk about it."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sen kur: Daire gürültülü. Ancak komşular iyi."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "The flat is noisy. However, the neighbours are kind.",
+     "accept": [
+      "The flat is noisy. However, the neighbours are nice.",
+      "The flat is noisy. However, my neighbours are kind."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Bu bağlaç noktadan sonra gelir ve virgül alır:"
+      },
+      {
+       "lang": "en",
+       "text": "The flat is noisy. However, the neighbours are kind."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Alt kat için"
+     },
+     {
+      "lang": "en",
+      "text": "downstairs"
+     },
+     {
+      "lang": "tr",
+      "text": "bir şeyi görmezden gelmek için ise"
+     },
+     {
+      "lang": "en",
+      "text": "ignore"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The people downstairs ignore the rules."
+     },
+     {
+      "lang": "tr",
+      "text": "Alt kattakiler kuralları görmezden geliyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The people downstairs ignore the rules."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son kalıbımız isim alıyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "Despite the noise, I stayed calm."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Despite the noise, I stayed calm."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir tane daha: Geç saate rağmen kibarca kapıyı çaldım."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "Despite the late hour, I knocked politely.",
+     "accept": [
+      "Despite the late hour, I knocked quietly.",
+      "Despite the time, I knocked politely."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Bu bağlaçtan sonra isim gelir:"
+      },
+      {
+       "lang": "en",
+       "text": "Despite the late hour, I knocked politely."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Özetleyelim: cümle alan"
+     },
+     {
+      "lang": "en",
+      "text": "although"
+     },
+     {
+      "lang": "tr",
+      "text": "isim alan"
+     },
+     {
+      "lang": "en",
+      "text": "despite"
+     },
+     {
+      "lang": "tr",
+      "text": "iki cümleyi bağlayan"
+     },
+     {
+      "lang": "en",
+      "text": "however"
+     },
+     {
+      "lang": "tr",
+      "text": "Şimdi üst komşunun kapısını çalacaksın."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Üst komşun geceleri çok gürültü yapıyor ve kapısını çaldın. Rahatsızlığını suçlamadan anlat, çekince bağlaçlarıyla yumuşat ve bir çözüm öner.",
+   "partner": "gürültü yaptığını fark etmemiş, savunmaya geçen üst komşun",
+   "opening": "Oh, hello. Is something wrong?",
+   "openingTr": "Aa, merhaba. Bir sorun mu var?",
+   "goal": "Rahatsızlığını en az iki çekince bağlacıyla anlattıysan, suçlamadan söylediysen ve bir çözüm önerdiysen konuşma başarılı sayılır.",
+   "minTurns": 7
+  }
+ },
+ {
+  "id": "en-b1-moving-out",
+  "level": "B1",
+  "course": "en",
+  "icon": "suitcase",
+  "title": "Moving out",
+  "titleTr": "Evden çıkmak",
+  "summary": "Çıkış kontrolünden önce neyi bitirmiş olduğunu anlatmayı öğretir.",
+  "minutes": 10,
+  "focusId": "Past perfect",
+  "vocab": [
+   {
+    "de": "inspection",
+    "tr": "çıkış kontrolü"
+   },
+   {
+    "de": "damage",
+    "tr": "hasar"
+   },
+   {
+    "de": "refund",
+    "tr": "geri ödeme"
+   },
+   {
+    "de": "empty",
+    "tr": "boş"
+   },
+   {
+    "de": "final",
+    "tr": "son"
+   },
+   {
+    "de": "key",
+    "tr": "anahtar"
+   },
+   {
+    "de": "charge",
+    "tr": "ücret kesmek"
+   },
+   {
+    "de": "return",
+    "tr": "geri vermek"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "I had cleaned everything before they arrived.",
+    "tr": "iki geçmiş olaydan önce olanı geriye alır"
+   },
+   {
+    "de": "They returned the deposit in full.",
+    "tr": "sonra olan olayı normal geçmişte anlatır"
+   },
+   {
+    "de": "What had you done before the inspection?",
+    "tr": "bir olaydan önce ne yapıldığını sorar"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Bugün evden çıkmayı öğreneceğiz: çıkış kontrolü, hasar, depozitonun geri ödenmesi."
+     },
+     {
+      "lang": "tr",
+      "text": "Bu konuşmanın tamamı sıralamaya dayanıyor: kontrolden ÖNCE neyi bitirmiştin. Hazır mısın?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "inspection"
+     },
+     {
+      "lang": "tr",
+      "text": "Çıkış kontrolü demek. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "The inspection is on Friday morning."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The inspection is on Friday morning."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Eve verilen zarara"
+     },
+     {
+      "lang": "en",
+      "text": "damage"
+     },
+     {
+      "lang": "tr",
+      "text": "paranın geri ödenmesine ise"
+     },
+     {
+      "lang": "en",
+      "text": "refund"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "There was no damage, so I got a refund."
+     },
+     {
+      "lang": "tr",
+      "text": "Hasar yoktu, o yüzden geri ödeme aldım."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "There was no damage, so I got a refund."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi dersin kuralı. İki geçmiş olay varsa ve biri ötekinden ÖNCE olduysa, önce olan"
+     },
+     {
+      "lang": "en",
+      "text": "had"
+     },
+     {
+      "lang": "tr",
+      "text": "artı fiilin üçüncü hâliyle geriye alınır. Sonra olan normal geçmişte kalır."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kalıbımız. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "I had cleaned everything before they arrived."
+     },
+     {
+      "lang": "tr",
+      "text": "Onlar gelmeden önce her yeri temizlemiştim."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "I had cleaned everything before they arrived."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sıra sende. Boş için"
+     },
+     {
+      "lang": "en",
+      "text": "empty"
+     },
+     {
+      "lang": "tr",
+      "text": "deriz. Şunu kur: Kontrolden önce daireyi boşaltmıştım."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "I had emptied the flat before the inspection.",
+     "accept": [
+      "I had emptied the flat before the inspection started.",
+      "I had emptied the flat before they came."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Önce olan olay geriye gidiyor:"
+      },
+      {
+       "lang": "en",
+       "text": "I had emptied the flat before the inspection."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kontrol. Şu cümle doğru mu?"
+     },
+     {
+      "lang": "en",
+      "text": "I had cleaned everything and then they had arrived."
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "I had cleaned everything and then they had arrived.",
+     "answer": false,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Yanlış. İki olaydan yalnız ÖNCE olanı geriye alınır; sonra olan normal geçmişte kalır:"
+      },
+      {
+       "lang": "en",
+       "text": "I had cleaned everything and then they arrived."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son ölçüm için"
+     },
+     {
+      "lang": "en",
+      "text": "final"
+     },
+     {
+      "lang": "tr",
+      "text": "anahtar için ise"
+     },
+     {
+      "lang": "en",
+      "text": "key"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "I left the flat empty and gave the final key back."
+     },
+     {
+      "lang": "tr",
+      "text": "Daireyi boş bıraktım ve son anahtarı geri verdim."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "I left the flat empty and gave the final key back."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İkinci kalıbımız sonra olanı anlatıyor. Geri vermek için"
+     },
+     {
+      "lang": "en",
+      "text": "return"
+     },
+     {
+      "lang": "tr",
+      "text": "deriz. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "They returned the deposit in full."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "They returned the deposit in full."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sen kur. Ücret kesmek için"
+     },
+     {
+      "lang": "en",
+      "text": "charge"
+     },
+     {
+      "lang": "tr",
+      "text": "deriz. Şunu kur: Kırık pencere için benden ücret kestiler."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "They charged me for the broken window.",
+     "accept": [
+      "They charged me for the window.",
+      "They charged me for the broken glass."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Sonra olan olay normal geçmişte kalır:"
+      },
+      {
+       "lang": "en",
+       "text": "They charged me for the broken window."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şu cümle üçünü birden bağlıyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "They can charge you if there is damage."
+     },
+     {
+      "lang": "tr",
+      "text": "Hasar varsa senden ücret kesebilirler."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "They can charge you if there is damage."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son kalıbımız bir soru. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "What had you done before the inspection?"
+     },
+     {
+      "lang": "tr",
+      "text": "Kontrolden önce ne yapmıştın?"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "What had you done before the inspection?"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir tane daha: Onlar gelmeden önce neyi temizlemiştin?"
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "What had you cleaned before they came?",
+     "accept": [
+      "What had you cleaned before they arrived?",
+      "What had you tidied before they came?"
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Soru da geriye alınmış zamanla kurulur:"
+      },
+      {
+       "lang": "en",
+       "text": "What had you cleaned before they came?"
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Özetleyelim: önce olan"
+     },
+     {
+      "lang": "en",
+      "text": "had cleaned"
+     },
+     {
+      "lang": "tr",
+      "text": "sonra olan"
+     },
+     {
+      "lang": "en",
+      "text": "they arrived"
+     },
+     {
+      "lang": "tr",
+      "text": "Şimdi çıkış kontrolündesin ve ev sahibi karşında."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Çıkış kontrolü yapılıyor ve ev sahibi daireyi geziyor. Kontrolden önce neleri yaptığını sırayla anlat, bir hasar iddiasına cevap ver ve depozitoyu iste.",
+   "partner": "her odayı tek tek bakan, titiz bir ev sahibi",
+   "opening": "Right, let's start in the kitchen. Had you cleaned in here?",
+   "openingTr": "Tamam, mutfaktan başlayalım. Burayı temizlemiş miydin?",
+   "goal": "Kontrolden önce yaptıklarını doğru sırayla anlattıysan, bir iddiaya cevap verdiysen ve depozitoyu istediysen konuşma başarılı sayılır.",
+   "minTurns": 8
+  }
+ },
+ {
+  "id": "en-b1-neighbourhood",
+  "level": "B1",
+  "course": "en",
+  "icon": "city",
+  "title": "The neighbourhood",
+  "titleTr": "Mahalle",
+  "summary": "Oturduğun yeri anlatmayı öğretir; fiilden sonra -ing mi to mu geldiğini seçtirir.",
+  "minutes": 10,
+  "focusId": "Gerund or infinitive",
+  "vocab": [
+   {
+    "de": "area",
+    "tr": "bölge"
+   },
+   {
+    "de": "shop",
+    "tr": "dükkân"
+   },
+   {
+    "de": "safe",
+    "tr": "güvenli"
+   },
+   {
+    "de": "local",
+    "tr": "yerel"
+   },
+   {
+    "de": "community",
+    "tr": "topluluk"
+   },
+   {
+    "de": "walk",
+    "tr": "yürümek"
+   },
+   {
+    "de": "green",
+    "tr": "yeşil"
+   },
+   {
+    "de": "noisy",
+    "tr": "gürültülü"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "I enjoy living in this area.",
+    "tr": "hoşlanılan şeyi -ing ile söyler"
+   },
+   {
+    "de": "I decided to stay another year.",
+    "tr": "alınan kararı to ile söyler"
+   },
+   {
+    "de": "It is worth walking to the park.",
+    "tr": "bir şeyin değdiğini söyler"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Bu modülün son dersi: oturduğun mahalleyi anlatmak. Dükkânlar, parklar, komşuluk."
+     },
+     {
+      "lang": "tr",
+      "text": "Burada küçük bir tuzak var: bazı fiillerden sonra -ing, bazılarından sonra to geliyor ve karıştırmak kolay. Hazır mısın?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimelerimiz:"
+     },
+     {
+      "lang": "en",
+      "text": "area"
+     },
+     {
+      "lang": "tr",
+      "text": "bölge,"
+     },
+     {
+      "lang": "en",
+      "text": "green"
+     },
+     {
+      "lang": "tr",
+      "text": "yeşil. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "This area is quiet and green."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "This area is quiet and green."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Dükkân için"
+     },
+     {
+      "lang": "en",
+      "text": "shop"
+     },
+     {
+      "lang": "tr",
+      "text": "güvenli için ise"
+     },
+     {
+      "lang": "en",
+      "text": "safe"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The shops are close and the streets are safe."
+     },
+     {
+      "lang": "tr",
+      "text": "Dükkânlar yakın ve sokaklar güvenli."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The shops are close and the streets are safe."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi dersin kuralı. Bazı fiiller kendinden sonra -ing ister:"
+     },
+     {
+      "lang": "en",
+      "text": "enjoy, avoid, mind"
+     },
+     {
+      "lang": "tr",
+      "text": "Bazıları to ister:"
+     },
+     {
+      "lang": "en",
+      "text": "decide, want, hope, plan"
+     },
+     {
+      "lang": "tr",
+      "text": "Bir de üçüncü bir kalıp var:"
+     },
+     {
+      "lang": "en",
+      "text": "It is worth"
+     },
+     {
+      "lang": "tr",
+      "text": "ve ondan sonra hep -ing gelir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kalıbımız -ing ile. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "I enjoy living in this area."
+     },
+     {
+      "lang": "tr",
+      "text": "Bu bölgede yaşamaktan hoşlanıyorum."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "I enjoy living in this area."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sıra sende. Yürümek için"
+     },
+     {
+      "lang": "en",
+      "text": "walk"
+     },
+     {
+      "lang": "tr",
+      "text": "deriz. Şunu kur: Pazara yürümekten hoşlanıyorum."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "I enjoy walking to the market.",
+     "accept": [
+      "I enjoy walking to the shops.",
+      "I like walking to the market."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Bu fiilden sonra -ing gelir:"
+      },
+      {
+       "lang": "en",
+       "text": "I enjoy walking to the market."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kontrol. Şu cümle doğru mu?"
+     },
+     {
+      "lang": "en",
+      "text": "I decided staying another year."
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "I decided staying another year.",
+     "answer": false,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Yanlış. Bu fiil to ister:"
+      },
+      {
+       "lang": "en",
+       "text": "I decided to stay another year."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Mahalledeki insanların oluşturduğu bütüne"
+     },
+     {
+      "lang": "en",
+      "text": "community"
+     },
+     {
+      "lang": "tr",
+      "text": "buraya ait olan şeye ise"
+     },
+     {
+      "lang": "en",
+      "text": "local"
+     },
+     {
+      "lang": "tr",
+      "text": "denir. İkincisi 'yakındaki' anlamında da kullanılır."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The local community is friendly."
+     },
+     {
+      "lang": "tr",
+      "text": "Yerel topluluk cana yakın."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The local community is friendly."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İkinci kalıbımız to ile. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "I decided to stay another year."
+     },
+     {
+      "lang": "tr",
+      "text": "Bir yıl daha kalmaya karar verdim."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "I decided to stay another year."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sen kur: Burada daha büyük bir daire bulmayı umuyorum."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "I hope to find a bigger flat here.",
+     "accept": [
+      "I hope to find a bigger place here.",
+      "I hope to find a larger flat here."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Bu fiil de to ister:"
+      },
+      {
+       "lang": "en",
+       "text": "I hope to find a bigger flat here."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Gürültülü için"
+     },
+     {
+      "lang": "en",
+      "text": "noisy"
+     },
+     {
+      "lang": "tr",
+      "text": "deriz; bir önceki dersteki 'noise' isimdi, bu ise sıfat."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The main street is noisy but the back streets are quiet."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The main street is noisy but the back streets are quiet."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son kalıbımız. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "It is worth walking to the park."
+     },
+     {
+      "lang": "tr",
+      "text": "Parka kadar yürümeye değer."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "It is worth walking to the park."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir tane daha: Yerel pazarı gezmeye değer."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "It is worth visiting the local market.",
+     "accept": [
+      "It's worth visiting the local market.",
+      "It is worth going to the local market."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Bu kalıptan sonra hep -ing gelir:"
+      },
+      {
+       "lang": "en",
+       "text": "It is worth visiting the local market."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Özetleyelim: enjoy, avoid, mind sonrası -ing; decide, want, hope, plan sonrası to; worth sonrası hep -ing."
+     },
+     {
+      "lang": "tr",
+      "text": "Şimdi mahalleye yeni taşınan birine buraları anlatacaksın."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Mahalleye yeni taşınan biri sana burayı soruyor. Nerede ne olduğunu anlat, neyin değdiğini söyle ve neden burada kaldığını açıkla.",
+   "partner": "mahalleye yeni taşınmış, her şeyi merak eden biri",
+   "opening": "We just moved in. Is it a good area to live in?",
+   "openingTr": "Yeni taşındık. Burası yaşamak için iyi bir yer mi?",
+   "goal": "Mahallenin iki özelliğini, neyin değdiğini ve burada kalma kararını doğru kalıplarla anlattıysan konuşma başarılı sayılır.",
+   "minTurns": 7
+  }
  }
 ]

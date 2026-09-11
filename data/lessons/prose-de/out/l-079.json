@@ -1,0 +1,907 @@
+[
+ {
+  "tr": "Mahalle",
+  "kind": "titleTr",
+  "de": "Das Viertel"
+ },
+ {
+  "tr": "Tamirat",
+  "kind": "titleTr",
+  "de": "Reparatur im Haus"
+ },
+ {
+  "tr": "Faturalar",
+  "kind": "titleTr",
+  "de": "Die Rechnungen"
+ },
+ {
+  "tr": "Evden çıkmak",
+  "kind": "titleTr",
+  "de": "Der Auszug"
+ },
+ {
+  "tr": "Gürültü sorunu",
+  "kind": "titleTr",
+  "de": "Ärger mit dem Lärm"
+ },
+ {
+  "tr": "Çıkış kontrolünden önce neyi bitirmiş olduğunu anlatmayı öğretir.",
+  "kind": "summary",
+  "de": "Vermittelt, wie man erzählt, was man vor der Abnahme schon erledigt hatte."
+ },
+ {
+  "tr": "Fatura konuşmasını koşul cümleleriyle kurmayı öğretir: ne olursa ne değişir.",
+  "kind": "summary",
+  "de": "Vermittelt, wie man das Gespräch über Rechnungen mit Bedingungssätzen führt: was sich ändert, wenn etwas passiert."
+ },
+ {
+  "tr": "Oturduğun yeri anlatmayı öğretir; fiilden sonra -ing mi to mu geldiğini seçtirir.",
+  "kind": "summary",
+  "de": "Vermittelt, wie man seinen Wohnort beschreibt, und lässt wählen, ob nach dem Verb -ing oder to steht."
+ },
+ {
+  "tr": "Şikâyeti köprü atmadan söylemeyi öğretir: çekince bağlaçları cümlenin tonunu tutar.",
+  "kind": "summary",
+  "de": "Vermittelt, wie man sich beschwert, ohne Brücken abzubrechen: die Konnektoren halten den Ton des Satzes."
+ },
+ {
+  "tr": "Ev sahibiyle usta arasındaki mesajı aktarmayı öğretir: kim ne söyledi, ne zaman gelecekmiş.",
+  "kind": "summary",
+  "de": "Vermittelt, wie man zwischen Vermieter und Handwerker vermittelt: wer was gesagt hat und wann er kommen will."
+ },
+ {
+  "tr": "her odayı tek tek bakan, titiz bir ev sahibi",
+  "kind": "partner",
+  "de": "ein genauer Vermieter, der jedes Zimmer einzeln ansieht"
+ },
+ {
+  "tr": "durumu telefondan anlamaya çalışan ev sahibin",
+  "kind": "partner",
+  "de": "dein Vermieter, der die Lage am Telefon verstehen will"
+ },
+ {
+  "tr": "mahalleye yeni taşınmış, her şeyi merak eden biri",
+  "kind": "partner",
+  "de": "jemand, der neu ins Viertel gezogen ist und alles wissen will"
+ },
+ {
+  "tr": "faturayı yüksek bulan ama üşümek de istemeyen ev arkadaşın",
+  "kind": "partner",
+  "de": "dein Mitbewohner, der die Rechnung hoch findet, aber auch nicht frieren will"
+ },
+ {
+  "tr": "gürültü yaptığını fark etmemiş, savunmaya geçen üst komşun",
+  "kind": "partner",
+  "de": "dein Nachbar von oben, der den Lärm nicht bemerkt hat und sich verteidigt"
+ },
+ {
+  "tr": "Aa, merhaba. Bir sorun mu var?",
+  "kind": "openingTr",
+  "de": "Oh, hallo. Stimmt etwas nicht?"
+ },
+ {
+  "tr": "Gaz faturasını gördün mü? Ne yapsak?",
+  "kind": "openingTr",
+  "de": "Hast du die Gasrechnung gesehen? Was machen wir?"
+ },
+ {
+  "tr": "Merhaba, kombi için aramıştın. Tesisatçı ne dedi?",
+  "kind": "openingTr",
+  "de": "Hallo, du hattest wegen der Therme angerufen. Was hat der Installateur gesagt?"
+ },
+ {
+  "tr": "Yeni taşındık. Burası yaşamak için iyi bir yer mi?",
+  "kind": "openingTr",
+  "de": "Wir sind gerade eingezogen. Ist das hier eine gute Gegend zum Wohnen?"
+ },
+ {
+  "tr": "Tamam, mutfaktan başlayalım. Burayı temizlemiş miydin?",
+  "kind": "openingTr",
+  "de": "Gut, fangen wir in der Küche an. Hattest du hier geputzt?"
+ },
+ {
+  "tr": "Kombi bozuldu ve usta geldi gitti. Ev sahibini arayıp ustanın ne söylediğini, ne zaman geleceğini ve senden ne istediğini aktar.",
+  "kind": "scene",
+  "de": "Die Therme ist kaputt und der Installateur war da. Ruf den Vermieter an und gib weiter, was der Installateur gesagt hat, wann er kommt und was er von dir will."
+ },
+ {
+  "tr": "Mahalleye yeni taşınan biri sana burayı soruyor. Nerede ne olduğunu anlat, neyin değdiğini söyle ve neden burada kaldığını açıkla.",
+  "kind": "scene",
+  "de": "Jemand, der neu ins Viertel gezogen ist, fragt dich danach. Erzähl, wo was ist, sag, was sich lohnt, und erklär, warum du hier bleibst."
+ },
+ {
+  "tr": "Üst komşun geceleri çok gürültü yapıyor ve kapısını çaldın. Rahatsızlığını suçlamadan anlat, çekince bağlaçlarıyla yumuşat ve bir çözüm öner.",
+  "kind": "scene",
+  "de": "Dein Nachbar von oben macht nachts viel Lärm und du hast geklingelt. Sag, was dich stört, ohne ihn anzuklagen, mach es mit Konnektoren weicher und schlag eine Lösung vor."
+ },
+ {
+  "tr": "Çıkış kontrolü yapılıyor ve ev sahibi daireyi geziyor. Kontrolden önce neleri yaptığını sırayla anlat, bir hasar iddiasına cevap ver ve depozitoyu iste.",
+  "kind": "scene",
+  "de": "Die Abnahme läuft und der Vermieter geht durch die Wohnung. Erzähl der Reihe nach, was du vor der Abnahme erledigt hattest, antworte auf einen Vorwurf wegen eines Schadens und bitte um die Kaution."
+ },
+ {
+  "tr": "Fatura beklenenden yüksek geldi ve ev arkadaşınla ne yapacağınızı konuşuyorsunuz. Tüketimi karşılaştır, tasarruf önerileri getir ve tedarikçiyi değiştirmeyi tartış.",
+  "kind": "scene",
+  "de": "Die Rechnung ist höher als erwartet und du besprichst mit deinem Mitbewohner, was ihr tut. Vergleicht den Verbrauch, bring Sparvorschläge und diskutiert einen Wechsel des Anbieters."
+ },
+ {
+  "tr": "Mahallenin iki özelliğini, neyin değdiğini ve burada kalma kararını doğru kalıplarla anlattıysan konuşma başarılı sayılır.",
+  "kind": "goal",
+  "de": "Das Gespräch gilt als gelungen, wenn du zwei Merkmale des Viertels, etwas, das sich lohnt, und deine Entscheidung zu bleiben mit den richtigen Wendungen erzählt hast."
+ },
+ {
+  "tr": "Bir varsayım cümlesi, bir mümkün koşul cümlesi kurduysan ve somut bir tasarruf önerisi getirdiysen konuşma başarılı sayılır.",
+  "kind": "goal",
+  "de": "Das Gespräch gilt als gelungen, wenn du einen angenommenen und einen möglichen Bedingungssatz gebaut und einen konkreten Sparvorschlag gemacht hast."
+ },
+ {
+  "tr": "Ustanın söylediğini, verdiği yönergeyi ve sorduğu soruyu aktardıysan ve bir tarih üzerinde anlaştıysan konuşma başarılı sayılır.",
+  "kind": "goal",
+  "de": "Das Gespräch gilt als gelungen, wenn du die Aussage, die Anweisung und die Frage des Handwerkers weitergegeben und euch auf einen Termin geeinigt habt."
+ },
+ {
+  "tr": "Rahatsızlığını en az iki çekince bağlacıyla anlattıysan, suçlamadan söylediysen ve bir çözüm önerdiysen konuşma başarılı sayılır.",
+  "kind": "goal",
+  "de": "Das Gespräch gilt als gelungen, wenn du dein Problem mit mindestens zwei Konnektoren der Einschränkung geschildert, niemanden angeklagt und eine Lösung vorgeschlagen hast."
+ },
+ {
+  "tr": "Kontrolden önce yaptıklarını doğru sırayla anlattıysan, bir iddiaya cevap verdiysen ve depozitoyu istediysen konuşma başarılı sayılır.",
+  "kind": "goal",
+  "de": "Das Gespräch gilt als gelungen, wenn du in der richtigen Reihenfolge erzählt hast, was du vor der Abnahme gemacht hattest, auf einen Vorwurf geantwortet und die Kaution verlangt hast."
+ },
+ {
+  "tr": "boş",
+  "kind": "vocab.tr",
+  "de": "leer"
+ },
+ {
+  "tr": "bölge",
+  "kind": "vocab.tr",
+  "de": "Gegend"
+ },
+ {
+  "tr": "kombi",
+  "kind": "vocab.tr",
+  "de": "Therme"
+ },
+ {
+  "tr": "sakin",
+  "kind": "vocab.tr",
+  "de": "ruhig"
+ },
+ {
+  "tr": "yerel",
+  "kind": "vocab.tr",
+  "de": "örtlich"
+ },
+ {
+  "tr": "ısıtma",
+  "kind": "vocab.tr",
+  "de": "Heizung"
+ },
+ {
+  "tr": "alt kat",
+  "kind": "vocab.tr",
+  "de": "unten"
+ },
+ {
+  "tr": "rutubet",
+  "kind": "vocab.tr",
+  "de": "Feuchtigkeit"
+ },
+ {
+  "tr": "tüketim",
+  "kind": "vocab.tr",
+  "de": "Verbrauch"
+ },
+ {
+  "tr": "topluluk",
+  "kind": "vocab.tr",
+  "de": "Gemeinschaft"
+ },
+ {
+  "tr": "doğal gaz",
+  "kind": "vocab.tr",
+  "de": "Gas"
+ },
+ {
+  "tr": "su kaçağı",
+  "kind": "vocab.tr",
+  "de": "Leck"
+ },
+ {
+  "tr": "tedarikçi",
+  "kind": "vocab.tr",
+  "de": "Anbieter"
+ },
+ {
+  "tr": "tesisatçı",
+  "kind": "vocab.tr",
+  "de": "Installateur"
+ },
+ {
+  "tr": "geri ödeme",
+  "kind": "vocab.tr",
+  "de": "Rückzahlung"
+ },
+ {
+  "tr": "ücret kesmek",
+  "kind": "vocab.tr",
+  "de": "berechnen"
+ },
+ {
+  "tr": "boşa harcamak",
+  "kind": "vocab.tr",
+  "de": "verschwenden"
+ },
+ {
+  "tr": "sayaç okuması",
+  "kind": "vocab.tr",
+  "de": "Zählerstand"
+ },
+ {
+  "tr": "çıkış kontrolü",
+  "kind": "vocab.tr",
+  "de": "Abnahme"
+ },
+ {
+  "tr": "rahatsız etmek",
+  "kind": "vocab.tr",
+  "de": "stören"
+ },
+ {
+  "tr": "tasarruf etmek",
+  "kind": "vocab.tr",
+  "de": "sparen"
+ },
+ {
+  "tr": "görmezden gelmek",
+  "kind": "vocab.tr",
+  "de": "ignorieren"
+ },
+ {
+  "tr": "kibarca bir öneri getirir",
+  "kind": "pattern.tr",
+  "de": "macht einen höflichen Vorschlag"
+ },
+ {
+  "tr": "bir şeyin değdiğini söyler",
+  "kind": "pattern.tr",
+  "de": "sagt, dass sich etwas lohnt"
+ },
+ {
+  "tr": "hoşlanılan şeyi -ing ile söyler",
+  "kind": "pattern.tr",
+  "de": "nennt mit -ing, was man gern tut"
+ },
+ {
+  "tr": "bir olaydan önce ne yapıldığını sorar",
+  "kind": "pattern.tr",
+  "de": "fragt, was vor einem Ereignis gemacht wurde"
+ },
+ {
+  "tr": "sonra olan olayı normal geçmişte anlatır",
+  "kind": "pattern.tr",
+  "de": "erzählt das spätere Ereignis in der einfachen Vergangenheit"
+ },
+ {
+  "tr": "Yanlış. Aktarımda zaman bir basamak geriye gider:",
+  "kind": "why.tr",
+  "de": "Falsch. Bei der Wiedergabe rückt die Zeit eine Stufe zurück:"
+ },
+ {
+  "tr": "Doğru. Bu bağlaç isim alıyor ve burada ardından gelen bir isim; cümle gelseydi başka bağlaç gerekirdi.",
+  "kind": "why.tr",
+  "de": "Richtig. Dieser Konnektor nimmt ein Nomen, und hier folgt eines; käme ein Satz, bräuchte man einen anderen."
+ },
+ {
+  "tr": "Kibar öneri kalıbı:",
+  "kind": "hint.tr",
+  "de": "Die Wendung für einen höflichen Vorschlag:"
+ },
+ {
+  "tr": "Aktarımda zaman geriye gider:",
+  "kind": "hint.tr",
+  "de": "Bei der Wiedergabe rückt die Zeit zurück:"
+ },
+ {
+  "tr": "Bu kalıptan sonra hep -ing gelir:",
+  "kind": "hint.tr",
+  "de": "Nach dieser Wendung steht immer -ing:"
+ },
+ {
+  "tr": "Sonra olan olay normal geçmişte kalır:",
+  "kind": "hint.tr",
+  "de": "Das spätere Ereignis bleibt in der einfachen Vergangenheit:"
+ },
+ {
+  "tr": "bölge,",
+  "kind": "say.tr",
+  "de": "Gegend,"
+ },
+ {
+  "tr": "burada",
+  "kind": "say.tr",
+  "de": "hier"
+ },
+ {
+  "tr": "oluyor.",
+  "kind": "say.tr",
+  "de": "wird."
+ },
+ {
+  "tr": "yönerge",
+  "kind": "say.tr",
+  "de": "Anweisung"
+ },
+ {
+  "tr": "Bozuk için",
+  "kind": "say.tr",
+  "de": "Für kaputt sagen wir"
+ },
+ {
+  "tr": "sonra olan",
+  "kind": "say.tr",
+  "de": "das spätere"
+ },
+ {
+  "tr": "Dükkân için",
+  "kind": "say.tr",
+  "de": "Für den Laden sagen wir"
+ },
+ {
+  "tr": "Alt kat için",
+  "kind": "say.tr",
+  "de": "Für unten sagen wir"
+ },
+ {
+  "tr": "ile geçmiş ve",
+  "kind": "say.tr",
+  "de": "mit Vergangenheit und"
+ },
+ {
+  "tr": "Doğal gaz için",
+  "kind": "say.tr",
+  "de": "Für Gas sagen wir"
+ },
+ {
+  "tr": "Duvardaki neme",
+  "kind": "say.tr",
+  "de": "Die Feuchtigkeit an der Wand heißt"
+ },
+ {
+  "tr": "Gürültülü için",
+  "kind": "say.tr",
+  "de": "Für laut sagen wir"
+ },
+ {
+  "tr": "Son ölçüm için",
+  "kind": "say.tr",
+  "de": "Für die letzte Ablesung sagen wir"
+ },
+ {
+  "tr": "ısıtma için ise",
+  "kind": "say.tr",
+  "de": "und für die Heizung"
+ },
+ {
+  "tr": "İşin sarkmasına",
+  "kind": "say.tr",
+  "de": "Wenn sich etwas hinzieht, heißt das"
+ },
+ {
+  "tr": "sakin olana ise",
+  "kind": "say.tr",
+  "de": "und für ruhig"
+ },
+ {
+  "tr": "Sesin kendisine",
+  "kind": "say.tr",
+  "de": "Der Lärm selbst heißt"
+ },
+ {
+  "tr": "anahtar için ise",
+  "kind": "say.tr",
+  "de": "und für den Schlüssel"
+ },
+ {
+  "tr": "güvenli için ise",
+  "kind": "say.tr",
+  "de": "und für sicher"
+ },
+ {
+  "tr": "Özetleyelim: söz",
+  "kind": "say.tr",
+  "de": "Fassen wir zusammen: Aussage"
+ },
+ {
+  "tr": "özür dilemek ise",
+  "kind": "say.tr",
+  "de": "und sich entschuldigen mit"
+ },
+ {
+  "tr": "Suyu tamir edene",
+  "kind": "say.tr",
+  "de": "Wer das Wasser repariert, heißt"
+ },
+ {
+  "tr": "yeşil. Tekrar et:",
+  "kind": "say.tr",
+  "de": "grün. Sprich nach:"
+ },
+ {
+  "tr": "Eve verilen zarara",
+  "kind": "say.tr",
+  "de": "Der Schaden an der Wohnung heißt"
+ },
+ {
+  "tr": "ile geniş zaman ve",
+  "kind": "say.tr",
+  "de": "mit Präsens und"
+ },
+ {
+  "tr": "şikâyet etmeye ise",
+  "kind": "say.tr",
+  "de": "und sich beschweren mit"
+ },
+ {
+  "tr": "Gaz ve ısıtma ayrı.",
+  "kind": "say.tr",
+  "de": "Gas und Heizung sind getrennt."
+ },
+ {
+  "tr": "ısıtma cihazına ise",
+  "kind": "say.tr",
+  "de": "und das Heizgerät heißt"
+ },
+ {
+  "tr": "tasarruf etmek için",
+  "kind": "say.tr",
+  "de": "für sparen"
+ },
+ {
+  "tr": "Ne kadar harcadığına",
+  "kind": "say.tr",
+  "de": "Wie viel du verbrauchst, heißt"
+ },
+ {
+  "tr": "Birini rahatsız etmek",
+  "kind": "say.tr",
+  "de": "Jemanden stören wird mit"
+ },
+ {
+  "tr": "Özetleyelim: önce olan",
+  "kind": "say.tr",
+  "de": "Fassen wir zusammen: das frühere"
+ },
+ {
+  "tr": "buraya ait olan şeye ise",
+  "kind": "say.tr",
+  "de": "und was hierher gehört, heißt"
+ },
+ {
+  "tr": "denir. İkincisinden sonra",
+  "kind": "say.tr",
+  "de": "genannt. Nach dem zweiten kommt"
+ },
+ {
+  "tr": "Elektrik demek. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Das heißt Strom. Sprich nach:"
+ },
+ {
+  "tr": "Şimdi sıra sende. Boş için",
+  "kind": "say.tr",
+  "de": "Jetzt bist du dran. Für leer sagen wir"
+ },
+ {
+  "tr": "Yerel topluluk cana yakın.",
+  "kind": "say.tr",
+  "de": "Die örtliche Gemeinschaft ist freundlich."
+ },
+ {
+  "tr": "paranın geri ödenmesine ise",
+  "kind": "say.tr",
+  "de": "und die Rückzahlung des Geldes heißt"
+ },
+ {
+  "tr": "Parka kadar yürümeye değer.",
+  "kind": "say.tr",
+  "de": "Es lohnt sich, bis zum Park zu laufen."
+ },
+ {
+  "tr": "sayaçtan aldığın sayıya ise",
+  "kind": "say.tr",
+  "de": "und die Zahl, die du vom Zähler nimmst, heißt"
+ },
+ {
+  "tr": "Su kaçağı demek. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Das heißt Leck. Sprich nach:"
+ },
+ {
+  "tr": "Bir de üçüncü bir kalıp var:",
+  "kind": "say.tr",
+  "de": "Und es gibt eine dritte Wendung:"
+ },
+ {
+  "tr": "Şimdi sıra sende. Duvar için",
+  "kind": "say.tr",
+  "de": "Jetzt bist du dran. Für die Wand sagen wir"
+ },
+ {
+  "tr": "Kontrolden önce ne yapmıştın?",
+  "kind": "say.tr",
+  "de": "Was hattest du vor der Abnahme gemacht?"
+ },
+ {
+  "tr": "Pazartesi geleceğini söyledi.",
+  "kind": "say.tr",
+  "de": "Er hat gesagt, dass er am Montag kommt."
+ },
+ {
+  "tr": "Şimdi sıra sende. Yürümek için",
+  "kind": "say.tr",
+  "de": "Jetzt bist du dran. Für laufen sagen wir"
+ },
+ {
+  "tr": "ve ondan sonra hep -ing gelir.",
+  "kind": "say.tr",
+  "de": "und danach steht immer -ing."
+ },
+ {
+  "tr": "Çıkış kontrolü demek. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Das heißt Abnahme. Sprich nach:"
+ },
+ {
+  "tr": "Şimdi sen kur. Ücret kesmek için",
+  "kind": "say.tr",
+  "de": "Jetzt du. Für berechnen sagen wir"
+ },
+ {
+  "tr": "Gürültü kesildi ve ev sakinleşti.",
+  "kind": "say.tr",
+  "de": "Der Lärm hörte auf und im Haus wurde es ruhig."
+ },
+ {
+  "tr": "Tedarikçiyi değiştirebilir miyiz?",
+  "kind": "say.tr",
+  "de": "Können wir den Anbieter wechseln?"
+ },
+ {
+  "tr": "bir şeyi görmezden gelmek için ise",
+  "kind": "say.tr",
+  "de": "und für etwas ignorieren"
+ },
+ {
+  "tr": "Bir yıl daha kalmaya karar verdim.",
+  "kind": "say.tr",
+  "de": "Ich habe mich entschieden, noch ein Jahr zu bleiben."
+ },
+ {
+  "tr": "Elektriği ya da gazı satan şirkete",
+  "kind": "say.tr",
+  "de": "Die Firma, die Strom oder Gas verkauft, heißt"
+ },
+ {
+  "tr": "Şimdi sıra sende. Tamir etmek için",
+  "kind": "say.tr",
+  "de": "Jetzt bist du dran. Für reparieren sagen wir"
+ },
+ {
+  "tr": "Bu bölgede yaşamaktan hoşlanıyorum.",
+  "kind": "say.tr",
+  "de": "Ich wohne gern in dieser Gegend."
+ },
+ {
+  "tr": "İkinci kalıbımız to ile. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Unsere zweite Wendung mit to. Sprich nach:"
+ },
+ {
+  "tr": "Dükkânlar yakın ve sokaklar güvenli.",
+  "kind": "say.tr",
+  "de": "Die Läden sind nah und die Straßen sind sicher."
+ },
+ {
+  "tr": "Kombinin eski olup olmadığını sordu.",
+  "kind": "say.tr",
+  "de": "Er hat gefragt, ob die Therme alt ist."
+ },
+ {
+  "tr": "Şimdi sıra sende. Boşa harcamak için",
+  "kind": "say.tr",
+  "de": "Jetzt bist du dran. Für verschwenden sagen wir"
+ },
+ {
+  "tr": "Son kalıbımız isim alıyor. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Unsere letzte Wendung nimmt ein Nomen. Sprich nach:"
+ },
+ {
+  "tr": "Hasar varsa senden ücret kesebilirler.",
+  "kind": "say.tr",
+  "de": "Wenn es einen Schaden gibt, können sie ihn dir berechnen."
+ },
+ {
+  "tr": "Hasar yoktu, o yüzden geri ödeme aldım.",
+  "kind": "say.tr",
+  "de": "Es gab keinen Schaden, deshalb habe ich die Rückzahlung bekommen."
+ },
+ {
+  "tr": "Şimdi üst komşunun kapısını çalacaksın.",
+  "kind": "say.tr",
+  "de": "Jetzt klingelst du bei deinem Nachbarn von oben."
+ },
+ {
+  "tr": "denir ve bu kelime hem isim hem fiildir.",
+  "kind": "say.tr",
+  "de": "genannt, und das Wort ist Nomen und Verb zugleich."
+ },
+ {
+  "tr": "Mahalledeki insanların oluşturduğu bütüne",
+  "kind": "say.tr",
+  "de": "Was die Menschen im Viertel zusammen bilden, heißt"
+ },
+ {
+  "tr": "Son kalıbımız kibar bir öneri. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Unsere letzte Wendung ist ein höflicher Vorschlag. Sprich nach:"
+ },
+ {
+  "tr": "Şimdi ev arkadaşınla fatura konuşacaksın.",
+  "kind": "say.tr",
+  "de": "Jetzt sprichst du mit deinem Mitbewohner über die Rechnung."
+ },
+ {
+  "tr": "Bir tane daha: Yerel pazarı gezmeye değer.",
+  "kind": "say.tr",
+  "de": "Noch eins: Es lohnt sich, den örtlichen Markt zu besuchen."
+ },
+ {
+  "tr": "Şu cümle üçünü birden bağlıyor. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Dieser Satz verbindet alle drei. Sprich nach:"
+ },
+ {
+  "tr": "Yatak odasındaki rutubetten şikâyet ettim.",
+  "kind": "say.tr",
+  "de": "Ich habe mich über die Feuchtigkeit im Schlafzimmer beschwert."
+ },
+ {
+  "tr": "Alt kattakiler kuralları görmezden geliyor.",
+  "kind": "say.tr",
+  "de": "Die Leute von unten ignorieren die Regeln."
+ },
+ {
+  "tr": "Onlar gelmeden önce her yeri temizlemiştim.",
+  "kind": "say.tr",
+  "de": "Bevor sie kamen, hatte ich überall geputzt."
+ },
+ {
+  "tr": "Şimdi sen kur: Okuma yanlışsa onları ararım.",
+  "kind": "say.tr",
+  "de": "Jetzt du: Wenn der Zählerstand falsch ist, rufe ich sie an."
+ },
+ {
+  "tr": "İlk kalıbımız varsayımı anlatıyor. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Unsere erste Wendung nennt die Annahme. Sprich nach:"
+ },
+ {
+  "tr": "Bu kadar geç rahatsız ettiği için özür diledi.",
+  "kind": "say.tr",
+  "de": "Er hat sich entschuldigt, dass er uns so spät gestört hat."
+ },
+ {
+  "tr": "İki kez rica etmeme rağmen gürültü devam etti.",
+  "kind": "say.tr",
+  "de": "Obwohl ich zweimal gebeten habe, ging der Lärm weiter."
+ },
+ {
+  "tr": "Bir gecikme oldu, o yüzden kimse tamir edemedi.",
+  "kind": "say.tr",
+  "de": "Es gab eine Verzögerung, deshalb konnte es niemand reparieren."
+ },
+ {
+  "tr": "deriz. Şunu kur: Bugün tamir edeceğini söyledi.",
+  "kind": "say.tr",
+  "de": "sagen wir. Bau das: Sie hat gesagt, dass sie es heute repariert."
+ },
+ {
+  "tr": "deriz. Şunu kur: Pazara yürümekten hoşlanıyorum.",
+  "kind": "say.tr",
+  "de": "sagen wir. Bau das: Ich laufe gern zum Markt."
+ },
+ {
+  "tr": "iki ayrı cümleyi bağlar ve noktadan sonra gelir.",
+  "kind": "say.tr",
+  "de": "verbindet zwei getrennte Sätze und steht nach dem Punkt."
+ },
+ {
+  "tr": "İkinci kalıbımız yönergeyi aktarıyor. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Unsere zweite Wendung gibt die Anweisung wieder. Sprich nach:"
+ },
+ {
+  "tr": "Daireyi boş bıraktım ve son anahtarı geri verdim.",
+  "kind": "say.tr",
+  "de": "Ich habe die Wohnung leer gelassen und den letzten Schlüssel zurückgegeben."
+ },
+ {
+  "tr": "Şimdi çıkış kontrolündesin ve ev sahibi karşında.",
+  "kind": "say.tr",
+  "de": "Jetzt bist du bei der Abnahme und der Vermieter steht vor dir."
+ },
+ {
+  "tr": "Bir tane daha: Kaçağın hâlâ olup olmadığını sordu.",
+  "kind": "say.tr",
+  "de": "Noch eins: Sie hat gefragt, ob das Leck noch da ist."
+ },
+ {
+  "tr": "İkinci kalıbımız mümkün olanı anlatıyor. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Unsere zweite Wendung nennt das Mögliche. Sprich nach:"
+ },
+ {
+  "tr": "Şimdi sen kur: Daire gürültülü. Ancak komşular iyi.",
+  "kind": "say.tr",
+  "de": "Jetzt du: Die Wohnung ist laut. Jedoch sind die Nachbarn nett."
+ },
+ {
+  "tr": "denir. İkincisi 'yakındaki' anlamında da kullanılır.",
+  "kind": "say.tr",
+  "de": "genannt. Das zweite wird auch im Sinne von «in der Nähe» benutzt."
+ },
+ {
+  "tr": "Şimdi sen kur: Bana bir fotoğraf göndermemi söyledi.",
+  "kind": "say.tr",
+  "de": "Jetzt du: Er hat mir gesagt, ich soll ein Foto schicken."
+ },
+ {
+  "tr": "ile söylenir. İkincisinin Amerikan yazımı z ile olur.",
+  "kind": "say.tr",
+  "de": "gesagt. Das zweite wird in der amerikanischen Schreibung mit z geschrieben."
+ },
+ {
+  "tr": "Bir tane daha: Geç saate rağmen kibarca kapıyı çaldım.",
+  "kind": "say.tr",
+  "de": "Noch eins: Trotz der späten Stunde habe ich höflich geklopft."
+ },
+ {
+  "tr": "Bir tane daha: Onlar gelmeden önce neyi temizlemiştin?",
+  "kind": "say.tr",
+  "de": "Noch eins: Was hattest du geputzt, bevor sie kamen?"
+ },
+ {
+  "tr": "Bir tane daha: Sayacı birlikte kontrol edebilir miyiz?",
+  "kind": "say.tr",
+  "de": "Noch eins: Können wir den Zähler zusammen prüfen?"
+ },
+ {
+  "tr": "deriz. Şunu kur: Kontrolden önce daireyi boşaltmıştım.",
+  "kind": "say.tr",
+  "de": "sagen wir. Bau das: Vor der Abnahme hatte ich die Wohnung geräumt."
+ },
+ {
+  "tr": "deriz; bir önceki dersteki 'noise' isimdi, bu ise sıfat.",
+  "kind": "say.tr",
+  "de": "sagen wir; das 'noise' aus der letzten Lektion war ein Nomen, dieses hier ist ein Adjektiv."
+ },
+ {
+  "tr": "İkinci kalıbımız sonra olanı anlatıyor. Geri vermek için",
+  "kind": "say.tr",
+  "de": "Unsere zweite Wendung nennt das spätere Ereignis. Für zurückgeben sagen wir"
+ },
+ {
+  "tr": "Komşu demek; Britanya yazımı sonunda u taşır. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Das heißt Nachbar; die britische Schreibung hat am Ende ein u. Sprich nach:"
+ },
+ {
+  "tr": "deriz. Şunu kur: Daha az boşa harcasak para biriktirirdik.",
+  "kind": "say.tr",
+  "de": "sagen wir. Bau das: Wenn wir weniger verschwenden würden, würden wir Geld sparen."
+ },
+ {
+  "tr": "deriz. Şunu kur: Kırık pencere için benden ücret kestiler.",
+  "kind": "say.tr",
+  "de": "sagen wir. Bau das: Sie haben mir das kaputte Fenster berechnet."
+ },
+ {
+  "tr": "Şimdi ev sahibini arayıp ustanın ne dediğini aktaracaksın.",
+  "kind": "say.tr",
+  "de": "Jetzt rufst du den Vermieter an und gibst weiter, was der Handwerker gesagt hat."
+ },
+ {
+  "tr": "Şimdi mahalleye yeni taşınan birine buraları anlatacaksın.",
+  "kind": "say.tr",
+  "de": "Jetzt erzählst du jemandem, der neu ins Viertel gezogen ist, von hier."
+ },
+ {
+  "tr": "deriz. Şunu kur: Duvarlar ince olmasına rağmen iyi uyuyorum.",
+  "kind": "say.tr",
+  "de": "sagen wir. Bau das: Obwohl die Wände dünn sind, schlafe ich gut."
+ },
+ {
+  "tr": "Şimdi sen kur: Burada daha büyük bir daire bulmayı umuyorum.",
+  "kind": "say.tr",
+  "de": "Jetzt du: Ich hoffe, hier eine größere Wohnung zu finden."
+ },
+ {
+  "tr": "denir. İkincisi Britanya evlerinin en sık bozulan parçasıdır.",
+  "kind": "say.tr",
+  "de": "genannt. Das zweite ist das Teil, das in britischen Häusern am häufigsten kaputtgeht."
+ },
+ {
+  "tr": "artı fiilin üçüncü hâliyle geriye alınır. Sonra olan normal geçmişte kalır.",
+  "kind": "say.tr",
+  "de": "plus die dritte Form des Verbs zurückgesetzt. Das spätere bleibt in der einfachen Vergangenheit."
+ },
+ {
+  "tr": "Okuma tüketimimizi gösteriyor, böylece tasarruf edip daha az boşa harcayabiliriz.",
+  "kind": "say.tr",
+  "de": "Der Zählerstand zeigt unseren Verbrauch, so können wir sparen und weniger verschwenden."
+ },
+ {
+  "tr": "Merhaba! Bugün faturaları konuşmayı öğreneceğiz: elektrik, gaz, ısıtma ve tüketim.",
+  "kind": "say.tr",
+  "de": "Hallo! Heute lernen wir, über die Rechnungen zu sprechen: Strom, Gas, Heizung und Verbrauch."
+ },
+ {
+  "tr": "Şimdi dersin kuralı. İki geçmiş olay varsa ve biri ötekinden ÖNCE olduysa, önce olan",
+  "kind": "say.tr",
+  "de": "Jetzt die Regel der Lektion. Gibt es zwei vergangene Ereignisse und liegt eines VOR dem anderen, wird das frühere mit"
+ },
+ {
+  "tr": "Merhaba! Bugün ev tamiratını konuşmayı öğreneceğiz: kaçak, kombi, rutubet, gecikmeler.",
+  "kind": "say.tr",
+  "de": "Hallo! Heute lernen wir, über Reparaturen zu sprechen: Leck, Therme, Feuchtigkeit, Verzögerungen."
+ },
+ {
+  "tr": "Bu konuşmanın tamamı sıralamaya dayanıyor: kontrolden ÖNCE neyi bitirmiştin. Hazır mısın?",
+  "kind": "say.tr",
+  "de": "Dieses ganze Gespräch beruht auf der Reihenfolge: was du VOR der Abnahme erledigt hattest. Bist du bereit?"
+ },
+ {
+  "tr": "Merhaba! Bu modülün son dersi: oturduğun mahalleyi anlatmak. Dükkânlar, parklar, komşuluk.",
+  "kind": "say.tr",
+  "de": "Hallo! Die letzte Lektion dieses Moduls: dein Viertel beschreiben. Läden, Parks, Nachbarschaft."
+ },
+ {
+  "tr": "Merhaba! Bugün evden çıkmayı öğreneceğiz: çıkış kontrolü, hasar, depozitonun geri ödenmesi.",
+  "kind": "say.tr",
+  "de": "Hallo! Heute lernen wir den Auszug: Abnahme, Schaden, Rückzahlung der Kaution."
+ },
+ {
+  "tr": "Merhaba! Bugün gürültü sorununu konuşmayı öğreneceğiz: komşu, duvarlar, geceleri gelen sesler.",
+  "kind": "say.tr",
+  "de": "Hallo! Heute lernen wir, über Lärm zu sprechen: Nachbarn, Wände, Geräusche in der Nacht."
+ },
+ {
+  "tr": "Özetleyelim: enjoy, avoid, mind sonrası -ing; decide, want, hope, plan sonrası to; worth sonrası hep -ing.",
+  "kind": "say.tr",
+  "de": "Fassen wir zusammen: nach enjoy, avoid, mind steht -ing; nach decide, want, hope, plan steht to; nach worth immer -ing."
+ },
+ {
+  "tr": "Bu konuşmanın zor yanı dilbilgisi değil ton: şikâyet ederken kapıyı kapatmamak. O işi bağlaçlar yapıyor. Hazır mısın?",
+  "kind": "say.tr",
+  "de": "Das Schwere daran ist nicht die Grammatik, sondern der Ton: sich beschweren, ohne die Tür zuzumachen. Das machen die Konnektoren. Bist du bereit?"
+ },
+ {
+  "tr": "Burada küçük bir tuzak var: bazı fiillerden sonra -ing, bazılarından sonra to geliyor ve karıştırmak kolay. Hazır mısın?",
+  "kind": "say.tr",
+  "de": "Hier steckt eine kleine Falle: nach manchen Verben steht -ing, nach anderen to, und man verwechselt das leicht. Bist du bereit?"
+ },
+ {
+  "tr": "Fatura konuşması hep aynı cümleye dayanır: 'şunu yapsak şu olurdu'. Bu cümlenin İngilizcede iki ayrı biçimi var. Hazır mısın?",
+  "kind": "say.tr",
+  "de": "Das Gespräch über Rechnungen beruht immer auf demselben Satz: «wenn wir das machen würden, wäre das so». Diesen Satz gibt es im Englischen in zwei Formen. Bist du bereit?"
+ },
+ {
+  "tr": "Bu konuşmada çoğu zaman üçüncü bir kişi var: usta ne dedi, ev sahibi ne söyledi. Aktarmak ayrı bir dilbilgisi işi. Hazır mısın?",
+  "kind": "say.tr",
+  "de": "In diesem Gespräch gibt es meist eine dritte Person: was der Handwerker gesagt hat, was der Vermieter gesagt hat. Das Weitergeben ist eine eigene grammatische Aufgabe. Bist du bereit?"
+ }
+]

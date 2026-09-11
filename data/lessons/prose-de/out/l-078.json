@@ -1,0 +1,1057 @@
+[
+ {
+  "tr": "Daire aramak",
+  "kind": "titleTr",
+  "de": "Eine Wohnung suchen"
+ },
+ {
+  "tr": "Daire gezmek",
+  "kind": "titleTr",
+  "de": "Die Besichtigung"
+ },
+ {
+  "tr": "Taşınma günü",
+  "kind": "titleTr",
+  "de": "Der Umzugstag"
+ },
+ {
+  "tr": "Ev arkadaşları",
+  "kind": "titleTr",
+  "de": "Mit Mitbewohnern leben"
+ },
+ {
+  "tr": "Kira sözleşmesi",
+  "kind": "titleTr",
+  "de": "Der Mietvertrag"
+ },
+ {
+  "tr": "Ortak yaşam kurallarını konuşmayı öğretir: zorunluluk, serbestlik ve tavsiye.",
+  "kind": "summary",
+  "de": "Vermittelt, wie man die Regeln des Zusammenlebens bespricht: Pflicht, Freiheit und Rat."
+ },
+ {
+  "tr": "Sözleşmenin dilini okumayı öğretir: kimin yaptığı değil, neyin yapıldığı yazılır.",
+  "kind": "summary",
+  "de": "Vermittelt, wie man die Sprache des Vertrags liest: es steht nicht, wer etwas tut, sondern was getan wird."
+ },
+ {
+  "tr": "Taşınma gününün programını anlatmayı öğretir: kararlaşmış saat, niyet ve o anki karar.",
+  "kind": "summary",
+  "de": "Vermittelt, wie man den Ablauf des Umzugstags erzählt: fester Termin, Absicht und spontaner Entschluss."
+ },
+ {
+  "tr": "Ev ararken neyi kaç kez yaptığını anlatmayı öğretir: süren arayış ile biten bir randevu.",
+  "kind": "summary",
+  "de": "Vermittelt, wie man bei der Wohnungssuche erzählt, was man wie oft gemacht hat: laufende Suche und abgeschlossener Termin."
+ },
+ {
+  "tr": "Gezdiğin daireleri birbirinden ayırmayı öğretir: hangisi hangisiydi sorusunun cevabı yan cümledir.",
+  "kind": "summary",
+  "de": "Vermittelt, wie man besichtigte Wohnungen auseinanderhält: die Antwort auf «welche war welche» ist ein Nebensatz."
+ },
+ {
+  "tr": "telefona bakan, acelesi olan bir emlak görevlisi",
+  "kind": "partner",
+  "de": "eine Maklerin am Telefon, die es eilig hat"
+ },
+ {
+  "tr": "sözleşmeyi ezbere bilen ama aceleci bir ev sahibi",
+  "kind": "partner",
+  "de": "ein Vermieter, der den Vertrag auswendig kennt, aber drängt"
+ },
+ {
+  "tr": "yardıma gelecek ve işi paylaşmak isteyen bir arkadaş",
+  "kind": "partner",
+  "de": "ein Freund, der helfen kommt und die Arbeit teilen will"
+ },
+ {
+  "tr": "senin yerine karar vermeye çalışan meraklı bir arkadaş",
+  "kind": "partner",
+  "de": "eine neugierige Freundin, die für dich entscheiden will"
+ },
+ {
+  "tr": "daha önce ev paylaşmamış, her şeyi soran yeni ev arkadaşın",
+  "kind": "partner",
+  "de": "dein neuer Mitbewohner, der noch nie geteilt hat und alles fragt"
+ },
+ {
+  "tr": "Cumartesi kamyonet kaçta geliyor?",
+  "kind": "openingTr",
+  "de": "Wann kommt der Transporter am Samstag?"
+ },
+ {
+  "tr": "Günaydın, nasıl yardımcı olabilirim?",
+  "kind": "openingTr",
+  "de": "Guten Morgen, wie kann ich Ihnen helfen?"
+ },
+ {
+  "tr": "Sözleşme burada. Birlikte bakalım mı?",
+  "kind": "openingTr",
+  "de": "Hier ist der Vertrag. Gehen wir ihn zusammen durch?"
+ },
+ {
+  "tr": "Peki hangisi en iyisiydi? Balkonlu olan mı?",
+  "kind": "openingTr",
+  "de": "Und welche war die beste? Die mit dem Balkon?"
+ },
+ {
+  "tr": "İlk kez ev paylaşıyorum. Burada ne yapmam gerekiyor?",
+  "kind": "openingTr",
+  "de": "Ich teile zum ersten Mal eine Wohnung. Was muss ich hier machen?"
+ },
+ {
+  "tr": "Bir arkadaşın bu hafta gezdiğin daireleri soruyor. Hangisinin neyi vardı, hangisini neden beğendin, hangisini elediğini yan cümlelerle anlat.",
+  "kind": "scene",
+  "de": "Eine Freundin fragt nach den Wohnungen, die du diese Woche besichtigt hast. Erzähl mit Nebensätzen, welche was hatte, welche dir warum gefallen hat und welche rausgefallen ist."
+ },
+ {
+  "tr": "Taşınma gününü yardıma gelecek arkadaşınla planlıyorsun. Kamyonetin kaçta geldiğini söyle, hangi odayı önce boşaltacağını anlat ve iş bölümü yap.",
+  "kind": "scene",
+  "de": "Du planst den Umzugstag mit dem Freund, der helfen kommt. Sag, wann der Transporter kommt, erzähl, welches Zimmer du zuerst auspackst, und teilt die Arbeit auf."
+ },
+ {
+  "tr": "Yeni bir ev arkadaşıyla ortak yaşam kurallarını konuşuyorsun. Hangi işlerin zorunlu olduğunu söyle, neyin serbest olduğunu belirt ve bir çizelge öner.",
+  "kind": "scene",
+  "de": "Du besprichst mit einem neuen Mitbewohner die Regeln des Zusammenlebens. Sag, welche Aufgaben Pflicht sind, was frei bleibt, und schlag einen Plan vor."
+ },
+ {
+  "tr": "Bir emlak ofisini arıyorsun ve ilandaki daireyi soruyorsun. Ne kadar süredir aradığını söyle, dairenin müsait olup olmadığını öğren ve gezme randevusu al.",
+  "kind": "scene",
+  "de": "Du rufst bei einem Maklerbüro an und fragst nach der Wohnung aus der Anzeige. Sag, wie lange du schon suchst, finde heraus, ob sie noch frei ist, und vereinbare eine Besichtigung."
+ },
+ {
+  "tr": "Ev sahibiyle sözleşmeyi birlikte okuyorsunuz. Anlamadığın bir maddeyi sor, sürenin ne kadar olduğunu öğren ve depozitonun ne zaman geri verileceğini netleştir.",
+  "kind": "scene",
+  "de": "Du liest den Vertrag zusammen mit dem Vermieter. Frag nach einer Klausel, die du nicht verstehst, finde die Laufzeit heraus und klär, wann die Kaution zurückkommt."
+ },
+ {
+  "tr": "En az üç daireyi yan cümleyle ayırdıysan ve birini gerekçesiyle seçtiysen konuşma başarılı sayılır.",
+  "kind": "goal",
+  "de": "Das Gespräch gilt als gelungen, wenn du mindestens drei Wohnungen mit einem Nebensatz unterschieden und eine davon begründet gewählt hast."
+ },
+ {
+  "tr": "Bir maddeyi sorduysan, süreyi öğrendiysen ve depozitonun geri verilme koşulunu netleştirdiysen konuşma başarılı sayılır.",
+  "kind": "goal",
+  "de": "Das Gespräch gilt als gelungen, wenn du nach einer Klausel gefragt, die Laufzeit erfahren und die Bedingung für die Rückgabe der Kaution geklärt hast."
+ },
+ {
+  "tr": "Kararlaşmış bir saati, bir niyetini ve o anda verdiğin bir kararı doğru kalıplarla söylediysen konuşma başarılı sayılır.",
+  "kind": "goal",
+  "de": "Das Gespräch gilt als gelungen, wenn du einen festen Termin, eine Absicht und einen spontanen Entschluss mit den richtigen Wendungen gesagt hast."
+ },
+ {
+  "tr": "En az bir zorunluluk, bir serbestlik ve bir öneri söylediysen ve bir çizelge üzerinde anlaştıysan konuşma başarılı sayılır.",
+  "kind": "goal",
+  "de": "Das Gespräch gilt als gelungen, wenn du mindestens eine Pflicht, eine Freiheit und einen Vorschlag genannt und euch auf einen Plan geeinigt habt."
+ },
+ {
+  "tr": "Arayışını süren zamanla anlattıysan, dairenin müsait olup olmadığını sorduysan ve bir gezme randevusu aldıysan konuşma başarılı sayılır.",
+  "kind": "goal",
+  "de": "Das Gespräch gilt als gelungen, wenn du deine Suche in der laufenden Zeit erzählt, nach der Verfügbarkeit gefragt und eine Besichtigung vereinbart hast."
+ },
+ {
+  "tr": "süre",
+  "kind": "vocab.tr",
+  "de": "Laufzeit"
+ },
+ {
+  "tr": "ferah",
+  "kind": "vocab.tr",
+  "de": "geräumig"
+ },
+ {
+  "tr": "koşul",
+  "kind": "vocab.tr",
+  "de": "Bedingung"
+ },
+ {
+  "tr": "madde",
+  "kind": "vocab.tr",
+  "de": "Klausel"
+ },
+ {
+  "tr": "sayaç",
+  "kind": "vocab.tr",
+  "de": "Zähler"
+ },
+ {
+  "tr": "bodrum",
+  "kind": "vocab.tr",
+  "de": "Keller"
+ },
+ {
+  "tr": "eşyalı",
+  "kind": "vocab.tr",
+  "de": "möbliert"
+ },
+ {
+  "tr": "ev işi",
+  "kind": "vocab.tr",
+  "de": "Hausarbeit"
+ },
+ {
+  "tr": "hukuki",
+  "kind": "vocab.tr",
+  "de": "rechtlich"
+ },
+ {
+  "tr": "kiracı",
+  "kind": "vocab.tr",
+  "de": "Mieter"
+ },
+ {
+  "tr": "manzara",
+  "kind": "vocab.tr",
+  "de": "Aussicht"
+ },
+ {
+  "tr": "üst kat",
+  "kind": "vocab.tr",
+  "de": "oben"
+ },
+ {
+  "tr": "anlaşmak",
+  "kind": "vocab.tr",
+  "de": "sich einigen"
+ },
+ {
+  "tr": "bölüşmek",
+  "kind": "vocab.tr",
+  "de": "aufteilen"
+ },
+ {
+  "tr": "kamyonet",
+  "kind": "vocab.tr",
+  "de": "Transporter"
+ },
+ {
+  "tr": "ev sahibi",
+  "kind": "vocab.tr",
+  "de": "Vermieter"
+ },
+ {
+  "tr": "kırılacak",
+  "kind": "vocab.tr",
+  "de": "zerbrechlich"
+ },
+ {
+  "tr": "emlak ofisi",
+  "kind": "vocab.tr",
+  "de": "Maklerbüro"
+ },
+ {
+  "tr": "depolama alanı",
+  "kind": "vocab.tr",
+  "de": "Stauraum"
+ },
+ {
+  "tr": "kira sözleşmesi",
+  "kind": "vocab.tr",
+  "de": "Mietvertrag"
+ },
+ {
+  "tr": "kutuları boşaltmak",
+  "kind": "vocab.tr",
+  "de": "auspacken"
+ },
+ {
+  "tr": "iş bölümü çizelgesi",
+  "kind": "vocab.tr",
+  "de": "Putzplan"
+ },
+ {
+  "tr": "daire gezme randevusu",
+  "kind": "vocab.tr",
+  "de": "Besichtigungstermin"
+ },
+ {
+  "tr": "ortak bir öneri yapar",
+  "kind": "pattern.tr",
+  "de": "macht einen gemeinsamen Vorschlag"
+ },
+ {
+  "tr": "kararlaşmış saati söyler",
+  "kind": "pattern.tr",
+  "de": "nennt die feste Uhrzeit"
+ },
+ {
+  "tr": "zorunlu olmadığını söyler",
+  "kind": "pattern.tr",
+  "de": "sagt, dass es nicht nötig ist"
+ },
+ {
+  "tr": "o an verilen kararı söyler",
+  "kind": "pattern.tr",
+  "de": "nennt den spontanen Entschluss"
+ },
+ {
+  "tr": "bitmiş tek bir olayı anlatır",
+  "kind": "pattern.tr",
+  "de": "erzählt von einem einzelnen abgeschlossenen Ereignis"
+ },
+ {
+  "tr": "kişiyi yan cümleyle tanımlar",
+  "kind": "pattern.tr",
+  "de": "beschreibt eine Person mit einem Nebensatz"
+ },
+ {
+  "tr": "önceden kurulmuş niyeti söyler",
+  "kind": "pattern.tr",
+  "de": "nennt eine vorher gefasste Absicht"
+ },
+ {
+  "tr": "geçmişte yapılan işlemi anlatır",
+  "kind": "pattern.tr",
+  "de": "erzählt von einem Vorgang in der Vergangenheit"
+ },
+ {
+  "tr": "süren bir arayışın sayısını verir",
+  "kind": "pattern.tr",
+  "de": "nennt die Zahl einer laufenden Suche"
+ },
+ {
+  "tr": "ortak kuralı zorunluluk olarak söyler",
+  "kind": "pattern.tr",
+  "de": "nennt die gemeinsame Regel als Pflicht"
+ },
+ {
+  "tr": "bir işlemin ne zaman yapıldığını sorar",
+  "kind": "pattern.tr",
+  "de": "fragt, wann ein Vorgang stattfindet"
+ },
+ {
+  "tr": "kim yaptığını söylemeden kuralı anlatır",
+  "kind": "pattern.tr",
+  "de": "nennt die Regel, ohne zu sagen, wer sie ausführt"
+ },
+ {
+  "tr": "hangi daire olduğunu yan cümleyle söyler",
+  "kind": "pattern.tr",
+  "de": "sagt mit einem Nebensatz, welche Wohnung gemeint ist"
+ },
+ {
+  "tr": "bir şeyin hâlâ geçerli olup olmadığını sorar",
+  "kind": "pattern.tr",
+  "de": "fragt, ob etwas noch gilt"
+ },
+ {
+  "tr": "Bu durumda past simple gelir:",
+  "kind": "why.tr",
+  "de": "In diesem Fall steht Past Simple:"
+ },
+ {
+  "tr": "Yanlış. Önceden kurulmuş bir plan anlatılıyor; bunun kalıbı başkadır:",
+  "kind": "why.tr",
+  "de": "Falsch. Hier wird ein vorher gefasster Plan erzählt; dafür gibt es eine andere Wendung:"
+ },
+ {
+  "tr": "Doğru. Zamir yan cümlenin nesnesi olduğu için düşebiliyor; anlam değişmiyor, cümle yalnız kısalıyor.",
+  "kind": "why.tr",
+  "de": "Richtig. Das Pronomen ist Objekt des Nebensatzes und darf wegfallen; die Bedeutung bleibt, der Satz wird nur kürzer."
+ },
+ {
+  "tr": "Doğru. Kimin imzaladığı söylenmiyor ve sözleşme dilinde bu olağan; önemli olan işlemin yapılmış olması.",
+  "kind": "why.tr",
+  "de": "Richtig. Wer unterschrieben hat, wird nicht genannt, und in der Vertragssprache ist das normal; wichtig ist, dass es geschehen ist."
+ },
+ {
+  "tr": "Doğru. Bu kalıp izin vermiyor ya da yasaklamıyor, yalnız gerekmediğini söylüyor: sorabilirsin de, sormayabilirsin de.",
+  "kind": "why.tr",
+  "de": "Richtig. Diese Wendung erlaubt und verbietet nichts, sie sagt nur, dass es nicht nötig ist: du kannst fragen oder eben nicht."
+ },
+ {
+  "tr": "Öneri kalıbı:",
+  "kind": "hint.tr",
+  "de": "Die Wendung für einen Vorschlag:"
+ },
+ {
+  "tr": "Geçmiş edilgen:",
+  "kind": "hint.tr",
+  "de": "Passiv in der Vergangenheit:"
+ },
+ {
+  "tr": "Aynı soru kalıbı:",
+  "kind": "hint.tr",
+  "de": "Dieselbe Fragewendung:"
+ },
+ {
+  "tr": "Gerekmediğini söylüyoruz:",
+  "kind": "hint.tr",
+  "de": "Wir sagen, dass es nicht nötig ist:"
+ },
+ {
+  "tr": "Hafta bitmedi, arayış sürüyor:",
+  "kind": "hint.tr",
+  "de": "Die Woche ist nicht vorbei, die Suche läuft:"
+ },
+ {
+  "tr": "Edilgen soru aynı sırayla kurulur:",
+  "kind": "hint.tr",
+  "de": "Die Passivfrage wird in derselben Folge gebaut:"
+ },
+ {
+  "tr": "O an verilen karar, o yüzden will:",
+  "kind": "hint.tr",
+  "de": "Ein spontaner Entschluss, deshalb will:"
+ },
+ {
+  "tr": "Ortak kural, o yüzden zorunluluk kalıbı:",
+  "kind": "hint.tr",
+  "de": "Eine gemeinsame Regel, deshalb die Wendung für Pflicht:"
+ },
+ {
+  "tr": "Kim ödediği yazılmıyor, o yüzden edilgen:",
+  "kind": "hint.tr",
+  "de": "Wer zahlt, steht nicht da, deshalb Passiv:"
+ },
+ {
+  "tr": "Saati kararlaşmış, o yüzden şimdiki zaman:",
+  "kind": "hint.tr",
+  "de": "Die Uhrzeit steht fest, deshalb die Verlaufsform:"
+ },
+ {
+  "tr": "Zaman belli ve bitmiş, o yüzden past simple:",
+  "kind": "hint.tr",
+  "de": "Die Zeit ist genannt und vorbei, deshalb Past Simple:"
+ },
+ {
+  "tr": "kişi",
+  "kind": "say.tr",
+  "de": "Person"
+ },
+ {
+  "tr": "soru",
+  "kind": "say.tr",
+  "de": "Frage"
+ },
+ {
+  "tr": "öneri",
+  "kind": "say.tr",
+  "de": "Vorschlag"
+ },
+ {
+  "tr": "Anlaşmak",
+  "kind": "say.tr",
+  "de": "Sich einigen wird mit"
+ },
+ {
+  "tr": "gerekmiyor",
+  "kind": "say.tr",
+  "de": "nicht nötig"
+ },
+ {
+  "tr": "bitmiş olay",
+  "kind": "say.tr",
+  "de": "abgeschlossenes Ereignis"
+ },
+ {
+  "tr": "Ev işlerine",
+  "kind": "say.tr",
+  "de": "Die Hausarbeiten heißen"
+ },
+ {
+  "tr": "geçmiş işlem",
+  "kind": "say.tr",
+  "de": "Vorgang in der Vergangenheit"
+ },
+ {
+  "tr": "o anki karar",
+  "kind": "say.tr",
+  "de": "spontaner Entschluss"
+ },
+ {
+  "tr": "şeyler için,",
+  "kind": "say.tr",
+  "de": "für Dinge,"
+ },
+ {
+  "tr": "Evin sahibine",
+  "kind": "say.tr",
+  "de": "Der Eigentümer der Wohnung heißt"
+ },
+ {
+  "tr": "tartışmak ise",
+  "kind": "say.tr",
+  "de": "streiten dagegen mit"
+ },
+ {
+  "tr": "Yardımcı fiil",
+  "kind": "say.tr",
+  "de": "Das Hilfsverb"
+ },
+ {
+  "tr": "imzalamaya ise",
+  "kind": "say.tr",
+  "de": "und unterschreiben mit"
+ },
+ {
+  "tr": "Evin alt katına",
+  "kind": "say.tr",
+  "de": "Das Untergeschoss heißt"
+ },
+ {
+  "tr": "Giriş katı için",
+  "kind": "say.tr",
+  "de": "Für das Erdgeschoss sagen wir"
+ },
+ {
+  "tr": "Bir şeyi taşımak",
+  "kind": "say.tr",
+  "de": "Etwas tragen wird mit"
+ },
+ {
+  "tr": "Eve gelen kişiye",
+  "kind": "say.tr",
+  "de": "Die Person, die zu Besuch kommt, heißt"
+ },
+ {
+  "tr": "hukuki olana ise",
+  "kind": "say.tr",
+  "de": "und was rechtlich ist, heißt"
+ },
+ {
+  "tr": "Özetleyelim: şey",
+  "kind": "say.tr",
+  "de": "Fassen wir zusammen: Ding"
+ },
+ {
+  "tr": "üst kat için ise",
+  "kind": "say.tr",
+  "de": "und für das obere Stockwerk"
+ },
+ {
+  "tr": "Eşyalı daire için",
+  "kind": "say.tr",
+  "de": "Für eine möblierte Wohnung sagen wir"
+ },
+ {
+  "tr": "Özetleyelim: kural",
+  "kind": "say.tr",
+  "de": "Fassen wir zusammen: Regel"
+ },
+ {
+  "tr": "Bir şartın kendisine",
+  "kind": "say.tr",
+  "de": "Die Bedingung selbst heißt"
+ },
+ {
+  "tr": "Eşyaları koyacak yere",
+  "kind": "say.tr",
+  "de": "Der Platz für die Sachen heißt"
+ },
+ {
+  "tr": "gezme randevusuna ise",
+  "kind": "say.tr",
+  "de": "und der Besichtigungstermin heißt"
+ },
+ {
+  "tr": "masrafı bölüşmeye ise",
+  "kind": "say.tr",
+  "de": "und die Kosten aufteilen mit"
+ },
+ {
+  "tr": "Sözleşmenin kendisine",
+  "kind": "say.tr",
+  "de": "Der Vertrag selbst heißt"
+ },
+ {
+  "tr": "Yeni evin adresi için",
+  "kind": "say.tr",
+  "de": "Für die Adresse der neuen Wohnung sagen wir"
+ },
+ {
+  "tr": "deriz. Eşyasız olanına",
+  "kind": "say.tr",
+  "de": "sagen wir. Die unmöblierte heißt"
+ },
+ {
+  "tr": "Bu ay beş daire gördüm.",
+  "kind": "say.tr",
+  "de": "Ich habe diesen Monat fünf Wohnungen gesehen."
+ },
+ {
+  "tr": "kırılacak eşya için ise",
+  "kind": "say.tr",
+  "de": "und für zerbrechliche Sachen"
+ },
+ {
+  "tr": "odanın üst yüzeyine ise",
+  "kind": "say.tr",
+  "de": "und die obere Fläche des Zimmers heißt"
+ },
+ {
+  "tr": "pencereden görünene ise",
+  "kind": "say.tr",
+  "de": "und was man aus dem Fenster sieht, heißt"
+ },
+ {
+  "tr": "Balkon demek. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Das heißt Balkon. Sprich nach:"
+ },
+ {
+  "tr": "Kiracı demek. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Das heißt Mieter. Sprich nach:"
+ },
+ {
+  "tr": "sözleşmenin süresine ise",
+  "kind": "say.tr",
+  "de": "und die Laufzeit des Vertrags heißt"
+ },
+ {
+  "tr": "o anda verilen karar için",
+  "kind": "say.tr",
+  "de": "und für einen spontanen Entschluss"
+ },
+ {
+  "tr": "Özetleyelim: süren arayış",
+  "kind": "say.tr",
+  "de": "Fassen wir zusammen: laufende Suche"
+ },
+ {
+  "tr": "Bir çizelgede anlaşmalıyız.",
+  "kind": "say.tr",
+  "de": "Wir sollten uns auf einen Putzplan einigen."
+ },
+ {
+  "tr": "Ev sahibi depozito istiyor.",
+  "kind": "say.tr",
+  "de": "Der Vermieter will eine Kaution."
+ },
+ {
+  "tr": "Önceden kurulmuş niyet için",
+  "kind": "say.tr",
+  "de": "Für eine vorher gefasste Absicht steht"
+ },
+ {
+  "tr": "Paylaşmak demek. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Das heißt teilen. Sprich nach:"
+ },
+ {
+  "tr": "Sözleşmedeki her ayrı hükme",
+  "kind": "say.tr",
+  "de": "Jede einzelne Bestimmung im Vertrag heißt"
+ },
+ {
+  "tr": "Zamir düştü, cümle kısaldı.",
+  "kind": "say.tr",
+  "de": "Das Pronomen ist weg, der Satz ist kürzer."
+ },
+ {
+  "tr": "baştan yatırdığın paraya ise",
+  "kind": "say.tr",
+  "de": "und das Geld, das du vorher hinterlegst, heißt"
+ },
+ {
+  "tr": "İlk kalıbımız. Aydınlık için",
+  "kind": "say.tr",
+  "de": "Unsere erste Wendung. Für hell sagen wir"
+ },
+ {
+  "tr": "İlk kalıbımız. Toplamak için",
+  "kind": "say.tr",
+  "de": "Unsere erste Wendung. Für aufräumen sagen wir"
+ },
+ {
+  "tr": "ile söylenir. Zorunlu değilse",
+  "kind": "say.tr",
+  "de": "gesagt. Ist es nicht nötig, steht"
+ },
+ {
+  "tr": "Özetleyelim: kararlaşmış saat",
+  "kind": "say.tr",
+  "de": "Fassen wir zusammen: feste Uhrzeit"
+ },
+ {
+  "tr": "Şimdi sen kur. Yenilemek için",
+  "kind": "say.tr",
+  "de": "Jetzt du. Für verlängern sagen wir"
+ },
+ {
+  "tr": "Daire eşyalı ve oldukça büyük.",
+  "kind": "say.tr",
+  "de": "Die Wohnung ist möbliert und ziemlich groß."
+ },
+ {
+  "tr": "Sözleşme ne zaman yenileniyor?",
+  "kind": "say.tr",
+  "de": "Wann wird der Vertrag verlängert?"
+ },
+ {
+  "tr": "Ferah bodrumun tavanı yüksekti.",
+  "kind": "say.tr",
+  "de": "Der geräumige Keller hatte eine hohe Decke."
+ },
+ {
+  "tr": "Sözleşmeyi yarın imzalayacağım.",
+  "kind": "say.tr",
+  "de": "Ich werde den Vertrag morgen unterschreiben."
+ },
+ {
+  "tr": "Depozito taşınmadan önce ödenir.",
+  "kind": "say.tr",
+  "de": "Die Kaution wird vor dem Einzug gezahlt."
+ },
+ {
+  "tr": "nesne durumunda zamir düşebilir.",
+  "kind": "say.tr",
+  "de": "als Objekt darf das Pronomen wegfallen."
+ },
+ {
+  "tr": "Ağır kutular zemin katta kalıyor.",
+  "kind": "say.tr",
+  "de": "Die schweren Kisten bleiben im Erdgeschoss."
+ },
+ {
+  "tr": "elektrik ya da su sayacı için ise",
+  "kind": "say.tr",
+  "de": "und für den Strom- oder Wasserzähler"
+ },
+ {
+  "tr": "Odaları birbirine bağlayan geçide",
+  "kind": "say.tr",
+  "de": "Der Gang, der die Zimmer verbindet, heißt"
+ },
+ {
+  "tr": "Gazetedeki ya da sitedeki duyuruya",
+  "kind": "say.tr",
+  "de": "Die Anzeige in der Zeitung oder auf der Seite heißt"
+ },
+ {
+  "tr": "Şimdi sıra sende. Emlak ofisi için",
+  "kind": "say.tr",
+  "de": "Jetzt bist du dran. Für das Maklerbüro sagen wir"
+ },
+ {
+  "tr": "Kırılacak kutuyu yavaş taşı lütfen.",
+  "kind": "say.tr",
+  "de": "Trag die zerbrechliche Kiste bitte langsam."
+ },
+ {
+  "tr": "Son kalıbımız bir soru. Müsait için",
+  "kind": "say.tr",
+  "de": "Unsere letzte Wendung ist eine Frage. Für frei sagen wir"
+ },
+ {
+  "tr": "Şimdi bir emlak ofisini arayacaksın.",
+  "kind": "say.tr",
+  "de": "Jetzt rufst du bei einem Maklerbüro an."
+ },
+ {
+  "tr": "Şimdi dersin kuralı. Ortak bir kural",
+  "kind": "say.tr",
+  "de": "Jetzt die Regel der Lektion. Eine gemeinsame Regel wird mit"
+ },
+ {
+  "tr": "Bir tane daha: Depozito hâlâ aynı mı?",
+  "kind": "say.tr",
+  "de": "Noch eins: Ist die Kaution noch dieselbe?"
+ },
+ {
+  "tr": "denir ve bu kelime ilanların dilidir.",
+  "kind": "say.tr",
+  "de": "genannt, und das Wort ist die Sprache der Anzeigen."
+ },
+ {
+  "tr": "İkinci kalıbımız zamirsiz. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Unsere zweite Wendung ohne Pronomen. Sprich nach:"
+ },
+ {
+  "tr": "Şimdi sıra sende: Kira her ay ödenir.",
+  "kind": "say.tr",
+  "de": "Jetzt bist du dran: Die Miete wird jeden Monat gezahlt."
+ },
+ {
+  "tr": "Her hukuki koşul sözleşmede yazılıdır.",
+  "kind": "say.tr",
+  "de": "Jede rechtliche Bedingung steht im Vertrag."
+ },
+ {
+  "tr": "Şimdi sen kur: Dün ev sahibini aradım.",
+  "kind": "say.tr",
+  "de": "Jetzt du: Gestern habe ich den Vermieter angerufen."
+ },
+ {
+  "tr": "Son kalıbımız öneri veriyor. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Unsere letzte Wendung macht einen Vorschlag. Sprich nach:"
+ },
+ {
+  "tr": "Şimdi sen kur: Bugün sayacı okuyacağım.",
+  "kind": "say.tr",
+  "de": "Jetzt du: Ich lese heute den Zähler ab."
+ },
+ {
+  "tr": "Yeni adresi ve sayaç okumasını gönderdim.",
+  "kind": "say.tr",
+  "de": "Ich habe die neue Adresse und den Zählerstand geschickt."
+ },
+ {
+  "tr": "Bu madde süreyi bir yıl olarak belirliyor.",
+  "kind": "say.tr",
+  "de": "Diese Klausel setzt die Laufzeit auf ein Jahr."
+ },
+ {
+  "tr": "denir; İngilizcede olumsuzu yapan önek bu.",
+  "kind": "say.tr",
+  "de": "genannt; das ist die Vorsilbe, die im Englischen verneint."
+ },
+ {
+  "tr": "Şimdi sıra sende: Emlak ofisi onda arıyor.",
+  "kind": "say.tr",
+  "de": "Jetzt bist du dran: Das Maklerbüro ruft um zehn an."
+ },
+ {
+  "tr": "denir. İkincisi Britanya'da çok kullanılır.",
+  "kind": "say.tr",
+  "de": "genannt. Das zweite wird in Großbritannien viel benutzt."
+ },
+ {
+  "tr": "denir; Amerika'da aynı yere 'hallway' denir.",
+  "kind": "say.tr",
+  "de": "genannt; in Amerika heißt derselbe Ort 'hallway'."
+ },
+ {
+  "tr": "deriz. Şunu kur: Sözleşme mayısta yenilendi.",
+  "kind": "say.tr",
+  "de": "sagen wir. Bau das: Der Vertrag wurde im Mai verlängert."
+ },
+ {
+  "tr": "Çizelge kimin hangi işi yaptığını gösteriyor.",
+  "kind": "say.tr",
+  "de": "Der Plan zeigt, wer welche Aufgabe macht."
+ },
+ {
+  "tr": "gelir — bu 'yasak' demek değildir. Öneri içinse",
+  "kind": "say.tr",
+  "de": "— das heißt nicht «verboten». Für einen Vorschlag dagegen steht"
+ },
+ {
+  "tr": "Kamyonet demek. İlk kalıbımız da bu. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Das heißt Transporter. Das ist auch unsere erste Wendung. Sprich nach:"
+ },
+ {
+  "tr": "Son kalıbımız bir kişiyi tanımlıyor. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Unsere letzte Wendung beschreibt eine Person. Sprich nach:"
+ },
+ {
+  "tr": "Şimdi bir arkadaşın gezdiğin daireleri soruyor.",
+  "kind": "say.tr",
+  "de": "Jetzt fragt dich eine Freundin nach den besichtigten Wohnungen."
+ },
+ {
+  "tr": "Bir tane daha: Depozito ne zaman geri veriliyor?",
+  "kind": "say.tr",
+  "de": "Noch eins: Wann wird die Kaution zurückgezahlt?"
+ },
+ {
+  "tr": "kimin ne zaman yapacağını gösteren çizelgeye ise",
+  "kind": "say.tr",
+  "de": "und der Plan, der zeigt, wer wann dran ist, heißt"
+ },
+ {
+  "tr": "Şimdi sen kur: Pazartesi gezdiğim daire ferahtı.",
+  "kind": "say.tr",
+  "de": "Jetzt du: Die Wohnung, die ich am Montag besichtigt habe, war geräumig."
+ },
+ {
+  "tr": "Koridorda depo yoktu ama güzel bir manzara vardı.",
+  "kind": "say.tr",
+  "de": "Der Gang hatte keinen Stauraum, aber eine schöne Aussicht."
+ },
+ {
+  "tr": "Son kalıbımız o anki kararı anlatıyor. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Unsere letzte Wendung nennt den spontanen Entschluss. Sprich nach:"
+ },
+ {
+  "tr": "Şimdi yeni ev arkadaşınla kuralları konuşacaksın.",
+  "kind": "say.tr",
+  "de": "Jetzt besprichst du die Regeln mit deinem neuen Mitbewohner."
+ },
+ {
+  "tr": "deriz. Şunu kur: Bu hafta üç emlak ofisine gittim.",
+  "kind": "say.tr",
+  "de": "sagen wir. Bau das: Ich war diese Woche in drei Maklerbüros."
+ },
+ {
+  "tr": "Bir tane daha: Ev işlerini daha adil paylaşmalıyız.",
+  "kind": "say.tr",
+  "de": "Noch eins: Wir sollten die Hausarbeit gerechter teilen."
+ },
+ {
+  "tr": "denir. İkincisi kutuların üstüne yazılan kelimedir.",
+  "kind": "say.tr",
+  "de": "genannt. Das zweite ist das Wort, das auf die Kisten geschrieben wird."
+ },
+ {
+  "tr": "fiilin üçüncü hâliyle birleşir ve yapan kişi düşer.",
+  "kind": "say.tr",
+  "de": "verbindet sich mit der dritten Form des Verbs, und der Handelnde fällt weg."
+ },
+ {
+  "tr": "kişiler için. Yan cümle ismin hemen arkasına gelir.",
+  "kind": "say.tr",
+  "de": "für Personen. Der Nebensatz kommt direkt hinter das Nomen."
+ },
+ {
+  "tr": "Misafir kalabilir ve faturaları her ay bölüşüyoruz.",
+  "kind": "say.tr",
+  "de": "Ein Gast darf bleiben, und wir teilen die Rechnungen jeden Monat."
+ },
+ {
+  "tr": "Şimdi sözleşmeyi ev sahibiyle birlikte okuyacaksın.",
+  "kind": "say.tr",
+  "de": "Jetzt liest du den Vertrag zusammen mit dem Vermieter."
+ },
+ {
+  "tr": "Şimdi sıra sende: Beğendiğim dairenin balkonu vardı.",
+  "kind": "say.tr",
+  "de": "Jetzt bist du dran: Die Wohnung, die mir gefallen hat, hatte einen Balkon."
+ },
+ {
+  "tr": "Şimdi taşınma gününü bir arkadaşınla planlayacaksın.",
+  "kind": "say.tr",
+  "de": "Jetzt planst du den Umzugstag mit einem Freund."
+ },
+ {
+  "tr": "Şimdi sen kur: Herkese yemek yapmak zorunda değilsin.",
+  "kind": "say.tr",
+  "de": "Jetzt du: Du musst nicht für alle kochen."
+ },
+ {
+  "tr": "İkinci kalıbımız bitmiş bir olayı anlatıyor. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Unsere zweite Wendung erzählt von einem abgeschlossenen Ereignis. Sprich nach:"
+ },
+ {
+  "tr": "Şimdi sıra sende: Salı günleri çöpü çıkarman gerekiyor.",
+  "kind": "say.tr",
+  "de": "Jetzt bist du dran: Dienstags musst du den Müll rausbringen."
+ },
+ {
+  "tr": "Bir tane daha: Kırılacak kutularda sana yardım edeceğim.",
+  "kind": "say.tr",
+  "de": "Noch eins: Ich helfe dir mit den zerbrechlichen Kisten."
+ },
+ {
+  "tr": "İkinci kalıbımız niyeti anlatıyor. Kutuları boşaltmak için",
+  "kind": "say.tr",
+  "de": "Unsere zweite Wendung nennt die Absicht. Für auspacken sagen wir"
+ },
+ {
+  "tr": "Bir tane daha: Binanın sahibi olan adam üst katta oturuyor.",
+  "kind": "say.tr",
+  "de": "Noch eins: Der Mann, dem das Haus gehört, wohnt oben."
+ },
+ {
+  "tr": "Kira demek; hem isim hem fiil olarak kullanılır. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Das heißt Miete; es wird als Nomen und als Verb benutzt. Sprich nach:"
+ },
+ {
+  "tr": "denir. İkincisi aynı zamanda 'tabela' demektir; bağlam ayırır.",
+  "kind": "say.tr",
+  "de": "genannt. Das zweite heißt auch «Schild»; der Zusammenhang entscheidet."
+ },
+ {
+  "tr": "Şimdi dersin kuralı. Saati kararlaşmış bir iş için şimdiki zaman:",
+  "kind": "say.tr",
+  "de": "Jetzt die Regel der Lektion. Für etwas mit fester Uhrzeit steht die Verlaufsform:"
+ },
+ {
+  "tr": "Eve gelen misafire kapıyı açan yer koridordur; ferah bir daire için ise",
+  "kind": "say.tr",
+  "de": "Der Gang ist der Ort, der dem Gast die Tür öffnet; für eine geräumige Wohnung dagegen sagt man"
+ },
+ {
+  "tr": "denir. Britanya'da giriş kat 'ground floor', bir üstü 'first floor' olur.",
+  "kind": "say.tr",
+  "de": "genannt. In Großbritannien heißt das Erdgeschoss 'ground floor' und das darüber 'first floor'."
+ },
+ {
+  "tr": "ile söylenir. İkincisi kavga etmek değil, farklı düşünmek anlamına da gelir.",
+  "kind": "say.tr",
+  "de": "gesagt. Das zweite heißt nicht streiten im Sinne von Krach, sondern auch anderer Meinung sein."
+ },
+ {
+  "tr": "Merhaba! Bugün kira sözleşmesini okumayı öğreneceğiz: maddeler, süre, yenileme.",
+  "kind": "say.tr",
+  "de": "Hallo! Heute lernen wir, den Mietvertrag zu lesen: Klauseln, Laufzeit, Verlängerung."
+ },
+ {
+  "tr": "Belli bir gün ya da haftadan söz ediyorsan, yani olay BİTTİYSE past simple gelir:",
+  "kind": "say.tr",
+  "de": "Sprichst du von einem bestimmten Tag oder einer bestimmten Woche, ist das Ereignis also VORBEI, steht Past Simple:"
+ },
+ {
+  "tr": "Şimdi dersin kuralı. Arayış SÜRÜYORSA ve sayı veriyorsan present perfect kullanılır:",
+  "kind": "say.tr",
+  "de": "Jetzt die Regel der Lektion. LÄUFT die Suche noch und nennst du eine Zahl, steht Present Perfect:"
+ },
+ {
+  "tr": "Şimdi dersin kuralı. Bir ismin hangisi olduğunu söylemek için arkasına yan cümle eklenir:",
+  "kind": "say.tr",
+  "de": "Jetzt die Regel der Lektion. Um zu sagen, welches Nomen gemeint ist, hängt man einen Nebensatz an:"
+ },
+ {
+  "tr": "Merhaba! Bugün ev aramanın dilini öğreneceğiz: ilanlar, emlak ofisleri, gezme randevuları.",
+  "kind": "say.tr",
+  "de": "Hallo! Heute lernen wir die Sprache der Wohnungssuche: Anzeigen, Maklerbüros, Besichtigungen."
+ },
+ {
+  "tr": "denir. İkincisi Britanya'da çok kullanılır ve tam olarak 'daireyi görmeye gitmek' demektir.",
+  "kind": "say.tr",
+  "de": "genannt. Das zweite wird in Großbritannien viel benutzt und heißt genau «die Wohnung ansehen gehen»."
+ },
+ {
+  "tr": "Şimdi dersin kuralı. Sözleşmede kimin yaptığı önemli değildir, o yüzden edilgen çatı kurulur:",
+  "kind": "say.tr",
+  "de": "Jetzt die Regel der Lektion. Im Vertrag ist egal, wer etwas tut, deshalb wird das Passiv gebaut:"
+ },
+ {
+  "tr": "Bu konuşmada üç ayrı ton var ve üçü ayrı kalıpla kuruluyor: kural, serbestlik, öneri. Hazır mısın?",
+  "kind": "say.tr",
+  "de": "In diesem Gespräch gibt es drei Töne, und jeder wird mit einer eigenen Wendung gebaut: Regel, Freiheit, Vorschlag. Bist du bereit?"
+ },
+ {
+  "tr": "Merhaba! Bugün gezdiğin daireleri anlatmayı öğreneceğiz: hangisi aydınlıktı, hangisinde balkon vardı.",
+  "kind": "say.tr",
+  "de": "Hallo! Heute lernen wir, von den besichtigten Wohnungen zu erzählen: welche war hell, welche hatte einen Balkon."
+ },
+ {
+  "tr": "Beş daire gezdiysen hepsinin adı 'the flat'; onları ayıran şey arkalarına eklediğin yan cümle. Hazır mısın?",
+  "kind": "say.tr",
+  "de": "Hast du fünf Wohnungen gesehen, heißen alle 'the flat'; was sie unterscheidet, ist der Nebensatz dahinter. Bist du bereit?"
+ },
+ {
+  "tr": "Gün boyunca üç ayrı gelecek kullanacaksın ve hangisini seçtiğin işin ne kadar kesin olduğunu söylüyor. Hazır mısın?",
+  "kind": "say.tr",
+  "de": "Du wirst an diesem Tag drei Zukunftsformen benutzen, und deine Wahl sagt, wie sicher die Sache ist. Bist du bereit?"
+ },
+ {
+  "tr": "Merhaba! Bugün taşınma gününü konuşmayı öğreneceğiz: kamyonet kaçta geliyor, önce ne boşaltılıyor, kim neyi taşıyor.",
+  "kind": "say.tr",
+  "de": "Hallo! Heute lernen wir, den Umzugstag zu besprechen: wann der Transporter kommt, was zuerst ausgepackt wird, wer was trägt."
+ },
+ {
+  "tr": "Ev arayışı sürerken anlattığın şeyle, geçen hafta gördüğün bir daire İngilizcede farklı zamanla söyleniyor. Hazır mısın?",
+  "kind": "say.tr",
+  "de": "Was du über die laufende Suche erzählst und eine Wohnung, die du letzte Woche gesehen hast, stehen im Englischen in verschiedenen Zeiten. Bist du bereit?"
+ },
+ {
+  "tr": "Merhaba! Bugün ev arkadaşlarıyla yaşamanın dilini öğreneceğiz: kim neyi yapıyor, neyi sormak gerekiyor, neyi gerekmiyor.",
+  "kind": "say.tr",
+  "de": "Hallo! Heute lernen wir die Sprache des Zusammenlebens: wer was macht, was man fragen muss und was nicht."
+ },
+ {
+  "tr": "Sözleşmelerin garip bir dili var: kimin yaptığı neredeyse hiç yazılmıyor. Bu bir üslup değil, bir dilbilgisi seçimi. Hazır mısın?",
+  "kind": "say.tr",
+  "de": "Verträge haben eine eigenartige Sprache: wer etwas tut, steht fast nie da. Das ist kein Stil, sondern eine grammatische Wahl. Bist du bereit?"
+ }
+]
