@@ -7,7 +7,7 @@ import type { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import type { RootStackParams } from "../navigation/RootStack";
 import { Text } from "../ui/Text";
 import { PressableScale } from "../ui/PressableScale";
-import { XIcon, FlameIcon, BoltIcon } from "../ui/icons";
+import { XIcon, FlameIcon, BoltIcon, ShareIcon } from "../ui/icons";
 import { RoundView } from "../game/rounds";
 import { Celebrate } from "../ui/Celebrate";
 import { fetchDaily, submitDaily, scoreAnswer, type DailyBoardRow } from "../game/daily";
@@ -18,6 +18,7 @@ import { RoundSkeleton } from "../game/RoundSkeleton";
 import { useTheme, spacing, radii, softShadow, TIER_COLOR, type Palette } from "../theme";
 import { sfx } from "../lib/sfx";
 import { bumpStats } from "../lib/statsSignal";
+import { shareRoundResult } from "../lib/share";
 
 type Phase = "loading" | "auth" | "error" | "ready" | "play" | "submitting" | "done" | "empty";
 
@@ -109,6 +110,12 @@ export function DailyScreen() {
   const bestComboRef = useRef(0);
   const correctRef = useRef(0);
   const totalRef = useRef(0);
+  /* Paylasim deseni icin tur basina dogru/yanlis dizisi - web `daily-player`
+     `marks` ile ayni. Cizilen sey sayilar degil DESEN. */
+  const marksRef = useRef<boolean[]>([]);
+  /* Paylasim metninin basligindaki seviye; yukun kendisinden geliyor
+     (web `data.level`). */
+  const levelRef = useRef("A1");
   const roundStart = useRef(0);
   const startedAt = useRef(0);
   const submitted = useRef(false);
@@ -118,6 +125,7 @@ export function DailyScreen() {
     try {
       const p = await fetchDaily();
       day.current = p.day;
+      levelRef.current = p.level || "A1";
       setBoard(p.board ?? []);
       if (p.played) {
         // Bugün oynanmış: sonucu + tabloyu göster (günde tek hak).
@@ -167,6 +175,7 @@ export function DailyScreen() {
     comboRef.current = running;
     if (running > bestComboRef.current) bestComboRef.current = running;
     if (ok) correctRef.current += 1;
+    marksRef.current.push(ok);
     setScoreView(scoreRef.current);
     setComboView(running);
     roundStart.current = Date.now();
@@ -285,7 +294,28 @@ export function DailyScreen() {
           <Text variant="h3" style={{ marginTop: spacing.xl, marginBottom: 2 }}>{t("daily.today_s_ranking")}</Text>
           <Text variant="caption" color={colors.textMuted}>{t("daily.players_at_your_level")}</Text>
           <Board rows={board} colors={colors} />
-          <PressableScale onPress={() => nav.goBack()} style={[{ marginTop: spacing.xxl, backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: spacing.lg, alignItems: "center" }, softShadow(colors.primary, 8)]}><Text variant="bodyStrong" color={colors.onPrimary}>{t("common.finish")}</Text></PressableScale>
+          {/* PAYLASIM. Web'in gunun turu sonucunda paylasim var
+              (`daily-player` `ShareResult kind="daily"`), Androidde HIC
+              yoktu: ayni tur bir platformda paylasilabilir, otekinde
+              paylasilamazdi - ve gunun turu tam olarak paylasilmaya deger
+              olan tur, cunku sorular o seviyedeki HERKESE ayni geliyor. */}
+          {totalRef.current > 0 && (
+            <PressableScale
+              onPress={() => void shareRoundResult({
+                marks: marksRef.current,
+                total: totalRef.current,
+                accuracy: totalRef.current ? Math.round((correctRef.current / totalRef.current) * 100) : 0,
+                streak: 0,
+                level: levelRef.current,
+                kind: "daily",
+                score: scoreRef.current,
+              })}
+              style={{ width: "100%", borderRadius: radii.lg, paddingVertical: spacing.lg, alignItems: "center", flexDirection: "row", justifyContent: "center", gap: 8, marginTop: spacing.xl, borderWidth: 1.5, borderColor: colors.border }}
+            >
+              <ShareIcon color={colors.text} size={19} /><Text variant="bodyStrong" color={colors.text}>{t("common.share")}</Text>
+            </PressableScale>
+          )}
+          <PressableScale onPress={() => nav.goBack()} style={[{ marginTop: spacing.md, backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: spacing.lg, alignItems: "center" }, softShadow(colors.primary, 8)]}><Text variant="bodyStrong" color={colors.onPrimary}>{t("common.finish")}</Text></PressableScale>
         </ScrollView>
       </View>
     );
