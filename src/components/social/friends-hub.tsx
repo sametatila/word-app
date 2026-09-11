@@ -12,8 +12,8 @@ import { Feed } from "./feed";
 import { Find } from "./find";
 import { FriendList } from "./friend-list";
 import { FriendsBoard } from "./friends-board";
-import { Quests } from "./quests";
-import { Requests } from "./requests";
+import { Quests, QuestsSkeleton } from "./quests";
+import { RequestCardSkeleton, Requests } from "./requests";
 import { useT, useLang } from "@/lib/i18n/client";
 import { courseName } from "@/lib/courses";
 import { useShell } from "@/components/app-shell";
@@ -209,7 +209,15 @@ export function FriendsHub({ me, initialTab }: { me: SocialMeView; initialTab: H
         ) : null}
         {tab === "friends" ? (
           data === null ? (
-            <PersonRowSkeleton rows={3} />
+            /* YÜKLEME DALI GERÇEK DİZİLİMİ ÇİZİYOR — Android'in aynısı
+               (`FriendsScreen`): istek kartı, görev kartı, iki kişi satırı.
+               Önce yalnız üç kişi satırı vardı ve veri gelince ilk iki kart
+               üstte belirip listeyi aşağı itiyordu. */
+            <div className="flex flex-col gap-4">
+              <RequestCardSkeleton />
+              <QuestsSkeleton />
+              <PersonRowSkeleton rows={2} />
+            </div>
           ) : (
             <div className="flex flex-col gap-4">
               {/* Sıra bilinçli: cevap bekleyen iş (gelen istek), bu haftanın

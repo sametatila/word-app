@@ -5,6 +5,7 @@ import { useState } from "react";
 import { Avatar } from "@/components/avatar";
 import { errorText, social, timeAgo, type PendingView } from "@/lib/social/client";
 import { useT, useLang } from "@/lib/i18n/client";
+import { SkeletonLine, SkeletonPill, SkeletonTile } from "@/components/skeleton";
 
 /**
  * Bekleyen istekler. `side` verilmezse ikisi de çizilir.
@@ -62,6 +63,44 @@ export function Requests({
         </section>
       ) : null}
     </div>
+  );
+}
+
+/**
+ * İSTEK KARTININ YERİ — yüklenirken.
+ *
+ * Sosyal merkez yüklenirken web yalnız üç kişi satırı çiziyordu
+ * (`PersonRowSkeleton`); veri gelince gelen istek kartı ve haftanın görev
+ * kartı **üstte** beliriyor ve listeyi aşağı itiyordu. Android'in yükleme
+ * dalı gerçek dizilimin aynısını çiziyor (`FriendsScreen`:
+ * `RequestCardSkeleton`, `QuestsSkeleton`, iki `FriendCardSkeleton`) ve
+ * gerekçesi başka bir ekranda yazılı: "içerik gelince kartlar ortadan yukarı
+ * sıçramıyor, oldukları yerde beliriyor".
+ *
+ * Parçalar gerçek satırın aynısı: 40'lık avatar, iki metin satırı, iki
+ * düğme — yani yükseklik varsayılmıyor, aynı düzenden çıkıyor.
+ */
+export function RequestCardSkeleton({ rows = 2 }: { rows?: number } = {}) {
+  return (
+    <section aria-hidden>
+      <div className="mb-2 flex items-baseline justify-between px-1">
+        <SkeletonLine variant="micro" width={92} />
+        <SkeletonLine variant="caption" width={14} />
+      </div>
+      <ol className="card divide-y divide-[color:var(--border)] overflow-hidden">
+        {Array.from({ length: rows }).map((_, i) => (
+          <li key={i} className="flex items-center gap-3 px-4 py-3" style={{ opacity: 1 - i * 0.12 }}>
+            <SkeletonTile size={40} className="rounded-full" />
+            <span className="min-w-0 flex-1">
+              <SkeletonLine variant="body" width={`${60 - i * 8}%`} />
+              <SkeletonLine variant="micro" width={68} />
+            </span>
+            <SkeletonPill width={72} height={32} />
+            <SkeletonPill width={56} height={32} />
+          </li>
+        ))}
+      </ol>
+    </section>
   );
 }
 
