@@ -1,3 +1,4 @@
+import { LoadingRegion } from "@/components/loading-region";
 import { RowSkeleton } from "@/components/skeleton";
 
 /**
@@ -10,7 +11,7 @@ import { RowSkeleton } from "@/components/skeleton";
  */
 export default function Loading() {
   return (
-    <div aria-hidden className="mx-auto w-full max-w-3xl space-y-5">
+    <LoadingRegion className="mx-auto w-full max-w-3xl space-y-5">
       <div className="flex items-center gap-3">
         <div className="h-10 w-10 shrink-0 animate-pulse rounded-full surface-2" />
         <div className="h-13 w-13 shrink-0 animate-pulse rounded-full surface-2" style={{ height: 52, width: 52 }} />
@@ -20,6 +21,6 @@ export default function Loading() {
         </div>
       </div>
       <RowSkeleton rows={5} height={62} />
-    </div>
+    </LoadingRegion>
   );
 }

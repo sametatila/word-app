@@ -1,9 +1,10 @@
+import { LoadingRegion } from "@/components/loading-region";
 import { RowSkeleton } from "@/components/skeleton";
 
 /** Kelime listesi iskeleti — başlık, ilerleme şeridi, arama, çipler, satırlar. */
 export default function Loading() {
   return (
-    <div aria-hidden className="mx-auto w-full max-w-3xl space-y-4">
+    <LoadingRegion className="mx-auto w-full max-w-3xl space-y-4">
       <div className="flex items-center gap-3">
         <div className="h-10 w-10 shrink-0 animate-pulse rounded-full surface-2" />
         <div className="min-w-0 flex-1 space-y-1.5">
@@ -19,6 +20,6 @@ export default function Loading() {
         ))}
       </div>
       <RowSkeleton rows={6} height={72} />
-    </div>
+    </LoadingRegion>
   );
 }

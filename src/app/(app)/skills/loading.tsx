@@ -1,3 +1,4 @@
+import { LoadingRegion } from "@/components/loading-region";
 import { PageSkeleton } from "@/components/skeleton";
 
 /**
@@ -10,8 +11,8 @@ import { PageSkeleton } from "@/components/skeleton";
  */
 export default function Loading() {
   return (
-    <div className="mx-auto w-full max-w-3xl">
+    <LoadingRegion className="mx-auto w-full max-w-3xl">
       <PageSkeleton rows={6} />
-    </div>
+    </LoadingRegion>
   );
 }

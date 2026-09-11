@@ -1,3 +1,4 @@
+import { LoadingRegion } from "@/components/loading-region";
 import { SkeletonLine } from "@/components/skeleton";
 
 /**
@@ -9,7 +10,7 @@ import { SkeletonLine } from "@/components/skeleton";
  */
 export default function Loading() {
   return (
-    <div aria-hidden className="mx-auto w-full max-w-3xl space-y-4">
+    <LoadingRegion className="mx-auto w-full max-w-3xl space-y-4">
       <SkeletonLine variant="h2" width={140} />
       {[0, 1, 2].map((s) => (
         <section key={s} className="card space-y-3 p-5">
@@ -22,6 +23,6 @@ export default function Loading() {
           ))}
         </section>
       ))}
-    </div>
+    </LoadingRegion>
   );
 }

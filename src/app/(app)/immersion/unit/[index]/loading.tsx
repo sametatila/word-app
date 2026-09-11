@@ -1,3 +1,4 @@
+import { LoadingRegion } from "@/components/loading-region";
 import { SkeletonLine, RowSkeleton } from "@/components/skeleton";
 
 /**
@@ -6,11 +7,11 @@ import { SkeletonLine, RowSkeleton } from "@/components/skeleton";
  */
 export default function Loading() {
   return (
-    <div aria-hidden className="mx-auto w-full max-w-3xl space-y-3">
+    <LoadingRegion className="mx-auto w-full max-w-3xl space-y-3">
       <SkeletonLine variant="h2" width={200} />
       <SkeletonLine variant="caption" width={140} />
       <div className="h-2" />
       <RowSkeleton rows={6} height={64} />
-    </div>
+    </LoadingRegion>
   );
 }

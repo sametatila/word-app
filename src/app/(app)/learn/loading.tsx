@@ -1,3 +1,4 @@
+import { LoadingRegion } from "@/components/loading-region";
 /**
  * Öğren iskeleti — "Bugün" kartı, dört döşeme, görevler.
  *
@@ -7,7 +8,7 @@
  */
 export default function Loading() {
   return (
-    <div aria-hidden className="mx-auto w-full max-w-3xl space-y-4">
+    <LoadingRegion className="mx-auto w-full max-w-3xl space-y-4">
       <div className="card overflow-hidden">
         <div className="h-32 animate-pulse surface-2" />
         <div className="space-y-3 p-4">
@@ -25,6 +26,6 @@ export default function Loading() {
           <div key={i} className="h-24 animate-pulse rounded-card surface-2" style={{ opacity: 1 - i * 0.08 }} />
         ))}
       </div>
-    </div>
+    </LoadingRegion>
   );
 }
