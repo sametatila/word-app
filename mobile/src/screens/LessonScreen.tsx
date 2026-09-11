@@ -27,6 +27,8 @@ import { haptic } from "../lib/haptics";
 import { API_BASE, fetchWithTimeout } from "../api/client";
 import { bumpStats } from "../lib/statsSignal";
 import { todayStr } from "../game/session";
+import { candoIdsForLesson } from "../game/candoMap";
+import { fetchCando } from "../game/cando";
 import { useTheme, spacing, radii, softShadow, type Palette } from "../theme";
 import { sfx } from "../lib/sfx";
 import { track } from "../lib/track";
@@ -666,6 +668,7 @@ export function LessonScreen() {
           onBack={() => nav.goBack()}
           onNext={nextLesson ? () => nav.replace("Lesson", { id: nextLesson.id }) : undefined}
           passed={passed}
+          onResume={() => setPhase("roleplay")}
           onExam={() => nav.navigate("RoleplayExam", { id: lesson.id })} />
       ) : resumeOffer ? (
         <View style={{ flex: 1, alignItems: "center", justifyContent: "center", gap: spacing.lg, paddingHorizontal: spacing.xl }}>
@@ -929,12 +932,35 @@ function RoleplayControls({ input, setInput, busy, onSend, onSpeak, suggestions,
   );
 }
 
-function Summary({ lesson, correct, total, next, roleMsgs, nextDays, passed, colors, insets, onBack, onNext, onExam }: {
+function Summary({ lesson, correct, total, next, roleMsgs, nextDays, passed, colors, insets, onBack, onNext, onExam, onResume }: {
   lesson: Lesson; correct: number; total: number; next: Lesson | null; roleMsgs: ChatMsg[]; nextDays: number | null; colors: Palette;
   passed: boolean | null;
-  insets: { bottom: number }; onBack: () => void; onNext?: () => void; onExam?: () => void;
+  insets: { bottom: number }; onBack: () => void; onNext?: () => void; onExam?: () => void; onResume?: () => void;
 }) {
   const pct = total ? Math.round((correct / total) * 100) : 100;
+  /*
+   * "ARTIK ŞUNU YAPABİLİRİM" — dersin ödeme satırı ve mobilde hiç yoktu.
+   *
+   * Web özetin altında bunu yazıyor (`lessonp.i_can`): kullanıcı turu
+   * bitiriyor, kaç doğru yaptığını görüyor ama NE KAZANDIĞINI görmüyordu.
+   * Kimlikler dersten (`candoMap`), metni `/api/cando`dan — rol yapma
+   * sınavındaki yolun aynısı (`RoleplayExamScreen`). Alınamazsa satır
+   * çizilmiyor: etiket bir süs, ders özeti ona bağlı değil.
+   */
+  const [cando, setCando] = useState<string[]>([]);
+  useEffect(() => {
+    let alive = true;
+    const want = candoIdsForLesson(lesson);
+    if (!want.length) return;
+    fetchCando()
+      .then((d) => {
+        if (!alive) return;
+        const byId = new Map(d.items.map((it) => [it.cando.id, it.cando.tr]));
+        setCando(want.map((c) => byId.get(c)).filter((x): x is string => Boolean(x)));
+      })
+      .catch(() => { /* etiket alınamadı */ });
+    return () => { alive = false; };
+  }, [lesson]);
   /* Düzeltmeler karşı tarafın cevaplarından çıkarılıyor — web ile aynı kural
      ve aynı ayrıştırıcı (`parseReply`). */
   const corrections = roleMsgs.filter((m) => m.role === "assistant").flatMap((m) => parseReply(m.content).corrections);
@@ -954,6 +980,13 @@ function Summary({ lesson, correct, total, next, roleMsgs, nextDays, passed, col
         <View style={{ flex: 1, backgroundColor: colors.surface, borderRadius: radii.lg, borderWidth: 1, borderColor: colors.hairline, padding: spacing.lg, alignItems: "center" }}>
           <Text variant="display" color={colors.successText}>{formatPercent(pct)}</Text>
           <Text variant="caption" color={colors.textMuted}>{tx("lesson.accuracy")}</Text>
+        </View>
+        {/* KAÇ TUR KONUŞULDU — web özette baştan beri gösteriyor ve mobilde
+            hiç yoktu. Konuşmanın UZUNLUĞU isabetten ayrı bir şey söylüyor:
+            beş turda üç doğru ile on beş turda üç doğru aynı ders değil. */}
+        <View style={{ flex: 1, backgroundColor: colors.surface, borderRadius: radii.lg, borderWidth: 1, borderColor: colors.hairline, padding: spacing.lg, alignItems: "center" }}>
+          <Text variant="display" color={passed === false ? colors.streakText : colors.text}>{roleMsgs.filter((m) => m.role === "user").length}</Text>
+          <Text variant="caption" color={colors.textMuted}>{tx("lesson.phase_roleplay")}</Text>
         </View>
       </View>
 
@@ -1002,6 +1035,12 @@ function Summary({ lesson, correct, total, next, roleMsgs, nextDays, passed, col
         </View>
       ) : null}
 
+      {cando.length ? (
+        <Text variant="caption" color={colors.textMuted} style={{ alignSelf: "stretch", marginTop: spacing.lg, lineHeight: 20 }}>
+          <Text variant="caption" color={colors.text} style={{ fontWeight: "700" }}>{tx("lessonp.i_can")}</Text> {cando.join(" · ")}
+        </Text>
+      ) : null}
+
       {/* DÜZELTMELER TOPLU. Konuşma sırasında her balonun altında tek tek
           geçiyordu ve akışta kayboluyordu; kapanışta hepsi bir arada durmalı
           - dersin öğrettiği şey tam olarak bunlar. Web aynı listeyi aynı
@@ -1020,13 +1059,25 @@ function Summary({ lesson, correct, total, next, roleMsgs, nextDays, passed, col
       {/* DERS NE ZAMAN GERİ GELECEK. Aralıklı tekrar merdiveni sunucuda
           hesaplanıyor ve kayıt yanıtında geliyordu; mobil yanıtı hiç
           okumadığı için bu satır yoktu. */}
-      {nextDays !== null ? (
+      {/*
+        KONUŞMA NEDEN TAMAMLANMADI ve NE YAPILACAK.
+        Başlık "Konuşma tamamlanmadı" diyordu ve orada bitiyordu: kaç tur
+        gerektiği yazmıyor, konuşmaya dönmenin bir yolu da görünmüyordu -
+        kullanıcı dersi kapatmaktan başka bir şey yapamıyordu. Web ikisini de
+        aynı yerde veriyor (`min_turns_note` + "Konuşmaya dön").
+      */}
+      {passed === false ? (
+        <Text variant="caption" color={colors.textMuted} style={{ alignSelf: "stretch", marginTop: spacing.lg, lineHeight: 20 }}>
+          {tx("lessonp.min_turns_note", { n: lesson.roleplay.minTurns ?? 6 })}
+        </Text>
+      ) : nextDays !== null ? (
         <Text variant="caption" color={colors.textMuted} style={{ alignSelf: "stretch", marginTop: spacing.lg, lineHeight: 20 }}>
           {tx("lessonp.next_in_days", { n: nextDays })}
         </Text>
       ) : null}
 
       <View style={{ alignSelf: "stretch", marginTop: spacing.xl, gap: spacing.sm }}>
+        {passed === false && onResume ? <BigButton label={tx("lessonp.back_to_conversation")} onPress={onResume} colors={colors} /> : null}
         {onNext && next ? <BigButton label={tx("lesson.next_speaking", { title: next.title })} onPress={onNext} colors={colors} /> : null}
         {/* SINAV OLARAK DENE. Konuşma yapıldıysa aynı sahne bir de ölçüm
             olarak oynanabiliyor (WP-22): yardım yok, 5 tur, rubrik puanı.

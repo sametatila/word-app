@@ -342,7 +342,6 @@ export const deWeb: Record<string, string> = {
   "lessonp.leave_for_now": "Für jetzt lassen",
   "lessonp.practice": "Übung",
   "lessonp.patterns": "Muster",
-  "lessonp.min_turns_note": "Damit das Gespräch zählt, musst du mindestens {n}-mal zu Wort kommen — Muster sitzen erst, wenn du sie benutzt.",
   "authw.social_unavailable": "Die Anmeldung über soziale Netzwerke geht gerade nicht. Du kannst mit E-Mail weitermachen.",
   "authw.signup_sub": "Ein paar Sekunden, und dein erstes Wort steht bereit.",
   "authw.back_home": "Zurück zur Startseite",

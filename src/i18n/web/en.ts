@@ -342,7 +342,6 @@ export const enWeb: Record<string, string> = {
   "lessonp.leave_for_now": "Leave it for now",
   "lessonp.practice": "Practice",
   "lessonp.patterns": "Patterns",
-  "lessonp.min_turns_note": "For the conversation to count you need to speak at least {n} times — patterns only stick once you use them.",
   "authw.social_unavailable": "Social sign-in isn't available right now. You can carry on with email.",
   "authw.signup_sub": "It takes a few seconds and your first word is ready.",
   "authw.back_home": "Back to the home page",

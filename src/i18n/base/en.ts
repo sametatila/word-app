@@ -707,6 +707,7 @@ export const enBase: Record<string, string> = {
   "assess.overall_score": "Overall score {n}",
   "lessonp.n_turns": "{n} turns",
   "lessonp.i_can": "What I can do:",
+  "lessonp.min_turns_note": "For the conversation to count you need to speak at least {n} times — patterns only stick once you use them.",
   "lessonp.back_to_conversation": "Back to the conversation",
   "lessonp.exam_hint": "Same scene, no help, 5 turns, scored",
   "lessonp.try_as_exam": "Try it as an exam",

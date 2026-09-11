@@ -367,7 +367,6 @@ export const trWeb: Record<string, string> = {
   "lessonp.leave_for_now": "Şimdilik bırak",
   "lessonp.practice": "Alıştırma",
   "lessonp.patterns": "Kalıplar",
-  "lessonp.min_turns_note": "Konuşmanın sayılması için sohbette en az {n} kez söz alman gerekiyor — kalıplar ancak kullanılınca oturuyor.",
   "authw.social_unavailable": "Sosyal giriş şu an kullanılamıyor. E-posta ile devam edebilirsin.",
   "authw.signup_sub": "Birkaç saniye sürer, ilk kelimen hazır.",
   "authw.back_home": "Ana sayfaya dön",

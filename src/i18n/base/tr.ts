@@ -707,6 +707,7 @@ export const trBase: Record<string, string> = {
   "assess.overall_score": "Genel puan {n}",
   "lessonp.n_turns": "{n} tur",
   "lessonp.i_can": "Yapabildiklerim:",
+  "lessonp.min_turns_note": "Konuşmanın sayılması için sohbette en az {n} kez söz alman gerekiyor — kalıplar ancak kullanılınca oturuyor.",
   "lessonp.back_to_conversation": "Konuşmaya dön",
   "lessonp.exam_hint": "Aynı sahne, yardım yok, 5 tur, puanlı",
   "lessonp.try_as_exam": "Sınav olarak dene",

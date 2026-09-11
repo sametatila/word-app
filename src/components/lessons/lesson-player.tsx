@@ -1565,8 +1565,14 @@ export function LessonPlayer({
               </div>
             </div>
 
-            <dl className="mt-4 grid grid-cols-2 gap-3">
+            {/* ÜÇ SAYI. Web iki, Android iki gösteriyordu ama İKİNCİLERİ
+                farklıydı: webde tur sayısı, Androidde başarı yüzdesi. İkisi de
+                gerçek bir şey söylüyor (biri konuşmanın uzunluğunu, öteki
+                isabeti) ve hangisini atacağımıza karar vermek yerine ikisi de
+                iki tarafta duruyor. Yüzde sözlükteki ortak biçimden. */}
+            <dl className="mt-4 grid grid-cols-3 gap-3">
               <Stat label={t("lessonp.practice")} value={`${correctCount} / ${scoredTotal}`} />
+              <Stat label={t("lesson.accuracy")} value={t("common.pct", { n: scoredTotal ? Math.round((correctCount / scoredTotal) * 100) : 100 })} />
               <Stat
                 label={t("lesson.phase_roleplay")}
                 value={t("lessonp.n_turns", { n: userTurns })}

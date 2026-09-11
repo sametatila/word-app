@@ -7479,3 +7479,32 @@ de artık "Sonra" (`common.later`, haftalık sınavda da).
 
 **§128** üç şeyi ölçüyor: ekranın fazları, tanıtım kartının bölüm sırası ve
 `session_start`in hangi anda yazıldığı. Dört enjeksiyonun dördü de yakalandı.
+
+### 11.220 Dersin kapanışında ne kazandığın yazmıyordu
+
+Ders özetinde üç fark çıktı, üçü de Android'de:
+
+- **"Yapabildiklerim" satırı hiç yoktu.** Web özetin altında dersin kazandırdığı
+  can-do ifadelerini yazıyor (`lessonp.i_can`): kullanıcı kaç doğru yaptığını
+  görüyor ama **ne kazandığını** görmüyordu. Kimlikler dersten (`candoMap`),
+  metni `/api/cando`dan — rol yapma sınavındaki yolun aynısı. Alınamazsa satır
+  çizilmiyor; etiket bir süs, özet ona bağlı değil.
+- **Konuşma tamamlanmadığında ekran susuyordu.** Başlık "Konuşma tamamlanmadı"
+  diyor, orada bitiyordu: **kaç tur gerektiği yazmıyor, konuşmaya dönmenin
+  yolu da görünmüyordu** — dersi kapatmaktan başka yapılacak bir şey yoktu.
+  Web ikisini de aynı yerde veriyor. §11.206'nın sınıfı: çalışan bir şey
+  bitmiş gibi görünüyor.
+- **İki taraf da iki sayı gösteriyordu ama ikincileri farklıydı** — webde tur
+  sayısı, Android'de başarı yüzdesi. İkisi de gerçek bir şey söylüyor (biri
+  konuşmanın uzunluğunu, öteki isabeti: beş turda üç doğru ile on beş turda üç
+  doğru aynı ders değil), o yüzden hangisini atacağıma karar vermek yerine
+  **üçü birden iki tarafta duruyor.**
+
+**§129** özetin bölüm sırasını ölçüyor (on iki bölüm). "Kalıplar" tablonun
+dışında ve gerekçesi kapının içinde: iki taraf aynı listeyi ayrı adla ve ayrı
+yerde yazıyor; sırayı orada zorlamak tasarımı değil ölçüyü düzeltmek olurdu.
+
+Kapı ilk çalıştırmasında "yapabildiklerim"i **en başta** gördü: dilim yorumları
+atmıyordu ve `lessonp.i_can`e ATIF yapan bir yorum bölümün kendisinden önce
+geliyordu. Ölçünün komşusunu ölçmenin on birinci biçimi. Üç enjeksiyonun üçü
+de yakalandı.

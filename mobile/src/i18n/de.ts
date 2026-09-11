@@ -705,6 +705,7 @@ export const de: Record<string, string> = {
   "assess.overall_score": "Gesamtpunktzahl {n}",
   "lessonp.n_turns": "{n} Beiträge",
   "lessonp.i_can": "Was ich kann:",
+  "lessonp.min_turns_note": "Damit das Gespräch zählt, musst du mindestens {n}-mal zu Wort kommen — Muster sitzen erst, wenn du sie benutzt.",
   "lessonp.back_to_conversation": "Zurück zum Gespräch",
   "lessonp.exam_hint": "Dieselbe Szene, keine Hilfe, 5 Beiträge, bewertet",
   "lessonp.try_as_exam": "Als Prüfung versuchen",

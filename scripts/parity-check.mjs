@@ -4442,6 +4442,57 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   sameList("gunluk tur olcum ani", [nerede(mobSrc)], [nerede(webSrc)]);
 }
 
+/* ── 129. dersin kapanis ozeti ────────────────────────────────────────────
+ * Uc fark cikti, ucu de Androidde:
+ *   - "Artik sunu yapabilirim" (`lessonp.i_can`) satiri hic yoktu: kullanici
+ *     kac dogru yaptigini goruyor, NE KAZANDIGINI gormuyordu.
+ *   - Konusma tamamlanmadiginda baslik "tamamlanmadi" deyip susuyordu: kac
+ *     tur gerektigi yazmiyor, konusmaya donmenin yolu da gorunmuyordu -
+ *     dersi kapatmaktan baska yapilacak bir sey yoktu (§11.206'nin sinifi).
+ *   - Iki taraf da IKI sayi gosteriyordu ama ikincileri farkliydi (webde tur
+ *     sayisi, Androidde basari yuzdesi); ikisi de gercek bir sey soyluyor,
+ *     ucu birden iki tarafta duruyor.
+ *
+ * Olculen: ozetin bolum sirasi. */
+{
+  const BOLUM = [
+    ["baslik", /lesson\.lesson_complete/, /lesson\.lesson_complete/],
+    ["alistirma", /lessonp\.practice/, /lesson\.correct_production/],
+    ["basari", /lesson\.accuracy/, /lesson\.accuracy/],
+    ["tur sayisi", /lessonp\.n_turns/, /lesson\.phase_roleplay/],
+    ["kelimeler", /lessonp\.words_of_lesson/, /lessonp\.words_of_lesson/],
+    ["yapabildiklerim", /lessonp\.i_can/, /lessonp\.i_can/],
+    ["duzeltmeler", /lessonp\.corrections/, /lessonp\.corrections/],
+    ["en az kac tur", /lessonp\.min_turns_note/, /lessonp\.min_turns_note/],
+    ["sonraki gun", /lessonp\.next_in_days/, /lessonp\.next_in_days/],
+    ["konusmaya don", /lessonp\.back_to_conversation/, /lessonp\.back_to_conversation/],
+    ["sinav olarak dene", /lessonp\.try_as_exam/, /lessonp\.try_as_exam/],
+    ["patikaya don", /lesson\.back_to_path/, /lesson\.back_to_path/],
+  ];
+  /* KALIPLAR bolumu tablonun DISINDA: iki taraf ayni listeyi ayri adla
+     yaziyor (`lessonp.patterns` / `lesson.patterns_you_learned`) ve sirasi da
+     ayri (webde kelimelerden sonra, mobilde once). Ayni bilgi, ayri yer -
+     siralamayi burada zorlamak tasarimi degil olcuyu duzeltmek olurdu. */
+  const dilim = (src, bas, son) => {
+    const i = src.indexOf(bas);
+    const j = src.indexOf(son, i);
+    /* YORUMLAR ATILIYOR — sonra. Once atilsaydi kesme noktalari kayardi;
+       atilmasaydi `lessonp.i_can`e ATIF yapan bir yorum ("web ozetin altinda
+       bunu yaziyor") bolumun kendisinden once gorunur ve sira yanlis
+       okunurdu. Nitekim ilk calistirmada tam olarak oyle oldu. */
+    const dilimlenmis = i < 0 ? "" : src.slice(i, j < 0 ? src.length : j);
+    return dilimlenmis.replace(/\/\*[\s\S]*?\*\//g, " ").replace(/(^|[^:"'`\\])\/\/.*$/gm, "$1");
+  };
+  const sira = (src, ix) =>
+    BOLUM.map(([ad, ...d]) => [ad, src.search(d[ix])])
+      .filter(([, i]) => i >= 0)
+      .sort((a, b) => a[1] - b[1])
+      .map(([ad]) => ad);
+  const web = dilim(read("src/components/lessons/lesson-player.tsx"), 'lesson.lesson_complete', "\n  if (phase ===");
+  const mob = dilim(read("mobile/src/screens/LessonScreen.tsx"), "function Summary({", "\nfunction ");
+  sameList("ders kapanis ozeti", sira(mob, 1), sira(web, 0));
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"
