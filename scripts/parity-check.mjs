@@ -6717,6 +6717,66 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   sameList("web tur geri bildirimi", web, beklenen, "bulunan", "beklenen");
 }
 
+/* ── 177. puanin duyurulmasi (durum nesnesi kalibi) ───────────────────────
+ * §11.272'nin dersi uygulandi: canli bolge sinifi bu kez GECICI MESAJ degil
+ * DURUM NESNESI kalibiyla tarandi (`useState<{...} | null>` ve onun cizim
+ * bloklari). Web ve mobil birlikte seksen cizim verdi; cogu yuklenen VERI
+ * (liste, profil alani) ve duyurulmamasi dogru - ekran okuyucu onlari zaten
+ * sirasi gelince okuyor. Eylemin CEVABI olan uc yuzey kaldi:
+ *
+ *   - beceri konusma puani (web `speaking-player`)
+ *   - monolog puani ve rubrigi (web `monologue-player`)
+ *   - mobil beceri kutuphanesinin sonuc blogu (`game/skillLibrary`)
+ *
+ * Ucu de sessizdi, yani IKI PLATFORM birden (§11.228 sinifi). Kayit bitiyor,
+ * odak dugmede kaliyor, ekranda yuzde ve rubrik cikiyor ve ekran okuyucu
+ * hicbir sey soylemiyordu.
+ *
+ * Ayrica etkin oturumlarin iki durum satiri (`stale`, `failed`) webde ortak
+ * bildirim kutusundan gecerken mobilde duz metindi - §157 o bilesenin `msg`
+ * satirini kapatmisti ama bu ikisi `msg` degil, durum nesnesinin alani. */
+{
+  const strip = (x) => x.replace(/\/\*[\s\S]*?\*\//g, (m) => m.replace(/[^\n]/g, " ")).replace(/(^|[^:"'`\\])\/\/.*$/gm, "$1");
+  const govde = (yol, imza, bitis = "\n}") => {
+    const src = strip(read(yol));
+    const i = src.indexOf(imza);
+    if (i < 0) return "";
+    const j = src.indexOf(bitis, i + imza.length);
+    return src.slice(i, j < 0 ? src.length : j).replace(/\s+/g, " ");
+  };
+  const CIFT = [
+    [
+      "beceri konusma puani",
+      () => (/<View accessibilityLiveRegion="polite">/.test(govde("mobile/src/game/skillLibrary.tsx", 'phase === "result" ?')) ? "duyuruyor" : "sessiz"),
+      () => (/<div role="status" className="mt-4">/.test(strip(read("src/components/skills/speaking-player.tsx"))) ? "duyuruyor" : "sessiz"),
+    ],
+    [
+      "monolog puani",
+      () => (/<View accessibilityLiveRegion="polite">/.test(govde("mobile/src/game/skillLibrary.tsx", 'phase === "result" ?')) ? "duyuruyor" : "sessiz"),
+      () => (/<motion\.section role="status"/.test(strip(read("src/components/skills/monologue-player.tsx"))) ? "duyuruyor" : "sessiz"),
+    ],
+    [
+      "oturum durum satiri",
+      () => {
+        const src = strip(read("mobile/src/ui/ActiveSessions.tsx")).replace(/\s+/g, " ");
+        const dallar = [...src.matchAll(/\{result\.state === "(stale|failed)" \? \( <Text([^>]*)>/g)];
+        return dallar.length === 2 && dallar.every((m) => /accessibilityLiveRegion="polite"/.test(m[2])) ? "duyuruyor" : "sessiz";
+      },
+      () => {
+        const src = strip(read("src/components/account/active-sessions.tsx")).replace(/\s+/g, " ");
+        const dallar = [...src.matchAll(/state === "(stale|failed)" \? <AuthNotice/g)];
+        return dallar.length === 2 ? "duyuruyor" : "sessiz";
+      },
+    ],
+  ];
+  const mob = CIFT.map(([ad, m]) => ad + "=" + m());
+  const web = CIFT.map(([ad, , w]) => ad + "=" + w());
+  const beklenen = CIFT.map(([ad]) => ad + "=duyuruyor");
+  sameList("puan duyurusu", mob, web);
+  sameList("mobil puan duyurusu", mob, beklenen, "bulunan", "beklenen");
+  sameList("web puan duyurusu", web, beklenen, "bulunan", "beklenen");
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"

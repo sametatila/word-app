@@ -8996,3 +8996,32 @@ kapatıldı.
 **§176** iki platformun geri bildirim şeridini ve serbest cümle sonucunu
 ölçüyor; ölçüm bileşenin kendi gövdesine bakıyor, dosyanın başka yerindeki bir
 duyuru onu yeşil yapmıyor. Üç enjeksiyonun üçü yakalandı.
+
+## §11.273 — Puan duyurulmuyordu (aynı sınıf, üçüncü kalıp)
+
+§11.272'nin dersini uyguladım: canlı bölge sınıfını bu kez **geçici mesaj**
+değil **durum nesnesi** kalıbıyla taradım (`useState<{…} | null>` ve onun
+çizim blokları). İki platform birlikte seksen çizim verdi. Çoğu yüklenen
+**veri** — liste satırı, profil alanı, öneri kutusu — ve onların duyurulmaması
+doğru: ekran okuyucu onları sırası gelince zaten okuyor. Bir eylemin **cevabı**
+olan üç yüzey kaldı ve **üçü de sessizdi**:
+
+- beceri konuşma puanı (web `speaking-player`),
+- monolog puanı ve rubriği (web `monologue-player`),
+- mobil beceri kütüphanesinin sonuç bloğu (`game/skillLibrary`).
+
+Kayıt bitiyor, odak düğmede kalıyor, ekranda yüzde ve rubrik çıkıyor ve ekran
+okuyucu hiçbir şey söylemiyordu. Yükleme hâli (`aria-busy`) söyleniyordu,
+sonucu söyleyen yoktu — yani "bekle" duyuluyor, "bitti" duyulmuyordu.
+
+Dördüncü bulgu etkin oturumlarda: `stale` ve `failed` durum satırları web'de
+ortak bildirim kutusundan geçiyor (`AuthNotice`, `role="alert"`), mobilde düz
+metindi. §157 o bileşenin `msg` satırını kapatmıştı ama bu ikisi `msg` değil,
+**durum nesnesinin alanı**.
+
+Üç kalıp, aynı sınıf: `setMsg` (§157), `Feedback` nesnesi (§11.272), durum
+nesnesi (bu madde). Sınıfı bir kalıpta aramak onu taradığını sanmaya yol
+açıyor; kalıbı değiştirince aynı sınıf yeniden bulgu veriyor.
+
+**§177** üç yüzeyi de çift olarak ve mutlak ölçütle denetliyor. Beş
+enjeksiyonun beşi doğru tarafta yakalandı.

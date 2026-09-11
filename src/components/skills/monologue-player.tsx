@@ -365,7 +365,11 @@ export function MonologuePlayer({ exercise, backHref }: { exercise: SpeakingMono
       ) : null}
 
       {phase === "result" ? (
-        <motion.section initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} className="card mt-3 p-5">
+        /* SONUÇ DUYURULUYOR. Kayıt bitince gelen puan ve rubrik bir eylemin
+           cevabı; odak "Kaydı bitir" düğmesinde kalıyor ve ekran okuyucu
+           hiçbir şey söylemiyordu. Yükleme hâli `aria-busy` ile zaten
+           söyleniyor, sonucu söyleyen yoktu. */
+        <motion.section role="status" initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} className="card mt-3 p-5">
           {result ? (
             <AssessmentCard answer={transcript.trim()} result={result} failure={failure} example={null} />
           ) : (

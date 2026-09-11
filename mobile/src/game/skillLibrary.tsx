@@ -423,7 +423,12 @@ export function MonologueBody({ mono, level, exerciseId, onDone, colors }: {
       ) : null}
 
       {phase === "result" ? (
-        <>
+        /* SONUÇ DUYURULUYOR — web `monologue-player`/`speaking-player` ile
+           aynı yerde. Puan, övgü, ipucu ve düzeltilmiş metin bir eylemin
+           cevabı: kayıt bitiyor, odak düğmede kalıyor ve ekran okuyucu hiçbir
+           şey söylemiyordu. İki platform da sessizdi (§11.228 sınıfı), yani
+           karşılaştırma bunu bulamazdı. */
+        <View accessibilityLiveRegion="polite">
           {result ? (
             <>
               <Text variant="h2">{formatPercent(result.overall)}</Text>
@@ -449,7 +454,7 @@ export function MonologueBody({ mono, level, exerciseId, onDone, colors }: {
               <Text variant="body" style={{ lineHeight: 22 }}>{mono.sampleDe}</Text>
             </View>
           ) : null}
-        </>
+        </View>
       ) : null}
     </Card>
   );

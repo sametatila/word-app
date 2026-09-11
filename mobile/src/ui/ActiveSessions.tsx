@@ -72,11 +72,18 @@ export function ActiveSessions({ colors }: { colors: Palette }) {
         </View>
       ))}
 
+      {/* İKİ DURUM SATIRI DA DUYURULUYOR. "Oturumu tazele" ve "liste
+          yüklenemedi" bir eylemin cevabı: kullanıcı düğmeye basıyor, odak
+          düğmede kalıyor ve ekran yalnız renkle cevap veriyordu. Webde ikisi
+          de ortak bildirim kutusundan geçiyor (`AuthNotice`, `role="alert"`);
+          mobilde düz metindi. §157 bu bileşenin `msg` satırını kapatmıştı ama
+          bu iki dal `msg` değil, DURUM nesnesinin alanı — aynı kusur, başka
+          kalıpta (bkz. §11.272). */}
       {result.state === "stale" ? (
-        <Text variant="caption" color={colors.textMuted}>{t("sessions.need_fresh")}</Text>
+        <Text accessibilityLiveRegion="polite" variant="caption" color={colors.textMuted}>{t("sessions.need_fresh")}</Text>
       ) : null}
       {result.state === "failed" ? (
-        <Text variant="caption" color={colors.dangerText}>{t("sessions.load_failed")}</Text>
+        <Text accessibilityLiveRegion="polite" variant="caption" color={colors.dangerText}>{t("sessions.load_failed")}</Text>
       ) : null}
 
       <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md }}>

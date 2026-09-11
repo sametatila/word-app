@@ -179,7 +179,10 @@ export function SpeakingPlayer({ exercise, backHref }: { exercise: SkillExercise
         ) : null}
 
         {phase === "done" && score ? (
-          <div className="mt-4">
+          /* Söyleyiş puanı da bir eylemin cevabı — bkz. `monologue-player`
+             içindeki not. Yüzde, "duyulan" satırı ve karışma uyarıları yalnız
+             GÖRSEL bir değişiklikti. */
+          <div role="status" className="mt-4">
             <div className="flex items-center gap-2">
               {score.overall >= PASS ? (
                 <CheckIcon size={18} className="text-[color:var(--color-mint)]" />
