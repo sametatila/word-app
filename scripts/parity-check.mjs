@@ -3635,6 +3635,35 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   sameList("bos tur ekranlari", bos("mobile/src/screens/GameScreen.tsx"), bos("src/components/session-player.tsx"));
 }
 
+/* ── 106. bolum arasi karti ───────────────────────────────────────────────
+ * Sinav bolumleri arasinda okunan kart: Teil sirasi, Almanca ve kendi
+ * dilindeki adi, bolumun NE ISTEDIGI, kac madde ve kalan sure. Mobil kapaktan
+ * dogrudan ilk soruya, bolum bitince de dogrudan sonrakine geciyordu - ogrenci
+ * girdigi bolumun ne soracagini hic okumuyordu.
+ *
+ * SAYAC da olculuyor: kart sirasinda sure DURMAMALI (web yalniz kapak/sonuc/
+ * hata fazlarini disarida birakiyor). Durdurmak Androidde bolumler arasinda
+ * sinirsiz okuma suresi verirdi. */
+{
+  const kart = (p, brief) => {
+    const src = read(p).replace(/\/\*[\s\S]*?\*\//g, " ").replace(/\/\/[^\n]*/g, " ");
+    const brifler = [...new Set([...src.matchAll(/"(exam\.brief_\w+)"/g)].map((m) => m[1]))].sort();
+    return [
+      "brif sayisi=" + brifler.length,
+      ...brifler,
+      "teil sirasi=" + (/Teil \{/.test(src) ? "var" : "yok"),
+      "madde ve sure=" + (/exam\.items_and_time/.test(src) ? "var" : "yok"),
+      "bolume basla=" + (/exam\.start_section/.test(src) ? "var" : "yok"),
+      "sayac kartta isler=" + (brief.test(src) ? "var" : "yok"),
+    ];
+  };
+  sameList(
+    "bolum arasi karti",
+    kart("mobile/src/screens/ExamScreen.tsx", /phase !== "bolum" && phase !== "bolumGiris"/),
+    kart("src/components/exam-player.tsx", /phase === "cover" \|\| phase === "loading"/),
+  );
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"

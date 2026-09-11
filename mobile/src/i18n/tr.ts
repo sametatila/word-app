@@ -478,6 +478,18 @@ export const tr: Record<string, string> = {
   "item.listen": "Dinle",
   "item.finish": "Bitir",
   "common.next": "Sonraki",
+  /* Bölüm arası kartı: hangi bölüm, ne soruyor, kaç madde, kalan süre.
+     Mobilde böyle bir kart yoktu - öğrenci bölüme ne sorulacağını
+     bilmeden giriyordu. */
+  "exam.brief_vocab": "Modülün kelimeleri. Anlamı verilen cümleyi ya da kelimeyi hedef dilde yaz.",
+  "exam.brief_grammar": "Modülün dilbilgisi odakları. Doğru biçimi seç ya da cümle hakkında hüküm ver.",
+  "exam.brief_produce": "Sınavın omurgası. Anlamı verilen cümleyi kur — yazarak ya da parçaları sıralayarak.",
+  "exam.brief_reading": "Kısa bir metin. Önce oku, sonra soruları cevapla. Metin sorular boyunca ekranda kalır.",
+  "exam.brief_listening": "Bir diyalog. İstediğin kadar dinleyebilirsin ama metni göremezsin.",
+  "exam.brief_speaking": "Cümleyi yüksek sesle, doğal hızda oku. Tek kayıt hakkı; puan kelime düzeyinde.",
+  "exam.brief_writing": "Tek görev, serbest metin. Kontrol listesindeki maddelerin hepsine değin.",
+  "exam.items_and_time": "{n} madde · kalan süre {time}",
+  "exam.start_section": "Bölüme başla",
   "exam.sec_vocab": "Kelime",
   "exam.sec_grammar": "Dilbilgisi",
   "exam.sec_produce": "Cümle kurma",

@@ -34,6 +34,11 @@ const SECTION_DE: Record<SectionId, string> = {
   vocab: "Wortschatz", grammar: "Grammatik", produce: "Satzbau",
   reading: "Lesen", listening: "Hören", speaking: "Sprechen", writing: "Schreiben",
 };
+/** Bölümün öğrenciye ne yaptıracağı — bölüm arası kartında okunur. */
+const SECTION_BRIEF_KEY: Record<SectionId, string> = {
+  vocab: "exam.brief_vocab", grammar: "exam.brief_grammar", produce: "exam.brief_produce",
+  reading: "exam.brief_reading", listening: "exam.brief_listening", speaking: "exam.brief_speaking", writing: "exam.brief_writing",
+};
 const SECTION_KEY: Record<SectionId, string> = {
   vocab: "exam.sec_vocab", grammar: "exam.sec_grammar", produce: "exam.sec_produce",
   reading: "exam.sec_reading", listening: "exam.sec_listening", speaking: "exam.sec_speaking", writing: "exam.sec_writing",
@@ -117,7 +122,7 @@ export function ExamScreen() {
   const [err, setErr] = useState<string | null>(null);
   /* Yükleme hatası GEÇİCİ olabilir; bkz. hata ekranındaki "tekrar dene". */
   const [attempt, setAttempt] = useState(0);
-  const [phase, setPhase] = useState<"yukleniyor" | "kapak" | "bolum" | "sonuc">("yukleniyor");
+  const [phase, setPhase] = useState<"yukleniyor" | "kapak" | "bolumGiris" | "bolum" | "sonuc">("yukleniyor");
   const [secIdx, setSecIdx] = useState(0);
   const [left, setLeft] = useState(0);
   const [result, setResult] = useState<Result | null>(null);
@@ -217,15 +222,18 @@ export function ExamScreen() {
     setPhase("sonuc");
   }, [paper, level, moduleIx]);
 
-  // Süre yalnız sınav sürerken işler; kapakta ve sonuçta durur.
+  /* Süre yalnız sınav sürerken işler; kapakta ve sonuçta durur. BÖLÜM ARASI
+     KARTINDA DA İŞLER: web sayacı orada durdurmuyor (`exam-player` yalnız
+     kapak/sonuç/hata fazlarını dışarıda bırakıyor) ve durdurmak Android'de
+     sınavı kolaylaştırırdı - bölümler arasında sınırsız okuma süresi. */
   useEffect(() => {
-    if (phase !== "bolum") return;
+    if (phase !== "bolum" && phase !== "bolumGiris") return;
     const id = setInterval(() => setLeft((n) => Math.max(0, n - 1)), 1000);
     return () => clearInterval(id);
   }, [phase]);
 
   useEffect(() => {
-    if (phase === "bolum" && left === 0) void finishExam();
+    if ((phase === "bolum" || phase === "bolumGiris") && left === 0) void finishExam();
   }, [left, phase, finishExam]);
 
   const filledSections = (): SectionId[] =>
@@ -236,7 +244,7 @@ export function ExamScreen() {
     score.current[id].correct = correct;
     const list = filledSections();
     const i = list.indexOf(id);
-    if (i + 1 < list.length) setSecIdx(i + 1);
+    if (i + 1 < list.length) { setSecIdx(i + 1); setPhase("bolumGiris"); }
     else void finishExam();
   }
 
@@ -354,7 +362,7 @@ export function ExamScreen() {
               {t(moduleIx === null ? "exam.rules_level" : "exam.rules_module")} {t("exam.rules_body")}
             </Text>
           </Card>
-          <PressableScale onPress={() => { startedAt.current = Date.now(); setPhase("bolum"); }} style={[{ backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: 16, alignItems: "center" }, softShadow(colors.primary, 10)]}>
+          <PressableScale onPress={() => { startedAt.current = Date.now(); setPhase("bolumGiris"); }} style={[{ backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: 16, alignItems: "center" }, softShadow(colors.primary, 10)]}>
             <Text variant="bodyStrong" color={colors.onPrimary}>{t("exam.start")}</Text>
           </PressableScale>
         </ScrollView>
@@ -503,6 +511,38 @@ export function ExamScreen() {
 
   const list = filledSections();
   const active = list[secIdx];
+
+  /*
+    BÖLÜM ARASI KARTI. Mobil kapaktan doğrudan ilk soruya, bölüm bitince de
+    doğrudan sonrakine geçiyordu: öğrenci hangi bölüme girdiğini yalnız
+    başlıktaki tek satırdan ("2/5 · Grammatik · Dilbilgisi") anlıyor, o
+    bölümün NE İSTEDİĞİNİ hiç okumuyordu. Web her bölümün önüne bir kart
+    koyuyor (`exam-player`): Teil sırası, Almanca ve kendi dilindeki adı,
+    bölümün ne yaptıracağı, kaç madde ve kalan süre.
+  */
+  if (phase === "bolumGiris" && active) {
+    return (
+      <View style={{ flex: 1, backgroundColor: colors.bg }}>
+        {header}
+        <ScrollView contentContainerStyle={{ padding: spacing.lg, paddingBottom: insets.bottom + spacing.xxl }}>
+          <Card padded style={{ gap: spacing.xs }}>
+            {/* Büyük harfe çevrilmiyor: Türkçe yerelde "Teil" → "TEİL" oluyor. */}
+            <Text variant="micro" color={colors.textMuted}>Teil {secIdx + 1} / {list.length}</Text>
+            <Text variant="h1">{SECTION_DE[active]}</Text>
+            <Text variant="bodyStrong" color={colors.primaryText}>{t(SECTION_KEY[active])}</Text>
+            <Text variant="body" color={colors.textMuted} style={{ marginTop: spacing.sm, lineHeight: 22 }}>{t(SECTION_BRIEF_KEY[active])}</Text>
+            <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.sm }}>
+              {t("exam.items_and_time", { n: paper.sections[active]?.length ?? 0, time: `${mm}:${ss}` })}
+            </Text>
+            <PressableScale onPress={() => setPhase("bolum")} style={[{ marginTop: spacing.lg, backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: 15, alignItems: "center" }, softShadow(colors.primary, 8)]}>
+              <Text variant="h3" color={colors.onPrimary}>{t("exam.start_section")}</Text>
+            </PressableScale>
+          </Card>
+        </ScrollView>
+      </View>
+    );
+  }
+
   return (
     <View style={{ flex: 1, backgroundColor: colors.bg }}>
       {header}

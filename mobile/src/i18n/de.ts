@@ -473,6 +473,18 @@ export const de: Record<string, string> = {
   "item.listen": "Anhören",
   "item.finish": "Beenden",
   "common.next": "Weiter",
+  /* Bölüm arası kartı: hangi bölüm, ne soruyor, kaç madde, kalan süre.
+     Mobilde böyle bir kart yoktu - öğrenci bölüme ne sorulacağını
+     bilmeden giriyordu. */
+  "exam.brief_vocab": "Die Wörter des Moduls. Schreib den vorgegebenen Satz oder das Wort in der Zielsprache.",
+  "exam.brief_grammar": "Der Grammatikschwerpunkt des Moduls. Wähl die richtige Form oder beurteile den Satz.",
+  "exam.brief_produce": "Das Rückgrat der Prüfung. Bilde den vorgegebenen Satz — tippend oder durch Ordnen der Bausteine.",
+  "exam.brief_reading": "Ein kurzer Text. Erst lesen, dann die Fragen beantworten. Der Text bleibt dabei sichtbar.",
+  "exam.brief_listening": "Ein Dialog. Du kannst so oft hören, wie du willst, siehst aber keinen Text.",
+  "exam.brief_speaking": "Lies den Satz laut und in natürlichem Tempo. Eine Aufnahme; bewertet wird auf Wortebene.",
+  "exam.brief_writing": "Eine Aufgabe, freier Text. Geh auf jeden Punkt der Checkliste ein.",
+  "exam.items_and_time": "{n} Aufgaben · {time} übrig",
+  "exam.start_section": "Teil starten",
   "exam.sec_vocab": "Wortschatz",
   "exam.sec_grammar": "Grammatik",
   "exam.sec_produce": "Sätze bilden",

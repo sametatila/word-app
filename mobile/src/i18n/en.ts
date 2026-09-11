@@ -473,6 +473,18 @@ export const en: Record<string, string> = {
   "item.listen": "Listen",
   "item.finish": "Finish",
   "common.next": "Next",
+  /* Bölüm arası kartı: hangi bölüm, ne soruyor, kaç madde, kalan süre.
+     Mobilde böyle bir kart yoktu - öğrenci bölüme ne sorulacağını
+     bilmeden giriyordu. */
+  "exam.brief_vocab": "The module's words. Write the given sentence or word in the target language.",
+  "exam.brief_grammar": "The module's grammar focus. Pick the right form or judge the sentence.",
+  "exam.brief_produce": "The backbone of the exam. Build the given sentence — by typing or by ordering the chunks.",
+  "exam.brief_reading": "A short text. Read it first, then answer the questions. The text stays on screen throughout.",
+  "exam.brief_listening": "A dialogue. You can listen as often as you like, but you won't see the transcript.",
+  "exam.brief_speaking": "Read the sentence aloud at a natural pace. One recording; scoring is at word level.",
+  "exam.brief_writing": "One task, free text. Cover every point on the checklist.",
+  "exam.items_and_time": "{n} items · {time} left",
+  "exam.start_section": "Start the section",
   "exam.sec_vocab": "Vocabulary",
   "exam.sec_grammar": "Grammar",
   "exam.sec_produce": "Sentence building",
