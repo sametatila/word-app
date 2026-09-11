@@ -102,7 +102,7 @@ jobs:
       # tümüyle türetilmiş, ayrışmaları ancak dökümün unutulması demek.
       - name: Döküm bütünlüğü
         run: npm run check:dumps
-      # Ana dil ekseninin on üç kapısı. On üçü de SESSİZ bozulmaya karşı:
+      # Ana dil ekseninin on dört kapısı. On dördü de SESSİZ bozulmaya karşı:
       # çözücü bir parçanın karşılığını bulamayınca dersi tümden reddediyor
       # ve `localiseLesson` Türkçeye düşüyor — hiçbir yerde hata görünmüyor,
       # İngilizce kurs yalnızca Türkçe olarak açılıyor. Bir ders düzenlemesi
@@ -184,6 +184,15 @@ jobs:
       # Alman okurun ekranına çıkar. Tarama alan adına hiç bakmıyor,
       # 102.083 dize geziyor.
       #
+      # `check:lessons` ders SÖZLEŞMESİNİ ölçüyor: sekiz kelime, her kelimenin
+      # sesli tekrarı, üretim ipucunun tam cümleyi vermesi, 14-24 adım,
+      # açılışın soruyla bitmesi. Almanca kursun 580 dersi baştan beri
+      # geçiyordu; İngilizce kursun 200 dersi 1.017 hata veriyordu ve kapı bu
+      # yüzden CI dışındaydı — okunmayan kırmızı bir kapı, olmayan kapıdır.
+      # Kullanıcı kararıyla (2026-09-11) İngilizce kurs aynı sözleşmeye
+      # getirildi: 600 kelime, 496 ipucu, 143 tekrar adımı ve 16 açılış.
+      # Sıfıra inince alındı.
+      #
       # `check:lessons-cando` ile `check:lessons-cando-de` dersin altındaki
       # "bunu yapabileceksin" köprüsünün iki yönü, 131 ifade. İkisi de
       # çözücüden GEÇMİYOR: karşılığı olmayan ifade hata vermiyor, sessizce
@@ -205,6 +214,7 @@ jobs:
           npm run check:native-de
           npm run check:lessons-cando
           npm run check:lessons-cando-de
+          npm run check:lessons
       # de→en kelime katmanının kapısı. Örnek cümlenin Almanca çevirisi
       # TÜRETİLEMİYOR ve bu ölçüldü: İngilizce örnek cümleler Almanca cümlenin
       # çevirisi değil, aynı kelime için BAĞIMSIZ yazılmış cümleler
