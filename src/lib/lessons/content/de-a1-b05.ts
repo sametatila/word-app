@@ -1376,6 +1376,37 @@ export const deA1B05: Lesson[] = [
         expect: { kind: "repeat", target: "Nein, leider nicht" },
       },
       {
+        say: [tr("Bir tane daha: 'Bu çok bol.' demek için ne dersin?")],
+        expect: {
+          kind: "produce",
+          target: "Das ist zu weit",
+          hint: [
+            tr("Ölçü sıfatının önüne"),
+            de("zu"),
+            tr("gelince 'fazla' anlamı çıkıyor:"),
+            de("Das ist zu weit."),
+            tr("Tekrar dene."),
+          ],
+        },
+      },
+      {
+        say: [
+          tr("Bir doğru-yanlış alıştırması:"),
+          de("Ich möchte den Kassenbon zeigen."),
+          tr("cümlesi doğru mu, yanlış mı?"),
+        ],
+        expect: {
+          kind: "truefalse",
+          statement: "Ich möchte den Kassenbon zeigen.",
+          answer: true,
+          why: [
+            tr(
+              "Doğru. Kip fiili ikinci sırada duruyor, asıl fiil mastar hâlinde cümlenin sonuna gidiyor.",
+            ),
+          ],
+        },
+      },
+      {
         say: [
           tr("Son bir doğru-yanlış alıştırması:"),
           de("Ich möchte umtauschen die Hose."),
@@ -1840,6 +1871,35 @@ export const deA1B05: Lesson[] = [
           tr("deyin."),
         ],
         expect: { kind: "repeat", target: "Das macht vier Euro fünfzig" },
+      },
+      {
+        say: [tr("Bir tane daha: 'Ekmek ne kadar?' demek için ne dersin?")],
+        expect: {
+          kind: "produce",
+          target: "Was kostet das Brot",
+          hint: [
+            tr("Tek bir şeyin fiyatı sorulunca fiil tekile dönüyor:"),
+            de("Was kostet das Brot?"),
+            tr("Tekrar dene."),
+          ],
+        },
+      },
+      {
+        say: [
+          tr("Bir doğru-yanlış alıştırması:"),
+          de("Die Äpfel kostet drei Euro."),
+          tr("cümlesi doğru mu, yanlış mı?"),
+        ],
+        expect: {
+          kind: "truefalse",
+          statement: "Die Äpfel kostet drei Euro.",
+          answer: false,
+          why: [
+            tr("Yanlış. Özne çoğul olunca fiil de çoğula giriyor:"),
+            de("Die Äpfel kosten drei Euro."),
+            tr("Tekil biçim tek bir şey için kalıyor."),
+          ],
+        },
       },
       {
         say: [

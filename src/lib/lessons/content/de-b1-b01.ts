@@ -309,6 +309,18 @@ export const deB1B01: Lesson[] = [
         expect: { kind: "repeat", target: "Ich war zuständig für den Einkauf" },
       },
       {
+        say: [tr("Bir tane daha: 'Sonra bir meslek eğitimi aldım.' demek için ne dersin?")],
+        expect: {
+          kind: "produce",
+          target: "Danach machte ich eine Ausbildung",
+          hint: [
+            tr("Geçmiş zaman eki fiile yapışıyor, yardımcı fiil yok:"),
+            de("Danach machte ich eine Ausbildung."),
+            tr("Tekrar dene."),
+          ],
+        },
+      },
+      {
         say: [
           tr("Son bir doğru-yanlış alıştırması:"),
           de("Danach wechselte ich in eine andere Abteilung."),
@@ -455,6 +467,20 @@ export const deB1B01: Lesson[] = [
         expect: { kind: "repeat", target: "Ich bin sehr belastbar und geduldig" },
       },
       {
+        say: [tr("Bir tane daha: 'Derli toplu olmama rağmen bazen bir şey unutuyorum.' demek için ne dersin?")],
+        expect: {
+          kind: "produce",
+          target: "Obwohl ich ordentlich bin, vergesse ich manchmal etwas",
+          hint: [
+            tr(
+              "Yan cümlede çekimli fiil sona gidiyor; yan cümle başta olunca ana cümle doğrudan fiille başlıyor:",
+            ),
+            de("Obwohl ich ordentlich bin, vergesse ich manchmal etwas."),
+            tr("Tekrar dene."),
+          ],
+        },
+      },
+      {
         say: [
           tr("Son bir doğru-yanlış alıştırması:"),
           de("Obwohl ich bin jung, habe ich viel Erfahrung."),
@@ -599,6 +625,20 @@ export const deB1B01: Lesson[] = [
         expect: { kind: "repeat", target: "Ich suche eine neue Herausforderung" },
       },
       {
+        say: [tr("Bir tane daha: 'Amacım sizi ikna etmek.' demek için ne dersin?")],
+        expect: {
+          kind: "produce",
+          target: "Mein Ziel ist es, Sie zu überzeugen",
+          hint: [
+            tr("Mastar öbeği sona kalıyor;"),
+            de("zu"),
+            tr("mastarın hemen önünde duruyor:"),
+            de("Mein Ziel ist es, Sie zu überzeugen."),
+            tr("Tekrar dene."),
+          ],
+        },
+      },
+      {
         say: [
           tr("Son bir doğru-yanlış alıştırması:"),
           de("Mein Ziel ist es, zu arbeiten im Team."),
@@ -741,6 +781,18 @@ export const deB1B01: Lesson[] = [
           tr("deyin."),
         ],
         expect: { kind: "repeat", target: "Die Einarbeitung dauert zwei Wochen" },
+      },
+      {
+        say: [tr("Bir tane daha: 'Toplantının ne zaman olduğunu bilmiyorum.' demek için ne dersin?")],
+        expect: {
+          kind: "produce",
+          target: "Ich weiß nicht, wann die Besprechung ist",
+          hint: [
+            tr("Dolaylı soruda çekimli fiil yan cümlenin sonuna gidiyor:"),
+            de("Ich weiß nicht, wann die Besprechung ist."),
+            tr("Tekrar dene."),
+          ],
+        },
       },
       {
         say: [
@@ -1530,6 +1582,18 @@ export const deB1B01: Lesson[] = [
           tr("deyin."),
         ],
         expect: { kind: "repeat", target: "Hier ist meine Nummer" },
+      },
+      {
+        say: [tr("Bir tane daha: 'Hangi sektörde çalıştığınızı sorabilir miyim?' demek için ne dersin?")],
+        expect: {
+          kind: "produce",
+          target: "Darf ich fragen, in welcher Branche Sie arbeiten",
+          hint: [
+            tr("Dolaylı soruda çekimli fiil sona gidiyor, soru sırası kurulmuyor:"),
+            de("Darf ich fragen, in welcher Branche Sie arbeiten?"),
+            tr("Tekrar dene."),
+          ],
+        },
       },
       {
         say: [

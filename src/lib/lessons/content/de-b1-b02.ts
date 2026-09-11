@@ -300,6 +300,18 @@ export const deB1B02: Lesson[] = [
         expect: { kind: "repeat", target: "Die Kaution beträgt drei Monatsmieten" },
       },
       {
+        say: [tr("Bir tane daha: 'Çatının yeni olup olmadığını merak ediyorum.' demek için ne dersin?")],
+        expect: {
+          kind: "produce",
+          target: "Ich wüsste gern, ob das Dach neu ist",
+          hint: [
+            tr("Dolaylı soruda çekimli fiil yan cümlenin sonuna gidiyor:"),
+            de("Ich wüsste gern, ob das Dach neu ist."),
+            tr("Tekrar dene."),
+          ],
+        },
+      },
+      {
         say: [
           tr("Son bir doğru-yanlış alıştırması:"),
           de("Ich wüsste gern, ob die Wohnung renoviert ist."),
@@ -443,6 +455,18 @@ export const deB1B02: Lesson[] = [
         expect: {
           kind: "repeat",
           target: "Man kann mit einer Frist von drei Monaten kündigen",
+        },
+      },
+      {
+        say: [tr("Bir tane daha: 'Ücretler sözleşmede düzenleniyor.' demek için ne dersin?")],
+        expect: {
+          kind: "produce",
+          target: "Die Gebühren werden im Vertrag geregelt",
+          hint: [
+            tr("Edilgende yardımcı fiil ikinci sırada, ortaç cümlenin sonunda:"),
+            de("Die Gebühren werden im Vertrag geregelt."),
+            tr("Tekrar dene."),
+          ],
         },
       },
       {
@@ -906,6 +930,20 @@ export const deB1B02: Lesson[] = [
         expect: { kind: "repeat", target: "Bitte bis spätestens Freitag" },
       },
       {
+        say: [tr("Bir tane daha: 'Bir usta çağrılmalı.' demek için ne dersin?")],
+        expect: {
+          kind: "produce",
+          target: "Ein Handwerker muss gerufen werden",
+          hint: [
+            tr("Kip fiili ikinci sırada; edilgen mastar"),
+            de("werden"),
+            tr("ile sona kuruluyor:"),
+            de("Ein Handwerker muss gerufen werden."),
+            tr("Tekrar dene."),
+          ],
+        },
+      },
+      {
         say: [
           tr("Son bir doğru-yanlış alıştırması:"),
           de("Die Heizung muss repariert werden."),
@@ -1205,6 +1243,20 @@ export const deB1B02: Lesson[] = [
           tr("deyin."),
         ],
         expect: { kind: "repeat", target: "Der alte Teppich passt gut dazu" },
+      },
+      {
+        say: [tr("Bir tane daha: 'rahat eski koltuk' demek için ne dersin?")],
+        expect: {
+          kind: "produce",
+          target: "der gemütliche alte Sessel",
+          hint: [
+            tr("Belirli artikelden sonra sıfat"),
+            de("-e"),
+            tr("sonunu alıyor; eril yalın hâlde her iki sıfat da aynı sonu taşıyor:"),
+            de("der gemütliche alte Sessel"),
+            tr("Tekrar dene."),
+          ],
+        },
       },
       {
         say: [

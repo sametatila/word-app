@@ -208,6 +208,20 @@ export const deA1B07: Lesson[] = [
         },
       },
       {
+        say: [tr("Bir tane daha: 'Odada iki pencere var.' demek için ne dersin?")],
+        expect: {
+          kind: "produce",
+          target: "Im Zimmer gibt es zwei Fenster",
+          hint: [
+            tr(
+              "Yer ifadesi başa geçince fiil hemen arkasından geliyor ve sözde özne üçüncü sıraya kayıyor:",
+            ),
+            de("Im Zimmer gibt es zwei Fenster."),
+            tr("Tekrar dene."),
+          ],
+        },
+      },
+      {
         say: [
           tr("Son bir doğru-yanlış alıştırması:"),
           de("Es gibt drei Zimmern."),
@@ -424,6 +438,18 @@ export const deA1B07: Lesson[] = [
         expect: { kind: "repeat", target: "Wie viele Zimmer hat die Wohnung" },
       },
       {
+        say: [tr("Bir tane daha: 'Burası giriş.' demek için ne dersin?")],
+        expect: {
+          kind: "produce",
+          target: "Das ist der Eingang",
+          hint: [
+            tr("Bu kelime eril, o yüzden işaret cümlesinde de eril artikel geliyor:"),
+            de("Das ist der Eingang."),
+            tr("Tekrar dene."),
+          ],
+        },
+      },
+      {
         say: [
           tr("Son bir doğru-yanlış alıştırması:"),
           de("Das ist das Wohnzimmer."),
@@ -635,6 +661,18 @@ export const deA1B07: Lesson[] = [
             tr("Yatan şeyler için ayrı bir fiil vardı:"),
             de("Die Tasche liegt auf dem Tisch."),
             tr("Tekrar dene."),
+          ],
+        },
+      },
+      {
+        say: [tr("Bir tane daha: 'Mobilyaları köşeye koyuyorum.' demek için ne dersin?")],
+        expect: {
+          kind: "produce",
+          target: "Ich stelle die Möbel in die Ecke",
+          hint: [
+            tr("Hareket varsa edatın ardından yönelme değil yön hâli geliyor:"),
+            de("Ich stelle die Möbel in die Ecke."),
+            tr("Duran bir eşya anlatılsaydı hâl değişirdi. Tekrar dene."),
           ],
         },
       },
@@ -1090,6 +1128,18 @@ export const deA1B07: Lesson[] = [
         },
       },
       {
+        say: [tr("Bir tane daha: 'Bodrumda gürültü yapmak yasak.' demek için ne dersin?")],
+        expect: {
+          kind: "produce",
+          target: "Man darf im Keller nicht laut sein",
+          hint: [
+            tr("Olumsuzluk sözcüğü sıfattan hemen önce duruyor, mastar sona kalıyor:"),
+            de("Man darf im Keller nicht laut sein."),
+            tr("Tekrar dene."),
+          ],
+        },
+      },
+      {
         say: [
           tr("Son bir doğru-yanlış alıştırması:"),
           de("Hier man darf nicht rauchen."),
@@ -1312,6 +1362,18 @@ export const deA1B07: Lesson[] = [
         expect: { kind: "repeat", target: "Ich zahle die Miete pro Monat" },
       },
       {
+        say: [tr("Bir tane daha: 'Kirayı her ay havale ediyorum.' demek için ne dersin?")],
+        expect: {
+          kind: "produce",
+          target: "Ich überweise die Miete jeden Monat",
+          hint: [
+            tr("Fiil ikinci sırada, zaman ifadesi nesneden sonra geliyor:"),
+            de("Ich überweise die Miete jeden Monat."),
+            tr("Tekrar dene."),
+          ],
+        },
+      },
+      {
         say: [
           tr("Son bir doğru-yanlış alıştırması:"),
           de("Die Miete kostet achthundert Euro pro Monat."),
@@ -1522,6 +1584,20 @@ export const deA1B07: Lesson[] = [
           hint: [
             tr("Banyo kelimesinin artikelini hatırla:"),
             de("Das Bad ist sauber."),
+            tr("Tekrar dene."),
+          ],
+        },
+      },
+      {
+        say: [tr("Bir tane daha: 'Buzdolabını yarın topluyorum.' demek için ne dersin?")],
+        expect: {
+          kind: "produce",
+          target: "Ich räume den Kühlschrank morgen auf",
+          hint: [
+            tr(
+              "Ayrılabilen fiilin öneki en sona gidiyor; zaman zarfı nesneyle önekin arasında kalıyor:",
+            ),
+            de("Ich räume den Kühlschrank morgen auf."),
             tr("Tekrar dene."),
           ],
         },
@@ -1755,6 +1831,35 @@ export const deA1B07: Lesson[] = [
         expect: { kind: "repeat", target: "Ich packe die Kartons" },
       },
       {
+        say: [tr("Bir tane daha: 'Bavulu buraya koyabilir misin?' demek için ne dersin?")],
+        expect: {
+          kind: "produce",
+          target: "Kannst du das Gepäck hierher legen",
+          hint: [
+            tr("Kip fiili başa geçiyor, asıl fiil mastar hâlinde sonda kalıyor:"),
+            de("Kannst du das Gepäck hierher legen?"),
+            tr("Tekrar dene."),
+          ],
+        },
+      },
+      {
+        say: [
+          tr("Bir doğru-yanlış alıştırması:"),
+          de("Kannst du helfen mir?"),
+          tr("cümlesi doğru mu, yanlış mı?"),
+        ],
+        expect: {
+          kind: "truefalse",
+          statement: "Kannst du helfen mir?",
+          answer: false,
+          why: [
+            tr("Yanlış. Nesne mastardan önce geliyor, mastar sonda kalıyor:"),
+            de("Kannst du mir helfen?"),
+            tr("Sıra bozulunca cümle kulağa yanlış geliyor."),
+          ],
+        },
+      },
+      {
         say: [
           tr("Son bir doğru-yanlış alıştırması:"),
           de("Kannst du mir beim Umzug helfen?"),
@@ -1965,6 +2070,18 @@ export const deA1B07: Lesson[] = [
           hint: [
             tr("Bahçe için yer bildiren biçim yine kısalıyor:"),
             de("Ich sitze gern im Garten."),
+            tr("Tekrar dene."),
+          ],
+        },
+      },
+      {
+        say: [tr("Bir tane daha: 'Balkonda güneş parlıyor.' demek için ne dersin?")],
+        expect: {
+          kind: "produce",
+          target: "Auf dem Balkon scheint die Sonne",
+          hint: [
+            tr("Yer ifadesi başa geçince fiil hemen arkasından geliyor, özne sonra:"),
+            de("Auf dem Balkon scheint die Sonne."),
             tr("Tekrar dene."),
           ],
         },
@@ -2184,6 +2301,18 @@ export const deA1B07: Lesson[] = [
           tr("deyin."),
         ],
         expect: { kind: "repeat", target: "Können Sie kommen" },
+      },
+      {
+        say: [tr("Bir tane daha: 'Tamir ne kadar sürüyor?' demek için ne dersin?")],
+        expect: {
+          kind: "produce",
+          target: "Wie lange dauert die Reparatur",
+          hint: [
+            tr("Soru ifadesi başta, fiil hemen arkasında, özne sonda:"),
+            de("Wie lange dauert die Reparatur?"),
+            tr("Tekrar dene."),
+          ],
+        },
       },
       {
         say: [

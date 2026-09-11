@@ -207,6 +207,18 @@ export const deA1B10: Lesson[] = [
         expect: { kind: "repeat", target: "Ich rufe später an" },
       },
       {
+        say: [tr("Bir tane daha: 'Seni sonra geri ararım.' demek için ne dersin?")],
+        expect: {
+          kind: "produce",
+          target: "Ich rufe dich später zurück",
+          hint: [
+            tr("Ayrılabilen fiilin öneki sona gidiyor; nesne ve zaman zarfı önüne diziliyor:"),
+            de("Ich rufe dich später zurück."),
+            tr("Tekrar dene."),
+          ],
+        },
+      },
+      {
         say: [
           tr("Son bir doğru-yanlış alıştırması:"),
           de("Ich anrufe später."),
@@ -418,6 +430,20 @@ export const deA1B10: Lesson[] = [
           hint: [
             tr("Önce kime, sonra ne gönderdiğin gelir:"),
             de("Ich schicke dir eine Nachricht."),
+            tr("Tekrar dene."),
+          ],
+        },
+      },
+      {
+        say: [tr("Bir tane daha: 'Yakında bir mektup gönderiyorum.' demek için ne dersin?")],
+        expect: {
+          kind: "produce",
+          target: "Bald schicke ich einen Brief",
+          hint: [
+            tr(
+              "Zaman zarfı başa geçince fiil hemen arkasından geliyor, özne üçüncü sıraya kayıyor:",
+            ),
+            de("Bald schicke ich einen Brief."),
             tr("Tekrar dene."),
           ],
         },
@@ -638,6 +664,18 @@ export const deA1B10: Lesson[] = [
         },
       },
       {
+        say: [tr("Bir tane daha: 'Saati bilmiyorum.' demek için ne dersin?")],
+        expect: {
+          kind: "produce",
+          target: "Ich weiß die Uhrzeit nicht",
+          hint: [
+            tr("Olumsuzluk sözcüğü nesneden sonra, cümlenin sonunda duruyor:"),
+            de("Ich weiß die Uhrzeit nicht."),
+            tr("Tekrar dene."),
+          ],
+        },
+      },
+      {
         say: [
           tr("Son bir doğru-yanlış alıştırması:"),
           de("Der Termin ist am zehn Uhr."),
@@ -849,6 +887,20 @@ export const deA1B10: Lesson[] = [
           hint: [
             tr("Ne getireceği ortada, fiilin parçası en sonda:"),
             de("Bring bitte einen Kuchen mit."),
+            tr("Tekrar dene."),
+          ],
+        },
+      },
+      {
+        say: [tr("Bir tane daha: 'Misafirleri yarın davet etmek istiyorum.' demek için ne dersin?")],
+        expect: {
+          kind: "produce",
+          target: "Ich möchte die Gäste morgen einladen",
+          hint: [
+            tr(
+              "Kip fiili ikinci sırada, asıl fiil mastar hâlinde sonda; nesne ve zaman zarfı araya giriyor:",
+            ),
+            de("Ich möchte die Gäste morgen einladen."),
             tr("Tekrar dene."),
           ],
         },
@@ -1687,6 +1739,18 @@ export const deA1B10: Lesson[] = [
         },
       },
       {
+        say: [tr("Bir tane daha: 'Otelde geceledik.' demek için ne dersin?")],
+        expect: {
+          kind: "produce",
+          target: "Wir haben im Hotel übernachtet",
+          hint: [
+            tr("Geçmiş zamanda yardımcı fiil ikinci sırada, asıl fiilin geçmiş biçimi sonda:"),
+            de("Wir haben im Hotel übernachtet."),
+            tr("Tekrar dene."),
+          ],
+        },
+      },
+      {
         say: [
           tr("Son bir doğru-yanlış alıştırması:"),
           de("Es war ein tolles Wochenende."),
@@ -2112,6 +2176,18 @@ export const deA1B10: Lesson[] = [
           hint: [
             tr("Geçmişte bir şeyin ne olduğunu tek kelimeyle söylüyorduk:"),
             de("Das war ein Anfang."),
+            tr("Tekrar dene."),
+          ],
+        },
+      },
+      {
+        say: [tr("Bir tane daha: 'Şimdi kendimle gurur duyuyorum.' demek için ne dersin?")],
+        expect: {
+          kind: "produce",
+          target: "Jetzt bin ich stolz",
+          hint: [
+            tr("Zaman zarfı başa geçince fiil hemen arkasından geliyor:"),
+            de("Jetzt bin ich stolz."),
             tr("Tekrar dene."),
           ],
         },

@@ -1525,6 +1525,20 @@ export const deA1B08: Lesson[] = [
         expect: { kind: "repeat", target: "Wir sitzen unter dem Baum" },
       },
       {
+        say: [tr("Bir tane daha: 'Ormanda bir nehir var.' demek için ne dersin?")],
+        expect: {
+          kind: "produce",
+          target: "Im Wald gibt es einen Fluss",
+          hint: [
+            tr(
+              "Yer ifadesi başa geçince fiil hemen arkasından geliyor ve nesne belirtme hâline giriyor:",
+            ),
+            de("Im Wald gibt es einen Fluss."),
+            tr("Tekrar dene."),
+          ],
+        },
+      },
+      {
         say: [
           tr("Son bir doğru-yanlış alıştırması:"),
           de("Es gibt ein See."),

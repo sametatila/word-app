@@ -1518,6 +1518,38 @@ export const deA1B06: Lesson[] = [
         expect: { kind: "repeat", target: "Das lohnt sich" },
       },
       {
+        say: [tr("Bir tane daha: 'Kuleyi her yerden görebilirsin.' demek için ne dersin?")],
+        expect: {
+          kind: "produce",
+          target: "Man kann den Turm überall sehen",
+          hint: [
+            tr(
+              "Kip fiili ikinci sırada, asıl fiil mastar hâlinde sonda; yer zarfı ikisinin arasına giriyor:",
+            ),
+            de("Man kann den Turm überall sehen."),
+            tr("Tekrar dene."),
+          ],
+        },
+      },
+      {
+        say: [
+          tr("Bir doğru-yanlış alıştırması:"),
+          de("Man kann sehen die Altstadt."),
+          tr("cümlesi doğru mu, yanlış mı?"),
+        ],
+        expect: {
+          kind: "truefalse",
+          statement: "Man kann sehen die Altstadt.",
+          answer: false,
+          why: [
+            tr(
+              "Yanlış. Kip fiili varken asıl fiil mastar hâlinde cümlenin SONUNA gider, nesne araya girer:",
+            ),
+            de("Man kann die Altstadt sehen."),
+          ],
+        },
+      },
+      {
         say: [
           tr("Son bir doğru-yanlış alıştırması:"),
           de("Man kann hier viel sehen."),

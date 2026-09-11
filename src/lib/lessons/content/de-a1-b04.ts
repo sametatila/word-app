@@ -906,6 +906,18 @@ export const deA1B04: Lesson[] = [
         expect: { kind: "repeat", target: "Ich arbeite von neun bis fünf" },
       },
       {
+        say: [tr("Bir tane daha: 'Cumartesi günü asla çalışmam.' demek için ne dersin?")],
+        expect: {
+          kind: "produce",
+          target: "Am Samstag arbeite ich nie",
+          hint: [
+            tr("Gün başa geçince fiil hemen arkasından gelir, olumsuzluk sözcüğü sona kalır:"),
+            de("Am Samstag arbeite ich nie."),
+            tr("Tekrar dene."),
+          ],
+        },
+      },
+      {
         say: [
           tr("Son bir doğru-yanlış alıştırması:"),
           de("Am Samstag habe ich Zeit."),
@@ -1121,6 +1133,20 @@ export const deA1B04: Lesson[] = [
           tr("deyin."),
         ],
         expect: { kind: "repeat", target: "Am Wochenende schlafe ich lange" },
+      },
+      {
+        say: [tr("Bir tane daha: 'Bugün hâlâ öğreniyorum.' demek için ne dersin?")],
+        expect: {
+          kind: "produce",
+          target: "Heute lerne ich noch",
+          hint: [
+            tr(
+              "Zaman ifadesi başa geçince fiil hemen arkasından geliyor, özne üçüncü sıraya kayıyor:",
+            ),
+            de("Heute lerne ich noch."),
+            tr("Tekrar dene."),
+          ],
+        },
       },
       {
         say: [
@@ -1343,6 +1369,18 @@ export const deA1B04: Lesson[] = [
         expect: { kind: "repeat", target: "Danach trinke ich Tee" },
       },
       {
+        say: [tr("Bir tane daha: 'Sonra erken kahvaltı yapıyorum.' demek için ne dersin?")],
+        expect: {
+          kind: "produce",
+          target: "Danach frühstücke ich früh",
+          hint: [
+            tr("Sıra sözcüğü başta, fiil hemen arkasında:"),
+            de("Danach frühstücke ich früh."),
+            tr("Tekrar dene."),
+          ],
+        },
+      },
+      {
         say: [
           tr("Son bir doğru-yanlış alıştırması:"),
           de("Zuerst dusche ich, dann trinke ich Tee."),
@@ -1556,6 +1594,18 @@ export const deA1B04: Lesson[] = [
           tr("deyin."),
         ],
         expect: { kind: "repeat", target: "Ich mache eine Pause" },
+      },
+      {
+        say: [tr("Bir tane daha: 'Staj eylülde başlıyor.' demek için ne dersin?")],
+        expect: {
+          kind: "produce",
+          target: "Das Praktikum fängt im September an",
+          hint: [
+            tr("Ayrılabilen fiilin öneki cümlenin sonuna gidiyor:"),
+            de("Das Praktikum fängt im September an."),
+            tr("Tekrar dene."),
+          ],
+        },
       },
       {
         say: [
@@ -2003,6 +2053,18 @@ export const deA1B04: Lesson[] = [
         expect: { kind: "repeat", target: "Am Sonntag schlafe ich aus" },
       },
       {
+        say: [tr("Bir tane daha: 'Tatilde doğa yürüyüşü yapıyorum.' demek için ne dersin?")],
+        expect: {
+          kind: "produce",
+          target: "Im Urlaub wandere ich",
+          hint: [
+            tr("Zaman ifadesi başa geçince fiil hemen arkasından geliyor:"),
+            de("Im Urlaub wandere ich."),
+            tr("Tekrar dene."),
+          ],
+        },
+      },
+      {
         say: [
           tr("Son bir doğru-yanlış alıştırması:"),
           de("Am Sonntag ich schlafe aus."),
@@ -2229,6 +2291,37 @@ export const deA1B04: Lesson[] = [
           tr("deyin."),
         ],
         expect: { kind: "repeat", target: "Ich sage das Treffen ab" },
+      },
+      {
+        say: [tr("Bir tane daha: 'Öğleden önce vaktim var.' demek için ne dersin?")],
+        expect: {
+          kind: "produce",
+          target: "Am Vormittag habe ich Zeit",
+          hint: [
+            tr("Günün bölümü için de"),
+            de("am"),
+            tr("kullanılır ve zaman ifadesi başa geçince fiil hemen arkasından gelir:"),
+            de("Am Vormittag habe ich Zeit."),
+            tr("Tekrar dene."),
+          ],
+        },
+      },
+      {
+        say: [
+          tr("Bir doğru-yanlış alıştırması:"),
+          de("Um vier Uhr passt es mir."),
+          tr("cümlesi doğru mu, yanlış mı?"),
+        ],
+        expect: {
+          kind: "truefalse",
+          statement: "Um vier Uhr passt es mir.",
+          answer: true,
+          why: [
+            tr("Doğru. Saatle"),
+            de("um"),
+            tr("kullanılır; gün adıyla kullanılan edat başkasıdır."),
+          ],
+        },
       },
       {
         say: [
