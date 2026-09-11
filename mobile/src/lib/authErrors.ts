@@ -1,4 +1,5 @@
 import { t } from "./i18n";
+import { MIN_PASSWORD_LENGTH } from "./passwordPolicy";
 
 /**
  * Better Auth hata kodlarını kullanıcının diline çevirir — web'deki
@@ -59,7 +60,7 @@ export function translateAuthError(code: string, message: string, status = 0): s
   if (c.includes("PASSWORD_TOO_COMMON")) return t("autherror.password_too_common");
   if (c.includes("PASSWORD_CONTAINS_IDENTITY")) return t("autherror.password_contains_identity");
   if (c.includes("PASSWORD_TOO_SHORT") || m.includes("password is too short") || m.includes("too short"))
-    return t("autherror.password_min_length");
+    return t("autherror.password_min_length", { n: MIN_PASSWORD_LENGTH });
   if (c.includes("INVALID_EMAIL") || m.includes("invalid email"))
     return t("autherror.enter_valid_email_address");
   return message || t("autherror.something_went_wrong_try_again");

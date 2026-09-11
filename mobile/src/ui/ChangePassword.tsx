@@ -5,7 +5,7 @@ import { Text } from "./Text";
 import { PressableScale } from "./PressableScale";
 import { changePassword } from "../lib/auth";
 import { translateAuthError } from "../lib/authErrors";
-import { checkPassword } from "../lib/passwordPolicy";
+import { checkPassword, MIN_PASSWORD_LENGTH } from "../lib/passwordPolicy";
 import { spacing, radii, type Palette } from "../theme";
 
 /**
@@ -120,6 +120,7 @@ export function ChangePassword({ colors }: { colors: Palette }) {
                   : problem === "too_common"
                     ? "autherror.password_too_common"
                     : "autherror.password_contains_identity",
+                { n: MIN_PASSWORD_LENGTH },
               )
             : t("auth.password_ok")}
         </Text>

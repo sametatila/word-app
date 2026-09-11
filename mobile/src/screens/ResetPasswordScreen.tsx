@@ -10,7 +10,7 @@ import { PressableScale } from "../ui/PressableScale";
 import { BoltIcon } from "../ui/icons";
 import { resetPassword } from "../lib/auth";
 import { translateAuthError } from "../lib/authErrors";
-import { checkPassword } from "../lib/passwordPolicy";
+import { checkPassword, MIN_PASSWORD_LENGTH } from "../lib/passwordPolicy";
 import { useTheme, spacing, radii, softShadow } from "../theme";
 
 /**
@@ -116,6 +116,7 @@ export function ResetPasswordScreen({ route }: { route: { params?: { token?: str
                         : problem === "too_common"
                           ? "autherror.password_too_common"
                           : "autherror.password_contains_identity",
+                      { n: MIN_PASSWORD_LENGTH },
                     )
                   : t("auth.password_ok")}
               </Text>

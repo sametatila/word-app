@@ -19,7 +19,7 @@ import { googleSignIn, googleSupported } from "../lib/googleAuth";
 import { appleSignIn, appleSupported, appleWebSignIn } from "../lib/appleAuth";
 import { notifPrimeNeeded } from "../lib/notifications";
 import { isEmailNotVerified, translateAuthError } from "../lib/authErrors";
-import { checkPassword } from "../lib/passwordPolicy";
+import { checkPassword, MIN_PASSWORD_LENGTH } from "../lib/passwordPolicy";
 import { useTheme, spacing, radii, softShadow, type Palette } from "../theme";
 import { PROFILE_LIMITS } from "../lib/profileDefaults";
 
@@ -512,7 +512,7 @@ export function AuthScreen() {
               <TextInput value={name} onChangeText={setName} placeholder={t("auth.your_name_optional")} placeholderTextColor={colors.textFaint} autoCapitalize="words" maxLength={PROFILE_LIMITS.displayNameMax} autoComplete="name" textContentType="name" style={input} />
             )}
             <TextInput value={email} onChangeText={setEmail} placeholder={t("auth.email")} placeholderTextColor={colors.textFaint} keyboardType="email-address" autoCapitalize="none" autoCorrect={false} autoComplete="email" textContentType="emailAddress" style={input} />
-            <TextInput returnKeyType="go" onSubmitEditing={() => { if (!busy) void submit(); }} value={password} onChangeText={setPassword} placeholder={t("auth.password_min_hint")} placeholderTextColor={colors.textFaint} secureTextEntry autoComplete={mode === "signup" ? "new-password" : "current-password"} textContentType={mode === "signup" ? "newPassword" : "password"} style={input} />
+            <TextInput returnKeyType="go" onSubmitEditing={() => { if (!busy) void submit(); }} value={password} onChangeText={setPassword} placeholder={t("auth.password_min_hint", { n: MIN_PASSWORD_LENGTH })} placeholderTextColor={colors.textFaint} secureTextEntry autoComplete={mode === "signup" ? "new-password" : "current-password"} textContentType={mode === "signup" ? "newPassword" : "password"} style={input} />
             {/* Canlı geri bildirim YALNIZ kayıtta: girişte var olan bir parolayı
                 yargılamak anlamsız ve "parolan zayıf" demek orada yanlış mesaj.
                 Aynı ayrım webde de var. `accessibilityLiveRegion` ekran
@@ -531,6 +531,7 @@ export function AuthScreen() {
                         : passwordProblem === "too_common"
                           ? "autherror.password_too_common"
                           : "autherror.password_contains_identity",
+                      { n: MIN_PASSWORD_LENGTH },
                     )
                   : t("auth.password_ok")}
               </Text>

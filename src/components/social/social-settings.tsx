@@ -10,7 +10,7 @@ import { useT, useLang } from "@/lib/i18n/client";
 import { courseName } from "@/lib/courses";
 /* Sınırlar sunucunun kendi kuralından: üç yerde yazılı bir sayı er geç
    ayrışır (bkz. `lib/social/username`). */
-import { BIO_MAX, USERNAME_MAX } from "@/lib/social/username";
+import { BIO_MAX, USERNAME_CHANGE_COOLDOWN_DAYS, USERNAME_MAX } from "@/lib/social/username";
 
 const VIS: { key: Visibility; label: string; sub: string }[] = [
   { key: "public", label: "socialsettings.vis_public", sub: "socialsettings.vis_public_sub" },
@@ -97,7 +97,7 @@ export function SocialSettings({ initial, course = "de", bare = false }: { initi
           {t("socialsettings.username_rule")}{" "}
           {me.usernameChangeAvailableIn > 0
             ? t("socialsettings.username_wait", { n: me.usernameChangeAvailableIn })
-            : t("socialsettings.username_cooldown")}{" "}
+            : t("socialsettings.username_cooldown", { n: USERNAME_CHANGE_COOLDOWN_DAYS })}{" "}
           {t("socialsettings.profile_link", { path: `/u/${me.username}` })}
         </p>
       </div>

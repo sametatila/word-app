@@ -1,4 +1,5 @@
 import { LEAGUE_TIERS, type FeedItem, type FriendRow, type LeagueOutcome, type PublicUser, type QuestView, type ReactionKind, type ReactionSummary, type Relation } from "./types";
+import { USERNAME_CHANGE_COOLDOWN_DAYS } from "@/lib/social/username";
 import { translate, localeOf, formatNumber, isNativeLang, DEFAULT_NATIVE, type NativeLang } from "@/lib/i18n/dict";
 import { readLangCookie } from "@/lib/i18n/set-lang";
 
@@ -76,7 +77,10 @@ export const ERROR_KEYS: Record<string, string> = {
 export function errorText(err: unknown, lang?: NativeLang): string {
   const code = err instanceof SocialClientError ? err.code : "failed";
   const l = lang ?? (isNativeLang(readLangCookie()) ? (readLangCookie() as NativeLang) : DEFAULT_NATIVE);
-  return translate(l, ERROR_KEYS[code] ?? ERROR_KEYS.failed);
+  /* Bekleme süresi cümlenin içinde DÜZ SAYI değil: `social.err_username_cooldown`
+     `{n}` taşıyor ve sayı kuralın kendi sabitinden geliyor. Öteki anahtarlar
+     `{n}` kullanmıyor, fazladan değişken zararsız. */
+  return translate(l, ERROR_KEYS[code] ?? ERROR_KEYS.failed, { n: USERNAME_CHANGE_COOLDOWN_DAYS });
 }
 
 export type SocialMeView = {

@@ -9201,3 +9201,50 @@ karşılaştırmayı bırakıp her tarafı **mutlak beklenen listeye** bağlamak
 **§183** üç şeyi denetliyor: mobilin kaynağı sunucuyla aynı mı, uç sınırı
 kaynaktan mı okuyor, altı yüzey de kaynaktan mı okuyor. Beş enjeksiyonun
 beşi doğru taraftan yakalandı.
+
+## §11.280 — Görev ödülü kartın içine elle yazılıydı, çünkü sabit erişilemezdi
+
+Aynı soruyu (§11.279) kalan kapılara sordum. §25 "kartın yazdığı sayı
+sunucunun sabitiyle aynı mı" diye soruyordu ve **doğru cevabı alıyordu** —
+ama yanlış soruydu: kusur sayının değeri değil, sayının kartın içinde
+**yazılı olmasıydı**.
+
+Sebep yapısaldı: `lib/quests` `server-only`, `quest-card` istemci bileşeni.
+Kart o yüzden hem ödülü ("+300 XP" ve `claim_xp`) hem de toplu görevin
+kimliğini (`"all"`, üç yerde) elle yazıyordu. Sunucudaki ödül değişse web
+kullanıcısına **yanlış miktar** yazardı; kimlik değişse düğme sessizce
+çalışmazdı. Androidde böyle bir sorun yoktu — orada sabitler `game/quests`
+içinde ve ekran onları içe alıyor.
+
+İki sabit `lib/quest-constants` içine alındı (`server-only` DEĞİL); `quests`
+oradan yeniden dışa veriyor, kart doğrudan oradan okuyor. §25 artık "kartta
+elle yazılmış rakam ya da kimlik var mı" diye soruyor; §22'nin sabit çifti de
+yeni dosyayı gösteriyor. Dört enjeksiyonun dördü yakalandı.
+
+## §11.281 — Politika sayısı cümlenin İÇİNDE yazılıydı (parola, kullanıcı adı)
+
+Aynı sorunun sözlüğe uzanan hâli ve bu turun en geniş bulgusu. İki kural
+kodda tek sabitti ama kullanıcıya **söyleyen cümle** sayıyı düz metin
+taşıyordu:
+
+- **Parola alt sınırı** (`MIN_PASSWORD_LENGTH` = 10): "Parola (en az 10
+  karakter)" ve "Parola en az 10 karakter olmalı." — üç dil, iki platform,
+  **on iki dizge**.
+- **Kullanıcı adı bekleme süresi** (`USERNAME_CHANGE_COOLDOWN_DAYS` = 14):
+  "14 günde bir değişir." ve hata cümlesi — yine on iki dizge.
+
+Sayılar bugün tutuyordu. Ama sabit değişseydi **kural değişir, cümle eski
+sayıyı söylemeye devam ederdi**: form "en az 10 karakter" der, sunucu on
+ikiyi ister, kullanıcı neyi yanlış yaptığını öğrenemezdi. Karşılaştırmalı bir
+kapının bunu görmesi imkânsızdı, çünkü iki platformun cümlesi de **aynı**
+yanlışı söyleyecekti — §11.228 sınıfı, ölçüt mutlak olmak zorunda.
+
+Cümleler artık `{n}` taşıyor; on iki çağıran sabiti geçiriyor
+(`errorText` gibi kod→anahtar haritalarında değişken koşulsuz geçiliyor,
+öteki anahtarlar için zararsız). Mobilde bekleme süresi `SOCIAL_LIMITS`
+içine girdi ve §182 artık onu da sunucuyla karşılaştırıyor.
+
+**§184-185** tek blokta, politika tablosuyla: her politika için "altı sözlük
+dosyasında rakam kaldı mı" ve "her çağıran sabiti geçiriyor mu". Kapının
+kendisi de tekrar etmesin diye tablo dönülüyor — düzelttiğim şeyin aynısını
+kapının içinde yapmak tuhaf olurdu. Sekiz enjeksiyonun sekizi yakalandı.

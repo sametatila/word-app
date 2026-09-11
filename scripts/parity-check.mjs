@@ -902,8 +902,8 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     ["VOICES", "src/lib/tts/voices.ts", "mobile/src/lib/voices.ts"],
     ["VERDICT_KEYS", "src/lib/sentence-match.ts", "mobile/src/lib/sentenceMatch.ts"],
     ["TIER_COLOR", "src/components/achievement-badge.tsx", "mobile/src/theme/colors.ts"],
-    ["ALL_DONE_ID", "src/lib/quests.ts", "mobile/src/game/quests.ts"],
-    ["ALL_DONE_XP", "src/lib/quests.ts", "mobile/src/game/quests.ts"],
+    ["ALL_DONE_ID", "src/lib/quest-constants.ts", "mobile/src/game/quests.ts"],
+    ["ALL_DONE_XP", "src/lib/quest-constants.ts", "mobile/src/game/quests.ts"],
   ];
   for (const [name, wp, mp] of PAIRS) sameList("sabit " + name, val(mp, name), val(wp, name));
 
@@ -1015,29 +1015,38 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   sameList("demo yerlestirme", lits("mobile/src/data/demoPlacement.ts"), lits("src/lib/placement-demo.ts"));
 }
 
-/* ── 25. gorev panosunun toplu odulu ───────────────────────────────────────
- * `ALL_DONE_XP` iki tarafta adiyla karsilastiriliyor (bkz. 22) ama WEBIN
- * KARTI o sabiti ICE ALAMIYOR: `src/lib/quests.ts` `server-only` ve
- * `quest-card` bir istemci bileseni. Sayi bu yuzden kartin icine ELLE
- * yazilmis - iki yerde. Sunucudaki odul degistiginde web kullanicisina yanlis
- * miktar yazar ve hicbir sey uyarmaz.
+/* ── 25. gorev panosunun toplu odulu ve kimligi ─────────────────────
+ * Bu kapi once "kartin yazdigi sayi sunucunun sabitiyle ayni mi" diye
+ * soruyordu ve dogru cevabi almasina ragmen YANLIS SORUYDU: sayinin kartin
+ * icinde yazili OLMASI kusurdu, degeri degil. Sebep yapisaldi - `lib/quests`
+ * `server-only`, `quest-card` istemci bileseni, o yuzden kart hem odulu hem
+ * de toplu gorevin kimligini ("all", uc yerde) elle yaziyordu.
  *
- * Kapi kartin yazdigi iki sayiyi sunucunun sabitiyle karsilastiriyor: rozette
- * ("+300 XP") ve dugmede (`claim_xp` icindeki `xp`). Mobil sabiti ice aliyor,
- * o yuzden orada elle yazilmis bir sayi YOK - kapinin bakacagi da yok. */
+ * Sabitler `lib/quest-constants` icine (server-only DEGIL) tasindi; `quests`
+ * oradan yeniden disa veriyor, kart dogrudan oradan aliyor. Kapi artik
+ * "sayi kac yerde yazili" diye soruyor: kartta ne odul rakami ne de kimlik
+ * dizgesi kalmali, ikisi de ice alinmali. Mobil zaten kendi sabitini ice
+ * aliyor (bkz. 22, cift `mobile/src/game/quests.ts` <-> quest-constants). */
 {
-  const src = read("src/lib/quests.ts");
-  const m = src.match(/export const ALL_DONE_XP\s*=\s*(\d+)/);
-  const server = m ? m[1] : "okunamadi";
-  const card = read("src/components/quest-card.tsx");
-  /* Kartin toplu odul kutusu: `board.allDone` blogundan sonrasi. Iki sayi da
-     o blokta; oncesindeki `q.xp` gibi degisken degerler zaten sayi degil. */
+  const src = read("src/lib/quest-constants.ts");
+  const odul = (src.match(/export const ALL_DONE_XP\s*=\s*(\d+)/) ?? [])[1];
+  sameList("toplu odul kaynagi", [odul ? "sayi var" : "SAYI YOK"], ["sayi var"], "quest-constants", "beklenen");
+
+  /* Yorum ayiklanir (satir sayisi korunarak): gerekce metnindeki rakam ya da
+     "all" kelimesi bulgu sayilmasin. */
+  const strip = (x) => x.replace(/\/\*[\s\S]*?\*\//g, (m) => m.replace(/[^\n]/g, " ")).replace(/\/\/[^\n]*/g, "");
+  const card = strip(read("src/components/quest-card.tsx"));
+  /* Kartin toplu odul kutusu: `board.allDone` blogundan sonrasi. */
   const box = card.slice(card.indexOf("board.allDone"));
-  const written = [
-    (box.match(/\+\{?(\d+)\}? XP/) ?? [])[1] ?? "yok",
-    (box.match(/claim_xp",\s*\{\s*xp:\s*(\d+)\s*\}/) ?? [])[1] ?? "yok",
+  /* Bos liste ile karsilastirmak YETMEZ (`sameList` iki tarafi da bos gorup
+     duser). Her satir "var"/"yok" isaretiyle yazilir ve MUTLAK beklenen
+     listeyle karsilastirilir - olculemeyen taraf sessizce yesil kalamasin. */
+  const bulgu = [
+    "ice alim=" + (/import \{[^}]*ALL_DONE_XP[^}]*\} from "@\/lib\/quest-constants"/.test(card) ? "var" : "YOK"),
+    "elle odul=" + (new RegExp("\\b" + odul + "\\b").test(box) ? "VAR" : "yok"),
+    "elle kimlik=" + (/"all"/.test(box) ? "VAR" : "yok"),
   ];
-  sameList("gorev toplu odulu (webin karti)", written, [server, server], "web karti", "sunucu sabiti");
+  sameList("toplu odul kartta elle yazili degil", bulgu, ["ice alim=var", "elle odul=yok", "elle kimlik=yok"], "bulunan", "beklenen");
 }
 
 /* ── 26. sosyal katmanin alanlari ve cumle tablolari ───────────────────────
@@ -6919,8 +6928,18 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   const sunucuBio = al(sunucu, /BIO_MAX = (\d+)/);
   sameList(
     "sosyal sinirlar",
-    ["kullanici adi=" + al(mob, /usernameMax: (\d+)/), "biyografi=" + al(mob, /bioMax: (\d+)/)],
-    ["kullanici adi=" + sunucuAd, "biyografi=" + sunucuBio],
+    [
+      "kullanici adi=" + al(mob, /usernameMax: (\d+)/),
+      "biyografi=" + al(mob, /bioMax: (\d+)/),
+      /* Bekleme suresi de sinir: SURESI cumlenin icinde yazili degil, sayidan
+         besleniyor (bkz. 185), o yuzden iki tarafta ayni olmak zorunda. */
+      "bekleme=" + al(mob, /changeCooldownDays: (\d+)/),
+    ],
+    [
+      "kullanici adi=" + sunucuAd,
+      "biyografi=" + sunucuBio,
+      "bekleme=" + al(sunucu, /USERNAME_CHANGE_COOLDOWN_DAYS = (\d+)/),
+    ],
     "mobil",
     "sunucu",
   );
@@ -7010,6 +7029,89 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     "bulunan",
     "beklenen",
   );
+}
+
+/* ── 184-185. politika sayisi CUMLENIN ICINDE yaziliydi ───────────────────
+ * §183'un sorusunun ("sayi kac yerde yazili") sozluge uzanan hali. Iki kural
+ * kodda TEK sabitti ama kullaniciya SOYLEYEN cumle sayiyi duz metin olarak
+ * tasiyordu:
+ *
+ *   184 - parola alt siniri (`MIN_PASSWORD_LENGTH`): "en az 10 karakter" ve
+ *         "Parola en az 10 karakter olmali" - uc dil, iki platform, on iki
+ *         dizge.
+ *   185 - kullanici adi bekleme suresi (`USERNAME_CHANGE_COOLDOWN_DAYS`):
+ *         "14 gunde bir degisir" ve hata cumlesi - yine on iki dizge.
+ *
+ * Sabit degisseydi kural degisir, cumle ESKI SAYIYI soylemeye devam ederdi:
+ * form "en az 10 karakter" der, sunucu on ikiyi isterdi; kullanici neyi
+ * yanlis yaptigini ogrenemezdi. Karsilastirmali bir kapinin bunu gormesi
+ * imkansizdi, cunku iki platformun cumlesi de AYNI yanlisi soyleyecekti
+ * (§11.228 sinifi) - olcut mutlak olmak zorunda.
+ *
+ * Cumleler artik `{n}` tasiyor ve her cagiran sabiti geciriyor. Kapi iki sey
+ * soruyor: alti sozluk dosyasinda rakam kalmamis mi, ve her cagiran sabiti
+ * geciriyor mu. */
+{
+  const SOZLUKLER = [
+    "mobile/src/i18n/tr.ts", "mobile/src/i18n/en.ts", "mobile/src/i18n/de.ts",
+    "src/i18n/base/tr.ts", "src/i18n/base/en.ts", "src/i18n/base/de.ts",
+  ];
+  /* Yorumlar ayiklanir (satir sayisi korunarak): gerekce metnindeki sabit adi
+     "geciriyor" sayilmasin. */
+  const sil = (x) => x.replace(/\/\*[\s\S]*?\*\//g, (m) => m.replace(/[^\n]/g, " ")).replace(/\/\/[^\n]*/g, "");
+  const kisa = (y) => y.replace(/.*\/(\w+)\/(\w+)\.ts$/, "$1-$2");
+
+  const POLITIKALAR = [
+    {
+      ad: "parola uzunlugu",
+      anahtarlar: ["auth.password_min_hint", "autherror.password_min_length"],
+      gecis: /n:\s*MIN_PASSWORD_LENGTH/,
+      cagiranlar: [
+        "src/components/auth-form.tsx", "src/components/reset-password-form.tsx",
+        "src/components/account/change-password.tsx", "src/lib/auth/errors.ts",
+        "mobile/src/screens/AuthScreen.tsx", "mobile/src/screens/ResetPasswordScreen.tsx",
+        "mobile/src/ui/ChangePassword.tsx", "mobile/src/lib/authErrors.ts",
+      ],
+    },
+    {
+      ad: "kullanici adi beklemesi",
+      anahtarlar: ["social.err_username_cooldown", "socialsettings.username_cooldown"],
+      gecis: /n:\s*(USERNAME_CHANGE_COOLDOWN_DAYS|SOCIAL_LIMITS\.changeCooldownDays)/,
+      cagiranlar: [
+        "src/lib/social/client.ts", "src/components/social/social-settings.tsx",
+        "mobile/src/api/social.ts", "mobile/src/screens/SocialSettingsScreen.tsx",
+      ],
+    },
+  ];
+
+  for (const pol of POLITIKALAR) {
+    const bulgu = [];
+    const beklenen = [];
+    for (const y of SOZLUKLER) {
+      const src = read(y);
+      for (const a of pol.anahtarlar) {
+        const m = src.match(new RegExp('"' + a.replace(/\./g, "\\.") + '":\\s*"([^"]*)"'));
+        const deger = m ? m[1] : null;
+        const ad = kisa(y) + " " + a.split(".")[0];
+        bulgu.push(ad + "=" + (!deger ? "ANAHTAR YOK" : !deger.includes("{n}") ? "YER TUTUCU YOK" : /\d/.test(deger) ? "RAKAM VAR" : "tamam"));
+        beklenen.push(ad + "=tamam");
+      }
+    }
+    sameList(pol.ad + " cumlede rakamsiz", bulgu, beklenen, "bulunan", "beklenen");
+
+    const gecen = pol.cagiranlar.map((y) => {
+      const src = sil(read(y));
+      const kullanir = pol.anahtarlar.some((a) => src.includes(a));
+      return y.replace(/.*\//, "") + "=" + (!kullanir ? "ANAHTAR YOK" : pol.gecis.test(src) ? "gecirir" : "GECIRMEZ");
+    });
+    sameList(
+      pol.ad + " cagiranlari",
+      gecen,
+      pol.cagiranlar.map((y) => y.replace(/.*\//, "") + "=gecirir"),
+      "bulunan",
+      "beklenen",
+    );
+  }
 }
 
 console.log(

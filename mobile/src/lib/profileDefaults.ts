@@ -43,4 +43,9 @@ export const PROFILE_LIMITS = {
 export const SOCIAL_LIMITS = {
   usernameMax: 20,
   bioMax: 140,
+  /* Kullanıcı adının iki değişikliği arasındaki bekleme (gün). Sunucudaki
+     `USERNAME_CHANGE_COOLDOWN_DAYS` ile aynı olmak zorunda: süreyi SÖYLEYEN
+     cümle bu sayıdan besleniyor, yoksa metin bir şey der sunucu başkasını
+     uygular. */
+  changeCooldownDays: 14,
 } as const;

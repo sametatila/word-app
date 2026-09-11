@@ -271,7 +271,7 @@ export function AuthForm({
           type="password"
           required
           minLength={MIN_PASSWORD_LENGTH}
-          placeholder={t("auth.password_min_hint")}
+          placeholder={t("auth.password_min_hint", { n: MIN_PASSWORD_LENGTH })}
           autoComplete={mode === "signin" ? "current-password" : "new-password"}
           className={authInputClass}
           aria-describedby={mode === "signup" && password ? "password-hint" : undefined}
@@ -292,6 +292,7 @@ export function AuthForm({
                       : passwordProblem === "too_common"
                         ? "autherror.password_too_common"
                         : "autherror.password_contains_identity",
+                    { n: MIN_PASSWORD_LENGTH },
                   )
                 : t("auth.password_ok")}
             </AuthNotice>

@@ -1,4 +1,5 @@
 import { api, ApiError } from "./client";
+import { SOCIAL_LIMITS } from "../lib/profileDefaults";
 import { t, dateLocale, formatNumber } from "../lib/i18n";
 
 /**
@@ -116,7 +117,9 @@ const ERROR_KEY: Record<string, string> = {
 
 export function errorText(err: unknown): string {
   const key = err instanceof ApiError ? ERROR_KEY[err.message] : undefined;
-  return t(key ?? "social.err_offline");
+  /* Bekleme suresi cumlenin icinde duz sayi degil (bkz. web `social/client`):
+     `social.err_username_cooldown` `{n}` tasiyor, sayi tek kaynaktan geliyor. */
+  return t(key ?? "social.err_offline", { n: SOCIAL_LIMITS.changeCooldownDays });
 }
 
 

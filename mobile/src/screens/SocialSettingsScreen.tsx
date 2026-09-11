@@ -95,7 +95,7 @@ export function SocialSettingsScreen() {
                 <TextInput returnKeyType="done" value={username} onChangeText={(t) => setUsername(t.toLowerCase())} maxLength={SOCIAL_LIMITS.usernameMax} autoCapitalize="none" autoCorrect={false} placeholder={tx("socialsettings.username_2")} placeholderTextColor={colors.textFaint} style={[input, { flex: 1 }]} />
                 <Pill label={tx("common.save")} small disabled={busy || username.trim() === me.username || me.usernameChangeAvailableIn > 0} onPress={() => void save({ username: username.trim() }, tx("socialsettings.username_updated"))} />
               </View>
-              <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.sm }}>{tx("socialsettings.username_rule")} {me.usernameChangeAvailableIn > 0 ? tx("socialsettings.username_wait", { n: me.usernameChangeAvailableIn }) : tx("socialsettings.username_cooldown")}</Text>
+              <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.sm }}>{tx("socialsettings.username_rule")} {me.usernameChangeAvailableIn > 0 ? tx("socialsettings.username_wait", { n: me.usernameChangeAvailableIn }) : tx("socialsettings.username_cooldown", { n: SOCIAL_LIMITS.changeCooldownDays })}</Text>
               <Text variant="caption" color={colors.textMuted}>{tx("socialsettings.profile_link", { path: `/u/${me.username}` })}</Text>
             </Section>
 

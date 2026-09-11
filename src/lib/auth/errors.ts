@@ -1,4 +1,5 @@
 import { translate, DEFAULT_NATIVE, type NativeLang } from "@/lib/i18n/dict";
+import { MIN_PASSWORD_LENGTH } from "@/lib/auth/password-policy";
 /**
  * Better Auth hataları iki biçimde gelebilir:
  *  - metodun döndürdüğü `{ error }` nesnesi
@@ -63,7 +64,7 @@ function extractAuthError(input: unknown): AuthErrorInfo {
 export function translateAuthError(input: unknown, lang: NativeLang = DEFAULT_NATIVE): string {
   const { code, message, status } = extractAuthError(input);
   const msg = message.toLowerCase();
-  const t = (key: string) => translate(lang, key);
+  const t = (key: string, vars?: Record<string, string | number>) => translate(lang, key, vars);
 
   if (code === "EMAIL_NOT_VERIFIED" || msg.includes("email not verified"))
     return t("autherror.your_email_address_is_not");
@@ -96,7 +97,7 @@ export function translateAuthError(input: unknown, lang: NativeLang = DEFAULT_NA
     msg.includes("password is too short") ||
     msg.includes("at least")
   )
-    return t("autherror.password_min_length");
+    return t("autherror.password_min_length", { n: MIN_PASSWORD_LENGTH });
   if (code.includes("INVALID_TOKEN") || code.includes("TOKEN_EXPIRED") || msg.includes("token"))
     return t("autherrorw.token_expired");
   if (status === 429 || code.includes("TOO_MANY") || msg.includes("rate limit"))

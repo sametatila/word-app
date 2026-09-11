@@ -114,6 +114,7 @@ export function ResetPasswordForm({ token }: { token: string | null }) {
                         : passwordProblem === "too_common"
                           ? "autherror.password_too_common"
                           : "autherror.password_contains_identity",
+                      { n: MIN_PASSWORD_LENGTH },
                     )
                   : t("auth.password_ok")}
               </AuthNotice>
