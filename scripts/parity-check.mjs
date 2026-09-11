@@ -907,6 +907,29 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   ];
   for (const [name, wp, mp] of PAIRS) sameList("sabit " + name, val(mp, name), val(wp, name));
 
+  /* ARMA TURETIMI. Avatar secmemis kisi kimliginden turetilen armayla
+     ciziliyor ve o arma bir KIMLIK: ayni kisi telefonda ve tarayicida ayni
+     gorunmeli. Bir zamanlar gorunmuyordu - renkler ayniydi ama mobil duz bir
+     capraz gradyan, web dondurulmus bir gradyan + desen ciziyordu. Burasi
+     hash'i, paleti, desen listesini ve uc secici ifadeyi karsilastiriyor. */
+  const crest = (p) => {
+    const src = read(p);
+    const kes = (desen) => {
+      const m = src.match(desen);
+      return m ? norm(m[0]) : "YOK";
+    };
+    return [
+      kes(/function hash\(seed: string\): number \{[\s\S]*?\n\}/),
+      kes(/const PALETTE: \[string, string\]\[\] = \[[\s\S]*?\n\];/),
+      kes(/const PATTERNS = \[[^\]]+\] as const;/),
+      kes(/const h = hash\([^;]+\);/),
+      kes(/PALETTE\[[^\]]+\]/),
+      kes(/PATTERNS\[[^\]]+\]/),
+      kes(/rotate = [^;]+/),
+    ];
+  };
+  sameList("arma turetimi", crest("mobile/src/ui/Avatar.tsx"), crest("src/components/avatar.tsx"));
+
   /* KIND_TINT yalniz ANAHTAR kumesi: webde CSS degiskeni, mobilde palet jeton
      ADI duruyor (sonradan cozuluyor). Degerler bilerek farkli bicimde, kume
      ayni olmali - bir unite turu eklenip oteki tarafta unutulursa renksiz
