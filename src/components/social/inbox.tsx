@@ -14,14 +14,21 @@ import { useT, useLang } from "@/lib/i18n/client";
 /** Bildirimin götürdüğü yer — her satırın bir işi var. */
 function hrefFor(n: NotificationView): string {
   switch (n.type) {
+    /* HEDEFLER ANDROID'IN SEKME YAPISINDAN. "Gelen istekler" ve "bu haftanin
+       ortak gorevi" artik kendi sekmelerinde degil, arkadas listesinin
+       basinda (mobil `FriendsScreen`, gerekcesi orada; `InboxScreen` `open`
+       de ikisini `friends`e goturuyor). Web bu satirlarda kaldirilmis sekme
+       adlarini (`requests`, `quests`) yaziyordu ve yalnizca `hub-tab`daki
+       ALIAS sayesinde calisiyordu; o alias artik yalniz KAYITLI DIS
+       baglantilar icin duruyor, uygulamanin kendi baglantilari icin degil. */
     case "friend_request":
-      return "/friends?tab=requests";
+      return "/friends?tab=friends";
     case "friend_accepted":
       return n.actor?.username ? `/u/${n.actor.username}` : "/friends";
     case "quest_invite":
     case "quest_accepted":
     case "quest_completed":
-      return "/friends?tab=quests";
+      return "/friends?tab=friends";
     case "nudge":
       return "/learn";
     /* LIG YUKSELISI SIRALAMAYA GIDIYOR. Bu tur `default`a düşüyordu, yani
