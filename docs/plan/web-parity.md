@@ -11185,3 +11185,37 @@ Bu, aynı dersin bu turlardaki dördüncü biçimi: §184 komşu satırı ölçt
 420 karakterlik pencere komşuyu gördü, §11.333 `[^)]*` ilk parantezde durdu,
 şimdi 400 karakterlik pencere yetmedi. Ortak kural artık net: **pencere
 yerine yapı** — sınır bir mesafe değil, bir düğüm olmalı.
+
+## §11.340 — Sonuç duyurusu tamamlandı: on bir yuva, yirmi dört ölçüt
+
+Kalan üç çok durumlu yüzey de kapandı ve §223 artık **bütün** sonuç
+yüzeylerini tutuyor: beceri egzersizi, ünite quizi, patron turu, meydan okuma,
+günün turu, haftalık sınav, deneme sınavı, rol yapma, seviye sınavı, oturumun
+**etap** ve **bitiş** kartları, yürüyüş — iki platformda, yirmi dört ölçüt.
+
+**Bir varsayımım ölçümle düzeldi.** §11.338 ve §11.339'da "sınavın bölüm sonu
+ile kâğıt sonu ayrı iki sonuç" diye yazmıştım. Öyle değil: sınavın tek sonucu
+var (`phase === "result"`), bölüm geçişleri çalışan fazın içinde bir **kapak**
+— başlangıç ekranı, sonuç değil. İki kez tekrarladığım bu cümleyi kod
+düzeltti. Çok durumlu olan **oturum**du: etap kartı ve bitiş kartı gerçekten
+iki ayrı sonuç ve ikisi de ayrı ayrı duyuruluyor.
+
+Üç yerde `role`/canlı bölge **dışarıdan** verildi, çünkü kap paylaşılıyor:
+
+- `walk-player` `Frame` yürüyüşün bütün durumlarını sarıyor (izin, hata,
+  oynama, bitiş) — `boss-player`da kurduğum kalıbın aynısı.
+- `session-player`ın bitiş kartı `Stagger` ile çiziliyor; `Stagger` bir
+  `role` prop'u aldı ve yorumunda niye varsayılansız olduğu yazılı: süsleme
+  amaçlı zincirler canlı bölge açmamalı.
+- Mobilde canlı bölge her ekranda sonuç metninde; hangi metin olduğu ekrana
+  göre değişiyor (`formatPercent(pct)`, `stage.clean`, `common.round_done`,
+  `walkmode.done_title`).
+
+Kapı §11.339'da kurulan **"pencere yerine yapı"** ölçümünü kullanıyor: sınav
+ve oturum-etap ölçütleri sonucu işaretleyen dizeden geri gidip ondan hemen
+önce açılan kabın etiketine bakıyor. Üç enjeksiyon yakalandı.
+
+Bu, §11.336'da açılan mutlak-ölçüt dizisinin sonu: **sosyal eylemin hatası**
+(§11.336), **rota yedeklerinin duyurusu** (§11.335) ve **turun sonucu**
+(§11.337–§11.340). Üçü de "iki taraf da yanlış" sınıfındaydı, yani üçü de
+karşılaştırmalı bir kapıya görünmezdi.
