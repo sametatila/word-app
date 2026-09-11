@@ -55,7 +55,7 @@ export function LevelBadge({
   return (
     <div className={compact ? "flex items-center gap-2" : "space-y-1.5"}>
       <div className="flex items-center justify-between gap-2">
-        <div className="flex items-center gap-2">
+        <div className="flex min-w-0 items-center gap-2">
           <motion.span
             key={level}
             initial={{ scale: 0.7, opacity: 0 }}
@@ -67,7 +67,10 @@ export function LevelBadge({
             {level}
           </motion.span>
           {!compact ? (
-            <span className="muted text-xs font-semibold">
+            /* Tek satır: "1.234 Wörter gefestigt" dar kartta ikinci satıra
+               düşüp armanın yüksekliğini değiştiriyordu. Android aynı satırı
+               `numberOfLines={1}` ile tutuyor. */
+            <span className="muted truncate text-xs font-semibold">
               {mastered > 0
                 ? t("level.mastered_count", { n: formatNumber(mastered, lang) })
                 : t("level.mastered_none")}

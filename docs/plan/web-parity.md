@@ -8533,3 +8533,42 @@ kaydırıcının kendi ucundan okuyor.
 Aynı düzenlemede iki anahtar web'e özel sözlükte duruyordu ama mobil de
 çağırıyordu (`settings.reviews_unit`, `settings.daily_goal_short`): Android'de
 ekranda anahtarın kendisi yazıyordu. İkisi ortak sözlüğe taşındı.
+
+## §11.260 — Uzun ad satırı büyütüyordu
+
+Görünen ad kırk karaktere kadar olabiliyor. Liste ve sıralama satırlarında
+ikinci satıra düşen bir ad satırı büyütüyor: madalyalar, puanlar ve avatarlar
+hizadan çıkıyor, liste dalgalanıyor. İki uygulama da bunu her yerde kırpıyordu
+— **günlük tur sıralaması hariç**; orada yalnız Android sarmalıyordu, web'in
+aynı satırı `min-w-0 truncate` taşıyor. Bu, referansın kendi kusuru olduğu
+nadir durumlardan biri: Android örnek alınacak yer değil, düzeltilecek yerdi.
+
+İkinci bulgu **alt sekme çubuğunda**: dört sekmeyle 320 pikselde etiket başına
+~72 piksel kalıyor ve Almanca "Fähigkeiten" iki satıra kırılıyordu — çubuğun
+yüksekliği sekmeye göre değişiyor, ikonlar kayıyordu. Android bunu görmüş ve
+tek satıra sabitlemiş (`numberOfLines={1} adjustsFontSizeToFit`), web'de aynı
+hiç yapılmamıştı. Web karşılığı `whitespace-nowrap` + `clamp()` punto: dar
+ekranda küçülür, geniş ekranda normal boyda kalır.
+
+Seviye armasındaki "1.234 Wörter gefestigt" satırı da dar kartta ikinci satıra
+düşüyordu; o da tek satıra alındı.
+
+**§164** ölçümü üç kez yanlış şeyi ölçtü, üçü de enjeksiyonla çıktı:
+
+1. Kırpma çoğu zaman sarmalayan kutuda (`<span truncate><Link>{ad}</Link>`).
+   İlk sürüm yalnız adın kendi etiketine bakıp web'in dört satırını birden
+   "sarmalıyor" sanıyordu. Artık etiketin bir üstüne de bakıyor.
+2. `{koşul ? <Link>{ad}</Link> : ad}` iç içe süslü parantez taşıyor ve düz bir
+   desen onu göremiyordu — kapı web'in arkadaş tablosunda "çizim yok" deyip
+   **hiçbir şey ölçmüyordu**. İfade artık dengeli okunuyor.
+3. `{linked ? (<Link aria-label={name}>…)}` bir ad çizimi değil, iç elemanın
+   kendi özniteliği. İlk sürüm onu çizim sanıp iki web dosyasını yanlış
+   bildirdi. Artık ifadenin içindeki iç etiketlerin öznitelik bölgeleri
+   ayıklanıyor; metin konumunda bir `name` kalmazsa aday düşüyor.
+
+Ayrıca `const ad = …` gibi atamalar ve `t("...", { name: … })` gibi parametre
+nesneleri kapsam dışı, ve her dosyada **en az bir çizim** bulunması ayrıca
+ölçülüyor — yoksa deyim değişince kapı hiçbir şey ölçmeden yeşil kalırdı
+(§11.259'daki boş liste dersi).
+
+Altı enjeksiyonun altısı da doğru tarafta yakalandı.

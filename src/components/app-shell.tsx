@@ -453,7 +453,20 @@ export function AppShell({
                       />
                     )}
                     <item.Icon size={23} className="relative" />
-                    <span className="relative">{t(item.labelKey)}</span>
+                    {/* ETİKET TEK SATIRDA. Dört sekmeyle 320 pikselde etiket
+                        başına ~72 piksel kalıyor ve Almanca "Fähigkeiten" iki
+                        satıra kırılıyordu: çubuğun yüksekliği sekmeye göre
+                        değişiyor, ikonlar kayıyordu. Android aynı yerde tek
+                        satırda tutup gerekirse punto küçültüyor
+                        (`numberOfLines={1} adjustsFontSizeToFit`); webde onun
+                        karşılığı `clamp` — dar ekranda küçülür, geniş ekranda
+                        normal boyda kalır. */}
+                    <span
+                      className="relative whitespace-nowrap"
+                      style={{ fontSize: "clamp(9px, 2.7vw, var(--text-micro))" }}
+                    >
+                      {t(item.labelKey)}
+                    </span>
                   </Link>
                 );
               })}

@@ -76,7 +76,11 @@ function Board({ rows, colors }: { rows: DailyBoardRow[]; colors: Palette }) {
               <Text variant="bodyStrong" color={r.isMe ? colors.onPrimary : colors.textMuted}>{initial}</Text>
             </View>
             <View style={{ flex: 1 }}>
-              <Text variant="bodyStrong" color={r.isMe ? colors.primaryText : colors.text}>{r.name ?? t("social.student")}{r.isMe ? t("social.you_paren") : ""}</Text>
+              {/* AD TEK SATIRDA. Görünen ad kırk karaktere kadar olabiliyor ve
+                  sıralama satırında ikinci satıra düşüp satırı büyütüyordu:
+                  madalyalar ve puanlar hizadan çıkıyor, liste dalgalanıyordu.
+                  Web aynı satırda kırpıyor (`daily-player` `min-w-0 truncate`). */}
+              <Text numberOfLines={1} variant="bodyStrong" color={r.isMe ? colors.primaryText : colors.text}>{r.name ?? t("social.student")}{r.isMe ? t("social.you_paren") : ""}</Text>
               <Text variant="micro" color={colors.textMuted}>{t("common.n_correct", { correct: r.correct, total: r.total })}</Text>
             </View>
             <Text variant="h3" color={r.isMe ? colors.primaryText : colors.text}>{r.score.toLocaleString(dateLocale())}</Text>

@@ -5947,6 +5947,139 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   void KURAL;
 }
 
+/* ── 164. liste satirinda ad tek satirda mi ───────────────────────────────
+ * Gorunen ad kirk karaktere kadar olabiliyor. Liste ve siralama satirlarinda
+ * ikinci satira dusen bir ad satiri buyutuyor: madalyalar, puanlar ve
+ * avatarlar hizadan cikiyor, liste dalgalaniyor. Iki uygulama da bunu her
+ * yerde kirpiyordu - GUNLUK TUR SIRALAMASI haric; orada yalniz Android
+ * sarmaliyordu, webin ayni satiri `min-w-0 truncate` tasiyor.
+ *
+ * Olcum, adin cizildigi yerin KENDI etiketine ve bir ustune bakiyor: kirpma
+ * cogu zaman sarmalayan kutuda (`<span truncate><Link>{ad}</Link></span>`).
+ * Iki sey bilerek disarida: `const ad = ...` gibi ATAMALAR (cizim degil) ve
+ * `t("...", { name: ... })` gibi PARAMETRE nesneleri (cumlenin icinde gecen
+ * ad, satir degil). Her dosyada en az bir cizim bulunmasi da olculuyor -
+ * yoksa deyim degisince kapi hicbir sey olcmeden yesil kalirdi. */
+{
+  const strip = (x) => x.replace(/\/\*[\s\S]*?\*\//g, (m) => m.replace(/[^\n]/g, " ")).replace(/(^|[^:"'`\\])\/\/.*$/gm, "$1");
+  const etiketSonu = (src, bas) => {
+    let derinlik = 0, tirnak = "";
+    for (let j = bas; j < src.length; j++) {
+      const c = src[j];
+      if (tirnak) { if (c === tirnak && src[j - 1] !== "\\") tirnak = ""; continue; }
+      if (c === '"' || c === "'" || c === "`") { tirnak = c; continue; }
+      if (c === "{") derinlik++;
+      else if (c === "}") derinlik--;
+      else if (c === ">" && derinlik === 0) return j;
+    }
+    return -1;
+  };
+  /* Cizimin kendi etiketi ve bir ustu. */
+  const atalar = (src, i) => {
+    const out = [];
+    let p = i;
+    while (out.length < 2) {
+      const bas = src.lastIndexOf("<", p - 1);
+      if (bas < 0) break;
+      p = bas;
+      if (/^<\/|^<[^A-Za-z]/.test(src.slice(bas, bas + 2))) continue;
+      const son = etiketSonu(src, bas);
+      if (son < 0) continue;
+      out.push({ bas, son, tag: src.slice(bas, son + 1) });
+    }
+    return out;
+  };
+  const METIN = /^<(Text|span|p|h1|h2|h3|strong|div|li)\b/;
+  const durum = (yol, isaret) => {
+    const src = strip(read(yol));
+    let sayi = 0, kirpilmayan = 0;
+    /* Cizim ifadesi DENGELI okunuyor: `{kosul ? <Link>{ad}</Link> : ad}`
+       ic ice suslu parantez tasiyor ve duz bir desen onu goremiyordu - webin
+       arkadas tablosunda kapi "cizim yok" deyip hicbir sey olcmuyordu. */
+    let sonSon = -1;
+    for (let i = 0; i < src.length; i++) {
+      if (src[i] !== "{" || i < sonSon) continue;
+      let d = 0, son = -1;
+      for (let j = i; j < src.length && j < i + 400; j++) {
+        if (src[j] === "{") d++;
+        else if (src[j] === "}" && --d === 0) { son = j; break; }
+      }
+      if (son < 0) continue;
+      const ifade = src.slice(i, son + 1);
+      if (!/\bname\b/.test(ifade)) continue;
+      if (/\bname\s*:/.test(ifade)) continue; // parametre nesnesi
+      /*
+        Ifadenin ICINDEKI ic etiketlerin OZNITELIKLERINDE gecen ad sayilmaz:
+        `{linked ? (<Link aria-label={name}>...</Link>) : ...}` bir ad cizimi
+        DEGIL, ic elemanin kendi ozniteligi. Ilk surum bunu cizim sanip webin
+        akis ve istek satirlarini "sarmaliyor" diye bildirdi - oysa ikisi de
+        kirpiyordu. Metin konumunda kalan bir `name` yoksa aday duser.
+      */
+      let metinde = false;
+      for (let k = 0; k < ifade.length; ) {
+        if (ifade[k] === "<" && /[A-Za-z]/.test(ifade[k + 1] ?? "")) {
+          const es = etiketSonu(ifade, k);
+          k = es < 0 ? ifade.length : es + 1;
+          continue;
+        }
+        if (/[A-Za-z_$]/.test(ifade[k]) ) {
+          let e = k;
+          while (e < ifade.length && /[\w$]/.test(ifade[e])) e++;
+          if (ifade.slice(k, e) === "name") metinde = true;
+          k = e;
+          continue;
+        }
+        k++;
+      }
+      if (!metinde) continue;
+      const satirBas = src.lastIndexOf("\n", i) + 1;
+      if (/\b(const|let|var)\s+[\w{}\s,]+=\s*$/.test(src.slice(satirBas, i))) continue; // atama
+      const ust = atalar(src, i);
+      if (!ust.length || i < ust[0].son) continue; // oznitelik
+      if (!METIN.test(ust[0].tag)) continue;
+      sonSon = son;
+      sayi++;
+      if (!ust.some((x) => isaret.test(x.tag))) kirpilmayan++;
+    }
+    if (sayi === 0) return "cizim yok";
+    return kirpilmayan ? "sarmaliyor" : "tek satir";
+  };
+  const MOB = /numberOfLines=\{1\}/;
+  const WEB = /truncate|line-clamp/;
+  const CIFT = [
+    ["gunluk siralama", "mobile/src/screens/DailyScreen.tsx", "src/components/daily-player.tsx"],
+    ["arkadas tablosu", "mobile/src/social/FriendsBoard.tsx", "src/components/social/friends-board.tsx"],
+    ["akis", "mobile/src/social/FeedList.tsx", "src/components/social/feed.tsx"],
+    ["istekler", "mobile/src/social/Requests.tsx", "src/components/social/requests.tsx"],
+  ];
+  const mob = CIFT.map(([ad, m]) => ad + "=" + durum(m, MOB));
+  const web = CIFT.map(([ad, , w]) => ad + "=" + durum(w, WEB));
+  const beklenen = CIFT.map(([ad]) => ad + "=tek satir");
+  sameList("liste satirinda ad", mob, web);
+  sameList("mobil liste satiri", mob, beklenen, "bulunan", "beklenen");
+  sameList("web liste satiri", web, beklenen, "bulunan", "beklenen");
+
+  /* Alt sekme etiketi de tek satirda kalmali: dort sekmede 320 pikselde
+     Almanca "Fähigkeiten" kiriliyor ve cubugun yuksekligi degisiyordu.
+     Androidde `numberOfLines={1} adjustsFontSizeToFit`, webde `nowrap` +
+     `clamp()` punto. */
+  const tek = (yol, re) => (re.test(strip(read(yol)).replace(/\s+/g, " ")) ? "tek satir" : "sarmaliyor");
+  sameList(
+    "sekme etiketi",
+    ["mobil=" + tek("mobile/src/navigation/TabBar.tsx", /numberOfLines=\{1\} adjustsFontSizeToFit/)],
+    ["mobil=tek satir"],
+    "bulunan",
+    "beklenen",
+  );
+  sameList(
+    "sekme etiketi (web)",
+    ["web=" + tek("src/components/app-shell.tsx", /whitespace-nowrap"[^<]*fontSize: "clamp\(/)],
+    ["web=tek satir"],
+    "bulunan",
+    "beklenen",
+  );
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"
