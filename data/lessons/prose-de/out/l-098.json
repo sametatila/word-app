@@ -1,0 +1,1082 @@
+[
+ {
+  "tr": "İddia",
+  "kind": "titleTr",
+  "de": "Die Behauptung"
+ },
+ {
+  "tr": "Ödün vermek",
+  "kind": "titleTr",
+  "de": "Entgegenkommen"
+ },
+ {
+  "tr": "Resmî şikâyet",
+  "kind": "titleTr",
+  "de": "Die formelle Beschwerde"
+ },
+ {
+  "tr": "Ne konuşulmuştu",
+  "kind": "titleTr",
+  "de": "Was vereinbart war"
+ },
+ {
+  "tr": "Sorun tam olarak ne",
+  "kind": "titleTr",
+  "de": "Worum es genau geht"
+ },
+ {
+  "tr": "Resmî şikâyet dilini öğretir; fiil isme dönünce cümle kişiden çıkar ve olaya odaklanır.",
+  "kind": "summary",
+  "de": "Vermittelt die Sprache der formellen Beschwerde; wird das Verb zum Nomen, tritt die Person aus dem Satz und das Geschehen rückt in den Mittelpunkt."
+ },
+ {
+  "tr": "Ödün vermeyi öğretir; yumuşatıcı bağlayıcılar tavizi zayıflık değil olgunluk gibi gösterir.",
+  "kind": "summary",
+  "de": "Vermittelt das Entgegenkommen; die abschwächenden Konnektoren lassen ein Zugeständnis nicht schwach, sondern reif wirken."
+ },
+ {
+  "tr": "Şikâyetin tam noktasını göstermeyi öğretir; yarık cümle itirazın hangi parçaya olduğunu ayırır.",
+  "kind": "summary",
+  "de": "Vermittelt, wie man den genauen Punkt der Beschwerde zeigt; der Spaltsatz trennt heraus, welchem Teil der Einwand gilt."
+ },
+ {
+  "tr": "Bir iddiayı kaynağını üstlenmeden aktarmayı öğretir; edilgen aktarım kalıbı şikâyet dilinin belkemiğidir.",
+  "kind": "summary",
+  "de": "Vermittelt, wie man eine Behauptung wiedergibt, ohne die Quelle zu übernehmen; die passive Wiedergabe ist das Rückgrat der Beschwerdesprache."
+ },
+ {
+  "tr": "Geçmişteki mutabakatı tartışmayı öğretir: eminsen must have, imkânsız görüyorsan can't have, eksik kalmışsa should have.",
+  "kind": "summary",
+  "de": "Vermittelt, wie man über eine frühere Vereinbarung streitet: sicher must have, unmöglich can't have, versäumt should have."
+ },
+ {
+  "tr": "iddiayla kanıtı ayırmak isteyen, sakin bir yönetici",
+  "kind": "partner",
+  "de": "eine ruhige Vorgesetzte, die Behauptung und Beleg trennen will"
+ },
+ {
+  "tr": "her maddeyi tutanağa geçiren, resmî dil bekleyen bir görevli",
+  "kind": "partner",
+  "de": "ein Sachbearbeiter, der jeden Punkt zu Protokoll nimmt und formelle Sprache erwartet"
+ },
+ {
+  "tr": "kendi notlarına güvenen, senden farklı hatırlayan bir muhatap",
+  "kind": "partner",
+  "de": "ein Gegenüber, das seinen eigenen Notizen vertraut und sich anders erinnert als du"
+ },
+ {
+  "tr": "ödün vermeye hazır ama önce karşı tarafı bekleyen bir muhatap",
+  "kind": "partner",
+  "de": "eine Gesprächspartnerin, die zum Entgegenkommen bereit ist, aber erst die andere Seite abwartet"
+ },
+ {
+  "tr": "şikâyeti geniş yorumlayıp savunmaya geçen bir hizmet sorumlusu",
+  "kind": "partner",
+  "de": "ein Servicemitarbeiter, der die Beschwerde weit auslegt und in die Verteidigung geht"
+ },
+ {
+  "tr": "Bu bizim görüşümüz mü onların mı?",
+  "kind": "openingTr",
+  "de": "Ist das unsere Sicht oder ihre?"
+ },
+ {
+  "tr": "Yani her şeyden memnun değil misiniz?",
+  "kind": "openingTr",
+  "de": "Sie sind also mit allem unzufrieden?"
+ },
+ {
+  "tr": "Bunu tutanak için ifade edebilir misiniz?",
+  "kind": "openingTr",
+  "de": "Können Sie das fürs Protokoll formulieren?"
+ },
+ {
+  "tr": "Benim notlarım başka şey diyor. Seninkiler?",
+  "kind": "openingTr",
+  "de": "Meine Notizen sagen etwas anderes. Deine auch?"
+ },
+ {
+  "tr": "Tarihte esniyor musunuz, esnemiyor musunuz?",
+  "kind": "openingTr",
+  "de": "Bewegen Sie sich beim Termin oder nicht?"
+ },
+ {
+  "tr": "Uzayan bir müzakerede ilk adımı sen atıyorsun. Kendi kusurunu kabul et, ödünün sınırını çiz ve bir yol öner.",
+  "kind": "scene",
+  "de": "In einer festgefahrenen Verhandlung machst du den ersten Schritt. Räum den eigenen Fehler ein, zieh die Grenze deines Entgegenkommens und schlag einen Weg vor."
+ },
+ {
+  "tr": "Karşı tarafla neyin konuşulduğu konusunda anlaşamıyorsunuz. Emin olduğunu, imkânsız gördüğünü ve yapılmamış olanı üç ayrı kiple söyle.",
+  "kind": "scene",
+  "de": "Ihr seid euch nicht einig, was besprochen wurde. Sag mit drei verschiedenen Modalverben, wobei du sicher bist, was du ausschließt und was nicht getan wurde."
+ },
+ {
+  "tr": "Bir kuruma resmî şikâyetini sözlü olarak kuruyorsun. Neyin uygulanmadığını, neyin iade edilmesi gerektiğini ve neyin geç kaldığını resmî dille söyle.",
+  "kind": "scene",
+  "de": "Du formulierst deine formelle Beschwerde bei einer Behörde mündlich. Sag in formeller Sprache, was nicht durchgesetzt wurde, was erstattet werden muss und was zu spät kam."
+ },
+ {
+  "tr": "Bir hizmet sağlayıcıya şikâyetini iletiyorsun ve her şeye değil tek bir noktaya itiraz ediyorsun. Bütünü, tek parçayı ve asıl noktayı ayrı ayrı söyle.",
+  "kind": "scene",
+  "de": "Du bringst deine Beschwerde bei einem Dienstleister vor und wendest dich nicht gegen alles, sondern gegen einen Punkt. Sag getrennt das Ganze, das einzelne Stück und den Kernpunkt."
+ },
+ {
+  "tr": "Bir tedarikçiyle yaşanan sorunu yöneticine aktarıyorsun. İddiaları üstlenmeden aktar, sorumluluğun nerede görüldüğünü söyle ve kendi değerlendirmeni ayır.",
+  "kind": "scene",
+  "de": "Du gibst deiner Vorgesetzten ein Problem mit einem Lieferanten weiter. Gib die Behauptungen wieder, ohne sie zu übernehmen, sag, wo die Haftung gesehen wird, und trenn deine eigene Einschätzung davon."
+ },
+ {
+  "tr": "Üç iddiayı üç ayrı aktarım kalıbıyla verdiysen konuşma başarılı sayılır.",
+  "kind": "goal",
+  "de": "Das Gespräch gilt als gelungen, wenn du drei Behauptungen in drei verschiedenen Wiedergabeformen gesagt hast."
+ },
+ {
+  "tr": "Üç maddeyi de fiili isme çevirerek resmî dille söylediysen konuşma başarılı sayılır.",
+  "kind": "goal",
+  "de": "Das Gespräch gilt als gelungen, wenn du alle drei Punkte durch Nominalisierung in formeller Sprache gesagt hast."
+ },
+ {
+  "tr": "Bir kabulü, bir sınırı ve bir öneriyi üç ayrı bağlayıcıyla söylediysen konuşma başarılı sayılır.",
+  "kind": "goal",
+  "de": "Das Gespräch gilt als gelungen, wenn du ein Einräumen, eine Grenze und einen Vorschlag mit drei verschiedenen Konnektoren gesagt hast."
+ },
+ {
+  "tr": "Bütünü, tek parçayı ve asıl noktayı üç ayrı yarık cümleyle söylediysen konuşma başarılı sayılır.",
+  "kind": "goal",
+  "de": "Das Gespräch gilt als gelungen, wenn du das Ganze, das einzelne Stück und den Kernpunkt in drei verschiedenen Spaltsätzen gesagt hast."
+ },
+ {
+  "tr": "ek",
+  "kind": "vocab.tr",
+  "de": "Anhang"
+ },
+ {
+  "tr": "eşik",
+  "kind": "vocab.tr",
+  "de": "Schwelle"
+ },
+ {
+  "tr": "ödün",
+  "kind": "vocab.tr",
+  "de": "Zugeständnis"
+ },
+ {
+  "tr": "esnek",
+  "kind": "vocab.tr",
+  "de": "flexibel"
+ },
+ {
+  "tr": "mühür",
+  "kind": "vocab.tr",
+  "de": "Siegel"
+ },
+ {
+  "tr": "asgari",
+  "kind": "vocab.tr",
+  "de": "minimal"
+ },
+ {
+  "tr": "haksız",
+  "kind": "vocab.tr",
+  "de": "unfair"
+ },
+ {
+  "tr": "samimi",
+  "kind": "vocab.tr",
+  "de": "aufrichtig"
+ },
+ {
+  "tr": "tahkim",
+  "kind": "vocab.tr",
+  "de": "Schiedsverfahren"
+ },
+ {
+  "tr": "yazışma",
+  "kind": "vocab.tr",
+  "de": "Schriftverkehr"
+ },
+ {
+  "tr": "yeterli",
+  "kind": "vocab.tr",
+  "de": "ausreichend"
+ },
+ {
+  "tr": "mütevazı",
+  "kind": "vocab.tr",
+  "de": "bescheiden"
+ },
+ {
+  "tr": "tazminat",
+  "kind": "vocab.tr",
+  "de": "Schadenersatz"
+ },
+ {
+  "tr": "temsilci",
+  "kind": "vocab.tr",
+  "de": "Vertreter"
+ },
+ {
+  "tr": "ifa etmek",
+  "kind": "vocab.tr",
+  "de": "erfüllen"
+ },
+ {
+  "tr": "iyi niyet",
+  "kind": "vocab.tr",
+  "de": "guter Wille"
+ },
+ {
+  "tr": "saldırgan",
+  "kind": "vocab.tr",
+  "de": "aggressiv"
+ },
+ {
+  "tr": "uygulatmak",
+  "kind": "vocab.tr",
+  "de": "durchsetzen"
+ },
+ {
+  "tr": "uyuşmazlık",
+  "kind": "vocab.tr",
+  "de": "Streitfall"
+ },
+ {
+  "tr": "yükümlülük",
+  "kind": "vocab.tr",
+  "de": "Verpflichtung"
+ },
+ {
+  "tr": "geri çekmek",
+  "kind": "vocab.tr",
+  "de": "zurückziehen"
+ },
+ {
+  "tr": "geri ödemek",
+  "kind": "vocab.tr",
+  "de": "erstatten"
+ },
+ {
+  "tr": "ihlal etmek",
+  "kind": "vocab.tr",
+  "de": "verletzen"
+ },
+ {
+  "tr": "telafi yolu",
+  "kind": "vocab.tr",
+  "de": "Abhilfe"
+ },
+ {
+  "tr": "yetki alanı",
+  "kind": "vocab.tr",
+  "de": "Zuständigkeitsbereich"
+ },
+ {
+  "tr": "arabuluculuk",
+  "kind": "vocab.tr",
+  "de": "Mediation"
+ },
+ {
+  "tr": "tatmin edici",
+  "kind": "vocab.tr",
+  "de": "zufriedenstellend"
+ },
+ {
+  "tr": "tazmin etmek",
+  "kind": "vocab.tr",
+  "de": "entschädigen"
+ },
+ {
+  "tr": "geri çevirmek",
+  "kind": "vocab.tr",
+  "de": "ablehnen"
+ },
+ {
+  "tr": "kabul edilemez",
+  "kind": "vocab.tr",
+  "de": "inakzeptabel"
+ },
+ {
+  "tr": "çözüme bağlamak",
+  "kind": "vocab.tr",
+  "de": "beilegen"
+ },
+ {
+  "tr": "geçersiz saymak",
+  "kind": "vocab.tr",
+  "de": "zurückweisen"
+ },
+ {
+  "tr": "kabul edilebilir",
+  "kind": "vocab.tr",
+  "de": "akzeptabel"
+ },
+ {
+  "tr": "kabul ettiğini bildirmek",
+  "kind": "vocab.tr",
+  "de": "bestätigen"
+ },
+ {
+  "tr": "ödünün sınırını çizer",
+  "kind": "pattern.tr",
+  "de": "zieht die Grenze des Entgegenkommens"
+ },
+ {
+  "tr": "yapılmamış olanı söyler",
+  "kind": "pattern.tr",
+  "de": "nennt das Nichtgetane"
+ },
+ {
+  "tr": "kendi kusurunu kabul eder",
+  "kind": "pattern.tr",
+  "de": "räumt den eigenen Fehler ein"
+ },
+ {
+  "tr": "öneriyi yumuşatarak sunar",
+  "kind": "pattern.tr",
+  "de": "bringt den Vorschlag abgeschwächt vor"
+ },
+ {
+  "tr": "itirazın bütününü başa taşır",
+  "kind": "pattern.tr",
+  "de": "bringt den ganzen Einwand an den Anfang"
+ },
+ {
+  "tr": "itirazın tek parçasını seçer",
+  "kind": "pattern.tr",
+  "de": "wählt das einzelne Stück des Einwands"
+ },
+ {
+  "tr": "asıl kabul edilemezi başa alır",
+  "kind": "pattern.tr",
+  "de": "holt das eigentlich Inakzeptable nach vorn"
+ },
+ {
+  "tr": "yerine getirmeyi isimle anlatır",
+  "kind": "pattern.tr",
+  "de": "nennt die Erfüllung mit einem Nomen"
+ },
+ {
+  "tr": "fiili isme çevirip resmîleştirir",
+  "kind": "pattern.tr",
+  "de": "macht das Verb zum Nomen und formalisiert"
+ },
+ {
+  "tr": "istenen ödemeyi resmî dille yazar",
+  "kind": "pattern.tr",
+  "de": "schreibt die geforderte Zahlung in formeller Sprache"
+ },
+ {
+  "tr": "sorumluluğu aktarım kalıbıyla söyler",
+  "kind": "pattern.tr",
+  "de": "nennt die Haftung in einer Wiedergabeform"
+ },
+ {
+  "tr": "kaynağı üstlenmeden bir iddiayı aktarır",
+  "kind": "pattern.tr",
+  "de": "gibt eine Behauptung wieder, ohne die Quelle zu übernehmen"
+ },
+ {
+  "tr": "Doğru. Bu kip imkânsız gördüğünü söylüyor ve bir suçlama değil bir ret.",
+  "kind": "why.tr",
+  "de": "Richtig. Dieses Modalverb nennt, was du ausschließt, und ist keine Schuldzuweisung, sondern eine Zurückweisung."
+ },
+ {
+  "tr": "Doğru. Ödün ve sınır aynı cümlede duruyor; bağlayıcı ikisini birbirine bağlıyor.",
+  "kind": "why.tr",
+  "de": "Richtig. Zugeständnis und Grenze stehen im selben Satz; der Konnektor verbindet beide."
+ },
+ {
+  "tr": "Doğru. Özne başa geçtiği için fiil mastara dönüyor ve iddia kimseye mal edilmiyor.",
+  "kind": "why.tr",
+  "de": "Richtig. Weil das Subjekt nach vorn rückt, wird das Verb zum Infinitiv, und die Behauptung wird niemandem zugeschrieben."
+ },
+ {
+  "tr": "Doğru. Kimin geciktiği yazılmıyor ve resmî şikâyette bu olağan; kayda geçen olayın kendisi.",
+  "kind": "why.tr",
+  "de": "Richtig. Wer zu spät war, wird nicht geschrieben, und in einer formellen Beschwerde ist das normal; zu Protokoll geht das Geschehen selbst."
+ },
+ {
+  "tr": "Doğru. Tek bir parça seçilmiş ve geri kalanına itiraz edilmediği de aynı cümleyle söylenmiş.",
+  "kind": "why.tr",
+  "de": "Richtig. Ein einzelnes Stück ist ausgewählt, und derselbe Satz sagt zugleich, dass dem Rest nicht widersprochen wird."
+ },
+ {
+  "tr": "Tek parçayı seçmek için",
+  "kind": "hint.tr",
+  "de": "Um das einzelne Stück auszuwählen"
+ },
+ {
+  "tr": "Ödünün sınırını çizmek için",
+  "kind": "hint.tr",
+  "de": "Um die Grenze des Entgegenkommens zu ziehen"
+ },
+ {
+  "tr": "Özneyi başa alıp aktarmak için",
+  "kind": "hint.tr",
+  "de": "Um das Subjekt nach vorn zu stellen und wiederzugeben"
+ },
+ {
+  "tr": "Kendi kusurunu kabul etmek için",
+  "kind": "hint.tr",
+  "de": "Um den eigenen Fehler einzuräumen"
+ },
+ {
+  "tr": "Öneriyi yumuşatarak sunmak için",
+  "kind": "hint.tr",
+  "de": "Um den Vorschlag abgeschwächt vorzubringen"
+ },
+ {
+  "tr": "Kaynağı üstlenmeden aktarmak için",
+  "kind": "hint.tr",
+  "de": "Um wiederzugeben, ohne die Quelle zu übernehmen"
+ },
+ {
+  "tr": "İtirazın bütününü başa taşımak için",
+  "kind": "hint.tr",
+  "de": "Um den ganzen Einwand an den Anfang zu bringen"
+ },
+ {
+  "tr": "Asıl kabul edilemezi başa almak için",
+  "kind": "hint.tr",
+  "de": "Um das eigentlich Inakzeptable nach vorn zu holen"
+ },
+ {
+  "tr": "Yerine getirmeyi isimle anlatmak için",
+  "kind": "hint.tr",
+  "de": "Um die Erfüllung mit einem Nomen zu nennen"
+ },
+ {
+  "tr": "ifa",
+  "kind": "say.tr",
+  "de": "Erfüllung"
+ },
+ {
+  "tr": "iade",
+  "kind": "say.tr",
+  "de": "Erstattung"
+ },
+ {
+  "tr": "bütünü,",
+  "kind": "say.tr",
+  "de": "das Ganze,"
+ },
+ {
+  "tr": "asıl nokta",
+  "kind": "say.tr",
+  "de": "Kernpunkt"
+ },
+ {
+  "tr": "sorumluluk",
+  "kind": "say.tr",
+  "de": "Haftung"
+ },
+ {
+  "tr": "bir reddir,",
+  "kind": "say.tr",
+  "de": "ist eine Zurückweisung,"
+ },
+ {
+  "tr": "cümle kurar,",
+  "kind": "say.tr",
+  "de": "baut einen Satz,"
+ },
+ {
+  "tr": "sınırı çizer,",
+  "kind": "say.tr",
+  "de": "zieht die Grenze,"
+ },
+ {
+  "tr": "Yazışma ekte.",
+  "kind": "say.tr",
+  "de": "Der Schriftverkehr liegt im Anhang."
+ },
+ {
+  "tr": "Yeterli olana",
+  "kind": "say.tr",
+  "de": "Was genügt, heißt"
+ },
+ {
+  "tr": "Onaylanabilene",
+  "kind": "say.tr",
+  "de": "Was gebilligt werden kann, heißt"
+ },
+ {
+  "tr": "bir çıkarımdır,",
+  "kind": "say.tr",
+  "de": "ist ein Rückschluss,"
+ },
+ {
+  "tr": "içten olana ise",
+  "kind": "say.tr",
+  "de": "und wer von Herzen spricht, heißt"
+ },
+ {
+  "tr": "en az düzeye ise",
+  "kind": "say.tr",
+  "de": "und für das geringste Maß"
+ },
+ {
+  "tr": "Talebimiz basit.",
+  "kind": "say.tr",
+  "de": "Unsere Forderung ist einfach."
+ },
+ {
+  "tr": "Gösterişsiz olana",
+  "kind": "say.tr",
+  "de": "Wer ohne Prunk auftritt, heißt"
+ },
+ {
+  "tr": "Özetleyelim: cümle",
+  "kind": "say.tr",
+  "de": "Fassen wir zusammen: Satz"
+ },
+ {
+  "tr": "Özetleyelim: kabul",
+  "kind": "say.tr",
+  "de": "Fassen wir zusammen: Einräumen"
+ },
+ {
+  "tr": "Zararı karşılamaya",
+  "kind": "say.tr",
+  "de": "Den Schaden ausgleichen heißt"
+ },
+ {
+  "tr": "Bir kurala uymamaya",
+  "kind": "say.tr",
+  "de": "Sich nicht an eine Regel halten heißt"
+ },
+ {
+  "tr": "Değişen şey eşikti.",
+  "kind": "say.tr",
+  "de": "Was sich geändert hat, war die Schwelle."
+ },
+ {
+  "tr": "Tahkim son adımdır.",
+  "kind": "say.tr",
+  "de": "Das Schiedsverfahren ist der letzte Schritt."
+ },
+ {
+  "tr": "Bir konuyu bağlamaya",
+  "kind": "say.tr",
+  "de": "Eine Sache zum Abschluss bringen heißt"
+ },
+ {
+  "tr": "hakkı gözetmeyene ise",
+  "kind": "say.tr",
+  "de": "und was das Recht nicht achtet, heißt"
+ },
+ {
+  "tr": "Özetleyelim: uygulatma",
+  "kind": "say.tr",
+  "de": "Fassen wir zusammen: Durchsetzung"
+ },
+ {
+  "tr": "Temsilci mührü ekledi.",
+  "kind": "say.tr",
+  "de": "Der Vertreter hat das Siegel hinzugefügt."
+ },
+ {
+  "tr": "Duruma göre bükülebilene",
+  "kind": "say.tr",
+  "de": "Wer sich der Lage anpassen kann, heißt"
+ },
+ {
+  "tr": "O ödünü vermiş olamayız.",
+  "kind": "say.tr",
+  "de": "Wir können dieses Zugeständnis nicht gemacht haben."
+ },
+ {
+  "tr": "Üsteleyip bastıran tavra",
+  "kind": "say.tr",
+  "de": "Die Haltung, die drängt und drückt, heißt"
+ },
+ {
+  "tr": "Çözümü iyi niyet getirdi.",
+  "kind": "say.tr",
+  "de": "Den Ausgleich hat der gute Wille gebracht."
+ },
+ {
+  "tr": "Ödenen parayı iade etmeye",
+  "kind": "say.tr",
+  "de": "Gezahltes Geld zurückgeben heißt"
+ },
+ {
+  "tr": "uyuşmazlığın bitişine ise",
+  "kind": "say.tr",
+  "de": "und das Ende des Streitfalls heißt"
+ },
+ {
+  "tr": "beklentiyi karşılayana ise",
+  "kind": "say.tr",
+  "de": "und was die Erwartung erfüllt, heißt"
+ },
+ {
+  "tr": "kendi kusurunu kabul eder,",
+  "kind": "say.tr",
+  "de": "räumt den eigenen Fehler ein,"
+ },
+ {
+  "tr": "Karşı tarafa duyulan güvene",
+  "kind": "say.tr",
+  "de": "Das Vertrauen in die Gegenseite heißt"
+ },
+ {
+  "tr": "Karşı taraftan istenen şeye",
+  "kind": "say.tr",
+  "de": "Was man von der Gegenseite verlangt, heißt"
+ },
+ {
+  "tr": "Anlaşmak için verilen tavize",
+  "kind": "say.tr",
+  "de": "Das Nachgeben, um sich zu einigen, heißt"
+ },
+ {
+  "tr": "Bir iddiayı dikkate almamaya",
+  "kind": "say.tr",
+  "de": "Eine Behauptung nicht berücksichtigen heißt"
+ },
+ {
+  "tr": "Sözleşmenin ifası geç kaldı.",
+  "kind": "say.tr",
+  "de": "Die Erfüllung des Vertrags kam zu spät."
+ },
+ {
+  "tr": "zararı gidermenin yoluna ise",
+  "kind": "say.tr",
+  "de": "und der Weg, den Schaden zu beheben, heißt"
+ },
+ {
+  "tr": "Hiçbir biçimde onaylanamayana",
+  "kind": "say.tr",
+  "de": "Was auf keine Weise gebilligt werden kann, heißt"
+ },
+ {
+  "tr": "Bir kurum adına konuşan kişiye",
+  "kind": "say.tr",
+  "de": "Wer im Namen einer Stelle spricht, heißt"
+ },
+ {
+  "tr": "Bir teklifi kibarca reddetmeye",
+  "kind": "say.tr",
+  "de": "Ein Angebot höflich zurückweisen heißt"
+ },
+ {
+  "tr": "Zarara karşılık istenen paraya",
+  "kind": "say.tr",
+  "de": "Das Geld, das für einen Schaden verlangt wird, heißt"
+ },
+ {
+  "tr": "İki tarafın anlaşamadığı konuya",
+  "kind": "say.tr",
+  "de": "Die Sache, über die sich beide Seiten nicht einigen, heißt"
+ },
+ {
+  "tr": "iletiye iliştirilen dosyaya ise",
+  "kind": "say.tr",
+  "de": "und die Datei, die einer Nachricht beigefügt ist, heißt"
+ },
+ {
+  "tr": "Masrafın iadesinin vakti geldi.",
+  "kind": "say.tr",
+  "de": "Die Erstattung der Ausgabe ist fällig."
+ },
+ {
+  "tr": "Şimdi bir iddiayı aktaracaksın.",
+  "kind": "say.tr",
+  "de": "Jetzt gibst du eine Behauptung wieder."
+ },
+ {
+  "tr": "Üstlenilen işi yerine getirmeye",
+  "kind": "say.tr",
+  "de": "Die übernommene Arbeit leisten heißt"
+ },
+ {
+  "tr": "İkinci teklifi geri çeviriyoruz.",
+  "kind": "say.tr",
+  "de": "Wir lehnen das zweite Angebot ab."
+ },
+ {
+  "tr": "Otuz gün içinde tazmin ediyoruz.",
+  "kind": "say.tr",
+  "de": "Wir entschädigen innerhalb von dreißig Tagen."
+ },
+ {
+  "tr": "verilmiş bir sözü geri almaya ise",
+  "kind": "say.tr",
+  "de": "und ein gegebenes Wort zurücknehmen heißt"
+ },
+ {
+  "tr": "Bir tane daha: İşin ifası yavaştı.",
+  "kind": "say.tr",
+  "de": "Noch eins: Die Erfüllung der Arbeit war langsam."
+ },
+ {
+  "tr": "Esneğiz, yine de tarih değişmiyor.",
+  "kind": "say.tr",
+  "de": "Wir sind flexibel, dennoch bleibt der Termin."
+ },
+ {
+  "tr": "Kabul edilemez olan şey sessizlik.",
+  "kind": "say.tr",
+  "de": "Was inakzeptabel ist, ist das Schweigen."
+ },
+ {
+  "tr": "Şimdi resmî bir şikâyet kuracaksın.",
+  "kind": "say.tr",
+  "de": "Jetzt formulierst du eine formelle Beschwerde."
+ },
+ {
+  "tr": "Şimdi sen kur: Değişen şey tarihti.",
+  "kind": "say.tr",
+  "de": "Jetzt du: Was sich geändert hat, war der Termin."
+ },
+ {
+  "tr": "Tazminatın küçük olduğu söyleniyor.",
+  "kind": "say.tr",
+  "de": "Es heißt, dass der Schadenersatz klein ist."
+ },
+ {
+  "tr": "Asgari bir değişiklik yeterli değil.",
+  "kind": "say.tr",
+  "de": "Eine minimale Änderung ist nicht ausreichend."
+ },
+ {
+  "tr": "Aşıldığında durumun değiştiği sınıra",
+  "kind": "say.tr",
+  "de": "Die Grenze, ab der sich die Lage ändert, heißt"
+ },
+ {
+  "tr": "Bugün bağlarız ya da geri çekiliriz.",
+  "kind": "say.tr",
+  "de": "Heute legen wir es bei oder wir ziehen uns zurück."
+ },
+ {
+  "tr": "Kararı bağlayıcı bir hakeme bırakmaya",
+  "kind": "say.tr",
+  "de": "Die Entscheidung einem bindenden Schiedsrichter überlassen heißt"
+ },
+ {
+  "tr": "Şimdi bir müzakerede ödün vereceksin.",
+  "kind": "say.tr",
+  "de": "Jetzt kommst du in einer Verhandlung entgegen."
+ },
+ {
+  "tr": "Taraflar arasındaki yazılı alışverişe",
+  "kind": "say.tr",
+  "de": "Der schriftliche Austausch zwischen den Parteien heißt"
+ },
+ {
+  "tr": "Üslup saldırgandı ve teklif haksızdı.",
+  "kind": "say.tr",
+  "de": "Der Ton war aggressiv und das Angebot unfair."
+ },
+ {
+  "tr": "denir ve bu kelime her zaman çoğuldur.",
+  "kind": "say.tr",
+  "de": "genannt, und dieses Wort steht immer im Plural."
+ },
+ {
+  "tr": "Sorumluluğun bizde olduğu düşünülüyor.",
+  "kind": "say.tr",
+  "de": "Man hält die Haftung für unsere."
+ },
+ {
+  "tr": "bir kurumun karar verebildiği alana ise",
+  "kind": "say.tr",
+  "de": "und der Bereich, in dem eine Stelle entscheiden kann, heißt"
+ },
+ {
+  "tr": "Uyuşmazlığın tek bir telafi yolu kaldı.",
+  "kind": "say.tr",
+  "de": "Dem Streitfall bleibt nur eine Abhilfe."
+ },
+ {
+  "tr": "belgeyi resmîleştiren basılı işarete ise",
+  "kind": "say.tr",
+  "de": "und das gedruckte Zeichen, das ein Dokument amtlich macht, heißt"
+ },
+ {
+  "tr": "Bir zarardan hukuken sorumlu olma hâline",
+  "kind": "say.tr",
+  "de": "Rechtlich für einen Schaden einstehen zu müssen heißt"
+ },
+ {
+  "tr": "Herhâlde arabuluculuk daha hızlı olurdu.",
+  "kind": "say.tr",
+  "de": "Vermutlich wäre eine Mediation schneller."
+ },
+ {
+  "tr": "Maddenin o okumasını geçersiz sayıyoruz.",
+  "kind": "say.tr",
+  "de": "Wir weisen diese Lesart der Klausel zurück."
+ },
+ {
+  "tr": "Tarafları üçüncü bir kişiyle uzlaştırmaya",
+  "kind": "say.tr",
+  "de": "Die Parteien über eine dritte Person zusammenbringen heißt"
+ },
+ {
+  "tr": "Şimdi geçmişteki mutabakatı tartışacaksın.",
+  "kind": "say.tr",
+  "de": "Jetzt streitest du über eine frühere Vereinbarung."
+ },
+ {
+  "tr": "Mektubu aldıklarını bildirmeleri gerekirdi.",
+  "kind": "say.tr",
+  "de": "Sie hätten den Empfang des Briefes bestätigen sollen."
+ },
+ {
+  "tr": "Bir tane daha: O tarihe razı olmuş olamayız.",
+  "kind": "say.tr",
+  "de": "Noch eins: Wir können diesem Termin nicht zugestimmt haben."
+ },
+ {
+  "tr": "Son kalıbımız öneriyi yumuşatıyor. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Unsere letzte Wendung schwächt den Vorschlag ab. Wiederhole:"
+ },
+ {
+  "tr": "Şimdi sıra sende: İtiraz ettiğimiz şey fiyat.",
+  "kind": "say.tr",
+  "de": "Jetzt bist du dran: Wogegen wir Einwand erheben, ist der Preis."
+ },
+ {
+  "tr": "Cevap kabul edilebilir ama tatmin edici değil.",
+  "kind": "say.tr",
+  "de": "Die Antwort ist akzeptabel, aber nicht zufriedenstellend."
+ },
+ {
+  "tr": "Mütevazı bir adım ve samimi bir söz işe yarar.",
+  "kind": "say.tr",
+  "de": "Ein bescheidener Schritt und ein aufrichtiges Wort helfen."
+ },
+ {
+  "tr": "Şimdi şikâyetinin tam noktasını göstereceksin.",
+  "kind": "say.tr",
+  "de": "Jetzt zeigst du den genauen Punkt deiner Beschwerde."
+ },
+ {
+  "tr": "Bir tane daha: Kabul edilemez olan şey gecikme.",
+  "kind": "say.tr",
+  "de": "Noch eins: Was inakzeptabel ist, ist die Verspätung."
+ },
+ {
+  "tr": "Son kalıbımız eksik kalanı söylüyor. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Unsere letzte Wendung nennt das Ausgebliebene. Wiederhole:"
+ },
+ {
+  "tr": "Son kalıbımız sorumluluğu aktarıyor. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Unsere letzte Wendung gibt die Haftung wieder. Wiederhole:"
+ },
+ {
+  "tr": "Şimdi sen kur: Mektubu yanıtlamaları gerekirdi.",
+  "kind": "say.tr",
+  "de": "Jetzt du: Sie hätten den Brief beantworten sollen."
+ },
+ {
+  "tr": "Kuralı yetki alanımızın dışında ihlal ediyorlar.",
+  "kind": "say.tr",
+  "de": "Sie verletzen die Regel außerhalb unseres Zuständigkeitsbereichs."
+ },
+ {
+  "tr": "Şimdi sen kur: Açığız, yine de fiyat değişmiyor.",
+  "kind": "say.tr",
+  "de": "Jetzt du: Wir sind offen, dennoch bleibt der Preis."
+ },
+ {
+  "tr": "Şimdi sıra sende: Ücretin iadesinin vakti geldi.",
+  "kind": "say.tr",
+  "de": "Jetzt bist du dran: Die Erstattung der Gebühr ist fällig."
+ },
+ {
+  "tr": "Bükülmeyen demek. İlk kalıbımız da bu. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Das heißt unbiegsam. Das ist auch unsere erste Wendung. Wiederhole:"
+ },
+ {
+  "tr": "Bir şeyi aldığını ya da doğru bulduğunu bildirmeye",
+  "kind": "say.tr",
+  "de": "Mitzuteilen, dass man etwas erhalten oder als richtig befunden hat, heißt"
+ },
+ {
+  "tr": "Bir tane daha: Gecikmenin kısa olduğu düşünülüyor.",
+  "kind": "say.tr",
+  "de": "Noch eins: Man hält die Verspätung für kurz."
+ },
+ {
+  "tr": "Son kalıbımız asıl noktayı başa alıyor. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Unsere letzte Wendung holt den Kernpunkt nach vorn. Wiederhole:"
+ },
+ {
+  "tr": "Şimdi sıra sende: Maddeyi yanlış okumuş olmalısın.",
+  "kind": "say.tr",
+  "de": "Jetzt bist du dran: Du musst die Klausel falsch gelesen haben."
+ },
+ {
+  "tr": "İkinci kalıbımız istenen ödemeyi yazıyor. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Unsere zweite Wendung schreibt die geforderte Zahlung. Wiederhole:"
+ },
+ {
+  "tr": "İkinci kalıbımız ödünün sınırını çiziyor. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Unsere zweite Wendung zieht die Grenze des Entgegenkommens. Wiederhole:"
+ },
+ {
+  "tr": "İkinci kalıbımız tek bir parçayı seçiyor. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Unsere zweite Wendung wählt ein einzelnes Stück. Wiederhole:"
+ },
+ {
+  "tr": "Şimdi sen kur: Maddenin uygulatılması haftalar sürdü.",
+  "kind": "say.tr",
+  "de": "Jetzt du: Die Durchsetzung der Klausel hat Wochen gedauert."
+ },
+ {
+  "tr": "Şimdi sen kur: Maliyetlerin yüksek olduğu söyleniyor.",
+  "kind": "say.tr",
+  "de": "Jetzt du: Es heißt, dass die Kosten hoch sind."
+ },
+ {
+  "tr": "Bir tane daha: Herhâlde bir telefon daha hızlı olurdu.",
+  "kind": "say.tr",
+  "de": "Noch eins: Vermutlich wäre ein Anruf schneller."
+ },
+ {
+  "tr": "Şimdi dersin kuralı. Ödün cümlesi üç parçadan kurulur:",
+  "kind": "say.tr",
+  "de": "Jetzt die Regel der Lektion. Der Satz des Entgegenkommens hat drei Teile:"
+ },
+ {
+  "tr": "Şimdi sıra sende: Malların geç kaldığı iddia ediliyor.",
+  "kind": "say.tr",
+  "de": "Jetzt bist du dran: Es wird behauptet, dass die Ware zu spät kam."
+ },
+ {
+  "tr": "Şimdi dersin kuralı. Yarık cümle şikâyette sınır çizer:",
+  "kind": "say.tr",
+  "de": "Jetzt die Regel der Lektion. Der Spaltsatz zieht in der Beschwerde eine Grenze:"
+ },
+ {
+  "tr": "Son kalıbımız yerine getirmeyi isimle anlatıyor. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Unsere letzte Wendung nennt die Erfüllung mit einem Nomen. Wiederhole:"
+ },
+ {
+  "tr": "Bir kuralı uygulatmak demek. İlk kalıbımız da bu. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Das heißt eine Regel durchsetzen. Das ist auch unsere erste Wendung. Wiederhole:"
+ },
+ {
+  "tr": "Bir noktaya karşı çıkmak demek. İlk kalıbımız da bu. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Das heißt gegen einen Punkt Einwand erheben. Das ist auch unsere erste Wendung. Wiederhole:"
+ },
+ {
+  "tr": "Şimdi dersin kuralı. Şikâyet dilinde iddia üç biçimle aktarılır:",
+  "kind": "say.tr",
+  "de": "Jetzt die Regel der Lektion. In der Beschwerdesprache wird eine Behauptung in drei Formen wiedergegeben:"
+ },
+ {
+  "tr": "Şimdi dersin kuralı. Fiili isme çevirmek cümleyi kişiden çıkarır:",
+  "kind": "say.tr",
+  "de": "Jetzt die Regel der Lektion. Das Verb zum Nomen zu machen nimmt die Person aus dem Satz:"
+ },
+ {
+  "tr": "Şimdi sıra sende: Kabul etmek gerekir ki cevabımız epeyce yavaştı.",
+  "kind": "say.tr",
+  "de": "Jetzt bist du dran: Zugegeben, unsere Antwort war ziemlich langsam."
+ },
+ {
+  "tr": "Şimdi dersin kuralı. Üçü de geçmişe bakar ama üçü de başka iş görür:",
+  "kind": "say.tr",
+  "de": "Jetzt die Regel der Lektion. Alle drei blicken zurück, aber jedes leistet etwas anderes:"
+ },
+ {
+  "tr": "Yerine getirilmesi gereken şey demek. İlk kalıbımız da bu. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Das heißt, was erfüllt werden muss. Das ist auch unsere erste Wendung. Wiederhole:"
+ },
+ {
+  "tr": "ise bir eksik tespitidir. Müzakerede bu ayrım tonun tamamını belirler.",
+  "kind": "say.tr",
+  "de": "ist die Feststellung einer Lücke. In der Verhandlung bestimmt dieser Unterschied den ganzen Ton."
+ },
+ {
+  "tr": "Mal ya da hizmeti sağlayan taraf demek. İlk kalıbımız da bu. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Das heißt die Seite, die Ware oder Leistung liefert. Das ist auch unsere erste Wendung. Wiederhole:"
+ },
+ {
+  "tr": "ise öneriyi dayatmadan sunar. Üçü birlikte tavizi olgunluk gibi gösterir.",
+  "kind": "say.tr",
+  "de": "bringt den Vorschlag ohne Druck vor. Zusammen lassen die drei ein Zugeständnis reif wirken."
+ },
+ {
+  "tr": "ise özneyi başa alıp fiili mastara çevirir. Üçü de iddiayı sana mal etmez.",
+  "kind": "say.tr",
+  "de": "stellen das Subjekt nach vorn und machen das Verb zum Infinitiv. Keine der drei schreibt dir die Behauptung zu."
+ },
+ {
+  "tr": "tek parçayı seçer. Geri kalanına itiraz etmediğini de böylece söylemiş olursun.",
+  "kind": "say.tr",
+  "de": "wählt das einzelne Stück. So sagst du zugleich, dass du dem Rest nicht widersprichst."
+ },
+ {
+  "tr": "Merhaba! Bugün resmî şikâyet dilini öğreneceğiz: ne uygulanmadı, ne ödenmedi, ne geç kaldı.",
+  "kind": "say.tr",
+  "de": "Hallo! Heute lernen wir die Sprache der formellen Beschwerde: was nicht durchgesetzt, was nicht gezahlt, was zu spät kam."
+ },
+ {
+  "tr": "Resmî şikâyet kişiyi değil olayı anlatır ve bunu sağlayan şey fiili isme çevirmek. Hazır mısın?",
+  "kind": "say.tr",
+  "de": "Eine formelle Beschwerde erzählt nicht die Person, sondern das Geschehen, und das schafft die Nominalisierung. Bist du bereit?"
+ },
+ {
+  "tr": "Merhaba! Bugün geçmişteki mutabakatı tartışmayı öğreneceğiz: ne konuşulmuştu, ne konuşulmamıştı.",
+  "kind": "say.tr",
+  "de": "Hallo! Heute lernen wir, über eine frühere Vereinbarung zu streiten: was besprochen war und was nicht."
+ },
+ {
+  "tr": "yazılır. Resmî şikâyette bu bir üslup tercihi değil; kaydın kişiyi değil olayı taşıması gerekir.",
+  "kind": "say.tr",
+  "de": "geschrieben. In der formellen Beschwerde ist das keine Stilfrage; die Aufzeichnung soll nicht die Person, sondern das Geschehen tragen."
+ },
+ {
+  "tr": "Merhaba! Bugün ödün vermeyi öğreneceğiz: neyi kabul ediyorsun, nerede duruyorsun, ne öneriyorsun.",
+  "kind": "say.tr",
+  "de": "Hallo! Heute lernen wir das Entgegenkommen: was du einräumst, wo du stehst, was du vorschlägst."
+ },
+ {
+  "tr": "Merhaba! Bugün bir iddiayı aktarmayı öğreneceğiz: kim iddia ediyor, ne isteniyor, sorumluluk kimde.",
+  "kind": "say.tr",
+  "de": "Hallo! Heute lernen wir, eine Behauptung wiederzugeben: wer behauptet, was verlangt wird, bei wem die Haftung liegt."
+ },
+ {
+  "tr": "Merhaba! Bugün şikâyetin tam noktasını göstermeyi öğreneceğiz: neye itiraz ediyorsun, neye etmiyorsun.",
+  "kind": "say.tr",
+  "de": "Hallo! Heute lernen wir, den genauen Punkt der Beschwerde zu zeigen: wogegen du Einwand erhebst und wogegen nicht."
+ },
+ {
+  "tr": "Müzakerede en zor an budur ve üç kip burada üç ayrı iş yapar: çıkarım, ret, eksik tespiti. Hazır mısın?",
+  "kind": "say.tr",
+  "de": "Das ist der schwierigste Moment der Verhandlung, und hier leisten die drei Modalverben dreierlei: Rückschluss, Zurückweisung, Feststellung einer Lücke. Bist du bereit?"
+ },
+ {
+  "tr": "Şikâyet yazısının belkemiği bu kalıp: iddiayı aktarıyorsun ama henüz kendi üzerine almıyorsun. Hazır mısın?",
+  "kind": "say.tr",
+  "de": "Diese Wendung ist das Rückgrat des Beschwerdeschreibens: du gibst die Behauptung weiter, übernimmst sie aber noch nicht. Bist du bereit?"
+ },
+ {
+  "tr": "İyi bir şikâyet her şeye itiraz etmez; itirazın hangi parçaya olduğunu ayırır ve bunu yapan yapı yarık cümle. Hazır mısın?",
+  "kind": "say.tr",
+  "de": "Eine gute Beschwerde wendet sich nicht gegen alles; sie trennt heraus, welchem Teil der Einwand gilt, und das leistet der Spaltsatz. Bist du bereit?"
+ },
+ {
+  "tr": "Müzakerede taviz vermek zayıflık değil; bunu söyleyiş biçimi belirler ve o biçimi yumuşatıcı bağlayıcılar kurar. Hazır mısın?",
+  "kind": "say.tr",
+  "de": "Ein Zugeständnis in der Verhandlung ist keine Schwäche; entscheidend ist, wie man es sagt, und diese Form bauen die abschwächenden Konnektoren. Bist du bereit?"
+ }
+]
