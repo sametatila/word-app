@@ -30,9 +30,7 @@ export const DEFAULT_AVATAR: AvatarConfig = {
 const ID = /^[a-z0-9_-]{1,24}$/i;
 const HEX = /^#[0-9a-f]{6}$/i;
 
-function part(v: unknown): string | null {
-  return typeof v === "string" && ID.test(v) ? v : null;
-}
+const part = (v: unknown): string | null => (typeof v === "string" && ID.test(v) ? v : null);
 
 /**
  * Ham değeri (JSON metni ya da nesne) güvenli bir yapılandırmaya çevirir.

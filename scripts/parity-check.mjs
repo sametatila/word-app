@@ -930,6 +930,24 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   };
   sameList("arma turetimi", crest("mobile/src/ui/Avatar.tsx"), crest("src/components/avatar.tsx"));
 
+  /* AVATAR COZUMLEME. Iki taraf ayni ham JSON'u okuyor (sunucudaki tek kayit);
+     birinin kabul edip otekinin attigi bir parca, ayni kisinin iki platformda
+     farkli gorunmesi demek. `null` = hic secmemis ayrimi da burada. */
+  const parseAv = (p) => {
+    const src = read(p);
+    const kes = (desen) => {
+      const m = src.match(desen);
+      return m ? norm(m[0]) : "YOK";
+    };
+    return [
+      kes(/const ID = [^\n]+/),
+      kes(/const HEX = [^\n]+/),
+      kes(/const part = [^\n]+/),
+      kes(/export function parseAvatar\(raw: unknown\): AvatarConfig \| null \{[\s\S]*?\n\}/),
+    ];
+  };
+  sameList("avatar cozumleme", parseAv("mobile/src/lib/avatar.ts"), parseAv("src/lib/avatar-config.ts"));
+
   /* KIND_TINT yalniz ANAHTAR kumesi: webde CSS degiskeni, mobilde palet jeton
      ADI duruyor (sonradan cozuluyor). Degerler bilerek farkli bicimde, kume
      ayni olmali - bir unite turu eklenip oteki tarafta unutulursa renksiz
