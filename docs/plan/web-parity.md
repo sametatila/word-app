@@ -10934,3 +10934,41 @@ eskisini silmeden bırakmak) yakalandı.
 eşleşmesi. "kapilarda onek eslesmesi" kapısı ikisini de bildirdi; `\b` ile
 sınırlandı. Aynı hatayı iki turda iki kez yaptım — kapı olmasa ikisi de
 sessizce geçerdi.
+
+## §11.333 — Gelen kutusu neredeyse birebir; ölçülmeyen üç şey vardı
+
+Gelen kutusu mobil karşılığıyla karşılaştırıldı ve **satır satır eşleştiği**
+görüldü: avatar ya da ikon karosu, okunmamış satırın kalın yazısı + noktası,
+tepki simgesi, chevron, imleçli sayfalama ("daha eski"), ilk yüklemede
+`markRead("all")` ve rozeti sıfırlayan olay. Zil de aynı: dakikada bir ve
+ön plana gelince tazeleniyor, 9'dan sonra "9+", aynı kehribar zemin + mürekkep
+yazı, aynı erişilebilirlik anahtarları. Oturum açmamış hâlin mobilde olup
+web'de olmaması meşru — web'in `/inbox` adresi `(app)` grubunda, yani oraya
+oturumsuz ulaşılamıyor.
+
+Üç şey ölçülmüyordu:
+
+**1. `timeAgo` iki yerde ayrı ayrı yazılı ve satır satır aynı:** saniye hesabı,
+dört eşik (60 sn / 60 dk / 24 sa / 7 gün) ve sonunda yerel kısa tarih. Biri
+değiştirilirse aynı bildirim iki platformda başka yaş gösterir. §11.331'deki
+`dueLabel`/`statusOf` ile aynı sınıf.
+
+**2. Bildirim hedefleri kaldırılmış sekme adlarını yazıyordu.** Android'de
+"gelen istekler" ve "bu haftanın ortak görevi" kendi sekmelerinde değil,
+arkadaş listesinin başında (`FriendsScreen`); `InboxScreen` `open` ikisini de
+`friends`e götürüyor. Web `?tab=requests` ve `?tab=quests` yazıyordu ve yalnız
+`hub-tab`daki ALIAS sayesinde çalışıyordu. Hedefler Android'inkine çevrildi;
+alias artık yalnız **kayıtlı dış bağlantılar** için duruyor — kendi
+bağlantılarımız için değil.
+
+**3. Rozetin tavanı ("9+") iki yerde yazılı** ve ikisi de aynı.
+
+§219 on ölçüt okuyor. Üç enjeksiyon (mobil eşiği 7→14, web hedefini geri
+almak, mobil tavanı silmek) yakalandı.
+
+**Kapının ilk yazımı yine hiçbir şeyi ölçmedi ve bu kez tell farklıydı.**
+Kısa tarih dönüşünü `/toLocaleDateString\([^)]*\{ day: ... \}/` ile arıyordum;
+çağrı `toLocaleDateString(localeOf(lang), {...})` biçiminde olduğu için
+`[^)]*` ilk `)`de duruyor ve desen hiç tutmuyor. **İki tarafın aynı şekilde
+"YOK" demesi** kusurun kodda değil ölçümde olduğunun işaretiydi — bir
+ayrışma arıyorsanız iki tarafın birlikte başarısız olması şüphelidir.
