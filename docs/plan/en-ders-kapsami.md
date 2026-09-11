@@ -1,6 +1,6 @@
 # WP-74 — İngilizce ders kapsamı B1–C1
 
-**Durum:** sürüyor (B1 TAM; B2 modül 1-6 TAM, 160/300 ders) · **Sahip:** Claude · **Açılış:** 2026-09-11
+**Durum:** sürüyor (B1 TAM; B2 modül 1-7 TAM, 170/300 ders) · **Sahip:** Claude · **Açılış:** 2026-09-11
 
 ## Kusur
 
@@ -341,6 +341,28 @@ fiilini sona atabiliyor («… olanı, … olanı, … ise … bağlar»), Alman
 atamıyor. Segment sırası dersten geldiği için çözüm her tokene kendi
 fiilini vermek: «bindet das Gleichzeitige an, … bindet das Gebaute an, …
 bindet dagegen das vorher Beendete an». Beş satır böyle düzeltildi.
+
+**B2 modül 7 — Kültür ve sanat (2026-09-11).** On ders: katalog künyesi,
+sezon duyurusu, oyunun yaptığı, sahnedeki bir ömür, şenliğin ne olduğu,
+böyle bir infial hiç olmadı, açılışa kadar, ikinci perde, başka türlü
+betimleseydi, beğenmediğini söylemek.
+
+Modülün kendi ekseni MESAFE: yapıtla onu anlatan kişi arasındaki uzaklık.
+Künye dili faili siler çünkü kayıt kalıcıdır ve kimin yaptığı değişir;
+aktarım kalıbı kaynağı siler ve bu sanat haberinde bir koruma değil bir
+uyarıdır; yarık cümle yapıtın KONUSUNU değil YAPTIĞINI başa taşır. Son ders
+modülün yükünü taşıyor: beğenmemek kolay, söyledikten sonra konuşmanın
+sürmesi zor — yumuşatıcıların işi tam bu.
+
+Spiral burada da dönüyor: virgüllü ilgi cümlesi modül 6'da bir kesimi
+ayırmamaya yarıyordu, burada bir geleneği tuhaflaştırmamaya. Kip bileşimi
+modül 5'te yöntem tartışmasıydı, burada eleştiriyi hakarete çevirmeyen şey.
+
+Bu modülde Türkçede hiçbir kapının görmediği bir kusur sınıfı bulundu:
+metne iki kez Kiril harf kaçmış (`ismе`, `savа`). Latin karşılığıyla aynı
+görünüyor, arama-değiştirme ıskalıyor, `check:lessons` ve `test:content`
+umursamıyor. `scratchpad/charcheck.py` bütün Türkçe alanları tarayıp
+beklenmeyen harfleri döküyor; dört İngilizce dosyanın tamamı temizlendi.
 
 ## Tamamlanma ölçütü
 
