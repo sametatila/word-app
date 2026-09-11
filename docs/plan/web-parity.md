@@ -7321,3 +7321,26 @@ Turun kendi hatası da kayda değer: enjeksiyon denemesinden dönerken
 rol yapma ekranının yayını, burada web onboarding çağrısı). İlki yalnız
 §120'ye eklenen dördüncü kontrol sayesinde görüldü; ikincisi bu kapının
 kendisiyle. Enjeksiyon geri alması artık dosya yedeğinden yapılıyor.
+
+### 11.214 Son etabın bahsi Android'de sessizce buharlaşıyordu
+
+Bahis (etap sonunda "kazandığını ortaya koy") Android'de **yalnız etap
+sınırında** çözülüyordu — `closeStage`. Tur başka bir sebeple bittiyse, yani
+kelime kalmadıysa ya da günlük hedef dolduysa, `finish()` cevapları bahissiz
+gönderiyordu: `wagerOn` açık kalıyor, sunucuya bahis hiç gitmiyor, sonuç
+hiçbir yerde yazmıyordu. Kullanıcı XP'sini ortaya koyuyor, **ne kazandığını
+ne kaybettiğini öğreniyor** ve aslında hiçbir şey de olmuyordu.
+
+Web bunu baştan beri kapatıyor ve nedeni de yazılı: `closing = isLast ||
+etap sınırı`, sonucu da özet kartında gösteriyor — *"etap kartı gösterilmeden
+tur bittiği için başka söylenecek yer yok."* Android'de o satır hiç yoktu.
+
+İkisi de eklendi: `finish()` bahsi `closeStage` ile birebir aynı payla
+kapatıyor (doğru/toplam/ortaya konan XP, hepsi etap başından beri), özet
+kartı da sonucu webdeki yerinde gösteriyor — XP'nin altında, günlük hedef
+kutusunun üstünde, kazanç yeşil, kayıp turuncu, berabere sessiz.
+
+**§123** üç şeyi ölçüyor: bahis etap sınırında kapanıyor mu, TURUN SONUNDA
+kapanıyor mu, sonucu özet gösteriyor mu. Üç enjeksiyonun üçü de yakalandı.
+Fonksiyon gövdeleri ADA göre değil **girintiye göre** kesiliyor: bu dosyada
+komşu fonksiyonu okumak birden fazla kez tuzak oldu (§103, §116).

@@ -324,13 +324,32 @@ export function GameScreen() {
     if (submitted.current) return;
     submitted.current = true;
     setSaveWarning(null);
+    /*
+     * SON ETABIN BAHSİ BURADA KAPANIYOR.
+     *
+     * Bahis yalnız `closeStage`te çözülüyordu, yani tur bir ETAP SINIRINDA
+     * bittiyse sonuç görünüyordu; kelime kalmadığı ya da günlük hedef
+     * dolduğu için bittiyse bahis sessizce buharlaşıyordu — kullanıcı XP'sini
+     * ortaya koyuyor, ne kazandığını ne kaybettiğini öğreniyor, ne de bir şey
+     * oluyordu. Web bunu baştan beri kapatıyor (`session-player`:
+     * `closing = isLast || etap sınırı`) ve sonucu özet kartında gösteriyor.
+     */
+    const wager = wagerOn.current
+      ? {
+          correct: roundsRight.current - stageStart.current.correct,
+          total: roundsSeen.current - stageStart.current.total,
+          stake: xpEstimate.current - stageStart.current.xp,
+        }
+      : null;
+    wagerOn.current = false;
     try {
-      if (answers.current.length) {
-        const r = await submitAnswers(answers.current, day.current, secs, progressNow());
+      if (answers.current.length || wager) {
+        const r = await submitAnswers(answers.current, day.current, secs, progressNow(), wager);
         bumpStats(); // sayılar değişti: başlık ve özet tazelensin
         if (r?.streakRepaired) setRepaired(r.currentStreak);
         if (r?.newlyMastered) setMastered(r.newlyMastered);
         if (r) setResult(r);
+        if (wager) setWagerResult(r?.wagerXp ?? 0);
       }
     } catch (e) {
       setSaveWarning(isPermanentError(e) ? "dropped" : "queued");
@@ -489,6 +508,18 @@ export function GameScreen() {
               tipinde yoktu ve sessizce düşüyordu (bkz. web-parity §11.23). */}
           {result && result.xpGained > 0 ? (
             <Text variant="h2" color={colors.primaryText} style={{ marginBottom: spacing.md }}>{`+${result.xpGained} XP`}</Text>
+          ) : null}
+
+          {/* SON ETABIN BAHSİ. Web özetin aynı yerinde kapatıyor: etap kartı
+              gösterilmeden tur bittiği için söylenecek başka yer yok. */}
+          {wagerResult !== null ? (
+            <Text
+              variant="bodyStrong"
+              color={wagerResult > 0 ? colors.successText : wagerResult < 0 ? colors.streakText : colors.textMuted}
+              style={{ marginBottom: spacing.md, textAlign: "center" }}
+            >
+              {wagerResult > 0 ? t("stage.wager_won", { xp: wagerResult }) : wagerResult < 0 ? t("stage.wager_lost", { xp: wagerResult }) : t("wager.even")}
+            </Text>
           ) : null}
 
           {/* Günlük hedef çubuğu + ulaşıldıysa satırı. Web aynı kutuyu çiziyor. */}

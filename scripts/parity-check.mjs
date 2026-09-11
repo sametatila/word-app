@@ -4175,6 +4175,44 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   sameSet("olcum paritesi (yalniz mobil istemcisinde)", eksik, kayitli.sort(), "bulunan", "kayitli");
 }
 
+/* ── 123. son etabin bahsi ────────────────────────────────────────────────
+ * Bahis Androidde YALNIZ etap sinirinda kapaniyordu (`closeStage`). Tur
+ * kelime kalmadigi ya da gunluk hedef doldugu icin bittiyse bahis sessizce
+ * buharlasiyordu: kullanici XP'sini ortaya koyuyor, ne kazandigini ne
+ * kaybettigini ogreniyor, hicbir sey de olmuyordu. Web bunu bastan beri
+ * kapatiyor (`closing = isLast || etap siniri`) ve sonucu OZET kartinda
+ * gosteriyor - etap karti gosterilmeden tur bittigi icin baska yer yok.
+ *
+ * Olculen uc sey: bahis etap sinirinda kapaniyor mu, TURUN SONUNDA kapaniyor
+ * mu, ve sonucu ozet gosteriyor mu. */
+{
+  const govde = (src, bas) => {
+    const i = src.indexOf(bas);
+    if (i < 0) return "";
+    /* Govde, ayni girintideki kapanis parantezine kadar: ad ile eslesip
+       KOMSU fonksiyonu okumak bu dosyada birden fazla kez tuzak oldu. */
+    const girinti = " ".repeat(bas.length - bas.trimStart().length) + "}";
+    const son = src.indexOf("\n" + girinti, i);
+    return son < 0 ? src.slice(i) : src.slice(i, son);
+  };
+  const mobSrc = read("mobile/src/screens/GameScreen.tsx");
+  const webSrc = read("src/components/session-player.tsx");
+  const mob = [
+    "etap sinirinda=" + (/stake:/.test(govde(mobSrc, "  async function closeStage() {")) ? "kapanir" : "kapanmaz"),
+    "tur sonunda=" + (/stake:/.test(govde(mobSrc, "  async function finish() {")) ? "kapanir" : "kapanmaz"),
+    /* Ozet: `StageCard` de ayni degiskeni gosteriyor, o yuzden ozet
+       bolumundeki gosterim AYRICA araniyor (etap kartinin disinda). */
+    "ozet gosterir=" + (/wagerResult !== null/.test(mobSrc.slice(0, mobSrc.indexOf("function StageCard"))) ? "evet" : "hayir"),
+  ];
+  const kapanis = webSrc.match(/const closing = ([^;]+);/)?.[1] ?? "";
+  const web = [
+    "etap sinirinda=" + (/STAGE_SIZE === 0/.test(kapanis) ? "kapanir" : "kapanmaz"),
+    "tur sonunda=" + (/isLast/.test(kapanis) ? "kapanir" : "kapanmaz"),
+    "ozet gosterir=" + (/result\?\.wagerXp \?/.test(webSrc) ? "evet" : "hayir"),
+  ];
+  sameList("son etabin bahsi", mob, web);
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"
