@@ -1,6 +1,7 @@
 import React, { useEffect, useMemo, useState } from "react";
 import { t, nativeLangName, targetLangName, formatNumber } from "../lib/i18n";
 import { useMe } from "../lib/useMe";
+import { trackOnce } from "../lib/track";
 import { View, TextInput, FlatList } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { useNavigation } from "@react-navigation/native";
@@ -91,7 +92,11 @@ export function WordsScreen() {
     // İlk sayfada iskelet; sonraki sayfalarda liste yerinde kalıyor.
     if (page === 0) setPhase("loading");
     const params = new URLSearchParams();
-    if (q.trim()) params.set("q", q.trim());
+    /* ARAMA ÖLÇÜLÜYOR — ekran başına bir kez, web kelime listesiyle aynı ad ve
+       aynı kind (`trackOnce("search", uzunluk, "words")`). Android'de arama
+       kutusu vardı ama hiç ölçülmüyordu: "arama kullanılıyor mu" sorusu yalnız
+       webden cevaplanıyor, Android sıfır görünüyordu. */
+    if (q.trim()) { params.set("q", q.trim()); trackOnce("search", q.trim().length, "words"); }
     if (filter) params.set("status", filter);
     if (level) params.set("level", level);
     if (page) params.set("page", String(page));

@@ -26,6 +26,8 @@ export type EventName =
      ile ayni ad, ayni kind). Android sesi cihazin kendi motoru okuyor ve bu
      olay hic yazilmiyordu: panelde ses kullanimi yalniz webden gorunuyordu. */
   | "tts_play"
+  /* Kelime listesinde arama - web `word-list` ile ayni ad, ayni kind. */
+  | "search"
   | "coach_show"
   | "nav"
   | "paywall_view"

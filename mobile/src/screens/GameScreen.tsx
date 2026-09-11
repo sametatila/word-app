@@ -81,6 +81,8 @@ export function GameScreen() {
   const stageStart = useRef({ index: 0, correct: 0, total: 0, xp: 0 });
   const xpEstimate = useRef(0);
   const wagerOn = useRef(false);
+  /** Turun türü — `session_start` ve `session_done` aynı `kind`i taşısın diye. */
+  const sessionKind = useRef("mixed");
   const [wagerResult, setWagerResult] = useState<number | null>(null);
   const [pop, setPop] = useState(0);
   const answers = useRef<AnswerOut[]>([]);
@@ -164,7 +166,19 @@ export function GameScreen() {
       setIdx(start);
       startedAt.current = Date.now();
       roundStart.current = Date.now();
-      track("session_start", 0, onlyGame ? "practice" : "session");
+      /*
+       * TUR TÜRÜ BİR KEZ HESAPLANIP SAKLANIYOR — bitişte de aynısı gidiyor.
+       *
+       * İki kusur birdeydi. Birincisi: başlangıç `practice`/`session` yazıyor,
+       * bitiş her zaman `session` yazıyordu; yani tek oyunluk bir turun
+       * başlangıcı ile bitişi EŞLEŞTİRİLEMİYORDU — "alıştırma turları
+       * tamamlanıyor mu" sorusu Android'de cevapsızdı. İkincisi: sözcükler
+       * web'inkinden başkaydı (`mixed`/`single:<oyun>`/`extra`), yani aynı
+       * kavram iki platformda iki dille yazılıyor ve panelde tür kırılımı
+       * karşılaştırılamıyordu. Web `session-player` `sessionKind` ile aynı.
+       */
+      sessionKind.current = onlyGame ? `single:${onlyGame}` : opts?.extra ? "extra" : "mixed";
+      track("session_start", 0, sessionKind.current);
       /* Yarim kalan turdan devam edildiyse ayrica yaziliyor: web
          `session-player` da oyle. Yoksa "bastan mi basladi, devam mi etti"
          sorusu Androidde hic cevaplanmiyor. */
@@ -320,7 +334,7 @@ export function GameScreen() {
        bakıyor ve o sayı sunucu yanıtıyla geliyor. Karar özet açılınca veriliyor
        (aşağıdaki etki), web de öyle yapıyor (`session-player` özet kartı). */
     const secs = Math.round((Date.now() - startedAt.current) / 1000);
-    track("session_done", totalCorrect, "session");
+    track("session_done", totalCorrect, sessionKind.current);
     if (submitted.current) return;
     submitted.current = true;
     setSaveWarning(null);

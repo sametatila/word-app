@@ -6203,6 +6203,50 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   );
 }
 
+/* ── 167. ayni olay ayni SOZCUKLE yaziliyor mu ────────────────────────────
+ * Olay adinin ayni olmasi yetmiyor: `kind` alani da ayni sozlukten gelmeli.
+ * Tur olayinda gelmiyordu - web `mixed` / `single:<oyun>` / `extra` yaziyor,
+ * Android `session` / `practice` yaziyordu. Ayni kavram iki dille yazilinca
+ * panelde tur TURU kirilimi iki platform arasinda karsilastirilamiyor.
+ *
+ * Daha kotusu Androidin kendi icindeydi: baslangic `practice`/`session`,
+ * bitis HER ZAMAN `session` yaziyordu. Yani tek oyunluk bir turun baslangici
+ * ile bitisi eslestirilemiyordu - "alistirma turlari tamamlaniyor mu" sorusu
+ * Androidde cevapsizdi. Web ayni tuzagi daha once gormus ve turun turunu bir
+ * kez hesaplayip saklamis (`sessionKind`); mobil de artik oyle.
+ *
+ * Olculen: tur olayinin baslangic ve bitiste AYNI degiskeni tasimasi ve iki
+ * platformun ayni sozcuk kalibini kullanmasi. */
+{
+  const strip = (x) => x.replace(/\/\*[\s\S]*?\*\//g, (m) => m.replace(/[^\n]/g, " ")).replace(/(^|[^:"'`\\])\/\/.*$/gm, "$1");
+  const mob = strip(read("mobile/src/screens/GameScreen.tsx")).replace(/\s+/g, " ");
+  const web = strip(read("src/components/session-player.tsx")).replace(/\s+/g, " ");
+  /* Degisken adi iki tarafta farkli (`onlyGame` / `opts.game`) ve NOKTA
+     tasiyabiliyor: ilk surum nokta kabul etmiyordu ve webi "baska sozcuk"
+     diye bildirdi - kalibin kendisi aynidir, degisken adi olcumun konusu
+     degil. */
+  const kalip = /sessionKind\.current = .*\? `single:\$\{[\w.]+\}` : .*\? "extra" : "mixed"/;
+  const durum = (src) => [
+    "sozcuk kalibi=" + (kalip.test(src) ? "mixed/single/extra" : "baska"),
+    "baslangic=" + (/track\("session_start", 0, sessionKind\.current\)/.test(src) ? "saklanan tur" : "yerinde yazilan"),
+    "bitis=" + (/track\("session_done", [a-zA-Z.]+, sessionKind\.current\)/.test(src) ? "saklanan tur" : "yerinde yazilan"),
+  ];
+  const beklenen = ["sozcuk kalibi=mixed/single/extra", "baslangic=saklanan tur", "bitis=saklanan tur"];
+  sameList("tur olayinin sozcugu", durum(mob), durum(web));
+  sameList("mobil tur olayi", durum(mob), beklenen, "bulunan", "beklenen");
+  sameList("web tur olayi", durum(web), beklenen, "bulunan", "beklenen");
+
+  /* Arama olcumu: ayni ad, ayni kind, iki platformda da ekran basina bir kez. */
+  const arama = (yol) => (/trackOnce\("search", [^,]+, "words"\)/.test(strip(read(yol))) ? "olculuyor" : "olculmuyor");
+  sameList(
+    "kelime aramasi olcumu",
+    ["mobil=" + arama("mobile/src/screens/WordsScreen.tsx"), "web=" + arama("src/components/word-list.tsx")],
+    ["mobil=olculuyor", "web=olculuyor"],
+    "bulunan",
+    "beklenen",
+  );
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"

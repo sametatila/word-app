@@ -8661,3 +8661,40 @@ yazısını arıyordu ve bölümün **ipucu metni** de aynı sözü içerdiği i
 değişse bile yeşil kalıyordu; artık çubuğun kendi etiketine bakıyor. Bir
 enjeksiyonum da yine yanlıştı — değişikliği koda değil **yoruma** uyguladım
 (bu turda ikinci kez); kapı haklıydı, ben yanlış ölçtüm.
+
+## §11.263 — Aynı olay, iki ayrı sözcükle
+
+Olay adının aynı olması yetmiyor: `kind` alanı da aynı sözlükten gelmeli.
+Otuz beş ortak olay tarandı; tur olayında iki kusur birden çıktı.
+
+**Birincisi Android'in kendi içindeydi:** `session_start` `practice`/`session`
+yazıyor, `session_done` **her zaman** `session` yazıyordu. Yani tek oyunluk bir
+turun başlangıcı ile bitişi eşleştirilemiyordu — "alıştırma turları
+tamamlanıyor mu" sorusu Android'de cevapsızdı. Web aynı tuzağı daha önce
+görmüş ve turun türünü bir kez hesaplayıp saklamış (`sessionKind`); ilginci,
+web'deki notun "Mobil `GameScreen` ikisine de aynı kind'i veriyor" demesi —
+vermiyordu. **Bir yorumun doğru olduğunu varsaymak, ölçmemektir.**
+
+**İkincisi platformlar arasındaydı:** web `mixed` / `single:<oyun>` / `extra`
+yazıyor, Android `session` / `practice`. Aynı kavram iki dille yazılınca
+panelde tur türü kırılımı iki platform arasında karşılaştırılamıyor. Android'de
+üç kavramın üçü de zaten var (`onlyGame`, `opts.extra`, ikisi de yoksa
+karışık), yani eksik olan bilgi değil sözcüktü.
+
+Üçüncü, küçük bulgu: **kelime aramasında Android ölçüm yazmıyordu.** Arama
+kutusu iki platformda da var; web `trackOnce("search", uzunluk, "words")`
+yazıyor, Android hiç yazmıyordu — "arama kullanılıyor mu" sorusu Android'de
+sıfır görünüyordu.
+
+Taramanın kalan farkları yanlış alarm çıktı: `app_open` mobilde `App.tsx`ten
+(kapsam dışı klasör) yazılıyor, `share` "invite" webde `lib/share`te,
+`walk_switch`in fazla `kind`leri tarayıcıya özgü durumlar (gizlenen sekme,
+karartılmış ekran). Bir de gerçek ölü kod: mobilde `shareStreak` yazılmış ama
+hiçbir ekran çağırmıyor.
+
+**§167** tur olayının başlangıç ve bitişte aynı değişkeni taşımasını, iki
+platformun aynı sözcük kalıbını kullanmasını ve arama ölçümünü denetliyor.
+Kapı bir kez fazla katıydı: kalıptaki değişken adı iki tarafta farklı
+(`onlyGame` / `opts.game`) ve **nokta** taşıyabiliyor; ilk sürüm noktayı kabul
+etmeyip web'i "başka sözcük" diye bildirdi. Değişkenin adı ölçümün konusu
+değil. Beş enjeksiyonun beşi doğru tarafta yakalandı.
