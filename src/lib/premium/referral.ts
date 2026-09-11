@@ -5,6 +5,7 @@ import { db } from "@/lib/db";
 import { entitlements, profiles, referrals } from "@/lib/db/schema";
 import { grantBonus, daysToMinutes } from "./entitlement";
 import { premiumConfig } from "./config";
+import type { ReferralStats } from "./referral-types";
 
 /**
  * Davet zinciri — davet edilen ÖDEME YAPINCA davetçi premium kazanır.
@@ -182,15 +183,7 @@ export async function rewardForFirstPayment(inviteeUserId: string): Promise<stri
   return row.inviterUserId;
 }
 
-export type ReferralStats = {
-  code: string;
-  /** Kodla kayıt olan toplam kişi. */
-  invited: number;
-  /** Ödeme yapıp ödül üreten kişi. */
-  rewarded: number;
-  /** Kazanılan toplam gün. */
-  earnedDays: number;
-};
+export type { ReferralStats } from "./referral-types";
 
 export async function referralStats(userId: string): Promise<ReferralStats> {
   const code = await ensureReferralCode(userId);
@@ -202,11 +195,13 @@ export async function referralStats(userId: string): Promise<ReferralStats> {
     })
     .from(referrals)
     .where(eq(referrals.inviterUserId, userId));
+  const cfg = await premiumConfig();
   return {
     code,
     invited: row?.invited ?? 0,
     rewarded: row?.rewarded ?? 0,
     earnedDays: Math.round((row?.minutes ?? 0) / (60 * 24)),
+    rewardDays: cfg.referral.rewardDays,
   };
 }
 

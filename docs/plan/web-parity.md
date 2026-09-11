@@ -9398,3 +9398,35 @@ aynı sayıda alan taşıyor mu (kaynağa eklenen bir kota metinde hiç söylenm
 görünür), ve her uç sınırı kaynaktan mı okuyor. Sonuncusu iki kalıpla: sabitin
 adı uçtan uca aynı olmadığı için (`ROLEPLAY_DAILY_LIMIT` da var) elle yazılmış
 sayı taraması ada değil **biçime** bakıyor. Dört enjeksiyonun dördü yakalandı.
+
+## §11.287 — Davet ödülü: kod değişmeden bozulabilen bir söz
+
+Bu turun bulgusu ötekilerden bir adım daha kötü bir sınıfta. Davet kutusu iki
+platformda da şunu söylüyor: "Davet ettiğin kişi ilk ödemesini yaptığında sana
+**7 gün** Premium veriyoruz." Cümle zaten `{days}` yer tutucusu taşıyordu —
+yani doğru yapılmış görünüyordu — ama iki ekran da o yer tutucuya **elle
+yazılmış bir 7** geçiriyordu (`t("referral.explain", { days: 7 })`).
+
+Sunucunun verdiği ödül ise `cfg.referral.rewardDays`: **panelden ayarlanan**
+bir değer, kod sabiti değil. Yani ödül panelden 14'e çıkarıldığı anda sunucu
+on dört gün verir, iki ekran da "7 gün" demeye devam ederdi. **Kod hiç
+değişmeden bozulan bir söz** — ne derleme, ne test, ne de bir kapı görebilirdi,
+çünkü görülecek bir değişiklik yoktu.
+
+Sayı artık `/api/premium/status` yanıtından geliyor: `ReferralStats`
+`rewardDays` alanını taşıyor ve iki kutu onu okuyor.
+
+**Yan bulgu:** `ReferralStats` biçimi üç yerde ayrı yazılıydı — sunucu, web
+ödeme duvarının kendi `type Referral`ı, ve mobilin kendi satır içi tipi.
+Sunucuya alan eklendiğinde istemci onu hiç görmezdi; `rewardDays` eklenirken
+tam bu oldu ve `tsc` web tarafında hatayla uyardı (mobil uzak uca bağlı olduğu
+için orada uyarmazdı). Biçim `lib/premium/referral-types` içine alındı
+(`server-only` değil), web oradan içe alıyor.
+
+**§193** dört şey soruyor: cümle `{days}` taşıyor mu ve rakamsız mı, iki kutu
+da sunucunun alanını mı geçiriyor, sunucu alanı döndürüyor mu, ve iki
+istemcinin biçimi alanı görüyor mu. Beş enjeksiyonun beşi yakalandı.
+
+Ayrıca kapının kendi denetimi (§138) devreye girdi: yazdığım `/ReferralStats/`
+deseni "sınırsız ad deseni" diye reddedildi, çünkü `ReferralStatsEski` gibi
+yeniden adlandırılmış bir adı da "var" sayardı. `\bReferralStats\b` oldu.

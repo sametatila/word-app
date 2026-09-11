@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import type { ReferralStats } from "@/lib/premium/referral-types";
 import { supportsMockExams } from "@/lib/mock-exams";
 import { useShell } from "@/components/app-shell";
 import { track } from "@/lib/track";
@@ -20,7 +21,8 @@ type Status = {
   bonusDaysPending: number;
   bonusUntil: string | null;
 };
-type Referral = { code: string; invited: number; rewarded: number; earnedDays: number } | null;
+/* Biçim tek yerde: `lib/premium/referral-types`. */
+type Referral = ReferralStats | null;
 
 /**
  * Premium sayfasının gövdesi — durum, kapsam, promo kodu ve davet.
@@ -315,7 +317,7 @@ function ReferralBox({ referral }: { referral: NonNullable<Referral> }) {
 
   return (
     <Section title={t("referral.title")}>
-      <p className="text-sm">{t("referral.explain", { days: 7 })}</p>
+      <p className="text-sm">{t("referral.explain", { days: referral.rewardDays })}</p>
       <p className="mt-1 text-xs muted">{t("referral.reward_note")}</p>
 
       <div className="mt-3 flex items-center gap-2">

@@ -7066,6 +7066,13 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
  *         "toplam %70 ve her bolum %50" - tek cumlede IKI sayi.
  *   191 - haftalik sinavin pekismis esigi (`MIN_MASTERED`): "30'a ulasinca".
  *   192 - hiz turunun suresi (`BOSS_SECONDS`): "modulun kelimeleri, 60 sn".
+ *   193 - davet odulu (`referral.rewardDays`): "sana 7 gun Premium veriyoruz".
+ *         Bu, otekilerden BIR ADIM DAHA KOTU bir durumdu: sayi bir kod sabiti
+ *         degil, PANELDEN ayarlanan bir deger. Iki ekran da 7'yi elle
+ *         yaziyordu, yani odul panelden degistirildigi anda sunucu yeni
+ *         sureyi verir, iki ekran eski sayiyi soylemeye devam ederdi - kod
+ *         hic degismeden bozulan bir soz. Sayi artik `/api/premium/status`
+ *         yanitindan geliyor.
  *
  * 188-192'de sayilarin dordu `server-only` modullerde ya da yalniz sunucuda
  * duruyordu; MIN_MASTERED ve BOSS_SECONDS istemciye acilan ayri dosyalara
@@ -7163,6 +7170,15 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       gecis: /n:\s*BOSS_SECONDS/,
       cagiranlar: ["src/components/exam-player.tsx", "mobile/src/screens/ExamScreen.tsx"],
     },
+    {
+      ad: "davet odulu",
+      yer: ["{days}"],
+      anahtarlar: ["referral.explain"],
+      /* Sabit degil SUNUCU YANITI: panelden ayarlanan deger istemciye
+         `referral.rewardDays` olarak iniyor. */
+      gecis: /days:\s*referral\.rewardDays/,
+      cagiranlar: ["src/components/premium-paywall.tsx", "mobile/src/screens/PaywallScreen.tsx"],
+    },
   ];
 
   for (const pol of POLITIKALAR) {
@@ -7206,6 +7222,22 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     "guvenilen cihaz omru eklentiye geciliyor",
     ["trustDeviceMaxAge=" + (/trustDeviceMaxAge: TWO_FACTOR_TRUST_DAYS \* 24 \* 60 \* 60/.test(sunucu) ? "sabitten" : "VARSAYILANA BIRAKILMIS")],
     ["trustDeviceMaxAge=sabitten"],
+    "bulunan",
+    "beklenen",
+  );
+
+  /* 193'un ikinci yarisi: cumle yanittan beslense de YANIT o alani
+     tasimiyorsa ekran bos basar. Iki istemci de alani gormeli - mobil
+     kendi tipini yaziyor (uzak uca bagli), web ortak tipi ice aliyor. */
+  sameList(
+    "davet odulu yanitta var",
+    [
+      "sunucu=" + (/rewardDays: cfg\.referral\.rewardDays/.test(sil(read("src/lib/premium/referral.ts"))) ? "donduruyor" : "DONDURMUYOR"),
+      "ortak tip=" + (/rewardDays: number/.test(sil(read("src/lib/premium/referral-types.ts"))) ? "var" : "YOK"),
+      "web=" + (/\bReferralStats\b/.test(sil(read("src/components/premium-paywall.tsx"))) ? "ortak tipten" : "kendi kopyasi"),
+      "mobil=" + (/rewardDays: number/.test(sil(read("mobile/src/lib/premium.ts"))) ? "var" : "YOK"),
+    ],
+    ["sunucu=donduruyor", "ortak tip=var", "web=ortak tipten", "mobil=var"],
     "bulunan",
     "beklenen",
   );

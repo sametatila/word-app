@@ -37,7 +37,9 @@ export type PremiumStatus = {
   plans: { productMonthly: string; productYearly: string; trialDays: number; prices: { region: string; currency: string; monthly: string; yearly: string; yearlySavePct: number }[] };
   /** Paywall satırları: çeviri anahtarı + parametre (cümle sunucuda kurulmuyor). */
   copy: { free: { key: string; params?: Record<string, string | number> }[]; premium: { key: string; params?: Record<string, string | number> }[] };
-  referral: { code: string; invited: number; rewarded: number; earnedDays: number } | null;
+  /* `rewardDays` panelden ayarlanan ödül; ekran onu ELLE yazmıyor (bkz.
+     `lib/premium/referral`). */
+  referral: { code: string; invited: number; rewarded: number; earnedDays: number; rewardDays: number } | null;
   gates: { pocket_walk: GateInfo; weekly_exam: GateInfo; speaking: GateInfo; writing: GateInfo } | null;
 };
 

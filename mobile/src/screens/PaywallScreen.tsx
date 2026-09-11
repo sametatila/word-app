@@ -420,7 +420,8 @@ function PromoBox({ colors, onRedeemed }: { colors: Palette; onRedeemed: () => v
           {busy ? <ActivityIndicator color={colors.onPrimary} /> : <Text variant="bodyStrong" color={code.trim() ? colors.onPrimary : colors.textFaint}>{t("promo.apply")}</Text>}
         </PressableScale>
       </View>
-      {msg ? <Text variant="caption" color={msg.ok ? colors.successText : colors.dangerText} style={{ marginTop: spacing.sm }}>{msg.text}</Text> : null}
+      {/* Sonuç duyuruluyor — bkz. `profile-form` içindeki not. Promo kodunun tutup tutmadığı ödeme kararının ta kendisi. */}
+      {msg ? <Text accessibilityLiveRegion="polite" variant="caption" color={msg.ok ? colors.successText : colors.dangerText} style={{ marginTop: spacing.sm }}>{msg.text}</Text> : null}
     </Section>
   );
 }
@@ -442,10 +443,10 @@ function promoErrorKey(reason: string | undefined): string {
  * Davet. Kod ömür boyu sabit; bağlantı web'in promo açılışıyla aynı biçimde
  * (`/premium?code=…`), yani tek bağlantı hem kodu tanıtıyor hem paywall'ı açıyor.
  */
-function ReferralBox({ colors, referral }: { colors: Palette; referral: { code: string; invited: number; rewarded: number; earnedDays: number } }) {
+function ReferralBox({ colors, referral }: { colors: Palette; referral: { code: string; invited: number; rewarded: number; earnedDays: number; rewardDays: number } }) {
   return (
     <Section title={t("referral.title")} colors={colors}>
-      <Text variant="caption" style={{ lineHeight: 19 }}>{t("referral.explain", { days: 7 })}</Text>
+      <Text variant="caption" style={{ lineHeight: 19 }}>{t("referral.explain", { days: referral.rewardDays })}</Text>
       <Text variant="micro" color={colors.textMuted} style={{ marginTop: 4, lineHeight: 16 }}>{t("referral.reward_note")}</Text>
 
       <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.sm, marginTop: spacing.md }}>
