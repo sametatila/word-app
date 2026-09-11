@@ -4131,6 +4131,50 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   sameList("yuruyus turu olcumu", mob, web);
 }
 
+/* ── 122. olcum paritesinin TERS yonu ─────────────────────────────────────
+ * §44 yalniz "web yaziyor, mobil yazmiyor" diye soruyordu. Ters yon aynen
+ * sessiz: Android'in yazip webin yazmadigi bir ad, WEB kullanicilari icin
+ * cevapsiz kalan bir soru demek. Olculdugunde bir tane gercek cikti -
+ * `onboarding_existing_account`: "zaten hesabin var mi" cikisi IKI tarafta da
+ * duruyor (`auth.already_have_account`), yalniz mobil sayiyordu. Kayitli
+ * kullanicinin akisin neresinde kendini buldugu webde hic yazilmiyordu ve o
+ * cikislar akisi TERK edenlerle karisiyordu.
+ *
+ * Kalanlar mobil-ozel ve burada YAZILI, her biri gerekcesiyle. */
+{
+  const strip = (x) => x.replace(/\/\*[\s\S]*?\*\//g, " ").replace(/\/\/[^\n]*/g, " ");
+  const walk = (d, out = []) => {
+    for (const e of readdirSync(new URL("../" + d, import.meta.url), { withFileTypes: true })) {
+      const p = d + "/" + e.name;
+      if (e.isDirectory()) { if (!/node_modules|\/content|\/generated|__tests__/.test("/" + p)) walk(p, out); }
+      else if (/\.tsx?$/.test(e.name)) out.push(p);
+    }
+    return out;
+  };
+  const atilan = (dirs, extra = []) => {
+    const set = new Set();
+    for (const f of [...dirs.flatMap((d) => walk(d)), ...extra]) for (const m of strip(read(f)).matchAll(/\btrack\(\s*"([a-z_]+)"/g)) set.add(m[1]);
+    return set;
+  };
+  const web = atilan(["src/components", "src/app", "src/lib"]);
+  const mob = atilan(["mobile/src"], ["mobile/App.tsx"]);
+  const MOB_OZEL = [
+    "notif_prime", //   bildirim izni ONCESI hazirlik ekrani; webin karsiligi tarayici istemi (`push_optin`)
+    "purchase_done", // satin alma yalniz magazada (Play/RevenueCat)
+    "purchase_start",
+  ];
+  /* Iki muafiyet de kendini denetliyor: (1) `notif_prime` bir CIFTIN yarisi -
+     webin ucu (`push_optin`) susarsa gerekce kalmaz; (2) satin alma webe
+     gelirse (odeme saglayicisi eklenirse) iki ad orada da gerekli olur. */
+  const cift = web.has("push_optin");
+  const webdeOdeme = /createCheckout|stripe\.|\/api\/premium\/checkout/.test(
+    ["src/app/(app)/premium/page.tsx", "src/components/premium-paywall.tsx"].map((f) => strip(read(f))).join("\n"),
+  );
+  const kayitli = MOB_OZEL.filter((n) => (n === "notif_prime" ? cift : !webdeOdeme));
+  const eksik = [...mob].filter((n) => !web.has(n)).sort();
+  sameSet("olcum paritesi (yalniz mobil istemcisinde)", eksik, kayitli.sort(), "bulunan", "kayitli");
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"

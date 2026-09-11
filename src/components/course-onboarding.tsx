@@ -442,7 +442,17 @@ export function CourseOnboarding({
       {!signedIn ? (
         <p className="muted mt-5 text-center text-sm">
           {t("auth.already_have_account")}
-          <Link href="/login" className="font-bold" style={{ color: "var(--color-brand)" }}>
+          {/* ÇIKIŞ ÖLÇÜLÜYOR (value = kaçıncı adım, kind = adım anahtarı).
+              Mobil bunu baştan beri yazıyordu (`OnboardingScreen`
+              `zatenHesabimVar`), web yazmıyordu: "kayıtlı kullanıcılar akışın
+              neresinde kendini buluyor" sorusunun yarısı eksikti ve o çıkışlar
+              akışı TERK edenlerle karışıyordu — `onboarding_step` orada susuyor. */}
+          <Link
+            href="/login"
+            onClick={() => track("onboarding_existing_account", i, step.key)}
+            className="font-bold"
+            style={{ color: "var(--color-brand)" }}
+          >
             {t("auth.sign_in")}
           </Link>
         </p>

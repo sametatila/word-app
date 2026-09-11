@@ -7292,3 +7292,32 @@ Biçim kontrolü ilk yazılışında **"en az bir çağrıda `kaynak:sonuç` var
 diye soruyordu ve enjeksiyonu yakalamadı: düzleştirilen çağrının yanındaki
 sabit (`"stt:premium"`) kuralı tek başına sağlıyordu. Ölçünün komşusunu
 ölçmenin sekizinci örneği — şimdi **her** çağrı sınanıyor.
+
+### 11.213 Ölçüm paritesinin ters yönü hiç sorulmamıştı
+
+§44 iki turdur "web yazıyor, mobil yazmıyor mu" diye soruyordu. **Ters yön
+aynen sessiz** ve iki turdur kimse sormamıştı: Android'in yazıp webin
+yazmadığı bir ad, web kullanıcıları için cevapsız kalan bir soru demek.
+
+Ölçüldüğünde bir tane gerçek çıktı: **`onboarding_existing_account`.**
+"Zaten hesabın var mı?" çıkışı iki tarafta da duruyor (aynı anahtar,
+`auth.already_have_account`) ve yalnız mobil sayıyordu. Yani kayıtlı bir
+kullanıcının akışın neresinde kendini bulduğu web için hiç yazılmıyordu — o
+çıkışlar panoda akışı TERK edenlerle karışıyordu, çünkü `onboarding_step` o
+adımda susuyor. Web'e de mobildekiyle aynı iki bilgiyle kondu: value kaçıncı
+adım, kind adım anahtarı.
+
+Kalan üç ad mobil-özel ve artık gerekçesiyle yazılı:
+
+| ad | gerekçe | gerekçenin kapısı |
+|---|---|---|
+| `notif_prime` | bildirim izni ÖNCESİ hazırlık ekranı; webin karşılığı tarayıcı istemi (`push_optin`) | bu bir ÇİFT: webin ucu susarsa gerekçe kalmaz |
+| `purchase_start` · `purchase_done` | satın alma yalnız mağazada (Play/RevenueCat) | webe ödeme akışı gelirse iki ad orada da gerekli olur |
+
+Üç enjeksiyonun üçü de yakalandı.
+
+Turun kendi hatası da kayda değer: enjeksiyon denemesinden dönerken
+`git checkout` **commit edilmemiş** bir düzeltmeyi iki kez sildi (§11.211'de
+rol yapma ekranının yayını, burada web onboarding çağrısı). İlki yalnız
+§120'ye eklenen dördüncü kontrol sayesinde görüldü; ikincisi bu kapının
+kendisiyle. Enjeksiyon geri alması artık dosya yedeğinden yapılıyor.
