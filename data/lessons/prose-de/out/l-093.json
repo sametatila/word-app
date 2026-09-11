@@ -1,0 +1,842 @@
+[
+ {
+  "tr": "Su ve atık",
+  "kind": "titleTr",
+  "de": "Wasser und Abfall"
+ },
+ {
+  "tr": "Gidiş geliş",
+  "kind": "titleTr",
+  "de": "Der tägliche Weg"
+ },
+ {
+  "tr": "Mahalle projesi",
+  "kind": "titleTr",
+  "de": "Ein Projekt im Viertel"
+ },
+ {
+  "tr": "Şehir mi kır mı",
+  "kind": "titleTr",
+  "de": "Stadt oder Land"
+ },
+ {
+  "tr": "Yapılmadan önce",
+  "kind": "titleTr",
+  "de": "Bevor es gebaut wurde"
+ },
+ {
+  "tr": "İki yaşam biçimini karşılaştırmayı öğretir; bağlaçlar karşıtlığı, ödünü ve zıtlığı kurar.",
+  "kind": "summary",
+  "de": "Vermittelt, wie man zwei Lebensformen vergleicht; die Konnektoren bauen Gegensatz, Zugeständnis und Kontrast."
+ },
+ {
+  "tr": "Bir yerin eski hâlini anlatmayı öğretir; değişiklikten önce olan iş bir kat daha geriye çekilir.",
+  "kind": "summary",
+  "de": "Vermittelt, wie man erzählt, wie ein Ort früher war; was vor der Veränderung geschah, wird eine Stufe weiter zurückgeschoben."
+ },
+ {
+  "tr": "Bir mahalle toplantısında söylenenleri aktarmayı öğretir; aktarırken zaman bir basamak geriye gider.",
+  "kind": "summary",
+  "de": "Vermittelt, wie man wiedergibt, was in einer Versammlung im Viertel gesagt wurde; beim Wiedergeben rückt die Zeit eine Stufe zurück."
+ },
+ {
+  "tr": "Su ve atık işlerini anlatmayı öğretir; her fiil kendinden sonra mastar mı ulaç mı geleceğini kendi seçer.",
+  "kind": "summary",
+  "de": "Vermittelt, wie man über Wasser und Abfall spricht; jedes Verb wählt selbst, ob danach der Infinitiv oder die -ing-Form steht."
+ },
+ {
+  "tr": "Günlük gidiş gelişin kurallarını anlatmayı öğretir: neyi yapmak zorundasın, neyi yapmana gerek yok, neyi hiç yapmamalısın.",
+  "kind": "summary",
+  "de": "Vermittelt die Regeln des täglichen Wegs: was du tun musst, was du nicht tun musst, was du gar nicht tun darfst."
+ },
+ {
+  "tr": "mahallenin geçmişini hiç bilmeyen, sürekli soran yeni komşun",
+  "kind": "partner",
+  "de": "dein neuer Nachbar, der die Geschichte des Viertels gar nicht kennt und ständig fragt"
+ },
+ {
+  "tr": "toplu taşımayı hiç kullanmamış, her kuralı soran bir arkadaş",
+  "kind": "partner",
+  "de": "eine Freundin, die nie öffentliche Verkehrsmittel benutzt hat und jede Regel abfragt"
+ },
+ {
+  "tr": "toplantıyı kaçırmış, kararın ne olduğunu merak eden bir komşu",
+  "kind": "partner",
+  "de": "eine Nachbarin, die die Versammlung verpasst hat und wissen will, wie entschieden wurde"
+ },
+ {
+  "tr": "kıra taşınmaya kararlı ama tereddütlerini de anlatan bir arkadaş",
+  "kind": "partner",
+  "de": "ein Freund, der fest aufs Land ziehen will, aber auch seine Zweifel erzählt"
+ },
+ {
+  "tr": "sorunu senden daha uzun süredir yaşayan, sabrı tükenmiş bir komşu",
+  "kind": "partner",
+  "de": "ein Nachbar, der das Problem länger hat als du und keine Geduld mehr aufbringt"
+ },
+ {
+  "tr": "Sen şehirden taşınır mıydın?",
+  "kind": "openingTr",
+  "de": "Würdest du aus der Stadt wegziehen?"
+ },
+ {
+  "tr": "Sonunda neye karar verdiler?",
+  "kind": "openingTr",
+  "de": "Wie haben sie am Ende entschieden?"
+ },
+ {
+  "tr": "Yeni yoldan önce burada ne vardı?",
+  "kind": "openingTr",
+  "de": "Was war hier vor der neuen Straße?"
+ },
+ {
+  "tr": "Su konusunda bir şey söylediler mi?",
+  "kind": "openingTr",
+  "de": "Haben sie etwas zum Wasser gesagt?"
+ },
+ {
+  "tr": "Binmeden önce bilet almam gerekiyor mu?",
+  "kind": "openingTr",
+  "de": "Muss ich vor dem Einsteigen ein Ticket kaufen?"
+ },
+ {
+  "tr": "Bir arkadaşın şehirden kıra taşınmayı düşünüyor ve senin görüşünü istiyor. Her iki yaşamın iki yüzünü, bir engeli ve bir karşıtlığı söyle.",
+  "kind": "scene",
+  "de": "Ein Freund denkt darüber nach, von der Stadt aufs Land zu ziehen, und will deine Meinung. Nenn die zwei Seiten beider Lebensformen, ein Hindernis und einen Kontrast."
+ },
+ {
+  "tr": "Mahallende su kesintileri ve çöp sorunu var. Bir komşunla belediyenin neye karar verdiğini, neyin bırakıldığını ve neyin önerildiğini konuş.",
+  "kind": "scene",
+  "de": "In deinem Viertel gibt es Wasserausfälle und ein Müllproblem. Besprich mit einem Nachbarn, was die Stadt entschieden hat, was aufgegeben wurde und was vorgeschlagen wurde."
+ },
+ {
+  "tr": "Şehre yeni gelen bir arkadaşın toplu taşımayı hiç bilmiyor. Neyi yapmak zorunda olduğunu, neyi yapmasına gerek olmadığını ve neyin yasak olduğunu anlat.",
+  "kind": "scene",
+  "de": "Eine Freundin ist neu in der Stadt und kennt die öffentlichen Verkehrsmittel gar nicht. Erzähl, was sie tun muss, was sie nicht tun muss und was verboten ist."
+ },
+ {
+  "tr": "Mahalle toplantısına katıldın ve gelemeyen bir komşun ne konuşulduğunu soruyor. Başkanın ne dediğini, neyi yapmamanızın istendiğini ve ne sorulduğunu aktar.",
+  "kind": "scene",
+  "de": "Du warst bei der Versammlung im Viertel und eine Nachbarin, die nicht kommen konnte, fragt, was besprochen wurde. Gib weiter, was der Bürgermeister gesagt hat, was ihr nicht tun sollt und was gefragt wurde."
+ },
+ {
+  "tr": "Yeni taşınan bir komşun mahallenin eski hâlini merak ediyor. Değişiklikten önce burada ne olduğunu, ne zaman kapandığını ve kimsenin fark etmediği şeyi anlat.",
+  "kind": "scene",
+  "de": "Ein neu zugezogener Nachbar will wissen, wie das Viertel früher war. Erzähl, was hier vor der Veränderung war, wann etwas geschlossen hat und was niemand gemerkt hat."
+ },
+ {
+  "tr": "İki yüzü, bir engeli ve bir karşıtlığı üç ayrı bağlaçla söylediysen konuşma başarılı sayılır.",
+  "kind": "goal",
+  "de": "Das Gespräch gilt als gelungen, wenn du die zwei Seiten, ein Hindernis und einen Kontrast mit drei verschiedenen Konnektoren gesagt hast."
+ },
+ {
+  "tr": "Bir zorunluluğu, bir serbestliği ve bir yasağı üç ayrı kalıpla anlattıysan konuşma başarılı sayılır.",
+  "kind": "goal",
+  "de": "Das Gespräch gilt als gelungen, wenn du eine Pflicht, eine Freiheit und ein Verbot in drei verschiedenen Wendungen erzählt hast."
+ },
+ {
+  "tr": "Değişiklikten önce olanı bir kat geriye çekip değişikliği olağan geçmişte anlattıysan konuşma başarılı sayılır.",
+  "kind": "goal",
+  "de": "Das Gespräch gilt als gelungen, wenn du das vor der Veränderung Geschehene eine Stufe zurückgeschoben und die Veränderung im einfachen Präteritum erzählt hast."
+ },
+ {
+  "tr": "afiş",
+  "kind": "vocab.tr",
+  "de": "Plakat"
+ },
+ {
+  "tr": "alan",
+  "kind": "vocab.tr",
+  "de": "Fläche"
+ },
+ {
+  "tr": "durak",
+  "kind": "vocab.tr",
+  "de": "Haltestelle"
+ },
+ {
+  "tr": "orman",
+  "kind": "vocab.tr",
+  "de": "Wald"
+ },
+ {
+  "tr": "şerit",
+  "kind": "vocab.tr",
+  "de": "Spur"
+ },
+ {
+  "tr": "tesis",
+  "kind": "vocab.tr",
+  "de": "Anlage"
+ },
+ {
+  "tr": "yoğun",
+  "kind": "vocab.tr",
+  "de": "belebt"
+ },
+ {
+  "tr": "komite",
+  "kind": "vocab.tr",
+  "de": "Ausschuss"
+ },
+ {
+  "tr": "mesafe",
+  "kind": "vocab.tr",
+  "de": "Entfernung"
+ },
+ {
+  "tr": "sürücü",
+  "kind": "vocab.tr",
+  "de": "Fahrer"
+ },
+ {
+  "tr": "yabani",
+  "kind": "vocab.tr",
+  "de": "wild"
+ },
+ {
+  "tr": "yalnız",
+  "kind": "vocab.tr",
+  "de": "einsam"
+ },
+ {
+  "tr": "dilekçe",
+  "kind": "vocab.tr",
+  "de": "Petition"
+ },
+ {
+  "tr": "güzergâh",
+  "kind": "vocab.tr",
+  "de": "Strecke"
+ },
+ {
+  "tr": "su verme",
+  "kind": "vocab.tr",
+  "de": "Wasserversorgung"
+ },
+ {
+  "tr": "oy vermek",
+  "kind": "vocab.tr",
+  "de": "abstimmen"
+ },
+ {
+  "tr": "yok etmek",
+  "kind": "vocab.tr",
+  "de": "zerstören"
+ },
+ {
+  "tr": "çöp sahası",
+  "kind": "vocab.tr",
+  "de": "Mülldeponie"
+ },
+ {
+  "tr": "koşuşturma",
+  "kind": "vocab.tr",
+  "de": "Hauptverkehr"
+ },
+ {
+  "tr": "temizlemek",
+  "kind": "vocab.tr",
+  "de": "reinigen"
+ },
+ {
+  "tr": "bisiklet sürmek",
+  "kind": "vocab.tr",
+  "de": "Rad fahren"
+ },
+ {
+  "tr": "belediye başkanı",
+  "kind": "vocab.tr",
+  "de": "Bürgermeister"
+ },
+ {
+  "tr": "işe gidip gelmek",
+  "kind": "vocab.tr",
+  "de": "pendeln"
+ },
+ {
+  "tr": "iki yüzü yan yana koyar",
+  "kind": "pattern.tr",
+  "de": "stellt die zwei Seiten nebeneinander"
+ },
+ {
+  "tr": "engele rağmen yapılanı söyler",
+  "kind": "pattern.tr",
+  "de": "nennt, was trotz des Hindernisses getan wird"
+ },
+ {
+  "tr": "iki durumu karşı karşıya koyar",
+  "kind": "pattern.tr",
+  "de": "stellt zwei Lagen einander gegenüber"
+ },
+ {
+  "tr": "fark edilmeden önce biteni anlatır",
+  "kind": "pattern.tr",
+  "de": "erzählt, was fertig war, bevor es jemand merkte"
+ },
+ {
+  "tr": "Doğru. Toplantıda 'is free' denmişti; aktarırken zaman bir basamak geriye gitti.",
+  "kind": "why.tr",
+  "de": "Richtig. In der Versammlung hieß es 'is free'; beim Wiedergeben rückte die Zeit eine Stufe zurück."
+ },
+ {
+  "tr": "Doğru. Bu bağlaç cümle değil isim alıyor; ardından gelen 'the distance' bir isim öbeği.",
+  "kind": "why.tr",
+  "de": "Richtig. Dieser Konnektor nimmt keinen Satz, sondern ein Nomen; das folgende 'the distance' ist eine Nominalgruppe."
+ },
+ {
+  "tr": "Doğru. Kapanma taşınmadan önce olmuş, o yüzden bir kat geride; taşınma ise olağan geçmişte.",
+  "kind": "why.tr",
+  "de": "Richtig. Die Schließung geschah vor dem Umzug, deshalb steht sie eine Stufe zurück; der Umzug bleibt im einfachen Präteritum."
+ },
+ {
+  "tr": "Doğru. Bu kalıp yasak değil serbestlik anlatıyor: kart gösterebilirsin de göstermeyebilirsin de.",
+  "kind": "why.tr",
+  "de": "Richtig. Diese Wendung nennt kein Verbot, sondern Freiheit: du kannst die Karte zeigen oder auch nicht."
+ },
+ {
+  "tr": "Aynı şeyin iki yüzü için",
+  "kind": "hint.tr",
+  "de": "Für die zwei Seiten derselben Sache"
+ },
+ {
+  "tr": "Engele rağmen yapılan için",
+  "kind": "hint.tr",
+  "de": "Für das, was trotz des Hindernisses getan wird"
+ },
+ {
+  "tr": "İki durumu karşı karşıya koymak için",
+  "kind": "hint.tr",
+  "de": "Um zwei Lagen einander gegenüberzustellen"
+ },
+ {
+  "tr": "Kesim oylamadan önce bittiği için bir kat geride:",
+  "kind": "hint.tr",
+  "de": "Weil der Einschlag vor der Abstimmung fertig war, steht er eine Stufe zurück:"
+ },
+ {
+  "tr": "Kapanma varıştan önce bittiği için bir kat geride:",
+  "kind": "hint.tr",
+  "de": "Weil die Schließung vor der Ankunft fertig war, steht sie eine Stufe zurück:"
+ },
+ {
+  "tr": "rağmen",
+  "kind": "say.tr",
+  "de": "trotz"
+ },
+ {
+  "tr": "Akan büyük suya",
+  "kind": "say.tr",
+  "de": "Das große fließende Wasser heißt"
+ },
+ {
+  "tr": "Soluduğumuz şeye",
+  "kind": "say.tr",
+  "de": "Was wir atmen, heißt"
+ },
+ {
+  "tr": "Bisikletle gitmeye",
+  "kind": "say.tr",
+  "de": "Mit dem Rad fahren heißt"
+ },
+ {
+  "tr": "temiz olmayana ise",
+  "kind": "say.tr",
+  "de": "und was nicht sauber ist, heißt"
+ },
+ {
+  "tr": "Özetleyelim: iki yüz",
+  "kind": "say.tr",
+  "de": "Fassen wir zusammen: zwei Seiten"
+ },
+ {
+  "tr": "Araçta taşınan kişiye",
+  "kind": "say.tr",
+  "de": "Die Person, die im Fahrzeug mitfährt, heißt"
+ },
+ {
+  "tr": "Şişe almayı bıraktık.",
+  "kind": "say.tr",
+  "de": "Wir haben aufgehört, Flaschen zu kaufen."
+ },
+ {
+  "tr": "Aradaki mesafe büyükse",
+  "kind": "say.tr",
+  "de": "Ist die Entfernung groß, sagen wir"
+ },
+ {
+  "tr": "Aradaki mesafe küçükse",
+  "kind": "say.tr",
+  "de": "Ist die Entfernung klein, sagen wir"
+ },
+ {
+  "tr": "Aracın yolcu aldığı yere",
+  "kind": "say.tr",
+  "de": "Die Stelle, an der das Fahrzeug Fahrgäste aufnimmt, heißt"
+ },
+ {
+  "tr": "Dükkân uzağa taşınmıştı.",
+  "kind": "say.tr",
+  "de": "Der Laden war weit weg gezogen."
+ },
+ {
+  "tr": "İnsan eli değmemiş olana",
+  "kind": "say.tr",
+  "de": "Was von Menschenhand unberührt ist, heißt"
+ },
+ {
+  "tr": "aracı kullanan kişiye ise",
+  "kind": "say.tr",
+  "de": "und die Person, die das Fahrzeug lenkt, heißt"
+ },
+ {
+  "tr": "çöpün gömüldüğü alana ise",
+  "kind": "say.tr",
+  "de": "und die Fläche, auf der der Müll vergraben wird, heißt"
+ },
+ {
+  "tr": "Duvara asılan büyük ilana",
+  "kind": "say.tr",
+  "de": "Die große Anzeige an der Wand heißt"
+ },
+ {
+  "tr": "Evlere su ulaştırma işine",
+  "kind": "say.tr",
+  "de": "Wasser in die Häuser zu bringen heißt"
+ },
+ {
+  "tr": "Her gün işe gidip dönmeye",
+  "kind": "say.tr",
+  "de": "Jeden Tag zur Arbeit und zurück fahren heißt"
+ },
+ {
+  "tr": "Kıyıdaki büyük tuzlu suya",
+  "kind": "say.tr",
+  "de": "Das große Salzwasser an der Küste heißt"
+ },
+ {
+  "tr": "Sık ağaçlarla kaplı alana",
+  "kind": "say.tr",
+  "de": "Die Fläche mit dichten Bäumen heißt"
+ },
+ {
+  "tr": "Bir işi yapan büyük yapıya",
+  "kind": "say.tr",
+  "de": "Das große Bauwerk, das eine Arbeit leistet, heißt"
+ },
+ {
+  "tr": "kışın yağan beyaz şeye ise",
+  "kind": "say.tr",
+  "de": "und das Weiße, das im Winter fällt, heißt"
+ },
+ {
+  "tr": "Su verme iki saat duruyor.",
+  "kind": "say.tr",
+  "de": "Die Wasserversorgung steht zwei Stunden still."
+ },
+ {
+  "tr": "Hayvan ve ekin bakılan yere",
+  "kind": "say.tr",
+  "de": "Der Ort, wo Tiere und Pflanzen versorgt werden, heißt"
+ },
+ {
+  "tr": "suyun ortasındaki karaya ise",
+  "kind": "say.tr",
+  "de": "und das Land mitten im Wasser heißt"
+ },
+ {
+  "tr": "İçecek konan dar boyunlu kaba",
+  "kind": "say.tr",
+  "de": "Das Gefäß mit engem Hals für Getränke heißt"
+ },
+ {
+  "tr": "İki nokta arasındaki uzaklığa",
+  "kind": "say.tr",
+  "de": "Der Abstand zwischen zwei Punkten heißt"
+ },
+ {
+  "tr": "Nehir bütün yaz gölü besledi.",
+  "kind": "say.tr",
+  "de": "Der Fluss speiste den See den ganzen Sommer."
+ },
+ {
+  "tr": "seçimde tercih bildirmeye ise",
+  "kind": "say.tr",
+  "de": "und bei einer Wahl seine Stimme abgeben heißt"
+ },
+ {
+  "tr": "yazı yazılan ince yaprağa ise",
+  "kind": "say.tr",
+  "de": "und das dünne Blatt zum Schreiben heißt"
+ },
+ {
+  "tr": "Çöp sahası toprağı yok ediyor.",
+  "kind": "say.tr",
+  "de": "Die Mülldeponie zerstört den Boden."
+ },
+ {
+  "tr": "Kışın kar denize kadar iniyor.",
+  "kind": "say.tr",
+  "de": "Im Winter reicht der Schnee bis ans Meer."
+ },
+ {
+  "tr": "Yeni durak kâğıt haritada var.",
+  "kind": "say.tr",
+  "de": "Die neue Haltestelle steht auf der Papierkarte."
+ },
+ {
+  "tr": "İmzalanıp kuruma verilen yazıya",
+  "kind": "say.tr",
+  "de": "Das Schreiben, das man unterschreibt und der Behörde gibt, heißt"
+ },
+ {
+  "tr": "Afişi kaldırmamamızı söylediler.",
+  "kind": "say.tr",
+  "de": "Sie haben uns gesagt, wir sollen das Plakat nicht abnehmen."
+ },
+ {
+  "tr": "Belediye boruyu onarmayı önerdi.",
+  "kind": "say.tr",
+  "de": "Die Stadt hat vorgeschlagen, das Rohr zu reparieren."
+ },
+ {
+  "tr": "iki tekerlekli pedallı araca ise",
+  "kind": "say.tr",
+  "de": "und das Fahrzeug mit zwei Rädern und Pedalen heißt"
+ },
+ {
+  "tr": "Koşuşturma en çok sekizde oluyor.",
+  "kind": "say.tr",
+  "de": "Der Hauptverkehr ist um acht am schlimmsten."
+ },
+ {
+  "tr": "Küçük bir kasabada her şey yakın.",
+  "kind": "say.tr",
+  "de": "In einer kleinen Stadt ist alles nah."
+ },
+ {
+  "tr": "Suyun içinden aktığı uzun boşluğa",
+  "kind": "say.tr",
+  "de": "Der lange Hohlraum, durch den das Wasser fließt, heißt"
+ },
+ {
+  "tr": "Tesis önce kirli suyu temizliyor.",
+  "kind": "say.tr",
+  "de": "Die Anlage reinigt zuerst das schmutzige Wasser."
+ },
+ {
+  "tr": "Sürücü burada iki dakika bekliyor.",
+  "kind": "say.tr",
+  "de": "Der Fahrer wartet hier zwei Minuten."
+ },
+ {
+  "tr": "Ada o zamana kadar yabani kalmıştı.",
+  "kind": "say.tr",
+  "de": "Die Insel war bis dahin wild geblieben."
+ },
+ {
+  "tr": "Her gün bir saat yolda geçiriyorum.",
+  "kind": "say.tr",
+  "de": "Jeden Tag pendle ich eine Stunde."
+ },
+ {
+  "tr": "Oturulan yer demek. İzlenen yola ise",
+  "kind": "say.tr",
+  "de": "Das heißt der Platz zum Sitzen. Und der Weg, dem man folgt, heißt"
+ },
+ {
+  "tr": "Şimdi şehir mi kır mı tartışacaksın.",
+  "kind": "say.tr",
+  "de": "Jetzt diskutierst du: Stadt oder Land."
+ },
+ {
+  "tr": "aynı şeyin iki yüzünü yan yana koyar,",
+  "kind": "say.tr",
+  "de": "stellt die zwei Seiten derselben Sache nebeneinander,"
+ },
+ {
+  "tr": "Mesafeye rağmen bisikletimi alıyorum.",
+  "kind": "say.tr",
+  "de": "Trotz der Entfernung nehme ich mein Fahrrad."
+ },
+ {
+  "tr": "Kimse fark etmeden ormanı kesmişlerdi.",
+  "kind": "say.tr",
+  "de": "Sie hatten den Wald abgeholzt, bevor es jemand merkte."
+ },
+ {
+  "tr": "Yolcular kart göstermek zorunda değil.",
+  "kind": "say.tr",
+  "de": "Fahrgäste müssen keine Karte zeigen."
+ },
+ {
+  "tr": "yolun çizgilerle ayrılmış bölümüne ise",
+  "kind": "say.tr",
+  "de": "und der durch Linien getrennte Teil der Straße heißt"
+ },
+ {
+  "tr": "Otobüs şeridinde bisiklet sürmemelisin.",
+  "kind": "say.tr",
+  "de": "Auf der Busspur darfst du nicht Rad fahren."
+ },
+ {
+  "tr": "Şimdi buranın eski hâlini anlatacaksın.",
+  "kind": "say.tr",
+  "de": "Jetzt erzählst du, wie es hier früher war."
+ },
+ {
+  "tr": "çevresi kara ile çevrili durgun suya ise",
+  "kind": "say.tr",
+  "de": "und das ruhige Wasser, das von Land umgeben ist, heißt"
+ },
+ {
+  "tr": "ise iki ayrı durumu karşı karşıya koyar.",
+  "kind": "say.tr",
+  "de": "stellt zwei verschiedene Lagen einander gegenüber."
+ },
+ {
+  "tr": "Herkesin aynı anda yola çıktığı yoğunluğa",
+  "kind": "say.tr",
+  "de": "Das Gedränge, wenn alle gleichzeitig losfahren, heißt"
+ },
+ {
+  "tr": "Şimdi sen kur: Kara rağmen işe yürüyorum.",
+  "kind": "say.tr",
+  "de": "Jetzt du: Trotz des Schnees gehe ich zu Fuß zur Arbeit."
+ },
+ {
+  "tr": "Bir işi yürütmek üzere seçilen küçük gruba",
+  "kind": "say.tr",
+  "de": "Die kleine Gruppe, die für eine Aufgabe gewählt wird, heißt"
+ },
+ {
+  "tr": "Dilekçeyi imzalayıp imzalamadığımızı sordu.",
+  "kind": "say.tr",
+  "de": "Sie hat gefragt, ob wir die Petition unterschrieben hatten."
+ },
+ {
+  "tr": "Şimdi gidiş geliş kurallarını anlatacaksın.",
+  "kind": "say.tr",
+  "de": "Jetzt erklärst du die Regeln des täglichen Wegs."
+ },
+ {
+  "tr": "Orada hava temiz, buna karşılık burada değil.",
+  "kind": "say.tr",
+  "de": "Dort ist die Luft sauber, hier dagegen nicht."
+ },
+ {
+  "tr": "Biz buraya taşınmadan önce çiftlik kapanmıştı.",
+  "kind": "say.tr",
+  "de": "Bevor wir hierherzogen, hatte der Hof geschlossen."
+ },
+ {
+  "tr": "Şimdi sıra sende: Köy sessiz, öte yandan uzak.",
+  "kind": "say.tr",
+  "de": "Jetzt bist du dran: Das Dorf ist ruhig, andererseits ist es weit."
+ },
+ {
+  "tr": "bir isim alır ve engele rağmen yapılanı söyler,",
+  "kind": "say.tr",
+  "de": "nimmt ein Nomen und nennt, was trotz des Hindernisses getan wird,"
+ },
+ {
+  "tr": "Bir tane daha: Afişi görüp görmediğimizi sordu.",
+  "kind": "say.tr",
+  "de": "Noch eins: Sie hat gefragt, ob wir das Plakat gesehen hatten."
+ },
+ {
+  "tr": "Şehri yöneten seçilmiş kişi demek. Boş yere ise",
+  "kind": "say.tr",
+  "de": "Das heißt die gewählte Person, die die Stadt führt. Und der freie Platz heißt"
+ },
+ {
+  "tr": "Şimdi dersin kuralı. Değişiklikten ÖNCE olan iş",
+  "kind": "say.tr",
+  "de": "Jetzt die Regel der Lektion. Was VOR der Veränderung geschah, wird mit"
+ },
+ {
+  "tr": "Bir tane daha: Bu patikada bisiklet sürmemelisin.",
+  "kind": "say.tr",
+  "de": "Noch eins: Auf diesem Weg darfst du nicht Rad fahren."
+ },
+ {
+  "tr": "Bir tane daha: Plastik poşet kullanmayı bıraktık.",
+  "kind": "say.tr",
+  "de": "Noch eins: Wir haben aufgehört, Plastiktüten zu benutzen."
+ },
+ {
+  "tr": "Şimdi mahallendeki su ve atık işini konuşacaksın.",
+  "kind": "say.tr",
+  "de": "Jetzt besprichst du Wasser und Abfall in deinem Viertel."
+ },
+ {
+  "tr": "Şimdi dersin kuralı. Zorunluluğun üç derecesi var:",
+  "kind": "say.tr",
+  "de": "Jetzt die Regel der Lektion. Die Pflicht hat drei Stufen:"
+ },
+ {
+  "tr": "Şimdi sıra sende: Gölü temizlemeye karar verdiler.",
+  "kind": "say.tr",
+  "de": "Jetzt bist du dran: Sie haben entschieden, den See zu reinigen."
+ },
+ {
+  "tr": "Bir tane daha: Oylamadan önce ağaçları kesmişlerdi.",
+  "kind": "say.tr",
+  "de": "Noch eins: Vor der Abstimmung hatten sie die Bäume gefällt."
+ },
+ {
+  "tr": "Şimdi sen kur: Biz varmadan önce dükkân kapanmıştı.",
+  "kind": "say.tr",
+  "de": "Jetzt du: Bevor wir ankamen, hatte der Laden geschlossen."
+ },
+ {
+  "tr": "Şimdi toplantıyı gelmeyen bir komşuna aktaracaksın.",
+  "kind": "say.tr",
+  "de": "Jetzt gibst du die Versammlung an eine Nachbarin weiter, die nicht da war."
+ },
+ {
+  "tr": "Şimdi sıra sende: Köprüyü yapmadan önce burası göldü.",
+  "kind": "say.tr",
+  "de": "Jetzt bist du dran: Bevor sie die Brücke bauten, war hier ein See."
+ },
+ {
+  "tr": "Hareketin çok olduğu demek. Kimsenin olmadığı hâle ise",
+  "kind": "say.tr",
+  "de": "Das heißt, dass viel los ist. Und wenn niemand da ist, heißt das"
+ },
+ {
+  "tr": "Şimdi dersin kuralı. Üç bağlaç üç ayrı ilişki kuruyor:",
+  "kind": "say.tr",
+  "de": "Jetzt die Regel der Lektion. Drei Konnektoren bauen drei verschiedene Beziehungen:"
+ },
+ {
+  "tr": "Şimdi sen kur: Belediye çöp sahasını kapatmayı önerdi.",
+  "kind": "say.tr",
+  "de": "Jetzt du: Die Stadt hat vorgeschlagen, die Mülldeponie zu schließen."
+ },
+ {
+  "tr": "Şimdi sen kur: Yolcular koltuk ayırtmak zorunda değil.",
+  "kind": "say.tr",
+  "de": "Jetzt du: Fahrgäste müssen keinen Platz reservieren."
+ },
+ {
+  "tr": "Şimdi sıra sende: Bu trende koltuk ayırtmak zorundasın.",
+  "kind": "say.tr",
+  "de": "Jetzt bist du dran: In diesem Zug musst du einen Platz reservieren."
+ },
+ {
+  "tr": "Ekilen açık arazi demek. İlk kalıbımız da bu. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Das heißt das offene bestellte Land. Das ist auch unsere erste Wendung. Wiederhole:"
+ },
+ {
+  "tr": "Kirden arındırmak demek. İlk kalıbımız da bu. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Das heißt vom Schmutz befreien. Das ist auch unsere erste Wendung. Wiederhole:"
+ },
+ {
+  "tr": "Komite perşembeleri toplanıyor ve herkes oy verebiliyor.",
+  "kind": "say.tr",
+  "de": "Der Ausschuss trifft sich donnerstags und alle können abstimmen."
+ },
+ {
+  "tr": "Şimdi dersin kuralı. Karar veren fiiller kendinden sonra",
+  "kind": "say.tr",
+  "de": "Jetzt die Regel der Lektion. Verben des Entscheidens verlangen danach ein"
+ },
+ {
+  "tr": "Son kalıbımız iki durumu karşı karşıya koyuyor. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Unsere letzte Wendung stellt zwei Lagen einander gegenüber. Wiederhole:"
+ },
+ {
+  "tr": "Şimdi sen kur: Tabelayı yerinden oynatmamamızı söylediler.",
+  "kind": "say.tr",
+  "de": "Jetzt du: Sie haben uns gesagt, wir sollen das Schild nicht verrücken."
+ },
+ {
+  "tr": "İkinci kalıbımız engele rağmen yapılanı söylüyor. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Unsere zweite Wendung nennt, was trotz des Hindernisses getan wird. Wiederhole:"
+ },
+ {
+  "tr": "Bir tane daha: Orada kira düşük, buna karşılık burada yüksek.",
+  "kind": "say.tr",
+  "de": "Noch eins: Dort ist die Miete niedrig, hier dagegen hoch."
+ },
+ {
+  "tr": "Son kalıbımız fark edilmeden önce biteni anlatıyor. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Unsere letzte Wendung erzählt, was fertig war, bevor es jemand merkte. Wiederhole:"
+ },
+ {
+  "tr": "Şimdi sıra sende: Belediye başkanı planın hazır olduğunu söyledi.",
+  "kind": "say.tr",
+  "de": "Jetzt bist du dran: Der Bürgermeister hat gesagt, dass der Plan fertig war."
+ },
+ {
+  "tr": "ise yasak. Ortadaki serbestlik anlatır ve yasakla karıştırılmamalı.",
+  "kind": "say.tr",
+  "de": "und das Verbot. Die mittlere nennt Freiheit und darf nicht mit dem Verbot verwechselt werden."
+ },
+ {
+  "tr": "ister. Bu ayrımı kural olarak ezberlemek yerine fiil fiil tanıyacaksın.",
+  "kind": "say.tr",
+  "de": "und nichts anderes. Statt diesen Unterschied als Regel auswendig zu lernen, wirst du ihn Verb für Verb kennenlernen."
+ },
+ {
+  "tr": "Merhaba! Bugün iki yaşam biçimini karşılaştırmayı öğreneceğiz: şehir mi, kır mı.",
+  "kind": "say.tr",
+  "de": "Hallo! Heute lernen wir, zwei Lebensformen zu vergleichen: Stadt oder Land."
+ },
+ {
+  "tr": "Merhaba! Bugün bir yerin eski hâlini anlatmayı öğreneceğiz: değişiklikten önce burada ne vardı.",
+  "kind": "say.tr",
+  "de": "Hallo! Heute lernen wir zu erzählen, wie ein Ort früher war: was hier vor der Veränderung stand."
+ },
+ {
+  "tr": "Merhaba! Bugün su ve atık işlerini anlatmayı öğreneceğiz: neye karar verildi, ne bırakıldı, ne önerildi.",
+  "kind": "say.tr",
+  "de": "Hallo! Heute lernen wir, über Wasser und Abfall zu sprechen: was entschieden wurde, was aufgegeben wurde, was vorgeschlagen wurde."
+ },
+ {
+  "tr": "Merhaba! Bugün günlük gidiş gelişin kurallarını anlatmayı öğreneceğiz: neyi yapmak zorundasın, neyi değil.",
+  "kind": "say.tr",
+  "de": "Hallo! Heute lernen wir die Regeln des täglichen Wegs: was du tun musst und was nicht."
+ },
+ {
+  "tr": "Toplantıya gelmeyenlere anlatmak ayrı bir beceri ve aktarırken zaman bir basamak geriye gidiyor. Hazır mısın?",
+  "kind": "say.tr",
+  "de": "Denen zu erzählen, die nicht in der Versammlung waren, ist eine eigene Fertigkeit, und beim Wiedergeben rückt die Zeit eine Stufe zurück. Bist du bereit?"
+ },
+ {
+  "tr": "Bu üç fiilin üçü de kendinden sonra ne geleceğini kendi seçiyor; anlam değil alışkanlık belirliyor. Hazır mısın?",
+  "kind": "say.tr",
+  "de": "Alle drei Verben wählen selbst, was nach ihnen kommt; nicht die Bedeutung entscheidet, sondern die Gewohnheit. Bist du bereit?"
+ },
+ {
+  "tr": "Eski hâli anlatmak iki geçmişi sıraya koymayı gerektiriyor ve sırayı kelime değil zaman gösteriyor. Hazır mısın?",
+  "kind": "say.tr",
+  "de": "Vom Früher zu erzählen verlangt, zwei Vergangenheiten in eine Reihenfolge zu bringen, und die Reihenfolge zeigt nicht ein Wort, sondern die Zeitform. Bist du bereit?"
+ },
+ {
+  "tr": "Karşılaştırma yapmak iki şeyi saymak değil, aralarındaki ilişkiyi kurmaktır ve o ilişkiyi bağlaç kurar. Hazır mısın?",
+  "kind": "say.tr",
+  "de": "Vergleichen heißt nicht, zwei Dinge aufzuzählen, sondern die Beziehung zwischen ihnen zu bauen, und diese Beziehung baut der Konnektor. Bist du bereit?"
+ },
+ {
+  "tr": "Merhaba! Bugün bir mahalle toplantısında söylenenleri aktarmayı öğreneceğiz: kim ne dedi, ne yapmamanı söyledi, ne sordu.",
+  "kind": "say.tr",
+  "de": "Hallo! Heute lernen wir wiederzugeben, was in einer Versammlung im Viertel gesagt wurde: wer was gesagt hat, was du nicht tun sollst, was gefragt wurde."
+ },
+ {
+  "tr": "Toplu taşımanın yazılı kuralları bu üç kipten çıkıyor ve ikisini karıştırmak ya gereksiz iş ya da ceza demek. Hazır mısın?",
+  "kind": "say.tr",
+  "de": "Die geschriebenen Regeln der öffentlichen Verkehrsmittel kommen aus diesen drei Modalverben, und zwei davon zu verwechseln heißt unnötige Arbeit oder eine Strafe. Bist du bereit?"
+ },
+ {
+  "tr": "ile bir kat geriye çekilir; değişikliğin kendisi olağan geçmiş zamanda kalır. Cümledeki sıra değişse bile bu ayrım bozulmaz.",
+  "kind": "say.tr",
+  "de": "eine Stufe zurückgeschoben; die Veränderung selbst bleibt im einfachen Präteritum. Auch wenn die Reihenfolge im Satz wechselt, bleibt dieser Unterschied."
+ }
+]

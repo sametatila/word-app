@@ -1,6 +1,6 @@
 # WP-74 — İngilizce ders kapsamı B1–C1
 
-**Durum:** sürüyor (B1 modül 1-8 bitti, 80/300 ders) · **Sahip:** Claude · **Açılış:** 2026-09-11
+**Durum:** sürüyor (B1 modül 1-9 bitti, 90/300 ders) · **Sahip:** Claude · **Açılış:** 2026-09-11
 
 ## Kusur
 
@@ -172,6 +172,24 @@ Türkçe karşılık yalnız öğrenciye değil, Almanca eksene de yazılıyor.
 idi ve «smoking» içinde «smoke» geçmiyor — kapı haklı olarak reddetti. Aynı
 tuzağa `deny`/«denies» de düşüyor. Çekimlenince kök değişen kelimeye ayrı bir
 tekrar hedefi gerekiyor.
+
+**B1 modül 9 — Çevre ve şehir yaşamı (2026-09-11).** On ders: çöpü ayırmak,
+enerji tasarrufu, yeşil alan, iklimi konuşmak, şehir nasıl değişti, gidiş
+geliş, su ve atık, mahalle projesi, yapılmadan önce, şehir mi kır mı.
+
+Bu modülde kural ders için uydurulmadı, metnin kendi kuralı: belediye çöp
+yazısı baştan sona edilgen (kuralı koyanı söylemez), tasarruf konuşması
+baştan sona şartlı (her tasarruf bir davranışın karşılığı), iklim konuşması
+baştan sona gelecek, toplu taşıma yazısı baştan sona zorunluluk kipi.
+Eşleşme doğal olduğu için on dersin dokuzu ilk kapı denemesinde geçti.
+
+`check-lessons.ts` bir yanlış uyarı üretiyordu: «aynı kelime iki derste yeni
+diye öğretilmemeli» denetimi SEVİYE anahtarlıydı, kurs anahtarlı değil.
+Almanca dersteki `wild` ile İngilizce dersteki `wild` aynı yazılıyor, farklı
+kelime ve hiçbir öğrenci ikisini birden görmüyor. Anahtar HEDEF DİL'e
+çevrildi — kurs değil, çünkü aynı dili öğreten iki kurs (de ve gsw-zh) hâlâ
+çakışmalı. Dört eş yazım düştü: warm, online, modern, wild. Başka hiçbir
+uyarı maskelenmedi (ölçüldü).
 
 ## Tamamlanma ölçütü
 

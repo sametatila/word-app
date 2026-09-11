@@ -203,10 +203,17 @@ warn("doğru/yanlış dengesi (hedef %25-60 doğru)",
   `(doğru oranı ${(trueRatio * 100).toFixed(0)}%)`);
 
 // Aynı kelime iki derste "yeni" diye öğretilmemeli (seviye içinde).
+//
+// Anahtar SEVİYE + HEDEF DİL: kurs değil, çünkü aynı dili öğreten iki kurs
+// (de ve gsw-zh) aynı kelimeyi iki kez öğretmemeli. Ama AYRI dil öğreten iki
+// kurs çakışmaz: Almanca dersteki "wild" ile İngilizce dersteki "wild" aynı
+// yazılıyor, farklı kelime ve hiçbir öğrenci ikisini birden görmüyor —
+// seviye tek başına anahtar olsaydı bu eş yazımlar uyarı üretirdi.
 const seen = new Map<string, string>();
 for (const l of LESSONS) {
+  const lang = courseOrDefault(l.course).targetLang;
   for (const v of l.vocab) {
-    const key = `${l.level}:${v.de.toLowerCase()}`;
+    const key = `${l.level}:${lang}:${v.de.toLowerCase()}`;
     if (seen.has(key)) {
       warn(`yinelenen kelime: ${v.de}`, false, `(${seen.get(key)} ve ${l.id}, ${l.level})`);
     } else {
