@@ -10082,3 +10082,38 @@ kullanıcıya bir sütunla değil, `"<kapsam>:<userId>"` biçimli metin anahtar�
 bağlı. Bağ gerçek, yalnız sütun taramasının göremeyeceği yerde — gerekçesiyle
 kayıtlı. Üç enjeksiyonun üçü yakalandı (cihaz jetonu silmesinin kalkması,
 şemaya yeni tablo eklenmesi, para defteri anonimleştirmesinin kalkması).
+
+## §11.307 — KVKK/GDPR erişim talebi: elle SQL yerine tek komut
+
+Silme tarafını kapattıktan sonra (§11.306) aynı soruyu **erişim** tarafına
+sordum: politika §10 taşınabilirliği e-posta talebiyle karşılıyor ve "en geç 30
+gün içinde ücretsiz" diyor. Söz/kod boşluğu **yok** — uygulama içi indirme
+sözü verilmemiş, dolayısıyla eksik bir özellik de yok.
+
+Ama bir operasyon boşluğu vardı: talep geldiğinde 35 tablodan veri çıkarmak
+elle SQL yazmak demekti — silme tarafında tam bu yüzden sekiz tablo atlanmıştı.
+`scripts/export-user.ts` artık tablo listesini **şemadan türetiyor**: yeni bir
+kullanıcı tablosu eklendiğinde çıktıya kendiliğinden giriyor, `check:purge` de
+silme tarafında aynı listeyi kolluyor.
+
+Salt okunur: tek yazma ifadesi yok. Çıktının içinde üretim tarihi, kimlik ve
+kapsam notu var — talebi cevaplayan neyi gönderdiğini, alıcı neyi aldığını
+belgeleyebilsin.
+
+**Canlı veritabanında doğrulandı:** 39 tablo, 8142 satır, 18 tablo dolu.
+(39 > 35 çünkü ihracat `user`/`session`/`account` satırlarını da veriyor;
+onları better-auth siliyor, ama kişinin verisi olarak ihracata girmeleri
+doğru.)
+
+**Üç ölçüm üç kez yanlış çıktı ve üçü de kaydedilmeye değer:**
+
+1. `dotenv/config` sunucuda bağlantıyı kurmuyor ("client password must be a
+   string"), aynı satırı kabuk verdiğinde kuruyor. Betik artık `DATABASE_URL`i
+   ortamdan bekliyor — üretimde nasıl çalışacaksa öyle.
+2. `@/lib/db` proxy'si tsx altında aynı hatayı veriyor, ham `pg` aynı ortamda
+   çalışıyor: modülün iki kez çözülmesinden gelen ikili paket tuzağı. Betik
+   havuzunu kendi kuruyor.
+3. Tablo tanıma `"_" in value` ile yazılmıştı ve **hiçbir tablo eşleşmedi** —
+   çıktı "1 tablo" dedi ve fark oradan anlaşıldı. Drizzle tabloyu sembolle
+   işaretliyor; `is(v, PgTable)` doğru API. Bir aracın doğru çalıştığını ancak
+   ÇIKTISI söyler: "hata vermedi" yetmez.
