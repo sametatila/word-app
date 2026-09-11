@@ -496,7 +496,6 @@ export const deWeb: Record<string, string> = {
   "speakp.scoring_off": "Die Aussprachebewertung ist in dieser Installation aus.",
   "speakp.rate_limited": "Das Limit ist vorerst erreicht; versuch es gleich noch mal.",
   "speakp.send_failed": "Die Aufnahme ließ sich nicht senden. Versuchst du es noch mal?",
-  "speakp.no_sentences": "In dieser Übung gibt es keine Sätze.",
   "speakp.record_and_read": "Aufnehmen und lesen",
   "speakp.read_again": "Nochmal lesen",
   "writp.summarise": "Zusammenfassen",

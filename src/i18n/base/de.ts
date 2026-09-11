@@ -373,6 +373,7 @@ export const deBase: Record<string, string> = {
   "item.back_to_skills": "Zurück zu Skills",
   "item.grammar_rule": "REGEL",
   "item.listen_example": "Beispiel anhören",
+  "speakp.no_sentences": "In dieser Übung gibt es keine Sätze.",
   "item.mic_unavailable": "Keine Spracherkennung auf diesem Gerät; hör dir die Sätze an und sprich sie selbst.",
   "item.speak_record": "Sprechen",
   "item.speak_listening": "Ich höre zu …",

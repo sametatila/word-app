@@ -3744,6 +3744,24 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   sameList("dinleme oynaticisi", dinle("mobile/src/screens/ItemScreen.tsx"), dinle("src/components/skills/listening-player.tsx"));
 }
 
+/* ── 110. konusma alistirmasinin bos hali ─────────────────────────────────
+ * Gorev listesi bos gelirse mobil cizim `task.de`ye dokunup EKRANI
+ * COKERTIYORDU; web ayni yerde tek satirlik bir not gosteriyor. Bugun
+ * icerikte gorevsiz bir konusma egzersizi yok (50 egzersiz, sifir bos) ama
+ * icerik her turda yeniden uretiliyor - koruma bedava, coken ekran degil.
+ *
+ * Olcum disi uc satir: `speakp.scoring_off`, `speakp.rate_limited` ve
+ * `speakp.send_failed` webin SES YUKLEME yoluna ait (`/api/pronounce`);
+ * mobil konusmayi cihazdaki taniyiciyla metin olarak esliyor (§11.136). */
+{
+  const bos = (p, re) => [ "bos liste korumasi=" + (re.test(read(p)) ? "var" : "yok") ];
+  sameList(
+    "konusma alistirmasi bos hali",
+    bos("mobile/src/game/skillLibrary.tsx", /if \(!task\) \{/),
+    bos("src/components/skills/speaking-player.tsx", /speakp\.no_sentences/),
+  );
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"

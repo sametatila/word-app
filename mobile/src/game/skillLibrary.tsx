@@ -112,6 +112,20 @@ export function SpeakingDrill({ tasks, onAllDone, colors }: { tasks: SpeakingTas
     else setIdx(idx + 1);
   }
 
+  /*
+   * BOŞ LİSTE ÇÖKERTİYORDU. `task` undefined olduğunda çizim `task.de`ye
+   * dokunuyor ve ekran kırmızıya dönüyordu. Bugün içerikte görevsiz bir
+   * konuşma egzersizi yok (ölçüldü: 50 egzersiz, sıfır boş) ama içerik her
+   * turda yeniden üretiliyor; web aynı yerde tek satırlık bir not gösteriyor.
+   */
+  if (!task) {
+    return (
+      <Card padded style={{ marginTop: spacing.md }}>
+        <Text variant="body" color={colors.textMuted}>{t("speakp.no_sentences")}</Text>
+      </Card>
+    );
+  }
+
   const fixes = verdict === "near" || verdict === "miss" ? (task.confusions ?? []).map((c) => c.fix) : [];
 
   return (

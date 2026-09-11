@@ -496,7 +496,6 @@ export const enWeb: Record<string, string> = {
   "speakp.scoring_off": "Pronunciation scoring is off in this installation.",
   "speakp.rate_limited": "You've hit the limit for now; try again shortly.",
   "speakp.send_failed": "The recording couldn't be sent. Will you try again?",
-  "speakp.no_sentences": "There are no sentences in this exercise.",
   "speakp.record_and_read": "Record and read",
   "speakp.read_again": "Read again",
   "writp.summarise": "Summarise",

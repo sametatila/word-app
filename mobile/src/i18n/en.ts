@@ -371,6 +371,7 @@ export const en: Record<string, string> = {
   "item.back_to_skills": "Back to Skills",
   "item.grammar_rule": "RULE",
   "item.listen_example": "Listen to the example",
+  "speakp.no_sentences": "There are no sentences in this exercise.",
   "item.mic_unavailable": "No speech recognition on this device; listen to the sentences and say them yourself.",
   "item.speak_record": "Say it",
   "item.speak_listening": "Listening…",

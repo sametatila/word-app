@@ -521,7 +521,6 @@ export const trWeb: Record<string, string> = {
   "speakp.scoring_off": "Telaffuz puanlaması bu kurulumda kapalı.",
   "speakp.rate_limited": "Şimdilik sınıra ulaşıldı, biraz sonra dene.",
   "speakp.send_failed": "Kayıt gönderilemedi. Tekrar dener misin?",
-  "speakp.no_sentences": "Bu çalışmada cümle yok.",
   "speakp.record_and_read": "Kaydet ve oku",
   "speakp.read_again": "Tekrar oku",
   "writp.summarise": "Özetle",

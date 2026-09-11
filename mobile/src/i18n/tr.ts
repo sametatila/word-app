@@ -376,6 +376,7 @@ export const tr: Record<string, string> = {
   "item.back_to_skills": "Beceriler'e dön",
   "item.grammar_rule": "KURAL",
   "item.listen_example": "Örneği dinle",
+  "speakp.no_sentences": "Bu çalışmada cümle yok.",
   "item.mic_unavailable": "Bu cihazda konuşma tanıma yok; cümleleri dinleyip kendin söyleyebilirsin.",
   "item.speak_record": "Söyle",
   "item.speak_listening": "Dinliyorum…",
