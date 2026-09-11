@@ -51,7 +51,6 @@ const SKIP = [
   "lib/lessons",
   "lib/skills/content",
   "lib/mock-exams",
-  "lib/cheatsheet",
   "lib/immersion/content",
   "lib/confusables.ts",
   "lib/cando.ts",

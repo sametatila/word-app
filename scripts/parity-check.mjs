@@ -13,7 +13,7 @@
  * Node'da tek başına çalışmalı. Biçim değişip liste okunamazsa betik sessizce
  * geçmiyor, boş liste olarak KALIYOR.
  */
-import { readFileSync, readdirSync } from "node:fs";
+import { existsSync, readFileSync, readdirSync } from "node:fs";
 
 const ESC = String.fromCharCode(27);
 const C = { ok: ESC + "[32m", bad: ESC + "[31m", b: ESC + "[1m", off: ESC + "[0m", dim: ESC + "[2m" };
@@ -3966,6 +3966,29 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   };
   const bulunan = iddia.filter(uretiliyor);
   sameList("mobil sayim muafiyetlerinin kapilari", bulunan, iddia, "gercekten olculen", "listede yazan");
+}
+
+/* ── 119. web sayiminin muafiyet yollari yasiyor mu ───────────────────────
+ * `scripts/i18n-hardcoded.mjs` uc liste tutuyor: SKIP (sayimdan cikan yol),
+ * FORCE (SKIP'in icinde kalan ama yine de sayilan MANTIK dosyasi) ve
+ * SKIP_ASCII (yalniz ASCII kuralindan muaf).
+ *
+ * OLMAYAN BIR YOL SESSIZ BIR DELIK: bugun hicbir sey atlamiyor ama o yola bir
+ * dosya konursa Turkce metni hic sayilmadan iceri girer ve kimse karar
+ * vermemis olur. Olculdu: `lib/cheatsheet` boyleydi - dilbilgisi sayfasi
+ * 2026-08'de kaldirilmis, muafiyet listede kalmisti. */
+{
+  const betik = read("scripts/i18n-hardcoded.mjs").split("\n");
+  const dizi = (ad) => {
+    const i = betik.findIndex((l) => l.startsWith(`const ${ad} = [`));
+    if (i < 0) return null;
+    let j = i + 1;
+    while (j < betik.length && !betik[j].trimStart().startsWith("]")) j++;
+    return betik.slice(i, j).map((l) => /^\s*"([^"]+)",/.exec(l)?.[1]).filter(Boolean);
+  };
+  const hepsi = ["SKIP", "FORCE", "SKIP_ASCII"].flatMap((ad) => (dizi(ad) ?? []).map((p) => `${ad}:${p}`));
+  const yasayan = hepsi.filter((x) => existsSync(new URL("../src/" + x.split(":")[1], import.meta.url)));
+  sameList("web sayim muafiyetlerinin yollari", yasayan, hepsi, "diskte var", "listede yazan");
 }
 
 console.log(

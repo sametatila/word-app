@@ -56,14 +56,6 @@ export function errorLabel(type: ErrorType, lang: NativeLang): string {
 }
 
 /**
- * Hata tipinden dilbilgisi sayfasına bağlantı: `/cheatsheet#<tablo>`.
- *
- * Tablo kimlikleri `src/lib/cheatsheet/de-*.ts` içindeki `id` alanları;
- * seviye ekli olanlar (a1-…) en temel tabloya gider — öğrenci ileri seviyede
- * de olsa hatanın kuralı orada başlıyor. Anlam/dinleme/telaffuz için tablo
- * yok: bunlar kural değil kelime bilgisi.
- */
-/**
  * Hata tipi → hedefli çalışma oyunu (tek oyunlu tur). WP-51 "zayıf noktaların"
  * ve WP-60 plan kartı aynı haritayı okur; WP-11 drill'leri gelince
  * dilbilgisi tipleri (case/verb_position/conjugation) drill'e yönlenir.
