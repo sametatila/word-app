@@ -42,7 +42,16 @@ export function MicDisclosure({ visible, onAccept, onCancel }: { visible: boolea
   const insets = useSafeAreaInsets();
   return (
     <Modal visible={visible} animationType="slide" statusBarTranslucent onRequestClose={onCancel}>
-      <View style={{ flex: 1, backgroundColor: colors.bg }} accessibilityViewIsModal>
+      {/* ROL VE AD. Arka plan erişilebilirlik ağacından çıkıyordu ama kutunun
+          KENDİSİ adsızdı: ekran okuyucu "mikrofon ve ses verisi" başlığını
+          ancak içerik okunmaya başlayınca söylüyordu. Web karşılığı
+          `aria-labelledby` ile başlığı kutunun adı yapıyor. */}
+      <View
+        accessibilityViewIsModal
+        accessibilityRole="alert"
+        accessibilityLabel={t("micdisclosure.microphone_and_voice_data")}
+        style={{ flex: 1, backgroundColor: colors.bg }}
+      >
         <ScrollView contentContainerStyle={{ paddingTop: insets.top + spacing.xxl, paddingHorizontal: spacing.xl, paddingBottom: spacing.xl, gap: spacing.lg }} showsVerticalScrollIndicator={false}>
           <View style={[{ width: 72, height: 72, borderRadius: radii.xl, alignItems: "center", justifyContent: "center", backgroundColor: colors.primary, alignSelf: "center" }, softShadow(colors.primary, 12)]}>
             <MicIcon color={colors.onPrimary} size={36} />

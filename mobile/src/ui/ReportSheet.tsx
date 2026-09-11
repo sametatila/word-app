@@ -33,7 +33,13 @@ export function ReportSheet({ visible, kind, refId, content, onClose }: {
       <Pressable onPress={onClose} style={{ flex: 1, backgroundColor: "rgba(0,0,0,0.55)", alignItems: "center", justifyContent: "center", padding: spacing.xl }}>
         {/* Arka plan erişilebilirlik ağacından çıkıyor — bkz. `ConfirmDialog`
             içindeki not. */}
-        <Pressable onPress={() => {}} accessibilityViewIsModal accessibilityRole="alert" style={[{ width: "100%", maxWidth: 400, backgroundColor: colors.surface, borderRadius: radii.xl, padding: spacing.xl, gap: spacing.sm }, softShadow("#000000", 24)]}>
+        <Pressable
+          onPress={() => {}}
+          accessibilityViewIsModal
+          accessibilityRole="alert"
+          /* Adı başlıktan — bkz. `ui/ConfirmDialog` içindeki not. */
+          accessibilityLabel={t("reportsheet.report_this_content")}
+          style={[{ width: "100%", maxWidth: 400, backgroundColor: colors.surface, borderRadius: radii.xl, padding: spacing.xl, gap: spacing.sm }, softShadow("#000000", 24)]}>
           {state === "done" ? (
             /* Sonuç duyuruluyor — web `report-dialog` içindeki nota bak:
                kutu açık kalıyor, içi yerinde değişiyor. */

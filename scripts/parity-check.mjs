@@ -6823,6 +6823,76 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   sameList("web yerinde sonuc", web, beklenen, "bulunan", "beklenen");
 }
 
+/* ── 179. diyalogun ADI var mi ────────────────────────────────────────────
+ * Modal butunlugunun dort parcasi: arka plan erisilebilirlik agacindan cikar,
+ * geri tusu/Esc kapatir, zemine dokunus kapatir ve kutunun BIR ADI olur.
+ * Ilk ucu iki platformda da tamamdi; dorduncusu eksikti.
+ *
+ * Webin uc `<dialog>`u adsizdi: ekran okuyucu "diyalog" diyor ama ne
+ * sordugunu soylemiyordu - kutunun konusu ancak icerik okunmaya baslayinca
+ * anlasiliyordu. Baslik zaten ekranda duruyor; `aria-labelledby` onu kutunun
+ * adi yapiyor. Mobilde ayni eksik iki modalda vardi (mikrofon aciklamasi ve
+ * rozet kutlamasi); ConfirmDialog ve ReportSheet baştan beri adliydi.
+ *
+ * Olculen: her modalin adi ve kapanma yolu. */
+{
+  const strip = (x) => x.replace(/\/\*[\s\S]*?\*\//g, (m) => m.replace(/[^\n]/g, " ")).replace(/(^|[^:"'`\\])\/\/.*$/gm, "$1");
+  const d = (yol) => strip(read(yol)).replace(/\s+/g, " ");
+  const MOB = [
+    ["onay", "mobile/src/ui/ConfirmDialog.tsx"],
+    ["bildirim", "mobile/src/ui/ReportSheet.tsx"],
+    ["mikrofon", "mobile/src/ui/MicDisclosure.tsx"],
+    ["kutlama", "mobile/src/ui/AchievementUnlock.tsx"],
+    ["sertifika", "mobile/src/ui/CertificateSheet.tsx"],
+  ];
+  sameList(
+    "mobil modalin adi",
+    MOB.map(([ad, yol]) => {
+      const src = d(yol);
+      /* Ad ya dogrudan etiket ya da baslik metni olarak veriliyor; ikisi de
+         ekran okuyucuya kutunun ne oldugunu soyluyor. */
+      const adli = /accessibilityLabel=/.test(src) && /accessibilityViewIsModal/.test(src);
+      return ad + "=" + (adli ? "adli" : "adsiz");
+    }),
+    MOB.map(([ad]) => ad + "=adli"),
+    "bulunan",
+    "beklenen",
+  );
+  const WEB = [
+    ["onay", "src/components/confirm-dialog.tsx"],
+    ["bildirim", "src/components/report-dialog.tsx"],
+    ["mikrofon", "src/components/mic-disclosure.tsx"],
+  ];
+  sameList(
+    "web diyalogunun adi",
+    WEB.map(([ad, yol]) => {
+      const src = d(yol);
+      const adli = /aria-labelledby=\{basligId\}/.test(src) && /<h2 id=\{basligId\}/.test(src);
+      return ad + "=" + (adli ? "adli" : "adsiz");
+    }),
+    WEB.map(([ad]) => ad + "=adli"),
+    "bulunan",
+    "beklenen",
+  );
+
+  /* Kapanma yolu: mobilde geri tusu, webde Esc. Biri eksikse kutu kapana
+     doner - ilk uc parcanin en kolay bozulani bu. */
+  sameList(
+    "modal kapanma yolu",
+    MOB.map(([ad, yol]) => ad + "=" + (/onRequestClose=/.test(d(yol)) ? "var" : "yok")),
+    MOB.map(([ad]) => ad + "=var"),
+    "mobil",
+    "beklenen",
+  );
+  sameList(
+    "diyalog kapanma yolu",
+    WEB.map(([ad, yol]) => ad + "=" + (/onCancel=/.test(d(yol)) ? "var" : "yok")),
+    WEB.map(([ad]) => ad + "=var"),
+    "web",
+    "beklenen",
+  );
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"

@@ -9059,3 +9059,30 @@ Dört kalıp, tek sınıf: `setMsg` (§157) · `Feedback` nesnesi (§11.272) · 
 nesnesi (§11.273) · dizge durum makinesi (bu madde). Dördüncüsü aynı zamanda
 sınıfın **sınırını** verdi: her sonuç duyurulmaz, yerinde değişen sonuç
 duyurulur.
+
+## §11.275 — Diyaloğun adı yoktu
+
+Modal bütünlüğünün dört parçası var: arka plan erişilebilirlik ağacından
+çıkar, geri tuşu/Esc kapatır, zemine dokunuş kapatır ve kutunun **bir adı**
+olur. İlk üçü iki platformda da tamamdı (§153 ve §158 turlarında kapanmış);
+dördüncüsü eksikti.
+
+Web'in üç `<dialog>`u adsızdı: ekran okuyucu "diyalog" diyor ama **ne
+sorduğunu** söylemiyordu — kutunun konusu ancak içerik okunmaya başlayınca
+anlaşılıyordu. Başlık zaten ekranda duruyor; `aria-labelledby` onu kutunun adı
+yapıyor (`useId` ile, çünkü aynı diyalog aynı sayfada birden çok kez
+çizilebilir).
+
+Mobilde aynı eksik iki modalda vardı: mikrofon açıklaması ve rozet kutlaması
+`accessibilityViewIsModal` taşıyordu ama adsızdı. Onay ve bildirim kutuları
+`accessibilityRole="alert"` ile içeriğinden okunuyordu — bu çalışıyor, ama
+beşini aynı kurala bağlamak hem davranışı hem kapıyı sadeleştirdi: hepsi artık
+`accessibilityLabel` taşıyor (onay kutusunda ad, başlığın kendisi).
+
+**§179** dört ölçüm yapıyor: iki platformda modalın adı ve kapanma yolu. Beş
+enjeksiyonun beşi yakalandı.
+
+Kapı ilk sürümde fazla katıydı: onay ve bildirim kutularını "adsız" saydı,
+oysa ikisi rol + içerik üzerinden okunuyordu. Ölçümü gevşetmek yerine kodu
+tekleştirdim — ölçütü gerçeğe uydurmak yerine gerçeği ölçüte çektim, çünkü
+burada ölçüt daha iyiydi.

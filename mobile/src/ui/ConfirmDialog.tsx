@@ -41,7 +41,15 @@ export function ConfirmDialog({
             ediyor, kullanıcı hangi soruyu cevapladığını kaybediyordu. Webde
             bu bedava geliyor (`<dialog>` arka planı inert yapıyor);
             `accessibilityViewIsModal` onun karşılığı. */}
-        <Pressable onPress={() => {}} accessibilityViewIsModal accessibilityRole="alert" style={[{ width: "100%", maxWidth: 400, backgroundColor: colors.surface, borderRadius: radii.xl, padding: spacing.xl, gap: spacing.xs }, softShadow("#000000", 24)]}>
+        <Pressable
+          onPress={() => {}}
+          accessibilityViewIsModal
+          accessibilityRole="alert"
+          /* Kutunun ADI başlığın kendisi: rol tek başına "uyarı" diyor, neyin
+             sorulduğunu söylemiyor. Web karşılığı `aria-labelledby` ile aynı
+             başlığı kutunun adı yapıyor. */
+          accessibilityLabel={title}
+          style={[{ width: "100%", maxWidth: 400, backgroundColor: colors.surface, borderRadius: radii.xl, padding: spacing.xl, gap: spacing.xs }, softShadow("#000000", 24)]}>
           <Text variant="h2">{title}</Text>
           {message ? <Text variant="body" color={colors.textMuted} style={{ marginTop: 2 }}>{message}</Text> : null}
           <View style={{ flexDirection: "row", gap: spacing.md, marginTop: spacing.lg }}>

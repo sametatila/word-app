@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useId } from "react";
 import { CheckIcon } from "@/components/icons";
 import { reasonsFor, sendReport, type ReportKind, type ReportReason } from "@/lib/report";
 import { useT, useLang } from "@/lib/i18n/client";
@@ -32,6 +32,12 @@ export function ReportDialog({
 }) {
   const t = useT();
   const lang = useLang();
+  /* DİYALOĞUN ADI. `<dialog>` açıldığında ekran okuyucu "diyalog" diyor ama
+     ADINI söylemiyordu: kutunun ne sorduğu yalnız içeriği okunmaya
+     başlayınca anlaşılıyordu. Başlık zaten ekranda; `aria-labelledby` onu
+     kutunun adı yapıyor. Mobil karşılığı `accessibilityRole="alert"` +
+     etiket (bkz. `ui/ConfirmDialog`). */
+  const basligId = useId();
   const ref = useRef<HTMLDialogElement>(null);
   const [reason, setReason] = useState<ReportReason | null>(null);
   const [state, setState] = useState<"idle" | "sending" | "done" | "error">("idle");
@@ -57,6 +63,7 @@ export function ReportDialog({
   return (
     <dialog
       ref={ref}
+      aria-labelledby={basligId}
       onCancel={(e) => {
         e.preventDefault();
         onClose();
@@ -88,7 +95,7 @@ export function ReportDialog({
         </div>
       ) : (
         <>
-          <h2 className="text-h2">{t("reportsheet.report_this_content")}</h2>
+          <h2 id={basligId} className="text-h2">{t("reportsheet.report_this_content")}</h2>
           <p className="muted mt-1 text-caption">{t("reportsheet.if_ai_reply_felt_inappropriate")}</p>
 
           <ul className="mt-3 space-y-2">

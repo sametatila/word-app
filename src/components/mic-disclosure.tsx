@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useId } from "react";
 import Link from "next/link";
 import { CheckIcon, MicIcon } from "@/components/icons";
 import { LEGAL_PATHS } from "@/lib/legal";
@@ -30,6 +30,12 @@ export function MicDisclosure({
   onCancel: () => void;
 }) {
   const t = useT();
+  /* DİYALOĞUN ADI. `<dialog>` açıldığında ekran okuyucu "diyalog" diyor ama
+     ADINI söylemiyordu: kutunun ne sorduğu yalnız içeriği okunmaya
+     başlayınca anlaşılıyordu. Başlık zaten ekranda; `aria-labelledby` onu
+     kutunun adı yapıyor. Mobil karşılığı `accessibilityRole="alert"` +
+     etiket (bkz. `ui/ConfirmDialog`). */
+  const basligId = useId();
   const ref = useRef<HTMLDialogElement>(null);
 
   useEffect(() => {
@@ -53,6 +59,7 @@ export function MicDisclosure({
   return (
     <dialog
       ref={ref}
+      aria-labelledby={basligId}
       onCancel={(e) => {
         e.preventDefault();
         onCancel();
@@ -70,7 +77,7 @@ export function MicDisclosure({
         >
           <MicIcon size={36} />
         </span>
-        <h2 className="text-h2">{t("micdisclosure.microphone_and_voice_data")}</h2>
+        <h2 id={basligId} className="text-h2">{t("micdisclosure.microphone_and_voice_data")}</h2>
         <p className="muted text-body">{t("micdisclosure.walk_mode_works_with_your_voice")}</p>
       </div>
 

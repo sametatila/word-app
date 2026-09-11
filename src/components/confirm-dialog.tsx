@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useId } from "react";
 import { useT } from "@/lib/i18n/client";
 
 /**
@@ -35,6 +35,12 @@ export function ConfirmDialog({
   onConfirm: () => void;
   onCancel: () => void;
 }) {
+  /* DİYALOĞUN ADI. `<dialog>` açıldığında ekran okuyucu "diyalog" diyor ama
+     ADINI söylemiyordu: kutunun ne sorduğu yalnız içeriği okunmaya
+     başlayınca anlaşılıyordu. Başlık zaten ekranda; `aria-labelledby` onu
+     kutunun adı yapıyor. Mobil karşılığı `accessibilityRole="alert"` +
+     etiket (bkz. `ui/ConfirmDialog`). */
+  const basligId = useId();
   const ref = useRef<HTMLDialogElement>(null);
   const t = useT();
 
@@ -48,6 +54,7 @@ export function ConfirmDialog({
   return (
     <dialog
       ref={ref}
+      aria-labelledby={basligId}
       onCancel={(e) => {
         // Esc: tarayıcı varsayılanı kapatmak, ama durumu da bildirmeliyiz —
         // yoksa `open` true kalır ve diyalog bir daha açılmaz.
@@ -62,7 +69,7 @@ export function ConfirmDialog({
       className="card m-auto w-[min(25rem,calc(100vw-2rem))] p-5 backdrop:bg-black/55"
       style={{ color: "var(--text)" }}
     >
-      <h2 className="text-h2">{title}</h2>
+      <h2 id={basligId} className="text-h2">{title}</h2>
       {message ? <p className="muted mt-1 text-body">{message}</p> : null}
       <div className="mt-4 flex gap-3">
         <button type="button" onClick={onCancel} className="btn flex-1 py-3.5" style={{ background: "var(--surface-2)", color: "var(--text)" }}>

@@ -183,7 +183,14 @@ export function AchievementUnlock() {
         <Celebrate show />
         {/* Arka plan erişilebilirlik ağacından çıkıyor — bkz. `ConfirmDialog`
             içindeki not. */}
-        <View accessibilityViewIsModal style={[{ width: "100%", maxWidth: 380, alignItems: "center", backgroundColor: colors.surface, borderRadius: radii.xl, borderWidth: 1, borderColor: colors.hairline, paddingVertical: spacing.xl, paddingHorizontal: spacing.lg }, softShadow(colors.text, 18)]}>
+        {/* ROL VE AD — web `achievement-unlock` `role="dialog" aria-label` ile
+            aynı iş. Kutlama kutusu adsızdı: ekran okuyucu ne olduğunu ancak
+            rozet adı okunurken anlıyordu. */}
+        <View
+          accessibilityViewIsModal
+          accessibilityRole="alert"
+          accessibilityLabel={t("achievements.achievements")}
+          style={[{ width: "100%", maxWidth: 380, alignItems: "center", backgroundColor: colors.surface, borderRadius: radii.xl, borderWidth: 1, borderColor: colors.hairline, paddingVertical: spacing.xl, paddingHorizontal: spacing.lg }, softShadow(colors.text, 18)]}>
           {batch && view.kind === "batch" ? (
             <>
               <Text variant="micro" color={colors.primaryText} style={{ textTransform: "uppercase", letterSpacing: 1.5 }}>
