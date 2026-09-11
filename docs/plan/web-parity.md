@@ -10972,3 +10972,31 @@ Kısa tarih dönüşünü `/toLocaleDateString\([^)]*\{ day: ... \}/` ile arıyo
 `[^)]*` ilk `)`de duruyor ve desen hiç tutmuyor. **İki tarafın aynı şekilde
 "YOK" demesi** kusurun kodda değil ölçümde olduğunun işaretiydi — bir
 ayrışma arıyorsanız iki tarafın birlikte başarısız olması şüphelidir.
+
+## §11.334 — Sosyal merkez eşitti, yükleme dalı değildi
+
+Arkadaşlar / akış yüzeyi mobil karşılığıyla karşılaştırıldı ve **asıl dizilim
+zaten eşitti**: cevap bekleyen iş (gelen istek), bu haftanın taahhüdü (ortak
+görev), sonra arkadaş listesi ve tablo; "Bul" sekmesinin altında gönderilen
+istekler; sekme rozeti aynı kehribar + mürekkep; üç sekme (`friends`, `feed`,
+`find`) ve kaldırılmış iki sekmenin adresleri için alias. Bunların hepsi
+doğrulandı.
+
+**Yükleme dalı eşit değildi.** Android yüklenirken gerçek dizilimin aynısını
+çiziyor — istek kartı, görev kartı, iki kişi satırı — web ise yalnız **üç kişi
+satırı** çiziyordu. Sonuç: veri gelince ilk iki kart **üstte** belirip listeyi
+aşağı itiyordu. Aynı sınıf §11.329'da rozet duvarında çıkmıştı (orada eksik
+olan iskeletin *duyurusu*ydu) ve mobilin başka bir ekranında gerekçesi yazılı:
+"içerik gelince kartlar ortadan yukarı sıçramıyor, oldukları yerde beliriyor".
+
+İlginç yanı: **`QuestsSkeleton` web'de zaten vardı** ama yalnız `Quests`in
+kendi yüklemesinde kullanılıyordu — merkez yüklenirken `Quests` henüz takılı
+olmadığı için o iskelet hiç görünmüyordu. Yani eksik olan bileşen değil,
+onu doğru yerde çağırmaktı. Eksik olan tek bileşen istek kartının yeriydi
+(`RequestCardSkeleton`), o da web'in kendi satır düzeninden çıkarıldı: 40'lık
+avatar, iki metin satırı, iki düğme — yükseklik varsayılmıyor.
+
+§220 yedi ölçüt okuyor: istek iskeletinin varlığı, yükleme dalındaki üç
+parçanın hepsi, sırası, ve **gerçek** dizilimin sırası (yükleme dalı ona
+benzemek zorunda, yani gate iki listeyi birbirine bağlıyor). İki enjeksiyon
+(bir parçayı silmek, sırayı bozmak) yakalandı.
