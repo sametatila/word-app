@@ -361,7 +361,7 @@ export function AuthScreen() {
               </View>
             ) : (
               <>
-                <TextInput returnKeyType="go" onSubmitEditing={() => { if (!resetBusy) void doReset(); }} value={email} onChangeText={setEmail} placeholder={t("auth.email")} placeholderTextColor={colors.textFaint} keyboardType="email-address" autoCapitalize="none" autoCorrect={false} style={input} />
+                <TextInput returnKeyType="go" onSubmitEditing={() => { if (!resetBusy) void doReset(); }} value={email} onChangeText={setEmail} placeholder={t("auth.email")} placeholderTextColor={colors.textFaint} keyboardType="email-address" autoCapitalize="none" autoCorrect={false} autoComplete="email" textContentType="emailAddress" style={input} />
                 {error && (<View style={{ backgroundColor: colors.dangerSoft, borderRadius: radii.md, padding: spacing.md }}><Text variant="caption" color={colors.dangerText}>{error}</Text></View>)}
                 {captchaOn && (
                   <>
@@ -499,11 +499,19 @@ export function AuthScreen() {
           </View>
         ) : (
           <View style={{ gap: spacing.md }}>
+            {/* ŞİFRE YÖNETİCİSİ DOLDURABİLİYOR. Alanlar hiçbir otomatik
+                doldurma ipucu taşımıyordu: Android'de kayıtlı parolası olan
+                kullanıcıya öneri HİÇ çıkmıyor ve giriş elle yazılıyordu. Web
+                aynı formda on üç alanda ipucu veriyor (`autoComplete`);
+                buradaki karşılığı `autoComplete` (Android) + `textContentType`
+                (iOS). Parola ipucu KİPE bağlı: kayıtta yeni parola, girişte
+                mevcut parola — yanlışını vermek yöneticiye yanlış kayıt
+                önerir. */}
             {mode === "signup" && (
-              <TextInput value={name} onChangeText={setName} placeholder={t("auth.your_name_optional")} placeholderTextColor={colors.textFaint} autoCapitalize="words" maxLength={40} style={input} />
+              <TextInput value={name} onChangeText={setName} placeholder={t("auth.your_name_optional")} placeholderTextColor={colors.textFaint} autoCapitalize="words" maxLength={40} autoComplete="name" textContentType="name" style={input} />
             )}
-            <TextInput value={email} onChangeText={setEmail} placeholder={t("auth.email")} placeholderTextColor={colors.textFaint} keyboardType="email-address" autoCapitalize="none" autoCorrect={false} style={input} />
-            <TextInput returnKeyType="go" onSubmitEditing={() => { if (!busy) void submit(); }} value={password} onChangeText={setPassword} placeholder={t("auth.password_min_hint")} placeholderTextColor={colors.textFaint} secureTextEntry style={input} />
+            <TextInput value={email} onChangeText={setEmail} placeholder={t("auth.email")} placeholderTextColor={colors.textFaint} keyboardType="email-address" autoCapitalize="none" autoCorrect={false} autoComplete="email" textContentType="emailAddress" style={input} />
+            <TextInput returnKeyType="go" onSubmitEditing={() => { if (!busy) void submit(); }} value={password} onChangeText={setPassword} placeholder={t("auth.password_min_hint")} placeholderTextColor={colors.textFaint} secureTextEntry autoComplete={mode === "signup" ? "new-password" : "current-password"} textContentType={mode === "signup" ? "newPassword" : "password"} style={input} />
             {/* Canlı geri bildirim YALNIZ kayıtta: girişte var olan bir parolayı
                 yargılamak anlamsız ve "parolan zayıf" demek orada yanlış mesaj.
                 Aynı ayrım webde de var. `accessibilityLiveRegion` ekran

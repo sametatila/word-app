@@ -86,15 +86,22 @@ export function ChangePassword({ colors }: { colors: Palette }) {
 
   return (
     <View style={{ gap: spacing.sm }}>
+      {/* Şifre yöneticisi ipuçları — bkz. `screens/AuthScreen` içindeki not.
+          Mevcut parola `current-password`, yeni parola `new-password`: iki
+          farklı ipucu, yoksa yönetici yeni parolayı eskisinin üstüne yazmayı
+          önerir. */}
       <TextInput
+        autoComplete="current-password" textContentType="password"
         value={current} onChangeText={setCurrent} secureTextEntry
         placeholder={t("changepw.current")} placeholderTextColor={colors.textFaint} style={input}
       />
       <TextInput
+        autoComplete="new-password" textContentType="newPassword"
         value={next} onChangeText={setNext} secureTextEntry
         placeholder={t("changepw.new")} placeholderTextColor={colors.textFaint} style={input}
       />
       <TextInput
+        autoComplete="new-password" textContentType="newPassword"
         value={confirm} onChangeText={setConfirm} secureTextEntry returnKeyType="go"
         onSubmitEditing={() => { if (!busy) void kaydet(); }}
         placeholder={t("changepw.again")} placeholderTextColor={colors.textFaint} style={input}

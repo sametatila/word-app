@@ -94,7 +94,10 @@ export function TwoFactor({ colors }: { colors: Palette }) {
           <Text variant="caption" color={colors.dangerText}>{t("twofa.mail_warning")}</Text>
         </View>
       )}
+      {/* Mevcut parola ipucu — iki adımlı doğrulamayı kapatmak için parola
+          isteniyor; bkz. `screens/AuthScreen` içindeki not. */}
       <TextInput
+        autoComplete="current-password" textContentType="password"
         value={password} onChangeText={setPassword} secureTextEntry returnKeyType="go"
         onSubmitEditing={() => { if (!busy) void kaydet(); }}
         placeholder={t("twofa.password_label")} placeholderTextColor={colors.textFaint} style={input}

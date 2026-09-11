@@ -94,11 +94,14 @@ export function ResetPasswordScreen({ route }: { route: { params?: { token?: str
           </View>
         ) : (
           <View style={{ gap: spacing.md }}>
+            {/* Yeni parola ipucu — bkz. `screens/AuthScreen` içindeki not. */}
             <TextInput
+              autoComplete="new-password" textContentType="newPassword"
               value={password} onChangeText={setPassword} secureTextEntry autoFocus
               placeholder={t("changepw.new")} placeholderTextColor={colors.textFaint} style={input}
             />
             <TextInput
+              autoComplete="new-password" textContentType="newPassword"
               value={confirm} onChangeText={setConfirm} secureTextEntry returnKeyType="go"
               onSubmitEditing={() => { if (!busy) void kaydet(); }}
               placeholder={t("changepw.again")} placeholderTextColor={colors.textFaint} style={input}

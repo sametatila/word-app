@@ -6893,6 +6893,73 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   );
 }
 
+/* ── 180. sifre yoneticisi doldurabiliyor mu ──────────────────────────────
+ * Etiket taramasi simetrik cikti: iki platform da form alanlarini YER
+ * TUTUCUYLA adlandiriyor (tarayici ve TalkBack onu ad olarak okuyor, yani
+ * alanlar kullanilabilir). Ayrisan sey otomatik doldurmaydi.
+ *
+ * Web on uc alanda `autoComplete` veriyor (e-posta, ad, mevcut/yeni parola,
+ * tek kullanimlik kod). Mobilde yalnizca dort alan vardi ve ucu SMS koduydu:
+ * yani Androidde kayitli parolasi olan kullaniciya oneri HIC cikmiyor, giris
+ * elle yaziliyordu.
+ *
+ * Ipucunun DOGRU olmasi ayrica onemli: kayitta `new-password`, giriste
+ * `current-password`. Yanlisini vermek yoneticiye yanlis kaydi onerir - yeni
+ * parolayi eskisinin uzerine yazmak gibi. O yuzden kapi yalniz "ipucu var mi"
+ * demiyor, HANGI ipucu oldugunu da olcuyor. */
+{
+  const strip = (x) => x.replace(/\/\*[\s\S]*?\*\//g, (m) => m.replace(/[^\n]/g, " ")).replace(/(^|[^:"'`\\])\/\/.*$/gm, "$1");
+  const d = (yol) => strip(read(yol)).replace(/\s+/g, " ");
+  const auth = d("mobile/src/screens/AuthScreen.tsx");
+  const parola = d("mobile/src/ui/ChangePassword.tsx");
+  const sifirla = d("mobile/src/screens/ResetPasswordScreen.tsx");
+  const webAuth = d("src/components/auth-form.tsx");
+  const webParola = d("src/components/account/change-password.tsx");
+  const webSifirla = d("src/components/reset-password-form.tsx");
+
+  const kipeGore = (src) => {
+    const m = src.match(/autoComplete=\{mode === "(signin|signup)" \? "([\w-]+)" : "([\w-]+)"\}/);
+    if (!m) return false;
+    const secim = new Set([m[2], m[3]]);
+    return secim.has("current-password") && secim.has("new-password");
+  };
+  /*
+   * SAYIYLA OLCULUYOR, VARLIKLA DEGIL. Ilk surum dosyada ipucunun gecmesine
+   * bakiyordu ve iki enjeksiyonu kaciriyordu: giris e-postasinin ipucu
+   * silinince SIFIRLAMA ekranindaki e-posta alani, yeni parolanin ipucu
+   * silinince "tekrar" alani kapiyi yesil tutuyordu - yani komsu alan olculen
+   * alanin yerine geciyordu. Her dosyada KAC alanin ipucu tasidigi sayiliyor.
+   */
+  const kac = (src, re) => (src.match(re) ?? []).length;
+  const CIFT = [
+    ["giris e-postasi", () => (kac(auth, /autoComplete="email" textContentType="emailAddress"/g) === 2 ? "var" : "yok"), () => (kac(webAuth, /autoComplete="email"/g) === 1 ? "var" : "yok")],
+    ["ad", () => (kac(auth, /autoComplete="name" textContentType="name"/g) === 1 ? "var" : "yok"), () => (kac(webAuth, /autoComplete="name"/g) === 1 ? "var" : "yok")],
+    [
+      /*
+       * OLCUM BICIME DEGIL DAVRANISA BAKIYOR. Ilk surum mobildeki tam ifadeyi
+       * ariyordu (`mode === "signup" ? ... : ...`); web ayni karari TERS
+       * sirayla yaziyor (`mode === "signin" ? "current-password" : ...`) ve
+       * kapi dogru kodu "yok" diye bildirdi. Onemli olan iki ipucunun da
+       * gecmesi ve kararin KIPE baglanmasi - sirasi degil (§167'deki degisken
+       * adi dersinin aynisi).
+       */
+      "parola (kipe gore)",
+      () => (kipeGore(auth) ? "var" : "yok"),
+      () => (kipeGore(webAuth) ? "var" : "yok"),
+    ],
+    ["mevcut parola", () => (kac(parola, /autoComplete="current-password"/g) === 1 ? "var" : "yok"), () => (kac(webParola, /autoComplete="current-password"/g) === 1 ? "var" : "yok")],
+    /* Yeni parola IKI alanda: yeni ve "tekrar". */
+    ["yeni parola", () => (kac(parola, /autoComplete="new-password"/g) === 2 ? "var" : "yok"), () => (kac(webParola, /autoComplete="new-password"/g) === 2 ? "var" : "yok")],
+    ["sifirlanan parola", () => (kac(sifirla, /autoComplete="new-password"/g) === 2 ? "var" : "yok"), () => (kac(webSifirla, /autoComplete="new-password"/g) === 2 ? "var" : "yok")],
+  ];
+  const mob = CIFT.map(([ad, m]) => ad + "=" + m());
+  const web = CIFT.map(([ad, , w]) => ad + "=" + w());
+  const beklenen = CIFT.map(([ad]) => ad + "=var");
+  sameList("otomatik doldurma ipucu", mob, web);
+  sameList("mobil otomatik doldurma", mob, beklenen, "bulunan", "beklenen");
+  sameList("web otomatik doldurma", web, beklenen, "bulunan", "beklenen");
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"

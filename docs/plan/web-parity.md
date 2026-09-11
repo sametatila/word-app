@@ -9086,3 +9086,36 @@ Kapı ilk sürümde fazla katıydı: onay ve bildirim kutularını "adsız" sayd
 oysa ikisi rol + içerik üzerinden okunuyordu. Ölçümü gevşetmek yerine kodu
 tekleştirdim — ölçütü gerçeğe uydurmak yerine gerçeği ölçüte çektim, çünkü
 burada ölçüt daha iyiydi.
+
+## §11.276 — Android'de şifre yöneticisi giriş formunu dolduramıyordu
+
+Form alanlarının etiket taraması **simetrik** çıktı: iki platform da alanları
+yer tutucuyla adlandırıyor (tarayıcı ve TalkBack onu ad olarak okuyor, yani
+alanlar kullanılabilir — yazmaya başlayınca görsel etiketin kaybolması ayrı ve
+daha küçük bir konu). Ayrışan şey **otomatik doldurmaydı.**
+
+Web on üç alanda `autoComplete` veriyor: e-posta, ad, mevcut parola, yeni
+parola, tek kullanımlık kod. Mobilde yalnız dört alan vardı ve üçü SMS koduydu
+— yani **Android'de kayıtlı parolası olan kullanıcıya öneri hiç çıkmıyor**,
+giriş elle yazılıyordu. Altı alan ipucunu aldı (`autoComplete` Android,
+`textContentType` iOS): giriş e-postası, sıfırlama e-postası, ad, giriş
+parolası, mevcut/yeni parola ve sıfırlanan parola.
+
+İpucunun **doğru olması** ayrıca önemli: kayıtta `new-password`, girişte
+`current-password`. Yanlışını vermek yöneticiye yanlış kaydı önerir — yeni
+parolayı eskisinin üzerine yazmak gibi. Kapı bu yüzden yalnız "ipucu var mı"
+demiyor, hangi ipucu olduğunu da ölçüyor.
+
+**§180** iki kez düzeltildi ve ikisi de bu oturumda öğrenilmiş derslerin
+tekrarıydı:
+
+1. Ölçüm mobildeki **tam ifadeyi** arıyordu; web aynı kararı ters sırayla
+   yazıyor (`mode === "signin" ? "current-password" : …`) ve kapı doğru kodu
+   "yok" diye bildirdi. Önemli olan biçim değil davranış: iki ipucunun da
+   geçmesi ve kararın kipe bağlanması (§167'deki değişken adı dersi).
+2. Ölçüm dosyada ipucunun **geçmesine** bakıyordu; giriş e-postasının ipucu
+   silinince sıfırlama ekranındaki e-posta alanı, yeni parolanınki silinince
+   "tekrar" alanı kapıyı yeşil tutuyordu — komşu alan ölçülenin yerine
+   geçiyordu. Artık her dosyada kaç alanın ipucu taşıdığı sayılıyor.
+
+Beş enjeksiyonun beşi son hâlde yakalandı.
