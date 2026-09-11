@@ -107,7 +107,13 @@ export function ReactionBar({
                 <button
                   key={k}
                   type="button"
-                  role="menuitem"
+                  /* Secicide DE hangi tepkinin benim oldugu yalnizca zemin
+                     tintinden okunuyordu. Menude secilebilir oge
+                     `menuitemradio` + `aria-checked` ister; `menuitem`
+                     durum tasimaz. Mobil karsiligi da ayni turda
+                     `accessibilityRole="radio"` aldi. */
+                  role="menuitemradio"
+                  aria-checked={s.mine === k}
                   title={t(REACTION_LABEL_KEYS[k])}
                   aria-label={t(REACTION_LABEL_KEYS[k])}
                   onClick={() => void pick(k)}
