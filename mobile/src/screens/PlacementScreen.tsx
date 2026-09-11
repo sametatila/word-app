@@ -84,6 +84,19 @@ const STAGE_TITLE_KEY: Record<string, string> = {
   vocab: "plc.vocab", grammar: "plc.grammar", reading: "plc.reading", listening: "plc.listening",
 };
 
+/**
+ * BECERİ PROFİLİ — web `lib/placement-score` `describePerSkill` karşılığı.
+ *
+ * Sunucu dört aşamanın her biri için ayrı bir seviye döndürüyor (`perSkill`)
+ * ve tanıtım ekranı bunu açıkça vaat ediyor ("sonunda bir seviye önerisi ve
+ * BECERİ PROFİLİ alırsın"). Androidde o satır hiç çizilmiyordu: vaat edilen
+ * şey veri olarak geliyor, ekranda görünmüyordu. Aşama adları sınavın kendi
+ * bölüm adlarıyla aynı — ikinci bir metin yazılmadı.
+ */
+const SKILL_LABEL_KEY: Record<string, string> = {
+  vocab: "exam.sec_vocab", grammar: "exam.sec_grammar", reading: "exam.sec_reading", listening: "exam.sec_listening",
+};
+
 function StageHead({ head, colors }: { head: { title: string; text?: string; segments?: { speaker?: string; text: string }[]; listen: boolean }; colors: Palette }) {
   const say = () => {
     const parcalar = head.segments?.length ? head.segments.map((sg) => sg.text) : head.text ? [head.text] : [];
@@ -102,6 +115,15 @@ function StageHead({ head, colors }: { head: { title: string; text?: string; seg
       )}
     </View>
   );
+}
+
+/** `perSkill` -> "Kelime B1 · Dilbilgisi A2 · ..." (web `describePerSkill`). */
+function describePerSkill(perSkill: Record<string, string | null> | undefined): string {
+  if (!perSkill) return "";
+  return Object.keys(perSkill)
+    .filter((k) => perSkill[k] !== undefined && SKILL_LABEL_KEY[k])
+    .map((k) => `${t(SKILL_LABEL_KEY[k])} ${perSkill[k] ?? t("plc.below_a1")}`)
+    .join(" · ");
 }
 
 export function PlacementScreen() {
@@ -141,6 +163,16 @@ export function PlacementScreen() {
    * yoktu. Web beş seviyeyi çip olarak gösteriyor (`placement-test`).
    */
   const [chosen, setChosen] = useState<string | null>(null);
+  /*
+   * TANITIM EKRANI — web `placement/placement-test` `phase === "intro"`.
+   *
+   * Android testi DOĞRUDAN başlatıyordu: kaç aşama olduğunu, ne kadar
+   * süreceğini ve sonunda seviyeyi YİNE KENDİSİNİN seçeceğini hiçbir yerde
+   * okumadan ilk sorunun içinde buluyordu. Yerleştirme sınavı kullanıcının
+   * uygulamayla ilk ciddi teması; ne olduğunu bilmeden girilen on beş
+   * dakikalık bir ölçüm yarıda bırakılıyor.
+   */
+  const [started, setStarted] = useState(false);
   const answers = useRef<PlacementAnswer[]>([]);
 
   useEffect(() => {
@@ -151,10 +183,6 @@ export function PlacementScreen() {
     // Oturumlu kullanıcıda gerçek test gelmezse "örnek" sorulara DÜŞÜLMEZ (uydurma sonuç
     // seviyeyi yanlış ayarlardı); hata gösterilir, tekrar denenir. Misafir (onboarding)
     // yerleşik soru setini kullanır — o akışın gerçek testi budur.
-    /* Test BASLADI — web `placement-test` ile aynı ad ve aynı kind biçimi.
-       Mobil yalnız bitişi yazıyordu, yani "kaç kişi başlayıp bıraktı"
-       hesaplanamıyordu: huninin payı eksikti. */
-    track("exam_start", 0, "placement:A1");
     if (!onboarding) {
       /* Durum test İSTEĞİNDEN önce gelmiyor: iki istek paralel gidiyor ve
          bekleme süresi doluysa ekran soruları hiç göstermeden kapanıyor.
@@ -280,6 +308,34 @@ export function PlacementScreen() {
     );
   }
 
+  /* TANITIM — soru gelmeden çizilmiyor: "başla" düğmesi boş bir teste
+     götürürdü. `exam_start` de tam burada yazılıyor; eskiden ekranı AÇAN
+     herkes "başladı" sayılıyordu ve huninin payı olduğundan büyüktü. */
+  if (!started && !done && total > 0) {
+    const last = status?.last;
+    return (
+      <View style={{ flex: 1, backgroundColor: colors.bg, paddingTop: insets.top + spacing.sm, paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.lg, justifyContent: "center" }}>
+        <Text variant="h1" style={{ textAlign: "center" }}>{t("onboarding.kisa_yerlestirme_sinavi")}</Text>
+        <Text variant="body" color={colors.textMuted} style={{ textAlign: "center", marginTop: spacing.md, lineHeight: 22 }}>{t("plc.intro")}</Text>
+        {last ? (
+          <Text variant="caption" color={colors.textMuted} style={{ textAlign: "center", marginTop: spacing.lg, lineHeight: 20 }}>
+            {t("placement.last_taken", { date: last.at.slice(0, 10) })} {last.suggested}
+            {last.accepted ? ` ${t("placement.you_chose", { level: last.accepted })}` : ""}
+          </Text>
+        ) : null}
+        <PressableScale
+          onPress={() => { track("exam_start", 0, "placement:A1"); setStarted(true); }}
+          style={[{ width: "100%", backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: 16, alignItems: "center", marginTop: spacing.xxl }, softShadow(colors.primary, 10)]}
+        >
+          <Text variant="h3" color={colors.onPrimary}>{t("common.start")}</Text>
+        </PressableScale>
+        <PressableScale onPress={leave} style={{ paddingVertical: spacing.lg, marginTop: spacing.sm }}>
+          <Text variant="bodyStrong" color={colors.textMuted}>{t("common.later")}</Text>
+        </PressableScale>
+      </View>
+    );
+  }
+
   return (
     <View style={{ flex: 1, backgroundColor: colors.bg, paddingTop: insets.top + spacing.sm, paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.lg }}>
       <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, marginBottom: spacing.xl }}>
@@ -338,9 +394,24 @@ export function PlacementScreen() {
             <Text variant="display" color={colors.onPrimary} style={{ fontSize: 40 }}>{level}</Text>
           </View>
           <Text variant="h1" style={{ marginTop: spacing.xl }}>{t("placement.your_level", { level: level })}</Text>
-          <Text variant="body" color={colors.textMuted} style={{ marginTop: spacing.xs, marginBottom: spacing.xxl, textAlign: "center" }}>
+          <Text variant="body" color={colors.textMuted} style={{ marginTop: spacing.xs, textAlign: "center" }}>
             {t("placement.result", { total: total, correct: correct })}
           </Text>
+          {result && describePerSkill(result.perSkill) ? (
+            <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.sm, textAlign: "center", lineHeight: 20 }}>
+              {describePerSkill(result.perSkill)}
+            </Text>
+          ) : null}
+          {/* SONUÇ YAZILAMADI uyarısı çiplerden ÖNCE: kullanıcı seviyesini
+              seçmeden önce bilmeli. Web aynı sırayı tutuyor. */}
+          {notSaved ? <Text variant="caption" color={colors.dangerText} style={{ textAlign: "center", marginBottom: spacing.md, lineHeight: 19 }}>{t("placement.not_saved")}</Text> : null}
+          {/* ÖNERİ NEREDEN GELİYOR. Beş çip seçilebilir duruyordu ama neden
+              birinin işaretli olduğu ve seçimin gerçekten kullanıcıda olduğu
+              hiçbir yerde yazmıyordu. Web aynı yerde söylüyor. */}
+          {user && result ? (
+            <Text variant="caption" color={colors.textFaint} style={{ marginTop: spacing.md, marginBottom: spacing.lg, textAlign: "center", lineHeight: 19 }}>{t("placew.median_note")}</Text>
+          ) : null}
+          <View style={{ height: spacing.lg }} />
           {/* Beş seviye: öneri işaretli, seçim kullanıcının. Yalnız oturumlu
               kullanıcıda - misafir akışında kabul edilecek bir kayıt yok. */}
           {user && result ? (
@@ -350,7 +421,6 @@ export function PlacementScreen() {
               ))}
             </View>
           ) : null}
-          {notSaved ? <Text variant="caption" color={colors.dangerText} style={{ textAlign: "center", marginBottom: spacing.md, lineHeight: 19 }}>{t("placement.not_saved")}</Text> : null}
           {saved && <Text variant="bodyStrong" color={colors.successText} style={{ marginBottom: spacing.md }}>{t("placement.saved")}</Text>}
           <PressableScale onPress={applyLevel} style={[{ width: "100%", backgroundColor: colors.primary, borderRadius: radii.lg, paddingVertical: spacing.lg, alignItems: "center" }, softShadow(colors.primary, 10)]}>
             <Text variant="h3" color={colors.onPrimary}>

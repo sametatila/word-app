@@ -4493,6 +4493,73 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   sameList("ders kapanis ozeti", sira(mob, 1), sira(web, 0));
 }
 
+/* ── 130. yerlestirme sinavi ──────────────────────────────────────────────
+ * Iki fark cikti, ikisi de Androidde:
+ *   - TANITIM EKRANI yoktu: kac asama oldugunu, ne kadar surecegini ve
+ *     sonunda seviyeyi YINE KENDISININ sececegini hicbir yerde okumadan ilk
+ *     sorunun icinde buluyordu. Yerlestirme kullanicinin uygulamayla ilk
+ *     ciddi temasi; ne oldugunu bilmeden girilen on bes dakikalik bir olcum
+ *     yarida birakiliyor. `exam_start` de ekran ACILINCA yaziliyordu.
+ *   - BECERI PROFILI cizilmiyordu. Sunucu dort asamanin her biri icin ayri
+ *     bir seviye donduruyor (`perSkill`) ve tanitim bunu acikca vaat ediyor
+ *     ("beceri profili alirsin") - vaat edilen sey veri olarak geliyor,
+ *     ekranda gorunmuyordu. Onerinin NEDEN o seviye oldugu (dort asamanin
+ *     ortancasi) da yalniz webde yaziliydi.
+ *
+ * Olculen: tanitim ve sonuc ekranlarinin bolum sirasi, `exam_start`in ani.
+ *
+ * SINIRI YAZILI: kapi KAYNAK METNI okuyor, calisma anini degil. Bir bolumun
+ * silinmesini ya da adinin degismesini goruyor; `if (false)` ile olu birakmayi
+ * GORMUYOR. Gercek gerileme birincisi gibi oluyor (biri blogu siliyor ya da
+ * anahtari degistiriyor), o yuzden enjeksiyonlar da oyle yapildi. */
+{
+  const BOLUM = [
+    ["tanitim basligi", /onboarding\.kisa_yerlestirme_sinavi/, /onboarding\.kisa_yerlestirme_sinavi/],
+    ["tanitim metni", /plc\.intro/, /plc\.intro/],
+    ["son alma", /placement\.last_taken/, /placement\.last_taken/],
+    ["basla", /t\("common\.start"\)/, /t\("common\.start"\)/],
+    ["beceri profili", /describePerSkill\(result\.perSkill/, /describePerSkill\(result\.perSkill/],
+    ["ortanca notu", /placew\.median_note/, /placew\.median_note/],
+    ["kaydedilmedi", /placement\.not_saved/, /placement\.not_saved/],
+    ["seviye cipleri", /placement\.suggested/, /placement\.suggested/],
+  ];
+  const strip = (x) => x.replace(/\/\*[\s\S]*?\*\//g, " ").replace(/(^|[^:"'`\\])\/\/.*$/gm, "$1");
+  const web = strip(read("src/components/placement/placement-test.tsx"));
+  const mob = strip(read("mobile/src/screens/PlacementScreen.tsx"));
+  /* TANITIMDAN BASLIYOR: dosyanin basindan aramak mobilde "son alma"yi en
+     one koyuyordu, cunku o dizgi BEKLEME SURESI ekraninda da geciyor - ayri
+     bir ekran, ayni anahtar. Olcunun komsusunu olcmenin bir baska bicimi. */
+  const bastan = (src, bas) => (src.indexOf(bas) < 0 ? src : src.slice(src.indexOf(bas)));
+  const sira = (src, ix) =>
+    BOLUM.map(([ad, ...d]) => [ad, src.search(d[ix])])
+      .filter(([, i]) => i >= 0)
+      .sort((a, b) => a[1] - b[1])
+      .map(([ad]) => ad);
+  sameList(
+    "yerlestirme ekranlari",
+    sira(bastan(mob, "onboarding.kisa_yerlestirme_sinavi"), 1),
+    sira(bastan(web, "onboarding.kisa_yerlestirme_sinavi"), 0),
+  );
+
+  /* `exam_start` tanitimin BASLA dugmesinde yazilmali, ekran acilisinda
+     degil: ekrani acan herkesi "basladi" saymak huninin payini oldugundan
+     buyuk gosteriyordu (§11.219'un ayni dersi). */
+  const ani = (src) => {
+    const i = src.indexOf('exam_start", 0, "placement');
+    if (i < 0) return "hic yazilmiyor";
+    /* EN YAKIN onceki isaret kazanir: cagri bir `useEffect` govdesinde mi
+       (ekran acilisi) yoksa bir baslatma yolunda mi (dugme ya da `start`
+       fonksiyonu). Sabit uzunlukta bir pencereye bakmak webde yanlis cevap
+       veriyordu - orada cagri `function start()` icinde, dugme ise baska
+       satirda. */
+    const once = src.slice(0, i);
+    const acilis = once.lastIndexOf("useEffect(");
+    const baslat = Math.max(once.lastIndexOf("function start("), once.lastIndexOf("onPress={"), once.lastIndexOf("onClick={"));
+    return baslat > acilis ? "basla dugmesinde" : "ekran acilisinda";
+  };
+  sameList("yerlestirme olcum ani", [ani(mob)], [ani(web)]);
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"

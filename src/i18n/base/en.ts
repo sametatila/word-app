@@ -914,6 +914,9 @@ export const enBase: Record<string, string> = {
   "placement.calculating_your_level": "Calculating your level…",
   /* Yerleştirme aşamasının ne sorduğu, aşamayı atlama ve "bilmiyorum".
      Üçü de mobilde yoktu. */
+  "plc.below_a1": "below A1",
+  "placew.median_note": "The suggestion is the median of the four stages: a single strong or weak skill doesn't decide it alone. Pick a different level if you like — it's your call.",
+  "plc.intro": "Four short stages — vocabulary, grammar, reading, listening — 15 minutes at most. At the end you get a level suggestion and a skills profile; you still choose the level yourself.",
   "plc.vocab": "Pick the meaning of the German word. If you don't know it, don't guess — say 'I don't know' and the test measures you accurately.",
   "plc.grammar": "Which form goes in the gap in the table? If you don't know, say 'I don't know'.",
   "plc.reading": "Read the text and answer the three questions.",

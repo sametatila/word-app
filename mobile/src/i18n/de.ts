@@ -912,6 +912,9 @@ export const de: Record<string, string> = {
   "placement.calculating_your_level": "Dein Niveau wird berechnet…",
   /* Yerleştirme aşamasının ne sorduğu, aşamayı atlama ve "bilmiyorum".
      Üçü de mobilde yoktu. */
+  "plc.below_a1": "unter A1",
+  "placew.median_note": "Der Vorschlag ist der Median der vier Stufen: eine einzelne starke oder schwache Fähigkeit entscheidet nicht allein. Wähl ruhig ein anderes Niveau — das liegt bei dir.",
+  "plc.intro": "Vier kurze Abschnitte — Wortschatz, Grammatik, Lesen, Hören — höchstens 15 Minuten. Am Ende bekommst du eine Niveauempfehlung und ein Fertigkeitsprofil; die Stufe wählst weiterhin du.",
   "plc.vocab": "Wähl die Bedeutung des deutschen Wortes. Wenn du es nicht weißt, rate nicht — sag „weiß nicht“, dann misst der Test richtig.",
   "plc.grammar": "Welche Form gehört in die Lücke der Tabelle? Wenn du es nicht weißt, sag „weiß nicht“.",
   "plc.reading": "Lies den Text und beantworte die drei Fragen.",

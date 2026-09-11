@@ -7508,3 +7508,35 @@ Kapı ilk çalıştırmasında "yapabildiklerim"i **en başta** gördü: dilim y
 atmıyordu ve `lessonp.i_can`e ATIF yapan bir yorum bölümün kendisinden önce
 geliyordu. Ölçünün komşusunu ölçmenin on birinci biçimi. Üç enjeksiyonun üçü
 de yakalandı.
+
+### 11.221 Yerleştirme sınavı: vaat edilen profil veri olarak geliyor, ekranda yoktu
+
+İki eksik, ikisi de Android'de:
+
+- **Tanıtım ekranı yoktu.** Kullanıcı kaç aşama olduğunu, en çok on beş dakika
+  süreceğini ve sonunda seviyeyi **yine kendisinin seçeceğini** hiçbir yerde
+  okumadan ilk sorunun içinde buluyordu. Yerleştirme, kullanıcının uygulamayla
+  ilk ciddi teması; ne olduğunu bilmeden girilen on beş dakikalık bir ölçüm
+  yarıda bırakılıyor. §11.219'un aynısı, bir ekran ötede.
+- **Beceri profili çizilmiyordu.** Sunucu dört aşamanın her biri için ayrı bir
+  seviye döndürüyor (`perSkill`) ve tanıtım metni bunu açıkça vaat ediyor:
+  *"sonunda bir seviye önerisi ve beceri profili alırsın."* Android'de o satır
+  hiç yoktu — **vaat edilen şey veri olarak geliyor, ekranda görünmüyordu.**
+  Önerinin neden o seviye olduğu (dört aşamanın ortancası) ve seçimin gerçekten
+  kullanıcıda olduğu da yalnız webde yazılıydı.
+
+Yanında iki küçük düzeltme: `exam_start` artık BAŞLA'ya basınca yazılıyor
+(ekranı açan herkesi "başladı" saymak huninin payını olduğundan büyük
+gösteriyordu), ve "sonuç kaydedilemedi" uyarısı seviye çiplerinden **önce**
+duruyor — kullanıcı seçimini yapmadan bilmeli.
+
+**§130** iki ekranın bölüm sırasını ve `exam_start`in anını ölçüyor. Ölçüm anı
+için **en yakın önceki işaret** kazanıyor (`useEffect` mi, `start`/düğme mi):
+sabit uzunlukta bir pencereye bakmak webde yanlış cevap veriyordu, çünkü orada
+çağrı `function start()` içinde ve düğme başka satırda.
+
+Kapının **sınırı da yazılı**: kaynak metni okuyor, çalışma anını değil. Bir
+bölümün silinmesini ya da adının değişmesini görüyor, `if (false)` ile ölü
+bırakmayı görmüyor — ilk iki enjeksiyonum tam olarak o yüzden geçti ve
+enjeksiyonlar gerçek gerilemeye benzetilerek (blok silinerek) tekrarlandı.
+Dördünün dördü de yakalandı.

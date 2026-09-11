@@ -914,6 +914,9 @@ export const trBase: Record<string, string> = {
   "placement.calculating_your_level": "Seviyen hesaplanıyor…",
   /* Yerleştirme aşamasının ne sorduğu, aşamayı atlama ve "bilmiyorum".
      Üçü de mobilde yoktu. */
+  "plc.below_a1": "A1 altı",
+  "placew.median_note": "Öneri, dört aşamanın ortanca seviyesi: tek bir güçlü ya da zayıf beceri sonucu tek başına belirlemez. İstersen farklı bir seviye seç — karar senin.",
+  "plc.intro": "Dört kısa aşama — kelime, dilbilgisi, okuma, dinleme — en çok 15 dakika. Sonunda bir seviye önerisi ve beceri profili alırsın; seviyeyi yine sen seçersin.",
   "plc.vocab": "Almanca kelimenin karşılığını seç. Bilmiyorsan tahmin etme, 'bilmiyorum' de — test o zaman doğru ölçer.",
   "plc.grammar": "Tablodaki boşluğa hangi biçim gelir? Bilmiyorsan 'bilmiyorum'.",
   "plc.reading": "Metni oku, üç soruyu cevapla.",
