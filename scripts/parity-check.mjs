@@ -3360,6 +3360,38 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   sameList("karistirma ciftleri", ciftler("mobile/src/lib/confusables.ts"), ciftler("src/lib/confusables.ts"));
 }
 
+/* ── 97. yuruyus modunun cikmaz durumlari ─────────────────────────────────
+ * Bir ag hatasi BITMIS TUR gibi gosterilmemeli. Androidde kuyruk cagrisinin
+ * iki `catch`i de sessizdi ve kullaniciyi "Tur bitti! 0/0 - kaydedildi"
+ * ekranina dusuruyordu: once mikrofon izni isteniyor, ekran kilidi aciliyor,
+ * arka plan servisi basliyor, karsilama okunuyor, sonra tur bitmis sayiliyor.
+ * Ustelik bos kuyrukla (tekrar zamani gelen kelime yoksa) da ayni sey
+ * oluyordu. Web `walk-player` uc ayri ekran ciziyor: hata, izin yok, bos.
+ *
+ * `unsupported` olcum disi: tarayicinin konusma tanimasi olmayabilir, Android
+ * kendi tanijicisiyla geliyor. */
+{
+  const durumlar = (p, re) => {
+    const src = read(p).replace(/\/\*[\s\S]*?\*\//g, " ").replace(/\/\/[^\n]*/g, " ");
+    return Object.entries(re).map(([ad, x]) => ad + "=" + (x.test(src) ? "var" : "yok"));
+  };
+  sameList(
+    "yuruyus modu cikmaz durumlari",
+    durumlar("mobile/src/screens/WalkModeScreen.tsx", {
+      hata: /phase === "error"/,
+      "izin yok": /phase === "denied"/,
+      bos: /setNoMore\(true\); setPhase\("done"\)/,
+      duraklama: /phase === "stopped"/,
+    }),
+    durumlar("src/components/walk-player.tsx", {
+      hata: /status === "error"/,
+      "izin yok": /status === "denied"/,
+      bos: /status === "empty"/,
+      duraklama: /status === "paused"/,
+    }),
+  );
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"

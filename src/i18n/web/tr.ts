@@ -314,8 +314,6 @@ export const trWeb: Record<string, string> = {
   "walk.title": "Yürürken",
   "walk.paused": "Duraklatıldı",
   "walk.preparing": "Tur hazırlanıyor…",
-  "walk.error_title": "Tur açılamadı",
-  "walk.error_sub": "Bağlantını kontrol edip tekrar dene.",
   "walk.empty_title": "Bugünlük tur yok",
   "walk.empty_sub": "Tekrar zamanı gelen kelime kalmamış.",
   "walk.unsupported_title": "Bu tarayıcı sesli cevabı desteklemiyor",

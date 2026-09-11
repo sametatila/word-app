@@ -1,11 +1,11 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useCallback, useEffect, useRef, useState } from "react";
 import { t as tx } from "../lib/i18n";
 import { View, Animated, Easing } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { useNavigation } from "@react-navigation/native";
 import { Text } from "../ui/Text";
 import { PressableScale } from "../ui/PressableScale";
-import { ChevronRightIcon, WalkIcon, MicIcon, CheckIcon, XIcon, ShareIcon } from "../ui/icons";
+import { ChevronRightIcon, WalkIcon, MicIcon, CheckIcon, XIcon, ShareIcon, AlertIcon } from "../ui/icons";
 import { Mascot } from "../ui/Mascot";
 import { Celebrate } from "../ui/Celebrate";
 import { ProgressRing } from "../ui/ProgressRing";
@@ -35,7 +35,7 @@ import { hasMicConsent, setMicConsent } from "../lib/micConsent";
 const withArtikel = (w: { artikel?: string | null; de: string }) => (w.artikel ? `${w.artikel} ${w.de}` : w.de);
 const gap = (ms = 850) => nativeDelay(ms); // native (arka planda da çalışır; RN setTimeout ekran-kapalıda durur)
 
-type Phase = "intro" | "teaching" | "speaking" | "listening" | "judging" | "continue" | "done" | "stopped" | "denied";
+type Phase = "intro" | "teaching" | "speaking" | "listening" | "judging" | "continue" | "done" | "stopped" | "denied" | "error";
 type Verdict = "correct" | "wrong" | "skip" | "unheard" | null;
 
 /** Yürüyüş kelimesi — demo Word + oyunların gösterdiği İngilizce gloss (`en`). */
@@ -169,17 +169,30 @@ export function WalkModeScreen() {
     void submitAnswers(pending, day.current, final ? secs : 0).catch(() => { /* kuyruğa alındı */ });
   }
 
-  // Walk kuyruğunu yükle (walk=1). Resume YOK — her yürüyüş taze due kelimelerle başlar.
-  useEffect(() => {
-    let alive = true;
-    if (user) {
-      fetchSession(day.current, { walk: true }).then((p) => {
-        const wr = mapRounds(p.rounds ?? []);
-        if (alive && wr.length) { setRounds(wr); setCurWord(wr[0].word); }
-      }).catch(() => { /* girişsiz/hatada demo kalır */ });
-    }
-    return () => { alive = false; };
+  /*
+    Walk kuyruğunu yükle (walk=1). Resume YOK — her yürüyüş taze due kelimelerle
+    başlar.
+
+    HATA BİR SONUÇ DEĞİL. Burada `catch` sessizdi ("girişsiz/hatada demo kalır")
+    ve o yorum eskimişti: demo yolu kaldırılınca geriye BOŞ kuyruk kalıyordu.
+    Kullanıcı "Başla"ya basınca mikrofon izni isteniyor, ekran kilidi açılıyor,
+    arka plan servisi başlıyor, karşılama okunuyor ve tur hemen "Tur bitti!
+    0/0 · kaydedildi" ekranına düşüyordu: bir ağ hatası BİTMİŞ TUR gibi
+    gösteriliyordu. Web `walk-player` ayrı bir hata ekranı çiziyor.
+  */
+  const loadQueue = useCallback(() => {
+    if (!user) return;
+    setPhase("intro");
+    fetchSession(day.current, { walk: true }).then((p) => {
+      if (!mounted.current) return;
+      const wr = mapRounds(p.rounds ?? []);
+      if (wr.length) { setRounds(wr); setCurWord(wr[0].word); return; }
+      // Tekrar zamanı gelen kelime yok: bitiş ekranının kendi "kalmadı" hâli.
+      setNoMore(true); setPhase("done");
+    }).catch(() => { if (mounted.current) setPhase("error"); });
   }, [user]);
+
+  useEffect(() => { loadQueue(); }, [loadQueue]);
 
   // Mount/unmount — çıkışta biriken cevapları yaz.
   useEffect(() => {
@@ -481,6 +494,9 @@ export function WalkModeScreen() {
   }
 
   async function start(rs: WalkRound[], greet = true) {
+    // Boş kuyrukla yürüyüş başlatmak mikrofon izni isteyip hemen "bitti"
+    // demek olurdu; bitiş ekranının "tekrar kalmadı" hâli doğrusu.
+    if (!rs.length) { setNoMore(true); setPhase("done"); return; }
     const granted = await ensureMicPermission();
     if (!granted) { setPhase("denied"); return; }
     setKeepAwake(true); // ekran turu boyunca sönmesin
@@ -507,7 +523,7 @@ export function WalkModeScreen() {
       const wr = mapRounds(p.rounds ?? []);
       if (wr.length) { setRounds(wr); setCurWord(wr[0].word); start(wr, false); return; }
       setNoMore(true); setPhase("done"); void sayNative(tx("walk.no_more"));
-    } catch { setPhase("done"); }
+    } catch { setPhase("error"); }
   }
 
   function finishDone() { setKeepAwake(false); stopWalkService(); setPhase("done"); }
@@ -697,6 +713,18 @@ export function WalkModeScreen() {
           </PressableScale>
           <PressableScale onPress={() => nav.goBack()} style={{ paddingVertical: spacing.sm }}>
             <Text variant="bodyStrong" color={colors.textMuted}>{tx("common.finish")}</Text>
+          </PressableScale>
+        </View>
+      ) : phase === "error" ? (
+        <View style={{ flex: 1, alignItems: "center", justifyContent: "center", gap: spacing.lg, paddingHorizontal: spacing.xl }}>
+          <AlertIcon color={colors.textMuted} size={64} />
+          <Text variant="h2" style={{ textAlign: "center" }}>{tx("walk.error_title")}</Text>
+          <Text variant="body" color={colors.textMuted} style={{ textAlign: "center" }}>{tx("walk.error_sub")}</Text>
+          <PressableScale onPress={loadQueue} style={[{ alignSelf: "stretch", borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: 16, alignItems: "center" }, softShadow(colors.primary, 10)]}>
+            <Text variant="h3" color={colors.onPrimary}>{tx("common.try_again")}</Text>
+          </PressableScale>
+          <PressableScale onPress={() => nav.goBack()} style={{ paddingVertical: spacing.sm }}>
+            <Text variant="bodyStrong" color={colors.textMuted}>{tx("common.go_back")}</Text>
           </PressableScale>
         </View>
       ) : phase === "denied" ? (

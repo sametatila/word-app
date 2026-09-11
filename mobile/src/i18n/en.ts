@@ -1218,6 +1218,8 @@ export const en: Record<string, string> = {
   "walk.not_heard": "I didn't catch that.",
   "walk.tour_done": "Tour finished. {correct} correct out of {total}.",
   "walk.tour_done_continue": "Tour finished. {correct} correct out of {total}. Shall we continue?",
+  "walk.error_title": "The round couldn't be opened",
+  "walk.error_sub": "Check your connection and try again.",
   "walk.greeting": "Here we go. Listen to the meaning, then say it in {lang}.",
   "walk.no_more": "No reviews left for today.",
   "walk.continue_yes_no": "Shall we continue? Say yes or no.",

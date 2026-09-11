@@ -289,8 +289,6 @@ export const enWeb: Record<string, string> = {
   "walk.title": "On the move",
   "walk.paused": "Paused",
   "walk.preparing": "Getting the round ready…",
-  "walk.error_title": "The round couldn't be opened",
-  "walk.error_sub": "Check your connection and try again.",
   "walk.empty_title": "No round for today",
   "walk.empty_sub": "No words are due for review.",
   "walk.unsupported_title": "This browser doesn't support spoken answers",

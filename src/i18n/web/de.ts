@@ -289,8 +289,6 @@ export const deWeb: Record<string, string> = {
   "walk.title": "Unterwegs",
   "walk.paused": "Pausiert",
   "walk.preparing": "Die Runde wird vorbereitet…",
-  "walk.error_title": "Die Runde ließ sich nicht öffnen",
-  "walk.error_sub": "Prüf deine Verbindung und versuch es noch mal.",
   "walk.empty_title": "Heute keine Runde",
   "walk.empty_sub": "Es steht kein Wort zur Wiederholung an.",
   "walk.unsupported_title": "Dieser Browser unterstützt gesprochene Antworten nicht",
