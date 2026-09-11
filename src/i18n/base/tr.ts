@@ -1368,7 +1368,7 @@ export const trBase: Record<string, string> = {
   "voice.listen_to": "{name} sesini dinle",
   "unit.header": "{level} · {unit} {n}",
   "unit.now": "Şimdi",
-  "unit.steps_done": "{n}/{total} adım tamam",
+  "unit.steps_done": "{n}/{total} konuşma ve beceri tamam",
   "unitkind.checkpoint": "Kontrol",
   "unitkind.grammar": "Dil bilgisi",
   "unitkind.lesson": "Konuşma",

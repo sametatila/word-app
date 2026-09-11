@@ -1368,7 +1368,7 @@ export const enBase: Record<string, string> = {
   "voice.listen_to": "Listen to {name}",
   "unit.header": "{level} · {unit} {n}",
   "unit.now": "Now",
-  "unit.steps_done": "{n}/{total} steps done",
+  "unit.steps_done": "{n}/{total} speaking and skills done",
   "unitkind.checkpoint": "Checkpoint",
   "unitkind.grammar": "Grammar",
   "unitkind.lesson": "Speaking",

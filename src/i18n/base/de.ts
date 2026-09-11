@@ -1368,7 +1368,7 @@ export const deBase: Record<string, string> = {
   "voice.listen_to": "{name} anhören",
   "unit.header": "{level} · {unit} {n}",
   "unit.now": "Jetzt",
-  "unit.steps_done": "{n}/{total} Schritte fertig",
+  "unit.steps_done": "{n}/{total} Sprechen und Fähigkeiten fertig",
   "unitkind.checkpoint": "Kontrolle",
   "unitkind.grammar": "Grammatik",
   "unitkind.lesson": "Sprechen",
