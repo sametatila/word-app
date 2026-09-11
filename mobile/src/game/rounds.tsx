@@ -356,7 +356,7 @@ function Prompt({ label, big, sub, speakText, colors }: { label: string; big: st
 const ASSESS_WAIT_MS = 6000;
 const ASSESS_ACCEPT = 75;
 
-function OptionButton({ text, sub, state, onPress, colors, idleTint }: { text: string; sub?: string | null; state: "idle" | "correct" | "wrong"; onPress: () => void; colors: Palette; idleTint?: string }) {
+function OptionButton({ text, sub, state, onPress, colors, idleTint, answered = false, chosen = false }: { text: string; sub?: string | null; state: "idle" | "correct" | "wrong"; onPress: () => void; colors: Palette; idleTint?: string; answered?: boolean; chosen?: boolean }) {
   const bg = state === "correct" ? colors.successSoft : state === "wrong" ? colors.dangerSoft : colors.surface;
   const border = state === "correct" ? colors.success : state === "wrong" ? colors.danger : idleTint ?? colors.border;
   const fg = state === "correct" ? colors.success : state === "wrong" ? colors.danger : idleTint ?? colors.text;
@@ -377,9 +377,23 @@ function OptionButton({ text, sub, state, onPress, colors, idleTint }: { text: s
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [state]);
+  /* Ekran okuyucuya verilen iki durum RENGI degil, TURUN GERCEK halini
+     anlatmali ve ikisi de yanlis seyi olcuyordu:
+
+     - `selected: state !== "idle"` cevap verildikten sonra DOGRU sikki
+       "secili" diye okutuyordu, kullanici baskasini secmis olsa bile. Yani
+       yanlis cevaplayan biri ekrana donup "secili" duydugu sikki kendi
+       cevabi saniyordu. `chosen` gercekten dokunulan siktir.
+     - `disabled: state !== "idle"` yalnizca dogru sikki ve secilen yanlisi
+       kapali sayiyordu; DOKUNULMAYAN diger sikler "acik" diye okunuyordu,
+       oysa `choose` cevaptan sonra hepsini yutuyor. `answered` turun kapali
+       olup olmadigini soyler.
+
+     Webde ayni bilgi dogal `disabled` (hepsinde) ve `OptionMark`in
+     erisilebilir adiyla (dogru/yanlis) veriliyor. */
   return (
     <Animated.View style={{ transform: [{ translateX: shake }, { scale: pop }] }}>
-      <PressableScale onPress={onPress} accessibilityLabel={sub ? `${text}, ${sub}` : text} accessibilityState={{ disabled: state !== "idle", selected: state !== "idle" }} accessibilityHint={state === "correct" ? tx("rounds.a11y_correct") : state === "wrong" ? tx("rounds.a11y_wrong") : undefined}
+      <PressableScale onPress={onPress} accessibilityLabel={sub ? `${text}, ${sub}` : text} accessibilityState={{ disabled: answered, selected: chosen }} accessibilityHint={state === "correct" ? tx("rounds.a11y_correct") : state === "wrong" ? tx("rounds.a11y_wrong") : undefined}
         style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between", backgroundColor: bg, borderColor: border, borderWidth: 1.5, borderRadius: radii.lg, paddingVertical: spacing.lg, paddingHorizontal: spacing.lg }}>
         <View style={{ flex: 1 }}>
           <Text variant="bodyStrong" color={fg}>{text}</Text>
@@ -415,7 +429,7 @@ function ChoiceRound({ round, word, onDone, colors }: { round: Round; word: Roun
       <View style={{ gap: spacing.md }}>
         {optionCards(round).map((o) => {
           const st = picked ? (o.text === answer ? "correct" : o.text === picked ? "wrong" : "idle") : "idle";
-          return <OptionButton key={o.text} text={o.text} sub={o.sub} state={st} onPress={() => choose(o)} colors={colors} />;
+          return <OptionButton key={o.text} text={o.text} sub={o.sub} state={st} onPress={() => choose(o)} colors={colors} answered={!!picked} chosen={o.text === picked} />;
         })}
       </View>
     </RoundShell>
@@ -439,7 +453,7 @@ function ArtikelRound({ word, onDone, colors }: { word: RoundWord; onDone: Done;
       <View style={{ flexDirection: "row", gap: spacing.md }}>
         {["der", "die", "das"].map((a) => {
           const st = picked ? (a === word.artikel ? "correct" : a === picked ? "wrong" : "idle") : "idle";
-          return <View key={a} style={{ flex: 1 }}><OptionButton text={a} state={st} idleTint={artikelTone(a, colors)} onPress={() => choose(a)} colors={colors} /></View>;
+          return <View key={a} style={{ flex: 1 }}><OptionButton text={a} state={st} idleTint={artikelTone(a, colors)} onPress={() => choose(a)} colors={colors} answered={!!picked} chosen={a === picked} /></View>;
         })}
       </View>
     </RoundShell>
@@ -464,7 +478,7 @@ function TrueFalseRound({ round, word, onDone, colors }: { round: Round; word: R
       <View style={{ flexDirection: "row", gap: spacing.md }}>
         {[{ v: true, l: tx("common.correct") }, { v: false, l: tx("common.wrong") }].map(({ v, l }) => {
           const st = ans !== null ? (v === round.isTrue ? "correct" : v === ans ? "wrong" : "idle") : "idle";
-          return <View key={l} style={{ flex: 1 }}><OptionButton text={l} state={st} onPress={() => choose(v)} colors={colors} /></View>;
+          return <View key={l} style={{ flex: 1 }}><OptionButton text={l} state={st} onPress={() => choose(v)} colors={colors} answered={ans !== null} chosen={v === ans} /></View>;
         })}
       </View>
     </RoundShell>
@@ -761,7 +775,7 @@ function ClozeRound({ round, onDone, colors }: { round: Round; onDone: Done; col
         <View style={{ gap: spacing.md }}>
           {opts.map((o) => {
             const st = picked ? (o === answer ? "correct" : o === picked ? "wrong" : "idle") : "idle";
-            return <OptionButton key={o} text={o} state={st} onPress={() => choose(o)} colors={colors} />;
+            return <OptionButton key={o} text={o} state={st} onPress={() => choose(o)} colors={colors} answered={!!picked} chosen={o === picked} />;
           })}
         </View>
       )}
@@ -789,7 +803,7 @@ function PluralRound({ round, word, onDone, colors }: { round: Round; word: Roun
       <View style={{ gap: spacing.md }}>
         {opts.map((o) => {
           const st = picked ? (o === answer ? "correct" : o === picked ? "wrong" : "idle") : "idle";
-          return <OptionButton key={o} text={`die ${o}`} state={st} onPress={() => choose(o)} colors={colors} />;
+          return <OptionButton key={o} text={`die ${o}`} state={st} onPress={() => choose(o)} colors={colors} answered={!!picked} chosen={o === picked} />;
         })}
       </View>
     </RoundShell>
@@ -919,7 +933,7 @@ function ListenRound({ round, word, onDone, colors }: { round: Round; word: Roun
       <View style={{ gap: spacing.md }}>
         {optionCards(round).map((o) => {
           const st = picked ? (o.text === word.tr ? "correct" : o.text === picked ? "wrong" : "idle") : "idle";
-          return <OptionButton key={o.text} text={o.text} sub={o.sub} state={st} onPress={() => choose(o)} colors={colors} />;
+          return <OptionButton key={o.text} text={o.text} sub={o.sub} state={st} onPress={() => choose(o)} colors={colors} answered={!!picked} chosen={o.text === picked} />;
         })}
       </View>
     </RoundShell>
