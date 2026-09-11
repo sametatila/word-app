@@ -8,7 +8,7 @@ import type { RootStackParams } from "../navigation/RootStack";
 import { Text } from "../ui/Text";
 import { PressableScale } from "../ui/PressableScale";
 import { XIcon, ShareIcon, BoltIcon, FlameIcon, AlertIcon } from "../ui/icons";
-import { shareResult } from "../lib/share";
+import { shareRoundResult } from "../lib/share";
 import { MascotPop } from "../ui/MascotPop";
 import { AmbientPeek } from "../ui/AmbientMascot";
 import { ProgressRing } from "../ui/ProgressRing";
@@ -655,8 +655,13 @@ export function GameScreen() {
           >
             <FlameIcon color={colors.dangerText} size={19} /><Text variant="bodyStrong" color={colors.text}>{t("challenge.title")}</Text>
           </PressableScale>
+          {/* DESENLI METIN. Web ayni ekranda `ShareResult` ile kareleri,
+              seviyeyi ve istatistik satirini paylasiyor; Android tek
+              cumlelik duz metin gonderiyordu - ayni ozellik iki uygulamada
+              iki ayri sey oluyordu. Sozluk anahtarlari webden ortak kumeye
+              tasindi (`share.*`). */}
           {total > 0 && (
-            <PressableScale onPress={() => shareResult(finalCorrect, total)} style={{ width: "100%", borderRadius: radii.lg, paddingVertical: spacing.lg, alignItems: "center", flexDirection: "row", justifyContent: "center", gap: 8, marginTop: spacing.md, borderWidth: 1.5, borderColor: colors.border }}>
+            <PressableScale onPress={() => void shareRoundResult({ marks: answers.current.map((a) => a.correct), total, accuracy: pct, streak: result?.currentStreak ?? 0, level: meta?.level ?? "A1" })} style={{ width: "100%", borderRadius: radii.lg, paddingVertical: spacing.lg, alignItems: "center", flexDirection: "row", justifyContent: "center", gap: 8, marginTop: spacing.md, borderWidth: 1.5, borderColor: colors.border }}>
               <ShareIcon color={colors.text} size={19} /><Text variant="bodyStrong" color={colors.text}>{t("common.share")}</Text>
             </PressableScale>
           )}
