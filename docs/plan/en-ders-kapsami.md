@@ -1,6 +1,6 @@
 # WP-74 — İngilizce ders kapsamı B1–C1
 
-**Durum:** sürüyor (B1 TAM; B2 başladı, 105/300 ders) · **Sahip:** Claude · **Açılış:** 2026-09-11
+**Durum:** sürüyor (B1 TAM; B2 modül 1 bitti, 110/300 ders) · **Sahip:** Claude · **Açılış:** 2026-09-11
 
 ## Kusur
 
@@ -215,9 +215,13 @@ görünüyordu. `Second conditional` ve `Modals of deduction` etiketleri
 BİLEREK ayrı bırakıldı: onlar aynı kuralın alt başlığı değil, dersin gerçekten
 başka bir yüzünü öğretiyor.
 
-**B2 modül 1 — Profesyonel iletişim (2026-09-11, ilk yarısı).** Beş ders:
-sabah bilgilendirmesi, devir notu, meslektaşı tanıtmak, çeyrek sonuna kadar,
-tutanak yazmak.
+**B2 modül 1 — Profesyonel iletişim (2026-09-11).** On ders: sabah
+bilgilendirmesi, devir notu, meslektaşı tanıtmak, çeyrek sonuna kadar,
+tutanak yazmak, neyin yanlış gittiği, bilseydik, vurguyu yerleştirmek,
+resmî açılış, ölçülü söylemek.
+
+Modül kapandığında B2.GR.11-20'nin onu da tam bir kez kullanılmış oldu ve bu
+ÖLÇÜLDÜ, varsayılmadı: her dersin `candoForLesson` çıktısı tek tek bakıldı.
 
 B1'de olduğu gibi ders yazmadan ÖNCE dört şey yapıldı ve sırası önemli:
 
