@@ -3,6 +3,8 @@ import { t } from "../lib/i18n";
 import { View, ScrollView } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { useFocusEffect, useNavigation } from "@react-navigation/native";
+import type { NativeStackNavigationProp } from "@react-navigation/native-stack";
+import type { RootStackParams } from "../navigation/RootStack";
 import { Text } from "../ui/Text";
 import { Card } from "../ui/Card";
 import { PressableScale } from "../ui/PressableScale";
@@ -47,7 +49,7 @@ function Row({ it, colors }: { it: CandoItem; colors: Palette }) {
 export function CandoScreen() {
   const { colors } = useTheme();
   const insets = useSafeAreaInsets();
-  const nav = useNavigation<{ goBack: () => void }>();
+  const nav = useNavigation<NativeStackNavigationProp<RootStackParams>>();
   const { user } = useAuth();
   const [data, setData] = useState<CandoData | null>(null);
   const [phase, setPhase] = useState<"loading" | "ready" | "error">("loading");
@@ -135,11 +137,19 @@ export function CandoScreen() {
           ve metni bu; anahtar mobil sözlükte de duruyordu, kullanılmıyordu.
         */
         <View style={{ paddingHorizontal: spacing.lg, paddingTop: spacing.sm }}>
+          {/* BOŞ HÂL BİR ÇIKIŞ YOLU VERİYOR. Metin "konuşma ve alıştırmaları
+              bitirdikçe" diyor ama gidilecek yeri göstermiyordu: kullanıcı
+              "nereye gideceğim" sorusuyla baş başa kalıyordu. Ev kalıbı
+              zaten bu (`WritingsScreen` boş hâli "yazma alıştırmalarına"
+              götürüyor). Webde de aynı kusur vardı ve ikisi birlikte
+              düzeltildi. Yeni anahtar yok: hedefin adı `nav.path`. */}
           <EmptyCard
             icon={CheckIcon}
             tint={colors.success}
             title={t("cando.what_i_can_do")}
             text={t("cando.sign_in_and_finish_lessons_and")}
+            action={t("nav.path")}
+            onAction={() => nav.navigate("Tabs", { screen: "Path" })}
           />
         </View>
       ) : phase === "error" ? (

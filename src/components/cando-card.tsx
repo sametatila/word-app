@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useEffect, useState } from "react";
 import { SkeletonBar, SkeletonCard, SkeletonLine, SkeletonTile } from "@/components/skeleton";
 import { EmptyCard } from "@/components/empty-card";
@@ -119,11 +120,19 @@ export function CandoCard() {
   const items = data.items;
   if (!items.length)
     return (
+      /* Boş hâl bir ÇIKIŞ YOLU veriyor (bkz. Android `CandoScreen`): metin
+         "konuşma ve alıştırmaları bitirdikçe" diyor ama gidilecek yeri
+         göstermiyordu. Hedefin adı `nav.path`, yeni anahtar yok. */
       <EmptyCard
         icon={CheckIcon}
         tint="var(--color-mint)"
         title={t("cando.what_i_can_do")}
         text={t("cando.sign_in_and_finish_lessons_and")}
+        action={
+          <Link href="/immersion" className="btn btn-primary px-4 py-2 text-body">
+            {t("nav.path")}
+          </Link>
+        }
       />
     );
 
