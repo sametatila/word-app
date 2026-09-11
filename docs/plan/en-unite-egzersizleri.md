@@ -61,8 +61,8 @@ mi çıkacağına yazar karar verir.
 | Seviye | Ünite | Durum |
 |---|---|---|
 | **A1** | **1–25** | **TAM** (2026-09-11/12) — 150 egzersiz, 150/150 yuva |
-| A2 | 1–6 | **yazıldı** (2026-09-12) — 36 egzersiz, 36/150 yuva |
-| A2 | 7–25 | bekliyor |
+| A2 | 1–9 | **yazıldı** (2026-09-12) — 54 egzersiz, 54/150 yuva |
+| A2 | 10–25 | bekliyor |
 | B1 · B2 · C1 | 1–25 | bekliyor |
 
 **A1 ünite 1 (2026-09-11).** Dört dersi Hello! · How are you? · I am, you
@@ -338,6 +338,47 @@ cümle ortasında kalıyor.
 sözlükçeye eklemek yanlış olurdu, çünkü sözlükçe metnin sözlükçesi.
 Bir doğru/yanlış kökü de değişti: „another city“ metinde hiç geçmiyordu,
 „outside this city“ geçiyor.
+
+**A2 ünite 7–9 (2026-09-12).** Ünite 7 Reading the label · At the hospital ·
+Healthy habits · Health insurance; ünite 8 How are you feeling? ·
+Getting better · Looking for a flat · My home; ünite 9 Furniture and rooms ·
+Telling the landlord · Noisy neighbours · Moving in. On sekiz egzersiz;
+ünite dışı ölçüm %0,0. A2 yuvalarının 54'ü dolu.
+
+Ünite 7'nin tek noktası DOLAYLI SORU ve bu, Almanca eksende hattın en
+temiz yarı-paritesini verdi. „Where is the ward?“ soru sırasıyla kurulur,
+„Could you tell me where the ward is?“ içinde sıra düz cümleye döner.
+Almanca da devrik sırayı bırakıyor — buraya kadar aynı — ama fiili CÜMLE
+SONUNA atıyor: „wo die Station ist“. Yani uyarının yarısı Almanca okuyan
+için hatırlatma, yarısı yeni; karşılık ikisini de söylüyor. Satırı olduğu
+gibi çevirmek Almanca okuyana "senin dilinde de aynı" dedirtirdi, oysa
+aynı değil.
+
+Ünite 8'in ipi SIFATIN KENDİ EDATI. Türkçe ipucu "tahmin edilmez,
+sözcükle birlikte öğrenilir" diyor; Almanca okuyan için bu uyarı GEÇERLİ
+ama içi başka dolu — Almancada da sabit çiftler var, yalnız başkaları:
+„Angst VOR“, „besorgt UM“. Karşılık uyarıyı korumakla kalmıyor, Almanca
+çiftini de yazıyor, çünkü asıl tuzak burada: öğrenci kendi dilinin edatını
+İngilizceye taşımaya çalışıyor.
+
+Ünite 9'un noktası OLUMSUZ PRESENT PERFECT ve burada İngilizce yine yalnız
+kalıyor. „The heating hasn't worked since Monday“ Türkçede şimdiki zaman
+(„pazartesiden beri çalışmıyor“) — ve Almanca da şimdiki zaman kuruyor
+(„die Heizung geht seit Montag nicht“). A2 ünite 4'teki olumlu süre
+cümlesiyle aynı yapı, bu kez olumsuz tarafından: Türkçe ile Almanca aynı
+tarafta, İngilizce tek başına. Karşılık bunu adıyla söylüyor.
+
+Parite tarafı da geniş çıktı: „with“ ayrıntıyı Almancada da „mit“ ile
+ekliyor („ein Balkon mit Ausblick“), „be“ sorusunda fiilin başa geçmesi
+Almancada da böyle, „already“ ile „schon“ aynı yerde duruyor. Buna karşılık
+sıfat çekimi A1'deki uyarısını sürdürüyor: „a bright flat“ çekimsiz,
+„eine helle Wohnung“ çekimli.
+
+Ölçüm bu turda dokuz sözlükçe maddesi ekletti (normal, desk, You're
+welcome, the hard part, company, fourth, the best part, winter, party,
+real) ve iki soruyu yeniden yazdırdı: „besides“ ile kurduğum soru kökü
+metinde geçmeyen bir sözcük getiriyordu, `en-a2-u8-l2`nin dikte cümlesi de
+bölümde virgülle sürdüğü için tam eşleşmiyordu — bölüm noktayla bitirildi.
 
 ## Tamamlanma ölçütü
 

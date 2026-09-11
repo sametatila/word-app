@@ -1,0 +1,422 @@
+[
+ {
+  "tr": "Yeni daire geziliyor. Ne nerede duruyor?",
+  "kind": "intro",
+  "de": "Die neue Wohnung wird gezeigt. Was steht wo?"
+ },
+ {
+  "tr": "Taşınma günü, adım adım. Ne bitti, ne henüz bitmedi?",
+  "kind": "intro",
+  "de": "Der Umzugstag, Schritt für Schritt. Was ist fertig, was noch nicht?"
+ },
+ {
+  "tr": "Dört daire, dört kusur. Sonunda seçilen en güzeli değil.",
+  "kind": "intro",
+  "de": "Vier Wohnungen, vier Mängel. Am Ende wird nicht die schönste gewählt."
+ },
+ {
+  "tr": "Gürültü şikâyeti, üç adımda. Sonuncusu pastayla bitiyor.",
+  "kind": "intro",
+  "de": "Eine Lärmbeschwerde in drei Schritten. Der letzte endet mit Kuchen."
+ },
+ {
+  "tr": "İki arıza bildiriliyor. Hangisi ne zamandan beri sürüyor?",
+  "kind": "intro",
+  "de": "Zwei Schäden werden gemeldet. Welcher besteht seit wann?"
+ },
+ {
+  "tr": "Mülakat öncesi. Kim neyden endişeli, kim neyden korkuyor?",
+  "kind": "intro",
+  "de": "Vor dem Vorstellungsgespräch. Wer ist worüber besorgt, wer hat wovor Angst?"
+ },
+ {
+  "tr": "Doz ve sıklık cümlelerini yaz. Sonunda ilaç kartını doldur.",
+  "kind": "intro",
+  "de": "Schreibe Sätze über Dosis und Häufigkeit. Zum Schluss füllst du die Medikamentenkarte aus."
+ },
+ {
+  "tr": "Hastane danışmasında dört soru. Hepsi kibar, hepsi dolaylı.",
+  "kind": "intro",
+  "de": "Vier Fragen an der Information im Krankenhaus. Alle höflich, alle indirekt."
+ },
+ {
+  "tr": "Bir sabah, üç masa: danışma, servis, sigorta. Ne gerekiyordu?",
+  "kind": "intro",
+  "de": "Ein Vormittag, drei Schalter: Information, Station, Versicherung. Was war nötig?"
+ },
+ {
+  "tr": "İyileşme konuşması. Kim hangi süreyi söylüyor, hangisi doğru?",
+  "kind": "intro",
+  "de": "Ein Gespräch übers Gesundwerden. Wer nennt welche Dauer, und welche stimmt?"
+ },
+ {
+  "tr": "Arızayı bildir. Süren bozukluk olumsuz present perfect istiyor.",
+  "kind": "intro",
+  "de": "Melde den Schaden. Ein andauernder Defekt verlangt das verneinte present perfect."
+ },
+ {
+  "tr": "Evi anlat ve daireyi sor. Karşılaştırma burada betimleme işinde.",
+  "kind": "intro",
+  "de": "Beschreibe die Wohnung und frage nach ihr. Der Vergleich arbeitet hier als Beschreibung."
+ },
+ {
+  "tr": "Taşınmayı sırayla anlat. „yet“ ve „since“ henüz bitmemişi taşıyor.",
+  "kind": "intro",
+  "de": "Erzähle den Umzug der Reihe nach. „yet“ und „since“ tragen das noch nicht Erledigte."
+ },
+ {
+  "tr": "His cümleleri. Her sıfatın kendi edatı var; ezberlenecek yer orası.",
+  "kind": "intro",
+  "de": "Sätze über Gefühle. Jedes Adjektiv hat seine eigene Präposition; genau die muss man lernen."
+ },
+ {
+  "tr": "Sıradan bir hafta. Sıklık zarfları ve „times a week“ kalıbı bir arada.",
+  "kind": "intro",
+  "de": "Eine ganz normale Woche. Häufigkeitsadverbien und das Muster „times a week“ zusammen."
+ },
+ {
+  "tr": "Sigorta ve bekleme soruları. Sonuncusu ünitenin asıl işi: dolaylı soru.",
+  "kind": "intro",
+  "de": "Fragen zu Versicherung und Wartezeit. Die letzte ist die eigentliche Aufgabe der Einheit: die indirekte Frage."
+ },
+ {
+  "tr": "Kutunun üstündeki talimat konuşuluyor. Kaç tane, ne zaman, yan etkisi ne?",
+  "kind": "intro",
+  "de": "Die Anweisung auf der Packung wird besprochen. Wie viele, wann, welche Nebenwirkung?"
+ },
+ {
+  "tr": "Bir daire tek tek anlatılıyor. Hangi oda daha aydınlık, hangisi daha rahat?",
+  "kind": "intro",
+  "de": "Eine Wohnung wird Stück für Stück beschrieben. Welches Zimmer ist heller, welches gemütlicher?"
+ },
+ {
+  "tr": "„But I'm still tired after two hours.“",
+  "kind": "explain",
+  "de": "„But I'm still tired after two hours.“"
+ },
+ {
+  "tr": "„One tablet twice a day.“ — sabah bir, akşam bir.",
+  "kind": "explain",
+  "de": "„One tablet twice a day.“ — eine morgens, eine abends."
+ },
+ {
+  "tr": "„already“ yardımcı ile asıl fiil arasında duruyor.",
+  "kind": "explain",
+  "de": "„already“ steht zwischen Hilfsverb und Vollverb — wie deutsch „schon“."
+ },
+ {
+  "tr": "Sıklık kalıbı: sayı + „times“ + „a“ + zaman birimi.",
+  "kind": "explain",
+  "de": "Das Häufigkeitsmuster: Zahl + „times“ + „a“ + Zeiteinheit; Deutsch sagt „zweimal am Tag“."
+ },
+ {
+  "tr": "Varlık sorusunda „is there“ tekil, „are there“ çoğul.",
+  "kind": "explain",
+  "de": "In der Existenzfrage ist „is there“ Singular, „are there“ Plural; deutsch „gibt es“ bleibt gleich."
+ },
+ {
+  "tr": "Önce danışma, sonra kuyruk, sonra sigorta, en son oda.",
+  "kind": "explain",
+  "de": "Zuerst die Information, dann die Schlange, dann die Versicherung, zuletzt das Zimmer."
+ },
+ {
+  "tr": "„You can get tired. Don't drive in the first two days.“",
+  "kind": "explain",
+  "de": "„You can get tired. Don't drive in the first two days.“"
+ },
+ {
+  "tr": "„I exercise three times a week.“ — ayda iki kez olan et.",
+  "kind": "explain",
+  "de": "„I exercise three times a week.“ — zweimal im Monat gibt es Fleisch."
+ },
+ {
+  "tr": "„Twenty. That is ten days.“ — günde iki tane, on gün eder.",
+  "kind": "explain",
+  "de": "„Twenty. That is ten days.“ — zwei pro Tag, das sind zehn Tage."
+ },
+ {
+  "tr": "Şikâyetin kibar açılışı; asıl konu „but“tan sonra geliyor.",
+  "kind": "explain",
+  "de": "Der höfliche Einstieg in eine Beschwerde; das eigentliche Thema kommt nach „but“."
+ },
+ {
+  "tr": "„Gone since Tuesday.“ — cuma soğuk algınlığının başlangıcı.",
+  "kind": "explain",
+  "de": "„Gone since Tuesday.“ — der Freitag ist der Beginn der Erkältung."
+ },
+ {
+  "tr": "Kısa sıfat „-er“ alıyor ve iki taraf „than“ ile bağlanıyor.",
+  "kind": "explain",
+  "de": "Das kurze Adjektiv nimmt „-er“ und beide Seiten werden mit „than“ verbunden."
+ },
+ {
+  "tr": "Metin birinciden dördüncüye doğru gidiyor; alınan sonuncusu.",
+  "kind": "explain",
+  "de": "Der Text geht von der ersten zur vierten; genommen wird die letzte."
+ },
+ {
+  "tr": "„Because I sleep there.“ — birincide sokak pencerenin altında.",
+  "kind": "explain",
+  "de": "„Because I sleep there.“ — bei der ersten liegt die Straße unter dem Fenster."
+ },
+ {
+  "tr": "„We haven't turned on the electricity yet…“ — ışık telefondan.",
+  "kind": "explain",
+  "de": "„We haven't turned on the electricity yet…“ — das Licht kommt vom Handy."
+ },
+ {
+  "tr": "„…it has been there since Saturday.“ — pazartesi kalorifere ait.",
+  "kind": "explain",
+  "de": "„…it has been there since Saturday.“ — der Montag gehört zur Heizung."
+ },
+ {
+  "tr": "„First…“, „After that…“ ve saatler sırayı metnin içinde veriyor.",
+  "kind": "explain",
+  "de": "„First…“, „After that…“ und die Uhrzeiten geben die Reihenfolge im Text selbst."
+ },
+ {
+  "tr": "„He came on Tuesday, looked at the pipe and said: I can't fix it.“",
+  "kind": "explain",
+  "de": "„He came on Tuesday, looked at the pipe and said: I can't fix it.“"
+ },
+ {
+  "tr": "„…the advert said „furnished“ and there was only a bed and a table.“",
+  "kind": "explain",
+  "de": "„…the advert said „furnished“ and there was only a bed and a table.“"
+ },
+ {
+  "tr": "„A woman gave us a form and asked for a signature.“ — para eczane için.",
+  "kind": "explain",
+  "de": "„A woman gave us a form and asked for a signature.“ — das Geld ist für die Apotheke."
+ },
+ {
+  "tr": "„…there are two shelves on the wall.“ — tekili „shelf“, çoğulu „shelves“.",
+  "kind": "explain",
+  "de": "„…there are two shelves on the wall.“ — Singular „shelf“, Plural „shelves“."
+ },
+ {
+  "tr": "„No, only the patients show a card.“ — kart hastanın, ziyaretçinin değil.",
+  "kind": "explain",
+  "de": "„No, only the patients show a card.“ — die Karte gehört dem Patienten, nicht dem Besuch."
+ },
+ {
+  "tr": "Deniz üç gün diyor, Ela düzeltiyor: „Almost a week. It started on Friday.“",
+  "kind": "explain",
+  "de": "Deniz sagt drei Tage, Ela korrigiert: „Almost a week. It started on Friday.“"
+ },
+ {
+  "tr": "„The first week I said nothing.“ — yukarı çıkmak ikinci, mektup üçüncü adım.",
+  "kind": "explain",
+  "de": "„The first week I said nothing.“ — hinaufgehen ist der zweite, der Brief der dritte Schritt."
+ },
+ {
+  "tr": "„The heating hasn't worked since Monday.“ — cumartesi sızıntının başlangıcı.",
+  "kind": "explain",
+  "de": "„The heating hasn't worked since Monday.“ — der Samstag ist der Beginn des Lecks."
+ },
+ {
+  "tr": "„I'm afraid of the questions.“ — para sorusu ayrı, orada „worried about“ diyor.",
+  "kind": "explain",
+  "de": "„I'm afraid of the questions.“ — die Geldfrage steht getrennt, dort heißt es „worried about“."
+ },
+ {
+  "tr": "„Two men carried the cupboard up the stairs and it didn't go through the door.“",
+  "kind": "explain",
+  "de": "„Two men carried the cupboard up the stairs and it didn't go through the door.“"
+ },
+ {
+  "tr": "Dolaylı soruda sıra DÜZ cümle gibi: „where I can find“, „where can I find“ değil.",
+  "kind": "explain",
+  "de": "Indirekt steht die GERADE Stellung: „where I can find“, nicht „where can I find“. Deutsch lässt die Umstellung auch weg, schiebt das Verb aber ans Ende: wo ich … finden kann."
+ },
+ {
+  "tr": "„I haven't heard the music since August.“ — olumsuz present perfect: o günden beri hiç.",
+  "kind": "explain",
+  "de": "„I haven't heard the music since August.“ — verneintes present perfect: seitdem gar nicht mehr. Deutsch nimmt hier das Präsens: ich höre … nicht mehr."
+ },
+ {
+  "tr": "en iyi yanı",
+  "kind": "gloss.tr",
+  "de": "das Beste daran"
+ },
+ {
+  "tr": "kola",
+  "kind": "gloss.tr",
+  "de": "Cola"
+ },
+ {
+  "tr": "açtık",
+  "kind": "gloss.tr",
+  "de": "eingeschaltet"
+ },
+ {
+  "tr": "güneş",
+  "kind": "gloss.tr",
+  "de": "Sonne"
+ },
+ {
+  "tr": "sonra",
+  "kind": "gloss.tr",
+  "de": "später"
+ },
+ {
+  "tr": "gerçek",
+  "kind": "gloss.tr",
+  "de": "echt"
+ },
+ {
+  "tr": "lavabo",
+  "kind": "gloss.tr",
+  "de": "Waschbecken"
+ },
+ {
+  "tr": "olağan",
+  "kind": "gloss.tr",
+  "de": "gewohnt"
+ },
+ {
+  "tr": "sıkıcı",
+  "kind": "gloss.tr",
+  "de": "langweilig"
+ },
+ {
+  "tr": "yarısı",
+  "kind": "gloss.tr",
+  "de": "die Hälfte"
+ },
+ {
+  "tr": "yüksek",
+  "kind": "gloss.tr",
+  "de": "hoch"
+ },
+ {
+  "tr": "gürültü",
+  "kind": "gloss.tr",
+  "de": "der Lärm"
+ },
+ {
+  "tr": "hastalar",
+  "kind": "gloss.tr",
+  "de": "die Patienten"
+ },
+ {
+  "tr": "kâğıtlar",
+  "kind": "gloss.tr",
+  "de": "Papiere"
+ },
+ {
+  "tr": "karanlık",
+  "kind": "gloss.tr",
+  "de": "dunkel"
+ },
+ {
+  "tr": "korkuyor",
+  "kind": "gloss.tr",
+  "de": "hat Angst vor"
+ },
+ {
+  "tr": "yan etki",
+  "kind": "gloss.tr",
+  "de": "Nebenwirkung"
+ },
+ {
+  "tr": "zor yanı",
+  "kind": "gloss.tr",
+  "de": "das Schwere daran"
+ },
+ {
+  "tr": "doldurdum",
+  "kind": "gloss.tr",
+  "de": "ausgefüllt"
+ },
+ {
+  "tr": "mobilyalı",
+  "kind": "gloss.tr",
+  "de": "möbliert"
+ },
+ {
+  "tr": "taşıdılar",
+  "kind": "gloss.tr",
+  "de": "trugen"
+ },
+ {
+  "tr": "alışkanlık",
+  "kind": "gloss.tr",
+  "de": "Gewohnheit"
+ },
+ {
+  "tr": "bu sırayla",
+  "kind": "gloss.tr",
+  "de": "in dieser Reihenfolge"
+ },
+ {
+  "tr": "kaç tablet",
+  "kind": "gloss.tr",
+  "de": "wie viele Tabletten"
+ },
+ {
+  "tr": "karşılamak",
+  "kind": "gloss.tr",
+  "de": "übernehmen"
+ },
+ {
+  "tr": "rica ederim",
+  "kind": "gloss.tr",
+  "de": "gern geschehen"
+ },
+ {
+  "tr": "üstümüzdeki",
+  "kind": "gloss.tr",
+  "de": "über uns"
+ },
+ {
+  "tr": "yetişkinler",
+  "kind": "gloss.tr",
+  "de": "Erwachsene"
+ },
+ {
+  "tr": "eve dönerken",
+  "kind": "gloss.tr",
+  "de": "auf dem Heimweg"
+ },
+ {
+  "tr": "saygılarımla",
+  "kind": "gloss.tr",
+  "de": "mit freundlichen Grüßen"
+ },
+ {
+  "tr": "normal olarak",
+  "kind": "gloss.tr",
+  "de": "normal"
+ },
+ {
+  "tr": "içinden geçmek",
+  "kind": "gloss.tr",
+  "de": "hindurchgehen"
+ },
+ {
+  "tr": "rahatsız etmek",
+  "kind": "gloss.tr",
+  "de": "stören"
+ },
+ {
+  "tr": "içeri giriyordu",
+  "kind": "gloss.tr",
+  "de": "kam herein"
+ },
+ {
+  "tr": "öğünlerden sonra",
+  "kind": "gloss.tr",
+  "de": "nach den Mahlzeiten"
+ },
+ {
+  "tr": "güzel bir manzara",
+  "kind": "gloss.tr",
+  "de": "ein schöner Ausblick"
+ },
+ {
+  "tr": "servisin nerede olduğunu",
+  "kind": "gloss.tr",
+  "de": "wo die Station ist"
+ }
+]

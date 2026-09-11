@@ -5,6 +5,9 @@ import { enA2U03 } from "./en-a2-u03";
 import { enA2U04 } from "./en-a2-u04";
 import { enA2U05 } from "./en-a2-u05";
 import { enA2U06 } from "./en-a2-u06";
+import { enA2U07 } from "./en-a2-u07";
+import { enA2U08 } from "./en-a2-u08";
+import { enA2U09 } from "./en-a2-u09";
 
 /**
  * EN · A2 — Patika'ya bağlı (ünite hizalı) beceri egzersizleri.
@@ -16,6 +19,7 @@ import { enA2U06 } from "./en-a2-u06";
  * ve içerik artık iki zamanı bir arada kullanabiliyor, çünkü seviyenin ilk
  * dersleri geçmişin ikinci biçimini getiriyor.
  */
+
 export const enA2: SkillExercise[] = [
   ...enA2U01,
   ...enA2U02,
@@ -23,4 +27,7 @@ export const enA2: SkillExercise[] = [
   ...enA2U04,
   ...enA2U05,
   ...enA2U06,
+  ...enA2U07,
+  ...enA2U08,
+  ...enA2U09,
 ];

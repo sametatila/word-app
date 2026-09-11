@@ -1,0 +1,307 @@
+[
+ {
+  "tr": "İlaç kartını doldur.",
+  "kind": "form.prompt",
+  "de": "Fülle die Medikamentenkarte aus."
+ },
+ {
+  "tr": "Sağlık kartını doldur.",
+  "kind": "form.prompt",
+  "de": "Fülle die Gesundheitskarte aus."
+ },
+ {
+  "tr": "Doz bir tablet; günde iki kez; öğünden sonra; yan etki yorgunluk.",
+  "kind": "form.facts",
+  "de": "Dosis eine Tablette; zweimal am Tag; nach dem Essen; Nebenwirkung Müdigkeit."
+ },
+ {
+  "tr": "Banyoda sızıntı; kalorifer pazartesiden beri çalışmıyor; halıda hasar; evde dörtten sonra.",
+  "kind": "form.facts",
+  "de": "Leck im Bad; Heizung geht seit Montag nicht; Schaden am Teppich; zu Hause ab vier."
+ },
+ {
+  "tr": "Ateş salıdan beri yok; soğuk algınlığı neredeyse bir hafta; iki saat sonra yorgunluk; pazartesi işe dönüş yok.",
+  "kind": "form.facts",
+  "de": "Fieber seit Dienstag weg; Erkältung fast eine Woche; nach zwei Stunden müde; Montag keine Rückkehr zur Arbeit."
+ },
+ {
+  "tr": "Boru bozuk.",
+  "kind": "build.tr",
+  "de": "Das Rohr ist kaputt."
+ },
+ {
+  "tr": "Daire mobilyalı mı?",
+  "kind": "build.tr",
+  "de": "Ist die Wohnung möbliert?"
+ },
+ {
+  "tr": "İlacımı çoktan aldım.",
+  "kind": "build.tr",
+  "de": "Ich habe meine Medizin schon genommen."
+ },
+ {
+  "tr": "Kaç tablet almalıyım?",
+  "kind": "build.tr",
+  "de": "Wie viele Tabletten soll ich nehmen?"
+ },
+ {
+  "tr": "Sorulardan korkuyorum.",
+  "kind": "build.tr",
+  "de": "Ich habe Angst vor den Fragen."
+ },
+ {
+  "tr": "Formu çoktan doldurdum.",
+  "kind": "build.tr",
+  "de": "Ich habe das Formular schon ausgefüllt."
+ },
+ {
+  "tr": "Sınav için endişeliyim.",
+  "kind": "build.tr",
+  "de": "Ich bin wegen der Prüfung besorgt."
+ },
+ {
+  "tr": "Banyoda bir sızıntı var.",
+  "kind": "build.tr",
+  "de": "Im Bad ist ein Leck."
+ },
+ {
+  "tr": "Elektriği henüz açmadık.",
+  "kind": "build.tr",
+  "de": "Wir haben den Strom noch nicht eingeschaltet."
+ },
+ {
+  "tr": "Ne kadar ödemem gerekiyor?",
+  "kind": "build.tr",
+  "de": "Wie viel muss ich bezahlen?"
+ },
+ {
+  "tr": "Önce sözleşmeyi imzaladık.",
+  "kind": "build.tr",
+  "de": "Zuerst haben wir den Vertrag unterschrieben."
+ },
+ {
+  "tr": "Günde iki kez bir tablet al.",
+  "kind": "build.tr",
+  "de": "Nimm zweimal am Tag eine Tablette."
+ },
+ {
+  "tr": "Ne kadar beklemem gerekiyor?",
+  "kind": "build.tr",
+  "de": "Wie lange muss ich warten?"
+ },
+ {
+  "tr": "Sigortam bunu karşılıyor mu?",
+  "kind": "build.tr",
+  "de": "Übernimmt meine Versicherung das?"
+ },
+ {
+  "tr": "Kendimi daha iyi hissediyorum.",
+  "kind": "build.tr",
+  "de": "Ich fühle mich besser."
+ },
+ {
+  "tr": "Ondan sonra anahtarları aldık.",
+  "kind": "build.tr",
+  "de": "Danach haben wir die Schlüssel bekommen."
+ },
+ {
+  "tr": "Bir doktora görünmek istiyorum.",
+  "kind": "build.tr",
+  "de": "Ich möchte einen Arzt sprechen."
+ },
+ {
+  "tr": "Onu öğünlerden sonra almalısın.",
+  "kind": "build.tr",
+  "de": "Du solltest es nach den Mahlzeiten nehmen."
+ },
+ {
+  "tr": "Ağustostan beri müziği duymadım.",
+  "kind": "build.tr",
+  "de": "Ich habe die Musik seit August nicht gehört."
+ },
+ {
+  "tr": "Aydınlık bir dairede oturuyorum.",
+  "kind": "build.tr",
+  "de": "Ich wohne in einer hellen Wohnung."
+ },
+ {
+  "tr": "Manzarası güzel bir balkonu var.",
+  "kind": "build.tr",
+  "de": "Sie hat einen Balkon mit schönem Ausblick."
+ },
+ {
+  "tr": "Bugün birini gönderebilir misiniz?",
+  "kind": "build.tr",
+  "de": "Könnten Sie heute jemanden schicken?"
+ },
+ {
+  "tr": "Kalorifer pazartesiden beri çalışmıyor.",
+  "kind": "build.tr",
+  "de": "Die Heizung funktioniert seit Montag nicht."
+ },
+ {
+  "tr": "Mutfağım oturma odasından daha aydınlık.",
+  "kind": "build.tr",
+  "de": "Meine Küche ist heller als das Wohnzimmer."
+ },
+ {
+  "tr": "Bana servisin nerede olduğunu söyleyebilir misiniz?",
+  "kind": "build.tr",
+  "de": "Könnten Sie mir sagen, wo die Station ist?"
+ },
+ {
+  "tr": "Rahatsız ettiğim için özür dilerim ama gürültü çok yüksek.",
+  "kind": "build.tr",
+  "de": "Entschuldigen Sie die Störung, aber der Lärm ist sehr laut."
+ },
+ {
+  "tr": "Sıfat isimden ÖNCE geliyor ve hiç çekilmiyor.",
+  "kind": "build.hint",
+  "de": "Das Adjektiv steht VOR dem Nomen — Deutsch beugt es dort aber: eine helle Wohnung."
+ },
+ {
+  "tr": "„yet“ olumsuzda ve en SONDA; iş bitmedi ama bitecek.",
+  "kind": "build.hint",
+  "de": "„yet“ steht in der Verneinung und ganz am ENDE; deutsch „noch nicht“ steht mitten im Satz."
+ },
+ {
+  "tr": "„take“in üçüncü hâli „taken“; „already“ ortada duruyor.",
+  "kind": "build.hint",
+  "de": "Die dritte Form von „take“ ist „taken“; „already“ steht in der Mitte, wie „schon“."
+ },
+ {
+  "tr": "„already“ yardımcı fiil ile asıl fiilin arasına giriyor.",
+  "kind": "build.hint",
+  "de": "„already“ tritt zwischen Hilfsverb und Vollverb — genau wie deutsch „schon“."
+ },
+ {
+  "tr": "Hastanede en kibar giriş; „see“ burada „görüşmek“ demek.",
+  "kind": "build.hint",
+  "de": "Der höflichste Einstieg im Krankenhaus; „see“ heißt hier „sprechen“."
+ },
+ {
+  "tr": "Olumsuz present perfect + „since“: o günden bu yana HİÇ.",
+  "kind": "build.hint",
+  "de": "Verneintes present perfect + „since“: seit dem Tag GAR NICHT. Deutsch nimmt das Präsens."
+ },
+ {
+  "tr": "Üçüncü tekilde soru „does“ ile; asıl fiil eksiz kalıyor.",
+  "kind": "build.hint",
+  "de": "In der dritten Person bildet „does“ die Frage; das Vollverb bleibt endungslos."
+ },
+ {
+  "tr": "„Could you“ en kibar rica; kim olduğu önemsizse „someone“.",
+  "kind": "build.hint",
+  "de": "„Could you“ ist die höflichste Bitte; wer es ist, lässt „someone“ offen."
+ },
+ {
+  "tr": "Varlık cümlesi „there is“ ile; tekil olduğu için „a leak“.",
+  "kind": "build.hint",
+  "de": "Der Existenzsatz mit „there is“; Singular, deshalb „a leak“. Deutsch: es gibt."
+ },
+ {
+  "tr": "„should“ sonrası fiil eksiz; „meals“ çoğul, çünkü her öğün.",
+  "kind": "build.hint",
+  "de": "Nach „should“ bleibt das Verb endungslos; „meals“ steht im Plural, weil jede Mahlzeit gemeint ist."
+ },
+ {
+  "tr": "Para sayılamaz: „how much“. „rent“ burada isim, fiil değil.",
+  "kind": "build.hint",
+  "de": "Geld ist unzählbar: „how much“. „rent“ ist hier Nomen, kein Verb."
+ },
+ {
+  "tr": "„be“ sorusu yardımcı istemiyor; fiilin kendisi başa geçiyor.",
+  "kind": "build.hint",
+  "de": "Die Frage mit „be“ braucht kein Hilfsverb; das Verb selbst rückt nach vorn — wie im Deutschen."
+ },
+ {
+  "tr": "„broken“ burada sıfat gibi çalışıyor; „break“in üçüncü hâli.",
+  "kind": "build.hint",
+  "de": "„broken“ wirkt hier wie ein Adjektiv; es ist die dritte Form von „break“."
+ },
+ {
+  "tr": "Emir cümlesi öznesiz başlıyor; sıklık en sonda: twice a day.",
+  "kind": "build.hint",
+  "de": "Der Imperativ beginnt ohne Subjekt; die Häufigkeit steht hinten: twice a day."
+ },
+ {
+  "tr": "„bright“ kısa: „-er“ alıyor. İki taraf „than“ ile bağlanıyor.",
+  "kind": "build.hint",
+  "de": "„bright“ ist kurz: es nimmt „-er“. Beide Seiten verbindet „than“."
+ },
+ {
+  "tr": "„after that“ bir sonraki adımı bağlıyor; „get“in geçmişi „got“.",
+  "kind": "build.hint",
+  "de": "„after that“ hängt den nächsten Schritt an; die Vergangenheit von „get“ ist „got“."
+ },
+ {
+  "tr": "„First“ sıralamanın ilk adımı; virgül yaygın ama zorunlu değil.",
+  "kind": "build.hint",
+  "de": "„First“ ist der erste Schritt der Reihe; das Komma ist üblich, aber nicht Pflicht."
+ },
+ {
+  "tr": "Şikâyetin kibar açılışı kalıp; asıl konu „but“tan sonra geliyor.",
+  "kind": "build.hint",
+  "de": "Der höfliche Einstieg der Beschwerde ist eine Formel; das Thema kommt nach „but“."
+ },
+ {
+  "tr": "„feel“ sonrası sıfat geliyor, zarf değil: „better“, „well“ değil.",
+  "kind": "build.hint",
+  "de": "Nach „feel“ steht ein Adjektiv, kein Adverb: „better“, nicht „well“."
+ },
+ {
+  "tr": "Sayılabilir olduğu için „how many“; soruda „should“ özneden önce.",
+  "kind": "build.hint",
+  "de": "Weil es zählbar ist: „how many“; in der Frage steht „should“ vor dem Subjekt."
+ },
+ {
+  "tr": "Süre sorusu „how long“; kalıbın gerisi ödeme sorusuyla birebir aynı.",
+  "kind": "build.hint",
+  "de": "Die Dauerfrage „how long“; der Rest des Musters ist mit der Geldfrage identisch."
+ },
+ {
+  "tr": "„afraid“ın edatı „of“, „worried“ınki „about“. Aynı aile, farklı edat.",
+  "kind": "build.hint",
+  "de": "„afraid“ nimmt „of“, „worried“ nimmt „about“. Deutsch hat auch feste Paare, nur andere: Angst VOR, besorgt UM."
+ },
+ {
+  "tr": "Para sayılamaz: „how much“. Zorunluluk „have to“, soruda „do“ istiyor.",
+  "kind": "build.hint",
+  "de": "Geld ist unzählbar: „how much“. Die Pflicht heißt „have to“ und verlangt in der Frage „do“."
+ },
+ {
+  "tr": "Ayrıntıyı „with“ ekliyor; Türkçede sıfat-fiil olan yer İngilizcede edat.",
+  "kind": "build.hint",
+  "de": "„with“ hängt das Detail an — Deutsch macht es genauso: ein Balkon mit Ausblick."
+ },
+ {
+  "tr": "„worried“ kendi edatını taşıyor: about. Tahmin edilmez, sözcükle birlikte öğrenilir.",
+  "kind": "build.hint",
+  "de": "„worried“ trägt seine eigene Präposition: about. Auch Deutsch hat feste Paare, aber andere: besorgt UM."
+ },
+ {
+  "tr": "Arıza SÜRÜYOR: İngilizce olumsuz present perfect istiyor, Türkçe şimdiki zaman diyor.",
+  "kind": "build.hint",
+  "de": "Der Defekt DAUERT AN: Englisch verlangt das verneinte present perfect, Deutsch sagt wie das Türkische Präsens — die Heizung geht seit Montag nicht."
+ },
+ {
+  "tr": "Dolaylı soruda sıra DÜZ cümleye dönüyor: „where the ward is“, „where is the ward“ değil.",
+  "kind": "build.hint",
+  "de": "Indirekt wird die Stellung GERADE: „where the ward is“, nicht „where is the ward“. Deutsch lässt die Umstellung auch weg, schiebt das Verb aber ans Ende."
+ },
+ {
+  "tr": "Sabahın sırası: doğru sıraya koy.",
+  "kind": "question.text",
+  "de": "Die Reihenfolge des Vormittags: bring sie in die richtige Ordnung."
+ },
+ {
+  "tr": "Dairelerin sırası: doğru sıraya koy.",
+  "kind": "question.text",
+  "de": "Die Reihenfolge der Wohnungen: bring sie in die richtige Ordnung."
+ },
+ {
+  "tr": "Taşınma gününün sırası: doğru sıraya koy.",
+  "kind": "question.text",
+  "de": "Die Reihenfolge des Umzugstags: bring sie in die richtige Ordnung."
+ }
+]
