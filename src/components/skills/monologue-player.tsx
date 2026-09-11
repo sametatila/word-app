@@ -12,12 +12,12 @@ import { AiNotice } from "@/components/ai-notice";
 import { recognitionCtor, requestMicrophone, type Recognition } from "@/components/microphone";
 import { CheckIcon, MicIcon } from "@/components/icons";
 import { Mascot } from "@/components/mascot";
+import { speakGerman } from "@/components/speak-button";
 import { useT } from "@/lib/i18n/client";
 import { RUBRIC_PASS_PCT } from "@/lib/score-bands";
 
 type Phase = "prep" | "record" | "review" | "scoring" | "result";
 
-const PREP_SECONDS = 30;
 
 /**
  * Monolog oynatıcısı: hazırlık → kayıt → transkript → rubrik.
@@ -43,7 +43,6 @@ export function MonologuePlayer({ exercise, backHref }: { exercise: SpeakingMono
   const mono = exercise.monologue;
   const { finish, state, reset } = useSkillFinish(exercise, 1);
   const [phase, setPhase] = useState<Phase>("prep");
-  const [prepLeft, setPrepLeft] = useState(PREP_SECONDS);
   const [seconds, setSeconds] = useState(0);
   const [transcript, setTranscript] = useState("");
   const [interim, setInterim] = useState("");
@@ -64,16 +63,18 @@ export function MonologuePlayer({ exercise, backHref }: { exercise: SpeakingMono
     setAsr(Boolean(recognitionCtor()));
   }, []);
 
-  // Hazırlık geri sayımı; sıfırda kayıt kendiliğinden başlar.
-  useEffect(() => {
-    if (phase !== "prep") return;
-    const t = setInterval(() => setPrepLeft((s) => s - 1), 1000);
-    return () => clearInterval(t);
-  }, [phase]);
-  useEffect(() => {
-    if (phase === "prep" && prepLeft <= 0) void startRecording();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [prepLeft, phase]);
+  /*
+   * HAZIRLIK GERİ SAYIMI KALKTI.
+   *
+   * Web hazırlık ekranında otuz saniye sayıyor ve sıfıra inince KAYDI
+   * KENDİLİĞİNDEN başlatıyordu. İki sorun: Android'de böyle bir saat yok —
+   * öğrenci hazır olduğunda "başla"ya basıyor — ve mikrofon kullanıcı
+   * istemeden açılıyordu; hazırlık metnini okuyan biri kaydın başladığını
+   * fark etmeyebilir. Başlat düğmesi zaten duruyordu, tek çıkış oydu.
+   *
+   * Sınavın konuşma bölümünde saat olması ayrı bir karar (orada ölçüm var);
+   * beceri kütüphanesi bir alıştırma.
+   */
 
   // Kayıt sayacı; üst sınırda kayıt kendiliğinden biter.
   useEffect(() => {
@@ -225,10 +226,7 @@ export function MonologuePlayer({ exercise, backHref }: { exercise: SpeakingMono
 
       {phase === "prep" ? (
         <section className="card mt-3 p-5">
-          <div className="flex items-center justify-between">
-            <p className="text-micro uppercase tracking-wide text-[color:var(--color-brand)]">{t("item.mono_prep")}</p>
-            <span className="tabular-nums text-strong">{mm(Math.max(0, prepLeft))}</span>
-          </div>
+          <p className="text-micro uppercase tracking-wide text-[color:var(--color-brand)]">{t("item.mono_prep")}</p>
           <p className="mt-2 text-strong leading-relaxed">{mono.promptTr}</p>
           <ul className="mt-3 space-y-1.5">
             {mono.bulletsTr.map((b) => (
@@ -239,10 +237,22 @@ export function MonologuePlayer({ exercise, backHref }: { exercise: SpeakingMono
             ))}
           </ul>
           <div className="mt-3 flex flex-wrap gap-1.5">
-            {mono.targets.map((t) => (
-              <span key={t.de} className="chip px-2.5 py-1 text-caption" title={t.tr} lang={lang}>
-                {t.de}
-              </span>
+            {/* TÜRKÇE KARŞILIK GÖRÜNÜR VE ÇİP SESLİ. Karşılık `title=` ipucu
+                balonundaydı: dokunmatikte hiç açılmıyor, yani telefondan
+                bakan öğrenci kelimenin ne demek olduğunu göremiyordu. Android
+                ikisini de yapıyor: "de · tr" yazıyor ve çipe dokununca
+                okuyor (`skillLibrary` `MonologueBody`). */}
+            {mono.targets.map((x) => (
+              <button
+                key={x.de}
+                type="button"
+                onClick={() => speakGerman(x.de)}
+                className="chip px-2.5 py-1 text-caption"
+                aria-label={t("item.listen")}
+              >
+                <span lang={lang}>{x.de}</span>
+                <span className="muted"> · {x.tr}</span>
+              </button>
             ))}
           </div>
           <p className="muted mt-3 text-caption">
@@ -416,7 +426,6 @@ export function MonologuePlayer({ exercise, backHref }: { exercise: SpeakingMono
         onRetry={() => {
           reset();
           setPhase("prep");
-          setPrepLeft(PREP_SECONDS);
           setSeconds(0);
           setTranscript("");
           finalRef.current = "";
