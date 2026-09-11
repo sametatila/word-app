@@ -6952,3 +6952,34 @@ bitirilemez).
 `speakp.` uzayının kalan altı satırı temiz: üçü webin ses yükleme yoluna ait
 (§11.136), üçünün mobilde `item.*` altında karşılığı var.
 
+
+### 11.200 Pratik kartı oyunun ne yaptırdığını söylemiyordu
+
+`prac.` uzayı: on bir açıklama sözlükte duruyor ve Android'de **hiçbiri
+görünmüyordu**. Web her oyun kartının altına tek satır yazıyor ("Dört şıktan
+doğru anlamı seç", "Karışık harflerden kelimeyi kur"); mobil yalnız adı
+gösteriyordu, yani "Cümleyi Diz" ile "Cümleyi Çevir" arasındaki farkı
+bilmeyen kullanıcı oyunu açmadan seçemiyordu.
+
+Açıklamalar `PRACTICE_GAMES` listesine alındı — web de aynı listede tutuyor —
+ve §2'deki "pratik seçici sırası" ölçümünün yanına açıklama listesi eklendi.
+
+### 11.201 Yerleştirme testinde "bilmiyorum" yoktu
+
+`plc.` uzayı. Android'de ekran doğrudan soruya başlıyordu; üç yüzey eksikti ve
+biri **ölçümün kendisini bozuyordu**:
+
+- aşamanın ne sorduğu yazmıyordu
+- aşamayı atlama yolu yoktu
+- **"Bilmiyorum" düğmesi yoktu** — bilmeyen kullanıcının tek yolu tahmin
+  etmekti ve tutan bir tahmin yerleştirme seviyesini yükseltiyordu
+
+Üçüncüsü bu oturumun tekrar eden sınıfının bir üyesi: §11.183 (bedava harf
+ipucu, SRS kalitesi), §11.195 (sınavda ipucu ve açılan cevap, sınav puanı) ve
+şimdi yerleştirme seviyesi. Hepsinde aynı şey oluyor: **ölçüm yüzeyinde
+kayıtsız bir kolaylık ya da zorluk, iki platformun sayılarını
+karşılaştırılamaz kılıyor.**
+
+"Bilmiyorum" yanlış cevapla aynı sonucu yazıyor; farkı tahmini ortadan
+kaldırması.
+
