@@ -1,0 +1,962 @@
+[
+ {
+  "tr": "Minnet",
+  "kind": "titleTr",
+  "de": "Dankbarkeit"
+ },
+ {
+  "tr": "Sırdaş",
+  "kind": "titleTr",
+  "de": "Im Vertrauen"
+ },
+ {
+  "tr": "Korkular",
+  "kind": "titleTr",
+  "de": "Ängste"
+ },
+ {
+  "tr": "Cesaret vermek",
+  "kind": "titleTr",
+  "de": "Mut machen"
+ },
+ {
+  "tr": "Nereye varmak istiyorum",
+  "kind": "titleTr",
+  "de": "Wohin ich will"
+ },
+ {
+  "tr": "Kendi yönünü anlatmayı öğretir; bağlaçlar amacı, sonucu ve çekinceyi bağlar.",
+  "kind": "summary",
+  "de": "Vermittelt, wie man die eigene Richtung erzählt; die Konnektoren binden Zweck, Folge und Vorbehalt an."
+ },
+ {
+  "tr": "Minneti anlatmayı öğretir; edilgen çatı işi yapanı öne çıkarmadan yapılanı söyler.",
+  "kind": "summary",
+  "de": "Vermittelt, wie man Dankbarkeit ausdrückt; das Passiv nennt das Getane, ohne den Handelnden nach vorn zu stellen."
+ },
+ {
+  "tr": "Korkuları anlatmayı öğretir; her fiil kendinden sonra mastar mı ulaç mı geleceğini kendi seçer.",
+  "kind": "summary",
+  "de": "Vermittelt, wie man von Ängsten erzählt; jedes Verb wählt selbst, ob danach der Infinitiv oder die -ing-Form steht."
+ },
+ {
+  "tr": "Sana anlatılanı üçüncü bir kişiye aktarmayı öğretir; aktarırken zaman bir basamak geriye gider.",
+  "kind": "summary",
+  "de": "Vermittelt, wie man Anvertrautes an eine dritte Person weitergibt; beim Wiedergeben rückt die Zeit eine Stufe zurück."
+ },
+ {
+  "tr": "Zor gündeki birine destek olmayı öğretir: neyi yapmalısın, neyi yapmana gerek yok, neyi hiç yapmamalısın.",
+  "kind": "summary",
+  "de": "Vermittelt, wie man jemandem an einem schweren Tag beisteht: was du tun sollst, was du nicht tun musst, was du gar nicht tun darfst."
+ },
+ {
+  "tr": "ayrıntıları merak eden ama üstelemeyen bir tanıdık",
+  "kind": "partner",
+  "de": "ein Bekannter, der die Einzelheiten wissen will, aber nicht drängt"
+ },
+ {
+  "tr": "yaptığını küçümseyen, teşekkürü savuşturmaya çalışan biri",
+  "kind": "partner",
+  "de": "jemand, der das Getane kleinredet und den Dank abwehren will"
+ },
+ {
+  "tr": "benzer bir korkuyu aşmış, kendi yolunu anlatan bir arkadaş",
+  "kind": "partner",
+  "de": "eine Freundin, die eine ähnliche Angst überwunden hat und ihren eigenen Weg erzählt"
+ },
+ {
+  "tr": "kötü bir haber almış, çözüm değil dinlenmek isteyen bir arkadaş",
+  "kind": "partner",
+  "de": "ein Freund, der eine schlechte Nachricht bekommen hat und keine Lösung, sondern Zuhören will"
+ },
+ {
+  "tr": "aynı soruyu kendine de soran, seninle birlikte düşünen bir arkadaş",
+  "kind": "partner",
+  "de": "eine Freundin, die sich dieselbe Frage stellt und mit dir zusammen nachdenkt"
+ },
+ {
+  "tr": "Ne olduğunu söyledi mi?",
+  "kind": "openingTr",
+  "de": "Hat sie gesagt, was passiert ist?"
+ },
+ {
+  "tr": "Tam olarak neyden korkuyorsun?",
+  "kind": "openingTr",
+  "de": "Wovor genau hast du Angst?"
+ },
+ {
+  "tr": "Peki beş yıl sonra nerede olmak istiyorsun?",
+  "kind": "openingTr",
+  "de": "Und wo willst du in fünf Jahren sein?"
+ },
+ {
+  "tr": "Gerçekten, önemli bir şey değildi. Neden şimdi açtın ki?",
+  "kind": "openingTr",
+  "de": "Wirklich, das war nichts Besonderes. Warum fängst du jetzt davon an?"
+ },
+ {
+  "tr": "Nereden başlayacağımı bile bilmiyorum. Sen olsan ne yapardın?",
+  "kind": "openingTr",
+  "de": "Ich weiß nicht einmal, wo ich anfangen soll. Was würdest du tun?"
+ },
+ {
+  "tr": "Bir arkadaşın önümüzdeki yıllarda ne yapmak istediğini soruyor. Amacını, şimdiye kadarki sonucu ve bir çekinceni söyle.",
+  "kind": "scene",
+  "de": "Eine Freundin fragt, was du in den nächsten Jahren tun willst. Nenn deinen Zweck, die bisherige Folge und einen Vorbehalt."
+ },
+ {
+  "tr": "Bir arkadaşınla seni zorlayan bir korkuyu konuşuyorsun. Neye karar verdiğini, neyden kaçındığını ve neyi sürdürdüğünü anlat.",
+  "kind": "scene",
+  "de": "Du sprichst mit einer Freundin über eine Angst, die dir zu schaffen macht. Erzähl, wofür du dich entschieden hast, was du vermeidest und was du fortsetzt."
+ },
+ {
+  "tr": "Sana zor bir dönemde yardım eden birine minnetini anlatıyorsun. Ne yapıldığını, kimin yaptığını ve ne yapılması gerektiğini söyle.",
+  "kind": "scene",
+  "de": "Du drückst jemandem deine Dankbarkeit aus, der dir in einer schweren Zeit geholfen hat. Sag, was getan wurde, wer es getan hat und was getan werden muss."
+ },
+ {
+  "tr": "Bir arkadaşın sana bir şey anlattı ve başka biri merak ediyor. Ne söylenebileceğini gözeterek ne dendiğini, ne yapmamanın istendiğini ve ne sorulduğunu aktar.",
+  "kind": "scene",
+  "de": "Eine Freundin hat dir etwas anvertraut und jemand anderes will es wissen. Gib mit Rücksicht darauf, was gesagt werden darf, weiter, was gesagt wurde, was man nicht tun soll und was gefragt wurde."
+ },
+ {
+  "tr": "Bir arkadaşın kötü bir haber aldı ve seninle konuşuyor. Ne yapman gerektiğini, onun neyi yapmak zorunda olmadığını ve senin neyi söylememen gerektiğini gözeterek konuş.",
+  "kind": "scene",
+  "de": "Ein Freund hat eine schlechte Nachricht bekommen und spricht mit dir. Sprich mit Rücksicht darauf, was du tun sollst, was er nicht tun muss und was du nicht sagen solltest."
+ },
+ {
+  "tr": "Bir amacı, bir sonucu ve bir çekinceyi üç ayrı bağlaçla söylediysen konuşma başarılı sayılır.",
+  "kind": "goal",
+  "de": "Das Gespräch gilt als gelungen, wenn du einen Zweck, eine Folge und einen Vorbehalt mit drei verschiedenen Konnektoren gesagt hast."
+ },
+ {
+  "tr": "Bir kararı, bir kaçınmayı ve bir sürdürmeyi doğru ardıllarla söylediysen konuşma başarılı sayılır.",
+  "kind": "goal",
+  "de": "Das Gespräch gilt als gelungen, wenn du eine Entscheidung, ein Vermeiden und ein Fortsetzen mit den richtigen Anschlüssen gesagt hast."
+ },
+ {
+  "tr": "Bir gerekliliği, bir serbestliği ve bir yasağı üç ayrı kalıpla söylediysen konuşma başarılı sayılır.",
+  "kind": "goal",
+  "de": "Das Gespräch gilt als gelungen, wenn du eine Notwendigkeit, eine Freiheit und ein Verbot in drei verschiedenen Wendungen gesagt hast."
+ },
+ {
+  "tr": "Yapılanı, işi yapanı ve yapılması gerekeni üç ayrı edilgen cümleyle söylediysen konuşma başarılı sayılır.",
+  "kind": "goal",
+  "de": "Das Gespräch gilt als gelungen, wenn du das Getane, den Handelnden und das zu Tuende in drei verschiedenen Passivsätzen gesagt hast."
+ },
+ {
+  "tr": "söz",
+  "kind": "vocab.tr",
+  "de": "Wort"
+ },
+ {
+  "tr": "öğüt",
+  "kind": "vocab.tr",
+  "de": "Rat"
+ },
+ {
+  "tr": "anlam",
+  "kind": "vocab.tr",
+  "de": "Bedeutung"
+ },
+ {
+  "tr": "nazik",
+  "kind": "vocab.tr",
+  "de": "freundlich"
+ },
+ {
+  "tr": "sadık",
+  "kind": "vocab.tr",
+  "de": "treu"
+ },
+ {
+  "tr": "sonra",
+  "kind": "vocab.tr",
+  "de": "später"
+ },
+ {
+  "tr": "cömert",
+  "kind": "vocab.tr",
+  "de": "großzügig"
+ },
+ {
+  "tr": "kaçmak",
+  "kind": "vocab.tr",
+  "de": "entkommen"
+ },
+ {
+  "tr": "armağan",
+  "kind": "vocab.tr",
+  "de": "Geschenk"
+ },
+ {
+  "tr": "cesaret",
+  "kind": "vocab.tr",
+  "de": "Mut"
+ },
+ {
+  "tr": "dostluk",
+  "kind": "vocab.tr",
+  "de": "Freundschaft"
+ },
+ {
+  "tr": "gerilim",
+  "kind": "vocab.tr",
+  "de": "Anspannung"
+ },
+ {
+  "tr": "mazeret",
+  "kind": "vocab.tr",
+  "de": "Ausrede"
+ },
+ {
+  "tr": "nadiren",
+  "kind": "vocab.tr",
+  "de": "selten"
+ },
+ {
+  "tr": "kahraman",
+  "kind": "vocab.tr",
+  "de": "Held"
+ },
+ {
+  "tr": "kavrayış",
+  "kind": "vocab.tr",
+  "de": "Sinn"
+ },
+ {
+  "tr": "özgürlük",
+  "kind": "vocab.tr",
+  "de": "Freiheit"
+ },
+ {
+  "tr": "savaşmak",
+  "kind": "vocab.tr",
+  "de": "kämpfen"
+ },
+ {
+  "tr": "baş etmek",
+  "kind": "vocab.tr",
+  "de": "zurechtkommen"
+ },
+ {
+  "tr": "yüzleşmek",
+  "kind": "vocab.tr",
+  "de": "sich stellen"
+ },
+ {
+  "tr": "fısıldamak",
+  "kind": "vocab.tr",
+  "de": "flüstern"
+ },
+ {
+  "tr": "örnek kişi",
+  "kind": "vocab.tr",
+  "de": "Vorbild"
+ },
+ {
+  "tr": "saygı duymak",
+  "kind": "vocab.tr",
+  "de": "respektieren"
+ },
+ {
+  "tr": "neşelendirmek",
+  "kind": "vocab.tr",
+  "de": "aufmuntern"
+ },
+ {
+  "tr": "yalnız başına",
+  "kind": "vocab.tr",
+  "de": "allein"
+ },
+ {
+  "tr": "yol göstermek",
+  "kind": "vocab.tr",
+  "de": "leiten"
+ },
+ {
+  "tr": "kıymetini bilmek",
+  "kind": "vocab.tr",
+  "de": "schätzen"
+ },
+ {
+  "tr": "amacı cümleye bağlar",
+  "kind": "pattern.tr",
+  "de": "bindet den Zweck an den Satz"
+ },
+ {
+  "tr": "sonucu cümleye bağlar",
+  "kind": "pattern.tr",
+  "de": "bindet die Folge an den Satz"
+ },
+ {
+  "tr": "çekinceyi cümleye bağlar",
+  "kind": "pattern.tr",
+  "de": "bindet den Vorbehalt an den Satz"
+ },
+ {
+  "tr": "yapılması gerekeni söyler",
+  "kind": "pattern.tr",
+  "de": "nennt, was getan werden muss"
+ },
+ {
+  "tr": "kaçınma fiilinden sonra ulaç getirir",
+  "kind": "pattern.tr",
+  "de": "setzt nach dem Verb des Vermeidens die Form auf -ing"
+ },
+ {
+  "tr": "sürdürme fiilinden sonra ulaç getirir",
+  "kind": "pattern.tr",
+  "de": "setzt nach dem Verb des Fortsetzens die Form auf -ing"
+ },
+ {
+  "tr": "yapılanı kim yaptığını söylemeden anlatır",
+  "kind": "pattern.tr",
+  "de": "erzählt das Getane, ohne zu sagen, wer es getan hat"
+ },
+ {
+  "tr": "ile eklenmiş.",
+  "kind": "why.tr",
+  "de": "angehängt."
+ },
+ {
+  "tr": "Doğru. İşi yapan gerçekten önemli olduğu için sona",
+  "kind": "why.tr",
+  "de": "Richtig. Weil der Handelnde wirklich wichtig ist, wurde er am Ende mit"
+ },
+ {
+  "tr": "Doğru. Kaçınmayı anlatan fiilden sonra ikinci fiil",
+  "kind": "why.tr",
+  "de": "Richtig. Nach dem Verb des Vermeidens bleibt das zweite Verb in der"
+ },
+ {
+  "tr": "Doğru. O anda 'is over' denmişti; aktarırken zaman bir basamak geriye gitti.",
+  "kind": "why.tr",
+  "de": "Richtig. In dem Moment hieß es 'is over'; beim Wiedergeben rückte die Zeit eine Stufe zurück."
+ },
+ {
+  "tr": "Doğru. Bu bağlaç tam bir cümle alıyor ve ardından virgülle asıl cümle geliyor.",
+  "kind": "why.tr",
+  "de": "Richtig. Dieser Konnektor nimmt einen vollständigen Satz, und danach folgt mit Komma der Hauptsatz."
+ },
+ {
+  "tr": "Doğru. Bu kalıp yasak değil serbestlik anlatıyor ve destek cümlesini tam da bu yumuşatıyor.",
+  "kind": "why.tr",
+  "de": "Richtig. Diese Wendung nennt kein Verbot, sondern Freiheit, und genau das macht den Satz der Unterstützung weicher."
+ },
+ {
+  "tr": "Amacı bağlamak için",
+  "kind": "hint.tr",
+  "de": "Um den Zweck anzubinden"
+ },
+ {
+  "tr": "Sonucu bağlamak için",
+  "kind": "hint.tr",
+  "de": "Um die Folge anzubinden"
+ },
+ {
+  "tr": "Gerekeni söylemek için",
+  "kind": "hint.tr",
+  "de": "Um das Nötige zu nennen"
+ },
+ {
+  "tr": "Çekinceyi bağlamak için",
+  "kind": "hint.tr",
+  "de": "Um den Vorbehalt anzubinden"
+ },
+ {
+  "tr": "İşi yapanı sona eklemek için",
+  "kind": "hint.tr",
+  "de": "Um den Handelnden am Ende anzuhängen"
+ },
+ {
+  "tr": "Kaçınma fiilinin ardılı için",
+  "kind": "hint.tr",
+  "de": "Für das, was auf das Verb des Vermeidens folgt"
+ },
+ {
+  "tr": "Sürdürme fiilinin ardılı için",
+  "kind": "hint.tr",
+  "de": "Für das, was auf das Verb des Fortsetzens folgt"
+ },
+ {
+  "tr": "sonuç",
+  "kind": "say.tr",
+  "de": "Folge"
+ },
+ {
+  "tr": "kaçınma",
+  "kind": "say.tr",
+  "de": "Vermeiden"
+ },
+ {
+  "tr": "sürdürme",
+  "kind": "say.tr",
+  "de": "Fortsetzen"
+ },
+ {
+  "tr": "gerekeni,",
+  "kind": "say.tr",
+  "de": "das Nötige,"
+ },
+ {
+  "tr": "gerekmeyen",
+  "kind": "say.tr",
+  "de": "das Nicht-Nötige"
+ },
+ {
+  "tr": "gerekmeyeni,",
+  "kind": "say.tr",
+  "de": "das Nicht-Nötige,"
+ },
+ {
+  "tr": "Üstün gelmeye",
+  "kind": "say.tr",
+  "de": "Die Oberhand gewinnen heißt"
+ },
+ {
+  "tr": "çok az olana ise",
+  "kind": "say.tr",
+  "de": "und was sehr selten vorkommt, heißt"
+ },
+ {
+  "tr": "Çok tekrar edene",
+  "kind": "say.tr",
+  "de": "Was sich oft wiederholt, heißt"
+ },
+ {
+  "tr": "Değerini görmeye",
+  "kind": "say.tr",
+  "de": "Den Wert von etwas sehen heißt"
+ },
+ {
+  "tr": "Özetleyelim: amaç",
+  "kind": "say.tr",
+  "de": "Fassen wir zusammen: Zweck"
+ },
+ {
+  "tr": "Ağızdan çıkan sese",
+  "kind": "say.tr",
+  "de": "Der Klang aus dem Mund heißt"
+ },
+ {
+  "tr": "elden çıkarmaya ise",
+  "kind": "say.tr",
+  "de": "und etwas aus der Hand geben heißt"
+ },
+ {
+  "tr": "yolu göstermeye ise",
+  "kind": "say.tr",
+  "de": "und den Weg zeigen heißt"
+ },
+ {
+  "tr": "Işığın olmadığı hâle",
+  "kind": "say.tr",
+  "de": "Wenn kein Licht da ist, heißt das"
+ },
+ {
+  "tr": "içteki sıkışmaya ise",
+  "kind": "say.tr",
+  "de": "und die Enge im Inneren heißt"
+ },
+ {
+  "tr": "İncitmeden davranana",
+  "kind": "say.tr",
+  "de": "Wer sich verhält, ohne zu verletzen, heißt"
+ },
+ {
+  "tr": "Özetleyelim: gereken",
+  "kind": "say.tr",
+  "de": "Fassen wir zusammen: das Nötige"
+ },
+ {
+  "tr": "Yanından ayrılmayana",
+  "kind": "say.tr",
+  "de": "Wer nicht von deiner Seite weicht, heißt"
+ },
+ {
+  "tr": "amaç için mastar alır,",
+  "kind": "say.tr",
+  "de": "nimmt für den Zweck einen Infinitiv,"
+ },
+ {
+  "tr": "Bir şeye karşı durmaya",
+  "kind": "say.tr",
+  "de": "Sich gegen etwas stellen heißt"
+ },
+ {
+  "tr": "Hiç değişmeyen sıklığa",
+  "kind": "say.tr",
+  "de": "Die Häufigkeit, die sich nie ändert, heißt"
+ },
+ {
+  "tr": "oradan uzaklaşmaya ise",
+  "kind": "say.tr",
+  "de": "und sich von dort entfernen heißt"
+ },
+ {
+  "tr": "Zarar gelme ihtimaline",
+  "kind": "say.tr",
+  "de": "Die Möglichkeit, dass Schaden entsteht, heißt"
+ },
+ {
+  "tr": "Bir şeyi ileri taşımaya",
+  "kind": "say.tr",
+  "de": "Etwas weiterbringen heißt"
+ },
+ {
+  "tr": "Bir şeyi kavrama gücüne",
+  "kind": "say.tr",
+  "de": "Die Kraft, etwas zu begreifen, heißt"
+ },
+ {
+  "tr": "İstediğim yön özgürlük.",
+  "kind": "say.tr",
+  "de": "Die Richtung, die ich will, ist Freiheit."
+ },
+ {
+  "tr": "O mazeret işe yaramadı.",
+  "kind": "say.tr",
+  "de": "Diese Ausrede hat nicht geholfen."
+ },
+ {
+  "tr": "Zorun altından kalkmaya",
+  "kind": "say.tr",
+  "de": "Mit dem Schweren fertig werden heißt"
+ },
+ {
+  "tr": "birine değer vermeye ise",
+  "kind": "say.tr",
+  "de": "und jemanden achten heißt"
+ },
+ {
+  "tr": "Birinin ardından gitmeye",
+  "kind": "say.tr",
+  "de": "Jemandem hinterhergehen heißt"
+ },
+ {
+  "tr": "Tehlike geçti ve kaçtık.",
+  "kind": "say.tr",
+  "de": "Die Gefahr ging vorbei und wir sind entkommen."
+ },
+ {
+  "tr": "Verirken elini sıkmayana",
+  "kind": "say.tr",
+  "de": "Wer beim Geben nicht knausert, heißt"
+ },
+ {
+  "tr": "Yapılmayanın gerekçesine",
+  "kind": "say.tr",
+  "de": "Der Grund für das Nichtgetane heißt"
+ },
+ {
+  "tr": "Bir şeyin taşıdığı anlama",
+  "kind": "say.tr",
+  "de": "Was etwas in sich trägt, heißt"
+ },
+ {
+  "tr": "Bu haftayla baş edebilir.",
+  "kind": "say.tr",
+  "de": "Sie kommt mit dieser Woche zurecht."
+ },
+ {
+  "tr": "Duyulur duyulmaz konuşmaya",
+  "kind": "say.tr",
+  "de": "Kaum hörbar sprechen heißt"
+ },
+ {
+  "tr": "Kendi seçimini yapabilmeye",
+  "kind": "say.tr",
+  "de": "Die eigene Wahl treffen zu können heißt"
+ },
+ {
+  "tr": "başkası için göze alana ise",
+  "kind": "say.tr",
+  "de": "und wer etwas für andere riskiert, heißt"
+ },
+ {
+  "tr": "Şimdiden ileriki bir zamana",
+  "kind": "say.tr",
+  "de": "Eine Zeit nach jetzt heißt"
+ },
+ {
+  "tr": "ağızdan çıkan tek birime ise",
+  "kind": "say.tr",
+  "de": "und die einzelne Einheit aus dem Mund heißt"
+ },
+ {
+  "tr": "Çok erken öğüt vermemelisin.",
+  "kind": "say.tr",
+  "de": "Du darfst nicht zu früh Ratschläge geben."
+ },
+ {
+  "tr": "bir şeyi yapmaya girişmeye ise",
+  "kind": "say.tr",
+  "de": "und etwas in Angriff nehmen heißt"
+ },
+ {
+  "tr": "Güzel bir günü birlikte anmaya",
+  "kind": "say.tr",
+  "de": "Einen schönen Tag gemeinsam begehen heißt"
+ },
+ {
+  "tr": "Kimsenin yanında olmadığı hâle",
+  "kind": "say.tr",
+  "de": "Wenn niemand bei dir ist, heißt das"
+ },
+ {
+  "tr": "Yeniden denemek cesaret ister.",
+  "kind": "say.tr",
+  "de": "Es noch einmal zu versuchen braucht Mut."
+ },
+ {
+  "tr": "kendine örnek alınan kişiye ise",
+  "kind": "say.tr",
+  "de": "und die Person, die man sich zum Beispiel nimmt, heißt"
+ },
+ {
+  "tr": "Nazik bir söz gerilimi kesiyor.",
+  "kind": "say.tr",
+  "de": "Ein freundliches Wort nimmt die Anspannung."
+ },
+ {
+  "tr": "Onu sonra yapacağım, hiç değil.",
+  "kind": "say.tr",
+  "de": "Ich mache es später, nicht nie."
+ },
+ {
+  "tr": "Bu konuda fısıldamamamı söyledi.",
+  "kind": "say.tr",
+  "de": "Er hat mir gesagt, ich soll darüber nicht flüstern."
+ },
+ {
+  "tr": "Karanlıkta yürümekten kaçınıyor.",
+  "kind": "say.tr",
+  "de": "Er vermeidet es, im Dunkeln zu gehen."
+ },
+ {
+  "tr": "O gün gerektiği gibi kutlanmalı.",
+  "kind": "say.tr",
+  "de": "Dieser Tag muss richtig gefeiert werden."
+ },
+ {
+  "tr": "Örnek tek söz edilmeden konuldu.",
+  "kind": "say.tr",
+  "de": "Das Beispiel wurde ohne ein einziges Wort gesetzt."
+ },
+ {
+  "tr": "Korkuya rağmen ileri gitme gücüne",
+  "kind": "say.tr",
+  "de": "Die Kraft, trotz Angst weiterzugehen, heißt"
+ },
+ {
+  "tr": "Aynı endişeyle savaşmayı sürdürdü.",
+  "kind": "say.tr",
+  "de": "Sie kämpfte weiter gegen dieselbe Sorge."
+ },
+ {
+  "tr": "Emeğinin kıymetini herkes biliyor.",
+  "kind": "say.tr",
+  "de": "Ihre Arbeit wird von allen geschätzt."
+ },
+ {
+  "tr": "Ne yapılması gerektiğini söylemeye",
+  "kind": "say.tr",
+  "de": "Zu sagen, was getan werden soll, heißt"
+ },
+ {
+  "tr": "Başkasının izleyebileceği davranışa",
+  "kind": "say.tr",
+  "de": "Ein Verhalten, dem andere folgen können, heißt"
+ },
+ {
+  "tr": "Mantıklı olsa da tereddüt ediyorum.",
+  "kind": "say.tr",
+  "de": "Auch wenn es Sinn ergibt, zögere ich."
+ },
+ {
+  "tr": "Sadık bir arkadaş saygıyı hak eder.",
+  "kind": "say.tr",
+  "de": "Ein treuer Freund verdient Respekt."
+ },
+ {
+  "tr": "Bugün kazanıp yarın kaybedebilirsin.",
+  "kind": "say.tr",
+  "de": "Du kannst heute gewinnen und morgen verlieren."
+ },
+ {
+  "tr": "Şimdi birine minnetini anlatacaksın.",
+  "kind": "say.tr",
+  "de": "Jetzt drückst du jemandem deine Dankbarkeit aus."
+ },
+ {
+  "tr": "Şimdi sıra sende: Önce dinlemelisin.",
+  "kind": "say.tr",
+  "de": "Jetzt bist du dran: Du musst zuerst zuhören."
+ },
+ {
+  "tr": "noktalı virgülden sonra sonucu söyler,",
+  "kind": "say.tr",
+  "de": "nennt nach dem Semikolon die Folge,"
+ },
+ {
+  "tr": "Ona her zaman en son teşekkür ediliyor.",
+  "kind": "say.tr",
+  "de": "Ihr wird immer zuletzt gedankt."
+ },
+ {
+  "tr": "Onun sesini duyup duymadığımı sordular.",
+  "kind": "say.tr",
+  "de": "Sie haben gefragt, ob ich seine Stimme gehört hatte."
+ },
+ {
+  "tr": "Şimdi sıra sende: Mektup özenle yazıldı.",
+  "kind": "say.tr",
+  "de": "Jetzt bist du dran: Der Brief wurde sorgfältig geschrieben."
+ },
+ {
+  "tr": "Bir tane daha: Bunu şimdi söylememelisin.",
+  "kind": "say.tr",
+  "de": "Noch eins: Das darfst du jetzt nicht sagen."
+ },
+ {
+  "tr": "Bir tane daha: Zor olsa da devam ediyorum.",
+  "kind": "say.tr",
+  "de": "Noch eins: Auch wenn es schwer ist, mache ich weiter."
+ },
+ {
+  "tr": "ise tam bir cümle alır ve çekinceyi bağlar.",
+  "kind": "say.tr",
+  "de": "nimmt einen vollständigen Satz und bindet den Vorbehalt an."
+ },
+ {
+  "tr": "İşin bir anlamı vardı, sonuç olarak kaldım.",
+  "kind": "say.tr",
+  "de": "Die Arbeit hatte eine Bedeutung, folglich bin ich geblieben."
+ },
+ {
+  "tr": "İkinci kalıbımız sonucu bağlıyor. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Unsere zweite Wendung bindet die Folge an. Wiederhole:"
+ },
+ {
+  "tr": "Sık sık buluşuyoruz ama nadiren konuşuyoruz.",
+  "kind": "say.tr",
+  "de": "Wir treffen uns oft, aber reden selten."
+ },
+ {
+  "tr": "Son kalıbımız çekinceyi bağlıyor. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Unsere letzte Wendung bindet den Vorbehalt an. Wiederhole:"
+ },
+ {
+  "tr": "Şimdi nereye varmak istediğini anlatacaksın.",
+  "kind": "say.tr",
+  "de": "Jetzt erzählst du, wohin du willst."
+ },
+ {
+  "tr": "Şimdi sen kur: Bundan konuşmaktan kaçınıyor.",
+  "kind": "say.tr",
+  "de": "Jetzt du: Er vermeidet es, darüber zu reden."
+ },
+ {
+  "tr": "Kendi çalışma biçimimi geliştirmek istiyorum.",
+  "kind": "say.tr",
+  "de": "Ich will meine eigene Art zu arbeiten entwickeln."
+ },
+ {
+  "tr": "Şimdi sen kur: Bu konuda konuşmamamı söyledi.",
+  "kind": "say.tr",
+  "de": "Jetzt du: Er hat mir gesagt, ich soll darüber nicht reden."
+ },
+ {
+  "tr": "Şimdi sen kur: Emeğin kıymetini ekip biliyor.",
+  "kind": "say.tr",
+  "de": "Jetzt du: Die Arbeit wird vom Team geschätzt."
+ },
+ {
+  "tr": "Bir tane daha: Onu görüp görmediğimi sordular.",
+  "kind": "say.tr",
+  "de": "Noch eins: Sie haben gefragt, ob ich sie gesehen hatte."
+ },
+ {
+  "tr": "Bununla tek başına yüzleşmek zorunda değilsin.",
+  "kind": "say.tr",
+  "de": "Du musst dich dem nicht allein stellen."
+ },
+ {
+  "tr": "Son kalıbımız sürdürmeyi anlatıyor. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Unsere letzte Wendung erzählt vom Fortsetzen. Wiederhole:"
+ },
+ {
+  "tr": "Şimdi bir korkunu bir arkadaşınla konuşacaksın.",
+  "kind": "say.tr",
+  "de": "Jetzt besprichst du eine Angst mit einer Freundin."
+ },
+ {
+  "tr": "Bir tane daha: Aynı korkuyla savaşmayı sürdürdü.",
+  "kind": "say.tr",
+  "de": "Noch eins: Sie kämpfte weiter gegen dieselbe Angst."
+ },
+ {
+  "tr": "Cömert bir davranış sessiz bir kahraman yaratır.",
+  "kind": "say.tr",
+  "de": "Eine großzügige Tat macht einen stillen Helden."
+ },
+ {
+  "tr": "İkinci kalıbımız kaçınmayı anlatıyor. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Unsere zweite Wendung erzählt vom Vermeiden. Wiederhole:"
+ },
+ {
+  "tr": "Şimdi sıra sende: Toplantının bittiğini söyledi.",
+  "kind": "say.tr",
+  "de": "Jetzt bist du dran: Sie hat gesagt, dass die Sitzung vorbei war."
+ },
+ {
+  "tr": "Bir tane daha: O gün gerektiği gibi hatırlanmalı.",
+  "kind": "say.tr",
+  "de": "Noch eins: Dieser Tag muss richtig erinnert werden."
+ },
+ {
+  "tr": "ister; kaçınmayı ve sürdürmeyi anlatan fiiller ise",
+  "kind": "say.tr",
+  "de": "und Verben des Vermeidens und Fortsetzens dagegen die Form auf"
+ },
+ {
+  "tr": "Şimdi dersin kuralı. Destek olurken üç derece var:",
+  "kind": "say.tr",
+  "de": "Jetzt die Regel der Lektion. Beim Beistehen gibt es drei Stufen:"
+ },
+ {
+  "tr": "Şimdi sana anlatılanı ölçülü biçimde aktaracaksın.",
+  "kind": "say.tr",
+  "de": "Jetzt gibst du mit Maß weiter, was dir anvertraut wurde."
+ },
+ {
+  "tr": "Şimdi sıra sende: Sorunla yüzleşmeye karar verdim.",
+  "kind": "say.tr",
+  "de": "Jetzt bist du dran: Ich habe entschieden, mich dem Problem zu stellen."
+ },
+ {
+  "tr": "Şimdi sen kur: Bugün karar vermek zorunda değilsin.",
+  "kind": "say.tr",
+  "de": "Jetzt du: Du musst heute nicht entscheiden."
+ },
+ {
+  "tr": "Gidilen taraf demek. İlk kalıbımız da bu. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Das heißt die Seite, in die man geht. Das ist auch unsere erste Wendung. Wiederhole:"
+ },
+ {
+  "tr": "İyi bir öğretmen sana yol gösterir, peşinden gelmez.",
+  "kind": "say.tr",
+  "de": "Eine gute Lehrerin leitet dich, sie folgt dir nicht."
+ },
+ {
+  "tr": "Şimdi zor gün geçiren bir arkadaşına destek olacaksın.",
+  "kind": "say.tr",
+  "de": "Jetzt stehst du einem Freund bei, der einen schweren Tag hat."
+ },
+ {
+  "tr": "Şimdi sıra sende: Daha çok öğrenmek için iş değiştirdim.",
+  "kind": "say.tr",
+  "de": "Jetzt bist du dran: Ich habe die Stelle gewechselt, um mehr zu lernen."
+ },
+ {
+  "tr": "Birini neşelendirmek demek. İlk kalıbımız da bu. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Das heißt jemanden aufmuntern. Das ist auch unsere erste Wendung. Wiederhole:"
+ },
+ {
+  "tr": "Karşılıksız verilen şey demek. İlk kalıbımız da bu. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Das heißt, was ohne Gegenleistung gegeben wird. Das ist auch unsere erste Wendung. Wiederhole:"
+ },
+ {
+  "tr": "Şimdi sen kur: İşin bir anlamı vardı, sonuç olarak devam ettim.",
+  "kind": "say.tr",
+  "de": "Jetzt du: Die Arbeit hatte eine Bedeutung, folglich habe ich weitergemacht."
+ },
+ {
+  "tr": "ister. Üç fiili de örnekle tanıyacaksın, kural listesiyle değil.",
+  "kind": "say.tr",
+  "de": "und nichts anderes. Alle drei Verben lernst du an Beispielen kennen, nicht an einer Regelliste."
+ },
+ {
+  "tr": "Kaçmadan karşısına çıkmak demek. İlk kalıbımız da bu. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Das heißt sich stellen, ohne wegzulaufen. Das ist auch unsere erste Wendung. Wiederhole:"
+ },
+ {
+  "tr": "İki arkadaş arasındaki bağ demek. İlk kalıbımız da bu. Tekrar et:",
+  "kind": "say.tr",
+  "de": "Das heißt das Band zwischen zwei Freunden. Das ist auch unsere erste Wendung. Wiederhole:"
+ },
+ {
+  "tr": "Şimdi dersin kuralı. Edilgen cümlede nesne başa geçer; işi yapan önemliyse",
+  "kind": "say.tr",
+  "de": "Jetzt die Regel der Lektion. Im Passivsatz rückt das Objekt nach vorn; ist der Handelnde wichtig, wird er mit"
+ },
+ {
+  "tr": "Merhaba! Bugün minneti anlatmayı öğreneceğiz: ne yapıldı, kim tarafından, ne yapılmalı.",
+  "kind": "say.tr",
+  "de": "Hallo! Heute lernen wir, Dankbarkeit auszudrücken: was getan wurde, von wem, was getan werden soll."
+ },
+ {
+  "tr": "Teşekkür dili edilgene yaslanır, çünkü öne çıkan kişi değil yapılan iyiliktir. Hazır mısın?",
+  "kind": "say.tr",
+  "de": "Die Sprache des Dankes stützt sich auf das Passiv, denn im Vordergrund steht nicht die Person, sondern die Wohltat. Bist du bereit?"
+ },
+ {
+  "tr": "Merhaba! Bugün sana anlatılanı aktarmayı öğreneceğiz: ne dedi, ne yapmamanı söyledi, ne sordu.",
+  "kind": "say.tr",
+  "de": "Hallo! Heute lernen wir weiterzugeben, was dir erzählt wurde: was sie gesagt hat, was du nicht tun sollst, was sie gefragt hat."
+ },
+ {
+  "tr": "ise yapılmamasını söyler. Ortadaki derece karşındakine alan açar ve destek dilinin asıl kalıbıdır.",
+  "kind": "say.tr",
+  "de": "und das, was man nicht tun soll. Die mittlere Stufe schafft dem anderen Raum und ist die eigentliche Wendung der Unterstützung."
+ },
+ {
+  "tr": "Merhaba! Bugün kendi yönünü anlatmayı öğreneceğiz: neden, sonuç olarak ne oldu, hangi çekincen var.",
+  "kind": "say.tr",
+  "de": "Hallo! Heute lernen wir, die eigene Richtung zu erzählen: warum, was folglich geschah, welchen Vorbehalt du hast."
+ },
+ {
+  "tr": "Merhaba! Bugün zor bir gün geçiren birine destek olmayı öğreneceğiz: ne söylemelisin, ne söylememelisin.",
+  "kind": "say.tr",
+  "de": "Hallo! Heute lernen wir, jemandem an einem schweren Tag beizustehen: was du sagen sollst und was nicht."
+ },
+ {
+  "tr": "Merhaba! Bugün korkuları anlatmayı öğreneceğiz: neye karar verdin, neyden kaçınıyorsun, neyi sürdürüyorsun.",
+  "kind": "say.tr",
+  "de": "Hallo! Heute lernen wir, von Ängsten zu erzählen: wofür du dich entschieden hast, was du vermeidest, was du fortsetzt."
+ },
+ {
+  "tr": "Bu B1'in son dersi ve burada seviyenin bütün bağlaçları bir araya geliyor: amaç, sonuç, çekince. Hazır mısın?",
+  "kind": "say.tr",
+  "de": "Das ist die letzte Lektion von B1, und hier kommen alle Konnektoren der Stufe zusammen: Zweck, Folge, Vorbehalt. Bist du bereit?"
+ },
+ {
+  "tr": "Sırdaş olmak neyi aktarmayacağını bilmeyi de gerektiriyor; bu ders aktarmanın dilbilgisini kuruyor. Hazır mısın?",
+  "kind": "say.tr",
+  "de": "Vertrauensperson zu sein verlangt auch zu wissen, was man nicht weitergibt; diese Lektion baut die Grammatik des Weitergebens. Bist du bereit?"
+ },
+ {
+  "tr": "ile sona eklenir, değilse hiç söylenmez. Teşekkür cümlesinde çoğu zaman söylenmez çünkü asıl öne çıkan iyiliktir.",
+  "kind": "say.tr",
+  "de": "am Ende angehängt, sonst gar nicht genannt. Im Dankessatz wird er meist nicht genannt, weil eigentlich die Wohltat im Vordergrund steht."
+ },
+ {
+  "tr": "Destek olmanın en sık yapılan hatası erken öğüt vermek ve İngilizcede bunu söylemenin kalıbı bir yasak kipi. Hazır mısın?",
+  "kind": "say.tr",
+  "de": "Der häufigste Fehler beim Beistehen ist zu früher Rat, und die englische Wendung dafür ist ein Verbotsmodalverb. Bist du bereit?"
+ },
+ {
+  "tr": "Korkuyu anlatan fiillerin her biri kendinden sonra ne geleceğini kendi seçiyor ve yanlış seçim cümleyi bozuyor. Hazır mısın?",
+  "kind": "say.tr",
+  "de": "Jedes Verb, das von Angst erzählt, wählt selbst, was nach ihm kommt, und die falsche Wahl macht den Satz kaputt. Bist du bereit?"
+ }
+]

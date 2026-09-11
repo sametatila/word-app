@@ -1,6 +1,6 @@
 # WP-74 — İngilizce ders kapsamı B1–C1
 
-**Durum:** sürüyor (B1 modül 1-9 bitti, 90/300 ders) · **Sahip:** Claude · **Açılış:** 2026-09-11
+**Durum:** sürüyor (B1 TAM: 100/100; B2 ve C1 kaldı, 100/300 ders) · **Sahip:** Claude · **Açılış:** 2026-09-11
 
 ## Kusur
 
@@ -190,6 +190,30 @@ kelime ve hiçbir öğrenci ikisini birden görmüyor. Anahtar HEDEF DİL'e
 çevrildi — kurs değil, çünkü aynı dili öğreten iki kurs (de ve gsw-zh) hâlâ
 çakışmalı. Dört eş yazım düştü: warm, online, modern, wild. Başka hiçbir
 uyarı maskelenmedi (ölçüldü).
+
+**B1 modül 10 — Duygular ve hayaller (2026-09-11). B1 BİTTİ.** On ders:
+duyguyu adlandırmak, pişmanlık, hayaller, olsaydı, beni etkileyen şey,
+cesaret vermek, korkular, sırdaş, minnet, nereye varmak istiyorum.
+
+Modülün dayanağı: duygu sözcüğü tek başına duyguyu anlatmıyor, ZAMAN
+anlatıyor. «Üzgünüm» ile «pazartesiden beri üzgünüm» aynı kelimeyi taşıyor
+ama biri hâl, biri süreç. Pişmanlık dersi de aynı yerden kuruluyor —
+pişmanlık iki zamanın arasındaki boşlukta doğuyor.
+
+### B1 katmanının kapanış ölçümü
+
+- 100 ders, 100 benzersiz kimlik
+- **800 sözlükçe maddesi, 800'ü de benzersiz** — seviye içinde tek tekrar yok
+- 3.913 Almanca dize (l-076…l-095); `check:native-de` ders 300/300
+- `check:lessons` hata yok, `test:content` bütçe içinde, `test:gloss` geçti
+
+Bir etiket tutarsızlığı kapanışta düzeltildi: bir ders `Gerund and
+infinitive`, dokuzu `Gerund or infinitive` diyordu. İkisi de aynı can-do'ya
+eşleşiyordu (`FOCUS_GR_EN` düzenli ifadesi ikisini de yakalıyor), yani kapı
+görmedi — ama etiket öğrenciye gösteriliyor ve aynı kural iki adla
+görünüyordu. `Second conditional` ve `Modals of deduction` etiketleri
+BİLEREK ayrı bırakıldı: onlar aynı kuralın alt başlığı değil, dersin gerçekten
+başka bir yüzünü öğretiyor.
 
 ## Tamamlanma ölçütü
 

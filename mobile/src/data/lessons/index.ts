@@ -54,9 +54,9 @@ export type Lesson = {
  */
 const BY_COURSE: Record<string, Record<string, Lesson[]>> = {
   de: { A1: a1 as Lesson[], A2: a2 as Lesson[], B1: b1 as Lesson[], B2: b2 as Lesson[], C1: c1 as Lesson[] },
-  // İngilizce: A1 ve A2 tam (100'er ders), B1 yazılıyor — kaç ders olduğu
-  // burada YAZMIYOR, çünkü dosya her modülde büyüyor ve sayı yorumda
-  // bayatlıyor; güncel sayı `npm run dump:lessons en` çıktısında.
+  // İngilizce: A1, A2 ve B1 tam (100'er ders); B2 ve C1 yazılmadı. Sayılar
+  // burada TEK TEK YAZILMIYOR — güncel sayı `npm run dump:lessons en`
+  // çıktısında, yorumda bayatlıyor.
   // Seviye anahtarı olmayan seviyeler boş döner — Patika o ünitelerde
   // "Yakında" gösterir, Almanca derslere DÜŞMEZ (bkz. bundleFor: yalnız aynı
   // hedef dile düşülür). Yarım seviye de aynı şekilde görünür: yazılmış
