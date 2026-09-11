@@ -6468,8 +6468,8 @@
   "roleplay": {
    "scene": "Bir arkadaşın hafta sonu şehir dışına gitti ve yeni döndü. Merakını göster: nereye gittiğini, kiminle gittiğini, ne kadar kaldığını ve nasıl geçtiğini did ve was/were sorularıyla öğren.",
    "partner": "gezisinden yeni dönmüş, anlatmaya istekli bir arkadaş",
-   "opening": "Guess what — I was in London last weekend!",
-   "openingTr": "Bil bakalım ne oldu — geçen hafta sonu Londra'daydım!",
+   "opening": "Guess what — I was in London last weekend! Do you want to hear about it?",
+   "openingTr": "Bil bakalım ne oldu — geçen hafta sonu Londra'daydım! Anlatayım mı?",
    "goal": "Öğrenci en az beş soru sormuş; hem did'li fiil sorusu hem was/were'lü durum sorusu kullanmış ve arkadaşın gezisi hakkında nereye, kiminle ve ne kadar bilgisini almış olur.",
    "minTurns": 7
   }
@@ -7695,8 +7695,8 @@
   "roleplay": {
    "scene": "Arkadaşın Emre'nin evine uğradın, kapıyı ev arkadaşı açtı. Emre şu anda evde değil.",
    "partner": "Emre'nin ev arkadaşı",
-   "opening": "Hi! Emre isn't here. He has gone to the airport.",
-   "openingTr": "Merhaba! Emre burada değil. Havalimanına gitti.",
+   "opening": "Hi! Emre isn't here. He has gone to the airport. Can I help you?",
+   "openingTr": "Merhaba! Emre burada değil. Havalimanına gitti. Yardımcı olabilir miyim?",
    "goal": "Emre'nin nereye gittiğini ve ne zaman döneceğini öğrenip, kendi gittiğin ülkeleri been to kalıbıyla anlatabilmek.",
    "minTurns": 7
   }
@@ -14692,8 +14692,8 @@
   "roleplay": {
    "scene": "Arkadaşın Emma grip olmuş. Telefonda arıyorsun ve ona ne yapması, ne yapmaması gerektiğini söylüyorsun.",
    "partner": "Emma, hasta olan arkadaşın",
-   "opening": "Hi! I feel terrible today. I have a bad cold and a headache.",
-   "openingTr": "Selam! Bugün çok kötüyüm. Fena üşütmüşüm, başım da ağrıyor.",
+   "opening": "Hi! I feel terrible today. I have a bad cold and a headache. What should I do?",
+   "openingTr": "Selam! Bugün çok kötüyüm. Fena üşütmüşüm, başım da ağrıyor. Ne yapmalıyım?",
    "goal": "Emma'ya should ve shouldn't ile en az üç öğüt verdiysen ve onun Should I ...? sorusuna cevap verdiysen konuşma başarılı sayılır.",
    "minTurns": 6
   }
@@ -24940,8 +24940,8 @@
   "roleplay": {
    "scene": "Yeni taşındığın binanın girişinde görevliyle konuşuyorsun. Çöpün ne zaman çıkarıldığını, sessizlik saatini ve neyin yasak olduğunu öğren; bir de kendin bir soru sor.",
    "partner": "kuralları anlatmayı seven, güler yüzlü bir apartman görevlisi",
-   "opening": "Welcome to the building! Let me tell you the rules.",
-   "openingTr": "Binaya hoş geldin! Sana kuralları anlatayım.",
+   "opening": "Welcome to the building! Shall I tell you the rules?",
+   "openingTr": "Binaya hoş geldin! Sana kuralları anlatayım mı?",
    "goal": "Çöp günü ve sessizlik saati öğrenilmiş, en az bir yasak (mustn't ya da not allowed) duyulmuş ve öğrenci kendisi bir kural sorusu sormuş olur.",
    "minTurns": 7
   }
@@ -27284,8 +27284,8 @@
   "roleplay": {
    "scene": "Küçük bir kafede iş görüşmesindesin. Karşındaki kişi seni tanımak, nerede çalıştığını ve neler bildiğini öğrenmek istiyor.",
    "partner": "kafe müdürü",
-   "opening": "So, tell me about your work experience.",
-   "openingTr": "Anlat bakalım, iş deneyimin nedir?",
+   "opening": "So, tell me about your work experience. Where did you work last?",
+   "openingTr": "Anlat bakalım, iş deneyimin nedir? En son nerede çalıştın?",
    "goal": "Nerede çalıştığını, ne kadar süredir ya da kaç yıl çalıştığını ve orada hangi becerileri öğrendiğini anlatman; bir de müdüre kaç yıldır orada olduğunu sorman.",
    "minTurns": 7
   }
@@ -28035,8 +28035,8 @@
   "roleplay": {
    "scene": "Bir kafede yarı zamanlı iş için mülakattasın. Karşındaki kişi sana deneyimini, güçlü yönünü ve ne zaman başlayabileceğini soruyor.",
    "partner": "kafenin işe alım yapan müdürü",
-   "opening": "Hello, thank you for coming. Tell me about your experience.",
-   "openingTr": "Merhaba, geldiğin için teşekkürler. Bana deneyiminden bahset.",
+   "opening": "Hello, thank you for coming. Can you tell me about your experience?",
+   "openingTr": "Merhaba, geldiğin için teşekkürler. Bana deneyiminden bahseder misin?",
    "goal": "Deneyimini süreyle birlikte anlat, güçlü yönünü söyle, bu işi neden istediğini açıkla ve ne zaman başlayabileceğini belirt; sonunda teşekkür et.",
    "minTurns": 7
   }
@@ -47227,8 +47227,8 @@
   "roleplay": {
    "scene": "Arkadaşının doğum günü partisine geldin. Kapıda seni o karşılıyor, elinde de senin getirdiğin hediye var.",
    "partner": "doğum günü sahibi arkadaşın Emma",
-   "opening": "Hi! Thanks for coming to my party!",
-   "openingTr": "Selam! Partime geldiğin için teşekkürler!",
+   "opening": "Hi! Thanks for coming to my party! Would you like something to drink?",
+   "openingTr": "Selam! Partime geldiğin için teşekkürler! Bir şey içmek ister misin?",
    "goal": "Doğum gününü kutladıysan, hediyeyi uzatıp bir şey söylediysen ve partiyle ilgili en az bir soru sorduysan konuşma başarılı sayılır.",
    "minTurns": 7
   }
@@ -49205,8 +49205,8 @@
   "roleplay": {
    "scene": "Arkadaşın seni arayıp ehliyet sınavını geçtiğini söylüyor. Onu tebrik ediyor ve iyi dileklerini iletiyorsun.",
    "partner": "ehliyet sınavını yeni geçmiş arkadaşın",
-   "opening": "Hey! I've got great news — I passed my driving test!",
-   "openingTr": "Selam! Harika bir haberim var — ehliyet sınavımı geçtim!",
+   "opening": "Hey! I've got great news — I passed my driving test! Isn't that great?",
+   "openingTr": "Selam! Harika bir haberim var — ehliyet sınavımı geçtim! Harika değil mi?",
    "goal": "Arkadaşını tebrik edip haberin güzel olduğunu söylediğinde, onunla gurur duyduğunu belirttiğinde ve bundan sonrası için iyi dilekte bulunduğunda konuşma başarılı sayılır.",
    "minTurns": 7
   }
@@ -52169,8 +52169,8 @@
   "roleplay": {
    "scene": "Bir arkadaşının ev partisindesin. Mutfakta kimseyi tanımıyorsun ve yanındaki kişi sana dönüp gülümsüyor.",
    "partner": "partide tanımadığın bir misafir",
-   "opening": "Hi! I don't think we've met. I'm Emma.",
-   "openingTr": "Merhaba! Sanırım tanışmadık. Ben Emma.",
+   "opening": "Hi! I don't think we've met. I'm Emma. What's your name?",
+   "openingTr": "Merhaba! Sanırım tanışmadık. Ben Emma. Senin adın ne?",
    "goal": "Kendini tanıtıp Emma'nın ev sahibini nereden tanıdığını sor, daha önce gelip gelmediğini öğren ve konuşmayı kibarca bitir.",
    "minTurns": 7
   }
@@ -52785,8 +52785,8 @@
   "roleplay": {
    "scene": "Ağır çantalarını taşırken bir komşun sana yardım etti ve kapıyı açtı. Şimdi ona teşekkür ediyorsun.",
    "partner": "yardım eden komşun",
-   "opening": "Here, let me help you with those bags.",
-   "openingTr": "Gel, şu çantalarda sana yardım edeyim.",
+   "opening": "Here, let me help you with those bags. Are they heavy?",
+   "openingTr": "Gel, şu çantalarda sana yardım edeyim. Ağır mı?",
    "goal": "Yardımı için teşekkür etmen, sebebini for ile söylemen ve komşunun teşekkürüne de karşılık vermen yeterli.",
    "minTurns": 7
   }

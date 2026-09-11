@@ -18647,8 +18647,8 @@
   "roleplay": {
    "scene": "Mahalledeki bir manavdasın. Tezgahta elma, domates ve patates var; akşam yemeği için alışveriş yapacaksın.",
    "partner": "manav tezgâhının arkasındaki satıcı",
-   "opening": "Morning! The apples are very fresh today.",
-   "openingTr": "Günaydın! Elmalar bugün çok taze.",
+   "opening": "Morning! The apples are very fresh today. What would you like?",
+   "openingTr": "Günaydın! Elmalar bugün çok taze. Ne almak istersiniz?",
    "goal": "Öğrenci en az iki ürünü çoğul biçimiyle ve kilo belirterek istediğinde, tazelik ya da fiyat sorusu sorup cevabı anladığında konuşma başarılı sayılır.",
    "minTurns": 7
   }
@@ -41222,8 +41222,8 @@
   "roleplay": {
    "scene": "Yeni taşındın. Yan daireden komşun Emma kapını çalıp kendini tanıtıyor. Sen de kendini tanıtıp ona birkaç şey soruyorsun.",
    "partner": "Emma, yan dairede oturan komşun",
-   "opening": "Hi! I'm Emma. I live next door.",
-   "openingTr": "Merhaba! Ben Emma. Yan dairede oturuyorum.",
+   "opening": "Hi! I'm Emma. I live next door. What's your name?",
+   "openingTr": "Merhaba! Ben Emma. Yan dairede oturuyorum. Senin adın ne?",
    "goal": "Kendini tanıtıp nerede oturduğunu söylediğinde ve Emma'ya en az bir soru sorup komşulardan birini quiet ya da friendly diye tarif ettiğinde başarılı sayılır.",
    "minTurns": 7
   }
@@ -41779,8 +41779,8 @@
   "roleplay": {
    "scene": "Yeni taşındığın apartmanın girişinde komşun Emma seni karşılıyor ve binanın kurallarını anlatıyor. Sen de merak ettiklerini soruyorsun: gürültü, çöp, köpek, sigara.",
    "partner": "Komşun Emma",
-   "opening": "Welcome to the building! Let me tell you the house rules.",
-   "openingTr": "Binaya hoş geldin! Sana apartman kurallarını anlatayım.",
+   "opening": "Welcome to the building! Shall I tell you the house rules?",
+   "openingTr": "Binaya hoş geldin! Sana apartman kurallarını anlatayım mı?",
    "goal": "Konuşma, en az bir kuralı must ile tekrarladığında, bir yasağı mustn't ile söylediğinde ve izin sormak için Is it allowed? gibi bir soru sorduğunda başarılı sayılır.",
    "minTurns": 7
   }
@@ -49003,8 +49003,8 @@
   "roleplay": {
    "scene": "Bir parkta bankta oturuyorsun; yanındaki kişi etrafı anlatmaya başlıyor.",
    "partner": "parkta tanıştığın arkadaş canlısı biri",
-   "opening": "Look! There is a big dog on the grass.",
-   "openingTr": "Bak! Çimenin üstünde büyük bir köpek var.",
+   "opening": "Look! There is a big dog on the grass. Do you like dogs?",
+   "openingTr": "Bak! Çimenin üstünde büyük bir köpek var. Köpekleri sever misin?",
    "goal": "Öğrenci parkta gördüğü en az iki şeyi There is veya There are ile anlatır ve bir kez Is there …? sorusu sorar.",
    "minTurns": 6
   }
@@ -55931,8 +55931,8 @@
   "roleplay": {
    "scene": "Arkadaşın yorgun ve keyifsiz. Sana derdini anlatıyor, sen ona öğüt veriyorsun.",
    "partner": "Yorgun bir arkadaşın",
-   "opening": "I'm so tired today. I work every night.",
-   "openingTr": "Bugün çok yorgunum. Her gece çalışıyorum.",
+   "opening": "I'm so tired today. I work every night. What should I do?",
+   "openingTr": "Bugün çok yorgunum. Her gece çalışıyorum. Ne yapmalıyım?",
    "goal": "Öğrenci \"You should ...\" ile en az iki öğüt versin ve bir kez de \"You shouldn't ...\" kullansın.",
    "minTurns": 7
   }
@@ -63989,8 +63989,8 @@
   "roleplay": {
    "scene": "Arkadaşın Emma'nın evinde güzel bir akşam geçirdin, şimdi ayrılma vakti. Kapıda vedalaşıyorsunuz.",
    "partner": "Emma, İngiliz arkadaşın",
-   "opening": "It was so nice to see you tonight! Let's keep in touch.",
-   "openingTr": "Bu akşam seni görmek çok güzeldi! İrtibatta kalalım.",
+   "opening": "It was so nice to see you tonight! Shall we keep in touch?",
+   "openingTr": "Bu akşam seni görmek çok güzeldi! İrtibatta kalalım mı?",
    "goal": "Vedalaşmayı tamamla: yakında görüşmek istediğini söyle, onu arayacağını ya da tekrar buluşmayı teklif et ve 'take care' ile ayrıl.",
    "minTurns": 7
   }

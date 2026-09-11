@@ -1286,5 +1286,21 @@
  { "tr": "Türkçesi: late = geç · complain = şikâyet etmek · polite = kibar. Lütfen tekrar et:", "kind": "say.tr", "de": "Auf Deutsch: late = spät · complain = sich beschweren · polite = höflich. Bitte sprich nach:" },
  { "tr": "Türkçesi: number = sayı · age = yaş · year = yıl · price = fiyat. Lütfen tekrar et:", "kind": "say.tr", "de": "Auf Deutsch: number = Zahl · age = Alter · year = Jahr · price = Preis. Bitte sprich nach:" },
  { "tr": "Türkçesi: see / saw = görmek / gördüm · meet / met = buluşmak / buluştum. Lütfen tekrar et:", "kind": "say.tr", "de": "Auf Deutsch: see / saw = sehen / sah · meet / met = treffen / traf. Bitte sprich nach:" },
- { "tr": "Türkçesi: go / went = gitmek / gittim · have / had = sahip olmak, (yemek) yemek / vardı, yedim · eat / ate = yemek yemek / yedim. Lütfen tekrar et:", "kind": "say.tr", "de": "Auf Deutsch: go / went = gehen / ging · have / had = haben, essen / hatte, aß · eat / ate = essen / aß. Bitte sprich nach:" }
+ { "tr": "Türkçesi: go / went = gitmek / gittim · have / had = sahip olmak, (yemek) yemek / vardı, yedim · eat / ate = yemek yemek / yedim. Lütfen tekrar et:", "kind": "say.tr", "de": "Auf Deutsch: go / went = gehen / ging · have / had = haben, essen / hatte, aß · eat / ate = essen / aß. Bitte sprich nach:" },
+ { "tr": "Binaya hoş geldin! Sana kuralları anlatayım mı?", "kind": "openingTr", "de": "Willkommen im Haus! Soll ich dir die Regeln erklären?" },
+ { "tr": "Gel, şu çantalarda sana yardım edeyim. Ağır mı?", "kind": "openingTr", "de": "Komm, ich helfe dir mit den Taschen. Sind sie schwer?" },
+ { "tr": "Merhaba! Sanırım tanışmadık. Ben Emma. Senin adın ne?", "kind": "openingTr", "de": "Hallo! Ich glaube, wir kennen uns nicht. Ich bin Emma. Wie heißt du?" },
+ { "tr": "Günaydın! Elmalar bugün çok taze. Ne almak istersiniz?", "kind": "openingTr", "de": "Guten Morgen! Die Äpfel sind heute sehr frisch. Was möchten Sie?" },
+ { "tr": "Bu akşam seni görmek çok güzeldi! İrtibatta kalalım mı?", "kind": "openingTr", "de": "Es war sehr schön, dich heute Abend zu sehen! Bleiben wir in Kontakt?" },
+ { "tr": "Bugün çok yorgunum. Her gece çalışıyorum. Ne yapmalıyım?", "kind": "openingTr", "de": "Ich bin heute sehr müde. Ich arbeite jede Nacht. Was soll ich tun?" },
+ { "tr": "Merhaba! Ben Emma. Yan dairede oturuyorum. Senin adın ne?", "kind": "openingTr", "de": "Hallo! Ich bin Emma. Ich wohne nebenan. Wie heißt du?" },
+ { "tr": "Anlat bakalım, iş deneyimin nedir? En son nerede çalıştın?", "kind": "openingTr", "de": "Erzähl mal, was für Berufserfahrung hast du? Wo hast du zuletzt gearbeitet?" },
+ { "tr": "Binaya hoş geldin! Sana apartman kurallarını anlatayım mı?", "kind": "openingTr", "de": "Willkommen im Haus! Soll ich dir die Hausordnung erklären?" },
+ { "tr": "Bak! Çimenin üstünde büyük bir köpek var. Köpekleri sever misin?", "kind": "openingTr", "de": "Schau! Auf dem Rasen ist ein großer Hund. Magst du Hunde?" },
+ { "tr": "Bil bakalım ne oldu — geçen hafta sonu Londra'daydım! Anlatayım mı?", "kind": "openingTr", "de": "Rate mal, was passiert ist — letztes Wochenende war ich in London! Soll ich erzählen?" },
+ { "tr": "Selam! Partime geldiğin için teşekkürler! Bir şey içmek ister misin?", "kind": "openingTr", "de": "Hi! Danke, dass du zu meiner Party gekommen bist! Möchtest du etwas trinken?" },
+ { "tr": "Merhaba, geldiğin için teşekkürler. Bana deneyiminden bahseder misin?", "kind": "openingTr", "de": "Hallo, danke, dass du gekommen bist. Kannst du mir von deiner Erfahrung erzählen?" },
+ { "tr": "Merhaba! Emre burada değil. Havalimanına gitti. Yardımcı olabilir miyim?", "kind": "openingTr", "de": "Hallo! Emre ist nicht da. Er ist zum Flughafen gefahren. Kann ich dir helfen?" },
+ { "tr": "Selam! Harika bir haberim var — ehliyet sınavımı geçtim! Harika değil mi?", "kind": "openingTr", "de": "Hi! Ich habe tolle Neuigkeiten — ich habe die Fahrprüfung bestanden! Ist das nicht toll?" },
+ { "tr": "Selam! Bugün çok kötüyüm. Fena üşütmüşüm, başım da ağrıyor. Ne yapmalıyım?", "kind": "openingTr", "de": "Hi! Mir geht es heute sehr schlecht. Ich bin stark erkältet und habe Kopfschmerzen. Was soll ich tun?" }
 ]
