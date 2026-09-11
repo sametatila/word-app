@@ -71,7 +71,7 @@ const TAB_PATHS = new Set(NAV.map((n) => n.href));
  * (`AppHeader`). Başlık sayfanın içinde çizildiği için prop olarak geçmesi
  * her sayfaya aynı üç parametreyi taşımak demekti.
  */
-type ShellData = { streak: number; xp: number; userId: string; name: string | null; course: string };
+type ShellData = { streak: number; xp: number; userId: string; name: string | null; avatar: string | null; course: string };
 const ShellContext = createContext<ShellData | null>(null);
 
 export function useShell(): ShellData {
@@ -115,6 +115,7 @@ export function AppShell({
   voice = null,
   userId,
   name = null,
+  avatar = null,
 }: {
   children: ReactNode;
   streak: number;
@@ -125,6 +126,13 @@ export function AppShell({
   userId: string;
   /** Görünen ad — başlıktaki armanın baş harfleri için. */
   name?: string | null;
+  /**
+   * Hesabın avatarı, ham JSON (bkz. lib/avatar-config).
+   *
+   * Sunucudan geliyor ki başlıktaki avatar İLK BOYAMADA doğru olsun. Yerel
+   * depodan okunsaydı önce arma çizilir, depo okununca maskota atlardı.
+   */
+  avatar?: string | null;
 }) {
   const pathname = usePathname();
   const navRef = useRef<HTMLDivElement>(null);
@@ -135,8 +143,8 @@ export function AppShell({
   // Kimlik değişmiyor, sayaçlar değişiyor: nesne her render'da yeniden
   // kurulursa bağlama abone olan her başlık boşuna yeniden çiziliyor.
   const shellData = useMemo(
-    () => ({ streak: stats.streak, xp: stats.xp, userId, name, course }),
-    [stats.streak, stats.xp, userId, name, course],
+    () => ({ streak: stats.streak, xp: stats.xp, userId, name, avatar, course }),
+    [stats.streak, stats.xp, userId, name, avatar, course],
   );
 
   // Oyun sırasında kazanılan XP/seri anında rozetlere yansısın.
@@ -277,7 +285,7 @@ export function AppShell({
       {/* Kurs/ses aynasının yazılmasından önce çalışması gerekiyor: hesap
           değiştiyse eski hesabın kopyaları önce siliniyor. Çocuk bileşenin
           etkisi ebeveyninkinden önce çalıştığı için sıra buradan geliyor. */}
-      <SessionKeeper userId={userId} />
+      <SessionKeeper userId={userId} avatar={avatar} />
       {/* Misafirken verilen kararlar (kurs, seviye, ad, günlük hedef) hesaba
           taşınır — mobilde `adoptAccount`ın yaptığı iş. */}
       <OnboardingAdopt />

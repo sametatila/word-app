@@ -180,7 +180,7 @@ export function QuestsSkeleton() {
 }
 
 export function QuestCard({ q, me, busy, onAct }: { q: QuestView; me: string; busy: boolean; onAct: (fn: () => Promise<unknown>) => Promise<void> }) {
-  const { name: myName } = useShell();
+  const { name: myName, avatar: myAvatar } = useShell();
   const t = useT();
   const lang = useLang();
   const invited = q.status === "invited";
@@ -189,7 +189,7 @@ export function QuestCard({ q, me, busy, onAct }: { q: QuestView; me: string; bu
     <section className="card p-4">
       <div className="flex items-center gap-3">
         <div className="flex -space-x-2">
-          <MyAvatar userId={me} name={myName} size={36} ring="var(--color-brand)" />
+          <MyAvatar userId={me} name={myName} serverAvatar={myAvatar} size={36} ring="var(--color-brand)" />
           <Avatar userId={q.partner.userId} name={q.partner.name} avatar={q.partner.avatar} size={36} ring="var(--color-sky)" />
         </div>
         <div className="min-w-0 flex-1">

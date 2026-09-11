@@ -66,7 +66,7 @@ export function ProfileScreen() {
         {/* kimlik kartı */}
         <Card style={{ alignItems: "center", marginTop: spacing.sm, marginBottom: spacing.lg }}>
           <PressableScale onPress={() => nav.navigate("Avatar")} accessibilityLabel={t("profile.edit_your_avatar")} style={softShadow(colors.primary, 10)}>
-            <MyAvatar userId={user?.id ?? ""} name={me?.name ?? null} size={76} />
+            <MyAvatar userId={user?.id ?? ""} name={me?.name ?? null} serverAvatar={me?.avatar} size={76} />
           </PressableScale>
           <Text variant="h2" style={{ marginTop: spacing.md }}>{displayName}</Text>
           <Text variant="caption" color={colors.textMuted}>{user?.email ?? t("profile.not_signed_in")}</Text>

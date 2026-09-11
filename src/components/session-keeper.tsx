@@ -105,7 +105,7 @@ function forgetPreviousAccount() {
   for (const key of doomed) localStorage.removeItem(key);
 }
 
-export function SessionKeeper({ userId }: { userId: string }) {
+export function SessionKeeper({ userId, avatar }: { userId: string; avatar: string | null }) {
   /*
     CİHAZIN SAAT DİLİMİ ÇEREZE. Fiyat bölgesi sunucuda, sayfa çizilirken
     belli olmalı ve profildeki alan bunu söylemiyor: `profiles.timezone` NOT
@@ -118,9 +118,10 @@ export function SessionKeeper({ userId }: { userId: string }) {
   /*
     AVATAR EŞİTLEMESİ. Avatar artık hesabın: başka bir cihazda değiştirildiyse
     burada da o görünmeli. Sunucuda hiç yoksa cihazdaki seçim yukarı taşınıyor
-    (ilk göç). Gerekçenin tamamı `lib/avatar`da.
+    (ilk göç). Değer düzenden geliyor, ayrı bir istek yok — gerekçenin tamamı
+    `lib/avatar`da.
   */
-  useEffect(() => { void syncAvatarWithServer(); }, [userId]);
+  useEffect(() => { syncAvatarWithServer(avatar); }, [userId, avatar]);
 
   useEffect(() => {
     // Temizlik, kurs/ses aynasının yazılmasından ÖNCE olmalı — bu bileşen

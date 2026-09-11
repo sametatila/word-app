@@ -184,8 +184,25 @@ export function MascotAvatar({ config, size = 44, ring }: { config: AvatarConfig
  * depo okunuyor, böylece düzenleme ekranından çıkar çıkmaz başlıktaki kopya
  * da değişiyor. Çizim aynı: seçim varsa maskot, yoksa arma.
  */
-export function MyAvatar({ userId, name, size = 44, ring }: { userId: string; name: string | null; size?: number; ring?: string | null }) {
-  const cfg = useAvatar();
+export function MyAvatar({
+  userId,
+  name,
+  serverAvatar = null,
+  size = 44,
+  ring,
+}: {
+  userId: string;
+  name: string | null;
+  /**
+   * Sunucudan gelen avatar (`/api/me`). İLK BOYAMA bununla çiziliyor: cihaz
+   * deposu eşzamansız okunuyor ve tek başına bırakılsaydı her açılışta önce
+   * arma görünüp sonra maskota atlardı.
+   */
+  serverAvatar?: unknown;
+  size?: number;
+  ring?: string | null;
+}) {
+  const cfg = useAvatar() ?? parseAvatar(serverAvatar);
   if (cfg) return <MascotAvatar config={cfg} size={size} ring={ring} />;
   return <Avatar userId={userId} name={name} size={size} ring={ring} />;
 }

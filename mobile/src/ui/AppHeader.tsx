@@ -43,7 +43,7 @@ export function AppHeader({ title, subtitle }: { title: string; subtitle?: strin
             ama izin reddedilebilir ve jeton ölebilir; rozet tek güvenilir sayaç. */}
         <InboxBell />
         <PressableScale onPress={() => nav.navigate("Profile")} accessibilityLabel={t("appheader.profile")} style={softShadow(colors.primary, 6)}>
-          <MyAvatar userId={user?.id ?? ""} name={me?.name ?? null} size={44} />
+          <MyAvatar userId={user?.id ?? ""} name={me?.name ?? null} serverAvatar={me?.avatar} size={44} />
         </PressableScale>
       </View>
     </View>

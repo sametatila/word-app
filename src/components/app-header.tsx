@@ -45,7 +45,7 @@ export function LearnHeader() {
 }
 
 export function AppHeader({ title, subtitle }: { title: string; subtitle?: string }) {
-  const { streak, userId, name } = useShell();
+  const { streak, userId, name, avatar } = useShell();
   const t = useT();
   return (
     <header className="mb-4 flex items-center justify-between gap-3">
@@ -84,7 +84,7 @@ export function AppHeader({ title, subtitle }: { title: string; subtitle?: strin
           className="pressable shrink-0 rounded-full"
           style={{ boxShadow: "var(--shadow-soft-sm)" }}
         >
-          <MyAvatar userId={userId} name={name} size={44} />
+          <MyAvatar userId={userId} name={name} serverAvatar={avatar} size={44} />
         </Link>
       </div>
     </header>

@@ -57,7 +57,7 @@ export type ProfileStats = {
 
 
 export function ProfileView({ stats }: { stats: ProfileStats }) {
-  const { userId } = useShell();
+  const { userId, avatar } = useShell();
   const router = useRouter();
   const t = useT();
   const lang = useLang();
@@ -99,7 +99,7 @@ export function ProfileView({ stats }: { stats: ProfileStats }) {
       {/* kimlik kartı */}
       <div className="card mb-4 flex flex-col items-center p-5">
         <Link href="/profile/avatar" prefetch={false} aria-label={t("profile.edit_your_avatar")} className="pressable rounded-full shadow-soft">
-          <MyAvatar userId={userId} name={stats.name} size={76} />
+          <MyAvatar userId={userId} name={stats.name} serverAvatar={avatar} size={76} />
         </Link>
         <p className="mt-3 text-h2">{stats.name}</p>
         {stats.email ? <p className="muted text-caption">{stats.email}</p> : null}

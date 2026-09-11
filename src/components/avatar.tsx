@@ -207,17 +207,25 @@ export function MascotAvatar({
 export function MyAvatar({
   userId,
   name,
+  serverAvatar = null,
   size = 44,
   ring,
   className = "",
 }: {
   userId: string;
   name: string | null;
+  /**
+   * Sunucudan gelen avatar (düzenin okuduğu profil). İLK BOYAMA bununla
+   * çiziliyor: yerel depo yalnız tarayıcıda okunabildiği için sunucu
+   * çiziminde boş, ve tek başına bırakılsaydı her sayfa açılışında önce arma
+   * görünüp sonra maskota atlardı.
+   */
+  serverAvatar?: string | null;
   size?: number;
   ring?: string | null;
   className?: string;
 }) {
-  const cfg = useAvatar();
+  const cfg = useAvatar() ?? parseAvatar(serverAvatar);
   if (cfg) return <MascotAvatar config={cfg} size={size} ring={ring} className={className} />;
   return <Avatar userId={userId} name={name} size={size} ring={ring} className={className} />;
 }

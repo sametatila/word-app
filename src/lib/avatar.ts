@@ -81,32 +81,30 @@ export function saveAvatar(cfg: AvatarConfig): void {
 }
 
 /**
- * Açılışta cihaz ile sunucuyu eşitler.
+ * Açılışta cihaz ile sunucuyu eşitler. Mobil `syncAvatarWithServer` ile aynı
+ * imza: sunucu değeri ÇAĞIRANDAN geliyor.
+ *
+ * Buradan `/api/me` çağrılıyordu ve bu iki bedel ödetiyordu: her sayfa
+ * açılışında fazladan bir gidiş, ve dönene kadar başlıkta armanın çizilip
+ * sonra maskota atlaması. Değer zaten düzenin okuduğu profilde var.
  *
  * SUNUCU KAZANIR: avatar hesabın, cihazın değil — başka bir cihazda
  * değiştirildiyse burada da o görünmeli. Tek istisna ilk göç: sunucuda hiç
  * avatar yokken cihazdaki seçim kaybolmasın diye yukarı taşınıyor.
  */
-export async function syncAvatarWithServer(): Promise<void> {
-  try {
-    const res = await fetch("/api/me", { headers: { accept: "application/json" }, cache: "no-store" });
-    if (!res.ok) return;
-    const j = (await res.json()) as { avatar?: unknown };
-    const remote = parseAvatar(j.avatar);
-    if (remote) {
-      cache = remote;
-      snapshot = remote;
-      loaded = true;
-      try { localStorage.setItem(KEY, JSON.stringify(remote)); } catch { /* yut */ }
-      subs.forEach((f) => f());
-      return;
-    }
-    ensureLoaded();
-    // Sunucuda yok, cihazda var: göç.
-    if (cache) saveAvatar(cache);
-  } catch {
-    /* çevrimdışı: cihazdaki değer geçerli kalır */
+export function syncAvatarWithServer(remote: unknown): void {
+  const parsed = parseAvatar(remote);
+  if (parsed) {
+    cache = parsed;
+    snapshot = parsed;
+    loaded = true;
+    try { localStorage.setItem(KEY, JSON.stringify(parsed)); } catch { /* yut */ }
+    subs.forEach((f) => f());
+    return;
   }
+  ensureLoaded();
+  // Sunucuda yok, cihazda var: göç.
+  if (cache) saveAvatar(cache);
 }
 
 function subscribe(fn: () => void): () => void {

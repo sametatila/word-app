@@ -118,7 +118,7 @@ export function QuestCard({ q, me, busy, onAct }: { q: QuestView; me: string; bu
     <Card padded style={[{ marginBottom: spacing.md, borderColor: colors.primary, borderWidth: 1.5 }, softShadow(colors.primary, 8)]}>
       <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md }}>
         <View style={{ flexDirection: "row" }}>
-          <MyAvatar userId={me} name={myProfile?.name ?? null} size={44} ring={colors.primary} />
+          <MyAvatar userId={me} name={myProfile?.name ?? null} serverAvatar={myProfile?.avatar} size={44} ring={colors.primary} />
           <View style={{ marginLeft: -12 }}><Avatar userId={q.partner.userId} name={q.partner.name} avatar={q.partner.avatar} size={44} ring={colors.info} /></View>
         </View>
         <View style={{ flex: 1 }}>

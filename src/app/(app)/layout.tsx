@@ -22,6 +22,7 @@ export default async function AppLayout({ children }: { children: React.ReactNod
   let course = "de";
   let voice: string | null = null;
   let name: string | null = null;
+  let avatar: string | null = null;
   let nativeLang: string | null = null;
   let needsOnboarding = false;
   try {
@@ -31,6 +32,7 @@ export default async function AppLayout({ children }: { children: React.ReactNod
     course = profile?.course ?? "de";
     voice = profile?.voice ?? null;
     name = profile?.displayName ?? user.name ?? null;
+    avatar = profile?.avatar ?? null;
     nativeLang = profile?.nativeLang ?? null;
     /*
       Kurs hiç seçilmediyse (yeni kullanıcı) önce kurs/seviye ekranı gelir.
@@ -54,7 +56,7 @@ export default async function AppLayout({ children }: { children: React.ReactNod
       {/* Profildeki dil çerezle eşitleniyor: sunucu sayfayı çizerken profili
           okuyamaz (bir veritabanı gidişi), çerezi okur. */}
       <LangSync profileLang={nativeLang} />
-      <AppShell streak={streak} xp={xp} course={course} voice={voice} userId={user.id} name={name}>
+      <AppShell streak={streak} xp={xp} course={course} voice={voice} userId={user.id} name={name} avatar={avatar}>
         {children}
       </AppShell>
     </>
