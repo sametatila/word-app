@@ -487,8 +487,6 @@ export const trWeb: Record<string, string> = {
   "pushw.remind_body": "Çalışmadığın bir günde kısa bir bildirim gönderelim; seri kırılmadan haberin olsun.",
   "pushw.remind_note": "Tekrar zamanı gelen kelimeler için günde en fazla bir bildirim. Fazlası yok.",
   "pushw.enable": "Hatırlatmaları aç",
-  "writ.loading": "Yazıların yükleniyor",
-  "writ.sub": "Değerlendirilen cümle ve metinlerin. Metinler yalnız sana görünür; istediğini silebilirsin.",
   "skillp.n_of_questions": "{total} sorudan {correct} doğru",
   "skillp.n_of_tasks": "{total} görevden {correct} doğru",
   "skillq.hide": "Gizle",

@@ -5342,6 +5342,30 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   sameList("gecme notu hepsi sabitten", elle.length ? elle : ["yok"], ["yok"], "elle yazilmis", "beklenen");
 }
 
+/* ── 151. yazdiklarim ekrani ──────────────────────────────────────────────
+ * Iki eksik, ikisi de Androidde ve ikisi de "ekranda yazmayan ama bilinmesi
+ * gereken" sinifindan:
+ *   - ALT BASLIK yoktu. Web kartin altinda listenin ne topladigini ve
+ *     metinlerin YALNIZ KULLANICIYA gorundugunu yaziyor (`writ.sub`);
+ *     mobilde yalniz baslik vardi, yani "bunlar kime gorunuyor" sorusu
+ *     ekranda hic cevaplanmiyordu.
+ *   - YUKLEME ISKELETI sessizdi. Web iskelete `aria-busy` ve etiket koyuyor;
+ *     mobilde yukleme yalniz gorseldeydi ve sesli okuyucu bos bir ekran
+ *     duyuruyordu (§11.241'deki cubugun aynisi).
+ *
+ * Olculen: iki metnin de iki tarafta kullanilmasi. */
+{
+  const strip = (x) => x.replace(/\/\*[\s\S]*?\*\//g, " ").replace(/(^|[^:"'`\\])\/\/.*$/gm, "$1");
+  const yaz = (yol) => {
+    const src = strip(read(yol)).replace(/\s+/g, " ");
+    return [
+      "alt baslik=" + (/writ\.sub/.test(src) ? "var" : "yok"),
+      "iskelet etiketi=" + (/writ\.loading/.test(src) ? "var" : "yok"),
+    ];
+  };
+  sameList("yazdiklarim ekrani", yaz("mobile/src/screens/WritingsScreen.tsx"), yaz("src/components/writings-card.tsx"));
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"

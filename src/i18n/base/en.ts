@@ -1578,6 +1578,8 @@ export const enBase: Record<string, string> = {
   "words.status_new": "New",
   "words.couldn_t_load_your_words": "Couldn't load your words.",
   "writ.kind_sentence": "Sentence",
+  "writ.loading": "Loading your writings",
+  "writ.sub": "Your graded sentences and texts. They're visible only to you, and you can delete any of them.",
   "writ.kind_roleplay": "Role play",
   "writ.empty_title": "No graded writing yet",
   "writ.empty_sub": "When you write a free text in a writing exercise it lands here: your text, its score and the corrections all together. Write the same task again and you can compare the two side by side.",

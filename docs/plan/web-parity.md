@@ -8105,3 +8105,29 @@ Bu turda iki şey de ölçülüp **dokunulmadı**:
 - **Sertifika.** İki taraf da aynı koşulda açıyor (`passed && !trial`); mobil
   ek olarak bir hata durumu taşıyor çünkü sayfayı kendi içinde çiziyor,
   web yeni sekmede açıyor ve hatayı tarayıcı gösteriyor.
+
+### 11.245 "Bunlar kime görünüyor" sorusu Android'de cevapsızdı
+
+Yazdıklarım ekranında iki eksik, ikisi de Android'de:
+
+- **Alt başlık yoktu.** Web kartın altında listenin ne topladığını ve
+  metinlerin **yalnız kullanıcıya görünür** olduğunu yazıyor (`writ.sub`);
+  mobilde yalnız başlık vardı. Kendi yazdığı metinlerin başkasına görünüp
+  görünmediği, kullanıcının sormadan bilmek isteyeceği türden bir şey.
+- **Yükleme iskeleti sessizdi.** Web iskelete `aria-busy` + etiket koyuyor;
+  mobilde yükleme yalnız görseldeydi ve sesli okuyucu boş bir ekran
+  duyuruyordu — §11.241'deki ilerleme çubuğunun aynısı, bir ekran ötede.
+
+İki anahtar da web-özel sözlükten ortak tabana taşındı. **§151** ikisini de
+ölçüyor; üç enjeksiyonun üçü de yakalandı.
+
+Bu turda iki tarama daha yapıldı ve **ikisi de temiz çıktı** — yazmaya değer,
+çünkü aranan şey gerçek bir hata sınıfıydı:
+
+- **Ölü sabit**: iki ağaçta da tanımlı kırk ortak sayısal sabitin hepsi iki
+  tarafta da kullanılıyor (§90'ın "tanımlı olmak yetmez" kuralı).
+- **Elle kopyalanmış eşik** (§11.244'ün genellemesi): bir dosya bir sabiti
+  kullanıyorken aynı sayıyı bir karşılaştırmada elle yazmış mı. Beş aday
+  çıktı, beşi de **yanlış alarm**: `combo >= 3` ile `EASE_AFTER_MISSES = 3`
+  aynı sayı ama ayrı şeyler, `MODULE_SIZE = 10` ile soru sayısı da öyle.
+  Sayının eşitliği anlamın eşitliği değil; tarama burada duruyor.

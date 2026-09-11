@@ -134,10 +134,20 @@ export function WritingsScreen() {
         <PressableScale hitSlop={4} onPress={() => nav.goBack()} accessibilityLabel={t("common.back")} style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
           <ArrowBackIcon color={colors.text} size={24} />
         </PressableScale>
-        <Text variant="h2">{t("writings.my_writing")}</Text>
+        {/* ALT BAŞLIK: listenin ne topladığını ve metinlerin yalnız kullanıcıya
+            görünür olduğunu söylüyor. Web kartın altında baştan beri yazıyor
+            (`writings-card` `writ.sub`); mobilde yalnız başlık vardı, yani
+            "bunlar kime görünüyor" sorusu ekranda hiç cevaplanmıyordu. */}
+        <View style={{ flex: 1 }}>
+          <Text variant="h2">{t("writings.my_writing")}</Text>
+          <Text variant="micro" color={colors.textMuted} style={{ lineHeight: 17 }} numberOfLines={2}>{t("writ.sub")}</Text>
+        </View>
       </View>
       {phase === "loading" ? (
-        <ScrollView contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingTop: spacing.md, paddingBottom: insets.bottom + spacing.xxl }} showsVerticalScrollIndicator={false}>
+        /* İSKELETİN EKRAN OKUYUCU KARŞILIĞI: yükleme yalnız görseldeydi, sesli
+           okuyucu boş bir ekran duyuruyordu. Web aynı iskelete `aria-busy` ve
+           etiket koyuyor. */
+        <ScrollView accessibilityRole="progressbar" accessibilityLabel={t("writ.loading")} contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingTop: spacing.md, paddingBottom: insets.bottom + spacing.xxl }} showsVerticalScrollIndicator={false}>
           {[0, 1, 2, 3].map((i) => (
             <SkeletonCard key={i} style={{ marginBottom: spacing.md }}>
               <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md }}>

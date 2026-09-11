@@ -462,8 +462,6 @@ export const deWeb: Record<string, string> = {
   "pushw.remind_body": "An einem Tag ohne Übung schicken wir eine kurze Nachricht, damit die Serie nicht unbemerkt reißt.",
   "pushw.remind_note": "Höchstens eine Nachricht am Tag für fällige Wörter. Mehr nicht.",
   "pushw.enable": "Erinnerungen einschalten",
-  "writ.loading": "Deine Texte werden geladen",
-  "writ.sub": "Deine bewerteten Sätze und Texte. Nur du siehst sie, und du kannst jeden löschen.",
   "skillp.n_of_questions": "{correct} von {total} Fragen richtig",
   "skillp.n_of_tasks": "{correct} von {total} Aufgaben richtig",
   "skillq.hide": "Ausblenden",

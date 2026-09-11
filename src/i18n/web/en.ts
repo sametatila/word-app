@@ -462,8 +462,6 @@ export const enWeb: Record<string, string> = {
   "pushw.remind_body": "On a day you don't study we'll send a short notification, so the streak doesn't break without you knowing.",
   "pushw.remind_note": "At most one notification a day for words that are due. Nothing more.",
   "pushw.enable": "Turn on reminders",
-  "writ.loading": "Loading your writings",
-  "writ.sub": "Your graded sentences and texts. They're visible only to you, and you can delete any of them.",
   "skillp.n_of_questions": "{correct} of {total} questions correct",
   "skillp.n_of_tasks": "{correct} of {total} tasks correct",
   "skillq.hide": "Hide",

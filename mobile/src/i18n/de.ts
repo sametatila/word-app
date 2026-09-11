@@ -1576,6 +1576,8 @@ export const de: Record<string, string> = {
   "words.status_new": "Neu",
   "words.couldn_t_load_your_words": "Wörter konnten nicht geladen werden.",
   "writ.kind_sentence": "Satz",
+  "writ.loading": "Deine Texte werden geladen",
+  "writ.sub": "Deine bewerteten Sätze und Texte. Nur du siehst sie, und du kannst jeden löschen.",
   "writ.kind_roleplay": "Rollenspiel",
   "writ.empty_title": "Noch kein bewerteter Text",
   "writ.empty_sub": "Wenn du in einer Schreibübung einen freien Text schreibst, landet er hier: dein Text, die Punktzahl und die Korrekturen zusammen. Schreibst du dieselbe Aufgabe erneut, kannst du beide nebeneinander vergleichen.",

@@ -1581,6 +1581,8 @@ export const tr: Record<string, string> = {
   "words.status_new": "Yeni",
   "words.couldn_t_load_your_words": "Kelimeler yüklenemedi.",
   "writ.kind_sentence": "Cümle",
+  "writ.loading": "Yazıların yükleniyor",
+  "writ.sub": "Değerlendirilen cümle ve metinlerin. Metinler yalnız sana görünür; istediğini silebilirsin.",
   "writ.kind_roleplay": "Rol yapma",
   "writ.empty_title": "Henüz değerlendirilmiş yazın yok",
   "writ.empty_sub": "Yazma alıştırmalarında serbest bir metin yazdığında buraya düşüyor: metnin, aldığı puan ve düzeltmeler bir arada duruyor. Aynı görevi tekrar yazdığında ikisini yan yana görebilirsin.",
