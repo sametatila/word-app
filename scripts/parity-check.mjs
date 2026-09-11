@@ -2118,35 +2118,11 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
 }
 
 /* ── 50. gunde yeni kelime siniri ─────────────────────────────────────────
- * Uc degeri 0-40 arasina kirpiyor (`/api/profile`). Web kaydiricisi ve mobil
- * cip listesi ayni araligi teklif etmek zorunda: yuzey sunucunun kabul
- * etmedigi bir sayi teklif ederse kullanici sectigini kaydedilmis saniyor,
- * sunucu sessizce kirpiyor ve ekran bir sonraki acilista baska bir sayi
- * gosteriyor. Ucu de burada yan yana. */
-{
-  const src = read("src/app/api/profile/route.ts");
-  const m = src.match(/clampInt\(body\.newPerDay,\s*(\d+),\s*(\d+)\)/);
-  const uc = m ? [m[1], m[2]] : ["?", "?"];
-  const web = read("src/components/profile-form.tsx");
-  const wm = web.match(/label=\{t\("settings\.new_per_day"\)\}[\s\S]{0,200}?min=\{(\d+)\}[\s\S]{0,80}?max=\{(\d+)\}/);
-  const mob = read("mobile/src/screens/SettingsScreen.tsx");
-  /* Mobil kaydiriciya gecti - bkz. gunluk hedef kapisindaki not. */
-  const mm = mob.match(/label=\{t\("settings\.new_per_day"\)\}[\s\S]{0,200}?min=\{(\d+)\}[\s\S]{0,80}?max=\{(\d+)\}/);
-  sameList(
-    "gunde yeni kelime araligi",
-    ["alt=" + (mm?.[1] ?? "?"), "ust=" + (mm?.[2] ?? "?")],
-    ["alt=" + uc[0], "ust=" + uc[1]],
-    "mobil kaydiricisi",
-    "uc kirpmasi",
-  );
-  sameList(
-    "gunde yeni kelime araligi (web)",
-    wm ? ["alt=" + wm[1], "ust=" + wm[2]] : ["kaydirici bulunamadi"],
-    ["alt=" + uc[0], "ust=" + uc[1]],
-    "web kaydiricisi",
-    "uc kirpmasi",
-  );
-}
+ * OLCUM §183'E TASINDI. Bu kapi ucun kirpmasindan ve iki kaydiricidan SAYI
+ * cikarip karsilastiriyordu; yani sayinin uc yerde yazili olmasini veri
+ * sayiyordu. Sinir artik tek kaynakta (`lib/profile-limits`, mobilde
+ * `lib/profileDefaults`) ve yuzeyler onu okuyor - karsilastirilacak ikinci
+ * bir sayi kalmadi. §146'nin basina gelenin aynisi (bkz. §11.278). */
 
 /* ── 51. buyuk/kucuk harf cevirisi YEREL olmali ───────────────────────────
  * Turkcede "i" nin buyugu "İ", "I" degil. Arayuz metnini `toUpperCase()` ile
@@ -5079,82 +5055,23 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
 }
 
 /* ── 144. gunluk hedef araligi ────────────────────────────────────────────
- * §50'nin ikizi, bir alan otede. Uc gunluk hedefi 5-120 arasina kirpiyor
- * (`/api/profile`) ve web kaydiricisi o araligi veriyor; mobil cip listesi
- * [10, 20, 30, 50] idi, yani Android kullanicisi 5'i de 120'yi de
- * SECEMIYORDU. Yuzey sunucunun kabul ettiginden DAR bir aralik teklif
- * edince kullanici o hedefleri hic bilmiyor - sessiz bir eksiklik, cunku
- * ortada hata mesaji da yok.
+ * OLCUM §183'E TASINDI ve bu kapi TAM DA kendi uyardigi tuzaga dustu.
  *
- * Olculen: mobil cip listesinin ucu ile ucun kirpmasi ve web kaydiricisinin
- * ucu ayni mi. */
-{
-  const src = read("src/app/api/profile/route.ts");
-  const m = src.match(/clampInt\(body\.dailyGoal,\s*(\d+),\s*(\d+)\)/);
-  const uc = m ? [m[1], m[2]] : ["?", "?"];
-  const web = read("src/components/profile-form.tsx");
-  const wm = web.match(/label=\{t\("settings\.daily_goal_short"\)\}[\s\S]{0,200}?min=\{(\d+)\}[\s\S]{0,80}?max=\{(\d+)\}/);
-  /* Mobil de artik KAYDIRICI kullaniyor (eskiden sabit cip listesi vardi ve
-     ucun kabul ettigi degerlerin cogunu hic sunmuyordu). Olcum kaydiricinin
-     kendi ucundan okunuyor; cip listesi kalkinca ilk surum bos listeyi
-     "alt=Infinity" diye bildirdi, yani hicbir sey olcmuyordu. */
-  const mob = read("mobile/src/screens/SettingsScreen.tsx");
-  const mm = mob.match(/label=\{t\("settings\.daily_goal_short"\)\}[\s\S]{0,200}?min=\{(\d+)\}[\s\S]{0,80}?max=\{(\d+)\}/);
-  sameList(
-    "gunluk hedef araligi (mobil kaydiricisi)",
-    ["alt=" + (mm?.[1] ?? "?"), "ust=" + (mm?.[2] ?? "?")],
-    ["alt=" + uc[0], "ust=" + uc[1]],
-    "mobil kaydiricisi",
-    "uc kirpmasi",
-  );
-  sameList(
-    "gunluk hedef araligi (web kaydiricisi)",
-    ["alt=" + (wm?.[1] ?? "?"), "ust=" + (wm?.[2] ?? "?")],
-    ["alt=" + uc[0], "ust=" + uc[1]],
-    "web kaydiricisi",
-    "uc kirpmasi",
-  );
-}
+ * Kapi ucun kirpmasindan ve iki kaydiricidan sayi cikarip karsilastiriyordu.
+ * Sinirlar tek kaynaga tasinip yuzeyler sabiti okumaya baslayinca UC TARAF DA
+ * "?" dondurdu - ve "?" ile "?" esit oldugu icin kapi YESIL kaldi. Yani
+ * hicbir sey olcmeden gecti; kendi govdesindeki not ("alt=Infinity diye
+ * bildirdi, yani hicbir sey olcmuyordu") bu kez sessiz bicimde tekrar etti.
+ *
+ * Ders: bir kapi olcemedigi seyi "bilinmiyor" diye isaretleyip iki tarafta da
+ * ayni isareti uretiyorsa, karsilastirma kapiyi korumaz. §183 bu yuzden
+ * KAYNAGA bakiyor - sayiya degil. */
 
 /* ── 145. gorunen adin uzunlugu ───────────────────────────────────────────
- * §144'un kuralinin TERS yonu. Uc adi kirk karaktere kirpiyor
- * (`/api/profile` `name.slice(0, 40)`) ama hicbir kutu bunu soylemiyordu:
- * web profil formu 60 kabul ediyor, oteki uc kutunun (web kayit, mobil
- * ayarlar, mobil giris) hic siniri yoktu. Kullanici elli bes karakterlik
- * adini yaziyor, ekran "kaydedildi" diyor ve ad bir sonraki acilista kisalmis
- * oluyordu - sessiz bir kayip, cunku ortada hata mesaji yok.
- *
- * Olculen: adin girildigi DORT kutunun da sinirini ucun kirpmasindan almasi.
- * Kutular tek tek yazili degil, ADIN girildigi her yer taraniyor. */
-{
-  const uc = read("src/app/api/profile/route.ts").match(/name\.slice\(0,\s*(\d+)\)/)?.[1] ?? "?";
-  const walkTsx2 = (d, out = []) => {
-    for (const e of readdirSync(new URL("../" + d, import.meta.url), { withFileTypes: true })) {
-      const p = d + "/" + e.name;
-      if (e.isDirectory()) { if (!/node_modules|__tests__/.test("/" + p)) walkTsx2(p, out); }
-      else if (/\.tsx$/.test(e.name)) out.push(p);
-    }
-    return out;
-  };
-  const yanlis = [];
-  for (const kok of ["src/components", "src/app", "mobile/src"]) {
-    for (const f of walkTsx2(kok)) {
-      const src = read(f).replace(/\/\*[\s\S]*?\*\//g, " ").replace(/(^|[^:"'`\\])\/\/.*$/gm, "$1");
-      /* Ad kutusu: `displayName`/`your_name_optional` tasiyan bir girdi. */
-      /* Etiket KENDI KAPANISINA kadar okunuyor. `[^>]*` ile kesmek webde
-         calismiyordu: `onChange={(e) => ...}` icindeki OK isareti bir `>` ve
-         desen tam orada duruyordu, yani ad kutusunun kendisi hic bulunamadi -
-         iki web enjeksiyonu da yesil gecti. On dokuzuncu biçim. */
-      for (const m of src.matchAll(/<(?:input|TextInput)\b[\s\S]{0,800}?\/>/g)) {
-        const etiket = m[0];
-        if (!/settings\.display_name|auth\.your_name_optional/.test(etiket)) continue;
-        const sinir = etiket.match(/maxLength=\{(\d+)\}/)?.[1];
-        if (sinir !== uc) yanlis.push(f.split("/").pop() + ": " + (sinir ?? "sinirsiz"));
-      }
-    }
-  }
-  sameList("gorunen ad sinirlari", yanlis.length ? yanlis : ["yok"], ["yok"], "ucun kirpmasindan farkli", "beklenen");
-}
+ * OLCUM §183'E TASINDI. Kapi dort ad kutusundan `maxLength` SAYISINI cikarip
+ * ucun `slice`iyle karsilastiriyordu. Dort kutu da artik siniri kaynaktan
+ * aliyor (`PROFILE_LIMITS.displayNameMax`), yani okunacak bir sayi yok;
+ * dogru soru "sayi kac yerde yazili" ve onu §183 soruyor. */
 
 /* ── 146. sosyal profilin sinirlari ───────────────────────────────────────
  * BU KAPI SAYILARI OKUYORDU ve dogru sorudan bir adim geride kaldi.
@@ -7028,6 +6945,68 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     "kullanici adi deseni",
     ["kaynak=" + (/new RegExp\(`\^\[a-z0-9_\]\{\$\{USERNAME_MIN\},\$\{USERNAME_MAX\}\}\$`\)/.test(sunucu) ? "sinirlardan" : "elle yazili")],
     ["kaynak=sinirlardan"],
+    "bulunan",
+    "beklenen",
+  );
+}
+
+/* ── 183. profil sinirlari tek kaynaktan mi ───────────────────────────────
+ * Uc sinir (gunluk hedef 5-120, gunde yeni kelime 0-40, gorunen ad 40 karakter)
+ * BES yerde yaziliydi: ucun kirpmasi, webin iki kaydiricisi ve ad kutusu,
+ * mobilin ayni uc kutusu. Besi de ayniydi; biri degisse otekiler sessizce eski
+ * kalir ve kullanici SECEBILDIGI bir degerin kaydedilmedigini gorurdu - arayuz
+ * kabul ediyor, uc kirpiyor.
+ *
+ * Sinirlar artik `lib/profile-limits`ta; mobil ayni sayilari kendi tek
+ * kaynaginda tutuyor (ayri paket, ice aktaramiyor) ve bu kapi ikisini
+ * karsilastiriyor. Ayrica yuzeylerin ve ucun sabiti OKUDUGU denetleniyor:
+ * sayiyi geri yazan bir yuzey, kaynagin degismesini sessizce yutar.
+ *
+ * §50, §144 ve §145 bu olcume tasindi; ucu de sayilari karsilastiriyordu. */
+{
+  const strip = (x) => x.replace(/\/\*[\s\S]*?\*\//g, (m) => m.replace(/[^\n]/g, " ")).replace(/(^|[^:"'`\\])\/\/.*$/gm, "$1");
+  const d = (yol) => strip(read(yol)).replace(/\s+/g, " ");
+  const kaynak = d("src/lib/profile-limits.ts");
+  const mobKaynak = d("mobile/src/lib/profileDefaults.ts");
+  const al = (src, re) => (src.match(re) ?? [])[1] ?? "yok";
+  const uc = (src) => [
+    "gunluk hedef=" + al(src, /dailyGoal: \{ min: (\d+), max: \d+ \}/) + "-" + al(src, /dailyGoal: \{ min: \d+, max: (\d+) \}/),
+    "yeni kelime=" + al(src, /newPerDay: \{ min: (\d+), max: \d+ \}/) + "-" + al(src, /newPerDay: \{ min: \d+, max: (\d+) \}/),
+    "ad=" + al(src, /displayNameMax: (\d+)/),
+  ];
+  sameList("profil sinirlari", uc(mobKaynak), uc(kaynak), "mobil", "sunucu");
+
+  /* Ucun kendisi de sabiti okumali: kirpma sayiyi geri yazarsa kaynak
+     degistiginde uc eski sinirla kirpar ve arayuzle ayrisir. */
+  const route = d("src/app/api/profile/route.ts");
+  sameList(
+    "uc sinirlari kaynaktan",
+    [
+      "ad=" + (/name\.slice\(0, PROFILE_LIMITS\.displayNameMax\)/.test(route) ? "kaynaktan" : "kendi sabiti"),
+      "gunluk hedef=" + (/clampInt\(body\.dailyGoal, PROFILE_LIMITS\.dailyGoal\.min, PROFILE_LIMITS\.dailyGoal\.max\)/.test(route) ? "kaynaktan" : "kendi sabiti"),
+      "yeni kelime=" + (/clampInt\(body\.newPerDay, PROFILE_LIMITS\.newPerDay\.min, PROFILE_LIMITS\.newPerDay\.max\)/.test(route) ? "kaynaktan" : "kendi sabiti"),
+    ],
+    ["ad=kaynaktan", "gunluk hedef=kaynaktan", "yeni kelime=kaynaktan"],
+    "bulunan",
+    "beklenen",
+  );
+
+  /* Bes yuzey: iki kaydirici cifti ve iki ad kutusu (her platformda ikişer). */
+  const webForm = d("src/components/profile-form.tsx");
+  const webAuth = d("src/components/auth-form.tsx");
+  const mobAyar = d("mobile/src/screens/SettingsScreen.tsx");
+  const mobAuth = d("mobile/src/screens/AuthScreen.tsx");
+  sameList(
+    "yuzeyler sinirlari kaynaktan",
+    [
+      "web hedef=" + (/min=\{PROFILE_LIMITS\.dailyGoal\.min\} max=\{PROFILE_LIMITS\.dailyGoal\.max\}/.test(webForm) ? "kaynaktan" : "kendi sabiti"),
+      "web yeni=" + (/min=\{PROFILE_LIMITS\.newPerDay\.min\} max=\{PROFILE_LIMITS\.newPerDay\.max\}/.test(webForm) ? "kaynaktan" : "kendi sabiti"),
+      "web ad=" + (/maxLength=\{PROFILE_LIMITS\.displayNameMax\}/.test(webForm) && /maxLength=\{PROFILE_LIMITS\.displayNameMax\}/.test(webAuth) ? "kaynaktan" : "kendi sabiti"),
+      "mobil hedef=" + (/min=\{PROFILE_LIMITS\.dailyGoal\.min\} max=\{PROFILE_LIMITS\.dailyGoal\.max\}/.test(mobAyar) ? "kaynaktan" : "kendi sabiti"),
+      "mobil yeni=" + (/min=\{PROFILE_LIMITS\.newPerDay\.min\} max=\{PROFILE_LIMITS\.newPerDay\.max\}/.test(mobAyar) ? "kaynaktan" : "kendi sabiti"),
+      "mobil ad=" + (/maxLength=\{PROFILE_LIMITS\.displayNameMax\}/.test(mobAyar) && /maxLength=\{PROFILE_LIMITS\.displayNameMax\}/.test(mobAuth) ? "kaynaktan" : "kendi sabiti"),
+    ],
+    ["web hedef=kaynaktan", "web yeni=kaynaktan", "web ad=kaynaktan", "mobil hedef=kaynaktan", "mobil yeni=kaynaktan", "mobil ad=kaynaktan"],
     "bulunan",
     "beklenen",
   );

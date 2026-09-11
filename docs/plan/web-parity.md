@@ -9173,3 +9173,31 @@ onu örtmesi demek.
 sınırı kaynaktan mı alıyor, ve sunucunun deseni sınırlardan mı kuruluyor. Beş
 enjeksiyonun beşi yakalandı — biri sunucunun sayısını değiştirerek, yani ölçüm
 gerçekten tek kaynağa bağlı.
+
+## §11.279 — Aynı soruyu kalan kapılara sordum: profil sınırları beş yerde yazılıydı
+
+§11.278'deki soru ("sayı kaç yerde yazılı") profil sınırlarına da uyuyordu.
+Günlük hedef (5-120), günlük yeni kelime (0-40) ve görünen ad uzunluğu (40)
+**beş ayrı yerde** yazılıydı: sunucunun kırpma kodu, web ayar kaydırıcıları,
+webin kayıt formu, mobilin ayar kaydırıcıları, mobilin kayıt formu. Sayılar
+tesadüfen tutuyordu; biri değişse öteki dördü sessizce eski kalırdı — ve
+kaydırıcının izin verdiği bir değeri sunucu geri kırptığı için kullanıcı
+**ayarın kaydedilmediğini** görürdü, hata değil "olmadı" diye.
+
+Artık sunucu tarafında `lib/profile-limits` tek kaynak, mobilde
+`lib/profileDefaults` içindeki `PROFILE_LIMITS` onun aynası; altı yüzeyin
+hepsi sınırı oradan okuyor.
+
+**§50, §144 ve §145 bu değişiklikle düştü ve üçü de §183'e katlandı.** Biri
+ders verdi: §144 sayıyı bulamadığında iki tarafta da `"?"` üretiyordu ve
+`"?" === "?"` kapıyı yeşil tutuyordu. Yani kapı, sabitler ortaya çıktığı an
+**hiçbir şey ölçmemeye** başlamış, ama bunu bir arıza gibi değil bir uyum
+gibi bildirmişti. Kural: *bir kapı ölçemediği şeyi "bilinmiyor" diye
+işaretleyip iki tarafta da aynı işareti üretiyorsa, karşılaştırma kapıyı
+korumaz* — ölçülemeyen taraf, eşitlik değil **arıza** saymalı. §157'nin ilk
+hâli de ("çizim-yok" iki tarafta) aynı tuzağa düşmüştü; ikisinde de çözüm
+karşılaştırmayı bırakıp her tarafı **mutlak beklenen listeye** bağlamak oldu.
+
+**§183** üç şeyi denetliyor: mobilin kaynağı sunucuyla aynı mı, uç sınırı
+kaynaktan mı okuyor, altı yüzey de kaynaktan mı okuyor. Beş enjeksiyonun
+beşi doğru taraftan yakalandı.

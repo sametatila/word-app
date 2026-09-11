@@ -11,6 +11,7 @@ import { useT, useLang } from "@/lib/i18n/client";
 import { legalPath } from "@/lib/legal";
 import { Turnstile } from "@/components/turnstile";
 import { CAPTCHA_ACTION } from "@/lib/auth/captcha-action";
+import { PROFILE_LIMITS } from "@/lib/profile-limits";
 
 type Mode = "signin" | "signup";
 
@@ -241,8 +242,8 @@ export function AuthForm({
             value={name}
             onChange={(e) => setName(e.target.value)}
             placeholder={t("auth.your_name_optional")}
-            /* Sınır profil formuyla aynı: uç adı 40'a kırpıyor. */
-            maxLength={40}
+            /* Sınır profil formuyla aynı KAYNAKTAN: uç da onu okuyor. */
+            maxLength={PROFILE_LIMITS.displayNameMax}
             /* KLAVYE DAVRANIŞI ANDROID İLE AYNI. Telefonda web de kullanılıyor
                (PWA) ve alanlar orada başka davranıyordu: ad ilk harfi büyük
                yazmıyor, e-posta ilk harfi BÜYÜK yazıyor ve düzeltmeye

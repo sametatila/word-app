@@ -10,6 +10,7 @@ import { sameOrigin } from "@/lib/auth/origin";
 import { ensureProfile } from "@/lib/session";
 import { proficiencyFor } from "@/lib/proficiency-data";
 import type { CefrLevel } from "@/lib/skills/types";
+import { PROFILE_LIMITS } from "@/lib/profile-limits";
 
 export const dynamic = "force-dynamic";
 
@@ -55,11 +56,11 @@ export async function POST(req: Request) {
     // Görünen ad başkalarına görünür (sıralama, arkadaşlar): bağlantı, e-posta, kontrol
     // karakteri ve küfür kabul edilmez (Play UGC: başkalarına görünen metin için moderasyon).
     if (!displayNameAllowed(name)) return NextResponse.json({ error: "name_invalid" }, { status: 400 });
-    patch.displayName = name.slice(0, 40);
+    patch.displayName = name.slice(0, PROFILE_LIMITS.displayNameMax);
   }
-  if (typeof body.dailyGoal === "number") patch.dailyGoal = clampInt(body.dailyGoal, 5, 120);
+  if (typeof body.dailyGoal === "number") patch.dailyGoal = clampInt(body.dailyGoal, PROFILE_LIMITS.dailyGoal.min, PROFILE_LIMITS.dailyGoal.max);
   if (typeof body.goal === "string" && ["work", "daily", "exam", "swiss"].includes(body.goal)) patch.goal = body.goal;
-  if (typeof body.newPerDay === "number") patch.newPerDay = clampInt(body.newPerDay, 0, 40);
+  if (typeof body.newPerDay === "number") patch.newPerDay = clampInt(body.newPerDay, PROFILE_LIMITS.newPerDay.min, PROFILE_LIMITS.newPerDay.max);
   if (typeof body.level === "string" && ["A1", "A2", "B1", "B2", "C1"].includes(body.level))
     patch.level = body.level;
   // Kabul edilen kurslar kayıt defterinden (lib/courses): literal liste

@@ -17,7 +17,7 @@ import { listAccounts, type LinkedAccount } from "../lib/accountLinks";
 import { PressableScale } from "../ui/PressableScale";
 import { ArrowBackIcon, ChevronRightIcon } from "../ui/icons";
 import { useAuth } from "../lib/AuthContext";
-import { PROFILE_DEFAULTS } from "../lib/profileDefaults";
+import { PROFILE_DEFAULTS, PROFILE_LIMITS } from "../lib/profileDefaults";
 import { useMe } from "../lib/useMe";
 import { updateProfile } from "../lib/updateProfile";
 import { VoicePicker } from "../ui/VoicePicker";
@@ -284,8 +284,8 @@ export function SettingsScreen() {
             <Slider
               label={t("settings.daily_goal_short")}
               value={goal}
-              min={5}
-              max={120}
+              min={PROFILE_LIMITS.dailyGoal.min}
+              max={PROFILE_LIMITS.dailyGoal.max}
               step={5}
               suffix={t("settings.reviews_unit")}
               onChange={setGoal}
@@ -295,8 +295,8 @@ export function SettingsScreen() {
             <Slider
               label={t("settings.new_per_day")}
               value={newPerDay}
-              min={0}
-              max={40}
+              min={PROFILE_LIMITS.newPerDay.min}
+              max={PROFILE_LIMITS.newPerDay.max}
               step={1}
               suffix={t("settings.words_unit")}
               onChange={setNewPerDay}
@@ -407,7 +407,7 @@ export function SettingsScreen() {
               // Sınır yoktu: kullanıcı istediği kadar yazabiliyor, uç 40'a
               // kırpıyordu (`/api/profile`) ve ad bir sonraki açılışta kısalmış
               // görünüyordu. Web kutusu da 60 diyordu, o da düzeltildi.
-              maxLength={40}
+              maxLength={PROFILE_LIMITS.displayNameMax}
               style={{ backgroundColor: colors.surface2, borderRadius: radii.md, paddingHorizontal: spacing.lg, paddingVertical: 13, color: colors.text, fontSize: 16 }}
             />
             {/* Hesap silme buradan PROFİLE taşındı (çıkış yapın altına): yıkıcı

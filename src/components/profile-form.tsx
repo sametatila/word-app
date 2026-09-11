@@ -19,6 +19,7 @@ import { LangSetting } from "@/components/lang-setting";
 import { defaultVoice, type VoiceId } from "@/lib/tts/voices";
 import { track } from "@/lib/track";
 import { legalPath } from "@/lib/legal";
+import { PROFILE_LIMITS } from "@/lib/profile-limits";
 
 type Initial = {
   displayName: string;
@@ -153,7 +154,7 @@ export function ProfileForm({
            kısalmış oluyordu — sessiz bir kayıp. §144'ün kuralının ters
            yönü: yüzey, sunucunun KABUL ETTİĞİNDEN AZ da teklif etmemeli,
            TUTTUĞUNDAN ÇOK da. */
-        maxLength={40}
+        maxLength={PROFILE_LIMITS.displayNameMax}
         placeholder={t("settings.display_name")}
         /* Ad alanı Android ile aynı: kelime başlarını büyütüyor (bkz.
            `screens/SettingsScreen`). */
@@ -303,8 +304,8 @@ export function ProfileForm({
           <Slider
             label={t("settings.daily_goal_short")}
             value={dailyGoal}
-            min={5}
-            max={120}
+            min={PROFILE_LIMITS.dailyGoal.min}
+            max={PROFILE_LIMITS.dailyGoal.max}
             step={5}
             suffix={t("settings.reviews_unit")}
             onChange={setDailyGoal}
@@ -313,8 +314,8 @@ export function ProfileForm({
           <Slider
             label={t("settings.new_per_day")}
             value={newPerDay}
-            min={0}
-            max={40}
+            min={PROFILE_LIMITS.newPerDay.min}
+            max={PROFILE_LIMITS.newPerDay.max}
             step={1}
             suffix={t("settings.words_unit")}
             onChange={setNewPerDay}

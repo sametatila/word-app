@@ -21,6 +21,7 @@ import { notifPrimeNeeded } from "../lib/notifications";
 import { isEmailNotVerified, translateAuthError } from "../lib/authErrors";
 import { checkPassword } from "../lib/passwordPolicy";
 import { useTheme, spacing, radii, softShadow, type Palette } from "../theme";
+import { PROFILE_LIMITS } from "../lib/profileDefaults";
 
 type Mode = "signin" | "signup";
 type View2 = "options" | "email" | "forgot" | "verify" | "twofactor";
@@ -508,7 +509,7 @@ export function AuthScreen() {
                 mevcut parola — yanlışını vermek yöneticiye yanlış kayıt
                 önerir. */}
             {mode === "signup" && (
-              <TextInput value={name} onChangeText={setName} placeholder={t("auth.your_name_optional")} placeholderTextColor={colors.textFaint} autoCapitalize="words" maxLength={40} autoComplete="name" textContentType="name" style={input} />
+              <TextInput value={name} onChangeText={setName} placeholder={t("auth.your_name_optional")} placeholderTextColor={colors.textFaint} autoCapitalize="words" maxLength={PROFILE_LIMITS.displayNameMax} autoComplete="name" textContentType="name" style={input} />
             )}
             <TextInput value={email} onChangeText={setEmail} placeholder={t("auth.email")} placeholderTextColor={colors.textFaint} keyboardType="email-address" autoCapitalize="none" autoCorrect={false} autoComplete="email" textContentType="emailAddress" style={input} />
             <TextInput returnKeyType="go" onSubmitEditing={() => { if (!busy) void submit(); }} value={password} onChangeText={setPassword} placeholder={t("auth.password_min_hint")} placeholderTextColor={colors.textFaint} secureTextEntry autoComplete={mode === "signup" ? "new-password" : "current-password"} textContentType={mode === "signup" ? "newPassword" : "password"} style={input} />
