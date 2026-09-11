@@ -7036,7 +7036,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   );
 }
 
-/* ── 184-187. politika sayisi CUMLENIN ICINDE yaziliydi ───────────────────
+/* ── 184-192. politika sayisi CUMLENIN ICINDE yaziliydi ───────────────────
  * §183'un sorusunun ("sayi kac yerde yazili") sozluge uzanan hali. Iki kural
  * kodda TEK sabitti ama kullaniciya SOYLEYEN cumle sayiyi duz metin olarak
  * tasiyordu:
@@ -7054,6 +7054,17 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
  *   187 - rol yapma sinavinin gecme esigi (`EXAM_PASS_SCORE`): iki platformun
  *         ekrani `overall >= 60` diye elle karsilastiriyordu ve esigi soyleyen
  *         cumle ("esigin altinda (60)") alti dizgede ayrica yaziliydi.
+ *   188 - pekisme araligi (`MASTERED_DAYS`): "21+ gun aralik".
+ *   189 - yeterlilik penceresi (`DECAY_DAYS`): "son 30 gun".
+ *   190 - seviye sinavi gecme esikleri (`PASS_TOTAL`/`PASS_SECTION`):
+ *         "toplam %70 ve her bolum %50" - tek cumlede IKI sayi.
+ *   191 - haftalik sinavin pekismis esigi (`MIN_MASTERED`): "30'a ulasinca".
+ *   192 - hiz turunun suresi (`BOSS_SECONDS`): "modulun kelimeleri, 60 sn".
+ *
+ * 188-192'de sayilarin dordu `server-only` modullerde ya da yalniz sunucuda
+ * duruyordu; MIN_MASTERED ve BOSS_SECONDS istemciye acilan ayri dosyalara
+ * tasindi, mobil kopyalar `lib/learningRules` icinde toplandi. Adlar web ile
+ * birebir ayni, o yuzden ayrisma "ortak sayisal sabitler" kapisina dusuyor.
  *
  * Sabit degisseydi kural degisir, cumle ESKI SAYIYI soylemeye devam ederdi:
  * form "en az 10 karakter" der, sunucu on ikiyi isterdi; kullanici neyi
@@ -7077,6 +7088,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   const POLITIKALAR = [
     {
       ad: "parola uzunlugu",
+      yer: ["{n}"],
       anahtarlar: ["auth.password_min_hint", "autherror.password_min_length"],
       gecis: /n:\s*MIN_PASSWORD_LENGTH/,
       cagiranlar: [
@@ -7088,6 +7100,7 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     },
     {
       ad: "kullanici adi beklemesi",
+      yer: ["{n}"],
       anahtarlar: ["social.err_username_cooldown", "socialsettings.username_cooldown"],
       gecis: /n:\s*(USERNAME_CHANGE_COOLDOWN_DAYS|SOCIAL_LIMITS\.changeCooldownDays)/,
       cagiranlar: [
@@ -7097,15 +7110,52 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     },
     {
       ad: "guvenilen cihaz omru",
+      yer: ["{n}"],
       anahtarlar: ["twofa.trust_note"],
       gecis: /n:\s*TWO_FACTOR_TRUST_DAYS/,
       cagiranlar: ["src/components/two-factor-form.tsx", "mobile/src/screens/AuthScreen.tsx"],
     },
     {
       ad: "rol yapma gecme esigi",
+      yer: ["{n}"],
       anahtarlar: ["rpexam.below_threshold"],
       gecis: /n:\s*EXAM_PASS_SCORE/,
       cagiranlar: ["src/components/lessons/roleplay-exam.tsx", "mobile/src/screens/RoleplayExamScreen.tsx"],
+    },
+    {
+      ad: "pekisme araligi",
+      yer: ["{days}"],
+      anahtarlar: ["progress.bar_note"],
+      gecis: /days:\s*MASTERED_DAYS/,
+      cagiranlar: ["src/components/progress-view.tsx", "mobile/src/screens/ProgressScreen.tsx"],
+    },
+    {
+      ad: "yeterlilik penceresi",
+      yer: ["{days}"],
+      anahtarlar: ["progp.window"],
+      gecis: /days:\s*DECAY_DAYS/,
+      cagiranlar: ["src/components/progress-panel.tsx", "mobile/src/ui/GrowthPanel.tsx"],
+    },
+    {
+      ad: "sinav gecme esikleri",
+      yer: ["{total}", "{section}"],
+      anahtarlar: ["exam.rules_body"],
+      gecis: /total:\s*PASS_TOTAL, section:\s*PASS_SECTION/,
+      cagiranlar: ["src/components/exam-player.tsx", "mobile/src/screens/ExamScreen.tsx"],
+    },
+    {
+      ad: "haftalik pekismis esigi",
+      yer: ["{min}"],
+      anahtarlar: ["weekly.pitch_short"],
+      gecis: /min:\s*MIN_MASTERED/,
+      cagiranlar: ["src/components/weekly-player.tsx", "mobile/src/screens/WeeklyScreen.tsx"],
+    },
+    {
+      ad: "hiz turu suresi",
+      yer: ["{n}"],
+      anahtarlar: ["exam.speed_round_link"],
+      gecis: /n:\s*BOSS_SECONDS/,
+      cagiranlar: ["src/components/exam-player.tsx", "mobile/src/screens/ExamScreen.tsx"],
     },
   ];
 
@@ -7118,7 +7168,12 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
         const m = src.match(new RegExp('"' + a.replace(/\./g, "\\.") + '":\\s*"([^"]*)"'));
         const deger = m ? m[1] : null;
         const ad = kisa(y) + " " + a.split(".")[0];
-        bulgu.push(ad + "=" + (!deger ? "ANAHTAR YOK" : !deger.includes("{n}") ? "YER TUTUCU YOK" : /\d/.test(deger) ? "RAKAM VAR" : "tamam"));
+        /* HANGI yer tutucu arandigi politikadan geliyor. Ilk yazimda hep
+           `{n}` araniyordu ve iki cumle YANLIS yerden gecti: `progp.window`
+           ile `weekly.pitch_short` zaten baska bir sey icin `{n}` tasiyordu,
+           kapi onu gorup "tamam" dedi - olcum komsuyu olcuyordu. */
+        const eksik = pol.yer.filter((y) => !deger?.includes(y));
+        bulgu.push(ad + "=" + (!deger ? "ANAHTAR YOK" : eksik.length ? "YER TUTUCU YOK " + eksik.join("+") : /\d/.test(deger) ? "RAKAM VAR" : "tamam"));
         beklenen.push(ad + "=tamam");
       }
     }

@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
+import { MIN_MASTERED } from "../lib/learningRules";
 import { t, formatPercent } from "../lib/i18n";
 import { View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
@@ -145,7 +146,7 @@ export function WeeklyScreen() {
         <Text variant="h1" style={{ textAlign: "center" }}>{t(status?.short ? "plan.weekly_short" : "plan.weekly_exam")}</Text>
         <Text variant="body" color={colors.textMuted} style={{ textAlign: "center", marginTop: spacing.md, lineHeight: 22 }}>
           {t("weekly.pitch", { n: rounds.length })}{" "}
-          {t(status?.short ? "weekly.pitch_short" : "weekly.pitch_full", { n: status?.mastered ?? 0 })}
+          {t(status?.short ? "weekly.pitch_short" : "weekly.pitch_full", { n: status?.mastered ?? 0, min: MIN_MASTERED })}
         </Text>
         <Text variant="caption" color={colors.textFaint} style={{ textAlign: "center", marginTop: spacing.sm, lineHeight: 19 }}>{t("weekly.honest_note")}</Text>
         <PressableScale

@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { MASTERED_DAYS } from "@/lib/srs";
 import { BookIcon, CheckIcon, ChevronRightIcon, ClockIcon, FlameIcon, PenIcon, SparkIcon, TrophyIcon } from "@/components/icons";
 import { Mascot } from "@/components/mascot";
 import type { ComponentType, SVGProps } from "react";
@@ -91,7 +92,7 @@ export function WordProgress({
           })}
         </div>
         <p className="muted mt-4 text-xs">
-          {t("progress.bar_note", { seen: totalSeen, total: totalWords })}
+          {t("progress.bar_note", { seen: totalSeen, total: totalWords, days: MASTERED_DAYS })}
         </p>
       </section>
 

@@ -1,4 +1,5 @@
 import "server-only";
+import { MIN_MASTERED } from "@/lib/weekly-const";
 import { MASTERED_DAYS } from "@/lib/srs";
 import { and, asc, desc, eq, gt, gte, lt, sql } from "drizzle-orm";
 import { db } from "@/lib/db";
@@ -24,7 +25,8 @@ import { nativeOf } from "@/lib/courses";
  */
 
 export const WEEKLY_ROUNDS = 15;
-const MIN_MASTERED = 30;
+/* Eşik istemciye de iniyor: bkz. `lib/weekly-const`. */
+export { MIN_MASTERED } from "@/lib/weekly-const";
 const NO_REPEAT_WEEKS = 4;
 
 /** Oyun dağılımı (plan): çeviri 5, yazma 4, yazarak tamamla 3, serbest cümle 2, sesli 1 (WP-20 yoksa yazma). */

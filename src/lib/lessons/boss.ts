@@ -32,8 +32,8 @@ import { nativeOf } from "@/lib/courses";
 
 /** Sınavdaki tur sayısı. */
 export const BOSS_ROUNDS = 15;
-/** Başlangıç süresi (saniye). */
-export const BOSS_SECONDS = 60;
+/* Başlangıç süresi istemciye de iniyor: bkz. `lib/lessons/boss-const`. */
+export { BOSS_SECONDS } from "@/lib/lessons/boss-const";
 /** Doğru cevabın kazandırdığı süre. */
 export const BOSS_BONUS = 3;
 /** Yanlışın yaktığı süre. */

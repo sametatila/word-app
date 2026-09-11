@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState, useCallback } from "react";
+import { BOSS_SECONDS, PASS_SECTION, PASS_TOTAL } from "../lib/learningRules";
 import { View, ScrollView, TextInput } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { SkeletonCard, SkeletonLine } from "../ui/Skeleton";
@@ -462,7 +463,7 @@ export function ExamScreen() {
           <Card padded style={{ gap: spacing.xs, backgroundColor: colors.surface2 }}>
             <Text variant="bodyStrong">{t("exam.rules")}</Text>
             <Text variant="caption" color={colors.textMuted} style={{ lineHeight: 20 }}>
-              {t(moduleIx === null ? "exam.rules_level" : "exam.rules_module")} {t("exam.rules_body")}
+              {t(moduleIx === null ? "exam.rules_level" : "exam.rules_module")} {t("exam.rules_body", { total: PASS_TOTAL, section: PASS_SECTION })}
             </Text>
           </Card>
           {/* Kâğıt BURADA üretiliyor: kapağı açmak sınavı başlatmıyor. */}
@@ -605,7 +606,7 @@ export function ExamScreen() {
           */}
           {moduleIx !== null ? (
             <PressableScale onPress={() => nav.navigate("Boss", { level, moduleIndex: moduleIx })} style={{ paddingVertical: 12, alignItems: "center" }}>
-              <Text variant="caption" color={colors.textMuted}>{t("exam.speed_round_link")}</Text>
+              <Text variant="caption" color={colors.textMuted}>{t("exam.speed_round_link", { n: BOSS_SECONDS })}</Text>
             </PressableScale>
           ) : null}
         </ScrollView>

@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { DECAY_DAYS } from "@/lib/proficiency";
 import { SkeletonBar, SkeletonLine } from "@/components/skeleton";
 import { Disclosure } from "@/components/disclosure";
 import { WeakSpotsCard } from "@/components/weak-spots-card";
@@ -85,7 +86,7 @@ export function ProgressPanel() {
       <div className="flex items-baseline justify-between gap-3">
         <h2 className="font-bold">{t("progress.progress")} · {data.level}</h2>
         <span className="muted shrink-0 text-xs font-semibold">
-          {t("progp.window", { n: data.evidenceCount })}
+          {t("progp.window", { n: data.evidenceCount, days: DECAY_DAYS })}
         </span>
       </div>
 

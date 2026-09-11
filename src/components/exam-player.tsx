@@ -1,6 +1,8 @@
 "use client";
 
 import Link from "next/link";
+import { BOSS_SECONDS } from "@/lib/lessons/boss-const";
+import { PASS_SECTION, PASS_TOTAL } from "@/lib/exam-types";
 import { useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
@@ -832,7 +834,7 @@ function Cover({ level, module, onStart }: { level: CefrLevel; module: number | 
       <div className="mt-4 rounded-xl px-3.5 py-3 text-xs leading-relaxed surface-2">
         <p className="font-semibold">{t("exam.rules")}</p>
         <p className="muted mt-1">
-          {t(module === null ? "exam.rules_level" : "exam.rules_module")} {t("exam.rules_body")}
+          {t(module === null ? "exam.rules_level" : "exam.rules_module")} {t("exam.rules_body", { total: PASS_TOTAL, section: PASS_SECTION })}
         </p>
       </div>
 
@@ -1146,7 +1148,7 @@ function Result({
           href={`/lessons/boss/${level}/${moduleIndex}`}
           className="muted mt-2 block text-center text-xs font-semibold underline-offset-2 hover:underline"
         >
-          {t("exam.speed_round_link")}
+          {t("exam.speed_round_link", { n: BOSS_SECONDS })}
         </Link>
       ) : null}
     </section>

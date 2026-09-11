@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { DECAY_DAYS } from "../lib/learningRules";
 import { View } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import type { NativeStackNavigationProp } from "@react-navigation/native-stack";
@@ -140,7 +141,7 @@ export function GrowthPanel() {
     <Card padded style={{ marginBottom: spacing.lg, gap: spacing.sm }}>
       <View style={{ flexDirection: "row", alignItems: "baseline", justifyContent: "space-between", gap: spacing.sm }}>
         <Text variant="bodyStrong">{t("progress.progress")} · {data.level}</Text>
-        <Text variant="micro" color={colors.textMuted}>{t("progp.window", { n: data.evidenceCount })}</Text>
+        <Text variant="micro" color={colors.textMuted}>{t("progp.window", { n: data.evidenceCount, days: DECAY_DAYS })}</Text>
       </View>
 
       {data.summary?.text ? <Text variant="caption" color={colors.text} style={{ lineHeight: 20 }}>{data.summary.text}</Text> : null}

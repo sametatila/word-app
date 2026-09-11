@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { MIN_MASTERED } from "@/lib/weekly-const";
 import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import type { Answer, Round } from "@/lib/types";
@@ -161,7 +162,7 @@ export function WeeklyPlayer() {
             <p className="muted mt-1 text-sm">
               {t("weekly.pitch", { n: data.rounds.length })}{" "}
               {data.status.short
-                ? t("weekly.pitch_short", { n: data.status.mastered })
+                ? t("weekly.pitch_short", { n: data.status.mastered, min: MIN_MASTERED })
                 : t("weekly.pitch_full", { n: data.status.mastered })}
             </p>
             <p className="muted mt-1 text-xs">{t("weekly.honest_note")}</p>

@@ -9287,3 +9287,36 @@ ikiye ayrıldı: sayının kendisi ve ekranın sabiti kullanıp kullanmadığı.
 **§186-187** aynı politika tablosuna eklendi; ayrıca iki mutlak ölçüt:
 sunucunun `trustDeviceMaxAge`i sabitten geçirdiği, ve rol yapma kararının
 (yalnız cümlenin değil) sabitten okuduğu. Altı enjeksiyonun altısı yakalandı.
+
+## §11.284 — Kalan beş politika sayısı ve kapının kendi ölçüm hatası
+
+Taramanın son turu: kuralı **söyleyen** cümlenin sayıyı kendi içinde taşıdığı
+beş yer daha.
+
+| Sayı | Cümle | Kaynak |
+|---|---|---|
+| Pekişme aralığı | "21+ gün aralık" | `MASTERED_DAYS` |
+| Yeterlilik penceresi | "son 30 gün" | `DECAY_DAYS` |
+| Sınav geçme eşikleri | "toplam %70 ve her bölüm %50" | `PASS_TOTAL`/`PASS_SECTION` |
+| Haftalık pekişmiş eşiği | "30'a ulaşınca" | `MIN_MASTERED` |
+| Hız turu süresi | "modülün kelimeleri, 60 sn" | `BOSS_SECONDS` |
+
+İkisi istemciden **erişilemiyordu**: `lib/weekly` ve `lib/lessons/boss`
+`server-only`. §11.280'deki çözümün aynısı uygulandı — `lib/weekly-const` ve
+`lib/lessons/boss-const`, eskiler oradan yeniden dışa veriyor. Mobilde beş
+sayının kopyası `lib/learningRules` içinde toplandı; adlar web'dekiyle birebir
+aynı olduğu için ayrışma zaten var olan "ortak sayısal sabitler" kapısına
+düşüyor (enjeksiyonla doğrulandı).
+
+**Kapının kendisi komşuyu ölçüyordu.** §184-187 yazılırken yer tutucu `{n}`
+diye sabitlenmişti. Yeni beş cümlenin üçü başka bir yer tutucu kullanıyor
+(`{days}`, `{total}`+`{section}`, `{min}`) ve ikisi — `progp.window` ile
+`weekly.pitch_short` — **zaten başka bir şey için `{n}` taşıyordu**. Kapı o
+`{n}`'i görüp "tamam" dedi: ölçtüğü şey politikanın yer tutucusu değil,
+cümlede rastlantıyla bulunan bir başkasıydı. Politika tablosuna `yer` alanı
+eklendi; her politika hangi yer tutucuyu beklediğini **kendisi** söylüyor.
+Enjeksiyon 5 (`{min}` → `30`) eski hâlde sessizce geçerdi, şimdi yakalanıyor.
+
+Bu, bu turların en sık tekrar eden dersinin bir örneği daha: **bir kapının
+yeşil olması ölçtüğünün doğru şey olduğunu göstermez.** Enjeksiyon, ölçümün
+kendisini ölçmenin tek yolu.

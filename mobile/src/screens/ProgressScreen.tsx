@@ -1,4 +1,5 @@
 import React from "react";
+import { MASTERED_DAYS } from "../lib/learningRules";
 import { t, dateLocale, formatNumber } from "../lib/i18n";
 import { View, ScrollView } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
@@ -288,6 +289,7 @@ export function ProgressScreen() {
               {t("progress.bar_note", {
                 seen: formatNumber(me.levels.reduce((a, l) => a + l.seen, 0)),
                 total: formatNumber(me.levels.reduce((a, l) => a + l.total, 0)),
+                days: MASTERED_DAYS,
               })}
             </Text>
           </Card>
