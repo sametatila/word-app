@@ -216,7 +216,7 @@ export function PathScreen() {
         {path.units.map((u) => (
           <PressableScale key={u.id} style={{ width: gridItemWidth }} onPress={() => openUnit(u)}>
             <Card padded style={{ minHeight: 116, opacity: u.locked ? 0.6 : 1, borderColor: u.index === vurguluIndex ? colors.primary : colors.border, borderWidth: u.index === vurguluIndex ? 2 : 1 }}>
-              <View style={{ width: 44, height: 44, borderRadius: 20, borderWidth: 3, borderColor: u.complete ? colors.success : u.index === path.currentIndex ? colors.primary : colors.border, alignItems: "center", justifyContent: "center" }}>
+              <View style={{ width: 44, height: 44, borderRadius: radii.lg, borderWidth: 3, borderColor: u.complete ? colors.success : u.index === path.currentIndex ? colors.primary : colors.border, alignItems: "center", justifyContent: "center" }}>
                 {u.complete ? <CheckIcon color={colors.successText} size={18} /> : u.locked ? <LockIcon color={colors.textMuted} size={18} /> : <Text variant="bodyStrong" color={u.index === vurguluIndex ? colors.primaryText : colors.textMuted}>{u.index}</Text>}
               </View>
               <Text variant="bodyStrong" style={{ marginTop: 8 }} numberOfLines={2}>{u.theme}</Text>

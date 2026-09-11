@@ -170,7 +170,7 @@ export function WritingsScreen() {
            yazın yok" yazılıyordu: ağı kopan kullanıcıya, yazdığı metinlerin
            yok olduğu söyleniyordu. */
         <View style={{ flex: 1, alignItems: "center", justifyContent: "center", gap: spacing.lg, paddingHorizontal: spacing.xl }}>
-          <View style={{ width: 80, height: 80, borderRadius: 24, backgroundColor: colors.primarySoft, alignItems: "center", justifyContent: "center" }}><WriteIcon color={colors.primary} size={36} /></View>
+          <View style={{ width: 80, height: 80, borderRadius: radii.xl, backgroundColor: colors.primarySoft, alignItems: "center", justifyContent: "center" }}><WriteIcon color={colors.primary} size={36} /></View>
           {/*
             BOŞ HÂL BİR ÇIKIŞ YOLU VERİYOR. Eskiden tek cümle vardı ve
             kullanıcı "nereye gideceğim" sorusuyla baş başa kalıyordu; web

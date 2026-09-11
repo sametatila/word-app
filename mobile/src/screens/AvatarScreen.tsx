@@ -102,7 +102,7 @@ export function AvatarScreen() {
               {HAT_COLORS.map((col) => {
                 const sel = cfg.hatColor === col;
                 return (
-                  <PressableScale hitSlop={4} key={col} onPress={() => setCfg({ hatColor: col })} style={{ width: 44, height: 44, borderRadius: 20, backgroundColor: col, borderWidth: 3, borderColor: sel ? colors.text : "transparent" }} />
+                  <PressableScale hitSlop={4} key={col} onPress={() => setCfg({ hatColor: col })} style={{ width: 44, height: 44, borderRadius: radii.lg, backgroundColor: col, borderWidth: 3, borderColor: sel ? colors.text : "transparent" }} />
                 );
               })}
             </View>
