@@ -197,7 +197,7 @@ function LeagueRow({
         <span className="w-6 shrink-0 text-center text-sm font-black tabular-nums" style={{ color: tint ?? "var(--text-muted)" }}>
           {row.rank}
         </span>
-        <Avatar userId={row.userId} name={row.name} size={32} ring={tint} />
+        <Avatar userId={row.userId} name={row.name} avatar={row.avatar} size={32} ring={tint} />
         <span className="min-w-0 flex-1 truncate text-sm font-semibold">
           {row.username && !row.isMe ? (
             <Link href={`/u/${row.username}`} prefetch={false}>

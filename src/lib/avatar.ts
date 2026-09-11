@@ -1,51 +1,41 @@
 "use client";
 
 import { useSyncExternalStore } from "react";
+import { DEFAULT_AVATAR, parseAvatar, type AvatarConfig } from "@/lib/avatar-config";
 
 /**
  * Kullanıcının KENDİ avatarı — Erdi maskotu tabanına aksesuar katmanları
  * (şapka + renk, gözlük, bıyık).
  *
- * Mobil `M/src/lib/avatar.ts` ile aynı model ve AYNI DEPOLAMA ANAHTARI
- * (`lernomi-avatar`), aynı JSON biçimi. Aynı olması bir tercih değil zorunluluk
- * değil de değil: seçim cihazda kalıyor (sunucuya gitmiyor), yani telefonda
- * seçtiğin şapka tarayıcıda görünmüyor. Ama biçimi ayrıştırmak, ileride
- * sunucuya taşınırken iki ayrı göç yazmak demekti.
+ * Mobil `M/src/lib/avatar.ts` ile aynı model, aynı JSON biçimi ve aynı
+ * depolama anahtarı (`lernomi-avatar`). Buradaki kopya artık ÖNBELLEK: asıl
+ * kayıt sunucuda (`profiles.avatar`), açılışta `syncAvatarWithServer` ile
+ * eşitleniyor. Yerel kopya yalnız ilk boyamanın beklememesi ve düzenleme
+ * ekranından çıkınca başlığın anında değişmesi için var.
  *
- * BAŞKALARININ arması bu değil: onlar kimlikten türeyen renkli baş harflerle
- * görünüyor (`components/avatar.tsx`, mobilde `PersonAvatar`) ve iki
- * platformda aynı hash + aynı palet kullanılıyor, yani aynı kişi her yerde
- * aynı renkte. Maskot yalnız "ben" için.
+ * `null` = KULLANICI HİÇ AVATAR SEÇMEDİ. Varsayılan yapılandırmadan ayrı bir
+ * durum olması şart: seçmemiş olan kimlikten türeyen armasıyla görünüyor
+ * (`components/avatar.tsx`), seçmiş olan maskotuyla. İkisi tek değere
+ * indirgenirse ya herkes çıplak maskot olur (listede kimse ayırt edilemez) ya
+ * da seçimini sıfırlayan kişi armaya düşer.
  */
-export type AvatarConfig = {
-  hat: string | null;
-  hatColor: string;
-  glasses: string | null;
-  mustache: string | null;
-};
-
-export const DEFAULT_AVATAR: AvatarConfig = {
-  hat: null,
-  hatColor: "#c0392b",
-  glasses: null,
-  mustache: null,
-};
+export type { AvatarConfig } from "@/lib/avatar-config";
+export { DEFAULT_AVATAR } from "@/lib/avatar-config";
 
 const KEY = "lernomi-avatar";
 
-let cache: AvatarConfig = DEFAULT_AVATAR;
-let snapshot: AvatarConfig = DEFAULT_AVATAR;
+let cache: AvatarConfig | null = null;
+let snapshot: AvatarConfig | null = null;
 let loaded = false;
 const subs = new Set<() => void>();
 
-function read(): AvatarConfig {
+function read(): AvatarConfig | null {
   try {
-    const raw = localStorage.getItem(KEY);
-    if (raw) return { ...DEFAULT_AVATAR, ...(JSON.parse(raw) as Partial<AvatarConfig>) };
+    return parseAvatar(localStorage.getItem(KEY));
   } catch {
-    /* depolama kapalıysa varsayılan */
+    /* depolama kapalı: seçim yok sayılır */
+    return null;
   }
-  return DEFAULT_AVATAR;
 }
 
 function ensureLoaded() {
@@ -55,10 +45,15 @@ function ensureLoaded() {
   snapshot = cache;
 }
 
-/** Kayıtlı avatarı okur (düzenleme ekranının başlangıcı). */
+/**
+ * Düzenleme ekranının başlangıç değeri — seçim yoksa varsayılan.
+ *
+ * Ekran bir yapılandırma ÜZERİNDE çalışıyor, "seçmedim" hâli üzerinde değil;
+ * o ayrımı gösteren kanca `useAvatar`.
+ */
 export function getAvatar(): AvatarConfig {
   ensureLoaded();
-  return cache;
+  return cache ?? DEFAULT_AVATAR;
 }
 
 /** Avatarı kaydeder + tüm dinleyicileri (başlık/profil) günceller. */
@@ -72,6 +67,46 @@ export function saveAvatar(cfg: AvatarConfig): void {
     /* yut */
   }
   subs.forEach((f) => f());
+  /*
+    SUNUCUYA DA YAZILIYOR. Avatar eskiden yalnız cihazdaydı: telefonda seçilen
+    şapka tarayıcıda görünmüyordu ve listelerde başkaları onu hiç göremiyordu.
+    Yerel kayıt önce yapılıyor ki arayüz beklemeden değişsin; ağ hatası sessiz,
+    bir sonraki kayıt ya da açılış eşitlemesi yakalıyor.
+  */
+  void fetch("/api/profile", {
+    method: "POST",
+    headers: { "content-type": "application/json" },
+    body: JSON.stringify({ avatar: cfg }),
+  }).catch(() => {});
+}
+
+/**
+ * Açılışta cihaz ile sunucuyu eşitler.
+ *
+ * SUNUCU KAZANIR: avatar hesabın, cihazın değil — başka bir cihazda
+ * değiştirildiyse burada da o görünmeli. Tek istisna ilk göç: sunucuda hiç
+ * avatar yokken cihazdaki seçim kaybolmasın diye yukarı taşınıyor.
+ */
+export async function syncAvatarWithServer(): Promise<void> {
+  try {
+    const res = await fetch("/api/me", { headers: { accept: "application/json" }, cache: "no-store" });
+    if (!res.ok) return;
+    const j = (await res.json()) as { avatar?: unknown };
+    const remote = parseAvatar(j.avatar);
+    if (remote) {
+      cache = remote;
+      snapshot = remote;
+      loaded = true;
+      try { localStorage.setItem(KEY, JSON.stringify(remote)); } catch { /* yut */ }
+      subs.forEach((f) => f());
+      return;
+    }
+    ensureLoaded();
+    // Sunucuda yok, cihazda var: göç.
+    if (cache) saveAvatar(cache);
+  } catch {
+    /* çevrimdışı: cihazdaki değer geçerli kalır */
+  }
 }
 
 function subscribe(fn: () => void): () => void {
@@ -84,18 +119,19 @@ function subscribe(fn: () => void): () => void {
 
 /**
  * Reaktif avatar — kaydedilince başlıktaki ve profildeki kopyalar da değişir.
+ * `null` dönerse kullanıcı hiç seçmemiş demektir (çağıran armaya düşer).
  *
- * `useSyncExternalStore` ile: sunucu anlık görüntüsü VARSAYILAN, istemcininki
+ * `useSyncExternalStore` ile: sunucu anlık görüntüsü SEÇİMSİZ, istemcininki
  * depolamadan geliyor. Depolamayı doğrudan render sırasında okumak hydration
  * uyuşmazlığı üretirdi — sunucu şapkasız, istemci şapkalı çizerdi.
  */
-export function useAvatar(): AvatarConfig {
+export function useAvatar(): AvatarConfig | null {
   return useSyncExternalStore(
     subscribe,
     () => {
       ensureLoaded();
       return snapshot;
     },
-    () => DEFAULT_AVATAR,
+    () => null,
   );
 }

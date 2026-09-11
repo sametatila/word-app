@@ -152,10 +152,10 @@ export function FeedCard({ item }: { item: FeedItem }) {
       <div className="flex items-center gap-3">
         {linked ? (
           <Link href={`/u/${item.user.username}`} prefetch={false} aria-label={name} className="shrink-0">
-            <Avatar userId={item.user.userId} name={item.user.name} size={44} />
+            <Avatar userId={item.user.userId} name={item.user.name} avatar={item.user.avatar} size={44} />
           </Link>
         ) : (
-          <Avatar userId={item.user.userId} name={item.user.name} size={44} />
+          <Avatar userId={item.user.userId} name={item.user.name} avatar={item.user.avatar} size={44} />
         )}
         <div className="min-w-0 flex-1">
           <p className="truncate text-h3">{item.isMine ? t("social.you") : name}</p>

@@ -154,7 +154,7 @@ export function Inbox() {
             <li key={n.id} style={{ borderColor: "var(--border)" }}>
               <Link href={hrefFor(n)} prefetch={false} className="flex items-center gap-3 px-4 py-3">
                 {n.actor ? (
-                  <Avatar userId={n.actor.userId} name={n.actor.name} size={40} />
+                  <Avatar userId={n.actor.userId} name={n.actor.name} avatar={n.actor.avatar} size={40} />
                 ) : (
                   <span
                     className="flex h-10 w-10 shrink-0 items-center justify-center"

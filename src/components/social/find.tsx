@@ -121,7 +121,7 @@ function PersonRow({
   streak,
   children,
 }: {
-  user: { userId: string; name: string | null; username: string | null };
+  user: { userId: string; name: string | null; username: string | null; avatar: string | null };
   note: string;
   streak?: number;
   children: React.ReactNode;
@@ -137,10 +137,10 @@ function PersonRow({
           ikisini birden basılabilir yapıp avatarı aynı gerekçeyle gizliyor. */}
       {href ? (
         <Link href={href} prefetch={false} aria-hidden tabIndex={-1} className="shrink-0">
-          <Avatar userId={user.userId} name={user.name} size={40} />
+          <Avatar userId={user.userId} name={user.name} avatar={user.avatar} size={40} />
         </Link>
       ) : (
-        <Avatar userId={user.userId} name={user.name} size={40} />
+        <Avatar userId={user.userId} name={user.name} avatar={user.avatar} size={40} />
       )}
       <div className="min-w-0 flex-1">
         <p className="truncate text-sm font-bold">

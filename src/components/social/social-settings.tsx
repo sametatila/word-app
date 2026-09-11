@@ -175,7 +175,7 @@ export function SocialSettings({ initial, course = "de", bare = false }: { initi
           <ol className="mt-2 divide-y divide-[color:var(--border)]">
             {blocked.map((b) => (
               <li key={b.userId} className="flex items-center gap-3 py-2" style={{ borderColor: "var(--border)" }}>
-                <Avatar userId={b.userId} name={b.name} size={28} />
+                <Avatar userId={b.userId} name={b.name} avatar={b.avatar} size={28} />
                 <span className="min-w-0 flex-1 truncate text-sm">
                   {b.name ?? t("social.unnamed_short")} {b.username ? <span className="muted text-xs">@{b.username}</span> : null}
                 </span>

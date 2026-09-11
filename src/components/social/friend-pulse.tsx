@@ -45,7 +45,7 @@ export function FriendPulse() {
   return (
     <Link href="/friends?tab=quests" prefetch={false} className="card mx-auto mt-4 flex w-full max-w-md items-center gap-3 px-4 py-3">
       <div className="flex -space-x-2">
-        <Avatar userId={q.partner.userId} name={q.partner.name} size={32} ring="var(--color-sky)" />
+        <Avatar userId={q.partner.userId} name={q.partner.name} avatar={q.partner.avatar} size={32} ring="var(--color-sky)" />
       </div>
       <div className="min-w-0 flex-1">
         <p className="truncate text-sm font-bold">

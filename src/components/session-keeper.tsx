@@ -2,6 +2,7 @@
 
 import { useEffect } from "react";
 import { writeTzCookie } from "@/lib/tz-cookie";
+import { syncAvatarWithServer } from "@/lib/avatar";
 
 /**
  * Oturumu ayakta tutan ve hesap değişiminde cihazı temizleyen görünmez bileşen.
@@ -113,6 +114,13 @@ export function SessionKeeper({ userId }: { userId: string }) {
     değeri duruyor. Gerekçenin tamamı `lib/tz-cookie`de.
   */
   useEffect(() => { writeTzCookie(); }, []);
+
+  /*
+    AVATAR EŞİTLEMESİ. Avatar artık hesabın: başka bir cihazda değiştirildiyse
+    burada da o görünmeli. Sunucuda hiç yoksa cihazdaki seçim yukarı taşınıyor
+    (ilk göç). Gerekçenin tamamı `lib/avatar`da.
+  */
+  useEffect(() => { void syncAvatarWithServer(); }, [userId]);
 
   useEffect(() => {
     // Temizlik, kurs/ses aynasının yazılmasından ÖNCE olmalı — bu bileşen

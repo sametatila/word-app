@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
-import { MyAvatar } from "@/components/my-avatar";
+import { MascotAvatar } from "@/components/avatar";
 import { GLASSES, HAT_COLORS, HATS, MUSTACHES } from "@/components/avatar-parts";
 import { getAvatar, saveAvatar, DEFAULT_AVATAR, type AvatarConfig } from "@/lib/avatar";
 import { PageBack } from "@/components/page-back";
@@ -45,7 +45,7 @@ export function AvatarEditor() {
       <PageBack fallback="/profile" title={t("avatar.your_avatar")} />
 
       <div className="my-5 flex justify-center">
-        <MyAvatar size={140} config={cfg} className="shadow-soft-lg" />
+        <MascotAvatar config={cfg} size={140} className="shadow-soft-lg" />
       </div>
 
       <Group title={t("avatar.hat")}>
@@ -148,7 +148,7 @@ function Opt({
       className="pressable shrink-0 rounded-panel p-1"
       style={{ border: `2px solid ${selected ? "var(--color-brand-500)" : "transparent"}` }}
     >
-      <MyAvatar size={54} config={preview} />
+      <MascotAvatar config={preview} size={54} />
     </button>
   );
 }

@@ -112,7 +112,7 @@ export function FriendsHub({ me, initialTab }: { me: SocialMeView; initialTab: H
         davetin ADRESİ, bu ekranın var oluş sebebi — kırpılıyordu.
       */}
       <section className="card flex flex-col items-center p-5">
-        <Avatar userId={me.userId} name={me.name} size={64} />
+        <Avatar userId={me.userId} name={me.name} avatar={me.avatar} size={64} />
         <p className="mt-3 text-h3">{me.name ?? t("social.unnamed")}</p>
         <p className="muted text-caption">@{me.username}</p>
         <div className="mt-3 flex gap-2">

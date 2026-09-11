@@ -1,5 +1,9 @@
 "use client";
 
+import { AvatarOverlay } from "@/components/avatar-parts";
+import { useAvatar } from "@/lib/avatar";
+import { parseAvatar, type AvatarConfig } from "@/lib/avatar-config";
+
 /**
  * Öğrenci arması.
  *
@@ -73,6 +77,7 @@ export function initials(name: string | null): string {
 export function Avatar({
   userId,
   name,
+  avatar,
   size = 32,
   /** Kazanılmış bir unvanın halkası — yoksa arma çıplak görünür. */
   ring,
@@ -80,10 +85,22 @@ export function Avatar({
 }: {
   userId: string;
   name: string | null;
+  /**
+   * Kişinin KENDİ avatarı (ham JSON, bkz. lib/avatar-config). Doluysa arma
+   * yerine maskot çiziliyor.
+   *
+   * Avatar eskiden yalnız cihazda duruyordu, yani başkalarınınkini kimse
+   * göremiyordu ve herkes bu dosyadaki türetilmiş armayla çiziliyordu. Artık
+   * sunucuda: seçmiş olan kendi avatarıyla, seçmemiş olan eski armasıyla
+   * görünüyor. Arma SİLİNMEDİ çünkü hâlâ gerçek bir yedek.
+   */
+  avatar?: string | null;
   size?: number;
   ring?: string | null;
   className?: string;
 }) {
+  const cfg = parseAvatar(avatar);
+  if (cfg) return <MascotAvatar config={cfg} size={size} ring={ring} className={className} />;
   const h = hash(userId || name || "?");
   const [from, to] = PALETTE[h % PALETTE.length];
   const pattern = PATTERNS[(h >>> 8) % PATTERNS.length];
@@ -140,4 +157,67 @@ export function Avatar({
       </span>
     </span>
   );
+}
+
+/**
+ * Maskot avatarı — Erdi tabanı + aksesuar katmanları.
+ *
+ * TEK çizim yeri: hem başkalarının avatarı (`Avatar`), hem kendi avatarın
+ * (`MyAvatar`), hem düzenleme ekranının önizlemesi buradan geçiyor. Üç ayrı
+ * kopya vardı ve biri değişince ötekiler geride kalıyordu.
+ *
+ * Taban görsel iki platformda AYNI dosya (`public/logo-mark.png` =
+ * `M/src/assets/avatar-base.png`, aynı md5).
+ */
+export function MascotAvatar({
+  config,
+  size = 44,
+  ring,
+  className = "",
+}: {
+  config: AvatarConfig;
+  size?: number;
+  ring?: string | null;
+  className?: string;
+}) {
+  return (
+    <span
+      className={`relative block shrink-0 overflow-hidden rounded-full ${className}`}
+      style={{ width: size, height: size, background: "#FA7C13", ...(ring ? { boxShadow: `0 0 0 2px ${ring}` } : {}) }}
+    >
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img src="/logo-mark.png" alt="" width={size} height={size} className="block h-full w-full object-cover" />
+      <AvatarOverlay config={config} size={size} />
+    </span>
+  );
+}
+
+/**
+ * KENDİ avatarın — başlıkta ve profilde.
+ *
+ * `Avatar`dan tek farkı kaynağı: sunucudan gelen alan yerine REAKTİF yerel
+ * depo okunuyor, böylece düzenleme ekranından çıkar çıkmaz başlıktaki kopya
+ * da değişiyor (sayfa tazelemeden). Çizim aynı: seçim varsa maskot, yoksa
+ * arma.
+ *
+ * Ayrı bir "ben" çizimi VARDI ve maskotu koşulsuz çiziyordu: hiç avatar
+ * seçmemiş biri başlıkta çıplak maskot, kendi arkadaş listesinde arma olarak
+ * görünüyordu — aynı kişi, aynı ekranda, iki kimlik.
+ */
+export function MyAvatar({
+  userId,
+  name,
+  size = 44,
+  ring,
+  className = "",
+}: {
+  userId: string;
+  name: string | null;
+  size?: number;
+  ring?: string | null;
+  className?: string;
+}) {
+  const cfg = useAvatar();
+  if (cfg) return <MascotAvatar config={cfg} size={size} ring={ring} className={className} />;
+  return <Avatar userId={userId} name={name} size={size} ring={ring} className={className} />;
 }

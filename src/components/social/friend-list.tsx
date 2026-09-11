@@ -94,10 +94,10 @@ function FriendItem({ f, nudged, onChanged }: { f: FriendRow; nudged: boolean; o
            ikinci bir durak eklemesin diye klavye ve ekran okuyucu dışında
            bırakıldı. */
         <Link href={href} prefetch={false} aria-hidden tabIndex={-1} className="shrink-0">
-          <Avatar userId={f.userId} name={f.name} size={40} />
+          <Avatar userId={f.userId} name={f.name} avatar={f.avatar} size={40} />
         </Link>
       ) : (
-        <Avatar userId={f.userId} name={f.name} size={40} />
+        <Avatar userId={f.userId} name={f.name} avatar={f.avatar} size={40} />
       )}
       <div className="min-w-0 flex-1">
         <p className="truncate text-sm font-bold">

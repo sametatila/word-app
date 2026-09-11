@@ -60,7 +60,7 @@ export function PublicProfile({ data, me }: { data: PublicProfileView; me: strin
     <div className="mx-auto flex w-full max-w-3xl flex-col gap-3">
       <section className="card p-5">
         <div className="flex items-start gap-4">
-          <Avatar userId={u.userId} name={u.name} size={64} ring={friends ? "var(--color-mint)" : null} />
+          <Avatar userId={u.userId} name={u.name} avatar={u.avatar} size={64} ring={friends ? "var(--color-mint)" : null} />
           <div className="min-w-0 flex-1">
             <h1 className="truncate text-lg font-bold">{u.name ?? t("social.unnamed")}</h1>
             <p className="muted text-sm">

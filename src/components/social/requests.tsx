@@ -93,10 +93,10 @@ function RequestRow({ r, incoming, onChanged }: { r: PendingView; incoming: bool
           erişilebilir adı kişinin adı. */}
       {href ? (
         <Link href={href} prefetch={false} aria-label={name} className="shrink-0">
-          <Avatar userId={r.user.userId} name={r.user.name} size={40} />
+          <Avatar userId={r.user.userId} name={r.user.name} avatar={r.user.avatar} size={40} />
         </Link>
       ) : (
-        <Avatar userId={r.user.userId} name={r.user.name} size={40} />
+        <Avatar userId={r.user.userId} name={r.user.name} avatar={r.user.avatar} size={40} />
       )}
       <div className="min-w-0 flex-1">
         <p className="truncate text-sm font-bold">

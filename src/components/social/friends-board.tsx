@@ -73,7 +73,7 @@ export function FriendsBoard() {
             <span className="w-6 shrink-0 text-center text-sm font-black tabular-nums" style={{ color: MEDAL[r.rank] ?? "var(--text-muted)" }}>
               {r.rank}
             </span>
-            <Avatar userId={r.userId} name={r.name} size={32} ring={MEDAL[r.rank] ?? null} />
+            <Avatar userId={r.userId} name={r.name} avatar={r.avatar} size={32} ring={MEDAL[r.rank] ?? null} />
             <span className="min-w-0 flex-1 truncate text-sm font-semibold">
               {r.username && !r.isMe ? <Link href={`/u/${r.username}`} prefetch={false}>{r.name ?? t("social.unnamed")}</Link> : (r.name ?? t("social.unnamed"))}
               {/* "sen" GÖMÜLÜ TÜRKÇEYDİ: İngilizce ve Almanca arayüzde de

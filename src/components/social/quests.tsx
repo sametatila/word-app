@@ -1,12 +1,13 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Avatar } from "@/components/avatar";
+import { Avatar, MyAvatar } from "@/components/avatar";
 import { EmptyCard } from "@/components/empty-card";
 import { TargetIcon } from "@/components/icons";
 import { SkeletonBar, SkeletonCard, SkeletonLine, SkeletonPill, SkeletonTile } from "@/components/skeleton";
 import { errorText, social } from "@/lib/social/client";
 import type { FriendRow, QuestView } from "@/lib/social/types";
+import { useShell } from "@/components/app-shell";
 import { useT, useLang } from "@/lib/i18n/client";
 import { formatNumber, formatPercent } from "@/lib/i18n/dict";
 
@@ -88,7 +89,7 @@ export function Quests({ friends, onChanged, me }: { friends: FriendRow[]; onCha
               <ol className="card divide-y divide-[color:var(--border)] overflow-hidden">
                 {friends.map((f) => (
                   <li key={f.userId} className="flex items-center gap-3 px-4 py-2.5">
-                    <Avatar userId={f.userId} name={f.name} size={32} />
+                    <Avatar userId={f.userId} name={f.name} avatar={f.avatar} size={32} />
                     {/* HAFTALIK XP DE YAZILI: ortak görevde partner seçmek
                         "kim gerçekten çekecek" kararıdır ve o soruya cevap
                         veren tek sayı bu. Android satırı baştan beri
@@ -115,7 +116,7 @@ export function Quests({ friends, onChanged, me }: { friends: FriendRow[]; onCha
           <ol className="card divide-y divide-[color:var(--border)] overflow-hidden">
             {past.map((q) => (
               <li key={q.id} className="flex items-center gap-3 px-4 py-2.5 text-sm" style={{ borderColor: "var(--border)" }}>
-                <Avatar userId={q.partner.userId} name={q.partner.name} size={28} />
+                <Avatar userId={q.partner.userId} name={q.partner.name} avatar={q.partner.avatar} size={28} />
                 <span className="min-w-0 flex-1 truncate">
                   {t("quests.past_row", { name: q.partner.name ?? t("social.unnamed_short"), xp: formatNumber(q.targetXp, lang) })}
                 </span>
@@ -179,6 +180,7 @@ export function QuestsSkeleton() {
 }
 
 export function QuestCard({ q, me, busy, onAct }: { q: QuestView; me: string; busy: boolean; onAct: (fn: () => Promise<unknown>) => Promise<void> }) {
+  const { name: myName } = useShell();
   const t = useT();
   const lang = useLang();
   const invited = q.status === "invited";
@@ -187,8 +189,8 @@ export function QuestCard({ q, me, busy, onAct }: { q: QuestView; me: string; bu
     <section className="card p-4">
       <div className="flex items-center gap-3">
         <div className="flex -space-x-2">
-          <Avatar userId={me} name={null} size={36} ring="var(--color-brand)" />
-          <Avatar userId={q.partner.userId} name={q.partner.name} size={36} ring="var(--color-sky)" />
+          <MyAvatar userId={me} name={myName} size={36} ring="var(--color-brand)" />
+          <Avatar userId={q.partner.userId} name={q.partner.name} avatar={q.partner.avatar} size={36} ring="var(--color-sky)" />
         </div>
         <div className="min-w-0 flex-1">
           <p className="text-sm font-bold">
