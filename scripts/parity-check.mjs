@@ -5019,41 +5019,33 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   }
   sameList("tarih yereli arayuzden", yerelsiz.length ? yerelsiz : ["yok"], ["yok"], "yerelsiz cagri", "beklenen");
 
-  /* YUZDE: isaretin yeri dile ait (tr "%85", en "85%", de "85 %") ve iki
-     taraf da onu SOZLUKTEN aliyor. Bu turda tarandi ve temiz cikti; kapi
-     isaretin kodda yazilmasini yakaliyor. */
+  /*
+   * YUZDE ISARETI: yeri dile ait (tr "%85", en "85%", de "85 %") ve iki taraf
+   * da onu bicimleyiciden almali (`formatPercent` / `common.pct`).
+   *
+   * BU KAPI BIR KEZ YANLIS OLCTU ve yanlis bir borc raporladi (bkz.
+   * web-parity §11.235'in duzeltmesi): tarama `width: ${pct}%` gibi DUZEN
+   * yuzdelerini de sayiyordu ve "otuz iki yerde koda gomulu" diyordu. Otuz
+   * ikisinin otuz biri CSS genisligiydi; gercek sayi BIRDI. Simdi eslesmenin
+   * cevresindeki seksen karakter okunuyor ve duzen baglamlari (genislik,
+   * yukseklik, gradyan, esneme) disarida.
+   */
   const kodaGomulu = [];
   for (const kok of ["src/components", "src/app", "mobile/src"]) {
     for (const f of walkAll(kok)) {
       if (f.startsWith("src/app/admin") || /\/i18n\//.test(f)) continue;
       const src = read(f).replace(/\/\*[\s\S]*?\*\//g, " ").replace(/(^|[^:"'`\\])\/\/.*$/gm, "$1");
-      /* JSX icinde `{pct}%` ya da `%{pct}` gibi elle yazilmis isaret. */
-      for (const m of src.matchAll(/\{\s*(?:\w+\.)?(?:pct|accuracy)\s*\}\s*%|%\s*\{\s*(?:\w+\.)?(?:pct|accuracy)\s*\}/g)) {
-        kodaGomulu.push(f.split("/").pop() + ": " + m[0].trim());
+      for (const m of src.matchAll(/\{\s*(?:\w+\.)?(?:pct|accuracy)\s*\}\s*%|%\s*\{\s*(?:\w+\.)?(?:pct|accuracy)\s*\}|`\$\{[^`]*(?:pct|accuracy)[^`]*\}%`/g)) {
+        const pencere = src.slice(Math.max(0, m.index - 80), m.index + 40);
+        if (/width|height|gradient|flexBasis|style\s*=|style:\s*\{/.test(pencere)) continue;
+        /* BICIMLEYICININ KENDI YEDEGI muaf: `formatPercent` Intl yoksa elle
+           yaziyor ve orasi kuralin kaynagi, ihlali degil. */
+        if (/catch \{/.test(pencere) && /formatPercent/.test(src.slice(Math.max(0, m.index - 400), m.index))) continue;
+        kodaGomulu.push(f.split("/").pop() + ": " + m[0].trim().slice(0, 30));
       }
     }
   }
-  /*
-   * TABAN SAYIMI, "sifir" DEGIL. Tarama gosterdi ki isaret otuz iki yerde
-   * koda gomulu ve IKI PLATFORMDA da oyle - yani bu tek bir hata degil,
-   * birikmis bir borc. Almanca arayuzde hepsi "85%" yaziyor, oysa dilin
-   * kurali "85 %" (bosluklu); uygulamanin bicimleyicisi de bunu biliyor
-   * (`formatPercent` / `common.pct`) ve tur ozeti gibi yerlerde zaten
-   * kullaniliyor.
-   *
-   * Kapi `i18n-hardcoded`in kalibiyla kuruldu: sayi ARTAMAZ. Yeni bir yuzey
-   * isareti koda gomerse ihlal verir; borç odendikce taban asagi ceklir.
-   * Bir kerede otuz iki yeri degistirmek bu turun isi degil - ama bir kere
-   * OLCULDUGU icin artik sessiz de degil.
-   */
-  const TABAN = 32;
-  sameList(
-    "yuzde isareti koda gomulu (taban)",
-    ["sayi=" + (kodaGomulu.length <= TABAN ? "taban icinde (" + kodaGomulu.length + "/" + TABAN + ")" : "ARTTI: " + kodaGomulu.length + " > " + TABAN)],
-    ["sayi=taban icinde (" + Math.min(kodaGomulu.length, TABAN) + "/" + TABAN + ")"],
-    "bulunan",
-    "beklenen",
-  );
+  sameList("yuzde isareti sozlukten", kodaGomulu.length ? kodaGomulu : ["yok"], ["yok"], "koda gomulu", "beklenen");
 }
 
 console.log(

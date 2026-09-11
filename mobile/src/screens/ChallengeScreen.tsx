@@ -4,7 +4,7 @@ import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { useNavigation } from "@react-navigation/native";
 import type { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import type { RootStackParams } from "../navigation/RootStack";
-import { t } from "../lib/i18n";
+import { t, formatPercent } from "../lib/i18n";
 import { Text } from "../ui/Text";
 import { PressableScale } from "../ui/PressableScale";
 import { Card } from "../ui/Card";
@@ -347,7 +347,11 @@ export function ChallengeScreen() {
           )}
           <View style={{ flexDirection: "row", gap: spacing.sm, marginTop: spacing.lg }}>
             <Box colors={colors} label={t("daily.correct")} value={`${tally.correct}/${tally.total}`} />
-            <Box colors={colors} label={t("challenge.hit_rate")} value={`${accuracy}%`} />
+            {/* İşaret KODA GÖMÜLÜ yazılıydı: Türkçe ve Almanca arayüzde de
+                "85%" çıkıyordu, oysa tr "%85", de "85 %" ister. Sözlüğün
+                biçimleyicisi bunu biliyor (`lib/i18n` `formatPercent`) ve web
+                aynı kutuda `common.pct` anahtarını kullanıyor. */}
+            <Box colors={colors} label={t("challenge.hit_rate")} value={formatPercent(accuracy)} />
             <Box colors={colors} label={t("challenge.longest_streak")} value={String(bestCombo)} />
           </View>
           <PressableScale onPress={start} style={[{ marginTop: spacing.lg, borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: 15, alignItems: "center" }, softShadow(colors.primary, 8)]}>

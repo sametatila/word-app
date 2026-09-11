@@ -7858,7 +7858,7 @@ penceresi ilk yazılışında `[^,)]*` ile kesiliyordu ve `dateLocale()`in **ken
 kapanış parantezinde** duruyordu: doğru çağrıları "yerelsiz" sayıyordu —
 **on yedinci biçim.**
 
-### 11.235 Yüzde işareti otuz iki yerde koda gömülü (taban kondu)
+### 11.235 Yüzde işareti otuz iki yerde koda gömülü (taban kondu) — YANLIŞ ÖLÇÜM, §11.236'da düzeltildi
 
 Aynı taramayı yüzdeye uygulayınca beklediğimden büyük bir şey çıktı: işaret
 **otuz iki yerde** koda gömülü (`{pct}%`) ve **iki platformda da** öyle. Yani
@@ -7872,3 +7872,29 @@ Otuz iki yeri bir turda değiştirmek bu turun işi değil. Bunun yerine
 işareti koda gömerse kapı ihlal veriyor (enjeksiyonla doğrulandı: 33 > 32),
 borç ödendikçe taban aşağı çekilecek. Bir kere ölçüldüğü için artık sessiz
 değil.
+
+### 11.236 Bir önceki turun "otuz iki yerlik borcu" yoktu — kapı yanlış ölçüyordu
+
+§11.235'te "yüzde işareti otuz iki yerde koda gömülü, iki platformda da
+birikmiş bir borç" diye yazdım ve tabanı 32'ye kurdum. **Ölçüm yanlıştı.**
+
+Tarama `width: ${pct}%`, `height: ${pct}%`, `conic-gradient(... ${pct}% ...)`
+gibi **düzen** yüzdelerini de sayıyordu — CSS genişliği, kullanıcıya yazılan
+bir metin değil. Otuz ikinin otuz biri buydu. **Gerçek sayı birdi:**
+
+- `ChallengeScreen` "isabet oranı" kutusu `` `${accuracy}%` `` yazıyordu; webin
+  aynı kutusu `t("common.pct", { n: accuracy })` kullanıyor. Yani tek bir
+  gerçek ayrışma vardı ve o düzeltildi (`formatPercent(accuracy)`).
+
+Kapı yeniden yazıldı: eşleşmenin çevresindeki seksen karakter okunuyor ve
+düzen bağlamları (genişlik, yükseklik, gradyan, esneme, `style`) dışarıda.
+Taban kaldırıldı — beklenen sayı artık **sıfır**. Biçimleyicinin kendi yedeği
+muaf (`formatPercent` Intl yoksa elle yazıyor; orası kuralın kaynağı).
+
+**Ölçünün komşusunu ölçmenin on sekizinci biçimi** — ve ilk kez sonucu
+yalnız yeşil bir kapı değil, **deftere yazılmış yanlış bir bulgu** oldu.
+Ders şu: bir kapı "beklediğimden çok" sayı bulduğunda, ilk iş sayının
+kendisine değil **neyi saydığına** bakmak.
+
+Üç enjeksiyon: mobilin işareti geri gömülse, webin kutusu gömse, ve düzen
+yüzdesi değişse (yanlış alarm vermemeli) — üçü de doğru davrandı.
