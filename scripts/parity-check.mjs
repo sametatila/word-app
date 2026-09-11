@@ -3488,6 +3488,34 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   );
 }
 
+/* ── 101. yazma gorevinin yuzeyi ──────────────────────────────────────────
+ * Beceri kutuphanesinin yazma gorevi. Androidde gonder dugmesi ASGARI kelime
+ * sayisina bagliydi ve atlama dugmesi yoktu: asgariye ulasamayan ogrencinin
+ * gorevi kapatma yolu hic yoktu, `onAllDone` cagrilmiyor ve EGZERSIZ
+ * BITIRILEMIYORDU. Web kisa metni de degerlendiriyor, yalniz gorevi
+ * "tamamlandi" saymiyor (`writp.min_words_note`).
+ *
+ * Uc sey daha olculuyor: dusuk puandan sonra tekrar deneme yolu, kalip
+ * ciplerinin metne EKLEMESI (mobilde yalniz seslendiriyordu - yazma
+ * gorevinde kalip listesi telaffuz alistirmasi degil, malzeme) ve cumle
+ * hukmu (tam / yazim sapmasi / sira). */
+{
+  const yazma = (p) => {
+    const src = read(p).replace(/\/\*[\s\S]*?\*\//g, " ").replace(/\/\/[^\n]*/g, " ");
+    return [
+      "gonderme esigi=" + (/words >= 5|words < 5/.test(src) ? "bes kelime" : "asgari"),
+      "atla=" + (/writp\.skip_task/.test(src) ? "var" : "yok"),
+      "bir daha dene=" + (/writp\.try_once_more/.test(src) ? "var" : "yok"),
+      "kisa cevap notu=" + (/writp\.min_words_note/.test(src) ? "var" : "yok"),
+      "oneri satiri=" + (/writp\.improve/.test(src) && /writp\.retry_suggest/.test(src) ? "var" : "yok"),
+      "kalip ekler=" + (/writp\.useful_phrases/.test(src) ? "var" : "yok"),
+      "hukum=" + (/writp\.exact/.test(src) && /writp\.order_only/.test(src) ? "var" : "yok"),
+      "hukum olcutu=" + (/verdict === "exact" \|\| \w+\.verdict === "spelling"/.test(src) ? "exact+spelling" : "baska"),
+    ];
+  };
+  sameList("yazma gorevi yuzeyi", yazma("mobile/src/game/skillQuiz.tsx"), yazma("src/components/skills/writing-player.tsx"));
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"

@@ -9,6 +9,7 @@ import { CheckIcon, XIcon, SpeakerIcon } from "../ui/icons";
 import { speakTarget } from "../lib/tts";
 import { currentTargetLang } from "../lib/courses";
 import { foldCompare } from "../lib/textFold";
+import { matchSentence, type SentenceMatch } from "../lib/sentenceMatch";
 import { levenshtein } from "../lib/errors";
 import { haptic } from "../lib/haptics";
 import { api } from "../api/client";
@@ -39,6 +40,23 @@ export function written(typed: string, accept: string[]): boolean {
     if (f === t) return true;
     return f.length >= 5 && levenshtein(f, t) <= 1;
   });
+}
+
+/**
+ * Yazma görevinin HÜKMÜ web ile aynı: tam doğru ve yazım sapması geçer, sıra
+ * hatası geçmez (`skills/writing-player` `rewrite` dalı). Önceki ölçüt tek bir
+ * boole idi (`written`, bütün dizede levenshtein <= 1): iki harflik bir sapma
+ * "yanlış", sıra hatası da "yanlış" oluyordu ve öğrenci hangisini yaptığını
+ * hiçbir yerden öğrenmiyordu.
+ */
+function isPass(m: SentenceMatch): boolean {
+  return m.verdict === "exact" || m.verdict === "spelling";
+}
+
+/** Hüküm satırı — web `writing-player` ile aynı dört metin. */
+function Verdict({ m, ok, colors }: { m: SentenceMatch; ok: boolean; colors: Palette }) {
+  const key = m.verdict === "exact" ? "writp.exact" : m.verdict === "spelling" ? "writp.spelling_only" : m.verdict === "order" ? "writp.order_only" : "lessonp.not_quite";
+  return <Text variant="bodyStrong" color={ok ? colors.successText : colors.dangerText}>{tx(key)}</Text>;
 }
 
 export function QuestionList({ questions, onAllAnswered, colors }: {
@@ -252,8 +270,8 @@ export function WritingList({ tasks, level, exerciseId, onAllDone, colors }: { t
 
 function BuildCard({ t, n, done, onSettle, colors }: { t: BuildTask; n: number; done: boolean; onSettle: (ok: boolean) => void; colors: Palette }) {
   const [typed, setTyped] = useState("");
-  const accept = [t.answer, ...(t.alternatives ?? [])];
-  const ok = done && written(typed, accept);
+  const [match, setMatch] = useState<SentenceMatch | null>(null);
+  const ok = match ? isPass(match) : false;
   return (
     <Card padded>
       <Text variant="bodyStrong"><Text variant="bodyStrong" color={colors.textMuted}>{n}. </Text>{t.tr}</Text>
@@ -262,7 +280,7 @@ function BuildCard({ t, n, done, onSettle, colors }: { t: BuildTask; n: number; 
           placeholder={tx("skillquiz.write_sentence", { lang: targetLangName() })} placeholderTextColor={colors.textFaint}
           style={{ flex: 1, minHeight: 44, backgroundColor: colors.surface, borderRadius: radii.md, borderWidth: 1.5, borderColor: done ? (ok ? colors.success : colors.danger) : colors.border, paddingHorizontal: spacing.md, paddingVertical: 10, color: colors.text, fontSize: 15 }} />
         {!done ? (
-          <PressableScale onPress={() => { if (typed.trim()) onSettle(written(typed, accept)); }} disabled={!typed.trim()}
+          <PressableScale onPress={() => { if (!typed.trim()) return; const m = matchSentence(typed, t.answer, t.alternatives ?? []); setMatch(m); onSettle(isPass(m)); }} disabled={!typed.trim()}
             style={{ backgroundColor: typed.trim() ? colors.primary : colors.surface2, borderRadius: radii.md, paddingHorizontal: spacing.lg, paddingVertical: 11 }}>
             <Text variant="bodyStrong" color={typed.trim() ? colors.onPrimary : colors.textFaint}>{tx("skillquiz.check")}</Text>
           </PressableScale>
@@ -270,7 +288,8 @@ function BuildCard({ t, n, done, onSettle, colors }: { t: BuildTask; n: number; 
       </View>
       {done ? (
         <View style={{ marginTop: spacing.sm }}>
-          {!ok ? <Text variant="caption" color={colors.textMuted}>{tx("common.answer_is")} <Text variant="caption" color={colors.text} style={{ fontWeight: "700" }}>{t.answer}</Text></Text> : null}
+          {match ? <Verdict m={match} ok={ok} colors={colors} /> : null}
+          {!ok ? <Text variant="caption" color={colors.textMuted} style={{ marginTop: 4 }}>{tx("common.answer_is")} <Text variant="caption" color={colors.text} style={{ fontWeight: "700" }}>{t.answer}</Text></Text> : null}
           {t.hint ? <Text variant="caption" color={colors.textMuted} style={{ marginTop: 4 }}>{t.hint}</Text> : null}
         </View>
       ) : null}
@@ -285,8 +304,8 @@ function BuildCard({ t, n, done, onSettle, colors }: { t: BuildTask; n: number; 
  */
 function RewriteCard({ t, n, done, onSettle, colors }: { t: RewriteTask; n: number; done: boolean; onSettle: (ok: boolean) => void; colors: Palette }) {
   const [typed, setTyped] = useState("");
-  const accept = [t.answer, ...(t.alternatives ?? [])];
-  const ok = done && written(typed, accept);
+  const [match, setMatch] = useState<SentenceMatch | null>(null);
+  const ok = match ? isPass(match) : false;
   return (
     <Card padded>
       <Text variant="bodyStrong"><Text variant="bodyStrong" color={colors.textMuted}>{n}. </Text>{t.prompt}</Text>
@@ -298,7 +317,7 @@ function RewriteCard({ t, n, done, onSettle, colors }: { t: RewriteTask; n: numb
           placeholder={tx("skillquiz.write_sentence", { lang: targetLangName() })} placeholderTextColor={colors.textFaint}
           style={{ flex: 1, minHeight: 44, backgroundColor: colors.surface, borderRadius: radii.md, borderWidth: 1.5, borderColor: done ? (ok ? colors.success : colors.danger) : colors.border, paddingHorizontal: spacing.md, paddingVertical: 10, color: colors.text, fontSize: 15 }} />
         {!done ? (
-          <PressableScale onPress={() => { if (typed.trim()) onSettle(written(typed, accept)); }} disabled={!typed.trim()}
+          <PressableScale onPress={() => { if (!typed.trim()) return; const m = matchSentence(typed, t.answer, t.alternatives ?? []); setMatch(m); onSettle(isPass(m)); }} disabled={!typed.trim()}
             style={{ backgroundColor: typed.trim() ? colors.primary : colors.surface2, borderRadius: radii.md, paddingHorizontal: spacing.lg, paddingVertical: 11 }}>
             <Text variant="bodyStrong" color={typed.trim() ? colors.onPrimary : colors.textFaint}>{tx("skillquiz.check")}</Text>
           </PressableScale>
@@ -306,7 +325,8 @@ function RewriteCard({ t, n, done, onSettle, colors }: { t: RewriteTask; n: numb
       </View>
       {done ? (
         <View style={{ marginTop: spacing.sm }}>
-          {!ok ? <Text variant="caption" color={colors.textMuted}>{tx("common.answer_is")} <Text variant="caption" color={colors.text} style={{ fontWeight: "700" }}>{t.answer}</Text></Text> : null}
+          {match ? <Verdict m={match} ok={ok} colors={colors} /> : null}
+          {!ok ? <Text variant="caption" color={colors.textMuted} style={{ marginTop: 4 }}>{tx("common.answer_is")} <Text variant="caption" color={colors.text} style={{ fontWeight: "700" }}>{t.answer}</Text></Text> : null}
           {t.why ? <Text variant="caption" color={colors.textMuted} style={{ marginTop: 4 }}>{t.why}</Text> : null}
         </View>
       ) : null}
@@ -385,8 +405,15 @@ function FreeCard({ t, n, done, level, exerciseId, onSettle, colors }: { t: Free
   const [score, setScore] = useState<{ overall: number; praise: string; tip: string; corrected: string } | null>(null);
   const [note, setNote] = useState<string | null>(null);
   const [queued, setQueued] = useState(false);
+  const [unscored, setUnscored] = useState(false);
   const words = typed.trim() ? typed.trim().split(/\s+/).length : 0;
   const enough = words >= t.minWords;
+  /* GÖNDERME EŞİĞİ BEŞ KELİME, asgari kelime sayısı DEĞİL - web ile aynı.
+     Düğme `enough` ile açılıyordu: asgariye ulaşamayan öğrencinin gönderme
+     yolu yoktu, atlama düğmesi de yoktu, yani `onAllDone` hiç çağrılmıyor ve
+     EGZERSİZ BİTİRİLEMİYORDU. Web kısa metni de değerlendiriyor, yalnız
+     görevi "tamamlandı" saymıyor (`writp.min_words_note`). */
+  const canSend = words >= 5;
 
   function body() {
     return {
@@ -401,7 +428,7 @@ function FreeCard({ t, n, done, level, exerciseId, onSettle, colors }: { t: Free
   }
 
   async function evaluate() {
-    if (busy || done || !enough) return;
+    if (busy || done || !canSend) return;
     setBusy(true);
     setNote(null);
     try {
@@ -412,7 +439,6 @@ function FreeCard({ t, n, done, level, exerciseId, onSettle, colors }: { t: Free
       const overall = d.result?.score?.overall ?? 0;
       setScore({ overall, praise: d.result?.praise_tr ?? "", tip: d.result?.next_tip_tr ?? "", corrected: d.result?.corrected ?? "" });
       setReveal(true);
-      onSettle(overall >= 60);
     } catch (e) {
       if (isPremiumRefusal(e) || isQuotaRefusal(e)) {
         setNote(tx(isPremiumRefusal(e) ? "assess.fail_premium" : "assess.fail_quota"));
@@ -429,10 +455,17 @@ function FreeCard({ t, n, done, level, exerciseId, onSettle, colors }: { t: Free
       /* Puan verilemedi ama görev yapıldı: alıştırma durmuyor (webde de
          yedek kural aynı kararı veriyor). */
       setReveal(true);
-      onSettle(true);
+      setUnscored(true);
     }
     setBusy(false);
   }
+
+  /* GÖREV SONUÇ EKRANINDA KAPANIYOR, değerlendirme anında değil - web
+     `writing-player` de öyle: puan gösteriliyor, altında "Devam" ve "Bir daha
+     dene" duruyor. Önce `evaluate` içinde kapatılıyordu, yani düşük puan alan
+     öğrencinin tekrar deneme yolu hiç yoktu. */
+  const settleNow = () => onSettle(unscored ? true : (score?.overall ?? 0) >= 60);
+  const retry = () => { setScore(null); setNote(null); setQueued(false); setUnscored(false); setReveal(false); };
   return (
     <Card padded>
       <Text variant="bodyStrong"><Text variant="bodyStrong" color={colors.textMuted}>{n}. </Text>{t.prompt}</Text>
@@ -446,13 +479,26 @@ function FreeCard({ t, n, done, level, exerciseId, onSettle, colors }: { t: Free
           {t.checklist.map((c, i) => <Text key={i} variant="caption" color={colors.textMuted}>• {c}</Text>)}
         </View>
       ) : null}
+      {/* KALIBA DOKUNUNCA METNE EKLENİYOR. Çipler yalnız SESLENDİRİYORDU ve
+          ne yaptıklarını söyleyen bir satır da yoktu: yazma görevinde kalıp
+          listesi bir telaffuz alıştırması değil, yazarken kullanılacak
+          malzeme (web `writing-player` dokununca metne ekliyor). Okuma yolu
+          uzun basışta duruyor. */}
       {t.phrases?.length ? (
-        <View style={{ marginTop: spacing.sm, flexDirection: "row", flexWrap: "wrap", gap: 6 }}>
-          {t.phrases.map((p) => (
-            <PressableScale key={p.de} onPress={() => speakTarget(p.de)} style={{ backgroundColor: colors.surface2, borderRadius: radii.pill, paddingHorizontal: spacing.sm, paddingVertical: 5 }}>
-              <Text variant="micro" color={colors.text}>{p.de} · {p.tr}</Text>
-            </PressableScale>
-          ))}
+        <View style={{ marginTop: spacing.sm }}>
+          <Text variant="micro" color={colors.textMuted} style={{ marginBottom: 4 }}>{tx("writp.useful_phrases")}</Text>
+          <View style={{ flexDirection: "row", flexWrap: "wrap", gap: 6 }}>
+            {t.phrases.map((p) => (
+              <PressableScale
+                key={p.de}
+                onPress={() => { if (!done) setTyped((v) => (v ? `${v.replace(/\s+$/, "")} ${p.de} ` : `${p.de} `)); }}
+                onLongPress={() => speakTarget(p.de)}
+                style={{ backgroundColor: colors.surface2, borderRadius: radii.pill, paddingHorizontal: spacing.sm, paddingVertical: 5 }}
+              >
+                <Text variant="micro" color={colors.text}>{p.de} · {p.tr}</Text>
+              </PressableScale>
+            ))}
+          </View>
         </View>
       ) : null}
       <TextInput value={typed} onChangeText={setTyped} editable={!done} multiline autoCapitalize="sentences"
@@ -460,13 +506,21 @@ function FreeCard({ t, n, done, level, exerciseId, onSettle, colors }: { t: Free
         style={{ marginTop: spacing.md, minHeight: 100, textAlignVertical: "top", backgroundColor: colors.surface, borderRadius: radii.md, borderWidth: 1.5, borderColor: colors.border, padding: spacing.md, color: colors.text, fontSize: 15, lineHeight: 22 }} />
       <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between", marginTop: spacing.sm }}>
         <Text variant="micro" color={enough ? colors.successText : colors.textMuted}>{tx("skillquiz.n_words", { n: words, min: t.minWords })}</Text>
-        {!done ? (
-          <PressableScale onPress={evaluate} disabled={!enough || busy}
-            style={{ backgroundColor: enough && !busy ? colors.primary : colors.surface2, borderRadius: radii.md, paddingHorizontal: spacing.lg, paddingVertical: 10 }}>
-            <Text variant="bodyStrong" color={enough && !busy ? colors.onPrimary : colors.textFaint}>{tx(busy ? "item.mono_scoring" : "common.send")}</Text>
-          </PressableScale>
+        {!done && !reveal ? (
+          <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.sm }}>
+            <PressableScale onPress={() => onSettle(false)} style={{ paddingHorizontal: spacing.md, paddingVertical: 10 }}>
+              <Text variant="caption" color={colors.textMuted}>{tx("writp.skip_task")}</Text>
+            </PressableScale>
+            <PressableScale onPress={evaluate} disabled={!canSend || busy}
+              style={{ backgroundColor: canSend && !busy ? colors.primary : colors.surface2, borderRadius: radii.md, paddingHorizontal: spacing.lg, paddingVertical: 10 }}>
+              <Text variant="bodyStrong" color={canSend && !busy ? colors.onPrimary : colors.textFaint}>{tx(busy ? "item.mono_scoring" : "common.send")}</Text>
+            </PressableScale>
+          </View>
         ) : null}
       </View>
+      {!done && !reveal && !enough ? (
+        <Text variant="micro" color={colors.textMuted} style={{ marginTop: 4, lineHeight: 18 }}>{tx("writp.min_words_note", { min: t.minWords, n: words })}</Text>
+      ) : null}
       {score ? (
         <View style={{ marginTop: spacing.md }}>
           <Text variant="h3" color={score.overall >= 60 ? colors.successText : colors.text}>{formatPercent(score.overall)}</Text>
@@ -480,8 +534,23 @@ function FreeCard({ t, n, done, level, exerciseId, onSettle, colors }: { t: Free
           ) : null}
         </View>
       ) : null}
+      {score && score.overall < 60 ? (
+        <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.sm, lineHeight: 20 }}>
+          {tx(score.overall >= 40 ? "writp.improve" : "writp.retry_suggest")}
+        </Text>
+      ) : null}
       {note ? <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.sm, lineHeight: 20 }}>{note}</Text> : null}
       {queued ? <Text variant="caption" color={colors.textMuted} style={{ marginTop: 4, lineHeight: 20 }}>{tx("writp.queued")}</Text> : null}
+      {reveal && !done ? (
+        <View style={{ flexDirection: "row", gap: spacing.sm, marginTop: spacing.md }}>
+          <PressableScale onPress={settleNow} style={{ flex: 1, backgroundColor: colors.primary, borderRadius: radii.md, paddingVertical: 12, alignItems: "center" }}>
+            <Text variant="bodyStrong" color={colors.onPrimary}>{tx("common.continue")}</Text>
+          </PressableScale>
+          <PressableScale onPress={retry} style={{ borderRadius: radii.md, borderWidth: 1.5, borderColor: colors.border, paddingHorizontal: spacing.lg, paddingVertical: 12 }}>
+            <Text variant="bodyStrong" color={colors.text}>{tx("writp.try_once_more")}</Text>
+          </PressableScale>
+        </View>
+      ) : null}
       {(done || reveal) && t.sample ? (
         <View style={{ marginTop: spacing.md, backgroundColor: colors.successSoft, borderRadius: radii.md, padding: spacing.md }}>
           <Text variant="micro" color={colors.textMuted} style={{ marginBottom: 4 }}>{tx("skillquiz.sample_answer")}</Text>
