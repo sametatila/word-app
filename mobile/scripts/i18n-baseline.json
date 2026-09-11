@@ -10,5 +10,17 @@
     "src/screens/OnboardingScreen.tsx": 1,
     "src/screens/SettingsScreen.tsx": 1,
     "src/ui/VoicePicker.tsx": 2
+  },
+  "notes": {
+    "_": "Tabandaki her satır TEK TEK ölçüldü (2026-09-11): hepsi meşru. Sayı bir borç kaydı; sebebi yazılmazsa eskiyor.",
+    "src/lib/courses.ts": "kurs adları zaten üç dilde yazılı (tr/en/de satırları yan yana); tarayıcı yalnız tr satırını görüyor",
+    "src/lib/native.ts": "içerik çözücünün desen şablonları - ekrana çıkmıyor, `out/`taki dizeyi tanımak için var",
+    "src/ui/VoicePicker.tsx": "Züritüütsch ve standart Almanca örnek cümleler: ses seçicinin dinletisi, içerik",
+    "src/data/exams/index.ts": "sınav bölüm adları Almanca (Goethe terimi); web `mock-exams/types.ts` ile birebir",
+    "src/screens/ExamScreen.tsx": "aynı Almanca bölüm adları; web `lib/exam-types.ts` ile birebir",
+    "src/game/rounds.tsx": "modele giden istem (`Çevir: ...`); web `translate-game.tsx` ile birebir aynı dize",
+    "src/lib/i18n.ts": "dil adı kendi dilinde (Türkçe) - çevrilmemesi gereken tek metin türü",
+    "src/screens/OnboardingScreen.tsx": "aynı dil adı",
+    "src/screens/SettingsScreen.tsx": "aynı dil adı"
   }
 }

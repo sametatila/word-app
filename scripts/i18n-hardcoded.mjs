@@ -312,6 +312,15 @@ if (mode === "--baseline") {
   }
   const baseTotal = Object.values(base).reduce((a, b) => a + b, 0);
   console.log(`ham metin: ${total} dizgi (taban ${baseTotal})`);
+} else if (mode === "--hits") {
+  /* Tek dosyanın (ya da yol parçasının) satır satır dökümü - mobil tarafın
+     `i18n-scan.js --hits`i ile aynı bayrak. Webde yoktu ve tabandaki bir
+     satırın NE olduğunu görmek için betiği okumak gerekiyordu. */
+  const needle = process.argv[3] ?? "";
+  for (const [f, list] of Object.entries(hard)) {
+    if (!f.includes(needle)) continue;
+    for (const h of list) console.log(`${f}:${h.line}  ${h.text.slice(0, 120)}`);
+  }
 } else {
   for (const [f, n] of Object.entries(counts).sort((a, b) => b[1] - a[1])) {
     console.log(String(n).padStart(4), f);
