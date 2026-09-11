@@ -6289,3 +6289,24 @@ yakalanıyor.
 üç durumu (kanıtlı / gelişiyor / henüz yok) gösteriyor; düzen genişliğe göre
 ayrışıyor (web seviye çipi + beceri sütunları, mobil seviye başlıkları +
 ilerleme şeridi). Bilgi kümesi aynı, o yüzden dokunulmadı.
+
+
+### 11.173 Günün turu: her platform tablonun yalnız bir hâlini söylüyordu
+
+Günlük sıralamanın iki özel hâli var ve ikisi de kullanıcıya bir şey söylemek
+zorunda — ama **her platform yalnız birini söylüyordu**:
+
+| hâl | mobil | web |
+|---|---|---|
+| tablo boş | "ilk oynayan sen ol" | *hiçbir şey* |
+| tabloda yalnız kendisi | *hiçbir şey* | "ilk sensin, tablo gün ilerledikçe dolacak" |
+
+Boş tabloda web başlığın altında boşluk bırakıyordu (ekran bozuk görünüyor);
+tek satırlı tabloda mobil susuyordu (kullanıcı "kimse oynamamış" sanıyor).
+İkisi de iki tarafa eklendi.
+
+**Bulmanın yolu ilginçti:** iki ekranın sözlük anahtarlarını yan yana koyunca
+`be_first_to_play_today` (yalnız mobil) ve `first_today` (yalnız web) çıktı.
+İlk bakışta **aynı şeyin iki adı** gibi duruyordu — bu turlarda üç kez öyle
+çıkmıştı. Ama metinleri okuyunca iki AYRI durum oldukları görüldü. Anahtar
+kümesi farkı bir ipucu, sonuç değil: **adlar değil metinler karşılaştırılmalı.**
