@@ -561,7 +561,6 @@ export const deWeb: Record<string, string> = {
   "lessonp.listen_again": "Noch einmal anhören",
   "snd.play_sample": "Beispielton anhören",
   "settings.privacy_policy_short": "Richtlinie",
-  "voicew.listen_to": "{name} anhören",
   "voicew.playing": "Läuft…",
   "walkw.album": "Gehmodus",
   "quizw.from_earlier": "(Wiederholung aus früheren Einheiten)",

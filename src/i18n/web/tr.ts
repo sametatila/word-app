@@ -586,7 +586,6 @@ export const trWeb: Record<string, string> = {
   "lessonp.listen_again": "Yeniden dinle",
   "snd.play_sample": "Örnek sesi dinle",
   "settings.privacy_policy_short": "Politika",
-  "voicew.listen_to": "{name} sesini dinle",
   "voicew.playing": "Çalıyor…",
   "walkw.album": "Yürürken",
   "quizw.from_earlier": "(önceki ünitelerden tekrar)",

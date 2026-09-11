@@ -561,7 +561,6 @@ export const enWeb: Record<string, string> = {
   "lessonp.listen_again": "Listen again",
   "snd.play_sample": "Play a sample sound",
   "settings.privacy_policy_short": "Policy",
-  "voicew.listen_to": "Listen to {name}",
   "voicew.playing": "Playing…",
   "walkw.album": "Walk mode",
   "quizw.from_earlier": "(review from earlier units)",

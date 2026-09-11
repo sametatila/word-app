@@ -1299,6 +1299,7 @@ export const en: Record<string, string> = {
   "socialsettings.vis_public": "Public",
   "socialsettings.vis_public_sub": "Profile and milestones are visible to everyone",
   "speakbutton.read_aloud": "Read aloud",
+  "voice.listen_to": "Listen to {name}",
   "unit.header": "{level} · {unit} {n}",
   "unit.now": "Now",
   "unit.steps_done": "{n}/{total} steps done",

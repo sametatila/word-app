@@ -710,11 +710,26 @@ function Cover({ level, module, onStart }: { level: CefrLevel; module: number | 
     <section className="card mx-auto w-full max-w-md p-5">
       {/* Erdi koç (WP-66): sınav girişinde düşünceli, tek cümle. */}
       <CoachBubble moment="exam_intro" mood="think" size={48} className="mb-3" />
-      <p className="muted text-xs font-semibold uppercase tracking-wide" lang={course}>
-        {module === null ? `${level} · Niveauprüfung` : `Modulprüfung ${cover?.code ?? `${level}.${module + 1}`}`}
+      {/*
+        KÂĞIDIN KENDİ ALMANCASI ile UYDURULMUŞ Almanca ayrı şeyler.
+        Kâğıt varsa başlığı gerçekten Almanca (`cover.titleDe`, `cover.code`)
+        ve `lang` niteliği de onu söylüyor. Kâğıt YOKSA burada "Niveauprüfung",
+        "Modulprüfung", "Prüfung A2" diye Almanca dizgiler KODA GÖMÜLÜYDÜ:
+        arayüzü Türkçe ya da İngilizce olan kullanıcı, sözlükte karşılığı
+        dururken (`exam.level_exam`, `exam.module_exam`) Almanca bir başlık
+        görüyordu. Android bu durumda sözlüğü kullanıyor (`ExamScreen`).
+      */}
+      <p className="muted text-xs font-semibold uppercase tracking-wide" lang={cover ? course : undefined}>
+        {cover
+          ? module === null
+            ? `${level} · Niveauprüfung`
+            : `Modulprüfung ${cover.code}`
+          : module === null
+            ? t("exam.level_exam", { level })
+            : t("exam.module_exam", { level, n: module + 1 })}
       </p>
-      <h1 className="mt-1 text-2xl font-bold leading-tight" lang={course}>
-        {cover?.titleDe ?? (module === null ? `Prüfung ${level}` : `Modul ${module + 1}`)}
+      <h1 className="mt-1 text-2xl font-bold leading-tight" lang={cover ? course : undefined}>
+        {cover?.titleDe ?? (module === null ? t("exam.level_exam", { level }) : t("exam.module_exam", { level, n: module + 1 }))}
       </h1>
       {cover?.titleTr ? <p className="text-base font-semibold" style={{ color: "var(--color-brand)" }}>{cover.titleTr}</p> : null}
 

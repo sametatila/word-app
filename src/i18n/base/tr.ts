@@ -1301,6 +1301,7 @@ export const trBase: Record<string, string> = {
   "socialsettings.vis_public": "Herkese açık",
   "socialsettings.vis_public_sub": "Profil ve kilometre taşları herkese görünür",
   "speakbutton.read_aloud": "Sesli oku",
+  "voice.listen_to": "{name} sesini dinle",
   "unit.header": "{level} · {unit} {n}",
   "unit.now": "Şimdi",
   "unit.steps_done": "{n}/{total} adım tamam",

@@ -5269,6 +5269,47 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   sameList("arkadas satiri eylemleri", eylemler("mobile/src/social/FriendRows.tsx"), eylemler("src/components/social/friend-list.tsx"));
 }
 
+/* ── 149. koda gomulu dil ─────────────────────────────────────────────────
+ * Iki ornek cikti ve ikisi de "sozlukte karsiligi dururken kodda yazilmis
+ * dil" sinifindan:
+ *   - Mobil ses secicisinin ekran okuyucu etiketi TURKCE gomuluydu
+ *     (`${v.label} sesini dinle`): arayuzu Ingilizce ya da Almanca olan
+ *     kullanicinin okuyucusu da Turkce soyluyordu. Web ayni dugmeye sozlukten
+ *     etiket veriyordu; anahtar ortak tabana tasindi (`voice.listen_to`).
+ *   - Web sinav kapaginda kagit YOKSA "Niveauprufung", "Modulprufung",
+ *     "Prufung A2" diye ALMANCA dizgiler gomuluydu. Kagit VARSA basligin
+ *     Almanca olmasi doğru (`cover.titleDe` gercekten Almanca ve `lang`
+ *     niteligi de onu soyluyor) ama yoklugunda uydurma Almanca yerine sozluk
+ *     kullanilmali - Android oyle yapiyor.
+ *
+ * Olculen: iki yuzeyde de etiketin/basligin sozlukten gelmesi. */
+{
+  const strip = (x) => x.replace(/\/\*[\s\S]*?\*\//g, " ").replace(/(^|[^:"'`\\])\/\/.*$/gm, "$1");
+  const ses = (yol) => {
+    const src = strip(read(yol));
+    return /voice\.listen_to/.test(src) ? "sozlukten" : /sesini dinle|Listen to|anhoren/.test(src) ? "koda gomulu" : "yok";
+  };
+  sameList("ses secici etiketi", [ses("mobile/src/ui/VoicePicker.tsx")], [ses("src/components/voice-picker.tsx")]);
+
+  /* Sinav kapagi: kagit yokken sozluk mu, uydurma Almanca mi. */
+  /* Kagit VARKEN Almanca dogru, YOKKEN sozluk. O yuzden olculen sey dizginin
+     varligi degil, YEDEK DALIN ne kullandigi: `cover?.titleDe ?? (...)` ve
+     goz kapagindaki `cover ? ... : ...` ifadelerinin YANLIS tarafi. */
+  const kapak = strip(read("src/components/exam-player.tsx")).replace(/\s+/g, " ");
+  const baslikYedek = kapak.match(/cover\?\.titleDe \?\? \(([^)]*\([^)]*\)[^)]*)*\)/)?.[0] ?? "";
+  const gozYedek = kapak.match(/: module === null \? t\("exam\.level_exam"[^}]*\}/)?.[0] ?? "";
+  sameList(
+    "sinav kapagi kagitsiz hâl",
+    [
+      "baslik yedegi=" + (/t\("exam\.(level|module)_exam"/.test(baslikYedek) ? "sozlukten" : "uydurma almanca"),
+      "goz kapagi yedegi=" + (gozYedek ? "sozlukten" : "uydurma almanca"),
+    ],
+    ["baslik yedegi=sozlukten", "goz kapagi yedegi=sozlukten"],
+    "web",
+    "beklenen",
+  );
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"

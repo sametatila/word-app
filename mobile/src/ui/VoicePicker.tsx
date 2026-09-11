@@ -57,7 +57,11 @@ export function VoicePicker({
             <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between" }}>
               <Text variant="bodyStrong" color={on ? colors.primaryText : colors.text}>{v.label}</Text>
               <PressableScale
-                accessibilityLabel={`${v.label} sesini dinle`}
+                /* Etiket KODA GÖMÜLÜ TÜRKÇEYDİ: arayüzü İngilizce ya da
+                   Almanca olan kullanıcının ekran okuyucusu da "… sesini
+                   dinle" diyordu. Web aynı düğmeye sözlükten etiket veriyor
+                   (`voice-picker` `aria-label`); anahtar ortak tabana taşındı. */
+                accessibilityLabel={t("voice.listen_to", { name: v.label })}
                 hitSlop={8}
                 onPress={() => speakWithVoice(sample, v.id)}
                 style={{ padding: 4 }}

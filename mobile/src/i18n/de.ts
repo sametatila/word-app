@@ -1299,6 +1299,7 @@ export const de: Record<string, string> = {
   "socialsettings.vis_public": "Öffentlich",
   "socialsettings.vis_public_sub": "Profil und Meilensteine sind für alle sichtbar",
   "speakbutton.read_aloud": "Vorlesen",
+  "voice.listen_to": "{name} anhören",
   "unit.header": "{level} · {unit} {n}",
   "unit.now": "Jetzt",
   "unit.steps_done": "{n}/{total} Schritte fertig",

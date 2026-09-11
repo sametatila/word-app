@@ -8056,3 +8056,27 @@ Kapı iki kez yanlış yazıldı ve ikisi de kayda değer:
    bilmiyordu.
 
 Dört enjeksiyonun dördü de sonunda yakalandı.
+
+### 11.243 Sözlükte karşılığı dururken koda gömülmüş dil
+
+"İpucu adın yerini tutmuyor" taramasını bütün yüzeylere uygulayınca sessiz
+düğme çıkmadı — webdeki dört simge-düğmenin dördü de kapatma (×) ya da renk
+seçimi, Android'de de aynı biçimde. Ama tarama **başka bir şey** buldu: sözlükte
+karşılığı dururken kodda yazılmış dil, iki ayrı yerde ve iki ayrı dilde.
+
+- **Ses seçicisinin ekran okuyucu etiketi Türkçe gömülüydü**
+  (`${v.label} sesini dinle`): arayüzü İngilizce ya da Almanca olan
+  kullanıcının okuyucusu da Türkçe söylüyordu. Web aynı düğmeye sözlükten
+  etiket veriyordu; anahtar ortak tabana taşındı (`voicew.listen_to` →
+  `voice.listen_to`).
+- **Web sınav kapağında kâğıt yoksa Almanca dizgiler gömülüydü**
+  ("Niveauprüfung", "Modulprüfung A2.3", "Prüfung A2"). Kâğıt **varsa**
+  başlığın Almanca olması doğru — `cover.titleDe` gerçekten Almanca ve `lang`
+  niteliği de onu söylüyor — ama yokluğunda uydurma Almanca yerine sözlük
+  kullanılmalı; Android öyle yapıyor. Ham metin sayısı 163'ten 162'ye indi.
+
+**§149** iki şeyi ölçüyor. Kapının ilk hâli kapağı yanlış ölçtü: dosyada
+"Niveauprüfung" geçtiği için "uydurma almanca" diyordu — oysa o dizgi artık
+yalnız `cover` VARKEN kullanılıyor ve orada doğru. Ölçülen şey dizginin
+**varlığı** değil, **yedek dalın ne kullandığı** olmalıydı; üç enjeksiyonun
+üçü de düzeltilmiş hâlde yakalandı.
