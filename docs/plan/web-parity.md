@@ -10864,3 +10864,42 @@ yani karar değil atlama. Rozet duvarında aynı sınıf zaten düzeltilmişti
 §216 sekiz ölçütü birlikte okuyor: üç başlık yeri, ölü anahtarın yokluğu, iki
 platformun kart hedefi ve iki platformun sayı biçimi. Üç enjeksiyon aynı anda
 yakalandı.
+
+## §11.331 — Kelimenin durumu dört yerde yazılıydı; sayfalama ise bilerek ayrı
+
+Kelimeler ekranı mobil karşılığıyla karşılaştırıldı.
+
+**Kural dört kez yazılıydı.** Aynı sınıflandırma web'de dört ayrı yerde
+duruyordu: `/api/words`ün gövde eşlemesi, iki SQL süzgeci (`/words` sayfası ve
+aynı uç) ve listenin etiket işlevi (`word-list` `statusOf`). Dördü de aynı
+eşikleri kullanıyordu — `MASTERED_DAYS` üçünde de `lib/srs`ten geliyor, yani
+**sayı** tek kaynaktaydı — ama **kural** dört kez yazıldığı için biri
+düzeltilip ötekilerin eski kalması için dört yol vardı.
+
+Mobilde kural tek yerde (`data/words` `statusOf`) ve yorumu "web `word-list`
+`statusOf` ile AYNI eşikler" **diyor**; ölçen bir şey yoktu. Aynı şey
+"tekrar zamanı" etiketinde de var: mobil `dueLabelKey`in yorumu web `dueLabel`
+ile aynı eşikleri iddia ediyor, iki gövde de gerçekten aynı (gün hesabı,
+`<= 0`, `=== 1`) — ama bunu da hiçbir kapı okumuyordu.
+
+`lib/word-status.ts` iki soruyu ayırıyor: `coarseStatus` ucun gövdesine giden
+**üç** değer (süzgeç çipleriyle aynı küme), `wordStatus` listenin **beş** bandı
+(`leech` en önde, `familiar` yalnız etikette var). Uç ve liste artık ikisi de
+buradan okuyor; `FAMILIAR_DAYS` iki platformda aynı adla tanımlandı ve "ortak
+sayisal sabitler" kapısının karşılaştırdığı sabit sayısı 56'dan 57'ye çıktı.
+
+§217 sekiz ölçüt okuyor: bant sayısı, iki çağrı yerinin kaynaktan okuması,
+listede elle eşik kalmaması, iki platformun `FAMILIAR_DAYS`i ve iki platformun
+"tekrar zamanı" eşikleri. İki enjeksiyon yakalandı; biri de "ortak sayisal
+sabitler" kapısına düştü.
+
+**Sayfalama BİLEREK ayrı bırakıldı.** Web önceki/sonraki düğmeleri ve
+"sayfa {n}" ile sayfalıyor (`?page=` adreste), Android "daha fazla yükle" ile
+listeyi uzatıyor. Android'i referans almak burada web'e **zarar** verirdi:
+adreste duran sayfa numarası paylaşılabilir, tarayıcının geri düğmesi doğru
+yere dönüyor ve sayfa yenilendiğinde aynı yer açılıyor — mobilde adres diye bir
+şey olmadığı için "daha fazla" orada doğru olan. Platformun kendi
+imkânının olduğu yerde eşleme, ayrışma değil. Üç `wordsw.*` anahtarı da bu
+yüzden yerinde kalıyor (§11.330'da düşen `progw.my_progress`ten farkı: orada
+web-only anahtar aynı şeyi başka adla söylüyordu, burada web-only bir
+etkileşimin kendi metni).
