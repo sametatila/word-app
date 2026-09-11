@@ -4609,7 +4609,7 @@
      },
      {
       "lang": "en",
-      "text": "How you spell your name?"
+      "text": "How do you spell your name?"
      },
      {
       "lang": "tr",
@@ -4618,12 +4618,12 @@
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "How you spell your name?",
-     "answer": false,
+     "statement": "How do you spell your name?",
+     "answer": true,
      "why": [
       {
        "lang": "tr",
-       "text": "Yanlış. Bu tür sorularda"
+       "text": "Doğru. Bu tür sorularda"
       },
       {
        "lang": "en",
@@ -4631,11 +4631,7 @@
       },
       {
        "lang": "tr",
-       "text": "şart. Doğrusu:"
-      },
-      {
-       "lang": "en",
-       "text": "How do you spell your name?"
+       "text": "şart."
       }
      ]
     }
@@ -7246,12 +7242,12 @@
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "This is my sister. His name is Ayşe.",
-     "answer": false,
+     "statement": "This is my sister. Her name is Ayşe.",
+     "answer": true,
      "why": [
       {
        "lang": "tr",
-       "text": "Yanlış. Kız kardeş bir kadın, o yüzden"
+       "text": "Doğru. Kız kardeş bir kadın, o yüzden"
       },
       {
        "lang": "en",
@@ -7259,11 +7255,7 @@
       },
       {
        "lang": "tr",
-       "text": "olmalı. Doğrusu:"
-      },
-      {
-       "lang": "en",
-       "text": "This is my sister. Her name is Ayşe."
+       "text": "olmalı."
       }
      ]
     }
@@ -8256,16 +8248,12 @@
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "He doesn't likes tea.",
-     "answer": false,
+     "statement": "He doesn't like tea.",
+     "answer": true,
      "why": [
       {
        "lang": "tr",
-       "text": "Yanlış. doesn't varken fiil yalın kalır."
-      },
-      {
-       "lang": "en",
-       "text": "He doesn't like tea."
+       "text": "Doğru. doesn't varken fiil yalın kalır."
       }
      ]
     }
@@ -9150,7 +9138,7 @@
      },
      {
       "lang": "en",
-      "text": "I have an dog."
+      "text": "I have a dog."
      },
      {
       "lang": "tr",
@@ -9159,16 +9147,12 @@
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "I have an dog.",
-     "answer": false,
+     "statement": "I have a dog.",
+     "answer": true,
      "why": [
       {
        "lang": "tr",
-       "text": "Yanlış. 'Köpek' kelimesi sessiz sesle başlıyor, o yüzden an değil a gelir. Doğrusu:"
-      },
-      {
-       "lang": "en",
-       "text": "I have a dog."
+       "text": "Doğru. 'Köpek' kelimesi sessiz sesle başlıyor, o yüzden an değil a gelir."
       }
      ]
     }
@@ -9743,21 +9727,17 @@
      },
      {
       "lang": "en",
-      "text": "These is my friends."
+      "text": "These are my friends."
      }
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "These is my friends.",
-     "answer": false,
+     "statement": "These are my friends.",
+     "answer": true,
      "why": [
       {
        "lang": "tr",
-       "text": "Yanlış. These çoğuldur, yanına are gelmeli."
-      },
-      {
-       "lang": "en",
-       "text": "These are my friends."
+       "text": "Doğru. These çoğuldur, yanına are gelmeli."
       }
      ]
     }
@@ -10204,16 +10184,12 @@
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "I have three childs.",
-     "answer": false,
+     "statement": "I have three children.",
+     "answer": true,
      "why": [
       {
        "lang": "tr",
-       "text": "Yanlış. Child düzensiz bir kelime, sonuna -s almaz. Doğrusu:"
-      },
-      {
-       "lang": "en",
-       "text": "I have three children."
+       "text": "Doğru. Child düzensiz bir kelime, sonuna -s almaz."
       }
      ]
     }
@@ -19712,21 +19688,17 @@
      },
      {
       "lang": "en",
-      "text": "He get up at seven."
+      "text": "He gets up at seven."
      }
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "He get up at seven.",
-     "answer": false,
+     "statement": "He gets up at seven.",
+     "answer": true,
      "why": [
       {
        "lang": "tr",
-       "text": "Yanlış. He ile fiilin sonuna -s gelmeli."
-      },
-      {
-       "lang": "en",
-       "text": "He gets up at seven."
+       "text": "Doğru. He ile fiilin sonuna -s gelmeli."
       }
      ]
     }
@@ -21165,16 +21137,12 @@
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "I go to school in Monday.",
-     "answer": false,
+     "statement": "I go to school on Monday.",
+     "answer": true,
      "why": [
       {
        "lang": "tr",
-       "text": "Yanlış. Gün adının önüne in değil on gelir. Doğrusu:"
-      },
-      {
-       "lang": "en",
-       "text": "I go to school on Monday."
+       "text": "Doğru. Gün adının önüne in değil on gelir."
       }
      ]
     }
@@ -21636,21 +21604,17 @@
      },
      {
       "lang": "en",
-      "text": "Turn on it."
+      "text": "Turn it on."
      }
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "Turn on it.",
-     "answer": false,
+     "statement": "Turn it on.",
+     "answer": true,
      "why": [
       {
        "lang": "tr",
-       "text": "Yanlış. Zamir sona gidemez; ortaya girmek zorunda. Doğrusu"
-      },
-      {
-       "lang": "en",
-       "text": "Turn it on."
+       "text": "Doğru. Zamir sona gidemez; ortaya girmek zorunda."
       }
      ]
     }
@@ -24302,21 +24266,17 @@
      },
      {
       "lang": "en",
-      "text": "I like play football."
+      "text": "I like playing football."
      }
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "I like play football.",
-     "answer": false,
+     "statement": "I like playing football.",
+     "answer": true,
      "why": [
       {
        "lang": "tr",
-       "text": "Yanlış. like'tan sonra gelen fiil -ing alır. Doğrusu:"
-      },
-      {
-       "lang": "en",
-       "text": "I like playing football."
+       "text": "Doğru. like'tan sonra gelen fiil -ing alır."
       }
      ]
     }
@@ -24888,17 +24848,17 @@
      },
      {
       "lang": "en",
-      "text": "He going to visit his family."
+      "text": "He is going to visit his family."
      }
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "He going to visit his family.",
-     "answer": false,
+     "statement": "He is going to visit his family.",
+     "answer": true,
      "why": [
       {
        "lang": "tr",
-       "text": "Yanlış."
+       "text": "Doğru."
       },
       {
        "lang": "en",
@@ -24906,11 +24866,7 @@
       },
       {
        "lang": "tr",
-       "text": "öncesinde be fiili şart. Doğrusu:"
-      },
-      {
-       "lang": "en",
-       "text": "He is going to visit his family."
+       "text": "öncesinde be fiili şart."
       }
      ]
     }
@@ -28920,7 +28876,7 @@
      },
      {
       "lang": "en",
-      "text": "She like it."
+      "text": "She likes it."
      },
      {
       "lang": "tr",
@@ -28929,16 +28885,12 @@
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "She like it.",
-     "answer": false,
+     "statement": "She likes it.",
+     "answer": true,
      "why": [
       {
        "lang": "tr",
-       "text": "Yanlış. Üçüncü kişide fiilin sonuna 's' gelir. Doğrusu:"
-      },
-      {
-       "lang": "en",
-       "text": "She likes it."
+       "text": "Doğru. Üçüncü kişide fiilin sonuna 's' gelir."
       }
      ]
     }
@@ -30313,16 +30265,12 @@
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "I want to buy a gift to my mother.",
-     "answer": false,
+     "statement": "I want to buy a gift for my mother.",
+     "answer": true,
      "why": [
       {
        "lang": "tr",
-       "text": "Yanlış. Hediye alırken to değil for kullanıyoruz."
-      },
-      {
-       "lang": "en",
-       "text": "I want to buy a gift for my mother."
+       "text": "Doğru. Hediye alırken to değil for kullanıyoruz."
       }
      ]
     }
@@ -30982,21 +30930,17 @@
      },
      {
       "lang": "en",
-      "text": "How much apples do you have?"
+      "text": "How many apples do you have?"
      }
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "How much apples do you have?",
-     "answer": false,
+     "statement": "How many apples do you have?",
+     "answer": true,
      "why": [
       {
        "lang": "tr",
-       "text": "Yanlış. Elma sayılabilir, o yüzden how many olmalı."
-      },
-      {
-       "lang": "en",
-       "text": "How many apples do you have?"
+       "text": "Doğru. Elma sayılabilir, o yüzden how many olmalı."
       }
      ]
     }
@@ -32211,7 +32155,7 @@
      },
      {
       "lang": "en",
-      "text": "When does it arrives?"
+      "text": "It arrives at seven."
      },
      {
       "lang": "tr",
@@ -32220,12 +32164,12 @@
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "When does it arrives?",
-     "answer": false,
+     "statement": "It arrives at seven.",
+     "answer": true,
      "why": [
       {
        "lang": "tr",
-       "text": "Yanlış. Soruda 's' zaten"
+       "text": "Doğru. Soruda 's' zaten"
       },
       {
        "lang": "en",
@@ -32242,10 +32186,6 @@
       {
        "lang": "tr",
        "text": "Ama düz cümlede 's' fiile döner:"
-      },
-      {
-       "lang": "en",
-       "text": "It arrives at seven."
       }
      ]
     }
@@ -39851,21 +39791,17 @@
      },
      {
       "lang": "en",
-      "text": "This is a old kitchen."
+      "text": "This is an old kitchen."
      }
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "This is a old kitchen.",
-     "answer": false,
+     "statement": "This is an old kitchen.",
+     "answer": true,
      "why": [
       {
        "lang": "tr",
-       "text": "Yanlış. Old kelimesi sesli harf sesiyle başlıyor, bu yüzden a değil an olmalı."
-      },
-      {
-       "lang": "en",
-       "text": "This is an old kitchen."
+       "text": "Doğru. Old kelimesi sesli harf sesiyle başlıyor, bu yüzden a değil an olmalı."
       }
      ]
     }
@@ -41552,21 +41488,17 @@
      },
      {
       "lang": "en",
-      "text": "You must to be quiet."
+      "text": "You must be quiet."
      }
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "You must to be quiet.",
-     "answer": false,
+     "statement": "You must be quiet.",
+     "answer": true,
      "why": [
       {
        "lang": "tr",
-       "text": "Yanlış. Must'tan sonra to gelmez. Doğrusu:"
-      },
-      {
-       "lang": "en",
-       "text": "You must be quiet."
+       "text": "Doğru. Must'tan sonra to gelmez."
       }
      ]
     }
@@ -46825,21 +46757,17 @@
      },
      {
       "lang": "en",
-      "text": "I listen music every day."
+      "text": "I listen to music every day."
      }
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "I listen music every day.",
-     "answer": false,
+     "statement": "I listen to music every day.",
+     "answer": true,
      "why": [
       {
        "lang": "tr",
-       "text": "Yanlış. listen'dan sonra to gelmeli."
-      },
-      {
-       "lang": "en",
-       "text": "I listen to music every day."
+       "text": "Doğru. listen'dan sonra to gelmeli."
       }
      ]
     }
@@ -47479,16 +47407,12 @@
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "Would you like go to the cinema?",
-     "answer": false,
+     "statement": "Would you like to go to the cinema?",
+     "answer": true,
      "why": [
       {
        "lang": "tr",
-       "text": "Yanlış. Bu kalıpta eylemden önce mutlaka \"to\" gelir."
-      },
-      {
-       "lang": "en",
-       "text": "Would you like to go to the cinema?"
+       "text": "Doğru. Bu kalıpta eylemden önce mutlaka \"to\" gelir."
       }
      ]
     }
@@ -48905,21 +48829,17 @@
      },
      {
       "lang": "en",
-      "text": "There is two dogs in the park."
+      "text": "There are two dogs in the park."
      }
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "There is two dogs in the park.",
-     "answer": false,
+     "statement": "There are two dogs in the park.",
+     "answer": true,
      "why": [
       {
        "lang": "tr",
-       "text": "Yanlış. İki köpek çoğul, bu yüzden is değil are gerekir:"
-      },
-      {
-       "lang": "en",
-       "text": "There are two dogs in the park."
+       "text": "Doğru. İki köpek çoğul, bu yüzden is değil are gerekir:"
       }
      ]
     }
@@ -49438,21 +49358,17 @@
      },
      {
       "lang": "en",
-      "text": "I can to swim."
+      "text": "I can swim."
      }
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "I can to swim.",
-     "answer": false,
+     "statement": "I can swim.",
+     "answer": true,
      "why": [
       {
        "lang": "tr",
-       "text": "Yanlış. can'dan sonra to gelmez, fiil yalın hâlde durur. Doğrusu:"
-      },
-      {
-       "lang": "en",
-       "text": "I can swim."
+       "text": "Doğru. can'dan sonra to gelmez, fiil yalın hâlde durur."
       }
      ]
     }
@@ -50104,21 +50020,17 @@
      },
      {
       "lang": "en",
-      "text": "She watch TV every day."
+      "text": "She watches TV every day."
      }
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "She watch TV every day.",
-     "answer": false,
+     "statement": "She watches TV every day.",
+     "answer": true,
      "why": [
       {
        "lang": "tr",
-       "text": "Yanlış. She dediğimizde fiil es alır:"
-      },
-      {
-       "lang": "en",
-       "text": "She watches TV every day."
+       "text": "Doğru. She dediğimizde fiil es alır:"
       }
      ]
     }
@@ -52590,16 +52502,12 @@
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "My head hurt.",
-     "answer": false,
+     "statement": "My head hurts.",
+     "answer": true,
      "why": [
       {
        "lang": "tr",
-       "text": "Yanlış. Tek bir baş var, yani özne tekil; o zaman fiile 's' gelmeli. Doğrusu:"
-      },
-      {
-       "lang": "en",
-       "text": "My head hurts."
+       "text": "Doğru. Tek bir baş var, yani özne tekil; o zaman fiile 's' gelmeli."
       }
      ]
     }
@@ -53228,17 +53136,17 @@
      },
      {
       "lang": "en",
-      "text": "I need a appointment."
+      "text": "I need an appointment."
      }
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "I need a appointment.",
-     "answer": false,
+     "statement": "I need an appointment.",
+     "answer": true,
      "why": [
       {
        "lang": "tr",
-       "text": "Yanlış."
+       "text": "Doğru."
       },
       {
        "lang": "en",
@@ -53254,11 +53162,7 @@
       },
       {
        "lang": "tr",
-       "text": "gelir. Doğrusu:"
-      },
-      {
-       "lang": "en",
-       "text": "I need an appointment."
+       "text": "gelir."
       }
      ]
     }
@@ -55192,17 +55096,17 @@
      },
      {
       "lang": "en",
-      "text": "I'm feel sick."
+      "text": "I'm feeling sick."
      }
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "I'm feel sick.",
-     "answer": false,
+     "statement": "I'm feeling sick.",
+     "answer": true,
      "why": [
       {
        "lang": "tr",
-       "text": "Yanlış. I'm'den sonra fiilin YALIN hâli gelmez. Ya"
+       "text": "Doğru. I'm'den sonra fiilin YALIN hâli gelmez. Ya"
       },
       {
        "lang": "en",
@@ -55211,10 +55115,6 @@
       {
        "lang": "tr",
        "text": "dersin, ya da fiile -ing eklersin:"
-      },
-      {
-       "lang": "en",
-       "text": "I'm feeling sick."
       }
      ]
     }
@@ -57110,17 +57010,17 @@
      },
      {
       "lang": "en",
-      "text": "He shoulds eat more fruit."
+      "text": "He should eat more fruit."
      }
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "He shoulds eat more fruit.",
-     "answer": false,
+     "statement": "He should eat more fruit.",
+     "answer": true,
      "why": [
       {
        "lang": "tr",
-       "text": "Yanlış."
+       "text": "Doğru."
       },
       {
        "lang": "en",
@@ -57128,11 +57028,7 @@
       },
       {
        "lang": "tr",
-       "text": "hiçbir kişide değişmez, sonuna s almaz. Doğrusu:"
-      },
-      {
-       "lang": "en",
-       "text": "He should eat more fruit."
+       "text": "hiçbir kişide değişmez, sonuna s almaz."
       }
      ]
     }
@@ -61514,21 +61410,17 @@
      },
      {
       "lang": "en",
-      "text": "They was tired."
+      "text": "They were tired."
      }
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "They was tired.",
-     "answer": false,
+     "statement": "They were tired.",
+     "answer": true,
      "why": [
       {
        "lang": "tr",
-       "text": "Yanlış. They ile was değil were kullanılır. Doğrusu:"
-      },
-      {
-       "lang": "en",
-       "text": "They were tired."
+       "text": "Doğru. They ile was değil were kullanılır."
       }
      ]
     }
@@ -62067,16 +61959,12 @@
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "Yesterday I watch a film.",
-     "answer": false,
+     "statement": "Yesterday I watched a film.",
+     "answer": true,
      "why": [
       {
        "lang": "tr",
-       "text": "Yanlış. Yesterday dediğimiz için fiil geçmiş olmalı."
-      },
-      {
-       "lang": "en",
-       "text": "Yesterday I watched a film."
+       "text": "Doğru. Yesterday dediğimiz için fiil geçmiş olmalı."
       }
      ]
     }

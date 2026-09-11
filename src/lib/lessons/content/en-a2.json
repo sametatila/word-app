@@ -1172,21 +1172,17 @@
      },
      {
       "lang": "en",
-      "text": "They was playing football."
+      "text": "They were playing football."
      }
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "They was playing football.",
-     "answer": false,
+     "statement": "They were playing football.",
+     "answer": true,
      "why": [
       {
        "lang": "tr",
-       "text": "Yanlış. They ile was değil were kullanılır."
-      },
-      {
-       "lang": "en",
-       "text": "They were playing football."
+       "text": "Doğru. They ile was değil were kullanılır."
       }
      ]
     }
@@ -1680,21 +1676,17 @@
      },
      {
       "lang": "en",
-      "text": "While I left the office, the phone rang."
+      "text": "When I left the office, the phone rang."
      }
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "While I left the office, the phone rang.",
-     "answer": false,
+     "statement": "When I left the office, the phone rang.",
+     "answer": true,
      "why": [
       {
        "lang": "tr",
-       "text": "Yanlış. While'dan sonra süren bir eylem gelmeli. I left kısa bir olay, o yüzden burada when kullanılır."
-      },
-      {
-       "lang": "en",
-       "text": "When I left the office, the phone rang."
+       "text": "Doğru. While'dan sonra süren bir eylem gelmeli. I left kısa bir olay, o yüzden burada when kullanılır."
       }
      ]
     }
@@ -2351,12 +2343,12 @@
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "I visited my aunt in last summer.",
-     "answer": false,
+     "statement": "I visited my aunt last summer.",
+     "answer": true,
      "why": [
       {
        "lang": "tr",
-       "text": "Yanlış."
+       "text": "Doğru."
       },
       {
        "lang": "en",
@@ -2372,11 +2364,7 @@
       },
       {
        "lang": "tr",
-       "text": "birlikte kullanılmaz. Doğrusu:"
-      },
-      {
-       "lang": "en",
-       "text": "I visited my aunt last summer."
+       "text": "birlikte kullanılmaz."
       }
      ]
     }
@@ -3212,16 +3200,12 @@
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "Yesterday I go to the cinema.",
-     "answer": false,
+     "statement": "Yesterday I went to the cinema.",
+     "answer": true,
      "why": [
       {
        "lang": "tr",
-       "text": "Yanlış. Yesterday dedin, yani geçmişten bahsediyorsun; o zaman go değil went olmalı."
-      },
-      {
-       "lang": "en",
-       "text": "Yesterday I went to the cinema."
+       "text": "Doğru. Yesterday dedin, yani geçmişten bahsediyorsun; o zaman go değil went olmalı."
       }
      ]
     }
@@ -3712,16 +3696,12 @@
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "\"I used to work in a bank\" means I work in a bank now.",
-     "answer": false,
+     "statement": "I used to work in a bank, but I don't now.",
+     "answer": true,
      "why": [
       {
        "lang": "tr",
-       "text": "Yanlış. 'used to' tam tersini söyler: eskiden çalışıyordum ama artık çalışmıyorum."
-      },
-      {
-       "lang": "en",
-       "text": "I used to work in a bank, but I don't now."
+       "text": "Doğru. 'used to' tam tersini söyler: eskiden çalışıyordum ama artık çalışmıyorum."
       }
      ]
     }
@@ -8171,16 +8151,12 @@
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "I have lived here since three years.",
-     "answer": false,
+     "statement": "I have lived here for three years.",
+     "answer": true,
      "why": [
       {
        "lang": "tr",
-       "text": "Yanlış. 'Three years' bir uzunluk, bir tarih değil. O yüzden 'since' değil 'for' olmalı. Doğrusu:"
-      },
-      {
-       "lang": "en",
-       "text": "I have lived here for three years."
+       "text": "Doğru. 'Three years' bir uzunluk, bir tarih değil. O yüzden 'since' değil 'for' olmalı."
       }
      ]
     }
@@ -9933,21 +9909,17 @@
      },
      {
       "lang": "en",
-      "text": "The phone is ringing. — OK, I'm going to answer it."
+      "text": "OK, I'll answer it."
      }
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "The phone is ringing. — OK, I'm going to answer it.",
-     "answer": false,
+     "statement": "OK, I'll answer it.",
+     "answer": true,
      "why": [
       {
        "lang": "tr",
-       "text": "Yanlış. Telefon o anda çalıyor, karar da o anda veriliyor. Bu yüzden will gerekir:"
-      },
-      {
-       "lang": "en",
-       "text": "OK, I'll answer it."
+       "text": "Doğru. Telefon o anda çalıyor, karar da o anda veriliyor. Bu yüzden will gerekir:"
       }
      ]
     }
@@ -10539,16 +10511,12 @@
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "I would like to going abroad next year.",
-     "answer": false,
+     "statement": "I would like to go abroad next year.",
+     "answer": true,
      "why": [
       {
        "lang": "tr",
-       "text": "Yanlış. would like to kalıbından sonra fiilin yalın hali gelir, ing takısı gelmez. Doğrusu:"
-      },
-      {
-       "lang": "en",
-       "text": "I would like to go abroad next year."
+       "text": "Doğru. would like to kalıbından sonra fiilin yalın hali gelir, ing takısı gelmez."
       }
      ]
     }
@@ -13965,7 +13933,7 @@
      },
      {
       "lang": "en",
-      "text": "I'd like to cancel my appointment."
+      "text": "I'll be there."
      },
      {
       "lang": "tr",
@@ -13974,12 +13942,12 @@
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "I'd like to cancel my appointment.",
-     "answer": false,
+     "statement": "I'll be there.",
+     "answer": true,
      "why": [
       {
        "lang": "tr",
-       "text": "Yanlış."
+       "text": "Doğru."
       },
       {
        "lang": "en",
@@ -13988,10 +13956,6 @@
       {
        "lang": "tr",
        "text": "iptal etmek demek, yani randevuya gelmeyeceksin. Geleceğim demek için:"
-      },
-      {
-       "lang": "en",
-       "text": "I'll be there."
       }
      ]
     }
@@ -16823,12 +16787,12 @@
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "Could you tell me where is the nurse?",
-     "answer": false,
+     "statement": "Could you tell me where the nurse is?",
+     "answer": true,
      "why": [
       {
        "lang": "tr",
-       "text": "Yanlış."
+       "text": "Doğru."
       },
       {
        "lang": "en",
@@ -16836,11 +16800,7 @@
       },
       {
        "lang": "tr",
-       "text": "dedikten sonra soru sırası bozulmaz, düz devam eder. Doğrusu:"
-      },
-      {
-       "lang": "en",
-       "text": "Could you tell me where the nurse is?"
+       "text": "dedikten sonra soru sırası bozulmaz, düz devam eder."
       }
      ]
     }
@@ -18068,12 +18028,12 @@
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "I have already fill in the form.",
-     "answer": false,
+     "statement": "I have already filled in the form.",
+     "answer": true,
      "why": [
       {
        "lang": "tr",
-       "text": "Yanlış."
+       "text": "Doğru."
       },
       {
        "lang": "en",
@@ -18082,10 +18042,6 @@
       {
        "lang": "tr",
        "text": "sözcüğünden sonra fiilin üçüncü hâli gelir:"
-      },
-      {
-       "lang": "en",
-       "text": "I have already filled in the form."
       }
      ]
     }
@@ -18650,7 +18606,7 @@
      },
      {
       "lang": "en",
-      "text": "I feel myself very stressed."
+      "text": "I feel very stressed."
      },
      {
       "lang": "tr",
@@ -18659,12 +18615,12 @@
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "I feel myself very stressed.",
-     "answer": false,
+     "statement": "I feel very stressed.",
+     "answer": true,
      "why": [
       {
        "lang": "tr",
-       "text": "Yanlış."
+       "text": "Doğru."
       },
       {
        "lang": "en",
@@ -18672,11 +18628,7 @@
       },
       {
        "lang": "tr",
-       "text": "fiilinden sonra 'myself' gelmez. Doğrusu:"
-      },
-      {
-       "lang": "en",
-       "text": "I feel very stressed."
+       "text": "fiilinden sonra 'myself' gelmez."
       }
      ]
     }
@@ -25931,25 +25883,21 @@
      },
      {
       "lang": "en",
-      "text": "You wash your clothes at a bakery."
+      "text": "You buy bread at a bakery."
      }
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "You wash your clothes at a bakery.",
-     "answer": false,
+     "statement": "You buy bread at a bakery.",
+     "answer": true,
      "why": [
       {
        "lang": "tr",
-       "text": "Yanlış. Fırında ekmek alırsın, çamaşır yıkamazsın. Doğrusu şöyle:"
+       "text": "Doğru. Fırında ekmek alırsın, çamaşır yıkamazsın."
       },
       {
        "lang": "en",
        "text": "You wash your clothes at a laundry."
-      },
-      {
-       "lang": "en",
-       "text": "You buy bread at a bakery."
       }
      ]
     }
@@ -29181,21 +29129,17 @@
      },
      {
       "lang": "en",
-      "text": "I go usually to work at eight."
+      "text": "I usually go to work at eight."
      }
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "I go usually to work at eight.",
-     "answer": false,
+     "statement": "I usually go to work at eight.",
+     "answer": true,
      "why": [
       {
        "lang": "tr",
-       "text": "Yanlış. Sıklık kelimesi fiilden önce gelir. Doğrusu:"
-      },
-      {
-       "lang": "en",
-       "text": "I usually go to work at eight."
+       "text": "Doğru. Sıklık kelimesi fiilden önce gelir."
       }
      ]
     }
@@ -35097,16 +35041,12 @@
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "I'd like to opening an account.",
-     "answer": false,
+     "statement": "I'd like to open an account.",
+     "answer": true,
      "why": [
       {
        "lang": "tr",
-       "text": "Yanlış. I'd like to kalıbından sonra fiil yalın gelir, ing takısı almaz. Doğrusu:"
-      },
-      {
-       "lang": "en",
-       "text": "I'd like to open an account."
+       "text": "Doğru. I'd like to kalıbından sonra fiil yalın gelir, ing takısı almaz."
       }
      ]
     }
@@ -36366,12 +36306,12 @@
     ],
     "expect": {
      "kind": "truefalse",
-     "statement": "The red plan is more cheap than the blue plan.",
-     "answer": false,
+     "statement": "The red plan is cheaper than the blue plan.",
+     "answer": true,
      "why": [
       {
        "lang": "tr",
-       "text": "Yanlış."
+       "text": "Doğru."
       },
       {
        "lang": "en",
@@ -36396,10 +36336,6 @@
       {
        "lang": "tr",
        "text": "denir:"
-      },
-      {
-       "lang": "en",
-       "text": "The red plan is cheaper than the blue plan."
       }
      ]
     }
