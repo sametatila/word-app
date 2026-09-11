@@ -6585,3 +6585,44 @@ yazma turu, ekran okuyucu etiketleri ve tarayıcıda TTS olmama ihtimali).
 **Kalıp:** "webin kendi sözlüğü" bir muafiyet listesi ve denetlenmeyen her
 muafiyet listesi gibi sessizce büyümüş. Bu turun üçüncü örneği.
 
+
+### 11.184 Android yanlış cevapta kuralı söylemiyordu
+
+§11.183'te web-özel sözlüğün `rounds.` uzayını denetlemiştim. Aynı denetimi
+öteki uzaylara uygulayınca en büyük ayrışma çıktı: **`why.*` 19, `whyrule.*`
+25, `artrule.*` 12, `plrule.*` 6, `sphint.*` 9 — hepsi web-özel; mobilde
+toplam DÖRT `why.*` anahtarı vardı.**
+
+Sebebi `mobile/src/game/why.ts`in başında yazılıydı: "Tam gramer tabloları
+(artikel eki, çoğul desenleri) taşınmadı. En sık hatalara yönelik yardımcı,
+tek cümlelik ipucu." Yirmi dokuz satırlık dosya, yanlış cevapta yalnız doğru
+cevabı tekrar ediyordu:
+
+| | web | Android |
+|---|---|---|
+| artikel | "-ung, -heit, -keit ile bitenler dişil — die Wohnung." | "die Wohnung." |
+| çoğul | "Umlaut + -er: das Buch → die Bücher." | "Doğrusu: Bücher." |
+| yazım | "Kirche ch ile, Kirsche sch ile." | (yok) |
+| cümle | "weil ile başlayan yan cümlede fiil sona gider." | (yok) |
+| hâl | "mit, aus, bei, nach… Dativ ister." | (yok) |
+
+**Üç turda hiç gerekçe yoktu:** boşluk doldurma, harf dizme ve cümle dizme
+`why` alanını hiç doldurmuyordu.
+
+Taşınanlar, gövdeleri webinkiyle birebir: `why.ts` (29 → 360 satır),
+`whyRules.ts` (35 kural parçacığı), `confusables.ts` (148 karıştırma çifti),
+`german.ts`e `parsePluralRule`/`pluralOf`, `errors.ts`e `ERROR_LABEL_KEYS`.
+90 metin webin kendi sözlüğünden ortak sözlüğe geldi; eskiyen dört anahtar
+düştü. Turlar da doğru hata tipini gönderiyor artık (dinleme turu "meaning"
+yerine "listening", yazma turu `classifyTyping` ile).
+
+Üç yeni kapı: §94 kural tabloları (artikel kurallarının SIRASI dahil — ilk
+uyan kazanıyor), §95 kural parçacıkları, §96 karıştırma çiftleri. Üçü de
+mobil `i18n-scan`in yeni muafiyetlerinin karşılığı: **muafiyet eklemek kapı
+eklemeyi gerektiriyor**, bu depoda yazılı kural.
+
+**Bu turun dersi:** "port edilmedi" diye yazılmış bir not, üzerinden zaman
+geçince bir karar gibi okunuyor. Beş turdur ölçtüğüm şey hep aynı: yazılı
+gerekçe denetlenmezse eskiyor. Bu seferki en pahalısıydı — öğrenme
+uygulamasında "neden yanlış" açıklaması bir ayrıntı değil, ürünün kendisi.
+
