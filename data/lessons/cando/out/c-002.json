@@ -59,5 +59,14 @@
  { "id": "C1.GR.1", "en": "I can build complex syntax (nested subclauses, Partizipialkonstruktionen)." },
  { "id": "C1.GR.2", "en": "I can use the Modal Partikeln (doch, ja, mal, eben) and the markers of register naturally." },
  { "id": "C1.GR.3", "en": "I can build the past and the finer uses of the Konjunktiv II (hätte…sollen)." },
- { "id": "C1.GR.4", "en": "I can use the set verb-noun combinations (Funktionsverbgefüge)." }
+ { "id": "C1.GR.4", "en": "I can use the set verb-noun combinations (Funktionsverbgefüge)." },
+ { "id": "A1.GR.11", "en": "I can use am, is and are in positive, negative and question sentences." },
+ { "id": "A1.GR.12", "en": "I can choose between a and an, and use the when I talk about something known." },
+ { "id": "A1.GR.13", "en": "I can make nouns plural: -s, -es and irregular forms like men, women, children." },
+ { "id": "A1.GR.14", "en": "I can show possession: my, your, his, her and 's added to a name." },
+ { "id": "A1.GR.15", "en": "I can build the present simple: -s in the third person, do and does for questions and negatives." },
+ { "id": "A1.GR.16", "en": "I can choose the right prepositions of time and place: in, on, at." },
+ { "id": "A1.GR.17", "en": "I can give instructions with the imperative: Turn left, Don't worry." },
+ { "id": "A1.GR.18", "en": "I can build a question: the question word first, then the auxiliary, then the subject." },
+ { "id": "A2.GR.11", "en": "I can build the past simple: regular -ed, irregular verbs, did for questions and negatives." }
 ]

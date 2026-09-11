@@ -194,7 +194,47 @@ export const CANDO: Cando[] = [
   c("C1", "GR", 2, "Modal Partikeln (doch, ja, mal, eben) ve kayıt işaretlerini doğal kullanabilirim."),
   c("C1", "GR", 3, "Konjunktiv II'nin geçmiş ve ince kullanımlarını (hätte…sollen) kurabilirim."),
   c("C1", "GR", 4, "Kalıplaşmış fiil-isim birleşimlerini (Funktionsverbgefüge) kullanabilirim."),
+
+  /* ── İNGİLİZCE KURSUN DİLBİLGİSİ İFADELERİ ──────────────────────────
+     Yukarıdaki GR ifadeleri ALMANCA kursun müfredatına göre yazılmış
+     (der/die/das, Perfekt, Konjunktiv). İki kurs varken bu görünmez bir
+     varsayımdı; İngilizce kurs eklenince görünür oldu: `candoForLesson`
+     17 İngilizce dersi "Isimlerin artikelini (der/die/das)" gibi bir
+     ifadeye bağlıyordu — İngilizce öğrenen için yanlış, üstelik Türkçe
+     okuyan da öyle görüyordu.
+
+     Kimlik bloğu 11'den başlıyor: kimlikler kalıcı ve kurs boyutu
+     taşımıyor, o yüzden ayrışma numarayla yapılıyor (bkz. `EN_GR_IDS`).
+     Eşleme `cando-map.ts` içindeki `FOCUS_GR_EN` tablosunda.
+     Bugün yalnız A1 ve A2 var: İngilizce kursun dersleri o iki seviyede. */
+  c("A1", "GR", 11, "am, is ve are biçimlerini olumlu, olumsuz ve soru cümlelerinde kullanabilirim."),
+  c("A1", "GR", 12, "a ile an arasında doğru seçim yapabilir, the'yi bilinen bir şeyden söz ederken kullanabilirim."),
+  c("A1", "GR", 13, "İsimleri çoğul yapabilirim: -s, -es ve men, women, children gibi düzensiz biçimler."),
+  c("A1", "GR", 14, "İyelik anlatabilirim: my, your, his, her ve isme eklenen 's."),
+  c("A1", "GR", 15, "Geniş zamanı kurabilirim: üçüncü tekilde -s, do ve does ile soru ve olumsuz."),
+  c("A1", "GR", 16, "Zaman ve yer edatlarını doğru seçebilirim: in, on, at."),
+  c("A1", "GR", 17, "Emir kipiyle yönerge verebilirim: Turn left, Don't worry."),
+  c("A1", "GR", 18, "Soru kurabilirim: önce soru kelimesi, sonra yardımcı fiil, sonra özne."),
+  c("A2", "GR", 11, "Geçmiş zamanı kurabilirim: düzenli -ed, düzensiz fiiller, did ile soru ve olumsuz."),
+  c("A2", "GR", 12, "Sürmekte olan geçmişi anlatabilirim: was/were + -ing, when ve while ile."),
+  c("A2", "GR", 13, "Present perfect kullanabilirim: ever, never, since, for, already, yet ve just."),
+  c("A2", "GR", 14, "Karşılaştırma yapabilirim: -er ve -est, more ve most, as … as."),
+  c("A2", "GR", 15, "Geleceği anlatabilirim: going to ile plan, will ile o an verilen karar."),
+  c("A2", "GR", 16, "can, should, must ve have to ile yetenek, tavsiye ve zorunluluk anlatabilirim."),
 ];
+
+/**
+ * İngilizce kursa ait dilbilgisi ifadeleri.
+ *
+ * Kurs boyutu `Cando` tipinde YOK ve olmamalı: kimlik kalıcı, ifade metni
+ * düzeltilebilir ama kimlik kurs değiştirmez. Ayrım kimlik bloğunda
+ * (GR ≥ 11) ve burada adı var — çıkarıcılar (`data/lessons/cando*`) `c(...)`
+ * çağrılarını düz metin olarak okuduğu için tipte yeni bir alan onları
+ * kırardı.
+ */
+export const EN_GR_IDS: ReadonlySet<string> = new Set(
+  ["A1", "A2"].flatMap((lvl) => [11, 12, 13, 14, 15, 16, 17, 18].map((n) => `${lvl}.GR.${n}`)),
+);
 
 const byId = new Map(CANDO.map((x) => [x.id, x]));
 

@@ -59,5 +59,14 @@
  { "id": "C1.GR.1", "de": "Ich kann komplexe Syntax (verschachtelte Nebensätze, Partizipialkonstruktionen) bilden." },
  { "id": "C1.GR.2", "de": "Ich kann Modalpartikeln (doch, ja, mal, eben) und Registermarker natürlich verwenden." },
  { "id": "C1.GR.3", "de": "Ich kann die Vergangenheits- und Feinformen des Konjunktivs II (hätte…sollen) bilden." },
- { "id": "C1.GR.4", "de": "Ich kann feste Verb-Nomen-Verbindungen (Funktionsverbgefüge) verwenden." }
+ { "id": "C1.GR.4", "de": "Ich kann feste Verb-Nomen-Verbindungen (Funktionsverbgefüge) verwenden." },
+ { "id": "A1.GR.11", "de": "Ich kann am, is und are in Aussage-, Verneinungs- und Fragesätzen verwenden." },
+ { "id": "A1.GR.12", "de": "Ich kann zwischen a und an wählen und the für etwas Bekanntes verwenden." },
+ { "id": "A1.GR.13", "de": "Ich kann den Plural bilden: -s, -es und unregelmäßige Formen wie men, women, children." },
+ { "id": "A1.GR.14", "de": "Ich kann Besitz ausdrücken: my, your, his, her und das angehängte 's." },
+ { "id": "A1.GR.15", "de": "Ich kann das Present Simple bilden: -s in der dritten Person, do und does für Frage und Verneinung." },
+ { "id": "A1.GR.16", "de": "Ich kann die richtigen Zeit- und Ortspräpositionen wählen: in, on, at." },
+ { "id": "A1.GR.17", "de": "Ich kann mit dem Imperativ Anweisungen geben: Turn left, Don't worry." },
+ { "id": "A1.GR.18", "de": "Ich kann eine Frage bilden: zuerst das Fragewort, dann das Hilfsverb, dann das Subjekt." },
+ { "id": "A2.GR.11", "de": "Ich kann das Past Simple bilden: regelmäßiges -ed, unregelmäßige Verben, did für Frage und Verneinung." }
 ]

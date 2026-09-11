@@ -52,13 +52,62 @@ const FOCUS_GR: [RegExp, Record<CefrLevel, number>][] = [
   [/pronomen|possessiv/i, { A1: 5, A2: 2, B1: 4, B2: 4, C1: 2 }],
 ];
 
-export function candoForLesson(lesson: { level: CefrLevel; icon: string; focusId: string; cando?: string[] }): string[] {
+/**
+ * İNGİLİZCE KURSUN dilbilgisi odakları — ayrı tablo, ayrı kimlik bloğu.
+ *
+ * Yukarıdaki `FOCUS_GR` Almanca kursun kuralları için yazılmış ve düzenli
+ * ifadeleri de Almanca ("artikel", "perfekt", "nebensatz"). İngilizce ders
+ * odakları ("Prepositions-place", "Imperatives", "Superlatives") oraya
+ * rastgele düşüyordu: `preposition` A1'de 5 numaraya, yani ZAMİR ifadesine
+ * bağlanıyordu. Ölçüldü: 17 İngilizce ders yanlış ifadeye bağlıydı.
+ *
+ * Kimlikler 11'den başlıyor (bkz. `EN_GR_IDS`); bir seviyede karşılığı
+ * olmayan odak sessizce düşüyor, çünkü `isCandoId` bilinmeyen kimliği
+ * eliyor. Bugün yalnız A1 ve A2 var — İngilizce kursun dersleri o iki
+ * seviyede.
+ */
+const FOCUS_GR_EN: [RegExp, Partial<Record<CefrLevel, number>>][] = [
+  [/to-be|past of be|there-is|there is/i, { A1: 11 }],
+  [/article/i, { A1: 12 }],
+  [/plural|countable/i, { A1: 13 }],
+  [/possessive|have-got|\bhave\b/i, { A1: 14 }],
+  [/present.?simple|present-continuous|frequency|routine|habits/i, { A1: 15, A2: 12 }],
+  [/preposition|location|directions/i, { A1: 16 }],
+  [/imperative|instruction|sequencing/i, { A1: 17, A2: 11 }],
+  [/question|wh-|yes-no|word-order|short forms/i, { A1: 18 }],
+  [/past simple|irregular past|past time|did|past narrative|used to|past habits/i, { A2: 11 }],
+  [/past continuous|when \/ while|contrast past/i, { A2: 12 }],
+  [/present perfect|been vs gone|since \/ for|already \/ yet/i, { A2: 13 }],
+  [/comparative|superlative|comparing|descriptive/i, { A2: 14 }],
+  [/future|going-to|be going to|hope|wishes/i, { A2: 15 }],
+  [/must|have to|should|\bcan\b|advice|rules|conditions|purpose/i, { A2: 16 }],
+];
+
+export function candoForLesson(lesson: {
+  level: CefrLevel;
+  icon: string;
+  focusId: string;
+  cando?: string[];
+  /** Kurs: dilbilgisi ifadesi bundan seçiliyor (varsayılan Almanca). */
+  course?: string;
+}): string[] {
   if (lesson.cando?.length) return lesson.cando.filter(isCandoId);
   const theme = ICON_THEME[lesson.icon] ?? "social";
   const out = [`${lesson.level}.SPK.${LESSON_SPK[lesson.level][theme]}`];
-  const gr = FOCUS_GR.find(([re]) => re.test(lesson.focusId));
-  if (gr) out.push(`${lesson.level}.GR.${gr[1][lesson.level]}`);
+  const gr = grammarCando(lesson.course, lesson.level, lesson.focusId);
+  if (gr) out.push(gr);
   return out.filter(isCandoId);
+}
+
+/** Odak metnine düşen dilbilgisi ifadesi — kurs hangi tabloyu kullanacağını söyler. */
+function grammarCando(course: string | undefined, level: CefrLevel, focus: string): string | null {
+  if (course === "en") {
+    const hit = FOCUS_GR_EN.find(([re]) => re.test(focus));
+    const n = hit?.[1][level];
+    return n ? `${level}.GR.${n}` : null;
+  }
+  const hit = FOCUS_GR.find(([re]) => re.test(focus));
+  return hit ? `${level}.GR.${hit[1][level]}` : null;
 }
 
 const SKILL_CODE: Record<SkillId, CandoSkill> = { reading: "RD", listening: "LS", writing: "WR", speaking: "SPK", grammar: "GR" };
@@ -77,17 +126,14 @@ const GENRE_INDEX: [RegExp, Partial<Record<CandoSkill, Record<CefrLevel, number>
   [/ses çalışması/i, { SPK: { A1: 6, A2: 6, B1: 6, B2: 6, C1: 4 } }],
 ];
 
-export function candoForExercise(ex: { skill: SkillId; level: CefrLevel; genre: string; cando?: string[]; focus?: string }): string[] {
+export function candoForExercise(ex: { skill: SkillId; level: CefrLevel; genre: string; cando?: string[]; focus?: string; course?: string }): string[] {
   if (ex.cando?.length) return ex.cando.filter(isCandoId);
   const code = SKILL_CODE[ex.skill];
   // Dil bilgisi egzersizi kuralını `focus` alanında adlandırıyor; dersin
   // `focusId`'sini eşleyen tablo burada da iş görür (aynı kural aileleri).
   if (ex.skill === "grammar" && ex.focus) {
-    const gr = FOCUS_GR.find(([re]) => re.test(ex.focus!));
-    if (gr) {
-      const id = `${ex.level}.GR.${gr[1][ex.level]}`;
-      if (isCandoId(id)) return [id];
-    }
+    const id = grammarCando(ex.course, ex.level, ex.focus);
+    if (id && isCandoId(id)) return [id];
   }
   const hit = GENRE_INDEX.find(([re, map]) => re.test(ex.genre) && map[code]);
   const n = hit ? hit[1][code]![ex.level] : 1;
