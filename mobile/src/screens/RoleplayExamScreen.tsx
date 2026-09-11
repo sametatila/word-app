@@ -265,7 +265,7 @@ export function RoleplayExamScreen() {
 
   if (phase === "error") {
     return (
-      <View style={{ flex: 1, backgroundColor: colors.bg, alignItems: "center", justifyContent: "center", gap: spacing.lg, padding: spacing.xl }}>
+      <View accessibilityLiveRegion="assertive" style={{ flex: 1, backgroundColor: colors.bg, alignItems: "center", justifyContent: "center", gap: spacing.lg, padding: spacing.xl }}>
         <Mascot mood="sad" size={92} />
         <Text variant="body" style={{ textAlign: "center", lineHeight: 22 }}>{tx("rpexam.service_down")}</Text>
         <PressableScale onPress={() => nav.goBack()} style={{ borderRadius: radii.lg, backgroundColor: colors.surface2, paddingVertical: 15, paddingHorizontal: spacing.xl }}>

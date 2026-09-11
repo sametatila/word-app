@@ -222,7 +222,7 @@ export function BossScreen() {
 
   if (phase === "error") {
     return (
-      <View style={[pad, { alignItems: "center", justifyContent: "center", gap: spacing.md }]}>
+      <View accessibilityLiveRegion="assertive" style={[pad, { alignItems: "center", justifyContent: "center", gap: spacing.md }]}>
         <Text variant="h2" style={{ textAlign: "center" }}>{t(data ? "boss.not_ready" : "exam.could_not_load")}</Text>
         {data ? <Text variant="body" color={colors.textMuted} style={{ textAlign: "center" }}>{t("boss.not_ready_sub")}</Text> : null}
         <PressableScale onPress={exit} style={{ paddingHorizontal: 18, paddingVertical: 12, borderRadius: radii.md, borderWidth: 1.5, borderColor: colors.border }}>

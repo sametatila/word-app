@@ -1624,7 +1624,7 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
 
   if (status === "error")
     return (
-      <Frame>
+      <Frame role="alert">
         <h2 className="text-h3">{t("walk.error_title")}</h2>
         <p className="muted mt-2 text-body">{t("walk.error_sub")}</p>
         {/* YERİNDE TEKRAR DENEME. Tek çıkış "Geri dön"dü: geçici bir ağ
@@ -1959,7 +1959,7 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
  * bolge acmak olurdu. Sonucu duyuran yalniz bitis dali. Ayni kalip
  * `boss-player`da da var.
  */
-function Frame({ children, role, busy }: { children: React.ReactNode; role?: "status"; busy?: boolean }) {
+function Frame({ children, role, busy }: { children: React.ReactNode; role?: "status" | "alert"; busy?: boolean }) {
   return (
     <div className="mx-auto w-full max-w-md">
       <div role={role} aria-busy={busy ? "true" : undefined} className="card p-6">{children}</div>

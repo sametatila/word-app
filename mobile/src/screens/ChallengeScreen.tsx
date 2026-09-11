@@ -273,7 +273,7 @@ export function ChallengeScreen() {
 
   if (phase === "error") {
     return (
-      <View style={[page, { alignItems: "center", justifyContent: "center", gap: spacing.lg, paddingHorizontal: spacing.xl }]}>
+      <View accessibilityLiveRegion="assertive" style={[page, { alignItems: "center", justifyContent: "center", gap: spacing.lg, paddingHorizontal: spacing.xl }]}>
         <AlertIcon color={colors.textMuted} size={56} />
         <Text variant="h2" style={{ textAlign: "center" }}>{t("challenge.load_failed")}</Text>
         <PressableScale onPress={load} style={[{ alignSelf: "stretch", borderRadius: radii.lg, backgroundColor: colors.primary, paddingVertical: 15, alignItems: "center" }, softShadow(colors.primary, 10)]}>

@@ -1046,7 +1046,9 @@ function ErrorCard({ kind, onRetry }: { kind: ErrorKind; onRetry: () => void }) 
 
   return (
     <div className="mx-auto w-full max-w-md">
-      <div className="card p-6 text-center">
+      {/* Hata DUYURULUYOR: ekrani kaplayan bir hata metni canli bolge
+          degilse ekran okuyucu kullanan biri hicbir sey duymuyor. */}
+      <div role="alert" className="card p-6 text-center">
         <Mascot mood="sad" size={96} className="mx-auto" />
         <h2 className="mt-1 text-h3">{content.title}</h2>
         <p className="muted mt-2 text-body">{content.body}</p>

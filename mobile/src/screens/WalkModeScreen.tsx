@@ -764,7 +764,7 @@ export function WalkModeScreen() {
           </PressableScale>
         </View>
       ) : phase === "error" ? (
-        <View style={{ flex: 1, alignItems: "center", justifyContent: "center", gap: spacing.lg, paddingHorizontal: spacing.xl }}>
+        <View accessibilityLiveRegion="assertive" style={{ flex: 1, alignItems: "center", justifyContent: "center", gap: spacing.lg, paddingHorizontal: spacing.xl }}>
           <AlertIcon color={colors.textMuted} size={64} />
           <Text variant="h2" style={{ textAlign: "center" }}>{tx("walk.error_title")}</Text>
           <Text variant="body" color={colors.textMuted} style={{ textAlign: "center" }}>{tx("walk.error_sub")}</Text>

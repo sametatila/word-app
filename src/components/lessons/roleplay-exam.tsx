@@ -236,7 +236,7 @@ export function RoleplayExam({ lesson, cando }: { lesson: Lesson; cando: string[
 
   if (phase === "error") {
     return (
-      <section className="card mx-auto w-full max-w-md p-5">
+      <section role="alert" className="card mx-auto w-full max-w-md p-5">
         <p className="text-body">{t("rpexam.service_down")}</p>
         <Link href={`/lessons/${lesson.id}`} className="btn btn-ghost mt-3 px-4 py-2 text-body">
           {t("lessonp.back_to_conversation")}

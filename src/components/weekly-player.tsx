@@ -129,7 +129,7 @@ export function WeeklyPlayer() {
   }
   if (phase === "error") {
     return (
-      <section className="card mx-auto w-full max-w-md p-5">
+      <section role="alert" className="card mx-auto w-full max-w-md p-5">
         <p className="text-body">{t("weekly.load_failed")}</p>
         {/* YERİNDE TEKRAR DENEME — Android'deki sıra: birincil "tekrar dene",
             ikincil çıkış. Yalnız çıkış sunmak geçici bir ağ hatasında

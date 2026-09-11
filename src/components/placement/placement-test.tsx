@@ -223,7 +223,7 @@ export function PlacementTest({ initialLast, canRetake, retakeDays }: { initialL
   }
   if (phase === "error") {
     return (
-      <section className="card mx-auto w-full max-w-md p-5">
+      <section role="alert" className="card mx-auto w-full max-w-md p-5">
         <p className="text-body">{t("placement.couldn_t_load_test")}</p>
         {/* Yerinde tekrar deneme — Android'deki sıra: birincil "tekrar dene",
             ikincil çıkış (bkz. `weekly-player`). Yalnız çıkış sunmak geçici

@@ -180,7 +180,9 @@ export function WritingsScreen() {
             denmiyor.
           */}
           {phase === "error" ? (
-            <Text variant="body" color={colors.textMuted} style={{ textAlign: "center" }}>{t("writings.couldn_t_load_writings")}</Text>
+            /* Duyuru ORTAK KABA degil bu metne: kap bos hali de tasiyor ve
+               "yazin yok" bir hata degil, duyurulmasi gerekmiyor. */
+            <Text accessibilityLiveRegion="assertive" variant="body" color={colors.textMuted} style={{ textAlign: "center" }}>{t("writings.couldn_t_load_writings")}</Text>
           ) : (
             <>
               <Text variant="h3" style={{ textAlign: "center" }}>{t("writ.empty_title")}</Text>

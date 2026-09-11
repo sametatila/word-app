@@ -160,7 +160,7 @@ export function DailyPlayer({ onExit }: { onExit: () => void }) {
   if (status === "error") {
     return (
       <Card>
-        <div className="p-6 text-center">
+        <div role="alert" className="p-6 text-center">
           <AlertIcon size={22} />
           <p className="mt-2 text-strong">{t("daily.couldn_t_load_daily_round")}</p>
           {/* YERİNDE TEKRAR DENEME. Web yalnız "geri dön" diyordu: geçici bir

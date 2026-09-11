@@ -227,7 +227,7 @@ export function BossPlayer({
 
   if (status === "error")
     return (
-      <Frame>
+      <Frame role="alert">
         <AlertIcon size={26} />
         <h2 className="mt-2 text-h3">{t("exam.could_not_load")}</h2>
         <button onClick={onExit} className="btn btn-ghost mt-5 w-full px-5 py-3">{t("common.go_back")}</button>
@@ -371,7 +371,7 @@ export function BossPlayer({
  * `role="status"`u burada sabitlemek tur oynanirken de canli bolge acmak
  * olurdu. Sonucu duyuran yalniz sonuc dali.
  */
-function Frame({ children, role, busy }: { children: React.ReactNode; role?: "status"; busy?: boolean }) {
+function Frame({ children, role, busy }: { children: React.ReactNode; role?: "status" | "alert"; busy?: boolean }) {
   return (
     <div className="relative mx-auto w-full max-w-md">
       <div role={role} aria-busy={busy ? "true" : undefined} className="card p-6 text-center">{children}</div>

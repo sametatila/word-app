@@ -366,7 +366,7 @@ export function ExamScreen() {
 
   if (err) {
     return (
-      <View style={{ flex: 1, backgroundColor: colors.bg, alignItems: "center", justifyContent: "center", gap: spacing.lg, padding: spacing.xl }}>
+      <View accessibilityLiveRegion="assertive" style={{ flex: 1, backgroundColor: colors.bg, alignItems: "center", justifyContent: "center", gap: spacing.lg, padding: spacing.xl }}>
         <Mascot mood="sad" size={90} />
         <Text variant="body" color={colors.textMuted} style={{ textAlign: "center" }}>{err}</Text>
         {/*
