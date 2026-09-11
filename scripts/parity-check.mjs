@@ -3937,6 +3937,37 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   );
 }
 
+/* ── 118. mobil sayimin muafiyetleri gercekten kapili mi ──────────────────
+ * `mobile/scripts/i18n-scan.js` icindeki SKIP_CONTENT listesi "bu dosya ham
+ * metin sayimindan muaf" diyor ve her satirin yaninda hangi kapinin onu
+ * olctugu YAZILI. Yazmak bir kapi degil: §11.207'de tam da boyle bir gerekce
+ * yanlis cikti ("mobilde yuva bir View, okunmuyor" - oysa Pressable'di).
+ *
+ * Burasi yazilani OLCUYOR: her `check:parity "X"` adi bu dosyada gercekten
+ * uretiliyor mu. Adlar bazen dinamik ("modul temalari " + level, "sabit " +
+ * name), o yuzden onek eslesmesi de kabul. */
+{
+  const tarama = read("mobile/scripts/i18n-scan.js");
+  /* Kapanis isareti SKIP_CONTENT'ten SONRA aranmali: ayni satir yukarida
+     SKIP_ASCII icin de geciyor ve bastan arayinca pencere BOS kaliyordu
+     (kapi sessizce hicbir sey olcmuyordu - bu oturumda altinci kez ayni
+     sinif: desen komsuyu yakaliyor). */
+  const bas = tarama.indexOf("const SKIP_CONTENT = [");
+  const blok = tarama.slice(bas, tarama.indexOf("].map((p) => path.join(SRC", bas));
+  const iddia = [...new Set([...blok.matchAll(/check:parity`? "([^"]+)"/g)].map((m) => m[1]))].sort();
+  const kendim = read("scripts/parity-check.mjs");
+  /* Ad dinamik kurulmus olabilir ("modul temalari " + level, "sabit " + name):
+     adin her ONEKI de kabul. */
+  const uretiliyor = (ad) => {
+    if (kendim.includes(`sameList("${ad}"`) || kendim.includes(`sameSet("${ad}"`)) return true;
+    const parca = ad.split(" ");
+    for (let i = 1; i <= parca.length; i++) if (kendim.includes(`"${parca.slice(0, i).join(" ")} " +`)) return true;
+    return false;
+  };
+  const bulunan = iddia.filter(uretiliyor);
+  sameList("mobil sayim muafiyetlerinin kapilari", bulunan, iddia, "gercekten olculen", "listede yazan");
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"

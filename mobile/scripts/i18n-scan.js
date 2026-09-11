@@ -84,7 +84,7 @@ const SKIP_CONTENT = [
   "data/example.ts", //     cümle sonu saymayan kısaltmalar — `check:parity` "ornek cumle kurali"
   // REDDEDİLEN parolalar ("şifre", "galatasaray") — kullanıcıya gösterilen metin
   // değil, süzgecin konusu. Ekrandaki uyarılar sözlükte (autherror.password_*).
-  // Kapısı: `check:parity` "sabit COMMON" ve "sabit MIN_PASSWORD_LENGTH".
+  // Kapısı: `check:parity` "sabit COMMON" · `check:parity` "sabit MIN_PASSWORD_LENGTH".
   "lib/passwordPolicy.ts",
   // Umlaut harf tablosu ({ a: "ä", ... }) — arayüz metni değil, biçim kuralı.
   // Kapısı: `check:parity` "umlaut govdesi" (gövde webinkiyle dizge dizge).
