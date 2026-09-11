@@ -79,6 +79,15 @@ export function scoreOf(correct: number, total: number, score?: number | null): 
   return total > 0 ? Math.round((100 * Math.min(correct, total)) / total) : 0;
 }
 
+/**
+ * Rubrikle puanlanan serbest görevin geçme notu — web `lib/score-bands.ts`
+ * `RUBRIC_PASS_PCT`.
+ *
+ * `SKILL_DONE_PCT`ten (70) ayrı: tek görevin geçmesi ile egzersizin tamamının
+ * çalışılmış sayılması aynı şey değil.
+ */
+export const RUBRIC_PASS_PCT = 60;
+
 /** Puanın bandı — maskotun ruh hâli ve renk tonu bundan seçiliyor. */
 export function scoreBand(pct: number): "good" | "mid" | "weak" {
   if (pct >= SKILL_DONE_PCT) return "good";

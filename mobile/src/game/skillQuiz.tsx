@@ -18,6 +18,7 @@ import { isPremiumRefusal, isQuotaRefusal, notePremiumGate } from "../lib/premiu
 import { assessFailKey } from "../lib/assessFail";
 import { spacing, radii, type Palette } from "../theme";
 import type { Gloss, SkillQuestion } from "../data/skills";
+import { RUBRIC_PASS_PCT } from "../lib/learningRules";
 
 /**
  * Beceri soruları — web'in quiz.tsx'inin mobil karşılığı. sınav kâğıdı gibi
@@ -537,7 +538,7 @@ function FreeCard({ t, n, done, level, exerciseId, onSettle, colors }: { t: Free
      `writing-player` de öyle: puan gösteriliyor, altında "Devam" ve "Bir daha
      dene" duruyor. Önce `evaluate` içinde kapatılıyordu, yani düşük puan alan
      öğrencinin tekrar deneme yolu hiç yoktu. */
-  const settleNow = () => onSettle(unscored ? true : (score?.overall ?? 0) >= 60);
+  const settleNow = () => onSettle(unscored ? true : (score?.overall ?? 0) >= RUBRIC_PASS_PCT);
   const retry = () => { setScore(null); setNote(null); setQueued(false); setUnscored(false); setReveal(false); };
   return (
     <Card padded>
@@ -596,7 +597,7 @@ function FreeCard({ t, n, done, level, exerciseId, onSettle, colors }: { t: Free
       ) : null}
       {score ? (
         <View style={{ marginTop: spacing.md }}>
-          <Text variant="h3" color={score.overall >= 60 ? colors.successText : colors.text}>{formatPercent(score.overall)}</Text>
+          <Text variant="h3" color={score.overall >= RUBRIC_PASS_PCT ? colors.successText : colors.text}>{formatPercent(score.overall)}</Text>
           {score.praise ? <Text variant="body" style={{ marginTop: spacing.xs, lineHeight: 22 }}>{score.praise}</Text> : null}
           {score.tip ? <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.xs, lineHeight: 20 }}>{score.tip}</Text> : null}
           {score.corrected ? (
@@ -607,7 +608,7 @@ function FreeCard({ t, n, done, level, exerciseId, onSettle, colors }: { t: Free
           ) : null}
         </View>
       ) : null}
-      {score && score.overall < 60 ? (
+      {score && score.overall < RUBRIC_PASS_PCT ? (
         <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.sm, lineHeight: 20 }}>
           {tx(score.overall >= 40 ? "writp.improve" : "writp.retry_suggest")}
         </Text>

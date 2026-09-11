@@ -16,6 +16,7 @@ import { assessFailKey } from "../lib/assessFail";
 import { haptic } from "../lib/haptics";
 import { spacing, radii, softShadow, type Palette } from "../theme";
 import type { Gloss } from "../data/skills";
+import { RUBRIC_PASS_PCT } from "../lib/learningRules";
 
 /**
  * Beceriler kütüphanesinin (2026-09) mobil oynatıcı parçaları: dil bilgisi
@@ -291,7 +292,7 @@ export function MonologueBody({ mono, level, exerciseId, onDone, colors }: {
       const overall = d.result?.score?.overall ?? 0;
       setResult({ overall, praise: d.result?.praise_tr ?? "", tip: d.result?.next_tip_tr ?? "", corrected: d.result?.corrected ?? "" });
       setPhase("result");
-      onDone(overall >= 60, overall);
+      onDone(overall >= RUBRIC_PASS_PCT, overall);
     } catch (e) {
       /*
        * KAPI AĞ HATASI DEĞİL — VE KAPIDA YEDEK PUAN ÜRETİLMİYOR.

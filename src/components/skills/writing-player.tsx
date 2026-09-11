@@ -17,6 +17,7 @@ import { TokenDiff, TypedTokens } from "@/components/feedback/diff-text";
 import { levenshtein } from "@/lib/errors";
 import { useT, useLang } from "@/lib/i18n/client";
 import { courseName } from "@/lib/courses";
+import { RUBRIC_PASS_PCT } from "@/lib/score-bands";
 
 type BuildTaskData = Extract<WritingTask, { kind: "build" }>;
 type FreeTaskData = Extract<WritingTask, { kind: "free" }>;
@@ -415,9 +416,9 @@ function FreeTask({
   const words = text.trim().split(/\s+/).filter(Boolean).length;
   const enough = words >= task.minWords;
   const ready = enough && checks.every(Boolean);
-  /** Görev tamamlandı mı: AI → genel puan ≥ 60 ve kelime sınırı; yedekte eski kural. */
+  /** Görev tamamlandı mı: AI → genel puan RUBRIC_PASS_PCT'i geçmeli ve kelime sınırı; yedekte eski kural. */
   const aiScore = result && !("offline" in result && result.offline) ? result.score.overall : null;
-  const ok = aiScore !== null ? aiScore >= 60 && enough : ready;
+  const ok = aiScore !== null ? aiScore >= RUBRIC_PASS_PCT && enough : ready;
 
   /** Türkçe klavyede olmayan Almanca harfleri imlecin olduğu yere ekler. */
   function insert(ch: string) {
@@ -556,7 +557,7 @@ function FreeTask({
           {queued ? (
             <p className="muted text-xs">{t("writp.queued")}</p>
           ) : null}
-          {aiScore !== null && aiScore < 60 ? (
+          {aiScore !== null && aiScore < RUBRIC_PASS_PCT ? (
             <p className="text-xs" style={{ color: "var(--color-flame)" }}>
               {t(aiScore >= 40 ? "writp.improve" : "writp.retry_suggest")}
             </p>

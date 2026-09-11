@@ -24,6 +24,19 @@
  */
 export const SKILL_DONE_PCT = 70;
 
+/**
+ * Rubrikle puanlanan SERBEST görevin geçme notu.
+ *
+ * Serbest yazma ve monolog "doğru/yanlış" değil rubrikle ölçülüyor ve o tur
+ * 60'ta geçilmiş sayılıyor — beceri egzersizinin bütününü "bitti" sayan
+ * `SKILL_DONE_PCT`ten (70) ayrı bir karar, çünkü tek görevin geçmesi ile
+ * egzersizin tamamının çalışılmış sayılması aynı şey değil.
+ *
+ * Bu sayı altı yerde elle yazılıydı (web'de iki oynatıcı, mobilde dört yer) ve
+ * ikisi ayrışsaydı aynı metin bir platformda geçmiş öbüründe kalmış sayılırdı.
+ */
+export const RUBRIC_PASS_PCT = 60;
+
 /** Orta bandın tabanı: altı "zayıf", üstü "orta". */
 export const SCORE_MID_PCT = 40;
 

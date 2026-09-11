@@ -13,6 +13,7 @@ import { recognitionCtor, requestMicrophone, type Recognition } from "@/componen
 import { CheckIcon, MicIcon } from "@/components/icons";
 import { Mascot } from "@/components/mascot";
 import { useT } from "@/lib/i18n/client";
+import { RUBRIC_PASS_PCT } from "@/lib/score-bands";
 
 type Phase = "prep" | "record" | "review" | "scoring" | "result";
 
@@ -189,7 +190,7 @@ export function MonologuePlayer({ exercise, backHref }: { exercise: SpeakingMono
     if (ai.ok) {
       setResult(ai.result);
       score = ai.result.score.overall;
-      ok = score >= 60;
+      ok = score >= RUBRIC_PASS_PCT;
     } else {
       const fb = fallbackAssessment(req, t);
       setResult(fb);
