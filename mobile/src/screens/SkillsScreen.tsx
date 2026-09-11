@@ -36,7 +36,11 @@ const SKILLS: { key: SkillKey; kind: Kind; label: string; icon: (p: { color: str
 
 function ExerciseRow({ ex, tint, done, score, isNext, onPress, colors, last }: { ex: SkillMeta; tint: string; done: boolean; score?: number; isNext: boolean; onPress: () => void; colors: Palette; last: boolean }) {
   return (
-    <PressableScale onPress={onPress} accessibilityLabel={`${ex.title}, ${t("skills.dk", { n: ex.minutes })}`} style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingVertical: 12, borderBottomWidth: last ? 0 : 1, borderBottomColor: colors.hairline }}>
+    /* SATIRIN ADI DURUMU DA SÖYLÜYOR. Nokta, onay simgesi ve puan rozeti
+       durumu yalnız RENKLE ve simgeyle anlatıyordu; satırın adı ise başlık +
+       süreydi. Yani hangi alıştırmanın bitmiş olduğu TalkBack kullanan biri
+       için hiç okunamıyordu. Web aynı turda onay simgesine ad verdi. */
+    <PressableScale onPress={onPress} accessibilityLabel={`${ex.title}, ${t("skills.dk", { n: ex.minutes })}${done ? `, ${t("common.completed")}` : ""}`} style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingVertical: 12, borderBottomWidth: last ? 0 : 1, borderBottomColor: colors.hairline }}>
       <View style={{ width: 8, height: 8, borderRadius: 4, backgroundColor: done ? colors.success : tint }} />
       <View style={{ flex: 1 }}>
         <Text variant="bodyStrong" numberOfLines={1}>{ex.title}</Text>

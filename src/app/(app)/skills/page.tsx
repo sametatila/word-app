@@ -317,8 +317,22 @@ async function Row({
           {t("common.pct", { n: score })}
         </span>
       ) : null}
+      {/* "BİTTİ" DURUMU EKRAN OKUYUCUYA DA SÖYLENİYOR. Durumu taşıyan üç şey
+          de sessizdi: nokta `aria-hidden`, onay simgesi `aria-hidden`
+          (`icons.tsx` varsayılanı) ve satırın adı yalnız başlık + süre.
+          Yani hangi alıştırmanın bitmiş olduğu sesli okuyucu kullanan biri
+          için HİÇ okunamıyordu — aynı eksik Android'de de vardı ve ikisi
+          birlikte kapatıldı. Kalıp `option-mark`tan: simgeye rol ve ad
+          verilince `aria-hidden` varsayılanı eziliyor. */}
       {done ? (
-        <CheckIcon size={18} className="shrink-0" style={{ color: "var(--color-mint)" }} />
+        <CheckIcon
+          size={18}
+          role="img"
+          aria-hidden={false}
+          aria-label={t("common.completed")}
+          className="shrink-0"
+          style={{ color: "var(--color-mint)" }}
+        />
       ) : (
         <ChevronRightIcon size={20} className="muted shrink-0" />
       )}
