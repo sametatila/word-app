@@ -1,0 +1,262 @@
+[
+ {
+  "tr": "İki kişi işlerini, yaşlarını ve konuştukları dilleri anlatıyor.",
+  "kind": "intro",
+  "en": "Two people talk about their jobs, their age and the languages they speak."
+ },
+ {
+  "tr": "Ela doğum gününü anlatıyor. Kaç yaşında, hangi ay, evde kim var?",
+  "kind": "intro",
+  "en": "Ela talks about her birthday. How old is she, which month, who is in the house?"
+ },
+ {
+  "tr": "Yaşı, fiyatı ve harflemeyi yazarak çalış. Sonunda kurs formunu doldur.",
+  "kind": "intro",
+  "en": "Practice writing age, price and spelling. At the end, fill in the course form."
+ },
+ {
+  "tr": "Emre dil okulunu arıyor. Dinlerken sayıları yakala: yaş, fiyat ve süre.",
+  "kind": "intro",
+  "en": "Emre calls the language school. Listen for the numbers: age, price and length."
+ },
+ {
+  "tr": "Ayla ailesini anlatıyor. Okurken kimin kim olduğunu ve yaşları takip et.",
+  "kind": "intro",
+  "en": "Ayla talks about her family. While you read, keep track of who is who and how old they are."
+ },
+ {
+  "tr": "Mia ile Tarik ailelerini konuşuyor. Kaç kardeş, kaç çocuk, kim kaç yaşında?",
+  "kind": "intro",
+  "en": "Mia and Tarik talk about their families. How many siblings, how many children, who is how old?"
+ },
+ {
+  "tr": "Yaşı, doğum gününü ve form sorularını yaz. Sonunda kütüphane kartını doldur.",
+  "kind": "intro",
+  "en": "Write age, birthday and the questions on a form. At the end, fill in the library card."
+ },
+ {
+  "tr": "Üç kişi işini anlatıyor. Her biri için üç şeyi not et: iş, yaş, konuştuğu dil.",
+  "kind": "intro",
+  "en": "Three people talk about their work. Note three things for each one: job, age, language."
+ },
+ {
+  "tr": "Doldurulmuş bir kütüphane kartı formunu oku. Hangi bilgi hangi satıra yazılmış?",
+  "kind": "intro",
+  "en": "Read a filled-in library card form. Which piece of information is on which line?"
+ },
+ {
+  "tr": "Bir dil okulunun kurs ilanını oku: ne zaman başlıyor, kim veriyor, ne kadar tutuyor.",
+  "kind": "intro",
+  "en": "Read the course ad of a language school: when it starts, who teaches it, what it costs."
+ },
+ {
+  "tr": "„do“ ile kurulan soruyu ve kısa cevabı yaz. „be“ ile kurulan soruyla karışması kolay.",
+  "kind": "intro",
+  "en": "Write the question with „do“ and the short answer. It is easy to mix up with the question with „be“."
+ },
+ {
+  "tr": "Aileni yaz. Dikkat: İngilizcede iyelik ayrı bir sözcük ve SAHİBİN cinsiyetine göre değişiyor.",
+  "kind": "intro",
+  "en": "Write about your family. Careful: in English the possessive is a separate word and it follows the OWNER's gender."
+ },
+ {
+  "tr": "„I work at night.“ — şarkıcının işi geceleri.",
+  "kind": "explain",
+  "en": "„I work at night.“ — the singer works at night."
+ },
+ {
+  "tr": "„I am seven years old.“ — yetmiş iki ninenin yaşı.",
+  "kind": "explain",
+  "en": "„I am seven years old.“ — seventy-two is the grandma's age."
+ },
+ {
+  "tr": "„I am twenty-nine years old.“ Kırk yaşında olan Sam.",
+  "kind": "explain",
+  "en": "„I am twenty-nine years old.“ Sam is the one who is forty."
+ },
+ {
+  "tr": "„My birthday is in June.“ — ay adından önce „in“ geliyor.",
+  "kind": "explain",
+  "en": "„My birthday is in June.“ — „in“ goes before the name of the month."
+ },
+ {
+  "tr": "„A, N, A. It is easy!“ — harfleme harfleri tek tek söylemektir.",
+  "kind": "explain",
+  "en": "„A, N, A. It is easy!“ — spelling means saying the letters one by one."
+ },
+ {
+  "tr": "„My mother makes a big cake.“ Baba keke adı yazıyor, yapan anne.",
+  "kind": "explain",
+  "en": "„My mother makes a big cake.“ The father writes the name on the cake; the mother bakes it."
+ },
+ {
+  "tr": "„he is one year old“ — bir tane olduğu için „year“ tekil kalıyor.",
+  "kind": "explain",
+  "en": "„he is one year old“ — because there is only one, „year“ stays singular."
+ },
+ {
+  "tr": "„One hundred euros.“ Emre de duyduğuna inanamayıp tekrar soruyor.",
+  "kind": "explain",
+  "en": "„One hundred euros.“ Emre cannot believe his ears and asks again."
+ },
+ {
+  "tr": "„I have got two sisters and one brother.“ — bir olan erkek kardeş.",
+  "kind": "explain",
+  "en": "„I have got two sisters and one brother.“ — the one is the brother."
+ },
+ {
+  "tr": "„Do you live in Bremen? Yes, I do.“ — kısa cevap soruyu doğruluyor.",
+  "kind": "explain",
+  "en": "„Do you live in Bremen? Yes, I do.“ — the short answer confirms the question."
+ },
+ {
+  "tr": "„Have you got children? No, I have not.“ — kardeşi var, çocuğu yok.",
+  "kind": "explain",
+  "en": "„Have you got children? No, I have not.“ — he has siblings, not children."
+ },
+ {
+  "tr": "„They live in Izmir.“ — „they“ anne ile babayı birlikte gösteriyor.",
+  "kind": "explain",
+  "en": "„They live in Izmir.“ — „they“ points to the mother and the father together."
+ },
+ {
+  "tr": "„Age: 34“ ve „I am thirty-four years old.“ — on iki adresin numarası.",
+  "kind": "explain",
+  "en": "„Age: 34“ and „I am thirty-four years old.“ — twelve is the house number in the address."
+ },
+ {
+  "tr": "„He is a baby, so he does not eat cake.“ — bebek olduğu için yemiyor.",
+  "kind": "explain",
+  "en": "„He is a baby, so he does not eat cake.“ — he does not eat it because he is a baby."
+ },
+ {
+  "tr": "Doktor olan anne. „His name is Kemal“ öğretmen olan babayı anlatıyor.",
+  "kind": "explain",
+  "en": "The mother is the doctor. „His name is Kemal“ is about the father, who is a teacher."
+ },
+ {
+  "tr": "„my brother is only nine“ — yirmi kız kardeşin, elli iki annenin yaşı.",
+  "kind": "explain",
+  "en": "„my brother is only nine“ — twenty is the sister's age, fifty-two the mother's."
+ },
+ {
+  "tr": "„Code: 28195“ — şehir kodu adresle aynı satırda değil, kendi satırında.",
+  "kind": "explain",
+  "en": "„Code: 28195“ — the postal code is not on the same line as the address, it has its own."
+ },
+ {
+  "tr": "„My grandma is seventy-two.“ Burada „years old“ düşmüş — konuşmada olur.",
+  "kind": "explain",
+  "en": "„My grandma is seventy-two.“ Here „years old“ is missing — that happens in speech."
+ },
+ {
+  "tr": "„My mother is a doctor.“ — öğretmen olan baba: „My father is a teacher.“",
+  "kind": "explain",
+  "en": "„My mother is a doctor.“ — the teacher is the father: „My father is a teacher.“"
+ },
+ {
+  "tr": "„We are there in May, for my grandma's birthday.“ — ay adı büyük harfle.",
+  "kind": "explain",
+  "en": "„We are there in May, for my grandma's birthday.“ — the name of the month is capitalized."
+ },
+ {
+  "tr": "„Her name is Ela. She is six.“ — bir yaşında olan Tarik'in erkek kardeşi.",
+  "kind": "explain",
+  "en": "„Her name is Ela. She is six.“ — the one-year-old is Tarik's brother."
+ },
+ {
+  "tr": "„The course is one hundred euros for three months.“ — üç, ayların sayısı.",
+  "kind": "explain",
+  "en": "„The course is one hundred euros for three months.“ — three is the number of months."
+ },
+ {
+  "tr": "„I am twenty-six years old.“ Otuz dört Leyla'nın, kırk bir Meryem'in yaşı.",
+  "kind": "explain",
+  "en": "„I am twenty-six years old.“ Thirty-four is Leyla's age, forty-one is Meryem's."
+ },
+ {
+  "tr": "„One lesson is ninety minutes.“ Sayıyı yazıyla da rakamla da yazabilirsin.",
+  "kind": "explain",
+  "en": "„One lesson is ninety minutes.“ You can write the number as a word or as a figure."
+ },
+ {
+  "tr": "„I am a doctor and I work in a small town.“ — Ben şarkıcı, Meryem antrenör.",
+  "kind": "explain",
+  "en": "„I am a doctor and I work in a small town.“ — Ben is a singer, Meryem is a coach."
+ },
+ {
+  "tr": "„I speak a little English and a little German.“ — iki dili de az konuşuyor.",
+  "kind": "explain",
+  "en": "„I speak a little English and a little German.“ — she speaks a little of both."
+ },
+ {
+  "tr": "„I speak a little English … but I do not speak fast.“ — tam tersini söylüyor.",
+  "kind": "explain",
+  "en": "„I speak a little English … but I do not speak fast.“ — he says exactly the opposite."
+ },
+ {
+  "tr": "Önce Leyla (doktor), sonra Ben (şarkıcı), en son Meryem (antrenör) konuşuyor.",
+  "kind": "explain",
+  "en": "First Leyla (a doctor) speaks, then Ben (a singer), last Meryem (a coach)."
+ },
+ {
+  "tr": "„I have got one daughter.“ Konuşmada „I have“ çoğu zaman „I've“ diye büzülüyor.",
+  "kind": "explain",
+  "en": "„I have got one daughter.“ In speech „I have“ usually contracts to „I've“."
+ },
+ {
+  "tr": "„I am a doctor. I work in a big hospital.“ — şarkıcı ve müzik öğretmeni olan Ana.",
+  "kind": "explain",
+  "en": "„I am a doctor. I work in a big hospital.“ — the singer and music teacher is Ana."
+ },
+ {
+  "tr": "„We start on Monday, September 7.“ — bir ay fiyatın süresi, başlangıç günü değil.",
+  "kind": "explain",
+  "en": "„We start on Monday, September 7.“ — one month is how long the price lasts, not the start day."
+ },
+ {
+  "tr": "Öğrenciler için otuz euro: „For students: thirty euros.“ Kırk euro ötekiler için.",
+  "kind": "explain",
+  "en": "Thirty euros for students: „For students: thirty euros.“ Forty euros is for everybody else."
+ },
+ {
+  "tr": "„Last name: Yalin.“ — Deniz ad, Bremen şehir. Formda her satırın kendi etiketi var.",
+  "kind": "explain",
+  "en": "„Last name: Yalin.“ — Deniz is the first name, Bremen the city. On a form every line has its own label."
+ },
+ {
+  "tr": "Önce gün, sonra kek, sonra gelenler, en son kutlama. Anlatı hep bu sırayla gidiyor.",
+  "kind": "explain",
+  "en": "First the day, then the cake, then the guests, last the greeting. The story always runs in this order."
+ },
+ {
+  "tr": "„I speak a little English.“ — „a little“ tek parça ve „English“ büyük harfle yazılır.",
+  "kind": "explain",
+  "en": "„I speak a little English.“ — „a little“ is one piece and „English“ is capitalized."
+ },
+ {
+  "tr": "„I do not speak English, but I understand many words.“ — anlamak ile konuşmak ayrı iki şey.",
+  "kind": "explain",
+  "en": "„I do not speak English, but I understand many words.“ — understanding and speaking are two different things."
+ },
+ {
+  "tr": "Önce iş sorulur ve söylenir, sonra yaş sorulur ve söylenir. İkisi ayrı soru köküyle geliyor.",
+  "kind": "explain",
+  "en": "First the job is asked and answered, then the age. Each one comes with a question form of its own."
+ },
+ {
+  "tr": "„How much is a pen? One euro.“ — fiyatta „years old“ gibi bir ek yok, sayı tek başına duruyor.",
+  "kind": "explain",
+  "en": "„How much is a pen? One euro.“ — a price takes no addition like „years old“; the number stands alone."
+ },
+ {
+  "tr": "sahibi erkekse",
+  "kind": "note",
+  "en": "when the owner is male"
+ },
+ {
+  "tr": "sahibi kadınsa",
+  "kind": "note",
+  "en": "when the owner is female"
+ }
+]

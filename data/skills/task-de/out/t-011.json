@@ -1,0 +1,207 @@
+[
+ {
+  "tr": "Kurs formunu Emre için doldur.",
+  "kind": "form.prompt",
+  "de": "Fülle das Kursformular für Emre aus."
+ },
+ {
+  "tr": "Kütüphane kartı formunu Ela için doldur.",
+  "kind": "form.prompt",
+  "de": "Fülle das Formular für die Bibliothekskarte für Ela aus."
+ },
+ {
+  "tr": "Emre Kaya; 22 yaşında; öğretmen; Bremen'de yaşıyor.",
+  "kind": "form.facts",
+  "de": "Emre Kaya; 22 Jahre alt; Lehrer; wohnt in Bremen."
+ },
+ {
+  "tr": "Ela Yalin; adı Ela, soyadı Yalin; Bremen'de oturuyor; doğum günü haziranda.",
+  "kind": "form.facts",
+  "de": "Ela Yalin; Vorname Ela, Nachname Yalin; wohnt in Bremen; Geburtstag im Juni."
+ },
+ {
+  "tr": "Soruya kısa cevap ver: evet.",
+  "kind": "rewrite.prompt",
+  "de": "Antworte kurz auf die Frage: ja."
+ },
+ {
+  "tr": "Soruya kısa cevap ver: hayır.",
+  "kind": "rewrite.prompt",
+  "de": "Antworte kurz auf die Frage: nein."
+ },
+ {
+  "tr": "Olumsuz kısa cevapta „not“ yardımcı fiile yapışır: do + not → don't.",
+  "kind": "rewrite.why",
+  "de": "In der verneinten Kurzantwort klebt „not“ am Hilfsverb: do + not → don't."
+ },
+ {
+  "tr": "„have got“ sorusunda „have“ öne geçer, tıpkı „be“ gibi: You have → Have you?",
+  "kind": "rewrite.why",
+  "de": "In der Frage mit „have got“ rückt „have“ nach vorn, genau wie bei „be“: You have → Have you? Deutsch macht es ebenso: Du hast → Hast du?"
+ },
+ {
+  "tr": "Kısa cevap sorunun yardımcı fiilini tekrarlar: soru „do“ ile kurulduysa cevap da „do“ taşır.",
+  "kind": "rewrite.why",
+  "de": "Die Kurzantwort wiederholt das Hilfsverb der Frage: steht in der Frage „do“, steht es auch in der Antwort. Im Deutschen reicht ein bloßes Ja."
+ },
+ {
+  "tr": "Adın ne?",
+  "kind": "build.tr",
+  "de": "Wie heißt du?"
+ },
+ {
+  "tr": "Adresin ne?",
+  "kind": "build.tr",
+  "de": "Wie ist deine Adresse?"
+ },
+ {
+  "tr": "Bu ne kadar?",
+  "kind": "build.tr",
+  "de": "Was kostet das?"
+ },
+ {
+  "tr": "Bu benim annem.",
+  "kind": "build.tr",
+  "de": "Das ist meine Mutter."
+ },
+ {
+  "tr": "İki çocuğu var.",
+  "kind": "build.tr",
+  "de": "Sie hat zwei Kinder."
+ },
+ {
+  "tr": "Onun adı Kemal.",
+  "kind": "build.tr",
+  "de": "Er heißt Kemal."
+ },
+ {
+  "tr": "Ne iş yapıyorsun?",
+  "kind": "build.tr",
+  "de": "Was machst du beruflich?"
+ },
+ {
+  "tr": "Ben otuz yaşındayım.",
+  "kind": "build.tr",
+  "de": "Ich bin dreißig Jahre alt."
+ },
+ {
+  "tr": "Doğum günüm mayısta.",
+  "kind": "build.tr",
+  "de": "Mein Geburtstag ist im Mai."
+ },
+ {
+  "tr": "Yirmi beş yaşındayım.",
+  "kind": "build.tr",
+  "de": "Ich bin fünfundzwanzig Jahre alt."
+ },
+ {
+  "tr": "Bunu nasıl hecelersin?",
+  "kind": "build.tr",
+  "de": "Wie buchstabiert man das?"
+ },
+ {
+  "tr": "Bir erkek kardeşim var.",
+  "kind": "build.tr",
+  "de": "Ich habe einen Bruder."
+ },
+ {
+  "tr": "Bir okulda çalışıyorum.",
+  "kind": "build.tr",
+  "de": "Ich arbeite in einer Schule."
+ },
+ {
+  "tr": "İngilizce konuşuyor musun?",
+  "kind": "build.tr",
+  "de": "Sprichst du Englisch?"
+ },
+ {
+  "tr": "Biraz İngilizce konuşuyorum.",
+  "kind": "build.tr",
+  "de": "Ich spreche ein wenig Englisch."
+ },
+ {
+  "tr": "Yaşta „years old“ ZORUNLU: sayı tek başına kalmaz.",
+  "kind": "build.hint",
+  "de": "Beim Alter ist „years old“ PFLICHT: anders als im Deutschen steht die Zahl nie allein."
+ },
+ {
+  "tr": "Bileşik sayı tireyle yazılır: twenty-five, forty-one.",
+  "kind": "build.hint",
+  "de": "Zusammengesetzte Zahlen schreibt das Englische getrennt und mit Bindestrich: twenty-five, forty-one."
+ },
+ {
+  "tr": "İş yeri için „in“: I work in a school, in a hospital.",
+  "kind": "build.hint",
+  "de": "Für den Arbeitsort „in“: I work in a school, in a hospital."
+ },
+ {
+  "tr": "Aynı kalıp, başka bilgi. Soru sözcüğü hep başta duruyor.",
+  "kind": "build.hint",
+  "de": "Dasselbe Muster, andere Angabe. Das Fragewort steht immer vorn."
+ },
+ {
+  "tr": "Ay adından önce „in“, ay adı büyük harfle: in May, in June.",
+  "kind": "build.hint",
+  "de": "Vor dem Monatsnamen steht „in“, wo das Deutsche „im“ sagt: in May, in June."
+ },
+ {
+  "tr": "Üçüncü tekil kişide „have“ → „has“: she has got, he has got.",
+  "kind": "build.hint",
+  "de": "In der dritten Person Singular wird „have“ zu „has“: she has got, he has got."
+ },
+ {
+  "tr": "Soru „do“ ile kuruluyor, çünkü fiil „be“ değil: How do you …?",
+  "kind": "build.hint",
+  "de": "Die Frage wird mit „do“ gebildet, weil das Verb nicht „be“ ist: How do you …?"
+ },
+ {
+  "tr": "„have got“ sahip olmayı söyler; konuşmada „I've got“ diye büzülür.",
+  "kind": "build.hint",
+  "de": "„have got“ drückt Besitz aus; beim Sprechen zieht es sich zu „I've got“ zusammen."
+ },
+ {
+  "tr": "İki „do“ var: ilki soruyu kuran yardımcı, ikincisi „yapmak“ fiili.",
+  "kind": "build.hint",
+  "de": "Zweimal „do“: das erste bildet die Frage, das zweite ist das Verb machen."
+ },
+ {
+  "tr": "„What's“ = „What is“. Formda uzun biçim, konuşmada kısa biçim doğal.",
+  "kind": "build.hint",
+  "de": "„What's“ = „What is“. Im Formular die lange Form, beim Sprechen die kurze."
+ },
+ {
+  "tr": "„a little“ sayılamayan şeyler için: a little English, a little water.",
+  "kind": "build.hint",
+  "de": "„a little“ steht bei Unzählbarem: a little English, a little water."
+ },
+ {
+  "tr": "Fiil „be“ değilse soru „do“ ile başlar: Do you …? Fiilin kendisi değişmez.",
+  "kind": "build.hint",
+  "de": "Ist das Verb nicht „be“, beginnt die Frage mit „do“: Do you …? Diesen Hilfsverb-Trick kennt das Deutsche nicht, das Verb selbst bleibt unverändert."
+ },
+ {
+  "tr": "Fiyat sorusu „how much“ ile. Yaş sorusunda „how old“ vardı — ikisi karışmasın.",
+  "kind": "build.hint",
+  "de": "Die Preisfrage mit „how much“. Beim Alter war es „how old“ — die beiden nicht verwechseln."
+ },
+ {
+  "tr": "Türkçe iyelik eki isme takılıyor (anne-m), İngilizce ayrı sözcük koyuyor: my mother.",
+  "kind": "build.hint",
+  "de": "Wie im Deutschen ist das Possessivpronomen ein eigenes Wort: my mother, meine Mutter. Anders als deutsch „meine“ wird „my“ aber nie gebeugt."
+ },
+ {
+  "tr": "Kemal erkek, o yüzden „his“. Kadın olsaydı „her name“ olurdu — iyelik SAHİBE bakıyor.",
+  "kind": "build.hint",
+  "de": "Kemal ist männlich, deshalb „his“. Bei einer Frau wäre es „her name“ — wie deutsch sein und ihr richtet sich das nach dem BESITZER."
+ },
+ {
+  "tr": "Konuşmacıların sırası: doğru sıraya koy.",
+  "kind": "question.text",
+  "de": "Die Reihenfolge der Sprecher: bring sie in die richtige Ordnung."
+ },
+ {
+  "tr": "Ela'nın anlattığı sıra: doğru sıraya koy.",
+  "kind": "question.text",
+  "de": "Die Reihenfolge in Elas Erzählung: bring sie in die richtige Ordnung."
+ }
+]

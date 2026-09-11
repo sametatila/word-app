@@ -60,8 +60,8 @@ mi çıkacağına yazar karar verir.
 
 | Seviye | Ünite | Durum |
 |---|---|---|
-| A1 | 1 | **yazıldı** (2026-09-11) |
-| A1 | 2–25 | bekliyor |
+| A1 | 1 · 2 · 3 | **yazıldı** (2026-09-11) |
+| A1 | 4–25 | bekliyor |
 | A2 · B1 · B2 · C1 | 1–25 | bekliyor |
 
 **A1 ünite 1 (2026-09-11).** Dört dersi Hello! · How are you? · I am, you
@@ -81,6 +81,34 @@ Anadil ekseni aynı turda kapandı: `prose-de` s-017 (43 dize),
 "Türkçede tek sözcük olan soru" ve "İngilizcede özne düşmez" Almanca
 okuyan için doğru değil (Almanca da özneyi düşürmez, „woher“ de tek
 sözcüktür); Almanca karşılıkları İngilizceyi Almancaya karşı ölçüyor.
+
+**A1 ünite 2–3 (2026-09-11).** Ünite 2 dersleri Languages · Numbers 1-100 ·
+Spelling · Jobs; ünite 3 dersleri Age and birthday · Filling a form ·
+My family · Brothers and sisters. On iki egzersiz; ünite dışı ölçüm
+%0,2 — kalan iki belirteç, diyalog metninin ilk sözcüğü olan iki konuşmacı
+adı.
+
+Ölçüm bu turda bir kez daha düzeltildi: form egzersizindeki
+`deniz.yalin@mail.com` noktalarından bölünüp dört ayrı "kelime"
+sayılıyordu ve egzersizi %10 dışı gösteriyordu. Adres bir dizedir,
+öğrenilecek bir sözcük değil; e-posta ve ağ adresleri artık ölçüm
+yüzeyinden düşüyor.
+
+**`gloss.note` türü açıldı.** Ünite 3 „His name is …“ ile „Her name is …“
+maddelerini yan yana koyuyor ve Türkçe karşılıkları AYNI ("onun adı …");
+ayıran tek şey not. Not, `tr` alanına parantezle yapıştırılamaz
+(`data/content/SPEC.md`) ve çevrilmeden bırakılamaz — Almanca okuyan
+kullanıcı kelimenin altında Türkçe bir cümle görürdü. `prose-de/make.ts`
+o yüzden yeni bir tür taşıyor; sıralamada EN SONDA, böylece yazılmış
+paketlerin hiçbiri kaymıyor.
+
+İki satır yine YENİDEN ÖLÇÜM istedi, biri tersi yönde: "Türkçe iyelik eki
+isme takılıyor, İngilizce ayrı sözcük koyuyor" Almanca okuyan için bir
+GÜÇLÜK DEĞİL, kolaylık — Almanca da ayrı sözcük koyuyor ve „sein“/„ihr“
+de sahibe bakıyor. Almanca karşılık bunu söylüyor ve asıl farkı gösteriyor:
+„my“ hiç çekilmiyor. Tersine "soru „do“ ile başlar" satırı Almanca okuyan
+için Türkçe okuyandan DAHA zor, çünkü Almancada yardımcı fiille soru kurma
+diye bir şey yok — o satır Almancada uzuyor.
 
 ## Tamamlanma ölçütü
 

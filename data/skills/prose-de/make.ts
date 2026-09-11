@@ -19,9 +19,13 @@
  * (geçiş) · 5 paket.
  *   explain 550 · intro 189
  *
- * `note` TÜRÜ YOK ve bu ölçüldü: İngilizce kursun egzersizlerinde
- * `gloss[].note` ve `tasks[].phrases[].note` sıfır tane. Kardeş hatta
- * tür var çünkü Almanca kursun sözlükçesinde on bir not geçiyor.
+ * `gloss.note` TÜRÜ 2026-09-11'DE AÇILDI. İlk ölçümde İngilizce kursun
+ * egzersizlerinde tek bir not yoktu; ünite egzersizleri gelince oldu.
+ * Notun işi tam olarak `tr`nin taşıyamadığı ayrımı taşımak — „His name
+ * is …“ ile „Her name is …“in Türkçe karşılığı aynı ("onun adı …") ve
+ * ayıran tek şey not. Çevrilmezse Almanca okuyan kullanıcı kelimenin
+ * altında Türkçe bir cümle görür; `resolveExercise` notu zaten hep-ya-hiç
+ * kuralına dahil ediyor (gerekçesi `lessons/native.ts` başında).
  *
  * SORU KÖKÜ VE ŞIKLAR ÇEVRİLMİYOR: ikisi de ÖĞRENİLEN dilde, yani
  * İngilizce. Öğrencinin yargılayacağı cümle odur. Çözücü onlara hiç
@@ -44,7 +48,7 @@ const DIR = new URL(".", import.meta.url).pathname;
 
 export type ProseRow = {
   tr: string;
-  kind: "intro" | "explain" | "gloss.tr";
+  kind: "intro" | "explain" | "gloss.tr" | "gloss.note";
   /** Kaç egzersizde geçiyor — sıralama buna göre. */
   n: number;
   /** Bağlam: egzersizin kimliği ve becerisi. En çok üç tane. */
@@ -61,7 +65,7 @@ export type ProseRow = {
 };
 
 type Q = { text?: string; options?: string[]; answer?: number; explain?: string };
-type G = { de?: string; tr?: string };
+type G = { de?: string; tr?: string; note?: string };
 type Ex = {
   id: string;
   course?: string;
@@ -116,8 +120,10 @@ export function extractProse(): ProseRow[] {
        geçerli oluyor: anlam hattan gelir. Aynı karar ders ekseninde de
        verildi ve orada yeşil — `en-a1.json` derslerinin `vocab[].tr`
        alanı da `data/lessons/prose-de` üzerinden çözülüyor. */
-    for (const g of [...(e.gloss ?? []), ...(e.tasks ?? []).flatMap((t) => t.phrases ?? [])])
+    for (const g of [...(e.gloss ?? []), ...(e.tasks ?? []).flatMap((t) => t.phrases ?? [])]) {
       add("gloss.tr", g.tr, e, undefined, g.de);
+      add("gloss.note", g.note, e, undefined, g.de);
+    }
   }
 
   /* Sıklık azalan; eşitlikte kısa önce, sonra alfabetik. Sıra KARARLI
@@ -128,7 +134,10 @@ export function extractProse(): ProseRow[] {
      s-001..s-005 yazılmış paketlerdi. Sözlükçe satırları sıklığa göre
      araya girseydi beş paketin tamamı kayardı. Sıralamanın BİRİNCİ ölçütü
      tür olduğu için sona eklemek eskileri hiç oynatmıyor. */
-  const rank = (r: ProseRow) => (r.kind === "gloss.tr" ? 2 : r.kind === "explain" ? 1 : 0);
+  /* `gloss.note` EN SONDA ve gerekçesi bir üstteki notun aynısı: tür
+     sonradan açıldı, önceki paketleri oynatmamalı. */
+  const rank = (r: ProseRow) =>
+    r.kind === "gloss.note" ? 3 : r.kind === "gloss.tr" ? 2 : r.kind === "explain" ? 1 : 0;
   return [...rows.values()].sort(
     (a, b) =>
       rank(a) - rank(b) || b.n - a.n || a.tr.length - b.tr.length || a.tr.localeCompare(b.tr, "tr"),

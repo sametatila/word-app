@@ -1,5 +1,7 @@
 import type { SkillExercise } from "../types";
 import { enA1U01 } from "./en-a1-u01";
+import { enA1U02 } from "./en-a1-u02";
+import { enA1U03 } from "./en-a1-u03";
 
 /**
  * EN · A1 — Patika'ya bağlı (ünite hizalı) beceri egzersizleri.
@@ -16,4 +18,6 @@ import { enA1U01 } from "./en-a1-u01";
  */
 export const enA1: SkillExercise[] = [
   ...enA1U01,
+  ...enA1U02,
+  ...enA1U03,
 ];

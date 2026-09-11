@@ -53,7 +53,12 @@ function surface(e: SkillExercise): string {
       if ("words" in t) for (const p of t.words) out.push(p.de);
     }
   }
-  return out.join(" ");
+  /* E-POSTA VE AĞ ADRESİ SÖZCÜK DEĞİL. Form egzersizinde
+     "deniz.yalin@mail.com" geçiyor; ölçüm onu noktalarından bölüp dört
+     ayrı "kelime" sayıyor ve hiçbiri havuzda olmadığı için egzersizi
+     %10 dışı gösteriyordu. Adres bir dizedir, öğrencinin öğreneceği bir
+     sözcük değil. */
+  return out.join(" ").replace(/\S+@\S+/g, " ").replace(/https?:\/\/\S+/g, " ");
 }
 
 /** Egzersizin kendi sözlükçesi öğrenciye verilmiştir — havuza eklenir. */

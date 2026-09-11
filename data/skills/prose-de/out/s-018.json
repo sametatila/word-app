@@ -1,0 +1,387 @@
+[
+ {
+  "tr": "İki kişi işlerini, yaşlarını ve konuştukları dilleri anlatıyor.",
+  "kind": "intro",
+  "de": "Zwei Personen erzählen von ihren Berufen, ihrem Alter und den Sprachen, die sie sprechen."
+ },
+ {
+  "tr": "Ela doğum gününü anlatıyor. Kaç yaşında, hangi ay, evde kim var?",
+  "kind": "intro",
+  "de": "Ela erzählt von ihrem Geburtstag. Wie alt ist sie, in welchem Monat, wer ist im Haus?"
+ },
+ {
+  "tr": "Yaşı, fiyatı ve harflemeyi yazarak çalış. Sonunda kurs formunu doldur.",
+  "kind": "intro",
+  "de": "Übe schriftlich Alter, Preis und Buchstabieren. Am Ende füllst du das Kursformular aus."
+ },
+ {
+  "tr": "Emre dil okulunu arıyor. Dinlerken sayıları yakala: yaş, fiyat ve süre.",
+  "kind": "intro",
+  "de": "Emre ruft die Sprachschule an. Achte beim Hören auf die Zahlen: Alter, Preis und Dauer."
+ },
+ {
+  "tr": "Ayla ailesini anlatıyor. Okurken kimin kim olduğunu ve yaşları takip et.",
+  "kind": "intro",
+  "de": "Ayla erzählt von ihrer Familie. Verfolge beim Lesen, wer wer ist und wie alt jeder ist."
+ },
+ {
+  "tr": "Mia ile Tarik ailelerini konuşuyor. Kaç kardeş, kaç çocuk, kim kaç yaşında?",
+  "kind": "intro",
+  "de": "Mia und Tarik sprechen über ihre Familien. Wie viele Geschwister, wie viele Kinder, wer ist wie alt?"
+ },
+ {
+  "tr": "Yaşı, doğum gününü ve form sorularını yaz. Sonunda kütüphane kartını doldur.",
+  "kind": "intro",
+  "de": "Schreibe Alter, Geburtstag und die Fragen des Formulars. Am Ende füllst du die Bibliothekskarte aus."
+ },
+ {
+  "tr": "Üç kişi işini anlatıyor. Her biri için üç şeyi not et: iş, yaş, konuştuğu dil.",
+  "kind": "intro",
+  "de": "Drei Personen erzählen von ihrer Arbeit. Notiere für jede drei Dinge: Beruf, Alter, Sprache."
+ },
+ {
+  "tr": "Doldurulmuş bir kütüphane kartı formunu oku. Hangi bilgi hangi satıra yazılmış?",
+  "kind": "intro",
+  "de": "Lies ein ausgefülltes Formular für eine Bibliothekskarte. Welche Angabe steht in welcher Zeile?"
+ },
+ {
+  "tr": "Bir dil okulunun kurs ilanını oku: ne zaman başlıyor, kim veriyor, ne kadar tutuyor.",
+  "kind": "intro",
+  "de": "Lies die Kursanzeige einer Sprachschule: wann er beginnt, wer ihn gibt, was er kostet."
+ },
+ {
+  "tr": "„do“ ile kurulan soruyu ve kısa cevabı yaz. „be“ ile kurulan soruyla karışması kolay.",
+  "kind": "intro",
+  "de": "Schreibe die Frage mit „do“ und die Kurzantwort. Sie wird leicht mit der Frage mit „be“ verwechselt."
+ },
+ {
+  "tr": "Aileni yaz. Dikkat: İngilizcede iyelik ayrı bir sözcük ve SAHİBİN cinsiyetine göre değişiyor.",
+  "kind": "intro",
+  "de": "Schreibe über deine Familie. Achtung: Im Englischen richtet sich das Possessivpronomen nach dem BESITZER — genau wie deutsch „sein“ und „ihr“."
+ },
+ {
+  "tr": "„I work at night.“ — şarkıcının işi geceleri.",
+  "kind": "explain",
+  "de": "„I work at night.“ — der Sänger arbeitet nachts."
+ },
+ {
+  "tr": "„I am seven years old.“ — yetmiş iki ninenin yaşı.",
+  "kind": "explain",
+  "de": "„I am seven years old.“ — zweiundsiebzig ist das Alter der Großmutter."
+ },
+ {
+  "tr": "„I am twenty-nine years old.“ Kırk yaşında olan Sam.",
+  "kind": "explain",
+  "de": "„I am twenty-nine years old.“ Vierzig Jahre alt ist Sam."
+ },
+ {
+  "tr": "„My birthday is in June.“ — ay adından önce „in“ geliyor.",
+  "kind": "explain",
+  "de": "„My birthday is in June.“ — vor dem Monatsnamen steht „in“."
+ },
+ {
+  "tr": "„A, N, A. It is easy!“ — harfleme harfleri tek tek söylemektir.",
+  "kind": "explain",
+  "de": "„A, N, A. It is easy!“ — buchstabieren heißt, die Buchstaben einzeln zu nennen."
+ },
+ {
+  "tr": "„My mother makes a big cake.“ Baba keke adı yazıyor, yapan anne.",
+  "kind": "explain",
+  "de": "„My mother makes a big cake.“ Der Vater schreibt den Namen auf den Kuchen, gebacken hat ihn die Mutter."
+ },
+ {
+  "tr": "„he is one year old“ — bir tane olduğu için „year“ tekil kalıyor.",
+  "kind": "explain",
+  "de": "„he is one year old“ — weil es nur eins ist, bleibt „year“ im Singular."
+ },
+ {
+  "tr": "„One hundred euros.“ Emre de duyduğuna inanamayıp tekrar soruyor.",
+  "kind": "explain",
+  "de": "„One hundred euros.“ Emre traut seinen Ohren nicht und fragt noch einmal nach."
+ },
+ {
+  "tr": "„I have got two sisters and one brother.“ — bir olan erkek kardeş.",
+  "kind": "explain",
+  "de": "„I have got two sisters and one brother.“ — einer ist der Bruder."
+ },
+ {
+  "tr": "„Do you live in Bremen? Yes, I do.“ — kısa cevap soruyu doğruluyor.",
+  "kind": "explain",
+  "de": "„Do you live in Bremen? Yes, I do.“ — die Kurzantwort bestätigt die Frage."
+ },
+ {
+  "tr": "„Have you got children? No, I have not.“ — kardeşi var, çocuğu yok.",
+  "kind": "explain",
+  "de": "„Have you got children? No, I have not.“ — Geschwister hat er, Kinder nicht."
+ },
+ {
+  "tr": "„They live in Izmir.“ — „they“ anne ile babayı birlikte gösteriyor.",
+  "kind": "explain",
+  "de": "„They live in Izmir.“ — „they“ meint Mutter und Vater zusammen."
+ },
+ {
+  "tr": "„Age: 34“ ve „I am thirty-four years old.“ — on iki adresin numarası.",
+  "kind": "explain",
+  "de": "„Age: 34“ und „I am thirty-four years old.“ — zwölf ist die Hausnummer der Adresse."
+ },
+ {
+  "tr": "„He is a baby, so he does not eat cake.“ — bebek olduğu için yemiyor.",
+  "kind": "explain",
+  "de": "„He is a baby, so he does not eat cake.“ — weil er ein Baby ist, isst er nichts."
+ },
+ {
+  "tr": "Doktor olan anne. „His name is Kemal“ öğretmen olan babayı anlatıyor.",
+  "kind": "explain",
+  "de": "Ärztin ist die Mutter. „His name is Kemal“ meint den Vater, der Lehrer ist."
+ },
+ {
+  "tr": "„my brother is only nine“ — yirmi kız kardeşin, elli iki annenin yaşı.",
+  "kind": "explain",
+  "de": "„my brother is only nine“ — zwanzig ist das Alter der Schwester, zweiundfünfzig das der Mutter."
+ },
+ {
+  "tr": "„Code: 28195“ — şehir kodu adresle aynı satırda değil, kendi satırında.",
+  "kind": "explain",
+  "de": "„Code: 28195“ — die Postleitzahl steht nicht in derselben Zeile wie die Adresse, sondern in einer eigenen."
+ },
+ {
+  "tr": "„My grandma is seventy-two.“ Burada „years old“ düşmüş — konuşmada olur.",
+  "kind": "explain",
+  "de": "„My grandma is seventy-two.“ Hier fehlt „years old“ — beim Sprechen kommt das vor."
+ },
+ {
+  "tr": "„My mother is a doctor.“ — öğretmen olan baba: „My father is a teacher.“",
+  "kind": "explain",
+  "de": "„My mother is a doctor.“ — Lehrer ist der Vater: „My father is a teacher.“"
+ },
+ {
+  "tr": "„We are there in May, for my grandma's birthday.“ — ay adı büyük harfle.",
+  "kind": "explain",
+  "de": "„We are there in May, for my grandma's birthday.“ — der Monatsname wird großgeschrieben."
+ },
+ {
+  "tr": "„Her name is Ela. She is six.“ — bir yaşında olan Tarik'in erkek kardeşi.",
+  "kind": "explain",
+  "de": "„Her name is Ela. She is six.“ — ein Jahr alt ist der Bruder von Tarik."
+ },
+ {
+  "tr": "„The course is one hundred euros for three months.“ — üç, ayların sayısı.",
+  "kind": "explain",
+  "de": "„The course is one hundred euros for three months.“ — drei ist die Zahl der Monate."
+ },
+ {
+  "tr": "„I am twenty-six years old.“ Otuz dört Leyla'nın, kırk bir Meryem'in yaşı.",
+  "kind": "explain",
+  "de": "„I am twenty-six years old.“ Vierunddreißig ist das Alter von Leyla, einundvierzig das von Meryem."
+ },
+ {
+  "tr": "„One lesson is ninety minutes.“ Sayıyı yazıyla da rakamla da yazabilirsin.",
+  "kind": "explain",
+  "de": "„One lesson is ninety minutes.“ Du kannst die Zahl als Wort oder als Ziffer schreiben."
+ },
+ {
+  "tr": "„I am a doctor and I work in a small town.“ — Ben şarkıcı, Meryem antrenör.",
+  "kind": "explain",
+  "de": "„I am a doctor and I work in a small town.“ — Ben ist Sänger, Meryem Trainerin."
+ },
+ {
+  "tr": "„I speak a little English and a little German.“ — iki dili de az konuşuyor.",
+  "kind": "explain",
+  "de": "„I speak a little English and a little German.“ — beide Sprachen spricht sie ein wenig."
+ },
+ {
+  "tr": "„I speak a little English … but I do not speak fast.“ — tam tersini söylüyor.",
+  "kind": "explain",
+  "de": "„I speak a little English … but I do not speak fast.“ — er sagt genau das Gegenteil."
+ },
+ {
+  "tr": "Önce Leyla (doktor), sonra Ben (şarkıcı), en son Meryem (antrenör) konuşuyor.",
+  "kind": "explain",
+  "de": "Zuerst spricht Leyla (Ärztin), dann Ben (Sänger), zuletzt Meryem (Trainerin)."
+ },
+ {
+  "tr": "„I have got one daughter.“ Konuşmada „I have“ çoğu zaman „I've“ diye büzülüyor.",
+  "kind": "explain",
+  "de": "„I have got one daughter.“ Beim Sprechen zieht sich „I have“ meistens zu „I've“ zusammen."
+ },
+ {
+  "tr": "„I am a doctor. I work in a big hospital.“ — şarkıcı ve müzik öğretmeni olan Ana.",
+  "kind": "explain",
+  "de": "„I am a doctor. I work in a big hospital.“ — Sängerin und Musiklehrerin ist Ana."
+ },
+ {
+  "tr": "„We start on Monday, September 7.“ — bir ay fiyatın süresi, başlangıç günü değil.",
+  "kind": "explain",
+  "de": "„We start on Monday, September 7.“ — ein Monat ist die Dauer des Preises, nicht der Starttag."
+ },
+ {
+  "tr": "Öğrenciler için otuz euro: „For students: thirty euros.“ Kırk euro ötekiler için.",
+  "kind": "explain",
+  "de": "Für Studenten dreißig Euro: „For students: thirty euros.“ Vierzig Euro gilt für die anderen."
+ },
+ {
+  "tr": "„Last name: Yalin.“ — Deniz ad, Bremen şehir. Formda her satırın kendi etiketi var.",
+  "kind": "explain",
+  "de": "„Last name: Yalin.“ — Deniz ist der Vorname, Bremen die Stadt. Im Formular hat jede Zeile ihre eigene Beschriftung."
+ },
+ {
+  "tr": "Önce gün, sonra kek, sonra gelenler, en son kutlama. Anlatı hep bu sırayla gidiyor.",
+  "kind": "explain",
+  "de": "Zuerst der Tag, dann der Kuchen, dann die Gäste, zuletzt der Glückwunsch. Die Erzählung läuft immer in dieser Reihenfolge."
+ },
+ {
+  "tr": "„I speak a little English.“ — „a little“ tek parça ve „English“ büyük harfle yazılır.",
+  "kind": "explain",
+  "de": "„I speak a little English.“ — „a little“ ist ein Stück und „English“ wird großgeschrieben."
+ },
+ {
+  "tr": "„I do not speak English, but I understand many words.“ — anlamak ile konuşmak ayrı iki şey.",
+  "kind": "explain",
+  "de": "„I do not speak English, but I understand many words.“ — Verstehen und Sprechen sind zwei verschiedene Dinge."
+ },
+ {
+  "tr": "Önce iş sorulur ve söylenir, sonra yaş sorulur ve söylenir. İkisi ayrı soru köküyle geliyor.",
+  "kind": "explain",
+  "de": "Zuerst wird nach dem Beruf gefragt und geantwortet, dann nach dem Alter. Beides kommt mit einer eigenen Frageform."
+ },
+ {
+  "tr": "„How much is a pen? One euro.“ — fiyatta „years old“ gibi bir ek yok, sayı tek başına duruyor.",
+  "kind": "explain",
+  "de": "„How much is a pen? One euro.“ — beim Preis gibt es keinen Zusatz wie „years old“, die Zahl steht allein."
+ },
+ {
+  "tr": "hızlı",
+  "kind": "gloss.tr",
+  "de": "schnell"
+ },
+ {
+  "tr": "yemek",
+  "kind": "gloss.tr",
+  "de": "essen"
+ },
+ {
+  "tr": "onun adı …",
+  "kind": "gloss.tr",
+  "de": "sein bzw. ihr Name ist …"
+ },
+ {
+  "tr": "ad",
+  "kind": "gloss.tr",
+  "de": "Vorname"
+ },
+ {
+  "tr": "ev",
+  "kind": "gloss.tr",
+  "de": "Haus"
+ },
+ {
+  "tr": "yer",
+  "kind": "gloss.tr",
+  "de": "Platz"
+ },
+ {
+  "tr": "müzik",
+  "kind": "gloss.tr",
+  "de": "Musik"
+ },
+ {
+  "tr": "sokak",
+  "kind": "gloss.tr",
+  "de": "Straße"
+ },
+ {
+  "tr": "soyadı",
+  "kind": "gloss.tr",
+  "de": "Nachname"
+ },
+ {
+  "tr": "yapmak",
+  "kind": "gloss.tr",
+  "de": "machen"
+ },
+ {
+  "tr": "istemek",
+  "kind": "gloss.tr",
+  "de": "wollen"
+ },
+ {
+  "tr": "yaşında",
+  "kind": "gloss.tr",
+  "de": "Jahre alt"
+ },
+ {
+  "tr": "çocuklar",
+  "kind": "gloss.tr",
+  "de": "Kinder"
+ },
+ {
+  "tr": "geceleri",
+  "kind": "gloss.tr",
+  "de": "nachts"
+ },
+ {
+  "tr": "öğrenmek",
+  "kind": "gloss.tr",
+  "de": "lernen"
+ },
+ {
+  "tr": "harflemek",
+  "kind": "gloss.tr",
+  "de": "buchstabieren"
+ },
+ {
+  "tr": "bu benim …",
+  "kind": "gloss.tr",
+  "de": "das ist mein …"
+ },
+ {
+  "tr": "İspanyolca",
+  "kind": "gloss.tr",
+  "de": "Spanisch"
+ },
+ {
+  "tr": "benim … var",
+  "kind": "gloss.tr",
+  "de": "ich habe …"
+ },
+ {
+  "tr": "bu ne kadar",
+  "kind": "gloss.tr",
+  "de": "was kostet das"
+ },
+ {
+  "tr": "senin … var mı",
+  "kind": "gloss.tr",
+  "de": "hast du …"
+ },
+ {
+  "tr": "evet konuşuyorum",
+  "kind": "gloss.tr",
+  "de": "ja, ich spreche"
+ },
+ {
+  "tr": "hayır konuşmuyorum",
+  "kind": "gloss.tr",
+  "de": "nein, ich spreche nicht"
+ },
+ {
+  "tr": "doğum günün kutlu olsun",
+  "kind": "gloss.tr",
+  "de": "herzlichen Glückwunsch"
+ },
+ {
+  "tr": "İngilizce konuşuyor musun",
+  "kind": "gloss.tr",
+  "de": "sprichst du Englisch"
+ },
+ {
+  "tr": "sahibi erkekse",
+  "kind": "gloss.note",
+  "de": "wenn der Besitzer männlich ist"
+ },
+ {
+  "tr": "sahibi kadınsa",
+  "kind": "gloss.note",
+  "de": "wenn die Besitzerin weiblich ist"
+ }
+]
