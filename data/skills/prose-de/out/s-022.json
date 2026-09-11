@@ -1,0 +1,427 @@
+[
+ {
+  "tr": "Gezi cümlelerini yaz. Sonunda gezi formunu doldur.",
+  "kind": "intro",
+  "de": "Schreibe die Sätze zum Besichtigen. Am Ende füllst du das Besuchsformular aus."
+ },
+ {
+  "tr": "Şehir rehberi. Ne zaman açık, nereye nasıl gidiliyor?",
+  "kind": "intro",
+  "de": "Ein Stadtführer. Wann ist was offen, wie kommt man wohin?"
+ },
+ {
+  "tr": "Havalimanına taksi. Ne kadar sürüyor, ne kadar tutuyor?",
+  "kind": "intro",
+  "de": "Mit dem Taxi zum Flughafen. Wie lange dauert es, was kostet es?"
+ },
+ {
+  "tr": "Kaybolan biri yardım istiyor. Kibar istek kalıbına dikkat.",
+  "kind": "intro",
+  "de": "Jemand hat sich verlaufen und bittet um Hilfe. Achte auf die höfliche Wendung."
+ },
+ {
+  "tr": "Yol soruluyor. Sağ mı sol mu, dümdüz mü — yönleri takip et.",
+  "kind": "intro",
+  "de": "Nach dem Weg wird gefragt. Rechts, links oder geradeaus — verfolge die Richtungen."
+ },
+ {
+  "tr": "Eczanede alışveriş ve yol tarifi. Hangi ürün nerede duruyor?",
+  "kind": "intro",
+  "de": "Einkauf in der Apotheke und eine Wegbeschreibung. Wo liegt welche Ware?"
+ },
+ {
+  "tr": "Bilet ve taksi cümlelerini yaz. Sonunda bilet formunu doldur.",
+  "kind": "intro",
+  "de": "Schreibe die Sätze für Fahrkarte und Taxi. Am Ende füllst du das Fahrkartenformular aus."
+ },
+ {
+  "tr": "İstasyon anonsu. Rötar kaç dakika, yolcular nerede bekleyecek?",
+  "kind": "intro",
+  "de": "Eine Durchsage im Bahnhof. Wie viele Minuten Verspätung, wo warten die Fahrgäste?"
+ },
+ {
+  "tr": "Konum ve mesafe yaz. Edatların hepsi ayrı bir ilişki söylüyor.",
+  "kind": "intro",
+  "de": "Schreibe Ort und Entfernung. Jede Präposition nennt ein anderes Verhältnis."
+ },
+ {
+  "tr": "Danışmada soru sorma. Saat, süre ve izin — üçü de ayrı kalıpla.",
+  "kind": "intro",
+  "de": "Fragen an der Information. Uhrzeit, Dauer und Erlaubnis — jede mit einer eigenen Wendung."
+ },
+ {
+  "tr": "Konum edatları art arda: next to, behind, between, in front of.",
+  "kind": "intro",
+  "de": "Ortspräpositionen hintereinander: next to, behind, between, in front of."
+ },
+ {
+  "tr": "İki kişi ulaşımı konuşuyor. „by bike“ ile „on foot“ aynı cümlede.",
+  "kind": "intro",
+  "de": "Zwei Personen sprechen über den Weg zur Arbeit. „by bike“ und „on foot“ stehen im selben Satz."
+ },
+ {
+  "tr": "İhtiyaç ve sipariş cümlelerini yaz. Sonunda sipariş formunu doldur.",
+  "kind": "intro",
+  "de": "Schreibe Sätze für Bedarf und Bestellung. Am Ende füllst du das Bestellformular aus."
+ },
+ {
+  "tr": "İnternetten sipariş için yazılan mesaj. Ne isteniyor, ne zaman lazım?",
+  "kind": "intro",
+  "de": "Eine Nachricht für eine Bestellung im Netz. Was wird bestellt, wann wird es gebraucht?"
+ },
+ {
+  "tr": "Kaan işe nasıl gidip geldiğini anlatıyor. Sabah ve akşam aynı araç mı?",
+  "kind": "intro",
+  "de": "Kaan erzählt, wie er zur Arbeit und zurück kommt. Morgens und abends dasselbe Verkehrsmittel?"
+ },
+ {
+  "tr": "Gişede bilet alınıyor. Peron, saat, fiyat ve rötar — dördünü de yakala.",
+  "kind": "intro",
+  "de": "Am Schalter wird eine Fahrkarte gekauft. Gleis, Uhrzeit, Preis und Verspätung — merke dir alle vier."
+ },
+ {
+  "tr": "Kibar istek yaz. „could“ „can“den daha kibar ve yabancıya söylenen biçim.",
+  "kind": "intro",
+  "de": "Schreibe höfliche Bitten. „could“ ist höflicher als „can“ und die Form, die man Fremden gegenüber nimmt."
+ },
+ {
+  "tr": "Yol tarifi ve ulaşım yaz. Araçta „by“ geliyor ve artikel hiç kullanılmıyor.",
+  "kind": "intro",
+  "de": "Schreibe Wegbeschreibung und Verkehrsmittel. Beim Verkehrsmittel steht „by“, und zwar ganz ohne Artikel."
+ },
+ {
+  "tr": "„No, it's near here.“ — beş dakika yürüyerek.",
+  "kind": "explain",
+  "de": "„No, it's near here.“ — fünf Minuten zu Fuß."
+ },
+ {
+  "tr": "„That is thirty-five euros.“ — kırk, dakikaların sayısı.",
+  "kind": "explain",
+  "de": "„That is thirty-five euros.“ — vierzig ist die Zahl der Minuten."
+ },
+ {
+  "tr": "Önce banka, sonra otel, sonra postane, en son havalimanı.",
+  "kind": "explain",
+  "de": "Zuerst die Bank, dann das Hotel, dann die Post, zuletzt der Flughafen."
+ },
+ {
+  "tr": "„Go on foot, five minutes.“ — araçta „by“, yürümekte „on“.",
+  "kind": "explain",
+  "de": "„Go on foot, five minutes.“ — beim Verkehrsmittel „by“, beim Gehen „on“."
+ },
+ {
+  "tr": "„I get off at the third stop.“ — sonra beş dakika yürüyor.",
+  "kind": "explain",
+  "de": "„I get off at the third stop.“ — danach geht er fünf Minuten zu Fuß."
+ },
+ {
+  "tr": "„I need the bag on Friday.“ — bir hafta beklemek istemiyor.",
+  "kind": "explain",
+  "de": "„I need the bag on Friday.“ — eine Woche warten will er nicht."
+ },
+ {
+  "tr": "„I need the bag on Friday.“ — kitaplar için tarih vermiyor.",
+  "kind": "explain",
+  "de": "„I need the bag on Friday.“ — für die Bücher nennt er kein Datum."
+ },
+ {
+  "tr": "„In the evening I take the bus.“ — sabah tren, akşam otobüs.",
+  "kind": "explain",
+  "de": "„In the evening I take the bus.“ — morgens der Zug, abends der Bus."
+ },
+ {
+  "tr": "„I go to work by train every day.“ — otobüs akşam dönüş için.",
+  "kind": "explain",
+  "de": "„I go to work by train every day.“ — der Bus ist für den Rückweg am Abend."
+ },
+ {
+  "tr": "„In the winter I go on foot or by bus.“ — kışın bisiklet yok.",
+  "kind": "explain",
+  "de": "„In the winter I go on foot or by bus.“ — im Winter kein Fahrrad."
+ },
+ {
+  "tr": "„Yes, two hours is good.“ — beş dakika kiliseye yürüme süresi.",
+  "kind": "explain",
+  "de": "„Yes, two hours is good.“ — fünf Minuten ist der Weg zur Kirche."
+ },
+ {
+  "tr": "„I have a map, but I don't find the way.“ — harita var, yön yok.",
+  "kind": "explain",
+  "de": "„I have a map, but I don't find the way.“ — Karte ja, Richtung nein."
+ },
+ {
+  "tr": "„I go by bike. It is fast and I see the city.“ — trenle giden Nil.",
+  "kind": "explain",
+  "de": "„I go by bike. It is fast and I see the city.“ — mit dem Zug fährt Nil."
+ },
+ {
+  "tr": "„The museum is open at ten. It closes at six.“ — üç, kursun saati.",
+  "kind": "explain",
+  "de": "„The museum is open at ten. It closes at six.“ — drei ist die Zeit des Kurses."
+ },
+ {
+  "tr": "Önce genel alışkanlık, sonra şimdiki an, sonra iniş, en son akşam.",
+  "kind": "explain",
+  "de": "Zuerst die allgemeine Gewohnheit, dann der Augenblick, dann das Aussteigen, zuletzt der Abend."
+ },
+ {
+  "tr": "„Please don't call me at work — I am in a meeting every afternoon.“",
+  "kind": "explain",
+  "de": "„Please don't call me at work — I am in a meeting every afternoon.“"
+ },
+ {
+  "tr": "„I go by bike.“ — araçta „by“ ve artikel yok; yürümek ise „on foot“.",
+  "kind": "explain",
+  "de": "„I go by bike.“ — beim Verkehrsmittel „by“ und kein Artikel; Gehen dagegen „on foot“."
+ },
+ {
+  "tr": "„And how long does it take? — Two hours.“ Rötar bunun üstüne biniyor.",
+  "kind": "explain",
+  "de": "„And how long does it take? — Two hours.“ Die Verspätung kommt noch obendrauf."
+ },
+ {
+  "tr": "„The train leaves from platform four…“ — üç, kafenin yanındaki peron.",
+  "kind": "explain",
+  "de": "„The train leaves from platform four…“ — drei ist das Gleis neben dem Café."
+ },
+ {
+  "tr": "„At ten past nine, from platform four.“ — dokuz ve on saatin parçaları.",
+  "kind": "explain",
+  "de": "„At ten past nine, from platform four.“ — neun und zehn gehören zur Uhrzeit."
+ },
+ {
+  "tr": "„Between the bank and the hotel.“ — „between“ iki şeyin arasını söyler.",
+  "kind": "explain",
+  "de": "„Between the bank and the hotel.“ — „between“ nennt den Raum zwischen zwei Dingen."
+ },
+ {
+  "tr": "„The delay is twenty minutes.“ — on ve dokuz kalkış saatinin parçaları.",
+  "kind": "explain",
+  "de": "„The delay is twenty minutes.“ — zehn und neun gehören zur Abfahrtszeit."
+ },
+ {
+  "tr": "„The train to London is running late.“ — şu an sürdüğü için „is running“.",
+  "kind": "explain",
+  "de": "„The train to London is running late.“ — weil es gerade läuft, steht „is running“."
+ },
+ {
+  "tr": "„Go straight, then turn left at the corner.“ — sağ, otobüs durağının yönü.",
+  "kind": "explain",
+  "de": "„Go straight, then turn left at the corner.“ — rechts liegt die Bushaltestelle."
+ },
+ {
+  "tr": "„Excuse me, could you help me? I'm lost.“ — haritası var ama yolu bulamıyor.",
+  "kind": "explain",
+  "de": "„Excuse me, could you help me? I'm lost.“ — sie hat eine Karte, findet den Weg aber nicht."
+ },
+ {
+  "tr": "Önce hedef, sonra süre, sonra duraklama, en son fiş. Takside sıra hep böyle.",
+  "kind": "explain",
+  "de": "Zuerst das Ziel, dann die Dauer, dann der Halt, zuletzt die Quittung. Im Taxi ist die Reihenfolge immer so."
+ },
+ {
+  "tr": "Önce yardım istenir, sonra hedef sorulur, sonra ilk adım, sonra ikinci adım.",
+  "kind": "explain",
+  "de": "Zuerst wird um Hilfe gebeten, dann nach dem Ziel gefragt, dann kommt der erste Schritt, dann der zweite."
+ },
+ {
+  "tr": "„medicine for a cold… I need soap and a toothbrush too.“ Yara bandı da alıyor.",
+  "kind": "explain",
+  "de": "„medicine for a cold… I need soap and a toothbrush too.“ Pflaster nimmt sie auch mit."
+ },
+ {
+  "tr": "„Then take the bus number four.“ — dört hem hattın numarası hem durağın sırası.",
+  "kind": "explain",
+  "de": "„Then take the bus number four.“ — vier ist sowohl die Liniennummer als auch die Reihe der Haltestelle."
+ },
+ {
+  "tr": "„You can visit the museum every day from ten to six.“ — pazartesi kapalı olan kilise.",
+  "kind": "explain",
+  "de": "„You can visit the museum every day from ten to six.“ — montags geschlossen ist die Kirche."
+ },
+ {
+  "tr": "„Go straight, then turn left at the corner.“ — iki emir art arda, araya „then“ giriyor.",
+  "kind": "explain",
+  "de": "„Go straight, then turn left at the corner.“ — zwei Imperative hintereinander, dazwischen „then“."
+ },
+ {
+  "tr": "Önce saat, sonra süre, sonra izin, en son yol. Danışmada sorular hep bu sırayla geliyor.",
+  "kind": "explain",
+  "de": "Zuerst die Uhrzeit, dann die Dauer, dann die Erlaubnis, zuletzt der Weg. An der Information kommen die Fragen immer so."
+ },
+ {
+  "tr": "„The bank is next to the hotel.“ — meydanın arkasında olan otel, istasyonun önünde taksi.",
+  "kind": "explain",
+  "de": "„The bank is next to the hotel.“ — hinter dem Platz liegt das Hotel, vor dem Bahnhof das Taxi."
+ },
+ {
+  "tr": "„I want to order two books and a computer bag from your list.“ — bilgisayar değil, çantası.",
+  "kind": "explain",
+  "de": "„I want to order two books and a computer bag from your list.“ — nicht der Computer, sondern die Tasche."
+ },
+ {
+  "tr": "„The museum of art is near the park, behind the old church.“ — kilisenin içinde değil arkasında.",
+  "kind": "explain",
+  "de": "„The museum of art is near the park, behind the old church.“ — nicht in der Kirche, sondern dahinter."
+ },
+ {
+  "tr": "danışma",
+  "kind": "gloss.tr",
+  "de": "Information"
+ },
+ {
+  "tr": "yürüyerek",
+  "kind": "gloss.tr",
+  "de": "zu Fuß"
+ },
+ {
+  "tr": "kitap",
+  "kind": "gloss.tr",
+  "de": "Buch"
+ },
+ {
+  "tr": "kış",
+  "kind": "gloss.tr",
+  "de": "Winter"
+ },
+ {
+  "tr": "evde",
+  "kind": "gloss.tr",
+  "de": "zu Hause"
+ },
+ {
+  "tr": "uzak",
+  "kind": "gloss.tr",
+  "de": "weit"
+ },
+ {
+  "tr": "nezle",
+  "kind": "gloss.tr",
+  "de": "Erkältung"
+ },
+ {
+  "tr": "aramak",
+  "kind": "gloss.tr",
+  "de": "anrufen"
+ },
+ {
+  "tr": "dikkat",
+  "kind": "gloss.tr",
+  "de": "Achtung"
+ },
+ {
+  "tr": "futbol",
+  "kind": "gloss.tr",
+  "de": "Fußball"
+ },
+ {
+  "tr": "makine",
+  "kind": "gloss.tr",
+  "de": "Automat"
+ },
+ {
+  "tr": "örneğin",
+  "kind": "gloss.tr",
+  "de": "zum Beispiel"
+ },
+ {
+  "tr": "postane",
+  "kind": "gloss.tr",
+  "de": "Post"
+ },
+ {
+  "tr": "yanında",
+  "kind": "gloss.tr",
+  "de": "neben"
+ },
+ {
+  "tr": "dördüncü",
+  "kind": "gloss.tr",
+  "de": "vierte"
+ },
+ {
+  "tr": "terminal",
+  "kind": "gloss.tr",
+  "de": "Terminal"
+ },
+ {
+  "tr": "kayboldum",
+  "kind": "gloss.tr",
+  "de": "ich habe mich verlaufen"
+ },
+ {
+  "tr": "bisikletle",
+  "kind": "gloss.tr",
+  "de": "mit dem Rad"
+ },
+ {
+  "tr": "dümdüz git",
+  "kind": "gloss.tr",
+  "de": "geh geradeaus"
+ },
+ {
+  "tr": "…'nız var mı",
+  "kind": "gloss.tr",
+  "de": "haben Sie …"
+ },
+ {
+  "tr": "buraya yakın",
+  "kind": "gloss.tr",
+  "de": "hier in der Nähe"
+ },
+ {
+  "tr": "hoş geldiniz",
+  "kind": "gloss.tr",
+  "de": "willkommen"
+ },
+ {
+  "tr": "özür dilerim",
+  "kind": "gloss.tr",
+  "de": "Entschuldigung"
+ },
+ {
+  "tr": "acelesi olmak",
+  "kind": "gloss.tr",
+  "de": "es eilig haben"
+ },
+ {
+  "tr": "buradan uzak mı",
+  "kind": "gloss.tr",
+  "de": "ist es weit von hier"
+ },
+ {
+  "tr": "müze bugün açık",
+  "kind": "gloss.tr",
+  "de": "das Museum ist heute offen"
+ },
+ {
+  "tr": "…'i gezebilirsin",
+  "kind": "gloss.tr",
+  "de": "du kannst … besichtigen"
+ },
+ {
+  "tr": "ne kadar sürüyor",
+  "kind": "gloss.tr",
+  "de": "wie lange dauert es"
+ },
+ {
+  "tr": "…'e ihtiyacım var",
+  "kind": "gloss.tr",
+  "de": "ich brauche …"
+ },
+ {
+  "tr": "lütfen burada durun",
+  "kind": "gloss.tr",
+  "de": "halten Sie bitte hier"
+ },
+ {
+  "tr": "gidiş mi gidiş-dönüş mü",
+  "kind": "gloss.tr",
+  "de": "einfach oder hin und zurück"
+ },
+ {
+  "tr": "bana yardım edebilir misiniz",
+  "kind": "gloss.tr",
+  "de": "könnten Sie mir helfen"
+ }
+]

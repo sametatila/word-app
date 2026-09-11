@@ -60,8 +60,8 @@ mi çıkacağına yazar karar verir.
 
 | Seviye | Ünite | Durum |
 |---|---|---|
-| A1 | 1–12 | **yazıldı** (2026-09-11) |
-| A1 | 13–25 | bekliyor |
+| A1 | 1–15 | **yazıldı** (2026-09-11) |
+| A1 | 16–25 | bekliyor |
 | A2 · B1 · B2 · C1 | 1–25 | bekliyor |
 
 **A1 ünite 1 (2026-09-11).** Dört dersi Hello! · How are you? · I am, you
@@ -170,6 +170,28 @@ you“ Almanca „es steht dir“le bire bir aynı yapıda, „enough time“ il
 „good enough“ da „genug Zeit“ ve „gut genug“la. Yeniden ölçüm bunları
 büyütmüyor, „genau wie im Deutschen“ diyerek öğrenciye kolaylık
 gösteriyor.
+
+**A1 ünite 13–15 (2026-09-11).** Ünite 13 Personal care items ·
+Ordering online · Asking directions · Public transport; ünite 14
+Buying a ticket · Delays · In a taxi · Near and far; ünite 15
+Places to visit · Getting lost · By bike · At the information desk.
+On sekiz egzersiz; ünite dışı ölçüm %0,0. Patika'nın EN A1 yuvalarının
+90'ı dolu.
+
+Almanca eksende bu turun yeniden ölçümü ULAŞIM EDATI. Türkçe ipucu
+"araçta „by“ ve artikel YOK: by bus, by train. „with the bus“ yanlış"
+diyor ve Türkçe okuyan için „with“ uzak bir hata. Almanca okuyan için ise
+TAM O hata: Almanca „mit dem Bus“ diyor, yani hem edat hem artikel var.
+Almanca karşılık yanlışı adıyla söylüyor.
+
+„I'm lost“ satırı ters yönde açıldı: Türkçe ipucu "„lost“ sıfat, Türkçedeki
+gibi fiil değil" diyor; Almanca da orada FİİL kullanıyor („ich habe mich
+verlaufen“), yani uyarı Almanca okuyan için de geçerli — ama başka bir
+dile karşı. Almanca karşılık karşılaştırmayı Almancayla yeniden kuruyor.
+
+Parite tarafı da sürdü: „could you help me“ Almanca „könnten Sie mir
+helfen“le bire bir aynı nezaket aracı, „wait for“ ile „warten auf“ aynı
+edat zorunluluğu, „can visit“ ile „kann besichtigen“ aynı eksiz mastar.
 
 ## Tamamlanma ölçütü
 

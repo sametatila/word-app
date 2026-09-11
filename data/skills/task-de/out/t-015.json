@@ -1,0 +1,317 @@
+[
+ {
+  "tr": "Gezi formunu doldur.",
+  "kind": "form.prompt",
+  "de": "Fülle das Besuchsformular aus."
+ },
+ {
+  "tr": "Bilet formunu doldur.",
+  "kind": "form.prompt",
+  "de": "Fülle das Fahrkartenformular aus."
+ },
+ {
+  "tr": "Sipariş formunu doldur.",
+  "kind": "form.prompt",
+  "de": "Fülle das Bestellformular aus."
+ },
+ {
+  "tr": "Londra; gidiş-dönüş; peron dört; kırk euro.",
+  "kind": "form.facts",
+  "de": "London; hin und zurück; Gleis vier; vierzig Euro."
+ },
+ {
+  "tr": "Müze; onda açılır; iki saat sürer; harita danışmada.",
+  "kind": "form.facts",
+  "de": "Museum; öffnet um zehn; dauert zwei Stunden; Karte an der Information."
+ },
+ {
+  "tr": "Deniz Kaya; Green Street 12, Bremen; iki kitap; cuma günü teslim.",
+  "kind": "form.facts",
+  "de": "Deniz Kaya; Green Street 12, Bremen; zwei Bücher; Lieferung am Freitag."
+ },
+ {
+  "tr": "Hastayım.",
+  "kind": "build.tr",
+  "de": "Ich bin krank."
+ },
+ {
+  "tr": "Sola dön.",
+  "kind": "build.tr",
+  "de": "Bieg links ab."
+ },
+ {
+  "tr": "Kayboldum.",
+  "kind": "build.tr",
+  "de": "Ich habe mich verlaufen."
+ },
+ {
+  "tr": "Dümdüz git.",
+  "kind": "build.tr",
+  "de": "Geh geradeaus."
+ },
+ {
+  "tr": "Buraya yakın.",
+  "kind": "build.tr",
+  "de": "Es ist hier in der Nähe."
+ },
+ {
+  "tr": "Buradan uzak mı?",
+  "kind": "build.tr",
+  "de": "Ist es weit von hier?"
+ },
+ {
+  "tr": "Müze bugün açık.",
+  "kind": "build.tr",
+  "de": "Das Museum ist heute offen."
+ },
+ {
+  "tr": "Nerede ineceğim?",
+  "kind": "build.tr",
+  "de": "Wo muss ich aussteigen?"
+ },
+ {
+  "tr": "Ne kadar sürüyor?",
+  "kind": "build.tr",
+  "de": "Wie lange dauert es?"
+ },
+ {
+  "tr": "Sabununuz var mı?",
+  "kind": "build.tr",
+  "de": "Haben Sie Seife?"
+ },
+ {
+  "tr": "Otobüsü bekliyorum.",
+  "kind": "build.tr",
+  "de": "Ich warte auf den Bus."
+ },
+ {
+  "tr": "İlaca ihtiyacım var.",
+  "kind": "build.tr",
+  "de": "Ich brauche ein Medikament."
+ },
+ {
+  "tr": "Lütfen burada durun.",
+  "kind": "build.tr",
+  "de": "Halten Sie bitte hier."
+ },
+ {
+  "tr": "Yürüyerek gidiyorum.",
+  "kind": "build.tr",
+  "de": "Ich gehe zu Fuß."
+ },
+ {
+  "tr": "Banka otelin yanında.",
+  "kind": "build.tr",
+  "de": "Die Bank ist neben dem Hotel."
+ },
+ {
+  "tr": "Parkı görebilir miyim?",
+  "kind": "build.tr",
+  "de": "Kann ich den Park sehen?"
+ },
+ {
+  "tr": "İşe otobüsle gidiyorum.",
+  "kind": "build.tr",
+  "de": "Ich fahre mit dem Bus zur Arbeit."
+ },
+ {
+  "tr": "Gidiş mi gidiş-dönüş mü?",
+  "kind": "build.tr",
+  "de": "Einfach oder hin und zurück?"
+ },
+ {
+  "tr": "İstasyona nasıl gidilir?",
+  "kind": "build.tr",
+  "de": "Wie kommt man zum Bahnhof?"
+ },
+ {
+  "tr": "İşe bisikletle gidiyorum.",
+  "kind": "build.tr",
+  "de": "Ich fahre mit dem Rad zur Arbeit."
+ },
+ {
+  "tr": "Müzeyi ziyaret edebilirsin.",
+  "kind": "build.tr",
+  "de": "Du kannst das Museum besichtigen."
+ },
+ {
+  "tr": "Affedersiniz, istasyon nerede?",
+  "kind": "build.tr",
+  "de": "Entschuldigung, wo ist der Bahnhof?"
+ },
+ {
+  "tr": "Bir fiş alabilir miyim, lütfen?",
+  "kind": "build.tr",
+  "de": "Kann ich bitte eine Quittung haben?"
+ },
+ {
+  "tr": "İki kitap sipariş etmek istiyorum.",
+  "kind": "build.tr",
+  "de": "Ich möchte zwei Bücher bestellen."
+ },
+ {
+  "tr": "Londra'ya bir bilet istiyorum, lütfen.",
+  "kind": "build.tr",
+  "de": "Ich hätte gern eine Fahrkarte nach London, bitte."
+ },
+ {
+  "tr": "Affedersiniz, bana yardım edebilir misiniz?",
+  "kind": "build.tr",
+  "de": "Entschuldigung, könnten Sie mir helfen?"
+ },
+ {
+  "tr": "Bana istasyonun yolunu gösterebilir misiniz?",
+  "kind": "build.tr",
+  "de": "Können Sie mir den Weg zum Bahnhof zeigen?"
+ },
+ {
+  "tr": "Soruda „can“ öne geçiyor: I can → Can I.",
+  "kind": "build.hint",
+  "de": "In der Frage rückt „can“ nach vorn: I can → Can I."
+ },
+ {
+  "tr": "İstek „Can I have …?“ ile; „I want“ kaba kaçar.",
+  "kind": "build.hint",
+  "de": "Die Bitte mit „Can I have …?“; „I want“ klingt grob — wie „ich will“ gegenüber „ich möchte“."
+ },
+ {
+  "tr": "Soru „do“ ile. „soap“ da sayılamaz, „a soap“ olmaz.",
+  "kind": "build.hint",
+  "de": "Die Frage mit „do“. „soap“ ist wie „Seife“ nicht zählbar, „a soap“ geht nicht."
+ },
+ {
+  "tr": "„medicine“ sayılamaz: önünde „a“ yok, çoğulu da yok.",
+  "kind": "build.hint",
+  "de": "„medicine“ ist nicht zählbar: kein „a“ davor und kein Plural."
+ },
+ {
+  "tr": "Emirde özne yok; „please“ başta ya da sonda durabilir.",
+  "kind": "build.hint",
+  "de": "Im Imperativ kein Subjekt; „please“ kann vorn oder hinten stehen."
+ },
+ {
+  "tr": "„left“ tek başına yeter: „turn to the left“ gerekmiyor.",
+  "kind": "build.hint",
+  "de": "„left“ genügt allein: „turn to the left“ ist nicht nötig."
+ },
+ {
+  "tr": "Hedef „to“ ile: a ticket to London. „for London“ değil.",
+  "kind": "build.hint",
+  "de": "Das Ziel mit „to“: a ticket to London — deutsch „nach London“. Nicht „for London“."
+ },
+ {
+  "tr": "İki nesne art arda: show + kime + neyi. Hedef „to“ ile.",
+  "kind": "build.hint",
+  "de": "Zwei Objekte hintereinander: show + wem + was, wie deutsch „zeig mir den Weg“. Das Ziel mit „to“."
+ },
+ {
+  "tr": "„next to“ iki sözcüklü tek edat; „next the hotel“ olmaz.",
+  "kind": "build.hint",
+  "de": "„next to“ ist eine einzige Präposition aus zwei Wörtern, wo das Deutsche mit „neben“ auskommt; „next the hotel“ geht nicht."
+ },
+ {
+  "tr": "„can“ sonrası fiil eksiz: can visit, „can to visit“ değil.",
+  "kind": "build.hint",
+  "de": "Nach „can“ steht das Verb ohne Endung: can visit, nicht „can to visit“ — wie deutsch „kann besichtigen“."
+ },
+ {
+  "tr": "„get to“ varmak demek; „go to“ da doğru ama bu daha doğal.",
+  "kind": "build.hint",
+  "de": "„get to“ heißt ankommen; „go to“ ist auch richtig, aber das hier klingt natürlicher."
+ },
+ {
+  "tr": "Emirde özne yok. „straight“ burada sıfat değil, yön zarfı.",
+  "kind": "build.hint",
+  "de": "Im Imperativ kein Subjekt. „straight“ ist hier kein Adjektiv, sondern ein Richtungsadverb."
+ },
+ {
+  "tr": "Araçta „by“ ve artikel yok. Yürümek ise istisna: „on foot“.",
+  "kind": "build.hint",
+  "de": "Beim Verkehrsmittel „by“ und kein Artikel. Gehen ist die Ausnahme: „on foot“."
+ },
+ {
+  "tr": "Tek istisna: yürümekte „on“, araçta „by“. „by foot“ yanlış.",
+  "kind": "build.hint",
+  "de": "Die einzige Ausnahme: beim Gehen „on“, beim Verkehrsmittel „by“. „by foot“ ist falsch; deutsch „zu Fuß“."
+ },
+ {
+  "tr": "Durum „be“ ile: I am sick. Türkçedeki gibi tek sözcük yetmiyor.",
+  "kind": "build.hint",
+  "de": "Der Zustand mit „be“: I am sick — genau wie deutsch „ich bin krank“."
+ },
+ {
+  "tr": "„want“ sonrası fiil „to“ ile gelir: want to order. „-ing“ almaz.",
+  "kind": "build.hint",
+  "de": "Nach „want“ kommt das Verb mit „to“: want to order. Kein „-ing“ — und anders als deutsch „will bestellen“ fällt das „to“ nicht weg."
+ },
+ {
+  "tr": "„wait“ nesnesini „for“ ile alır. Şu an sürdüğü için „am waiting“.",
+  "kind": "build.hint",
+  "de": "„wait“ nimmt sein Objekt mit „for“, wie deutsch „warten auf“. Weil es gerade läuft, steht „am waiting“."
+ },
+ {
+  "tr": "„get off“ iki parçalı; nesnesiz kullanıldığında parçalar ayrılmaz.",
+  "kind": "build.hint",
+  "de": "„get off“ hat zwei Teile; ohne Objekt bleiben sie zusammen — anders als das deutsche „aussteigen“, das sich trennt."
+ },
+ {
+  "tr": "„open“ burada sıfat ve „be“ ile geliyor; fiil olsa „opens“ olurdu.",
+  "kind": "build.hint",
+  "de": "„open“ ist hier ein Adjektiv und steht mit „be“; als Verb hieße es „opens“."
+ },
+ {
+  "tr": "„could“ geçmiş değil, kibarlık. Yabancıya „can“ yerine bu söylenir.",
+  "kind": "build.hint",
+  "de": "„could“ ist keine Vergangenheit, sondern Höflichkeit — genau wie deutsch „könnten Sie“. Fremden gegenüber sagt man das statt „can“."
+ },
+ {
+  "tr": "„near“ edat gibi çalışır ve „to“ istemez: near here, near the bank.",
+  "kind": "build.hint",
+  "de": "„near“ arbeitet wie eine Präposition und braucht kein „to“: near here, near the bank. Deutsch verlangt dort ein „von“."
+ },
+ {
+  "tr": "İki sözcük yeter; „ticket“ tekrarlanmıyor, çünkü zaten konuşuluyor.",
+  "kind": "build.hint",
+  "de": "Zwei Wörter genügen; „ticket“ wird nicht wiederholt, weil längst davon die Rede ist."
+ },
+ {
+  "tr": "„lost“ burada sıfat ve „be“ ile geliyor; Türkçedeki gibi fiil değil.",
+  "kind": "build.hint",
+  "de": "„lost“ ist hier ein Adjektiv und steht mit „be“ — anders als deutsch „ich habe mich verlaufen“, wo ein Verb steht."
+ },
+ {
+  "tr": "Araçta „by“ ve artikel YOK: by bus, by train. „with the bus“ yanlış.",
+  "kind": "build.hint",
+  "de": "Beim Verkehrsmittel „by“ und KEIN Artikel: by bus, by train. „with the bus“ ist falsch, auch wenn das Deutsche „mit dem Bus“ sagt."
+ },
+ {
+  "tr": "Belli bir istasyon olduğu için „the“. Nezaket sözü virgülle ayrılıyor.",
+  "kind": "build.hint",
+  "de": "Weil ein bestimmter Bahnhof gemeint ist, steht „the“. Die Höflichkeitsformel wird mit Komma abgetrennt."
+ },
+ {
+  "tr": "„far“ ise „from“ ister: far from here. „near“ ile „far“ burada ayrılıyor.",
+  "kind": "build.hint",
+  "de": "„far“ dagegen verlangt „from“: far from here, wie deutsch „weit von hier“. Hier trennen sich „near“ und „far“."
+ },
+ {
+  "tr": "Süre „how long“ ile ve fiil „take“. „How much time“ de doğru ama bu daha doğal.",
+  "kind": "build.hint",
+  "de": "Die Dauer mit „how long“, und das Verb ist „take“ — nicht „dauern“ wie im Deutschen. „How much time“ ginge auch, klingt aber weniger natürlich."
+ },
+ {
+  "tr": "Kaan'ın anlattığı sıra: doğru sıraya koy.",
+  "kind": "question.text",
+  "de": "Die Reihenfolge in der Erzählung von Kaan: bring sie in die richtige Ordnung."
+ },
+ {
+  "tr": "Sorulan şeylerin sırası: doğru sıraya koy.",
+  "kind": "question.text",
+  "de": "Die Reihenfolge der Fragen: bring sie in die richtige Ordnung."
+ },
+ {
+  "tr": "Sorulan yerlerin sırası: doğru sıraya koy.",
+  "kind": "question.text",
+  "de": "Die Reihenfolge der erfragten Orte: bring sie in die richtige Ordnung."
+ }
+]
