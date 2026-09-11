@@ -9430,3 +9430,37 @@ istemcinin biçimi alanı görüyor mu. Beş enjeksiyonun beşi yakalandı.
 Ayrıca kapının kendi denetimi (§138) devreye girdi: yazdığım `/ReferralStats/`
 deseni "sınırsız ad deseni" diye reddedildi, çünkü `ReferralStatsEski` gibi
 yeniden adlandırılmış bir adı da "var" sayardı. `\bReferralStats\b` oldu.
+
+## §11.288 — Paketi açan yüzde ile geçme notu: zorunluluğu yazan bir cümle, ölçen bir şey yok
+
+Panelden ayarlanan öteki premium değerlerini taradım. Çoğu **temiz çıktı** ve
+bu da bir sonuç: ücretsiz katman sınırları, adil kullanım tavanları, deneme
+süresi ve yıllık kazanç yüzdesi iki platformda da yapılandırmadan geliyor;
+hiçbiri ekranda elle yazılı değil. Mobilin fiyat ve deneme süresini
+**mağazadan** okuyup yapılandırmadaki vitrin fiyatını hiç göstermemesi de
+eksik değil, bilinçli ve doğru: App Store 3.1.2 ve Play'in beyan kuralı bunu
+istiyor, dosyanın kendi yorumu da bunu söylüyor.
+
+Bir tanesi kirliydi. `mock.unlockPct` (sonraki kâğıt paketini açan yüzde)
+varsayılanı `60` diye elle yazılıydı ve `MOCK_PASS_PCT` de `60`. İkisinin aynı
+olması gerektiğini **söyleyen bir yorum vardı** — `gates.ts` içinde, alanın
+kendi açıklamasında: "Varsayılan `MOCK_PASS_PCT` ile aynı olmalı: uygulamanın
+zaten bir geçme notu var, ikinci bir eşik icat etmek kullanıcıya iki farklı
+'başarı' tanımı göstermek olurdu." Ölçen bir şey yoktu. Ayrışsaydı kâğıdı
+"geçti" diye işaretlenen biri sonraki paketi açamazdı.
+
+Varsayılan artık sabitin kendisi. **§194** hem eşitliği hem de sayının elle
+yazılmamış olmasını okuyor; eşitlik tek başına yetmez, çünkü iki sayı birlikte
+değiştirilip aynı değere getirilebilir ve bağ yine kopuk kalır.
+
+**Kapı yine komşuyu ölçtü ve bu kez ilk denemede yakalandı:** ilk yazım
+dosyanın tamamında `unlockPct:` arıyordu ve **tip bildirimini**
+(`unlockPct: number;`) okuyup "number;" buldu. Ölçüm `DEFAULT_PREMIUM_CONFIG`
+bloğuna daraltıldı. Bu turlarda aynı hatanın kaçıncı kez çıktığını sayıyorum;
+kalıp şu: bir adı dosya düzeyinde aramak, o adın **tanımını** değerinin yerine
+koyar.
+
+**Yan bulgu:** `PREMIUM_FEATURES` ve `PremiumFeature`, `PREMIUM_GATES` ile
+`PremiumGate`in hiçbir yerde kullanılmayan takma adlarıydı. Tek kaynağı ikiye
+bölmenin en sessiz hâli: ikinci ad bir gün ayrı bir şeye bağlanırsa kimse fark
+etmez. Kaldırıldı.

@@ -1,7 +1,7 @@
 import "server-only";
 import { premiumConfig } from "./config";
 import { isPremiumCached, resolveEntitlement, grantBonus, daysToMinutes } from "./entitlement";
-import { PREMIUM_GATES, describeLimits, type CopyLine, type PremiumGate } from "./gates";
+import { describeLimits, type CopyLine } from "./gates";
 
 /**
  * Premium yetkisinin DIŞ YÜZEYİ — uygulamanın geri kalanı yalnız burayı görür.
@@ -49,10 +49,6 @@ export { findPremiumAccount, type PremiumAccount } from "./account";
 export async function isPremium(userId: string | null): Promise<boolean> {
   return isPremiumCached(userId);
 }
-
-/** Premium'a özel yetenekler — paywall ve kilit metinleri tek yerden. */
-export const PREMIUM_FEATURES = PREMIUM_GATES;
-export type PremiumFeature = PremiumGate;
 
 /**
  * Elle premium verme (admin) — gün cinsinden, bakiyeye eklenir.

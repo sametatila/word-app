@@ -7226,6 +7226,36 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     "beklenen",
   );
 
+  /* ── 194. panelin varsayilani ile gecme notu ──────────────────────────
+   * `mock.unlockPct` (sonraki kagit paketini acan yuzde) ile `MOCK_PASS_PCT`
+   * (kagidin gecme notu) ayni olmak zorunda ve bunu SOYLEYEN bir yorum vardi
+   * (`gates.ts`, `unlockPct` alaninin aciklamasi: "Varsayilan MOCK_PASS_PCT
+   * ile ayni olmali"). Olcen bir sey yoktu - zorunlulugu yazan cumle, tam da
+   * bu turlarda tekrar tekrar cikan sinif.
+   *
+   * Ayrismanin bedeli kullaniciya iki farkli "basari" tanimi gostermek olurdu:
+   * kagidi "gecti" diye isaretlenen biri sonraki paketi acamazdi. Varsayilan
+   * artik sabitin KENDISI; kapi hem esitligi hem de sayinin elle yazilmamis
+   * olmasini okuyor (esitlik tek basina yetmez - ikisi birlikte degistirilip
+   * ayni sayiya getirilebilir ve baglanti yine kopuk kalir). */
+  {
+    const gates = sil(read("src/lib/premium/gates.ts"));
+    const pas = (read("src/lib/mock-exams/types.ts").match(/MOCK_PASS_PCT = (\d+)/) ?? [])[1] ?? "yok";
+    /* VARSAYILANLAR blogundan sonrasi. Ilk yazim dosyanin tamamina bakiyordu
+       ve TIP bildirimini (`unlockPct: number;`) okuyup "number;" buldu - yine
+       komsuyu olcmek. Varsayilan, tipin degil `DEFAULT_PREMIUM_CONFIG`in
+       icinde. */
+    const varsayilanlar = gates.slice(gates.indexOf("DEFAULT_PREMIUM_CONFIG"));
+    const acilis = (varsayilanlar.match(/unlockPct: ([^,\n]+)/) ?? [])[1]?.trim() ?? "yok";
+    sameList(
+      "paket acilis yuzdesi gecme notundan",
+      ["varsayilan=" + acilis, "gecme notu okunabildi=" + (pas === "yok" ? "HAYIR" : "evet")],
+      ["varsayilan=MOCK_PASS_PCT", "gecme notu okunabildi=evet"],
+      "bulunan",
+      "beklenen",
+    );
+  }
+
   /* 193'un ikinci yarisi: cumle yanittan beslense de YANIT o alani
      tasimiyorsa ekran bos basar. Iki istemci de alani gormeli - mobil
      kendi tipini yaziyor (uzak uca bagli), web ortak tipi ice aliyor. */

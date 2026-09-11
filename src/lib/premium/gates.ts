@@ -16,6 +16,7 @@
  * (bkz. `describeLimits`). Tavan normal kullanımda hiç görülmeyecek kadar
  * yüksek; işi bütçeyi tek bir hesabın yakmasından korumak.
  */
+import { MOCK_PASS_PCT } from "@/lib/mock-exams/types";
 
 /** Ücretsiz katmanın sınırları. */
 export type FreeLimits = {
@@ -164,7 +165,11 @@ export const DEFAULT_PREMIUM_CONFIG: PremiumConfig = {
   },
   mock: {
     packSize: 3,
-    unlockPct: 60,
+    /* Sayı DEĞİL sabit: aynı olması gerektiğini söyleyen bir yorum vardı
+       (bkz. `unlockPct` alanının açıklaması), ölçen bir şey yoktu. İkisi
+       ayrışsaydı kullanıcıya iki farklı "başarı" tanımı gösterilirdi —
+       kâğıdı "geçti" diye işaretlenen biri sonraki paketi açamazdı. */
+    unlockPct: MOCK_PASS_PCT,
     unlockOnComplete: true,
   },
   referral: {
