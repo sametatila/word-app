@@ -6420,3 +6420,33 @@ eklenebildi.
 de iş görüyor. Web→mobil yönü ikiz anahtarları verdi (§11.175–176),
 mobil→web yönü yüzey eksiğini. İkisi de sözlüğü bir **envanter** gibi okumaya
 dayanıyor: her anahtar bir arayüz parçasının kanıtı.
+
+
+### 11.178 Ölçüm de bir yüzey: Android'in ekran telemetrisi eksikti
+
+Envanter taramasını olay adlarına uyguladım: web istemcisi 40 olay adı
+yazıyor, mobil 28. Farkın çoğu meşru (web-özel yüzeyler, tarayıcı mikrofon
+tanılaması), ama **üçü değildi**: `page_view`, `time_spent`, `client_error`.
+
+Mobil yalnız sekme dokunuşunu (`nav`) ve günün ilk açılışını yazıyordu. Yani
+profil, kelimeler, sınav, ayarlar, yazılarım gibi **yığın ekranları hiç
+sayılmıyordu** ve "ekranda ne kadar kalınıyor" sorusu Android için cevapsızdı.
+
+**Bunun bedeli veri yanlılığı:** panodaki ekran tablosu iki platformu
+birlikte gösteriyor. Biri ölçmüyorsa tablo yanlı olur ve **bunu okuyan kimse
+anlamaz** — eksik veri, yanlış veriden daha sinsi çünkü hiçbir yerde boşluk
+görünmüyor.
+
+Web'in dört soruyu tek yerden cevaplayan katmanının mobil karşılığı yazıldı;
+süre GÖRÜNÜR süre (uygulama arkaya atılınca sayaç duruyor, üç saniyenin altı
+yazılmıyor) ve hata kancası RN'inkini **zincirliyor** — değiştirseydim
+geliştirmede kırmızı ekran, üretimde çökme raporu kaybolurdu.
+
+**§44'ün muafiyet listesi üç satır kısaldı.** Listede bu üçü "tarayıcı ölçüm
+katmanı" diye yazılmıştı — ama ölçülen şey tarayıcıya ait değil: hangi ekran
+açıldı, ne kadar kalındı, hangi hata yakalanmadı. **Muafiyetin gerekçesi,
+muafiyetin kendisinden daha çabuk eskiyor.**
+
+**Kapı iki kez yazıldı:** ilk hâli yalnız olay adlarını arıyordu ve
+`attachTelemetry()` çağrısı App'ten silinse bile yeşil kalıyordu. Olayın
+TANIMLI olması yetmez, katmanın BAĞLI olması da gerek.
