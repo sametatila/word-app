@@ -7226,6 +7226,37 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     "beklenen",
   );
 
+  /* ── 205. derin baglanti: iddia edilen yol ile karsilanan yol ────────
+   * Ayni liste UC yerde yazili: iOS beyani (`APP_LINK_PATHS`), Android
+   * manifestosu (`intent-filter` `android:path`) ve uygulamanin kendisi
+   * (`lib/deepLink` `parseDeepLink`). Ucu ayrisabilir ve iki yonu de kotudur:
+   *
+   *   - IDDIA EDILIP KARSILANMAYAN yol: baglanti uygulamayi ACAR ve kullanici
+   *     bos ekranda kalir. Iki dosyanin da yorumu bunu yaziyor.
+   *   - KARSILANIP IDDIA EDILMEYEN yol: baglanti tarayicida acilir, uygulama
+   *     hic haberdar olmaz. `/auth/app` tam boyleydi - Android hem iddia
+   *     ediyor hem karsiliyordu, iOS beyani ise iki yolda kalmisti. Sonucu:
+   *     Apple'in yerel girisinin desteklenmedigi bir iOS surumunde akis
+   *     tarayiciya dusuyor, donus baglantisi uygulamayi acmiyor ve uc dakika
+   *     yasayan token oluyor - kullanici uygulamada hâlâ girmemis.
+   *
+   * Manifestonun yorumu da "iki yol" diyordu ve ucuncusu eklendiginde geride
+   * kalmisti: zorunlulugu yazan cumlenin bayatlamasi, bu defterin en sik
+   * tekrar eden sinifi. */
+  {
+    const aasa = read("src/app/.well-known/apple-app-site-association/route.ts");
+    const manifest = read("mobile/android/app/src/main/AndroidManifest.xml");
+    const derin = sil(read("mobile/src/lib/deepLink.ts"));
+
+    const beyan = [...(aasa.match(/APP_LINK_PATHS = \[([^\]]*)\]/)?.[1] ?? "").matchAll(/"([^"]+)"/g)].map((m) => m[1]).sort();
+    const iddia = [...manifest.matchAll(/android:path="([^"]+)"/g)].map((m) => m[1]).sort();
+    /* Karsilanan yollar: `parseDeepLink` icindeki yol karsilastirmalari. */
+    const karsilanan = [...derin.matchAll(/(?:pathname === |startsWith\()"([^"]+)"/g)].map((m) => m[1]).sort();
+
+    sameList("derin baglanti yollari (iOS beyani / Android manifestosu)", beyan, iddia, "iOS", "Android");
+    sameList("derin baglanti yollari (beyan / karsilanan)", beyan, karsilanan, "beyan", "parseDeepLink");
+  }
+
   /* ── 204. DURUM SATIRI duyuruluyor mu (yuzey taramasi) ───────────────
    * §154'un kardesi: orada "secili durum", burada "bir eylemin cevabi".
    * Bir islemden sonra YERINDE beliren metin (hata, "kaydedildi", "puan

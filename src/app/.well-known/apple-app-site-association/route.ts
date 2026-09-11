@@ -22,8 +22,22 @@ import { NextResponse } from "next/server";
  */
 export const dynamic = "force-dynamic";
 
-/** Uygulamanın karşıladığı yollar (bkz. mobile deep-link yönlendirmesi). */
-export const APP_LINK_PATHS = ["/reset-password", "/api/auth/verify-email"] as const;
+/**
+ * Uygulamanın karşıladığı yollar (bkz. mobil `lib/deepLink`).
+ *
+ * ÜÇÜNCÜ YOL SONRADAN EKLENDİ VE BURASI GERİDE KALMIŞTI. `/auth/app`, sistem
+ * tarayıcısında tamamlanan girişin uygulamaya dönüş adresi: `/auth/handoff`
+ * tek kullanımlık bir token üretip buraya yönlendiriyor. Android tarafı bunu
+ * hem manifesto'da iddia ediyor hem `parseDeepLink`te karşılıyordu; iOS beyanı
+ * ise iki yolda kalmıştı. Sonucu şu: Apple'ın yerel girişinin desteklenmediği
+ * bir iOS sürümünde akış tarayıcıya düşüyor ve dönüş bağlantısı uygulamayı
+ * AÇMIYOR — token üç dakika yaşayıp ölüyor, kullanıcı uygulamada hâlâ girmemiş
+ * oluyor.
+ *
+ * Liste `check:parity`de manifesto ve `parseDeepLink` ile karşılaştırılıyor:
+ * üçü birlikte değişmeli.
+ */
+export const APP_LINK_PATHS = ["/reset-password", "/api/auth/verify-email", "/auth/app"] as const;
 
 export async function GET() {
   const team = process.env.APPLE_TEAM_ID;

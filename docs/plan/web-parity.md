@@ -9861,3 +9861,39 @@ ayrımının RN karşılığı.
 burada "bir eylemin cevabı"). Kapının sınırı **yorumunda yazılı** — ortak
 bileşenden geçen duyuruları göremez, çünkü göremeyeceği şeyi aramak yanlış
 alarm üretir. Üç enjeksiyonun üçü yakalandı, biri web tarafından.
+
+## §11.300 — iOS bir derin bağlantı yolunu iddia etmiyordu
+
+Bu tur iki **ölçülmüş olumsuz** ile başladı ve ikisi de kaydedilmeye değer:
+
+**a) İkon düğmelerinin erişilebilir adı.** İlk tarama yirmi üç şüpheli verdi;
+neredeyse hepsi yanlış alarmdı, çünkü desen görünür metni düz harf sanıyordu —
+oysa bu depoda görünür metin **her zaman** sözlükten geliyor (`{t("…")}`).
+Sözlük çağrılarını da "ad" saydıktan sonra geriye kalan üç şüphelinin üçü de
+adını bir değişkenden alıyordu (`{label}`, `{opt}`). Yani eksik yok ve statik
+bir tarama buradan öteye göremez — kapı **yazılmadı**, gürültü kapıdan kötüdür.
+
+**b) Davet bağlantısı.** Uygulamadan paylaşılan davet linki
+(`/premium?code=…`) telefonda tarayıcıda açılıyor. Bu bir eksik değil:
+`/premium` bilerek iddia edilmiyor, çünkü uygulamanın karşılayacağı bir ekran
+yok ve iki dosyanın da yorumu kuralı yazıyor — "iddia edilip karşılanmayan yol,
+tarayıcıda açılmasından kötüdür." Web'den paylaşılan link de aynı yere gidiyor.
+
+**Gerçek bulgu üçüncüsündeydi.** Aynı yol listesi **üç yerde** yazılı: iOS
+beyanı (`APP_LINK_PATHS`), Android manifestosu ve uygulamanın kendisi
+(`parseDeepLink`). Android üç yol iddia edip üçünü de karşılıyordu; **iOS
+beyanı iki yolda kalmıştı** — `/auth/app` eksikti.
+
+`/auth/app`, sistem tarayıcısında tamamlanan girişin uygulamaya dönüş adresi:
+`/auth/handoff` tek kullanımlık bir token üretip oraya yönlendiriyor. Apple'ın
+yerel girişinin desteklenmediği bir iOS sürümünde akış tarayıcıya düşüyor ve
+dönüş bağlantısı uygulamayı **açmıyor**: üç dakika yaşayan token ölüyor,
+kullanıcı uygulamada hâlâ girmemiş oluyor.
+
+Manifestonun kendi yorumu da "Sunucudaki iki beyan dosyası da aynı **iki**
+yolu sayıyor" diyordu — üçüncüsü eklendiğinde geride kalmış. Zorunluluğu yazan
+cümlenin bayatlaması, bu defterin en sık tekrar eden sınıfı.
+
+**§205** üçünü birbirine bağlıyor: iOS beyanı ↔ Android manifestosu ve beyan ↔
+`parseDeepLink`. Üç enjeksiyonun üçü yakalandı — birincisi tam da bugün
+düzelttiğim hâlin kendisi, ikincisi ters yön (iddia edilip karşılanmayan yol).

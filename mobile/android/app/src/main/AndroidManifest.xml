@@ -61,8 +61,11 @@
 
              YOLLAR TEK TEK: `/api/auth/*` gibi bir joker Google girişinin
              dönüş adresini (/api/auth/callback/google) de kapsar ve OAuth
-             dönüşü uygulamaya sıçrayıp girişi kırardı. Sunucudaki iki beyan
-             dosyası da aynı iki yolu sayıyor. -->
+             dönüşü uygulamaya sıçrayıp girişi kırardı. Sunucudaki beyan
+             dosyası (`.well-known/apple-app-site-association` `APP_LINK_PATHS`)
+             aynı ÜÇ yolu sayıyor; yorum bir süre "iki yol" diyordu ve
+             `/auth/app` eklendiğinde geride kalmıştı. Üçü `check:parity`de
+             karşılaştırılıyor. -->
         <intent-filter android:autoVerify="true">
             <action android:name="android.intent.action.VIEW" />
             <category android:name="android.intent.category.DEFAULT" />
