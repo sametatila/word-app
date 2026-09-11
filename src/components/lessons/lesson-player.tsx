@@ -26,6 +26,7 @@ import { judgeSpeech } from "@/lib/speech";
 import { type Expectation, type Lesson, type Segment } from "@/lib/lessons/types";
 import { useT, useLang } from "@/lib/i18n/client";
 import { ReportDialog } from "@/components/report-dialog";
+import { LESSON_TRY_CEILING } from "@/lib/lessons/roleplay-const";
 import { translate, type NativeLang } from "@/lib/i18n/dict";
 import { courseName, speechLocaleOf } from "@/lib/courses";
 import { parseJudgment } from "@/lib/voice-intent";
@@ -222,6 +223,14 @@ export function LessonPlayer({
   const [correctCount, setCorrectCount] = useState(0);
   /** Geçerli adımda kaç deneme yapıldı — ipucu merdiveni buna bakıyor. */
   const attempts = useRef(0);
+  /*
+   * DENEME SAYACI EKRANDA. Android her yanlistan sonra "{n}. deneme" yaziyor
+   * (`lesson.try_again`), webde hicbir yerde yazmiyordu: ogrenci kacinci
+   * denemede oldugunu ve cevabin ne zaman acilacagini bilmiyordu. `attempts`
+   * bir ref oldugu icin cizime giremiyor - yansi bir durumda tutuluyor ve
+   * ref'in degistigi her yerde birlikte guncelleniyor.
+   */
+  const [tryCount, setTryCount] = useState(0);
   /** Bu adımda cevap bekleniyor mu (ses bitti, sıra öğrencide). */
   const [awaiting, setAwaiting] = useState(false);
 
@@ -575,6 +584,7 @@ export function LessonPlayer({
         return;
       }
       attempts.current = 0;
+      setTryCount(0);
       setAwaiting(false);
       setStepIndex(index);
       setTyping(false);
@@ -730,21 +740,26 @@ export function LessonPlayer({
       }
 
       attempts.current += 1;
+      setTryCount(attempts.current);
       vibrate("wrong");
 
-      if (attempts.current >= 3) {
+      /*
+        DENEME HAKKI VE CEVABIN ACILDIGI AN ANDROID'DEKI GIBI.
+        Web cevabi IKINCI yanlista aciyor ve ogrenciye bir daha deniyordu
+        (`please_repeat` + `reopen`); UCUNCU yanlista ise cevabi hic
+        soylemeden "olsun" deyip geciyordu. Android ucuncu yanlista CEVABI
+        SOYLEYIP geciyor - yani ayni adim iki platformda iki ayri ders
+        veriyordu: birinde cevap gorulup tekrar ediliyor, otekinde adim
+        cevapla kapaniyor.
+
+        Tavan artik sabitten (`LESSON_TRY_CEILING`); daha once iki tarafta da
+        elle `3` yaziliydi.
+      */
+      if (attempts.current >= LESSON_TRY_CEILING) {
         track("lesson_step", 0, `${e.kind}:${via}`);
         interject(
-          [nar("lessonp.no_worries")],
+          [nar("common.answer_is"), { lang: "de", text: e.target }],
           () => runStepRef.current(stepIndexRef.current + 1),
-        );
-        return;
-      }
-
-      if (attempts.current === 2) {
-        interject(
-          [nar("common.answer_is"), { lang: "de", text: e.target }, nar("lessonp.please_repeat")],
-          reopen,
         );
         return;
       }
@@ -792,6 +807,7 @@ export function LessonPlayer({
     if (k && k !== "confirm") track("lesson_step", 0, `${k}:skip`);
     recognition.current?.abort();
     attempts.current = 0;
+    setTryCount(0);
     runStep(stepIndex + 1);
   }
 
@@ -1120,6 +1136,7 @@ export function LessonPlayer({
               setFeed([]);
               setCorrectCount(0);
               attempts.current = 0;
+              setTryCount(0);
               setPhase("lecture");
               runStep(0);
             }}
@@ -1306,6 +1323,13 @@ export function LessonPlayer({
                     </button>
                   </div>
                 </div>
+              ) : null}
+
+              {/* Kacinci deneme - Android ayni yeri ayni cumleyle yaziyor. */}
+              {expect && tryCount > 0 ? (
+                <p className="mb-2 text-center text-caption" style={{ color: "var(--color-danger)" }}>
+                  {t("lesson.try_again", { n: tryCount })}
+                </p>
               ) : null}
 
               {expect && expect.kind !== "confirm" && !asrAvailable ? (

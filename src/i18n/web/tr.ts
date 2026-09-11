@@ -316,8 +316,6 @@ export const trWeb: Record<string, string> = {
   "lessonp.step_truefalse": "doğru/yanlış",
   "lessonp.say_true_or_false": "Lütfen yalnızca 'doğru' ya da 'yanlış' de.",
   "lessonp.didnt_catch": "Tam duyamadım. Bir kez daha söyler misin:",
-  "lessonp.no_worries": "Sorun değil — bu, konuşmada tekrar karşına çıkacak. Devam edelim.",
-  "lessonp.please_repeat": "Lütfen tekrar et.",
   "lessonp.almost_missing": "Neredeyse! Eksik kalan:",
   "lessonp.once_more": "Bir kez daha:",
   "lessonp.lets_try_again": "Bir kez daha deneyelim:",

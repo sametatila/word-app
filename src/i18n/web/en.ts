@@ -290,8 +290,6 @@ export const enWeb: Record<string, string> = {
   "lessonp.step_truefalse": "true/false",
   "lessonp.say_true_or_false": "Please say just 'true' or 'false'.",
   "lessonp.didnt_catch": "I didn't quite catch that. Say it once more:",
-  "lessonp.no_worries": "No worries — this comes up again in the conversation. Let's move on.",
-  "lessonp.please_repeat": "Please repeat it.",
   "lessonp.almost_missing": "Almost! What's missing:",
   "lessonp.once_more": "Once more:",
   "lessonp.lets_try_again": "Let's try once more:",

@@ -290,8 +290,6 @@ export const deWeb: Record<string, string> = {
   "lessonp.step_truefalse": "richtig/falsch",
   "lessonp.say_true_or_false": "Sag bitte nur „richtig“ oder „falsch“.",
   "lessonp.didnt_catch": "Das habe ich nicht ganz verstanden. Sag es noch einmal:",
-  "lessonp.no_worries": "Kein Problem — das kommt im Gespräch noch mal. Weiter geht's.",
-  "lessonp.please_repeat": "Sprich es bitte nach.",
   "lessonp.almost_missing": "Fast! Es fehlt:",
   "lessonp.once_more": "Noch einmal:",
   "lessonp.lets_try_again": "Versuchen wir es noch einmal:",
