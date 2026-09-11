@@ -297,7 +297,7 @@ export function RoleplayExamScreen() {
               <Text variant="micro" color={colors.textMuted}>{tx("assess.overall_score", { n: overall })}</Text>
             </ProgressRing>
           ) : null}
-          <Text variant="h1" style={{ marginTop: spacing.md }}>{tx("rpexam.title")}</Text>
+          <Text accessibilityLiveRegion="polite" variant="h1" style={{ marginTop: spacing.md }}>{tx("rpexam.title")}</Text>
           <Text variant="caption" color={colors.textMuted} style={{ marginTop: 2, textAlign: "center" }}>
             {lesson.title} · {tx("lessonp.n_turns", { n: userTurns })}{result ? ` · ${tx(passed ? "rpexam.passed" : "rpexam.below_threshold", { n: EXAM_PASS_SCORE })}` : ""}
           </Text>

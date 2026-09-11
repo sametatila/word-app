@@ -203,7 +203,7 @@ export function WeeklyScreen() {
               <Text variant="micro" color={colors.textMuted}>{t("weekly.score")}</Text>
             </ProgressRing>
           ) : null}
-          <Text variant="h1" style={{ marginTop: spacing.xl }}>{t(done ? "weekly.done_title" : "weekly.none_title")}</Text>
+          <Text accessibilityLiveRegion="polite" variant="h1" style={{ marginTop: spacing.xl }}>{t(done ? "weekly.done_title" : "weekly.none_title")}</Text>
           <Text variant="body" color={colors.textMuted} style={{ marginTop: spacing.xs, marginBottom: spacing.xxl, textAlign: "center" }}>
             {done ? t("weekly.done_sub", { total: result?.total ?? 0, correct: result?.correct ?? 0 }) : t("weekly.none_sub")}
           </Text>

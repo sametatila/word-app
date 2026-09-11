@@ -185,7 +185,7 @@ export function WeeklyPlayer() {
        okunmuyordu (bkz. `writings-card`). 600'de iki temada da geçiyor. */
     const tone = result.score >= 80 ? "var(--color-mint-600)" : result.score >= 60 ? "var(--color-flame-600)" : "var(--color-rose-600)";
     return (
-      <section className="card mx-auto w-full max-w-md p-5">
+      <section role="status" className="card mx-auto w-full max-w-md p-5">
         <div className="flex items-center gap-4">
           {/* HALKA, dolu daire değil: Android sonuç puanını üç yerde de
               (tur, yürüyüş, haftalık sınav) halkayla gösteriyor ve halkanın

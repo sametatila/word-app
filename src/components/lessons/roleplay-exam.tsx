@@ -257,7 +257,7 @@ export function RoleplayExam({ lesson, cando }: { lesson: Lesson; cando: string[
     const topErrors = [...byType].sort((a, b) => b[1] - a[1]).slice(0, 2);
     const passed = result.score.overall >= EXAM_PASS_SCORE;
     return (
-      <section className="card mx-auto w-full max-w-md p-5">
+      <section role="status" className="card mx-auto w-full max-w-md p-5">
         <CoachBubble moment={passed ? "exam_pass" : "exam_fail"} mood={passed ? "cheer" : "sad"} vars={{ pct: result.score.overall, level: lesson.level }} size={56} className="mb-3" />
         <h1 className="text-h2">
           {t("rpexam.title")} · {t("common.pct", { n: result.score.overall })}

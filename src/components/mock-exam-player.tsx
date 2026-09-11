@@ -908,7 +908,7 @@ function Result({
       ) : null}
 
       {score.total > 0 ? (
-        <div className="card p-5">
+        <div role="status" className="card p-5">
           <p className="muted text-caption tracking-wide">{t("mockexam.result")}</p>
           <div className="mt-1 flex items-end justify-between">
             <p className="text-h1" style={{ color: score.passed ? "var(--color-success)" : "var(--color-danger)" }}>{t("common.pct", { n: score.pct })}</p>

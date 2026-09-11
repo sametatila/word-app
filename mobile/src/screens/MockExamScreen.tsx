@@ -1038,7 +1038,7 @@ function ResultView({
             <Text variant="h1" color={score.passed ? colors.successText : colors.dangerText}>{formatPercent(score.pct)}</Text>
             <Text variant="bodyStrong">{t("mockexam.score", { correct: score.correct, total: score.total })}</Text>
           </View>
-          <Text variant="bodyStrong" color={score.passed ? colors.successText : colors.dangerText} style={{ marginTop: spacing.sm }}>
+          <Text accessibilityLiveRegion="polite" variant="bodyStrong" color={score.passed ? colors.successText : colors.dangerText} style={{ marginTop: spacing.sm }}>
             {score.passed ? t("mockexam.passed") : t("mockexam.failed")}
           </Text>
           <Text variant="micro" color={colors.textMuted}>{t("mockexam.pass_note", { pct: MOCK_PASS_PCT })}</Text>
