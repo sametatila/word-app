@@ -1,6 +1,6 @@
 # WP-74 — İngilizce ders kapsamı B1–C1
 
-**Durum:** planlandı · **Sahip:** Claude · **Açılış:** 2026-09-11
+**Durum:** sürüyor (B1 modül 1 bitti) · **Sahip:** Claude · **Açılış:** 2026-09-11
 
 ## Kusur
 
@@ -67,6 +67,19 @@ Biri kırmızıyken modül bitmiş sayılmaz.
 
 Modül modül, her modül tek commit. B1 1→10, sonra B2, sonra C1.
 Her modülün sonunda dört kapı da yeşil olacak.
+
+### Bitenler
+
+**B1 modül 1 — İş dünyası (2026-09-11).** On ders: kariyer hikâyesi,
+özgeçmiş, niyet mektubu, iş görüşmesi, ilk hafta, toplantı ve teslim
+tarihi, maaş konuşması, iş arkadaşları, değerlendirme görüşmesi, istifa
+ve devir. Seviyenin on dilbilgisi ifadesi (B1.GR.11-20) bu modülde birer
+kez kullanıldı; ders başına bir kural, tekrar yok.
+
+İki şey ders yazmadan ÖNCE yapıldı ve sırası önemli: can-do ifadeleri
+(`cando.ts` + `FOCUS_GR_EN`) ve `prose-de/make.mjs` dosya listesi.
+İkisi de sonradan yapılsaydı kapılar yeşil görünürken içerik sessizce
+etiketsiz ve çevrilmemiş kalırdı.
 
 ## Tamamlanma ölçütü
 
