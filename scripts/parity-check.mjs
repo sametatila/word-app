@@ -6461,6 +6461,72 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   );
 }
 
+/* ── 172. ayni hatirlatma iki kez gitmesin ────────────────────────────────
+ * Uzak push Androidde BAGLI: cihaz jetonu yaziliyor (`/api/push/device`) ve
+ * sunucu uc hatirlatmayi da o jetona gonderiyor (`lib/push` runReminders /
+ * runStreakAlerts / runWeeklyReminders). Mobil AYNI ZAMANDA ayni uc
+ * hatirlatmayi cihazda YEREL olarak zamanliyordu ve sunucu kullanicinin kendi
+ * saatine bakiyor - yani kullanici ayni hatirlatmayi ayni saatte IKI KEZ
+ * aliyordu. Ustelik ikisi ayni sey degil: sunucununki kisisellestirilmis
+ * (ad, seri, bekleyen kelime, haftalik rakip), yereldeki genel bir cumle.
+ *
+ * Defterdeki "mobilde uzak push yok" notu BAYAT cikti; uretimde iki Android
+ * jetonu kayitli ve FCM anahtarlarinin ucu de dolu.
+ *
+ * Yerel zamanlama silinmedi, KOSULA baglandi: jeton yoksa (izin yok, Play
+ * hizmetleri yok, FCM kapali) hatirlatma yine cihazdan geliyor.
+ *
+ * Olculen: kosulun TEK KAPIDA olmasi (her hatirlatma turu ondan geciyor),
+ * jeton yazilinca yerellerin iptal edilmesi ve sunucunun uc hatirlatmasinin
+ * da cihaz jetonlarina gitmesi. */
+{
+  const strip = (x) => x.replace(/\/\*[\s\S]*?\*\//g, (m) => m.replace(/[^\n]/g, " ")).replace(/(^|[^:"'`\\])\/\/.*$/gm, "$1");
+  const notif = strip(read("mobile/src/lib/notifications.ts")).replace(/\s+/g, " ");
+  const cihaz = strip(read("mobile/src/lib/pushDevice.ts")).replace(/\s+/g, " ");
+  const sunucu = strip(read("src/lib/push.ts"));
+
+  sameList(
+    "yerel hatirlatma kosullu",
+    [
+      "tek kapi=" + (/async function schedule\([^)]*\)[^{]*\{ if \(hasPushDevice\(\)\) return;/.test(notif) ? "var" : "yok"),
+      "jeton yazilinca iptal=" + (/await cancelLocalReminders\(\)/.test(cihaz) ? "var" : "yok"),
+      "bayrak yaziliyor=" + (/setPushDevice\(true\)/.test(cihaz) && /setPushDevice\(false\)/.test(cihaz) ? "var" : "yok"),
+    ],
+    ["tek kapi=var", "jeton yazilinca iptal=var", "bayrak yaziliyor=var"],
+    "bulunan",
+    "beklenen",
+  );
+
+  /* Sunucunun uc hatirlatmasi da cihaz jetonlarina gidiyor mu: biri unutulsa
+     o tur Androidde yalnizca yerel kopyayla gelirdi ve o kopya artik
+     kurulmuyor - yani hatirlatma HIC gelmezdi. */
+  const govde = (ad) => {
+    const i = sunucu.indexOf(`function ${ad}`);
+    if (i < 0) return "";
+    const j = sunucu.indexOf("\nexport ", i + 10);
+    return sunucu.slice(i, j < 0 ? sunucu.length : j);
+  };
+  /* BIR SEVIYE DEVIR IZLENIYOR. Iki hatirlatma gonderimi ortak yardimciya
+     (`deliverRound`) devrediyor ve FCM cagrisi ORADA. Ilk surum yalniz
+     fonksiyonun kendi govdesine bakip "seri: fcm yok" dedi - yani komsuyu
+     degil, dogru yerin BIR USTUNU olcuyordu. */
+  const fcmGonderiyor = (ad) => {
+    const g = govde(ad);
+    if (/sendFcmRows\(/.test(g)) return "fcm var";
+    const devir = g.match(/return (\w+)\(/);
+    return devir && /sendFcmRows\(/.test(govde(devir[1])) ? "fcm var" : "fcm yok";
+  };
+  sameList(
+    "sunucu hatirlatmalari cihaza gidiyor",
+    ["gunluk", "seri", "haftalik"].map(
+      (ad, i) => ad + "=" + fcmGonderiyor(["runReminders", "runStreakAlerts", "runWeeklyReminders"][i]),
+    ),
+    ["gunluk=fcm var", "seri=fcm var", "haftalik=fcm var"],
+    "bulunan",
+    "beklenen",
+  );
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"

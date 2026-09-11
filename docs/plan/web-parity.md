@@ -8841,3 +8841,37 @@ kalsaydı bir sonraki okuyan "mobilde bu tur yok" diye bilirdi.
 **§171** turu üç eksende ölçüyor (kalite eşikleri, yedek puanlama, susturmanın
 kalkmış olması) ve iki tarafı da beklenene karşılaştırıyor. Dört enjeksiyonun
 dördü yakalandı.
+
+## §11.268 — Aynı hatırlatma Android'e iki kez gidiyordu
+
+Defterdeki "mobilde uzak push yok" notu **bayat** çıktı. Ölçüm: cihaz jetonu
+ucu iki tarafta da bağlı (`/api/push/device`), sunucu üç hatırlatmayı da o
+jetona gönderiyor, ve üretimde **iki Android jetonu kayıtlı** (en yenisi
+bugün). FCM anahtarlarının üçü de sunucu `.env`inde dolu.
+
+Ama mobil **aynı zamanda** aynı üç hatırlatmayı cihazda yerel olarak
+zamanlıyordu (`notifee`, günlük/seri/haftalık). Sunucu kullanıcının kendi
+saatine bakıyor (`profiles.timezone` + `reminder_hour`) — yani kullanıcı aynı
+hatırlatmayı **aynı saatte iki kez** alıyordu. Üstelik ikisi aynı şey değil:
+sunucununki kişiselleştirilmiş (ad, seri, bekleyen kelime sayısı, haftalık
+rakip, ortak seri), yereldeki tek bir genel cümle.
+
+Yerel zamanlama silinmedi, **koşula bağlandı**: jeton yoksa (izin verilmemiş,
+Play hizmetleri yok, FCM kapalı) hatırlatma yine cihazdan geliyor. Koşul tek
+bir kapıda — `schedule()` — yani yeni bir hatırlatma türü eklendiğinde kural
+kendiliğinden uygulanıyor. Jeton yazıldığı anda yerel kopyalar iptal ediliyor.
+
+Bayrak ayrı bir dosyada (`lib/pushState`): jetonu yazan modülle hatırlatmayı
+zamanlayan modül birbirini çağırıyor ve bayrağı ikisinden birinin içinde
+tutmak **dairesel bir içe aktarma** kurardı — Metro çoğu zaman yutar ama
+yükleme sırasına bağlı, sessiz bir `undefined` riski taşır.
+
+**§172** koşulun tek kapıda olmasını, jeton yazılınca yerellerin iptalini ve
+sunucunun üç hatırlatmasının da cihaz jetonlarına gitmesini ölçüyor. Sonuncusu
+bu düzeltmenin emniyet kemeri: bir tür sunucuda unutulsaydı, yerel kopya da
+kurulmadığı için o hatırlatma Android'e **hiç** gelmezdi.
+
+Kapı ilk sürümde yanlış ölçtü: iki hatırlatma gönderimi ortak yardımcıya
+(`deliverRound`) devrediyor ve FCM çağrısı orada; ölçüm yalnız fonksiyonun
+kendi gövdesine bakıp "seri: fcm yok" dedi. Bir seviye devir artık izleniyor.
+Beş enjeksiyonun beşi yakalandı.

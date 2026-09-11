@@ -1,6 +1,7 @@
 import notifee, { TriggerType, RepeatFrequency, AndroidImportance, AuthorizationStatus } from "@notifee/react-native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { t } from "./i18n";
+import { hasPushDevice } from "./pushDevice";
 import { api } from "../api/client";
 
 /**
@@ -141,7 +142,27 @@ function nextWeekly(weekday: number, hhmm: string): number {
   return d.getTime();
 }
 
+/**
+ * HATIRLATMAYI KİM GÖNDERİYOR.
+ *
+ * Uzak push bağlı bir cihazda üç hatırlatmayı da sunucu gönderiyor ve mesajı
+ * kişiselleştirilmiş (ad, seri, bekleyen kelime, haftalık rakip). Cihazdaki
+ * zamanlama aynı saatte genel bir cümleyle ikinci kez çalıyordu: kullanıcı
+ * aynı hatırlatmayı İKİ KEZ alıyordu. Yerel zamanlama artık yalnız jeton
+ * yokken kuruluyor — yani uzak push çalışmıyorsa hatırlatma yine geliyor.
+ */
+/** Jeton yazılınca çağrılır: yerel kopyalar artık ikinci nüsha. */
+export async function cancelLocalReminders(): Promise<void> {
+  for (const id of [ID_DAILY, ID_STREAK, ID_WEEKLY]) {
+    try { await notifee.cancelTriggerNotification(id); } catch { /* yut */ }
+  }
+}
+
 async function schedule(id: string, body: string, timestamp: number, freq: RepeatFrequency): Promise<void> {
+  /* Uzak push varsa yerel kopya kurulmuyor: çağıranların hepsi bu tek
+     kapıdan geçiyor, yani yeni bir hatırlatma türü eklendiğinde kural
+     kendiliğinden uygulanıyor. */
+  if (hasPushDevice()) return;
   await notifee.createTriggerNotification(
     { id, title: "Lernomi", body, android: { channelId: CHANNEL_ID, smallIcon: "ic_notification", pressAction: { id: "default" } } },
     { type: TriggerType.TIMESTAMP, timestamp, repeatFrequency: freq },

@@ -15,6 +15,8 @@ import {
 import { api } from "../api/client";
 import { t } from "./i18n";
 import { navigateFromPush } from "./pushRoute";
+import { setPushDevice } from "./pushState";
+import { cancelLocalReminders } from "./notifications";
 
 /**
  * Uzak bildirim (FCM) — uygulamanın geri çağırma kanalı.
@@ -70,6 +72,17 @@ async function sendToken(token: string): Promise<void> {
 let current: string | null = null;
 
 /**
+ * Sunucu bu cihaza bildirim gönderebiliyor mu.
+ *
+ * Hatırlatmaların YEREL kopyası buna bakıyor: jeton varsa hatırlatmayı sunucu
+ * gönderiyor ve aynısını cihazda ikinci kez zamanlamak, kullanıcıya aynı şeyi
+ * iki kez söylemek olurdu (bkz. `lib/notifications`).
+ */
+export function hasPushDevice(): boolean {
+  return current !== null;
+}
+
+/**
  * Girişten sonra çağrılır: izin ister, jetonu alır ve sunucuya yazar.
  * Sessizce başarısız olur — bildirim kurulamaması uygulamayı bozmamalı.
  */
@@ -81,6 +94,18 @@ export async function registerPushDevice(): Promise<void> {
     if (!token || token === current) return;
     await sendToken(token);
     current = token;
+    setPushDevice(true);
+    /*
+     * YEREL KOPYALAR İPTAL EDİLİYOR.
+     *
+     * Jeton yazıldığı andan itibaren üç hatırlatmayı da sunucu gönderiyor
+     * (`lib/push` `runReminders`/`runStreakAlerts`/`runWeeklyReminders`) ve
+     * sunucunun mesajı kişiselleştirilmiş: ad, seri, bekleyen kelime sayısı,
+     * haftalık rakip. Cihazdaki zamanlama aynı saatte genel bir cümleyle
+     * ikinci kez çalıyordu — kullanıcı aynı hatırlatmayı iki kez alıyordu.
+     * Tercihler duruyor: kullanıcı kapatırsa sunucu da göndermiyor.
+     */
+    await cancelLocalReminders();
   } catch {
     /* jeton alınamadı ya da sunucuya yazılamadı: bir sonraki açılışta yeniden denenir */
   }
@@ -91,6 +116,7 @@ export async function unregisterPushDevice(): Promise<void> {
   if (!ready() || !current) return;
   const token = current;
   current = null;
+  setPushDevice(false);
   try {
     await api("/api/push/device", { method: "DELETE", body: JSON.stringify({ token }) });
   } catch {
@@ -118,6 +144,8 @@ export function attachPushListeners(): () => void {
   const fcm = getMessaging();
   const offToken = onTokenRefresh(fcm, (token: string) => {
     current = token;
+    /* Jeton yenilendi: uzak push hâlâ çalışıyor demek. */
+    setPushDevice(true);
     void sendToken(token).catch(() => {});
   });
 
