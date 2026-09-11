@@ -13,7 +13,8 @@ import { Telemetry } from "./telemetry";
 import { AchievementUnlock } from "./achievement-unlock";
 import { OnboardingAdopt } from "./onboarding-adopt";
 import { track } from "@/lib/track";
-import { useT } from "@/lib/i18n/client";
+import { useLang, useT } from "@/lib/i18n/client";
+import { formatNumber } from "@/lib/i18n/dict";
 import { FlameIcon, HandshakeIcon, LearnIcon, ListIcon, PathIcon, SkillsIcon, SparkIcon, UserIcon } from "./icons";
 
 /**
@@ -466,6 +467,15 @@ export function AppShell({
 }
 
 function StatPills({ streak, xp }: { streak: number; xp: number }) {
+  /*
+   * SAYI BİÇİMİ SÖZLÜKTEN. XP rozeti ham sayıyı basıyordu ("12450"), oysa
+   * webin geri kalanı `formatNumber` kullanıyor: Türkçe ve Almanca arayüzde
+   * binlik ayracı nokta ("12.450"), İngilizcede virgül. Üst bar uygulamanın
+   * her ekranında duruyor, yani ayraçsız sayı en çok görülen sayıydı.
+   * Android'de bu rozet yok (telefon başlığı dar, orada yalnız seri var) —
+   * karşılaştırma bu yüzden webin kendi içinde.
+   */
+  const lang = useLang();
   return (
     <div className="flex items-center gap-2 text-sm font-bold">
       <span
@@ -478,7 +488,7 @@ function StatPills({ streak, xp }: { streak: number; xp: number }) {
         className="flex items-center gap-1 rounded-full px-2.5 py-1"
         style={{ background: "color-mix(in srgb, var(--color-brand-500) 14%, transparent)", color: "var(--color-brand)" }}
       >
-        <SparkIcon size={15} /> {xp}
+        <SparkIcon size={15} /> {formatNumber(xp, lang)}
       </span>
     </div>
   );

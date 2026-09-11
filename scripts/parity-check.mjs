@@ -4903,6 +4903,80 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   sameList("calisma suresi karosu", sure("mobile/src/screens/ProgressScreen.tsx").concat(sure("mobile/src/lib/useMe.ts")).sort(), sure("src/components/progress-view.tsx"));
 }
 
+/* ── 140. birikmis toplam sayilar bicimli mi ──────────────────────────────
+ * Ust bardaki XP rozeti HAM sayiyi basiyordu ("12450"), oysa webin geri
+ * kalani `formatNumber` kullaniyor: Turkce ve Almanca arayuzde binlik ayraci
+ * nokta, Ingilizcede virgul. Ust bar uygulamanin HER ekraninda duruyor, yani
+ * ayracsiz sayi en cok gorulen sayiydi.
+ *
+ * Olculen: iki tarafta da JSX'in icine ham bir birikmis toplam basilmiyor.
+ * Kural tek tek dosya adi saymiyor, YUZEYI tariyor - yeni bir ekran ayni
+ * hatayi yaparsa da yakalanir.
+ *
+ * MUAF iki bicim, ikisi de gerekcesiyle:
+ *   - `{a, b, c}` gibi virgullu ifadeler: bunlar JSX cocugu degil, cozme
+ *     (destructuring) kalibi ve tarama onlari da goruyor.
+ *   - `app/admin/*`: yonetim panosu bastan beri TEK DILLI (metinler kodda
+ *     Turkce yazili), orada `toLocaleString("tr-TR")` tutarsizlik degil
+ *     bilincli bir secim. Muafiyet kendini denetliyor: panoya `useT`/`t(`
+ *     girerse (yani cok dilli olursa) satir duser. */
+{
+  const walkTsx = (d, out = []) => {
+    for (const e of readdirSync(new URL("../" + d, import.meta.url), { withFileTypes: true })) {
+      const p = d + "/" + e.name;
+      if (e.isDirectory()) { if (!/node_modules|__tests__|\/i18n/.test("/" + p)) walkTsx(p, out); }
+      else if (/\.tsx$/.test(e.name)) out.push(p);
+    }
+    return out;
+  };
+  const hamlar = [];
+  for (const kok of ["src/components", "src/app", "mobile/src"]) {
+    for (const f of walkTsx(kok)) {
+      if (f.startsWith("src/app/admin")) continue; // yukaridaki muafiyet
+      const src = read(f).replace(/\/\*[\s\S]*?\*\//g, " ");
+      /* IKI GOSTERIM YERI: JSX cocugu (webin kalibi) ve `value=`/`label=`
+         nitelikleri (mobilin kalibi - toplamlar `Stat`/`StatTile` icine prop
+         olarak giriyor). Ilk yazilisinda yalniz cocuk pozisyonu araniyordu ve
+         enjeksiyon mobil tarafta HIC yakalanmadi: `value={me.xp}` niteliktir.
+         Olcunun komsusunu olcmenin on altinci bicimi. */
+      for (const m of src.matchAll(/(?:>|\}|\s|(?:value|label|title)=)\{([^{}]*\b(?:totalXp|weeklyXp|\w*\.xp|xp)\b[^{}]*)\}/g)) {
+        const ifade = m[1].trim();
+        /* `format*` bicimli; `,` cozme kalibi; `:` nesne; `=>` islev. */
+        if (/format|=>|:|,/.test(ifade)) continue;
+        /* NITELIK pozisyonunda bicimleme BIR KATMAN ASAGIDA olabiliyor.
+           Iki cift muaf ve ikisi de dosya+etiket olarak yazili (etiket adi tek
+           basina yetmez: webin `Stat`i icinde bicimliyor, mobilin `Stat`i
+           bicimlemiyor - ayni ad, ayri davranis):
+             - `social/public-profile` `<Stat>`: `formatNumber`i kendi
+               govdesinde cagiriyor (asagida denetleniyor),
+             - `session-player` `<CountUp>`: TUR BASINA kazanilan XP, iki
+               haneli bir sayi; Android de ham yaziyor (`+${xpGained} XP`). */
+        const etiket = src.slice(0, m.index).match(/<([A-Z]\w*)[^<>]*$/)?.[1] ?? "";
+        const cift = f.split("/").pop() + ":" + etiket;
+        if (cift === "public-profile.tsx:Stat" || cift === "session-player.tsx:CountUp") continue;
+        hamlar.push(f.split("/").pop() + ": {" + ifade + "}");
+      }
+    }
+  }
+  sameList("birikmis toplam bicimi", hamlar.length ? hamlar : ["yok"], ["yok"], "ham basilan", "beklenen");
+
+  /* Muafiyetlerin kendisi: `<Stat>` gercekten bicimliyor mu, `CountUp`
+     gercekten ham mi. Biri degisirse muafiyet gerekcesi de degisir. */
+  const statBicimli = /formatNumber\(value \?\? 0, lang\)/.test(read("src/components/social/public-profile.tsx"));
+  const countUpHam = /return <>\{shown\}<\/>;/.test(read("src/components/celebrate.tsx"));
+  sameList(
+    "toplam bicimi muafiyetleri",
+    ["Stat bicimliyor=" + (statBicimli ? "evet" : "hayir"), "CountUp ham=" + (countUpHam ? "evet" : "hayir")],
+    ["Stat bicimliyor=evet", "CountUp ham=evet"],
+    "bulunan",
+    "beklenen",
+  );
+
+  /* Yonetim panosu hâlâ tek dilli mi. */
+  const pano = ["src/app/admin/dashboard.tsx", "src/app/admin/users-table.tsx"].map((f) => read(f)).join("\n");
+  sameList("yonetim panosu tek dilli", [/\buseT\(|\bt\(\"/.test(pano) ? "cok dilli olmus" : "tek dilli"], ["tek dilli"], "bulunan", "beklenen");
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"

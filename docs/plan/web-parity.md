@@ -7808,3 +7808,37 @@ karo, iki ürün — ve kullanıcı ikisini yan yana görüyor (aynı hesap).
 
 **§139** karonun etiketini ve süre biçimini kuran anahtarları ölçüyor. Üç
 enjeksiyonun üçü de yakalandı (webin etiketi, webin biçimi, mobilin anahtarı).
+
+### 11.233 En çok görülen sayı ayraçsızdı
+
+Üst bardaki **XP rozeti ham sayıyı** basıyordu ("12450"), oysa webin geri
+kalanı `formatNumber` kullanıyor: Türkçe ve Almanca arayüzde binlik ayracı
+nokta, İngilizcede virgül. Üst bar uygulamanın **her** ekranında duruyor, yani
+ayraçsız sayı en çok görülen sayıydı. Android'de o rozet yok (telefon başlığı
+dar, orada yalnız seri var), o yüzden karşılaştırma webin kendi içindeydi.
+
+`formatXp`in kısaltması (1240 → "1,2k") **bilerek** iki platformda farklı ve
+gerekçesi zaten yazılıydı: mobilde karo dar, webde ızgara geniş. Ona
+dokunulmadı.
+
+**§140** kuralı yüzey tarayarak kuruyor — dosya adı saymıyor, yeni bir ekran
+aynı hatayı yaparsa da yakalanır. Kapının gelişimi bu turun en öğretici yanı:
+
+1. İlk hâli yalnız **JSX çocuğu** pozisyonuna bakıyordu. Web'in kalıbı öyle,
+   ama mobilin toplamları `value={...}` **niteliği** olarak `Stat`/`StatTile`
+   içine giriyor: mobil enjeksiyonu hiç yakalanmadı. **On altıncı biçim.**
+2. Nitelik pozisyonu eklenince iki "hata" daha çıktı ve ikisi de **yanlış
+   alarmdı**: `social/public-profile` `<Stat>` biçimlemeyi kendi gövdesinde
+   yapıyor, `session-player` `<CountUp>` ise tur başına kazanılan iki haneli
+   XP'yi yazıyor (Android de ham yazıyor). Muafiyet **dosya+etiket** çifti
+   olarak yazıldı, çünkü etiket adı tek başına yetmiyor: webin `Stat`i
+   biçimliyor, mobilin `Stat`i biçimlemiyor — aynı ad, ayrı davranış.
+3. Muafiyetlerin kendisi de ölçülüyor: `<Stat>` gerçekten `formatNumber`
+   çağırıyor mu, `CountUp` gerçekten ham mı.
+
+Yönetim panosu ayrı bir muafiyet: baştan beri **tek dilli** (metinler kodda
+Türkçe), orada `toLocaleString("tr-TR")` tutarsızlık değil bilinçli seçim.
+Panoya `useT` girerse satır düşer.
+
+Dört enjeksiyonun dördü de yakalandı (webin rozeti, mobilin niteliği, webin
+`Stat`i, mobilin `UserScreen`i).
