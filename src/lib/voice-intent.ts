@@ -83,15 +83,34 @@ export function foldGerman(text: string): string {
  * Kısa sözcükler tam-sözcük (alt dizede yanlış eşleşmesin: "weitergehen"
  * içinde "weiter"), uzun kalıplar alt dize olarak aranıyor.
  */
-const SKIP_DE_WORDS = new Set(["weiter", "ueberspringen", "naechste", "naechstes"]);
-const SKIP_DE_PHRASES = ["weiss nicht", "weiss es nicht", "keine ahnung", "keine idee", "kein plan"];
+const SKIP_WORDS: Record<string, string[]> = {
+  de: ["weiter", "ueberspringen", "naechste", "naechstes"],
+  en: ["next", "skip", "pass"],
+};
+const SKIP_PHRASES: Record<string, string[]> = {
+  de: ["weiss nicht", "weiss es nicht", "keine ahnung", "keine idee", "kein plan"],
+  en: ["don't know", "dont know", "do not know", "no idea", "dunno", "not sure"],
+};
 
-export function parseSkipDe(text: string): boolean {
+/**
+ * Teslim işareti HEDEF DİLE göre.
+ *
+ * Yalnız Almanca kalıplar vardı ve ad da bunu söylüyordu (`parseSkipDe`):
+ * İngilizce kursta "skip" ya da "don't know" demek turu atlatmıyordu, çünkü
+ * ayrıştırıcı o sözcükleri hiç tanımıyordu. Mobil bu düzeltmeyi almıştı
+ * (`lib/voiceMatch` SKIP tablosu), web almamıştı.
+ */
+export function parseSkip(text: string, lang = "de"): boolean {
   const folded = foldGerman(text);
   if (!folded) return false;
   const words = new Set(folded.split(" "));
-  if ([...SKIP_DE_WORDS].some((w) => words.has(w))) return true;
-  return SKIP_DE_PHRASES.some((p) => folded.includes(p));
+  if ((SKIP_WORDS[lang] ?? SKIP_WORDS.de).some((w) => words.has(w))) return true;
+  return (SKIP_PHRASES[lang] ?? SKIP_PHRASES.de).some((p) => folded.includes(p));
+}
+
+/** Yürüyüş girişinde bir kez okunan teslim sözcüğü — dile göre. */
+export function skipWord(lang = "de"): string {
+  return (SKIP_WORDS[lang] ?? SKIP_WORDS.de)[0];
 }
 
 /**

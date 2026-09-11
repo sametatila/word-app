@@ -12,7 +12,7 @@ import type { NativeLang } from "@/lib/i18n/dict";
 import { courseName } from "@/lib/courses";
 import { useListen } from "@/components/use-listen";
 import { spokenMatches } from "@/components/games/types";
-import { parseConfirm, parseSkipDe } from "@/lib/voice-intent";
+import { parseConfirm, parseSkip, skipWord } from "@/lib/voice-intent";
 import { useWakeLock } from "@/components/use-wake-lock";
 import { sharedAudioContext } from "@/lib/audio-context";
 import {
@@ -1074,7 +1074,9 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
         hintDone.current = true;
         preroll.push(
           { lang, narration: true, text: t("walk.skip_hint_before") },
-          { lang: "de", text: "weiter" },
+          /* Teslim sözcüğü HEDEF DİLDE: sabit "weiter" yazılıydı ve İngilizce
+             kursta öğrenciye almanca bir sözcük okunuyordu. */
+          { lang: course as "de" | "en", text: skipWord(course) },
           { lang, narration: true, text: t("walk.skip_hint_after") },
         );
       }
@@ -1142,7 +1144,7 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
               target,
               // Doğru cevap DA teslim işareti ("weiter") de dinlemeyi erken
               // kapatır: cevap veren de teslim eden de pencerenin dolmasını beklemesin.
-              (alts) => spokenMatches(alts, [target, word.de]) || alts.some(parseSkipDe),
+              (alts) => spokenMatches(alts, [target, word.de]) || alts.some((h) => parseSkip(h, course)),
               [glossSegment(word, lang)],
             );
           let heard = await ask();
@@ -1175,7 +1177,7 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
           const ok = !unheard && spokenMatches(heard, [target, word.de]);
           // Teslim YANLIŞ değil: ceza yok, kısa motive + doğrusu. İşaret ALMANCA
           // veriliyor çünkü de-DE tanıyıcı Türkçe "bilmiyorum"u yakalayamıyor.
-          const skipped = !unheard && !ok && heard.some((h) => parseSkipDe(h));
+          const skipped = !unheard && !ok && heard.some((h) => parseSkip(h, course));
           setHeardText(said);
 
           // Pencere her turda güncelleniyor: duyulan da duyulmayan da giriyor.
@@ -1331,7 +1333,7 @@ export function WalkPlayer({ onExit }: { onExit: () => void }) {
       play("start");
       }
     },
-    [askContinue, fetchSession, flush, hear, release, say, lang, t],
+    [askContinue, course, fetchSession, flush, hear, release, say, lang, t],
   );
 
   /**

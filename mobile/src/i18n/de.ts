@@ -1357,6 +1357,11 @@ export const de: Record<string, string> = {
   "walk.tour_done_continue": "Runde beendet. {correct} von {total} richtig. Machen wir weiter?",
   "walk.error_title": "Die Runde ließ sich nicht öffnen",
   "walk.error_sub": "Prüf deine Verbindung und versuch es noch mal.",
+  /* Teslim işareti: yürüyüşe girişte BİR KEZ okunuyor. Android atlamayı
+     tanıyordu ama varlığını hiç söylemiyordu. */
+  "walk.skip_ok": "Nicht wissen ist okay",
+  "walk.skip_hint_before": "Bei einem Wort, das du nicht kennst, sag",
+  "walk.skip_hint_after": ".",
   "walk.greeting": "Los geht es. Hör die Bedeutung und sag sie auf {lang}.",
   "walk.no_more": "Für heute gibt es keine Wiederholungen mehr.",
   "walk.continue_yes_no": "Machen wir weiter? Sag ja oder nein.",

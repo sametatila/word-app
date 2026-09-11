@@ -169,6 +169,11 @@ const SKIP: Record<string, RegExp[]> = {
   ],
 };
 
+/** Yürüyüş girişinde bir kez okunan teslim sözcüğü — dile göre (web `skipWord`). */
+export function skipWord(lang: string = currentTargetLang()): string {
+  return lang === "en" ? "skip" : "weiter";
+}
+
 export function parseSkip(said: string, lang: string = currentTargetLang()): boolean {
   const s = (said || "").toLowerCase();
   return (SKIP[lang] ?? SKIP.de).some((re) => re.test(s));

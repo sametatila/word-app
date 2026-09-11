@@ -1359,6 +1359,11 @@ export const enBase: Record<string, string> = {
   "walk.tour_done_continue": "Tour finished. {correct} correct out of {total}. Shall we continue?",
   "walk.error_title": "The round couldn't be opened",
   "walk.error_sub": "Check your connection and try again.",
+  /* Teslim işareti: yürüyüşe girişte BİR KEZ okunuyor. Android atlamayı
+     tanıyordu ama varlığını hiç söylemiyordu. */
+  "walk.skip_ok": "Not knowing is fine",
+  "walk.skip_hint_before": "For a word you don't know, say",
+  "walk.skip_hint_after": ".",
   "walk.greeting": "Here we go. Listen to the meaning, then say it in {lang}.",
   "walk.no_more": "No reviews left for today.",
   "walk.continue_yes_no": "Shall we continue? Say yes or no.",

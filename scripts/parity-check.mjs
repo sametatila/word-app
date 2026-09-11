@@ -3837,6 +3837,38 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   );
 }
 
+/* ── 114. yuruyus modunda teslim isareti ──────────────────────────────────
+ * Iki yonlu bir ayrisma:
+ *
+ * ANDROID SOYLEMIYORDU. Atlama bastan beri taniniyordu (`parseSkip`) ama
+ * varligi hicbir yerde yazmiyor ve SOYLENMIYORDU: bilmedigi kelimede tikanan
+ * kullanici ya susuyor (duyulmadi sayiliyor) ya da yanlis bir sey soyluyordu.
+ * Web girise bir kez okuyor ("Bilmedigin kelimede <weiter> de").
+ *
+ * WEB YALNIZ ALMANCA TANIYORDU. Ayristiricinin adi da bunu soyluyordu
+ * (`parseSkipDe`): Ingilizce kursta "skip" demek turu atlatmiyordu. Mobil bu
+ * duzeltmeyi almisti, web almamisti - ve girişte okunan sozcuk de sabit
+ * "weiter"di, yani Ingilizce kursta Almanca bir sozcuk okunuyordu. */
+{
+  /* "ingilizce taniniyor" ölçümü ilk yazımda yalnız `en: [` arıyordu ve
+     dosyadaki BAŞKA bir tablo (evet/hayır kalıpları) onu karşılıyordu:
+     atlama tablosundan İngilizce silindiğinde kapı yeşil kaldı. Desen artık
+     tablonun kendi adına bağlı. */
+  const teslim = (yollar, re, skipRe) => {
+    const src = yollar.map((p) => read(p)).join("\n").replace(/\/\*[\s\S]*?\*\//g, " ").replace(/\/\/[^\n]*/g, " ");
+    return [
+      "giriste okunuyor=" + (/walk\.skip_hint_before/.test(src) ? "var" : "yok"),
+      "sozcuk dile gore=" + (re.test(src) ? "var" : "yok"),
+      "ingilizce taniniyor=" + (skipRe.test(src) ? "var" : "yok"),
+    ];
+  };
+  sameList(
+    "yuruyus teslim isareti",
+    teslim(["mobile/src/screens/WalkModeScreen.tsx", "mobile/src/lib/voiceMatch.ts"], /skipWord\(\)/, /const SKIP: Record<string, RegExp\[\]> = \{[\s\S]{0,400}?en: \[/),
+    teslim(["src/components/walk-player.tsx", "src/lib/voice-intent.ts"], /skipWord\(course\)/, /const SKIP_WORDS[\s\S]{0,200}?en: \[/),
+  );
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"

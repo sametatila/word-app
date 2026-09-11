@@ -1362,6 +1362,11 @@ export const tr: Record<string, string> = {
   "walk.tour_done_continue": "Tur bitti. {total} sorudan {correct} doğru. Devam edelim mi?",
   "walk.error_title": "Tur açılamadı",
   "walk.error_sub": "Bağlantını kontrol edip tekrar dene.",
+  /* Teslim işareti: yürüyüşe girişte BİR KEZ okunuyor. Android atlamayı
+     tanıyordu ama varlığını hiç söylemiyordu. */
+  "walk.skip_ok": "Bilmiyorsan sorun değil",
+  "walk.skip_hint_before": "Bilmediğin kelimede",
+  "walk.skip_hint_after": "de.",
   "walk.greeting": "Hazırsan başlıyoruz. Anlamı duy, {lang} karşılığını söyle.",
   "walk.no_more": "Bugünlük tekrar kalmadı.",
   "walk.continue_yes_no": "Devam edelim mi? Evet ya da hayır de.",

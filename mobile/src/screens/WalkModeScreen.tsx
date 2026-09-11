@@ -21,7 +21,7 @@ import { currentLang, nativeLangName, targetLangName } from "../lib/i18n";
 import { ensureMicPermission, listenOnce, stopListening, setKeepAwake, azureListenOnce, startWalkService, stopWalkService, onScreenState, onWalkStop, onWalkServiceFailed, speakServerTts, stopServerTts, nativeDelay, nativeHttpGet } from "../lib/stt";
 import { currentTargetLocale } from "../lib/courses";
 import { API_BASE } from "../api/client";
-import { spokenMatches, parseSkip, encourage, parseConfirm } from "../lib/voiceMatch";
+import { spokenMatches, parseSkip, skipWord, encourage, parseConfirm } from "../lib/voiceMatch";
 import { sfx, setSfxScreenOff, sfxDurationMs } from "../lib/sfx";
 import { bumpStats } from "../lib/statsSignal";
 import { haptic } from "../lib/haptics";
@@ -509,6 +509,13 @@ export function WalkModeScreen() {
       // Kısa TTS karşılama — doğrudan ilk kelimeye dalmadan.
       setVerdict(null); setHeard(""); setGreeting(true); setPhase("speaking");
       await sayNative(tx("walk.greeting", { lang: targetLangName() }));
+      /* TESLİM İŞARETİ BİR KEZ SÖYLENİYOR. Atlama baştan beri tanınıyordu
+         (`parseSkip`) ama varlığı hiçbir yerde YAZMIYOR ve SÖYLENMİYORDU:
+         bilmediği kelimede tıkanan kullanıcı ya susuyor (duyulmadı sayılıyor)
+         ya da yanlış bir şey söylüyordu. Web girişte bir kez okuyor. */
+      await sayNative(tx("walk.skip_hint_before"));
+      await sayTarget(skipWord());
+      await sayNative(tx("walk.skip_hint_after"));
       setGreeting(false);
       if (!mounted.current) return;
     }
