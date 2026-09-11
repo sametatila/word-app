@@ -3176,6 +3176,24 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   sameList("gunun turu tablo halleri", hal("mobile/src/screens/DailyScreen.tsx"), hal("src/components/daily-player.tsx"));
 }
 
+/* ── 88. yazilarim listesinin BOS hali ────────────────────────────────────
+ * Bos liste bir cikis yolu vermeli: ne oldugunu anlatan bir satir ve
+ * kullaniciyi yazma alistirmalarina goturen bir dugme. Mobilde tek cumle
+ * vardi ve "nereye gidecegim" sorusu cevapsizdi. Hata hali AYRI kalmali -
+ * agi kopan kullaniciya "yazin yok" demek yanlis. */
+{
+  const bos = (p) => {
+    const src = read(p).replace(/\/\*[\s\S]*?\*\//g, " ").replace(/\/\/[^\n]*/g, " ");
+    return [
+      "baslik=" + (src.includes("writ.empty_title") ? "var" : "yok"),
+      "aciklama=" + (src.includes("writ.empty_sub") ? "var" : "yok"),
+      "cikis yolu=" + (src.includes("writ.go_to_writing") ? "var" : "yok"),
+      "hata ayri=" + (/writings\.couldn_t_load_writings|writ\.load_failed/.test(src) ? "var" : "yok"),
+    ];
+  };
+  sameList("yazilarim bos hali", bos("mobile/src/screens/WritingsScreen.tsx"), bos("src/components/writings-card.tsx"));
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"

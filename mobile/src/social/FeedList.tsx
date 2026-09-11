@@ -108,7 +108,7 @@ export function FeedList({ onFindFriends }: { onFindFriends?: () => void }) {
   if (!items.length)
     return (
       <View>
-        <EmptyCard icon={SparkIcon} tint={colors.primary} title={t("feedlist.your_feed_is_still_empty")} text={t("feedlist.empty_text")} action={onFindFriends ? t("feedlist.find_friends") : undefined} onAction={onFindFriends} />
+        <EmptyCard icon={SparkIcon} tint={colors.primary} title={t("feedlist.your_feed_is_still_empty")} text={t("feedlist.empty_text")} action={onFindFriends ? t("friends.find_friends") : undefined} onAction={onFindFriends} />
         <ErrorText text={err} />
       </View>
     );
