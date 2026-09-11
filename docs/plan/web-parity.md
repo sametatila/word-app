@@ -11074,3 +11074,50 @@ bu bir tasarım kararı), mobilde `ErrorText`e `accessibilityLiveRegion="polite"
 §222 üç ölçüt okuyor ve üçüncüsü toplamanın **en kolay yanlışını** kapsıyor:
 web'de elle yazılmış hata satırı kalıp kalmadığı (on bir yuvadan birini
 atlamak). Üç enjeksiyonun üçü de ayrı ayrı yakalandı.
+
+## §11.337 — Turun sonucu duyurulmuyordu; iki yüzey kapandı, dokuzu ölçüldü
+
+§11.336'nın mutlak ölçütü işe yaradığı için aynı bakışı **başarı/onay** ve
+**sonuç** geri bildirimlerine taşıdım.
+
+**Onay tarafı temiz çıktı** — hipotezin yarısı yanlıştı. Web'de başarı
+mesajları zaten duyuruluyor: `AuthNotice` kökte çözmüş ve yorumu kuralı da
+yazıyor ("Hata `alert`, başarı `status`: ilki sözü keser, ikincisi sırasını
+bekler"); `linked-accounts` ve `friend-list` de `role="status"` taşıyor.
+Mobilde `FriendRows` ve `ActiveSessions` `accessibilityLiveRegion="polite"`
+kullanıyor.
+
+Tek fark: web'in **iki katmanı** var (hata `alert`, başarı `status`), mobilin
+**bir katmanı** (her şey `polite`; `assertive` mobilde hiç kullanılmıyor).
+İkisi de savunulabilir ve söz konusu metinler küçük onaylar ("dürtüldü"), o
+yüzden **değiştirilmedi** — burada yazılı olması yeter, bir sonraki tur
+yeniden tartışmasın.
+
+**Sonuç tarafı ise neredeyse tamamen sessizdi.** Bir tur bitince kart soru
+listesinin **yerine** geliyor: sorular kayboluyor, yerine puan ve yargı
+beliriyor. Ölçüm — on bir web sonuç yüzeyi ve on iki mobil sonuç ekranı
+tarandı:
+
+| | duyuran |
+|---|---|
+| web | yalnız `exam-player` (o da bir hata satırı) |
+| mobil | yalnız `ChallengeScreen` ve `ExamScreen` (birer satır) |
+
+Yani bir kullanıcı beceri egzersizini ya da ünite quizini bitirdiğinde ekran
+okuyucu **hiçbir şey** söylemiyordu: bitti mi, kaç doğru, geçti mi.
+
+**Bu turda iki yüzey kapandı** ve ikisi en çok kullanılanlar: beceri
+egzersizinin sonucu (beş oynatıcı da `player-shell`den geçiyor) ve ünite
+quizinin sonucu. Web'de kabın `role="status"`u, mobilde sonuç metninin
+`accessibilityLiveRegion`ı — ikisi de platformun kendi kalıbı.
+
+**Geri kalan dokuz yüzey ölçüldü ve adlarıyla burada:** patron turu
+(`boss-player` ↔ `BossScreen`), meydan okuma (`challenge-player` ↔
+`ChallengeScreen`), günün turu (`daily-player` ↔ `DailyScreen`), haftalık
+(`weekly-player` ↔ `WeeklyScreen`), deneme sınavı (`mock-exam-player` ↔
+`MockExamScreen`), seviye sınavı (`exam-player` ↔ `ExamScreen`), rol yapma
+(`roleplay-exam` ↔ `RoleplayExamScreen`), oturum (`session-player` ↔
+`GameScreen`) ve yürüyüş (`walk-player` ↔ `WalkModeScreen`). Hepsini bir
+turda eklemek doğru olmazdı: sonuç kabı her ekranda ayrı yerde ve bazılarında
+birden fazla sonuç durumu var (sınavın bölüm sonu ile kâğıt sonu ayrı). Sırayla
+kapanacak; §223 şimdilik kapanan ikisini tutuyor.
