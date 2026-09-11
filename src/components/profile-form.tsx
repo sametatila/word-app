@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, type ReactNode } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { AlertIcon, ChevronRightIcon } from "@/components/icons";
 import { VoicePicker } from "@/components/voice-picker";
@@ -12,7 +12,8 @@ import { SettingRow } from "@/components/setting-row";
 import { hasMicConsent, setMicConsent } from "@/lib/mic-consent";
 import { ThemeSetting } from "@/components/theme-toggle";
 import { useT, useLang } from "@/lib/i18n/client";
-import { Group, Section } from "@/components/settings-section";
+import { Group, Row } from "@/components/settings-section";
+import { LinkedAccounts } from "@/components/account/linked-accounts";
 import { courseName, courseSub, coursesForNative } from "@/lib/courses";
 import { LangSetting } from "@/components/lang-setting";
 import { defaultVoice, type VoiceId } from "@/lib/tts/voices";
@@ -66,17 +67,13 @@ const LEVELS = [
  */
 export function ProfileForm({
   initial,
-  linkedAccounts,
+  googleEnabled,
 }: {
   initial: Initial;
   /** Armanın türetildiği hesap kimliği — sıralamadakiyle aynı görünsün diye. */
   userId: string;
-  /**
-   * Giriş yöntemleri bölümü. Sunucuda çiziliyor (Google yapılandırılmış mı
-   * bilgisini istemciye taşımamak için) ama YERİ burası: mobilde HESAP'ın
-   * hemen altında.
-   */
-  linkedAccounts?: ReactNode;
+  /** Google giriş açık mı — sır değil, `/api/config` de aynı bayrağı veriyor. */
+  googleEnabled: boolean;
 }) {
   const t = useT();
   const lang = useLang();
@@ -132,6 +129,44 @@ export function ProfileForm({
     }
   }
 
+  const nameRow = (
+    <Row label={t("settings.sec_name")}>
+      <label className="block">
+        <input
+        value={displayName}
+        onChange={(e) => setDisplayName(e.target.value)}
+        /*
+          ODAKTAN ÇIKINCA yazılıyor, her tuşta değil: her harfte bir istek
+          atmak sunucuya gereksiz yük, üstelik yarım yazılmış bir adı
+          kaydederdi. Boş ad sunucuda da reddediliyor; burada hiç
+          gönderilmiyor ki kullanıcı sebepsiz bir hata satırı görmesin.
+        */
+        onBlur={() => {
+          if (!nameOk) { setNameError(t("prof.name_required")); return; }
+          setNameError(null);
+          if (cleanName !== initial.displayName) void patch({ displayName: cleanName }, () => track("setting_change", 0, "name"));
+        }}
+        /* UZUNLUK SUNUCUNUN TUTTUĞU KADAR. Kutu 60 karakter kabul
+           ediyordu ama uç adı 40'a kırpıyor (`/api/profile`
+           `name.slice(0, 40)`): kullanıcı 55 karakterlik adını yazıp
+           kaydediyor, ekran "kaydedildi" diyor ve ad bir sonraki açılışta
+           kısalmış oluyordu — sessiz bir kayıp. §144'ün kuralının ters
+           yönü: yüzey, sunucunun KABUL ETTİĞİNDEN AZ da teklif etmemeli,
+           TUTTUĞUNDAN ÇOK da. */
+        maxLength={40}
+        placeholder={t("settings.display_name")}
+        className="option w-full px-4 py-3 text-base outline-none focus:border-[color:var(--color-brand)]"
+        />
+      </label>
+      {nameError ? (
+        <p role="alert" className="text-caption" style={{ color: "var(--color-rose)" }}>{nameError}</p>
+      ) : null}
+      {/* Hesap silme buradan PROFİLE taşındı (çıkış yapın altına): yıkıcı
+        eylem, ad kutusunun bir dokunuş yanında durmamalı. Gerekçenin
+        tamamı profile-view.tsx'te. */}
+    </Row>
+  );
+
   return (
     <div className="mx-auto w-full max-w-3xl space-y-4">
       <PageBack fallback="/profile" title={t("settings.settings")} />
@@ -181,267 +216,234 @@ export function ProfileForm({
         ) : null}
       </div>
 
-      <Group title={t("settings.group_learning")} />
-      <Section title={t("settings.language_to_learn")}>
-        <div>
-          {/* Kurslar telefonda da yan yana. `sm:grid-cols-2` dar ekranda tek
-              sütuna düşüyordu ve kısa etiketler için tam satır harcıyordu. */}
-          <div className="grid grid-cols-2 gap-2">
-            {coursesForNative(lang).map((c) => (
-              <button
-                key={c.id}
-                /* Seçili durum renkten başka bir şeyle de söyleniyor
-                   (bkz. parity §154). */
-                aria-pressed={course === c.id}
-                onClick={() => {
-                  if (c.id === course) return;
-                  setCourse(c.id);
-                  // Ses kursa bağlı: Zürih metnini Almanca sesle okutmak
-                  // bu değişikliğin çözdüğü sorunun ta kendisiydi.
-                  const v = defaultVoice(c.id);
-                  setVoice(v);
-                  void patch({ course: c.id, voice: v }, () => track("setting_change", 0, "course"));
+      <Group title={t("settings.group_learning")}>
+        <Row label={t("settings.language_to_learn")}>
+          <div>
+            {/* Kurslar telefonda da yan yana. `sm:grid-cols-2` dar ekranda tek
+                sütuna düşüyordu ve kısa etiketler için tam satır harcıyordu. */}
+            <div className="grid grid-cols-2 gap-2">
+              {coursesForNative(lang).map((c) => (
+                <button
+                  key={c.id}
+                  /* Seçili durum renkten başka bir şeyle de söyleniyor
+                     (bkz. parity §154). */
+                  aria-pressed={course === c.id}
+                  onClick={() => {
+                    if (c.id === course) return;
+                    setCourse(c.id);
+                    // Ses kursa bağlı: Zürih metnini Almanca sesle okutmak
+                    // bu değişikliğin çözdüğü sorunun ta kendisiydi.
+                    const v = defaultVoice(c.id);
+                    setVoice(v);
+                    void patch({ course: c.id, voice: v }, () => track("setting_change", 0, "course"));
+                  }}
+                  className={`option px-3 py-3 text-left ${course === c.id ? "option-correct" : ""}`}
+                >
+                  <span className="block text-strong">{courseName(c.id, lang)}</span>
+                  <span className="muted block text-caption">{courseSub(c.id, lang)}</span>
+                </button>
+              ))}
+            </div>
+            {course !== initial.course ? (
+              <p
+                className="mt-2 rounded-xl px-3 py-2 text-xs"
+                style={{
+                  background: "color-mix(in srgb, var(--color-brand) 10%, transparent)",
+                  color: "var(--color-brand)",
                 }}
-                className={`option px-3 py-3 text-left ${course === c.id ? "option-correct" : ""}`}
               >
-                <span className="block text-strong">{courseName(c.id, lang)}</span>
-                <span className="muted block text-caption">{courseSub(c.id, lang)}</span>
-              </button>
-            ))}
+                {t("settings.course_switch_note")}
+              </p>
+            ) : null}
           </div>
-          {course !== initial.course ? (
-            <p
-              className="mt-2 rounded-xl px-3 py-2 text-xs"
-              style={{
-                background: "color-mix(in srgb, var(--color-brand) 10%, transparent)",
-                color: "var(--color-brand)",
-              }}
-            >
-              {t("settings.course_switch_note")}
+        </Row>
+
+        <Row label={t("settings.level")}>
+          <div>
+            {/* Beş seviye tek satırda. `sm:grid-cols-5` telefonda tek sütuna
+                düşüyor ve "A1".."C1" gibi iki karakterlik etiketler için beş tam
+                satır, yaklaşık 230 piksel harcıyordu — ayarların tek en uzun
+                parçasıydı. */}
+            <div className="grid grid-cols-5 gap-1.5">
+              {LEVELS.map((l) => (
+                <button
+                  key={l.id}
+                  aria-pressed={level === l.id}
+                  onClick={() => { if (l.id === level) return; setLevel(l.id); void patch({ level: l.id }, () => track("setting_change", 0, "level")); }}
+                  className={`option px-1 py-2.5 text-sm font-bold ${
+                    level === l.id ? "option-correct" : ""
+                  }`}
+                  title={t(l.descKey)}
+                >
+                  {l.label}
+                </button>
+              ))}
+            </div>
+            {/* Havuzun nasıl kurulduğu (çoğu bu seviyeden, bir kısmı alttan,
+                bitince üst seviye) bir kez öğrenilen şeydi ve her ayar açılışında
+                dört satır yer kaplıyordu. Kalan tek ek bilgi kullanıcıyı
+                ilgilendiren tek şey: bu düğmeyi ondan başkası çevirmiyor. */}
+            <p className="muted mt-1.5 text-xs">
+              {t(LEVELS.find((l) => l.id === level)?.descKey ?? "")}
             </p>
-          ) : null}
-        </div>
-      </Section>
-
-      <Section title={t("settings.level")}>
-        <div>
-          {/* Beş seviye tek satırda. `sm:grid-cols-5` telefonda tek sütuna
-              düşüyor ve "A1".."C1" gibi iki karakterlik etiketler için beş tam
-              satır, yaklaşık 230 piksel harcıyordu — ayarların tek en uzun
-              parçasıydı. */}
-          <div className="grid grid-cols-5 gap-1.5">
-            {LEVELS.map((l) => (
-              <button
-                key={l.id}
-                aria-pressed={level === l.id}
-                onClick={() => { if (l.id === level) return; setLevel(l.id); void patch({ level: l.id }, () => track("setting_change", 0, "level")); }}
-                className={`option px-1 py-2.5 text-sm font-bold ${
-                  level === l.id ? "option-correct" : ""
-                }`}
-                title={t(l.descKey)}
-              >
-                {l.label}
-              </button>
-            ))}
+            {/* Yerleştirme testine tek giriş onboarding'di, yani bir kez geçilip
+                bir daha ulaşılamıyordu: seviyesinden emin olmayan mevcut kullanıcı
+                ancak elle tahmin edebiliyordu. Android aynı yerde, seviye
+                çiplerinin hemen altında bu bağlantıyı veriyor. */}
+            <Link href="/placement" className="mt-2.5 inline-block text-caption font-bold" style={{ color: "var(--color-brand)" }}>
+              {t("settings.not_sure_take_placement_test")}
+            </Link>
           </div>
-          {/* Havuzun nasıl kurulduğu (çoğu bu seviyeden, bir kısmı alttan,
-              bitince üst seviye) bir kez öğrenilen şeydi ve her ayar açılışında
-              dört satır yer kaplıyordu. Kalan tek ek bilgi kullanıcıyı
-              ilgilendiren tek şey: bu düğmeyi ondan başkası çevirmiyor. */}
-          <p className="muted mt-1.5 text-xs">
-            {t(LEVELS.find((l) => l.id === level)?.descKey ?? "")}
-          </p>
-          {/* Yerleştirme testine tek giriş onboarding'di, yani bir kez geçilip
-              bir daha ulaşılamıyordu: seviyesinden emin olmayan mevcut kullanıcı
-              ancak elle tahmin edebiliyordu. Android aynı yerde, seviye
-              çiplerinin hemen altında bu bağlantıyı veriyor. */}
-          <Link href="/placement" className="mt-2.5 inline-block text-caption font-bold" style={{ color: "var(--color-brand)" }}>
-            {t("settings.not_sure_take_placement_test")}
-          </Link>
-        </div>
-      </Section>
+        </Row>
 
-      <Section title={t("settings.daily_goal_reviews_day")}>
-        <Slider
-          label={t("settings.daily_goal_short")}
-          value={dailyGoal}
-          min={5}
-          max={120}
-          step={5}
-          suffix={t("settings.reviews_unit")}
-          onChange={setDailyGoal}
-          onCommit={(v) => { if (v !== initial.dailyGoal) void patch({ dailyGoal: v }, () => track("setting_change", v, "daily_goal")); }}
-        />
-        <Slider
-          label={t("settings.new_per_day")}
-          value={newPerDay}
-          min={0}
-          max={40}
-          step={1}
-          suffix={t("settings.words_unit")}
-          onChange={setNewPerDay}
-          onCommit={(v) => { if (v !== initial.newPerDay) void patch({ newPerDay: v }, () => track("setting_change", v, "new_per_day")); }}
-        />
-        {/* Tekrar mantığı eskiden ayrı bir "Tekrar sistemi" kartındaydı: dört
-            satır, hiçbir eylem yok. Bilginin ait olduğu yer burası — hedefi
-            ayarlayan kişinin merak ettiği tek şey o sayının neyi belirlediği.
-            Kaydırıcıların ÜSTÜNDEYDİ ve negatif boşluk yüzünden ilk etiketin
-            üstüne biniyordu; notun yeri zaten anlattığı şeyin altı. */}
-        <p className="muted -mt-1 text-caption">{t("settings.srs_note")}</p>
-      </Section>
-
-
-      {/* UYGULAMA DİLİ ve GÖRÜNÜM mobilde İKİ AYRI bölüm. Web'de ikisi
-          kurulum, ses ve bildirimle birlikte tek "UYGULAMA" kartındaydı;
-          etiketi olmayan bir ayar, aranırken görünmüyor.
-
-          Tema seçimi de üst başlıktan buraya indi: orada her ekranda duran
-          ama günde bir kez bile dokunulmayan bir düğmeydi. Ayarın evi
-          ayarlar. */}
-      <Group title={t("settings.group_app")} />
-      <Section title={t("settings.app_language")} bare>
-        <LangSetting bare />
-      </Section>
-
-      {/* SES kendi bölümü ve UYGULAMA grubunda. Okuma sesi "Öğrenme"nin
-          içindeydi; sesle ilgili ayar arayan kullanıcı onu orada aramıyor.
-          Mobilde aynı bölüm oyun seslerini de taşıyor — webde o anahtar
-          bildirim ayarlarında (`/notifications`) duruyor. */}
-      <Section title={t("settings.sound")}>
-        <div>
-          <p className="muted mb-2 text-caption tracking-wide">{t("settings.reading_voice")}</p>
-          <VoicePicker
-            course={course}
-            value={voice}
-            onChange={(v: VoiceId) => { setVoice(v); void patch({ voice: v }, () => track("setting_change", 0, "voice")); }}
-            compact
+        <Row label={t("settings.daily_goal_reviews_day")}>
+          <Slider
+            label={t("settings.daily_goal_short")}
+            value={dailyGoal}
+            min={5}
+            max={120}
+            step={5}
+            suffix={t("settings.reviews_unit")}
+            onChange={setDailyGoal}
+            onCommit={(v) => { if (v !== initial.dailyGoal) void patch({ dailyGoal: v }, () => track("setting_change", v, "daily_goal")); }}
           />
-        </div>
-      </Section>
-
-      <Section title={t("settings.appearance")} bare>
-        <ThemeSetting bare />
-      </Section>
-
-      {/* CİHAZ — mobilde karşılığı yok, olamaz da: kurulum tarayıcıya özgü.
-          Mobilin sırasını bozmuyor, görünümle gizliliğin arasına kendi
-          etiketiyle giriyor.
-
-          BİLDİRİM VE SES BURADA DEĞİL: ikisi de "ne zaman rahatsız
-          edilirim" ayarı ve mobilde kendi ekranlarında (`NotificationsScreen`,
-          Profil › Bildirimler). Web'de de oraya taşındı; ayarlar ekranında
-          durduklarında o ekran mobilde olmayan iki satır taşıyordu. */}
-      <Section title={t("settings.app")} bare>
-        {/* Kurulum rehberi açılır kutuda. Üç numaralı adım, cihaz seçici ve
-            açıklama metni 330 piksel tutuyordu ve bu, hayatta BİR KEZ yapılan
-            bir işin yönergesi — zaten kurmuş olan kullanıcı her ayar açılışında
-            onu geçmek zorunda kalıyordu. */}
-        <div className="p-5">
-          <Disclosure title={t("settings.add_to_home")} hint={t("settings.add_to_home_hint")}>
-            <InstallGuide tone="plain" />
-          </Disclosure>
-        </div>
-      </Section>
-
-      {/* Gizlilik: analitik anahtarı ve hukuki metinler (Play: politika uygulama içinden erişilebilir olmalı). */}
-      {/*
-        BİLDİRİMLER PROFİLDEN BURAYA. İçeriği zaten ayardı (hatırlatmalar, seri
-        koruma, haftalık test) ama profil menüsünde duruyordu ve "Gelen kutusu"
-        satırının hemen altında neredeyse aynı adla görünüyordu.
-      */}
-      <Section title={t("settings.sec_notifications")} bare>
-        <Link
-          href="/notifications"
-          prefetch={false}
-          className="pressable flex items-center gap-3 py-1"
-        >
-          <span className="min-w-0 flex-1">
-            <span className="block text-strong">{t("notifications.reminders")}</span>
-            <span className="muted block text-caption">{t("settings.notifications_sub")}</span>
-          </span>
-          <ChevronRightIcon size={18} style={{ color: "var(--text-faint)" }} />
-        </Link>
-      </Section>
-
-      {/*
-        HESAP VE GÜVENLİK EN ALTTA. İkisi de en üstteydi ve ayarlar sayfası
-        "giriş yöntemlerin" ile başlıyordu — yılda bir dokunulan bir şey, her
-        gün açılan hedef/seviye/tema ayarlarının önünde duruyordu. Sık
-        kullanılan önce, yönetimsel olan sonra; mobil ayarlar ekranında da
-        sıra aynı.
-      */}
-      <Group title={t("settings.group_account")} />
-      <Section title={t("settings.sec_name")}>
-        <label className="block">
-          <input
-            value={displayName}
-            onChange={(e) => setDisplayName(e.target.value)}
-            /*
-              ODAKTAN ÇIKINCA yazılıyor, her tuşta değil: her harfte bir istek
-              atmak sunucuya gereksiz yük, üstelik yarım yazılmış bir adı
-              kaydederdi. Boş ad sunucuda da reddediliyor; burada hiç
-              gönderilmiyor ki kullanıcı sebepsiz bir hata satırı görmesin.
-            */
-            onBlur={() => {
-              if (!nameOk) { setNameError(t("prof.name_required")); return; }
-              setNameError(null);
-              if (cleanName !== initial.displayName) void patch({ displayName: cleanName }, () => track("setting_change", 0, "name"));
-            }}
-            /* UZUNLUK SUNUCUNUN TUTTUĞU KADAR. Kutu 60 karakter kabul
-               ediyordu ama uç adı 40'a kırpıyor (`/api/profile`
-               `name.slice(0, 40)`): kullanıcı 55 karakterlik adını yazıp
-               kaydediyor, ekran "kaydedildi" diyor ve ad bir sonraki açılışta
-               kısalmış oluyordu — sessiz bir kayıp. §144'ün kuralının ters
-               yönü: yüzey, sunucunun KABUL ETTİĞİNDEN AZ da teklif etmemeli,
-               TUTTUĞUNDAN ÇOK da. */
-            maxLength={40}
-            placeholder={t("settings.display_name")}
-            className="option w-full px-4 py-3 text-base outline-none focus:border-[color:var(--color-brand)]"
+          <Slider
+            label={t("settings.new_per_day")}
+            value={newPerDay}
+            min={0}
+            max={40}
+            step={1}
+            suffix={t("settings.words_unit")}
+            onChange={setNewPerDay}
+            onCommit={(v) => { if (v !== initial.newPerDay) void patch({ newPerDay: v }, () => track("setting_change", v, "new_per_day")); }}
           />
-        </label>
-        {nameError ? (
-          <p role="alert" className="text-caption" style={{ color: "var(--color-rose)" }}>{nameError}</p>
-        ) : null}
-        {/* Hesap silme buradan PROFİLE taşındı (çıkış yapın altına): yıkıcı
-            eylem, ad kutusunun bir dokunuş yanında durmamalı. Gerekçenin
-            tamamı profile-view.tsx'te. */}
-      </Section>
+          {/* Tekrar mantığı eskiden ayrı bir "Tekrar sistemi" kartındaydı: dört
+              satır, hiçbir eylem yok. Bilginin ait olduğu yer burası — hedefi
+              ayarlayan kişinin merak ettiği tek şey o sayının neyi belirlediği.
+              Kaydırıcıların ÜSTÜNDEYDİ ve negatif boşluk yüzünden ilk etiketin
+              üstüne biniyordu; notun yeri zaten anlattığı şeyin altı. */}
+          <p className="muted -mt-1 text-caption">{t("settings.srs_note")}</p>
+        </Row>
 
-      {/* Giriş yöntemleri HESAP'ın hemen altında — mobildeki sıra. Web'de
-          sayfanın dibindeydi, yani "nasıl giriyorum" sorusunun cevabı
-          hesabın yanında değil sonundaydı. */}
-      {linkedAccounts}
 
-      <Group title={t("settings.group_privacy_about")} />
-      <Section title={t("settings.privacy")} bare>
-        <AnalyticsSettings bare />
-        {/* Mikrofon onayı yalnız VERİLMİŞSE görünüyor: verilmemiş bir onayı
-            geri alma düğmesi göstermek, hiçbir şey yapmayan bir düğme demek.
-            Mobil ayarlarda da aynı satır ve aynı koşul var. */}
-        <MicConsentRow />
-      </Section>
+        {/* UYGULAMA DİLİ ve GÖRÜNÜM mobilde İKİ AYRI bölüm. Web'de ikisi
+            kurulum, ses ve bildirimle birlikte tek "UYGULAMA" kartındaydı;
+            etiketi olmayan bir ayar, aranırken görünmüyor.
 
-      {/*
-        HAKKINDA AYRI BİR BÖLÜM. Politika, şartlar ve destek "Gizlilik"in
-        içindeydi; grubun adı zaten "Gizlilik ve hakkında"ydı ama "hakkında"
-        diye bir yer yoktu. Gizlilik artık yalnız kullanıcının AÇIP
-        KAPATABİLDİĞİ iki şeyi taşıyor; okunacak metinler burada.
-      */}
-      <Section title={t("settings.about")} bare>
-        <SettingRow title={t("settings.privacy_and_terms")} sub={t("settings.privacy_and_terms_sub")}>
-          <Link href={legalPath("privacy", lang)} prefetch={false} className="btn btn-ghost h-9 px-3 text-xs">{t("settings.privacy_policy")}</Link>
-          <Link href={legalPath("terms", lang)} prefetch={false} className="btn btn-ghost h-9 px-3 text-xs">{t("settings.terms_of_use")}</Link>
-        </SettingRow>
+            Tema seçimi de üst başlıktan buraya indi: orada her ekranda duran
+            ama günde bir kez bile dokunulmayan bir düğmeydi. Ayarın evi
+            ayarlar. */}
+      </Group>
+
+      <Group title={t("settings.group_app")}>
+        <Row label={t("settings.app_language")}>
+          <LangSetting bare />
+        </Row>
+
+        {/* SES kendi bölümü ve UYGULAMA grubunda. Okuma sesi "Öğrenme"nin
+            içindeydi; sesle ilgili ayar arayan kullanıcı onu orada aramıyor.
+            Mobilde aynı bölüm oyun seslerini de taşıyor — webde o anahtar
+            bildirim ayarlarında (`/notifications`) duruyor. */}
+        <Row label={t("settings.sound")}>
+          <div>
+            <p className="muted mb-2 text-caption tracking-wide">{t("settings.reading_voice")}</p>
+            <VoicePicker
+              course={course}
+              value={voice}
+              onChange={(v: VoiceId) => { setVoice(v); void patch({ voice: v }, () => track("setting_change", 0, "voice")); }}
+              compact
+            />
+          </div>
+        </Row>
+
+        <Row label={t("settings.appearance")}>
+          <ThemeSetting bare />
+        </Row>
+
+        {/* CİHAZ — mobilde karşılığı yok, olamaz da: kurulum tarayıcıya özgü.
+            Mobilin sırasını bozmuyor, görünümle gizliliğin arasına kendi
+            etiketiyle giriyor.
+
+            BİLDİRİM VE SES BURADA DEĞİL: ikisi de "ne zaman rahatsız
+            edilirim" ayarı ve mobilde kendi ekranlarında (`NotificationsScreen`,
+            Profil › Bildirimler). Web'de de oraya taşındı; ayarlar ekranında
+            durduklarında o ekran mobilde olmayan iki satır taşıyordu. */}
+        <Row label={t("settings.app")}>
+          {/* Kurulum rehberi açılır kutuda. Üç numaralı adım, cihaz seçici ve
+              açıklama metni 330 piksel tutuyordu ve bu, hayatta BİR KEZ yapılan
+              bir işin yönergesi — zaten kurmuş olan kullanıcı her ayar açılışında
+              onu geçmek zorunda kalıyordu. */}
+          <div className="p-5">
+            <Disclosure title={t("settings.add_to_home")} hint={t("settings.add_to_home_hint")}>
+              <InstallGuide tone="plain" />
+            </Disclosure>
+          </div>
+        </Row>
+
+        {/* Gizlilik: analitik anahtarı ve hukuki metinler (Play: politika uygulama içinden erişilebilir olmalı). */}
         {/*
-          İLETİŞİM YÜZEYİ. Apple Guidelines 1.2 kullanıcı içeriği taşıyan
-          uygulamalardan filtreleme, bildirme ve engellemenin YANINDA
-          "yayımlanmış iletişim bilgisi" de istiyor; ilk üçü vardı, bu yoktu.
-          Mobil ayarlarda da aynı satır duruyor — iki taraf ayrışmasın.
+          BİLDİRİMLER PROFİLDEN BURAYA. İçeriği zaten ayardı (hatırlatmalar, seri
+          koruma, haftalık test) ama profil menüsünde duruyordu ve "Gelen kutusu"
+          satırının hemen altında neredeyse aynı adla görünüyordu.
         */}
-        <SettingRow title={t("settings.support_contact")} sub={t("settings.support_contact_sub")}>
-          <Link href={legalPath("support", lang)} prefetch={false} className="btn btn-ghost h-9 px-3 text-xs">{t("settings.support_contact")}</Link>
-        </SettingRow>
-      </Section>
+        <Row label={t("settings.sec_notifications")}>
+          <Link
+            href="/notifications"
+            prefetch={false}
+            className="pressable flex items-center gap-3 py-1"
+          >
+            <span className="min-w-0 flex-1">
+              <span className="block text-strong">{t("notifications.reminders")}</span>
+              <span className="muted block text-caption">{t("settings.notifications_sub")}</span>
+            </span>
+            <ChevronRightIcon size={18} style={{ color: "var(--text-faint)" }} />
+          </Link>
+        </Row>
+
+        {/*
+          HESAP VE GÜVENLİK EN ALTTA. İkisi de en üstteydi ve ayarlar sayfası
+          "giriş yöntemlerin" ile başlıyordu — yılda bir dokunulan bir şey, her
+          gün açılan hedef/seviye/tema ayarlarının önünde duruyordu. Sık
+          kullanılan önce, yönetimsel olan sonra; mobil ayarlar ekranında da
+          sıra aynı.
+        */}
+      </Group>
+
+      {/* HESAP ve GÜVENLİK grupları: kartı `LinkedAccounts` kuruyor,
+          çünkü sağlayıcı listesini okuyan tek yer orası. */}
+      <LinkedAccounts googleEnabled={googleEnabled} nameRow={nameRow} />
+
+      <Group title={t("settings.group_privacy_about")}>
+        <Row label={t("settings.privacy")}>
+          <AnalyticsSettings bare />
+          {/* Mikrofon onayı yalnız VERİLMİŞSE görünüyor: verilmemiş bir onayı
+              geri alma düğmesi göstermek, hiçbir şey yapmayan bir düğme demek.
+              Mobil ayarlarda da aynı satır ve aynı koşul var. */}
+          <MicConsentRow />
+        </Row>
+
+        {/*
+          HAKKINDA AYRI BİR BÖLÜM. Politika, şartlar ve destek "Gizlilik"in
+          içindeydi; grubun adı zaten "Gizlilik ve hakkında"ydı ama "hakkında"
+          diye bir yer yoktu. Gizlilik artık yalnız kullanıcının AÇIP
+          KAPATABİLDİĞİ iki şeyi taşıyor; okunacak metinler burada.
+        */}
+        <Row label={t("settings.about")}>
+          <SettingRow title={t("settings.privacy_and_terms")} sub={t("settings.privacy_and_terms_sub")}>
+            <Link href={legalPath("privacy", lang)} prefetch={false} className="btn btn-ghost h-9 px-3 text-xs">{t("settings.privacy_policy")}</Link>
+            <Link href={legalPath("terms", lang)} prefetch={false} className="btn btn-ghost h-9 px-3 text-xs">{t("settings.terms_of_use")}</Link>
+          </SettingRow>
+          {/*
+            İLETİŞİM YÜZEYİ. Apple Guidelines 1.2 kullanıcı içeriği taşıyan
+            uygulamalardan filtreleme, bildirme ve engellemenin YANINDA
+            "yayımlanmış iletişim bilgisi" de istiyor; ilk üçü vardı, bu yoktu.
+            Mobil ayarlarda da aynı satır duruyor — iki taraf ayrışmasın.
+          */}
+          <SettingRow title={t("settings.support_contact")} sub={t("settings.support_contact_sub")}>
+            <Link href={legalPath("support", lang)} prefetch={false} className="btn btn-ghost h-9 px-3 text-xs">{t("settings.support_contact")}</Link>
+          </SettingRow>
+        </Row>
+      </Group>
 
       {/*
         OTURUM BÖLÜMÜ KALKTI. Çıkış yap Profil ekranının dibinde zaten var ve

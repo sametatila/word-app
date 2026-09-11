@@ -7,6 +7,7 @@ import type { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import type { RootStackParams } from "../navigation/RootStack";
 import { Text } from "../ui/Text";
 import { Chip } from "../ui/Chip";
+import { Slider } from "../ui/Slider";
 import { Card } from "../ui/Card";
 import { LinkedAccounts } from "../ui/LinkedAccounts";
 import { ChangePassword } from "../ui/ChangePassword";
@@ -31,25 +32,6 @@ import { hasMicConsent, setMicConsent } from "../lib/micConsent";
 import { openLegal } from "../lib/legal";
 import { APP_VERSION } from "../version";
 
-/**
- * Günlük hedef seçenekleri — uç 5-120 arasını kabul ediyor
- * (`/api/profile` `clampInt(body.dailyGoal, 5, 120)`) ve web kaydırıcısı da
- * o aralığı veriyor. Liste [10, 20, 30, 50] idi: Android kullanıcısı 5'i de
- * 120'yi de SEÇEMİYORDU, yani sunucunun ve öteki platformun kabul ettiği
- * hedeflerin çoğu telefonda yoktu. `NEW_PER_DAY` aynı kuralı zaten tutuyor
- * (bkz. parity §50).
- *
- * Merdiven altta sık, üstte seyrek: günlük hedefini 5'ten 20'ye çeken kullanıcı
- * ince ayar istiyor, 100'den 120'ye çeken kullanıcı istemiyor. Yirmi dört çip
- * (5'ten 120'ye beşer beşer) telefonda bir çip duvarı olurdu.
- */
-const GOALS = [5, 10, 15, 20, 30, 40, 60, 80, 100, 120];
-/**
- * Günde yeni kelime seçenekleri — uç 0-40 arasını kabul ediyor
- * (`/api/profile` `clampInt(body.newPerDay, 0, 40)`), web kaydırıcısı da aynı
- * aralıkta. Sıfır meşru bir seçim: "yeni kelime istemiyorum, yalnız tekrar".
- */
-const NEW_PER_DAY = [0, 5, 10, 15, 20, 30, 40];
 // Diller KENDİ adlarıyla yazılır: arayüz yanlış dildeyken bile kullanıcı kendi
 // dilini tanıyıp seçebilsin diye (çevrilirse tam da aradığı satırı okuyamaz).
 const LANG_LABEL: Record<NativeLang, string> = { tr: "Türkçe", en: "English", de: "Deutsch" };
@@ -88,23 +70,48 @@ function courseOptions(lang: NativeLang): { key: string; label: string; sub: str
  * dili/görünüm (uygulama) ve hesap/gizlilik iç içeydi. Kullanıcı aradığı ayarı
  * grubun adından değil, satır satır okuyarak buluyordu.
  */
-function Group({ title, colors }: { title: string; colors: Palette }) {
+/**
+ * Grup — başlık ve TEK kart.
+ *
+ * Eskiden her bölümün kendi kartı vardı ve ekran alt alta on beş kutuya
+ * dönüşmüştü: kutu, bölümleri ayırsın diye vardı ama bölüm sayısı artınca
+ * ayırmayı bıraktı, yalnız gürültü ekledi. Şimdi kart grubu çiziyor,
+ * bölümler kartın içinde ince bir çizgiyle ayrılıyor.
+ */
+function Group({ title, colors, children }: { title: string; colors: Palette; children: React.ReactNode }) {
+  /*
+    ÇİZGİYİ GRUP ÇİZİYOR, satır değil. Satırların bir kısmı koşullu (parolasız
+    hesapta PAROLA bölümü hiç yok); ayıracı satırın kendi üstüne koysaydık
+    gizlenen ilk satırın çizgisi kartın tepesinde asılı kalırdı.
+    `Children.toArray` false/null olanları zaten atıyor, yani "ilk ÇİZİLEN
+    satır" burada doğru biliniyor.
+  */
+  const items = React.Children.toArray(children).filter(Boolean);
   return (
-    <Text
-      variant="h3"
-      color={colors.text}
-      style={{ marginTop: spacing.xxl, marginBottom: -spacing.sm, marginLeft: 4 }}
-    >
-      {title}
-    </Text>
+    <View style={{ marginTop: spacing.xxl }}>
+      <Text variant="h3" color={colors.text} style={{ marginBottom: spacing.sm, marginLeft: 4 }}>{title}</Text>
+      <Card padded>
+        {items.map((item, i) => (
+          <View
+            key={i}
+            style={i ? { marginTop: spacing.lg, paddingTop: spacing.lg, borderTopWidth: 1, borderTopColor: colors.hairline } : undefined}
+          >
+            {item}
+          </View>
+        ))}
+      </Card>
+    </View>
   );
 }
 
-function Section({ title, colors, children }: { title: string; colors: Palette; children: React.ReactNode }) {
+/** Grup kartının içindeki bir bölüm: küçük etiket ve altında içeriği. */
+function Row({ label, colors, children }: { label?: string; colors: Palette; children: React.ReactNode }) {
   return (
-    <View style={{ marginTop: spacing.xl }}>
-      <Text variant="caption" color={colors.textMuted} style={{ marginBottom: spacing.sm, marginLeft: 4, letterSpacing: 0.5 }}>{title}</Text>
-      <Card padded>{children}</Card>
+    <View>
+      {label ? (
+        <Text variant="caption" color={colors.textMuted} style={{ marginBottom: spacing.sm, letterSpacing: 0.5 }}>{label}</Text>
+      ) : null}
+      {children}
     </View>
   );
 }
@@ -227,262 +234,288 @@ export function SettingsScreen() {
       </View>
 
       <ScrollView contentContainerStyle={{ paddingHorizontal: spacing.lg, paddingBottom: insets.bottom + spacing.xxl }} keyboardShouldPersistTaps="handled" showsVerticalScrollIndicator={false}>
-        <Group title={t("settings.group_learning")} colors={colors} />
-        <Section title={t("settings.language_to_learn")} colors={colors}>
-          {courseOptions(uiLang).map((c, i) => {
-            const active = course === c.key;
-            return (
-              <PressableScale key={c.key} onPress={() => pickCourse(c.key)} style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingVertical: 12, borderTopWidth: i === 0 ? 0 : 1, borderTopColor: colors.hairline }}>
-                <View style={{ flex: 1 }}>
-                  <Text variant="bodyStrong" color={active ? colors.primaryText : colors.text}>{c.label}</Text>
-                  <Text variant="caption" color={colors.textMuted}>{c.sub}</Text>
-                </View>
-                <View style={{ width: 22, height: 22, borderRadius: 11, borderWidth: 2, borderColor: active ? colors.primary : colors.border, alignItems: "center", justifyContent: "center" }}>
-                  {active ? <View style={{ width: 10, height: 10, borderRadius: 5, backgroundColor: colors.primary }} /> : null}
-                </View>
-              </PressableScale>
-            );
-          })}
-          {/* Kurs değiştirmenin ne yaptığı: kelimeler ve kuyruk taşınıyor, öteki
-              kurs SİLİNMİYOR. Web bunu yazıyordu, mobil yazmıyordu - ve bu,
-              düğmeye basmadan önce bilinmesi gereken bir şey. */}
-          <Text variant="micro" color={colors.textFaint} style={{ marginTop: spacing.sm }}>{t("settings.course_switch_note")}</Text>
-        </Section>
-
-        <Section title={t("settings.level")} colors={colors}>
-          <View style={{ flexDirection: "row", flexWrap: "wrap", gap: spacing.sm }}>
-            {LEVELS.map((l) => <Chip key={l} label={l} active={level === l} onPress={() => { if (l === level) return; setLevel(l); void patch({ level: l }, () => track("setting_change", 0, "level")); }} />)}
-          </View>
-          {/* SEÇİLİ SEVİYENİN AÇIKLAMASI + seviyenin kendiliğinden değişmediği.
-              Dört açıklama sözlükte duruyordu (`level.*_desc`) ama mobilde
-              yalnız onboarding'de okunuyordu: ayarlarda seviye "A1…C1" diye
-              görünüyor, hangi seviyenin ne anlama geldiği yazmıyordu. Web
-              ikisini AYNI cümlede veriyor ("<açıklama>. Bu düğmeyi senden
-              başkası çevirmiyor") ve mobil de artık öyle. */}
-          <Text variant="micro" color={colors.textFaint} style={{ marginTop: spacing.sm, lineHeight: 18 }}>
-            {t(LEVEL_DESC_KEY[level] ?? "onboarding.i_m_just_starting_out")}
-          </Text>
-          <PressableScale onPress={() => nav.navigate("Placement")} style={{ marginTop: spacing.md, alignSelf: "flex-start" }}>
-            <Text variant="bodyStrong" color={colors.primaryText}>{t("settings.not_sure_take_placement_test")}</Text>
-          </PressableScale>
-        </Section>
-
-        <Section title={t("settings.daily_goal_reviews_day")} colors={colors}>
-          <View style={{ flexDirection: "row", flexWrap: "wrap", gap: spacing.sm }}>
-            {Array.from(new Set([...GOALS, goal])).sort((a, b) => a - b).map((g) => <Chip key={g} label={String(g)} active={goal === g} onPress={() => { if (g === goal) return; setGoal(g); void patch({ dailyGoal: g }, () => track("setting_change", g, "daily_goal")); }} />)}
-          </View>
-          <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.md, marginBottom: spacing.sm, marginLeft: 4 }}>{t("settings.new_per_day")}</Text>
-          <View style={{ flexDirection: "row", flexWrap: "wrap", gap: spacing.sm }}>
-            {Array.from(new Set([...NEW_PER_DAY, newPerDay])).sort((a, b) => a - b).map((n) => <Chip key={n} label={String(n)} active={newPerDay === n} onPress={() => { if (n === newPerDay) return; setNewPerDay(n); void patch({ newPerDay: n }, () => track("setting_change", n, "new_per_day")); }} />)}
-          </View>
-          {/* Hedefi ayarlayan kişinin merak ettiği tek şey o sayının neyi
-              belirlediği; web de notu kaydırıcıların altına koyuyor. */}
-          <Text variant="micro" color={colors.textFaint} style={{ marginTop: spacing.md }}>{t("settings.srs_note")}</Text>
-        </Section>
-
-        <Group title={t("settings.group_app")} colors={colors} />
-        <Section title={t("settings.app_language")} colors={colors}>
-          <View style={{ flexDirection: "row", flexWrap: "wrap", gap: spacing.sm }}>
-            {offeredNativeLangs().map((l) => (
-              <Chip
-                key={l}
-                label={LANG_LABEL[l]}
-                active={uiLang === l}
-                onPress={() => { setUiLang(l); void setLang(l); void updateProfile({ nativeLang: l }); track("setting_change", NATIVE_LANGS.indexOf(l), "lang"); void keepCourseValid(l); }}
-              />
-            ))}
-          </View>
-        </Section>
-
-        {/*
-          SES TEK YERDE. Oyun sesleri "Görünüm"ün içindeydi (ses, görünüm
-          değil) ve okuma sesi "Öğrenme"de, yani sesle ilgili iki ayar birbirini
-          hiç görmeyen iki grupta duruyordu. Sesini kısmak isteyen kullanıcı
-          ikisini de burada buluyor.
-        */}
-        <Section title={t("settings.sound")} colors={colors}>
-          <Text variant="caption" color={colors.textMuted} style={{ marginBottom: spacing.sm }}>{t("settings.reading_voice")}</Text>
-          <VoicePicker course={course} value={voice} onChange={pickVoice} />
-          <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingTop: 12, marginTop: spacing.md, borderTopWidth: 1, borderTopColor: colors.hairline }}>
-            <View style={{ flex: 1 }}>
-              <Text variant="bodyStrong">{t("snd.game_sounds")}</Text>
-              <Text variant="caption" color={colors.textMuted}>{t("snd.game_sounds_sub")}</Text>
-            </View>
-            <Switch
-              value={sounds}
-              onValueChange={(v) => { setSounds(v); void setSoundEnabled(v); track("sound_toggle", v ? 1 : 0); }}
-              accessibilityLabel={t("snd.game_sounds")}
-              trackColor={{ true: colors.primary, false: colors.surface2 }}
-              thumbColor="#fff"
-            />
-          </View>
-        </Section>
-
-        <Section title={t("settings.appearance")} colors={colors}>
-          <View style={{ flexDirection: "row", backgroundColor: colors.surface2, borderRadius: radii.md, padding: 4 }}>
-            {THEME_OPTIONS.map((o) => {
-              const active = mode === o.key;
+        <Group title={t("settings.group_learning")} colors={colors}>
+          <Row label={t("settings.language_to_learn")} colors={colors}>
+            {courseOptions(uiLang).map((c, i) => {
+              const active = course === c.key;
               return (
-                <PressableScale key={o.key} accessibilityRole="radio" accessibilityState={{ selected: o.key === mode }} onPress={() => { if (o.key !== mode) track("setting_change", o.key === "dark" ? 1 : o.key === "light" ? 0 : 2, "theme"); setMode(o.key); }} style={{ flex: 1, paddingVertical: 10, borderRadius: radii.sm, alignItems: "center", backgroundColor: active ? colors.surface : "transparent", ...(active ? cardShadow(colors, 4) : {}) }}>
-                  <Text variant="bodyStrong" color={active ? colors.primaryText : colors.textMuted}>{t(o.label)}</Text>
+                <PressableScale key={c.key} onPress={() => pickCourse(c.key)} style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingVertical: 12, borderTopWidth: i === 0 ? 0 : 1, borderTopColor: colors.hairline }}>
+                  <View style={{ flex: 1 }}>
+                    <Text variant="bodyStrong" color={active ? colors.primaryText : colors.text}>{c.label}</Text>
+                    <Text variant="caption" color={colors.textMuted}>{c.sub}</Text>
+                  </View>
+                  <View style={{ width: 22, height: 22, borderRadius: 11, borderWidth: 2, borderColor: active ? colors.primary : colors.border, alignItems: "center", justifyContent: "center" }}>
+                    {active ? <View style={{ width: 10, height: 10, borderRadius: 5, backgroundColor: colors.primary }} /> : null}
+                  </View>
                 </PressableScale>
               );
             })}
-          </View>
-        </Section>
+            {/* Kurs değiştirmenin ne yaptığı: kelimeler ve kuyruk taşınıyor, öteki
+                kurs SİLİNMİYOR. Web bunu yazıyordu, mobil yazmıyordu - ve bu,
+                düğmeye basmadan önce bilinmesi gereken bir şey. */}
+            <Text variant="micro" color={colors.textFaint} style={{ marginTop: spacing.sm }}>{t("settings.course_switch_note")}</Text>
+          </Row>
 
-        {/*
-          BİLDİRİMLER PROFİLDEN BURAYA. Ekranın içeriği bir ayar: hatırlatma
-          saati, seri koruma, haftalık test. Profil menüsünde durduğu sürece
-          kullanıcı onu Ayarlar'da arıyor ve bulamıyordu; ayrıca "Gelen kutusu"
-          satırının hemen altında, neredeyse aynı adla duruyordu.
-        */}
-        <Section title={t("settings.sec_notifications")} colors={colors}>
-          <PressableScale
-            onPress={() => nav.navigate("Notifications")}
-            accessibilityRole="button"
-            accessibilityLabel={t("notifications.notifications")}
-            style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingVertical: 6 }}
-          >
-            <View style={{ flex: 1 }}>
-              <Text variant="bodyStrong">{t("notifications.reminders")}</Text>
-              <Text variant="caption" color={colors.textMuted}>{t("settings.notifications_sub")}</Text>
+          <Row label={t("settings.level")} colors={colors}>
+            <View style={{ flexDirection: "row", flexWrap: "wrap", gap: spacing.sm }}>
+              {LEVELS.map((l) => <Chip key={l} label={l} active={level === l} onPress={() => { if (l === level) return; setLevel(l); void patch({ level: l }, () => track("setting_change", 0, "level")); }} />)}
             </View>
-            <ChevronRightIcon color={colors.textFaint} size={20} />
-          </PressableScale>
-        </Section>
+            {/* SEÇİLİ SEVİYENİN AÇIKLAMASI + seviyenin kendiliğinden değişmediği.
+                Dört açıklama sözlükte duruyordu (`level.*_desc`) ama mobilde
+                yalnız onboarding'de okunuyordu: ayarlarda seviye "A1…C1" diye
+                görünüyor, hangi seviyenin ne anlama geldiği yazmıyordu. Web
+                ikisini AYNI cümlede veriyor ("<açıklama>. Bu düğmeyi senden
+                başkası çevirmiyor") ve mobil de artık öyle. */}
+            <Text variant="micro" color={colors.textFaint} style={{ marginTop: spacing.sm, lineHeight: 18 }}>
+              {t(LEVEL_DESC_KEY[level] ?? "onboarding.i_m_just_starting_out")}
+            </Text>
+            <PressableScale onPress={() => nav.navigate("Placement")} style={{ marginTop: spacing.md, alignSelf: "flex-start" }}>
+              <Text variant="bodyStrong" color={colors.primaryText}>{t("settings.not_sure_take_placement_test")}</Text>
+            </PressableScale>
+          </Row>
 
-        {/*
-          HESAP VE GÜVENLİK EN ALTTA. İkisi de en üstteydi ve ayarların ilk
-          ekranı "giriş yöntemlerin" ile başlıyordu — yılda bir dokunulan bir
-          şey, her gün açılan hedef/seviye/tema ayarlarının önünde duruyordu.
-          Sık kullanılan önce, yönetimsel olan sonra.
-        */}
-        <Group title={t("settings.group_account")} colors={colors} />
-        <Section title={t("settings.sec_name")} colors={colors}>
-          <TextInput
-            value={name}
-            onChangeText={setName}
-            /*
-              ODAKTAN ÇIKINCA yazılıyor, her tuşta değil: her harfte bir
-              istek atmak sunucuya da pile de gereksiz yük, üstelik yarım
-              yazılmış bir adı kaydederdi. Onay ayrı bir satır değil — ad
-              kutuda kalıyor, hata olursa altta görünüyor.
-            */
-            onBlur={() => { const v = name.trim(); if (v !== (me?.name ?? "")) void patch({ displayName: v || undefined }, () => track("setting_change", 0, "name")); }}
-            placeholder={t("settings.display_name")}
-            placeholderTextColor={colors.textFaint}
-            returnKeyType="done"
-            autoCapitalize="words"
-            // Sınır yoktu: kullanıcı istediği kadar yazabiliyor, uç 40'a
-            // kırpıyordu (`/api/profile`) ve ad bir sonraki açılışta kısalmış
-            // görünüyordu. Web kutusu da 60 diyordu, o da düzeltildi.
-            maxLength={40}
-            style={{ backgroundColor: colors.surface2, borderRadius: radii.md, paddingHorizontal: spacing.lg, paddingVertical: 13, color: colors.text, fontSize: 16 }}
-          />
-          {/* Hesap silme buradan PROFİLE taşındı (çıkış yapın altına): yıkıcı
-              eylem, ad kutusunun bir dokunuş yanında durmamalı. Gerekçenin
-              tamamı ProfileScreen'de. */}
-        </Section>
+          <Row label={t("settings.daily_goal_reviews_day")} colors={colors}>
+            {/*
+              ÇİP IZGARASI YERİNE KAYDIRICI. Günlük hedef on çiple, günde yeni
+              kelime yedi çiple seçiliyordu: yirmi kadar dokunma hedefi, tek bir
+              sayıyı seçmek için. Webde aynı ayar baştan beri kaydırıcıydı.
+            */}
+            <Slider
+              label={t("settings.daily_goal_short")}
+              value={goal}
+              min={5}
+              max={120}
+              step={5}
+              suffix={t("settings.reviews_unit")}
+              onChange={setGoal}
+              onCommit={(v) => { if (v !== (me?.dailyGoal ?? -1)) void patch({ dailyGoal: v }, () => track("setting_change", v, "daily_goal")); }}
+            />
+            <View style={{ height: spacing.lg }} />
+            <Slider
+              label={t("settings.new_per_day")}
+              value={newPerDay}
+              min={0}
+              max={40}
+              step={1}
+              suffix={t("settings.words_unit")}
+              onChange={setNewPerDay}
+              onCommit={(v) => { if (v !== (me?.newPerDay ?? -1)) void patch({ newPerDay: v }, () => track("setting_change", v, "new_per_day")); }}
+            />
+            {/* Hedefi ayarlayan kişinin merak ettiği tek şey o sayının neyi
+                belirlediği; web de notu kaydırıcıların altına koyuyor. */}
+            <Text variant="micro" color={colors.textFaint} style={{ marginTop: spacing.md }}>{t("settings.srs_note")}</Text>
+          </Row>
+        </Group>
 
-        {/* Giriş yöntemleri: parola + sosyal hesaplar. Aynı e-postayla giriş
-            yapan kişi tek hesapta buluşsun diye; doğrulanmamış e-postada
-            otomatik bağlama bilerek yapılmıyor ve tek çıkış burası. */}
-        <Section title={t("links.title")} colors={colors}>
-          <LinkedAccounts colors={colors} accounts={accounts} onChanged={yenileHesaplar} />
-        </Section>
-
-        {/*
-          GÜVENLİK KENDİ GRUBU. Üçü de "Giriş yöntemleri" bölümünün içindeydi
-          ve o etiket yalnız ilk satırları anlatıyordu: parola değiştirmek,
-          ikinci adım ve etkin oturumlar birer giriş yöntemi değil. Kartların
-          kendi başlıkları da kalktı — bölümün etiketi zaten adı söylüyor.
-        */}
-        <Group title={t("settings.group_security")} colors={colors} />
-        {/* Parola ve ikinci adım YALNIZ parolalı hesapta: yalnız Google/Apple
-            ile girmiş birine "şu anki parolan" sormak olmayan bir şeyi
-            istemek olurdu. */}
-        {parolaliHesap && (
-          <Section title={t("settings.sec_password")} colors={colors}>
-            <ChangePassword colors={colors} />
-          </Section>
-        )}
-        {parolaliHesap && (
-          <Section title={t("settings.sec_two_factor")} colors={colors}>
-            <TwoFactor colors={colors} />
-          </Section>
-        )}
-        {/* Etkin oturumlar HER hesapta: yalnız Google ile giren biri de
-            telefonunu kaybedebilir. */}
-        <Section title={t("settings.sec_sessions")} colors={colors}>
-          <ActiveSessions colors={colors} />
-        </Section>
-
-        <Group title={t("settings.group_privacy_about")} colors={colors} />
-        <Section title={t("settings.privacy")} colors={colors}>
-          <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingVertical: 6 }}>
-            <View style={{ flex: 1 }}>
-              <Text variant="bodyStrong">{t("settings.send_usage_data")}</Text>
-              <Text variant="caption" color={colors.textMuted}>{t("settings.analytics_sub")}</Text>
+        <Group title={t("settings.group_app")} colors={colors}>
+          <Row label={t("settings.app_language")} colors={colors}>
+            <View style={{ flexDirection: "row", flexWrap: "wrap", gap: spacing.sm }}>
+              {offeredNativeLangs().map((l) => (
+                <Chip
+                  key={l}
+                  label={LANG_LABEL[l]}
+                  active={uiLang === l}
+                  onPress={() => { setUiLang(l); void setLang(l); void updateProfile({ nativeLang: l }); track("setting_change", NATIVE_LANGS.indexOf(l), "lang"); void keepCourseValid(l); }}
+                />
+              ))}
             </View>
-            <Switch value={analytics} onValueChange={(v) => { setAnalytics(v); void setAnalyticsEnabled(v); }} trackColor={{ true: colors.primary, false: colors.surface2 }} thumbColor="#fff" accessibilityLabel={t("settings.send_usage_data")} />
-          </View>
-          {micConsent === null ? (
-            // Onay durumu okunana dek satır yerini tutar: gelince Gizlilik
-            // bölümü uzayıp altındaki bağlantıları aşağı itmesin.
-            <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingVertical: 12, borderTopWidth: 1, borderTopColor: colors.hairline }}>
+          </Row>
+
+          {/*
+            SES TEK YERDE. Oyun sesleri "Görünüm"ün içindeydi (ses, görünüm
+            değil) ve okuma sesi "Öğrenme"de, yani sesle ilgili iki ayar birbirini
+            hiç görmeyen iki grupta duruyordu. Sesini kısmak isteyen kullanıcı
+            ikisini de burada buluyor.
+          */}
+          <Row label={t("settings.sound")} colors={colors}>
+            <Text variant="caption" color={colors.textMuted} style={{ marginBottom: spacing.sm }}>{t("settings.reading_voice")}</Text>
+            <VoicePicker course={course} value={voice} onChange={pickVoice} />
+            <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingTop: 12, marginTop: spacing.md, borderTopWidth: 1, borderTopColor: colors.hairline }}>
               <View style={{ flex: 1 }}>
-                <SkeletonLine variant="bodyStrong" width="55%" />
-                <SkeletonLine variant="caption" width="85%" />
+                <Text variant="bodyStrong">{t("snd.game_sounds")}</Text>
+                <Text variant="caption" color={colors.textMuted}>{t("snd.game_sounds_sub")}</Text>
               </View>
-              <SkeletonLine variant="h3" width={20} />
+              <Switch
+                value={sounds}
+                onValueChange={(v) => { setSounds(v); void setSoundEnabled(v); track("sound_toggle", v ? 1 : 0); }}
+                accessibilityLabel={t("snd.game_sounds")}
+                trackColor={{ true: colors.primary, false: colors.surface2 }}
+                thumbColor="#fff"
+              />
             </View>
-          ) : micConsent ? (
-            <PressableScale onPress={() => { void setMicConsent(false); setMicConsentState(false); }} accessibilityLabel={t("settings.revoke_microphone_consent")} style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingVertical: 12, borderTopWidth: 1, borderTopColor: colors.hairline }}>
+          </Row>
+
+          <Row label={t("settings.appearance")} colors={colors}>
+            <View style={{ flexDirection: "row", backgroundColor: colors.surface2, borderRadius: radii.md, padding: 4 }}>
+              {THEME_OPTIONS.map((o) => {
+                const active = mode === o.key;
+                return (
+                  <PressableScale key={o.key} accessibilityRole="radio" accessibilityState={{ selected: o.key === mode }} onPress={() => { if (o.key !== mode) track("setting_change", o.key === "dark" ? 1 : o.key === "light" ? 0 : 2, "theme"); setMode(o.key); }} style={{ flex: 1, paddingVertical: 10, borderRadius: radii.sm, alignItems: "center", backgroundColor: active ? colors.surface : "transparent", ...(active ? cardShadow(colors, 4) : {}) }}>
+                    <Text variant="bodyStrong" color={active ? colors.primaryText : colors.textMuted}>{t(o.label)}</Text>
+                  </PressableScale>
+                );
+              })}
+            </View>
+          </Row>
+
+          {/*
+            BİLDİRİMLER PROFİLDEN BURAYA. Ekranın içeriği bir ayar: hatırlatma
+            saati, seri koruma, haftalık test. Profil menüsünde durduğu sürece
+            kullanıcı onu Ayarlar'da arıyor ve bulamıyordu; ayrıca "Gelen kutusu"
+            satırının hemen altında, neredeyse aynı adla duruyordu.
+          */}
+          <Row label={t("settings.sec_notifications")} colors={colors}>
+            <PressableScale
+              onPress={() => nav.navigate("Notifications")}
+              accessibilityRole="button"
+              accessibilityLabel={t("notifications.notifications")}
+              style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingVertical: 6 }}
+            >
               <View style={{ flex: 1 }}>
-                <Text variant="bodyStrong">{t("settings.revoke_microphone_consent")}</Text>
-                <Text variant="caption" color={colors.textMuted}>{t("settings.you_ll_be_asked_about_voice_data")}</Text>
+                <Text variant="bodyStrong">{t("notifications.reminders")}</Text>
+                <Text variant="caption" color={colors.textMuted}>{t("settings.notifications_sub")}</Text>
               </View>
               <ChevronRightIcon color={colors.textFaint} size={20} />
             </PressableScale>
-          ) : null}
-        </Section>
+          </Row>
 
-        {/*
-          HAKKINDA AYRI BİR BÖLÜM. Politika, şartlar, destek ve sürüm
-          "Gizlilik"in içindeydi; grubun adı zaten "Gizlilik ve hakkında"ydı
-          ama "hakkında" diye bir yer yoktu. Gizlilik artık yalnız kullanıcının
-          AÇIP KAPATABİLDİĞİ iki şeyi taşıyor; okunacak metinler burada.
-        */}
-        <Section title={t("settings.about")} colors={colors}>
-          <PressableScale onPress={() => openLegal("privacy")} accessibilityRole="link" style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingVertical: 12 }}>
-            <Text variant="bodyStrong" style={{ flex: 1 }}>{t("settings.privacy_policy")}</Text>
-            <ChevronRightIcon color={colors.textFaint} size={20} />
-          </PressableScale>
-          <PressableScale onPress={() => openLegal("terms")} accessibilityRole="link" style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingVertical: 12, borderTopWidth: 1, borderTopColor: colors.hairline }}>
-            <Text variant="bodyStrong" style={{ flex: 1 }}>{t("settings.terms_of_use")}</Text>
-            <ChevronRightIcon color={colors.textFaint} size={20} />
-          </PressableScale>
           {/*
-            İLETİŞİM YÜZEYİ — Apple Guidelines 1.2. Kullanıcı içeriği taşıyan
-            uygulamalarda filtreleme, bildirme ve engellemenin YANINDA
-            "yayımlanmış iletişim bilgisi" de isteniyor. Bildirme ve engelleme
-            zaten vardı; ulaşılacak bir adres yoktu ve destek e-postası yalnız
-            gizlilik/şartlar metinlerinin içinde geçiyordu.
-
-            Alt metin taşıyan tek satır bu bölümde: ötekiler (politika, şartlar)
-            adıyla anlaşılıyor, bu ise ne olduğunu söylemezse "hangi destek"
-            sorusunu bırakıyor.
+            HESAP VE GÜVENLİK EN ALTTA. İkisi de en üstteydi ve ayarların ilk
+            ekranı "giriş yöntemlerin" ile başlıyordu — yılda bir dokunulan bir
+            şey, her gün açılan hedef/seviye/tema ayarlarının önünde duruyordu.
+            Sık kullanılan önce, yönetimsel olan sonra.
           */}
-          <PressableScale onPress={() => openLegal("support")} accessibilityRole="link" style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingVertical: 12, borderTopWidth: 1, borderTopColor: colors.hairline }}>
-            <View style={{ flex: 1 }}>
-              <Text variant="bodyStrong">{t("settings.support_contact")}</Text>
-              <Text variant="caption" color={colors.textMuted}>{t("settings.support_contact_sub")}</Text>
+        </Group>
+
+        <Group title={t("settings.group_account")} colors={colors}>
+          <Row label={t("settings.sec_name")} colors={colors}>
+            <TextInput
+              value={name}
+              onChangeText={setName}
+              /*
+                ODAKTAN ÇIKINCA yazılıyor, her tuşta değil: her harfte bir
+                istek atmak sunucuya da pile de gereksiz yük, üstelik yarım
+                yazılmış bir adı kaydederdi. Onay ayrı bir satır değil — ad
+                kutuda kalıyor, hata olursa altta görünüyor.
+              */
+              onBlur={() => { const v = name.trim(); if (v !== (me?.name ?? "")) void patch({ displayName: v || undefined }, () => track("setting_change", 0, "name")); }}
+              placeholder={t("settings.display_name")}
+              placeholderTextColor={colors.textFaint}
+              returnKeyType="done"
+              autoCapitalize="words"
+              // Sınır yoktu: kullanıcı istediği kadar yazabiliyor, uç 40'a
+              // kırpıyordu (`/api/profile`) ve ad bir sonraki açılışta kısalmış
+              // görünüyordu. Web kutusu da 60 diyordu, o da düzeltildi.
+              maxLength={40}
+              style={{ backgroundColor: colors.surface2, borderRadius: radii.md, paddingHorizontal: spacing.lg, paddingVertical: 13, color: colors.text, fontSize: 16 }}
+            />
+            {/* Hesap silme buradan PROFİLE taşındı (çıkış yapın altına): yıkıcı
+                eylem, ad kutusunun bir dokunuş yanında durmamalı. Gerekçenin
+                tamamı ProfileScreen'de. */}
+          </Row>
+
+          {/* Giriş yöntemleri: parola + sosyal hesaplar. Aynı e-postayla giriş
+              yapan kişi tek hesapta buluşsun diye; doğrulanmamış e-postada
+              otomatik bağlama bilerek yapılmıyor ve tek çıkış burası. */}
+          <Row label={t("links.title")} colors={colors}>
+            <LinkedAccounts colors={colors} accounts={accounts} onChanged={yenileHesaplar} />
+          </Row>
+
+          {/*
+            GÜVENLİK KENDİ GRUBU. Üçü de "Giriş yöntemleri" bölümünün içindeydi
+            ve o etiket yalnız ilk satırları anlatıyordu: parola değiştirmek,
+            ikinci adım ve etkin oturumlar birer giriş yöntemi değil. Kartların
+            kendi başlıkları da kalktı — bölümün etiketi zaten adı söylüyor.
+          */}
+        </Group>
+
+        <Group title={t("settings.group_security")} colors={colors}>
+          {/* Parola ve ikinci adım YALNIZ parolalı hesapta: yalnız Google/Apple
+              ile girmiş birine "şu anki parolan" sormak olmayan bir şeyi
+              istemek olurdu. */}
+          {parolaliHesap && (
+            <Row label={t("settings.sec_password")} colors={colors}>
+              <ChangePassword colors={colors} />
+            </Row>
+          )}
+          {parolaliHesap && (
+            <Row label={t("settings.sec_two_factor")} colors={colors}>
+              <TwoFactor colors={colors} />
+            </Row>
+          )}
+          {/* Etkin oturumlar HER hesapta: yalnız Google ile giren biri de
+              telefonunu kaybedebilir. */}
+          <Row label={t("settings.sec_sessions")} colors={colors}>
+            <ActiveSessions colors={colors} />
+          </Row>
+        </Group>
+
+        <Group title={t("settings.group_privacy_about")} colors={colors}>
+          <Row label={t("settings.privacy")} colors={colors}>
+            <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingVertical: 6 }}>
+              <View style={{ flex: 1 }}>
+                <Text variant="bodyStrong">{t("settings.send_usage_data")}</Text>
+                <Text variant="caption" color={colors.textMuted}>{t("settings.analytics_sub")}</Text>
+              </View>
+              <Switch value={analytics} onValueChange={(v) => { setAnalytics(v); void setAnalyticsEnabled(v); }} trackColor={{ true: colors.primary, false: colors.surface2 }} thumbColor="#fff" accessibilityLabel={t("settings.send_usage_data")} />
             </View>
-            <ChevronRightIcon color={colors.textFaint} size={20} />
-          </PressableScale>
-          <Text variant="micro" color={colors.textFaint} style={{ marginTop: spacing.md }}>Lernomi {APP_VERSION}</Text>
-        </Section>
+            {micConsent === null ? (
+              // Onay durumu okunana dek satır yerini tutar: gelince Gizlilik
+              // bölümü uzayıp altındaki bağlantıları aşağı itmesin.
+              <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingVertical: 12, borderTopWidth: 1, borderTopColor: colors.hairline }}>
+                <View style={{ flex: 1 }}>
+                  <SkeletonLine variant="bodyStrong" width="55%" />
+                  <SkeletonLine variant="caption" width="85%" />
+                </View>
+                <SkeletonLine variant="h3" width={20} />
+              </View>
+            ) : micConsent ? (
+              <PressableScale onPress={() => { void setMicConsent(false); setMicConsentState(false); }} accessibilityLabel={t("settings.revoke_microphone_consent")} style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingVertical: 12, borderTopWidth: 1, borderTopColor: colors.hairline }}>
+                <View style={{ flex: 1 }}>
+                  <Text variant="bodyStrong">{t("settings.revoke_microphone_consent")}</Text>
+                  <Text variant="caption" color={colors.textMuted}>{t("settings.you_ll_be_asked_about_voice_data")}</Text>
+                </View>
+                <ChevronRightIcon color={colors.textFaint} size={20} />
+              </PressableScale>
+            ) : null}
+          </Row>
+
+          {/*
+            HAKKINDA AYRI BİR BÖLÜM. Politika, şartlar, destek ve sürüm
+            "Gizlilik"in içindeydi; grubun adı zaten "Gizlilik ve hakkında"ydı
+            ama "hakkında" diye bir yer yoktu. Gizlilik artık yalnız kullanıcının
+            AÇIP KAPATABİLDİĞİ iki şeyi taşıyor; okunacak metinler burada.
+          */}
+          <Row label={t("settings.about")} colors={colors}>
+            <PressableScale onPress={() => openLegal("privacy")} accessibilityRole="link" style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingVertical: 12 }}>
+              <Text variant="bodyStrong" style={{ flex: 1 }}>{t("settings.privacy_policy")}</Text>
+              <ChevronRightIcon color={colors.textFaint} size={20} />
+            </PressableScale>
+            <PressableScale onPress={() => openLegal("terms")} accessibilityRole="link" style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingVertical: 12, borderTopWidth: 1, borderTopColor: colors.hairline }}>
+              <Text variant="bodyStrong" style={{ flex: 1 }}>{t("settings.terms_of_use")}</Text>
+              <ChevronRightIcon color={colors.textFaint} size={20} />
+            </PressableScale>
+            {/*
+              İLETİŞİM YÜZEYİ — Apple Guidelines 1.2. Kullanıcı içeriği taşıyan
+              uygulamalarda filtreleme, bildirme ve engellemenin YANINDA
+              "yayımlanmış iletişim bilgisi" de isteniyor. Bildirme ve engelleme
+              zaten vardı; ulaşılacak bir adres yoktu ve destek e-postası yalnız
+              gizlilik/şartlar metinlerinin içinde geçiyordu.
+
+              Alt metin taşıyan tek satır bu bölümde: ötekiler (politika, şartlar)
+              adıyla anlaşılıyor, bu ise ne olduğunu söylemezse "hangi destek"
+              sorusunu bırakıyor.
+            */}
+            <PressableScale onPress={() => openLegal("support")} accessibilityRole="link" style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingVertical: 12, borderTopWidth: 1, borderTopColor: colors.hairline }}>
+              <View style={{ flex: 1 }}>
+                <Text variant="bodyStrong">{t("settings.support_contact")}</Text>
+                <Text variant="caption" color={colors.textMuted}>{t("settings.support_contact_sub")}</Text>
+              </View>
+              <ChevronRightIcon color={colors.textFaint} size={20} />
+            </PressableScale>
+            <Text variant="micro" color={colors.textFaint} style={{ marginTop: spacing.md }}>Lernomi {APP_VERSION}</Text>
+          </Row>
+        </Group>
 
         {!user && (
           <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.xl }}>

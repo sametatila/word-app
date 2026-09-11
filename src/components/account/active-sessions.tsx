@@ -5,7 +5,7 @@ import { AuthNotice } from "@/components/auth-shell";
 import { SettingRow } from "@/components/setting-row";
 import { authApi } from "@/lib/auth/api";
 import { useT, useLang } from "@/lib/i18n/client";
-import { Section } from "@/components/settings-section";
+import { Row } from "@/components/settings-section";
 
 /**
  * Etkin oturumlar — hangi cihazlar hesabıma girmiş, ve "diğerlerinden çık".
@@ -113,7 +113,7 @@ export function ActiveSessions() {
     t("sessions.since", { date: new Date(iso).toLocaleDateString(lang) });
 
   return (
-    <Section title={t("settings.sec_sessions")} bare>
+    <Row label={t("settings.sec_sessions")}>
         {state === "ok" && rows?.length ? (
           <div className="divide-y divide-[color:var(--hairline)]">
             {rows.map((s) => (
@@ -152,6 +152,6 @@ export function ActiveSessions() {
             </button>
           </div>
         </div>
-    </Section>
+    </Row>
   );
 }

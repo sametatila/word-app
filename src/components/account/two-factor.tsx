@@ -5,7 +5,7 @@ import { AuthNotice, authInputClass } from "@/components/auth-shell";
 import { authApi } from "@/lib/auth/api";
 import { translateAuthError } from "@/lib/auth/errors";
 import { useT, useLang } from "@/lib/i18n/client";
-import { Section } from "@/components/settings-section";
+import { Row } from "@/components/settings-section";
 
 /**
  * İki adımlı doğrulama — aç / kapat.
@@ -79,7 +79,7 @@ export function TwoFactor() {
   }
 
   return (
-    <Section title={t("settings.sec_two_factor")}>
+    <Row label={t("settings.sec_two_factor")}>
         {note ? <AuthNotice tone="success">{note}</AuthNotice> : null}
 
         {open ? (
@@ -119,6 +119,6 @@ export function TwoFactor() {
             </button>
           </div>
         )}
-    </Section>
+    </Row>
   );
 }

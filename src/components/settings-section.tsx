@@ -1,38 +1,44 @@
 /**
- * Ayar sayfasının iki yapı taşı: GRUP başlığı ve BÖLÜM kartı.
+ * Ayar sayfasının iki yapı taşı: GRUP (başlık + tek kart) ve SATIR.
  *
- * İkisi de `profile-form` içinde özeldi; hesap kartları (parola, iki adımlı
- * doğrulama, etkin oturumlar) aynı görünümü kendi elleriyle kuruyordu. Aynı
- * şeyi üç yerde ayrı yazmak, "ayarlar karışık görünüyor" şikâyetinin görünür
- * yarısıydı: kartların dolgusu, etiket boşluğu ve genişliği zamanla ayrıştı.
- * Tek kaynak buraya alındı.
+ * Eskiden her bölümün kendi kartı vardı ve sayfa alt alta on beş kutuya
+ * dönüşmüştü: kart, bölümleri ayırsın diye vardı ama bölüm sayısı artınca
+ * ayırmayı bıraktı, yalnız gürültü ekledi. Şimdi kart GRUBU çiziyor, bölümler
+ * kartın içinde ince bir çizgiyle ayrılıyor.
  *
- * Bölüm etiketi kartın İÇİNDE bir başlık değil, kartın DIŞINDA bir ad. Fark
- * küçük görünüyor ama bölümler arasındaki sınırı görünür kılan şey bu — kart
- * içi başlık, kartı bir öncekinin devamı gibi gösteriyordu.
+ * Satırların bir kısmı koşullu (parolasız hesapta PAROLA satırı hiç yok);
+ * ayıraç `divide-y` ile kartın kendisinde durduğu için gizlenen satır ortada
+ * asılı bir çizgi bırakmıyor — çizilmeyen çocuk DOM'a hiç girmiyor.
  */
-export function Group({ title }: { title: string }) {
-  return <h2 className="mx-auto mt-8 w-full max-w-3xl text-h3 first:mt-0">{title}</h2>;
-}
-
-/** `bare`: kartın kendi dolgusu yok — satırlar kendi dolgusunu taşıyor. */
-export function Section({
+export function Group({
   title,
-  bare,
   id,
   children,
 }: {
   title: string;
-  bare?: boolean;
   id?: string;
   children: React.ReactNode;
 }) {
   return (
-    <section id={id} className="mx-auto w-full max-w-3xl">
-      <p className="muted mb-2 ml-1 text-caption tracking-wide">{title}</p>
-      <div className={bare ? "card divide-y divide-[color:var(--hairline)] overflow-hidden" : "card space-y-4 p-5"}>
-        {children}
-      </div>
+    <section id={id} className="mx-auto mt-8 w-full max-w-3xl first:mt-0">
+      <h2 className="mb-2 ml-1 text-h3">{title}</h2>
+      <div className="card divide-y divide-[color:var(--hairline)] px-5">{children}</div>
     </section>
+  );
+}
+
+/** Grup kartının içindeki bir bölüm: küçük etiket ve altında içeriği. */
+export function Row({
+  label,
+  children,
+}: {
+  label?: string;
+  children: React.ReactNode;
+}) {
+  return (
+    <div className="py-5 first:pt-5 last:pb-5">
+      {label ? <p className="muted mb-2 text-caption tracking-wide">{label}</p> : null}
+      {children}
+    </div>
   );
 }

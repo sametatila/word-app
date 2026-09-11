@@ -6,7 +6,7 @@ import { ChangePassword } from "@/components/account/change-password";
 import { ActiveSessions } from "@/components/account/active-sessions";
 import { TwoFactor } from "@/components/account/two-factor";
 import { useT } from "@/lib/i18n/client";
-import { Group, Section } from "@/components/settings-section";
+import { Group, Row } from "@/components/settings-section";
 
 /**
  * better-auth `/list-accounts` yanıtı. Alan adı `providerId` — `provider` DEĞİL.
@@ -40,7 +40,18 @@ const ETIKET: Record<string, { ad: string; alt: string }> = {
  * düğme hiç gösterilmiyor: kullanıcıya yapamayacağı bir şeyi teklif edip
  * hatayla geri çevirmek, en baştan teklif etmemekten kötü.
  */
-export function LinkedAccounts({ googleEnabled }: { googleEnabled: boolean }) {
+export function LinkedAccounts({
+  googleEnabled,
+  nameRow,
+}: {
+  googleEnabled: boolean;
+  /**
+   * HESAP grubunun ilk satırı — görünen ad kutusu. Formun durumuna ait
+   * olduğu için `profile-form`da çiziliyor ama YERİ burası: grup kartını
+   * bu bileşen kuruyor (sağlayıcı listesini okuyan tek yer o).
+   */
+  nameRow?: React.ReactNode;
+}) {
   const t = useT();
   const [accounts, setAccounts] = useState<Account[] | null>(null);
   const [msg, setMsg] = useState<string | null>(null);
@@ -140,53 +151,57 @@ export function LinkedAccounts({ googleEnabled }: { googleEnabled: boolean }) {
 
   return (
     <>
-      {/* GİRİŞ YÖNTEMLERİ artık yalnız giriş yöntemleri. Parola, iki adımlı
-          doğrulama ve etkin oturumlar bu bölümün İÇİNDEYDİ ve etiket onları
-          anlatmıyordu — üçü de birer giriş yöntemi değil. Kendi grubuna
-          çıktılar; mobil ayarlar ekranında da bölünme aynı. */}
-      <Section id="accounts" title={t("links.title")} bare>
-        {satirlar.map((p) => {
-          const bagli = bagliMi(p);
-          const etiket = ETIKET[p] ?? { ad: p, alt: "" };
-          const ad = ETIKET[p] ? t(etiket.ad) : p;
-          return (
-            <SettingRow key={p} title={ad} sub={bagli && etiket.alt ? t(etiket.alt) : t("links.not_linked")}>
-              {bagli ? (
-                sonYontem ? (
-                  <span className="muted text-xs">{t("links.only_method")}</span>
+      {/* GİRİŞ YÖNTEMLERİ artık HESAP grubunun içinde bir satır; parola, iki
+          adımlı doğrulama ve etkin oturumlar da kendi gruplarında birer satır.
+          Üçü de eskiden bu bölümün İÇİNDEYDİ ve etiket onları anlatmıyordu. */}
+      <Group title={t("settings.group_account")}>
+        {nameRow}
+        <Row label={t("links.title")}>
+          <div className="-my-2 divide-y divide-[color:var(--hairline)]">
+          {satirlar.map((p) => {
+            const bagli = bagliMi(p);
+            const etiket = ETIKET[p] ?? { ad: p, alt: "" };
+            const ad = ETIKET[p] ? t(etiket.ad) : p;
+            return (
+              <SettingRow key={p} title={ad} sub={bagli && etiket.alt ? t(etiket.alt) : t("links.not_linked")}>
+                {bagli ? (
+                    sonYontem ? (
+                      <span className="muted text-xs">{t("links.only_method")}</span>
+                    ) : (
+                      <button className="btn-ghost text-xs" disabled={busy === p} onClick={() => void kaldir(p)}>
+                        {busy === p ? "…" : t("links.unlink")}
+                      </button>
+                    )
                 ) : (
-                  <button className="btn-ghost text-xs" disabled={busy === p} onClick={() => void kaldir(p)}>
-                    {busy === p ? "…" : t("links.unlink")}
-                  </button>
-                )
-              ) : (
-                <button className="btn text-xs" disabled={busy === p} onClick={() => void bagla(p)}>
-                  {busy === p ? "…" : t("links.link")}
-                </button>
-              )}
-            </SettingRow>
-          );
-        })}
-      </Section>
-      {msg ? <p role="status" className="mx-auto w-full max-w-3xl px-1 text-xs font-semibold">{msg}</p> : null}
+                    <button className="btn text-xs" disabled={busy === p} onClick={() => void bagla(p)}>
+                      {busy === p ? "…" : t("links.link")}
+                    </button>
+                )}
+              </SettingRow>
+            );
+          })}
+          </div>
+          {msg ? <p role="status" className="mt-2 text-xs font-semibold">{msg}</p> : null}
+        </Row>
+      </Group>
 
-      <Group title={t("settings.group_security")} />
+      <Group title={t("settings.group_security")} id="accounts">
+        {/* Parola değiştirme YALNIZ parolası olan hesapta. Bu bileşen zaten
+            sağlayıcı listesini okuyor, ikinci bir istek atmaya gerek yok;
+            `credential` yoksa (yalnız Google/Apple ile girmiş biri) form hiç
+            çizilmiyor — olmayan bir parolayı sormak anlamsız olurdu. */}
+        {bagliMi("credential") ? <ChangePassword /> : null}
 
-      {/* Parola değiştirme YALNIZ parolası olan hesapta. Bu bileşen zaten
-          sağlayıcı listesini okuyor, ikinci bir istek atmaya gerek yok;
-          `credential` yoksa (yalnız Google/Apple ile girmiş biri) form hiç
-          çizilmiyor — olmayan bir parolayı sormak anlamsız olurdu. */}
-      {bagliMi("credential") ? <ChangePassword /> : null}
+        {/* İki adımlı doğrulama da parolalı hesaba bağlı: açma ve kapatma
+            parola istiyor (better-auth zorunlu tutuyor) ve ikinci adımın
+            koruduğu şey zaten parolalı giriş. */}
+        {bagliMi("credential") ? <TwoFactor /> : null}
 
-      {/* İki adımlı doğrulama da parolalı hesaba bağlı: açma ve kapatma
-          parola istiyor (better-auth zorunlu tutuyor) ve ikinci adımın
-          koruduğu şey zaten parolalı giriş. */}
-      {bagliMi("credential") ? <TwoFactor /> : null}
-
-      {/* Etkin oturumlar HER hesapta: yalnız Google ile giren biri de
-          telefonunu kaybedebilir. Parola değiştirmenin aksine bu, giriş
-          yöntemine bağlı değil. */}
-      <ActiveSessions />
+        {/* Etkin oturumlar HER hesapta: yalnız Google ile giren biri de
+            telefonunu kaybedebilir. Parola değiştirmenin aksine bu, giriş
+            yöntemine bağlı değil. */}
+        <ActiveSessions />
+      </Group>
     </>
   );
 }

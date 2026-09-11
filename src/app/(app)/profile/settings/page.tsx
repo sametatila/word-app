@@ -3,7 +3,6 @@ import { titleMeta } from "@/lib/page-meta";
 import { getT } from "@/lib/i18n/server";
 import { ensureProfile } from "@/lib/session";
 import { ProfileForm } from "@/components/profile-form";
-import { LinkedAccounts } from "@/components/account/linked-accounts";
 import { APP_VERSION } from "@/lib/version";
 import { socialMe } from "@/lib/social/profile";
 import { RetryButton } from "@/components/retry-button";
@@ -69,9 +68,8 @@ export default async function SettingsPage() {
         }}
         /* Giriş yöntemleri: parola + sosyal hesaplar tek yerde. Apple web
            akışı açık olmadığı için burada yalnız Google teklif ediliyor;
-           iOS'ta Apple native yoldan bağlanıyor. Formun İÇİNE veriliyor
-           çünkü yeri HESAP'ın hemen altı — mobildeki sıra. */
-        linkedAccounts={<LinkedAccounts googleEnabled={googleConfigured} />}
+           iOS'ta Apple native yoldan bağlanıyor. */
+        googleEnabled={googleConfigured}
       />
       {/* SOSYAL VE GİZLİLİK BURADA DEĞİL. Kullanıcı adı, görünürlük ve engel
           listesi Arkadaşlar'a ait; mobilin ayarlar ekranında da böyle bir
