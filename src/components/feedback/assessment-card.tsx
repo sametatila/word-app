@@ -7,6 +7,7 @@ import { ERROR_LABEL_KEYS } from "@/lib/errors";
 import { whyLabel } from "@/lib/why";
 import { useT, useLang } from "@/lib/i18n/client";
 import { useCourse } from "@/components/app-shell";
+import { scoreBand } from "@/lib/score-bands";
 
 /**
  * Değerlendirme kartı (WP-12; WP-30 yazma ile ortak).
@@ -38,7 +39,9 @@ export function AssessmentCard({
   const t = useT();
   const offline = "offline" in result && result.offline;
   const s = result.score;
-  const tone = s.overall >= 70 ? "var(--color-mint)" : s.overall >= 40 ? "var(--color-flame)" : "var(--color-rose)";
+  /* Bantlar tek kaynaktan (`lib/score-bands`) - ayni 70/40. */
+  const band = scoreBand(s.overall);
+  const tone = band === "good" ? "var(--color-mint)" : band === "mid" ? "var(--color-flame)" : "var(--color-rose)";
 
   return (
     <section className="card p-4">

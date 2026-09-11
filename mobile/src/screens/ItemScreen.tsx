@@ -15,6 +15,7 @@ import { getExercise, type ListeningSegment } from "../data/skills";
 import { QuestionList, GlossPanel, WritingList, type WritingTask } from "../game/skillQuiz";
 import { GrammarBody, SpeakingDrill, MonologueBody, type SpeakingTask } from "../game/skillLibrary";
 import { markItemDone, recordItemScore, queueItemRecord } from "../game/lessonProgress";
+import { isSkillDone, scoreBand, scoreOf } from "../lib/learningRules";
 import { speakTarget, speakAndWait, stopSpeaking } from "../lib/tts";
 import { currentTargetLocale } from "../lib/courses";
 import { API_BASE, fetchWithTimeout } from "../api/client";
@@ -184,7 +185,12 @@ export function ItemScreen() {
     setTimeout(() => sfx("finish"), 600); // son cevabın sesinden sonra tamamlanma sesi
     if (!exercise || saved.current) return;
     saved.current = true;
-    void markItemDone(exercise.id);
+    /* "BITTI" PUANA BAGLI. Once egzersiz biter bitmez isaretleniyordu: sifir
+       dogru yapan da yesil onay aliyordu. Esigin sahibi sunucu
+       (`SKILL_DONE_PCT`, web `lib/score-bands.ts`); burada ayni formulle
+       yerelden hesaplaniyor ki liste aninda dogru cizilsin, sunucu yaniti
+       gelince `lastScore` ile bir daha uzlastiriliyor. */
+    if (isSkillDone(scoreOf(c, total, score))) void markItemDone(exercise.id);
     try {
       const res = await fetchWithTimeout(`${API_BASE}/api/skills`, {
         method: "POST", headers: { "content-type": "application/json" },
@@ -197,7 +203,12 @@ export function ItemScreen() {
         if (typeof d.currentStreak === "number") setStreak(d.currentStreak);
         /* Puan yerele de yazılıyor: Beceriler listesi rozeti bundan çiziyor
            ve sunucu durumu bir sonraki açılışta zaten üzerine gelecek. */
-        if (typeof d.lastScore === "number") void recordItemScore(exercise.id, d.lastScore);
+        if (typeof d.lastScore === "number") {
+          void recordItemScore(exercise.id, d.lastScore);
+          /* Sunucunun puani yerel hesaptan farkli olabiliyor (rubrik yeniden
+             puanliyor): kararin son sozu onda. */
+          if (isSkillDone(d.lastScore)) void markItemDone(exercise.id);
+        }
         bumpStats(); // XP/seri değişti
       }
     } catch {
@@ -239,7 +250,11 @@ export function ItemScreen() {
       : exercise.skill === "speaking"
         ? (drillTasks ? drillTasks.length : 1)
         : (exercise.questions?.length ?? 0);
-  const pct = total ? Math.round((correct / total) * 100) : 100;
+  const pct = scoreOf(correct, total);
+  /* Maskotun ruh hâli ve konfeti PUAN BANDINDAN: eşikler (70 / 40) burada
+     elle yazılıydı, oysa aynı iki sayı uygulamanın her yerinde aynı ayrımı
+     yapıyor (web `lib/score-bands.ts`). */
+  const band = scoreBand(pct);
   const fromSkills = params.from === "skills";
 
   return (
@@ -290,8 +305,8 @@ export function ItemScreen() {
 
         {finished ? (
           <Card padded style={{ marginTop: spacing.lg, alignItems: "center", gap: spacing.sm }}>
-            <Celebrate show={pct >= 70} />
-            <Mascot mood={pct >= 70 ? "celebrate" : pct >= 40 ? "happy" : "idle"} size={84} />
+            <Celebrate show={band === "good"} />
+            <Mascot mood={band === "good" ? "celebrate" : band === "mid" ? "happy" : "idle"} size={84} />
             <Text variant="h2">
               {exercise.skill === "writing" || exercise.monologue
                 ? t("item.tasks_done")

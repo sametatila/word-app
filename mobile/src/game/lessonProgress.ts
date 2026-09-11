@@ -6,6 +6,7 @@
  */
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { api } from "../api/client";
+import { isSkillDone, scoreOf } from "../lib/learningRules";
 
 const KEY = "lernomi-items-done";
 let cache: Set<string> | null = null;
@@ -111,9 +112,20 @@ export async function syncItemProgress(level?: string): Promise<void> {
     const scores = await getItemScores();
     let degisti = false;
     for (const [id, v] of Object.entries(progress)) {
-      if (!s.has(id)) { s.add(id); degisti = true; }
-      const puan = v.lastScore ?? (v.total > 0 ? Math.round((100 * v.correct) / v.total) : null);
-      if (puan !== null && scores[id] !== puan) { scores[id] = puan; degisti = true; }
+      const puan = v.lastScore ?? (v.total > 0 ? scoreOf(v.correct, v.total) : null);
+      /* SATIRIN VARLIGI "BITTI" DEMEK DEGIL. Once her satir kumeye
+         katiliyordu: %10 alan bir egzersiz Beceriler listesinde yesil onayli,
+         "3/5 tamamlandi" sayacinda ve Patika'nin beceri yuvasinda bitmis
+         goruunuyordu - web ve sunucu ise ayni egzersizi hala "siradaki"
+         sayiyor (esik `SKILL_DONE_PCT`, sahibi sunucu). Eksik puan bir
+         karar degil bir bilgisizlik: o satira dokunulmuyor. */
+      if (puan === null) continue;
+      const bitti = isSkillDone(puan);
+      if (bitti && !s.has(id)) { s.add(id); degisti = true; }
+      /* Sunucu otorite: yerelde bitmis isaretli ama puani yetmeyen egzersiz
+         (cevrimdisi bitirilip yukari tasinmis bir deneme) isareti kaybediyor. */
+      if (!bitti && s.has(id)) { s.delete(id); degisti = true; }
+      if (scores[id] !== puan) { scores[id] = puan; degisti = true; }
     }
     if (!degisti) return;
     scoreCache = scores;

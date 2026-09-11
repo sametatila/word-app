@@ -9,6 +9,8 @@ import type { SkillExercise } from "@/lib/skills/types";
 import { recordSkillResult } from "@/lib/skills/progress";
 import { ArrowLeftIcon, FlameIcon, SparkIcon } from "@/components/icons";
 import { Mascot } from "@/components/mascot";
+import { Confetti } from "@/components/celebrate";
+import { scoreBand, scoreOf } from "@/lib/score-bands";
 import { LEVEL_TONE } from "./theme";
 import { usePlayerFrame } from "./player-context";
 import { useT } from "@/lib/i18n/client";
@@ -161,6 +163,14 @@ export function ResultCard({
   }, [visible]);
   if (!visible) return null;
   const perfect = correct === total;
+  /* SONUÇ ANDROID'DEKİ GİBİ ÜÇ BANTLI VE KONFETİLİ.
+     Burada Erdi yalnız iki hâl biliyordu (hepsi doğruysa kutlama, değilse
+     "happy") ve konfeti hiç yoktu: %30 alan öğrenci de gülümseyen bir Erdi
+     görüyordu, yani sonuç bir GERİ BİLDİRİM taşımıyordu. Android aynı yerde
+     puan bandına bakıyor ve eşiği geçeni konfetiyle kutluyor - uygulamanın
+     kelime turlarında, etap kartlarında ve patron turunda yaptığı şey.
+     Bantlar tek kaynaktan (`lib/score-bands.ts`). */
+  const band = scoreBand(scoreOf(correct, total));
   return (
     <motion.section
       ref={ref}
@@ -174,7 +184,9 @@ export function ResultCard({
           egzersizini bitirmek de bir tur bitirmek kadar bir an; orada karakter
           kutlarken burada onay simgesi çıkması, aynı uygulamada iki ayrı dil
           konuşmak olurdu. */}
-      <Mascot mood={perfect ? "cheer" : "happy"} size={84} className="mx-auto" />
+      {/* `cheer` klibi mobildeki `celebrate` ile aynı dosya (bkz. mascot CLIP). */}
+      <Confetti fire={band === "good" ? 1 : 0} count={34} />
+      <Mascot mood={band === "good" ? "cheer" : band === "mid" ? "happy" : "idle"} size={84} className="mx-auto" />
       <h2 className="mt-1 text-lg font-bold">
         {perfect
           ? t("skillp.perfect")

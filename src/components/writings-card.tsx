@@ -4,6 +4,7 @@ import Link from "next/link";
 import { CardGrid } from "@/components/layout";
 import { useEffect, useState } from "react";
 import { PenIcon } from "@/components/icons";
+import { scoreBand } from "@/lib/score-bands";
 import { EmptyCard } from "@/components/empty-card";
 import { SkeletonLine } from "@/components/skeleton";
 import { AssessmentCard } from "@/components/feedback/assessment-card";
@@ -139,7 +140,13 @@ export function WritingsCard({ showEmpty = false }: { showEmpty?: boolean }) {
            * 4.5'i bir yana, büyük yazı için istediği 3.0 bile değil. Sabit
            * 600'de iki temada da 5.30 / 5.20 / 6.07.
            */
-          const tone = score === null ? "var(--text-muted)" : score >= 70 ? "var(--color-mint-600)" : score >= 40 ? "var(--color-flame-600)" : "var(--color-rose-600)";
+          /* Bantlar TEK KAYNAKTAN (`lib/score-bands`): ayni 70/40 ayrimi
+             degerlendirme kartinda, egzersiz sonucunda ve mobilde de var,
+             dordu ayri ayri elle yaziliydi. */
+          const tone = score === null ? "var(--text-muted)"
+            : scoreBand(score) === "good" ? "var(--color-mint-600)"
+            : scoreBand(score) === "mid" ? "var(--color-flame-600)"
+            : "var(--color-rose-600)";
           return (
             <li key={it.id} className="rounded-xl px-3 py-2.5 surface-2">
               <div className="flex items-center gap-3">

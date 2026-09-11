@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import { getUserId } from "@/lib/auth/server";
 import { getExercise, libraryMetas, listExerciseMeta } from "@/lib/skills";
 import { listSkillStatus } from "@/lib/skills/record";
+import { isSkillDone } from "@/lib/score-bands";
 import { isLibraryExercise, targetLangOf } from "@/lib/skills/types";
 import { PlayerFrame, type PlayerFrameValue } from "@/components/skills/player-context";
 import { ReadingPlayer } from "@/components/skills/reading-player";
@@ -16,9 +17,6 @@ import { localiseExercise } from "@/lib/lessons/native-server";
 import { isNativeLang } from "@/lib/i18n/dict";
 
 export const dynamic = "force-dynamic";
-
-/** Beceriler kütüphanesinde "bitti" eşiği — immersion/progress.ts ile aynı (70). */
-const DONE_PCT = 70;
 
 /**
  * Beceri egzersizi oynatıcısı — Patika öğeleri ve Beceriler kütüphanesi aynı
@@ -121,7 +119,7 @@ async function nextInLibrary(
     const userId = await getUserId();
     if (userId) {
       const status = await listSkillStatus(userId, level);
-      done = new Set(Object.entries(status).filter(([, s]) => (s.lastScore ?? 0) >= DONE_PCT).map(([k]) => k));
+      done = new Set(Object.entries(status).filter(([, s]) => isSkillDone(s.lastScore)).map(([k]) => k));
     }
   } catch (err) {
     console.error("[skill] sıradaki için ilerleme okunamadı", err);

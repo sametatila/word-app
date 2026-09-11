@@ -16,6 +16,7 @@ import { useAuth } from "../lib/AuthContext";
 import { fetchWritings, deleteWriting, type Writing } from "../game/writings";
 import { useTheme, spacing, radii, softShadow, type Palette } from "../theme";
 import { CardGrid } from "../ui/CardGrid";
+import { scoreBand } from "../lib/learningRules";
 
 /** Tür -> sözlük anahtarı. */
 /*
@@ -42,13 +43,15 @@ const KIND_KEY: Record<string, string> = {
  */
 function scoreTone(score: number | null, colors: Palette): string {
   if (score === null) return colors.textMuted;
-  return score >= 70 ? colors.successText : score >= 40 ? colors.streakText : colors.dangerText;
+  const band = scoreBand(score);
+  return band === "good" ? colors.successText : band === "mid" ? colors.streakText : colors.dangerText;
 }
 
 /** Puan kutusunun ZEMİNİ - dolgu ailesinin tam parlaklığı. */
 function scoreFill(score: number | null, colors: Palette): string {
   if (score === null) return colors.surface2;
-  return score >= 70 ? colors.success : score >= 40 ? colors.streak : colors.danger;
+  const band = scoreBand(score);
+  return band === "good" ? colors.success : band === "mid" ? colors.streak : colors.danger;
 }
 
 function WritingCard({ w, colors, onReport, onDelete }: { w: Writing; colors: Palette; onReport: (w: Writing) => void; onDelete: (w: Writing) => void }) {

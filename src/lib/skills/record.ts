@@ -5,6 +5,7 @@ import { userSkills } from "@/lib/db/schema";
 import { awardActivity, type AwardResult } from "@/lib/award";
 import { track } from "@/lib/events";
 import { getExercise, itemCount, xpFor } from "@/lib/skills";
+import { scoreOf } from "@/lib/score-bands";
 import type { SkillExercise } from "./types";
 
 /**
@@ -40,13 +41,10 @@ export type SkillRecordResult = AwardResult & {
   repeat: boolean;
 };
 
-/** Puanı 0–100 aralığına kilitler; doğru/toplam ile aynı ölçek. */
-export function scoreOf(correct: number, total: number, score?: number | null): number {
-  if (typeof score === "number" && Number.isFinite(score)) {
-    return Math.max(0, Math.min(100, Math.round(score)));
-  }
-  return total > 0 ? Math.round((100 * Math.min(correct, total)) / total) : 0;
-}
+/* Puan formülü `lib/score-bands`a taşındı: bu modülde `server-only` var ve
+   istemci oynatıcısı (sonuç kartındaki puan bandı) aynı formülü kullanmak
+   zorunda. Ad ve çağrı yerleri değişmedi. */
+export { scoreOf };
 
 export async function recordSkillAttempt(
   userId: string,
