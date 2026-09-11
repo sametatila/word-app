@@ -11219,3 +11219,49 @@ Bu, §11.336'da açılan mutlak-ölçüt dizisinin sonu: **sosyal eylemin hatas�
 (§11.336), **rota yedeklerinin duyurusu** (§11.335) ve **turun sonucu**
 (§11.337–§11.340). Üçü de "iki taraf da yanlış" sınıfındaydı, yani üçü de
 karşılaştırmalı bir kapıya görünmezdi.
+
+## §11.341 — Odak yönetimi zaten yapılmıştı; tek açık yer yürüyüşün karanlık örtüsü
+
+Erişilebilirlik ekseninde ölçülmemiş son büyük parçayı taradım: kipler
+açıldığında odak nereye gidiyor, kapanınca geri dönüyor mu, Escape çalışıyor mu?
+
+**Bu eksen ikisinde de zaten yapılmış** ve ölçüm bunu doğruladı:
+
+- Mobilin beş kipi (rozet, sertifika, onay, mikrofon, bildir) **hepsi**
+  `accessibilityViewIsModal` + `onRequestClose` taşıyor.
+- Web'in üç kipi yerel `<dialog>` + `showModal()` ile açılıyor — odak tuzağı
+  ve Escape tarayıcıdan geliyor. Dördüncüsü (`achievement-unlock`) elle
+  yapıyor: `role="dialog" aria-modal`, odağı alıyor, Escape'i dinliyor ve
+  kapanışta **odağı geldiği yere veriyor** (`geri?.focus?.()`).
+- `CertificateSheet`in web'de kip karşılığı yok ve olmaması doğru: web
+  sertifikayı yeni sekmede açıyor (`/api/certificate/{id}`), mobilde sekme
+  diye bir şey olmadığı için sheet. Aynı yer, platformun kendi yolu.
+
+§224 bunu **gerilemeyi tutmak için** yazıldı, bir kusuru kapatmak için değil.
+
+**Tek açık yer yürüyüşün karanlık örtüsüydü** ve orada iki kusur vardı:
+
+1. Örtü ekranın tamamını kapatıp etkileşim kipini değiştiriyor ("ekran
+   karanlık ama açık — seni dinliyorum") ama **hiçbir şey bunu duyurmuyordu**.
+2. Çıkış yalnızca **üç dokunuştu**. Dokunmaların yutulması bilinçli (cepte
+   kazara basılmasın), ama klavye kullanan biri için bu bir **klavye
+   tuzağı**: örtü her şeyi kapatıyor, tıklamalar yutuluyor ve dışarı çıkan
+   hiçbir tuş yok (WCAG 2.1.2). Escape eklendi — kazara basılan bir tuş değil,
+   bilinçli bir çıkış; üç dokunuş kuralı dokunmatikte olduğu gibi kaldı.
+
+Örtü **web'e özel** (anahtarları `i18n/web`de): mobilde ekran gerçekten
+kapanıyor, taklit bir karartmaya gerek yok. Yani Android'e bakılacak bir
+karşılık yok, ölçüt mutlak.
+
+**Uygulama sırasında iki kez kendi kalıbımı kaçırdım ve ikisi de yakalandı.**
+İlk yazımda Escape'i düğümün `onKeyDown`una koydum — örtüye odak verilmediği
+sürece hiç ateşleme almaz; `achievement-unlock`un kalıbı (odağı al, pencereyi
+dinle, kapanışta geri ver) izlendi. İkincisi: etkiyi `exitDark`ın **önüne**
+yazdım, oysa bağımlılık dizisi render sırasında okunuyor ve o noktada
+`const exitDark` henüz TDZ'de — etki `exitDark`tan sonraya taşındı.
+
+**Ve pencere tuzağının beşinci biçimi.** Kapının ilk ölçümü
+`role="status"` ile `walk.dark_listening` arasında 200 karakterlik pencere
+kullanıyordu; araya yazdığım uzun gerekçe yorumu girince yetmedi. §11.339'un
+kuralı uygulandı: işaretten geri gidip ondan hemen önce açılan `<div`in
+etiketine bakılıyor. **Sınır bir mesafe değil, bir düğüm.**
