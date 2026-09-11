@@ -8,7 +8,7 @@ import { speakGerman } from "@/components/speak-button";
 import { track } from "@/lib/track";
 import { firstWordsFor, type FirstWord } from "@/lib/first-words";
 import { readOnboardingPrefs } from "@/lib/onboarding-prefs";
-import { useT } from "@/lib/i18n/client";
+import { useLang, useT } from "@/lib/i18n/client";
 import { useCourse } from "@/components/app-shell";
 
 /**
@@ -32,6 +32,15 @@ const withArtikel = (w: FirstWord) => (w.artikel ? `${w.artikel} ${w.de}` : w.de
 export function FirstPractice() {
   const course = useCourse();
   const t = useT();
+  /* ANA DİL ARAYÜZDEN, SABİT DEĞİL. Burada `"tr"` yazılıydı; oysa hem
+     onboarding'in "ısınmayı göster mi" kararı (`hasFirstWords(lang, course)`)
+     hem mobil karşılığı (`FirstPracticeScreen`: `firstWordsFor(currentLang(),
+     …)`) gerçek dili veriyor. Bugün tek parite `tr-de` olduğu için fark
+     görünmüyor - ama karar ile yükleme AYRI dillere bakıyor: `de-de` ya da
+     `en-en` paritesi yazıldığı gün onboarding kullanıcıyı ısınmaya yollar,
+     sayfa Türkçe seti yükler. Bir de doğrudan `/first-words` adresine giren
+     Almanca arayüzlü kullanıcı bugün de Türkçe karşılık görüyor. */
+  const lang = useLang();
   const router = useRouter();
   const [words, setWords] = useState<FirstWord[] | null>(null);
   const [idx, setIdx] = useState(0);
@@ -41,8 +50,8 @@ export function FirstPractice() {
   // kullanıcı yok. İlk render'da depolama okunamadığı için kelimeler efektte.
   useEffect(() => {
     const p = readOnboardingPrefs();
-    setWords(firstWordsFor("tr", p.course ?? "de", p.level ?? "A1"));
-  }, []);
+    setWords(firstWordsFor(lang, p.course ?? "de", p.level ?? "A1"));
+  }, [lang]);
 
   const w = words?.[idx];
 
