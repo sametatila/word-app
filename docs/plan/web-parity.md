@@ -6725,3 +6725,47 @@ Aynı dosyanın başındaki "son saniyelerin tık sesi BURADA YOK" notu da
 eskimişti - `danger` sesi ses tablosuna eklendiğinde kod düzelmiş, yorum
 kalmıştı.
 
+
+### 11.189 Yazma egzersizi kısa cevap yazanda bitirilemiyordu
+
+`writp.` uzayı: webde 19 anahtar, mobilde bir. Beceri kütüphanesinin yazma
+görevini karşılaştırınca beş ayrışma çıktı, biri **engelleyiciydi**.
+
+**Gönder düğmesi asgari kelime sayısına bağlıydı** (`words >= minWords`) ve
+atlama düğmesi yoktu. Asgariye ulaşamayan öğrencinin görevi kapatma yolu hiç
+yoktu: `onSettle` çağrılmıyor, `onAllDone` gelmiyor, **egzersiz bitmiyordu.**
+Web kısa metni de değerlendiriyor, yalnız görevi "tamamlandı" saymıyor
+(`writp.min_words_note`) ve altında "bu görevi atla" duruyor.
+
+Bu, aynı dosyada geçen turlarda bulunan sınıfın aynısı (`form` ve `rewrite`
+kartlarının `minWords` alanı olmadığı için hiç kapanamaması, 356 egzersizin
+190'ı) — bu sefer sebep eksik alan değil, fazla katı eşik.
+
+Dördü daha:
+- düşük puandan sonra **tekrar deneme yolu yoktu**; görev değerlendirme anında
+  kapanıyordu. Artık sonuç ekranında kapanıyor (Devam / Bir daha dene), web de
+  öyle yapıyor.
+- 40 altı ve 40-60 arası için ayrı öneri satırı yoktu.
+- **kalıp çipleri yalnız seslendiriyordu.** Yazma görevinde kalıp listesi bir
+  telaffuz alıştırması değil, yazarken kullanılacak malzeme: webde dokununca
+  metne ekleniyor. Ne yaptıklarını söyleyen satır da yoktu. Okuma yolu uzun
+  basışta duruyor.
+- cümle hükmü tek bir boole idi (`written`, bütün dizede levenshtein ≤ 1): iki
+  harflik sapma da sıra hatası da "yanlış" oluyordu. Artık `matchSentence`:
+  tam doğru / yazım sapması / sıra hatası ayrı söyleniyor ve geçme ölçütü web
+  ile aynı (exact + spelling).
+
+### 11.190 Cümle kurma görevi Android'de düz bir metin kutusuydu
+
+Aynı karşılaştırmanın en büyük tasarım farkı: web `BuildTask` karışık
+PARÇALAR veriyor (dokunarak kur, iki yanlıştan sonra cevap açılır); Android
+kart aynı içeriği boş bir metin kutusuyla soruyordu. **"Cümleyi KUR" adının
+karşılığı yalnız webde vardı** ve aynı görev iki platformda iki farklı
+zorluktaydı.
+
+Taşındı: parça çipleri, tohumlu diziliş, iki yanlışta açılma, ilk yanlıştan
+sonra ipucu, temizle, doğruda onay satırı. `lib/shuffle` webin
+`seededShuffle`inin birebir portu.
+
+Kapılar: §101 yazma görevinin on bir noktası, §102 karıştırma gövdesi.
+
