@@ -42,6 +42,7 @@
     "export:user": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/export-user.ts",
     "check:colors": "node scripts/check-colors.mjs",
     "check:tokens": "node scripts/check-tokens.mjs",
+    "check:radius": "node scripts/check-radius.mjs --check",
     "check:pairs": "npm run lessons:apply && npm run lessons:apply-de && tsx --tsconfig scripts/tsconfig.e2e.json scripts/check-pairs.ts",
     "test:legal-db": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/test-legal-db.ts",
     "test:entitlement": "tsx --tsconfig scripts/tsconfig.e2e.json scripts/test-entitlement.ts",

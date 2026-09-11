@@ -7275,6 +7275,93 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     "beklenen",
   );
 
+  /* ── 212. sohbet balonunun bicimi: uc balon, iki platform ────────────
+   * Uygulamada uc sohbet balonu var - koc balonu, ders balonlari ve rol yapma
+   * sinavi - ve ucu de ayni sey: yaricap panel basamagi (mobil radii.lg = 20),
+   * konusan tarafa bakan alt kose kucuk (chip = mobil radii.sm = 10).
+   *
+   * Oyle DEGILDI. Koc balonu mobilde kuyruk kosesini bastan beri yapiyordu,
+   * ders ve rol yapma balonlarinin dort kosesi esitti; webde ucunde de kuyruk
+   * vardi ama yaricaplar olcek disi Tailwind varsayilanlariydi (16 govde,
+   * 4-6 kuyruk). Yani ayni uygulamada uc farkli balon bicimi vardi ve hicbiri
+   * belgelenen olcege oturmuyordu.
+   *
+   * Kapi bicimi OLCUYOR: webde sinif adlari, mobilde borderRadius degerleri. */
+  {
+    const webBalon = (ad, f, kuyruk) => {
+      const src = sil(read(f));
+      const govde = /rounded-panel/.test(src) ? "panel" : "OLCEK DISI";
+      const k = new RegExp("rounded-" + kuyruk + "-chip").test(src) ? "chip" : "OLCEK DISI";
+      return ad + "=" + govde + "+" + k;
+    };
+    const mobBalon = (ad, f, kose) => {
+      const src = sil(read(f));
+      const govde = /borderRadius: radii\.lg/.test(src) ? "panel" : "OLCEK DISI";
+      const k = new RegExp(kose + ": radii\\.sm").test(src) ? "chip" : "KUYRUK YOK";
+      return ad + "=" + govde + "+" + k;
+    };
+    sameList(
+      "sohbet balonunun bicimi",
+      [
+        webBalon("web koc", "src/components/coach-bubble.tsx", "bl"),
+        webBalon("web ders", "src/components/lessons/lesson-player.tsx", "bl"),
+        webBalon("web rol yapma", "src/components/lessons/roleplay-exam.tsx", "bl"),
+        mobBalon("mobil koc", "mobile/src/ui/CoachBubble.tsx", "borderBottomLeftRadius"),
+        mobBalon("mobil ders", "mobile/src/screens/LessonScreen.tsx", "borderBottomLeftRadius"),
+        mobBalon("mobil rol yapma", "mobile/src/screens/RoleplayExamScreen.tsx", "borderBottomLeftRadius"),
+      ],
+      [
+        "web koc=panel+chip",
+        "web ders=panel+chip",
+        "web rol yapma=panel+chip",
+        "mobil koc=panel+chip",
+        "mobil ders=panel+chip",
+        "mobil rol yapma=panel+chip",
+      ],
+      "bulunan",
+      "beklenen",
+    );
+  }
+
+  /* ── 211. rubrik gecme notu: alti cagri yeri ──────────────────────────
+   * Serbest yazma ve monolog "dogru/yanlis" degil rubrikle olculuyor ve o tur
+   * 60'ta gecilmis sayiliyor. Sayi alti yerde elle yaziliydi: webde iki
+   * oynatici, mobilde dort yer (karar, puan rengi ve tavsiye satiri).
+   *
+   * Ikisi ayrissaydi ayni metin bir platformda gecmis, oburunde kalmis
+   * sayilirdi - ve 11.313'un kusuruyla ayni sinif: karari sunucu degil iki
+   * istemci ayri ayri veriyor. */
+  {
+    const cagri = (ad, f) => {
+      const src = sil(read(f));
+      /* Ad SINIRLI (`\b`): sade `/RUBRIC_PASS_PCT/` bir onek eslesmesi olurdu ve
+         "kapilarda onek eslesmesi" kapisi bunu hemen yakaladi - `RUBRIC_PASS_PCT2`
+         diye yeniden adlandirilan bir sabit hâlâ "var" sayilirdi. */
+      return ad + "=" + (/\bRUBRIC_PASS_PCT\b/.test(src) ? (/>=\s*60\b|<\s*60\b/.test(src) ? "kaynaktan + ELLE ESIK" : "kaynaktan") : "elle yazili");
+    };
+    sameList(
+      "rubrik gecme notu cagri yerleri",
+      [
+        "web sabit=" + ((sil(read("src/lib/score-bands.ts")).match(/RUBRIC_PASS_PCT = (\d+)/) ?? [])[1] ?? "yok"),
+        "mobil sabit=" + ((sil(read("mobile/src/lib/learningRules.ts")).match(/RUBRIC_PASS_PCT = (\d+)/) ?? [])[1] ?? "yok"),
+        cagri("web monolog", "src/components/skills/monologue-player.tsx"),
+        cagri("web yazma", "src/components/skills/writing-player.tsx"),
+        cagri("mobil kutuphane", "mobile/src/game/skillLibrary.tsx"),
+        cagri("mobil yazma turu", "mobile/src/game/skillQuiz.tsx"),
+      ],
+      [
+        "web sabit=60",
+        "mobil sabit=60",
+        "web monolog=kaynaktan",
+        "web yazma=kaynaktan",
+        "mobil kutuphane=kaynaktan",
+        "mobil yazma turu=kaynaktan",
+      ],
+      "bulunan",
+      "beklenen",
+    );
+  }
+
   /* ── 210. beceri "bitti" esigi: sunucu, web ve mobil ─────────────────
    * Sunucu bir beceri egzersizini yalniz SON PUANI 70'i gecince bitmis
    * sayiyor (`lib/immersion/progress`: Patika kapisini da bununla aciyor).
