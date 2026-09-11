@@ -1,0 +1,267 @@
+[
+ {
+  "tr": "„Sunday is good. Let's meet at seven.“",
+  "kind": "explain",
+  "en": "„Sunday is good. Let's meet at seven.“"
+ },
+ {
+  "tr": "İki şehirde hava. Kaç derece, ne yağıyor?",
+  "kind": "intro",
+  "en": "The weather in two cities. How many degrees, and what is falling?"
+ },
+ {
+  "tr": "„No, no headache. But I can't carry a box.“",
+  "kind": "explain",
+  "en": "„No, no headache. But I can't carry a box.“"
+ },
+ {
+  "tr": "„I prefer pop music.“ — eski şarkılar Nil'in.",
+  "kind": "explain",
+  "en": "„I prefer pop music.“ — the old songs are Nil's."
+ },
+ {
+  "tr": "„No, I can't sing.“ — çalıyor ama söylemiyor.",
+  "kind": "explain",
+  "en": "„No, I can't sing.“ — she plays but does not sing."
+ },
+ {
+  "tr": "„My neighbour is sick too, so I can't ask her.“",
+  "kind": "explain",
+  "en": "„My neighbour is sick too, so I can't ask her.“"
+ },
+ {
+  "tr": "Vücut bölümleri ve ağrının iki söyleniş biçimi.",
+  "kind": "intro",
+  "en": "The parts of the body and the two ways of saying that something hurts."
+ },
+ {
+  "tr": "Önce doktor, sonra ilaç, sonra ev, en son akşam.",
+  "kind": "explain",
+  "en": "First the doctor, then the medicine, then home, last the evening."
+ },
+ {
+  "tr": "„I learn to swim at forty!“ — daha yeni öğreniyor.",
+  "kind": "explain",
+  "en": "„I learn to swim at forty!“ — he is only learning it now."
+ },
+ {
+  "tr": "Bir haftanın planı. Hangi gün ne var, hangi gün boş?",
+  "kind": "intro",
+  "en": "The plan for one week. What is on which day, and which day stays free?"
+ },
+ {
+  "tr": "„On Monday I'm going to meet Ali.“ — salı havuz günü.",
+  "kind": "explain",
+  "en": "„On Monday I'm going to meet Ali.“ — Tuesday is the pool day."
+ },
+ {
+  "tr": "Parkta bir pazar. Ne var, hava nasıl, kışın ne oluyor?",
+  "kind": "intro",
+  "en": "A Sunday in the park. What is there, how is the weather, what happens in winter?"
+ },
+ {
+  "tr": "Randevu alınıyor. Ne zaman, ne yapmak zorunda, ne değil?",
+  "kind": "intro",
+  "en": "An appointment is made. When, what do you have to do and what not?"
+ },
+ {
+  "tr": "Yüzme konuşuluyor. Kim nerede yüzebiliyor, kim öğreniyor?",
+  "kind": "intro",
+  "en": "Swimming is the subject. Who can swim where, and who is still learning?"
+ },
+ {
+  "tr": "„Can you swim?“ — „can“ öne geçiyor ve fiil eksiz kalıyor.",
+  "kind": "explain",
+  "en": "„Can you swim?“ — „can“ moves to the front and the verb stays bare."
+ },
+ {
+  "tr": "Ağrıyı iki biçimde de yaz. Sonunda randevu formunu doldur.",
+  "kind": "intro",
+  "en": "Write the pain in both ways. At the end, fill in the appointment form."
+ },
+ {
+  "tr": "Yapabilme ve alışkanlık yaz. Sonunda havuz kartını doldur.",
+  "kind": "intro",
+  "en": "Write ability and habit. At the end, fill in the pool card."
+ },
+ {
+  "tr": "İki kişi müziği konuşuyor. Kim ne çalıyor, kim ne dinliyor?",
+  "kind": "intro",
+  "en": "Two people talk about music. Who plays what, who listens to what?"
+ },
+ {
+  "tr": "„My hands have five fingers each.“ — „each“ el başına demek.",
+  "kind": "explain",
+  "en": "„My hands have five fingers each.“ — „each“ means per hand here."
+ },
+ {
+  "tr": "Müzik ve hava cümlelerini yaz. Sonunda sinema planını doldur.",
+  "kind": "intro",
+  "en": "Write sentences about music and weather. At the end, fill in the cinema plan."
+ },
+ {
+  "tr": "„Here the children can't play outside. The playground is wet.“",
+  "kind": "explain",
+  "en": "„Here the children can't play outside. The playground is wet.“"
+ },
+ {
+  "tr": "Önce soru, sonra oranın havası, sonra buranınki, en son davet.",
+  "kind": "explain",
+  "en": "First the question, then the weather there, then the weather here, last the invitation."
+ },
+ {
+  "tr": "„My back hurts… And my shoulder hurts too.“ — baş ve bacak iyi.",
+  "kind": "explain",
+  "en": "„My back hurts… And my shoulder hurts too.“ — the head and the leg are fine."
+ },
+ {
+  "tr": "„I can swim in a pool, but not in a lake.“ — göl derin ve soğuk.",
+  "kind": "explain",
+  "en": "„I can swim in a pool, but not in a lake.“ — the lake is deep and cold."
+ },
+ {
+  "tr": "„I have a headache and my knee hurts.“ — iki kalıp aynı cümlede.",
+  "kind": "explain",
+  "en": "„I have a headache and my knee hurts.“ — both patterns in one sentence."
+ },
+ {
+  "tr": "Bir günün zorunlulukları. „must“ ile „have to“ art arda geçiyor.",
+  "kind": "intro",
+  "en": "The duties of one day. „must“ and „have to“ come one after the other."
+ },
+ {
+  "tr": "Doktor muayenesi. Ne ağrıyor, ne ağrımıyor, ne yapmak gerekiyor?",
+  "kind": "intro",
+  "en": "An examination at the doctor's. What hurts, what does not, and what has to be done?"
+ },
+ {
+  "tr": "Havuz anlatılıyor. Su ne zaman soğuk, çocuklar nerede öğreniyor?",
+  "kind": "intro",
+  "en": "A pool is described. When is the water cold, where do the children learn?"
+ },
+ {
+  "tr": "Sinema daveti. Davet, ret ve yeni bir gün — üçü de ayrı kalıpla.",
+  "kind": "intro",
+  "en": "An invitation to the cinema. Invitation, refusal and a new day — each with its own phrase."
+ },
+ {
+  "tr": "Hava ve davet yaz. Hava cümlesinde „it“ boş bir özne ama zorunlu.",
+  "kind": "intro",
+  "en": "Write weather and invitation. In a weather sentence „it“ is an empty subject, but it is required."
+ },
+ {
+  "tr": "„Sorry, I can't tonight. I am busy.“ — meşgul olduğu gün bu akşam.",
+  "kind": "explain",
+  "en": "„Sorry, I can't tonight. I am busy.“ — the evening she is busy is this one."
+ },
+ {
+  "tr": "„The other series on TV are boring.“ — ilginç olan kendi izlediği.",
+  "kind": "explain",
+  "en": "„The other series on TV are boring.“ — the interesting one is the one she watches."
+ },
+ {
+  "tr": "Nazik reddi yaz. Üç parça: özür, gerekçe, kapıyı açık bırakan söz.",
+  "kind": "intro",
+  "en": "Write the polite refusal. Three parts: an apology, a reason, and a phrase that leaves the door open."
+ },
+ {
+  "tr": "„It's raining. And it's cold — ten degrees.“ — kar yok, rüzgâr var.",
+  "kind": "explain",
+  "en": "„It's raining. And it's cold — ten degrees.“ — no snow, but wind."
+ },
+ {
+  "tr": "„Today it is sunny, but yesterday it was cold…“ — soğuk olan dündü.",
+  "kind": "explain",
+  "en": "„Today it is sunny, but yesterday it was cold…“ — the cold day was yesterday."
+ },
+ {
+  "tr": "Pazartesiden cumaya sırayla; hafta sonu en sonda ve henüz belirsiz.",
+  "kind": "explain",
+  "en": "From Monday to Friday in order; the weekend comes last and is still open."
+ },
+ {
+  "tr": "Bir davet reddediliyor ama kapı kapanmıyor. Reddin üç parçasını bul.",
+  "kind": "intro",
+  "en": "An invitation is turned down, but the door stays open. Find the three parts of the refusal."
+ },
+ {
+  "tr": "„I have a headache and my back hurts.“ — aynı cümlede iki ayrı kalıp.",
+  "kind": "explain",
+  "en": "„I have a headache and my back hurts.“ — two different patterns in one sentence."
+ },
+ {
+  "tr": "„The leg is long and the knee is in the middle of it.“ — diz bacakta.",
+  "kind": "explain",
+  "en": "„The leg is long and the knee is in the middle of it.“ — the knee belongs to the leg."
+ },
+ {
+  "tr": "„I'm not going to do something in the evening.“ — perşembe akşamı boş.",
+  "kind": "explain",
+  "en": "„I'm not going to do something in the evening.“ — the Thursday evening stays free."
+ },
+ {
+  "tr": "„The children learn to swim in the small pool.“ — derin havuz ötekisi.",
+  "kind": "explain",
+  "en": "„The children learn to swim in the small pool.“ — the deep one is the other pool."
+ },
+ {
+  "tr": "„I have an appointment at ten o'clock.“ — çeyrek kala orada olma saati.",
+  "kind": "explain",
+  "en": "„I have an appointment at ten o'clock.“ — a quarter to is when she has to be there."
+ },
+ {
+  "tr": "„My back hurts.“ — organ özne, fiil „hurt“ ve üçüncü tekil kişide „-s“.",
+  "kind": "explain",
+  "en": "„My back hurts.“ — the body part is the subject, the verb „hurt“ takes „-s“ in the third person singular."
+ },
+ {
+  "tr": "„The doctor is here at ten o'clock.“ — pazartesi ağrının başladığı gün.",
+  "kind": "explain",
+  "en": "„The doctor is here at ten o'clock.“ — Monday is the day the pain started."
+ },
+ {
+  "tr": "„Then let's meet on Sunday.“ — reddin ardından yeni bir gün öneriliyor.",
+  "kind": "explain",
+  "en": "„Then let's meet on Sunday.“ — after the refusal a new day is offered."
+ },
+ {
+  "tr": "Önce davet, sonra ret, sonra kapıyı açık bırakan söz, en son yeni öneri.",
+  "kind": "explain",
+  "en": "First the invitation, then the refusal, then the phrase that leaves the door open, last the new offer."
+ },
+ {
+  "tr": "„Here it is sunny and hot! Twenty-eight degrees.“ — on, Kaan'ın şehrinde.",
+  "kind": "explain",
+  "en": "„Here it is sunny and hot! Twenty-eight degrees.“ — ten degrees is what it is in Kaan's city."
+ },
+ {
+  "tr": "„I prefer pop music.“ — „prefer“ tek başına da kullanılır, „to“ gerekmez.",
+  "kind": "explain",
+  "en": "„I prefer pop music.“ — „prefer“ can stand alone; no „to“ is needed."
+ },
+ {
+  "tr": "„I'm afraid I can't. I'm busy.“ — ret üç parçalı: özür, gerekçe, sonraki sefer.",
+  "kind": "explain",
+  "en": "„I'm afraid I can't. I'm busy.“ — the refusal has three parts: apology, reason, next time."
+ },
+ {
+  "tr": "„I need a doctor. Can I have an appointment today?“ — kâğıt ve kart sonra geliyor.",
+  "kind": "explain",
+  "en": "„I need a doctor. Can I have an appointment today?“ — the paper and the card come later."
+ },
+ {
+  "tr": "Zorunluluk ve iyelik yaz. „must“ ile „have to“ aynı işi görüyor ama biçimleri farklı.",
+  "kind": "intro",
+  "en": "Write duty and possession. „must“ and „have to“ do the same job, but their forms are different."
+ },
+ {
+  "tr": "„My son plays with a ball on the grass.“ — köpek koşuyor, çocuklar kışın gölde oynuyor.",
+  "kind": "explain",
+  "en": "„My son plays with a ball on the grass.“ — the dog runs, the children play on the lake in winter."
+ },
+ {
+  "tr": "„Sorry, I can't tonight… Tomorrow is good.“ — davet bu akşamaydı, ret gelince yarına kayıyor.",
+  "kind": "explain",
+  "en": "„Sorry, I can't tonight… Tomorrow is good.“ — the invitation was for tonight; after the refusal it moves to tomorrow."
+ }
+]

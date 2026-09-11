@@ -60,8 +60,8 @@ mi çıkacağına yazar karar verir.
 
 | Seviye | Ünite | Durum |
 |---|---|---|
-| A1 | 1–18 | **yazıldı** (2026-09-11/12) |
-| A1 | 19–25 | bekliyor |
+| A1 | 1–21 | **yazıldı** (2026-09-11/12) |
+| A1 | 22–25 | bekliyor |
 | A2 · B1 · B2 · C1 | 1–25 | bekliyor |
 
 **A1 ünite 1 (2026-09-11).** Dört dersi Hello! · How are you? · I am, you
@@ -215,6 +215,24 @@ Parite tarafında bu ünite cömert çıktı: „go swimming“ ile „schwimmen
 gehen“, „play football“ ile „Fußball spielen“ (artikelsiz), „es gibt“ ile
 „there is“in ikisi de boş özne taşıması. Almanca karşılıklar bunları
 „genau wie im Deutschen“ diye söylüyor.
+
+**A1 ünite 19–21 (2026-09-12).** Ünite 19 Music · Cinema invitation ·
+Weather small talk · In the park; ünite 20 At the pool · TV and series ·
+Saying no politely · Making plans; ünite 21 Parts of the body ·
+Describing pain · Doctor's appointment · Must and have to. On sekiz
+egzersiz; ünite dışı ölçüm %0,0. Patika'nın EN A1 yuvalarının 126'sı dolu.
+
+Bu tur Almanca eksende BÜYÜK ÖLÇÜDE PARİTE çıkardı ve bu kayda değer:
+ünite 19'un hava cümlesi („It's raining“ — boş özne „it“) Almanca „es
+regnet“le birebir; ünite 21'in ağrı kalıplarının İKİSİ de Almancada var
+(„ich habe Kopfschmerzen“ ile „mein Rücken tut weh“), üstelik
+„Kopfschmerzen“ de „headache“ gibi tek sözcük. Türkçe ipucu "Türkçe
+yalnız birincisini kuruyor" diyor; Almanca okuyan için o güçlük hiç yok
+ve karşılık bunu söylüyor.
+
+Ayrıldığı yer ise „can't“: Türkçe ipucu "olumsuzu tek sözcük" diyor,
+Almanca „kann nicht“ ise ayrı yazılıyor — yani büzülme İngilizcenin kendi
+işi. Almanca karşılık bunu karşıtlık olarak veriyor.
 
 ## Tamamlanma ölçütü
 

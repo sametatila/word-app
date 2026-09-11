@@ -1,0 +1,312 @@
+[
+ {
+  "tr": "Havuz kartını doldur.",
+  "kind": "form.prompt",
+  "de": "Fülle die Schwimmbadkarte aus."
+ },
+ {
+  "tr": "Sinema planını doldur.",
+  "kind": "form.prompt",
+  "de": "Fülle den Kinoplan aus."
+ },
+ {
+  "tr": "Randevu formunu doldur.",
+  "kind": "form.prompt",
+  "de": "Fülle das Terminformular aus."
+ },
+ {
+  "tr": "Yarın; saat sekizde; iki bilet; müzik filmi.",
+  "kind": "form.facts",
+  "de": "Morgen; um acht; zwei Karten; ein Musikfilm."
+ },
+ {
+  "tr": "Doktor randevusu; yarın; saat onda; baş ağrısı.",
+  "kind": "form.facts",
+  "de": "Arzttermin; morgen; um zehn; Kopfschmerzen."
+ },
+ {
+  "tr": "Yaz; haftada bir; havlu ve su; kurs pazartesi ve perşembe.",
+  "kind": "form.facts",
+  "de": "Sommer; einmal pro Woche; Handtuch und Wasser; Kurs am Montag und Donnerstag."
+ },
+ {
+  "tr": "Yüzemem.",
+  "kind": "build.tr",
+  "de": "Ich kann nicht schwimmen."
+ },
+ {
+  "tr": "Gitmeliyim.",
+  "kind": "build.tr",
+  "de": "Ich muss gehen."
+ },
+ {
+  "tr": "Hava nasıl?",
+  "kind": "build.tr",
+  "de": "Wie ist das Wetter?"
+ },
+ {
+  "tr": "Yüzebilirim.",
+  "kind": "build.tr",
+  "de": "Ich kann schwimmen."
+ },
+ {
+  "tr": "Başım ağrıyor.",
+  "kind": "build.tr",
+  "de": "Ich habe Kopfschmerzen."
+ },
+ {
+  "tr": "Bu benim elim.",
+  "kind": "build.tr",
+  "de": "Das ist meine Hand."
+ },
+ {
+  "tr": "Korkarım olmaz.",
+  "kind": "build.tr",
+  "de": "Ich fürchte, es geht nicht."
+ },
+ {
+  "tr": "Sırtım ağrıyor.",
+  "kind": "build.tr",
+  "de": "Mein Rücken tut weh."
+ },
+ {
+  "tr": "Yağmur yağıyor.",
+  "kind": "build.tr",
+  "de": "Es regnet."
+ },
+ {
+  "tr": "Yüzebilir misin?",
+  "kind": "build.tr",
+  "de": "Kannst du schwimmen?"
+ },
+ {
+  "tr": "Bugün hava soğuk.",
+  "kind": "build.tr",
+  "de": "Heute ist es kalt."
+ },
+ {
+  "tr": "Belki başka zaman.",
+  "kind": "build.tr",
+  "de": "Vielleicht ein andermal."
+ },
+ {
+  "tr": "Bu senin kolun mu?",
+  "kind": "build.tr",
+  "de": "Ist das dein Arm?"
+ },
+ {
+  "tr": "Ne müzik seversin?",
+  "kind": "build.tr",
+  "de": "Welche Musik magst du?"
+ },
+ {
+  "tr": "Bu şarkıyı seviyorum.",
+  "kind": "build.tr",
+  "de": "Ich mag dieses Lied."
+ },
+ {
+  "tr": "Ödemek zorunda mıyım?",
+  "kind": "build.tr",
+  "de": "Muss ich zahlen?"
+ },
+ {
+  "tr": "Hadi birlikte gidelim.",
+  "kind": "build.tr",
+  "de": "Lass uns zusammen gehen."
+ },
+ {
+  "tr": "Hadi yedide buluşalım.",
+  "kind": "build.tr",
+  "de": "Lass uns um sieben treffen."
+ },
+ {
+  "tr": "Her akşam dizi izliyorum.",
+  "kind": "build.tr",
+  "de": "Ich sehe jeden Abend Serien."
+ },
+ {
+  "tr": "Pop müziği tercih ederim.",
+  "kind": "build.tr",
+  "de": "Ich mag lieber Popmusik."
+ },
+ {
+  "tr": "Bir doktora ihtiyacım var.",
+  "kind": "build.tr",
+  "de": "Ich brauche einen Arzt."
+ },
+ {
+  "tr": "Kendimi iyi hissetmiyorum.",
+  "kind": "build.tr",
+  "de": "Ich fühle mich nicht wohl."
+ },
+ {
+  "tr": "Yarın Ali ile buluşacağım.",
+  "kind": "build.tr",
+  "de": "Ich werde Ali morgen treffen."
+ },
+ {
+  "tr": "Burada beklemek zorundasın.",
+  "kind": "build.tr",
+  "de": "Du musst hier warten."
+ },
+ {
+  "tr": "Sinemaya gitmek ister misin?",
+  "kind": "build.tr",
+  "de": "Möchtest du ins Kino gehen?"
+ },
+ {
+  "tr": "Kusura bakma, bu akşam olmaz.",
+  "kind": "build.tr",
+  "de": "Tut mir leid, heute Abend geht es nicht."
+ },
+ {
+  "tr": "Kusura bakma, bugün meşgulüm.",
+  "kind": "build.tr",
+  "de": "Tut mir leid, ich bin heute beschäftigt."
+ },
+ {
+  "tr": "Öneri „Let's“ ile ve saatte „at“ geliyor.",
+  "kind": "build.hint",
+  "de": "Der Vorschlag mit „Let's“, und bei der Uhrzeit steht „at“."
+ },
+ {
+  "tr": "Soruda „be“ öne geçiyor: this is → is this.",
+  "kind": "build.hint",
+  "de": "In der Frage rückt „be“ nach vorn: this is → is this."
+ },
+ {
+  "tr": "Soruda „can“ öne geçiyor; „do“ hiç girmiyor.",
+  "kind": "build.hint",
+  "de": "In der Frage rückt „can“ nach vorn; „do“ kommt gar nicht vor."
+ },
+ {
+  "tr": "Belli bir şarkı için „this“; nesne „song“ zorunlu.",
+  "kind": "build.hint",
+  "de": "Für ein bestimmtes Lied „this“; das Objekt „song“ ist Pflicht."
+ },
+ {
+  "tr": "„music“ sayılamaz: önünde „the“ yok, çoğulu da yok.",
+  "kind": "build.hint",
+  "de": "„music“ ist nicht zählbar: kein „the“ davor und kein Plural — wie die Musik."
+ },
+ {
+  "tr": "Kapıyı açık bırakan söz. Fiil yok, hazır bir kalıp.",
+  "kind": "build.hint",
+  "de": "Das Wort, das die Tür offen lässt. Kein Verb, eine feste Wendung."
+ },
+ {
+  "tr": "Plan için „going to“; zaman sözcüğü cümlenin sonunda.",
+  "kind": "build.hint",
+  "de": "Für einen Plan „going to“; das Zeitwort steht am Satzende, nicht wie im Deutschen mitten im Satz."
+ },
+ {
+  "tr": "„weather“ sayılamaz ve „the“ ile geliyor: the weather.",
+  "kind": "build.hint",
+  "de": "„weather“ ist nicht zählbar und steht mit „the“: the weather — wie „das Wetter“."
+ },
+ {
+  "tr": "„have to“ sonrası „to“ + fiil. Aynı anlam, başka biçim.",
+  "kind": "build.hint",
+  "de": "Nach „have to“ kommt „to“ + Verb. Dieselbe Bedeutung, eine andere Form; das Deutsche braucht dort kein „zu“."
+ },
+ {
+  "tr": "„need“ nesnesini doğrudan alır; „need to a doctor“ olmaz.",
+  "kind": "build.hint",
+  "de": "„need“ nimmt sein Objekt direkt: „need to a doctor“ geht nicht — wie „brauchen“."
+ },
+ {
+  "tr": "İyelik ayrı bir sözcük: my hand. Türkçedeki ek burada yok.",
+  "kind": "build.hint",
+  "de": "Das Possessivpronomen ist ein eigenes Wort: my hand — genau wie deutsch „meine Hand“."
+ },
+ {
+  "tr": "„afraid“ burada korku değil nezaket; reddin yumuşak biçimi.",
+  "kind": "build.hint",
+  "de": "„afraid“ meint hier keine Angst, sondern Höflichkeit — wie deutsch „ich fürchte“. Die weiche Form der Absage."
+ },
+ {
+  "tr": "„must“ kişiye göre değişmez ve sonrası eksiz fiil: must go.",
+  "kind": "build.hint",
+  "de": "„must“ ändert sich nicht nach der Person, und danach steht das Verb ohne Endung: must go — wie „muss gehen“."
+ },
+ {
+  "tr": "Davet „would you like“ ile; sonrası „to“ + fiil, „-ing“ değil.",
+  "kind": "build.hint",
+  "de": "Die Einladung mit „would you like“; danach „to“ + Verb, kein „-ing“. Deutsch kommt mit dem bloßen Infinitiv aus."
+ },
+ {
+  "tr": "Gerekçe söylenmezse ret sert duruyor; „busy“ en yaygın gerekçe.",
+  "kind": "build.hint",
+  "de": "Ohne Grund wirkt die Absage hart; „busy“ ist der häufigste Grund."
+ },
+ {
+  "tr": "„can“ kişiye göre değişmez: I can, she can. Fiil de eksiz kalır.",
+  "kind": "build.hint",
+  "de": "„can“ ändert sich nicht nach der Person: I can, she can — im Singular wie deutsch „kann“. Auch das Verb bleibt ohne Endung."
+ },
+ {
+  "tr": "Burada kişi özne, ağrı nesne. „headache“ tek sözcük ve önünde „a“ var.",
+  "kind": "build.hint",
+  "de": "Hier ist die Person das Subjekt und der Schmerz das Objekt. „headache“ ist ein Wort, wie „Kopfschmerzen“, aber mit „a“ davor."
+ },
+ {
+  "tr": "Nazik ret: önce özür, sonra „I can't“. Fiil söylenmese de anlaşılıyor.",
+  "kind": "build.hint",
+  "de": "Höfliche Absage: zuerst die Entschuldigung, dann „I can't“. Das Verb muss nicht genannt werden."
+ },
+ {
+  "tr": "Soru sözcüğü isimle birlikte başta: „what music“. Sonra „do you like“.",
+  "kind": "build.hint",
+  "de": "Das Fragewort steht mit dem Substantiv zusammen vorn: „what music“, wie „welche Musik“. Danach „do you like“."
+ },
+ {
+  "tr": "„Let's“ = „Let us“ ve sonrası eksiz fiil: let's go, „let's to go“ değil.",
+  "kind": "build.hint",
+  "de": "„Let's“ = „Let us“, und danach steht das Verb ohne Endung: let's go — wie „lass uns gehen“."
+ },
+ {
+  "tr": "Hava cümlesinin öznesi „it“ ve hiçbir şeyi göstermiyor — ama düşürülemez.",
+  "kind": "build.hint",
+  "de": "Das Subjekt im Wettersatz ist „it“ und zeigt auf nichts — genau wie das „es“ in „es ist kalt“, und es fällt ebenso wenig weg."
+ },
+ {
+  "tr": "Olumsuzu tek sözcük: „can't“. Türkçedeki „-ebil“ eki gibi ayrı bir ek yok.",
+  "kind": "build.hint",
+  "de": "Die Verneinung zieht sich zu einem Wort zusammen: „can't“. Das Deutsche schreibt „kann nicht“ getrennt."
+ },
+ {
+  "tr": "„rain“ burada fiil ve şu an sürdüğü için „-ing“. Özne „it“ boş ama zorunlu.",
+  "kind": "build.hint",
+  "de": "„rain“ ist hier ein Verb, und weil es gerade läuft, steht „-ing“. Das Subjekt „it“ ist leer, aber Pflicht, wie das „es“ in „es regnet“."
+ },
+ {
+  "tr": "„have to“nun sorusu „do“ ile kuruluyor; „must“ olsaydı „Must I pay?“ olurdu.",
+  "kind": "build.hint",
+  "de": "Die Frage zu „have to“ wird mit „do“ gebildet; bei „must“ hieße es „Must I pay?“."
+ },
+ {
+  "tr": "Burada organ özne ve fiil „hurt“. Üçüncü tekil kişi olduğu için „-s“: hurts.",
+  "kind": "build.hint",
+  "de": "Hier ist das Körperteil das Subjekt und das Verb „hurt“ — wie „mein Rücken tut weh“. Dritte Person Singular, deshalb „-s“: hurts."
+ },
+ {
+  "tr": "Alışkanlık için düz geniş zaman; „series“ tekilde de çoğulda da aynı yazılır.",
+  "kind": "build.hint",
+  "de": "Für die Gewohnheit das einfache Präsens; „series“ schreibt sich im Singular und im Plural gleich, anders als Serie und Serien."
+ },
+ {
+  "tr": "„well“ zarf ve „feel“ ile geliyor; „I don't feel good“ da duyulur ama bu daha doğru.",
+  "kind": "build.hint",
+  "de": "„well“ ist ein Adverb und steht mit „feel“ — wie „sich wohl fühlen“. „I don't feel good“ hört man auch, aber dies ist richtiger."
+ },
+ {
+  "tr": "Günlerin sırası: doğru sıraya koy.",
+  "kind": "question.text",
+  "de": "Die Reihenfolge der Tage: bring sie in die richtige Ordnung."
+ },
+ {
+  "tr": "Nil'in gününün sırası: doğru sıraya koy.",
+  "kind": "question.text",
+  "de": "Die Reihenfolge in Nils Tag: bring sie in die richtige Ordnung."
+ }
+]

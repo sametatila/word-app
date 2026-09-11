@@ -1,0 +1,437 @@
+[
+ {
+  "tr": "İki şehirde hava. Kaç derece, ne yağıyor?",
+  "kind": "intro",
+  "de": "Das Wetter in zwei Städten. Wie viel Grad, und was fällt vom Himmel?"
+ },
+ {
+  "tr": "Vücut bölümleri ve ağrının iki söyleniş biçimi.",
+  "kind": "intro",
+  "de": "Die Körperteile und die zwei Arten, Schmerz zu sagen."
+ },
+ {
+  "tr": "Bir haftanın planı. Hangi gün ne var, hangi gün boş?",
+  "kind": "intro",
+  "de": "Der Plan einer Woche. Was ist an welchem Tag, welcher Tag bleibt frei?"
+ },
+ {
+  "tr": "Parkta bir pazar. Ne var, hava nasıl, kışın ne oluyor?",
+  "kind": "intro",
+  "de": "Ein Sonntag im Park. Was gibt es, wie ist das Wetter, was ist im Winter?"
+ },
+ {
+  "tr": "Randevu alınıyor. Ne zaman, ne yapmak zorunda, ne değil?",
+  "kind": "intro",
+  "de": "Ein Termin wird gemacht. Wann, was muss man tun und was nicht?"
+ },
+ {
+  "tr": "Yüzme konuşuluyor. Kim nerede yüzebiliyor, kim öğreniyor?",
+  "kind": "intro",
+  "de": "Es geht ums Schwimmen. Wer kann wo schwimmen, wer lernt es gerade?"
+ },
+ {
+  "tr": "Ağrıyı iki biçimde de yaz. Sonunda randevu formunu doldur.",
+  "kind": "intro",
+  "de": "Schreibe den Schmerz auf beide Arten. Am Ende füllst du das Terminformular aus."
+ },
+ {
+  "tr": "Yapabilme ve alışkanlık yaz. Sonunda havuz kartını doldur.",
+  "kind": "intro",
+  "de": "Schreibe Können und Gewohnheit. Am Ende füllst du die Schwimmbadkarte aus."
+ },
+ {
+  "tr": "İki kişi müziği konuşuyor. Kim ne çalıyor, kim ne dinliyor?",
+  "kind": "intro",
+  "de": "Zwei Personen sprechen über Musik. Wer spielt was, wer hört was?"
+ },
+ {
+  "tr": "Müzik ve hava cümlelerini yaz. Sonunda sinema planını doldur.",
+  "kind": "intro",
+  "de": "Schreibe Sätze zu Musik und Wetter. Am Ende füllst du den Kinoplan aus."
+ },
+ {
+  "tr": "Bir günün zorunlulukları. „must“ ile „have to“ art arda geçiyor.",
+  "kind": "intro",
+  "de": "Die Pflichten eines Tages. „must“ und „have to“ kommen nacheinander vor."
+ },
+ {
+  "tr": "Doktor muayenesi. Ne ağrıyor, ne ağrımıyor, ne yapmak gerekiyor?",
+  "kind": "intro",
+  "de": "Eine Untersuchung beim Arzt. Was tut weh, was nicht, und was ist zu tun?"
+ },
+ {
+  "tr": "Havuz anlatılıyor. Su ne zaman soğuk, çocuklar nerede öğreniyor?",
+  "kind": "intro",
+  "de": "Ein Schwimmbad wird beschrieben. Wann ist das Wasser kalt, wo lernen die Kinder?"
+ },
+ {
+  "tr": "Sinema daveti. Davet, ret ve yeni bir gün — üçü de ayrı kalıpla.",
+  "kind": "intro",
+  "de": "Eine Einladung ins Kino. Einladung, Absage und ein neuer Tag — jedes mit einer eigenen Wendung."
+ },
+ {
+  "tr": "Hava ve davet yaz. Hava cümlesinde „it“ boş bir özne ama zorunlu.",
+  "kind": "intro",
+  "de": "Schreibe Wetter und Einladung. Im Wettersatz ist „it“ ein leeres Subjekt, aber Pflicht."
+ },
+ {
+  "tr": "Nazik reddi yaz. Üç parça: özür, gerekçe, kapıyı açık bırakan söz.",
+  "kind": "intro",
+  "de": "Schreibe die höfliche Absage. Drei Teile: Entschuldigung, Grund und ein Wort, das die Tür offen lässt."
+ },
+ {
+  "tr": "Bir davet reddediliyor ama kapı kapanmıyor. Reddin üç parçasını bul.",
+  "kind": "intro",
+  "de": "Eine Einladung wird abgelehnt, aber die Tür bleibt offen. Finde die drei Teile der Absage."
+ },
+ {
+  "tr": "Zorunluluk ve iyelik yaz. „must“ ile „have to“ aynı işi görüyor ama biçimleri farklı.",
+  "kind": "intro",
+  "de": "Schreibe Pflicht und Besitz. „must“ und „have to“ leisten dasselbe, ihre Formen sind aber verschieden."
+ },
+ {
+  "tr": "„Sunday is good. Let's meet at seven.“",
+  "kind": "explain",
+  "de": "„Sunday is good. Let's meet at seven.“"
+ },
+ {
+  "tr": "„No, no headache. But I can't carry a box.“",
+  "kind": "explain",
+  "de": "„No, no headache. But I can't carry a box.“"
+ },
+ {
+  "tr": "„I prefer pop music.“ — eski şarkılar Nil'in.",
+  "kind": "explain",
+  "de": "„I prefer pop music.“ — die alten Lieder gehören Nil."
+ },
+ {
+  "tr": "„No, I can't sing.“ — çalıyor ama söylemiyor.",
+  "kind": "explain",
+  "de": "„No, I can't sing.“ — sie spielt, singt aber nicht."
+ },
+ {
+  "tr": "„My neighbour is sick too, so I can't ask her.“",
+  "kind": "explain",
+  "de": "„My neighbour is sick too, so I can't ask her.“"
+ },
+ {
+  "tr": "Önce doktor, sonra ilaç, sonra ev, en son akşam.",
+  "kind": "explain",
+  "de": "Zuerst der Arzt, dann das Medikament, dann zu Hause, zuletzt der Abend."
+ },
+ {
+  "tr": "„I learn to swim at forty!“ — daha yeni öğreniyor.",
+  "kind": "explain",
+  "de": "„I learn to swim at forty!“ — er lernt es gerade erst."
+ },
+ {
+  "tr": "„On Monday I'm going to meet Ali.“ — salı havuz günü.",
+  "kind": "explain",
+  "de": "„On Monday I'm going to meet Ali.“ — der Dienstag ist der Schwimmbadtag."
+ },
+ {
+  "tr": "„Can you swim?“ — „can“ öne geçiyor ve fiil eksiz kalıyor.",
+  "kind": "explain",
+  "de": "„Can you swim?“ — „can“ rückt nach vorn und das Verb bleibt ohne Endung."
+ },
+ {
+  "tr": "„My hands have five fingers each.“ — „each“ el başına demek.",
+  "kind": "explain",
+  "de": "„My hands have five fingers each.“ — „each“ heißt hier pro Hand."
+ },
+ {
+  "tr": "„Here the children can't play outside. The playground is wet.“",
+  "kind": "explain",
+  "de": "„Here the children can't play outside. The playground is wet.“"
+ },
+ {
+  "tr": "Önce soru, sonra oranın havası, sonra buranınki, en son davet.",
+  "kind": "explain",
+  "de": "Zuerst die Frage, dann das Wetter dort, dann das hier, zuletzt die Einladung."
+ },
+ {
+  "tr": "„My back hurts… And my shoulder hurts too.“ — baş ve bacak iyi.",
+  "kind": "explain",
+  "de": "„My back hurts… And my shoulder hurts too.“ — Kopf und Bein sind in Ordnung."
+ },
+ {
+  "tr": "„I can swim in a pool, but not in a lake.“ — göl derin ve soğuk.",
+  "kind": "explain",
+  "de": "„I can swim in a pool, but not in a lake.“ — der See ist tief und kalt."
+ },
+ {
+  "tr": "„I have a headache and my knee hurts.“ — iki kalıp aynı cümlede.",
+  "kind": "explain",
+  "de": "„I have a headache and my knee hurts.“ — beide Wendungen im selben Satz."
+ },
+ {
+  "tr": "„Sorry, I can't tonight. I am busy.“ — meşgul olduğu gün bu akşam.",
+  "kind": "explain",
+  "de": "„Sorry, I can't tonight. I am busy.“ — beschäftigt ist sie heute Abend."
+ },
+ {
+  "tr": "„The other series on TV are boring.“ — ilginç olan kendi izlediği.",
+  "kind": "explain",
+  "de": "„The other series on TV are boring.“ — interessant ist die, die sie selbst sieht."
+ },
+ {
+  "tr": "„It's raining. And it's cold — ten degrees.“ — kar yok, rüzgâr var.",
+  "kind": "explain",
+  "de": "„It's raining. And it's cold — ten degrees.“ — kein Schnee, aber Wind."
+ },
+ {
+  "tr": "„Today it is sunny, but yesterday it was cold…“ — soğuk olan dündü.",
+  "kind": "explain",
+  "de": "„Today it is sunny, but yesterday it was cold…“ — kalt war es gestern."
+ },
+ {
+  "tr": "Pazartesiden cumaya sırayla; hafta sonu en sonda ve henüz belirsiz.",
+  "kind": "explain",
+  "de": "Von Montag bis Freitag der Reihe nach; das Wochenende steht zuletzt und ist noch offen."
+ },
+ {
+  "tr": "„I have a headache and my back hurts.“ — aynı cümlede iki ayrı kalıp.",
+  "kind": "explain",
+  "de": "„I have a headache and my back hurts.“ — zwei verschiedene Wendungen im selben Satz."
+ },
+ {
+  "tr": "„The leg is long and the knee is in the middle of it.“ — diz bacakta.",
+  "kind": "explain",
+  "de": "„The leg is long and the knee is in the middle of it.“ — das Knie gehört zum Bein."
+ },
+ {
+  "tr": "„I'm not going to do something in the evening.“ — perşembe akşamı boş.",
+  "kind": "explain",
+  "de": "„I'm not going to do something in the evening.“ — der Donnerstagabend bleibt frei."
+ },
+ {
+  "tr": "„The children learn to swim in the small pool.“ — derin havuz ötekisi.",
+  "kind": "explain",
+  "de": "„The children learn to swim in the small pool.“ — das tiefe Becken ist das andere."
+ },
+ {
+  "tr": "„I have an appointment at ten o'clock.“ — çeyrek kala orada olma saati.",
+  "kind": "explain",
+  "de": "„I have an appointment at ten o'clock.“ — viertel vor ist die Zeit, dort zu sein."
+ },
+ {
+  "tr": "„My back hurts.“ — organ özne, fiil „hurt“ ve üçüncü tekil kişide „-s“.",
+  "kind": "explain",
+  "de": "„My back hurts.“ — das Körperteil ist Subjekt, das Verb „hurt“ bekommt in der dritten Person Singular ein „-s“."
+ },
+ {
+  "tr": "„The doctor is here at ten o'clock.“ — pazartesi ağrının başladığı gün.",
+  "kind": "explain",
+  "de": "„The doctor is here at ten o'clock.“ — der Montag ist der Tag, an dem die Schmerzen begannen."
+ },
+ {
+  "tr": "„Then let's meet on Sunday.“ — reddin ardından yeni bir gün öneriliyor.",
+  "kind": "explain",
+  "de": "„Then let's meet on Sunday.“ — nach der Absage wird ein neuer Tag vorgeschlagen."
+ },
+ {
+  "tr": "Önce davet, sonra ret, sonra kapıyı açık bırakan söz, en son yeni öneri.",
+  "kind": "explain",
+  "de": "Zuerst die Einladung, dann die Absage, dann das Wort, das die Tür offen lässt, zuletzt der neue Vorschlag."
+ },
+ {
+  "tr": "„Here it is sunny and hot! Twenty-eight degrees.“ — on, Kaan'ın şehrinde.",
+  "kind": "explain",
+  "de": "„Here it is sunny and hot! Twenty-eight degrees.“ — zehn Grad sind es in Kaans Stadt."
+ },
+ {
+  "tr": "„I prefer pop music.“ — „prefer“ tek başına da kullanılır, „to“ gerekmez.",
+  "kind": "explain",
+  "de": "„I prefer pop music.“ — „prefer“ steht auch allein, ein „to“ ist nicht nötig."
+ },
+ {
+  "tr": "„I'm afraid I can't. I'm busy.“ — ret üç parçalı: özür, gerekçe, sonraki sefer.",
+  "kind": "explain",
+  "de": "„I'm afraid I can't. I'm busy.“ — die Absage hat drei Teile: Entschuldigung, Grund, nächstes Mal."
+ },
+ {
+  "tr": "„I need a doctor. Can I have an appointment today?“ — kâğıt ve kart sonra geliyor.",
+  "kind": "explain",
+  "de": "„I need a doctor. Can I have an appointment today?“ — Zettel und Karte kommen später."
+ },
+ {
+  "tr": "„My son plays with a ball on the grass.“ — köpek koşuyor, çocuklar kışın gölde oynuyor.",
+  "kind": "explain",
+  "de": "„My son plays with a ball on the grass.“ — der Hund rennt, die Kinder spielen im Winter auf dem See."
+ },
+ {
+  "tr": "„Sorry, I can't tonight… Tomorrow is good.“ — davet bu akşamaydı, ret gelince yarına kayıyor.",
+  "kind": "explain",
+  "de": "„Sorry, I can't tonight… Tomorrow is good.“ — die Einladung galt dem Abend; nach der Absage rückt sie auf morgen."
+ },
+ {
+  "tr": "korkarım olmaz",
+  "kind": "gloss.tr",
+  "de": "leider geht es nicht"
+ },
+ {
+  "tr": "belki başka zaman",
+  "kind": "gloss.tr",
+  "de": "vielleicht ein andermal"
+ },
+ {
+  "tr": "CD",
+  "kind": "gloss.tr",
+  "de": "CD"
+ },
+ {
+  "tr": "zor",
+  "kind": "gloss.tr",
+  "de": "schwer"
+ },
+ {
+  "tr": "belki",
+  "kind": "gloss.tr",
+  "de": "vielleicht"
+ },
+ {
+  "tr": "çimen",
+  "kind": "gloss.tr",
+  "de": "Rasen"
+ },
+ {
+  "tr": "derin",
+  "kind": "gloss.tr",
+  "de": "tief"
+ },
+ {
+  "tr": "taraf",
+  "kind": "gloss.tr",
+  "de": "Seite"
+ },
+ {
+  "tr": "piyano",
+  "kind": "gloss.tr",
+  "de": "Klavier"
+ },
+ {
+  "tr": "yüzemem",
+  "kind": "gloss.tr",
+  "de": "ich kann nicht schwimmen"
+ },
+ {
+  "tr": "rüzgârlı",
+  "kind": "gloss.tr",
+  "de": "windig"
+ },
+ {
+  "tr": "her akşam",
+  "kind": "gloss.tr",
+  "de": "jeden Abend"
+ },
+ {
+  "tr": "daha sonra",
+  "kind": "gloss.tr",
+  "de": "später"
+ },
+ {
+  "tr": "eve gitmek",
+  "kind": "gloss.tr",
+  "de": "nach Hause gehen"
+ },
+ {
+  "tr": "gitmeliyim",
+  "kind": "gloss.tr",
+  "de": "ich muss gehen"
+ },
+ {
+  "tr": "hava nasıl",
+  "kind": "gloss.tr",
+  "de": "wie ist das Wetter"
+ },
+ {
+  "tr": "kilitlemek",
+  "kind": "gloss.tr",
+  "de": "abschließen"
+ },
+ {
+  "tr": "oyun parkı",
+  "kind": "gloss.tr",
+  "de": "Spielplatz"
+ },
+ {
+  "tr": "evde kalmak",
+  "kind": "gloss.tr",
+  "de": "zu Hause bleiben"
+ },
+ {
+  "tr": "müzik grubu",
+  "kind": "gloss.tr",
+  "de": "Band"
+ },
+ {
+  "tr": "yüzebilirim",
+  "kind": "gloss.tr",
+  "de": "ich kann schwimmen"
+ },
+ {
+  "tr": "başım ağrıyor",
+  "kind": "gloss.tr",
+  "de": "ich habe Kopfschmerzen"
+ },
+ {
+  "tr": "sırtım ağrıyor",
+  "kind": "gloss.tr",
+  "de": "mein Rücken tut weh"
+ },
+ {
+  "tr": "yağmur yağıyor",
+  "kind": "gloss.tr",
+  "de": "es regnet"
+ },
+ {
+  "tr": "altmışlı yıllar",
+  "kind": "gloss.tr",
+  "de": "die sechziger Jahre"
+ },
+ {
+  "tr": "bugün hava soğuk",
+  "kind": "gloss.tr",
+  "de": "heute ist es kalt"
+ },
+ {
+  "tr": "başka bir şey yok",
+  "kind": "gloss.tr",
+  "de": "sonst nichts"
+ },
+ {
+  "tr": "bu şarkıyı seviyorum",
+  "kind": "gloss.tr",
+  "de": "ich mag dieses Lied"
+ },
+ {
+  "tr": "ödemek zorunda mıyım",
+  "kind": "gloss.tr",
+  "de": "muss ich zahlen"
+ },
+ {
+  "tr": "hadi birlikte gidelim",
+  "kind": "gloss.tr",
+  "de": "lass uns zusammen gehen"
+ },
+ {
+  "tr": "pop müziği tercih ederim",
+  "kind": "gloss.tr",
+  "de": "ich mag lieber Popmusik"
+ },
+ {
+  "tr": "kendimi iyi hissetmiyorum",
+  "kind": "gloss.tr",
+  "de": "ich fühle mich nicht wohl"
+ },
+ {
+  "tr": "burada beklemek zorundasın",
+  "kind": "gloss.tr",
+  "de": "du musst hier warten"
+ },
+ {
+  "tr": "kusura bakma bugün meşgulüm",
+  "kind": "gloss.tr",
+  "de": "sorry, ich bin heute beschäftigt"
+ }
+]

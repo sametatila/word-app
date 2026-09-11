@@ -17,6 +17,9 @@ import { enA1U15 } from "./en-a1-u15";
 import { enA1U16 } from "./en-a1-u16";
 import { enA1U17 } from "./en-a1-u17";
 import { enA1U18 } from "./en-a1-u18";
+import { enA1U19 } from "./en-a1-u19";
+import { enA1U20 } from "./en-a1-u20";
+import { enA1U21 } from "./en-a1-u21";
 
 /**
  * EN · A1 — Patika'ya bağlı (ünite hizalı) beceri egzersizleri.
@@ -50,4 +53,7 @@ export const enA1: SkillExercise[] = [
   ...enA1U16,
   ...enA1U17,
   ...enA1U18,
+  ...enA1U19,
+  ...enA1U20,
+  ...enA1U21,
 ];
