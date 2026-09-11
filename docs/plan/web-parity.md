@@ -6860,3 +6860,28 @@ Aynı denetimde iki uzay daha bakıldı ve ikisi de **temiz çıktı**: `growth.
 (13) ve `quest.` (7) sunucuda çevriliyor (`lib/growth`, `lib/quests`), mobil
 metni hazır alıyor — `ach.`, `push.` ve `email.` ile aynı sınıf.
 
+
+### 11.195 Sınav kâğıdının iki kuralı Android'de geçerli değildi
+
+§11.194'ün devamı, kalan `exam.*` satırlarını okurken çıktı. İkisi de aynı
+soruya çıkıyor: **aynı kâğıt iki platformda aynı sınav mı?**
+
+**İpucu.** Web sınav bölümünü "ipucu yok" bağlamıyla (`games/no-hints`)
+sarıyor ve ipucu düğmesi olan turlarda düğme orada görünmüyor; bağlamın kendi
+yorumu da "sınavda kâğıdın kuralı ipucu yok — kapak bunu yazıyor ve düğmenin
+orada durması sözü bozardı" diyor. Android'de düğme duruyordu. Bağlam taşındı.
+
+**Cevap.** Cümle kurma bölümü iki adımlıydı: "Kontrol et" → kenarlık yeşile/
+kırmızıya, **doğru cevap yazılır**, sonra "Sıradaki". Aynı yapılar sonraki
+maddelerde tekrar geçtiği için bu sınavı kolaylaştırıyor; kaçırılanlar zaten
+sonuç ekranında duruyor. Web tek düğme veriyor ve altına "cevap sınav sonunda
+gösterilir" yazıyor.
+
+**İkisi de aynı sınıfın üyesi:** §11.183'teki bedava harf ipucu gibi, ölçüm
+yüzeyinde kayıtsız bir kolaylık. Orada SRS kalitesi bozuluyordu, burada sınav
+puanı — ve iki platformun puanı karşılaştırılamaz hâle geliyordu.
+
+Küçük bir kalan: Android'in cümle **dizme** turunda ipucu düğmesi hiç yok
+(webde var). Alıştırma tarafında bir eksiklik; sınavı etkilemiyor çünkü orada
+zaten kapalı olmalı. Ayrı bir turda ölçülecek.
+
