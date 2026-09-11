@@ -116,7 +116,7 @@ function FriendCard({ f, nudged, onChanged }: { f: FriendRow; nudged: boolean; o
           { text: t("social.remove"), style: "destructive", onPress: () => void act(async () => { await social.remove(f.userId); onChanged(); }, t("social.removed")) },
         ])} />
       </View>
-      {msg ? <Text variant="caption" color={ok ? colors.successText : colors.dangerText} style={{ marginTop: spacing.sm, textAlign: "center" }}>{msg}</Text> : null}
+      {msg ? <Text accessibilityLiveRegion="polite" variant="caption" color={ok ? colors.successText : colors.dangerText} style={{ marginTop: spacing.sm, textAlign: "center" }}>{msg}</Text> : null}
     </Card>
   );
 }

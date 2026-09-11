@@ -5555,6 +5555,91 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   sameList("yukleme duyurusu (dort kart)", mob.map((x) => x.split("=")[1]), web.map((x) => x.split("=")[1]));
 }
 
+/* ── 157. eylemin sonucu duyuruluyor mu ───────────────────────────────────
+ * "Kaydedildi", "kod tanimlandi", "oturum kapatildi" gibi satirlar bir
+ * EYLEMIN CEVABI. Kullanici dugmeye basiyor, odak dugmede kaliyor ve ekran
+ * okuyucu hicbir sey soylemiyordu: kaydin olup olmadigi duyulmuyordu.
+ * Tarama gosterdi ki bu IKI PLATFORMDA da boyleydi - webde on uc, mobilde on
+ * iki dosyada gecici mesaj var ve yalniz biri (webin gorev karti) duyuruyordu.
+ *
+ * Webde duzeltme KOKTEN yapildi: `AuthNotice` otuz dokuz cagri yerinin ortak
+ * kutusu - hata `alert` (sozu keser), basari `status` (sirasini bekler).
+ *
+ * Olcum, dosyanin herhangi bir yerinde rol aramaz - MESAJIN KENDI cizim
+ * yerine bakar: `{msg && <X ...>` etiketinin acilisinda isaret var mi. Ilk
+ * surum dosyayi tariyordu ve profil formundan `role="status"` silindiginde
+ * komsu `role="alert"` yuzunden yesil kaliyordu (yirminci "komsuyu olcme"
+ * vakasi, enjeksiyonla yakalandi). */
+{
+  const strip = (x) => x.replace(/\/\*[\s\S]*?\*\//g, " ").replace(/(^|[^:"'`\\])\/\/.*$/gm, "$1");
+  /* Mesajin KENDI cizim blogu: `{` den baslayip DENGELI kapanisina kadar.
+     Ilk surum yalnizca acilis etiketine bakiyordu ve iki yerde bos donuyordu:
+     isaret ic elemandaysa (balon sarmalayici `Animated.View`/`motion.div`)
+     goremiyordu. Ikinci surumun kosul deseni de `{flash > 0 ?` bicimini
+     kacirip iki tarafi birden "cizim-yok" sayiyordu - yani hicbir sey
+     olcmeden yesil kaliyordu. Denge sayaci ikisini de kapatir ve komsu
+     blogu (profil formunda "kaydedildi"nin yanindaki hata satiri) iceri
+     almaz. */
+  const blok = (src, i) => {
+    let derinlik = 0, tirnak = "";
+    for (let j = i; j < src.length; j++) {
+      const c = src[j];
+      if (tirnak) { if (c === tirnak && src[j - 1] !== "\\") tirnak = ""; continue; }
+      if (c === '"' || c === "'" || c === "`") { tirnak = c; continue; }
+      if (c === "{") derinlik++;
+      else if (c === "}" && --derinlik === 0) return src.slice(i, j + 1);
+    }
+    return src.slice(i);
+  };
+  const durum = (yol, degisken, isaret) => {
+    const src = strip(read(yol));
+    if (!new RegExp("\\[\\s*" + degisken + "\\s*,").test(src)) return "durum-yok";
+    const re = new RegExp("\\{\\s*" + degisken + "\\b", "g");
+    /* Yalniz KOSULLU CIZIM bloklari: `{msg}` gibi duz yerlestirmeler degil. */
+    const bloklar = [...src.matchAll(re)].map((m) => blok(src, m.index)).filter((x) => /<[A-Za-z]/.test(x) && /\?|&&/.test(x));
+    if (bloklar.length === 0) return "cizim-yok";
+    return bloklar.every((x) => isaret.test(x)) ? "duyuruyor" : "sessiz";
+  };
+  const MOB = /accessibilityLiveRegion="polite"/;
+  /* Webde ya dogrudan rol var ya da ortak kutudan geciyor. */
+  const WEB = /role="(status|alert)"|<AuthNotice[\s/>]/;
+  const CIFT = [
+    /* Iki tarafta da yalniz BASARISIZLIK yaziliyor: kayit dokunusta oldugu
+       icin basari ayrica soylenmiyor, kontrolun kendisi yeni durumu gosterir. */
+    ["ayarlar", "mobile/src/screens/SettingsScreen.tsx", "msg", "src/components/profile-form.tsx", "saveError"],
+    ["promo kodu", "mobile/src/screens/PaywallScreen.tsx", "msg", "src/components/premium-paywall.tsx", "msg"],
+    ["bagli hesaplar", "mobile/src/ui/LinkedAccounts.tsx", "msg", "src/components/account/linked-accounts.tsx", "msg"],
+    ["oturumlar", "mobile/src/ui/ActiveSessions.tsx", "msg", "src/components/account/active-sessions.tsx", "msg"],
+    ["gunluk gorev parlamasi", "mobile/src/ui/DailyQuests.tsx", "flash", "src/components/quest-card.tsx", "flash"],
+    ["sosyal ayarlar", "mobile/src/screens/SocialSettingsScreen.tsx", "msg", "src/components/social/social-settings.tsx", "msg"],
+    ["arkadas satiri", "mobile/src/social/FriendRows.tsx", "msg", "src/components/social/friend-list.tsx", "msg"],
+    ["baskasinin profili", "mobile/src/screens/UserScreen.tsx", "msg", "src/components/social/public-profile.tsx", "msg"],
+    ["seviye belirleme", "mobile/src/screens/PlacementScreen.tsx", "saved", "src/components/placement/demo-placement.tsx", "saved"],
+    ["meydan okuma parlamasi", "mobile/src/screens/ChallengeScreen.tsx", "flash", "src/components/celebrate.tsx", "shown"],
+    ["bildirim izni", "mobile/src/screens/NotificationsScreen.tsx", "msg", "src/components/push-settings.tsx", "error"],
+  ];
+  const mob = CIFT.map(([ad, m, md]) => ad + "=" + durum(m, md, MOB));
+  const web = CIFT.map(([ad, , , w, wd]) => ad + "=" + durum(w, wd, WEB));
+  sameList("eylem sonucu duyurusu", mob, web);
+  /* Iki taraf da SESSIZ olursa esitlik saglanir ve kapi bos yere yesil kalir
+     (§11.228 sinifi). O yuzden her iki liste ayrica BEKLENENE olculuyor:
+     "cizim-yok"/"durum-yok" da burada ortaya cikar, yani kapi kendi olcum
+     hatasini da bildirir. */
+  const beklenen = CIFT.map(([ad]) => ad + "=duyuruyor");
+  sameList("mobil sonuc duyurusu", mob, beklenen, "bulunan", "beklenen");
+  sameList("web sonuc duyurusu", web, beklenen, "bulunan", "beklenen");
+
+  /* Ortak kutu: hata sozu keser (`alert`), basari sirasini bekler (`status`). */
+  const kutu = strip(read("src/components/auth-shell.tsx")).replace(/\s+/g, " ");
+  sameList(
+    "ortak bildirim kutusu",
+    ["rol=" + (/role=\{tone === "error" \? "alert" : "status"\}/.test(kutu) ? "tona gore" : "yok")],
+    ["rol=tona gore"],
+    "bulunan",
+    "beklenen",
+  );
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"

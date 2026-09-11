@@ -8270,3 +8270,47 @@ enjeksiyonun üçü de yakalandı.
 **§156** koçun iki dalını ve dört kartın duyurusunu ölçüyor. Üç enjeksiyonun
 üçü de yakalandı — ilki koçun **bir** dalını susturunca düştü, yani sayıyı
 karşılaştırmak ("iki dal" / "bir dal") tek bir "var/yok"tan daha keskin.
+
+## §11.251 — Bir eylemin cevabı yalnız görünüyordu, duyulmuyordu
+
+Tarama: iki platformda geçici mesaj durumu (`setMsg` / `setFlash` / `setSaved`
+/ `setCopied`) tutan her dosya. Sonuç **web'de on üç dosya sessiz, bir tanesi
+duyuruyor; mobilde on iki sessiz, sıfır duyuruyor** — yani bu **§11.228
+sınıfı**: iki taraf da aynı biçimde eksikti, karşılaştırma tek başına bunu
+bulamazdı, mutlak bir ölçüt gerekti.
+
+Kullanıcı açısından hata şu: düğmeye basılıyor, odak düğmede kalıyor, ekran
+yalnız RENKLE cevap veriyor ("Kaydedildi" yeşil, "Kod geçersiz" kırmızı).
+Ekran okuyucu kullanan biri eylemin tutup tutmadığını hiç öğrenmiyordu.
+
+Kapatılan on bir çift: ayarların kayıt hatası, promo kodu, bağlı hesaplar,
+etkin oturumlar, günlük görev XP parlaması, sosyal ayarlar, arkadaş satırı,
+başkasının profili, seviye belirleme kaydı, meydan okuma başarım parlaması,
+bildirim izni hatası.
+
+Web'de düzeltme **kökte** yapıldı: `AuthNotice` otuz dokuz çağrı yerinin ortak
+kutusu; hata `alert` (sözü keser), başarı `status` (sırasını bekler). On üç
+çağrı yerini tek tek gezmek yerine kutunun kendisi kazandı.
+
+**§157** on bir çifti ölçüyor. Kapı üç kez yanlış şeyi ölçtü, üçü de
+enjeksiyonla çıktı:
+
+1. İlk sürüm DOSYADA rol arıyordu: profil formundan `role="status"` silindiğinde
+   komşu satırın `role="alert"`i yüzünden yeşil kalıyordu (yirminci "komşuyu
+   ölçme" vakası).
+2. İkinci sürüm yalnız AÇILIŞ ETİKETİNE bakıyordu: işaret iç elemandaysa
+   (balon sarmalayıcı `Animated.View` / `motion.div`) göremiyordu.
+3. Aynı sürümün koşul deseni `{flash > 0 ?` biçimini kaçırıyor, iki tarafı
+   birden "çizim-yok" sayıyor ve **hiçbir şey ölçmeden** geçiyordu.
+
+Üçüncüsü kapının kendi zayıflığını gösterdi: iki taraf da sessizse eşitlik
+sağlanır. O yüzden §157 artık iki listeyi birbirine DEĞİL, ikisini de
+**beklenene** ölçüyor — "çizim-yok"/"durum-yok" da böylece kapıdan düşüyor.
+Son hâlinde on enjeksiyonun onu da doğru tarafta yakalandı.
+
+Ayrıca bu turda paralel oturumun ayarlar bölümü yeniden düzenlemesiyle
+çakışıldı: enjeksiyon geri almaları için aldığım dosya yedekleri onların
+çalışmasını iki kez üzerine yazdı (`profile-form`, `LinkedAccounts`). İkisi de
+derleme hatasından çıktı ve geri alındı. Ortak ağaçta **yedek al-geri yükle**
+yöntemi yalnız kendi dosyalarımda güvenli; onların dokunduğu dosyalar bu
+turun commit'ine alınmadı.

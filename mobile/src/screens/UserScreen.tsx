@@ -121,7 +121,7 @@ export function UserScreen() {
               ) : null}
             </View>
           ) : null}
-          {msg ? <Text variant="caption" color={ok ? colors.successText : colors.dangerText} style={{ marginTop: spacing.sm }}>{msg}</Text> : null}
+          {msg ? <Text accessibilityLiveRegion="polite" variant="caption" color={ok ? colors.successText : colors.dangerText} style={{ marginTop: spacing.sm }}>{msg}</Text> : null}
         </Card>
 
         {data.stats ? (

@@ -97,7 +97,7 @@ export function DemoPlacement({ onClose }: { onClose?: () => void }) {
         <h1 className="mt-6 text-h1">{t("placement.your_level", { level })}</h1>
         <p className="muted mt-1 text-body">{t("placement.result", { total, correct })}</p>
         {saved ? (
-          <p className="mt-4 font-bold" style={{ color: "var(--color-mint)" }}>
+          <p role="status" className="mt-4 font-bold" style={{ color: "var(--color-mint)" }}>
             {t("placement.saved")}
           </p>
         ) : null}

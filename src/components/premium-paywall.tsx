@@ -286,8 +286,10 @@ function PromoBox({ prefill }: { prefill: string }) {
         sessizce paletin dışında bir kırmızıya düşerdi. Android iki yanı da
         tema jetonuyla yazıyor (`PaywallScreen`: successText / dangerText).
       */}
+      {/* Sonuç duyuruluyor — bkz. `profile-form` içindeki not. Promo kodunun tutup tutmadığı ödeme kararının ta
+          kendisi. */}
       {msg && (
-        <p className="mt-2 text-sm font-semibold" style={{ color: msg.ok ? "var(--color-success)" : "var(--color-danger)" }}>
+        <p role="status" className="mt-2 text-sm font-semibold" style={{ color: msg.ok ? "var(--color-success)" : "var(--color-danger)" }}>
           {msg.text}
         </p>
       )}

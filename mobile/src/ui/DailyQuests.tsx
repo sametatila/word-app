@@ -228,7 +228,7 @@ export function DailyQuests() {
       ) : null}
 
       {flash > 0 ? (
-        <Text variant="bodyStrong" color={colors.successText} style={{ marginTop: spacing.sm, textAlign: "center" }}>
+        <Text accessibilityLiveRegion="polite" variant="bodyStrong" color={colors.successText} style={{ marginTop: spacing.sm, textAlign: "center" }}>
           {t("dailyquests.xp_earned", { xp: flash })}
         </Text>
       ) : null}

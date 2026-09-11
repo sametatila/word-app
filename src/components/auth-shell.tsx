@@ -39,6 +39,12 @@ export function AuthNotice({ tone, children }: { tone: "error" | "success"; chil
   const color = tone === "error" ? "var(--color-rose)" : "var(--color-mint)";
   return (
     <p
+      /* SONUÇ DUYURULUYOR. Bu kutu bir eylemin cevabı (giriş hatası, oturum
+         kapatıldı, hesap bağlandı) ve yalnız GÖRSEL bir değişiklikti: odak
+         düğmede kalıyor, ekran okuyucu hiçbir şey söylemiyordu. Düzeltme
+         KÖKTE — bu bileşenden geçen her bildirim kazanıyor. Hata `alert`,
+         başarı `status`: ilki sözü keser, ikincisi sırasını bekler. */
+      role={tone === "error" ? "alert" : "status"}
       className="rounded-xl px-3 py-2 text-sm"
       style={{ background: `color-mix(in srgb, ${color} 12%, transparent)`, color }}
     >

@@ -137,7 +137,7 @@ function FriendItem({ f, nudged, onChanged }: { f: FriendRow; nudged: boolean; o
         {/* Ton mesajın METNİNDEN değil kendi alanından okunuyor: metni Türkçe
             sözcüklere göre sınamak çeviriyle birlikte bozuluyordu. */}
         {msg ? (
-          <p className="mt-1 text-[11px]" style={{ color: msg.ok ? "var(--color-mint)" : "var(--color-rose)" }}>
+          <p role="status" className="mt-1 text-[11px]" style={{ color: msg.ok ? "var(--color-mint)" : "var(--color-rose)" }}>
             {msg.text}
           </p>
         ) : null}

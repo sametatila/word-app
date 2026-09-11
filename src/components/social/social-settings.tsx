@@ -156,7 +156,7 @@ export function SocialSettings({ initial, course = "de", bare = false }: { initi
       </SettingRow>
 
       {msg ? (
-        <p className="px-4 pb-3 text-xs" style={{ color: msg.ok ? "var(--color-mint)" : "var(--color-rose)" }}>
+        <p role="status" className="px-4 pb-3 text-xs" style={{ color: msg.ok ? "var(--color-mint)" : "var(--color-rose)" }}>
           {msg.text}
         </p>
       ) : null}

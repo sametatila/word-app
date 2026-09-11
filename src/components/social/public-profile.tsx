@@ -103,7 +103,7 @@ export function PublicProfile({ data, me }: { data: PublicProfileView; me: strin
         {/* Ton mesajın metninden değil kendi alanından: Türkçe sözcük aramak
             çeviriyle birlikte her başarı iletisini kırmızıya çeviriyordu. */}
         {msg ? (
-          <p className="mt-2 text-xs" style={{ color: msg.ok ? "var(--color-mint)" : "var(--color-rose)" }}>
+          <p role="status" className="mt-2 text-xs" style={{ color: msg.ok ? "var(--color-mint)" : "var(--color-rose)" }}>
             {msg.text}
           </p>
         ) : null}

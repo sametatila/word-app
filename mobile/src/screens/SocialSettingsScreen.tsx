@@ -143,7 +143,7 @@ export function SocialSettingsScreen() {
             </Section>
           </>
         )}
-        {msg ? <Text variant="caption" color={ok ? colors.successText : colors.dangerText} style={{ marginTop: spacing.lg, textAlign: "center" }}>{msg}</Text> : null}
+        {msg ? <Text accessibilityLiveRegion="polite" variant="caption" color={ok ? colors.successText : colors.dangerText} style={{ marginTop: spacing.lg, textAlign: "center" }}>{msg}</Text> : null}
       </ScrollView>
     </View>
   );

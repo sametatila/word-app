@@ -124,6 +124,7 @@ export function AchievementFlash({
           className="pointer-events-none absolute inset-x-0 top-24 z-40 flex justify-center"
         >
           <span
+            role="status"
             className="flex items-center gap-2 rounded-full px-4 py-2 text-sm font-black text-white"
             style={{ background: color, boxShadow: `0 14px 34px -12px ${color}` }}
           >

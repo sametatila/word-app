@@ -246,6 +246,7 @@ export function QuestCard() {
 
       {flash > 0 ? (
         <motion.p
+          role="status"
           initial={{ opacity: 0, y: 6 }}
           animate={{ opacity: 1, y: 0 }}
           className="px-5 py-2 text-center text-sm font-bold"

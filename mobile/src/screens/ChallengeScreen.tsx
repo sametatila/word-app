@@ -383,7 +383,7 @@ export function ChallengeScreen() {
           }}
         >
           <View style={{ borderRadius: radii.pill, paddingHorizontal: 16, paddingVertical: 8, backgroundColor: flash.tone === "mint" ? colors.success : colors.streak }}>
-            <Text variant="bodyStrong" color={colors.onFill}>{flash.text}</Text>
+            <Text accessibilityLiveRegion="polite" variant="bodyStrong" color={colors.onFill}>{flash.text}</Text>
           </View>
         </Animated.View>
       ) : null}

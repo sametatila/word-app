@@ -117,7 +117,7 @@ export function PushSettings({
         )}
       </SettingRow>
       {error ? (
-        <p className="px-4 pb-3 text-xs font-semibold" style={{ color: "var(--color-flame)" }}>
+        <p role="alert" className="px-4 pb-3 text-xs font-semibold" style={{ color: "var(--color-flame)" }}>
           {error}
         </p>
       ) : null}
