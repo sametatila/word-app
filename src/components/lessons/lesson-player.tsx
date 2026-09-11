@@ -15,7 +15,7 @@ import {
   useSpeechAvailable,
 } from "@/components/speak-button";
 import { recognitionCtor, requestMicrophone, type Recognition } from "@/components/microphone";
-import { AlertIcon, MicIcon, SpeakerIcon, XIcon } from "@/components/icons";
+import { AlertIcon, CheckIcon, MicIcon, SpeakerIcon, XIcon } from "@/components/icons";
 import { Mascot } from "@/components/mascot";
 import { parseReply } from "@/lib/chat-format";
 import { Confetti } from "@/components/celebrate";
@@ -1200,6 +1200,11 @@ export function LessonPlayer({
 
               {awaiting && expect?.kind === "truefalse" ? (
                 <div className="mb-3 grid grid-cols-2 gap-2">
+                  {/* Android'deki hâliyle aynı: iki düğme de DOLU ve anlamlarının
+                      rengini taşıyor (yeşil/kırmızı + işaret). Burada ikisi de nötr
+                      `option`du, yani "doğru mu yanlış mı" sorusu iki tıpatıp aynı
+                      düğmeyle soruluyordu; ders akışında en hızlı okunması gereken
+                      yer orası. */}
                   <button
                     type="button"
                     onClick={() => {
@@ -1207,8 +1212,10 @@ export function LessonPlayer({
                       inputMode.current = "tap";
                       evaluate([TRUE_WORD[lang]]);
                     }}
-                    className="option px-4 py-3 text-center text-sm font-semibold"
+                    className="flex items-center justify-center gap-2 rounded-panel px-4 py-3 text-center text-sm font-bold on-fill shadow-soft-sm"
+                    style={{ background: "var(--color-success)" }}
                   >
+                    <CheckIcon size={18} />
                     {t("lesson.correct")}
                   </button>
                   <button
@@ -1218,8 +1225,10 @@ export function LessonPlayer({
                       inputMode.current = "tap";
                       evaluate([FALSE_WORD[lang]]);
                     }}
-                    className="option px-4 py-3 text-center text-sm font-semibold"
+                    className="flex items-center justify-center gap-2 rounded-panel px-4 py-3 text-center text-sm font-bold on-fill shadow-soft-sm"
+                    style={{ background: "var(--color-danger)" }}
                   >
+                    <XIcon size={18} />
                     {t("lesson.wrong")}
                   </button>
                 </div>
