@@ -64,13 +64,23 @@ export function Slider({
     PanResponder.create({
       onStartShouldSetPanResponder: () => true,
       onMoveShouldSetPanResponder: () => true,
+      /*
+        DEĞER REFERANSA HEMEN YAZILIYOR, render'ı beklemeden. Parmak
+        bırakıldığında `onCommit` bu referansı okuyor; yalnız render'da
+        güncellenseydi son hareketle bırakma arasına render girmediğinde
+        ekranda 70 yazarken sunucuya 65 giderdi (cihazda görüldü).
+      */
       onPanResponderGrant: (e) => {
         const v = hesapla(e.nativeEvent.locationX);
-        if (v !== son.current) onChange(v);
+        if (v === son.current) return;
+        son.current = v;
+        onChange(v);
       },
       onPanResponderMove: (e) => {
         const v = hesapla(e.nativeEvent.locationX);
-        if (v !== son.current) onChange(v);
+        if (v === son.current) return;
+        son.current = v;
+        onChange(v);
       },
       onPanResponderRelease: () => onCommit(son.current),
       onPanResponderTerminate: () => onCommit(son.current),
