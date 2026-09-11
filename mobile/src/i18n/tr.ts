@@ -355,6 +355,15 @@ export const tr: Record<string, string> = {
   "item.repeat_note": "Bu egzersizi daha önce tamamlamıştın — XP yalnızca en iyi skorunu geçince eklenir.",
   "item.this_exercise_can_t_be_opened": "Bu alıştırma şu an açılamıyor.",
   "item.content": "İçerik",
+  /* Dinleme oynatıcısı: bölüm bölüm çalma, yavaş mod, "önce dinle" notu.
+     Mobil metnin tamamını tek seferde okuyordu. */
+  "listenp.playing": "Bölüm {n} / {total} çalıyor…",
+  "listenp.done": "Bitti — istersen tekrar dinle.",
+  "listenp.start": "Dinlemeye başla",
+  "listenp.replay_note": "İstediğin kadar tekrar dinleyebilirsin. Sınavda iki kez dinlersin.",
+  "listenp.slow": "Yavaş mod",
+  "listenp.hint_listen_first": "İpucu: önce yalnızca dinleyerek dene.",
+  "listenp.tap_line": "Bir satıra dokununca yalnızca o bölüm çalar.",
   "item.listen_and_understand": "Dinle ve anla",
   "item.go_back": "Geri dön",
   "item.hide_text": "Metni gizle",

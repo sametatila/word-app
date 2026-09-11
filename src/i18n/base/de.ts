@@ -352,6 +352,15 @@ export const deBase: Record<string, string> = {
   "item.repeat_note": "Diese Übung hattest du schon — XP gibt es erst, wenn du deine Bestleistung übertriffst.",
   "item.this_exercise_can_t_be_opened": "Diese Übung kann gerade nicht geöffnet werden.",
   "item.content": "Inhalt",
+  /* Dinleme oynatıcısı: bölüm bölüm çalma, yavaş mod, "önce dinle" notu.
+     Mobil metnin tamamını tek seferde okuyordu. */
+  "listenp.playing": "Teil {n} von {total} läuft…",
+  "listenp.done": "Fertig — hör es gern noch mal.",
+  "listenp.start": "Anhören",
+  "listenp.replay_note": "Du kannst so oft hören, wie du willst. In der Prüfung hörst du zweimal.",
+  "listenp.slow": "Langsam",
+  "listenp.hint_listen_first": "Tipp: Versuch es erst nur mit Hören.",
+  "listenp.tap_line": "Tipp eine Zeile an, um nur diesen Teil zu hören.",
   "item.listen_and_understand": "Hören und verstehen",
   "item.go_back": "Zurück",
   "item.hide_text": "Text ausblenden",

@@ -350,6 +350,15 @@ export const en: Record<string, string> = {
   "item.repeat_note": "You've done this exercise before — XP is only added when you beat your best score.",
   "item.this_exercise_can_t_be_opened": "This exercise can't be opened right now.",
   "item.content": "Content",
+  /* Dinleme oynatıcısı: bölüm bölüm çalma, yavaş mod, "önce dinle" notu.
+     Mobil metnin tamamını tek seferde okuyordu. */
+  "listenp.playing": "Part {n} of {total} playing…",
+  "listenp.done": "Done — listen again if you like.",
+  "listenp.start": "Start listening",
+  "listenp.replay_note": "You can replay it as often as you like. In the exam you get two listens.",
+  "listenp.slow": "Slow mode",
+  "listenp.hint_listen_first": "Tip: try listening only, first.",
+  "listenp.tap_line": "Tap a line to play just that part.",
   "item.listen_and_understand": "Listen and understand",
   "item.go_back": "Go back",
   "item.hide_text": "Hide the text",

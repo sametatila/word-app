@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { kindIcon, kindTint } from "../ui/unitKind";
 import { t } from "../lib/i18n";
 import { View, ScrollView } from "react-native";
@@ -15,7 +15,8 @@ import { getExercise, type ListeningSegment } from "../data/skills";
 import { QuestionList, GlossPanel, WritingList, type WritingTask } from "../game/skillQuiz";
 import { GrammarBody, SpeakingDrill, MonologueBody, type SpeakingTask } from "../game/skillLibrary";
 import { markItemDone, recordItemScore, queueItemRecord } from "../game/lessonProgress";
-import { speakTarget } from "../lib/tts";
+import { speakTarget, speakAndWait, stopSpeaking } from "../lib/tts";
+import { currentTargetLocale } from "../lib/courses";
 import { API_BASE, fetchWithTimeout } from "../api/client";
 import { bumpStats } from "../lib/statsSignal";
 import { AiNotice } from "../ui/AiNotice";
@@ -45,30 +46,90 @@ function ReadingText({ text, colors }: { text: string; colors: Palette }) {
 }
 
 /** Dinleme — cihaz TTS'i (audio dosyaları /public'te, çevrimdışı yok); metin gizli başlar. */
+/**
+ * DİNLEME OYNATICISI — web `skills/listening-player` karşılığı.
+ *
+ * Kart metnin TAMAMINI tek seferde okuyordu: hangi replikte olunduğu
+ * görünmüyor, yavaşlatma yolu yok ve "önce yalnızca dinleyerek dene" uyarısı
+ * hiç yazılmıyordu (metni açan düğme hemen yanındaydı). Web bölüm bölüm
+ * çalıyor, çalan repliği işaretliyor, yavaş modu ayrı bir düğmede tutuyor.
+ *
+ * Gerçek lehçe kaydı yolu (`segment.audio`) iki tarafta da UYKUDA: bugün
+ * içerikte tek bir `audio` alanı yok (ölçüldü: 2265 replik, sıfır kayıt).
+ */
 function ListeningBody({ segments, colors }: { segments: ListeningSegment[]; colors: Palette }) {
   const [reveal, setReveal] = useState(false);
-  const full = segments.map((s) => s.text).join("  ");
+  const [slow, setSlow] = useState(false);
+  const [playing, setPlaying] = useState(false);
+  const [segIdx, setSegIdx] = useState(-1);
+  const [playCount, setPlayCount] = useState(0);
+  const run = useRef(0);
+
+  useEffect(() => () => { run.current += 1; stopSpeaking(); }, []);
+
+  async function play() {
+    const my = ++run.current;
+    setPlaying(true);
+    for (let i = 0; i < segments.length; i++) {
+      if (my !== run.current) return;
+      setSegIdx(i);
+      await speakAndWait(segments[i].text, currentTargetLocale(), { slow });
+    }
+    if (my !== run.current) return;
+    setPlaying(false);
+    setSegIdx(-1);
+    setPlayCount((c) => c + 1);
+  }
+
+  function stop() {
+    run.current += 1;
+    stopSpeaking();
+    setPlaying(false);
+    setSegIdx(-1);
+  }
+
+  /** Transkript satırına dokununca yalnızca o bölümü tekrar dinlet. */
+  function playSegment(i: number) {
+    run.current += 1;
+    stopSpeaking();
+    setSegIdx(-1);
+    setPlaying(false);
+    speakTarget(segments[i].text, { slow });
+  }
+
   return (
     <>
       <Card style={{ alignItems: "center", marginTop: spacing.md, paddingVertical: spacing.xl }}>
-        <PressableScale accessibilityLabel={t("item.listen")} onPress={() => speakTarget(full)} style={[{ width: 80, height: 80, borderRadius: 40, backgroundColor: colors.accent, alignItems: "center", justifyContent: "center" }, softShadow(colors.accent, 12)]}>
+        <PressableScale accessibilityLabel={t("item.listen")} onPress={() => (playing ? stop() : void play())} style={[{ width: 80, height: 80, borderRadius: 40, backgroundColor: colors.accent, alignItems: "center", justifyContent: "center" }, softShadow(colors.accent, 12)]}>
           <SpeakerIcon color={colors.onFill} size={34} />
         </PressableScale>
-        <Text variant="caption" color={colors.textMuted} style={{ marginTop: spacing.md }}>{t("item.listen_and_understand")}</Text>
+        <Text variant="bodyStrong" style={{ marginTop: spacing.md }}>
+          {playing ? t("listenp.playing", { n: segIdx + 1, total: segments.length }) : t(playCount > 0 ? "listenp.done" : "listenp.start")}
+        </Text>
+        <Text variant="caption" color={colors.textMuted} style={{ marginTop: 2, textAlign: "center" }}>{t("listenp.replay_note")}</Text>
+        <PressableScale onPress={() => setSlow((v) => !v)} accessibilityState={{ selected: slow }}
+          style={{ marginTop: spacing.md, borderRadius: radii.pill, paddingHorizontal: 14, paddingVertical: 7, backgroundColor: slow ? colors.primarySoft : colors.surface2 }}>
+          <Text variant="caption" color={slow ? colors.onPrimarySoft : colors.textMuted}>{t("listenp.slow")}</Text>
+        </PressableScale>
       </Card>
-      <PressableScale onPress={() => setReveal((v) => !v)} style={{ marginTop: spacing.md, alignSelf: "flex-start" }}>
-        <Text variant="bodyStrong" color={colors.primaryText}>{t(reveal ? "item.hide_text" : "item.show_text")}</Text>
-      </PressableScale>
+      <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.sm, marginTop: spacing.md, flexWrap: "wrap" }}>
+        <PressableScale onPress={() => setReveal((v) => !v)}>
+          <Text variant="bodyStrong" color={colors.primaryText}>{t(reveal ? "item.hide_text" : "item.show_text")}</Text>
+        </PressableScale>
+        {!reveal ? <Text variant="caption" color={colors.textMuted}>{t("listenp.hint_listen_first")}</Text> : null}
+      </View>
       {reveal ? (
         <Card style={{ marginTop: spacing.sm }}>
+          <Text variant="micro" color={colors.textMuted} style={{ marginBottom: spacing.sm }}>{t("listenp.tap_line")}</Text>
           {segments.map((s, i) => (
-            <View key={i} style={{ marginTop: i > 0 ? spacing.md : 0, flexDirection: "row", alignItems: "flex-start", gap: spacing.sm }}>
-              <PressableScale accessibilityLabel={t("item.listen")} onPress={() => speakTarget(s.text)} hitSlop={6} style={{ marginTop: 2 }}><SpeakerIcon color={colors.textMuted} size={16} /></PressableScale>
+            <PressableScale key={i} onPress={() => playSegment(i)} accessibilityLabel={t("item.listen")}
+              style={{ marginTop: i > 0 ? spacing.md : 0, flexDirection: "row", alignItems: "flex-start", gap: spacing.sm, borderRadius: radii.md, backgroundColor: segIdx === i ? colors.primarySoft : "transparent", padding: segIdx === i ? spacing.sm : 0 }}>
+              <SpeakerIcon color={colors.textMuted} size={16} />
               <View style={{ flex: 1 }}>
                 {s.speaker ? <Text variant="micro" color={colors.textMuted}>{s.speaker}</Text> : null}
                 <Text variant="body" style={{ lineHeight: 24 }}>{s.text}</Text>
               </View>
-            </View>
+            </PressableScale>
           ))}
         </Card>
       ) : null}

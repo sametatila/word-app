@@ -3719,6 +3719,31 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   sameList("etap duraklamasi", etap(["mobile/src/screens/GameScreen.tsx"]), etap(["src/components/session-player.tsx"]));
 }
 
+/* ── 109. dinleme oynaticisi ──────────────────────────────────────────────
+ * Mobil kart metnin TAMAMINI tek seferde okuyordu: hangi replikte olundugu
+ * gorunmuyor, yavaslatma yolu yok ve "once yalnizca dinleyerek dene" uyarisi
+ * hic yazilmiyordu - ustelik metni acan dugme hemen yanindaydi. Web bolum
+ * bolum caliyor, calan repligi isaretliyor, yavas modu ayri tutuyor.
+ *
+ * Olcum disi iki satir: `listenp.real_audio` (gercek lehce kaydi - iki
+ * tarafta da UYKUDA, icerikte tek bir `audio` alani yok) ve `listenp.no_tts`
+ * (tarayicida konusma sentezi olmayabilir; Android kendi TTS'iyle geliyor). */
+{
+  const dinle = (p) => {
+    const src = read(p).replace(/\/\*[\s\S]*?\*\//g, " ").replace(/\/\/[^\n]*/g, " ");
+    return [
+      "bolum sayaci=" + (/listenp\.playing/.test(src) ? "var" : "yok"),
+      "baslat/bitti=" + (/listenp\.start/.test(src) && /listenp\.done/.test(src) ? "var" : "yok"),
+      "tekrar notu=" + (/listenp\.replay_note/.test(src) ? "var" : "yok"),
+      "yavas mod=" + (/listenp\.slow/.test(src) ? "var" : "yok"),
+      "once dinle=" + (/listenp\.hint_listen_first/.test(src) ? "var" : "yok"),
+      "satira dokun=" + (/listenp\.tap_line/.test(src) ? "var" : "yok"),
+      "calan replik isaretli=" + (/i === segIdx|segIdx === i/.test(src) ? "var" : "yok"),
+    ];
+  };
+  sameList("dinleme oynaticisi", dinle("mobile/src/screens/ItemScreen.tsx"), dinle("src/components/skills/listening-player.tsx"));
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"

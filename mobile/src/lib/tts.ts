@@ -2,7 +2,7 @@ import Tts from "react-native-tts";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { type VoiceId, VOICES, resolveVoice, defaultVoice, langOf, deviceRate } from "./voices";
 import { speechLocaleOf, setCurrentCourse } from "./courses";
-import { bridgeReady, bridgeSpeak, bridgeSpeakAndWait } from "./ttsBridge";
+import { bridgeReady, bridgeSpeak, bridgeSpeakAndWait, bridgeStop } from "./ttsBridge";
 
 /**
  * Almanca sesli okuma (TTS) — cihazın TextToSpeech motoru.
@@ -124,6 +124,15 @@ async function applyVoice(voice: VoiceId): Promise<string> {
 }
 
 /**
+ * Okumayı keser — köprü de cihaz TTS'i de. Dinleme oynatıcısı bölüm bölüm
+ * çalarken kullanıcı durdurunca ya da ekrandan çıkınca çağrılıyor.
+ */
+export function stopSpeaking(): void {
+  try { bridgeStop(); } catch { /* yut */ }
+  try { Tts.stop(); } catch { /* yut */ }
+}
+
+/**
  * Metni seslendirir (fire-and-forget). Ses/hız kullanıcı tercihinden; `opts.voice`
  * verilirse onu kullanır (ön izleme), `opts.slow` telaffuz için yavaşlatır.
  */
@@ -177,7 +186,7 @@ export async function speakAndWaitVoiced(text: string, voice: VoiceId): Promise<
  * @param lang Okunacak yerel kod. Varsayılan, kursun hedef dili — anlatım
  * (Türkçe) için çağıran açıkça "tr-TR" geçer.
  */
-export function speakAndWait(text: string, lang: string = speechLocaleOf(currentCourse)): Promise<void> {
+export function speakAndWait(text: string, lang: string = speechLocaleOf(currentCourse), opts?: { slow?: boolean }): Promise<void> {
   return new Promise((resolve) => {
     void ttsAvailable().then(async (ok) => {
       if (!ok || !text) { resolve(); return; }
@@ -197,7 +206,7 @@ export function speakAndWait(text: string, lang: string = speechLocaleOf(current
         } else {
           await Tts.setDefaultLanguage(lang).catch(() => {});
         }
-        Tts.speak(text, { androidParams: { KEY_PARAM_PAN: 0, KEY_PARAM_VOLUME: 1, KEY_PARAM_STREAM: "STREAM_MUSIC" }, rate: deviceRate(false), iosVoiceId: "" });
+        Tts.speak(text, { androidParams: { KEY_PARAM_PAN: 0, KEY_PARAM_VOLUME: 1, KEY_PARAM_STREAM: "STREAM_MUSIC" }, rate: deviceRate(opts?.slow), iosVoiceId: "" });
       } catch { finish(); }
     });
   });
