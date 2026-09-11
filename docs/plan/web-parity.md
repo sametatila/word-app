@@ -11932,3 +11932,60 @@ oldu: karşılık yazılı, çip `speakGerman` ile sesli.
 Mevcut "telaffuz eşiği ve kayıt süreleri" kapısı da güncellendi: sayıyı
 oynatıcıdan okuyordu, artık **sabitten** okuyup oynatıcının gerçekten oradan
 aldığını ayrıca doğruluyor.
+
+## §11.355 — `title=` ipucu balonu: bir metni göstermez, gizler
+
+Bu sınıf kusur üç turda üst üste tek tek çıktı — yürüyüşün "konuşma yine
+sayılır" güvencesi, monologun hedef çipleri, yazma kartının kalıp
+karşılıkları — yani artık tek tek değil **mutlak ölçütle** taranması
+gerekiyordu.
+
+DOM'daki `title` özniteliği **yalnız fareyle** üstüne gelince açılıyor:
+dokunmatikte hiç açılmaz, klavyeyle erişilmez, ekran okuyucuların bir kısmı
+okur bir kısmı okumaz. Bir bilgi başka hiçbir yerde yazmıyorsa, kullanıcıların
+bir bölümü onu **hiç görmüyor**.
+
+### Tarama: 162 değil 30
+
+İlk `title=` araması **162** sonuç verdi ve çoğu yanlış alarmdı: `PageBack`,
+`SettingRow`, `Card`, `Section`, `Group`, `EmptyCard`, `BoardList`, `Spark`,
+`Disclosure`, `AuthShell` gibi bileşenlerin **`title` adlı prop'u**. Tarama
+yalnız **küçük harfle başlayan DOM etiketlerine** çevrildiğinde sayı **30**'a
+düştü. Prop ile öznitelik aynı yazılıyor; ayırt eden şey etiketin kendisi.
+
+### Dört gerçek kusur düzeltildi
+
+1. **`speaking-player`** — `title={`duyulan: ${w.heard}`}`: metin **koda gömülü
+   Türkçeydi** (İngilizce ve Almanca arayüzde de Türkçe çıkıyordu) **ve**
+   yalnız hover'da görünüyordu. Sözlükte zaten ortak anahtar var
+   (`item.heard`); kelime kelime olduğu için erişilebilir ad olarak veriliyor.
+   Android aynı cümleyi **görünür** bir satırda yazıyor.
+2. **`user-action`** — devre dışı "arkadaş ekle" düğmesinin sebebi
+   ("istekler kapalı") hover'daydı: kullanıcı ölü bir düğmeye bakıp neden
+   çalışmadığını hiçbir yerden öğrenemiyordu. Görünür sönük bir satır oldu.
+3. **`writing-player`** — kalıp çipinin karşılığı hover'daydı; Android aynı
+   kartta "de · tr" yazıyor. Görünür oldu — ve yazılan şey `glossTitle`ın
+   **tamamı**: o metin İngilizceyi ve **Hochdeutsch köprüsünü** de taşıyor,
+   kendi yorumunun dediği gibi Züritüütsch kalıplarında lehçe biçimin
+   Almancası başka hiçbir yerde görünmüyor. İlk denemede yalnız `p.tr`
+   yazmıştım — bir kusuru başkasıyla değişmek olurdu; lint'in "kullanılmayan
+   `glossTitle`" uyarısı bunu yakalattı.
+4. **`lesson-player`** — ders özetindeki kalıp listesinin karşılığı hover'daydı;
+   Android aynı listede "de" ve "tr"yi yan yana yazıyor.
+
+İki `title=` de **fazlalık** olduğu için silindi: yazma kartının kelime
+çipleri ve serbest cümle oyununun hedef çipleri karşılığı **zaten görünür**
+yazıyordu.
+
+### `check:title` — borç tabanı, onay değil
+
+Geri kalan **18** site `scripts/check-title-only.mjs` içinde dosya başına
+sayılı. Ölçüt: bir DOM `title=` ya `aria-label` ile birlikte durur (o zaman
+metin erişilebilir addan da okunur) ya da tabanda sayılıdır. **Sayılar yalnız
+azalabilir**; yeni bir dosya eklenince kapı kırmızı olur, yani yeni borç
+açmanın yolu yok. Borç azaldığında kapı "tabanı güncelle" diyip kırmızıya
+döner — sayı sessizce şişemez.
+
+Tabanın ikisi gerekçeli istisna (yönetim panosu: kullanıcı yüzeyi değil;
+ilerleme grafiği: değer eksende ve satırda da var). Kalan on altısı **gerçek
+borç** ve sıradaki turlarda görünür metne çevrilecek.
