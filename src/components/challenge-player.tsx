@@ -268,7 +268,12 @@ export function ChallengePlayer({ onExit }: { onExit: () => void }) {
     return (
       <Frame>
         <div className="text-center">
-          <h2 className="text-h3">{t("challenge.none_title")}</h2>
+          {/* MASKOT BOS DALDA DA. Android ayni ekranda `idle` maskotu
+              ciziyor (`ChallengeScreen`); webde yalniz sonuc dalinda vardi,
+              yani "bugun meydan okuma yok" ekrani karaktersiz bir metin
+              blogu olarak kaliyordu. */}
+          <Mascot mood="idle" size={96} className="mx-auto" />
+          <h2 className="mt-1 text-h3">{t("challenge.none_title")}</h2>
           <p className="muted mt-2 text-body">
             {t("challenge.none_sub")}
           </p>

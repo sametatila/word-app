@@ -5,6 +5,7 @@ import { BOSS_SECONDS } from "@/lib/lessons/boss-const";
 import { PASS_SECTION, PASS_TOTAL } from "@/lib/exam-types";
 import { useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
+import { Mascot } from "@/components/mascot";
 import { AnimatePresence, motion } from "framer-motion";
 import { GameSwitch } from "@/components/game-switch";
 import { NoHints } from "@/components/games/no-hints";
@@ -344,6 +345,11 @@ export function ExamPlayer({ level, module }: { level: CefrLevel; module: number
       /* Hata DUYURULUYOR: ekrani kaplayan bir hata metni canli bolge degilse
          ekran okuyucu kullanan biri hicbir sey duymuyor. */
       <section role="alert" className="card mx-auto w-full max-w-md p-5">
+        {/* Android ayni dalda `sad` maskotu ciziyor (`ExamScreen`); webde
+            sinav oynaticisinin hicbir dalinda maskot yoktu. Cevrimdisi
+            KAYIT dalinda cizilmiyor: orada kotu bir sey olmadi, kayit
+            bekliyor. */}
+        {offline ? null : <Mascot mood="sad" size={80} className="mx-auto" />}
         {offline ? (
           <>
             <p className="text-h1 tabular-nums">{t("common.pct", { n: offline.pct })}</p>
