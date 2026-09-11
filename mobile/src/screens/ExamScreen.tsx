@@ -6,6 +6,8 @@ import { useNavigation, useRoute, type RouteProp } from "@react-navigation/nativ
 import { t, formatPercent } from "../lib/i18n";
 import { Text } from "../ui/Text";
 import { Card } from "../ui/Card";
+import { ConfirmDialog } from "../ui/ConfirmDialog";
+import { useBackConfirm } from "../lib/useBackConfirm";
 import { PressableScale } from "../ui/PressableScale";
 import { Mascot } from "../ui/Mascot";
 import { CoachBubble } from "../ui/CoachBubble";
@@ -124,6 +126,17 @@ export function ExamScreen() {
   /* Yükleme hatası GEÇİCİ olabilir; bkz. hata ekranındaki "tekrar dene". */
   const [attempt, setAttempt] = useState(0);
   const [phase, setPhase] = useState<"yukleniyor" | "kapak" | "bolumGiris" | "bolum" | "sonuc">("yukleniyor");
+  /*
+   * ÇIKIŞ ONAYA BAĞLI.
+   *
+   * Başlıktaki çarpı ve donanım geri tuşu kırk beş dakikalık bir sınavı TEK
+   * DOKUNUŞTA çöpe atıyordu ve soru sorulmuyordu: cevaplar hiçbir yere
+   * kaydedilmiyor, sınav baştan başlıyor. Uygulamanın kendi düzeni bunu zaten
+   * biliyor — tur ekranı (`GameScreen` `useBackConfirm`) ve deneme kâğıdı
+   * (`MockExamScreen` `ConfirmDialog`) baştan beri soruyor; en pahalı yüzey
+   * atlanmıştı. Web sınav SÜRERKEN hiç çıkış düğmesi vermiyor.
+   */
+  const back = useBackConfirm(phase === "bolum" || phase === "bolumGiris");
   const [secIdx, setSecIdx] = useState(0);
   const [left, setLeft] = useState(0);
   const [result, setResult] = useState<Result | null>(null);
@@ -254,7 +267,7 @@ export function ExamScreen() {
 
   const header = (
     <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, paddingTop: insets.top + spacing.sm, paddingHorizontal: spacing.lg, paddingBottom: spacing.sm }}>
-      <PressableScale hitSlop={4} onPress={() => nav.goBack()} accessibilityLabel={t("common.back")} style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
+      <PressableScale hitSlop={4} onPress={phase === "bolum" || phase === "bolumGiris" ? back.ask : () => nav.goBack()} accessibilityLabel={t(phase === "bolum" || phase === "bolumGiris" ? "exam.quit_title" : "common.back")} style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
         <XIcon color={colors.textMuted} size={22} />
       </PressableScale>
       <View style={{ flex: 1 }}>
@@ -264,6 +277,22 @@ export function ExamScreen() {
         <Text variant="h3">{phase === "bolum" ? `${mm}:${ss}` : t("exam.title")}</Text>
       </View>
     </View>
+  );
+
+  /* Diyalog iki dalda da çiziliyor (bölüm girişi ve bölümün kendisi): geri
+     tuşu ikisinde de yakalanıyor, yalnız birinde göstermek onayı görünmez
+     kılardı. */
+  const quitDialog = (
+    <ConfirmDialog
+      visible={back.visible}
+      title={t("exam.quit_title")}
+      message={t("exam.quit_body")}
+      confirmLabel={t("common.exit")}
+      cancelLabel={t("common.continue_2")}
+      destructive
+      onConfirm={() => { back.cancel(); nav.goBack(); }}
+      onCancel={back.cancel}
+    />
   );
 
   if (err) {
@@ -540,6 +569,7 @@ export function ExamScreen() {
             </PressableScale>
           </Card>
         </ScrollView>
+        {quitDialog}
       </View>
     );
   }
@@ -565,6 +595,7 @@ export function ExamScreen() {
         onVocabAnswer={(a) => vocabAnswers.current.push(a)}
         onDone={(c) => sectionDone(active, c)}
       />
+      {quitDialog}
     </View>
   );
 }

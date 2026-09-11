@@ -4635,6 +4635,52 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   );
 }
 
+/* ── 133. yarim birakilinca kaybedilen sey ────────────────────────────────
+ * Basliktaki carpi ve donanim geri tusu SEVIYE SINAVINI (kirk bes dakika) ve
+ * YERLESTIRMEYI (on bes dakika) tek dokunusta cope atiyordu ve soru
+ * sorulmuyordu: cevaplar hicbir yere kaydedilmiyor, ikisi de bastan basliyor.
+ * Uygulamanin kendi duzeni bunu zaten biliyor - tur ekrani
+ * (`GameScreen` `useBackConfirm`) ve deneme kagidi (`MockExamScreen`
+ * `ConfirmDialog`) bastan beri soruyor; en pahali iki yuzey atlanmisti.
+ * (Web sinav SURERKEN hic cikis dugmesi vermiyor, yani orada boyle bir
+ * dokunus yok.)
+ *
+ * Olculen: cevabi kurtarilamayan her ekranda cikis onaya bagli mi. */
+{
+  const KORUNAN = [
+    "mobile/src/screens/GameScreen.tsx",
+    "mobile/src/screens/MockExamScreen.tsx",
+    "mobile/src/screens/ExamScreen.tsx",
+    "mobile/src/screens/PlacementScreen.tsx",
+  ];
+  const korumasiz = KORUNAN.filter((f) => {
+    const src = read(f);
+    /* Iki kalip da kabul: `useBackConfirm` (donanim tusunu da yakaliyor) ya
+       da ekranin kendi onay durumu + `ConfirmDialog`. Onemli olan cikisin
+       SORULMASI, hangi yardimciyla sorulduğu degil. */
+    /* Desenler AD SINIRINA kapali. Ilk yazilisinda `<ConfirmDialog` ONEK
+       olarak eslesiyordu ve enjeksiyonda `<ConfirmDialog2` diye yeniden
+       adlandirilan bileseni hâlâ "onay var" sayiyordu - olcunun komsusunu
+       olcmenin on ucuncu bicimi. */
+    return !(/useBackConfirm\(/.test(src) || /<ConfirmDialog[\s/>]/.test(src));
+  }).map((f) => f.split("/").pop());
+  sameList("cikis onayi (kurtarilamayan cevap)", korumasiz.length ? korumasiz : ["yok"], ["yok"], "korumasiz", "beklenen");
+
+  /* MUAF: haftalik sinav ve gunluk tur. Ikisinde de yarim birakmak HAKKI
+     harcamiyor - kayit yalnizca bitiste yaziliyor, yani kullanici geri
+     girip bastan alabiliyor. Muafiyet kendini denetliyor: haftalik durumu
+     `done: Boolean(row)` diye okuyor ve o satiri yalniz `finishWeekly`
+     yaziyor; baska bir yazan cikarsa gerekce duser. */
+  const weekly = read("src/lib/weekly.ts");
+  const yazan = [...weekly.matchAll(/insert\(exams\)/g)].length;
+  const finishte = /export async function finishWeekly[\s\S]*?insert\(exams\)/.test(weekly);
+  sameList(
+    "haftalik hak yarida harcanmiyor",
+    ["exams yazan yer=" + yazan, "yazan=" + (finishte ? "finishWeekly" : "baskasi")],
+    ["exams yazan yer=1", "yazan=finishWeekly"],
+  );
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"

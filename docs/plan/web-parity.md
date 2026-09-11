@@ -7610,3 +7610,27 @@ renk, **haptik/ses** (titreşimin tonu da cevabı söylüyordu) ve **gecikme**
 Kapının ilk hâli bayrağın **varsayılanını ters okuyordu** (`reveal = true`
 iken, bayrak geçilmediğinde "açmıyor" diyordu); enjeksiyon bunu gösterdi.
 Beş enjeksiyonun beşi de yakalandı.
+
+### 11.226 Kırk beş dakika tek dokunuşla çöpe gidiyordu
+
+Başlıktaki çarpı ve Android'in donanım/gesture geri tuşu **seviye sınavını**
+(kırk beş dakika) ve **yerleştirme testini** (on beş dakika) tek dokunuşta
+bitiriyordu ve hiçbir şey sormuyordu: cevaplar hiçbir yere kaydedilmiyor,
+ikisi de baştan başlıyor.
+
+Uygulamanın kendi düzeni bunu zaten biliyor: tur ekranı `useBackConfirm`
+kullanıyor, deneme kâğıdı `ConfirmDialog` gösteriyor — **en pahalı iki yüzey
+atlanmıştı.** İkisine de aynı onay kondu; sınavda bölüm girişinde ve bölümün
+kendisinde, yerleştirmede yalnız test sürerken (tanıtımda ve sonuçta
+kaybedilecek bir şey yok). Web sınav sürerken hiç çıkış düğmesi vermiyor,
+yani orada böyle bir dokunuş yok.
+
+**§133** cevabı kurtarılamayan dört ekranda çıkışın sorulduğunu ölçüyor.
+Haftalık sınav ve günlük tur **muaf** ve gerekçesi ölçülüyor: ikisinde de
+yarıda bırakmak hakkı harcamıyor, çünkü `exams` satırını yalnız
+`finishWeekly` yazıyor — başka bir yazan çıkarsa satır düşer.
+
+Kapı ilk hâlinde iki enjeksiyonu da **kaçırdı**: `<ConfirmDialog` deseni ÖNEK
+olarak eşleşiyordu ve yeniden adlandırılmış `<ConfirmDialog2`'yi hâlâ "onay
+var" sayıyordu. Ad sınırı eklendi. **Ölçünün komşusunu ölçmenin on üçüncü
+biçimi** — bu kez "komşu", ölçülen adın kendi öneki.

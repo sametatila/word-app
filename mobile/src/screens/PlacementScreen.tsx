@@ -30,6 +30,8 @@ import type { RootStackParams } from "../navigation/RootStack";
 import { useTheme, spacing, radii, softShadow, type Palette } from "../theme";
 import { sfx } from "../lib/sfx";
 import { speakTarget } from "../lib/tts";
+import { ConfirmDialog } from "../ui/ConfirmDialog";
+import { useBackConfirm } from "../lib/useBackConfirm";
 
 /** Kullanıcının seçebileceği seviyeler — web `PLACEMENT_LEVELS` ile aynı. */
 const CHOOSABLE = ["A1", "A2", "B1", "B2", "C1"] as const;
@@ -199,6 +201,15 @@ export function PlacementScreen() {
   const questions = usingReal ? realQuestions(real) : user ? [] : demoQuestions();
   const total = questions.length;
   const done = idx >= total;
+  /*
+   * ÇIKIŞ ONAYA BAĞLI — sınav ekranındaki aynı boşluk.
+   *
+   * Çarpı ve donanım geri tuşu on beş dakikalık testi tek dokunuşta çöpe
+   * atıyordu: cevaplar hiçbir yere kaydedilmiyor, test baştan başlıyor ve
+   * bekleme süresi de işlemeye devam ediyor. Tanıtım ekranında ve sonuçta
+   * onay YOK — orada kaybedilecek bir şey yok.
+   */
+  const back = useBackConfirm(started && !done);
   // Önerilen seviye: gerçek modda sunucudan (result), yoksa yerel tahmin.
   const level = chosen ?? result?.suggested ?? estimateLevel(correct);
 
@@ -341,7 +352,7 @@ export function PlacementScreen() {
       <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, marginBottom: spacing.xl }}>
         {/* Simge tek başına: ekran okuyucu için adı olmalı - öteki ekranların
             kapatma düğmeleri baştan beri `common.close` taşıyor. */}
-        <PressableScale hitSlop={4} onPress={leave} accessibilityLabel={t("common.close")} style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
+        <PressableScale hitSlop={4} onPress={started && !done ? back.ask : leave} accessibilityLabel={t(started && !done ? "plc.quit_title" : "common.close")} style={{ width: 44, height: 44, borderRadius: radii.md, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2 }}>
           <XIcon color={colors.textMuted} size={22} />
         </PressableScale>
         <View style={{ flex: 1, height: 10, borderRadius: 5, backgroundColor: colors.surface2, overflow: "hidden" }}>
@@ -439,6 +450,16 @@ export function PlacementScreen() {
           </PressableScale>
         </View>
       )}
+      <ConfirmDialog
+        visible={back.visible}
+        title={t("plc.quit_title")}
+        message={t("plc.quit_body")}
+        confirmLabel={t("common.exit")}
+        cancelLabel={t("common.continue_2")}
+        destructive
+        onConfirm={() => { back.cancel(); leave(); }}
+        onCancel={back.cancel}
+      />
     </View>
   );
 }
