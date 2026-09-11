@@ -35,7 +35,16 @@ export type LectureStep = { say: Segment[]; expect?: Expectation };
 export type VocabItem = { de: string; tr: string };
 export type PatternItem = { de: string; tr: string };
 export type LessonRoleplay = {
-  scene: string; partner: string; opening: string; openingTr: string; goal: string; minTurns?: number;
+  /*
+   * `minTurns` ZORUNLU. Tip isteğe bağlı tanımlıydı ve iki yerde `?? 6`
+   * yazılıydı: alan düşse Android altı tur ister, web `undefined`ı ekrana
+   * basardı - yani aynı ders iki platformda başka bir kural uygular. Web tipi
+   * baştan beri zorunlu (`src/lib/lessons/types.ts`) ve içerik webden
+   * dökülüyor; ölçüm bin seksen rol yapma dersinin HEPSİNDE alanın dolu
+   * olduğunu gösterdi, yani varsayılan hiç çalışmıyordu ama sayı kodda
+   * duruyordu.
+   */
+  scene: string; partner: string; opening: string; openingTr: string; goal: string; minTurns: number;
   /**
    * Dallanan senaryo — yalnız 780 dersin 10'unda var. Sağlayıcı kapalıyken
    * konuşma bundan oynanıyor (`game/offlineRoleplay`); yoksa dersin kalıpları
