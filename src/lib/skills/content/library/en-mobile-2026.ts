@@ -1435,7 +1435,15 @@ export const enMobile2026: SkillExercise[] = [
     "segments": [
       {
         "speaker": "Emre",
-        "text": "Hello, everyone. My name is Emre. I'm from Turkey. My city is Izmir. I'm twenty-four years old. I'm a nurse and I work at a big hospital. I've got two brothers and one sister. Here in London I'm living with my aunt. I can speak a little English, but I can't speak French. I love music and football. My class is on Monday and Wednesday at six o'clock. I'm going to study here for six months. I'm a little nervous today, but I'm very happy. Nice to meet you all."
+        "text": "Hello, everyone. My name is Emre. I'm from Turkey. My city is Izmir. I'm twenty-four years old. I'm a nurse and I work at a big hospital."
+      },
+      {
+        "speaker": "Emre",
+        "text": "I've got two brothers and one sister. Here in London I'm living with my aunt. I can speak a little English, but I can't speak French. I love music and football."
+      },
+      {
+        "speaker": "Emre",
+        "text": "My class is on Monday and Wednesday at six o'clock. I'm going to study here for six months. I'm a little nervous today, but I'm very happy. Nice to meet you all."
       }
     ],
     "questions": [
@@ -1682,7 +1690,19 @@ export const enMobile2026: SkillExercise[] = [
     "segments": [
       {
         "speaker": "Announcement",
-        "text": "Good afternoon, shoppers. Welcome to Green Market. It's three o'clock, and we've got some special offers for you today. Fresh apples are only two pounds a kilo. They're in aisle four, next to the bananas. We've got a big sale on bread too — buy two, get one free. That's in aisle six. Milk and cheese are in aisle one, at the back of the store. Don't forget, the store is closing at eight o'clock this evening. Please come to the checkout ten minutes before. Thank you for shopping with us. Have a nice day!"
+        "text": "Good afternoon, shoppers. Welcome to Green Market. It's three o'clock, and we've got some special offers for you today. Fresh apples are only two pounds a kilo."
+      },
+      {
+        "speaker": "Announcement",
+        "text": "They're in aisle four, next to the bananas. We've got a big sale on bread too — buy two, get one free. That's in aisle six."
+      },
+      {
+        "speaker": "Announcement",
+        "text": "Milk and cheese are in aisle one, at the back of the store. Don't forget, the store is closing at eight o'clock this evening. Please come to the checkout ten minutes before."
+      },
+      {
+        "speaker": "Announcement",
+        "text": "Thank you for shopping with us. Have a nice day!"
       }
     ],
     "questions": [
@@ -1925,7 +1945,15 @@ export const enMobile2026: SkillExercise[] = [
     "segments": [
       {
         "speaker": "Announcement",
-        "text": "Good morning. Welcome to Central Station. This is an announcement for all passengers. The train to Manchester is leaving from platform five at nine fifteen. Please go to platform five now. The train to Liverpool is late. It's coming at ten forty, not ten twenty. We're very sorry. Passengers for Liverpool can wait in the café next to platform three. It's open now. Tickets are eight pounds fifty. There's a ticket machine near the main door. Please don't leave your bags. Thank you and have a good day."
+        "text": "Good morning. Welcome to Central Station. This is an announcement for all passengers. The train to Manchester is leaving from platform five at nine fifteen. Please go to platform five now."
+      },
+      {
+        "speaker": "Announcement",
+        "text": "The train to Liverpool is late. It's coming at ten forty, not ten twenty. We're very sorry. Passengers for Liverpool can wait in the café next to platform three. It's open now."
+      },
+      {
+        "speaker": "Announcement",
+        "text": "Tickets are eight pounds fifty. There's a ticket machine near the main door. Please don't leave your bags. Thank you and have a good day."
       }
     ],
     "questions": [
@@ -2302,7 +2330,15 @@ export const enMobile2026: SkillExercise[] = [
     "segments": [
       {
         "speaker": "Voice message",
-        "text": "Hi Ayşe, it's Mert. I'm calling about the weekend. There's a music festival in the new park near the river. I'm going to meet Deniz there on Saturday at eleven o'clock. Can you come with us? The tickets are only twenty lira for students. That's cheap! I've got a big bag with sandwiches, so don't bring food. But please bring your camera. Saturday is sunny, but Sunday is rainy, so Saturday is better. Call me back tonight. My phone is on. Bye!"
+        "text": "Hi Ayşe, it's Mert. I'm calling about the weekend. There's a music festival in the new park near the river. I'm going to meet Deniz there on Saturday at eleven o'clock."
+      },
+      {
+        "speaker": "Voice message",
+        "text": "Can you come with us? The tickets are only twenty lira for students. That's cheap! I've got a big bag with sandwiches, so don't bring food. But please bring your camera."
+      },
+      {
+        "speaker": "Voice message",
+        "text": "Saturday is sunny, but Sunday is rainy, so Saturday is better. Call me back tonight. My phone is on. Bye!"
       }
     ],
     "questions": [
@@ -2553,7 +2589,15 @@ export const enMobile2026: SkillExercise[] = [
     "segments": [
       {
         "speaker": "Announcement",
-        "text": "Hello, and thank you for calling City Sport Gym. We're open every day. From Monday to Friday, we open at six in the morning and close at ten at night. On Saturday, we're open from eight to eight. On Sunday we close early, at six in the evening. Our swimming pool is open in the afternoon only. A one-month card is thirty euros for students and forty-five euros for other members. Yoga classes are on Tuesday and Thursday evenings at seven. Please press one to talk to a person. Thank you!"
+        "text": "Hello, and thank you for calling City Sport Gym. We're open every day. From Monday to Friday, we open at six in the morning and close at ten at night."
+      },
+      {
+        "speaker": "Announcement",
+        "text": "On Saturday, we're open from eight to eight. On Sunday we close early, at six in the evening. Our swimming pool is open in the afternoon only."
+      },
+      {
+        "speaker": "Announcement",
+        "text": "A one-month card is thirty euros for students and forty-five euros for other members. Yoga classes are on Tuesday and Thursday evenings at seven. Please press one to talk to a person. Thank you!"
       }
     ],
     "questions": [
@@ -5381,7 +5425,19 @@ export const enMobile2026: SkillExercise[] = [
     "segments": [
       {
         "speaker": "Announcement",
-        "text": "Good morning! It's eight o'clock, and this is Radio City with the traffic and weather news. First, the traffic. There's a big queue on Bridge Road, because workers are fixing the road. It will be slow until ten o'clock, so please use Green Street. The buses are running normally today. Now the weather. It's cold this morning, only four degrees, and it's raining in the north. The rain will stop after lunch, and the afternoon will be sunny. Tomorrow will be warmer than today — about twelve degrees. Don't forget your umbrella! I'll be back with more news at nine."
+        "text": "Good morning! It's eight o'clock, and this is Radio City with the traffic and weather news. First, the traffic. There's a big queue on Bridge Road, because workers are fixing the road."
+      },
+      {
+        "speaker": "Announcement",
+        "text": "It will be slow until ten o'clock, so please use Green Street. The buses are running normally today. Now the weather."
+      },
+      {
+        "speaker": "Announcement",
+        "text": "It's cold this morning, only four degrees, and it's raining in the north. The rain will stop after lunch, and the afternoon will be sunny."
+      },
+      {
+        "speaker": "Announcement",
+        "text": "Tomorrow will be warmer than today — about twelve degrees. Don't forget your umbrella! I'll be back with more news at nine."
       }
     ],
     "questions": [
@@ -5633,7 +5689,19 @@ export const enMobile2026: SkillExercise[] = [
     "segments": [
       {
         "speaker": "Announcement",
-        "text": "Good afternoon, everyone. Here is an important announcement for passengers to Izmir. The 3:15 train will not leave from platform 4 today. It's going to leave from platform 9. Please walk to platform 9 now. The train is also twenty minutes late, so the new departure time is 3:35. We're really sorry about this change. Your ticket is still fine; you don't need a new one. Passengers with heavy bags can use the lift next to the coffee shop. The next train to Izmir leaves at 5:40 from platform 4. Thank you for your patience, and have a good trip."
+        "text": "Good afternoon, everyone. Here is an important announcement for passengers to Izmir. The 3:15 train will not leave from platform 4 today. It's going to leave from platform 9."
+      },
+      {
+        "speaker": "Announcement",
+        "text": "Please walk to platform 9 now. The train is also twenty minutes late, so the new departure time is 3:35. We're really sorry about this change."
+      },
+      {
+        "speaker": "Announcement",
+        "text": "Your ticket is still fine; you don't need a new one. Passengers with heavy bags can use the lift next to the coffee shop."
+      },
+      {
+        "speaker": "Announcement",
+        "text": "The next train to Izmir leaves at 5:40 from platform 4. Thank you for your patience, and have a good trip."
       }
     ],
     "questions": [
@@ -5885,7 +5953,19 @@ export const enMobile2026: SkillExercise[] = [
     "segments": [
       {
         "speaker": "Voicemail",
-        "text": "Hi Elif, it's Merve. I have great news! My brother Kaan is getting married. The wedding is on Saturday, the twelfth of June, at seven in the evening. It's at the Green Garden Hotel, near the train station. Please come! Ayse and Deniz are coming too. Dinner starts at eight, so don't be late. The music starts after dinner, and we'll dance until midnight. Oh, and one more thing — we're buying one big present together. Everybody is giving four hundred lira. Is that okay for you? You should wear something nice, but not white! Call me back tonight. I have already booked a taxi for us. See you soon. Bye!"
+        "text": "Hi Elif, it's Merve. I have great news! My brother Kaan is getting married. The wedding is on Saturday, the twelfth of June, at seven in the evening."
+      },
+      {
+        "speaker": "Voicemail",
+        "text": "It's at the Green Garden Hotel, near the train station. Please come! Ayse and Deniz are coming too. Dinner starts at eight, so don't be late."
+      },
+      {
+        "speaker": "Voicemail",
+        "text": "The music starts after dinner, and we'll dance until midnight. Oh, and one more thing — we're buying one big present together. Everybody is giving four hundred lira."
+      },
+      {
+        "speaker": "Voicemail",
+        "text": "Is that okay for you? You should wear something nice, but not white! Call me back tonight. I have already booked a taxi for us. See you soon. Bye!"
       }
     ],
     "questions": [
@@ -6127,7 +6207,19 @@ export const enMobile2026: SkillExercise[] = [
     "segments": [
       {
         "speaker": "Announcement",
-        "text": "Hello, and thank you for calling the city hall information line. Our offices are open from Monday to Friday, from eight thirty in the morning until four in the afternoon. On Saturday we are open until twelve o'clock. For a birth certificate or proof of address, please come to the third floor, room 214. Don't forget your ID card. We can't help you without it. A new passport photo costs twelve euros, and you must pay in cash. We are closed next Monday, October the sixth. It's a public holiday. To speak to a person, press one now. Thank you, and have a nice day."
+        "text": "Hello, and thank you for calling the city hall information line. Our offices are open from Monday to Friday, from eight thirty in the morning until four in the afternoon."
+      },
+      {
+        "speaker": "Announcement",
+        "text": "On Saturday we are open until twelve o'clock. For a birth certificate or proof of address, please come to the third floor, room 214. Don't forget your ID card."
+      },
+      {
+        "speaker": "Announcement",
+        "text": "We can't help you without it. A new passport photo costs twelve euros, and you must pay in cash. We are closed next Monday, October the sixth. It's a public holiday."
+      },
+      {
+        "speaker": "Announcement",
+        "text": "To speak to a person, press one now. Thank you, and have a nice day."
       }
     ],
     "questions": [
@@ -6378,7 +6470,19 @@ export const enMobile2026: SkillExercise[] = [
     "segments": [
       {
         "speaker": "Podcast host",
-        "text": "Hello, and welcome to Tech Minute. I'm Emma, and this is our Tuesday show. Today I want to talk about a small idea. Two years ago, a student in Ankara made an app for people who always lose their keys. He calls it KeyFriend. He was only nineteen. He worked on it every night after his classes. His friends didn't like it at first. Now more than 400,000 people use the app. It's free, but the special version costs 3 dollars a month. Next week he will open a small office in Istanbul. So, remember: a good idea doesn't need a lot of money. It needs time."
+        "text": "Hello, and welcome to Tech Minute. I'm Emma, and this is our Tuesday show. Today I want to talk about a small idea."
+      },
+      {
+        "speaker": "Podcast host",
+        "text": "Two years ago, a student in Ankara made an app for people who always lose their keys. He calls it KeyFriend. He was only nineteen."
+      },
+      {
+        "speaker": "Podcast host",
+        "text": "He worked on it every night after his classes. His friends didn't like it at first. Now more than 400,000 people use the app."
+      },
+      {
+        "speaker": "Podcast host",
+        "text": "It's free, but the special version costs 3 dollars a month. Next week he will open a small office in Istanbul. So, remember: a good idea doesn't need a lot of money. It needs time."
       }
     ],
     "questions": [
