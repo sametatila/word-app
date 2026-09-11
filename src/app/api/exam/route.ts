@@ -135,6 +135,22 @@ export async function POST(req: Request) {
   const day = clampDay(body.day);
   try {
     const profile = await ensureProfile(userId);
+    /*
+     * KAGIT URETIM YOLUNDA DA KURS KONTROLU.
+     *
+     * Modul sinavi planlari Almanca yazilmis ve kurs boyutu yok
+     * (`hasModuleExams`). Iki OKUMA yolu bunu zaten uyguluyordu - kapak ucu
+     * ve modul listesi - ama URETIM yolu uygulamiyordu: `/api/exam`a
+     * dogrudan `{action:"start", module: 3}` gonderen bir Ingilizce kurs
+     * kullanicisi Almanca kagit aliyordu.
+     *
+     * Arayuzden erisilmiyor (iki istemci de listeyi bos aliyor), ama varsayim
+     * kagidin URETILDIGI yerde de adiyla durmali: yarin listeye bir baglanti
+     * eklendiginde kapi burada bekliyor olacak.
+     */
+    if (moduleNo !== null && !hasModuleExams(profile.course ?? "de")) {
+      return NextResponse.json({ error: "bad_request" }, { status: 400 });
+    }
     if (body.action === "start") {
       const paper = await buildExam(userId, profile.course, level, moduleNo, day);
       await track(userId, "exam_start", day, 0, `${paper.kind}:${level}`);
