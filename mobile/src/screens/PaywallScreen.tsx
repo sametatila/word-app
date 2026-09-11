@@ -212,45 +212,9 @@ export function PaywallScreen() {
           <Text variant="body" color={colors.textMuted} style={{ marginTop: 4, textAlign: "center" }}>{t("paywall.unlimited_learning_full_exam")}</Text>
         </View>
 
-        {/* KAPSAM SUNUCUDAN. Eskiden burada elle yazılmış bir karşılaştırma
-            tablosu vardı ve gerçeği anlatmıyordu: tek satırı "Schreiben
-            alıştırmaları" idi ve o ekran aylar önce kaldırılmıştı, yani paywall
-            olmayan bir şeyi vaat ediyordu. Artık satırlar yapılandırmadan
-            üretiliyor (`describeLimits`) ve çeviri anahtarı olarak geliyor —
-            panelden bir sınır değişince buradaki metin de değişiyor, beyan
-            gerçekle ayrışamıyor. */}
-        <Section title={t("paywall.what_you_get")} colors={colors}>
-          {(status?.copy.premium ?? []).map((l) => (
-            <Bullet key={l.key} text={t(l.key, l.params)} colors={colors} tone="premium" />
-          ))}
-        </Section>
-
-        <Section title={t("paywall.whats_free")} colors={colors}>
-          {(status?.copy.free ?? []).map((l) => (
-            <Bullet key={l.key} text={t(l.key, l.params)} colors={colors} tone="free" />
-          ))}
-        </Section>
-
-        {/* Adil kullanım AÇIKÇA yazılıyor: tavanı olan bir şeyi "sınırsız" diye
-            sunmak App Store 3.1.2 ve Play'in abonelik beyanı kurallarına aykırı. */}
-        {status?.limits ? (
-          <View style={{ borderRadius: radii.lg, borderWidth: 1, borderColor: colors.hairline, padding: spacing.md, marginBottom: spacing.xl }}>
-            <Text variant="micro" color={colors.textMuted}>
-              {t("paywall.fair_use_title")}: {t("plan.pro_walk_cap", { n: status.limits.fairUse.pocketWalksPerDay })} · {t("plan.pro_ai", { n: status.limits.fairUse.aiPracticePerDay })}
-            </Text>
-          </View>
-        ) : null}
-
-        <View style={{ flexDirection: "row", alignItems: "center", gap: spacing.md, marginBottom: spacing.xl, paddingHorizontal: 4 }}>
-          <ExamIcon color={colors.accentText} size={22} />
-          {/* Sınav vaadi yalnız gerçekten deneme sınavı OLAN kursta. Katalog
-              boşken (bugünkü durum) CEFR vaadi tek başına doğru olanı;
-              olmayan bir sınavın sözü verilmiyor. */}
-          <Text variant="caption" color={colors.textMuted} style={{ flex: 1 }}>
-            {t(hasMockExams(currentCourseId()) ? "paywall.content_is_built_around_cefr_a1" : "paywall.content_is_built_around_cefr")}
-          </Text>
-        </View>
-
+        {/* PLANLAR ÖNCE: fiyat iki özellik listesinin arkasında kalıyordu.
+            Alttaki satın alma çubuğu zaten sabit ama ne ödeneceği de
+            başlıktan hemen sonra görünmeli — webde de sıra aynı. */}
         {!storeOpen ? (
           <View style={{ borderRadius: radii.lg, backgroundColor: colors.surface2, padding: spacing.lg, gap: 6 }}>
             <Text variant="bodyStrong">{t("paywall.store_not_open")}</Text>
@@ -291,6 +255,47 @@ export function PaywallScreen() {
             })}
           </View>
         )}
+
+        {/* KAPSAM SUNUCUDAN. Eskiden burada elle yazılmış bir karşılaştırma
+            tablosu vardı ve gerçeği anlatmıyordu: tek satırı "Schreiben
+            alıştırmaları" idi ve o ekran aylar önce kaldırılmıştı, yani paywall
+            olmayan bir şeyi vaat ediyordu. Artık satırlar yapılandırmadan
+            üretiliyor (`describeLimits`) ve çeviri anahtarı olarak geliyor —
+            panelden bir sınır değişince buradaki metin de değişiyor, beyan
+            gerçekle ayrışamıyor. */}
+        {/*
+          KAPSAM TEK KART. "Premium'da neler var" ve "Ücretsizde ne var" iki
+          ayrı kutuydu ve ikisi de aynı onay işaretini kullanıyordu: yan yana
+          durduklarında hangisinin neyi anlattığı ayırt edilmiyordu. Aynı
+          kartın iki bölümü oldular; ücretsiz taraf sönük yazılıyor. Webde de
+          düzen aynı (`premium-paywall`).
+        */}
+        <Section title={t("paywall.what_you_get")} colors={colors}>
+          {(status?.copy.premium ?? []).map((l) => (
+            <Bullet key={l.key} text={t(l.key, l.params)} colors={colors} tone="premium" />
+          ))}
+          <View style={{ marginTop: spacing.md, paddingTop: spacing.md, borderTopWidth: 1, borderTopColor: colors.hairline }}>
+            <Text variant="caption" color={colors.textMuted} style={{ marginBottom: 6, letterSpacing: 0.5 }}>{t("paywall.whats_free")}</Text>
+            {(status?.copy.free ?? []).map((l) => (
+              <Bullet key={l.key} text={t(l.key, l.params)} colors={colors} tone="free" />
+            ))}
+          </View>
+        </Section>
+
+        {/*
+          İNCE YAZI TEK PARAGRAF. Adil kullanım kendi kutusundaydı, içerik
+          vaadi ikonlu ayrı bir satırdaydı; ikisi de okunması gereken ama karar
+          vermeyen metinler — kutu hak etmiyorlar. Adil kullanım AÇIKÇA
+          yazılıyor: tavanı olan bir şeyi "sınırsız" diye sunmak App Store
+          3.1.2 ve Play'in abonelik beyanı kurallarına aykırı. Sınav vaadi
+          yalnız gerçekten deneme sınavı OLAN kursta.
+        */}
+        <Text variant="micro" color={colors.textMuted} style={{ marginBottom: spacing.xl, lineHeight: 18 }}>
+          {status?.limits
+            ? `${t("paywall.fair_use_title")}: ${t("plan.pro_walk_cap", { n: status.limits.fairUse.pocketWalksPerDay })} · ${t("plan.pro_ai", { n: status.limits.fairUse.aiPracticePerDay })} `
+            : ""}
+          {t(hasMockExams(currentCourseId()) ? "paywall.content_is_built_around_cefr_a1" : "paywall.content_is_built_around_cefr")}
+        </Text>
 
         <PromoBox colors={colors} onRedeemed={refresh} />
         {status?.referral ? <ReferralBox colors={colors} referral={status.referral} /> : null}
@@ -350,13 +355,22 @@ function Section({ title, colors, children }: { title: string; colors: Palette; 
 }
 
 function Bullet({ text, colors, tone }: { text: string; colors: Palette; tone: "premium" | "free" }) {
-  const tint = tone === "premium" ? colors.primary : colors.success;
+  const premium = tone === "premium";
   return (
     <View style={{ flexDirection: "row", alignItems: "flex-start", gap: spacing.sm, paddingVertical: 5 }}>
-      <View style={{ width: 22, height: 22, borderRadius: 11, alignItems: "center", justifyContent: "center", backgroundColor: colors.surface2, marginTop: 1 }}>
-        <CheckIcon color={tint} size={14} />
-      </View>
-      <Text variant="caption" style={{ flex: 1, lineHeight: 19 }}>{text}</Text>
+      {premium ? (
+        <View style={{ width: 22, height: 22, borderRadius: 11, alignItems: "center", justifyContent: "center", backgroundColor: colors.primarySoft, marginTop: 1 }}>
+          <CheckIcon color={colors.primary} size={14} />
+        </View>
+      ) : (
+        /* ÜCRETSİZ TARAFTA ONAY İŞARETİ YOK: aynı işaret iki listede de
+           kullanılınca "premium'da olan" ile "zaten sende olan" ayırt
+           edilmiyordu. Webde de aynı ayrım var (`premium-paywall` Row). */
+        <View style={{ width: 22, alignItems: "center", marginTop: 8 }}>
+          <View style={{ width: 5, height: 5, borderRadius: 3, backgroundColor: colors.textFaint }} />
+        </View>
+      )}
+      <Text variant="caption" color={premium ? colors.text : colors.textMuted} style={{ flex: 1, lineHeight: 19 }}>{text}</Text>
     </View>
   );
 }
