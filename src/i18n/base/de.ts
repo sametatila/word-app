@@ -808,6 +808,7 @@ export const deBase: Record<string, string> = {
   "lesson.wrong": "Falsch",
   "lesson.typing": "schreibt…",
   "lesson.no_asr": "Keine Spracherkennung — mach tippend weiter.",
+  "lesson.chat_offline_note": "Der Chatdienst ist gerade aus; das Gespräch läuft nach einem geschriebenen Skript. Es zählt trotzdem.",
   "micdisclosure.while_screen_is_off_what_you_say": "Bei ausgeschaltetem Bildschirm wird das Gesprochene als kurze Audioaufnahmen an unseren Server und an unsere Spracherkennungsanbieter (Microsoft Azure und ähnliche) gesendet, um es zu verschriftlichen.",
   "micdisclosure.it_keeps_listening_while_screen": "Es hört weiter, auch wenn der Bildschirm aus ist oder das Telefon in der Tasche steckt; zum Beenden kehrst du in die App zurück und stoppst es.",
   "micdisclosure.read_privacy_policy": "Datenschutzerklärung lesen",

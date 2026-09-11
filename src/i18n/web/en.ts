@@ -308,7 +308,6 @@ export const enWeb: Record<string, string> = {
   "lessonp.close_typing": "Close typing",
   "lessonp.no_asr_long": "No speech recognition — you can carry on by typing.",
   "lessonp.to_roleplay": "Go to the conversation",
-  "lessonp.chat_offline_note": "The chat service is off right now; the conversation runs from a written script. It still counts.",
   "lessonp.end_conversation": "End the conversation",
   "lessonp.leave_for_now": "Leave it for now",
   "lessonp.patterns": "Patterns",

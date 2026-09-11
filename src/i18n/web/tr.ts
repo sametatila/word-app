@@ -334,7 +334,6 @@ export const trWeb: Record<string, string> = {
   "lessonp.close_typing": "Yazmayı kapat",
   "lessonp.no_asr_long": "Konuşma tanıma yok — yazarak devam edebilirsin.",
   "lessonp.to_roleplay": "Konuşmaya geç",
-  "lessonp.chat_offline_note": "Sohbet servisi şu an kapalı; konuşma önceden yazılmış bir senaryoyla sürüyor. Konuşma yine sayılır.",
   "lessonp.end_conversation": "Konuşmayı bitir",
   "lessonp.leave_for_now": "Şimdilik bırak",
   "lessonp.patterns": "Kalıplar",

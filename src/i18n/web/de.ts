@@ -308,7 +308,6 @@ export const deWeb: Record<string, string> = {
   "lessonp.close_typing": "Tippen schließen",
   "lessonp.no_asr_long": "Keine Spracherkennung — du kannst tippend weitermachen.",
   "lessonp.to_roleplay": "Zum Gespräch",
-  "lessonp.chat_offline_note": "Der Chatdienst ist gerade aus; das Gespräch läuft nach einem geschriebenen Skript. Es zählt trotzdem.",
   "lessonp.end_conversation": "Gespräch beenden",
   "lessonp.leave_for_now": "Für jetzt lassen",
   "lessonp.patterns": "Muster",
