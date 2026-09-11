@@ -7572,3 +7572,41 @@ sıfır alıyor — uydurma bir puan verilmiyor.
 **§131** iki şeyi ölçüyor: şık boyamasında doğru cevaba bakan bir dal var mı,
 ve ses hatası dalında ilerleten bir çıkış var mı. Üç enjeksiyonun üçü de
 yakalandı.
+
+### 11.224 Aynı hata bir ekran ötede duruyordu — ve kapı onu görmemişti
+
+§11.222'yi (sınav ortasında cevap açılması) okuma/dinleme bölümünde
+düzelttim. Aynı soruyu bütün çoktan seçmeli yüzeylere sorunca **iki yer daha**
+çıktı, ikisi de aynı sınavın içinde:
+
+- **Dilbilgisi bölümü** (`ExamScreen` `Choice`): doğru şık yeşile, yanlış
+  seçim kırmızıya boyanıyordu. Üstelik doğru gerekçe **yüz satır aşağıda**
+  yazılıydı: `Produce` kartının notu tam bunu anlatıyor ("sınavda aynı yapılar
+  sonraki maddelerde tekrar geçtiği için cevabı açmak sınavın kendisini
+  kolaylaştırıyor ve Android puanını web puanıyla karşılaştırılamaz kılıyor").
+  Bir tur o kartı düzeltmiş, iki komşusunu atlamış.
+- **§131'in kendisi bunu görmedi.** Deseni yalnız `q.answer`a bakıyordu;
+  `Choice` doğru cevabı `answerIdx` diye tutuyor. **Ölçünün komşusunu ölçmenin
+  on ikinci biçimi** — ve bu kez ölçü, düzelttiğim hatanın ikizini aynı
+  dosyada kaçırdı. Desen artık "doğru cevabı tutan her ad"a bakıyor.
+
+### 11.225 Seviyeyi ölçen test aynı zamanda öğretiyordu
+
+Yerleştirme sınavında web ikiye bölmüş: **gerçek test** yalnız seçimi
+işaretliyor, misafir akışındaki **demo** cevabı açıyor — biri ölçüm, öteki ilk
+temas. Android'de ikisi de açıyordu, çünkü tek ekran iki soru kümesini de aynı
+bileşenle çiziyor (`ChoiceGame`).
+
+Sonuç: kullanıcının seviyesini **ölçen** test aynı zamanda ona öğretiyordu.
+Aynı dilbilgisi yapısı sonraki maddelerde tekrar geçtiği için öğrenilen şey
+sonraki cevapları değiştiriyor ve önerilen seviye yukarı kayıyordu.
+
+`ChoiceGame` yalnız bu ekranda kullanılıyor, o yüzden ölçüm kipi bir bayrakla
+eklendi: gerçek testte `reveal={false}`, demoda açık. Üç şey birden nötrleşti —
+renk, **haptik/ses** (titreşimin tonu da cevabı söylüyordu) ve **gecikme**
+(doğruda 700 ms, yanlışta 1150 ms beklemek cevabı süreyle söylüyordu).
+
+**§132** iki tarafta da gerçek testin açmadığını, demonun açtığını ölçüyor.
+Kapının ilk hâli bayrağın **varsayılanını ters okuyordu** (`reveal = true`
+iken, bayrak geçilmediğinde "açmıyor" diyordu); enjeksiyon bunu gösterdi.
+Beş enjeksiyonun beşi de yakalandı.

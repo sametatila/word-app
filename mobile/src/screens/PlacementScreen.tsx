@@ -378,7 +378,12 @@ export function PlacementScreen() {
             </PressableScale>
           </View>
           {questions[idx].head ? <StageHead head={questions[idx].head!} colors={colors} /> : null}
-          <ChoiceGame key={idx} round={questions[idx].round} onDone={onDone} />
+          {/* GERÇEK testte cevap açılmıyor, DEMO'da açılıyor: web de tam
+              böyle bölünmüş (`placement-test` yalnız seçimi işaretliyor,
+              `demo-placement` cevabı açıyor). Androidde ikisi de açıyordu,
+              yani kullanıcının seviyesini ölçen test aynı zamanda ona
+              öğretiyordu ve sonraki cevaplar bundan etkileniyordu. */}
+          <ChoiceGame key={idx} round={questions[idx].round} onDone={onDone} reveal={!usingReal} />
           <PressableScale onPress={() => onDone(false)} style={{ marginTop: spacing.md, paddingVertical: 12, alignItems: "center", borderRadius: radii.lg, borderWidth: 1.5, borderColor: colors.border }}>
             <Text variant="bodyStrong" color={colors.textMuted}>{t("plc.dont_know")}</Text>
           </PressableScale>

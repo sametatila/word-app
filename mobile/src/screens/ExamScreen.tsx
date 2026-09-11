@@ -720,13 +720,21 @@ function Choice({ prompt, options, answerIdx, colors, onPick }: { prompt: string
   return (
     <Card padded style={{ gap: spacing.sm }}>
       <Text variant="bodyStrong" style={{ lineHeight: 24 }}>{prompt}</Text>
+      {/*
+        SINAV CEVABI AÇILMIYOR — aşağıdaki `Produce` notunun aynı gerekçesi.
+        Burada da doğru şık yeşile, yanlış seçim kırmızıya boyanıyordu: aynı
+        dilbilgisi yapısı sonraki maddelerde tekrar geçtiği için cevabı açmak
+        sınavın kendisini kolaylaştırıyordu. Web yalnız SEÇİMİ işaretliyor
+        (`exam-player` `options`) ve ekranda "cevap sınav sonunda gösterilir"
+        yazılı. Kilit kalıyor: seçimden 550 ms sonra kendiliğinden ilerliyor.
+      */}
       {options.map((o, i) => {
-        const picked = pick !== null;
-        const bg = !picked ? colors.surface : i === answerIdx ? colors.success : pick === i ? colors.danger : colors.surface;
+        const secili = pick === i;
         return (
-          <PressableScale key={i} disabled={picked} onPress={() => { setPick(i); setTimeout(() => onPick(i === answerIdx, i), 550); }}
-            style={{ backgroundColor: bg, borderRadius: radii.md, borderWidth: 1.5, borderColor: colors.border, paddingVertical: 13, paddingHorizontal: spacing.md }}>
-            <Text variant="body" color={picked && (i === answerIdx || pick === i) ? "#fff" : colors.text}>{o}</Text>
+          <PressableScale key={i} disabled={pick !== null} onPress={() => { setPick(i); setTimeout(() => onPick(i === answerIdx, i), 550); }}
+            accessibilityRole="radio" accessibilityState={{ selected: secili }}
+            style={{ backgroundColor: secili ? colors.primarySoft : colors.surface, borderRadius: radii.md, borderWidth: 1.5, borderColor: secili ? colors.primary : colors.border, paddingVertical: 13, paddingHorizontal: spacing.md }}>
+            <Text variant="body" color={secili ? colors.onPrimarySoft : colors.text}>{o}</Text>
           </PressableScale>
         );
       })}

@@ -24,8 +24,16 @@ export type ChoiceRound = {
  * Tek turlu çoktan seçmeli oyun — web'deki choice-game'in mobil karşılığı.
  * Şık seçilince doğru yeşil / yanlış kırmızı boyanır, doğru cevap her zaman
  * belirginleşir (yanlışı pekiştirmemek için), kısa gecikmeyle onDone çağrılır.
+ *
+ * `reveal={false}` ÖLÇÜM KİPİ: yalnız seçim işaretlenir, doğruluk hiç
+ * söylenmez. Gerçek yerleştirme sınavı böyle çalışıyor — web de öyle
+ * (`placement/placement-test` yalnız seçimi boyuyor; `demo-placement` ise
+ * misafir akışında cevabı açıyor ve mobil demo da onunla aynı kalıyor).
+ * Cevabı açmak ölçümü bozuyor: aynı yapı sonraki maddelerde tekrar geçtiği
+ * için öğrenilen şey sonraki cevapları değiştiriyor. Haptik ve ses de
+ * NÖTR — titreşimin tonu da cevabı söylüyordu.
  */
-export function ChoiceGame({ round, onDone }: { round: ChoiceRound; onDone: (correct: boolean) => void }) {
+export function ChoiceGame({ round, onDone, reveal = true }: { round: ChoiceRound; onDone: (correct: boolean) => void; reveal?: boolean }) {
   const { colors } = useTheme();
   const [picked, setPicked] = useState<string | null>(null);
   const fade = useRef(new Animated.Value(0)).current;
@@ -47,8 +55,10 @@ export function ChoiceGame({ round, onDone }: { round: ChoiceRound; onDone: (cor
     if (picked) return;
     setPicked(opt);
     const correct = opt === round.answer;
-    haptic(correct ? "correct" : "wrong"); // haptik + SFX (tüm oyunlarla aynı geri bildirim)
-    setTimeout(() => onDone(correct), correct ? 700 : 1150);
+    haptic(reveal ? (correct ? "correct" : "wrong") : "tap"); // haptik + SFX (tüm oyunlarla aynı geri bildirim)
+    /* Ölçüm kipinde gecikme de SABİT: doğruda 700, yanlışta 1150 ms beklemek
+       cevabı süreyle söylüyordu. */
+    setTimeout(() => onDone(correct), reveal ? (correct ? 700 : 1150) : 500);
   }
 
   return (
@@ -70,12 +80,13 @@ export function ChoiceGame({ round, onDone }: { round: ChoiceRound; onDone: (cor
         {round.options.map((opt) => {
           const isPicked = picked === opt;
           const isAnswer = opt === round.answer;
-          const reveal = picked !== null;
+          const acildi = picked !== null && reveal;
           let bg = colors.surface;
           let border = colors.border;
           let fg = colors.text;
-          if (reveal && isAnswer) { bg = colors.successSoft; border = colors.success; fg = colors.success; }
-          else if (reveal && isPicked && !isAnswer) { bg = colors.dangerSoft; border = colors.danger; fg = colors.danger; }
+          if (acildi && isAnswer) { bg = colors.successSoft; border = colors.success; fg = colors.success; }
+          else if (acildi && isPicked && !isAnswer) { bg = colors.dangerSoft; border = colors.danger; fg = colors.danger; }
+          else if (isPicked) { bg = colors.primarySoft; border = colors.primary; fg = colors.onPrimarySoft; }
           return (
             <PressableScale
               key={opt}
@@ -83,8 +94,8 @@ export function ChoiceGame({ round, onDone }: { round: ChoiceRound; onDone: (cor
               style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between", backgroundColor: bg, borderColor: border, borderWidth: 1.5, borderRadius: radii.lg, paddingVertical: spacing.lg, paddingHorizontal: spacing.lg }}
             >
               <Text variant="bodyStrong" color={fg}>{opt}</Text>
-              {reveal && isAnswer && <CheckIcon color={colors.successText} size={22} />}
-              {reveal && isPicked && !isAnswer && <XIcon color={colors.dangerText} size={22} />}
+              {acildi && isAnswer && <CheckIcon color={colors.successText} size={22} />}
+              {acildi && isPicked && !isAnswer && <XIcon color={colors.dangerText} size={22} />}
             </PressableScale>
           );
         })}

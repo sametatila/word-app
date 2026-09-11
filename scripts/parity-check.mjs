@@ -4581,7 +4581,16 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   /* "Dogru cevabi acan" desen: sik cizilirken `q.answer` ile karsilastirma.
      Bolum SONUNDA dogru/yanlis sayilmasi ayri sey (o `correctRef`te ve
      `onMiss`te) - burada aranan, SEKLIN kendisini boyayan karsilastirma. */
-  const acikliyor = (src) => (/(backgroundColor|className)[^\n]*(oi|i) === q\.answer/.test(src) ? "aciyor" : "acmiyor");
+  const acikliyor = (src) => {
+    /* Desen ILK yazilisinda yalniz `q.answer`a bakiyordu ve AYNI dosyada yuz
+       satir asagida duran ayni hatayi (`Choice`, `i === answerIdx`) hic
+       gormedi - olcunun komsusunu olcmenin on ikinci bicimi. Simdi "dogru
+       cevabi tutan her ad" araniyor: sik cizilirken ona bakan bir dal varsa
+       cevap aciliyor demektir. */
+    const dogru = /(backgroundColor|className|const bg)[^\n]*\b(?:oi|i|pick|picked|chosen) === (?:q\.answer|answerIdx|item\.answer|correctIndex)\b/;
+    const ters = /(backgroundColor|className|const bg)[^\n]*\b(?:q\.answer|answerIdx|correctIndex) === (?:oi|i|pick)\b/;
+    return dogru.test(src) || ters.test(src) ? "aciyor" : "acmiyor";
+  };
   /* Ses hatasindan cikis: hata dalinda ilerleten bir dugme ve sebebi. */
   const cikis = (src) =>
     [
@@ -4589,6 +4598,41 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
       "ilerletiyor=" + (/(phase|spk) === "(err|failed)"[\s\S]{0,900}?(onDone\(false, 0\)|onClick=\{advance\})/.test(src) ? "evet" : "hayir"),
     ];
   sameList("sinav sik davranisi", ["sik boyamasi=" + acikliyor(mob), ...cikis(mob)], ["sik boyamasi=" + acikliyor(web), ...cikis(web)]);
+}
+
+/* ── 132. yerlestirmede cevap aciliyor mu ─────────────────────────────────
+ * Web burayi bilerek ikiye bolmus: GERCEK test yalniz secimi isaretliyor
+ * (`placement/placement-test`), misafir akisindaki DEMO ise cevabi aciyor
+ * (`placement/demo-placement`) - biri olcum, oteki ilk temas.
+ *
+ * Androidde ikisi de aciyordu, cunku tek ekran iki soru kumesini de ayni
+ * bilesenle ciziyor (`ChoiceGame`). Yani kullanicinin seviyesini OLCEN test
+ * aynı zamanda ona ogretiyordu: ayni yapi sonraki maddelerde tekrar gectigi
+ * icin ogrenilen sey sonraki cevaplari degistiriyordu. Ustelik haptik ve ses
+ * de dogru/yanlis tonundaydi - titresim de cevabi soyluyordu.
+ *
+ * Olculen: her iki tarafta gercek testin acmadigi, demonun actigi. */
+{
+  const strip = (x) => x.replace(/\/\*[\s\S]*?\*\//g, " ").replace(/(^|[^:"'`\\])\/\/.*$/gm, "$1");
+  /* Web'de iki ayri dosya; mobilde tek ekran + bilesene giden bayrak. */
+  const webGercek = /o === q\.answer|=== q\.answer \? "option-correct"/.test(strip(read("src/components/placement/placement-test.tsx")));
+  const webDemo = /o === q\.answer/.test(strip(read("src/components/placement/demo-placement.tsx")));
+  const mobEkran = strip(read("mobile/src/screens/PlacementScreen.tsx"));
+  const mobOyun = strip(read("mobile/src/game/ChoiceGame.tsx"));
+  /* Bilesen bayragi tasiyor mu ve ekran GERCEK testte kapatiyor mu. */
+  const bayrak = /reveal = true/.test(mobOyun) && /reveal\?: boolean/.test(mobOyun);
+  const kosullu = /reveal=\{!usingReal\}/.test(mobEkran);
+  /* Bayrak VARSAYILAN olarak aciyor (`reveal = true`), o yuzden "acmiyor"
+     diyebilmek icin ekranin onu acikca kapatmasi gerekiyor. Ilk yazilisinda
+     demo, bayrak gecilmediginde "acmiyor" diye okunuyordu - varsayilan ters
+     okunmus. */
+  const mobGercek = !(bayrak && kosullu);
+  const mobDemo = !/reveal=\{false\}/.test(mobEkran);
+  sameList(
+    "yerlestirmede cevap acilmasi",
+    ["gercek test=" + (mobGercek ? "aciyor" : "acmiyor"), "demo=" + (mobDemo ? "aciyor" : "acmiyor")],
+    ["gercek test=" + (webGercek ? "aciyor" : "acmiyor"), "demo=" + (webDemo ? "aciyor" : "acmiyor")],
+  );
 }
 
 console.log(
