@@ -9465,5 +9465,2290 @@
    "goal": "Mahallenin iki özelliğini, neyin değdiğini ve burada kalma kararını doğru kalıplarla anlattıysan konuşma başarılı sayılır.",
    "minTurns": 7
   }
+ },
+ {
+  "id": "en-b1-because-so",
+  "level": "B1",
+  "course": "en",
+  "icon": "question",
+  "title": "Reason and result",
+  "titleTr": "Sebep ve sonuç",
+  "summary": "Sebebi ve sonucu bağlamayı öğretir: because, so, since ve therefore aynı şeyi söylemez.",
+  "minutes": 10,
+  "focusId": "Linking words",
+  "vocab": [
+   {
+    "de": "because",
+    "tr": "çünkü"
+   },
+   {
+    "de": "so",
+    "tr": "bu yüzden"
+   },
+   {
+    "de": "since",
+    "tr": "madem / -dığı için"
+   },
+   {
+    "de": "therefore",
+    "tr": "dolayısıyla"
+   },
+   {
+    "de": "reason",
+    "tr": "sebep"
+   },
+   {
+    "de": "cause",
+    "tr": "neden olmak"
+   },
+   {
+    "de": "result",
+    "tr": "sonuç"
+   },
+   {
+    "de": "explain",
+    "tr": "açıklamak"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "I was late because the train stopped.",
+    "tr": "sebebi cümlenin arkasına bağlar"
+   },
+   {
+    "de": "The train stopped, so I was late.",
+    "tr": "sonucu cümlenin arkasına bağlar"
+   },
+   {
+    "de": "Since the train stopped, I was late.",
+    "tr": "sebebi cümlenin başına alır"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Bugün sebep ve sonucu bağlamayı öğreneceğiz: neden oldu, ne oldu."
+     },
+     {
+      "lang": "tr",
+      "text": "Türkçede 'çünkü' ve 'bu yüzden' cümlenin neresine koyulursa koyulsun anlaşılır. İngilizcede bağlacın yeri anlamı belirliyor. Hazır mısın?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk bağlacımız:"
+     },
+     {
+      "lang": "en",
+      "text": "because"
+     },
+     {
+      "lang": "tr",
+      "text": "Çünkü demek ve ardından SEBEP gelir. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "I was late because the train stopped."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "I was late because the train stopped."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Aynı olayı ters sırayla da söyleyebilirsin. O zaman"
+     },
+     {
+      "lang": "en",
+      "text": "so"
+     },
+     {
+      "lang": "tr",
+      "text": "kullanılır ve ardından SONUÇ gelir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İkinci kalıbımız. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "The train stopped, so I was late."
+     },
+     {
+      "lang": "tr",
+      "text": "Tren durdu, bu yüzden geç kaldım."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The train stopped, so I was late."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi dersin kuralı. İki bağlaç da aynı iki olayı bağlıyor ama sıra değişiyor:"
+     },
+     {
+      "lang": "en",
+      "text": "because"
+     },
+     {
+      "lang": "tr",
+      "text": "sebebi, "
+     },
+     {
+      "lang": "en",
+      "text": "so"
+     },
+     {
+      "lang": "tr",
+      "text": "sonucu getirir. Hangisini seçtiğin cümlenin hangi yarısını öne çıkardığını söyler."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sıra sende: Geç kalktığım için otobüsü kaçırdım."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "I missed the bus because I woke up late.",
+     "accept": [
+      "I missed the bus because I got up late.",
+      "I missed the bus, because I woke up late."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Sebep bağlacı, ardından sebep:"
+      },
+      {
+       "lang": "en",
+       "text": "I missed the bus because I woke up late."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kontrol. Şu cümle doğru mu?"
+     },
+     {
+      "lang": "en",
+      "text": "The train stopped, so I was late."
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "The train stopped, so I was late.",
+     "answer": true,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Doğru. Bu bağlaç sonucu getiriyor ve virgülden sonra geliyor; cümlenin iki yarısı da tam bir cümle."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Üçüncü bir bağlaç daha var:"
+     },
+     {
+      "lang": "en",
+      "text": "since"
+     },
+     {
+      "lang": "tr",
+      "text": "Sebebi cümlenin BAŞINA alır ve biraz daha resmîdir. Bilinen bir sebep için kullanılır."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son kalıbımız. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "Since the train stopped, I was late."
+     },
+     {
+      "lang": "tr",
+      "text": "Tren durduğu için geç kaldım."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Since the train stopped, I was late."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sen kur: Dükkân kapalı olduğu için eve geldim."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "Since the shop was closed, I came home.",
+     "accept": [
+      "Since the shop was closed, I went home.",
+      "Since the shop was shut, I came home."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Sebep başta, sonuç arkada:"
+      },
+      {
+       "lang": "en",
+       "text": "Since the shop was closed, I came home."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Yazı dilinde bir bağlaç daha görürsün:"
+     },
+     {
+      "lang": "en",
+      "text": "therefore"
+     },
+     {
+      "lang": "tr",
+      "text": "Dolayısıyla demek, noktadan sonra gelir ve resmî metinlerin bağlacıdır."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The road was closed. Therefore, we took the train."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The road was closed. Therefore, we took the train."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bağlaçların yanında üç isim de işine yarayacak:"
+     },
+     {
+      "lang": "en",
+      "text": "reason"
+     },
+     {
+      "lang": "tr",
+      "text": "sebep,"
+     },
+     {
+      "lang": "en",
+      "text": "result"
+     },
+     {
+      "lang": "tr",
+      "text": "sonuç,"
+     },
+     {
+      "lang": "en",
+      "text": "cause"
+     },
+     {
+      "lang": "tr",
+      "text": "ise neden olmak."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The reason was simple and the result was clear."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The reason was simple and the result was clear."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir cümle daha:"
+     },
+     {
+      "lang": "en",
+      "text": "Heavy rain can cause delays, so let me explain."
+     },
+     {
+      "lang": "tr",
+      "text": "Şiddetli yağmur gecikmelere neden olabilir, açıklayayım."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Heavy rain can cause delays, so let me explain."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir tane daha: Sebebini açıklayayım."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "Let me explain the reason.",
+     "accept": [
+      "Let me explain the reason for it.",
+      "I will explain the reason."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Açıklamak için"
+      },
+      {
+       "lang": "en",
+       "text": "explain"
+      },
+      {
+       "lang": "tr",
+       "text": "kullanılır ve ardından doğrudan nesne gelir:"
+      },
+      {
+       "lang": "en",
+       "text": "Let me explain the reason."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Özetleyelim: sebep arkada"
+     },
+     {
+      "lang": "en",
+      "text": "because"
+     },
+     {
+      "lang": "tr",
+      "text": "sonuç arkada"
+     },
+     {
+      "lang": "en",
+      "text": "so"
+     },
+     {
+      "lang": "tr",
+      "text": "sebep başta"
+     },
+     {
+      "lang": "en",
+      "text": "since"
+     },
+     {
+      "lang": "tr",
+      "text": "Şimdi bir gecikmeyi açıklayacaksın."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Bir toplantıya geç kaldın ve iş arkadaşın neden geciktiğini soruyor. Sebebini anlat, sonucunu söyle ve bir kez de sebebi cümlenin başına alarak tekrarla.",
+   "partner": "seni bekleyen, kızgın değil ama meraklı bir iş arkadaşı",
+   "opening": "There you are! What happened?",
+   "openingTr": "İşte geldin! Ne oldu?",
+   "goal": "Gecikmenin sebebini ve sonucunu iki ayrı bağlaçla anlattıysan ve özür dilediysen konuşma başarılı sayılır.",
+   "minTurns": 7
+  }
+ },
+ {
+  "id": "en-b1-time-clauses",
+  "level": "B1",
+  "course": "en",
+  "icon": "train",
+  "title": "When I arrive",
+  "titleTr": "Zaman cümleleri",
+  "summary": "Gelecekten söz ederken zaman cümlesinde neden geniş zaman kullanıldığını öğretir.",
+  "minutes": 10,
+  "focusId": "Future forms",
+  "vocab": [
+   {
+    "de": "until",
+    "tr": "-e kadar"
+   },
+   {
+    "de": "meanwhile",
+    "tr": "bu arada"
+   },
+   {
+    "de": "arrive",
+    "tr": "varmak"
+   },
+   {
+    "de": "depart",
+    "tr": "kalkmak"
+   },
+   {
+    "de": "board",
+    "tr": "binmek"
+   },
+   {
+    "de": "timetable",
+    "tr": "tarife"
+   },
+   {
+    "de": "platform",
+    "tr": "peron"
+   },
+   {
+    "de": "journey",
+    "tr": "yolculuk"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "When I arrive, I will call you.",
+    "tr": "gelecekteki iki olayı sıraya koyar"
+   },
+   {
+    "de": "I will wait until the train departs.",
+    "tr": "bir olayın ne zamana kadar süreceğini söyler"
+   },
+   {
+    "de": "The train is departing at ten.",
+    "tr": "tarifedeki saati söyler"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Bugün yolculuk planını anlatmayı öğreneceğiz: tren kaçta kalkıyor, vardığında ne yapacaksın."
+     },
+     {
+      "lang": "tr",
+      "text": "Burada İngilizcenin garip bir kuralı var: gelecekten söz ederken zaman cümlesinde gelecek kullanılmaz. Hazır mısın?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimelerimiz:"
+     },
+     {
+      "lang": "en",
+      "text": "depart"
+     },
+     {
+      "lang": "tr",
+      "text": "kalkmak,"
+     },
+     {
+      "lang": "en",
+      "text": "platform"
+     },
+     {
+      "lang": "tr",
+      "text": "peron. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "The train departs from platform three."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The train departs from platform three."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Trene binmek"
+     },
+     {
+      "lang": "en",
+      "text": "board"
+     },
+     {
+      "lang": "tr",
+      "text": "saatlerin listesine ise"
+     },
+     {
+      "lang": "en",
+      "text": "timetable"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "I will board the train after I check the timetable."
+     },
+     {
+      "lang": "tr",
+      "text": "Tarifeye baktıktan sonra trene bineceğim."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "I will board the train after I check the timetable."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi dersin kuralı. İki olay da gelecekte olsa bile, zaman bağlacının ardındaki cümle GENİŞ ZAMAN olur:"
+     },
+     {
+      "lang": "en",
+      "text": "When I arrive, I will call you."
+     },
+     {
+      "lang": "tr",
+      "text": "İkisini birden gelecek yapmak İngilizcede yanlıştır; gelecek yalnız ana cümlede durur."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kalıbımız. Varmak için"
+     },
+     {
+      "lang": "en",
+      "text": "arrive"
+     },
+     {
+      "lang": "tr",
+      "text": "deriz. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "When I arrive, I will call you."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "When I arrive, I will call you."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sıra sende: Tren varınca bir mesaj göndereceğim."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "When the train arrives, I will send a message.",
+     "accept": [
+      "When the train arrives, I'll send a message.",
+      "When the train arrives, I will text you."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Zaman cümlesi geniş zaman, ana cümle gelecek:"
+      },
+      {
+       "lang": "en",
+       "text": "When the train arrives, I will send a message."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kontrol. Şu cümle doğru mu?"
+     },
+     {
+      "lang": "en",
+      "text": "When I will arrive, I will call you."
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "When I will arrive, I will call you.",
+     "answer": false,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Yanlış. Zaman bağlacının ardında gelecek durmaz; orası geniş zaman olur:"
+      },
+      {
+       "lang": "en",
+       "text": "When I arrive, I will call you."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir olayın ne zamana kadar süreceğini söylerken"
+     },
+     {
+      "lang": "en",
+      "text": "until"
+     },
+     {
+      "lang": "tr",
+      "text": "kullanılır ve aynı kural geçerlidir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İkinci kalıbımız. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "I will wait until the train departs."
+     },
+     {
+      "lang": "tr",
+      "text": "Tren kalkana kadar bekleyeceğim."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "I will wait until the train departs."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sen kur: Sen gelene kadar burada kalacağım."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "I will stay here until you arrive.",
+     "accept": [
+      "I'll stay here until you arrive.",
+      "I will wait here until you arrive."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Zaman bağlacından sonra geniş zaman:"
+      },
+      {
+       "lang": "en",
+       "text": "I will stay here until you arrive."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İki iş aynı anda oluyorsa"
+     },
+     {
+      "lang": "en",
+      "text": "meanwhile"
+     },
+     {
+      "lang": "tr",
+      "text": "kullanılır; noktadan sonra gelir ve 'bu arada' demektir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "You get the tickets. Meanwhile, I will find the platform."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "You get the tickets. Meanwhile, I will find the platform."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Yolculuğun kendisine"
+     },
+     {
+      "lang": "en",
+      "text": "journey"
+     },
+     {
+      "lang": "tr",
+      "text": "denir; bu kelime yolun tamamını anlatır, tek bir bileti değil."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The journey takes four hours."
+     },
+     {
+      "lang": "tr",
+      "text": "Yolculuk dört saat sürüyor."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The journey takes four hours."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son kalıbımız tarifedeki saati söylüyor. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "The train is departing at ten."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The train is departing at ten."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir tane daha: Otobüs altı buçukta kalkıyor."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "The bus is leaving at half past six.",
+     "accept": [
+      "The bus is leaving at six thirty.",
+      "The bus leaves at half past six."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Tarifedeki saat şimdiki zamanla söylenir:"
+      },
+      {
+       "lang": "en",
+       "text": "The bus is leaving at half past six."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Özetleyelim: zaman cümlesi geniş zaman, ana cümle gelecek."
+     },
+     {
+      "lang": "tr",
+      "text": "Şimdi istasyonda bir görevliye yolculuğunu soracaksın."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Tren istasyonundasın ve bir görevliye yolculuğunu soruyorsun. Trenin kaçta kalktığını, hangi perondan gideceğini öğren ve vardığında ne yapacağını anlat.",
+   "partner": "tarifeyi ezbere bilen, yardımsever bir istasyon görevlisi",
+   "opening": "Hello, where are you travelling to today?",
+   "openingTr": "Merhaba, bugün nereye seyahat ediyorsunuz?",
+   "goal": "Kalkış saatini ve peronu öğrendiysen ve vardığında ne yapacağını zaman cümlesiyle anlattıysan konuşma başarılı sayılır.",
+   "minTurns": 7
+  }
+ },
+ {
+  "id": "en-b1-purpose",
+  "level": "B1",
+  "course": "en",
+  "icon": "school",
+  "title": "Why I signed up",
+  "titleTr": "Amaç anlatmak",
+  "summary": "Bir şeyi neden yaptığını amaç kalıplarıyla anlatmayı öğretir: to, in order to ve so that.",
+  "minutes": 10,
+  "focusId": "Gerund or infinitive",
+  "vocab": [
+   {
+    "de": "purpose",
+    "tr": "amaç"
+   },
+   {
+    "de": "aim",
+    "tr": "hedef"
+   },
+   {
+    "de": "course",
+    "tr": "kurs"
+   },
+   {
+    "de": "enrol",
+    "tr": "kaydolmak"
+   },
+   {
+    "de": "practise",
+    "tr": "pratik yapmak"
+   },
+   {
+    "de": "useful",
+    "tr": "faydalı"
+   },
+   {
+    "de": "goal",
+    "tr": "erek"
+   },
+   {
+    "de": "certificate",
+    "tr": "sertifika"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "I enrolled to practise my English.",
+    "tr": "amacı kısa biçimde söyler"
+   },
+   {
+    "de": "I enrolled in order to get a certificate.",
+    "tr": "amacı resmî biçimde söyler"
+   },
+   {
+    "de": "I sit in front so that I can hear better.",
+    "tr": "amacı bir cümleyle söyler"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Bugün bir şeyi neden yaptığını anlatmayı öğreneceğiz: bir kursa neden yazıldın, neyi hedefliyorsun."
+     },
+     {
+      "lang": "tr",
+      "text": "Amaç anlatmanın üç kalıbı var ve üçü de aynı şeyi söylemiyor: biri kısa, biri resmî, biri de bir cümle taşıyor. Hazır mısın?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimelerimiz:"
+     },
+     {
+      "lang": "en",
+      "text": "enrol"
+     },
+     {
+      "lang": "tr",
+      "text": "kaydolmak,"
+     },
+     {
+      "lang": "en",
+      "text": "course"
+     },
+     {
+      "lang": "tr",
+      "text": "kurs. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "I enrolled on a language course."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "I enrolled on a language course."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Neden yaptığına"
+     },
+     {
+      "lang": "en",
+      "text": "purpose"
+     },
+     {
+      "lang": "tr",
+      "text": "ulaşmak istediğin noktaya ise"
+     },
+     {
+      "lang": "en",
+      "text": "aim"
+     },
+     {
+      "lang": "tr",
+      "text": "ya da"
+     },
+     {
+      "lang": "en",
+      "text": "goal"
+     },
+     {
+      "lang": "tr",
+      "text": "denir. İkisi çok yakın; ilki daha resmîdir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "My purpose is clear, my aim is simple and my goal is realistic."
+     },
+     {
+      "lang": "tr",
+      "text": "Amacım net, hedefim basit ve erekim gerçekçi."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "My purpose is clear, my aim is simple and my goal is realistic."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi dersin kuralı. Amaç en kısa biçimde mastarla söylenir:"
+     },
+     {
+      "lang": "en",
+      "text": "to practise"
+     },
+     {
+      "lang": "tr",
+      "text": "Daha resmî biçimi"
+     },
+     {
+      "lang": "en",
+      "text": "in order to"
+     },
+     {
+      "lang": "tr",
+      "text": "Amacın içinde ÖZNE değişiyorsa ya da bir kip fiili varsa"
+     },
+     {
+      "lang": "en",
+      "text": "so that"
+     },
+     {
+      "lang": "tr",
+      "text": "ve arkasından tam bir cümle gelir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kalıbımız. Pratik yapmak için"
+     },
+     {
+      "lang": "en",
+      "text": "practise"
+     },
+     {
+      "lang": "tr",
+      "text": "deriz; Britanya'da fiil s ile yazılır. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "I enrolled to practise my English."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "I enrolled to practise my English."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sıra sende: İyi bir yer kapmak için erken geldim."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "I came early to get a good seat.",
+     "accept": [
+      "I came early to find a good seat.",
+      "I arrived early to get a good seat."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Amaç mastarla söylenir:"
+      },
+      {
+       "lang": "en",
+       "text": "I came early to get a good seat."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kontrol. Şu cümle doğru mu?"
+     },
+     {
+      "lang": "en",
+      "text": "I enrolled for practise my English."
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "I enrolled for practise my English.",
+     "answer": false,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Yanlış. Amaç mastarla kurulur, edatla değil:"
+      },
+      {
+       "lang": "en",
+       "text": "I enrolled to practise my English."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Belgeye"
+     },
+     {
+      "lang": "en",
+      "text": "certificate"
+     },
+     {
+      "lang": "tr",
+      "text": "faydalıya ise"
+     },
+     {
+      "lang": "en",
+      "text": "useful"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The certificate is useful for my job."
+     },
+     {
+      "lang": "tr",
+      "text": "Sertifika işim için faydalı."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The certificate is useful for my job."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İkinci kalıbımız resmî biçim. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "I enrolled in order to get a certificate."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "I enrolled in order to get a certificate."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sen kur: Sınavı geçmek için her akşam çalışıyorum."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "I study every evening in order to pass the exam.",
+     "accept": [
+      "I study every evening in order to pass the test.",
+      "I study each evening in order to pass the exam."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Resmî amaç kalıbı:"
+      },
+      {
+       "lang": "en",
+       "text": "I study every evening in order to pass the exam."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Üçüncü kalıp bir cümle taşıyor ve içinde çoğu zaman bir kip fiili bulunur:"
+     },
+     {
+      "lang": "en",
+      "text": "can"
+     },
+     {
+      "lang": "tr",
+      "text": "ya da"
+     },
+     {
+      "lang": "en",
+      "text": "will"
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son kalıbımız. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "I sit in front so that I can hear better."
+     },
+     {
+      "lang": "tr",
+      "text": "Daha iyi duyabilmek için önde oturuyorum."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "I sit in front so that I can hear better."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir tane daha: Hatırlayabilmek için her şeyi yazıyorum."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "I write everything down so that I can remember it.",
+     "accept": [
+      "I write everything down so that I remember it.",
+      "I note everything down so that I can remember it."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Bu kalıptan sonra tam bir cümle gelir:"
+      },
+      {
+       "lang": "en",
+       "text": "I write everything down so that I can remember it."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Özetleyelim: kısa"
+     },
+     {
+      "lang": "en",
+      "text": "to"
+     },
+     {
+      "lang": "tr",
+      "text": "resmî"
+     },
+     {
+      "lang": "en",
+      "text": "in order to"
+     },
+     {
+      "lang": "tr",
+      "text": "cümleli"
+     },
+     {
+      "lang": "en",
+      "text": "so that"
+     },
+     {
+      "lang": "tr",
+      "text": "Şimdi kurs danışmanıyla konuşacaksın."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Bir dil kursunun danışmanıyla konuşuyorsun. Neden kaydolmak istediğini, hedefini ve sertifikanın sana ne için gerektiğini anlat.",
+   "partner": "seni doğru kura yerleştirmeye çalışan bir kurs danışmanı",
+   "opening": "Welcome. What brings you to us?",
+   "openingTr": "Hoş geldiniz. Bizi ne için tercih ettiniz?",
+   "goal": "Amacını üç kalıptan en az ikisiyle anlattıysan ve hedefini somut söylediysen konuşma başarılı sayılır.",
+   "minTurns": 7
+  }
+ },
+ {
+  "id": "en-b1-unless",
+  "level": "B1",
+  "course": "en",
+  "icon": "handshake",
+  "title": "Only if",
+  "titleTr": "Koşul incelikleri",
+  "summary": "Koşulun üç ince biçimini öğretir: unless, as long as ve in case aynı şeyi söylemez.",
+  "minutes": 11,
+  "focusId": "Conditionals",
+  "vocab": [
+   {
+    "de": "unless",
+    "tr": "-medikçe"
+   },
+   {
+    "de": "agreement",
+    "tr": "anlaşma"
+   },
+   {
+    "de": "promise",
+    "tr": "söz vermek"
+   },
+   {
+    "de": "accept",
+    "tr": "kabul etmek"
+   },
+   {
+    "de": "refuse",
+    "tr": "reddetmek"
+   },
+   {
+    "de": "deal",
+    "tr": "anlaşma / pazarlık"
+   },
+   {
+    "de": "keep",
+    "tr": "tutmak"
+   },
+   {
+    "de": "risk",
+    "tr": "risk"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "I will accept unless the price changes.",
+    "tr": "olumsuz koşulu tek kelimeyle söyler"
+   },
+   {
+    "de": "I will sign as long as you keep the promise.",
+    "tr": "koşulu sınır olarak söyler"
+   },
+   {
+    "de": "Take a copy in case they ask.",
+    "tr": "olasılığa karşı önlem söyler"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Bugün koşulun ince biçimlerini öğreneceğiz: hangi şartla evet, hangi şartla hayır."
+     },
+     {
+      "lang": "tr",
+      "text": "Türkçede hepsi 'eğer' ile çıkıyor; İngilizcede üç ayrı kelime var ve üçü farklı şey söylüyor. Hazır mısın?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimemiz:"
+     },
+     {
+      "lang": "en",
+      "text": "agreement"
+     },
+     {
+      "lang": "tr",
+      "text": "Anlaşma demek. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "We signed the agreement yesterday."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "We signed the agreement yesterday."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Kabul etmek"
+     },
+     {
+      "lang": "en",
+      "text": "accept"
+     },
+     {
+      "lang": "tr",
+      "text": "reddetmek ise"
+     },
+     {
+      "lang": "en",
+      "text": "refuse"
+     },
+     {
+      "lang": "tr",
+      "text": "ile söylenir. İkincisi sert değildir; kibar bir hayır da bu kelimeyle anlatılır."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "I can accept this or refuse it."
+     },
+     {
+      "lang": "tr",
+      "text": "Bunu kabul edebilirim ya da reddedebilirim."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "I can accept this or refuse it."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi dersin kuralı. İlk bağlacımız"
+     },
+     {
+      "lang": "en",
+      "text": "unless"
+     },
+     {
+      "lang": "tr",
+      "text": "ve içinde zaten bir OLUMSUZLUK taşıyor:"
+     },
+     {
+      "lang": "en",
+      "text": "unless"
+     },
+     {
+      "lang": "tr",
+      "text": "'eğer olmazsa' demektir. O yüzden ardına ikinci bir olumsuz koymak yanlış olur."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kalıbımız. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "I will accept unless the price changes."
+     },
+     {
+      "lang": "tr",
+      "text": "Fiyat değişmedikçe kabul edeceğim."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "I will accept unless the price changes."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sıra sende: Yağmur yağmadıkça geleceğim."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "I will come unless it rains.",
+     "accept": [
+      "I'll come unless it rains.",
+      "I will come unless the weather is bad."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Bu bağlaç olumsuzluğu kendi içinde taşır:"
+      },
+      {
+       "lang": "en",
+       "text": "I will come unless it rains."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kontrol. Şu cümle doğru mu?"
+     },
+     {
+      "lang": "en",
+      "text": "I will accept unless the price changes."
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "I will accept unless the price changes.",
+     "answer": true,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Doğru. Bağlaç kendi olumsuzluğunu taşıdığı için cümlede ikinci bir olumsuz yok; anlam 'fiyat değişmezse kabul ederim'."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İkinci bağlacımız bir SINIR koyuyor:"
+     },
+     {
+      "lang": "en",
+      "text": "as long as"
+     },
+     {
+      "lang": "tr",
+      "text": "'şu şart sürdüğü sürece' demektir ve çoğu zaman bir sözle birlikte gelir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Söz vermek için"
+     },
+     {
+      "lang": "en",
+      "text": "promise"
+     },
+     {
+      "lang": "tr",
+      "text": "sözü tutmak için ise"
+     },
+     {
+      "lang": "en",
+      "text": "keep"
+     },
+     {
+      "lang": "tr",
+      "text": "deriz. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "I will sign as long as you keep the promise."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "I will sign as long as you keep the promise."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sen kur: Bana erken söylediğin sürece yardım edeceğim."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "I will help as long as you tell me early.",
+     "accept": [
+      "I'll help as long as you tell me early.",
+      "I will help as long as you let me know early."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Bu bağlaç bir sınır koyar:"
+      },
+      {
+       "lang": "en",
+       "text": "I will help as long as you tell me early."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Üçüncü bağlacımız bir ÖNLEM anlatıyor:"
+     },
+     {
+      "lang": "en",
+      "text": "in case"
+     },
+     {
+      "lang": "tr",
+      "text": "Olay olmayabilir de; sen yine de hazırlık yaparsın."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son kalıbımız. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "Take a copy in case they ask."
+     },
+     {
+      "lang": "tr",
+      "text": "Sorarlar diye bir kopya al."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Take a copy in case they ask."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Risk için"
+     },
+     {
+      "lang": "en",
+      "text": "risk"
+     },
+     {
+      "lang": "tr",
+      "text": "pazarlıkla varılan anlaşma için ise"
+     },
+     {
+      "lang": "en",
+      "text": "deal"
+     },
+     {
+      "lang": "tr",
+      "text": "deriz. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "There is always a risk in a new deal."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "There is always a risk in a new deal."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir tane daha: Kontrol ederler diye pasaportunu getir."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "Bring your passport in case they check.",
+     "accept": [
+      "Take your passport in case they check.",
+      "Bring your passport in case they ask."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Önlem bağlacı:"
+      },
+      {
+       "lang": "en",
+       "text": "Bring your passport in case they check."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Özetleyelim: olumsuz koşul"
+     },
+     {
+      "lang": "en",
+      "text": "unless"
+     },
+     {
+      "lang": "tr",
+      "text": "sınır"
+     },
+     {
+      "lang": "en",
+      "text": "as long as"
+     },
+     {
+      "lang": "tr",
+      "text": "önlem"
+     },
+     {
+      "lang": "en",
+      "text": "in case"
+     },
+     {
+      "lang": "tr",
+      "text": "Şimdi küçük bir anlaşmanın şartlarını konuşacaksın."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Bir arkadaşınla küçük bir iş anlaşması yapıyorsunuz: sen bir işi üstleneceksin, o da karşılığında bir şey yapacak. Şartlarını koy ve onunkileri dinle.",
+   "partner": "istekli ama koşullarını net söylemeyen bir arkadaş",
+   "opening": "So, will you do it?",
+   "openingTr": "Peki, yapacak mısın?",
+   "goal": "Üç koşul bağlacından en az ikisini kullandıysan ve anlaşmanın şartını net söylediysen konuşma başarılı sayılır.",
+   "minTurns": 8
+  }
+ },
+ {
+  "id": "en-b1-defining",
+  "level": "B1",
+  "course": "en",
+  "icon": "suitcase",
+  "title": "The one with the handle",
+  "titleTr": "Tarif ederek anlatmak",
+  "summary": "Bir şeyi tarif ederek ayırmayı öğretir: hangisi olduğunu yan cümle söyler.",
+  "minutes": 10,
+  "focusId": "Relative clauses",
+  "vocab": [
+   {
+    "de": "describe",
+    "tr": "tarif etmek"
+   },
+   {
+    "de": "shape",
+    "tr": "biçim"
+   },
+   {
+    "de": "size",
+    "tr": "boyut"
+   },
+   {
+    "de": "material",
+    "tr": "malzeme"
+   },
+   {
+    "de": "leather",
+    "tr": "deri"
+   },
+   {
+    "de": "label",
+    "tr": "etiket"
+   },
+   {
+    "de": "lost",
+    "tr": "kayıp"
+   },
+   {
+    "de": "handle",
+    "tr": "sap"
+   }
+  ],
+  "patterns": [
+   {
+    "de": "It is the bag that has a red handle.",
+    "tr": "hangi eşya olduğunu yan cümleyle söyler"
+   },
+   {
+    "de": "It is the one I bought last year.",
+    "tr": "nesne durumunda ilgi zamirini düşürür"
+   },
+   {
+    "de": "The man who found it left his number.",
+    "tr": "kişiyi yan cümleyle tanımlar"
+   }
+  ],
+  "lecture": [
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Merhaba! Bugün bir şeyi tarif ederek anlatmayı öğreneceğiz: kayıp eşya, hangi çanta, hangi renk."
+     },
+     {
+      "lang": "tr",
+      "text": "Tarif etmenin İngilizcedeki en kısa yolu yan cümle: ismin arkasına bir cümle ekliyorsun ve o cümle hangisi olduğunu söylüyor. Hazır mısın?"
+     }
+    ],
+    "expect": {
+     "kind": "confirm"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kelimelerimiz:"
+     },
+     {
+      "lang": "en",
+      "text": "describe"
+     },
+     {
+      "lang": "tr",
+      "text": "tarif etmek,"
+     },
+     {
+      "lang": "en",
+      "text": "lost"
+     },
+     {
+      "lang": "tr",
+      "text": "kayıp. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "Can you describe the lost bag?"
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "Can you describe the lost bag?"
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir şeyin biçimi için"
+     },
+     {
+      "lang": "en",
+      "text": "shape"
+     },
+     {
+      "lang": "tr",
+      "text": "büyüklüğü için ise"
+     },
+     {
+      "lang": "en",
+      "text": "size"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The shape is square and the size is small."
+     },
+     {
+      "lang": "tr",
+      "text": "Biçimi kare, boyutu küçük."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The shape is square and the size is small."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi dersin kuralı. Bir ismin HANGİSİ olduğunu söylemek için arkasına yan cümle eklenir:"
+     },
+     {
+      "lang": "en",
+      "text": "that"
+     },
+     {
+      "lang": "tr",
+      "text": "şeyler için,"
+     },
+     {
+      "lang": "en",
+      "text": "who"
+     },
+     {
+      "lang": "tr",
+      "text": "kişiler için. Bu yan cümle olmadan hangi eşyadan söz ettiğin anlaşılmaz."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İlk kalıbımız. Sap için"
+     },
+     {
+      "lang": "en",
+      "text": "handle"
+     },
+     {
+      "lang": "tr",
+      "text": "deriz. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "It is the bag that has a red handle."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "It is the bag that has a red handle."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sıra sende: Mavi etiketi olan bavul."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "It is the case that has a blue label.",
+     "accept": [
+      "It's the case that has a blue label.",
+      "It is the bag that has a blue label."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Şey tanımlanıyor, o yüzden that:"
+      },
+      {
+       "lang": "en",
+       "text": "It is the case that has a blue label."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir kontrol. Şu cümle doğru mu?"
+     },
+     {
+      "lang": "en",
+      "text": "It is the one I bought last year."
+     }
+    ],
+    "expect": {
+     "kind": "truefalse",
+     "statement": "It is the one I bought last year.",
+     "answer": true,
+     "why": [
+      {
+       "lang": "tr",
+       "text": "Doğru. Zamir yan cümlenin nesnesi olduğu için düşebiliyor; cümle kısaldı ama anlam aynı kaldı."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Neyden yapıldığı için"
+     },
+     {
+      "lang": "en",
+      "text": "material"
+     },
+     {
+      "lang": "tr",
+      "text": "deri için ise"
+     },
+     {
+      "lang": "en",
+      "text": "leather"
+     },
+     {
+      "lang": "tr",
+      "text": "denir."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şunu söyle:"
+     },
+     {
+      "lang": "en",
+      "text": "The material is leather and the label is inside."
+     },
+     {
+      "lang": "tr",
+      "text": "Malzeme deri ve etiket içeride."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The material is leather and the label is inside."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "İkinci kalıbımız zamirsiz. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "It is the one I bought last year."
+     },
+     {
+      "lang": "tr",
+      "text": "Geçen yıl aldığım olan."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "It is the one I bought last year."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Şimdi sen kur: Dün giydiğim palto."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "It is the coat I wore yesterday.",
+     "accept": [
+      "It's the coat I wore yesterday.",
+      "It is the jacket I wore yesterday."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Nesne durumunda zamir düşebilir:"
+      },
+      {
+       "lang": "en",
+       "text": "It is the coat I wore yesterday."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Kişiyi tanımlarken"
+     },
+     {
+      "lang": "en",
+      "text": "who"
+     },
+     {
+      "lang": "tr",
+      "text": "kullanılır ve o zamir ÖZNE olduğu için düşemez."
+     }
+    ]
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Son kalıbımız. Tekrar et:"
+     },
+     {
+      "lang": "en",
+      "text": "The man who found it left his number."
+     },
+     {
+      "lang": "tr",
+      "text": "Onu bulan adam numarasını bıraktı."
+     }
+    ],
+    "expect": {
+     "kind": "repeat",
+     "target": "The man who found it left his number."
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Bir tane daha: Burada çalışan kadın onu gördü."
+     }
+    ],
+    "expect": {
+     "kind": "produce",
+     "target": "The woman who works here saw it.",
+     "accept": [
+      "The woman who works here has seen it.",
+      "The lady who works here saw it."
+     ],
+     "hint": [
+      {
+       "lang": "tr",
+       "text": "Kişi tanımlanıyor ve zamir özne, o yüzden düşmez:"
+      },
+      {
+       "lang": "en",
+       "text": "The woman who works here saw it."
+      },
+      {
+       "lang": "tr",
+       "text": "Tekrar dene."
+      }
+     ]
+    }
+   },
+   {
+    "say": [
+     {
+      "lang": "tr",
+      "text": "Özetleyelim: şey"
+     },
+     {
+      "lang": "en",
+      "text": "that"
+     },
+     {
+      "lang": "tr",
+      "text": "kişi"
+     },
+     {
+      "lang": "en",
+      "text": "who"
+     },
+     {
+      "lang": "tr",
+      "text": "nesne durumunda zamir düşebilir."
+     },
+     {
+      "lang": "tr",
+      "text": "Şimdi kayıp eşya bürosundasın."
+     }
+    ]
+   }
+  ],
+  "roleplay": {
+   "scene": "Kayıp eşya bürosundasın ve çantanı arıyorsun. Görevliye çantayı tarif et: biçimi, boyutu, malzemesi ve üzerindeki işaretler.",
+   "partner": "elinde çok sayıda çanta olan, ayrıntı isteyen bir görevli",
+   "opening": "We have several bags here. Can you describe yours?",
+   "openingTr": "Burada birkaç çanta var. Sizinkini tarif edebilir misiniz?",
+   "goal": "Çantayı en az üç ayrı yan cümleyle tarif ettiysen ve görevlinin sorusuna cevap verdiysen konuşma başarılı sayılır.",
+   "minTurns": 7
+  }
  }
 ]
