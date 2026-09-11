@@ -10582,3 +10582,46 @@ kapı 320 bilinçli ayarı ihlal diye bildirirdi; niyeti okuması gerekir ve
 "niyeti okuması gereken kapı yazılmaz" (§11.254'ün dersi). Ayrışma varsa
 yüzey yüzey, karşılığına bakarak bulunur — sohbet balonlarının dolgusunda
 (§11.319) böyle bulundu.
+
+## §11.324 — Tipografi borcu kapandı (943 → 0) ve en görünür karar kaydedildi
+
+§11.322'nin kalan 943 kullanımı da çevrildi. Bu turun yöntemi farklıydı: sınav,
+ders ve beceri oynatıcılarının başlıkları **tek tek mobil karşılığındaki
+`<Text variant>`e bakılarak** eşlendi, toplu kurala bırakılmadı.
+
+O bakış tek başına bir bulguydu: `MockExamScreen`, `ExamScreen`, `skillQuiz` ve
+`GameScreen` neredeyse **yalnız** `micro/caption/body/bodyStrong` kullanıyor.
+Yani Android'de sınav sorusu bir BAŞLIK değil, 15/700 `bodyStrong`. Webde aynı
+soru `text-xl font-bold` (20) ve `text-lg font-bold` (18) ile yazılıydı.
+
+| Yuva | Android | Web (önce) | Web (sonra) |
+|---|---|---|---|
+| Sınav sorusu (4 yer) | `bodyStrong` 15/700 | `text-xl`/`text-lg` bold | `text-strong` |
+| Deneme sınavı sayacı | `bodyStrong` | `text-lg font-bold` | `text-strong` |
+| Deneme kâğıdı beceri başlığı | `h3` | `text-2xl font-bold` | `text-h3` |
+| Konuşma geri sayımı | `h1` | `text-3xl font-bold` | `text-h1` |
+| Bölüm kapağı | `h1`/`h2` | `text-2xl font-bold` | `text-h1`/`text-h2` |
+| Düğme etiketi | `h3` | `text-base` | `text-h3` |
+
+**Bu turun en görünür kararı, sınav sorusunun 20 px'ten 15 px'e inmesidir.**
+Gerekçesi Android: orada soru `bodyStrong` ve `check:tokens` iki ölçeğin birebir
+aynı olduğunu doğruluyor, yani ölçekte 18–20 px'lik bir "gövde" basamağı yok
+(20 = `h2`, bir başlık). Karar burada yazılı duruyor ki geri alınmak istenirse
+nereye bakılacağı belli olsun.
+
+**Bir ölçüm, "kural gereği" yapılacak bir hatayı durdurdu.** Oyun turunun cevap
+alanı webde `text-lg` (18) idi ve kural onu `body`ye (15) çekecekti. Mobile
+bakınca aynı alanın `fontSize: 18` yazdığı görüldü (`game/rounds.tsx`, dört
+giriş): iki platform **zaten eşti** ve kural pariteyi bozacaktı. O dört yuva
+kayıtlı istisna. Beceri yazma alanları ise ayrı çıktı — mobil onları 15 px
+yazıyor (`skillQuiz`), web 16 (`text-base`); orada çevirme 1 px'lik gerçek bir
+ayrışmayı kapattı.
+
+Diğer kayıtlı istisnalar: iniş sayfasının kahraman başlığı (pazarlama yüzeyi,
+mobil karşılığı yok) ve üç **göreli** punto (`text-[0.9em]` gibi) — İngilizce
+karşılık, üstündeki kelime hangi basamaktaysa onun %85–92'si kalıyor; sabit bir
+basamak bu bağı koparırdı ve React Native göreli punto tanımadığı için mobilde
+karşılığı yok.
+
+Kapı `check:radius` gibi **mutlak** oldu: taban dosyası silindi, ölçek dışı tek
+punto hata. İki enjeksiyon (yeni ölçek dışı sınıf, ölü istisna) yakalandı.
