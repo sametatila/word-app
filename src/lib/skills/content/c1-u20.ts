@@ -40,7 +40,7 @@ export const c1U20: SkillExercise[] = [
     gloss: [
       { de: "zurechnen", tr: "atfetmek / yüklemek", en: "to attribute" },
       { de: "die Instanz", tr: "merci", en: "authority, entity" },
-      { de: "haftbar", tr: "sorumlu (hukuken)", en: "liable" },
+      { de: "haftbar", tr: "sorumlu", en: "liable", note: "hukuken" },
       { de: "der Vorsatz", tr: "kasıt", en: "intent" },
       { de: "simulieren", tr: "benzetimini yapmak", en: "to simulate" },
       { de: "empfinden", tr: "hissetmek", en: "to feel" },

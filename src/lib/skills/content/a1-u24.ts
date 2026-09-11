@@ -44,7 +44,7 @@ export const a1U24: SkillExercise[] = [
     genre: "personal",
     intro: "Bir doğum günü daveti. Ne zaman, nerede, ne götürmeli?",
     gloss: [
-      { de: "die Einladung", tr: "davet(iye)", en: "invitation" },
+      { de: "die Einladung", tr: "davetiye", en: "invitation" },
       { de: "mitbringen", tr: "yanında getirmek", en: "to bring along" },
       { de: "der Gast", tr: "misafir", en: "guest" },
       { de: "die Partnerin", tr: "kadın partner", en: "partner" },
@@ -114,8 +114,8 @@ export const a1U24: SkillExercise[] = [
       "Üç kişi dünü anlatıyor. Yardımcı fiillere dikkat: bazıları haben, bazıları sein.",
     gloss: [
       { de: "gestern", tr: "dün", en: "yesterday" },
-      { de: "geblieben", tr: "kalmış (bleiben)", en: "stayed" },
-      { de: "gefahren", tr: "gitmiş (araçla)", en: "went (by vehicle)" },
+      { de: "geblieben", tr: "kalmış", en: "stayed", note: "bleiben fiilinden" },
+      { de: "gefahren", tr: "gitmiş", en: "went (by vehicle)", note: "araçla" },
     ],
     minutes: 3,
     text:
@@ -232,7 +232,7 @@ export const a1U24: SkillExercise[] = [
       "Hafta sonu sohbeti. Her cümlede yardımcı fiili dinle: haben mi, sein mi?",
     gloss: [
       { de: "wohin", tr: "nereye", en: "where to" },
-      { de: "gegangen", tr: "gitmiş (yürüyerek)", en: "went" },
+      { de: "gegangen", tr: "gitmiş", en: "went", note: "yürüyerek" },
       { de: "gesehen", tr: "görmüş", en: "saw" },
     ],
     minutes: 2,

@@ -98,8 +98,8 @@ export const a1U23: SkillExercise[] = [
       { de: "der Gruß", tr: "selam", en: "greeting" },
       { de: "die Nachricht", tr: "mesaj", en: "message" },
       { de: "schicken", tr: "göndermek", en: "to send" },
-      { de: "Mit freundlichen Grüßen", tr: "Saygılarımla (resmî)", en: "Yours sincerely" },
-      { de: "Sehr geehrte …", tr: "Sayın … (resmî hitap)", en: "Dear … (formal)" },
+      { de: "Mit freundlichen Grüßen", tr: "Saygılarımla", en: "Yours sincerely", note: "resmî" },
+      { de: "Sehr geehrte …", tr: "Sayın …", en: "Dear … (formal)", note: "resmî hitap" },
       { de: "ändern", tr: "değiştirmek", en: "to change" },
     ],
     minutes: 3,
@@ -280,7 +280,7 @@ export const a1U23: SkillExercise[] = [
     genre: "grammar",
     intro: "Üç kalıp, üçü de yanlış yerde kullanılınca göze batar.",
     gloss: [
-      { de: "das Wiederhören", tr: "tekrar duyma (telefonda vedalaşma)", en: "hearing again" },
+      { de: "das Wiederhören", tr: "tekrar duyma", en: "hearing again", note: "telefonda vedalaşma" },
       { de: "zurückrufen", tr: "geri aramak", en: "to call back" },
       { de: "der Gruß", tr: "selam", en: "greeting" },
     ],
@@ -318,9 +318,9 @@ export const a1U23: SkillExercise[] = [
     genre: "email",
     intro: "Resmî bir e-posta yaz. Kapanışı doğru seç.",
     gloss: [
-      { de: "möchten", tr: "istemek (kibar)", en: "would like" },
+      { de: "möchten", tr: "istemek", en: "would like", note: "kibar" },
       { de: "die E-Mail", tr: "e-posta", en: "email" },
-      { de: "Mit freundlichen Grüßen", tr: "Saygılarımla (resmî)", en: "Yours sincerely" },
+      { de: "Mit freundlichen Grüßen", tr: "Saygılarımla", en: "Yours sincerely", note: "resmî" },
     ],
     minutes: 7,
     tasks: [

@@ -176,7 +176,7 @@ export const a2U25: SkillExercise[] = [
       { de: "aufgeregt", tr: "heyecanlı", en: "nervous" },
       { de: "besorgt", tr: "endişeli", en: "worried" },
       { de: "konzentriert", tr: "odaklanmış", en: "focused" },
-      { de: "ablegen", tr: "(sınava) girmek", en: "to take (an exam)" },
+      { de: "ablegen", tr: "sınava girmek", en: "to take (an exam)" },
       { de: "wiederholt", tr: "tekrar tekrar", en: "repeatedly" },
       { de: "tagelang", tr: "günlerce", en: "for days" },
       { de: "schläfrig", tr: "uykulu", en: "sleepy" },

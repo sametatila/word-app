@@ -222,7 +222,15 @@ export function GlossPanel({ gloss, colors }: { gloss: Gloss[]; colors: Palette 
           {gloss.map((g) => (
             <PressableScale key={g.de} onPress={() => speakTarget(g.de)} style={{ flexDirection: "row", alignItems: "center", gap: 6, backgroundColor: colors.surface2, borderRadius: radii.pill, paddingHorizontal: spacing.md, paddingVertical: 7 }}>
               <SpeakerIcon color={colors.textMuted} size={13} />
-              <Text variant="caption" color={colors.text}><Text variant="caption" color={colors.text} style={{ fontWeight: "700" }}>{g.de}</Text> · {g.tr}{g.hd ? ` (${g.hd})` : ""}</Text>
+              <Text variant="caption" color={colors.text}>
+                <Text variant="caption" color={colors.text} style={{ fontWeight: "700" }}>{g.de}</Text> · {g.tr}{g.hd ? ` (${g.hd})` : ""}
+                {/* `note` karşılığı ayıran tek bilgi olabiliyor: "die Autorin →
+                    yazar" notsuz "der Autor"la aynı, "einnehmen → almak" notsuz
+                    hangi almak olduğunu söylemiyor. Paket 25 notu taşıyordu ve
+                    mobil hiçbirini basmıyordu; web (gloss-entry.tsx) baştan
+                    basıyor. Sönük, çünkü karar `tr` satırında veriliyor. */}
+                {g.note ? <Text variant="caption" color={colors.textMuted}> · {g.note}</Text> : null}
+              </Text>
             </PressableScale>
           ))}
         </View>

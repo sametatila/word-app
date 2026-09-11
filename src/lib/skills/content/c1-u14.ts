@@ -198,7 +198,7 @@ export const c1U14: SkillExercise[] = [
       { de: "die Abmahnung", tr: "ihtar", en: "formal warning" },
       { de: "fristlos", tr: "ihbarsız", en: "without notice" },
       { de: "der Einspruch", tr: "itiraz", en: "objection" },
-      { de: "einlegen", tr: "(itiraz) sunmak", en: "to lodge" },
+      { de: "einlegen", tr: "itiraz sunmak", en: "to lodge" },
       { de: "rechtens", tr: "hukuka uygun", en: "lawful" },
       { de: "eingestehen", tr: "kabul etmek", en: "to admit" },
       { de: "der Verband", tr: "sendika / birlik", en: "union, association" },

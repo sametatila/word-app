@@ -172,10 +172,10 @@ export const a1U25: SkillExercise[] = [
     intro:
       "Bir gün anlatılıyor. „war“ ile „habe/bin“ arasındaki farka kulak ver.",
     gloss: [
-      { de: "aufgestanden", tr: "kalkmış (yataktan)", en: "got up" },
+      { de: "aufgestanden", tr: "kalkmış", en: "got up", note: "yataktan" },
       { de: "die Hausaufgabe", tr: "ödev", en: "homework" },
       { de: "vorgestern", tr: "evvelsi gün", en: "the day before yesterday" },
-      { de: "hatte", tr: "sahiptim (haben geçmişi)", en: "had" },
+      { de: "hatte", tr: "sahiptim", en: "had", note: "haben fiilinin geçmişi" },
     ],
     minutes: 2,
     segments: [

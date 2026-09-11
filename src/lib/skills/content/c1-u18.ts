@@ -36,8 +36,8 @@ export const c1U18: SkillExercise[] = [
     genre: "text",
     intro: "İki sözcük, zıt iddialar. Türkçede ayrım zaten var — eşleşme ters.",
     gloss: [
-      { de: "scheinbar", tr: "sözde / görünürde (ama değil)", en: "seemingly (but not)" },
-      { de: "anscheinend", tr: "görünüşe göre (muhtemelen öyle)", en: "apparently" },
+      { de: "scheinbar", tr: "sözde / görünürde", en: "seemingly (but not)", note: "ama değil" },
+      { de: "anscheinend", tr: "görünüşe göre", en: "apparently", note: "muhtemelen öyle" },
       { de: "der Anschein", tr: "görünüş / izlenim", en: "appearance" },
       { de: "die Genauigkeit", tr: "kesinlik", en: "precision" },
       { de: "unterscheiden", tr: "ayırt etmek", en: "to distinguish" },

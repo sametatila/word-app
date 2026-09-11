@@ -197,7 +197,7 @@ export const c1U05: SkillExercise[] = [
       { de: "durchstellen", tr: "bağlamak", en: "to put through" },
       { de: "der Rückruf", tr: "geri arama", en: "call back" },
       { de: "die Leitung", tr: "hat", en: "line" },
-      { de: "hinterlassen", tr: "bırakmak (mesaj)", en: "to leave" },
+      { de: "hinterlassen", tr: "bırakmak", en: "to leave", note: "mesaj için" },
       { de: "umgehend", tr: "derhâl", en: "promptly" },
       { de: "einholen", tr: "almak / temin etmek", en: "to obtain" },
       { de: "vorenthalten", tr: "esirgemek", en: "to withhold" },

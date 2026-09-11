@@ -149,7 +149,7 @@ export const a1U20: SkillExercise[] = [
     genre: "dialogue",
     intro: "Yüzme havuzunun gişesinde. Fiyat, saat, ne getirmeli?",
     gloss: [
-      { de: "der Eintritt", tr: "giriş (ücreti)", en: "admission" },
+      { de: "der Eintritt", tr: "giriş ücreti", en: "admission" },
       { de: "das Handtuch", tr: "havlu", en: "towel" },
       { de: "tief", tr: "derin", en: "deep" },
     ],

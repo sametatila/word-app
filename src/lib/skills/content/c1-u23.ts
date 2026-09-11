@@ -202,7 +202,7 @@ export const c1U23: SkillExercise[] = [
     genre: "dialogue",
     intro: "Alman mizahı var mı? Soru yanlış kurulmuş olabilir.",
     gloss: [
-      { de: "trocken", tr: "kuru (mizah)", en: "deadpan" },
+      { de: "trocken", tr: "kuru", en: "deadpan", note: "mizah için" },
       { de: "das Timing", tr: "zamanlama", en: "timing" },
       { de: "die Selbstironie", tr: "kendiyle dalga geçme", en: "self-irony" },
       { de: "unterschätzt", tr: "hafife alınmış", en: "underrated" },

@@ -109,7 +109,7 @@ export const a2U18: SkillExercise[] = [
       { de: "die Torte", tr: "yaş pasta", en: "cake" },
       { de: "der Zwilling", tr: "ikiz", en: "twin" },
       { de: "veranstalten", tr: "düzenlemek", en: "to organise" },
-      { de: "naschen", tr: "atıştırmak (tatlı)", en: "to nibble sweets" },
+      { de: "naschen", tr: "atıştırmak", en: "to nibble sweets", note: "tatlı için" },
     ],
     minutes: 4,
     text:
@@ -233,7 +233,7 @@ export const a2U18: SkillExercise[] = [
     intro: "İki ev arkadaşı parti hazırlığı yapıyor. Kim neyi üstleniyor?",
     gloss: [
       { de: "aufstellen", tr: "kurmak / dizmek", en: "to set up" },
-      { de: "decken", tr: "(masa) kurmak", en: "to set (the table)" },
+      { de: "decken", tr: "masa kurmak", en: "to set (the table)" },
       { de: "die Serviette", tr: "peçete", en: "napkin" },
       { de: "der Teller", tr: "tabak", en: "plate" },
       { de: "der Besuch", tr: "misafir / ziyaret", en: "visitors" },
@@ -299,7 +299,7 @@ export const a2U18: SkillExercise[] = [
     gloss: [
       { de: "das Andenken", tr: "hediyelik eşya", en: "souvenir" },
       { de: "die Feier", tr: "kutlama", en: "celebration" },
-      { de: "decken", tr: "(masa) kurmak", en: "to set (the table)" },
+      { de: "decken", tr: "masa kurmak", en: "to set (the table)" },
     ],
     minutes: 6,
     tasks: [

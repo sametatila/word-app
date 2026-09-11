@@ -257,8 +257,8 @@ export const a1U04: SkillExercise[] = [
     genre: "grammar",
     intro: "Olumsuzluk ve çoğul üzerine kısa alıştırmalar.",
     gloss: [
-      { de: "kein", tr: "hiç (eril/nötr)", en: "no (m./n.)" },
-      { de: "keine", tr: "hiç (dişil/çoğul)", en: "no (f./pl.)" },
+      { de: "kein", tr: "hiç", en: "no (m./n.)", note: "eril/nötr" },
+      { de: "keine", tr: "hiç", en: "no (f./pl.)", note: "dişil/çoğul" },
       { de: "die Ahnung", tr: "fikir", en: "idea" },
     ],
     minutes: 6,

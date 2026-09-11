@@ -37,7 +37,7 @@ export const a1U01: SkillExercise[] = [
       { de: "Deutschland", tr: "Almanya", en: "Germany" },
       { de: "der Türkei", tr: "Türkiye", en: "Turkey" },
       { de: "Österreich", tr: "Avusturya", en: "Austria" },
-      { de: "Hamburg / Berlin / Wien", tr: "Hamburg / Berlin / Viyana (şehirler)", en: "cities" },
+      { de: "Hamburg / Berlin / Wien", tr: "Hamburg / Berlin / Viyana", en: "cities" },
     ],
     minutes: 3,
     text:
@@ -92,7 +92,7 @@ export const a1U01: SkillExercise[] = [
     gloss: [
       { de: "der Schweiz", tr: "İsviçre", en: "Switzerland" },
       { de: "Italien", tr: "İtalya", en: "Italy" },
-      { de: "München", tr: "Münih (şehir)", en: "Munich" },
+      { de: "München", tr: "Münih", en: "Munich" },
       { de: "Und du?", tr: "Ya sen?", en: "And you?" },
     ],
     minutes: 3,
@@ -226,7 +226,7 @@ export const a1U01: SkillExercise[] = [
       { de: "Frau / Herr", tr: "Bayan / Bay", en: "Mrs / Mr" },
       { de: "ja", tr: "evet", en: "yes" },
       { de: "jetzt", tr: "şimdi", en: "now" },
-      { de: "Izmir / Frankfurt", tr: "İzmir / Frankfurt (şehirler)", en: "cities" },
+      { de: "Izmir / Frankfurt", tr: "İzmir / Frankfurt", en: "cities" },
     ],
     minutes: 3,
     segments: [
@@ -353,8 +353,8 @@ export const a1U01: SkillExercise[] = [
     genre: "profile",
     intro: "Soru sormayı ve resmî/samimi ayrımını (du/Sie) yaz. Kısa cümleler yeter.",
     gloss: [
-      { de: "du", tr: "sen (samimi)", en: "you (informal)" },
-      { de: "Sie", tr: "siz (resmî)", en: "you (formal)" },
+      { de: "du", tr: "sen", en: "you (informal)", note: "samimi" },
+      { de: "Sie", tr: "siz", en: "you (formal)", note: "resmî" },
     ],
     minutes: 6,
     tasks: [
