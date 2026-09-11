@@ -64,7 +64,7 @@ function compare(label: string, web: Set<string>, mob: Set<string>) {
   console.error("   dokumu yenile: npm run dump:lessons / dump:skills / dump:mock-exams (ve :en surumleri)");
 }
 
-const lessonFiles = ["de-a1", "de-a2", "de-b1", "de-b2", "de-c1", "en-a1", "en-a2", "en-b1"].map((n) => `mobile/src/data/lessons/${n}.json`);
+const lessonFiles = ["de-a1", "de-a2", "de-b1", "de-b2", "de-c1", "en-a1", "en-a2", "en-b1", "en-b2"].map((n) => `mobile/src/data/lessons/${n}.json`);
 compare("ders", new Set(LESSONS.map((l) => l.id)), ids(lessonFiles));
 
 compare(

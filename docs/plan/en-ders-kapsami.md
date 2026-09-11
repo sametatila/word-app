@@ -1,6 +1,6 @@
 # WP-74 — İngilizce ders kapsamı B1–C1
 
-**Durum:** sürüyor (B1 TAM: 100/100; B2 ve C1 kaldı, 100/300 ders) · **Sahip:** Claude · **Açılış:** 2026-09-11
+**Durum:** sürüyor (B1 TAM; B2 başladı, 105/300 ders) · **Sahip:** Claude · **Açılış:** 2026-09-11
 
 ## Kusur
 
@@ -214,6 +214,34 @@ görmedi — ama etiket öğrenciye gösteriliyor ve aynı kural iki adla
 görünüyordu. `Second conditional` ve `Modals of deduction` etiketleri
 BİLEREK ayrı bırakıldı: onlar aynı kuralın alt başlığı değil, dersin gerçekten
 başka bir yüzünü öğretiyor.
+
+**B2 modül 1 — Profesyonel iletişim (2026-09-11, ilk yarısı).** Beş ders:
+sabah bilgilendirmesi, devir notu, meslektaşı tanıtmak, çeyrek sonuna kadar,
+tutanak yazmak.
+
+B1'de olduğu gibi ders yazmadan ÖNCE dört şey yapıldı ve sırası önemli:
+
+1. `cando.ts` — İngilizce B2 için on dilbilgisi ifadesi (`B2.GR.11-20`).
+   Numara 11'den başlıyor çünkü 1-6 Almanca kursun B2 dilbilgisi ve iki kurs
+   aynı numarayı paylaşamaz. `EN_GR_IDS` B1 ve B2'yi birlikte üretiyor.
+2. `cando-map.ts` — on yeni satır `FOCUS_GR_EN`'in EN BAŞINA. B1 satırlarının
+   B2 sütunu yok: bir B2 dersi «Passive report structures» odağıyla aşağıdaki
+   `/passive/i` satırına düşseydi `hit[1]["B2"]` undefined dönerdi ve ders
+   sessizce ifadesiz kalırdı. Desenler B2'ye özgü seçildi ki B1 odakları
+   yukarı kaymasın: «third conditional» yakalanıyor, «Conditionals» hâlâ
+   B1 satırına gidiyor.
+3. `cando/out/c-005.json` + `cando-de/out/c-005.json` — ifadelerin İngilizce ve
+   Almanca metni. Kapsam 155 → 165.
+4. `prose-de/make.mjs` dosya listesine `en-b2.json`, ve `src/lib/lessons`,
+   `mobile/src/data/lessons`, `check-dumps.ts` bağlantıları.
+
+Dersler eşleşme doğrulandı: beş dersin beşi de hedeflenen ifadeye gidiyor
+(B2.GR.13, 16, 17, 18, 19).
+
+Referans dili burada bir kez yeniden ölçüldü: «açıklayıcı ilgi cümlesi
+virgülle ayrılıyor» Almanca anadilli için YETERSİZ bir ipucu, çünkü Almancada
+HER ilgi cümlesi virgül alıyor. Almanca metin bunu söylüyor: virgül İngilizcede
+bir ayırt edici, Almancada değil.
 
 ## Tamamlanma ölçütü
 

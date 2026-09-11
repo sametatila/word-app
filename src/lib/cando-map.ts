@@ -72,6 +72,21 @@ const FOCUS_GR_EN: [RegExp, Partial<Record<CefrLevel, number>>][] = [
      ve o satırın B1 sütunu yok — ders sessizce dilbilgisi ifadesiz kalırdı.
      Aynı tuzak «Present perfect vs past simple» için de var (`/past simple/`).
      Desenler B1'e özgü tutuldu ki A1/A2 odakları buraya kaymasın. */
+  /* B2 SATIRLARI EN ÖNDE. B1 satırlarının B2 sütunu YOK: bir B2 dersi
+     «Passive report structures» odağıyla aşağıdaki `/passive/i` satırına
+     düşseydi `hit[1]["B2"]` undefined dönerdi ve ders sessizce ifadesiz
+     kalırdı. Desenler B2'ye özgü: «third conditional» yakalanır ama
+     «Conditionals» aşağıdaki B1 satırına gitmeye devam eder. */
+  [/perfect modal|must have|speculation about the past/i, { B2: 11 }],
+  [/third conditional|mixed conditional|regret conditional/i, { B2: 12 }],
+  [/report structure|it is said|passive reporting/i, { B2: 13 }],
+  [/cleft|emphasis/i, { B2: 14 }],
+  [/inversion|negative adverbial/i, { B2: 15 }],
+  [/participle clause/i, { B2: 16 }],
+  [/non-defining|which is why|prepositional relative/i, { B2: 17 }],
+  [/future perfect|future continuous/i, { B2: 18 }],
+  [/nominalis|nominaliz|formal register/i, { B2: 19 }],
+  [/hedging|discourse marker|admittedly|arguably/i, { B2: 20 }],
   [/present perfect vs past|perfect or past/i, { B1: 11 }],
   [/past perfect/i, { B1: 12 }],
   [/future forms|will vs going|arrangements/i, { B1: 13 }],

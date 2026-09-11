@@ -236,6 +236,20 @@ export const CANDO: Cando[] = [
   c("B1", "GR", 18, "must, might ve can't ile çıkarım yapabilirim; have to, don't have to ve should ile zorunluluk ve öğüt anlatabilirim."),
   c("B1", "GR", 19, "Fiilden sonra -ing mi to mu geldiğini seçebilirim: enjoy doing, decide to do ve stop doing ile stop to do farkı."),
   c("B1", "GR", 20, "Uzun cümleyi bağlaçlarla toparlayabilirim: although, however, so that, in order to ve despite."),
+
+  /* İngilizce B2: B1 gibi on ifade, seviyenin on modülüne birer tane. Numara
+     11'den başlıyor çünkü 1-6 Almanca kursun B2 dilbilgisi (Konjunktiv I,
+     Partizip, Nominalisierung) ve iki kurs aynı numarayı paylaşamaz. */
+  c("B2", "GR", 11, "Geçmişe dair çıkarım ve pişmanlık kurabilirim: must have been, can't have done, should have said."),
+  c("B2", "GR", 12, "Üçüncü ve karma koşul cümlesi kurabilirim: if + past perfect → would have, gerçekleşmemiş geçmiş ve bugüne uzanan sonucu."),
+  c("B2", "GR", 13, "Kaynağı belirsiz bilgiyi edilgen aktarım kalıbıyla verebilirim: it is said that ve he is thought to."),
+  c("B2", "GR", 14, "Vurguyu yarık cümleyle öne alabilirim: what I need is ve it was … who."),
+  c("B2", "GR", 15, "Olumsuz zarf başa gelince devrik kurabilirim: rarely have I, not only did he."),
+  c("B2", "GR", 16, "Ortaç öbeğiyle iki cümleyi birleştirebilirim: having finished ve being asked."),
+  c("B2", "GR", 17, "Açıklayıcı ilgi cümlesi ve edatlı ilgi zamiri kullanabilirim: …, which is why ve the person to whom."),
+  c("B2", "GR", 18, "Gelecekteki bir ana göre konuşabilirim: future perfect ile bitmiş olanı, future continuous ile o an sürecek olanı."),
+  c("B2", "GR", 19, "Fiili isme çevirip resmî kayda geçebilirim: they introduced the rule yerine the introduction of the rule."),
+  c("B2", "GR", 20, "İddiayı yumuşatabilir ve metni yönlendirebilirim: arguably, admittedly, to some extent, that said."),
 ];
 
 /**
@@ -249,8 +263,10 @@ export const CANDO: Cando[] = [
  */
 export const EN_GR_IDS: ReadonlySet<string> = new Set([
   ...["A1", "A2"].flatMap((lvl) => [11, 12, 13, 14, 15, 16, 17, 18].map((n) => `${lvl}.GR.${n}`)),
-  // B1 on ifade taşıyor (A1/A2 sekiz): seviyenin on modülü, her modüle bir kural.
-  ...[11, 12, 13, 14, 15, 16, 17, 18, 19, 20].map((n) => `B1.GR.${n}`),
+  // B1 ve B2 onar ifade taşıyor (A1/A2 sekiz): seviyenin on modülü, her modüle bir kural.
+  ...["B1", "B2"].flatMap((lvl) =>
+    [11, 12, 13, 14, 15, 16, 17, 18, 19, 20].map((n) => `${lvl}.GR.${n}`),
+  ),
 ]);
 
 const byId = new Map(CANDO.map((x) => [x.id, x]));
