@@ -343,7 +343,6 @@ export const enWeb: Record<string, string> = {
   "lessonp.or_answer_aloud": "…or answer out loud.",
   "lessonp.start_speaking": "Start speaking",
   "lessonp.close_typing": "Close typing",
-  "lessonp.skip_step": "Skip this step",
   "lessonp.no_asr": "No speech recognition — carry on by typing.",
   "lessonp.no_asr_long": "No speech recognition — you can carry on by typing.",
   "lessonp.to_roleplay": "Go to the conversation",

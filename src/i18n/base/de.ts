@@ -723,6 +723,7 @@ export const deBase: Record<string, string> = {
   "rpexam.goal": "Ziel:",
   "rpexam.turn_of": "Beitrag {n} / {total}",
   "rpexam.speak_or_type": "Sprich oder tipp…",
+  "lessonp.skip_step": "Diesen Schritt überspringen",
   "lessonp.corrections": "Korrekturen aus dem Gespräch",
   "lessonp.no_corrections": "Im Gespräch war nichts zu korrigieren.",
   "lessonp.hands_free": "Freihändig",

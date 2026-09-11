@@ -726,6 +726,7 @@ export const tr: Record<string, string> = {
   "rpexam.goal": "Hedef:",
   "rpexam.turn_of": "Tur {n} / {total}",
   "rpexam.speak_or_type": "Konuş ya da yaz…",
+  "lessonp.skip_step": "Bu adımı atla",
   "lessonp.corrections": "Konuşmadaki düzeltmeler",
   "lessonp.no_corrections": "Konuşmada hiç düzeltme gerekmedi.",
   "lessonp.hands_free": "Eller serbest",

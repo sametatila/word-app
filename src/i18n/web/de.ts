@@ -343,7 +343,6 @@ export const deWeb: Record<string, string> = {
   "lessonp.or_answer_aloud": "…oder antworte laut.",
   "lessonp.start_speaking": "Sprechen beginnen",
   "lessonp.close_typing": "Tippen schließen",
-  "lessonp.skip_step": "Diesen Schritt überspringen",
   "lessonp.no_asr": "Keine Spracherkennung — mach tippend weiter.",
   "lessonp.no_asr_long": "Keine Spracherkennung — du kannst tippend weitermachen.",
   "lessonp.to_roleplay": "Zum Gespräch",

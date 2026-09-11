@@ -3869,6 +3869,23 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   );
 }
 
+/* ── 115. ders adiminda atlama ────────────────────────────────────────────
+ * Tikanan ogrencinin ilerleme yolu mobilde yalniz "yazarak cevapla"ydi ve o
+ * da dogru cevabi BILMEYI gerektiriyor: bilmeyen ogrencinin dersi bitirme
+ * yolu yoktu. Web her beklentili adimda bir atlama baglantisi veriyor ve
+ * atlanan adimi olcumde SIFIR sayiyor (`lesson_step` degeri 0, kind
+ * "<tur>:skip") - yani atlama sessizce "dogru" sayilmiyor. */
+{
+  const atla = (p) => {
+    const src = read(p).replace(/\/\*[\s\S]*?\*\//g, " ").replace(/\/\/[^\n]*/g, " ");
+    return [
+      "atlama yolu=" + (/lessonp\.skip_step/.test(src) ? "var" : "yok"),
+      "olcumde sifir=" + (/track\("lesson_step", 0, `\$\{k\}:skip`\)/.test(src) ? "var" : "yok"),
+    ];
+  };
+  sameList("ders adiminda atlama", atla("mobile/src/screens/LessonScreen.tsx"), atla("src/components/lessons/lesson-player.tsx"));
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"

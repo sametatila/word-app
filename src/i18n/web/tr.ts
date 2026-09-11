@@ -368,7 +368,6 @@ export const trWeb: Record<string, string> = {
   "lessonp.or_answer_aloud": "…ya da sesli cevap ver.",
   "lessonp.start_speaking": "Konuşmaya başla",
   "lessonp.close_typing": "Yazmayı kapat",
-  "lessonp.skip_step": "Bu adımı atla",
   "lessonp.no_asr": "Konuşma tanıma yok — yazarak devam et.",
   "lessonp.no_asr_long": "Konuşma tanıma yok — yazarak devam edebilirsin.",
   "lessonp.to_roleplay": "Konuşmaya geç",

@@ -290,6 +290,20 @@ export function LessonScreen() {
   function onConfirm() { advance(); }
 
   /**
+   * ADIMI ATLA. Tıkanan öğrencinin ilerleme yolu yalnız "yazarak cevapla"ydı
+   * ve o da doğru cevabı BİLMEYİ gerektiriyor; web her beklentili adımda bir
+   * atlama bağlantısı veriyor (`lesson-player` `skipStep`). Atlanan adım
+   * ölçümde sıfır sayılıyor - aynı olay, aynı değer, aynı kind biçimi.
+   */
+  function skipStep() {
+    const k = expect?.kind;
+    if (k && k !== "confirm") track("lesson_step", 0, `${k}:skip`);
+    stopListening();
+    setTries(0);
+    advance();
+  }
+
+  /**
    * Mikrofonu bir kez açar. İzin yoksa `sttOk` düşer ve ekran kalıcı olarak
    * yazma yoluna geçer — reddedilen izin her adımda yeniden sorulmaz.
    */
@@ -669,7 +683,7 @@ export function LessonScreen() {
                 onConfirm={onConfirm} onSpeakRepeat={() => void speakRepeat()} onTypedRepeat={submitRepeatTyped}
                 onSpeakProduce={() => void speakProduce()} onProduce={submitProduce} onTrueFalse={answerTrueFalse}
                 sttOk={sttOk} listening={listening} typing={typing} setTyping={setTyping}
-                colors={colors} />
+                onSkip={skipStep} colors={colors} />
             ) : (
               <RoleplayControls input={input} setInput={setInput} busy={busy} onSend={() => sendRole()}
                 onSpeak={() => void speakRole()}
@@ -788,14 +802,23 @@ function TypeToggle({ onPress, colors }: { onPress: () => void; colors: Palette 
   );
 }
 
-function LectureControls({ expect, tries, input, setInput, onConfirm, onSpeakRepeat, onTypedRepeat, onSpeakProduce, onProduce, onTrueFalse, sttOk, listening, typing, setTyping, colors }: {
+function LectureControls({ expect, tries, input, setInput, onConfirm, onSpeakRepeat, onTypedRepeat, onSpeakProduce, onProduce, onTrueFalse, sttOk, listening, typing, setTyping, onSkip, colors }: {
   expect: Expectation | undefined; tries: number; input: string; setInput: (s: string) => void;
   onConfirm: () => void; onSpeakRepeat: () => void; onTypedRepeat: () => void; onSpeakProduce: () => void;
   onProduce: () => void; onTrueFalse: (b: boolean) => void;
-  sttOk: boolean | null; listening: boolean; typing: boolean; setTyping: (v: boolean) => void; colors: Palette;
+  sttOk: boolean | null; listening: boolean; typing: boolean; setTyping: (v: boolean) => void;
+  onSkip: () => void; colors: Palette;
 }) {
   // Mikrofon yoksa/izin verilmediyse yazma tek yol — ders tamamlanabilir kalmalı.
   const yaziYolu = sttOk === false || typing;
+  /* Beklentili her adımda atlama yolu: tıkanan öğrenci dersi bırakmak zorunda
+     kalmasın (web `lesson-player` aynı bağlantıyı veriyor). "Devam" ve
+     "hazırım" adımlarında anlamsız - orada beklenti yok. */
+  const atla = (
+    <PressableScale onPress={onSkip} style={{ alignItems: "center", paddingVertical: spacing.xs }}>
+      <Text variant="caption" color={colors.textMuted}>{tx("lessonp.skip_step")}</Text>
+    </PressableScale>
+  );
   if (!expect) return <BigButton label={tx("lesson.continue")} onPress={onConfirm} colors={colors} />;
   if (expect.kind === "confirm") return <BigButton label={tx("lesson.i_m_ready")} onPress={onConfirm} colors={colors} />;
   if (expect.kind === "repeat") {
@@ -813,6 +836,7 @@ function LectureControls({ expect, tries, input, setInput, onConfirm, onSpeakRep
             <TypeToggle onPress={() => setTyping(true)} colors={colors} />
           </>
         )}
+        {atla}
       </View>
     );
   }
@@ -833,6 +857,7 @@ function LectureControls({ expect, tries, input, setInput, onConfirm, onSpeakRep
             </View>
           </PressableScale>
         </View>
+        {atla}
       </View>
     );
   }
@@ -848,6 +873,7 @@ function LectureControls({ expect, tries, input, setInput, onConfirm, onSpeakRep
           <TypeToggle onPress={() => setTyping(true)} colors={colors} />
         </>
       )}
+      {atla}
     </View>
   );
 }

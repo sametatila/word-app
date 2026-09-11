@@ -723,6 +723,7 @@ export const enBase: Record<string, string> = {
   "rpexam.goal": "Goal:",
   "rpexam.turn_of": "Turn {n} / {total}",
   "rpexam.speak_or_type": "Speak or type…",
+  "lessonp.skip_step": "Skip this step",
   "lessonp.corrections": "Corrections from the conversation",
   "lessonp.no_corrections": "Nothing needed correcting in the conversation.",
   "lessonp.hands_free": "Hands-free",
