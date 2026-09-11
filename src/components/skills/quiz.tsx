@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { foldCompare } from "@/components/games/types";
 import { useTargetLang } from "./player-context";
 import { motion } from "framer-motion";
 import type { Gloss, SkillQuestion } from "@/lib/skills/types";
@@ -120,16 +121,14 @@ function ChoiceInput({ q, done, onSettle }: { q: SkillQuestion; done: boolean; o
 
 /* ───────────── yazılı ───────────── */
 
+/**
+ * Sabit `de-DE` küçültme + koşulsuz umlaut katlaması yazılıydı, yani İngilizce
+ * beceri egzersizlerinde de Almanca kuralı işliyordu; sayı katlaması da yoktu
+ * ("two" ↔ "2" mobilde kabul ediliyor, burada edilmiyordu). Ortak katlama
+ * hedef dile bakıyor — mobil `game/skillQuiz` aynı düzeltmeyi taşıyor.
+ */
 function fold(s: string): string {
-  return s
-    .toLocaleLowerCase("de-DE")
-    .replace(/[.,!?;:„“"'’]/g, "")
-    .replace(/\s+/g, " ")
-    .trim()
-    .replace(/ß/g, "ss")
-    .replace(/ä/g, "ae")
-    .replace(/ö/g, "oe")
-    .replace(/ü/g, "ue");
+  return foldCompare(s);
 }
 
 /**

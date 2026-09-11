@@ -153,6 +153,22 @@ function foldCase(s: string, lang: TargetLang): string {
 }
 
 /**
+ * Yazılan/duyulan metnin karşılaştırma biçimi — mobil `lib/textFold`
+ * `foldCompare` ile aynı.
+ *
+ * Harf katlaması, simge/noktalama sadeleştirmesi ve SAYI katlaması bir arada.
+ * Ayrı bir ad olarak duruyor çünkü iki yerde birden gerekiyor: boşluksuz
+ * yedek geçiş (`foldTight`) ve beceri egzersizlerinin yazılı cevap kabulü
+ * (`skills/quiz` `fold`) — ikincisi kendi zincirini yazıyordu ve `de-DE`
+ * küçültmeyi koşulsuz uyguluyordu, yani İngilizce egzersizlerde de Almanca
+ * kuralı işliyordu. Mobil bu düzeltmeyi çoktan yapmıştı (`game/skillQuiz`
+ * `fold`), web geride kalmıştı.
+ */
+export function foldCompare(s: string, lang: TargetLang = currentTargetLang()): string {
+  return foldNumbers(foldCase(normalize(s, lang), lang), lang);
+}
+
+/**
  * Boşluksuz karşılaştırma biçimi — mobil `lib/textFold` `foldTight`.
  *
  * KARŞILIĞI OLDUĞUNU SÖYLÜYORDU AMA DEĞİLDİ. Mobil tarafta `foldTight`
@@ -163,7 +179,7 @@ function foldCase(s: string, lang: TargetLang): string {
  * ayrışıyordu, şimdi on üçünde de aynı.
  */
 export function foldTight(s: string, lang: TargetLang = currentTargetLang()): string {
-  return foldNumbers(foldCase(normalize(s, lang), lang), lang).replace(/\s+/g, "");
+  return foldCompare(s, lang).replace(/\s+/g, "");
 }
 
 /**

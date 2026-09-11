@@ -9749,3 +9749,43 @@ başka sıra isteniyor. Parite zaten vardı.
 dönseydi karşılaştırma yine yeşil kalırdı (§11.279'daki `"?" === "?"`
 tuzağının bu alandaki hâli). Dört enjeksiyonun dördü yakalandı, dördüncüsü
 ters yönden: eşleştirmenin **sessizce tohumlanması** da kırmızı veriyor.
+
+## §11.297 — "Dosya vardı, kullanan yoktu" — bu kez Android ileride, web geride
+
+Son iki turun kalıbını doğrudan aradım: **ortak yardımcı duruyor ama çağıran
+kendi kopyasını yazmış.** Satır içi Fisher–Yates, satır içi FNV-1a ve satır içi
+umlaut zincirlerini iki ağaçta taradım.
+
+Çoğu masum çıktı — ve bu da bir sonuç. Eşleştirme oyununun karıştırması iki
+tarafta da tohumsuz (bilinçli); cümle kurma görevinin normalleştirmesi
+(`writing-player` `normalize` ↔ `skillQuiz` `normalizeBuilt`) **davranışça
+birebir aynı**; `lib/headword`, `lib/errors`, `assess-client` içindeki
+zincirler kendi işleri için ve mobil karşılıkları yok.
+
+Biri gerçekti ve **yön bu kez tersti: Android ileride, web geride.**
+`skills/quiz` içindeki `fold` şunu yapıyordu — sabit `de-DE` küçültme,
+koşulsuz umlaut katlaması, **sayı katlaması yok**. Mobil aynı işlevi
+(`game/skillQuiz` `fold`) çoktan ortak katlamaya bağlamış ve düzeltmenin
+gerekçesini de yazmıştı: *"Sabit `de-DE` küçültme + koşulsuz umlaut katlaması
+yazılıydı, yani İngilizce beceri egzersizlerinde de Almanca kuralı
+işliyordu."* Web o düzeltmeyi almamıştı.
+
+Sekiz örnekle ölçtüm, üçü ayrışıyordu:
+
+| Girdi | Web (eski) | Mobil |
+|---|---|---|
+| "two apples" (en) | `two apples` | `2 apples` |
+| "zwei Äpfel" (de) | `zwei aepfel` | `2 aepfel` |
+| "5% Rabatt" (de) | `5% rabatt` | `5 prozent rabatt` |
+
+Yani beceri egzersizinde doğru cevabı sayıyla yazan öğrenci Android'de kabul
+ediliyor, webde reddediliyordu.
+
+Webde `foldCompare` diye ortak bir taban açıldı (mobildeki adla aynı);
+`foldTight` ona delege ediyor, `skills/quiz` de oradan besleniyor.
+
+**Kapının ölçtüğü yer de kaydı ve bu öğretici:** §199 önce `foldTight`in
+gövdesinde harf/sayı katlaması arıyordu; `foldTight` tabana delege edince iki
+satır birden "YOK" dedi — **kapı doğru şeyi ölçüyordu ama yanlış yerde.**
+Ölçüm tabana taşındı, üstüne "boşluksuz katlama tabandan mı besleniyor"
+satırı eklendi. Dört enjeksiyonun dördü yakalanıyor.

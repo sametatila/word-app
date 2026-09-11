@@ -7389,6 +7389,8 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   {
     const webT = sil(read("src/components/games/types.ts"));
     const mobT = sil(read("mobile/src/lib/textFold.ts"));
+    const webT2 = sil(read("src/components/skills/quiz.tsx"));
+    const mobT2 = sil(read("mobile/src/game/skillQuiz.tsx"));
     const govde = (src, ad) => {
       const i = src.indexOf("function " + ad);
       return i < 0 ? "" : src.slice(i, src.indexOf("\n}", i));
@@ -7396,20 +7398,41 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     sameList(
       "bosluksuz katlama ayni hatti izliyor",
       [
-        "web harf=" + (/foldCase\(normalize\(/.test(govde(webT, "foldTight")) ? "var" : "YOK"),
-        "web sayi=" + (/foldNumbers\(/.test(govde(webT, "foldTight")) ? "var" : "YOK"),
+        /* Webin tabani artik `foldCompare` (mobildeki adla ayni); `foldTight`
+           ona DELEGE ediyor. Olcum tabana bakmali - yoksa delegasyon eklenince
+           iki satir birden "YOK" der ve kapi yanlis yerden kirmizi verir. */
+        "web taban harf=" + (/foldCase\(normalize\(/.test(govde(webT, "foldCompare")) ? "var" : "YOK"),
+        "web taban sayi=" + (/foldNumbers\(/.test(govde(webT, "foldCompare")) ? "var" : "YOK"),
+        "web bosluksuz tabandan=" + (/return foldCompare\(s, lang\)\.replace/.test(govde(webT, "foldTight")) ? "evet" : "HAYIR"),
         "mobil taban=" + (/foldCompare\(/.test(govde(mobT, "foldTight")) ? "var" : "YOK"),
         "mobil taban harf=" + (/foldCase\(/.test(govde(mobT, "foldCompare")) ? "var" : "YOK"),
         "mobil taban sayi=" + (/foldNumbers\(/.test(govde(mobT, "foldCompare")) ? "var" : "YOK"),
         /* Harf katlamasi ayni cifti kullanmali: biri "ue" oteki "u" yazsaydi
            "schön" ile "schon" karisirdi (webin kendi yorumunun uyardigi sey). */
+        /* Beceri egzersizinin yazili cevap kabulu de ORTAK katlamadan
+           gecmeli. Web kendi zincirini yaziyordu: sabit `de-DE` kucultme,
+           kosulsuz umlaut katlamasi ve SAYI katlamasi YOK - yani "two" ile
+           "2" mobilde kabul ediliyor, webde edilmiyordu. Mobil bu duzeltmeyi
+           coktan yapmisti; kapi ikisini birden tutuyor. */
+        "web beceri katlamasi=" + (/return foldCompare\(s\)/.test(govde(webT2, "fold")) ? "ortak" : "kendi zinciri"),
+        "mobil beceri katlamasi=" + (/return foldCompare\(s, currentTargetLang\(\)\)/.test(govde(mobT2, "fold")) ? "ortak" : "kendi zinciri"),
         "harf tablosu=" + (
           /ß\/g, "ss"[\s\S]{0,80}ä\/g, "ae"[\s\S]{0,80}ö\/g, "oe"[\s\S]{0,80}ü\/g, "ue"/.test(govde(webT, "foldCase"))
           && /ß\/g, "ss"[\s\S]{0,80}ä\/g, "ae"[\s\S]{0,80}ö\/g, "oe"[\s\S]{0,80}ü\/g, "ue"/.test(govde(mobT, "foldCase"))
             ? "ayni" : "AYRISIK"
         ),
       ],
-      ["web harf=var", "web sayi=var", "mobil taban=var", "mobil taban harf=var", "mobil taban sayi=var", "harf tablosu=ayni"],
+      [
+        "web taban harf=var",
+        "web taban sayi=var",
+        "web bosluksuz tabandan=evet",
+        "mobil taban=var",
+        "mobil taban harf=var",
+        "mobil taban sayi=var",
+        "web beceri katlamasi=ortak",
+        "mobil beceri katlamasi=ortak",
+        "harf tablosu=ayni",
+      ],
       "bulunan",
       "beklenen",
     );
