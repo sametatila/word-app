@@ -7275,6 +7275,54 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     "beklenen",
   );
 
+  /* ── 221. rota yedekleri kendini DUYURUYOR mu ───────────────────────
+   * On dort `loading.tsx` dosyasi da gelecek duzenin seklini dogru ciziyordu
+   * (11.334'te sosyal merkezde eksik olan buydu ve duzeltildi) - ama
+   * hicbiri kendini DUYURMUYORDU ve on dordunun kokü `aria-hidden`di. Yani
+   * sesli okuyucu kullanan biri bir sekmeye gectiginde hicbir sey duymuyor:
+   * ekran sessizce bos kaliyor, sonra icerik bir anda ortaya cikiyor.
+   *
+   * Mobil bunu KOKTE cozmustu (`ui/Skeleton` `SkeletonCard`:
+   * `accessibilityRole="progressbar"`, gerekcesi orada yazili) ve webin
+   * `SkeletonCard`i da `role="status" aria-busy` tasiyor - eksik olan ROTA
+   * seviyesindeki yedeklerdi. 11.329'da ayni sinif TEK bir bilesende
+   * cikmisti; bu kapi butun rotalari birden okuyor.
+   *
+   * Kapi iki sey soyluyor: her yedek `LoadingRegion` kullaniyor mu, ve
+   * hicbirinin kokunde `aria-hidden` KALMADI mi (kokte kalirsa etiketin
+   * kendisi de gizlenir ve bolge hic duyurulmaz - duzeltmenin en kolay
+   * yanlisi). */
+  {
+    const yedekler = [];
+    const tara = (d) => {
+      for (const e of readdirSync(new URL("../" + d, import.meta.url), { withFileTypes: true })) {
+        const yol = d + "/" + e.name;
+        if (e.isDirectory()) tara(yol);
+        else if (e.name === "loading.tsx") yedekler.push(yol);
+      }
+    };
+    tara("src/app");
+    const duyurmayan = [];
+    const kokuGizli = [];
+    for (const f of yedekler) {
+      const src = sil(read(f));
+      if (!/<LoadingRegion\b/.test(src)) duyurmayan.push(f);
+      if (/return \([\s\S]{0,60}aria-hidden/.test(src)) kokuGizli.push(f);
+    }
+    sameList(
+      "rota yedekleri kendini duyuruyor",
+      [
+        "yedek sayisi=" + yedekler.length,
+        "duyurmayan=" + (duyurmayan.length ? duyurmayan.join(", ") : "yok"),
+        "kokü gizli=" + (kokuGizli.length ? kokuGizli.join(", ") : "yok"),
+        "mobil kok duyurusu=" + (/accessibilityRole="progressbar"/.test(sil(read("mobile/src/ui/Skeleton.tsx"))) ? "var" : "YOK"),
+      ],
+      ["yedek sayisi=" + yedekler.length, "duyurmayan=yok", "kokü gizli=yok", "mobil kok duyurusu=var"],
+      "bulunan",
+      "beklenen",
+    );
+  }
+
   /* ── 220. sosyal merkez: yukleme dali gercek dizilimi ciziyor mu ─────
    * Sosyal merkezin "arkadaslar" sekmesi iki platformda AYNI dizilimi
    * cizyor ve sira bilincli: cevap bekleyen is (gelen istek), bu haftanin
