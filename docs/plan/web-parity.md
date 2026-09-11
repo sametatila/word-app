@@ -11816,3 +11816,35 @@ yerde birlikte güncelleniyor.
 kur ve söyle) ve birinin sabitten çıkması, öteki hâlâ sabitten geldiği için
 görünmüyordu. Ölçü **"elle yazılmış eşik sayısı = 0"**a çevrildi — yalnız
 `3`ü değil, herhangi bir sayıyla karşılaştırmayı arıyor.
+
+## §11.352 — Rol yapma: en az tur kuralı ve servis kapalıyken güvence
+
+Eksen **rol yapma konuşması**ydı. Öneri şıkları, düzeltme balonları,
+düzeltme listesi ve "düzeltme yok" hâli, çevrimdışı senaryo yedeği — hepsi
+ikisinde de var. İki şey ayrışıyordu.
+
+### 1. `minTurns` mobilde isteğe bağlıydı, iki yerde `?? 6` yazılıydı
+
+Web tipi baştan beri zorunlu (`minTurns: number`), mobil tipi isteğe bağlı
+(`minTurns?: number`) ve iki yerde `?? 6` duruyordu. Alan düşse **Android
+altı tur ister, web `undefined`ı ekrana basardı** — aynı ders iki platformda
+başka bir kural uygular.
+
+Ölçüm **bin seksen** rol yapma dersinin **hepsinde** alanın dolu olduğunu
+gösterdi: varsayılan hiç çalışmıyordu ama sayı kodda duruyordu. Tip zorunlu
+yapıldı, iki `?? 6` kalktı. Biri `?? 0` oldu — `lesson` henüz yüklenmemişken
+de okunuyor, ama uydurulmuş bir eşik değil sıfır: ders gelmeden "yeter"
+demesin.
+
+### 2. "Konuşma yine sayılır" güvencesi görünmüyordu
+
+Servis kapalıyken web şunu yazıyordu: "Sohbet servisi şu an kapalı; konuşma
+önceden yazılmış bir senaryoyla sürüyor. **Konuşma yine sayılır.**" — ama
+`title=` **ipucu balonunda**. Dokunmatikte hiç açılmıyor, klavyeyle de
+erişilmiyor; yani en çok güven veren kısım kullanıcıların bir bölümüne **hiç
+ulaşmıyordu**. Android'de cümle **hiç yoktu** — kullanıcı konuşmasının
+sayılmayacağını sanıp dersi bırakabilirdi.
+
+Cümle ortak anahtara alındı (`lesson.chat_offline_note`) ve iki tarafta da
+**görünür** yazıldı: webde rozetin altında bir satır, Android'de balonun
+ikinci parçası.

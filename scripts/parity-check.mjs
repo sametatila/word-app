@@ -7292,6 +7292,64 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
     "beklenen",
   );
 
+  /* -- 236. ROL YAPMA: en az tur kurali ve servis kapaliyken guvence ----
+   *
+   * Iki sey cikti:
+   *
+   *  1. `minTurns` MOBILDE ISTEGE BAGLIYDI (`minTurns?: number`) ve iki yerde
+   *     `?? 6` yaziliydi; web tipi bastan beri zorunlu. Alan dusse Android
+   *     alti tur ister, web `undefined`i ekrana basardi - yani ayni ders iki
+   *     platformda baska bir kural uygular. Olcum bin seksen rol yapma
+   *     dersinin HEPSINDE alanin dolu oldugunu gosterdi: varsayilan hic
+   *     calismiyordu ama sayi kodda duruyordu. Tip zorunlu yapildi, iki
+   *     `?? 6` kalkti.
+   *  2. "KONUSMA YINE SAYILIR" GUVENCESI. Servis kapaliyken web bunu
+   *     `title=` ipucu balonunda tutuyordu: dokunmatikte hic acilmiyor,
+   *     klavyeyle de erisilmiyor - yani en cok guven veren kisim
+   *     kullanicilarin bir bolumune HIC ulasmiyordu. Android'de cumle hic
+   *     yoktu. Ortak anahtara alindi (`lesson.chat_offline_note`) ve iki
+   *     tarafta da GORUNUR yazildi. */
+  {
+    const dm = sil(read("mobile/src/screens/LessonScreen.tsx"));
+    const dw = sil(read("src/components/lessons/lesson-player.tsx"));
+    const tipM = read("mobile/src/data/lessons/index.ts");
+    const tipW = read("src/lib/lessons/types.ts");
+    const WEB_SOZLUK = ["src/i18n/web/tr.ts", "src/i18n/web/en.ts", "src/i18n/web/de.ts"];
+    sameList(
+      "rol yapmanin en az tur kurali",
+      [
+        "tip=" + (/minTurns\?: number/.test(tipM) ? "ISTEGE BAGLI" : (/minTurns: number/.test(tipM) ? "zorunlu" : "YOK")),
+        "uydurma varsayilan=" + (dm.match(/minTurns \?\? \d+/g) ?? []).filter((x) => !/\?\? 0$/.test(x)).length,
+      ],
+      [
+        "tip=" + (/minTurns\?: number/.test(tipW) ? "ISTEGE BAGLI" : (/minTurns: number/.test(tipW) ? "zorunlu" : "YOK")),
+        "uydurma varsayilan=" + (dw.match(/minTurns \?\? \d+/g) ?? []).length,
+      ],
+      "mobil",
+      "web",
+    );
+    sameList(
+      "servis kapaliyken guvence gorunur",
+      [
+        "guvence=" + (/lesson\.chat_offline_note/.test(dm) ? "var" : "YOK"),
+        "ipucu balonunda mi=" + (/title=\{t\("lesson\.chat_offline_note"\)\}/.test(dm) ? "EVET" : "hayir"),
+      ],
+      [
+        "guvence=" + (/lesson\.chat_offline_note/.test(dw) ? "var" : "YOK"),
+        "ipucu balonunda mi=" + (/title=\{t\("lesson\.chat_offline_note"\)\}/.test(dw) ? "EVET" : "hayir"),
+      ],
+      "mobil",
+      "web",
+    );
+    sameList(
+      "rol yapmanin olu anahtari kalkti",
+      ["lessonp.chat_offline_note=" + WEB_SOZLUK.reduce((n, y) => n + (read(y).includes('"lessonp.chat_offline_note":') ? 1 : 0), 0)],
+      ["lessonp.chat_offline_note=0"],
+      "bulunan",
+      "beklenen",
+    );
+  }
+
   /* -- 235. DERS ADIMININ DENEME HAKKI VE CEVABIN ACILDIGI AN ------------
    *
    * Uc sey cikti:
