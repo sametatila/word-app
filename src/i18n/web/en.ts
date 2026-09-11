@@ -486,8 +486,6 @@ export const enWeb: Record<string, string> = {
   "writp.hide_sample": "Hide the sample answer",
   "writp.rewrite": "Rewrite",
   "writp.rewrite_ph": "Write the sentence in its new form…",
-  "prog.study_time": "Study time",
-  "prog.hours": "{n} h",
   "weak.loading": "Loading your weak spots",
   "del.disabled": "Account deletion is off",
   "del.disabled_sub": "The sign-in system isn't configured in this environment.",

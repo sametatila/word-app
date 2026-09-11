@@ -486,8 +486,6 @@ export const deWeb: Record<string, string> = {
   "writp.hide_sample": "Musterlösung ausblenden",
   "writp.rewrite": "Umschreiben",
   "writp.rewrite_ph": "Schreib den Satz in der neuen Form…",
-  "prog.study_time": "Lernzeit",
-  "prog.hours": "{n} Std",
   "weak.loading": "Deine Schwachstellen werden geladen",
   "del.disabled": "Kontolöschung ist deaktiviert",
   "del.disabled_sub": "Das Anmeldesystem ist in dieser Umgebung nicht eingerichtet.",

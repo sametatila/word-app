@@ -4885,6 +4885,24 @@ console.log("\n" + C.b + "19. OTURUM PAKETI ALANLARI" + C.off);
   sameList("kapilarda onek eslesmesi", sinirsiz.length ? sinirsiz : ["yok"], ["yok"], "sinirsiz ad deseni", "beklenen");
 }
 
+/* ── 139. calisma suresi karosu ───────────────────────────────────────────
+ * Ayni karo iki platformda iki ayri BICIMDE yaziliyordu: web `prog.hours` +
+ * `skills.dk` ile "11 sa 20 dk", Android tek anahtarla "11s 20dk". Almanca
+ * arayuzde fark daha gorunurdu ("11 Std 20 Min." / "11 Std. 20 Min."), yani
+ * ayni sayi iki uründe farkli okunuyordu. Etiket de ayriydi: web "Calisma
+ * suresi", Android "Toplam sure".
+ *
+ * Olculen: karonun etiketi ve sure bicimini kuran anahtarlar. */
+{
+  const strip = (x) => x.replace(/\/\*[\s\S]*?\*\//g, " ").replace(/(^|[^:"'`\\])\/\/.*$/gm, "$1");
+  const sure = (yol) => {
+    const src = strip(read(yol)).replace(/\s+/g, " ");
+    const anahtarlar = [...new Set([...src.matchAll(/"((?:time|prog|skills|progress)\.[\w]*(?:hours|minutes|dk|time_total|study_time)[\w]*)"/g)].map((m) => m[1]))].sort();
+    return anahtarlar;
+  };
+  sameList("calisma suresi karosu", sure("mobile/src/screens/ProgressScreen.tsx").concat(sure("mobile/src/lib/useMe.ts")).sort(), sure("src/components/progress-view.tsx"));
+}
+
 console.log(
   fails === 0
     ? "\n" + C.ok + C.b + "KAYIT DEFTERLERI ESIT" + C.off + "\n"

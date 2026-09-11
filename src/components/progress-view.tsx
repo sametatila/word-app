@@ -201,7 +201,7 @@ export function ActivityProgress({
           href="/words"
         />
         <KpiCard label={t("progress.total_xp")} value={formatNumber(xp, lang)} tone="var(--color-mint)" Icon={SparkIcon} />
-        <KpiCard label={t("prog.study_time")} value={formatDuration(seconds, t)} tone="var(--color-sky)" Icon={ClockIcon} />
+        <KpiCard label={t("progress.time_total")} value={formatDuration(seconds, t)} tone="var(--color-sky)" Icon={ClockIcon} />
         <KpiCard label={t("progress.level")} value={level} tone="var(--color-violet)" Icon={TrophyIcon} />
       </div>
 
@@ -249,10 +249,21 @@ function formatDuration(
   totalSeconds: number,
   t: (key: string, vars?: Record<string, string | number>) => string,
 ): string {
+  /*
+   * BİÇİM ANDROİD'İN SÖZLÜĞÜNDEN.
+   *
+   * Aynı karo iki platformda iki ayrı biçimde yazılıyordu: web `prog.hours` +
+   * `skills.dk` ile "11 sa 20 dk", Android tek anahtarla "11s 20dk". Almanca
+   * arayüzde fark daha görünürdü ("11 Std 20 Min." / "11 Std. 20 Min."), yani
+   * aynı sayı iki üründe farklı okunuyordu. Etiket de ayrıydı: web "Çalışma
+   * süresi", Android "Toplam süre". İkisi de Android'e çekildi
+   * (`time.minutes_short` / `time.hours_minutes_short`, `progress.time_total`)
+   * ve webe özel üç anahtar düştü.
+   */
   const m = Math.round(totalSeconds / 60);
-  if (m < 60) return t("skills.dk", { n: m });
+  if (m < 60) return t("time.minutes_short", { m });
   const h = Math.floor(m / 60);
-  return `${t("prog.hours", { n: h })} ${t("skills.dk", { n: m % 60 })}`;
+  return t("time.hours_minutes_short", { h, m: m % 60 });
 }
 
 function KpiCard({

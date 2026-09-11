@@ -511,8 +511,6 @@ export const trWeb: Record<string, string> = {
   "writp.hide_sample": "Örnek cevabı gizle",
   "writp.rewrite": "Yeniden yaz",
   "writp.rewrite_ph": "Cümleyi yeni biçimiyle yaz…",
-  "prog.study_time": "Çalışma süresi",
-  "prog.hours": "{n} sa",
   "weak.loading": "Zayıf noktalar yükleniyor",
   "del.disabled": "Hesap silme kapalı",
   "del.disabled_sub": "Giriş sistemi bu ortamda yapılandırılmamış.",

@@ -7788,3 +7788,23 @@ tutuluyor.
 
 Öteki sekiz kapı betiği de aynı taramadan geçirildi: hiçbirinde bu biçimde
 sınırsız desen yok.
+
+### 11.232 Aynı sayı iki üründe farklı okunuyordu
+
+İlerleme ekranındaki **çalışma süresi** karosu iki platformda iki ayrı biçimde
+yazılıyordu:
+
+| | Türkçe | İngilizce | Almanca |
+|---|---|---|---|
+| Android | 11s 20dk | 11h 20m | 11 Std. 20 Min. |
+| web (eski) | 11 sa 20 dk | 11 h 20 min | 11 Std 20 Min. |
+
+Etiket de ayrıydı: web "Çalışma süresi", Android "Toplam süre". Aynı veri, aynı
+karo, iki ürün — ve kullanıcı ikisini yan yana görüyor (aynı hesap).
+
+İkisi de Android'e çekildi: etiket `progress.time_total`, biçim
+`time.minutes_short` / `time.hours_minutes_short`. Web'e özel iki anahtar
+(`prog.study_time`, `prog.hours`) düştü — web-özel sözlük sayısı azaldı.
+
+**§139** karonun etiketini ve süre biçimini kuran anahtarları ölçüyor. Üç
+enjeksiyonun üçü de yakalandı (webin etiketi, webin biçimi, mobilin anahtarı).
