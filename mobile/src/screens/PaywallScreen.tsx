@@ -210,6 +210,10 @@ export function PaywallScreen() {
           </View>
           <Text variant="display" style={{ marginTop: spacing.md }}>{t("paywall.nomi_premium")}</Text>
           <Text variant="body" color={colors.textMuted} style={{ marginTop: 4, textAlign: "center" }}>{t("paywall.unlimited_learning_full_exam")}</Text>
+          {/* DURUM SATIRI webde vardı, mobilde yoktu: iki yüzey aynı şeyi
+              anlatmalı. Premium'u olan kullanıcı bu dalı hiç görmüyor, o yüzden
+              satır sabit — "Ücretsiz hesap". */}
+          <Text variant="caption" color={colors.textMuted} style={{ marginTop: 2, textAlign: "center" }}>{t("premiumstate.free")}</Text>
         </View>
 
         {/* PLANLAR ÖNCE: fiyat iki özellik listesinin arkasında kalıyordu.
